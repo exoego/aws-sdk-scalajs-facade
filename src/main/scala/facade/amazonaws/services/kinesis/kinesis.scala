@@ -7,18 +7,24 @@ package object kinesis {
   type BooleanObject = Boolean
   type Data = js.Array[Byte]
   type DescribeStreamInputLimit = Integer
+  type EnhancedMonitoringList = js.Array[EnhancedMetrics]
   type ErrorCode = String
   type ErrorMessage = String
   type GetRecordsInputLimit = Integer
   type HashKey = String
   type ListStreamsInputLimit = Integer
   type ListTagsForStreamInputLimit = Integer
+  type MetricsName = String
+  type MetricsNameList = js.Array[MetricsName]
+  type MillisBehindLatest = Long
   type PartitionKey = String
   type PositiveIntegerObject = Integer
   type PutRecordsRequestEntryList = js.Array[PutRecordsRequestEntry]
   type PutRecordsResultEntryList = js.Array[PutRecordsResultEntry]
   type RecordList = js.Array[Record]
+  type ScalingType = String
   type SequenceNumber = String
+  type ShardCountObject = Integer
   type ShardId = String
   type ShardIterator = String
   type ShardIteratorType = String
@@ -32,6 +38,7 @@ package object kinesis {
   type TagList = js.Array[Tag]
   type TagMap = js.Dictionary[TagValue]
   type TagValue = String
+  type Timestamp = js.Date
 }
 
 package kinesis {
@@ -41,14 +48,24 @@ package kinesis {
     def addTagsToStream(params: AddTagsToStreamInput): Request[js.Object] = js.native
     def createStream(params: CreateStreamInput, callback: Callback[js.Object]): Unit = js.native
     def createStream(params: CreateStreamInput): Request[js.Object] = js.native
+    def decreaseStreamRetentionPeriod(params: DecreaseStreamRetentionPeriodInput, callback: Callback[js.Object]): Unit = js.native
+    def decreaseStreamRetentionPeriod(params: DecreaseStreamRetentionPeriodInput): Request[js.Object] = js.native
     def deleteStream(params: DeleteStreamInput, callback: Callback[js.Object]): Unit = js.native
     def deleteStream(params: DeleteStreamInput): Request[js.Object] = js.native
+    def describeLimits(params: DescribeLimitsInput, callback: Callback[DescribeLimitsOutput]): Unit = js.native
+    def describeLimits(params: DescribeLimitsInput): Request[DescribeLimitsOutput] = js.native
     def describeStream(params: DescribeStreamInput, callback: Callback[DescribeStreamOutput]): Unit = js.native
     def describeStream(params: DescribeStreamInput): Request[DescribeStreamOutput] = js.native
+    def disableEnhancedMonitoring(params: DisableEnhancedMonitoringInput, callback: Callback[EnhancedMonitoringOutput]): Unit = js.native
+    def disableEnhancedMonitoring(params: DisableEnhancedMonitoringInput): Request[EnhancedMonitoringOutput] = js.native
+    def enableEnhancedMonitoring(params: EnableEnhancedMonitoringInput, callback: Callback[EnhancedMonitoringOutput]): Unit = js.native
+    def enableEnhancedMonitoring(params: EnableEnhancedMonitoringInput): Request[EnhancedMonitoringOutput] = js.native
     def getRecords(params: GetRecordsInput, callback: Callback[GetRecordsOutput]): Unit = js.native
     def getRecords(params: GetRecordsInput): Request[GetRecordsOutput] = js.native
     def getShardIterator(params: GetShardIteratorInput, callback: Callback[GetShardIteratorOutput]): Unit = js.native
     def getShardIterator(params: GetShardIteratorInput): Request[GetShardIteratorOutput] = js.native
+    def increaseStreamRetentionPeriod(params: IncreaseStreamRetentionPeriodInput, callback: Callback[js.Object]): Unit = js.native
+    def increaseStreamRetentionPeriod(params: IncreaseStreamRetentionPeriodInput): Request[js.Object] = js.native
     def listStreams(params: ListStreamsInput, callback: Callback[ListStreamsOutput]): Unit = js.native
     def listStreams(params: ListStreamsInput): Request[ListStreamsOutput] = js.native
     def listTagsForStream(params: ListTagsForStreamInput, callback: Callback[ListTagsForStreamOutput]): Unit = js.native
@@ -63,6 +80,8 @@ package kinesis {
     def removeTagsFromStream(params: RemoveTagsFromStreamInput): Request[js.Object] = js.native
     def splitShard(params: SplitShardInput, callback: Callback[js.Object]): Unit = js.native
     def splitShard(params: SplitShardInput): Request[js.Object] = js.native
+    def updateShardCount(params: UpdateShardCountInput, callback: Callback[UpdateShardCountOutput]): Unit = js.native
+    def updateShardCount(params: UpdateShardCountInput): Request[UpdateShardCountOutput] = js.native
   }
 
   /**
@@ -112,7 +131,30 @@ package kinesis {
   }
 
   /**
-   * <p>Represents the input for <code>DeleteStream</code>.</p>
+   * <p>Represents the input for <a>DecreaseStreamRetentionPeriod</a>.</p>
+   */
+  @js.native
+  trait DecreaseStreamRetentionPeriodInput extends js.Object {
+    var StreamName: StreamName
+    var RetentionPeriodHours: PositiveIntegerObject
+  }
+
+  object DecreaseStreamRetentionPeriodInput {
+    def apply(
+      StreamName: js.UndefOr[StreamName] = js.undefined,
+      RetentionPeriodHours: js.UndefOr[PositiveIntegerObject] = js.undefined
+    ): DecreaseStreamRetentionPeriodInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("StreamName" -> StreamName.map { x => x: js.Any }),
+        ("RetentionPeriodHours" -> RetentionPeriodHours.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DecreaseStreamRetentionPeriodInput]
+    }
+  }
+
+  /**
+   * <p>Represents the input for <a>DeleteStream</a>.</p>
    */
   @js.native
   trait DeleteStreamInput extends js.Object {
@@ -128,6 +170,43 @@ package kinesis {
       ).filter(_._2 != js.undefined)
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteStreamInput]
+    }
+  }
+
+  @js.native
+  trait DescribeLimitsInput extends js.Object {
+
+  }
+
+  object DescribeLimitsInput {
+    def apply(
+
+    ): DescribeLimitsInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeLimitsInput]
+    }
+  }
+
+  @js.native
+  trait DescribeLimitsOutput extends js.Object {
+    var ShardLimit: ShardCountObject
+    var OpenShardCount: ShardCountObject
+  }
+
+  object DescribeLimitsOutput {
+    def apply(
+      ShardLimit: js.UndefOr[ShardCountObject] = js.undefined,
+      OpenShardCount: js.UndefOr[ShardCountObject] = js.undefined
+    ): DescribeLimitsOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("ShardLimit" -> ShardLimit.map { x => x: js.Any }),
+        ("OpenShardCount" -> OpenShardCount.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeLimitsOutput]
     }
   }
 
@@ -178,6 +257,98 @@ package kinesis {
   }
 
   /**
+   * <p>Represents the input for <a>DisableEnhancedMonitoring</a>.</p>
+   */
+  @js.native
+  trait DisableEnhancedMonitoringInput extends js.Object {
+    var StreamName: StreamName
+    var ShardLevelMetrics: MetricsNameList
+  }
+
+  object DisableEnhancedMonitoringInput {
+    def apply(
+      StreamName: js.UndefOr[StreamName] = js.undefined,
+      ShardLevelMetrics: js.UndefOr[MetricsNameList] = js.undefined
+    ): DisableEnhancedMonitoringInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("StreamName" -> StreamName.map { x => x: js.Any }),
+        ("ShardLevelMetrics" -> ShardLevelMetrics.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DisableEnhancedMonitoringInput]
+    }
+  }
+
+  /**
+   * <p>Represents the input for <a>EnableEnhancedMonitoring</a>.</p>
+   */
+  @js.native
+  trait EnableEnhancedMonitoringInput extends js.Object {
+    var StreamName: StreamName
+    var ShardLevelMetrics: MetricsNameList
+  }
+
+  object EnableEnhancedMonitoringInput {
+    def apply(
+      StreamName: js.UndefOr[StreamName] = js.undefined,
+      ShardLevelMetrics: js.UndefOr[MetricsNameList] = js.undefined
+    ): EnableEnhancedMonitoringInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("StreamName" -> StreamName.map { x => x: js.Any }),
+        ("ShardLevelMetrics" -> ShardLevelMetrics.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EnableEnhancedMonitoringInput]
+    }
+  }
+
+  /**
+   * <p>Represents enhanced metrics types.</p>
+   */
+  @js.native
+  trait EnhancedMetrics extends js.Object {
+    var ShardLevelMetrics: MetricsNameList
+  }
+
+  object EnhancedMetrics {
+    def apply(
+      ShardLevelMetrics: js.UndefOr[MetricsNameList] = js.undefined
+    ): EnhancedMetrics = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("ShardLevelMetrics" -> ShardLevelMetrics.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EnhancedMetrics]
+    }
+  }
+
+  /**
+   * <p>Represents the output for <a>EnableEnhancedMonitoring</a> and <a>DisableEnhancedMonitoring</a>.</p>
+   */
+  @js.native
+  trait EnhancedMonitoringOutput extends js.Object {
+    var StreamName: StreamName
+    var CurrentShardLevelMetrics: MetricsNameList
+    var DesiredShardLevelMetrics: MetricsNameList
+  }
+
+  object EnhancedMonitoringOutput {
+    def apply(
+      StreamName: js.UndefOr[StreamName] = js.undefined,
+      CurrentShardLevelMetrics: js.UndefOr[MetricsNameList] = js.undefined,
+      DesiredShardLevelMetrics: js.UndefOr[MetricsNameList] = js.undefined
+    ): EnhancedMonitoringOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("StreamName" -> StreamName.map { x => x: js.Any }),
+        ("CurrentShardLevelMetrics" -> CurrentShardLevelMetrics.map { x => x: js.Any }),
+        ("DesiredShardLevelMetrics" -> DesiredShardLevelMetrics.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EnhancedMonitoringOutput]
+    }
+  }
+
+  /**
    * <p>The provided iterator exceeds the maximum age allowed.</p>
    */
   @js.native
@@ -186,7 +357,7 @@ package kinesis {
   }
 
   /**
-   * <p>Represents the input for <code>GetRecords</code>.</p>
+   * <p>Represents the input for <a>GetRecords</a>.</p>
    */
   @js.native
   trait GetRecordsInput extends js.Object {
@@ -209,22 +380,25 @@ package kinesis {
   }
 
   /**
-   * <p>Represents the output for <code>GetRecords</code>.</p>
+   * <p>Represents the output for <a>GetRecords</a>.</p>
    */
   @js.native
   trait GetRecordsOutput extends js.Object {
     var Records: RecordList
     var NextShardIterator: ShardIterator
+    var MillisBehindLatest: MillisBehindLatest
   }
 
   object GetRecordsOutput {
     def apply(
       Records: js.UndefOr[RecordList] = js.undefined,
-      NextShardIterator: js.UndefOr[ShardIterator] = js.undefined
+      NextShardIterator: js.UndefOr[ShardIterator] = js.undefined,
+      MillisBehindLatest: js.UndefOr[MillisBehindLatest] = js.undefined
     ): GetRecordsOutput = {
       val _fields = IndexedSeq[(String, js.Any)](
         ("Records" -> Records.map { x => x: js.Any }),
-        ("NextShardIterator" -> NextShardIterator.map { x => x: js.Any })
+        ("NextShardIterator" -> NextShardIterator.map { x => x: js.Any }),
+        ("MillisBehindLatest" -> MillisBehindLatest.map { x => x: js.Any })
       ).filter(_._2 != js.undefined)
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetRecordsOutput]
@@ -236,22 +410,25 @@ package kinesis {
    */
   @js.native
   trait GetShardIteratorInput extends js.Object {
-    var StreamName: StreamName
+    var Timestamp: Timestamp
     var ShardId: ShardId
+    var StreamName: StreamName
     var ShardIteratorType: ShardIteratorType
     var StartingSequenceNumber: SequenceNumber
   }
 
   object GetShardIteratorInput {
     def apply(
-      StreamName: js.UndefOr[StreamName] = js.undefined,
+      Timestamp: js.UndefOr[Timestamp] = js.undefined,
       ShardId: js.UndefOr[ShardId] = js.undefined,
+      StreamName: js.UndefOr[StreamName] = js.undefined,
       ShardIteratorType: js.UndefOr[ShardIteratorType] = js.undefined,
       StartingSequenceNumber: js.UndefOr[SequenceNumber] = js.undefined
     ): GetShardIteratorInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        ("StreamName" -> StreamName.map { x => x: js.Any }),
+        ("Timestamp" -> Timestamp.map { x => x: js.Any }),
         ("ShardId" -> ShardId.map { x => x: js.Any }),
+        ("StreamName" -> StreamName.map { x => x: js.Any }),
         ("ShardIteratorType" -> ShardIteratorType.map { x => x: js.Any }),
         ("StartingSequenceNumber" -> StartingSequenceNumber.map { x => x: js.Any })
       ).filter(_._2 != js.undefined)
@@ -300,6 +477,29 @@ package kinesis {
       ).filter(_._2 != js.undefined)
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[HashKeyRange]
+    }
+  }
+
+  /**
+   * <p>Represents the input for <a>IncreaseStreamRetentionPeriod</a>.</p>
+   */
+  @js.native
+  trait IncreaseStreamRetentionPeriodInput extends js.Object {
+    var StreamName: StreamName
+    var RetentionPeriodHours: PositiveIntegerObject
+  }
+
+  object IncreaseStreamRetentionPeriodInput {
+    def apply(
+      StreamName: js.UndefOr[StreamName] = js.undefined,
+      RetentionPeriodHours: js.UndefOr[PositiveIntegerObject] = js.undefined
+    ): IncreaseStreamRetentionPeriodInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("StreamName" -> StreamName.map { x => x: js.Any }),
+        ("RetentionPeriodHours" -> RetentionPeriodHours.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[IncreaseStreamRetentionPeriodInput]
     }
   }
 
@@ -440,8 +640,22 @@ package kinesis {
     }
   }
 
+
+  object MetricsNameEnum {
+    val IncomingBytes = "IncomingBytes"
+    val IncomingRecords = "IncomingRecords"
+    val OutgoingBytes = "OutgoingBytes"
+    val OutgoingRecords = "OutgoingRecords"
+    val WriteProvisionedThroughputExceeded = "WriteProvisionedThroughputExceeded"
+    val ReadProvisionedThroughputExceeded = "ReadProvisionedThroughputExceeded"
+    val IteratorAgeMilliseconds = "IteratorAgeMilliseconds"
+    val ALL = "ALL"
+
+    val values = IndexedSeq(IncomingBytes, IncomingRecords, OutgoingBytes, OutgoingRecords, WriteProvisionedThroughputExceeded, ReadProvisionedThroughputExceeded, IteratorAgeMilliseconds, ALL)
+  }
+
   /**
-   * <p>The request rate is too high, or the requested data is too large for the available throughput. Reduce the frequency or size of your requests. For more information, see <a href="http://docs.aws.amazon.com/general/latest/gr/api-retries.html" target="_blank">Error Retries and Exponential Backoff in AWS</a> in the <i>AWS General Reference</i>.</p>
+   * <p>The request rate for the stream is too high, or the requested data is too large for the available throughput. Reduce the frequency or size of your requests. For more information, see <a href="http://docs.aws.amazon.com/kinesis/latest/dev/service-sizes-and-limits.html">Streams Limits</a> in the <i>Amazon Kinesis Streams Developer Guide</i>, and <a href="http://docs.aws.amazon.com/general/latest/gr/api-retries.html">Error Retries and Exponential Backoff in AWS</a> in the <i>AWS General Reference</i>.</p>
    */
   @js.native
   trait ProvisionedThroughputExceededExceptionException extends js.Object {
@@ -527,7 +741,7 @@ package kinesis {
   }
 
   /**
-   * <p><code>PutRecords</code> results.</p>
+   * <p> <code>PutRecords</code> results.</p>
    */
   @js.native
   trait PutRecordsOutput extends js.Object {
@@ -576,7 +790,7 @@ package kinesis {
   }
 
   /**
-   * <p>Represents the result of an individual record from a <code>PutRecords</code> request. A record that is successfully added to your Amazon Kinesis stream includes SequenceNumber and ShardId in the result. A record that fails to be added to your Amazon Kinesis stream includes ErrorCode and ErrorMessage in the result.</p>
+   * <p>Represents the result of an individual record from a <code>PutRecords</code> request. A record that is successfully added to a stream includes <code>SequenceNumber</code> and <code>ShardId</code> in the result. A record that fails to be added to the stream includes <code>ErrorCode</code> and <code>ErrorMessage</code> in the result.</p>
    */
   @js.native
   trait PutRecordsResultEntry extends js.Object {
@@ -610,6 +824,7 @@ package kinesis {
   @js.native
   trait Record extends js.Object {
     var SequenceNumber: SequenceNumber
+    var ApproximateArrivalTimestamp: Timestamp
     var Data: Data
     var PartitionKey: PartitionKey
   }
@@ -617,11 +832,13 @@ package kinesis {
   object Record {
     def apply(
       SequenceNumber: js.UndefOr[SequenceNumber] = js.undefined,
+      ApproximateArrivalTimestamp: js.UndefOr[Timestamp] = js.undefined,
       Data: js.UndefOr[Data] = js.undefined,
       PartitionKey: js.UndefOr[PartitionKey] = js.undefined
     ): Record = {
       val _fields = IndexedSeq[(String, js.Any)](
         ("SequenceNumber" -> SequenceNumber.map { x => x: js.Any }),
+        ("ApproximateArrivalTimestamp" -> ApproximateArrivalTimestamp.map { x => x: js.Any }),
         ("Data" -> Data.map { x => x: js.Any }),
         ("PartitionKey" -> PartitionKey.map { x => x: js.Any })
       ).filter(_._2 != js.undefined)
@@ -654,7 +871,7 @@ package kinesis {
   }
 
   /**
-   * <p>The resource is not available for this operation. For example, you attempted to split a shard but the stream is not in the <code>ACTIVE</code> state.</p>
+   * <p>The resource is not available for this operation. For successful operation, the resource needs to be in the <code>ACTIVE</code> state.</p>
    */
   @js.native
   trait ResourceInUseExceptionException extends js.Object {
@@ -662,11 +879,18 @@ package kinesis {
   }
 
   /**
-   * <p>The requested resource could not be found. It might not be specified correctly, or it might not be in the <code>ACTIVE</code> state.</p>
+   * <p>The requested resource could not be found. The stream might not be specified correctly.</p>
    */
   @js.native
   trait ResourceNotFoundExceptionException extends js.Object {
     var message: ErrorMessage
+  }
+
+
+  object ScalingTypeEnum {
+    val `UNIFORM_SCALING` = "UNIFORM_SCALING"
+
+    val values = IndexedSeq(`UNIFORM_SCALING`)
   }
 
   /**
@@ -730,8 +954,9 @@ package kinesis {
     val `AFTER_SEQUENCE_NUMBER` = "AFTER_SEQUENCE_NUMBER"
     val `TRIM_HORIZON` = "TRIM_HORIZON"
     val LATEST = "LATEST"
+    val `AT_TIMESTAMP` = "AT_TIMESTAMP"
 
-    val values = IndexedSeq(`AT_SEQUENCE_NUMBER`, `AFTER_SEQUENCE_NUMBER`, `TRIM_HORIZON`, LATEST)
+    val values = IndexedSeq(`AT_SEQUENCE_NUMBER`, `AFTER_SEQUENCE_NUMBER`, `TRIM_HORIZON`, LATEST, `AT_TIMESTAMP`)
   }
 
   /**
@@ -761,12 +986,15 @@ package kinesis {
   }
 
   /**
-   * <p>Represents the output for <code>DescribeStream</code>.</p>
+   * <p>Represents the output for <a>DescribeStream</a>.</p>
    */
   @js.native
   trait StreamDescription extends js.Object {
     var StreamARN: StreamARN
+    var StreamCreationTimestamp: Timestamp
+    var RetentionPeriodHours: PositiveIntegerObject
     var StreamStatus: StreamStatus
+    var EnhancedMonitoring: EnhancedMonitoringList
     var StreamName: StreamName
     var HasMoreShards: BooleanObject
     var Shards: ShardList
@@ -775,14 +1003,20 @@ package kinesis {
   object StreamDescription {
     def apply(
       StreamARN: js.UndefOr[StreamARN] = js.undefined,
+      StreamCreationTimestamp: js.UndefOr[Timestamp] = js.undefined,
+      RetentionPeriodHours: js.UndefOr[PositiveIntegerObject] = js.undefined,
       StreamStatus: js.UndefOr[StreamStatus] = js.undefined,
+      EnhancedMonitoring: js.UndefOr[EnhancedMonitoringList] = js.undefined,
       StreamName: js.UndefOr[StreamName] = js.undefined,
       HasMoreShards: js.UndefOr[BooleanObject] = js.undefined,
       Shards: js.UndefOr[ShardList] = js.undefined
     ): StreamDescription = {
       val _fields = IndexedSeq[(String, js.Any)](
         ("StreamARN" -> StreamARN.map { x => x: js.Any }),
+        ("StreamCreationTimestamp" -> StreamCreationTimestamp.map { x => x: js.Any }),
+        ("RetentionPeriodHours" -> RetentionPeriodHours.map { x => x: js.Any }),
         ("StreamStatus" -> StreamStatus.map { x => x: js.Any }),
+        ("EnhancedMonitoring" -> EnhancedMonitoring.map { x => x: js.Any }),
         ("StreamName" -> StreamName.map { x => x: js.Any }),
         ("HasMoreShards" -> HasMoreShards.map { x => x: js.Any }),
         ("Shards" -> Shards.map { x => x: js.Any })
@@ -822,6 +1056,52 @@ package kinesis {
       ).filter(_._2 != js.undefined)
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Tag]
+    }
+  }
+
+  @js.native
+  trait UpdateShardCountInput extends js.Object {
+    var StreamName: StreamName
+    var TargetShardCount: PositiveIntegerObject
+    var ScalingType: ScalingType
+  }
+
+  object UpdateShardCountInput {
+    def apply(
+      StreamName: js.UndefOr[StreamName] = js.undefined,
+      TargetShardCount: js.UndefOr[PositiveIntegerObject] = js.undefined,
+      ScalingType: js.UndefOr[ScalingType] = js.undefined
+    ): UpdateShardCountInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("StreamName" -> StreamName.map { x => x: js.Any }),
+        ("TargetShardCount" -> TargetShardCount.map { x => x: js.Any }),
+        ("ScalingType" -> ScalingType.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateShardCountInput]
+    }
+  }
+
+  @js.native
+  trait UpdateShardCountOutput extends js.Object {
+    var StreamName: StreamName
+    var CurrentShardCount: PositiveIntegerObject
+    var TargetShardCount: PositiveIntegerObject
+  }
+
+  object UpdateShardCountOutput {
+    def apply(
+      StreamName: js.UndefOr[StreamName] = js.undefined,
+      CurrentShardCount: js.UndefOr[PositiveIntegerObject] = js.undefined,
+      TargetShardCount: js.UndefOr[PositiveIntegerObject] = js.undefined
+    ): UpdateShardCountOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("StreamName" -> StreamName.map { x => x: js.Any }),
+        ("CurrentShardCount" -> CurrentShardCount.map { x => x: js.Any }),
+        ("TargetShardCount" -> TargetShardCount.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateShardCountOutput]
     }
   }
 }

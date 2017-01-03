@@ -9,8 +9,11 @@ package object sns {
   type DelegatesList = js.Array[delegate]
   type ListOfEndpoints = js.Array[Endpoint]
   type ListOfPlatformApplications = js.Array[PlatformApplication]
+  type ListString = js.Array[String]
   type MapStringToString = js.Dictionary[String]
   type MessageAttributeMap = js.Dictionary[MessageAttributeValue]
+  type PhoneNumber = String
+  type PhoneNumberList = js.Array[PhoneNumber]
   type SubscriptionAttributesMap = js.Dictionary[attributeValue]
   type SubscriptionsList = js.Array[Subscription]
   type TopicAttributesMap = js.Dictionary[attributeValue]
@@ -20,6 +23,7 @@ package object sns {
   type attributeName = String
   type attributeValue = String
   type authenticateOnUnsubscribe = String
+  type boolean = Boolean
   type delegate = String
   type endpoint = String
   type label = String
@@ -41,6 +45,8 @@ package sns {
   trait Sns extends js.Object {
     def addPermission(params: AddPermissionInput, callback: Callback[js.Object]): Unit = js.native
     def addPermission(params: AddPermissionInput): Request[js.Object] = js.native
+    def checkIfPhoneNumberIsOptedOut(params: CheckIfPhoneNumberIsOptedOutInput, callback: Callback[CheckIfPhoneNumberIsOptedOutResponse]): Unit = js.native
+    def checkIfPhoneNumberIsOptedOut(params: CheckIfPhoneNumberIsOptedOutInput): Request[CheckIfPhoneNumberIsOptedOutResponse] = js.native
     def confirmSubscription(params: ConfirmSubscriptionInput, callback: Callback[ConfirmSubscriptionResponse]): Unit = js.native
     def confirmSubscription(params: ConfirmSubscriptionInput): Request[ConfirmSubscriptionResponse] = js.native
     def createPlatformApplication(params: CreatePlatformApplicationInput, callback: Callback[CreatePlatformApplicationResponse]): Unit = js.native
@@ -59,12 +65,16 @@ package sns {
     def getEndpointAttributes(params: GetEndpointAttributesInput): Request[GetEndpointAttributesResponse] = js.native
     def getPlatformApplicationAttributes(params: GetPlatformApplicationAttributesInput, callback: Callback[GetPlatformApplicationAttributesResponse]): Unit = js.native
     def getPlatformApplicationAttributes(params: GetPlatformApplicationAttributesInput): Request[GetPlatformApplicationAttributesResponse] = js.native
+    def getSMSAttributes(params: GetSMSAttributesInput, callback: Callback[GetSMSAttributesResponse]): Unit = js.native
+    def getSMSAttributes(params: GetSMSAttributesInput): Request[GetSMSAttributesResponse] = js.native
     def getSubscriptionAttributes(params: GetSubscriptionAttributesInput, callback: Callback[GetSubscriptionAttributesResponse]): Unit = js.native
     def getSubscriptionAttributes(params: GetSubscriptionAttributesInput): Request[GetSubscriptionAttributesResponse] = js.native
     def getTopicAttributes(params: GetTopicAttributesInput, callback: Callback[GetTopicAttributesResponse]): Unit = js.native
     def getTopicAttributes(params: GetTopicAttributesInput): Request[GetTopicAttributesResponse] = js.native
     def listEndpointsByPlatformApplication(params: ListEndpointsByPlatformApplicationInput, callback: Callback[ListEndpointsByPlatformApplicationResponse]): Unit = js.native
     def listEndpointsByPlatformApplication(params: ListEndpointsByPlatformApplicationInput): Request[ListEndpointsByPlatformApplicationResponse] = js.native
+    def listPhoneNumbersOptedOut(params: ListPhoneNumbersOptedOutInput, callback: Callback[ListPhoneNumbersOptedOutResponse]): Unit = js.native
+    def listPhoneNumbersOptedOut(params: ListPhoneNumbersOptedOutInput): Request[ListPhoneNumbersOptedOutResponse] = js.native
     def listPlatformApplications(params: ListPlatformApplicationsInput, callback: Callback[ListPlatformApplicationsResponse]): Unit = js.native
     def listPlatformApplications(params: ListPlatformApplicationsInput): Request[ListPlatformApplicationsResponse] = js.native
     def listSubscriptions(params: ListSubscriptionsInput, callback: Callback[ListSubscriptionsResponse]): Unit = js.native
@@ -73,6 +83,8 @@ package sns {
     def listSubscriptionsByTopic(params: ListSubscriptionsByTopicInput): Request[ListSubscriptionsByTopicResponse] = js.native
     def listTopics(params: ListTopicsInput, callback: Callback[ListTopicsResponse]): Unit = js.native
     def listTopics(params: ListTopicsInput): Request[ListTopicsResponse] = js.native
+    def optInPhoneNumber(params: OptInPhoneNumberInput, callback: Callback[OptInPhoneNumberResponse]): Unit = js.native
+    def optInPhoneNumber(params: OptInPhoneNumberInput): Request[OptInPhoneNumberResponse] = js.native
     def publish(params: PublishInput, callback: Callback[PublishResponse]): Unit = js.native
     def publish(params: PublishInput): Request[PublishResponse] = js.native
     def removePermission(params: RemovePermissionInput, callback: Callback[js.Object]): Unit = js.native
@@ -81,6 +93,8 @@ package sns {
     def setEndpointAttributes(params: SetEndpointAttributesInput): Request[js.Object] = js.native
     def setPlatformApplicationAttributes(params: SetPlatformApplicationAttributesInput, callback: Callback[js.Object]): Unit = js.native
     def setPlatformApplicationAttributes(params: SetPlatformApplicationAttributesInput): Request[js.Object] = js.native
+    def setSMSAttributes(params: SetSMSAttributesInput, callback: Callback[SetSMSAttributesResponse]): Unit = js.native
+    def setSMSAttributes(params: SetSMSAttributesInput): Request[SetSMSAttributesResponse] = js.native
     def setSubscriptionAttributes(params: SetSubscriptionAttributesInput, callback: Callback[js.Object]): Unit = js.native
     def setSubscriptionAttributes(params: SetSubscriptionAttributesInput): Request[js.Object] = js.native
     def setTopicAttributes(params: SetTopicAttributesInput, callback: Callback[js.Object]): Unit = js.native
@@ -126,7 +140,47 @@ package sns {
   }
 
   /**
-   * Input for ConfirmSubscription action.
+   * <p>The input for the <code>CheckIfPhoneNumberIsOptedOut</code> action.</p>
+   */
+  @js.native
+  trait CheckIfPhoneNumberIsOptedOutInput extends js.Object {
+    var phoneNumber: PhoneNumber
+  }
+
+  object CheckIfPhoneNumberIsOptedOutInput {
+    def apply(
+      phoneNumber: js.UndefOr[PhoneNumber] = js.undefined
+    ): CheckIfPhoneNumberIsOptedOutInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("phoneNumber" -> phoneNumber.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CheckIfPhoneNumberIsOptedOutInput]
+    }
+  }
+
+  /**
+   * <p>The response from the <code>CheckIfPhoneNumberIsOptedOut</code> action.</p>
+   */
+  @js.native
+  trait CheckIfPhoneNumberIsOptedOutResponse extends js.Object {
+    var isOptedOut: boolean
+  }
+
+  object CheckIfPhoneNumberIsOptedOutResponse {
+    def apply(
+      isOptedOut: js.UndefOr[boolean] = js.undefined
+    ): CheckIfPhoneNumberIsOptedOutResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("isOptedOut" -> isOptedOut.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CheckIfPhoneNumberIsOptedOutResponse]
+    }
+  }
+
+  /**
+   * <p>Input for ConfirmSubscription action.</p>
    */
   @js.native
   trait ConfirmSubscriptionInput extends js.Object {
@@ -152,7 +206,7 @@ package sns {
   }
 
   /**
-   * Response for ConfirmSubscriptions action.
+   * <p>Response for ConfirmSubscriptions action.</p>
    */
   @js.native
   trait ConfirmSubscriptionResponse extends js.Object {
@@ -475,6 +529,46 @@ package sns {
   }
 
   /**
+   * <p>The input for the <code>GetSMSAttributes</code> request.</p>
+   */
+  @js.native
+  trait GetSMSAttributesInput extends js.Object {
+    var attributes: ListString
+  }
+
+  object GetSMSAttributesInput {
+    def apply(
+      attributes: js.UndefOr[ListString] = js.undefined
+    ): GetSMSAttributesInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("attributes" -> attributes.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetSMSAttributesInput]
+    }
+  }
+
+  /**
+   * <p>The response from the <code>GetSMSAttributes</code> request.</p>
+   */
+  @js.native
+  trait GetSMSAttributesResponse extends js.Object {
+    var attributes: MapStringToString
+  }
+
+  object GetSMSAttributesResponse {
+    def apply(
+      attributes: js.UndefOr[MapStringToString] = js.undefined
+    ): GetSMSAttributesResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("attributes" -> attributes.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetSMSAttributesResponse]
+    }
+  }
+
+  /**
    * <p>Input for GetSubscriptionAttributes.</p>
    */
   @js.native
@@ -625,6 +719,49 @@ package sns {
   }
 
   /**
+   * <p>The input for the <code>ListPhoneNumbersOptedOut</code> action.</p>
+   */
+  @js.native
+  trait ListPhoneNumbersOptedOutInput extends js.Object {
+    var nextToken: string
+  }
+
+  object ListPhoneNumbersOptedOutInput {
+    def apply(
+      nextToken: js.UndefOr[string] = js.undefined
+    ): ListPhoneNumbersOptedOutInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("nextToken" -> nextToken.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListPhoneNumbersOptedOutInput]
+    }
+  }
+
+  /**
+   * <p>The response from the <code>ListPhoneNumbersOptedOut</code> action.</p>
+   */
+  @js.native
+  trait ListPhoneNumbersOptedOutResponse extends js.Object {
+    var phoneNumbers: PhoneNumberList
+    var nextToken: string
+  }
+
+  object ListPhoneNumbersOptedOutResponse {
+    def apply(
+      phoneNumbers: js.UndefOr[PhoneNumberList] = js.undefined,
+      nextToken: js.UndefOr[string] = js.undefined
+    ): ListPhoneNumbersOptedOutResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("phoneNumbers" -> phoneNumbers.map { x => x: js.Any }),
+        ("nextToken" -> nextToken.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListPhoneNumbersOptedOutResponse]
+    }
+  }
+
+  /**
    * <p>Input for ListPlatformApplications action.</p>
    */
   @js.native
@@ -714,7 +851,7 @@ package sns {
   }
 
   /**
-   * Input for ListSubscriptions action.
+   * <p>Input for ListSubscriptions action.</p>
    */
   @js.native
   trait ListSubscriptionsInput extends js.Object {
@@ -831,6 +968,46 @@ package sns {
   }
 
   /**
+   * <p>Input for the OptInPhoneNumber action.</p>
+   */
+  @js.native
+  trait OptInPhoneNumberInput extends js.Object {
+    var phoneNumber: PhoneNumber
+  }
+
+  object OptInPhoneNumberInput {
+    def apply(
+      phoneNumber: js.UndefOr[PhoneNumber] = js.undefined
+    ): OptInPhoneNumberInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("phoneNumber" -> phoneNumber.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[OptInPhoneNumberInput]
+    }
+  }
+
+  /**
+   * <p>The response for the OptInPhoneNumber action.</p>
+   */
+  @js.native
+  trait OptInPhoneNumberResponse extends js.Object {
+
+  }
+
+  object OptInPhoneNumberResponse {
+    def apply(
+
+    ): OptInPhoneNumberResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[OptInPhoneNumberResponse]
+    }
+  }
+
+  /**
    * <p>Platform application object.</p>
    */
   @js.native
@@ -868,6 +1045,7 @@ package sns {
   trait PublishInput extends js.Object {
     var Subject: subject
     var MessageStructure: messageStructure
+    var PhoneNumber: String
     var MessageAttributes: MessageAttributeMap
     var Message: message
     var TargetArn: String
@@ -878,6 +1056,7 @@ package sns {
     def apply(
       Subject: js.UndefOr[subject] = js.undefined,
       MessageStructure: js.UndefOr[messageStructure] = js.undefined,
+      PhoneNumber: js.UndefOr[String] = js.undefined,
       MessageAttributes: js.UndefOr[MessageAttributeMap] = js.undefined,
       Message: js.UndefOr[message] = js.undefined,
       TargetArn: js.UndefOr[String] = js.undefined,
@@ -886,6 +1065,7 @@ package sns {
       val _fields = IndexedSeq[(String, js.Any)](
         ("Subject" -> Subject.map { x => x: js.Any }),
         ("MessageStructure" -> MessageStructure.map { x => x: js.Any }),
+        ("PhoneNumber" -> PhoneNumber.map { x => x: js.Any }),
         ("MessageAttributes" -> MessageAttributes.map { x => x: js.Any }),
         ("Message" -> Message.map { x => x: js.Any }),
         ("TargetArn" -> TargetArn.map { x => x: js.Any }),
@@ -986,6 +1166,46 @@ package sns {
   }
 
   /**
+   * <p>The input for the SetSMSAttributes action.</p>
+   */
+  @js.native
+  trait SetSMSAttributesInput extends js.Object {
+    var attributes: MapStringToString
+  }
+
+  object SetSMSAttributesInput {
+    def apply(
+      attributes: js.UndefOr[MapStringToString] = js.undefined
+    ): SetSMSAttributesInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("attributes" -> attributes.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SetSMSAttributesInput]
+    }
+  }
+
+  /**
+   * <p>The response for the SetSMSAttributes action.</p>
+   */
+  @js.native
+  trait SetSMSAttributesResponse extends js.Object {
+
+  }
+
+  object SetSMSAttributesResponse {
+    def apply(
+
+    ): SetSMSAttributesResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SetSMSAttributesResponse]
+    }
+  }
+
+  /**
    * <p>Input for SetSubscriptionAttributes action.</p>
    */
   @js.native
@@ -1038,7 +1258,7 @@ package sns {
   }
 
   /**
-   * Input for Subscribe action.
+   * <p>Input for Subscribe action.</p>
    */
   @js.native
   trait SubscribeInput extends js.Object {
@@ -1064,7 +1284,7 @@ package sns {
   }
 
   /**
-   * Response for Subscribe action.
+   * <p>Response for Subscribe action.</p>
    */
   @js.native
   trait SubscribeResponse extends js.Object {
@@ -1120,6 +1340,14 @@ package sns {
    */
   @js.native
   trait SubscriptionLimitExceededExceptionException extends js.Object {
+    var message: string
+  }
+
+  /**
+   * <p>Indicates that the rate at which requests have been submitted for this action exceeds the limit for your account.</p>
+   */
+  @js.native
+  trait ThrottledExceptionException extends js.Object {
     var message: string
   }
 

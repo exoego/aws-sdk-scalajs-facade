@@ -4,21 +4,45 @@ import scalajs._
 import facade.amazonaws._
 
 package object iam {
+  type ActionNameListType = js.Array[ActionNameType]
+  type ActionNameType = String
   type BootstrapDatum = js.Array[Byte]
+  type ColumnNumber = Integer
+  type ContextEntryListType = js.Array[ContextEntry]
+  type ContextKeyNameType = String
+  type ContextKeyNamesResultListType = js.Array[ContextKeyNameType]
+  type ContextKeyTypeEnum = String
+  type ContextKeyValueListType = js.Array[ContextKeyValueType]
+  type ContextKeyValueType = String
   type EntityType = String
+  type EvalDecisionDetailsType = js.Dictionary[PolicyEvaluationDecisionType]
+  type EvalDecisionSourceType = String
+  type EvaluationResultsListType = js.Array[EvaluationResult]
+  type LineNumber = Integer
   type ManagedPolicyDetailListType = js.Array[ManagedPolicyDetail]
   type OpenIDConnectProviderListType = js.Array[OpenIDConnectProviderListEntry]
   type OpenIDConnectProviderUrlType = String
+  type PolicyEvaluationDecisionType = String
   type PolicyGroupListType = js.Array[PolicyGroup]
+  type PolicyIdentifierType = String
   type PolicyRoleListType = js.Array[PolicyRole]
+  type PolicySourceType = String
   type PolicyUserListType = js.Array[PolicyUser]
   type ReportContentType = js.Array[Byte]
   type ReportFormatType = String
   type ReportStateDescriptionType = String
   type ReportStateType = String
+  type ResourceHandlingOptionType = String
+  type ResourceNameListType = js.Array[ResourceNameType]
+  type ResourceNameType = String
+  type ResourceSpecificResultListType = js.Array[ResourceSpecificResult]
   type SAMLMetadataDocumentType = String
   type SAMLProviderListType = js.Array[SAMLProviderListEntry]
   type SAMLProviderNameType = String
+  type SSHPublicKeyListType = js.Array[SSHPublicKeyMetadata]
+  type ServiceSpecificCredentialsListType = js.Array[ServiceSpecificCredentialMetadata]
+  type SimulationPolicyListType = js.Array[policyDocumentType]
+  type StatementListType = js.Array[Statement]
   type accessKeyIdType = String
   type accessKeyMetadataListType = js.Array[AccessKeyMetadata]
   type accessKeySecretType = String
@@ -43,6 +67,8 @@ package object iam {
   type dateType = js.Date
   type deleteConflictMessage = String
   type duplicateCertificateMessage = String
+  type duplicateSSHPublicKeyMessage = String
+  type encodingType = String
   type entityAlreadyExistsMessage = String
   type entityListType = js.Array[EntityType]
   type entityTemporarilyUnmodifiableMessage = String
@@ -57,6 +83,7 @@ package object iam {
   type invalidAuthenticationCodeMessage = String
   type invalidCertificateMessage = String
   type invalidInputMessage = String
+  type invalidPublicKeyMessage = String
   type invalidUserTypeMessage = String
   type keyPairMismatchMessage = String
   type limitExceededMessage = String
@@ -77,6 +104,7 @@ package object iam {
   type policyDetailListType = js.Array[PolicyDetail]
   type policyDocumentType = String
   type policyDocumentVersionListType = js.Array[PolicyVersion]
+  type policyEvaluationErrorMessage = String
   type policyListType = js.Array[Policy]
   type policyNameListType = js.Array[policyNameType]
   type policyNameType = String
@@ -84,6 +112,9 @@ package object iam {
   type policyScopeType = String
   type policyVersionIdType = String
   type privateKeyType = String
+  type publicKeyFingerprintType = String
+  type publicKeyIdType = String
+  type publicKeyMaterialType = String
   type roleDetailListType = js.Array[RoleDetail]
   type roleListType = js.Array[Role]
   type roleNameType = String
@@ -91,12 +122,19 @@ package object iam {
   type serverCertificateMetadataListType = js.Array[ServerCertificateMetadata]
   type serverCertificateNameType = String
   type serviceFailureExceptionMessage = String
+  type serviceName = String
+  type serviceNotSupportedMessage = String
+  type servicePassword = String
+  type serviceSpecificCredentialId = String
+  type serviceUserName = String
   type statusType = String
+  type stringType = String
   type summaryKeyType = String
   type summaryMapType = js.Dictionary[summaryValueType]
   type summaryValueType = Integer
   type thumbprintListType = js.Array[thumbprintType]
   type thumbprintType = String
+  type unrecognizedPublicKeyEncodingMessage = String
   type userDetailListType = js.Array[UserDetail]
   type userListType = js.Array[User]
   type userNameType = String
@@ -141,6 +179,8 @@ package iam {
     def createRole(params: CreateRoleRequest): Request[CreateRoleResponse] = js.native
     def createSAMLProvider(params: CreateSAMLProviderRequest, callback: Callback[CreateSAMLProviderResponse]): Unit = js.native
     def createSAMLProvider(params: CreateSAMLProviderRequest): Request[CreateSAMLProviderResponse] = js.native
+    def createServiceSpecificCredential(params: CreateServiceSpecificCredentialRequest, callback: Callback[CreateServiceSpecificCredentialResponse]): Unit = js.native
+    def createServiceSpecificCredential(params: CreateServiceSpecificCredentialRequest): Request[CreateServiceSpecificCredentialResponse] = js.native
     def createUser(params: CreateUserRequest, callback: Callback[CreateUserResponse]): Unit = js.native
     def createUser(params: CreateUserRequest): Request[CreateUserResponse] = js.native
     def createVirtualMFADevice(params: CreateVirtualMFADeviceRequest, callback: Callback[CreateVirtualMFADeviceResponse]): Unit = js.native
@@ -173,8 +213,12 @@ package iam {
     def deleteRolePolicy(params: DeleteRolePolicyRequest): Request[js.Object] = js.native
     def deleteSAMLProvider(params: DeleteSAMLProviderRequest, callback: Callback[js.Object]): Unit = js.native
     def deleteSAMLProvider(params: DeleteSAMLProviderRequest): Request[js.Object] = js.native
+    def deleteSSHPublicKey(params: DeleteSSHPublicKeyRequest, callback: Callback[js.Object]): Unit = js.native
+    def deleteSSHPublicKey(params: DeleteSSHPublicKeyRequest): Request[js.Object] = js.native
     def deleteServerCertificate(params: DeleteServerCertificateRequest, callback: Callback[js.Object]): Unit = js.native
     def deleteServerCertificate(params: DeleteServerCertificateRequest): Request[js.Object] = js.native
+    def deleteServiceSpecificCredential(params: DeleteServiceSpecificCredentialRequest, callback: Callback[js.Object]): Unit = js.native
+    def deleteServiceSpecificCredential(params: DeleteServiceSpecificCredentialRequest): Request[js.Object] = js.native
     def deleteSigningCertificate(params: DeleteSigningCertificateRequest, callback: Callback[js.Object]): Unit = js.native
     def deleteSigningCertificate(params: DeleteSigningCertificateRequest): Request[js.Object] = js.native
     def deleteUser(params: DeleteUserRequest, callback: Callback[js.Object]): Unit = js.native
@@ -193,12 +237,18 @@ package iam {
     def enableMFADevice(params: EnableMFADeviceRequest): Request[js.Object] = js.native
     def generateCredentialReport(callback: Callback[GenerateCredentialReportResponse]): Unit = js.native
     def generateCredentialReport(): Request[GenerateCredentialReportResponse] = js.native
+    def getAccessKeyLastUsed(params: GetAccessKeyLastUsedRequest, callback: Callback[GetAccessKeyLastUsedResponse]): Unit = js.native
+    def getAccessKeyLastUsed(params: GetAccessKeyLastUsedRequest): Request[GetAccessKeyLastUsedResponse] = js.native
     def getAccountAuthorizationDetails(params: GetAccountAuthorizationDetailsRequest, callback: Callback[GetAccountAuthorizationDetailsResponse]): Unit = js.native
     def getAccountAuthorizationDetails(params: GetAccountAuthorizationDetailsRequest): Request[GetAccountAuthorizationDetailsResponse] = js.native
     def getAccountPasswordPolicy(callback: Callback[GetAccountPasswordPolicyResponse]): Unit = js.native
     def getAccountPasswordPolicy(): Request[GetAccountPasswordPolicyResponse] = js.native
     def getAccountSummary(callback: Callback[GetAccountSummaryResponse]): Unit = js.native
     def getAccountSummary(): Request[GetAccountSummaryResponse] = js.native
+    def getContextKeysForCustomPolicy(params: GetContextKeysForCustomPolicyRequest, callback: Callback[GetContextKeysForPolicyResponse]): Unit = js.native
+    def getContextKeysForCustomPolicy(params: GetContextKeysForCustomPolicyRequest): Request[GetContextKeysForPolicyResponse] = js.native
+    def getContextKeysForPrincipalPolicy(params: GetContextKeysForPrincipalPolicyRequest, callback: Callback[GetContextKeysForPolicyResponse]): Unit = js.native
+    def getContextKeysForPrincipalPolicy(params: GetContextKeysForPrincipalPolicyRequest): Request[GetContextKeysForPolicyResponse] = js.native
     def getCredentialReport(callback: Callback[GetCredentialReportResponse]): Unit = js.native
     def getCredentialReport(): Request[GetCredentialReportResponse] = js.native
     def getGroup(params: GetGroupRequest, callback: Callback[GetGroupResponse]): Unit = js.native
@@ -221,6 +271,8 @@ package iam {
     def getRolePolicy(params: GetRolePolicyRequest): Request[GetRolePolicyResponse] = js.native
     def getSAMLProvider(params: GetSAMLProviderRequest, callback: Callback[GetSAMLProviderResponse]): Unit = js.native
     def getSAMLProvider(params: GetSAMLProviderRequest): Request[GetSAMLProviderResponse] = js.native
+    def getSSHPublicKey(params: GetSSHPublicKeyRequest, callback: Callback[GetSSHPublicKeyResponse]): Unit = js.native
+    def getSSHPublicKey(params: GetSSHPublicKeyRequest): Request[GetSSHPublicKeyResponse] = js.native
     def getServerCertificate(params: GetServerCertificateRequest, callback: Callback[GetServerCertificateResponse]): Unit = js.native
     def getServerCertificate(params: GetServerCertificateRequest): Request[GetServerCertificateResponse] = js.native
     def getUser(params: GetUserRequest, callback: Callback[GetUserResponse]): Unit = js.native
@@ -263,8 +315,12 @@ package iam {
     def listRoles(params: ListRolesRequest): Request[ListRolesResponse] = js.native
     def listSAMLProviders(params: ListSAMLProvidersRequest, callback: Callback[ListSAMLProvidersResponse]): Unit = js.native
     def listSAMLProviders(params: ListSAMLProvidersRequest): Request[ListSAMLProvidersResponse] = js.native
+    def listSSHPublicKeys(params: ListSSHPublicKeysRequest, callback: Callback[ListSSHPublicKeysResponse]): Unit = js.native
+    def listSSHPublicKeys(params: ListSSHPublicKeysRequest): Request[ListSSHPublicKeysResponse] = js.native
     def listServerCertificates(params: ListServerCertificatesRequest, callback: Callback[ListServerCertificatesResponse]): Unit = js.native
     def listServerCertificates(params: ListServerCertificatesRequest): Request[ListServerCertificatesResponse] = js.native
+    def listServiceSpecificCredentials(params: ListServiceSpecificCredentialsRequest, callback: Callback[ListServiceSpecificCredentialsResponse]): Unit = js.native
+    def listServiceSpecificCredentials(params: ListServiceSpecificCredentialsRequest): Request[ListServiceSpecificCredentialsResponse] = js.native
     def listSigningCertificates(params: ListSigningCertificatesRequest, callback: Callback[ListSigningCertificatesResponse]): Unit = js.native
     def listSigningCertificates(params: ListSigningCertificatesRequest): Request[ListSigningCertificatesResponse] = js.native
     def listUserPolicies(params: ListUserPoliciesRequest, callback: Callback[ListUserPoliciesResponse]): Unit = js.native
@@ -285,10 +341,16 @@ package iam {
     def removeRoleFromInstanceProfile(params: RemoveRoleFromInstanceProfileRequest): Request[js.Object] = js.native
     def removeUserFromGroup(params: RemoveUserFromGroupRequest, callback: Callback[js.Object]): Unit = js.native
     def removeUserFromGroup(params: RemoveUserFromGroupRequest): Request[js.Object] = js.native
+    def resetServiceSpecificCredential(params: ResetServiceSpecificCredentialRequest, callback: Callback[ResetServiceSpecificCredentialResponse]): Unit = js.native
+    def resetServiceSpecificCredential(params: ResetServiceSpecificCredentialRequest): Request[ResetServiceSpecificCredentialResponse] = js.native
     def resyncMFADevice(params: ResyncMFADeviceRequest, callback: Callback[js.Object]): Unit = js.native
     def resyncMFADevice(params: ResyncMFADeviceRequest): Request[js.Object] = js.native
     def setDefaultPolicyVersion(params: SetDefaultPolicyVersionRequest, callback: Callback[js.Object]): Unit = js.native
     def setDefaultPolicyVersion(params: SetDefaultPolicyVersionRequest): Request[js.Object] = js.native
+    def simulateCustomPolicy(params: SimulateCustomPolicyRequest, callback: Callback[SimulatePolicyResponse]): Unit = js.native
+    def simulateCustomPolicy(params: SimulateCustomPolicyRequest): Request[SimulatePolicyResponse] = js.native
+    def simulatePrincipalPolicy(params: SimulatePrincipalPolicyRequest, callback: Callback[SimulatePolicyResponse]): Unit = js.native
+    def simulatePrincipalPolicy(params: SimulatePrincipalPolicyRequest): Request[SimulatePolicyResponse] = js.native
     def updateAccessKey(params: UpdateAccessKeyRequest, callback: Callback[js.Object]): Unit = js.native
     def updateAccessKey(params: UpdateAccessKeyRequest): Request[js.Object] = js.native
     def updateAccountPasswordPolicy(params: UpdateAccountPasswordPolicyRequest, callback: Callback[js.Object]): Unit = js.native
@@ -303,12 +365,18 @@ package iam {
     def updateOpenIDConnectProviderThumbprint(params: UpdateOpenIDConnectProviderThumbprintRequest): Request[js.Object] = js.native
     def updateSAMLProvider(params: UpdateSAMLProviderRequest, callback: Callback[UpdateSAMLProviderResponse]): Unit = js.native
     def updateSAMLProvider(params: UpdateSAMLProviderRequest): Request[UpdateSAMLProviderResponse] = js.native
+    def updateSSHPublicKey(params: UpdateSSHPublicKeyRequest, callback: Callback[js.Object]): Unit = js.native
+    def updateSSHPublicKey(params: UpdateSSHPublicKeyRequest): Request[js.Object] = js.native
     def updateServerCertificate(params: UpdateServerCertificateRequest, callback: Callback[js.Object]): Unit = js.native
     def updateServerCertificate(params: UpdateServerCertificateRequest): Request[js.Object] = js.native
+    def updateServiceSpecificCredential(params: UpdateServiceSpecificCredentialRequest, callback: Callback[js.Object]): Unit = js.native
+    def updateServiceSpecificCredential(params: UpdateServiceSpecificCredentialRequest): Request[js.Object] = js.native
     def updateSigningCertificate(params: UpdateSigningCertificateRequest, callback: Callback[js.Object]): Unit = js.native
     def updateSigningCertificate(params: UpdateSigningCertificateRequest): Request[js.Object] = js.native
     def updateUser(params: UpdateUserRequest, callback: Callback[js.Object]): Unit = js.native
     def updateUser(params: UpdateUserRequest): Request[js.Object] = js.native
+    def uploadSSHPublicKey(params: UploadSSHPublicKeyRequest, callback: Callback[UploadSSHPublicKeyResponse]): Unit = js.native
+    def uploadSSHPublicKey(params: UploadSSHPublicKeyRequest): Request[UploadSSHPublicKeyResponse] = js.native
     def uploadServerCertificate(params: UploadServerCertificateRequest, callback: Callback[UploadServerCertificateResponse]): Unit = js.native
     def uploadServerCertificate(params: UploadServerCertificateRequest): Request[UploadServerCertificateResponse] = js.native
     def uploadSigningCertificate(params: UploadSigningCertificateRequest, callback: Callback[UploadSigningCertificateResponse]): Unit = js.native
@@ -316,7 +384,7 @@ package iam {
   }
 
   /**
-   * <p>Contains information about an AWS access key.</p> <p> This data type is used as a response element in the <a>CreateAccessKey</a> and <a>ListAccessKeys</a> actions. </p> <note>The <code>SecretAccessKey</code> value is returned only in response to <a>CreateAccessKey</a>. You can get a secret access key only when you first create an access key; you cannot recover the secret access key later. If you lose a secret access key, you must create a new access key. </note>
+   * <p>Contains information about an AWS access key.</p> <p> This data type is used as a response element in the <a>CreateAccessKey</a> and <a>ListAccessKeys</a> actions. </p> <note> <p>The <code>SecretAccessKey</code> value is returned only in response to <a>CreateAccessKey</a>. You can get a secret access key only when you first create an access key; you cannot recover the secret access key later. If you lose a secret access key, you must create a new access key.</p> </note>
    */
   @js.native
   trait AccessKey extends js.Object {
@@ -344,6 +412,32 @@ package iam {
       ).filter(_._2 != js.undefined)
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AccessKey]
+    }
+  }
+
+  /**
+   * <p>Contains information about the last time an AWS access key was used.</p> <p>This data type is used as a response element in the <a>GetAccessKeyLastUsed</a> action.</p>
+   */
+  @js.native
+  trait AccessKeyLastUsed extends js.Object {
+    var LastUsedDate: dateType
+    var ServiceName: stringType
+    var Region: stringType
+  }
+
+  object AccessKeyLastUsed {
+    def apply(
+      LastUsedDate: js.UndefOr[dateType] = js.undefined,
+      ServiceName: js.UndefOr[stringType] = js.undefined,
+      Region: js.UndefOr[stringType] = js.undefined
+    ): AccessKeyLastUsed = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("LastUsedDate" -> LastUsedDate.map { x => x: js.Any }),
+        ("ServiceName" -> ServiceName.map { x => x: js.Any }),
+        ("Region" -> Region.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AccessKeyLastUsed]
     }
   }
 
@@ -537,6 +631,50 @@ package iam {
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ChangePasswordRequest]
     }
+  }
+
+  /**
+   * <p>Contains information about a condition context key. It includes the name of the key and specifies the value (or values, if the context key supports multiple values) to use in the simulation. This information is used when evaluating the <code>Condition</code> elements of the input policies.</p> <p>This data type is used as an input parameter to <code> <a>SimulateCustomPolicy</a> </code> and <code> <a>SimulateCustomPolicy</a> </code>.</p>
+   */
+  @js.native
+  trait ContextEntry extends js.Object {
+    var ContextKeyName: ContextKeyNameType
+    var ContextKeyValues: ContextKeyValueListType
+    var ContextKeyType: ContextKeyTypeEnum
+  }
+
+  object ContextEntry {
+    def apply(
+      ContextKeyName: js.UndefOr[ContextKeyNameType] = js.undefined,
+      ContextKeyValues: js.UndefOr[ContextKeyValueListType] = js.undefined,
+      ContextKeyType: js.UndefOr[ContextKeyTypeEnum] = js.undefined
+    ): ContextEntry = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("ContextKeyName" -> ContextKeyName.map { x => x: js.Any }),
+        ("ContextKeyValues" -> ContextKeyValues.map { x => x: js.Any }),
+        ("ContextKeyType" -> ContextKeyType.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ContextEntry]
+    }
+  }
+
+
+  object ContextKeyTypeEnumEnum {
+    val string = "string"
+    val stringList = "stringList"
+    val numeric = "numeric"
+    val numericList = "numericList"
+    val boolean = "boolean"
+    val booleanList = "booleanList"
+    val ip = "ip"
+    val ipList = "ipList"
+    val binary = "binary"
+    val binaryList = "binaryList"
+    val date = "date"
+    val dateList = "dateList"
+
+    val values = IndexedSeq(string, stringList, numeric, numericList, boolean, booleanList, ip, ipList, binary, binaryList, date, dateList)
   }
 
   @js.native
@@ -932,6 +1070,43 @@ package iam {
   }
 
   @js.native
+  trait CreateServiceSpecificCredentialRequest extends js.Object {
+    var UserName: userNameType
+    var ServiceName: serviceName
+  }
+
+  object CreateServiceSpecificCredentialRequest {
+    def apply(
+      UserName: js.UndefOr[userNameType] = js.undefined,
+      ServiceName: js.UndefOr[serviceName] = js.undefined
+    ): CreateServiceSpecificCredentialRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("UserName" -> UserName.map { x => x: js.Any }),
+        ("ServiceName" -> ServiceName.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateServiceSpecificCredentialRequest]
+    }
+  }
+
+  @js.native
+  trait CreateServiceSpecificCredentialResponse extends js.Object {
+    var ServiceSpecificCredential: ServiceSpecificCredential
+  }
+
+  object CreateServiceSpecificCredentialResponse {
+    def apply(
+      ServiceSpecificCredential: js.UndefOr[ServiceSpecificCredential] = js.undefined
+    ): CreateServiceSpecificCredentialResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("ServiceSpecificCredential" -> ServiceSpecificCredential.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateServiceSpecificCredentialResponse]
+    }
+  }
+
+  @js.native
   trait CreateUserRequest extends js.Object {
     var Path: pathType
     var UserName: userNameType
@@ -1012,7 +1187,7 @@ package iam {
   }
 
   /**
-   * <p> The request was rejected because the most recent credential report has expired. To generate a new credential report, use <a>GenerateCredentialReport</a>. For more information about credential report expiration, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/credential-reports.html">Getting Credential Reports</a> in the <i>Using IAM</i> guide. </p>
+   * <p>The request was rejected because the most recent credential report has expired. To generate a new credential report, use <a>GenerateCredentialReport</a>. For more information about credential report expiration, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/credential-reports.html">Getting Credential Reports</a> in the <i>IAM User Guide</i>.</p>
    */
   @js.native
   trait CredentialReportExpiredExceptionException extends js.Object {
@@ -1020,7 +1195,7 @@ package iam {
   }
 
   /**
-   * <p> The request was rejected because the credential report does not exist. To generate a credential report, use <a>GenerateCredentialReport</a>. </p>
+   * <p>The request was rejected because the credential report does not exist. To generate a credential report, use <a>GenerateCredentialReport</a>.</p>
    */
   @js.native
   trait CredentialReportNotPresentExceptionException extends js.Object {
@@ -1093,7 +1268,7 @@ package iam {
   }
 
   /**
-   * <p> The request was rejected because it attempted to delete a resource that has attached subordinate entities. The error message describes these entities. </p>
+   * <p>The request was rejected because it attempted to delete a resource that has attached subordinate entities. The error message describes these entities.</p>
    */
   @js.native
   trait DeleteConflictExceptionException extends js.Object {
@@ -1280,6 +1455,26 @@ package iam {
   }
 
   @js.native
+  trait DeleteSSHPublicKeyRequest extends js.Object {
+    var UserName: userNameType
+    var SSHPublicKeyId: publicKeyIdType
+  }
+
+  object DeleteSSHPublicKeyRequest {
+    def apply(
+      UserName: js.UndefOr[userNameType] = js.undefined,
+      SSHPublicKeyId: js.UndefOr[publicKeyIdType] = js.undefined
+    ): DeleteSSHPublicKeyRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("UserName" -> UserName.map { x => x: js.Any }),
+        ("SSHPublicKeyId" -> SSHPublicKeyId.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteSSHPublicKeyRequest]
+    }
+  }
+
+  @js.native
   trait DeleteServerCertificateRequest extends js.Object {
     var ServerCertificateName: serverCertificateNameType
   }
@@ -1293,6 +1488,26 @@ package iam {
       ).filter(_._2 != js.undefined)
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteServerCertificateRequest]
+    }
+  }
+
+  @js.native
+  trait DeleteServiceSpecificCredentialRequest extends js.Object {
+    var UserName: userNameType
+    var ServiceSpecificCredentialId: serviceSpecificCredentialId
+  }
+
+  object DeleteServiceSpecificCredentialRequest {
+    def apply(
+      UserName: js.UndefOr[userNameType] = js.undefined,
+      ServiceSpecificCredentialId: js.UndefOr[serviceSpecificCredentialId] = js.undefined
+    ): DeleteServiceSpecificCredentialRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("UserName" -> UserName.map { x => x: js.Any }),
+        ("ServiceSpecificCredentialId" -> ServiceSpecificCredentialId.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteServiceSpecificCredentialRequest]
     }
   }
 
@@ -1431,11 +1646,19 @@ package iam {
   }
 
   /**
-   * <p> The request was rejected because the same certificate is associated to another user under the account. </p>
+   * <p>The request was rejected because the same certificate is associated with an IAM user in the account.</p>
    */
   @js.native
   trait DuplicateCertificateExceptionException extends js.Object {
     var message: duplicateCertificateMessage
+  }
+
+  /**
+   * <p>The request was rejected because the SSH public key is already associated with the specified IAM user.</p>
+   */
+  @js.native
+  trait DuplicateSSHPublicKeyExceptionException extends js.Object {
+    var message: duplicateSSHPublicKeyMessage
   }
 
   @js.native
@@ -1473,7 +1696,7 @@ package iam {
   }
 
   /**
-   * <p> The request was rejected because it referenced an entity that is temporarily unmodifiable, such as a user name that was deleted and then recreated. The error indicates that the request is likely to succeed if you try again after waiting several minutes. The error message describes the entity. </p>
+   * <p>The request was rejected because it referenced an entity that is temporarily unmodifiable, such as a user name that was deleted and then recreated. The error indicates that the request is likely to succeed if you try again after waiting several minutes. The error message describes the entity.</p>
    */
   @js.native
   trait EntityTemporarilyUnmodifiableExceptionException extends js.Object {
@@ -1489,6 +1712,44 @@ package iam {
     val AWSManagedPolicy = "AWSManagedPolicy"
 
     val values = IndexedSeq(User, Role, Group, LocalManagedPolicy, AWSManagedPolicy)
+  }
+
+  /**
+   * <p>Contains the results of a simulation.</p> <p>This data type is used by the return parameter of <code> <a>SimulateCustomPolicy</a> </code> and <code> <a>SimulatePrincipalPolicy</a> </code>.</p>
+   */
+  @js.native
+  trait EvaluationResult extends js.Object {
+    var EvalActionName: ActionNameType
+    var MissingContextValues: ContextKeyNamesResultListType
+    var EvalResourceName: ResourceNameType
+    var EvalDecision: PolicyEvaluationDecisionType
+    var ResourceSpecificResults: ResourceSpecificResultListType
+    var EvalDecisionDetails: EvalDecisionDetailsType
+    var MatchedStatements: StatementListType
+  }
+
+  object EvaluationResult {
+    def apply(
+      EvalActionName: js.UndefOr[ActionNameType] = js.undefined,
+      MissingContextValues: js.UndefOr[ContextKeyNamesResultListType] = js.undefined,
+      EvalResourceName: js.UndefOr[ResourceNameType] = js.undefined,
+      EvalDecision: js.UndefOr[PolicyEvaluationDecisionType] = js.undefined,
+      ResourceSpecificResults: js.UndefOr[ResourceSpecificResultListType] = js.undefined,
+      EvalDecisionDetails: js.UndefOr[EvalDecisionDetailsType] = js.undefined,
+      MatchedStatements: js.UndefOr[StatementListType] = js.undefined
+    ): EvaluationResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("EvalActionName" -> EvalActionName.map { x => x: js.Any }),
+        ("MissingContextValues" -> MissingContextValues.map { x => x: js.Any }),
+        ("EvalResourceName" -> EvalResourceName.map { x => x: js.Any }),
+        ("EvalDecision" -> EvalDecision.map { x => x: js.Any }),
+        ("ResourceSpecificResults" -> ResourceSpecificResults.map { x => x: js.Any }),
+        ("EvalDecisionDetails" -> EvalDecisionDetails.map { x => x: js.Any }),
+        ("MatchedStatements" -> MatchedStatements.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EvaluationResult]
+    }
   }
 
   /**
@@ -1511,6 +1772,46 @@ package iam {
       ).filter(_._2 != js.undefined)
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GenerateCredentialReportResponse]
+    }
+  }
+
+  @js.native
+  trait GetAccessKeyLastUsedRequest extends js.Object {
+    var AccessKeyId: accessKeyIdType
+  }
+
+  object GetAccessKeyLastUsedRequest {
+    def apply(
+      AccessKeyId: js.UndefOr[accessKeyIdType] = js.undefined
+    ): GetAccessKeyLastUsedRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("AccessKeyId" -> AccessKeyId.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetAccessKeyLastUsedRequest]
+    }
+  }
+
+  /**
+   * <p>Contains the response to a successful <a>GetAccessKeyLastUsed</a> request. It is also returned as a member of the <a>AccessKeyMetaData</a> structure returned by the <a>ListAccessKeys</a> action.</p>
+   */
+  @js.native
+  trait GetAccessKeyLastUsedResponse extends js.Object {
+    var UserName: existingUserNameType
+    var AccessKeyLastUsed: AccessKeyLastUsed
+  }
+
+  object GetAccessKeyLastUsedResponse {
+    def apply(
+      UserName: js.UndefOr[existingUserNameType] = js.undefined,
+      AccessKeyLastUsed: js.UndefOr[AccessKeyLastUsed] = js.undefined
+    ): GetAccessKeyLastUsedResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("UserName" -> UserName.map { x => x: js.Any }),
+        ("AccessKeyLastUsed" -> AccessKeyLastUsed.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetAccessKeyLastUsedResponse]
     }
   }
 
@@ -1609,6 +1910,63 @@ package iam {
       ).filter(_._2 != js.undefined)
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetAccountSummaryResponse]
+    }
+  }
+
+  @js.native
+  trait GetContextKeysForCustomPolicyRequest extends js.Object {
+    var PolicyInputList: SimulationPolicyListType
+  }
+
+  object GetContextKeysForCustomPolicyRequest {
+    def apply(
+      PolicyInputList: js.UndefOr[SimulationPolicyListType] = js.undefined
+    ): GetContextKeysForCustomPolicyRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("PolicyInputList" -> PolicyInputList.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetContextKeysForCustomPolicyRequest]
+    }
+  }
+
+  /**
+   * <p>Contains the response to a successful <a>GetContextKeysForPrincipalPolicy</a> or <a>GetContextKeysForCustomPolicy</a> request. </p>
+   */
+  @js.native
+  trait GetContextKeysForPolicyResponse extends js.Object {
+    var ContextKeyNames: ContextKeyNamesResultListType
+  }
+
+  object GetContextKeysForPolicyResponse {
+    def apply(
+      ContextKeyNames: js.UndefOr[ContextKeyNamesResultListType] = js.undefined
+    ): GetContextKeysForPolicyResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("ContextKeyNames" -> ContextKeyNames.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetContextKeysForPolicyResponse]
+    }
+  }
+
+  @js.native
+  trait GetContextKeysForPrincipalPolicyRequest extends js.Object {
+    var PolicySourceArn: arnType
+    var PolicyInputList: SimulationPolicyListType
+  }
+
+  object GetContextKeysForPrincipalPolicyRequest {
+    def apply(
+      PolicySourceArn: js.UndefOr[arnType] = js.undefined,
+      PolicyInputList: js.UndefOr[SimulationPolicyListType] = js.undefined
+    ): GetContextKeysForPrincipalPolicyRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("PolicySourceArn" -> PolicySourceArn.map { x => x: js.Any }),
+        ("PolicyInputList" -> PolicyInputList.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetContextKeysForPrincipalPolicyRequest]
     }
   }
 
@@ -2060,6 +2418,49 @@ package iam {
   }
 
   @js.native
+  trait GetSSHPublicKeyRequest extends js.Object {
+    var UserName: userNameType
+    var SSHPublicKeyId: publicKeyIdType
+    var Encoding: encodingType
+  }
+
+  object GetSSHPublicKeyRequest {
+    def apply(
+      UserName: js.UndefOr[userNameType] = js.undefined,
+      SSHPublicKeyId: js.UndefOr[publicKeyIdType] = js.undefined,
+      Encoding: js.UndefOr[encodingType] = js.undefined
+    ): GetSSHPublicKeyRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("UserName" -> UserName.map { x => x: js.Any }),
+        ("SSHPublicKeyId" -> SSHPublicKeyId.map { x => x: js.Any }),
+        ("Encoding" -> Encoding.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetSSHPublicKeyRequest]
+    }
+  }
+
+  /**
+   * <p>Contains the response to a successful <a>GetSSHPublicKey</a> request.</p>
+   */
+  @js.native
+  trait GetSSHPublicKeyResponse extends js.Object {
+    var SSHPublicKey: SSHPublicKey
+  }
+
+  object GetSSHPublicKeyResponse {
+    def apply(
+      SSHPublicKey: js.UndefOr[SSHPublicKey] = js.undefined
+    ): GetSSHPublicKeyResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("SSHPublicKey" -> SSHPublicKey.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetSSHPublicKeyResponse]
+    }
+  }
+
+  @js.native
   trait GetServerCertificateRequest extends js.Object {
     var ServerCertificateName: serverCertificateNameType
   }
@@ -2180,7 +2581,7 @@ package iam {
   }
 
   /**
-   * <p>Contains information about an IAM group entity.</p> <p> This data type is used as a response element in the following actions:</p> <ul> <li> <a>CreateGroup</a> </li> <li> <a>GetGroup</a> </li> <li> <a>ListGroups</a> </li> </ul>
+   * <p>Contains information about an IAM group entity.</p> <p>This data type is used as a response element in the following actions:</p> <ul> <li> <p> <a>CreateGroup</a> </p> </li> <li> <p> <a>GetGroup</a> </p> </li> <li> <p> <a>ListGroups</a> </p> </li> </ul>
    */
   @js.native
   trait Group extends js.Object {
@@ -2212,7 +2613,7 @@ package iam {
   }
 
   /**
-   * <p>Contains information about an IAM group, including all of the group's policies. </p> <p>This data type is used as a response element in the <a>GetAccountAuthorizationDetails</a> action.</p>
+   * <p>Contains information about an IAM group, including all of the group's policies.</p> <p>This data type is used as a response element in the <a>GetAccountAuthorizationDetails</a> action.</p>
    */
   @js.native
   trait GroupDetail extends js.Object {
@@ -2285,7 +2686,7 @@ package iam {
   }
 
   /**
-   * <p> The request was rejected because the authentication code was not recognized. The error message describes the specific error. </p>
+   * <p>The request was rejected because the authentication code was not recognized. The error message describes the specific error.</p>
    */
   @js.native
   trait InvalidAuthenticationCodeExceptionException extends js.Object {
@@ -2309,6 +2710,14 @@ package iam {
   }
 
   /**
+   * <p>The request was rejected because the public key is malformed or otherwise invalid.</p>
+   */
+  @js.native
+  trait InvalidPublicKeyExceptionException extends js.Object {
+    var message: invalidPublicKeyMessage
+  }
+
+  /**
    * <p>The request was rejected because the type of user for the transaction was incorrect.</p>
    */
   @js.native
@@ -2325,7 +2734,7 @@ package iam {
   }
 
   /**
-   * <p> The request was rejected because it attempted to create resources beyond the current AWS account limits. The error message describes the limit exceeded. </p>
+   * <p>The request was rejected because it attempted to create resources beyond the current AWS account limits. The error message describes the limit exceeded.</p>
    */
   @js.native
   trait LimitExceededExceptionException extends js.Object {
@@ -3215,6 +3624,55 @@ package iam {
   }
 
   @js.native
+  trait ListSSHPublicKeysRequest extends js.Object {
+    var UserName: userNameType
+    var Marker: markerType
+    var MaxItems: maxItemsType
+  }
+
+  object ListSSHPublicKeysRequest {
+    def apply(
+      UserName: js.UndefOr[userNameType] = js.undefined,
+      Marker: js.UndefOr[markerType] = js.undefined,
+      MaxItems: js.UndefOr[maxItemsType] = js.undefined
+    ): ListSSHPublicKeysRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("UserName" -> UserName.map { x => x: js.Any }),
+        ("Marker" -> Marker.map { x => x: js.Any }),
+        ("MaxItems" -> MaxItems.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListSSHPublicKeysRequest]
+    }
+  }
+
+  /**
+   * <p>Contains the response to a successful <a>ListSSHPublicKeys</a> request.</p>
+   */
+  @js.native
+  trait ListSSHPublicKeysResponse extends js.Object {
+    var SSHPublicKeys: SSHPublicKeyListType
+    var IsTruncated: booleanType
+    var Marker: markerType
+  }
+
+  object ListSSHPublicKeysResponse {
+    def apply(
+      SSHPublicKeys: js.UndefOr[SSHPublicKeyListType] = js.undefined,
+      IsTruncated: js.UndefOr[booleanType] = js.undefined,
+      Marker: js.UndefOr[markerType] = js.undefined
+    ): ListSSHPublicKeysResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("SSHPublicKeys" -> SSHPublicKeys.map { x => x: js.Any }),
+        ("IsTruncated" -> IsTruncated.map { x => x: js.Any }),
+        ("Marker" -> Marker.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListSSHPublicKeysResponse]
+    }
+  }
+
+  @js.native
   trait ListServerCertificatesRequest extends js.Object {
     var PathPrefix: pathPrefixType
     var Marker: markerType
@@ -3260,6 +3718,43 @@ package iam {
       ).filter(_._2 != js.undefined)
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListServerCertificatesResponse]
+    }
+  }
+
+  @js.native
+  trait ListServiceSpecificCredentialsRequest extends js.Object {
+    var UserName: userNameType
+    var ServiceName: serviceName
+  }
+
+  object ListServiceSpecificCredentialsRequest {
+    def apply(
+      UserName: js.UndefOr[userNameType] = js.undefined,
+      ServiceName: js.UndefOr[serviceName] = js.undefined
+    ): ListServiceSpecificCredentialsRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("UserName" -> UserName.map { x => x: js.Any }),
+        ("ServiceName" -> ServiceName.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListServiceSpecificCredentialsRequest]
+    }
+  }
+
+  @js.native
+  trait ListServiceSpecificCredentialsResponse extends js.Object {
+    var ServiceSpecificCredentials: ServiceSpecificCredentialsListType
+  }
+
+  object ListServiceSpecificCredentialsResponse {
+    def apply(
+      ServiceSpecificCredentials: js.UndefOr[ServiceSpecificCredentialsListType] = js.undefined
+    ): ListServiceSpecificCredentialsResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("ServiceSpecificCredentials" -> ServiceSpecificCredentials.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListServiceSpecificCredentialsResponse]
     }
   }
 
@@ -3512,7 +4007,7 @@ package iam {
   }
 
   /**
-   * <p> The request was rejected because the certificate was malformed or expired. The error message describes the specific error. </p>
+   * <p>The request was rejected because the certificate was malformed or expired. The error message describes the specific error.</p>
    */
   @js.native
   trait MalformedCertificateExceptionException extends js.Object {
@@ -3520,7 +4015,7 @@ package iam {
   }
 
   /**
-   * <p> The request was rejected because the policy document was malformed. The error message describes the specific error. </p>
+   * <p>The request was rejected because the policy document was malformed. The error message describes the specific error.</p>
    */
   @js.native
   trait MalformedPolicyDocumentExceptionException extends js.Object {
@@ -3578,7 +4073,7 @@ package iam {
   }
 
   /**
-   * <p> The request was rejected because it referenced an entity that does not exist. The error message describes the entity. </p>
+   * <p>The request was rejected because it referenced an entity that does not exist. The error message describes the entity.</p>
    */
   @js.native
   trait NoSuchEntityExceptionException extends js.Object {
@@ -3653,7 +4148,7 @@ package iam {
   }
 
   /**
-   * <p> The request was rejected because the provided password did not meet the requirements imposed by the account password policy. </p>
+   * <p>The request was rejected because the provided password did not meet the requirements imposed by the account password policy.</p>
    */
   @js.native
   trait PasswordPolicyViolationExceptionException extends js.Object {
@@ -3730,20 +4225,40 @@ package iam {
     }
   }
 
+
+  object PolicyEvaluationDecisionTypeEnum {
+    val allowed = "allowed"
+    val explicitDeny = "explicitDeny"
+    val implicitDeny = "implicitDeny"
+
+    val values = IndexedSeq(allowed, explicitDeny, implicitDeny)
+  }
+
+  /**
+   * <p>The request failed because a provided policy could not be successfully evaluated. An additional detail message indicates the source of the failure.</p>
+   */
+  @js.native
+  trait PolicyEvaluationExceptionException extends js.Object {
+    var message: policyEvaluationErrorMessage
+  }
+
   /**
    * <p>Contains information about a group that a managed policy is attached to.</p> <p>This data type is used as a response element in the <a>ListEntitiesForPolicy</a> action. </p> <p>For more information about managed policies, refer to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed Policies and Inline Policies</a> in the <i>Using IAM</i> guide. </p>
    */
   @js.native
   trait PolicyGroup extends js.Object {
     var GroupName: groupNameType
+    var GroupId: idType
   }
 
   object PolicyGroup {
     def apply(
-      GroupName: js.UndefOr[groupNameType] = js.undefined
+      GroupName: js.UndefOr[groupNameType] = js.undefined,
+      GroupId: js.UndefOr[idType] = js.undefined
     ): PolicyGroup = {
       val _fields = IndexedSeq[(String, js.Any)](
-        ("GroupName" -> GroupName.map { x => x: js.Any })
+        ("GroupName" -> GroupName.map { x => x: js.Any }),
+        ("GroupId" -> GroupId.map { x => x: js.Any })
       ).filter(_._2 != js.undefined)
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PolicyGroup]
@@ -3756,18 +4271,34 @@ package iam {
   @js.native
   trait PolicyRole extends js.Object {
     var RoleName: roleNameType
+    var RoleId: idType
   }
 
   object PolicyRole {
     def apply(
-      RoleName: js.UndefOr[roleNameType] = js.undefined
+      RoleName: js.UndefOr[roleNameType] = js.undefined,
+      RoleId: js.UndefOr[idType] = js.undefined
     ): PolicyRole = {
       val _fields = IndexedSeq[(String, js.Any)](
-        ("RoleName" -> RoleName.map { x => x: js.Any })
+        ("RoleName" -> RoleName.map { x => x: js.Any }),
+        ("RoleId" -> RoleId.map { x => x: js.Any })
       ).filter(_._2 != js.undefined)
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PolicyRole]
     }
+  }
+
+
+  object PolicySourceTypeEnum {
+    val user = "user"
+    val group = "group"
+    val role = "role"
+    val `aws-managed` = "aws-managed"
+    val `user-managed` = "user-managed"
+    val resource = "resource"
+    val none = "none"
+
+    val values = IndexedSeq(user, group, role, `aws-managed`, `user-managed`, resource, none)
   }
 
   /**
@@ -3776,14 +4307,17 @@ package iam {
   @js.native
   trait PolicyUser extends js.Object {
     var UserName: userNameType
+    var UserId: idType
   }
 
   object PolicyUser {
     def apply(
-      UserName: js.UndefOr[userNameType] = js.undefined
+      UserName: js.UndefOr[userNameType] = js.undefined,
+      UserId: js.UndefOr[idType] = js.undefined
     ): PolicyUser = {
       val _fields = IndexedSeq[(String, js.Any)](
-        ("UserName" -> UserName.map { x => x: js.Any })
+        ("UserName" -> UserName.map { x => x: js.Any }),
+        ("UserId" -> UserId.map { x => x: js.Any })
       ).filter(_._2 != js.undefined)
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PolicyUser]
@@ -3816,6 +4350,29 @@ package iam {
       ).filter(_._2 != js.undefined)
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PolicyVersion]
+    }
+  }
+
+  /**
+   * <p>Contains the row and column of a location of a <code>Statement</code> element in a policy document.</p> <p>This data type is used as a member of the <code> <a>Statement</a> </code> type.</p>
+   */
+  @js.native
+  trait Position extends js.Object {
+    var Line: LineNumber
+    var Column: ColumnNumber
+  }
+
+  object Position {
+    def apply(
+      Line: js.UndefOr[LineNumber] = js.undefined,
+      Column: js.UndefOr[ColumnNumber] = js.undefined
+    ): Position = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("Line" -> Line.map { x => x: js.Any }),
+        ("Column" -> Column.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Position]
     }
   }
 
@@ -3965,6 +4522,75 @@ package iam {
   }
 
   @js.native
+  trait ResetServiceSpecificCredentialRequest extends js.Object {
+    var UserName: userNameType
+    var ServiceSpecificCredentialId: serviceSpecificCredentialId
+  }
+
+  object ResetServiceSpecificCredentialRequest {
+    def apply(
+      UserName: js.UndefOr[userNameType] = js.undefined,
+      ServiceSpecificCredentialId: js.UndefOr[serviceSpecificCredentialId] = js.undefined
+    ): ResetServiceSpecificCredentialRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("UserName" -> UserName.map { x => x: js.Any }),
+        ("ServiceSpecificCredentialId" -> ServiceSpecificCredentialId.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ResetServiceSpecificCredentialRequest]
+    }
+  }
+
+  @js.native
+  trait ResetServiceSpecificCredentialResponse extends js.Object {
+    var ServiceSpecificCredential: ServiceSpecificCredential
+  }
+
+  object ResetServiceSpecificCredentialResponse {
+    def apply(
+      ServiceSpecificCredential: js.UndefOr[ServiceSpecificCredential] = js.undefined
+    ): ResetServiceSpecificCredentialResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("ServiceSpecificCredential" -> ServiceSpecificCredential.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ResetServiceSpecificCredentialResponse]
+    }
+  }
+
+  /**
+   * <p>Contains the result of the simulation of a single API action call on a single resource.</p> <p>This data type is used by a member of the <a>EvaluationResult</a> data type.</p>
+   */
+  @js.native
+  trait ResourceSpecificResult extends js.Object {
+    var EvalResourceDecision: PolicyEvaluationDecisionType
+    var MissingContextValues: ContextKeyNamesResultListType
+    var EvalResourceName: ResourceNameType
+    var EvalDecisionDetails: EvalDecisionDetailsType
+    var MatchedStatements: StatementListType
+  }
+
+  object ResourceSpecificResult {
+    def apply(
+      EvalResourceDecision: js.UndefOr[PolicyEvaluationDecisionType] = js.undefined,
+      MissingContextValues: js.UndefOr[ContextKeyNamesResultListType] = js.undefined,
+      EvalResourceName: js.UndefOr[ResourceNameType] = js.undefined,
+      EvalDecisionDetails: js.UndefOr[EvalDecisionDetailsType] = js.undefined,
+      MatchedStatements: js.UndefOr[StatementListType] = js.undefined
+    ): ResourceSpecificResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("EvalResourceDecision" -> EvalResourceDecision.map { x => x: js.Any }),
+        ("MissingContextValues" -> MissingContextValues.map { x => x: js.Any }),
+        ("EvalResourceName" -> EvalResourceName.map { x => x: js.Any }),
+        ("EvalDecisionDetails" -> EvalDecisionDetails.map { x => x: js.Any }),
+        ("MatchedStatements" -> MatchedStatements.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ResourceSpecificResult]
+    }
+  }
+
+  @js.native
   trait ResyncMFADeviceRequest extends js.Object {
     var UserName: existingUserNameType
     var SerialNumber: serialNumberType
@@ -3991,7 +4617,7 @@ package iam {
   }
 
   /**
-   * <p>Contains information about an IAM role.</p> <p> This data type is used as a response element in the following actions:</p> <ul> <li> <p> <a>CreateRole</a> </p> </li> <li> <p> <a>GetRole</a> </p> </li> <li> <p> <a>ListRoles</a> </p> </li> </ul>
+   * <p>Contains information about an IAM role.</p> <p>This data type is used as a response element in the following actions:</p> <ul> <li> <p> <a>CreateRole</a> </p> </li> <li> <p> <a>GetRole</a> </p> </li> <li> <p> <a>ListRoles</a> </p> </li> </ul>
    */
   @js.native
   trait Role extends js.Object {
@@ -4096,6 +4722,70 @@ package iam {
   }
 
   /**
+   * <p>Contains information about an SSH public key.</p> <p>This data type is used as a response element in the <a>GetSSHPublicKey</a> and <a>UploadSSHPublicKey</a> actions. </p>
+   */
+  @js.native
+  trait SSHPublicKey extends js.Object {
+    var UserName: userNameType
+    var SSHPublicKeyBody: publicKeyMaterialType
+    var Fingerprint: publicKeyFingerprintType
+    var UploadDate: dateType
+    var SSHPublicKeyId: publicKeyIdType
+    var Status: statusType
+  }
+
+  object SSHPublicKey {
+    def apply(
+      UserName: js.UndefOr[userNameType] = js.undefined,
+      SSHPublicKeyBody: js.UndefOr[publicKeyMaterialType] = js.undefined,
+      Fingerprint: js.UndefOr[publicKeyFingerprintType] = js.undefined,
+      UploadDate: js.UndefOr[dateType] = js.undefined,
+      SSHPublicKeyId: js.UndefOr[publicKeyIdType] = js.undefined,
+      Status: js.UndefOr[statusType] = js.undefined
+    ): SSHPublicKey = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("UserName" -> UserName.map { x => x: js.Any }),
+        ("SSHPublicKeyBody" -> SSHPublicKeyBody.map { x => x: js.Any }),
+        ("Fingerprint" -> Fingerprint.map { x => x: js.Any }),
+        ("UploadDate" -> UploadDate.map { x => x: js.Any }),
+        ("SSHPublicKeyId" -> SSHPublicKeyId.map { x => x: js.Any }),
+        ("Status" -> Status.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SSHPublicKey]
+    }
+  }
+
+  /**
+   * <p>Contains information about an SSH public key, without the key's body or fingerprint.</p> <p>This data type is used as a response element in the <a>ListSSHPublicKeys</a> action.</p>
+   */
+  @js.native
+  trait SSHPublicKeyMetadata extends js.Object {
+    var UserName: userNameType
+    var SSHPublicKeyId: publicKeyIdType
+    var Status: statusType
+    var UploadDate: dateType
+  }
+
+  object SSHPublicKeyMetadata {
+    def apply(
+      UserName: js.UndefOr[userNameType] = js.undefined,
+      SSHPublicKeyId: js.UndefOr[publicKeyIdType] = js.undefined,
+      Status: js.UndefOr[statusType] = js.undefined,
+      UploadDate: js.UndefOr[dateType] = js.undefined
+    ): SSHPublicKeyMetadata = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("UserName" -> UserName.map { x => x: js.Any }),
+        ("SSHPublicKeyId" -> SSHPublicKeyId.map { x => x: js.Any }),
+        ("Status" -> Status.map { x => x: js.Any }),
+        ("UploadDate" -> UploadDate.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SSHPublicKeyMetadata]
+    }
+  }
+
+  /**
    * <p>Contains information about a server certificate.</p> <p> This data type is used as a response element in the <a>GetServerCertificate</a> action. </p>
    */
   @js.native
@@ -4122,7 +4812,7 @@ package iam {
   }
 
   /**
-   * <p>Contains information about a server certificate without its certificate body, certificate chain, and private key. </p> <p> This data type is used as a response element in the <a>UploadServerCertificate</a> and <a>ListServerCertificates</a> actions. </p>
+   * <p>Contains information about a server certificate without its certificate body, certificate chain, and private key.</p> <p> This data type is used as a response element in the <a>UploadServerCertificate</a> and <a>ListServerCertificates</a> actions. </p>
    */
   @js.native
   trait ServerCertificateMetadata extends js.Object {
@@ -4157,11 +4847,92 @@ package iam {
   }
 
   /**
-   * <p> The request processing has failed because of an unknown error, exception or failure. </p>
+   * <p>The request processing has failed because of an unknown error, exception or failure.</p>
    */
   @js.native
   trait ServiceFailureExceptionException extends js.Object {
     var message: serviceFailureExceptionMessage
+  }
+
+  /**
+   * <p>The specified service does not support service-specific credentials.</p>
+   */
+  @js.native
+  trait ServiceNotSupportedExceptionException extends js.Object {
+    var message: serviceNotSupportedMessage
+  }
+
+  /**
+   * <p>Contains the details of a service specific credential.</p>
+   */
+  @js.native
+  trait ServiceSpecificCredential extends js.Object {
+    var UserName: userNameType
+    var ServiceName: serviceName
+    var ServiceSpecificCredentialId: serviceSpecificCredentialId
+    var ServicePassword: servicePassword
+    var CreateDate: dateType
+    var ServiceUserName: serviceUserName
+    var Status: statusType
+  }
+
+  object ServiceSpecificCredential {
+    def apply(
+      UserName: js.UndefOr[userNameType] = js.undefined,
+      ServiceName: js.UndefOr[serviceName] = js.undefined,
+      ServiceSpecificCredentialId: js.UndefOr[serviceSpecificCredentialId] = js.undefined,
+      ServicePassword: js.UndefOr[servicePassword] = js.undefined,
+      CreateDate: js.UndefOr[dateType] = js.undefined,
+      ServiceUserName: js.UndefOr[serviceUserName] = js.undefined,
+      Status: js.UndefOr[statusType] = js.undefined
+    ): ServiceSpecificCredential = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("UserName" -> UserName.map { x => x: js.Any }),
+        ("ServiceName" -> ServiceName.map { x => x: js.Any }),
+        ("ServiceSpecificCredentialId" -> ServiceSpecificCredentialId.map { x => x: js.Any }),
+        ("ServicePassword" -> ServicePassword.map { x => x: js.Any }),
+        ("CreateDate" -> CreateDate.map { x => x: js.Any }),
+        ("ServiceUserName" -> ServiceUserName.map { x => x: js.Any }),
+        ("Status" -> Status.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ServiceSpecificCredential]
+    }
+  }
+
+  /**
+   * <p>Contains additional details about a service-specific credential.</p>
+   */
+  @js.native
+  trait ServiceSpecificCredentialMetadata extends js.Object {
+    var UserName: userNameType
+    var ServiceName: serviceName
+    var ServiceSpecificCredentialId: serviceSpecificCredentialId
+    var CreateDate: dateType
+    var ServiceUserName: serviceUserName
+    var Status: statusType
+  }
+
+  object ServiceSpecificCredentialMetadata {
+    def apply(
+      UserName: js.UndefOr[userNameType] = js.undefined,
+      ServiceName: js.UndefOr[serviceName] = js.undefined,
+      ServiceSpecificCredentialId: js.UndefOr[serviceSpecificCredentialId] = js.undefined,
+      CreateDate: js.UndefOr[dateType] = js.undefined,
+      ServiceUserName: js.UndefOr[serviceUserName] = js.undefined,
+      Status: js.UndefOr[statusType] = js.undefined
+    ): ServiceSpecificCredentialMetadata = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("UserName" -> UserName.map { x => x: js.Any }),
+        ("ServiceName" -> ServiceName.map { x => x: js.Any }),
+        ("ServiceSpecificCredentialId" -> ServiceSpecificCredentialId.map { x => x: js.Any }),
+        ("CreateDate" -> CreateDate.map { x => x: js.Any }),
+        ("ServiceUserName" -> ServiceUserName.map { x => x: js.Any }),
+        ("Status" -> Status.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ServiceSpecificCredentialMetadata]
+    }
   }
 
   @js.native
@@ -4214,6 +4985,160 @@ package iam {
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SigningCertificate]
     }
+  }
+
+  @js.native
+  trait SimulateCustomPolicyRequest extends js.Object {
+    var ResourceArns: ResourceNameListType
+    var ResourceHandlingOption: ResourceHandlingOptionType
+    var MaxItems: maxItemsType
+    var ResourcePolicy: policyDocumentType
+    var ResourceOwner: ResourceNameType
+    var CallerArn: ResourceNameType
+    var PolicyInputList: SimulationPolicyListType
+    var ActionNames: ActionNameListType
+    var ContextEntries: ContextEntryListType
+    var Marker: markerType
+  }
+
+  object SimulateCustomPolicyRequest {
+    def apply(
+      ResourceArns: js.UndefOr[ResourceNameListType] = js.undefined,
+      ResourceHandlingOption: js.UndefOr[ResourceHandlingOptionType] = js.undefined,
+      MaxItems: js.UndefOr[maxItemsType] = js.undefined,
+      ResourcePolicy: js.UndefOr[policyDocumentType] = js.undefined,
+      ResourceOwner: js.UndefOr[ResourceNameType] = js.undefined,
+      CallerArn: js.UndefOr[ResourceNameType] = js.undefined,
+      PolicyInputList: js.UndefOr[SimulationPolicyListType] = js.undefined,
+      ActionNames: js.UndefOr[ActionNameListType] = js.undefined,
+      ContextEntries: js.UndefOr[ContextEntryListType] = js.undefined,
+      Marker: js.UndefOr[markerType] = js.undefined
+    ): SimulateCustomPolicyRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("ResourceArns" -> ResourceArns.map { x => x: js.Any }),
+        ("ResourceHandlingOption" -> ResourceHandlingOption.map { x => x: js.Any }),
+        ("MaxItems" -> MaxItems.map { x => x: js.Any }),
+        ("ResourcePolicy" -> ResourcePolicy.map { x => x: js.Any }),
+        ("ResourceOwner" -> ResourceOwner.map { x => x: js.Any }),
+        ("CallerArn" -> CallerArn.map { x => x: js.Any }),
+        ("PolicyInputList" -> PolicyInputList.map { x => x: js.Any }),
+        ("ActionNames" -> ActionNames.map { x => x: js.Any }),
+        ("ContextEntries" -> ContextEntries.map { x => x: js.Any }),
+        ("Marker" -> Marker.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SimulateCustomPolicyRequest]
+    }
+  }
+
+  /**
+   * <p>Contains the response to a successful <a>SimulatePrincipalPolicy</a> or <a>SimulateCustomPolicy</a> request.</p>
+   */
+  @js.native
+  trait SimulatePolicyResponse extends js.Object {
+    var EvaluationResults: EvaluationResultsListType
+    var IsTruncated: booleanType
+    var Marker: markerType
+  }
+
+  object SimulatePolicyResponse {
+    def apply(
+      EvaluationResults: js.UndefOr[EvaluationResultsListType] = js.undefined,
+      IsTruncated: js.UndefOr[booleanType] = js.undefined,
+      Marker: js.UndefOr[markerType] = js.undefined
+    ): SimulatePolicyResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("EvaluationResults" -> EvaluationResults.map { x => x: js.Any }),
+        ("IsTruncated" -> IsTruncated.map { x => x: js.Any }),
+        ("Marker" -> Marker.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SimulatePolicyResponse]
+    }
+  }
+
+  @js.native
+  trait SimulatePrincipalPolicyRequest extends js.Object {
+    var ResourceArns: ResourceNameListType
+    var ResourceHandlingOption: ResourceHandlingOptionType
+    var MaxItems: maxItemsType
+    var ResourcePolicy: policyDocumentType
+    var PolicySourceArn: arnType
+    var ResourceOwner: ResourceNameType
+    var CallerArn: ResourceNameType
+    var PolicyInputList: SimulationPolicyListType
+    var ActionNames: ActionNameListType
+    var ContextEntries: ContextEntryListType
+    var Marker: markerType
+  }
+
+  object SimulatePrincipalPolicyRequest {
+    def apply(
+      ResourceArns: js.UndefOr[ResourceNameListType] = js.undefined,
+      ResourceHandlingOption: js.UndefOr[ResourceHandlingOptionType] = js.undefined,
+      MaxItems: js.UndefOr[maxItemsType] = js.undefined,
+      ResourcePolicy: js.UndefOr[policyDocumentType] = js.undefined,
+      PolicySourceArn: js.UndefOr[arnType] = js.undefined,
+      ResourceOwner: js.UndefOr[ResourceNameType] = js.undefined,
+      CallerArn: js.UndefOr[ResourceNameType] = js.undefined,
+      PolicyInputList: js.UndefOr[SimulationPolicyListType] = js.undefined,
+      ActionNames: js.UndefOr[ActionNameListType] = js.undefined,
+      ContextEntries: js.UndefOr[ContextEntryListType] = js.undefined,
+      Marker: js.UndefOr[markerType] = js.undefined
+    ): SimulatePrincipalPolicyRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("ResourceArns" -> ResourceArns.map { x => x: js.Any }),
+        ("ResourceHandlingOption" -> ResourceHandlingOption.map { x => x: js.Any }),
+        ("MaxItems" -> MaxItems.map { x => x: js.Any }),
+        ("ResourcePolicy" -> ResourcePolicy.map { x => x: js.Any }),
+        ("PolicySourceArn" -> PolicySourceArn.map { x => x: js.Any }),
+        ("ResourceOwner" -> ResourceOwner.map { x => x: js.Any }),
+        ("CallerArn" -> CallerArn.map { x => x: js.Any }),
+        ("PolicyInputList" -> PolicyInputList.map { x => x: js.Any }),
+        ("ActionNames" -> ActionNames.map { x => x: js.Any }),
+        ("ContextEntries" -> ContextEntries.map { x => x: js.Any }),
+        ("Marker" -> Marker.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SimulatePrincipalPolicyRequest]
+    }
+  }
+
+  /**
+   * <p>Contains a reference to a <code>Statement</code> element in a policy document that determines the result of the simulation.</p> <p>This data type is used by the <code>MatchedStatements</code> member of the <code> <a>EvaluationResult</a> </code> type.</p>
+   */
+  @js.native
+  trait Statement extends js.Object {
+    var SourcePolicyId: PolicyIdentifierType
+    var SourcePolicyType: PolicySourceType
+    var StartPosition: Position
+    var EndPosition: Position
+  }
+
+  object Statement {
+    def apply(
+      SourcePolicyId: js.UndefOr[PolicyIdentifierType] = js.undefined,
+      SourcePolicyType: js.UndefOr[PolicySourceType] = js.undefined,
+      StartPosition: js.UndefOr[Position] = js.undefined,
+      EndPosition: js.UndefOr[Position] = js.undefined
+    ): Statement = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("SourcePolicyId" -> SourcePolicyId.map { x => x: js.Any }),
+        ("SourcePolicyType" -> SourcePolicyType.map { x => x: js.Any }),
+        ("StartPosition" -> StartPosition.map { x => x: js.Any }),
+        ("EndPosition" -> EndPosition.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Statement]
+    }
+  }
+
+  /**
+   * <p>The request was rejected because the public key encoding format is unsupported or unrecognized.</p>
+   */
+  @js.native
+  trait UnrecognizedPublicKeyEncodingExceptionException extends js.Object {
+    var message: unrecognizedPublicKeyEncodingMessage
   }
 
   @js.native
@@ -4407,6 +5332,29 @@ package iam {
   }
 
   @js.native
+  trait UpdateSSHPublicKeyRequest extends js.Object {
+    var UserName: userNameType
+    var SSHPublicKeyId: publicKeyIdType
+    var Status: statusType
+  }
+
+  object UpdateSSHPublicKeyRequest {
+    def apply(
+      UserName: js.UndefOr[userNameType] = js.undefined,
+      SSHPublicKeyId: js.UndefOr[publicKeyIdType] = js.undefined,
+      Status: js.UndefOr[statusType] = js.undefined
+    ): UpdateSSHPublicKeyRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("UserName" -> UserName.map { x => x: js.Any }),
+        ("SSHPublicKeyId" -> SSHPublicKeyId.map { x => x: js.Any }),
+        ("Status" -> Status.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateSSHPublicKeyRequest]
+    }
+  }
+
+  @js.native
   trait UpdateServerCertificateRequest extends js.Object {
     var ServerCertificateName: serverCertificateNameType
     var NewPath: pathType
@@ -4426,6 +5374,29 @@ package iam {
       ).filter(_._2 != js.undefined)
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateServerCertificateRequest]
+    }
+  }
+
+  @js.native
+  trait UpdateServiceSpecificCredentialRequest extends js.Object {
+    var UserName: userNameType
+    var ServiceSpecificCredentialId: serviceSpecificCredentialId
+    var Status: statusType
+  }
+
+  object UpdateServiceSpecificCredentialRequest {
+    def apply(
+      UserName: js.UndefOr[userNameType] = js.undefined,
+      ServiceSpecificCredentialId: js.UndefOr[serviceSpecificCredentialId] = js.undefined,
+      Status: js.UndefOr[statusType] = js.undefined
+    ): UpdateServiceSpecificCredentialRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("UserName" -> UserName.map { x => x: js.Any }),
+        ("ServiceSpecificCredentialId" -> ServiceSpecificCredentialId.map { x => x: js.Any }),
+        ("Status" -> Status.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateServiceSpecificCredentialRequest]
     }
   }
 
@@ -4472,6 +5443,46 @@ package iam {
       ).filter(_._2 != js.undefined)
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateUserRequest]
+    }
+  }
+
+  @js.native
+  trait UploadSSHPublicKeyRequest extends js.Object {
+    var UserName: userNameType
+    var SSHPublicKeyBody: publicKeyMaterialType
+  }
+
+  object UploadSSHPublicKeyRequest {
+    def apply(
+      UserName: js.UndefOr[userNameType] = js.undefined,
+      SSHPublicKeyBody: js.UndefOr[publicKeyMaterialType] = js.undefined
+    ): UploadSSHPublicKeyRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("UserName" -> UserName.map { x => x: js.Any }),
+        ("SSHPublicKeyBody" -> SSHPublicKeyBody.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UploadSSHPublicKeyRequest]
+    }
+  }
+
+  /**
+   * <p>Contains the response to a successful <a>UploadSSHPublicKey</a> request.</p>
+   */
+  @js.native
+  trait UploadSSHPublicKeyResponse extends js.Object {
+    var SSHPublicKey: SSHPublicKey
+  }
+
+  object UploadSSHPublicKeyResponse {
+    def apply(
+      SSHPublicKey: js.UndefOr[SSHPublicKey] = js.undefined
+    ): UploadSSHPublicKeyResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("SSHPublicKey" -> SSHPublicKey.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UploadSSHPublicKeyResponse]
     }
   }
 
@@ -4565,7 +5576,7 @@ package iam {
   }
 
   /**
-   * <p>Contains information about an IAM user entity.</p> <p> This data type is used as a response element in the following actions:</p> <ul> <li> <p> <a>CreateUser</a> </p> </li> <li> <p> <a>GetUser</a> </p> </li> <li> <p> <a>ListUsers</a> </p> </li> </ul>
+   * <p>Contains information about an IAM user entity.</p> <p>This data type is used as a response element in the following actions:</p> <ul> <li> <p> <a>CreateUser</a> </p> </li> <li> <p> <a>GetUser</a> </p> </li> <li> <p> <a>ListUsers</a> </p> </li> </ul>
    */
   @js.native
   trait User extends js.Object {
@@ -4679,6 +5690,14 @@ package iam {
     val Any = "Any"
 
     val values = IndexedSeq(Assigned, Unassigned, Any)
+  }
+
+
+  object encodingTypeEnum {
+    val SSH = "SSH"
+    val PEM = "PEM"
+
+    val values = IndexedSeq(SSH, PEM)
   }
 
 

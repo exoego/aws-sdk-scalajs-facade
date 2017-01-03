@@ -64,6 +64,11 @@ package object machinelearning {
   type ScoreValuePerLabelMap = js.Dictionary[ScoreValue]
   type SortOrder = String
   type StringType = String
+  type TagKey = String
+  type TagKeyList = js.Array[TagKey]
+  type TagList = js.Array[Tag]
+  type TagValue = String
+  type TaggableResourceType = String
   type TrainingParameters = js.Dictionary[StringType]
   type VariableName = String
   type VariableValue = String
@@ -75,6 +80,8 @@ package object machinelearning {
 package machinelearning {
   @js.native
   trait Machinelearning extends js.Object {
+    def addTags(params: AddTagsInput, callback: Callback[AddTagsOutput]): Unit = js.native
+    def addTags(params: AddTagsInput): Request[AddTagsOutput] = js.native
     def createBatchPrediction(params: CreateBatchPredictionInput, callback: Callback[CreateBatchPredictionOutput]): Unit = js.native
     def createBatchPrediction(params: CreateBatchPredictionInput): Request[CreateBatchPredictionOutput] = js.native
     def createDataSourceFromRDS(params: CreateDataSourceFromRDSInput, callback: Callback[CreateDataSourceFromRDSOutput]): Unit = js.native
@@ -99,6 +106,8 @@ package machinelearning {
     def deleteMLModel(params: DeleteMLModelInput): Request[DeleteMLModelOutput] = js.native
     def deleteRealtimeEndpoint(params: DeleteRealtimeEndpointInput, callback: Callback[DeleteRealtimeEndpointOutput]): Unit = js.native
     def deleteRealtimeEndpoint(params: DeleteRealtimeEndpointInput): Request[DeleteRealtimeEndpointOutput] = js.native
+    def deleteTags(params: DeleteTagsInput, callback: Callback[DeleteTagsOutput]): Unit = js.native
+    def deleteTags(params: DeleteTagsInput): Request[DeleteTagsOutput] = js.native
     def describeBatchPredictions(params: DescribeBatchPredictionsInput, callback: Callback[DescribeBatchPredictionsOutput]): Unit = js.native
     def describeBatchPredictions(params: DescribeBatchPredictionsInput): Request[DescribeBatchPredictionsOutput] = js.native
     def describeDataSources(params: DescribeDataSourcesInput, callback: Callback[DescribeDataSourcesOutput]): Unit = js.native
@@ -107,6 +116,8 @@ package machinelearning {
     def describeEvaluations(params: DescribeEvaluationsInput): Request[DescribeEvaluationsOutput] = js.native
     def describeMLModels(params: DescribeMLModelsInput, callback: Callback[DescribeMLModelsOutput]): Unit = js.native
     def describeMLModels(params: DescribeMLModelsInput): Request[DescribeMLModelsOutput] = js.native
+    def describeTags(params: DescribeTagsInput, callback: Callback[DescribeTagsOutput]): Unit = js.native
+    def describeTags(params: DescribeTagsInput): Request[DescribeTagsOutput] = js.native
     def getBatchPrediction(params: GetBatchPredictionInput, callback: Callback[GetBatchPredictionOutput]): Unit = js.native
     def getBatchPrediction(params: GetBatchPredictionInput): Request[GetBatchPredictionOutput] = js.native
     def getDataSource(params: GetDataSourceInput, callback: Callback[GetDataSourceOutput]): Unit = js.native
@@ -127,8 +138,54 @@ package machinelearning {
     def updateMLModel(params: UpdateMLModelInput): Request[UpdateMLModelOutput] = js.native
   }
 
+  @js.native
+  trait AddTagsInput extends js.Object {
+    var Tags: TagList
+    var ResourceId: EntityId
+    var ResourceType: TaggableResourceType
+  }
+
+  object AddTagsInput {
+    def apply(
+      Tags: js.UndefOr[TagList] = js.undefined,
+      ResourceId: js.UndefOr[EntityId] = js.undefined,
+      ResourceType: js.UndefOr[TaggableResourceType] = js.undefined
+    ): AddTagsInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("Tags" -> Tags.map { x => x: js.Any }),
+        ("ResourceId" -> ResourceId.map { x => x: js.Any }),
+        ("ResourceType" -> ResourceType.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AddTagsInput]
+    }
+  }
+
   /**
-   * <p>The function used to train a <code>MLModel</code>. Training choices supported by Amazon ML include the following:</p> <ul> <li>SGD - Stochastic Gradient Descent.</li> <li>RandomForest - Random forest of decision trees.</li> </ul>
+   * <p>Amazon ML returns the following elements. </p>
+   */
+  @js.native
+  trait AddTagsOutput extends js.Object {
+    var ResourceId: EntityId
+    var ResourceType: TaggableResourceType
+  }
+
+  object AddTagsOutput {
+    def apply(
+      ResourceId: js.UndefOr[EntityId] = js.undefined,
+      ResourceType: js.UndefOr[TaggableResourceType] = js.undefined
+    ): AddTagsOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("ResourceId" -> ResourceId.map { x => x: js.Any }),
+        ("ResourceType" -> ResourceType.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AddTagsOutput]
+    }
+  }
+
+  /**
+   * <p>The function used to train an <code>MLModel</code>. Training choices supported by Amazon ML include the following:</p> <ul> <li> <code>SGD</code> - Stochastic Gradient Descent.</li> <li> <code>RandomForest</code> - Random forest of decision trees.</li> </ul>
    */
   object AlgorithmEnum {
     val sgd = "sgd"
@@ -137,19 +194,24 @@ package machinelearning {
   }
 
   /**
-   * <p> Represents the output of <a>GetBatchPrediction</a> operation.</p> <p> The content consists of the detailed metadata, the status, and the data file information of a <i>Batch Prediction</i>.</p>
+   * <p> Represents the output of a <code>GetBatchPrediction</code> operation.</p> <p> The content consists of the detailed metadata, the status, and the data file information of a <code>Batch Prediction</code>.</p>
    */
   @js.native
   trait BatchPrediction extends js.Object {
     var LastUpdatedAt: EpochTime
     var Name: EntityName
+    var ComputeTime: LongType
+    var StartedAt: EpochTime
     var BatchPredictionDataSourceId: EntityId
     var BatchPredictionId: EntityId
+    var TotalRecordCount: LongType
     var CreatedByIamUser: AwsUserArn
+    var InvalidRecordCount: LongType
     var InputDataLocationS3: S3Url
     var OutputUri: S3Url
     var Message: Message
     var CreatedAt: EpochTime
+    var FinishedAt: EpochTime
     var MLModelId: EntityId
     var Status: EntityStatus
   }
@@ -158,26 +220,36 @@ package machinelearning {
     def apply(
       LastUpdatedAt: js.UndefOr[EpochTime] = js.undefined,
       Name: js.UndefOr[EntityName] = js.undefined,
+      ComputeTime: js.UndefOr[LongType] = js.undefined,
+      StartedAt: js.UndefOr[EpochTime] = js.undefined,
       BatchPredictionDataSourceId: js.UndefOr[EntityId] = js.undefined,
       BatchPredictionId: js.UndefOr[EntityId] = js.undefined,
+      TotalRecordCount: js.UndefOr[LongType] = js.undefined,
       CreatedByIamUser: js.UndefOr[AwsUserArn] = js.undefined,
+      InvalidRecordCount: js.UndefOr[LongType] = js.undefined,
       InputDataLocationS3: js.UndefOr[S3Url] = js.undefined,
       OutputUri: js.UndefOr[S3Url] = js.undefined,
       Message: js.UndefOr[Message] = js.undefined,
       CreatedAt: js.UndefOr[EpochTime] = js.undefined,
+      FinishedAt: js.UndefOr[EpochTime] = js.undefined,
       MLModelId: js.UndefOr[EntityId] = js.undefined,
       Status: js.UndefOr[EntityStatus] = js.undefined
     ): BatchPrediction = {
       val _fields = IndexedSeq[(String, js.Any)](
         ("LastUpdatedAt" -> LastUpdatedAt.map { x => x: js.Any }),
         ("Name" -> Name.map { x => x: js.Any }),
+        ("ComputeTime" -> ComputeTime.map { x => x: js.Any }),
+        ("StartedAt" -> StartedAt.map { x => x: js.Any }),
         ("BatchPredictionDataSourceId" -> BatchPredictionDataSourceId.map { x => x: js.Any }),
         ("BatchPredictionId" -> BatchPredictionId.map { x => x: js.Any }),
+        ("TotalRecordCount" -> TotalRecordCount.map { x => x: js.Any }),
         ("CreatedByIamUser" -> CreatedByIamUser.map { x => x: js.Any }),
+        ("InvalidRecordCount" -> InvalidRecordCount.map { x => x: js.Any }),
         ("InputDataLocationS3" -> InputDataLocationS3.map { x => x: js.Any }),
         ("OutputUri" -> OutputUri.map { x => x: js.Any }),
         ("Message" -> Message.map { x => x: js.Any }),
         ("CreatedAt" -> CreatedAt.map { x => x: js.Any }),
+        ("FinishedAt" -> FinishedAt.map { x => x: js.Any }),
         ("MLModelId" -> MLModelId.map { x => x: js.Any }),
         ("Status" -> Status.map { x => x: js.Any })
       ).filter(_._2 != js.undefined)
@@ -232,7 +304,7 @@ package machinelearning {
   }
 
   /**
-   * <p> Represents the output of a <a>CreateBatchPrediction</a> operation, and is an acknowledgement that Amazon ML received the request.</p> <p>The <a>CreateBatchPrediction</a> operation is asynchronous. You can poll for status updates by using the <a>GetBatchPrediction</a> operation and checking the <code>Status</code> parameter of the result. </p>
+   * <p> Represents the output of a <code>CreateBatchPrediction</code> operation, and is an acknowledgement that Amazon ML received the request.</p> <p>The <code>CreateBatchPrediction</code> operation is asynchronous. You can poll for status updates by using the <code>&gt;GetBatchPrediction</code> operation and checking the <code>Status</code> parameter of the result. </p>
    */
   @js.native
   trait CreateBatchPredictionOutput extends js.Object {
@@ -281,7 +353,7 @@ package machinelearning {
   }
 
   /**
-   * <p> Represents the output of a <a>CreateDataSourceFromRDS</a> operation, and is an acknowledgement that Amazon ML received the request.</p> <p>The <a>CreateDataSourceFromRDS</a> operation is asynchronous. You can poll for updates by using the <a>GetBatchPrediction</a> operation and checking the <code>Status</code> parameter. You can inspect the <code>Message</code> when <code>Status</code> shows up as <code>FAILED</code>. You can also check the progress of the copy operation by going to the <code>DataPipeline</code> console and looking up the pipeline using the pipelineId from the describe call.</p>
+   * <p> Represents the output of a <code>CreateDataSourceFromRDS</code> operation, and is an acknowledgement that Amazon ML received the request.</p> <p>The <code>CreateDataSourceFromRDS</code>&gt; operation is asynchronous. You can poll for updates by using the <code>GetBatchPrediction</code> operation and checking the <code>Status</code> parameter. You can inspect the <code>Message</code> when <code>Status</code> shows up as <code>FAILED</code>. You can also check the progress of the copy operation by going to the <code>DataPipeline</code> console and looking up the pipeline using the <code>pipelineId </code> from the describe call.</p>
    */
   @js.native
   trait CreateDataSourceFromRDSOutput extends js.Object {
@@ -330,7 +402,7 @@ package machinelearning {
   }
 
   /**
-   * <p> Represents the output of a <a>CreateDataSourceFromRedshift</a> operation, and is an acknowledgement that Amazon ML received the request.</p> <p>The <a>CreateDataSourceFromRedshift</a> operation is asynchronous. You can poll for updates by using the <a>GetBatchPrediction</a> operation and checking the <code>Status</code> parameter. </p>
+   * <p> Represents the output of a <code>CreateDataSourceFromRedshift</code> operation, and is an acknowledgement that Amazon ML received the request.</p> <p>The <code>CreateDataSourceFromRedshift</code> operation is asynchronous. You can poll for updates by using the <code>GetBatchPrediction</code> operation and checking the <code>Status</code> parameter. </p>
    */
   @js.native
   trait CreateDataSourceFromRedshiftOutput extends js.Object {
@@ -376,7 +448,7 @@ package machinelearning {
   }
 
   /**
-   * <p> Represents the output of a <a>CreateDataSourceFromS3</a> operation, and is an acknowledgement that Amazon ML received the request.</p> <p>The <a>CreateDataSourceFromS3</a> operation is asynchronous. You can poll for updates by using the <a>GetBatchPrediction</a> operation and checking the <code>Status</code> parameter. </p>
+   * <p> Represents the output of a <code>CreateDataSourceFromS3</code> operation, and is an acknowledgement that Amazon ML received the request.</p> <p>The <code>CreateDataSourceFromS3</code> operation is asynchronous. You can poll for updates by using the <code>GetBatchPrediction</code> operation and checking the <code>Status</code> parameter. </p>
    */
   @js.native
   trait CreateDataSourceFromS3Output extends js.Object {
@@ -422,7 +494,7 @@ package machinelearning {
   }
 
   /**
-   * <p> Represents the output of a <a>CreateEvaluation</a> operation, and is an acknowledgement that Amazon ML received the request.</p> <p><a>CreateEvaluation</a> operation is asynchronous. You can poll for status updates by using the <a>GetEvaluation</a> operation and checking the <code>Status</code> parameter. </p>
+   * <p> Represents the output of a <code>CreateEvaluation</code> operation, and is an acknowledgement that Amazon ML received the request.</p> <p><code>CreateEvaluation</code> operation is asynchronous. You can poll for status updates by using the <code>GetEvcaluation</code> operation and checking the <code>Status</code> parameter. </p>
    */
   @js.native
   trait CreateEvaluationOutput extends js.Object {
@@ -477,7 +549,7 @@ package machinelearning {
   }
 
   /**
-   * <p> Represents the output of a <a>CreateMLModel</a> operation, and is an acknowledgement that Amazon ML received the request.</p> <p>The <a>CreateMLModel</a> operation is asynchronous. You can poll for status updates by using the <a>GetMLModel</a> operation and checking the <code>Status</code> parameter. </p>
+   * <p> Represents the output of a <code>CreateMLModel</code> operation, and is an acknowledgement that Amazon ML received the request.</p> <p>The <code>CreateMLModel</code> operation is asynchronous. You can poll for status updates by using the <code>GetMLModel</code> operation and checking the <code>Status</code> parameter. </p>
    */
   @js.native
   trait CreateMLModelOutput extends js.Object {
@@ -514,7 +586,7 @@ package machinelearning {
   }
 
   /**
-   * <p>Represents the output of an <a>CreateRealtimeEndpoint</a> operation.</p> <p>The result contains the <code>MLModelId</code> and the endpoint information for the <code>MLModel</code>.</p> <note> <p>The endpoint information includes the URI of the <code>MLModel</code>; that is, the location to send online prediction requests for the specified <code>MLModel</code>.</p> </note>
+   * <p>Represents the output of an <code>CreateRealtimeEndpoint</code> operation.</p> <p>The result contains the <code>MLModelId</code> and the endpoint information for the <code>MLModel</code>.</p> <note> <p>The endpoint information includes the URI of the <code>MLModel</code>; that is, the location to send online prediction requests for the specified <code>MLModel</code>.</p> </note>
    */
   @js.native
   trait CreateRealtimeEndpointOutput extends js.Object {
@@ -537,7 +609,7 @@ package machinelearning {
   }
 
   /**
-   * <p> Represents the output of the <a>GetDataSource</a> operation. </p> <p> The content consists of the detailed metadata and data file information and the current status of the <code>DataSource</code>. </p>
+   * <p> Represents the output of the <code>GetDataSource</code> operation. </p> <p> The content consists of the detailed metadata and data file information and the current status of the <code>DataSource</code>. </p>
    */
   @js.native
   trait DataSource extends js.Object {
@@ -545,7 +617,9 @@ package machinelearning {
     var LastUpdatedAt: EpochTime
     var Name: EntityName
     var RDSMetadata: RDSMetadata
+    var ComputeTime: LongType
     var ComputeStatistics: ComputeStatistics
+    var StartedAt: EpochTime
     var DataSizeInBytes: LongType
     var NumberOfFiles: LongType
     var CreatedByIamUser: AwsUserArn
@@ -554,6 +628,7 @@ package machinelearning {
     var Message: Message
     var CreatedAt: EpochTime
     var DataSourceId: EntityId
+    var FinishedAt: EpochTime
     var DataLocationS3: S3Url
     var Status: EntityStatus
   }
@@ -564,7 +639,9 @@ package machinelearning {
       LastUpdatedAt: js.UndefOr[EpochTime] = js.undefined,
       Name: js.UndefOr[EntityName] = js.undefined,
       RDSMetadata: js.UndefOr[RDSMetadata] = js.undefined,
+      ComputeTime: js.UndefOr[LongType] = js.undefined,
       ComputeStatistics: js.UndefOr[ComputeStatistics] = js.undefined,
+      StartedAt: js.UndefOr[EpochTime] = js.undefined,
       DataSizeInBytes: js.UndefOr[LongType] = js.undefined,
       NumberOfFiles: js.UndefOr[LongType] = js.undefined,
       CreatedByIamUser: js.UndefOr[AwsUserArn] = js.undefined,
@@ -573,6 +650,7 @@ package machinelearning {
       Message: js.UndefOr[Message] = js.undefined,
       CreatedAt: js.UndefOr[EpochTime] = js.undefined,
       DataSourceId: js.UndefOr[EntityId] = js.undefined,
+      FinishedAt: js.UndefOr[EpochTime] = js.undefined,
       DataLocationS3: js.UndefOr[S3Url] = js.undefined,
       Status: js.UndefOr[EntityStatus] = js.undefined
     ): DataSource = {
@@ -581,7 +659,9 @@ package machinelearning {
         ("LastUpdatedAt" -> LastUpdatedAt.map { x => x: js.Any }),
         ("Name" -> Name.map { x => x: js.Any }),
         ("RDSMetadata" -> RDSMetadata.map { x => x: js.Any }),
+        ("ComputeTime" -> ComputeTime.map { x => x: js.Any }),
         ("ComputeStatistics" -> ComputeStatistics.map { x => x: js.Any }),
+        ("StartedAt" -> StartedAt.map { x => x: js.Any }),
         ("DataSizeInBytes" -> DataSizeInBytes.map { x => x: js.Any }),
         ("NumberOfFiles" -> NumberOfFiles.map { x => x: js.Any }),
         ("CreatedByIamUser" -> CreatedByIamUser.map { x => x: js.Any }),
@@ -590,6 +670,7 @@ package machinelearning {
         ("Message" -> Message.map { x => x: js.Any }),
         ("CreatedAt" -> CreatedAt.map { x => x: js.Any }),
         ("DataSourceId" -> DataSourceId.map { x => x: js.Any }),
+        ("FinishedAt" -> FinishedAt.map { x => x: js.Any }),
         ("DataLocationS3" -> DataLocationS3.map { x => x: js.Any }),
         ("Status" -> Status.map { x => x: js.Any })
       ).filter(_._2 != js.undefined)
@@ -630,7 +711,7 @@ package machinelearning {
   }
 
   /**
-   * <p> Represents the output of a <a>DeleteBatchPrediction</a> operation.</p> <p>You can use the <a>GetBatchPrediction</a> operation and check the value of the <code>Status</code> parameter to see whether a <code>BatchPrediction</code> is marked as <code>DELETED</code>.</p>
+   * <p> Represents the output of a <code>DeleteBatchPrediction</code> operation.</p> <p>You can use the <code>GetBatchPrediction</code> operation and check the value of the <code>Status</code> parameter to see whether a <code>BatchPrediction</code> is marked as <code>DELETED</code>.</p>
    */
   @js.native
   trait DeleteBatchPredictionOutput extends js.Object {
@@ -667,7 +748,7 @@ package machinelearning {
   }
 
   /**
-   * <p> Represents the output of a <a>DeleteDataSource</a> operation.</p>
+   * <p> Represents the output of a <code>DeleteDataSource</code> operation.</p>
    */
   @js.native
   trait DeleteDataSourceOutput extends js.Object {
@@ -704,7 +785,7 @@ package machinelearning {
   }
 
   /**
-   * <p> Represents the output of a <a>DeleteEvaluation</a> operation. The output indicates that Amazon Machine Learning (Amazon ML) received the request.</p> <p>You can use the <a>GetEvaluation</a> operation and check the value of the <code>Status</code> parameter to see whether an <code>Evaluation</code> is marked as <code>DELETED</code>.</p>
+   * <p> Represents the output of a <code>DeleteEvaluation</code> operation. The output indicates that Amazon Machine Learning (Amazon ML) received the request.</p> <p>You can use the <code>GetEvaluation</code> operation and check the value of the <code>Status</code> parameter to see whether an <code>Evaluation</code> is marked as <code>DELETED</code>.</p>
    */
   @js.native
   trait DeleteEvaluationOutput extends js.Object {
@@ -741,7 +822,7 @@ package machinelearning {
   }
 
   /**
-   * <p>Represents the output of a <a>DeleteMLModel</a> operation.</p> <p>You can use the <a>GetMLModel</a> operation and check the value of the <code>Status</code> parameter to see whether an <code>MLModel</code> is marked as <code>DELETED</code>.</p>
+   * <p>Represents the output of a <code>DeleteMLModel</code> operation.</p> <p>You can use the <code>GetMLModel</code> operation and check the value of the <code>Status</code> parameter to see whether an <code>MLModel</code> is marked as <code>DELETED</code>.</p>
    */
   @js.native
   trait DeleteMLModelOutput extends js.Object {
@@ -778,7 +859,7 @@ package machinelearning {
   }
 
   /**
-   * <p>Represents the output of an <a>DeleteRealtimeEndpoint</a> operation.</p> <p>The result contains the <code>MLModelId</code> and the endpoint information for the <code>MLModel</code>. </p>
+   * <p>Represents the output of an <code>DeleteRealtimeEndpoint</code> operation.</p> <p>The result contains the <code>MLModelId</code> and the endpoint information for the <code>MLModel</code>. </p>
    */
   @js.native
   trait DeleteRealtimeEndpointOutput extends js.Object {
@@ -797,6 +878,52 @@ package machinelearning {
       ).filter(_._2 != js.undefined)
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteRealtimeEndpointOutput]
+    }
+  }
+
+  @js.native
+  trait DeleteTagsInput extends js.Object {
+    var TagKeys: TagKeyList
+    var ResourceId: EntityId
+    var ResourceType: TaggableResourceType
+  }
+
+  object DeleteTagsInput {
+    def apply(
+      TagKeys: js.UndefOr[TagKeyList] = js.undefined,
+      ResourceId: js.UndefOr[EntityId] = js.undefined,
+      ResourceType: js.UndefOr[TaggableResourceType] = js.undefined
+    ): DeleteTagsInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("TagKeys" -> TagKeys.map { x => x: js.Any }),
+        ("ResourceId" -> ResourceId.map { x => x: js.Any }),
+        ("ResourceType" -> ResourceType.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteTagsInput]
+    }
+  }
+
+  /**
+   * <p>Amazon ML returns the following elements. </p>
+   */
+  @js.native
+  trait DeleteTagsOutput extends js.Object {
+    var ResourceId: EntityId
+    var ResourceType: TaggableResourceType
+  }
+
+  object DeleteTagsOutput {
+    def apply(
+      ResourceId: js.UndefOr[EntityId] = js.undefined,
+      ResourceType: js.UndefOr[TaggableResourceType] = js.undefined
+    ): DeleteTagsOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("ResourceId" -> ResourceId.map { x => x: js.Any }),
+        ("ResourceType" -> ResourceType.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteTagsOutput]
     }
   }
 
@@ -848,7 +975,7 @@ package machinelearning {
   }
 
   /**
-   * <p>Represents the output of a <a>DescribeBatchPredictions</a> operation. The content is essentially a list of <code>BatchPrediction</code>s.</p>
+   * <p>Represents the output of a <code>DescribeBatchPredictions</code> operation. The content is essentially a list of <code>BatchPrediction</code>s.</p>
    */
   @js.native
   trait DescribeBatchPredictionsOutput extends js.Object {
@@ -988,7 +1115,7 @@ package machinelearning {
   }
 
   /**
-   * <p>Represents the query results from a <a>DescribeEvaluations</a> operation. The content is essentially a list of <code>Evaluation</code>.</p>
+   * <p>Represents the query results from a <code>DescribeEvaluations</code> operation. The content is essentially a list of <code>Evaluation</code>.</p>
    */
   @js.native
   trait DescribeEvaluationsOutput extends js.Object {
@@ -1058,7 +1185,7 @@ package machinelearning {
   }
 
   /**
-   * <p>Represents the output of a <a>DescribeMLModels</a> operation. The content is essentially a list of <code>MLModel</code>.</p>
+   * <p>Represents the output of a <code>DescribeMLModels</code> operation. The content is essentially a list of <code>MLModel</code>.</p>
    */
   @js.native
   trait DescribeMLModelsOutput extends js.Object {
@@ -1080,8 +1207,54 @@ package machinelearning {
     }
   }
 
+  @js.native
+  trait DescribeTagsInput extends js.Object {
+    var ResourceId: EntityId
+    var ResourceType: TaggableResourceType
+  }
+
+  object DescribeTagsInput {
+    def apply(
+      ResourceId: js.UndefOr[EntityId] = js.undefined,
+      ResourceType: js.UndefOr[TaggableResourceType] = js.undefined
+    ): DescribeTagsInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("ResourceId" -> ResourceId.map { x => x: js.Any }),
+        ("ResourceType" -> ResourceType.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeTagsInput]
+    }
+  }
+
   /**
-   * Contains the key values of <code>DetailsMap</code>: PredictiveModelType - Indicates the type of the <code>MLModel</code>. Algorithm - Indicates the algorithm was used for the <code>MLModel</code>.
+   * <p>Amazon ML returns the following elements. </p>
+   */
+  @js.native
+  trait DescribeTagsOutput extends js.Object {
+    var ResourceId: EntityId
+    var ResourceType: TaggableResourceType
+    var Tags: TagList
+  }
+
+  object DescribeTagsOutput {
+    def apply(
+      ResourceId: js.UndefOr[EntityId] = js.undefined,
+      ResourceType: js.UndefOr[TaggableResourceType] = js.undefined,
+      Tags: js.UndefOr[TagList] = js.undefined
+    ): DescribeTagsOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("ResourceId" -> ResourceId.map { x => x: js.Any }),
+        ("ResourceType" -> ResourceType.map { x => x: js.Any }),
+        ("Tags" -> Tags.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeTagsOutput]
+    }
+  }
+
+  /**
+   * Contains the key values of <code>DetailsMap</code>: <code>PredictiveModelType</code> - Indicates the type of the <code>MLModel</code>. <code>Algorithm</code> - Indicates the algorithm that was used for the <code>MLModel</code>.
    */
   object DetailsAttributesEnum {
     val PredictiveModelType = "PredictiveModelType"
@@ -1091,7 +1264,7 @@ package machinelearning {
   }
 
   /**
-   * <p>Entity status with the following possible values:</p> <ul> <li>PENDING</li> <li>INPROGRESS</li> <li>FAILED</li> <li>COMPLETED</li> <li>DELETED</li> </ul>
+   * <p>Object status with the following possible values:</p> <ul> <li><code>PENDING</code></li> <li><code>INPROGRESS</code></li> <li><code>FAILED</code></li> <li><code>COMPLETED</code></li> <li><code>DELETED</code></li> </ul>
    */
   object EntityStatusEnum {
     val PENDING = "PENDING"
@@ -1104,18 +1277,21 @@ package machinelearning {
   }
 
   /**
-   * <p> Represents the output of <a>GetEvaluation</a> operation. </p> <p>The content consists of the detailed metadata and data file information and the current status of the <code>Evaluation</code>.</p>
+   * <p> Represents the output of <code>GetEvaluation</code> operation. </p> <p>The content consists of the detailed metadata and data file information and the current status of the <code>Evaluation</code>.</p>
    */
   @js.native
   trait Evaluation extends js.Object {
     var LastUpdatedAt: EpochTime
     var Name: EntityName
     var PerformanceMetrics: PerformanceMetrics
+    var ComputeTime: LongType
+    var StartedAt: EpochTime
     var CreatedByIamUser: AwsUserArn
     var EvaluationId: EntityId
     var InputDataLocationS3: S3Url
     var Message: Message
     var CreatedAt: EpochTime
+    var FinishedAt: EpochTime
     var MLModelId: EntityId
     var EvaluationDataSourceId: EntityId
     var Status: EntityStatus
@@ -1126,11 +1302,14 @@ package machinelearning {
       LastUpdatedAt: js.UndefOr[EpochTime] = js.undefined,
       Name: js.UndefOr[EntityName] = js.undefined,
       PerformanceMetrics: js.UndefOr[PerformanceMetrics] = js.undefined,
+      ComputeTime: js.UndefOr[LongType] = js.undefined,
+      StartedAt: js.UndefOr[EpochTime] = js.undefined,
       CreatedByIamUser: js.UndefOr[AwsUserArn] = js.undefined,
       EvaluationId: js.UndefOr[EntityId] = js.undefined,
       InputDataLocationS3: js.UndefOr[S3Url] = js.undefined,
       Message: js.UndefOr[Message] = js.undefined,
       CreatedAt: js.UndefOr[EpochTime] = js.undefined,
+      FinishedAt: js.UndefOr[EpochTime] = js.undefined,
       MLModelId: js.UndefOr[EntityId] = js.undefined,
       EvaluationDataSourceId: js.UndefOr[EntityId] = js.undefined,
       Status: js.UndefOr[EntityStatus] = js.undefined
@@ -1139,11 +1318,14 @@ package machinelearning {
         ("LastUpdatedAt" -> LastUpdatedAt.map { x => x: js.Any }),
         ("Name" -> Name.map { x => x: js.Any }),
         ("PerformanceMetrics" -> PerformanceMetrics.map { x => x: js.Any }),
+        ("ComputeTime" -> ComputeTime.map { x => x: js.Any }),
+        ("StartedAt" -> StartedAt.map { x => x: js.Any }),
         ("CreatedByIamUser" -> CreatedByIamUser.map { x => x: js.Any }),
         ("EvaluationId" -> EvaluationId.map { x => x: js.Any }),
         ("InputDataLocationS3" -> InputDataLocationS3.map { x => x: js.Any }),
         ("Message" -> Message.map { x => x: js.Any }),
         ("CreatedAt" -> CreatedAt.map { x => x: js.Any }),
+        ("FinishedAt" -> FinishedAt.map { x => x: js.Any }),
         ("MLModelId" -> MLModelId.map { x => x: js.Any }),
         ("EvaluationDataSourceId" -> EvaluationDataSourceId.map { x => x: js.Any }),
         ("Status" -> Status.map { x => x: js.Any })
@@ -1187,20 +1369,25 @@ package machinelearning {
   }
 
   /**
-   * <p>Represents the output of a <a>GetBatchPrediction</a> operation and describes a <code>BatchPrediction</code>.</p>
+   * <p>Represents the output of a <code>GetBatchPrediction</code> operation and describes a <code>BatchPrediction</code>.</p>
    */
   @js.native
   trait GetBatchPredictionOutput extends js.Object {
     var LogUri: PresignedS3Url
     var LastUpdatedAt: EpochTime
     var Name: EntityName
+    var ComputeTime: LongType
+    var StartedAt: EpochTime
     var BatchPredictionDataSourceId: EntityId
     var BatchPredictionId: EntityId
+    var TotalRecordCount: LongType
     var CreatedByIamUser: AwsUserArn
+    var InvalidRecordCount: LongType
     var InputDataLocationS3: S3Url
     var OutputUri: S3Url
     var Message: Message
     var CreatedAt: EpochTime
+    var FinishedAt: EpochTime
     var MLModelId: EntityId
     var Status: EntityStatus
   }
@@ -1210,13 +1397,18 @@ package machinelearning {
       LogUri: js.UndefOr[PresignedS3Url] = js.undefined,
       LastUpdatedAt: js.UndefOr[EpochTime] = js.undefined,
       Name: js.UndefOr[EntityName] = js.undefined,
+      ComputeTime: js.UndefOr[LongType] = js.undefined,
+      StartedAt: js.UndefOr[EpochTime] = js.undefined,
       BatchPredictionDataSourceId: js.UndefOr[EntityId] = js.undefined,
       BatchPredictionId: js.UndefOr[EntityId] = js.undefined,
+      TotalRecordCount: js.UndefOr[LongType] = js.undefined,
       CreatedByIamUser: js.UndefOr[AwsUserArn] = js.undefined,
+      InvalidRecordCount: js.UndefOr[LongType] = js.undefined,
       InputDataLocationS3: js.UndefOr[S3Url] = js.undefined,
       OutputUri: js.UndefOr[S3Url] = js.undefined,
       Message: js.UndefOr[Message] = js.undefined,
       CreatedAt: js.UndefOr[EpochTime] = js.undefined,
+      FinishedAt: js.UndefOr[EpochTime] = js.undefined,
       MLModelId: js.UndefOr[EntityId] = js.undefined,
       Status: js.UndefOr[EntityStatus] = js.undefined
     ): GetBatchPredictionOutput = {
@@ -1224,13 +1416,18 @@ package machinelearning {
         ("LogUri" -> LogUri.map { x => x: js.Any }),
         ("LastUpdatedAt" -> LastUpdatedAt.map { x => x: js.Any }),
         ("Name" -> Name.map { x => x: js.Any }),
+        ("ComputeTime" -> ComputeTime.map { x => x: js.Any }),
+        ("StartedAt" -> StartedAt.map { x => x: js.Any }),
         ("BatchPredictionDataSourceId" -> BatchPredictionDataSourceId.map { x => x: js.Any }),
         ("BatchPredictionId" -> BatchPredictionId.map { x => x: js.Any }),
+        ("TotalRecordCount" -> TotalRecordCount.map { x => x: js.Any }),
         ("CreatedByIamUser" -> CreatedByIamUser.map { x => x: js.Any }),
+        ("InvalidRecordCount" -> InvalidRecordCount.map { x => x: js.Any }),
         ("InputDataLocationS3" -> InputDataLocationS3.map { x => x: js.Any }),
         ("OutputUri" -> OutputUri.map { x => x: js.Any }),
         ("Message" -> Message.map { x => x: js.Any }),
         ("CreatedAt" -> CreatedAt.map { x => x: js.Any }),
+        ("FinishedAt" -> FinishedAt.map { x => x: js.Any }),
         ("MLModelId" -> MLModelId.map { x => x: js.Any }),
         ("Status" -> Status.map { x => x: js.Any })
       ).filter(_._2 != js.undefined)
@@ -1260,7 +1457,7 @@ package machinelearning {
   }
 
   /**
-   * <p>Represents the output of a <a>GetDataSource</a> operation and describes a <code>DataSource</code>.</p>
+   * <p>Represents the output of a <code>GetDataSource</code> operation and describes a <code>DataSource</code>.</p>
    */
   @js.native
   trait GetDataSourceOutput extends js.Object {
@@ -1269,7 +1466,9 @@ package machinelearning {
     var LastUpdatedAt: EpochTime
     var Name: EntityName
     var RDSMetadata: RDSMetadata
+    var ComputeTime: LongType
     var ComputeStatistics: ComputeStatistics
+    var StartedAt: EpochTime
     var DataSizeInBytes: LongType
     var NumberOfFiles: LongType
     var CreatedByIamUser: AwsUserArn
@@ -1279,6 +1478,7 @@ package machinelearning {
     var CreatedAt: EpochTime
     var DataSourceId: EntityId
     var DataSourceSchema: DataSchema
+    var FinishedAt: EpochTime
     var DataLocationS3: S3Url
     var Status: EntityStatus
   }
@@ -1290,7 +1490,9 @@ package machinelearning {
       LastUpdatedAt: js.UndefOr[EpochTime] = js.undefined,
       Name: js.UndefOr[EntityName] = js.undefined,
       RDSMetadata: js.UndefOr[RDSMetadata] = js.undefined,
+      ComputeTime: js.UndefOr[LongType] = js.undefined,
       ComputeStatistics: js.UndefOr[ComputeStatistics] = js.undefined,
+      StartedAt: js.UndefOr[EpochTime] = js.undefined,
       DataSizeInBytes: js.UndefOr[LongType] = js.undefined,
       NumberOfFiles: js.UndefOr[LongType] = js.undefined,
       CreatedByIamUser: js.UndefOr[AwsUserArn] = js.undefined,
@@ -1300,6 +1502,7 @@ package machinelearning {
       CreatedAt: js.UndefOr[EpochTime] = js.undefined,
       DataSourceId: js.UndefOr[EntityId] = js.undefined,
       DataSourceSchema: js.UndefOr[DataSchema] = js.undefined,
+      FinishedAt: js.UndefOr[EpochTime] = js.undefined,
       DataLocationS3: js.UndefOr[S3Url] = js.undefined,
       Status: js.UndefOr[EntityStatus] = js.undefined
     ): GetDataSourceOutput = {
@@ -1309,7 +1512,9 @@ package machinelearning {
         ("LastUpdatedAt" -> LastUpdatedAt.map { x => x: js.Any }),
         ("Name" -> Name.map { x => x: js.Any }),
         ("RDSMetadata" -> RDSMetadata.map { x => x: js.Any }),
+        ("ComputeTime" -> ComputeTime.map { x => x: js.Any }),
         ("ComputeStatistics" -> ComputeStatistics.map { x => x: js.Any }),
+        ("StartedAt" -> StartedAt.map { x => x: js.Any }),
         ("DataSizeInBytes" -> DataSizeInBytes.map { x => x: js.Any }),
         ("NumberOfFiles" -> NumberOfFiles.map { x => x: js.Any }),
         ("CreatedByIamUser" -> CreatedByIamUser.map { x => x: js.Any }),
@@ -1319,6 +1524,7 @@ package machinelearning {
         ("CreatedAt" -> CreatedAt.map { x => x: js.Any }),
         ("DataSourceId" -> DataSourceId.map { x => x: js.Any }),
         ("DataSourceSchema" -> DataSourceSchema.map { x => x: js.Any }),
+        ("FinishedAt" -> FinishedAt.map { x => x: js.Any }),
         ("DataLocationS3" -> DataLocationS3.map { x => x: js.Any }),
         ("Status" -> Status.map { x => x: js.Any })
       ).filter(_._2 != js.undefined)
@@ -1345,7 +1551,7 @@ package machinelearning {
   }
 
   /**
-   * <p>Represents the output of a <a>GetEvaluation</a> operation and describes an <code>Evaluation</code>.</p>
+   * <p>Represents the output of a <code>GetEvaluation</code> operation and describes an <code>Evaluation</code>.</p>
    */
   @js.native
   trait GetEvaluationOutput extends js.Object {
@@ -1353,11 +1559,14 @@ package machinelearning {
     var LastUpdatedAt: EpochTime
     var Name: EntityName
     var PerformanceMetrics: PerformanceMetrics
+    var ComputeTime: LongType
+    var StartedAt: EpochTime
     var CreatedByIamUser: AwsUserArn
     var EvaluationId: EntityId
     var InputDataLocationS3: S3Url
     var Message: Message
     var CreatedAt: EpochTime
+    var FinishedAt: EpochTime
     var MLModelId: EntityId
     var EvaluationDataSourceId: EntityId
     var Status: EntityStatus
@@ -1369,11 +1578,14 @@ package machinelearning {
       LastUpdatedAt: js.UndefOr[EpochTime] = js.undefined,
       Name: js.UndefOr[EntityName] = js.undefined,
       PerformanceMetrics: js.UndefOr[PerformanceMetrics] = js.undefined,
+      ComputeTime: js.UndefOr[LongType] = js.undefined,
+      StartedAt: js.UndefOr[EpochTime] = js.undefined,
       CreatedByIamUser: js.UndefOr[AwsUserArn] = js.undefined,
       EvaluationId: js.UndefOr[EntityId] = js.undefined,
       InputDataLocationS3: js.UndefOr[S3Url] = js.undefined,
       Message: js.UndefOr[Message] = js.undefined,
       CreatedAt: js.UndefOr[EpochTime] = js.undefined,
+      FinishedAt: js.UndefOr[EpochTime] = js.undefined,
       MLModelId: js.UndefOr[EntityId] = js.undefined,
       EvaluationDataSourceId: js.UndefOr[EntityId] = js.undefined,
       Status: js.UndefOr[EntityStatus] = js.undefined
@@ -1383,11 +1595,14 @@ package machinelearning {
         ("LastUpdatedAt" -> LastUpdatedAt.map { x => x: js.Any }),
         ("Name" -> Name.map { x => x: js.Any }),
         ("PerformanceMetrics" -> PerformanceMetrics.map { x => x: js.Any }),
+        ("ComputeTime" -> ComputeTime.map { x => x: js.Any }),
+        ("StartedAt" -> StartedAt.map { x => x: js.Any }),
         ("CreatedByIamUser" -> CreatedByIamUser.map { x => x: js.Any }),
         ("EvaluationId" -> EvaluationId.map { x => x: js.Any }),
         ("InputDataLocationS3" -> InputDataLocationS3.map { x => x: js.Any }),
         ("Message" -> Message.map { x => x: js.Any }),
         ("CreatedAt" -> CreatedAt.map { x => x: js.Any }),
+        ("FinishedAt" -> FinishedAt.map { x => x: js.Any }),
         ("MLModelId" -> MLModelId.map { x => x: js.Any }),
         ("EvaluationDataSourceId" -> EvaluationDataSourceId.map { x => x: js.Any }),
         ("Status" -> Status.map { x => x: js.Any })
@@ -1418,7 +1633,7 @@ package machinelearning {
   }
 
   /**
-   * <p>Represents the output of a <a>GetMLModel</a> operation, and provides detailed information about a <code>MLModel</code>.</p>
+   * <p>Represents the output of a <code>GetMLModel</code> operation, and provides detailed information about a <code>MLModel</code>.</p>
    */
   @js.native
   trait GetMLModelOutput extends js.Object {
@@ -1427,6 +1642,8 @@ package machinelearning {
     var EndpointInfo: RealtimeEndpointInfo
     var Name: MLModelName
     var TrainingDataSourceId: EntityId
+    var ComputeTime: LongType
+    var StartedAt: EpochTime
     var TrainingParameters: TrainingParameters
     var CreatedByIamUser: AwsUserArn
     var InputDataLocationS3: S3Url
@@ -1438,6 +1655,7 @@ package machinelearning {
     var CreatedAt: EpochTime
     var Schema: DataSchema
     var ScoreThresholdLastUpdatedAt: EpochTime
+    var FinishedAt: EpochTime
     var MLModelId: EntityId
     var Status: EntityStatus
   }
@@ -1449,6 +1667,8 @@ package machinelearning {
       EndpointInfo: js.UndefOr[RealtimeEndpointInfo] = js.undefined,
       Name: js.UndefOr[MLModelName] = js.undefined,
       TrainingDataSourceId: js.UndefOr[EntityId] = js.undefined,
+      ComputeTime: js.UndefOr[LongType] = js.undefined,
+      StartedAt: js.UndefOr[EpochTime] = js.undefined,
       TrainingParameters: js.UndefOr[TrainingParameters] = js.undefined,
       CreatedByIamUser: js.UndefOr[AwsUserArn] = js.undefined,
       InputDataLocationS3: js.UndefOr[S3Url] = js.undefined,
@@ -1460,6 +1680,7 @@ package machinelearning {
       CreatedAt: js.UndefOr[EpochTime] = js.undefined,
       Schema: js.UndefOr[DataSchema] = js.undefined,
       ScoreThresholdLastUpdatedAt: js.UndefOr[EpochTime] = js.undefined,
+      FinishedAt: js.UndefOr[EpochTime] = js.undefined,
       MLModelId: js.UndefOr[EntityId] = js.undefined,
       Status: js.UndefOr[EntityStatus] = js.undefined
     ): GetMLModelOutput = {
@@ -1469,6 +1690,8 @@ package machinelearning {
         ("EndpointInfo" -> EndpointInfo.map { x => x: js.Any }),
         ("Name" -> Name.map { x => x: js.Any }),
         ("TrainingDataSourceId" -> TrainingDataSourceId.map { x => x: js.Any }),
+        ("ComputeTime" -> ComputeTime.map { x => x: js.Any }),
+        ("StartedAt" -> StartedAt.map { x => x: js.Any }),
         ("TrainingParameters" -> TrainingParameters.map { x => x: js.Any }),
         ("CreatedByIamUser" -> CreatedByIamUser.map { x => x: js.Any }),
         ("InputDataLocationS3" -> InputDataLocationS3.map { x => x: js.Any }),
@@ -1480,6 +1703,7 @@ package machinelearning {
         ("CreatedAt" -> CreatedAt.map { x => x: js.Any }),
         ("Schema" -> Schema.map { x => x: js.Any }),
         ("ScoreThresholdLastUpdatedAt" -> ScoreThresholdLastUpdatedAt.map { x => x: js.Any }),
+        ("FinishedAt" -> FinishedAt.map { x => x: js.Any }),
         ("MLModelId" -> MLModelId.map { x => x: js.Any }),
         ("Status" -> Status.map { x => x: js.Any })
       ).filter(_._2 != js.undefined)
@@ -1515,6 +1739,11 @@ package machinelearning {
     var code: ErrorCode
   }
 
+  @js.native
+  trait InvalidTagExceptionException extends js.Object {
+    var message: ErrorMessage
+  }
+
   /**
    * <p>The subscriber exceeded the maximum number of operations. This exception can occur when listing objects such as <code>DataSource</code>.</p>
    */
@@ -1525,7 +1754,7 @@ package machinelearning {
   }
 
   /**
-   * <p> Represents the output of a <a>GetMLModel</a> operation. </p> <p>The content consists of the detailed metadata and the current status of the <code>MLModel</code>.</p>
+   * <p> Represents the output of a <code>GetMLModel</code> operation. </p> <p>The content consists of the detailed metadata and the current status of the <code>MLModel</code>.</p>
    */
   @js.native
   trait MLModel extends js.Object {
@@ -1533,6 +1762,8 @@ package machinelearning {
     var EndpointInfo: RealtimeEndpointInfo
     var Name: MLModelName
     var TrainingDataSourceId: EntityId
+    var ComputeTime: LongType
+    var StartedAt: EpochTime
     var TrainingParameters: TrainingParameters
     var CreatedByIamUser: AwsUserArn
     var InputDataLocationS3: S3Url
@@ -1543,6 +1774,7 @@ package machinelearning {
     var CreatedAt: EpochTime
     var Algorithm: Algorithm
     var ScoreThresholdLastUpdatedAt: EpochTime
+    var FinishedAt: EpochTime
     var MLModelId: EntityId
     var Status: EntityStatus
   }
@@ -1553,6 +1785,8 @@ package machinelearning {
       EndpointInfo: js.UndefOr[RealtimeEndpointInfo] = js.undefined,
       Name: js.UndefOr[MLModelName] = js.undefined,
       TrainingDataSourceId: js.UndefOr[EntityId] = js.undefined,
+      ComputeTime: js.UndefOr[LongType] = js.undefined,
+      StartedAt: js.UndefOr[EpochTime] = js.undefined,
       TrainingParameters: js.UndefOr[TrainingParameters] = js.undefined,
       CreatedByIamUser: js.UndefOr[AwsUserArn] = js.undefined,
       InputDataLocationS3: js.UndefOr[S3Url] = js.undefined,
@@ -1563,6 +1797,7 @@ package machinelearning {
       CreatedAt: js.UndefOr[EpochTime] = js.undefined,
       Algorithm: js.UndefOr[Algorithm] = js.undefined,
       ScoreThresholdLastUpdatedAt: js.UndefOr[EpochTime] = js.undefined,
+      FinishedAt: js.UndefOr[EpochTime] = js.undefined,
       MLModelId: js.UndefOr[EntityId] = js.undefined,
       Status: js.UndefOr[EntityStatus] = js.undefined
     ): MLModel = {
@@ -1571,6 +1806,8 @@ package machinelearning {
         ("EndpointInfo" -> EndpointInfo.map { x => x: js.Any }),
         ("Name" -> Name.map { x => x: js.Any }),
         ("TrainingDataSourceId" -> TrainingDataSourceId.map { x => x: js.Any }),
+        ("ComputeTime" -> ComputeTime.map { x => x: js.Any }),
+        ("StartedAt" -> StartedAt.map { x => x: js.Any }),
         ("TrainingParameters" -> TrainingParameters.map { x => x: js.Any }),
         ("CreatedByIamUser" -> CreatedByIamUser.map { x => x: js.Any }),
         ("InputDataLocationS3" -> InputDataLocationS3.map { x => x: js.Any }),
@@ -1581,6 +1818,7 @@ package machinelearning {
         ("CreatedAt" -> CreatedAt.map { x => x: js.Any }),
         ("Algorithm" -> Algorithm.map { x => x: js.Any }),
         ("ScoreThresholdLastUpdatedAt" -> ScoreThresholdLastUpdatedAt.map { x => x: js.Any }),
+        ("FinishedAt" -> FinishedAt.map { x => x: js.Any }),
         ("MLModelId" -> MLModelId.map { x => x: js.Any }),
         ("Status" -> Status.map { x => x: js.Any })
       ).filter(_._2 != js.undefined)
@@ -1675,7 +1913,7 @@ package machinelearning {
   }
 
   /**
-   * <p>The output from a <code>Predict</code> operation: </p> <ul> <li> <p> <code>Details</code> - Contains the following attributes: DetailsAttributes.PREDICTIVE_MODEL_TYPE - REGRESSION | BINARY | MULTICLASS DetailsAttributes.ALGORITHM - SGD </p> </li> <li> <p> <code>PredictedLabel</code> - Present for either a BINARY or MULTICLASS <code>MLModel</code> request. </p> </li> <li> <p> <code>PredictedScores</code> - Contains the raw classification score corresponding to each label. </p> </li> <li> <p> <code>PredictedValue</code> - Present for a REGRESSION <code>MLModel</code> request. </p> </li> </ul>
+   * <p>The output from a <code>Predict</code> operation: </p> <ul> <li> <p> <code>Details</code> - Contains the following attributes: <code>DetailsAttributes.PREDICTIVE_MODEL_TYPE - REGRESSION | BINARY | MULTICLASS</code> <code>DetailsAttributes.ALGORITHM - SGD</code> </p> </li> <li> <p> <code>PredictedLabel</code> - Present for either a <code>BINARY</code> or <code>MULTICLASS</code> <code>MLModel</code> request. </p> </li> <li> <p> <code>PredictedScores</code> - Contains the raw classification score corresponding to each label. </p> </li> <li> <p> <code>PredictedValue</code> - Present for a <code>REGRESSION</code> <code>MLModel</code> request. </p> </li> </ul>
    */
   @js.native
   trait Prediction extends js.Object {
@@ -1966,7 +2204,7 @@ package machinelearning {
   }
 
   /**
-   * <p>Describes the <Code>DataSource</Code> details specific to Amazon Redshift.</p>
+   * <p>Describes the <code>DataSource</code> details specific to Amazon Redshift.</p>
    */
   @js.native
   trait RedshiftMetadata extends js.Object {
@@ -2039,6 +2277,44 @@ package machinelearning {
     val values = IndexedSeq(asc, dsc)
   }
 
+  /**
+   * <p>A custom key-value pair associated with an ML object, such as an ML model.</p>
+   */
+  @js.native
+  trait Tag extends js.Object {
+    var Key: TagKey
+    var Value: TagValue
+  }
+
+  object Tag {
+    def apply(
+      Key: js.UndefOr[TagKey] = js.undefined,
+      Value: js.UndefOr[TagValue] = js.undefined
+    ): Tag = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("Key" -> Key.map { x => x: js.Any }),
+        ("Value" -> Value.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Tag]
+    }
+  }
+
+  @js.native
+  trait TagLimitExceededExceptionException extends js.Object {
+    var message: ErrorMessage
+  }
+
+
+  object TaggableResourceTypeEnum {
+    val BatchPrediction = "BatchPrediction"
+    val DataSource = "DataSource"
+    val Evaluation = "Evaluation"
+    val MLModel = "MLModel"
+
+    val values = IndexedSeq(BatchPrediction, DataSource, Evaluation, MLModel)
+  }
+
   @js.native
   trait UpdateBatchPredictionInput extends js.Object {
     var BatchPredictionId: EntityId
@@ -2060,7 +2336,7 @@ package machinelearning {
   }
 
   /**
-   * <p>Represents the output of an <a>UpdateBatchPrediction</a> operation.</p> <p>You can see the updated content by using the <a>GetBatchPrediction</a> operation.</p>
+   * <p>Represents the output of an <code>UpdateBatchPrediction</code> operation.</p> <p>You can see the updated content by using the <code>GetBatchPrediction</code> operation.</p>
    */
   @js.native
   trait UpdateBatchPredictionOutput extends js.Object {
@@ -2100,7 +2376,7 @@ package machinelearning {
   }
 
   /**
-   * <p>Represents the output of an <a>UpdateDataSource</a> operation.</p> <p>You can see the updated content by using the <a>GetBatchPrediction</a> operation.</p>
+   * <p>Represents the output of an <code>UpdateDataSource</code> operation.</p> <p>You can see the updated content by using the <code>GetBatchPrediction</code> operation.</p>
    */
   @js.native
   trait UpdateDataSourceOutput extends js.Object {
@@ -2140,7 +2416,7 @@ package machinelearning {
   }
 
   /**
-   * <p>Represents the output of an <a>UpdateEvaluation</a> operation.</p> <p>You can see the updated content by using the <a>GetEvaluation</a> operation.</p>
+   * <p>Represents the output of an <code>UpdateEvaluation</code> operation.</p> <p>You can see the updated content by using the <code>GetEvaluation</code> operation.</p>
    */
   @js.native
   trait UpdateEvaluationOutput extends js.Object {
@@ -2183,7 +2459,7 @@ package machinelearning {
   }
 
   /**
-   * <p>Represents the output of an <a>UpdateMLModel</a> operation.</p> <p>You can see the updated content by using the <a>GetMLModel</a> operation.</p>
+   * <p>Represents the output of an <code>UpdateMLModel</code> operation.</p> <p>You can see the updated content by using the <code>GetMLModel</code> operation.</p>
    */
   @js.native
   trait UpdateMLModelOutput extends js.Object {

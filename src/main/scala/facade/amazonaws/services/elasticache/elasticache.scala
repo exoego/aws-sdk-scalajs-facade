@@ -20,14 +20,17 @@ package object elasticache {
   type CacheSecurityGroupNameList = js.Array[String]
   type CacheSecurityGroups = js.Array[CacheSecurityGroup]
   type CacheSubnetGroups = js.Array[CacheSubnetGroup]
+  type ChangeType = String
   type ClusterIdList = js.Array[String]
   type EC2SecurityGroupList = js.Array[EC2SecurityGroup]
   type EventList = js.Array[Event]
   type IntegerOptional = Integer
   type KeyList = js.Array[String]
+  type NodeGroupConfigurationList = js.Array[NodeGroupConfiguration]
   type NodeGroupList = js.Array[NodeGroup]
   type NodeGroupMemberList = js.Array[NodeGroupMember]
   type NodeSnapshotList = js.Array[NodeSnapshot]
+  type NodeTypeList = js.Array[String]
   type ParameterNameValueList = js.Array[ParameterNameValue]
   type ParametersList = js.Array[Parameter]
   type PendingAutomaticFailoverStatus = String
@@ -104,6 +107,8 @@ package elasticache {
     def describeReservedCacheNodesOfferings(params: DescribeReservedCacheNodesOfferingsMessage): Request[ReservedCacheNodesOfferingMessage] = js.native
     def describeSnapshots(params: DescribeSnapshotsMessage, callback: Callback[DescribeSnapshotsListMessage]): Unit = js.native
     def describeSnapshots(params: DescribeSnapshotsMessage): Request[DescribeSnapshotsListMessage] = js.native
+    def listAllowedNodeTypeModifications(params: ListAllowedNodeTypeModificationsMessage, callback: Callback[AllowedNodeTypeModificationsMessage]): Unit = js.native
+    def listAllowedNodeTypeModifications(params: ListAllowedNodeTypeModificationsMessage): Request[AllowedNodeTypeModificationsMessage] = js.native
     def listTagsForResource(params: ListTagsForResourceMessage, callback: Callback[TagListMessage]): Unit = js.native
     def listTagsForResource(params: ListTagsForResourceMessage): Request[TagListMessage] = js.native
     def modifyCacheCluster(params: ModifyCacheClusterMessage, callback: Callback[ModifyCacheClusterResult]): Unit = js.native
@@ -135,7 +140,7 @@ package elasticache {
   }
 
   /**
-   * <p>Represents the input of an <i>AddTagsToResource</i> action.</p>
+   * <p>Represents the input of an AddTagsToResource operation.</p>
    */
   @js.native
   trait AddTagsToResourceMessage extends js.Object {
@@ -157,6 +162,23 @@ package elasticache {
     }
   }
 
+  @js.native
+  trait AllowedNodeTypeModificationsMessage extends js.Object {
+    var ScaleUpModifications: NodeTypeList
+  }
+
+  object AllowedNodeTypeModificationsMessage {
+    def apply(
+      ScaleUpModifications: js.UndefOr[NodeTypeList] = js.undefined
+    ): AllowedNodeTypeModificationsMessage = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("ScaleUpModifications" -> ScaleUpModifications.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AllowedNodeTypeModificationsMessage]
+    }
+  }
+
   /**
    * <p>The specified Amazon EC2 security group is already authorized for the specified cache security group.</p>
    */
@@ -174,7 +196,7 @@ package elasticache {
   }
 
   /**
-   * <p>Represents the input of an <i>AuthorizeCacheSecurityGroupIngress</i> action.</p>
+   * <p>Represents the input of an AuthorizeCacheSecurityGroupIngress operation.</p>
    */
   @js.native
   trait AuthorizeCacheSecurityGroupIngressMessage extends js.Object {
@@ -338,7 +360,7 @@ package elasticache {
   }
 
   /**
-   * <p>Represents the output of a <i>DescribeCacheClusters</i> action.</p>
+   * <p>Represents the output of a <code>DescribeCacheClusters</code> operation.</p>
    */
   @js.native
   trait CacheClusterMessage extends js.Object {
@@ -401,7 +423,7 @@ package elasticache {
   }
 
   /**
-   * <p>Represents the output of a <a>DescribeCacheEngineVersions</a> action.</p>
+   * <p>Represents the output of a <a>DescribeCacheEngineVersions</a> operation.</p>
    */
   @js.native
   trait CacheEngineVersionMessage extends js.Object {
@@ -424,7 +446,7 @@ package elasticache {
   }
 
   /**
-   * <p>Represents an individual cache node within a cache cluster. Each cache node runs its own instance of the cluster's protocol-compliant caching software - either Memcached or Redis.</p> <p>Valid node types are as follows:</p> <ul> <li>General purpose: <ul> <li>Current generation: <code>cache.t2.micro</code>, <code>cache.t2.small</code>, <code>cache.t2.medium</code>, <code>cache.m3.medium</code>, <code>cache.m3.large</code>, <code>cache.m3.xlarge</code>, <code>cache.m3.2xlarge</code></li> <li>Previous generation: <code>cache.t1.micro</code>, <code>cache.m1.small</code>, <code>cache.m1.medium</code>, <code>cache.m1.large</code>, <code>cache.m1.xlarge</code></li> </ul></li> <li>Compute optimized: <code>cache.c1.xlarge</code></li> <li>Memory optimized <ul> <li>Current generation: <code>cache.r3.large</code>, <code>cache.r3.xlarge</code>, <code>cache.r3.2xlarge</code>, <code>cache.r3.4xlarge</code>, <code>cache.r3.8xlarge</code></li> <li>Previous generation: <code>cache.m2.xlarge</code>, <code>cache.m2.2xlarge</code>, <code>cache.m2.4xlarge</code></li> </ul></li> </ul> <p><b>Notes:</b></p> <ul> <li>All t2 instances are created in an Amazon Virtual Private Cloud (VPC).</li> <li>Redis backup/restore is not supported for t2 instances.</li> <li>Redis Append-only files (AOF) functionality is not supported for t1 or t2 instances.</li> </ul> <p>For a complete listing of cache node types and specifications, see <a href="http://aws.amazon.com/elasticache/details">Amazon ElastiCache Product Features and Details</a> and <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Memcached.html#CacheParameterGroups.Memcached.NodeSpecific">Cache Node Type-Specific Parameters for Memcached</a> or <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Redis.html#CacheParameterGroups.Redis.NodeSpecific">Cache Node Type-Specific Parameters for Redis</a>. </p>
+   * <p>Represents an individual cache node within a cache cluster. Each cache node runs its own instance of the cluster's protocol-compliant caching software - either Memcached or Redis.</p> <p>Valid node types are as follows:</p> <ul> <li> <p>General purpose:</p> <ul> <li> <p>Current generation: <code>cache.t2.micro</code>, <code>cache.t2.small</code>, <code>cache.t2.medium</code>, <code>cache.m3.medium</code>, <code>cache.m3.large</code>, <code>cache.m3.xlarge</code>, <code>cache.m3.2xlarge</code>, <code>cache.m4.large</code>, <code>cache.m4.xlarge</code>, <code>cache.m4.2xlarge</code>, <code>cache.m4.4xlarge</code>, <code>cache.m4.10xlarge</code> </p> </li> <li> <p>Previous generation: <code>cache.t1.micro</code>, <code>cache.m1.small</code>, <code>cache.m1.medium</code>, <code>cache.m1.large</code>, <code>cache.m1.xlarge</code> </p> </li> </ul> </li> <li> <p>Compute optimized: <code>cache.c1.xlarge</code> </p> </li> <li> <p>Memory optimized:</p> <ul> <li> <p>Current generation: <code>cache.r3.large</code>, <code>cache.r3.xlarge</code>, <code>cache.r3.2xlarge</code>, <code>cache.r3.4xlarge</code>, <code>cache.r3.8xlarge</code> </p> </li> <li> <p>Previous generation: <code>cache.m2.xlarge</code>, <code>cache.m2.2xlarge</code>, <code>cache.m2.4xlarge</code> </p> </li> </ul> </li> </ul> <p> <b>Notes:</b> </p> <ul> <li> <p>All T2 instances are created in an Amazon Virtual Private Cloud (Amazon VPC).</p> </li> <li> <p>Redis backup/restore is not supported for Redis (cluster mode disabled) T1 and T2 instances. Backup/restore is supported on Redis (cluster mode enabled) T2 instances.</p> </li> <li> <p>Redis Append-only files (AOF) functionality is not supported for T1 or T2 instances.</p> </li> </ul> <p>For a complete listing of node types and specifications, see <a href="http://aws.amazon.com/elasticache/details">Amazon ElastiCache Product Features and Details</a> and either <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Memcached.html#ParameterGroups.Memcached.NodeSpecific">Cache Node Type-Specific Parameters for Memcached</a> or <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Redis.html#ParameterGroups.Redis.NodeSpecific">Cache Node Type-Specific Parameters for Redis</a>.</p>
    */
   @js.native
   trait CacheNode extends js.Object {
@@ -462,13 +484,14 @@ package elasticache {
   }
 
   /**
-   * <p>A parameter that has a different value for each cache node type it is applied to. For example, in a Redis cache cluster, a <i>cache.m1.large</i> cache node type would have a larger <i>maxmemory</i> value than a <i>cache.m1.small</i> type.</p>
+   * <p>A parameter that has a different value for each cache node type it is applied to. For example, in a Redis cache cluster, a <code>cache.m1.large</code> cache node type would have a larger <code>maxmemory</code> value than a <code>cache.m1.small</code> type.</p>
    */
   @js.native
   trait CacheNodeTypeSpecificParameter extends js.Object {
     var IsModifiable: Boolean
     var CacheNodeTypeSpecificValues: CacheNodeTypeSpecificValueList
     var Description: String
+    var ChangeType: ChangeType
     var AllowedValues: String
     var Source: String
     var MinimumEngineVersion: String
@@ -481,6 +504,7 @@ package elasticache {
       IsModifiable: js.UndefOr[Boolean] = js.undefined,
       CacheNodeTypeSpecificValues: js.UndefOr[CacheNodeTypeSpecificValueList] = js.undefined,
       Description: js.UndefOr[String] = js.undefined,
+      ChangeType: js.UndefOr[ChangeType] = js.undefined,
       AllowedValues: js.UndefOr[String] = js.undefined,
       Source: js.UndefOr[String] = js.undefined,
       MinimumEngineVersion: js.UndefOr[String] = js.undefined,
@@ -491,6 +515,7 @@ package elasticache {
         ("IsModifiable" -> IsModifiable.map { x => x: js.Any }),
         ("CacheNodeTypeSpecificValues" -> CacheNodeTypeSpecificValues.map { x => x: js.Any }),
         ("Description" -> Description.map { x => x: js.Any }),
+        ("ChangeType" -> ChangeType.map { x => x: js.Any }),
         ("AllowedValues" -> AllowedValues.map { x => x: js.Any }),
         ("Source" -> Source.map { x => x: js.Any }),
         ("MinimumEngineVersion" -> MinimumEngineVersion.map { x => x: js.Any }),
@@ -526,7 +551,7 @@ package elasticache {
   }
 
   /**
-   * <p>Represents the output of a <i>CreateCacheParameterGroup</i> action.</p>
+   * <p>Represents the output of a <code>CreateCacheParameterGroup</code> operation.</p>
    */
   @js.native
   trait CacheParameterGroup extends js.Object {
@@ -560,7 +585,7 @@ package elasticache {
   }
 
   /**
-   * <p>Represents the output of a <i>DescribeCacheParameters</i> action.</p>
+   * <p>Represents the output of a <code>DescribeCacheParameters</code> operation.</p>
    */
   @js.native
   trait CacheParameterGroupDetails extends js.Object {
@@ -586,7 +611,7 @@ package elasticache {
   }
 
   /**
-   * <p>Represents the output of one of the following actions:</p> <ul> <li> <i>ModifyCacheParameterGroup</i> </li> <li> <i>ResetCacheParameterGroup</i> </li> </ul>
+   * <p>Represents the output of one of the following operations:</p> <ul> <li> <p> <code>ModifyCacheParameterGroup</code> </p> </li> <li> <p> <code>ResetCacheParameterGroup</code> </p> </li> </ul>
    */
   @js.native
   trait CacheParameterGroupNameMessage extends js.Object {
@@ -606,7 +631,7 @@ package elasticache {
   }
 
   /**
-   * <p> The requested cache parameter group name does not refer to an existing cache parameter group.</p>
+   * <p>The requested cache parameter group name does not refer to an existing cache parameter group.</p>
    */
   @js.native
   trait CacheParameterGroupNotFoundFaultException extends js.Object {
@@ -622,7 +647,7 @@ package elasticache {
   }
 
   /**
-   * <p>The status of the cache parameter group.</p>
+   * <p>Status of the cache parameter group.</p>
    */
   @js.native
   trait CacheParameterGroupStatus extends js.Object {
@@ -648,7 +673,7 @@ package elasticache {
   }
 
   /**
-   * <p>Represents the output of a <i>DescribeCacheParameterGroups</i> action.</p>
+   * <p>Represents the output of a <code>DescribeCacheParameterGroups</code> operation.</p>
    */
   @js.native
   trait CacheParameterGroupsMessage extends js.Object {
@@ -671,7 +696,7 @@ package elasticache {
   }
 
   /**
-   * <p>Represents the output of one of the following actions:</p> <ul> <li> <i>AuthorizeCacheSecurityGroupIngress</i> </li> <li> <i>CreateCacheSecurityGroup</i> </li> <li> <i>RevokeCacheSecurityGroupIngress</i> </li> </ul>
+   * <p>Represents the output of one of the following operations:</p> <ul> <li> <p> <code>AuthorizeCacheSecurityGroupIngress</code> </p> </li> <li> <p> <code>CreateCacheSecurityGroup</code> </p> </li> <li> <p> <code>RevokeCacheSecurityGroupIngress</code> </p> </li> </ul>
    */
   @js.native
   trait CacheSecurityGroup extends js.Object {
@@ -731,7 +756,7 @@ package elasticache {
   }
 
   /**
-   * <p>Represents the output of a <i>DescribeCacheSecurityGroups</i> action.</p>
+   * <p>Represents the output of a <code>DescribeCacheSecurityGroups</code> operation.</p>
    */
   @js.native
   trait CacheSecurityGroupMessage extends js.Object {
@@ -754,7 +779,7 @@ package elasticache {
   }
 
   /**
-   * <p> The requested cache security group name does not refer to an existing cache security group.</p>
+   * <p>The requested cache security group name does not refer to an existing cache security group.</p>
    */
   @js.native
   trait CacheSecurityGroupNotFoundFaultException extends js.Object {
@@ -770,7 +795,7 @@ package elasticache {
   }
 
   /**
-   * <p>Represents the output of one of the following actions:</p> <ul> <li> <i>CreateCacheSubnetGroup</i> </li> <li> <i>ModifyCacheSubnetGroup</i> </li> </ul>
+   * <p>Represents the output of one of the following operations:</p> <ul> <li> <p> <code>CreateCacheSubnetGroup</code> </p> </li> <li> <p> <code>ModifyCacheSubnetGroup</code> </p> </li> </ul>
    */
   @js.native
   trait CacheSubnetGroup extends js.Object {
@@ -799,7 +824,7 @@ package elasticache {
   }
 
   /**
-   * <p> The requested cache subnet group name is already in use by an existing cache subnet group.</p>
+   * <p>The requested cache subnet group name is already in use by an existing cache subnet group.</p>
    */
   @js.native
   trait CacheSubnetGroupAlreadyExistsFaultException extends js.Object {
@@ -815,7 +840,7 @@ package elasticache {
   }
 
   /**
-   * <p>Represents the output of a <i>DescribeCacheSubnetGroups</i> action.</p>
+   * <p>Represents the output of a <code>DescribeCacheSubnetGroups</code> operation.</p>
    */
   @js.native
   trait CacheSubnetGroupMessage extends js.Object {
@@ -861,6 +886,14 @@ package elasticache {
 
   }
 
+
+  object ChangeTypeEnum {
+    val immediate = "immediate"
+    val `requires-reboot` = "requires-reboot"
+
+    val values = IndexedSeq(immediate, `requires-reboot`)
+  }
+
   /**
    * <p>The request cannot be processed because it would exceed the allowed number of cache clusters per customer.</p>
    */
@@ -870,22 +903,25 @@ package elasticache {
   }
 
   /**
-   * <p>Represents the input of a <i>CopySnapshotMessage</i> action.</p>
+   * <p>Represents the input of a <code>CopySnapshotMessage</code> operation.</p>
    */
   @js.native
   trait CopySnapshotMessage extends js.Object {
     var SourceSnapshotName: String
     var TargetSnapshotName: String
+    var TargetBucket: String
   }
 
   object CopySnapshotMessage {
     def apply(
       SourceSnapshotName: js.UndefOr[String] = js.undefined,
-      TargetSnapshotName: js.UndefOr[String] = js.undefined
+      TargetSnapshotName: js.UndefOr[String] = js.undefined,
+      TargetBucket: js.UndefOr[String] = js.undefined
     ): CopySnapshotMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
         ("SourceSnapshotName" -> SourceSnapshotName.map { x => x: js.Any }),
-        ("TargetSnapshotName" -> TargetSnapshotName.map { x => x: js.Any })
+        ("TargetSnapshotName" -> TargetSnapshotName.map { x => x: js.Any }),
+        ("TargetBucket" -> TargetBucket.map { x => x: js.Any })
       ).filter(_._2 != js.undefined)
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CopySnapshotMessage]
@@ -910,7 +946,7 @@ package elasticache {
   }
 
   /**
-   * <p>Represents the input of a <i>CreateCacheCluster</i> action.</p>
+   * <p>Represents the input of a CreateCacheCluster operation.</p>
    */
   @js.native
   trait CreateCacheClusterMessage extends js.Object {
@@ -934,6 +970,7 @@ package elasticache {
     var CacheSubnetGroupName: String
     var Tags: TagList
     var NumCacheNodes: IntegerOptional
+    var AuthToken: String
     var SnapshotArns: SnapshotArnsList
     var SnapshotRetentionLimit: IntegerOptional
   }
@@ -960,6 +997,7 @@ package elasticache {
       CacheSubnetGroupName: js.UndefOr[String] = js.undefined,
       Tags: js.UndefOr[TagList] = js.undefined,
       NumCacheNodes: js.UndefOr[IntegerOptional] = js.undefined,
+      AuthToken: js.UndefOr[String] = js.undefined,
       SnapshotArns: js.UndefOr[SnapshotArnsList] = js.undefined,
       SnapshotRetentionLimit: js.UndefOr[IntegerOptional] = js.undefined
     ): CreateCacheClusterMessage = {
@@ -984,6 +1022,7 @@ package elasticache {
         ("CacheSubnetGroupName" -> CacheSubnetGroupName.map { x => x: js.Any }),
         ("Tags" -> Tags.map { x => x: js.Any }),
         ("NumCacheNodes" -> NumCacheNodes.map { x => x: js.Any }),
+        ("AuthToken" -> AuthToken.map { x => x: js.Any }),
         ("SnapshotArns" -> SnapshotArns.map { x => x: js.Any }),
         ("SnapshotRetentionLimit" -> SnapshotRetentionLimit.map { x => x: js.Any })
       ).filter(_._2 != js.undefined)
@@ -1010,7 +1049,7 @@ package elasticache {
   }
 
   /**
-   * <p>Represents the input of a <i>CreateCacheParameterGroup</i> action.</p>
+   * <p>Represents the input of a <code>CreateCacheParameterGroup</code> operation.</p>
    */
   @js.native
   trait CreateCacheParameterGroupMessage extends js.Object {
@@ -1053,7 +1092,7 @@ package elasticache {
   }
 
   /**
-   * <p>Represents the input of a <i>CreateCacheSecurityGroup</i> action.</p>
+   * <p>Represents the input of a <code>CreateCacheSecurityGroup</code> operation.</p>
    */
   @js.native
   trait CreateCacheSecurityGroupMessage extends js.Object {
@@ -1093,7 +1132,7 @@ package elasticache {
   }
 
   /**
-   * <p>Represents the input of a <i>CreateCacheSubnetGroup</i> action.</p>
+   * <p>Represents the input of a <code>CreateCacheSubnetGroup</code> operation.</p>
    */
   @js.native
   trait CreateCacheSubnetGroupMessage extends js.Object {
@@ -1136,7 +1175,7 @@ package elasticache {
   }
 
   /**
-   * <p>Represents the input of a <i>CreateReplicationGroup</i> action.</p>
+   * <p>Represents the input of a <code>CreateReplicationGroup</code> operation.</p>
    */
   @js.native
   trait CreateReplicationGroupMessage extends js.Object {
@@ -1144,8 +1183,11 @@ package elasticache {
     var CacheParameterGroupName: String
     var ReplicationGroupId: String
     var Engine: String
+    var ReplicasPerNodeGroup: IntegerOptional
+    var NumNodeGroups: IntegerOptional
     var CacheNodeType: String
     var SnapshotName: String
+    var NodeGroupConfiguration: NodeGroupConfigurationList
     var SnapshotWindow: String
     var NumCacheClusters: IntegerOptional
     var CacheSecurityGroupNames: CacheSecurityGroupNameList
@@ -1160,6 +1202,7 @@ package elasticache {
     var PrimaryClusterId: String
     var Tags: TagList
     var ReplicationGroupDescription: String
+    var AuthToken: String
     var SnapshotArns: SnapshotArnsList
     var SnapshotRetentionLimit: IntegerOptional
   }
@@ -1170,8 +1213,11 @@ package elasticache {
       CacheParameterGroupName: js.UndefOr[String] = js.undefined,
       ReplicationGroupId: js.UndefOr[String] = js.undefined,
       Engine: js.UndefOr[String] = js.undefined,
+      ReplicasPerNodeGroup: js.UndefOr[IntegerOptional] = js.undefined,
+      NumNodeGroups: js.UndefOr[IntegerOptional] = js.undefined,
       CacheNodeType: js.UndefOr[String] = js.undefined,
       SnapshotName: js.UndefOr[String] = js.undefined,
+      NodeGroupConfiguration: js.UndefOr[NodeGroupConfigurationList] = js.undefined,
       SnapshotWindow: js.UndefOr[String] = js.undefined,
       NumCacheClusters: js.UndefOr[IntegerOptional] = js.undefined,
       CacheSecurityGroupNames: js.UndefOr[CacheSecurityGroupNameList] = js.undefined,
@@ -1186,6 +1232,7 @@ package elasticache {
       PrimaryClusterId: js.UndefOr[String] = js.undefined,
       Tags: js.UndefOr[TagList] = js.undefined,
       ReplicationGroupDescription: js.UndefOr[String] = js.undefined,
+      AuthToken: js.UndefOr[String] = js.undefined,
       SnapshotArns: js.UndefOr[SnapshotArnsList] = js.undefined,
       SnapshotRetentionLimit: js.UndefOr[IntegerOptional] = js.undefined
     ): CreateReplicationGroupMessage = {
@@ -1194,8 +1241,11 @@ package elasticache {
         ("CacheParameterGroupName" -> CacheParameterGroupName.map { x => x: js.Any }),
         ("ReplicationGroupId" -> ReplicationGroupId.map { x => x: js.Any }),
         ("Engine" -> Engine.map { x => x: js.Any }),
+        ("ReplicasPerNodeGroup" -> ReplicasPerNodeGroup.map { x => x: js.Any }),
+        ("NumNodeGroups" -> NumNodeGroups.map { x => x: js.Any }),
         ("CacheNodeType" -> CacheNodeType.map { x => x: js.Any }),
         ("SnapshotName" -> SnapshotName.map { x => x: js.Any }),
+        ("NodeGroupConfiguration" -> NodeGroupConfiguration.map { x => x: js.Any }),
         ("SnapshotWindow" -> SnapshotWindow.map { x => x: js.Any }),
         ("NumCacheClusters" -> NumCacheClusters.map { x => x: js.Any }),
         ("CacheSecurityGroupNames" -> CacheSecurityGroupNames.map { x => x: js.Any }),
@@ -1210,6 +1260,7 @@ package elasticache {
         ("PrimaryClusterId" -> PrimaryClusterId.map { x => x: js.Any }),
         ("Tags" -> Tags.map { x => x: js.Any }),
         ("ReplicationGroupDescription" -> ReplicationGroupDescription.map { x => x: js.Any }),
+        ("AuthToken" -> AuthToken.map { x => x: js.Any }),
         ("SnapshotArns" -> SnapshotArns.map { x => x: js.Any }),
         ("SnapshotRetentionLimit" -> SnapshotRetentionLimit.map { x => x: js.Any })
       ).filter(_._2 != js.undefined)
@@ -1236,20 +1287,23 @@ package elasticache {
   }
 
   /**
-   * <p>Represents the input of a <i>CreateSnapshot</i> action.</p>
+   * <p>Represents the input of a <code>CreateSnapshot</code> operation.</p>
    */
   @js.native
   trait CreateSnapshotMessage extends js.Object {
+    var ReplicationGroupId: String
     var CacheClusterId: String
     var SnapshotName: String
   }
 
   object CreateSnapshotMessage {
     def apply(
+      ReplicationGroupId: js.UndefOr[String] = js.undefined,
       CacheClusterId: js.UndefOr[String] = js.undefined,
       SnapshotName: js.UndefOr[String] = js.undefined
     ): CreateSnapshotMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
+        ("ReplicationGroupId" -> ReplicationGroupId.map { x => x: js.Any }),
         ("CacheClusterId" -> CacheClusterId.map { x => x: js.Any }),
         ("SnapshotName" -> SnapshotName.map { x => x: js.Any })
       ).filter(_._2 != js.undefined)
@@ -1276,7 +1330,7 @@ package elasticache {
   }
 
   /**
-   * <p>Represents the input of a <i>DeleteCacheCluster</i> action.</p>
+   * <p>Represents the input of a <code>DeleteCacheCluster</code> operation.</p>
    */
   @js.native
   trait DeleteCacheClusterMessage extends js.Object {
@@ -1316,7 +1370,7 @@ package elasticache {
   }
 
   /**
-   * <p>Represents the input of a <i>DeleteCacheParameterGroup</i> action.</p>
+   * <p>Represents the input of a <code>DeleteCacheParameterGroup</code> operation.</p>
    */
   @js.native
   trait DeleteCacheParameterGroupMessage extends js.Object {
@@ -1336,7 +1390,7 @@ package elasticache {
   }
 
   /**
-   * <p>Represents the input of a <i>DeleteCacheSecurityGroup</i> action.</p>
+   * <p>Represents the input of a <code>DeleteCacheSecurityGroup</code> operation.</p>
    */
   @js.native
   trait DeleteCacheSecurityGroupMessage extends js.Object {
@@ -1356,7 +1410,7 @@ package elasticache {
   }
 
   /**
-   * <p>Represents the input of a <i>DeleteCacheSubnetGroup</i> action.</p>
+   * <p>Represents the input of a <code>DeleteCacheSubnetGroup</code> operation.</p>
    */
   @js.native
   trait DeleteCacheSubnetGroupMessage extends js.Object {
@@ -1376,7 +1430,7 @@ package elasticache {
   }
 
   /**
-   * <p>Represents the input of a <i>DeleteReplicationGroup</i> action.</p>
+   * <p>Represents the input of a <code>DeleteReplicationGroup</code> operation.</p>
    */
   @js.native
   trait DeleteReplicationGroupMessage extends js.Object {
@@ -1419,7 +1473,7 @@ package elasticache {
   }
 
   /**
-   * <p>Represents the input of a <i>DeleteSnapshot</i> action.</p>
+   * <p>Represents the input of a <code>DeleteSnapshot</code> operation.</p>
    */
   @js.native
   trait DeleteSnapshotMessage extends js.Object {
@@ -1456,7 +1510,7 @@ package elasticache {
   }
 
   /**
-   * <p>Represents the input of a <i>DescribeCacheClusters</i> action.</p>
+   * <p>Represents the input of a <code>DescribeCacheClusters</code> operation.</p>
    */
   @js.native
   trait DescribeCacheClustersMessage extends js.Object {
@@ -1485,7 +1539,7 @@ package elasticache {
   }
 
   /**
-   * <p>Represents the input of a <i>DescribeCacheEngineVersions</i> action.</p>
+   * <p>Represents the input of a <code>DescribeCacheEngineVersions</code> operation.</p>
    */
   @js.native
   trait DescribeCacheEngineVersionsMessage extends js.Object {
@@ -1520,7 +1574,7 @@ package elasticache {
   }
 
   /**
-   * <p>Represents the input of a <i>DescribeCacheParameterGroups</i> action.</p>
+   * <p>Represents the input of a <code>DescribeCacheParameterGroups</code> operation.</p>
    */
   @js.native
   trait DescribeCacheParameterGroupsMessage extends js.Object {
@@ -1546,7 +1600,7 @@ package elasticache {
   }
 
   /**
-   * <p>Represents the input of a <i>DescribeCacheParameters</i> action.</p>
+   * <p>Represents the input of a <code>DescribeCacheParameters</code> operation.</p>
    */
   @js.native
   trait DescribeCacheParametersMessage extends js.Object {
@@ -1575,7 +1629,7 @@ package elasticache {
   }
 
   /**
-   * <p>Represents the input of a <i>DescribeCacheSecurityGroups</i> action.</p>
+   * <p>Represents the input of a <code>DescribeCacheSecurityGroups</code> operation.</p>
    */
   @js.native
   trait DescribeCacheSecurityGroupsMessage extends js.Object {
@@ -1601,7 +1655,7 @@ package elasticache {
   }
 
   /**
-   * <p>Represents the input of a <i>DescribeCacheSubnetGroups</i> action.</p>
+   * <p>Represents the input of a <code>DescribeCacheSubnetGroups</code> operation.</p>
    */
   @js.native
   trait DescribeCacheSubnetGroupsMessage extends js.Object {
@@ -1627,7 +1681,7 @@ package elasticache {
   }
 
   /**
-   * <p>Represents the input of a <i>DescribeEngineDefaultParameters</i> action.</p>
+   * <p>Represents the input of a <code>DescribeEngineDefaultParameters</code> operation.</p>
    */
   @js.native
   trait DescribeEngineDefaultParametersMessage extends js.Object {
@@ -1670,7 +1724,7 @@ package elasticache {
   }
 
   /**
-   * <p>Represents the input of a <i>DescribeEvents</i> action.</p>
+   * <p>Represents the input of a <code>DescribeEvents</code> operation.</p>
    */
   @js.native
   trait DescribeEventsMessage extends js.Object {
@@ -1708,7 +1762,7 @@ package elasticache {
   }
 
   /**
-   * <p>Represents the input of a <i>DescribeReplicationGroups</i> action.</p>
+   * <p>Represents the input of a <code>DescribeReplicationGroups</code> operation.</p>
    */
   @js.native
   trait DescribeReplicationGroupsMessage extends js.Object {
@@ -1734,7 +1788,7 @@ package elasticache {
   }
 
   /**
-   * <p>Represents the input of a <i>DescribeReservedCacheNodes</i> action.</p>
+   * <p>Represents the input of a <code>DescribeReservedCacheNodes</code> operation.</p>
    */
   @js.native
   trait DescribeReservedCacheNodesMessage extends js.Object {
@@ -1775,7 +1829,7 @@ package elasticache {
   }
 
   /**
-   * <p>Represents the input of a <i>DescribeReservedCacheNodesOfferings</i> action.</p>
+   * <p>Represents the input of a <code>DescribeReservedCacheNodesOfferings</code> operation.</p>
    */
   @js.native
   trait DescribeReservedCacheNodesOfferingsMessage extends js.Object {
@@ -1813,7 +1867,7 @@ package elasticache {
   }
 
   /**
-   * <p>Represents the output of a <i>DescribeSnapshots</i> action.</p>
+   * <p>Represents the output of a <code>DescribeSnapshots</code> operation.</p>
    */
   @js.native
   trait DescribeSnapshotsListMessage extends js.Object {
@@ -1836,13 +1890,15 @@ package elasticache {
   }
 
   /**
-   * <p>Represents the input of a <i>DescribeSnapshotsMessage</i> action.</p>
+   * <p>Represents the input of a <code>DescribeSnapshotsMessage</code> operation.</p>
    */
   @js.native
   trait DescribeSnapshotsMessage extends js.Object {
     var SnapshotSource: String
+    var ReplicationGroupId: String
     var CacheClusterId: String
     var SnapshotName: String
+    var ShowNodeGroupConfig: BooleanOptional
     var MaxRecords: IntegerOptional
     var Marker: String
   }
@@ -1850,15 +1906,19 @@ package elasticache {
   object DescribeSnapshotsMessage {
     def apply(
       SnapshotSource: js.UndefOr[String] = js.undefined,
+      ReplicationGroupId: js.UndefOr[String] = js.undefined,
       CacheClusterId: js.UndefOr[String] = js.undefined,
       SnapshotName: js.UndefOr[String] = js.undefined,
+      ShowNodeGroupConfig: js.UndefOr[BooleanOptional] = js.undefined,
       MaxRecords: js.UndefOr[IntegerOptional] = js.undefined,
       Marker: js.UndefOr[String] = js.undefined
     ): DescribeSnapshotsMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
         ("SnapshotSource" -> SnapshotSource.map { x => x: js.Any }),
+        ("ReplicationGroupId" -> ReplicationGroupId.map { x => x: js.Any }),
         ("CacheClusterId" -> CacheClusterId.map { x => x: js.Any }),
         ("SnapshotName" -> SnapshotName.map { x => x: js.Any }),
+        ("ShowNodeGroupConfig" -> ShowNodeGroupConfig.map { x => x: js.Any }),
         ("MaxRecords" -> MaxRecords.map { x => x: js.Any }),
         ("Marker" -> Marker.map { x => x: js.Any })
       ).filter(_._2 != js.undefined)
@@ -1917,7 +1977,7 @@ package elasticache {
   }
 
   /**
-   * <p>Represents the output of a <i>DescribeEngineDefaultParameters</i> action.</p>
+   * <p>Represents the output of a <code>DescribeEngineDefaultParameters</code> operation.</p>
    */
   @js.native
   trait EngineDefaults extends js.Object {
@@ -1975,7 +2035,7 @@ package elasticache {
   }
 
   /**
-   * <p>Represents the output of a <i>DescribeEvents</i> action.</p>
+   * <p>Represents the output of a <code>DescribeEvents</code> operation.</p>
    */
   @js.native
   trait EventsMessage extends js.Object {
@@ -2014,7 +2074,7 @@ package elasticache {
   }
 
   /**
-   * <p>The requested cache cluster is not in the <i>available</i> state.</p>
+   * <p>The requested cache cluster is not in the <code>available</code> state.</p>
    */
   @js.native
   trait InvalidCacheClusterStateFaultException extends js.Object {
@@ -2022,7 +2082,7 @@ package elasticache {
   }
 
   /**
-   * <p>The current state of the cache parameter group does not allow the requested action to occur. </p>
+   * <p>The current state of the cache parameter group does not allow the requested operation to occur.</p>
    */
   @js.native
   trait InvalidCacheParameterGroupStateFaultException extends js.Object {
@@ -2054,7 +2114,7 @@ package elasticache {
   }
 
   /**
-   * <p>The requested replication group is not in the <i>available</i> state.</p>
+   * <p>The requested replication group is not in the <code>available</code> state.</p>
    */
   @js.native
   trait InvalidReplicationGroupStateFaultException extends js.Object {
@@ -2062,7 +2122,7 @@ package elasticache {
   }
 
   /**
-   * <p>The current state of the snapshot does not allow the requested action to occur.</p>
+   * <p>The current state of the snapshot does not allow the requested operation to occur.</p>
    */
   @js.native
   trait InvalidSnapshotStateFaultException extends js.Object {
@@ -2086,7 +2146,30 @@ package elasticache {
   }
 
   /**
-   * <p>The input parameters for the <i>ListTagsForResource</i> action.</p>
+   * <p>The input parameters for the <code>ListAllowedNodeTypeModifications</code> operation.</p>
+   */
+  @js.native
+  trait ListAllowedNodeTypeModificationsMessage extends js.Object {
+    var CacheClusterId: String
+    var ReplicationGroupId: String
+  }
+
+  object ListAllowedNodeTypeModificationsMessage {
+    def apply(
+      CacheClusterId: js.UndefOr[String] = js.undefined,
+      ReplicationGroupId: js.UndefOr[String] = js.undefined
+    ): ListAllowedNodeTypeModificationsMessage = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("CacheClusterId" -> CacheClusterId.map { x => x: js.Any }),
+        ("ReplicationGroupId" -> ReplicationGroupId.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListAllowedNodeTypeModificationsMessage]
+    }
+  }
+
+  /**
+   * <p>The input parameters for the <code>ListTagsForResource</code> operation.</p>
    */
   @js.native
   trait ListTagsForResourceMessage extends js.Object {
@@ -2106,7 +2189,7 @@ package elasticache {
   }
 
   /**
-   * <p>Represents the input of a <i>ModifyCacheCluster</i> action.</p>
+   * <p>Represents the input of a <code>ModifyCacheCluster</code> operation.</p>
    */
   @js.native
   trait ModifyCacheClusterMessage extends js.Object {
@@ -2115,6 +2198,7 @@ package elasticache {
     var CacheParameterGroupName: String
     var CacheNodeIdsToRemove: CacheNodeIdsList
     var CacheClusterId: String
+    var CacheNodeType: String
     var SnapshotWindow: String
     var CacheSecurityGroupNames: CacheSecurityGroupNameList
     var AutoMinorVersionUpgrade: BooleanOptional
@@ -2135,6 +2219,7 @@ package elasticache {
       CacheParameterGroupName: js.UndefOr[String] = js.undefined,
       CacheNodeIdsToRemove: js.UndefOr[CacheNodeIdsList] = js.undefined,
       CacheClusterId: js.UndefOr[String] = js.undefined,
+      CacheNodeType: js.UndefOr[String] = js.undefined,
       SnapshotWindow: js.UndefOr[String] = js.undefined,
       CacheSecurityGroupNames: js.UndefOr[CacheSecurityGroupNameList] = js.undefined,
       AutoMinorVersionUpgrade: js.UndefOr[BooleanOptional] = js.undefined,
@@ -2153,6 +2238,7 @@ package elasticache {
         ("CacheParameterGroupName" -> CacheParameterGroupName.map { x => x: js.Any }),
         ("CacheNodeIdsToRemove" -> CacheNodeIdsToRemove.map { x => x: js.Any }),
         ("CacheClusterId" -> CacheClusterId.map { x => x: js.Any }),
+        ("CacheNodeType" -> CacheNodeType.map { x => x: js.Any }),
         ("SnapshotWindow" -> SnapshotWindow.map { x => x: js.Any }),
         ("CacheSecurityGroupNames" -> CacheSecurityGroupNames.map { x => x: js.Any }),
         ("AutoMinorVersionUpgrade" -> AutoMinorVersionUpgrade.map { x => x: js.Any }),
@@ -2188,7 +2274,7 @@ package elasticache {
   }
 
   /**
-   * <p>Represents the input of a <i>ModifyCacheParameterGroup</i> action.</p>
+   * <p>Represents the input of a <code>ModifyCacheParameterGroup</code> operation.</p>
    */
   @js.native
   trait ModifyCacheParameterGroupMessage extends js.Object {
@@ -2211,7 +2297,7 @@ package elasticache {
   }
 
   /**
-   * <p>Represents the input of a <i>ModifyCacheSubnetGroup</i> action.</p>
+   * <p>Represents the input of a <code>ModifyCacheSubnetGroup</code> operation.</p>
    */
   @js.native
   trait ModifyCacheSubnetGroupMessage extends js.Object {
@@ -2254,13 +2340,14 @@ package elasticache {
   }
 
   /**
-   * <p>Represents the input of a <i>ModifyReplicationGroups</i> action.</p>
+   * <p>Represents the input of a <code>ModifyReplicationGroups</code> operation.</p>
    */
   @js.native
   trait ModifyReplicationGroupMessage extends js.Object {
     var PreferredMaintenanceWindow: String
     var CacheParameterGroupName: String
     var ReplicationGroupId: String
+    var CacheNodeType: String
     var SnapshotWindow: String
     var CacheSecurityGroupNames: CacheSecurityGroupNameList
     var AutomaticFailoverEnabled: BooleanOptional
@@ -2281,6 +2368,7 @@ package elasticache {
       PreferredMaintenanceWindow: js.UndefOr[String] = js.undefined,
       CacheParameterGroupName: js.UndefOr[String] = js.undefined,
       ReplicationGroupId: js.UndefOr[String] = js.undefined,
+      CacheNodeType: js.UndefOr[String] = js.undefined,
       SnapshotWindow: js.UndefOr[String] = js.undefined,
       CacheSecurityGroupNames: js.UndefOr[CacheSecurityGroupNameList] = js.undefined,
       AutomaticFailoverEnabled: js.UndefOr[BooleanOptional] = js.undefined,
@@ -2299,6 +2387,7 @@ package elasticache {
         ("PreferredMaintenanceWindow" -> PreferredMaintenanceWindow.map { x => x: js.Any }),
         ("CacheParameterGroupName" -> CacheParameterGroupName.map { x => x: js.Any }),
         ("ReplicationGroupId" -> ReplicationGroupId.map { x => x: js.Any }),
+        ("CacheNodeType" -> CacheNodeType.map { x => x: js.Any }),
         ("SnapshotWindow" -> SnapshotWindow.map { x => x: js.Any }),
         ("CacheSecurityGroupNames" -> CacheSecurityGroupNames.map { x => x: js.Any }),
         ("AutomaticFailoverEnabled" -> AutomaticFailoverEnabled.map { x => x: js.Any }),
@@ -2336,28 +2425,31 @@ package elasticache {
   }
 
   /**
-   * <p>Represents a collection of cache nodes in a replication group.</p>
+   * <p>Represents a collection of cache nodes in a replication group. One node in the node group is the read/write primary node. All the other nodes are read-only Replica nodes.</p>
    */
   @js.native
   trait NodeGroup extends js.Object {
-    var NodeGroupId: String
-    var Status: String
+    var Slots: String
     var PrimaryEndpoint: Endpoint
+    var NodeGroupId: String
     var NodeGroupMembers: NodeGroupMemberList
+    var Status: String
   }
 
   object NodeGroup {
     def apply(
-      NodeGroupId: js.UndefOr[String] = js.undefined,
-      Status: js.UndefOr[String] = js.undefined,
+      Slots: js.UndefOr[String] = js.undefined,
       PrimaryEndpoint: js.UndefOr[Endpoint] = js.undefined,
-      NodeGroupMembers: js.UndefOr[NodeGroupMemberList] = js.undefined
+      NodeGroupId: js.UndefOr[String] = js.undefined,
+      NodeGroupMembers: js.UndefOr[NodeGroupMemberList] = js.undefined,
+      Status: js.UndefOr[String] = js.undefined
     ): NodeGroup = {
       val _fields = IndexedSeq[(String, js.Any)](
-        ("NodeGroupId" -> NodeGroupId.map { x => x: js.Any }),
-        ("Status" -> Status.map { x => x: js.Any }),
+        ("Slots" -> Slots.map { x => x: js.Any }),
         ("PrimaryEndpoint" -> PrimaryEndpoint.map { x => x: js.Any }),
-        ("NodeGroupMembers" -> NodeGroupMembers.map { x => x: js.Any })
+        ("NodeGroupId" -> NodeGroupId.map { x => x: js.Any }),
+        ("NodeGroupMembers" -> NodeGroupMembers.map { x => x: js.Any }),
+        ("Status" -> Status.map { x => x: js.Any })
       ).filter(_._2 != js.undefined)
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[NodeGroup]
@@ -2365,7 +2457,36 @@ package elasticache {
   }
 
   /**
-   * <p>Represents a single node within a node group.</p>
+   * <p>node group (shard) configuration options. Each node group (shard) configuration has the following: <code>Slots</code>, <code>PrimaryAvailabilityZone</code>, <code>ReplicaAvailabilityZones</code>, <code>ReplicaCount</code>.</p>
+   */
+  @js.native
+  trait NodeGroupConfiguration extends js.Object {
+    var Slots: String
+    var ReplicaCount: IntegerOptional
+    var PrimaryAvailabilityZone: String
+    var ReplicaAvailabilityZones: AvailabilityZonesList
+  }
+
+  object NodeGroupConfiguration {
+    def apply(
+      Slots: js.UndefOr[String] = js.undefined,
+      ReplicaCount: js.UndefOr[IntegerOptional] = js.undefined,
+      PrimaryAvailabilityZone: js.UndefOr[String] = js.undefined,
+      ReplicaAvailabilityZones: js.UndefOr[AvailabilityZonesList] = js.undefined
+    ): NodeGroupConfiguration = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("Slots" -> Slots.map { x => x: js.Any }),
+        ("ReplicaCount" -> ReplicaCount.map { x => x: js.Any }),
+        ("PrimaryAvailabilityZone" -> PrimaryAvailabilityZone.map { x => x: js.Any }),
+        ("ReplicaAvailabilityZones" -> ReplicaAvailabilityZones.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[NodeGroupConfiguration]
+    }
+  }
+
+  /**
+   * <p>Represents a single node within a node group (shard).</p>
    */
   @js.native
   trait NodeGroupMember extends js.Object {
@@ -2397,6 +2518,14 @@ package elasticache {
   }
 
   /**
+   * <p>The request cannot be processed because it would exceed the maximum of 15 node groups (shards) in a single replication group.</p>
+   */
+  @js.native
+  trait NodeGroupsPerReplicationGroupQuotaExceededFaultException extends js.Object {
+
+  }
+
+  /**
    * <p>The request cannot be processed because it would exceed the allowed number of cache nodes in a single cache cluster.</p>
    */
   @js.native
@@ -2405,7 +2534,7 @@ package elasticache {
   }
 
   /**
-   * <p>The request cannot be processed because it would exceed the allowed number of cache nodes per customer. </p>
+   * <p>The request cannot be processed because it would exceed the allowed number of cache nodes per customer.</p>
    */
   @js.native
   trait NodeQuotaForCustomerExceededFaultException extends js.Object {
@@ -2417,24 +2546,33 @@ package elasticache {
    */
   @js.native
   trait NodeSnapshot extends js.Object {
-    var CacheNodeId: String
-    var CacheSize: String
     var CacheNodeCreateTime: TStamp
+    var CacheNodeId: String
+    var CacheClusterId: String
+    var CacheSize: String
     var SnapshotCreateTime: TStamp
+    var NodeGroupConfiguration: NodeGroupConfiguration
+    var NodeGroupId: String
   }
 
   object NodeSnapshot {
     def apply(
-      CacheNodeId: js.UndefOr[String] = js.undefined,
-      CacheSize: js.UndefOr[String] = js.undefined,
       CacheNodeCreateTime: js.UndefOr[TStamp] = js.undefined,
-      SnapshotCreateTime: js.UndefOr[TStamp] = js.undefined
+      CacheNodeId: js.UndefOr[String] = js.undefined,
+      CacheClusterId: js.UndefOr[String] = js.undefined,
+      CacheSize: js.UndefOr[String] = js.undefined,
+      SnapshotCreateTime: js.UndefOr[TStamp] = js.undefined,
+      NodeGroupConfiguration: js.UndefOr[NodeGroupConfiguration] = js.undefined,
+      NodeGroupId: js.UndefOr[String] = js.undefined
     ): NodeSnapshot = {
       val _fields = IndexedSeq[(String, js.Any)](
-        ("CacheNodeId" -> CacheNodeId.map { x => x: js.Any }),
-        ("CacheSize" -> CacheSize.map { x => x: js.Any }),
         ("CacheNodeCreateTime" -> CacheNodeCreateTime.map { x => x: js.Any }),
-        ("SnapshotCreateTime" -> SnapshotCreateTime.map { x => x: js.Any })
+        ("CacheNodeId" -> CacheNodeId.map { x => x: js.Any }),
+        ("CacheClusterId" -> CacheClusterId.map { x => x: js.Any }),
+        ("CacheSize" -> CacheSize.map { x => x: js.Any }),
+        ("SnapshotCreateTime" -> SnapshotCreateTime.map { x => x: js.Any }),
+        ("NodeGroupConfiguration" -> NodeGroupConfiguration.map { x => x: js.Any }),
+        ("NodeGroupId" -> NodeGroupId.map { x => x: js.Any })
       ).filter(_._2 != js.undefined)
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[NodeSnapshot]
@@ -2471,6 +2609,7 @@ package elasticache {
   trait Parameter extends js.Object {
     var IsModifiable: Boolean
     var Description: String
+    var ChangeType: ChangeType
     var AllowedValues: String
     var Source: String
     var MinimumEngineVersion: String
@@ -2483,6 +2622,7 @@ package elasticache {
     def apply(
       IsModifiable: js.UndefOr[Boolean] = js.undefined,
       Description: js.UndefOr[String] = js.undefined,
+      ChangeType: js.UndefOr[ChangeType] = js.undefined,
       AllowedValues: js.UndefOr[String] = js.undefined,
       Source: js.UndefOr[String] = js.undefined,
       MinimumEngineVersion: js.UndefOr[String] = js.undefined,
@@ -2493,6 +2633,7 @@ package elasticache {
       val _fields = IndexedSeq[(String, js.Any)](
         ("IsModifiable" -> IsModifiable.map { x => x: js.Any }),
         ("Description" -> Description.map { x => x: js.Any }),
+        ("ChangeType" -> ChangeType.map { x => x: js.Any }),
         ("AllowedValues" -> AllowedValues.map { x => x: js.Any }),
         ("Source" -> Source.map { x => x: js.Any }),
         ("MinimumEngineVersion" -> MinimumEngineVersion.map { x => x: js.Any }),
@@ -2537,25 +2678,28 @@ package elasticache {
   }
 
   /**
-   * <p>A group of settings that will be applied to the cache cluster in the future, or that are currently being applied.</p>
+   * <p>A group of settings that are applied to the cache cluster in the future, or that are currently being applied.</p>
    */
   @js.native
   trait PendingModifiedValues extends js.Object {
     var NumCacheNodes: IntegerOptional
     var CacheNodeIdsToRemove: CacheNodeIdsList
     var EngineVersion: String
+    var CacheNodeType: String
   }
 
   object PendingModifiedValues {
     def apply(
       NumCacheNodes: js.UndefOr[IntegerOptional] = js.undefined,
       CacheNodeIdsToRemove: js.UndefOr[CacheNodeIdsList] = js.undefined,
-      EngineVersion: js.UndefOr[String] = js.undefined
+      EngineVersion: js.UndefOr[String] = js.undefined,
+      CacheNodeType: js.UndefOr[String] = js.undefined
     ): PendingModifiedValues = {
       val _fields = IndexedSeq[(String, js.Any)](
         ("NumCacheNodes" -> NumCacheNodes.map { x => x: js.Any }),
         ("CacheNodeIdsToRemove" -> CacheNodeIdsToRemove.map { x => x: js.Any }),
-        ("EngineVersion" -> EngineVersion.map { x => x: js.Any })
+        ("EngineVersion" -> EngineVersion.map { x => x: js.Any }),
+        ("CacheNodeType" -> CacheNodeType.map { x => x: js.Any })
       ).filter(_._2 != js.undefined)
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PendingModifiedValues]
@@ -2563,7 +2707,7 @@ package elasticache {
   }
 
   /**
-   * <p>Represents the input of a <i>PurchaseReservedCacheNodesOffering</i> action.</p>
+   * <p>Represents the input of a <code>PurchaseReservedCacheNodesOffering</code> operation.</p>
    */
   @js.native
   trait PurchaseReservedCacheNodesOfferingMessage extends js.Object {
@@ -2606,7 +2750,7 @@ package elasticache {
   }
 
   /**
-   * <p>Represents the input of a <i>RebootCacheCluster</i> action.</p>
+   * <p>Represents the input of a <code>RebootCacheCluster</code> operation.</p>
    */
   @js.native
   trait RebootCacheClusterMessage extends js.Object {
@@ -2669,7 +2813,7 @@ package elasticache {
   }
 
   /**
-   * <p>Represents the input of a <i>RemoveTagsFromResource</i> action.</p>
+   * <p>Represents the input of a <code>RemoveTagsFromResource</code> operation.</p>
    */
   @js.native
   trait RemoveTagsFromResourceMessage extends js.Object {
@@ -2692,16 +2836,19 @@ package elasticache {
   }
 
   /**
-   * <p>Contains all of the attributes of a specific replication group.</p>
+   * <p>Contains all of the attributes of a specific Redis replication group.</p>
    */
   @js.native
   trait ReplicationGroup extends js.Object {
     var AutomaticFailover: AutomaticFailoverStatus
     var ReplicationGroupId: String
+    var ConfigurationEndpoint: Endpoint
     var Description: String
     var PendingModifiedValues: ReplicationGroupPendingModifiedValues
+    var SnapshotWindow: String
     var MemberClusters: ClusterIdList
     var NodeGroups: NodeGroupList
+    var SnapshotRetentionLimit: IntegerOptional
     var Status: String
     var SnapshottingClusterId: String
   }
@@ -2710,20 +2857,26 @@ package elasticache {
     def apply(
       AutomaticFailover: js.UndefOr[AutomaticFailoverStatus] = js.undefined,
       ReplicationGroupId: js.UndefOr[String] = js.undefined,
+      ConfigurationEndpoint: js.UndefOr[Endpoint] = js.undefined,
       Description: js.UndefOr[String] = js.undefined,
       PendingModifiedValues: js.UndefOr[ReplicationGroupPendingModifiedValues] = js.undefined,
+      SnapshotWindow: js.UndefOr[String] = js.undefined,
       MemberClusters: js.UndefOr[ClusterIdList] = js.undefined,
       NodeGroups: js.UndefOr[NodeGroupList] = js.undefined,
+      SnapshotRetentionLimit: js.UndefOr[IntegerOptional] = js.undefined,
       Status: js.UndefOr[String] = js.undefined,
       SnapshottingClusterId: js.UndefOr[String] = js.undefined
     ): ReplicationGroup = {
       val _fields = IndexedSeq[(String, js.Any)](
         ("AutomaticFailover" -> AutomaticFailover.map { x => x: js.Any }),
         ("ReplicationGroupId" -> ReplicationGroupId.map { x => x: js.Any }),
+        ("ConfigurationEndpoint" -> ConfigurationEndpoint.map { x => x: js.Any }),
         ("Description" -> Description.map { x => x: js.Any }),
         ("PendingModifiedValues" -> PendingModifiedValues.map { x => x: js.Any }),
+        ("SnapshotWindow" -> SnapshotWindow.map { x => x: js.Any }),
         ("MemberClusters" -> MemberClusters.map { x => x: js.Any }),
         ("NodeGroups" -> NodeGroups.map { x => x: js.Any }),
+        ("SnapshotRetentionLimit" -> SnapshotRetentionLimit.map { x => x: js.Any }),
         ("Status" -> Status.map { x => x: js.Any }),
         ("SnapshottingClusterId" -> SnapshottingClusterId.map { x => x: js.Any })
       ).filter(_._2 != js.undefined)
@@ -2741,7 +2894,7 @@ package elasticache {
   }
 
   /**
-   * <p>Represents the output of a <i>DescribeReplicationGroups</i> action.</p>
+   * <p>Represents the output of a <code>DescribeReplicationGroups</code> operation.</p>
    */
   @js.native
   trait ReplicationGroupMessage extends js.Object {
@@ -2772,7 +2925,7 @@ package elasticache {
   }
 
   /**
-   * <p>The settings to be applied to the replication group, either immediately or during the next maintenance window.</p>
+   * <p>The settings to be applied to the Redis replication group, either immediately or during the next maintenance window.</p>
    */
   @js.native
   trait ReplicationGroupPendingModifiedValues extends js.Object {
@@ -2795,7 +2948,7 @@ package elasticache {
   }
 
   /**
-   * <p>Represents the output of a <i>PurchaseReservedCacheNodesOffering</i> action.</p>
+   * <p>Represents the output of a <code>PurchaseReservedCacheNodesOffering</code> operation.</p>
    */
   @js.native
   trait ReservedCacheNode extends js.Object {
@@ -2856,7 +3009,7 @@ package elasticache {
   }
 
   /**
-   * <p>Represents the output of a <i>DescribeReservedCacheNodes</i> action.</p>
+   * <p>Represents the output of a <code>DescribeReservedCacheNodes</code> operation.</p>
    */
   @js.native
   trait ReservedCacheNodeMessage extends js.Object {
@@ -2936,7 +3089,7 @@ package elasticache {
   }
 
   /**
-   * <p>Represents the output of a <i>DescribeReservedCacheNodesOfferings</i> action.</p>
+   * <p>Represents the output of a <code>DescribeReservedCacheNodesOfferings</code> operation.</p>
    */
   @js.native
   trait ReservedCacheNodesOfferingMessage extends js.Object {
@@ -2967,7 +3120,7 @@ package elasticache {
   }
 
   /**
-   * <p>Represents the input of a <i>ResetCacheParameterGroup</i> action.</p>
+   * <p>Represents the input of a <code>ResetCacheParameterGroup</code> operation.</p>
    */
   @js.native
   trait ResetCacheParameterGroupMessage extends js.Object {
@@ -2993,7 +3146,7 @@ package elasticache {
   }
 
   /**
-   * <p>Represents the input of a <i>RevokeCacheSecurityGroupIngress</i> action.</p>
+   * <p>Represents the input of a <code>RevokeCacheSecurityGroupIngress</code> operation.</p>
    */
   @js.native
   trait RevokeCacheSecurityGroupIngressMessage extends js.Object {
@@ -3059,17 +3212,20 @@ package elasticache {
   }
 
   /**
-   * <p>Represents a copy of an entire cache cluster as of the time when the snapshot was taken.</p>
+   * <p>Represents a copy of an entire Redis cache cluster as of the time when the snapshot was taken.</p>
    */
   @js.native
   trait Snapshot extends js.Object {
     var PreferredMaintenanceWindow: String
     var SnapshotSource: String
     var CacheParameterGroupName: String
+    var AutomaticFailover: AutomaticFailoverStatus
+    var ReplicationGroupId: String
     var Engine: String
     var SnapshotStatus: String
     var PreferredAvailabilityZone: String
     var NodeSnapshots: NodeSnapshotList
+    var NumNodeGroups: IntegerOptional
     var CacheClusterId: String
     var CacheClusterCreateTime: TStamp
     var CacheNodeType: String
@@ -3079,6 +3235,7 @@ package elasticache {
     var EngineVersion: String
     var Port: IntegerOptional
     var CacheSubnetGroupName: String
+    var ReplicationGroupDescription: String
     var NumCacheNodes: IntegerOptional
     var SnapshotRetentionLimit: IntegerOptional
     var TopicArn: String
@@ -3090,10 +3247,13 @@ package elasticache {
       PreferredMaintenanceWindow: js.UndefOr[String] = js.undefined,
       SnapshotSource: js.UndefOr[String] = js.undefined,
       CacheParameterGroupName: js.UndefOr[String] = js.undefined,
+      AutomaticFailover: js.UndefOr[AutomaticFailoverStatus] = js.undefined,
+      ReplicationGroupId: js.UndefOr[String] = js.undefined,
       Engine: js.UndefOr[String] = js.undefined,
       SnapshotStatus: js.UndefOr[String] = js.undefined,
       PreferredAvailabilityZone: js.UndefOr[String] = js.undefined,
       NodeSnapshots: js.UndefOr[NodeSnapshotList] = js.undefined,
+      NumNodeGroups: js.UndefOr[IntegerOptional] = js.undefined,
       CacheClusterId: js.UndefOr[String] = js.undefined,
       CacheClusterCreateTime: js.UndefOr[TStamp] = js.undefined,
       CacheNodeType: js.UndefOr[String] = js.undefined,
@@ -3103,6 +3263,7 @@ package elasticache {
       EngineVersion: js.UndefOr[String] = js.undefined,
       Port: js.UndefOr[IntegerOptional] = js.undefined,
       CacheSubnetGroupName: js.UndefOr[String] = js.undefined,
+      ReplicationGroupDescription: js.UndefOr[String] = js.undefined,
       NumCacheNodes: js.UndefOr[IntegerOptional] = js.undefined,
       SnapshotRetentionLimit: js.UndefOr[IntegerOptional] = js.undefined,
       TopicArn: js.UndefOr[String] = js.undefined,
@@ -3112,10 +3273,13 @@ package elasticache {
         ("PreferredMaintenanceWindow" -> PreferredMaintenanceWindow.map { x => x: js.Any }),
         ("SnapshotSource" -> SnapshotSource.map { x => x: js.Any }),
         ("CacheParameterGroupName" -> CacheParameterGroupName.map { x => x: js.Any }),
+        ("AutomaticFailover" -> AutomaticFailover.map { x => x: js.Any }),
+        ("ReplicationGroupId" -> ReplicationGroupId.map { x => x: js.Any }),
         ("Engine" -> Engine.map { x => x: js.Any }),
         ("SnapshotStatus" -> SnapshotStatus.map { x => x: js.Any }),
         ("PreferredAvailabilityZone" -> PreferredAvailabilityZone.map { x => x: js.Any }),
         ("NodeSnapshots" -> NodeSnapshots.map { x => x: js.Any }),
+        ("NumNodeGroups" -> NumNodeGroups.map { x => x: js.Any }),
         ("CacheClusterId" -> CacheClusterId.map { x => x: js.Any }),
         ("CacheClusterCreateTime" -> CacheClusterCreateTime.map { x => x: js.Any }),
         ("CacheNodeType" -> CacheNodeType.map { x => x: js.Any }),
@@ -3125,6 +3289,7 @@ package elasticache {
         ("EngineVersion" -> EngineVersion.map { x => x: js.Any }),
         ("Port" -> Port.map { x => x: js.Any }),
         ("CacheSubnetGroupName" -> CacheSubnetGroupName.map { x => x: js.Any }),
+        ("ReplicationGroupDescription" -> ReplicationGroupDescription.map { x => x: js.Any }),
         ("NumCacheNodes" -> NumCacheNodes.map { x => x: js.Any }),
         ("SnapshotRetentionLimit" -> SnapshotRetentionLimit.map { x => x: js.Any }),
         ("TopicArn" -> TopicArn.map { x => x: js.Any }),
@@ -3144,7 +3309,7 @@ package elasticache {
   }
 
   /**
-   * <p>You attempted one of the following actions:</p> <ul> <li> <p>Creating a snapshot of a Redis cache cluster running on a <i>t1.micro</i> cache node.</p> </li> <li> <p>Creating a snapshot of a cache cluster that is running Memcached rather than Redis.</p> </li> </ul> <p>Neither of these are supported by ElastiCache.</p>
+   * <p>You attempted one of the following operations:</p> <ul> <li> <p>Creating a snapshot of a Redis cache cluster running on a <code>cache.t1.micro</code> cache node.</p> </li> <li> <p>Creating a snapshot of a cache cluster that is running Memcached rather than Redis.</p> </li> </ul> <p>Neither of these are supported by ElastiCache.</p>
    */
   @js.native
   trait SnapshotFeatureNotSupportedFaultException extends js.Object {
@@ -3173,8 +3338,9 @@ package elasticache {
     val `cache-parameter-group` = "cache-parameter-group"
     val `cache-security-group` = "cache-security-group"
     val `cache-subnet-group` = "cache-subnet-group"
+    val `replication-group` = "replication-group"
 
-    val values = IndexedSeq(`cache-cluster`, `cache-parameter-group`, `cache-security-group`, `cache-subnet-group`)
+    val values = IndexedSeq(`cache-cluster`, `cache-parameter-group`, `cache-security-group`, `cache-subnet-group`, `replication-group`)
   }
 
   /**
@@ -3232,7 +3398,7 @@ package elasticache {
   }
 
   /**
-   * <p>Represents the output from the <i>AddTagsToResource</i>, <i>ListTagsOnResource</i>, and <i>RemoveTagsFromResource</i> actions.</p>
+   * <p>Represents the output from the <code>AddTagsToResource</code>, <code>ListTagsOnResource</code>, and <code>RemoveTagsFromResource</code> operations.</p>
    */
   @js.native
   trait TagListMessage extends js.Object {

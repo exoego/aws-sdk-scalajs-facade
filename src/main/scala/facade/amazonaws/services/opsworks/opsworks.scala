@@ -4,6 +4,7 @@ import scalajs._
 import facade.amazonaws._
 
 package object opsworks {
+  type AgentVersions = js.Array[AgentVersion]
   type AppAttributes = js.Dictionary[String]
   type AppAttributesKeys = String
   type AppType = String
@@ -18,6 +19,7 @@ package object opsworks {
   type DeploymentCommandArgs = js.Dictionary[Strings]
   type DeploymentCommandName = String
   type Deployments = js.Array[Deployment]
+  type EcsClusters = js.Array[EcsCluster]
   type ElasticIps = js.Array[ElasticIp]
   type ElasticLoadBalancers = js.Array[ElasticLoadBalancer]
   type EnvironmentVariables = js.Array[EnvironmentVariable]
@@ -43,6 +45,7 @@ package object opsworks {
   type Switch = String
   type TimeBasedAutoScalingConfigurations = js.Array[TimeBasedAutoScalingConfiguration]
   type UserProfiles = js.Array[UserProfile]
+  type ValidForInMinutes = Integer
   type VirtualizationType = String
   type VolumeConfigurations = js.Array[VolumeConfiguration]
   type VolumeType = String
@@ -84,6 +87,8 @@ package opsworks {
     def deleteStack(params: DeleteStackRequest): Request[js.Object] = js.native
     def deleteUserProfile(params: DeleteUserProfileRequest, callback: Callback[js.Object]): Unit = js.native
     def deleteUserProfile(params: DeleteUserProfileRequest): Request[js.Object] = js.native
+    def deregisterEcsCluster(params: DeregisterEcsClusterRequest, callback: Callback[js.Object]): Unit = js.native
+    def deregisterEcsCluster(params: DeregisterEcsClusterRequest): Request[js.Object] = js.native
     def deregisterElasticIp(params: DeregisterElasticIpRequest, callback: Callback[js.Object]): Unit = js.native
     def deregisterElasticIp(params: DeregisterElasticIpRequest): Request[js.Object] = js.native
     def deregisterInstance(params: DeregisterInstanceRequest, callback: Callback[js.Object]): Unit = js.native
@@ -92,12 +97,16 @@ package opsworks {
     def deregisterRdsDbInstance(params: DeregisterRdsDbInstanceRequest): Request[js.Object] = js.native
     def deregisterVolume(params: DeregisterVolumeRequest, callback: Callback[js.Object]): Unit = js.native
     def deregisterVolume(params: DeregisterVolumeRequest): Request[js.Object] = js.native
+    def describeAgentVersions(params: DescribeAgentVersionsRequest, callback: Callback[DescribeAgentVersionsResult]): Unit = js.native
+    def describeAgentVersions(params: DescribeAgentVersionsRequest): Request[DescribeAgentVersionsResult] = js.native
     def describeApps(params: DescribeAppsRequest, callback: Callback[DescribeAppsResult]): Unit = js.native
     def describeApps(params: DescribeAppsRequest): Request[DescribeAppsResult] = js.native
     def describeCommands(params: DescribeCommandsRequest, callback: Callback[DescribeCommandsResult]): Unit = js.native
     def describeCommands(params: DescribeCommandsRequest): Request[DescribeCommandsResult] = js.native
     def describeDeployments(params: DescribeDeploymentsRequest, callback: Callback[DescribeDeploymentsResult]): Unit = js.native
     def describeDeployments(params: DescribeDeploymentsRequest): Request[DescribeDeploymentsResult] = js.native
+    def describeEcsClusters(params: DescribeEcsClustersRequest, callback: Callback[DescribeEcsClustersResult]): Unit = js.native
+    def describeEcsClusters(params: DescribeEcsClustersRequest): Request[DescribeEcsClustersResult] = js.native
     def describeElasticIps(params: DescribeElasticIpsRequest, callback: Callback[DescribeElasticIpsResult]): Unit = js.native
     def describeElasticIps(params: DescribeElasticIpsRequest): Request[DescribeElasticIpsResult] = js.native
     def describeElasticLoadBalancers(params: DescribeElasticLoadBalancersRequest, callback: Callback[DescribeElasticLoadBalancersResult]): Unit = js.native
@@ -136,8 +145,12 @@ package opsworks {
     def disassociateElasticIp(params: DisassociateElasticIpRequest): Request[js.Object] = js.native
     def getHostnameSuggestion(params: GetHostnameSuggestionRequest, callback: Callback[GetHostnameSuggestionResult]): Unit = js.native
     def getHostnameSuggestion(params: GetHostnameSuggestionRequest): Request[GetHostnameSuggestionResult] = js.native
+    def grantAccess(params: GrantAccessRequest, callback: Callback[GrantAccessResult]): Unit = js.native
+    def grantAccess(params: GrantAccessRequest): Request[GrantAccessResult] = js.native
     def rebootInstance(params: RebootInstanceRequest, callback: Callback[js.Object]): Unit = js.native
     def rebootInstance(params: RebootInstanceRequest): Request[js.Object] = js.native
+    def registerEcsCluster(params: RegisterEcsClusterRequest, callback: Callback[RegisterEcsClusterResult]): Unit = js.native
+    def registerEcsCluster(params: RegisterEcsClusterRequest): Request[RegisterEcsClusterResult] = js.native
     def registerElasticIp(params: RegisterElasticIpRequest, callback: Callback[RegisterElasticIpResult]): Unit = js.native
     def registerElasticIp(params: RegisterElasticIpRequest): Request[RegisterElasticIpResult] = js.native
     def registerInstance(params: RegisterInstanceRequest, callback: Callback[RegisterInstanceResult]): Unit = js.native
@@ -182,6 +195,29 @@ package opsworks {
     def updateUserProfile(params: UpdateUserProfileRequest): Request[js.Object] = js.native
     def updateVolume(params: UpdateVolumeRequest, callback: Callback[js.Object]): Unit = js.native
     def updateVolume(params: UpdateVolumeRequest): Request[js.Object] = js.native
+  }
+
+  /**
+   * <p>Describes an agent version.</p>
+   */
+  @js.native
+  trait AgentVersion extends js.Object {
+    var Version: String
+    var ConfigurationManager: StackConfigurationManager
+  }
+
+  object AgentVersion {
+    def apply(
+      Version: js.UndefOr[String] = js.undefined,
+      ConfigurationManager: js.UndefOr[StackConfigurationManager] = js.undefined
+    ): AgentVersion = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("Version" -> Version.map { x => x: js.Any }),
+        ("ConfigurationManager" -> ConfigurationManager.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AgentVersion]
+    }
   }
 
   /**
@@ -248,12 +284,14 @@ package opsworks {
     val DocumentRoot = "DocumentRoot"
     val RailsEnv = "RailsEnv"
     val AutoBundleOnDeploy = "AutoBundleOnDeploy"
+    val AwsFlowRubySettings = "AwsFlowRubySettings"
 
-    val values = IndexedSeq(DocumentRoot, RailsEnv, AutoBundleOnDeploy)
+    val values = IndexedSeq(DocumentRoot, RailsEnv, AutoBundleOnDeploy, AwsFlowRubySettings)
   }
 
 
   object AppTypeEnum {
+    val `aws-flow-ruby` = "aws-flow-ruby"
     val java = "java"
     val rails = "rails"
     val php = "php"
@@ -261,7 +299,7 @@ package opsworks {
     val static = "static"
     val other = "other"
 
-    val values = IndexedSeq(java, rails, php, nodejs, static, other)
+    val values = IndexedSeq(`aws-flow-ruby`, java, rails, php, nodejs, static, other)
   }
 
 
@@ -362,6 +400,7 @@ package opsworks {
     var InstanceCount: Integer
     var MemoryThreshold: Double
     var IgnoreMetricsTime: Minute
+    var Alarms: Strings
     var LoadThreshold: Double
   }
 
@@ -372,6 +411,7 @@ package opsworks {
       InstanceCount: js.UndefOr[Integer] = js.undefined,
       MemoryThreshold: js.UndefOr[Double] = js.undefined,
       IgnoreMetricsTime: js.UndefOr[Minute] = js.undefined,
+      Alarms: js.UndefOr[Strings] = js.undefined,
       LoadThreshold: js.UndefOr[Double] = js.undefined
     ): AutoScalingThresholds = {
       val _fields = IndexedSeq[(String, js.Any)](
@@ -380,6 +420,7 @@ package opsworks {
         ("InstanceCount" -> InstanceCount.map { x => x: js.Any }),
         ("MemoryThreshold" -> MemoryThreshold.map { x => x: js.Any }),
         ("IgnoreMetricsTime" -> IgnoreMetricsTime.map { x => x: js.Any }),
+        ("Alarms" -> Alarms.map { x => x: js.Any }),
         ("LoadThreshold" -> LoadThreshold.map { x => x: js.Any })
       ).filter(_._2 != js.undefined)
 
@@ -460,6 +501,7 @@ package opsworks {
     var ClonePermissions: Boolean
     var Region: String
     var CustomCookbooksSource: Source
+    var AgentVersion: String
     var CustomJson: String
     var DefaultInstanceProfileArn: String
     var ServiceRoleArn: String
@@ -485,6 +527,7 @@ package opsworks {
       ClonePermissions: js.UndefOr[Boolean] = js.undefined,
       Region: js.UndefOr[String] = js.undefined,
       CustomCookbooksSource: js.UndefOr[Source] = js.undefined,
+      AgentVersion: js.UndefOr[String] = js.undefined,
       CustomJson: js.UndefOr[String] = js.undefined,
       DefaultInstanceProfileArn: js.UndefOr[String] = js.undefined,
       ServiceRoleArn: js.UndefOr[String] = js.undefined,
@@ -508,6 +551,7 @@ package opsworks {
         ("ClonePermissions" -> ClonePermissions.map { x => x: js.Any }),
         ("Region" -> Region.map { x => x: js.Any }),
         ("CustomCookbooksSource" -> CustomCookbooksSource.map { x => x: js.Any }),
+        ("AgentVersion" -> AgentVersion.map { x => x: js.Any }),
         ("CustomJson" -> CustomJson.map { x => x: js.Any }),
         ("DefaultInstanceProfileArn" -> DefaultInstanceProfileArn.map { x => x: js.Any }),
         ("ServiceRoleArn" -> ServiceRoleArn.map { x => x: js.Any }),
@@ -669,6 +713,7 @@ package opsworks {
     var CustomJson: String
     var InstanceIds: Strings
     var Comment: String
+    var LayerIds: Strings
   }
 
   object CreateDeploymentRequest {
@@ -678,7 +723,8 @@ package opsworks {
       StackId: js.UndefOr[String] = js.undefined,
       CustomJson: js.UndefOr[String] = js.undefined,
       InstanceIds: js.UndefOr[Strings] = js.undefined,
-      Comment: js.UndefOr[String] = js.undefined
+      Comment: js.UndefOr[String] = js.undefined,
+      LayerIds: js.UndefOr[Strings] = js.undefined
     ): CreateDeploymentRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         ("Command" -> Command.map { x => x: js.Any }),
@@ -686,7 +732,8 @@ package opsworks {
         ("StackId" -> StackId.map { x => x: js.Any }),
         ("CustomJson" -> CustomJson.map { x => x: js.Any }),
         ("InstanceIds" -> InstanceIds.map { x => x: js.Any }),
-        ("Comment" -> Comment.map { x => x: js.Any })
+        ("Comment" -> Comment.map { x => x: js.Any }),
+        ("LayerIds" -> LayerIds.map { x => x: js.Any })
       ).filter(_._2 != js.undefined)
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateDeploymentRequest]
@@ -718,7 +765,9 @@ package opsworks {
     var Architecture: Architecture
     var BlockDeviceMappings: BlockDeviceMappings
     var EbsOptimized: Boolean
+    var Tenancy: String
     var StackId: String
+    var AgentVersion: String
     var AvailabilityZone: String
     var RootDeviceType: RootDeviceType
     var InstanceType: String
@@ -738,7 +787,9 @@ package opsworks {
       Architecture: js.UndefOr[Architecture] = js.undefined,
       BlockDeviceMappings: js.UndefOr[BlockDeviceMappings] = js.undefined,
       EbsOptimized: js.UndefOr[Boolean] = js.undefined,
+      Tenancy: js.UndefOr[String] = js.undefined,
       StackId: js.UndefOr[String] = js.undefined,
+      AgentVersion: js.UndefOr[String] = js.undefined,
       AvailabilityZone: js.UndefOr[String] = js.undefined,
       RootDeviceType: js.UndefOr[RootDeviceType] = js.undefined,
       InstanceType: js.UndefOr[String] = js.undefined,
@@ -756,7 +807,9 @@ package opsworks {
         ("Architecture" -> Architecture.map { x => x: js.Any }),
         ("BlockDeviceMappings" -> BlockDeviceMappings.map { x => x: js.Any }),
         ("EbsOptimized" -> EbsOptimized.map { x => x: js.Any }),
+        ("Tenancy" -> Tenancy.map { x => x: js.Any }),
         ("StackId" -> StackId.map { x => x: js.Any }),
+        ("AgentVersion" -> AgentVersion.map { x => x: js.Any }),
         ("AvailabilityZone" -> AvailabilityZone.map { x => x: js.Any }),
         ("RootDeviceType" -> RootDeviceType.map { x => x: js.Any }),
         ("InstanceType" -> InstanceType.map { x => x: js.Any }),
@@ -807,6 +860,7 @@ package opsworks {
     var CustomInstanceProfileArn: String
     var CustomSecurityGroupIds: Strings
     var LifecycleEventConfiguration: LifecycleEventConfiguration
+    var CustomJson: String
     var CustomRecipes: Recipes
     var AutoAssignElasticIps: Boolean
     var Shortname: String
@@ -827,6 +881,7 @@ package opsworks {
       CustomInstanceProfileArn: js.UndefOr[String] = js.undefined,
       CustomSecurityGroupIds: js.UndefOr[Strings] = js.undefined,
       LifecycleEventConfiguration: js.UndefOr[LifecycleEventConfiguration] = js.undefined,
+      CustomJson: js.UndefOr[String] = js.undefined,
       CustomRecipes: js.UndefOr[Recipes] = js.undefined,
       AutoAssignElasticIps: js.UndefOr[Boolean] = js.undefined,
       Shortname: js.UndefOr[String] = js.undefined,
@@ -845,6 +900,7 @@ package opsworks {
         ("CustomInstanceProfileArn" -> CustomInstanceProfileArn.map { x => x: js.Any }),
         ("CustomSecurityGroupIds" -> CustomSecurityGroupIds.map { x => x: js.Any }),
         ("LifecycleEventConfiguration" -> LifecycleEventConfiguration.map { x => x: js.Any }),
+        ("CustomJson" -> CustomJson.map { x => x: js.Any }),
         ("CustomRecipes" -> CustomRecipes.map { x => x: js.Any }),
         ("AutoAssignElasticIps" -> AutoAssignElasticIps.map { x => x: js.Any }),
         ("Shortname" -> Shortname.map { x => x: js.Any }),
@@ -888,6 +944,7 @@ package opsworks {
     var Attributes: StackAttributes
     var Region: String
     var CustomCookbooksSource: Source
+    var AgentVersion: String
     var CustomJson: String
     var DefaultInstanceProfileArn: String
     var ServiceRoleArn: String
@@ -910,6 +967,7 @@ package opsworks {
       Attributes: js.UndefOr[StackAttributes] = js.undefined,
       Region: js.UndefOr[String] = js.undefined,
       CustomCookbooksSource: js.UndefOr[Source] = js.undefined,
+      AgentVersion: js.UndefOr[String] = js.undefined,
       CustomJson: js.UndefOr[String] = js.undefined,
       DefaultInstanceProfileArn: js.UndefOr[String] = js.undefined,
       ServiceRoleArn: js.UndefOr[String] = js.undefined,
@@ -930,6 +988,7 @@ package opsworks {
         ("Attributes" -> Attributes.map { x => x: js.Any }),
         ("Region" -> Region.map { x => x: js.Any }),
         ("CustomCookbooksSource" -> CustomCookbooksSource.map { x => x: js.Any }),
+        ("AgentVersion" -> AgentVersion.map { x => x: js.Any }),
         ("CustomJson" -> CustomJson.map { x => x: js.Any }),
         ("DefaultInstanceProfileArn" -> DefaultInstanceProfileArn.map { x => x: js.Any }),
         ("ServiceRoleArn" -> ServiceRoleArn.map { x => x: js.Any }),
@@ -1210,6 +1269,8 @@ package opsworks {
     val `update_dependencies` = "update_dependencies"
     val `update_custom_cookbooks` = "update_custom_cookbooks"
     val `execute_recipes` = "execute_recipes"
+    val configure = "configure"
+    val setup = "setup"
     val deploy = "deploy"
     val rollback = "rollback"
     val start = "start"
@@ -1217,7 +1278,24 @@ package opsworks {
     val restart = "restart"
     val undeploy = "undeploy"
 
-    val values = IndexedSeq(`install_dependencies`, `update_dependencies`, `update_custom_cookbooks`, `execute_recipes`, deploy, rollback, start, stop, restart, undeploy)
+    val values = IndexedSeq(`install_dependencies`, `update_dependencies`, `update_custom_cookbooks`, `execute_recipes`, configure, setup, deploy, rollback, start, stop, restart, undeploy)
+  }
+
+  @js.native
+  trait DeregisterEcsClusterRequest extends js.Object {
+    var EcsClusterArn: String
+  }
+
+  object DeregisterEcsClusterRequest {
+    def apply(
+      EcsClusterArn: js.UndefOr[String] = js.undefined
+    ): DeregisterEcsClusterRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("EcsClusterArn" -> EcsClusterArn.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeregisterEcsClusterRequest]
+    }
   }
 
   @js.native
@@ -1285,6 +1363,46 @@ package opsworks {
       ).filter(_._2 != js.undefined)
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeregisterVolumeRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeAgentVersionsRequest extends js.Object {
+    var StackId: String
+    var ConfigurationManager: StackConfigurationManager
+  }
+
+  object DescribeAgentVersionsRequest {
+    def apply(
+      StackId: js.UndefOr[String] = js.undefined,
+      ConfigurationManager: js.UndefOr[StackConfigurationManager] = js.undefined
+    ): DescribeAgentVersionsRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("StackId" -> StackId.map { x => x: js.Any }),
+        ("ConfigurationManager" -> ConfigurationManager.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeAgentVersionsRequest]
+    }
+  }
+
+  /**
+   * <p>Contains the response to a <code>DescribeAgentVersions</code> request.</p>
+   */
+  @js.native
+  trait DescribeAgentVersionsResult extends js.Object {
+    var AgentVersions: AgentVersions
+  }
+
+  object DescribeAgentVersionsResult {
+    def apply(
+      AgentVersions: js.UndefOr[AgentVersions] = js.undefined
+    ): DescribeAgentVersionsResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("AgentVersions" -> AgentVersions.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeAgentVersionsResult]
     }
   }
 
@@ -1411,6 +1529,55 @@ package opsworks {
       ).filter(_._2 != js.undefined)
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeDeploymentsResult]
+    }
+  }
+
+  @js.native
+  trait DescribeEcsClustersRequest extends js.Object {
+    var EcsClusterArns: Strings
+    var StackId: String
+    var NextToken: String
+    var MaxResults: Integer
+  }
+
+  object DescribeEcsClustersRequest {
+    def apply(
+      EcsClusterArns: js.UndefOr[Strings] = js.undefined,
+      StackId: js.UndefOr[String] = js.undefined,
+      NextToken: js.UndefOr[String] = js.undefined,
+      MaxResults: js.UndefOr[Integer] = js.undefined
+    ): DescribeEcsClustersRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("EcsClusterArns" -> EcsClusterArns.map { x => x: js.Any }),
+        ("StackId" -> StackId.map { x => x: js.Any }),
+        ("NextToken" -> NextToken.map { x => x: js.Any }),
+        ("MaxResults" -> MaxResults.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeEcsClustersRequest]
+    }
+  }
+
+  /**
+   * <p>Contains the response to a <code>DescribeEcsClusters</code> request.</p>
+   */
+  @js.native
+  trait DescribeEcsClustersResult extends js.Object {
+    var EcsClusters: EcsClusters
+    var NextToken: String
+  }
+
+  object DescribeEcsClustersResult {
+    def apply(
+      EcsClusters: js.UndefOr[EcsClusters] = js.undefined,
+      NextToken: js.UndefOr[String] = js.undefined
+    ): DescribeEcsClustersResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("EcsClusters" -> EcsClusters.map { x => x: js.Any }),
+        ("NextToken" -> NextToken.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeEcsClustersResult]
     }
   }
 
@@ -2107,6 +2274,35 @@ package opsworks {
   }
 
   /**
+   * <p>Describes a registered Amazon ECS cluster.</p>
+   */
+  @js.native
+  trait EcsCluster extends js.Object {
+    var EcsClusterArn: String
+    var EcsClusterName: String
+    var StackId: String
+    var RegisteredAt: DateTime
+  }
+
+  object EcsCluster {
+    def apply(
+      EcsClusterArn: js.UndefOr[String] = js.undefined,
+      EcsClusterName: js.UndefOr[String] = js.undefined,
+      StackId: js.UndefOr[String] = js.undefined,
+      RegisteredAt: js.UndefOr[DateTime] = js.undefined
+    ): EcsCluster = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("EcsClusterArn" -> EcsClusterArn.map { x => x: js.Any }),
+        ("EcsClusterName" -> EcsClusterName.map { x => x: js.Any }),
+        ("StackId" -> StackId.map { x => x: js.Any }),
+        ("RegisteredAt" -> RegisteredAt.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EcsCluster]
+    }
+  }
+
+  /**
    * <p>Describes an Elastic IP address.</p>
    */
   @js.native
@@ -2248,6 +2444,46 @@ package opsworks {
     }
   }
 
+  @js.native
+  trait GrantAccessRequest extends js.Object {
+    var InstanceId: String
+    var ValidForInMinutes: ValidForInMinutes
+  }
+
+  object GrantAccessRequest {
+    def apply(
+      InstanceId: js.UndefOr[String] = js.undefined,
+      ValidForInMinutes: js.UndefOr[ValidForInMinutes] = js.undefined
+    ): GrantAccessRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("InstanceId" -> InstanceId.map { x => x: js.Any }),
+        ("ValidForInMinutes" -> ValidForInMinutes.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GrantAccessRequest]
+    }
+  }
+
+  /**
+   * <p>Contains the response to a <code>GrantAccess</code> request.</p>
+   */
+  @js.native
+  trait GrantAccessResult extends js.Object {
+    var TemporaryCredential: TemporaryCredential
+  }
+
+  object GrantAccessResult {
+    def apply(
+      TemporaryCredential: js.UndefOr[TemporaryCredential] = js.undefined
+    ): GrantAccessResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("TemporaryCredential" -> TemporaryCredential.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GrantAccessResult]
+    }
+  }
+
   /**
    * <p>Describes an instance.</p>
    */
@@ -2258,10 +2494,13 @@ package opsworks {
     var SshHostDsaKeyFingerprint: String
     var EbsOptimized: Boolean
     var PublicIp: String
+    var Platform: String
     var InstanceProfileArn: String
     var InfrastructureClass: String
     var ElasticIp: String
+    var Tenancy: String
     var StackId: String
+    var AgentVersion: String
     var AvailabilityZone: String
     var ReportedAgentVersion: String
     var ReportedOs: ReportedOs
@@ -2276,7 +2515,9 @@ package opsworks {
     var Os: String
     var CreatedAt: DateTime
     var VirtualizationType: VirtualizationType
+    var EcsClusterArn: String
     var AmiId: String
+    var EcsContainerInstanceArn: String
     var LastServiceErrorId: String
     var LayerIds: Strings
     var InstallUpdatesOnBoot: Boolean
@@ -2297,10 +2538,13 @@ package opsworks {
       SshHostDsaKeyFingerprint: js.UndefOr[String] = js.undefined,
       EbsOptimized: js.UndefOr[Boolean] = js.undefined,
       PublicIp: js.UndefOr[String] = js.undefined,
+      Platform: js.UndefOr[String] = js.undefined,
       InstanceProfileArn: js.UndefOr[String] = js.undefined,
       InfrastructureClass: js.UndefOr[String] = js.undefined,
       ElasticIp: js.UndefOr[String] = js.undefined,
+      Tenancy: js.UndefOr[String] = js.undefined,
       StackId: js.UndefOr[String] = js.undefined,
+      AgentVersion: js.UndefOr[String] = js.undefined,
       AvailabilityZone: js.UndefOr[String] = js.undefined,
       ReportedAgentVersion: js.UndefOr[String] = js.undefined,
       ReportedOs: js.UndefOr[ReportedOs] = js.undefined,
@@ -2315,7 +2559,9 @@ package opsworks {
       Os: js.UndefOr[String] = js.undefined,
       CreatedAt: js.UndefOr[DateTime] = js.undefined,
       VirtualizationType: js.UndefOr[VirtualizationType] = js.undefined,
+      EcsClusterArn: js.UndefOr[String] = js.undefined,
       AmiId: js.UndefOr[String] = js.undefined,
+      EcsContainerInstanceArn: js.UndefOr[String] = js.undefined,
       LastServiceErrorId: js.UndefOr[String] = js.undefined,
       LayerIds: js.UndefOr[Strings] = js.undefined,
       InstallUpdatesOnBoot: js.UndefOr[Boolean] = js.undefined,
@@ -2334,10 +2580,13 @@ package opsworks {
         ("SshHostDsaKeyFingerprint" -> SshHostDsaKeyFingerprint.map { x => x: js.Any }),
         ("EbsOptimized" -> EbsOptimized.map { x => x: js.Any }),
         ("PublicIp" -> PublicIp.map { x => x: js.Any }),
+        ("Platform" -> Platform.map { x => x: js.Any }),
         ("InstanceProfileArn" -> InstanceProfileArn.map { x => x: js.Any }),
         ("InfrastructureClass" -> InfrastructureClass.map { x => x: js.Any }),
         ("ElasticIp" -> ElasticIp.map { x => x: js.Any }),
+        ("Tenancy" -> Tenancy.map { x => x: js.Any }),
         ("StackId" -> StackId.map { x => x: js.Any }),
+        ("AgentVersion" -> AgentVersion.map { x => x: js.Any }),
         ("AvailabilityZone" -> AvailabilityZone.map { x => x: js.Any }),
         ("ReportedAgentVersion" -> ReportedAgentVersion.map { x => x: js.Any }),
         ("ReportedOs" -> ReportedOs.map { x => x: js.Any }),
@@ -2352,7 +2601,9 @@ package opsworks {
         ("Os" -> Os.map { x => x: js.Any }),
         ("CreatedAt" -> CreatedAt.map { x => x: js.Any }),
         ("VirtualizationType" -> VirtualizationType.map { x => x: js.Any }),
+        ("EcsClusterArn" -> EcsClusterArn.map { x => x: js.Any }),
         ("AmiId" -> AmiId.map { x => x: js.Any }),
+        ("EcsContainerInstanceArn" -> EcsContainerInstanceArn.map { x => x: js.Any }),
         ("LastServiceErrorId" -> LastServiceErrorId.map { x => x: js.Any }),
         ("LayerIds" -> LayerIds.map { x => x: js.Any }),
         ("InstallUpdatesOnBoot" -> InstallUpdatesOnBoot.map { x => x: js.Any }),
@@ -2483,6 +2734,7 @@ package opsworks {
     var CustomSecurityGroupIds: Strings
     var DefaultSecurityGroupNames: Strings
     var LifecycleEventConfiguration: LifecycleEventConfiguration
+    var CustomJson: String
     var CustomRecipes: Recipes
     var AutoAssignElasticIps: Boolean
     var CreatedAt: DateTime
@@ -2507,6 +2759,7 @@ package opsworks {
       CustomSecurityGroupIds: js.UndefOr[Strings] = js.undefined,
       DefaultSecurityGroupNames: js.UndefOr[Strings] = js.undefined,
       LifecycleEventConfiguration: js.UndefOr[LifecycleEventConfiguration] = js.undefined,
+      CustomJson: js.UndefOr[String] = js.undefined,
       CustomRecipes: js.UndefOr[Recipes] = js.undefined,
       AutoAssignElasticIps: js.UndefOr[Boolean] = js.undefined,
       CreatedAt: js.UndefOr[DateTime] = js.undefined,
@@ -2529,6 +2782,7 @@ package opsworks {
         ("CustomSecurityGroupIds" -> CustomSecurityGroupIds.map { x => x: js.Any }),
         ("DefaultSecurityGroupNames" -> DefaultSecurityGroupNames.map { x => x: js.Any }),
         ("LifecycleEventConfiguration" -> LifecycleEventConfiguration.map { x => x: js.Any }),
+        ("CustomJson" -> CustomJson.map { x => x: js.Any }),
         ("CustomRecipes" -> CustomRecipes.map { x => x: js.Any }),
         ("AutoAssignElasticIps" -> AutoAssignElasticIps.map { x => x: js.Any }),
         ("CreatedAt" -> CreatedAt.map { x => x: js.Any }),
@@ -2546,6 +2800,7 @@ package opsworks {
 
 
   object LayerAttributesKeysEnum {
+    val EcsClusterArn = "EcsClusterArn"
     val EnableHaproxyStats = "EnableHaproxyStats"
     val HaproxyStatsUrl = "HaproxyStatsUrl"
     val HaproxyStatsUser = "HaproxyStatsUser"
@@ -2571,11 +2826,13 @@ package opsworks {
     val JavaAppServer = "JavaAppServer"
     val JavaAppServerVersion = "JavaAppServerVersion"
 
-    val values = IndexedSeq(EnableHaproxyStats, HaproxyStatsUrl, HaproxyStatsUser, HaproxyStatsPassword, HaproxyHealthCheckUrl, HaproxyHealthCheckMethod, MysqlRootPassword, MysqlRootPasswordUbiquitous, GangliaUrl, GangliaUser, GangliaPassword, MemcachedMemory, NodejsVersion, RubyVersion, RubygemsVersion, ManageBundler, BundlerVersion, RailsStack, PassengerVersion, Jvm, JvmVersion, JvmOptions, JavaAppServer, JavaAppServerVersion)
+    val values = IndexedSeq(EcsClusterArn, EnableHaproxyStats, HaproxyStatsUrl, HaproxyStatsUser, HaproxyStatsPassword, HaproxyHealthCheckUrl, HaproxyHealthCheckMethod, MysqlRootPassword, MysqlRootPasswordUbiquitous, GangliaUrl, GangliaUser, GangliaPassword, MemcachedMemory, NodejsVersion, RubyVersion, RubygemsVersion, ManageBundler, BundlerVersion, RailsStack, PassengerVersion, Jvm, JvmVersion, JvmOptions, JavaAppServer, JavaAppServerVersion)
   }
 
 
   object LayerTypeEnum {
+    val `aws-flow-ruby` = "aws-flow-ruby"
+    val `ecs-cluster` = "ecs-cluster"
     val `java-app` = "java-app"
     val lb = "lb"
     val web = "web"
@@ -2587,7 +2844,7 @@ package opsworks {
     val `monitoring-master` = "monitoring-master"
     val custom = "custom"
 
-    val values = IndexedSeq(`java-app`, lb, web, `php-app`, `rails-app`, `nodejs-app`, memcached, `db-master`, `monitoring-master`, custom)
+    val values = IndexedSeq(`aws-flow-ruby`, `ecs-cluster`, `java-app`, lb, web, `php-app`, `rails-app`, `nodejs-app`, memcached, `db-master`, `monitoring-master`, custom)
   }
 
   /**
@@ -2789,7 +3046,7 @@ package opsworks {
   }
 
   /**
-   * <p>AWS OpsWorks supports five life<?oxy_delete author="witsoej" timestamp="20130319T132659-0700" content="-">cycle events, <b>setup</b>, <b>configuration</b>, <b>deploy</b>, <b>undeploy</b>, and <b>shutdown</b>. For each layer, AWS OpsWorks runs a set of standard recipes for each event. In addition, you can provide custom recipes for any or all layers and events. AWS OpsWorks runs custom event recipes after the standard recipes. <code>LayerCustomRecipes</code> specifies the custom recipes for a particular layer to be run in response to each of the five events. </p> <p>To specify a recipe, use the cookbook's directory name in the repository followed by two colons and the recipe name, which is the recipe's file name without the .rb extension. For example: phpapp2::dbsetup specifies the dbsetup.rb recipe in the repository's phpapp2 folder. </p>
+   * <p>AWS OpsWorks supports five lifecycle events: <b>setup</b>, <b>configuration</b>, <b>deploy</b>, <b>undeploy</b>, and <b>shutdown</b>. For each layer, AWS OpsWorks runs a set of standard recipes for each event. In addition, you can provide custom recipes for any or all layers and events. AWS OpsWorks runs custom event recipes after the standard recipes. <code>LayerCustomRecipes</code> specifies the custom recipes for a particular layer to be run in response to each of the five events. </p> <p>To specify a recipe, use the cookbook's directory name in the repository followed by two colons and the recipe name, which is the recipe's file name without the .rb extension. For example: phpapp2::dbsetup specifies the dbsetup.rb recipe in the repository's phpapp2 folder.</p>
    */
   @js.native
   trait Recipes extends js.Object {
@@ -2817,6 +3074,46 @@ package opsworks {
       ).filter(_._2 != js.undefined)
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Recipes]
+    }
+  }
+
+  @js.native
+  trait RegisterEcsClusterRequest extends js.Object {
+    var EcsClusterArn: String
+    var StackId: String
+  }
+
+  object RegisterEcsClusterRequest {
+    def apply(
+      EcsClusterArn: js.UndefOr[String] = js.undefined,
+      StackId: js.UndefOr[String] = js.undefined
+    ): RegisterEcsClusterRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("EcsClusterArn" -> EcsClusterArn.map { x => x: js.Any }),
+        ("StackId" -> StackId.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RegisterEcsClusterRequest]
+    }
+  }
+
+  /**
+   * <p>Contains the response to a <code>RegisterEcsCluster</code> request.</p>
+   */
+  @js.native
+  trait RegisterEcsClusterResult extends js.Object {
+    var EcsClusterArn: String
+  }
+
+  object RegisterEcsClusterResult {
+    def apply(
+      EcsClusterArn: js.UndefOr[String] = js.undefined
+    ): RegisterEcsClusterResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("EcsClusterArn" -> EcsClusterArn.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RegisterEcsClusterResult]
     }
   }
 
@@ -3271,6 +3568,7 @@ package opsworks {
     var Region: String
     var CustomCookbooksSource: Source
     var StackId: String
+    var AgentVersion: String
     var CustomJson: String
     var DefaultInstanceProfileArn: String
     var ServiceRoleArn: String
@@ -3296,6 +3594,7 @@ package opsworks {
       Region: js.UndefOr[String] = js.undefined,
       CustomCookbooksSource: js.UndefOr[Source] = js.undefined,
       StackId: js.UndefOr[String] = js.undefined,
+      AgentVersion: js.UndefOr[String] = js.undefined,
       CustomJson: js.UndefOr[String] = js.undefined,
       DefaultInstanceProfileArn: js.UndefOr[String] = js.undefined,
       ServiceRoleArn: js.UndefOr[String] = js.undefined,
@@ -3319,6 +3618,7 @@ package opsworks {
         ("Region" -> Region.map { x => x: js.Any }),
         ("CustomCookbooksSource" -> CustomCookbooksSource.map { x => x: js.Any }),
         ("StackId" -> StackId.map { x => x: js.Any }),
+        ("AgentVersion" -> AgentVersion.map { x => x: js.Any }),
         ("CustomJson" -> CustomJson.map { x => x: js.Any }),
         ("DefaultInstanceProfileArn" -> DefaultInstanceProfileArn.map { x => x: js.Any }),
         ("ServiceRoleArn" -> ServiceRoleArn.map { x => x: js.Any }),
@@ -3470,6 +3770,35 @@ package opsworks {
   }
 
   /**
+   * <p>Contains the data needed by RDP clients such as the Microsoft Remote Desktop Connection to log in to the instance.</p>
+   */
+  @js.native
+  trait TemporaryCredential extends js.Object {
+    var Username: String
+    var Password: String
+    var ValidForInMinutes: Integer
+    var InstanceId: String
+  }
+
+  object TemporaryCredential {
+    def apply(
+      Username: js.UndefOr[String] = js.undefined,
+      Password: js.UndefOr[String] = js.undefined,
+      ValidForInMinutes: js.UndefOr[Integer] = js.undefined,
+      InstanceId: js.UndefOr[String] = js.undefined
+    ): TemporaryCredential = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("Username" -> Username.map { x => x: js.Any }),
+        ("Password" -> Password.map { x => x: js.Any }),
+        ("ValidForInMinutes" -> ValidForInMinutes.map { x => x: js.Any }),
+        ("InstanceId" -> InstanceId.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TemporaryCredential]
+    }
+  }
+
+  /**
    * <p>Describes an instance's time-based auto scaling configuration.</p>
    */
   @js.native
@@ -3597,6 +3926,7 @@ package opsworks {
   trait UpdateInstanceRequest extends js.Object {
     var Architecture: Architecture
     var EbsOptimized: Boolean
+    var AgentVersion: String
     var InstanceType: String
     var InstanceId: String
     var Hostname: String
@@ -3612,6 +3942,7 @@ package opsworks {
     def apply(
       Architecture: js.UndefOr[Architecture] = js.undefined,
       EbsOptimized: js.UndefOr[Boolean] = js.undefined,
+      AgentVersion: js.UndefOr[String] = js.undefined,
       InstanceType: js.UndefOr[String] = js.undefined,
       InstanceId: js.UndefOr[String] = js.undefined,
       Hostname: js.UndefOr[String] = js.undefined,
@@ -3625,6 +3956,7 @@ package opsworks {
       val _fields = IndexedSeq[(String, js.Any)](
         ("Architecture" -> Architecture.map { x => x: js.Any }),
         ("EbsOptimized" -> EbsOptimized.map { x => x: js.Any }),
+        ("AgentVersion" -> AgentVersion.map { x => x: js.Any }),
         ("InstanceType" -> InstanceType.map { x => x: js.Any }),
         ("InstanceId" -> InstanceId.map { x => x: js.Any }),
         ("Hostname" -> Hostname.map { x => x: js.Any }),
@@ -3651,6 +3983,7 @@ package opsworks {
     var CustomInstanceProfileArn: String
     var CustomSecurityGroupIds: Strings
     var LifecycleEventConfiguration: LifecycleEventConfiguration
+    var CustomJson: String
     var CustomRecipes: Recipes
     var AutoAssignElasticIps: Boolean
     var Shortname: String
@@ -3670,6 +4003,7 @@ package opsworks {
       CustomInstanceProfileArn: js.UndefOr[String] = js.undefined,
       CustomSecurityGroupIds: js.UndefOr[Strings] = js.undefined,
       LifecycleEventConfiguration: js.UndefOr[LifecycleEventConfiguration] = js.undefined,
+      CustomJson: js.UndefOr[String] = js.undefined,
       CustomRecipes: js.UndefOr[Recipes] = js.undefined,
       AutoAssignElasticIps: js.UndefOr[Boolean] = js.undefined,
       Shortname: js.UndefOr[String] = js.undefined,
@@ -3687,6 +4021,7 @@ package opsworks {
         ("CustomInstanceProfileArn" -> CustomInstanceProfileArn.map { x => x: js.Any }),
         ("CustomSecurityGroupIds" -> CustomSecurityGroupIds.map { x => x: js.Any }),
         ("LifecycleEventConfiguration" -> LifecycleEventConfiguration.map { x => x: js.Any }),
+        ("CustomJson" -> CustomJson.map { x => x: js.Any }),
         ("CustomRecipes" -> CustomRecipes.map { x => x: js.Any }),
         ("AutoAssignElasticIps" -> AutoAssignElasticIps.map { x => x: js.Any }),
         ("Shortname" -> Shortname.map { x => x: js.Any }),
@@ -3750,6 +4085,7 @@ package opsworks {
     var Attributes: StackAttributes
     var CustomCookbooksSource: Source
     var StackId: String
+    var AgentVersion: String
     var CustomJson: String
     var DefaultInstanceProfileArn: String
     var ServiceRoleArn: String
@@ -3771,6 +4107,7 @@ package opsworks {
       Attributes: js.UndefOr[StackAttributes] = js.undefined,
       CustomCookbooksSource: js.UndefOr[Source] = js.undefined,
       StackId: js.UndefOr[String] = js.undefined,
+      AgentVersion: js.UndefOr[String] = js.undefined,
       CustomJson: js.UndefOr[String] = js.undefined,
       DefaultInstanceProfileArn: js.UndefOr[String] = js.undefined,
       ServiceRoleArn: js.UndefOr[String] = js.undefined,
@@ -3790,6 +4127,7 @@ package opsworks {
         ("Attributes" -> Attributes.map { x => x: js.Any }),
         ("CustomCookbooksSource" -> CustomCookbooksSource.map { x => x: js.Any }),
         ("StackId" -> StackId.map { x => x: js.Any }),
+        ("AgentVersion" -> AgentVersion.map { x => x: js.Any }),
         ("CustomJson" -> CustomJson.map { x => x: js.Any }),
         ("DefaultInstanceProfileArn" -> DefaultInstanceProfileArn.map { x => x: js.Any }),
         ("ServiceRoleArn" -> ServiceRoleArn.map { x => x: js.Any }),
@@ -3886,7 +4224,7 @@ package opsworks {
   }
 
   /**
-   * <p>Indicates that a request was invalid.</p>
+   * <p>Indicates that a request was not valid.</p>
    */
   @js.native
   trait ValidationExceptionException extends js.Object {
@@ -4002,7 +4340,7 @@ package opsworks {
   }
 
   /**
-   * <p>Describes a time-based instance's auto scaling schedule. The schedule consists of a set of key-value pairs.</p> <ul> <li>The key is the time period (a UTC hour) and must be an integer from 0 - 23.</li> <li>The value indicates whether the instance should be online or offline for the specified period, and must be set to "on" or "off"</li> </ul> <p>The default setting for all time periods is off, so you use the following parameters primarily to specify the online periods. You don't have to explicitly specify offline periods unless you want to change an online period to an offline period. </p> <p>The following example specifies that the instance should be online for four hours, from UTC 1200 - 1600. It will be off for the remainder of the day.</p> <p><code> { "12":"on", "13":"on", "14":"on", "15":"on" } </code></p>
+   * <p>Describes a time-based instance's auto scaling schedule. The schedule consists of a set of key-value pairs.</p> <ul> <li> <p>The key is the time period (a UTC hour) and must be an integer from 0 - 23.</p> </li> <li> <p>The value indicates whether the instance should be online or offline for the specified period, and must be set to "on" or "off"</p> </li> </ul> <p>The default setting for all time periods is off, so you use the following parameters primarily to specify the online periods. You don't have to explicitly specify offline periods unless you want to change an online period to an offline period.</p> <p>The following example specifies that the instance should be online for four hours, from UTC 1200 - 1600. It will be off for the remainder of the day.</p> <p> <code> { "12":"on", "13":"on", "14":"on", "15":"on" } </code> </p>
    */
   @js.native
   trait WeeklyAutoScalingSchedule extends js.Object {

@@ -19,6 +19,7 @@ package object autoscaling {
   type AutoScalingNotificationTypes = js.Array[XmlStringMaxLen255]
   type AvailabilityZones = js.Array[XmlStringMaxLen255]
   type BlockDeviceEbsDeleteOnTermination = Boolean
+  type BlockDeviceEbsEncrypted = Boolean
   type BlockDeviceEbsIops = Integer
   type BlockDeviceEbsVolumeSize = Integer
   type BlockDeviceEbsVolumeType = String
@@ -27,13 +28,15 @@ package object autoscaling {
   type Cooldown = Integer
   type EbsOptimized = Boolean
   type EnabledMetrics = js.Array[EnabledMetric]
+  type EstimatedInstanceWarmup = Integer
   type Filters = js.Array[Filter]
   type ForceDelete = Boolean
   type GlobalTimeout = Integer
   type HealthCheckGracePeriod = Integer
   type HeartbeatTimeout = Integer
   type HonorCooldown = Boolean
-  type InstanceIds = js.Array[XmlStringMaxLen16]
+  type InstanceIds = js.Array[XmlStringMaxLen19]
+  type InstanceProtected = Boolean
   type Instances = js.Array[Instance]
   type LaunchConfigurationNames = js.Array[ResourceName]
   type LaunchConfigurations = js.Array[LaunchConfiguration]
@@ -44,22 +47,31 @@ package object autoscaling {
   type LifecycleState = String
   type LifecycleTransition = String
   type LoadBalancerNames = js.Array[XmlStringMaxLen255]
+  type LoadBalancerStates = js.Array[LoadBalancerState]
+  type LoadBalancerTargetGroupStates = js.Array[LoadBalancerTargetGroupState]
   type MaxNumberOfAutoScalingGroups = Integer
   type MaxNumberOfLaunchConfigurations = Integer
   type MaxRecords = Integer
   type MetricCollectionTypes = js.Array[MetricCollectionType]
   type MetricGranularityTypes = js.Array[MetricGranularityType]
+  type MetricScale = Double
   type Metrics = js.Array[XmlStringMaxLen255]
+  type MinAdjustmentMagnitude = Integer
   type MinAdjustmentStep = Integer
   type MonitoringEnabled = Boolean
   type NoDevice = Boolean
   type NotificationConfigurations = js.Array[NotificationConfiguration]
+  type NotificationTargetResourceName = String
+  type NumberOfAutoScalingGroups = Integer
+  type NumberOfLaunchConfigurations = Integer
   type PolicyIncrement = Integer
   type PolicyNames = js.Array[ResourceName]
+  type PolicyTypes = js.Array[XmlStringMaxLen64]
   type ProcessNames = js.Array[XmlStringMaxLen255]
   type Processes = js.Array[ProcessType]
   type Progress = Integer
   type PropagateAtLaunch = Boolean
+  type ProtectedFromScaleIn = Boolean
   type ResourceName = String
   type ScalingActivityStatusCode = String
   type ScalingPolicies = js.Array[ScalingPolicy]
@@ -69,20 +81,24 @@ package object autoscaling {
   type ShouldDecrementDesiredCapacity = Boolean
   type ShouldRespectGracePeriod = Boolean
   type SpotPrice = String
+  type StepAdjustments = js.Array[StepAdjustment]
   type SuspendedProcesses = js.Array[SuspendedProcess]
   type TagDescriptionList = js.Array[TagDescription]
   type TagKey = String
   type TagValue = String
   type Tags = js.Array[Tag]
+  type TargetGroupARNs = js.Array[XmlStringMaxLen511]
   type TerminationPolicies = js.Array[XmlStringMaxLen1600]
   type TimestampType = js.Date
   type Values = js.Array[XmlString]
   type XmlString = String
   type XmlStringMaxLen1023 = String
-  type XmlStringMaxLen16 = String
   type XmlStringMaxLen1600 = String
+  type XmlStringMaxLen19 = String
+  type XmlStringMaxLen2047 = String
   type XmlStringMaxLen255 = String
   type XmlStringMaxLen32 = String
+  type XmlStringMaxLen511 = String
   type XmlStringMaxLen64 = String
   type XmlStringUserData = String
 }
@@ -92,6 +108,10 @@ package autoscaling {
   trait Autoscaling extends js.Object {
     def attachInstances(params: AttachInstancesQuery, callback: Callback[js.Object]): Unit = js.native
     def attachInstances(params: AttachInstancesQuery): Request[js.Object] = js.native
+    def attachLoadBalancerTargetGroups(params: AttachLoadBalancerTargetGroupsType, callback: Callback[AttachLoadBalancerTargetGroupsResultType]): Unit = js.native
+    def attachLoadBalancerTargetGroups(params: AttachLoadBalancerTargetGroupsType): Request[AttachLoadBalancerTargetGroupsResultType] = js.native
+    def attachLoadBalancers(params: AttachLoadBalancersType, callback: Callback[AttachLoadBalancersResultType]): Unit = js.native
+    def attachLoadBalancers(params: AttachLoadBalancersType): Request[AttachLoadBalancersResultType] = js.native
     def completeLifecycleAction(params: CompleteLifecycleActionType, callback: Callback[CompleteLifecycleActionAnswer]): Unit = js.native
     def completeLifecycleAction(params: CompleteLifecycleActionType): Request[CompleteLifecycleActionAnswer] = js.native
     def createAutoScalingGroup(params: CreateAutoScalingGroupType, callback: Callback[js.Object]): Unit = js.native
@@ -130,6 +150,10 @@ package autoscaling {
     def describeLifecycleHookTypes(): Request[DescribeLifecycleHookTypesAnswer] = js.native
     def describeLifecycleHooks(params: DescribeLifecycleHooksType, callback: Callback[DescribeLifecycleHooksAnswer]): Unit = js.native
     def describeLifecycleHooks(params: DescribeLifecycleHooksType): Request[DescribeLifecycleHooksAnswer] = js.native
+    def describeLoadBalancerTargetGroups(params: DescribeLoadBalancerTargetGroupsRequest, callback: Callback[DescribeLoadBalancerTargetGroupsResponse]): Unit = js.native
+    def describeLoadBalancerTargetGroups(params: DescribeLoadBalancerTargetGroupsRequest): Request[DescribeLoadBalancerTargetGroupsResponse] = js.native
+    def describeLoadBalancers(params: DescribeLoadBalancersRequest, callback: Callback[DescribeLoadBalancersResponse]): Unit = js.native
+    def describeLoadBalancers(params: DescribeLoadBalancersRequest): Request[DescribeLoadBalancersResponse] = js.native
     def describeMetricCollectionTypes(callback: Callback[DescribeMetricCollectionTypesAnswer]): Unit = js.native
     def describeMetricCollectionTypes(): Request[DescribeMetricCollectionTypesAnswer] = js.native
     def describeNotificationConfigurations(params: DescribeNotificationConfigurationsType, callback: Callback[DescribeNotificationConfigurationsAnswer]): Unit = js.native
@@ -148,6 +172,10 @@ package autoscaling {
     def describeTerminationPolicyTypes(): Request[DescribeTerminationPolicyTypesAnswer] = js.native
     def detachInstances(params: DetachInstancesQuery, callback: Callback[DetachInstancesAnswer]): Unit = js.native
     def detachInstances(params: DetachInstancesQuery): Request[DetachInstancesAnswer] = js.native
+    def detachLoadBalancerTargetGroups(params: DetachLoadBalancerTargetGroupsType, callback: Callback[DetachLoadBalancerTargetGroupsResultType]): Unit = js.native
+    def detachLoadBalancerTargetGroups(params: DetachLoadBalancerTargetGroupsType): Request[DetachLoadBalancerTargetGroupsResultType] = js.native
+    def detachLoadBalancers(params: DetachLoadBalancersType, callback: Callback[DetachLoadBalancersResultType]): Unit = js.native
+    def detachLoadBalancers(params: DetachLoadBalancersType): Request[DetachLoadBalancersResultType] = js.native
     def disableMetricsCollection(params: DisableMetricsCollectionQuery, callback: Callback[js.Object]): Unit = js.native
     def disableMetricsCollection(params: DisableMetricsCollectionQuery): Request[js.Object] = js.native
     def enableMetricsCollection(params: EnableMetricsCollectionQuery, callback: Callback[js.Object]): Unit = js.native
@@ -174,6 +202,8 @@ package autoscaling {
     def setDesiredCapacity(params: SetDesiredCapacityType): Request[js.Object] = js.native
     def setInstanceHealth(params: SetInstanceHealthQuery, callback: Callback[js.Object]): Unit = js.native
     def setInstanceHealth(params: SetInstanceHealthQuery): Request[js.Object] = js.native
+    def setInstanceProtection(params: SetInstanceProtectionQuery, callback: Callback[SetInstanceProtectionAnswer]): Unit = js.native
+    def setInstanceProtection(params: SetInstanceProtectionQuery): Request[SetInstanceProtectionAnswer] = js.native
     def suspendProcesses(params: ScalingProcessQuery, callback: Callback[js.Object]): Unit = js.native
     def suspendProcesses(params: ScalingProcessQuery): Request[js.Object] = js.native
     def terminateInstanceInAutoScalingGroup(params: TerminateInstanceInAutoScalingGroupType, callback: Callback[ActivityType]): Unit = js.native
@@ -182,6 +212,9 @@ package autoscaling {
     def updateAutoScalingGroup(params: UpdateAutoScalingGroupType): Request[js.Object] = js.native
   }
 
+  /**
+   * <p>Contains the output of DescribeScalingActivities.</p>
+   */
   @js.native
   trait ActivitiesType extends js.Object {
     var Activities: Activities
@@ -203,7 +236,7 @@ package autoscaling {
   }
 
   /**
-   * <p>Describes a long-running process that represents a change to your Auto Scaling group, such as changing its size. This can also be a process to replace an instance, or a process to perform any other long-running operations.</p>
+   * <p>Describes scaling activity, which is a long-running process that represents a change to your Auto Scaling group, such as changing its size or replacing an instance.</p>
    */
   @js.native
   trait Activity extends js.Object {
@@ -249,6 +282,9 @@ package autoscaling {
     }
   }
 
+  /**
+   * <p>Contains the output of TerminateInstancesInAutoScalingGroup.</p>
+   */
   @js.native
   trait ActivityType extends js.Object {
     var Activity: Activity
@@ -267,7 +303,7 @@ package autoscaling {
   }
 
   /**
-   * <p>Describes a policy adjustment type.</p>
+   * <p>Describes a policy adjustment type.</p> <p>For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/as-scale-based-on-demand.html">Dynamic Scaling</a> in the <i>Auto Scaling User Guide</i>.</p>
    */
   @js.native
   trait AdjustmentType extends js.Object {
@@ -317,6 +353,9 @@ package autoscaling {
     var message: XmlStringMaxLen255
   }
 
+  /**
+   * <p>Contains the parameters for AttachInstances.</p>
+   */
   @js.native
   trait AttachInstancesQuery extends js.Object {
     var InstanceIds: InstanceIds
@@ -337,6 +376,89 @@ package autoscaling {
     }
   }
 
+  @js.native
+  trait AttachLoadBalancerTargetGroupsResultType extends js.Object {
+
+  }
+
+  object AttachLoadBalancerTargetGroupsResultType {
+    def apply(
+
+    ): AttachLoadBalancerTargetGroupsResultType = {
+      val _fields = IndexedSeq[(String, js.Any)](
+
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AttachLoadBalancerTargetGroupsResultType]
+    }
+  }
+
+  /**
+   * <p>Contains the parameters for AttachLoadBalancerTargetGroups.</p>
+   */
+  @js.native
+  trait AttachLoadBalancerTargetGroupsType extends js.Object {
+    var AutoScalingGroupName: ResourceName
+    var TargetGroupARNs: TargetGroupARNs
+  }
+
+  object AttachLoadBalancerTargetGroupsType {
+    def apply(
+      AutoScalingGroupName: js.UndefOr[ResourceName] = js.undefined,
+      TargetGroupARNs: js.UndefOr[TargetGroupARNs] = js.undefined
+    ): AttachLoadBalancerTargetGroupsType = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("AutoScalingGroupName" -> AutoScalingGroupName.map { x => x: js.Any }),
+        ("TargetGroupARNs" -> TargetGroupARNs.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AttachLoadBalancerTargetGroupsType]
+    }
+  }
+
+  /**
+   * <p>Contains the output of AttachLoadBalancers.</p>
+   */
+  @js.native
+  trait AttachLoadBalancersResultType extends js.Object {
+
+  }
+
+  object AttachLoadBalancersResultType {
+    def apply(
+
+    ): AttachLoadBalancersResultType = {
+      val _fields = IndexedSeq[(String, js.Any)](
+
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AttachLoadBalancersResultType]
+    }
+  }
+
+  /**
+   * <p>Contains the parameters for AttachLoadBalancers.</p>
+   */
+  @js.native
+  trait AttachLoadBalancersType extends js.Object {
+    var AutoScalingGroupName: ResourceName
+    var LoadBalancerNames: LoadBalancerNames
+  }
+
+  object AttachLoadBalancersType {
+    def apply(
+      AutoScalingGroupName: js.UndefOr[ResourceName] = js.undefined,
+      LoadBalancerNames: js.UndefOr[LoadBalancerNames] = js.undefined
+    ): AttachLoadBalancersType = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("AutoScalingGroupName" -> AutoScalingGroupName.map { x => x: js.Any }),
+        ("LoadBalancerNames" -> LoadBalancerNames.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AttachLoadBalancersType]
+    }
+  }
+
   /**
    * <p>Describes an Auto Scaling group.</p>
    */
@@ -352,12 +474,14 @@ package autoscaling {
     var EnabledMetrics: EnabledMetrics
     var AutoScalingGroupARN: ResourceName
     var HealthCheckType: XmlStringMaxLen32
-    var VPCZoneIdentifier: XmlStringMaxLen255
+    var VPCZoneIdentifier: XmlStringMaxLen2047
     var MaxSize: AutoScalingGroupMaxSize
     var MinSize: AutoScalingGroupMinSize
+    var TargetGroupARNs: TargetGroupARNs
     var Instances: Instances
     var DesiredCapacity: AutoScalingGroupDesiredCapacity
     var Tags: TagDescriptionList
+    var NewInstancesProtectedFromScaleIn: InstanceProtected
     var LaunchConfigurationName: XmlStringMaxLen255
     var HealthCheckGracePeriod: HealthCheckGracePeriod
     var Status: XmlStringMaxLen255
@@ -376,12 +500,14 @@ package autoscaling {
       EnabledMetrics: js.UndefOr[EnabledMetrics] = js.undefined,
       AutoScalingGroupARN: js.UndefOr[ResourceName] = js.undefined,
       HealthCheckType: js.UndefOr[XmlStringMaxLen32] = js.undefined,
-      VPCZoneIdentifier: js.UndefOr[XmlStringMaxLen255] = js.undefined,
+      VPCZoneIdentifier: js.UndefOr[XmlStringMaxLen2047] = js.undefined,
       MaxSize: js.UndefOr[AutoScalingGroupMaxSize] = js.undefined,
       MinSize: js.UndefOr[AutoScalingGroupMinSize] = js.undefined,
+      TargetGroupARNs: js.UndefOr[TargetGroupARNs] = js.undefined,
       Instances: js.UndefOr[Instances] = js.undefined,
       DesiredCapacity: js.UndefOr[AutoScalingGroupDesiredCapacity] = js.undefined,
       Tags: js.UndefOr[TagDescriptionList] = js.undefined,
+      NewInstancesProtectedFromScaleIn: js.UndefOr[InstanceProtected] = js.undefined,
       LaunchConfigurationName: js.UndefOr[XmlStringMaxLen255] = js.undefined,
       HealthCheckGracePeriod: js.UndefOr[HealthCheckGracePeriod] = js.undefined,
       Status: js.UndefOr[XmlStringMaxLen255] = js.undefined,
@@ -401,9 +527,11 @@ package autoscaling {
         ("VPCZoneIdentifier" -> VPCZoneIdentifier.map { x => x: js.Any }),
         ("MaxSize" -> MaxSize.map { x => x: js.Any }),
         ("MinSize" -> MinSize.map { x => x: js.Any }),
+        ("TargetGroupARNs" -> TargetGroupARNs.map { x => x: js.Any }),
         ("Instances" -> Instances.map { x => x: js.Any }),
         ("DesiredCapacity" -> DesiredCapacity.map { x => x: js.Any }),
         ("Tags" -> Tags.map { x => x: js.Any }),
+        ("NewInstancesProtectedFromScaleIn" -> NewInstancesProtectedFromScaleIn.map { x => x: js.Any }),
         ("LaunchConfigurationName" -> LaunchConfigurationName.map { x => x: js.Any }),
         ("HealthCheckGracePeriod" -> HealthCheckGracePeriod.map { x => x: js.Any }),
         ("Status" -> Status.map { x => x: js.Any }),
@@ -414,6 +542,9 @@ package autoscaling {
     }
   }
 
+  /**
+   * <p>Contains the parameters for DescribeAutoScalingGroups.</p>
+   */
   @js.native
   trait AutoScalingGroupNamesType extends js.Object {
     var AutoScalingGroupNames: AutoScalingGroupNames
@@ -437,6 +568,9 @@ package autoscaling {
     }
   }
 
+  /**
+   * <p>Contains the output for DescribeAutoScalingGroups.</p>
+   */
   @js.native
   trait AutoScalingGroupsType extends js.Object {
     var AutoScalingGroups: AutoScalingGroups
@@ -463,24 +597,27 @@ package autoscaling {
   @js.native
   trait AutoScalingInstanceDetails extends js.Object {
     var AutoScalingGroupName: XmlStringMaxLen255
+    var ProtectedFromScaleIn: InstanceProtected
     var LifecycleState: XmlStringMaxLen32
     var AvailabilityZone: XmlStringMaxLen255
     var HealthStatus: XmlStringMaxLen32
-    var InstanceId: XmlStringMaxLen16
+    var InstanceId: XmlStringMaxLen19
     var LaunchConfigurationName: XmlStringMaxLen255
   }
 
   object AutoScalingInstanceDetails {
     def apply(
       AutoScalingGroupName: js.UndefOr[XmlStringMaxLen255] = js.undefined,
+      ProtectedFromScaleIn: js.UndefOr[InstanceProtected] = js.undefined,
       LifecycleState: js.UndefOr[XmlStringMaxLen32] = js.undefined,
       AvailabilityZone: js.UndefOr[XmlStringMaxLen255] = js.undefined,
       HealthStatus: js.UndefOr[XmlStringMaxLen32] = js.undefined,
-      InstanceId: js.UndefOr[XmlStringMaxLen16] = js.undefined,
+      InstanceId: js.UndefOr[XmlStringMaxLen19] = js.undefined,
       LaunchConfigurationName: js.UndefOr[XmlStringMaxLen255] = js.undefined
     ): AutoScalingInstanceDetails = {
       val _fields = IndexedSeq[(String, js.Any)](
         ("AutoScalingGroupName" -> AutoScalingGroupName.map { x => x: js.Any }),
+        ("ProtectedFromScaleIn" -> ProtectedFromScaleIn.map { x => x: js.Any }),
         ("LifecycleState" -> LifecycleState.map { x => x: js.Any }),
         ("AvailabilityZone" -> AvailabilityZone.map { x => x: js.Any }),
         ("HealthStatus" -> HealthStatus.map { x => x: js.Any }),
@@ -492,6 +629,9 @@ package autoscaling {
     }
   }
 
+  /**
+   * <p>Contains the output of DescribeAutoScalingInstances.</p>
+   */
   @js.native
   trait AutoScalingInstancesType extends js.Object {
     var AutoScalingInstances: AutoScalingInstances
@@ -541,6 +681,9 @@ package autoscaling {
     }
   }
 
+  /**
+   * <p>Contains the output of CompleteLifecycleAction.</p>
+   */
   @js.native
   trait CompleteLifecycleActionAnswer extends js.Object {
 
@@ -558,32 +701,41 @@ package autoscaling {
     }
   }
 
+  /**
+   * <p>Contains the parameters for CompleteLifecycleAction.</p>
+   */
   @js.native
   trait CompleteLifecycleActionType extends js.Object {
     var LifecycleHookName: AsciiStringMaxLen255
     var AutoScalingGroupName: ResourceName
-    var LifecycleActionToken: LifecycleActionToken
     var LifecycleActionResult: LifecycleActionResult
+    var LifecycleActionToken: LifecycleActionToken
+    var InstanceId: XmlStringMaxLen19
   }
 
   object CompleteLifecycleActionType {
     def apply(
       LifecycleHookName: js.UndefOr[AsciiStringMaxLen255] = js.undefined,
       AutoScalingGroupName: js.UndefOr[ResourceName] = js.undefined,
+      LifecycleActionResult: js.UndefOr[LifecycleActionResult] = js.undefined,
       LifecycleActionToken: js.UndefOr[LifecycleActionToken] = js.undefined,
-      LifecycleActionResult: js.UndefOr[LifecycleActionResult] = js.undefined
+      InstanceId: js.UndefOr[XmlStringMaxLen19] = js.undefined
     ): CompleteLifecycleActionType = {
       val _fields = IndexedSeq[(String, js.Any)](
         ("LifecycleHookName" -> LifecycleHookName.map { x => x: js.Any }),
         ("AutoScalingGroupName" -> AutoScalingGroupName.map { x => x: js.Any }),
+        ("LifecycleActionResult" -> LifecycleActionResult.map { x => x: js.Any }),
         ("LifecycleActionToken" -> LifecycleActionToken.map { x => x: js.Any }),
-        ("LifecycleActionResult" -> LifecycleActionResult.map { x => x: js.Any })
+        ("InstanceId" -> InstanceId.map { x => x: js.Any })
       ).filter(_._2 != js.undefined)
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CompleteLifecycleActionType]
     }
   }
 
+  /**
+   * <p>Contains the parameters for CreateAutoScalingGroup.</p>
+   */
   @js.native
   trait CreateAutoScalingGroupType extends js.Object {
     var DefaultCooldown: Cooldown
@@ -592,12 +744,14 @@ package autoscaling {
     var AutoScalingGroupName: XmlStringMaxLen255
     var LoadBalancerNames: LoadBalancerNames
     var HealthCheckType: XmlStringMaxLen32
-    var VPCZoneIdentifier: XmlStringMaxLen255
+    var VPCZoneIdentifier: XmlStringMaxLen2047
     var MaxSize: AutoScalingGroupMaxSize
     var MinSize: AutoScalingGroupMinSize
-    var InstanceId: XmlStringMaxLen16
+    var TargetGroupARNs: TargetGroupARNs
+    var InstanceId: XmlStringMaxLen19
     var DesiredCapacity: AutoScalingGroupDesiredCapacity
     var Tags: Tags
+    var NewInstancesProtectedFromScaleIn: InstanceProtected
     var LaunchConfigurationName: ResourceName
     var HealthCheckGracePeriod: HealthCheckGracePeriod
     var AvailabilityZones: AvailabilityZones
@@ -611,12 +765,14 @@ package autoscaling {
       AutoScalingGroupName: js.UndefOr[XmlStringMaxLen255] = js.undefined,
       LoadBalancerNames: js.UndefOr[LoadBalancerNames] = js.undefined,
       HealthCheckType: js.UndefOr[XmlStringMaxLen32] = js.undefined,
-      VPCZoneIdentifier: js.UndefOr[XmlStringMaxLen255] = js.undefined,
+      VPCZoneIdentifier: js.UndefOr[XmlStringMaxLen2047] = js.undefined,
       MaxSize: js.UndefOr[AutoScalingGroupMaxSize] = js.undefined,
       MinSize: js.UndefOr[AutoScalingGroupMinSize] = js.undefined,
-      InstanceId: js.UndefOr[XmlStringMaxLen16] = js.undefined,
+      TargetGroupARNs: js.UndefOr[TargetGroupARNs] = js.undefined,
+      InstanceId: js.UndefOr[XmlStringMaxLen19] = js.undefined,
       DesiredCapacity: js.UndefOr[AutoScalingGroupDesiredCapacity] = js.undefined,
       Tags: js.UndefOr[Tags] = js.undefined,
+      NewInstancesProtectedFromScaleIn: js.UndefOr[InstanceProtected] = js.undefined,
       LaunchConfigurationName: js.UndefOr[ResourceName] = js.undefined,
       HealthCheckGracePeriod: js.UndefOr[HealthCheckGracePeriod] = js.undefined,
       AvailabilityZones: js.UndefOr[AvailabilityZones] = js.undefined
@@ -631,9 +787,11 @@ package autoscaling {
         ("VPCZoneIdentifier" -> VPCZoneIdentifier.map { x => x: js.Any }),
         ("MaxSize" -> MaxSize.map { x => x: js.Any }),
         ("MinSize" -> MinSize.map { x => x: js.Any }),
+        ("TargetGroupARNs" -> TargetGroupARNs.map { x => x: js.Any }),
         ("InstanceId" -> InstanceId.map { x => x: js.Any }),
         ("DesiredCapacity" -> DesiredCapacity.map { x => x: js.Any }),
         ("Tags" -> Tags.map { x => x: js.Any }),
+        ("NewInstancesProtectedFromScaleIn" -> NewInstancesProtectedFromScaleIn.map { x => x: js.Any }),
         ("LaunchConfigurationName" -> LaunchConfigurationName.map { x => x: js.Any }),
         ("HealthCheckGracePeriod" -> HealthCheckGracePeriod.map { x => x: js.Any }),
         ("AvailabilityZones" -> AvailabilityZones.map { x => x: js.Any })
@@ -643,6 +801,9 @@ package autoscaling {
     }
   }
 
+  /**
+   * <p>Contains the parameters for CreateLaunchConfiguration.</p>
+   */
   @js.native
   trait CreateLaunchConfigurationType extends js.Object {
     var RamdiskId: XmlStringMaxLen255
@@ -656,7 +817,7 @@ package autoscaling {
     var ClassicLinkVPCSecurityGroups: ClassicLinkVPCSecurityGroups
     var KeyName: XmlStringMaxLen255
     var InstanceType: XmlStringMaxLen255
-    var InstanceId: XmlStringMaxLen16
+    var InstanceId: XmlStringMaxLen19
     var AssociatePublicIpAddress: AssociatePublicIpAddress
     var SpotPrice: SpotPrice
     var PlacementTenancy: XmlStringMaxLen64
@@ -678,7 +839,7 @@ package autoscaling {
       ClassicLinkVPCSecurityGroups: js.UndefOr[ClassicLinkVPCSecurityGroups] = js.undefined,
       KeyName: js.UndefOr[XmlStringMaxLen255] = js.undefined,
       InstanceType: js.UndefOr[XmlStringMaxLen255] = js.undefined,
-      InstanceId: js.UndefOr[XmlStringMaxLen16] = js.undefined,
+      InstanceId: js.UndefOr[XmlStringMaxLen19] = js.undefined,
       AssociatePublicIpAddress: js.UndefOr[AssociatePublicIpAddress] = js.undefined,
       SpotPrice: js.UndefOr[SpotPrice] = js.undefined,
       PlacementTenancy: js.UndefOr[XmlStringMaxLen64] = js.undefined,
@@ -711,6 +872,9 @@ package autoscaling {
     }
   }
 
+  /**
+   * <p>Contains the parameters for CreateOrUpdateTags.</p>
+   */
   @js.native
   trait CreateOrUpdateTagsType extends js.Object {
     var Tags: Tags
@@ -728,6 +892,9 @@ package autoscaling {
     }
   }
 
+  /**
+   * <p>Contains the parameters for DeleteAutoScalingGroup.</p>
+   */
   @js.native
   trait DeleteAutoScalingGroupType extends js.Object {
     var AutoScalingGroupName: ResourceName
@@ -748,6 +915,9 @@ package autoscaling {
     }
   }
 
+  /**
+   * <p>Contains the output of DeleteLifecycleHook.</p>
+   */
   @js.native
   trait DeleteLifecycleHookAnswer extends js.Object {
 
@@ -765,6 +935,9 @@ package autoscaling {
     }
   }
 
+  /**
+   * <p>Contains the parameters for DeleteLifecycleHook.</p>
+   */
   @js.native
   trait DeleteLifecycleHookType extends js.Object {
     var LifecycleHookName: AsciiStringMaxLen255
@@ -785,6 +958,9 @@ package autoscaling {
     }
   }
 
+  /**
+   * <p>Contains the parameters for DeleteNotificationConfiguration.</p>
+   */
   @js.native
   trait DeleteNotificationConfigurationType extends js.Object {
     var AutoScalingGroupName: ResourceName
@@ -806,7 +982,7 @@ package autoscaling {
   }
 
   /**
-   * <p></p>
+   * <p>Contains the parameters for DeletePolicy.</p>
    */
   @js.native
   trait DeletePolicyType extends js.Object {
@@ -828,6 +1004,9 @@ package autoscaling {
     }
   }
 
+  /**
+   * <p>Contains the parameters for DeleteScheduledAction.</p>
+   */
   @js.native
   trait DeleteScheduledActionType extends js.Object {
     var AutoScalingGroupName: ResourceName
@@ -848,6 +1027,9 @@ package autoscaling {
     }
   }
 
+  /**
+   * <p>Contains the parameters for DeleteTags.</p>
+   */
   @js.native
   trait DeleteTagsType extends js.Object {
     var Tags: Tags
@@ -865,26 +1047,38 @@ package autoscaling {
     }
   }
 
+  /**
+   * <p>Contains the parameters for DescribeAccountLimits.</p>
+   */
   @js.native
   trait DescribeAccountLimitsAnswer extends js.Object {
     var MaxNumberOfAutoScalingGroups: MaxNumberOfAutoScalingGroups
     var MaxNumberOfLaunchConfigurations: MaxNumberOfLaunchConfigurations
+    var NumberOfAutoScalingGroups: NumberOfAutoScalingGroups
+    var NumberOfLaunchConfigurations: NumberOfLaunchConfigurations
   }
 
   object DescribeAccountLimitsAnswer {
     def apply(
       MaxNumberOfAutoScalingGroups: js.UndefOr[MaxNumberOfAutoScalingGroups] = js.undefined,
-      MaxNumberOfLaunchConfigurations: js.UndefOr[MaxNumberOfLaunchConfigurations] = js.undefined
+      MaxNumberOfLaunchConfigurations: js.UndefOr[MaxNumberOfLaunchConfigurations] = js.undefined,
+      NumberOfAutoScalingGroups: js.UndefOr[NumberOfAutoScalingGroups] = js.undefined,
+      NumberOfLaunchConfigurations: js.UndefOr[NumberOfLaunchConfigurations] = js.undefined
     ): DescribeAccountLimitsAnswer = {
       val _fields = IndexedSeq[(String, js.Any)](
         ("MaxNumberOfAutoScalingGroups" -> MaxNumberOfAutoScalingGroups.map { x => x: js.Any }),
-        ("MaxNumberOfLaunchConfigurations" -> MaxNumberOfLaunchConfigurations.map { x => x: js.Any })
+        ("MaxNumberOfLaunchConfigurations" -> MaxNumberOfLaunchConfigurations.map { x => x: js.Any }),
+        ("NumberOfAutoScalingGroups" -> NumberOfAutoScalingGroups.map { x => x: js.Any }),
+        ("NumberOfLaunchConfigurations" -> NumberOfLaunchConfigurations.map { x => x: js.Any })
       ).filter(_._2 != js.undefined)
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeAccountLimitsAnswer]
     }
   }
 
+  /**
+   * <p>Contains the parameters for DescribeAdjustmentTypes.</p>
+   */
   @js.native
   trait DescribeAdjustmentTypesAnswer extends js.Object {
     var AdjustmentTypes: AdjustmentTypes
@@ -902,6 +1096,9 @@ package autoscaling {
     }
   }
 
+  /**
+   * <p>Contains the parameters for DescribeAutoScalingInstances.</p>
+   */
   @js.native
   trait DescribeAutoScalingInstancesType extends js.Object {
     var InstanceIds: InstanceIds
@@ -925,6 +1122,9 @@ package autoscaling {
     }
   }
 
+  /**
+   * <p>Contains the output of DescribeAutoScalingNotificationTypes.</p>
+   */
   @js.native
   trait DescribeAutoScalingNotificationTypesAnswer extends js.Object {
     var AutoScalingNotificationTypes: AutoScalingNotificationTypes
@@ -942,6 +1142,9 @@ package autoscaling {
     }
   }
 
+  /**
+   * <p>Contains the output of DescribeLifecycleHookTypes.</p>
+   */
   @js.native
   trait DescribeLifecycleHookTypesAnswer extends js.Object {
     var LifecycleHookTypes: AutoScalingNotificationTypes
@@ -959,6 +1162,9 @@ package autoscaling {
     }
   }
 
+  /**
+   * <p>Contains the output of DescribeLifecycleHooks.</p>
+   */
   @js.native
   trait DescribeLifecycleHooksAnswer extends js.Object {
     var LifecycleHooks: LifecycleHooks
@@ -976,6 +1182,9 @@ package autoscaling {
     }
   }
 
+  /**
+   * <p>Contains the parameters for DescribeLifecycleHooks.</p>
+   */
   @js.native
   trait DescribeLifecycleHooksType extends js.Object {
     var AutoScalingGroupName: ResourceName
@@ -996,6 +1205,107 @@ package autoscaling {
     }
   }
 
+  /**
+   * <p>Contains the parameters for DescribeLoadBalancerTargetGroups.</p>
+   */
+  @js.native
+  trait DescribeLoadBalancerTargetGroupsRequest extends js.Object {
+    var AutoScalingGroupName: ResourceName
+    var NextToken: XmlString
+    var MaxRecords: MaxRecords
+  }
+
+  object DescribeLoadBalancerTargetGroupsRequest {
+    def apply(
+      AutoScalingGroupName: js.UndefOr[ResourceName] = js.undefined,
+      NextToken: js.UndefOr[XmlString] = js.undefined,
+      MaxRecords: js.UndefOr[MaxRecords] = js.undefined
+    ): DescribeLoadBalancerTargetGroupsRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("AutoScalingGroupName" -> AutoScalingGroupName.map { x => x: js.Any }),
+        ("NextToken" -> NextToken.map { x => x: js.Any }),
+        ("MaxRecords" -> MaxRecords.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeLoadBalancerTargetGroupsRequest]
+    }
+  }
+
+  /**
+   * <p>Contains the output of DescribeLoadBalancerTargetGroups.</p>
+   */
+  @js.native
+  trait DescribeLoadBalancerTargetGroupsResponse extends js.Object {
+    var LoadBalancerTargetGroups: LoadBalancerTargetGroupStates
+    var NextToken: XmlString
+  }
+
+  object DescribeLoadBalancerTargetGroupsResponse {
+    def apply(
+      LoadBalancerTargetGroups: js.UndefOr[LoadBalancerTargetGroupStates] = js.undefined,
+      NextToken: js.UndefOr[XmlString] = js.undefined
+    ): DescribeLoadBalancerTargetGroupsResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("LoadBalancerTargetGroups" -> LoadBalancerTargetGroups.map { x => x: js.Any }),
+        ("NextToken" -> NextToken.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeLoadBalancerTargetGroupsResponse]
+    }
+  }
+
+  /**
+   * <p>Contains the parameters for DescribeLoadBalancers.</p>
+   */
+  @js.native
+  trait DescribeLoadBalancersRequest extends js.Object {
+    var AutoScalingGroupName: ResourceName
+    var NextToken: XmlString
+    var MaxRecords: MaxRecords
+  }
+
+  object DescribeLoadBalancersRequest {
+    def apply(
+      AutoScalingGroupName: js.UndefOr[ResourceName] = js.undefined,
+      NextToken: js.UndefOr[XmlString] = js.undefined,
+      MaxRecords: js.UndefOr[MaxRecords] = js.undefined
+    ): DescribeLoadBalancersRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("AutoScalingGroupName" -> AutoScalingGroupName.map { x => x: js.Any }),
+        ("NextToken" -> NextToken.map { x => x: js.Any }),
+        ("MaxRecords" -> MaxRecords.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeLoadBalancersRequest]
+    }
+  }
+
+  /**
+   * <p>Contains the output of DescribeLoadBalancers.</p>
+   */
+  @js.native
+  trait DescribeLoadBalancersResponse extends js.Object {
+    var LoadBalancers: LoadBalancerStates
+    var NextToken: XmlString
+  }
+
+  object DescribeLoadBalancersResponse {
+    def apply(
+      LoadBalancers: js.UndefOr[LoadBalancerStates] = js.undefined,
+      NextToken: js.UndefOr[XmlString] = js.undefined
+    ): DescribeLoadBalancersResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("LoadBalancers" -> LoadBalancers.map { x => x: js.Any }),
+        ("NextToken" -> NextToken.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeLoadBalancersResponse]
+    }
+  }
+
+  /**
+   * <p>Contains the output of DescribeMetricsCollectionTypes.</p>
+   */
   @js.native
   trait DescribeMetricCollectionTypesAnswer extends js.Object {
     var Metrics: MetricCollectionTypes
@@ -1016,6 +1326,9 @@ package autoscaling {
     }
   }
 
+  /**
+   * <p>Contains the output from DescribeNotificationConfigurations.</p>
+   */
   @js.native
   trait DescribeNotificationConfigurationsAnswer extends js.Object {
     var NotificationConfigurations: NotificationConfigurations
@@ -1036,6 +1349,9 @@ package autoscaling {
     }
   }
 
+  /**
+   * <p>Contains the parameters for DescribeNotificationConfigurations.</p>
+   */
   @js.native
   trait DescribeNotificationConfigurationsType extends js.Object {
     var AutoScalingGroupNames: AutoScalingGroupNames
@@ -1059,32 +1375,41 @@ package autoscaling {
     }
   }
 
+  /**
+   * <p>Contains the parameters for DescribePolicies.</p>
+   */
   @js.native
   trait DescribePoliciesType extends js.Object {
-    var AutoScalingGroupName: ResourceName
     var PolicyNames: PolicyNames
-    var NextToken: XmlString
+    var AutoScalingGroupName: ResourceName
+    var PolicyTypes: PolicyTypes
     var MaxRecords: MaxRecords
+    var NextToken: XmlString
   }
 
   object DescribePoliciesType {
     def apply(
-      AutoScalingGroupName: js.UndefOr[ResourceName] = js.undefined,
       PolicyNames: js.UndefOr[PolicyNames] = js.undefined,
-      NextToken: js.UndefOr[XmlString] = js.undefined,
-      MaxRecords: js.UndefOr[MaxRecords] = js.undefined
+      AutoScalingGroupName: js.UndefOr[ResourceName] = js.undefined,
+      PolicyTypes: js.UndefOr[PolicyTypes] = js.undefined,
+      MaxRecords: js.UndefOr[MaxRecords] = js.undefined,
+      NextToken: js.UndefOr[XmlString] = js.undefined
     ): DescribePoliciesType = {
       val _fields = IndexedSeq[(String, js.Any)](
-        ("AutoScalingGroupName" -> AutoScalingGroupName.map { x => x: js.Any }),
         ("PolicyNames" -> PolicyNames.map { x => x: js.Any }),
-        ("NextToken" -> NextToken.map { x => x: js.Any }),
-        ("MaxRecords" -> MaxRecords.map { x => x: js.Any })
+        ("AutoScalingGroupName" -> AutoScalingGroupName.map { x => x: js.Any }),
+        ("PolicyTypes" -> PolicyTypes.map { x => x: js.Any }),
+        ("MaxRecords" -> MaxRecords.map { x => x: js.Any }),
+        ("NextToken" -> NextToken.map { x => x: js.Any })
       ).filter(_._2 != js.undefined)
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribePoliciesType]
     }
   }
 
+  /**
+   * <p>Contains the parameters for DescribeScalingActivities.</p>
+   */
   @js.native
   trait DescribeScalingActivitiesType extends js.Object {
     var ActivityIds: ActivityIds
@@ -1111,6 +1436,9 @@ package autoscaling {
     }
   }
 
+  /**
+   * <p>Contains the parameters for DescribeScheduledActions.</p>
+   */
   @js.native
   trait DescribeScheduledActionsType extends js.Object {
     var AutoScalingGroupName: ResourceName
@@ -1143,6 +1471,9 @@ package autoscaling {
     }
   }
 
+  /**
+   * <p>Contains the parameters for DescribeTags.</p>
+   */
   @js.native
   trait DescribeTagsType extends js.Object {
     var Filters: Filters
@@ -1166,6 +1497,9 @@ package autoscaling {
     }
   }
 
+  /**
+   * <p>Contains the output of DescribeTerminationPolicyTypes.</p>
+   */
   @js.native
   trait DescribeTerminationPolicyTypesAnswer extends js.Object {
     var TerminationPolicyTypes: TerminationPolicies
@@ -1183,6 +1517,9 @@ package autoscaling {
     }
   }
 
+  /**
+   * <p>Contains the output of DetachInstances.</p>
+   */
   @js.native
   trait DetachInstancesAnswer extends js.Object {
     var Activities: Activities
@@ -1200,6 +1537,9 @@ package autoscaling {
     }
   }
 
+  /**
+   * <p>Contains the parameters for DetachInstances.</p>
+   */
   @js.native
   trait DetachInstancesQuery extends js.Object {
     var InstanceIds: InstanceIds
@@ -1223,6 +1563,89 @@ package autoscaling {
     }
   }
 
+  @js.native
+  trait DetachLoadBalancerTargetGroupsResultType extends js.Object {
+
+  }
+
+  object DetachLoadBalancerTargetGroupsResultType {
+    def apply(
+
+    ): DetachLoadBalancerTargetGroupsResultType = {
+      val _fields = IndexedSeq[(String, js.Any)](
+
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DetachLoadBalancerTargetGroupsResultType]
+    }
+  }
+
+  @js.native
+  trait DetachLoadBalancerTargetGroupsType extends js.Object {
+    var AutoScalingGroupName: ResourceName
+    var TargetGroupARNs: TargetGroupARNs
+  }
+
+  object DetachLoadBalancerTargetGroupsType {
+    def apply(
+      AutoScalingGroupName: js.UndefOr[ResourceName] = js.undefined,
+      TargetGroupARNs: js.UndefOr[TargetGroupARNs] = js.undefined
+    ): DetachLoadBalancerTargetGroupsType = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("AutoScalingGroupName" -> AutoScalingGroupName.map { x => x: js.Any }),
+        ("TargetGroupARNs" -> TargetGroupARNs.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DetachLoadBalancerTargetGroupsType]
+    }
+  }
+
+  /**
+   * <p>Contains the output for DetachLoadBalancers.</p>
+   */
+  @js.native
+  trait DetachLoadBalancersResultType extends js.Object {
+
+  }
+
+  object DetachLoadBalancersResultType {
+    def apply(
+
+    ): DetachLoadBalancersResultType = {
+      val _fields = IndexedSeq[(String, js.Any)](
+
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DetachLoadBalancersResultType]
+    }
+  }
+
+  /**
+   * <p>Contains the parameters for DetachLoadBalancers.</p>
+   */
+  @js.native
+  trait DetachLoadBalancersType extends js.Object {
+    var AutoScalingGroupName: ResourceName
+    var LoadBalancerNames: LoadBalancerNames
+  }
+
+  object DetachLoadBalancersType {
+    def apply(
+      AutoScalingGroupName: js.UndefOr[ResourceName] = js.undefined,
+      LoadBalancerNames: js.UndefOr[LoadBalancerNames] = js.undefined
+    ): DetachLoadBalancersType = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("AutoScalingGroupName" -> AutoScalingGroupName.map { x => x: js.Any }),
+        ("LoadBalancerNames" -> LoadBalancerNames.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DetachLoadBalancersType]
+    }
+  }
+
+  /**
+   * <p>Contains the parameters for DisableMetricsCollection.</p>
+   */
   @js.native
   trait DisableMetricsCollectionQuery extends js.Object {
     var AutoScalingGroupName: ResourceName
@@ -1250,6 +1673,7 @@ package autoscaling {
   trait Ebs extends js.Object {
     var VolumeType: BlockDeviceEbsVolumeType
     var SnapshotId: XmlStringMaxLen255
+    var Encrypted: BlockDeviceEbsEncrypted
     var VolumeSize: BlockDeviceEbsVolumeSize
     var Iops: BlockDeviceEbsIops
     var DeleteOnTermination: BlockDeviceEbsDeleteOnTermination
@@ -1259,6 +1683,7 @@ package autoscaling {
     def apply(
       VolumeType: js.UndefOr[BlockDeviceEbsVolumeType] = js.undefined,
       SnapshotId: js.UndefOr[XmlStringMaxLen255] = js.undefined,
+      Encrypted: js.UndefOr[BlockDeviceEbsEncrypted] = js.undefined,
       VolumeSize: js.UndefOr[BlockDeviceEbsVolumeSize] = js.undefined,
       Iops: js.UndefOr[BlockDeviceEbsIops] = js.undefined,
       DeleteOnTermination: js.UndefOr[BlockDeviceEbsDeleteOnTermination] = js.undefined
@@ -1266,6 +1691,7 @@ package autoscaling {
       val _fields = IndexedSeq[(String, js.Any)](
         ("VolumeType" -> VolumeType.map { x => x: js.Any }),
         ("SnapshotId" -> SnapshotId.map { x => x: js.Any }),
+        ("Encrypted" -> Encrypted.map { x => x: js.Any }),
         ("VolumeSize" -> VolumeSize.map { x => x: js.Any }),
         ("Iops" -> Iops.map { x => x: js.Any }),
         ("DeleteOnTermination" -> DeleteOnTermination.map { x => x: js.Any })
@@ -1275,6 +1701,9 @@ package autoscaling {
     }
   }
 
+  /**
+   * <p>Contains the parameters for EnableMetricsCollection.</p>
+   */
   @js.native
   trait EnableMetricsCollectionQuery extends js.Object {
     var AutoScalingGroupName: ResourceName
@@ -1321,6 +1750,9 @@ package autoscaling {
     }
   }
 
+  /**
+   * <p>Contains the output of EnterStandby.</p>
+   */
   @js.native
   trait EnterStandbyAnswer extends js.Object {
     var Activities: Activities
@@ -1338,6 +1770,9 @@ package autoscaling {
     }
   }
 
+  /**
+   * <p>Contains the parameters for EnteStandby.</p>
+   */
   @js.native
   trait EnterStandbyQuery extends js.Object {
     var InstanceIds: InstanceIds
@@ -1361,29 +1796,41 @@ package autoscaling {
     }
   }
 
+  /**
+   * <p>Contains the parameters for ExecutePolicy.</p>
+   */
   @js.native
   trait ExecutePolicyType extends js.Object {
     var AutoScalingGroupName: ResourceName
-    var PolicyName: ResourceName
+    var MetricValue: MetricScale
+    var BreachThreshold: MetricScale
     var HonorCooldown: HonorCooldown
+    var PolicyName: ResourceName
   }
 
   object ExecutePolicyType {
     def apply(
       AutoScalingGroupName: js.UndefOr[ResourceName] = js.undefined,
-      PolicyName: js.UndefOr[ResourceName] = js.undefined,
-      HonorCooldown: js.UndefOr[HonorCooldown] = js.undefined
+      MetricValue: js.UndefOr[MetricScale] = js.undefined,
+      BreachThreshold: js.UndefOr[MetricScale] = js.undefined,
+      HonorCooldown: js.UndefOr[HonorCooldown] = js.undefined,
+      PolicyName: js.UndefOr[ResourceName] = js.undefined
     ): ExecutePolicyType = {
       val _fields = IndexedSeq[(String, js.Any)](
         ("AutoScalingGroupName" -> AutoScalingGroupName.map { x => x: js.Any }),
-        ("PolicyName" -> PolicyName.map { x => x: js.Any }),
-        ("HonorCooldown" -> HonorCooldown.map { x => x: js.Any })
+        ("MetricValue" -> MetricValue.map { x => x: js.Any }),
+        ("BreachThreshold" -> BreachThreshold.map { x => x: js.Any }),
+        ("HonorCooldown" -> HonorCooldown.map { x => x: js.Any }),
+        ("PolicyName" -> PolicyName.map { x => x: js.Any })
       ).filter(_._2 != js.undefined)
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ExecutePolicyType]
     }
   }
 
+  /**
+   * <p>Contains the parameters for ExitStandby.</p>
+   */
   @js.native
   trait ExitStandbyAnswer extends js.Object {
     var Activities: Activities
@@ -1401,6 +1848,9 @@ package autoscaling {
     }
   }
 
+  /**
+   * <p>Contains the parameters for ExitStandby.</p>
+   */
   @js.native
   trait ExitStandbyQuery extends js.Object {
     var InstanceIds: InstanceIds
@@ -1449,22 +1899,25 @@ package autoscaling {
    */
   @js.native
   trait Instance extends js.Object {
+    var ProtectedFromScaleIn: InstanceProtected
     var LifecycleState: LifecycleState
     var AvailabilityZone: XmlStringMaxLen255
     var HealthStatus: XmlStringMaxLen32
-    var InstanceId: XmlStringMaxLen16
+    var InstanceId: XmlStringMaxLen19
     var LaunchConfigurationName: XmlStringMaxLen255
   }
 
   object Instance {
     def apply(
+      ProtectedFromScaleIn: js.UndefOr[InstanceProtected] = js.undefined,
       LifecycleState: js.UndefOr[LifecycleState] = js.undefined,
       AvailabilityZone: js.UndefOr[XmlStringMaxLen255] = js.undefined,
       HealthStatus: js.UndefOr[XmlStringMaxLen32] = js.undefined,
-      InstanceId: js.UndefOr[XmlStringMaxLen16] = js.undefined,
+      InstanceId: js.UndefOr[XmlStringMaxLen19] = js.undefined,
       LaunchConfigurationName: js.UndefOr[XmlStringMaxLen255] = js.undefined
     ): Instance = {
       val _fields = IndexedSeq[(String, js.Any)](
+        ("ProtectedFromScaleIn" -> ProtectedFromScaleIn.map { x => x: js.Any }),
         ("LifecycleState" -> LifecycleState.map { x => x: js.Any }),
         ("AvailabilityZone" -> AvailabilityZone.map { x => x: js.Any }),
         ("HealthStatus" -> HealthStatus.map { x => x: js.Any }),
@@ -1578,6 +2031,9 @@ package autoscaling {
     }
   }
 
+  /**
+   * <p>Contains the parameters for DeleteLaunchConfiguration.</p>
+   */
   @js.native
   trait LaunchConfigurationNameType extends js.Object {
     var LaunchConfigurationName: ResourceName
@@ -1595,6 +2051,9 @@ package autoscaling {
     }
   }
 
+  /**
+   * <p>Contains the parameters for DescribeLaunchConfigurations.</p>
+   */
   @js.native
   trait LaunchConfigurationNamesType extends js.Object {
     var LaunchConfigurationNames: LaunchConfigurationNames
@@ -1618,6 +2077,9 @@ package autoscaling {
     }
   }
 
+  /**
+   * <p>Contains the output of DescribeLaunchConfigurations.</p>
+   */
   @js.native
   trait LaunchConfigurationsType extends js.Object {
     var LaunchConfigurations: LaunchConfigurations
@@ -1639,7 +2101,7 @@ package autoscaling {
   }
 
   /**
-   * <p>Describes a lifecycle hook, which tells Auto Scaling that you want to perform an action when an instance launches or terminates. When you have a lifecycle hook in place, the Auto Scaling group will either:</p> <ul> <li>Pause the instance after it launches, but before it is put into service</li> <li>Pause the instance as it terminates, but before it is fully terminated</li> </ul> <p>For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingPendingState.html">Auto Scaling Pending State</a> and <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingTerminatingState.html">Auto Scaling Terminating State</a> in the <i>Auto Scaling Developer Guide</i>.</p>
+   * <p>Describes a lifecycle hook, which tells Auto Scaling that you want to perform an action when an instance launches or terminates. When you have a lifecycle hook in place, the Auto Scaling group will either:</p> <ul> <li> <p>Pause the instance after it launches, but before it is put into service</p> </li> <li> <p>Pause the instance as it terminates, but before it is fully terminated</p> </li> </ul> <p>For more information, see <a href="http://docs.aws.amazon.com/autoscaling/latest/userguide/AutoScalingGroupLifecycle.html">Auto Scaling Lifecycle</a> in the <i>Auto Scaling User Guide</i>.</p>
    */
   @js.native
   trait LifecycleHook extends js.Object {
@@ -1702,11 +2164,57 @@ package autoscaling {
   }
 
   /**
-   * <p>The limit for the number of Auto Scaling groups or launch configurations has already been reached.</p>
+   * <p>You have already reached a limit for your Auto Scaling resources (for example, groups, launch configurations, or lifecycle hooks). For more information, see <a>DescribeAccountLimits</a>.</p>
    */
   @js.native
   trait LimitExceededFaultException extends js.Object {
     var message: XmlStringMaxLen255
+  }
+
+  /**
+   * <p>Describes the state of a Classic load balancer.</p> <p>If you specify a load balancer when creating the Auto Scaling group, the state of the load balancer is <code>InService</code>.</p> <p>If you attach a load balancer to an existing Auto Scaling group, the initial state is <code>Adding</code>. The state transitions to <code>Added</code> after all instances in the group are registered with the load balancer. If ELB health checks are enabled for the load balancer, the state transitions to <code>InService</code> after at least one instance in the group passes the health check. If EC2 health checks are enabled instead, the load balancer remains in the <code>Added</code> state.</p>
+   */
+  @js.native
+  trait LoadBalancerState extends js.Object {
+    var LoadBalancerName: XmlStringMaxLen255
+    var State: XmlStringMaxLen255
+  }
+
+  object LoadBalancerState {
+    def apply(
+      LoadBalancerName: js.UndefOr[XmlStringMaxLen255] = js.undefined,
+      State: js.UndefOr[XmlStringMaxLen255] = js.undefined
+    ): LoadBalancerState = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("LoadBalancerName" -> LoadBalancerName.map { x => x: js.Any }),
+        ("State" -> State.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[LoadBalancerState]
+    }
+  }
+
+  /**
+   * <p>Describes the state of a target group.</p> <p>If you attach a target group to an existing Auto Scaling group, the initial state is <code>Adding</code>. The state transitions to <code>Added</code> after all Auto Scaling instances are registered with the target group. If ELB health checks are enabled, the state transitions to <code>InService</code> after at least one Auto Scaling instance passes the health check. If EC2 health checks are enabled instead, the target group remains in the <code>Added</code> state.</p>
+   */
+  @js.native
+  trait LoadBalancerTargetGroupState extends js.Object {
+    var LoadBalancerTargetGroupARN: XmlStringMaxLen511
+    var State: XmlStringMaxLen255
+  }
+
+  object LoadBalancerTargetGroupState {
+    def apply(
+      LoadBalancerTargetGroupARN: js.UndefOr[XmlStringMaxLen511] = js.undefined,
+      State: js.UndefOr[XmlStringMaxLen255] = js.undefined
+    ): LoadBalancerTargetGroupState = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("LoadBalancerTargetGroupARN" -> LoadBalancerTargetGroupARN.map { x => x: js.Any }),
+        ("State" -> State.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[LoadBalancerTargetGroupState]
+    }
   }
 
   /**
@@ -1775,6 +2283,9 @@ package autoscaling {
     }
   }
 
+  /**
+   * <p>Contains the output of DescribePolicies.</p>
+   */
   @js.native
   trait PoliciesType extends js.Object {
     var ScalingPolicies: ScalingPolicies
@@ -1795,6 +2306,9 @@ package autoscaling {
     }
   }
 
+  /**
+   * <p>Contains the output of PutScalingPolicy.</p>
+   */
   @js.native
   trait PolicyARNType extends js.Object {
     var PolicyARN: ResourceName
@@ -1813,7 +2327,7 @@ package autoscaling {
   }
 
   /**
-   * <p>Describes a process type.</p> <p>There are two primary Auto Scaling process types--<code>Launch</code> and <code>Terminate</code>. The <code>Launch</code> process creates a new EC2 instance for an Auto Scaling group, and the <code>Terminate</code> process removes an existing EC2 instance. The remaining Auto Scaling process types relate to specific Auto Scaling features:</p> <ul> <li>AddToLoadBalancer</li> <li>AlarmNotification</li> <li>AZRebalance</li> <li>HealthCheck</li> <li>ReplaceUnhealthy</li> <li>ScheduledActions</li> </ul> <important> If you suspend <code>Launch</code> or <code>Terminate</code>, all other process types are affected to varying degrees. The following descriptions discuss how each process type is affected by a suspension of <code>Launch</code> or <code>Terminate</code>. </important> <p>The <code>AddToLoadBalancer</code> process type adds instances to the load balancer when the instances are launched. If you suspend this process, Auto Scaling will launch the instances but will not add them to the load balancer. If you resume the <code>AddToLoadBalancer</code> process, Auto Scaling will also resume adding new instances to the load balancer when they are launched. However, Auto Scaling will not add running instances that were launched while the process was suspended; those instances must be added manually using the <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/APIReference/API_RegisterInstancesWithLoadBalancer.html"> RegisterInstancesWithLoadBalancer</a> call.</p> <p>The <code>AlarmNotification</code> process type accepts notifications from Amazon CloudWatch alarms that are associated with the Auto Scaling group. If you suspend the <code>AlarmNotification</code> process type, Auto Scaling will not automatically execute scaling policies that would be triggered by alarms.</p> <p>Although the <code>AlarmNotification</code> process type is not directly affected by a suspension of <code>Launch</code> or <code>Terminate</code>, alarm notifications are often used to signal that a change in the size of the Auto Scaling group is warranted. If you suspend <code>Launch</code> or <code>Terminate</code>, Auto Scaling might not be able to implement the alarm's associated policy.</p> <p>The <code>AZRebalance</code> process type seeks to maintain a balanced number of instances across Availability Zones within a Region. If you remove an Availability Zone from your Auto Scaling group or an Availability Zone otherwise becomes unhealthy or unavailable, Auto Scaling launches new instances in an unaffected Availability Zone before terminating the unhealthy or unavailable instances. When the unhealthy Availability Zone returns to a healthy state, Auto Scaling automatically redistributes the application instances evenly across all of the designated Availability Zones.</p> <important> <p>If you call <a>SuspendProcesses</a> on the <code>launch</code> process type, the <code>AZRebalance</code> process will neither launch new instances nor terminate existing instances. This is because the <code>AZRebalance</code> process terminates existing instances only after launching the replacement instances.</p> <p>If you call <a>SuspendProcesses</a> on the <code>terminate</code> process type, the <code>AZRebalance</code> process can cause your Auto Scaling group to grow up to ten percent larger than the maximum size. This is because Auto Scaling allows groups to temporarily grow larger than the maximum size during rebalancing activities. If Auto Scaling cannot terminate instances, your Auto Scaling group could remain up to ten percent larger than the maximum size until you resume the <code>terminate</code> process type.</p> </important> <p>The <code>HealthCheck</code> process type checks the health of the instances. Auto Scaling marks an instance as unhealthy if Amazon EC2 or Elastic Load Balancing informs Auto Scaling that the instance is unhealthy. The <code>HealthCheck</code> process can override the health status of an instance that you set with <a>SetInstanceHealth</a>.</p> <p>The <code>ReplaceUnhealthy</code> process type terminates instances that are marked as unhealthy and subsequently creates new instances to replace them. This process calls both of the primary process types--first <code>Terminate</code> and then <code>Launch</code>.</p> <important> <p>The <code>HealthCheck</code> process type works in conjunction with the <code>ReplaceUnhealthly</code> process type to provide health check functionality. If you suspend either <code>Launch</code> or <code>Terminate</code>, the <code>ReplaceUnhealthy</code> process type will not function properly.</p> </important> <p>The <code>ScheduledActions</code> process type performs scheduled actions that you create with <a>PutScheduledUpdateGroupAction</a>. Scheduled actions often involve launching new instances or terminating existing instances. If you suspend either <code>Launch</code> or <code>Terminate</code>, your scheduled actions might not function as expected.</p>
+   * <p>Describes a process type.</p> <p>For more information, see <a href="http://docs.aws.amazon.com/autoscaling/latest/userguide/as-suspend-resume-processes.html#process-types">Auto Scaling Processes</a> in the <i>Auto Scaling User Guide</i>.</p>
    */
   @js.native
   trait ProcessType extends js.Object {
@@ -1832,6 +2346,9 @@ package autoscaling {
     }
   }
 
+  /**
+   * <p>Contains the output of DescribeScalingProcessTypes.</p>
+   */
   @js.native
   trait ProcessesType extends js.Object {
     var Processes: Processes
@@ -1849,6 +2366,9 @@ package autoscaling {
     }
   }
 
+  /**
+   * <p>Contains the output of PutLifecycleHook.</p>
+   */
   @js.native
   trait PutLifecycleHookAnswer extends js.Object {
 
@@ -1866,12 +2386,15 @@ package autoscaling {
     }
   }
 
+  /**
+   * <p>Contains the parameters for PutLifecycleHook.</p>
+   */
   @js.native
   trait PutLifecycleHookType extends js.Object {
     var NotificationMetadata: XmlStringMaxLen1023
     var LifecycleHookName: AsciiStringMaxLen255
     var AutoScalingGroupName: ResourceName
-    var NotificationTargetARN: ResourceName
+    var NotificationTargetARN: NotificationTargetResourceName
     var RoleARN: ResourceName
     var HeartbeatTimeout: HeartbeatTimeout
     var LifecycleTransition: LifecycleTransition
@@ -1883,7 +2406,7 @@ package autoscaling {
       NotificationMetadata: js.UndefOr[XmlStringMaxLen1023] = js.undefined,
       LifecycleHookName: js.UndefOr[AsciiStringMaxLen255] = js.undefined,
       AutoScalingGroupName: js.UndefOr[ResourceName] = js.undefined,
-      NotificationTargetARN: js.UndefOr[ResourceName] = js.undefined,
+      NotificationTargetARN: js.UndefOr[NotificationTargetResourceName] = js.undefined,
       RoleARN: js.UndefOr[ResourceName] = js.undefined,
       HeartbeatTimeout: js.UndefOr[HeartbeatTimeout] = js.undefined,
       LifecycleTransition: js.UndefOr[LifecycleTransition] = js.undefined,
@@ -1904,6 +2427,9 @@ package autoscaling {
     }
   }
 
+  /**
+   * <p>Contains the parameters for PutNotificationConfiguration.</p>
+   */
   @js.native
   trait PutNotificationConfigurationType extends js.Object {
     var AutoScalingGroupName: ResourceName
@@ -1927,30 +2453,48 @@ package autoscaling {
     }
   }
 
+  /**
+   * <p>Contains the parameters for PutScalingPolicy.</p>
+   */
   @js.native
   trait PutScalingPolicyType extends js.Object {
+    var PolicyType: XmlStringMaxLen64
+    var MetricAggregationType: XmlStringMaxLen32
     var AutoScalingGroupName: ResourceName
     var ScalingAdjustment: PolicyIncrement
     var Cooldown: Cooldown
+    var StepAdjustments: StepAdjustments
+    var MinAdjustmentMagnitude: MinAdjustmentMagnitude
     var PolicyName: XmlStringMaxLen255
+    var EstimatedInstanceWarmup: EstimatedInstanceWarmup
     var AdjustmentType: XmlStringMaxLen255
     var MinAdjustmentStep: MinAdjustmentStep
   }
 
   object PutScalingPolicyType {
     def apply(
+      PolicyType: js.UndefOr[XmlStringMaxLen64] = js.undefined,
+      MetricAggregationType: js.UndefOr[XmlStringMaxLen32] = js.undefined,
       AutoScalingGroupName: js.UndefOr[ResourceName] = js.undefined,
       ScalingAdjustment: js.UndefOr[PolicyIncrement] = js.undefined,
       Cooldown: js.UndefOr[Cooldown] = js.undefined,
+      StepAdjustments: js.UndefOr[StepAdjustments] = js.undefined,
+      MinAdjustmentMagnitude: js.UndefOr[MinAdjustmentMagnitude] = js.undefined,
       PolicyName: js.UndefOr[XmlStringMaxLen255] = js.undefined,
+      EstimatedInstanceWarmup: js.UndefOr[EstimatedInstanceWarmup] = js.undefined,
       AdjustmentType: js.UndefOr[XmlStringMaxLen255] = js.undefined,
       MinAdjustmentStep: js.UndefOr[MinAdjustmentStep] = js.undefined
     ): PutScalingPolicyType = {
       val _fields = IndexedSeq[(String, js.Any)](
+        ("PolicyType" -> PolicyType.map { x => x: js.Any }),
+        ("MetricAggregationType" -> MetricAggregationType.map { x => x: js.Any }),
         ("AutoScalingGroupName" -> AutoScalingGroupName.map { x => x: js.Any }),
         ("ScalingAdjustment" -> ScalingAdjustment.map { x => x: js.Any }),
         ("Cooldown" -> Cooldown.map { x => x: js.Any }),
+        ("StepAdjustments" -> StepAdjustments.map { x => x: js.Any }),
+        ("MinAdjustmentMagnitude" -> MinAdjustmentMagnitude.map { x => x: js.Any }),
         ("PolicyName" -> PolicyName.map { x => x: js.Any }),
+        ("EstimatedInstanceWarmup" -> EstimatedInstanceWarmup.map { x => x: js.Any }),
         ("AdjustmentType" -> AdjustmentType.map { x => x: js.Any }),
         ("MinAdjustmentStep" -> MinAdjustmentStep.map { x => x: js.Any })
       ).filter(_._2 != js.undefined)
@@ -1959,6 +2503,9 @@ package autoscaling {
     }
   }
 
+  /**
+   * <p>Contains the parameters for PutScheduledUpdateGroupAction.</p>
+   */
   @js.native
   trait PutScheduledUpdateGroupActionType extends js.Object {
     var AutoScalingGroupName: ResourceName
@@ -2000,6 +2547,9 @@ package autoscaling {
     }
   }
 
+  /**
+   * <p>Contains the output of RecordLifecycleActionHeartBeat.</p>
+   */
   @js.native
   trait RecordLifecycleActionHeartbeatAnswer extends js.Object {
 
@@ -2017,23 +2567,29 @@ package autoscaling {
     }
   }
 
+  /**
+   * <p>Contains the parameters for RecordLifecycleActionHeartbeat.</p>
+   */
   @js.native
   trait RecordLifecycleActionHeartbeatType extends js.Object {
     var LifecycleHookName: AsciiStringMaxLen255
     var AutoScalingGroupName: ResourceName
     var LifecycleActionToken: LifecycleActionToken
+    var InstanceId: XmlStringMaxLen19
   }
 
   object RecordLifecycleActionHeartbeatType {
     def apply(
       LifecycleHookName: js.UndefOr[AsciiStringMaxLen255] = js.undefined,
       AutoScalingGroupName: js.UndefOr[ResourceName] = js.undefined,
-      LifecycleActionToken: js.UndefOr[LifecycleActionToken] = js.undefined
+      LifecycleActionToken: js.UndefOr[LifecycleActionToken] = js.undefined,
+      InstanceId: js.UndefOr[XmlStringMaxLen19] = js.undefined
     ): RecordLifecycleActionHeartbeatType = {
       val _fields = IndexedSeq[(String, js.Any)](
         ("LifecycleHookName" -> LifecycleHookName.map { x => x: js.Any }),
         ("AutoScalingGroupName" -> AutoScalingGroupName.map { x => x: js.Any }),
-        ("LifecycleActionToken" -> LifecycleActionToken.map { x => x: js.Any })
+        ("LifecycleActionToken" -> LifecycleActionToken.map { x => x: js.Any }),
+        ("InstanceId" -> InstanceId.map { x => x: js.Any })
       ).filter(_._2 != js.undefined)
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RecordLifecycleActionHeartbeatType]
@@ -2041,7 +2597,15 @@ package autoscaling {
   }
 
   /**
-   * <p>The Auto Scaling group or launch configuration can't be deleted because it is in use.</p>
+   * <p>You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load balancer).</p>
+   */
+  @js.native
+  trait ResourceContentionFaultException extends js.Object {
+    var message: XmlStringMaxLen255
+  }
+
+  /**
+   * <p>The operation can't be performed because the resource is in use.</p>
    */
   @js.native
   trait ResourceInUseFaultException extends js.Object {
@@ -2049,7 +2613,7 @@ package autoscaling {
   }
 
   /**
-   * <p>The Auto Scaling group can't be deleted because there are scaling activities in progress.</p>
+   * <p>The operation can't be performed because there are scaling activities in progress.</p>
    */
   @js.native
   trait ScalingActivityInProgressFaultException extends js.Object {
@@ -2058,6 +2622,7 @@ package autoscaling {
 
 
   object ScalingActivityStatusCodeEnum {
+    val PendingSpotBidPlacement = "PendingSpotBidPlacement"
     val WaitingForSpotInstanceRequestId = "WaitingForSpotInstanceRequestId"
     val WaitingForSpotInstanceId = "WaitingForSpotInstanceId"
     val WaitingForInstanceId = "WaitingForInstanceId"
@@ -2065,11 +2630,12 @@ package autoscaling {
     val InProgress = "InProgress"
     val WaitingForELBConnectionDraining = "WaitingForELBConnectionDraining"
     val MidLifecycleAction = "MidLifecycleAction"
+    val WaitingForInstanceWarmup = "WaitingForInstanceWarmup"
     val Successful = "Successful"
     val Failed = "Failed"
     val Cancelled = "Cancelled"
 
-    val values = IndexedSeq(WaitingForSpotInstanceRequestId, WaitingForSpotInstanceId, WaitingForInstanceId, PreInService, InProgress, WaitingForELBConnectionDraining, MidLifecycleAction, Successful, Failed, Cancelled)
+    val values = IndexedSeq(PendingSpotBidPlacement, WaitingForSpotInstanceRequestId, WaitingForSpotInstanceId, WaitingForInstanceId, PreInService, InProgress, WaitingForELBConnectionDraining, MidLifecycleAction, WaitingForInstanceWarmup, Successful, Failed, Cancelled)
   }
 
   /**
@@ -2077,11 +2643,16 @@ package autoscaling {
    */
   @js.native
   trait ScalingPolicy extends js.Object {
+    var PolicyType: XmlStringMaxLen64
+    var MetricAggregationType: XmlStringMaxLen32
     var AutoScalingGroupName: XmlStringMaxLen255
     var ScalingAdjustment: PolicyIncrement
     var Cooldown: Cooldown
+    var StepAdjustments: StepAdjustments
+    var MinAdjustmentMagnitude: MinAdjustmentMagnitude
     var PolicyName: XmlStringMaxLen255
     var Alarms: Alarms
+    var EstimatedInstanceWarmup: EstimatedInstanceWarmup
     var AdjustmentType: XmlStringMaxLen255
     var PolicyARN: ResourceName
     var MinAdjustmentStep: MinAdjustmentStep
@@ -2089,21 +2660,31 @@ package autoscaling {
 
   object ScalingPolicy {
     def apply(
+      PolicyType: js.UndefOr[XmlStringMaxLen64] = js.undefined,
+      MetricAggregationType: js.UndefOr[XmlStringMaxLen32] = js.undefined,
       AutoScalingGroupName: js.UndefOr[XmlStringMaxLen255] = js.undefined,
       ScalingAdjustment: js.UndefOr[PolicyIncrement] = js.undefined,
       Cooldown: js.UndefOr[Cooldown] = js.undefined,
+      StepAdjustments: js.UndefOr[StepAdjustments] = js.undefined,
+      MinAdjustmentMagnitude: js.UndefOr[MinAdjustmentMagnitude] = js.undefined,
       PolicyName: js.UndefOr[XmlStringMaxLen255] = js.undefined,
       Alarms: js.UndefOr[Alarms] = js.undefined,
+      EstimatedInstanceWarmup: js.UndefOr[EstimatedInstanceWarmup] = js.undefined,
       AdjustmentType: js.UndefOr[XmlStringMaxLen255] = js.undefined,
       PolicyARN: js.UndefOr[ResourceName] = js.undefined,
       MinAdjustmentStep: js.UndefOr[MinAdjustmentStep] = js.undefined
     ): ScalingPolicy = {
       val _fields = IndexedSeq[(String, js.Any)](
+        ("PolicyType" -> PolicyType.map { x => x: js.Any }),
+        ("MetricAggregationType" -> MetricAggregationType.map { x => x: js.Any }),
         ("AutoScalingGroupName" -> AutoScalingGroupName.map { x => x: js.Any }),
         ("ScalingAdjustment" -> ScalingAdjustment.map { x => x: js.Any }),
         ("Cooldown" -> Cooldown.map { x => x: js.Any }),
+        ("StepAdjustments" -> StepAdjustments.map { x => x: js.Any }),
+        ("MinAdjustmentMagnitude" -> MinAdjustmentMagnitude.map { x => x: js.Any }),
         ("PolicyName" -> PolicyName.map { x => x: js.Any }),
         ("Alarms" -> Alarms.map { x => x: js.Any }),
+        ("EstimatedInstanceWarmup" -> EstimatedInstanceWarmup.map { x => x: js.Any }),
         ("AdjustmentType" -> AdjustmentType.map { x => x: js.Any }),
         ("PolicyARN" -> PolicyARN.map { x => x: js.Any }),
         ("MinAdjustmentStep" -> MinAdjustmentStep.map { x => x: js.Any })
@@ -2113,6 +2694,9 @@ package autoscaling {
     }
   }
 
+  /**
+   * <p>Contains the parameters for SuspendProcesses and ResumeProcesses.</p>
+   */
   @js.native
   trait ScalingProcessQuery extends js.Object {
     var AutoScalingGroupName: ResourceName
@@ -2133,6 +2717,9 @@ package autoscaling {
     }
   }
 
+  /**
+   * <p>Contains the output of DescribeScheduledActions.</p>
+   */
   @js.native
   trait ScheduledActionsType extends js.Object {
     var ScheduledUpdateGroupActions: ScheduledUpdateGroupActions
@@ -2200,6 +2787,9 @@ package autoscaling {
     }
   }
 
+  /**
+   * <p>Contains the parameters for SetDesiredCapacity.</p>
+   */
   @js.native
   trait SetDesiredCapacityType extends js.Object {
     var AutoScalingGroupName: ResourceName
@@ -2223,16 +2813,19 @@ package autoscaling {
     }
   }
 
+  /**
+   * <p>Contains the parameters for SetInstanceHealth.</p>
+   */
   @js.native
   trait SetInstanceHealthQuery extends js.Object {
-    var InstanceId: XmlStringMaxLen16
+    var InstanceId: XmlStringMaxLen19
     var HealthStatus: XmlStringMaxLen32
     var ShouldRespectGracePeriod: ShouldRespectGracePeriod
   }
 
   object SetInstanceHealthQuery {
     def apply(
-      InstanceId: js.UndefOr[XmlStringMaxLen16] = js.undefined,
+      InstanceId: js.UndefOr[XmlStringMaxLen19] = js.undefined,
       HealthStatus: js.UndefOr[XmlStringMaxLen32] = js.undefined,
       ShouldRespectGracePeriod: js.UndefOr[ShouldRespectGracePeriod] = js.undefined
     ): SetInstanceHealthQuery = {
@@ -2243,6 +2836,78 @@ package autoscaling {
       ).filter(_._2 != js.undefined)
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SetInstanceHealthQuery]
+    }
+  }
+
+  /**
+   * <p>Contains the output of SetInstanceProtection.</p>
+   */
+  @js.native
+  trait SetInstanceProtectionAnswer extends js.Object {
+
+  }
+
+  object SetInstanceProtectionAnswer {
+    def apply(
+
+    ): SetInstanceProtectionAnswer = {
+      val _fields = IndexedSeq[(String, js.Any)](
+
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SetInstanceProtectionAnswer]
+    }
+  }
+
+  /**
+   * <p>Contains the parameters for SetInstanceProtection.</p>
+   */
+  @js.native
+  trait SetInstanceProtectionQuery extends js.Object {
+    var InstanceIds: InstanceIds
+    var AutoScalingGroupName: ResourceName
+    var ProtectedFromScaleIn: ProtectedFromScaleIn
+  }
+
+  object SetInstanceProtectionQuery {
+    def apply(
+      InstanceIds: js.UndefOr[InstanceIds] = js.undefined,
+      AutoScalingGroupName: js.UndefOr[ResourceName] = js.undefined,
+      ProtectedFromScaleIn: js.UndefOr[ProtectedFromScaleIn] = js.undefined
+    ): SetInstanceProtectionQuery = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("InstanceIds" -> InstanceIds.map { x => x: js.Any }),
+        ("AutoScalingGroupName" -> AutoScalingGroupName.map { x => x: js.Any }),
+        ("ProtectedFromScaleIn" -> ProtectedFromScaleIn.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SetInstanceProtectionQuery]
+    }
+  }
+
+  /**
+   * <p>Describes an adjustment based on the difference between the value of the aggregated CloudWatch metric and the breach threshold that you've defined for the alarm.</p> <p>For the following examples, suppose that you have an alarm with a breach threshold of 50:</p> <ul> <li> <p>If you want the adjustment to be triggered when the metric is greater than or equal to 50 and less than 60, specify a lower bound of 0 and an upper bound of 10.</p> </li> <li> <p>If you want the adjustment to be triggered when the metric is greater than 40 and less than or equal to 50, specify a lower bound of -10 and an upper bound of 0.</p> </li> </ul> <p>There are a few rules for the step adjustments for your step policy:</p> <ul> <li> <p>The ranges of your step adjustments can't overlap or have a gap.</p> </li> <li> <p>At most one step adjustment can have a null lower bound. If one step adjustment has a negative lower bound, then there must be a step adjustment with a null lower bound.</p> </li> <li> <p>At most one step adjustment can have a null upper bound. If one step adjustment has a positive upper bound, then there must be a step adjustment with a null upper bound.</p> </li> <li> <p>The upper and lower bound can't be null in the same step adjustment.</p> </li> </ul>
+   */
+  @js.native
+  trait StepAdjustment extends js.Object {
+    var MetricIntervalLowerBound: MetricScale
+    var MetricIntervalUpperBound: MetricScale
+    var ScalingAdjustment: PolicyIncrement
+  }
+
+  object StepAdjustment {
+    def apply(
+      MetricIntervalLowerBound: js.UndefOr[MetricScale] = js.undefined,
+      MetricIntervalUpperBound: js.UndefOr[MetricScale] = js.undefined,
+      ScalingAdjustment: js.UndefOr[PolicyIncrement] = js.undefined
+    ): StepAdjustment = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("MetricIntervalLowerBound" -> MetricIntervalLowerBound.map { x => x: js.Any }),
+        ("MetricIntervalUpperBound" -> MetricIntervalUpperBound.map { x => x: js.Any }),
+        ("ScalingAdjustment" -> ScalingAdjustment.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StepAdjustment]
     }
   }
 
@@ -2270,7 +2935,7 @@ package autoscaling {
   }
 
   /**
-   * <p>Describes a tag applied to an Auto Scaling group.</p>
+   * <p>Describes a tag for an Auto Scaling group.</p>
    */
   @js.native
   trait Tag extends js.Object {
@@ -2302,7 +2967,7 @@ package autoscaling {
   }
 
   /**
-   * <p>Describes a tag applied to an Auto Scaling group.</p>
+   * <p>Describes a tag for an Auto Scaling group.</p>
    */
   @js.native
   trait TagDescription extends js.Object {
@@ -2333,6 +2998,9 @@ package autoscaling {
     }
   }
 
+  /**
+   * <p>Contains the output of DescribeTags.</p>
+   */
   @js.native
   trait TagsType extends js.Object {
     var Tags: TagDescriptionList
@@ -2353,15 +3021,18 @@ package autoscaling {
     }
   }
 
+  /**
+   * <p>Contains the parameters for TerminateInstanceInAutoScalingGroup.</p>
+   */
   @js.native
   trait TerminateInstanceInAutoScalingGroupType extends js.Object {
-    var InstanceId: XmlStringMaxLen16
+    var InstanceId: XmlStringMaxLen19
     var ShouldDecrementDesiredCapacity: ShouldDecrementDesiredCapacity
   }
 
   object TerminateInstanceInAutoScalingGroupType {
     def apply(
-      InstanceId: js.UndefOr[XmlStringMaxLen16] = js.undefined,
+      InstanceId: js.UndefOr[XmlStringMaxLen19] = js.undefined,
       ShouldDecrementDesiredCapacity: js.UndefOr[ShouldDecrementDesiredCapacity] = js.undefined
     ): TerminateInstanceInAutoScalingGroupType = {
       val _fields = IndexedSeq[(String, js.Any)](
@@ -2373,6 +3044,9 @@ package autoscaling {
     }
   }
 
+  /**
+   * <p>Contains the parameters for UpdateAutoScalingGroup.</p>
+   */
   @js.native
   trait UpdateAutoScalingGroupType extends js.Object {
     var DefaultCooldown: Cooldown
@@ -2380,10 +3054,11 @@ package autoscaling {
     var TerminationPolicies: TerminationPolicies
     var AutoScalingGroupName: ResourceName
     var HealthCheckType: XmlStringMaxLen32
-    var VPCZoneIdentifier: XmlStringMaxLen255
+    var VPCZoneIdentifier: XmlStringMaxLen2047
     var MaxSize: AutoScalingGroupMaxSize
     var MinSize: AutoScalingGroupMinSize
     var DesiredCapacity: AutoScalingGroupDesiredCapacity
+    var NewInstancesProtectedFromScaleIn: InstanceProtected
     var LaunchConfigurationName: ResourceName
     var HealthCheckGracePeriod: HealthCheckGracePeriod
     var AvailabilityZones: AvailabilityZones
@@ -2396,10 +3071,11 @@ package autoscaling {
       TerminationPolicies: js.UndefOr[TerminationPolicies] = js.undefined,
       AutoScalingGroupName: js.UndefOr[ResourceName] = js.undefined,
       HealthCheckType: js.UndefOr[XmlStringMaxLen32] = js.undefined,
-      VPCZoneIdentifier: js.UndefOr[XmlStringMaxLen255] = js.undefined,
+      VPCZoneIdentifier: js.UndefOr[XmlStringMaxLen2047] = js.undefined,
       MaxSize: js.UndefOr[AutoScalingGroupMaxSize] = js.undefined,
       MinSize: js.UndefOr[AutoScalingGroupMinSize] = js.undefined,
       DesiredCapacity: js.UndefOr[AutoScalingGroupDesiredCapacity] = js.undefined,
+      NewInstancesProtectedFromScaleIn: js.UndefOr[InstanceProtected] = js.undefined,
       LaunchConfigurationName: js.UndefOr[ResourceName] = js.undefined,
       HealthCheckGracePeriod: js.UndefOr[HealthCheckGracePeriod] = js.undefined,
       AvailabilityZones: js.UndefOr[AvailabilityZones] = js.undefined
@@ -2414,6 +3090,7 @@ package autoscaling {
         ("MaxSize" -> MaxSize.map { x => x: js.Any }),
         ("MinSize" -> MinSize.map { x => x: js.Any }),
         ("DesiredCapacity" -> DesiredCapacity.map { x => x: js.Any }),
+        ("NewInstancesProtectedFromScaleIn" -> NewInstancesProtectedFromScaleIn.map { x => x: js.Any }),
         ("LaunchConfigurationName" -> LaunchConfigurationName.map { x => x: js.Any }),
         ("HealthCheckGracePeriod" -> HealthCheckGracePeriod.map { x => x: js.Any }),
         ("AvailabilityZones" -> AvailabilityZones.map { x => x: js.Any })

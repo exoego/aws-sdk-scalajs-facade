@@ -12,6 +12,7 @@ package object sts {
   type SubjectType = String
   type accessKeyIdType = String
   type accessKeySecretType = String
+  type accountType = String
   type arnType = String
   type assumedRoleIdType = String
   type clientTokenType = String
@@ -29,12 +30,15 @@ package object sts {
   type malformedPolicyDocumentMessage = String
   type nonNegativeIntegerType = Integer
   type packedPolicyTooLargeMessage = String
+  type regionDisabledMessage = String
   type roleDurationSecondsType = Integer
+  type roleSessionNameType = String
   type serialNumberType = String
   type sessionPolicyDocumentType = String
   type tokenCodeType = String
   type tokenType = String
   type urlType = String
+  type userIdType = String
   type userNameType = String
   type webIdentitySubjectType = String
 }
@@ -50,6 +54,8 @@ package sts {
     def assumeRoleWithWebIdentity(params: AssumeRoleWithWebIdentityRequest): Request[AssumeRoleWithWebIdentityResponse] = js.native
     def decodeAuthorizationMessage(params: DecodeAuthorizationMessageRequest, callback: Callback[DecodeAuthorizationMessageResponse]): Unit = js.native
     def decodeAuthorizationMessage(params: DecodeAuthorizationMessageRequest): Request[DecodeAuthorizationMessageResponse] = js.native
+    def getCallerIdentity(params: GetCallerIdentityRequest, callback: Callback[GetCallerIdentityResponse]): Unit = js.native
+    def getCallerIdentity(params: GetCallerIdentityRequest): Request[GetCallerIdentityResponse] = js.native
     def getFederationToken(params: GetFederationTokenRequest, callback: Callback[GetFederationTokenResponse]): Unit = js.native
     def getFederationToken(params: GetFederationTokenRequest): Request[GetFederationTokenResponse] = js.native
     def getSessionToken(params: GetSessionTokenRequest, callback: Callback[GetSessionTokenResponse]): Unit = js.native
@@ -62,7 +68,7 @@ package sts {
     var DurationSeconds: roleDurationSecondsType
     var Policy: sessionPolicyDocumentType
     var TokenCode: tokenCodeType
-    var RoleSessionName: userNameType
+    var RoleSessionName: roleSessionNameType
     var RoleArn: arnType
     var SerialNumber: serialNumberType
   }
@@ -73,7 +79,7 @@ package sts {
       DurationSeconds: js.UndefOr[roleDurationSecondsType] = js.undefined,
       Policy: js.UndefOr[sessionPolicyDocumentType] = js.undefined,
       TokenCode: js.UndefOr[tokenCodeType] = js.undefined,
-      RoleSessionName: js.UndefOr[userNameType] = js.undefined,
+      RoleSessionName: js.UndefOr[roleSessionNameType] = js.undefined,
       RoleArn: js.UndefOr[arnType] = js.undefined,
       SerialNumber: js.UndefOr[serialNumberType] = js.undefined
     ): AssumeRoleRequest = {
@@ -92,7 +98,7 @@ package sts {
   }
 
   /**
-   * <p>Contains the result of a successful call to the <a>AssumeRole</a> action, including temporary AWS credentials that can be used to make AWS requests. </p>
+   * <p>Contains the response to a successful <a>AssumeRole</a> request, including temporary AWS credentials that can be used to make AWS requests. </p>
    */
   @js.native
   trait AssumeRoleResponse extends js.Object {
@@ -120,7 +126,7 @@ package sts {
   @js.native
   trait AssumeRoleWithSAMLRequest extends js.Object {
     var SAMLAssertion: SAMLAssertionType
-    var DurationSeconds: durationSecondsType
+    var DurationSeconds: roleDurationSecondsType
     var Policy: sessionPolicyDocumentType
     var PrincipalArn: arnType
     var RoleArn: arnType
@@ -129,7 +135,7 @@ package sts {
   object AssumeRoleWithSAMLRequest {
     def apply(
       SAMLAssertion: js.UndefOr[SAMLAssertionType] = js.undefined,
-      DurationSeconds: js.UndefOr[durationSecondsType] = js.undefined,
+      DurationSeconds: js.UndefOr[roleDurationSecondsType] = js.undefined,
       Policy: js.UndefOr[sessionPolicyDocumentType] = js.undefined,
       PrincipalArn: js.UndefOr[arnType] = js.undefined,
       RoleArn: js.UndefOr[arnType] = js.undefined
@@ -147,7 +153,7 @@ package sts {
   }
 
   /**
-   * <p>Contains the result of a successful call to the <a>AssumeRoleWithSAML</a> action, including temporary AWS credentials that can be used to make AWS requests. </p>
+   * <p>Contains the response to a successful <a>AssumeRoleWithSAML</a> request, including temporary AWS credentials that can be used to make AWS requests. </p>
    */
   @js.native
   trait AssumeRoleWithSAMLResponse extends js.Object {
@@ -189,21 +195,21 @@ package sts {
 
   @js.native
   trait AssumeRoleWithWebIdentityRequest extends js.Object {
-    var DurationSeconds: durationSecondsType
+    var DurationSeconds: roleDurationSecondsType
     var Policy: sessionPolicyDocumentType
     var WebIdentityToken: clientTokenType
     var ProviderId: urlType
-    var RoleSessionName: userNameType
+    var RoleSessionName: roleSessionNameType
     var RoleArn: arnType
   }
 
   object AssumeRoleWithWebIdentityRequest {
     def apply(
-      DurationSeconds: js.UndefOr[durationSecondsType] = js.undefined,
+      DurationSeconds: js.UndefOr[roleDurationSecondsType] = js.undefined,
       Policy: js.UndefOr[sessionPolicyDocumentType] = js.undefined,
       WebIdentityToken: js.UndefOr[clientTokenType] = js.undefined,
       ProviderId: js.UndefOr[urlType] = js.undefined,
-      RoleSessionName: js.UndefOr[userNameType] = js.undefined,
+      RoleSessionName: js.UndefOr[roleSessionNameType] = js.undefined,
       RoleArn: js.UndefOr[arnType] = js.undefined
     ): AssumeRoleWithWebIdentityRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
@@ -220,7 +226,7 @@ package sts {
   }
 
   /**
-   * <p>Contains the result of a successful call to the <a>AssumeRoleWithWebIdentity</a> action, including temporary AWS credentials that can be used to make AWS requests. </p>
+   * <p>Contains the response to a successful <a>AssumeRoleWithWebIdentity</a> request, including temporary AWS credentials that can be used to make AWS requests. </p>
    */
   @js.native
   trait AssumeRoleWithWebIdentityResponse extends js.Object {
@@ -255,7 +261,7 @@ package sts {
   }
 
   /**
-   * <p>The identifiers for the temporary security credentials that the operation returns. </p>
+   * <p>The identifiers for the temporary security credentials that the operation returns.</p>
    */
   @js.native
   trait AssumedRoleUser extends js.Object {
@@ -324,7 +330,7 @@ package sts {
   }
 
   /**
-   * <p>A document that contains additional information about the authorization status of a request from an encoded message that is returned in response to an AWS request. </p>
+   * <p>A document that contains additional information about the authorization status of a request from an encoded message that is returned in response to an AWS request.</p>
    */
   @js.native
   trait DecodeAuthorizationMessageResponse extends js.Object {
@@ -344,7 +350,7 @@ package sts {
   }
 
   /**
-   * <p>The web identity token that was passed is expired or is not valid. Get a new identity token from the identity provider and then retry the request. </p>
+   * <p>The web identity token that was passed is expired or is not valid. Get a new identity token from the identity provider and then retry the request.</p>
    */
   @js.native
   trait ExpiredTokenExceptionException extends js.Object {
@@ -375,6 +381,49 @@ package sts {
   }
 
   @js.native
+  trait GetCallerIdentityRequest extends js.Object {
+
+  }
+
+  object GetCallerIdentityRequest {
+    def apply(
+
+    ): GetCallerIdentityRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetCallerIdentityRequest]
+    }
+  }
+
+  /**
+   * <p>Contains the response to a successful <a>GetCallerIdentity</a> request, including information about the entity making the request.</p>
+   */
+  @js.native
+  trait GetCallerIdentityResponse extends js.Object {
+    var UserId: userIdType
+    var Account: accountType
+    var Arn: arnType
+  }
+
+  object GetCallerIdentityResponse {
+    def apply(
+      UserId: js.UndefOr[userIdType] = js.undefined,
+      Account: js.UndefOr[accountType] = js.undefined,
+      Arn: js.UndefOr[arnType] = js.undefined
+    ): GetCallerIdentityResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("UserId" -> UserId.map { x => x: js.Any }),
+        ("Account" -> Account.map { x => x: js.Any }),
+        ("Arn" -> Arn.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetCallerIdentityResponse]
+    }
+  }
+
+  @js.native
   trait GetFederationTokenRequest extends js.Object {
     var Name: userNameType
     var Policy: sessionPolicyDocumentType
@@ -398,7 +447,7 @@ package sts {
   }
 
   /**
-   * <p>Contains the result of a successful call to the <a>GetFederationToken</a> action, including temporary AWS credentials that can be used to make AWS requests. </p>
+   * <p>Contains the response to a successful <a>GetFederationToken</a> request, including temporary AWS credentials that can be used to make AWS requests. </p>
    */
   @js.native
   trait GetFederationTokenResponse extends js.Object {
@@ -447,7 +496,7 @@ package sts {
   }
 
   /**
-   * <p>Contains the result of a successful call to the <a>GetSessionToken</a> action, including temporary AWS credentials that can be used to make AWS requests. </p>
+   * <p>Contains the response to a successful <a>GetSessionToken</a> request, including temporary AWS credentials that can be used to make AWS requests. </p>
    */
   @js.native
   trait GetSessionTokenResponse extends js.Object {
@@ -467,7 +516,7 @@ package sts {
   }
 
   /**
-   * <p>The request could not be fulfilled because the non-AWS identity provider (IDP) that was asked to verify the incoming identity token could not be reached. This is often a transient error caused by network conditions. Retry the request a limited number of times so that you don't exceed the request rate. If the error persists, the non-AWS identity provider might be down or not responding. </p>
+   * <p>The request could not be fulfilled because the non-AWS identity provider (IDP) that was asked to verify the incoming identity token could not be reached. This is often a transient error caused by network conditions. Retry the request a limited number of times so that you don't exceed the request rate. If the error persists, the non-AWS identity provider might be down or not responding.</p>
    */
   @js.native
   trait IDPCommunicationErrorExceptionException extends js.Object {
@@ -491,7 +540,7 @@ package sts {
   }
 
   /**
-   * <p>The web identity token that was passed could not be validated by AWS. Get a new identity token from the identity provider and then retry the request. </p>
+   * <p>The web identity token that was passed could not be validated by AWS. Get a new identity token from the identity provider and then retry the request.</p>
    */
   @js.native
   trait InvalidIdentityTokenExceptionException extends js.Object {
@@ -512,5 +561,13 @@ package sts {
   @js.native
   trait PackedPolicyTooLargeExceptionException extends js.Object {
     var message: packedPolicyTooLargeMessage
+  }
+
+  /**
+   * <p>STS is not activated in the requested region for the account that is being asked to generate credentials. The account administrator must use the IAM console to activate STS in that region. For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating and Deactivating AWS STS in an AWS Region</a> in the <i>IAM User Guide</i>.</p>
+   */
+  @js.native
+  trait RegionDisabledExceptionException extends js.Object {
+    var message: regionDisabledMessage
   }
 }

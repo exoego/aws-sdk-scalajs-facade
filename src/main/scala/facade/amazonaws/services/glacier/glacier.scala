@@ -11,9 +11,14 @@ package object glacier {
   type NotificationEventList = js.Array[string]
   type NullableLong = Long
   type PartList = js.Array[PartListElement]
+  type ProvisionedCapacityList = js.Array[ProvisionedCapacityDescription]
   type Size = Long
   type StatusCode = String
   type Stream = js.Array[Byte]
+  type TagKey = String
+  type TagKeyList = js.Array[string]
+  type TagMap = js.Dictionary[TagValue]
+  type TagValue = String
   type UploadsList = js.Array[UploadListElement]
   type VaultList = js.Array[DescribeVaultOutput]
   type boolean = Boolean
@@ -27,14 +32,22 @@ package glacier {
   trait Glacier extends js.Object {
     def abortMultipartUpload(params: AbortMultipartUploadInput, callback: Callback[js.Object]): Unit = js.native
     def abortMultipartUpload(params: AbortMultipartUploadInput): Request[js.Object] = js.native
+    def abortVaultLock(params: AbortVaultLockInput, callback: Callback[js.Object]): Unit = js.native
+    def abortVaultLock(params: AbortVaultLockInput): Request[js.Object] = js.native
+    def addTagsToVault(params: AddTagsToVaultInput, callback: Callback[js.Object]): Unit = js.native
+    def addTagsToVault(params: AddTagsToVaultInput): Request[js.Object] = js.native
     def completeMultipartUpload(params: CompleteMultipartUploadInput, callback: Callback[ArchiveCreationOutput]): Unit = js.native
     def completeMultipartUpload(params: CompleteMultipartUploadInput): Request[ArchiveCreationOutput] = js.native
+    def completeVaultLock(params: CompleteVaultLockInput, callback: Callback[js.Object]): Unit = js.native
+    def completeVaultLock(params: CompleteVaultLockInput): Request[js.Object] = js.native
     def createVault(params: CreateVaultInput, callback: Callback[CreateVaultOutput]): Unit = js.native
     def createVault(params: CreateVaultInput): Request[CreateVaultOutput] = js.native
     def deleteArchive(params: DeleteArchiveInput, callback: Callback[js.Object]): Unit = js.native
     def deleteArchive(params: DeleteArchiveInput): Request[js.Object] = js.native
     def deleteVault(params: DeleteVaultInput, callback: Callback[js.Object]): Unit = js.native
     def deleteVault(params: DeleteVaultInput): Request[js.Object] = js.native
+    def deleteVaultAccessPolicy(params: DeleteVaultAccessPolicyInput, callback: Callback[js.Object]): Unit = js.native
+    def deleteVaultAccessPolicy(params: DeleteVaultAccessPolicyInput): Request[js.Object] = js.native
     def deleteVaultNotifications(params: DeleteVaultNotificationsInput, callback: Callback[js.Object]): Unit = js.native
     def deleteVaultNotifications(params: DeleteVaultNotificationsInput): Request[js.Object] = js.native
     def describeJob(params: DescribeJobInput, callback: Callback[GlacierJobDescription]): Unit = js.native
@@ -45,22 +58,38 @@ package glacier {
     def getDataRetrievalPolicy(params: GetDataRetrievalPolicyInput): Request[GetDataRetrievalPolicyOutput] = js.native
     def getJobOutput(params: GetJobOutputInput, callback: Callback[GetJobOutputOutput]): Unit = js.native
     def getJobOutput(params: GetJobOutputInput): Request[GetJobOutputOutput] = js.native
+    def getVaultAccessPolicy(params: GetVaultAccessPolicyInput, callback: Callback[GetVaultAccessPolicyOutput]): Unit = js.native
+    def getVaultAccessPolicy(params: GetVaultAccessPolicyInput): Request[GetVaultAccessPolicyOutput] = js.native
+    def getVaultLock(params: GetVaultLockInput, callback: Callback[GetVaultLockOutput]): Unit = js.native
+    def getVaultLock(params: GetVaultLockInput): Request[GetVaultLockOutput] = js.native
     def getVaultNotifications(params: GetVaultNotificationsInput, callback: Callback[GetVaultNotificationsOutput]): Unit = js.native
     def getVaultNotifications(params: GetVaultNotificationsInput): Request[GetVaultNotificationsOutput] = js.native
     def initiateJob(params: InitiateJobInput, callback: Callback[InitiateJobOutput]): Unit = js.native
     def initiateJob(params: InitiateJobInput): Request[InitiateJobOutput] = js.native
     def initiateMultipartUpload(params: InitiateMultipartUploadInput, callback: Callback[InitiateMultipartUploadOutput]): Unit = js.native
     def initiateMultipartUpload(params: InitiateMultipartUploadInput): Request[InitiateMultipartUploadOutput] = js.native
+    def initiateVaultLock(params: InitiateVaultLockInput, callback: Callback[InitiateVaultLockOutput]): Unit = js.native
+    def initiateVaultLock(params: InitiateVaultLockInput): Request[InitiateVaultLockOutput] = js.native
     def listJobs(params: ListJobsInput, callback: Callback[ListJobsOutput]): Unit = js.native
     def listJobs(params: ListJobsInput): Request[ListJobsOutput] = js.native
     def listMultipartUploads(params: ListMultipartUploadsInput, callback: Callback[ListMultipartUploadsOutput]): Unit = js.native
     def listMultipartUploads(params: ListMultipartUploadsInput): Request[ListMultipartUploadsOutput] = js.native
     def listParts(params: ListPartsInput, callback: Callback[ListPartsOutput]): Unit = js.native
     def listParts(params: ListPartsInput): Request[ListPartsOutput] = js.native
+    def listProvisionedCapacity(params: ListProvisionedCapacityInput, callback: Callback[ListProvisionedCapacityOutput]): Unit = js.native
+    def listProvisionedCapacity(params: ListProvisionedCapacityInput): Request[ListProvisionedCapacityOutput] = js.native
+    def listTagsForVault(params: ListTagsForVaultInput, callback: Callback[ListTagsForVaultOutput]): Unit = js.native
+    def listTagsForVault(params: ListTagsForVaultInput): Request[ListTagsForVaultOutput] = js.native
     def listVaults(params: ListVaultsInput, callback: Callback[ListVaultsOutput]): Unit = js.native
     def listVaults(params: ListVaultsInput): Request[ListVaultsOutput] = js.native
+    def purchaseProvisionedCapacity(params: PurchaseProvisionedCapacityInput, callback: Callback[PurchaseProvisionedCapacityOutput]): Unit = js.native
+    def purchaseProvisionedCapacity(params: PurchaseProvisionedCapacityInput): Request[PurchaseProvisionedCapacityOutput] = js.native
+    def removeTagsFromVault(params: RemoveTagsFromVaultInput, callback: Callback[js.Object]): Unit = js.native
+    def removeTagsFromVault(params: RemoveTagsFromVaultInput): Request[js.Object] = js.native
     def setDataRetrievalPolicy(params: SetDataRetrievalPolicyInput, callback: Callback[js.Object]): Unit = js.native
     def setDataRetrievalPolicy(params: SetDataRetrievalPolicyInput): Request[js.Object] = js.native
+    def setVaultAccessPolicy(params: SetVaultAccessPolicyInput, callback: Callback[js.Object]): Unit = js.native
+    def setVaultAccessPolicy(params: SetVaultAccessPolicyInput): Request[js.Object] = js.native
     def setVaultNotifications(params: SetVaultNotificationsInput, callback: Callback[js.Object]): Unit = js.native
     def setVaultNotifications(params: SetVaultNotificationsInput): Request[js.Object] = js.native
     def uploadArchive(params: UploadArchiveInput, callback: Callback[ArchiveCreationOutput]): Unit = js.native
@@ -70,7 +99,7 @@ package glacier {
   }
 
   /**
-   * <p>Provides options to abort a multipart upload identified by the upload ID. </p> <p>For information about the underlying REST API, go to <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-multipart-abort-upload.html">Abort Multipart Upload</a>. For conceptual information, go to <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/working-with-archives.html">Working with Archives in Amazon Glacier</a>.</p>
+   * <p>Provides options to abort a multipart upload identified by the upload ID.</p> <p>For information about the underlying REST API, see <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-multipart-abort-upload.html">Abort Multipart Upload</a>. For conceptual information, see <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/working-with-archives.html">Working with Archives in Amazon Glacier</a>.</p>
    */
   @js.native
   trait AbortMultipartUploadInput extends js.Object {
@@ -95,6 +124,29 @@ package glacier {
     }
   }
 
+  /**
+   * <p>The input values for <code>AbortVaultLock</code>.</p>
+   */
+  @js.native
+  trait AbortVaultLockInput extends js.Object {
+    var accountId: string
+    var vaultName: string
+  }
+
+  object AbortVaultLockInput {
+    def apply(
+      accountId: js.UndefOr[string] = js.undefined,
+      vaultName: js.UndefOr[string] = js.undefined
+    ): AbortVaultLockInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("accountId" -> accountId.map { x => x: js.Any }),
+        ("vaultName" -> vaultName.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AbortVaultLockInput]
+    }
+  }
+
 
   object ActionCodeEnum {
     val ArchiveRetrieval = "ArchiveRetrieval"
@@ -104,7 +156,33 @@ package glacier {
   }
 
   /**
-   * <p>Contains the Amazon Glacier response to your request.</p> <p>For information about the underlying REST API, go to <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-archive-post.html">Upload Archive</a>. For conceptual information, go to <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/working-with-archives.html">Working with Archives in Amazon Glacier</a>.</p>
+   * <p>The input values for <code>AddTagsToVault</code>.</p>
+   */
+  @js.native
+  trait AddTagsToVaultInput extends js.Object {
+    var accountId: string
+    var vaultName: string
+    var Tags: TagMap
+  }
+
+  object AddTagsToVaultInput {
+    def apply(
+      accountId: js.UndefOr[string] = js.undefined,
+      vaultName: js.UndefOr[string] = js.undefined,
+      Tags: js.UndefOr[TagMap] = js.undefined
+    ): AddTagsToVaultInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("accountId" -> accountId.map { x => x: js.Any }),
+        ("vaultName" -> vaultName.map { x => x: js.Any }),
+        ("Tags" -> Tags.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AddTagsToVaultInput]
+    }
+  }
+
+  /**
+   * <p>Contains the Amazon Glacier response to your request.</p> <p>For information about the underlying REST API, see <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-archive-post.html">Upload Archive</a>. For conceptual information, see <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/working-with-archives.html">Working with Archives in Amazon Glacier</a>.</p>
    */
   @js.native
   trait ArchiveCreationOutput extends js.Object {
@@ -158,6 +236,32 @@ package glacier {
       ).filter(_._2 != js.undefined)
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CompleteMultipartUploadInput]
+    }
+  }
+
+  /**
+   * <p>The input values for <code>CompleteVaultLock</code>.</p>
+   */
+  @js.native
+  trait CompleteVaultLockInput extends js.Object {
+    var accountId: string
+    var vaultName: string
+    var lockId: string
+  }
+
+  object CompleteVaultLockInput {
+    def apply(
+      accountId: js.UndefOr[string] = js.undefined,
+      vaultName: js.UndefOr[string] = js.undefined,
+      lockId: js.UndefOr[string] = js.undefined
+    ): CompleteVaultLockInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("accountId" -> accountId.map { x => x: js.Any }),
+        ("vaultName" -> vaultName.map { x => x: js.Any }),
+        ("lockId" -> lockId.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CompleteVaultLockInput]
     }
   }
 
@@ -270,6 +374,29 @@ package glacier {
       ).filter(_._2 != js.undefined)
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteArchiveInput]
+    }
+  }
+
+  /**
+   * <p>DeleteVaultAccessPolicy input.</p>
+   */
+  @js.native
+  trait DeleteVaultAccessPolicyInput extends js.Object {
+    var accountId: string
+    var vaultName: string
+  }
+
+  object DeleteVaultAccessPolicyInput {
+    def apply(
+      accountId: js.UndefOr[string] = js.undefined,
+      vaultName: js.UndefOr[string] = js.undefined
+    ): DeleteVaultAccessPolicyInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("accountId" -> accountId.map { x => x: js.Any }),
+        ("vaultName" -> vaultName.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteVaultAccessPolicyInput]
     }
   }
 
@@ -511,6 +638,101 @@ package glacier {
   }
 
   /**
+   * <p>Input for GetVaultAccessPolicy.</p>
+   */
+  @js.native
+  trait GetVaultAccessPolicyInput extends js.Object {
+    var accountId: string
+    var vaultName: string
+  }
+
+  object GetVaultAccessPolicyInput {
+    def apply(
+      accountId: js.UndefOr[string] = js.undefined,
+      vaultName: js.UndefOr[string] = js.undefined
+    ): GetVaultAccessPolicyInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("accountId" -> accountId.map { x => x: js.Any }),
+        ("vaultName" -> vaultName.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetVaultAccessPolicyInput]
+    }
+  }
+
+  /**
+   * <p>Output for GetVaultAccessPolicy.</p>
+   */
+  @js.native
+  trait GetVaultAccessPolicyOutput extends js.Object {
+    var policy: VaultAccessPolicy
+  }
+
+  object GetVaultAccessPolicyOutput {
+    def apply(
+      policy: js.UndefOr[VaultAccessPolicy] = js.undefined
+    ): GetVaultAccessPolicyOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("policy" -> policy.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetVaultAccessPolicyOutput]
+    }
+  }
+
+  /**
+   * <p>The input values for <code>GetVaultLock</code>.</p>
+   */
+  @js.native
+  trait GetVaultLockInput extends js.Object {
+    var accountId: string
+    var vaultName: string
+  }
+
+  object GetVaultLockInput {
+    def apply(
+      accountId: js.UndefOr[string] = js.undefined,
+      vaultName: js.UndefOr[string] = js.undefined
+    ): GetVaultLockInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("accountId" -> accountId.map { x => x: js.Any }),
+        ("vaultName" -> vaultName.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetVaultLockInput]
+    }
+  }
+
+  /**
+   * <p>Contains the Amazon Glacier response to your request.</p>
+   */
+  @js.native
+  trait GetVaultLockOutput extends js.Object {
+    var Policy: string
+    var State: string
+    var ExpirationDate: string
+    var CreationDate: string
+  }
+
+  object GetVaultLockOutput {
+    def apply(
+      Policy: js.UndefOr[string] = js.undefined,
+      State: js.UndefOr[string] = js.undefined,
+      ExpirationDate: js.UndefOr[string] = js.undefined,
+      CreationDate: js.UndefOr[string] = js.undefined
+    ): GetVaultLockOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("Policy" -> Policy.map { x => x: js.Any }),
+        ("State" -> State.map { x => x: js.Any }),
+        ("ExpirationDate" -> ExpirationDate.map { x => x: js.Any }),
+        ("CreationDate" -> CreationDate.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetVaultLockOutput]
+    }
+  }
+
+  /**
    * <p>Provides options for retrieving the notification configuration set on an Amazon Glacier vault.</p>
    */
   @js.native
@@ -570,6 +792,7 @@ package glacier {
     var Completed: boolean
     var RetrievalByteRange: string
     var ArchiveId: string
+    var Tier: string
     var ArchiveSizeInBytes: Size
     var VaultARN: string
     var SNSTopic: string
@@ -591,6 +814,7 @@ package glacier {
       Completed: js.UndefOr[boolean] = js.undefined,
       RetrievalByteRange: js.UndefOr[string] = js.undefined,
       ArchiveId: js.UndefOr[string] = js.undefined,
+      Tier: js.UndefOr[string] = js.undefined,
       ArchiveSizeInBytes: js.UndefOr[Size] = js.undefined,
       VaultARN: js.UndefOr[string] = js.undefined,
       SNSTopic: js.UndefOr[string] = js.undefined,
@@ -610,6 +834,7 @@ package glacier {
         ("Completed" -> Completed.map { x => x: js.Any }),
         ("RetrievalByteRange" -> RetrievalByteRange.map { x => x: js.Any }),
         ("ArchiveId" -> ArchiveId.map { x => x: js.Any }),
+        ("Tier" -> Tier.map { x => x: js.Any }),
         ("ArchiveSizeInBytes" -> ArchiveSizeInBytes.map { x => x: js.Any }),
         ("VaultARN" -> VaultARN.map { x => x: js.Any }),
         ("SNSTopic" -> SNSTopic.map { x => x: js.Any }),
@@ -700,7 +925,7 @@ package glacier {
   }
 
   /**
-   * <p>Contains the Amazon Glacier response to your request.</p>
+   * <p>The Amazon Glacier response to your request.</p>
    */
   @js.native
   trait InitiateMultipartUploadOutput extends js.Object {
@@ -723,7 +948,63 @@ package glacier {
   }
 
   /**
-   * <p>Returned if a parameter of the request is incorrectly specified. </p>
+   * <p>The input values for <code>InitiateVaultLock</code>.</p>
+   */
+  @js.native
+  trait InitiateVaultLockInput extends js.Object {
+    var accountId: string
+    var vaultName: string
+    var policy: VaultLockPolicy
+  }
+
+  object InitiateVaultLockInput {
+    def apply(
+      accountId: js.UndefOr[string] = js.undefined,
+      vaultName: js.UndefOr[string] = js.undefined,
+      policy: js.UndefOr[VaultLockPolicy] = js.undefined
+    ): InitiateVaultLockInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("accountId" -> accountId.map { x => x: js.Any }),
+        ("vaultName" -> vaultName.map { x => x: js.Any }),
+        ("policy" -> policy.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[InitiateVaultLockInput]
+    }
+  }
+
+  /**
+   * <p>Contains the Amazon Glacier response to your request.</p>
+   */
+  @js.native
+  trait InitiateVaultLockOutput extends js.Object {
+    var lockId: string
+  }
+
+  object InitiateVaultLockOutput {
+    def apply(
+      lockId: js.UndefOr[string] = js.undefined
+    ): InitiateVaultLockOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("lockId" -> lockId.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[InitiateVaultLockOutput]
+    }
+  }
+
+  /**
+   * <p>Returned if there is insufficient capacity to process this expedited request. This error only applies to expedited retrievals and not to standard or bulk retrievals.</p>
+   */
+  @js.native
+  trait InsufficientCapacityExceptionException extends js.Object {
+    var `type`: string
+    var code: string
+    var message: string
+  }
+
+  /**
+   * <p>Returned if a parameter of the request is incorrectly specified.</p>
    */
   @js.native
   trait InvalidParameterValueExceptionException extends js.Object {
@@ -803,6 +1084,7 @@ package glacier {
     var RetrievalByteRange: string
     var Description: string
     var ArchiveId: string
+    var Tier: string
     var SNSTopic: string
     var Type: string
   }
@@ -814,6 +1096,7 @@ package glacier {
       RetrievalByteRange: js.UndefOr[string] = js.undefined,
       Description: js.UndefOr[string] = js.undefined,
       ArchiveId: js.UndefOr[string] = js.undefined,
+      Tier: js.UndefOr[string] = js.undefined,
       SNSTopic: js.UndefOr[string] = js.undefined,
       Type: js.UndefOr[string] = js.undefined
     ): JobParameters = {
@@ -823,6 +1106,7 @@ package glacier {
         ("RetrievalByteRange" -> RetrievalByteRange.map { x => x: js.Any }),
         ("Description" -> Description.map { x => x: js.Any }),
         ("ArchiveId" -> ArchiveId.map { x => x: js.Any }),
+        ("Tier" -> Tier.map { x => x: js.Any }),
         ("SNSTopic" -> SNSTopic.map { x => x: js.Any }),
         ("Type" -> Type.map { x => x: js.Any })
       ).filter(_._2 != js.undefined)
@@ -1021,6 +1305,83 @@ package glacier {
     }
   }
 
+  @js.native
+  trait ListProvisionedCapacityInput extends js.Object {
+    var accountId: string
+  }
+
+  object ListProvisionedCapacityInput {
+    def apply(
+      accountId: js.UndefOr[string] = js.undefined
+    ): ListProvisionedCapacityInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("accountId" -> accountId.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListProvisionedCapacityInput]
+    }
+  }
+
+  @js.native
+  trait ListProvisionedCapacityOutput extends js.Object {
+    var ProvisionedCapacityList: ProvisionedCapacityList
+  }
+
+  object ListProvisionedCapacityOutput {
+    def apply(
+      ProvisionedCapacityList: js.UndefOr[ProvisionedCapacityList] = js.undefined
+    ): ListProvisionedCapacityOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("ProvisionedCapacityList" -> ProvisionedCapacityList.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListProvisionedCapacityOutput]
+    }
+  }
+
+  /**
+   * <p>The input value for <code>ListTagsForVaultInput</code>.</p>
+   */
+  @js.native
+  trait ListTagsForVaultInput extends js.Object {
+    var accountId: string
+    var vaultName: string
+  }
+
+  object ListTagsForVaultInput {
+    def apply(
+      accountId: js.UndefOr[string] = js.undefined,
+      vaultName: js.UndefOr[string] = js.undefined
+    ): ListTagsForVaultInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("accountId" -> accountId.map { x => x: js.Any }),
+        ("vaultName" -> vaultName.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListTagsForVaultInput]
+    }
+  }
+
+  /**
+   * <p>Contains the Amazon Glacier response to your request.</p>
+   */
+  @js.native
+  trait ListTagsForVaultOutput extends js.Object {
+    var Tags: TagMap
+  }
+
+  object ListTagsForVaultOutput {
+    def apply(
+      Tags: js.UndefOr[TagMap] = js.undefined
+    ): ListTagsForVaultOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("Tags" -> Tags.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListTagsForVaultOutput]
+    }
+  }
+
   /**
    * <p>Provides options to retrieve the vault list owned by the calling user's account. The list provides metadata information for each vault.</p>
    */
@@ -1114,6 +1475,92 @@ package glacier {
   }
 
   /**
+   * <p>The definition for a provisioned capacity unit.</p>
+   */
+  @js.native
+  trait ProvisionedCapacityDescription extends js.Object {
+    var CapacityId: string
+    var StartDate: string
+    var ExpirationDate: string
+  }
+
+  object ProvisionedCapacityDescription {
+    def apply(
+      CapacityId: js.UndefOr[string] = js.undefined,
+      StartDate: js.UndefOr[string] = js.undefined,
+      ExpirationDate: js.UndefOr[string] = js.undefined
+    ): ProvisionedCapacityDescription = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("CapacityId" -> CapacityId.map { x => x: js.Any }),
+        ("StartDate" -> StartDate.map { x => x: js.Any }),
+        ("ExpirationDate" -> ExpirationDate.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ProvisionedCapacityDescription]
+    }
+  }
+
+  @js.native
+  trait PurchaseProvisionedCapacityInput extends js.Object {
+    var accountId: string
+  }
+
+  object PurchaseProvisionedCapacityInput {
+    def apply(
+      accountId: js.UndefOr[string] = js.undefined
+    ): PurchaseProvisionedCapacityInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("accountId" -> accountId.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PurchaseProvisionedCapacityInput]
+    }
+  }
+
+  @js.native
+  trait PurchaseProvisionedCapacityOutput extends js.Object {
+    var capacityId: string
+  }
+
+  object PurchaseProvisionedCapacityOutput {
+    def apply(
+      capacityId: js.UndefOr[string] = js.undefined
+    ): PurchaseProvisionedCapacityOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("capacityId" -> capacityId.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PurchaseProvisionedCapacityOutput]
+    }
+  }
+
+  /**
+   * <p>The input value for <code>RemoveTagsFromVaultInput</code>.</p>
+   */
+  @js.native
+  trait RemoveTagsFromVaultInput extends js.Object {
+    var accountId: string
+    var vaultName: string
+    var TagKeys: TagKeyList
+  }
+
+  object RemoveTagsFromVaultInput {
+    def apply(
+      accountId: js.UndefOr[string] = js.undefined,
+      vaultName: js.UndefOr[string] = js.undefined,
+      TagKeys: js.UndefOr[TagKeyList] = js.undefined
+    ): RemoveTagsFromVaultInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("accountId" -> accountId.map { x => x: js.Any }),
+        ("vaultName" -> vaultName.map { x => x: js.Any }),
+        ("TagKeys" -> TagKeys.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RemoveTagsFromVaultInput]
+    }
+  }
+
+  /**
    * <p>Returned if, when uploading an archive, Amazon Glacier times out while receiving the upload.</p>
    */
   @js.native
@@ -1124,7 +1571,7 @@ package glacier {
   }
 
   /**
-   * <p>Returned if the specified resource, such as a vault, upload ID, or job ID, does not exist.</p>
+   * <p>Returned if the specified resource (such as a vault, upload ID, or job ID) doesn't exist.</p>
    */
   @js.native
   trait ResourceNotFoundExceptionException extends js.Object {
@@ -1163,6 +1610,32 @@ package glacier {
       ).filter(_._2 != js.undefined)
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SetDataRetrievalPolicyInput]
+    }
+  }
+
+  /**
+   * <p>SetVaultAccessPolicy input.</p>
+   */
+  @js.native
+  trait SetVaultAccessPolicyInput extends js.Object {
+    var accountId: string
+    var vaultName: string
+    var policy: VaultAccessPolicy
+  }
+
+  object SetVaultAccessPolicyInput {
+    def apply(
+      accountId: js.UndefOr[string] = js.undefined,
+      vaultName: js.UndefOr[string] = js.undefined,
+      policy: js.UndefOr[VaultAccessPolicy] = js.undefined
+    ): SetVaultAccessPolicyInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("accountId" -> accountId.map { x => x: js.Any }),
+        ("vaultName" -> vaultName.map { x => x: js.Any }),
+        ("policy" -> policy.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SetVaultAccessPolicyInput]
     }
   }
 
@@ -1317,6 +1790,46 @@ package glacier {
       ).filter(_._2 != js.undefined)
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UploadMultipartPartOutput]
+    }
+  }
+
+  /**
+   * <p>Contains the vault access policy.</p>
+   */
+  @js.native
+  trait VaultAccessPolicy extends js.Object {
+    var Policy: string
+  }
+
+  object VaultAccessPolicy {
+    def apply(
+      Policy: js.UndefOr[string] = js.undefined
+    ): VaultAccessPolicy = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("Policy" -> Policy.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[VaultAccessPolicy]
+    }
+  }
+
+  /**
+   * <p>Contains the vault lock policy.</p>
+   */
+  @js.native
+  trait VaultLockPolicy extends js.Object {
+    var Policy: string
+  }
+
+  object VaultLockPolicy {
+    def apply(
+      Policy: js.UndefOr[string] = js.undefined
+    ): VaultLockPolicy = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("Policy" -> Policy.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[VaultLockPolicy]
     }
   }
 

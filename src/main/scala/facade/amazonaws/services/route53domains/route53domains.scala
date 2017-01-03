@@ -5,17 +5,20 @@ import facade.amazonaws._
 
 package object route53domains {
   type AddressLine = String
+  type BillingRecords = js.Array[BillingRecord]
   type City = String
   type ContactName = String
   type ContactNumber = String
   type ContactType = String
   type CountryCode = String
+  type CurrentExpiryYear = Integer
   type DNSSec = String
   type DomainAuthCode = String
   type DomainAvailability = String
   type DomainName = String
   type DomainStatus = String
   type DomainStatusList = js.Array[DomainStatus]
+  type DomainSuggestionsList = js.Array[DomainSuggestion]
   type DomainSummaryList = js.Array[DomainSummary]
   type DurationInYears = Integer
   type Email = String
@@ -27,6 +30,7 @@ package object route53domains {
   type GlueIp = String
   type GlueIpList = js.Array[GlueIp]
   type HostName = String
+  type InvoiceId = String
   type LangCode = String
   type NameserverList = js.Array[Nameserver]
   type OperationId = String
@@ -35,6 +39,8 @@ package object route53domains {
   type OperationType = String
   type PageMarker = String
   type PageMaxItems = Integer
+  type Price = Double
+  type ReachabilityStatus = String
   type RegistrarName = String
   type RegistrarUrl = String
   type RegistrarWhoIsServer = String
@@ -64,8 +70,12 @@ package route53domains {
     def enableDomainAutoRenew(params: EnableDomainAutoRenewRequest): Request[EnableDomainAutoRenewResponse] = js.native
     def enableDomainTransferLock(params: EnableDomainTransferLockRequest, callback: Callback[EnableDomainTransferLockResponse]): Unit = js.native
     def enableDomainTransferLock(params: EnableDomainTransferLockRequest): Request[EnableDomainTransferLockResponse] = js.native
+    def getContactReachabilityStatus(params: GetContactReachabilityStatusRequest, callback: Callback[GetContactReachabilityStatusResponse]): Unit = js.native
+    def getContactReachabilityStatus(params: GetContactReachabilityStatusRequest): Request[GetContactReachabilityStatusResponse] = js.native
     def getDomainDetail(params: GetDomainDetailRequest, callback: Callback[GetDomainDetailResponse]): Unit = js.native
     def getDomainDetail(params: GetDomainDetailRequest): Request[GetDomainDetailResponse] = js.native
+    def getDomainSuggestions(params: GetDomainSuggestionsRequest, callback: Callback[GetDomainSuggestionsResponse]): Unit = js.native
+    def getDomainSuggestions(params: GetDomainSuggestionsRequest): Request[GetDomainSuggestionsResponse] = js.native
     def getOperationDetail(params: GetOperationDetailRequest, callback: Callback[GetOperationDetailResponse]): Unit = js.native
     def getOperationDetail(params: GetOperationDetailRequest): Request[GetOperationDetailResponse] = js.native
     def listDomains(params: ListDomainsRequest, callback: Callback[ListDomainsResponse]): Unit = js.native
@@ -76,6 +86,10 @@ package route53domains {
     def listTagsForDomain(params: ListTagsForDomainRequest): Request[ListTagsForDomainResponse] = js.native
     def registerDomain(params: RegisterDomainRequest, callback: Callback[RegisterDomainResponse]): Unit = js.native
     def registerDomain(params: RegisterDomainRequest): Request[RegisterDomainResponse] = js.native
+    def renewDomain(params: RenewDomainRequest, callback: Callback[RenewDomainResponse]): Unit = js.native
+    def renewDomain(params: RenewDomainRequest): Request[RenewDomainResponse] = js.native
+    def resendContactReachabilityEmail(params: ResendContactReachabilityEmailRequest, callback: Callback[ResendContactReachabilityEmailResponse]): Unit = js.native
+    def resendContactReachabilityEmail(params: ResendContactReachabilityEmailRequest): Request[ResendContactReachabilityEmailResponse] = js.native
     def retrieveDomainAuthCode(params: RetrieveDomainAuthCodeRequest, callback: Callback[RetrieveDomainAuthCodeResponse]): Unit = js.native
     def retrieveDomainAuthCode(params: RetrieveDomainAuthCodeRequest): Request[RetrieveDomainAuthCodeResponse] = js.native
     def transferDomain(params: TransferDomainRequest, callback: Callback[TransferDomainResponse]): Unit = js.native
@@ -88,6 +102,37 @@ package route53domains {
     def updateDomainNameservers(params: UpdateDomainNameserversRequest): Request[UpdateDomainNameserversResponse] = js.native
     def updateTagsForDomain(params: UpdateTagsForDomainRequest, callback: Callback[UpdateTagsForDomainResponse]): Unit = js.native
     def updateTagsForDomain(params: UpdateTagsForDomainRequest): Request[UpdateTagsForDomainResponse] = js.native
+    def viewBilling(params: ViewBillingRequest, callback: Callback[ViewBillingResponse]): Unit = js.native
+    def viewBilling(params: ViewBillingRequest): Request[ViewBillingResponse] = js.native
+  }
+
+  @js.native
+  trait BillingRecord extends js.Object {
+    var Price: Price
+    var Operation: OperationType
+    var DomainName: DomainName
+    var InvoiceId: InvoiceId
+    var BillDate: Timestamp
+  }
+
+  object BillingRecord {
+    def apply(
+      Price: js.UndefOr[Price] = js.undefined,
+      Operation: js.UndefOr[OperationType] = js.undefined,
+      DomainName: js.UndefOr[DomainName] = js.undefined,
+      InvoiceId: js.UndefOr[InvoiceId] = js.undefined,
+      BillDate: js.UndefOr[Timestamp] = js.undefined
+    ): BillingRecord = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("Price" -> Price.map { x => x: js.Any }),
+        ("Operation" -> Operation.map { x => x: js.Any }),
+        ("DomainName" -> DomainName.map { x => x: js.Any }),
+        ("InvoiceId" -> InvoiceId.map { x => x: js.Any }),
+        ("BillDate" -> BillDate.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BillingRecord]
+    }
   }
 
   /**
@@ -561,8 +606,9 @@ package route53domains {
     val `UNAVAILABLE_PREMIUM` = "UNAVAILABLE_PREMIUM"
     val `UNAVAILABLE_RESTRICTED` = "UNAVAILABLE_RESTRICTED"
     val RESERVED = "RESERVED"
+    val `DONT_KNOW` = "DONT_KNOW"
 
-    val values = IndexedSeq(AVAILABLE, `AVAILABLE_RESERVED`, `AVAILABLE_PREORDER`, UNAVAILABLE, `UNAVAILABLE_PREMIUM`, `UNAVAILABLE_RESTRICTED`, RESERVED)
+    val values = IndexedSeq(AVAILABLE, `AVAILABLE_RESERVED`, `AVAILABLE_PREORDER`, UNAVAILABLE, `UNAVAILABLE_PREMIUM`, `UNAVAILABLE_RESTRICTED`, RESERVED, `DONT_KNOW`)
   }
 
   /**
@@ -571,6 +617,26 @@ package route53domains {
   @js.native
   trait DomainLimitExceededException extends js.Object {
     var message: ErrorMessage
+  }
+
+  @js.native
+  trait DomainSuggestion extends js.Object {
+    var DomainName: DomainName
+    var Availability: String
+  }
+
+  object DomainSuggestion {
+    def apply(
+      DomainName: js.UndefOr[DomainName] = js.undefined,
+      Availability: js.UndefOr[String] = js.undefined
+    ): DomainSuggestion = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("DomainName" -> DomainName.map { x => x: js.Any }),
+        ("Availability" -> Availability.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DomainSuggestion]
+    }
   }
 
   @js.native
@@ -716,6 +782,7 @@ package route53domains {
     val `AU_ID_NUMBER` = "AU_ID_NUMBER"
     val `AU_ID_TYPE` = "AU_ID_TYPE"
     val `CA_LEGAL_TYPE` = "CA_LEGAL_TYPE"
+    val `CA_BUSINESS_ENTITY_TYPE` = "CA_BUSINESS_ENTITY_TYPE"
     val `ES_IDENTIFICATION` = "ES_IDENTIFICATION"
     val `ES_IDENTIFICATION_TYPE` = "ES_IDENTIFICATION_TYPE"
     val `ES_LEGAL_FORM` = "ES_LEGAL_FORM"
@@ -727,7 +794,44 @@ package route53domains {
     val `SG_ID_NUMBER` = "SG_ID_NUMBER"
     val `VAT_NUMBER` = "VAT_NUMBER"
 
-    val values = IndexedSeq(`DUNS_NUMBER`, `BRAND_NUMBER`, `BIRTH_DEPARTMENT`, `BIRTH_DATE_IN_YYYY_MM_DD`, `BIRTH_COUNTRY`, `BIRTH_CITY`, `DOCUMENT_NUMBER`, `AU_ID_NUMBER`, `AU_ID_TYPE`, `CA_LEGAL_TYPE`, `ES_IDENTIFICATION`, `ES_IDENTIFICATION_TYPE`, `ES_LEGAL_FORM`, `FI_BUSINESS_NUMBER`, `FI_ID_NUMBER`, `IT_PIN`, `RU_PASSPORT_DATA`, `SE_ID_NUMBER`, `SG_ID_NUMBER`, `VAT_NUMBER`)
+    val values = IndexedSeq(`DUNS_NUMBER`, `BRAND_NUMBER`, `BIRTH_DEPARTMENT`, `BIRTH_DATE_IN_YYYY_MM_DD`, `BIRTH_COUNTRY`, `BIRTH_CITY`, `DOCUMENT_NUMBER`, `AU_ID_NUMBER`, `AU_ID_TYPE`, `CA_LEGAL_TYPE`, `CA_BUSINESS_ENTITY_TYPE`, `ES_IDENTIFICATION`, `ES_IDENTIFICATION_TYPE`, `ES_LEGAL_FORM`, `FI_BUSINESS_NUMBER`, `FI_ID_NUMBER`, `IT_PIN`, `RU_PASSPORT_DATA`, `SE_ID_NUMBER`, `SG_ID_NUMBER`, `VAT_NUMBER`)
+  }
+
+  @js.native
+  trait GetContactReachabilityStatusRequest extends js.Object {
+    var domainName: DomainName
+  }
+
+  object GetContactReachabilityStatusRequest {
+    def apply(
+      domainName: js.UndefOr[DomainName] = js.undefined
+    ): GetContactReachabilityStatusRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("domainName" -> domainName.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetContactReachabilityStatusRequest]
+    }
+  }
+
+  @js.native
+  trait GetContactReachabilityStatusResponse extends js.Object {
+    var domainName: DomainName
+    var status: ReachabilityStatus
+  }
+
+  object GetContactReachabilityStatusResponse {
+    def apply(
+      domainName: js.UndefOr[DomainName] = js.undefined,
+      status: js.UndefOr[ReachabilityStatus] = js.undefined
+    ): GetContactReachabilityStatusResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("domainName" -> domainName.map { x => x: js.Any }),
+        ("status" -> status.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetContactReachabilityStatusResponse]
+    }
   }
 
   /**
@@ -827,6 +931,46 @@ package route53domains {
       ).filter(_._2 != js.undefined)
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetDomainDetailResponse]
+    }
+  }
+
+  @js.native
+  trait GetDomainSuggestionsRequest extends js.Object {
+    var DomainName: DomainName
+    var SuggestionCount: Integer
+    var OnlyAvailable: Boolean
+  }
+
+  object GetDomainSuggestionsRequest {
+    def apply(
+      DomainName: js.UndefOr[DomainName] = js.undefined,
+      SuggestionCount: js.UndefOr[Integer] = js.undefined,
+      OnlyAvailable: js.UndefOr[Boolean] = js.undefined
+    ): GetDomainSuggestionsRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("DomainName" -> DomainName.map { x => x: js.Any }),
+        ("SuggestionCount" -> SuggestionCount.map { x => x: js.Any }),
+        ("OnlyAvailable" -> OnlyAvailable.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetDomainSuggestionsRequest]
+    }
+  }
+
+  @js.native
+  trait GetDomainSuggestionsResponse extends js.Object {
+    var SuggestionsList: DomainSuggestionsList
+  }
+
+  object GetDomainSuggestionsResponse {
+    def apply(
+      SuggestionsList: js.UndefOr[DomainSuggestionsList] = js.undefined
+    ): GetDomainSuggestionsResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("SuggestionsList" -> SuggestionsList.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetDomainSuggestionsResponse]
     }
   }
 
@@ -1109,6 +1253,15 @@ package route53domains {
     val values = IndexedSeq(`REGISTER_DOMAIN`, `DELETE_DOMAIN`, `TRANSFER_IN_DOMAIN`, `UPDATE_DOMAIN_CONTACT`, `UPDATE_NAMESERVER`, `CHANGE_PRIVACY_PROTECTION`, `DOMAIN_LOCK`)
   }
 
+
+  object ReachabilityStatusEnum {
+    val PENDING = "PENDING"
+    val DONE = "DONE"
+    val EXPIRED = "EXPIRED"
+
+    val values = IndexedSeq(PENDING, DONE, EXPIRED)
+  }
+
   /**
    * <p>The RegisterDomain request includes the following elements.</p>
    */
@@ -1173,6 +1326,89 @@ package route53domains {
       ).filter(_._2 != js.undefined)
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RegisterDomainResponse]
+    }
+  }
+
+  /**
+   * <p>A <code>RenewDomain</code> request includes the number of years that you want to renew for and the current expiration year.</p>
+   */
+  @js.native
+  trait RenewDomainRequest extends js.Object {
+    var DomainName: DomainName
+    var DurationInYears: DurationInYears
+    var CurrentExpiryYear: CurrentExpiryYear
+  }
+
+  object RenewDomainRequest {
+    def apply(
+      DomainName: js.UndefOr[DomainName] = js.undefined,
+      DurationInYears: js.UndefOr[DurationInYears] = js.undefined,
+      CurrentExpiryYear: js.UndefOr[CurrentExpiryYear] = js.undefined
+    ): RenewDomainRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("DomainName" -> DomainName.map { x => x: js.Any }),
+        ("DurationInYears" -> DurationInYears.map { x => x: js.Any }),
+        ("CurrentExpiryYear" -> CurrentExpiryYear.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RenewDomainRequest]
+    }
+  }
+
+  @js.native
+  trait RenewDomainResponse extends js.Object {
+    var OperationId: OperationId
+  }
+
+  object RenewDomainResponse {
+    def apply(
+      OperationId: js.UndefOr[OperationId] = js.undefined
+    ): RenewDomainResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("OperationId" -> OperationId.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RenewDomainResponse]
+    }
+  }
+
+  @js.native
+  trait ResendContactReachabilityEmailRequest extends js.Object {
+    var domainName: DomainName
+  }
+
+  object ResendContactReachabilityEmailRequest {
+    def apply(
+      domainName: js.UndefOr[DomainName] = js.undefined
+    ): ResendContactReachabilityEmailRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("domainName" -> domainName.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ResendContactReachabilityEmailRequest]
+    }
+  }
+
+  @js.native
+  trait ResendContactReachabilityEmailResponse extends js.Object {
+    var domainName: DomainName
+    var emailAddress: Email
+    var isAlreadyVerified: Boolean
+  }
+
+  object ResendContactReachabilityEmailResponse {
+    def apply(
+      domainName: js.UndefOr[DomainName] = js.undefined,
+      emailAddress: js.UndefOr[Email] = js.undefined,
+      isAlreadyVerified: js.UndefOr[Boolean] = js.undefined
+    ): ResendContactReachabilityEmailResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("domainName" -> domainName.map { x => x: js.Any }),
+        ("emailAddress" -> emailAddress.map { x => x: js.Any }),
+        ("isAlreadyVerified" -> isAlreadyVerified.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ResendContactReachabilityEmailResponse]
     }
   }
 
@@ -1509,6 +1745,58 @@ package route53domains {
       ).filter(_._2 != js.undefined)
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateTagsForDomainResponse]
+    }
+  }
+
+  /**
+   * <p>The ViewBilling request includes the following elements.</p>
+   */
+  @js.native
+  trait ViewBillingRequest extends js.Object {
+    var Start: Timestamp
+    var End: Timestamp
+    var Marker: PageMarker
+    var MaxItems: PageMaxItems
+  }
+
+  object ViewBillingRequest {
+    def apply(
+      Start: js.UndefOr[Timestamp] = js.undefined,
+      End: js.UndefOr[Timestamp] = js.undefined,
+      Marker: js.UndefOr[PageMarker] = js.undefined,
+      MaxItems: js.UndefOr[PageMaxItems] = js.undefined
+    ): ViewBillingRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("Start" -> Start.map { x => x: js.Any }),
+        ("End" -> End.map { x => x: js.Any }),
+        ("Marker" -> Marker.map { x => x: js.Any }),
+        ("MaxItems" -> MaxItems.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ViewBillingRequest]
+    }
+  }
+
+  /**
+   * <p>The ViewBilling response includes the following elements.</p>
+   */
+  @js.native
+  trait ViewBillingResponse extends js.Object {
+    var NextPageMarker: PageMarker
+    var BillingRecords: BillingRecords
+  }
+
+  object ViewBillingResponse {
+    def apply(
+      NextPageMarker: js.UndefOr[PageMarker] = js.undefined,
+      BillingRecords: js.UndefOr[BillingRecords] = js.undefined
+    ): ViewBillingResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("NextPageMarker" -> NextPageMarker.map { x => x: js.Any }),
+        ("BillingRecords" -> BillingRecords.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ViewBillingResponse]
     }
   }
 }

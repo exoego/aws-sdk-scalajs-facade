@@ -36,6 +36,16 @@ package object importexport {
   type URL = String
   type ValidateOnly = Boolean
   type WarningMessage = String
+  type city = String
+  type company = String
+  type country = String
+  type name = String
+  type phoneNumber = String
+  type postalCode = String
+  type stateOrProvince = String
+  type street1 = String
+  type street2 = String
+  type street3 = String
 }
 
 package importexport {
@@ -222,33 +232,33 @@ package importexport {
 
   @js.native
   trait GetShippingLabelInput extends js.Object {
-    var city: GenericString
-    var name: GenericString
-    var phoneNumber: GenericString
-    var street1: GenericString
-    var country: GenericString
-    var postalCode: GenericString
-    var street2: GenericString
-    var company: GenericString
-    var APIVersion: GenericString
-    var stateOrProvince: GenericString
-    var street3: GenericString
+    var city: city
+    var name: name
+    var phoneNumber: phoneNumber
+    var street1: street1
+    var country: country
+    var postalCode: postalCode
+    var street2: street2
+    var company: company
+    var APIVersion: APIVersion
+    var stateOrProvince: stateOrProvince
+    var street3: street3
     var jobIds: JobIdList
   }
 
   object GetShippingLabelInput {
     def apply(
-      city: js.UndefOr[GenericString] = js.undefined,
-      name: js.UndefOr[GenericString] = js.undefined,
-      phoneNumber: js.UndefOr[GenericString] = js.undefined,
-      street1: js.UndefOr[GenericString] = js.undefined,
-      country: js.UndefOr[GenericString] = js.undefined,
-      postalCode: js.UndefOr[GenericString] = js.undefined,
-      street2: js.UndefOr[GenericString] = js.undefined,
-      company: js.UndefOr[GenericString] = js.undefined,
-      APIVersion: js.UndefOr[GenericString] = js.undefined,
-      stateOrProvince: js.UndefOr[GenericString] = js.undefined,
-      street3: js.UndefOr[GenericString] = js.undefined,
+      city: js.UndefOr[city] = js.undefined,
+      name: js.UndefOr[name] = js.undefined,
+      phoneNumber: js.UndefOr[phoneNumber] = js.undefined,
+      street1: js.UndefOr[street1] = js.undefined,
+      country: js.UndefOr[country] = js.undefined,
+      postalCode: js.UndefOr[postalCode] = js.undefined,
+      street2: js.UndefOr[street2] = js.undefined,
+      company: js.UndefOr[company] = js.undefined,
+      APIVersion: js.UndefOr[APIVersion] = js.undefined,
+      stateOrProvince: js.UndefOr[stateOrProvince] = js.undefined,
+      street3: js.UndefOr[street3] = js.undefined,
       jobIds: js.UndefOr[JobIdList] = js.undefined
     ): GetShippingLabelInput = {
       val _fields = IndexedSeq[(String, js.Any)](

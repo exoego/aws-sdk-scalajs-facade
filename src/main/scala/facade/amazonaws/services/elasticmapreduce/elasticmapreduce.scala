@@ -5,17 +5,29 @@ import facade.amazonaws._
 
 package object elasticmapreduce {
   type ActionOnFailure = String
+  type AdjustmentType = String
   type ApplicationList = js.Array[Application]
+  type AutoScalingPolicyState = String
+  type AutoScalingPolicyStateChangeReasonCode = String
+  type BooleanObject = Boolean
   type BootstrapActionConfigList = js.Array[BootstrapActionConfig]
   type BootstrapActionDetailList = js.Array[BootstrapActionDetail]
+  type CancelStepsInfoList = js.Array[CancelStepsInfo]
+  type CancelStepsRequestStatus = String
   type ClusterId = String
   type ClusterState = String
   type ClusterStateChangeReasonCode = String
   type ClusterStateList = js.Array[ClusterState]
   type ClusterSummaryList = js.Array[ClusterSummary]
   type CommandList = js.Array[Command]
+  type ComparisonOperator = String
+  type ConfigurationList = js.Array[Configuration]
   type Date = js.Date
+  type EC2InstanceIdsList = js.Array[InstanceId]
   type EC2InstanceIdsToTerminateList = js.Array[InstanceId]
+  type EbsBlockDeviceConfigList = js.Array[EbsBlockDeviceConfig]
+  type EbsBlockDeviceList = js.Array[EbsBlockDevice]
+  type EbsVolumeList = js.Array[EbsVolume]
   type ErrorCode = String
   type ErrorMessage = String
   type InstanceGroupConfigList = js.Array[InstanceGroupConfig]
@@ -33,6 +45,7 @@ package object elasticmapreduce {
   type InstanceRoleType = String
   type InstanceState = String
   type InstanceStateChangeReasonCode = String
+  type InstanceStateList = js.Array[InstanceState]
   type InstanceType = String
   type JobFlowDetailList = js.Array[JobFlowDetail]
   type JobFlowExecutionState = String
@@ -40,9 +53,15 @@ package object elasticmapreduce {
   type KeyValueList = js.Array[KeyValue]
   type Marker = String
   type MarketType = String
+  type MetricDimensionList = js.Array[MetricDimension]
   type NewSupportedProductsList = js.Array[SupportedProductConfig]
+  type NonNegativeDouble = Double
   type ResourceId = String
+  type ScaleDownBehavior = String
+  type ScalingRuleList = js.Array[ScalingRule]
+  type SecurityConfigurationList = js.Array[SecurityConfigurationSummary]
   type SecurityGroupsList = js.Array[XmlStringMaxLen256]
+  type Statistic = String
   type StepConfigList = js.Array[StepConfig]
   type StepDetailList = js.Array[StepDetail]
   type StepExecutionState = String
@@ -56,6 +75,7 @@ package object elasticmapreduce {
   type StringMap = js.Dictionary[String]
   type SupportedProductsList = js.Array[XmlStringMaxLen256]
   type TagList = js.Array[Tag]
+  type Unit = String
   type XmlString = String
   type XmlStringList = js.Array[XmlString]
   type XmlStringMaxLen256 = String
@@ -70,10 +90,18 @@ package elasticmapreduce {
     def addJobFlowSteps(params: AddJobFlowStepsInput): Request[AddJobFlowStepsOutput] = js.native
     def addTags(params: AddTagsInput, callback: Callback[AddTagsOutput]): Unit = js.native
     def addTags(params: AddTagsInput): Request[AddTagsOutput] = js.native
+    def cancelSteps(params: CancelStepsInput, callback: Callback[CancelStepsOutput]): Unit = js.native
+    def cancelSteps(params: CancelStepsInput): Request[CancelStepsOutput] = js.native
+    def createSecurityConfiguration(params: CreateSecurityConfigurationInput, callback: Callback[CreateSecurityConfigurationOutput]): Unit = js.native
+    def createSecurityConfiguration(params: CreateSecurityConfigurationInput): Request[CreateSecurityConfigurationOutput] = js.native
+    def deleteSecurityConfiguration(params: DeleteSecurityConfigurationInput, callback: Callback[DeleteSecurityConfigurationOutput]): Unit = js.native
+    def deleteSecurityConfiguration(params: DeleteSecurityConfigurationInput): Request[DeleteSecurityConfigurationOutput] = js.native
     def describeCluster(params: DescribeClusterInput, callback: Callback[DescribeClusterOutput]): Unit = js.native
     def describeCluster(params: DescribeClusterInput): Request[DescribeClusterOutput] = js.native
     def describeJobFlows(params: DescribeJobFlowsInput, callback: Callback[DescribeJobFlowsOutput]): Unit = js.native
     def describeJobFlows(params: DescribeJobFlowsInput): Request[DescribeJobFlowsOutput] = js.native
+    def describeSecurityConfiguration(params: DescribeSecurityConfigurationInput, callback: Callback[DescribeSecurityConfigurationOutput]): Unit = js.native
+    def describeSecurityConfiguration(params: DescribeSecurityConfigurationInput): Request[DescribeSecurityConfigurationOutput] = js.native
     def describeStep(params: DescribeStepInput, callback: Callback[DescribeStepOutput]): Unit = js.native
     def describeStep(params: DescribeStepInput): Request[DescribeStepOutput] = js.native
     def listBootstrapActions(params: ListBootstrapActionsInput, callback: Callback[ListBootstrapActionsOutput]): Unit = js.native
@@ -84,10 +112,16 @@ package elasticmapreduce {
     def listInstanceGroups(params: ListInstanceGroupsInput): Request[ListInstanceGroupsOutput] = js.native
     def listInstances(params: ListInstancesInput, callback: Callback[ListInstancesOutput]): Unit = js.native
     def listInstances(params: ListInstancesInput): Request[ListInstancesOutput] = js.native
+    def listSecurityConfigurations(params: ListSecurityConfigurationsInput, callback: Callback[ListSecurityConfigurationsOutput]): Unit = js.native
+    def listSecurityConfigurations(params: ListSecurityConfigurationsInput): Request[ListSecurityConfigurationsOutput] = js.native
     def listSteps(params: ListStepsInput, callback: Callback[ListStepsOutput]): Unit = js.native
     def listSteps(params: ListStepsInput): Request[ListStepsOutput] = js.native
     def modifyInstanceGroups(params: ModifyInstanceGroupsInput, callback: Callback[js.Object]): Unit = js.native
     def modifyInstanceGroups(params: ModifyInstanceGroupsInput): Request[js.Object] = js.native
+    def putAutoScalingPolicy(params: PutAutoScalingPolicyInput, callback: Callback[PutAutoScalingPolicyOutput]): Unit = js.native
+    def putAutoScalingPolicy(params: PutAutoScalingPolicyInput): Request[PutAutoScalingPolicyOutput] = js.native
+    def removeAutoScalingPolicy(params: RemoveAutoScalingPolicyInput, callback: Callback[RemoveAutoScalingPolicyOutput]): Unit = js.native
+    def removeAutoScalingPolicy(params: RemoveAutoScalingPolicyInput): Request[RemoveAutoScalingPolicyOutput] = js.native
     def removeTags(params: RemoveTagsInput, callback: Callback[RemoveTagsOutput]): Unit = js.native
     def removeTags(params: RemoveTagsInput): Request[RemoveTagsOutput] = js.native
     def runJobFlow(params: RunJobFlowInput, callback: Callback[RunJobFlowOutput]): Unit = js.native
@@ -200,7 +234,7 @@ package elasticmapreduce {
   }
 
   /**
-   * <p>This input identifies a cluster and a list of tags to attach. </p>
+   * <p>This input identifies a cluster and a list of tags to attach.</p>
    */
   @js.native
   trait AddTagsInput extends js.Object {
@@ -223,7 +257,7 @@ package elasticmapreduce {
   }
 
   /**
-   * <p>This output indicates the result of adding tags to a resource. </p>
+   * <p>This output indicates the result of adding tags to a resource.</p>
    */
   @js.native
   trait AddTagsOutput extends js.Object {
@@ -242,8 +276,17 @@ package elasticmapreduce {
     }
   }
 
+
+  object AdjustmentTypeEnum {
+    val `CHANGE_IN_CAPACITY` = "CHANGE_IN_CAPACITY"
+    val `PERCENT_CHANGE_IN_CAPACITY` = "PERCENT_CHANGE_IN_CAPACITY"
+    val `EXACT_CAPACITY` = "EXACT_CAPACITY"
+
+    val values = IndexedSeq(`CHANGE_IN_CAPACITY`, `PERCENT_CHANGE_IN_CAPACITY`, `EXACT_CAPACITY`)
+  }
+
   /**
-   * <p>An application is any Amazon or third-party software that you can add to the cluster. This structure contains a list of strings that indicates the software to use with the cluster and accepts a user argument list. Amazon EMR accepts and forwards the argument list to the corresponding installation script as bootstrap action argument. For more information, see <a href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-mapr.html">Launch a Job Flow on the MapR Distribution for Hadoop</a>. Currently supported values are:</p> <ul> <li>"mapr-m3" - launch the job flow using MapR M3 Edition.</li> <li>"mapr-m5" - launch the job flow using MapR M5 Edition.</li> <li>"mapr" with the user arguments specifying "--edition,m3" or "--edition,m5" - launch the job flow using MapR M3 or M5 Edition, respectively.</li> </ul>
+   * <p>An application is any Amazon or third-party software that you can add to the cluster. This structure contains a list of strings that indicates the software to use with the cluster and accepts a user argument list. Amazon EMR accepts and forwards the argument list to the corresponding installation script as bootstrap action argument. For more information, see <a href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-mapr.html">Launch a Job Flow on the MapR Distribution for Hadoop</a>. Currently supported values are:</p> <ul> <li> <p>"mapr-m3" - launch the job flow using MapR M3 Edition.</p> </li> <li> <p>"mapr-m5" - launch the job flow using MapR M5 Edition.</p> </li> <li> <p>"mapr" with the user arguments specifying "--edition,m3" or "--edition,m5" - launch the job flow using MapR M3 or M5 Edition, respectively.</p> </li> </ul> <note> <p>In Amazon EMR releases 4.0 and greater, the only accepted parameter is the application name. To pass arguments to applications, you supply a configuration for each application.</p> </note>
    */
   @js.native
   trait Application extends js.Object {
@@ -268,6 +311,122 @@ package elasticmapreduce {
       ).filter(_._2 != js.undefined)
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Application]
+    }
+  }
+
+  /**
+   * <p>An automatic scaling policy for a core instance group or task instance group in an Amazon EMR cluster. An automatic scaling policy defines how an instance group dynamically adds and terminates EC2 instances in response to the value of a CloudWatch metric. See <a>PutAutoScalingPolicy</a>.</p>
+   */
+  @js.native
+  trait AutoScalingPolicy extends js.Object {
+    var Constraints: ScalingConstraints
+    var Rules: ScalingRuleList
+  }
+
+  object AutoScalingPolicy {
+    def apply(
+      Constraints: js.UndefOr[ScalingConstraints] = js.undefined,
+      Rules: js.UndefOr[ScalingRuleList] = js.undefined
+    ): AutoScalingPolicy = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("Constraints" -> Constraints.map { x => x: js.Any }),
+        ("Rules" -> Rules.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AutoScalingPolicy]
+    }
+  }
+
+  /**
+   * <p>An automatic scaling policy for a core instance group or task instance group in an Amazon EMR cluster. The automatic scaling policy defines how an instance group dynamically adds and terminates EC2 instances in response to the value of a CloudWatch metric. See <a>PutAutoScalingPolicy</a>.</p>
+   */
+  @js.native
+  trait AutoScalingPolicyDescription extends js.Object {
+    var Status: AutoScalingPolicyStatus
+    var Constraints: ScalingConstraints
+    var Rules: ScalingRuleList
+  }
+
+  object AutoScalingPolicyDescription {
+    def apply(
+      Status: js.UndefOr[AutoScalingPolicyStatus] = js.undefined,
+      Constraints: js.UndefOr[ScalingConstraints] = js.undefined,
+      Rules: js.UndefOr[ScalingRuleList] = js.undefined
+    ): AutoScalingPolicyDescription = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("Status" -> Status.map { x => x: js.Any }),
+        ("Constraints" -> Constraints.map { x => x: js.Any }),
+        ("Rules" -> Rules.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AutoScalingPolicyDescription]
+    }
+  }
+
+
+  object AutoScalingPolicyStateEnum {
+    val PENDING = "PENDING"
+    val ATTACHING = "ATTACHING"
+    val ATTACHED = "ATTACHED"
+    val DETACHING = "DETACHING"
+    val DETACHED = "DETACHED"
+    val FAILED = "FAILED"
+
+    val values = IndexedSeq(PENDING, ATTACHING, ATTACHED, DETACHING, DETACHED, FAILED)
+  }
+
+  /**
+   * <p>The reason for an <a>AutoScalingPolicyStatus</a> change.</p>
+   */
+  @js.native
+  trait AutoScalingPolicyStateChangeReason extends js.Object {
+    var Code: AutoScalingPolicyStateChangeReasonCode
+    var Message: String
+  }
+
+  object AutoScalingPolicyStateChangeReason {
+    def apply(
+      Code: js.UndefOr[AutoScalingPolicyStateChangeReasonCode] = js.undefined,
+      Message: js.UndefOr[String] = js.undefined
+    ): AutoScalingPolicyStateChangeReason = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("Code" -> Code.map { x => x: js.Any }),
+        ("Message" -> Message.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AutoScalingPolicyStateChangeReason]
+    }
+  }
+
+
+  object AutoScalingPolicyStateChangeReasonCodeEnum {
+    val `USER_REQUEST` = "USER_REQUEST"
+    val `PROVISION_FAILURE` = "PROVISION_FAILURE"
+    val `CLEANUP_FAILURE` = "CLEANUP_FAILURE"
+
+    val values = IndexedSeq(`USER_REQUEST`, `PROVISION_FAILURE`, `CLEANUP_FAILURE`)
+  }
+
+  /**
+   * <p>The status of an automatic scaling policy. </p>
+   */
+  @js.native
+  trait AutoScalingPolicyStatus extends js.Object {
+    var State: AutoScalingPolicyState
+    var StateChangeReason: AutoScalingPolicyStateChangeReason
+  }
+
+  object AutoScalingPolicyStatus {
+    def apply(
+      State: js.UndefOr[AutoScalingPolicyState] = js.undefined,
+      StateChangeReason: js.UndefOr[AutoScalingPolicyStateChangeReason] = js.undefined
+    ): AutoScalingPolicyStatus = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("State" -> State.map { x => x: js.Any }),
+        ("StateChangeReason" -> StateChangeReason.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AutoScalingPolicyStatus]
     }
   }
 
@@ -314,6 +473,124 @@ package elasticmapreduce {
     }
   }
 
+  @js.native
+  trait CancelStepsInfo extends js.Object {
+    var StepId: StepId
+    var Status: CancelStepsRequestStatus
+    var Reason: String
+  }
+
+  object CancelStepsInfo {
+    def apply(
+      StepId: js.UndefOr[StepId] = js.undefined,
+      Status: js.UndefOr[CancelStepsRequestStatus] = js.undefined,
+      Reason: js.UndefOr[String] = js.undefined
+    ): CancelStepsInfo = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("StepId" -> StepId.map { x => x: js.Any }),
+        ("Status" -> Status.map { x => x: js.Any }),
+        ("Reason" -> Reason.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CancelStepsInfo]
+    }
+  }
+
+  /**
+   * <p>The input argument to the <a>CancelSteps</a> operation.</p>
+   */
+  @js.native
+  trait CancelStepsInput extends js.Object {
+    var ClusterId: XmlStringMaxLen256
+    var StepIds: StepIdsList
+  }
+
+  object CancelStepsInput {
+    def apply(
+      ClusterId: js.UndefOr[XmlStringMaxLen256] = js.undefined,
+      StepIds: js.UndefOr[StepIdsList] = js.undefined
+    ): CancelStepsInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("ClusterId" -> ClusterId.map { x => x: js.Any }),
+        ("StepIds" -> StepIds.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CancelStepsInput]
+    }
+  }
+
+  /**
+   * <p> The output for the <a>CancelSteps</a> operation. </p>
+   */
+  @js.native
+  trait CancelStepsOutput extends js.Object {
+    var CancelStepsInfoList: CancelStepsInfoList
+  }
+
+  object CancelStepsOutput {
+    def apply(
+      CancelStepsInfoList: js.UndefOr[CancelStepsInfoList] = js.undefined
+    ): CancelStepsOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("CancelStepsInfoList" -> CancelStepsInfoList.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CancelStepsOutput]
+    }
+  }
+
+
+  object CancelStepsRequestStatusEnum {
+    val SUBMITTED = "SUBMITTED"
+    val FAILED = "FAILED"
+
+    val values = IndexedSeq(SUBMITTED, FAILED)
+  }
+
+  /**
+   * <p>The definition of a CloudWatch metric alarm, which determines when an automatic scaling activity is triggered. When the defined alarm conditions are satisfied, scaling activity begins.</p>
+   */
+  @js.native
+  trait CloudWatchAlarmDefinition extends js.Object {
+    var Threshold: NonNegativeDouble
+    var Dimensions: MetricDimensionList
+    var EvaluationPeriods: Integer
+    var ComparisonOperator: ComparisonOperator
+    var Period: Integer
+    var Statistic: Statistic
+    var Namespace: String
+    var Unit: Unit
+    var MetricName: String
+  }
+
+  object CloudWatchAlarmDefinition {
+    def apply(
+      Threshold: js.UndefOr[NonNegativeDouble] = js.undefined,
+      Dimensions: js.UndefOr[MetricDimensionList] = js.undefined,
+      EvaluationPeriods: js.UndefOr[Integer] = js.undefined,
+      ComparisonOperator: js.UndefOr[ComparisonOperator] = js.undefined,
+      Period: js.UndefOr[Integer] = js.undefined,
+      Statistic: js.UndefOr[Statistic] = js.undefined,
+      Namespace: js.UndefOr[String] = js.undefined,
+      Unit: js.UndefOr[Unit] = js.undefined,
+      MetricName: js.UndefOr[String] = js.undefined
+    ): CloudWatchAlarmDefinition = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("Threshold" -> Threshold.map { x => x: js.Any }),
+        ("Dimensions" -> Dimensions.map { x => x: js.Any }),
+        ("EvaluationPeriods" -> EvaluationPeriods.map { x => x: js.Any }),
+        ("ComparisonOperator" -> ComparisonOperator.map { x => x: js.Any }),
+        ("Period" -> Period.map { x => x: js.Any }),
+        ("Statistic" -> Statistic.map { x => x: js.Any }),
+        ("Namespace" -> Namespace.map { x => x: js.Any }),
+        ("Unit" -> Unit.map { x => x: js.Any }),
+        ("MetricName" -> MetricName.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CloudWatchAlarmDefinition]
+    }
+  }
+
   /**
    * <p>The detailed description of the cluster.</p>
    */
@@ -324,15 +601,20 @@ package elasticmapreduce {
     var Id: ClusterId
     var Name: String
     var Applications: ApplicationList
+    var ReleaseLabel: String
     var TerminationProtected: Boolean
     var MasterPublicDnsName: String
     var Ec2InstanceAttributes: Ec2InstanceAttributes
     var ServiceRole: String
+    var Configurations: ConfigurationList
+    var ScaleDownBehavior: ScaleDownBehavior
     var RunningAmiVersion: String
     var NormalizedInstanceHours: Integer
+    var AutoScalingRole: XmlString
     var Tags: TagList
     var VisibleToAllUsers: Boolean
     var RequestedAmiVersion: String
+    var SecurityConfiguration: XmlString
     var Status: ClusterStatus
   }
 
@@ -343,15 +625,20 @@ package elasticmapreduce {
       Id: js.UndefOr[ClusterId] = js.undefined,
       Name: js.UndefOr[String] = js.undefined,
       Applications: js.UndefOr[ApplicationList] = js.undefined,
+      ReleaseLabel: js.UndefOr[String] = js.undefined,
       TerminationProtected: js.UndefOr[Boolean] = js.undefined,
       MasterPublicDnsName: js.UndefOr[String] = js.undefined,
       Ec2InstanceAttributes: js.UndefOr[Ec2InstanceAttributes] = js.undefined,
       ServiceRole: js.UndefOr[String] = js.undefined,
+      Configurations: js.UndefOr[ConfigurationList] = js.undefined,
+      ScaleDownBehavior: js.UndefOr[ScaleDownBehavior] = js.undefined,
       RunningAmiVersion: js.UndefOr[String] = js.undefined,
       NormalizedInstanceHours: js.UndefOr[Integer] = js.undefined,
+      AutoScalingRole: js.UndefOr[XmlString] = js.undefined,
       Tags: js.UndefOr[TagList] = js.undefined,
       VisibleToAllUsers: js.UndefOr[Boolean] = js.undefined,
       RequestedAmiVersion: js.UndefOr[String] = js.undefined,
+      SecurityConfiguration: js.UndefOr[XmlString] = js.undefined,
       Status: js.UndefOr[ClusterStatus] = js.undefined
     ): Cluster = {
       val _fields = IndexedSeq[(String, js.Any)](
@@ -360,15 +647,20 @@ package elasticmapreduce {
         ("Id" -> Id.map { x => x: js.Any }),
         ("Name" -> Name.map { x => x: js.Any }),
         ("Applications" -> Applications.map { x => x: js.Any }),
+        ("ReleaseLabel" -> ReleaseLabel.map { x => x: js.Any }),
         ("TerminationProtected" -> TerminationProtected.map { x => x: js.Any }),
         ("MasterPublicDnsName" -> MasterPublicDnsName.map { x => x: js.Any }),
         ("Ec2InstanceAttributes" -> Ec2InstanceAttributes.map { x => x: js.Any }),
         ("ServiceRole" -> ServiceRole.map { x => x: js.Any }),
+        ("Configurations" -> Configurations.map { x => x: js.Any }),
+        ("ScaleDownBehavior" -> ScaleDownBehavior.map { x => x: js.Any }),
         ("RunningAmiVersion" -> RunningAmiVersion.map { x => x: js.Any }),
         ("NormalizedInstanceHours" -> NormalizedInstanceHours.map { x => x: js.Any }),
+        ("AutoScalingRole" -> AutoScalingRole.map { x => x: js.Any }),
         ("Tags" -> Tags.map { x => x: js.Any }),
         ("VisibleToAllUsers" -> VisibleToAllUsers.map { x => x: js.Any }),
         ("RequestedAmiVersion" -> RequestedAmiVersion.map { x => x: js.Any }),
+        ("SecurityConfiguration" -> SecurityConfiguration.map { x => x: js.Any }),
         ("Status" -> Status.map { x => x: js.Any })
       ).filter(_._2 != js.undefined)
 
@@ -532,6 +824,116 @@ package elasticmapreduce {
     }
   }
 
+
+  object ComparisonOperatorEnum {
+    val `GREATER_THAN_OR_EQUAL` = "GREATER_THAN_OR_EQUAL"
+    val `GREATER_THAN` = "GREATER_THAN"
+    val `LESS_THAN` = "LESS_THAN"
+    val `LESS_THAN_OR_EQUAL` = "LESS_THAN_OR_EQUAL"
+
+    val values = IndexedSeq(`GREATER_THAN_OR_EQUAL`, `GREATER_THAN`, `LESS_THAN`, `LESS_THAN_OR_EQUAL`)
+  }
+
+  /**
+   * <note> <p>Amazon EMR releases 4.x or later.</p> </note> <p>Specifies a hardware and software configuration of the EMR cluster. This includes configurations for applications and software bundled with Amazon EMR. The Configuration object is a JSON object which is defined by a classification and a set of properties. Configurations can be nested, so a configuration may have its own Configuration objects listed.</p>
+   */
+  @js.native
+  trait Configuration extends js.Object {
+    var Classification: String
+    var Configurations: ConfigurationList
+    var Properties: StringMap
+  }
+
+  object Configuration {
+    def apply(
+      Classification: js.UndefOr[String] = js.undefined,
+      Configurations: js.UndefOr[ConfigurationList] = js.undefined,
+      Properties: js.UndefOr[StringMap] = js.undefined
+    ): Configuration = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("Classification" -> Classification.map { x => x: js.Any }),
+        ("Configurations" -> Configurations.map { x => x: js.Any }),
+        ("Properties" -> Properties.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Configuration]
+    }
+  }
+
+  @js.native
+  trait CreateSecurityConfigurationInput extends js.Object {
+    var Name: XmlString
+    var SecurityConfiguration: String
+  }
+
+  object CreateSecurityConfigurationInput {
+    def apply(
+      Name: js.UndefOr[XmlString] = js.undefined,
+      SecurityConfiguration: js.UndefOr[String] = js.undefined
+    ): CreateSecurityConfigurationInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("Name" -> Name.map { x => x: js.Any }),
+        ("SecurityConfiguration" -> SecurityConfiguration.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateSecurityConfigurationInput]
+    }
+  }
+
+  @js.native
+  trait CreateSecurityConfigurationOutput extends js.Object {
+    var Name: XmlString
+    var CreationDateTime: Date
+  }
+
+  object CreateSecurityConfigurationOutput {
+    def apply(
+      Name: js.UndefOr[XmlString] = js.undefined,
+      CreationDateTime: js.UndefOr[Date] = js.undefined
+    ): CreateSecurityConfigurationOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("Name" -> Name.map { x => x: js.Any }),
+        ("CreationDateTime" -> CreationDateTime.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateSecurityConfigurationOutput]
+    }
+  }
+
+  @js.native
+  trait DeleteSecurityConfigurationInput extends js.Object {
+    var Name: XmlString
+  }
+
+  object DeleteSecurityConfigurationInput {
+    def apply(
+      Name: js.UndefOr[XmlString] = js.undefined
+    ): DeleteSecurityConfigurationInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("Name" -> Name.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteSecurityConfigurationInput]
+    }
+  }
+
+  @js.native
+  trait DeleteSecurityConfigurationOutput extends js.Object {
+
+  }
+
+  object DeleteSecurityConfigurationOutput {
+    def apply(
+
+    ): DeleteSecurityConfigurationOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteSecurityConfigurationOutput]
+    }
+  }
+
   /**
    * <p>This input determines which cluster to describe.</p>
    */
@@ -621,6 +1023,46 @@ package elasticmapreduce {
     }
   }
 
+  @js.native
+  trait DescribeSecurityConfigurationInput extends js.Object {
+    var Name: XmlString
+  }
+
+  object DescribeSecurityConfigurationInput {
+    def apply(
+      Name: js.UndefOr[XmlString] = js.undefined
+    ): DescribeSecurityConfigurationInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("Name" -> Name.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeSecurityConfigurationInput]
+    }
+  }
+
+  @js.native
+  trait DescribeSecurityConfigurationOutput extends js.Object {
+    var Name: XmlString
+    var SecurityConfiguration: String
+    var CreationDateTime: Date
+  }
+
+  object DescribeSecurityConfigurationOutput {
+    def apply(
+      Name: js.UndefOr[XmlString] = js.undefined,
+      SecurityConfiguration: js.UndefOr[String] = js.undefined,
+      CreationDateTime: js.UndefOr[Date] = js.undefined
+    ): DescribeSecurityConfigurationOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("Name" -> Name.map { x => x: js.Any }),
+        ("SecurityConfiguration" -> SecurityConfiguration.map { x => x: js.Any }),
+        ("CreationDateTime" -> CreationDateTime.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeSecurityConfigurationOutput]
+    }
+  }
+
   /**
    * <p>This input determines which step to describe.</p>
    */
@@ -665,6 +1107,98 @@ package elasticmapreduce {
   }
 
   /**
+   * <p>Configuration of requested EBS block device associated with the instance group.</p>
+   */
+  @js.native
+  trait EbsBlockDevice extends js.Object {
+    var VolumeSpecification: VolumeSpecification
+    var Device: String
+  }
+
+  object EbsBlockDevice {
+    def apply(
+      VolumeSpecification: js.UndefOr[VolumeSpecification] = js.undefined,
+      Device: js.UndefOr[String] = js.undefined
+    ): EbsBlockDevice = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("VolumeSpecification" -> VolumeSpecification.map { x => x: js.Any }),
+        ("Device" -> Device.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EbsBlockDevice]
+    }
+  }
+
+  /**
+   * <p>Configuration of requested EBS block device associated with the instance group with count of volumes that will be associated to every instance.</p>
+   */
+  @js.native
+  trait EbsBlockDeviceConfig extends js.Object {
+    var VolumeSpecification: VolumeSpecification
+    var VolumesPerInstance: Integer
+  }
+
+  object EbsBlockDeviceConfig {
+    def apply(
+      VolumeSpecification: js.UndefOr[VolumeSpecification] = js.undefined,
+      VolumesPerInstance: js.UndefOr[Integer] = js.undefined
+    ): EbsBlockDeviceConfig = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("VolumeSpecification" -> VolumeSpecification.map { x => x: js.Any }),
+        ("VolumesPerInstance" -> VolumesPerInstance.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EbsBlockDeviceConfig]
+    }
+  }
+
+  /**
+   * <p>The Amazon EBS configuration of a cluster instance.</p>
+   */
+  @js.native
+  trait EbsConfiguration extends js.Object {
+    var EbsBlockDeviceConfigs: EbsBlockDeviceConfigList
+    var EbsOptimized: BooleanObject
+  }
+
+  object EbsConfiguration {
+    def apply(
+      EbsBlockDeviceConfigs: js.UndefOr[EbsBlockDeviceConfigList] = js.undefined,
+      EbsOptimized: js.UndefOr[BooleanObject] = js.undefined
+    ): EbsConfiguration = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("EbsBlockDeviceConfigs" -> EbsBlockDeviceConfigs.map { x => x: js.Any }),
+        ("EbsOptimized" -> EbsOptimized.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EbsConfiguration]
+    }
+  }
+
+  /**
+   * <p>EBS block device that's attached to an EC2 instance.</p>
+   */
+  @js.native
+  trait EbsVolume extends js.Object {
+    var Device: String
+    var VolumeId: String
+  }
+
+  object EbsVolume {
+    def apply(
+      Device: js.UndefOr[String] = js.undefined,
+      VolumeId: js.UndefOr[String] = js.undefined
+    ): EbsVolume = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("Device" -> Device.map { x => x: js.Any }),
+        ("VolumeId" -> VolumeId.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EbsVolume]
+    }
+  }
+
+  /**
    * <p>Provides information about the EC2 instances in a cluster grouped by category. For example, key name, subnet ID, IAM instance profile, and so on.</p>
    */
   @js.native
@@ -674,6 +1208,7 @@ package elasticmapreduce {
     var EmrManagedSlaveSecurityGroup: String
     var Ec2KeyName: String
     var IamInstanceProfile: String
+    var ServiceAccessSecurityGroup: String
     var Ec2SubnetId: String
     var Ec2AvailabilityZone: String
     var AdditionalMasterSecurityGroups: StringList
@@ -686,6 +1221,7 @@ package elasticmapreduce {
       EmrManagedSlaveSecurityGroup: js.UndefOr[String] = js.undefined,
       Ec2KeyName: js.UndefOr[String] = js.undefined,
       IamInstanceProfile: js.UndefOr[String] = js.undefined,
+      ServiceAccessSecurityGroup: js.UndefOr[String] = js.undefined,
       Ec2SubnetId: js.UndefOr[String] = js.undefined,
       Ec2AvailabilityZone: js.UndefOr[String] = js.undefined,
       AdditionalMasterSecurityGroups: js.UndefOr[StringList] = js.undefined
@@ -696,6 +1232,7 @@ package elasticmapreduce {
         ("EmrManagedSlaveSecurityGroup" -> EmrManagedSlaveSecurityGroup.map { x => x: js.Any }),
         ("Ec2KeyName" -> Ec2KeyName.map { x => x: js.Any }),
         ("IamInstanceProfile" -> IamInstanceProfile.map { x => x: js.Any }),
+        ("ServiceAccessSecurityGroup" -> ServiceAccessSecurityGroup.map { x => x: js.Any }),
         ("Ec2SubnetId" -> Ec2SubnetId.map { x => x: js.Any }),
         ("Ec2AvailabilityZone" -> Ec2AvailabilityZone.map { x => x: js.Any }),
         ("AdditionalMasterSecurityGroups" -> AdditionalMasterSecurityGroups.map { x => x: js.Any })
@@ -706,7 +1243,33 @@ package elasticmapreduce {
   }
 
   /**
-   * <p>A job flow step consisting of a JAR file whose main function will be executed. The main function submits a job for Hadoop to execute and waits for the job to finish or fail. </p>
+   * <p>The details of the step failure. The service attempts to detect the root cause for many common failures.</p>
+   */
+  @js.native
+  trait FailureDetails extends js.Object {
+    var Reason: String
+    var Message: String
+    var LogFile: String
+  }
+
+  object FailureDetails {
+    def apply(
+      Reason: js.UndefOr[String] = js.undefined,
+      Message: js.UndefOr[String] = js.undefined,
+      LogFile: js.UndefOr[String] = js.undefined
+    ): FailureDetails = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("Reason" -> Reason.map { x => x: js.Any }),
+        ("Message" -> Message.map { x => x: js.Any }),
+        ("LogFile" -> LogFile.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[FailureDetails]
+    }
+  }
+
+  /**
+   * <p>A job flow step consisting of a JAR file whose main function will be executed. The main function submits a job for Hadoop to execute and waits for the job to finish or fail.</p>
    */
   @js.native
   trait HadoopJarStepConfig extends js.Object {
@@ -735,7 +1298,7 @@ package elasticmapreduce {
   }
 
   /**
-   * <p>A cluster step consisting of a JAR file whose main function will be executed. The main function submits a job for Hadoop to execute and waits for the job to finish or fail. </p>
+   * <p>A cluster step consisting of a JAR file whose main function will be executed. The main function submits a job for Hadoop to execute and waits for the job to finish or fail.</p>
    */
   @js.native
   trait HadoopStepConfig extends js.Object {
@@ -771,8 +1334,10 @@ package elasticmapreduce {
     var Id: InstanceId
     var PrivateIpAddress: String
     var PrivateDnsName: String
+    var EbsVolumes: EbsVolumeList
     var PublicIpAddress: String
     var PublicDnsName: String
+    var InstanceGroupId: String
     var Ec2InstanceId: InstanceId
     var Status: InstanceStatus
   }
@@ -782,8 +1347,10 @@ package elasticmapreduce {
       Id: js.UndefOr[InstanceId] = js.undefined,
       PrivateIpAddress: js.UndefOr[String] = js.undefined,
       PrivateDnsName: js.UndefOr[String] = js.undefined,
+      EbsVolumes: js.UndefOr[EbsVolumeList] = js.undefined,
       PublicIpAddress: js.UndefOr[String] = js.undefined,
       PublicDnsName: js.UndefOr[String] = js.undefined,
+      InstanceGroupId: js.UndefOr[String] = js.undefined,
       Ec2InstanceId: js.UndefOr[InstanceId] = js.undefined,
       Status: js.UndefOr[InstanceStatus] = js.undefined
     ): Instance = {
@@ -791,8 +1358,10 @@ package elasticmapreduce {
         ("Id" -> Id.map { x => x: js.Any }),
         ("PrivateIpAddress" -> PrivateIpAddress.map { x => x: js.Any }),
         ("PrivateDnsName" -> PrivateDnsName.map { x => x: js.Any }),
+        ("EbsVolumes" -> EbsVolumes.map { x => x: js.Any }),
         ("PublicIpAddress" -> PublicIpAddress.map { x => x: js.Any }),
         ("PublicDnsName" -> PublicDnsName.map { x => x: js.Any }),
+        ("InstanceGroupId" -> InstanceGroupId.map { x => x: js.Any }),
         ("Ec2InstanceId" -> Ec2InstanceId.map { x => x: js.Any }),
         ("Status" -> Status.map { x => x: js.Any })
       ).filter(_._2 != js.undefined)
@@ -806,38 +1375,53 @@ package elasticmapreduce {
    */
   @js.native
   trait InstanceGroup extends js.Object {
+    var EbsBlockDevices: EbsBlockDeviceList
     var Id: InstanceGroupId
     var Name: String
+    var EbsOptimized: BooleanObject
+    var AutoScalingPolicy: AutoScalingPolicyDescription
     var InstanceGroupType: InstanceGroupType
+    var Configurations: ConfigurationList
     var BidPrice: String
     var Market: MarketType
     var RequestedInstanceCount: Integer
     var RunningInstanceCount: Integer
     var InstanceType: InstanceType
+    var ShrinkPolicy: ShrinkPolicy
     var Status: InstanceGroupStatus
   }
 
   object InstanceGroup {
     def apply(
+      EbsBlockDevices: js.UndefOr[EbsBlockDeviceList] = js.undefined,
       Id: js.UndefOr[InstanceGroupId] = js.undefined,
       Name: js.UndefOr[String] = js.undefined,
+      EbsOptimized: js.UndefOr[BooleanObject] = js.undefined,
+      AutoScalingPolicy: js.UndefOr[AutoScalingPolicyDescription] = js.undefined,
       InstanceGroupType: js.UndefOr[InstanceGroupType] = js.undefined,
+      Configurations: js.UndefOr[ConfigurationList] = js.undefined,
       BidPrice: js.UndefOr[String] = js.undefined,
       Market: js.UndefOr[MarketType] = js.undefined,
       RequestedInstanceCount: js.UndefOr[Integer] = js.undefined,
       RunningInstanceCount: js.UndefOr[Integer] = js.undefined,
       InstanceType: js.UndefOr[InstanceType] = js.undefined,
+      ShrinkPolicy: js.UndefOr[ShrinkPolicy] = js.undefined,
       Status: js.UndefOr[InstanceGroupStatus] = js.undefined
     ): InstanceGroup = {
       val _fields = IndexedSeq[(String, js.Any)](
+        ("EbsBlockDevices" -> EbsBlockDevices.map { x => x: js.Any }),
         ("Id" -> Id.map { x => x: js.Any }),
         ("Name" -> Name.map { x => x: js.Any }),
+        ("EbsOptimized" -> EbsOptimized.map { x => x: js.Any }),
+        ("AutoScalingPolicy" -> AutoScalingPolicy.map { x => x: js.Any }),
         ("InstanceGroupType" -> InstanceGroupType.map { x => x: js.Any }),
+        ("Configurations" -> Configurations.map { x => x: js.Any }),
         ("BidPrice" -> BidPrice.map { x => x: js.Any }),
         ("Market" -> Market.map { x => x: js.Any }),
         ("RequestedInstanceCount" -> RequestedInstanceCount.map { x => x: js.Any }),
         ("RunningInstanceCount" -> RunningInstanceCount.map { x => x: js.Any }),
         ("InstanceType" -> InstanceType.map { x => x: js.Any }),
+        ("ShrinkPolicy" -> ShrinkPolicy.map { x => x: js.Any }),
         ("Status" -> Status.map { x => x: js.Any })
       ).filter(_._2 != js.undefined)
 
@@ -850,8 +1434,11 @@ package elasticmapreduce {
    */
   @js.native
   trait InstanceGroupConfig extends js.Object {
+    var EbsConfiguration: EbsConfiguration
     var Name: XmlStringMaxLen256
+    var AutoScalingPolicy: AutoScalingPolicy
     var InstanceCount: Integer
+    var Configurations: ConfigurationList
     var BidPrice: XmlStringMaxLen256
     var Market: MarketType
     var InstanceType: InstanceType
@@ -860,16 +1447,22 @@ package elasticmapreduce {
 
   object InstanceGroupConfig {
     def apply(
+      EbsConfiguration: js.UndefOr[EbsConfiguration] = js.undefined,
       Name: js.UndefOr[XmlStringMaxLen256] = js.undefined,
+      AutoScalingPolicy: js.UndefOr[AutoScalingPolicy] = js.undefined,
       InstanceCount: js.UndefOr[Integer] = js.undefined,
+      Configurations: js.UndefOr[ConfigurationList] = js.undefined,
       BidPrice: js.UndefOr[XmlStringMaxLen256] = js.undefined,
       Market: js.UndefOr[MarketType] = js.undefined,
       InstanceType: js.UndefOr[InstanceType] = js.undefined,
       InstanceRole: js.UndefOr[InstanceRoleType] = js.undefined
     ): InstanceGroupConfig = {
       val _fields = IndexedSeq[(String, js.Any)](
+        ("EbsConfiguration" -> EbsConfiguration.map { x => x: js.Any }),
         ("Name" -> Name.map { x => x: js.Any }),
+        ("AutoScalingPolicy" -> AutoScalingPolicy.map { x => x: js.Any }),
         ("InstanceCount" -> InstanceCount.map { x => x: js.Any }),
+        ("Configurations" -> Configurations.map { x => x: js.Any }),
         ("BidPrice" -> BidPrice.map { x => x: js.Any }),
         ("Market" -> Market.map { x => x: js.Any }),
         ("InstanceType" -> InstanceType.map { x => x: js.Any }),
@@ -881,7 +1474,7 @@ package elasticmapreduce {
   }
 
   /**
-   * <p>Detailed information about an instance group. </p>
+   * <p>Detailed information about an instance group.</p>
    */
   @js.native
   trait InstanceGroupDetail extends js.Object {
@@ -947,18 +1540,21 @@ package elasticmapreduce {
     var InstanceGroupId: XmlStringMaxLen256
     var InstanceCount: Integer
     var EC2InstanceIdsToTerminate: EC2InstanceIdsToTerminateList
+    var ShrinkPolicy: ShrinkPolicy
   }
 
   object InstanceGroupModifyConfig {
     def apply(
       InstanceGroupId: js.UndefOr[XmlStringMaxLen256] = js.undefined,
       InstanceCount: js.UndefOr[Integer] = js.undefined,
-      EC2InstanceIdsToTerminate: js.UndefOr[EC2InstanceIdsToTerminateList] = js.undefined
+      EC2InstanceIdsToTerminate: js.UndefOr[EC2InstanceIdsToTerminateList] = js.undefined,
+      ShrinkPolicy: js.UndefOr[ShrinkPolicy] = js.undefined
     ): InstanceGroupModifyConfig = {
       val _fields = IndexedSeq[(String, js.Any)](
         ("InstanceGroupId" -> InstanceGroupId.map { x => x: js.Any }),
         ("InstanceCount" -> InstanceCount.map { x => x: js.Any }),
-        ("EC2InstanceIdsToTerminate" -> EC2InstanceIdsToTerminate.map { x => x: js.Any })
+        ("EC2InstanceIdsToTerminate" -> EC2InstanceIdsToTerminate.map { x => x: js.Any }),
+        ("ShrinkPolicy" -> ShrinkPolicy.map { x => x: js.Any })
       ).filter(_._2 != js.undefined)
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[InstanceGroupModifyConfig]
@@ -1073,6 +1669,32 @@ package elasticmapreduce {
     val TASK = "TASK"
 
     val values = IndexedSeq(MASTER, CORE, TASK)
+  }
+
+  /**
+   * <p>Custom policy for requesting termination protection or termination of specific instances when shrinking an instance group.</p>
+   */
+  @js.native
+  trait InstanceResizePolicy extends js.Object {
+    var InstancesToTerminate: EC2InstanceIdsList
+    var InstancesToProtect: EC2InstanceIdsList
+    var InstanceTerminationTimeout: Integer
+  }
+
+  object InstanceResizePolicy {
+    def apply(
+      InstancesToTerminate: js.UndefOr[EC2InstanceIdsList] = js.undefined,
+      InstancesToProtect: js.UndefOr[EC2InstanceIdsList] = js.undefined,
+      InstanceTerminationTimeout: js.UndefOr[Integer] = js.undefined
+    ): InstanceResizePolicy = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("InstancesToTerminate" -> InstancesToTerminate.map { x => x: js.Any }),
+        ("InstancesToProtect" -> InstancesToProtect.map { x => x: js.Any }),
+        ("InstanceTerminationTimeout" -> InstanceTerminationTimeout.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[InstanceResizePolicy]
+    }
   }
 
 
@@ -1207,7 +1829,7 @@ package elasticmapreduce {
   }
 
   /**
-   * <p> A description of a job flow.</p>
+   * <p>A description of a job flow.</p>
    */
   @js.native
   trait JobFlowDetail extends js.Object {
@@ -1219,7 +1841,9 @@ package elasticmapreduce {
     var ServiceRole: XmlString
     var ExecutionStatusDetail: JobFlowExecutionStatusDetail
     var JobFlowRole: XmlString
+    var ScaleDownBehavior: ScaleDownBehavior
     var Instances: JobFlowInstancesDetail
+    var AutoScalingRole: XmlString
     var Steps: StepDetailList
     var VisibleToAllUsers: Boolean
     var BootstrapActions: BootstrapActionDetailList
@@ -1235,7 +1859,9 @@ package elasticmapreduce {
       ServiceRole: js.UndefOr[XmlString] = js.undefined,
       ExecutionStatusDetail: js.UndefOr[JobFlowExecutionStatusDetail] = js.undefined,
       JobFlowRole: js.UndefOr[XmlString] = js.undefined,
+      ScaleDownBehavior: js.UndefOr[ScaleDownBehavior] = js.undefined,
       Instances: js.UndefOr[JobFlowInstancesDetail] = js.undefined,
+      AutoScalingRole: js.UndefOr[XmlString] = js.undefined,
       Steps: js.UndefOr[StepDetailList] = js.undefined,
       VisibleToAllUsers: js.UndefOr[Boolean] = js.undefined,
       BootstrapActions: js.UndefOr[BootstrapActionDetailList] = js.undefined
@@ -1249,7 +1875,9 @@ package elasticmapreduce {
         ("ServiceRole" -> ServiceRole.map { x => x: js.Any }),
         ("ExecutionStatusDetail" -> ExecutionStatusDetail.map { x => x: js.Any }),
         ("JobFlowRole" -> JobFlowRole.map { x => x: js.Any }),
+        ("ScaleDownBehavior" -> ScaleDownBehavior.map { x => x: js.Any }),
         ("Instances" -> Instances.map { x => x: js.Any }),
+        ("AutoScalingRole" -> AutoScalingRole.map { x => x: js.Any }),
         ("Steps" -> Steps.map { x => x: js.Any }),
         ("VisibleToAllUsers" -> VisibleToAllUsers.map { x => x: js.Any }),
         ("BootstrapActions" -> BootstrapActions.map { x => x: js.Any })
@@ -1260,7 +1888,7 @@ package elasticmapreduce {
   }
 
   /**
-   * <p> The type of instance. </p> <enumValues> <value name="JobFlowExecutionState$COMPLETED"> <p>A small instance</p> </value> <value name="JobFlowExecutionState$FAILED"> <p>A large instance</p> </value> </enumValues>
+   * <p>The type of instance.</p>
    */
   object JobFlowExecutionStateEnum {
     val STARTING = "STARTING"
@@ -1326,6 +1954,7 @@ package elasticmapreduce {
     var EmrManagedSlaveSecurityGroup: XmlStringMaxLen256
     var Ec2KeyName: XmlStringMaxLen256
     var SlaveInstanceType: InstanceType
+    var ServiceAccessSecurityGroup: XmlStringMaxLen256
     var Ec2SubnetId: XmlStringMaxLen256
     var AdditionalMasterSecurityGroups: SecurityGroupsList
     var HadoopVersion: XmlStringMaxLen256
@@ -1344,6 +1973,7 @@ package elasticmapreduce {
       EmrManagedSlaveSecurityGroup: js.UndefOr[XmlStringMaxLen256] = js.undefined,
       Ec2KeyName: js.UndefOr[XmlStringMaxLen256] = js.undefined,
       SlaveInstanceType: js.UndefOr[InstanceType] = js.undefined,
+      ServiceAccessSecurityGroup: js.UndefOr[XmlStringMaxLen256] = js.undefined,
       Ec2SubnetId: js.UndefOr[XmlStringMaxLen256] = js.undefined,
       AdditionalMasterSecurityGroups: js.UndefOr[SecurityGroupsList] = js.undefined,
       HadoopVersion: js.UndefOr[XmlStringMaxLen256] = js.undefined
@@ -1360,6 +1990,7 @@ package elasticmapreduce {
         ("EmrManagedSlaveSecurityGroup" -> EmrManagedSlaveSecurityGroup.map { x => x: js.Any }),
         ("Ec2KeyName" -> Ec2KeyName.map { x => x: js.Any }),
         ("SlaveInstanceType" -> SlaveInstanceType.map { x => x: js.Any }),
+        ("ServiceAccessSecurityGroup" -> ServiceAccessSecurityGroup.map { x => x: js.Any }),
         ("Ec2SubnetId" -> Ec2SubnetId.map { x => x: js.Any }),
         ("AdditionalMasterSecurityGroups" -> AdditionalMasterSecurityGroups.map { x => x: js.Any }),
         ("HadoopVersion" -> HadoopVersion.map { x => x: js.Any })
@@ -1472,7 +2103,7 @@ package elasticmapreduce {
   }
 
   /**
-   * <p>This output contains the boostrap actions detail .</p>
+   * <p>This output contains the bootstrap actions detail.</p>
    */
   @js.native
   trait ListBootstrapActionsOutput extends js.Object {
@@ -1598,22 +2229,25 @@ package elasticmapreduce {
   @js.native
   trait ListInstancesInput extends js.Object {
     var ClusterId: ClusterId
-    var InstanceGroupId: InstanceGroupId
     var InstanceGroupTypes: InstanceGroupTypeList
+    var InstanceStates: InstanceStateList
+    var InstanceGroupId: InstanceGroupId
     var Marker: Marker
   }
 
   object ListInstancesInput {
     def apply(
       ClusterId: js.UndefOr[ClusterId] = js.undefined,
-      InstanceGroupId: js.UndefOr[InstanceGroupId] = js.undefined,
       InstanceGroupTypes: js.UndefOr[InstanceGroupTypeList] = js.undefined,
+      InstanceStates: js.UndefOr[InstanceStateList] = js.undefined,
+      InstanceGroupId: js.UndefOr[InstanceGroupId] = js.undefined,
       Marker: js.UndefOr[Marker] = js.undefined
     ): ListInstancesInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         ("ClusterId" -> ClusterId.map { x => x: js.Any }),
-        ("InstanceGroupId" -> InstanceGroupId.map { x => x: js.Any }),
         ("InstanceGroupTypes" -> InstanceGroupTypes.map { x => x: js.Any }),
+        ("InstanceStates" -> InstanceStates.map { x => x: js.Any }),
+        ("InstanceGroupId" -> InstanceGroupId.map { x => x: js.Any }),
         ("Marker" -> Marker.map { x => x: js.Any })
       ).filter(_._2 != js.undefined)
 
@@ -1641,6 +2275,43 @@ package elasticmapreduce {
       ).filter(_._2 != js.undefined)
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListInstancesOutput]
+    }
+  }
+
+  @js.native
+  trait ListSecurityConfigurationsInput extends js.Object {
+    var Marker: Marker
+  }
+
+  object ListSecurityConfigurationsInput {
+    def apply(
+      Marker: js.UndefOr[Marker] = js.undefined
+    ): ListSecurityConfigurationsInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("Marker" -> Marker.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListSecurityConfigurationsInput]
+    }
+  }
+
+  @js.native
+  trait ListSecurityConfigurationsOutput extends js.Object {
+    var SecurityConfigurations: SecurityConfigurationList
+    var Marker: Marker
+  }
+
+  object ListSecurityConfigurationsOutput {
+    def apply(
+      SecurityConfigurations: js.UndefOr[SecurityConfigurationList] = js.undefined,
+      Marker: js.UndefOr[Marker] = js.undefined
+    ): ListSecurityConfigurationsOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("SecurityConfigurations" -> SecurityConfigurations.map { x => x: js.Any }),
+        ("Marker" -> Marker.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListSecurityConfigurationsOutput]
     }
   }
 
@@ -1674,7 +2345,7 @@ package elasticmapreduce {
   }
 
   /**
-   * <p>This output contains the list of steps.</p>
+   * <p>This output contains the list of steps returned in reverse order. This means that the last step is the first element in the list.</p>
    */
   @js.native
   trait ListStepsOutput extends js.Object {
@@ -1705,18 +2376,44 @@ package elasticmapreduce {
   }
 
   /**
+   * <p>A CloudWatch dimension, which is specified using a <code>Key</code> (known as a <code>Name</code> in CloudWatch), Value pair. By default, Amazon EMR uses one dimension whose <code>Key</code> is <code>JobFlowID</code> and <code>Value</code> is a variable representing the cluster ID, which is <code>${emr:cluster_id}</code>. This enables the rule to bootstrap when the cluster ID becomes available, and also enables a single automatic scaling policy to be reused for multiple clusters and instance groups.</p>
+   */
+  @js.native
+  trait MetricDimension extends js.Object {
+    var Key: String
+    var Value: String
+  }
+
+  object MetricDimension {
+    def apply(
+      Key: js.UndefOr[String] = js.undefined,
+      Value: js.UndefOr[String] = js.undefined
+    ): MetricDimension = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("Key" -> Key.map { x => x: js.Any }),
+        ("Value" -> Value.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[MetricDimension]
+    }
+  }
+
+  /**
    * <p>Change the size of some instance groups.</p>
    */
   @js.native
   trait ModifyInstanceGroupsInput extends js.Object {
+    var ClusterId: ClusterId
     var InstanceGroups: InstanceGroupModifyConfigList
   }
 
   object ModifyInstanceGroupsInput {
     def apply(
+      ClusterId: js.UndefOr[ClusterId] = js.undefined,
       InstanceGroups: js.UndefOr[InstanceGroupModifyConfigList] = js.undefined
     ): ModifyInstanceGroupsInput = {
       val _fields = IndexedSeq[(String, js.Any)](
+        ("ClusterId" -> ClusterId.map { x => x: js.Any }),
         ("InstanceGroups" -> InstanceGroups.map { x => x: js.Any })
       ).filter(_._2 != js.undefined)
 
@@ -1744,8 +2441,91 @@ package elasticmapreduce {
     }
   }
 
+  @js.native
+  trait PutAutoScalingPolicyInput extends js.Object {
+    var ClusterId: ClusterId
+    var InstanceGroupId: InstanceGroupId
+    var AutoScalingPolicy: AutoScalingPolicy
+  }
+
+  object PutAutoScalingPolicyInput {
+    def apply(
+      ClusterId: js.UndefOr[ClusterId] = js.undefined,
+      InstanceGroupId: js.UndefOr[InstanceGroupId] = js.undefined,
+      AutoScalingPolicy: js.UndefOr[AutoScalingPolicy] = js.undefined
+    ): PutAutoScalingPolicyInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("ClusterId" -> ClusterId.map { x => x: js.Any }),
+        ("InstanceGroupId" -> InstanceGroupId.map { x => x: js.Any }),
+        ("AutoScalingPolicy" -> AutoScalingPolicy.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutAutoScalingPolicyInput]
+    }
+  }
+
+  @js.native
+  trait PutAutoScalingPolicyOutput extends js.Object {
+    var ClusterId: ClusterId
+    var InstanceGroupId: InstanceGroupId
+    var AutoScalingPolicy: AutoScalingPolicyDescription
+  }
+
+  object PutAutoScalingPolicyOutput {
+    def apply(
+      ClusterId: js.UndefOr[ClusterId] = js.undefined,
+      InstanceGroupId: js.UndefOr[InstanceGroupId] = js.undefined,
+      AutoScalingPolicy: js.UndefOr[AutoScalingPolicyDescription] = js.undefined
+    ): PutAutoScalingPolicyOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("ClusterId" -> ClusterId.map { x => x: js.Any }),
+        ("InstanceGroupId" -> InstanceGroupId.map { x => x: js.Any }),
+        ("AutoScalingPolicy" -> AutoScalingPolicy.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutAutoScalingPolicyOutput]
+    }
+  }
+
+  @js.native
+  trait RemoveAutoScalingPolicyInput extends js.Object {
+    var ClusterId: ClusterId
+    var InstanceGroupId: InstanceGroupId
+  }
+
+  object RemoveAutoScalingPolicyInput {
+    def apply(
+      ClusterId: js.UndefOr[ClusterId] = js.undefined,
+      InstanceGroupId: js.UndefOr[InstanceGroupId] = js.undefined
+    ): RemoveAutoScalingPolicyInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("ClusterId" -> ClusterId.map { x => x: js.Any }),
+        ("InstanceGroupId" -> InstanceGroupId.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RemoveAutoScalingPolicyInput]
+    }
+  }
+
+  @js.native
+  trait RemoveAutoScalingPolicyOutput extends js.Object {
+
+  }
+
+  object RemoveAutoScalingPolicyOutput {
+    def apply(
+
+    ): RemoveAutoScalingPolicyOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RemoveAutoScalingPolicyOutput]
+    }
+  }
+
   /**
-   * <p>This input identifies a cluster and a list of tags to remove. </p>
+   * <p>This input identifies a cluster and a list of tags to remove.</p>
    */
   @js.native
   trait RemoveTagsInput extends js.Object {
@@ -1768,7 +2548,7 @@ package elasticmapreduce {
   }
 
   /**
-   * <p>This output indicates the result of removing tags from a resource. </p>
+   * <p>This output indicates the result of removing tags from a resource.</p>
    */
   @js.native
   trait RemoveTagsOutput extends js.Object {
@@ -1794,16 +2574,22 @@ package elasticmapreduce {
   trait RunJobFlowInput extends js.Object {
     var LogUri: XmlString
     var Name: XmlStringMaxLen256
+    var Applications: ApplicationList
+    var ReleaseLabel: XmlStringMaxLen256
     var AmiVersion: XmlStringMaxLen256
     var SupportedProducts: SupportedProductsList
     var ServiceRole: XmlString
+    var Configurations: ConfigurationList
     var JobFlowRole: XmlString
+    var ScaleDownBehavior: ScaleDownBehavior
     var NewSupportedProducts: NewSupportedProductsList
     var Instances: JobFlowInstancesConfig
+    var AutoScalingRole: XmlString
     var AdditionalInfo: XmlString
     var Steps: StepConfigList
     var Tags: TagList
     var VisibleToAllUsers: Boolean
+    var SecurityConfiguration: XmlString
     var BootstrapActions: BootstrapActionConfigList
   }
 
@@ -1811,31 +2597,43 @@ package elasticmapreduce {
     def apply(
       LogUri: js.UndefOr[XmlString] = js.undefined,
       Name: js.UndefOr[XmlStringMaxLen256] = js.undefined,
+      Applications: js.UndefOr[ApplicationList] = js.undefined,
+      ReleaseLabel: js.UndefOr[XmlStringMaxLen256] = js.undefined,
       AmiVersion: js.UndefOr[XmlStringMaxLen256] = js.undefined,
       SupportedProducts: js.UndefOr[SupportedProductsList] = js.undefined,
       ServiceRole: js.UndefOr[XmlString] = js.undefined,
+      Configurations: js.UndefOr[ConfigurationList] = js.undefined,
       JobFlowRole: js.UndefOr[XmlString] = js.undefined,
+      ScaleDownBehavior: js.UndefOr[ScaleDownBehavior] = js.undefined,
       NewSupportedProducts: js.UndefOr[NewSupportedProductsList] = js.undefined,
       Instances: js.UndefOr[JobFlowInstancesConfig] = js.undefined,
+      AutoScalingRole: js.UndefOr[XmlString] = js.undefined,
       AdditionalInfo: js.UndefOr[XmlString] = js.undefined,
       Steps: js.UndefOr[StepConfigList] = js.undefined,
       Tags: js.UndefOr[TagList] = js.undefined,
       VisibleToAllUsers: js.UndefOr[Boolean] = js.undefined,
+      SecurityConfiguration: js.UndefOr[XmlString] = js.undefined,
       BootstrapActions: js.UndefOr[BootstrapActionConfigList] = js.undefined
     ): RunJobFlowInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         ("LogUri" -> LogUri.map { x => x: js.Any }),
         ("Name" -> Name.map { x => x: js.Any }),
+        ("Applications" -> Applications.map { x => x: js.Any }),
+        ("ReleaseLabel" -> ReleaseLabel.map { x => x: js.Any }),
         ("AmiVersion" -> AmiVersion.map { x => x: js.Any }),
         ("SupportedProducts" -> SupportedProducts.map { x => x: js.Any }),
         ("ServiceRole" -> ServiceRole.map { x => x: js.Any }),
+        ("Configurations" -> Configurations.map { x => x: js.Any }),
         ("JobFlowRole" -> JobFlowRole.map { x => x: js.Any }),
+        ("ScaleDownBehavior" -> ScaleDownBehavior.map { x => x: js.Any }),
         ("NewSupportedProducts" -> NewSupportedProducts.map { x => x: js.Any }),
         ("Instances" -> Instances.map { x => x: js.Any }),
+        ("AutoScalingRole" -> AutoScalingRole.map { x => x: js.Any }),
         ("AdditionalInfo" -> AdditionalInfo.map { x => x: js.Any }),
         ("Steps" -> Steps.map { x => x: js.Any }),
         ("Tags" -> Tags.map { x => x: js.Any }),
         ("VisibleToAllUsers" -> VisibleToAllUsers.map { x => x: js.Any }),
+        ("SecurityConfiguration" -> SecurityConfiguration.map { x => x: js.Any }),
         ("BootstrapActions" -> BootstrapActions.map { x => x: js.Any })
       ).filter(_._2 != js.undefined)
 
@@ -1863,6 +2661,109 @@ package elasticmapreduce {
     }
   }
 
+
+  object ScaleDownBehaviorEnum {
+    val `TERMINATE_AT_INSTANCE_HOUR` = "TERMINATE_AT_INSTANCE_HOUR"
+    val `TERMINATE_AT_TASK_COMPLETION` = "TERMINATE_AT_TASK_COMPLETION"
+
+    val values = IndexedSeq(`TERMINATE_AT_INSTANCE_HOUR`, `TERMINATE_AT_TASK_COMPLETION`)
+  }
+
+  /**
+   * <p>The type of adjustment the automatic scaling activity makes when triggered, and the periodicity of the adjustment.</p>
+   */
+  @js.native
+  trait ScalingAction extends js.Object {
+    var Market: MarketType
+    var SimpleScalingPolicyConfiguration: SimpleScalingPolicyConfiguration
+  }
+
+  object ScalingAction {
+    def apply(
+      Market: js.UndefOr[MarketType] = js.undefined,
+      SimpleScalingPolicyConfiguration: js.UndefOr[SimpleScalingPolicyConfiguration] = js.undefined
+    ): ScalingAction = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("Market" -> Market.map { x => x: js.Any }),
+        ("SimpleScalingPolicyConfiguration" -> SimpleScalingPolicyConfiguration.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ScalingAction]
+    }
+  }
+
+  /**
+   * <p>The upper and lower EC2 instance limits for an automatic scaling policy. Automatic scaling activities triggered by automatic scaling rules will not cause an instance group to grow above or below these limits.</p>
+   */
+  @js.native
+  trait ScalingConstraints extends js.Object {
+    var MinCapacity: Integer
+    var MaxCapacity: Integer
+  }
+
+  object ScalingConstraints {
+    def apply(
+      MinCapacity: js.UndefOr[Integer] = js.undefined,
+      MaxCapacity: js.UndefOr[Integer] = js.undefined
+    ): ScalingConstraints = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("MinCapacity" -> MinCapacity.map { x => x: js.Any }),
+        ("MaxCapacity" -> MaxCapacity.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ScalingConstraints]
+    }
+  }
+
+  /**
+   * <p>A scale-in or scale-out rule that defines scaling activity, including the CloudWatch metric alarm that triggers activity, how EC2 instances are added or removed, and the periodicity of adjustments. The automatic scaling policy for an instance group can comprise one or more automatic scaling rules.</p>
+   */
+  @js.native
+  trait ScalingRule extends js.Object {
+    var Name: String
+    var Description: String
+    var Action: ScalingAction
+    var Trigger: ScalingTrigger
+  }
+
+  object ScalingRule {
+    def apply(
+      Name: js.UndefOr[String] = js.undefined,
+      Description: js.UndefOr[String] = js.undefined,
+      Action: js.UndefOr[ScalingAction] = js.undefined,
+      Trigger: js.UndefOr[ScalingTrigger] = js.undefined
+    ): ScalingRule = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("Name" -> Name.map { x => x: js.Any }),
+        ("Description" -> Description.map { x => x: js.Any }),
+        ("Action" -> Action.map { x => x: js.Any }),
+        ("Trigger" -> Trigger.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ScalingRule]
+    }
+  }
+
+  /**
+   * <p>The conditions that trigger an automatic scaling activity.</p>
+   */
+  @js.native
+  trait ScalingTrigger extends js.Object {
+    var CloudWatchAlarmDefinition: CloudWatchAlarmDefinition
+  }
+
+  object ScalingTrigger {
+    def apply(
+      CloudWatchAlarmDefinition: js.UndefOr[CloudWatchAlarmDefinition] = js.undefined
+    ): ScalingTrigger = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("CloudWatchAlarmDefinition" -> CloudWatchAlarmDefinition.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ScalingTrigger]
+    }
+  }
+
   /**
    * <p>Configuration of the script to run during a bootstrap action.</p>
    */
@@ -1883,6 +2784,29 @@ package elasticmapreduce {
       ).filter(_._2 != js.undefined)
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ScriptBootstrapActionConfig]
+    }
+  }
+
+  /**
+   * <p>The creation date and time, and name, of a security configuration.</p>
+   */
+  @js.native
+  trait SecurityConfigurationSummary extends js.Object {
+    var Name: XmlString
+    var CreationDateTime: Date
+  }
+
+  object SecurityConfigurationSummary {
+    def apply(
+      Name: js.UndefOr[XmlString] = js.undefined,
+      CreationDateTime: js.UndefOr[Date] = js.undefined
+    ): SecurityConfigurationSummary = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("Name" -> Name.map { x => x: js.Any }),
+        ("CreationDateTime" -> CreationDateTime.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SecurityConfigurationSummary]
     }
   }
 
@@ -1930,6 +2854,66 @@ package elasticmapreduce {
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SetVisibleToAllUsersInput]
     }
+  }
+
+  /**
+   * <p>Policy for customizing shrink operations. Allows configuration of decommissioning timeout and targeted instance shrinking.</p>
+   */
+  @js.native
+  trait ShrinkPolicy extends js.Object {
+    var DecommissionTimeout: Integer
+    var InstanceResizePolicy: InstanceResizePolicy
+  }
+
+  object ShrinkPolicy {
+    def apply(
+      DecommissionTimeout: js.UndefOr[Integer] = js.undefined,
+      InstanceResizePolicy: js.UndefOr[InstanceResizePolicy] = js.undefined
+    ): ShrinkPolicy = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("DecommissionTimeout" -> DecommissionTimeout.map { x => x: js.Any }),
+        ("InstanceResizePolicy" -> InstanceResizePolicy.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ShrinkPolicy]
+    }
+  }
+
+  /**
+   * <p>An automatic scaling configuration, which describes how the policy adds or removes instances, the cooldown period, and the number of EC2 instances that will be added each time the CloudWatch metric alarm condition is satisfied.</p>
+   */
+  @js.native
+  trait SimpleScalingPolicyConfiguration extends js.Object {
+    var AdjustmentType: AdjustmentType
+    var ScalingAdjustment: Integer
+    var CoolDown: Integer
+  }
+
+  object SimpleScalingPolicyConfiguration {
+    def apply(
+      AdjustmentType: js.UndefOr[AdjustmentType] = js.undefined,
+      ScalingAdjustment: js.UndefOr[Integer] = js.undefined,
+      CoolDown: js.UndefOr[Integer] = js.undefined
+    ): SimpleScalingPolicyConfiguration = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("AdjustmentType" -> AdjustmentType.map { x => x: js.Any }),
+        ("ScalingAdjustment" -> ScalingAdjustment.map { x => x: js.Any }),
+        ("CoolDown" -> CoolDown.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SimpleScalingPolicyConfiguration]
+    }
+  }
+
+
+  object StatisticEnum {
+    val `SAMPLE_COUNT` = "SAMPLE_COUNT"
+    val AVERAGE = "AVERAGE"
+    val SUM = "SUM"
+    val MINIMUM = "MINIMUM"
+    val MAXIMUM = "MAXIMUM"
+
+    val values = IndexedSeq(`SAMPLE_COUNT`, AVERAGE, SUM, MINIMUM, MAXIMUM)
   }
 
   /**
@@ -2061,17 +3045,18 @@ package elasticmapreduce {
 
   object StepStateEnum {
     val PENDING = "PENDING"
+    val `CANCEL_PENDING` = "CANCEL_PENDING"
     val RUNNING = "RUNNING"
     val COMPLETED = "COMPLETED"
     val CANCELLED = "CANCELLED"
     val FAILED = "FAILED"
     val INTERRUPTED = "INTERRUPTED"
 
-    val values = IndexedSeq(PENDING, RUNNING, COMPLETED, CANCELLED, FAILED, INTERRUPTED)
+    val values = IndexedSeq(PENDING, `CANCEL_PENDING`, RUNNING, COMPLETED, CANCELLED, FAILED, INTERRUPTED)
   }
 
   /**
-   * <p>The details of the step state change reason. </p>
+   * <p>The details of the step state change reason.</p>
    */
   @js.native
   trait StepStateChangeReason extends js.Object {
@@ -2101,12 +3086,13 @@ package elasticmapreduce {
   }
 
   /**
-   * <p>The execution status details of the cluster step. </p>
+   * <p>The execution status details of the cluster step.</p>
    */
   @js.native
   trait StepStatus extends js.Object {
     var State: StepState
     var StateChangeReason: StepStateChangeReason
+    var FailureDetails: FailureDetails
     var Timeline: StepTimeline
   }
 
@@ -2114,11 +3100,13 @@ package elasticmapreduce {
     def apply(
       State: js.UndefOr[StepState] = js.undefined,
       StateChangeReason: js.UndefOr[StepStateChangeReason] = js.undefined,
+      FailureDetails: js.UndefOr[FailureDetails] = js.undefined,
       Timeline: js.UndefOr[StepTimeline] = js.undefined
     ): StepStatus = {
       val _fields = IndexedSeq[(String, js.Any)](
         ("State" -> State.map { x => x: js.Any }),
         ("StateChangeReason" -> StateChangeReason.map { x => x: js.Any }),
+        ("FailureDetails" -> FailureDetails.map { x => x: js.Any }),
         ("Timeline" -> Timeline.map { x => x: js.Any })
       ).filter(_._2 != js.undefined)
 
@@ -2159,7 +3147,7 @@ package elasticmapreduce {
   }
 
   /**
-   * <p>The timeline of the cluster step lifecycle. </p>
+   * <p>The timeline of the cluster step lifecycle.</p>
    */
   @js.native
   trait StepTimeline extends js.Object {
@@ -2185,7 +3173,7 @@ package elasticmapreduce {
   }
 
   /**
-   * <p>The list of supported product configurations which allow user-supplied arguments. EMR accepts these arguments and forwards them to the corresponding installation script as bootstrap action arguments. </p>
+   * <p>The list of supported product configurations which allow user-supplied arguments. EMR accepts these arguments and forwards them to the corresponding installation script as bootstrap action arguments.</p>
    */
   @js.native
   trait SupportedProductConfig extends js.Object {
@@ -2208,7 +3196,7 @@ package elasticmapreduce {
   }
 
   /**
-   * <p>A key/value pair containing user-defined metadata that you can associate with an Amazon EMR resource. Tags make it easier to associate clusters in various ways, such as grouping clu\ sters to track your Amazon EMR resource allocation costs. For more information, see <a href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-plan-tags.html">Tagging Amazon EMR Resources</a>. </p>
+   * <p>A key/value pair containing user-defined metadata that you can associate with an Amazon EMR resource. Tags make it easier to associate clusters in various ways, such as grouping clusters to track your Amazon EMR resource allocation costs. For more information, see <a href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-plan-tags.html">Tagging Amazon EMR Resources</a>. </p>
    */
   @js.native
   trait Tag extends js.Object {
@@ -2247,6 +3235,65 @@ package elasticmapreduce {
       ).filter(_._2 != js.undefined)
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TerminateJobFlowsInput]
+    }
+  }
+
+
+  object UnitEnum {
+    val NONE = "NONE"
+    val SECONDS = "SECONDS"
+    val `MICRO_SECONDS` = "MICRO_SECONDS"
+    val `MILLI_SECONDS` = "MILLI_SECONDS"
+    val BYTES = "BYTES"
+    val `KILO_BYTES` = "KILO_BYTES"
+    val `MEGA_BYTES` = "MEGA_BYTES"
+    val `GIGA_BYTES` = "GIGA_BYTES"
+    val `TERA_BYTES` = "TERA_BYTES"
+    val BITS = "BITS"
+    val `KILO_BITS` = "KILO_BITS"
+    val `MEGA_BITS` = "MEGA_BITS"
+    val `GIGA_BITS` = "GIGA_BITS"
+    val `TERA_BITS` = "TERA_BITS"
+    val PERCENT = "PERCENT"
+    val COUNT = "COUNT"
+    val `BYTES_PER_SECOND` = "BYTES_PER_SECOND"
+    val `KILO_BYTES_PER_SECOND` = "KILO_BYTES_PER_SECOND"
+    val `MEGA_BYTES_PER_SECOND` = "MEGA_BYTES_PER_SECOND"
+    val `GIGA_BYTES_PER_SECOND` = "GIGA_BYTES_PER_SECOND"
+    val `TERA_BYTES_PER_SECOND` = "TERA_BYTES_PER_SECOND"
+    val `BITS_PER_SECOND` = "BITS_PER_SECOND"
+    val `KILO_BITS_PER_SECOND` = "KILO_BITS_PER_SECOND"
+    val `MEGA_BITS_PER_SECOND` = "MEGA_BITS_PER_SECOND"
+    val `GIGA_BITS_PER_SECOND` = "GIGA_BITS_PER_SECOND"
+    val `TERA_BITS_PER_SECOND` = "TERA_BITS_PER_SECOND"
+    val `COUNT_PER_SECOND` = "COUNT_PER_SECOND"
+
+    val values = IndexedSeq(NONE, SECONDS, `MICRO_SECONDS`, `MILLI_SECONDS`, BYTES, `KILO_BYTES`, `MEGA_BYTES`, `GIGA_BYTES`, `TERA_BYTES`, BITS, `KILO_BITS`, `MEGA_BITS`, `GIGA_BITS`, `TERA_BITS`, PERCENT, COUNT, `BYTES_PER_SECOND`, `KILO_BYTES_PER_SECOND`, `MEGA_BYTES_PER_SECOND`, `GIGA_BYTES_PER_SECOND`, `TERA_BYTES_PER_SECOND`, `BITS_PER_SECOND`, `KILO_BITS_PER_SECOND`, `MEGA_BITS_PER_SECOND`, `GIGA_BITS_PER_SECOND`, `TERA_BITS_PER_SECOND`, `COUNT_PER_SECOND`)
+  }
+
+  /**
+   * <p>EBS volume specifications such as volume type, IOPS, and size (GiB) that will be requested for the EBS volume attached to an EC2 instance in the cluster.</p>
+   */
+  @js.native
+  trait VolumeSpecification extends js.Object {
+    var VolumeType: String
+    var Iops: Integer
+    var SizeInGB: Integer
+  }
+
+  object VolumeSpecification {
+    def apply(
+      VolumeType: js.UndefOr[String] = js.undefined,
+      Iops: js.UndefOr[Integer] = js.undefined,
+      SizeInGB: js.UndefOr[Integer] = js.undefined
+    ): VolumeSpecification = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("VolumeType" -> VolumeType.map { x => x: js.Any }),
+        ("Iops" -> Iops.map { x => x: js.Any }),
+        ("SizeInGB" -> SizeInGB.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[VolumeSpecification]
     }
   }
 }

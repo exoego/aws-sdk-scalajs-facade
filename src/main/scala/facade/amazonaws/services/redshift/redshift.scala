@@ -7,9 +7,11 @@ package object redshift {
   type AccountsWithRestoreAccessList = js.Array[AccountWithRestoreAccess]
   type AvailabilityZoneList = js.Array[AvailabilityZone]
   type BooleanOptional = Boolean
+  type ClusterIamRoleList = js.Array[ClusterIamRole]
   type ClusterList = js.Array[Cluster]
   type ClusterNodesList = js.Array[ClusterNode]
   type ClusterParameterGroupStatusList = js.Array[ClusterParameterGroupStatus]
+  type ClusterParameterStatusList = js.Array[ClusterParameterStatus]
   type ClusterSecurityGroupMembershipList = js.Array[ClusterSecurityGroupMembership]
   type ClusterSecurityGroupNameList = js.Array[String]
   type ClusterSecurityGroups = js.Array[ClusterSecurityGroup]
@@ -25,23 +27,29 @@ package object redshift {
   type HsmClientCertificateList = js.Array[HsmClientCertificate]
   type HsmConfigurationList = js.Array[HsmConfiguration]
   type IPRangeList = js.Array[IPRange]
+  type IamRoleArnList = js.Array[String]
   type ImportTablesCompleted = js.Array[String]
   type ImportTablesInProgress = js.Array[String]
   type ImportTablesNotStarted = js.Array[String]
   type IntegerOptional = Integer
   type LongOptional = Long
   type OrderableClusterOptionsList = js.Array[OrderableClusterOption]
+  type ParameterApplyType = String
   type ParameterGroupList = js.Array[ClusterParameterGroup]
   type ParametersList = js.Array[Parameter]
   type RecurringChargeList = js.Array[RecurringCharge]
   type ReservedNodeList = js.Array[ReservedNode]
   type ReservedNodeOfferingList = js.Array[ReservedNodeOffering]
+  type RestorableNodeTypeList = js.Array[String]
+  type SnapshotCopyGrantList = js.Array[SnapshotCopyGrant]
   type SnapshotList = js.Array[Snapshot]
   type SourceIdsList = js.Array[String]
   type SourceType = String
   type SubnetIdentifierList = js.Array[String]
   type SubnetList = js.Array[Subnet]
   type TStamp = js.Date
+  type TableRestoreStatusList = js.Array[TableRestoreStatus]
+  type TableRestoreStatusType = String
   type TagKeyList = js.Array[String]
   type TagList = js.Array[Tag]
   type TagValueList = js.Array[String]
@@ -75,6 +83,8 @@ package redshift {
     def createHsmClientCertificate(params: CreateHsmClientCertificateMessage): Request[CreateHsmClientCertificateResult] = js.native
     def createHsmConfiguration(params: CreateHsmConfigurationMessage, callback: Callback[CreateHsmConfigurationResult]): Unit = js.native
     def createHsmConfiguration(params: CreateHsmConfigurationMessage): Request[CreateHsmConfigurationResult] = js.native
+    def createSnapshotCopyGrant(params: CreateSnapshotCopyGrantMessage, callback: Callback[CreateSnapshotCopyGrantResult]): Unit = js.native
+    def createSnapshotCopyGrant(params: CreateSnapshotCopyGrantMessage): Request[CreateSnapshotCopyGrantResult] = js.native
     def createTags(params: CreateTagsMessage, callback: Callback[js.Object]): Unit = js.native
     def createTags(params: CreateTagsMessage): Request[js.Object] = js.native
     def deleteCluster(params: DeleteClusterMessage, callback: Callback[DeleteClusterResult]): Unit = js.native
@@ -93,6 +103,8 @@ package redshift {
     def deleteHsmClientCertificate(params: DeleteHsmClientCertificateMessage): Request[js.Object] = js.native
     def deleteHsmConfiguration(params: DeleteHsmConfigurationMessage, callback: Callback[js.Object]): Unit = js.native
     def deleteHsmConfiguration(params: DeleteHsmConfigurationMessage): Request[js.Object] = js.native
+    def deleteSnapshotCopyGrant(params: DeleteSnapshotCopyGrantMessage, callback: Callback[js.Object]): Unit = js.native
+    def deleteSnapshotCopyGrant(params: DeleteSnapshotCopyGrantMessage): Request[js.Object] = js.native
     def deleteTags(params: DeleteTagsMessage, callback: Callback[js.Object]): Unit = js.native
     def deleteTags(params: DeleteTagsMessage): Request[js.Object] = js.native
     def describeClusterParameterGroups(params: DescribeClusterParameterGroupsMessage, callback: Callback[ClusterParameterGroupsMessage]): Unit = js.native
@@ -131,6 +143,10 @@ package redshift {
     def describeReservedNodes(params: DescribeReservedNodesMessage): Request[ReservedNodesMessage] = js.native
     def describeResize(params: DescribeResizeMessage, callback: Callback[ResizeProgressMessage]): Unit = js.native
     def describeResize(params: DescribeResizeMessage): Request[ResizeProgressMessage] = js.native
+    def describeSnapshotCopyGrants(params: DescribeSnapshotCopyGrantsMessage, callback: Callback[SnapshotCopyGrantMessage]): Unit = js.native
+    def describeSnapshotCopyGrants(params: DescribeSnapshotCopyGrantsMessage): Request[SnapshotCopyGrantMessage] = js.native
+    def describeTableRestoreStatus(params: DescribeTableRestoreStatusMessage, callback: Callback[TableRestoreStatusMessage]): Unit = js.native
+    def describeTableRestoreStatus(params: DescribeTableRestoreStatusMessage): Request[TableRestoreStatusMessage] = js.native
     def describeTags(params: DescribeTagsMessage, callback: Callback[TaggedResourceListMessage]): Unit = js.native
     def describeTags(params: DescribeTagsMessage): Request[TaggedResourceListMessage] = js.native
     def disableLogging(params: DisableLoggingMessage, callback: Callback[LoggingStatus]): Unit = js.native
@@ -143,6 +159,8 @@ package redshift {
     def enableSnapshotCopy(params: EnableSnapshotCopyMessage): Request[EnableSnapshotCopyResult] = js.native
     def modifyCluster(params: ModifyClusterMessage, callback: Callback[ModifyClusterResult]): Unit = js.native
     def modifyCluster(params: ModifyClusterMessage): Request[ModifyClusterResult] = js.native
+    def modifyClusterIamRoles(params: ModifyClusterIamRolesMessage, callback: Callback[ModifyClusterIamRolesResult]): Unit = js.native
+    def modifyClusterIamRoles(params: ModifyClusterIamRolesMessage): Request[ModifyClusterIamRolesResult] = js.native
     def modifyClusterParameterGroup(params: ModifyClusterParameterGroupMessage, callback: Callback[ClusterParameterGroupNameMessage]): Unit = js.native
     def modifyClusterParameterGroup(params: ModifyClusterParameterGroupMessage): Request[ClusterParameterGroupNameMessage] = js.native
     def modifyClusterSubnetGroup(params: ModifyClusterSubnetGroupMessage, callback: Callback[ModifyClusterSubnetGroupResult]): Unit = js.native
@@ -159,6 +177,8 @@ package redshift {
     def resetClusterParameterGroup(params: ResetClusterParameterGroupMessage): Request[ClusterParameterGroupNameMessage] = js.native
     def restoreFromClusterSnapshot(params: RestoreFromClusterSnapshotMessage, callback: Callback[RestoreFromClusterSnapshotResult]): Unit = js.native
     def restoreFromClusterSnapshot(params: RestoreFromClusterSnapshotMessage): Request[RestoreFromClusterSnapshotResult] = js.native
+    def restoreTableFromClusterSnapshot(params: RestoreTableFromClusterSnapshotMessage, callback: Callback[RestoreTableFromClusterSnapshotResult]): Unit = js.native
+    def restoreTableFromClusterSnapshot(params: RestoreTableFromClusterSnapshotMessage): Request[RestoreTableFromClusterSnapshotResult] = js.native
     def revokeClusterSecurityGroupIngress(params: RevokeClusterSecurityGroupIngressMessage, callback: Callback[RevokeClusterSecurityGroupIngressResult]): Unit = js.native
     def revokeClusterSecurityGroupIngress(params: RevokeClusterSecurityGroupIngressMessage): Request[RevokeClusterSecurityGroupIngressResult] = js.native
     def revokeSnapshotAccess(params: RevokeSnapshotAccessMessage, callback: Callback[RevokeSnapshotAccessResult]): Unit = js.native
@@ -168,7 +188,7 @@ package redshift {
   }
 
   /**
-   * <p> The owner of the specified snapshot has not authorized your account to access the snapshot. </p>
+   * <p>The owner of the specified snapshot has not authorized your account to access the snapshot.</p>
    */
   @js.native
   trait AccessToSnapshotDeniedFaultException extends js.Object {
@@ -176,7 +196,7 @@ package redshift {
   }
 
   /**
-   * <p> Describes an AWS customer account authorized to restore a snapshot. </p>
+   * <p>Describes an AWS customer account authorized to restore a snapshot.</p>
    */
   @js.native
   trait AccountWithRestoreAccess extends js.Object {
@@ -196,7 +216,7 @@ package redshift {
   }
 
   /**
-   * <p> The specified CIDR block or EC2 security group is already authorized for the specified cluster security group. </p>
+   * <p>The specified CIDR block or EC2 security group is already authorized for the specified cluster security group.</p>
    */
   @js.native
   trait AuthorizationAlreadyExistsFaultException extends js.Object {
@@ -204,7 +224,7 @@ package redshift {
   }
 
   /**
-   * <p> The specified CIDR IP range or EC2 security group is not authorized for the specified cluster security group. </p>
+   * <p>The specified CIDR IP range or EC2 security group is not authorized for the specified cluster security group.</p>
    */
   @js.native
   trait AuthorizationNotFoundFaultException extends js.Object {
@@ -212,7 +232,7 @@ package redshift {
   }
 
   /**
-   * <p> The authorization quota for the cluster security group has been reached. </p>
+   * <p>The authorization quota for the cluster security group has been reached.</p>
    */
   @js.native
   trait AuthorizationQuotaExceededFaultException extends js.Object {
@@ -220,7 +240,7 @@ package redshift {
   }
 
   /**
-   * <p> ??? </p>
+   * <p/>
    */
   @js.native
   trait AuthorizeClusterSecurityGroupIngressMessage extends js.Object {
@@ -266,7 +286,7 @@ package redshift {
   }
 
   /**
-   * <p> </p>
+   * <p/>
    */
   @js.native
   trait AuthorizeSnapshotAccessMessage extends js.Object {
@@ -309,7 +329,7 @@ package redshift {
   }
 
   /**
-   * <p> Describes an availability zone. </p>
+   * <p>Describes an availability zone.</p>
    */
   @js.native
   trait AvailabilityZone extends js.Object {
@@ -329,7 +349,7 @@ package redshift {
   }
 
   /**
-   * <p> Could not find the specified S3 bucket. </p>
+   * <p>Could not find the specified S3 bucket.</p>
    */
   @js.native
   trait BucketNotFoundFaultException extends js.Object {
@@ -353,6 +373,7 @@ package redshift {
     var ClusterVersion: String
     var KmsKeyId: String
     var NodeType: String
+    var IamRoles: ClusterIamRoleList
     var PendingModifiedValues: PendingModifiedValues
     var ClusterNodes: ClusterNodesList
     var AutomatedSnapshotRetentionPeriod: Integer
@@ -361,6 +382,7 @@ package redshift {
     var ClusterSecurityGroups: ClusterSecurityGroupMembershipList
     var VpcSecurityGroups: VpcSecurityGroupMembershipList
     var Encrypted: Boolean
+    var EnhancedVpcRouting: Boolean
     var NumberOfNodes: Integer
     var ClusterCreateTime: TStamp
     var HsmStatus: HsmStatus
@@ -388,6 +410,7 @@ package redshift {
       ClusterVersion: js.UndefOr[String] = js.undefined,
       KmsKeyId: js.UndefOr[String] = js.undefined,
       NodeType: js.UndefOr[String] = js.undefined,
+      IamRoles: js.UndefOr[ClusterIamRoleList] = js.undefined,
       PendingModifiedValues: js.UndefOr[PendingModifiedValues] = js.undefined,
       ClusterNodes: js.UndefOr[ClusterNodesList] = js.undefined,
       AutomatedSnapshotRetentionPeriod: js.UndefOr[Integer] = js.undefined,
@@ -396,6 +419,7 @@ package redshift {
       ClusterSecurityGroups: js.UndefOr[ClusterSecurityGroupMembershipList] = js.undefined,
       VpcSecurityGroups: js.UndefOr[VpcSecurityGroupMembershipList] = js.undefined,
       Encrypted: js.UndefOr[Boolean] = js.undefined,
+      EnhancedVpcRouting: js.UndefOr[Boolean] = js.undefined,
       NumberOfNodes: js.UndefOr[Integer] = js.undefined,
       ClusterCreateTime: js.UndefOr[TStamp] = js.undefined,
       HsmStatus: js.UndefOr[HsmStatus] = js.undefined,
@@ -421,6 +445,7 @@ package redshift {
         ("ClusterVersion" -> ClusterVersion.map { x => x: js.Any }),
         ("KmsKeyId" -> KmsKeyId.map { x => x: js.Any }),
         ("NodeType" -> NodeType.map { x => x: js.Any }),
+        ("IamRoles" -> IamRoles.map { x => x: js.Any }),
         ("PendingModifiedValues" -> PendingModifiedValues.map { x => x: js.Any }),
         ("ClusterNodes" -> ClusterNodes.map { x => x: js.Any }),
         ("AutomatedSnapshotRetentionPeriod" -> AutomatedSnapshotRetentionPeriod.map { x => x: js.Any }),
@@ -429,6 +454,7 @@ package redshift {
         ("ClusterSecurityGroups" -> ClusterSecurityGroups.map { x => x: js.Any }),
         ("VpcSecurityGroups" -> VpcSecurityGroups.map { x => x: js.Any }),
         ("Encrypted" -> Encrypted.map { x => x: js.Any }),
+        ("EnhancedVpcRouting" -> EnhancedVpcRouting.map { x => x: js.Any }),
         ("NumberOfNodes" -> NumberOfNodes.map { x => x: js.Any }),
         ("ClusterCreateTime" -> ClusterCreateTime.map { x => x: js.Any }),
         ("HsmStatus" -> HsmStatus.map { x => x: js.Any }),
@@ -447,11 +473,34 @@ package redshift {
   }
 
   /**
-   * <p> The account already has a cluster with the given identifier. </p>
+   * <p>The account already has a cluster with the given identifier.</p>
    */
   @js.native
   trait ClusterAlreadyExistsFaultException extends js.Object {
 
+  }
+
+  /**
+   * <p>An AWS Identity and Access Management (IAM) role that can be used by the associated Amazon Redshift cluster to access other AWS services.</p>
+   */
+  @js.native
+  trait ClusterIamRole extends js.Object {
+    var IamRoleArn: String
+    var ApplyStatus: String
+  }
+
+  object ClusterIamRole {
+    def apply(
+      IamRoleArn: js.UndefOr[String] = js.undefined,
+      ApplyStatus: js.UndefOr[String] = js.undefined
+    ): ClusterIamRole = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("IamRoleArn" -> IamRoleArn.map { x => x: js.Any }),
+        ("ApplyStatus" -> ApplyStatus.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ClusterIamRole]
+    }
   }
 
   /**
@@ -481,7 +530,7 @@ package redshift {
   }
 
   /**
-   * <p> The <i>ClusterIdentifier</i> parameter does not refer to an existing cluster. </p>
+   * <p>The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster. </p>
    */
   @js.native
   trait ClusterNotFoundFaultException extends js.Object {
@@ -518,7 +567,7 @@ package redshift {
   }
 
   /**
-   * <p> A cluster parameter group with the same name already exists. </p>
+   * <p>A cluster parameter group with the same name already exists.</p>
    */
   @js.native
   trait ClusterParameterGroupAlreadyExistsFaultException extends js.Object {
@@ -526,7 +575,7 @@ package redshift {
   }
 
   /**
-   * <p> Contains the output from the <a>DescribeClusterParameters</a> action. </p>
+   * <p>Contains the output from the <a>DescribeClusterParameters</a> action. </p>
    */
   @js.native
   trait ClusterParameterGroupDetails extends js.Object {
@@ -549,7 +598,7 @@ package redshift {
   }
 
   /**
-   * <p> Contains the output from the <a>ModifyClusterParameterGroup</a> and <a>ResetClusterParameterGroup</a> actions and indicate the parameter group involved and the status of the operation on the parameter group. </p>
+   * <p/>
    */
   @js.native
   trait ClusterParameterGroupNameMessage extends js.Object {
@@ -572,7 +621,7 @@ package redshift {
   }
 
   /**
-   * <p> The parameter group name does not refer to an existing parameter group. </p>
+   * <p>The parameter group name does not refer to an existing parameter group.</p>
    */
   @js.native
   trait ClusterParameterGroupNotFoundFaultException extends js.Object {
@@ -580,7 +629,7 @@ package redshift {
   }
 
   /**
-   * <p> The request would result in the user exceeding the allowed number of cluster parameter groups. For information about increasing your quota, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Limits in Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>. </p>
+   * <p>The request would result in the user exceeding the allowed number of cluster parameter groups. For information about increasing your quota, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Limits in Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>. </p>
    */
   @js.native
   trait ClusterParameterGroupQuotaExceededFaultException extends js.Object {
@@ -588,22 +637,25 @@ package redshift {
   }
 
   /**
-   * <p> Describes the status of a parameter group. </p>
+   * <p>Describes the status of a parameter group.</p>
    */
   @js.native
   trait ClusterParameterGroupStatus extends js.Object {
     var ParameterGroupName: String
     var ParameterApplyStatus: String
+    var ClusterParameterStatusList: ClusterParameterStatusList
   }
 
   object ClusterParameterGroupStatus {
     def apply(
       ParameterGroupName: js.UndefOr[String] = js.undefined,
-      ParameterApplyStatus: js.UndefOr[String] = js.undefined
+      ParameterApplyStatus: js.UndefOr[String] = js.undefined,
+      ClusterParameterStatusList: js.UndefOr[ClusterParameterStatusList] = js.undefined
     ): ClusterParameterGroupStatus = {
       val _fields = IndexedSeq[(String, js.Any)](
         ("ParameterGroupName" -> ParameterGroupName.map { x => x: js.Any }),
-        ("ParameterApplyStatus" -> ParameterApplyStatus.map { x => x: js.Any })
+        ("ParameterApplyStatus" -> ParameterApplyStatus.map { x => x: js.Any }),
+        ("ClusterParameterStatusList" -> ClusterParameterStatusList.map { x => x: js.Any })
       ).filter(_._2 != js.undefined)
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ClusterParameterGroupStatus]
@@ -611,7 +663,7 @@ package redshift {
   }
 
   /**
-   * <p> Contains the output from the <a>DescribeClusterParameterGroups</a> action. </p>
+   * <p>Contains the output from the <a>DescribeClusterParameterGroups</a> action. </p>
    */
   @js.native
   trait ClusterParameterGroupsMessage extends js.Object {
@@ -634,7 +686,33 @@ package redshift {
   }
 
   /**
-   * <p> The request would exceed the allowed number of cluster instances for this account. For information about increasing your quota, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Limits in Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>. </p>
+   * <p>Describes the status of a parameter group.</p>
+   */
+  @js.native
+  trait ClusterParameterStatus extends js.Object {
+    var ParameterName: String
+    var ParameterApplyStatus: String
+    var ParameterApplyErrorDescription: String
+  }
+
+  object ClusterParameterStatus {
+    def apply(
+      ParameterName: js.UndefOr[String] = js.undefined,
+      ParameterApplyStatus: js.UndefOr[String] = js.undefined,
+      ParameterApplyErrorDescription: js.UndefOr[String] = js.undefined
+    ): ClusterParameterStatus = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("ParameterName" -> ParameterName.map { x => x: js.Any }),
+        ("ParameterApplyStatus" -> ParameterApplyStatus.map { x => x: js.Any }),
+        ("ParameterApplyErrorDescription" -> ParameterApplyErrorDescription.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ClusterParameterStatus]
+    }
+  }
+
+  /**
+   * <p>The request would exceed the allowed number of cluster instances for this account. For information about increasing your quota, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Limits in Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>. </p>
    */
   @js.native
   trait ClusterQuotaExceededFaultException extends js.Object {
@@ -674,7 +752,7 @@ package redshift {
   }
 
   /**
-   * <p> A cluster security group with the same name already exists. </p>
+   * <p>A cluster security group with the same name already exists.</p>
    */
   @js.native
   trait ClusterSecurityGroupAlreadyExistsFaultException extends js.Object {
@@ -682,7 +760,7 @@ package redshift {
   }
 
   /**
-   * <p>Describes a security group.</p>
+   * <p>Describes a cluster security group.</p>
    */
   @js.native
   trait ClusterSecurityGroupMembership extends js.Object {
@@ -705,7 +783,7 @@ package redshift {
   }
 
   /**
-   * <p> Contains the output from the <a>DescribeClusterSecurityGroups</a> action. </p>
+   * <p/>
    */
   @js.native
   trait ClusterSecurityGroupMessage extends js.Object {
@@ -728,7 +806,7 @@ package redshift {
   }
 
   /**
-   * <p> The cluster security group name does not refer to an existing cluster security group. </p>
+   * <p>The cluster security group name does not refer to an existing cluster security group.</p>
    */
   @js.native
   trait ClusterSecurityGroupNotFoundFaultException extends js.Object {
@@ -736,7 +814,7 @@ package redshift {
   }
 
   /**
-   * <p> The request would result in the user exceeding the allowed number of cluster security groups. For information about increasing your quota, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Limits in Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>. </p>
+   * <p>The request would result in the user exceeding the allowed number of cluster security groups. For information about increasing your quota, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Limits in Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>. </p>
    */
   @js.native
   trait ClusterSecurityGroupQuotaExceededFaultException extends js.Object {
@@ -744,7 +822,7 @@ package redshift {
   }
 
   /**
-   * <p> The value specified as a snapshot identifier is already used by an existing snapshot. </p>
+   * <p>The value specified as a snapshot identifier is already used by an existing snapshot.</p>
    */
   @js.native
   trait ClusterSnapshotAlreadyExistsFaultException extends js.Object {
@@ -752,22 +830,25 @@ package redshift {
   }
 
   /**
-   * <p> Returns the destination region and retention period that are configured for cross-region snapshot copy. </p>
+   * <p>Returns the destination region and retention period that are configured for cross-region snapshot copy.</p>
    */
   @js.native
   trait ClusterSnapshotCopyStatus extends js.Object {
     var DestinationRegion: String
     var RetentionPeriod: Long
+    var SnapshotCopyGrantName: String
   }
 
   object ClusterSnapshotCopyStatus {
     def apply(
       DestinationRegion: js.UndefOr[String] = js.undefined,
-      RetentionPeriod: js.UndefOr[Long] = js.undefined
+      RetentionPeriod: js.UndefOr[Long] = js.undefined,
+      SnapshotCopyGrantName: js.UndefOr[String] = js.undefined
     ): ClusterSnapshotCopyStatus = {
       val _fields = IndexedSeq[(String, js.Any)](
         ("DestinationRegion" -> DestinationRegion.map { x => x: js.Any }),
-        ("RetentionPeriod" -> RetentionPeriod.map { x => x: js.Any })
+        ("RetentionPeriod" -> RetentionPeriod.map { x => x: js.Any }),
+        ("SnapshotCopyGrantName" -> SnapshotCopyGrantName.map { x => x: js.Any })
       ).filter(_._2 != js.undefined)
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ClusterSnapshotCopyStatus]
@@ -775,7 +856,7 @@ package redshift {
   }
 
   /**
-   * <p> The snapshot identifier does not refer to an existing cluster snapshot. </p>
+   * <p>The snapshot identifier does not refer to an existing cluster snapshot.</p>
    */
   @js.native
   trait ClusterSnapshotNotFoundFaultException extends js.Object {
@@ -783,7 +864,7 @@ package redshift {
   }
 
   /**
-   * <p> The request would result in the user exceeding the allowed number of cluster snapshots. </p>
+   * <p>The request would result in the user exceeding the allowed number of cluster snapshots.</p>
    */
   @js.native
   trait ClusterSnapshotQuotaExceededFaultException extends js.Object {
@@ -826,7 +907,7 @@ package redshift {
   }
 
   /**
-   * <p> A <i>ClusterSubnetGroupName</i> is already used by an existing cluster subnet group. </p>
+   * <p>A <i>ClusterSubnetGroupName</i> is already used by an existing cluster subnet group. </p>
    */
   @js.native
   trait ClusterSubnetGroupAlreadyExistsFaultException extends js.Object {
@@ -834,7 +915,7 @@ package redshift {
   }
 
   /**
-   * <p> Contains the output from the <a>DescribeClusterSubnetGroups</a> action. </p>
+   * <p>Contains the output from the <a>DescribeClusterSubnetGroups</a> action. </p>
    */
   @js.native
   trait ClusterSubnetGroupMessage extends js.Object {
@@ -857,7 +938,7 @@ package redshift {
   }
 
   /**
-   * <p> The cluster subnet group name does not refer to an existing cluster subnet group. </p>
+   * <p>The cluster subnet group name does not refer to an existing cluster subnet group.</p>
    */
   @js.native
   trait ClusterSubnetGroupNotFoundFaultException extends js.Object {
@@ -865,7 +946,7 @@ package redshift {
   }
 
   /**
-   * <p> The request would result in user exceeding the allowed number of cluster subnet groups. For information about increasing your quota, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Limits in Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>. </p>
+   * <p>The request would result in user exceeding the allowed number of cluster subnet groups. For information about increasing your quota, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Limits in Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>. </p>
    */
   @js.native
   trait ClusterSubnetGroupQuotaExceededFaultException extends js.Object {
@@ -873,7 +954,7 @@ package redshift {
   }
 
   /**
-   * <p> The request would result in user exceeding the allowed number of subnets in a cluster subnet groups. For information about increasing your quota, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Limits in Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>. </p>
+   * <p>The request would result in user exceeding the allowed number of subnets in a cluster subnet groups. For information about increasing your quota, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Limits in Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>. </p>
    */
   @js.native
   trait ClusterSubnetQuotaExceededFaultException extends js.Object {
@@ -907,7 +988,7 @@ package redshift {
   }
 
   /**
-   * <p> Contains the output from the <a>DescribeClusterVersions</a> action. </p>
+   * <p>Contains the output from the <a>DescribeClusterVersions</a> action. </p>
    */
   @js.native
   trait ClusterVersionsMessage extends js.Object {
@@ -930,7 +1011,7 @@ package redshift {
   }
 
   /**
-   * <p> Contains the output from the <a>DescribeClusters</a> action. </p>
+   * <p>Contains the output from the <a>DescribeClusters</a> action. </p>
    */
   @js.native
   trait ClustersMessage extends js.Object {
@@ -953,7 +1034,7 @@ package redshift {
   }
 
   /**
-   * <p> </p>
+   * <p/>
    */
   @js.native
   trait CopyClusterSnapshotMessage extends js.Object {
@@ -996,7 +1077,7 @@ package redshift {
   }
 
   /**
-   * <p> Cross-region snapshot copy was temporarily disabled. Try your request again. </p>
+   * <p>Cross-region snapshot copy was temporarily disabled. Try your request again.</p>
    */
   @js.native
   trait CopyToRegionDisabledFaultException extends js.Object {
@@ -1004,7 +1085,7 @@ package redshift {
   }
 
   /**
-   * <p></p>
+   * <p/>
    */
   @js.native
   trait CreateClusterMessage extends js.Object {
@@ -1017,16 +1098,19 @@ package redshift {
     var ClusterVersion: String
     var KmsKeyId: String
     var NodeType: String
+    var IamRoles: IamRoleArnList
     var ElasticIp: String
     var AutomatedSnapshotRetentionPeriod: IntegerOptional
     var MasterUsername: String
     var AvailabilityZone: String
     var ClusterSecurityGroups: ClusterSecurityGroupNameList
     var Encrypted: BooleanOptional
+    var EnhancedVpcRouting: BooleanOptional
     var VpcSecurityGroupIds: VpcSecurityGroupIdList
     var Port: IntegerOptional
     var NumberOfNodes: IntegerOptional
     var MasterUserPassword: String
+    var AdditionalInfo: String
     var HsmConfigurationIdentifier: String
     var Tags: TagList
     var ClusterSubnetGroupName: String
@@ -1045,16 +1129,19 @@ package redshift {
       ClusterVersion: js.UndefOr[String] = js.undefined,
       KmsKeyId: js.UndefOr[String] = js.undefined,
       NodeType: js.UndefOr[String] = js.undefined,
+      IamRoles: js.UndefOr[IamRoleArnList] = js.undefined,
       ElasticIp: js.UndefOr[String] = js.undefined,
       AutomatedSnapshotRetentionPeriod: js.UndefOr[IntegerOptional] = js.undefined,
       MasterUsername: js.UndefOr[String] = js.undefined,
       AvailabilityZone: js.UndefOr[String] = js.undefined,
       ClusterSecurityGroups: js.UndefOr[ClusterSecurityGroupNameList] = js.undefined,
       Encrypted: js.UndefOr[BooleanOptional] = js.undefined,
+      EnhancedVpcRouting: js.UndefOr[BooleanOptional] = js.undefined,
       VpcSecurityGroupIds: js.UndefOr[VpcSecurityGroupIdList] = js.undefined,
       Port: js.UndefOr[IntegerOptional] = js.undefined,
       NumberOfNodes: js.UndefOr[IntegerOptional] = js.undefined,
       MasterUserPassword: js.UndefOr[String] = js.undefined,
+      AdditionalInfo: js.UndefOr[String] = js.undefined,
       HsmConfigurationIdentifier: js.UndefOr[String] = js.undefined,
       Tags: js.UndefOr[TagList] = js.undefined,
       ClusterSubnetGroupName: js.UndefOr[String] = js.undefined,
@@ -1071,16 +1158,19 @@ package redshift {
         ("ClusterVersion" -> ClusterVersion.map { x => x: js.Any }),
         ("KmsKeyId" -> KmsKeyId.map { x => x: js.Any }),
         ("NodeType" -> NodeType.map { x => x: js.Any }),
+        ("IamRoles" -> IamRoles.map { x => x: js.Any }),
         ("ElasticIp" -> ElasticIp.map { x => x: js.Any }),
         ("AutomatedSnapshotRetentionPeriod" -> AutomatedSnapshotRetentionPeriod.map { x => x: js.Any }),
         ("MasterUsername" -> MasterUsername.map { x => x: js.Any }),
         ("AvailabilityZone" -> AvailabilityZone.map { x => x: js.Any }),
         ("ClusterSecurityGroups" -> ClusterSecurityGroups.map { x => x: js.Any }),
         ("Encrypted" -> Encrypted.map { x => x: js.Any }),
+        ("EnhancedVpcRouting" -> EnhancedVpcRouting.map { x => x: js.Any }),
         ("VpcSecurityGroupIds" -> VpcSecurityGroupIds.map { x => x: js.Any }),
         ("Port" -> Port.map { x => x: js.Any }),
         ("NumberOfNodes" -> NumberOfNodes.map { x => x: js.Any }),
         ("MasterUserPassword" -> MasterUserPassword.map { x => x: js.Any }),
+        ("AdditionalInfo" -> AdditionalInfo.map { x => x: js.Any }),
         ("HsmConfigurationIdentifier" -> HsmConfigurationIdentifier.map { x => x: js.Any }),
         ("Tags" -> Tags.map { x => x: js.Any }),
         ("ClusterSubnetGroupName" -> ClusterSubnetGroupName.map { x => x: js.Any }),
@@ -1093,7 +1183,7 @@ package redshift {
   }
 
   /**
-   * <p> </p>
+   * <p/>
    */
   @js.native
   trait CreateClusterParameterGroupMessage extends js.Object {
@@ -1156,7 +1246,7 @@ package redshift {
   }
 
   /**
-   * <p>???</p>
+   * <p/>
    */
   @js.native
   trait CreateClusterSecurityGroupMessage extends js.Object {
@@ -1199,7 +1289,7 @@ package redshift {
   }
 
   /**
-   * <p> </p>
+   * <p/>
    */
   @js.native
   trait CreateClusterSnapshotMessage extends js.Object {
@@ -1242,7 +1332,7 @@ package redshift {
   }
 
   /**
-   * <p> </p>
+   * <p/>
    */
   @js.native
   trait CreateClusterSubnetGroupMessage extends js.Object {
@@ -1288,7 +1378,7 @@ package redshift {
   }
 
   /**
-   * <p></p>
+   * <p/>
    */
   @js.native
   trait CreateEventSubscriptionMessage extends js.Object {
@@ -1346,7 +1436,7 @@ package redshift {
   }
 
   /**
-   * <p></p>
+   * <p/>
    */
   @js.native
   trait CreateHsmClientCertificateMessage extends js.Object {
@@ -1386,7 +1476,7 @@ package redshift {
   }
 
   /**
-   * <p></p>
+   * <p/>
    */
   @js.native
   trait CreateHsmConfigurationMessage extends js.Object {
@@ -1441,7 +1531,50 @@ package redshift {
   }
 
   /**
-   * <p> Contains the output from the <code>CreateTags</code> action. </p>
+   * <p>The result of the <code>CreateSnapshotCopyGrant</code> action.</p>
+   */
+  @js.native
+  trait CreateSnapshotCopyGrantMessage extends js.Object {
+    var SnapshotCopyGrantName: String
+    var KmsKeyId: String
+    var Tags: TagList
+  }
+
+  object CreateSnapshotCopyGrantMessage {
+    def apply(
+      SnapshotCopyGrantName: js.UndefOr[String] = js.undefined,
+      KmsKeyId: js.UndefOr[String] = js.undefined,
+      Tags: js.UndefOr[TagList] = js.undefined
+    ): CreateSnapshotCopyGrantMessage = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("SnapshotCopyGrantName" -> SnapshotCopyGrantName.map { x => x: js.Any }),
+        ("KmsKeyId" -> KmsKeyId.map { x => x: js.Any }),
+        ("Tags" -> Tags.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateSnapshotCopyGrantMessage]
+    }
+  }
+
+  @js.native
+  trait CreateSnapshotCopyGrantResult extends js.Object {
+    var SnapshotCopyGrant: SnapshotCopyGrant
+  }
+
+  object CreateSnapshotCopyGrantResult {
+    def apply(
+      SnapshotCopyGrant: js.UndefOr[SnapshotCopyGrant] = js.undefined
+    ): CreateSnapshotCopyGrantResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("SnapshotCopyGrant" -> SnapshotCopyGrant.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateSnapshotCopyGrantResult]
+    }
+  }
+
+  /**
+   * <p>Contains the output from the <code>CreateTags</code> action. </p>
    */
   @js.native
   trait CreateTagsMessage extends js.Object {
@@ -1464,7 +1597,7 @@ package redshift {
   }
 
   /**
-   * <p>Describes the default cluster parameters for a parameter group family. </p>
+   * <p>Describes the default cluster parameters for a parameter group family.</p>
    */
   @js.native
   trait DefaultClusterParameters extends js.Object {
@@ -1490,7 +1623,7 @@ package redshift {
   }
 
   /**
-   * <p> </p>
+   * <p/>
    */
   @js.native
   trait DeleteClusterMessage extends js.Object {
@@ -1516,7 +1649,7 @@ package redshift {
   }
 
   /**
-   * <p> </p>
+   * <p/>
    */
   @js.native
   trait DeleteClusterParameterGroupMessage extends js.Object {
@@ -1553,7 +1686,7 @@ package redshift {
   }
 
   /**
-   * <p> </p>
+   * <p/>
    */
   @js.native
   trait DeleteClusterSecurityGroupMessage extends js.Object {
@@ -1573,7 +1706,7 @@ package redshift {
   }
 
   /**
-   * <p> </p>
+   * <p/>
    */
   @js.native
   trait DeleteClusterSnapshotMessage extends js.Object {
@@ -1612,6 +1745,9 @@ package redshift {
     }
   }
 
+  /**
+   * <p/>
+   */
   @js.native
   trait DeleteClusterSubnetGroupMessage extends js.Object {
     var ClusterSubnetGroupName: String
@@ -1630,7 +1766,7 @@ package redshift {
   }
 
   /**
-   * <p></p>
+   * <p/>
    */
   @js.native
   trait DeleteEventSubscriptionMessage extends js.Object {
@@ -1650,7 +1786,7 @@ package redshift {
   }
 
   /**
-   * <p></p>
+   * <p/>
    */
   @js.native
   trait DeleteHsmClientCertificateMessage extends js.Object {
@@ -1670,7 +1806,7 @@ package redshift {
   }
 
   /**
-   * <p></p>
+   * <p/>
    */
   @js.native
   trait DeleteHsmConfigurationMessage extends js.Object {
@@ -1690,7 +1826,27 @@ package redshift {
   }
 
   /**
-   * <p> Contains the output from the <code>DeleteTags</code> action. </p>
+   * <p>The result of the <code>DeleteSnapshotCopyGrant</code> action.</p>
+   */
+  @js.native
+  trait DeleteSnapshotCopyGrantMessage extends js.Object {
+    var SnapshotCopyGrantName: String
+  }
+
+  object DeleteSnapshotCopyGrantMessage {
+    def apply(
+      SnapshotCopyGrantName: js.UndefOr[String] = js.undefined
+    ): DeleteSnapshotCopyGrantMessage = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("SnapshotCopyGrantName" -> SnapshotCopyGrantName.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteSnapshotCopyGrantMessage]
+    }
+  }
+
+  /**
+   * <p>Contains the output from the <code>DeleteTags</code> action. </p>
    */
   @js.native
   trait DeleteTagsMessage extends js.Object {
@@ -1713,7 +1869,15 @@ package redshift {
   }
 
   /**
-   * <p> </p>
+   * <p>The request cannot be completed because a dependent service is throttling requests made by Amazon Redshift on your behalf. Wait and retry the request.</p>
+   */
+  @js.native
+  trait DependentServiceRequestThrottlingFaultException extends js.Object {
+
+  }
+
+  /**
+   * <p/>
    */
   @js.native
   trait DescribeClusterParameterGroupsMessage extends js.Object {
@@ -1744,6 +1908,9 @@ package redshift {
     }
   }
 
+  /**
+   * <p/>
+   */
   @js.native
   trait DescribeClusterParametersMessage extends js.Object {
     var ParameterGroupName: String
@@ -1771,7 +1938,7 @@ package redshift {
   }
 
   /**
-   * <p>???</p>
+   * <p/>
    */
   @js.native
   trait DescribeClusterSecurityGroupsMessage extends js.Object {
@@ -1803,7 +1970,7 @@ package redshift {
   }
 
   /**
-   * <p> </p>
+   * <p/>
    */
   @js.native
   trait DescribeClusterSnapshotsMessage extends js.Object {
@@ -1850,7 +2017,7 @@ package redshift {
   }
 
   /**
-   * <p> </p>
+   * <p/>
    */
   @js.native
   trait DescribeClusterSubnetGroupsMessage extends js.Object {
@@ -1881,6 +2048,9 @@ package redshift {
     }
   }
 
+  /**
+   * <p/>
+   */
   @js.native
   trait DescribeClusterVersionsMessage extends js.Object {
     var ClusterVersion: String
@@ -1908,7 +2078,7 @@ package redshift {
   }
 
   /**
-   * <p> </p>
+   * <p/>
    */
   @js.native
   trait DescribeClustersMessage extends js.Object {
@@ -1940,7 +2110,7 @@ package redshift {
   }
 
   /**
-   * <p> </p>
+   * <p/>
    */
   @js.native
   trait DescribeDefaultClusterParametersMessage extends js.Object {
@@ -1983,7 +2153,7 @@ package redshift {
   }
 
   /**
-   * <p> </p>
+   * <p/>
    */
   @js.native
   trait DescribeEventCategoriesMessage extends js.Object {
@@ -2003,7 +2173,7 @@ package redshift {
   }
 
   /**
-   * <p></p>
+   * <p/>
    */
   @js.native
   trait DescribeEventSubscriptionsMessage extends js.Object {
@@ -2029,7 +2199,7 @@ package redshift {
   }
 
   /**
-   * <p> </p>
+   * <p/>
    */
   @js.native
   trait DescribeEventsMessage extends js.Object {
@@ -2067,7 +2237,7 @@ package redshift {
   }
 
   /**
-   * <p></p>
+   * <p/>
    */
   @js.native
   trait DescribeHsmClientCertificatesMessage extends js.Object {
@@ -2099,7 +2269,7 @@ package redshift {
   }
 
   /**
-   * <p></p>
+   * <p/>
    */
   @js.native
   trait DescribeHsmConfigurationsMessage extends js.Object {
@@ -2131,7 +2301,7 @@ package redshift {
   }
 
   /**
-   * <p> </p>
+   * <p/>
    */
   @js.native
   trait DescribeLoggingStatusMessage extends js.Object {
@@ -2151,7 +2321,7 @@ package redshift {
   }
 
   /**
-   * <p> </p>
+   * <p/>
    */
   @js.native
   trait DescribeOrderableClusterOptionsMessage extends js.Object {
@@ -2180,7 +2350,7 @@ package redshift {
   }
 
   /**
-   * <p>to be provided.</p>
+   * <p/>
    */
   @js.native
   trait DescribeReservedNodeOfferingsMessage extends js.Object {
@@ -2206,7 +2376,7 @@ package redshift {
   }
 
   /**
-   * <p> </p>
+   * <p/>
    */
   @js.native
   trait DescribeReservedNodesMessage extends js.Object {
@@ -2232,7 +2402,7 @@ package redshift {
   }
 
   /**
-   * <p> </p>
+   * <p/>
    */
   @js.native
   trait DescribeResizeMessage extends js.Object {
@@ -2252,7 +2422,68 @@ package redshift {
   }
 
   /**
-   * <p> Contains the output from the <code>DescribeTags</code> action. </p>
+   * <p>The result of the <code>DescribeSnapshotCopyGrants</code> action.</p>
+   */
+  @js.native
+  trait DescribeSnapshotCopyGrantsMessage extends js.Object {
+    var SnapshotCopyGrantName: String
+    var MaxRecords: IntegerOptional
+    var TagValues: TagValueList
+    var TagKeys: TagKeyList
+    var Marker: String
+  }
+
+  object DescribeSnapshotCopyGrantsMessage {
+    def apply(
+      SnapshotCopyGrantName: js.UndefOr[String] = js.undefined,
+      MaxRecords: js.UndefOr[IntegerOptional] = js.undefined,
+      TagValues: js.UndefOr[TagValueList] = js.undefined,
+      TagKeys: js.UndefOr[TagKeyList] = js.undefined,
+      Marker: js.UndefOr[String] = js.undefined
+    ): DescribeSnapshotCopyGrantsMessage = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("SnapshotCopyGrantName" -> SnapshotCopyGrantName.map { x => x: js.Any }),
+        ("MaxRecords" -> MaxRecords.map { x => x: js.Any }),
+        ("TagValues" -> TagValues.map { x => x: js.Any }),
+        ("TagKeys" -> TagKeys.map { x => x: js.Any }),
+        ("Marker" -> Marker.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeSnapshotCopyGrantsMessage]
+    }
+  }
+
+  /**
+   * <p/>
+   */
+  @js.native
+  trait DescribeTableRestoreStatusMessage extends js.Object {
+    var ClusterIdentifier: String
+    var TableRestoreRequestId: String
+    var MaxRecords: IntegerOptional
+    var Marker: String
+  }
+
+  object DescribeTableRestoreStatusMessage {
+    def apply(
+      ClusterIdentifier: js.UndefOr[String] = js.undefined,
+      TableRestoreRequestId: js.UndefOr[String] = js.undefined,
+      MaxRecords: js.UndefOr[IntegerOptional] = js.undefined,
+      Marker: js.UndefOr[String] = js.undefined
+    ): DescribeTableRestoreStatusMessage = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("ClusterIdentifier" -> ClusterIdentifier.map { x => x: js.Any }),
+        ("TableRestoreRequestId" -> TableRestoreRequestId.map { x => x: js.Any }),
+        ("MaxRecords" -> MaxRecords.map { x => x: js.Any }),
+        ("Marker" -> Marker.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeTableRestoreStatusMessage]
+    }
+  }
+
+  /**
+   * <p/>
    */
   @js.native
   trait DescribeTagsMessage extends js.Object {
@@ -2287,7 +2518,7 @@ package redshift {
   }
 
   /**
-   * <p> </p>
+   * <p/>
    */
   @js.native
   trait DisableLoggingMessage extends js.Object {
@@ -2307,7 +2538,7 @@ package redshift {
   }
 
   /**
-   * <p> </p>
+   * <p/>
    */
   @js.native
   trait DisableSnapshotCopyMessage extends js.Object {
@@ -2396,7 +2627,7 @@ package redshift {
   }
 
   /**
-   * <p> </p>
+   * <p/>
    */
   @js.native
   trait EnableLoggingMessage extends js.Object {
@@ -2422,25 +2653,28 @@ package redshift {
   }
 
   /**
-   * <p> </p>
+   * <p/>
    */
   @js.native
   trait EnableSnapshotCopyMessage extends js.Object {
     var ClusterIdentifier: String
     var DestinationRegion: String
     var RetentionPeriod: IntegerOptional
+    var SnapshotCopyGrantName: String
   }
 
   object EnableSnapshotCopyMessage {
     def apply(
       ClusterIdentifier: js.UndefOr[String] = js.undefined,
       DestinationRegion: js.UndefOr[String] = js.undefined,
-      RetentionPeriod: js.UndefOr[IntegerOptional] = js.undefined
+      RetentionPeriod: js.UndefOr[IntegerOptional] = js.undefined,
+      SnapshotCopyGrantName: js.UndefOr[String] = js.undefined
     ): EnableSnapshotCopyMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
         ("ClusterIdentifier" -> ClusterIdentifier.map { x => x: js.Any }),
         ("DestinationRegion" -> DestinationRegion.map { x => x: js.Any }),
-        ("RetentionPeriod" -> RetentionPeriod.map { x => x: js.Any })
+        ("RetentionPeriod" -> RetentionPeriod.map { x => x: js.Any }),
+        ("SnapshotCopyGrantName" -> SnapshotCopyGrantName.map { x => x: js.Any })
       ).filter(_._2 != js.undefined)
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EnableSnapshotCopyMessage]
@@ -2488,7 +2722,7 @@ package redshift {
   }
 
   /**
-   * <p> Describes an event. </p>
+   * <p>Describes an event.</p>
    */
   @js.native
   trait Event extends js.Object {
@@ -2525,6 +2759,9 @@ package redshift {
     }
   }
 
+  /**
+   * <p>Describes event categories.</p>
+   */
   @js.native
   trait EventCategoriesMap extends js.Object {
     var SourceType: String
@@ -2546,7 +2783,7 @@ package redshift {
   }
 
   /**
-   * <p> </p>
+   * <p/>
    */
   @js.native
   trait EventCategoriesMessage extends js.Object {
@@ -2565,6 +2802,9 @@ package redshift {
     }
   }
 
+  /**
+   * <p>Describes event information.</p>
+   */
   @js.native
   trait EventInfoMap extends js.Object {
     var EventId: String
@@ -2591,6 +2831,9 @@ package redshift {
     }
   }
 
+  /**
+   * <p>Describes event subscriptions.</p>
+   */
   @js.native
   trait EventSubscription extends js.Object {
     var CustomerAwsId: String
@@ -2639,7 +2882,7 @@ package redshift {
   }
 
   /**
-   * <p> The request would exceed the allowed number of event subscriptions for this account. For information about increasing your quota, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Limits in Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>. </p>
+   * <p>The request would exceed the allowed number of event subscriptions for this account. For information about increasing your quota, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Limits in Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>. </p>
    */
   @js.native
   trait EventSubscriptionQuotaExceededFaultException extends js.Object {
@@ -2647,7 +2890,7 @@ package redshift {
   }
 
   /**
-   * <p></p>
+   * <p/>
    */
   @js.native
   trait EventSubscriptionsMessage extends js.Object {
@@ -2670,7 +2913,7 @@ package redshift {
   }
 
   /**
-   * <p> Contains the output from the <a>DescribeEvents</a> action. </p>
+   * <p/>
    */
   @js.native
   trait EventsMessage extends js.Object {
@@ -2727,7 +2970,7 @@ package redshift {
   }
 
   /**
-   * <p></p>
+   * <p/>
    */
   @js.native
   trait HsmClientCertificateMessage extends js.Object {
@@ -2758,7 +3001,7 @@ package redshift {
   }
 
   /**
-   * <p> The quota for HSM client certificates has been reached. For information about increasing your quota, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Limits in Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>. </p>
+   * <p>The quota for HSM client certificates has been reached. For information about increasing your quota, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Limits in Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>. </p>
    */
   @js.native
   trait HsmClientCertificateQuotaExceededFaultException extends js.Object {
@@ -2806,7 +3049,7 @@ package redshift {
   }
 
   /**
-   * <p></p>
+   * <p/>
    */
   @js.native
   trait HsmConfigurationMessage extends js.Object {
@@ -2837,7 +3080,7 @@ package redshift {
   }
 
   /**
-   * <p> The quota for HSM configurations has been reached. For information about increasing your quota, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Limits in Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>. </p>
+   * <p>The quota for HSM configurations has been reached. For information about increasing your quota, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Limits in Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>. </p>
    */
   @js.native
   trait HsmConfigurationQuotaExceededFaultException extends js.Object {
@@ -2845,7 +3088,7 @@ package redshift {
   }
 
   /**
-   * <p></p>
+   * <p>Describes the status of changes to HSM settings.</p>
    */
   @js.native
   trait HsmStatus extends js.Object {
@@ -2871,7 +3114,7 @@ package redshift {
   }
 
   /**
-   * <p> Describes an IP range used in a security group. </p>
+   * <p>Describes an IP range used in a security group.</p>
    */
   @js.native
   trait IPRange extends js.Object {
@@ -2897,7 +3140,15 @@ package redshift {
   }
 
   /**
-   * <p> The specified options are incompatible. </p>
+   * <p>You have exceeded the allowed number of table restore requests. Wait for your current table restore requests to complete before making a new request.</p>
+   */
+  @js.native
+  trait InProgressTableRestoreQuotaExceededFaultException extends js.Object {
+
+  }
+
+  /**
+   * <p>The specified options are incompatible.</p>
    */
   @js.native
   trait IncompatibleOrderableOptionsException extends js.Object {
@@ -2905,7 +3156,7 @@ package redshift {
   }
 
   /**
-   * <p> The number of nodes specified exceeds the allotted capacity of the cluster. </p>
+   * <p>The number of nodes specified exceeds the allotted capacity of the cluster.</p>
    */
   @js.native
   trait InsufficientClusterCapacityFaultException extends js.Object {
@@ -2913,7 +3164,7 @@ package redshift {
   }
 
   /**
-   * <p> The cluster does not have read bucket or put object permissions on the S3 bucket specified when enabling logging. </p>
+   * <p>The cluster does not have read bucket or put object permissions on the S3 bucket specified when enabling logging.</p>
    */
   @js.native
   trait InsufficientS3BucketPolicyFaultException extends js.Object {
@@ -2921,7 +3172,7 @@ package redshift {
   }
 
   /**
-   * <p> The cluster parameter group action can not be completed because another task is in progress that involves the parameter group. Wait a few moments and try the operation again. </p>
+   * <p>The cluster parameter group action can not be completed because another task is in progress that involves the parameter group. Wait a few moments and try the operation again.</p>
    */
   @js.native
   trait InvalidClusterParameterGroupStateFaultException extends js.Object {
@@ -2929,7 +3180,7 @@ package redshift {
   }
 
   /**
-   * <p> The state of the cluster security group is not <code>available</code>. </p>
+   * <p>The state of the cluster security group is not <code>available</code>. </p>
    */
   @js.native
   trait InvalidClusterSecurityGroupStateFaultException extends js.Object {
@@ -2937,7 +3188,7 @@ package redshift {
   }
 
   /**
-   * <p> The state of the cluster snapshot is not <code>available</code>, or other accounts are authorized to access the snapshot. </p>
+   * <p>The specified cluster snapshot is not in the <code>available</code> state, or other accounts are authorized to access the snapshot. </p>
    */
   @js.native
   trait InvalidClusterSnapshotStateFaultException extends js.Object {
@@ -2945,7 +3196,7 @@ package redshift {
   }
 
   /**
-   * <p> The specified cluster is not in the <code>available</code> state. </p>
+   * <p>The specified cluster is not in the <code>available</code> state. </p>
    */
   @js.native
   trait InvalidClusterStateFaultException extends js.Object {
@@ -2953,7 +3204,7 @@ package redshift {
   }
 
   /**
-   * <p> The cluster subnet group cannot be deleted because it is in use. </p>
+   * <p>The cluster subnet group cannot be deleted because it is in use.</p>
    */
   @js.native
   trait InvalidClusterSubnetGroupStateFaultException extends js.Object {
@@ -3009,7 +3260,7 @@ package redshift {
   }
 
   /**
-   * <p> The string specified for the logging S3 key prefix does not comply with the documented constraints. </p>
+   * <p>The string specified for the logging S3 key prefix does not comply with the documented constraints.</p>
    */
   @js.native
   trait InvalidS3KeyPrefixFaultException extends js.Object {
@@ -3017,7 +3268,15 @@ package redshift {
   }
 
   /**
-   * <p> The requested subnet is not valid, or not all of the subnets are in the same VPC. </p>
+   * <p>The snapshot copy grant can't be deleted because it is used by one or more clusters.</p>
+   */
+  @js.native
+  trait InvalidSnapshotCopyGrantStateFaultException extends js.Object {
+
+  }
+
+  /**
+   * <p>The requested subnet is not valid, or not all of the subnets are in the same VPC.</p>
    */
   @js.native
   trait InvalidSubnetException extends js.Object {
@@ -3025,7 +3284,7 @@ package redshift {
   }
 
   /**
-   * <p> The subscription request is invalid because it is a duplicate request. This subscription request is already in progress. </p>
+   * <p>The subscription request is invalid because it is a duplicate request. This subscription request is already in progress.</p>
    */
   @js.native
   trait InvalidSubscriptionStateFaultException extends js.Object {
@@ -3033,7 +3292,15 @@ package redshift {
   }
 
   /**
-   * <p> The tag is invalid. </p>
+   * <p>The value specified for the <code>sourceDatabaseName</code>, <code>sourceSchemaName</code>, or <code>sourceTableName</code> parameter, or a combination of these, doesn't exist in the snapshot.</p>
+   */
+  @js.native
+  trait InvalidTableRestoreArgumentFaultException extends js.Object {
+
+  }
+
+  /**
+   * <p>The tag is invalid.</p>
    */
   @js.native
   trait InvalidTagFaultException extends js.Object {
@@ -3041,10 +3308,18 @@ package redshift {
   }
 
   /**
-   * <p> The cluster subnet group does not cover all Availability Zones. </p>
+   * <p>The cluster subnet group does not cover all Availability Zones.</p>
    */
   @js.native
   trait InvalidVPCNetworkStateFaultException extends js.Object {
+
+  }
+
+  /**
+   * <p>The encryption key has exceeded its grant limit in AWS KMS.</p>
+   */
+  @js.native
+  trait LimitExceededFaultException extends js.Object {
 
   }
 
@@ -3084,7 +3359,50 @@ package redshift {
   }
 
   /**
-   * <p></p>
+   * <p/>
+   */
+  @js.native
+  trait ModifyClusterIamRolesMessage extends js.Object {
+    var ClusterIdentifier: String
+    var AddIamRoles: IamRoleArnList
+    var RemoveIamRoles: IamRoleArnList
+  }
+
+  object ModifyClusterIamRolesMessage {
+    def apply(
+      ClusterIdentifier: js.UndefOr[String] = js.undefined,
+      AddIamRoles: js.UndefOr[IamRoleArnList] = js.undefined,
+      RemoveIamRoles: js.UndefOr[IamRoleArnList] = js.undefined
+    ): ModifyClusterIamRolesMessage = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("ClusterIdentifier" -> ClusterIdentifier.map { x => x: js.Any }),
+        ("AddIamRoles" -> AddIamRoles.map { x => x: js.Any }),
+        ("RemoveIamRoles" -> RemoveIamRoles.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ModifyClusterIamRolesMessage]
+    }
+  }
+
+  @js.native
+  trait ModifyClusterIamRolesResult extends js.Object {
+    var Cluster: Cluster
+  }
+
+  object ModifyClusterIamRolesResult {
+    def apply(
+      Cluster: js.UndefOr[Cluster] = js.undefined
+    ): ModifyClusterIamRolesResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("Cluster" -> Cluster.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ModifyClusterIamRolesResult]
+    }
+  }
+
+  /**
+   * <p/>
    */
   @js.native
   trait ModifyClusterMessage extends js.Object {
@@ -3096,12 +3414,15 @@ package redshift {
     var ClusterType: String
     var ClusterVersion: String
     var NodeType: String
+    var ElasticIp: String
     var AutomatedSnapshotRetentionPeriod: IntegerOptional
     var ClusterSecurityGroups: ClusterSecurityGroupNameList
+    var EnhancedVpcRouting: BooleanOptional
     var VpcSecurityGroupIds: VpcSecurityGroupIdList
     var NumberOfNodes: IntegerOptional
     var MasterUserPassword: String
     var HsmConfigurationIdentifier: String
+    var PubliclyAccessible: BooleanOptional
     var HsmClientCertificateIdentifier: String
   }
 
@@ -3115,12 +3436,15 @@ package redshift {
       ClusterType: js.UndefOr[String] = js.undefined,
       ClusterVersion: js.UndefOr[String] = js.undefined,
       NodeType: js.UndefOr[String] = js.undefined,
+      ElasticIp: js.UndefOr[String] = js.undefined,
       AutomatedSnapshotRetentionPeriod: js.UndefOr[IntegerOptional] = js.undefined,
       ClusterSecurityGroups: js.UndefOr[ClusterSecurityGroupNameList] = js.undefined,
+      EnhancedVpcRouting: js.UndefOr[BooleanOptional] = js.undefined,
       VpcSecurityGroupIds: js.UndefOr[VpcSecurityGroupIdList] = js.undefined,
       NumberOfNodes: js.UndefOr[IntegerOptional] = js.undefined,
       MasterUserPassword: js.UndefOr[String] = js.undefined,
       HsmConfigurationIdentifier: js.UndefOr[String] = js.undefined,
+      PubliclyAccessible: js.UndefOr[BooleanOptional] = js.undefined,
       HsmClientCertificateIdentifier: js.UndefOr[String] = js.undefined
     ): ModifyClusterMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
@@ -3132,12 +3456,15 @@ package redshift {
         ("ClusterType" -> ClusterType.map { x => x: js.Any }),
         ("ClusterVersion" -> ClusterVersion.map { x => x: js.Any }),
         ("NodeType" -> NodeType.map { x => x: js.Any }),
+        ("ElasticIp" -> ElasticIp.map { x => x: js.Any }),
         ("AutomatedSnapshotRetentionPeriod" -> AutomatedSnapshotRetentionPeriod.map { x => x: js.Any }),
         ("ClusterSecurityGroups" -> ClusterSecurityGroups.map { x => x: js.Any }),
+        ("EnhancedVpcRouting" -> EnhancedVpcRouting.map { x => x: js.Any }),
         ("VpcSecurityGroupIds" -> VpcSecurityGroupIds.map { x => x: js.Any }),
         ("NumberOfNodes" -> NumberOfNodes.map { x => x: js.Any }),
         ("MasterUserPassword" -> MasterUserPassword.map { x => x: js.Any }),
         ("HsmConfigurationIdentifier" -> HsmConfigurationIdentifier.map { x => x: js.Any }),
+        ("PubliclyAccessible" -> PubliclyAccessible.map { x => x: js.Any }),
         ("HsmClientCertificateIdentifier" -> HsmClientCertificateIdentifier.map { x => x: js.Any })
       ).filter(_._2 != js.undefined)
 
@@ -3146,7 +3473,7 @@ package redshift {
   }
 
   /**
-   * <p> </p>
+   * <p/>
    */
   @js.native
   trait ModifyClusterParameterGroupMessage extends js.Object {
@@ -3186,7 +3513,7 @@ package redshift {
   }
 
   /**
-   * <p> </p>
+   * <p/>
    */
   @js.native
   trait ModifyClusterSubnetGroupMessage extends js.Object {
@@ -3229,7 +3556,7 @@ package redshift {
   }
 
   /**
-   * <p></p>
+   * <p/>
    */
   @js.native
   trait ModifyEventSubscriptionMessage extends js.Object {
@@ -3284,7 +3611,7 @@ package redshift {
   }
 
   /**
-   * <p> </p>
+   * <p/>
    */
   @js.native
   trait ModifySnapshotCopyRetentionPeriodMessage extends js.Object {
@@ -3340,7 +3667,7 @@ package redshift {
   }
 
   /**
-   * <p> Describes an orderable cluster option. </p>
+   * <p>Describes an orderable cluster option.</p>
    */
   @js.native
   trait OrderableClusterOption extends js.Object {
@@ -3369,7 +3696,7 @@ package redshift {
   }
 
   /**
-   * <p> Contains the output from the <a>DescribeOrderableClusterOptions</a> action. </p>
+   * <p>Contains the output from the <a>DescribeOrderableClusterOptions</a> action. </p>
    */
   @js.native
   trait OrderableClusterOptionsMessage extends js.Object {
@@ -3392,11 +3719,12 @@ package redshift {
   }
 
   /**
-   * <p> Describes a parameter in a cluster parameter group. </p>
+   * <p>Describes a parameter in a cluster parameter group.</p>
    */
   @js.native
   trait Parameter extends js.Object {
     var IsModifiable: Boolean
+    var ApplyType: ParameterApplyType
     var Description: String
     var AllowedValues: String
     var Source: String
@@ -3409,6 +3737,7 @@ package redshift {
   object Parameter {
     def apply(
       IsModifiable: js.UndefOr[Boolean] = js.undefined,
+      ApplyType: js.UndefOr[ParameterApplyType] = js.undefined,
       Description: js.UndefOr[String] = js.undefined,
       AllowedValues: js.UndefOr[String] = js.undefined,
       Source: js.UndefOr[String] = js.undefined,
@@ -3419,6 +3748,7 @@ package redshift {
     ): Parameter = {
       val _fields = IndexedSeq[(String, js.Any)](
         ("IsModifiable" -> IsModifiable.map { x => x: js.Any }),
+        ("ApplyType" -> ApplyType.map { x => x: js.Any }),
         ("Description" -> Description.map { x => x: js.Any }),
         ("AllowedValues" -> AllowedValues.map { x => x: js.Any }),
         ("Source" -> Source.map { x => x: js.Any }),
@@ -3432,8 +3762,16 @@ package redshift {
     }
   }
 
+
+  object ParameterApplyTypeEnum {
+    val static = "static"
+    val dynamic = "dynamic"
+
+    val values = IndexedSeq(static, dynamic)
+  }
+
   /**
-   * <p> Describes cluster attributes that are in a pending state. A change to one or more the attributes was requested and is in progress or will be applied. </p>
+   * <p>Describes cluster attributes that are in a pending state. A change to one or more the attributes was requested and is in progress or will be applied.</p>
    */
   @js.native
   trait PendingModifiedValues extends js.Object {
@@ -3442,8 +3780,10 @@ package redshift {
     var ClusterVersion: String
     var NodeType: String
     var AutomatedSnapshotRetentionPeriod: IntegerOptional
+    var EnhancedVpcRouting: BooleanOptional
     var NumberOfNodes: IntegerOptional
     var MasterUserPassword: String
+    var PubliclyAccessible: BooleanOptional
   }
 
   object PendingModifiedValues {
@@ -3453,8 +3793,10 @@ package redshift {
       ClusterVersion: js.UndefOr[String] = js.undefined,
       NodeType: js.UndefOr[String] = js.undefined,
       AutomatedSnapshotRetentionPeriod: js.UndefOr[IntegerOptional] = js.undefined,
+      EnhancedVpcRouting: js.UndefOr[BooleanOptional] = js.undefined,
       NumberOfNodes: js.UndefOr[IntegerOptional] = js.undefined,
-      MasterUserPassword: js.UndefOr[String] = js.undefined
+      MasterUserPassword: js.UndefOr[String] = js.undefined,
+      PubliclyAccessible: js.UndefOr[BooleanOptional] = js.undefined
     ): PendingModifiedValues = {
       val _fields = IndexedSeq[(String, js.Any)](
         ("ClusterIdentifier" -> ClusterIdentifier.map { x => x: js.Any }),
@@ -3462,8 +3804,10 @@ package redshift {
         ("ClusterVersion" -> ClusterVersion.map { x => x: js.Any }),
         ("NodeType" -> NodeType.map { x => x: js.Any }),
         ("AutomatedSnapshotRetentionPeriod" -> AutomatedSnapshotRetentionPeriod.map { x => x: js.Any }),
+        ("EnhancedVpcRouting" -> EnhancedVpcRouting.map { x => x: js.Any }),
         ("NumberOfNodes" -> NumberOfNodes.map { x => x: js.Any }),
-        ("MasterUserPassword" -> MasterUserPassword.map { x => x: js.Any })
+        ("MasterUserPassword" -> MasterUserPassword.map { x => x: js.Any }),
+        ("PubliclyAccessible" -> PubliclyAccessible.map { x => x: js.Any })
       ).filter(_._2 != js.undefined)
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PendingModifiedValues]
@@ -3471,7 +3815,7 @@ package redshift {
   }
 
   /**
-   * <p></p>
+   * <p/>
    */
   @js.native
   trait PurchaseReservedNodeOfferingMessage extends js.Object {
@@ -3511,7 +3855,7 @@ package redshift {
   }
 
   /**
-   * <p> </p>
+   * <p/>
    */
   @js.native
   trait RebootClusterMessage extends js.Object {
@@ -3571,7 +3915,7 @@ package redshift {
   }
 
   /**
-   * <p> Describes a reserved node. </p>
+   * <p>Describes a reserved node. You can call the <a>DescribeReservedNodeOfferings</a> API to obtain the available reserved node offerings. </p>
    */
   @js.native
   trait ReservedNode extends js.Object {
@@ -3624,7 +3968,7 @@ package redshift {
   }
 
   /**
-   * <p> User already has a reservation with the given identifier. </p>
+   * <p>User already has a reservation with the given identifier.</p>
    */
   @js.native
   trait ReservedNodeAlreadyExistsFaultException extends js.Object {
@@ -3632,7 +3976,7 @@ package redshift {
   }
 
   /**
-   * <p> The specified reserved compute node not found. </p>
+   * <p>The specified reserved compute node not found.</p>
    */
   @js.native
   trait ReservedNodeNotFoundFaultException extends js.Object {
@@ -3681,7 +4025,7 @@ package redshift {
   }
 
   /**
-   * <p> Specified offering does not exist. </p>
+   * <p>Specified offering does not exist.</p>
    */
   @js.native
   trait ReservedNodeOfferingNotFoundFaultException extends js.Object {
@@ -3689,7 +4033,7 @@ package redshift {
   }
 
   /**
-   * <p> Contains the output from the <a>DescribeReservedNodeOfferings</a> action. </p>
+   * <p/>
    */
   @js.native
   trait ReservedNodeOfferingsMessage extends js.Object {
@@ -3712,7 +4056,7 @@ package redshift {
   }
 
   /**
-   * <p> Request would exceed the user's compute node quota. For information about increasing your quota, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Limits in Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>. </p>
+   * <p>Request would exceed the user's compute node quota. For information about increasing your quota, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Limits in Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>. </p>
    */
   @js.native
   trait ReservedNodeQuotaExceededFaultException extends js.Object {
@@ -3720,7 +4064,7 @@ package redshift {
   }
 
   /**
-   * <p>Contains the output from the <a>DescribeReservedNodes</a> action.</p>
+   * <p/>
    */
   @js.native
   trait ReservedNodesMessage extends js.Object {
@@ -3743,7 +4087,7 @@ package redshift {
   }
 
   /**
-   * <p> </p>
+   * <p/>
    */
   @js.native
   trait ResetClusterParameterGroupMessage extends js.Object {
@@ -3830,7 +4174,7 @@ package redshift {
   }
 
   /**
-   * <p> The resource could not be found. </p>
+   * <p>The resource could not be found.</p>
    */
   @js.native
   trait ResourceNotFoundFaultException extends js.Object {
@@ -3838,7 +4182,7 @@ package redshift {
   }
 
   /**
-   * <p></p>
+   * <p/>
    */
   @js.native
   trait RestoreFromClusterSnapshotMessage extends js.Object {
@@ -3847,12 +4191,16 @@ package redshift {
     var AllowVersionUpgrade: BooleanOptional
     var ClusterIdentifier: String
     var KmsKeyId: String
+    var NodeType: String
+    var IamRoles: IamRoleArnList
     var ElasticIp: String
     var AutomatedSnapshotRetentionPeriod: IntegerOptional
     var AvailabilityZone: String
     var ClusterSecurityGroups: ClusterSecurityGroupNameList
+    var EnhancedVpcRouting: BooleanOptional
     var VpcSecurityGroupIds: VpcSecurityGroupIdList
     var Port: IntegerOptional
+    var AdditionalInfo: String
     var HsmConfigurationIdentifier: String
     var ClusterSubnetGroupName: String
     var PubliclyAccessible: BooleanOptional
@@ -3869,12 +4217,16 @@ package redshift {
       AllowVersionUpgrade: js.UndefOr[BooleanOptional] = js.undefined,
       ClusterIdentifier: js.UndefOr[String] = js.undefined,
       KmsKeyId: js.UndefOr[String] = js.undefined,
+      NodeType: js.UndefOr[String] = js.undefined,
+      IamRoles: js.UndefOr[IamRoleArnList] = js.undefined,
       ElasticIp: js.UndefOr[String] = js.undefined,
       AutomatedSnapshotRetentionPeriod: js.UndefOr[IntegerOptional] = js.undefined,
       AvailabilityZone: js.UndefOr[String] = js.undefined,
       ClusterSecurityGroups: js.UndefOr[ClusterSecurityGroupNameList] = js.undefined,
+      EnhancedVpcRouting: js.UndefOr[BooleanOptional] = js.undefined,
       VpcSecurityGroupIds: js.UndefOr[VpcSecurityGroupIdList] = js.undefined,
       Port: js.UndefOr[IntegerOptional] = js.undefined,
+      AdditionalInfo: js.UndefOr[String] = js.undefined,
       HsmConfigurationIdentifier: js.UndefOr[String] = js.undefined,
       ClusterSubnetGroupName: js.UndefOr[String] = js.undefined,
       PubliclyAccessible: js.UndefOr[BooleanOptional] = js.undefined,
@@ -3889,12 +4241,16 @@ package redshift {
         ("AllowVersionUpgrade" -> AllowVersionUpgrade.map { x => x: js.Any }),
         ("ClusterIdentifier" -> ClusterIdentifier.map { x => x: js.Any }),
         ("KmsKeyId" -> KmsKeyId.map { x => x: js.Any }),
+        ("NodeType" -> NodeType.map { x => x: js.Any }),
+        ("IamRoles" -> IamRoles.map { x => x: js.Any }),
         ("ElasticIp" -> ElasticIp.map { x => x: js.Any }),
         ("AutomatedSnapshotRetentionPeriod" -> AutomatedSnapshotRetentionPeriod.map { x => x: js.Any }),
         ("AvailabilityZone" -> AvailabilityZone.map { x => x: js.Any }),
         ("ClusterSecurityGroups" -> ClusterSecurityGroups.map { x => x: js.Any }),
+        ("EnhancedVpcRouting" -> EnhancedVpcRouting.map { x => x: js.Any }),
         ("VpcSecurityGroupIds" -> VpcSecurityGroupIds.map { x => x: js.Any }),
         ("Port" -> Port.map { x => x: js.Any }),
+        ("AdditionalInfo" -> AdditionalInfo.map { x => x: js.Any }),
         ("HsmConfigurationIdentifier" -> HsmConfigurationIdentifier.map { x => x: js.Any }),
         ("ClusterSubnetGroupName" -> ClusterSubnetGroupName.map { x => x: js.Any }),
         ("PubliclyAccessible" -> PubliclyAccessible.map { x => x: js.Any }),
@@ -3961,7 +4317,65 @@ package redshift {
   }
 
   /**
-   * <p> ??? </p>
+   * <p/>
+   */
+  @js.native
+  trait RestoreTableFromClusterSnapshotMessage extends js.Object {
+    var ClusterIdentifier: String
+    var TargetDatabaseName: String
+    var SourceDatabaseName: String
+    var TargetSchemaName: String
+    var SourceSchemaName: String
+    var SourceTableName: String
+    var NewTableName: String
+    var SnapshotIdentifier: String
+  }
+
+  object RestoreTableFromClusterSnapshotMessage {
+    def apply(
+      ClusterIdentifier: js.UndefOr[String] = js.undefined,
+      TargetDatabaseName: js.UndefOr[String] = js.undefined,
+      SourceDatabaseName: js.UndefOr[String] = js.undefined,
+      TargetSchemaName: js.UndefOr[String] = js.undefined,
+      SourceSchemaName: js.UndefOr[String] = js.undefined,
+      SourceTableName: js.UndefOr[String] = js.undefined,
+      NewTableName: js.UndefOr[String] = js.undefined,
+      SnapshotIdentifier: js.UndefOr[String] = js.undefined
+    ): RestoreTableFromClusterSnapshotMessage = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("ClusterIdentifier" -> ClusterIdentifier.map { x => x: js.Any }),
+        ("TargetDatabaseName" -> TargetDatabaseName.map { x => x: js.Any }),
+        ("SourceDatabaseName" -> SourceDatabaseName.map { x => x: js.Any }),
+        ("TargetSchemaName" -> TargetSchemaName.map { x => x: js.Any }),
+        ("SourceSchemaName" -> SourceSchemaName.map { x => x: js.Any }),
+        ("SourceTableName" -> SourceTableName.map { x => x: js.Any }),
+        ("NewTableName" -> NewTableName.map { x => x: js.Any }),
+        ("SnapshotIdentifier" -> SnapshotIdentifier.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RestoreTableFromClusterSnapshotMessage]
+    }
+  }
+
+  @js.native
+  trait RestoreTableFromClusterSnapshotResult extends js.Object {
+    var TableRestoreStatus: TableRestoreStatus
+  }
+
+  object RestoreTableFromClusterSnapshotResult {
+    def apply(
+      TableRestoreStatus: js.UndefOr[TableRestoreStatus] = js.undefined
+    ): RestoreTableFromClusterSnapshotResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("TableRestoreStatus" -> TableRestoreStatus.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RestoreTableFromClusterSnapshotResult]
+    }
+  }
+
+  /**
+   * <p/>
    */
   @js.native
   trait RevokeClusterSecurityGroupIngressMessage extends js.Object {
@@ -4007,7 +4421,7 @@ package redshift {
   }
 
   /**
-   * <p> </p>
+   * <p/>
    */
   @js.native
   trait RevokeSnapshotAccessMessage extends js.Object {
@@ -4050,7 +4464,7 @@ package redshift {
   }
 
   /**
-   * <p> </p>
+   * <p/>
    */
   @js.native
   trait RotateEncryptionKeyMessage extends js.Object {
@@ -4128,10 +4542,12 @@ package redshift {
     var NodeType: String
     var SnapshotCreateTime: TStamp
     var SnapshotType: String
+    var RestorableNodeTypes: RestorableNodeTypeList
     var MasterUsername: String
     var AvailabilityZone: String
     var BackupProgressInMegaBytes: Double
     var Encrypted: Boolean
+    var EnhancedVpcRouting: Boolean
     var AccountsWithRestoreAccess: AccountsWithRestoreAccessList
     var Port: Integer
     var NumberOfNodes: Integer
@@ -4159,10 +4575,12 @@ package redshift {
       NodeType: js.UndefOr[String] = js.undefined,
       SnapshotCreateTime: js.UndefOr[TStamp] = js.undefined,
       SnapshotType: js.UndefOr[String] = js.undefined,
+      RestorableNodeTypes: js.UndefOr[RestorableNodeTypeList] = js.undefined,
       MasterUsername: js.UndefOr[String] = js.undefined,
       AvailabilityZone: js.UndefOr[String] = js.undefined,
       BackupProgressInMegaBytes: js.UndefOr[Double] = js.undefined,
       Encrypted: js.UndefOr[Boolean] = js.undefined,
+      EnhancedVpcRouting: js.UndefOr[Boolean] = js.undefined,
       AccountsWithRestoreAccess: js.UndefOr[AccountsWithRestoreAccessList] = js.undefined,
       Port: js.UndefOr[Integer] = js.undefined,
       NumberOfNodes: js.UndefOr[Integer] = js.undefined,
@@ -4188,10 +4606,12 @@ package redshift {
         ("NodeType" -> NodeType.map { x => x: js.Any }),
         ("SnapshotCreateTime" -> SnapshotCreateTime.map { x => x: js.Any }),
         ("SnapshotType" -> SnapshotType.map { x => x: js.Any }),
+        ("RestorableNodeTypes" -> RestorableNodeTypes.map { x => x: js.Any }),
         ("MasterUsername" -> MasterUsername.map { x => x: js.Any }),
         ("AvailabilityZone" -> AvailabilityZone.map { x => x: js.Any }),
         ("BackupProgressInMegaBytes" -> BackupProgressInMegaBytes.map { x => x: js.Any }),
         ("Encrypted" -> Encrypted.map { x => x: js.Any }),
+        ("EnhancedVpcRouting" -> EnhancedVpcRouting.map { x => x: js.Any }),
         ("AccountsWithRestoreAccess" -> AccountsWithRestoreAccess.map { x => x: js.Any }),
         ("Port" -> Port.map { x => x: js.Any }),
         ("NumberOfNodes" -> NumberOfNodes.map { x => x: js.Any }),
@@ -4209,7 +4629,7 @@ package redshift {
   }
 
   /**
-   * <p> The cluster already has cross-region snapshot copy disabled. </p>
+   * <p>The cluster already has cross-region snapshot copy disabled.</p>
    */
   @js.native
   trait SnapshotCopyAlreadyDisabledFaultException extends js.Object {
@@ -4217,7 +4637,7 @@ package redshift {
   }
 
   /**
-   * <p> The cluster already has cross-region snapshot copy enabled. </p>
+   * <p>The cluster already has cross-region snapshot copy enabled.</p>
    */
   @js.native
   trait SnapshotCopyAlreadyEnabledFaultException extends js.Object {
@@ -4225,7 +4645,7 @@ package redshift {
   }
 
   /**
-   * <p> Cross-region snapshot copy was temporarily disabled. Try your request again. </p>
+   * <p>Cross-region snapshot copy was temporarily disabled. Try your request again.</p>
    */
   @js.native
   trait SnapshotCopyDisabledFaultException extends js.Object {
@@ -4233,7 +4653,80 @@ package redshift {
   }
 
   /**
-   * <p> Contains the output from the <a>DescribeClusterSnapshots</a> action. </p>
+   * <p>The snapshot copy grant that grants Amazon Redshift permission to encrypt copied snapshots with the specified customer master key (CMK) from AWS KMS in the destination region.</p> <p> For more information about managing snapshot copy grants, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-db-encryption.html">Amazon Redshift Database Encryption</a> in the <i>Amazon Redshift Cluster Management Guide</i>. </p>
+   */
+  @js.native
+  trait SnapshotCopyGrant extends js.Object {
+    var SnapshotCopyGrantName: String
+    var KmsKeyId: String
+    var Tags: TagList
+  }
+
+  object SnapshotCopyGrant {
+    def apply(
+      SnapshotCopyGrantName: js.UndefOr[String] = js.undefined,
+      KmsKeyId: js.UndefOr[String] = js.undefined,
+      Tags: js.UndefOr[TagList] = js.undefined
+    ): SnapshotCopyGrant = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("SnapshotCopyGrantName" -> SnapshotCopyGrantName.map { x => x: js.Any }),
+        ("KmsKeyId" -> KmsKeyId.map { x => x: js.Any }),
+        ("Tags" -> Tags.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SnapshotCopyGrant]
+    }
+  }
+
+  /**
+   * <p>The snapshot copy grant can't be created because a grant with the same name already exists.</p>
+   */
+  @js.native
+  trait SnapshotCopyGrantAlreadyExistsFaultException extends js.Object {
+
+  }
+
+  /**
+   * <p/>
+   */
+  @js.native
+  trait SnapshotCopyGrantMessage extends js.Object {
+    var Marker: String
+    var SnapshotCopyGrants: SnapshotCopyGrantList
+  }
+
+  object SnapshotCopyGrantMessage {
+    def apply(
+      Marker: js.UndefOr[String] = js.undefined,
+      SnapshotCopyGrants: js.UndefOr[SnapshotCopyGrantList] = js.undefined
+    ): SnapshotCopyGrantMessage = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("Marker" -> Marker.map { x => x: js.Any }),
+        ("SnapshotCopyGrants" -> SnapshotCopyGrants.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SnapshotCopyGrantMessage]
+    }
+  }
+
+  /**
+   * <p>The specified snapshot copy grant can't be found. Make sure that the name is typed correctly and that the grant exists in the destination region.</p>
+   */
+  @js.native
+  trait SnapshotCopyGrantNotFoundFaultException extends js.Object {
+
+  }
+
+  /**
+   * <p>The AWS account has exceeded the maximum number of snapshot copy grants in this region.</p>
+   */
+  @js.native
+  trait SnapshotCopyGrantQuotaExceededFaultException extends js.Object {
+
+  }
+
+  /**
+   * <p>Contains the output from the <a>DescribeClusterSnapshots</a> action. </p>
    */
   @js.native
   trait SnapshotMessage extends js.Object {
@@ -4274,7 +4767,7 @@ package redshift {
   }
 
   /**
-   * <p> Describes a subnet. </p>
+   * <p>Describes a subnet.</p>
    */
   @js.native
   trait Subnet extends js.Object {
@@ -4300,7 +4793,7 @@ package redshift {
   }
 
   /**
-   * <p> A specified subnet is already in use by another cluster. </p>
+   * <p>A specified subnet is already in use by another cluster.</p>
    */
   @js.native
   trait SubnetAlreadyInUseException extends js.Object {
@@ -4348,6 +4841,107 @@ package redshift {
   }
 
   /**
+   * <p>The specified <code>TableRestoreRequestId</code> value was not found.</p>
+   */
+  @js.native
+  trait TableRestoreNotFoundFaultException extends js.Object {
+
+  }
+
+  /**
+   * <p>Describes the status of a <a>RestoreTableFromClusterSnapshot</a> operation.</p>
+   */
+  @js.native
+  trait TableRestoreStatus extends js.Object {
+    var RequestTime: TStamp
+    var ClusterIdentifier: String
+    var TargetDatabaseName: String
+    var SourceDatabaseName: String
+    var TargetSchemaName: String
+    var TableRestoreRequestId: String
+    var ProgressInMegaBytes: LongOptional
+    var SourceSchemaName: String
+    var SourceTableName: String
+    var Message: String
+    var TotalDataInMegaBytes: LongOptional
+    var NewTableName: String
+    var Status: TableRestoreStatusType
+    var SnapshotIdentifier: String
+  }
+
+  object TableRestoreStatus {
+    def apply(
+      RequestTime: js.UndefOr[TStamp] = js.undefined,
+      ClusterIdentifier: js.UndefOr[String] = js.undefined,
+      TargetDatabaseName: js.UndefOr[String] = js.undefined,
+      SourceDatabaseName: js.UndefOr[String] = js.undefined,
+      TargetSchemaName: js.UndefOr[String] = js.undefined,
+      TableRestoreRequestId: js.UndefOr[String] = js.undefined,
+      ProgressInMegaBytes: js.UndefOr[LongOptional] = js.undefined,
+      SourceSchemaName: js.UndefOr[String] = js.undefined,
+      SourceTableName: js.UndefOr[String] = js.undefined,
+      Message: js.UndefOr[String] = js.undefined,
+      TotalDataInMegaBytes: js.UndefOr[LongOptional] = js.undefined,
+      NewTableName: js.UndefOr[String] = js.undefined,
+      Status: js.UndefOr[TableRestoreStatusType] = js.undefined,
+      SnapshotIdentifier: js.UndefOr[String] = js.undefined
+    ): TableRestoreStatus = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("RequestTime" -> RequestTime.map { x => x: js.Any }),
+        ("ClusterIdentifier" -> ClusterIdentifier.map { x => x: js.Any }),
+        ("TargetDatabaseName" -> TargetDatabaseName.map { x => x: js.Any }),
+        ("SourceDatabaseName" -> SourceDatabaseName.map { x => x: js.Any }),
+        ("TargetSchemaName" -> TargetSchemaName.map { x => x: js.Any }),
+        ("TableRestoreRequestId" -> TableRestoreRequestId.map { x => x: js.Any }),
+        ("ProgressInMegaBytes" -> ProgressInMegaBytes.map { x => x: js.Any }),
+        ("SourceSchemaName" -> SourceSchemaName.map { x => x: js.Any }),
+        ("SourceTableName" -> SourceTableName.map { x => x: js.Any }),
+        ("Message" -> Message.map { x => x: js.Any }),
+        ("TotalDataInMegaBytes" -> TotalDataInMegaBytes.map { x => x: js.Any }),
+        ("NewTableName" -> NewTableName.map { x => x: js.Any }),
+        ("Status" -> Status.map { x => x: js.Any }),
+        ("SnapshotIdentifier" -> SnapshotIdentifier.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TableRestoreStatus]
+    }
+  }
+
+  /**
+   * <p/>
+   */
+  @js.native
+  trait TableRestoreStatusMessage extends js.Object {
+    var TableRestoreStatusDetails: TableRestoreStatusList
+    var Marker: String
+  }
+
+  object TableRestoreStatusMessage {
+    def apply(
+      TableRestoreStatusDetails: js.UndefOr[TableRestoreStatusList] = js.undefined,
+      Marker: js.UndefOr[String] = js.undefined
+    ): TableRestoreStatusMessage = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("TableRestoreStatusDetails" -> TableRestoreStatusDetails.map { x => x: js.Any }),
+        ("Marker" -> Marker.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TableRestoreStatusMessage]
+    }
+  }
+
+
+  object TableRestoreStatusTypeEnum {
+    val PENDING = "PENDING"
+    val `IN_PROGRESS` = "IN_PROGRESS"
+    val SUCCEEDED = "SUCCEEDED"
+    val FAILED = "FAILED"
+    val CANCELED = "CANCELED"
+
+    val values = IndexedSeq(PENDING, `IN_PROGRESS`, SUCCEEDED, FAILED, CANCELED)
+  }
+
+  /**
    * <p>A tag consisting of a name/value pair for a resource.</p>
    */
   @js.native
@@ -4371,7 +4965,7 @@ package redshift {
   }
 
   /**
-   * <p> The request exceeds the limit of 10 tags for the resource. </p>
+   * <p>The request exceeds the limit of 10 tags for the resource.</p>
    */
   @js.native
   trait TagLimitExceededFaultException extends js.Object {
@@ -4379,7 +4973,7 @@ package redshift {
   }
 
   /**
-   * <p>A tag and its associated resource. </p>
+   * <p>A tag and its associated resource.</p>
    */
   @js.native
   trait TaggedResource extends js.Object {
@@ -4405,7 +4999,7 @@ package redshift {
   }
 
   /**
-   * <p> Contains the output from the <code>DescribeTags</code> action. </p>
+   * <p/>
    */
   @js.native
   trait TaggedResourceListMessage extends js.Object {
@@ -4428,7 +5022,7 @@ package redshift {
   }
 
   /**
-   * <p> Your account is not authorized to perform the requested operation. </p>
+   * <p>Your account is not authorized to perform the requested operation.</p>
    */
   @js.native
   trait UnauthorizedOperationException extends js.Object {
@@ -4436,7 +5030,7 @@ package redshift {
   }
 
   /**
-   * <p> The specified region is incorrect or does not exist. </p>
+   * <p>The specified region is incorrect or does not exist.</p>
    */
   @js.native
   trait UnknownSnapshotCopyRegionFaultException extends js.Object {
@@ -4444,7 +5038,15 @@ package redshift {
   }
 
   /**
-   * <p> A request option was specified that is not supported. </p>
+   * <p>The requested operation isn't supported.</p>
+   */
+  @js.native
+  trait UnsupportedOperationFaultException extends js.Object {
+
+  }
+
+  /**
+   * <p>A request option was specified that is not supported.</p>
    */
   @js.native
   trait UnsupportedOptionFaultException extends js.Object {

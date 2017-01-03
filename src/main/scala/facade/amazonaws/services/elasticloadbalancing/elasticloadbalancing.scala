@@ -9,6 +9,8 @@ package object elasticloadbalancing {
   type AccessLogPrefix = String
   type AccessPointName = String
   type AccessPointPort = Integer
+  type AdditionalAttributeKey = String
+  type AdditionalAttributeValue = String
   type AdditionalAttributes = js.Array[AdditionalAttribute]
   type AppCookieStickinessPolicies = js.Array[AppCookieStickinessPolicy]
   type AttributeName = String
@@ -65,7 +67,6 @@ package object elasticloadbalancing {
   type SecurityGroupOwnerAlias = String
   type SecurityGroups = js.Array[SecurityGroupId]
   type State = String
-  type StringVal = String
   type SubnetId = String
   type Subnets = js.Array[SubnetId]
   type TagDescriptions = js.Array[TagDescription]
@@ -139,7 +140,7 @@ package elasticloadbalancing {
   }
 
   /**
-   * <p>The <code>AccessLog</code> data type.</p>
+   * <p>Information about the <code>AccessLog</code> attribute.</p>
    */
   @js.native
   trait AccessLog extends js.Object {
@@ -168,7 +169,7 @@ package elasticloadbalancing {
   }
 
   /**
-   * <p> The specified load balancer could not be found. </p>
+   * <p>The specified load balancer does not exist.</p>
    */
   @js.native
   trait AccessPointNotFoundExceptionException extends js.Object {
@@ -176,7 +177,7 @@ package elasticloadbalancing {
   }
 
   /**
-   * <p> The input for the <a>EnableAvailabilityZonesForLoadBalancer</a> action. </p>
+   * <p>Contains the parameters for EnableAvailabilityZonesForLoadBalancer.</p>
    */
   @js.native
   trait AddAvailabilityZonesInput extends js.Object {
@@ -199,7 +200,7 @@ package elasticloadbalancing {
   }
 
   /**
-   * <p> The output for the <a>EnableAvailabilityZonesForLoadBalancer</a> action. </p>
+   * <p>Contains the output of EnableAvailabilityZonesForLoadBalancer.</p>
    */
   @js.native
   trait AddAvailabilityZonesOutput extends js.Object {
@@ -219,7 +220,7 @@ package elasticloadbalancing {
   }
 
   /**
-   * The input for the <a>AddTags</a> action
+   * <p>Contains the parameters for AddTags.</p>
    */
   @js.native
   trait AddTagsInput extends js.Object {
@@ -242,7 +243,7 @@ package elasticloadbalancing {
   }
 
   /**
-   * The output for the <a>AddTags</a> action.
+   * <p>Contains the output of AddTags.</p>
    */
   @js.native
   trait AddTagsOutput extends js.Object {
@@ -262,18 +263,18 @@ package elasticloadbalancing {
   }
 
   /**
-   * <p>The <code>AdditionalAttribute</code> data type.</p>
+   * <p>This data type is reserved.</p>
    */
   @js.native
   trait AdditionalAttribute extends js.Object {
-    var Key: StringVal
-    var Value: StringVal
+    var Key: AdditionalAttributeKey
+    var Value: AdditionalAttributeValue
   }
 
   object AdditionalAttribute {
     def apply(
-      Key: js.UndefOr[StringVal] = js.undefined,
-      Value: js.UndefOr[StringVal] = js.undefined
+      Key: js.UndefOr[AdditionalAttributeKey] = js.undefined,
+      Value: js.UndefOr[AdditionalAttributeValue] = js.undefined
     ): AdditionalAttribute = {
       val _fields = IndexedSeq[(String, js.Any)](
         ("Key" -> Key.map { x => x: js.Any }),
@@ -285,7 +286,7 @@ package elasticloadbalancing {
   }
 
   /**
-   * <p>The AppCookieStickinessPolicy data type. </p>
+   * <p>Information about a policy for application-controlled session stickiness.</p>
    */
   @js.native
   trait AppCookieStickinessPolicy extends js.Object {
@@ -308,7 +309,7 @@ package elasticloadbalancing {
   }
 
   /**
-   * <p> The input for the <a>ApplySecurityGroupsToLoadBalancer</a> action. </p>
+   * <p>Contains the parameters for ApplySecurityGroupsToLoadBalancer.</p>
    */
   @js.native
   trait ApplySecurityGroupsToLoadBalancerInput extends js.Object {
@@ -331,7 +332,7 @@ package elasticloadbalancing {
   }
 
   /**
-   * <p> The out for the <a>ApplySecurityGroupsToLoadBalancer</a> action. </p>
+   * <p>Contains the output of ApplySecurityGroupsToLoadBalancer.</p>
    */
   @js.native
   trait ApplySecurityGroupsToLoadBalancerOutput extends js.Object {
@@ -351,7 +352,7 @@ package elasticloadbalancing {
   }
 
   /**
-   * <p> The input for the <a>AttachLoadBalancerToSubnets</a> action. </p>
+   * <p>Contains the parameters for AttachLoaBalancerToSubnets.</p>
    */
   @js.native
   trait AttachLoadBalancerToSubnetsInput extends js.Object {
@@ -374,7 +375,7 @@ package elasticloadbalancing {
   }
 
   /**
-   * <p> The output for the <a>AttachLoadBalancerToSubnets</a> action. </p>
+   * <p>Contains the output of AttachLoadBalancerToSubnets.</p>
    */
   @js.native
   trait AttachLoadBalancerToSubnetsOutput extends js.Object {
@@ -394,7 +395,7 @@ package elasticloadbalancing {
   }
 
   /**
-   * <p> This data type is used as a response element in the <a>DescribeLoadBalancers</a> action to describe the configuration of the back-end server. </p>
+   * <p>Information about the configuration of an EC2 instance.</p>
    */
   @js.native
   trait BackendServerDescription extends js.Object {
@@ -417,7 +418,7 @@ package elasticloadbalancing {
   }
 
   /**
-   * <p> The specified SSL ID does not refer to a valid SSL certificate in the AWS Identity and Access Management Service. </p>
+   * <p>The specified ARN does not refer to a valid SSL certificate in AWS Identity and Access Management (IAM) or AWS Certificate Manager (ACM). Note that if you recently uploaded the certificate to IAM, this error might indicate that the certificate is not fully available yet.</p>
    */
   @js.native
   trait CertificateNotFoundExceptionException extends js.Object {
@@ -425,7 +426,7 @@ package elasticloadbalancing {
   }
 
   /**
-   * <p> Input for the <a>ConfigureHealthCheck</a> action. </p>
+   * <p>Contains the parameters for ConfigureHealthCheck.</p>
    */
   @js.native
   trait ConfigureHealthCheckInput extends js.Object {
@@ -448,7 +449,7 @@ package elasticloadbalancing {
   }
 
   /**
-   * <p> The output for the <a>ConfigureHealthCheck</a> action. </p>
+   * <p>Contains the output of ConfigureHealthCheck.</p>
    */
   @js.native
   trait ConfigureHealthCheckOutput extends js.Object {
@@ -468,7 +469,7 @@ package elasticloadbalancing {
   }
 
   /**
-   * <p>The <code>ConnectionDraining</code> data type.</p>
+   * <p>Information about the <code>ConnectionDraining</code> attribute.</p>
    */
   @js.native
   trait ConnectionDraining extends js.Object {
@@ -491,7 +492,7 @@ package elasticloadbalancing {
   }
 
   /**
-   * <p>The <code>ConnectionSettings</code> data type.</p>
+   * <p>Information about the <code>ConnectionSettings</code> attribute.</p>
    */
   @js.native
   trait ConnectionSettings extends js.Object {
@@ -511,7 +512,7 @@ package elasticloadbalancing {
   }
 
   /**
-   * <p> The input for the <a>CreateLoadBalancer</a> action. </p>
+   * <p>Contains the parameters for CreateLoadBalancer.</p>
    */
   @js.native
   trait CreateAccessPointInput extends js.Object {
@@ -549,7 +550,7 @@ package elasticloadbalancing {
   }
 
   /**
-   * <p> The output for the <a>CreateLoadBalancer</a> action. </p>
+   * <p>Contains the output for CreateLoadBalancer.</p>
    */
   @js.native
   trait CreateAccessPointOutput extends js.Object {
@@ -569,7 +570,7 @@ package elasticloadbalancing {
   }
 
   /**
-   * <p> The input for the <a>CreateAppCookieStickinessPolicy</a> action. </p>
+   * <p>Contains the parameters for CreateAppCookieStickinessPolicy.</p>
    */
   @js.native
   trait CreateAppCookieStickinessPolicyInput extends js.Object {
@@ -595,7 +596,7 @@ package elasticloadbalancing {
   }
 
   /**
-   * <p> The output for the <a>CreateAppCookieStickinessPolicy</a> action. </p>
+   * <p>Contains the output for CreateAppCookieStickinessPolicy.</p>
    */
   @js.native
   trait CreateAppCookieStickinessPolicyOutput extends js.Object {
@@ -615,7 +616,7 @@ package elasticloadbalancing {
   }
 
   /**
-   * <p> The input for the <a>CreateLBCookieStickinessPolicy</a> action. </p>
+   * <p>Contains the parameters for CreateLBCookieStickinessPolicy.</p>
    */
   @js.native
   trait CreateLBCookieStickinessPolicyInput extends js.Object {
@@ -641,7 +642,7 @@ package elasticloadbalancing {
   }
 
   /**
-   * <p> The output for the <a>CreateLBCookieStickinessPolicy</a> action. </p>
+   * <p>Contains the output for CreateLBCookieStickinessPolicy.</p>
    */
   @js.native
   trait CreateLBCookieStickinessPolicyOutput extends js.Object {
@@ -661,7 +662,7 @@ package elasticloadbalancing {
   }
 
   /**
-   * <p> The input for the <a>CreateLoadBalancerListeners</a> action. </p>
+   * <p>Contains the parameters for CreateLoadBalancerListeners.</p>
    */
   @js.native
   trait CreateLoadBalancerListenerInput extends js.Object {
@@ -684,7 +685,7 @@ package elasticloadbalancing {
   }
 
   /**
-   * <p> The output for the <a>CreateLoadBalancerListeners</a> action. </p>
+   * <p>Contains the parameters for CreateLoadBalancerListener.</p>
    */
   @js.native
   trait CreateLoadBalancerListenerOutput extends js.Object {
@@ -703,6 +704,9 @@ package elasticloadbalancing {
     }
   }
 
+  /**
+   * <p>Contains the parameters for CreateLoadBalancerPolicy.</p>
+   */
   @js.native
   trait CreateLoadBalancerPolicyInput extends js.Object {
     var LoadBalancerName: AccessPointName
@@ -730,7 +734,7 @@ package elasticloadbalancing {
   }
 
   /**
-   * <p>The output for the <a>CreateLoadBalancerPolicy</a> action. </p>
+   * <p>Contains the output of CreateLoadBalancerPolicy.</p>
    */
   @js.native
   trait CreateLoadBalancerPolicyOutput extends js.Object {
@@ -750,7 +754,7 @@ package elasticloadbalancing {
   }
 
   /**
-   * <p>The <code>CrossZoneLoadBalancing</code> data type.</p>
+   * <p>Information about the <code>CrossZoneLoadBalancing</code> attribute.</p>
    */
   @js.native
   trait CrossZoneLoadBalancing extends js.Object {
@@ -770,7 +774,7 @@ package elasticloadbalancing {
   }
 
   /**
-   * <p> The input for the <a>DeleteLoadBalancer</a> action. </p>
+   * <p>Contains the parameters for DeleteLoadBalancer.</p>
    */
   @js.native
   trait DeleteAccessPointInput extends js.Object {
@@ -790,7 +794,7 @@ package elasticloadbalancing {
   }
 
   /**
-   * <p> The output for the <a>DeleteLoadBalancer</a> action. </p>
+   * <p>Contains the output of DeleteLoadBalancer.</p>
    */
   @js.native
   trait DeleteAccessPointOutput extends js.Object {
@@ -810,7 +814,7 @@ package elasticloadbalancing {
   }
 
   /**
-   * <p> The input for the <a>DeleteLoadBalancerListeners</a> action. </p>
+   * <p>Contains the parameters for DeleteLoadBalancerListeners.</p>
    */
   @js.native
   trait DeleteLoadBalancerListenerInput extends js.Object {
@@ -833,7 +837,7 @@ package elasticloadbalancing {
   }
 
   /**
-   * <p> The output for the <a>DeleteLoadBalancerListeners</a> action. </p>
+   * <p>Contains the output of DeleteLoadBalancerListeners.</p>
    */
   @js.native
   trait DeleteLoadBalancerListenerOutput extends js.Object {
@@ -853,7 +857,7 @@ package elasticloadbalancing {
   }
 
   /**
-   * <p> The input for the <a>DeleteLoadBalancerPolicy</a> action. </p>
+   * <p>Contains the parameters for DeleteLoadBalancerPolicy.</p>
    */
   @js.native
   trait DeleteLoadBalancerPolicyInput extends js.Object {
@@ -876,7 +880,7 @@ package elasticloadbalancing {
   }
 
   /**
-   * <p> The output for the <a>DeleteLoadBalancerPolicy</a> action. </p>
+   * <p>Contains the output of DeleteLoadBalancerPolicy.</p>
    */
   @js.native
   trait DeleteLoadBalancerPolicyOutput extends js.Object {
@@ -895,8 +899,13 @@ package elasticloadbalancing {
     }
   }
 
+  @js.native
+  trait DependencyThrottleExceptionException extends js.Object {
+
+  }
+
   /**
-   * <p> The input for the <a>DeregisterInstancesFromLoadBalancer</a> action. </p>
+   * <p>Contains the parameters for DeregisterInstancesFromLoadBalancer.</p>
    */
   @js.native
   trait DeregisterEndPointsInput extends js.Object {
@@ -919,7 +928,7 @@ package elasticloadbalancing {
   }
 
   /**
-   * <p> The output for the <a>DeregisterInstancesFromLoadBalancer</a> action. </p>
+   * <p>Contains the output of DeregisterInstancesFromLoadBalancer.</p>
    */
   @js.native
   trait DeregisterEndPointsOutput extends js.Object {
@@ -939,7 +948,7 @@ package elasticloadbalancing {
   }
 
   /**
-   * <p> The input for the <a>DescribeLoadBalancers</a> action. </p>
+   * <p>Contains the parameters for DescribeLoadBalancers.</p>
    */
   @js.native
   trait DescribeAccessPointsInput extends js.Object {
@@ -965,7 +974,7 @@ package elasticloadbalancing {
   }
 
   /**
-   * <p> The output for the <a>DescribeLoadBalancers</a> action. </p>
+   * <p>Contains the parameters for DescribeLoadBalancers.</p>
    */
   @js.native
   trait DescribeAccessPointsOutput extends js.Object {
@@ -988,7 +997,7 @@ package elasticloadbalancing {
   }
 
   /**
-   * <p> The input for the <a>DescribeEndPointState</a> action. </p>
+   * <p>Contains the parameters for DescribeInstanceHealth.</p>
    */
   @js.native
   trait DescribeEndPointStateInput extends js.Object {
@@ -1011,7 +1020,7 @@ package elasticloadbalancing {
   }
 
   /**
-   * <p> The output for the <a>DescribeInstanceHealth</a> action. </p>
+   * <p>Contains the output for DescribeInstanceHealth.</p>
    */
   @js.native
   trait DescribeEndPointStateOutput extends js.Object {
@@ -1031,7 +1040,7 @@ package elasticloadbalancing {
   }
 
   /**
-   * <p>The input for the <a>DescribeLoadBalancerAttributes</a> action.</p>
+   * <p>Contains the parameters for DescribeLoadBalancerAttributes.</p>
    */
   @js.native
   trait DescribeLoadBalancerAttributesInput extends js.Object {
@@ -1051,7 +1060,7 @@ package elasticloadbalancing {
   }
 
   /**
-   * <p>The following element is returned in a structure named <code>DescribeLoadBalancerAttributesResult</code>.</p>
+   * <p>Contains the output of DescribeLoadBalancerAttributes.</p>
    */
   @js.native
   trait DescribeLoadBalancerAttributesOutput extends js.Object {
@@ -1070,6 +1079,9 @@ package elasticloadbalancing {
     }
   }
 
+  /**
+   * <p>Contains the parameters for DescribeLoadBalancerPolicies.</p>
+   */
   @js.native
   trait DescribeLoadBalancerPoliciesInput extends js.Object {
     var LoadBalancerName: AccessPointName
@@ -1091,7 +1103,7 @@ package elasticloadbalancing {
   }
 
   /**
-   * <p>The output for the <a>DescribeLoadBalancerPolicies</a> action. </p>
+   * <p>Contains the output of DescribeLoadBalancerPolicies.</p>
    */
   @js.native
   trait DescribeLoadBalancerPoliciesOutput extends js.Object {
@@ -1110,6 +1122,9 @@ package elasticloadbalancing {
     }
   }
 
+  /**
+   * <p>Contains the parameters for DescribeLoadBalancerPolicyTypes.</p>
+   */
   @js.native
   trait DescribeLoadBalancerPolicyTypesInput extends js.Object {
     var PolicyTypeNames: PolicyTypeNames
@@ -1128,7 +1143,7 @@ package elasticloadbalancing {
   }
 
   /**
-   * <p> The output for the <a>DescribeLoadBalancerPolicyTypes</a> action. </p>
+   * <p>Contains the output of DescribeLoadBalancerPolicyTypes.</p>
    */
   @js.native
   trait DescribeLoadBalancerPolicyTypesOutput extends js.Object {
@@ -1148,7 +1163,7 @@ package elasticloadbalancing {
   }
 
   /**
-   * <p> The input for the <a>DescribeTags</a> action. </p>
+   * <p>Contains the parameters for DescribeTags.</p>
    */
   @js.native
   trait DescribeTagsInput extends js.Object {
@@ -1168,7 +1183,7 @@ package elasticloadbalancing {
   }
 
   /**
-   * <p> The output for the <a>DescribeTags</a> action. </p>
+   * <p>Contains the output for DescribeTags.</p>
    */
   @js.native
   trait DescribeTagsOutput extends js.Object {
@@ -1188,7 +1203,7 @@ package elasticloadbalancing {
   }
 
   /**
-   * <p> The input for the <a>DetachLoadBalancerFromSubnets</a> action. </p>
+   * <p>Contains the parameters for DetachLoadBalancerFromSubnets.</p>
    */
   @js.native
   trait DetachLoadBalancerFromSubnetsInput extends js.Object {
@@ -1211,7 +1226,7 @@ package elasticloadbalancing {
   }
 
   /**
-   * <p> The output for the <a>DetachLoadBalancerFromSubnets</a> action. </p>
+   * <p>Contains the output of DetachLoadBalancerFromSubnets.</p>
    */
   @js.native
   trait DetachLoadBalancerFromSubnetsOutput extends js.Object {
@@ -1231,7 +1246,7 @@ package elasticloadbalancing {
   }
 
   /**
-   * <p> The load balancer name already exists for this account. Please choose another name. </p>
+   * <p>The specified load balancer name already exists for this account.</p>
    */
   @js.native
   trait DuplicateAccessPointNameExceptionException extends js.Object {
@@ -1239,7 +1254,7 @@ package elasticloadbalancing {
   }
 
   /**
-   * <p> A <code>Listener</code> already exists for the given <code>LoadBalancerName</code> and <code>LoadBalancerPort</code>, but with a different <code>InstancePort</code>, <code>Protocol</code>, or <code>SSLCertificateId</code>. </p>
+   * <p>A listener already exists for the specified load balancer name and port, but with a different instance port, protocol, or SSL certificate.</p>
    */
   @js.native
   trait DuplicateListenerExceptionException extends js.Object {
@@ -1247,7 +1262,7 @@ package elasticloadbalancing {
   }
 
   /**
-   * <p> Policy with the same name exists for this load balancer. Please choose another name. </p>
+   * <p>A policy with the specified name already exists for this load balancer.</p>
    */
   @js.native
   trait DuplicatePolicyNameExceptionException extends js.Object {
@@ -1255,7 +1270,7 @@ package elasticloadbalancing {
   }
 
   /**
-   * <p>The same tag key specified multiple times.</p>
+   * <p>A tag key was specified more than once.</p>
    */
   @js.native
   trait DuplicateTagKeysExceptionException extends js.Object {
@@ -1263,7 +1278,7 @@ package elasticloadbalancing {
   }
 
   /**
-   * <p> The HealthCheck data type. </p>
+   * <p>Information about a health check.</p>
    */
   @js.native
   trait HealthCheck extends js.Object {
@@ -1295,7 +1310,7 @@ package elasticloadbalancing {
   }
 
   /**
-   * <p> The Instance data type. </p>
+   * <p>The ID of an EC2 instance.</p>
    */
   @js.native
   trait Instance extends js.Object {
@@ -1315,7 +1330,7 @@ package elasticloadbalancing {
   }
 
   /**
-   * <p> The InstanceState data type. </p>
+   * <p>Information about the state of an EC2 instance.</p>
    */
   @js.native
   trait InstanceState extends js.Object {
@@ -1344,7 +1359,7 @@ package elasticloadbalancing {
   }
 
   /**
-   * <p> Requested configuration change is invalid. </p>
+   * <p>The requested configuration change is not valid.</p>
    */
   @js.native
   trait InvalidConfigurationRequestExceptionException extends js.Object {
@@ -1352,7 +1367,7 @@ package elasticloadbalancing {
   }
 
   /**
-   * <p> The specified EndPoint is not valid. </p>
+   * <p>The specified endpoint is not valid.</p>
    */
   @js.native
   trait InvalidEndPointExceptionException extends js.Object {
@@ -1360,7 +1375,7 @@ package elasticloadbalancing {
   }
 
   /**
-   * <p> Invalid value for scheme. Scheme can only be specified for load balancers in VPC. </p>
+   * <p>The specified value for the schema is not valid. You can only specify a scheme for load balancers in a VPC.</p>
    */
   @js.native
   trait InvalidSchemeExceptionException extends js.Object {
@@ -1368,7 +1383,7 @@ package elasticloadbalancing {
   }
 
   /**
-   * <p> One or more specified security groups do not exist. </p>
+   * <p>One or more of the specified security groups do not exist.</p>
    */
   @js.native
   trait InvalidSecurityGroupExceptionException extends js.Object {
@@ -1376,7 +1391,7 @@ package elasticloadbalancing {
   }
 
   /**
-   * <p> The VPC has no Internet gateway. </p>
+   * <p>The specified VPC has no associated Internet gateway.</p>
    */
   @js.native
   trait InvalidSubnetExceptionException extends js.Object {
@@ -1384,7 +1399,7 @@ package elasticloadbalancing {
   }
 
   /**
-   * <p>The LBCookieStickinessPolicy data type. </p>
+   * <p>Information about a policy for duration-based session stickiness.</p>
    */
   @js.native
   trait LBCookieStickinessPolicy extends js.Object {
@@ -1407,7 +1422,7 @@ package elasticloadbalancing {
   }
 
   /**
-   * <p> The Listener data type. </p> <p>For information about the protocols and the ports supported by Elastic Load Balancing, see <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/elb-listener-config.html">Listener Configurations for Elastic Load Balancing</a>.</p>
+   * <p>Information about a listener.</p> <p>For information about the protocols and the ports supported by Elastic Load Balancing, see <a href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-listener-config.html">Listeners for Your Classic Load Balancer</a> in the <i>Classic Load Balancers Guide</i>.</p>
    */
   @js.native
   trait Listener extends js.Object {
@@ -1439,7 +1454,7 @@ package elasticloadbalancing {
   }
 
   /**
-   * <p> The ListenerDescription data type. </p>
+   * <p>The policies enabled for a listener.</p>
    */
   @js.native
   trait ListenerDescription extends js.Object {
@@ -1462,7 +1477,7 @@ package elasticloadbalancing {
   }
 
   /**
-   * <p> Load balancer does not have a listener configured at the given port. </p>
+   * <p>The load balancer does not have a listener configured at the specified port.</p>
    */
   @js.native
   trait ListenerNotFoundExceptionException extends js.Object {
@@ -1470,7 +1485,7 @@ package elasticloadbalancing {
   }
 
   /**
-   * <p>The specified load balancer attribute could not be found.</p>
+   * <p>The specified load balancer attribute does not exist.</p>
    */
   @js.native
   trait LoadBalancerAttributeNotFoundExceptionException extends js.Object {
@@ -1478,7 +1493,7 @@ package elasticloadbalancing {
   }
 
   /**
-   * <p>The <code>LoadBalancerAttributes</code> data type.</p>
+   * <p>The attributes for a load balancer.</p>
    */
   @js.native
   trait LoadBalancerAttributes extends js.Object {
@@ -1510,7 +1525,7 @@ package elasticloadbalancing {
   }
 
   /**
-   * <p> Contains the result of a successful invocation of <a>DescribeLoadBalancers</a>. </p>
+   * <p>Information about a load balancer.</p>
    */
   @js.native
   trait LoadBalancerDescription extends js.Object {
@@ -1575,7 +1590,7 @@ package elasticloadbalancing {
   }
 
   /**
-   * <p>The input for the <a>ModifyLoadBalancerAttributes</a> action.</p>
+   * <p>Contains the parameters for ModifyLoadBalancerAttributes.</p>
    */
   @js.native
   trait ModifyLoadBalancerAttributesInput extends js.Object {
@@ -1598,7 +1613,7 @@ package elasticloadbalancing {
   }
 
   /**
-   * <p>The output for the <a>ModifyLoadBalancerAttributes</a> action.</p>
+   * <p>Contains the output of ModifyLoadBalancerAttributes.</p>
    */
   @js.native
   trait ModifyLoadBalancerAttributesOutput extends js.Object {
@@ -1621,7 +1636,7 @@ package elasticloadbalancing {
   }
 
   /**
-   * <p> The policies data type. </p>
+   * <p>The policies for a load balancer.</p>
    */
   @js.native
   trait Policies extends js.Object {
@@ -1647,7 +1662,7 @@ package elasticloadbalancing {
   }
 
   /**
-   * <p> The <a>PolicyAttribute</a> data type. This data type contains a key/value pair that defines properties of a specific policy. </p>
+   * <p>Information about a policy attribute.</p>
    */
   @js.native
   trait PolicyAttribute extends js.Object {
@@ -1670,7 +1685,7 @@ package elasticloadbalancing {
   }
 
   /**
-   * <p> The <code>PolicyAttributeDescription</code> data type. This data type is used to describe the attributes and values associated with a policy. </p>
+   * <p>Information about a policy attribute.</p>
    */
   @js.native
   trait PolicyAttributeDescription extends js.Object {
@@ -1693,7 +1708,7 @@ package elasticloadbalancing {
   }
 
   /**
-   * <p> The <code>PolicyAttributeTypeDescription</code> data type. This data type is used to describe values that are acceptable for the policy attribute. </p>
+   * <p>Information about a policy attribute type.</p>
    */
   @js.native
   trait PolicyAttributeTypeDescription extends js.Object {
@@ -1725,7 +1740,7 @@ package elasticloadbalancing {
   }
 
   /**
-   * <p> The <code>PolicyDescription</code> data type. </p>
+   * <p>Information about a policy.</p>
    */
   @js.native
   trait PolicyDescription extends js.Object {
@@ -1751,7 +1766,7 @@ package elasticloadbalancing {
   }
 
   /**
-   * <p> One or more specified policies were not found. </p>
+   * <p>One or more of the specified policies do not exist.</p>
    */
   @js.native
   trait PolicyNotFoundExceptionException extends js.Object {
@@ -1759,7 +1774,7 @@ package elasticloadbalancing {
   }
 
   /**
-   * <p> The <a>PolicyTypeDescription</a> data type. </p>
+   * <p>Information about a policy type.</p>
    */
   @js.native
   trait PolicyTypeDescription extends js.Object {
@@ -1785,7 +1800,7 @@ package elasticloadbalancing {
   }
 
   /**
-   * <p> One or more of the specified policy types do not exist. </p>
+   * <p>One or more of the specified policy types do not exist.</p>
    */
   @js.native
   trait PolicyTypeNotFoundExceptionException extends js.Object {
@@ -1793,7 +1808,7 @@ package elasticloadbalancing {
   }
 
   /**
-   * <p> The input for the <a>RegisterInstancesWithLoadBalancer</a> action. </p>
+   * <p>Contains the parameters for RegisterInstancesWithLoadBalancer.</p>
    */
   @js.native
   trait RegisterEndPointsInput extends js.Object {
@@ -1816,7 +1831,7 @@ package elasticloadbalancing {
   }
 
   /**
-   * <p> The output for the <a>RegisterInstancesWithLoadBalancer</a> action. </p>
+   * <p>Contains the output of RegisterInstancesWithLoadBalancer.</p>
    */
   @js.native
   trait RegisterEndPointsOutput extends js.Object {
@@ -1836,7 +1851,7 @@ package elasticloadbalancing {
   }
 
   /**
-   * <p> The input for the <a>DisableAvailabilityZonesForLoadBalancer</a> action. </p>
+   * <p>Contains the parameters for DisableAvailabilityZonesForLoadBalancer.</p>
    */
   @js.native
   trait RemoveAvailabilityZonesInput extends js.Object {
@@ -1859,7 +1874,7 @@ package elasticloadbalancing {
   }
 
   /**
-   * <p> The output for the <a>DisableAvailabilityZonesForLoadBalancer</a> action. </p>
+   * <p>Contains the output for DisableAvailabilityZonesForLoadBalancer.</p>
    */
   @js.native
   trait RemoveAvailabilityZonesOutput extends js.Object {
@@ -1879,7 +1894,7 @@ package elasticloadbalancing {
   }
 
   /**
-   * <p> The input for the <a>RemoveTags</a> action. </p>
+   * <p>Contains the parameters for RemoveTags.</p>
    */
   @js.native
   trait RemoveTagsInput extends js.Object {
@@ -1902,7 +1917,7 @@ package elasticloadbalancing {
   }
 
   /**
-   * <p> The output for the <a>RemoveTags</a> action. </p>
+   * <p>Contains the output of RemoveTags.</p>
    */
   @js.native
   trait RemoveTagsOutput extends js.Object {
@@ -1922,7 +1937,7 @@ package elasticloadbalancing {
   }
 
   /**
-   * <p> The input for the <a>SetLoadBalancerListenerSSLCertificate</a> action. </p>
+   * <p>Contains the parameters for SetLoadBalancerListenerSSLCertificate.</p>
    */
   @js.native
   trait SetLoadBalancerListenerSSLCertificateInput extends js.Object {
@@ -1948,7 +1963,7 @@ package elasticloadbalancing {
   }
 
   /**
-   * <p> The output for the <a>SetLoadBalancerListenerSSLCertificate</a> action. </p>
+   * <p>Contains the output of SetLoadBalancerListenerSSLCertificate.</p>
    */
   @js.native
   trait SetLoadBalancerListenerSSLCertificateOutput extends js.Object {
@@ -1968,7 +1983,7 @@ package elasticloadbalancing {
   }
 
   /**
-   * <p>The input for the <a>SetLoadBalancerPoliciesForBackendServer</a> action.</p>
+   * <p>Contains the parameters for SetLoadBalancerPoliciesForBackendServer.</p>
    */
   @js.native
   trait SetLoadBalancerPoliciesForBackendServerInput extends js.Object {
@@ -1994,7 +2009,7 @@ package elasticloadbalancing {
   }
 
   /**
-   * <p> The output for the <a>SetLoadBalancerPoliciesForBackendServer</a> action. </p>
+   * <p>Contains the output of SetLoadBalancerPoliciesForBackendServer.</p>
    */
   @js.native
   trait SetLoadBalancerPoliciesForBackendServerOutput extends js.Object {
@@ -2014,7 +2029,7 @@ package elasticloadbalancing {
   }
 
   /**
-   * <p> The input for the <a>SetLoadBalancerPoliciesOfListener</a> action. </p>
+   * <p>Contains the parameters for SetLoadBalancePoliciesOfListener.</p>
    */
   @js.native
   trait SetLoadBalancerPoliciesOfListenerInput extends js.Object {
@@ -2040,7 +2055,7 @@ package elasticloadbalancing {
   }
 
   /**
-   * <p> The output for the <a>SetLoadBalancerPoliciesOfListener</a> action. </p>
+   * <p>Contains the output of SetLoadBalancePoliciesOfListener.</p>
    */
   @js.native
   trait SetLoadBalancerPoliciesOfListenerOutput extends js.Object {
@@ -2060,7 +2075,7 @@ package elasticloadbalancing {
   }
 
   /**
-   * <p> This data type is used as a response element in the <a>DescribeLoadBalancers</a> action. For information about Elastic Load Balancing security groups, go to <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/elb-security-features.html#using-elb-security-groups">Using Security Groups With Elastic Load Balancing</a> in the <i>Elastic Load Balancing Developer Guide</i>. </p>
+   * <p>Information about a source security group.</p>
    */
   @js.native
   trait SourceSecurityGroup extends js.Object {
@@ -2083,7 +2098,7 @@ package elasticloadbalancing {
   }
 
   /**
-   * <p> One or more subnets were not found. </p>
+   * <p>One or more of the specified subnets do not exist.</p>
    */
   @js.native
   trait SubnetNotFoundExceptionException extends js.Object {
@@ -2091,7 +2106,7 @@ package elasticloadbalancing {
   }
 
   /**
-   * <p>Metadata assigned to a load balancer consisting of key-value pair.</p> <p>For more information, see <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/TerminologyandKeyConcepts.html#tagging-elb">Tagging</a> in the <i>Elastic Load Balancing Developer Guide</i>.</p>
+   * <p>Information about a tag.</p>
    */
   @js.native
   trait Tag extends js.Object {
@@ -2114,7 +2129,7 @@ package elasticloadbalancing {
   }
 
   /**
-   * <p>The descriptions of all the tags associated with load balancer.</p>
+   * <p>The tags associated with a load balancer.</p>
    */
   @js.native
   trait TagDescription extends js.Object {
@@ -2137,7 +2152,7 @@ package elasticloadbalancing {
   }
 
   /**
-   * <p>The key of a tag to be removed.</p>
+   * <p>The key of a tag.</p>
    */
   @js.native
   trait TagKeyOnly extends js.Object {
@@ -2157,7 +2172,7 @@ package elasticloadbalancing {
   }
 
   /**
-   * <p> The quota for the number of load balancers has already been reached. </p>
+   * <p>The quota for the number of load balancers has been reached.</p>
    */
   @js.native
   trait TooManyAccessPointsExceptionException extends js.Object {
@@ -2165,7 +2180,7 @@ package elasticloadbalancing {
   }
 
   /**
-   * <p> Quota for number of policies for this load balancer has already been reached. </p>
+   * <p>The quota for the number of policies for this load balancer has been reached.</p>
    */
   @js.native
   trait TooManyPoliciesExceptionException extends js.Object {
@@ -2177,6 +2192,11 @@ package elasticloadbalancing {
    */
   @js.native
   trait TooManyTagsExceptionException extends js.Object {
+
+  }
+
+  @js.native
+  trait UnsupportedProtocolExceptionException extends js.Object {
 
   }
 }

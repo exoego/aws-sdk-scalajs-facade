@@ -9,15 +9,18 @@ package object `cognito-sync` {
   type AssumeRoleArn = String
   type BulkPublishStatus = String
   type ClientContext = String
+  type CognitoEventType = String
   type DatasetList = js.Array[Dataset]
   type DatasetName = String
   type Date = js.Date
   type DeviceId = String
+  type Events = js.Dictionary[LambdaFunctionArn]
   type ExceptionMessage = String
   type IdentityId = String
   type IdentityPoolId = String
   type IdentityPoolUsageList = js.Array[IdentityPoolUsage]
   type IntegerString = Integer
+  type LambdaFunctionArn = String
   type MergedDatasetNameList = js.Array[String]
   type Operation = String
   type Platform = String
@@ -46,6 +49,8 @@ package `cognito-sync` {
     def describeIdentityUsage(params: DescribeIdentityUsageRequest): Request[DescribeIdentityUsageResponse] = js.native
     def getBulkPublishDetails(params: GetBulkPublishDetailsRequest, callback: Callback[GetBulkPublishDetailsResponse]): Unit = js.native
     def getBulkPublishDetails(params: GetBulkPublishDetailsRequest): Request[GetBulkPublishDetailsResponse] = js.native
+    def getCognitoEvents(params: GetCognitoEventsRequest, callback: Callback[GetCognitoEventsResponse]): Unit = js.native
+    def getCognitoEvents(params: GetCognitoEventsRequest): Request[GetCognitoEventsResponse] = js.native
     def getIdentityPoolConfiguration(params: GetIdentityPoolConfigurationRequest, callback: Callback[GetIdentityPoolConfigurationResponse]): Unit = js.native
     def getIdentityPoolConfiguration(params: GetIdentityPoolConfigurationRequest): Request[GetIdentityPoolConfigurationResponse] = js.native
     def listDatasets(params: ListDatasetsRequest, callback: Callback[ListDatasetsResponse]): Unit = js.native
@@ -56,6 +61,8 @@ package `cognito-sync` {
     def listRecords(params: ListRecordsRequest): Request[ListRecordsResponse] = js.native
     def registerDevice(params: RegisterDeviceRequest, callback: Callback[RegisterDeviceResponse]): Unit = js.native
     def registerDevice(params: RegisterDeviceRequest): Request[RegisterDeviceResponse] = js.native
+    def setCognitoEvents(params: SetCognitoEventsRequest, callback: Callback[js.Object]): Unit = js.native
+    def setCognitoEvents(params: SetCognitoEventsRequest): Request[js.Object] = js.native
     def setIdentityPoolConfiguration(params: SetIdentityPoolConfigurationRequest, callback: Callback[SetIdentityPoolConfigurationResponse]): Unit = js.native
     def setIdentityPoolConfiguration(params: SetIdentityPoolConfigurationRequest): Request[SetIdentityPoolConfigurationResponse] = js.native
     def subscribeToDataset(params: SubscribeToDatasetRequest, callback: Callback[SubscribeToDatasetResponse]): Unit = js.native
@@ -75,7 +82,7 @@ package `cognito-sync` {
   }
 
   /**
-   * The input for the <code>BulkPublish</code> operation.
+   * The input for the BulkPublish operation.
    */
   @js.native
   trait BulkPublishRequest extends js.Object {
@@ -148,6 +155,14 @@ package `cognito-sync` {
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CognitoStreams]
     }
+  }
+
+  /**
+   * <p>Thrown if there are parallel requests to modify a resource.</p>
+   */
+  @js.native
+  trait ConcurrentModificationExceptionException extends js.Object {
+    var message: String
   }
 
   /**
@@ -364,7 +379,7 @@ package `cognito-sync` {
   }
 
   /**
-   * An exception thrown when there is an <code>IN_PROGRESS</code> bulk publish operation for the given identity pool.
+   * An exception thrown when there is an IN_PROGRESS bulk publish operation for the given identity pool.
    */
   @js.native
   trait DuplicateRequestExceptionException extends js.Object {
@@ -372,7 +387,7 @@ package `cognito-sync` {
   }
 
   /**
-   * The input for the <code>GetBulkPublishDetails</code> operation.
+   * The input for the GetBulkPublishDetails operation.
    */
   @js.native
   trait GetBulkPublishDetailsRequest extends js.Object {
@@ -392,7 +407,7 @@ package `cognito-sync` {
   }
 
   /**
-   * The output for the <code>GetBulkPublishDetails</code> operation.
+   * The output for the GetBulkPublishDetails operation.
    */
   @js.native
   trait GetBulkPublishDetailsResponse extends js.Object {
@@ -424,7 +439,47 @@ package `cognito-sync` {
   }
 
   /**
-   * <p>The input for the <code>GetIdentityPoolConfiguration</code> operation.</p>
+   * <p>A request for a list of the configured Cognito Events</p>
+   */
+  @js.native
+  trait GetCognitoEventsRequest extends js.Object {
+    var IdentityPoolId: IdentityPoolId
+  }
+
+  object GetCognitoEventsRequest {
+    def apply(
+      IdentityPoolId: js.UndefOr[IdentityPoolId] = js.undefined
+    ): GetCognitoEventsRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("IdentityPoolId" -> IdentityPoolId.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetCognitoEventsRequest]
+    }
+  }
+
+  /**
+   * <p>The response from the GetCognitoEvents request</p>
+   */
+  @js.native
+  trait GetCognitoEventsResponse extends js.Object {
+    var Events: Events
+  }
+
+  object GetCognitoEventsResponse {
+    def apply(
+      Events: js.UndefOr[Events] = js.undefined
+    ): GetCognitoEventsResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("Events" -> Events.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetCognitoEventsResponse]
+    }
+  }
+
+  /**
+   * <p>The input for the GetIdentityPoolConfiguration operation.</p>
    */
   @js.native
   trait GetIdentityPoolConfigurationRequest extends js.Object {
@@ -444,7 +499,7 @@ package `cognito-sync` {
   }
 
   /**
-   * <p>The output for the <code>GetIdentityPoolConfiguration</code> operation.</p>
+   * <p>The output for the GetIdentityPoolConfiguration operation.</p>
    */
   @js.native
   trait GetIdentityPoolConfigurationResponse extends js.Object {
@@ -544,10 +599,26 @@ package `cognito-sync` {
   }
 
   /**
+   * <p>The AWS Lambda function returned invalid output or an exception.</p>
+   */
+  @js.native
+  trait InvalidLambdaFunctionOutputExceptionException extends js.Object {
+    var message: ExceptionMessage
+  }
+
+  /**
    * Thrown when a request parameter does not comply with the associated constraints.
    */
   @js.native
   trait InvalidParameterExceptionException extends js.Object {
+    var message: ExceptionMessage
+  }
+
+  /**
+   * <p>AWS Lambda throttled your account, please contact AWS Support</p>
+   */
+  @js.native
+  trait LambdaThrottledExceptionException extends js.Object {
     var message: ExceptionMessage
   }
 
@@ -865,7 +936,7 @@ package `cognito-sync` {
   }
 
   /**
-   * <p>A request to <code>RegisterDevice</code>.</p>
+   * <p>A request to RegisterDevice.</p>
    */
   @js.native
   trait RegisterDeviceRequest extends js.Object {
@@ -894,7 +965,7 @@ package `cognito-sync` {
   }
 
   /**
-   * <p>Response to a <code>RegisterDevice</code> request.</p>
+   * <p>Response to a RegisterDevice request.</p>
    */
   @js.native
   trait RegisterDeviceResponse extends js.Object {
@@ -930,7 +1001,30 @@ package `cognito-sync` {
   }
 
   /**
-   * <p>The input for the <code>SetIdentityPoolConfiguration</code> operation.</p>
+   * <p>A request to configure Cognito Events"</p>"
+   */
+  @js.native
+  trait SetCognitoEventsRequest extends js.Object {
+    var IdentityPoolId: IdentityPoolId
+    var Events: Events
+  }
+
+  object SetCognitoEventsRequest {
+    def apply(
+      IdentityPoolId: js.UndefOr[IdentityPoolId] = js.undefined,
+      Events: js.UndefOr[Events] = js.undefined
+    ): SetCognitoEventsRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("IdentityPoolId" -> IdentityPoolId.map { x => x: js.Any }),
+        ("Events" -> Events.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SetCognitoEventsRequest]
+    }
+  }
+
+  /**
+   * <p>The input for the SetIdentityPoolConfiguration operation.</p>
    */
   @js.native
   trait SetIdentityPoolConfigurationRequest extends js.Object {
@@ -956,7 +1050,7 @@ package `cognito-sync` {
   }
 
   /**
-   * <p>The output for the <code>SetIdentityPoolConfiguration</code> operation</p>
+   * <p>The output for the SetIdentityPoolConfiguration operation</p>
    */
   @js.native
   trait SetIdentityPoolConfigurationResponse extends js.Object {
@@ -990,7 +1084,7 @@ package `cognito-sync` {
   }
 
   /**
-   * <p>A request to <code>SubscribeToDatasetRequest</code>.</p>
+   * <p>A request to SubscribeToDatasetRequest.</p>
    */
   @js.native
   trait SubscribeToDatasetRequest extends js.Object {
@@ -1019,7 +1113,7 @@ package `cognito-sync` {
   }
 
   /**
-   * <p>Response to a <code>SubscribeToDataset</code> request.</p>
+   * <p>Response to a SubscribeToDataset request.</p>
    */
   @js.native
   trait SubscribeToDatasetResponse extends js.Object {
@@ -1047,7 +1141,7 @@ package `cognito-sync` {
   }
 
   /**
-   * <p>A request to <code>UnsubscribeFromDataset</code>.</p>
+   * <p>A request to UnsubscribeFromDataset.</p>
    */
   @js.native
   trait UnsubscribeFromDatasetRequest extends js.Object {
@@ -1076,7 +1170,7 @@ package `cognito-sync` {
   }
 
   /**
-   * <p>Response to an <code>UnsubscribeFromDataset</code> request.</p>
+   * <p>Response to an UnsubscribeFromDataset request.</p>
    */
   @js.native
   trait UnsubscribeFromDatasetResponse extends js.Object {

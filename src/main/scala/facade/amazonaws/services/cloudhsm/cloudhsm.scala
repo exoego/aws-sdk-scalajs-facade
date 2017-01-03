@@ -33,6 +33,10 @@ package object cloudhsm {
   type SshKey = String
   type SubnetId = String
   type SubscriptionType = String
+  type TagKey = String
+  type TagKeyList = js.Array[TagKey]
+  type TagList = js.Array[Tag]
+  type TagValue = String
   type Timestamp = String
   type VpcId = String
 }
@@ -40,6 +44,8 @@ package object cloudhsm {
 package cloudhsm {
   @js.native
   trait Cloudhsm extends js.Object {
+    def addTagsToResource(params: AddTagsToResourceRequest, callback: Callback[AddTagsToResourceResponse]): Unit = js.native
+    def addTagsToResource(params: AddTagsToResourceRequest): Request[AddTagsToResourceResponse] = js.native
     def createHapg(params: CreateHapgRequest, callback: Callback[CreateHapgResponse]): Unit = js.native
     def createHapg(params: CreateHapgRequest): Request[CreateHapgResponse] = js.native
     def createHsm(params: CreateHsmRequest, callback: Callback[CreateHsmResponse]): Unit = js.native
@@ -68,12 +74,53 @@ package cloudhsm {
     def listHsms(params: ListHsmsRequest): Request[ListHsmsResponse] = js.native
     def listLunaClients(params: ListLunaClientsRequest, callback: Callback[ListLunaClientsResponse]): Unit = js.native
     def listLunaClients(params: ListLunaClientsRequest): Request[ListLunaClientsResponse] = js.native
+    def listTagsForResource(params: ListTagsForResourceRequest, callback: Callback[ListTagsForResourceResponse]): Unit = js.native
+    def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
     def modifyHapg(params: ModifyHapgRequest, callback: Callback[ModifyHapgResponse]): Unit = js.native
     def modifyHapg(params: ModifyHapgRequest): Request[ModifyHapgResponse] = js.native
     def modifyHsm(params: ModifyHsmRequest, callback: Callback[ModifyHsmResponse]): Unit = js.native
     def modifyHsm(params: ModifyHsmRequest): Request[ModifyHsmResponse] = js.native
     def modifyLunaClient(params: ModifyLunaClientRequest, callback: Callback[ModifyLunaClientResponse]): Unit = js.native
     def modifyLunaClient(params: ModifyLunaClientRequest): Request[ModifyLunaClientResponse] = js.native
+    def removeTagsFromResource(params: RemoveTagsFromResourceRequest, callback: Callback[RemoveTagsFromResourceResponse]): Unit = js.native
+    def removeTagsFromResource(params: RemoveTagsFromResourceRequest): Request[RemoveTagsFromResourceResponse] = js.native
+  }
+
+  @js.native
+  trait AddTagsToResourceRequest extends js.Object {
+    var ResourceArn: String
+    var TagList: TagList
+  }
+
+  object AddTagsToResourceRequest {
+    def apply(
+      ResourceArn: js.UndefOr[String] = js.undefined,
+      TagList: js.UndefOr[TagList] = js.undefined
+    ): AddTagsToResourceRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("ResourceArn" -> ResourceArn.map { x => x: js.Any }),
+        ("TagList" -> TagList.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AddTagsToResourceRequest]
+    }
+  }
+
+  @js.native
+  trait AddTagsToResourceResponse extends js.Object {
+    var Status: String
+  }
+
+  object AddTagsToResourceResponse {
+    def apply(
+      Status: js.UndefOr[String] = js.undefined
+    ): AddTagsToResourceResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("Status" -> Status.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AddTagsToResourceResponse]
+    }
   }
 
 
@@ -151,7 +198,7 @@ package cloudhsm {
   }
 
   /**
-   * <p>Contains the inputs for the <a>CreateHsm</a> action. </p>
+   * <p>Contains the inputs for the <a>CreateHsm</a> operation.</p>
    */
   @js.native
   trait CreateHsmRequest extends js.Object {
@@ -192,7 +239,7 @@ package cloudhsm {
   }
 
   /**
-   * <p>Contains the output of the <a>CreateHsm</a> action.</p>
+   * <p>Contains the output of the <a>CreateHsm</a> operation.</p>
    */
   @js.native
   trait CreateHsmResponse extends js.Object {
@@ -295,7 +342,7 @@ package cloudhsm {
   }
 
   /**
-   * <p>Contains the inputs for the <a>DeleteHsm</a> action. </p>
+   * <p>Contains the inputs for the <a>DeleteHsm</a> operation.</p>
    */
   @js.native
   trait DeleteHsmRequest extends js.Object {
@@ -315,7 +362,7 @@ package cloudhsm {
   }
 
   /**
-   * <p>Contains the output of the <a>DeleteHsm</a> action.</p>
+   * <p>Contains the output of the <a>DeleteHsm</a> operation.</p>
    */
   @js.native
   trait DeleteHsmResponse extends js.Object {
@@ -433,7 +480,7 @@ package cloudhsm {
   }
 
   /**
-   * <p>Contains the inputs for the <a>DescribeHsm</a> action. </p>
+   * <p>Contains the inputs for the <a>DescribeHsm</a> operation. </p>
    */
   @js.native
   trait DescribeHsmRequest extends js.Object {
@@ -456,7 +503,7 @@ package cloudhsm {
   }
 
   /**
-   * <p>Contains the output of the <a>DescribeHsm</a> action.</p>
+   * <p>Contains the output of the <a>DescribeHsm</a> operation.</p>
    */
   @js.native
   trait DescribeHsmResponse extends js.Object {
@@ -652,7 +699,7 @@ package cloudhsm {
   }
 
   /**
-   * <p>Contains the inputs for the <a>ListAvailableZones</a> action. </p>
+   * <p>Contains the inputs for the <a>ListAvailableZones</a> action.</p>
    */
   @js.native
   trait ListAvailableZonesRequest extends js.Object {
@@ -743,7 +790,7 @@ package cloudhsm {
   }
 
   /**
-   * <p>Contains the output of the <a>ListHsms</a> action.</p>
+   * <p>Contains the output of the <a>ListHsms</a> operation.</p>
    */
   @js.native
   trait ListHsmsResponse extends js.Object {
@@ -803,6 +850,40 @@ package cloudhsm {
   }
 
   @js.native
+  trait ListTagsForResourceRequest extends js.Object {
+    var ResourceArn: String
+  }
+
+  object ListTagsForResourceRequest {
+    def apply(
+      ResourceArn: js.UndefOr[String] = js.undefined
+    ): ListTagsForResourceRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("ResourceArn" -> ResourceArn.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListTagsForResourceRequest]
+    }
+  }
+
+  @js.native
+  trait ListTagsForResourceResponse extends js.Object {
+    var TagList: TagList
+  }
+
+  object ListTagsForResourceResponse {
+    def apply(
+      TagList: js.UndefOr[TagList] = js.undefined
+    ): ListTagsForResourceResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("TagList" -> TagList.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListTagsForResourceResponse]
+    }
+  }
+
+  @js.native
   trait ModifyHapgRequest extends js.Object {
     var HapgArn: HapgArn
     var Label: Label
@@ -843,7 +924,7 @@ package cloudhsm {
   }
 
   /**
-   * <p>Contains the inputs for the <a>ModifyHsm</a> action. </p>
+   * <p>Contains the inputs for the <a>ModifyHsm</a> operation.</p>
    */
   @js.native
   trait ModifyHsmRequest extends js.Object {
@@ -878,7 +959,7 @@ package cloudhsm {
   }
 
   /**
-   * <p>Contains the output of the <a>ModifyHsm</a> action.</p>
+   * <p>Contains the output of the <a>ModifyHsm</a> operation.</p>
    */
   @js.native
   trait ModifyHsmResponse extends js.Object {
@@ -934,10 +1015,72 @@ package cloudhsm {
     }
   }
 
+  @js.native
+  trait RemoveTagsFromResourceRequest extends js.Object {
+    var ResourceArn: String
+    var TagKeyList: TagKeyList
+  }
 
+  object RemoveTagsFromResourceRequest {
+    def apply(
+      ResourceArn: js.UndefOr[String] = js.undefined,
+      TagKeyList: js.UndefOr[TagKeyList] = js.undefined
+    ): RemoveTagsFromResourceRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("ResourceArn" -> ResourceArn.map { x => x: js.Any }),
+        ("TagKeyList" -> TagKeyList.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RemoveTagsFromResourceRequest]
+    }
+  }
+
+  @js.native
+  trait RemoveTagsFromResourceResponse extends js.Object {
+    var Status: String
+  }
+
+  object RemoveTagsFromResourceResponse {
+    def apply(
+      Status: js.UndefOr[String] = js.undefined
+    ): RemoveTagsFromResourceResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("Status" -> Status.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RemoveTagsFromResourceResponse]
+    }
+  }
+
+  /**
+   * <p>Specifies the type of subscription for the HSM.</p> <ul> <li><b>PRODUCTION</b> - The HSM is being used in a production environment.</li> <li><b>TRIAL</b> - The HSM is being used in a product trial.</li> </ul>
+   */
   object SubscriptionTypeEnum {
     val PRODUCTION = "PRODUCTION"
 
     val values = IndexedSeq(PRODUCTION)
+  }
+
+  /**
+   * <p>A key-value pair that identifies or specifies metadata about an AWS CloudHSM resource.</p>
+   */
+  @js.native
+  trait Tag extends js.Object {
+    var Key: TagKey
+    var Value: TagValue
+  }
+
+  object Tag {
+    def apply(
+      Key: js.UndefOr[TagKey] = js.undefined,
+      Value: js.UndefOr[TagValue] = js.undefined
+    ): Tag = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("Key" -> Key.map { x => x: js.Any }),
+        ("Value" -> Value.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Tag]
+    }
   }
 }

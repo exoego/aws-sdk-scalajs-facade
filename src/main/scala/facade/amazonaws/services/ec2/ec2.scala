@@ -8,21 +8,33 @@ package object ec2 {
   type AccountAttributeName = String
   type AccountAttributeNameStringList = js.Array[AccountAttributeName]
   type AccountAttributeValueList = js.Array[AccountAttributeValue]
+  type ActiveInstanceSet = js.Array[ActiveInstance]
+  type ActivityStatus = String
   type AddressList = js.Array[Address]
+  type Affinity = String
   type AllocationIdList = js.Array[String]
+  type AllocationState = String
+  type AllocationStrategy = String
   type ArchitectureValues = String
   type AttachmentStatus = String
+  type AutoPlacement = String
   type AvailabilityZoneList = js.Array[AvailabilityZone]
   type AvailabilityZoneMessageList = js.Array[AvailabilityZoneMessage]
   type AvailabilityZoneState = String
+  type AvailableInstanceCapacityList = js.Array[InstanceCapacity]
+  type BatchState = String
   type Blob = js.Array[Byte]
   type BlockDeviceMappingList = js.Array[BlockDeviceMapping]
   type BlockDeviceMappingRequestList = js.Array[BlockDeviceMapping]
   type BundleIdStringList = js.Array[String]
   type BundleTaskList = js.Array[BundleTask]
   type BundleTaskState = String
+  type CancelBatchErrorCode = String
+  type CancelSpotFleetRequestsErrorSet = js.Array[CancelSpotFleetRequestsErrorItem]
+  type CancelSpotFleetRequestsSuccessSet = js.Array[CancelSpotFleetRequestsSuccessItem]
   type CancelSpotInstanceRequestState = String
   type CancelledSpotInstanceRequestList = js.Array[CancelledSpotInstanceRequest]
+  type ClassicLinkDnsSupportList = js.Array[ClassicLinkDnsSupport]
   type ClassicLinkInstanceList = js.Array[ClassicLinkInstance]
   type ContainerFormat = String
   type ConversionIdStringList = js.Array[String]
@@ -42,29 +54,52 @@ package object ec2 {
   type DiskImageFormat = String
   type DiskImageList = js.Array[DiskImage]
   type DomainType = String
+  type EgressOnlyInternetGatewayId = String
+  type EgressOnlyInternetGatewayIdList = js.Array[EgressOnlyInternetGatewayId]
+  type EgressOnlyInternetGatewayList = js.Array[EgressOnlyInternetGateway]
   type EventCode = String
+  type EventType = String
+  type ExcessCapacityTerminationPolicy = String
   type ExecutableByStringList = js.Array[String]
   type ExportEnvironment = String
   type ExportTaskIdStringList = js.Array[String]
   type ExportTaskList = js.Array[ExportTask]
   type ExportTaskState = String
   type FilterList = js.Array[Filter]
+  type FleetType = String
+  type FlowLogSet = js.Array[FlowLog]
+  type FlowLogsResourceType = String
   type GatewayType = String
   type GroupIdStringList = js.Array[String]
   type GroupIdentifierList = js.Array[GroupIdentifier]
+  type GroupIds = js.Array[String]
   type GroupNameStringList = js.Array[String]
+  type HistoryRecords = js.Array[HistoryRecord]
+  type HostInstanceList = js.Array[HostInstance]
+  type HostList = js.Array[Host]
+  type HostOfferingSet = js.Array[HostOffering]
+  type HostReservationIdSet = js.Array[String]
+  type HostReservationSet = js.Array[HostReservation]
+  type HostTenancy = String
   type HypervisorType = String
+  type IdFormatList = js.Array[IdFormat]
   type ImageAttributeName = String
+  type ImageDiskContainerList = js.Array[ImageDiskContainer]
   type ImageIdStringList = js.Array[String]
   type ImageList = js.Array[Image]
   type ImageState = String
   type ImageTypeValues = String
+  type ImportImageTaskList = js.Array[ImportImageTask]
   type ImportInstanceVolumeDetailSet = js.Array[ImportInstanceVolumeDetailItem]
+  type ImportSnapshotTaskList = js.Array[ImportSnapshotTask]
+  type ImportTaskIdList = js.Array[String]
   type InstanceAttributeName = String
   type InstanceBlockDeviceMappingList = js.Array[InstanceBlockDeviceMapping]
   type InstanceBlockDeviceMappingSpecificationList = js.Array[InstanceBlockDeviceMappingSpecification]
   type InstanceCountList = js.Array[InstanceCount]
+  type InstanceIdSet = js.Array[String]
   type InstanceIdStringList = js.Array[String]
+  type InstanceIpv6AddressList = js.Array[InstanceIpv6Address]
   type InstanceLifecycleType = String
   type InstanceList = js.Array[Instance]
   type InstanceMonitoringList = js.Array[InstanceMonitoring]
@@ -82,32 +117,56 @@ package object ec2 {
   type InternetGatewayList = js.Array[InternetGateway]
   type IpPermissionList = js.Array[IpPermission]
   type IpRangeList = js.Array[IpRange]
+  type IpRanges = js.Array[String]
+  type Ipv6Address = String
+  type Ipv6AddressList = js.Array[String]
+  type Ipv6CidrBlockSet = js.Array[Ipv6CidrBlock]
+  type Ipv6RangeList = js.Array[Ipv6Range]
   type KeyNameStringList = js.Array[String]
   type KeyPairList = js.Array[KeyPairInfo]
   type LaunchPermissionList = js.Array[LaunchPermission]
+  type LaunchSpecsList = js.Array[SpotFleetLaunchSpecification]
   type ListingState = String
   type ListingStatus = String
+  type MaxResults = Integer
   type MonitoringState = String
+  type MoveStatus = String
+  type MovingAddressStatusSet = js.Array[MovingAddressStatus]
+  type NatGatewayAddressList = js.Array[NatGatewayAddress]
+  type NatGatewayList = js.Array[NatGateway]
+  type NatGatewayState = String
   type NetworkAclAssociationList = js.Array[NetworkAclAssociation]
   type NetworkAclEntryList = js.Array[NetworkAclEntry]
   type NetworkAclList = js.Array[NetworkAcl]
   type NetworkInterfaceAttribute = String
   type NetworkInterfaceIdList = js.Array[String]
+  type NetworkInterfaceIpv6AddressesList = js.Array[NetworkInterfaceIpv6Address]
   type NetworkInterfaceList = js.Array[NetworkInterface]
   type NetworkInterfacePrivateIpAddressList = js.Array[NetworkInterfacePrivateIpAddress]
   type NetworkInterfaceStatus = String
+  type NetworkInterfaceType = String
   type NewDhcpConfigurationList = js.Array[NewDhcpConfiguration]
+  type NextToken = String
+  type OccurrenceDayRequestSet = js.Array[Integer]
+  type OccurrenceDaySet = js.Array[Integer]
+  type OfferingClassType = String
   type OfferingTypeValues = String
+  type OperationType = String
   type OwnerStringList = js.Array[String]
+  type PaymentOption = String
   type PermissionGroup = String
   type PlacementGroupList = js.Array[PlacementGroup]
   type PlacementGroupState = String
   type PlacementGroupStringList = js.Array[String]
   type PlacementStrategy = String
   type PlatformValues = String
+  type PrefixListIdList = js.Array[PrefixListId]
+  type PrefixListIdSet = js.Array[String]
+  type PrefixListSet = js.Array[PrefixList]
   type PriceScheduleList = js.Array[PriceSchedule]
   type PriceScheduleSpecificationList = js.Array[PriceScheduleSpecification]
   type PricingDetailsList = js.Array[PricingDetail]
+  type PrivateIpAddressConfigSet = js.Array[ScheduledInstancesPrivateIpAddressConfig]
   type PrivateIpAddressSpecificationList = js.Array[PrivateIpAddressSpecification]
   type PrivateIpAddressStringList = js.Array[String]
   type ProductCodeList = js.Array[ProductCode]
@@ -116,6 +175,9 @@ package object ec2 {
   type ProductDescriptionList = js.Array[String]
   type PropagatingVgwList = js.Array[PropagatingVgw]
   type PublicIpStringList = js.Array[String]
+  type PurchaseRequestSet = js.Array[PurchaseRequest]
+  type PurchaseSet = js.Array[Purchase]
+  type PurchasedScheduledInstanceSet = js.Array[ScheduledInstance]
   type RIProductDescription = String
   type ReasonCodesList = js.Array[ReportInstanceReasonCodes]
   type RecurringChargeFrequency = String
@@ -124,7 +186,12 @@ package object ec2 {
   type RegionNameStringList = js.Array[String]
   type ReportInstanceReasonCodes = String
   type ReportStatusType = String
+  type RequestHostIdList = js.Array[String]
+  type RequestHostIdSet = js.Array[String]
   type ReservationList = js.Array[Reservation]
+  type ReservationState = String
+  type ReservedInstanceIdSet = js.Array[String]
+  type ReservedInstanceReservationValueSet = js.Array[ReservedInstanceReservationValue]
   type ReservedInstanceState = String
   type ReservedInstancesConfigurationList = js.Array[ReservedInstancesConfiguration]
   type ReservedInstancesIdStringList = js.Array[String]
@@ -139,6 +206,8 @@ package object ec2 {
   type ResetImageAttributeName = String
   type ResourceIdList = js.Array[String]
   type ResourceType = String
+  type ResponseHostIdList = js.Array[String]
+  type ResponseHostIdSet = js.Array[String]
   type RestorableByStringList = js.Array[String]
   type RouteList = js.Array[Route]
   type RouteOrigin = String
@@ -146,31 +215,53 @@ package object ec2 {
   type RouteTableAssociationList = js.Array[RouteTableAssociation]
   type RouteTableList = js.Array[RouteTable]
   type RuleAction = String
+  type ScheduledInstanceAvailabilitySet = js.Array[ScheduledInstanceAvailability]
+  type ScheduledInstanceIdRequestSet = js.Array[String]
+  type ScheduledInstanceSet = js.Array[ScheduledInstance]
+  type ScheduledInstancesBlockDeviceMappingSet = js.Array[ScheduledInstancesBlockDeviceMapping]
+  type ScheduledInstancesIpv6AddressList = js.Array[ScheduledInstancesIpv6Address]
+  type ScheduledInstancesNetworkInterfaceSet = js.Array[ScheduledInstancesNetworkInterface]
+  type ScheduledInstancesSecurityGroupIdSet = js.Array[String]
   type SecurityGroupIdStringList = js.Array[String]
   type SecurityGroupList = js.Array[SecurityGroup]
+  type SecurityGroupReferences = js.Array[SecurityGroupReference]
   type SecurityGroupStringList = js.Array[String]
   type ShutdownBehavior = String
   type SnapshotAttributeName = String
+  type SnapshotDetailList = js.Array[SnapshotDetail]
   type SnapshotIdStringList = js.Array[String]
   type SnapshotList = js.Array[Snapshot]
   type SnapshotState = String
+  type SpotFleetRequestConfigSet = js.Array[SpotFleetRequestConfig]
   type SpotInstanceRequestIdList = js.Array[String]
   type SpotInstanceRequestList = js.Array[SpotInstanceRequest]
   type SpotInstanceState = String
   type SpotInstanceType = String
   type SpotPriceHistoryList = js.Array[SpotPrice]
+  type StaleIpPermissionSet = js.Array[StaleIpPermission]
+  type StaleSecurityGroupSet = js.Array[StaleSecurityGroup]
+  type State = String
+  type Status = String
   type StatusName = String
   type StatusType = String
+  type SubnetCidrBlockStateCode = String
   type SubnetIdStringList = js.Array[String]
+  type SubnetIpv6CidrBlockAssociationSet = js.Array[SubnetIpv6CidrBlockAssociation]
   type SubnetList = js.Array[Subnet]
   type SubnetState = String
   type SummaryStatus = String
   type TagDescriptionList = js.Array[TagDescription]
   type TagList = js.Array[Tag]
+  type TargetConfigurationRequestSet = js.Array[TargetConfigurationRequest]
+  type TargetReservationValueSet = js.Array[TargetReservationValue]
   type TelemetryStatus = String
   type Tenancy = String
+  type TrafficType = String
+  type UnsuccessfulItemList = js.Array[UnsuccessfulItem]
+  type UnsuccessfulItemSet = js.Array[UnsuccessfulItem]
   type UserGroupStringList = js.Array[String]
   type UserIdGroupPairList = js.Array[UserIdGroupPair]
+  type UserIdGroupPairSet = js.Array[UserIdGroupPair]
   type UserIdStringList = js.Array[String]
   type ValueStringList = js.Array[String]
   type VgwTelemetryList = js.Array[VgwTelemetry]
@@ -190,11 +281,15 @@ package object ec2 {
   type VolumeType = String
   type VpcAttachmentList = js.Array[VpcAttachment]
   type VpcAttributeName = String
+  type VpcCidrBlockStateCode = String
   type VpcClassicLinkIdList = js.Array[String]
   type VpcClassicLinkList = js.Array[VpcClassicLink]
+  type VpcEndpointSet = js.Array[VpcEndpoint]
   type VpcIdStringList = js.Array[String]
+  type VpcIpv6CidrBlockAssociationSet = js.Array[VpcIpv6CidrBlockAssociation]
   type VpcList = js.Array[Vpc]
   type VpcPeeringConnectionList = js.Array[VpcPeeringConnection]
+  type VpcPeeringConnectionStateReasonCode = String
   type VpcState = String
   type VpnConnectionIdStringList = js.Array[String]
   type VpnConnectionList = js.Array[VpnConnection]
@@ -204,15 +299,22 @@ package object ec2 {
   type VpnStaticRouteList = js.Array[VpnStaticRoute]
   type VpnStaticRouteSource = String
   type ZoneNameStringList = js.Array[String]
+  type scope = String
 }
 
 package ec2 {
   @js.native
   trait Ec2 extends js.Object {
+    def acceptReservedInstancesExchangeQuote(params: AcceptReservedInstancesExchangeQuoteRequest, callback: Callback[AcceptReservedInstancesExchangeQuoteResult]): Unit = js.native
+    def acceptReservedInstancesExchangeQuote(params: AcceptReservedInstancesExchangeQuoteRequest): Request[AcceptReservedInstancesExchangeQuoteResult] = js.native
     def acceptVpcPeeringConnection(params: AcceptVpcPeeringConnectionRequest, callback: Callback[AcceptVpcPeeringConnectionResult]): Unit = js.native
     def acceptVpcPeeringConnection(params: AcceptVpcPeeringConnectionRequest): Request[AcceptVpcPeeringConnectionResult] = js.native
     def allocateAddress(params: AllocateAddressRequest, callback: Callback[AllocateAddressResult]): Unit = js.native
     def allocateAddress(params: AllocateAddressRequest): Request[AllocateAddressResult] = js.native
+    def allocateHosts(params: AllocateHostsRequest, callback: Callback[AllocateHostsResult]): Unit = js.native
+    def allocateHosts(params: AllocateHostsRequest): Request[AllocateHostsResult] = js.native
+    def assignIpv6Addresses(params: AssignIpv6AddressesRequest, callback: Callback[AssignIpv6AddressesResult]): Unit = js.native
+    def assignIpv6Addresses(params: AssignIpv6AddressesRequest): Request[AssignIpv6AddressesResult] = js.native
     def assignPrivateIpAddresses(params: AssignPrivateIpAddressesRequest, callback: Callback[js.Object]): Unit = js.native
     def assignPrivateIpAddresses(params: AssignPrivateIpAddressesRequest): Request[js.Object] = js.native
     def associateAddress(params: AssociateAddressRequest, callback: Callback[AssociateAddressResult]): Unit = js.native
@@ -221,6 +323,10 @@ package ec2 {
     def associateDhcpOptions(params: AssociateDhcpOptionsRequest): Request[js.Object] = js.native
     def associateRouteTable(params: AssociateRouteTableRequest, callback: Callback[AssociateRouteTableResult]): Unit = js.native
     def associateRouteTable(params: AssociateRouteTableRequest): Request[AssociateRouteTableResult] = js.native
+    def associateSubnetCidrBlock(params: AssociateSubnetCidrBlockRequest, callback: Callback[AssociateSubnetCidrBlockResult]): Unit = js.native
+    def associateSubnetCidrBlock(params: AssociateSubnetCidrBlockRequest): Request[AssociateSubnetCidrBlockResult] = js.native
+    def associateVpcCidrBlock(params: AssociateVpcCidrBlockRequest, callback: Callback[AssociateVpcCidrBlockResult]): Unit = js.native
+    def associateVpcCidrBlock(params: AssociateVpcCidrBlockRequest): Request[AssociateVpcCidrBlockResult] = js.native
     def attachClassicLinkVpc(params: AttachClassicLinkVpcRequest, callback: Callback[AttachClassicLinkVpcResult]): Unit = js.native
     def attachClassicLinkVpc(params: AttachClassicLinkVpcRequest): Request[AttachClassicLinkVpcResult] = js.native
     def attachInternetGateway(params: AttachInternetGatewayRequest, callback: Callback[js.Object]): Unit = js.native
@@ -243,8 +349,12 @@ package ec2 {
     def cancelConversionTask(params: CancelConversionRequest): Request[js.Object] = js.native
     def cancelExportTask(params: CancelExportTaskRequest, callback: Callback[js.Object]): Unit = js.native
     def cancelExportTask(params: CancelExportTaskRequest): Request[js.Object] = js.native
+    def cancelImportTask(params: CancelImportTaskRequest, callback: Callback[CancelImportTaskResult]): Unit = js.native
+    def cancelImportTask(params: CancelImportTaskRequest): Request[CancelImportTaskResult] = js.native
     def cancelReservedInstancesListing(params: CancelReservedInstancesListingRequest, callback: Callback[CancelReservedInstancesListingResult]): Unit = js.native
     def cancelReservedInstancesListing(params: CancelReservedInstancesListingRequest): Request[CancelReservedInstancesListingResult] = js.native
+    def cancelSpotFleetRequests(params: CancelSpotFleetRequestsRequest, callback: Callback[CancelSpotFleetRequestsResponse]): Unit = js.native
+    def cancelSpotFleetRequests(params: CancelSpotFleetRequestsRequest): Request[CancelSpotFleetRequestsResponse] = js.native
     def cancelSpotInstanceRequests(params: CancelSpotInstanceRequestsRequest, callback: Callback[CancelSpotInstanceRequestsResult]): Unit = js.native
     def cancelSpotInstanceRequests(params: CancelSpotInstanceRequestsRequest): Request[CancelSpotInstanceRequestsResult] = js.native
     def confirmProductInstance(params: ConfirmProductInstanceRequest, callback: Callback[ConfirmProductInstanceResult]): Unit = js.native
@@ -257,6 +367,10 @@ package ec2 {
     def createCustomerGateway(params: CreateCustomerGatewayRequest): Request[CreateCustomerGatewayResult] = js.native
     def createDhcpOptions(params: CreateDhcpOptionsRequest, callback: Callback[CreateDhcpOptionsResult]): Unit = js.native
     def createDhcpOptions(params: CreateDhcpOptionsRequest): Request[CreateDhcpOptionsResult] = js.native
+    def createEgressOnlyInternetGateway(params: CreateEgressOnlyInternetGatewayRequest, callback: Callback[CreateEgressOnlyInternetGatewayResult]): Unit = js.native
+    def createEgressOnlyInternetGateway(params: CreateEgressOnlyInternetGatewayRequest): Request[CreateEgressOnlyInternetGatewayResult] = js.native
+    def createFlowLogs(params: CreateFlowLogsRequest, callback: Callback[CreateFlowLogsResult]): Unit = js.native
+    def createFlowLogs(params: CreateFlowLogsRequest): Request[CreateFlowLogsResult] = js.native
     def createImage(params: CreateImageRequest, callback: Callback[CreateImageResult]): Unit = js.native
     def createImage(params: CreateImageRequest): Request[CreateImageResult] = js.native
     def createInstanceExportTask(params: CreateInstanceExportTaskRequest, callback: Callback[CreateInstanceExportTaskResult]): Unit = js.native
@@ -265,6 +379,8 @@ package ec2 {
     def createInternetGateway(params: CreateInternetGatewayRequest): Request[CreateInternetGatewayResult] = js.native
     def createKeyPair(params: CreateKeyPairRequest, callback: Callback[KeyPair]): Unit = js.native
     def createKeyPair(params: CreateKeyPairRequest): Request[KeyPair] = js.native
+    def createNatGateway(params: CreateNatGatewayRequest, callback: Callback[CreateNatGatewayResult]): Unit = js.native
+    def createNatGateway(params: CreateNatGatewayRequest): Request[CreateNatGatewayResult] = js.native
     def createNetworkAcl(params: CreateNetworkAclRequest, callback: Callback[CreateNetworkAclResult]): Unit = js.native
     def createNetworkAcl(params: CreateNetworkAclRequest): Request[CreateNetworkAclResult] = js.native
     def createNetworkAclEntry(params: CreateNetworkAclEntryRequest, callback: Callback[js.Object]): Unit = js.native
@@ -275,8 +391,8 @@ package ec2 {
     def createPlacementGroup(params: CreatePlacementGroupRequest): Request[js.Object] = js.native
     def createReservedInstancesListing(params: CreateReservedInstancesListingRequest, callback: Callback[CreateReservedInstancesListingResult]): Unit = js.native
     def createReservedInstancesListing(params: CreateReservedInstancesListingRequest): Request[CreateReservedInstancesListingResult] = js.native
-    def createRoute(params: CreateRouteRequest, callback: Callback[js.Object]): Unit = js.native
-    def createRoute(params: CreateRouteRequest): Request[js.Object] = js.native
+    def createRoute(params: CreateRouteRequest, callback: Callback[CreateRouteResult]): Unit = js.native
+    def createRoute(params: CreateRouteRequest): Request[CreateRouteResult] = js.native
     def createRouteTable(params: CreateRouteTableRequest, callback: Callback[CreateRouteTableResult]): Unit = js.native
     def createRouteTable(params: CreateRouteTableRequest): Request[CreateRouteTableResult] = js.native
     def createSecurityGroup(params: CreateSecurityGroupRequest, callback: Callback[CreateSecurityGroupResult]): Unit = js.native
@@ -293,6 +409,8 @@ package ec2 {
     def createVolume(params: CreateVolumeRequest): Request[Volume] = js.native
     def createVpc(params: CreateVpcRequest, callback: Callback[CreateVpcResult]): Unit = js.native
     def createVpc(params: CreateVpcRequest): Request[CreateVpcResult] = js.native
+    def createVpcEndpoint(params: CreateVpcEndpointRequest, callback: Callback[CreateVpcEndpointResult]): Unit = js.native
+    def createVpcEndpoint(params: CreateVpcEndpointRequest): Request[CreateVpcEndpointResult] = js.native
     def createVpcPeeringConnection(params: CreateVpcPeeringConnectionRequest, callback: Callback[CreateVpcPeeringConnectionResult]): Unit = js.native
     def createVpcPeeringConnection(params: CreateVpcPeeringConnectionRequest): Request[CreateVpcPeeringConnectionResult] = js.native
     def createVpnConnection(params: CreateVpnConnectionRequest, callback: Callback[CreateVpnConnectionResult]): Unit = js.native
@@ -305,10 +423,16 @@ package ec2 {
     def deleteCustomerGateway(params: DeleteCustomerGatewayRequest): Request[js.Object] = js.native
     def deleteDhcpOptions(params: DeleteDhcpOptionsRequest, callback: Callback[js.Object]): Unit = js.native
     def deleteDhcpOptions(params: DeleteDhcpOptionsRequest): Request[js.Object] = js.native
+    def deleteEgressOnlyInternetGateway(params: DeleteEgressOnlyInternetGatewayRequest, callback: Callback[DeleteEgressOnlyInternetGatewayResult]): Unit = js.native
+    def deleteEgressOnlyInternetGateway(params: DeleteEgressOnlyInternetGatewayRequest): Request[DeleteEgressOnlyInternetGatewayResult] = js.native
+    def deleteFlowLogs(params: DeleteFlowLogsRequest, callback: Callback[DeleteFlowLogsResult]): Unit = js.native
+    def deleteFlowLogs(params: DeleteFlowLogsRequest): Request[DeleteFlowLogsResult] = js.native
     def deleteInternetGateway(params: DeleteInternetGatewayRequest, callback: Callback[js.Object]): Unit = js.native
     def deleteInternetGateway(params: DeleteInternetGatewayRequest): Request[js.Object] = js.native
     def deleteKeyPair(params: DeleteKeyPairRequest, callback: Callback[js.Object]): Unit = js.native
     def deleteKeyPair(params: DeleteKeyPairRequest): Request[js.Object] = js.native
+    def deleteNatGateway(params: DeleteNatGatewayRequest, callback: Callback[DeleteNatGatewayResult]): Unit = js.native
+    def deleteNatGateway(params: DeleteNatGatewayRequest): Request[DeleteNatGatewayResult] = js.native
     def deleteNetworkAcl(params: DeleteNetworkAclRequest, callback: Callback[js.Object]): Unit = js.native
     def deleteNetworkAcl(params: DeleteNetworkAclRequest): Request[js.Object] = js.native
     def deleteNetworkAclEntry(params: DeleteNetworkAclEntryRequest, callback: Callback[js.Object]): Unit = js.native
@@ -335,6 +459,8 @@ package ec2 {
     def deleteVolume(params: DeleteVolumeRequest): Request[js.Object] = js.native
     def deleteVpc(params: DeleteVpcRequest, callback: Callback[js.Object]): Unit = js.native
     def deleteVpc(params: DeleteVpcRequest): Request[js.Object] = js.native
+    def deleteVpcEndpoints(params: DeleteVpcEndpointsRequest, callback: Callback[DeleteVpcEndpointsResult]): Unit = js.native
+    def deleteVpcEndpoints(params: DeleteVpcEndpointsRequest): Request[DeleteVpcEndpointsResult] = js.native
     def deleteVpcPeeringConnection(params: DeleteVpcPeeringConnectionRequest, callback: Callback[DeleteVpcPeeringConnectionResult]): Unit = js.native
     def deleteVpcPeeringConnection(params: DeleteVpcPeeringConnectionRequest): Request[DeleteVpcPeeringConnectionResult] = js.native
     def deleteVpnConnection(params: DeleteVpnConnectionRequest, callback: Callback[js.Object]): Unit = js.native
@@ -361,12 +487,30 @@ package ec2 {
     def describeCustomerGateways(params: DescribeCustomerGatewaysRequest): Request[DescribeCustomerGatewaysResult] = js.native
     def describeDhcpOptions(params: DescribeDhcpOptionsRequest, callback: Callback[DescribeDhcpOptionsResult]): Unit = js.native
     def describeDhcpOptions(params: DescribeDhcpOptionsRequest): Request[DescribeDhcpOptionsResult] = js.native
+    def describeEgressOnlyInternetGateways(params: DescribeEgressOnlyInternetGatewaysRequest, callback: Callback[DescribeEgressOnlyInternetGatewaysResult]): Unit = js.native
+    def describeEgressOnlyInternetGateways(params: DescribeEgressOnlyInternetGatewaysRequest): Request[DescribeEgressOnlyInternetGatewaysResult] = js.native
     def describeExportTasks(params: DescribeExportTasksRequest, callback: Callback[DescribeExportTasksResult]): Unit = js.native
     def describeExportTasks(params: DescribeExportTasksRequest): Request[DescribeExportTasksResult] = js.native
+    def describeFlowLogs(params: DescribeFlowLogsRequest, callback: Callback[DescribeFlowLogsResult]): Unit = js.native
+    def describeFlowLogs(params: DescribeFlowLogsRequest): Request[DescribeFlowLogsResult] = js.native
+    def describeHostReservationOfferings(params: DescribeHostReservationOfferingsRequest, callback: Callback[DescribeHostReservationOfferingsResult]): Unit = js.native
+    def describeHostReservationOfferings(params: DescribeHostReservationOfferingsRequest): Request[DescribeHostReservationOfferingsResult] = js.native
+    def describeHostReservations(params: DescribeHostReservationsRequest, callback: Callback[DescribeHostReservationsResult]): Unit = js.native
+    def describeHostReservations(params: DescribeHostReservationsRequest): Request[DescribeHostReservationsResult] = js.native
+    def describeHosts(params: DescribeHostsRequest, callback: Callback[DescribeHostsResult]): Unit = js.native
+    def describeHosts(params: DescribeHostsRequest): Request[DescribeHostsResult] = js.native
+    def describeIdFormat(params: DescribeIdFormatRequest, callback: Callback[DescribeIdFormatResult]): Unit = js.native
+    def describeIdFormat(params: DescribeIdFormatRequest): Request[DescribeIdFormatResult] = js.native
+    def describeIdentityIdFormat(params: DescribeIdentityIdFormatRequest, callback: Callback[DescribeIdentityIdFormatResult]): Unit = js.native
+    def describeIdentityIdFormat(params: DescribeIdentityIdFormatRequest): Request[DescribeIdentityIdFormatResult] = js.native
     def describeImageAttribute(params: DescribeImageAttributeRequest, callback: Callback[ImageAttribute]): Unit = js.native
     def describeImageAttribute(params: DescribeImageAttributeRequest): Request[ImageAttribute] = js.native
     def describeImages(params: DescribeImagesRequest, callback: Callback[DescribeImagesResult]): Unit = js.native
     def describeImages(params: DescribeImagesRequest): Request[DescribeImagesResult] = js.native
+    def describeImportImageTasks(params: DescribeImportImageTasksRequest, callback: Callback[DescribeImportImageTasksResult]): Unit = js.native
+    def describeImportImageTasks(params: DescribeImportImageTasksRequest): Request[DescribeImportImageTasksResult] = js.native
+    def describeImportSnapshotTasks(params: DescribeImportSnapshotTasksRequest, callback: Callback[DescribeImportSnapshotTasksResult]): Unit = js.native
+    def describeImportSnapshotTasks(params: DescribeImportSnapshotTasksRequest): Request[DescribeImportSnapshotTasksResult] = js.native
     def describeInstanceAttribute(params: DescribeInstanceAttributeRequest, callback: Callback[InstanceAttribute]): Unit = js.native
     def describeInstanceAttribute(params: DescribeInstanceAttributeRequest): Request[InstanceAttribute] = js.native
     def describeInstanceStatus(params: DescribeInstanceStatusRequest, callback: Callback[DescribeInstanceStatusResult]): Unit = js.native
@@ -377,6 +521,10 @@ package ec2 {
     def describeInternetGateways(params: DescribeInternetGatewaysRequest): Request[DescribeInternetGatewaysResult] = js.native
     def describeKeyPairs(params: DescribeKeyPairsRequest, callback: Callback[DescribeKeyPairsResult]): Unit = js.native
     def describeKeyPairs(params: DescribeKeyPairsRequest): Request[DescribeKeyPairsResult] = js.native
+    def describeMovingAddresses(params: DescribeMovingAddressesRequest, callback: Callback[DescribeMovingAddressesResult]): Unit = js.native
+    def describeMovingAddresses(params: DescribeMovingAddressesRequest): Request[DescribeMovingAddressesResult] = js.native
+    def describeNatGateways(params: DescribeNatGatewaysRequest, callback: Callback[DescribeNatGatewaysResult]): Unit = js.native
+    def describeNatGateways(params: DescribeNatGatewaysRequest): Request[DescribeNatGatewaysResult] = js.native
     def describeNetworkAcls(params: DescribeNetworkAclsRequest, callback: Callback[DescribeNetworkAclsResult]): Unit = js.native
     def describeNetworkAcls(params: DescribeNetworkAclsRequest): Request[DescribeNetworkAclsResult] = js.native
     def describeNetworkInterfaceAttribute(params: DescribeNetworkInterfaceAttributeRequest, callback: Callback[DescribeNetworkInterfaceAttributeResult]): Unit = js.native
@@ -385,6 +533,8 @@ package ec2 {
     def describeNetworkInterfaces(params: DescribeNetworkInterfacesRequest): Request[DescribeNetworkInterfacesResult] = js.native
     def describePlacementGroups(params: DescribePlacementGroupsRequest, callback: Callback[DescribePlacementGroupsResult]): Unit = js.native
     def describePlacementGroups(params: DescribePlacementGroupsRequest): Request[DescribePlacementGroupsResult] = js.native
+    def describePrefixLists(params: DescribePrefixListsRequest, callback: Callback[DescribePrefixListsResult]): Unit = js.native
+    def describePrefixLists(params: DescribePrefixListsRequest): Request[DescribePrefixListsResult] = js.native
     def describeRegions(params: DescribeRegionsRequest, callback: Callback[DescribeRegionsResult]): Unit = js.native
     def describeRegions(params: DescribeRegionsRequest): Request[DescribeRegionsResult] = js.native
     def describeReservedInstances(params: DescribeReservedInstancesRequest, callback: Callback[DescribeReservedInstancesResult]): Unit = js.native
@@ -397,6 +547,12 @@ package ec2 {
     def describeReservedInstancesOfferings(params: DescribeReservedInstancesOfferingsRequest): Request[DescribeReservedInstancesOfferingsResult] = js.native
     def describeRouteTables(params: DescribeRouteTablesRequest, callback: Callback[DescribeRouteTablesResult]): Unit = js.native
     def describeRouteTables(params: DescribeRouteTablesRequest): Request[DescribeRouteTablesResult] = js.native
+    def describeScheduledInstanceAvailability(params: DescribeScheduledInstanceAvailabilityRequest, callback: Callback[DescribeScheduledInstanceAvailabilityResult]): Unit = js.native
+    def describeScheduledInstanceAvailability(params: DescribeScheduledInstanceAvailabilityRequest): Request[DescribeScheduledInstanceAvailabilityResult] = js.native
+    def describeScheduledInstances(params: DescribeScheduledInstancesRequest, callback: Callback[DescribeScheduledInstancesResult]): Unit = js.native
+    def describeScheduledInstances(params: DescribeScheduledInstancesRequest): Request[DescribeScheduledInstancesResult] = js.native
+    def describeSecurityGroupReferences(params: DescribeSecurityGroupReferencesRequest, callback: Callback[DescribeSecurityGroupReferencesResult]): Unit = js.native
+    def describeSecurityGroupReferences(params: DescribeSecurityGroupReferencesRequest): Request[DescribeSecurityGroupReferencesResult] = js.native
     def describeSecurityGroups(params: DescribeSecurityGroupsRequest, callback: Callback[DescribeSecurityGroupsResult]): Unit = js.native
     def describeSecurityGroups(params: DescribeSecurityGroupsRequest): Request[DescribeSecurityGroupsResult] = js.native
     def describeSnapshotAttribute(params: DescribeSnapshotAttributeRequest, callback: Callback[DescribeSnapshotAttributeResult]): Unit = js.native
@@ -405,10 +561,18 @@ package ec2 {
     def describeSnapshots(params: DescribeSnapshotsRequest): Request[DescribeSnapshotsResult] = js.native
     def describeSpotDatafeedSubscription(params: DescribeSpotDatafeedSubscriptionRequest, callback: Callback[DescribeSpotDatafeedSubscriptionResult]): Unit = js.native
     def describeSpotDatafeedSubscription(params: DescribeSpotDatafeedSubscriptionRequest): Request[DescribeSpotDatafeedSubscriptionResult] = js.native
+    def describeSpotFleetInstances(params: DescribeSpotFleetInstancesRequest, callback: Callback[DescribeSpotFleetInstancesResponse]): Unit = js.native
+    def describeSpotFleetInstances(params: DescribeSpotFleetInstancesRequest): Request[DescribeSpotFleetInstancesResponse] = js.native
+    def describeSpotFleetRequestHistory(params: DescribeSpotFleetRequestHistoryRequest, callback: Callback[DescribeSpotFleetRequestHistoryResponse]): Unit = js.native
+    def describeSpotFleetRequestHistory(params: DescribeSpotFleetRequestHistoryRequest): Request[DescribeSpotFleetRequestHistoryResponse] = js.native
+    def describeSpotFleetRequests(params: DescribeSpotFleetRequestsRequest, callback: Callback[DescribeSpotFleetRequestsResponse]): Unit = js.native
+    def describeSpotFleetRequests(params: DescribeSpotFleetRequestsRequest): Request[DescribeSpotFleetRequestsResponse] = js.native
     def describeSpotInstanceRequests(params: DescribeSpotInstanceRequestsRequest, callback: Callback[DescribeSpotInstanceRequestsResult]): Unit = js.native
     def describeSpotInstanceRequests(params: DescribeSpotInstanceRequestsRequest): Request[DescribeSpotInstanceRequestsResult] = js.native
     def describeSpotPriceHistory(params: DescribeSpotPriceHistoryRequest, callback: Callback[DescribeSpotPriceHistoryResult]): Unit = js.native
     def describeSpotPriceHistory(params: DescribeSpotPriceHistoryRequest): Request[DescribeSpotPriceHistoryResult] = js.native
+    def describeStaleSecurityGroups(params: DescribeStaleSecurityGroupsRequest, callback: Callback[DescribeStaleSecurityGroupsResult]): Unit = js.native
+    def describeStaleSecurityGroups(params: DescribeStaleSecurityGroupsRequest): Request[DescribeStaleSecurityGroupsResult] = js.native
     def describeSubnets(params: DescribeSubnetsRequest, callback: Callback[DescribeSubnetsResult]): Unit = js.native
     def describeSubnets(params: DescribeSubnetsRequest): Request[DescribeSubnetsResult] = js.native
     def describeTags(params: DescribeTagsRequest, callback: Callback[DescribeTagsResult]): Unit = js.native
@@ -423,6 +587,12 @@ package ec2 {
     def describeVpcAttribute(params: DescribeVpcAttributeRequest): Request[DescribeVpcAttributeResult] = js.native
     def describeVpcClassicLink(params: DescribeVpcClassicLinkRequest, callback: Callback[DescribeVpcClassicLinkResult]): Unit = js.native
     def describeVpcClassicLink(params: DescribeVpcClassicLinkRequest): Request[DescribeVpcClassicLinkResult] = js.native
+    def describeVpcClassicLinkDnsSupport(params: DescribeVpcClassicLinkDnsSupportRequest, callback: Callback[DescribeVpcClassicLinkDnsSupportResult]): Unit = js.native
+    def describeVpcClassicLinkDnsSupport(params: DescribeVpcClassicLinkDnsSupportRequest): Request[DescribeVpcClassicLinkDnsSupportResult] = js.native
+    def describeVpcEndpointServices(params: DescribeVpcEndpointServicesRequest, callback: Callback[DescribeVpcEndpointServicesResult]): Unit = js.native
+    def describeVpcEndpointServices(params: DescribeVpcEndpointServicesRequest): Request[DescribeVpcEndpointServicesResult] = js.native
+    def describeVpcEndpoints(params: DescribeVpcEndpointsRequest, callback: Callback[DescribeVpcEndpointsResult]): Unit = js.native
+    def describeVpcEndpoints(params: DescribeVpcEndpointsRequest): Request[DescribeVpcEndpointsResult] = js.native
     def describeVpcPeeringConnections(params: DescribeVpcPeeringConnectionsRequest, callback: Callback[DescribeVpcPeeringConnectionsResult]): Unit = js.native
     def describeVpcPeeringConnections(params: DescribeVpcPeeringConnectionsRequest): Request[DescribeVpcPeeringConnectionsResult] = js.native
     def describeVpcs(params: DescribeVpcsRequest, callback: Callback[DescribeVpcsResult]): Unit = js.native
@@ -445,46 +615,84 @@ package ec2 {
     def disableVgwRoutePropagation(params: DisableVgwRoutePropagationRequest): Request[js.Object] = js.native
     def disableVpcClassicLink(params: DisableVpcClassicLinkRequest, callback: Callback[DisableVpcClassicLinkResult]): Unit = js.native
     def disableVpcClassicLink(params: DisableVpcClassicLinkRequest): Request[DisableVpcClassicLinkResult] = js.native
+    def disableVpcClassicLinkDnsSupport(params: DisableVpcClassicLinkDnsSupportRequest, callback: Callback[DisableVpcClassicLinkDnsSupportResult]): Unit = js.native
+    def disableVpcClassicLinkDnsSupport(params: DisableVpcClassicLinkDnsSupportRequest): Request[DisableVpcClassicLinkDnsSupportResult] = js.native
     def disassociateAddress(params: DisassociateAddressRequest, callback: Callback[js.Object]): Unit = js.native
     def disassociateAddress(params: DisassociateAddressRequest): Request[js.Object] = js.native
     def disassociateRouteTable(params: DisassociateRouteTableRequest, callback: Callback[js.Object]): Unit = js.native
     def disassociateRouteTable(params: DisassociateRouteTableRequest): Request[js.Object] = js.native
+    def disassociateSubnetCidrBlock(params: DisassociateSubnetCidrBlockRequest, callback: Callback[DisassociateSubnetCidrBlockResult]): Unit = js.native
+    def disassociateSubnetCidrBlock(params: DisassociateSubnetCidrBlockRequest): Request[DisassociateSubnetCidrBlockResult] = js.native
+    def disassociateVpcCidrBlock(params: DisassociateVpcCidrBlockRequest, callback: Callback[DisassociateVpcCidrBlockResult]): Unit = js.native
+    def disassociateVpcCidrBlock(params: DisassociateVpcCidrBlockRequest): Request[DisassociateVpcCidrBlockResult] = js.native
     def enableVgwRoutePropagation(params: EnableVgwRoutePropagationRequest, callback: Callback[js.Object]): Unit = js.native
     def enableVgwRoutePropagation(params: EnableVgwRoutePropagationRequest): Request[js.Object] = js.native
     def enableVolumeIO(params: EnableVolumeIORequest, callback: Callback[js.Object]): Unit = js.native
     def enableVolumeIO(params: EnableVolumeIORequest): Request[js.Object] = js.native
     def enableVpcClassicLink(params: EnableVpcClassicLinkRequest, callback: Callback[EnableVpcClassicLinkResult]): Unit = js.native
     def enableVpcClassicLink(params: EnableVpcClassicLinkRequest): Request[EnableVpcClassicLinkResult] = js.native
+    def enableVpcClassicLinkDnsSupport(params: EnableVpcClassicLinkDnsSupportRequest, callback: Callback[EnableVpcClassicLinkDnsSupportResult]): Unit = js.native
+    def enableVpcClassicLinkDnsSupport(params: EnableVpcClassicLinkDnsSupportRequest): Request[EnableVpcClassicLinkDnsSupportResult] = js.native
     def getConsoleOutput(params: GetConsoleOutputRequest, callback: Callback[GetConsoleOutputResult]): Unit = js.native
     def getConsoleOutput(params: GetConsoleOutputRequest): Request[GetConsoleOutputResult] = js.native
+    def getConsoleScreenshot(params: GetConsoleScreenshotRequest, callback: Callback[GetConsoleScreenshotResult]): Unit = js.native
+    def getConsoleScreenshot(params: GetConsoleScreenshotRequest): Request[GetConsoleScreenshotResult] = js.native
+    def getHostReservationPurchasePreview(params: GetHostReservationPurchasePreviewRequest, callback: Callback[GetHostReservationPurchasePreviewResult]): Unit = js.native
+    def getHostReservationPurchasePreview(params: GetHostReservationPurchasePreviewRequest): Request[GetHostReservationPurchasePreviewResult] = js.native
     def getPasswordData(params: GetPasswordDataRequest, callback: Callback[GetPasswordDataResult]): Unit = js.native
     def getPasswordData(params: GetPasswordDataRequest): Request[GetPasswordDataResult] = js.native
+    def getReservedInstancesExchangeQuote(params: GetReservedInstancesExchangeQuoteRequest, callback: Callback[GetReservedInstancesExchangeQuoteResult]): Unit = js.native
+    def getReservedInstancesExchangeQuote(params: GetReservedInstancesExchangeQuoteRequest): Request[GetReservedInstancesExchangeQuoteResult] = js.native
+    def importImage(params: ImportImageRequest, callback: Callback[ImportImageResult]): Unit = js.native
+    def importImage(params: ImportImageRequest): Request[ImportImageResult] = js.native
     def importInstance(params: ImportInstanceRequest, callback: Callback[ImportInstanceResult]): Unit = js.native
     def importInstance(params: ImportInstanceRequest): Request[ImportInstanceResult] = js.native
     def importKeyPair(params: ImportKeyPairRequest, callback: Callback[ImportKeyPairResult]): Unit = js.native
     def importKeyPair(params: ImportKeyPairRequest): Request[ImportKeyPairResult] = js.native
+    def importSnapshot(params: ImportSnapshotRequest, callback: Callback[ImportSnapshotResult]): Unit = js.native
+    def importSnapshot(params: ImportSnapshotRequest): Request[ImportSnapshotResult] = js.native
     def importVolume(params: ImportVolumeRequest, callback: Callback[ImportVolumeResult]): Unit = js.native
     def importVolume(params: ImportVolumeRequest): Request[ImportVolumeResult] = js.native
+    def modifyHosts(params: ModifyHostsRequest, callback: Callback[ModifyHostsResult]): Unit = js.native
+    def modifyHosts(params: ModifyHostsRequest): Request[ModifyHostsResult] = js.native
+    def modifyIdFormat(params: ModifyIdFormatRequest, callback: Callback[js.Object]): Unit = js.native
+    def modifyIdFormat(params: ModifyIdFormatRequest): Request[js.Object] = js.native
+    def modifyIdentityIdFormat(params: ModifyIdentityIdFormatRequest, callback: Callback[js.Object]): Unit = js.native
+    def modifyIdentityIdFormat(params: ModifyIdentityIdFormatRequest): Request[js.Object] = js.native
     def modifyImageAttribute(params: ModifyImageAttributeRequest, callback: Callback[js.Object]): Unit = js.native
     def modifyImageAttribute(params: ModifyImageAttributeRequest): Request[js.Object] = js.native
     def modifyInstanceAttribute(params: ModifyInstanceAttributeRequest, callback: Callback[js.Object]): Unit = js.native
     def modifyInstanceAttribute(params: ModifyInstanceAttributeRequest): Request[js.Object] = js.native
+    def modifyInstancePlacement(params: ModifyInstancePlacementRequest, callback: Callback[ModifyInstancePlacementResult]): Unit = js.native
+    def modifyInstancePlacement(params: ModifyInstancePlacementRequest): Request[ModifyInstancePlacementResult] = js.native
     def modifyNetworkInterfaceAttribute(params: ModifyNetworkInterfaceAttributeRequest, callback: Callback[js.Object]): Unit = js.native
     def modifyNetworkInterfaceAttribute(params: ModifyNetworkInterfaceAttributeRequest): Request[js.Object] = js.native
     def modifyReservedInstances(params: ModifyReservedInstancesRequest, callback: Callback[ModifyReservedInstancesResult]): Unit = js.native
     def modifyReservedInstances(params: ModifyReservedInstancesRequest): Request[ModifyReservedInstancesResult] = js.native
     def modifySnapshotAttribute(params: ModifySnapshotAttributeRequest, callback: Callback[js.Object]): Unit = js.native
     def modifySnapshotAttribute(params: ModifySnapshotAttributeRequest): Request[js.Object] = js.native
+    def modifySpotFleetRequest(params: ModifySpotFleetRequestRequest, callback: Callback[ModifySpotFleetRequestResponse]): Unit = js.native
+    def modifySpotFleetRequest(params: ModifySpotFleetRequestRequest): Request[ModifySpotFleetRequestResponse] = js.native
     def modifySubnetAttribute(params: ModifySubnetAttributeRequest, callback: Callback[js.Object]): Unit = js.native
     def modifySubnetAttribute(params: ModifySubnetAttributeRequest): Request[js.Object] = js.native
     def modifyVolumeAttribute(params: ModifyVolumeAttributeRequest, callback: Callback[js.Object]): Unit = js.native
     def modifyVolumeAttribute(params: ModifyVolumeAttributeRequest): Request[js.Object] = js.native
     def modifyVpcAttribute(params: ModifyVpcAttributeRequest, callback: Callback[js.Object]): Unit = js.native
     def modifyVpcAttribute(params: ModifyVpcAttributeRequest): Request[js.Object] = js.native
+    def modifyVpcEndpoint(params: ModifyVpcEndpointRequest, callback: Callback[ModifyVpcEndpointResult]): Unit = js.native
+    def modifyVpcEndpoint(params: ModifyVpcEndpointRequest): Request[ModifyVpcEndpointResult] = js.native
+    def modifyVpcPeeringConnectionOptions(params: ModifyVpcPeeringConnectionOptionsRequest, callback: Callback[ModifyVpcPeeringConnectionOptionsResult]): Unit = js.native
+    def modifyVpcPeeringConnectionOptions(params: ModifyVpcPeeringConnectionOptionsRequest): Request[ModifyVpcPeeringConnectionOptionsResult] = js.native
     def monitorInstances(params: MonitorInstancesRequest, callback: Callback[MonitorInstancesResult]): Unit = js.native
     def monitorInstances(params: MonitorInstancesRequest): Request[MonitorInstancesResult] = js.native
+    def moveAddressToVpc(params: MoveAddressToVpcRequest, callback: Callback[MoveAddressToVpcResult]): Unit = js.native
+    def moveAddressToVpc(params: MoveAddressToVpcRequest): Request[MoveAddressToVpcResult] = js.native
+    def purchaseHostReservation(params: PurchaseHostReservationRequest, callback: Callback[PurchaseHostReservationResult]): Unit = js.native
+    def purchaseHostReservation(params: PurchaseHostReservationRequest): Request[PurchaseHostReservationResult] = js.native
     def purchaseReservedInstancesOffering(params: PurchaseReservedInstancesOfferingRequest, callback: Callback[PurchaseReservedInstancesOfferingResult]): Unit = js.native
     def purchaseReservedInstancesOffering(params: PurchaseReservedInstancesOfferingRequest): Request[PurchaseReservedInstancesOfferingResult] = js.native
+    def purchaseScheduledInstances(params: PurchaseScheduledInstancesRequest, callback: Callback[PurchaseScheduledInstancesResult]): Unit = js.native
+    def purchaseScheduledInstances(params: PurchaseScheduledInstancesRequest): Request[PurchaseScheduledInstancesResult] = js.native
     def rebootInstances(params: RebootInstancesRequest, callback: Callback[js.Object]): Unit = js.native
     def rebootInstances(params: RebootInstancesRequest): Request[js.Object] = js.native
     def registerImage(params: RegisterImageRequest, callback: Callback[RegisterImageResult]): Unit = js.native
@@ -493,6 +701,8 @@ package ec2 {
     def rejectVpcPeeringConnection(params: RejectVpcPeeringConnectionRequest): Request[RejectVpcPeeringConnectionResult] = js.native
     def releaseAddress(params: ReleaseAddressRequest, callback: Callback[js.Object]): Unit = js.native
     def releaseAddress(params: ReleaseAddressRequest): Request[js.Object] = js.native
+    def releaseHosts(params: ReleaseHostsRequest, callback: Callback[ReleaseHostsResult]): Unit = js.native
+    def releaseHosts(params: ReleaseHostsRequest): Request[ReleaseHostsResult] = js.native
     def replaceNetworkAclAssociation(params: ReplaceNetworkAclAssociationRequest, callback: Callback[ReplaceNetworkAclAssociationResult]): Unit = js.native
     def replaceNetworkAclAssociation(params: ReplaceNetworkAclAssociationRequest): Request[ReplaceNetworkAclAssociationResult] = js.native
     def replaceNetworkAclEntry(params: ReplaceNetworkAclEntryRequest, callback: Callback[js.Object]): Unit = js.native
@@ -503,6 +713,8 @@ package ec2 {
     def replaceRouteTableAssociation(params: ReplaceRouteTableAssociationRequest): Request[ReplaceRouteTableAssociationResult] = js.native
     def reportInstanceStatus(params: ReportInstanceStatusRequest, callback: Callback[js.Object]): Unit = js.native
     def reportInstanceStatus(params: ReportInstanceStatusRequest): Request[js.Object] = js.native
+    def requestSpotFleet(params: RequestSpotFleetRequest, callback: Callback[RequestSpotFleetResponse]): Unit = js.native
+    def requestSpotFleet(params: RequestSpotFleetRequest): Request[RequestSpotFleetResponse] = js.native
     def requestSpotInstances(params: RequestSpotInstancesRequest, callback: Callback[RequestSpotInstancesResult]): Unit = js.native
     def requestSpotInstances(params: RequestSpotInstancesRequest): Request[RequestSpotInstancesResult] = js.native
     def resetImageAttribute(params: ResetImageAttributeRequest, callback: Callback[js.Object]): Unit = js.native
@@ -513,24 +725,79 @@ package ec2 {
     def resetNetworkInterfaceAttribute(params: ResetNetworkInterfaceAttributeRequest): Request[js.Object] = js.native
     def resetSnapshotAttribute(params: ResetSnapshotAttributeRequest, callback: Callback[js.Object]): Unit = js.native
     def resetSnapshotAttribute(params: ResetSnapshotAttributeRequest): Request[js.Object] = js.native
+    def restoreAddressToClassic(params: RestoreAddressToClassicRequest, callback: Callback[RestoreAddressToClassicResult]): Unit = js.native
+    def restoreAddressToClassic(params: RestoreAddressToClassicRequest): Request[RestoreAddressToClassicResult] = js.native
     def revokeSecurityGroupEgress(params: RevokeSecurityGroupEgressRequest, callback: Callback[js.Object]): Unit = js.native
     def revokeSecurityGroupEgress(params: RevokeSecurityGroupEgressRequest): Request[js.Object] = js.native
     def revokeSecurityGroupIngress(params: RevokeSecurityGroupIngressRequest, callback: Callback[js.Object]): Unit = js.native
     def revokeSecurityGroupIngress(params: RevokeSecurityGroupIngressRequest): Request[js.Object] = js.native
     def runInstances(params: RunInstancesRequest, callback: Callback[Reservation]): Unit = js.native
     def runInstances(params: RunInstancesRequest): Request[Reservation] = js.native
+    def runScheduledInstances(params: RunScheduledInstancesRequest, callback: Callback[RunScheduledInstancesResult]): Unit = js.native
+    def runScheduledInstances(params: RunScheduledInstancesRequest): Request[RunScheduledInstancesResult] = js.native
     def startInstances(params: StartInstancesRequest, callback: Callback[StartInstancesResult]): Unit = js.native
     def startInstances(params: StartInstancesRequest): Request[StartInstancesResult] = js.native
     def stopInstances(params: StopInstancesRequest, callback: Callback[StopInstancesResult]): Unit = js.native
     def stopInstances(params: StopInstancesRequest): Request[StopInstancesResult] = js.native
     def terminateInstances(params: TerminateInstancesRequest, callback: Callback[TerminateInstancesResult]): Unit = js.native
     def terminateInstances(params: TerminateInstancesRequest): Request[TerminateInstancesResult] = js.native
+    def unassignIpv6Addresses(params: UnassignIpv6AddressesRequest, callback: Callback[UnassignIpv6AddressesResult]): Unit = js.native
+    def unassignIpv6Addresses(params: UnassignIpv6AddressesRequest): Request[UnassignIpv6AddressesResult] = js.native
     def unassignPrivateIpAddresses(params: UnassignPrivateIpAddressesRequest, callback: Callback[js.Object]): Unit = js.native
     def unassignPrivateIpAddresses(params: UnassignPrivateIpAddressesRequest): Request[js.Object] = js.native
     def unmonitorInstances(params: UnmonitorInstancesRequest, callback: Callback[UnmonitorInstancesResult]): Unit = js.native
     def unmonitorInstances(params: UnmonitorInstancesRequest): Request[UnmonitorInstancesResult] = js.native
   }
 
+  /**
+   * <p>Contains the parameters for accepting the quote.</p>
+   */
+  @js.native
+  trait AcceptReservedInstancesExchangeQuoteRequest extends js.Object {
+    var DryRun: Boolean
+    var ReservedInstanceIds: ReservedInstanceIdSet
+    var TargetConfigurations: TargetConfigurationRequestSet
+  }
+
+  object AcceptReservedInstancesExchangeQuoteRequest {
+    def apply(
+      DryRun: js.UndefOr[Boolean] = js.undefined,
+      ReservedInstanceIds: js.UndefOr[ReservedInstanceIdSet] = js.undefined,
+      TargetConfigurations: js.UndefOr[TargetConfigurationRequestSet] = js.undefined
+    ): AcceptReservedInstancesExchangeQuoteRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("DryRun" -> DryRun.map { x => x: js.Any }),
+        ("ReservedInstanceIds" -> ReservedInstanceIds.map { x => x: js.Any }),
+        ("TargetConfigurations" -> TargetConfigurations.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AcceptReservedInstancesExchangeQuoteRequest]
+    }
+  }
+
+  /**
+   * <p>The result of the exchange and whether it was <code>successful</code>.</p>
+   */
+  @js.native
+  trait AcceptReservedInstancesExchangeQuoteResult extends js.Object {
+    var ExchangeId: String
+  }
+
+  object AcceptReservedInstancesExchangeQuoteResult {
+    def apply(
+      ExchangeId: js.UndefOr[String] = js.undefined
+    ): AcceptReservedInstancesExchangeQuoteResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("ExchangeId" -> ExchangeId.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AcceptReservedInstancesExchangeQuoteResult]
+    }
+  }
+
+  /**
+   * <p>Contains the parameters for AcceptVpcPeeringConnection.</p>
+   */
   @js.native
   trait AcceptVpcPeeringConnectionRequest extends js.Object {
     var DryRun: Boolean
@@ -551,6 +818,9 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the output of AcceptVpcPeeringConnection.</p>
+   */
   @js.native
   trait AcceptVpcPeeringConnectionResult extends js.Object {
     var VpcPeeringConnection: VpcPeeringConnection
@@ -620,6 +890,42 @@ package ec2 {
   }
 
   /**
+   * <p>Describes a running instance in a Spot fleet.</p>
+   */
+  @js.native
+  trait ActiveInstance extends js.Object {
+    var InstanceType: String
+    var InstanceId: String
+    var SpotInstanceRequestId: String
+  }
+
+  object ActiveInstance {
+    def apply(
+      InstanceType: js.UndefOr[String] = js.undefined,
+      InstanceId: js.UndefOr[String] = js.undefined,
+      SpotInstanceRequestId: js.UndefOr[String] = js.undefined
+    ): ActiveInstance = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("InstanceType" -> InstanceType.map { x => x: js.Any }),
+        ("InstanceId" -> InstanceId.map { x => x: js.Any }),
+        ("SpotInstanceRequestId" -> SpotInstanceRequestId.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ActiveInstance]
+    }
+  }
+
+
+  object ActivityStatusEnum {
+    val error = "error"
+    val `pending_fulfillment` = "pending_fulfillment"
+    val `pending_termination` = "pending_termination"
+    val fulfilled = "fulfilled"
+
+    val values = IndexedSeq(error, `pending_fulfillment`, `pending_termination`, fulfilled)
+  }
+
+  /**
    * <p>Describes an Elastic IP address.</p>
    */
   @js.native
@@ -660,6 +966,17 @@ package ec2 {
     }
   }
 
+
+  object AffinityEnum {
+    val default = "default"
+    val host = "host"
+
+    val values = IndexedSeq(default, host)
+  }
+
+  /**
+   * <p>Contains the parameters for AllocateAddress.</p>
+   */
   @js.native
   trait AllocateAddressRequest extends js.Object {
     var DryRun: Boolean
@@ -680,6 +997,9 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the output of AllocateAddress.</p>
+   */
   @js.native
   trait AllocateAddressResult extends js.Object {
     var PublicIp: String
@@ -703,6 +1023,77 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the parameters for AllocateHosts.</p>
+   */
+  @js.native
+  trait AllocateHostsRequest extends js.Object {
+    var Quantity: Integer
+    var ClientToken: String
+    var AvailabilityZone: String
+    var InstanceType: String
+    var AutoPlacement: AutoPlacement
+  }
+
+  object AllocateHostsRequest {
+    def apply(
+      Quantity: js.UndefOr[Integer] = js.undefined,
+      ClientToken: js.UndefOr[String] = js.undefined,
+      AvailabilityZone: js.UndefOr[String] = js.undefined,
+      InstanceType: js.UndefOr[String] = js.undefined,
+      AutoPlacement: js.UndefOr[AutoPlacement] = js.undefined
+    ): AllocateHostsRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("Quantity" -> Quantity.map { x => x: js.Any }),
+        ("ClientToken" -> ClientToken.map { x => x: js.Any }),
+        ("AvailabilityZone" -> AvailabilityZone.map { x => x: js.Any }),
+        ("InstanceType" -> InstanceType.map { x => x: js.Any }),
+        ("AutoPlacement" -> AutoPlacement.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AllocateHostsRequest]
+    }
+  }
+
+  /**
+   * <p>Contains the output of AllocateHosts.</p>
+   */
+  @js.native
+  trait AllocateHostsResult extends js.Object {
+    var HostIds: ResponseHostIdList
+  }
+
+  object AllocateHostsResult {
+    def apply(
+      HostIds: js.UndefOr[ResponseHostIdList] = js.undefined
+    ): AllocateHostsResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("HostIds" -> HostIds.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AllocateHostsResult]
+    }
+  }
+
+
+  object AllocationStateEnum {
+    val available = "available"
+    val `under-assessment` = "under-assessment"
+    val `permanent-failure` = "permanent-failure"
+    val released = "released"
+    val `released-permanent-failure` = "released-permanent-failure"
+
+    val values = IndexedSeq(available, `under-assessment`, `permanent-failure`, released, `released-permanent-failure`)
+  }
+
+
+  object AllocationStrategyEnum {
+    val lowestPrice = "lowestPrice"
+    val diversified = "diversified"
+
+    val values = IndexedSeq(lowestPrice, diversified)
+  }
+
 
   object ArchitectureValuesEnum {
     val i386 = "i386"
@@ -711,6 +1102,52 @@ package ec2 {
     val values = IndexedSeq(i386, `x86_64`)
   }
 
+  @js.native
+  trait AssignIpv6AddressesRequest extends js.Object {
+    var NetworkInterfaceId: String
+    var Ipv6Addresses: Ipv6AddressList
+    var Ipv6AddressCount: Integer
+  }
+
+  object AssignIpv6AddressesRequest {
+    def apply(
+      NetworkInterfaceId: js.UndefOr[String] = js.undefined,
+      Ipv6Addresses: js.UndefOr[Ipv6AddressList] = js.undefined,
+      Ipv6AddressCount: js.UndefOr[Integer] = js.undefined
+    ): AssignIpv6AddressesRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("NetworkInterfaceId" -> NetworkInterfaceId.map { x => x: js.Any }),
+        ("Ipv6Addresses" -> Ipv6Addresses.map { x => x: js.Any }),
+        ("Ipv6AddressCount" -> Ipv6AddressCount.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AssignIpv6AddressesRequest]
+    }
+  }
+
+  @js.native
+  trait AssignIpv6AddressesResult extends js.Object {
+    var NetworkInterfaceId: String
+    var AssignedIpv6Addresses: Ipv6AddressList
+  }
+
+  object AssignIpv6AddressesResult {
+    def apply(
+      NetworkInterfaceId: js.UndefOr[String] = js.undefined,
+      AssignedIpv6Addresses: js.UndefOr[Ipv6AddressList] = js.undefined
+    ): AssignIpv6AddressesResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("NetworkInterfaceId" -> NetworkInterfaceId.map { x => x: js.Any }),
+        ("AssignedIpv6Addresses" -> AssignedIpv6Addresses.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AssignIpv6AddressesResult]
+    }
+  }
+
+  /**
+   * <p>Contains the parameters for AssignPrivateIpAddresses.</p>
+   */
   @js.native
   trait AssignPrivateIpAddressesRequest extends js.Object {
     var NetworkInterfaceId: String
@@ -737,6 +1174,9 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the parameters for AssociateAddress.</p>
+   */
   @js.native
   trait AssociateAddressRequest extends js.Object {
     var DryRun: Boolean
@@ -772,6 +1212,9 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the output of AssociateAddress.</p>
+   */
   @js.native
   trait AssociateAddressResult extends js.Object {
     var AssociationId: String
@@ -789,6 +1232,9 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the parameters for AssociateDhcpOptions.</p>
+   */
   @js.native
   trait AssociateDhcpOptionsRequest extends js.Object {
     var DryRun: Boolean
@@ -812,6 +1258,9 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the parameters for AssociateRouteTable.</p>
+   */
   @js.native
   trait AssociateRouteTableRequest extends js.Object {
     var DryRun: Boolean
@@ -835,6 +1284,9 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the output of AssociateRouteTable.</p>
+   */
   @js.native
   trait AssociateRouteTableResult extends js.Object {
     var AssociationId: String
@@ -852,6 +1304,89 @@ package ec2 {
     }
   }
 
+  @js.native
+  trait AssociateSubnetCidrBlockRequest extends js.Object {
+    var SubnetId: String
+    var Ipv6CidrBlock: String
+  }
+
+  object AssociateSubnetCidrBlockRequest {
+    def apply(
+      SubnetId: js.UndefOr[String] = js.undefined,
+      Ipv6CidrBlock: js.UndefOr[String] = js.undefined
+    ): AssociateSubnetCidrBlockRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("SubnetId" -> SubnetId.map { x => x: js.Any }),
+        ("Ipv6CidrBlock" -> Ipv6CidrBlock.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AssociateSubnetCidrBlockRequest]
+    }
+  }
+
+  @js.native
+  trait AssociateSubnetCidrBlockResult extends js.Object {
+    var SubnetId: String
+    var Ipv6CidrBlockAssociation: SubnetIpv6CidrBlockAssociation
+  }
+
+  object AssociateSubnetCidrBlockResult {
+    def apply(
+      SubnetId: js.UndefOr[String] = js.undefined,
+      Ipv6CidrBlockAssociation: js.UndefOr[SubnetIpv6CidrBlockAssociation] = js.undefined
+    ): AssociateSubnetCidrBlockResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("SubnetId" -> SubnetId.map { x => x: js.Any }),
+        ("Ipv6CidrBlockAssociation" -> Ipv6CidrBlockAssociation.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AssociateSubnetCidrBlockResult]
+    }
+  }
+
+  @js.native
+  trait AssociateVpcCidrBlockRequest extends js.Object {
+    var VpcId: String
+    var AmazonProvidedIpv6CidrBlock: Boolean
+  }
+
+  object AssociateVpcCidrBlockRequest {
+    def apply(
+      VpcId: js.UndefOr[String] = js.undefined,
+      AmazonProvidedIpv6CidrBlock: js.UndefOr[Boolean] = js.undefined
+    ): AssociateVpcCidrBlockRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("VpcId" -> VpcId.map { x => x: js.Any }),
+        ("AmazonProvidedIpv6CidrBlock" -> AmazonProvidedIpv6CidrBlock.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AssociateVpcCidrBlockRequest]
+    }
+  }
+
+  @js.native
+  trait AssociateVpcCidrBlockResult extends js.Object {
+    var VpcId: String
+    var Ipv6CidrBlockAssociation: VpcIpv6CidrBlockAssociation
+  }
+
+  object AssociateVpcCidrBlockResult {
+    def apply(
+      VpcId: js.UndefOr[String] = js.undefined,
+      Ipv6CidrBlockAssociation: js.UndefOr[VpcIpv6CidrBlockAssociation] = js.undefined
+    ): AssociateVpcCidrBlockResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("VpcId" -> VpcId.map { x => x: js.Any }),
+        ("Ipv6CidrBlockAssociation" -> Ipv6CidrBlockAssociation.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AssociateVpcCidrBlockResult]
+    }
+  }
+
+  /**
+   * <p>Contains the parameters for AttachClassicLinkVpc.</p>
+   */
   @js.native
   trait AttachClassicLinkVpcRequest extends js.Object {
     var DryRun: Boolean
@@ -878,6 +1413,9 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the output of AttachClassicLinkVpc.</p>
+   */
   @js.native
   trait AttachClassicLinkVpcResult extends js.Object {
     var Return: Boolean
@@ -895,6 +1433,9 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the parameters for AttachInternetGateway.</p>
+   */
   @js.native
   trait AttachInternetGatewayRequest extends js.Object {
     var DryRun: Boolean
@@ -918,6 +1459,9 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the parameters for AttachNetworkInterface.</p>
+   */
   @js.native
   trait AttachNetworkInterfaceRequest extends js.Object {
     var DryRun: Boolean
@@ -944,6 +1488,9 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the output of AttachNetworkInterface.</p>
+   */
   @js.native
   trait AttachNetworkInterfaceResult extends js.Object {
     var AttachmentId: String
@@ -961,6 +1508,9 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the parameters for AttachVolume.</p>
+   */
   @js.native
   trait AttachVolumeRequest extends js.Object {
     var DryRun: Boolean
@@ -987,6 +1537,9 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the parameters for AttachVpnGateway.</p>
+   */
   @js.native
   trait AttachVpnGatewayRequest extends js.Object {
     var DryRun: Boolean
@@ -1010,6 +1563,9 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the output of AttachVpnGateway.</p>
+   */
   @js.native
   trait AttachVpnGatewayResult extends js.Object {
     var VpcAttachment: VpcAttachment
@@ -1038,7 +1594,7 @@ package ec2 {
   }
 
   /**
-   * <p>The value to use when a resource attribute accepts a Boolean value.</p>
+   * <p>Describes a value for a resource attribute that is a Boolean value.</p>
    */
   @js.native
   trait AttributeBooleanValue extends js.Object {
@@ -1058,7 +1614,7 @@ package ec2 {
   }
 
   /**
-   * <p>The value to use for a resource attribute.</p>
+   * <p>Describes a value for a resource attribute that is a String.</p>
    */
   @js.native
   trait AttributeValue extends js.Object {
@@ -1077,6 +1633,9 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the parameters for AuthorizeSecurityGroupEgress.</p>
+   */
   @js.native
   trait AuthorizeSecurityGroupEgressRequest extends js.Object {
     var DryRun: Boolean
@@ -1118,6 +1677,9 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the parameters for AuthorizeSecurityGroupIngress.</p>
+   */
   @js.native
   trait AuthorizeSecurityGroupIngressRequest extends js.Object {
     var DryRun: Boolean
@@ -1160,6 +1722,14 @@ package ec2 {
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AuthorizeSecurityGroupIngressRequest]
     }
+  }
+
+
+  object AutoPlacementEnum {
+    val on = "on"
+    val off = "off"
+
+    val values = IndexedSeq(on, off)
   }
 
   /**
@@ -1214,8 +1784,47 @@ package ec2 {
 
   object AvailabilityZoneStateEnum {
     val available = "available"
+    val information = "information"
+    val impaired = "impaired"
+    val unavailable = "unavailable"
 
-    val values = IndexedSeq(available)
+    val values = IndexedSeq(available, information, impaired, unavailable)
+  }
+
+  /**
+   * <p>The capacity information for instances launched onto the Dedicated Host.</p>
+   */
+  @js.native
+  trait AvailableCapacity extends js.Object {
+    var AvailableInstanceCapacity: AvailableInstanceCapacityList
+    var AvailableVCpus: Integer
+  }
+
+  object AvailableCapacity {
+    def apply(
+      AvailableInstanceCapacity: js.UndefOr[AvailableInstanceCapacityList] = js.undefined,
+      AvailableVCpus: js.UndefOr[Integer] = js.undefined
+    ): AvailableCapacity = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("AvailableInstanceCapacity" -> AvailableInstanceCapacity.map { x => x: js.Any }),
+        ("AvailableVCpus" -> AvailableVCpus.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AvailableCapacity]
+    }
+  }
+
+
+  object BatchStateEnum {
+    val submitted = "submitted"
+    val active = "active"
+    val cancelled = "cancelled"
+    val failed = "failed"
+    val `cancelled_running` = "cancelled_running"
+    val `cancelled_terminating` = "cancelled_terminating"
+    val modifying = "modifying"
+
+    val values = IndexedSeq(submitted, active, cancelled, failed, `cancelled_running`, `cancelled_terminating`, modifying)
   }
 
   @js.native
@@ -1264,6 +1873,9 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the parameters for BundleInstance.</p>
+   */
   @js.native
   trait BundleInstanceRequest extends js.Object {
     var DryRun: Boolean
@@ -1287,6 +1899,9 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the output of BundleInstance.</p>
+   */
   @js.native
   trait BundleInstanceResult extends js.Object {
     var BundleTask: BundleTask
@@ -1381,6 +1996,19 @@ package ec2 {
     val values = IndexedSeq(pending, `waiting-for-shutdown`, bundling, storing, cancelling, complete, failed)
   }
 
+
+  object CancelBatchErrorCodeEnum {
+    val fleetRequestIdDoesNotExist = "fleetRequestIdDoesNotExist"
+    val fleetRequestIdMalformed = "fleetRequestIdMalformed"
+    val fleetRequestNotInCancellableState = "fleetRequestNotInCancellableState"
+    val unexpectedError = "unexpectedError"
+
+    val values = IndexedSeq(fleetRequestIdDoesNotExist, fleetRequestIdMalformed, fleetRequestNotInCancellableState, unexpectedError)
+  }
+
+  /**
+   * <p>Contains the parameters for CancelBundleTask.</p>
+   */
   @js.native
   trait CancelBundleTaskRequest extends js.Object {
     var DryRun: Boolean
@@ -1401,6 +2029,9 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the output of CancelBundleTask.</p>
+   */
   @js.native
   trait CancelBundleTaskResult extends js.Object {
     var BundleTask: BundleTask
@@ -1418,6 +2049,9 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the parameters for CancelConversionTask.</p>
+   */
   @js.native
   trait CancelConversionRequest extends js.Object {
     var DryRun: Boolean
@@ -1441,6 +2075,9 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the parameters for CancelExportTask.</p>
+   */
   @js.native
   trait CancelExportTaskRequest extends js.Object {
     var ExportTaskId: String
@@ -1458,6 +2095,61 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the parameters for CancelImportTask.</p>
+   */
+  @js.native
+  trait CancelImportTaskRequest extends js.Object {
+    var DryRun: Boolean
+    var ImportTaskId: String
+    var CancelReason: String
+  }
+
+  object CancelImportTaskRequest {
+    def apply(
+      DryRun: js.UndefOr[Boolean] = js.undefined,
+      ImportTaskId: js.UndefOr[String] = js.undefined,
+      CancelReason: js.UndefOr[String] = js.undefined
+    ): CancelImportTaskRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("DryRun" -> DryRun.map { x => x: js.Any }),
+        ("ImportTaskId" -> ImportTaskId.map { x => x: js.Any }),
+        ("CancelReason" -> CancelReason.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CancelImportTaskRequest]
+    }
+  }
+
+  /**
+   * <p>Contains the output for CancelImportTask.</p>
+   */
+  @js.native
+  trait CancelImportTaskResult extends js.Object {
+    var ImportTaskId: String
+    var State: String
+    var PreviousState: String
+  }
+
+  object CancelImportTaskResult {
+    def apply(
+      ImportTaskId: js.UndefOr[String] = js.undefined,
+      State: js.UndefOr[String] = js.undefined,
+      PreviousState: js.UndefOr[String] = js.undefined
+    ): CancelImportTaskResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("ImportTaskId" -> ImportTaskId.map { x => x: js.Any }),
+        ("State" -> State.map { x => x: js.Any }),
+        ("PreviousState" -> PreviousState.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CancelImportTaskResult]
+    }
+  }
+
+  /**
+   * <p>Contains the parameters for CancelReservedInstancesListing.</p>
+   */
   @js.native
   trait CancelReservedInstancesListingRequest extends js.Object {
     var ReservedInstancesListingId: String
@@ -1475,6 +2167,9 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the output of CancelReservedInstancesListing.</p>
+   */
   @js.native
   trait CancelReservedInstancesListingResult extends js.Object {
     var ReservedInstancesListings: ReservedInstancesListingList
@@ -1492,6 +2187,127 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Describes a Spot fleet error.</p>
+   */
+  @js.native
+  trait CancelSpotFleetRequestsError extends js.Object {
+    var Code: CancelBatchErrorCode
+    var Message: String
+  }
+
+  object CancelSpotFleetRequestsError {
+    def apply(
+      Code: js.UndefOr[CancelBatchErrorCode] = js.undefined,
+      Message: js.UndefOr[String] = js.undefined
+    ): CancelSpotFleetRequestsError = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("Code" -> Code.map { x => x: js.Any }),
+        ("Message" -> Message.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CancelSpotFleetRequestsError]
+    }
+  }
+
+  /**
+   * <p>Describes a Spot fleet request that was not successfully canceled.</p>
+   */
+  @js.native
+  trait CancelSpotFleetRequestsErrorItem extends js.Object {
+    var SpotFleetRequestId: String
+    var Error: CancelSpotFleetRequestsError
+  }
+
+  object CancelSpotFleetRequestsErrorItem {
+    def apply(
+      SpotFleetRequestId: js.UndefOr[String] = js.undefined,
+      Error: js.UndefOr[CancelSpotFleetRequestsError] = js.undefined
+    ): CancelSpotFleetRequestsErrorItem = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("SpotFleetRequestId" -> SpotFleetRequestId.map { x => x: js.Any }),
+        ("Error" -> Error.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CancelSpotFleetRequestsErrorItem]
+    }
+  }
+
+  /**
+   * <p>Contains the parameters for CancelSpotFleetRequests.</p>
+   */
+  @js.native
+  trait CancelSpotFleetRequestsRequest extends js.Object {
+    var DryRun: Boolean
+    var SpotFleetRequestIds: ValueStringList
+    var TerminateInstances: Boolean
+  }
+
+  object CancelSpotFleetRequestsRequest {
+    def apply(
+      DryRun: js.UndefOr[Boolean] = js.undefined,
+      SpotFleetRequestIds: js.UndefOr[ValueStringList] = js.undefined,
+      TerminateInstances: js.UndefOr[Boolean] = js.undefined
+    ): CancelSpotFleetRequestsRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("DryRun" -> DryRun.map { x => x: js.Any }),
+        ("SpotFleetRequestIds" -> SpotFleetRequestIds.map { x => x: js.Any }),
+        ("TerminateInstances" -> TerminateInstances.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CancelSpotFleetRequestsRequest]
+    }
+  }
+
+  /**
+   * <p>Contains the output of CancelSpotFleetRequests.</p>
+   */
+  @js.native
+  trait CancelSpotFleetRequestsResponse extends js.Object {
+    var UnsuccessfulFleetRequests: CancelSpotFleetRequestsErrorSet
+    var SuccessfulFleetRequests: CancelSpotFleetRequestsSuccessSet
+  }
+
+  object CancelSpotFleetRequestsResponse {
+    def apply(
+      UnsuccessfulFleetRequests: js.UndefOr[CancelSpotFleetRequestsErrorSet] = js.undefined,
+      SuccessfulFleetRequests: js.UndefOr[CancelSpotFleetRequestsSuccessSet] = js.undefined
+    ): CancelSpotFleetRequestsResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("UnsuccessfulFleetRequests" -> UnsuccessfulFleetRequests.map { x => x: js.Any }),
+        ("SuccessfulFleetRequests" -> SuccessfulFleetRequests.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CancelSpotFleetRequestsResponse]
+    }
+  }
+
+  /**
+   * <p>Describes a Spot fleet request that was successfully canceled.</p>
+   */
+  @js.native
+  trait CancelSpotFleetRequestsSuccessItem extends js.Object {
+    var SpotFleetRequestId: String
+    var CurrentSpotFleetRequestState: BatchState
+    var PreviousSpotFleetRequestState: BatchState
+  }
+
+  object CancelSpotFleetRequestsSuccessItem {
+    def apply(
+      SpotFleetRequestId: js.UndefOr[String] = js.undefined,
+      CurrentSpotFleetRequestState: js.UndefOr[BatchState] = js.undefined,
+      PreviousSpotFleetRequestState: js.UndefOr[BatchState] = js.undefined
+    ): CancelSpotFleetRequestsSuccessItem = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("SpotFleetRequestId" -> SpotFleetRequestId.map { x => x: js.Any }),
+        ("CurrentSpotFleetRequestState" -> CurrentSpotFleetRequestState.map { x => x: js.Any }),
+        ("PreviousSpotFleetRequestState" -> PreviousSpotFleetRequestState.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CancelSpotFleetRequestsSuccessItem]
+    }
+  }
+
 
   object CancelSpotInstanceRequestStateEnum {
     val active = "active"
@@ -1503,6 +2319,9 @@ package ec2 {
     val values = IndexedSeq(active, open, closed, cancelled, completed)
   }
 
+  /**
+   * <p>Contains the parameters for CancelSpotInstanceRequests.</p>
+   */
   @js.native
   trait CancelSpotInstanceRequestsRequest extends js.Object {
     var DryRun: Boolean
@@ -1523,6 +2342,9 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the output of CancelSpotInstanceRequests.</p>
+   */
   @js.native
   trait CancelSpotInstanceRequestsResult extends js.Object {
     var CancelledSpotInstanceRequests: CancelledSpotInstanceRequestList
@@ -1541,7 +2363,7 @@ package ec2 {
   }
 
   /**
-   * <p>Describes a request to cancel a Spot Instance.</p>
+   * <p>Describes a request to cancel a Spot instance.</p>
    */
   @js.native
   trait CancelledSpotInstanceRequest extends js.Object {
@@ -1560,6 +2382,29 @@ package ec2 {
       ).filter(_._2 != js.undefined)
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CancelledSpotInstanceRequest]
+    }
+  }
+
+  /**
+   * <p>Describes the ClassicLink DNS support status of a VPC.</p>
+   */
+  @js.native
+  trait ClassicLinkDnsSupport extends js.Object {
+    var VpcId: String
+    var ClassicLinkDnsSupported: Boolean
+  }
+
+  object ClassicLinkDnsSupport {
+    def apply(
+      VpcId: js.UndefOr[String] = js.undefined,
+      ClassicLinkDnsSupported: js.UndefOr[Boolean] = js.undefined
+    ): ClassicLinkDnsSupport = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("VpcId" -> VpcId.map { x => x: js.Any }),
+        ("ClassicLinkDnsSupported" -> ClassicLinkDnsSupported.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ClassicLinkDnsSupport]
     }
   }
 
@@ -1592,6 +2437,38 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Describes the client-specific data.</p>
+   */
+  @js.native
+  trait ClientData extends js.Object {
+    var UploadStart: DateTime
+    var UploadEnd: DateTime
+    var UploadSize: Double
+    var Comment: String
+  }
+
+  object ClientData {
+    def apply(
+      UploadStart: js.UndefOr[DateTime] = js.undefined,
+      UploadEnd: js.UndefOr[DateTime] = js.undefined,
+      UploadSize: js.UndefOr[Double] = js.undefined,
+      Comment: js.UndefOr[String] = js.undefined
+    ): ClientData = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("UploadStart" -> UploadStart.map { x => x: js.Any }),
+        ("UploadEnd" -> UploadEnd.map { x => x: js.Any }),
+        ("UploadSize" -> UploadSize.map { x => x: js.Any }),
+        ("Comment" -> Comment.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ClientData]
+    }
+  }
+
+  /**
+   * <p>Contains the parameters for ConfirmProductInstance.</p>
+   */
   @js.native
   trait ConfirmProductInstanceRequest extends js.Object {
     var DryRun: Boolean
@@ -1615,17 +2492,23 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the output of ConfirmProductInstance.</p>
+   */
   @js.native
   trait ConfirmProductInstanceResult extends js.Object {
     var OwnerId: String
+    var Return: Boolean
   }
 
   object ConfirmProductInstanceResult {
     def apply(
-      OwnerId: js.UndefOr[String] = js.undefined
+      OwnerId: js.UndefOr[String] = js.undefined,
+      Return: js.UndefOr[Boolean] = js.undefined
     ): ConfirmProductInstanceResult = {
       val _fields = IndexedSeq[(String, js.Any)](
-        ("OwnerId" -> OwnerId.map { x => x: js.Any })
+        ("OwnerId" -> OwnerId.map { x => x: js.Any }),
+        ("Return" -> Return.map { x => x: js.Any })
       ).filter(_._2 != js.undefined)
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ConfirmProductInstanceResult]
@@ -1687,6 +2570,9 @@ package ec2 {
     val values = IndexedSeq(active, cancelling, cancelled, completed)
   }
 
+  /**
+   * <p>Contains the parameters for CopyImage.</p>
+   */
   @js.native
   trait CopyImageRequest extends js.Object {
     var SourceRegion: String
@@ -1695,6 +2581,8 @@ package ec2 {
     var Name: String
     var ClientToken: String
     var Description: String
+    var KmsKeyId: String
+    var Encrypted: Boolean
   }
 
   object CopyImageRequest {
@@ -1704,7 +2592,9 @@ package ec2 {
       SourceImageId: js.UndefOr[String] = js.undefined,
       Name: js.UndefOr[String] = js.undefined,
       ClientToken: js.UndefOr[String] = js.undefined,
-      Description: js.UndefOr[String] = js.undefined
+      Description: js.UndefOr[String] = js.undefined,
+      KmsKeyId: js.UndefOr[String] = js.undefined,
+      Encrypted: js.UndefOr[Boolean] = js.undefined
     ): CopyImageRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         ("SourceRegion" -> SourceRegion.map { x => x: js.Any }),
@@ -1712,13 +2602,18 @@ package ec2 {
         ("SourceImageId" -> SourceImageId.map { x => x: js.Any }),
         ("Name" -> Name.map { x => x: js.Any }),
         ("ClientToken" -> ClientToken.map { x => x: js.Any }),
-        ("Description" -> Description.map { x => x: js.Any })
+        ("Description" -> Description.map { x => x: js.Any }),
+        ("KmsKeyId" -> KmsKeyId.map { x => x: js.Any }),
+        ("Encrypted" -> Encrypted.map { x => x: js.Any })
       ).filter(_._2 != js.undefined)
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CopyImageRequest]
     }
   }
 
+  /**
+   * <p>Contains the output of CopyImage.</p>
+   */
   @js.native
   trait CopyImageResult extends js.Object {
     var ImageId: String
@@ -1736,13 +2631,18 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the parameters for CopySnapshot.</p>
+   */
   @js.native
   trait CopySnapshotRequest extends js.Object {
     var SourceRegion: String
     var DryRun: Boolean
     var DestinationRegion: String
     var Description: String
+    var KmsKeyId: String
     var PresignedUrl: String
+    var Encrypted: Boolean
     var SourceSnapshotId: String
   }
 
@@ -1752,7 +2652,9 @@ package ec2 {
       DryRun: js.UndefOr[Boolean] = js.undefined,
       DestinationRegion: js.UndefOr[String] = js.undefined,
       Description: js.UndefOr[String] = js.undefined,
+      KmsKeyId: js.UndefOr[String] = js.undefined,
       PresignedUrl: js.UndefOr[String] = js.undefined,
+      Encrypted: js.UndefOr[Boolean] = js.undefined,
       SourceSnapshotId: js.UndefOr[String] = js.undefined
     ): CopySnapshotRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
@@ -1760,7 +2662,9 @@ package ec2 {
         ("DryRun" -> DryRun.map { x => x: js.Any }),
         ("DestinationRegion" -> DestinationRegion.map { x => x: js.Any }),
         ("Description" -> Description.map { x => x: js.Any }),
+        ("KmsKeyId" -> KmsKeyId.map { x => x: js.Any }),
         ("PresignedUrl" -> PresignedUrl.map { x => x: js.Any }),
+        ("Encrypted" -> Encrypted.map { x => x: js.Any }),
         ("SourceSnapshotId" -> SourceSnapshotId.map { x => x: js.Any })
       ).filter(_._2 != js.undefined)
 
@@ -1768,6 +2672,9 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the output of CopySnapshot.</p>
+   */
   @js.native
   trait CopySnapshotResult extends js.Object {
     var SnapshotId: String
@@ -1785,6 +2692,9 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the parameters for CreateCustomerGateway.</p>
+   */
   @js.native
   trait CreateCustomerGatewayRequest extends js.Object {
     var DryRun: Boolean
@@ -1811,6 +2721,9 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the output of CreateCustomerGateway.</p>
+   */
   @js.native
   trait CreateCustomerGatewayResult extends js.Object {
     var CustomerGateway: CustomerGateway
@@ -1828,6 +2741,9 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the parameters for CreateDhcpOptions.</p>
+   */
   @js.native
   trait CreateDhcpOptionsRequest extends js.Object {
     var DryRun: Boolean
@@ -1848,6 +2764,9 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the output of CreateDhcpOptions.</p>
+   */
   @js.native
   trait CreateDhcpOptionsResult extends js.Object {
     var DhcpOptions: DhcpOptions
@@ -1865,6 +2784,113 @@ package ec2 {
     }
   }
 
+  @js.native
+  trait CreateEgressOnlyInternetGatewayRequest extends js.Object {
+    var DryRun: Boolean
+    var VpcId: String
+    var ClientToken: String
+  }
+
+  object CreateEgressOnlyInternetGatewayRequest {
+    def apply(
+      DryRun: js.UndefOr[Boolean] = js.undefined,
+      VpcId: js.UndefOr[String] = js.undefined,
+      ClientToken: js.UndefOr[String] = js.undefined
+    ): CreateEgressOnlyInternetGatewayRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("DryRun" -> DryRun.map { x => x: js.Any }),
+        ("VpcId" -> VpcId.map { x => x: js.Any }),
+        ("ClientToken" -> ClientToken.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateEgressOnlyInternetGatewayRequest]
+    }
+  }
+
+  @js.native
+  trait CreateEgressOnlyInternetGatewayResult extends js.Object {
+    var EgressOnlyInternetGateway: EgressOnlyInternetGateway
+    var ClientToken: String
+  }
+
+  object CreateEgressOnlyInternetGatewayResult {
+    def apply(
+      EgressOnlyInternetGateway: js.UndefOr[EgressOnlyInternetGateway] = js.undefined,
+      ClientToken: js.UndefOr[String] = js.undefined
+    ): CreateEgressOnlyInternetGatewayResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("EgressOnlyInternetGateway" -> EgressOnlyInternetGateway.map { x => x: js.Any }),
+        ("ClientToken" -> ClientToken.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateEgressOnlyInternetGatewayResult]
+    }
+  }
+
+  /**
+   * <p>Contains the parameters for CreateFlowLogs.</p>
+   */
+  @js.native
+  trait CreateFlowLogsRequest extends js.Object {
+    var ClientToken: String
+    var LogGroupName: String
+    var ResourceIds: ValueStringList
+    var ResourceType: FlowLogsResourceType
+    var DeliverLogsPermissionArn: String
+    var TrafficType: TrafficType
+  }
+
+  object CreateFlowLogsRequest {
+    def apply(
+      ClientToken: js.UndefOr[String] = js.undefined,
+      LogGroupName: js.UndefOr[String] = js.undefined,
+      ResourceIds: js.UndefOr[ValueStringList] = js.undefined,
+      ResourceType: js.UndefOr[FlowLogsResourceType] = js.undefined,
+      DeliverLogsPermissionArn: js.UndefOr[String] = js.undefined,
+      TrafficType: js.UndefOr[TrafficType] = js.undefined
+    ): CreateFlowLogsRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("ClientToken" -> ClientToken.map { x => x: js.Any }),
+        ("LogGroupName" -> LogGroupName.map { x => x: js.Any }),
+        ("ResourceIds" -> ResourceIds.map { x => x: js.Any }),
+        ("ResourceType" -> ResourceType.map { x => x: js.Any }),
+        ("DeliverLogsPermissionArn" -> DeliverLogsPermissionArn.map { x => x: js.Any }),
+        ("TrafficType" -> TrafficType.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateFlowLogsRequest]
+    }
+  }
+
+  /**
+   * <p>Contains the output of CreateFlowLogs.</p>
+   */
+  @js.native
+  trait CreateFlowLogsResult extends js.Object {
+    var FlowLogIds: ValueStringList
+    var ClientToken: String
+    var Unsuccessful: UnsuccessfulItemSet
+  }
+
+  object CreateFlowLogsResult {
+    def apply(
+      FlowLogIds: js.UndefOr[ValueStringList] = js.undefined,
+      ClientToken: js.UndefOr[String] = js.undefined,
+      Unsuccessful: js.UndefOr[UnsuccessfulItemSet] = js.undefined
+    ): CreateFlowLogsResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("FlowLogIds" -> FlowLogIds.map { x => x: js.Any }),
+        ("ClientToken" -> ClientToken.map { x => x: js.Any }),
+        ("Unsuccessful" -> Unsuccessful.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateFlowLogsResult]
+    }
+  }
+
+  /**
+   * <p>Contains the parameters for CreateImage.</p>
+   */
   @js.native
   trait CreateImageRequest extends js.Object {
     var BlockDeviceMappings: BlockDeviceMappingRequestList
@@ -1897,6 +2923,9 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the output of CreateImage.</p>
+   */
   @js.native
   trait CreateImageResult extends js.Object {
     var ImageId: String
@@ -1914,6 +2943,9 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the parameters for CreateInstanceExportTask.</p>
+   */
   @js.native
   trait CreateInstanceExportTaskRequest extends js.Object {
     var Description: String
@@ -1940,6 +2972,9 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the output for CreateInstanceExportTask.</p>
+   */
   @js.native
   trait CreateInstanceExportTaskResult extends js.Object {
     var ExportTask: ExportTask
@@ -1957,6 +2992,9 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the parameters for CreateInternetGateway.</p>
+   */
   @js.native
   trait CreateInternetGatewayRequest extends js.Object {
     var DryRun: Boolean
@@ -1974,6 +3012,9 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the output of CreateInternetGateway.</p>
+   */
   @js.native
   trait CreateInternetGatewayResult extends js.Object {
     var InternetGateway: InternetGateway
@@ -1991,6 +3032,9 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the parameters for CreateKeyPair.</p>
+   */
   @js.native
   trait CreateKeyPairRequest extends js.Object {
     var DryRun: Boolean
@@ -2011,10 +3055,63 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the parameters for CreateNatGateway.</p>
+   */
+  @js.native
+  trait CreateNatGatewayRequest extends js.Object {
+    var SubnetId: String
+    var AllocationId: String
+    var ClientToken: String
+  }
+
+  object CreateNatGatewayRequest {
+    def apply(
+      SubnetId: js.UndefOr[String] = js.undefined,
+      AllocationId: js.UndefOr[String] = js.undefined,
+      ClientToken: js.UndefOr[String] = js.undefined
+    ): CreateNatGatewayRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("SubnetId" -> SubnetId.map { x => x: js.Any }),
+        ("AllocationId" -> AllocationId.map { x => x: js.Any }),
+        ("ClientToken" -> ClientToken.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateNatGatewayRequest]
+    }
+  }
+
+  /**
+   * <p>Contains the output of CreateNatGateway.</p>
+   */
+  @js.native
+  trait CreateNatGatewayResult extends js.Object {
+    var NatGateway: NatGateway
+    var ClientToken: String
+  }
+
+  object CreateNatGatewayResult {
+    def apply(
+      NatGateway: js.UndefOr[NatGateway] = js.undefined,
+      ClientToken: js.UndefOr[String] = js.undefined
+    ): CreateNatGatewayResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("NatGateway" -> NatGateway.map { x => x: js.Any }),
+        ("ClientToken" -> ClientToken.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateNatGatewayResult]
+    }
+  }
+
+  /**
+   * <p>Contains the parameters for CreateNetworkAclEntry.</p>
+   */
   @js.native
   trait CreateNetworkAclEntryRequest extends js.Object {
     var Egress: Boolean
     var DryRun: Boolean
+    var Ipv6CidrBlock: String
     var PortRange: PortRange
     var IcmpTypeCode: IcmpTypeCode
     var CidrBlock: String
@@ -2028,6 +3125,7 @@ package ec2 {
     def apply(
       Egress: js.UndefOr[Boolean] = js.undefined,
       DryRun: js.UndefOr[Boolean] = js.undefined,
+      Ipv6CidrBlock: js.UndefOr[String] = js.undefined,
       PortRange: js.UndefOr[PortRange] = js.undefined,
       IcmpTypeCode: js.UndefOr[IcmpTypeCode] = js.undefined,
       CidrBlock: js.UndefOr[String] = js.undefined,
@@ -2039,6 +3137,7 @@ package ec2 {
       val _fields = IndexedSeq[(String, js.Any)](
         ("Egress" -> Egress.map { x => x: js.Any }),
         ("DryRun" -> DryRun.map { x => x: js.Any }),
+        ("Ipv6CidrBlock" -> Ipv6CidrBlock.map { x => x: js.Any }),
         ("PortRange" -> PortRange.map { x => x: js.Any }),
         ("IcmpTypeCode" -> IcmpTypeCode.map { x => x: js.Any }),
         ("CidrBlock" -> CidrBlock.map { x => x: js.Any }),
@@ -2052,6 +3151,9 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the parameters for CreateNetworkAcl.</p>
+   */
   @js.native
   trait CreateNetworkAclRequest extends js.Object {
     var DryRun: Boolean
@@ -2072,6 +3174,9 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the output of CreateNetworkAcl.</p>
+   */
   @js.native
   trait CreateNetworkAclResult extends js.Object {
     var NetworkAcl: NetworkAcl
@@ -2089,12 +3194,17 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the parameters for CreateNetworkInterface.</p>
+   */
   @js.native
   trait CreateNetworkInterfaceRequest extends js.Object {
+    var Ipv6Addresses: InstanceIpv6AddressList
     var DryRun: Boolean
     var PrivateIpAddress: String
     var Description: String
     var PrivateIpAddresses: PrivateIpAddressSpecificationList
+    var Ipv6AddressCount: Integer
     var Groups: SecurityGroupIdStringList
     var SecondaryPrivateIpAddressCount: Integer
     var SubnetId: String
@@ -2102,19 +3212,23 @@ package ec2 {
 
   object CreateNetworkInterfaceRequest {
     def apply(
+      Ipv6Addresses: js.UndefOr[InstanceIpv6AddressList] = js.undefined,
       DryRun: js.UndefOr[Boolean] = js.undefined,
       PrivateIpAddress: js.UndefOr[String] = js.undefined,
       Description: js.UndefOr[String] = js.undefined,
       PrivateIpAddresses: js.UndefOr[PrivateIpAddressSpecificationList] = js.undefined,
+      Ipv6AddressCount: js.UndefOr[Integer] = js.undefined,
       Groups: js.UndefOr[SecurityGroupIdStringList] = js.undefined,
       SecondaryPrivateIpAddressCount: js.UndefOr[Integer] = js.undefined,
       SubnetId: js.UndefOr[String] = js.undefined
     ): CreateNetworkInterfaceRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
+        ("Ipv6Addresses" -> Ipv6Addresses.map { x => x: js.Any }),
         ("DryRun" -> DryRun.map { x => x: js.Any }),
         ("PrivateIpAddress" -> PrivateIpAddress.map { x => x: js.Any }),
         ("Description" -> Description.map { x => x: js.Any }),
         ("PrivateIpAddresses" -> PrivateIpAddresses.map { x => x: js.Any }),
+        ("Ipv6AddressCount" -> Ipv6AddressCount.map { x => x: js.Any }),
         ("Groups" -> Groups.map { x => x: js.Any }),
         ("SecondaryPrivateIpAddressCount" -> SecondaryPrivateIpAddressCount.map { x => x: js.Any }),
         ("SubnetId" -> SubnetId.map { x => x: js.Any })
@@ -2124,6 +3238,9 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the output of CreateNetworkInterface.</p>
+   */
   @js.native
   trait CreateNetworkInterfaceResult extends js.Object {
     var NetworkInterface: NetworkInterface
@@ -2141,6 +3258,9 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the parameters for CreatePlacementGroup.</p>
+   */
   @js.native
   trait CreatePlacementGroupRequest extends js.Object {
     var DryRun: Boolean
@@ -2164,6 +3284,9 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the parameters for CreateReservedInstancesListing.</p>
+   */
   @js.native
   trait CreateReservedInstancesListingRequest extends js.Object {
     var ReservedInstancesId: String
@@ -2190,6 +3313,9 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the output of CreateReservedInstancesListing.</p>
+   */
   @js.native
   trait CreateReservedInstancesListingResult extends js.Object {
     var ReservedInstancesListings: ReservedInstancesListingList
@@ -2207,14 +3333,20 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the parameters for CreateRoute.</p>
+   */
   @js.native
   trait CreateRouteRequest extends js.Object {
     var DryRun: Boolean
     var DestinationCidrBlock: String
     var VpcPeeringConnectionId: String
+    var NatGatewayId: String
+    var EgressOnlyInternetGatewayId: String
     var RouteTableId: String
     var InstanceId: String
     var NetworkInterfaceId: String
+    var DestinationIpv6CidrBlock: String
     var GatewayId: String
   }
 
@@ -2223,18 +3355,24 @@ package ec2 {
       DryRun: js.UndefOr[Boolean] = js.undefined,
       DestinationCidrBlock: js.UndefOr[String] = js.undefined,
       VpcPeeringConnectionId: js.UndefOr[String] = js.undefined,
+      NatGatewayId: js.UndefOr[String] = js.undefined,
+      EgressOnlyInternetGatewayId: js.UndefOr[String] = js.undefined,
       RouteTableId: js.UndefOr[String] = js.undefined,
       InstanceId: js.UndefOr[String] = js.undefined,
       NetworkInterfaceId: js.UndefOr[String] = js.undefined,
+      DestinationIpv6CidrBlock: js.UndefOr[String] = js.undefined,
       GatewayId: js.UndefOr[String] = js.undefined
     ): CreateRouteRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         ("DryRun" -> DryRun.map { x => x: js.Any }),
         ("DestinationCidrBlock" -> DestinationCidrBlock.map { x => x: js.Any }),
         ("VpcPeeringConnectionId" -> VpcPeeringConnectionId.map { x => x: js.Any }),
+        ("NatGatewayId" -> NatGatewayId.map { x => x: js.Any }),
+        ("EgressOnlyInternetGatewayId" -> EgressOnlyInternetGatewayId.map { x => x: js.Any }),
         ("RouteTableId" -> RouteTableId.map { x => x: js.Any }),
         ("InstanceId" -> InstanceId.map { x => x: js.Any }),
         ("NetworkInterfaceId" -> NetworkInterfaceId.map { x => x: js.Any }),
+        ("DestinationIpv6CidrBlock" -> DestinationIpv6CidrBlock.map { x => x: js.Any }),
         ("GatewayId" -> GatewayId.map { x => x: js.Any })
       ).filter(_._2 != js.undefined)
 
@@ -2242,6 +3380,29 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the output of CreateRoute.</p>
+   */
+  @js.native
+  trait CreateRouteResult extends js.Object {
+    var Return: Boolean
+  }
+
+  object CreateRouteResult {
+    def apply(
+      Return: js.UndefOr[Boolean] = js.undefined
+    ): CreateRouteResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("Return" -> Return.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateRouteResult]
+    }
+  }
+
+  /**
+   * <p>Contains the parameters for CreateRouteTable.</p>
+   */
   @js.native
   trait CreateRouteTableRequest extends js.Object {
     var DryRun: Boolean
@@ -2262,6 +3423,9 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the output of CreateRouteTable.</p>
+   */
   @js.native
   trait CreateRouteTableResult extends js.Object {
     var RouteTable: RouteTable
@@ -2279,6 +3443,9 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the parameters for CreateSecurityGroup.</p>
+   */
   @js.native
   trait CreateSecurityGroupRequest extends js.Object {
     var DryRun: Boolean
@@ -2305,6 +3472,9 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the output of CreateSecurityGroup.</p>
+   */
   @js.native
   trait CreateSecurityGroupResult extends js.Object {
     var GroupId: String
@@ -2322,6 +3492,9 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the parameters for CreateSnapshot.</p>
+   */
   @js.native
   trait CreateSnapshotRequest extends js.Object {
     var DryRun: Boolean
@@ -2345,6 +3518,9 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the parameters for CreateSpotDatafeedSubscription.</p>
+   */
   @js.native
   trait CreateSpotDatafeedSubscriptionRequest extends js.Object {
     var DryRun: Boolean
@@ -2368,6 +3544,9 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the output of CreateSpotDatafeedSubscription.</p>
+   */
   @js.native
   trait CreateSpotDatafeedSubscriptionResult extends js.Object {
     var SpotDatafeedSubscription: SpotDatafeedSubscription
@@ -2385,32 +3564,41 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the parameters for CreateSubnet.</p>
+   */
   @js.native
   trait CreateSubnetRequest extends js.Object {
     var DryRun: Boolean
-    var VpcId: String
+    var Ipv6CidrBlock: String
     var CidrBlock: String
     var AvailabilityZone: String
+    var VpcId: String
   }
 
   object CreateSubnetRequest {
     def apply(
       DryRun: js.UndefOr[Boolean] = js.undefined,
-      VpcId: js.UndefOr[String] = js.undefined,
+      Ipv6CidrBlock: js.UndefOr[String] = js.undefined,
       CidrBlock: js.UndefOr[String] = js.undefined,
-      AvailabilityZone: js.UndefOr[String] = js.undefined
+      AvailabilityZone: js.UndefOr[String] = js.undefined,
+      VpcId: js.UndefOr[String] = js.undefined
     ): CreateSubnetRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         ("DryRun" -> DryRun.map { x => x: js.Any }),
-        ("VpcId" -> VpcId.map { x => x: js.Any }),
+        ("Ipv6CidrBlock" -> Ipv6CidrBlock.map { x => x: js.Any }),
         ("CidrBlock" -> CidrBlock.map { x => x: js.Any }),
-        ("AvailabilityZone" -> AvailabilityZone.map { x => x: js.Any })
+        ("AvailabilityZone" -> AvailabilityZone.map { x => x: js.Any }),
+        ("VpcId" -> VpcId.map { x => x: js.Any })
       ).filter(_._2 != js.undefined)
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateSubnetRequest]
     }
   }
 
+  /**
+   * <p>Contains the output of CreateSubnet.</p>
+   */
   @js.native
   trait CreateSubnetResult extends js.Object {
     var Subnet: Subnet
@@ -2428,6 +3616,9 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the parameters for CreateTags.</p>
+   */
   @js.native
   trait CreateTagsRequest extends js.Object {
     var DryRun: Boolean
@@ -2451,6 +3642,9 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Describes the user or group to be added or removed from the permissions for a volume.</p>
+   */
   @js.native
   trait CreateVolumePermission extends js.Object {
     var UserId: String
@@ -2471,6 +3665,9 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Describes modifications to the permissions for a volume.</p>
+   */
   @js.native
   trait CreateVolumePermissionModifications extends js.Object {
     var Add: CreateVolumePermissionList
@@ -2491,6 +3688,9 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the parameters for CreateVolume.</p>
+   */
   @js.native
   trait CreateVolumeRequest extends js.Object {
     var DryRun: Boolean
@@ -2529,6 +3729,67 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the parameters for CreateVpcEndpoint.</p>
+   */
+  @js.native
+  trait CreateVpcEndpointRequest extends js.Object {
+    var DryRun: Boolean
+    var ServiceName: String
+    var ClientToken: String
+    var PolicyDocument: String
+    var RouteTableIds: ValueStringList
+    var VpcId: String
+  }
+
+  object CreateVpcEndpointRequest {
+    def apply(
+      DryRun: js.UndefOr[Boolean] = js.undefined,
+      ServiceName: js.UndefOr[String] = js.undefined,
+      ClientToken: js.UndefOr[String] = js.undefined,
+      PolicyDocument: js.UndefOr[String] = js.undefined,
+      RouteTableIds: js.UndefOr[ValueStringList] = js.undefined,
+      VpcId: js.UndefOr[String] = js.undefined
+    ): CreateVpcEndpointRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("DryRun" -> DryRun.map { x => x: js.Any }),
+        ("ServiceName" -> ServiceName.map { x => x: js.Any }),
+        ("ClientToken" -> ClientToken.map { x => x: js.Any }),
+        ("PolicyDocument" -> PolicyDocument.map { x => x: js.Any }),
+        ("RouteTableIds" -> RouteTableIds.map { x => x: js.Any }),
+        ("VpcId" -> VpcId.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateVpcEndpointRequest]
+    }
+  }
+
+  /**
+   * <p>Contains the output of CreateVpcEndpoint.</p>
+   */
+  @js.native
+  trait CreateVpcEndpointResult extends js.Object {
+    var VpcEndpoint: VpcEndpoint
+    var ClientToken: String
+  }
+
+  object CreateVpcEndpointResult {
+    def apply(
+      VpcEndpoint: js.UndefOr[VpcEndpoint] = js.undefined,
+      ClientToken: js.UndefOr[String] = js.undefined
+    ): CreateVpcEndpointResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("VpcEndpoint" -> VpcEndpoint.map { x => x: js.Any }),
+        ("ClientToken" -> ClientToken.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateVpcEndpointResult]
+    }
+  }
+
+  /**
+   * <p>Contains the parameters for CreateVpcPeeringConnection.</p>
+   */
   @js.native
   trait CreateVpcPeeringConnectionRequest extends js.Object {
     var DryRun: Boolean
@@ -2555,6 +3816,9 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the output of CreateVpcPeeringConnection.</p>
+   */
   @js.native
   trait CreateVpcPeeringConnectionResult extends js.Object {
     var VpcPeeringConnection: VpcPeeringConnection
@@ -2572,29 +3836,38 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the parameters for CreateVpc.</p>
+   */
   @js.native
   trait CreateVpcRequest extends js.Object {
     var DryRun: Boolean
     var CidrBlock: String
     var InstanceTenancy: Tenancy
+    var AmazonProvidedIpv6CidrBlock: Boolean
   }
 
   object CreateVpcRequest {
     def apply(
       DryRun: js.UndefOr[Boolean] = js.undefined,
       CidrBlock: js.UndefOr[String] = js.undefined,
-      InstanceTenancy: js.UndefOr[Tenancy] = js.undefined
+      InstanceTenancy: js.UndefOr[Tenancy] = js.undefined,
+      AmazonProvidedIpv6CidrBlock: js.UndefOr[Boolean] = js.undefined
     ): CreateVpcRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         ("DryRun" -> DryRun.map { x => x: js.Any }),
         ("CidrBlock" -> CidrBlock.map { x => x: js.Any }),
-        ("InstanceTenancy" -> InstanceTenancy.map { x => x: js.Any })
+        ("InstanceTenancy" -> InstanceTenancy.map { x => x: js.Any }),
+        ("AmazonProvidedIpv6CidrBlock" -> AmazonProvidedIpv6CidrBlock.map { x => x: js.Any })
       ).filter(_._2 != js.undefined)
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateVpcRequest]
     }
   }
 
+  /**
+   * <p>Contains the output of CreateVpc.</p>
+   */
   @js.native
   trait CreateVpcResult extends js.Object {
     var Vpc: Vpc
@@ -2612,6 +3885,9 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the parameters for CreateVpnConnection.</p>
+   */
   @js.native
   trait CreateVpnConnectionRequest extends js.Object {
     var DryRun: Boolean
@@ -2641,6 +3917,9 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the output of CreateVpnConnection.</p>
+   */
   @js.native
   trait CreateVpnConnectionResult extends js.Object {
     var VpnConnection: VpnConnection
@@ -2658,6 +3937,9 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the parameters for CreateVpnConnectionRoute.</p>
+   */
   @js.native
   trait CreateVpnConnectionRouteRequest extends js.Object {
     var VpnConnectionId: String
@@ -2678,6 +3960,9 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the parameters for CreateVpnGateway.</p>
+   */
   @js.native
   trait CreateVpnGatewayRequest extends js.Object {
     var DryRun: Boolean
@@ -2701,6 +3986,9 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the output of CreateVpnGateway.</p>
+   */
   @js.native
   trait CreateVpnGatewayResult extends js.Object {
     var VpnGateway: VpnGateway
@@ -2768,6 +4056,9 @@ package ec2 {
     val values = IndexedSeq(Active, Inactive)
   }
 
+  /**
+   * <p>Contains the parameters for DeleteCustomerGateway.</p>
+   */
   @js.native
   trait DeleteCustomerGatewayRequest extends js.Object {
     var DryRun: Boolean
@@ -2788,6 +4079,9 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the parameters for DeleteDhcpOptions.</p>
+   */
   @js.native
   trait DeleteDhcpOptionsRequest extends js.Object {
     var DryRun: Boolean
@@ -2809,6 +4103,86 @@ package ec2 {
   }
 
   @js.native
+  trait DeleteEgressOnlyInternetGatewayRequest extends js.Object {
+    var DryRun: Boolean
+    var EgressOnlyInternetGatewayId: EgressOnlyInternetGatewayId
+  }
+
+  object DeleteEgressOnlyInternetGatewayRequest {
+    def apply(
+      DryRun: js.UndefOr[Boolean] = js.undefined,
+      EgressOnlyInternetGatewayId: js.UndefOr[EgressOnlyInternetGatewayId] = js.undefined
+    ): DeleteEgressOnlyInternetGatewayRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("DryRun" -> DryRun.map { x => x: js.Any }),
+        ("EgressOnlyInternetGatewayId" -> EgressOnlyInternetGatewayId.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteEgressOnlyInternetGatewayRequest]
+    }
+  }
+
+  @js.native
+  trait DeleteEgressOnlyInternetGatewayResult extends js.Object {
+    var ReturnCode: Boolean
+  }
+
+  object DeleteEgressOnlyInternetGatewayResult {
+    def apply(
+      ReturnCode: js.UndefOr[Boolean] = js.undefined
+    ): DeleteEgressOnlyInternetGatewayResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("ReturnCode" -> ReturnCode.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteEgressOnlyInternetGatewayResult]
+    }
+  }
+
+  /**
+   * <p>Contains the parameters for DeleteFlowLogs.</p>
+   */
+  @js.native
+  trait DeleteFlowLogsRequest extends js.Object {
+    var FlowLogIds: ValueStringList
+  }
+
+  object DeleteFlowLogsRequest {
+    def apply(
+      FlowLogIds: js.UndefOr[ValueStringList] = js.undefined
+    ): DeleteFlowLogsRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("FlowLogIds" -> FlowLogIds.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteFlowLogsRequest]
+    }
+  }
+
+  /**
+   * <p>Contains the output of DeleteFlowLogs.</p>
+   */
+  @js.native
+  trait DeleteFlowLogsResult extends js.Object {
+    var Unsuccessful: UnsuccessfulItemSet
+  }
+
+  object DeleteFlowLogsResult {
+    def apply(
+      Unsuccessful: js.UndefOr[UnsuccessfulItemSet] = js.undefined
+    ): DeleteFlowLogsResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("Unsuccessful" -> Unsuccessful.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteFlowLogsResult]
+    }
+  }
+
+  /**
+   * <p>Contains the parameters for DeleteInternetGateway.</p>
+   */
+  @js.native
   trait DeleteInternetGatewayRequest extends js.Object {
     var DryRun: Boolean
     var InternetGatewayId: String
@@ -2828,6 +4202,9 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the parameters for DeleteKeyPair.</p>
+   */
   @js.native
   trait DeleteKeyPairRequest extends js.Object {
     var DryRun: Boolean
@@ -2848,6 +4225,49 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the parameters for DeleteNatGateway.</p>
+   */
+  @js.native
+  trait DeleteNatGatewayRequest extends js.Object {
+    var NatGatewayId: String
+  }
+
+  object DeleteNatGatewayRequest {
+    def apply(
+      NatGatewayId: js.UndefOr[String] = js.undefined
+    ): DeleteNatGatewayRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("NatGatewayId" -> NatGatewayId.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteNatGatewayRequest]
+    }
+  }
+
+  /**
+   * <p>Contains the output of DeleteNatGateway.</p>
+   */
+  @js.native
+  trait DeleteNatGatewayResult extends js.Object {
+    var NatGatewayId: String
+  }
+
+  object DeleteNatGatewayResult {
+    def apply(
+      NatGatewayId: js.UndefOr[String] = js.undefined
+    ): DeleteNatGatewayResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("NatGatewayId" -> NatGatewayId.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteNatGatewayResult]
+    }
+  }
+
+  /**
+   * <p>Contains the parameters for DeleteNetworkAclEntry.</p>
+   */
   @js.native
   trait DeleteNetworkAclEntryRequest extends js.Object {
     var DryRun: Boolean
@@ -2874,6 +4294,9 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the parameters for DeleteNetworkAcl.</p>
+   */
   @js.native
   trait DeleteNetworkAclRequest extends js.Object {
     var DryRun: Boolean
@@ -2894,6 +4317,9 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the parameters for DeleteNetworkInterface.</p>
+   */
   @js.native
   trait DeleteNetworkInterfaceRequest extends js.Object {
     var DryRun: Boolean
@@ -2914,6 +4340,9 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the parameters for DeletePlacementGroup.</p>
+   */
   @js.native
   trait DeletePlacementGroupRequest extends js.Object {
     var DryRun: Boolean
@@ -2934,29 +4363,38 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the parameters for DeleteRoute.</p>
+   */
   @js.native
   trait DeleteRouteRequest extends js.Object {
     var DryRun: Boolean
     var RouteTableId: String
     var DestinationCidrBlock: String
+    var DestinationIpv6CidrBlock: String
   }
 
   object DeleteRouteRequest {
     def apply(
       DryRun: js.UndefOr[Boolean] = js.undefined,
       RouteTableId: js.UndefOr[String] = js.undefined,
-      DestinationCidrBlock: js.UndefOr[String] = js.undefined
+      DestinationCidrBlock: js.UndefOr[String] = js.undefined,
+      DestinationIpv6CidrBlock: js.UndefOr[String] = js.undefined
     ): DeleteRouteRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         ("DryRun" -> DryRun.map { x => x: js.Any }),
         ("RouteTableId" -> RouteTableId.map { x => x: js.Any }),
-        ("DestinationCidrBlock" -> DestinationCidrBlock.map { x => x: js.Any })
+        ("DestinationCidrBlock" -> DestinationCidrBlock.map { x => x: js.Any }),
+        ("DestinationIpv6CidrBlock" -> DestinationIpv6CidrBlock.map { x => x: js.Any })
       ).filter(_._2 != js.undefined)
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteRouteRequest]
     }
   }
 
+  /**
+   * <p>Contains the parameters for DeleteRouteTable.</p>
+   */
   @js.native
   trait DeleteRouteTableRequest extends js.Object {
     var DryRun: Boolean
@@ -2977,6 +4415,9 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the parameters for DeleteSecurityGroup.</p>
+   */
   @js.native
   trait DeleteSecurityGroupRequest extends js.Object {
     var DryRun: Boolean
@@ -3000,6 +4441,9 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the parameters for DeleteSnapshot.</p>
+   */
   @js.native
   trait DeleteSnapshotRequest extends js.Object {
     var DryRun: Boolean
@@ -3020,6 +4464,9 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the parameters for DeleteSpotDatafeedSubscription.</p>
+   */
   @js.native
   trait DeleteSpotDatafeedSubscriptionRequest extends js.Object {
     var DryRun: Boolean
@@ -3037,6 +4484,9 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the parameters for DeleteSubnet.</p>
+   */
   @js.native
   trait DeleteSubnetRequest extends js.Object {
     var DryRun: Boolean
@@ -3057,6 +4507,9 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the parameters for DeleteTags.</p>
+   */
   @js.native
   trait DeleteTagsRequest extends js.Object {
     var DryRun: Boolean
@@ -3080,6 +4533,9 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the parameters for DeleteVolume.</p>
+   */
   @js.native
   trait DeleteVolumeRequest extends js.Object {
     var DryRun: Boolean
@@ -3100,6 +4556,52 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the parameters for DeleteVpcEndpoints.</p>
+   */
+  @js.native
+  trait DeleteVpcEndpointsRequest extends js.Object {
+    var DryRun: Boolean
+    var VpcEndpointIds: ValueStringList
+  }
+
+  object DeleteVpcEndpointsRequest {
+    def apply(
+      DryRun: js.UndefOr[Boolean] = js.undefined,
+      VpcEndpointIds: js.UndefOr[ValueStringList] = js.undefined
+    ): DeleteVpcEndpointsRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("DryRun" -> DryRun.map { x => x: js.Any }),
+        ("VpcEndpointIds" -> VpcEndpointIds.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteVpcEndpointsRequest]
+    }
+  }
+
+  /**
+   * <p>Contains the output of DeleteVpcEndpoints.</p>
+   */
+  @js.native
+  trait DeleteVpcEndpointsResult extends js.Object {
+    var Unsuccessful: UnsuccessfulItemSet
+  }
+
+  object DeleteVpcEndpointsResult {
+    def apply(
+      Unsuccessful: js.UndefOr[UnsuccessfulItemSet] = js.undefined
+    ): DeleteVpcEndpointsResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("Unsuccessful" -> Unsuccessful.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteVpcEndpointsResult]
+    }
+  }
+
+  /**
+   * <p>Contains the parameters for DeleteVpcPeeringConnection.</p>
+   */
   @js.native
   trait DeleteVpcPeeringConnectionRequest extends js.Object {
     var DryRun: Boolean
@@ -3120,6 +4622,9 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the output of DeleteVpcPeeringConnection.</p>
+   */
   @js.native
   trait DeleteVpcPeeringConnectionResult extends js.Object {
     var Return: Boolean
@@ -3137,6 +4642,9 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the parameters for DeleteVpc.</p>
+   */
   @js.native
   trait DeleteVpcRequest extends js.Object {
     var DryRun: Boolean
@@ -3157,6 +4665,9 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the parameters for DeleteVpnConnection.</p>
+   */
   @js.native
   trait DeleteVpnConnectionRequest extends js.Object {
     var DryRun: Boolean
@@ -3177,6 +4688,9 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the parameters for DeleteVpnConnectionRoute.</p>
+   */
   @js.native
   trait DeleteVpnConnectionRouteRequest extends js.Object {
     var VpnConnectionId: String
@@ -3197,6 +4711,9 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the parameters for DeleteVpnGateway.</p>
+   */
   @js.native
   trait DeleteVpnGatewayRequest extends js.Object {
     var DryRun: Boolean
@@ -3217,6 +4734,9 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the parameters for DeregisterImage.</p>
+   */
   @js.native
   trait DeregisterImageRequest extends js.Object {
     var DryRun: Boolean
@@ -3237,6 +4757,9 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the parameters for DescribeAccountAttributes.</p>
+   */
   @js.native
   trait DescribeAccountAttributesRequest extends js.Object {
     var DryRun: Boolean
@@ -3257,6 +4780,9 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the output of DescribeAccountAttributes.</p>
+   */
   @js.native
   trait DescribeAccountAttributesResult extends js.Object {
     var AccountAttributes: AccountAttributeList
@@ -3274,6 +4800,9 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the parameters for DescribeAddresses.</p>
+   */
   @js.native
   trait DescribeAddressesRequest extends js.Object {
     var DryRun: Boolean
@@ -3300,6 +4829,9 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the output of DescribeAddresses.</p>
+   */
   @js.native
   trait DescribeAddressesResult extends js.Object {
     var Addresses: AddressList
@@ -3317,6 +4849,9 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the parameters for DescribeAvailabilityZones.</p>
+   */
   @js.native
   trait DescribeAvailabilityZonesRequest extends js.Object {
     var DryRun: Boolean
@@ -3340,6 +4875,9 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the output of DescribeAvailabiltyZones.</p>
+   */
   @js.native
   trait DescribeAvailabilityZonesResult extends js.Object {
     var AvailabilityZones: AvailabilityZoneList
@@ -3357,6 +4895,9 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the parameters for DescribeBundleTasks.</p>
+   */
   @js.native
   trait DescribeBundleTasksRequest extends js.Object {
     var DryRun: Boolean
@@ -3380,6 +4921,9 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the output of DescribeBundleTasks.</p>
+   */
   @js.native
   trait DescribeBundleTasksResult extends js.Object {
     var BundleTasks: BundleTaskList
@@ -3397,6 +4941,9 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the parameters for DescribeClassicLinkInstances.</p>
+   */
   @js.native
   trait DescribeClassicLinkInstancesRequest extends js.Object {
     var DryRun: Boolean
@@ -3426,6 +4973,9 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the output of DescribeClassicLinkInstances.</p>
+   */
   @js.native
   trait DescribeClassicLinkInstancesResult extends js.Object {
     var Instances: ClassicLinkInstanceList
@@ -3446,22 +4996,22 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the parameters for DescribeConversionTasks.</p>
+   */
   @js.native
   trait DescribeConversionTasksRequest extends js.Object {
     var DryRun: Boolean
-    var Filters: FilterList
     var ConversionTaskIds: ConversionIdStringList
   }
 
   object DescribeConversionTasksRequest {
     def apply(
       DryRun: js.UndefOr[Boolean] = js.undefined,
-      Filters: js.UndefOr[FilterList] = js.undefined,
       ConversionTaskIds: js.UndefOr[ConversionIdStringList] = js.undefined
     ): DescribeConversionTasksRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         ("DryRun" -> DryRun.map { x => x: js.Any }),
-        ("Filters" -> Filters.map { x => x: js.Any }),
         ("ConversionTaskIds" -> ConversionTaskIds.map { x => x: js.Any })
       ).filter(_._2 != js.undefined)
 
@@ -3469,6 +5019,9 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the output for DescribeConversionTasks.</p>
+   */
   @js.native
   trait DescribeConversionTasksResult extends js.Object {
     var ConversionTasks: DescribeConversionTaskList
@@ -3486,6 +5039,9 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the parameters for DescribeCustomerGateways.</p>
+   */
   @js.native
   trait DescribeCustomerGatewaysRequest extends js.Object {
     var DryRun: Boolean
@@ -3509,6 +5065,9 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the output of DescribeCustomerGateways.</p>
+   */
   @js.native
   trait DescribeCustomerGatewaysResult extends js.Object {
     var CustomerGateways: CustomerGatewayList
@@ -3526,6 +5085,9 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the parameters for DescribeDhcpOptions.</p>
+   */
   @js.native
   trait DescribeDhcpOptionsRequest extends js.Object {
     var DryRun: Boolean
@@ -3549,6 +5111,9 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the output of DescribeDhcpOptions.</p>
+   */
   @js.native
   trait DescribeDhcpOptionsResult extends js.Object {
     var DhcpOptions: DhcpOptionsList
@@ -3567,6 +5132,55 @@ package ec2 {
   }
 
   @js.native
+  trait DescribeEgressOnlyInternetGatewaysRequest extends js.Object {
+    var DryRun: Boolean
+    var EgressOnlyInternetGatewayIds: EgressOnlyInternetGatewayIdList
+    var MaxResults: Integer
+    var NextToken: String
+  }
+
+  object DescribeEgressOnlyInternetGatewaysRequest {
+    def apply(
+      DryRun: js.UndefOr[Boolean] = js.undefined,
+      EgressOnlyInternetGatewayIds: js.UndefOr[EgressOnlyInternetGatewayIdList] = js.undefined,
+      MaxResults: js.UndefOr[Integer] = js.undefined,
+      NextToken: js.UndefOr[String] = js.undefined
+    ): DescribeEgressOnlyInternetGatewaysRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("DryRun" -> DryRun.map { x => x: js.Any }),
+        ("EgressOnlyInternetGatewayIds" -> EgressOnlyInternetGatewayIds.map { x => x: js.Any }),
+        ("MaxResults" -> MaxResults.map { x => x: js.Any }),
+        ("NextToken" -> NextToken.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeEgressOnlyInternetGatewaysRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeEgressOnlyInternetGatewaysResult extends js.Object {
+    var EgressOnlyInternetGateways: EgressOnlyInternetGatewayList
+    var NextToken: String
+  }
+
+  object DescribeEgressOnlyInternetGatewaysResult {
+    def apply(
+      EgressOnlyInternetGateways: js.UndefOr[EgressOnlyInternetGatewayList] = js.undefined,
+      NextToken: js.UndefOr[String] = js.undefined
+    ): DescribeEgressOnlyInternetGatewaysResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("EgressOnlyInternetGateways" -> EgressOnlyInternetGateways.map { x => x: js.Any }),
+        ("NextToken" -> NextToken.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeEgressOnlyInternetGatewaysResult]
+    }
+  }
+
+  /**
+   * <p>Contains the parameters for DescribeExportTasks.</p>
+   */
+  @js.native
   trait DescribeExportTasksRequest extends js.Object {
     var ExportTaskIds: ExportTaskIdStringList
   }
@@ -3583,6 +5197,9 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the output for DescribeExportTasks.</p>
+   */
   @js.native
   trait DescribeExportTasksResult extends js.Object {
     var ExportTasks: ExportTaskList
@@ -3600,6 +5217,294 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the parameters for DescribeFlowLogs.</p>
+   */
+  @js.native
+  trait DescribeFlowLogsRequest extends js.Object {
+    var FlowLogIds: ValueStringList
+    var Filter: FilterList
+    var NextToken: String
+    var MaxResults: Integer
+  }
+
+  object DescribeFlowLogsRequest {
+    def apply(
+      FlowLogIds: js.UndefOr[ValueStringList] = js.undefined,
+      Filter: js.UndefOr[FilterList] = js.undefined,
+      NextToken: js.UndefOr[String] = js.undefined,
+      MaxResults: js.UndefOr[Integer] = js.undefined
+    ): DescribeFlowLogsRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("FlowLogIds" -> FlowLogIds.map { x => x: js.Any }),
+        ("Filter" -> Filter.map { x => x: js.Any }),
+        ("NextToken" -> NextToken.map { x => x: js.Any }),
+        ("MaxResults" -> MaxResults.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeFlowLogsRequest]
+    }
+  }
+
+  /**
+   * <p>Contains the output of DescribeFlowLogs.</p>
+   */
+  @js.native
+  trait DescribeFlowLogsResult extends js.Object {
+    var FlowLogs: FlowLogSet
+    var NextToken: String
+  }
+
+  object DescribeFlowLogsResult {
+    def apply(
+      FlowLogs: js.UndefOr[FlowLogSet] = js.undefined,
+      NextToken: js.UndefOr[String] = js.undefined
+    ): DescribeFlowLogsResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("FlowLogs" -> FlowLogs.map { x => x: js.Any }),
+        ("NextToken" -> NextToken.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeFlowLogsResult]
+    }
+  }
+
+  @js.native
+  trait DescribeHostReservationOfferingsRequest extends js.Object {
+    var MaxDuration: Integer
+    var MaxResults: Integer
+    var OfferingId: String
+    var MinDuration: Integer
+    var Filter: FilterList
+    var NextToken: String
+  }
+
+  object DescribeHostReservationOfferingsRequest {
+    def apply(
+      MaxDuration: js.UndefOr[Integer] = js.undefined,
+      MaxResults: js.UndefOr[Integer] = js.undefined,
+      OfferingId: js.UndefOr[String] = js.undefined,
+      MinDuration: js.UndefOr[Integer] = js.undefined,
+      Filter: js.UndefOr[FilterList] = js.undefined,
+      NextToken: js.UndefOr[String] = js.undefined
+    ): DescribeHostReservationOfferingsRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("MaxDuration" -> MaxDuration.map { x => x: js.Any }),
+        ("MaxResults" -> MaxResults.map { x => x: js.Any }),
+        ("OfferingId" -> OfferingId.map { x => x: js.Any }),
+        ("MinDuration" -> MinDuration.map { x => x: js.Any }),
+        ("Filter" -> Filter.map { x => x: js.Any }),
+        ("NextToken" -> NextToken.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeHostReservationOfferingsRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeHostReservationOfferingsResult extends js.Object {
+    var OfferingSet: HostOfferingSet
+    var NextToken: String
+  }
+
+  object DescribeHostReservationOfferingsResult {
+    def apply(
+      OfferingSet: js.UndefOr[HostOfferingSet] = js.undefined,
+      NextToken: js.UndefOr[String] = js.undefined
+    ): DescribeHostReservationOfferingsResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("OfferingSet" -> OfferingSet.map { x => x: js.Any }),
+        ("NextToken" -> NextToken.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeHostReservationOfferingsResult]
+    }
+  }
+
+  @js.native
+  trait DescribeHostReservationsRequest extends js.Object {
+    var HostReservationIdSet: HostReservationIdSet
+    var Filter: FilterList
+    var MaxResults: Integer
+    var NextToken: String
+  }
+
+  object DescribeHostReservationsRequest {
+    def apply(
+      HostReservationIdSet: js.UndefOr[HostReservationIdSet] = js.undefined,
+      Filter: js.UndefOr[FilterList] = js.undefined,
+      MaxResults: js.UndefOr[Integer] = js.undefined,
+      NextToken: js.UndefOr[String] = js.undefined
+    ): DescribeHostReservationsRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("HostReservationIdSet" -> HostReservationIdSet.map { x => x: js.Any }),
+        ("Filter" -> Filter.map { x => x: js.Any }),
+        ("MaxResults" -> MaxResults.map { x => x: js.Any }),
+        ("NextToken" -> NextToken.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeHostReservationsRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeHostReservationsResult extends js.Object {
+    var HostReservationSet: HostReservationSet
+    var NextToken: String
+  }
+
+  object DescribeHostReservationsResult {
+    def apply(
+      HostReservationSet: js.UndefOr[HostReservationSet] = js.undefined,
+      NextToken: js.UndefOr[String] = js.undefined
+    ): DescribeHostReservationsResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("HostReservationSet" -> HostReservationSet.map { x => x: js.Any }),
+        ("NextToken" -> NextToken.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeHostReservationsResult]
+    }
+  }
+
+  /**
+   * <p>Contains the parameters for DescribeHosts.</p>
+   */
+  @js.native
+  trait DescribeHostsRequest extends js.Object {
+    var HostIds: RequestHostIdList
+    var NextToken: String
+    var MaxResults: Integer
+    var Filter: FilterList
+  }
+
+  object DescribeHostsRequest {
+    def apply(
+      HostIds: js.UndefOr[RequestHostIdList] = js.undefined,
+      NextToken: js.UndefOr[String] = js.undefined,
+      MaxResults: js.UndefOr[Integer] = js.undefined,
+      Filter: js.UndefOr[FilterList] = js.undefined
+    ): DescribeHostsRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("HostIds" -> HostIds.map { x => x: js.Any }),
+        ("NextToken" -> NextToken.map { x => x: js.Any }),
+        ("MaxResults" -> MaxResults.map { x => x: js.Any }),
+        ("Filter" -> Filter.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeHostsRequest]
+    }
+  }
+
+  /**
+   * <p>Contains the output of DescribeHosts.</p>
+   */
+  @js.native
+  trait DescribeHostsResult extends js.Object {
+    var Hosts: HostList
+    var NextToken: String
+  }
+
+  object DescribeHostsResult {
+    def apply(
+      Hosts: js.UndefOr[HostList] = js.undefined,
+      NextToken: js.UndefOr[String] = js.undefined
+    ): DescribeHostsResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("Hosts" -> Hosts.map { x => x: js.Any }),
+        ("NextToken" -> NextToken.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeHostsResult]
+    }
+  }
+
+  /**
+   * <p>Contains the parameters for DescribeIdFormat.</p>
+   */
+  @js.native
+  trait DescribeIdFormatRequest extends js.Object {
+    var Resource: String
+  }
+
+  object DescribeIdFormatRequest {
+    def apply(
+      Resource: js.UndefOr[String] = js.undefined
+    ): DescribeIdFormatRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("Resource" -> Resource.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeIdFormatRequest]
+    }
+  }
+
+  /**
+   * <p>Contains the output of DescribeIdFormat.</p>
+   */
+  @js.native
+  trait DescribeIdFormatResult extends js.Object {
+    var Statuses: IdFormatList
+  }
+
+  object DescribeIdFormatResult {
+    def apply(
+      Statuses: js.UndefOr[IdFormatList] = js.undefined
+    ): DescribeIdFormatResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("Statuses" -> Statuses.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeIdFormatResult]
+    }
+  }
+
+  /**
+   * <p>Contains the parameters for DescribeIdentityIdFormat.</p>
+   */
+  @js.native
+  trait DescribeIdentityIdFormatRequest extends js.Object {
+    var Resource: String
+    var PrincipalArn: String
+  }
+
+  object DescribeIdentityIdFormatRequest {
+    def apply(
+      Resource: js.UndefOr[String] = js.undefined,
+      PrincipalArn: js.UndefOr[String] = js.undefined
+    ): DescribeIdentityIdFormatRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("Resource" -> Resource.map { x => x: js.Any }),
+        ("PrincipalArn" -> PrincipalArn.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeIdentityIdFormatRequest]
+    }
+  }
+
+  /**
+   * <p>Contains the output of DescribeIdentityIdFormat.</p>
+   */
+  @js.native
+  trait DescribeIdentityIdFormatResult extends js.Object {
+    var Statuses: IdFormatList
+  }
+
+  object DescribeIdentityIdFormatResult {
+    def apply(
+      Statuses: js.UndefOr[IdFormatList] = js.undefined
+    ): DescribeIdentityIdFormatResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("Statuses" -> Statuses.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeIdentityIdFormatResult]
+    }
+  }
+
+  /**
+   * <p>Contains the parameters for DescribeImageAttribute.</p>
+   */
   @js.native
   trait DescribeImageAttributeRequest extends js.Object {
     var DryRun: Boolean
@@ -3623,6 +5528,9 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the parameters for DescribeImages.</p>
+   */
   @js.native
   trait DescribeImagesRequest extends js.Object {
     var DryRun: Boolean
@@ -3652,6 +5560,9 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the output of DescribeImages.</p>
+   */
   @js.native
   trait DescribeImagesResult extends js.Object {
     var Images: ImageList
@@ -3669,6 +5580,119 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the parameters for DescribeImportImageTasks.</p>
+   */
+  @js.native
+  trait DescribeImportImageTasksRequest extends js.Object {
+    var DryRun: Boolean
+    var MaxResults: Integer
+    var ImportTaskIds: ImportTaskIdList
+    var Filters: FilterList
+    var NextToken: String
+  }
+
+  object DescribeImportImageTasksRequest {
+    def apply(
+      DryRun: js.UndefOr[Boolean] = js.undefined,
+      MaxResults: js.UndefOr[Integer] = js.undefined,
+      ImportTaskIds: js.UndefOr[ImportTaskIdList] = js.undefined,
+      Filters: js.UndefOr[FilterList] = js.undefined,
+      NextToken: js.UndefOr[String] = js.undefined
+    ): DescribeImportImageTasksRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("DryRun" -> DryRun.map { x => x: js.Any }),
+        ("MaxResults" -> MaxResults.map { x => x: js.Any }),
+        ("ImportTaskIds" -> ImportTaskIds.map { x => x: js.Any }),
+        ("Filters" -> Filters.map { x => x: js.Any }),
+        ("NextToken" -> NextToken.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeImportImageTasksRequest]
+    }
+  }
+
+  /**
+   * <p>Contains the output for DescribeImportImageTasks.</p>
+   */
+  @js.native
+  trait DescribeImportImageTasksResult extends js.Object {
+    var ImportImageTasks: ImportImageTaskList
+    var NextToken: String
+  }
+
+  object DescribeImportImageTasksResult {
+    def apply(
+      ImportImageTasks: js.UndefOr[ImportImageTaskList] = js.undefined,
+      NextToken: js.UndefOr[String] = js.undefined
+    ): DescribeImportImageTasksResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("ImportImageTasks" -> ImportImageTasks.map { x => x: js.Any }),
+        ("NextToken" -> NextToken.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeImportImageTasksResult]
+    }
+  }
+
+  /**
+   * <p>Contains the parameters for DescribeImportSnapshotTasks.</p>
+   */
+  @js.native
+  trait DescribeImportSnapshotTasksRequest extends js.Object {
+    var DryRun: Boolean
+    var MaxResults: Integer
+    var ImportTaskIds: ImportTaskIdList
+    var Filters: FilterList
+    var NextToken: String
+  }
+
+  object DescribeImportSnapshotTasksRequest {
+    def apply(
+      DryRun: js.UndefOr[Boolean] = js.undefined,
+      MaxResults: js.UndefOr[Integer] = js.undefined,
+      ImportTaskIds: js.UndefOr[ImportTaskIdList] = js.undefined,
+      Filters: js.UndefOr[FilterList] = js.undefined,
+      NextToken: js.UndefOr[String] = js.undefined
+    ): DescribeImportSnapshotTasksRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("DryRun" -> DryRun.map { x => x: js.Any }),
+        ("MaxResults" -> MaxResults.map { x => x: js.Any }),
+        ("ImportTaskIds" -> ImportTaskIds.map { x => x: js.Any }),
+        ("Filters" -> Filters.map { x => x: js.Any }),
+        ("NextToken" -> NextToken.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeImportSnapshotTasksRequest]
+    }
+  }
+
+  /**
+   * <p>Contains the output for DescribeImportSnapshotTasks.</p>
+   */
+  @js.native
+  trait DescribeImportSnapshotTasksResult extends js.Object {
+    var ImportSnapshotTasks: ImportSnapshotTaskList
+    var NextToken: String
+  }
+
+  object DescribeImportSnapshotTasksResult {
+    def apply(
+      ImportSnapshotTasks: js.UndefOr[ImportSnapshotTaskList] = js.undefined,
+      NextToken: js.UndefOr[String] = js.undefined
+    ): DescribeImportSnapshotTasksResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("ImportSnapshotTasks" -> ImportSnapshotTasks.map { x => x: js.Any }),
+        ("NextToken" -> NextToken.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeImportSnapshotTasksResult]
+    }
+  }
+
+  /**
+   * <p>Contains the parameters for DescribeInstanceAttribute.</p>
+   */
   @js.native
   trait DescribeInstanceAttributeRequest extends js.Object {
     var DryRun: Boolean
@@ -3692,6 +5716,9 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the parameters for DescribeInstanceStatus.</p>
+   */
   @js.native
   trait DescribeInstanceStatusRequest extends js.Object {
     var DryRun: Boolean
@@ -3724,6 +5751,9 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the output of DescribeInstanceStatus.</p>
+   */
   @js.native
   trait DescribeInstanceStatusResult extends js.Object {
     var InstanceStatuses: InstanceStatusList
@@ -3744,6 +5774,9 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the parameters for DescribeInstances.</p>
+   */
   @js.native
   trait DescribeInstancesRequest extends js.Object {
     var DryRun: Boolean
@@ -3773,6 +5806,9 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the output of DescribeInstances.</p>
+   */
   @js.native
   trait DescribeInstancesResult extends js.Object {
     var Reservations: ReservationList
@@ -3793,6 +5829,9 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the parameters for DescribeInternetGateways.</p>
+   */
   @js.native
   trait DescribeInternetGatewaysRequest extends js.Object {
     var DryRun: Boolean
@@ -3816,6 +5855,9 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the output of DescribeInternetGateways.</p>
+   */
   @js.native
   trait DescribeInternetGatewaysResult extends js.Object {
     var InternetGateways: InternetGatewayList
@@ -3833,6 +5875,9 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the parameters for DescribeKeyPairs.</p>
+   */
   @js.native
   trait DescribeKeyPairsRequest extends js.Object {
     var DryRun: Boolean
@@ -3856,6 +5901,9 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the output of DescribeKeyPairs.</p>
+   */
   @js.native
   trait DescribeKeyPairsResult extends js.Object {
     var KeyPairs: KeyPairList
@@ -3873,6 +5921,116 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the parameters for DescribeMovingAddresses.</p>
+   */
+  @js.native
+  trait DescribeMovingAddressesRequest extends js.Object {
+    var DryRun: Boolean
+    var PublicIps: ValueStringList
+    var MaxResults: Integer
+    var Filters: FilterList
+    var NextToken: String
+  }
+
+  object DescribeMovingAddressesRequest {
+    def apply(
+      DryRun: js.UndefOr[Boolean] = js.undefined,
+      PublicIps: js.UndefOr[ValueStringList] = js.undefined,
+      MaxResults: js.UndefOr[Integer] = js.undefined,
+      Filters: js.UndefOr[FilterList] = js.undefined,
+      NextToken: js.UndefOr[String] = js.undefined
+    ): DescribeMovingAddressesRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("DryRun" -> DryRun.map { x => x: js.Any }),
+        ("PublicIps" -> PublicIps.map { x => x: js.Any }),
+        ("MaxResults" -> MaxResults.map { x => x: js.Any }),
+        ("Filters" -> Filters.map { x => x: js.Any }),
+        ("NextToken" -> NextToken.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeMovingAddressesRequest]
+    }
+  }
+
+  /**
+   * <p>Contains the output of DescribeMovingAddresses.</p>
+   */
+  @js.native
+  trait DescribeMovingAddressesResult extends js.Object {
+    var MovingAddressStatuses: MovingAddressStatusSet
+    var NextToken: String
+  }
+
+  object DescribeMovingAddressesResult {
+    def apply(
+      MovingAddressStatuses: js.UndefOr[MovingAddressStatusSet] = js.undefined,
+      NextToken: js.UndefOr[String] = js.undefined
+    ): DescribeMovingAddressesResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("MovingAddressStatuses" -> MovingAddressStatuses.map { x => x: js.Any }),
+        ("NextToken" -> NextToken.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeMovingAddressesResult]
+    }
+  }
+
+  /**
+   * <p>Contains the parameters for DescribeNatGateways.</p>
+   */
+  @js.native
+  trait DescribeNatGatewaysRequest extends js.Object {
+    var NatGatewayIds: ValueStringList
+    var Filter: FilterList
+    var MaxResults: Integer
+    var NextToken: String
+  }
+
+  object DescribeNatGatewaysRequest {
+    def apply(
+      NatGatewayIds: js.UndefOr[ValueStringList] = js.undefined,
+      Filter: js.UndefOr[FilterList] = js.undefined,
+      MaxResults: js.UndefOr[Integer] = js.undefined,
+      NextToken: js.UndefOr[String] = js.undefined
+    ): DescribeNatGatewaysRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("NatGatewayIds" -> NatGatewayIds.map { x => x: js.Any }),
+        ("Filter" -> Filter.map { x => x: js.Any }),
+        ("MaxResults" -> MaxResults.map { x => x: js.Any }),
+        ("NextToken" -> NextToken.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeNatGatewaysRequest]
+    }
+  }
+
+  /**
+   * <p>Contains the output of DescribeNatGateways.</p>
+   */
+  @js.native
+  trait DescribeNatGatewaysResult extends js.Object {
+    var NatGateways: NatGatewayList
+    var NextToken: String
+  }
+
+  object DescribeNatGatewaysResult {
+    def apply(
+      NatGateways: js.UndefOr[NatGatewayList] = js.undefined,
+      NextToken: js.UndefOr[String] = js.undefined
+    ): DescribeNatGatewaysResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("NatGateways" -> NatGateways.map { x => x: js.Any }),
+        ("NextToken" -> NextToken.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeNatGatewaysResult]
+    }
+  }
+
+  /**
+   * <p>Contains the parameters for DescribeNetworkAcls.</p>
+   */
   @js.native
   trait DescribeNetworkAclsRequest extends js.Object {
     var DryRun: Boolean
@@ -3896,6 +6054,9 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the output of DescribeNetworkAcls.</p>
+   */
   @js.native
   trait DescribeNetworkAclsResult extends js.Object {
     var NetworkAcls: NetworkAclList
@@ -3913,6 +6074,9 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the parameters for DescribeNetworkInterfaceAttribute.</p>
+   */
   @js.native
   trait DescribeNetworkInterfaceAttributeRequest extends js.Object {
     var DryRun: Boolean
@@ -3936,6 +6100,9 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the output of DescribeNetworkInterfaceAttribute.</p>
+   */
   @js.native
   trait DescribeNetworkInterfaceAttributeResult extends js.Object {
     var Description: AttributeValue
@@ -3965,6 +6132,9 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the parameters for DescribeNetworkInterfaces.</p>
+   */
   @js.native
   trait DescribeNetworkInterfacesRequest extends js.Object {
     var DryRun: Boolean
@@ -3988,6 +6158,9 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the output of DescribeNetworkInterfaces.</p>
+   */
   @js.native
   trait DescribeNetworkInterfacesResult extends js.Object {
     var NetworkInterfaces: NetworkInterfaceList
@@ -4005,6 +6178,9 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the parameters for DescribePlacementGroups.</p>
+   */
   @js.native
   trait DescribePlacementGroupsRequest extends js.Object {
     var DryRun: Boolean
@@ -4028,6 +6204,9 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the output of DescribePlacementGroups.</p>
+   */
   @js.native
   trait DescribePlacementGroupsResult extends js.Object {
     var PlacementGroups: PlacementGroupList
@@ -4045,6 +6224,64 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the parameters for DescribePrefixLists.</p>
+   */
+  @js.native
+  trait DescribePrefixListsRequest extends js.Object {
+    var DryRun: Boolean
+    var PrefixListIds: ValueStringList
+    var MaxResults: Integer
+    var Filters: FilterList
+    var NextToken: String
+  }
+
+  object DescribePrefixListsRequest {
+    def apply(
+      DryRun: js.UndefOr[Boolean] = js.undefined,
+      PrefixListIds: js.UndefOr[ValueStringList] = js.undefined,
+      MaxResults: js.UndefOr[Integer] = js.undefined,
+      Filters: js.UndefOr[FilterList] = js.undefined,
+      NextToken: js.UndefOr[String] = js.undefined
+    ): DescribePrefixListsRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("DryRun" -> DryRun.map { x => x: js.Any }),
+        ("PrefixListIds" -> PrefixListIds.map { x => x: js.Any }),
+        ("MaxResults" -> MaxResults.map { x => x: js.Any }),
+        ("Filters" -> Filters.map { x => x: js.Any }),
+        ("NextToken" -> NextToken.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribePrefixListsRequest]
+    }
+  }
+
+  /**
+   * <p>Contains the output of DescribePrefixLists.</p>
+   */
+  @js.native
+  trait DescribePrefixListsResult extends js.Object {
+    var PrefixLists: PrefixListSet
+    var NextToken: String
+  }
+
+  object DescribePrefixListsResult {
+    def apply(
+      PrefixLists: js.UndefOr[PrefixListSet] = js.undefined,
+      NextToken: js.UndefOr[String] = js.undefined
+    ): DescribePrefixListsResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("PrefixLists" -> PrefixLists.map { x => x: js.Any }),
+        ("NextToken" -> NextToken.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribePrefixListsResult]
+    }
+  }
+
+  /**
+   * <p>Contains the parameters for DescribeRegions.</p>
+   */
   @js.native
   trait DescribeRegionsRequest extends js.Object {
     var DryRun: Boolean
@@ -4068,6 +6305,9 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the output of DescribeRegions.</p>
+   */
   @js.native
   trait DescribeRegionsResult extends js.Object {
     var Regions: RegionList
@@ -4085,6 +6325,9 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the parameters for DescribeReservedInstancesListings.</p>
+   */
   @js.native
   trait DescribeReservedInstancesListingsRequest extends js.Object {
     var ReservedInstancesId: String
@@ -4108,6 +6351,9 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the output of DescribeReservedInstancesListings.</p>
+   */
   @js.native
   trait DescribeReservedInstancesListingsResult extends js.Object {
     var ReservedInstancesListings: ReservedInstancesListingList
@@ -4125,6 +6371,9 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the parameters for DescribeReservedInstancesModifications.</p>
+   */
   @js.native
   trait DescribeReservedInstancesModificationsRequest extends js.Object {
     var ReservedInstancesModificationIds: ReservedInstancesModificationIdStringList
@@ -4148,6 +6397,9 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the output of DescribeReservedInstancesModifications.</p>
+   */
   @js.native
   trait DescribeReservedInstancesModificationsResult extends js.Object {
     var ReservedInstancesModifications: ReservedInstancesModificationList
@@ -4168,10 +6420,14 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the parameters for DescribeReservedInstancesOfferings.</p>
+   */
   @js.native
   trait DescribeReservedInstancesOfferingsRequest extends js.Object {
     var DryRun: Boolean
     var MaxDuration: Long
+    var OfferingClass: OfferingClassType
     var MaxInstanceCount: Integer
     var ReservedInstancesOfferingIds: ReservedInstancesOfferingIdStringList
     var MaxResults: Integer
@@ -4190,6 +6446,7 @@ package ec2 {
     def apply(
       DryRun: js.UndefOr[Boolean] = js.undefined,
       MaxDuration: js.UndefOr[Long] = js.undefined,
+      OfferingClass: js.UndefOr[OfferingClassType] = js.undefined,
       MaxInstanceCount: js.UndefOr[Integer] = js.undefined,
       ReservedInstancesOfferingIds: js.UndefOr[ReservedInstancesOfferingIdStringList] = js.undefined,
       MaxResults: js.UndefOr[Integer] = js.undefined,
@@ -4206,6 +6463,7 @@ package ec2 {
       val _fields = IndexedSeq[(String, js.Any)](
         ("DryRun" -> DryRun.map { x => x: js.Any }),
         ("MaxDuration" -> MaxDuration.map { x => x: js.Any }),
+        ("OfferingClass" -> OfferingClass.map { x => x: js.Any }),
         ("MaxInstanceCount" -> MaxInstanceCount.map { x => x: js.Any }),
         ("ReservedInstancesOfferingIds" -> ReservedInstancesOfferingIds.map { x => x: js.Any }),
         ("MaxResults" -> MaxResults.map { x => x: js.Any }),
@@ -4224,6 +6482,9 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the output of DescribeReservedInstancesOfferings.</p>
+   */
   @js.native
   trait DescribeReservedInstancesOfferingsResult extends js.Object {
     var ReservedInstancesOfferings: ReservedInstancesOfferingList
@@ -4244,32 +6505,41 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the parameters for DescribeReservedInstances.</p>
+   */
   @js.native
   trait DescribeReservedInstancesRequest extends js.Object {
     var DryRun: Boolean
-    var ReservedInstancesIds: ReservedInstancesIdStringList
-    var Filters: FilterList
+    var OfferingClass: OfferingClassType
     var OfferingType: OfferingTypeValues
+    var Filters: FilterList
+    var ReservedInstancesIds: ReservedInstancesIdStringList
   }
 
   object DescribeReservedInstancesRequest {
     def apply(
       DryRun: js.UndefOr[Boolean] = js.undefined,
-      ReservedInstancesIds: js.UndefOr[ReservedInstancesIdStringList] = js.undefined,
+      OfferingClass: js.UndefOr[OfferingClassType] = js.undefined,
+      OfferingType: js.UndefOr[OfferingTypeValues] = js.undefined,
       Filters: js.UndefOr[FilterList] = js.undefined,
-      OfferingType: js.UndefOr[OfferingTypeValues] = js.undefined
+      ReservedInstancesIds: js.UndefOr[ReservedInstancesIdStringList] = js.undefined
     ): DescribeReservedInstancesRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         ("DryRun" -> DryRun.map { x => x: js.Any }),
-        ("ReservedInstancesIds" -> ReservedInstancesIds.map { x => x: js.Any }),
+        ("OfferingClass" -> OfferingClass.map { x => x: js.Any }),
+        ("OfferingType" -> OfferingType.map { x => x: js.Any }),
         ("Filters" -> Filters.map { x => x: js.Any }),
-        ("OfferingType" -> OfferingType.map { x => x: js.Any })
+        ("ReservedInstancesIds" -> ReservedInstancesIds.map { x => x: js.Any })
       ).filter(_._2 != js.undefined)
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeReservedInstancesRequest]
     }
   }
 
+  /**
+   * <p>Contains the output for DescribeReservedInstances.</p>
+   */
   @js.native
   trait DescribeReservedInstancesResult extends js.Object {
     var ReservedInstances: ReservedInstancesList
@@ -4287,6 +6557,9 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the parameters for DescribeRouteTables.</p>
+   */
   @js.native
   trait DescribeRouteTablesRequest extends js.Object {
     var DryRun: Boolean
@@ -4310,6 +6583,9 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the output of DescribeRouteTables.</p>
+   */
   @js.native
   trait DescribeRouteTablesResult extends js.Object {
     var RouteTables: RouteTableList
@@ -4327,6 +6603,168 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the parameters for DescribeScheduledInstanceAvailability.</p>
+   */
+  @js.native
+  trait DescribeScheduledInstanceAvailabilityRequest extends js.Object {
+    var DryRun: Boolean
+    var MaxSlotDurationInHours: Integer
+    var MaxResults: Integer
+    var MinSlotDurationInHours: Integer
+    var FirstSlotStartTimeRange: SlotDateTimeRangeRequest
+    var Filters: FilterList
+    var NextToken: String
+    var Recurrence: ScheduledInstanceRecurrenceRequest
+  }
+
+  object DescribeScheduledInstanceAvailabilityRequest {
+    def apply(
+      DryRun: js.UndefOr[Boolean] = js.undefined,
+      MaxSlotDurationInHours: js.UndefOr[Integer] = js.undefined,
+      MaxResults: js.UndefOr[Integer] = js.undefined,
+      MinSlotDurationInHours: js.UndefOr[Integer] = js.undefined,
+      FirstSlotStartTimeRange: js.UndefOr[SlotDateTimeRangeRequest] = js.undefined,
+      Filters: js.UndefOr[FilterList] = js.undefined,
+      NextToken: js.UndefOr[String] = js.undefined,
+      Recurrence: js.UndefOr[ScheduledInstanceRecurrenceRequest] = js.undefined
+    ): DescribeScheduledInstanceAvailabilityRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("DryRun" -> DryRun.map { x => x: js.Any }),
+        ("MaxSlotDurationInHours" -> MaxSlotDurationInHours.map { x => x: js.Any }),
+        ("MaxResults" -> MaxResults.map { x => x: js.Any }),
+        ("MinSlotDurationInHours" -> MinSlotDurationInHours.map { x => x: js.Any }),
+        ("FirstSlotStartTimeRange" -> FirstSlotStartTimeRange.map { x => x: js.Any }),
+        ("Filters" -> Filters.map { x => x: js.Any }),
+        ("NextToken" -> NextToken.map { x => x: js.Any }),
+        ("Recurrence" -> Recurrence.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeScheduledInstanceAvailabilityRequest]
+    }
+  }
+
+  /**
+   * <p>Contains the output of DescribeScheduledInstanceAvailability.</p>
+   */
+  @js.native
+  trait DescribeScheduledInstanceAvailabilityResult extends js.Object {
+    var NextToken: String
+    var ScheduledInstanceAvailabilitySet: ScheduledInstanceAvailabilitySet
+  }
+
+  object DescribeScheduledInstanceAvailabilityResult {
+    def apply(
+      NextToken: js.UndefOr[String] = js.undefined,
+      ScheduledInstanceAvailabilitySet: js.UndefOr[ScheduledInstanceAvailabilitySet] = js.undefined
+    ): DescribeScheduledInstanceAvailabilityResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("NextToken" -> NextToken.map { x => x: js.Any }),
+        ("ScheduledInstanceAvailabilitySet" -> ScheduledInstanceAvailabilitySet.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeScheduledInstanceAvailabilityResult]
+    }
+  }
+
+  /**
+   * <p>Contains the parameters for DescribeScheduledInstances.</p>
+   */
+  @js.native
+  trait DescribeScheduledInstancesRequest extends js.Object {
+    var DryRun: Boolean
+    var ScheduledInstanceIds: ScheduledInstanceIdRequestSet
+    var MaxResults: Integer
+    var SlotStartTimeRange: SlotStartTimeRangeRequest
+    var Filters: FilterList
+    var NextToken: String
+  }
+
+  object DescribeScheduledInstancesRequest {
+    def apply(
+      DryRun: js.UndefOr[Boolean] = js.undefined,
+      ScheduledInstanceIds: js.UndefOr[ScheduledInstanceIdRequestSet] = js.undefined,
+      MaxResults: js.UndefOr[Integer] = js.undefined,
+      SlotStartTimeRange: js.UndefOr[SlotStartTimeRangeRequest] = js.undefined,
+      Filters: js.UndefOr[FilterList] = js.undefined,
+      NextToken: js.UndefOr[String] = js.undefined
+    ): DescribeScheduledInstancesRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("DryRun" -> DryRun.map { x => x: js.Any }),
+        ("ScheduledInstanceIds" -> ScheduledInstanceIds.map { x => x: js.Any }),
+        ("MaxResults" -> MaxResults.map { x => x: js.Any }),
+        ("SlotStartTimeRange" -> SlotStartTimeRange.map { x => x: js.Any }),
+        ("Filters" -> Filters.map { x => x: js.Any }),
+        ("NextToken" -> NextToken.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeScheduledInstancesRequest]
+    }
+  }
+
+  /**
+   * <p>Contains the output of DescribeScheduledInstances.</p>
+   */
+  @js.native
+  trait DescribeScheduledInstancesResult extends js.Object {
+    var NextToken: String
+    var ScheduledInstanceSet: ScheduledInstanceSet
+  }
+
+  object DescribeScheduledInstancesResult {
+    def apply(
+      NextToken: js.UndefOr[String] = js.undefined,
+      ScheduledInstanceSet: js.UndefOr[ScheduledInstanceSet] = js.undefined
+    ): DescribeScheduledInstancesResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("NextToken" -> NextToken.map { x => x: js.Any }),
+        ("ScheduledInstanceSet" -> ScheduledInstanceSet.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeScheduledInstancesResult]
+    }
+  }
+
+  @js.native
+  trait DescribeSecurityGroupReferencesRequest extends js.Object {
+    var DryRun: Boolean
+    var GroupId: GroupIds
+  }
+
+  object DescribeSecurityGroupReferencesRequest {
+    def apply(
+      DryRun: js.UndefOr[Boolean] = js.undefined,
+      GroupId: js.UndefOr[GroupIds] = js.undefined
+    ): DescribeSecurityGroupReferencesRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("DryRun" -> DryRun.map { x => x: js.Any }),
+        ("GroupId" -> GroupId.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeSecurityGroupReferencesRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeSecurityGroupReferencesResult extends js.Object {
+    var SecurityGroupReferenceSet: SecurityGroupReferences
+  }
+
+  object DescribeSecurityGroupReferencesResult {
+    def apply(
+      SecurityGroupReferenceSet: js.UndefOr[SecurityGroupReferences] = js.undefined
+    ): DescribeSecurityGroupReferencesResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("SecurityGroupReferenceSet" -> SecurityGroupReferenceSet.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeSecurityGroupReferencesResult]
+    }
+  }
+
+  /**
+   * <p>Contains the parameters for DescribeSecurityGroups.</p>
+   */
   @js.native
   trait DescribeSecurityGroupsRequest extends js.Object {
     var DryRun: Boolean
@@ -4353,6 +6791,9 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the output of DescribeSecurityGroups.</p>
+   */
   @js.native
   trait DescribeSecurityGroupsResult extends js.Object {
     var SecurityGroups: SecurityGroupList
@@ -4370,6 +6811,9 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the parameters for DescribeSnapshotAttribute.</p>
+   */
   @js.native
   trait DescribeSnapshotAttributeRequest extends js.Object {
     var DryRun: Boolean
@@ -4393,6 +6837,9 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the output of DescribeSnapshotAttribute.</p>
+   */
   @js.native
   trait DescribeSnapshotAttributeResult extends js.Object {
     var SnapshotId: String
@@ -4416,6 +6863,9 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the parameters for DescribeSnapshots.</p>
+   */
   @js.native
   trait DescribeSnapshotsRequest extends js.Object {
     var DryRun: Boolean
@@ -4451,6 +6901,9 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the output of DescribeSnapshots.</p>
+   */
   @js.native
   trait DescribeSnapshotsResult extends js.Object {
     var Snapshots: SnapshotList
@@ -4471,6 +6924,9 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the parameters for DescribeSpotDatafeedSubscription.</p>
+   */
   @js.native
   trait DescribeSpotDatafeedSubscriptionRequest extends js.Object {
     var DryRun: Boolean
@@ -4488,6 +6944,9 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the output of DescribeSpotDatafeedSubscription.</p>
+   */
   @js.native
   trait DescribeSpotDatafeedSubscriptionResult extends js.Object {
     var SpotDatafeedSubscription: SpotDatafeedSubscription
@@ -4505,6 +6964,183 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the parameters for DescribeSpotFleetInstances.</p>
+   */
+  @js.native
+  trait DescribeSpotFleetInstancesRequest extends js.Object {
+    var DryRun: Boolean
+    var SpotFleetRequestId: String
+    var NextToken: String
+    var MaxResults: Integer
+  }
+
+  object DescribeSpotFleetInstancesRequest {
+    def apply(
+      DryRun: js.UndefOr[Boolean] = js.undefined,
+      SpotFleetRequestId: js.UndefOr[String] = js.undefined,
+      NextToken: js.UndefOr[String] = js.undefined,
+      MaxResults: js.UndefOr[Integer] = js.undefined
+    ): DescribeSpotFleetInstancesRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("DryRun" -> DryRun.map { x => x: js.Any }),
+        ("SpotFleetRequestId" -> SpotFleetRequestId.map { x => x: js.Any }),
+        ("NextToken" -> NextToken.map { x => x: js.Any }),
+        ("MaxResults" -> MaxResults.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeSpotFleetInstancesRequest]
+    }
+  }
+
+  /**
+   * <p>Contains the output of DescribeSpotFleetInstances.</p>
+   */
+  @js.native
+  trait DescribeSpotFleetInstancesResponse extends js.Object {
+    var SpotFleetRequestId: String
+    var ActiveInstances: ActiveInstanceSet
+    var NextToken: String
+  }
+
+  object DescribeSpotFleetInstancesResponse {
+    def apply(
+      SpotFleetRequestId: js.UndefOr[String] = js.undefined,
+      ActiveInstances: js.UndefOr[ActiveInstanceSet] = js.undefined,
+      NextToken: js.UndefOr[String] = js.undefined
+    ): DescribeSpotFleetInstancesResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("SpotFleetRequestId" -> SpotFleetRequestId.map { x => x: js.Any }),
+        ("ActiveInstances" -> ActiveInstances.map { x => x: js.Any }),
+        ("NextToken" -> NextToken.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeSpotFleetInstancesResponse]
+    }
+  }
+
+  /**
+   * <p>Contains the parameters for DescribeSpotFleetRequestHistory.</p>
+   */
+  @js.native
+  trait DescribeSpotFleetRequestHistoryRequest extends js.Object {
+    var SpotFleetRequestId: String
+    var DryRun: Boolean
+    var MaxResults: Integer
+    var EventType: EventType
+    var StartTime: DateTime
+    var NextToken: String
+  }
+
+  object DescribeSpotFleetRequestHistoryRequest {
+    def apply(
+      SpotFleetRequestId: js.UndefOr[String] = js.undefined,
+      DryRun: js.UndefOr[Boolean] = js.undefined,
+      MaxResults: js.UndefOr[Integer] = js.undefined,
+      EventType: js.UndefOr[EventType] = js.undefined,
+      StartTime: js.UndefOr[DateTime] = js.undefined,
+      NextToken: js.UndefOr[String] = js.undefined
+    ): DescribeSpotFleetRequestHistoryRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("SpotFleetRequestId" -> SpotFleetRequestId.map { x => x: js.Any }),
+        ("DryRun" -> DryRun.map { x => x: js.Any }),
+        ("MaxResults" -> MaxResults.map { x => x: js.Any }),
+        ("EventType" -> EventType.map { x => x: js.Any }),
+        ("StartTime" -> StartTime.map { x => x: js.Any }),
+        ("NextToken" -> NextToken.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeSpotFleetRequestHistoryRequest]
+    }
+  }
+
+  /**
+   * <p>Contains the output of DescribeSpotFleetRequestHistory.</p>
+   */
+  @js.native
+  trait DescribeSpotFleetRequestHistoryResponse extends js.Object {
+    var LastEvaluatedTime: DateTime
+    var SpotFleetRequestId: String
+    var HistoryRecords: HistoryRecords
+    var StartTime: DateTime
+    var NextToken: String
+  }
+
+  object DescribeSpotFleetRequestHistoryResponse {
+    def apply(
+      LastEvaluatedTime: js.UndefOr[DateTime] = js.undefined,
+      SpotFleetRequestId: js.UndefOr[String] = js.undefined,
+      HistoryRecords: js.UndefOr[HistoryRecords] = js.undefined,
+      StartTime: js.UndefOr[DateTime] = js.undefined,
+      NextToken: js.UndefOr[String] = js.undefined
+    ): DescribeSpotFleetRequestHistoryResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("LastEvaluatedTime" -> LastEvaluatedTime.map { x => x: js.Any }),
+        ("SpotFleetRequestId" -> SpotFleetRequestId.map { x => x: js.Any }),
+        ("HistoryRecords" -> HistoryRecords.map { x => x: js.Any }),
+        ("StartTime" -> StartTime.map { x => x: js.Any }),
+        ("NextToken" -> NextToken.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeSpotFleetRequestHistoryResponse]
+    }
+  }
+
+  /**
+   * <p>Contains the parameters for DescribeSpotFleetRequests.</p>
+   */
+  @js.native
+  trait DescribeSpotFleetRequestsRequest extends js.Object {
+    var DryRun: Boolean
+    var SpotFleetRequestIds: ValueStringList
+    var NextToken: String
+    var MaxResults: Integer
+  }
+
+  object DescribeSpotFleetRequestsRequest {
+    def apply(
+      DryRun: js.UndefOr[Boolean] = js.undefined,
+      SpotFleetRequestIds: js.UndefOr[ValueStringList] = js.undefined,
+      NextToken: js.UndefOr[String] = js.undefined,
+      MaxResults: js.UndefOr[Integer] = js.undefined
+    ): DescribeSpotFleetRequestsRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("DryRun" -> DryRun.map { x => x: js.Any }),
+        ("SpotFleetRequestIds" -> SpotFleetRequestIds.map { x => x: js.Any }),
+        ("NextToken" -> NextToken.map { x => x: js.Any }),
+        ("MaxResults" -> MaxResults.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeSpotFleetRequestsRequest]
+    }
+  }
+
+  /**
+   * <p>Contains the output of DescribeSpotFleetRequests.</p>
+   */
+  @js.native
+  trait DescribeSpotFleetRequestsResponse extends js.Object {
+    var SpotFleetRequestConfigs: SpotFleetRequestConfigSet
+    var NextToken: String
+  }
+
+  object DescribeSpotFleetRequestsResponse {
+    def apply(
+      SpotFleetRequestConfigs: js.UndefOr[SpotFleetRequestConfigSet] = js.undefined,
+      NextToken: js.UndefOr[String] = js.undefined
+    ): DescribeSpotFleetRequestsResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("SpotFleetRequestConfigs" -> SpotFleetRequestConfigs.map { x => x: js.Any }),
+        ("NextToken" -> NextToken.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeSpotFleetRequestsResponse]
+    }
+  }
+
+  /**
+   * <p>Contains the parameters for DescribeSpotInstanceRequests.</p>
+   */
   @js.native
   trait DescribeSpotInstanceRequestsRequest extends js.Object {
     var DryRun: Boolean
@@ -4528,6 +7164,9 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the output of DescribeSpotInstanceRequests.</p>
+   */
   @js.native
   trait DescribeSpotInstanceRequestsResult extends js.Object {
     var SpotInstanceRequests: SpotInstanceRequestList
@@ -4545,6 +7184,9 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the parameters for DescribeSpotPriceHistory.</p>
+   */
   @js.native
   trait DescribeSpotPriceHistoryRequest extends js.Object {
     var DryRun: Boolean
@@ -4586,6 +7228,9 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the output of DescribeSpotPriceHistory.</p>
+   */
   @js.native
   trait DescribeSpotPriceHistoryResult extends js.Object {
     var SpotPriceHistory: SpotPriceHistoryList
@@ -4606,6 +7251,55 @@ package ec2 {
     }
   }
 
+  @js.native
+  trait DescribeStaleSecurityGroupsRequest extends js.Object {
+    var DryRun: Boolean
+    var VpcId: String
+    var MaxResults: MaxResults
+    var NextToken: NextToken
+  }
+
+  object DescribeStaleSecurityGroupsRequest {
+    def apply(
+      DryRun: js.UndefOr[Boolean] = js.undefined,
+      VpcId: js.UndefOr[String] = js.undefined,
+      MaxResults: js.UndefOr[MaxResults] = js.undefined,
+      NextToken: js.UndefOr[NextToken] = js.undefined
+    ): DescribeStaleSecurityGroupsRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("DryRun" -> DryRun.map { x => x: js.Any }),
+        ("VpcId" -> VpcId.map { x => x: js.Any }),
+        ("MaxResults" -> MaxResults.map { x => x: js.Any }),
+        ("NextToken" -> NextToken.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeStaleSecurityGroupsRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeStaleSecurityGroupsResult extends js.Object {
+    var StaleSecurityGroupSet: StaleSecurityGroupSet
+    var NextToken: String
+  }
+
+  object DescribeStaleSecurityGroupsResult {
+    def apply(
+      StaleSecurityGroupSet: js.UndefOr[StaleSecurityGroupSet] = js.undefined,
+      NextToken: js.UndefOr[String] = js.undefined
+    ): DescribeStaleSecurityGroupsResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("StaleSecurityGroupSet" -> StaleSecurityGroupSet.map { x => x: js.Any }),
+        ("NextToken" -> NextToken.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeStaleSecurityGroupsResult]
+    }
+  }
+
+  /**
+   * <p>Contains the parameters for DescribeSubnets.</p>
+   */
   @js.native
   trait DescribeSubnetsRequest extends js.Object {
     var DryRun: Boolean
@@ -4629,6 +7323,9 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the output of DescribeSubnets.</p>
+   */
   @js.native
   trait DescribeSubnetsResult extends js.Object {
     var Subnets: SubnetList
@@ -4646,6 +7343,9 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the parameters for DescribeTags.</p>
+   */
   @js.native
   trait DescribeTagsRequest extends js.Object {
     var DryRun: Boolean
@@ -4672,6 +7372,9 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the output of DescribeTags.</p>
+   */
   @js.native
   trait DescribeTagsResult extends js.Object {
     var Tags: TagDescriptionList
@@ -4692,6 +7395,9 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the parameters for DescribeVolumeAttribute.</p>
+   */
   @js.native
   trait DescribeVolumeAttributeRequest extends js.Object {
     var DryRun: Boolean
@@ -4715,6 +7421,9 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the output of DescribeVolumeAttribute.</p>
+   */
   @js.native
   trait DescribeVolumeAttributeResult extends js.Object {
     var VolumeId: String
@@ -4738,6 +7447,9 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the parameters for DescribeVolumeStatus.</p>
+   */
   @js.native
   trait DescribeVolumeStatusRequest extends js.Object {
     var DryRun: Boolean
@@ -4767,6 +7479,9 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the output of DescribeVolumeStatus.</p>
+   */
   @js.native
   trait DescribeVolumeStatusResult extends js.Object {
     var VolumeStatuses: VolumeStatusList
@@ -4787,6 +7502,9 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the parameters for DescribeVolumes.</p>
+   */
   @js.native
   trait DescribeVolumesRequest extends js.Object {
     var DryRun: Boolean
@@ -4816,6 +7534,9 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the output of DescribeVolumes.</p>
+   */
   @js.native
   trait DescribeVolumesResult extends js.Object {
     var Volumes: VolumeList
@@ -4836,6 +7557,9 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the parameters for DescribeVpcAttribute.</p>
+   */
   @js.native
   trait DescribeVpcAttributeRequest extends js.Object {
     var DryRun: Boolean
@@ -4859,6 +7583,9 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the output of DescribeVpcAttribute.</p>
+   */
   @js.native
   trait DescribeVpcAttributeResult extends js.Object {
     var VpcId: String
@@ -4882,6 +7609,58 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the parameters for DescribeVpcClassicLinkDnsSupport.</p>
+   */
+  @js.native
+  trait DescribeVpcClassicLinkDnsSupportRequest extends js.Object {
+    var VpcIds: VpcClassicLinkIdList
+    var MaxResults: MaxResults
+    var NextToken: NextToken
+  }
+
+  object DescribeVpcClassicLinkDnsSupportRequest {
+    def apply(
+      VpcIds: js.UndefOr[VpcClassicLinkIdList] = js.undefined,
+      MaxResults: js.UndefOr[MaxResults] = js.undefined,
+      NextToken: js.UndefOr[NextToken] = js.undefined
+    ): DescribeVpcClassicLinkDnsSupportRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("VpcIds" -> VpcIds.map { x => x: js.Any }),
+        ("MaxResults" -> MaxResults.map { x => x: js.Any }),
+        ("NextToken" -> NextToken.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeVpcClassicLinkDnsSupportRequest]
+    }
+  }
+
+  /**
+   * <p>Contains the output of DescribeVpcClassicLinkDnsSupport.</p>
+   */
+  @js.native
+  trait DescribeVpcClassicLinkDnsSupportResult extends js.Object {
+    var Vpcs: ClassicLinkDnsSupportList
+    var NextToken: NextToken
+  }
+
+  object DescribeVpcClassicLinkDnsSupportResult {
+    def apply(
+      Vpcs: js.UndefOr[ClassicLinkDnsSupportList] = js.undefined,
+      NextToken: js.UndefOr[NextToken] = js.undefined
+    ): DescribeVpcClassicLinkDnsSupportResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("Vpcs" -> Vpcs.map { x => x: js.Any }),
+        ("NextToken" -> NextToken.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeVpcClassicLinkDnsSupportResult]
+    }
+  }
+
+  /**
+   * <p>Contains the parameters for DescribeVpcClassicLink.</p>
+   */
   @js.native
   trait DescribeVpcClassicLinkRequest extends js.Object {
     var DryRun: Boolean
@@ -4905,6 +7684,9 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the output of DescribeVpcClassicLink.</p>
+   */
   @js.native
   trait DescribeVpcClassicLinkResult extends js.Object {
     var Vpcs: VpcClassicLinkList
@@ -4922,6 +7704,113 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the parameters for DescribeVpcEndpointServices.</p>
+   */
+  @js.native
+  trait DescribeVpcEndpointServicesRequest extends js.Object {
+    var DryRun: Boolean
+    var MaxResults: Integer
+    var NextToken: String
+  }
+
+  object DescribeVpcEndpointServicesRequest {
+    def apply(
+      DryRun: js.UndefOr[Boolean] = js.undefined,
+      MaxResults: js.UndefOr[Integer] = js.undefined,
+      NextToken: js.UndefOr[String] = js.undefined
+    ): DescribeVpcEndpointServicesRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("DryRun" -> DryRun.map { x => x: js.Any }),
+        ("MaxResults" -> MaxResults.map { x => x: js.Any }),
+        ("NextToken" -> NextToken.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeVpcEndpointServicesRequest]
+    }
+  }
+
+  /**
+   * <p>Contains the output of DescribeVpcEndpointServices.</p>
+   */
+  @js.native
+  trait DescribeVpcEndpointServicesResult extends js.Object {
+    var ServiceNames: ValueStringList
+    var NextToken: String
+  }
+
+  object DescribeVpcEndpointServicesResult {
+    def apply(
+      ServiceNames: js.UndefOr[ValueStringList] = js.undefined,
+      NextToken: js.UndefOr[String] = js.undefined
+    ): DescribeVpcEndpointServicesResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("ServiceNames" -> ServiceNames.map { x => x: js.Any }),
+        ("NextToken" -> NextToken.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeVpcEndpointServicesResult]
+    }
+  }
+
+  /**
+   * <p>Contains the parameters for DescribeVpcEndpoints.</p>
+   */
+  @js.native
+  trait DescribeVpcEndpointsRequest extends js.Object {
+    var DryRun: Boolean
+    var MaxResults: Integer
+    var VpcEndpointIds: ValueStringList
+    var Filters: FilterList
+    var NextToken: String
+  }
+
+  object DescribeVpcEndpointsRequest {
+    def apply(
+      DryRun: js.UndefOr[Boolean] = js.undefined,
+      MaxResults: js.UndefOr[Integer] = js.undefined,
+      VpcEndpointIds: js.UndefOr[ValueStringList] = js.undefined,
+      Filters: js.UndefOr[FilterList] = js.undefined,
+      NextToken: js.UndefOr[String] = js.undefined
+    ): DescribeVpcEndpointsRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("DryRun" -> DryRun.map { x => x: js.Any }),
+        ("MaxResults" -> MaxResults.map { x => x: js.Any }),
+        ("VpcEndpointIds" -> VpcEndpointIds.map { x => x: js.Any }),
+        ("Filters" -> Filters.map { x => x: js.Any }),
+        ("NextToken" -> NextToken.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeVpcEndpointsRequest]
+    }
+  }
+
+  /**
+   * <p>Contains the output of DescribeVpcEndpoints.</p>
+   */
+  @js.native
+  trait DescribeVpcEndpointsResult extends js.Object {
+    var VpcEndpoints: VpcEndpointSet
+    var NextToken: String
+  }
+
+  object DescribeVpcEndpointsResult {
+    def apply(
+      VpcEndpoints: js.UndefOr[VpcEndpointSet] = js.undefined,
+      NextToken: js.UndefOr[String] = js.undefined
+    ): DescribeVpcEndpointsResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("VpcEndpoints" -> VpcEndpoints.map { x => x: js.Any }),
+        ("NextToken" -> NextToken.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeVpcEndpointsResult]
+    }
+  }
+
+  /**
+   * <p>Contains the parameters for DescribeVpcPeeringConnections.</p>
+   */
   @js.native
   trait DescribeVpcPeeringConnectionsRequest extends js.Object {
     var DryRun: Boolean
@@ -4945,6 +7834,9 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the output of DescribeVpcPeeringConnections.</p>
+   */
   @js.native
   trait DescribeVpcPeeringConnectionsResult extends js.Object {
     var VpcPeeringConnections: VpcPeeringConnectionList
@@ -4962,6 +7854,9 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the parameters for DescribeVpcs.</p>
+   */
   @js.native
   trait DescribeVpcsRequest extends js.Object {
     var DryRun: Boolean
@@ -4985,6 +7880,9 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the output of DescribeVpcs.</p>
+   */
   @js.native
   trait DescribeVpcsResult extends js.Object {
     var Vpcs: VpcList
@@ -5002,6 +7900,9 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the parameters for DescribeVpnConnections.</p>
+   */
   @js.native
   trait DescribeVpnConnectionsRequest extends js.Object {
     var DryRun: Boolean
@@ -5025,6 +7926,9 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the output of DescribeVpnConnections.</p>
+   */
   @js.native
   trait DescribeVpnConnectionsResult extends js.Object {
     var VpnConnections: VpnConnectionList
@@ -5042,6 +7946,9 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the parameters for DescribeVpnGateways.</p>
+   */
   @js.native
   trait DescribeVpnGatewaysRequest extends js.Object {
     var DryRun: Boolean
@@ -5065,6 +7972,9 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the output of DescribeVpnGateways.</p>
+   */
   @js.native
   trait DescribeVpnGatewaysResult extends js.Object {
     var VpnGateways: VpnGatewayList
@@ -5082,6 +7992,9 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the parameters for DetachClassicLinkVpc.</p>
+   */
   @js.native
   trait DetachClassicLinkVpcRequest extends js.Object {
     var DryRun: Boolean
@@ -5105,6 +8018,9 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the output of DetachClassicLinkVpc.</p>
+   */
   @js.native
   trait DetachClassicLinkVpcResult extends js.Object {
     var Return: Boolean
@@ -5122,6 +8038,9 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the parameters for DetachInternetGateway.</p>
+   */
   @js.native
   trait DetachInternetGatewayRequest extends js.Object {
     var DryRun: Boolean
@@ -5145,6 +8064,9 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the parameters for DetachNetworkInterface.</p>
+   */
   @js.native
   trait DetachNetworkInterfaceRequest extends js.Object {
     var DryRun: Boolean
@@ -5168,6 +8090,9 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the parameters for DetachVolume.</p>
+   */
   @js.native
   trait DetachVolumeRequest extends js.Object {
     var DryRun: Boolean
@@ -5197,6 +8122,9 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the parameters for DetachVpnGateway.</p>
+   */
   @js.native
   trait DetachVpnGatewayRequest extends js.Object {
     var DryRun: Boolean
@@ -5277,6 +8205,9 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the parameters for DisableVgwRoutePropagation.</p>
+   */
   @js.native
   trait DisableVgwRoutePropagationRequest extends js.Object {
     var RouteTableId: String
@@ -5297,6 +8228,49 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the parameters for DisableVpcClassicLinkDnsSupport.</p>
+   */
+  @js.native
+  trait DisableVpcClassicLinkDnsSupportRequest extends js.Object {
+    var VpcId: String
+  }
+
+  object DisableVpcClassicLinkDnsSupportRequest {
+    def apply(
+      VpcId: js.UndefOr[String] = js.undefined
+    ): DisableVpcClassicLinkDnsSupportRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("VpcId" -> VpcId.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DisableVpcClassicLinkDnsSupportRequest]
+    }
+  }
+
+  /**
+   * <p>Contains the output of DisableVpcClassicLinkDnsSupport.</p>
+   */
+  @js.native
+  trait DisableVpcClassicLinkDnsSupportResult extends js.Object {
+    var Return: Boolean
+  }
+
+  object DisableVpcClassicLinkDnsSupportResult {
+    def apply(
+      Return: js.UndefOr[Boolean] = js.undefined
+    ): DisableVpcClassicLinkDnsSupportResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("Return" -> Return.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DisableVpcClassicLinkDnsSupportResult]
+    }
+  }
+
+  /**
+   * <p>Contains the parameters for DisableVpcClassicLink.</p>
+   */
   @js.native
   trait DisableVpcClassicLinkRequest extends js.Object {
     var DryRun: Boolean
@@ -5317,6 +8291,9 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the output of DisableVpcClassicLink.</p>
+   */
   @js.native
   trait DisableVpcClassicLinkResult extends js.Object {
     var Return: Boolean
@@ -5334,6 +8311,9 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the parameters for DisassociateAddress.</p>
+   */
   @js.native
   trait DisassociateAddressRequest extends js.Object {
     var DryRun: Boolean
@@ -5357,6 +8337,9 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the parameters for DisassociateRouteTable.</p>
+   */
   @js.native
   trait DisassociateRouteTableRequest extends js.Object {
     var DryRun: Boolean
@@ -5374,6 +8357,80 @@ package ec2 {
       ).filter(_._2 != js.undefined)
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DisassociateRouteTableRequest]
+    }
+  }
+
+  @js.native
+  trait DisassociateSubnetCidrBlockRequest extends js.Object {
+    var AssociationId: String
+  }
+
+  object DisassociateSubnetCidrBlockRequest {
+    def apply(
+      AssociationId: js.UndefOr[String] = js.undefined
+    ): DisassociateSubnetCidrBlockRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("AssociationId" -> AssociationId.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DisassociateSubnetCidrBlockRequest]
+    }
+  }
+
+  @js.native
+  trait DisassociateSubnetCidrBlockResult extends js.Object {
+    var SubnetId: String
+    var Ipv6CidrBlockAssociation: SubnetIpv6CidrBlockAssociation
+  }
+
+  object DisassociateSubnetCidrBlockResult {
+    def apply(
+      SubnetId: js.UndefOr[String] = js.undefined,
+      Ipv6CidrBlockAssociation: js.UndefOr[SubnetIpv6CidrBlockAssociation] = js.undefined
+    ): DisassociateSubnetCidrBlockResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("SubnetId" -> SubnetId.map { x => x: js.Any }),
+        ("Ipv6CidrBlockAssociation" -> Ipv6CidrBlockAssociation.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DisassociateSubnetCidrBlockResult]
+    }
+  }
+
+  @js.native
+  trait DisassociateVpcCidrBlockRequest extends js.Object {
+    var AssociationId: String
+  }
+
+  object DisassociateVpcCidrBlockRequest {
+    def apply(
+      AssociationId: js.UndefOr[String] = js.undefined
+    ): DisassociateVpcCidrBlockRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("AssociationId" -> AssociationId.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DisassociateVpcCidrBlockRequest]
+    }
+  }
+
+  @js.native
+  trait DisassociateVpcCidrBlockResult extends js.Object {
+    var VpcId: String
+    var Ipv6CidrBlockAssociation: VpcIpv6CidrBlockAssociation
+  }
+
+  object DisassociateVpcCidrBlockResult {
+    def apply(
+      VpcId: js.UndefOr[String] = js.undefined,
+      Ipv6CidrBlockAssociation: js.UndefOr[VpcIpv6CidrBlockAssociation] = js.undefined
+    ): DisassociateVpcCidrBlockResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("VpcId" -> VpcId.map { x => x: js.Any }),
+        ("Ipv6CidrBlockAssociation" -> Ipv6CidrBlockAssociation.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DisassociateVpcCidrBlockResult]
     }
   }
 
@@ -5403,6 +8460,9 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Describes a disk image.</p>
+   */
   @js.native
   trait DiskImageDescription extends js.Object {
     var Format: DiskImageFormat
@@ -5429,6 +8489,9 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Describes a disk image.</p>
+   */
   @js.native
   trait DiskImageDetail extends js.Object {
     var Format: DiskImageFormat
@@ -5461,6 +8524,9 @@ package ec2 {
     val values = IndexedSeq(VMDK, RAW, VHD)
   }
 
+  /**
+   * <p>Describes a disk image volume.</p>
+   */
   @js.native
   trait DiskImageVolumeDescription extends js.Object {
     var Size: Long
@@ -5490,7 +8556,7 @@ package ec2 {
   }
 
   /**
-   * <p>Describes an Amazon EBS block device.</p>
+   * <p>Describes a block device for an EBS volume.</p>
    */
   @js.native
   trait EbsBlockDevice extends js.Object {
@@ -5525,7 +8591,7 @@ package ec2 {
   }
 
   /**
-   * <p>Describes a parameter used to set up an Amazon EBS volume in a block device mapping.</p>
+   * <p>Describes a parameter used to set up an EBS volume in a block device mapping.</p>
    */
   @js.native
   trait EbsInstanceBlockDevice extends js.Object {
@@ -5553,6 +8619,9 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Describes information used to set up an EBS volume specified in a block device mapping.</p>
+   */
   @js.native
   trait EbsInstanceBlockDeviceSpecification extends js.Object {
     var VolumeId: String
@@ -5573,6 +8642,32 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Describes an egress-only Internet gateway.</p>
+   */
+  @js.native
+  trait EgressOnlyInternetGateway extends js.Object {
+    var EgressOnlyInternetGatewayId: EgressOnlyInternetGatewayId
+    var Attachments: InternetGatewayAttachmentList
+  }
+
+  object EgressOnlyInternetGateway {
+    def apply(
+      EgressOnlyInternetGatewayId: js.UndefOr[EgressOnlyInternetGatewayId] = js.undefined,
+      Attachments: js.UndefOr[InternetGatewayAttachmentList] = js.undefined
+    ): EgressOnlyInternetGateway = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("EgressOnlyInternetGatewayId" -> EgressOnlyInternetGatewayId.map { x => x: js.Any }),
+        ("Attachments" -> Attachments.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EgressOnlyInternetGateway]
+    }
+  }
+
+  /**
+   * <p>Contains the parameters for EnableVgwRoutePropagation.</p>
+   */
   @js.native
   trait EnableVgwRoutePropagationRequest extends js.Object {
     var RouteTableId: String
@@ -5593,6 +8688,9 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the parameters for EnableVolumeIO.</p>
+   */
   @js.native
   trait EnableVolumeIORequest extends js.Object {
     var DryRun: Boolean
@@ -5613,6 +8711,49 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the parameters for EnableVpcClassicLinkDnsSupport.</p>
+   */
+  @js.native
+  trait EnableVpcClassicLinkDnsSupportRequest extends js.Object {
+    var VpcId: String
+  }
+
+  object EnableVpcClassicLinkDnsSupportRequest {
+    def apply(
+      VpcId: js.UndefOr[String] = js.undefined
+    ): EnableVpcClassicLinkDnsSupportRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("VpcId" -> VpcId.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EnableVpcClassicLinkDnsSupportRequest]
+    }
+  }
+
+  /**
+   * <p>Contains the output of EnableVpcClassicLinkDnsSupport.</p>
+   */
+  @js.native
+  trait EnableVpcClassicLinkDnsSupportResult extends js.Object {
+    var Return: Boolean
+  }
+
+  object EnableVpcClassicLinkDnsSupportResult {
+    def apply(
+      Return: js.UndefOr[Boolean] = js.undefined
+    ): EnableVpcClassicLinkDnsSupportResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("Return" -> Return.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EnableVpcClassicLinkDnsSupportResult]
+    }
+  }
+
+  /**
+   * <p>Contains the parameters for EnableVpcClassicLink.</p>
+   */
   @js.native
   trait EnableVpcClassicLinkRequest extends js.Object {
     var DryRun: Boolean
@@ -5633,6 +8774,9 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the output of EnableVpcClassicLink.</p>
+   */
   @js.native
   trait EnableVpcClassicLinkResult extends js.Object {
     var Return: Boolean
@@ -5661,6 +8805,49 @@ package ec2 {
     val values = IndexedSeq(`instance-reboot`, `system-reboot`, `system-maintenance`, `instance-retirement`, `instance-stop`)
   }
 
+  /**
+   * <p>Describes a Spot fleet event.</p>
+   */
+  @js.native
+  trait EventInformation extends js.Object {
+    var InstanceId: String
+    var EventSubType: String
+    var EventDescription: String
+  }
+
+  object EventInformation {
+    def apply(
+      InstanceId: js.UndefOr[String] = js.undefined,
+      EventSubType: js.UndefOr[String] = js.undefined,
+      EventDescription: js.UndefOr[String] = js.undefined
+    ): EventInformation = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("InstanceId" -> InstanceId.map { x => x: js.Any }),
+        ("EventSubType" -> EventSubType.map { x => x: js.Any }),
+        ("EventDescription" -> EventDescription.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EventInformation]
+    }
+  }
+
+
+  object EventTypeEnum {
+    val instanceChange = "instanceChange"
+    val fleetRequestChange = "fleetRequestChange"
+    val error = "error"
+
+    val values = IndexedSeq(instanceChange, fleetRequestChange, error)
+  }
+
+
+  object ExcessCapacityTerminationPolicyEnum {
+    val noTermination = "noTermination"
+    val default = "default"
+
+    val values = IndexedSeq(noTermination, default)
+  }
+
 
   object ExportEnvironmentEnum {
     val citrix = "citrix"
@@ -5671,7 +8858,7 @@ package ec2 {
   }
 
   /**
-   * <p>Describes an export task.</p>
+   * <p>Describes an instance export task.</p>
    */
   @js.native
   trait ExportTask extends js.Object {
@@ -5715,6 +8902,9 @@ package ec2 {
     val values = IndexedSeq(active, cancelling, cancelled, completed)
   }
 
+  /**
+   * <p>Describes the format and location for an instance export task.</p>
+   */
   @js.native
   trait ExportToS3Task extends js.Object {
     var DiskImageFormat: DiskImageFormat
@@ -5741,6 +8931,9 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Describes an instance export task.</p>
+   */
   @js.native
   trait ExportToS3TaskSpecification extends js.Object {
     var DiskImageFormat: DiskImageFormat
@@ -5791,12 +8984,76 @@ package ec2 {
   }
 
 
+  object FleetTypeEnum {
+    val request = "request"
+    val maintain = "maintain"
+
+    val values = IndexedSeq(request, maintain)
+  }
+
+  /**
+   * <p>Describes a flow log.</p>
+   */
+  @js.native
+  trait FlowLog extends js.Object {
+    var FlowLogId: String
+    var ResourceId: String
+    var LogGroupName: String
+    var DeliverLogsPermissionArn: String
+    var DeliverLogsErrorMessage: String
+    var TrafficType: TrafficType
+    var FlowLogStatus: String
+    var CreationTime: DateTime
+    var DeliverLogsStatus: String
+  }
+
+  object FlowLog {
+    def apply(
+      FlowLogId: js.UndefOr[String] = js.undefined,
+      ResourceId: js.UndefOr[String] = js.undefined,
+      LogGroupName: js.UndefOr[String] = js.undefined,
+      DeliverLogsPermissionArn: js.UndefOr[String] = js.undefined,
+      DeliverLogsErrorMessage: js.UndefOr[String] = js.undefined,
+      TrafficType: js.UndefOr[TrafficType] = js.undefined,
+      FlowLogStatus: js.UndefOr[String] = js.undefined,
+      CreationTime: js.UndefOr[DateTime] = js.undefined,
+      DeliverLogsStatus: js.UndefOr[String] = js.undefined
+    ): FlowLog = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("FlowLogId" -> FlowLogId.map { x => x: js.Any }),
+        ("ResourceId" -> ResourceId.map { x => x: js.Any }),
+        ("LogGroupName" -> LogGroupName.map { x => x: js.Any }),
+        ("DeliverLogsPermissionArn" -> DeliverLogsPermissionArn.map { x => x: js.Any }),
+        ("DeliverLogsErrorMessage" -> DeliverLogsErrorMessage.map { x => x: js.Any }),
+        ("TrafficType" -> TrafficType.map { x => x: js.Any }),
+        ("FlowLogStatus" -> FlowLogStatus.map { x => x: js.Any }),
+        ("CreationTime" -> CreationTime.map { x => x: js.Any }),
+        ("DeliverLogsStatus" -> DeliverLogsStatus.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[FlowLog]
+    }
+  }
+
+
+  object FlowLogsResourceTypeEnum {
+    val VPC = "VPC"
+    val Subnet = "Subnet"
+    val NetworkInterface = "NetworkInterface"
+
+    val values = IndexedSeq(VPC, Subnet, NetworkInterface)
+  }
+
+
   object GatewayTypeEnum {
     val `ipsec.1` = "ipsec.1"
 
     val values = IndexedSeq(`ipsec.1`)
   }
 
+  /**
+   * <p>Contains the parameters for GetConsoleOutput.</p>
+   */
   @js.native
   trait GetConsoleOutputRequest extends js.Object {
     var DryRun: Boolean
@@ -5817,6 +9074,9 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the output of GetConsoleOutput.</p>
+   */
   @js.native
   trait GetConsoleOutputResult extends js.Object {
     var InstanceId: String
@@ -5840,6 +9100,104 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the parameters for the request.</p>
+   */
+  @js.native
+  trait GetConsoleScreenshotRequest extends js.Object {
+    var DryRun: Boolean
+    var InstanceId: String
+    var WakeUp: Boolean
+  }
+
+  object GetConsoleScreenshotRequest {
+    def apply(
+      DryRun: js.UndefOr[Boolean] = js.undefined,
+      InstanceId: js.UndefOr[String] = js.undefined,
+      WakeUp: js.UndefOr[Boolean] = js.undefined
+    ): GetConsoleScreenshotRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("DryRun" -> DryRun.map { x => x: js.Any }),
+        ("InstanceId" -> InstanceId.map { x => x: js.Any }),
+        ("WakeUp" -> WakeUp.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetConsoleScreenshotRequest]
+    }
+  }
+
+  /**
+   * <p>Contains the output of the request.</p>
+   */
+  @js.native
+  trait GetConsoleScreenshotResult extends js.Object {
+    var InstanceId: String
+    var ImageData: String
+  }
+
+  object GetConsoleScreenshotResult {
+    def apply(
+      InstanceId: js.UndefOr[String] = js.undefined,
+      ImageData: js.UndefOr[String] = js.undefined
+    ): GetConsoleScreenshotResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("InstanceId" -> InstanceId.map { x => x: js.Any }),
+        ("ImageData" -> ImageData.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetConsoleScreenshotResult]
+    }
+  }
+
+  @js.native
+  trait GetHostReservationPurchasePreviewRequest extends js.Object {
+    var OfferingId: String
+    var HostIdSet: RequestHostIdSet
+  }
+
+  object GetHostReservationPurchasePreviewRequest {
+    def apply(
+      OfferingId: js.UndefOr[String] = js.undefined,
+      HostIdSet: js.UndefOr[RequestHostIdSet] = js.undefined
+    ): GetHostReservationPurchasePreviewRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("OfferingId" -> OfferingId.map { x => x: js.Any }),
+        ("HostIdSet" -> HostIdSet.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetHostReservationPurchasePreviewRequest]
+    }
+  }
+
+  @js.native
+  trait GetHostReservationPurchasePreviewResult extends js.Object {
+    var Purchase: PurchaseSet
+    var TotalUpfrontPrice: String
+    var TotalHourlyPrice: String
+    var CurrencyCode: CurrencyCodeValues
+  }
+
+  object GetHostReservationPurchasePreviewResult {
+    def apply(
+      Purchase: js.UndefOr[PurchaseSet] = js.undefined,
+      TotalUpfrontPrice: js.UndefOr[String] = js.undefined,
+      TotalHourlyPrice: js.UndefOr[String] = js.undefined,
+      CurrencyCode: js.UndefOr[CurrencyCodeValues] = js.undefined
+    ): GetHostReservationPurchasePreviewResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("Purchase" -> Purchase.map { x => x: js.Any }),
+        ("TotalUpfrontPrice" -> TotalUpfrontPrice.map { x => x: js.Any }),
+        ("TotalHourlyPrice" -> TotalHourlyPrice.map { x => x: js.Any }),
+        ("CurrencyCode" -> CurrencyCode.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetHostReservationPurchasePreviewResult]
+    }
+  }
+
+  /**
+   * <p>Contains the parameters for GetPasswordData.</p>
+   */
   @js.native
   trait GetPasswordDataRequest extends js.Object {
     var DryRun: Boolean
@@ -5860,6 +9218,9 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the output of GetPasswordData.</p>
+   */
   @js.native
   trait GetPasswordDataResult extends js.Object {
     var InstanceId: String
@@ -5884,6 +9245,76 @@ package ec2 {
   }
 
   /**
+   * <p>Contains the parameters for GetReservedInstanceExchangeQuote.</p>
+   */
+  @js.native
+  trait GetReservedInstancesExchangeQuoteRequest extends js.Object {
+    var DryRun: Boolean
+    var ReservedInstanceIds: ReservedInstanceIdSet
+    var TargetConfigurations: TargetConfigurationRequestSet
+  }
+
+  object GetReservedInstancesExchangeQuoteRequest {
+    def apply(
+      DryRun: js.UndefOr[Boolean] = js.undefined,
+      ReservedInstanceIds: js.UndefOr[ReservedInstanceIdSet] = js.undefined,
+      TargetConfigurations: js.UndefOr[TargetConfigurationRequestSet] = js.undefined
+    ): GetReservedInstancesExchangeQuoteRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("DryRun" -> DryRun.map { x => x: js.Any }),
+        ("ReservedInstanceIds" -> ReservedInstanceIds.map { x => x: js.Any }),
+        ("TargetConfigurations" -> TargetConfigurations.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetReservedInstancesExchangeQuoteRequest]
+    }
+  }
+
+  /**
+   * <p>Contains the output of GetReservedInstancesExchangeQuote.</p>
+   */
+  @js.native
+  trait GetReservedInstancesExchangeQuoteResult extends js.Object {
+    var CurrencyCode: String
+    var TargetConfigurationValueRollup: ReservationValue
+    var ReservedInstanceValueRollup: ReservationValue
+    var ValidationFailureReason: String
+    var ReservedInstanceValueSet: ReservedInstanceReservationValueSet
+    var OutputReservedInstancesWillExpireAt: DateTime
+    var TargetConfigurationValueSet: TargetReservationValueSet
+    var PaymentDue: String
+    var IsValidExchange: Boolean
+  }
+
+  object GetReservedInstancesExchangeQuoteResult {
+    def apply(
+      CurrencyCode: js.UndefOr[String] = js.undefined,
+      TargetConfigurationValueRollup: js.UndefOr[ReservationValue] = js.undefined,
+      ReservedInstanceValueRollup: js.UndefOr[ReservationValue] = js.undefined,
+      ValidationFailureReason: js.UndefOr[String] = js.undefined,
+      ReservedInstanceValueSet: js.UndefOr[ReservedInstanceReservationValueSet] = js.undefined,
+      OutputReservedInstancesWillExpireAt: js.UndefOr[DateTime] = js.undefined,
+      TargetConfigurationValueSet: js.UndefOr[TargetReservationValueSet] = js.undefined,
+      PaymentDue: js.UndefOr[String] = js.undefined,
+      IsValidExchange: js.UndefOr[Boolean] = js.undefined
+    ): GetReservedInstancesExchangeQuoteResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("CurrencyCode" -> CurrencyCode.map { x => x: js.Any }),
+        ("TargetConfigurationValueRollup" -> TargetConfigurationValueRollup.map { x => x: js.Any }),
+        ("ReservedInstanceValueRollup" -> ReservedInstanceValueRollup.map { x => x: js.Any }),
+        ("ValidationFailureReason" -> ValidationFailureReason.map { x => x: js.Any }),
+        ("ReservedInstanceValueSet" -> ReservedInstanceValueSet.map { x => x: js.Any }),
+        ("OutputReservedInstancesWillExpireAt" -> OutputReservedInstancesWillExpireAt.map { x => x: js.Any }),
+        ("TargetConfigurationValueSet" -> TargetConfigurationValueSet.map { x => x: js.Any }),
+        ("PaymentDue" -> PaymentDue.map { x => x: js.Any }),
+        ("IsValidExchange" -> IsValidExchange.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetReservedInstancesExchangeQuoteResult]
+    }
+  }
+
+  /**
    * <p>Describes a security group.</p>
    */
   @js.native
@@ -5904,6 +9335,230 @@ package ec2 {
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GroupIdentifier]
     }
+  }
+
+  /**
+   * <p>Describes an event in the history of the Spot fleet request.</p>
+   */
+  @js.native
+  trait HistoryRecord extends js.Object {
+    var Timestamp: DateTime
+    var EventType: EventType
+    var EventInformation: EventInformation
+  }
+
+  object HistoryRecord {
+    def apply(
+      Timestamp: js.UndefOr[DateTime] = js.undefined,
+      EventType: js.UndefOr[EventType] = js.undefined,
+      EventInformation: js.UndefOr[EventInformation] = js.undefined
+    ): HistoryRecord = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("Timestamp" -> Timestamp.map { x => x: js.Any }),
+        ("EventType" -> EventType.map { x => x: js.Any }),
+        ("EventInformation" -> EventInformation.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[HistoryRecord]
+    }
+  }
+
+  /**
+   * <p>Describes the properties of the Dedicated Host.</p>
+   */
+  @js.native
+  trait Host extends js.Object {
+    var HostReservationId: String
+    var AvailableCapacity: AvailableCapacity
+    var ClientToken: String
+    var HostProperties: HostProperties
+    var AvailabilityZone: String
+    var HostId: String
+    var Instances: HostInstanceList
+    var State: AllocationState
+    var AutoPlacement: AutoPlacement
+  }
+
+  object Host {
+    def apply(
+      HostReservationId: js.UndefOr[String] = js.undefined,
+      AvailableCapacity: js.UndefOr[AvailableCapacity] = js.undefined,
+      ClientToken: js.UndefOr[String] = js.undefined,
+      HostProperties: js.UndefOr[HostProperties] = js.undefined,
+      AvailabilityZone: js.UndefOr[String] = js.undefined,
+      HostId: js.UndefOr[String] = js.undefined,
+      Instances: js.UndefOr[HostInstanceList] = js.undefined,
+      State: js.UndefOr[AllocationState] = js.undefined,
+      AutoPlacement: js.UndefOr[AutoPlacement] = js.undefined
+    ): Host = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("HostReservationId" -> HostReservationId.map { x => x: js.Any }),
+        ("AvailableCapacity" -> AvailableCapacity.map { x => x: js.Any }),
+        ("ClientToken" -> ClientToken.map { x => x: js.Any }),
+        ("HostProperties" -> HostProperties.map { x => x: js.Any }),
+        ("AvailabilityZone" -> AvailabilityZone.map { x => x: js.Any }),
+        ("HostId" -> HostId.map { x => x: js.Any }),
+        ("Instances" -> Instances.map { x => x: js.Any }),
+        ("State" -> State.map { x => x: js.Any }),
+        ("AutoPlacement" -> AutoPlacement.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Host]
+    }
+  }
+
+  /**
+   * <p>Describes an instance running on a Dedicated Host.</p>
+   */
+  @js.native
+  trait HostInstance extends js.Object {
+    var InstanceId: String
+    var InstanceType: String
+  }
+
+  object HostInstance {
+    def apply(
+      InstanceId: js.UndefOr[String] = js.undefined,
+      InstanceType: js.UndefOr[String] = js.undefined
+    ): HostInstance = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("InstanceId" -> InstanceId.map { x => x: js.Any }),
+        ("InstanceType" -> InstanceType.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[HostInstance]
+    }
+  }
+
+  /**
+   * <p>Details about the Dedicated Host Reservation offering.</p>
+   */
+  @js.native
+  trait HostOffering extends js.Object {
+    var PaymentOption: PaymentOption
+    var CurrencyCode: CurrencyCodeValues
+    var Duration: Integer
+    var InstanceFamily: String
+    var UpfrontPrice: String
+    var HourlyPrice: String
+    var OfferingId: String
+  }
+
+  object HostOffering {
+    def apply(
+      PaymentOption: js.UndefOr[PaymentOption] = js.undefined,
+      CurrencyCode: js.UndefOr[CurrencyCodeValues] = js.undefined,
+      Duration: js.UndefOr[Integer] = js.undefined,
+      InstanceFamily: js.UndefOr[String] = js.undefined,
+      UpfrontPrice: js.UndefOr[String] = js.undefined,
+      HourlyPrice: js.UndefOr[String] = js.undefined,
+      OfferingId: js.UndefOr[String] = js.undefined
+    ): HostOffering = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("PaymentOption" -> PaymentOption.map { x => x: js.Any }),
+        ("CurrencyCode" -> CurrencyCode.map { x => x: js.Any }),
+        ("Duration" -> Duration.map { x => x: js.Any }),
+        ("InstanceFamily" -> InstanceFamily.map { x => x: js.Any }),
+        ("UpfrontPrice" -> UpfrontPrice.map { x => x: js.Any }),
+        ("HourlyPrice" -> HourlyPrice.map { x => x: js.Any }),
+        ("OfferingId" -> OfferingId.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[HostOffering]
+    }
+  }
+
+  /**
+   * <p>Describes properties of a Dedicated Host.</p>
+   */
+  @js.native
+  trait HostProperties extends js.Object {
+    var Sockets: Integer
+    var Cores: Integer
+    var TotalVCpus: Integer
+    var InstanceType: String
+  }
+
+  object HostProperties {
+    def apply(
+      Sockets: js.UndefOr[Integer] = js.undefined,
+      Cores: js.UndefOr[Integer] = js.undefined,
+      TotalVCpus: js.UndefOr[Integer] = js.undefined,
+      InstanceType: js.UndefOr[String] = js.undefined
+    ): HostProperties = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("Sockets" -> Sockets.map { x => x: js.Any }),
+        ("Cores" -> Cores.map { x => x: js.Any }),
+        ("TotalVCpus" -> TotalVCpus.map { x => x: js.Any }),
+        ("InstanceType" -> InstanceType.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[HostProperties]
+    }
+  }
+
+  /**
+   * <p>Details about the Dedicated Host Reservation and associated Dedicated Hosts.</p>
+   */
+  @js.native
+  trait HostReservation extends js.Object {
+    var PaymentOption: PaymentOption
+    var HostReservationId: String
+    var CurrencyCode: CurrencyCodeValues
+    var Duration: Integer
+    var InstanceFamily: String
+    var Start: DateTime
+    var UpfrontPrice: String
+    var HostIdSet: ResponseHostIdSet
+    var Count: Integer
+    var HourlyPrice: String
+    var End: DateTime
+    var OfferingId: String
+    var State: ReservationState
+  }
+
+  object HostReservation {
+    def apply(
+      PaymentOption: js.UndefOr[PaymentOption] = js.undefined,
+      HostReservationId: js.UndefOr[String] = js.undefined,
+      CurrencyCode: js.UndefOr[CurrencyCodeValues] = js.undefined,
+      Duration: js.UndefOr[Integer] = js.undefined,
+      InstanceFamily: js.UndefOr[String] = js.undefined,
+      Start: js.UndefOr[DateTime] = js.undefined,
+      UpfrontPrice: js.UndefOr[String] = js.undefined,
+      HostIdSet: js.UndefOr[ResponseHostIdSet] = js.undefined,
+      Count: js.UndefOr[Integer] = js.undefined,
+      HourlyPrice: js.UndefOr[String] = js.undefined,
+      End: js.UndefOr[DateTime] = js.undefined,
+      OfferingId: js.UndefOr[String] = js.undefined,
+      State: js.UndefOr[ReservationState] = js.undefined
+    ): HostReservation = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("PaymentOption" -> PaymentOption.map { x => x: js.Any }),
+        ("HostReservationId" -> HostReservationId.map { x => x: js.Any }),
+        ("CurrencyCode" -> CurrencyCode.map { x => x: js.Any }),
+        ("Duration" -> Duration.map { x => x: js.Any }),
+        ("InstanceFamily" -> InstanceFamily.map { x => x: js.Any }),
+        ("Start" -> Start.map { x => x: js.Any }),
+        ("UpfrontPrice" -> UpfrontPrice.map { x => x: js.Any }),
+        ("HostIdSet" -> HostIdSet.map { x => x: js.Any }),
+        ("Count" -> Count.map { x => x: js.Any }),
+        ("HourlyPrice" -> HourlyPrice.map { x => x: js.Any }),
+        ("End" -> End.map { x => x: js.Any }),
+        ("OfferingId" -> OfferingId.map { x => x: js.Any }),
+        ("State" -> State.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[HostReservation]
+    }
+  }
+
+
+  object HostTenancyEnum {
+    val dedicated = "dedicated"
+    val host = "host"
+
+    val values = IndexedSeq(dedicated, host)
   }
 
 
@@ -5984,6 +9639,32 @@ package ec2 {
   }
 
   /**
+   * <p>Describes the ID format for a resource.</p>
+   */
+  @js.native
+  trait IdFormat extends js.Object {
+    var Resource: String
+    var UseLongIds: Boolean
+    var Deadline: DateTime
+  }
+
+  object IdFormat {
+    def apply(
+      Resource: js.UndefOr[String] = js.undefined,
+      UseLongIds: js.UndefOr[Boolean] = js.undefined,
+      Deadline: js.UndefOr[DateTime] = js.undefined
+    ): IdFormat = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("Resource" -> Resource.map { x => x: js.Any }),
+        ("UseLongIds" -> UseLongIds.map { x => x: js.Any }),
+        ("Deadline" -> Deadline.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[IdFormat]
+    }
+  }
+
+  /**
    * <p>Describes an image.</p>
    */
   @js.native
@@ -6000,6 +9681,7 @@ package ec2 {
     var Description: String
     var KernelId: String
     var ImageType: ImageTypeValues
+    var EnaSupport: Boolean
     var RootDeviceType: DeviceType
     var OwnerId: String
     var ProductCodes: ProductCodeList
@@ -6027,6 +9709,7 @@ package ec2 {
       Description: js.UndefOr[String] = js.undefined,
       KernelId: js.UndefOr[String] = js.undefined,
       ImageType: js.UndefOr[ImageTypeValues] = js.undefined,
+      EnaSupport: js.UndefOr[Boolean] = js.undefined,
       RootDeviceType: js.UndefOr[DeviceType] = js.undefined,
       OwnerId: js.UndefOr[String] = js.undefined,
       ProductCodes: js.UndefOr[ProductCodeList] = js.undefined,
@@ -6052,6 +9735,7 @@ package ec2 {
         ("Description" -> Description.map { x => x: js.Any }),
         ("KernelId" -> KernelId.map { x => x: js.Any }),
         ("ImageType" -> ImageType.map { x => x: js.Any }),
+        ("EnaSupport" -> EnaSupport.map { x => x: js.Any }),
         ("RootDeviceType" -> RootDeviceType.map { x => x: js.Any }),
         ("OwnerId" -> OwnerId.map { x => x: js.Any }),
         ("ProductCodes" -> ProductCodes.map { x => x: js.Any }),
@@ -6118,16 +9802,57 @@ package ec2 {
     val launchPermission = "launchPermission"
     val productCodes = "productCodes"
     val blockDeviceMapping = "blockDeviceMapping"
+    val sriovNetSupport = "sriovNetSupport"
 
-    val values = IndexedSeq(description, kernel, ramdisk, launchPermission, productCodes, blockDeviceMapping)
+    val values = IndexedSeq(description, kernel, ramdisk, launchPermission, productCodes, blockDeviceMapping, sriovNetSupport)
+  }
+
+  /**
+   * <p>Describes the disk container object for an import image task.</p>
+   */
+  @js.native
+  trait ImageDiskContainer extends js.Object {
+    var Format: String
+    var SnapshotId: String
+    var Description: String
+    var Url: String
+    var UserBucket: UserBucket
+    var DeviceName: String
+  }
+
+  object ImageDiskContainer {
+    def apply(
+      Format: js.UndefOr[String] = js.undefined,
+      SnapshotId: js.UndefOr[String] = js.undefined,
+      Description: js.UndefOr[String] = js.undefined,
+      Url: js.UndefOr[String] = js.undefined,
+      UserBucket: js.UndefOr[UserBucket] = js.undefined,
+      DeviceName: js.UndefOr[String] = js.undefined
+    ): ImageDiskContainer = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("Format" -> Format.map { x => x: js.Any }),
+        ("SnapshotId" -> SnapshotId.map { x => x: js.Any }),
+        ("Description" -> Description.map { x => x: js.Any }),
+        ("Url" -> Url.map { x => x: js.Any }),
+        ("UserBucket" -> UserBucket.map { x => x: js.Any }),
+        ("DeviceName" -> DeviceName.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ImageDiskContainer]
+    }
   }
 
 
   object ImageStateEnum {
+    val pending = "pending"
     val available = "available"
+    val invalid = "invalid"
     val deregistered = "deregistered"
+    val transient = "transient"
+    val failed = "failed"
+    val error = "error"
 
-    val values = IndexedSeq(available, deregistered)
+    val values = IndexedSeq(pending, available, invalid, deregistered, transient, failed, error)
   }
 
 
@@ -6139,6 +9864,156 @@ package ec2 {
     val values = IndexedSeq(machine, kernel, ramdisk)
   }
 
+  /**
+   * <p>Contains the parameters for ImportImage.</p>
+   */
+  @js.native
+  trait ImportImageRequest extends js.Object {
+    var Architecture: String
+    var DryRun: Boolean
+    var LicenseType: String
+    var DiskContainers: ImageDiskContainerList
+    var Platform: String
+    var ClientToken: String
+    var Description: String
+    var ClientData: ClientData
+    var Hypervisor: String
+    var RoleName: String
+  }
+
+  object ImportImageRequest {
+    def apply(
+      Architecture: js.UndefOr[String] = js.undefined,
+      DryRun: js.UndefOr[Boolean] = js.undefined,
+      LicenseType: js.UndefOr[String] = js.undefined,
+      DiskContainers: js.UndefOr[ImageDiskContainerList] = js.undefined,
+      Platform: js.UndefOr[String] = js.undefined,
+      ClientToken: js.UndefOr[String] = js.undefined,
+      Description: js.UndefOr[String] = js.undefined,
+      ClientData: js.UndefOr[ClientData] = js.undefined,
+      Hypervisor: js.UndefOr[String] = js.undefined,
+      RoleName: js.UndefOr[String] = js.undefined
+    ): ImportImageRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("Architecture" -> Architecture.map { x => x: js.Any }),
+        ("DryRun" -> DryRun.map { x => x: js.Any }),
+        ("LicenseType" -> LicenseType.map { x => x: js.Any }),
+        ("DiskContainers" -> DiskContainers.map { x => x: js.Any }),
+        ("Platform" -> Platform.map { x => x: js.Any }),
+        ("ClientToken" -> ClientToken.map { x => x: js.Any }),
+        ("Description" -> Description.map { x => x: js.Any }),
+        ("ClientData" -> ClientData.map { x => x: js.Any }),
+        ("Hypervisor" -> Hypervisor.map { x => x: js.Any }),
+        ("RoleName" -> RoleName.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ImportImageRequest]
+    }
+  }
+
+  /**
+   * <p>Contains the output for ImportImage.</p>
+   */
+  @js.native
+  trait ImportImageResult extends js.Object {
+    var Architecture: String
+    var StatusMessage: String
+    var ImageId: String
+    var LicenseType: String
+    var Platform: String
+    var Description: String
+    var SnapshotDetails: SnapshotDetailList
+    var Hypervisor: String
+    var Progress: String
+    var Status: String
+    var ImportTaskId: String
+  }
+
+  object ImportImageResult {
+    def apply(
+      Architecture: js.UndefOr[String] = js.undefined,
+      StatusMessage: js.UndefOr[String] = js.undefined,
+      ImageId: js.UndefOr[String] = js.undefined,
+      LicenseType: js.UndefOr[String] = js.undefined,
+      Platform: js.UndefOr[String] = js.undefined,
+      Description: js.UndefOr[String] = js.undefined,
+      SnapshotDetails: js.UndefOr[SnapshotDetailList] = js.undefined,
+      Hypervisor: js.UndefOr[String] = js.undefined,
+      Progress: js.UndefOr[String] = js.undefined,
+      Status: js.UndefOr[String] = js.undefined,
+      ImportTaskId: js.UndefOr[String] = js.undefined
+    ): ImportImageResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("Architecture" -> Architecture.map { x => x: js.Any }),
+        ("StatusMessage" -> StatusMessage.map { x => x: js.Any }),
+        ("ImageId" -> ImageId.map { x => x: js.Any }),
+        ("LicenseType" -> LicenseType.map { x => x: js.Any }),
+        ("Platform" -> Platform.map { x => x: js.Any }),
+        ("Description" -> Description.map { x => x: js.Any }),
+        ("SnapshotDetails" -> SnapshotDetails.map { x => x: js.Any }),
+        ("Hypervisor" -> Hypervisor.map { x => x: js.Any }),
+        ("Progress" -> Progress.map { x => x: js.Any }),
+        ("Status" -> Status.map { x => x: js.Any }),
+        ("ImportTaskId" -> ImportTaskId.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ImportImageResult]
+    }
+  }
+
+  /**
+   * <p>Describes an import image task.</p>
+   */
+  @js.native
+  trait ImportImageTask extends js.Object {
+    var Architecture: String
+    var StatusMessage: String
+    var ImageId: String
+    var LicenseType: String
+    var Platform: String
+    var Description: String
+    var SnapshotDetails: SnapshotDetailList
+    var Hypervisor: String
+    var Progress: String
+    var Status: String
+    var ImportTaskId: String
+  }
+
+  object ImportImageTask {
+    def apply(
+      Architecture: js.UndefOr[String] = js.undefined,
+      StatusMessage: js.UndefOr[String] = js.undefined,
+      ImageId: js.UndefOr[String] = js.undefined,
+      LicenseType: js.UndefOr[String] = js.undefined,
+      Platform: js.UndefOr[String] = js.undefined,
+      Description: js.UndefOr[String] = js.undefined,
+      SnapshotDetails: js.UndefOr[SnapshotDetailList] = js.undefined,
+      Hypervisor: js.UndefOr[String] = js.undefined,
+      Progress: js.UndefOr[String] = js.undefined,
+      Status: js.UndefOr[String] = js.undefined,
+      ImportTaskId: js.UndefOr[String] = js.undefined
+    ): ImportImageTask = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("Architecture" -> Architecture.map { x => x: js.Any }),
+        ("StatusMessage" -> StatusMessage.map { x => x: js.Any }),
+        ("ImageId" -> ImageId.map { x => x: js.Any }),
+        ("LicenseType" -> LicenseType.map { x => x: js.Any }),
+        ("Platform" -> Platform.map { x => x: js.Any }),
+        ("Description" -> Description.map { x => x: js.Any }),
+        ("SnapshotDetails" -> SnapshotDetails.map { x => x: js.Any }),
+        ("Hypervisor" -> Hypervisor.map { x => x: js.Any }),
+        ("Progress" -> Progress.map { x => x: js.Any }),
+        ("Status" -> Status.map { x => x: js.Any }),
+        ("ImportTaskId" -> ImportTaskId.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ImportImageTask]
+    }
+  }
+
+  /**
+   * <p>Describes the launch specification for VM import.</p>
+   */
   @js.native
   trait ImportInstanceLaunchSpecification extends js.Object {
     var Architecture: ArchitectureValues
@@ -6186,6 +10061,9 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the parameters for ImportInstance.</p>
+   */
   @js.native
   trait ImportInstanceRequest extends js.Object {
     var DryRun: Boolean
@@ -6215,6 +10093,9 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the output for ImportInstance.</p>
+   */
   @js.native
   trait ImportInstanceResult extends js.Object {
     var ConversionTask: ConversionTask
@@ -6232,6 +10113,9 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Describes an import instance task.</p>
+   */
   @js.native
   trait ImportInstanceTaskDetails extends js.Object {
     var Volumes: ImportInstanceVolumeDetailSet
@@ -6296,6 +10180,9 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the parameters for ImportKeyPair.</p>
+   */
   @js.native
   trait ImportKeyPairRequest extends js.Object {
     var DryRun: Boolean
@@ -6319,6 +10206,9 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the output of ImportKeyPair.</p>
+   */
   @js.native
   trait ImportKeyPairResult extends js.Object {
     var KeyName: String
@@ -6339,6 +10229,96 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the parameters for ImportSnapshot.</p>
+   */
+  @js.native
+  trait ImportSnapshotRequest extends js.Object {
+    var DryRun: Boolean
+    var DiskContainer: SnapshotDiskContainer
+    var ClientToken: String
+    var Description: String
+    var ClientData: ClientData
+    var RoleName: String
+  }
+
+  object ImportSnapshotRequest {
+    def apply(
+      DryRun: js.UndefOr[Boolean] = js.undefined,
+      DiskContainer: js.UndefOr[SnapshotDiskContainer] = js.undefined,
+      ClientToken: js.UndefOr[String] = js.undefined,
+      Description: js.UndefOr[String] = js.undefined,
+      ClientData: js.UndefOr[ClientData] = js.undefined,
+      RoleName: js.UndefOr[String] = js.undefined
+    ): ImportSnapshotRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("DryRun" -> DryRun.map { x => x: js.Any }),
+        ("DiskContainer" -> DiskContainer.map { x => x: js.Any }),
+        ("ClientToken" -> ClientToken.map { x => x: js.Any }),
+        ("Description" -> Description.map { x => x: js.Any }),
+        ("ClientData" -> ClientData.map { x => x: js.Any }),
+        ("RoleName" -> RoleName.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ImportSnapshotRequest]
+    }
+  }
+
+  /**
+   * <p>Contains the output for ImportSnapshot.</p>
+   */
+  @js.native
+  trait ImportSnapshotResult extends js.Object {
+    var ImportTaskId: String
+    var SnapshotTaskDetail: SnapshotTaskDetail
+    var Description: String
+  }
+
+  object ImportSnapshotResult {
+    def apply(
+      ImportTaskId: js.UndefOr[String] = js.undefined,
+      SnapshotTaskDetail: js.UndefOr[SnapshotTaskDetail] = js.undefined,
+      Description: js.UndefOr[String] = js.undefined
+    ): ImportSnapshotResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("ImportTaskId" -> ImportTaskId.map { x => x: js.Any }),
+        ("SnapshotTaskDetail" -> SnapshotTaskDetail.map { x => x: js.Any }),
+        ("Description" -> Description.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ImportSnapshotResult]
+    }
+  }
+
+  /**
+   * <p>Describes an import snapshot task.</p>
+   */
+  @js.native
+  trait ImportSnapshotTask extends js.Object {
+    var ImportTaskId: String
+    var SnapshotTaskDetail: SnapshotTaskDetail
+    var Description: String
+  }
+
+  object ImportSnapshotTask {
+    def apply(
+      ImportTaskId: js.UndefOr[String] = js.undefined,
+      SnapshotTaskDetail: js.UndefOr[SnapshotTaskDetail] = js.undefined,
+      Description: js.UndefOr[String] = js.undefined
+    ): ImportSnapshotTask = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("ImportTaskId" -> ImportTaskId.map { x => x: js.Any }),
+        ("SnapshotTaskDetail" -> SnapshotTaskDetail.map { x => x: js.Any }),
+        ("Description" -> Description.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ImportSnapshotTask]
+    }
+  }
+
+  /**
+   * <p>Contains the parameters for ImportVolume.</p>
+   */
   @js.native
   trait ImportVolumeRequest extends js.Object {
     var DryRun: Boolean
@@ -6368,6 +10348,9 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the output for ImportVolume.</p>
+   */
   @js.native
   trait ImportVolumeResult extends js.Object {
     var ConversionTask: ConversionTask
@@ -6439,6 +10422,7 @@ package ec2 {
     var ClientToken: String
     var SecurityGroups: GroupIdentifierList
     var KernelId: String
+    var EnaSupport: Boolean
     var RootDeviceType: DeviceType
     var PublicIpAddress: String
     var ProductCodes: ProductCodeList
@@ -6480,6 +10464,7 @@ package ec2 {
       ClientToken: js.UndefOr[String] = js.undefined,
       SecurityGroups: js.UndefOr[GroupIdentifierList] = js.undefined,
       KernelId: js.UndefOr[String] = js.undefined,
+      EnaSupport: js.UndefOr[Boolean] = js.undefined,
       RootDeviceType: js.UndefOr[DeviceType] = js.undefined,
       PublicIpAddress: js.UndefOr[String] = js.undefined,
       ProductCodes: js.UndefOr[ProductCodeList] = js.undefined,
@@ -6519,6 +10504,7 @@ package ec2 {
         ("ClientToken" -> ClientToken.map { x => x: js.Any }),
         ("SecurityGroups" -> SecurityGroups.map { x => x: js.Any }),
         ("KernelId" -> KernelId.map { x => x: js.Any }),
+        ("EnaSupport" -> EnaSupport.map { x => x: js.Any }),
         ("RootDeviceType" -> RootDeviceType.map { x => x: js.Any }),
         ("PublicIpAddress" -> PublicIpAddress.map { x => x: js.Any }),
         ("ProductCodes" -> ProductCodes.map { x => x: js.Any }),
@@ -6559,6 +10545,7 @@ package ec2 {
     var UserData: AttributeValue
     var KernelId: AttributeValue
     var Groups: GroupIdentifierList
+    var EnaSupport: AttributeBooleanValue
     var ProductCodes: ProductCodeList
     var InstanceType: AttributeValue
     var InstanceId: String
@@ -6577,6 +10564,7 @@ package ec2 {
       UserData: js.UndefOr[AttributeValue] = js.undefined,
       KernelId: js.UndefOr[AttributeValue] = js.undefined,
       Groups: js.UndefOr[GroupIdentifierList] = js.undefined,
+      EnaSupport: js.UndefOr[AttributeBooleanValue] = js.undefined,
       ProductCodes: js.UndefOr[ProductCodeList] = js.undefined,
       InstanceType: js.UndefOr[AttributeValue] = js.undefined,
       InstanceId: js.UndefOr[String] = js.undefined,
@@ -6593,6 +10581,7 @@ package ec2 {
         ("UserData" -> UserData.map { x => x: js.Any }),
         ("KernelId" -> KernelId.map { x => x: js.Any }),
         ("Groups" -> Groups.map { x => x: js.Any }),
+        ("EnaSupport" -> EnaSupport.map { x => x: js.Any }),
         ("ProductCodes" -> ProductCodes.map { x => x: js.Any }),
         ("InstanceType" -> InstanceType.map { x => x: js.Any }),
         ("InstanceId" -> InstanceId.map { x => x: js.Any }),
@@ -6619,8 +10608,9 @@ package ec2 {
     val groupSet = "groupSet"
     val ebsOptimized = "ebsOptimized"
     val sriovNetSupport = "sriovNetSupport"
+    val enaSupport = "enaSupport"
 
-    val values = IndexedSeq(instanceType, kernel, ramdisk, userData, disableApiTermination, instanceInitiatedShutdownBehavior, rootDeviceName, blockDeviceMapping, productCodes, sourceDestCheck, groupSet, ebsOptimized, sriovNetSupport)
+    val values = IndexedSeq(instanceType, kernel, ramdisk, userData, disableApiTermination, instanceInitiatedShutdownBehavior, rootDeviceName, blockDeviceMapping, productCodes, sourceDestCheck, groupSet, ebsOptimized, sriovNetSupport, enaSupport)
   }
 
   /**
@@ -6676,6 +10666,32 @@ package ec2 {
   }
 
   /**
+   * <p>Information about the instance type that the Dedicated Host supports.</p>
+   */
+  @js.native
+  trait InstanceCapacity extends js.Object {
+    var InstanceType: String
+    var AvailableCapacity: Integer
+    var TotalCapacity: Integer
+  }
+
+  object InstanceCapacity {
+    def apply(
+      InstanceType: js.UndefOr[String] = js.undefined,
+      AvailableCapacity: js.UndefOr[Integer] = js.undefined,
+      TotalCapacity: js.UndefOr[Integer] = js.undefined
+    ): InstanceCapacity = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("InstanceType" -> InstanceType.map { x => x: js.Any }),
+        ("AvailableCapacity" -> AvailableCapacity.map { x => x: js.Any }),
+        ("TotalCapacity" -> TotalCapacity.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[InstanceCapacity]
+    }
+  }
+
+  /**
    * <p>Describes a Reserved Instance listing state.</p>
    */
   @js.native
@@ -6699,7 +10715,7 @@ package ec2 {
   }
 
   /**
-   * <p>Describes an instance export task.</p>
+   * <p>Describes an instance to export.</p>
    */
   @js.native
   trait InstanceExportDetails extends js.Object {
@@ -6721,15 +10737,36 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Describes an IPv6 address.</p>
+   */
+  @js.native
+  trait InstanceIpv6Address extends js.Object {
+    var Ipv6Address: String
+  }
+
+  object InstanceIpv6Address {
+    def apply(
+      Ipv6Address: js.UndefOr[String] = js.undefined
+    ): InstanceIpv6Address = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("Ipv6Address" -> Ipv6Address.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[InstanceIpv6Address]
+    }
+  }
+
 
   object InstanceLifecycleTypeEnum {
     val spot = "spot"
+    val scheduled = "scheduled"
 
-    val values = IndexedSeq(spot)
+    val values = IndexedSeq(spot, scheduled)
   }
 
   /**
-   * <p>Describes the monitoring information of the instance.</p>
+   * <p>Describes the monitoring of an instance.</p>
    */
   @js.native
   trait InstanceMonitoring extends js.Object {
@@ -6756,6 +10793,7 @@ package ec2 {
    */
   @js.native
   trait InstanceNetworkInterface extends js.Object {
+    var Ipv6Addresses: InstanceIpv6AddressList
     var PrivateIpAddress: String
     var PrivateDnsName: String
     var Description: String
@@ -6774,6 +10812,7 @@ package ec2 {
 
   object InstanceNetworkInterface {
     def apply(
+      Ipv6Addresses: js.UndefOr[InstanceIpv6AddressList] = js.undefined,
       PrivateIpAddress: js.UndefOr[String] = js.undefined,
       PrivateDnsName: js.UndefOr[String] = js.undefined,
       Description: js.UndefOr[String] = js.undefined,
@@ -6790,6 +10829,7 @@ package ec2 {
       SubnetId: js.UndefOr[String] = js.undefined
     ): InstanceNetworkInterface = {
       val _fields = IndexedSeq[(String, js.Any)](
+        ("Ipv6Addresses" -> Ipv6Addresses.map { x => x: js.Any }),
         ("PrivateIpAddress" -> PrivateIpAddress.map { x => x: js.Any }),
         ("PrivateDnsName" -> PrivateDnsName.map { x => x: js.Any }),
         ("Description" -> Description.map { x => x: js.Any }),
@@ -6811,7 +10851,7 @@ package ec2 {
   }
 
   /**
-   * <p>Describes association information for an Elastic IP address.</p>
+   * <p>Describes association information for an Elastic IP address (IPv4).</p>
    */
   @js.native
   trait InstanceNetworkInterfaceAssociation extends js.Object {
@@ -6873,9 +10913,11 @@ package ec2 {
    */
   @js.native
   trait InstanceNetworkInterfaceSpecification extends js.Object {
+    var Ipv6Addresses: InstanceIpv6AddressList
     var PrivateIpAddress: String
     var Description: String
     var PrivateIpAddresses: PrivateIpAddressSpecificationList
+    var Ipv6AddressCount: Integer
     var Groups: SecurityGroupIdStringList
     var DeviceIndex: Integer
     var DeleteOnTermination: Boolean
@@ -6887,9 +10929,11 @@ package ec2 {
 
   object InstanceNetworkInterfaceSpecification {
     def apply(
+      Ipv6Addresses: js.UndefOr[InstanceIpv6AddressList] = js.undefined,
       PrivateIpAddress: js.UndefOr[String] = js.undefined,
       Description: js.UndefOr[String] = js.undefined,
       PrivateIpAddresses: js.UndefOr[PrivateIpAddressSpecificationList] = js.undefined,
+      Ipv6AddressCount: js.UndefOr[Integer] = js.undefined,
       Groups: js.UndefOr[SecurityGroupIdStringList] = js.undefined,
       DeviceIndex: js.UndefOr[Integer] = js.undefined,
       DeleteOnTermination: js.UndefOr[Boolean] = js.undefined,
@@ -6899,9 +10943,11 @@ package ec2 {
       SubnetId: js.UndefOr[String] = js.undefined
     ): InstanceNetworkInterfaceSpecification = {
       val _fields = IndexedSeq[(String, js.Any)](
+        ("Ipv6Addresses" -> Ipv6Addresses.map { x => x: js.Any }),
         ("PrivateIpAddress" -> PrivateIpAddress.map { x => x: js.Any }),
         ("Description" -> Description.map { x => x: js.Any }),
         ("PrivateIpAddresses" -> PrivateIpAddresses.map { x => x: js.Any }),
+        ("Ipv6AddressCount" -> Ipv6AddressCount.map { x => x: js.Any }),
         ("Groups" -> Groups.map { x => x: js.Any }),
         ("DeviceIndex" -> DeviceIndex.map { x => x: js.Any }),
         ("DeleteOnTermination" -> DeleteOnTermination.map { x => x: js.Any }),
@@ -6916,7 +10962,7 @@ package ec2 {
   }
 
   /**
-   * <p>Describes a private IP address.</p>
+   * <p>Describes a private IPv4 address.</p>
    */
   @js.native
   trait InstancePrivateIpAddress extends js.Object {
@@ -6945,7 +10991,7 @@ package ec2 {
   }
 
   /**
-   * <p>Describes the current state of the instance.</p>
+   * <p>Describes the current state of an instance.</p>
    */
   @js.native
   trait InstanceState extends js.Object {
@@ -7067,7 +11113,7 @@ package ec2 {
   }
 
   /**
-   * <p>Describes an instance event.</p>
+   * <p>Describes a scheduled event for an instance.</p>
    */
   @js.native
   trait InstanceStatusEvent extends js.Object {
@@ -7121,6 +11167,13 @@ package ec2 {
 
   object InstanceTypeEnum {
     val `t1.micro` = "t1.micro"
+    val `t2.nano` = "t2.nano"
+    val `t2.micro` = "t2.micro"
+    val `t2.small` = "t2.small"
+    val `t2.medium` = "t2.medium"
+    val `t2.large` = "t2.large"
+    val `t2.xlarge` = "t2.xlarge"
+    val `t2.2xlarge` = "t2.2xlarge"
     val `m1.small` = "m1.small"
     val `m1.medium` = "m1.medium"
     val `m1.large` = "m1.large"
@@ -7129,13 +11182,29 @@ package ec2 {
     val `m3.large` = "m3.large"
     val `m3.xlarge` = "m3.xlarge"
     val `m3.2xlarge` = "m3.2xlarge"
-    val `t2.micro` = "t2.micro"
-    val `t2.small` = "t2.small"
-    val `t2.medium` = "t2.medium"
+    val `m4.large` = "m4.large"
+    val `m4.xlarge` = "m4.xlarge"
+    val `m4.2xlarge` = "m4.2xlarge"
+    val `m4.4xlarge` = "m4.4xlarge"
+    val `m4.10xlarge` = "m4.10xlarge"
+    val `m4.16xlarge` = "m4.16xlarge"
     val `m2.xlarge` = "m2.xlarge"
     val `m2.2xlarge` = "m2.2xlarge"
     val `m2.4xlarge` = "m2.4xlarge"
     val `cr1.8xlarge` = "cr1.8xlarge"
+    val `r3.large` = "r3.large"
+    val `r3.xlarge` = "r3.xlarge"
+    val `r3.2xlarge` = "r3.2xlarge"
+    val `r3.4xlarge` = "r3.4xlarge"
+    val `r3.8xlarge` = "r3.8xlarge"
+    val `r4.large` = "r4.large"
+    val `r4.xlarge` = "r4.xlarge"
+    val `r4.2xlarge` = "r4.2xlarge"
+    val `r4.4xlarge` = "r4.4xlarge"
+    val `r4.8xlarge` = "r4.8xlarge"
+    val `r4.16xlarge` = "r4.16xlarge"
+    val `x1.16xlarge` = "x1.16xlarge"
+    val `x1.32xlarge` = "x1.32xlarge"
     val `i2.xlarge` = "i2.xlarge"
     val `i2.2xlarge` = "i2.2xlarge"
     val `i2.4xlarge` = "i2.4xlarge"
@@ -7157,18 +11226,19 @@ package ec2 {
     val `cc1.4xlarge` = "cc1.4xlarge"
     val `cc2.8xlarge` = "cc2.8xlarge"
     val `g2.2xlarge` = "g2.2xlarge"
+    val `g2.8xlarge` = "g2.8xlarge"
     val `cg1.4xlarge` = "cg1.4xlarge"
-    val `r3.large` = "r3.large"
-    val `r3.xlarge` = "r3.xlarge"
-    val `r3.2xlarge` = "r3.2xlarge"
-    val `r3.4xlarge` = "r3.4xlarge"
-    val `r3.8xlarge` = "r3.8xlarge"
+    val `p2.xlarge` = "p2.xlarge"
+    val `p2.8xlarge` = "p2.8xlarge"
+    val `p2.16xlarge` = "p2.16xlarge"
     val `d2.xlarge` = "d2.xlarge"
     val `d2.2xlarge` = "d2.2xlarge"
     val `d2.4xlarge` = "d2.4xlarge"
     val `d2.8xlarge` = "d2.8xlarge"
+    val `f1.2xlarge` = "f1.2xlarge"
+    val `f1.16xlarge` = "f1.16xlarge"
 
-    val values = IndexedSeq(`t1.micro`, `m1.small`, `m1.medium`, `m1.large`, `m1.xlarge`, `m3.medium`, `m3.large`, `m3.xlarge`, `m3.2xlarge`, `t2.micro`, `t2.small`, `t2.medium`, `m2.xlarge`, `m2.2xlarge`, `m2.4xlarge`, `cr1.8xlarge`, `i2.xlarge`, `i2.2xlarge`, `i2.4xlarge`, `i2.8xlarge`, `hi1.4xlarge`, `hs1.8xlarge`, `c1.medium`, `c1.xlarge`, `c3.large`, `c3.xlarge`, `c3.2xlarge`, `c3.4xlarge`, `c3.8xlarge`, `c4.large`, `c4.xlarge`, `c4.2xlarge`, `c4.4xlarge`, `c4.8xlarge`, `cc1.4xlarge`, `cc2.8xlarge`, `g2.2xlarge`, `cg1.4xlarge`, `r3.large`, `r3.xlarge`, `r3.2xlarge`, `r3.4xlarge`, `r3.8xlarge`, `d2.xlarge`, `d2.2xlarge`, `d2.4xlarge`, `d2.8xlarge`)
+    val values = IndexedSeq(`t1.micro`, `t2.nano`, `t2.micro`, `t2.small`, `t2.medium`, `t2.large`, `t2.xlarge`, `t2.2xlarge`, `m1.small`, `m1.medium`, `m1.large`, `m1.xlarge`, `m3.medium`, `m3.large`, `m3.xlarge`, `m3.2xlarge`, `m4.large`, `m4.xlarge`, `m4.2xlarge`, `m4.4xlarge`, `m4.10xlarge`, `m4.16xlarge`, `m2.xlarge`, `m2.2xlarge`, `m2.4xlarge`, `cr1.8xlarge`, `r3.large`, `r3.xlarge`, `r3.2xlarge`, `r3.4xlarge`, `r3.8xlarge`, `r4.large`, `r4.xlarge`, `r4.2xlarge`, `r4.4xlarge`, `r4.8xlarge`, `r4.16xlarge`, `x1.16xlarge`, `x1.32xlarge`, `i2.xlarge`, `i2.2xlarge`, `i2.4xlarge`, `i2.8xlarge`, `hi1.4xlarge`, `hs1.8xlarge`, `c1.medium`, `c1.xlarge`, `c3.large`, `c3.xlarge`, `c3.2xlarge`, `c3.4xlarge`, `c3.8xlarge`, `c4.large`, `c4.xlarge`, `c4.2xlarge`, `c4.4xlarge`, `c4.8xlarge`, `cc1.4xlarge`, `cc2.8xlarge`, `g2.2xlarge`, `g2.8xlarge`, `cg1.4xlarge`, `p2.xlarge`, `p2.8xlarge`, `p2.16xlarge`, `d2.xlarge`, `d2.2xlarge`, `d2.4xlarge`, `d2.8xlarge`, `f1.2xlarge`, `f1.16xlarge`)
   }
 
   /**
@@ -7198,7 +11268,7 @@ package ec2 {
   }
 
   /**
-   * <p>Describes the attachment of a VPC to an Internet gateway.</p>
+   * <p>Describes the attachment of a VPC to an Internet gateway or an egress-only Internet gateway.</p>
    */
   @js.native
   trait InternetGatewayAttachment extends js.Object {
@@ -7225,7 +11295,9 @@ package ec2 {
    */
   @js.native
   trait IpPermission extends js.Object {
+    var PrefixListIds: PrefixListIdList
     var UserIdGroupPairs: UserIdGroupPairList
+    var Ipv6Ranges: Ipv6RangeList
     var IpRanges: IpRangeList
     var ToPort: Integer
     var FromPort: Integer
@@ -7234,14 +11306,18 @@ package ec2 {
 
   object IpPermission {
     def apply(
+      PrefixListIds: js.UndefOr[PrefixListIdList] = js.undefined,
       UserIdGroupPairs: js.UndefOr[UserIdGroupPairList] = js.undefined,
+      Ipv6Ranges: js.UndefOr[Ipv6RangeList] = js.undefined,
       IpRanges: js.UndefOr[IpRangeList] = js.undefined,
       ToPort: js.UndefOr[Integer] = js.undefined,
       FromPort: js.UndefOr[Integer] = js.undefined,
       IpProtocol: js.UndefOr[String] = js.undefined
     ): IpPermission = {
       val _fields = IndexedSeq[(String, js.Any)](
+        ("PrefixListIds" -> PrefixListIds.map { x => x: js.Any }),
         ("UserIdGroupPairs" -> UserIdGroupPairs.map { x => x: js.Any }),
+        ("Ipv6Ranges" -> Ipv6Ranges.map { x => x: js.Any }),
         ("IpRanges" -> IpRanges.map { x => x: js.Any }),
         ("ToPort" -> ToPort.map { x => x: js.Any }),
         ("FromPort" -> FromPort.map { x => x: js.Any }),
@@ -7253,7 +11329,7 @@ package ec2 {
   }
 
   /**
-   * <p>Describes an IP range.</p>
+   * <p>Describes an IPv4 range.</p>
    */
   @js.native
   trait IpRange extends js.Object {
@@ -7269,6 +11345,46 @@ package ec2 {
       ).filter(_._2 != js.undefined)
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[IpRange]
+    }
+  }
+
+  /**
+   * <p>Describes an IPv6 CIDR block.</p>
+   */
+  @js.native
+  trait Ipv6CidrBlock extends js.Object {
+    var Ipv6CidrBlock: String
+  }
+
+  object Ipv6CidrBlock {
+    def apply(
+      Ipv6CidrBlock: js.UndefOr[String] = js.undefined
+    ): Ipv6CidrBlock = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("Ipv6CidrBlock" -> Ipv6CidrBlock.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Ipv6CidrBlock]
+    }
+  }
+
+  /**
+   * <p>[EC2-VPC only] Describes an IPv6 range.</p>
+   */
+  @js.native
+  trait Ipv6Range extends js.Object {
+    var CidrIpv6: String
+  }
+
+  object Ipv6Range {
+    def apply(
+      CidrIpv6: js.UndefOr[String] = js.undefined
+    ): Ipv6Range = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("CidrIpv6" -> CidrIpv6.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Ipv6Range]
     }
   }
 
@@ -7449,6 +11565,104 @@ package ec2 {
     val values = IndexedSeq(active, pending, cancelled, closed)
   }
 
+  /**
+   * <p>Contains the parameters for ModifyHosts.</p>
+   */
+  @js.native
+  trait ModifyHostsRequest extends js.Object {
+    var HostIds: RequestHostIdList
+    var AutoPlacement: AutoPlacement
+  }
+
+  object ModifyHostsRequest {
+    def apply(
+      HostIds: js.UndefOr[RequestHostIdList] = js.undefined,
+      AutoPlacement: js.UndefOr[AutoPlacement] = js.undefined
+    ): ModifyHostsRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("HostIds" -> HostIds.map { x => x: js.Any }),
+        ("AutoPlacement" -> AutoPlacement.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ModifyHostsRequest]
+    }
+  }
+
+  /**
+   * <p>Contains the output of ModifyHosts.</p>
+   */
+  @js.native
+  trait ModifyHostsResult extends js.Object {
+    var Successful: ResponseHostIdList
+    var Unsuccessful: UnsuccessfulItemList
+  }
+
+  object ModifyHostsResult {
+    def apply(
+      Successful: js.UndefOr[ResponseHostIdList] = js.undefined,
+      Unsuccessful: js.UndefOr[UnsuccessfulItemList] = js.undefined
+    ): ModifyHostsResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("Successful" -> Successful.map { x => x: js.Any }),
+        ("Unsuccessful" -> Unsuccessful.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ModifyHostsResult]
+    }
+  }
+
+  /**
+   * <p>Contains the parameters of ModifyIdFormat.</p>
+   */
+  @js.native
+  trait ModifyIdFormatRequest extends js.Object {
+    var Resource: String
+    var UseLongIds: Boolean
+  }
+
+  object ModifyIdFormatRequest {
+    def apply(
+      Resource: js.UndefOr[String] = js.undefined,
+      UseLongIds: js.UndefOr[Boolean] = js.undefined
+    ): ModifyIdFormatRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("Resource" -> Resource.map { x => x: js.Any }),
+        ("UseLongIds" -> UseLongIds.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ModifyIdFormatRequest]
+    }
+  }
+
+  /**
+   * <p>Contains the parameters of ModifyIdentityIdFormat.</p>
+   */
+  @js.native
+  trait ModifyIdentityIdFormatRequest extends js.Object {
+    var Resource: String
+    var UseLongIds: Boolean
+    var PrincipalArn: String
+  }
+
+  object ModifyIdentityIdFormatRequest {
+    def apply(
+      Resource: js.UndefOr[String] = js.undefined,
+      UseLongIds: js.UndefOr[Boolean] = js.undefined,
+      PrincipalArn: js.UndefOr[String] = js.undefined
+    ): ModifyIdentityIdFormatRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("Resource" -> Resource.map { x => x: js.Any }),
+        ("UseLongIds" -> UseLongIds.map { x => x: js.Any }),
+        ("PrincipalArn" -> PrincipalArn.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ModifyIdentityIdFormatRequest]
+    }
+  }
+
+  /**
+   * <p>Contains the parameters for ModifyImageAttribute.</p>
+   */
   @js.native
   trait ModifyImageAttributeRequest extends js.Object {
     var DryRun: Boolean
@@ -7458,7 +11672,7 @@ package ec2 {
     var UserIds: UserIdStringList
     var Value: String
     var LaunchPermission: LaunchPermissionModifications
-    var OperationType: String
+    var OperationType: OperationType
     var ProductCodes: ProductCodeStringList
     var Attribute: String
   }
@@ -7472,7 +11686,7 @@ package ec2 {
       UserIds: js.UndefOr[UserIdStringList] = js.undefined,
       Value: js.UndefOr[String] = js.undefined,
       LaunchPermission: js.UndefOr[LaunchPermissionModifications] = js.undefined,
-      OperationType: js.UndefOr[String] = js.undefined,
+      OperationType: js.UndefOr[OperationType] = js.undefined,
       ProductCodes: js.UndefOr[ProductCodeStringList] = js.undefined,
       Attribute: js.UndefOr[String] = js.undefined
     ): ModifyImageAttributeRequest = {
@@ -7493,6 +11707,9 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the parameters for ModifyInstanceAttribute.</p>
+   */
   @js.native
   trait ModifyInstanceAttributeRequest extends js.Object {
     var BlockDeviceMappings: InstanceBlockDeviceMappingSpecificationList
@@ -7503,6 +11720,7 @@ package ec2 {
     var UserData: BlobAttributeValue
     var Groups: GroupIdStringList
     var Value: String
+    var EnaSupport: AttributeBooleanValue
     var Ramdisk: AttributeValue
     var InstanceType: AttributeValue
     var InstanceId: String
@@ -7522,6 +11740,7 @@ package ec2 {
       UserData: js.UndefOr[BlobAttributeValue] = js.undefined,
       Groups: js.UndefOr[GroupIdStringList] = js.undefined,
       Value: js.UndefOr[String] = js.undefined,
+      EnaSupport: js.UndefOr[AttributeBooleanValue] = js.undefined,
       Ramdisk: js.UndefOr[AttributeValue] = js.undefined,
       InstanceType: js.UndefOr[AttributeValue] = js.undefined,
       InstanceId: js.UndefOr[String] = js.undefined,
@@ -7539,6 +11758,7 @@ package ec2 {
         ("UserData" -> UserData.map { x => x: js.Any }),
         ("Groups" -> Groups.map { x => x: js.Any }),
         ("Value" -> Value.map { x => x: js.Any }),
+        ("EnaSupport" -> EnaSupport.map { x => x: js.Any }),
         ("Ramdisk" -> Ramdisk.map { x => x: js.Any }),
         ("InstanceType" -> InstanceType.map { x => x: js.Any }),
         ("InstanceId" -> InstanceId.map { x => x: js.Any }),
@@ -7552,6 +11772,58 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the parameters for ModifyInstancePlacement.</p>
+   */
+  @js.native
+  trait ModifyInstancePlacementRequest extends js.Object {
+    var InstanceId: String
+    var Tenancy: HostTenancy
+    var Affinity: Affinity
+    var HostId: String
+  }
+
+  object ModifyInstancePlacementRequest {
+    def apply(
+      InstanceId: js.UndefOr[String] = js.undefined,
+      Tenancy: js.UndefOr[HostTenancy] = js.undefined,
+      Affinity: js.UndefOr[Affinity] = js.undefined,
+      HostId: js.UndefOr[String] = js.undefined
+    ): ModifyInstancePlacementRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("InstanceId" -> InstanceId.map { x => x: js.Any }),
+        ("Tenancy" -> Tenancy.map { x => x: js.Any }),
+        ("Affinity" -> Affinity.map { x => x: js.Any }),
+        ("HostId" -> HostId.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ModifyInstancePlacementRequest]
+    }
+  }
+
+  /**
+   * <p>Contains the output of ModifyInstancePlacement.</p>
+   */
+  @js.native
+  trait ModifyInstancePlacementResult extends js.Object {
+    var Return: Boolean
+  }
+
+  object ModifyInstancePlacementResult {
+    def apply(
+      Return: js.UndefOr[Boolean] = js.undefined
+    ): ModifyInstancePlacementResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("Return" -> Return.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ModifyInstancePlacementResult]
+    }
+  }
+
+  /**
+   * <p>Contains the parameters for ModifyNetworkInterfaceAttribute.</p>
+   */
   @js.native
   trait ModifyNetworkInterfaceAttributeRequest extends js.Object {
     var DryRun: Boolean
@@ -7584,6 +11856,9 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the parameters for ModifyReservedInstances.</p>
+   */
   @js.native
   trait ModifyReservedInstancesRequest extends js.Object {
     var ClientToken: String
@@ -7607,6 +11882,9 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the output of ModifyReservedInstances.</p>
+   */
   @js.native
   trait ModifyReservedInstancesResult extends js.Object {
     var ReservedInstancesModificationId: String
@@ -7624,13 +11902,16 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the parameters for ModifySnapshotAttribute.</p>
+   */
   @js.native
   trait ModifySnapshotAttributeRequest extends js.Object {
     var DryRun: Boolean
     var SnapshotId: String
     var UserIds: UserIdStringList
     var GroupNames: GroupNameStringList
-    var OperationType: String
+    var OperationType: OperationType
     var CreateVolumePermission: CreateVolumePermissionModifications
     var Attribute: SnapshotAttributeName
   }
@@ -7641,7 +11922,7 @@ package ec2 {
       SnapshotId: js.UndefOr[String] = js.undefined,
       UserIds: js.UndefOr[UserIdStringList] = js.undefined,
       GroupNames: js.UndefOr[GroupNameStringList] = js.undefined,
-      OperationType: js.UndefOr[String] = js.undefined,
+      OperationType: js.UndefOr[OperationType] = js.undefined,
       CreateVolumePermission: js.UndefOr[CreateVolumePermissionModifications] = js.undefined,
       Attribute: js.UndefOr[SnapshotAttributeName] = js.undefined
     ): ModifySnapshotAttributeRequest = {
@@ -7659,26 +11940,81 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the parameters for ModifySpotFleetRequest.</p>
+   */
+  @js.native
+  trait ModifySpotFleetRequestRequest extends js.Object {
+    var SpotFleetRequestId: String
+    var TargetCapacity: Integer
+    var ExcessCapacityTerminationPolicy: ExcessCapacityTerminationPolicy
+  }
+
+  object ModifySpotFleetRequestRequest {
+    def apply(
+      SpotFleetRequestId: js.UndefOr[String] = js.undefined,
+      TargetCapacity: js.UndefOr[Integer] = js.undefined,
+      ExcessCapacityTerminationPolicy: js.UndefOr[ExcessCapacityTerminationPolicy] = js.undefined
+    ): ModifySpotFleetRequestRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("SpotFleetRequestId" -> SpotFleetRequestId.map { x => x: js.Any }),
+        ("TargetCapacity" -> TargetCapacity.map { x => x: js.Any }),
+        ("ExcessCapacityTerminationPolicy" -> ExcessCapacityTerminationPolicy.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ModifySpotFleetRequestRequest]
+    }
+  }
+
+  /**
+   * <p>Contains the output of ModifySpotFleetRequest.</p>
+   */
+  @js.native
+  trait ModifySpotFleetRequestResponse extends js.Object {
+    var Return: Boolean
+  }
+
+  object ModifySpotFleetRequestResponse {
+    def apply(
+      Return: js.UndefOr[Boolean] = js.undefined
+    ): ModifySpotFleetRequestResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("Return" -> Return.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ModifySpotFleetRequestResponse]
+    }
+  }
+
+  /**
+   * <p>Contains the parameters for ModifySubnetAttribute.</p>
+   */
   @js.native
   trait ModifySubnetAttributeRequest extends js.Object {
     var SubnetId: String
     var MapPublicIpOnLaunch: AttributeBooleanValue
+    var AssignIpv6AddressOnCreation: AttributeBooleanValue
   }
 
   object ModifySubnetAttributeRequest {
     def apply(
       SubnetId: js.UndefOr[String] = js.undefined,
-      MapPublicIpOnLaunch: js.UndefOr[AttributeBooleanValue] = js.undefined
+      MapPublicIpOnLaunch: js.UndefOr[AttributeBooleanValue] = js.undefined,
+      AssignIpv6AddressOnCreation: js.UndefOr[AttributeBooleanValue] = js.undefined
     ): ModifySubnetAttributeRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         ("SubnetId" -> SubnetId.map { x => x: js.Any }),
-        ("MapPublicIpOnLaunch" -> MapPublicIpOnLaunch.map { x => x: js.Any })
+        ("MapPublicIpOnLaunch" -> MapPublicIpOnLaunch.map { x => x: js.Any }),
+        ("AssignIpv6AddressOnCreation" -> AssignIpv6AddressOnCreation.map { x => x: js.Any })
       ).filter(_._2 != js.undefined)
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ModifySubnetAttributeRequest]
     }
   }
 
+  /**
+   * <p>Contains the parameters for ModifyVolumeAttribute.</p>
+   */
   @js.native
   trait ModifyVolumeAttributeRequest extends js.Object {
     var DryRun: Boolean
@@ -7702,6 +12038,9 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the parameters for ModifyVpcAttribute.</p>
+   */
   @js.native
   trait ModifyVpcAttributeRequest extends js.Object {
     var VpcId: String
@@ -7725,6 +12064,110 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the parameters for ModifyVpcEndpoint.</p>
+   */
+  @js.native
+  trait ModifyVpcEndpointRequest extends js.Object {
+    var DryRun: Boolean
+    var VpcEndpointId: String
+    var PolicyDocument: String
+    var ResetPolicy: Boolean
+    var RemoveRouteTableIds: ValueStringList
+    var AddRouteTableIds: ValueStringList
+  }
+
+  object ModifyVpcEndpointRequest {
+    def apply(
+      DryRun: js.UndefOr[Boolean] = js.undefined,
+      VpcEndpointId: js.UndefOr[String] = js.undefined,
+      PolicyDocument: js.UndefOr[String] = js.undefined,
+      ResetPolicy: js.UndefOr[Boolean] = js.undefined,
+      RemoveRouteTableIds: js.UndefOr[ValueStringList] = js.undefined,
+      AddRouteTableIds: js.UndefOr[ValueStringList] = js.undefined
+    ): ModifyVpcEndpointRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("DryRun" -> DryRun.map { x => x: js.Any }),
+        ("VpcEndpointId" -> VpcEndpointId.map { x => x: js.Any }),
+        ("PolicyDocument" -> PolicyDocument.map { x => x: js.Any }),
+        ("ResetPolicy" -> ResetPolicy.map { x => x: js.Any }),
+        ("RemoveRouteTableIds" -> RemoveRouteTableIds.map { x => x: js.Any }),
+        ("AddRouteTableIds" -> AddRouteTableIds.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ModifyVpcEndpointRequest]
+    }
+  }
+
+  /**
+   * <p>Contains the output of ModifyVpcEndpoint.</p>
+   */
+  @js.native
+  trait ModifyVpcEndpointResult extends js.Object {
+    var Return: Boolean
+  }
+
+  object ModifyVpcEndpointResult {
+    def apply(
+      Return: js.UndefOr[Boolean] = js.undefined
+    ): ModifyVpcEndpointResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("Return" -> Return.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ModifyVpcEndpointResult]
+    }
+  }
+
+  @js.native
+  trait ModifyVpcPeeringConnectionOptionsRequest extends js.Object {
+    var DryRun: Boolean
+    var VpcPeeringConnectionId: String
+    var RequesterPeeringConnectionOptions: PeeringConnectionOptionsRequest
+    var AccepterPeeringConnectionOptions: PeeringConnectionOptionsRequest
+  }
+
+  object ModifyVpcPeeringConnectionOptionsRequest {
+    def apply(
+      DryRun: js.UndefOr[Boolean] = js.undefined,
+      VpcPeeringConnectionId: js.UndefOr[String] = js.undefined,
+      RequesterPeeringConnectionOptions: js.UndefOr[PeeringConnectionOptionsRequest] = js.undefined,
+      AccepterPeeringConnectionOptions: js.UndefOr[PeeringConnectionOptionsRequest] = js.undefined
+    ): ModifyVpcPeeringConnectionOptionsRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("DryRun" -> DryRun.map { x => x: js.Any }),
+        ("VpcPeeringConnectionId" -> VpcPeeringConnectionId.map { x => x: js.Any }),
+        ("RequesterPeeringConnectionOptions" -> RequesterPeeringConnectionOptions.map { x => x: js.Any }),
+        ("AccepterPeeringConnectionOptions" -> AccepterPeeringConnectionOptions.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ModifyVpcPeeringConnectionOptionsRequest]
+    }
+  }
+
+  @js.native
+  trait ModifyVpcPeeringConnectionOptionsResult extends js.Object {
+    var RequesterPeeringConnectionOptions: PeeringConnectionOptions
+    var AccepterPeeringConnectionOptions: PeeringConnectionOptions
+  }
+
+  object ModifyVpcPeeringConnectionOptionsResult {
+    def apply(
+      RequesterPeeringConnectionOptions: js.UndefOr[PeeringConnectionOptions] = js.undefined,
+      AccepterPeeringConnectionOptions: js.UndefOr[PeeringConnectionOptions] = js.undefined
+    ): ModifyVpcPeeringConnectionOptionsResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("RequesterPeeringConnectionOptions" -> RequesterPeeringConnectionOptions.map { x => x: js.Any }),
+        ("AccepterPeeringConnectionOptions" -> AccepterPeeringConnectionOptions.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ModifyVpcPeeringConnectionOptionsResult]
+    }
+  }
+
+  /**
+   * <p>Contains the parameters for MonitorInstances.</p>
+   */
   @js.native
   trait MonitorInstancesRequest extends js.Object {
     var DryRun: Boolean
@@ -7745,6 +12188,9 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the output of MonitorInstances.</p>
+   */
   @js.native
   trait MonitorInstancesResult extends js.Object {
     var InstanceMonitorings: InstanceMonitoringList
@@ -7763,7 +12209,7 @@ package ec2 {
   }
 
   /**
-   * <p>Describes the monitoring for the instance.</p>
+   * <p>Describes the monitoring of an instance.</p>
    */
   @js.native
   trait Monitoring extends js.Object {
@@ -7785,10 +12231,175 @@ package ec2 {
 
   object MonitoringStateEnum {
     val disabled = "disabled"
+    val disabling = "disabling"
     val enabled = "enabled"
     val pending = "pending"
 
-    val values = IndexedSeq(disabled, enabled, pending)
+    val values = IndexedSeq(disabled, disabling, enabled, pending)
+  }
+
+  /**
+   * <p>Contains the parameters for MoveAddressToVpc.</p>
+   */
+  @js.native
+  trait MoveAddressToVpcRequest extends js.Object {
+    var DryRun: Boolean
+    var PublicIp: String
+  }
+
+  object MoveAddressToVpcRequest {
+    def apply(
+      DryRun: js.UndefOr[Boolean] = js.undefined,
+      PublicIp: js.UndefOr[String] = js.undefined
+    ): MoveAddressToVpcRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("DryRun" -> DryRun.map { x => x: js.Any }),
+        ("PublicIp" -> PublicIp.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[MoveAddressToVpcRequest]
+    }
+  }
+
+  /**
+   * <p>Contains the output of MoveAddressToVpc.</p>
+   */
+  @js.native
+  trait MoveAddressToVpcResult extends js.Object {
+    var AllocationId: String
+    var Status: Status
+  }
+
+  object MoveAddressToVpcResult {
+    def apply(
+      AllocationId: js.UndefOr[String] = js.undefined,
+      Status: js.UndefOr[Status] = js.undefined
+    ): MoveAddressToVpcResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("AllocationId" -> AllocationId.map { x => x: js.Any }),
+        ("Status" -> Status.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[MoveAddressToVpcResult]
+    }
+  }
+
+
+  object MoveStatusEnum {
+    val movingToVpc = "movingToVpc"
+    val restoringToClassic = "restoringToClassic"
+
+    val values = IndexedSeq(movingToVpc, restoringToClassic)
+  }
+
+  /**
+   * <p>Describes the status of a moving Elastic IP address.</p>
+   */
+  @js.native
+  trait MovingAddressStatus extends js.Object {
+    var PublicIp: String
+    var MoveStatus: MoveStatus
+  }
+
+  object MovingAddressStatus {
+    def apply(
+      PublicIp: js.UndefOr[String] = js.undefined,
+      MoveStatus: js.UndefOr[MoveStatus] = js.undefined
+    ): MovingAddressStatus = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("PublicIp" -> PublicIp.map { x => x: js.Any }),
+        ("MoveStatus" -> MoveStatus.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[MovingAddressStatus]
+    }
+  }
+
+  /**
+   * <p>Describes a NAT gateway.</p>
+   */
+  @js.native
+  trait NatGateway extends js.Object {
+    var FailureMessage: String
+    var FailureCode: String
+    var DeleteTime: DateTime
+    var NatGatewayId: String
+    var NatGatewayAddresses: NatGatewayAddressList
+    var ProvisionedBandwidth: ProvisionedBandwidth
+    var CreateTime: DateTime
+    var State: NatGatewayState
+    var VpcId: String
+    var SubnetId: String
+  }
+
+  object NatGateway {
+    def apply(
+      FailureMessage: js.UndefOr[String] = js.undefined,
+      FailureCode: js.UndefOr[String] = js.undefined,
+      DeleteTime: js.UndefOr[DateTime] = js.undefined,
+      NatGatewayId: js.UndefOr[String] = js.undefined,
+      NatGatewayAddresses: js.UndefOr[NatGatewayAddressList] = js.undefined,
+      ProvisionedBandwidth: js.UndefOr[ProvisionedBandwidth] = js.undefined,
+      CreateTime: js.UndefOr[DateTime] = js.undefined,
+      State: js.UndefOr[NatGatewayState] = js.undefined,
+      VpcId: js.UndefOr[String] = js.undefined,
+      SubnetId: js.UndefOr[String] = js.undefined
+    ): NatGateway = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("FailureMessage" -> FailureMessage.map { x => x: js.Any }),
+        ("FailureCode" -> FailureCode.map { x => x: js.Any }),
+        ("DeleteTime" -> DeleteTime.map { x => x: js.Any }),
+        ("NatGatewayId" -> NatGatewayId.map { x => x: js.Any }),
+        ("NatGatewayAddresses" -> NatGatewayAddresses.map { x => x: js.Any }),
+        ("ProvisionedBandwidth" -> ProvisionedBandwidth.map { x => x: js.Any }),
+        ("CreateTime" -> CreateTime.map { x => x: js.Any }),
+        ("State" -> State.map { x => x: js.Any }),
+        ("VpcId" -> VpcId.map { x => x: js.Any }),
+        ("SubnetId" -> SubnetId.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[NatGateway]
+    }
+  }
+
+  /**
+   * <p>Describes the IP addresses and network interface associated with a NAT gateway.</p>
+   */
+  @js.native
+  trait NatGatewayAddress extends js.Object {
+    var PublicIp: String
+    var AllocationId: String
+    var PrivateIp: String
+    var NetworkInterfaceId: String
+  }
+
+  object NatGatewayAddress {
+    def apply(
+      PublicIp: js.UndefOr[String] = js.undefined,
+      AllocationId: js.UndefOr[String] = js.undefined,
+      PrivateIp: js.UndefOr[String] = js.undefined,
+      NetworkInterfaceId: js.UndefOr[String] = js.undefined
+    ): NatGatewayAddress = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("PublicIp" -> PublicIp.map { x => x: js.Any }),
+        ("AllocationId" -> AllocationId.map { x => x: js.Any }),
+        ("PrivateIp" -> PrivateIp.map { x => x: js.Any }),
+        ("NetworkInterfaceId" -> NetworkInterfaceId.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[NatGatewayAddress]
+    }
+  }
+
+
+  object NatGatewayStateEnum {
+    val pending = "pending"
+    val failed = "failed"
+    val available = "available"
+    val deleting = "deleting"
+    val deleted = "deleted"
+
+    val values = IndexedSeq(pending, failed, available, deleting, deleted)
   }
 
   /**
@@ -7858,6 +12469,7 @@ package ec2 {
   @js.native
   trait NetworkAclEntry extends js.Object {
     var Egress: Boolean
+    var Ipv6CidrBlock: String
     var PortRange: PortRange
     var IcmpTypeCode: IcmpTypeCode
     var CidrBlock: String
@@ -7869,6 +12481,7 @@ package ec2 {
   object NetworkAclEntry {
     def apply(
       Egress: js.UndefOr[Boolean] = js.undefined,
+      Ipv6CidrBlock: js.UndefOr[String] = js.undefined,
       PortRange: js.UndefOr[PortRange] = js.undefined,
       IcmpTypeCode: js.UndefOr[IcmpTypeCode] = js.undefined,
       CidrBlock: js.UndefOr[String] = js.undefined,
@@ -7878,6 +12491,7 @@ package ec2 {
     ): NetworkAclEntry = {
       val _fields = IndexedSeq[(String, js.Any)](
         ("Egress" -> Egress.map { x => x: js.Any }),
+        ("Ipv6CidrBlock" -> Ipv6CidrBlock.map { x => x: js.Any }),
         ("PortRange" -> PortRange.map { x => x: js.Any }),
         ("IcmpTypeCode" -> IcmpTypeCode.map { x => x: js.Any }),
         ("CidrBlock" -> CidrBlock.map { x => x: js.Any }),
@@ -7895,6 +12509,8 @@ package ec2 {
    */
   @js.native
   trait NetworkInterface extends js.Object {
+    var Ipv6Addresses: NetworkInterfaceIpv6AddressesList
+    var InterfaceType: NetworkInterfaceType
     var PrivateIpAddress: String
     var RequesterId: String
     var PrivateDnsName: String
@@ -7917,6 +12533,8 @@ package ec2 {
 
   object NetworkInterface {
     def apply(
+      Ipv6Addresses: js.UndefOr[NetworkInterfaceIpv6AddressesList] = js.undefined,
+      InterfaceType: js.UndefOr[NetworkInterfaceType] = js.undefined,
       PrivateIpAddress: js.UndefOr[String] = js.undefined,
       RequesterId: js.UndefOr[String] = js.undefined,
       PrivateDnsName: js.UndefOr[String] = js.undefined,
@@ -7937,6 +12555,8 @@ package ec2 {
       SubnetId: js.UndefOr[String] = js.undefined
     ): NetworkInterface = {
       val _fields = IndexedSeq[(String, js.Any)](
+        ("Ipv6Addresses" -> Ipv6Addresses.map { x => x: js.Any }),
+        ("InterfaceType" -> InterfaceType.map { x => x: js.Any }),
         ("PrivateIpAddress" -> PrivateIpAddress.map { x => x: js.Any }),
         ("RequesterId" -> RequesterId.map { x => x: js.Any }),
         ("PrivateDnsName" -> PrivateDnsName.map { x => x: js.Any }),
@@ -7962,7 +12582,7 @@ package ec2 {
   }
 
   /**
-   * <p>Describes association information for an Elastic IP address.</p>
+   * <p>Describes association information for an Elastic IP address (IPv4 only).</p>
    */
   @js.native
   trait NetworkInterfaceAssociation extends js.Object {
@@ -8065,7 +12685,27 @@ package ec2 {
   }
 
   /**
-   * <p>Describes the private IP address of a network interface.</p>
+   * <p>Describes an IPv6 address associated with a network interface.</p>
+   */
+  @js.native
+  trait NetworkInterfaceIpv6Address extends js.Object {
+    var Ipv6Address: String
+  }
+
+  object NetworkInterfaceIpv6Address {
+    def apply(
+      Ipv6Address: js.UndefOr[String] = js.undefined
+    ): NetworkInterfaceIpv6Address = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("Ipv6Address" -> Ipv6Address.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[NetworkInterfaceIpv6Address]
+    }
+  }
+
+  /**
+   * <p>Describes the private IPv4 address of a network interface.</p>
    */
   @js.native
   trait NetworkInterfacePrivateIpAddress extends js.Object {
@@ -8103,6 +12743,14 @@ package ec2 {
     val values = IndexedSeq(available, attaching, `in-use`, detaching)
   }
 
+
+  object NetworkInterfaceTypeEnum {
+    val interface = "interface"
+    val natGateway = "natGateway"
+
+    val values = IndexedSeq(interface, natGateway)
+  }
+
   @js.native
   trait NewDhcpConfiguration extends js.Object {
     var Key: String
@@ -8124,6 +12772,14 @@ package ec2 {
   }
 
 
+  object OfferingClassTypeEnum {
+    val standard = "standard"
+    val convertible = "convertible"
+
+    val values = IndexedSeq(standard, convertible)
+  }
+
+
   object OfferingTypeValuesEnum {
     val `Heavy Utilization` = "Heavy Utilization"
     val `Medium Utilization` = "Medium Utilization"
@@ -8136,6 +12792,75 @@ package ec2 {
   }
 
 
+  object OperationTypeEnum {
+    val add = "add"
+    val remove = "remove"
+
+    val values = IndexedSeq(add, remove)
+  }
+
+
+  object PaymentOptionEnum {
+    val AllUpfront = "AllUpfront"
+    val PartialUpfront = "PartialUpfront"
+    val NoUpfront = "NoUpfront"
+
+    val values = IndexedSeq(AllUpfront, PartialUpfront, NoUpfront)
+  }
+
+  /**
+   * <p>Describes the VPC peering connection options.</p>
+   */
+  @js.native
+  trait PeeringConnectionOptions extends js.Object {
+    var AllowEgressFromLocalClassicLinkToRemoteVpc: Boolean
+    var AllowEgressFromLocalVpcToRemoteClassicLink: Boolean
+    var AllowDnsResolutionFromRemoteVpc: Boolean
+  }
+
+  object PeeringConnectionOptions {
+    def apply(
+      AllowEgressFromLocalClassicLinkToRemoteVpc: js.UndefOr[Boolean] = js.undefined,
+      AllowEgressFromLocalVpcToRemoteClassicLink: js.UndefOr[Boolean] = js.undefined,
+      AllowDnsResolutionFromRemoteVpc: js.UndefOr[Boolean] = js.undefined
+    ): PeeringConnectionOptions = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("AllowEgressFromLocalClassicLinkToRemoteVpc" -> AllowEgressFromLocalClassicLinkToRemoteVpc.map { x => x: js.Any }),
+        ("AllowEgressFromLocalVpcToRemoteClassicLink" -> AllowEgressFromLocalVpcToRemoteClassicLink.map { x => x: js.Any }),
+        ("AllowDnsResolutionFromRemoteVpc" -> AllowDnsResolutionFromRemoteVpc.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PeeringConnectionOptions]
+    }
+  }
+
+  /**
+   * <p>The VPC peering connection options.</p>
+   */
+  @js.native
+  trait PeeringConnectionOptionsRequest extends js.Object {
+    var AllowEgressFromLocalClassicLinkToRemoteVpc: Boolean
+    var AllowEgressFromLocalVpcToRemoteClassicLink: Boolean
+    var AllowDnsResolutionFromRemoteVpc: Boolean
+  }
+
+  object PeeringConnectionOptionsRequest {
+    def apply(
+      AllowEgressFromLocalClassicLinkToRemoteVpc: js.UndefOr[Boolean] = js.undefined,
+      AllowEgressFromLocalVpcToRemoteClassicLink: js.UndefOr[Boolean] = js.undefined,
+      AllowDnsResolutionFromRemoteVpc: js.UndefOr[Boolean] = js.undefined
+    ): PeeringConnectionOptionsRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("AllowEgressFromLocalClassicLinkToRemoteVpc" -> AllowEgressFromLocalClassicLinkToRemoteVpc.map { x => x: js.Any }),
+        ("AllowEgressFromLocalVpcToRemoteClassicLink" -> AllowEgressFromLocalVpcToRemoteClassicLink.map { x => x: js.Any }),
+        ("AllowDnsResolutionFromRemoteVpc" -> AllowDnsResolutionFromRemoteVpc.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PeeringConnectionOptionsRequest]
+    }
+  }
+
+
   object PermissionGroupEnum {
     val all = "all"
 
@@ -8143,25 +12868,31 @@ package ec2 {
   }
 
   /**
-   * <p>Describes the placement for the instance.</p>
+   * <p>Describes the placement of an instance.</p>
    */
   @js.native
   trait Placement extends js.Object {
-    var AvailabilityZone: String
     var GroupName: String
     var Tenancy: Tenancy
+    var Affinity: String
+    var AvailabilityZone: String
+    var HostId: String
   }
 
   object Placement {
     def apply(
-      AvailabilityZone: js.UndefOr[String] = js.undefined,
       GroupName: js.UndefOr[String] = js.undefined,
-      Tenancy: js.UndefOr[Tenancy] = js.undefined
+      Tenancy: js.UndefOr[Tenancy] = js.undefined,
+      Affinity: js.UndefOr[String] = js.undefined,
+      AvailabilityZone: js.UndefOr[String] = js.undefined,
+      HostId: js.UndefOr[String] = js.undefined
     ): Placement = {
       val _fields = IndexedSeq[(String, js.Any)](
-        ("AvailabilityZone" -> AvailabilityZone.map { x => x: js.Any }),
         ("GroupName" -> GroupName.map { x => x: js.Any }),
-        ("Tenancy" -> Tenancy.map { x => x: js.Any })
+        ("Tenancy" -> Tenancy.map { x => x: js.Any }),
+        ("Affinity" -> Affinity.map { x => x: js.Any }),
+        ("AvailabilityZone" -> AvailabilityZone.map { x => x: js.Any }),
+        ("HostId" -> HostId.map { x => x: js.Any })
       ).filter(_._2 != js.undefined)
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Placement]
@@ -8238,6 +12969,52 @@ package ec2 {
       ).filter(_._2 != js.undefined)
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PortRange]
+    }
+  }
+
+  /**
+   * <p>Describes prefixes for AWS services.</p>
+   */
+  @js.native
+  trait PrefixList extends js.Object {
+    var PrefixListId: String
+    var PrefixListName: String
+    var Cidrs: ValueStringList
+  }
+
+  object PrefixList {
+    def apply(
+      PrefixListId: js.UndefOr[String] = js.undefined,
+      PrefixListName: js.UndefOr[String] = js.undefined,
+      Cidrs: js.UndefOr[ValueStringList] = js.undefined
+    ): PrefixList = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("PrefixListId" -> PrefixListId.map { x => x: js.Any }),
+        ("PrefixListName" -> PrefixListName.map { x => x: js.Any }),
+        ("Cidrs" -> Cidrs.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PrefixList]
+    }
+  }
+
+  /**
+   * <p>The ID of the prefix.</p>
+   */
+  @js.native
+  trait PrefixListId extends js.Object {
+    var PrefixListId: String
+  }
+
+  object PrefixListId {
+    def apply(
+      PrefixListId: js.UndefOr[String] = js.undefined
+    ): PrefixListId = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("PrefixListId" -> PrefixListId.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PrefixListId]
     }
   }
 
@@ -8320,7 +13097,7 @@ package ec2 {
   }
 
   /**
-   * <p>Describes a secondary private IP address for a network interface.</p>
+   * <p>Describes a secondary private IPv4 address for a network interface.</p>
    */
   @js.native
   trait PrivateIpAddressSpecification extends js.Object {
@@ -8393,6 +13170,163 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Reserved. If you need to sustain traffic greater than the <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-nat-gateway.html">documented limits</a>, contact us through the <a href="https://console.aws.amazon.com/support/home?">Support Center</a>.</p>
+   */
+  @js.native
+  trait ProvisionedBandwidth extends js.Object {
+    var RequestTime: DateTime
+    var Provisioned: String
+    var ProvisionTime: DateTime
+    var Requested: String
+    var Status: String
+  }
+
+  object ProvisionedBandwidth {
+    def apply(
+      RequestTime: js.UndefOr[DateTime] = js.undefined,
+      Provisioned: js.UndefOr[String] = js.undefined,
+      ProvisionTime: js.UndefOr[DateTime] = js.undefined,
+      Requested: js.UndefOr[String] = js.undefined,
+      Status: js.UndefOr[String] = js.undefined
+    ): ProvisionedBandwidth = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("RequestTime" -> RequestTime.map { x => x: js.Any }),
+        ("Provisioned" -> Provisioned.map { x => x: js.Any }),
+        ("ProvisionTime" -> ProvisionTime.map { x => x: js.Any }),
+        ("Requested" -> Requested.map { x => x: js.Any }),
+        ("Status" -> Status.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ProvisionedBandwidth]
+    }
+  }
+
+  /**
+   * <p>Describes the result of the purchase.</p>
+   */
+  @js.native
+  trait Purchase extends js.Object {
+    var PaymentOption: PaymentOption
+    var HostReservationId: String
+    var CurrencyCode: CurrencyCodeValues
+    var Duration: Integer
+    var InstanceFamily: String
+    var UpfrontPrice: String
+    var HostIdSet: ResponseHostIdSet
+    var HourlyPrice: String
+  }
+
+  object Purchase {
+    def apply(
+      PaymentOption: js.UndefOr[PaymentOption] = js.undefined,
+      HostReservationId: js.UndefOr[String] = js.undefined,
+      CurrencyCode: js.UndefOr[CurrencyCodeValues] = js.undefined,
+      Duration: js.UndefOr[Integer] = js.undefined,
+      InstanceFamily: js.UndefOr[String] = js.undefined,
+      UpfrontPrice: js.UndefOr[String] = js.undefined,
+      HostIdSet: js.UndefOr[ResponseHostIdSet] = js.undefined,
+      HourlyPrice: js.UndefOr[String] = js.undefined
+    ): Purchase = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("PaymentOption" -> PaymentOption.map { x => x: js.Any }),
+        ("HostReservationId" -> HostReservationId.map { x => x: js.Any }),
+        ("CurrencyCode" -> CurrencyCode.map { x => x: js.Any }),
+        ("Duration" -> Duration.map { x => x: js.Any }),
+        ("InstanceFamily" -> InstanceFamily.map { x => x: js.Any }),
+        ("UpfrontPrice" -> UpfrontPrice.map { x => x: js.Any }),
+        ("HostIdSet" -> HostIdSet.map { x => x: js.Any }),
+        ("HourlyPrice" -> HourlyPrice.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Purchase]
+    }
+  }
+
+  @js.native
+  trait PurchaseHostReservationRequest extends js.Object {
+    var CurrencyCode: CurrencyCodeValues
+    var ClientToken: String
+    var HostIdSet: RequestHostIdSet
+    var OfferingId: String
+    var LimitPrice: String
+  }
+
+  object PurchaseHostReservationRequest {
+    def apply(
+      CurrencyCode: js.UndefOr[CurrencyCodeValues] = js.undefined,
+      ClientToken: js.UndefOr[String] = js.undefined,
+      HostIdSet: js.UndefOr[RequestHostIdSet] = js.undefined,
+      OfferingId: js.UndefOr[String] = js.undefined,
+      LimitPrice: js.UndefOr[String] = js.undefined
+    ): PurchaseHostReservationRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("CurrencyCode" -> CurrencyCode.map { x => x: js.Any }),
+        ("ClientToken" -> ClientToken.map { x => x: js.Any }),
+        ("HostIdSet" -> HostIdSet.map { x => x: js.Any }),
+        ("OfferingId" -> OfferingId.map { x => x: js.Any }),
+        ("LimitPrice" -> LimitPrice.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PurchaseHostReservationRequest]
+    }
+  }
+
+  @js.native
+  trait PurchaseHostReservationResult extends js.Object {
+    var Purchase: PurchaseSet
+    var CurrencyCode: CurrencyCodeValues
+    var TotalUpfrontPrice: String
+    var ClientToken: String
+    var TotalHourlyPrice: String
+  }
+
+  object PurchaseHostReservationResult {
+    def apply(
+      Purchase: js.UndefOr[PurchaseSet] = js.undefined,
+      CurrencyCode: js.UndefOr[CurrencyCodeValues] = js.undefined,
+      TotalUpfrontPrice: js.UndefOr[String] = js.undefined,
+      ClientToken: js.UndefOr[String] = js.undefined,
+      TotalHourlyPrice: js.UndefOr[String] = js.undefined
+    ): PurchaseHostReservationResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("Purchase" -> Purchase.map { x => x: js.Any }),
+        ("CurrencyCode" -> CurrencyCode.map { x => x: js.Any }),
+        ("TotalUpfrontPrice" -> TotalUpfrontPrice.map { x => x: js.Any }),
+        ("ClientToken" -> ClientToken.map { x => x: js.Any }),
+        ("TotalHourlyPrice" -> TotalHourlyPrice.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PurchaseHostReservationResult]
+    }
+  }
+
+  /**
+   * <p>Describes a request to purchase Scheduled Instances.</p>
+   */
+  @js.native
+  trait PurchaseRequest extends js.Object {
+    var PurchaseToken: String
+    var InstanceCount: Integer
+  }
+
+  object PurchaseRequest {
+    def apply(
+      PurchaseToken: js.UndefOr[String] = js.undefined,
+      InstanceCount: js.UndefOr[Integer] = js.undefined
+    ): PurchaseRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("PurchaseToken" -> PurchaseToken.map { x => x: js.Any }),
+        ("InstanceCount" -> InstanceCount.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PurchaseRequest]
+    }
+  }
+
+  /**
+   * <p>Contains the parameters for PurchaseReservedInstancesOffering.</p>
+   */
   @js.native
   trait PurchaseReservedInstancesOfferingRequest extends js.Object {
     var DryRun: Boolean
@@ -8419,6 +13353,9 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the output of PurchaseReservedInstancesOffering.</p>
+   */
   @js.native
   trait PurchaseReservedInstancesOfferingResult extends js.Object {
     var ReservedInstancesId: String
@@ -8436,6 +13373,52 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the parameters for PurchaseScheduledInstances.</p>
+   */
+  @js.native
+  trait PurchaseScheduledInstancesRequest extends js.Object {
+    var DryRun: Boolean
+    var ClientToken: String
+    var PurchaseRequests: PurchaseRequestSet
+  }
+
+  object PurchaseScheduledInstancesRequest {
+    def apply(
+      DryRun: js.UndefOr[Boolean] = js.undefined,
+      ClientToken: js.UndefOr[String] = js.undefined,
+      PurchaseRequests: js.UndefOr[PurchaseRequestSet] = js.undefined
+    ): PurchaseScheduledInstancesRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("DryRun" -> DryRun.map { x => x: js.Any }),
+        ("ClientToken" -> ClientToken.map { x => x: js.Any }),
+        ("PurchaseRequests" -> PurchaseRequests.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PurchaseScheduledInstancesRequest]
+    }
+  }
+
+  /**
+   * <p>Contains the output of PurchaseScheduledInstances.</p>
+   */
+  @js.native
+  trait PurchaseScheduledInstancesResult extends js.Object {
+    var ScheduledInstanceSet: PurchasedScheduledInstanceSet
+  }
+
+  object PurchaseScheduledInstancesResult {
+    def apply(
+      ScheduledInstanceSet: js.UndefOr[PurchasedScheduledInstanceSet] = js.undefined
+    ): PurchaseScheduledInstancesResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("ScheduledInstanceSet" -> ScheduledInstanceSet.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PurchaseScheduledInstancesResult]
+    }
+  }
+
 
   object RIProductDescriptionEnum {
     val `Linux/UNIX` = "Linux/UNIX"
@@ -8446,6 +13429,9 @@ package ec2 {
     val values = IndexedSeq(`Linux/UNIX`, `Linux/UNIX (Amazon VPC)`, Windows, `Windows (Amazon VPC)`)
   }
 
+  /**
+   * <p>Contains the parameters for RebootInstances.</p>
+   */
   @js.native
   trait RebootInstancesRequest extends js.Object {
     var DryRun: Boolean
@@ -8519,6 +13505,9 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the parameters for RegisterImage.</p>
+   */
   @js.native
   trait RegisterImageRequest extends js.Object {
     var Architecture: ArchitectureValues
@@ -8529,6 +13518,7 @@ package ec2 {
     var RootDeviceName: String
     var Description: String
     var KernelId: String
+    var EnaSupport: Boolean
     var VirtualizationType: String
     var ImageLocation: String
     var SriovNetSupport: String
@@ -8544,6 +13534,7 @@ package ec2 {
       RootDeviceName: js.UndefOr[String] = js.undefined,
       Description: js.UndefOr[String] = js.undefined,
       KernelId: js.UndefOr[String] = js.undefined,
+      EnaSupport: js.UndefOr[Boolean] = js.undefined,
       VirtualizationType: js.UndefOr[String] = js.undefined,
       ImageLocation: js.UndefOr[String] = js.undefined,
       SriovNetSupport: js.UndefOr[String] = js.undefined
@@ -8557,6 +13548,7 @@ package ec2 {
         ("RootDeviceName" -> RootDeviceName.map { x => x: js.Any }),
         ("Description" -> Description.map { x => x: js.Any }),
         ("KernelId" -> KernelId.map { x => x: js.Any }),
+        ("EnaSupport" -> EnaSupport.map { x => x: js.Any }),
         ("VirtualizationType" -> VirtualizationType.map { x => x: js.Any }),
         ("ImageLocation" -> ImageLocation.map { x => x: js.Any }),
         ("SriovNetSupport" -> SriovNetSupport.map { x => x: js.Any })
@@ -8566,6 +13558,9 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the output of RegisterImage.</p>
+   */
   @js.native
   trait RegisterImageResult extends js.Object {
     var ImageId: String
@@ -8583,6 +13578,9 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the parameters for RejectVpcPeeringConnection.</p>
+   */
   @js.native
   trait RejectVpcPeeringConnectionRequest extends js.Object {
     var DryRun: Boolean
@@ -8603,6 +13601,9 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the output of RejectVpcPeeringConnection.</p>
+   */
   @js.native
   trait RejectVpcPeeringConnectionResult extends js.Object {
     var Return: Boolean
@@ -8620,6 +13621,9 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the parameters for ReleaseAddress.</p>
+   */
   @js.native
   trait ReleaseAddressRequest extends js.Object {
     var DryRun: Boolean
@@ -8643,6 +13647,52 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the parameters for ReleaseHosts.</p>
+   */
+  @js.native
+  trait ReleaseHostsRequest extends js.Object {
+    var HostIds: RequestHostIdList
+  }
+
+  object ReleaseHostsRequest {
+    def apply(
+      HostIds: js.UndefOr[RequestHostIdList] = js.undefined
+    ): ReleaseHostsRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("HostIds" -> HostIds.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ReleaseHostsRequest]
+    }
+  }
+
+  /**
+   * <p>Contains the output of ReleaseHosts.</p>
+   */
+  @js.native
+  trait ReleaseHostsResult extends js.Object {
+    var Successful: ResponseHostIdList
+    var Unsuccessful: UnsuccessfulItemList
+  }
+
+  object ReleaseHostsResult {
+    def apply(
+      Successful: js.UndefOr[ResponseHostIdList] = js.undefined,
+      Unsuccessful: js.UndefOr[UnsuccessfulItemList] = js.undefined
+    ): ReleaseHostsResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("Successful" -> Successful.map { x => x: js.Any }),
+        ("Unsuccessful" -> Unsuccessful.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ReleaseHostsResult]
+    }
+  }
+
+  /**
+   * <p>Contains the parameters for ReplaceNetworkAclAssociation.</p>
+   */
   @js.native
   trait ReplaceNetworkAclAssociationRequest extends js.Object {
     var DryRun: Boolean
@@ -8666,6 +13716,9 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the output of ReplaceNetworkAclAssociation.</p>
+   */
   @js.native
   trait ReplaceNetworkAclAssociationResult extends js.Object {
     var NewAssociationId: String
@@ -8683,10 +13736,14 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the parameters for ReplaceNetworkAclEntry.</p>
+   */
   @js.native
   trait ReplaceNetworkAclEntryRequest extends js.Object {
     var Egress: Boolean
     var DryRun: Boolean
+    var Ipv6CidrBlock: String
     var PortRange: PortRange
     var IcmpTypeCode: IcmpTypeCode
     var CidrBlock: String
@@ -8700,6 +13757,7 @@ package ec2 {
     def apply(
       Egress: js.UndefOr[Boolean] = js.undefined,
       DryRun: js.UndefOr[Boolean] = js.undefined,
+      Ipv6CidrBlock: js.UndefOr[String] = js.undefined,
       PortRange: js.UndefOr[PortRange] = js.undefined,
       IcmpTypeCode: js.UndefOr[IcmpTypeCode] = js.undefined,
       CidrBlock: js.UndefOr[String] = js.undefined,
@@ -8711,6 +13769,7 @@ package ec2 {
       val _fields = IndexedSeq[(String, js.Any)](
         ("Egress" -> Egress.map { x => x: js.Any }),
         ("DryRun" -> DryRun.map { x => x: js.Any }),
+        ("Ipv6CidrBlock" -> Ipv6CidrBlock.map { x => x: js.Any }),
         ("PortRange" -> PortRange.map { x => x: js.Any }),
         ("IcmpTypeCode" -> IcmpTypeCode.map { x => x: js.Any }),
         ("CidrBlock" -> CidrBlock.map { x => x: js.Any }),
@@ -8724,14 +13783,20 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the parameters for ReplaceRoute.</p>
+   */
   @js.native
   trait ReplaceRouteRequest extends js.Object {
     var DryRun: Boolean
     var DestinationCidrBlock: String
     var VpcPeeringConnectionId: String
+    var NatGatewayId: String
+    var EgressOnlyInternetGatewayId: String
     var RouteTableId: String
     var InstanceId: String
     var NetworkInterfaceId: String
+    var DestinationIpv6CidrBlock: String
     var GatewayId: String
   }
 
@@ -8740,18 +13805,24 @@ package ec2 {
       DryRun: js.UndefOr[Boolean] = js.undefined,
       DestinationCidrBlock: js.UndefOr[String] = js.undefined,
       VpcPeeringConnectionId: js.UndefOr[String] = js.undefined,
+      NatGatewayId: js.UndefOr[String] = js.undefined,
+      EgressOnlyInternetGatewayId: js.UndefOr[String] = js.undefined,
       RouteTableId: js.UndefOr[String] = js.undefined,
       InstanceId: js.UndefOr[String] = js.undefined,
       NetworkInterfaceId: js.UndefOr[String] = js.undefined,
+      DestinationIpv6CidrBlock: js.UndefOr[String] = js.undefined,
       GatewayId: js.UndefOr[String] = js.undefined
     ): ReplaceRouteRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         ("DryRun" -> DryRun.map { x => x: js.Any }),
         ("DestinationCidrBlock" -> DestinationCidrBlock.map { x => x: js.Any }),
         ("VpcPeeringConnectionId" -> VpcPeeringConnectionId.map { x => x: js.Any }),
+        ("NatGatewayId" -> NatGatewayId.map { x => x: js.Any }),
+        ("EgressOnlyInternetGatewayId" -> EgressOnlyInternetGatewayId.map { x => x: js.Any }),
         ("RouteTableId" -> RouteTableId.map { x => x: js.Any }),
         ("InstanceId" -> InstanceId.map { x => x: js.Any }),
         ("NetworkInterfaceId" -> NetworkInterfaceId.map { x => x: js.Any }),
+        ("DestinationIpv6CidrBlock" -> DestinationIpv6CidrBlock.map { x => x: js.Any }),
         ("GatewayId" -> GatewayId.map { x => x: js.Any })
       ).filter(_._2 != js.undefined)
 
@@ -8759,6 +13830,9 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the parameters for ReplaceRouteTableAssociation.</p>
+   */
   @js.native
   trait ReplaceRouteTableAssociationRequest extends js.Object {
     var DryRun: Boolean
@@ -8782,6 +13856,9 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the output of ReplaceRouteTableAssociation.</p>
+   */
   @js.native
   trait ReplaceRouteTableAssociationResult extends js.Object {
     var NewAssociationId: String
@@ -8814,6 +13891,9 @@ package ec2 {
     val values = IndexedSeq(`instance-stuck-in-state`, unresponsive, `not-accepting-credentials`, `password-not-available`, `performance-network`, `performance-instance-store`, `performance-ebs-volume`, `performance-other`, other)
   }
 
+  /**
+   * <p>Contains the parameters for ReportInstanceStatus.</p>
+   */
   @js.native
   trait ReportInstanceStatusRequest extends js.Object {
     var DryRun: Boolean
@@ -8857,15 +13937,63 @@ package ec2 {
     val values = IndexedSeq(ok, impaired)
   }
 
+  /**
+   * <p>Contains the parameters for RequestSpotFleet.</p>
+   */
+  @js.native
+  trait RequestSpotFleetRequest extends js.Object {
+    var DryRun: Boolean
+    var SpotFleetRequestConfig: SpotFleetRequestConfigData
+  }
+
+  object RequestSpotFleetRequest {
+    def apply(
+      DryRun: js.UndefOr[Boolean] = js.undefined,
+      SpotFleetRequestConfig: js.UndefOr[SpotFleetRequestConfigData] = js.undefined
+    ): RequestSpotFleetRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("DryRun" -> DryRun.map { x => x: js.Any }),
+        ("SpotFleetRequestConfig" -> SpotFleetRequestConfig.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RequestSpotFleetRequest]
+    }
+  }
+
+  /**
+   * <p>Contains the output of RequestSpotFleet.</p>
+   */
+  @js.native
+  trait RequestSpotFleetResponse extends js.Object {
+    var SpotFleetRequestId: String
+  }
+
+  object RequestSpotFleetResponse {
+    def apply(
+      SpotFleetRequestId: js.UndefOr[String] = js.undefined
+    ): RequestSpotFleetResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("SpotFleetRequestId" -> SpotFleetRequestId.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RequestSpotFleetResponse]
+    }
+  }
+
+  /**
+   * <p>Contains the parameters for RequestSpotInstances.</p>
+   */
   @js.native
   trait RequestSpotInstancesRequest extends js.Object {
     var LaunchGroup: String
     var DryRun: Boolean
     var AvailabilityZoneGroup: String
+    var ClientToken: String
     var InstanceCount: Integer
     var ValidUntil: DateTime
     var ValidFrom: DateTime
     var SpotPrice: String
+    var BlockDurationMinutes: Integer
     var LaunchSpecification: RequestSpotLaunchSpecification
     var Type: SpotInstanceType
   }
@@ -8875,10 +14003,12 @@ package ec2 {
       LaunchGroup: js.UndefOr[String] = js.undefined,
       DryRun: js.UndefOr[Boolean] = js.undefined,
       AvailabilityZoneGroup: js.UndefOr[String] = js.undefined,
+      ClientToken: js.UndefOr[String] = js.undefined,
       InstanceCount: js.UndefOr[Integer] = js.undefined,
       ValidUntil: js.UndefOr[DateTime] = js.undefined,
       ValidFrom: js.UndefOr[DateTime] = js.undefined,
       SpotPrice: js.UndefOr[String] = js.undefined,
+      BlockDurationMinutes: js.UndefOr[Integer] = js.undefined,
       LaunchSpecification: js.UndefOr[RequestSpotLaunchSpecification] = js.undefined,
       Type: js.UndefOr[SpotInstanceType] = js.undefined
     ): RequestSpotInstancesRequest = {
@@ -8886,10 +14016,12 @@ package ec2 {
         ("LaunchGroup" -> LaunchGroup.map { x => x: js.Any }),
         ("DryRun" -> DryRun.map { x => x: js.Any }),
         ("AvailabilityZoneGroup" -> AvailabilityZoneGroup.map { x => x: js.Any }),
+        ("ClientToken" -> ClientToken.map { x => x: js.Any }),
         ("InstanceCount" -> InstanceCount.map { x => x: js.Any }),
         ("ValidUntil" -> ValidUntil.map { x => x: js.Any }),
         ("ValidFrom" -> ValidFrom.map { x => x: js.Any }),
         ("SpotPrice" -> SpotPrice.map { x => x: js.Any }),
+        ("BlockDurationMinutes" -> BlockDurationMinutes.map { x => x: js.Any }),
         ("LaunchSpecification" -> LaunchSpecification.map { x => x: js.Any }),
         ("Type" -> Type.map { x => x: js.Any })
       ).filter(_._2 != js.undefined)
@@ -8898,6 +14030,9 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the output of RequestSpotInstances.</p>
+   */
   @js.native
   trait RequestSpotInstancesResult extends js.Object {
     var SpotInstanceRequests: SpotInstanceRequestList
@@ -9012,6 +14147,42 @@ package ec2 {
     }
   }
 
+
+  object ReservationStateEnum {
+    val `payment-pending` = "payment-pending"
+    val `payment-failed` = "payment-failed"
+    val active = "active"
+    val retired = "retired"
+
+    val values = IndexedSeq(`payment-pending`, `payment-failed`, active, retired)
+  }
+
+  /**
+   * <p>The cost associated with the Reserved Instance.</p>
+   */
+  @js.native
+  trait ReservationValue extends js.Object {
+    var RemainingTotalValue: String
+    var RemainingUpfrontValue: String
+    var HourlyPrice: String
+  }
+
+  object ReservationValue {
+    def apply(
+      RemainingTotalValue: js.UndefOr[String] = js.undefined,
+      RemainingUpfrontValue: js.UndefOr[String] = js.undefined,
+      HourlyPrice: js.UndefOr[String] = js.undefined
+    ): ReservationValue = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("RemainingTotalValue" -> RemainingTotalValue.map { x => x: js.Any }),
+        ("RemainingUpfrontValue" -> RemainingUpfrontValue.map { x => x: js.Any }),
+        ("HourlyPrice" -> HourlyPrice.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ReservationValue]
+    }
+  }
+
   /**
    * <p>Describes the limit price of a Reserved Instance offering.</p>
    */
@@ -9035,6 +14206,29 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>The total value of the Convertible Reserved Instance.</p>
+   */
+  @js.native
+  trait ReservedInstanceReservationValue extends js.Object {
+    var ReservedInstanceId: String
+    var ReservationValue: ReservationValue
+  }
+
+  object ReservedInstanceReservationValue {
+    def apply(
+      ReservedInstanceId: js.UndefOr[String] = js.undefined,
+      ReservationValue: js.UndefOr[ReservationValue] = js.undefined
+    ): ReservedInstanceReservationValue = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("ReservedInstanceId" -> ReservedInstanceId.map { x => x: js.Any }),
+        ("ReservationValue" -> ReservationValue.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ReservedInstanceReservationValue]
+    }
+  }
+
 
   object ReservedInstanceStateEnum {
     val `payment-pending` = "payment-pending"
@@ -9050,9 +14244,11 @@ package ec2 {
    */
   @js.native
   trait ReservedInstances extends js.Object {
+    var Scope: scope
     var CurrencyCode: CurrencyCodeValues
     var Duration: Long
     var FixedPrice: Float
+    var OfferingClass: OfferingClassType
     var RecurringCharges: RecurringChargesList
     var InstanceCount: Integer
     var Start: DateTime
@@ -9070,9 +14266,11 @@ package ec2 {
 
   object ReservedInstances {
     def apply(
+      Scope: js.UndefOr[scope] = js.undefined,
       CurrencyCode: js.UndefOr[CurrencyCodeValues] = js.undefined,
       Duration: js.UndefOr[Long] = js.undefined,
       FixedPrice: js.UndefOr[Float] = js.undefined,
+      OfferingClass: js.UndefOr[OfferingClassType] = js.undefined,
       RecurringCharges: js.UndefOr[RecurringChargesList] = js.undefined,
       InstanceCount: js.UndefOr[Integer] = js.undefined,
       Start: js.UndefOr[DateTime] = js.undefined,
@@ -9088,9 +14286,11 @@ package ec2 {
       InstanceTenancy: js.UndefOr[Tenancy] = js.undefined
     ): ReservedInstances = {
       val _fields = IndexedSeq[(String, js.Any)](
+        ("Scope" -> Scope.map { x => x: js.Any }),
         ("CurrencyCode" -> CurrencyCode.map { x => x: js.Any }),
         ("Duration" -> Duration.map { x => x: js.Any }),
         ("FixedPrice" -> FixedPrice.map { x => x: js.Any }),
+        ("OfferingClass" -> OfferingClass.map { x => x: js.Any }),
         ("RecurringCharges" -> RecurringCharges.map { x => x: js.Any }),
         ("InstanceCount" -> InstanceCount.map { x => x: js.Any }),
         ("Start" -> Start.map { x => x: js.Any }),
@@ -9115,23 +14315,26 @@ package ec2 {
    */
   @js.native
   trait ReservedInstancesConfiguration extends js.Object {
-    var AvailabilityZone: String
+    var Scope: scope
     var Platform: String
     var InstanceCount: Integer
+    var AvailabilityZone: String
     var InstanceType: InstanceType
   }
 
   object ReservedInstancesConfiguration {
     def apply(
-      AvailabilityZone: js.UndefOr[String] = js.undefined,
+      Scope: js.UndefOr[scope] = js.undefined,
       Platform: js.UndefOr[String] = js.undefined,
       InstanceCount: js.UndefOr[Integer] = js.undefined,
+      AvailabilityZone: js.UndefOr[String] = js.undefined,
       InstanceType: js.UndefOr[InstanceType] = js.undefined
     ): ReservedInstancesConfiguration = {
       val _fields = IndexedSeq[(String, js.Any)](
-        ("AvailabilityZone" -> AvailabilityZone.map { x => x: js.Any }),
+        ("Scope" -> Scope.map { x => x: js.Any }),
         ("Platform" -> Platform.map { x => x: js.Any }),
         ("InstanceCount" -> InstanceCount.map { x => x: js.Any }),
+        ("AvailabilityZone" -> AvailabilityZone.map { x => x: js.Any }),
         ("InstanceType" -> InstanceType.map { x => x: js.Any })
       ).filter(_._2 != js.undefined)
 
@@ -9250,6 +14453,9 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Describes the modification request/s.</p>
+   */
   @js.native
   trait ReservedInstancesModificationResult extends js.Object {
     var ReservedInstancesId: String
@@ -9275,9 +14481,11 @@ package ec2 {
    */
   @js.native
   trait ReservedInstancesOffering extends js.Object {
+    var Scope: scope
     var CurrencyCode: CurrencyCodeValues
     var Duration: Long
     var FixedPrice: Float
+    var OfferingClass: OfferingClassType
     var RecurringCharges: RecurringChargesList
     var AvailabilityZone: String
     var OfferingType: OfferingTypeValues
@@ -9292,9 +14500,11 @@ package ec2 {
 
   object ReservedInstancesOffering {
     def apply(
+      Scope: js.UndefOr[scope] = js.undefined,
       CurrencyCode: js.UndefOr[CurrencyCodeValues] = js.undefined,
       Duration: js.UndefOr[Long] = js.undefined,
       FixedPrice: js.UndefOr[Float] = js.undefined,
+      OfferingClass: js.UndefOr[OfferingClassType] = js.undefined,
       RecurringCharges: js.UndefOr[RecurringChargesList] = js.undefined,
       AvailabilityZone: js.UndefOr[String] = js.undefined,
       OfferingType: js.UndefOr[OfferingTypeValues] = js.undefined,
@@ -9307,9 +14517,11 @@ package ec2 {
       InstanceTenancy: js.UndefOr[Tenancy] = js.undefined
     ): ReservedInstancesOffering = {
       val _fields = IndexedSeq[(String, js.Any)](
+        ("Scope" -> Scope.map { x => x: js.Any }),
         ("CurrencyCode" -> CurrencyCode.map { x => x: js.Any }),
         ("Duration" -> Duration.map { x => x: js.Any }),
         ("FixedPrice" -> FixedPrice.map { x => x: js.Any }),
+        ("OfferingClass" -> OfferingClass.map { x => x: js.Any }),
         ("RecurringCharges" -> RecurringCharges.map { x => x: js.Any }),
         ("AvailabilityZone" -> AvailabilityZone.map { x => x: js.Any }),
         ("OfferingType" -> OfferingType.map { x => x: js.Any }),
@@ -9333,6 +14545,9 @@ package ec2 {
     val values = IndexedSeq(launchPermission)
   }
 
+  /**
+   * <p>Contains the parameters for ResetImageAttribute.</p>
+   */
   @js.native
   trait ResetImageAttributeRequest extends js.Object {
     var DryRun: Boolean
@@ -9356,6 +14571,9 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the parameters for ResetInstanceAttribute.</p>
+   */
   @js.native
   trait ResetInstanceAttributeRequest extends js.Object {
     var DryRun: Boolean
@@ -9379,6 +14597,9 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the parameters for ResetNetworkInterfaceAttribute.</p>
+   */
   @js.native
   trait ResetNetworkInterfaceAttributeRequest extends js.Object {
     var DryRun: Boolean
@@ -9402,6 +14623,9 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the parameters for ResetSnapshotAttribute.</p>
+   */
   @js.native
   trait ResetSnapshotAttributeRequest extends js.Object {
     var DryRun: Boolean
@@ -9448,6 +14672,55 @@ package ec2 {
     val values = IndexedSeq(`customer-gateway`, `dhcp-options`, image, instance, `internet-gateway`, `network-acl`, `network-interface`, `reserved-instances`, `route-table`, snapshot, `spot-instances-request`, subnet, `security-group`, volume, vpc, `vpn-connection`, `vpn-gateway`)
   }
 
+  /**
+   * <p>Contains the parameters for RestoreAddressToClassic.</p>
+   */
+  @js.native
+  trait RestoreAddressToClassicRequest extends js.Object {
+    var DryRun: Boolean
+    var PublicIp: String
+  }
+
+  object RestoreAddressToClassicRequest {
+    def apply(
+      DryRun: js.UndefOr[Boolean] = js.undefined,
+      PublicIp: js.UndefOr[String] = js.undefined
+    ): RestoreAddressToClassicRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("DryRun" -> DryRun.map { x => x: js.Any }),
+        ("PublicIp" -> PublicIp.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RestoreAddressToClassicRequest]
+    }
+  }
+
+  /**
+   * <p>Contains the output of RestoreAddressToClassic.</p>
+   */
+  @js.native
+  trait RestoreAddressToClassicResult extends js.Object {
+    var Status: Status
+    var PublicIp: String
+  }
+
+  object RestoreAddressToClassicResult {
+    def apply(
+      Status: js.UndefOr[Status] = js.undefined,
+      PublicIp: js.UndefOr[String] = js.undefined
+    ): RestoreAddressToClassicResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("Status" -> Status.map { x => x: js.Any }),
+        ("PublicIp" -> PublicIp.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RestoreAddressToClassicResult]
+    }
+  }
+
+  /**
+   * <p>Contains the parameters for RevokeSecurityGroupEgress.</p>
+   */
   @js.native
   trait RevokeSecurityGroupEgressRequest extends js.Object {
     var DryRun: Boolean
@@ -9489,6 +14762,9 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the parameters for RevokeSecurityGroupIngress.</p>
+   */
   @js.native
   trait RevokeSecurityGroupIngressRequest extends js.Object {
     var DryRun: Boolean
@@ -9541,9 +14817,13 @@ package ec2 {
     var InstanceOwnerId: String
     var DestinationCidrBlock: String
     var VpcPeeringConnectionId: String
+    var DestinationPrefixListId: String
+    var NatGatewayId: String
     var Origin: RouteOrigin
+    var EgressOnlyInternetGatewayId: String
     var InstanceId: String
     var NetworkInterfaceId: String
+    var DestinationIpv6CidrBlock: String
     var State: RouteState
     var GatewayId: String
   }
@@ -9553,9 +14833,13 @@ package ec2 {
       InstanceOwnerId: js.UndefOr[String] = js.undefined,
       DestinationCidrBlock: js.UndefOr[String] = js.undefined,
       VpcPeeringConnectionId: js.UndefOr[String] = js.undefined,
+      DestinationPrefixListId: js.UndefOr[String] = js.undefined,
+      NatGatewayId: js.UndefOr[String] = js.undefined,
       Origin: js.UndefOr[RouteOrigin] = js.undefined,
+      EgressOnlyInternetGatewayId: js.UndefOr[String] = js.undefined,
       InstanceId: js.UndefOr[String] = js.undefined,
       NetworkInterfaceId: js.UndefOr[String] = js.undefined,
+      DestinationIpv6CidrBlock: js.UndefOr[String] = js.undefined,
       State: js.UndefOr[RouteState] = js.undefined,
       GatewayId: js.UndefOr[String] = js.undefined
     ): Route = {
@@ -9563,9 +14847,13 @@ package ec2 {
         ("InstanceOwnerId" -> InstanceOwnerId.map { x => x: js.Any }),
         ("DestinationCidrBlock" -> DestinationCidrBlock.map { x => x: js.Any }),
         ("VpcPeeringConnectionId" -> VpcPeeringConnectionId.map { x => x: js.Any }),
+        ("DestinationPrefixListId" -> DestinationPrefixListId.map { x => x: js.Any }),
+        ("NatGatewayId" -> NatGatewayId.map { x => x: js.Any }),
         ("Origin" -> Origin.map { x => x: js.Any }),
+        ("EgressOnlyInternetGatewayId" -> EgressOnlyInternetGatewayId.map { x => x: js.Any }),
         ("InstanceId" -> InstanceId.map { x => x: js.Any }),
         ("NetworkInterfaceId" -> NetworkInterfaceId.map { x => x: js.Any }),
+        ("DestinationIpv6CidrBlock" -> DestinationIpv6CidrBlock.map { x => x: js.Any }),
         ("State" -> State.map { x => x: js.Any }),
         ("GatewayId" -> GatewayId.map { x => x: js.Any })
       ).filter(_._2 != js.undefined)
@@ -9664,7 +14952,7 @@ package ec2 {
   }
 
   /**
-   * <p>Describes the monitoring for the instance.</p>
+   * <p>Describes the monitoring of an instance.</p>
    */
   @js.native
   trait RunInstancesMonitoringEnabled extends js.Object {
@@ -9683,9 +14971,13 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the parameters for RunInstances.</p>
+   */
   @js.native
   trait RunInstancesRequest extends js.Object {
     var NetworkInterfaces: InstanceNetworkInterfaceSpecificationList
+    var Ipv6Addresses: InstanceIpv6AddressList
     var RamdiskId: String
     var BlockDeviceMappings: BlockDeviceMappingRequestList
     var DryRun: Boolean
@@ -9698,6 +14990,7 @@ package ec2 {
     var DisableApiTermination: Boolean
     var UserData: String
     var SecurityGroups: SecurityGroupStringList
+    var Ipv6AddressCount: Integer
     var MinCount: Integer
     var KernelId: String
     var SecurityGroupIds: SecurityGroupIdStringList
@@ -9713,6 +15006,7 @@ package ec2 {
   object RunInstancesRequest {
     def apply(
       NetworkInterfaces: js.UndefOr[InstanceNetworkInterfaceSpecificationList] = js.undefined,
+      Ipv6Addresses: js.UndefOr[InstanceIpv6AddressList] = js.undefined,
       RamdiskId: js.UndefOr[String] = js.undefined,
       BlockDeviceMappings: js.UndefOr[BlockDeviceMappingRequestList] = js.undefined,
       DryRun: js.UndefOr[Boolean] = js.undefined,
@@ -9725,6 +15019,7 @@ package ec2 {
       DisableApiTermination: js.UndefOr[Boolean] = js.undefined,
       UserData: js.UndefOr[String] = js.undefined,
       SecurityGroups: js.UndefOr[SecurityGroupStringList] = js.undefined,
+      Ipv6AddressCount: js.UndefOr[Integer] = js.undefined,
       MinCount: js.UndefOr[Integer] = js.undefined,
       KernelId: js.UndefOr[String] = js.undefined,
       SecurityGroupIds: js.UndefOr[SecurityGroupIdStringList] = js.undefined,
@@ -9738,6 +15033,7 @@ package ec2 {
     ): RunInstancesRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         ("NetworkInterfaces" -> NetworkInterfaces.map { x => x: js.Any }),
+        ("Ipv6Addresses" -> Ipv6Addresses.map { x => x: js.Any }),
         ("RamdiskId" -> RamdiskId.map { x => x: js.Any }),
         ("BlockDeviceMappings" -> BlockDeviceMappings.map { x => x: js.Any }),
         ("DryRun" -> DryRun.map { x => x: js.Any }),
@@ -9750,6 +15046,7 @@ package ec2 {
         ("DisableApiTermination" -> DisableApiTermination.map { x => x: js.Any }),
         ("UserData" -> UserData.map { x => x: js.Any }),
         ("SecurityGroups" -> SecurityGroups.map { x => x: js.Any }),
+        ("Ipv6AddressCount" -> Ipv6AddressCount.map { x => x: js.Any }),
         ("MinCount" -> MinCount.map { x => x: js.Any }),
         ("KernelId" -> KernelId.map { x => x: js.Any }),
         ("SecurityGroupIds" -> SecurityGroupIds.map { x => x: js.Any }),
@@ -9763,6 +15060,58 @@ package ec2 {
       ).filter(_._2 != js.undefined)
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RunInstancesRequest]
+    }
+  }
+
+  /**
+   * <p>Contains the parameters for RunScheduledInstances.</p>
+   */
+  @js.native
+  trait RunScheduledInstancesRequest extends js.Object {
+    var DryRun: Boolean
+    var ClientToken: String
+    var InstanceCount: Integer
+    var ScheduledInstanceId: String
+    var LaunchSpecification: ScheduledInstancesLaunchSpecification
+  }
+
+  object RunScheduledInstancesRequest {
+    def apply(
+      DryRun: js.UndefOr[Boolean] = js.undefined,
+      ClientToken: js.UndefOr[String] = js.undefined,
+      InstanceCount: js.UndefOr[Integer] = js.undefined,
+      ScheduledInstanceId: js.UndefOr[String] = js.undefined,
+      LaunchSpecification: js.UndefOr[ScheduledInstancesLaunchSpecification] = js.undefined
+    ): RunScheduledInstancesRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("DryRun" -> DryRun.map { x => x: js.Any }),
+        ("ClientToken" -> ClientToken.map { x => x: js.Any }),
+        ("InstanceCount" -> InstanceCount.map { x => x: js.Any }),
+        ("ScheduledInstanceId" -> ScheduledInstanceId.map { x => x: js.Any }),
+        ("LaunchSpecification" -> LaunchSpecification.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RunScheduledInstancesRequest]
+    }
+  }
+
+  /**
+   * <p>Contains the output of RunScheduledInstances.</p>
+   */
+  @js.native
+  trait RunScheduledInstancesResult extends js.Object {
+    var InstanceIdSet: InstanceIdSet
+  }
+
+  object RunScheduledInstancesResult {
+    def apply(
+      InstanceIdSet: js.UndefOr[InstanceIdSet] = js.undefined
+    ): RunScheduledInstancesResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("InstanceIdSet" -> InstanceIdSet.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RunScheduledInstancesResult]
     }
   }
 
@@ -9795,6 +15144,473 @@ package ec2 {
       ).filter(_._2 != js.undefined)
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[S3Storage]
+    }
+  }
+
+  /**
+   * <p>Describes a Scheduled Instance.</p>
+   */
+  @js.native
+  trait ScheduledInstance extends js.Object {
+    var TermEndDate: DateTime
+    var SlotDurationInHours: Integer
+    var Platform: String
+    var NextSlotStartTime: DateTime
+    var TotalScheduledInstanceHours: Integer
+    var InstanceCount: Integer
+    var TermStartDate: DateTime
+    var AvailabilityZone: String
+    var NetworkPlatform: String
+    var CreateDate: DateTime
+    var HourlyPrice: String
+    var InstanceType: String
+    var ScheduledInstanceId: String
+    var PreviousSlotEndTime: DateTime
+    var Recurrence: ScheduledInstanceRecurrence
+  }
+
+  object ScheduledInstance {
+    def apply(
+      TermEndDate: js.UndefOr[DateTime] = js.undefined,
+      SlotDurationInHours: js.UndefOr[Integer] = js.undefined,
+      Platform: js.UndefOr[String] = js.undefined,
+      NextSlotStartTime: js.UndefOr[DateTime] = js.undefined,
+      TotalScheduledInstanceHours: js.UndefOr[Integer] = js.undefined,
+      InstanceCount: js.UndefOr[Integer] = js.undefined,
+      TermStartDate: js.UndefOr[DateTime] = js.undefined,
+      AvailabilityZone: js.UndefOr[String] = js.undefined,
+      NetworkPlatform: js.UndefOr[String] = js.undefined,
+      CreateDate: js.UndefOr[DateTime] = js.undefined,
+      HourlyPrice: js.UndefOr[String] = js.undefined,
+      InstanceType: js.UndefOr[String] = js.undefined,
+      ScheduledInstanceId: js.UndefOr[String] = js.undefined,
+      PreviousSlotEndTime: js.UndefOr[DateTime] = js.undefined,
+      Recurrence: js.UndefOr[ScheduledInstanceRecurrence] = js.undefined
+    ): ScheduledInstance = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("TermEndDate" -> TermEndDate.map { x => x: js.Any }),
+        ("SlotDurationInHours" -> SlotDurationInHours.map { x => x: js.Any }),
+        ("Platform" -> Platform.map { x => x: js.Any }),
+        ("NextSlotStartTime" -> NextSlotStartTime.map { x => x: js.Any }),
+        ("TotalScheduledInstanceHours" -> TotalScheduledInstanceHours.map { x => x: js.Any }),
+        ("InstanceCount" -> InstanceCount.map { x => x: js.Any }),
+        ("TermStartDate" -> TermStartDate.map { x => x: js.Any }),
+        ("AvailabilityZone" -> AvailabilityZone.map { x => x: js.Any }),
+        ("NetworkPlatform" -> NetworkPlatform.map { x => x: js.Any }),
+        ("CreateDate" -> CreateDate.map { x => x: js.Any }),
+        ("HourlyPrice" -> HourlyPrice.map { x => x: js.Any }),
+        ("InstanceType" -> InstanceType.map { x => x: js.Any }),
+        ("ScheduledInstanceId" -> ScheduledInstanceId.map { x => x: js.Any }),
+        ("PreviousSlotEndTime" -> PreviousSlotEndTime.map { x => x: js.Any }),
+        ("Recurrence" -> Recurrence.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ScheduledInstance]
+    }
+  }
+
+  /**
+   * <p>Describes a schedule that is available for your Scheduled Instances.</p>
+   */
+  @js.native
+  trait ScheduledInstanceAvailability extends js.Object {
+    var PurchaseToken: String
+    var SlotDurationInHours: Integer
+    var Platform: String
+    var MaxTermDurationInDays: Integer
+    var FirstSlotStartTime: DateTime
+    var TotalScheduledInstanceHours: Integer
+    var AvailabilityZone: String
+    var NetworkPlatform: String
+    var HourlyPrice: String
+    var AvailableInstanceCount: Integer
+    var InstanceType: String
+    var MinTermDurationInDays: Integer
+    var Recurrence: ScheduledInstanceRecurrence
+  }
+
+  object ScheduledInstanceAvailability {
+    def apply(
+      PurchaseToken: js.UndefOr[String] = js.undefined,
+      SlotDurationInHours: js.UndefOr[Integer] = js.undefined,
+      Platform: js.UndefOr[String] = js.undefined,
+      MaxTermDurationInDays: js.UndefOr[Integer] = js.undefined,
+      FirstSlotStartTime: js.UndefOr[DateTime] = js.undefined,
+      TotalScheduledInstanceHours: js.UndefOr[Integer] = js.undefined,
+      AvailabilityZone: js.UndefOr[String] = js.undefined,
+      NetworkPlatform: js.UndefOr[String] = js.undefined,
+      HourlyPrice: js.UndefOr[String] = js.undefined,
+      AvailableInstanceCount: js.UndefOr[Integer] = js.undefined,
+      InstanceType: js.UndefOr[String] = js.undefined,
+      MinTermDurationInDays: js.UndefOr[Integer] = js.undefined,
+      Recurrence: js.UndefOr[ScheduledInstanceRecurrence] = js.undefined
+    ): ScheduledInstanceAvailability = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("PurchaseToken" -> PurchaseToken.map { x => x: js.Any }),
+        ("SlotDurationInHours" -> SlotDurationInHours.map { x => x: js.Any }),
+        ("Platform" -> Platform.map { x => x: js.Any }),
+        ("MaxTermDurationInDays" -> MaxTermDurationInDays.map { x => x: js.Any }),
+        ("FirstSlotStartTime" -> FirstSlotStartTime.map { x => x: js.Any }),
+        ("TotalScheduledInstanceHours" -> TotalScheduledInstanceHours.map { x => x: js.Any }),
+        ("AvailabilityZone" -> AvailabilityZone.map { x => x: js.Any }),
+        ("NetworkPlatform" -> NetworkPlatform.map { x => x: js.Any }),
+        ("HourlyPrice" -> HourlyPrice.map { x => x: js.Any }),
+        ("AvailableInstanceCount" -> AvailableInstanceCount.map { x => x: js.Any }),
+        ("InstanceType" -> InstanceType.map { x => x: js.Any }),
+        ("MinTermDurationInDays" -> MinTermDurationInDays.map { x => x: js.Any }),
+        ("Recurrence" -> Recurrence.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ScheduledInstanceAvailability]
+    }
+  }
+
+  /**
+   * <p>Describes the recurring schedule for a Scheduled Instance.</p>
+   */
+  @js.native
+  trait ScheduledInstanceRecurrence extends js.Object {
+    var OccurrenceDaySet: OccurrenceDaySet
+    var Interval: Integer
+    var OccurrenceRelativeToEnd: Boolean
+    var OccurrenceUnit: String
+    var Frequency: String
+  }
+
+  object ScheduledInstanceRecurrence {
+    def apply(
+      OccurrenceDaySet: js.UndefOr[OccurrenceDaySet] = js.undefined,
+      Interval: js.UndefOr[Integer] = js.undefined,
+      OccurrenceRelativeToEnd: js.UndefOr[Boolean] = js.undefined,
+      OccurrenceUnit: js.UndefOr[String] = js.undefined,
+      Frequency: js.UndefOr[String] = js.undefined
+    ): ScheduledInstanceRecurrence = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("OccurrenceDaySet" -> OccurrenceDaySet.map { x => x: js.Any }),
+        ("Interval" -> Interval.map { x => x: js.Any }),
+        ("OccurrenceRelativeToEnd" -> OccurrenceRelativeToEnd.map { x => x: js.Any }),
+        ("OccurrenceUnit" -> OccurrenceUnit.map { x => x: js.Any }),
+        ("Frequency" -> Frequency.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ScheduledInstanceRecurrence]
+    }
+  }
+
+  /**
+   * <p>Describes the recurring schedule for a Scheduled Instance.</p>
+   */
+  @js.native
+  trait ScheduledInstanceRecurrenceRequest extends js.Object {
+    var Interval: Integer
+    var OccurrenceRelativeToEnd: Boolean
+    var OccurrenceDays: OccurrenceDayRequestSet
+    var OccurrenceUnit: String
+    var Frequency: String
+  }
+
+  object ScheduledInstanceRecurrenceRequest {
+    def apply(
+      Interval: js.UndefOr[Integer] = js.undefined,
+      OccurrenceRelativeToEnd: js.UndefOr[Boolean] = js.undefined,
+      OccurrenceDays: js.UndefOr[OccurrenceDayRequestSet] = js.undefined,
+      OccurrenceUnit: js.UndefOr[String] = js.undefined,
+      Frequency: js.UndefOr[String] = js.undefined
+    ): ScheduledInstanceRecurrenceRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("Interval" -> Interval.map { x => x: js.Any }),
+        ("OccurrenceRelativeToEnd" -> OccurrenceRelativeToEnd.map { x => x: js.Any }),
+        ("OccurrenceDays" -> OccurrenceDays.map { x => x: js.Any }),
+        ("OccurrenceUnit" -> OccurrenceUnit.map { x => x: js.Any }),
+        ("Frequency" -> Frequency.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ScheduledInstanceRecurrenceRequest]
+    }
+  }
+
+  /**
+   * <p>Describes a block device mapping for a Scheduled Instance.</p>
+   */
+  @js.native
+  trait ScheduledInstancesBlockDeviceMapping extends js.Object {
+    var DeviceName: String
+    var NoDevice: String
+    var VirtualName: String
+    var Ebs: ScheduledInstancesEbs
+  }
+
+  object ScheduledInstancesBlockDeviceMapping {
+    def apply(
+      DeviceName: js.UndefOr[String] = js.undefined,
+      NoDevice: js.UndefOr[String] = js.undefined,
+      VirtualName: js.UndefOr[String] = js.undefined,
+      Ebs: js.UndefOr[ScheduledInstancesEbs] = js.undefined
+    ): ScheduledInstancesBlockDeviceMapping = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("DeviceName" -> DeviceName.map { x => x: js.Any }),
+        ("NoDevice" -> NoDevice.map { x => x: js.Any }),
+        ("VirtualName" -> VirtualName.map { x => x: js.Any }),
+        ("Ebs" -> Ebs.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ScheduledInstancesBlockDeviceMapping]
+    }
+  }
+
+  /**
+   * <p>Describes an EBS volume for a Scheduled Instance.</p>
+   */
+  @js.native
+  trait ScheduledInstancesEbs extends js.Object {
+    var VolumeType: String
+    var SnapshotId: String
+    var Encrypted: Boolean
+    var VolumeSize: Integer
+    var Iops: Integer
+    var DeleteOnTermination: Boolean
+  }
+
+  object ScheduledInstancesEbs {
+    def apply(
+      VolumeType: js.UndefOr[String] = js.undefined,
+      SnapshotId: js.UndefOr[String] = js.undefined,
+      Encrypted: js.UndefOr[Boolean] = js.undefined,
+      VolumeSize: js.UndefOr[Integer] = js.undefined,
+      Iops: js.UndefOr[Integer] = js.undefined,
+      DeleteOnTermination: js.UndefOr[Boolean] = js.undefined
+    ): ScheduledInstancesEbs = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("VolumeType" -> VolumeType.map { x => x: js.Any }),
+        ("SnapshotId" -> SnapshotId.map { x => x: js.Any }),
+        ("Encrypted" -> Encrypted.map { x => x: js.Any }),
+        ("VolumeSize" -> VolumeSize.map { x => x: js.Any }),
+        ("Iops" -> Iops.map { x => x: js.Any }),
+        ("DeleteOnTermination" -> DeleteOnTermination.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ScheduledInstancesEbs]
+    }
+  }
+
+  /**
+   * <p>Describes an IAM instance profile for a Scheduled Instance.</p>
+   */
+  @js.native
+  trait ScheduledInstancesIamInstanceProfile extends js.Object {
+    var Arn: String
+    var Name: String
+  }
+
+  object ScheduledInstancesIamInstanceProfile {
+    def apply(
+      Arn: js.UndefOr[String] = js.undefined,
+      Name: js.UndefOr[String] = js.undefined
+    ): ScheduledInstancesIamInstanceProfile = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("Arn" -> Arn.map { x => x: js.Any }),
+        ("Name" -> Name.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ScheduledInstancesIamInstanceProfile]
+    }
+  }
+
+  /**
+   * <p>Describes an IPv6 address.</p>
+   */
+  @js.native
+  trait ScheduledInstancesIpv6Address extends js.Object {
+    var Ipv6Address: Ipv6Address
+  }
+
+  object ScheduledInstancesIpv6Address {
+    def apply(
+      Ipv6Address: js.UndefOr[Ipv6Address] = js.undefined
+    ): ScheduledInstancesIpv6Address = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("Ipv6Address" -> Ipv6Address.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ScheduledInstancesIpv6Address]
+    }
+  }
+
+  /**
+   * <p>Describes the launch specification for a Scheduled Instance.</p> <p>If you are launching the Scheduled Instance in EC2-VPC, you must specify the ID of the subnet. You can specify the subnet using either <code>SubnetId</code> or <code>NetworkInterface</code>.</p>
+   */
+  @js.native
+  trait ScheduledInstancesLaunchSpecification extends js.Object {
+    var NetworkInterfaces: ScheduledInstancesNetworkInterfaceSet
+    var RamdiskId: String
+    var BlockDeviceMappings: ScheduledInstancesBlockDeviceMappingSet
+    var ImageId: String
+    var EbsOptimized: Boolean
+    var Placement: ScheduledInstancesPlacement
+    var UserData: String
+    var KernelId: String
+    var SecurityGroupIds: ScheduledInstancesSecurityGroupIdSet
+    var KeyName: String
+    var InstanceType: String
+    var Monitoring: ScheduledInstancesMonitoring
+    var IamInstanceProfile: ScheduledInstancesIamInstanceProfile
+    var SubnetId: String
+  }
+
+  object ScheduledInstancesLaunchSpecification {
+    def apply(
+      NetworkInterfaces: js.UndefOr[ScheduledInstancesNetworkInterfaceSet] = js.undefined,
+      RamdiskId: js.UndefOr[String] = js.undefined,
+      BlockDeviceMappings: js.UndefOr[ScheduledInstancesBlockDeviceMappingSet] = js.undefined,
+      ImageId: js.UndefOr[String] = js.undefined,
+      EbsOptimized: js.UndefOr[Boolean] = js.undefined,
+      Placement: js.UndefOr[ScheduledInstancesPlacement] = js.undefined,
+      UserData: js.UndefOr[String] = js.undefined,
+      KernelId: js.UndefOr[String] = js.undefined,
+      SecurityGroupIds: js.UndefOr[ScheduledInstancesSecurityGroupIdSet] = js.undefined,
+      KeyName: js.UndefOr[String] = js.undefined,
+      InstanceType: js.UndefOr[String] = js.undefined,
+      Monitoring: js.UndefOr[ScheduledInstancesMonitoring] = js.undefined,
+      IamInstanceProfile: js.UndefOr[ScheduledInstancesIamInstanceProfile] = js.undefined,
+      SubnetId: js.UndefOr[String] = js.undefined
+    ): ScheduledInstancesLaunchSpecification = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("NetworkInterfaces" -> NetworkInterfaces.map { x => x: js.Any }),
+        ("RamdiskId" -> RamdiskId.map { x => x: js.Any }),
+        ("BlockDeviceMappings" -> BlockDeviceMappings.map { x => x: js.Any }),
+        ("ImageId" -> ImageId.map { x => x: js.Any }),
+        ("EbsOptimized" -> EbsOptimized.map { x => x: js.Any }),
+        ("Placement" -> Placement.map { x => x: js.Any }),
+        ("UserData" -> UserData.map { x => x: js.Any }),
+        ("KernelId" -> KernelId.map { x => x: js.Any }),
+        ("SecurityGroupIds" -> SecurityGroupIds.map { x => x: js.Any }),
+        ("KeyName" -> KeyName.map { x => x: js.Any }),
+        ("InstanceType" -> InstanceType.map { x => x: js.Any }),
+        ("Monitoring" -> Monitoring.map { x => x: js.Any }),
+        ("IamInstanceProfile" -> IamInstanceProfile.map { x => x: js.Any }),
+        ("SubnetId" -> SubnetId.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ScheduledInstancesLaunchSpecification]
+    }
+  }
+
+  /**
+   * <p>Describes whether monitoring is enabled for a Scheduled Instance.</p>
+   */
+  @js.native
+  trait ScheduledInstancesMonitoring extends js.Object {
+    var Enabled: Boolean
+  }
+
+  object ScheduledInstancesMonitoring {
+    def apply(
+      Enabled: js.UndefOr[Boolean] = js.undefined
+    ): ScheduledInstancesMonitoring = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("Enabled" -> Enabled.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ScheduledInstancesMonitoring]
+    }
+  }
+
+  /**
+   * <p>Describes a network interface for a Scheduled Instance.</p>
+   */
+  @js.native
+  trait ScheduledInstancesNetworkInterface extends js.Object {
+    var Ipv6Addresses: ScheduledInstancesIpv6AddressList
+    var PrivateIpAddressConfigs: PrivateIpAddressConfigSet
+    var PrivateIpAddress: String
+    var Description: String
+    var Ipv6AddressCount: Integer
+    var Groups: ScheduledInstancesSecurityGroupIdSet
+    var DeviceIndex: Integer
+    var DeleteOnTermination: Boolean
+    var AssociatePublicIpAddress: Boolean
+    var NetworkInterfaceId: String
+    var SecondaryPrivateIpAddressCount: Integer
+    var SubnetId: String
+  }
+
+  object ScheduledInstancesNetworkInterface {
+    def apply(
+      Ipv6Addresses: js.UndefOr[ScheduledInstancesIpv6AddressList] = js.undefined,
+      PrivateIpAddressConfigs: js.UndefOr[PrivateIpAddressConfigSet] = js.undefined,
+      PrivateIpAddress: js.UndefOr[String] = js.undefined,
+      Description: js.UndefOr[String] = js.undefined,
+      Ipv6AddressCount: js.UndefOr[Integer] = js.undefined,
+      Groups: js.UndefOr[ScheduledInstancesSecurityGroupIdSet] = js.undefined,
+      DeviceIndex: js.UndefOr[Integer] = js.undefined,
+      DeleteOnTermination: js.UndefOr[Boolean] = js.undefined,
+      AssociatePublicIpAddress: js.UndefOr[Boolean] = js.undefined,
+      NetworkInterfaceId: js.UndefOr[String] = js.undefined,
+      SecondaryPrivateIpAddressCount: js.UndefOr[Integer] = js.undefined,
+      SubnetId: js.UndefOr[String] = js.undefined
+    ): ScheduledInstancesNetworkInterface = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("Ipv6Addresses" -> Ipv6Addresses.map { x => x: js.Any }),
+        ("PrivateIpAddressConfigs" -> PrivateIpAddressConfigs.map { x => x: js.Any }),
+        ("PrivateIpAddress" -> PrivateIpAddress.map { x => x: js.Any }),
+        ("Description" -> Description.map { x => x: js.Any }),
+        ("Ipv6AddressCount" -> Ipv6AddressCount.map { x => x: js.Any }),
+        ("Groups" -> Groups.map { x => x: js.Any }),
+        ("DeviceIndex" -> DeviceIndex.map { x => x: js.Any }),
+        ("DeleteOnTermination" -> DeleteOnTermination.map { x => x: js.Any }),
+        ("AssociatePublicIpAddress" -> AssociatePublicIpAddress.map { x => x: js.Any }),
+        ("NetworkInterfaceId" -> NetworkInterfaceId.map { x => x: js.Any }),
+        ("SecondaryPrivateIpAddressCount" -> SecondaryPrivateIpAddressCount.map { x => x: js.Any }),
+        ("SubnetId" -> SubnetId.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ScheduledInstancesNetworkInterface]
+    }
+  }
+
+  /**
+   * <p>Describes the placement for a Scheduled Instance.</p>
+   */
+  @js.native
+  trait ScheduledInstancesPlacement extends js.Object {
+    var AvailabilityZone: String
+    var GroupName: String
+  }
+
+  object ScheduledInstancesPlacement {
+    def apply(
+      AvailabilityZone: js.UndefOr[String] = js.undefined,
+      GroupName: js.UndefOr[String] = js.undefined
+    ): ScheduledInstancesPlacement = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("AvailabilityZone" -> AvailabilityZone.map { x => x: js.Any }),
+        ("GroupName" -> GroupName.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ScheduledInstancesPlacement]
+    }
+  }
+
+  /**
+   * <p>Describes a private IPv4 address for a Scheduled Instance.</p>
+   */
+  @js.native
+  trait ScheduledInstancesPrivateIpAddressConfig extends js.Object {
+    var PrivateIpAddress: String
+    var Primary: Boolean
+  }
+
+  object ScheduledInstancesPrivateIpAddressConfig {
+    def apply(
+      PrivateIpAddress: js.UndefOr[String] = js.undefined,
+      Primary: js.UndefOr[Boolean] = js.undefined
+    ): ScheduledInstancesPrivateIpAddressConfig = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("PrivateIpAddress" -> PrivateIpAddress.map { x => x: js.Any }),
+        ("Primary" -> Primary.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ScheduledInstancesPrivateIpAddressConfig]
     }
   }
 
@@ -9839,6 +15655,32 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Describes a VPC with a security group that references your security group.</p>
+   */
+  @js.native
+  trait SecurityGroupReference extends js.Object {
+    var GroupId: String
+    var ReferencingVpcId: String
+    var VpcPeeringConnectionId: String
+  }
+
+  object SecurityGroupReference {
+    def apply(
+      GroupId: js.UndefOr[String] = js.undefined,
+      ReferencingVpcId: js.UndefOr[String] = js.undefined,
+      VpcPeeringConnectionId: js.UndefOr[String] = js.undefined
+    ): SecurityGroupReference = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("GroupId" -> GroupId.map { x => x: js.Any }),
+        ("ReferencingVpcId" -> ReferencingVpcId.map { x => x: js.Any }),
+        ("VpcPeeringConnectionId" -> VpcPeeringConnectionId.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SecurityGroupReference]
+    }
+  }
+
 
   object ShutdownBehaviorEnum {
     val stop = "stop"
@@ -9848,11 +15690,58 @@ package ec2 {
   }
 
   /**
+   * <p>Describes the time period for a Scheduled Instance to start its first schedule. The time period must span less than one day.</p>
+   */
+  @js.native
+  trait SlotDateTimeRangeRequest extends js.Object {
+    var EarliestTime: DateTime
+    var LatestTime: DateTime
+  }
+
+  object SlotDateTimeRangeRequest {
+    def apply(
+      EarliestTime: js.UndefOr[DateTime] = js.undefined,
+      LatestTime: js.UndefOr[DateTime] = js.undefined
+    ): SlotDateTimeRangeRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("EarliestTime" -> EarliestTime.map { x => x: js.Any }),
+        ("LatestTime" -> LatestTime.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SlotDateTimeRangeRequest]
+    }
+  }
+
+  /**
+   * <p>Describes the time period for a Scheduled Instance to start its first schedule.</p>
+   */
+  @js.native
+  trait SlotStartTimeRangeRequest extends js.Object {
+    var EarliestTime: DateTime
+    var LatestTime: DateTime
+  }
+
+  object SlotStartTimeRangeRequest {
+    def apply(
+      EarliestTime: js.UndefOr[DateTime] = js.undefined,
+      LatestTime: js.UndefOr[DateTime] = js.undefined
+    ): SlotStartTimeRangeRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("EarliestTime" -> EarliestTime.map { x => x: js.Any }),
+        ("LatestTime" -> LatestTime.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SlotStartTimeRangeRequest]
+    }
+  }
+
+  /**
    * <p>Describes a snapshot.</p>
    */
   @js.native
   trait Snapshot extends js.Object {
     var OwnerAlias: String
+    var DataEncryptionKeyId: String
     var SnapshotId: String
     var VolumeId: String
     var Description: String
@@ -9862,6 +15751,7 @@ package ec2 {
     var OwnerId: String
     var VolumeSize: Integer
     var Tags: TagList
+    var StateMessage: String
     var State: SnapshotState
     var Progress: String
   }
@@ -9869,6 +15759,7 @@ package ec2 {
   object Snapshot {
     def apply(
       OwnerAlias: js.UndefOr[String] = js.undefined,
+      DataEncryptionKeyId: js.UndefOr[String] = js.undefined,
       SnapshotId: js.UndefOr[String] = js.undefined,
       VolumeId: js.UndefOr[String] = js.undefined,
       Description: js.UndefOr[String] = js.undefined,
@@ -9878,11 +15769,13 @@ package ec2 {
       OwnerId: js.UndefOr[String] = js.undefined,
       VolumeSize: js.UndefOr[Integer] = js.undefined,
       Tags: js.UndefOr[TagList] = js.undefined,
+      StateMessage: js.UndefOr[String] = js.undefined,
       State: js.UndefOr[SnapshotState] = js.undefined,
       Progress: js.UndefOr[String] = js.undefined
     ): Snapshot = {
       val _fields = IndexedSeq[(String, js.Any)](
         ("OwnerAlias" -> OwnerAlias.map { x => x: js.Any }),
+        ("DataEncryptionKeyId" -> DataEncryptionKeyId.map { x => x: js.Any }),
         ("SnapshotId" -> SnapshotId.map { x => x: js.Any }),
         ("VolumeId" -> VolumeId.map { x => x: js.Any }),
         ("Description" -> Description.map { x => x: js.Any }),
@@ -9892,6 +15785,7 @@ package ec2 {
         ("OwnerId" -> OwnerId.map { x => x: js.Any }),
         ("VolumeSize" -> VolumeSize.map { x => x: js.Any }),
         ("Tags" -> Tags.map { x => x: js.Any }),
+        ("StateMessage" -> StateMessage.map { x => x: js.Any }),
         ("State" -> State.map { x => x: js.Any }),
         ("Progress" -> Progress.map { x => x: js.Any })
       ).filter(_._2 != js.undefined)
@@ -9908,6 +15802,82 @@ package ec2 {
     val values = IndexedSeq(productCodes, createVolumePermission)
   }
 
+  /**
+   * <p>Describes the snapshot created from the imported disk.</p>
+   */
+  @js.native
+  trait SnapshotDetail extends js.Object {
+    var StatusMessage: String
+    var Format: String
+    var SnapshotId: String
+    var Description: String
+    var DiskImageSize: Double
+    var Url: String
+    var UserBucket: UserBucketDetails
+    var DeviceName: String
+    var Progress: String
+    var Status: String
+  }
+
+  object SnapshotDetail {
+    def apply(
+      StatusMessage: js.UndefOr[String] = js.undefined,
+      Format: js.UndefOr[String] = js.undefined,
+      SnapshotId: js.UndefOr[String] = js.undefined,
+      Description: js.UndefOr[String] = js.undefined,
+      DiskImageSize: js.UndefOr[Double] = js.undefined,
+      Url: js.UndefOr[String] = js.undefined,
+      UserBucket: js.UndefOr[UserBucketDetails] = js.undefined,
+      DeviceName: js.UndefOr[String] = js.undefined,
+      Progress: js.UndefOr[String] = js.undefined,
+      Status: js.UndefOr[String] = js.undefined
+    ): SnapshotDetail = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("StatusMessage" -> StatusMessage.map { x => x: js.Any }),
+        ("Format" -> Format.map { x => x: js.Any }),
+        ("SnapshotId" -> SnapshotId.map { x => x: js.Any }),
+        ("Description" -> Description.map { x => x: js.Any }),
+        ("DiskImageSize" -> DiskImageSize.map { x => x: js.Any }),
+        ("Url" -> Url.map { x => x: js.Any }),
+        ("UserBucket" -> UserBucket.map { x => x: js.Any }),
+        ("DeviceName" -> DeviceName.map { x => x: js.Any }),
+        ("Progress" -> Progress.map { x => x: js.Any }),
+        ("Status" -> Status.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SnapshotDetail]
+    }
+  }
+
+  /**
+   * <p>The disk container object for the import snapshot request.</p>
+   */
+  @js.native
+  trait SnapshotDiskContainer extends js.Object {
+    var Description: String
+    var Format: String
+    var Url: String
+    var UserBucket: UserBucket
+  }
+
+  object SnapshotDiskContainer {
+    def apply(
+      Description: js.UndefOr[String] = js.undefined,
+      Format: js.UndefOr[String] = js.undefined,
+      Url: js.UndefOr[String] = js.undefined,
+      UserBucket: js.UndefOr[UserBucket] = js.undefined
+    ): SnapshotDiskContainer = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("Description" -> Description.map { x => x: js.Any }),
+        ("Format" -> Format.map { x => x: js.Any }),
+        ("Url" -> Url.map { x => x: js.Any }),
+        ("UserBucket" -> UserBucket.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SnapshotDiskContainer]
+    }
+  }
+
 
   object SnapshotStateEnum {
     val pending = "pending"
@@ -9918,7 +15888,51 @@ package ec2 {
   }
 
   /**
-   * <p>Describes the data feed for a Spot Instance.</p>
+   * <p>Details about the import snapshot task.</p>
+   */
+  @js.native
+  trait SnapshotTaskDetail extends js.Object {
+    var StatusMessage: String
+    var Format: String
+    var SnapshotId: String
+    var Description: String
+    var DiskImageSize: Double
+    var Url: String
+    var UserBucket: UserBucketDetails
+    var Progress: String
+    var Status: String
+  }
+
+  object SnapshotTaskDetail {
+    def apply(
+      StatusMessage: js.UndefOr[String] = js.undefined,
+      Format: js.UndefOr[String] = js.undefined,
+      SnapshotId: js.UndefOr[String] = js.undefined,
+      Description: js.UndefOr[String] = js.undefined,
+      DiskImageSize: js.UndefOr[Double] = js.undefined,
+      Url: js.UndefOr[String] = js.undefined,
+      UserBucket: js.UndefOr[UserBucketDetails] = js.undefined,
+      Progress: js.UndefOr[String] = js.undefined,
+      Status: js.UndefOr[String] = js.undefined
+    ): SnapshotTaskDetail = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("StatusMessage" -> StatusMessage.map { x => x: js.Any }),
+        ("Format" -> Format.map { x => x: js.Any }),
+        ("SnapshotId" -> SnapshotId.map { x => x: js.Any }),
+        ("Description" -> Description.map { x => x: js.Any }),
+        ("DiskImageSize" -> DiskImageSize.map { x => x: js.Any }),
+        ("Url" -> Url.map { x => x: js.Any }),
+        ("UserBucket" -> UserBucket.map { x => x: js.Any }),
+        ("Progress" -> Progress.map { x => x: js.Any }),
+        ("Status" -> Status.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SnapshotTaskDetail]
+    }
+  }
+
+  /**
+   * <p>Describes the data feed for a Spot instance.</p>
    */
   @js.native
   trait SpotDatafeedSubscription extends js.Object {
@@ -9950,7 +15964,180 @@ package ec2 {
   }
 
   /**
-   * <p>Describe a Spot Instance request.</p>
+   * <p>Describes the launch specification for one or more Spot instances.</p>
+   */
+  @js.native
+  trait SpotFleetLaunchSpecification extends js.Object {
+    var NetworkInterfaces: InstanceNetworkInterfaceSpecificationList
+    var RamdiskId: String
+    var BlockDeviceMappings: BlockDeviceMappingList
+    var ImageId: String
+    var WeightedCapacity: Double
+    var EbsOptimized: Boolean
+    var Placement: SpotPlacement
+    var UserData: String
+    var AddressingType: String
+    var SecurityGroups: GroupIdentifierList
+    var KernelId: String
+    var KeyName: String
+    var InstanceType: InstanceType
+    var Monitoring: SpotFleetMonitoring
+    var SpotPrice: String
+    var IamInstanceProfile: IamInstanceProfileSpecification
+    var SubnetId: String
+  }
+
+  object SpotFleetLaunchSpecification {
+    def apply(
+      NetworkInterfaces: js.UndefOr[InstanceNetworkInterfaceSpecificationList] = js.undefined,
+      RamdiskId: js.UndefOr[String] = js.undefined,
+      BlockDeviceMappings: js.UndefOr[BlockDeviceMappingList] = js.undefined,
+      ImageId: js.UndefOr[String] = js.undefined,
+      WeightedCapacity: js.UndefOr[Double] = js.undefined,
+      EbsOptimized: js.UndefOr[Boolean] = js.undefined,
+      Placement: js.UndefOr[SpotPlacement] = js.undefined,
+      UserData: js.UndefOr[String] = js.undefined,
+      AddressingType: js.UndefOr[String] = js.undefined,
+      SecurityGroups: js.UndefOr[GroupIdentifierList] = js.undefined,
+      KernelId: js.UndefOr[String] = js.undefined,
+      KeyName: js.UndefOr[String] = js.undefined,
+      InstanceType: js.UndefOr[InstanceType] = js.undefined,
+      Monitoring: js.UndefOr[SpotFleetMonitoring] = js.undefined,
+      SpotPrice: js.UndefOr[String] = js.undefined,
+      IamInstanceProfile: js.UndefOr[IamInstanceProfileSpecification] = js.undefined,
+      SubnetId: js.UndefOr[String] = js.undefined
+    ): SpotFleetLaunchSpecification = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("NetworkInterfaces" -> NetworkInterfaces.map { x => x: js.Any }),
+        ("RamdiskId" -> RamdiskId.map { x => x: js.Any }),
+        ("BlockDeviceMappings" -> BlockDeviceMappings.map { x => x: js.Any }),
+        ("ImageId" -> ImageId.map { x => x: js.Any }),
+        ("WeightedCapacity" -> WeightedCapacity.map { x => x: js.Any }),
+        ("EbsOptimized" -> EbsOptimized.map { x => x: js.Any }),
+        ("Placement" -> Placement.map { x => x: js.Any }),
+        ("UserData" -> UserData.map { x => x: js.Any }),
+        ("AddressingType" -> AddressingType.map { x => x: js.Any }),
+        ("SecurityGroups" -> SecurityGroups.map { x => x: js.Any }),
+        ("KernelId" -> KernelId.map { x => x: js.Any }),
+        ("KeyName" -> KeyName.map { x => x: js.Any }),
+        ("InstanceType" -> InstanceType.map { x => x: js.Any }),
+        ("Monitoring" -> Monitoring.map { x => x: js.Any }),
+        ("SpotPrice" -> SpotPrice.map { x => x: js.Any }),
+        ("IamInstanceProfile" -> IamInstanceProfile.map { x => x: js.Any }),
+        ("SubnetId" -> SubnetId.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SpotFleetLaunchSpecification]
+    }
+  }
+
+  /**
+   * <p>Describes whether monitoring is enabled.</p>
+   */
+  @js.native
+  trait SpotFleetMonitoring extends js.Object {
+    var Enabled: Boolean
+  }
+
+  object SpotFleetMonitoring {
+    def apply(
+      Enabled: js.UndefOr[Boolean] = js.undefined
+    ): SpotFleetMonitoring = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("Enabled" -> Enabled.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SpotFleetMonitoring]
+    }
+  }
+
+  /**
+   * <p>Describes a Spot fleet request.</p>
+   */
+  @js.native
+  trait SpotFleetRequestConfig extends js.Object {
+    var SpotFleetRequestId: String
+    var SpotFleetRequestConfig: SpotFleetRequestConfigData
+    var SpotFleetRequestState: BatchState
+    var ActivityStatus: ActivityStatus
+    var CreateTime: DateTime
+  }
+
+  object SpotFleetRequestConfig {
+    def apply(
+      SpotFleetRequestId: js.UndefOr[String] = js.undefined,
+      SpotFleetRequestConfig: js.UndefOr[SpotFleetRequestConfigData] = js.undefined,
+      SpotFleetRequestState: js.UndefOr[BatchState] = js.undefined,
+      ActivityStatus: js.UndefOr[ActivityStatus] = js.undefined,
+      CreateTime: js.UndefOr[DateTime] = js.undefined
+    ): SpotFleetRequestConfig = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("SpotFleetRequestId" -> SpotFleetRequestId.map { x => x: js.Any }),
+        ("SpotFleetRequestConfig" -> SpotFleetRequestConfig.map { x => x: js.Any }),
+        ("SpotFleetRequestState" -> SpotFleetRequestState.map { x => x: js.Any }),
+        ("ActivityStatus" -> ActivityStatus.map { x => x: js.Any }),
+        ("CreateTime" -> CreateTime.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SpotFleetRequestConfig]
+    }
+  }
+
+  /**
+   * <p>Describes the configuration of a Spot fleet request.</p>
+   */
+  @js.native
+  trait SpotFleetRequestConfigData extends js.Object {
+    var ExcessCapacityTerminationPolicy: ExcessCapacityTerminationPolicy
+    var IamFleetRole: String
+    var ClientToken: String
+    var LaunchSpecifications: LaunchSpecsList
+    var ValidUntil: DateTime
+    var TerminateInstancesWithExpiration: Boolean
+    var AllocationStrategy: AllocationStrategy
+    var ValidFrom: DateTime
+    var SpotPrice: String
+    var FulfilledCapacity: Double
+    var TargetCapacity: Integer
+    var Type: FleetType
+  }
+
+  object SpotFleetRequestConfigData {
+    def apply(
+      ExcessCapacityTerminationPolicy: js.UndefOr[ExcessCapacityTerminationPolicy] = js.undefined,
+      IamFleetRole: js.UndefOr[String] = js.undefined,
+      ClientToken: js.UndefOr[String] = js.undefined,
+      LaunchSpecifications: js.UndefOr[LaunchSpecsList] = js.undefined,
+      ValidUntil: js.UndefOr[DateTime] = js.undefined,
+      TerminateInstancesWithExpiration: js.UndefOr[Boolean] = js.undefined,
+      AllocationStrategy: js.UndefOr[AllocationStrategy] = js.undefined,
+      ValidFrom: js.UndefOr[DateTime] = js.undefined,
+      SpotPrice: js.UndefOr[String] = js.undefined,
+      FulfilledCapacity: js.UndefOr[Double] = js.undefined,
+      TargetCapacity: js.UndefOr[Integer] = js.undefined,
+      Type: js.UndefOr[FleetType] = js.undefined
+    ): SpotFleetRequestConfigData = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("ExcessCapacityTerminationPolicy" -> ExcessCapacityTerminationPolicy.map { x => x: js.Any }),
+        ("IamFleetRole" -> IamFleetRole.map { x => x: js.Any }),
+        ("ClientToken" -> ClientToken.map { x => x: js.Any }),
+        ("LaunchSpecifications" -> LaunchSpecifications.map { x => x: js.Any }),
+        ("ValidUntil" -> ValidUntil.map { x => x: js.Any }),
+        ("TerminateInstancesWithExpiration" -> TerminateInstancesWithExpiration.map { x => x: js.Any }),
+        ("AllocationStrategy" -> AllocationStrategy.map { x => x: js.Any }),
+        ("ValidFrom" -> ValidFrom.map { x => x: js.Any }),
+        ("SpotPrice" -> SpotPrice.map { x => x: js.Any }),
+        ("FulfilledCapacity" -> FulfilledCapacity.map { x => x: js.Any }),
+        ("TargetCapacity" -> TargetCapacity.map { x => x: js.Any }),
+        ("Type" -> Type.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SpotFleetRequestConfigData]
+    }
+  }
+
+  /**
+   * <p>Describes a Spot instance request.</p>
    */
   @js.native
   trait SpotInstanceRequest extends js.Object {
@@ -9959,6 +16146,7 @@ package ec2 {
     var AvailabilityZoneGroup: String
     var SpotInstanceRequestId: String
     var LaunchedAvailabilityZone: String
+    var ActualBlockHourlyPrice: String
     var ValidUntil: DateTime
     var InstanceId: String
     var Tags: TagList
@@ -9967,6 +16155,7 @@ package ec2 {
     var CreateTime: DateTime
     var State: SpotInstanceState
     var ProductDescription: RIProductDescription
+    var BlockDurationMinutes: Integer
     var LaunchSpecification: LaunchSpecification
     var Status: SpotInstanceStatus
     var Type: SpotInstanceType
@@ -9979,6 +16168,7 @@ package ec2 {
       AvailabilityZoneGroup: js.UndefOr[String] = js.undefined,
       SpotInstanceRequestId: js.UndefOr[String] = js.undefined,
       LaunchedAvailabilityZone: js.UndefOr[String] = js.undefined,
+      ActualBlockHourlyPrice: js.UndefOr[String] = js.undefined,
       ValidUntil: js.UndefOr[DateTime] = js.undefined,
       InstanceId: js.UndefOr[String] = js.undefined,
       Tags: js.UndefOr[TagList] = js.undefined,
@@ -9987,6 +16177,7 @@ package ec2 {
       CreateTime: js.UndefOr[DateTime] = js.undefined,
       State: js.UndefOr[SpotInstanceState] = js.undefined,
       ProductDescription: js.UndefOr[RIProductDescription] = js.undefined,
+      BlockDurationMinutes: js.UndefOr[Integer] = js.undefined,
       LaunchSpecification: js.UndefOr[LaunchSpecification] = js.undefined,
       Status: js.UndefOr[SpotInstanceStatus] = js.undefined,
       Type: js.UndefOr[SpotInstanceType] = js.undefined
@@ -9997,6 +16188,7 @@ package ec2 {
         ("AvailabilityZoneGroup" -> AvailabilityZoneGroup.map { x => x: js.Any }),
         ("SpotInstanceRequestId" -> SpotInstanceRequestId.map { x => x: js.Any }),
         ("LaunchedAvailabilityZone" -> LaunchedAvailabilityZone.map { x => x: js.Any }),
+        ("ActualBlockHourlyPrice" -> ActualBlockHourlyPrice.map { x => x: js.Any }),
         ("ValidUntil" -> ValidUntil.map { x => x: js.Any }),
         ("InstanceId" -> InstanceId.map { x => x: js.Any }),
         ("Tags" -> Tags.map { x => x: js.Any }),
@@ -10005,6 +16197,7 @@ package ec2 {
         ("CreateTime" -> CreateTime.map { x => x: js.Any }),
         ("State" -> State.map { x => x: js.Any }),
         ("ProductDescription" -> ProductDescription.map { x => x: js.Any }),
+        ("BlockDurationMinutes" -> BlockDurationMinutes.map { x => x: js.Any }),
         ("LaunchSpecification" -> LaunchSpecification.map { x => x: js.Any }),
         ("Status" -> Status.map { x => x: js.Any }),
         ("Type" -> Type.map { x => x: js.Any })
@@ -10026,7 +16219,7 @@ package ec2 {
   }
 
   /**
-   * <p>Describes a Spot Instance state change.</p>
+   * <p>Describes a Spot instance state change.</p>
    */
   @js.native
   trait SpotInstanceStateFault extends js.Object {
@@ -10049,7 +16242,7 @@ package ec2 {
   }
 
   /**
-   * <p>Describes the status of a Spot Instance request.</p>
+   * <p>Describes the status of a Spot instance request.</p>
    */
   @js.native
   trait SpotInstanceStatus extends js.Object {
@@ -10083,7 +16276,7 @@ package ec2 {
   }
 
   /**
-   * <p>Describes Spot Instance placement.</p>
+   * <p>Describes Spot instance placement.</p>
    */
   @js.native
   trait SpotPlacement extends js.Object {
@@ -10106,7 +16299,7 @@ package ec2 {
   }
 
   /**
-   * <p>Describes the maximum hourly price (bid) for any Spot Instance launched to fulfill the request.</p>
+   * <p>Describes the maximum hourly price (bid) for any Spot instance launched to fulfill the request.</p>
    */
   @js.native
   trait SpotPrice extends js.Object {
@@ -10137,6 +16330,79 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Describes a stale rule in a security group.</p>
+   */
+  @js.native
+  trait StaleIpPermission extends js.Object {
+    var PrefixListIds: PrefixListIdSet
+    var UserIdGroupPairs: UserIdGroupPairSet
+    var IpRanges: IpRanges
+    var ToPort: Integer
+    var FromPort: Integer
+    var IpProtocol: String
+  }
+
+  object StaleIpPermission {
+    def apply(
+      PrefixListIds: js.UndefOr[PrefixListIdSet] = js.undefined,
+      UserIdGroupPairs: js.UndefOr[UserIdGroupPairSet] = js.undefined,
+      IpRanges: js.UndefOr[IpRanges] = js.undefined,
+      ToPort: js.UndefOr[Integer] = js.undefined,
+      FromPort: js.UndefOr[Integer] = js.undefined,
+      IpProtocol: js.UndefOr[String] = js.undefined
+    ): StaleIpPermission = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("PrefixListIds" -> PrefixListIds.map { x => x: js.Any }),
+        ("UserIdGroupPairs" -> UserIdGroupPairs.map { x => x: js.Any }),
+        ("IpRanges" -> IpRanges.map { x => x: js.Any }),
+        ("ToPort" -> ToPort.map { x => x: js.Any }),
+        ("FromPort" -> FromPort.map { x => x: js.Any }),
+        ("IpProtocol" -> IpProtocol.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StaleIpPermission]
+    }
+  }
+
+  /**
+   * <p>Describes a stale security group (a security group that contains stale rules).</p>
+   */
+  @js.native
+  trait StaleSecurityGroup extends js.Object {
+    var GroupName: String
+    var Description: String
+    var GroupId: String
+    var StaleIpPermissionsEgress: StaleIpPermissionSet
+    var StaleIpPermissions: StaleIpPermissionSet
+    var VpcId: String
+  }
+
+  object StaleSecurityGroup {
+    def apply(
+      GroupName: js.UndefOr[String] = js.undefined,
+      Description: js.UndefOr[String] = js.undefined,
+      GroupId: js.UndefOr[String] = js.undefined,
+      StaleIpPermissionsEgress: js.UndefOr[StaleIpPermissionSet] = js.undefined,
+      StaleIpPermissions: js.UndefOr[StaleIpPermissionSet] = js.undefined,
+      VpcId: js.UndefOr[String] = js.undefined
+    ): StaleSecurityGroup = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("GroupName" -> GroupName.map { x => x: js.Any }),
+        ("Description" -> Description.map { x => x: js.Any }),
+        ("GroupId" -> GroupId.map { x => x: js.Any }),
+        ("StaleIpPermissionsEgress" -> StaleIpPermissionsEgress.map { x => x: js.Any }),
+        ("StaleIpPermissions" -> StaleIpPermissions.map { x => x: js.Any }),
+        ("VpcId" -> VpcId.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StaleSecurityGroup]
+    }
+  }
+
+  /**
+   * <p>Contains the parameters for StartInstances.</p>
+   */
   @js.native
   trait StartInstancesRequest extends js.Object {
     var InstanceIds: InstanceIdStringList
@@ -10160,6 +16426,9 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the output of StartInstances.</p>
+   */
   @js.native
   trait StartInstancesResult extends js.Object {
     var StartingInstances: InstanceStateChangeList
@@ -10175,6 +16444,16 @@ package ec2 {
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StartInstancesResult]
     }
+  }
+
+
+  object StateEnum {
+    val Pending = "Pending"
+    val Available = "Available"
+    val Deleting = "Deleting"
+    val Deleted = "Deleted"
+
+    val values = IndexedSeq(Pending, Available, Deleting, Deleted)
   }
 
   /**
@@ -10201,6 +16480,15 @@ package ec2 {
   }
 
 
+  object StatusEnum {
+    val MoveInProgress = "MoveInProgress"
+    val InVpc = "InVpc"
+    val InClassic = "InClassic"
+
+    val values = IndexedSeq(MoveInProgress, InVpc, InClassic)
+  }
+
+
   object StatusNameEnum {
     val reachability = "reachability"
 
@@ -10212,10 +16500,14 @@ package ec2 {
     val passed = "passed"
     val failed = "failed"
     val `insufficient-data` = "insufficient-data"
+    val initializing = "initializing"
 
-    val values = IndexedSeq(passed, failed, `insufficient-data`)
+    val values = IndexedSeq(passed, failed, `insufficient-data`, initializing)
   }
 
+  /**
+   * <p>Contains the parameters for StopInstances.</p>
+   */
   @js.native
   trait StopInstancesRequest extends js.Object {
     var DryRun: Boolean
@@ -10239,6 +16531,9 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the output of StopInstances.</p>
+   */
   @js.native
   trait StopInstancesResult extends js.Object {
     var StoppingInstances: InstanceStateChangeList
@@ -10283,7 +16578,9 @@ package ec2 {
   trait Subnet extends js.Object {
     var CidrBlock: String
     var AvailabilityZone: String
+    var Ipv6CidrBlockAssociationSet: SubnetIpv6CidrBlockAssociationSet
     var Tags: TagList
+    var AssignIpv6AddressOnCreation: Boolean
     var DefaultForAz: Boolean
     var AvailableIpAddressCount: Integer
     var MapPublicIpOnLaunch: Boolean
@@ -10296,7 +16593,9 @@ package ec2 {
     def apply(
       CidrBlock: js.UndefOr[String] = js.undefined,
       AvailabilityZone: js.UndefOr[String] = js.undefined,
+      Ipv6CidrBlockAssociationSet: js.UndefOr[SubnetIpv6CidrBlockAssociationSet] = js.undefined,
       Tags: js.UndefOr[TagList] = js.undefined,
+      AssignIpv6AddressOnCreation: js.UndefOr[Boolean] = js.undefined,
       DefaultForAz: js.UndefOr[Boolean] = js.undefined,
       AvailableIpAddressCount: js.UndefOr[Integer] = js.undefined,
       MapPublicIpOnLaunch: js.UndefOr[Boolean] = js.undefined,
@@ -10307,7 +16606,9 @@ package ec2 {
       val _fields = IndexedSeq[(String, js.Any)](
         ("CidrBlock" -> CidrBlock.map { x => x: js.Any }),
         ("AvailabilityZone" -> AvailabilityZone.map { x => x: js.Any }),
+        ("Ipv6CidrBlockAssociationSet" -> Ipv6CidrBlockAssociationSet.map { x => x: js.Any }),
         ("Tags" -> Tags.map { x => x: js.Any }),
+        ("AssignIpv6AddressOnCreation" -> AssignIpv6AddressOnCreation.map { x => x: js.Any }),
         ("DefaultForAz" -> DefaultForAz.map { x => x: js.Any }),
         ("AvailableIpAddressCount" -> AvailableIpAddressCount.map { x => x: js.Any }),
         ("MapPublicIpOnLaunch" -> MapPublicIpOnLaunch.map { x => x: js.Any }),
@@ -10317,6 +16618,67 @@ package ec2 {
       ).filter(_._2 != js.undefined)
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Subnet]
+    }
+  }
+
+  /**
+   * <p>Describes the state of a CIDR block.</p>
+   */
+  @js.native
+  trait SubnetCidrBlockState extends js.Object {
+    var State: SubnetCidrBlockStateCode
+    var StatusMessage: String
+  }
+
+  object SubnetCidrBlockState {
+    def apply(
+      State: js.UndefOr[SubnetCidrBlockStateCode] = js.undefined,
+      StatusMessage: js.UndefOr[String] = js.undefined
+    ): SubnetCidrBlockState = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("State" -> State.map { x => x: js.Any }),
+        ("StatusMessage" -> StatusMessage.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SubnetCidrBlockState]
+    }
+  }
+
+
+  object SubnetCidrBlockStateCodeEnum {
+    val associating = "associating"
+    val associated = "associated"
+    val disassociating = "disassociating"
+    val disassociated = "disassociated"
+    val failing = "failing"
+    val failed = "failed"
+
+    val values = IndexedSeq(associating, associated, disassociating, disassociated, failing, failed)
+  }
+
+  /**
+   * <p>Describes an IPv6 CIDR block associated with a subnet.</p>
+   */
+  @js.native
+  trait SubnetIpv6CidrBlockAssociation extends js.Object {
+    var Ipv6CidrBlock: String
+    var Ipv6CidrBlockState: SubnetCidrBlockState
+    var AssociationId: String
+  }
+
+  object SubnetIpv6CidrBlockAssociation {
+    def apply(
+      Ipv6CidrBlock: js.UndefOr[String] = js.undefined,
+      Ipv6CidrBlockState: js.UndefOr[SubnetCidrBlockState] = js.undefined,
+      AssociationId: js.UndefOr[String] = js.undefined
+    ): SubnetIpv6CidrBlockAssociation = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("Ipv6CidrBlock" -> Ipv6CidrBlock.map { x => x: js.Any }),
+        ("Ipv6CidrBlockState" -> Ipv6CidrBlockState.map { x => x: js.Any }),
+        ("AssociationId" -> AssociationId.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SubnetIpv6CidrBlockAssociation]
     }
   }
 
@@ -10334,8 +16696,9 @@ package ec2 {
     val impaired = "impaired"
     val `insufficient-data` = "insufficient-data"
     val `not-applicable` = "not-applicable"
+    val initializing = "initializing"
 
-    val values = IndexedSeq(ok, impaired, `insufficient-data`, `not-applicable`)
+    val values = IndexedSeq(ok, impaired, `insufficient-data`, `not-applicable`, initializing)
   }
 
   /**
@@ -10390,6 +16753,75 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Information about the Convertible Reserved Instance offering.</p>
+   */
+  @js.native
+  trait TargetConfiguration extends js.Object {
+    var OfferingId: String
+    var InstanceCount: Integer
+  }
+
+  object TargetConfiguration {
+    def apply(
+      OfferingId: js.UndefOr[String] = js.undefined,
+      InstanceCount: js.UndefOr[Integer] = js.undefined
+    ): TargetConfiguration = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("OfferingId" -> OfferingId.map { x => x: js.Any }),
+        ("InstanceCount" -> InstanceCount.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TargetConfiguration]
+    }
+  }
+
+  /**
+   * <p>Details about the target configuration.</p>
+   */
+  @js.native
+  trait TargetConfigurationRequest extends js.Object {
+    var OfferingId: String
+    var InstanceCount: Integer
+  }
+
+  object TargetConfigurationRequest {
+    def apply(
+      OfferingId: js.UndefOr[String] = js.undefined,
+      InstanceCount: js.UndefOr[Integer] = js.undefined
+    ): TargetConfigurationRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("OfferingId" -> OfferingId.map { x => x: js.Any }),
+        ("InstanceCount" -> InstanceCount.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TargetConfigurationRequest]
+    }
+  }
+
+  /**
+   * <p>The total value of the new Convertible Reserved Instances.</p>
+   */
+  @js.native
+  trait TargetReservationValue extends js.Object {
+    var TargetConfiguration: TargetConfiguration
+    var ReservationValue: ReservationValue
+  }
+
+  object TargetReservationValue {
+    def apply(
+      TargetConfiguration: js.UndefOr[TargetConfiguration] = js.undefined,
+      ReservationValue: js.UndefOr[ReservationValue] = js.undefined
+    ): TargetReservationValue = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("TargetConfiguration" -> TargetConfiguration.map { x => x: js.Any }),
+        ("ReservationValue" -> ReservationValue.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TargetReservationValue]
+    }
+  }
+
 
   object TelemetryStatusEnum {
     val UP = "UP"
@@ -10402,10 +16834,14 @@ package ec2 {
   object TenancyEnum {
     val default = "default"
     val dedicated = "dedicated"
+    val host = "host"
 
-    val values = IndexedSeq(default, dedicated)
+    val values = IndexedSeq(default, dedicated, host)
   }
 
+  /**
+   * <p>Contains the parameters for TerminateInstances.</p>
+   */
   @js.native
   trait TerminateInstancesRequest extends js.Object {
     var DryRun: Boolean
@@ -10426,6 +16862,9 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the output of TerminateInstances.</p>
+   */
   @js.native
   trait TerminateInstancesResult extends js.Object {
     var TerminatingInstances: InstanceStateChangeList
@@ -10443,6 +16882,58 @@ package ec2 {
     }
   }
 
+
+  object TrafficTypeEnum {
+    val ACCEPT = "ACCEPT"
+    val REJECT = "REJECT"
+    val ALL = "ALL"
+
+    val values = IndexedSeq(ACCEPT, REJECT, ALL)
+  }
+
+  @js.native
+  trait UnassignIpv6AddressesRequest extends js.Object {
+    var NetworkInterfaceId: String
+    var Ipv6Addresses: Ipv6AddressList
+  }
+
+  object UnassignIpv6AddressesRequest {
+    def apply(
+      NetworkInterfaceId: js.UndefOr[String] = js.undefined,
+      Ipv6Addresses: js.UndefOr[Ipv6AddressList] = js.undefined
+    ): UnassignIpv6AddressesRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("NetworkInterfaceId" -> NetworkInterfaceId.map { x => x: js.Any }),
+        ("Ipv6Addresses" -> Ipv6Addresses.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UnassignIpv6AddressesRequest]
+    }
+  }
+
+  @js.native
+  trait UnassignIpv6AddressesResult extends js.Object {
+    var NetworkInterfaceId: String
+    var UnassignedIpv6Addresses: Ipv6AddressList
+  }
+
+  object UnassignIpv6AddressesResult {
+    def apply(
+      NetworkInterfaceId: js.UndefOr[String] = js.undefined,
+      UnassignedIpv6Addresses: js.UndefOr[Ipv6AddressList] = js.undefined
+    ): UnassignIpv6AddressesResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("NetworkInterfaceId" -> NetworkInterfaceId.map { x => x: js.Any }),
+        ("UnassignedIpv6Addresses" -> UnassignedIpv6Addresses.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UnassignIpv6AddressesResult]
+    }
+  }
+
+  /**
+   * <p>Contains the parameters for UnassignPrivateIpAddresses.</p>
+   */
   @js.native
   trait UnassignPrivateIpAddressesRequest extends js.Object {
     var NetworkInterfaceId: String
@@ -10463,6 +16954,9 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the parameters for UnmonitorInstances.</p>
+   */
   @js.native
   trait UnmonitorInstancesRequest extends js.Object {
     var DryRun: Boolean
@@ -10483,6 +16977,9 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Contains the output of UnmonitorInstances.</p>
+   */
   @js.native
   trait UnmonitorInstancesResult extends js.Object {
     var InstanceMonitorings: InstanceMonitoringList
@@ -10500,6 +16997,101 @@ package ec2 {
     }
   }
 
+  /**
+   * <p>Information about items that were not successfully processed in a batch call.</p>
+   */
+  @js.native
+  trait UnsuccessfulItem extends js.Object {
+    var ResourceId: String
+    var Error: UnsuccessfulItemError
+  }
+
+  object UnsuccessfulItem {
+    def apply(
+      ResourceId: js.UndefOr[String] = js.undefined,
+      Error: js.UndefOr[UnsuccessfulItemError] = js.undefined
+    ): UnsuccessfulItem = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("ResourceId" -> ResourceId.map { x => x: js.Any }),
+        ("Error" -> Error.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UnsuccessfulItem]
+    }
+  }
+
+  /**
+   * <p>Information about the error that occurred. For more information about errors, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html">Error Codes</a>.</p>
+   */
+  @js.native
+  trait UnsuccessfulItemError extends js.Object {
+    var Code: String
+    var Message: String
+  }
+
+  object UnsuccessfulItemError {
+    def apply(
+      Code: js.UndefOr[String] = js.undefined,
+      Message: js.UndefOr[String] = js.undefined
+    ): UnsuccessfulItemError = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("Code" -> Code.map { x => x: js.Any }),
+        ("Message" -> Message.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UnsuccessfulItemError]
+    }
+  }
+
+  /**
+   * <p>Describes the S3 bucket for the disk image.</p>
+   */
+  @js.native
+  trait UserBucket extends js.Object {
+    var S3Bucket: String
+    var S3Key: String
+  }
+
+  object UserBucket {
+    def apply(
+      S3Bucket: js.UndefOr[String] = js.undefined,
+      S3Key: js.UndefOr[String] = js.undefined
+    ): UserBucket = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("S3Bucket" -> S3Bucket.map { x => x: js.Any }),
+        ("S3Key" -> S3Key.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UserBucket]
+    }
+  }
+
+  /**
+   * <p>Describes the S3 bucket for the disk image.</p>
+   */
+  @js.native
+  trait UserBucketDetails extends js.Object {
+    var S3Bucket: String
+    var S3Key: String
+  }
+
+  object UserBucketDetails {
+    def apply(
+      S3Bucket: js.UndefOr[String] = js.undefined,
+      S3Key: js.UndefOr[String] = js.undefined
+    ): UserBucketDetails = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("S3Bucket" -> S3Bucket.map { x => x: js.Any }),
+        ("S3Key" -> S3Key.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UserBucketDetails]
+    }
+  }
+
+  /**
+   * <p>Describes the user data for an instance.</p>
+   */
   @js.native
   trait UserData extends js.Object {
     var Data: String
@@ -10518,25 +17110,34 @@ package ec2 {
   }
 
   /**
-   * <p>Describes a security group and AWS account ID pair. </p>
+   * <p>Describes a security group and AWS account ID pair.</p>
    */
   @js.native
   trait UserIdGroupPair extends js.Object {
-    var UserId: String
+    var VpcPeeringConnectionId: String
     var GroupName: String
     var GroupId: String
+    var PeeringStatus: String
+    var UserId: String
+    var VpcId: String
   }
 
   object UserIdGroupPair {
     def apply(
-      UserId: js.UndefOr[String] = js.undefined,
+      VpcPeeringConnectionId: js.UndefOr[String] = js.undefined,
       GroupName: js.UndefOr[String] = js.undefined,
-      GroupId: js.UndefOr[String] = js.undefined
+      GroupId: js.UndefOr[String] = js.undefined,
+      PeeringStatus: js.UndefOr[String] = js.undefined,
+      UserId: js.UndefOr[String] = js.undefined,
+      VpcId: js.UndefOr[String] = js.undefined
     ): UserIdGroupPair = {
       val _fields = IndexedSeq[(String, js.Any)](
-        ("UserId" -> UserId.map { x => x: js.Any }),
+        ("VpcPeeringConnectionId" -> VpcPeeringConnectionId.map { x => x: js.Any }),
         ("GroupName" -> GroupName.map { x => x: js.Any }),
-        ("GroupId" -> GroupId.map { x => x: js.Any })
+        ("GroupId" -> GroupId.map { x => x: js.Any }),
+        ("PeeringStatus" -> PeeringStatus.map { x => x: js.Any }),
+        ("UserId" -> UserId.map { x => x: js.Any }),
+        ("VpcId" -> VpcId.map { x => x: js.Any })
       ).filter(_._2 != js.undefined)
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UserIdGroupPair]
@@ -10690,7 +17291,7 @@ package ec2 {
   }
 
   /**
-   * <p>Describes an Amazon EBS volume.</p>
+   * <p>Describes an EBS volume.</p>
    */
   @js.native
   trait VolumeDetail extends js.Object {
@@ -10882,8 +17483,10 @@ package ec2 {
     val standard = "standard"
     val io1 = "io1"
     val gp2 = "gp2"
+    val sc1 = "sc1"
+    val st1 = "st1"
 
-    val values = IndexedSeq(standard, io1, gp2)
+    val values = IndexedSeq(standard, io1, gp2, sc1, st1)
   }
 
   /**
@@ -10893,6 +17496,7 @@ package ec2 {
   trait Vpc extends js.Object {
     var DhcpOptionsId: String
     var CidrBlock: String
+    var Ipv6CidrBlockAssociationSet: VpcIpv6CidrBlockAssociationSet
     var Tags: TagList
     var State: VpcState
     var IsDefault: Boolean
@@ -10904,6 +17508,7 @@ package ec2 {
     def apply(
       DhcpOptionsId: js.UndefOr[String] = js.undefined,
       CidrBlock: js.UndefOr[String] = js.undefined,
+      Ipv6CidrBlockAssociationSet: js.UndefOr[VpcIpv6CidrBlockAssociationSet] = js.undefined,
       Tags: js.UndefOr[TagList] = js.undefined,
       State: js.UndefOr[VpcState] = js.undefined,
       IsDefault: js.UndefOr[Boolean] = js.undefined,
@@ -10913,6 +17518,7 @@ package ec2 {
       val _fields = IndexedSeq[(String, js.Any)](
         ("DhcpOptionsId" -> DhcpOptionsId.map { x => x: js.Any }),
         ("CidrBlock" -> CidrBlock.map { x => x: js.Any }),
+        ("Ipv6CidrBlockAssociationSet" -> Ipv6CidrBlockAssociationSet.map { x => x: js.Any }),
         ("Tags" -> Tags.map { x => x: js.Any }),
         ("State" -> State.map { x => x: js.Any }),
         ("IsDefault" -> IsDefault.map { x => x: js.Any }),
@@ -10956,6 +17562,41 @@ package ec2 {
   }
 
   /**
+   * <p>Describes the state of a CIDR block.</p>
+   */
+  @js.native
+  trait VpcCidrBlockState extends js.Object {
+    var State: VpcCidrBlockStateCode
+    var StatusMessage: String
+  }
+
+  object VpcCidrBlockState {
+    def apply(
+      State: js.UndefOr[VpcCidrBlockStateCode] = js.undefined,
+      StatusMessage: js.UndefOr[String] = js.undefined
+    ): VpcCidrBlockState = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("State" -> State.map { x => x: js.Any }),
+        ("StatusMessage" -> StatusMessage.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[VpcCidrBlockState]
+    }
+  }
+
+
+  object VpcCidrBlockStateCodeEnum {
+    val associating = "associating"
+    val associated = "associated"
+    val disassociating = "disassociating"
+    val disassociated = "disassociated"
+    val failing = "failing"
+    val failed = "failed"
+
+    val values = IndexedSeq(associating, associated, disassociating, disassociated, failing, failed)
+  }
+
+  /**
    * <p>Describes whether a VPC is enabled for ClassicLink.</p>
    */
   @js.native
@@ -10978,6 +17619,70 @@ package ec2 {
       ).filter(_._2 != js.undefined)
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[VpcClassicLink]
+    }
+  }
+
+  /**
+   * <p>Describes a VPC endpoint.</p>
+   */
+  @js.native
+  trait VpcEndpoint extends js.Object {
+    var ServiceName: String
+    var VpcEndpointId: String
+    var PolicyDocument: String
+    var RouteTableIds: ValueStringList
+    var CreationTimestamp: DateTime
+    var State: State
+    var VpcId: String
+  }
+
+  object VpcEndpoint {
+    def apply(
+      ServiceName: js.UndefOr[String] = js.undefined,
+      VpcEndpointId: js.UndefOr[String] = js.undefined,
+      PolicyDocument: js.UndefOr[String] = js.undefined,
+      RouteTableIds: js.UndefOr[ValueStringList] = js.undefined,
+      CreationTimestamp: js.UndefOr[DateTime] = js.undefined,
+      State: js.UndefOr[State] = js.undefined,
+      VpcId: js.UndefOr[String] = js.undefined
+    ): VpcEndpoint = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("ServiceName" -> ServiceName.map { x => x: js.Any }),
+        ("VpcEndpointId" -> VpcEndpointId.map { x => x: js.Any }),
+        ("PolicyDocument" -> PolicyDocument.map { x => x: js.Any }),
+        ("RouteTableIds" -> RouteTableIds.map { x => x: js.Any }),
+        ("CreationTimestamp" -> CreationTimestamp.map { x => x: js.Any }),
+        ("State" -> State.map { x => x: js.Any }),
+        ("VpcId" -> VpcId.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[VpcEndpoint]
+    }
+  }
+
+  /**
+   * <p>Describes an IPv6 CIDR block associated with a VPC.</p>
+   */
+  @js.native
+  trait VpcIpv6CidrBlockAssociation extends js.Object {
+    var Ipv6CidrBlock: String
+    var Ipv6CidrBlockState: VpcCidrBlockState
+    var AssociationId: String
+  }
+
+  object VpcIpv6CidrBlockAssociation {
+    def apply(
+      Ipv6CidrBlock: js.UndefOr[String] = js.undefined,
+      Ipv6CidrBlockState: js.UndefOr[VpcCidrBlockState] = js.undefined,
+      AssociationId: js.UndefOr[String] = js.undefined
+    ): VpcIpv6CidrBlockAssociation = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("Ipv6CidrBlock" -> Ipv6CidrBlock.map { x => x: js.Any }),
+        ("Ipv6CidrBlockState" -> Ipv6CidrBlockState.map { x => x: js.Any }),
+        ("AssociationId" -> AssociationId.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[VpcIpv6CidrBlockAssociation]
     }
   }
 
@@ -11017,17 +17722,43 @@ package ec2 {
   }
 
   /**
+   * <p>Describes the VPC peering connection options.</p>
+   */
+  @js.native
+  trait VpcPeeringConnectionOptionsDescription extends js.Object {
+    var AllowEgressFromLocalClassicLinkToRemoteVpc: Boolean
+    var AllowEgressFromLocalVpcToRemoteClassicLink: Boolean
+    var AllowDnsResolutionFromRemoteVpc: Boolean
+  }
+
+  object VpcPeeringConnectionOptionsDescription {
+    def apply(
+      AllowEgressFromLocalClassicLinkToRemoteVpc: js.UndefOr[Boolean] = js.undefined,
+      AllowEgressFromLocalVpcToRemoteClassicLink: js.UndefOr[Boolean] = js.undefined,
+      AllowDnsResolutionFromRemoteVpc: js.UndefOr[Boolean] = js.undefined
+    ): VpcPeeringConnectionOptionsDescription = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("AllowEgressFromLocalClassicLinkToRemoteVpc" -> AllowEgressFromLocalClassicLinkToRemoteVpc.map { x => x: js.Any }),
+        ("AllowEgressFromLocalVpcToRemoteClassicLink" -> AllowEgressFromLocalVpcToRemoteClassicLink.map { x => x: js.Any }),
+        ("AllowDnsResolutionFromRemoteVpc" -> AllowDnsResolutionFromRemoteVpc.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[VpcPeeringConnectionOptionsDescription]
+    }
+  }
+
+  /**
    * <p>Describes the status of a VPC peering connection.</p>
    */
   @js.native
   trait VpcPeeringConnectionStateReason extends js.Object {
-    var Code: String
+    var Code: VpcPeeringConnectionStateReasonCode
     var Message: String
   }
 
   object VpcPeeringConnectionStateReason {
     def apply(
-      Code: js.UndefOr[String] = js.undefined,
+      Code: js.UndefOr[VpcPeeringConnectionStateReasonCode] = js.undefined,
       Message: js.UndefOr[String] = js.undefined
     ): VpcPeeringConnectionStateReason = {
       val _fields = IndexedSeq[(String, js.Any)](
@@ -11039,25 +17770,46 @@ package ec2 {
     }
   }
 
+
+  object VpcPeeringConnectionStateReasonCodeEnum {
+    val `initiating-request` = "initiating-request"
+    val `pending-acceptance` = "pending-acceptance"
+    val active = "active"
+    val deleted = "deleted"
+    val rejected = "rejected"
+    val failed = "failed"
+    val expired = "expired"
+    val provisioning = "provisioning"
+    val deleting = "deleting"
+
+    val values = IndexedSeq(`initiating-request`, `pending-acceptance`, active, deleted, rejected, failed, expired, provisioning, deleting)
+  }
+
   /**
    * <p>Describes a VPC in a VPC peering connection.</p>
    */
   @js.native
   trait VpcPeeringConnectionVpcInfo extends js.Object {
     var CidrBlock: String
+    var PeeringOptions: VpcPeeringConnectionOptionsDescription
     var OwnerId: String
+    var Ipv6CidrBlockSet: Ipv6CidrBlockSet
     var VpcId: String
   }
 
   object VpcPeeringConnectionVpcInfo {
     def apply(
       CidrBlock: js.UndefOr[String] = js.undefined,
+      PeeringOptions: js.UndefOr[VpcPeeringConnectionOptionsDescription] = js.undefined,
       OwnerId: js.UndefOr[String] = js.undefined,
+      Ipv6CidrBlockSet: js.UndefOr[Ipv6CidrBlockSet] = js.undefined,
       VpcId: js.UndefOr[String] = js.undefined
     ): VpcPeeringConnectionVpcInfo = {
       val _fields = IndexedSeq[(String, js.Any)](
         ("CidrBlock" -> CidrBlock.map { x => x: js.Any }),
+        ("PeeringOptions" -> PeeringOptions.map { x => x: js.Any }),
         ("OwnerId" -> OwnerId.map { x => x: js.Any }),
+        ("Ipv6CidrBlockSet" -> Ipv6CidrBlockSet.map { x => x: js.Any }),
         ("VpcId" -> VpcId.map { x => x: js.Any })
       ).filter(_._2 != js.undefined)
 
@@ -11236,5 +17988,13 @@ package ec2 {
     val Static = "Static"
 
     val values = IndexedSeq(Static)
+  }
+
+
+  object scopeEnum {
+    val `Availability Zone` = "Availability Zone"
+    val Region = "Region"
+
+    val values = IndexedSeq(`Availability Zone`, Region)
   }
 }

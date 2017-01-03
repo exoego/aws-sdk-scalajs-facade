@@ -9,11 +9,15 @@ package object elastictranscoder {
   type Artworks = js.Array[Artwork]
   type Ascending = String
   type AspectRatio = String
+  type AudioBitDepth = String
+  type AudioBitOrder = String
   type AudioBitRate = String
   type AudioChannels = String
   type AudioCodec = String
   type AudioCodecProfile = String
+  type AudioPackingMode = String
   type AudioSampleRate = String
+  type AudioSigned = String
   type Base64EncodedString = String
   type BucketName = String
   type CaptionFormatFormat = String
@@ -42,6 +46,7 @@ package object elastictranscoder {
   type Id = String
   type Interlaced = String
   type JobContainer = String
+  type JobInputs = js.Array[JobInput]
   type JobOutputs = js.Array[JobOutput]
   type JobStatus = String
   type JobWatermarks = js.Array[JobWatermark]
@@ -52,6 +57,7 @@ package object elastictranscoder {
   type KeyIdGuid = String
   type KeyStoragePolicy = String
   type KeyframesMaxDist = String
+  type LongKey = String
   type MaxFrameRate = String
   type MergePolicy = String
   type Name = String
@@ -138,7 +144,7 @@ package elastictranscoder {
   }
 
   /**
-   * <p> General authentication failure. The request was not signed correctly. </p>
+   * <p>General authentication failure. The request was not signed correctly.</p>
    */
   @js.native
   trait AccessDeniedExceptionException extends js.Object {
@@ -189,14 +195,23 @@ package elastictranscoder {
   @js.native
   trait AudioCodecOptions extends js.Object {
     var Profile: AudioCodecProfile
+    var BitDepth: AudioBitDepth
+    var BitOrder: AudioBitOrder
+    var Signed: AudioSigned
   }
 
   object AudioCodecOptions {
     def apply(
-      Profile: js.UndefOr[AudioCodecProfile] = js.undefined
+      Profile: js.UndefOr[AudioCodecProfile] = js.undefined,
+      BitDepth: js.UndefOr[AudioBitDepth] = js.undefined,
+      BitOrder: js.UndefOr[AudioBitOrder] = js.undefined,
+      Signed: js.UndefOr[AudioSigned] = js.undefined
     ): AudioCodecOptions = {
       val _fields = IndexedSeq[(String, js.Any)](
-        ("Profile" -> Profile.map { x => x: js.Any })
+        ("Profile" -> Profile.map { x => x: js.Any }),
+        ("BitDepth" -> BitDepth.map { x => x: js.Any }),
+        ("BitOrder" -> BitOrder.map { x => x: js.Any }),
+        ("Signed" -> Signed.map { x => x: js.Any })
       ).filter(_._2 != js.undefined)
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AudioCodecOptions]
@@ -213,6 +228,7 @@ package elastictranscoder {
     var Channels: AudioChannels
     var Codec: AudioCodec
     var SampleRate: AudioSampleRate
+    var AudioPackingMode: AudioPackingMode
   }
 
   object AudioParameters {
@@ -221,14 +237,16 @@ package elastictranscoder {
       CodecOptions: js.UndefOr[AudioCodecOptions] = js.undefined,
       Channels: js.UndefOr[AudioChannels] = js.undefined,
       Codec: js.UndefOr[AudioCodec] = js.undefined,
-      SampleRate: js.UndefOr[AudioSampleRate] = js.undefined
+      SampleRate: js.UndefOr[AudioSampleRate] = js.undefined,
+      AudioPackingMode: js.UndefOr[AudioPackingMode] = js.undefined
     ): AudioParameters = {
       val _fields = IndexedSeq[(String, js.Any)](
         ("BitRate" -> BitRate.map { x => x: js.Any }),
         ("CodecOptions" -> CodecOptions.map { x => x: js.Any }),
         ("Channels" -> Channels.map { x => x: js.Any }),
         ("Codec" -> Codec.map { x => x: js.Any }),
-        ("SampleRate" -> SampleRate.map { x => x: js.Any })
+        ("SampleRate" -> SampleRate.map { x => x: js.Any }),
+        ("AudioPackingMode" -> AudioPackingMode.map { x => x: js.Any })
       ).filter(_._2 != js.undefined)
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AudioParameters]
@@ -310,7 +328,7 @@ package elastictranscoder {
     var Language: Key
     var Label: Name
     var Encryption: Encryption
-    var Key: Key
+    var Key: LongKey
   }
 
   object CaptionSource {
@@ -319,7 +337,7 @@ package elastictranscoder {
       Language: js.UndefOr[Key] = js.undefined,
       Label: js.UndefOr[Name] = js.undefined,
       Encryption: js.UndefOr[Encryption] = js.undefined,
-      Key: js.UndefOr[Key] = js.undefined
+      Key: js.UndefOr[LongKey] = js.undefined
     ): CaptionSource = {
       val _fields = IndexedSeq[(String, js.Any)](
         ("TimeOffset" -> TimeOffset.map { x => x: js.Any }),
@@ -362,6 +380,7 @@ package elastictranscoder {
   /**
    * <p>Settings for one clip in a composition. All jobs in a playlist must have the same clip settings.</p>
    */
+  @deprecated
   @js.native
   trait Clip extends js.Object {
     var TimeSpan: TimeSpan
@@ -469,6 +488,7 @@ package elastictranscoder {
     var Playlists: CreateJobPlaylists
     var PipelineId: Id
     var UserMetadata: UserMetadata
+    var Inputs: JobInputs
     var OutputKeyPrefix: Key
     var Input: JobInput
     var Output: CreateJobOutput
@@ -480,6 +500,7 @@ package elastictranscoder {
       Playlists: js.UndefOr[CreateJobPlaylists] = js.undefined,
       PipelineId: js.UndefOr[Id] = js.undefined,
       UserMetadata: js.UndefOr[UserMetadata] = js.undefined,
+      Inputs: js.UndefOr[JobInputs] = js.undefined,
       OutputKeyPrefix: js.UndefOr[Key] = js.undefined,
       Input: js.UndefOr[JobInput] = js.undefined,
       Output: js.UndefOr[CreateJobOutput] = js.undefined,
@@ -489,6 +510,7 @@ package elastictranscoder {
         ("Playlists" -> Playlists.map { x => x: js.Any }),
         ("PipelineId" -> PipelineId.map { x => x: js.Any }),
         ("UserMetadata" -> UserMetadata.map { x => x: js.Any }),
+        ("Inputs" -> Inputs.map { x => x: js.Any }),
         ("OutputKeyPrefix" -> OutputKeyPrefix.map { x => x: js.Any }),
         ("Input" -> Input.map { x => x: js.Any }),
         ("Output" -> Output.map { x => x: js.Any }),
@@ -754,7 +776,7 @@ package elastictranscoder {
   }
 
   /**
-   * <p>The encryption settings, if any, that are used for decrypting your input files or encrypting your output files. If your input file is encrypted, you must specify the mode that Elastic Transcoder will use to decrypt your file, otherwise you must specify the mode you want Elastic Transcoder to use to encrypt your output files.</p>
+   * <p>The encryption settings, if any, that are used for decrypting your input files or encrypting your output files. If your input file is encrypted, you must specify the mode that Elastic Transcoder uses to decrypt your file, otherwise you must specify the mode you want Elastic Transcoder to use to encrypt your output files.</p>
    */
   @js.native
   trait Encryption extends js.Object {
@@ -823,6 +845,29 @@ package elastictranscoder {
   }
 
   /**
+   * <p>The captions to be created, if any.</p>
+   */
+  @js.native
+  trait InputCaptions extends js.Object {
+    var MergePolicy: CaptionMergePolicy
+    var CaptionSources: CaptionSources
+  }
+
+  object InputCaptions {
+    def apply(
+      MergePolicy: js.UndefOr[CaptionMergePolicy] = js.undefined,
+      CaptionSources: js.UndefOr[CaptionSources] = js.undefined
+    ): InputCaptions = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("MergePolicy" -> MergePolicy.map { x => x: js.Any }),
+        ("CaptionSources" -> CaptionSources.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[InputCaptions]
+    }
+  }
+
+  /**
    * <p>Elastic Transcoder encountered an unexpected exception while trying to fulfill the request.</p>
    */
   @js.native
@@ -839,6 +884,7 @@ package elastictranscoder {
     var Playlists: Playlists
     var PipelineId: Id
     var UserMetadata: UserMetadata
+    var Inputs: JobInputs
     var OutputKeyPrefix: Key
     var Arn: String
     var Input: JobInput
@@ -854,6 +900,7 @@ package elastictranscoder {
       Playlists: js.UndefOr[Playlists] = js.undefined,
       PipelineId: js.UndefOr[Id] = js.undefined,
       UserMetadata: js.UndefOr[UserMetadata] = js.undefined,
+      Inputs: js.UndefOr[JobInputs] = js.undefined,
       OutputKeyPrefix: js.UndefOr[Key] = js.undefined,
       Arn: js.UndefOr[String] = js.undefined,
       Input: js.UndefOr[JobInput] = js.undefined,
@@ -867,6 +914,7 @@ package elastictranscoder {
         ("Playlists" -> Playlists.map { x => x: js.Any }),
         ("PipelineId" -> PipelineId.map { x => x: js.Any }),
         ("UserMetadata" -> UserMetadata.map { x => x: js.Any }),
+        ("Inputs" -> Inputs.map { x => x: js.Any }),
         ("OutputKeyPrefix" -> OutputKeyPrefix.map { x => x: js.Any }),
         ("Arn" -> Arn.map { x => x: js.Any }),
         ("Input" -> Input.map { x => x: js.Any }),
@@ -912,10 +960,12 @@ package elastictranscoder {
     var Interlaced: Interlaced
     var Container: JobContainer
     var AspectRatio: AspectRatio
+    var TimeSpan: TimeSpan
     var DetectedProperties: DetectedProperties
+    var InputCaptions: InputCaptions
     var Encryption: Encryption
     var FrameRate: FrameRate
-    var Key: Key
+    var Key: LongKey
   }
 
   object JobInput {
@@ -924,17 +974,21 @@ package elastictranscoder {
       Interlaced: js.UndefOr[Interlaced] = js.undefined,
       Container: js.UndefOr[JobContainer] = js.undefined,
       AspectRatio: js.UndefOr[AspectRatio] = js.undefined,
+      TimeSpan: js.UndefOr[TimeSpan] = js.undefined,
       DetectedProperties: js.UndefOr[DetectedProperties] = js.undefined,
+      InputCaptions: js.UndefOr[InputCaptions] = js.undefined,
       Encryption: js.UndefOr[Encryption] = js.undefined,
       FrameRate: js.UndefOr[FrameRate] = js.undefined,
-      Key: js.UndefOr[Key] = js.undefined
+      Key: js.UndefOr[LongKey] = js.undefined
     ): JobInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         ("Resolution" -> Resolution.map { x => x: js.Any }),
         ("Interlaced" -> Interlaced.map { x => x: js.Any }),
         ("Container" -> Container.map { x => x: js.Any }),
         ("AspectRatio" -> AspectRatio.map { x => x: js.Any }),
+        ("TimeSpan" -> TimeSpan.map { x => x: js.Any }),
         ("DetectedProperties" -> DetectedProperties.map { x => x: js.Any }),
+        ("InputCaptions" -> InputCaptions.map { x => x: js.Any }),
         ("Encryption" -> Encryption.map { x => x: js.Any }),
         ("FrameRate" -> FrameRate.map { x => x: js.Any }),
         ("Key" -> Key.map { x => x: js.Any })
@@ -945,7 +999,7 @@ package elastictranscoder {
   }
 
   /**
-   * <p><important>Outputs recommended instead.</important>If you specified one output for a job, information about that output. If you specified multiple outputs for a job, the <code>Output</code> object lists information about the first output. This duplicates the information that is listed for the first output in the <code>Outputs</code> object.</p>
+   * <important> <p>Outputs recommended instead.</p> </important> <p>If you specified one output for a job, information about that output. If you specified multiple outputs for a job, the <code>Output</code> object lists information about the first output. This duplicates the information that is listed for the first output in the <code>Outputs</code> object.</p>
    */
   @js.native
   trait JobOutput extends js.Object {
@@ -1249,7 +1303,7 @@ package elastictranscoder {
   }
 
   /**
-   * <p>The Amazon Simple Notification Service (Amazon SNS) topic or topics to notify in order to report job status.</p> <important>To receive notifications, you must also subscribe to the new topic in the Amazon SNS console.</important>
+   * <p>The Amazon Simple Notification Service (Amazon SNS) topic or topics to notify in order to report job status.</p> <important> <p>To receive notifications, you must also subscribe to the new topic in the Amazon SNS console.</p> </important>
    */
   @js.native
   trait Notifications extends js.Object {
@@ -1667,7 +1721,7 @@ package elastictranscoder {
   }
 
   /**
-   * <p> The resource you are attempting to change is in use. For example, you are attempting to delete a pipeline that is currently in use. </p>
+   * <p>The resource you are attempting to change is in use. For example, you are attempting to delete a pipeline that is currently in use.</p>
    */
   @js.native
   trait ResourceInUseExceptionException extends js.Object {
@@ -1675,7 +1729,7 @@ package elastictranscoder {
   }
 
   /**
-   * <p> The requested resource does not exist or is not available. For example, the pipeline to which you're trying to add a job doesn't exist or is still being created. </p>
+   * <p>The requested resource does not exist or is not available. For example, the pipeline to which you're trying to add a job doesn't exist or is still being created.</p>
    */
   @js.native
   trait ResourceNotFoundExceptionException extends js.Object {
@@ -1685,6 +1739,7 @@ package elastictranscoder {
   /**
    * <p> The <code>TestRoleRequest</code> structure. </p>
    */
+  @deprecated
   @js.native
   trait TestRoleRequest extends js.Object {
     var Role: Role
@@ -1714,6 +1769,7 @@ package elastictranscoder {
   /**
    * <p>The <code>TestRoleResponse</code> structure.</p>
    */
+  @deprecated
   @js.native
   trait TestRoleResponse extends js.Object {
     var Success: Success
@@ -1909,7 +1965,7 @@ package elastictranscoder {
   }
 
   /**
-   * <p>When you update a pipeline, Elastic Transcoder returns the values that you specified in the request. </p>
+   * <p>When you update a pipeline, Elastic Transcoder returns the values that you specified in the request.</p>
    */
   @js.native
   trait UpdatePipelineResponse extends js.Object {
@@ -1955,7 +2011,7 @@ package elastictranscoder {
   }
 
   /**
-   * When you update status for a pipeline, Elastic Transcoder returns the values that you specified in the request.
+   * <p>When you update status for a pipeline, Elastic Transcoder returns the values that you specified in the request.</p>
    */
   @js.native
   trait UpdatePipelineStatusResponse extends js.Object {

@@ -7,9 +7,11 @@ package object swf {
   type ActivityId = String
   type ActivityTaskTimeoutType = String
   type ActivityTypeInfoList = js.Array[ActivityTypeInfo]
+  type Arn = String
   type CancelTimerFailedCause = String
   type CancelWorkflowExecutionFailedCause = String
   type Canceled = Boolean
+  type CauseMessage = String
   type ChildPolicy = String
   type CloseStatus = String
   type CompleteWorkflowExecutionFailedCause = String
@@ -31,8 +33,12 @@ package object swf {
   type ExecutionStatus = String
   type FailWorkflowExecutionFailedCause = String
   type FailureReason = String
+  type FunctionId = String
+  type FunctionInput = String
+  type FunctionName = String
   type HistoryEventList = js.Array[HistoryEvent]
   type Identity = String
+  type LambdaFunctionTimeoutType = String
   type LimitedData = String
   type MarkerName = String
   type Name = String
@@ -47,9 +53,11 @@ package object swf {
   type RunId = String
   type RunIdOptional = String
   type ScheduleActivityTaskFailedCause = String
+  type ScheduleLambdaFunctionFailedCause = String
   type SignalExternalWorkflowExecutionFailedCause = String
   type SignalName = String
   type StartChildWorkflowExecutionFailedCause = String
+  type StartLambdaFunctionFailedCause = String
   type StartTimerFailedCause = String
   type Tag = String
   type TagList = js.Array[Tag]
@@ -934,6 +942,7 @@ package swf {
    */
   @js.native
   trait ContinueAsNewWorkflowExecutionDecisionAttributes extends js.Object {
+    var lambdaRole: Arn
     var taskList: TaskList
     var tagList: TagList
     var workflowTypeVersion: Version
@@ -946,6 +955,7 @@ package swf {
 
   object ContinueAsNewWorkflowExecutionDecisionAttributes {
     def apply(
+      lambdaRole: js.UndefOr[Arn] = js.undefined,
       taskList: js.UndefOr[TaskList] = js.undefined,
       tagList: js.UndefOr[TagList] = js.undefined,
       workflowTypeVersion: js.UndefOr[Version] = js.undefined,
@@ -956,6 +966,7 @@ package swf {
       input: js.UndefOr[Data] = js.undefined
     ): ContinueAsNewWorkflowExecutionDecisionAttributes = {
       val _fields = IndexedSeq[(String, js.Any)](
+        ("lambdaRole" -> lambdaRole.map { x => x: js.Any }),
         ("taskList" -> taskList.map { x => x: js.Any }),
         ("tagList" -> tagList.map { x => x: js.Any }),
         ("workflowTypeVersion" -> workflowTypeVersion.map { x => x: js.Any }),
@@ -1113,7 +1124,7 @@ package swf {
   }
 
   /**
-   * <p>Specifies a decision made by the decider. A decision can be one of these types:</p> <ul> <li> <b>CancelTimer</b>: cancels a previously started timer and records a <code>TimerCanceled</code> event in the history.</li> <li> <b>CancelWorkflowExecution</b>: closes the workflow execution and records a <code>WorkflowExecutionCanceled</code> event in the history.</li> <li> <b>CompleteWorkflowExecution</b>: closes the workflow execution and records a <code>WorkflowExecutionCompleted</code> event in the history .</li> <li> <b>ContinueAsNewWorkflowExecution</b>: closes the workflow execution and starts a new workflow execution of the same type using the same workflow id and a unique run Id. A <code>WorkflowExecutionContinuedAsNew</code> event is recorded in the history.</li> <li> <b>FailWorkflowExecution</b>: closes the workflow execution and records a <code>WorkflowExecutionFailed</code> event in the history.</li> <li> <b>RecordMarker</b>: records a <code>MarkerRecorded</code> event in the history. Markers can be used for adding custom information in the history for instance to let deciders know that they do not need to look at the history beyond the marker event.</li> <li> <b>RequestCancelActivityTask</b>: attempts to cancel a previously scheduled activity task. If the activity task was scheduled but has not been assigned to a worker, then it will be canceled. If the activity task was already assigned to a worker, then the worker will be informed that cancellation has been requested in the response to <a>RecordActivityTaskHeartbeat</a>.</li> <li> <b>RequestCancelExternalWorkflowExecution</b>: requests that a request be made to cancel the specified external workflow execution and records a <code>RequestCancelExternalWorkflowExecutionInitiated</code> event in the history.</li> <li> <b>ScheduleActivityTask</b>: schedules an activity task.</li> <li> <b>SignalExternalWorkflowExecution</b>: requests a signal to be delivered to the specified external workflow execution and records a <code>SignalExternalWorkflowExecutionInitiated</code> event in the history.</li> <li> <b>StartChildWorkflowExecution</b>: requests that a child workflow execution be started and records a <code>StartChildWorkflowExecutionInitiated</code> event in the history. The child workflow execution is a separate workflow execution with its own history.</li> <li> <b>StartTimer</b>: starts a timer for this workflow execution and records a <code>TimerStarted</code> event in the history. This timer will fire after the specified delay and record a <code>TimerFired</code> event.</li> </ul> <p><b>Access Control</b></p> <p>If you grant permission to use <code>RespondDecisionTaskCompleted</code>, you can use IAM policies to express permissions for the list of decisions returned by this action as if they were members of the API. Treating decisions as a pseudo API maintains a uniform conceptual model and helps keep policies readable. For details and example IAM policies, see <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a>.</p> <p><b>Decision Failure</b></p> <p>Decisions can fail for several reasons</p> <ul> <li>The ordering of decisions should follow a logical flow. Some decisions might not make sense in the current context of the workflow execution and will therefore fail.</li> <li>A limit on your account was reached.</li> <li>The decision lacks sufficient permissions.</li> </ul> <p>One of the following events might be added to the history to indicate an error. The event attribute's <b>cause</b> parameter indicates the cause. If <b>cause</b> is set to OPERATION_NOT_PERMITTED, the decision failed because it lacked sufficient permissions. For details and example IAM policies, see <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a>.</p> <ul> <li> <b>ScheduleActivityTaskFailed</b>: a ScheduleActivityTask decision failed. This could happen if the activity type specified in the decision is not registered, is in a deprecated state, or the decision is not properly configured.</li> <li> <b>RequestCancelActivityTaskFailed</b>: a RequestCancelActivityTask decision failed. This could happen if there is no open activity task with the specified activityId.</li> <li> <b>StartTimerFailed</b>: a StartTimer decision failed. This could happen if there is another open timer with the same timerId.</li> <li> <b>CancelTimerFailed</b>: a CancelTimer decision failed. This could happen if there is no open timer with the specified timerId.</li> <li> <b>StartChildWorkflowExecutionFailed</b>: a StartChildWorkflowExecution decision failed. This could happen if the workflow type specified is not registered, is deprecated, or the decision is not properly configured.</li> <li> <b>SignalExternalWorkflowExecutionFailed</b>: a SignalExternalWorkflowExecution decision failed. This could happen if the <code>workflowID</code> specified in the decision was incorrect.</li> <li> <b>RequestCancelExternalWorkflowExecutionFailed</b>: a RequestCancelExternalWorkflowExecution decision failed. This could happen if the <code>workflowID</code> specified in the decision was incorrect.</li> <li> <b>CancelWorkflowExecutionFailed</b>: a CancelWorkflowExecution decision failed. This could happen if there is an unhandled decision task pending in the workflow execution.</li> <li> <b>CompleteWorkflowExecutionFailed</b>: a CompleteWorkflowExecution decision failed. This could happen if there is an unhandled decision task pending in the workflow execution.</li> <li> <b>ContinueAsNewWorkflowExecutionFailed</b>: a ContinueAsNewWorkflowExecution decision failed. This could happen if there is an unhandled decision task pending in the workflow execution or the ContinueAsNewWorkflowExecution decision was not configured correctly.</li> <li> <b>FailWorkflowExecutionFailed</b>: a FailWorkflowExecution decision failed. This could happen if there is an unhandled decision task pending in the workflow execution.</li> </ul> <p>The preceding error events might occur due to an error in the decider logic, which might put the workflow execution in an unstable state The cause field in the event structure for the error event indicates the cause of the error.</p> <note>A workflow execution may be closed by the decider by returning one of the following decisions when completing a decision task: <code>CompleteWorkflowExecution</code>, <code>FailWorkflowExecution</code>, <code>CancelWorkflowExecution</code> and <code>ContinueAsNewWorkflowExecution</code>. An UnhandledDecision fault will be returned if a workflow closing decision is specified and a signal or activity event had been added to the history while the decision task was being performed by the decider. Unlike the above situations which are logic issues, this fault is always possible because of race conditions in a distributed system. The right action here is to call <a>RespondDecisionTaskCompleted</a> without any decisions. This would result in another decision task with these new events included in the history. The decider should handle the new events and may decide to close the workflow execution.</note> <p><b>How to Code a Decision</b></p> <p>You code a decision by first setting the decision type field to one of the above decision values, and then set the corresponding attributes field shown below:</p> <ul> <li> <a>ScheduleActivityTaskDecisionAttributes</a> </li> <li> <a>RequestCancelActivityTaskDecisionAttributes</a> </li> <li> <a>CompleteWorkflowExecutionDecisionAttributes</a> </li> <li> <a>FailWorkflowExecutionDecisionAttributes</a> </li> <li> <a>CancelWorkflowExecutionDecisionAttributes</a> </li> <li> <a>ContinueAsNewWorkflowExecutionDecisionAttributes</a> </li> <li> <a>RecordMarkerDecisionAttributes</a> </li> <li> <a>StartTimerDecisionAttributes</a> </li> <li> <a>CancelTimerDecisionAttributes</a> </li> <li> <a>SignalExternalWorkflowExecutionDecisionAttributes</a> </li> <li> <a>RequestCancelExternalWorkflowExecutionDecisionAttributes</a> </li> <li> <a>StartChildWorkflowExecutionDecisionAttributes</a> </li> </ul>
+   * <p>Specifies a decision made by the decider. A decision can be one of these types:</p> <ul> <li> <b>CancelTimer</b>: cancels a previously started timer and records a <code>TimerCanceled</code> event in the history.</li> <li> <b>CancelWorkflowExecution</b>: closes the workflow execution and records a <code>WorkflowExecutionCanceled</code> event in the history.</li> <li> <b>CompleteWorkflowExecution</b>: closes the workflow execution and records a <code>WorkflowExecutionCompleted</code> event in the history .</li> <li> <b>ContinueAsNewWorkflowExecution</b>: closes the workflow execution and starts a new workflow execution of the same type using the same workflow ID and a unique run ID. A <code>WorkflowExecutionContinuedAsNew</code> event is recorded in the history.</li> <li> <b>FailWorkflowExecution</b>: closes the workflow execution and records a <code>WorkflowExecutionFailed</code> event in the history.</li> <li> <b>RecordMarker</b>: records a <code>MarkerRecorded</code> event in the history. Markers can be used for adding custom information in the history for instance to let deciders know that they do not need to look at the history beyond the marker event.</li> <li> <b>RequestCancelActivityTask</b>: attempts to cancel a previously scheduled activity task. If the activity task was scheduled but has not been assigned to a worker, then it will be canceled. If the activity task was already assigned to a worker, then the worker will be informed that cancellation has been requested in the response to <a>RecordActivityTaskHeartbeat</a>.</li> <li> <b>RequestCancelExternalWorkflowExecution</b>: requests that a request be made to cancel the specified external workflow execution and records a <code>RequestCancelExternalWorkflowExecutionInitiated</code> event in the history.</li> <li> <b>ScheduleActivityTask</b>: schedules an activity task.</li> <li> <b>ScheduleLambdaFunction</b>: schedules a AWS Lambda function.</li> <li> <b>SignalExternalWorkflowExecution</b>: requests a signal to be delivered to the specified external workflow execution and records a <code>SignalExternalWorkflowExecutionInitiated</code> event in the history.</li> <li> <b>StartChildWorkflowExecution</b>: requests that a child workflow execution be started and records a <code>StartChildWorkflowExecutionInitiated</code> event in the history. The child workflow execution is a separate workflow execution with its own history.</li> <li> <b>StartTimer</b>: starts a timer for this workflow execution and records a <code>TimerStarted</code> event in the history. This timer will fire after the specified delay and record a <code>TimerFired</code> event.</li> </ul> <p><b>Access Control</b></p> <p>If you grant permission to use <code>RespondDecisionTaskCompleted</code>, you can use IAM policies to express permissions for the list of decisions returned by this action as if they were members of the API. Treating decisions as a pseudo API maintains a uniform conceptual model and helps keep policies readable. For details and example IAM policies, see <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a>.</p> <p><b>Decision Failure</b></p> <p>Decisions can fail for several reasons</p> <ul> <li>The ordering of decisions should follow a logical flow. Some decisions might not make sense in the current context of the workflow execution and will therefore fail.</li> <li>A limit on your account was reached.</li> <li>The decision lacks sufficient permissions.</li> </ul> <p>One of the following events might be added to the history to indicate an error. The event attribute's <b>cause</b> parameter indicates the cause. If <b>cause</b> is set to OPERATION_NOT_PERMITTED, the decision failed because it lacked sufficient permissions. For details and example IAM policies, see <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a>.</p> <ul> <li> <b>ScheduleActivityTaskFailed</b>: a ScheduleActivityTask decision failed. This could happen if the activity type specified in the decision is not registered, is in a deprecated state, or the decision is not properly configured.</li> <li> <b>ScheduleLambdaFunctionFailed</b>: a ScheduleLambdaFunctionFailed decision failed. This could happen if the AWS Lambda function specified in the decision does not exist, or the AWS Lambda service's limits are exceeded.</li> <li> <b>RequestCancelActivityTaskFailed</b>: a RequestCancelActivityTask decision failed. This could happen if there is no open activity task with the specified activityId.</li> <li> <b>StartTimerFailed</b>: a StartTimer decision failed. This could happen if there is another open timer with the same timerId.</li> <li> <b>CancelTimerFailed</b>: a CancelTimer decision failed. This could happen if there is no open timer with the specified timerId.</li> <li> <b>StartChildWorkflowExecutionFailed</b>: a StartChildWorkflowExecution decision failed. This could happen if the workflow type specified is not registered, is deprecated, or the decision is not properly configured.</li> <li> <b>SignalExternalWorkflowExecutionFailed</b>: a SignalExternalWorkflowExecution decision failed. This could happen if the <code>workflowID</code> specified in the decision was incorrect.</li> <li> <b>RequestCancelExternalWorkflowExecutionFailed</b>: a RequestCancelExternalWorkflowExecution decision failed. This could happen if the <code>workflowID</code> specified in the decision was incorrect.</li> <li> <b>CancelWorkflowExecutionFailed</b>: a CancelWorkflowExecution decision failed. This could happen if there is an unhandled decision task pending in the workflow execution.</li> <li> <b>CompleteWorkflowExecutionFailed</b>: a CompleteWorkflowExecution decision failed. This could happen if there is an unhandled decision task pending in the workflow execution.</li> <li> <b>ContinueAsNewWorkflowExecutionFailed</b>: a ContinueAsNewWorkflowExecution decision failed. This could happen if there is an unhandled decision task pending in the workflow execution or the ContinueAsNewWorkflowExecution decision was not configured correctly.</li> <li> <b>FailWorkflowExecutionFailed</b>: a FailWorkflowExecution decision failed. This could happen if there is an unhandled decision task pending in the workflow execution.</li> </ul> <p>The preceding error events might occur due to an error in the decider logic, which might put the workflow execution in an unstable state The cause field in the event structure for the error event indicates the cause of the error.</p> <note>A workflow execution may be closed by the decider by returning one of the following decisions when completing a decision task: <code>CompleteWorkflowExecution</code>, <code>FailWorkflowExecution</code>, <code>CancelWorkflowExecution</code> and <code>ContinueAsNewWorkflowExecution</code>. An UnhandledDecision fault will be returned if a workflow closing decision is specified and a signal or activity event had been added to the history while the decision task was being performed by the decider. Unlike the above situations which are logic issues, this fault is always possible because of race conditions in a distributed system. The right action here is to call <a>RespondDecisionTaskCompleted</a> without any decisions. This would result in another decision task with these new events included in the history. The decider should handle the new events and may decide to close the workflow execution.</note> <p><b>How to code a decision</b></p> <p>You code a decision by first setting the decision type field to one of the above decision values, and then set the corresponding attributes field shown below:</p> <ul> <li> <a>ScheduleActivityTaskDecisionAttributes</a> </li> <li> <a>ScheduleLambdaFunctionDecisionAttributes</a> </li> <li> <a>RequestCancelActivityTaskDecisionAttributes</a> </li> <li> <a>CompleteWorkflowExecutionDecisionAttributes</a> </li> <li> <a>FailWorkflowExecutionDecisionAttributes</a> </li> <li> <a>CancelWorkflowExecutionDecisionAttributes</a> </li> <li> <a>ContinueAsNewWorkflowExecutionDecisionAttributes</a> </li> <li> <a>RecordMarkerDecisionAttributes</a> </li> <li> <a>StartTimerDecisionAttributes</a> </li> <li> <a>CancelTimerDecisionAttributes</a> </li> <li> <a>SignalExternalWorkflowExecutionDecisionAttributes</a> </li> <li> <a>RequestCancelExternalWorkflowExecutionDecisionAttributes</a> </li> <li> <a>StartChildWorkflowExecutionDecisionAttributes</a> </li> </ul>
    */
   @js.native
   trait Decision extends js.Object {
@@ -1129,6 +1140,7 @@ package swf {
     var cancelWorkflowExecutionDecisionAttributes: CancelWorkflowExecutionDecisionAttributes
     var cancelTimerDecisionAttributes: CancelTimerDecisionAttributes
     var failWorkflowExecutionDecisionAttributes: FailWorkflowExecutionDecisionAttributes
+    var scheduleLambdaFunctionDecisionAttributes: ScheduleLambdaFunctionDecisionAttributes
     var continueAsNewWorkflowExecutionDecisionAttributes: ContinueAsNewWorkflowExecutionDecisionAttributes
   }
 
@@ -1146,6 +1158,7 @@ package swf {
       cancelWorkflowExecutionDecisionAttributes: js.UndefOr[CancelWorkflowExecutionDecisionAttributes] = js.undefined,
       cancelTimerDecisionAttributes: js.UndefOr[CancelTimerDecisionAttributes] = js.undefined,
       failWorkflowExecutionDecisionAttributes: js.UndefOr[FailWorkflowExecutionDecisionAttributes] = js.undefined,
+      scheduleLambdaFunctionDecisionAttributes: js.UndefOr[ScheduleLambdaFunctionDecisionAttributes] = js.undefined,
       continueAsNewWorkflowExecutionDecisionAttributes: js.UndefOr[ContinueAsNewWorkflowExecutionDecisionAttributes] = js.undefined
     ): Decision = {
       val _fields = IndexedSeq[(String, js.Any)](
@@ -1161,6 +1174,7 @@ package swf {
         ("cancelWorkflowExecutionDecisionAttributes" -> cancelWorkflowExecutionDecisionAttributes.map { x => x: js.Any }),
         ("cancelTimerDecisionAttributes" -> cancelTimerDecisionAttributes.map { x => x: js.Any }),
         ("failWorkflowExecutionDecisionAttributes" -> failWorkflowExecutionDecisionAttributes.map { x => x: js.Any }),
+        ("scheduleLambdaFunctionDecisionAttributes" -> scheduleLambdaFunctionDecisionAttributes.map { x => x: js.Any }),
         ("continueAsNewWorkflowExecutionDecisionAttributes" -> continueAsNewWorkflowExecutionDecisionAttributes.map { x => x: js.Any })
       ).filter(_._2 != js.undefined)
 
@@ -1328,8 +1342,9 @@ package swf {
     val SignalExternalWorkflowExecution = "SignalExternalWorkflowExecution"
     val RequestCancelExternalWorkflowExecution = "RequestCancelExternalWorkflowExecution"
     val StartChildWorkflowExecution = "StartChildWorkflowExecution"
+    val ScheduleLambdaFunction = "ScheduleLambdaFunction"
 
-    val values = IndexedSeq(ScheduleActivityTask, RequestCancelActivityTask, CompleteWorkflowExecution, FailWorkflowExecution, CancelWorkflowExecution, ContinueAsNewWorkflowExecution, RecordMarker, StartTimer, CancelTimer, SignalExternalWorkflowExecution, RequestCancelExternalWorkflowExecution, StartChildWorkflowExecution)
+    val values = IndexedSeq(ScheduleActivityTask, RequestCancelActivityTask, CompleteWorkflowExecution, FailWorkflowExecution, CancelWorkflowExecution, ContinueAsNewWorkflowExecution, RecordMarker, StartTimer, CancelTimer, SignalExternalWorkflowExecution, RequestCancelExternalWorkflowExecution, StartChildWorkflowExecution, ScheduleLambdaFunction)
   }
 
   @js.native
@@ -1628,8 +1643,15 @@ package swf {
     val RequestCancelExternalWorkflowExecutionInitiated = "RequestCancelExternalWorkflowExecutionInitiated"
     val RequestCancelExternalWorkflowExecutionFailed = "RequestCancelExternalWorkflowExecutionFailed"
     val ExternalWorkflowExecutionCancelRequested = "ExternalWorkflowExecutionCancelRequested"
+    val LambdaFunctionScheduled = "LambdaFunctionScheduled"
+    val LambdaFunctionStarted = "LambdaFunctionStarted"
+    val LambdaFunctionCompleted = "LambdaFunctionCompleted"
+    val LambdaFunctionFailed = "LambdaFunctionFailed"
+    val LambdaFunctionTimedOut = "LambdaFunctionTimedOut"
+    val ScheduleLambdaFunctionFailed = "ScheduleLambdaFunctionFailed"
+    val StartLambdaFunctionFailed = "StartLambdaFunctionFailed"
 
-    val values = IndexedSeq(WorkflowExecutionStarted, WorkflowExecutionCancelRequested, WorkflowExecutionCompleted, CompleteWorkflowExecutionFailed, WorkflowExecutionFailed, FailWorkflowExecutionFailed, WorkflowExecutionTimedOut, WorkflowExecutionCanceled, CancelWorkflowExecutionFailed, WorkflowExecutionContinuedAsNew, ContinueAsNewWorkflowExecutionFailed, WorkflowExecutionTerminated, DecisionTaskScheduled, DecisionTaskStarted, DecisionTaskCompleted, DecisionTaskTimedOut, ActivityTaskScheduled, ScheduleActivityTaskFailed, ActivityTaskStarted, ActivityTaskCompleted, ActivityTaskFailed, ActivityTaskTimedOut, ActivityTaskCanceled, ActivityTaskCancelRequested, RequestCancelActivityTaskFailed, WorkflowExecutionSignaled, MarkerRecorded, RecordMarkerFailed, TimerStarted, StartTimerFailed, TimerFired, TimerCanceled, CancelTimerFailed, StartChildWorkflowExecutionInitiated, StartChildWorkflowExecutionFailed, ChildWorkflowExecutionStarted, ChildWorkflowExecutionCompleted, ChildWorkflowExecutionFailed, ChildWorkflowExecutionTimedOut, ChildWorkflowExecutionCanceled, ChildWorkflowExecutionTerminated, SignalExternalWorkflowExecutionInitiated, SignalExternalWorkflowExecutionFailed, ExternalWorkflowExecutionSignaled, RequestCancelExternalWorkflowExecutionInitiated, RequestCancelExternalWorkflowExecutionFailed, ExternalWorkflowExecutionCancelRequested)
+    val values = IndexedSeq(WorkflowExecutionStarted, WorkflowExecutionCancelRequested, WorkflowExecutionCompleted, CompleteWorkflowExecutionFailed, WorkflowExecutionFailed, FailWorkflowExecutionFailed, WorkflowExecutionTimedOut, WorkflowExecutionCanceled, CancelWorkflowExecutionFailed, WorkflowExecutionContinuedAsNew, ContinueAsNewWorkflowExecutionFailed, WorkflowExecutionTerminated, DecisionTaskScheduled, DecisionTaskStarted, DecisionTaskCompleted, DecisionTaskTimedOut, ActivityTaskScheduled, ScheduleActivityTaskFailed, ActivityTaskStarted, ActivityTaskCompleted, ActivityTaskFailed, ActivityTaskTimedOut, ActivityTaskCanceled, ActivityTaskCancelRequested, RequestCancelActivityTaskFailed, WorkflowExecutionSignaled, MarkerRecorded, RecordMarkerFailed, TimerStarted, StartTimerFailed, TimerFired, TimerCanceled, CancelTimerFailed, StartChildWorkflowExecutionInitiated, StartChildWorkflowExecutionFailed, ChildWorkflowExecutionStarted, ChildWorkflowExecutionCompleted, ChildWorkflowExecutionFailed, ChildWorkflowExecutionTimedOut, ChildWorkflowExecutionCanceled, ChildWorkflowExecutionTerminated, SignalExternalWorkflowExecutionInitiated, SignalExternalWorkflowExecutionFailed, ExternalWorkflowExecutionSignaled, RequestCancelExternalWorkflowExecutionInitiated, RequestCancelExternalWorkflowExecutionFailed, ExternalWorkflowExecutionCancelRequested, LambdaFunctionScheduled, LambdaFunctionStarted, LambdaFunctionCompleted, LambdaFunctionFailed, LambdaFunctionTimedOut, ScheduleLambdaFunctionFailed, StartLambdaFunctionFailed)
   }
 
 
@@ -1816,7 +1838,7 @@ package swf {
   }
 
   /**
-   * <p>Event within a workflow execution. A history event can be one of these types:</p> <ul> <li> <b>WorkflowExecutionStarted</b>: The workflow execution was started.</li> <li> <b>WorkflowExecutionCompleted</b>: The workflow execution was closed due to successful completion.</li> <li> <b>WorkflowExecutionFailed</b>: The workflow execution closed due to a failure.</li> <li> <b>WorkflowExecutionTimedOut</b>: The workflow execution was closed because a time out was exceeded.</li> <li> <b>WorkflowExecutionCanceled</b>: The workflow execution was successfully canceled and closed.</li> <li> <b>WorkflowExecutionTerminated</b>: The workflow execution was terminated.</li> <li> <b>WorkflowExecutionContinuedAsNew</b>: The workflow execution was closed and a new execution of the same type was created with the same workflowId.</li> <li> <b>WorkflowExecutionCancelRequested</b>: A request to cancel this workflow execution was made.</li> <li> <b>DecisionTaskScheduled</b>: A decision task was scheduled for the workflow execution.</li> <li> <b>DecisionTaskStarted</b>: The decision task was dispatched to a decider.</li> <li> <b>DecisionTaskCompleted</b>: The decider successfully completed a decision task by calling <a>RespondDecisionTaskCompleted</a>.</li> <li> <b>DecisionTaskTimedOut</b>: The decision task timed out.</li> <li> <b>ActivityTaskScheduled</b>: An activity task was scheduled for execution.</li> <li> <b>ScheduleActivityTaskFailed</b>: Failed to process ScheduleActivityTask decision. This happens when the decision is not configured properly, for example the activity type specified is not registered.</li> <li> <b>ActivityTaskStarted</b>: The scheduled activity task was dispatched to a worker.</li> <li> <b>ActivityTaskCompleted</b>: An activity worker successfully completed an activity task by calling <a>RespondActivityTaskCompleted</a>.</li> <li> <b>ActivityTaskFailed</b>: An activity worker failed an activity task by calling <a>RespondActivityTaskFailed</a>.</li> <li> <b>ActivityTaskTimedOut</b>: The activity task timed out.</li> <li> <b>ActivityTaskCanceled</b>: The activity task was successfully canceled.</li> <li> <b>ActivityTaskCancelRequested</b>: A <code>RequestCancelActivityTask</code> decision was received by the system.</li> <li> <b>RequestCancelActivityTaskFailed</b>: Failed to process RequestCancelActivityTask decision. This happens when the decision is not configured properly.</li> <li> <b>WorkflowExecutionSignaled</b>: An external signal was received for the workflow execution.</li> <li> <b>MarkerRecorded</b>: A marker was recorded in the workflow history as the result of a <code>RecordMarker</code> decision.</li> <li> <b>TimerStarted</b>: A timer was started for the workflow execution due to a <code>StartTimer</code> decision.</li> <li> <b>StartTimerFailed</b>: Failed to process StartTimer decision. This happens when the decision is not configured properly, for example a timer already exists with the specified timer Id.</li> <li> <b>TimerFired</b>: A timer, previously started for this workflow execution, fired.</li> <li> <b>TimerCanceled</b>: A timer, previously started for this workflow execution, was successfully canceled.</li> <li> <b>CancelTimerFailed</b>: Failed to process CancelTimer decision. This happens when the decision is not configured properly, for example no timer exists with the specified timer Id.</li> <li> <b>StartChildWorkflowExecutionInitiated</b>: A request was made to start a child workflow execution.</li> <li> <b>StartChildWorkflowExecutionFailed</b>: Failed to process StartChildWorkflowExecution decision. This happens when the decision is not configured properly, for example the workflow type specified is not registered.</li> <li> <b>ChildWorkflowExecutionStarted</b>: A child workflow execution was successfully started.</li> <li> <b>ChildWorkflowExecutionCompleted</b>: A child workflow execution, started by this workflow execution, completed successfully and was closed.</li> <li> <b>ChildWorkflowExecutionFailed</b>: A child workflow execution, started by this workflow execution, failed to complete successfully and was closed.</li> <li> <b>ChildWorkflowExecutionTimedOut</b>: A child workflow execution, started by this workflow execution, timed out and was closed.</li> <li> <b>ChildWorkflowExecutionCanceled</b>: A child workflow execution, started by this workflow execution, was canceled and closed.</li> <li> <b>ChildWorkflowExecutionTerminated</b>: A child workflow execution, started by this workflow execution, was terminated.</li> <li> <b>SignalExternalWorkflowExecutionInitiated</b>: A request to signal an external workflow was made.</li> <li> <b>ExternalWorkflowExecutionSignaled</b>: A signal, requested by this workflow execution, was successfully delivered to the target external workflow execution.</li> <li> <b>SignalExternalWorkflowExecutionFailed</b>: The request to signal an external workflow execution failed.</li> <li> <b>RequestCancelExternalWorkflowExecutionInitiated</b>: A request was made to request the cancellation of an external workflow execution.</li> <li> <b>ExternalWorkflowExecutionCancelRequested</b>: Request to cancel an external workflow execution was successfully delivered to the target execution.</li> <li> <b>RequestCancelExternalWorkflowExecutionFailed</b>: Request to cancel an external workflow execution failed.</li> </ul>
+   * <p>Event within a workflow execution. A history event can be one of these types:</p> <ul> <li> <b>WorkflowExecutionStarted</b>: The workflow execution was started.</li> <li> <b>WorkflowExecutionCompleted</b>: The workflow execution was closed due to successful completion.</li> <li> <b>WorkflowExecutionFailed</b>: The workflow execution closed due to a failure.</li> <li> <b>WorkflowExecutionTimedOut</b>: The workflow execution was closed because a time out was exceeded.</li> <li> <b>WorkflowExecutionCanceled</b>: The workflow execution was successfully canceled and closed.</li> <li> <b>WorkflowExecutionTerminated</b>: The workflow execution was terminated.</li> <li> <b>WorkflowExecutionContinuedAsNew</b>: The workflow execution was closed and a new execution of the same type was created with the same workflowId.</li> <li> <b>WorkflowExecutionCancelRequested</b>: A request to cancel this workflow execution was made.</li> <li> <b>DecisionTaskScheduled</b>: A decision task was scheduled for the workflow execution.</li> <li> <b>DecisionTaskStarted</b>: The decision task was dispatched to a decider.</li> <li> <b>DecisionTaskCompleted</b>: The decider successfully completed a decision task by calling <a>RespondDecisionTaskCompleted</a>.</li> <li> <b>DecisionTaskTimedOut</b>: The decision task timed out.</li> <li> <b>ActivityTaskScheduled</b>: An activity task was scheduled for execution.</li> <li> <b>ScheduleActivityTaskFailed</b>: Failed to process ScheduleActivityTask decision. This happens when the decision is not configured properly, for example the activity type specified is not registered.</li> <li> <b>ActivityTaskStarted</b>: The scheduled activity task was dispatched to a worker.</li> <li> <b>ActivityTaskCompleted</b>: An activity worker successfully completed an activity task by calling <a>RespondActivityTaskCompleted</a>.</li> <li> <b>ActivityTaskFailed</b>: An activity worker failed an activity task by calling <a>RespondActivityTaskFailed</a>.</li> <li> <b>ActivityTaskTimedOut</b>: The activity task timed out.</li> <li> <b>ActivityTaskCanceled</b>: The activity task was successfully canceled.</li> <li> <b>ActivityTaskCancelRequested</b>: A <code>RequestCancelActivityTask</code> decision was received by the system.</li> <li> <b>RequestCancelActivityTaskFailed</b>: Failed to process RequestCancelActivityTask decision. This happens when the decision is not configured properly.</li> <li> <b>WorkflowExecutionSignaled</b>: An external signal was received for the workflow execution.</li> <li> <b>MarkerRecorded</b>: A marker was recorded in the workflow history as the result of a <code>RecordMarker</code> decision.</li> <li> <b>TimerStarted</b>: A timer was started for the workflow execution due to a <code>StartTimer</code> decision.</li> <li> <b>StartTimerFailed</b>: Failed to process StartTimer decision. This happens when the decision is not configured properly, for example a timer already exists with the specified timer ID.</li> <li> <b>TimerFired</b>: A timer, previously started for this workflow execution, fired.</li> <li> <b>TimerCanceled</b>: A timer, previously started for this workflow execution, was successfully canceled.</li> <li> <b>CancelTimerFailed</b>: Failed to process CancelTimer decision. This happens when the decision is not configured properly, for example no timer exists with the specified timer ID.</li> <li> <b>StartChildWorkflowExecutionInitiated</b>: A request was made to start a child workflow execution.</li> <li> <b>StartChildWorkflowExecutionFailed</b>: Failed to process StartChildWorkflowExecution decision. This happens when the decision is not configured properly, for example the workflow type specified is not registered.</li> <li> <b>ChildWorkflowExecutionStarted</b>: A child workflow execution was successfully started.</li> <li> <b>ChildWorkflowExecutionCompleted</b>: A child workflow execution, started by this workflow execution, completed successfully and was closed.</li> <li> <b>ChildWorkflowExecutionFailed</b>: A child workflow execution, started by this workflow execution, failed to complete successfully and was closed.</li> <li> <b>ChildWorkflowExecutionTimedOut</b>: A child workflow execution, started by this workflow execution, timed out and was closed.</li> <li> <b>ChildWorkflowExecutionCanceled</b>: A child workflow execution, started by this workflow execution, was canceled and closed.</li> <li> <b>ChildWorkflowExecutionTerminated</b>: A child workflow execution, started by this workflow execution, was terminated.</li> <li> <b>SignalExternalWorkflowExecutionInitiated</b>: A request to signal an external workflow was made.</li> <li> <b>ExternalWorkflowExecutionSignaled</b>: A signal, requested by this workflow execution, was successfully delivered to the target external workflow execution.</li> <li> <b>SignalExternalWorkflowExecutionFailed</b>: The request to signal an external workflow execution failed.</li> <li> <b>RequestCancelExternalWorkflowExecutionInitiated</b>: A request was made to request the cancellation of an external workflow execution.</li> <li> <b>ExternalWorkflowExecutionCancelRequested</b>: Request to cancel an external workflow execution was successfully delivered to the target execution.</li> <li> <b>RequestCancelExternalWorkflowExecutionFailed</b>: Request to cancel an external workflow execution failed.</li> <li> <b>LambdaFunctionScheduled</b>: An AWS Lambda function was scheduled for execution.</li> <li> <b>LambdaFunctionStarted</b>: The scheduled function was invoked in the AWS Lambda service.</li> <li> <b>LambdaFunctionCompleted</b>: The AWS Lambda function successfully completed.</li> <li> <b>LambdaFunctionFailed</b>: The AWS Lambda function execution failed.</li> <li> <b>LambdaFunctionTimedOut</b>: The AWS Lambda function execution timed out.</li> <li> <b>ScheduleLambdaFunctionFailed</b>: Failed to process ScheduleLambdaFunction decision. This happens when the workflow execution does not have the proper IAM role attached to invoke AWS Lambda functions.</li> <li> <b>StartLambdaFunctionFailed</b>: Failed to invoke the scheduled function in the AWS Lambda service. This happens when the AWS Lambda service is not available in the current region, or received too many requests.</li> </ul>
    */
   @js.native
   trait HistoryEvent extends js.Object {
@@ -1826,11 +1848,14 @@ package swf {
     var eventType: EventType
     var requestCancelActivityTaskFailedEventAttributes: RequestCancelActivityTaskFailedEventAttributes
     var workflowExecutionSignaledEventAttributes: WorkflowExecutionSignaledEventAttributes
+    var startLambdaFunctionFailedEventAttributes: StartLambdaFunctionFailedEventAttributes
     var activityTaskScheduledEventAttributes: ActivityTaskScheduledEventAttributes
     var workflowExecutionContinuedAsNewEventAttributes: WorkflowExecutionContinuedAsNewEventAttributes
     var timerStartedEventAttributes: TimerStartedEventAttributes
     var workflowExecutionCompletedEventAttributes: WorkflowExecutionCompletedEventAttributes
     var decisionTaskScheduledEventAttributes: DecisionTaskScheduledEventAttributes
+    var scheduleLambdaFunctionFailedEventAttributes: ScheduleLambdaFunctionFailedEventAttributes
+    var lambdaFunctionStartedEventAttributes: LambdaFunctionStartedEventAttributes
     var timerCanceledEventAttributes: TimerCanceledEventAttributes
     var requestCancelExternalWorkflowExecutionInitiatedEventAttributes: RequestCancelExternalWorkflowExecutionInitiatedEventAttributes
     var childWorkflowExecutionTimedOutEventAttributes: ChildWorkflowExecutionTimedOutEventAttributes
@@ -1839,8 +1864,10 @@ package swf {
     var childWorkflowExecutionFailedEventAttributes: ChildWorkflowExecutionFailedEventAttributes
     var externalWorkflowExecutionSignaledEventAttributes: ExternalWorkflowExecutionSignaledEventAttributes
     var decisionTaskTimedOutEventAttributes: DecisionTaskTimedOutEventAttributes
+    var lambdaFunctionScheduledEventAttributes: LambdaFunctionScheduledEventAttributes
     var signalExternalWorkflowExecutionFailedEventAttributes: SignalExternalWorkflowExecutionFailedEventAttributes
     var requestCancelExternalWorkflowExecutionFailedEventAttributes: RequestCancelExternalWorkflowExecutionFailedEventAttributes
+    var lambdaFunctionTimedOutEventAttributes: LambdaFunctionTimedOutEventAttributes
     var activityTaskCompletedEventAttributes: ActivityTaskCompletedEventAttributes
     var workflowExecutionTerminatedEventAttributes: WorkflowExecutionTerminatedEventAttributes
     var eventId: EventId
@@ -1861,6 +1888,8 @@ package swf {
     var childWorkflowExecutionTerminatedEventAttributes: ChildWorkflowExecutionTerminatedEventAttributes
     var activityTaskStartedEventAttributes: ActivityTaskStartedEventAttributes
     var decisionTaskStartedEventAttributes: DecisionTaskStartedEventAttributes
+    var lambdaFunctionFailedEventAttributes: LambdaFunctionFailedEventAttributes
+    var lambdaFunctionCompletedEventAttributes: LambdaFunctionCompletedEventAttributes
     var startChildWorkflowExecutionFailedEventAttributes: StartChildWorkflowExecutionFailedEventAttributes
     var failWorkflowExecutionFailedEventAttributes: FailWorkflowExecutionFailedEventAttributes
     var childWorkflowExecutionCompletedEventAttributes: ChildWorkflowExecutionCompletedEventAttributes
@@ -1880,11 +1909,14 @@ package swf {
       eventType: js.UndefOr[EventType] = js.undefined,
       requestCancelActivityTaskFailedEventAttributes: js.UndefOr[RequestCancelActivityTaskFailedEventAttributes] = js.undefined,
       workflowExecutionSignaledEventAttributes: js.UndefOr[WorkflowExecutionSignaledEventAttributes] = js.undefined,
+      startLambdaFunctionFailedEventAttributes: js.UndefOr[StartLambdaFunctionFailedEventAttributes] = js.undefined,
       activityTaskScheduledEventAttributes: js.UndefOr[ActivityTaskScheduledEventAttributes] = js.undefined,
       workflowExecutionContinuedAsNewEventAttributes: js.UndefOr[WorkflowExecutionContinuedAsNewEventAttributes] = js.undefined,
       timerStartedEventAttributes: js.UndefOr[TimerStartedEventAttributes] = js.undefined,
       workflowExecutionCompletedEventAttributes: js.UndefOr[WorkflowExecutionCompletedEventAttributes] = js.undefined,
       decisionTaskScheduledEventAttributes: js.UndefOr[DecisionTaskScheduledEventAttributes] = js.undefined,
+      scheduleLambdaFunctionFailedEventAttributes: js.UndefOr[ScheduleLambdaFunctionFailedEventAttributes] = js.undefined,
+      lambdaFunctionStartedEventAttributes: js.UndefOr[LambdaFunctionStartedEventAttributes] = js.undefined,
       timerCanceledEventAttributes: js.UndefOr[TimerCanceledEventAttributes] = js.undefined,
       requestCancelExternalWorkflowExecutionInitiatedEventAttributes: js.UndefOr[RequestCancelExternalWorkflowExecutionInitiatedEventAttributes] = js.undefined,
       childWorkflowExecutionTimedOutEventAttributes: js.UndefOr[ChildWorkflowExecutionTimedOutEventAttributes] = js.undefined,
@@ -1893,8 +1925,10 @@ package swf {
       childWorkflowExecutionFailedEventAttributes: js.UndefOr[ChildWorkflowExecutionFailedEventAttributes] = js.undefined,
       externalWorkflowExecutionSignaledEventAttributes: js.UndefOr[ExternalWorkflowExecutionSignaledEventAttributes] = js.undefined,
       decisionTaskTimedOutEventAttributes: js.UndefOr[DecisionTaskTimedOutEventAttributes] = js.undefined,
+      lambdaFunctionScheduledEventAttributes: js.UndefOr[LambdaFunctionScheduledEventAttributes] = js.undefined,
       signalExternalWorkflowExecutionFailedEventAttributes: js.UndefOr[SignalExternalWorkflowExecutionFailedEventAttributes] = js.undefined,
       requestCancelExternalWorkflowExecutionFailedEventAttributes: js.UndefOr[RequestCancelExternalWorkflowExecutionFailedEventAttributes] = js.undefined,
+      lambdaFunctionTimedOutEventAttributes: js.UndefOr[LambdaFunctionTimedOutEventAttributes] = js.undefined,
       activityTaskCompletedEventAttributes: js.UndefOr[ActivityTaskCompletedEventAttributes] = js.undefined,
       workflowExecutionTerminatedEventAttributes: js.UndefOr[WorkflowExecutionTerminatedEventAttributes] = js.undefined,
       eventId: js.UndefOr[EventId] = js.undefined,
@@ -1915,6 +1949,8 @@ package swf {
       childWorkflowExecutionTerminatedEventAttributes: js.UndefOr[ChildWorkflowExecutionTerminatedEventAttributes] = js.undefined,
       activityTaskStartedEventAttributes: js.UndefOr[ActivityTaskStartedEventAttributes] = js.undefined,
       decisionTaskStartedEventAttributes: js.UndefOr[DecisionTaskStartedEventAttributes] = js.undefined,
+      lambdaFunctionFailedEventAttributes: js.UndefOr[LambdaFunctionFailedEventAttributes] = js.undefined,
+      lambdaFunctionCompletedEventAttributes: js.UndefOr[LambdaFunctionCompletedEventAttributes] = js.undefined,
       startChildWorkflowExecutionFailedEventAttributes: js.UndefOr[StartChildWorkflowExecutionFailedEventAttributes] = js.undefined,
       failWorkflowExecutionFailedEventAttributes: js.UndefOr[FailWorkflowExecutionFailedEventAttributes] = js.undefined,
       childWorkflowExecutionCompletedEventAttributes: js.UndefOr[ChildWorkflowExecutionCompletedEventAttributes] = js.undefined,
@@ -1932,11 +1968,14 @@ package swf {
         ("eventType" -> eventType.map { x => x: js.Any }),
         ("requestCancelActivityTaskFailedEventAttributes" -> requestCancelActivityTaskFailedEventAttributes.map { x => x: js.Any }),
         ("workflowExecutionSignaledEventAttributes" -> workflowExecutionSignaledEventAttributes.map { x => x: js.Any }),
+        ("startLambdaFunctionFailedEventAttributes" -> startLambdaFunctionFailedEventAttributes.map { x => x: js.Any }),
         ("activityTaskScheduledEventAttributes" -> activityTaskScheduledEventAttributes.map { x => x: js.Any }),
         ("workflowExecutionContinuedAsNewEventAttributes" -> workflowExecutionContinuedAsNewEventAttributes.map { x => x: js.Any }),
         ("timerStartedEventAttributes" -> timerStartedEventAttributes.map { x => x: js.Any }),
         ("workflowExecutionCompletedEventAttributes" -> workflowExecutionCompletedEventAttributes.map { x => x: js.Any }),
         ("decisionTaskScheduledEventAttributes" -> decisionTaskScheduledEventAttributes.map { x => x: js.Any }),
+        ("scheduleLambdaFunctionFailedEventAttributes" -> scheduleLambdaFunctionFailedEventAttributes.map { x => x: js.Any }),
+        ("lambdaFunctionStartedEventAttributes" -> lambdaFunctionStartedEventAttributes.map { x => x: js.Any }),
         ("timerCanceledEventAttributes" -> timerCanceledEventAttributes.map { x => x: js.Any }),
         ("requestCancelExternalWorkflowExecutionInitiatedEventAttributes" -> requestCancelExternalWorkflowExecutionInitiatedEventAttributes.map { x => x: js.Any }),
         ("childWorkflowExecutionTimedOutEventAttributes" -> childWorkflowExecutionTimedOutEventAttributes.map { x => x: js.Any }),
@@ -1945,8 +1984,10 @@ package swf {
         ("childWorkflowExecutionFailedEventAttributes" -> childWorkflowExecutionFailedEventAttributes.map { x => x: js.Any }),
         ("externalWorkflowExecutionSignaledEventAttributes" -> externalWorkflowExecutionSignaledEventAttributes.map { x => x: js.Any }),
         ("decisionTaskTimedOutEventAttributes" -> decisionTaskTimedOutEventAttributes.map { x => x: js.Any }),
+        ("lambdaFunctionScheduledEventAttributes" -> lambdaFunctionScheduledEventAttributes.map { x => x: js.Any }),
         ("signalExternalWorkflowExecutionFailedEventAttributes" -> signalExternalWorkflowExecutionFailedEventAttributes.map { x => x: js.Any }),
         ("requestCancelExternalWorkflowExecutionFailedEventAttributes" -> requestCancelExternalWorkflowExecutionFailedEventAttributes.map { x => x: js.Any }),
+        ("lambdaFunctionTimedOutEventAttributes" -> lambdaFunctionTimedOutEventAttributes.map { x => x: js.Any }),
         ("activityTaskCompletedEventAttributes" -> activityTaskCompletedEventAttributes.map { x => x: js.Any }),
         ("workflowExecutionTerminatedEventAttributes" -> workflowExecutionTerminatedEventAttributes.map { x => x: js.Any }),
         ("eventId" -> eventId.map { x => x: js.Any }),
@@ -1967,6 +2008,8 @@ package swf {
         ("childWorkflowExecutionTerminatedEventAttributes" -> childWorkflowExecutionTerminatedEventAttributes.map { x => x: js.Any }),
         ("activityTaskStartedEventAttributes" -> activityTaskStartedEventAttributes.map { x => x: js.Any }),
         ("decisionTaskStartedEventAttributes" -> decisionTaskStartedEventAttributes.map { x => x: js.Any }),
+        ("lambdaFunctionFailedEventAttributes" -> lambdaFunctionFailedEventAttributes.map { x => x: js.Any }),
+        ("lambdaFunctionCompletedEventAttributes" -> lambdaFunctionCompletedEventAttributes.map { x => x: js.Any }),
         ("startChildWorkflowExecutionFailedEventAttributes" -> startChildWorkflowExecutionFailedEventAttributes.map { x => x: js.Any }),
         ("failWorkflowExecutionFailedEventAttributes" -> failWorkflowExecutionFailedEventAttributes.map { x => x: js.Any }),
         ("childWorkflowExecutionCompletedEventAttributes" -> childWorkflowExecutionCompletedEventAttributes.map { x => x: js.Any }),
@@ -1980,6 +2023,146 @@ package swf {
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[HistoryEvent]
     }
+  }
+
+  /**
+   * <p>Provides details for the <code>LambdaFunctionCompleted</code> event.</p>
+   */
+  @js.native
+  trait LambdaFunctionCompletedEventAttributes extends js.Object {
+    var scheduledEventId: EventId
+    var startedEventId: EventId
+    var result: Data
+  }
+
+  object LambdaFunctionCompletedEventAttributes {
+    def apply(
+      scheduledEventId: js.UndefOr[EventId] = js.undefined,
+      startedEventId: js.UndefOr[EventId] = js.undefined,
+      result: js.UndefOr[Data] = js.undefined
+    ): LambdaFunctionCompletedEventAttributes = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("scheduledEventId" -> scheduledEventId.map { x => x: js.Any }),
+        ("startedEventId" -> startedEventId.map { x => x: js.Any }),
+        ("result" -> result.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[LambdaFunctionCompletedEventAttributes]
+    }
+  }
+
+  /**
+   * <p>Provides details for the <code>LambdaFunctionFailed</code> event.</p>
+   */
+  @js.native
+  trait LambdaFunctionFailedEventAttributes extends js.Object {
+    var scheduledEventId: EventId
+    var startedEventId: EventId
+    var reason: FailureReason
+    var details: Data
+  }
+
+  object LambdaFunctionFailedEventAttributes {
+    def apply(
+      scheduledEventId: js.UndefOr[EventId] = js.undefined,
+      startedEventId: js.UndefOr[EventId] = js.undefined,
+      reason: js.UndefOr[FailureReason] = js.undefined,
+      details: js.UndefOr[Data] = js.undefined
+    ): LambdaFunctionFailedEventAttributes = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("scheduledEventId" -> scheduledEventId.map { x => x: js.Any }),
+        ("startedEventId" -> startedEventId.map { x => x: js.Any }),
+        ("reason" -> reason.map { x => x: js.Any }),
+        ("details" -> details.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[LambdaFunctionFailedEventAttributes]
+    }
+  }
+
+  /**
+   * <p>Provides details for the <code>LambdaFunctionScheduled</code> event.</p>
+   */
+  @js.native
+  trait LambdaFunctionScheduledEventAttributes extends js.Object {
+    var name: FunctionName
+    var startToCloseTimeout: DurationInSecondsOptional
+    var decisionTaskCompletedEventId: EventId
+    var id: FunctionId
+    var input: FunctionInput
+  }
+
+  object LambdaFunctionScheduledEventAttributes {
+    def apply(
+      name: js.UndefOr[FunctionName] = js.undefined,
+      startToCloseTimeout: js.UndefOr[DurationInSecondsOptional] = js.undefined,
+      decisionTaskCompletedEventId: js.UndefOr[EventId] = js.undefined,
+      id: js.UndefOr[FunctionId] = js.undefined,
+      input: js.UndefOr[FunctionInput] = js.undefined
+    ): LambdaFunctionScheduledEventAttributes = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("name" -> name.map { x => x: js.Any }),
+        ("startToCloseTimeout" -> startToCloseTimeout.map { x => x: js.Any }),
+        ("decisionTaskCompletedEventId" -> decisionTaskCompletedEventId.map { x => x: js.Any }),
+        ("id" -> id.map { x => x: js.Any }),
+        ("input" -> input.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[LambdaFunctionScheduledEventAttributes]
+    }
+  }
+
+  /**
+   * <p>Provides details for the <code>LambdaFunctionStarted</code> event.</p>
+   */
+  @js.native
+  trait LambdaFunctionStartedEventAttributes extends js.Object {
+    var scheduledEventId: EventId
+  }
+
+  object LambdaFunctionStartedEventAttributes {
+    def apply(
+      scheduledEventId: js.UndefOr[EventId] = js.undefined
+    ): LambdaFunctionStartedEventAttributes = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("scheduledEventId" -> scheduledEventId.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[LambdaFunctionStartedEventAttributes]
+    }
+  }
+
+  /**
+   * <p>Provides details for the <code>LambdaFunctionTimedOut</code> event.</p>
+   */
+  @js.native
+  trait LambdaFunctionTimedOutEventAttributes extends js.Object {
+    var scheduledEventId: EventId
+    var startedEventId: EventId
+    var timeoutType: LambdaFunctionTimeoutType
+  }
+
+  object LambdaFunctionTimedOutEventAttributes {
+    def apply(
+      scheduledEventId: js.UndefOr[EventId] = js.undefined,
+      startedEventId: js.UndefOr[EventId] = js.undefined,
+      timeoutType: js.UndefOr[LambdaFunctionTimeoutType] = js.undefined
+    ): LambdaFunctionTimedOutEventAttributes = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("scheduledEventId" -> scheduledEventId.map { x => x: js.Any }),
+        ("startedEventId" -> startedEventId.map { x => x: js.Any }),
+        ("timeoutType" -> timeoutType.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[LambdaFunctionTimedOutEventAttributes]
+    }
+  }
+
+
+  object LambdaFunctionTimeoutTypeEnum {
+    val `START_TO_CLOSE` = "START_TO_CLOSE"
+
+    val values = IndexedSeq(`START_TO_CLOSE`)
   }
 
   /**
@@ -2424,6 +2607,7 @@ package swf {
     var defaultTaskList: TaskList
     var description: Description
     var domain: DomainName
+    var defaultLambdaRole: Arn
     var version: Version
     var defaultChildPolicy: ChildPolicy
     var defaultTaskPriority: TaskPriority
@@ -2437,6 +2621,7 @@ package swf {
       defaultTaskList: js.UndefOr[TaskList] = js.undefined,
       description: js.UndefOr[Description] = js.undefined,
       domain: js.UndefOr[DomainName] = js.undefined,
+      defaultLambdaRole: js.UndefOr[Arn] = js.undefined,
       version: js.UndefOr[Version] = js.undefined,
       defaultChildPolicy: js.UndefOr[ChildPolicy] = js.undefined,
       defaultTaskPriority: js.UndefOr[TaskPriority] = js.undefined,
@@ -2448,6 +2633,7 @@ package swf {
         ("defaultTaskList" -> defaultTaskList.map { x => x: js.Any }),
         ("description" -> description.map { x => x: js.Any }),
         ("domain" -> domain.map { x => x: js.Any }),
+        ("defaultLambdaRole" -> defaultLambdaRole.map { x => x: js.Any }),
         ("version" -> version.map { x => x: js.Any }),
         ("defaultChildPolicy" -> defaultChildPolicy.map { x => x: js.Any }),
         ("defaultTaskPriority" -> defaultTaskPriority.map { x => x: js.Any }),
@@ -2842,6 +3028,74 @@ package swf {
   }
 
   /**
+   * <p>Provides details of the <code>ScheduleLambdaFunction</code> decision.</p> <p><b>Access Control</b></p> <p>You can use IAM policies to control this decision's access to Amazon SWF resources as follows:</p> <ul> <li>Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.</li> <li>Use an <code>Action</code> element to allow or deny permission to call this action.</li> <li>Constrain the following parameters by using a <code>Condition</code> element with the appropriate keys. <ul> <li><code>activityType.name</code>: String constraint. The key is <code>swf:activityType.name</code>.</li> <li><code>activityType.version</code>: String constraint. The key is <code>swf:activityType.version</code>.</li> <li><code>taskList</code>: String constraint. The key is <code>swf:taskList.name</code>.</li> </ul> </li> </ul> <p>If the caller does not have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <b>cause</b> parameter will be set to OPERATION_NOT_PERMITTED. For details and example IAM policies, see <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a>.</p>
+   */
+  @js.native
+  trait ScheduleLambdaFunctionDecisionAttributes extends js.Object {
+    var id: FunctionId
+    var name: FunctionName
+    var input: FunctionInput
+    var startToCloseTimeout: DurationInSecondsOptional
+  }
+
+  object ScheduleLambdaFunctionDecisionAttributes {
+    def apply(
+      id: js.UndefOr[FunctionId] = js.undefined,
+      name: js.UndefOr[FunctionName] = js.undefined,
+      input: js.UndefOr[FunctionInput] = js.undefined,
+      startToCloseTimeout: js.UndefOr[DurationInSecondsOptional] = js.undefined
+    ): ScheduleLambdaFunctionDecisionAttributes = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("id" -> id.map { x => x: js.Any }),
+        ("name" -> name.map { x => x: js.Any }),
+        ("input" -> input.map { x => x: js.Any }),
+        ("startToCloseTimeout" -> startToCloseTimeout.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ScheduleLambdaFunctionDecisionAttributes]
+    }
+  }
+
+
+  object ScheduleLambdaFunctionFailedCauseEnum {
+    val `ID_ALREADY_IN_USE` = "ID_ALREADY_IN_USE"
+    val `OPEN_LAMBDA_FUNCTIONS_LIMIT_EXCEEDED` = "OPEN_LAMBDA_FUNCTIONS_LIMIT_EXCEEDED"
+    val `LAMBDA_FUNCTION_CREATION_RATE_EXCEEDED` = "LAMBDA_FUNCTION_CREATION_RATE_EXCEEDED"
+    val `LAMBDA_SERVICE_NOT_AVAILABLE_IN_REGION` = "LAMBDA_SERVICE_NOT_AVAILABLE_IN_REGION"
+
+    val values = IndexedSeq(`ID_ALREADY_IN_USE`, `OPEN_LAMBDA_FUNCTIONS_LIMIT_EXCEEDED`, `LAMBDA_FUNCTION_CREATION_RATE_EXCEEDED`, `LAMBDA_SERVICE_NOT_AVAILABLE_IN_REGION`)
+  }
+
+  /**
+   * <p>Provides details for the <code>ScheduleLambdaFunctionFailed</code> event.</p>
+   */
+  @js.native
+  trait ScheduleLambdaFunctionFailedEventAttributes extends js.Object {
+    var id: FunctionId
+    var name: FunctionName
+    var cause: ScheduleLambdaFunctionFailedCause
+    var decisionTaskCompletedEventId: EventId
+  }
+
+  object ScheduleLambdaFunctionFailedEventAttributes {
+    def apply(
+      id: js.UndefOr[FunctionId] = js.undefined,
+      name: js.UndefOr[FunctionName] = js.undefined,
+      cause: js.UndefOr[ScheduleLambdaFunctionFailedCause] = js.undefined,
+      decisionTaskCompletedEventId: js.UndefOr[EventId] = js.undefined
+    ): ScheduleLambdaFunctionFailedEventAttributes = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("id" -> id.map { x => x: js.Any }),
+        ("name" -> name.map { x => x: js.Any }),
+        ("cause" -> cause.map { x => x: js.Any }),
+        ("decisionTaskCompletedEventId" -> decisionTaskCompletedEventId.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ScheduleLambdaFunctionFailedEventAttributes]
+    }
+  }
+
+  /**
    * <p>Provides details of the <code>SignalExternalWorkflowExecution</code> decision.</p> <p><b>Access Control</b></p> <p>You can use IAM policies to control this decision's access to Amazon SWF resources as follows:</p> <ul> <li>Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.</li> <li>Use an <code>Action</code> element to allow or deny permission to call this action.</li> <li>You cannot use an IAM policy to constrain this action's parameters.</li> </ul> <p>If the caller does not have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <b>cause</b> parameter will be set to OPERATION_NOT_PERMITTED. For details and example IAM policies, see <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a>.</p>
    */
   @js.native
@@ -2987,6 +3241,7 @@ package swf {
   @js.native
   trait StartChildWorkflowExecutionDecisionAttributes extends js.Object {
     var workflowType: WorkflowType
+    var lambdaRole: Arn
     var taskList: TaskList
     var tagList: TagList
     var taskPriority: TaskPriority
@@ -3001,6 +3256,7 @@ package swf {
   object StartChildWorkflowExecutionDecisionAttributes {
     def apply(
       workflowType: js.UndefOr[WorkflowType] = js.undefined,
+      lambdaRole: js.UndefOr[Arn] = js.undefined,
       taskList: js.UndefOr[TaskList] = js.undefined,
       tagList: js.UndefOr[TagList] = js.undefined,
       taskPriority: js.UndefOr[TaskPriority] = js.undefined,
@@ -3013,6 +3269,7 @@ package swf {
     ): StartChildWorkflowExecutionDecisionAttributes = {
       val _fields = IndexedSeq[(String, js.Any)](
         ("workflowType" -> workflowType.map { x => x: js.Any }),
+        ("lambdaRole" -> lambdaRole.map { x => x: js.Any }),
         ("taskList" -> taskList.map { x => x: js.Any }),
         ("tagList" -> tagList.map { x => x: js.Any }),
         ("taskPriority" -> taskPriority.map { x => x: js.Any }),
@@ -3086,6 +3343,7 @@ package swf {
   @js.native
   trait StartChildWorkflowExecutionInitiatedEventAttributes extends js.Object {
     var workflowType: WorkflowType
+    var lambdaRole: Arn
     var taskList: TaskList
     var tagList: TagList
     var decisionTaskCompletedEventId: EventId
@@ -3101,6 +3359,7 @@ package swf {
   object StartChildWorkflowExecutionInitiatedEventAttributes {
     def apply(
       workflowType: js.UndefOr[WorkflowType] = js.undefined,
+      lambdaRole: js.UndefOr[Arn] = js.undefined,
       taskList: js.UndefOr[TaskList] = js.undefined,
       tagList: js.UndefOr[TagList] = js.undefined,
       decisionTaskCompletedEventId: js.UndefOr[EventId] = js.undefined,
@@ -3114,6 +3373,7 @@ package swf {
     ): StartChildWorkflowExecutionInitiatedEventAttributes = {
       val _fields = IndexedSeq[(String, js.Any)](
         ("workflowType" -> workflowType.map { x => x: js.Any }),
+        ("lambdaRole" -> lambdaRole.map { x => x: js.Any }),
         ("taskList" -> taskList.map { x => x: js.Any }),
         ("tagList" -> tagList.map { x => x: js.Any }),
         ("decisionTaskCompletedEventId" -> decisionTaskCompletedEventId.map { x => x: js.Any }),
@@ -3127,6 +3387,39 @@ package swf {
       ).filter(_._2 != js.undefined)
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StartChildWorkflowExecutionInitiatedEventAttributes]
+    }
+  }
+
+
+  object StartLambdaFunctionFailedCauseEnum {
+    val `ASSUME_ROLE_FAILED` = "ASSUME_ROLE_FAILED"
+
+    val values = IndexedSeq(`ASSUME_ROLE_FAILED`)
+  }
+
+  /**
+   * <p>Provides details for the <code>StartLambdaFunctionFailed</code> event.</p>
+   */
+  @js.native
+  trait StartLambdaFunctionFailedEventAttributes extends js.Object {
+    var scheduledEventId: EventId
+    var cause: StartLambdaFunctionFailedCause
+    var message: CauseMessage
+  }
+
+  object StartLambdaFunctionFailedEventAttributes {
+    def apply(
+      scheduledEventId: js.UndefOr[EventId] = js.undefined,
+      cause: js.UndefOr[StartLambdaFunctionFailedCause] = js.undefined,
+      message: js.UndefOr[CauseMessage] = js.undefined
+    ): StartLambdaFunctionFailedEventAttributes = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("scheduledEventId" -> scheduledEventId.map { x => x: js.Any }),
+        ("cause" -> cause.map { x => x: js.Any }),
+        ("message" -> message.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StartLambdaFunctionFailedEventAttributes]
     }
   }
 
@@ -3196,6 +3489,7 @@ package swf {
   trait StartWorkflowExecutionInput extends js.Object {
     var workflowType: WorkflowType
     var domain: DomainName
+    var lambdaRole: Arn
     var taskList: TaskList
     var tagList: TagList
     var taskPriority: TaskPriority
@@ -3210,6 +3504,7 @@ package swf {
     def apply(
       workflowType: js.UndefOr[WorkflowType] = js.undefined,
       domain: js.UndefOr[DomainName] = js.undefined,
+      lambdaRole: js.UndefOr[Arn] = js.undefined,
       taskList: js.UndefOr[TaskList] = js.undefined,
       tagList: js.UndefOr[TagList] = js.undefined,
       taskPriority: js.UndefOr[TaskPriority] = js.undefined,
@@ -3222,6 +3517,7 @@ package swf {
       val _fields = IndexedSeq[(String, js.Any)](
         ("workflowType" -> workflowType.map { x => x: js.Any }),
         ("domain" -> domain.map { x => x: js.Any }),
+        ("lambdaRole" -> lambdaRole.map { x => x: js.Any }),
         ("taskList" -> taskList.map { x => x: js.Any }),
         ("tagList" -> tagList.map { x => x: js.Any }),
         ("taskPriority" -> taskPriority.map { x => x: js.Any }),
@@ -3525,6 +3821,7 @@ package swf {
    */
   @js.native
   trait WorkflowExecutionConfiguration extends js.Object {
+    var lambdaRole: Arn
     var taskList: TaskList
     var taskPriority: TaskPriority
     var taskStartToCloseTimeout: DurationInSeconds
@@ -3534,6 +3831,7 @@ package swf {
 
   object WorkflowExecutionConfiguration {
     def apply(
+      lambdaRole: js.UndefOr[Arn] = js.undefined,
       taskList: js.UndefOr[TaskList] = js.undefined,
       taskPriority: js.UndefOr[TaskPriority] = js.undefined,
       taskStartToCloseTimeout: js.UndefOr[DurationInSeconds] = js.undefined,
@@ -3541,6 +3839,7 @@ package swf {
       executionStartToCloseTimeout: js.UndefOr[DurationInSeconds] = js.undefined
     ): WorkflowExecutionConfiguration = {
       val _fields = IndexedSeq[(String, js.Any)](
+        ("lambdaRole" -> lambdaRole.map { x => x: js.Any }),
         ("taskList" -> taskList.map { x => x: js.Any }),
         ("taskPriority" -> taskPriority.map { x => x: js.Any }),
         ("taskStartToCloseTimeout" -> taskStartToCloseTimeout.map { x => x: js.Any }),
@@ -3558,6 +3857,7 @@ package swf {
   @js.native
   trait WorkflowExecutionContinuedAsNewEventAttributes extends js.Object {
     var workflowType: WorkflowType
+    var lambdaRole: Arn
     var taskList: TaskList
     var tagList: TagList
     var newExecutionRunId: RunId
@@ -3572,6 +3872,7 @@ package swf {
   object WorkflowExecutionContinuedAsNewEventAttributes {
     def apply(
       workflowType: js.UndefOr[WorkflowType] = js.undefined,
+      lambdaRole: js.UndefOr[Arn] = js.undefined,
       taskList: js.UndefOr[TaskList] = js.undefined,
       tagList: js.UndefOr[TagList] = js.undefined,
       newExecutionRunId: js.UndefOr[RunId] = js.undefined,
@@ -3584,6 +3885,7 @@ package swf {
     ): WorkflowExecutionContinuedAsNewEventAttributes = {
       val _fields = IndexedSeq[(String, js.Any)](
         ("workflowType" -> workflowType.map { x => x: js.Any }),
+        ("lambdaRole" -> lambdaRole.map { x => x: js.Any }),
         ("taskList" -> taskList.map { x => x: js.Any }),
         ("tagList" -> tagList.map { x => x: js.Any }),
         ("newExecutionRunId" -> newExecutionRunId.map { x => x: js.Any }),
@@ -3772,24 +4074,27 @@ package swf {
    */
   @js.native
   trait WorkflowExecutionOpenCounts extends js.Object {
-    var openActivityTasks: Count
-    var openDecisionTasks: OpenDecisionTasksCount
-    var openTimers: Count
     var openChildWorkflowExecutions: Count
+    var openActivityTasks: Count
+    var openLambdaFunctions: Count
+    var openTimers: Count
+    var openDecisionTasks: OpenDecisionTasksCount
   }
 
   object WorkflowExecutionOpenCounts {
     def apply(
+      openChildWorkflowExecutions: js.UndefOr[Count] = js.undefined,
       openActivityTasks: js.UndefOr[Count] = js.undefined,
-      openDecisionTasks: js.UndefOr[OpenDecisionTasksCount] = js.undefined,
+      openLambdaFunctions: js.UndefOr[Count] = js.undefined,
       openTimers: js.UndefOr[Count] = js.undefined,
-      openChildWorkflowExecutions: js.UndefOr[Count] = js.undefined
+      openDecisionTasks: js.UndefOr[OpenDecisionTasksCount] = js.undefined
     ): WorkflowExecutionOpenCounts = {
       val _fields = IndexedSeq[(String, js.Any)](
+        ("openChildWorkflowExecutions" -> openChildWorkflowExecutions.map { x => x: js.Any }),
         ("openActivityTasks" -> openActivityTasks.map { x => x: js.Any }),
-        ("openDecisionTasks" -> openDecisionTasks.map { x => x: js.Any }),
+        ("openLambdaFunctions" -> openLambdaFunctions.map { x => x: js.Any }),
         ("openTimers" -> openTimers.map { x => x: js.Any }),
-        ("openChildWorkflowExecutions" -> openChildWorkflowExecutions.map { x => x: js.Any })
+        ("openDecisionTasks" -> openDecisionTasks.map { x => x: js.Any })
       ).filter(_._2 != js.undefined)
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[WorkflowExecutionOpenCounts]
@@ -3832,6 +4137,7 @@ package swf {
   trait WorkflowExecutionStartedEventAttributes extends js.Object {
     var parentInitiatedEventId: EventId
     var workflowType: WorkflowType
+    var lambdaRole: Arn
     var taskList: TaskList
     var tagList: TagList
     var parentWorkflowExecution: WorkflowExecution
@@ -3847,6 +4153,7 @@ package swf {
     def apply(
       parentInitiatedEventId: js.UndefOr[EventId] = js.undefined,
       workflowType: js.UndefOr[WorkflowType] = js.undefined,
+      lambdaRole: js.UndefOr[Arn] = js.undefined,
       taskList: js.UndefOr[TaskList] = js.undefined,
       tagList: js.UndefOr[TagList] = js.undefined,
       parentWorkflowExecution: js.UndefOr[WorkflowExecution] = js.undefined,
@@ -3860,6 +4167,7 @@ package swf {
       val _fields = IndexedSeq[(String, js.Any)](
         ("parentInitiatedEventId" -> parentInitiatedEventId.map { x => x: js.Any }),
         ("workflowType" -> workflowType.map { x => x: js.Any }),
+        ("lambdaRole" -> lambdaRole.map { x => x: js.Any }),
         ("taskList" -> taskList.map { x => x: js.Any }),
         ("tagList" -> tagList.map { x => x: js.Any }),
         ("parentWorkflowExecution" -> parentWorkflowExecution.map { x => x: js.Any }),
@@ -3973,6 +4281,7 @@ package swf {
   trait WorkflowTypeConfiguration extends js.Object {
     var defaultTaskStartToCloseTimeout: DurationInSecondsOptional
     var defaultTaskList: TaskList
+    var defaultLambdaRole: Arn
     var defaultChildPolicy: ChildPolicy
     var defaultTaskPriority: TaskPriority
     var defaultExecutionStartToCloseTimeout: DurationInSecondsOptional
@@ -3982,6 +4291,7 @@ package swf {
     def apply(
       defaultTaskStartToCloseTimeout: js.UndefOr[DurationInSecondsOptional] = js.undefined,
       defaultTaskList: js.UndefOr[TaskList] = js.undefined,
+      defaultLambdaRole: js.UndefOr[Arn] = js.undefined,
       defaultChildPolicy: js.UndefOr[ChildPolicy] = js.undefined,
       defaultTaskPriority: js.UndefOr[TaskPriority] = js.undefined,
       defaultExecutionStartToCloseTimeout: js.UndefOr[DurationInSecondsOptional] = js.undefined
@@ -3989,6 +4299,7 @@ package swf {
       val _fields = IndexedSeq[(String, js.Any)](
         ("defaultTaskStartToCloseTimeout" -> defaultTaskStartToCloseTimeout.map { x => x: js.Any }),
         ("defaultTaskList" -> defaultTaskList.map { x => x: js.Any }),
+        ("defaultLambdaRole" -> defaultLambdaRole.map { x => x: js.Any }),
         ("defaultChildPolicy" -> defaultChildPolicy.map { x => x: js.Any }),
         ("defaultTaskPriority" -> defaultTaskPriority.map { x => x: js.Any }),
         ("defaultExecutionStartToCloseTimeout" -> defaultExecutionStartToCloseTimeout.map { x => x: js.Any })

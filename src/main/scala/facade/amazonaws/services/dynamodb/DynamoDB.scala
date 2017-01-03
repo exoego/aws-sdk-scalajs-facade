@@ -46,6 +46,7 @@ package object dynamodb {
   type ItemList = js.Array[AttributeMap]
   type Key = js.Dictionary[AttributeValue]
   type KeyConditions = js.Dictionary[Condition]
+  type KeyExpression = String
   type KeyList = js.Array[Key]
   type KeySchema = js.Array[KeySchemaElement]
   type KeySchemaAttributeName = String
@@ -73,6 +74,9 @@ package object dynamodb {
   type ScanTotalSegments = Integer
   type SecondaryIndexesCapacityMap = js.Dictionary[Capacity]
   type Select = String
+  type StreamArn = String
+  type StreamEnabled = Boolean
+  type StreamViewType = String
   type StringAttributeValue = String
   type StringSetAttributeValue = js.Array[StringAttributeValue]
   type TableName = String
@@ -95,6 +99,8 @@ package dynamodb {
     def deleteItem(params: DeleteItemInput): Request[DeleteItemOutput] = js.native
     def deleteTable(params: DeleteTableInput, callback: Callback[DeleteTableOutput]): Unit = js.native
     def deleteTable(params: DeleteTableInput): Request[DeleteTableOutput] = js.native
+    def describeLimits(params: DescribeLimitsInput, callback: Callback[DescribeLimitsOutput]): Unit = js.native
+    def describeLimits(params: DescribeLimitsInput): Request[DescribeLimitsOutput] = js.native
     def describeTable(params: DescribeTableInput, callback: Callback[DescribeTableOutput]): Unit = js.native
     def describeTable(params: DescribeTableInput): Request[DescribeTableOutput] = js.native
     def getItem(params: GetItemInput, callback: Callback[GetItemOutput]): Unit = js.native
@@ -146,7 +152,7 @@ package dynamodb {
   }
 
   /**
-   * <p>Represents the data for an attribute. You can set one, and only one, of the elements.</p> <p>Each attribute in an item is a name-value pair. An attribute can be single-valued or multi-valued set. For example, a book item can have title and authors attributes. Each book has one title but can have many authors. The multi-valued attribute is a set; duplicate values are not allowed. </p>
+   * <p>Represents the data for an attribute. You can set one, and only one, of the elements.</p> <p>Each attribute in an item is a name-value pair. An attribute can be single-valued or multi-valued set. For example, a book item can have title and authors attributes. Each book has one title but can have many authors. The multi-valued attribute is a set; duplicate values are not allowed.</p>
    */
   @js.native
   trait AttributeValue extends js.Object {
@@ -317,7 +323,7 @@ package dynamodb {
   }
 
   /**
-   * <p>Represents the amount of provisioned throughput capacity consumed on a table or an index. </p>
+   * <p>Represents the amount of provisioned throughput capacity consumed on a table or an index.</p>
    */
   @js.native
   trait Capacity extends js.Object {
@@ -356,7 +362,7 @@ package dynamodb {
   }
 
   /**
-   * <p>Represents the selection criteria for a <i>Query</i> or <i>Scan</i> operation:</p> <ul> <li> <p>For a <i>Query</i> operation, <i>Condition</i> is used for specifying the <i>KeyConditions</i> to use when querying a table or an index. For <i>KeyConditions</i>, only the following comparison operators are supported:</p> <p> <code>EQ | LE | LT | GE | GT | BEGINS_WITH | BETWEEN</code> </p> <p><i>Condition</i> is also used in a <i>QueryFilter</i>, which evaluates the query results and returns only the desired values.</p> </li> <li> <p>For a <i>Scan</i> operation, <i>Condition</i> is used in a <i>ScanFilter</i>, which evaluates the scan results and returns only the desired values.</p> </li> </ul>
+   * <p>Represents the selection criteria for a <i>Query</i> or <i>Scan</i> operation:</p> <ul> <li> <p>For a <i>Query</i> operation, <i>Condition</i> is used for specifying the <i>KeyConditions</i> to use when querying a table or an index. For <i>KeyConditions</i>, only the following comparison operators are supported:</p> <p> <code>EQ | LE | LT | GE | GT | BEGINS_WITH | BETWEEN</code> </p> <p> <i>Condition</i> is also used in a <i>QueryFilter</i>, which evaluates the query results and returns only the desired values.</p> </li> <li> <p>For a <i>Scan</i> operation, <i>Condition</i> is used in a <i>ScanFilter</i>, which evaluates the scan results and returns only the desired values.</p> </li> </ul>
    */
   @js.native
   trait Condition extends js.Object {
@@ -460,6 +466,7 @@ package dynamodb {
    */
   @js.native
   trait CreateTableInput extends js.Object {
+    var StreamSpecification: StreamSpecification
     var LocalSecondaryIndexes: LocalSecondaryIndexList
     var ProvisionedThroughput: ProvisionedThroughput
     var AttributeDefinitions: AttributeDefinitions
@@ -470,6 +477,7 @@ package dynamodb {
 
   object CreateTableInput {
     def apply(
+      StreamSpecification: js.UndefOr[StreamSpecification] = js.undefined,
       LocalSecondaryIndexes: js.UndefOr[LocalSecondaryIndexList] = js.undefined,
       ProvisionedThroughput: js.UndefOr[ProvisionedThroughput] = js.undefined,
       AttributeDefinitions: js.UndefOr[AttributeDefinitions] = js.undefined,
@@ -478,6 +486,7 @@ package dynamodb {
       TableName: js.UndefOr[TableName] = js.undefined
     ): CreateTableInput = {
       val _fields = IndexedSeq[(String, js.Any)](
+        ("StreamSpecification" -> StreamSpecification.map { x => x: js.Any }),
         ("LocalSecondaryIndexes" -> LocalSecondaryIndexes.map { x => x: js.Any }),
         ("ProvisionedThroughput" -> ProvisionedThroughput.map { x => x: js.Any }),
         ("AttributeDefinitions" -> AttributeDefinitions.map { x => x: js.Any }),
@@ -664,6 +673,55 @@ package dynamodb {
   }
 
   /**
+   * <p>Represents the input of a <i>DescribeLimits</i> operation. Has no content.</p>
+   */
+  @js.native
+  trait DescribeLimitsInput extends js.Object {
+
+  }
+
+  object DescribeLimitsInput {
+    def apply(
+
+    ): DescribeLimitsInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeLimitsInput]
+    }
+  }
+
+  /**
+   * <p>Represents the output of a <i>DescribeLimits</i> operation.</p>
+   */
+  @js.native
+  trait DescribeLimitsOutput extends js.Object {
+    var AccountMaxReadCapacityUnits: PositiveLongObject
+    var AccountMaxWriteCapacityUnits: PositiveLongObject
+    var TableMaxReadCapacityUnits: PositiveLongObject
+    var TableMaxWriteCapacityUnits: PositiveLongObject
+  }
+
+  object DescribeLimitsOutput {
+    def apply(
+      AccountMaxReadCapacityUnits: js.UndefOr[PositiveLongObject] = js.undefined,
+      AccountMaxWriteCapacityUnits: js.UndefOr[PositiveLongObject] = js.undefined,
+      TableMaxReadCapacityUnits: js.UndefOr[PositiveLongObject] = js.undefined,
+      TableMaxWriteCapacityUnits: js.UndefOr[PositiveLongObject] = js.undefined
+    ): DescribeLimitsOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("AccountMaxReadCapacityUnits" -> AccountMaxReadCapacityUnits.map { x => x: js.Any }),
+        ("AccountMaxWriteCapacityUnits" -> AccountMaxWriteCapacityUnits.map { x => x: js.Any }),
+        ("TableMaxReadCapacityUnits" -> TableMaxReadCapacityUnits.map { x => x: js.Any }),
+        ("TableMaxWriteCapacityUnits" -> TableMaxWriteCapacityUnits.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeLimitsOutput]
+    }
+  }
+
+  /**
    * <p>Represents the input of a <i>DescribeTable</i> operation.</p>
    */
   @js.native
@@ -704,7 +762,7 @@ package dynamodb {
   }
 
   /**
-   * <p>Represents a condition to be compared with an attribute value. This condition can be used with <i>DeleteItem</i>, <i>PutItem</i> or <i>UpdateItem</i> operations; if the comparison evaluates to true, the operation succeeds; if not, the operation fails. You can use <i>ExpectedAttributeValue</i> in one of two different ways:</p> <ul> <li> <p>Use <i>AttributeValueList</i> to specify one or more values to compare against an attribute. Use <i>ComparisonOperator</i> to specify how you want to perform the comparison. If the comparison evaluates to true, then the conditional operation succeeds.</p> </li> <li> <p>&gt;Use <i>Value</i> to specify a value that DynamoDB will compare against an attribute. If the values match, then <i>ExpectedAttributeValue</i> evaluates to true and the conditional operation succeeds. Optionally, you can also set <i>Exists</i> to false, indicating that you <i>do not</i> expect to find the attribute value in the table. In this case, the conditional operation succeeds only if the comparison evaluates to false.</p> </li> </ul> <p><i>Value</i> and <i>Exists</i> are incompatible with <i>AttributeValueList</i> and <i>ComparisonOperator</i>. Note that if you use both sets of parameters at once, DynamoDB will return a <i>ValidationException</i> exception.</p>
+   * <p>Represents a condition to be compared with an attribute value. This condition can be used with <i>DeleteItem</i>, <i>PutItem</i> or <i>UpdateItem</i> operations; if the comparison evaluates to true, the operation succeeds; if not, the operation fails. You can use <i>ExpectedAttributeValue</i> in one of two different ways:</p> <ul> <li> <p>Use <i>AttributeValueList</i> to specify one or more values to compare against an attribute. Use <i>ComparisonOperator</i> to specify how you want to perform the comparison. If the comparison evaluates to true, then the conditional operation succeeds.</p> </li> <li> <p>Use <i>Value</i> to specify a value that DynamoDB will compare against an attribute. If the values match, then <i>ExpectedAttributeValue</i> evaluates to true and the conditional operation succeeds. Optionally, you can also set <i>Exists</i> to false, indicating that you <i>do not</i> expect to find the attribute value in the table. In this case, the conditional operation succeeds only if the comparison evaluates to false.</p> </li> </ul> <p> <i>Value</i> and <i>Exists</i> are incompatible with <i>AttributeValueList</i> and <i>ComparisonOperator</i>. Note that if you use both sets of parameters at once, DynamoDB will return a <i>ValidationException</i> exception.</p>
    */
   @js.native
   trait ExpectedAttributeValue extends js.Object {
@@ -829,6 +887,7 @@ package dynamodb {
   trait GlobalSecondaryIndexDescription extends js.Object {
     var Backfilling: Backfilling
     var ProvisionedThroughput: ProvisionedThroughputDescription
+    var IndexArn: String
     var ItemCount: Long
     var IndexSizeBytes: Long
     var KeySchema: KeySchema
@@ -841,6 +900,7 @@ package dynamodb {
     def apply(
       Backfilling: js.UndefOr[Backfilling] = js.undefined,
       ProvisionedThroughput: js.UndefOr[ProvisionedThroughputDescription] = js.undefined,
+      IndexArn: js.UndefOr[String] = js.undefined,
       ItemCount: js.UndefOr[Long] = js.undefined,
       IndexSizeBytes: js.UndefOr[Long] = js.undefined,
       KeySchema: js.UndefOr[KeySchema] = js.undefined,
@@ -851,6 +911,7 @@ package dynamodb {
       val _fields = IndexedSeq[(String, js.Any)](
         ("Backfilling" -> Backfilling.map { x => x: js.Any }),
         ("ProvisionedThroughput" -> ProvisionedThroughput.map { x => x: js.Any }),
+        ("IndexArn" -> IndexArn.map { x => x: js.Any }),
         ("ItemCount" -> ItemCount.map { x => x: js.Any }),
         ("IndexSizeBytes" -> IndexSizeBytes.map { x => x: js.Any }),
         ("KeySchema" -> KeySchema.map { x => x: js.Any }),
@@ -864,7 +925,7 @@ package dynamodb {
   }
 
   /**
-   * <p>Represents one of the following:</p> <ul> <li><p>A new global secondary index to be added to an existing table.</p></li> <li><p>New provisioned throughput parameters for an existing global secondary index.</p></li> <li><p>An existing global secondary index to be removed from an existing table.</p></li> </ul>
+   * <p>Represents one of the following:</p> <ul> <li> <p>A new global secondary index to be added to an existing table.</p> </li> <li> <p>New provisioned throughput parameters for an existing global secondary index.</p> </li> <li> <p>An existing global secondary index to be removed from an existing table.</p> </li> </ul>
    */
   @js.native
   trait GlobalSecondaryIndexUpdate extends js.Object {
@@ -939,7 +1000,7 @@ package dynamodb {
   }
 
   /**
-   * <p>Represents <i>a single element</i> of a key schema. A key schema specifies the attributes that make up the primary key of a table, or the key attributes of an index.</p> <p>A <i>KeySchemaElement</i> represents exactly one attribute of the primary key. For example, a hash type primary key would be represented by one <i>KeySchemaElement</i>. A hash-and-range type primary key would require one <i>KeySchemaElement</i> for the hash attribute, and another <i>KeySchemaElement</i> for the range attribute.</p>
+   * <p>Represents <i>a single element</i> of a key schema. A key schema specifies the attributes that make up the primary key of a table, or the key attributes of an index.</p> <p>A <i>KeySchemaElement</i> represents exactly one attribute of the primary key. For example, a simple primary key would be represented by one <i>KeySchemaElement</i> (for the partition key). A composite primary key would require one <i>KeySchemaElement</i> for the partition key, and another <i>KeySchemaElement</i> for the sort key.</p> <p>A <i>KeySchemaElement</i> must be a scalar, top-level attribute (not a nested attribute). The data type must be one of String, Number, or Binary. The attribute cannot be nested within a List or a Map.</p>
    */
   @js.native
   trait KeySchemaElement extends js.Object {
@@ -970,7 +1031,7 @@ package dynamodb {
   }
 
   /**
-   * <p>Represents a set of primary keys and, for each key, the attributes to retrieve from the table.</p> <p>For each primary key, you must provide <i>all</i> of the key attributes. For example, with a hash type primary key, you only need to provide the hash attribute. For a hash-and-range type primary key, you must provide <i>both</i> the hash attribute and the range attribute.</p>
+   * <p>Represents a set of primary keys and, for each key, the attributes to retrieve from the table.</p> <p>For each primary key, you must provide <i>all</i> of the key attributes. For example, with a simple primary key, you only need to provide the partition key. For a composite primary key, you must provide <i>both</i> the partition key and the sort key.</p>
    */
   @js.native
   trait KeysAndAttributes extends js.Object {
@@ -1086,6 +1147,7 @@ package dynamodb {
    */
   @js.native
   trait LocalSecondaryIndexDescription extends js.Object {
+    var IndexArn: String
     var ItemCount: Long
     var IndexSizeBytes: Long
     var KeySchema: KeySchema
@@ -1095,6 +1157,7 @@ package dynamodb {
 
   object LocalSecondaryIndexDescription {
     def apply(
+      IndexArn: js.UndefOr[String] = js.undefined,
       ItemCount: js.UndefOr[Long] = js.undefined,
       IndexSizeBytes: js.UndefOr[Long] = js.undefined,
       KeySchema: js.UndefOr[KeySchema] = js.undefined,
@@ -1102,6 +1165,7 @@ package dynamodb {
       Projection: js.UndefOr[Projection] = js.undefined
     ): LocalSecondaryIndexDescription = {
       val _fields = IndexedSeq[(String, js.Any)](
+        ("IndexArn" -> IndexArn.map { x => x: js.Any }),
         ("ItemCount" -> ItemCount.map { x => x: js.Any }),
         ("IndexSizeBytes" -> IndexSizeBytes.map { x => x: js.Any }),
         ("KeySchema" -> KeySchema.map { x => x: js.Any }),
@@ -1201,7 +1265,7 @@ package dynamodb {
   }
 
   /**
-   * <p>The request rate is too high, or the request is too large, for the available throughput to accommodate. The AWS SDKs automatically retry requests that receive this exception; therefore, your request will eventually succeed, unless the request is too large or your retry queue is too large to finish. Reduce the frequency of requests by using the strategies listed in <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ErrorHandling.html#APIRetries">Error Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+   * <p>Your request rate is too high. The AWS SDKs for DynamoDB automatically retry requests that receive this exception. Your request is eventually successful, unless your retry queue is too large to finish. Reduce the frequency of requests and use exponential backoff. For more information, go to <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ErrorHandling.html#APIRetries">Error Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
    */
   @js.native
   trait ProvisionedThroughputExceededExceptionException extends js.Object {
@@ -1310,6 +1374,7 @@ package dynamodb {
     var ConditionalOperator: ConditionalOperator
     var ExpressionAttributeValues: ExpressionAttributeValueMap
     var QueryFilter: FilterConditionMap
+    var KeyConditionExpression: KeyExpression
     var KeyConditions: KeyConditions
     var Limit: PositiveIntegerObject
     var FilterExpression: ConditionExpression
@@ -1330,6 +1395,7 @@ package dynamodb {
       ConditionalOperator: js.UndefOr[ConditionalOperator] = js.undefined,
       ExpressionAttributeValues: js.UndefOr[ExpressionAttributeValueMap] = js.undefined,
       QueryFilter: js.UndefOr[FilterConditionMap] = js.undefined,
+      KeyConditionExpression: js.UndefOr[KeyExpression] = js.undefined,
       KeyConditions: js.UndefOr[KeyConditions] = js.undefined,
       Limit: js.UndefOr[PositiveIntegerObject] = js.undefined,
       FilterExpression: js.UndefOr[ConditionExpression] = js.undefined,
@@ -1348,6 +1414,7 @@ package dynamodb {
         ("ConditionalOperator" -> ConditionalOperator.map { x => x: js.Any }),
         ("ExpressionAttributeValues" -> ExpressionAttributeValues.map { x => x: js.Any }),
         ("QueryFilter" -> QueryFilter.map { x => x: js.Any }),
+        ("KeyConditionExpression" -> KeyConditionExpression.map { x => x: js.Any }),
         ("KeyConditions" -> KeyConditions.map { x => x: js.Any }),
         ("Limit" -> Limit.map { x => x: js.Any }),
         ("FilterExpression" -> FilterExpression.map { x => x: js.Any }),
@@ -1415,7 +1482,7 @@ package dynamodb {
   }
 
   /**
-   * <p>A value that if set to <code>TOTAL</code>, the response includes <i>ConsumedCapacity</i> data for tables and indexes. If set to <code>INDEXES</code>, the response includes <i>ConsumedCapacity</i> for indexes. If set to <code>NONE</code> (the default), <i>ConsumedCapacity</i> is not included in the response.</p>
+   * <p>Determines the level of detail about provisioned throughput consumption that is returned in the response:</p> <ul> <li> <p> <i>INDEXES</i> - The response includes the aggregate <i>ConsumedCapacity</i> for the operation, together with <i>ConsumedCapacity</i> for each table and secondary index that was accessed.</p> <p>Note that some operations, such as <i>GetItem</i> and <i>BatchGetItem</i>, do not access any indexes at all. In these cases, specifying <i>INDEXES</i> will only return <i>ConsumedCapacity</i> information for table(s).</p> </li> <li> <p> <i>TOTAL</i> - The response includes only the aggregate <i>ConsumedCapacity</i> for the operation.</p> </li> <li> <p> <i>NONE</i> - No <i>ConsumedCapacity</i> details are included in the response.</p> </li> </ul>
    */
   object ReturnConsumedCapacityEnum {
     val INDEXES = "INDEXES"
@@ -1469,6 +1536,7 @@ package dynamodb {
     var Select: Select
     var ReturnConsumedCapacity: ReturnConsumedCapacity
     var ExpressionAttributeNames: ExpressionAttributeNameMap
+    var ConsistentRead: ConsistentRead
     var ProjectionExpression: ProjectionExpression
     var TableName: TableName
     var IndexName: IndexName
@@ -1488,6 +1556,7 @@ package dynamodb {
       Select: js.UndefOr[Select] = js.undefined,
       ReturnConsumedCapacity: js.UndefOr[ReturnConsumedCapacity] = js.undefined,
       ExpressionAttributeNames: js.UndefOr[ExpressionAttributeNameMap] = js.undefined,
+      ConsistentRead: js.UndefOr[ConsistentRead] = js.undefined,
       ProjectionExpression: js.UndefOr[ProjectionExpression] = js.undefined,
       TableName: js.UndefOr[TableName] = js.undefined,
       IndexName: js.UndefOr[IndexName] = js.undefined,
@@ -1505,6 +1574,7 @@ package dynamodb {
         ("Select" -> Select.map { x => x: js.Any }),
         ("ReturnConsumedCapacity" -> ReturnConsumedCapacity.map { x => x: js.Any }),
         ("ExpressionAttributeNames" -> ExpressionAttributeNames.map { x => x: js.Any }),
+        ("ConsistentRead" -> ConsistentRead.map { x => x: js.Any }),
         ("ProjectionExpression" -> ProjectionExpression.map { x => x: js.Any }),
         ("TableName" -> TableName.map { x => x: js.Any }),
         ("IndexName" -> IndexName.map { x => x: js.Any }),
@@ -1558,17 +1628,54 @@ package dynamodb {
   }
 
   /**
+   * <p>Represents the DynamoDB Streams configuration for a table in DynamoDB.</p>
+   */
+  @js.native
+  trait StreamSpecification extends js.Object {
+    var StreamEnabled: StreamEnabled
+    var StreamViewType: StreamViewType
+  }
+
+  object StreamSpecification {
+    def apply(
+      StreamEnabled: js.UndefOr[StreamEnabled] = js.undefined,
+      StreamViewType: js.UndefOr[StreamViewType] = js.undefined
+    ): StreamSpecification = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("StreamEnabled" -> StreamEnabled.map { x => x: js.Any }),
+        ("StreamViewType" -> StreamViewType.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StreamSpecification]
+    }
+  }
+
+
+  object StreamViewTypeEnum {
+    val `NEW_IMAGE` = "NEW_IMAGE"
+    val `OLD_IMAGE` = "OLD_IMAGE"
+    val `NEW_AND_OLD_IMAGES` = "NEW_AND_OLD_IMAGES"
+    val `KEYS_ONLY` = "KEYS_ONLY"
+
+    val values = IndexedSeq(`NEW_IMAGE`, `OLD_IMAGE`, `NEW_AND_OLD_IMAGES`, `KEYS_ONLY`)
+  }
+
+  /**
    * <p>Represents the properties of a table.</p>
    */
   @js.native
   trait TableDescription extends js.Object {
+    var StreamSpecification: StreamSpecification
     var LocalSecondaryIndexes: LocalSecondaryIndexDescriptionList
     var TableStatus: TableStatus
     var ProvisionedThroughput: ProvisionedThroughputDescription
+    var LatestStreamLabel: String
     var AttributeDefinitions: AttributeDefinitions
+    var TableArn: String
     var GlobalSecondaryIndexes: GlobalSecondaryIndexDescriptionList
     var CreationDateTime: Date
     var ItemCount: Long
+    var LatestStreamArn: StreamArn
     var TableSizeBytes: Long
     var KeySchema: KeySchema
     var TableName: TableName
@@ -1576,25 +1683,33 @@ package dynamodb {
 
   object TableDescription {
     def apply(
+      StreamSpecification: js.UndefOr[StreamSpecification] = js.undefined,
       LocalSecondaryIndexes: js.UndefOr[LocalSecondaryIndexDescriptionList] = js.undefined,
       TableStatus: js.UndefOr[TableStatus] = js.undefined,
       ProvisionedThroughput: js.UndefOr[ProvisionedThroughputDescription] = js.undefined,
+      LatestStreamLabel: js.UndefOr[String] = js.undefined,
       AttributeDefinitions: js.UndefOr[AttributeDefinitions] = js.undefined,
+      TableArn: js.UndefOr[String] = js.undefined,
       GlobalSecondaryIndexes: js.UndefOr[GlobalSecondaryIndexDescriptionList] = js.undefined,
       CreationDateTime: js.UndefOr[Date] = js.undefined,
       ItemCount: js.UndefOr[Long] = js.undefined,
+      LatestStreamArn: js.UndefOr[StreamArn] = js.undefined,
       TableSizeBytes: js.UndefOr[Long] = js.undefined,
       KeySchema: js.UndefOr[KeySchema] = js.undefined,
       TableName: js.UndefOr[TableName] = js.undefined
     ): TableDescription = {
       val _fields = IndexedSeq[(String, js.Any)](
+        ("StreamSpecification" -> StreamSpecification.map { x => x: js.Any }),
         ("LocalSecondaryIndexes" -> LocalSecondaryIndexes.map { x => x: js.Any }),
         ("TableStatus" -> TableStatus.map { x => x: js.Any }),
         ("ProvisionedThroughput" -> ProvisionedThroughput.map { x => x: js.Any }),
+        ("LatestStreamLabel" -> LatestStreamLabel.map { x => x: js.Any }),
         ("AttributeDefinitions" -> AttributeDefinitions.map { x => x: js.Any }),
+        ("TableArn" -> TableArn.map { x => x: js.Any }),
         ("GlobalSecondaryIndexes" -> GlobalSecondaryIndexes.map { x => x: js.Any }),
         ("CreationDateTime" -> CreationDateTime.map { x => x: js.Any }),
         ("ItemCount" -> ItemCount.map { x => x: js.Any }),
+        ("LatestStreamArn" -> LatestStreamArn.map { x => x: js.Any }),
         ("TableSizeBytes" -> TableSizeBytes.map { x => x: js.Any }),
         ("KeySchema" -> KeySchema.map { x => x: js.Any }),
         ("TableName" -> TableName.map { x => x: js.Any })
@@ -1721,24 +1836,27 @@ package dynamodb {
    */
   @js.native
   trait UpdateTableInput extends js.Object {
+    var StreamSpecification: StreamSpecification
+    var GlobalSecondaryIndexUpdates: GlobalSecondaryIndexUpdateList
+    var ProvisionedThroughput: ProvisionedThroughput
     var AttributeDefinitions: AttributeDefinitions
     var TableName: TableName
-    var ProvisionedThroughput: ProvisionedThroughput
-    var GlobalSecondaryIndexUpdates: GlobalSecondaryIndexUpdateList
   }
 
   object UpdateTableInput {
     def apply(
-      AttributeDefinitions: js.UndefOr[AttributeDefinitions] = js.undefined,
-      TableName: js.UndefOr[TableName] = js.undefined,
+      StreamSpecification: js.UndefOr[StreamSpecification] = js.undefined,
+      GlobalSecondaryIndexUpdates: js.UndefOr[GlobalSecondaryIndexUpdateList] = js.undefined,
       ProvisionedThroughput: js.UndefOr[ProvisionedThroughput] = js.undefined,
-      GlobalSecondaryIndexUpdates: js.UndefOr[GlobalSecondaryIndexUpdateList] = js.undefined
+      AttributeDefinitions: js.UndefOr[AttributeDefinitions] = js.undefined,
+      TableName: js.UndefOr[TableName] = js.undefined
     ): UpdateTableInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        ("AttributeDefinitions" -> AttributeDefinitions.map { x => x: js.Any }),
-        ("TableName" -> TableName.map { x => x: js.Any }),
+        ("StreamSpecification" -> StreamSpecification.map { x => x: js.Any }),
+        ("GlobalSecondaryIndexUpdates" -> GlobalSecondaryIndexUpdates.map { x => x: js.Any }),
         ("ProvisionedThroughput" -> ProvisionedThroughput.map { x => x: js.Any }),
-        ("GlobalSecondaryIndexUpdates" -> GlobalSecondaryIndexUpdates.map { x => x: js.Any })
+        ("AttributeDefinitions" -> AttributeDefinitions.map { x => x: js.Any }),
+        ("TableName" -> TableName.map { x => x: js.Any })
       ).filter(_._2 != js.undefined)
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateTableInput]

@@ -6,7 +6,6 @@ import facade.amazonaws._
 package object sqs {
   type AWSAccountIdList = js.Array[String]
   type ActionNameList = js.Array[String]
-  type AttributeMap = js.Dictionary[String]
   type AttributeNameList = js.Array[QueueAttributeName]
   type BatchResultErrorEntryList = js.Array[BatchResultErrorEntry]
   type Binary = js.Array[Byte]
@@ -15,10 +14,13 @@ package object sqs {
   type ChangeMessageVisibilityBatchResultEntryList = js.Array[ChangeMessageVisibilityBatchResultEntry]
   type DeleteMessageBatchRequestEntryList = js.Array[DeleteMessageBatchRequestEntry]
   type DeleteMessageBatchResultEntryList = js.Array[DeleteMessageBatchResultEntry]
-  type MessageAttributeMap = js.Dictionary[MessageAttributeValue]
   type MessageAttributeName = String
   type MessageAttributeNameList = js.Array[MessageAttributeName]
+  type MessageBodyAttributeMap = js.Dictionary[MessageAttributeValue]
   type MessageList = js.Array[Message]
+  type MessageSystemAttributeMap = js.Dictionary[String]
+  type MessageSystemAttributeName = String
+  type QueueAttributeMap = js.Dictionary[String]
   type QueueAttributeName = String
   type QueueUrlList = js.Array[String]
   type SendMessageBatchRequestEntryList = js.Array[SendMessageBatchRequestEntry]
@@ -65,6 +67,9 @@ package sqs {
     def setQueueAttributes(params: SetQueueAttributesRequest): Request[js.Object] = js.native
   }
 
+  /**
+   * <p/>
+   */
   @js.native
   trait AddPermissionRequest extends js.Object {
     var QueueUrl: String
@@ -92,7 +97,7 @@ package sqs {
   }
 
   /**
-   * <p>Two or more batch entries have the same <code>Id</code> in the request.</p>
+   * <p>Two or more batch entries in the request have the same <code>Id</code>.</p>
    */
   @js.native
   trait BatchEntryIdsNotDistinctException extends js.Object {
@@ -136,6 +141,9 @@ package sqs {
     }
   }
 
+  /**
+   * <p/>
+   */
   @js.native
   trait ChangeMessageVisibilityBatchRequest extends js.Object {
     var QueueUrl: String
@@ -157,7 +165,7 @@ package sqs {
   }
 
   /**
-   * <p>Encloses a receipt handle and an entry id for each message in <a>ChangeMessageVisibilityBatch</a>. </p> <important> <p>All of the following parameters are list parameters that must be prefixed with <code>ChangeMessageVisibilityBatchRequestEntry.n</code>, where <code>n</code> is an integer value starting with 1. For example, a parameter list for this action might look like this:</p> </important> <p><code>&amp;ChangeMessageVisibilityBatchRequestEntry.1.Id=change_visibility_msg_2</code></p> <p><code>&amp;ChangeMessageVisibilityBatchRequestEntry.1.ReceiptHandle=<replaceable>Your_Receipt_Handle</replaceable></code></p> <p><code>&amp;ChangeMessageVisibilityBatchRequestEntry.1.VisibilityTimeout=45</code></p>
+   * <p>Encloses a receipt handle and an entry id for each message in <code> <a>ChangeMessageVisibilityBatch</a> </code>.</p> <important> <p>All of the following list parameters must be prefixed with <code>ChangeMessageVisibilityBatchRequestEntry.n</code>, where <code>n</code> is an integer value starting with <code>1</code>. For example, a parameter list for this action might look like this:</p> </important> <p> <code>&amp;amp;ChangeMessageVisibilityBatchRequestEntry.1.Id=change_visibility_msg_2</code> </p> <p> <code>&amp;amp;ChangeMessageVisibilityBatchRequestEntry.1.ReceiptHandle=&lt;replaceable&gt;Your_Receipt_Handle&lt;/replaceable&gt;</code> </p> <p> <code>&amp;amp;ChangeMessageVisibilityBatchRequestEntry.1.VisibilityTimeout=45</code> </p>
    */
   @js.native
   trait ChangeMessageVisibilityBatchRequestEntry extends js.Object {
@@ -183,7 +191,7 @@ package sqs {
   }
 
   /**
-   * <p> For each message in the batch, the response contains a <a>ChangeMessageVisibilityBatchResultEntry</a> tag if the message succeeds or a <a>BatchResultErrorEntry</a> tag if the message fails. </p>
+   * <p>For each message in the batch, the response contains a <code> <a>ChangeMessageVisibilityBatchResultEntry</a> </code> tag if the message succeeds or a <code> <a>BatchResultErrorEntry</a> </code> tag if the message fails.</p>
    */
   @js.native
   trait ChangeMessageVisibilityBatchResult extends js.Object {
@@ -206,7 +214,7 @@ package sqs {
   }
 
   /**
-   * <p>Encloses the id of an entry in <a>ChangeMessageVisibilityBatch</a>.</p>
+   * <p>Encloses the <code>Id</code> of an entry in <code> <a>ChangeMessageVisibilityBatch</a> </code>.</p>
    */
   @js.native
   trait ChangeMessageVisibilityBatchResultEntry extends js.Object {
@@ -248,16 +256,19 @@ package sqs {
     }
   }
 
+  /**
+   * <p/>
+   */
   @js.native
   trait CreateQueueRequest extends js.Object {
     var QueueName: String
-    var Attributes: AttributeMap
+    var Attributes: QueueAttributeMap
   }
 
   object CreateQueueRequest {
     def apply(
       QueueName: js.UndefOr[String] = js.undefined,
-      Attributes: js.UndefOr[AttributeMap] = js.undefined
+      Attributes: js.UndefOr[QueueAttributeMap] = js.undefined
     ): CreateQueueRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         ("QueueName" -> QueueName.map { x => x: js.Any }),
@@ -269,7 +280,7 @@ package sqs {
   }
 
   /**
-   * <p>Returns the QueueUrl element of the created queue.</p>
+   * <p>Returns the <code>QueueUrl</code> attribute of the created queue.</p>
    */
   @js.native
   trait CreateQueueResult extends js.Object {
@@ -288,6 +299,9 @@ package sqs {
     }
   }
 
+  /**
+   * <p/>
+   */
   @js.native
   trait DeleteMessageBatchRequest extends js.Object {
     var QueueUrl: String
@@ -332,7 +346,7 @@ package sqs {
   }
 
   /**
-   * <p> For each message in the batch, the response contains a <a>DeleteMessageBatchResultEntry</a> tag if the message is deleted or a <a>BatchResultErrorEntry</a> tag if the message cannot be deleted. </p>
+   * <p>For each message in the batch, the response contains a <code> <a>DeleteMessageBatchResultEntry</a> </code> tag if the message is deleted or a <code> <a>BatchResultErrorEntry</a> </code> tag if the message can't be deleted.</p>
    */
   @js.native
   trait DeleteMessageBatchResult extends js.Object {
@@ -355,7 +369,7 @@ package sqs {
   }
 
   /**
-   * <p>Encloses the id an entry in <a>DeleteMessageBatch</a>.</p>
+   * <p>Encloses the <code>Id</code> of an entry in <code> <a>DeleteMessageBatch</a> </code>.</p>
    */
   @js.native
   trait DeleteMessageBatchResultEntry extends js.Object {
@@ -374,6 +388,9 @@ package sqs {
     }
   }
 
+  /**
+   * <p/>
+   */
   @js.native
   trait DeleteMessageRequest extends js.Object {
     var QueueUrl: String
@@ -394,6 +411,9 @@ package sqs {
     }
   }
 
+  /**
+   * <p/>
+   */
   @js.native
   trait DeleteQueueRequest extends js.Object {
     var QueueUrl: String
@@ -412,13 +432,16 @@ package sqs {
   }
 
   /**
-   * <p>Batch request does not contain an entry.</p>
+   * <p>The batch request doesn't contain any entries.</p>
    */
   @js.native
   trait EmptyBatchRequestException extends js.Object {
 
   }
 
+  /**
+   * <p/>
+   */
   @js.native
   trait GetQueueAttributesRequest extends js.Object {
     var QueueUrl: String
@@ -440,16 +463,16 @@ package sqs {
   }
 
   /**
-   * A list of returned queue attributes.
+   * <p>A list of returned queue attributes.</p>
    */
   @js.native
   trait GetQueueAttributesResult extends js.Object {
-    var Attributes: AttributeMap
+    var Attributes: QueueAttributeMap
   }
 
   object GetQueueAttributesResult {
     def apply(
-      Attributes: js.UndefOr[AttributeMap] = js.undefined
+      Attributes: js.UndefOr[QueueAttributeMap] = js.undefined
     ): GetQueueAttributesResult = {
       val _fields = IndexedSeq[(String, js.Any)](
         ("Attributes" -> Attributes.map { x => x: js.Any })
@@ -459,6 +482,9 @@ package sqs {
     }
   }
 
+  /**
+   * <p/>
+   */
   @js.native
   trait GetQueueUrlRequest extends js.Object {
     var QueueName: String
@@ -500,7 +526,7 @@ package sqs {
   }
 
   /**
-   * <p>The attribute referred to does not exist.</p>
+   * <p>The attribute referred to doesn't exist.</p>
    */
   @js.native
   trait InvalidAttributeNameException extends js.Object {
@@ -508,7 +534,7 @@ package sqs {
   }
 
   /**
-   * <p>The <code>Id</code> of a batch entry in a batch request does not abide by the specification.</p>
+   * <p>The <code>Id</code> of a batch entry in a batch request doesn't abide by the specification.</p>
    */
   @js.native
   trait InvalidBatchEntryIdException extends js.Object {
@@ -516,7 +542,7 @@ package sqs {
   }
 
   /**
-   * <p>The receipt handle is not valid for the current version.</p>
+   * <p>The receipt handle isn't valid for the current version.</p>
    */
   @js.native
   trait InvalidIdFormatException extends js.Object {
@@ -531,6 +557,9 @@ package sqs {
 
   }
 
+  /**
+   * <p/>
+   */
   @js.native
   trait ListDeadLetterSourceQueuesRequest extends js.Object {
     var QueueUrl: String
@@ -549,7 +578,7 @@ package sqs {
   }
 
   /**
-   * A list of your dead letter source queues.
+   * <p>A list of your dead letter source queues.</p>
    */
   @js.native
   trait ListDeadLetterSourceQueuesResult extends js.Object {
@@ -568,6 +597,9 @@ package sqs {
     }
   }
 
+  /**
+   * <p/>
+   */
   @js.native
   trait ListQueuesRequest extends js.Object {
     var QueueNamePrefix: String
@@ -586,7 +618,7 @@ package sqs {
   }
 
   /**
-   * A list of your queues.
+   * <p>A list of your queues.</p>
    */
   @js.native
   trait ListQueuesResult extends js.Object {
@@ -611,10 +643,10 @@ package sqs {
   @js.native
   trait Message extends js.Object {
     var ReceiptHandle: String
-    var Attributes: AttributeMap
+    var Attributes: MessageSystemAttributeMap
     var MD5OfMessageAttributes: String
     var Body: String
-    var MessageAttributes: MessageAttributeMap
+    var MessageAttributes: MessageBodyAttributeMap
     var MD5OfBody: String
     var MessageId: String
   }
@@ -622,10 +654,10 @@ package sqs {
   object Message {
     def apply(
       ReceiptHandle: js.UndefOr[String] = js.undefined,
-      Attributes: js.UndefOr[AttributeMap] = js.undefined,
+      Attributes: js.UndefOr[MessageSystemAttributeMap] = js.undefined,
       MD5OfMessageAttributes: js.UndefOr[String] = js.undefined,
       Body: js.UndefOr[String] = js.undefined,
-      MessageAttributes: js.UndefOr[MessageAttributeMap] = js.undefined,
+      MessageAttributes: js.UndefOr[MessageBodyAttributeMap] = js.undefined,
       MD5OfBody: js.UndefOr[String] = js.undefined,
       MessageId: js.UndefOr[String] = js.undefined
     ): Message = {
@@ -644,7 +676,7 @@ package sqs {
   }
 
   /**
-   * <p>The user-specified message attribute value. For string data types, the value attribute has the same restrictions on the content as the message body. For more information, see <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_SendMessage.html">SendMessage</a>.</p> <p>Name, type, and value must not be empty or null. In addition, the message body should not be empty or null. All parts of the message attribute, including name, type, and value, are included in the message size restriction, which is currently 256 KB (262,144 bytes).</p>
+   * <p>The user-specified message attribute value. For string data types, the <code>Value</code> attribute has the same restrictions on the content as the message body. For more information, see <code> <a>SendMessage</a> </code>.</p> <p> <code>Name</code>, <code>type</code>, <code>value</code> and the message body must not be empty or null. All parts of the message attribute, including <code>Name</code>, <code>Type</code>, and <code>Value</code>, are part of the message size restriction (256 KB or 262,144 bytes).</p>
    */
   @js.native
   trait MessageAttributeValue extends js.Object {
@@ -676,15 +708,28 @@ package sqs {
   }
 
   /**
-   * <p>The message referred to is not in flight.</p>
+   * <p>The message referred to isn't in flight.</p>
    */
   @js.native
   trait MessageNotInflightException extends js.Object {
 
   }
 
+
+  object MessageSystemAttributeNameEnum {
+    val SenderId = "SenderId"
+    val SentTimestamp = "SentTimestamp"
+    val ApproximateReceiveCount = "ApproximateReceiveCount"
+    val ApproximateFirstReceiveTimestamp = "ApproximateFirstReceiveTimestamp"
+    val SequenceNumber = "SequenceNumber"
+    val MessageDeduplicationId = "MessageDeduplicationId"
+    val MessageGroupId = "MessageGroupId"
+
+    val values = IndexedSeq(SenderId, SentTimestamp, ApproximateReceiveCount, ApproximateFirstReceiveTimestamp, SequenceNumber, MessageDeduplicationId, MessageGroupId)
+  }
+
   /**
-   * <p>The action that you requested would violate a limit. For example, ReceiveMessage returns this error if the maximum number of messages inflight has already been reached. <a>AddPermission</a> returns this error if the maximum number of permissions for the queue has already been reached. </p>
+   * <p>The action that you requested would violate a limit. For example, <code>ReceiveMessage</code> returns this error if the maximum number of inflight messages is reached. <code> <a>AddPermission</a> </code> returns this error if the maximum number of permissions for the queue is reached.</p>
    */
   @js.native
   trait OverLimitException extends js.Object {
@@ -692,13 +737,16 @@ package sqs {
   }
 
   /**
-   * <p>Indicates that the specified queue previously received a <code>PurgeQueue</code> request within the last 60 seconds, the time it can take to delete the messages in the queue.</p>
+   * <p>Indicates that the specified queue previously received a <code>PurgeQueue</code> request within the last 60 seconds (the time it can take to delete the messages in the queue).</p>
    */
   @js.native
   trait PurgeQueueInProgressException extends js.Object {
 
   }
 
+  /**
+   * <p/>
+   */
   @js.native
   trait PurgeQueueRequest extends js.Object {
     var QueueUrl: String
@@ -718,6 +766,7 @@ package sqs {
 
 
   object QueueAttributeNameEnum {
+    val All = "All"
     val Policy = "Policy"
     val VisibilityTimeout = "VisibilityTimeout"
     val MaximumMessageSize = "MaximumMessageSize"
@@ -731,12 +780,14 @@ package sqs {
     val DelaySeconds = "DelaySeconds"
     val ReceiveMessageWaitTimeSeconds = "ReceiveMessageWaitTimeSeconds"
     val RedrivePolicy = "RedrivePolicy"
+    val FifoQueue = "FifoQueue"
+    val ContentBasedDeduplication = "ContentBasedDeduplication"
 
-    val values = IndexedSeq(Policy, VisibilityTimeout, MaximumMessageSize, MessageRetentionPeriod, ApproximateNumberOfMessages, ApproximateNumberOfMessagesNotVisible, CreatedTimestamp, LastModifiedTimestamp, QueueArn, ApproximateNumberOfMessagesDelayed, DelaySeconds, ReceiveMessageWaitTimeSeconds, RedrivePolicy)
+    val values = IndexedSeq(All, Policy, VisibilityTimeout, MaximumMessageSize, MessageRetentionPeriod, ApproximateNumberOfMessages, ApproximateNumberOfMessagesNotVisible, CreatedTimestamp, LastModifiedTimestamp, QueueArn, ApproximateNumberOfMessagesDelayed, DelaySeconds, ReceiveMessageWaitTimeSeconds, RedrivePolicy, FifoQueue, ContentBasedDeduplication)
   }
 
   /**
-   * <p>You must wait 60 seconds after deleting a queue before you can create another with the same name.</p>
+   * <p>You must wait 60 seconds after deleting a queue before you can create another one with the same name.</p>
    */
   @js.native
   trait QueueDeletedRecentlyException extends js.Object {
@@ -744,7 +795,7 @@ package sqs {
   }
 
   /**
-   * <p>The queue referred to does not exist.</p>
+   * <p>The queue referred to doesn't exist.</p>
    */
   @js.native
   trait QueueDoesNotExistException extends js.Object {
@@ -760,19 +811,23 @@ package sqs {
   }
 
   /**
-   * <p>The receipt handle provided is not valid.</p>
+   * <p>The receipt handle provided isn't valid.</p>
    */
   @js.native
   trait ReceiptHandleIsInvalidException extends js.Object {
 
   }
 
+  /**
+   * <p/>
+   */
   @js.native
   trait ReceiveMessageRequest extends js.Object {
     var MessageAttributeNames: MessageAttributeNameList
     var VisibilityTimeout: Integer
     var MaxNumberOfMessages: Integer
     var WaitTimeSeconds: Integer
+    var ReceiveRequestAttemptId: String
     var QueueUrl: String
     var AttributeNames: AttributeNameList
   }
@@ -783,6 +838,7 @@ package sqs {
       VisibilityTimeout: js.UndefOr[Integer] = js.undefined,
       MaxNumberOfMessages: js.UndefOr[Integer] = js.undefined,
       WaitTimeSeconds: js.UndefOr[Integer] = js.undefined,
+      ReceiveRequestAttemptId: js.UndefOr[String] = js.undefined,
       QueueUrl: js.UndefOr[String] = js.undefined,
       AttributeNames: js.UndefOr[AttributeNameList] = js.undefined
     ): ReceiveMessageRequest = {
@@ -791,6 +847,7 @@ package sqs {
         ("VisibilityTimeout" -> VisibilityTimeout.map { x => x: js.Any }),
         ("MaxNumberOfMessages" -> MaxNumberOfMessages.map { x => x: js.Any }),
         ("WaitTimeSeconds" -> WaitTimeSeconds.map { x => x: js.Any }),
+        ("ReceiveRequestAttemptId" -> ReceiveRequestAttemptId.map { x => x: js.Any }),
         ("QueueUrl" -> QueueUrl.map { x => x: js.Any }),
         ("AttributeNames" -> AttributeNames.map { x => x: js.Any })
       ).filter(_._2 != js.undefined)
@@ -800,7 +857,7 @@ package sqs {
   }
 
   /**
-   * A list of received messages.
+   * <p>A list of received messages.</p>
    */
   @js.native
   trait ReceiveMessageResult extends js.Object {
@@ -819,6 +876,9 @@ package sqs {
     }
   }
 
+  /**
+   * <p/>
+   */
   @js.native
   trait RemovePermissionRequest extends js.Object {
     var QueueUrl: String
@@ -839,6 +899,9 @@ package sqs {
     }
   }
 
+  /**
+   * <p/>
+   */
   @js.native
   trait SendMessageBatchRequest extends js.Object {
     var QueueUrl: String
@@ -860,28 +923,34 @@ package sqs {
   }
 
   /**
-   * <p>Contains the details of a single Amazon SQS message along with a <code>Id</code>. </p>
+   * <p>Contains the details of a single Amazon SQS message along with an <code>Id</code>.</p>
    */
   @js.native
   trait SendMessageBatchRequestEntry extends js.Object {
     var Id: String
     var MessageBody: String
+    var MessageGroupId: String
+    var MessageDeduplicationId: String
+    var MessageAttributes: MessageBodyAttributeMap
     var DelaySeconds: Integer
-    var MessageAttributes: MessageAttributeMap
   }
 
   object SendMessageBatchRequestEntry {
     def apply(
       Id: js.UndefOr[String] = js.undefined,
       MessageBody: js.UndefOr[String] = js.undefined,
-      DelaySeconds: js.UndefOr[Integer] = js.undefined,
-      MessageAttributes: js.UndefOr[MessageAttributeMap] = js.undefined
+      MessageGroupId: js.UndefOr[String] = js.undefined,
+      MessageDeduplicationId: js.UndefOr[String] = js.undefined,
+      MessageAttributes: js.UndefOr[MessageBodyAttributeMap] = js.undefined,
+      DelaySeconds: js.UndefOr[Integer] = js.undefined
     ): SendMessageBatchRequestEntry = {
       val _fields = IndexedSeq[(String, js.Any)](
         ("Id" -> Id.map { x => x: js.Any }),
         ("MessageBody" -> MessageBody.map { x => x: js.Any }),
-        ("DelaySeconds" -> DelaySeconds.map { x => x: js.Any }),
-        ("MessageAttributes" -> MessageAttributes.map { x => x: js.Any })
+        ("MessageGroupId" -> MessageGroupId.map { x => x: js.Any }),
+        ("MessageDeduplicationId" -> MessageDeduplicationId.map { x => x: js.Any }),
+        ("MessageAttributes" -> MessageAttributes.map { x => x: js.Any }),
+        ("DelaySeconds" -> DelaySeconds.map { x => x: js.Any })
       ).filter(_._2 != js.undefined)
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SendMessageBatchRequestEntry]
@@ -889,7 +958,7 @@ package sqs {
   }
 
   /**
-   * <p>For each message in the batch, the response contains a <a>SendMessageBatchResultEntry</a> tag if the message succeeds or a <a>BatchResultErrorEntry</a> tag if the message fails.</p>
+   * <p>For each message in the batch, the response contains a <code> <a>SendMessageBatchResultEntry</a> </code> tag if the message succeeds or a <code> <a>BatchResultErrorEntry</a> </code> tag if the message fails.</p>
    */
   @js.native
   trait SendMessageBatchResult extends js.Object {
@@ -912,54 +981,66 @@ package sqs {
   }
 
   /**
-   * <p>Encloses a message ID for successfully enqueued message of a <a>SendMessageBatch</a>.</p>
+   * <p>Encloses a <code>MessageId</code> for a successfully-enqueued message in a <code> <a>SendMessageBatch</a> </code>.</p>
    */
   @js.native
   trait SendMessageBatchResultEntry extends js.Object {
     var Id: String
+    var SequenceNumber: String
+    var MD5OfMessageAttributes: String
     var MessageId: String
     var MD5OfMessageBody: String
-    var MD5OfMessageAttributes: String
   }
 
   object SendMessageBatchResultEntry {
     def apply(
       Id: js.UndefOr[String] = js.undefined,
+      SequenceNumber: js.UndefOr[String] = js.undefined,
+      MD5OfMessageAttributes: js.UndefOr[String] = js.undefined,
       MessageId: js.UndefOr[String] = js.undefined,
-      MD5OfMessageBody: js.UndefOr[String] = js.undefined,
-      MD5OfMessageAttributes: js.UndefOr[String] = js.undefined
+      MD5OfMessageBody: js.UndefOr[String] = js.undefined
     ): SendMessageBatchResultEntry = {
       val _fields = IndexedSeq[(String, js.Any)](
         ("Id" -> Id.map { x => x: js.Any }),
+        ("SequenceNumber" -> SequenceNumber.map { x => x: js.Any }),
+        ("MD5OfMessageAttributes" -> MD5OfMessageAttributes.map { x => x: js.Any }),
         ("MessageId" -> MessageId.map { x => x: js.Any }),
-        ("MD5OfMessageBody" -> MD5OfMessageBody.map { x => x: js.Any }),
-        ("MD5OfMessageAttributes" -> MD5OfMessageAttributes.map { x => x: js.Any })
+        ("MD5OfMessageBody" -> MD5OfMessageBody.map { x => x: js.Any })
       ).filter(_._2 != js.undefined)
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SendMessageBatchResultEntry]
     }
   }
 
+  /**
+   * <p/>
+   */
   @js.native
   trait SendMessageRequest extends js.Object {
-    var QueueUrl: String
     var MessageBody: String
+    var MessageGroupId: String
+    var MessageDeduplicationId: String
+    var MessageAttributes: MessageBodyAttributeMap
     var DelaySeconds: Integer
-    var MessageAttributes: MessageAttributeMap
+    var QueueUrl: String
   }
 
   object SendMessageRequest {
     def apply(
-      QueueUrl: js.UndefOr[String] = js.undefined,
       MessageBody: js.UndefOr[String] = js.undefined,
+      MessageGroupId: js.UndefOr[String] = js.undefined,
+      MessageDeduplicationId: js.UndefOr[String] = js.undefined,
+      MessageAttributes: js.UndefOr[MessageBodyAttributeMap] = js.undefined,
       DelaySeconds: js.UndefOr[Integer] = js.undefined,
-      MessageAttributes: js.UndefOr[MessageAttributeMap] = js.undefined
+      QueueUrl: js.UndefOr[String] = js.undefined
     ): SendMessageRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        ("QueueUrl" -> QueueUrl.map { x => x: js.Any }),
         ("MessageBody" -> MessageBody.map { x => x: js.Any }),
+        ("MessageGroupId" -> MessageGroupId.map { x => x: js.Any }),
+        ("MessageDeduplicationId" -> MessageDeduplicationId.map { x => x: js.Any }),
+        ("MessageAttributes" -> MessageAttributes.map { x => x: js.Any }),
         ("DelaySeconds" -> DelaySeconds.map { x => x: js.Any }),
-        ("MessageAttributes" -> MessageAttributes.map { x => x: js.Any })
+        ("QueueUrl" -> QueueUrl.map { x => x: js.Any })
       ).filter(_._2 != js.undefined)
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SendMessageRequest]
@@ -967,41 +1048,47 @@ package sqs {
   }
 
   /**
-   * <p>The MD5OfMessageBody and MessageId elements.</p>
+   * <p>The <code>MD5OfMessageBody</code> and <code>MessageId</code> elements.</p>
    */
   @js.native
   trait SendMessageResult extends js.Object {
     var MD5OfMessageBody: String
     var MD5OfMessageAttributes: String
     var MessageId: String
+    var SequenceNumber: String
   }
 
   object SendMessageResult {
     def apply(
       MD5OfMessageBody: js.UndefOr[String] = js.undefined,
       MD5OfMessageAttributes: js.UndefOr[String] = js.undefined,
-      MessageId: js.UndefOr[String] = js.undefined
+      MessageId: js.UndefOr[String] = js.undefined,
+      SequenceNumber: js.UndefOr[String] = js.undefined
     ): SendMessageResult = {
       val _fields = IndexedSeq[(String, js.Any)](
         ("MD5OfMessageBody" -> MD5OfMessageBody.map { x => x: js.Any }),
         ("MD5OfMessageAttributes" -> MD5OfMessageAttributes.map { x => x: js.Any }),
-        ("MessageId" -> MessageId.map { x => x: js.Any })
+        ("MessageId" -> MessageId.map { x => x: js.Any }),
+        ("SequenceNumber" -> SequenceNumber.map { x => x: js.Any })
       ).filter(_._2 != js.undefined)
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SendMessageResult]
     }
   }
 
+  /**
+   * <p/>
+   */
   @js.native
   trait SetQueueAttributesRequest extends js.Object {
     var QueueUrl: String
-    var Attributes: AttributeMap
+    var Attributes: QueueAttributeMap
   }
 
   object SetQueueAttributesRequest {
     def apply(
       QueueUrl: js.UndefOr[String] = js.undefined,
-      Attributes: js.UndefOr[AttributeMap] = js.undefined
+      Attributes: js.UndefOr[QueueAttributeMap] = js.undefined
     ): SetQueueAttributesRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         ("QueueUrl" -> QueueUrl.map { x => x: js.Any }),
@@ -1013,7 +1100,7 @@ package sqs {
   }
 
   /**
-   * <p>Batch request contains more number of entries than permissible.</p>
+   * <p>The batch request contains more entries than permissible.</p>
    */
   @js.native
   trait TooManyEntriesInBatchRequestException extends js.Object {

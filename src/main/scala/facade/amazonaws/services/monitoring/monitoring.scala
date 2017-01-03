@@ -15,6 +15,7 @@ package object monitoring {
   type AwsQueryErrorMessage = String
   type ComparisonOperator = String
   type DatapointValue = Double
+  type DatapointValueMap = js.Dictionary[DatapointValue]
   type Datapoints = js.Array[Datapoint]
   type DimensionFilters = js.Array[DimensionFilter]
   type DimensionName = String
@@ -22,6 +23,8 @@ package object monitoring {
   type Dimensions = js.Array[Dimension]
   type ErrorMessage = String
   type EvaluationPeriods = Integer
+  type ExtendedStatistic = String
+  type ExtendedStatistics = js.Array[ExtendedStatistic]
   type FaultDescription = String
   type HistoryData = String
   type HistoryItemType = String
@@ -75,7 +78,7 @@ package monitoring {
   }
 
   /**
-   * <p> The <code>AlarmHistoryItem</code> data type contains descriptive information about the history of a specific alarm. If you call <a>DescribeAlarmHistory</a>, Amazon CloudWatch returns this data type as part of the <a>DescribeAlarmHistoryResult</a> data type. </p>
+   * <p>Represents the history of a specific alarm.</p>
    */
   @js.native
   trait AlarmHistoryItem extends js.Object {
@@ -117,7 +120,7 @@ package monitoring {
   }
 
   /**
-   * <p> The <code>Datapoint</code> data type encapsulates the statistical data that Amazon CloudWatch computes from metric data. </p>
+   * <p>Encapsulates the statistical data that Amazon CloudWatch computes from metric data.</p>
    */
   @js.native
   trait Datapoint extends js.Object {
@@ -127,6 +130,7 @@ package monitoring {
     var Average: DatapointValue
     var Maximum: DatapointValue
     var Unit: StandardUnit
+    var ExtendedStatistics: DatapointValueMap
     var Minimum: DatapointValue
   }
 
@@ -138,6 +142,7 @@ package monitoring {
       Average: js.UndefOr[DatapointValue] = js.undefined,
       Maximum: js.UndefOr[DatapointValue] = js.undefined,
       Unit: js.UndefOr[StandardUnit] = js.undefined,
+      ExtendedStatistics: js.UndefOr[DatapointValueMap] = js.undefined,
       Minimum: js.UndefOr[DatapointValue] = js.undefined
     ): Datapoint = {
       val _fields = IndexedSeq[(String, js.Any)](
@@ -147,6 +152,7 @@ package monitoring {
         ("Average" -> Average.map { x => x: js.Any }),
         ("Maximum" -> Maximum.map { x => x: js.Any }),
         ("Unit" -> Unit.map { x => x: js.Any }),
+        ("ExtendedStatistics" -> ExtendedStatistics.map { x => x: js.Any }),
         ("Minimum" -> Minimum.map { x => x: js.Any })
       ).filter(_._2 != js.undefined)
 
@@ -203,9 +209,6 @@ package monitoring {
     }
   }
 
-  /**
-   * <p> The output for the <a>DescribeAlarmHistory</a> action. </p>
-   */
   @js.native
   trait DescribeAlarmHistoryOutput extends js.Object {
     var AlarmHistoryItems: AlarmHistoryItems
@@ -232,6 +235,7 @@ package monitoring {
     var Period: Period
     var Statistic: Statistic
     var Namespace: Namespace
+    var ExtendedStatistic: ExtendedStatistic
     var Unit: StandardUnit
     var MetricName: MetricName
   }
@@ -242,6 +246,7 @@ package monitoring {
       Period: js.UndefOr[Period] = js.undefined,
       Statistic: js.UndefOr[Statistic] = js.undefined,
       Namespace: js.UndefOr[Namespace] = js.undefined,
+      ExtendedStatistic: js.UndefOr[ExtendedStatistic] = js.undefined,
       Unit: js.UndefOr[StandardUnit] = js.undefined,
       MetricName: js.UndefOr[MetricName] = js.undefined
     ): DescribeAlarmsForMetricInput = {
@@ -250,6 +255,7 @@ package monitoring {
         ("Period" -> Period.map { x => x: js.Any }),
         ("Statistic" -> Statistic.map { x => x: js.Any }),
         ("Namespace" -> Namespace.map { x => x: js.Any }),
+        ("ExtendedStatistic" -> ExtendedStatistic.map { x => x: js.Any }),
         ("Unit" -> Unit.map { x => x: js.Any }),
         ("MetricName" -> MetricName.map { x => x: js.Any })
       ).filter(_._2 != js.undefined)
@@ -258,9 +264,6 @@ package monitoring {
     }
   }
 
-  /**
-   * <p> The output for the <a>DescribeAlarmsForMetric</a> action. </p>
-   */
   @js.native
   trait DescribeAlarmsForMetricOutput extends js.Object {
     var MetricAlarms: MetricAlarms
@@ -310,9 +313,6 @@ package monitoring {
     }
   }
 
-  /**
-   * <p> The output for the <a>DescribeAlarms</a> action. </p>
-   */
   @js.native
   trait DescribeAlarmsOutput extends js.Object {
     var MetricAlarms: MetricAlarms
@@ -334,7 +334,7 @@ package monitoring {
   }
 
   /**
-   * <p> The <code>Dimension</code> data type further expands on the identity of a metric using a Name, Value pair. </p> <p>For examples that use one or more dimensions, see <a>PutMetricData</a>.</p>
+   * <p>Expands the identity of a metric.</p>
    */
   @js.native
   trait Dimension extends js.Object {
@@ -357,7 +357,7 @@ package monitoring {
   }
 
   /**
-   * <p> The <code>DimensionFilter</code> data type is used to filter <a>ListMetrics</a> results. </p>
+   * <p>Represents filters for a dimension.</p>
    */
   @js.native
   trait DimensionFilter extends js.Object {
@@ -379,9 +379,6 @@ package monitoring {
     }
   }
 
-  /**
-   * <p> </p>
-   */
   @js.native
   trait DisableAlarmActionsInput extends js.Object {
     var AlarmNames: AlarmNames
@@ -425,6 +422,7 @@ package monitoring {
     var Period: Period
     var Namespace: Namespace
     var Unit: StandardUnit
+    var ExtendedStatistics: ExtendedStatistics
     var MetricName: MetricName
   }
 
@@ -437,6 +435,7 @@ package monitoring {
       Period: js.UndefOr[Period] = js.undefined,
       Namespace: js.UndefOr[Namespace] = js.undefined,
       Unit: js.UndefOr[StandardUnit] = js.undefined,
+      ExtendedStatistics: js.UndefOr[ExtendedStatistics] = js.undefined,
       MetricName: js.UndefOr[MetricName] = js.undefined
     ): GetMetricStatisticsInput = {
       val _fields = IndexedSeq[(String, js.Any)](
@@ -447,6 +446,7 @@ package monitoring {
         ("Period" -> Period.map { x => x: js.Any }),
         ("Namespace" -> Namespace.map { x => x: js.Any }),
         ("Unit" -> Unit.map { x => x: js.Any }),
+        ("ExtendedStatistics" -> ExtendedStatistics.map { x => x: js.Any }),
         ("MetricName" -> MetricName.map { x => x: js.Any })
       ).filter(_._2 != js.undefined)
 
@@ -454,9 +454,6 @@ package monitoring {
     }
   }
 
-  /**
-   * <p> The output for the <a>GetMetricStatistics</a> action. </p>
-   */
   @js.native
   trait GetMetricStatisticsOutput extends js.Object {
     var Label: MetricLabel
@@ -487,7 +484,7 @@ package monitoring {
   }
 
   /**
-   * <p> Indicates that the request processing has failed due to some unknown error, exception, or failure. </p>
+   * <p>Request processing has failed due to some unknown error, exception, or failure.</p>
    */
   @js.native
   trait InternalServiceFaultException extends js.Object {
@@ -495,7 +492,7 @@ package monitoring {
   }
 
   /**
-   * <p> Data was not syntactically valid JSON. </p>
+   * <p>Data was not syntactically valid JSON.</p>
    */
   @js.native
   trait InvalidFormatFaultException extends js.Object {
@@ -503,7 +500,7 @@ package monitoring {
   }
 
   /**
-   * <p> The next token specified is invalid. </p>
+   * <p>The next token specified is invalid.</p>
    */
   @js.native
   trait InvalidNextTokenException extends js.Object {
@@ -511,7 +508,7 @@ package monitoring {
   }
 
   /**
-   * <p> Parameters that must not be used together were used together. </p>
+   * <p>Parameters that cannot be used together were used together.</p>
    */
   @js.native
   trait InvalidParameterCombinationExceptionException extends js.Object {
@@ -519,7 +516,7 @@ package monitoring {
   }
 
   /**
-   * <p> Bad or out-of-range value was supplied for the input parameter. </p>
+   * <p>The value of an input parameter is bad or out-of-range.</p>
    */
   @js.native
   trait InvalidParameterValueExceptionException extends js.Object {
@@ -527,7 +524,7 @@ package monitoring {
   }
 
   /**
-   * <p> The quota for alarms for this customer has already been reached. </p>
+   * <p>The quota for alarms for this customer has already been reached.</p>
    */
   @js.native
   trait LimitExceededFaultException extends js.Object {
@@ -560,9 +557,6 @@ package monitoring {
     }
   }
 
-  /**
-   * <p> The output for the <a>ListMetrics</a> action. </p>
-   */
   @js.native
   trait ListMetricsOutput extends js.Object {
     var Metrics: Metrics
@@ -584,7 +578,7 @@ package monitoring {
   }
 
   /**
-   * <p> The <code>Metric</code> data type contains information about a specific metric. If you call <a>ListMetrics</a>, Amazon CloudWatch returns information contained by this data type. </p> <p> The example in the Examples section publishes two metrics named buffers and latency. Both metrics are in the examples namespace. Both metrics have two dimensions, InstanceID and InstanceType. </p>
+   * <p>Represents a specific metric.</p>
    */
   @js.native
   trait Metric extends js.Object {
@@ -610,7 +604,7 @@ package monitoring {
   }
 
   /**
-   * <p> The <a>MetricAlarm</a> data type represents an alarm. You can use <a>PutMetricAlarm</a> to create or update an alarm. </p>
+   * <p>Represents an alarm.</p>
    */
   @js.native
   trait MetricAlarm extends js.Object {
@@ -630,6 +624,7 @@ package monitoring {
     var AlarmName: AlarmName
     var Namespace: Namespace
     var ActionsEnabled: ActionsEnabled
+    var ExtendedStatistic: ExtendedStatistic
     var StateReason: StateReason
     var InsufficientDataActions: ResourceList
     var Unit: StandardUnit
@@ -655,6 +650,7 @@ package monitoring {
       AlarmName: js.UndefOr[AlarmName] = js.undefined,
       Namespace: js.UndefOr[Namespace] = js.undefined,
       ActionsEnabled: js.UndefOr[ActionsEnabled] = js.undefined,
+      ExtendedStatistic: js.UndefOr[ExtendedStatistic] = js.undefined,
       StateReason: js.UndefOr[StateReason] = js.undefined,
       InsufficientDataActions: js.UndefOr[ResourceList] = js.undefined,
       Unit: js.UndefOr[StandardUnit] = js.undefined,
@@ -678,6 +674,7 @@ package monitoring {
         ("AlarmName" -> AlarmName.map { x => x: js.Any }),
         ("Namespace" -> Namespace.map { x => x: js.Any }),
         ("ActionsEnabled" -> ActionsEnabled.map { x => x: js.Any }),
+        ("ExtendedStatistic" -> ExtendedStatistic.map { x => x: js.Any }),
         ("StateReason" -> StateReason.map { x => x: js.Any }),
         ("InsufficientDataActions" -> InsufficientDataActions.map { x => x: js.Any }),
         ("Unit" -> Unit.map { x => x: js.Any }),
@@ -690,7 +687,7 @@ package monitoring {
   }
 
   /**
-   * <p> The <code>MetricDatum</code> data type encapsulates the information sent with <a>PutMetricData</a> to either create a new metric or add new values to be aggregated into an existing metric. </p>
+   * <p>Encapsulates the information sent to either create a metric or add new values to be aggregated into an existing metric.</p>
    */
   @js.native
   trait MetricDatum extends js.Object {
@@ -725,7 +722,7 @@ package monitoring {
   }
 
   /**
-   * <p> An input parameter that is mandatory for processing the request is not supplied. </p>
+   * <p>An input parameter that is required is missing.</p>
    */
   @js.native
   trait MissingRequiredParameterExceptionException extends js.Object {
@@ -745,6 +742,7 @@ package monitoring {
     var AlarmName: AlarmName
     var Namespace: Namespace
     var ActionsEnabled: ActionsEnabled
+    var ExtendedStatistic: ExtendedStatistic
     var InsufficientDataActions: ResourceList
     var Unit: StandardUnit
     var OKActions: ResourceList
@@ -764,6 +762,7 @@ package monitoring {
       AlarmName: js.UndefOr[AlarmName] = js.undefined,
       Namespace: js.UndefOr[Namespace] = js.undefined,
       ActionsEnabled: js.UndefOr[ActionsEnabled] = js.undefined,
+      ExtendedStatistic: js.UndefOr[ExtendedStatistic] = js.undefined,
       InsufficientDataActions: js.UndefOr[ResourceList] = js.undefined,
       Unit: js.UndefOr[StandardUnit] = js.undefined,
       OKActions: js.UndefOr[ResourceList] = js.undefined,
@@ -781,6 +780,7 @@ package monitoring {
         ("AlarmName" -> AlarmName.map { x => x: js.Any }),
         ("Namespace" -> Namespace.map { x => x: js.Any }),
         ("ActionsEnabled" -> ActionsEnabled.map { x => x: js.Any }),
+        ("ExtendedStatistic" -> ExtendedStatistic.map { x => x: js.Any }),
         ("InsufficientDataActions" -> InsufficientDataActions.map { x => x: js.Any }),
         ("Unit" -> Unit.map { x => x: js.Any }),
         ("OKActions" -> OKActions.map { x => x: js.Any }),
@@ -812,7 +812,7 @@ package monitoring {
   }
 
   /**
-   * <p> The named resource does not exist. </p>
+   * <p>The named resource does not exist.</p>
    */
   @js.native
   trait ResourceNotFoundException extends js.Object {
@@ -899,7 +899,7 @@ package monitoring {
   }
 
   /**
-   * <p> The <code>StatisticSet</code> data type describes the <code>StatisticValues</code> component of <a>MetricDatum</a>, and represents a set of statistics that describes a specific metric. </p>
+   * <p>Represents a set of statistics that describes a specific metric. </p>
    */
   @js.native
   trait StatisticSet extends js.Object {

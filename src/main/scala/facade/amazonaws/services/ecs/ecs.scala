@@ -4,6 +4,8 @@ import scalajs._
 import facade.amazonaws._
 
 package object ecs {
+  type AgentUpdateStatus = String
+  type Attributes = js.Array[Attribute]
   type BoxedBoolean = Boolean
   type BoxedInteger = Integer
   type Clusters = js.Array[Cluster]
@@ -12,18 +14,38 @@ package object ecs {
   type ContainerOverrides = js.Array[ContainerOverride]
   type Containers = js.Array[Container]
   type Deployments = js.Array[Deployment]
+  type DesiredStatus = String
+  type DockerLabelsMap = js.Dictionary[String]
   type EnvironmentVariables = js.Array[KeyValuePair]
   type Failures = js.Array[Failure]
+  type HostEntryList = js.Array[HostEntry]
   type LoadBalancers = js.Array[LoadBalancer]
+  type LogConfigurationOptionsMap = js.Dictionary[String]
+  type LogDriver = String
   type MountPointList = js.Array[MountPoint]
   type NetworkBindings = js.Array[NetworkBinding]
+  type NetworkMode = String
+  type PlacementConstraintType = String
+  type PlacementConstraints = js.Array[PlacementConstraint]
+  type PlacementStrategies = js.Array[PlacementStrategy]
+  type PlacementStrategyType = String
   type PortMappingList = js.Array[PortMapping]
+  type RequiresAttributes = js.Array[Attribute]
   type Resources = js.Array[Resource]
   type ServiceEvents = js.Array[ServiceEvent]
   type Services = js.Array[Service]
+  type SortOrder = String
   type StringList = js.Array[String]
+  type TargetType = String
+  type TaskDefinitionFamilyStatus = String
+  type TaskDefinitionPlacementConstraintType = String
+  type TaskDefinitionPlacementConstraints = js.Array[TaskDefinitionPlacementConstraint]
+  type TaskDefinitionStatus = String
   type Tasks = js.Array[Task]
   type Timestamp = js.Date
+  type TransportProtocol = String
+  type UlimitList = js.Array[Ulimit]
+  type UlimitName = String
   type VolumeFromList = js.Array[VolumeFrom]
   type VolumeList = js.Array[Volume]
 }
@@ -35,6 +57,8 @@ package ecs {
     def createCluster(params: CreateClusterRequest): Request[CreateClusterResponse] = js.native
     def createService(params: CreateServiceRequest, callback: Callback[CreateServiceResponse]): Unit = js.native
     def createService(params: CreateServiceRequest): Request[CreateServiceResponse] = js.native
+    def deleteAttributes(params: DeleteAttributesRequest, callback: Callback[DeleteAttributesResponse]): Unit = js.native
+    def deleteAttributes(params: DeleteAttributesRequest): Request[DeleteAttributesResponse] = js.native
     def deleteCluster(params: DeleteClusterRequest, callback: Callback[DeleteClusterResponse]): Unit = js.native
     def deleteCluster(params: DeleteClusterRequest): Request[DeleteClusterResponse] = js.native
     def deleteService(params: DeleteServiceRequest, callback: Callback[DeleteServiceResponse]): Unit = js.native
@@ -55,6 +79,8 @@ package ecs {
     def describeTasks(params: DescribeTasksRequest): Request[DescribeTasksResponse] = js.native
     def discoverPollEndpoint(params: DiscoverPollEndpointRequest, callback: Callback[DiscoverPollEndpointResponse]): Unit = js.native
     def discoverPollEndpoint(params: DiscoverPollEndpointRequest): Request[DiscoverPollEndpointResponse] = js.native
+    def listAttributes(params: ListAttributesRequest, callback: Callback[ListAttributesResponse]): Unit = js.native
+    def listAttributes(params: ListAttributesRequest): Request[ListAttributesResponse] = js.native
     def listClusters(params: ListClustersRequest, callback: Callback[ListClustersResponse]): Unit = js.native
     def listClusters(params: ListClustersRequest): Request[ListClustersResponse] = js.native
     def listContainerInstances(params: ListContainerInstancesRequest, callback: Callback[ListContainerInstancesResponse]): Unit = js.native
@@ -67,6 +93,8 @@ package ecs {
     def listTaskDefinitions(params: ListTaskDefinitionsRequest): Request[ListTaskDefinitionsResponse] = js.native
     def listTasks(params: ListTasksRequest, callback: Callback[ListTasksResponse]): Unit = js.native
     def listTasks(params: ListTasksRequest): Request[ListTasksResponse] = js.native
+    def putAttributes(params: PutAttributesRequest, callback: Callback[PutAttributesResponse]): Unit = js.native
+    def putAttributes(params: PutAttributesRequest): Request[PutAttributesResponse] = js.native
     def registerContainerInstance(params: RegisterContainerInstanceRequest, callback: Callback[RegisterContainerInstanceResponse]): Unit = js.native
     def registerContainerInstance(params: RegisterContainerInstanceRequest): Request[RegisterContainerInstanceResponse] = js.native
     def registerTaskDefinition(params: RegisterTaskDefinitionRequest, callback: Callback[RegisterTaskDefinitionResponse]): Unit = js.native
@@ -81,12 +109,63 @@ package ecs {
     def submitContainerStateChange(params: SubmitContainerStateChangeRequest): Request[SubmitContainerStateChangeResponse] = js.native
     def submitTaskStateChange(params: SubmitTaskStateChangeRequest, callback: Callback[SubmitTaskStateChangeResponse]): Unit = js.native
     def submitTaskStateChange(params: SubmitTaskStateChangeRequest): Request[SubmitTaskStateChangeResponse] = js.native
+    def updateContainerAgent(params: UpdateContainerAgentRequest, callback: Callback[UpdateContainerAgentResponse]): Unit = js.native
+    def updateContainerAgent(params: UpdateContainerAgentRequest): Request[UpdateContainerAgentResponse] = js.native
     def updateService(params: UpdateServiceRequest, callback: Callback[UpdateServiceResponse]): Unit = js.native
     def updateService(params: UpdateServiceRequest): Request[UpdateServiceResponse] = js.native
   }
 
+
+  object AgentUpdateStatusEnum {
+    val PENDING = "PENDING"
+    val STAGING = "STAGING"
+    val STAGED = "STAGED"
+    val UPDATING = "UPDATING"
+    val UPDATED = "UPDATED"
+    val FAILED = "FAILED"
+
+    val values = IndexedSeq(PENDING, STAGING, STAGED, UPDATING, UPDATED, FAILED)
+  }
+
   /**
-   * <p>These errors are usually caused by something the client did, such as use an action or resource on behalf of a user that doesn't have permission to use the action or resource, or specify an identifier that is not valid.</p>
+   * <p>Attributes are name-value pairs associated with various Amazon ECS objects. Attributes allow you to extend the Amazon ECS data model by adding custom metadata to your resources.</p>
+   */
+  @js.native
+  trait Attribute extends js.Object {
+    var name: String
+    var value: String
+    var targetType: TargetType
+    var targetId: String
+  }
+
+  object Attribute {
+    def apply(
+      name: js.UndefOr[String] = js.undefined,
+      value: js.UndefOr[String] = js.undefined,
+      targetType: js.UndefOr[TargetType] = js.undefined,
+      targetId: js.UndefOr[String] = js.undefined
+    ): Attribute = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("name" -> name.map { x => x: js.Any }),
+        ("value" -> value.map { x => x: js.Any }),
+        ("targetType" -> targetType.map { x => x: js.Any }),
+        ("targetId" -> targetId.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Attribute]
+    }
+  }
+
+  /**
+   * <p>You can apply up to 10 custom attributes per resource. You can view the attributes of a resource with <a>ListAttributes</a>. You can remove existing attributes on a resource with <a>DeleteAttributes</a>.</p>
+   */
+  @js.native
+  trait AttributeLimitExceededExceptionException extends js.Object {
+
+  }
+
+  /**
+   * <p>These errors are usually caused by a client action, such as using an action or resource on behalf of a user that doesn't have permission to use the action or resource, or specifying an identifier that is not valid.</p>
    */
   @js.native
   trait ClientExceptionException extends js.Object {
@@ -94,10 +173,11 @@ package ecs {
   }
 
   /**
-   * <p>A regional grouping of one or more container instances on which you can run task requests. Each account receives a default cluster the first time you use the Amazon ECS service, but you may also create other clusters. Clusters may contain more than one instance type simultaneously.</p> <important> <p>During the preview, each account is limited to two clusters.</p> </important>
+   * <p>A regional grouping of one or more container instances on which you can run task requests. Each account receives a default cluster the first time you use the Amazon ECS service, but you may also create other clusters. Clusters may contain more than one instance type simultaneously.</p>
    */
   @js.native
   trait Cluster extends js.Object {
+    var activeServicesCount: Integer
     var runningTasksCount: Integer
     var pendingTasksCount: Integer
     var status: String
@@ -108,6 +188,7 @@ package ecs {
 
   object Cluster {
     def apply(
+      activeServicesCount: js.UndefOr[Integer] = js.undefined,
       runningTasksCount: js.UndefOr[Integer] = js.undefined,
       pendingTasksCount: js.UndefOr[Integer] = js.undefined,
       status: js.UndefOr[String] = js.undefined,
@@ -116,6 +197,7 @@ package ecs {
       clusterName: js.UndefOr[String] = js.undefined
     ): Cluster = {
       val _fields = IndexedSeq[(String, js.Any)](
+        ("activeServicesCount" -> activeServicesCount.map { x => x: js.Any }),
         ("runningTasksCount" -> runningTasksCount.map { x => x: js.Any }),
         ("pendingTasksCount" -> pendingTasksCount.map { x => x: js.Any }),
         ("status" -> status.map { x => x: js.Any }),
@@ -128,6 +210,33 @@ package ecs {
     }
   }
 
+  /**
+   * <p>You cannot delete a cluster that has registered container instances. You must first deregister the container instances before you can delete the cluster. For more information, see <a>DeregisterContainerInstance</a>.</p>
+   */
+  @js.native
+  trait ClusterContainsContainerInstancesExceptionException extends js.Object {
+
+  }
+
+  /**
+   * <p>You cannot delete a cluster that contains services. You must first update the service to reduce its desired task count to 0 and then delete the service. For more information, see <a>UpdateService</a> and <a>DeleteService</a>.</p>
+   */
+  @js.native
+  trait ClusterContainsServicesExceptionException extends js.Object {
+
+  }
+
+  /**
+   * <p>The specified cluster could not be found. You can view your available clusters with <a>ListClusters</a>. Amazon ECS clusters are region-specific.</p>
+   */
+  @js.native
+  trait ClusterNotFoundExceptionException extends js.Object {
+
+  }
+
+  /**
+   * <p>A Docker container that is part of a task.</p>
+   */
   @js.native
   trait Container extends js.Object {
     var name: String
@@ -168,48 +277,90 @@ package ecs {
    */
   @js.native
   trait ContainerDefinition extends js.Object {
+    var dockerSecurityOptions: StringList
+    var ulimits: UlimitList
     var mountPoints: MountPointList
     var name: String
+    var hostname: String
     var entryPoint: StringList
     var portMappings: PortMappingList
     var essential: BoxedBoolean
+    var readonlyRootFilesystem: BoxedBoolean
     var image: String
+    var dnsSearchDomains: StringList
     var command: StringList
     var links: StringList
+    var memoryReservation: BoxedInteger
     var volumesFrom: VolumeFromList
     var cpu: Integer
     var environment: EnvironmentVariables
-    var memory: Integer
+    var workingDirectory: String
+    var extraHosts: HostEntryList
+    var dockerLabels: DockerLabelsMap
+    var privileged: BoxedBoolean
+    var logConfiguration: LogConfiguration
+    var user: String
+    var disableNetworking: BoxedBoolean
+    var memory: BoxedInteger
+    var dnsServers: StringList
   }
 
   object ContainerDefinition {
     def apply(
+      dockerSecurityOptions: js.UndefOr[StringList] = js.undefined,
+      ulimits: js.UndefOr[UlimitList] = js.undefined,
       mountPoints: js.UndefOr[MountPointList] = js.undefined,
       name: js.UndefOr[String] = js.undefined,
+      hostname: js.UndefOr[String] = js.undefined,
       entryPoint: js.UndefOr[StringList] = js.undefined,
       portMappings: js.UndefOr[PortMappingList] = js.undefined,
       essential: js.UndefOr[BoxedBoolean] = js.undefined,
+      readonlyRootFilesystem: js.UndefOr[BoxedBoolean] = js.undefined,
       image: js.UndefOr[String] = js.undefined,
+      dnsSearchDomains: js.UndefOr[StringList] = js.undefined,
       command: js.UndefOr[StringList] = js.undefined,
       links: js.UndefOr[StringList] = js.undefined,
+      memoryReservation: js.UndefOr[BoxedInteger] = js.undefined,
       volumesFrom: js.UndefOr[VolumeFromList] = js.undefined,
       cpu: js.UndefOr[Integer] = js.undefined,
       environment: js.UndefOr[EnvironmentVariables] = js.undefined,
-      memory: js.UndefOr[Integer] = js.undefined
+      workingDirectory: js.UndefOr[String] = js.undefined,
+      extraHosts: js.UndefOr[HostEntryList] = js.undefined,
+      dockerLabels: js.UndefOr[DockerLabelsMap] = js.undefined,
+      privileged: js.UndefOr[BoxedBoolean] = js.undefined,
+      logConfiguration: js.UndefOr[LogConfiguration] = js.undefined,
+      user: js.UndefOr[String] = js.undefined,
+      disableNetworking: js.UndefOr[BoxedBoolean] = js.undefined,
+      memory: js.UndefOr[BoxedInteger] = js.undefined,
+      dnsServers: js.UndefOr[StringList] = js.undefined
     ): ContainerDefinition = {
       val _fields = IndexedSeq[(String, js.Any)](
+        ("dockerSecurityOptions" -> dockerSecurityOptions.map { x => x: js.Any }),
+        ("ulimits" -> ulimits.map { x => x: js.Any }),
         ("mountPoints" -> mountPoints.map { x => x: js.Any }),
         ("name" -> name.map { x => x: js.Any }),
+        ("hostname" -> hostname.map { x => x: js.Any }),
         ("entryPoint" -> entryPoint.map { x => x: js.Any }),
         ("portMappings" -> portMappings.map { x => x: js.Any }),
         ("essential" -> essential.map { x => x: js.Any }),
+        ("readonlyRootFilesystem" -> readonlyRootFilesystem.map { x => x: js.Any }),
         ("image" -> image.map { x => x: js.Any }),
+        ("dnsSearchDomains" -> dnsSearchDomains.map { x => x: js.Any }),
         ("command" -> command.map { x => x: js.Any }),
         ("links" -> links.map { x => x: js.Any }),
+        ("memoryReservation" -> memoryReservation.map { x => x: js.Any }),
         ("volumesFrom" -> volumesFrom.map { x => x: js.Any }),
         ("cpu" -> cpu.map { x => x: js.Any }),
         ("environment" -> environment.map { x => x: js.Any }),
-        ("memory" -> memory.map { x => x: js.Any })
+        ("workingDirectory" -> workingDirectory.map { x => x: js.Any }),
+        ("extraHosts" -> extraHosts.map { x => x: js.Any }),
+        ("dockerLabels" -> dockerLabels.map { x => x: js.Any }),
+        ("privileged" -> privileged.map { x => x: js.Any }),
+        ("logConfiguration" -> logConfiguration.map { x => x: js.Any }),
+        ("user" -> user.map { x => x: js.Any }),
+        ("disableNetworking" -> disableNetworking.map { x => x: js.Any }),
+        ("memory" -> memory.map { x => x: js.Any }),
+        ("dnsServers" -> dnsServers.map { x => x: js.Any })
       ).filter(_._2 != js.undefined)
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ContainerDefinition]
@@ -217,7 +368,7 @@ package ecs {
   }
 
   /**
-   * <p>An Amazon EC2 instance that is running the Amazon ECS agent and has been registered with a cluster.</p>
+   * <p>An EC2 instance that is running the Amazon ECS agent and has been registered with a cluster.</p>
    */
   @js.native
   trait ContainerInstance extends js.Object {
@@ -225,10 +376,14 @@ package ecs {
     var registeredResources: Resources
     var ec2InstanceId: String
     var runningTasksCount: Integer
+    var attributes: Attributes
+    var version: Long
     var pendingTasksCount: Integer
     var agentConnected: Boolean
     var status: String
     var containerInstanceArn: String
+    var agentUpdateStatus: AgentUpdateStatus
+    var versionInfo: VersionInfo
   }
 
   object ContainerInstance {
@@ -237,20 +392,28 @@ package ecs {
       registeredResources: js.UndefOr[Resources] = js.undefined,
       ec2InstanceId: js.UndefOr[String] = js.undefined,
       runningTasksCount: js.UndefOr[Integer] = js.undefined,
+      attributes: js.UndefOr[Attributes] = js.undefined,
+      version: js.UndefOr[Long] = js.undefined,
       pendingTasksCount: js.UndefOr[Integer] = js.undefined,
       agentConnected: js.UndefOr[Boolean] = js.undefined,
       status: js.UndefOr[String] = js.undefined,
-      containerInstanceArn: js.UndefOr[String] = js.undefined
+      containerInstanceArn: js.UndefOr[String] = js.undefined,
+      agentUpdateStatus: js.UndefOr[AgentUpdateStatus] = js.undefined,
+      versionInfo: js.UndefOr[VersionInfo] = js.undefined
     ): ContainerInstance = {
       val _fields = IndexedSeq[(String, js.Any)](
         ("remainingResources" -> remainingResources.map { x => x: js.Any }),
         ("registeredResources" -> registeredResources.map { x => x: js.Any }),
         ("ec2InstanceId" -> ec2InstanceId.map { x => x: js.Any }),
         ("runningTasksCount" -> runningTasksCount.map { x => x: js.Any }),
+        ("attributes" -> attributes.map { x => x: js.Any }),
+        ("version" -> version.map { x => x: js.Any }),
         ("pendingTasksCount" -> pendingTasksCount.map { x => x: js.Any }),
         ("agentConnected" -> agentConnected.map { x => x: js.Any }),
         ("status" -> status.map { x => x: js.Any }),
-        ("containerInstanceArn" -> containerInstanceArn.map { x => x: js.Any })
+        ("containerInstanceArn" -> containerInstanceArn.map { x => x: js.Any }),
+        ("agentUpdateStatus" -> agentUpdateStatus.map { x => x: js.Any }),
+        ("versionInfo" -> versionInfo.map { x => x: js.Any })
       ).filter(_._2 != js.undefined)
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ContainerInstance]
@@ -258,22 +421,25 @@ package ecs {
   }
 
   /**
-   * <p>The name of a container in a task definition and the command it should run instead of its default.</p>
+   * <p>The overrides that should be sent to a container.</p>
    */
   @js.native
   trait ContainerOverride extends js.Object {
     var name: String
     var command: StringList
+    var environment: EnvironmentVariables
   }
 
   object ContainerOverride {
     def apply(
       name: js.UndefOr[String] = js.undefined,
-      command: js.UndefOr[StringList] = js.undefined
+      command: js.UndefOr[StringList] = js.undefined,
+      environment: js.UndefOr[EnvironmentVariables] = js.undefined
     ): ContainerOverride = {
       val _fields = IndexedSeq[(String, js.Any)](
         ("name" -> name.map { x => x: js.Any }),
-        ("command" -> command.map { x => x: js.Any })
+        ("command" -> command.map { x => x: js.Any }),
+        ("environment" -> environment.map { x => x: js.Any })
       ).filter(_._2 != js.undefined)
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ContainerOverride]
@@ -316,33 +482,42 @@ package ecs {
 
   @js.native
   trait CreateServiceRequest extends js.Object {
+    var placementStrategy: PlacementStrategies
     var role: String
     var desiredCount: BoxedInteger
     var serviceName: String
     var clientToken: String
     var loadBalancers: LoadBalancers
     var cluster: String
+    var deploymentConfiguration: DeploymentConfiguration
     var taskDefinition: String
+    var placementConstraints: PlacementConstraints
   }
 
   object CreateServiceRequest {
     def apply(
+      placementStrategy: js.UndefOr[PlacementStrategies] = js.undefined,
       role: js.UndefOr[String] = js.undefined,
       desiredCount: js.UndefOr[BoxedInteger] = js.undefined,
       serviceName: js.UndefOr[String] = js.undefined,
       clientToken: js.UndefOr[String] = js.undefined,
       loadBalancers: js.UndefOr[LoadBalancers] = js.undefined,
       cluster: js.UndefOr[String] = js.undefined,
-      taskDefinition: js.UndefOr[String] = js.undefined
+      deploymentConfiguration: js.UndefOr[DeploymentConfiguration] = js.undefined,
+      taskDefinition: js.UndefOr[String] = js.undefined,
+      placementConstraints: js.UndefOr[PlacementConstraints] = js.undefined
     ): CreateServiceRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
+        ("placementStrategy" -> placementStrategy.map { x => x: js.Any }),
         ("role" -> role.map { x => x: js.Any }),
         ("desiredCount" -> desiredCount.map { x => x: js.Any }),
         ("serviceName" -> serviceName.map { x => x: js.Any }),
         ("clientToken" -> clientToken.map { x => x: js.Any }),
         ("loadBalancers" -> loadBalancers.map { x => x: js.Any }),
         ("cluster" -> cluster.map { x => x: js.Any }),
-        ("taskDefinition" -> taskDefinition.map { x => x: js.Any })
+        ("deploymentConfiguration" -> deploymentConfiguration.map { x => x: js.Any }),
+        ("taskDefinition" -> taskDefinition.map { x => x: js.Any }),
+        ("placementConstraints" -> placementConstraints.map { x => x: js.Any })
       ).filter(_._2 != js.undefined)
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateServiceRequest]
@@ -363,6 +538,43 @@ package ecs {
       ).filter(_._2 != js.undefined)
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateServiceResponse]
+    }
+  }
+
+  @js.native
+  trait DeleteAttributesRequest extends js.Object {
+    var cluster: String
+    var attributes: Attributes
+  }
+
+  object DeleteAttributesRequest {
+    def apply(
+      cluster: js.UndefOr[String] = js.undefined,
+      attributes: js.UndefOr[Attributes] = js.undefined
+    ): DeleteAttributesRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("cluster" -> cluster.map { x => x: js.Any }),
+        ("attributes" -> attributes.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteAttributesRequest]
+    }
+  }
+
+  @js.native
+  trait DeleteAttributesResponse extends js.Object {
+    var attributes: Attributes
+  }
+
+  object DeleteAttributesResponse {
+    def apply(
+      attributes: js.UndefOr[Attributes] = js.undefined
+    ): DeleteAttributesResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("attributes" -> attributes.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteAttributesResponse]
     }
   }
 
@@ -437,6 +649,9 @@ package ecs {
     }
   }
 
+  /**
+   * <p>The details of an Amazon ECS service deployment.</p>
+   */
   @js.native
   trait Deployment extends js.Object {
     var updatedAt: Timestamp
@@ -472,6 +687,29 @@ package ecs {
       ).filter(_._2 != js.undefined)
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Deployment]
+    }
+  }
+
+  /**
+   * <p>Optional deployment parameters that control how many tasks run during the deployment and the ordering of stopping and starting tasks.</p>
+   */
+  @js.native
+  trait DeploymentConfiguration extends js.Object {
+    var maximumPercent: BoxedInteger
+    var minimumHealthyPercent: BoxedInteger
+  }
+
+  object DeploymentConfiguration {
+    def apply(
+      maximumPercent: js.UndefOr[BoxedInteger] = js.undefined,
+      minimumHealthyPercent: js.UndefOr[BoxedInteger] = js.undefined
+    ): DeploymentConfiguration = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("maximumPercent" -> maximumPercent.map { x => x: js.Any }),
+        ("minimumHealthyPercent" -> minimumHealthyPercent.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeploymentConfiguration]
     }
   }
 
@@ -740,6 +978,15 @@ package ecs {
     }
   }
 
+
+  object DesiredStatusEnum {
+    val RUNNING = "RUNNING"
+    val PENDING = "PENDING"
+    val STOPPED = "STOPPED"
+
+    val values = IndexedSeq(RUNNING, PENDING, STOPPED)
+  }
+
   @js.native
   trait DiscoverPollEndpointRequest extends js.Object {
     var containerInstance: String
@@ -763,20 +1010,26 @@ package ecs {
   @js.native
   trait DiscoverPollEndpointResponse extends js.Object {
     var endpoint: String
+    var telemetryEndpoint: String
   }
 
   object DiscoverPollEndpointResponse {
     def apply(
-      endpoint: js.UndefOr[String] = js.undefined
+      endpoint: js.UndefOr[String] = js.undefined,
+      telemetryEndpoint: js.UndefOr[String] = js.undefined
     ): DiscoverPollEndpointResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        ("endpoint" -> endpoint.map { x => x: js.Any })
+        ("endpoint" -> endpoint.map { x => x: js.Any }),
+        ("telemetryEndpoint" -> telemetryEndpoint.map { x => x: js.Any })
       ).filter(_._2 != js.undefined)
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DiscoverPollEndpointResponse]
     }
   }
 
+  /**
+   * <p>A failed resource.</p>
+   */
   @js.native
   trait Failure extends js.Object {
     var arn: String
@@ -797,6 +1050,32 @@ package ecs {
     }
   }
 
+  /**
+   * <p>Hostnames and IP address entries that are added to the <code>/etc/hosts</code> file of a container via the <code>extraHosts</code> parameter of its <a>ContainerDefinition</a>. </p>
+   */
+  @js.native
+  trait HostEntry extends js.Object {
+    var hostname: String
+    var ipAddress: String
+  }
+
+  object HostEntry {
+    def apply(
+      hostname: js.UndefOr[String] = js.undefined,
+      ipAddress: js.UndefOr[String] = js.undefined
+    ): HostEntry = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("hostname" -> hostname.map { x => x: js.Any }),
+        ("ipAddress" -> ipAddress.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[HostEntry]
+    }
+  }
+
+  /**
+   * <p>Details on a container instance host volume.</p>
+   */
   @js.native
   trait HostVolumeProperties extends js.Object {
     var sourcePath: String
@@ -814,6 +1093,17 @@ package ecs {
     }
   }
 
+  /**
+   * <p>The specified parameter is invalid. Review the available parameters for the API request.</p>
+   */
+  @js.native
+  trait InvalidParameterExceptionException extends js.Object {
+
+  }
+
+  /**
+   * <p>A key and value pair object.</p>
+   */
   @js.native
   trait KeyValuePair extends js.Object {
     var name: String
@@ -831,6 +1121,58 @@ package ecs {
       ).filter(_._2 != js.undefined)
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[KeyValuePair]
+    }
+  }
+
+  @js.native
+  trait ListAttributesRequest extends js.Object {
+    var maxResults: BoxedInteger
+    var attributeValue: String
+    var nextToken: String
+    var attributeName: String
+    var cluster: String
+    var targetType: TargetType
+  }
+
+  object ListAttributesRequest {
+    def apply(
+      maxResults: js.UndefOr[BoxedInteger] = js.undefined,
+      attributeValue: js.UndefOr[String] = js.undefined,
+      nextToken: js.UndefOr[String] = js.undefined,
+      attributeName: js.UndefOr[String] = js.undefined,
+      cluster: js.UndefOr[String] = js.undefined,
+      targetType: js.UndefOr[TargetType] = js.undefined
+    ): ListAttributesRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("maxResults" -> maxResults.map { x => x: js.Any }),
+        ("attributeValue" -> attributeValue.map { x => x: js.Any }),
+        ("nextToken" -> nextToken.map { x => x: js.Any }),
+        ("attributeName" -> attributeName.map { x => x: js.Any }),
+        ("cluster" -> cluster.map { x => x: js.Any }),
+        ("targetType" -> targetType.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListAttributesRequest]
+    }
+  }
+
+  @js.native
+  trait ListAttributesResponse extends js.Object {
+    var attributes: Attributes
+    var nextToken: String
+  }
+
+  object ListAttributesResponse {
+    def apply(
+      attributes: js.UndefOr[Attributes] = js.undefined,
+      nextToken: js.UndefOr[String] = js.undefined
+    ): ListAttributesResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("attributes" -> attributes.map { x => x: js.Any }),
+        ("nextToken" -> nextToken.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListAttributesResponse]
     }
   }
 
@@ -877,6 +1219,7 @@ package ecs {
   @js.native
   trait ListContainerInstancesRequest extends js.Object {
     var cluster: String
+    var filter: String
     var nextToken: String
     var maxResults: BoxedInteger
   }
@@ -884,11 +1227,13 @@ package ecs {
   object ListContainerInstancesRequest {
     def apply(
       cluster: js.UndefOr[String] = js.undefined,
+      filter: js.UndefOr[String] = js.undefined,
       nextToken: js.UndefOr[String] = js.undefined,
       maxResults: js.UndefOr[BoxedInteger] = js.undefined
     ): ListContainerInstancesRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         ("cluster" -> cluster.map { x => x: js.Any }),
+        ("filter" -> filter.map { x => x: js.Any }),
         ("nextToken" -> nextToken.map { x => x: js.Any }),
         ("maxResults" -> maxResults.map { x => x: js.Any })
       ).filter(_._2 != js.undefined)
@@ -963,6 +1308,7 @@ package ecs {
   @js.native
   trait ListTaskDefinitionFamiliesRequest extends js.Object {
     var familyPrefix: String
+    var status: TaskDefinitionFamilyStatus
     var nextToken: String
     var maxResults: BoxedInteger
   }
@@ -970,11 +1316,13 @@ package ecs {
   object ListTaskDefinitionFamiliesRequest {
     def apply(
       familyPrefix: js.UndefOr[String] = js.undefined,
+      status: js.UndefOr[TaskDefinitionFamilyStatus] = js.undefined,
       nextToken: js.UndefOr[String] = js.undefined,
       maxResults: js.UndefOr[BoxedInteger] = js.undefined
     ): ListTaskDefinitionFamiliesRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         ("familyPrefix" -> familyPrefix.map { x => x: js.Any }),
+        ("status" -> status.map { x => x: js.Any }),
         ("nextToken" -> nextToken.map { x => x: js.Any }),
         ("maxResults" -> maxResults.map { x => x: js.Any })
       ).filter(_._2 != js.undefined)
@@ -1005,21 +1353,27 @@ package ecs {
 
   @js.native
   trait ListTaskDefinitionsRequest extends js.Object {
-    var familyPrefix: String
-    var nextToken: String
     var maxResults: BoxedInteger
+    var nextToken: String
+    var status: TaskDefinitionStatus
+    var sort: SortOrder
+    var familyPrefix: String
   }
 
   object ListTaskDefinitionsRequest {
     def apply(
-      familyPrefix: js.UndefOr[String] = js.undefined,
+      maxResults: js.UndefOr[BoxedInteger] = js.undefined,
       nextToken: js.UndefOr[String] = js.undefined,
-      maxResults: js.UndefOr[BoxedInteger] = js.undefined
+      status: js.UndefOr[TaskDefinitionStatus] = js.undefined,
+      sort: js.UndefOr[SortOrder] = js.undefined,
+      familyPrefix: js.UndefOr[String] = js.undefined
     ): ListTaskDefinitionsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        ("familyPrefix" -> familyPrefix.map { x => x: js.Any }),
+        ("maxResults" -> maxResults.map { x => x: js.Any }),
         ("nextToken" -> nextToken.map { x => x: js.Any }),
-        ("maxResults" -> maxResults.map { x => x: js.Any })
+        ("status" -> status.map { x => x: js.Any }),
+        ("sort" -> sort.map { x => x: js.Any }),
+        ("familyPrefix" -> familyPrefix.map { x => x: js.Any })
       ).filter(_._2 != js.undefined)
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListTaskDefinitionsRequest]
@@ -1052,6 +1406,7 @@ package ecs {
     var containerInstance: String
     var maxResults: BoxedInteger
     var serviceName: String
+    var desiredStatus: DesiredStatus
     var nextToken: String
     var cluster: String
     var family: String
@@ -1063,6 +1418,7 @@ package ecs {
       containerInstance: js.UndefOr[String] = js.undefined,
       maxResults: js.UndefOr[BoxedInteger] = js.undefined,
       serviceName: js.UndefOr[String] = js.undefined,
+      desiredStatus: js.UndefOr[DesiredStatus] = js.undefined,
       nextToken: js.UndefOr[String] = js.undefined,
       cluster: js.UndefOr[String] = js.undefined,
       family: js.UndefOr[String] = js.undefined
@@ -1072,6 +1428,7 @@ package ecs {
         ("containerInstance" -> containerInstance.map { x => x: js.Any }),
         ("maxResults" -> maxResults.map { x => x: js.Any }),
         ("serviceName" -> serviceName.map { x => x: js.Any }),
+        ("desiredStatus" -> desiredStatus.map { x => x: js.Any }),
         ("nextToken" -> nextToken.map { x => x: js.Any }),
         ("cluster" -> cluster.map { x => x: js.Any }),
         ("family" -> family.map { x => x: js.Any })
@@ -1101,8 +1458,12 @@ package ecs {
     }
   }
 
+  /**
+   * <p>Details on a load balancer that is used with a service.</p>
+   */
   @js.native
   trait LoadBalancer extends js.Object {
+    var targetGroupArn: String
     var loadBalancerName: String
     var containerName: String
     var containerPort: BoxedInteger
@@ -1110,11 +1471,13 @@ package ecs {
 
   object LoadBalancer {
     def apply(
+      targetGroupArn: js.UndefOr[String] = js.undefined,
       loadBalancerName: js.UndefOr[String] = js.undefined,
       containerName: js.UndefOr[String] = js.undefined,
       containerPort: js.UndefOr[BoxedInteger] = js.undefined
     ): LoadBalancer = {
       val _fields = IndexedSeq[(String, js.Any)](
+        ("targetGroupArn" -> targetGroupArn.map { x => x: js.Any }),
         ("loadBalancerName" -> loadBalancerName.map { x => x: js.Any }),
         ("containerName" -> containerName.map { x => x: js.Any }),
         ("containerPort" -> containerPort.map { x => x: js.Any })
@@ -1124,6 +1487,53 @@ package ecs {
     }
   }
 
+  /**
+   * <p>Log configuration options to send to a custom log driver for the container.</p>
+   */
+  @js.native
+  trait LogConfiguration extends js.Object {
+    var logDriver: LogDriver
+    var options: LogConfigurationOptionsMap
+  }
+
+  object LogConfiguration {
+    def apply(
+      logDriver: js.UndefOr[LogDriver] = js.undefined,
+      options: js.UndefOr[LogConfigurationOptionsMap] = js.undefined
+    ): LogConfiguration = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("logDriver" -> logDriver.map { x => x: js.Any }),
+        ("options" -> options.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[LogConfiguration]
+    }
+  }
+
+
+  object LogDriverEnum {
+    val `json-file` = "json-file"
+    val syslog = "syslog"
+    val journald = "journald"
+    val gelf = "gelf"
+    val fluentd = "fluentd"
+    val awslogs = "awslogs"
+    val splunk = "splunk"
+
+    val values = IndexedSeq(`json-file`, syslog, journald, gelf, fluentd, awslogs, splunk)
+  }
+
+  /**
+   * <p>Amazon ECS is unable to determine the current version of the Amazon ECS container agent on the container instance and does not have enough information to proceed with an update. This could be because the agent running on the container instance is an older or custom version that does not use our version information.</p>
+   */
+  @js.native
+  trait MissingVersionExceptionException extends js.Object {
+
+  }
+
+  /**
+   * <p>Details on a volume mount point that is used in a container definition.</p>
+   */
   @js.native
   trait MountPoint extends js.Object {
     var sourceVolume: String
@@ -1147,46 +1557,135 @@ package ecs {
     }
   }
 
+  /**
+   * <p>Details on the network bindings between a container and its host container instance. After a task reaches the <code>RUNNING</code> status, manual and automatic host and container port assignments are visible in the <code>networkBindings</code> section of <a>DescribeTasks</a> API responses.</p>
+   */
   @js.native
   trait NetworkBinding extends js.Object {
     var bindIP: String
     var containerPort: BoxedInteger
     var hostPort: BoxedInteger
+    var protocol: TransportProtocol
   }
 
   object NetworkBinding {
     def apply(
       bindIP: js.UndefOr[String] = js.undefined,
       containerPort: js.UndefOr[BoxedInteger] = js.undefined,
-      hostPort: js.UndefOr[BoxedInteger] = js.undefined
+      hostPort: js.UndefOr[BoxedInteger] = js.undefined,
+      protocol: js.UndefOr[TransportProtocol] = js.undefined
     ): NetworkBinding = {
       val _fields = IndexedSeq[(String, js.Any)](
         ("bindIP" -> bindIP.map { x => x: js.Any }),
         ("containerPort" -> containerPort.map { x => x: js.Any }),
-        ("hostPort" -> hostPort.map { x => x: js.Any })
+        ("hostPort" -> hostPort.map { x => x: js.Any }),
+        ("protocol" -> protocol.map { x => x: js.Any })
       ).filter(_._2 != js.undefined)
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[NetworkBinding]
     }
   }
 
+
+  object NetworkModeEnum {
+    val bridge = "bridge"
+    val host = "host"
+    val none = "none"
+
+    val values = IndexedSeq(bridge, host, none)
+  }
+
   /**
-   * <p>Port mappings allow containers to access ports on the host container instance to send or receive traffic. Port mappings are specified as part of the container definition.</p>
+   * <p>There is no update available for this Amazon ECS container agent. This could be because the agent is already running the latest version, or it is so old that there is no update path to the current version.</p>
+   */
+  @js.native
+  trait NoUpdateAvailableExceptionException extends js.Object {
+
+  }
+
+  /**
+   * <p>An object representing a constraint on task placement. For more information, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement-constraints.html">Task Placement Constraints</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.</p>
+   */
+  @js.native
+  trait PlacementConstraint extends js.Object {
+    var `type`: PlacementConstraintType
+    var expression: String
+  }
+
+  object PlacementConstraint {
+    def apply(
+      `type`: js.UndefOr[PlacementConstraintType] = js.undefined,
+      expression: js.UndefOr[String] = js.undefined
+    ): PlacementConstraint = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("`type`" -> `type`.map { x => x: js.Any }),
+        ("expression" -> expression.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PlacementConstraint]
+    }
+  }
+
+
+  object PlacementConstraintTypeEnum {
+    val distinctInstance = "distinctInstance"
+    val memberOf = "memberOf"
+
+    val values = IndexedSeq(distinctInstance, memberOf)
+  }
+
+  /**
+   * <p>The task placement strategy for a task or service. For more information, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement-strategies.html">Task Placement Strategies</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.</p>
+   */
+  @js.native
+  trait PlacementStrategy extends js.Object {
+    var `type`: PlacementStrategyType
+    var field: String
+  }
+
+  object PlacementStrategy {
+    def apply(
+      `type`: js.UndefOr[PlacementStrategyType] = js.undefined,
+      field: js.UndefOr[String] = js.undefined
+    ): PlacementStrategy = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("`type`" -> `type`.map { x => x: js.Any }),
+        ("field" -> field.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PlacementStrategy]
+    }
+  }
+
+
+  object PlacementStrategyTypeEnum {
+    val random = "random"
+    val spread = "spread"
+    val binpack = "binpack"
+
+    val values = IndexedSeq(random, spread, binpack)
+  }
+
+  /**
+   * <p>Port mappings allow containers to access ports on the host container instance to send or receive traffic. Port mappings are specified as part of the container definition. After a task reaches the <code>RUNNING</code> status, manual and automatic host and container port assignments are visible in the <code>networkBindings</code> section of <a>DescribeTasks</a> API responses.</p>
    */
   @js.native
   trait PortMapping extends js.Object {
-    var containerPort: Integer
-    var hostPort: Integer
+    var containerPort: BoxedInteger
+    var hostPort: BoxedInteger
+    var protocol: TransportProtocol
   }
 
   object PortMapping {
     def apply(
-      containerPort: js.UndefOr[Integer] = js.undefined,
-      hostPort: js.UndefOr[Integer] = js.undefined
+      containerPort: js.UndefOr[BoxedInteger] = js.undefined,
+      hostPort: js.UndefOr[BoxedInteger] = js.undefined,
+      protocol: js.UndefOr[TransportProtocol] = js.undefined
     ): PortMapping = {
       val _fields = IndexedSeq[(String, js.Any)](
         ("containerPort" -> containerPort.map { x => x: js.Any }),
-        ("hostPort" -> hostPort.map { x => x: js.Any })
+        ("hostPort" -> hostPort.map { x => x: js.Any }),
+        ("protocol" -> protocol.map { x => x: js.Any })
       ).filter(_._2 != js.undefined)
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PortMapping]
@@ -1194,10 +1693,49 @@ package ecs {
   }
 
   @js.native
+  trait PutAttributesRequest extends js.Object {
+    var cluster: String
+    var attributes: Attributes
+  }
+
+  object PutAttributesRequest {
+    def apply(
+      cluster: js.UndefOr[String] = js.undefined,
+      attributes: js.UndefOr[Attributes] = js.undefined
+    ): PutAttributesRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("cluster" -> cluster.map { x => x: js.Any }),
+        ("attributes" -> attributes.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutAttributesRequest]
+    }
+  }
+
+  @js.native
+  trait PutAttributesResponse extends js.Object {
+    var attributes: Attributes
+  }
+
+  object PutAttributesResponse {
+    def apply(
+      attributes: js.UndefOr[Attributes] = js.undefined
+    ): PutAttributesResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("attributes" -> attributes.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutAttributesResponse]
+    }
+  }
+
+  @js.native
   trait RegisterContainerInstanceRequest extends js.Object {
     var instanceIdentityDocument: String
     var instanceIdentityDocumentSignature: String
+    var attributes: Attributes
     var cluster: String
+    var containerInstanceArn: String
     var totalResources: Resources
     var versionInfo: VersionInfo
   }
@@ -1206,14 +1744,18 @@ package ecs {
     def apply(
       instanceIdentityDocument: js.UndefOr[String] = js.undefined,
       instanceIdentityDocumentSignature: js.UndefOr[String] = js.undefined,
+      attributes: js.UndefOr[Attributes] = js.undefined,
       cluster: js.UndefOr[String] = js.undefined,
+      containerInstanceArn: js.UndefOr[String] = js.undefined,
       totalResources: js.UndefOr[Resources] = js.undefined,
       versionInfo: js.UndefOr[VersionInfo] = js.undefined
     ): RegisterContainerInstanceRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         ("instanceIdentityDocument" -> instanceIdentityDocument.map { x => x: js.Any }),
         ("instanceIdentityDocumentSignature" -> instanceIdentityDocumentSignature.map { x => x: js.Any }),
+        ("attributes" -> attributes.map { x => x: js.Any }),
         ("cluster" -> cluster.map { x => x: js.Any }),
+        ("containerInstanceArn" -> containerInstanceArn.map { x => x: js.Any }),
         ("totalResources" -> totalResources.map { x => x: js.Any }),
         ("versionInfo" -> versionInfo.map { x => x: js.Any })
       ).filter(_._2 != js.undefined)
@@ -1241,21 +1783,30 @@ package ecs {
 
   @js.native
   trait RegisterTaskDefinitionRequest extends js.Object {
-    var family: String
-    var containerDefinitions: ContainerDefinitions
+    var taskRoleArn: String
     var volumes: VolumeList
+    var containerDefinitions: ContainerDefinitions
+    var networkMode: NetworkMode
+    var placementConstraints: TaskDefinitionPlacementConstraints
+    var family: String
   }
 
   object RegisterTaskDefinitionRequest {
     def apply(
-      family: js.UndefOr[String] = js.undefined,
+      taskRoleArn: js.UndefOr[String] = js.undefined,
+      volumes: js.UndefOr[VolumeList] = js.undefined,
       containerDefinitions: js.UndefOr[ContainerDefinitions] = js.undefined,
-      volumes: js.UndefOr[VolumeList] = js.undefined
+      networkMode: js.UndefOr[NetworkMode] = js.undefined,
+      placementConstraints: js.UndefOr[TaskDefinitionPlacementConstraints] = js.undefined,
+      family: js.UndefOr[String] = js.undefined
     ): RegisterTaskDefinitionRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        ("family" -> family.map { x => x: js.Any }),
+        ("taskRoleArn" -> taskRoleArn.map { x => x: js.Any }),
+        ("volumes" -> volumes.map { x => x: js.Any }),
         ("containerDefinitions" -> containerDefinitions.map { x => x: js.Any }),
-        ("volumes" -> volumes.map { x => x: js.Any })
+        ("networkMode" -> networkMode.map { x => x: js.Any }),
+        ("placementConstraints" -> placementConstraints.map { x => x: js.Any }),
+        ("family" -> family.map { x => x: js.Any })
       ).filter(_._2 != js.undefined)
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RegisterTaskDefinitionRequest]
@@ -1318,25 +1869,34 @@ package ecs {
   trait RunTaskRequest extends js.Object {
     var startedBy: String
     var count: BoxedInteger
+    var placementStrategy: PlacementStrategies
     var overrides: TaskOverride
     var cluster: String
     var taskDefinition: String
+    var placementConstraints: PlacementConstraints
+    var group: String
   }
 
   object RunTaskRequest {
     def apply(
       startedBy: js.UndefOr[String] = js.undefined,
       count: js.UndefOr[BoxedInteger] = js.undefined,
+      placementStrategy: js.UndefOr[PlacementStrategies] = js.undefined,
       overrides: js.UndefOr[TaskOverride] = js.undefined,
       cluster: js.UndefOr[String] = js.undefined,
-      taskDefinition: js.UndefOr[String] = js.undefined
+      taskDefinition: js.UndefOr[String] = js.undefined,
+      placementConstraints: js.UndefOr[PlacementConstraints] = js.undefined,
+      group: js.UndefOr[String] = js.undefined
     ): RunTaskRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         ("startedBy" -> startedBy.map { x => x: js.Any }),
         ("count" -> count.map { x => x: js.Any }),
+        ("placementStrategy" -> placementStrategy.map { x => x: js.Any }),
         ("overrides" -> overrides.map { x => x: js.Any }),
         ("cluster" -> cluster.map { x => x: js.Any }),
-        ("taskDefinition" -> taskDefinition.map { x => x: js.Any })
+        ("taskDefinition" -> taskDefinition.map { x => x: js.Any }),
+        ("placementConstraints" -> placementConstraints.map { x => x: js.Any }),
+        ("group" -> group.map { x => x: js.Any })
       ).filter(_._2 != js.undefined)
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RunTaskRequest]
@@ -1364,24 +1924,31 @@ package ecs {
   }
 
   /**
-   * <p>These errors are usually caused by a server-side issue.</p>
+   * <p>These errors are usually caused by a server issue.</p>
    */
   @js.native
   trait ServerExceptionException extends js.Object {
     var message: String
   }
 
+  /**
+   * <p>Details on a service within a cluster</p>
+   */
   @js.native
   trait Service extends js.Object {
     var runningCount: Integer
+    var placementStrategy: PlacementStrategies
     var desiredCount: Integer
     var serviceName: String
     var serviceArn: String
     var loadBalancers: LoadBalancers
+    var deploymentConfiguration: DeploymentConfiguration
     var roleArn: String
     var status: String
+    var createdAt: Timestamp
     var taskDefinition: String
     var clusterArn: String
+    var placementConstraints: PlacementConstraints
     var deployments: Deployments
     var pendingCount: Integer
     var events: ServiceEvents
@@ -1390,28 +1957,36 @@ package ecs {
   object Service {
     def apply(
       runningCount: js.UndefOr[Integer] = js.undefined,
+      placementStrategy: js.UndefOr[PlacementStrategies] = js.undefined,
       desiredCount: js.UndefOr[Integer] = js.undefined,
       serviceName: js.UndefOr[String] = js.undefined,
       serviceArn: js.UndefOr[String] = js.undefined,
       loadBalancers: js.UndefOr[LoadBalancers] = js.undefined,
+      deploymentConfiguration: js.UndefOr[DeploymentConfiguration] = js.undefined,
       roleArn: js.UndefOr[String] = js.undefined,
       status: js.UndefOr[String] = js.undefined,
+      createdAt: js.UndefOr[Timestamp] = js.undefined,
       taskDefinition: js.UndefOr[String] = js.undefined,
       clusterArn: js.UndefOr[String] = js.undefined,
+      placementConstraints: js.UndefOr[PlacementConstraints] = js.undefined,
       deployments: js.UndefOr[Deployments] = js.undefined,
       pendingCount: js.UndefOr[Integer] = js.undefined,
       events: js.UndefOr[ServiceEvents] = js.undefined
     ): Service = {
       val _fields = IndexedSeq[(String, js.Any)](
         ("runningCount" -> runningCount.map { x => x: js.Any }),
+        ("placementStrategy" -> placementStrategy.map { x => x: js.Any }),
         ("desiredCount" -> desiredCount.map { x => x: js.Any }),
         ("serviceName" -> serviceName.map { x => x: js.Any }),
         ("serviceArn" -> serviceArn.map { x => x: js.Any }),
         ("loadBalancers" -> loadBalancers.map { x => x: js.Any }),
+        ("deploymentConfiguration" -> deploymentConfiguration.map { x => x: js.Any }),
         ("roleArn" -> roleArn.map { x => x: js.Any }),
         ("status" -> status.map { x => x: js.Any }),
+        ("createdAt" -> createdAt.map { x => x: js.Any }),
         ("taskDefinition" -> taskDefinition.map { x => x: js.Any }),
         ("clusterArn" -> clusterArn.map { x => x: js.Any }),
+        ("placementConstraints" -> placementConstraints.map { x => x: js.Any }),
         ("deployments" -> deployments.map { x => x: js.Any }),
         ("pendingCount" -> pendingCount.map { x => x: js.Any }),
         ("events" -> events.map { x => x: js.Any })
@@ -1421,6 +1996,9 @@ package ecs {
     }
   }
 
+  /**
+   * <p>Details on an event associated with a service.</p>
+   */
   @js.native
   trait ServiceEvent extends js.Object {
     var id: String
@@ -1444,6 +2022,30 @@ package ecs {
     }
   }
 
+  /**
+   * <p>The specified service is not active. You cannot update a service that is not active. If you have previously deleted a service, you can re-create it with <a>CreateService</a>.</p>
+   */
+  @js.native
+  trait ServiceNotActiveExceptionException extends js.Object {
+
+  }
+
+  /**
+   * <p>The specified service could not be found. You can view your available services with <a>ListServices</a>. Amazon ECS services are cluster-specific and region-specific.</p>
+   */
+  @js.native
+  trait ServiceNotFoundExceptionException extends js.Object {
+
+  }
+
+
+  object SortOrderEnum {
+    val ASC = "ASC"
+    val DESC = "DESC"
+
+    val values = IndexedSeq(ASC, DESC)
+  }
+
   @js.native
   trait StartTaskRequest extends js.Object {
     var startedBy: String
@@ -1451,6 +2053,7 @@ package ecs {
     var cluster: String
     var taskDefinition: String
     var containerInstances: StringList
+    var group: String
   }
 
   object StartTaskRequest {
@@ -1459,14 +2062,16 @@ package ecs {
       overrides: js.UndefOr[TaskOverride] = js.undefined,
       cluster: js.UndefOr[String] = js.undefined,
       taskDefinition: js.UndefOr[String] = js.undefined,
-      containerInstances: js.UndefOr[StringList] = js.undefined
+      containerInstances: js.UndefOr[StringList] = js.undefined,
+      group: js.UndefOr[String] = js.undefined
     ): StartTaskRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         ("startedBy" -> startedBy.map { x => x: js.Any }),
         ("overrides" -> overrides.map { x => x: js.Any }),
         ("cluster" -> cluster.map { x => x: js.Any }),
         ("taskDefinition" -> taskDefinition.map { x => x: js.Any }),
-        ("containerInstances" -> containerInstances.map { x => x: js.Any })
+        ("containerInstances" -> containerInstances.map { x => x: js.Any }),
+        ("group" -> group.map { x => x: js.Any })
       ).filter(_._2 != js.undefined)
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StartTaskRequest]
@@ -1497,16 +2102,19 @@ package ecs {
   trait StopTaskRequest extends js.Object {
     var cluster: String
     var task: String
+    var reason: String
   }
 
   object StopTaskRequest {
     def apply(
       cluster: js.UndefOr[String] = js.undefined,
-      task: js.UndefOr[String] = js.undefined
+      task: js.UndefOr[String] = js.undefined,
+      reason: js.UndefOr[String] = js.undefined
     ): StopTaskRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         ("cluster" -> cluster.map { x => x: js.Any }),
-        ("task" -> task.map { x => x: js.Any })
+        ("task" -> task.map { x => x: js.Any }),
+        ("reason" -> reason.map { x => x: js.Any })
       ).filter(_._2 != js.undefined)
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StopTaskRequest]
@@ -1625,17 +2233,41 @@ package ecs {
     }
   }
 
+  /**
+   * <p>The specified target could not be found. You can view your available container instances with <a>ListContainerInstances</a>. Amazon ECS container instances are cluster-specific and region-specific.</p>
+   */
+  @js.native
+  trait TargetNotFoundExceptionException extends js.Object {
+
+  }
+
+
+  object TargetTypeEnum {
+    val `container-instance` = "container-instance"
+
+    val values = IndexedSeq(`container-instance`)
+  }
+
+  /**
+   * <p>Details on a task in a cluster.</p>
+   */
   @js.native
   trait Task extends js.Object {
     var taskDefinitionArn: String
     var startedBy: String
     var lastStatus: String
+    var stoppedAt: Timestamp
     var desiredStatus: String
+    var stoppedReason: String
     var overrides: TaskOverride
+    var version: Long
     var containers: Containers
     var taskArn: String
+    var createdAt: Timestamp
+    var startedAt: Timestamp
     var containerInstanceArn: String
     var clusterArn: String
+    var group: String
   }
 
   object Task {
@@ -1643,51 +2275,81 @@ package ecs {
       taskDefinitionArn: js.UndefOr[String] = js.undefined,
       startedBy: js.UndefOr[String] = js.undefined,
       lastStatus: js.UndefOr[String] = js.undefined,
+      stoppedAt: js.UndefOr[Timestamp] = js.undefined,
       desiredStatus: js.UndefOr[String] = js.undefined,
+      stoppedReason: js.UndefOr[String] = js.undefined,
       overrides: js.UndefOr[TaskOverride] = js.undefined,
+      version: js.UndefOr[Long] = js.undefined,
       containers: js.UndefOr[Containers] = js.undefined,
       taskArn: js.UndefOr[String] = js.undefined,
+      createdAt: js.UndefOr[Timestamp] = js.undefined,
+      startedAt: js.UndefOr[Timestamp] = js.undefined,
       containerInstanceArn: js.UndefOr[String] = js.undefined,
-      clusterArn: js.UndefOr[String] = js.undefined
+      clusterArn: js.UndefOr[String] = js.undefined,
+      group: js.UndefOr[String] = js.undefined
     ): Task = {
       val _fields = IndexedSeq[(String, js.Any)](
         ("taskDefinitionArn" -> taskDefinitionArn.map { x => x: js.Any }),
         ("startedBy" -> startedBy.map { x => x: js.Any }),
         ("lastStatus" -> lastStatus.map { x => x: js.Any }),
+        ("stoppedAt" -> stoppedAt.map { x => x: js.Any }),
         ("desiredStatus" -> desiredStatus.map { x => x: js.Any }),
+        ("stoppedReason" -> stoppedReason.map { x => x: js.Any }),
         ("overrides" -> overrides.map { x => x: js.Any }),
+        ("version" -> version.map { x => x: js.Any }),
         ("containers" -> containers.map { x => x: js.Any }),
         ("taskArn" -> taskArn.map { x => x: js.Any }),
+        ("createdAt" -> createdAt.map { x => x: js.Any }),
+        ("startedAt" -> startedAt.map { x => x: js.Any }),
         ("containerInstanceArn" -> containerInstanceArn.map { x => x: js.Any }),
-        ("clusterArn" -> clusterArn.map { x => x: js.Any })
+        ("clusterArn" -> clusterArn.map { x => x: js.Any }),
+        ("group" -> group.map { x => x: js.Any })
       ).filter(_._2 != js.undefined)
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Task]
     }
   }
 
+  /**
+   * <p>Details of a task definition.</p>
+   */
   @js.native
   trait TaskDefinition extends js.Object {
     var taskDefinitionArn: String
+    var requiresAttributes: RequiresAttributes
+    var taskRoleArn: String
     var volumes: VolumeList
     var revision: Integer
+    var status: TaskDefinitionStatus
     var containerDefinitions: ContainerDefinitions
+    var networkMode: NetworkMode
+    var placementConstraints: TaskDefinitionPlacementConstraints
     var family: String
   }
 
   object TaskDefinition {
     def apply(
       taskDefinitionArn: js.UndefOr[String] = js.undefined,
+      requiresAttributes: js.UndefOr[RequiresAttributes] = js.undefined,
+      taskRoleArn: js.UndefOr[String] = js.undefined,
       volumes: js.UndefOr[VolumeList] = js.undefined,
       revision: js.UndefOr[Integer] = js.undefined,
+      status: js.UndefOr[TaskDefinitionStatus] = js.undefined,
       containerDefinitions: js.UndefOr[ContainerDefinitions] = js.undefined,
+      networkMode: js.UndefOr[NetworkMode] = js.undefined,
+      placementConstraints: js.UndefOr[TaskDefinitionPlacementConstraints] = js.undefined,
       family: js.UndefOr[String] = js.undefined
     ): TaskDefinition = {
       val _fields = IndexedSeq[(String, js.Any)](
         ("taskDefinitionArn" -> taskDefinitionArn.map { x => x: js.Any }),
+        ("requiresAttributes" -> requiresAttributes.map { x => x: js.Any }),
+        ("taskRoleArn" -> taskRoleArn.map { x => x: js.Any }),
         ("volumes" -> volumes.map { x => x: js.Any }),
         ("revision" -> revision.map { x => x: js.Any }),
+        ("status" -> status.map { x => x: js.Any }),
         ("containerDefinitions" -> containerDefinitions.map { x => x: js.Any }),
+        ("networkMode" -> networkMode.map { x => x: js.Any }),
+        ("placementConstraints" -> placementConstraints.map { x => x: js.Any }),
         ("family" -> family.map { x => x: js.Any })
       ).filter(_._2 != js.undefined)
 
@@ -1695,45 +2357,198 @@ package ecs {
     }
   }
 
+
+  object TaskDefinitionFamilyStatusEnum {
+    val ACTIVE = "ACTIVE"
+    val INACTIVE = "INACTIVE"
+    val ALL = "ALL"
+
+    val values = IndexedSeq(ACTIVE, INACTIVE, ALL)
+  }
+
   /**
-   * <p>A list of container overrides in JSON format that specify the name of a container in a task definition and the command it should run instead of its default.</p>
+   * <p>An object representing a constraint on task placement in the task definition. For more information, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement-constraints.html">Task Placement Constraints</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.</p>
+   */
+  @js.native
+  trait TaskDefinitionPlacementConstraint extends js.Object {
+    var `type`: TaskDefinitionPlacementConstraintType
+    var expression: String
+  }
+
+  object TaskDefinitionPlacementConstraint {
+    def apply(
+      `type`: js.UndefOr[TaskDefinitionPlacementConstraintType] = js.undefined,
+      expression: js.UndefOr[String] = js.undefined
+    ): TaskDefinitionPlacementConstraint = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("`type`" -> `type`.map { x => x: js.Any }),
+        ("expression" -> expression.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TaskDefinitionPlacementConstraint]
+    }
+  }
+
+
+  object TaskDefinitionPlacementConstraintTypeEnum {
+    val memberOf = "memberOf"
+
+    val values = IndexedSeq(memberOf)
+  }
+
+
+  object TaskDefinitionStatusEnum {
+    val ACTIVE = "ACTIVE"
+    val INACTIVE = "INACTIVE"
+
+    val values = IndexedSeq(ACTIVE, INACTIVE)
+  }
+
+  /**
+   * <p>The overrides associated with a task.</p>
    */
   @js.native
   trait TaskOverride extends js.Object {
     var containerOverrides: ContainerOverrides
+    var taskRoleArn: String
   }
 
   object TaskOverride {
     def apply(
-      containerOverrides: js.UndefOr[ContainerOverrides] = js.undefined
+      containerOverrides: js.UndefOr[ContainerOverrides] = js.undefined,
+      taskRoleArn: js.UndefOr[String] = js.undefined
     ): TaskOverride = {
       val _fields = IndexedSeq[(String, js.Any)](
-        ("containerOverrides" -> containerOverrides.map { x => x: js.Any })
+        ("containerOverrides" -> containerOverrides.map { x => x: js.Any }),
+        ("taskRoleArn" -> taskRoleArn.map { x => x: js.Any })
       ).filter(_._2 != js.undefined)
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TaskOverride]
     }
   }
 
+
+  object TransportProtocolEnum {
+    val tcp = "tcp"
+    val udp = "udp"
+
+    val values = IndexedSeq(tcp, udp)
+  }
+
+  /**
+   * <p>The <code>ulimit</code> settings to pass to the container.</p>
+   */
+  @js.native
+  trait Ulimit extends js.Object {
+    var name: UlimitName
+    var softLimit: Integer
+    var hardLimit: Integer
+  }
+
+  object Ulimit {
+    def apply(
+      name: js.UndefOr[UlimitName] = js.undefined,
+      softLimit: js.UndefOr[Integer] = js.undefined,
+      hardLimit: js.UndefOr[Integer] = js.undefined
+    ): Ulimit = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("name" -> name.map { x => x: js.Any }),
+        ("softLimit" -> softLimit.map { x => x: js.Any }),
+        ("hardLimit" -> hardLimit.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Ulimit]
+    }
+  }
+
+
+  object UlimitNameEnum {
+    val core = "core"
+    val cpu = "cpu"
+    val data = "data"
+    val fsize = "fsize"
+    val locks = "locks"
+    val memlock = "memlock"
+    val msgqueue = "msgqueue"
+    val nice = "nice"
+    val nofile = "nofile"
+    val nproc = "nproc"
+    val rss = "rss"
+    val rtprio = "rtprio"
+    val rttime = "rttime"
+    val sigpending = "sigpending"
+    val stack = "stack"
+
+    val values = IndexedSeq(core, cpu, data, fsize, locks, memlock, msgqueue, nice, nofile, nproc, rss, rtprio, rttime, sigpending, stack)
+  }
+
+  @js.native
+  trait UpdateContainerAgentRequest extends js.Object {
+    var cluster: String
+    var containerInstance: String
+  }
+
+  object UpdateContainerAgentRequest {
+    def apply(
+      cluster: js.UndefOr[String] = js.undefined,
+      containerInstance: js.UndefOr[String] = js.undefined
+    ): UpdateContainerAgentRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("cluster" -> cluster.map { x => x: js.Any }),
+        ("containerInstance" -> containerInstance.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateContainerAgentRequest]
+    }
+  }
+
+  @js.native
+  trait UpdateContainerAgentResponse extends js.Object {
+    var containerInstance: ContainerInstance
+  }
+
+  object UpdateContainerAgentResponse {
+    def apply(
+      containerInstance: js.UndefOr[ContainerInstance] = js.undefined
+    ): UpdateContainerAgentResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ("containerInstance" -> containerInstance.map { x => x: js.Any })
+      ).filter(_._2 != js.undefined)
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateContainerAgentResponse]
+    }
+  }
+
+  /**
+   * <p>There is already a current Amazon ECS container agent update in progress on the specified container instance. If the container agent becomes disconnected while it is in a transitional stage, such as <code>PENDING</code> or <code>STAGING</code>, the update process can get stuck in that state. However, when the agent reconnects, it resumes where it stopped previously.</p>
+   */
+  @js.native
+  trait UpdateInProgressExceptionException extends js.Object {
+
+  }
+
   @js.native
   trait UpdateServiceRequest extends js.Object {
-    var cluster: String
-    var service: String
     var desiredCount: BoxedInteger
+    var service: String
+    var cluster: String
+    var deploymentConfiguration: DeploymentConfiguration
     var taskDefinition: String
   }
 
   object UpdateServiceRequest {
     def apply(
-      cluster: js.UndefOr[String] = js.undefined,
-      service: js.UndefOr[String] = js.undefined,
       desiredCount: js.UndefOr[BoxedInteger] = js.undefined,
+      service: js.UndefOr[String] = js.undefined,
+      cluster: js.UndefOr[String] = js.undefined,
+      deploymentConfiguration: js.UndefOr[DeploymentConfiguration] = js.undefined,
       taskDefinition: js.UndefOr[String] = js.undefined
     ): UpdateServiceRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        ("cluster" -> cluster.map { x => x: js.Any }),
-        ("service" -> service.map { x => x: js.Any }),
         ("desiredCount" -> desiredCount.map { x => x: js.Any }),
+        ("service" -> service.map { x => x: js.Any }),
+        ("cluster" -> cluster.map { x => x: js.Any }),
+        ("deploymentConfiguration" -> deploymentConfiguration.map { x => x: js.Any }),
         ("taskDefinition" -> taskDefinition.map { x => x: js.Any })
       ).filter(_._2 != js.undefined)
 
@@ -1758,6 +2573,9 @@ package ecs {
     }
   }
 
+  /**
+   * <p>The Docker and Amazon ECS container agent version information about a container instance.</p>
+   */
   @js.native
   trait VersionInfo extends js.Object {
     var agentVersion: String
@@ -1781,6 +2599,9 @@ package ecs {
     }
   }
 
+  /**
+   * <p>A data volume used in a task definition.</p>
+   */
   @js.native
   trait Volume extends js.Object {
     var name: String
@@ -1801,6 +2622,9 @@ package ecs {
     }
   }
 
+  /**
+   * <p>Details on a data volume from another container.</p>
+   */
   @js.native
   trait VolumeFrom extends js.Object {
     var sourceContainer: String
