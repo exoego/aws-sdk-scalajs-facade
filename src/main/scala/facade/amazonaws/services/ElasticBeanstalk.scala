@@ -1,0 +1,3490 @@
+package facade.amazonaws.services
+
+import scalajs._
+import scalajs.js.annotation.JSImport
+import scala.scalajs.js.|
+import io.scalajs.nodejs
+import facade.amazonaws._
+
+package object elasticbeanstalk {
+  type ARN = String
+  type AbortableOperationInProgress = Boolean
+  type ActionHistoryStatus = String
+  type ActionStatus = String
+  type ActionType = String
+  type ApplicationArn = String
+  type ApplicationDescriptionList = js.Array[ApplicationDescription]
+  type ApplicationName = String
+  type ApplicationNamesList = js.Array[ApplicationName]
+  type ApplicationVersionArn = String
+  type ApplicationVersionDescriptionList = js.Array[ApplicationVersionDescription]
+  type ApplicationVersionProccess = Boolean
+  type ApplicationVersionStatus = String
+  type AutoCreateApplication = Boolean
+  type AutoScalingGroupList = js.Array[AutoScalingGroup]
+  type AvailableSolutionStackDetailsList = js.Array[SolutionStackDescription]
+  type AvailableSolutionStackNamesList = js.Array[SolutionStackName]
+  type BoxedBoolean = Boolean
+  type BoxedInt = Int
+  type Cause = String
+  type Causes = js.Array[Cause]
+  type CnameAvailability = Boolean
+  type ComputeType = String
+  type ConfigurationDeploymentStatus = String
+  type ConfigurationOptionDefaultValue = String
+  type ConfigurationOptionDescriptionsList = js.Array[ConfigurationOptionDescription]
+  type ConfigurationOptionName = String
+  type ConfigurationOptionPossibleValue = String
+  type ConfigurationOptionPossibleValues = js.Array[ConfigurationOptionPossibleValue]
+  type ConfigurationOptionSettingsList = js.Array[ConfigurationOptionSetting]
+  type ConfigurationOptionSeverity = String
+  type ConfigurationOptionValue = String
+  type ConfigurationOptionValueType = String
+  type ConfigurationSettingsDescriptionList = js.Array[ConfigurationSettingsDescription]
+  type ConfigurationTemplateName = String
+  type ConfigurationTemplateNamesList = js.Array[ConfigurationTemplateName]
+  type CreationDate = js.Date
+  type CustomAmiList = js.Array[CustomAmi]
+  type DNSCname = String
+  type DNSCnamePrefix = String
+  type DeleteSourceBundle = Boolean
+  type DeploymentTimestamp = js.Date
+  type Description = String
+  type Ec2InstanceId = String
+  type EndpointURL = String
+  type EnvironmentArn = String
+  type EnvironmentDescriptionsList = js.Array[EnvironmentDescription]
+  type EnvironmentHealth = String
+  type EnvironmentHealthAttribute = String
+  type EnvironmentHealthAttributes = js.Array[EnvironmentHealthAttribute]
+  type EnvironmentHealthStatus = String
+  type EnvironmentId = String
+  type EnvironmentIdList = js.Array[EnvironmentId]
+  type EnvironmentInfoDescriptionList = js.Array[EnvironmentInfoDescription]
+  type EnvironmentInfoType = String
+  type EnvironmentLinks = js.Array[EnvironmentLink]
+  type EnvironmentName = String
+  type EnvironmentNamesList = js.Array[EnvironmentName]
+  type EnvironmentStatus = String
+  type EventDate = js.Date
+  type EventDescriptionList = js.Array[EventDescription]
+  type EventMessage = String
+  type EventSeverity = String
+  type FailureType = String
+  type FileTypeExtension = String
+  type ForceTerminate = Boolean
+  type GroupName = String
+  type ImageId = String
+  type IncludeDeleted = Boolean
+  type IncludeDeletedBackTo = js.Date
+  type InstanceHealthList = js.Array[SingleInstanceHealth]
+  type InstanceId = String
+  type InstanceList = js.Array[Instance]
+  type InstancesHealthAttribute = String
+  type InstancesHealthAttributes = js.Array[InstancesHealthAttribute]
+  type LaunchConfigurationList = js.Array[LaunchConfiguration]
+  type LaunchedAt = js.Date
+  type LoadAverage = js.Array[LoadAverageValue]
+  type LoadAverageValue = Double
+  type LoadBalancerList = js.Array[LoadBalancer]
+  type LoadBalancerListenersDescription = js.Array[Listener]
+  type Maintainer = String
+  type ManagedActionHistoryItems = js.Array[ManagedActionHistoryItem]
+  type ManagedActions = js.Array[ManagedAction]
+  type MaxRecords = Int
+  type Message = String
+  type NextToken = String
+  type NonEmptyString = String
+  type NullableDouble = Double
+  type NullableInteger = Int
+  type NullableLong = Double
+  type OperatingSystemName = String
+  type OperatingSystemVersion = String
+  type OptionNamespace = String
+  type OptionRestrictionMaxLength = Int
+  type OptionRestrictionMaxValue = Int
+  type OptionRestrictionMinValue = Int
+  type OptionsSpecifierList = js.Array[OptionSpecification]
+  type PlatformArn = String
+  type PlatformCategory = String
+  type PlatformFilterOperator = String
+  type PlatformFilterType = String
+  type PlatformFilterValue = String
+  type PlatformFilterValueList = js.Array[PlatformFilterValue]
+  type PlatformFilters = js.Array[PlatformFilter]
+  type PlatformFrameworks = js.Array[PlatformFramework]
+  type PlatformMaxRecords = Int
+  type PlatformName = String
+  type PlatformOwner = String
+  type PlatformProgrammingLanguages = js.Array[PlatformProgrammingLanguage]
+  type PlatformStatus = String
+  type PlatformSummaryList = js.Array[PlatformSummary]
+  type PlatformVersion = String
+  type QueueList = js.Array[Queue]
+  type RefreshedAt = js.Date
+  type RegexLabel = String
+  type RegexPattern = String
+  type RequestCount = Int
+  type RequestId = String
+  type ResourceArn = String
+  type ResourceId = String
+  type ResourceName = String
+  type S3Bucket = String
+  type S3Key = String
+  type SampleTimestamp = js.Date
+  type SolutionStackFileTypeList = js.Array[FileTypeExtension]
+  type SolutionStackName = String
+  type SourceLocation = String
+  type SourceRepository = String
+  type SourceType = String
+  type SupportedAddon = String
+  type SupportedAddonList = js.Array[SupportedAddon]
+  type SupportedTier = String
+  type SupportedTierList = js.Array[SupportedTier]
+  type TagKey = String
+  type TagKeyList = js.Array[TagKey]
+  type TagList = js.Array[Tag]
+  type TagValue = String
+  type Tags = js.Array[Tag]
+  type TerminateEnvForce = Boolean
+  type TerminateEnvironmentResources = Boolean
+  type TimeFilterEnd = js.Date
+  type TimeFilterStart = js.Date
+  type Timestamp = js.Date
+  type Token = String
+  type TriggerList = js.Array[Trigger]
+  type UpdateDate = js.Date
+  type UserDefinedOption = Boolean
+  type ValidationMessageString = String
+  type ValidationMessagesList = js.Array[ValidationMessage]
+  type ValidationSeverity = String
+  type VersionLabel = String
+  type VersionLabels = js.Array[VersionLabel]
+  type VersionLabelsList = js.Array[VersionLabel]
+  type VirtualizationType = String
+}
+
+package elasticbeanstalk {
+  @js.native
+  @JSImport("aws-sdk", "ElasticBeanstalk")
+  class ElasticBeanstalk(config: AWSConfig) extends js.Object {
+    def abortEnvironmentUpdate(params: AbortEnvironmentUpdateMessage): Request[js.Object] = js.native
+    def applyEnvironmentManagedAction(params: ApplyEnvironmentManagedActionRequest): Request[ApplyEnvironmentManagedActionResult] = js.native
+    def checkDNSAvailability(params: CheckDNSAvailabilityMessage): Request[CheckDNSAvailabilityResultMessage] = js.native
+    def composeEnvironments(params: ComposeEnvironmentsMessage): Request[EnvironmentDescriptionsMessage] = js.native
+    def createApplication(params: CreateApplicationMessage): Request[ApplicationDescriptionMessage] = js.native
+    def createApplicationVersion(params: CreateApplicationVersionMessage): Request[ApplicationVersionDescriptionMessage] = js.native
+    def createConfigurationTemplate(params: CreateConfigurationTemplateMessage): Request[ConfigurationSettingsDescription] = js.native
+    def createEnvironment(params: CreateEnvironmentMessage): Request[EnvironmentDescription] = js.native
+    def createPlatformVersion(params: CreatePlatformVersionRequest): Request[CreatePlatformVersionResult] = js.native
+    def createStorageLocation(): Request[CreateStorageLocationResultMessage] = js.native
+    def deleteApplication(params: DeleteApplicationMessage): Request[js.Object] = js.native
+    def deleteApplicationVersion(params: DeleteApplicationVersionMessage): Request[js.Object] = js.native
+    def deleteConfigurationTemplate(params: DeleteConfigurationTemplateMessage): Request[js.Object] = js.native
+    def deleteEnvironmentConfiguration(params: DeleteEnvironmentConfigurationMessage): Request[js.Object] = js.native
+    def deletePlatformVersion(params: DeletePlatformVersionRequest): Request[DeletePlatformVersionResult] = js.native
+    def describeAccountAttributes(): Request[DescribeAccountAttributesResult] = js.native
+    def describeApplicationVersions(params: DescribeApplicationVersionsMessage): Request[ApplicationVersionDescriptionsMessage] = js.native
+    def describeApplications(params: DescribeApplicationsMessage): Request[ApplicationDescriptionsMessage] = js.native
+    def describeConfigurationOptions(params: DescribeConfigurationOptionsMessage): Request[ConfigurationOptionsDescription] = js.native
+    def describeConfigurationSettings(params: DescribeConfigurationSettingsMessage): Request[ConfigurationSettingsDescriptions] = js.native
+    def describeEnvironmentHealth(params: DescribeEnvironmentHealthRequest): Request[DescribeEnvironmentHealthResult] = js.native
+    def describeEnvironmentManagedActionHistory(params: DescribeEnvironmentManagedActionHistoryRequest): Request[DescribeEnvironmentManagedActionHistoryResult] = js.native
+    def describeEnvironmentManagedActions(params: DescribeEnvironmentManagedActionsRequest): Request[DescribeEnvironmentManagedActionsResult] = js.native
+    def describeEnvironmentResources(params: DescribeEnvironmentResourcesMessage): Request[EnvironmentResourceDescriptionsMessage] = js.native
+    def describeEnvironments(params: DescribeEnvironmentsMessage): Request[EnvironmentDescriptionsMessage] = js.native
+    def describeEvents(params: DescribeEventsMessage): Request[EventDescriptionsMessage] = js.native
+    def describeInstancesHealth(params: DescribeInstancesHealthRequest): Request[DescribeInstancesHealthResult] = js.native
+    def describePlatformVersion(params: DescribePlatformVersionRequest): Request[DescribePlatformVersionResult] = js.native
+    def listAvailableSolutionStacks(): Request[ListAvailableSolutionStacksResultMessage] = js.native
+    def listPlatformVersions(params: ListPlatformVersionsRequest): Request[ListPlatformVersionsResult] = js.native
+    def listTagsForResource(params: ListTagsForResourceMessage): Request[ResourceTagsDescriptionMessage] = js.native
+    def rebuildEnvironment(params: RebuildEnvironmentMessage): Request[js.Object] = js.native
+    def requestEnvironmentInfo(params: RequestEnvironmentInfoMessage): Request[js.Object] = js.native
+    def restartAppServer(params: RestartAppServerMessage): Request[js.Object] = js.native
+    def retrieveEnvironmentInfo(params: RetrieveEnvironmentInfoMessage): Request[RetrieveEnvironmentInfoResultMessage] = js.native
+    def swapEnvironmentCNAMEs(params: SwapEnvironmentCNAMEsMessage): Request[js.Object] = js.native
+    def terminateEnvironment(params: TerminateEnvironmentMessage): Request[EnvironmentDescription] = js.native
+    def updateApplication(params: UpdateApplicationMessage): Request[ApplicationDescriptionMessage] = js.native
+    def updateApplicationResourceLifecycle(params: UpdateApplicationResourceLifecycleMessage): Request[ApplicationResourceLifecycleDescriptionMessage] = js.native
+    def updateApplicationVersion(params: UpdateApplicationVersionMessage): Request[ApplicationVersionDescriptionMessage] = js.native
+    def updateConfigurationTemplate(params: UpdateConfigurationTemplateMessage): Request[ConfigurationSettingsDescription] = js.native
+    def updateEnvironment(params: UpdateEnvironmentMessage): Request[EnvironmentDescription] = js.native
+    def updateTagsForResource(params: UpdateTagsForResourceMessage): Request[js.Object] = js.native
+    def validateConfigurationSettings(params: ValidateConfigurationSettingsMessage): Request[ConfigurationSettingsValidationMessages] = js.native
+  }
+
+  /**
+   * <p/>
+   */
+  @js.native
+  trait AbortEnvironmentUpdateMessage extends js.Object {
+    var EnvironmentId: js.UndefOr[EnvironmentId]
+    var EnvironmentName: js.UndefOr[EnvironmentName]
+  }
+
+  object AbortEnvironmentUpdateMessage {
+    def apply(
+      EnvironmentId: js.UndefOr[EnvironmentId] = js.undefined,
+      EnvironmentName: js.UndefOr[EnvironmentName] = js.undefined): AbortEnvironmentUpdateMessage = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "EnvironmentId" -> EnvironmentId.map { x => x.asInstanceOf[js.Any] },
+        "EnvironmentName" -> EnvironmentName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AbortEnvironmentUpdateMessage]
+    }
+  }
+
+  object ActionHistoryStatusEnum {
+    val Completed = "Completed"
+    val Failed = "Failed"
+    val Unknown = "Unknown"
+
+    val values = IndexedSeq(Completed, Failed, Unknown)
+  }
+
+  object ActionStatusEnum {
+    val Scheduled = "Scheduled"
+    val Pending = "Pending"
+    val Running = "Running"
+    val Unknown = "Unknown"
+
+    val values = IndexedSeq(Scheduled, Pending, Running, Unknown)
+  }
+
+  object ActionTypeEnum {
+    val InstanceRefresh = "InstanceRefresh"
+    val PlatformUpdate = "PlatformUpdate"
+    val Unknown = "Unknown"
+
+    val values = IndexedSeq(InstanceRefresh, PlatformUpdate, Unknown)
+  }
+
+  /**
+   * <p>Describes the properties of an application.</p>
+   */
+  @js.native
+  trait ApplicationDescription extends js.Object {
+    var ApplicationArn: js.UndefOr[ApplicationArn]
+    var Versions: js.UndefOr[VersionLabelsList]
+    var Description: js.UndefOr[Description]
+    var ResourceLifecycleConfig: js.UndefOr[ApplicationResourceLifecycleConfig]
+    var ApplicationName: js.UndefOr[ApplicationName]
+    var DateCreated: js.UndefOr[CreationDate]
+    var DateUpdated: js.UndefOr[UpdateDate]
+    var ConfigurationTemplates: js.UndefOr[ConfigurationTemplateNamesList]
+  }
+
+  object ApplicationDescription {
+    def apply(
+      ApplicationArn: js.UndefOr[ApplicationArn] = js.undefined,
+      Versions: js.UndefOr[VersionLabelsList] = js.undefined,
+      Description: js.UndefOr[Description] = js.undefined,
+      ResourceLifecycleConfig: js.UndefOr[ApplicationResourceLifecycleConfig] = js.undefined,
+      ApplicationName: js.UndefOr[ApplicationName] = js.undefined,
+      DateCreated: js.UndefOr[CreationDate] = js.undefined,
+      DateUpdated: js.UndefOr[UpdateDate] = js.undefined,
+      ConfigurationTemplates: js.UndefOr[ConfigurationTemplateNamesList] = js.undefined): ApplicationDescription = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ApplicationArn" -> ApplicationArn.map { x => x.asInstanceOf[js.Any] },
+        "Versions" -> Versions.map { x => x.asInstanceOf[js.Any] },
+        "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
+        "ResourceLifecycleConfig" -> ResourceLifecycleConfig.map { x => x.asInstanceOf[js.Any] },
+        "ApplicationName" -> ApplicationName.map { x => x.asInstanceOf[js.Any] },
+        "DateCreated" -> DateCreated.map { x => x.asInstanceOf[js.Any] },
+        "DateUpdated" -> DateUpdated.map { x => x.asInstanceOf[js.Any] },
+        "ConfigurationTemplates" -> ConfigurationTemplates.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ApplicationDescription]
+    }
+  }
+
+  /**
+   * <p>Result message containing a single description of an application.</p>
+   */
+  @js.native
+  trait ApplicationDescriptionMessage extends js.Object {
+    var Application: js.UndefOr[ApplicationDescription]
+  }
+
+  object ApplicationDescriptionMessage {
+    def apply(
+      Application: js.UndefOr[ApplicationDescription] = js.undefined): ApplicationDescriptionMessage = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Application" -> Application.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ApplicationDescriptionMessage]
+    }
+  }
+
+  /**
+   * <p>Result message containing a list of application descriptions.</p>
+   */
+  @js.native
+  trait ApplicationDescriptionsMessage extends js.Object {
+    var Applications: js.UndefOr[ApplicationDescriptionList]
+  }
+
+  object ApplicationDescriptionsMessage {
+    def apply(
+      Applications: js.UndefOr[ApplicationDescriptionList] = js.undefined): ApplicationDescriptionsMessage = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Applications" -> Applications.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ApplicationDescriptionsMessage]
+    }
+  }
+
+  /**
+   * <p>Application request metrics for an AWS Elastic Beanstalk environment.</p>
+   */
+  @js.native
+  trait ApplicationMetrics extends js.Object {
+    var Duration: js.UndefOr[NullableInteger]
+    var RequestCount: js.UndefOr[RequestCount]
+    var StatusCodes: js.UndefOr[StatusCodes]
+    var Latency: js.UndefOr[Latency]
+  }
+
+  object ApplicationMetrics {
+    def apply(
+      Duration: js.UndefOr[NullableInteger] = js.undefined,
+      RequestCount: js.UndefOr[RequestCount] = js.undefined,
+      StatusCodes: js.UndefOr[StatusCodes] = js.undefined,
+      Latency: js.UndefOr[Latency] = js.undefined): ApplicationMetrics = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Duration" -> Duration.map { x => x.asInstanceOf[js.Any] },
+        "RequestCount" -> RequestCount.map { x => x.asInstanceOf[js.Any] },
+        "StatusCodes" -> StatusCodes.map { x => x.asInstanceOf[js.Any] },
+        "Latency" -> Latency.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ApplicationMetrics]
+    }
+  }
+
+  /**
+   * <p>The resource lifecycle configuration for an application. Defines lifecycle settings for resources that belong to the application, and the service role that Elastic Beanstalk assumes in order to apply lifecycle settings. The version lifecycle configuration defines lifecycle settings for application versions.</p>
+   */
+  @js.native
+  trait ApplicationResourceLifecycleConfig extends js.Object {
+    var ServiceRole: js.UndefOr[String]
+    var VersionLifecycleConfig: js.UndefOr[ApplicationVersionLifecycleConfig]
+  }
+
+  object ApplicationResourceLifecycleConfig {
+    def apply(
+      ServiceRole: js.UndefOr[String] = js.undefined,
+      VersionLifecycleConfig: js.UndefOr[ApplicationVersionLifecycleConfig] = js.undefined): ApplicationResourceLifecycleConfig = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ServiceRole" -> ServiceRole.map { x => x.asInstanceOf[js.Any] },
+        "VersionLifecycleConfig" -> VersionLifecycleConfig.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ApplicationResourceLifecycleConfig]
+    }
+  }
+
+  @js.native
+  trait ApplicationResourceLifecycleDescriptionMessage extends js.Object {
+    var ApplicationName: js.UndefOr[ApplicationName]
+    var ResourceLifecycleConfig: js.UndefOr[ApplicationResourceLifecycleConfig]
+  }
+
+  object ApplicationResourceLifecycleDescriptionMessage {
+    def apply(
+      ApplicationName: js.UndefOr[ApplicationName] = js.undefined,
+      ResourceLifecycleConfig: js.UndefOr[ApplicationResourceLifecycleConfig] = js.undefined): ApplicationResourceLifecycleDescriptionMessage = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ApplicationName" -> ApplicationName.map { x => x.asInstanceOf[js.Any] },
+        "ResourceLifecycleConfig" -> ResourceLifecycleConfig.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ApplicationResourceLifecycleDescriptionMessage]
+    }
+  }
+
+  /**
+   * <p>Describes the properties of an application version.</p>
+   */
+  @js.native
+  trait ApplicationVersionDescription extends js.Object {
+    var SourceBuildInformation: js.UndefOr[SourceBuildInformation]
+    var Description: js.UndefOr[Description]
+    var VersionLabel: js.UndefOr[VersionLabel]
+    var BuildArn: js.UndefOr[String]
+    var ApplicationName: js.UndefOr[ApplicationName]
+    var DateCreated: js.UndefOr[CreationDate]
+    var SourceBundle: js.UndefOr[S3Location]
+    var ApplicationVersionArn: js.UndefOr[ApplicationVersionArn]
+    var DateUpdated: js.UndefOr[UpdateDate]
+    var Status: js.UndefOr[ApplicationVersionStatus]
+  }
+
+  object ApplicationVersionDescription {
+    def apply(
+      SourceBuildInformation: js.UndefOr[SourceBuildInformation] = js.undefined,
+      Description: js.UndefOr[Description] = js.undefined,
+      VersionLabel: js.UndefOr[VersionLabel] = js.undefined,
+      BuildArn: js.UndefOr[String] = js.undefined,
+      ApplicationName: js.UndefOr[ApplicationName] = js.undefined,
+      DateCreated: js.UndefOr[CreationDate] = js.undefined,
+      SourceBundle: js.UndefOr[S3Location] = js.undefined,
+      ApplicationVersionArn: js.UndefOr[ApplicationVersionArn] = js.undefined,
+      DateUpdated: js.UndefOr[UpdateDate] = js.undefined,
+      Status: js.UndefOr[ApplicationVersionStatus] = js.undefined): ApplicationVersionDescription = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "SourceBuildInformation" -> SourceBuildInformation.map { x => x.asInstanceOf[js.Any] },
+        "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
+        "VersionLabel" -> VersionLabel.map { x => x.asInstanceOf[js.Any] },
+        "BuildArn" -> BuildArn.map { x => x.asInstanceOf[js.Any] },
+        "ApplicationName" -> ApplicationName.map { x => x.asInstanceOf[js.Any] },
+        "DateCreated" -> DateCreated.map { x => x.asInstanceOf[js.Any] },
+        "SourceBundle" -> SourceBundle.map { x => x.asInstanceOf[js.Any] },
+        "ApplicationVersionArn" -> ApplicationVersionArn.map { x => x.asInstanceOf[js.Any] },
+        "DateUpdated" -> DateUpdated.map { x => x.asInstanceOf[js.Any] },
+        "Status" -> Status.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ApplicationVersionDescription]
+    }
+  }
+
+  /**
+   * <p>Result message wrapping a single description of an application version.</p>
+   */
+  @js.native
+  trait ApplicationVersionDescriptionMessage extends js.Object {
+    var ApplicationVersion: js.UndefOr[ApplicationVersionDescription]
+  }
+
+  object ApplicationVersionDescriptionMessage {
+    def apply(
+      ApplicationVersion: js.UndefOr[ApplicationVersionDescription] = js.undefined): ApplicationVersionDescriptionMessage = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ApplicationVersion" -> ApplicationVersion.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ApplicationVersionDescriptionMessage]
+    }
+  }
+
+  /**
+   * <p>Result message wrapping a list of application version descriptions.</p>
+   */
+  @js.native
+  trait ApplicationVersionDescriptionsMessage extends js.Object {
+    var ApplicationVersions: js.UndefOr[ApplicationVersionDescriptionList]
+    var NextToken: js.UndefOr[Token]
+  }
+
+  object ApplicationVersionDescriptionsMessage {
+    def apply(
+      ApplicationVersions: js.UndefOr[ApplicationVersionDescriptionList] = js.undefined,
+      NextToken: js.UndefOr[Token] = js.undefined): ApplicationVersionDescriptionsMessage = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ApplicationVersions" -> ApplicationVersions.map { x => x.asInstanceOf[js.Any] },
+        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ApplicationVersionDescriptionsMessage]
+    }
+  }
+
+  /**
+   * <p>The application version lifecycle settings for an application. Defines the rules that Elastic Beanstalk applies to an application's versions in order to avoid hitting the per-region limit for application versions.</p> <p>When Elastic Beanstalk deletes an application version from its database, you can no longer deploy that version to an environment. The source bundle remains in S3 unless you configure the rule to delete it.</p>
+   */
+  @js.native
+  trait ApplicationVersionLifecycleConfig extends js.Object {
+    var MaxCountRule: js.UndefOr[MaxCountRule]
+    var MaxAgeRule: js.UndefOr[MaxAgeRule]
+  }
+
+  object ApplicationVersionLifecycleConfig {
+    def apply(
+      MaxCountRule: js.UndefOr[MaxCountRule] = js.undefined,
+      MaxAgeRule: js.UndefOr[MaxAgeRule] = js.undefined): ApplicationVersionLifecycleConfig = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "MaxCountRule" -> MaxCountRule.map { x => x.asInstanceOf[js.Any] },
+        "MaxAgeRule" -> MaxAgeRule.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ApplicationVersionLifecycleConfig]
+    }
+  }
+
+  object ApplicationVersionStatusEnum {
+    val Processed = "Processed"
+    val Unprocessed = "Unprocessed"
+    val Failed = "Failed"
+    val Processing = "Processing"
+    val Building = "Building"
+
+    val values = IndexedSeq(Processed, Unprocessed, Failed, Processing, Building)
+  }
+
+  /**
+   * <p>Request to execute a scheduled managed action immediately.</p>
+   */
+  @js.native
+  trait ApplyEnvironmentManagedActionRequest extends js.Object {
+    var EnvironmentName: js.UndefOr[String]
+    var EnvironmentId: js.UndefOr[String]
+    var ActionId: js.UndefOr[String]
+  }
+
+  object ApplyEnvironmentManagedActionRequest {
+    def apply(
+      EnvironmentName: js.UndefOr[String] = js.undefined,
+      EnvironmentId: js.UndefOr[String] = js.undefined,
+      ActionId: js.UndefOr[String] = js.undefined): ApplyEnvironmentManagedActionRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "EnvironmentName" -> EnvironmentName.map { x => x.asInstanceOf[js.Any] },
+        "EnvironmentId" -> EnvironmentId.map { x => x.asInstanceOf[js.Any] },
+        "ActionId" -> ActionId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ApplyEnvironmentManagedActionRequest]
+    }
+  }
+
+  /**
+   * <p>The result message containing information about the managed action.</p>
+   */
+  @js.native
+  trait ApplyEnvironmentManagedActionResult extends js.Object {
+    var ActionId: js.UndefOr[String]
+    var ActionDescription: js.UndefOr[String]
+    var ActionType: js.UndefOr[ActionType]
+    var Status: js.UndefOr[String]
+  }
+
+  object ApplyEnvironmentManagedActionResult {
+    def apply(
+      ActionId: js.UndefOr[String] = js.undefined,
+      ActionDescription: js.UndefOr[String] = js.undefined,
+      ActionType: js.UndefOr[ActionType] = js.undefined,
+      Status: js.UndefOr[String] = js.undefined): ApplyEnvironmentManagedActionResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ActionId" -> ActionId.map { x => x.asInstanceOf[js.Any] },
+        "ActionDescription" -> ActionDescription.map { x => x.asInstanceOf[js.Any] },
+        "ActionType" -> ActionType.map { x => x.asInstanceOf[js.Any] },
+        "Status" -> Status.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ApplyEnvironmentManagedActionResult]
+    }
+  }
+
+  /**
+   * <p>Describes an Auto Scaling launch configuration.</p>
+   */
+  @js.native
+  trait AutoScalingGroup extends js.Object {
+    var Name: js.UndefOr[ResourceId]
+  }
+
+  object AutoScalingGroup {
+    def apply(
+      Name: js.UndefOr[ResourceId] = js.undefined): AutoScalingGroup = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Name" -> Name.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AutoScalingGroup]
+    }
+  }
+
+  /**
+   * <p>Settings for an AWS CodeBuild build.</p>
+   */
+  @js.native
+  trait BuildConfiguration extends js.Object {
+    var CodeBuildServiceRole: js.UndefOr[NonEmptyString]
+    var ArtifactName: js.UndefOr[String]
+    var TimeoutInMinutes: js.UndefOr[BoxedInt]
+    var Image: js.UndefOr[NonEmptyString]
+    var ComputeType: js.UndefOr[ComputeType]
+  }
+
+  object BuildConfiguration {
+    def apply(
+      CodeBuildServiceRole: js.UndefOr[NonEmptyString] = js.undefined,
+      ArtifactName: js.UndefOr[String] = js.undefined,
+      TimeoutInMinutes: js.UndefOr[BoxedInt] = js.undefined,
+      Image: js.UndefOr[NonEmptyString] = js.undefined,
+      ComputeType: js.UndefOr[ComputeType] = js.undefined): BuildConfiguration = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "CodeBuildServiceRole" -> CodeBuildServiceRole.map { x => x.asInstanceOf[js.Any] },
+        "ArtifactName" -> ArtifactName.map { x => x.asInstanceOf[js.Any] },
+        "TimeoutInMinutes" -> TimeoutInMinutes.map { x => x.asInstanceOf[js.Any] },
+        "Image" -> Image.map { x => x.asInstanceOf[js.Any] },
+        "ComputeType" -> ComputeType.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BuildConfiguration]
+    }
+  }
+
+  /**
+   * <p>The builder used to build the custom platform.</p>
+   */
+  @js.native
+  trait Builder extends js.Object {
+    var ARN: js.UndefOr[ARN]
+  }
+
+  object Builder {
+    def apply(
+      ARN: js.UndefOr[ARN] = js.undefined): Builder = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ARN" -> ARN.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Builder]
+    }
+  }
+
+  /**
+   * <p>CPU utilization metrics for an instance.</p>
+   */
+  @js.native
+  trait CPUUtilization extends js.Object {
+    var SoftIRQ: js.UndefOr[NullableDouble]
+    var Privileged: js.UndefOr[NullableDouble]
+    var System: js.UndefOr[NullableDouble]
+    var Nice: js.UndefOr[NullableDouble]
+    var Idle: js.UndefOr[NullableDouble]
+    var User: js.UndefOr[NullableDouble]
+    var IRQ: js.UndefOr[NullableDouble]
+    var IOWait: js.UndefOr[NullableDouble]
+  }
+
+  object CPUUtilization {
+    def apply(
+      SoftIRQ: js.UndefOr[NullableDouble] = js.undefined,
+      Privileged: js.UndefOr[NullableDouble] = js.undefined,
+      System: js.UndefOr[NullableDouble] = js.undefined,
+      Nice: js.UndefOr[NullableDouble] = js.undefined,
+      Idle: js.UndefOr[NullableDouble] = js.undefined,
+      User: js.UndefOr[NullableDouble] = js.undefined,
+      IRQ: js.UndefOr[NullableDouble] = js.undefined,
+      IOWait: js.UndefOr[NullableDouble] = js.undefined): CPUUtilization = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "SoftIRQ" -> SoftIRQ.map { x => x.asInstanceOf[js.Any] },
+        "Privileged" -> Privileged.map { x => x.asInstanceOf[js.Any] },
+        "System" -> System.map { x => x.asInstanceOf[js.Any] },
+        "Nice" -> Nice.map { x => x.asInstanceOf[js.Any] },
+        "Idle" -> Idle.map { x => x.asInstanceOf[js.Any] },
+        "User" -> User.map { x => x.asInstanceOf[js.Any] },
+        "IRQ" -> IRQ.map { x => x.asInstanceOf[js.Any] },
+        "IOWait" -> IOWait.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CPUUtilization]
+    }
+  }
+
+  /**
+   * <p>Results message indicating whether a CNAME is available.</p>
+   */
+  @js.native
+  trait CheckDNSAvailabilityMessage extends js.Object {
+    var CNAMEPrefix: js.UndefOr[DNSCnamePrefix]
+  }
+
+  object CheckDNSAvailabilityMessage {
+    def apply(
+      CNAMEPrefix: js.UndefOr[DNSCnamePrefix] = js.undefined): CheckDNSAvailabilityMessage = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "CNAMEPrefix" -> CNAMEPrefix.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CheckDNSAvailabilityMessage]
+    }
+  }
+
+  /**
+   * <p>Indicates if the specified CNAME is available.</p>
+   */
+  @js.native
+  trait CheckDNSAvailabilityResultMessage extends js.Object {
+    var Available: js.UndefOr[CnameAvailability]
+    var FullyQualifiedCNAME: js.UndefOr[DNSCname]
+  }
+
+  object CheckDNSAvailabilityResultMessage {
+    def apply(
+      Available: js.UndefOr[CnameAvailability] = js.undefined,
+      FullyQualifiedCNAME: js.UndefOr[DNSCname] = js.undefined): CheckDNSAvailabilityResultMessage = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Available" -> Available.map { x => x.asInstanceOf[js.Any] },
+        "FullyQualifiedCNAME" -> FullyQualifiedCNAME.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CheckDNSAvailabilityResultMessage]
+    }
+  }
+
+  /**
+   * <p>Request to create or update a group of environments.</p>
+   */
+  @js.native
+  trait ComposeEnvironmentsMessage extends js.Object {
+    var ApplicationName: js.UndefOr[ApplicationName]
+    var GroupName: js.UndefOr[GroupName]
+    var VersionLabels: js.UndefOr[VersionLabels]
+  }
+
+  object ComposeEnvironmentsMessage {
+    def apply(
+      ApplicationName: js.UndefOr[ApplicationName] = js.undefined,
+      GroupName: js.UndefOr[GroupName] = js.undefined,
+      VersionLabels: js.UndefOr[VersionLabels] = js.undefined): ComposeEnvironmentsMessage = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ApplicationName" -> ApplicationName.map { x => x.asInstanceOf[js.Any] },
+        "GroupName" -> GroupName.map { x => x.asInstanceOf[js.Any] },
+        "VersionLabels" -> VersionLabels.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ComposeEnvironmentsMessage]
+    }
+  }
+
+  object ComputeTypeEnum {
+    val BUILD_GENERAL1_SMALL = "BUILD_GENERAL1_SMALL"
+    val BUILD_GENERAL1_MEDIUM = "BUILD_GENERAL1_MEDIUM"
+    val BUILD_GENERAL1_LARGE = "BUILD_GENERAL1_LARGE"
+
+    val values = IndexedSeq(BUILD_GENERAL1_SMALL, BUILD_GENERAL1_MEDIUM, BUILD_GENERAL1_LARGE)
+  }
+
+  object ConfigurationDeploymentStatusEnum {
+    val deployed = "deployed"
+    val pending = "pending"
+    val failed = "failed"
+
+    val values = IndexedSeq(deployed, pending, failed)
+  }
+
+  /**
+   * <p>Describes the possible values for a configuration option.</p>
+   */
+  @js.native
+  trait ConfigurationOptionDescription extends js.Object {
+    var UserDefined: js.UndefOr[UserDefinedOption]
+    var ValueOptions: js.UndefOr[ConfigurationOptionPossibleValues]
+    var Name: js.UndefOr[ConfigurationOptionName]
+    var ValueType: js.UndefOr[ConfigurationOptionValueType]
+    var ChangeSeverity: js.UndefOr[ConfigurationOptionSeverity]
+    var DefaultValue: js.UndefOr[ConfigurationOptionDefaultValue]
+    var MaxLength: js.UndefOr[OptionRestrictionMaxLength]
+    var MinValue: js.UndefOr[OptionRestrictionMinValue]
+    var Namespace: js.UndefOr[OptionNamespace]
+    var Regex: js.UndefOr[OptionRestrictionRegex]
+    var MaxValue: js.UndefOr[OptionRestrictionMaxValue]
+  }
+
+  object ConfigurationOptionDescription {
+    def apply(
+      UserDefined: js.UndefOr[UserDefinedOption] = js.undefined,
+      ValueOptions: js.UndefOr[ConfigurationOptionPossibleValues] = js.undefined,
+      Name: js.UndefOr[ConfigurationOptionName] = js.undefined,
+      ValueType: js.UndefOr[ConfigurationOptionValueType] = js.undefined,
+      ChangeSeverity: js.UndefOr[ConfigurationOptionSeverity] = js.undefined,
+      DefaultValue: js.UndefOr[ConfigurationOptionDefaultValue] = js.undefined,
+      MaxLength: js.UndefOr[OptionRestrictionMaxLength] = js.undefined,
+      MinValue: js.UndefOr[OptionRestrictionMinValue] = js.undefined,
+      Namespace: js.UndefOr[OptionNamespace] = js.undefined,
+      Regex: js.UndefOr[OptionRestrictionRegex] = js.undefined,
+      MaxValue: js.UndefOr[OptionRestrictionMaxValue] = js.undefined): ConfigurationOptionDescription = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "UserDefined" -> UserDefined.map { x => x.asInstanceOf[js.Any] },
+        "ValueOptions" -> ValueOptions.map { x => x.asInstanceOf[js.Any] },
+        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
+        "ValueType" -> ValueType.map { x => x.asInstanceOf[js.Any] },
+        "ChangeSeverity" -> ChangeSeverity.map { x => x.asInstanceOf[js.Any] },
+        "DefaultValue" -> DefaultValue.map { x => x.asInstanceOf[js.Any] },
+        "MaxLength" -> MaxLength.map { x => x.asInstanceOf[js.Any] },
+        "MinValue" -> MinValue.map { x => x.asInstanceOf[js.Any] },
+        "Namespace" -> Namespace.map { x => x.asInstanceOf[js.Any] },
+        "Regex" -> Regex.map { x => x.asInstanceOf[js.Any] },
+        "MaxValue" -> MaxValue.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ConfigurationOptionDescription]
+    }
+  }
+
+  /**
+   * <p> A specification identifying an individual configuration option along with its current value. For a list of possible option values, go to <a href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/command-options.html">Option Values</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>. </p>
+   */
+  @js.native
+  trait ConfigurationOptionSetting extends js.Object {
+    var ResourceName: js.UndefOr[ResourceName]
+    var Namespace: js.UndefOr[OptionNamespace]
+    var OptionName: js.UndefOr[ConfigurationOptionName]
+    var Value: js.UndefOr[ConfigurationOptionValue]
+  }
+
+  object ConfigurationOptionSetting {
+    def apply(
+      ResourceName: js.UndefOr[ResourceName] = js.undefined,
+      Namespace: js.UndefOr[OptionNamespace] = js.undefined,
+      OptionName: js.UndefOr[ConfigurationOptionName] = js.undefined,
+      Value: js.UndefOr[ConfigurationOptionValue] = js.undefined): ConfigurationOptionSetting = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ResourceName" -> ResourceName.map { x => x.asInstanceOf[js.Any] },
+        "Namespace" -> Namespace.map { x => x.asInstanceOf[js.Any] },
+        "OptionName" -> OptionName.map { x => x.asInstanceOf[js.Any] },
+        "Value" -> Value.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ConfigurationOptionSetting]
+    }
+  }
+
+  object ConfigurationOptionValueTypeEnum {
+    val Scalar = "Scalar"
+    val List = "List"
+
+    val values = IndexedSeq(Scalar, List)
+  }
+
+  /**
+   * <p>Describes the settings for a specified configuration set.</p>
+   */
+  @js.native
+  trait ConfigurationOptionsDescription extends js.Object {
+    var SolutionStackName: js.UndefOr[SolutionStackName]
+    var PlatformArn: js.UndefOr[PlatformArn]
+    var Options: js.UndefOr[ConfigurationOptionDescriptionsList]
+  }
+
+  object ConfigurationOptionsDescription {
+    def apply(
+      SolutionStackName: js.UndefOr[SolutionStackName] = js.undefined,
+      PlatformArn: js.UndefOr[PlatformArn] = js.undefined,
+      Options: js.UndefOr[ConfigurationOptionDescriptionsList] = js.undefined): ConfigurationOptionsDescription = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "SolutionStackName" -> SolutionStackName.map { x => x.asInstanceOf[js.Any] },
+        "PlatformArn" -> PlatformArn.map { x => x.asInstanceOf[js.Any] },
+        "Options" -> Options.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ConfigurationOptionsDescription]
+    }
+  }
+
+  /**
+   * <p>Describes the settings for a configuration set.</p>
+   */
+  @js.native
+  trait ConfigurationSettingsDescription extends js.Object {
+    var Description: js.UndefOr[Description]
+    var PlatformArn: js.UndefOr[PlatformArn]
+    var SolutionStackName: js.UndefOr[SolutionStackName]
+    var DeploymentStatus: js.UndefOr[ConfigurationDeploymentStatus]
+    var OptionSettings: js.UndefOr[ConfigurationOptionSettingsList]
+    var TemplateName: js.UndefOr[ConfigurationTemplateName]
+    var EnvironmentName: js.UndefOr[EnvironmentName]
+    var ApplicationName: js.UndefOr[ApplicationName]
+    var DateCreated: js.UndefOr[CreationDate]
+    var DateUpdated: js.UndefOr[UpdateDate]
+  }
+
+  object ConfigurationSettingsDescription {
+    def apply(
+      Description: js.UndefOr[Description] = js.undefined,
+      PlatformArn: js.UndefOr[PlatformArn] = js.undefined,
+      SolutionStackName: js.UndefOr[SolutionStackName] = js.undefined,
+      DeploymentStatus: js.UndefOr[ConfigurationDeploymentStatus] = js.undefined,
+      OptionSettings: js.UndefOr[ConfigurationOptionSettingsList] = js.undefined,
+      TemplateName: js.UndefOr[ConfigurationTemplateName] = js.undefined,
+      EnvironmentName: js.UndefOr[EnvironmentName] = js.undefined,
+      ApplicationName: js.UndefOr[ApplicationName] = js.undefined,
+      DateCreated: js.UndefOr[CreationDate] = js.undefined,
+      DateUpdated: js.UndefOr[UpdateDate] = js.undefined): ConfigurationSettingsDescription = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
+        "PlatformArn" -> PlatformArn.map { x => x.asInstanceOf[js.Any] },
+        "SolutionStackName" -> SolutionStackName.map { x => x.asInstanceOf[js.Any] },
+        "DeploymentStatus" -> DeploymentStatus.map { x => x.asInstanceOf[js.Any] },
+        "OptionSettings" -> OptionSettings.map { x => x.asInstanceOf[js.Any] },
+        "TemplateName" -> TemplateName.map { x => x.asInstanceOf[js.Any] },
+        "EnvironmentName" -> EnvironmentName.map { x => x.asInstanceOf[js.Any] },
+        "ApplicationName" -> ApplicationName.map { x => x.asInstanceOf[js.Any] },
+        "DateCreated" -> DateCreated.map { x => x.asInstanceOf[js.Any] },
+        "DateUpdated" -> DateUpdated.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ConfigurationSettingsDescription]
+    }
+  }
+
+  /**
+   * <p>The results from a request to change the configuration settings of an environment.</p>
+   */
+  @js.native
+  trait ConfigurationSettingsDescriptions extends js.Object {
+    var ConfigurationSettings: js.UndefOr[ConfigurationSettingsDescriptionList]
+  }
+
+  object ConfigurationSettingsDescriptions {
+    def apply(
+      ConfigurationSettings: js.UndefOr[ConfigurationSettingsDescriptionList] = js.undefined): ConfigurationSettingsDescriptions = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ConfigurationSettings" -> ConfigurationSettings.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ConfigurationSettingsDescriptions]
+    }
+  }
+
+  /**
+   * <p>Provides a list of validation messages.</p>
+   */
+  @js.native
+  trait ConfigurationSettingsValidationMessages extends js.Object {
+    var Messages: js.UndefOr[ValidationMessagesList]
+  }
+
+  object ConfigurationSettingsValidationMessages {
+    def apply(
+      Messages: js.UndefOr[ValidationMessagesList] = js.undefined): ConfigurationSettingsValidationMessages = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Messages" -> Messages.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ConfigurationSettingsValidationMessages]
+    }
+  }
+
+  /**
+   * <p>Request to create an application.</p>
+   */
+  @js.native
+  trait CreateApplicationMessage extends js.Object {
+    var ApplicationName: js.UndefOr[ApplicationName]
+    var Description: js.UndefOr[Description]
+    var ResourceLifecycleConfig: js.UndefOr[ApplicationResourceLifecycleConfig]
+  }
+
+  object CreateApplicationMessage {
+    def apply(
+      ApplicationName: js.UndefOr[ApplicationName] = js.undefined,
+      Description: js.UndefOr[Description] = js.undefined,
+      ResourceLifecycleConfig: js.UndefOr[ApplicationResourceLifecycleConfig] = js.undefined): CreateApplicationMessage = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ApplicationName" -> ApplicationName.map { x => x.asInstanceOf[js.Any] },
+        "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
+        "ResourceLifecycleConfig" -> ResourceLifecycleConfig.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateApplicationMessage]
+    }
+  }
+
+  /**
+   * <p/>
+   */
+  @js.native
+  trait CreateApplicationVersionMessage extends js.Object {
+    var SourceBuildInformation: js.UndefOr[SourceBuildInformation]
+    var BuildConfiguration: js.UndefOr[BuildConfiguration]
+    var Description: js.UndefOr[Description]
+    var VersionLabel: js.UndefOr[VersionLabel]
+    var AutoCreateApplication: js.UndefOr[AutoCreateApplication]
+    var ApplicationName: js.UndefOr[ApplicationName]
+    var SourceBundle: js.UndefOr[S3Location]
+    var Process: js.UndefOr[ApplicationVersionProccess]
+  }
+
+  object CreateApplicationVersionMessage {
+    def apply(
+      SourceBuildInformation: js.UndefOr[SourceBuildInformation] = js.undefined,
+      BuildConfiguration: js.UndefOr[BuildConfiguration] = js.undefined,
+      Description: js.UndefOr[Description] = js.undefined,
+      VersionLabel: js.UndefOr[VersionLabel] = js.undefined,
+      AutoCreateApplication: js.UndefOr[AutoCreateApplication] = js.undefined,
+      ApplicationName: js.UndefOr[ApplicationName] = js.undefined,
+      SourceBundle: js.UndefOr[S3Location] = js.undefined,
+      Process: js.UndefOr[ApplicationVersionProccess] = js.undefined): CreateApplicationVersionMessage = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "SourceBuildInformation" -> SourceBuildInformation.map { x => x.asInstanceOf[js.Any] },
+        "BuildConfiguration" -> BuildConfiguration.map { x => x.asInstanceOf[js.Any] },
+        "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
+        "VersionLabel" -> VersionLabel.map { x => x.asInstanceOf[js.Any] },
+        "AutoCreateApplication" -> AutoCreateApplication.map { x => x.asInstanceOf[js.Any] },
+        "ApplicationName" -> ApplicationName.map { x => x.asInstanceOf[js.Any] },
+        "SourceBundle" -> SourceBundle.map { x => x.asInstanceOf[js.Any] },
+        "Process" -> Process.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateApplicationVersionMessage]
+    }
+  }
+
+  /**
+   * <p>Request to create a configuration template.</p>
+   */
+  @js.native
+  trait CreateConfigurationTemplateMessage extends js.Object {
+    var Description: js.UndefOr[Description]
+    var EnvironmentId: js.UndefOr[EnvironmentId]
+    var SourceConfiguration: js.UndefOr[SourceConfiguration]
+    var PlatformArn: js.UndefOr[PlatformArn]
+    var SolutionStackName: js.UndefOr[SolutionStackName]
+    var OptionSettings: js.UndefOr[ConfigurationOptionSettingsList]
+    var TemplateName: js.UndefOr[ConfigurationTemplateName]
+    var ApplicationName: js.UndefOr[ApplicationName]
+  }
+
+  object CreateConfigurationTemplateMessage {
+    def apply(
+      Description: js.UndefOr[Description] = js.undefined,
+      EnvironmentId: js.UndefOr[EnvironmentId] = js.undefined,
+      SourceConfiguration: js.UndefOr[SourceConfiguration] = js.undefined,
+      PlatformArn: js.UndefOr[PlatformArn] = js.undefined,
+      SolutionStackName: js.UndefOr[SolutionStackName] = js.undefined,
+      OptionSettings: js.UndefOr[ConfigurationOptionSettingsList] = js.undefined,
+      TemplateName: js.UndefOr[ConfigurationTemplateName] = js.undefined,
+      ApplicationName: js.UndefOr[ApplicationName] = js.undefined): CreateConfigurationTemplateMessage = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
+        "EnvironmentId" -> EnvironmentId.map { x => x.asInstanceOf[js.Any] },
+        "SourceConfiguration" -> SourceConfiguration.map { x => x.asInstanceOf[js.Any] },
+        "PlatformArn" -> PlatformArn.map { x => x.asInstanceOf[js.Any] },
+        "SolutionStackName" -> SolutionStackName.map { x => x.asInstanceOf[js.Any] },
+        "OptionSettings" -> OptionSettings.map { x => x.asInstanceOf[js.Any] },
+        "TemplateName" -> TemplateName.map { x => x.asInstanceOf[js.Any] },
+        "ApplicationName" -> ApplicationName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateConfigurationTemplateMessage]
+    }
+  }
+
+  /**
+   * <p/>
+   */
+  @js.native
+  trait CreateEnvironmentMessage extends js.Object {
+    var OptionsToRemove: js.UndefOr[OptionsSpecifierList]
+    var GroupName: js.UndefOr[GroupName]
+    var Description: js.UndefOr[Description]
+    var PlatformArn: js.UndefOr[PlatformArn]
+    var VersionLabel: js.UndefOr[VersionLabel]
+    var Tier: js.UndefOr[EnvironmentTier]
+    var SolutionStackName: js.UndefOr[SolutionStackName]
+    var OptionSettings: js.UndefOr[ConfigurationOptionSettingsList]
+    var TemplateName: js.UndefOr[ConfigurationTemplateName]
+    var EnvironmentName: js.UndefOr[EnvironmentName]
+    var CNAMEPrefix: js.UndefOr[DNSCnamePrefix]
+    var Tags: js.UndefOr[Tags]
+    var ApplicationName: js.UndefOr[ApplicationName]
+  }
+
+  object CreateEnvironmentMessage {
+    def apply(
+      OptionsToRemove: js.UndefOr[OptionsSpecifierList] = js.undefined,
+      GroupName: js.UndefOr[GroupName] = js.undefined,
+      Description: js.UndefOr[Description] = js.undefined,
+      PlatformArn: js.UndefOr[PlatformArn] = js.undefined,
+      VersionLabel: js.UndefOr[VersionLabel] = js.undefined,
+      Tier: js.UndefOr[EnvironmentTier] = js.undefined,
+      SolutionStackName: js.UndefOr[SolutionStackName] = js.undefined,
+      OptionSettings: js.UndefOr[ConfigurationOptionSettingsList] = js.undefined,
+      TemplateName: js.UndefOr[ConfigurationTemplateName] = js.undefined,
+      EnvironmentName: js.UndefOr[EnvironmentName] = js.undefined,
+      CNAMEPrefix: js.UndefOr[DNSCnamePrefix] = js.undefined,
+      Tags: js.UndefOr[Tags] = js.undefined,
+      ApplicationName: js.UndefOr[ApplicationName] = js.undefined): CreateEnvironmentMessage = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "OptionsToRemove" -> OptionsToRemove.map { x => x.asInstanceOf[js.Any] },
+        "GroupName" -> GroupName.map { x => x.asInstanceOf[js.Any] },
+        "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
+        "PlatformArn" -> PlatformArn.map { x => x.asInstanceOf[js.Any] },
+        "VersionLabel" -> VersionLabel.map { x => x.asInstanceOf[js.Any] },
+        "Tier" -> Tier.map { x => x.asInstanceOf[js.Any] },
+        "SolutionStackName" -> SolutionStackName.map { x => x.asInstanceOf[js.Any] },
+        "OptionSettings" -> OptionSettings.map { x => x.asInstanceOf[js.Any] },
+        "TemplateName" -> TemplateName.map { x => x.asInstanceOf[js.Any] },
+        "EnvironmentName" -> EnvironmentName.map { x => x.asInstanceOf[js.Any] },
+        "CNAMEPrefix" -> CNAMEPrefix.map { x => x.asInstanceOf[js.Any] },
+        "Tags" -> Tags.map { x => x.asInstanceOf[js.Any] },
+        "ApplicationName" -> ApplicationName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateEnvironmentMessage]
+    }
+  }
+
+  /**
+   * <p>Request to create a new platform version.</p>
+   */
+  @js.native
+  trait CreatePlatformVersionRequest extends js.Object {
+    var PlatformVersion: js.UndefOr[PlatformVersion]
+    var PlatformDefinitionBundle: js.UndefOr[S3Location]
+    var OptionSettings: js.UndefOr[ConfigurationOptionSettingsList]
+    var EnvironmentName: js.UndefOr[EnvironmentName]
+    var PlatformName: js.UndefOr[PlatformName]
+  }
+
+  object CreatePlatformVersionRequest {
+    def apply(
+      PlatformVersion: js.UndefOr[PlatformVersion] = js.undefined,
+      PlatformDefinitionBundle: js.UndefOr[S3Location] = js.undefined,
+      OptionSettings: js.UndefOr[ConfigurationOptionSettingsList] = js.undefined,
+      EnvironmentName: js.UndefOr[EnvironmentName] = js.undefined,
+      PlatformName: js.UndefOr[PlatformName] = js.undefined): CreatePlatformVersionRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "PlatformVersion" -> PlatformVersion.map { x => x.asInstanceOf[js.Any] },
+        "PlatformDefinitionBundle" -> PlatformDefinitionBundle.map { x => x.asInstanceOf[js.Any] },
+        "OptionSettings" -> OptionSettings.map { x => x.asInstanceOf[js.Any] },
+        "EnvironmentName" -> EnvironmentName.map { x => x.asInstanceOf[js.Any] },
+        "PlatformName" -> PlatformName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreatePlatformVersionRequest]
+    }
+  }
+
+  @js.native
+  trait CreatePlatformVersionResult extends js.Object {
+    var PlatformSummary: js.UndefOr[PlatformSummary]
+    var Builder: js.UndefOr[Builder]
+  }
+
+  object CreatePlatformVersionResult {
+    def apply(
+      PlatformSummary: js.UndefOr[PlatformSummary] = js.undefined,
+      Builder: js.UndefOr[Builder] = js.undefined): CreatePlatformVersionResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "PlatformSummary" -> PlatformSummary.map { x => x.asInstanceOf[js.Any] },
+        "Builder" -> Builder.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreatePlatformVersionResult]
+    }
+  }
+
+  /**
+   * <p>Results of a <a>CreateStorageLocationResult</a> call.</p>
+   */
+  @js.native
+  trait CreateStorageLocationResultMessage extends js.Object {
+    var S3Bucket: js.UndefOr[S3Bucket]
+  }
+
+  object CreateStorageLocationResultMessage {
+    def apply(
+      S3Bucket: js.UndefOr[S3Bucket] = js.undefined): CreateStorageLocationResultMessage = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "S3Bucket" -> S3Bucket.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateStorageLocationResultMessage]
+    }
+  }
+
+  /**
+   * <p>A custom AMI available to platforms.</p>
+   */
+  @js.native
+  trait CustomAmi extends js.Object {
+    var VirtualizationType: js.UndefOr[VirtualizationType]
+    var ImageId: js.UndefOr[ImageId]
+  }
+
+  object CustomAmi {
+    def apply(
+      VirtualizationType: js.UndefOr[VirtualizationType] = js.undefined,
+      ImageId: js.UndefOr[ImageId] = js.undefined): CustomAmi = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "VirtualizationType" -> VirtualizationType.map { x => x.asInstanceOf[js.Any] },
+        "ImageId" -> ImageId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CustomAmi]
+    }
+  }
+
+  /**
+   * <p>Request to delete an application.</p>
+   */
+  @js.native
+  trait DeleteApplicationMessage extends js.Object {
+    var ApplicationName: js.UndefOr[ApplicationName]
+    var TerminateEnvByForce: js.UndefOr[TerminateEnvForce]
+  }
+
+  object DeleteApplicationMessage {
+    def apply(
+      ApplicationName: js.UndefOr[ApplicationName] = js.undefined,
+      TerminateEnvByForce: js.UndefOr[TerminateEnvForce] = js.undefined): DeleteApplicationMessage = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ApplicationName" -> ApplicationName.map { x => x.asInstanceOf[js.Any] },
+        "TerminateEnvByForce" -> TerminateEnvByForce.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteApplicationMessage]
+    }
+  }
+
+  /**
+   * <p>Request to delete an application version.</p>
+   */
+  @js.native
+  trait DeleteApplicationVersionMessage extends js.Object {
+    var ApplicationName: js.UndefOr[ApplicationName]
+    var VersionLabel: js.UndefOr[VersionLabel]
+    var DeleteSourceBundle: js.UndefOr[DeleteSourceBundle]
+  }
+
+  object DeleteApplicationVersionMessage {
+    def apply(
+      ApplicationName: js.UndefOr[ApplicationName] = js.undefined,
+      VersionLabel: js.UndefOr[VersionLabel] = js.undefined,
+      DeleteSourceBundle: js.UndefOr[DeleteSourceBundle] = js.undefined): DeleteApplicationVersionMessage = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ApplicationName" -> ApplicationName.map { x => x.asInstanceOf[js.Any] },
+        "VersionLabel" -> VersionLabel.map { x => x.asInstanceOf[js.Any] },
+        "DeleteSourceBundle" -> DeleteSourceBundle.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteApplicationVersionMessage]
+    }
+  }
+
+  /**
+   * <p>Request to delete a configuration template.</p>
+   */
+  @js.native
+  trait DeleteConfigurationTemplateMessage extends js.Object {
+    var ApplicationName: js.UndefOr[ApplicationName]
+    var TemplateName: js.UndefOr[ConfigurationTemplateName]
+  }
+
+  object DeleteConfigurationTemplateMessage {
+    def apply(
+      ApplicationName: js.UndefOr[ApplicationName] = js.undefined,
+      TemplateName: js.UndefOr[ConfigurationTemplateName] = js.undefined): DeleteConfigurationTemplateMessage = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ApplicationName" -> ApplicationName.map { x => x.asInstanceOf[js.Any] },
+        "TemplateName" -> TemplateName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteConfigurationTemplateMessage]
+    }
+  }
+
+  /**
+   * <p>Request to delete a draft environment configuration.</p>
+   */
+  @js.native
+  trait DeleteEnvironmentConfigurationMessage extends js.Object {
+    var ApplicationName: js.UndefOr[ApplicationName]
+    var EnvironmentName: js.UndefOr[EnvironmentName]
+  }
+
+  object DeleteEnvironmentConfigurationMessage {
+    def apply(
+      ApplicationName: js.UndefOr[ApplicationName] = js.undefined,
+      EnvironmentName: js.UndefOr[EnvironmentName] = js.undefined): DeleteEnvironmentConfigurationMessage = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ApplicationName" -> ApplicationName.map { x => x.asInstanceOf[js.Any] },
+        "EnvironmentName" -> EnvironmentName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteEnvironmentConfigurationMessage]
+    }
+  }
+
+  @js.native
+  trait DeletePlatformVersionRequest extends js.Object {
+    var PlatformArn: js.UndefOr[PlatformArn]
+  }
+
+  object DeletePlatformVersionRequest {
+    def apply(
+      PlatformArn: js.UndefOr[PlatformArn] = js.undefined): DeletePlatformVersionRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "PlatformArn" -> PlatformArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeletePlatformVersionRequest]
+    }
+  }
+
+  @js.native
+  trait DeletePlatformVersionResult extends js.Object {
+    var PlatformSummary: js.UndefOr[PlatformSummary]
+  }
+
+  object DeletePlatformVersionResult {
+    def apply(
+      PlatformSummary: js.UndefOr[PlatformSummary] = js.undefined): DeletePlatformVersionResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "PlatformSummary" -> PlatformSummary.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeletePlatformVersionResult]
+    }
+  }
+
+  /**
+   * <p>Information about an application version deployment.</p>
+   */
+  @js.native
+  trait Deployment extends js.Object {
+    var VersionLabel: js.UndefOr[String]
+    var DeploymentId: js.UndefOr[NullableLong]
+    var Status: js.UndefOr[String]
+    var DeploymentTime: js.UndefOr[DeploymentTimestamp]
+  }
+
+  object Deployment {
+    def apply(
+      VersionLabel: js.UndefOr[String] = js.undefined,
+      DeploymentId: js.UndefOr[NullableLong] = js.undefined,
+      Status: js.UndefOr[String] = js.undefined,
+      DeploymentTime: js.UndefOr[DeploymentTimestamp] = js.undefined): Deployment = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "VersionLabel" -> VersionLabel.map { x => x.asInstanceOf[js.Any] },
+        "DeploymentId" -> DeploymentId.map { x => x.asInstanceOf[js.Any] },
+        "Status" -> Status.map { x => x.asInstanceOf[js.Any] },
+        "DeploymentTime" -> DeploymentTime.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Deployment]
+    }
+  }
+
+  @js.native
+  trait DescribeAccountAttributesResult extends js.Object {
+    var ResourceQuotas: js.UndefOr[ResourceQuotas]
+  }
+
+  object DescribeAccountAttributesResult {
+    def apply(
+      ResourceQuotas: js.UndefOr[ResourceQuotas] = js.undefined): DescribeAccountAttributesResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ResourceQuotas" -> ResourceQuotas.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeAccountAttributesResult]
+    }
+  }
+
+  /**
+   * <p>Request to describe application versions.</p>
+   */
+  @js.native
+  trait DescribeApplicationVersionsMessage extends js.Object {
+    var ApplicationName: js.UndefOr[ApplicationName]
+    var VersionLabels: js.UndefOr[VersionLabelsList]
+    var MaxRecords: js.UndefOr[MaxRecords]
+    var NextToken: js.UndefOr[Token]
+  }
+
+  object DescribeApplicationVersionsMessage {
+    def apply(
+      ApplicationName: js.UndefOr[ApplicationName] = js.undefined,
+      VersionLabels: js.UndefOr[VersionLabelsList] = js.undefined,
+      MaxRecords: js.UndefOr[MaxRecords] = js.undefined,
+      NextToken: js.UndefOr[Token] = js.undefined): DescribeApplicationVersionsMessage = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ApplicationName" -> ApplicationName.map { x => x.asInstanceOf[js.Any] },
+        "VersionLabels" -> VersionLabels.map { x => x.asInstanceOf[js.Any] },
+        "MaxRecords" -> MaxRecords.map { x => x.asInstanceOf[js.Any] },
+        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeApplicationVersionsMessage]
+    }
+  }
+
+  /**
+   * <p>Request to describe one or more applications.</p>
+   */
+  @js.native
+  trait DescribeApplicationsMessage extends js.Object {
+    var ApplicationNames: js.UndefOr[ApplicationNamesList]
+  }
+
+  object DescribeApplicationsMessage {
+    def apply(
+      ApplicationNames: js.UndefOr[ApplicationNamesList] = js.undefined): DescribeApplicationsMessage = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ApplicationNames" -> ApplicationNames.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeApplicationsMessage]
+    }
+  }
+
+  /**
+   * <p>Result message containing a list of application version descriptions.</p>
+   */
+  @js.native
+  trait DescribeConfigurationOptionsMessage extends js.Object {
+    var PlatformArn: js.UndefOr[PlatformArn]
+    var SolutionStackName: js.UndefOr[SolutionStackName]
+    var TemplateName: js.UndefOr[ConfigurationTemplateName]
+    var EnvironmentName: js.UndefOr[EnvironmentName]
+    var Options: js.UndefOr[OptionsSpecifierList]
+    var ApplicationName: js.UndefOr[ApplicationName]
+  }
+
+  object DescribeConfigurationOptionsMessage {
+    def apply(
+      PlatformArn: js.UndefOr[PlatformArn] = js.undefined,
+      SolutionStackName: js.UndefOr[SolutionStackName] = js.undefined,
+      TemplateName: js.UndefOr[ConfigurationTemplateName] = js.undefined,
+      EnvironmentName: js.UndefOr[EnvironmentName] = js.undefined,
+      Options: js.UndefOr[OptionsSpecifierList] = js.undefined,
+      ApplicationName: js.UndefOr[ApplicationName] = js.undefined): DescribeConfigurationOptionsMessage = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "PlatformArn" -> PlatformArn.map { x => x.asInstanceOf[js.Any] },
+        "SolutionStackName" -> SolutionStackName.map { x => x.asInstanceOf[js.Any] },
+        "TemplateName" -> TemplateName.map { x => x.asInstanceOf[js.Any] },
+        "EnvironmentName" -> EnvironmentName.map { x => x.asInstanceOf[js.Any] },
+        "Options" -> Options.map { x => x.asInstanceOf[js.Any] },
+        "ApplicationName" -> ApplicationName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeConfigurationOptionsMessage]
+    }
+  }
+
+  /**
+   * <p>Result message containing all of the configuration settings for a specified solution stack or configuration template.</p>
+   */
+  @js.native
+  trait DescribeConfigurationSettingsMessage extends js.Object {
+    var ApplicationName: js.UndefOr[ApplicationName]
+    var TemplateName: js.UndefOr[ConfigurationTemplateName]
+    var EnvironmentName: js.UndefOr[EnvironmentName]
+  }
+
+  object DescribeConfigurationSettingsMessage {
+    def apply(
+      ApplicationName: js.UndefOr[ApplicationName] = js.undefined,
+      TemplateName: js.UndefOr[ConfigurationTemplateName] = js.undefined,
+      EnvironmentName: js.UndefOr[EnvironmentName] = js.undefined): DescribeConfigurationSettingsMessage = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ApplicationName" -> ApplicationName.map { x => x.asInstanceOf[js.Any] },
+        "TemplateName" -> TemplateName.map { x => x.asInstanceOf[js.Any] },
+        "EnvironmentName" -> EnvironmentName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeConfigurationSettingsMessage]
+    }
+  }
+
+  /**
+   * <p>See the example below to learn how to create a request body.</p>
+   */
+  @js.native
+  trait DescribeEnvironmentHealthRequest extends js.Object {
+    var EnvironmentName: js.UndefOr[EnvironmentName]
+    var EnvironmentId: js.UndefOr[EnvironmentId]
+    var AttributeNames: js.UndefOr[EnvironmentHealthAttributes]
+  }
+
+  object DescribeEnvironmentHealthRequest {
+    def apply(
+      EnvironmentName: js.UndefOr[EnvironmentName] = js.undefined,
+      EnvironmentId: js.UndefOr[EnvironmentId] = js.undefined,
+      AttributeNames: js.UndefOr[EnvironmentHealthAttributes] = js.undefined): DescribeEnvironmentHealthRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "EnvironmentName" -> EnvironmentName.map { x => x.asInstanceOf[js.Any] },
+        "EnvironmentId" -> EnvironmentId.map { x => x.asInstanceOf[js.Any] },
+        "AttributeNames" -> AttributeNames.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeEnvironmentHealthRequest]
+    }
+  }
+
+  /**
+   * <p>Health details for an AWS Elastic Beanstalk environment.</p>
+   */
+  @js.native
+  trait DescribeEnvironmentHealthResult extends js.Object {
+    var Causes: js.UndefOr[Causes]
+    var InstancesHealth: js.UndefOr[InstanceHealthSummary]
+    var RefreshedAt: js.UndefOr[RefreshedAt]
+    var ApplicationMetrics: js.UndefOr[ApplicationMetrics]
+    var HealthStatus: js.UndefOr[String]
+    var EnvironmentName: js.UndefOr[EnvironmentName]
+    var Color: js.UndefOr[String]
+    var Status: js.UndefOr[EnvironmentHealth]
+  }
+
+  object DescribeEnvironmentHealthResult {
+    def apply(
+      Causes: js.UndefOr[Causes] = js.undefined,
+      InstancesHealth: js.UndefOr[InstanceHealthSummary] = js.undefined,
+      RefreshedAt: js.UndefOr[RefreshedAt] = js.undefined,
+      ApplicationMetrics: js.UndefOr[ApplicationMetrics] = js.undefined,
+      HealthStatus: js.UndefOr[String] = js.undefined,
+      EnvironmentName: js.UndefOr[EnvironmentName] = js.undefined,
+      Color: js.UndefOr[String] = js.undefined,
+      Status: js.UndefOr[EnvironmentHealth] = js.undefined): DescribeEnvironmentHealthResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Causes" -> Causes.map { x => x.asInstanceOf[js.Any] },
+        "InstancesHealth" -> InstancesHealth.map { x => x.asInstanceOf[js.Any] },
+        "RefreshedAt" -> RefreshedAt.map { x => x.asInstanceOf[js.Any] },
+        "ApplicationMetrics" -> ApplicationMetrics.map { x => x.asInstanceOf[js.Any] },
+        "HealthStatus" -> HealthStatus.map { x => x.asInstanceOf[js.Any] },
+        "EnvironmentName" -> EnvironmentName.map { x => x.asInstanceOf[js.Any] },
+        "Color" -> Color.map { x => x.asInstanceOf[js.Any] },
+        "Status" -> Status.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeEnvironmentHealthResult]
+    }
+  }
+
+  /**
+   * <p>Request to list completed and failed managed actions.</p>
+   */
+  @js.native
+  trait DescribeEnvironmentManagedActionHistoryRequest extends js.Object {
+    var EnvironmentId: js.UndefOr[EnvironmentId]
+    var EnvironmentName: js.UndefOr[EnvironmentName]
+    var NextToken: js.UndefOr[String]
+    var MaxItems: js.UndefOr[Int]
+  }
+
+  object DescribeEnvironmentManagedActionHistoryRequest {
+    def apply(
+      EnvironmentId: js.UndefOr[EnvironmentId] = js.undefined,
+      EnvironmentName: js.UndefOr[EnvironmentName] = js.undefined,
+      NextToken: js.UndefOr[String] = js.undefined,
+      MaxItems: js.UndefOr[Int] = js.undefined): DescribeEnvironmentManagedActionHistoryRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "EnvironmentId" -> EnvironmentId.map { x => x.asInstanceOf[js.Any] },
+        "EnvironmentName" -> EnvironmentName.map { x => x.asInstanceOf[js.Any] },
+        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
+        "MaxItems" -> MaxItems.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeEnvironmentManagedActionHistoryRequest]
+    }
+  }
+
+  /**
+   * <p>A result message containing a list of completed and failed managed actions.</p>
+   */
+  @js.native
+  trait DescribeEnvironmentManagedActionHistoryResult extends js.Object {
+    var ManagedActionHistoryItems: js.UndefOr[ManagedActionHistoryItems]
+    var NextToken: js.UndefOr[String]
+  }
+
+  object DescribeEnvironmentManagedActionHistoryResult {
+    def apply(
+      ManagedActionHistoryItems: js.UndefOr[ManagedActionHistoryItems] = js.undefined,
+      NextToken: js.UndefOr[String] = js.undefined): DescribeEnvironmentManagedActionHistoryResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ManagedActionHistoryItems" -> ManagedActionHistoryItems.map { x => x.asInstanceOf[js.Any] },
+        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeEnvironmentManagedActionHistoryResult]
+    }
+  }
+
+  /**
+   * <p>Request to list an environment's upcoming and in-progress managed actions.</p>
+   */
+  @js.native
+  trait DescribeEnvironmentManagedActionsRequest extends js.Object {
+    var EnvironmentName: js.UndefOr[String]
+    var EnvironmentId: js.UndefOr[String]
+    var Status: js.UndefOr[ActionStatus]
+  }
+
+  object DescribeEnvironmentManagedActionsRequest {
+    def apply(
+      EnvironmentName: js.UndefOr[String] = js.undefined,
+      EnvironmentId: js.UndefOr[String] = js.undefined,
+      Status: js.UndefOr[ActionStatus] = js.undefined): DescribeEnvironmentManagedActionsRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "EnvironmentName" -> EnvironmentName.map { x => x.asInstanceOf[js.Any] },
+        "EnvironmentId" -> EnvironmentId.map { x => x.asInstanceOf[js.Any] },
+        "Status" -> Status.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeEnvironmentManagedActionsRequest]
+    }
+  }
+
+  /**
+   * <p>The result message containing a list of managed actions.</p>
+   */
+  @js.native
+  trait DescribeEnvironmentManagedActionsResult extends js.Object {
+    var ManagedActions: js.UndefOr[ManagedActions]
+  }
+
+  object DescribeEnvironmentManagedActionsResult {
+    def apply(
+      ManagedActions: js.UndefOr[ManagedActions] = js.undefined): DescribeEnvironmentManagedActionsResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ManagedActions" -> ManagedActions.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeEnvironmentManagedActionsResult]
+    }
+  }
+
+  /**
+   * <p>Request to describe the resources in an environment.</p>
+   */
+  @js.native
+  trait DescribeEnvironmentResourcesMessage extends js.Object {
+    var EnvironmentId: js.UndefOr[EnvironmentId]
+    var EnvironmentName: js.UndefOr[EnvironmentName]
+  }
+
+  object DescribeEnvironmentResourcesMessage {
+    def apply(
+      EnvironmentId: js.UndefOr[EnvironmentId] = js.undefined,
+      EnvironmentName: js.UndefOr[EnvironmentName] = js.undefined): DescribeEnvironmentResourcesMessage = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "EnvironmentId" -> EnvironmentId.map { x => x.asInstanceOf[js.Any] },
+        "EnvironmentName" -> EnvironmentName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeEnvironmentResourcesMessage]
+    }
+  }
+
+  /**
+   * <p>Request to describe one or more environments.</p>
+   */
+  @js.native
+  trait DescribeEnvironmentsMessage extends js.Object {
+    var IncludeDeleted: js.UndefOr[IncludeDeleted]
+    var VersionLabel: js.UndefOr[VersionLabel]
+    var MaxRecords: js.UndefOr[MaxRecords]
+    var EnvironmentNames: js.UndefOr[EnvironmentNamesList]
+    var ApplicationName: js.UndefOr[ApplicationName]
+    var EnvironmentIds: js.UndefOr[EnvironmentIdList]
+    var IncludedDeletedBackTo: js.UndefOr[IncludeDeletedBackTo]
+    var NextToken: js.UndefOr[Token]
+  }
+
+  object DescribeEnvironmentsMessage {
+    def apply(
+      IncludeDeleted: js.UndefOr[IncludeDeleted] = js.undefined,
+      VersionLabel: js.UndefOr[VersionLabel] = js.undefined,
+      MaxRecords: js.UndefOr[MaxRecords] = js.undefined,
+      EnvironmentNames: js.UndefOr[EnvironmentNamesList] = js.undefined,
+      ApplicationName: js.UndefOr[ApplicationName] = js.undefined,
+      EnvironmentIds: js.UndefOr[EnvironmentIdList] = js.undefined,
+      IncludedDeletedBackTo: js.UndefOr[IncludeDeletedBackTo] = js.undefined,
+      NextToken: js.UndefOr[Token] = js.undefined): DescribeEnvironmentsMessage = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "IncludeDeleted" -> IncludeDeleted.map { x => x.asInstanceOf[js.Any] },
+        "VersionLabel" -> VersionLabel.map { x => x.asInstanceOf[js.Any] },
+        "MaxRecords" -> MaxRecords.map { x => x.asInstanceOf[js.Any] },
+        "EnvironmentNames" -> EnvironmentNames.map { x => x.asInstanceOf[js.Any] },
+        "ApplicationName" -> ApplicationName.map { x => x.asInstanceOf[js.Any] },
+        "EnvironmentIds" -> EnvironmentIds.map { x => x.asInstanceOf[js.Any] },
+        "IncludedDeletedBackTo" -> IncludedDeletedBackTo.map { x => x.asInstanceOf[js.Any] },
+        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeEnvironmentsMessage]
+    }
+  }
+
+  /**
+   * <p>Request to retrieve a list of events for an environment.</p>
+   */
+  @js.native
+  trait DescribeEventsMessage extends js.Object {
+    var EnvironmentId: js.UndefOr[EnvironmentId]
+    var RequestId: js.UndefOr[RequestId]
+    var PlatformArn: js.UndefOr[PlatformArn]
+    var VersionLabel: js.UndefOr[VersionLabel]
+    var StartTime: js.UndefOr[TimeFilterStart]
+    var EndTime: js.UndefOr[TimeFilterEnd]
+    var MaxRecords: js.UndefOr[MaxRecords]
+    var TemplateName: js.UndefOr[ConfigurationTemplateName]
+    var EnvironmentName: js.UndefOr[EnvironmentName]
+    var ApplicationName: js.UndefOr[ApplicationName]
+    var NextToken: js.UndefOr[Token]
+    var Severity: js.UndefOr[EventSeverity]
+  }
+
+  object DescribeEventsMessage {
+    def apply(
+      EnvironmentId: js.UndefOr[EnvironmentId] = js.undefined,
+      RequestId: js.UndefOr[RequestId] = js.undefined,
+      PlatformArn: js.UndefOr[PlatformArn] = js.undefined,
+      VersionLabel: js.UndefOr[VersionLabel] = js.undefined,
+      StartTime: js.UndefOr[TimeFilterStart] = js.undefined,
+      EndTime: js.UndefOr[TimeFilterEnd] = js.undefined,
+      MaxRecords: js.UndefOr[MaxRecords] = js.undefined,
+      TemplateName: js.UndefOr[ConfigurationTemplateName] = js.undefined,
+      EnvironmentName: js.UndefOr[EnvironmentName] = js.undefined,
+      ApplicationName: js.UndefOr[ApplicationName] = js.undefined,
+      NextToken: js.UndefOr[Token] = js.undefined,
+      Severity: js.UndefOr[EventSeverity] = js.undefined): DescribeEventsMessage = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "EnvironmentId" -> EnvironmentId.map { x => x.asInstanceOf[js.Any] },
+        "RequestId" -> RequestId.map { x => x.asInstanceOf[js.Any] },
+        "PlatformArn" -> PlatformArn.map { x => x.asInstanceOf[js.Any] },
+        "VersionLabel" -> VersionLabel.map { x => x.asInstanceOf[js.Any] },
+        "StartTime" -> StartTime.map { x => x.asInstanceOf[js.Any] },
+        "EndTime" -> EndTime.map { x => x.asInstanceOf[js.Any] },
+        "MaxRecords" -> MaxRecords.map { x => x.asInstanceOf[js.Any] },
+        "TemplateName" -> TemplateName.map { x => x.asInstanceOf[js.Any] },
+        "EnvironmentName" -> EnvironmentName.map { x => x.asInstanceOf[js.Any] },
+        "ApplicationName" -> ApplicationName.map { x => x.asInstanceOf[js.Any] },
+        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
+        "Severity" -> Severity.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeEventsMessage]
+    }
+  }
+
+  /**
+   * <p>Parameters for a call to <code>DescribeInstancesHealth</code>.</p>
+   */
+  @js.native
+  trait DescribeInstancesHealthRequest extends js.Object {
+    var EnvironmentName: js.UndefOr[EnvironmentName]
+    var EnvironmentId: js.UndefOr[EnvironmentId]
+    var AttributeNames: js.UndefOr[InstancesHealthAttributes]
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object DescribeInstancesHealthRequest {
+    def apply(
+      EnvironmentName: js.UndefOr[EnvironmentName] = js.undefined,
+      EnvironmentId: js.UndefOr[EnvironmentId] = js.undefined,
+      AttributeNames: js.UndefOr[InstancesHealthAttributes] = js.undefined,
+      NextToken: js.UndefOr[NextToken] = js.undefined): DescribeInstancesHealthRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "EnvironmentName" -> EnvironmentName.map { x => x.asInstanceOf[js.Any] },
+        "EnvironmentId" -> EnvironmentId.map { x => x.asInstanceOf[js.Any] },
+        "AttributeNames" -> AttributeNames.map { x => x.asInstanceOf[js.Any] },
+        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeInstancesHealthRequest]
+    }
+  }
+
+  /**
+   * <p>Detailed health information about the Amazon EC2 instances in an AWS Elastic Beanstalk environment.</p>
+   */
+  @js.native
+  trait DescribeInstancesHealthResult extends js.Object {
+    var InstanceHealthList: js.UndefOr[InstanceHealthList]
+    var RefreshedAt: js.UndefOr[RefreshedAt]
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object DescribeInstancesHealthResult {
+    def apply(
+      InstanceHealthList: js.UndefOr[InstanceHealthList] = js.undefined,
+      RefreshedAt: js.UndefOr[RefreshedAt] = js.undefined,
+      NextToken: js.UndefOr[NextToken] = js.undefined): DescribeInstancesHealthResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "InstanceHealthList" -> InstanceHealthList.map { x => x.asInstanceOf[js.Any] },
+        "RefreshedAt" -> RefreshedAt.map { x => x.asInstanceOf[js.Any] },
+        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeInstancesHealthResult]
+    }
+  }
+
+  @js.native
+  trait DescribePlatformVersionRequest extends js.Object {
+    var PlatformArn: js.UndefOr[PlatformArn]
+  }
+
+  object DescribePlatformVersionRequest {
+    def apply(
+      PlatformArn: js.UndefOr[PlatformArn] = js.undefined): DescribePlatformVersionRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "PlatformArn" -> PlatformArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribePlatformVersionRequest]
+    }
+  }
+
+  @js.native
+  trait DescribePlatformVersionResult extends js.Object {
+    var PlatformDescription: js.UndefOr[PlatformDescription]
+  }
+
+  object DescribePlatformVersionResult {
+    def apply(
+      PlatformDescription: js.UndefOr[PlatformDescription] = js.undefined): DescribePlatformVersionResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "PlatformDescription" -> PlatformDescription.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribePlatformVersionResult]
+    }
+  }
+
+  /**
+   * <p>Describes the properties of an environment.</p>
+   */
+  @js.native
+  trait EnvironmentDescription extends js.Object {
+    var Resources: js.UndefOr[EnvironmentResourcesDescription]
+    var EndpointURL: js.UndefOr[EndpointURL]
+    var Description: js.UndefOr[Description]
+    var EnvironmentId: js.UndefOr[EnvironmentId]
+    var Health: js.UndefOr[EnvironmentHealth]
+    var PlatformArn: js.UndefOr[PlatformArn]
+    var EnvironmentLinks: js.UndefOr[EnvironmentLinks]
+    var VersionLabel: js.UndefOr[VersionLabel]
+    var Tier: js.UndefOr[EnvironmentTier]
+    var SolutionStackName: js.UndefOr[SolutionStackName]
+    var CNAME: js.UndefOr[DNSCname]
+    var HealthStatus: js.UndefOr[EnvironmentHealthStatus]
+    var AbortableOperationInProgress: js.UndefOr[AbortableOperationInProgress]
+    var TemplateName: js.UndefOr[ConfigurationTemplateName]
+    var EnvironmentName: js.UndefOr[EnvironmentName]
+    var EnvironmentArn: js.UndefOr[EnvironmentArn]
+    var ApplicationName: js.UndefOr[ApplicationName]
+    var DateCreated: js.UndefOr[CreationDate]
+    var DateUpdated: js.UndefOr[UpdateDate]
+    var Status: js.UndefOr[EnvironmentStatus]
+  }
+
+  object EnvironmentDescription {
+    def apply(
+      Resources: js.UndefOr[EnvironmentResourcesDescription] = js.undefined,
+      EndpointURL: js.UndefOr[EndpointURL] = js.undefined,
+      Description: js.UndefOr[Description] = js.undefined,
+      EnvironmentId: js.UndefOr[EnvironmentId] = js.undefined,
+      Health: js.UndefOr[EnvironmentHealth] = js.undefined,
+      PlatformArn: js.UndefOr[PlatformArn] = js.undefined,
+      EnvironmentLinks: js.UndefOr[EnvironmentLinks] = js.undefined,
+      VersionLabel: js.UndefOr[VersionLabel] = js.undefined,
+      Tier: js.UndefOr[EnvironmentTier] = js.undefined,
+      SolutionStackName: js.UndefOr[SolutionStackName] = js.undefined,
+      CNAME: js.UndefOr[DNSCname] = js.undefined,
+      HealthStatus: js.UndefOr[EnvironmentHealthStatus] = js.undefined,
+      AbortableOperationInProgress: js.UndefOr[AbortableOperationInProgress] = js.undefined,
+      TemplateName: js.UndefOr[ConfigurationTemplateName] = js.undefined,
+      EnvironmentName: js.UndefOr[EnvironmentName] = js.undefined,
+      EnvironmentArn: js.UndefOr[EnvironmentArn] = js.undefined,
+      ApplicationName: js.UndefOr[ApplicationName] = js.undefined,
+      DateCreated: js.UndefOr[CreationDate] = js.undefined,
+      DateUpdated: js.UndefOr[UpdateDate] = js.undefined,
+      Status: js.UndefOr[EnvironmentStatus] = js.undefined): EnvironmentDescription = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Resources" -> Resources.map { x => x.asInstanceOf[js.Any] },
+        "EndpointURL" -> EndpointURL.map { x => x.asInstanceOf[js.Any] },
+        "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
+        "EnvironmentId" -> EnvironmentId.map { x => x.asInstanceOf[js.Any] },
+        "Health" -> Health.map { x => x.asInstanceOf[js.Any] },
+        "PlatformArn" -> PlatformArn.map { x => x.asInstanceOf[js.Any] },
+        "EnvironmentLinks" -> EnvironmentLinks.map { x => x.asInstanceOf[js.Any] },
+        "VersionLabel" -> VersionLabel.map { x => x.asInstanceOf[js.Any] },
+        "Tier" -> Tier.map { x => x.asInstanceOf[js.Any] },
+        "SolutionStackName" -> SolutionStackName.map { x => x.asInstanceOf[js.Any] },
+        "CNAME" -> CNAME.map { x => x.asInstanceOf[js.Any] },
+        "HealthStatus" -> HealthStatus.map { x => x.asInstanceOf[js.Any] },
+        "AbortableOperationInProgress" -> AbortableOperationInProgress.map { x => x.asInstanceOf[js.Any] },
+        "TemplateName" -> TemplateName.map { x => x.asInstanceOf[js.Any] },
+        "EnvironmentName" -> EnvironmentName.map { x => x.asInstanceOf[js.Any] },
+        "EnvironmentArn" -> EnvironmentArn.map { x => x.asInstanceOf[js.Any] },
+        "ApplicationName" -> ApplicationName.map { x => x.asInstanceOf[js.Any] },
+        "DateCreated" -> DateCreated.map { x => x.asInstanceOf[js.Any] },
+        "DateUpdated" -> DateUpdated.map { x => x.asInstanceOf[js.Any] },
+        "Status" -> Status.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EnvironmentDescription]
+    }
+  }
+
+  /**
+   * <p>Result message containing a list of environment descriptions.</p>
+   */
+  @js.native
+  trait EnvironmentDescriptionsMessage extends js.Object {
+    var Environments: js.UndefOr[EnvironmentDescriptionsList]
+    var NextToken: js.UndefOr[Token]
+  }
+
+  object EnvironmentDescriptionsMessage {
+    def apply(
+      Environments: js.UndefOr[EnvironmentDescriptionsList] = js.undefined,
+      NextToken: js.UndefOr[Token] = js.undefined): EnvironmentDescriptionsMessage = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Environments" -> Environments.map { x => x.asInstanceOf[js.Any] },
+        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EnvironmentDescriptionsMessage]
+    }
+  }
+
+  object EnvironmentHealthEnum {
+    val Green = "Green"
+    val Yellow = "Yellow"
+    val Red = "Red"
+    val Grey = "Grey"
+
+    val values = IndexedSeq(Green, Yellow, Red, Grey)
+  }
+
+  object EnvironmentHealthAttributeEnum {
+    val Status = "Status"
+    val Color = "Color"
+    val Causes = "Causes"
+    val ApplicationMetrics = "ApplicationMetrics"
+    val InstancesHealth = "InstancesHealth"
+    val All = "All"
+    val HealthStatus = "HealthStatus"
+    val RefreshedAt = "RefreshedAt"
+
+    val values = IndexedSeq(Status, Color, Causes, ApplicationMetrics, InstancesHealth, All, HealthStatus, RefreshedAt)
+  }
+
+  object EnvironmentHealthStatusEnum {
+    val NoData = "NoData"
+    val Unknown = "Unknown"
+    val Pending = "Pending"
+    val Ok = "Ok"
+    val Info = "Info"
+    val Warning = "Warning"
+    val Degraded = "Degraded"
+    val Severe = "Severe"
+    val Suspended = "Suspended"
+
+    val values = IndexedSeq(NoData, Unknown, Pending, Ok, Info, Warning, Degraded, Severe, Suspended)
+  }
+
+  /**
+   * <p>The information retrieved from the Amazon EC2 instances.</p>
+   */
+  @js.native
+  trait EnvironmentInfoDescription extends js.Object {
+    var InfoType: js.UndefOr[EnvironmentInfoType]
+    var Ec2InstanceId: js.UndefOr[Ec2InstanceId]
+    var SampleTimestamp: js.UndefOr[SampleTimestamp]
+    var Message: js.UndefOr[Message]
+  }
+
+  object EnvironmentInfoDescription {
+    def apply(
+      InfoType: js.UndefOr[EnvironmentInfoType] = js.undefined,
+      Ec2InstanceId: js.UndefOr[Ec2InstanceId] = js.undefined,
+      SampleTimestamp: js.UndefOr[SampleTimestamp] = js.undefined,
+      Message: js.UndefOr[Message] = js.undefined): EnvironmentInfoDescription = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "InfoType" -> InfoType.map { x => x.asInstanceOf[js.Any] },
+        "Ec2InstanceId" -> Ec2InstanceId.map { x => x.asInstanceOf[js.Any] },
+        "SampleTimestamp" -> SampleTimestamp.map { x => x.asInstanceOf[js.Any] },
+        "Message" -> Message.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EnvironmentInfoDescription]
+    }
+  }
+
+  object EnvironmentInfoTypeEnum {
+    val tail = "tail"
+    val bundle = "bundle"
+
+    val values = IndexedSeq(tail, bundle)
+  }
+
+  /**
+   * <p>A link to another environment, defined in the environment's manifest. Links provide connection information in system properties that can be used to connect to another environment in the same group. See <a href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-cfg-manifest.html">Environment Manifest (env.yaml)</a> for details.</p>
+   */
+  @js.native
+  trait EnvironmentLink extends js.Object {
+    var LinkName: js.UndefOr[String]
+    var EnvironmentName: js.UndefOr[String]
+  }
+
+  object EnvironmentLink {
+    def apply(
+      LinkName: js.UndefOr[String] = js.undefined,
+      EnvironmentName: js.UndefOr[String] = js.undefined): EnvironmentLink = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "LinkName" -> LinkName.map { x => x.asInstanceOf[js.Any] },
+        "EnvironmentName" -> EnvironmentName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EnvironmentLink]
+    }
+  }
+
+  /**
+   * <p>Describes the AWS resources in use by this environment. This data is live.</p>
+   */
+  @js.native
+  trait EnvironmentResourceDescription extends js.Object {
+    var AutoScalingGroups: js.UndefOr[AutoScalingGroupList]
+    var LaunchConfigurations: js.UndefOr[LaunchConfigurationList]
+    var Instances: js.UndefOr[InstanceList]
+    var EnvironmentName: js.UndefOr[EnvironmentName]
+    var LoadBalancers: js.UndefOr[LoadBalancerList]
+    var Triggers: js.UndefOr[TriggerList]
+    var Queues: js.UndefOr[QueueList]
+  }
+
+  object EnvironmentResourceDescription {
+    def apply(
+      AutoScalingGroups: js.UndefOr[AutoScalingGroupList] = js.undefined,
+      LaunchConfigurations: js.UndefOr[LaunchConfigurationList] = js.undefined,
+      Instances: js.UndefOr[InstanceList] = js.undefined,
+      EnvironmentName: js.UndefOr[EnvironmentName] = js.undefined,
+      LoadBalancers: js.UndefOr[LoadBalancerList] = js.undefined,
+      Triggers: js.UndefOr[TriggerList] = js.undefined,
+      Queues: js.UndefOr[QueueList] = js.undefined): EnvironmentResourceDescription = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "AutoScalingGroups" -> AutoScalingGroups.map { x => x.asInstanceOf[js.Any] },
+        "LaunchConfigurations" -> LaunchConfigurations.map { x => x.asInstanceOf[js.Any] },
+        "Instances" -> Instances.map { x => x.asInstanceOf[js.Any] },
+        "EnvironmentName" -> EnvironmentName.map { x => x.asInstanceOf[js.Any] },
+        "LoadBalancers" -> LoadBalancers.map { x => x.asInstanceOf[js.Any] },
+        "Triggers" -> Triggers.map { x => x.asInstanceOf[js.Any] },
+        "Queues" -> Queues.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EnvironmentResourceDescription]
+    }
+  }
+
+  /**
+   * <p>Result message containing a list of environment resource descriptions.</p>
+   */
+  @js.native
+  trait EnvironmentResourceDescriptionsMessage extends js.Object {
+    var EnvironmentResources: js.UndefOr[EnvironmentResourceDescription]
+  }
+
+  object EnvironmentResourceDescriptionsMessage {
+    def apply(
+      EnvironmentResources: js.UndefOr[EnvironmentResourceDescription] = js.undefined): EnvironmentResourceDescriptionsMessage = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "EnvironmentResources" -> EnvironmentResources.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EnvironmentResourceDescriptionsMessage]
+    }
+  }
+
+  /**
+   * <p>Describes the AWS resources in use by this environment. This data is not live data.</p>
+   */
+  @js.native
+  trait EnvironmentResourcesDescription extends js.Object {
+    var LoadBalancer: js.UndefOr[LoadBalancerDescription]
+  }
+
+  object EnvironmentResourcesDescription {
+    def apply(
+      LoadBalancer: js.UndefOr[LoadBalancerDescription] = js.undefined): EnvironmentResourcesDescription = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "LoadBalancer" -> LoadBalancer.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EnvironmentResourcesDescription]
+    }
+  }
+
+  object EnvironmentStatusEnum {
+    val Launching = "Launching"
+    val Updating = "Updating"
+    val Ready = "Ready"
+    val Terminating = "Terminating"
+    val Terminated = "Terminated"
+
+    val values = IndexedSeq(Launching, Updating, Ready, Terminating, Terminated)
+  }
+
+  /**
+   * <p>Describes the properties of an environment tier</p>
+   */
+  @js.native
+  trait EnvironmentTier extends js.Object {
+    var Name: js.UndefOr[String]
+    var Type: js.UndefOr[String]
+    var Version: js.UndefOr[String]
+  }
+
+  object EnvironmentTier {
+    def apply(
+      Name: js.UndefOr[String] = js.undefined,
+      Type: js.UndefOr[String] = js.undefined,
+      Version: js.UndefOr[String] = js.undefined): EnvironmentTier = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
+        "Type" -> Type.map { x => x.asInstanceOf[js.Any] },
+        "Version" -> Version.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EnvironmentTier]
+    }
+  }
+
+  /**
+   * <p>Describes an event.</p>
+   */
+  @js.native
+  trait EventDescription extends js.Object {
+    var RequestId: js.UndefOr[RequestId]
+    var PlatformArn: js.UndefOr[PlatformArn]
+    var VersionLabel: js.UndefOr[VersionLabel]
+    var EventDate: js.UndefOr[EventDate]
+    var TemplateName: js.UndefOr[ConfigurationTemplateName]
+    var EnvironmentName: js.UndefOr[EnvironmentName]
+    var Message: js.UndefOr[EventMessage]
+    var ApplicationName: js.UndefOr[ApplicationName]
+    var Severity: js.UndefOr[EventSeverity]
+  }
+
+  object EventDescription {
+    def apply(
+      RequestId: js.UndefOr[RequestId] = js.undefined,
+      PlatformArn: js.UndefOr[PlatformArn] = js.undefined,
+      VersionLabel: js.UndefOr[VersionLabel] = js.undefined,
+      EventDate: js.UndefOr[EventDate] = js.undefined,
+      TemplateName: js.UndefOr[ConfigurationTemplateName] = js.undefined,
+      EnvironmentName: js.UndefOr[EnvironmentName] = js.undefined,
+      Message: js.UndefOr[EventMessage] = js.undefined,
+      ApplicationName: js.UndefOr[ApplicationName] = js.undefined,
+      Severity: js.UndefOr[EventSeverity] = js.undefined): EventDescription = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "RequestId" -> RequestId.map { x => x.asInstanceOf[js.Any] },
+        "PlatformArn" -> PlatformArn.map { x => x.asInstanceOf[js.Any] },
+        "VersionLabel" -> VersionLabel.map { x => x.asInstanceOf[js.Any] },
+        "EventDate" -> EventDate.map { x => x.asInstanceOf[js.Any] },
+        "TemplateName" -> TemplateName.map { x => x.asInstanceOf[js.Any] },
+        "EnvironmentName" -> EnvironmentName.map { x => x.asInstanceOf[js.Any] },
+        "Message" -> Message.map { x => x.asInstanceOf[js.Any] },
+        "ApplicationName" -> ApplicationName.map { x => x.asInstanceOf[js.Any] },
+        "Severity" -> Severity.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EventDescription]
+    }
+  }
+
+  /**
+   * <p>Result message wrapping a list of event descriptions.</p>
+   */
+  @js.native
+  trait EventDescriptionsMessage extends js.Object {
+    var Events: js.UndefOr[EventDescriptionList]
+    var NextToken: js.UndefOr[Token]
+  }
+
+  object EventDescriptionsMessage {
+    def apply(
+      Events: js.UndefOr[EventDescriptionList] = js.undefined,
+      NextToken: js.UndefOr[Token] = js.undefined): EventDescriptionsMessage = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Events" -> Events.map { x => x.asInstanceOf[js.Any] },
+        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EventDescriptionsMessage]
+    }
+  }
+
+  object EventSeverityEnum {
+    val TRACE = "TRACE"
+    val DEBUG = "DEBUG"
+    val INFO = "INFO"
+    val WARN = "WARN"
+    val ERROR = "ERROR"
+    val FATAL = "FATAL"
+
+    val values = IndexedSeq(TRACE, DEBUG, INFO, WARN, ERROR, FATAL)
+  }
+
+  object FailureTypeEnum {
+    val UpdateCancelled = "UpdateCancelled"
+    val CancellationFailed = "CancellationFailed"
+    val RollbackFailed = "RollbackFailed"
+    val RollbackSuccessful = "RollbackSuccessful"
+    val InternalFailure = "InternalFailure"
+    val InvalidEnvironmentState = "InvalidEnvironmentState"
+    val PermissionsError = "PermissionsError"
+
+    val values = IndexedSeq(UpdateCancelled, CancellationFailed, RollbackFailed, RollbackSuccessful, InternalFailure, InvalidEnvironmentState, PermissionsError)
+  }
+
+  /**
+   * <p>The description of an Amazon EC2 instance.</p>
+   */
+  @js.native
+  trait Instance extends js.Object {
+    var Id: js.UndefOr[ResourceId]
+  }
+
+  object Instance {
+    def apply(
+      Id: js.UndefOr[ResourceId] = js.undefined): Instance = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Id" -> Id.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Instance]
+    }
+  }
+
+  /**
+   * <p>Represents summary information about the health of an instance. For more information, see <a href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and Statuses</a>.</p>
+   */
+  @js.native
+  trait InstanceHealthSummary extends js.Object {
+    var Pending: js.UndefOr[NullableInteger]
+    var Degraded: js.UndefOr[NullableInteger]
+    var Warning: js.UndefOr[NullableInteger]
+    var NoData: js.UndefOr[NullableInteger]
+    var Ok: js.UndefOr[NullableInteger]
+    var Info: js.UndefOr[NullableInteger]
+    var Severe: js.UndefOr[NullableInteger]
+    var Unknown: js.UndefOr[NullableInteger]
+  }
+
+  object InstanceHealthSummary {
+    def apply(
+      Pending: js.UndefOr[NullableInteger] = js.undefined,
+      Degraded: js.UndefOr[NullableInteger] = js.undefined,
+      Warning: js.UndefOr[NullableInteger] = js.undefined,
+      NoData: js.UndefOr[NullableInteger] = js.undefined,
+      Ok: js.UndefOr[NullableInteger] = js.undefined,
+      Info: js.UndefOr[NullableInteger] = js.undefined,
+      Severe: js.UndefOr[NullableInteger] = js.undefined,
+      Unknown: js.UndefOr[NullableInteger] = js.undefined): InstanceHealthSummary = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Pending" -> Pending.map { x => x.asInstanceOf[js.Any] },
+        "Degraded" -> Degraded.map { x => x.asInstanceOf[js.Any] },
+        "Warning" -> Warning.map { x => x.asInstanceOf[js.Any] },
+        "NoData" -> NoData.map { x => x.asInstanceOf[js.Any] },
+        "Ok" -> Ok.map { x => x.asInstanceOf[js.Any] },
+        "Info" -> Info.map { x => x.asInstanceOf[js.Any] },
+        "Severe" -> Severe.map { x => x.asInstanceOf[js.Any] },
+        "Unknown" -> Unknown.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[InstanceHealthSummary]
+    }
+  }
+
+  object InstancesHealthAttributeEnum {
+    val HealthStatus = "HealthStatus"
+    val Color = "Color"
+    val Causes = "Causes"
+    val ApplicationMetrics = "ApplicationMetrics"
+    val RefreshedAt = "RefreshedAt"
+    val LaunchedAt = "LaunchedAt"
+    val System = "System"
+    val Deployment = "Deployment"
+    val AvailabilityZone = "AvailabilityZone"
+    val InstanceType = "InstanceType"
+    val All = "All"
+
+    val values = IndexedSeq(HealthStatus, Color, Causes, ApplicationMetrics, RefreshedAt, LaunchedAt, System, Deployment, AvailabilityZone, InstanceType, All)
+  }
+
+  /**
+   * <p>Represents the average latency for the slowest X percent of requests over the last 10 seconds.</p>
+   */
+  @js.native
+  trait Latency extends js.Object {
+    var P50: js.UndefOr[NullableDouble]
+    var P75: js.UndefOr[NullableDouble]
+    var P999: js.UndefOr[NullableDouble]
+    var P90: js.UndefOr[NullableDouble]
+    var P99: js.UndefOr[NullableDouble]
+    var P95: js.UndefOr[NullableDouble]
+    var P85: js.UndefOr[NullableDouble]
+    var P10: js.UndefOr[NullableDouble]
+  }
+
+  object Latency {
+    def apply(
+      P50: js.UndefOr[NullableDouble] = js.undefined,
+      P75: js.UndefOr[NullableDouble] = js.undefined,
+      P999: js.UndefOr[NullableDouble] = js.undefined,
+      P90: js.UndefOr[NullableDouble] = js.undefined,
+      P99: js.UndefOr[NullableDouble] = js.undefined,
+      P95: js.UndefOr[NullableDouble] = js.undefined,
+      P85: js.UndefOr[NullableDouble] = js.undefined,
+      P10: js.UndefOr[NullableDouble] = js.undefined): Latency = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "P50" -> P50.map { x => x.asInstanceOf[js.Any] },
+        "P75" -> P75.map { x => x.asInstanceOf[js.Any] },
+        "P999" -> P999.map { x => x.asInstanceOf[js.Any] },
+        "P90" -> P90.map { x => x.asInstanceOf[js.Any] },
+        "P99" -> P99.map { x => x.asInstanceOf[js.Any] },
+        "P95" -> P95.map { x => x.asInstanceOf[js.Any] },
+        "P85" -> P85.map { x => x.asInstanceOf[js.Any] },
+        "P10" -> P10.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Latency]
+    }
+  }
+
+  /**
+   * <p>Describes an Auto Scaling launch configuration.</p>
+   */
+  @js.native
+  trait LaunchConfiguration extends js.Object {
+    var Name: js.UndefOr[ResourceId]
+  }
+
+  object LaunchConfiguration {
+    def apply(
+      Name: js.UndefOr[ResourceId] = js.undefined): LaunchConfiguration = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Name" -> Name.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[LaunchConfiguration]
+    }
+  }
+
+  /**
+   * <p>A list of available AWS Elastic Beanstalk solution stacks.</p>
+   */
+  @js.native
+  trait ListAvailableSolutionStacksResultMessage extends js.Object {
+    var SolutionStacks: js.UndefOr[AvailableSolutionStackNamesList]
+    var SolutionStackDetails: js.UndefOr[AvailableSolutionStackDetailsList]
+  }
+
+  object ListAvailableSolutionStacksResultMessage {
+    def apply(
+      SolutionStacks: js.UndefOr[AvailableSolutionStackNamesList] = js.undefined,
+      SolutionStackDetails: js.UndefOr[AvailableSolutionStackDetailsList] = js.undefined): ListAvailableSolutionStacksResultMessage = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "SolutionStacks" -> SolutionStacks.map { x => x.asInstanceOf[js.Any] },
+        "SolutionStackDetails" -> SolutionStackDetails.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListAvailableSolutionStacksResultMessage]
+    }
+  }
+
+  @js.native
+  trait ListPlatformVersionsRequest extends js.Object {
+    var Filters: js.UndefOr[PlatformFilters]
+    var MaxRecords: js.UndefOr[PlatformMaxRecords]
+    var NextToken: js.UndefOr[Token]
+  }
+
+  object ListPlatformVersionsRequest {
+    def apply(
+      Filters: js.UndefOr[PlatformFilters] = js.undefined,
+      MaxRecords: js.UndefOr[PlatformMaxRecords] = js.undefined,
+      NextToken: js.UndefOr[Token] = js.undefined): ListPlatformVersionsRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Filters" -> Filters.map { x => x.asInstanceOf[js.Any] },
+        "MaxRecords" -> MaxRecords.map { x => x.asInstanceOf[js.Any] },
+        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListPlatformVersionsRequest]
+    }
+  }
+
+  @js.native
+  trait ListPlatformVersionsResult extends js.Object {
+    var PlatformSummaryList: js.UndefOr[PlatformSummaryList]
+    var NextToken: js.UndefOr[Token]
+  }
+
+  object ListPlatformVersionsResult {
+    def apply(
+      PlatformSummaryList: js.UndefOr[PlatformSummaryList] = js.undefined,
+      NextToken: js.UndefOr[Token] = js.undefined): ListPlatformVersionsResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "PlatformSummaryList" -> PlatformSummaryList.map { x => x.asInstanceOf[js.Any] },
+        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListPlatformVersionsResult]
+    }
+  }
+
+  @js.native
+  trait ListTagsForResourceMessage extends js.Object {
+    var ResourceArn: js.UndefOr[ResourceArn]
+  }
+
+  object ListTagsForResourceMessage {
+    def apply(
+      ResourceArn: js.UndefOr[ResourceArn] = js.undefined): ListTagsForResourceMessage = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ResourceArn" -> ResourceArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListTagsForResourceMessage]
+    }
+  }
+
+  /**
+   * <p>Describes the properties of a Listener for the LoadBalancer.</p>
+   */
+  @js.native
+  trait Listener extends js.Object {
+    var Protocol: js.UndefOr[String]
+    var Port: js.UndefOr[Int]
+  }
+
+  object Listener {
+    def apply(
+      Protocol: js.UndefOr[String] = js.undefined,
+      Port: js.UndefOr[Int] = js.undefined): Listener = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Protocol" -> Protocol.map { x => x.asInstanceOf[js.Any] },
+        "Port" -> Port.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Listener]
+    }
+  }
+
+  /**
+   * <p>Describes a LoadBalancer.</p>
+   */
+  @js.native
+  trait LoadBalancer extends js.Object {
+    var Name: js.UndefOr[ResourceId]
+  }
+
+  object LoadBalancer {
+    def apply(
+      Name: js.UndefOr[ResourceId] = js.undefined): LoadBalancer = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Name" -> Name.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[LoadBalancer]
+    }
+  }
+
+  /**
+   * <p>Describes the details of a LoadBalancer.</p>
+   */
+  @js.native
+  trait LoadBalancerDescription extends js.Object {
+    var LoadBalancerName: js.UndefOr[String]
+    var Domain: js.UndefOr[String]
+    var Listeners: js.UndefOr[LoadBalancerListenersDescription]
+  }
+
+  object LoadBalancerDescription {
+    def apply(
+      LoadBalancerName: js.UndefOr[String] = js.undefined,
+      Domain: js.UndefOr[String] = js.undefined,
+      Listeners: js.UndefOr[LoadBalancerListenersDescription] = js.undefined): LoadBalancerDescription = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "LoadBalancerName" -> LoadBalancerName.map { x => x.asInstanceOf[js.Any] },
+        "Domain" -> Domain.map { x => x.asInstanceOf[js.Any] },
+        "Listeners" -> Listeners.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[LoadBalancerDescription]
+    }
+  }
+
+  /**
+   * <p>The record of an upcoming or in-progress managed action.</p>
+   */
+  @js.native
+  trait ManagedAction extends js.Object {
+    var ActionDescription: js.UndefOr[String]
+    var ActionId: js.UndefOr[String]
+    var ActionType: js.UndefOr[ActionType]
+    var WindowStartTime: js.UndefOr[Timestamp]
+    var Status: js.UndefOr[ActionStatus]
+  }
+
+  object ManagedAction {
+    def apply(
+      ActionDescription: js.UndefOr[String] = js.undefined,
+      ActionId: js.UndefOr[String] = js.undefined,
+      ActionType: js.UndefOr[ActionType] = js.undefined,
+      WindowStartTime: js.UndefOr[Timestamp] = js.undefined,
+      Status: js.UndefOr[ActionStatus] = js.undefined): ManagedAction = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ActionDescription" -> ActionDescription.map { x => x.asInstanceOf[js.Any] },
+        "ActionId" -> ActionId.map { x => x.asInstanceOf[js.Any] },
+        "ActionType" -> ActionType.map { x => x.asInstanceOf[js.Any] },
+        "WindowStartTime" -> WindowStartTime.map { x => x.asInstanceOf[js.Any] },
+        "Status" -> Status.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ManagedAction]
+    }
+  }
+
+  /**
+   * <p>The record of a completed or failed managed action.</p>
+   */
+  @js.native
+  trait ManagedActionHistoryItem extends js.Object {
+    var FailureType: js.UndefOr[FailureType]
+    var FinishedTime: js.UndefOr[Timestamp]
+    var ActionDescription: js.UndefOr[String]
+    var FailureDescription: js.UndefOr[String]
+    var ActionId: js.UndefOr[String]
+    var ExecutedTime: js.UndefOr[Timestamp]
+    var ActionType: js.UndefOr[ActionType]
+    var Status: js.UndefOr[ActionHistoryStatus]
+  }
+
+  object ManagedActionHistoryItem {
+    def apply(
+      FailureType: js.UndefOr[FailureType] = js.undefined,
+      FinishedTime: js.UndefOr[Timestamp] = js.undefined,
+      ActionDescription: js.UndefOr[String] = js.undefined,
+      FailureDescription: js.UndefOr[String] = js.undefined,
+      ActionId: js.UndefOr[String] = js.undefined,
+      ExecutedTime: js.UndefOr[Timestamp] = js.undefined,
+      ActionType: js.UndefOr[ActionType] = js.undefined,
+      Status: js.UndefOr[ActionHistoryStatus] = js.undefined): ManagedActionHistoryItem = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "FailureType" -> FailureType.map { x => x.asInstanceOf[js.Any] },
+        "FinishedTime" -> FinishedTime.map { x => x.asInstanceOf[js.Any] },
+        "ActionDescription" -> ActionDescription.map { x => x.asInstanceOf[js.Any] },
+        "FailureDescription" -> FailureDescription.map { x => x.asInstanceOf[js.Any] },
+        "ActionId" -> ActionId.map { x => x.asInstanceOf[js.Any] },
+        "ExecutedTime" -> ExecutedTime.map { x => x.asInstanceOf[js.Any] },
+        "ActionType" -> ActionType.map { x => x.asInstanceOf[js.Any] },
+        "Status" -> Status.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ManagedActionHistoryItem]
+    }
+  }
+
+  /**
+   * <p>A lifecycle rule that deletes application versions after the specified number of days.</p>
+   */
+  @js.native
+  trait MaxAgeRule extends js.Object {
+    var Enabled: js.UndefOr[BoxedBoolean]
+    var MaxAgeInDays: js.UndefOr[BoxedInt]
+    var DeleteSourceFromS3: js.UndefOr[BoxedBoolean]
+  }
+
+  object MaxAgeRule {
+    def apply(
+      Enabled: js.UndefOr[BoxedBoolean] = js.undefined,
+      MaxAgeInDays: js.UndefOr[BoxedInt] = js.undefined,
+      DeleteSourceFromS3: js.UndefOr[BoxedBoolean] = js.undefined): MaxAgeRule = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Enabled" -> Enabled.map { x => x.asInstanceOf[js.Any] },
+        "MaxAgeInDays" -> MaxAgeInDays.map { x => x.asInstanceOf[js.Any] },
+        "DeleteSourceFromS3" -> DeleteSourceFromS3.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[MaxAgeRule]
+    }
+  }
+
+  /**
+   * <p>A lifecycle rule that deletes the oldest application version when the maximum count is exceeded.</p>
+   */
+  @js.native
+  trait MaxCountRule extends js.Object {
+    var Enabled: js.UndefOr[BoxedBoolean]
+    var MaxCount: js.UndefOr[BoxedInt]
+    var DeleteSourceFromS3: js.UndefOr[BoxedBoolean]
+  }
+
+  object MaxCountRule {
+    def apply(
+      Enabled: js.UndefOr[BoxedBoolean] = js.undefined,
+      MaxCount: js.UndefOr[BoxedInt] = js.undefined,
+      DeleteSourceFromS3: js.UndefOr[BoxedBoolean] = js.undefined): MaxCountRule = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Enabled" -> Enabled.map { x => x.asInstanceOf[js.Any] },
+        "MaxCount" -> MaxCount.map { x => x.asInstanceOf[js.Any] },
+        "DeleteSourceFromS3" -> DeleteSourceFromS3.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[MaxCountRule]
+    }
+  }
+
+  /**
+   * <p>A regular expression representing a restriction on a string configuration option value.</p>
+   */
+  @js.native
+  trait OptionRestrictionRegex extends js.Object {
+    var Pattern: js.UndefOr[RegexPattern]
+    var Label: js.UndefOr[RegexLabel]
+  }
+
+  object OptionRestrictionRegex {
+    def apply(
+      Pattern: js.UndefOr[RegexPattern] = js.undefined,
+      Label: js.UndefOr[RegexLabel] = js.undefined): OptionRestrictionRegex = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Pattern" -> Pattern.map { x => x.asInstanceOf[js.Any] },
+        "Label" -> Label.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[OptionRestrictionRegex]
+    }
+  }
+
+  /**
+   * <p>A specification identifying an individual configuration option.</p>
+   */
+  @js.native
+  trait OptionSpecification extends js.Object {
+    var ResourceName: js.UndefOr[ResourceName]
+    var Namespace: js.UndefOr[OptionNamespace]
+    var OptionName: js.UndefOr[ConfigurationOptionName]
+  }
+
+  object OptionSpecification {
+    def apply(
+      ResourceName: js.UndefOr[ResourceName] = js.undefined,
+      Namespace: js.UndefOr[OptionNamespace] = js.undefined,
+      OptionName: js.UndefOr[ConfigurationOptionName] = js.undefined): OptionSpecification = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ResourceName" -> ResourceName.map { x => x.asInstanceOf[js.Any] },
+        "Namespace" -> Namespace.map { x => x.asInstanceOf[js.Any] },
+        "OptionName" -> OptionName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[OptionSpecification]
+    }
+  }
+
+  /**
+   * <p>Detailed information about a platform.</p>
+   */
+  @js.native
+  trait PlatformDescription extends js.Object {
+    var OperatingSystemName: js.UndefOr[OperatingSystemName]
+    var PlatformOwner: js.UndefOr[PlatformOwner]
+    var PlatformVersion: js.UndefOr[PlatformVersion]
+    var PlatformStatus: js.UndefOr[PlatformStatus]
+    var CustomAmiList: js.UndefOr[CustomAmiList]
+    var Maintainer: js.UndefOr[Maintainer]
+    var SupportedAddonList: js.UndefOr[SupportedAddonList]
+    var Description: js.UndefOr[Description]
+    var SupportedTierList: js.UndefOr[SupportedTierList]
+    var PlatformArn: js.UndefOr[PlatformArn]
+    var SolutionStackName: js.UndefOr[SolutionStackName]
+    var OperatingSystemVersion: js.UndefOr[OperatingSystemVersion]
+    var ProgrammingLanguages: js.UndefOr[PlatformProgrammingLanguages]
+    var DateCreated: js.UndefOr[CreationDate]
+    var PlatformCategory: js.UndefOr[PlatformCategory]
+    var Frameworks: js.UndefOr[PlatformFrameworks]
+    var PlatformName: js.UndefOr[PlatformName]
+    var DateUpdated: js.UndefOr[UpdateDate]
+  }
+
+  object PlatformDescription {
+    def apply(
+      OperatingSystemName: js.UndefOr[OperatingSystemName] = js.undefined,
+      PlatformOwner: js.UndefOr[PlatformOwner] = js.undefined,
+      PlatformVersion: js.UndefOr[PlatformVersion] = js.undefined,
+      PlatformStatus: js.UndefOr[PlatformStatus] = js.undefined,
+      CustomAmiList: js.UndefOr[CustomAmiList] = js.undefined,
+      Maintainer: js.UndefOr[Maintainer] = js.undefined,
+      SupportedAddonList: js.UndefOr[SupportedAddonList] = js.undefined,
+      Description: js.UndefOr[Description] = js.undefined,
+      SupportedTierList: js.UndefOr[SupportedTierList] = js.undefined,
+      PlatformArn: js.UndefOr[PlatformArn] = js.undefined,
+      SolutionStackName: js.UndefOr[SolutionStackName] = js.undefined,
+      OperatingSystemVersion: js.UndefOr[OperatingSystemVersion] = js.undefined,
+      ProgrammingLanguages: js.UndefOr[PlatformProgrammingLanguages] = js.undefined,
+      DateCreated: js.UndefOr[CreationDate] = js.undefined,
+      PlatformCategory: js.UndefOr[PlatformCategory] = js.undefined,
+      Frameworks: js.UndefOr[PlatformFrameworks] = js.undefined,
+      PlatformName: js.UndefOr[PlatformName] = js.undefined,
+      DateUpdated: js.UndefOr[UpdateDate] = js.undefined): PlatformDescription = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "OperatingSystemName" -> OperatingSystemName.map { x => x.asInstanceOf[js.Any] },
+        "PlatformOwner" -> PlatformOwner.map { x => x.asInstanceOf[js.Any] },
+        "PlatformVersion" -> PlatformVersion.map { x => x.asInstanceOf[js.Any] },
+        "PlatformStatus" -> PlatformStatus.map { x => x.asInstanceOf[js.Any] },
+        "CustomAmiList" -> CustomAmiList.map { x => x.asInstanceOf[js.Any] },
+        "Maintainer" -> Maintainer.map { x => x.asInstanceOf[js.Any] },
+        "SupportedAddonList" -> SupportedAddonList.map { x => x.asInstanceOf[js.Any] },
+        "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
+        "SupportedTierList" -> SupportedTierList.map { x => x.asInstanceOf[js.Any] },
+        "PlatformArn" -> PlatformArn.map { x => x.asInstanceOf[js.Any] },
+        "SolutionStackName" -> SolutionStackName.map { x => x.asInstanceOf[js.Any] },
+        "OperatingSystemVersion" -> OperatingSystemVersion.map { x => x.asInstanceOf[js.Any] },
+        "ProgrammingLanguages" -> ProgrammingLanguages.map { x => x.asInstanceOf[js.Any] },
+        "DateCreated" -> DateCreated.map { x => x.asInstanceOf[js.Any] },
+        "PlatformCategory" -> PlatformCategory.map { x => x.asInstanceOf[js.Any] },
+        "Frameworks" -> Frameworks.map { x => x.asInstanceOf[js.Any] },
+        "PlatformName" -> PlatformName.map { x => x.asInstanceOf[js.Any] },
+        "DateUpdated" -> DateUpdated.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PlatformDescription]
+    }
+  }
+
+  /**
+   * <p>Specify criteria to restrict the results when listing custom platforms.</p> <p>The filter is evaluated as the expression:</p> <p> <code>Type</code> <code>Operator</code> <code>Values[i]</code> </p>
+   */
+  @js.native
+  trait PlatformFilter extends js.Object {
+    var Type: js.UndefOr[PlatformFilterType]
+    var Operator: js.UndefOr[PlatformFilterOperator]
+    var Values: js.UndefOr[PlatformFilterValueList]
+  }
+
+  object PlatformFilter {
+    def apply(
+      Type: js.UndefOr[PlatformFilterType] = js.undefined,
+      Operator: js.UndefOr[PlatformFilterOperator] = js.undefined,
+      Values: js.UndefOr[PlatformFilterValueList] = js.undefined): PlatformFilter = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Type" -> Type.map { x => x.asInstanceOf[js.Any] },
+        "Operator" -> Operator.map { x => x.asInstanceOf[js.Any] },
+        "Values" -> Values.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PlatformFilter]
+    }
+  }
+
+  /**
+   * <p>A framework supported by the custom platform.</p>
+   */
+  @js.native
+  trait PlatformFramework extends js.Object {
+    var Name: js.UndefOr[String]
+    var Version: js.UndefOr[String]
+  }
+
+  object PlatformFramework {
+    def apply(
+      Name: js.UndefOr[String] = js.undefined,
+      Version: js.UndefOr[String] = js.undefined): PlatformFramework = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
+        "Version" -> Version.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PlatformFramework]
+    }
+  }
+
+  /**
+   * <p>A programming language supported by the platform.</p>
+   */
+  @js.native
+  trait PlatformProgrammingLanguage extends js.Object {
+    var Name: js.UndefOr[String]
+    var Version: js.UndefOr[String]
+  }
+
+  object PlatformProgrammingLanguage {
+    def apply(
+      Name: js.UndefOr[String] = js.undefined,
+      Version: js.UndefOr[String] = js.undefined): PlatformProgrammingLanguage = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
+        "Version" -> Version.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PlatformProgrammingLanguage]
+    }
+  }
+
+  object PlatformStatusEnum {
+    val Creating = "Creating"
+    val Failed = "Failed"
+    val Ready = "Ready"
+    val Deleting = "Deleting"
+    val Deleted = "Deleted"
+
+    val values = IndexedSeq(Creating, Failed, Ready, Deleting, Deleted)
+  }
+
+  /**
+   * <p>Detailed information about a platform.</p>
+   */
+  @js.native
+  trait PlatformSummary extends js.Object {
+    var OperatingSystemName: js.UndefOr[OperatingSystemName]
+    var PlatformOwner: js.UndefOr[PlatformOwner]
+    var PlatformStatus: js.UndefOr[PlatformStatus]
+    var SupportedAddonList: js.UndefOr[SupportedAddonList]
+    var SupportedTierList: js.UndefOr[SupportedTierList]
+    var PlatformArn: js.UndefOr[PlatformArn]
+    var OperatingSystemVersion: js.UndefOr[OperatingSystemVersion]
+    var PlatformCategory: js.UndefOr[PlatformCategory]
+  }
+
+  object PlatformSummary {
+    def apply(
+      OperatingSystemName: js.UndefOr[OperatingSystemName] = js.undefined,
+      PlatformOwner: js.UndefOr[PlatformOwner] = js.undefined,
+      PlatformStatus: js.UndefOr[PlatformStatus] = js.undefined,
+      SupportedAddonList: js.UndefOr[SupportedAddonList] = js.undefined,
+      SupportedTierList: js.UndefOr[SupportedTierList] = js.undefined,
+      PlatformArn: js.UndefOr[PlatformArn] = js.undefined,
+      OperatingSystemVersion: js.UndefOr[OperatingSystemVersion] = js.undefined,
+      PlatformCategory: js.UndefOr[PlatformCategory] = js.undefined): PlatformSummary = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "OperatingSystemName" -> OperatingSystemName.map { x => x.asInstanceOf[js.Any] },
+        "PlatformOwner" -> PlatformOwner.map { x => x.asInstanceOf[js.Any] },
+        "PlatformStatus" -> PlatformStatus.map { x => x.asInstanceOf[js.Any] },
+        "SupportedAddonList" -> SupportedAddonList.map { x => x.asInstanceOf[js.Any] },
+        "SupportedTierList" -> SupportedTierList.map { x => x.asInstanceOf[js.Any] },
+        "PlatformArn" -> PlatformArn.map { x => x.asInstanceOf[js.Any] },
+        "OperatingSystemVersion" -> OperatingSystemVersion.map { x => x.asInstanceOf[js.Any] },
+        "PlatformCategory" -> PlatformCategory.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PlatformSummary]
+    }
+  }
+
+  /**
+   * <p>Describes a queue.</p>
+   */
+  @js.native
+  trait Queue extends js.Object {
+    var Name: js.UndefOr[String]
+    var URL: js.UndefOr[String]
+  }
+
+  object Queue {
+    def apply(
+      Name: js.UndefOr[String] = js.undefined,
+      URL: js.UndefOr[String] = js.undefined): Queue = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
+        "URL" -> URL.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Queue]
+    }
+  }
+
+  /**
+   * <p/>
+   */
+  @js.native
+  trait RebuildEnvironmentMessage extends js.Object {
+    var EnvironmentId: js.UndefOr[EnvironmentId]
+    var EnvironmentName: js.UndefOr[EnvironmentName]
+  }
+
+  object RebuildEnvironmentMessage {
+    def apply(
+      EnvironmentId: js.UndefOr[EnvironmentId] = js.undefined,
+      EnvironmentName: js.UndefOr[EnvironmentName] = js.undefined): RebuildEnvironmentMessage = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "EnvironmentId" -> EnvironmentId.map { x => x.asInstanceOf[js.Any] },
+        "EnvironmentName" -> EnvironmentName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RebuildEnvironmentMessage]
+    }
+  }
+
+  /**
+   * <p>Request to retrieve logs from an environment and store them in your Elastic Beanstalk storage bucket.</p>
+   */
+  @js.native
+  trait RequestEnvironmentInfoMessage extends js.Object {
+    var EnvironmentId: js.UndefOr[EnvironmentId]
+    var EnvironmentName: js.UndefOr[EnvironmentName]
+    var InfoType: js.UndefOr[EnvironmentInfoType]
+  }
+
+  object RequestEnvironmentInfoMessage {
+    def apply(
+      EnvironmentId: js.UndefOr[EnvironmentId] = js.undefined,
+      EnvironmentName: js.UndefOr[EnvironmentName] = js.undefined,
+      InfoType: js.UndefOr[EnvironmentInfoType] = js.undefined): RequestEnvironmentInfoMessage = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "EnvironmentId" -> EnvironmentId.map { x => x.asInstanceOf[js.Any] },
+        "EnvironmentName" -> EnvironmentName.map { x => x.asInstanceOf[js.Any] },
+        "InfoType" -> InfoType.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RequestEnvironmentInfoMessage]
+    }
+  }
+
+  /**
+   * <p>The AWS Elastic Beanstalk quota information for a single resource type in an AWS account. It reflects the resource's limits for this account.</p>
+   */
+  @js.native
+  trait ResourceQuota extends js.Object {
+    var Maximum: js.UndefOr[BoxedInt]
+  }
+
+  object ResourceQuota {
+    def apply(
+      Maximum: js.UndefOr[BoxedInt] = js.undefined): ResourceQuota = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Maximum" -> Maximum.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ResourceQuota]
+    }
+  }
+
+  /**
+   * <p>A set of per-resource AWS Elastic Beanstalk quotas associated with an AWS account. They reflect Elastic Beanstalk resource limits for this account.</p>
+   */
+  @js.native
+  trait ResourceQuotas extends js.Object {
+    var ApplicationVersionQuota: js.UndefOr[ResourceQuota]
+    var EnvironmentQuota: js.UndefOr[ResourceQuota]
+    var ApplicationQuota: js.UndefOr[ResourceQuota]
+    var ConfigurationTemplateQuota: js.UndefOr[ResourceQuota]
+    var CustomPlatformQuota: js.UndefOr[ResourceQuota]
+  }
+
+  object ResourceQuotas {
+    def apply(
+      ApplicationVersionQuota: js.UndefOr[ResourceQuota] = js.undefined,
+      EnvironmentQuota: js.UndefOr[ResourceQuota] = js.undefined,
+      ApplicationQuota: js.UndefOr[ResourceQuota] = js.undefined,
+      ConfigurationTemplateQuota: js.UndefOr[ResourceQuota] = js.undefined,
+      CustomPlatformQuota: js.UndefOr[ResourceQuota] = js.undefined): ResourceQuotas = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ApplicationVersionQuota" -> ApplicationVersionQuota.map { x => x.asInstanceOf[js.Any] },
+        "EnvironmentQuota" -> EnvironmentQuota.map { x => x.asInstanceOf[js.Any] },
+        "ApplicationQuota" -> ApplicationQuota.map { x => x.asInstanceOf[js.Any] },
+        "ConfigurationTemplateQuota" -> ConfigurationTemplateQuota.map { x => x.asInstanceOf[js.Any] },
+        "CustomPlatformQuota" -> CustomPlatformQuota.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ResourceQuotas]
+    }
+  }
+
+  @js.native
+  trait ResourceTagsDescriptionMessage extends js.Object {
+    var ResourceArn: js.UndefOr[ResourceArn]
+    var ResourceTags: js.UndefOr[TagList]
+  }
+
+  object ResourceTagsDescriptionMessage {
+    def apply(
+      ResourceArn: js.UndefOr[ResourceArn] = js.undefined,
+      ResourceTags: js.UndefOr[TagList] = js.undefined): ResourceTagsDescriptionMessage = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ResourceArn" -> ResourceArn.map { x => x.asInstanceOf[js.Any] },
+        "ResourceTags" -> ResourceTags.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ResourceTagsDescriptionMessage]
+    }
+  }
+
+  /**
+   * <p/>
+   */
+  @js.native
+  trait RestartAppServerMessage extends js.Object {
+    var EnvironmentId: js.UndefOr[EnvironmentId]
+    var EnvironmentName: js.UndefOr[EnvironmentName]
+  }
+
+  object RestartAppServerMessage {
+    def apply(
+      EnvironmentId: js.UndefOr[EnvironmentId] = js.undefined,
+      EnvironmentName: js.UndefOr[EnvironmentName] = js.undefined): RestartAppServerMessage = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "EnvironmentId" -> EnvironmentId.map { x => x.asInstanceOf[js.Any] },
+        "EnvironmentName" -> EnvironmentName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RestartAppServerMessage]
+    }
+  }
+
+  /**
+   * <p>Request to download logs retrieved with <a>RequestEnvironmentInfo</a>.</p>
+   */
+  @js.native
+  trait RetrieveEnvironmentInfoMessage extends js.Object {
+    var EnvironmentId: js.UndefOr[EnvironmentId]
+    var EnvironmentName: js.UndefOr[EnvironmentName]
+    var InfoType: js.UndefOr[EnvironmentInfoType]
+  }
+
+  object RetrieveEnvironmentInfoMessage {
+    def apply(
+      EnvironmentId: js.UndefOr[EnvironmentId] = js.undefined,
+      EnvironmentName: js.UndefOr[EnvironmentName] = js.undefined,
+      InfoType: js.UndefOr[EnvironmentInfoType] = js.undefined): RetrieveEnvironmentInfoMessage = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "EnvironmentId" -> EnvironmentId.map { x => x.asInstanceOf[js.Any] },
+        "EnvironmentName" -> EnvironmentName.map { x => x.asInstanceOf[js.Any] },
+        "InfoType" -> InfoType.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RetrieveEnvironmentInfoMessage]
+    }
+  }
+
+  /**
+   * <p>Result message containing a description of the requested environment info.</p>
+   */
+  @js.native
+  trait RetrieveEnvironmentInfoResultMessage extends js.Object {
+    var EnvironmentInfo: js.UndefOr[EnvironmentInfoDescriptionList]
+  }
+
+  object RetrieveEnvironmentInfoResultMessage {
+    def apply(
+      EnvironmentInfo: js.UndefOr[EnvironmentInfoDescriptionList] = js.undefined): RetrieveEnvironmentInfoResultMessage = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "EnvironmentInfo" -> EnvironmentInfo.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RetrieveEnvironmentInfoResultMessage]
+    }
+  }
+
+  /**
+   * <p>The bucket and key of an item stored in Amazon S3.</p>
+   */
+  @js.native
+  trait S3Location extends js.Object {
+    var S3Bucket: js.UndefOr[S3Bucket]
+    var S3Key: js.UndefOr[S3Key]
+  }
+
+  object S3Location {
+    def apply(
+      S3Bucket: js.UndefOr[S3Bucket] = js.undefined,
+      S3Key: js.UndefOr[S3Key] = js.undefined): S3Location = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "S3Bucket" -> S3Bucket.map { x => x.asInstanceOf[js.Any] },
+        "S3Key" -> S3Key.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[S3Location]
+    }
+  }
+
+  /**
+   * <p>Detailed health information about an Amazon EC2 instance in your Elastic Beanstalk environment.</p>
+   */
+  @js.native
+  trait SingleInstanceHealth extends js.Object {
+    var Causes: js.UndefOr[Causes]
+    var ApplicationMetrics: js.UndefOr[ApplicationMetrics]
+    var Deployment: js.UndefOr[Deployment]
+    var AvailabilityZone: js.UndefOr[String]
+    var HealthStatus: js.UndefOr[String]
+    var System: js.UndefOr[SystemStatus]
+    var InstanceType: js.UndefOr[String]
+    var InstanceId: js.UndefOr[InstanceId]
+    var LaunchedAt: js.UndefOr[LaunchedAt]
+    var Color: js.UndefOr[String]
+  }
+
+  object SingleInstanceHealth {
+    def apply(
+      Causes: js.UndefOr[Causes] = js.undefined,
+      ApplicationMetrics: js.UndefOr[ApplicationMetrics] = js.undefined,
+      Deployment: js.UndefOr[Deployment] = js.undefined,
+      AvailabilityZone: js.UndefOr[String] = js.undefined,
+      HealthStatus: js.UndefOr[String] = js.undefined,
+      System: js.UndefOr[SystemStatus] = js.undefined,
+      InstanceType: js.UndefOr[String] = js.undefined,
+      InstanceId: js.UndefOr[InstanceId] = js.undefined,
+      LaunchedAt: js.UndefOr[LaunchedAt] = js.undefined,
+      Color: js.UndefOr[String] = js.undefined): SingleInstanceHealth = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Causes" -> Causes.map { x => x.asInstanceOf[js.Any] },
+        "ApplicationMetrics" -> ApplicationMetrics.map { x => x.asInstanceOf[js.Any] },
+        "Deployment" -> Deployment.map { x => x.asInstanceOf[js.Any] },
+        "AvailabilityZone" -> AvailabilityZone.map { x => x.asInstanceOf[js.Any] },
+        "HealthStatus" -> HealthStatus.map { x => x.asInstanceOf[js.Any] },
+        "System" -> System.map { x => x.asInstanceOf[js.Any] },
+        "InstanceType" -> InstanceType.map { x => x.asInstanceOf[js.Any] },
+        "InstanceId" -> InstanceId.map { x => x.asInstanceOf[js.Any] },
+        "LaunchedAt" -> LaunchedAt.map { x => x.asInstanceOf[js.Any] },
+        "Color" -> Color.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SingleInstanceHealth]
+    }
+  }
+
+  /**
+   * <p>Describes the solution stack.</p>
+   */
+  @js.native
+  trait SolutionStackDescription extends js.Object {
+    var SolutionStackName: js.UndefOr[SolutionStackName]
+    var PermittedFileTypes: js.UndefOr[SolutionStackFileTypeList]
+  }
+
+  object SolutionStackDescription {
+    def apply(
+      SolutionStackName: js.UndefOr[SolutionStackName] = js.undefined,
+      PermittedFileTypes: js.UndefOr[SolutionStackFileTypeList] = js.undefined): SolutionStackDescription = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "SolutionStackName" -> SolutionStackName.map { x => x.asInstanceOf[js.Any] },
+        "PermittedFileTypes" -> PermittedFileTypes.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SolutionStackDescription]
+    }
+  }
+
+  /**
+   * <p>Location of the source code for an application version.</p>
+   */
+  @js.native
+  trait SourceBuildInformation extends js.Object {
+    var SourceType: js.UndefOr[SourceType]
+    var SourceRepository: js.UndefOr[SourceRepository]
+    var SourceLocation: js.UndefOr[SourceLocation]
+  }
+
+  object SourceBuildInformation {
+    def apply(
+      SourceType: js.UndefOr[SourceType] = js.undefined,
+      SourceRepository: js.UndefOr[SourceRepository] = js.undefined,
+      SourceLocation: js.UndefOr[SourceLocation] = js.undefined): SourceBuildInformation = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "SourceType" -> SourceType.map { x => x.asInstanceOf[js.Any] },
+        "SourceRepository" -> SourceRepository.map { x => x.asInstanceOf[js.Any] },
+        "SourceLocation" -> SourceLocation.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SourceBuildInformation]
+    }
+  }
+
+  /**
+   * <p>A specification for an environment configuration</p>
+   */
+  @js.native
+  trait SourceConfiguration extends js.Object {
+    var ApplicationName: js.UndefOr[ApplicationName]
+    var TemplateName: js.UndefOr[ConfigurationTemplateName]
+  }
+
+  object SourceConfiguration {
+    def apply(
+      ApplicationName: js.UndefOr[ApplicationName] = js.undefined,
+      TemplateName: js.UndefOr[ConfigurationTemplateName] = js.undefined): SourceConfiguration = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ApplicationName" -> ApplicationName.map { x => x.asInstanceOf[js.Any] },
+        "TemplateName" -> TemplateName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SourceConfiguration]
+    }
+  }
+
+  object SourceRepositoryEnum {
+    val CodeCommit = "CodeCommit"
+    val S3 = "S3"
+
+    val values = IndexedSeq(CodeCommit, S3)
+  }
+
+  object SourceTypeEnum {
+    val Git = "Git"
+    val Zip = "Zip"
+
+    val values = IndexedSeq(Git, Zip)
+  }
+
+  /**
+   * <p>Represents the percentage of requests over the last 10 seconds that resulted in each type of status code response. For more information, see <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html">Status Code Definitions</a>.</p>
+   */
+  @js.native
+  trait StatusCodes extends js.Object {
+    var Status2xx: js.UndefOr[NullableInteger]
+    var Status3xx: js.UndefOr[NullableInteger]
+    var Status4xx: js.UndefOr[NullableInteger]
+    var Status5xx: js.UndefOr[NullableInteger]
+  }
+
+  object StatusCodes {
+    def apply(
+      Status2xx: js.UndefOr[NullableInteger] = js.undefined,
+      Status3xx: js.UndefOr[NullableInteger] = js.undefined,
+      Status4xx: js.UndefOr[NullableInteger] = js.undefined,
+      Status5xx: js.UndefOr[NullableInteger] = js.undefined): StatusCodes = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Status2xx" -> Status2xx.map { x => x.asInstanceOf[js.Any] },
+        "Status3xx" -> Status3xx.map { x => x.asInstanceOf[js.Any] },
+        "Status4xx" -> Status4xx.map { x => x.asInstanceOf[js.Any] },
+        "Status5xx" -> Status5xx.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StatusCodes]
+    }
+  }
+
+  /**
+   * <p>Swaps the CNAMEs of two environments.</p>
+   */
+  @js.native
+  trait SwapEnvironmentCNAMEsMessage extends js.Object {
+    var SourceEnvironmentId: js.UndefOr[EnvironmentId]
+    var SourceEnvironmentName: js.UndefOr[EnvironmentName]
+    var DestinationEnvironmentId: js.UndefOr[EnvironmentId]
+    var DestinationEnvironmentName: js.UndefOr[EnvironmentName]
+  }
+
+  object SwapEnvironmentCNAMEsMessage {
+    def apply(
+      SourceEnvironmentId: js.UndefOr[EnvironmentId] = js.undefined,
+      SourceEnvironmentName: js.UndefOr[EnvironmentName] = js.undefined,
+      DestinationEnvironmentId: js.UndefOr[EnvironmentId] = js.undefined,
+      DestinationEnvironmentName: js.UndefOr[EnvironmentName] = js.undefined): SwapEnvironmentCNAMEsMessage = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "SourceEnvironmentId" -> SourceEnvironmentId.map { x => x.asInstanceOf[js.Any] },
+        "SourceEnvironmentName" -> SourceEnvironmentName.map { x => x.asInstanceOf[js.Any] },
+        "DestinationEnvironmentId" -> DestinationEnvironmentId.map { x => x.asInstanceOf[js.Any] },
+        "DestinationEnvironmentName" -> DestinationEnvironmentName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SwapEnvironmentCNAMEsMessage]
+    }
+  }
+
+  /**
+   * <p>CPU utilization and load average metrics for an Amazon EC2 instance.</p>
+   */
+  @js.native
+  trait SystemStatus extends js.Object {
+    var CPUUtilization: js.UndefOr[CPUUtilization]
+    var LoadAverage: js.UndefOr[LoadAverage]
+  }
+
+  object SystemStatus {
+    def apply(
+      CPUUtilization: js.UndefOr[CPUUtilization] = js.undefined,
+      LoadAverage: js.UndefOr[LoadAverage] = js.undefined): SystemStatus = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "CPUUtilization" -> CPUUtilization.map { x => x.asInstanceOf[js.Any] },
+        "LoadAverage" -> LoadAverage.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SystemStatus]
+    }
+  }
+
+  /**
+   * <p>Describes a tag applied to a resource in an environment.</p>
+   */
+  @js.native
+  trait Tag extends js.Object {
+    var Key: js.UndefOr[TagKey]
+    var Value: js.UndefOr[TagValue]
+  }
+
+  object Tag {
+    def apply(
+      Key: js.UndefOr[TagKey] = js.undefined,
+      Value: js.UndefOr[TagValue] = js.undefined): Tag = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Key" -> Key.map { x => x.asInstanceOf[js.Any] },
+        "Value" -> Value.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Tag]
+    }
+  }
+
+  /**
+   * <p>Request to terminate an environment.</p>
+   */
+  @js.native
+  trait TerminateEnvironmentMessage extends js.Object {
+    var EnvironmentId: js.UndefOr[EnvironmentId]
+    var EnvironmentName: js.UndefOr[EnvironmentName]
+    var TerminateResources: js.UndefOr[TerminateEnvironmentResources]
+    var ForceTerminate: js.UndefOr[ForceTerminate]
+  }
+
+  object TerminateEnvironmentMessage {
+    def apply(
+      EnvironmentId: js.UndefOr[EnvironmentId] = js.undefined,
+      EnvironmentName: js.UndefOr[EnvironmentName] = js.undefined,
+      TerminateResources: js.UndefOr[TerminateEnvironmentResources] = js.undefined,
+      ForceTerminate: js.UndefOr[ForceTerminate] = js.undefined): TerminateEnvironmentMessage = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "EnvironmentId" -> EnvironmentId.map { x => x.asInstanceOf[js.Any] },
+        "EnvironmentName" -> EnvironmentName.map { x => x.asInstanceOf[js.Any] },
+        "TerminateResources" -> TerminateResources.map { x => x.asInstanceOf[js.Any] },
+        "ForceTerminate" -> ForceTerminate.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TerminateEnvironmentMessage]
+    }
+  }
+
+  /**
+   * <p>Describes a trigger.</p>
+   */
+  @js.native
+  trait Trigger extends js.Object {
+    var Name: js.UndefOr[ResourceId]
+  }
+
+  object Trigger {
+    def apply(
+      Name: js.UndefOr[ResourceId] = js.undefined): Trigger = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Name" -> Name.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Trigger]
+    }
+  }
+
+  /**
+   * <p>Request to update an application.</p>
+   */
+  @js.native
+  trait UpdateApplicationMessage extends js.Object {
+    var ApplicationName: js.UndefOr[ApplicationName]
+    var Description: js.UndefOr[Description]
+  }
+
+  object UpdateApplicationMessage {
+    def apply(
+      ApplicationName: js.UndefOr[ApplicationName] = js.undefined,
+      Description: js.UndefOr[Description] = js.undefined): UpdateApplicationMessage = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ApplicationName" -> ApplicationName.map { x => x.asInstanceOf[js.Any] },
+        "Description" -> Description.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateApplicationMessage]
+    }
+  }
+
+  @js.native
+  trait UpdateApplicationResourceLifecycleMessage extends js.Object {
+    var ApplicationName: js.UndefOr[ApplicationName]
+    var ResourceLifecycleConfig: js.UndefOr[ApplicationResourceLifecycleConfig]
+  }
+
+  object UpdateApplicationResourceLifecycleMessage {
+    def apply(
+      ApplicationName: js.UndefOr[ApplicationName] = js.undefined,
+      ResourceLifecycleConfig: js.UndefOr[ApplicationResourceLifecycleConfig] = js.undefined): UpdateApplicationResourceLifecycleMessage = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ApplicationName" -> ApplicationName.map { x => x.asInstanceOf[js.Any] },
+        "ResourceLifecycleConfig" -> ResourceLifecycleConfig.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateApplicationResourceLifecycleMessage]
+    }
+  }
+
+  /**
+   * <p/>
+   */
+  @js.native
+  trait UpdateApplicationVersionMessage extends js.Object {
+    var ApplicationName: js.UndefOr[ApplicationName]
+    var VersionLabel: js.UndefOr[VersionLabel]
+    var Description: js.UndefOr[Description]
+  }
+
+  object UpdateApplicationVersionMessage {
+    def apply(
+      ApplicationName: js.UndefOr[ApplicationName] = js.undefined,
+      VersionLabel: js.UndefOr[VersionLabel] = js.undefined,
+      Description: js.UndefOr[Description] = js.undefined): UpdateApplicationVersionMessage = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ApplicationName" -> ApplicationName.map { x => x.asInstanceOf[js.Any] },
+        "VersionLabel" -> VersionLabel.map { x => x.asInstanceOf[js.Any] },
+        "Description" -> Description.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateApplicationVersionMessage]
+    }
+  }
+
+  /**
+   * <p>The result message containing the options for the specified solution stack.</p>
+   */
+  @js.native
+  trait UpdateConfigurationTemplateMessage extends js.Object {
+    var OptionsToRemove: js.UndefOr[OptionsSpecifierList]
+    var Description: js.UndefOr[Description]
+    var OptionSettings: js.UndefOr[ConfigurationOptionSettingsList]
+    var TemplateName: js.UndefOr[ConfigurationTemplateName]
+    var ApplicationName: js.UndefOr[ApplicationName]
+  }
+
+  object UpdateConfigurationTemplateMessage {
+    def apply(
+      OptionsToRemove: js.UndefOr[OptionsSpecifierList] = js.undefined,
+      Description: js.UndefOr[Description] = js.undefined,
+      OptionSettings: js.UndefOr[ConfigurationOptionSettingsList] = js.undefined,
+      TemplateName: js.UndefOr[ConfigurationTemplateName] = js.undefined,
+      ApplicationName: js.UndefOr[ApplicationName] = js.undefined): UpdateConfigurationTemplateMessage = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "OptionsToRemove" -> OptionsToRemove.map { x => x.asInstanceOf[js.Any] },
+        "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
+        "OptionSettings" -> OptionSettings.map { x => x.asInstanceOf[js.Any] },
+        "TemplateName" -> TemplateName.map { x => x.asInstanceOf[js.Any] },
+        "ApplicationName" -> ApplicationName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateConfigurationTemplateMessage]
+    }
+  }
+
+  /**
+   * <p>Request to update an environment.</p>
+   */
+  @js.native
+  trait UpdateEnvironmentMessage extends js.Object {
+    var OptionsToRemove: js.UndefOr[OptionsSpecifierList]
+    var GroupName: js.UndefOr[GroupName]
+    var Description: js.UndefOr[Description]
+    var EnvironmentId: js.UndefOr[EnvironmentId]
+    var PlatformArn: js.UndefOr[PlatformArn]
+    var VersionLabel: js.UndefOr[VersionLabel]
+    var Tier: js.UndefOr[EnvironmentTier]
+    var SolutionStackName: js.UndefOr[SolutionStackName]
+    var OptionSettings: js.UndefOr[ConfigurationOptionSettingsList]
+    var TemplateName: js.UndefOr[ConfigurationTemplateName]
+    var EnvironmentName: js.UndefOr[EnvironmentName]
+    var ApplicationName: js.UndefOr[ApplicationName]
+  }
+
+  object UpdateEnvironmentMessage {
+    def apply(
+      OptionsToRemove: js.UndefOr[OptionsSpecifierList] = js.undefined,
+      GroupName: js.UndefOr[GroupName] = js.undefined,
+      Description: js.UndefOr[Description] = js.undefined,
+      EnvironmentId: js.UndefOr[EnvironmentId] = js.undefined,
+      PlatformArn: js.UndefOr[PlatformArn] = js.undefined,
+      VersionLabel: js.UndefOr[VersionLabel] = js.undefined,
+      Tier: js.UndefOr[EnvironmentTier] = js.undefined,
+      SolutionStackName: js.UndefOr[SolutionStackName] = js.undefined,
+      OptionSettings: js.UndefOr[ConfigurationOptionSettingsList] = js.undefined,
+      TemplateName: js.UndefOr[ConfigurationTemplateName] = js.undefined,
+      EnvironmentName: js.UndefOr[EnvironmentName] = js.undefined,
+      ApplicationName: js.UndefOr[ApplicationName] = js.undefined): UpdateEnvironmentMessage = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "OptionsToRemove" -> OptionsToRemove.map { x => x.asInstanceOf[js.Any] },
+        "GroupName" -> GroupName.map { x => x.asInstanceOf[js.Any] },
+        "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
+        "EnvironmentId" -> EnvironmentId.map { x => x.asInstanceOf[js.Any] },
+        "PlatformArn" -> PlatformArn.map { x => x.asInstanceOf[js.Any] },
+        "VersionLabel" -> VersionLabel.map { x => x.asInstanceOf[js.Any] },
+        "Tier" -> Tier.map { x => x.asInstanceOf[js.Any] },
+        "SolutionStackName" -> SolutionStackName.map { x => x.asInstanceOf[js.Any] },
+        "OptionSettings" -> OptionSettings.map { x => x.asInstanceOf[js.Any] },
+        "TemplateName" -> TemplateName.map { x => x.asInstanceOf[js.Any] },
+        "EnvironmentName" -> EnvironmentName.map { x => x.asInstanceOf[js.Any] },
+        "ApplicationName" -> ApplicationName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateEnvironmentMessage]
+    }
+  }
+
+  @js.native
+  trait UpdateTagsForResourceMessage extends js.Object {
+    var ResourceArn: js.UndefOr[ResourceArn]
+    var TagsToAdd: js.UndefOr[TagList]
+    var TagsToRemove: js.UndefOr[TagKeyList]
+  }
+
+  object UpdateTagsForResourceMessage {
+    def apply(
+      ResourceArn: js.UndefOr[ResourceArn] = js.undefined,
+      TagsToAdd: js.UndefOr[TagList] = js.undefined,
+      TagsToRemove: js.UndefOr[TagKeyList] = js.undefined): UpdateTagsForResourceMessage = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ResourceArn" -> ResourceArn.map { x => x.asInstanceOf[js.Any] },
+        "TagsToAdd" -> TagsToAdd.map { x => x.asInstanceOf[js.Any] },
+        "TagsToRemove" -> TagsToRemove.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateTagsForResourceMessage]
+    }
+  }
+
+  /**
+   * <p>A list of validation messages for a specified configuration template.</p>
+   */
+  @js.native
+  trait ValidateConfigurationSettingsMessage extends js.Object {
+    var ApplicationName: js.UndefOr[ApplicationName]
+    var TemplateName: js.UndefOr[ConfigurationTemplateName]
+    var EnvironmentName: js.UndefOr[EnvironmentName]
+    var OptionSettings: js.UndefOr[ConfigurationOptionSettingsList]
+  }
+
+  object ValidateConfigurationSettingsMessage {
+    def apply(
+      ApplicationName: js.UndefOr[ApplicationName] = js.undefined,
+      TemplateName: js.UndefOr[ConfigurationTemplateName] = js.undefined,
+      EnvironmentName: js.UndefOr[EnvironmentName] = js.undefined,
+      OptionSettings: js.UndefOr[ConfigurationOptionSettingsList] = js.undefined): ValidateConfigurationSettingsMessage = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ApplicationName" -> ApplicationName.map { x => x.asInstanceOf[js.Any] },
+        "TemplateName" -> TemplateName.map { x => x.asInstanceOf[js.Any] },
+        "EnvironmentName" -> EnvironmentName.map { x => x.asInstanceOf[js.Any] },
+        "OptionSettings" -> OptionSettings.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ValidateConfigurationSettingsMessage]
+    }
+  }
+
+  /**
+   * <p>An error or warning for a desired configuration option value.</p>
+   */
+  @js.native
+  trait ValidationMessage extends js.Object {
+    var Message: js.UndefOr[ValidationMessageString]
+    var Severity: js.UndefOr[ValidationSeverity]
+    var Namespace: js.UndefOr[OptionNamespace]
+    var OptionName: js.UndefOr[ConfigurationOptionName]
+  }
+
+  object ValidationMessage {
+    def apply(
+      Message: js.UndefOr[ValidationMessageString] = js.undefined,
+      Severity: js.UndefOr[ValidationSeverity] = js.undefined,
+      Namespace: js.UndefOr[OptionNamespace] = js.undefined,
+      OptionName: js.UndefOr[ConfigurationOptionName] = js.undefined): ValidationMessage = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Message" -> Message.map { x => x.asInstanceOf[js.Any] },
+        "Severity" -> Severity.map { x => x.asInstanceOf[js.Any] },
+        "Namespace" -> Namespace.map { x => x.asInstanceOf[js.Any] },
+        "OptionName" -> OptionName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ValidationMessage]
+    }
+  }
+
+  object ValidationSeverityEnum {
+    val error = "error"
+    val warning = "warning"
+
+    val values = IndexedSeq(error, warning)
+  }
+}

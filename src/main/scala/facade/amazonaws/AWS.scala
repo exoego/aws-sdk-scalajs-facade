@@ -1,69 +1,146 @@
 package facade.amazonaws
 
-import scala.scalajs._
-import scala.scalajs.js.Dynamic.{ global => g, newInstance => jsnew }
-import scala.scalajs.js.annotation.JSName
-
-import facade.amazonaws.services.s3._
-
 object AWS {
-
-  private lazy val aws = g.require("aws-sdk")
-
-  val config: AWSConfig = aws.config.asInstanceOf[AWSConfig]
-
-  def S3(): S3 = jsnew(aws.S3)().asInstanceOf[S3]
+  def ACM(options: AWSConfig = AWSConfig()): services.acm.ACM = new services.acm.ACM(options)
+  def ACMPCA(options: AWSConfig = AWSConfig()): services.acmpca.ACMPCA = new services.acmpca.ACMPCA(options)
+  def AlexaForBusiness(options: AWSConfig = AWSConfig()): services.alexaforbusiness.AlexaForBusiness = new services.alexaforbusiness.AlexaForBusiness(options)
+  def APIGateway(options: AWSConfig = AWSConfig()): services.apigateway.APIGateway = new services.apigateway.APIGateway(options)
+  def ApplicationAutoScaling(options: AWSConfig = AWSConfig()): services.applicationautoscaling.ApplicationAutoScaling = new services.applicationautoscaling.ApplicationAutoScaling(options)
+  def AppStream(options: AWSConfig = AWSConfig()): services.appstream.AppStream = new services.appstream.AppStream(options)
+  def AppSync(options: AWSConfig = AWSConfig()): services.appsync.AppSync = new services.appsync.AppSync(options)
+  def Athena(options: AWSConfig = AWSConfig()): services.athena.Athena = new services.athena.Athena(options)
+  def AutoScaling(options: AWSConfig = AWSConfig()): services.autoscaling.AutoScaling = new services.autoscaling.AutoScaling(options)
+  def MigrationHub(options: AWSConfig = AWSConfig()): services.migrationhub.MigrationHub = new services.migrationhub.MigrationHub(options)
+  def Batch(options: AWSConfig = AWSConfig()): services.batch.Batch = new services.batch.Batch(options)
+  def BudgetsService(options: AWSConfig = AWSConfig()): services.budgetsservice.BudgetsService = new services.budgetsservice.BudgetsService(options)
+  def CostExplorer(options: AWSConfig = AWSConfig()): services.costexplorer.CostExplorer = new services.costexplorer.CostExplorer(options)
+  def Chime(options: AWSConfig = AWSConfig()): services.chime.Chime = new services.chime.Chime(options)
+  def Cloud9(options: AWSConfig = AWSConfig()): services.cloud9.Cloud9 = new services.cloud9.Cloud9(options)
+  def CloudDirectory(options: AWSConfig = AWSConfig()): services.clouddirectory.CloudDirectory = new services.clouddirectory.CloudDirectory(options)
+  def CloudFormation(options: AWSConfig = AWSConfig()): services.cloudformation.CloudFormation = new services.cloudformation.CloudFormation(options)
+  def CloudFront(options: AWSConfig = AWSConfig()): services.cloudfront.CloudFront = new services.cloudfront.CloudFront(options)
+  def CloudHSM(options: AWSConfig = AWSConfig()): services.cloudhsm.CloudHSM = new services.cloudhsm.CloudHSM(options)
+  def CloudHSMV2(options: AWSConfig = AWSConfig()): services.cloudhsmv2.CloudHSMV2 = new services.cloudhsmv2.CloudHSMV2(options)
+  def CloudSearch(options: AWSConfig = AWSConfig()): services.cloudsearch.CloudSearch = new services.cloudsearch.CloudSearch(options)
+  def CloudSearchDomain(options: AWSConfig = AWSConfig()): services.cloudsearchdomain.CloudSearchDomain = new services.cloudsearchdomain.CloudSearchDomain(options)
+  def CloudTrail(options: AWSConfig = AWSConfig()): services.cloudtrail.CloudTrail = new services.cloudtrail.CloudTrail(options)
+  def CodeDeploy(options: AWSConfig = AWSConfig()): services.codedeploy.CodeDeploy = new services.codedeploy.CodeDeploy(options)
+  def CodeCommit(options: AWSConfig = AWSConfig()): services.codecommit.CodeCommit = new services.codecommit.CodeCommit(options)
+  def CodeStar(options: AWSConfig = AWSConfig()): services.codestar.CodeStar = new services.codestar.CodeStar(options)
+  def CognitoIdentityProvider(options: AWSConfig = AWSConfig()): services.cognitoidentityprovider.CognitoIdentityProvider = new services.cognitoidentityprovider.CognitoIdentityProvider(options)
+  def CognitoIdentity(options: AWSConfig = AWSConfig()): services.cognitoidentity.CognitoIdentity = new services.cognitoidentity.CognitoIdentity(options)
+  def CognitoSync(options: AWSConfig = AWSConfig()): services.cognitosync.CognitoSync = new services.cognitosync.CognitoSync(options)
+  def Comprehend(options: AWSConfig = AWSConfig()): services.comprehend.Comprehend = new services.comprehend.Comprehend(options)
+  def ConfigService(options: AWSConfig = AWSConfig()): services.configservice.ConfigService = new services.configservice.ConfigService(options)
+  def Connect(options: AWSConfig = AWSConfig()): services.connect.Connect = new services.connect.Connect(options)
+  def CUR(options: AWSConfig = AWSConfig()): services.cur.CUR = new services.cur.CUR(options)
+  def DataPipeline(options: AWSConfig = AWSConfig()): services.datapipeline.DataPipeline = new services.datapipeline.DataPipeline(options)
+  def DAX(options: AWSConfig = AWSConfig()): services.dax.DAX = new services.dax.DAX(options)
+  def DeviceFarm(options: AWSConfig = AWSConfig()): services.devicefarm.DeviceFarm = new services.devicefarm.DeviceFarm(options)
+  def DirectConnect(options: AWSConfig = AWSConfig()): services.directconnect.DirectConnect = new services.directconnect.DirectConnect(options)
+  def ApplicationDiscovery(options: AWSConfig = AWSConfig()): services.applicationdiscovery.ApplicationDiscovery = new services.applicationdiscovery.ApplicationDiscovery(options)
+  def DLM(options: AWSConfig = AWSConfig()): services.dlm.DLM = new services.dlm.DLM(options)
+  def DMS(options: AWSConfig = AWSConfig()): services.dms.DMS = new services.dms.DMS(options)
+  def DirectoryService(options: AWSConfig = AWSConfig()): services.directoryservice.DirectoryService = new services.directoryservice.DirectoryService(options)
+  def DynamoDB(options: AWSConfig = AWSConfig()): services.dynamodb.DynamoDB = new services.dynamodb.DynamoDB(options)
+  def EC2(options: AWSConfig = AWSConfig()): services.ec2.EC2 = new services.ec2.EC2(options)
+  def ECR(options: AWSConfig = AWSConfig()): services.ecr.ECR = new services.ecr.ECR(options)
+  def ECS(options: AWSConfig = AWSConfig()): services.ecs.ECS = new services.ecs.ECS(options)
+  def EKS(options: AWSConfig = AWSConfig()): services.eks.EKS = new services.eks.EKS(options)
+  def ElastiCache(options: AWSConfig = AWSConfig()): services.elasticache.ElastiCache = new services.elasticache.ElastiCache(options)
+  def ElasticBeanstalk(options: AWSConfig = AWSConfig()): services.elasticbeanstalk.ElasticBeanstalk = new services.elasticbeanstalk.ElasticBeanstalk(options)
+  def EFS(options: AWSConfig = AWSConfig()): services.efs.EFS = new services.efs.EFS(options)
+  def ELB(options: AWSConfig = AWSConfig()): services.elb.ELB = new services.elb.ELB(options)
+  def ELBv2(options: AWSConfig = AWSConfig()): services.elbv2.ELBv2 = new services.elbv2.ELBv2(options)
+  def EMR(options: AWSConfig = AWSConfig()): services.emr.EMR = new services.emr.EMR(options)
+  def ElasticTranscoder(options: AWSConfig = AWSConfig()): services.elastictranscoder.ElasticTranscoder = new services.elastictranscoder.ElasticTranscoder(options)
+  def SES(options: AWSConfig = AWSConfig()): services.ses.SES = new services.ses.SES(options)
+  def MarketplaceEntitlementService(options: AWSConfig = AWSConfig()): services.marketplaceentitlementservice.MarketplaceEntitlementService = new services.marketplaceentitlementservice.MarketplaceEntitlementService(options)
+  def ES(options: AWSConfig = AWSConfig()): services.es.ES = new services.es.ES(options)
+  def CloudWatchEvents(options: AWSConfig = AWSConfig()): services.cloudwatchevents.CloudWatchEvents = new services.cloudwatchevents.CloudWatchEvents(options)
+  def Firehose(options: AWSConfig = AWSConfig()): services.firehose.Firehose = new services.firehose.Firehose(options)
+  def FMS(options: AWSConfig = AWSConfig()): services.fms.FMS = new services.fms.FMS(options)
+  def GameLift(options: AWSConfig = AWSConfig()): services.gamelift.GameLift = new services.gamelift.GameLift(options)
+  def Glacier(options: AWSConfig = AWSConfig()): services.glacier.Glacier = new services.glacier.Glacier(options)
+  def Glue(options: AWSConfig = AWSConfig()): services.glue.Glue = new services.glue.Glue(options)
+  def Greengrass(options: AWSConfig = AWSConfig()): services.greengrass.Greengrass = new services.greengrass.Greengrass(options)
+  def GuardDuty(options: AWSConfig = AWSConfig()): services.guardduty.GuardDuty = new services.guardduty.GuardDuty(options)
+  def Health(options: AWSConfig = AWSConfig()): services.health.Health = new services.health.Health(options)
+  def IAM(options: AWSConfig = AWSConfig()): services.iam.IAM = new services.iam.IAM(options)
+  def ImportExport(options: AWSConfig = AWSConfig()): services.importexport.ImportExport = new services.importexport.ImportExport(options)
+  def Inspector(options: AWSConfig = AWSConfig()): services.inspector.Inspector = new services.inspector.Inspector(options)
+  def IoT1ClickDevicesService(options: AWSConfig = AWSConfig()): services.iot1clickdevicesservice.IoT1ClickDevicesService = new services.iot1clickdevicesservice.IoT1ClickDevicesService(options)
+  def Iot(options: AWSConfig = AWSConfig()): services.iot.Iot = new services.iot.Iot(options)
+  def IoTJobsDataPlane(options: AWSConfig = AWSConfig()): services.iotjobsdataplane.IoTJobsDataPlane = new services.iotjobsdataplane.IoTJobsDataPlane(options)
+  def IoTAnalytics(options: AWSConfig = AWSConfig()): services.iotanalytics.IoTAnalytics = new services.iotanalytics.IoTAnalytics(options)
+  def Kinesis(options: AWSConfig = AWSConfig()): services.kinesis.Kinesis = new services.kinesis.Kinesis(options)
+  def KinesisVideoArchivedMedia(options: AWSConfig = AWSConfig()): services.kinesisvideoarchivedmedia.KinesisVideoArchivedMedia = new services.kinesisvideoarchivedmedia.KinesisVideoArchivedMedia(options)
+  def KinesisVideoMedia(options: AWSConfig = AWSConfig()): services.kinesisvideomedia.KinesisVideoMedia = new services.kinesisvideomedia.KinesisVideoMedia(options)
+  def KinesisAnalytics(options: AWSConfig = AWSConfig()): services.kinesisanalytics.KinesisAnalytics = new services.kinesisanalytics.KinesisAnalytics(options)
+  def KinesisVideo(options: AWSConfig = AWSConfig()): services.kinesisvideo.KinesisVideo = new services.kinesisvideo.KinesisVideo(options)
+  def KMS(options: AWSConfig = AWSConfig()): services.kms.KMS = new services.kms.KMS(options)
+  def Lambda(options: AWSConfig = AWSConfig()): services.lambda.Lambda = new services.lambda.Lambda(options)
+  def LexModelBuildingService(options: AWSConfig = AWSConfig()): services.lexmodelbuildingservice.LexModelBuildingService = new services.lexmodelbuildingservice.LexModelBuildingService(options)
+  def Lightsail(options: AWSConfig = AWSConfig()): services.lightsail.Lightsail = new services.lightsail.Lightsail(options)
+  def CloudWatchLogs(options: AWSConfig = AWSConfig()): services.cloudwatchlogs.CloudWatchLogs = new services.cloudwatchlogs.CloudWatchLogs(options)
+  def MachineLearning(options: AWSConfig = AWSConfig()): services.machinelearning.MachineLearning = new services.machinelearning.MachineLearning(options)
+  def Macie(options: AWSConfig = AWSConfig()): services.macie.Macie = new services.macie.Macie(options)
+  def MarketplaceCommerceAnalytics(options: AWSConfig = AWSConfig()): services.marketplacecommerceanalytics.MarketplaceCommerceAnalytics = new services.marketplacecommerceanalytics.MarketplaceCommerceAnalytics(options)
+  def MediaConvert(options: AWSConfig = AWSConfig()): services.mediaconvert.MediaConvert = new services.mediaconvert.MediaConvert(options)
+  def MediaLive(options: AWSConfig = AWSConfig()): services.medialive.MediaLive = new services.medialive.MediaLive(options)
+  def MediaPackage(options: AWSConfig = AWSConfig()): services.mediapackage.MediaPackage = new services.mediapackage.MediaPackage(options)
+  def MediaStore(options: AWSConfig = AWSConfig()): services.mediastore.MediaStore = new services.mediastore.MediaStore(options)
+  def MediaStoreData(options: AWSConfig = AWSConfig()): services.mediastoredata.MediaStoreData = new services.mediastoredata.MediaStoreData(options)
+  def MediaTailor(options: AWSConfig = AWSConfig()): services.mediatailor.MediaTailor = new services.mediatailor.MediaTailor(options)
+  def MarketplaceMetering(options: AWSConfig = AWSConfig()): services.marketplacemetering.MarketplaceMetering = new services.marketplacemetering.MarketplaceMetering(options)
+  def Mobile(options: AWSConfig = AWSConfig()): services.mobile.Mobile = new services.mobile.Mobile(options)
+  def MobileAnalytics(options: AWSConfig = AWSConfig()): services.mobileanalytics.MobileAnalytics = new services.mobileanalytics.MobileAnalytics(options)
+  def CloudWatch(options: AWSConfig = AWSConfig()): services.cloudwatch.CloudWatch = new services.cloudwatch.CloudWatch(options)
+  def MQ(options: AWSConfig = AWSConfig()): services.mq.MQ = new services.mq.MQ(options)
+  def MTurk(options: AWSConfig = AWSConfig()): services.mturk.MTurk = new services.mturk.MTurk(options)
+  def Neptune(options: AWSConfig = AWSConfig()): services.neptune.Neptune = new services.neptune.Neptune(options)
+  def OpsWorks(options: AWSConfig = AWSConfig()): services.opsworks.OpsWorks = new services.opsworks.OpsWorks(options)
+  def OpsWorksCM(options: AWSConfig = AWSConfig()): services.opsworkscm.OpsWorksCM = new services.opsworkscm.OpsWorksCM(options)
+  def Organizations(options: AWSConfig = AWSConfig()): services.organizations.Organizations = new services.organizations.Organizations(options)
+  def PI(options: AWSConfig = AWSConfig()): services.pi.PI = new services.pi.PI(options)
+  def Pinpoint(options: AWSConfig = AWSConfig()): services.pinpoint.Pinpoint = new services.pinpoint.Pinpoint(options)
+  def PinpointEmail(options: AWSConfig = AWSConfig()): services.pinpointemail.PinpointEmail = new services.pinpointemail.PinpointEmail(options)
+  def Polly(options: AWSConfig = AWSConfig()): services.polly.Polly = new services.polly.Polly(options)
+  def Pricing(options: AWSConfig = AWSConfig()): services.pricing.Pricing = new services.pricing.Pricing(options)
+  def RDS(options: AWSConfig = AWSConfig()): services.rds.RDS = new services.rds.RDS(options)
+  def Redshift(options: AWSConfig = AWSConfig()): services.redshift.Redshift = new services.redshift.Redshift(options)
+  def Rekognition(options: AWSConfig = AWSConfig()): services.rekognition.Rekognition = new services.rekognition.Rekognition(options)
+  def ResourceGroups(options: AWSConfig = AWSConfig()): services.resourcegroups.ResourceGroups = new services.resourcegroups.ResourceGroups(options)
+  def ResourceGroupsTaggingAPI(options: AWSConfig = AWSConfig()): services.resourcegroupstaggingapi.ResourceGroupsTaggingAPI = new services.resourcegroupstaggingapi.ResourceGroupsTaggingAPI(options)
+  def Route53(options: AWSConfig = AWSConfig()): services.route53.Route53 = new services.route53.Route53(options)
+  def Route53Domains(options: AWSConfig = AWSConfig()): services.route53domains.Route53Domains = new services.route53domains.Route53Domains(options)
+  def LexRuntime(options: AWSConfig = AWSConfig()): services.lexruntime.LexRuntime = new services.lexruntime.LexRuntime(options)
+  def SageMakerRuntime(options: AWSConfig = AWSConfig()): services.sagemakerruntime.SageMakerRuntime = new services.sagemakerruntime.SageMakerRuntime(options)
+  def S3(options: AWSConfig = AWSConfig()): services.s3.S3 = new services.s3.S3(options)
+  def SageMaker(options: AWSConfig = AWSConfig()): services.sagemaker.SageMaker = new services.sagemaker.SageMaker(options)
+  def SimpleDB(options: AWSConfig = AWSConfig()): services.simpledb.SimpleDB = new services.simpledb.SimpleDB(options)
+  def SecretsManager(options: AWSConfig = AWSConfig()): services.secretsmanager.SecretsManager = new services.secretsmanager.SecretsManager(options)
+  def ServerlessApplicationRepository(options: AWSConfig = AWSConfig()): services.serverlessapplicationrepository.ServerlessApplicationRepository = new services.serverlessapplicationrepository.ServerlessApplicationRepository(options)
+  def ServiceCatalog(options: AWSConfig = AWSConfig()): services.servicecatalog.ServiceCatalog = new services.servicecatalog.ServiceCatalog(options)
+  def ServiceDiscovery(options: AWSConfig = AWSConfig()): services.servicediscovery.ServiceDiscovery = new services.servicediscovery.ServiceDiscovery(options)
+  def Shield(options: AWSConfig = AWSConfig()): services.shield.Shield = new services.shield.Shield(options)
+  def Signer(options: AWSConfig = AWSConfig()): services.signer.Signer = new services.signer.Signer(options)
+  def SMS(options: AWSConfig = AWSConfig()): services.sms.SMS = new services.sms.SMS(options)
+  def Snowball(options: AWSConfig = AWSConfig()): services.snowball.Snowball = new services.snowball.Snowball(options)
+  def SNS(options: AWSConfig = AWSConfig()): services.sns.SNS = new services.sns.SNS(options)
+  def SQS(options: AWSConfig = AWSConfig()): services.sqs.SQS = new services.sqs.SQS(options)
+  def SSM(options: AWSConfig = AWSConfig()): services.ssm.SSM = new services.ssm.SSM(options)
+  def StepFunctions(options: AWSConfig = AWSConfig()): services.stepfunctions.StepFunctions = new services.stepfunctions.StepFunctions(options)
+  def StorageGateway(options: AWSConfig = AWSConfig()): services.storagegateway.StorageGateway = new services.storagegateway.StorageGateway(options)
+  def DynamoDBStreams(options: AWSConfig = AWSConfig()): services.dynamodbstreams.DynamoDBStreams = new services.dynamodbstreams.DynamoDBStreams(options)
+  def STS(options: AWSConfig = AWSConfig()): services.sts.STS = new services.sts.STS(options)
+  def Support(options: AWSConfig = AWSConfig()): services.support.Support = new services.support.Support(options)
+  def SWF(options: AWSConfig = AWSConfig()): services.swf.SWF = new services.swf.SWF(options)
+  def TranscribeService(options: AWSConfig = AWSConfig()): services.transcribeservice.TranscribeService = new services.transcribeservice.TranscribeService(options)
+  def WAF(options: AWSConfig = AWSConfig()): services.waf.WAF = new services.waf.WAF(options)
+  def WAFRegional(options: AWSConfig = AWSConfig()): services.wafregional.WAFRegional = new services.wafregional.WAFRegional(options)
+  def WorkDocs(options: AWSConfig = AWSConfig()): services.workdocs.WorkDocs = new services.workdocs.WorkDocs(options)
+  def WorkMail(options: AWSConfig = AWSConfig()): services.workmail.WorkMail = new services.workmail.WorkMail(options)
+  def WorkSpaces(options: AWSConfig = AWSConfig()): services.workspaces.WorkSpaces = new services.workspaces.WorkSpaces(options)
+  def XRay(options: AWSConfig = AWSConfig()): services.xray.XRay = new services.xray.XRay(options)
 }
-
-@js.native
-trait AWSConfig extends js.Object {
-
-  var region: String = js.native
-
-}
-
-@js.native
-trait Request[T <: js.Object] extends js.Object {
-  def on(event: String, callback: Callback[T]): Request[T] = js.native
-  def send(): Response[T] = js.native
-}
-
-object Event {
-  val success = "success"
-  val error = "error"
-  val complete = "complete"
-  
-  val validate = "validate"
-  val build = "build"
-  val sign = "sign"
-  
-  val send = "send"
-  val retry = "retry"
-  
-  val extractError = "extractError"
-  val extractData = "extractData"
-  
-  val httpHeaders = "httpHeaders"
-  val httpData = "httpData"
-  val httpUploadProgress = "httpUploadProgress"
-  val httpDownloadProgress = "httpDownloadProgress"
-  val httpError = "httpError"
-  val httpDone = "httpDone"
-}
-
-@js.native
-trait Response[T <: js.Object] extends js.Object {
-  val error: Error = js.native
-  val data: T = js.native
-  val request: Request[T] = js.native
-
-  def hasNextPage(): Boolean = js.native
-  def nextPage(): Request[T] = js.native
-}
-
-@js.native
-trait Error extends js.Object {
-  val code: String = js.native
-  val message: String = js.native
-}
-
