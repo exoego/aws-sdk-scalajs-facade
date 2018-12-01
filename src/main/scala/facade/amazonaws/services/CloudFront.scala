@@ -35,6 +35,8 @@ package object cloudfront {
   type MethodsList = js.Array[Method]
   type MinimumProtocolVersion = String
   type OriginCustomHeadersList = js.Array[OriginCustomHeader]
+  type OriginGroupList = js.Array[OriginGroup]
+  type OriginGroupMemberList = js.Array[OriginGroupMember]
   type OriginList = js.Array[Origin]
   type OriginProtocolPolicy = String
   type PathList = js.Array[string]
@@ -47,6 +49,7 @@ package object cloudfront {
   type SignerList = js.Array[Signer]
   type SslProtocol = String
   type SslProtocolsList = js.Array[SslProtocol]
+  type StatusCodeList = js.Array[integer]
   type StreamingDistributionSummaryList = js.Array[StreamingDistributionSummary]
   type TagKey = String
   type TagKeyList = js.Array[TagKey]
@@ -1175,6 +1178,7 @@ package cloudfront {
     var Enabled: js.UndefOr[boolean]
     var CacheBehaviors: js.UndefOr[CacheBehaviors]
     var PriceClass: js.UndefOr[PriceClass]
+    var OriginGroups: js.UndefOr[OriginGroups]
     var Origins: js.UndefOr[Origins]
     var HttpVersion: js.UndefOr[HttpVersion]
     var Logging: js.UndefOr[LoggingConfig]
@@ -1195,6 +1199,7 @@ package cloudfront {
       Enabled: js.UndefOr[boolean] = js.undefined,
       CacheBehaviors: js.UndefOr[CacheBehaviors] = js.undefined,
       PriceClass: js.UndefOr[PriceClass] = js.undefined,
+      OriginGroups: js.UndefOr[OriginGroups] = js.undefined,
       Origins: js.UndefOr[Origins] = js.undefined,
       HttpVersion: js.UndefOr[HttpVersion] = js.undefined,
       Logging: js.UndefOr[LoggingConfig] = js.undefined,
@@ -1212,6 +1217,7 @@ package cloudfront {
         "Enabled" -> Enabled.map { x => x.asInstanceOf[js.Any] },
         "CacheBehaviors" -> CacheBehaviors.map { x => x.asInstanceOf[js.Any] },
         "PriceClass" -> PriceClass.map { x => x.asInstanceOf[js.Any] },
+        "OriginGroups" -> OriginGroups.map { x => x.asInstanceOf[js.Any] },
         "Origins" -> Origins.map { x => x.asInstanceOf[js.Any] },
         "HttpVersion" -> HttpVersion.map { x => x.asInstanceOf[js.Any] },
         "Logging" -> Logging.map { x => x.asInstanceOf[js.Any] },
@@ -1293,6 +1299,7 @@ package cloudfront {
     var Enabled: js.UndefOr[boolean]
     var CacheBehaviors: js.UndefOr[CacheBehaviors]
     var PriceClass: js.UndefOr[PriceClass]
+    var OriginGroups: js.UndefOr[OriginGroups]
     var LastModifiedTime: js.UndefOr[timestamp]
     var DomainName: js.UndefOr[string]
     var Origins: js.UndefOr[Origins]
@@ -1315,6 +1322,7 @@ package cloudfront {
       Enabled: js.UndefOr[boolean] = js.undefined,
       CacheBehaviors: js.UndefOr[CacheBehaviors] = js.undefined,
       PriceClass: js.UndefOr[PriceClass] = js.undefined,
+      OriginGroups: js.UndefOr[OriginGroups] = js.undefined,
       LastModifiedTime: js.UndefOr[timestamp] = js.undefined,
       DomainName: js.UndefOr[string] = js.undefined,
       Origins: js.UndefOr[Origins] = js.undefined,
@@ -1334,6 +1342,7 @@ package cloudfront {
         "Enabled" -> Enabled.map { x => x.asInstanceOf[js.Any] },
         "CacheBehaviors" -> CacheBehaviors.map { x => x.asInstanceOf[js.Any] },
         "PriceClass" -> PriceClass.map { x => x.asInstanceOf[js.Any] },
+        "OriginGroups" -> OriginGroups.map { x => x.asInstanceOf[js.Any] },
         "LastModifiedTime" -> LastModifiedTime.map { x => x.asInstanceOf[js.Any] },
         "DomainName" -> DomainName.map { x => x.asInstanceOf[js.Any] },
         "Origins" -> Origins.map { x => x.asInstanceOf[js.Any] },
@@ -2769,7 +2778,7 @@ package cloudfront {
   }
 
   /**
-   * <p>A complex type that describes the Amazon S3 bucket or the HTTP server (for example, a web server) from which CloudFront gets your files. You must create at least one origin.</p> <p>For the current limit on the number of origins that you can create for a distribution, see <a href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_cloudfront">Amazon CloudFront Limits</a> in the <i>AWS General Reference</i>.</p>
+   * <p>A complex type that describes the Amazon S3 bucket, HTTP server (for example, a web server), Amazon MediaStore, or other server from which CloudFront gets your files. This can also be an origin group, if you've created an origin group. You must specify at least one origin or origin group.</p> <p>For the current limit on the number of origins or origin groups that you can specify for a distribution, see <a href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_cloudfront">Amazon CloudFront Limits</a> in the <i>AWS General Reference</i>.</p>
    */
   @js.native
   trait Origin extends js.Object {
@@ -2822,6 +2831,108 @@ package cloudfront {
     }
   }
 
+  /**
+   * <p>An origin group includes two origins (a primary origin and a second origin to failover to) and a failover criteria that you specify. You create an origin group to support origin failover in CloudFront. When you create or update a distribution, you can specifiy the origin group instead of a single origin, and CloudFront will failover from the primary origin to the second origin under the failover conditions that you've chosen.</p>
+   */
+  @js.native
+  trait OriginGroup extends js.Object {
+    var Id: js.UndefOr[string]
+    var FailoverCriteria: js.UndefOr[OriginGroupFailoverCriteria]
+    var Members: js.UndefOr[OriginGroupMembers]
+  }
+
+  object OriginGroup {
+    def apply(
+      Id: js.UndefOr[string] = js.undefined,
+      FailoverCriteria: js.UndefOr[OriginGroupFailoverCriteria] = js.undefined,
+      Members: js.UndefOr[OriginGroupMembers] = js.undefined): OriginGroup = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Id" -> Id.map { x => x.asInstanceOf[js.Any] },
+        "FailoverCriteria" -> FailoverCriteria.map { x => x.asInstanceOf[js.Any] },
+        "Members" -> Members.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[OriginGroup]
+    }
+  }
+
+  /**
+   * <p>A complex data type that includes information about the failover criteria for an origin group, including the status codes for which CloudFront will failover from the primary origin to the second origin.</p>
+   */
+  @js.native
+  trait OriginGroupFailoverCriteria extends js.Object {
+    var StatusCodes: js.UndefOr[StatusCodes]
+  }
+
+  object OriginGroupFailoverCriteria {
+    def apply(
+      StatusCodes: js.UndefOr[StatusCodes] = js.undefined): OriginGroupFailoverCriteria = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "StatusCodes" -> StatusCodes.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[OriginGroupFailoverCriteria]
+    }
+  }
+
+  /**
+   * <p>An origin in an origin group.</p>
+   */
+  @js.native
+  trait OriginGroupMember extends js.Object {
+    var OriginId: js.UndefOr[string]
+  }
+
+  object OriginGroupMember {
+    def apply(
+      OriginId: js.UndefOr[string] = js.undefined): OriginGroupMember = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "OriginId" -> OriginId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[OriginGroupMember]
+    }
+  }
+
+  /**
+   * <p>A complex data type for the origins included in an origin group.</p>
+   */
+  @js.native
+  trait OriginGroupMembers extends js.Object {
+    var Quantity: js.UndefOr[integer]
+    var Items: js.UndefOr[OriginGroupMemberList]
+  }
+
+  object OriginGroupMembers {
+    def apply(
+      Quantity: js.UndefOr[integer] = js.undefined,
+      Items: js.UndefOr[OriginGroupMemberList] = js.undefined): OriginGroupMembers = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Quantity" -> Quantity.map { x => x.asInstanceOf[js.Any] },
+        "Items" -> Items.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[OriginGroupMembers]
+    }
+  }
+
+  /**
+   * <p>A complex data type for the origin groups specified for a distribution.</p>
+   */
+  @js.native
+  trait OriginGroups extends js.Object {
+    var Quantity: js.UndefOr[integer]
+    var Items: js.UndefOr[OriginGroupList]
+  }
+
+  object OriginGroups {
+    def apply(
+      Quantity: js.UndefOr[integer] = js.undefined,
+      Items: js.UndefOr[OriginGroupList] = js.undefined): OriginGroups = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Quantity" -> Quantity.map { x => x.asInstanceOf[js.Any] },
+        "Items" -> Items.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[OriginGroups]
+    }
+  }
+
   object OriginProtocolPolicyEnum {
     val `http-only` = "http-only"
     val `match-viewer` = "match-viewer"
@@ -2852,7 +2963,7 @@ package cloudfront {
   }
 
   /**
-   * <p>A complex type that contains information about origins for this distribution. </p>
+   * <p>A complex type that contains information about origins and origin groups for this distribution. </p>
    */
   @js.native
   trait Origins extends js.Object {
@@ -2980,7 +3091,7 @@ package cloudfront {
   }
 
   /**
-   * <p> Public key information summary. </p>
+   * <p>A complex data type for public key information. </p>
    */
   @js.native
   trait PublicKeySummary extends js.Object {
@@ -3182,6 +3293,27 @@ package cloudfront {
     val `TLSv1.2` = "TLSv1.2"
 
     val values = IndexedSeq(SSLv3, TLSv1, `TLSv1.1`, `TLSv1.2`)
+  }
+
+  /**
+   * <p>A complex data type for the status codes that you specify that, when returned by a primary origin, trigger CloudFront to failover to a second origin.</p>
+   */
+  @js.native
+  trait StatusCodes extends js.Object {
+    var Quantity: js.UndefOr[integer]
+    var Items: js.UndefOr[StatusCodeList]
+  }
+
+  object StatusCodes {
+    def apply(
+      Quantity: js.UndefOr[integer] = js.undefined,
+      Items: js.UndefOr[StatusCodeList] = js.undefined): StatusCodes = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Quantity" -> Quantity.map { x => x.asInstanceOf[js.Any] },
+        "Items" -> Items.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StatusCodes]
+    }
   }
 
   /**

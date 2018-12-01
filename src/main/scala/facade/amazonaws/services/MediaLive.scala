@@ -100,6 +100,7 @@ package object medialive {
   type HlsMode = String
   type HlsOutputSelection = String
   type HlsProgramDateTime = String
+  type HlsRedundantManifest = String
   type HlsSegmentationMode = String
   type HlsStreamInfResolution = String
   type HlsTimedMetadataId3Frame = String
@@ -111,6 +112,7 @@ package object medialive {
   type InputFilter = String
   type InputLossActionForHlsOut = String
   type InputLossActionForMsSmoothOut = String
+  type InputLossActionForRtmpOut = String
   type InputLossActionForUdpOut = String
   type InputLossImageType = String
   type InputMaximumBitrate = String
@@ -3595,6 +3597,7 @@ package medialive {
     var TimestampDeltaMilliseconds: js.UndefOr[__integerMin0]
     var ProgramDateTime: js.UndefOr[HlsProgramDateTime]
     var CaptionLanguageSetting: js.UndefOr[HlsCaptionLanguageSetting]
+    var RedundantManifest: js.UndefOr[HlsRedundantManifest]
     var KeyProviderSettings: js.UndefOr[KeyProviderSettings]
     var ManifestCompression: js.UndefOr[HlsManifestCompression]
     var SegmentsPerSubdirectory: js.UndefOr[__integerMin1]
@@ -3634,6 +3637,7 @@ package medialive {
       TimestampDeltaMilliseconds: js.UndefOr[__integerMin0] = js.undefined,
       ProgramDateTime: js.UndefOr[HlsProgramDateTime] = js.undefined,
       CaptionLanguageSetting: js.UndefOr[HlsCaptionLanguageSetting] = js.undefined,
+      RedundantManifest: js.UndefOr[HlsRedundantManifest] = js.undefined,
       KeyProviderSettings: js.UndefOr[KeyProviderSettings] = js.undefined,
       ManifestCompression: js.UndefOr[HlsManifestCompression] = js.undefined,
       SegmentsPerSubdirectory: js.UndefOr[__integerMin1] = js.undefined,
@@ -3670,6 +3674,7 @@ package medialive {
         "TimestampDeltaMilliseconds" -> TimestampDeltaMilliseconds.map { x => x.asInstanceOf[js.Any] },
         "ProgramDateTime" -> ProgramDateTime.map { x => x.asInstanceOf[js.Any] },
         "CaptionLanguageSetting" -> CaptionLanguageSetting.map { x => x.asInstanceOf[js.Any] },
+        "RedundantManifest" -> RedundantManifest.map { x => x.asInstanceOf[js.Any] },
         "KeyProviderSettings" -> KeyProviderSettings.map { x => x.asInstanceOf[js.Any] },
         "ManifestCompression" -> ManifestCompression.map { x => x.asInstanceOf[js.Any] },
         "SegmentsPerSubdirectory" -> SegmentsPerSubdirectory.map { x => x.asInstanceOf[js.Any] },
@@ -3854,6 +3859,16 @@ package medialive {
     val INCLUDE = "INCLUDE"
 
     val values = IndexedSeq(EXCLUDE, INCLUDE)
+  }
+
+  /**
+   * HLS Redundant Manifest
+   */
+  object HlsRedundantManifestEnum {
+    val DISABLED = "DISABLED"
+    val ENABLED = "ENABLED"
+
+    val values = IndexedSeq(DISABLED, ENABLED)
   }
 
   /**
@@ -4167,6 +4182,16 @@ package medialive {
    * Placeholder documentation for InputLossActionForMsSmoothOut
    */
   object InputLossActionForMsSmoothOutEnum {
+    val EMIT_OUTPUT = "EMIT_OUTPUT"
+    val PAUSE_OUTPUT = "PAUSE_OUTPUT"
+
+    val values = IndexedSeq(EMIT_OUTPUT, PAUSE_OUTPUT)
+  }
+
+  /**
+   * Input Loss Action
+   */
+  object InputLossActionForRtmpOutEnum {
     val EMIT_OUTPUT = "EMIT_OUTPUT"
     val PAUSE_OUTPUT = "PAUSE_OUTPUT"
 
@@ -5937,6 +5962,7 @@ package medialive {
     var CacheLength: js.UndefOr[__integerMin30]
     var CacheFullBehavior: js.UndefOr[RtmpCacheFullBehavior]
     var AuthenticationScheme: js.UndefOr[AuthenticationScheme]
+    var InputLossAction: js.UndefOr[InputLossActionForRtmpOut]
   }
 
   object RtmpGroupSettings {
@@ -5945,13 +5971,15 @@ package medialive {
       CaptionData: js.UndefOr[RtmpCaptionData] = js.undefined,
       CacheLength: js.UndefOr[__integerMin30] = js.undefined,
       CacheFullBehavior: js.UndefOr[RtmpCacheFullBehavior] = js.undefined,
-      AuthenticationScheme: js.UndefOr[AuthenticationScheme] = js.undefined): RtmpGroupSettings = {
+      AuthenticationScheme: js.UndefOr[AuthenticationScheme] = js.undefined,
+      InputLossAction: js.UndefOr[InputLossActionForRtmpOut] = js.undefined): RtmpGroupSettings = {
       val _fields = IndexedSeq[(String, js.Any)](
         "RestartDelay" -> RestartDelay.map { x => x.asInstanceOf[js.Any] },
         "CaptionData" -> CaptionData.map { x => x.asInstanceOf[js.Any] },
         "CacheLength" -> CacheLength.map { x => x.asInstanceOf[js.Any] },
         "CacheFullBehavior" -> CacheFullBehavior.map { x => x.asInstanceOf[js.Any] },
-        "AuthenticationScheme" -> AuthenticationScheme.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "AuthenticationScheme" -> AuthenticationScheme.map { x => x.asInstanceOf[js.Any] },
+        "InputLossAction" -> InputLossAction.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RtmpGroupSettings]
     }

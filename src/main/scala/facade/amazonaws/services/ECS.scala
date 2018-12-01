@@ -29,6 +29,7 @@ package object ecs {
   type ContainerOverrides = js.Array[ContainerOverride]
   type ContainerStateChanges = js.Array[ContainerStateChange]
   type Containers = js.Array[Container]
+  type DeploymentControllerType = String
   type Deployments = js.Array[Deployment]
   type DesiredStatus = String
   type DeviceCgroupPermission = String
@@ -57,6 +58,7 @@ package object ecs {
   type PropagateTags = String
   type RequiresAttributes = js.Array[Attribute]
   type Resources = js.Array[Resource]
+  type ScaleUnit = String
   type SchedulingStrategy = String
   type Scope = String
   type SecretList = js.Array[Secret]
@@ -68,6 +70,7 @@ package object ecs {
   type SettingName = String
   type Settings = js.Array[Setting]
   type SortOrder = String
+  type StabilityStatus = String
   type Statistics = js.Array[KeyValuePair]
   type StringList = js.Array[String]
   type StringMap = js.Dictionary[String]
@@ -85,6 +88,7 @@ package object ecs {
   type TaskDefinitionStatus = String
   type TaskField = String
   type TaskFieldList = js.Array[TaskField]
+  type TaskSets = js.Array[TaskSet]
   type TaskStopCode = String
   type Tasks = js.Array[Task]
   type Timestamp = js.Date
@@ -662,6 +666,7 @@ package ecs {
     var propagateTags: js.UndefOr[PropagateTags]
     var deploymentConfiguration: js.UndefOr[DeploymentConfiguration]
     var taskDefinition: js.UndefOr[String]
+    var deploymentController: js.UndefOr[DeploymentController]
     var serviceRegistries: js.UndefOr[ServiceRegistries]
     var placementConstraints: js.UndefOr[PlacementConstraints]
     var schedulingStrategy: js.UndefOr[SchedulingStrategy]
@@ -685,6 +690,7 @@ package ecs {
       propagateTags: js.UndefOr[PropagateTags] = js.undefined,
       deploymentConfiguration: js.UndefOr[DeploymentConfiguration] = js.undefined,
       taskDefinition: js.UndefOr[String] = js.undefined,
+      deploymentController: js.UndefOr[DeploymentController] = js.undefined,
       serviceRegistries: js.UndefOr[ServiceRegistries] = js.undefined,
       placementConstraints: js.UndefOr[PlacementConstraints] = js.undefined,
       schedulingStrategy: js.UndefOr[SchedulingStrategy] = js.undefined): CreateServiceRequest = {
@@ -705,6 +711,7 @@ package ecs {
         "propagateTags" -> propagateTags.map { x => x.asInstanceOf[js.Any] },
         "deploymentConfiguration" -> deploymentConfiguration.map { x => x.asInstanceOf[js.Any] },
         "taskDefinition" -> taskDefinition.map { x => x.asInstanceOf[js.Any] },
+        "deploymentController" -> deploymentController.map { x => x.asInstanceOf[js.Any] },
         "serviceRegistries" -> serviceRegistries.map { x => x.asInstanceOf[js.Any] },
         "placementConstraints" -> placementConstraints.map { x => x.asInstanceOf[js.Any] },
         "schedulingStrategy" -> schedulingStrategy.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
@@ -861,7 +868,7 @@ package ecs {
   }
 
   /**
-   * <p>The details of an Amazon ECS service deployment.</p>
+   * <p>The details of an Amazon ECS service deployment. This is used when a service uses the <code>CODE_DEPLOY</code> deployment controller type.</p>
    */
   @js.native
   trait Deployment extends js.Object {
@@ -927,6 +934,31 @@ package ecs {
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeploymentConfiguration]
     }
+  }
+
+  /**
+   * <p>The deployment controller to use for the service. For more information, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon ECS Deployment Types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+   */
+  @js.native
+  trait DeploymentController extends js.Object {
+    var `type`: js.UndefOr[DeploymentControllerType]
+  }
+
+  object DeploymentController {
+    def apply(
+      `type`: js.UndefOr[DeploymentControllerType] = js.undefined): DeploymentController = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "`type`" -> `type`.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeploymentController]
+    }
+  }
+
+  object DeploymentControllerTypeEnum {
+    val ECS = "ECS"
+    val CODE_DEPLOY = "CODE_DEPLOY"
+
+    val values = IndexedSeq(ECS, CODE_DEPLOY)
   }
 
   @js.native
@@ -1872,7 +1904,7 @@ package ecs {
   }
 
   /**
-   * <p>Details on a load balancer that is used with a service.</p> <p>Services with tasks that use the <code>awsvpc</code> network mode (for example, those with the Fargate launch type) only support Application Load Balancers and Network Load Balancers. Classic Load Balancers are not supported. Also, when you create any target groups for these services, you must choose <code>ip</code> as the target type, not <code>instance</code>. Tasks that use the <code>awsvpc</code> network mode are associated with an elastic network interface, not an Amazon EC2 instance.</p>
+   * <p>Details on a load balancer that is used with a service.</p> <p>If the service is using the <code>ECS</code> deployment controller, you are limited to one load balancer or target group.</p> <p>If the service is using the <code>CODE_DEPLOY</code> deployment controller, the service is required to use either an Application Load Balancer or Network Load Balancer. When you are creating an AWS CodeDeploy deployment group, you specify two target groups (referred to as a <code>targetGroupPair</code>). Each target group binds to a separate task set in the deployment. The load balancer can also have up to two listeners, a required listener for production traffic and an optional listener that allows you to test new revisions of the service before routing production traffic to it.</p> <p>Services with tasks that use the <code>awsvpc</code> network mode (for example, those with the Fargate launch type) only support Application Load Balancers and Network Load Balancers. Classic Load Balancers are not supported. Also, when you create any target groups for these services, you must choose <code>ip</code> as the target type, not <code>instance</code>. Tasks that use the <code>awsvpc</code> network mode are associated with an elastic network interface, not an Amazon EC2 instance.</p>
    */
   @js.native
   trait LoadBalancer extends js.Object {
@@ -2440,6 +2472,33 @@ package ecs {
     }
   }
 
+  /**
+   * <p>A floating-point percentage of the desired number of tasks to place and keep running in the service. This is used when a service uses the <code>CODE_DEPLOY</code> deployment controller type.</p>
+   */
+  @js.native
+  trait Scale extends js.Object {
+    var value: js.UndefOr[Double]
+    var unit: js.UndefOr[ScaleUnit]
+  }
+
+  object Scale {
+    def apply(
+      value: js.UndefOr[Double] = js.undefined,
+      unit: js.UndefOr[ScaleUnit] = js.undefined): Scale = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "value" -> value.map { x => x.asInstanceOf[js.Any] },
+        "unit" -> unit.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Scale]
+    }
+  }
+
+  object ScaleUnitEnum {
+    val PERCENT = "PERCENT"
+
+    val values = IndexedSeq(PERCENT)
+  }
+
   object SchedulingStrategyEnum {
     val REPLICA = "REPLICA"
     val DAEMON = "DAEMON"
@@ -2491,6 +2550,7 @@ package ecs {
     var serviceArn: js.UndefOr[String]
     var launchType: js.UndefOr[LaunchType]
     var loadBalancers: js.UndefOr[LoadBalancers]
+    var taskSets: js.UndefOr[TaskSets]
     var healthCheckGracePeriodSeconds: js.UndefOr[BoxedInteger]
     var propagateTags: js.UndefOr[PropagateTags]
     var deploymentConfiguration: js.UndefOr[DeploymentConfiguration]
@@ -2499,6 +2559,7 @@ package ecs {
     var createdAt: js.UndefOr[Timestamp]
     var createdBy: js.UndefOr[String]
     var taskDefinition: js.UndefOr[String]
+    var deploymentController: js.UndefOr[DeploymentController]
     var clusterArn: js.UndefOr[String]
     var serviceRegistries: js.UndefOr[ServiceRegistries]
     var placementConstraints: js.UndefOr[PlacementConstraints]
@@ -2521,6 +2582,7 @@ package ecs {
       serviceArn: js.UndefOr[String] = js.undefined,
       launchType: js.UndefOr[LaunchType] = js.undefined,
       loadBalancers: js.UndefOr[LoadBalancers] = js.undefined,
+      taskSets: js.UndefOr[TaskSets] = js.undefined,
       healthCheckGracePeriodSeconds: js.UndefOr[BoxedInteger] = js.undefined,
       propagateTags: js.UndefOr[PropagateTags] = js.undefined,
       deploymentConfiguration: js.UndefOr[DeploymentConfiguration] = js.undefined,
@@ -2529,6 +2591,7 @@ package ecs {
       createdAt: js.UndefOr[Timestamp] = js.undefined,
       createdBy: js.UndefOr[String] = js.undefined,
       taskDefinition: js.UndefOr[String] = js.undefined,
+      deploymentController: js.UndefOr[DeploymentController] = js.undefined,
       clusterArn: js.UndefOr[String] = js.undefined,
       serviceRegistries: js.UndefOr[ServiceRegistries] = js.undefined,
       placementConstraints: js.UndefOr[PlacementConstraints] = js.undefined,
@@ -2548,6 +2611,7 @@ package ecs {
         "serviceArn" -> serviceArn.map { x => x.asInstanceOf[js.Any] },
         "launchType" -> launchType.map { x => x.asInstanceOf[js.Any] },
         "loadBalancers" -> loadBalancers.map { x => x.asInstanceOf[js.Any] },
+        "taskSets" -> taskSets.map { x => x.asInstanceOf[js.Any] },
         "healthCheckGracePeriodSeconds" -> healthCheckGracePeriodSeconds.map { x => x.asInstanceOf[js.Any] },
         "propagateTags" -> propagateTags.map { x => x.asInstanceOf[js.Any] },
         "deploymentConfiguration" -> deploymentConfiguration.map { x => x.asInstanceOf[js.Any] },
@@ -2556,6 +2620,7 @@ package ecs {
         "createdAt" -> createdAt.map { x => x.asInstanceOf[js.Any] },
         "createdBy" -> createdBy.map { x => x.asInstanceOf[js.Any] },
         "taskDefinition" -> taskDefinition.map { x => x.asInstanceOf[js.Any] },
+        "deploymentController" -> deploymentController.map { x => x.asInstanceOf[js.Any] },
         "clusterArn" -> clusterArn.map { x => x.asInstanceOf[js.Any] },
         "serviceRegistries" -> serviceRegistries.map { x => x.asInstanceOf[js.Any] },
         "placementConstraints" -> placementConstraints.map { x => x.asInstanceOf[js.Any] },
@@ -2662,6 +2727,13 @@ package ecs {
     val DESC = "DESC"
 
     val values = IndexedSeq(ASC, DESC)
+  }
+
+  object StabilityStatusEnum {
+    val STEADY_STATE = "STEADY_STATE"
+    val STABILIZING = "STABILIZING"
+
+    val values = IndexedSeq(STEADY_STATE, STABILIZING)
   }
 
   @js.native
@@ -3187,6 +3259,75 @@ package ecs {
     }
   }
 
+  /**
+   * <p>Information about a set of Amazon ECS tasks in an AWS CodeDeploy deployment. An Amazon ECS task set includes details such as the desired number of tasks, how many tasks are running, and whether the task set serves production traffic.</p>
+   */
+  @js.native
+  trait TaskSet extends js.Object {
+    var startedBy: js.UndefOr[String]
+    var updatedAt: js.UndefOr[Timestamp]
+    var runningCount: js.UndefOr[Int]
+    var externalId: js.UndefOr[String]
+    var platformVersion: js.UndefOr[String]
+    var networkConfiguration: js.UndefOr[NetworkConfiguration]
+    var computedDesiredCount: js.UndefOr[Int]
+    var scale: js.UndefOr[Scale]
+    var stabilityStatus: js.UndefOr[StabilityStatus]
+    var launchType: js.UndefOr[LaunchType]
+    var loadBalancers: js.UndefOr[LoadBalancers]
+    var id: js.UndefOr[String]
+    var status: js.UndefOr[String]
+    var createdAt: js.UndefOr[Timestamp]
+    var taskDefinition: js.UndefOr[String]
+    var stabilityStatusAt: js.UndefOr[Timestamp]
+    var pendingCount: js.UndefOr[Int]
+    var taskSetArn: js.UndefOr[String]
+  }
+
+  object TaskSet {
+    def apply(
+      startedBy: js.UndefOr[String] = js.undefined,
+      updatedAt: js.UndefOr[Timestamp] = js.undefined,
+      runningCount: js.UndefOr[Int] = js.undefined,
+      externalId: js.UndefOr[String] = js.undefined,
+      platformVersion: js.UndefOr[String] = js.undefined,
+      networkConfiguration: js.UndefOr[NetworkConfiguration] = js.undefined,
+      computedDesiredCount: js.UndefOr[Int] = js.undefined,
+      scale: js.UndefOr[Scale] = js.undefined,
+      stabilityStatus: js.UndefOr[StabilityStatus] = js.undefined,
+      launchType: js.UndefOr[LaunchType] = js.undefined,
+      loadBalancers: js.UndefOr[LoadBalancers] = js.undefined,
+      id: js.UndefOr[String] = js.undefined,
+      status: js.UndefOr[String] = js.undefined,
+      createdAt: js.UndefOr[Timestamp] = js.undefined,
+      taskDefinition: js.UndefOr[String] = js.undefined,
+      stabilityStatusAt: js.UndefOr[Timestamp] = js.undefined,
+      pendingCount: js.UndefOr[Int] = js.undefined,
+      taskSetArn: js.UndefOr[String] = js.undefined): TaskSet = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "startedBy" -> startedBy.map { x => x.asInstanceOf[js.Any] },
+        "updatedAt" -> updatedAt.map { x => x.asInstanceOf[js.Any] },
+        "runningCount" -> runningCount.map { x => x.asInstanceOf[js.Any] },
+        "externalId" -> externalId.map { x => x.asInstanceOf[js.Any] },
+        "platformVersion" -> platformVersion.map { x => x.asInstanceOf[js.Any] },
+        "networkConfiguration" -> networkConfiguration.map { x => x.asInstanceOf[js.Any] },
+        "computedDesiredCount" -> computedDesiredCount.map { x => x.asInstanceOf[js.Any] },
+        "scale" -> scale.map { x => x.asInstanceOf[js.Any] },
+        "stabilityStatus" -> stabilityStatus.map { x => x.asInstanceOf[js.Any] },
+        "launchType" -> launchType.map { x => x.asInstanceOf[js.Any] },
+        "loadBalancers" -> loadBalancers.map { x => x.asInstanceOf[js.Any] },
+        "id" -> id.map { x => x.asInstanceOf[js.Any] },
+        "status" -> status.map { x => x.asInstanceOf[js.Any] },
+        "createdAt" -> createdAt.map { x => x.asInstanceOf[js.Any] },
+        "taskDefinition" -> taskDefinition.map { x => x.asInstanceOf[js.Any] },
+        "stabilityStatusAt" -> stabilityStatusAt.map { x => x.asInstanceOf[js.Any] },
+        "pendingCount" -> pendingCount.map { x => x.asInstanceOf[js.Any] },
+        "taskSetArn" -> taskSetArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TaskSet]
+    }
+  }
+
   object TaskStopCodeEnum {
     val TaskFailedToStart = "TaskFailedToStart"
     val EssentialContainerExited = "EssentialContainerExited"
@@ -3452,7 +3593,7 @@ package ecs {
   }
 
   /**
-   * <p>A data volume used in a task definition. For tasks that use a Docker volume, specify a <code>DockerVolumeConfiguration</code>. For tasks that use a bind mount host volume, specify a <code>host</code> and optional <code>sourcePath</code>. For more information, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguideusing_data_volumes.html">Using Data Volumes in Tasks</a>.</p>
+   * <p>A data volume used in a task definition. For tasks that use a Docker volume, specify a <code>DockerVolumeConfiguration</code>. For tasks that use a bind mount host volume, specify a <code>host</code> and optional <code>sourcePath</code>. For more information, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_data_volumes.html">Using Data Volumes in Tasks</a>.</p>
    */
   @js.native
   trait Volume extends js.Object {

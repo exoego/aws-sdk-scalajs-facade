@@ -15,6 +15,7 @@ package object workspaces {
   type BundleIdList = js.Array[BundleId]
   type BundleList = js.Array[WorkspaceBundle]
   type BundleOwner = String
+  type ClientPropertiesList = js.Array[ClientPropertiesResult]
   type Compute = String
   type ComputerName = String
   type ConnectionState = String
@@ -58,7 +59,9 @@ package object workspaces {
   type PaginationToken = String
   type RebootWorkspaceRequests = js.Array[RebootRequest]
   type RebuildWorkspaceRequests = js.Array[RebuildRequest]
+  type ReconnectEnum = String
   type RegistrationCode = String
+  type ResourceIdList = js.Array[NonEmptyString]
   type RootVolumeSizeGib = Int
   type RunningMode = String
   type RunningModeAutoStopTimeoutInMinutes = Int
@@ -112,6 +115,7 @@ package workspaces {
     def deleteWorkspaceImage(params: DeleteWorkspaceImageRequest): Request[DeleteWorkspaceImageResult] = js.native
     def describeAccount(params: DescribeAccountRequest): Request[DescribeAccountResult] = js.native
     def describeAccountModifications(params: DescribeAccountModificationsRequest): Request[DescribeAccountModificationsResult] = js.native
+    def describeClientProperties(params: DescribeClientPropertiesRequest): Request[DescribeClientPropertiesResult] = js.native
     def describeIpGroups(params: DescribeIpGroupsRequest): Request[DescribeIpGroupsResult] = js.native
     def describeTags(params: DescribeTagsRequest): Request[DescribeTagsResult] = js.native
     def describeWorkspaceBundles(params: DescribeWorkspaceBundlesRequest): Request[DescribeWorkspaceBundlesResult] = js.native
@@ -123,6 +127,7 @@ package workspaces {
     def importWorkspaceImage(params: ImportWorkspaceImageRequest): Request[ImportWorkspaceImageResult] = js.native
     def listAvailableManagementCidrRanges(params: ListAvailableManagementCidrRangesRequest): Request[ListAvailableManagementCidrRangesResult] = js.native
     def modifyAccount(params: ModifyAccountRequest): Request[ModifyAccountResult] = js.native
+    def modifyClientProperties(params: ModifyClientPropertiesRequest): Request[ModifyClientPropertiesResult] = js.native
     def modifyWorkspaceProperties(params: ModifyWorkspacePropertiesRequest): Request[ModifyWorkspacePropertiesResult] = js.native
     def modifyWorkspaceState(params: ModifyWorkspaceStateRequest): Request[ModifyWorkspaceStateResult] = js.native
     def rebootWorkspaces(params: RebootWorkspacesRequest): Request[RebootWorkspacesResult] = js.native
@@ -226,6 +231,45 @@ package workspaces {
       val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AuthorizeIpRulesResult]
+    }
+  }
+
+  /**
+   * <p>Describes an Amazon WorkSpaces client.</p>
+   */
+  @js.native
+  trait ClientProperties extends js.Object {
+    var ReconnectEnabled: js.UndefOr[ReconnectEnum]
+  }
+
+  object ClientProperties {
+    def apply(
+      ReconnectEnabled: js.UndefOr[ReconnectEnum] = js.undefined): ClientProperties = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ReconnectEnabled" -> ReconnectEnabled.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ClientProperties]
+    }
+  }
+
+  /**
+   * <p>Information about the Amazon WorkSpaces client.</p>
+   */
+  @js.native
+  trait ClientPropertiesResult extends js.Object {
+    var ResourceId: js.UndefOr[NonEmptyString]
+    var ClientProperties: js.UndefOr[ClientProperties]
+  }
+
+  object ClientPropertiesResult {
+    def apply(
+      ResourceId: js.UndefOr[NonEmptyString] = js.undefined,
+      ClientProperties: js.UndefOr[ClientProperties] = js.undefined): ClientPropertiesResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ResourceId" -> ResourceId.map { x => x.asInstanceOf[js.Any] },
+        "ClientProperties" -> ClientProperties.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ClientPropertiesResult]
     }
   }
 
@@ -566,6 +610,36 @@ package workspaces {
         "DedicatedTenancyManagementCidrRange" -> DedicatedTenancyManagementCidrRange.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeAccountResult]
+    }
+  }
+
+  @js.native
+  trait DescribeClientPropertiesRequest extends js.Object {
+    var ResourceIds: js.UndefOr[ResourceIdList]
+  }
+
+  object DescribeClientPropertiesRequest {
+    def apply(
+      ResourceIds: js.UndefOr[ResourceIdList] = js.undefined): DescribeClientPropertiesRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ResourceIds" -> ResourceIds.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeClientPropertiesRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeClientPropertiesResult extends js.Object {
+    var ClientPropertiesList: js.UndefOr[ClientPropertiesList]
+  }
+
+  object DescribeClientPropertiesResult {
+    def apply(
+      ClientPropertiesList: js.UndefOr[ClientPropertiesList] = js.undefined): DescribeClientPropertiesResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ClientPropertiesList" -> ClientPropertiesList.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeClientPropertiesResult]
     }
   }
 
@@ -1082,6 +1156,37 @@ package workspaces {
   }
 
   @js.native
+  trait ModifyClientPropertiesRequest extends js.Object {
+    var ResourceId: js.UndefOr[NonEmptyString]
+    var ClientProperties: js.UndefOr[ClientProperties]
+  }
+
+  object ModifyClientPropertiesRequest {
+    def apply(
+      ResourceId: js.UndefOr[NonEmptyString] = js.undefined,
+      ClientProperties: js.UndefOr[ClientProperties] = js.undefined): ModifyClientPropertiesRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ResourceId" -> ResourceId.map { x => x.asInstanceOf[js.Any] },
+        "ClientProperties" -> ClientProperties.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ModifyClientPropertiesRequest]
+    }
+  }
+
+  @js.native
+  trait ModifyClientPropertiesResult extends js.Object {
+
+  }
+
+  object ModifyClientPropertiesResult {
+    def apply(): ModifyClientPropertiesResult = {
+      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ModifyClientPropertiesResult]
+    }
+  }
+
+  @js.native
   trait ModifyWorkspacePropertiesRequest extends js.Object {
     var WorkspaceId: js.UndefOr[WorkspaceId]
     var WorkspaceProperties: js.UndefOr[WorkspaceProperties]
@@ -1262,6 +1367,13 @@ package workspaces {
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RebuildWorkspacesResult]
     }
+  }
+
+  object ReconnectEnumEnum {
+    val ENABLED = "ENABLED"
+    val DISABLED = "DISABLED"
+
+    val values = IndexedSeq(ENABLED, DISABLED)
   }
 
   @js.native

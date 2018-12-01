@@ -9,11 +9,8 @@ import facade.amazonaws._
 package object stepfunctions {
   type ActivityList = js.Array[ActivityListItem]
   type Arn = String
-  type Cause = String
-  type Data = String
+  type ConnectorParameters = String
   type Definition = String
-  type Error = String
-  type ErrorMessage = String
   type EventId = Double
   type ExecutionList = js.Array[ExecutionListItem]
   type ExecutionStatus = String
@@ -24,6 +21,9 @@ package object stepfunctions {
   type PageSize = Int
   type PageToken = String
   type ReverseOrder = Boolean
+  type SensitiveCause = String
+  type SensitiveData = String
+  type SensitiveError = String
   type StateMachineList = js.Array[StateMachineListItem]
   type StateMachineStatus = String
   type TaskToken = String
@@ -57,40 +57,24 @@ package stepfunctions {
   }
 
   /**
-   * <p>The specified activity does not exist.</p>
-   */
-  @js.native
-  trait ActivityDoesNotExistException extends js.Object {
-    val message: ErrorMessage
-  }
-
-  /**
-   * <p>Contains details about an activity which failed during an execution.</p>
+   * <p>Contains details about an activity that failed during an execution.</p>
    */
   @js.native
   trait ActivityFailedEventDetails extends js.Object {
-    var error: js.UndefOr[Error]
-    var cause: js.UndefOr[Cause]
+    var error: js.UndefOr[SensitiveError]
+    var cause: js.UndefOr[SensitiveCause]
   }
 
   object ActivityFailedEventDetails {
     def apply(
-      error: js.UndefOr[Error] = js.undefined,
-      cause: js.UndefOr[Cause] = js.undefined): ActivityFailedEventDetails = {
+      error: js.UndefOr[SensitiveError] = js.undefined,
+      cause: js.UndefOr[SensitiveCause] = js.undefined): ActivityFailedEventDetails = {
       val _fields = IndexedSeq[(String, js.Any)](
         "error" -> error.map { x => x.asInstanceOf[js.Any] },
         "cause" -> cause.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ActivityFailedEventDetails]
     }
-  }
-
-  /**
-   * <p>The maximum number of activities has been reached. Existing activities must be deleted before a new activity can be created.</p>
-   */
-  @js.native
-  trait ActivityLimitExceededException extends js.Object {
-    val message: ErrorMessage
   }
 
   /**
@@ -118,18 +102,18 @@ package stepfunctions {
   }
 
   /**
-   * <p>Contains details about an activity schedule failure which occurred during an execution.</p>
+   * <p>Contains details about an activity schedule failure that occurred during an execution.</p>
    */
   @js.native
   trait ActivityScheduleFailedEventDetails extends js.Object {
-    var error: js.UndefOr[Error]
-    var cause: js.UndefOr[Cause]
+    var error: js.UndefOr[SensitiveError]
+    var cause: js.UndefOr[SensitiveCause]
   }
 
   object ActivityScheduleFailedEventDetails {
     def apply(
-      error: js.UndefOr[Error] = js.undefined,
-      cause: js.UndefOr[Cause] = js.undefined): ActivityScheduleFailedEventDetails = {
+      error: js.UndefOr[SensitiveError] = js.undefined,
+      cause: js.UndefOr[SensitiveCause] = js.undefined): ActivityScheduleFailedEventDetails = {
       val _fields = IndexedSeq[(String, js.Any)](
         "error" -> error.map { x => x.asInstanceOf[js.Any] },
         "cause" -> cause.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
@@ -144,7 +128,7 @@ package stepfunctions {
   @js.native
   trait ActivityScheduledEventDetails extends js.Object {
     var resource: js.UndefOr[Arn]
-    var input: js.UndefOr[Data]
+    var input: js.UndefOr[SensitiveData]
     var timeoutInSeconds: js.UndefOr[TimeoutInSeconds]
     var heartbeatInSeconds: js.UndefOr[TimeoutInSeconds]
   }
@@ -152,7 +136,7 @@ package stepfunctions {
   object ActivityScheduledEventDetails {
     def apply(
       resource: js.UndefOr[Arn] = js.undefined,
-      input: js.UndefOr[Data] = js.undefined,
+      input: js.UndefOr[SensitiveData] = js.undefined,
       timeoutInSeconds: js.UndefOr[TimeoutInSeconds] = js.undefined,
       heartbeatInSeconds: js.UndefOr[TimeoutInSeconds] = js.undefined): ActivityScheduledEventDetails = {
       val _fields = IndexedSeq[(String, js.Any)](
@@ -184,16 +168,16 @@ package stepfunctions {
   }
 
   /**
-   * <p>Contains details about an activity which successfully terminated during an execution.</p>
+   * <p>Contains details about an activity that successfully terminated during an execution.</p>
    */
   @js.native
   trait ActivitySucceededEventDetails extends js.Object {
-    var output: js.UndefOr[Data]
+    var output: js.UndefOr[SensitiveData]
   }
 
   object ActivitySucceededEventDetails {
     def apply(
-      output: js.UndefOr[Data] = js.undefined): ActivitySucceededEventDetails = {
+      output: js.UndefOr[SensitiveData] = js.undefined): ActivitySucceededEventDetails = {
       val _fields = IndexedSeq[(String, js.Any)](
         "output" -> output.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
@@ -202,32 +186,24 @@ package stepfunctions {
   }
 
   /**
-   * <p>Contains details about an activity timeout which occurred during an execution.</p>
+   * <p>Contains details about an activity timeout that occurred during an execution.</p>
    */
   @js.native
   trait ActivityTimedOutEventDetails extends js.Object {
-    var error: js.UndefOr[Error]
-    var cause: js.UndefOr[Cause]
+    var error: js.UndefOr[SensitiveError]
+    var cause: js.UndefOr[SensitiveCause]
   }
 
   object ActivityTimedOutEventDetails {
     def apply(
-      error: js.UndefOr[Error] = js.undefined,
-      cause: js.UndefOr[Cause] = js.undefined): ActivityTimedOutEventDetails = {
+      error: js.UndefOr[SensitiveError] = js.undefined,
+      cause: js.UndefOr[SensitiveCause] = js.undefined): ActivityTimedOutEventDetails = {
       val _fields = IndexedSeq[(String, js.Any)](
         "error" -> error.map { x => x.asInstanceOf[js.Any] },
         "cause" -> cause.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ActivityTimedOutEventDetails]
     }
-  }
-
-  /**
-   * <p>The maximum number of workers concurrently polling for activity tasks has been reached.</p>
-   */
-  @js.native
-  trait ActivityWorkerLimitExceededException extends js.Object {
-    val message: ErrorMessage
   }
 
   @js.native
@@ -416,9 +392,9 @@ package stepfunctions {
     var status: js.UndefOr[ExecutionStatus]
     var stopDate: js.UndefOr[Timestamp]
     var stateMachineArn: js.UndefOr[Arn]
-    var output: js.UndefOr[Data]
+    var output: js.UndefOr[SensitiveData]
     var startDate: js.UndefOr[Timestamp]
-    var input: js.UndefOr[Data]
+    var input: js.UndefOr[SensitiveData]
   }
 
   object DescribeExecutionOutput {
@@ -428,9 +404,9 @@ package stepfunctions {
       status: js.UndefOr[ExecutionStatus] = js.undefined,
       stopDate: js.UndefOr[Timestamp] = js.undefined,
       stateMachineArn: js.UndefOr[Arn] = js.undefined,
-      output: js.UndefOr[Data] = js.undefined,
+      output: js.UndefOr[SensitiveData] = js.undefined,
       startDate: js.UndefOr[Timestamp] = js.undefined,
-      input: js.UndefOr[Data] = js.undefined): DescribeExecutionOutput = {
+      input: js.UndefOr[SensitiveData] = js.undefined): DescribeExecutionOutput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "name" -> name.map { x => x.asInstanceOf[js.Any] },
         "executionArn" -> executionArn.map { x => x.asInstanceOf[js.Any] },
@@ -537,14 +513,14 @@ package stepfunctions {
    */
   @js.native
   trait ExecutionAbortedEventDetails extends js.Object {
-    var error: js.UndefOr[Error]
-    var cause: js.UndefOr[Cause]
+    var error: js.UndefOr[SensitiveError]
+    var cause: js.UndefOr[SensitiveCause]
   }
 
   object ExecutionAbortedEventDetails {
     def apply(
-      error: js.UndefOr[Error] = js.undefined,
-      cause: js.UndefOr[Cause] = js.undefined): ExecutionAbortedEventDetails = {
+      error: js.UndefOr[SensitiveError] = js.undefined,
+      cause: js.UndefOr[SensitiveCause] = js.undefined): ExecutionAbortedEventDetails = {
       val _fields = IndexedSeq[(String, js.Any)](
         "error" -> error.map { x => x.asInstanceOf[js.Any] },
         "cause" -> cause.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
@@ -554,48 +530,24 @@ package stepfunctions {
   }
 
   /**
-   * <p>The execution has the same <code>name</code> as another execution (but a different <code>input</code>).</p> <note> <p>Executions with the same <code>name</code> and <code>input</code> are considered idempotent.</p> </note>
-   */
-  @js.native
-  trait ExecutionAlreadyExistsException extends js.Object {
-    val message: ErrorMessage
-  }
-
-  /**
-   * <p>The specified execution does not exist.</p>
-   */
-  @js.native
-  trait ExecutionDoesNotExistException extends js.Object {
-    val message: ErrorMessage
-  }
-
-  /**
    * <p>Contains details about an execution failure event.</p>
    */
   @js.native
   trait ExecutionFailedEventDetails extends js.Object {
-    var error: js.UndefOr[Error]
-    var cause: js.UndefOr[Cause]
+    var error: js.UndefOr[SensitiveError]
+    var cause: js.UndefOr[SensitiveCause]
   }
 
   object ExecutionFailedEventDetails {
     def apply(
-      error: js.UndefOr[Error] = js.undefined,
-      cause: js.UndefOr[Cause] = js.undefined): ExecutionFailedEventDetails = {
+      error: js.UndefOr[SensitiveError] = js.undefined,
+      cause: js.UndefOr[SensitiveCause] = js.undefined): ExecutionFailedEventDetails = {
       val _fields = IndexedSeq[(String, js.Any)](
         "error" -> error.map { x => x.asInstanceOf[js.Any] },
         "cause" -> cause.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ExecutionFailedEventDetails]
     }
-  }
-
-  /**
-   * <p>The maximum number of running executions has been reached. Running executions must end or be stopped before a new execution can be started.</p>
-   */
-  @js.native
-  trait ExecutionLimitExceededException extends js.Object {
-    val message: ErrorMessage
   }
 
   /**
@@ -636,13 +588,13 @@ package stepfunctions {
    */
   @js.native
   trait ExecutionStartedEventDetails extends js.Object {
-    var input: js.UndefOr[Data]
+    var input: js.UndefOr[SensitiveData]
     var roleArn: js.UndefOr[Arn]
   }
 
   object ExecutionStartedEventDetails {
     def apply(
-      input: js.UndefOr[Data] = js.undefined,
+      input: js.UndefOr[SensitiveData] = js.undefined,
       roleArn: js.UndefOr[Arn] = js.undefined): ExecutionStartedEventDetails = {
       val _fields = IndexedSeq[(String, js.Any)](
         "input" -> input.map { x => x.asInstanceOf[js.Any] },
@@ -667,12 +619,12 @@ package stepfunctions {
    */
   @js.native
   trait ExecutionSucceededEventDetails extends js.Object {
-    var output: js.UndefOr[Data]
+    var output: js.UndefOr[SensitiveData]
   }
 
   object ExecutionSucceededEventDetails {
     def apply(
-      output: js.UndefOr[Data] = js.undefined): ExecutionSucceededEventDetails = {
+      output: js.UndefOr[SensitiveData] = js.undefined): ExecutionSucceededEventDetails = {
       val _fields = IndexedSeq[(String, js.Any)](
         "output" -> output.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
@@ -681,18 +633,18 @@ package stepfunctions {
   }
 
   /**
-   * <p>Contains details about the execution timeout which occurred during the execution.</p>
+   * <p>Contains details about the execution timeout that occurred during the execution.</p>
    */
   @js.native
   trait ExecutionTimedOutEventDetails extends js.Object {
-    var error: js.UndefOr[Error]
-    var cause: js.UndefOr[Cause]
+    var error: js.UndefOr[SensitiveError]
+    var cause: js.UndefOr[SensitiveCause]
   }
 
   object ExecutionTimedOutEventDetails {
     def apply(
-      error: js.UndefOr[Error] = js.undefined,
-      cause: js.UndefOr[Cause] = js.undefined): ExecutionTimedOutEventDetails = {
+      error: js.UndefOr[SensitiveError] = js.undefined,
+      cause: js.UndefOr[SensitiveCause] = js.undefined): ExecutionTimedOutEventDetails = {
       val _fields = IndexedSeq[(String, js.Any)](
         "error" -> error.map { x => x.asInstanceOf[js.Any] },
         "cause" -> cause.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
@@ -722,13 +674,13 @@ package stepfunctions {
   @js.native
   trait GetActivityTaskOutput extends js.Object {
     var taskToken: js.UndefOr[TaskToken]
-    var input: js.UndefOr[Data]
+    var input: js.UndefOr[SensitiveData]
   }
 
   object GetActivityTaskOutput {
     def apply(
       taskToken: js.UndefOr[TaskToken] = js.undefined,
-      input: js.UndefOr[Data] = js.undefined): GetActivityTaskOutput = {
+      input: js.UndefOr[SensitiveData] = js.undefined): GetActivityTaskOutput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "taskToken" -> taskToken.map { x => x.asInstanceOf[js.Any] },
         "input" -> input.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
@@ -789,9 +741,12 @@ package stepfunctions {
     var timestamp: js.UndefOr[Timestamp]
     var activitySucceededEventDetails: js.UndefOr[ActivitySucceededEventDetails]
     var activityScheduledEventDetails: js.UndefOr[ActivityScheduledEventDetails]
+    var taskStartFailedEventDetails: js.UndefOr[TaskStartFailedEventDetails]
     var activityStartedEventDetails: js.UndefOr[ActivityStartedEventDetails]
+    var taskSucceededEventDetails: js.UndefOr[TaskSucceededEventDetails]
     var lambdaFunctionFailedEventDetails: js.UndefOr[LambdaFunctionFailedEventDetails]
     var executionFailedEventDetails: js.UndefOr[ExecutionFailedEventDetails]
+    var taskTimedOutEventDetails: js.UndefOr[TaskTimedOutEventDetails]
     var lambdaFunctionSucceededEventDetails: js.UndefOr[LambdaFunctionSucceededEventDetails]
     var lambdaFunctionStartFailedEventDetails: js.UndefOr[LambdaFunctionStartFailedEventDetails]
     var executionSucceededEventDetails: js.UndefOr[ExecutionSucceededEventDetails]
@@ -799,13 +754,18 @@ package stepfunctions {
     var id: js.UndefOr[EventId]
     var lambdaFunctionTimedOutEventDetails: js.UndefOr[LambdaFunctionTimedOutEventDetails]
     var executionStartedEventDetails: js.UndefOr[ExecutionStartedEventDetails]
+    var taskSubmittedEventDetails: js.UndefOr[TaskSubmittedEventDetails]
     var previousEventId: js.UndefOr[EventId]
+    var taskFailedEventDetails: js.UndefOr[TaskFailedEventDetails]
     var stateExitedEventDetails: js.UndefOr[StateExitedEventDetails]
     var lambdaFunctionScheduleFailedEventDetails: js.UndefOr[LambdaFunctionScheduleFailedEventDetails]
     var `type`: js.UndefOr[HistoryEventType]
+    var taskSubmitFailedEventDetails: js.UndefOr[TaskSubmitFailedEventDetails]
     var lambdaFunctionScheduledEventDetails: js.UndefOr[LambdaFunctionScheduledEventDetails]
     var executionAbortedEventDetails: js.UndefOr[ExecutionAbortedEventDetails]
+    var taskScheduledEventDetails: js.UndefOr[TaskScheduledEventDetails]
     var stateEnteredEventDetails: js.UndefOr[StateEnteredEventDetails]
+    var taskStartedEventDetails: js.UndefOr[TaskStartedEventDetails]
     var executionTimedOutEventDetails: js.UndefOr[ExecutionTimedOutEventDetails]
   }
 
@@ -816,9 +776,12 @@ package stepfunctions {
       timestamp: js.UndefOr[Timestamp] = js.undefined,
       activitySucceededEventDetails: js.UndefOr[ActivitySucceededEventDetails] = js.undefined,
       activityScheduledEventDetails: js.UndefOr[ActivityScheduledEventDetails] = js.undefined,
+      taskStartFailedEventDetails: js.UndefOr[TaskStartFailedEventDetails] = js.undefined,
       activityStartedEventDetails: js.UndefOr[ActivityStartedEventDetails] = js.undefined,
+      taskSucceededEventDetails: js.UndefOr[TaskSucceededEventDetails] = js.undefined,
       lambdaFunctionFailedEventDetails: js.UndefOr[LambdaFunctionFailedEventDetails] = js.undefined,
       executionFailedEventDetails: js.UndefOr[ExecutionFailedEventDetails] = js.undefined,
+      taskTimedOutEventDetails: js.UndefOr[TaskTimedOutEventDetails] = js.undefined,
       lambdaFunctionSucceededEventDetails: js.UndefOr[LambdaFunctionSucceededEventDetails] = js.undefined,
       lambdaFunctionStartFailedEventDetails: js.UndefOr[LambdaFunctionStartFailedEventDetails] = js.undefined,
       executionSucceededEventDetails: js.UndefOr[ExecutionSucceededEventDetails] = js.undefined,
@@ -826,13 +789,18 @@ package stepfunctions {
       id: js.UndefOr[EventId] = js.undefined,
       lambdaFunctionTimedOutEventDetails: js.UndefOr[LambdaFunctionTimedOutEventDetails] = js.undefined,
       executionStartedEventDetails: js.UndefOr[ExecutionStartedEventDetails] = js.undefined,
+      taskSubmittedEventDetails: js.UndefOr[TaskSubmittedEventDetails] = js.undefined,
       previousEventId: js.UndefOr[EventId] = js.undefined,
+      taskFailedEventDetails: js.UndefOr[TaskFailedEventDetails] = js.undefined,
       stateExitedEventDetails: js.UndefOr[StateExitedEventDetails] = js.undefined,
       lambdaFunctionScheduleFailedEventDetails: js.UndefOr[LambdaFunctionScheduleFailedEventDetails] = js.undefined,
       `type`: js.UndefOr[HistoryEventType] = js.undefined,
+      taskSubmitFailedEventDetails: js.UndefOr[TaskSubmitFailedEventDetails] = js.undefined,
       lambdaFunctionScheduledEventDetails: js.UndefOr[LambdaFunctionScheduledEventDetails] = js.undefined,
       executionAbortedEventDetails: js.UndefOr[ExecutionAbortedEventDetails] = js.undefined,
+      taskScheduledEventDetails: js.UndefOr[TaskScheduledEventDetails] = js.undefined,
       stateEnteredEventDetails: js.UndefOr[StateEnteredEventDetails] = js.undefined,
+      taskStartedEventDetails: js.UndefOr[TaskStartedEventDetails] = js.undefined,
       executionTimedOutEventDetails: js.UndefOr[ExecutionTimedOutEventDetails] = js.undefined): HistoryEvent = {
       val _fields = IndexedSeq[(String, js.Any)](
         "activityTimedOutEventDetails" -> activityTimedOutEventDetails.map { x => x.asInstanceOf[js.Any] },
@@ -840,9 +808,12 @@ package stepfunctions {
         "timestamp" -> timestamp.map { x => x.asInstanceOf[js.Any] },
         "activitySucceededEventDetails" -> activitySucceededEventDetails.map { x => x.asInstanceOf[js.Any] },
         "activityScheduledEventDetails" -> activityScheduledEventDetails.map { x => x.asInstanceOf[js.Any] },
+        "taskStartFailedEventDetails" -> taskStartFailedEventDetails.map { x => x.asInstanceOf[js.Any] },
         "activityStartedEventDetails" -> activityStartedEventDetails.map { x => x.asInstanceOf[js.Any] },
+        "taskSucceededEventDetails" -> taskSucceededEventDetails.map { x => x.asInstanceOf[js.Any] },
         "lambdaFunctionFailedEventDetails" -> lambdaFunctionFailedEventDetails.map { x => x.asInstanceOf[js.Any] },
         "executionFailedEventDetails" -> executionFailedEventDetails.map { x => x.asInstanceOf[js.Any] },
+        "taskTimedOutEventDetails" -> taskTimedOutEventDetails.map { x => x.asInstanceOf[js.Any] },
         "lambdaFunctionSucceededEventDetails" -> lambdaFunctionSucceededEventDetails.map { x => x.asInstanceOf[js.Any] },
         "lambdaFunctionStartFailedEventDetails" -> lambdaFunctionStartFailedEventDetails.map { x => x.asInstanceOf[js.Any] },
         "executionSucceededEventDetails" -> executionSucceededEventDetails.map { x => x.asInstanceOf[js.Any] },
@@ -850,13 +821,18 @@ package stepfunctions {
         "id" -> id.map { x => x.asInstanceOf[js.Any] },
         "lambdaFunctionTimedOutEventDetails" -> lambdaFunctionTimedOutEventDetails.map { x => x.asInstanceOf[js.Any] },
         "executionStartedEventDetails" -> executionStartedEventDetails.map { x => x.asInstanceOf[js.Any] },
+        "taskSubmittedEventDetails" -> taskSubmittedEventDetails.map { x => x.asInstanceOf[js.Any] },
         "previousEventId" -> previousEventId.map { x => x.asInstanceOf[js.Any] },
+        "taskFailedEventDetails" -> taskFailedEventDetails.map { x => x.asInstanceOf[js.Any] },
         "stateExitedEventDetails" -> stateExitedEventDetails.map { x => x.asInstanceOf[js.Any] },
         "lambdaFunctionScheduleFailedEventDetails" -> lambdaFunctionScheduleFailedEventDetails.map { x => x.asInstanceOf[js.Any] },
         "`type`" -> `type`.map { x => x.asInstanceOf[js.Any] },
+        "taskSubmitFailedEventDetails" -> taskSubmitFailedEventDetails.map { x => x.asInstanceOf[js.Any] },
         "lambdaFunctionScheduledEventDetails" -> lambdaFunctionScheduledEventDetails.map { x => x.asInstanceOf[js.Any] },
         "executionAbortedEventDetails" -> executionAbortedEventDetails.map { x => x.asInstanceOf[js.Any] },
+        "taskScheduledEventDetails" -> taskScheduledEventDetails.map { x => x.asInstanceOf[js.Any] },
         "stateEnteredEventDetails" -> stateEnteredEventDetails.map { x => x.asInstanceOf[js.Any] },
+        "taskStartedEventDetails" -> taskStartedEventDetails.map { x => x.asInstanceOf[js.Any] },
         "executionTimedOutEventDetails" -> executionTimedOutEventDetails.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[HistoryEvent]
@@ -872,6 +848,14 @@ package stepfunctions {
     val ActivityTimedOut = "ActivityTimedOut"
     val ChoiceStateEntered = "ChoiceStateEntered"
     val ChoiceStateExited = "ChoiceStateExited"
+    val TaskFailed = "TaskFailed"
+    val TaskScheduled = "TaskScheduled"
+    val TaskStartFailed = "TaskStartFailed"
+    val TaskStarted = "TaskStarted"
+    val TaskSubmitFailed = "TaskSubmitFailed"
+    val TaskSubmitted = "TaskSubmitted"
+    val TaskSucceeded = "TaskSucceeded"
+    val TaskTimedOut = "TaskTimedOut"
     val ExecutionFailed = "ExecutionFailed"
     val ExecutionStarted = "ExecutionStarted"
     val ExecutionSucceeded = "ExecutionSucceeded"
@@ -902,70 +886,22 @@ package stepfunctions {
     val WaitStateEntered = "WaitStateEntered"
     val WaitStateExited = "WaitStateExited"
 
-    val values = IndexedSeq(ActivityFailed, ActivityScheduleFailed, ActivityScheduled, ActivityStarted, ActivitySucceeded, ActivityTimedOut, ChoiceStateEntered, ChoiceStateExited, ExecutionFailed, ExecutionStarted, ExecutionSucceeded, ExecutionAborted, ExecutionTimedOut, FailStateEntered, LambdaFunctionFailed, LambdaFunctionScheduleFailed, LambdaFunctionScheduled, LambdaFunctionStartFailed, LambdaFunctionStarted, LambdaFunctionSucceeded, LambdaFunctionTimedOut, SucceedStateEntered, SucceedStateExited, TaskStateAborted, TaskStateEntered, TaskStateExited, PassStateEntered, PassStateExited, ParallelStateAborted, ParallelStateEntered, ParallelStateExited, ParallelStateFailed, ParallelStateStarted, ParallelStateSucceeded, WaitStateAborted, WaitStateEntered, WaitStateExited)
+    val values = IndexedSeq(ActivityFailed, ActivityScheduleFailed, ActivityScheduled, ActivityStarted, ActivitySucceeded, ActivityTimedOut, ChoiceStateEntered, ChoiceStateExited, TaskFailed, TaskScheduled, TaskStartFailed, TaskStarted, TaskSubmitFailed, TaskSubmitted, TaskSucceeded, TaskTimedOut, ExecutionFailed, ExecutionStarted, ExecutionSucceeded, ExecutionAborted, ExecutionTimedOut, FailStateEntered, LambdaFunctionFailed, LambdaFunctionScheduleFailed, LambdaFunctionScheduled, LambdaFunctionStartFailed, LambdaFunctionStarted, LambdaFunctionSucceeded, LambdaFunctionTimedOut, SucceedStateEntered, SucceedStateExited, TaskStateAborted, TaskStateEntered, TaskStateExited, PassStateEntered, PassStateExited, ParallelStateAborted, ParallelStateEntered, ParallelStateExited, ParallelStateFailed, ParallelStateStarted, ParallelStateSucceeded, WaitStateAborted, WaitStateEntered, WaitStateExited)
   }
 
   /**
-   * <p>The provided Amazon Resource Name (ARN) is invalid.</p>
-   */
-  @js.native
-  trait InvalidArnException extends js.Object {
-    val message: ErrorMessage
-  }
-
-  /**
-   * <p>The provided Amazon States Language definition is invalid.</p>
-   */
-  @js.native
-  trait InvalidDefinitionException extends js.Object {
-    val message: ErrorMessage
-  }
-
-  /**
-   * <p>The provided JSON input data is invalid.</p>
-   */
-  @js.native
-  trait InvalidExecutionInputException extends js.Object {
-    val message: ErrorMessage
-  }
-
-  /**
-   * <p>The provided name is invalid.</p>
-   */
-  @js.native
-  trait InvalidNameException extends js.Object {
-    val message: ErrorMessage
-  }
-
-  /**
-   * <p>The provided JSON output data is invalid.</p>
-   */
-  @js.native
-  trait InvalidOutputException extends js.Object {
-    val message: ErrorMessage
-  }
-
-  /**
-   * <p>The provided token is invalid.</p>
-   */
-  @js.native
-  trait InvalidTokenException extends js.Object {
-    val message: ErrorMessage
-  }
-
-  /**
-   * <p>Contains details about a lambda function which failed during an execution.</p>
+   * <p>Contains details about a lambda function that failed during an execution.</p>
    */
   @js.native
   trait LambdaFunctionFailedEventDetails extends js.Object {
-    var error: js.UndefOr[Error]
-    var cause: js.UndefOr[Cause]
+    var error: js.UndefOr[SensitiveError]
+    var cause: js.UndefOr[SensitiveCause]
   }
 
   object LambdaFunctionFailedEventDetails {
     def apply(
-      error: js.UndefOr[Error] = js.undefined,
-      cause: js.UndefOr[Cause] = js.undefined): LambdaFunctionFailedEventDetails = {
+      error: js.UndefOr[SensitiveError] = js.undefined,
+      cause: js.UndefOr[SensitiveCause] = js.undefined): LambdaFunctionFailedEventDetails = {
       val _fields = IndexedSeq[(String, js.Any)](
         "error" -> error.map { x => x.asInstanceOf[js.Any] },
         "cause" -> cause.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
@@ -975,18 +911,18 @@ package stepfunctions {
   }
 
   /**
-   * <p>Contains details about a failed lambda function schedule event which occurred during an execution.</p>
+   * <p>Contains details about a failed lambda function schedule event that occurred during an execution.</p>
    */
   @js.native
   trait LambdaFunctionScheduleFailedEventDetails extends js.Object {
-    var error: js.UndefOr[Error]
-    var cause: js.UndefOr[Cause]
+    var error: js.UndefOr[SensitiveError]
+    var cause: js.UndefOr[SensitiveCause]
   }
 
   object LambdaFunctionScheduleFailedEventDetails {
     def apply(
-      error: js.UndefOr[Error] = js.undefined,
-      cause: js.UndefOr[Cause] = js.undefined): LambdaFunctionScheduleFailedEventDetails = {
+      error: js.UndefOr[SensitiveError] = js.undefined,
+      cause: js.UndefOr[SensitiveCause] = js.undefined): LambdaFunctionScheduleFailedEventDetails = {
       val _fields = IndexedSeq[(String, js.Any)](
         "error" -> error.map { x => x.asInstanceOf[js.Any] },
         "cause" -> cause.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
@@ -1001,14 +937,14 @@ package stepfunctions {
   @js.native
   trait LambdaFunctionScheduledEventDetails extends js.Object {
     var resource: js.UndefOr[Arn]
-    var input: js.UndefOr[Data]
+    var input: js.UndefOr[SensitiveData]
     var timeoutInSeconds: js.UndefOr[TimeoutInSeconds]
   }
 
   object LambdaFunctionScheduledEventDetails {
     def apply(
       resource: js.UndefOr[Arn] = js.undefined,
-      input: js.UndefOr[Data] = js.undefined,
+      input: js.UndefOr[SensitiveData] = js.undefined,
       timeoutInSeconds: js.UndefOr[TimeoutInSeconds] = js.undefined): LambdaFunctionScheduledEventDetails = {
       val _fields = IndexedSeq[(String, js.Any)](
         "resource" -> resource.map { x => x.asInstanceOf[js.Any] },
@@ -1020,18 +956,18 @@ package stepfunctions {
   }
 
   /**
-   * <p>Contains details about a lambda function which failed to start during an execution.</p>
+   * <p>Contains details about a lambda function that failed to start during an execution.</p>
    */
   @js.native
   trait LambdaFunctionStartFailedEventDetails extends js.Object {
-    var error: js.UndefOr[Error]
-    var cause: js.UndefOr[Cause]
+    var error: js.UndefOr[SensitiveError]
+    var cause: js.UndefOr[SensitiveCause]
   }
 
   object LambdaFunctionStartFailedEventDetails {
     def apply(
-      error: js.UndefOr[Error] = js.undefined,
-      cause: js.UndefOr[Cause] = js.undefined): LambdaFunctionStartFailedEventDetails = {
+      error: js.UndefOr[SensitiveError] = js.undefined,
+      cause: js.UndefOr[SensitiveCause] = js.undefined): LambdaFunctionStartFailedEventDetails = {
       val _fields = IndexedSeq[(String, js.Any)](
         "error" -> error.map { x => x.asInstanceOf[js.Any] },
         "cause" -> cause.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
@@ -1041,16 +977,16 @@ package stepfunctions {
   }
 
   /**
-   * <p>Contains details about a lambda function which successfully terminated during an execution.</p>
+   * <p>Contains details about a lambda function that successfully terminated during an execution.</p>
    */
   @js.native
   trait LambdaFunctionSucceededEventDetails extends js.Object {
-    var output: js.UndefOr[Data]
+    var output: js.UndefOr[SensitiveData]
   }
 
   object LambdaFunctionSucceededEventDetails {
     def apply(
-      output: js.UndefOr[Data] = js.undefined): LambdaFunctionSucceededEventDetails = {
+      output: js.UndefOr[SensitiveData] = js.undefined): LambdaFunctionSucceededEventDetails = {
       val _fields = IndexedSeq[(String, js.Any)](
         "output" -> output.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
@@ -1059,18 +995,18 @@ package stepfunctions {
   }
 
   /**
-   * <p>Contains details about a lambda function timeout which occurred during an execution.</p>
+   * <p>Contains details about a lambda function timeout that occurred during an execution.</p>
    */
   @js.native
   trait LambdaFunctionTimedOutEventDetails extends js.Object {
-    var error: js.UndefOr[Error]
-    var cause: js.UndefOr[Cause]
+    var error: js.UndefOr[SensitiveError]
+    var cause: js.UndefOr[SensitiveCause]
   }
 
   object LambdaFunctionTimedOutEventDetails {
     def apply(
-      error: js.UndefOr[Error] = js.undefined,
-      cause: js.UndefOr[Cause] = js.undefined): LambdaFunctionTimedOutEventDetails = {
+      error: js.UndefOr[SensitiveError] = js.undefined,
+      cause: js.UndefOr[SensitiveCause] = js.undefined): LambdaFunctionTimedOutEventDetails = {
       val _fields = IndexedSeq[(String, js.Any)](
         "error" -> error.map { x => x.asInstanceOf[js.Any] },
         "cause" -> cause.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
@@ -1193,26 +1129,18 @@ package stepfunctions {
     }
   }
 
-  /**
-   * <p>Request is missing a required parameter. This error occurs if both <code>definition</code> and <code>roleArn</code> are not specified.</p>
-   */
-  @js.native
-  trait MissingRequiredParameterException extends js.Object {
-    val message: ErrorMessage
-  }
-
   @js.native
   trait SendTaskFailureInput extends js.Object {
     var taskToken: js.UndefOr[TaskToken]
-    var error: js.UndefOr[Error]
-    var cause: js.UndefOr[Cause]
+    var error: js.UndefOr[SensitiveError]
+    var cause: js.UndefOr[SensitiveCause]
   }
 
   object SendTaskFailureInput {
     def apply(
       taskToken: js.UndefOr[TaskToken] = js.undefined,
-      error: js.UndefOr[Error] = js.undefined,
-      cause: js.UndefOr[Cause] = js.undefined): SendTaskFailureInput = {
+      error: js.UndefOr[SensitiveError] = js.undefined,
+      cause: js.UndefOr[SensitiveCause] = js.undefined): SendTaskFailureInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "taskToken" -> taskToken.map { x => x.asInstanceOf[js.Any] },
         "error" -> error.map { x => x.asInstanceOf[js.Any] },
@@ -1266,13 +1194,13 @@ package stepfunctions {
   @js.native
   trait SendTaskSuccessInput extends js.Object {
     var taskToken: js.UndefOr[TaskToken]
-    var output: js.UndefOr[Data]
+    var output: js.UndefOr[SensitiveData]
   }
 
   object SendTaskSuccessInput {
     def apply(
       taskToken: js.UndefOr[TaskToken] = js.undefined,
-      output: js.UndefOr[Data] = js.undefined): SendTaskSuccessInput = {
+      output: js.UndefOr[SensitiveData] = js.undefined): SendTaskSuccessInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "taskToken" -> taskToken.map { x => x.asInstanceOf[js.Any] },
         "output" -> output.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
@@ -1298,14 +1226,14 @@ package stepfunctions {
   trait StartExecutionInput extends js.Object {
     var stateMachineArn: js.UndefOr[Arn]
     var name: js.UndefOr[Name]
-    var input: js.UndefOr[Data]
+    var input: js.UndefOr[SensitiveData]
   }
 
   object StartExecutionInput {
     def apply(
       stateMachineArn: js.UndefOr[Arn] = js.undefined,
       name: js.UndefOr[Name] = js.undefined,
-      input: js.UndefOr[Data] = js.undefined): StartExecutionInput = {
+      input: js.UndefOr[SensitiveData] = js.undefined): StartExecutionInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "stateMachineArn" -> stateMachineArn.map { x => x.asInstanceOf[js.Any] },
         "name" -> name.map { x => x.asInstanceOf[js.Any] },
@@ -1339,13 +1267,13 @@ package stepfunctions {
   @js.native
   trait StateEnteredEventDetails extends js.Object {
     var name: js.UndefOr[Name]
-    var input: js.UndefOr[Data]
+    var input: js.UndefOr[SensitiveData]
   }
 
   object StateEnteredEventDetails {
     def apply(
       name: js.UndefOr[Name] = js.undefined,
-      input: js.UndefOr[Data] = js.undefined): StateEnteredEventDetails = {
+      input: js.UndefOr[SensitiveData] = js.undefined): StateEnteredEventDetails = {
       val _fields = IndexedSeq[(String, js.Any)](
         "name" -> name.map { x => x.asInstanceOf[js.Any] },
         "input" -> input.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
@@ -1360,51 +1288,19 @@ package stepfunctions {
   @js.native
   trait StateExitedEventDetails extends js.Object {
     var name: js.UndefOr[Name]
-    var output: js.UndefOr[Data]
+    var output: js.UndefOr[SensitiveData]
   }
 
   object StateExitedEventDetails {
     def apply(
       name: js.UndefOr[Name] = js.undefined,
-      output: js.UndefOr[Data] = js.undefined): StateExitedEventDetails = {
+      output: js.UndefOr[SensitiveData] = js.undefined): StateExitedEventDetails = {
       val _fields = IndexedSeq[(String, js.Any)](
         "name" -> name.map { x => x.asInstanceOf[js.Any] },
         "output" -> output.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StateExitedEventDetails]
     }
-  }
-
-  /**
-   * <p>A state machine with the same name but a different definition or role ARN already exists.</p>
-   */
-  @js.native
-  trait StateMachineAlreadyExistsException extends js.Object {
-    val message: ErrorMessage
-  }
-
-  /**
-   * <p>The specified state machine is being deleted.</p>
-   */
-  @js.native
-  trait StateMachineDeletingException extends js.Object {
-    val message: ErrorMessage
-  }
-
-  /**
-   * <p>The specified state machine does not exist.</p>
-   */
-  @js.native
-  trait StateMachineDoesNotExistException extends js.Object {
-    val message: ErrorMessage
-  }
-
-  /**
-   * <p>The maximum number of state machines has been reached. Existing state machines must be deleted before a new state machine can be created.</p>
-   */
-  @js.native
-  trait StateMachineLimitExceededException extends js.Object {
-    val message: ErrorMessage
   }
 
   /**
@@ -1441,15 +1337,15 @@ package stepfunctions {
   @js.native
   trait StopExecutionInput extends js.Object {
     var executionArn: js.UndefOr[Arn]
-    var error: js.UndefOr[Error]
-    var cause: js.UndefOr[Cause]
+    var error: js.UndefOr[SensitiveError]
+    var cause: js.UndefOr[SensitiveCause]
   }
 
   object StopExecutionInput {
     def apply(
       executionArn: js.UndefOr[Arn] = js.undefined,
-      error: js.UndefOr[Error] = js.undefined,
-      cause: js.UndefOr[Cause] = js.undefined): StopExecutionInput = {
+      error: js.UndefOr[SensitiveError] = js.undefined,
+      cause: js.UndefOr[SensitiveCause] = js.undefined): StopExecutionInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "executionArn" -> executionArn.map { x => x.asInstanceOf[js.Any] },
         "error" -> error.map { x => x.asInstanceOf[js.Any] },
@@ -1474,14 +1370,211 @@ package stepfunctions {
     }
   }
 
+  /**
+   * <p>Contains details about a task failure event.</p>
+   */
   @js.native
-  trait TaskDoesNotExistException extends js.Object {
-    val message: ErrorMessage
+  trait TaskFailedEventDetails extends js.Object {
+    var resourceType: js.UndefOr[Name]
+    var resource: js.UndefOr[Name]
+    var error: js.UndefOr[SensitiveError]
+    var cause: js.UndefOr[SensitiveCause]
   }
 
+  object TaskFailedEventDetails {
+    def apply(
+      resourceType: js.UndefOr[Name] = js.undefined,
+      resource: js.UndefOr[Name] = js.undefined,
+      error: js.UndefOr[SensitiveError] = js.undefined,
+      cause: js.UndefOr[SensitiveCause] = js.undefined): TaskFailedEventDetails = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "resourceType" -> resourceType.map { x => x.asInstanceOf[js.Any] },
+        "resource" -> resource.map { x => x.asInstanceOf[js.Any] },
+        "error" -> error.map { x => x.asInstanceOf[js.Any] },
+        "cause" -> cause.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TaskFailedEventDetails]
+    }
+  }
+
+  /**
+   * <p>Contains details about a task scheduled during an execution.</p>
+   */
   @js.native
-  trait TaskTimedOutException extends js.Object {
-    val message: ErrorMessage
+  trait TaskScheduledEventDetails extends js.Object {
+    var timeoutInSeconds: js.UndefOr[TimeoutInSeconds]
+    var resourceType: js.UndefOr[Name]
+    var resource: js.UndefOr[Name]
+    var region: js.UndefOr[Name]
+    var parameters: js.UndefOr[ConnectorParameters]
+  }
+
+  object TaskScheduledEventDetails {
+    def apply(
+      timeoutInSeconds: js.UndefOr[TimeoutInSeconds] = js.undefined,
+      resourceType: js.UndefOr[Name] = js.undefined,
+      resource: js.UndefOr[Name] = js.undefined,
+      region: js.UndefOr[Name] = js.undefined,
+      parameters: js.UndefOr[ConnectorParameters] = js.undefined): TaskScheduledEventDetails = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "timeoutInSeconds" -> timeoutInSeconds.map { x => x.asInstanceOf[js.Any] },
+        "resourceType" -> resourceType.map { x => x.asInstanceOf[js.Any] },
+        "resource" -> resource.map { x => x.asInstanceOf[js.Any] },
+        "region" -> region.map { x => x.asInstanceOf[js.Any] },
+        "parameters" -> parameters.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TaskScheduledEventDetails]
+    }
+  }
+
+  /**
+   * <p>Contains details about a task that failed to start during an execution.</p>
+   */
+  @js.native
+  trait TaskStartFailedEventDetails extends js.Object {
+    var resourceType: js.UndefOr[Name]
+    var resource: js.UndefOr[Name]
+    var error: js.UndefOr[SensitiveError]
+    var cause: js.UndefOr[SensitiveCause]
+  }
+
+  object TaskStartFailedEventDetails {
+    def apply(
+      resourceType: js.UndefOr[Name] = js.undefined,
+      resource: js.UndefOr[Name] = js.undefined,
+      error: js.UndefOr[SensitiveError] = js.undefined,
+      cause: js.UndefOr[SensitiveCause] = js.undefined): TaskStartFailedEventDetails = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "resourceType" -> resourceType.map { x => x.asInstanceOf[js.Any] },
+        "resource" -> resource.map { x => x.asInstanceOf[js.Any] },
+        "error" -> error.map { x => x.asInstanceOf[js.Any] },
+        "cause" -> cause.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TaskStartFailedEventDetails]
+    }
+  }
+
+  /**
+   * <p>Contains details about the start of a task during an execution.</p>
+   */
+  @js.native
+  trait TaskStartedEventDetails extends js.Object {
+    var resourceType: js.UndefOr[Name]
+    var resource: js.UndefOr[Name]
+  }
+
+  object TaskStartedEventDetails {
+    def apply(
+      resourceType: js.UndefOr[Name] = js.undefined,
+      resource: js.UndefOr[Name] = js.undefined): TaskStartedEventDetails = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "resourceType" -> resourceType.map { x => x.asInstanceOf[js.Any] },
+        "resource" -> resource.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TaskStartedEventDetails]
+    }
+  }
+
+  /**
+   * <p/>
+   */
+  @js.native
+  trait TaskSubmitFailedEventDetails extends js.Object {
+    var resourceType: js.UndefOr[Name]
+    var resource: js.UndefOr[Name]
+    var error: js.UndefOr[SensitiveError]
+    var cause: js.UndefOr[SensitiveCause]
+  }
+
+  object TaskSubmitFailedEventDetails {
+    def apply(
+      resourceType: js.UndefOr[Name] = js.undefined,
+      resource: js.UndefOr[Name] = js.undefined,
+      error: js.UndefOr[SensitiveError] = js.undefined,
+      cause: js.UndefOr[SensitiveCause] = js.undefined): TaskSubmitFailedEventDetails = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "resourceType" -> resourceType.map { x => x.asInstanceOf[js.Any] },
+        "resource" -> resource.map { x => x.asInstanceOf[js.Any] },
+        "error" -> error.map { x => x.asInstanceOf[js.Any] },
+        "cause" -> cause.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TaskSubmitFailedEventDetails]
+    }
+  }
+
+  /**
+   * <p/>
+   */
+  @js.native
+  trait TaskSubmittedEventDetails extends js.Object {
+    var resourceType: js.UndefOr[Name]
+    var resource: js.UndefOr[Name]
+    var output: js.UndefOr[SensitiveData]
+  }
+
+  object TaskSubmittedEventDetails {
+    def apply(
+      resourceType: js.UndefOr[Name] = js.undefined,
+      resource: js.UndefOr[Name] = js.undefined,
+      output: js.UndefOr[SensitiveData] = js.undefined): TaskSubmittedEventDetails = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "resourceType" -> resourceType.map { x => x.asInstanceOf[js.Any] },
+        "resource" -> resource.map { x => x.asInstanceOf[js.Any] },
+        "output" -> output.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TaskSubmittedEventDetails]
+    }
+  }
+
+  /**
+   * <p>Contains details about the start of connected service by a task state.</p>
+   */
+  @js.native
+  trait TaskSucceededEventDetails extends js.Object {
+    var resourceType: js.UndefOr[Name]
+    var resource: js.UndefOr[Name]
+    var output: js.UndefOr[SensitiveData]
+  }
+
+  object TaskSucceededEventDetails {
+    def apply(
+      resourceType: js.UndefOr[Name] = js.undefined,
+      resource: js.UndefOr[Name] = js.undefined,
+      output: js.UndefOr[SensitiveData] = js.undefined): TaskSucceededEventDetails = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "resourceType" -> resourceType.map { x => x.asInstanceOf[js.Any] },
+        "resource" -> resource.map { x => x.asInstanceOf[js.Any] },
+        "output" -> output.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TaskSucceededEventDetails]
+    }
+  }
+
+  /**
+   * <p>Contains details about a connected service timeout that occured during an execution.</p>
+   */
+  @js.native
+  trait TaskTimedOutEventDetails extends js.Object {
+    var resourceType: js.UndefOr[Name]
+    var resource: js.UndefOr[Name]
+    var error: js.UndefOr[SensitiveError]
+    var cause: js.UndefOr[SensitiveCause]
+  }
+
+  object TaskTimedOutEventDetails {
+    def apply(
+      resourceType: js.UndefOr[Name] = js.undefined,
+      resource: js.UndefOr[Name] = js.undefined,
+      error: js.UndefOr[SensitiveError] = js.undefined,
+      cause: js.UndefOr[SensitiveCause] = js.undefined): TaskTimedOutEventDetails = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "resourceType" -> resourceType.map { x => x.asInstanceOf[js.Any] },
+        "resource" -> resource.map { x => x.asInstanceOf[js.Any] },
+        "error" -> error.map { x => x.asInstanceOf[js.Any] },
+        "cause" -> cause.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TaskTimedOutEventDetails]
+    }
   }
 
   @js.native

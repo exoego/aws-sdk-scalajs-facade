@@ -38,7 +38,10 @@ package object codedeploy {
   type DeploymentStatus = String
   type DeploymentStatusList = js.Array[DeploymentStatus]
   type DeploymentStatusMessageList = js.Array[ErrorMessage]
+  type DeploymentTargetList = js.Array[DeploymentTarget]
+  type DeploymentTargetType = String
   type DeploymentType = String
+  type DeploymentWaitType = String
   type DeploymentsInfoList = js.Array[DeploymentInfo]
   type DeploymentsList = js.Array[DeploymentId]
   type Description = String
@@ -46,12 +49,21 @@ package object codedeploy {
   type EC2TagFilterList = js.Array[EC2TagFilter]
   type EC2TagFilterType = String
   type EC2TagSetList = js.Array[EC2TagFilterList]
+  type ECSClusterName = String
+  type ECSServiceList = js.Array[ECSService]
+  type ECSServiceName = String
+  type ECSTaskSetCount = Double
+  type ECSTaskSetIdentifier = String
+  type ECSTaskSetList = js.Array[ECSTaskSet]
+  type ECSTaskSetStatus = String
   type ELBInfoList = js.Array[ELBInfo]
   type ELBName = String
   type ETag = String
   type ErrorCode = String
   type ErrorMessage = String
   type FileExistsBehavior = String
+  type FilterValue = String
+  type FilterValueList = js.Array[FilterValue]
   type GitHubAccountTokenName = String
   type GitHubAccountTokenNameList = js.Array[GitHubAccountTokenName]
   type GreenFleetProvisioningAction = String
@@ -78,6 +90,8 @@ package object codedeploy {
   type LifecycleEventStatus = String
   type LifecycleMessage = String
   type ListStateFilterAction = String
+  type ListenerArn = String
+  type ListenerArnList = js.Array[ListenerArn]
   type LogTail = String
   type Message = String
   type MinimumHealthyHostsType = String
@@ -102,10 +116,20 @@ package object codedeploy {
   type TagFilterList = js.Array[TagFilter]
   type TagFilterType = String
   type TagList = js.Array[Tag]
+  type TargetArn = String
+  type TargetFilterName = String
+  type TargetFilters = js.Dictionary[FilterValueList]
   type TargetGroupInfoList = js.Array[TargetGroupInfo]
   type TargetGroupName = String
+  type TargetGroupPairInfoList = js.Array[TargetGroupPairInfo]
+  type TargetId = String
+  type TargetIdList = js.Array[TargetId]
+  type TargetLabel = String
+  type TargetStatus = String
+  type Time = js.Date
   type Timestamp = js.Date
   type TrafficRoutingType = String
+  type TrafficWeight = Double
   type TriggerConfigList = js.Array[TriggerConfig]
   type TriggerEventType = String
   type TriggerEventTypeList = js.Array[TriggerEventType]
@@ -125,6 +149,7 @@ package codedeploy {
     def batchGetApplications(params: BatchGetApplicationsInput): Request[BatchGetApplicationsOutput] = js.native
     def batchGetDeploymentGroups(params: BatchGetDeploymentGroupsInput): Request[BatchGetDeploymentGroupsOutput] = js.native
     def batchGetDeploymentInstances(params: BatchGetDeploymentInstancesInput): Request[BatchGetDeploymentInstancesOutput] = js.native
+    def batchGetDeploymentTargets(params: BatchGetDeploymentTargetsInput): Request[BatchGetDeploymentTargetsOutput] = js.native
     def batchGetDeployments(params: BatchGetDeploymentsInput): Request[BatchGetDeploymentsOutput] = js.native
     def batchGetOnPremisesInstances(params: BatchGetOnPremisesInstancesInput): Request[BatchGetOnPremisesInstancesOutput] = js.native
     def continueDeployment(params: ContinueDeploymentInput): Request[js.Object] = js.native
@@ -143,12 +168,14 @@ package codedeploy {
     def getDeploymentConfig(params: GetDeploymentConfigInput): Request[GetDeploymentConfigOutput] = js.native
     def getDeploymentGroup(params: GetDeploymentGroupInput): Request[GetDeploymentGroupOutput] = js.native
     def getDeploymentInstance(params: GetDeploymentInstanceInput): Request[GetDeploymentInstanceOutput] = js.native
+    def getDeploymentTarget(params: GetDeploymentTargetInput): Request[GetDeploymentTargetOutput] = js.native
     def getOnPremisesInstance(params: GetOnPremisesInstanceInput): Request[GetOnPremisesInstanceOutput] = js.native
     def listApplicationRevisions(params: ListApplicationRevisionsInput): Request[ListApplicationRevisionsOutput] = js.native
     def listApplications(params: ListApplicationsInput): Request[ListApplicationsOutput] = js.native
     def listDeploymentConfigs(params: ListDeploymentConfigsInput): Request[ListDeploymentConfigsOutput] = js.native
     def listDeploymentGroups(params: ListDeploymentGroupsInput): Request[ListDeploymentGroupsOutput] = js.native
     def listDeploymentInstances(params: ListDeploymentInstancesInput): Request[ListDeploymentInstancesOutput] = js.native
+    def listDeploymentTargets(params: ListDeploymentTargetsInput): Request[ListDeploymentTargetsOutput] = js.native
     def listDeployments(params: ListDeploymentsInput): Request[ListDeploymentsOutput] = js.native
     def listGitHubAccountTokenNames(params: ListGitHubAccountTokenNamesInput): Request[ListGitHubAccountTokenNamesOutput] = js.native
     def listOnPremisesInstances(params: ListOnPremisesInstancesInput): Request[ListOnPremisesInstancesOutput] = js.native
@@ -226,27 +253,24 @@ package codedeploy {
   }
 
   /**
-   * <p>The maximum number of alarms for a deployment group (10) was exceeded.</p>
+   * <p> A revision for an AWS Lambda or Amazon ECS deployment that is a YAML-formatted or JSON-formatted string. For AWS Lambda and Amazon ECS deployments, the revision is the same as the AppSpec file. This method replaces the deprecated <code>RawString</code> data type. </p>
    */
   @js.native
-  trait AlarmsLimitExceededExceptionException extends js.Object {
-
+  trait AppSpecContent extends js.Object {
+    var content: js.UndefOr[RawStringContent]
+    var sha256: js.UndefOr[RawStringSha256]
   }
 
-  /**
-   * <p>An application with the specified name already exists with the applicable IAM user or AWS account.</p>
-   */
-  @js.native
-  trait ApplicationAlreadyExistsExceptionException extends js.Object {
+  object AppSpecContent {
+    def apply(
+      content: js.UndefOr[RawStringContent] = js.undefined,
+      sha256: js.UndefOr[RawStringSha256] = js.undefined): AppSpecContent = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "content" -> content.map { x => x.asInstanceOf[js.Any] },
+        "sha256" -> sha256.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
-  }
-
-  /**
-   * <p>The application does not exist with the applicable IAM user or AWS account.</p>
-   */
-  @js.native
-  trait ApplicationDoesNotExistExceptionException extends js.Object {
-
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AppSpecContent]
+    }
   }
 
   /**
@@ -280,22 +304,6 @@ package codedeploy {
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ApplicationInfo]
     }
-  }
-
-  /**
-   * <p>More applications were attempted to be created than are allowed.</p>
-   */
-  @js.native
-  trait ApplicationLimitExceededExceptionException extends js.Object {
-
-  }
-
-  /**
-   * <p>The minimum number of required application names was not specified.</p>
-   */
-  @js.native
-  trait ApplicationNameRequiredExceptionException extends js.Object {
-
   }
 
   object ApplicationRevisionSortByEnum {
@@ -480,7 +488,7 @@ package codedeploy {
   }
 
   /**
-   * <p>Represents the input of a BatchGetDeploymentInstances operation.</p>
+   * <p> Represents the input of a BatchGetDeploymentInstances operation. </p>
    */
   @js.native
   trait BatchGetDeploymentInstancesInput extends js.Object {
@@ -521,8 +529,41 @@ package codedeploy {
     }
   }
 
+  @js.native
+  trait BatchGetDeploymentTargetsInput extends js.Object {
+    var deploymentId: js.UndefOr[DeploymentId]
+    var targetIds: js.UndefOr[TargetIdList]
+  }
+
+  object BatchGetDeploymentTargetsInput {
+    def apply(
+      deploymentId: js.UndefOr[DeploymentId] = js.undefined,
+      targetIds: js.UndefOr[TargetIdList] = js.undefined): BatchGetDeploymentTargetsInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "deploymentId" -> deploymentId.map { x => x.asInstanceOf[js.Any] },
+        "targetIds" -> targetIds.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BatchGetDeploymentTargetsInput]
+    }
+  }
+
+  @js.native
+  trait BatchGetDeploymentTargetsOutput extends js.Object {
+    var deploymentTargets: js.UndefOr[DeploymentTargetList]
+  }
+
+  object BatchGetDeploymentTargetsOutput {
+    def apply(
+      deploymentTargets: js.UndefOr[DeploymentTargetList] = js.undefined): BatchGetDeploymentTargetsOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "deploymentTargets" -> deploymentTargets.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BatchGetDeploymentTargetsOutput]
+    }
+  }
+
   /**
-   * <p>Represents the input of a BatchGetDeployments operation.</p>
+   * <p> Represents the input of a BatchGetDeployments operation. </p>
    */
   @js.native
   trait BatchGetDeploymentsInput extends js.Object {
@@ -540,7 +581,7 @@ package codedeploy {
   }
 
   /**
-   * <p>Represents the output of a BatchGetDeployments operation.</p>
+   * <p> Represents the output of a BatchGetDeployments operation. </p>
    */
   @js.native
   trait BatchGetDeploymentsOutput extends js.Object {
@@ -594,14 +635,6 @@ package codedeploy {
   }
 
   /**
-   * <p>The maximum number of names or IDs allowed for this request (100) was exceeded.</p>
-   */
-  @js.native
-  trait BatchLimitExceededExceptionException extends js.Object {
-
-  }
-
-  /**
    * <p>Information about blue/green deployment options for a deployment group.</p>
    */
   @js.native
@@ -646,14 +679,6 @@ package codedeploy {
     }
   }
 
-  /**
-   * <p>A bucket name is required, but was not provided.</p>
-   */
-  @js.native
-  trait BucketNameFilterRequiredExceptionException extends js.Object {
-
-  }
-
   object BundleTypeEnum {
     val tar = "tar"
     val tgz = "tgz"
@@ -667,20 +692,24 @@ package codedeploy {
   object ComputePlatformEnum {
     val Server = "Server"
     val Lambda = "Lambda"
+    val ECS = "ECS"
 
-    val values = IndexedSeq(Server, Lambda)
+    val values = IndexedSeq(Server, Lambda, ECS)
   }
 
   @js.native
   trait ContinueDeploymentInput extends js.Object {
     var deploymentId: js.UndefOr[DeploymentId]
+    var deploymentWaitType: js.UndefOr[DeploymentWaitType]
   }
 
   object ContinueDeploymentInput {
     def apply(
-      deploymentId: js.UndefOr[DeploymentId] = js.undefined): ContinueDeploymentInput = {
+      deploymentId: js.UndefOr[DeploymentId] = js.undefined,
+      deploymentWaitType: js.UndefOr[DeploymentWaitType] = js.undefined): ContinueDeploymentInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "deploymentId" -> deploymentId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "deploymentId" -> deploymentId.map { x => x.asInstanceOf[js.Any] },
+        "deploymentWaitType" -> deploymentWaitType.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ContinueDeploymentInput]
     }
@@ -785,6 +814,7 @@ package codedeploy {
     var onPremisesTagSet: js.UndefOr[OnPremisesTagSet]
     var deploymentConfigName: js.UndefOr[DeploymentConfigName]
     var onPremisesInstanceTagFilters: js.UndefOr[TagFilterList]
+    var ecsServices: js.UndefOr[ECSServiceList]
     var deploymentGroupName: js.UndefOr[DeploymentGroupName]
     var ec2TagFilters: js.UndefOr[EC2TagFilterList]
     var autoRollbackConfiguration: js.UndefOr[AutoRollbackConfiguration]
@@ -804,6 +834,7 @@ package codedeploy {
       onPremisesTagSet: js.UndefOr[OnPremisesTagSet] = js.undefined,
       deploymentConfigName: js.UndefOr[DeploymentConfigName] = js.undefined,
       onPremisesInstanceTagFilters: js.UndefOr[TagFilterList] = js.undefined,
+      ecsServices: js.UndefOr[ECSServiceList] = js.undefined,
       deploymentGroupName: js.UndefOr[DeploymentGroupName] = js.undefined,
       ec2TagFilters: js.UndefOr[EC2TagFilterList] = js.undefined,
       autoRollbackConfiguration: js.UndefOr[AutoRollbackConfiguration] = js.undefined,
@@ -820,6 +851,7 @@ package codedeploy {
         "onPremisesTagSet" -> onPremisesTagSet.map { x => x.asInstanceOf[js.Any] },
         "deploymentConfigName" -> deploymentConfigName.map { x => x.asInstanceOf[js.Any] },
         "onPremisesInstanceTagFilters" -> onPremisesInstanceTagFilters.map { x => x.asInstanceOf[js.Any] },
+        "ecsServices" -> ecsServices.map { x => x.asInstanceOf[js.Any] },
         "deploymentGroupName" -> deploymentGroupName.map { x => x.asInstanceOf[js.Any] },
         "ec2TagFilters" -> ec2TagFilters.map { x => x.asInstanceOf[js.Any] },
         "autoRollbackConfiguration" -> autoRollbackConfiguration.map { x => x.asInstanceOf[js.Any] },
@@ -894,7 +926,7 @@ package codedeploy {
   }
 
   /**
-   * <p>Represents the output of a CreateDeployment operation.</p>
+   * <p> Represents the output of a CreateDeployment operation. </p>
    */
   @js.native
   trait CreateDeploymentOutput extends js.Object {
@@ -1023,38 +1055,6 @@ package codedeploy {
   }
 
   /**
-   * <p>The deployment is already complete.</p>
-   */
-  @js.native
-  trait DeploymentAlreadyCompletedExceptionException extends js.Object {
-
-  }
-
-  /**
-   * <p>A deployment configuration with the specified name already exists with the applicable IAM user or AWS account.</p>
-   */
-  @js.native
-  trait DeploymentConfigAlreadyExistsExceptionException extends js.Object {
-
-  }
-
-  /**
-   * <p>The deployment configuration does not exist with the applicable IAM user or AWS account.</p>
-   */
-  @js.native
-  trait DeploymentConfigDoesNotExistExceptionException extends js.Object {
-
-  }
-
-  /**
-   * <p>The deployment configuration is still in use.</p>
-   */
-  @js.native
-  trait DeploymentConfigInUseExceptionException extends js.Object {
-
-  }
-
-  /**
    * <p>Information about a deployment configuration.</p>
    */
   @js.native
@@ -1087,52 +1087,12 @@ package codedeploy {
     }
   }
 
-  /**
-   * <p>The deployment configurations limit was exceeded.</p>
-   */
-  @js.native
-  trait DeploymentConfigLimitExceededExceptionException extends js.Object {
-
-  }
-
-  /**
-   * <p>The deployment configuration name was not specified.</p>
-   */
-  @js.native
-  trait DeploymentConfigNameRequiredExceptionException extends js.Object {
-
-  }
-
   object DeploymentCreatorEnum {
     val user = "user"
     val autoscaling = "autoscaling"
     val codeDeployRollback = "codeDeployRollback"
 
     val values = IndexedSeq(user, autoscaling, codeDeployRollback)
-  }
-
-  /**
-   * <p>The deployment does not exist with the applicable IAM user or AWS account.</p>
-   */
-  @js.native
-  trait DeploymentDoesNotExistExceptionException extends js.Object {
-
-  }
-
-  /**
-   * <p>A deployment group with the specified name already exists with the applicable IAM user or AWS account.</p>
-   */
-  @js.native
-  trait DeploymentGroupAlreadyExistsExceptionException extends js.Object {
-
-  }
-
-  /**
-   * <p>The named deployment group does not exist with the applicable IAM user or AWS account.</p>
-   */
-  @js.native
-  trait DeploymentGroupDoesNotExistExceptionException extends js.Object {
-
   }
 
   /**
@@ -1153,6 +1113,7 @@ package codedeploy {
     var onPremisesTagSet: js.UndefOr[OnPremisesTagSet]
     var deploymentConfigName: js.UndefOr[DeploymentConfigName]
     var onPremisesInstanceTagFilters: js.UndefOr[TagFilterList]
+    var ecsServices: js.UndefOr[ECSServiceList]
     var deploymentGroupName: js.UndefOr[DeploymentGroupName]
     var ec2TagFilters: js.UndefOr[EC2TagFilterList]
     var autoRollbackConfiguration: js.UndefOr[AutoRollbackConfiguration]
@@ -1177,6 +1138,7 @@ package codedeploy {
       onPremisesTagSet: js.UndefOr[OnPremisesTagSet] = js.undefined,
       deploymentConfigName: js.UndefOr[DeploymentConfigName] = js.undefined,
       onPremisesInstanceTagFilters: js.UndefOr[TagFilterList] = js.undefined,
+      ecsServices: js.UndefOr[ECSServiceList] = js.undefined,
       deploymentGroupName: js.UndefOr[DeploymentGroupName] = js.undefined,
       ec2TagFilters: js.UndefOr[EC2TagFilterList] = js.undefined,
       autoRollbackConfiguration: js.UndefOr[AutoRollbackConfiguration] = js.undefined,
@@ -1198,6 +1160,7 @@ package codedeploy {
         "onPremisesTagSet" -> onPremisesTagSet.map { x => x.asInstanceOf[js.Any] },
         "deploymentConfigName" -> deploymentConfigName.map { x => x.asInstanceOf[js.Any] },
         "onPremisesInstanceTagFilters" -> onPremisesInstanceTagFilters.map { x => x.asInstanceOf[js.Any] },
+        "ecsServices" -> ecsServices.map { x => x.asInstanceOf[js.Any] },
         "deploymentGroupName" -> deploymentGroupName.map { x => x.asInstanceOf[js.Any] },
         "ec2TagFilters" -> ec2TagFilters.map { x => x.asInstanceOf[js.Any] },
         "autoRollbackConfiguration" -> autoRollbackConfiguration.map { x => x.asInstanceOf[js.Any] },
@@ -1208,30 +1171,6 @@ package codedeploy {
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeploymentGroupInfo]
     }
-  }
-
-  /**
-   * <p> The deployment groups limit was exceeded.</p>
-   */
-  @js.native
-  trait DeploymentGroupLimitExceededExceptionException extends js.Object {
-
-  }
-
-  /**
-   * <p>The deployment group name was not specified.</p>
-   */
-  @js.native
-  trait DeploymentGroupNameRequiredExceptionException extends js.Object {
-
-  }
-
-  /**
-   * <p>At least one deployment ID must be specified.</p>
-   */
-  @js.native
-  trait DeploymentIdRequiredExceptionException extends js.Object {
-
   }
 
   /**
@@ -1328,30 +1267,6 @@ package codedeploy {
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeploymentInfo]
     }
-  }
-
-  /**
-   * <p>The deployment does not have a status of Ready and can't continue yet.</p>
-   */
-  @js.native
-  trait DeploymentIsNotInReadyStateExceptionException extends js.Object {
-
-  }
-
-  /**
-   * <p>The number of allowed deployments was exceeded.</p>
-   */
-  @js.native
-  trait DeploymentLimitExceededExceptionException extends js.Object {
-
-  }
-
-  /**
-   * <p>The specified deployment has not started.</p>
-   */
-  @js.native
-  trait DeploymentNotStartedExceptionException extends js.Object {
-
   }
 
   object DeploymentOptionEnum {
@@ -1455,11 +1370,53 @@ package codedeploy {
     }
   }
 
+  /**
+   * <p> Information about the deployment target. </p>
+   */
+  @js.native
+  trait DeploymentTarget extends js.Object {
+    var deploymentTargetType: js.UndefOr[DeploymentTargetType]
+    var instanceTarget: js.UndefOr[InstanceTarget]
+    var lambdaTarget: js.UndefOr[LambdaTarget]
+    var ecsTarget: js.UndefOr[ECSTarget]
+  }
+
+  object DeploymentTarget {
+    def apply(
+      deploymentTargetType: js.UndefOr[DeploymentTargetType] = js.undefined,
+      instanceTarget: js.UndefOr[InstanceTarget] = js.undefined,
+      lambdaTarget: js.UndefOr[LambdaTarget] = js.undefined,
+      ecsTarget: js.UndefOr[ECSTarget] = js.undefined): DeploymentTarget = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "deploymentTargetType" -> deploymentTargetType.map { x => x.asInstanceOf[js.Any] },
+        "instanceTarget" -> instanceTarget.map { x => x.asInstanceOf[js.Any] },
+        "lambdaTarget" -> lambdaTarget.map { x => x.asInstanceOf[js.Any] },
+        "ecsTarget" -> ecsTarget.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeploymentTarget]
+    }
+  }
+
+  object DeploymentTargetTypeEnum {
+    val InstanceTarget = "InstanceTarget"
+    val LambdaTarget = "LambdaTarget"
+    val ECSTarget = "ECSTarget"
+
+    val values = IndexedSeq(InstanceTarget, LambdaTarget, ECSTarget)
+  }
+
   object DeploymentTypeEnum {
     val IN_PLACE = "IN_PLACE"
     val BLUE_GREEN = "BLUE_GREEN"
 
     val values = IndexedSeq(IN_PLACE, BLUE_GREEN)
+  }
+
+  object DeploymentWaitTypeEnum {
+    val READY_WAIT = "READY_WAIT"
+    val TERMINATION_WAIT = "TERMINATION_WAIT"
+
+    val values = IndexedSeq(READY_WAIT, TERMINATION_WAIT)
   }
 
   /**
@@ -1478,14 +1435,6 @@ package codedeploy {
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeregisterOnPremisesInstanceInput]
     }
-  }
-
-  /**
-   * <p>The description is too long.</p>
-   */
-  @js.native
-  trait DescriptionTooLongExceptionException extends js.Object {
-
   }
 
   /**
@@ -1566,6 +1515,102 @@ package codedeploy {
   }
 
   /**
+   * <p> Contains the service and cluster names used to identify an Amazon ECS deployment's target. </p>
+   */
+  @js.native
+  trait ECSService extends js.Object {
+    var serviceName: js.UndefOr[ECSServiceName]
+    var clusterName: js.UndefOr[ECSClusterName]
+  }
+
+  object ECSService {
+    def apply(
+      serviceName: js.UndefOr[ECSServiceName] = js.undefined,
+      clusterName: js.UndefOr[ECSClusterName] = js.undefined): ECSService = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "serviceName" -> serviceName.map { x => x.asInstanceOf[js.Any] },
+        "clusterName" -> clusterName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ECSService]
+    }
+  }
+
+  /**
+   * <p> Information about the target of an Amazon ECS deployment. </p>
+   */
+  @js.native
+  trait ECSTarget extends js.Object {
+    var targetArn: js.UndefOr[TargetArn]
+    var deploymentId: js.UndefOr[DeploymentId]
+    var targetId: js.UndefOr[TargetId]
+    var lifecycleEvents: js.UndefOr[LifecycleEventList]
+    var taskSetsInfo: js.UndefOr[ECSTaskSetList]
+    var status: js.UndefOr[TargetStatus]
+    var lastUpdatedAt: js.UndefOr[Time]
+  }
+
+  object ECSTarget {
+    def apply(
+      targetArn: js.UndefOr[TargetArn] = js.undefined,
+      deploymentId: js.UndefOr[DeploymentId] = js.undefined,
+      targetId: js.UndefOr[TargetId] = js.undefined,
+      lifecycleEvents: js.UndefOr[LifecycleEventList] = js.undefined,
+      taskSetsInfo: js.UndefOr[ECSTaskSetList] = js.undefined,
+      status: js.UndefOr[TargetStatus] = js.undefined,
+      lastUpdatedAt: js.UndefOr[Time] = js.undefined): ECSTarget = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "targetArn" -> targetArn.map { x => x.asInstanceOf[js.Any] },
+        "deploymentId" -> deploymentId.map { x => x.asInstanceOf[js.Any] },
+        "targetId" -> targetId.map { x => x.asInstanceOf[js.Any] },
+        "lifecycleEvents" -> lifecycleEvents.map { x => x.asInstanceOf[js.Any] },
+        "taskSetsInfo" -> taskSetsInfo.map { x => x.asInstanceOf[js.Any] },
+        "status" -> status.map { x => x.asInstanceOf[js.Any] },
+        "lastUpdatedAt" -> lastUpdatedAt.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ECSTarget]
+    }
+  }
+
+  /**
+   * <p> A set of Amazon ECS tasks. A task set runs a specified number of instances of a task definition simultaneously inside an Amazon ECS service. Information about a set of Amazon ECS tasks in an AWS CodeDeploy deployment. An Amazon ECS task set includes details such as the desired number of tasks, how many tasks are running, and whether the task set serves production traffic or not. </p>
+   */
+  @js.native
+  trait ECSTaskSet extends js.Object {
+    var trafficWeight: js.UndefOr[TrafficWeight]
+    var runningCount: js.UndefOr[ECSTaskSetCount]
+    var desiredCount: js.UndefOr[ECSTaskSetCount]
+    var targetGroup: js.UndefOr[TargetGroupInfo]
+    var identifer: js.UndefOr[ECSTaskSetIdentifier]
+    var status: js.UndefOr[ECSTaskSetStatus]
+    var pendingCount: js.UndefOr[ECSTaskSetCount]
+    var taskSetLabel: js.UndefOr[TargetLabel]
+  }
+
+  object ECSTaskSet {
+    def apply(
+      trafficWeight: js.UndefOr[TrafficWeight] = js.undefined,
+      runningCount: js.UndefOr[ECSTaskSetCount] = js.undefined,
+      desiredCount: js.UndefOr[ECSTaskSetCount] = js.undefined,
+      targetGroup: js.UndefOr[TargetGroupInfo] = js.undefined,
+      identifer: js.UndefOr[ECSTaskSetIdentifier] = js.undefined,
+      status: js.UndefOr[ECSTaskSetStatus] = js.undefined,
+      pendingCount: js.UndefOr[ECSTaskSetCount] = js.undefined,
+      taskSetLabel: js.UndefOr[TargetLabel] = js.undefined): ECSTaskSet = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "trafficWeight" -> trafficWeight.map { x => x.asInstanceOf[js.Any] },
+        "runningCount" -> runningCount.map { x => x.asInstanceOf[js.Any] },
+        "desiredCount" -> desiredCount.map { x => x.asInstanceOf[js.Any] },
+        "targetGroup" -> targetGroup.map { x => x.asInstanceOf[js.Any] },
+        "identifer" -> identifer.map { x => x.asInstanceOf[js.Any] },
+        "status" -> status.map { x => x.asInstanceOf[js.Any] },
+        "pendingCount" -> pendingCount.map { x => x.asInstanceOf[js.Any] },
+        "taskSetLabel" -> taskSetLabel.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ECSTaskSet]
+    }
+  }
+
+  /**
    * <p>Information about a load balancer in Elastic Load Balancing to use in a deployment. Instances are registered directly with a load balancer, and traffic is routed to the load balancer.</p>
    */
   @js.native
@@ -1610,8 +1655,12 @@ package codedeploy {
     val INVALID_LAMBDA_CONFIGURATION = "INVALID_LAMBDA_CONFIGURATION"
     val INVALID_LAMBDA_FUNCTION = "INVALID_LAMBDA_FUNCTION"
     val HOOK_EXECUTION_FAILURE = "HOOK_EXECUTION_FAILURE"
+    val AUTOSCALING_VALIDATION_ERROR = "AUTOSCALING_VALIDATION_ERROR"
+    val INVALID_ECS_SERVICE = "INVALID_ECS_SERVICE"
+    val ECS_UPDATE_ERROR = "ECS_UPDATE_ERROR"
+    val INVALID_REVISION = "INVALID_REVISION"
 
-    val values = IndexedSeq(DEPLOYMENT_GROUP_MISSING, APPLICATION_MISSING, REVISION_MISSING, IAM_ROLE_MISSING, IAM_ROLE_PERMISSIONS, NO_EC2_SUBSCRIPTION, OVER_MAX_INSTANCES, NO_INSTANCES, TIMEOUT, HEALTH_CONSTRAINTS_INVALID, HEALTH_CONSTRAINTS, INTERNAL_ERROR, THROTTLED, ALARM_ACTIVE, AGENT_ISSUE, AUTO_SCALING_IAM_ROLE_PERMISSIONS, AUTO_SCALING_CONFIGURATION, MANUAL_STOP, MISSING_BLUE_GREEN_DEPLOYMENT_CONFIGURATION, MISSING_ELB_INFORMATION, MISSING_GITHUB_TOKEN, ELASTIC_LOAD_BALANCING_INVALID, ELB_INVALID_INSTANCE, INVALID_LAMBDA_CONFIGURATION, INVALID_LAMBDA_FUNCTION, HOOK_EXECUTION_FAILURE)
+    val values = IndexedSeq(DEPLOYMENT_GROUP_MISSING, APPLICATION_MISSING, REVISION_MISSING, IAM_ROLE_MISSING, IAM_ROLE_PERMISSIONS, NO_EC2_SUBSCRIPTION, OVER_MAX_INSTANCES, NO_INSTANCES, TIMEOUT, HEALTH_CONSTRAINTS_INVALID, HEALTH_CONSTRAINTS, INTERNAL_ERROR, THROTTLED, ALARM_ACTIVE, AGENT_ISSUE, AUTO_SCALING_IAM_ROLE_PERMISSIONS, AUTO_SCALING_CONFIGURATION, MANUAL_STOP, MISSING_BLUE_GREEN_DEPLOYMENT_CONFIGURATION, MISSING_ELB_INFORMATION, MISSING_GITHUB_TOKEN, ELASTIC_LOAD_BALANCING_INVALID, ELB_INVALID_INSTANCE, INVALID_LAMBDA_CONFIGURATION, INVALID_LAMBDA_FUNCTION, HOOK_EXECUTION_FAILURE, AUTOSCALING_VALIDATION_ERROR, INVALID_ECS_SERVICE, ECS_UPDATE_ERROR, INVALID_REVISION)
   }
 
   /**
@@ -1848,7 +1897,7 @@ package codedeploy {
   }
 
   /**
-   * <p>Represents the input of a GetDeploymentInstance operation.</p>
+   * <p> Represents the input of a GetDeploymentInstance operation. </p>
    */
   @js.native
   trait GetDeploymentInstanceInput extends js.Object {
@@ -1869,7 +1918,7 @@ package codedeploy {
   }
 
   /**
-   * <p>Represents the output of a GetDeploymentInstance operation.</p>
+   * <p> Represents the output of a GetDeploymentInstance operation. </p>
    */
   @js.native
   trait GetDeploymentInstanceOutput extends js.Object {
@@ -1904,8 +1953,41 @@ package codedeploy {
     }
   }
 
+  @js.native
+  trait GetDeploymentTargetInput extends js.Object {
+    var deploymentId: js.UndefOr[DeploymentId]
+    var targetId: js.UndefOr[TargetId]
+  }
+
+  object GetDeploymentTargetInput {
+    def apply(
+      deploymentId: js.UndefOr[DeploymentId] = js.undefined,
+      targetId: js.UndefOr[TargetId] = js.undefined): GetDeploymentTargetInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "deploymentId" -> deploymentId.map { x => x.asInstanceOf[js.Any] },
+        "targetId" -> targetId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetDeploymentTargetInput]
+    }
+  }
+
+  @js.native
+  trait GetDeploymentTargetOutput extends js.Object {
+    var deploymentTarget: js.UndefOr[DeploymentTarget]
+  }
+
+  object GetDeploymentTargetOutput {
+    def apply(
+      deploymentTarget: js.UndefOr[DeploymentTarget] = js.undefined): GetDeploymentTargetOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "deploymentTarget" -> deploymentTarget.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetDeploymentTargetOutput]
+    }
+  }
+
   /**
-   * <p>Represents the input of a GetOnPremisesInstance operation.</p>
+   * <p> Represents the input of a GetOnPremisesInstance operation. </p>
    */
   @js.native
   trait GetOnPremisesInstanceInput extends js.Object {
@@ -1923,7 +2005,7 @@ package codedeploy {
   }
 
   /**
-   * <p>Represents the output of a GetOnPremisesInstance operation.</p>
+   * <p> Represents the output of a GetOnPremisesInstance operation. </p>
    */
   @js.native
   trait GetOnPremisesInstanceOutput extends js.Object {
@@ -1938,22 +2020,6 @@ package codedeploy {
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetOnPremisesInstanceOutput]
     }
-  }
-
-  /**
-   * <p>No GitHub account connection exists with the named specified in the call.</p>
-   */
-  @js.native
-  trait GitHubAccountTokenDoesNotExistExceptionException extends js.Object {
-
-  }
-
-  /**
-   * <p>The call is missing a required GitHub account connection name.</p>
-   */
-  @js.native
-  trait GitHubAccountTokenNameRequiredExceptionException extends js.Object {
-
   }
 
   /**
@@ -2002,59 +2068,11 @@ package codedeploy {
     }
   }
 
-  /**
-   * <p>No IAM ARN was included in the request. You must use an IAM session ARN or IAM user ARN in the request.</p>
-   */
-  @js.native
-  trait IamArnRequiredExceptionException extends js.Object {
-
-  }
-
-  /**
-   * <p>The request included an IAM session ARN that has already been used to register a different instance.</p>
-   */
-  @js.native
-  trait IamSessionArnAlreadyRegisteredExceptionException extends js.Object {
-
-  }
-
-  /**
-   * <p>The specified IAM user ARN is already registered with an on-premises instance.</p>
-   */
-  @js.native
-  trait IamUserArnAlreadyRegisteredExceptionException extends js.Object {
-
-  }
-
-  /**
-   * <p>An IAM user ARN was not specified.</p>
-   */
-  @js.native
-  trait IamUserArnRequiredExceptionException extends js.Object {
-
-  }
-
   object InstanceActionEnum {
     val TERMINATE = "TERMINATE"
     val KEEP_ALIVE = "KEEP_ALIVE"
 
     val values = IndexedSeq(TERMINATE, KEEP_ALIVE)
-  }
-
-  /**
-   * <p>The specified instance does not exist in the deployment group.</p>
-   */
-  @js.native
-  trait InstanceDoesNotExistExceptionException extends js.Object {
-
-  }
-
-  /**
-   * <p>The instance ID was not specified.</p>
-   */
-  @js.native
-  trait InstanceIdRequiredExceptionException extends js.Object {
-
   }
 
   /**
@@ -2093,38 +2111,7 @@ package codedeploy {
     }
   }
 
-  /**
-   * <p>The maximum number of allowed on-premises instances in a single call was exceeded.</p>
-   */
-  @js.native
-  trait InstanceLimitExceededExceptionException extends js.Object {
-
-  }
-
-  /**
-   * <p>The specified on-premises instance name is already registered.</p>
-   */
-  @js.native
-  trait InstanceNameAlreadyRegisteredExceptionException extends js.Object {
-
-  }
-
-  /**
-   * <p>An on-premises instance name was not specified.</p>
-   */
-  @js.native
-  trait InstanceNameRequiredExceptionException extends js.Object {
-
-  }
-
-  /**
-   * <p>The specified on-premises instance is not registered.</p>
-   */
-  @js.native
-  trait InstanceNotRegisteredExceptionException extends js.Object {
-
-  }
-
+  @deprecated
   object InstanceStatusEnum {
     val Pending = "Pending"
     val InProgress = "InProgress"
@@ -2140,6 +2127,7 @@ package codedeploy {
   /**
    * <p>Information about an instance in a deployment.</p>
    */
+  @deprecated
   @js.native
   trait InstanceSummary extends js.Object {
     var instanceId: js.UndefOr[InstanceId]
@@ -2170,6 +2158,42 @@ package codedeploy {
     }
   }
 
+  /**
+   * <p> A target Amazon EC2 or on-premises instance during a deployment that uses the EC2/On-premises compute platform. </p>
+   */
+  @js.native
+  trait InstanceTarget extends js.Object {
+    var targetArn: js.UndefOr[TargetArn]
+    var deploymentId: js.UndefOr[DeploymentId]
+    var targetId: js.UndefOr[TargetId]
+    var lifecycleEvents: js.UndefOr[LifecycleEventList]
+    var instanceLabel: js.UndefOr[TargetLabel]
+    var status: js.UndefOr[TargetStatus]
+    var lastUpdatedAt: js.UndefOr[Time]
+  }
+
+  object InstanceTarget {
+    def apply(
+      targetArn: js.UndefOr[TargetArn] = js.undefined,
+      deploymentId: js.UndefOr[DeploymentId] = js.undefined,
+      targetId: js.UndefOr[TargetId] = js.undefined,
+      lifecycleEvents: js.UndefOr[LifecycleEventList] = js.undefined,
+      instanceLabel: js.UndefOr[TargetLabel] = js.undefined,
+      status: js.UndefOr[TargetStatus] = js.undefined,
+      lastUpdatedAt: js.UndefOr[Time] = js.undefined): InstanceTarget = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "targetArn" -> targetArn.map { x => x.asInstanceOf[js.Any] },
+        "deploymentId" -> deploymentId.map { x => x.asInstanceOf[js.Any] },
+        "targetId" -> targetId.map { x => x.asInstanceOf[js.Any] },
+        "lifecycleEvents" -> lifecycleEvents.map { x => x.asInstanceOf[js.Any] },
+        "instanceLabel" -> instanceLabel.map { x => x.asInstanceOf[js.Any] },
+        "status" -> status.map { x => x.asInstanceOf[js.Any] },
+        "lastUpdatedAt" -> lastUpdatedAt.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[InstanceTarget]
+    }
+  }
+
   object InstanceTypeEnum {
     val Blue = "Blue"
     val Green = "Green"
@@ -2178,379 +2202,36 @@ package codedeploy {
   }
 
   /**
-   * <p>The format of the alarm configuration is invalid. Possible causes include:</p> <ul> <li> <p>The alarm list is null.</p> </li> <li> <p>The alarm object is null.</p> </li> <li> <p>The alarm name is empty or null or exceeds the 255 character limit.</p> </li> <li> <p>Two alarms with the same name have been specified.</p> </li> <li> <p>The alarm configuration is enabled but the alarm list is empty.</p> </li> </ul>
+   * <p> Information about the target AWS Lambda function during an AWS Lambda deployment. </p>
    */
   @js.native
-  trait InvalidAlarmConfigExceptionException extends js.Object {
-
+  trait LambdaTarget extends js.Object {
+    var targetArn: js.UndefOr[TargetArn]
+    var deploymentId: js.UndefOr[DeploymentId]
+    var targetId: js.UndefOr[TargetId]
+    var lifecycleEvents: js.UndefOr[LifecycleEventList]
+    var status: js.UndefOr[TargetStatus]
+    var lastUpdatedAt: js.UndefOr[Time]
   }
 
-  /**
-   * <p>The application name was specified in an invalid format.</p>
-   */
-  @js.native
-  trait InvalidApplicationNameExceptionException extends js.Object {
-
-  }
-
-  /**
-   * <p>The automatic rollback configuration was specified in an invalid format. For example, automatic rollback is enabled but an invalid triggering event type or no event types were listed.</p>
-   */
-  @js.native
-  trait InvalidAutoRollbackConfigExceptionException extends js.Object {
-
-  }
-
-  /**
-   * <p>The Auto Scaling group was specified in an invalid format or does not exist.</p>
-   */
-  @js.native
-  trait InvalidAutoScalingGroupExceptionException extends js.Object {
-
-  }
-
-  /**
-   * <p>The configuration for the blue/green deployment group was provided in an invalid format. For information about deployment configuration format, see <a>CreateDeploymentConfig</a>.</p>
-   */
-  @js.native
-  trait InvalidBlueGreenDeploymentConfigurationExceptionException extends js.Object {
-
-  }
-
-  /**
-   * <p>The bucket name either doesn't exist or was specified in an invalid format.</p>
-   */
-  @js.native
-  trait InvalidBucketNameFilterExceptionException extends js.Object {
-
-  }
-
-  /**
-   * <p>The computePlatform is invalid. The computePlatform should be <code>Lambda</code> or <code>Server</code>.</p>
-   */
-  @js.native
-  trait InvalidComputePlatformExceptionException extends js.Object {
-
-  }
-
-  /**
-   * <p>The deployed state filter was specified in an invalid format.</p>
-   */
-  @js.native
-  trait InvalidDeployedStateFilterExceptionException extends js.Object {
-
-  }
-
-  /**
-   * <p>The deployment configuration name was specified in an invalid format.</p>
-   */
-  @js.native
-  trait InvalidDeploymentConfigNameExceptionException extends js.Object {
-
-  }
-
-  /**
-   * <p>The deployment group name was specified in an invalid format.</p>
-   */
-  @js.native
-  trait InvalidDeploymentGroupNameExceptionException extends js.Object {
-
-  }
-
-  /**
-   * <p>At least one of the deployment IDs was specified in an invalid format.</p>
-   */
-  @js.native
-  trait InvalidDeploymentIdExceptionException extends js.Object {
-
-  }
-
-  /**
-   * <p>An instance type was specified for an in-place deployment. Instance types are supported for blue/green deployments only.</p>
-   */
-  @js.native
-  trait InvalidDeploymentInstanceTypeExceptionException extends js.Object {
-
-  }
-
-  /**
-   * <p>The specified deployment status doesn't exist or cannot be determined.</p>
-   */
-  @js.native
-  trait InvalidDeploymentStatusExceptionException extends js.Object {
-
-  }
-
-  /**
-   * <p>An invalid deployment style was specified. Valid deployment types include "IN_PLACE" and "BLUE_GREEN". Valid deployment options include "WITH_TRAFFIC_CONTROL" and "WITHOUT_TRAFFIC_CONTROL".</p>
-   */
-  @js.native
-  trait InvalidDeploymentStyleExceptionException extends js.Object {
-
-  }
-
-  /**
-   * <p>A call was submitted that specified both Ec2TagFilters and Ec2TagSet, but only one of these data types can be used in a single call.</p>
-   */
-  @js.native
-  trait InvalidEC2TagCombinationExceptionException extends js.Object {
-
-  }
-
-  /**
-   * <p>The tag was specified in an invalid format.</p>
-   */
-  @js.native
-  trait InvalidEC2TagExceptionException extends js.Object {
-
-  }
-
-  /**
-   * <p>An invalid fileExistsBehavior option was specified to determine how AWS CodeDeploy handles files or directories that already exist in a deployment target location but weren't part of the previous successful deployment. Valid values include "DISALLOW", "OVERWRITE", and "RETAIN".</p>
-   */
-  @js.native
-  trait InvalidFileExistsBehaviorExceptionException extends js.Object {
-
-  }
-
-  /**
-   * <p>The GitHub token is not valid.</p>
-   */
-  @js.native
-  trait InvalidGitHubAccountTokenExceptionException extends js.Object {
-
-  }
-
-  /**
-   * <p>The format of the specified GitHub account connection name is invalid.</p>
-   */
-  @js.native
-  trait InvalidGitHubAccountTokenNameExceptionException extends js.Object {
-
-  }
-
-  /**
-   * <p>The IAM session ARN was specified in an invalid format.</p>
-   */
-  @js.native
-  trait InvalidIamSessionArnExceptionException extends js.Object {
-
-  }
-
-  /**
-   * <p>The IAM user ARN was specified in an invalid format.</p>
-   */
-  @js.native
-  trait InvalidIamUserArnExceptionException extends js.Object {
-
-  }
-
-  /**
-   * <p>The IgnoreApplicationStopFailures value is invalid. For AWS Lambda deployments, <code>false</code> is expected. For EC2/On-premises deployments, <code>true</code> or <code>false</code> is expected.</p>
-   */
-  @js.native
-  trait InvalidIgnoreApplicationStopFailuresValueExceptionException extends js.Object {
-
-  }
-
-  /**
-   * <p>The specified input was specified in an invalid format.</p>
-   */
-  @js.native
-  trait InvalidInputExceptionException extends js.Object {
-
-  }
-
-  /**
-   * <p> </p>
-   */
-  @js.native
-  trait InvalidInstanceIdExceptionException extends js.Object {
-
-  }
-
-  /**
-   * <p>The specified on-premises instance name was specified in an invalid format.</p>
-   */
-  @js.native
-  trait InvalidInstanceNameExceptionException extends js.Object {
-
-  }
-
-  /**
-   * <p>The specified instance status does not exist.</p>
-   */
-  @js.native
-  trait InvalidInstanceStatusExceptionException extends js.Object {
-
-  }
-
-  /**
-   * <p>An invalid instance type was specified for instances in a blue/green deployment. Valid values include "Blue" for an original environment and "Green" for a replacement environment.</p>
-   */
-  @js.native
-  trait InvalidInstanceTypeExceptionException extends js.Object {
-
-  }
-
-  /**
-   * <p>The specified key prefix filter was specified in an invalid format.</p>
-   */
-  @js.native
-  trait InvalidKeyPrefixFilterExceptionException extends js.Object {
-
-  }
-
-  /**
-   * <p>A lifecycle event hook is invalid. Review the <code>hooks</code> section in your AppSpec file to ensure the lifecycle events and <code>hooks</code> functions are valid.</p>
-   */
-  @js.native
-  trait InvalidLifecycleEventHookExecutionIdExceptionException extends js.Object {
-
-  }
-
-  /**
-   * <p>The result of a Lambda validation function that verifies a lifecycle event is invalid. It should return <code>Succeeded</code> or <code>Failed</code>.</p>
-   */
-  @js.native
-  trait InvalidLifecycleEventHookExecutionStatusExceptionException extends js.Object {
-
-  }
-
-  /**
-   * <p>An invalid load balancer name, or no load balancer name, was specified.</p>
-   */
-  @js.native
-  trait InvalidLoadBalancerInfoExceptionException extends js.Object {
-
-  }
-
-  /**
-   * <p>The minimum healthy instance value was specified in an invalid format.</p>
-   */
-  @js.native
-  trait InvalidMinimumHealthyHostValueExceptionException extends js.Object {
-
-  }
-
-  /**
-   * <p>The next token was specified in an invalid format.</p>
-   */
-  @js.native
-  trait InvalidNextTokenExceptionException extends js.Object {
-
-  }
-
-  /**
-   * <p>A call was submitted that specified both OnPremisesTagFilters and OnPremisesTagSet, but only one of these data types can be used in a single call.</p>
-   */
-  @js.native
-  trait InvalidOnPremisesTagCombinationExceptionException extends js.Object {
-
-  }
-
-  /**
-   * <p>An invalid operation was detected.</p>
-   */
-  @js.native
-  trait InvalidOperationExceptionException extends js.Object {
-
-  }
-
-  /**
-   * <p>The registration status was specified in an invalid format.</p>
-   */
-  @js.native
-  trait InvalidRegistrationStatusExceptionException extends js.Object {
-
-  }
-
-  /**
-   * <p>The revision was specified in an invalid format.</p>
-   */
-  @js.native
-  trait InvalidRevisionExceptionException extends js.Object {
-
-  }
-
-  /**
-   * <p>The service role ARN was specified in an invalid format. Or, if an Auto Scaling group was specified, the specified service role does not grant the appropriate permissions to Auto Scaling.</p>
-   */
-  @js.native
-  trait InvalidRoleExceptionException extends js.Object {
-
-  }
-
-  /**
-   * <p>The column name to sort by is either not present or was specified in an invalid format.</p>
-   */
-  @js.native
-  trait InvalidSortByExceptionException extends js.Object {
-
-  }
-
-  /**
-   * <p>The sort order was specified in an invalid format.</p>
-   */
-  @js.native
-  trait InvalidSortOrderExceptionException extends js.Object {
-
-  }
-
-  /**
-   * <p>The specified tag was specified in an invalid format.</p>
-   */
-  @js.native
-  trait InvalidTagExceptionException extends js.Object {
-
-  }
-
-  /**
-   * <p>The specified tag filter was specified in an invalid format.</p>
-   */
-  @js.native
-  trait InvalidTagFilterExceptionException extends js.Object {
-
-  }
-
-  /**
-   * <p>The target instance configuration is invalid. Possible causes include:</p> <ul> <li> <p>Configuration data for target instances was entered for an in-place deployment.</p> </li> <li> <p>The limit of 10 tags for a tag type was exceeded.</p> </li> <li> <p>The combined length of the tag names exceeded the limit. </p> </li> <li> <p>A specified tag is not currently applied to any instances.</p> </li> </ul>
-   */
-  @js.native
-  trait InvalidTargetInstancesExceptionException extends js.Object {
-
-  }
-
-  /**
-   * <p>The specified time range was specified in an invalid format.</p>
-   */
-  @js.native
-  trait InvalidTimeRangeExceptionException extends js.Object {
-
-  }
-
-  /**
-   * <p> The configuration that specifies how traffic is routed during a deployment is invalid.</p>
-   */
-  @js.native
-  trait InvalidTrafficRoutingConfigurationExceptionException extends js.Object {
-
-  }
-
-  /**
-   * <p>The trigger was specified in an invalid format.</p>
-   */
-  @js.native
-  trait InvalidTriggerConfigExceptionException extends js.Object {
-
-  }
-
-  /**
-   * <p>The UpdateOutdatedInstancesOnly value is invalid. For AWS Lambda deployments, <code>false</code> is expected. For EC2/On-premises deployments, <code>true</code> or <code>false</code> is expected.</p>
-   */
-  @js.native
-  trait InvalidUpdateOutdatedInstancesOnlyValueExceptionException extends js.Object {
-
+  object LambdaTarget {
+    def apply(
+      targetArn: js.UndefOr[TargetArn] = js.undefined,
+      deploymentId: js.UndefOr[DeploymentId] = js.undefined,
+      targetId: js.UndefOr[TargetId] = js.undefined,
+      lifecycleEvents: js.UndefOr[LifecycleEventList] = js.undefined,
+      status: js.UndefOr[TargetStatus] = js.undefined,
+      lastUpdatedAt: js.UndefOr[Time] = js.undefined): LambdaTarget = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "targetArn" -> targetArn.map { x => x.asInstanceOf[js.Any] },
+        "deploymentId" -> deploymentId.map { x => x.asInstanceOf[js.Any] },
+        "targetId" -> targetId.map { x => x.asInstanceOf[js.Any] },
+        "lifecycleEvents" -> lifecycleEvents.map { x => x.asInstanceOf[js.Any] },
+        "status" -> status.map { x => x.asInstanceOf[js.Any] },
+        "lastUpdatedAt" -> lastUpdatedAt.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[LambdaTarget]
+    }
   }
 
   /**
@@ -2621,14 +2302,6 @@ package codedeploy {
     }
   }
 
-  /**
-   * <p>An attempt to return the status of an already completed lifecycle event occurred.</p>
-   */
-  @js.native
-  trait LifecycleEventAlreadyCompletedExceptionException extends js.Object {
-
-  }
-
   object LifecycleEventStatusEnum {
     val Pending = "Pending"
     val InProgress = "InProgress"
@@ -2641,15 +2314,7 @@ package codedeploy {
   }
 
   /**
-   * <p>The limit for lifecycle hooks was exceeded.</p>
-   */
-  @js.native
-  trait LifecycleHookLimitExceededExceptionException extends js.Object {
-
-  }
-
-  /**
-   * <p>Represents the input of a ListApplicationRevisions operation.</p>
+   * <p> Represents the input of a ListApplicationRevisions operation. </p>
    */
   @js.native
   trait ListApplicationRevisionsInput extends js.Object {
@@ -2829,7 +2494,7 @@ package codedeploy {
   }
 
   /**
-   * <p>Represents the input of a ListDeploymentInstances operation.</p>
+   * <p> Represents the input of a ListDeploymentInstances operation. </p>
    */
   @js.native
   trait ListDeploymentInstancesInput extends js.Object {
@@ -2873,6 +2538,45 @@ package codedeploy {
         "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListDeploymentInstancesOutput]
+    }
+  }
+
+  @js.native
+  trait ListDeploymentTargetsInput extends js.Object {
+    var deploymentId: js.UndefOr[DeploymentId]
+    var nextToken: js.UndefOr[NextToken]
+    var targetFilters: js.UndefOr[TargetFilters]
+  }
+
+  object ListDeploymentTargetsInput {
+    def apply(
+      deploymentId: js.UndefOr[DeploymentId] = js.undefined,
+      nextToken: js.UndefOr[NextToken] = js.undefined,
+      targetFilters: js.UndefOr[TargetFilters] = js.undefined): ListDeploymentTargetsInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "deploymentId" -> deploymentId.map { x => x.asInstanceOf[js.Any] },
+        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] },
+        "targetFilters" -> targetFilters.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListDeploymentTargetsInput]
+    }
+  }
+
+  @js.native
+  trait ListDeploymentTargetsOutput extends js.Object {
+    var targetIds: js.UndefOr[TargetIdList]
+    var nextToken: js.UndefOr[NextToken]
+  }
+
+  object ListDeploymentTargetsOutput {
+    def apply(
+      targetIds: js.UndefOr[TargetIdList] = js.undefined,
+      nextToken: js.UndefOr[NextToken] = js.undefined): ListDeploymentTargetsOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "targetIds" -> targetIds.map { x => x.asInstanceOf[js.Any] },
+        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListDeploymentTargetsOutput]
     }
   }
 
@@ -3026,15 +2730,18 @@ package codedeploy {
   trait LoadBalancerInfo extends js.Object {
     var elbInfoList: js.UndefOr[ELBInfoList]
     var targetGroupInfoList: js.UndefOr[TargetGroupInfoList]
+    var targetGroupPairInfoList: js.UndefOr[TargetGroupPairInfoList]
   }
 
   object LoadBalancerInfo {
     def apply(
       elbInfoList: js.UndefOr[ELBInfoList] = js.undefined,
-      targetGroupInfoList: js.UndefOr[TargetGroupInfoList] = js.undefined): LoadBalancerInfo = {
+      targetGroupInfoList: js.UndefOr[TargetGroupInfoList] = js.undefined,
+      targetGroupPairInfoList: js.UndefOr[TargetGroupPairInfoList] = js.undefined): LoadBalancerInfo = {
       val _fields = IndexedSeq[(String, js.Any)](
         "elbInfoList" -> elbInfoList.map { x => x.asInstanceOf[js.Any] },
-        "targetGroupInfoList" -> targetGroupInfoList.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "targetGroupInfoList" -> targetGroupInfoList.map { x => x.asInstanceOf[js.Any] },
+        "targetGroupPairInfoList" -> targetGroupPairInfoList.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[LoadBalancerInfo]
     }
@@ -3069,14 +2776,6 @@ package codedeploy {
   }
 
   /**
-   * <p>Both an IAM user ARN and an IAM session ARN were included in the request. Use only one ARN type.</p>
-   */
-  @js.native
-  trait MultipleIamArnsProvidedExceptionException extends js.Object {
-
-  }
-
-  /**
    * <p>Information about groups of on-premises instance tags.</p>
    */
   @js.native
@@ -3092,14 +2791,6 @@ package codedeploy {
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[OnPremisesTagSet]
     }
-  }
-
-  /**
-   * <p>The API used does not support the deployment.</p>
-   */
-  @js.native
-  trait OperationNotSupportedExceptionException extends js.Object {
-
   }
 
   @js.native
@@ -3141,6 +2832,7 @@ package codedeploy {
   /**
    * <p>A revision for an AWS Lambda deployment that is a YAML-formatted or JSON-formatted string. For AWS Lambda deployments, the revision is the same as the AppSpec file.</p>
    */
+  @deprecated
   @js.native
   trait RawString extends js.Object {
     var content: js.UndefOr[RawStringContent]
@@ -3236,22 +2928,6 @@ package codedeploy {
   }
 
   /**
-   * <p>The specified resource could not be validated.</p>
-   */
-  @js.native
-  trait ResourceValidationExceptionException extends js.Object {
-
-  }
-
-  /**
-   * <p>The named revision does not exist with the applicable IAM user or AWS account.</p>
-   */
-  @js.native
-  trait RevisionDoesNotExistExceptionException extends js.Object {
-
-  }
-
-  /**
    * <p>Information about an application revision.</p>
    */
   @js.native
@@ -3277,23 +2953,26 @@ package codedeploy {
    */
   @js.native
   trait RevisionLocation extends js.Object {
-    var revisionType: js.UndefOr[RevisionLocationType]
     var s3Location: js.UndefOr[S3Location]
-    var gitHubLocation: js.UndefOr[GitHubLocation]
     var string: js.UndefOr[RawString]
+    var appSpecContent: js.UndefOr[AppSpecContent]
+    var revisionType: js.UndefOr[RevisionLocationType]
+    var gitHubLocation: js.UndefOr[GitHubLocation]
   }
 
   object RevisionLocation {
     def apply(
-      revisionType: js.UndefOr[RevisionLocationType] = js.undefined,
       s3Location: js.UndefOr[S3Location] = js.undefined,
-      gitHubLocation: js.UndefOr[GitHubLocation] = js.undefined,
-      string: js.UndefOr[RawString] = js.undefined): RevisionLocation = {
+      string: js.UndefOr[RawString] = js.undefined,
+      appSpecContent: js.UndefOr[AppSpecContent] = js.undefined,
+      revisionType: js.UndefOr[RevisionLocationType] = js.undefined,
+      gitHubLocation: js.UndefOr[GitHubLocation] = js.undefined): RevisionLocation = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "revisionType" -> revisionType.map { x => x.asInstanceOf[js.Any] },
         "s3Location" -> s3Location.map { x => x.asInstanceOf[js.Any] },
-        "gitHubLocation" -> gitHubLocation.map { x => x.asInstanceOf[js.Any] },
-        "string" -> string.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "string" -> string.map { x => x.asInstanceOf[js.Any] },
+        "appSpecContent" -> appSpecContent.map { x => x.asInstanceOf[js.Any] },
+        "revisionType" -> revisionType.map { x => x.asInstanceOf[js.Any] },
+        "gitHubLocation" -> gitHubLocation.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RevisionLocation]
     }
@@ -3303,24 +2982,9 @@ package codedeploy {
     val S3 = "S3"
     val GitHub = "GitHub"
     val String = "String"
+    val AppSpecContent = "AppSpecContent"
 
-    val values = IndexedSeq(S3, GitHub, String)
-  }
-
-  /**
-   * <p>The revision ID was not specified.</p>
-   */
-  @js.native
-  trait RevisionRequiredExceptionException extends js.Object {
-
-  }
-
-  /**
-   * <p>The role ID was not specified.</p>
-   */
-  @js.native
-  trait RoleRequiredExceptionException extends js.Object {
-
+    val values = IndexedSeq(S3, GitHub, String, AppSpecContent)
   }
 
   /**
@@ -3400,7 +3064,7 @@ package codedeploy {
   }
 
   /**
-   * <p>Represents the input of a StopDeployment operation.</p>
+   * <p> Represents the input of a StopDeployment operation. </p>
    */
   @js.native
   trait StopDeploymentInput extends js.Object {
@@ -3421,7 +3085,7 @@ package codedeploy {
   }
 
   /**
-   * <p>Represents the output of a StopDeployment operation.</p>
+   * <p> Represents the output of a StopDeployment operation. </p>
    */
   @js.native
   trait StopDeploymentOutput extends js.Object {
@@ -3501,28 +3165,11 @@ package codedeploy {
     val values = IndexedSeq(KEY_ONLY, VALUE_ONLY, KEY_AND_VALUE)
   }
 
-  /**
-   * <p>The maximum allowed number of tags was exceeded.</p>
-   */
-  @js.native
-  trait TagLimitExceededExceptionException extends js.Object {
+  object TargetFilterNameEnum {
+    val TargetStatus = "TargetStatus"
+    val ServerInstanceLabel = "ServerInstanceLabel"
 
-  }
-
-  /**
-   * <p>A tag was not specified.</p>
-   */
-  @js.native
-  trait TagRequiredExceptionException extends js.Object {
-
-  }
-
-  /**
-   * <p>The number of tag groups included in the tag set list exceeded the maximum allowed limit of 3.</p>
-   */
-  @js.native
-  trait TagSetListLimitExceededExceptionException extends js.Object {
-
+    val values = IndexedSeq(TargetStatus, ServerInstanceLabel)
   }
 
   /**
@@ -3540,6 +3187,30 @@ package codedeploy {
         "name" -> name.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TargetGroupInfo]
+    }
+  }
+
+  /**
+   * <p> Information about two target groups and how traffic routes during an Amazon ECS deployment. An optional test traffic route can be specified. </p>
+   */
+  @js.native
+  trait TargetGroupPairInfo extends js.Object {
+    var targetGroups: js.UndefOr[TargetGroupInfoList]
+    var prodTrafficRoute: js.UndefOr[TrafficRoute]
+    var testTrafficRoute: js.UndefOr[TrafficRoute]
+  }
+
+  object TargetGroupPairInfo {
+    def apply(
+      targetGroups: js.UndefOr[TargetGroupInfoList] = js.undefined,
+      prodTrafficRoute: js.UndefOr[TrafficRoute] = js.undefined,
+      testTrafficRoute: js.UndefOr[TrafficRoute] = js.undefined): TargetGroupPairInfo = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "targetGroups" -> targetGroups.map { x => x.asInstanceOf[js.Any] },
+        "prodTrafficRoute" -> prodTrafficRoute.map { x => x.asInstanceOf[js.Any] },
+        "testTrafficRoute" -> testTrafficRoute.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TargetGroupPairInfo]
     }
   }
 
@@ -3567,12 +3238,23 @@ package codedeploy {
     }
   }
 
-  /**
-   * <p>An API function was called too frequently.</p>
-   */
-  @js.native
-  trait ThrottlingExceptionException extends js.Object {
+  object TargetLabelEnum {
+    val Blue = "Blue"
+    val Green = "Green"
 
+    val values = IndexedSeq(Blue, Green)
+  }
+
+  object TargetStatusEnum {
+    val Pending = "Pending"
+    val InProgress = "InProgress"
+    val Succeeded = "Succeeded"
+    val Failed = "Failed"
+    val Skipped = "Skipped"
+    val Unknown = "Unknown"
+    val Ready = "Ready"
+
+    val values = IndexedSeq(Pending, InProgress, Succeeded, Failed, Skipped, Unknown, Ready)
   }
 
   /**
@@ -3635,6 +3317,24 @@ package codedeploy {
         "end" -> end.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TimeRange]
+    }
+  }
+
+  /**
+   * <p> Information about a listener. The listener contains the path used to route traffic that is received from the load balancer to a target group. </p>
+   */
+  @js.native
+  trait TrafficRoute extends js.Object {
+    var listenerArns: js.UndefOr[ListenerArnList]
+  }
+
+  object TrafficRoute {
+    def apply(
+      listenerArns: js.UndefOr[ListenerArnList] = js.undefined): TrafficRoute = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "listenerArns" -> listenerArns.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TrafficRoute]
     }
   }
 
@@ -3710,22 +3410,6 @@ package codedeploy {
   }
 
   /**
-   * <p>The maximum allowed number of triggers was exceeded.</p>
-   */
-  @js.native
-  trait TriggerTargetsLimitExceededExceptionException extends js.Object {
-
-  }
-
-  /**
-   * <p>A call was submitted that is not supported for the specified deployment type.</p>
-   */
-  @js.native
-  trait UnsupportedActionForDeploymentTypeExceptionException extends js.Object {
-
-  }
-
-  /**
    * <p>Represents the input of an UpdateApplication operation.</p>
    */
   @js.native
@@ -3762,6 +3446,7 @@ package codedeploy {
     var onPremisesTagSet: js.UndefOr[OnPremisesTagSet]
     var deploymentConfigName: js.UndefOr[DeploymentConfigName]
     var onPremisesInstanceTagFilters: js.UndefOr[TagFilterList]
+    var ecsServices: js.UndefOr[ECSServiceList]
     var ec2TagFilters: js.UndefOr[EC2TagFilterList]
     var autoRollbackConfiguration: js.UndefOr[AutoRollbackConfiguration]
     var loadBalancerInfo: js.UndefOr[LoadBalancerInfo]
@@ -3782,6 +3467,7 @@ package codedeploy {
       onPremisesTagSet: js.UndefOr[OnPremisesTagSet] = js.undefined,
       deploymentConfigName: js.UndefOr[DeploymentConfigName] = js.undefined,
       onPremisesInstanceTagFilters: js.UndefOr[TagFilterList] = js.undefined,
+      ecsServices: js.UndefOr[ECSServiceList] = js.undefined,
       ec2TagFilters: js.UndefOr[EC2TagFilterList] = js.undefined,
       autoRollbackConfiguration: js.UndefOr[AutoRollbackConfiguration] = js.undefined,
       loadBalancerInfo: js.UndefOr[LoadBalancerInfo] = js.undefined,
@@ -3799,6 +3485,7 @@ package codedeploy {
         "onPremisesTagSet" -> onPremisesTagSet.map { x => x.asInstanceOf[js.Any] },
         "deploymentConfigName" -> deploymentConfigName.map { x => x.asInstanceOf[js.Any] },
         "onPremisesInstanceTagFilters" -> onPremisesInstanceTagFilters.map { x => x.asInstanceOf[js.Any] },
+        "ecsServices" -> ecsServices.map { x => x.asInstanceOf[js.Any] },
         "ec2TagFilters" -> ec2TagFilters.map { x => x.asInstanceOf[js.Any] },
         "autoRollbackConfiguration" -> autoRollbackConfiguration.map { x => x.asInstanceOf[js.Any] },
         "loadBalancerInfo" -> loadBalancerInfo.map { x => x.asInstanceOf[js.Any] },

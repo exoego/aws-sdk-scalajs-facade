@@ -33,6 +33,7 @@ package object elbv2 {
   type AuthenticateOidcActionSessionCookieName = String
   type AuthenticateOidcActionSessionTimeout = Double
   type AuthenticateOidcActionTokenEndpoint = String
+  type AuthenticateOidcActionUseExistingClientSecret = Boolean
   type AuthenticateOidcActionUserInfoEndpoint = String
   type AvailabilityZones = js.Array[AvailabilityZone]
   type CanonicalHostedZoneId = String
@@ -44,19 +45,26 @@ package object elbv2 {
   type ConditionFieldName = String
   type CreatedTime = js.Date
   type DNSName = String
+  type DecreasesRemaining = Int
   type Default = Boolean
   type Description = String
   type FixedResponseActionContentType = String
   type FixedResponseActionMessage = String
   type FixedResponseActionStatusCode = String
+  type HealthCheckEnabled = Boolean
   type HealthCheckIntervalSeconds = Int
   type HealthCheckPort = String
   type HealthCheckThresholdCount = Int
   type HealthCheckTimeoutSeconds = Int
   type HttpCode = String
+  type HttpHeaderConditionName = String
+  type HttpRequestMethodEnum = String
+  type HttpRequestMethodList = js.Array[HttpRequestMethodEnum]
   type IpAddress = String
   type IpAddressType = String
   type IsDefault = Boolean
+  type LBCapacityUnits = Int
+  type LastModifiedTime = js.Date
   type Limits = js.Array[Limit]
   type ListOfString = js.Array[StringValue]
   type ListenerArn = String
@@ -81,6 +89,7 @@ package object elbv2 {
   type Path = String
   type Port = Int
   type ProtocolEnum = String
+  type ProvisionedCapacityStatus = String
   type RedirectActionHost = String
   type RedirectActionPath = String
   type RedirectActionPort = String
@@ -103,6 +112,7 @@ package object elbv2 {
   type SslProtocol = String
   type SslProtocols = js.Array[SslProtocol]
   type StateReason = String
+  type StaticIp = Boolean
   type StringValue = String
   type SubnetId = String
   type SubnetMappings = js.Array[SubnetMapping]
@@ -150,6 +160,7 @@ package elbv2 {
     def describeListeners(params: DescribeListenersInput): Request[DescribeListenersOutput] = js.native
     def describeLoadBalancerAttributes(params: DescribeLoadBalancerAttributesInput): Request[DescribeLoadBalancerAttributesOutput] = js.native
     def describeLoadBalancers(params: DescribeLoadBalancersInput): Request[DescribeLoadBalancersOutput] = js.native
+    def describeProvisionedCapacity(params: DescribeProvisionedCapacityInput): Request[DescribeProvisionedCapacityOutput] = js.native
     def describeRules(params: DescribeRulesInput): Request[DescribeRulesOutput] = js.native
     def describeSSLPolicies(params: DescribeSSLPoliciesInput): Request[DescribeSSLPoliciesOutput] = js.native
     def describeTags(params: DescribeTagsInput): Request[DescribeTagsOutput] = js.native
@@ -158,6 +169,7 @@ package elbv2 {
     def describeTargetHealth(params: DescribeTargetHealthInput): Request[DescribeTargetHealthOutput] = js.native
     def modifyListener(params: ModifyListenerInput): Request[ModifyListenerOutput] = js.native
     def modifyLoadBalancerAttributes(params: ModifyLoadBalancerAttributesInput): Request[ModifyLoadBalancerAttributesOutput] = js.native
+    def modifyProvisionedCapacity(params: ModifyProvisionedCapacityInput): Request[ModifyProvisionedCapacityOutput] = js.native
     def modifyRule(params: ModifyRuleInput): Request[ModifyRuleOutput] = js.native
     def modifyTargetGroup(params: ModifyTargetGroupInput): Request[ModifyTargetGroupOutput] = js.native
     def modifyTargetGroupAttributes(params: ModifyTargetGroupAttributesInput): Request[ModifyTargetGroupAttributesOutput] = js.native
@@ -209,11 +221,11 @@ package elbv2 {
   object ActionTypeEnumEnum {
     val forward = "forward"
     val `authenticate-oidc` = "authenticate-oidc"
-    val `authenticate-cognito` = "authenticate-cognito"
     val redirect = "redirect"
+    val `authenticate-cognito` = "authenticate-cognito"
     val `fixed-response` = "fixed-response"
 
-    val values = IndexedSeq(forward, `authenticate-oidc`, `authenticate-cognito`, redirect, `fixed-response`)
+    val values = IndexedSeq(forward, `authenticate-oidc`, redirect, `authenticate-cognito`, `fixed-response`)
   }
 
   @js.native
@@ -278,14 +290,6 @@ package elbv2 {
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AddTagsOutput]
     }
-  }
-
-  /**
-   * <p>The specified allocation ID does not exist.</p>
-   */
-  @js.native
-  trait AllocationIdNotFoundExceptionException extends js.Object {
-
   }
 
   object AuthenticateCognitoActionConditionalBehaviorEnumEnum {
@@ -354,6 +358,7 @@ package elbv2 {
     var ClientId: js.UndefOr[AuthenticateOidcActionClientId]
     var ClientSecret: js.UndefOr[AuthenticateOidcActionClientSecret]
     var SessionTimeout: js.UndefOr[AuthenticateOidcActionSessionTimeout]
+    var UseExistingClientSecret: js.UndefOr[AuthenticateOidcActionUseExistingClientSecret]
     var Issuer: js.UndefOr[AuthenticateOidcActionIssuer]
     var TokenEndpoint: js.UndefOr[AuthenticateOidcActionTokenEndpoint]
     var SessionCookieName: js.UndefOr[AuthenticateOidcActionSessionCookieName]
@@ -369,6 +374,7 @@ package elbv2 {
       ClientId: js.UndefOr[AuthenticateOidcActionClientId] = js.undefined,
       ClientSecret: js.UndefOr[AuthenticateOidcActionClientSecret] = js.undefined,
       SessionTimeout: js.UndefOr[AuthenticateOidcActionSessionTimeout] = js.undefined,
+      UseExistingClientSecret: js.UndefOr[AuthenticateOidcActionUseExistingClientSecret] = js.undefined,
       Issuer: js.UndefOr[AuthenticateOidcActionIssuer] = js.undefined,
       TokenEndpoint: js.UndefOr[AuthenticateOidcActionTokenEndpoint] = js.undefined,
       SessionCookieName: js.UndefOr[AuthenticateOidcActionSessionCookieName] = js.undefined,
@@ -381,6 +387,7 @@ package elbv2 {
         "ClientId" -> ClientId.map { x => x.asInstanceOf[js.Any] },
         "ClientSecret" -> ClientSecret.map { x => x.asInstanceOf[js.Any] },
         "SessionTimeout" -> SessionTimeout.map { x => x.asInstanceOf[js.Any] },
+        "UseExistingClientSecret" -> UseExistingClientSecret.map { x => x.asInstanceOf[js.Any] },
         "Issuer" -> Issuer.map { x => x.asInstanceOf[js.Any] },
         "TokenEndpoint" -> TokenEndpoint.map { x => x.asInstanceOf[js.Any] },
         "SessionCookieName" -> SessionCookieName.map { x => x.asInstanceOf[js.Any] },
@@ -399,28 +406,23 @@ package elbv2 {
     var ZoneName: js.UndefOr[ZoneName]
     var SubnetId: js.UndefOr[SubnetId]
     var LoadBalancerAddresses: js.UndefOr[LoadBalancerAddresses]
+    var StaticIp: js.UndefOr[StaticIp]
   }
 
   object AvailabilityZone {
     def apply(
       ZoneName: js.UndefOr[ZoneName] = js.undefined,
       SubnetId: js.UndefOr[SubnetId] = js.undefined,
-      LoadBalancerAddresses: js.UndefOr[LoadBalancerAddresses] = js.undefined): AvailabilityZone = {
+      LoadBalancerAddresses: js.UndefOr[LoadBalancerAddresses] = js.undefined,
+      StaticIp: js.UndefOr[StaticIp] = js.undefined): AvailabilityZone = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ZoneName" -> ZoneName.map { x => x.asInstanceOf[js.Any] },
         "SubnetId" -> SubnetId.map { x => x.asInstanceOf[js.Any] },
-        "LoadBalancerAddresses" -> LoadBalancerAddresses.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "LoadBalancerAddresses" -> LoadBalancerAddresses.map { x => x.asInstanceOf[js.Any] },
+        "StaticIp" -> StaticIp.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AvailabilityZone]
     }
-  }
-
-  /**
-   * <p>The specified Availability Zone is not supported.</p>
-   */
-  @js.native
-  trait AvailabilityZoneNotSupportedExceptionException extends js.Object {
-
   }
 
   /**
@@ -442,14 +444,6 @@ package elbv2 {
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Certificate]
     }
-  }
-
-  /**
-   * <p>The specified certificate does not exist.</p>
-   */
-  @js.native
-  trait CertificateNotFoundExceptionException extends js.Object {
-
   }
 
   /**
@@ -617,6 +611,7 @@ package elbv2 {
     var HealthyThresholdCount: js.UndefOr[HealthCheckThresholdCount]
     var HealthCheckProtocol: js.UndefOr[ProtocolEnum]
     var HealthCheckIntervalSeconds: js.UndefOr[HealthCheckIntervalSeconds]
+    var HealthCheckEnabled: js.UndefOr[HealthCheckEnabled]
     var HealthCheckTimeoutSeconds: js.UndefOr[HealthCheckTimeoutSeconds]
     var Port: js.UndefOr[Port]
     var HealthCheckPath: js.UndefOr[Path]
@@ -634,6 +629,7 @@ package elbv2 {
       HealthyThresholdCount: js.UndefOr[HealthCheckThresholdCount] = js.undefined,
       HealthCheckProtocol: js.UndefOr[ProtocolEnum] = js.undefined,
       HealthCheckIntervalSeconds: js.UndefOr[HealthCheckIntervalSeconds] = js.undefined,
+      HealthCheckEnabled: js.UndefOr[HealthCheckEnabled] = js.undefined,
       HealthCheckTimeoutSeconds: js.UndefOr[HealthCheckTimeoutSeconds] = js.undefined,
       Port: js.UndefOr[Port] = js.undefined,
       HealthCheckPath: js.UndefOr[Path] = js.undefined,
@@ -648,6 +644,7 @@ package elbv2 {
         "HealthyThresholdCount" -> HealthyThresholdCount.map { x => x.asInstanceOf[js.Any] },
         "HealthCheckProtocol" -> HealthCheckProtocol.map { x => x.asInstanceOf[js.Any] },
         "HealthCheckIntervalSeconds" -> HealthCheckIntervalSeconds.map { x => x.asInstanceOf[js.Any] },
+        "HealthCheckEnabled" -> HealthCheckEnabled.map { x => x.asInstanceOf[js.Any] },
         "HealthCheckTimeoutSeconds" -> HealthCheckTimeoutSeconds.map { x => x.asInstanceOf[js.Any] },
         "Port" -> Port.map { x => x.asInstanceOf[js.Any] },
         "HealthCheckPath" -> HealthCheckPath.map { x => x.asInstanceOf[js.Any] },
@@ -1007,6 +1004,36 @@ package elbv2 {
   }
 
   @js.native
+  trait DescribeProvisionedCapacityInput extends js.Object {
+    var LoadBalancerArn: js.UndefOr[LoadBalancerArn]
+  }
+
+  object DescribeProvisionedCapacityInput {
+    def apply(
+      LoadBalancerArn: js.UndefOr[LoadBalancerArn] = js.undefined): DescribeProvisionedCapacityInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "LoadBalancerArn" -> LoadBalancerArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeProvisionedCapacityInput]
+    }
+  }
+
+  @js.native
+  trait DescribeProvisionedCapacityOutput extends js.Object {
+    var ProvisionedCapacity: js.UndefOr[ProvisionedCapacity]
+  }
+
+  object DescribeProvisionedCapacityOutput {
+    def apply(
+      ProvisionedCapacity: js.UndefOr[ProvisionedCapacity] = js.undefined): DescribeProvisionedCapacityOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ProvisionedCapacity" -> ProvisionedCapacity.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeProvisionedCapacityOutput]
+    }
+  }
+
+  @js.native
   trait DescribeRulesInput extends js.Object {
     var ListenerArn: js.UndefOr[ListenerArn]
     var RuleArns: js.UndefOr[RuleArns]
@@ -1226,38 +1253,6 @@ package elbv2 {
   }
 
   /**
-   * <p>A listener with the specified port already exists.</p>
-   */
-  @js.native
-  trait DuplicateListenerExceptionException extends js.Object {
-
-  }
-
-  /**
-   * <p>A load balancer with the specified name already exists.</p>
-   */
-  @js.native
-  trait DuplicateLoadBalancerNameExceptionException extends js.Object {
-
-  }
-
-  /**
-   * <p>A tag key was specified more than once.</p>
-   */
-  @js.native
-  trait DuplicateTagKeysExceptionException extends js.Object {
-
-  }
-
-  /**
-   * <p>A target group with the specified name already exists.</p>
-   */
-  @js.native
-  trait DuplicateTargetGroupNameExceptionException extends js.Object {
-
-  }
-
-  /**
    * <p>Information about an action that returns a custom HTTP response.</p>
    */
   @js.native
@@ -1281,68 +1276,66 @@ package elbv2 {
     }
   }
 
-  /**
-   * <p>The health of the specified targets could not be retrieved due to an internal error.</p>
-   */
   @js.native
-  trait HealthUnavailableExceptionException extends js.Object {
-
+  trait HostHeaderConditionConfig extends js.Object {
+    var Values: js.UndefOr[ListOfString]
   }
 
-  /**
-   * <p>The specified configuration is not valid with this protocol.</p>
-   */
-  @js.native
-  trait IncompatibleProtocolsExceptionException extends js.Object {
+  object HostHeaderConditionConfig {
+    def apply(
+      Values: js.UndefOr[ListOfString] = js.undefined): HostHeaderConditionConfig = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Values" -> Values.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[HostHeaderConditionConfig]
+    }
   }
 
-  /**
-   * <p>The requested configuration is not valid.</p>
-   */
   @js.native
-  trait InvalidConfigurationRequestExceptionException extends js.Object {
-
+  trait HttpHeaderConditionConfig extends js.Object {
+    var HttpHeaderName: js.UndefOr[HttpHeaderConditionName]
+    var Values: js.UndefOr[ListOfString]
   }
 
-  /**
-   * <p>The requested action is not valid.</p>
-   */
-  @js.native
-  trait InvalidLoadBalancerActionExceptionException extends js.Object {
+  object HttpHeaderConditionConfig {
+    def apply(
+      HttpHeaderName: js.UndefOr[HttpHeaderConditionName] = js.undefined,
+      Values: js.UndefOr[ListOfString] = js.undefined): HttpHeaderConditionConfig = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "HttpHeaderName" -> HttpHeaderName.map { x => x.asInstanceOf[js.Any] },
+        "Values" -> Values.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[HttpHeaderConditionConfig]
+    }
   }
 
-  /**
-   * <p>The requested scheme is not valid.</p>
-   */
   @js.native
-  trait InvalidSchemeExceptionException extends js.Object {
-
+  trait HttpRequestMethodConditionConfig extends js.Object {
+    var Values: js.UndefOr[HttpRequestMethodList]
   }
 
-  /**
-   * <p>The specified security group does not exist.</p>
-   */
-  @js.native
-  trait InvalidSecurityGroupExceptionException extends js.Object {
+  object HttpRequestMethodConditionConfig {
+    def apply(
+      Values: js.UndefOr[HttpRequestMethodList] = js.undefined): HttpRequestMethodConditionConfig = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Values" -> Values.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[HttpRequestMethodConditionConfig]
+    }
   }
 
-  /**
-   * <p>The specified subnet is out of available addresses.</p>
-   */
-  @js.native
-  trait InvalidSubnetExceptionException extends js.Object {
+  object HttpRequestMethodEnumEnum {
+    val GET = "GET"
+    val HEAD = "HEAD"
+    val POST = "POST"
+    val PUT = "PUT"
+    val DELETE = "DELETE"
+    val CONNECT = "CONNECT"
+    val OPTIONS = "OPTIONS"
+    val TRACE = "TRACE"
+    val PATCH = "PATCH"
 
-  }
-
-  /**
-   * <p>The specified target does not exist, is not in the same VPC as the target group, or has an unsupported instance type.</p>
-   */
-  @js.native
-  trait InvalidTargetExceptionException extends js.Object {
-
+    val values = IndexedSeq(GET, HEAD, POST, PUT, DELETE, CONNECT, OPTIONS, TRACE, PATCH)
   }
 
   object IpAddressTypeEnum {
@@ -1407,14 +1400,6 @@ package elbv2 {
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Listener]
     }
-  }
-
-  /**
-   * <p>The specified listener does not exist.</p>
-   */
-  @js.native
-  trait ListenerNotFoundExceptionException extends js.Object {
-
   }
 
   /**
@@ -1508,14 +1493,6 @@ package elbv2 {
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[LoadBalancerAttribute]
     }
-  }
-
-  /**
-   * <p>The specified load balancer does not exist.</p>
-   */
-  @js.native
-  trait LoadBalancerNotFoundExceptionException extends js.Object {
-
   }
 
   object LoadBalancerSchemeEnumEnum {
@@ -1659,6 +1636,39 @@ package elbv2 {
   }
 
   @js.native
+  trait ModifyProvisionedCapacityInput extends js.Object {
+    var LoadBalancerArn: js.UndefOr[LoadBalancerArn]
+    var MinimumLBCapacityUnits: js.UndefOr[LBCapacityUnits]
+  }
+
+  object ModifyProvisionedCapacityInput {
+    def apply(
+      LoadBalancerArn: js.UndefOr[LoadBalancerArn] = js.undefined,
+      MinimumLBCapacityUnits: js.UndefOr[LBCapacityUnits] = js.undefined): ModifyProvisionedCapacityInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "LoadBalancerArn" -> LoadBalancerArn.map { x => x.asInstanceOf[js.Any] },
+        "MinimumLBCapacityUnits" -> MinimumLBCapacityUnits.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ModifyProvisionedCapacityInput]
+    }
+  }
+
+  @js.native
+  trait ModifyProvisionedCapacityOutput extends js.Object {
+    var ProvisionedCapacity: js.UndefOr[ProvisionedCapacity]
+  }
+
+  object ModifyProvisionedCapacityOutput {
+    def apply(
+      ProvisionedCapacity: js.UndefOr[ProvisionedCapacity] = js.undefined): ModifyProvisionedCapacityOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ProvisionedCapacity" -> ProvisionedCapacity.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ModifyProvisionedCapacityOutput]
+    }
+  }
+
+  @js.native
   trait ModifyRuleInput extends js.Object {
     var RuleArn: js.UndefOr[RuleArn]
     var Conditions: js.UndefOr[RuleConditionList]
@@ -1735,6 +1745,7 @@ package elbv2 {
     var TargetGroupArn: js.UndefOr[TargetGroupArn]
     var HealthCheckProtocol: js.UndefOr[ProtocolEnum]
     var HealthCheckIntervalSeconds: js.UndefOr[HealthCheckIntervalSeconds]
+    var HealthCheckEnabled: js.UndefOr[HealthCheckEnabled]
     var HealthCheckTimeoutSeconds: js.UndefOr[HealthCheckTimeoutSeconds]
     var HealthCheckPath: js.UndefOr[Path]
     var Matcher: js.UndefOr[Matcher]
@@ -1748,6 +1759,7 @@ package elbv2 {
       TargetGroupArn: js.UndefOr[TargetGroupArn] = js.undefined,
       HealthCheckProtocol: js.UndefOr[ProtocolEnum] = js.undefined,
       HealthCheckIntervalSeconds: js.UndefOr[HealthCheckIntervalSeconds] = js.undefined,
+      HealthCheckEnabled: js.UndefOr[HealthCheckEnabled] = js.undefined,
       HealthCheckTimeoutSeconds: js.UndefOr[HealthCheckTimeoutSeconds] = js.undefined,
       HealthCheckPath: js.UndefOr[Path] = js.undefined,
       Matcher: js.UndefOr[Matcher] = js.undefined): ModifyTargetGroupInput = {
@@ -1758,6 +1770,7 @@ package elbv2 {
         "TargetGroupArn" -> TargetGroupArn.map { x => x.asInstanceOf[js.Any] },
         "HealthCheckProtocol" -> HealthCheckProtocol.map { x => x.asInstanceOf[js.Any] },
         "HealthCheckIntervalSeconds" -> HealthCheckIntervalSeconds.map { x => x.asInstanceOf[js.Any] },
+        "HealthCheckEnabled" -> HealthCheckEnabled.map { x => x.asInstanceOf[js.Any] },
         "HealthCheckTimeoutSeconds" -> HealthCheckTimeoutSeconds.map { x => x.asInstanceOf[js.Any] },
         "HealthCheckPath" -> HealthCheckPath.map { x => x.asInstanceOf[js.Any] },
         "Matcher" -> Matcher.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
@@ -1781,28 +1794,77 @@ package elbv2 {
     }
   }
 
-  /**
-   * <p>This operation is not allowed.</p>
-   */
   @js.native
-  trait OperationNotPermittedExceptionException extends js.Object {
-
+  trait PathPatternConditionConfig extends js.Object {
+    var Values: js.UndefOr[ListOfString]
   }
 
-  /**
-   * <p>The specified priority is in use.</p>
-   */
-  @js.native
-  trait PriorityInUseExceptionException extends js.Object {
+  object PathPatternConditionConfig {
+    def apply(
+      Values: js.UndefOr[ListOfString] = js.undefined): PathPatternConditionConfig = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Values" -> Values.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PathPatternConditionConfig]
+    }
   }
 
   object ProtocolEnumEnum {
     val HTTP = "HTTP"
     val HTTPS = "HTTPS"
     val TCP = "TCP"
+    val TLS = "TLS"
+    val UDP = "UDP"
 
-    val values = IndexedSeq(HTTP, HTTPS, TCP)
+    val values = IndexedSeq(HTTP, HTTPS, TCP, TLS, UDP)
+  }
+
+  @js.native
+  trait ProvisionedCapacity extends js.Object {
+    var MinimumLBCapacityUnits: js.UndefOr[LBCapacityUnits]
+    var Status: js.UndefOr[ProvisionedCapacityStatus]
+    var DecreasesRemaining: js.UndefOr[DecreasesRemaining]
+    var LastModifiedTime: js.UndefOr[LastModifiedTime]
+  }
+
+  object ProvisionedCapacity {
+    def apply(
+      MinimumLBCapacityUnits: js.UndefOr[LBCapacityUnits] = js.undefined,
+      Status: js.UndefOr[ProvisionedCapacityStatus] = js.undefined,
+      DecreasesRemaining: js.UndefOr[DecreasesRemaining] = js.undefined,
+      LastModifiedTime: js.UndefOr[LastModifiedTime] = js.undefined): ProvisionedCapacity = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "MinimumLBCapacityUnits" -> MinimumLBCapacityUnits.map { x => x.asInstanceOf[js.Any] },
+        "Status" -> Status.map { x => x.asInstanceOf[js.Any] },
+        "DecreasesRemaining" -> DecreasesRemaining.map { x => x.asInstanceOf[js.Any] },
+        "LastModifiedTime" -> LastModifiedTime.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ProvisionedCapacity]
+    }
+  }
+
+  object ProvisionedCapacityStatusEnum {
+    val disabled = "disabled"
+    val pending = "pending"
+    val provisioned = "provisioned"
+    val `pre-warmed` = "pre-warmed"
+
+    val values = IndexedSeq(disabled, pending, provisioned, `pre-warmed`)
+  }
+
+  @js.native
+  trait QueryStringConditionConfig extends js.Object {
+    var Values: js.UndefOr[ListOfString]
+  }
+
+  object QueryStringConditionConfig {
+    def apply(
+      Values: js.UndefOr[ListOfString] = js.undefined): QueryStringConditionConfig = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Values" -> Values.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[QueryStringConditionConfig]
+    }
   }
 
   /**
@@ -1939,14 +2001,6 @@ package elbv2 {
   }
 
   /**
-   * <p>A specified resource is in use.</p>
-   */
-  @js.native
-  trait ResourceInUseExceptionException extends js.Object {
-
-  }
-
-  /**
    * <p>Information about a rule.</p>
    */
   @js.native
@@ -1981,28 +2035,35 @@ package elbv2 {
    */
   @js.native
   trait RuleCondition extends js.Object {
+    var PathPatternConfig: js.UndefOr[PathPatternConditionConfig]
+    var QueryStringConfig: js.UndefOr[QueryStringConditionConfig]
+    var HostHeaderConfig: js.UndefOr[HostHeaderConditionConfig]
     var Field: js.UndefOr[ConditionFieldName]
     var Values: js.UndefOr[ListOfString]
+    var HttpHeaderConfig: js.UndefOr[HttpHeaderConditionConfig]
+    var HttpRequestMethodConfig: js.UndefOr[HttpRequestMethodConditionConfig]
   }
 
   object RuleCondition {
     def apply(
+      PathPatternConfig: js.UndefOr[PathPatternConditionConfig] = js.undefined,
+      QueryStringConfig: js.UndefOr[QueryStringConditionConfig] = js.undefined,
+      HostHeaderConfig: js.UndefOr[HostHeaderConditionConfig] = js.undefined,
       Field: js.UndefOr[ConditionFieldName] = js.undefined,
-      Values: js.UndefOr[ListOfString] = js.undefined): RuleCondition = {
+      Values: js.UndefOr[ListOfString] = js.undefined,
+      HttpHeaderConfig: js.UndefOr[HttpHeaderConditionConfig] = js.undefined,
+      HttpRequestMethodConfig: js.UndefOr[HttpRequestMethodConditionConfig] = js.undefined): RuleCondition = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "PathPatternConfig" -> PathPatternConfig.map { x => x.asInstanceOf[js.Any] },
+        "QueryStringConfig" -> QueryStringConfig.map { x => x.asInstanceOf[js.Any] },
+        "HostHeaderConfig" -> HostHeaderConfig.map { x => x.asInstanceOf[js.Any] },
         "Field" -> Field.map { x => x.asInstanceOf[js.Any] },
-        "Values" -> Values.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Values" -> Values.map { x => x.asInstanceOf[js.Any] },
+        "HttpHeaderConfig" -> HttpHeaderConfig.map { x => x.asInstanceOf[js.Any] },
+        "HttpRequestMethodConfig" -> HttpRequestMethodConfig.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RuleCondition]
     }
-  }
-
-  /**
-   * <p>The specified rule does not exist.</p>
-   */
-  @js.native
-  trait RuleNotFoundExceptionException extends js.Object {
-
   }
 
   /**
@@ -2024,14 +2085,6 @@ package elbv2 {
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RulePriorityPair]
     }
-  }
-
-  /**
-   * <p>The specified SSL policy does not exist.</p>
-   */
-  @js.native
-  trait SSLPolicyNotFoundExceptionException extends js.Object {
-
   }
 
   @js.native
@@ -2197,26 +2250,21 @@ package elbv2 {
   trait SubnetMapping extends js.Object {
     var SubnetId: js.UndefOr[SubnetId]
     var AllocationId: js.UndefOr[AllocationId]
+    var StaticIp: js.UndefOr[StaticIp]
   }
 
   object SubnetMapping {
     def apply(
       SubnetId: js.UndefOr[SubnetId] = js.undefined,
-      AllocationId: js.UndefOr[AllocationId] = js.undefined): SubnetMapping = {
+      AllocationId: js.UndefOr[AllocationId] = js.undefined,
+      StaticIp: js.UndefOr[StaticIp] = js.undefined): SubnetMapping = {
       val _fields = IndexedSeq[(String, js.Any)](
         "SubnetId" -> SubnetId.map { x => x.asInstanceOf[js.Any] },
-        "AllocationId" -> AllocationId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "AllocationId" -> AllocationId.map { x => x.asInstanceOf[js.Any] },
+        "StaticIp" -> StaticIp.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SubnetMapping]
     }
-  }
-
-  /**
-   * <p>The specified subnet does not exist.</p>
-   */
-  @js.native
-  trait SubnetNotFoundExceptionException extends js.Object {
-
   }
 
   /**
@@ -2299,6 +2347,7 @@ package elbv2 {
     var TargetGroupArn: js.UndefOr[TargetGroupArn]
     var HealthCheckProtocol: js.UndefOr[ProtocolEnum]
     var HealthCheckIntervalSeconds: js.UndefOr[HealthCheckIntervalSeconds]
+    var HealthCheckEnabled: js.UndefOr[HealthCheckEnabled]
     var HealthCheckTimeoutSeconds: js.UndefOr[HealthCheckTimeoutSeconds]
     var Port: js.UndefOr[Port]
     var HealthCheckPath: js.UndefOr[Path]
@@ -2318,6 +2367,7 @@ package elbv2 {
       TargetGroupArn: js.UndefOr[TargetGroupArn] = js.undefined,
       HealthCheckProtocol: js.UndefOr[ProtocolEnum] = js.undefined,
       HealthCheckIntervalSeconds: js.UndefOr[HealthCheckIntervalSeconds] = js.undefined,
+      HealthCheckEnabled: js.UndefOr[HealthCheckEnabled] = js.undefined,
       HealthCheckTimeoutSeconds: js.UndefOr[HealthCheckTimeoutSeconds] = js.undefined,
       Port: js.UndefOr[Port] = js.undefined,
       HealthCheckPath: js.UndefOr[Path] = js.undefined,
@@ -2334,6 +2384,7 @@ package elbv2 {
         "TargetGroupArn" -> TargetGroupArn.map { x => x.asInstanceOf[js.Any] },
         "HealthCheckProtocol" -> HealthCheckProtocol.map { x => x.asInstanceOf[js.Any] },
         "HealthCheckIntervalSeconds" -> HealthCheckIntervalSeconds.map { x => x.asInstanceOf[js.Any] },
+        "HealthCheckEnabled" -> HealthCheckEnabled.map { x => x.asInstanceOf[js.Any] },
         "HealthCheckTimeoutSeconds" -> HealthCheckTimeoutSeconds.map { x => x.asInstanceOf[js.Any] },
         "Port" -> Port.map { x => x.asInstanceOf[js.Any] },
         "HealthCheckPath" -> HealthCheckPath.map { x => x.asInstanceOf[js.Any] },
@@ -2343,14 +2394,6 @@ package elbv2 {
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TargetGroup]
     }
-  }
-
-  /**
-   * <p>You've reached the limit on the number of load balancers per target group.</p>
-   */
-  @js.native
-  trait TargetGroupAssociationLimitExceptionException extends js.Object {
-
   }
 
   /**
@@ -2372,14 +2415,6 @@ package elbv2 {
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TargetGroupAttribute]
     }
-  }
-
-  /**
-   * <p>The specified target group does not exist.</p>
-   */
-  @js.native
-  trait TargetGroupNotFoundExceptionException extends js.Object {
-
   }
 
   /**
@@ -2441,9 +2476,10 @@ package elbv2 {
     val `Target.DeregistrationInProgress` = "Target.DeregistrationInProgress"
     val `Target.InvalidState` = "Target.InvalidState"
     val `Target.IpUnusable` = "Target.IpUnusable"
+    val `Target.HealthCheckDisabled` = "Target.HealthCheckDisabled"
     val `Elb.InternalError` = "Elb.InternalError"
 
-    val values = IndexedSeq(`Elb.RegistrationInProgress`, `Elb.InitialHealthChecking`, `Target.ResponseCodeMismatch`, `Target.Timeout`, `Target.FailedHealthChecks`, `Target.NotRegistered`, `Target.NotInUse`, `Target.DeregistrationInProgress`, `Target.InvalidState`, `Target.IpUnusable`, `Elb.InternalError`)
+    val values = IndexedSeq(`Elb.RegistrationInProgress`, `Elb.InitialHealthChecking`, `Target.ResponseCodeMismatch`, `Target.Timeout`, `Target.FailedHealthChecks`, `Target.NotRegistered`, `Target.NotInUse`, `Target.DeregistrationInProgress`, `Target.InvalidState`, `Target.IpUnusable`, `Target.HealthCheckDisabled`, `Elb.InternalError`)
   }
 
   object TargetHealthStateEnumEnum {
@@ -2460,87 +2496,8 @@ package elbv2 {
   object TargetTypeEnumEnum {
     val instance = "instance"
     val ip = "ip"
+    val lambda = "lambda"
 
-    val values = IndexedSeq(instance, ip)
-  }
-
-  /**
-   * <p>You've reached the limit on the number of actions per rule.</p>
-   */
-  @js.native
-  trait TooManyActionsExceptionException extends js.Object {
-
-  }
-
-  /**
-   * <p>You've reached the limit on the number of certificates per load balancer.</p>
-   */
-  @js.native
-  trait TooManyCertificatesExceptionException extends js.Object {
-
-  }
-
-  /**
-   * <p>You've reached the limit on the number of listeners per load balancer.</p>
-   */
-  @js.native
-  trait TooManyListenersExceptionException extends js.Object {
-
-  }
-
-  /**
-   * <p>You've reached the limit on the number of load balancers for your AWS account.</p>
-   */
-  @js.native
-  trait TooManyLoadBalancersExceptionException extends js.Object {
-
-  }
-
-  /**
-   * <p>You've reached the limit on the number of times a target can be registered with a load balancer.</p>
-   */
-  @js.native
-  trait TooManyRegistrationsForTargetIdExceptionException extends js.Object {
-
-  }
-
-  /**
-   * <p>You've reached the limit on the number of rules per load balancer.</p>
-   */
-  @js.native
-  trait TooManyRulesExceptionException extends js.Object {
-
-  }
-
-  /**
-   * <p>You've reached the limit on the number of tags per load balancer.</p>
-   */
-  @js.native
-  trait TooManyTagsExceptionException extends js.Object {
-
-  }
-
-  /**
-   * <p>You've reached the limit on the number of target groups for your AWS account.</p>
-   */
-  @js.native
-  trait TooManyTargetGroupsExceptionException extends js.Object {
-
-  }
-
-  /**
-   * <p>You've reached the limit on the number of targets.</p>
-   */
-  @js.native
-  trait TooManyTargetsExceptionException extends js.Object {
-
-  }
-
-  /**
-   * <p>The specified protocol is not supported.</p>
-   */
-  @js.native
-  trait UnsupportedProtocolExceptionException extends js.Object {
-
+    val values = IndexedSeq(instance, ip, lambda)
   }
 }

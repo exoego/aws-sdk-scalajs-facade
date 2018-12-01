@@ -18,7 +18,6 @@ package object kinesisanalytics {
   type CloudWatchLoggingOptionDescriptions = js.Array[CloudWatchLoggingOptionDescription]
   type CloudWatchLoggingOptionUpdates = js.Array[CloudWatchLoggingOptionUpdate]
   type CloudWatchLoggingOptions = js.Array[CloudWatchLoggingOption]
-  type ErrorMessage = String
   type FileKey = String
   type Id = String
   type InAppStreamName = String
@@ -389,7 +388,7 @@ package kinesisanalytics {
   }
 
   /**
-   * <p>Provides additional mapping information when the record format uses delimiters, such as CSV. For example, the following sample records use CSV format, where the records use the <i>'\n'</i> as the row delimiter and a comma (",") as the column delimiter: </p> <p> <code>"name1", "address1" </code> </p> <p> <code>"name2, "address2"</code> </p>
+   * <p>Provides additional mapping information when the record format uses delimiters, such as CSV. For example, the following sample records use CSV format, where the records use the <i>'\n'</i> as the row delimiter and a comma (",") as the column delimiter: </p> <p> <code>"name1", "address1"</code> </p> <p> <code>"name2", "address2"</code> </p>
    */
   @js.native
   trait CSVMappingParameters extends js.Object {
@@ -476,22 +475,6 @@ package kinesisanalytics {
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CloudWatchLoggingOptionUpdate]
     }
-  }
-
-  /**
-   * <p>User-provided application code (query) is invalid. This can be a simple syntax error.</p>
-   */
-  @js.native
-  trait CodeValidationExceptionException extends js.Object {
-    val message: ErrorMessage
-  }
-
-  /**
-   * <p>Exception thrown as a result of concurrent modification to an application. For example, two individuals attempting to edit the same application at the same time.</p>
-   */
-  @js.native
-  trait ConcurrentModificationExceptionException extends js.Object {
-    val message: ErrorMessage
   }
 
   /**
@@ -1168,22 +1151,6 @@ package kinesisanalytics {
   }
 
   /**
-   * <p>User-provided application configuration is not valid.</p>
-   */
-  @js.native
-  trait InvalidApplicationConfigurationExceptionException extends js.Object {
-    val message: ErrorMessage
-  }
-
-  /**
-   * <p>Specified input parameter value is invalid.</p>
-   */
-  @js.native
-  trait InvalidArgumentExceptionException extends js.Object {
-    val message: ErrorMessage
-  }
-
-  /**
    * <p>Provides additional mapping information when JSON is the record format on the streaming source.</p>
    */
   @js.native
@@ -1517,14 +1484,6 @@ package kinesisanalytics {
   }
 
   /**
-   * <p>Exceeded the number of applications allowed.</p>
-   */
-  @js.native
-  trait LimitExceededExceptionException extends js.Object {
-    val message: ErrorMessage
-  }
-
-  /**
    * <p/>
    */
   @js.native
@@ -1814,31 +1773,7 @@ package kinesisanalytics {
   }
 
   /**
-   * <p>Application is not available for this operation.</p>
-   */
-  @js.native
-  trait ResourceInUseExceptionException extends js.Object {
-    val message: ErrorMessage
-  }
-
-  /**
-   * <p>Specified application can't be found.</p>
-   */
-  @js.native
-  trait ResourceNotFoundExceptionException extends js.Object {
-    val message: ErrorMessage
-  }
-
-  /**
-   * <p>Discovery failed to get a record from the streaming source because of the Amazon Kinesis Streams ProvisionedThroughputExceededException. For more information, see <a href="http://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetRecords.html">GetRecords</a> in the Amazon Kinesis Streams API Reference.</p>
-   */
-  @js.native
-  trait ResourceProvisionedThroughputExceededExceptionException extends js.Object {
-    val message: ErrorMessage
-  }
-
-  /**
-   * <p>Provides a description of an Amazon S3 data source, including the Amazon Resource Name (ARN) of the S3 bucket, the ARN of the IAM role that is used to access the bucket, and the name of the S3 object that contains the data.</p>
+   * <p>Provides a description of an Amazon S3 data source, including the Amazon Resource Name (ARN) of the S3 bucket, the ARN of the IAM role that is used to access the bucket, and the name of the Amazon S3 object that contains the data.</p>
    */
   @js.native
   trait S3Configuration extends js.Object {
@@ -1934,14 +1869,6 @@ package kinesisanalytics {
   }
 
   /**
-   * <p>The service is unavailable, back off and retry the operation. </p>
-   */
-  @js.native
-  trait ServiceUnavailableExceptionException extends js.Object {
-    val message: ErrorMessage
-  }
-
-  /**
    * <p>Describes the format of the data in the streaming source, and how each data element maps to corresponding columns created in the in-application stream.</p>
    */
   @js.native
@@ -2034,16 +1961,6 @@ package kinesisanalytics {
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StopApplicationResponse]
     }
-  }
-
-  /**
-   * <p>Data format is not valid, Amazon Kinesis Analytics is not able to detect schema for the given streaming source.</p>
-   */
-  @js.native
-  trait UnableToDetectSchemaExceptionException extends js.Object {
-    val message: ErrorMessage
-    val RawInputRecords: RawInputRecords
-    val ProcessedInputRecords: ProcessedInputRecords
   }
 
   @js.native

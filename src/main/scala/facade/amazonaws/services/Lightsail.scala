@@ -14,6 +14,10 @@ package object lightsail {
   type BlueprintList = js.Array[Blueprint]
   type BlueprintType = String
   type BundleList = js.Array[Bundle]
+  type CloudFormationStackRecordList = js.Array[CloudFormationStackRecord]
+  type CloudFormationStackRecordSourceInfoList = js.Array[CloudFormationStackRecordSourceInfo]
+  type CloudFormationStackRecordSourceType = String
+  type DiskInfoList = js.Array[DiskInfo]
   type DiskList = js.Array[Disk]
   type DiskMapList = js.Array[DiskMap]
   type DiskSnapshotList = js.Array[DiskSnapshot]
@@ -26,7 +30,10 @@ package object lightsail {
   type DomainList = js.Array[Domain]
   type DomainName = String
   type DomainNameList = js.Array[DomainName]
+  type ExportSnapshotRecordList = js.Array[ExportSnapshotRecord]
+  type ExportSnapshotRecordSourceType = String
   type InstanceAccessProtocol = String
+  type InstanceEntryList = js.Array[InstanceEntry]
   type InstanceHealthReason = String
   type InstanceHealthState = String
   type InstanceHealthSummaryList = js.Array[InstanceHealthSummary]
@@ -72,8 +79,10 @@ package object lightsail {
   type Port = Int
   type PortAccessType = String
   type PortInfoList = js.Array[PortInfo]
+  type PortInfoSourceType = String
   type PortList = js.Array[Port]
   type PortState = String
+  type RecordState = String
   type RegionList = js.Array[Region]
   type RegionName = String
   type RelationalDatabaseBlueprintList = js.Array[RelationalDatabaseBlueprint]
@@ -92,6 +101,10 @@ package object lightsail {
   type StaticIpList = js.Array[StaticIp]
   type StringList = js.Array[string]
   type StringMax256 = String
+  type TagKey = String
+  type TagKeyList = js.Array[TagKey]
+  type TagList = js.Array[Tag]
+  type TagValue = String
   type boolean = Boolean
   type double = Double
   type float = Float
@@ -110,6 +123,8 @@ package lightsail {
     def attachLoadBalancerTlsCertificate(params: AttachLoadBalancerTlsCertificateRequest): Request[AttachLoadBalancerTlsCertificateResult] = js.native
     def attachStaticIp(params: AttachStaticIpRequest): Request[AttachStaticIpResult] = js.native
     def closeInstancePublicPorts(params: CloseInstancePublicPortsRequest): Request[CloseInstancePublicPortsResult] = js.native
+    def copySnapshot(params: CopySnapshotRequest): Request[CopySnapshotResult] = js.native
+    def createCloudFormationStack(params: CreateCloudFormationStackRequest): Request[CreateCloudFormationStackResult] = js.native
     def createDisk(params: CreateDiskRequest): Request[CreateDiskResult] = js.native
     def createDiskFromSnapshot(params: CreateDiskFromSnapshotRequest): Request[CreateDiskFromSnapshotResult] = js.native
     def createDiskSnapshot(params: CreateDiskSnapshotRequest): Request[CreateDiskSnapshotResult] = js.native
@@ -139,15 +154,18 @@ package lightsail {
     def detachInstancesFromLoadBalancer(params: DetachInstancesFromLoadBalancerRequest): Request[DetachInstancesFromLoadBalancerResult] = js.native
     def detachStaticIp(params: DetachStaticIpRequest): Request[DetachStaticIpResult] = js.native
     def downloadDefaultKeyPair(params: DownloadDefaultKeyPairRequest): Request[DownloadDefaultKeyPairResult] = js.native
+    def exportSnapshot(params: ExportSnapshotRequest): Request[ExportSnapshotResult] = js.native
     def getActiveNames(params: GetActiveNamesRequest): Request[GetActiveNamesResult] = js.native
     def getBlueprints(params: GetBlueprintsRequest): Request[GetBlueprintsResult] = js.native
     def getBundles(params: GetBundlesRequest): Request[GetBundlesResult] = js.native
+    def getCloudFormationStackRecords(params: GetCloudFormationStackRecordsRequest): Request[GetCloudFormationStackRecordsResult] = js.native
     def getDisk(params: GetDiskRequest): Request[GetDiskResult] = js.native
     def getDiskSnapshot(params: GetDiskSnapshotRequest): Request[GetDiskSnapshotResult] = js.native
     def getDiskSnapshots(params: GetDiskSnapshotsRequest): Request[GetDiskSnapshotsResult] = js.native
     def getDisks(params: GetDisksRequest): Request[GetDisksResult] = js.native
     def getDomain(params: GetDomainRequest): Request[GetDomainResult] = js.native
     def getDomains(params: GetDomainsRequest): Request[GetDomainsResult] = js.native
+    def getExportSnapshotRecords(params: GetExportSnapshotRecordsRequest): Request[GetExportSnapshotRecordsResult] = js.native
     def getInstance(params: GetInstanceRequest): Request[GetInstanceResult] = js.native
     def getInstanceAccessDetails(params: GetInstanceAccessDetailsRequest): Request[GetInstanceAccessDetailsResult] = js.native
     def getInstanceMetricData(params: GetInstanceMetricDataRequest): Request[GetInstanceMetricDataResult] = js.native
@@ -192,7 +210,9 @@ package lightsail {
     def startRelationalDatabase(params: StartRelationalDatabaseRequest): Request[StartRelationalDatabaseResult] = js.native
     def stopInstance(params: StopInstanceRequest): Request[StopInstanceResult] = js.native
     def stopRelationalDatabase(params: StopRelationalDatabaseRequest): Request[StopRelationalDatabaseResult] = js.native
+    def tagResource(params: TagResourceRequest): Request[TagResourceResult] = js.native
     def unpeerVpc(params: UnpeerVpcRequest): Request[UnpeerVpcResult] = js.native
+    def untagResource(params: UntagResourceRequest): Request[UntagResourceResult] = js.native
     def updateDomainEntry(params: UpdateDomainEntryRequest): Request[UpdateDomainEntryResult] = js.native
     def updateLoadBalancerAttribute(params: UpdateLoadBalancerAttributeRequest): Request[UpdateLoadBalancerAttributeResult] = js.native
     def updateRelationalDatabase(params: UpdateRelationalDatabaseRequest): Request[UpdateRelationalDatabaseResult] = js.native
@@ -531,25 +551,163 @@ package lightsail {
     }
   }
 
+  /**
+   * <p>Describes a CloudFormation stack record created as a result of the <code>create cloud formation stack</code> operation.</p> <p>A CloudFormation stack record provides information about the AWS CloudFormation stack used to create a new Amazon Elastic Compute Cloud instance from an exported Lightsail instance snapshot.</p>
+   */
+  @js.native
+  trait CloudFormationStackRecord extends js.Object {
+    var arn: js.UndefOr[NonEmptyString]
+    var name: js.UndefOr[ResourceName]
+    var destinationInfo: js.UndefOr[DestinationInfo]
+    var location: js.UndefOr[ResourceLocation]
+    var state: js.UndefOr[RecordState]
+    var resourceType: js.UndefOr[ResourceType]
+    var sourceInfo: js.UndefOr[CloudFormationStackRecordSourceInfoList]
+    var createdAt: js.UndefOr[IsoDate]
+  }
+
+  object CloudFormationStackRecord {
+    def apply(
+      arn: js.UndefOr[NonEmptyString] = js.undefined,
+      name: js.UndefOr[ResourceName] = js.undefined,
+      destinationInfo: js.UndefOr[DestinationInfo] = js.undefined,
+      location: js.UndefOr[ResourceLocation] = js.undefined,
+      state: js.UndefOr[RecordState] = js.undefined,
+      resourceType: js.UndefOr[ResourceType] = js.undefined,
+      sourceInfo: js.UndefOr[CloudFormationStackRecordSourceInfoList] = js.undefined,
+      createdAt: js.UndefOr[IsoDate] = js.undefined): CloudFormationStackRecord = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "arn" -> arn.map { x => x.asInstanceOf[js.Any] },
+        "name" -> name.map { x => x.asInstanceOf[js.Any] },
+        "destinationInfo" -> destinationInfo.map { x => x.asInstanceOf[js.Any] },
+        "location" -> location.map { x => x.asInstanceOf[js.Any] },
+        "state" -> state.map { x => x.asInstanceOf[js.Any] },
+        "resourceType" -> resourceType.map { x => x.asInstanceOf[js.Any] },
+        "sourceInfo" -> sourceInfo.map { x => x.asInstanceOf[js.Any] },
+        "createdAt" -> createdAt.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CloudFormationStackRecord]
+    }
+  }
+
+  /**
+   * <p>Describes the source of a CloudFormation stack record (i.e., the export snapshot record).</p>
+   */
+  @js.native
+  trait CloudFormationStackRecordSourceInfo extends js.Object {
+    var resourceType: js.UndefOr[CloudFormationStackRecordSourceType]
+    var name: js.UndefOr[NonEmptyString]
+    var arn: js.UndefOr[NonEmptyString]
+  }
+
+  object CloudFormationStackRecordSourceInfo {
+    def apply(
+      resourceType: js.UndefOr[CloudFormationStackRecordSourceType] = js.undefined,
+      name: js.UndefOr[NonEmptyString] = js.undefined,
+      arn: js.UndefOr[NonEmptyString] = js.undefined): CloudFormationStackRecordSourceInfo = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "resourceType" -> resourceType.map { x => x.asInstanceOf[js.Any] },
+        "name" -> name.map { x => x.asInstanceOf[js.Any] },
+        "arn" -> arn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CloudFormationStackRecordSourceInfo]
+    }
+  }
+
+  object CloudFormationStackRecordSourceTypeEnum {
+    val ExportSnapshotRecord = "ExportSnapshotRecord"
+
+    val values = IndexedSeq(ExportSnapshotRecord)
+  }
+
+  @js.native
+  trait CopySnapshotRequest extends js.Object {
+    var sourceSnapshotName: js.UndefOr[ResourceName]
+    var targetSnapshotName: js.UndefOr[ResourceName]
+    var sourceRegion: js.UndefOr[RegionName]
+  }
+
+  object CopySnapshotRequest {
+    def apply(
+      sourceSnapshotName: js.UndefOr[ResourceName] = js.undefined,
+      targetSnapshotName: js.UndefOr[ResourceName] = js.undefined,
+      sourceRegion: js.UndefOr[RegionName] = js.undefined): CopySnapshotRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "sourceSnapshotName" -> sourceSnapshotName.map { x => x.asInstanceOf[js.Any] },
+        "targetSnapshotName" -> targetSnapshotName.map { x => x.asInstanceOf[js.Any] },
+        "sourceRegion" -> sourceRegion.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CopySnapshotRequest]
+    }
+  }
+
+  @js.native
+  trait CopySnapshotResult extends js.Object {
+    var operations: js.UndefOr[OperationList]
+  }
+
+  object CopySnapshotResult {
+    def apply(
+      operations: js.UndefOr[OperationList] = js.undefined): CopySnapshotResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "operations" -> operations.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CopySnapshotResult]
+    }
+  }
+
+  @js.native
+  trait CreateCloudFormationStackRequest extends js.Object {
+    var instances: js.UndefOr[InstanceEntryList]
+  }
+
+  object CreateCloudFormationStackRequest {
+    def apply(
+      instances: js.UndefOr[InstanceEntryList] = js.undefined): CreateCloudFormationStackRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "instances" -> instances.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateCloudFormationStackRequest]
+    }
+  }
+
+  @js.native
+  trait CreateCloudFormationStackResult extends js.Object {
+    var operations: js.UndefOr[OperationList]
+  }
+
+  object CreateCloudFormationStackResult {
+    def apply(
+      operations: js.UndefOr[OperationList] = js.undefined): CreateCloudFormationStackResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "operations" -> operations.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateCloudFormationStackResult]
+    }
+  }
+
   @js.native
   trait CreateDiskFromSnapshotRequest extends js.Object {
-    var diskName: js.UndefOr[ResourceName]
     var diskSnapshotName: js.UndefOr[ResourceName]
+    var tags: js.UndefOr[TagList]
     var availabilityZone: js.UndefOr[NonEmptyString]
     var sizeInGb: js.UndefOr[integer]
+    var diskName: js.UndefOr[ResourceName]
   }
 
   object CreateDiskFromSnapshotRequest {
     def apply(
-      diskName: js.UndefOr[ResourceName] = js.undefined,
       diskSnapshotName: js.UndefOr[ResourceName] = js.undefined,
+      tags: js.UndefOr[TagList] = js.undefined,
       availabilityZone: js.UndefOr[NonEmptyString] = js.undefined,
-      sizeInGb: js.UndefOr[integer] = js.undefined): CreateDiskFromSnapshotRequest = {
+      sizeInGb: js.UndefOr[integer] = js.undefined,
+      diskName: js.UndefOr[ResourceName] = js.undefined): CreateDiskFromSnapshotRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "diskName" -> diskName.map { x => x.asInstanceOf[js.Any] },
         "diskSnapshotName" -> diskSnapshotName.map { x => x.asInstanceOf[js.Any] },
+        "tags" -> tags.map { x => x.asInstanceOf[js.Any] },
         "availabilityZone" -> availabilityZone.map { x => x.asInstanceOf[js.Any] },
-        "sizeInGb" -> sizeInGb.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "sizeInGb" -> sizeInGb.map { x => x.asInstanceOf[js.Any] },
+        "diskName" -> diskName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateDiskFromSnapshotRequest]
     }
@@ -575,17 +733,20 @@ package lightsail {
     var diskName: js.UndefOr[ResourceName]
     var availabilityZone: js.UndefOr[NonEmptyString]
     var sizeInGb: js.UndefOr[integer]
+    var tags: js.UndefOr[TagList]
   }
 
   object CreateDiskRequest {
     def apply(
       diskName: js.UndefOr[ResourceName] = js.undefined,
       availabilityZone: js.UndefOr[NonEmptyString] = js.undefined,
-      sizeInGb: js.UndefOr[integer] = js.undefined): CreateDiskRequest = {
+      sizeInGb: js.UndefOr[integer] = js.undefined,
+      tags: js.UndefOr[TagList] = js.undefined): CreateDiskRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "diskName" -> diskName.map { x => x.asInstanceOf[js.Any] },
         "availabilityZone" -> availabilityZone.map { x => x.asInstanceOf[js.Any] },
-        "sizeInGb" -> sizeInGb.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "sizeInGb" -> sizeInGb.map { x => x.asInstanceOf[js.Any] },
+        "tags" -> tags.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateDiskRequest]
     }
@@ -610,15 +771,18 @@ package lightsail {
   trait CreateDiskSnapshotRequest extends js.Object {
     var diskName: js.UndefOr[ResourceName]
     var diskSnapshotName: js.UndefOr[ResourceName]
+    var tags: js.UndefOr[TagList]
   }
 
   object CreateDiskSnapshotRequest {
     def apply(
       diskName: js.UndefOr[ResourceName] = js.undefined,
-      diskSnapshotName: js.UndefOr[ResourceName] = js.undefined): CreateDiskSnapshotRequest = {
+      diskSnapshotName: js.UndefOr[ResourceName] = js.undefined,
+      tags: js.UndefOr[TagList] = js.undefined): CreateDiskSnapshotRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "diskName" -> diskName.map { x => x.asInstanceOf[js.Any] },
-        "diskSnapshotName" -> diskSnapshotName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "diskSnapshotName" -> diskSnapshotName.map { x => x.asInstanceOf[js.Any] },
+        "tags" -> tags.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateDiskSnapshotRequest]
     }
@@ -675,13 +839,16 @@ package lightsail {
   @js.native
   trait CreateDomainRequest extends js.Object {
     var domainName: js.UndefOr[DomainName]
+    var tags: js.UndefOr[TagList]
   }
 
   object CreateDomainRequest {
     def apply(
-      domainName: js.UndefOr[DomainName] = js.undefined): CreateDomainRequest = {
+      domainName: js.UndefOr[DomainName] = js.undefined,
+      tags: js.UndefOr[TagList] = js.undefined): CreateDomainRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "domainName" -> domainName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "domainName" -> domainName.map { x => x.asInstanceOf[js.Any] },
+        "tags" -> tags.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateDomainRequest]
     }
@@ -706,15 +873,18 @@ package lightsail {
   trait CreateInstanceSnapshotRequest extends js.Object {
     var instanceSnapshotName: js.UndefOr[ResourceName]
     var instanceName: js.UndefOr[ResourceName]
+    var tags: js.UndefOr[TagList]
   }
 
   object CreateInstanceSnapshotRequest {
     def apply(
       instanceSnapshotName: js.UndefOr[ResourceName] = js.undefined,
-      instanceName: js.UndefOr[ResourceName] = js.undefined): CreateInstanceSnapshotRequest = {
+      instanceName: js.UndefOr[ResourceName] = js.undefined,
+      tags: js.UndefOr[TagList] = js.undefined): CreateInstanceSnapshotRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "instanceSnapshotName" -> instanceSnapshotName.map { x => x.asInstanceOf[js.Any] },
-        "instanceName" -> instanceName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "instanceName" -> instanceName.map { x => x.asInstanceOf[js.Any] },
+        "tags" -> tags.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateInstanceSnapshotRequest]
     }
@@ -739,6 +909,7 @@ package lightsail {
   trait CreateInstancesFromSnapshotRequest extends js.Object {
     var bundleId: js.UndefOr[NonEmptyString]
     var instanceNames: js.UndefOr[StringList]
+    var tags: js.UndefOr[TagList]
     var userData: js.UndefOr[string]
     var availabilityZone: js.UndefOr[string]
     var instanceSnapshotName: js.UndefOr[ResourceName]
@@ -750,6 +921,7 @@ package lightsail {
     def apply(
       bundleId: js.UndefOr[NonEmptyString] = js.undefined,
       instanceNames: js.UndefOr[StringList] = js.undefined,
+      tags: js.UndefOr[TagList] = js.undefined,
       userData: js.UndefOr[string] = js.undefined,
       availabilityZone: js.UndefOr[string] = js.undefined,
       instanceSnapshotName: js.UndefOr[ResourceName] = js.undefined,
@@ -758,6 +930,7 @@ package lightsail {
       val _fields = IndexedSeq[(String, js.Any)](
         "bundleId" -> bundleId.map { x => x.asInstanceOf[js.Any] },
         "instanceNames" -> instanceNames.map { x => x.asInstanceOf[js.Any] },
+        "tags" -> tags.map { x => x.asInstanceOf[js.Any] },
         "userData" -> userData.map { x => x.asInstanceOf[js.Any] },
         "availabilityZone" -> availabilityZone.map { x => x.asInstanceOf[js.Any] },
         "instanceSnapshotName" -> instanceSnapshotName.map { x => x.asInstanceOf[js.Any] },
@@ -788,6 +961,7 @@ package lightsail {
     var bundleId: js.UndefOr[NonEmptyString]
     var instanceNames: js.UndefOr[StringList]
     var customImageName: js.UndefOr[ResourceName]
+    var tags: js.UndefOr[TagList]
     var userData: js.UndefOr[string]
     var availabilityZone: js.UndefOr[string]
     var blueprintId: js.UndefOr[NonEmptyString]
@@ -799,6 +973,7 @@ package lightsail {
       bundleId: js.UndefOr[NonEmptyString] = js.undefined,
       instanceNames: js.UndefOr[StringList] = js.undefined,
       customImageName: js.UndefOr[ResourceName] = js.undefined,
+      tags: js.UndefOr[TagList] = js.undefined,
       userData: js.UndefOr[string] = js.undefined,
       availabilityZone: js.UndefOr[string] = js.undefined,
       blueprintId: js.UndefOr[NonEmptyString] = js.undefined,
@@ -807,6 +982,7 @@ package lightsail {
         "bundleId" -> bundleId.map { x => x.asInstanceOf[js.Any] },
         "instanceNames" -> instanceNames.map { x => x.asInstanceOf[js.Any] },
         "customImageName" -> customImageName.map { x => x.asInstanceOf[js.Any] },
+        "tags" -> tags.map { x => x.asInstanceOf[js.Any] },
         "userData" -> userData.map { x => x.asInstanceOf[js.Any] },
         "availabilityZone" -> availabilityZone.map { x => x.asInstanceOf[js.Any] },
         "blueprintId" -> blueprintId.map { x => x.asInstanceOf[js.Any] },
@@ -834,13 +1010,16 @@ package lightsail {
   @js.native
   trait CreateKeyPairRequest extends js.Object {
     var keyPairName: js.UndefOr[ResourceName]
+    var tags: js.UndefOr[TagList]
   }
 
   object CreateKeyPairRequest {
     def apply(
-      keyPairName: js.UndefOr[ResourceName] = js.undefined): CreateKeyPairRequest = {
+      keyPairName: js.UndefOr[ResourceName] = js.undefined,
+      tags: js.UndefOr[TagList] = js.undefined): CreateKeyPairRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "keyPairName" -> keyPairName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "keyPairName" -> keyPairName.map { x => x.asInstanceOf[js.Any] },
+        "tags" -> tags.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateKeyPairRequest]
     }
@@ -873,6 +1052,7 @@ package lightsail {
   @js.native
   trait CreateLoadBalancerRequest extends js.Object {
     var certificateDomainName: js.UndefOr[DomainName]
+    var tags: js.UndefOr[TagList]
     var certificateName: js.UndefOr[ResourceName]
     var instancePort: js.UndefOr[Port]
     var healthCheckPath: js.UndefOr[string]
@@ -883,6 +1063,7 @@ package lightsail {
   object CreateLoadBalancerRequest {
     def apply(
       certificateDomainName: js.UndefOr[DomainName] = js.undefined,
+      tags: js.UndefOr[TagList] = js.undefined,
       certificateName: js.UndefOr[ResourceName] = js.undefined,
       instancePort: js.UndefOr[Port] = js.undefined,
       healthCheckPath: js.UndefOr[string] = js.undefined,
@@ -890,6 +1071,7 @@ package lightsail {
       loadBalancerName: js.UndefOr[ResourceName] = js.undefined): CreateLoadBalancerRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "certificateDomainName" -> certificateDomainName.map { x => x.asInstanceOf[js.Any] },
+        "tags" -> tags.map { x => x.asInstanceOf[js.Any] },
         "certificateName" -> certificateName.map { x => x.asInstanceOf[js.Any] },
         "instancePort" -> instancePort.map { x => x.asInstanceOf[js.Any] },
         "healthCheckPath" -> healthCheckPath.map { x => x.asInstanceOf[js.Any] },
@@ -917,23 +1099,26 @@ package lightsail {
 
   @js.native
   trait CreateLoadBalancerTlsCertificateRequest extends js.Object {
-    var loadBalancerName: js.UndefOr[ResourceName]
-    var certificateName: js.UndefOr[ResourceName]
     var certificateDomainName: js.UndefOr[DomainName]
+    var tags: js.UndefOr[TagList]
+    var certificateName: js.UndefOr[ResourceName]
     var certificateAlternativeNames: js.UndefOr[DomainNameList]
+    var loadBalancerName: js.UndefOr[ResourceName]
   }
 
   object CreateLoadBalancerTlsCertificateRequest {
     def apply(
-      loadBalancerName: js.UndefOr[ResourceName] = js.undefined,
-      certificateName: js.UndefOr[ResourceName] = js.undefined,
       certificateDomainName: js.UndefOr[DomainName] = js.undefined,
-      certificateAlternativeNames: js.UndefOr[DomainNameList] = js.undefined): CreateLoadBalancerTlsCertificateRequest = {
+      tags: js.UndefOr[TagList] = js.undefined,
+      certificateName: js.UndefOr[ResourceName] = js.undefined,
+      certificateAlternativeNames: js.UndefOr[DomainNameList] = js.undefined,
+      loadBalancerName: js.UndefOr[ResourceName] = js.undefined): CreateLoadBalancerTlsCertificateRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "loadBalancerName" -> loadBalancerName.map { x => x.asInstanceOf[js.Any] },
-        "certificateName" -> certificateName.map { x => x.asInstanceOf[js.Any] },
         "certificateDomainName" -> certificateDomainName.map { x => x.asInstanceOf[js.Any] },
-        "certificateAlternativeNames" -> certificateAlternativeNames.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "tags" -> tags.map { x => x.asInstanceOf[js.Any] },
+        "certificateName" -> certificateName.map { x => x.asInstanceOf[js.Any] },
+        "certificateAlternativeNames" -> certificateAlternativeNames.map { x => x.asInstanceOf[js.Any] },
+        "loadBalancerName" -> loadBalancerName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateLoadBalancerTlsCertificateRequest]
     }
@@ -959,6 +1144,7 @@ package lightsail {
     var relationalDatabaseSnapshotName: js.UndefOr[ResourceName]
     var restoreTime: js.UndefOr[IsoDate]
     var sourceRelationalDatabaseName: js.UndefOr[ResourceName]
+    var tags: js.UndefOr[TagList]
     var availabilityZone: js.UndefOr[string]
     var publiclyAccessible: js.UndefOr[boolean]
     var useLatestRestorableTime: js.UndefOr[boolean]
@@ -971,6 +1157,7 @@ package lightsail {
       relationalDatabaseSnapshotName: js.UndefOr[ResourceName] = js.undefined,
       restoreTime: js.UndefOr[IsoDate] = js.undefined,
       sourceRelationalDatabaseName: js.UndefOr[ResourceName] = js.undefined,
+      tags: js.UndefOr[TagList] = js.undefined,
       availabilityZone: js.UndefOr[string] = js.undefined,
       publiclyAccessible: js.UndefOr[boolean] = js.undefined,
       useLatestRestorableTime: js.UndefOr[boolean] = js.undefined,
@@ -980,6 +1167,7 @@ package lightsail {
         "relationalDatabaseSnapshotName" -> relationalDatabaseSnapshotName.map { x => x.asInstanceOf[js.Any] },
         "restoreTime" -> restoreTime.map { x => x.asInstanceOf[js.Any] },
         "sourceRelationalDatabaseName" -> sourceRelationalDatabaseName.map { x => x.asInstanceOf[js.Any] },
+        "tags" -> tags.map { x => x.asInstanceOf[js.Any] },
         "availabilityZone" -> availabilityZone.map { x => x.asInstanceOf[js.Any] },
         "publiclyAccessible" -> publiclyAccessible.map { x => x.asInstanceOf[js.Any] },
         "useLatestRestorableTime" -> useLatestRestorableTime.map { x => x.asInstanceOf[js.Any] },
@@ -1008,6 +1196,7 @@ package lightsail {
   @js.native
   trait CreateRelationalDatabaseRequest extends js.Object {
     var masterUserPassword: js.UndefOr[SensitiveString]
+    var tags: js.UndefOr[TagList]
     var availabilityZone: js.UndefOr[string]
     var preferredMaintenanceWindow: js.UndefOr[string]
     var masterDatabaseName: js.UndefOr[string]
@@ -1022,6 +1211,7 @@ package lightsail {
   object CreateRelationalDatabaseRequest {
     def apply(
       masterUserPassword: js.UndefOr[SensitiveString] = js.undefined,
+      tags: js.UndefOr[TagList] = js.undefined,
       availabilityZone: js.UndefOr[string] = js.undefined,
       preferredMaintenanceWindow: js.UndefOr[string] = js.undefined,
       masterDatabaseName: js.UndefOr[string] = js.undefined,
@@ -1033,6 +1223,7 @@ package lightsail {
       relationalDatabaseName: js.UndefOr[ResourceName] = js.undefined): CreateRelationalDatabaseRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "masterUserPassword" -> masterUserPassword.map { x => x.asInstanceOf[js.Any] },
+        "tags" -> tags.map { x => x.asInstanceOf[js.Any] },
         "availabilityZone" -> availabilityZone.map { x => x.asInstanceOf[js.Any] },
         "preferredMaintenanceWindow" -> preferredMaintenanceWindow.map { x => x.asInstanceOf[js.Any] },
         "masterDatabaseName" -> masterDatabaseName.map { x => x.asInstanceOf[js.Any] },
@@ -1066,15 +1257,18 @@ package lightsail {
   trait CreateRelationalDatabaseSnapshotRequest extends js.Object {
     var relationalDatabaseName: js.UndefOr[ResourceName]
     var relationalDatabaseSnapshotName: js.UndefOr[ResourceName]
+    var tags: js.UndefOr[TagList]
   }
 
   object CreateRelationalDatabaseSnapshotRequest {
     def apply(
       relationalDatabaseName: js.UndefOr[ResourceName] = js.undefined,
-      relationalDatabaseSnapshotName: js.UndefOr[ResourceName] = js.undefined): CreateRelationalDatabaseSnapshotRequest = {
+      relationalDatabaseSnapshotName: js.UndefOr[ResourceName] = js.undefined,
+      tags: js.UndefOr[TagList] = js.undefined): CreateRelationalDatabaseSnapshotRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "relationalDatabaseName" -> relationalDatabaseName.map { x => x.asInstanceOf[js.Any] },
-        "relationalDatabaseSnapshotName" -> relationalDatabaseSnapshotName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "relationalDatabaseSnapshotName" -> relationalDatabaseSnapshotName.map { x => x.asInstanceOf[js.Any] },
+        "tags" -> tags.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateRelationalDatabaseSnapshotRequest]
     }
@@ -1440,6 +1634,27 @@ package lightsail {
     }
   }
 
+  /**
+   * <p>Describes the destination of a record.</p>
+   */
+  @js.native
+  trait DestinationInfo extends js.Object {
+    var id: js.UndefOr[NonEmptyString]
+    var service: js.UndefOr[NonEmptyString]
+  }
+
+  object DestinationInfo {
+    def apply(
+      id: js.UndefOr[NonEmptyString] = js.undefined,
+      service: js.UndefOr[NonEmptyString] = js.undefined): DestinationInfo = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "id" -> id.map { x => x.asInstanceOf[js.Any] },
+        "service" -> service.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DestinationInfo]
+    }
+  }
+
   @js.native
   trait DetachDiskRequest extends js.Object {
     var diskName: js.UndefOr[ResourceName]
@@ -1546,6 +1761,7 @@ package lightsail {
     var state: js.UndefOr[DiskState]
     var resourceType: js.UndefOr[ResourceType]
     var attachedTo: js.UndefOr[ResourceName]
+    var tags: js.UndefOr[TagList]
     var gbInUse: js.UndefOr[integer]
     var attachmentState: js.UndefOr[string]
     var isSystemDisk: js.UndefOr[boolean]
@@ -1565,6 +1781,7 @@ package lightsail {
       state: js.UndefOr[DiskState] = js.undefined,
       resourceType: js.UndefOr[ResourceType] = js.undefined,
       attachedTo: js.UndefOr[ResourceName] = js.undefined,
+      tags: js.UndefOr[TagList] = js.undefined,
       gbInUse: js.UndefOr[integer] = js.undefined,
       attachmentState: js.UndefOr[string] = js.undefined,
       isSystemDisk: js.UndefOr[boolean] = js.undefined,
@@ -1581,6 +1798,7 @@ package lightsail {
         "state" -> state.map { x => x.asInstanceOf[js.Any] },
         "resourceType" -> resourceType.map { x => x.asInstanceOf[js.Any] },
         "attachedTo" -> attachedTo.map { x => x.asInstanceOf[js.Any] },
+        "tags" -> tags.map { x => x.asInstanceOf[js.Any] },
         "gbInUse" -> gbInUse.map { x => x.asInstanceOf[js.Any] },
         "attachmentState" -> attachmentState.map { x => x.asInstanceOf[js.Any] },
         "isSystemDisk" -> isSystemDisk.map { x => x.asInstanceOf[js.Any] },
@@ -1590,6 +1808,33 @@ package lightsail {
         "supportCode" -> supportCode.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Disk]
+    }
+  }
+
+  /**
+   * <p>Describes a disk.</p>
+   */
+  @js.native
+  trait DiskInfo extends js.Object {
+    var name: js.UndefOr[string]
+    var path: js.UndefOr[NonEmptyString]
+    var sizeInGb: js.UndefOr[integer]
+    var isSystemDisk: js.UndefOr[boolean]
+  }
+
+  object DiskInfo {
+    def apply(
+      name: js.UndefOr[string] = js.undefined,
+      path: js.UndefOr[NonEmptyString] = js.undefined,
+      sizeInGb: js.UndefOr[integer] = js.undefined,
+      isSystemDisk: js.UndefOr[boolean] = js.undefined): DiskInfo = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "name" -> name.map { x => x.asInstanceOf[js.Any] },
+        "path" -> path.map { x => x.asInstanceOf[js.Any] },
+        "sizeInGb" -> sizeInGb.map { x => x.asInstanceOf[js.Any] },
+        "isSystemDisk" -> isSystemDisk.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DiskInfo]
     }
   }
 
@@ -1625,6 +1870,7 @@ package lightsail {
     var location: js.UndefOr[ResourceLocation]
     var state: js.UndefOr[DiskSnapshotState]
     var resourceType: js.UndefOr[ResourceType]
+    var tags: js.UndefOr[TagList]
     var fromDiskArn: js.UndefOr[NonEmptyString]
     var progress: js.UndefOr[string]
     var createdAt: js.UndefOr[IsoDate]
@@ -1640,6 +1886,7 @@ package lightsail {
       location: js.UndefOr[ResourceLocation] = js.undefined,
       state: js.UndefOr[DiskSnapshotState] = js.undefined,
       resourceType: js.UndefOr[ResourceType] = js.undefined,
+      tags: js.UndefOr[TagList] = js.undefined,
       fromDiskArn: js.UndefOr[NonEmptyString] = js.undefined,
       progress: js.UndefOr[string] = js.undefined,
       createdAt: js.UndefOr[IsoDate] = js.undefined,
@@ -1652,6 +1899,7 @@ package lightsail {
         "location" -> location.map { x => x.asInstanceOf[js.Any] },
         "state" -> state.map { x => x.asInstanceOf[js.Any] },
         "resourceType" -> resourceType.map { x => x.asInstanceOf[js.Any] },
+        "tags" -> tags.map { x => x.asInstanceOf[js.Any] },
         "fromDiskArn" -> fromDiskArn.map { x => x.asInstanceOf[js.Any] },
         "progress" -> progress.map { x => x.asInstanceOf[js.Any] },
         "createdAt" -> createdAt.map { x => x.asInstanceOf[js.Any] },
@@ -1659,6 +1907,24 @@ package lightsail {
         "supportCode" -> supportCode.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DiskSnapshot]
+    }
+  }
+
+  /**
+   * <p>Describes a disk snapshot.</p>
+   */
+  @js.native
+  trait DiskSnapshotInfo extends js.Object {
+    var sizeInGb: js.UndefOr[integer]
+  }
+
+  object DiskSnapshotInfo {
+    def apply(
+      sizeInGb: js.UndefOr[integer] = js.undefined): DiskSnapshotInfo = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "sizeInGb" -> sizeInGb.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DiskSnapshotInfo]
     }
   }
 
@@ -1690,6 +1956,7 @@ package lightsail {
     var name: js.UndefOr[ResourceName]
     var location: js.UndefOr[ResourceLocation]
     var resourceType: js.UndefOr[ResourceType]
+    var tags: js.UndefOr[TagList]
     var domainEntries: js.UndefOr[DomainEntryList]
     var createdAt: js.UndefOr[IsoDate]
     var supportCode: js.UndefOr[string]
@@ -1701,6 +1968,7 @@ package lightsail {
       name: js.UndefOr[ResourceName] = js.undefined,
       location: js.UndefOr[ResourceLocation] = js.undefined,
       resourceType: js.UndefOr[ResourceType] = js.undefined,
+      tags: js.UndefOr[TagList] = js.undefined,
       domainEntries: js.UndefOr[DomainEntryList] = js.undefined,
       createdAt: js.UndefOr[IsoDate] = js.undefined,
       supportCode: js.UndefOr[string] = js.undefined): Domain = {
@@ -1709,6 +1977,7 @@ package lightsail {
         "name" -> name.map { x => x.asInstanceOf[js.Any] },
         "location" -> location.map { x => x.asInstanceOf[js.Any] },
         "resourceType" -> resourceType.map { x => x.asInstanceOf[js.Any] },
+        "tags" -> tags.map { x => x.asInstanceOf[js.Any] },
         "domainEntries" -> domainEntries.map { x => x.asInstanceOf[js.Any] },
         "createdAt" -> createdAt.map { x => x.asInstanceOf[js.Any] },
         "supportCode" -> supportCode.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
@@ -1778,6 +2047,121 @@ package lightsail {
         "privateKeyBase64" -> privateKeyBase64.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DownloadDefaultKeyPairResult]
+    }
+  }
+
+  /**
+   * <p>Describes an export snapshot record.</p>
+   */
+  @js.native
+  trait ExportSnapshotRecord extends js.Object {
+    var arn: js.UndefOr[NonEmptyString]
+    var name: js.UndefOr[ResourceName]
+    var destinationInfo: js.UndefOr[DestinationInfo]
+    var location: js.UndefOr[ResourceLocation]
+    var state: js.UndefOr[RecordState]
+    var resourceType: js.UndefOr[ResourceType]
+    var sourceInfo: js.UndefOr[ExportSnapshotRecordSourceInfo]
+    var createdAt: js.UndefOr[IsoDate]
+  }
+
+  object ExportSnapshotRecord {
+    def apply(
+      arn: js.UndefOr[NonEmptyString] = js.undefined,
+      name: js.UndefOr[ResourceName] = js.undefined,
+      destinationInfo: js.UndefOr[DestinationInfo] = js.undefined,
+      location: js.UndefOr[ResourceLocation] = js.undefined,
+      state: js.UndefOr[RecordState] = js.undefined,
+      resourceType: js.UndefOr[ResourceType] = js.undefined,
+      sourceInfo: js.UndefOr[ExportSnapshotRecordSourceInfo] = js.undefined,
+      createdAt: js.UndefOr[IsoDate] = js.undefined): ExportSnapshotRecord = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "arn" -> arn.map { x => x.asInstanceOf[js.Any] },
+        "name" -> name.map { x => x.asInstanceOf[js.Any] },
+        "destinationInfo" -> destinationInfo.map { x => x.asInstanceOf[js.Any] },
+        "location" -> location.map { x => x.asInstanceOf[js.Any] },
+        "state" -> state.map { x => x.asInstanceOf[js.Any] },
+        "resourceType" -> resourceType.map { x => x.asInstanceOf[js.Any] },
+        "sourceInfo" -> sourceInfo.map { x => x.asInstanceOf[js.Any] },
+        "createdAt" -> createdAt.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ExportSnapshotRecord]
+    }
+  }
+
+  /**
+   * <p>Describes the source of an export snapshot record.</p>
+   */
+  @js.native
+  trait ExportSnapshotRecordSourceInfo extends js.Object {
+    var arn: js.UndefOr[NonEmptyString]
+    var name: js.UndefOr[NonEmptyString]
+    var resourceType: js.UndefOr[ExportSnapshotRecordSourceType]
+    var diskSnapshotInfo: js.UndefOr[DiskSnapshotInfo]
+    var instanceSnapshotInfo: js.UndefOr[InstanceSnapshotInfo]
+    var createdAt: js.UndefOr[IsoDate]
+    var fromResourceName: js.UndefOr[NonEmptyString]
+    var fromResourceArn: js.UndefOr[NonEmptyString]
+  }
+
+  object ExportSnapshotRecordSourceInfo {
+    def apply(
+      arn: js.UndefOr[NonEmptyString] = js.undefined,
+      name: js.UndefOr[NonEmptyString] = js.undefined,
+      resourceType: js.UndefOr[ExportSnapshotRecordSourceType] = js.undefined,
+      diskSnapshotInfo: js.UndefOr[DiskSnapshotInfo] = js.undefined,
+      instanceSnapshotInfo: js.UndefOr[InstanceSnapshotInfo] = js.undefined,
+      createdAt: js.UndefOr[IsoDate] = js.undefined,
+      fromResourceName: js.UndefOr[NonEmptyString] = js.undefined,
+      fromResourceArn: js.UndefOr[NonEmptyString] = js.undefined): ExportSnapshotRecordSourceInfo = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "arn" -> arn.map { x => x.asInstanceOf[js.Any] },
+        "name" -> name.map { x => x.asInstanceOf[js.Any] },
+        "resourceType" -> resourceType.map { x => x.asInstanceOf[js.Any] },
+        "diskSnapshotInfo" -> diskSnapshotInfo.map { x => x.asInstanceOf[js.Any] },
+        "instanceSnapshotInfo" -> instanceSnapshotInfo.map { x => x.asInstanceOf[js.Any] },
+        "createdAt" -> createdAt.map { x => x.asInstanceOf[js.Any] },
+        "fromResourceName" -> fromResourceName.map { x => x.asInstanceOf[js.Any] },
+        "fromResourceArn" -> fromResourceArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ExportSnapshotRecordSourceInfo]
+    }
+  }
+
+  object ExportSnapshotRecordSourceTypeEnum {
+    val InstanceSnapshot = "InstanceSnapshot"
+    val DiskSnapshot = "DiskSnapshot"
+
+    val values = IndexedSeq(InstanceSnapshot, DiskSnapshot)
+  }
+
+  @js.native
+  trait ExportSnapshotRequest extends js.Object {
+    var sourceSnapshotName: js.UndefOr[ResourceName]
+  }
+
+  object ExportSnapshotRequest {
+    def apply(
+      sourceSnapshotName: js.UndefOr[ResourceName] = js.undefined): ExportSnapshotRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "sourceSnapshotName" -> sourceSnapshotName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ExportSnapshotRequest]
+    }
+  }
+
+  @js.native
+  trait ExportSnapshotResult extends js.Object {
+    var operations: js.UndefOr[OperationList]
+  }
+
+  object ExportSnapshotResult {
+    def apply(
+      operations: js.UndefOr[OperationList] = js.undefined): ExportSnapshotResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "operations" -> operations.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ExportSnapshotResult]
     }
   }
 
@@ -1883,6 +2267,39 @@ package lightsail {
         "nextPageToken" -> nextPageToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetBundlesResult]
+    }
+  }
+
+  @js.native
+  trait GetCloudFormationStackRecordsRequest extends js.Object {
+    var pageToken: js.UndefOr[string]
+  }
+
+  object GetCloudFormationStackRecordsRequest {
+    def apply(
+      pageToken: js.UndefOr[string] = js.undefined): GetCloudFormationStackRecordsRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "pageToken" -> pageToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetCloudFormationStackRecordsRequest]
+    }
+  }
+
+  @js.native
+  trait GetCloudFormationStackRecordsResult extends js.Object {
+    var cloudFormationStackRecords: js.UndefOr[CloudFormationStackRecordList]
+    var nextPageToken: js.UndefOr[string]
+  }
+
+  object GetCloudFormationStackRecordsResult {
+    def apply(
+      cloudFormationStackRecords: js.UndefOr[CloudFormationStackRecordList] = js.undefined,
+      nextPageToken: js.UndefOr[string] = js.undefined): GetCloudFormationStackRecordsResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "cloudFormationStackRecords" -> cloudFormationStackRecords.map { x => x.asInstanceOf[js.Any] },
+        "nextPageToken" -> nextPageToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetCloudFormationStackRecordsResult]
     }
   }
 
@@ -2072,6 +2489,39 @@ package lightsail {
         "nextPageToken" -> nextPageToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetDomainsResult]
+    }
+  }
+
+  @js.native
+  trait GetExportSnapshotRecordsRequest extends js.Object {
+    var pageToken: js.UndefOr[string]
+  }
+
+  object GetExportSnapshotRecordsRequest {
+    def apply(
+      pageToken: js.UndefOr[string] = js.undefined): GetExportSnapshotRecordsRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "pageToken" -> pageToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetExportSnapshotRecordsRequest]
+    }
+  }
+
+  @js.native
+  trait GetExportSnapshotRecordsResult extends js.Object {
+    var exportSnapshotRecords: js.UndefOr[ExportSnapshotRecordList]
+    var nextPageToken: js.UndefOr[string]
+  }
+
+  object GetExportSnapshotRecordsResult {
+    def apply(
+      exportSnapshotRecords: js.UndefOr[ExportSnapshotRecordList] = js.undefined,
+      nextPageToken: js.UndefOr[string] = js.undefined): GetExportSnapshotRecordsResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "exportSnapshotRecords" -> exportSnapshotRecords.map { x => x.asInstanceOf[js.Any] },
+        "nextPageToken" -> nextPageToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetExportSnapshotRecordsResult]
     }
   }
 
@@ -3230,6 +3680,7 @@ package lightsail {
     var state: js.UndefOr[InstanceState]
     var username: js.UndefOr[NonEmptyString]
     var resourceType: js.UndefOr[ResourceType]
+    var tags: js.UndefOr[TagList]
     var publicIpAddress: js.UndefOr[IpAddress]
     var networking: js.UndefOr[InstanceNetworking]
     var sshKeyName: js.UndefOr[ResourceName]
@@ -3252,6 +3703,7 @@ package lightsail {
       state: js.UndefOr[InstanceState] = js.undefined,
       username: js.UndefOr[NonEmptyString] = js.undefined,
       resourceType: js.UndefOr[ResourceType] = js.undefined,
+      tags: js.UndefOr[TagList] = js.undefined,
       publicIpAddress: js.UndefOr[IpAddress] = js.undefined,
       networking: js.UndefOr[InstanceNetworking] = js.undefined,
       sshKeyName: js.UndefOr[ResourceName] = js.undefined,
@@ -3271,6 +3723,7 @@ package lightsail {
         "state" -> state.map { x => x.asInstanceOf[js.Any] },
         "username" -> username.map { x => x.asInstanceOf[js.Any] },
         "resourceType" -> resourceType.map { x => x.asInstanceOf[js.Any] },
+        "tags" -> tags.map { x => x.asInstanceOf[js.Any] },
         "publicIpAddress" -> publicIpAddress.map { x => x.asInstanceOf[js.Any] },
         "networking" -> networking.map { x => x.asInstanceOf[js.Any] },
         "sshKeyName" -> sshKeyName.map { x => x.asInstanceOf[js.Any] },
@@ -3334,6 +3787,36 @@ package lightsail {
     val rdp = "rdp"
 
     val values = IndexedSeq(ssh, rdp)
+  }
+
+  /**
+   * <p>Describes the Amazon Elastic Compute Cloud instance and related resources to be created using the <code>create cloud formation stack</code> operation.</p>
+   */
+  @js.native
+  trait InstanceEntry extends js.Object {
+    var portInfoSource: js.UndefOr[PortInfoSourceType]
+    var userData: js.UndefOr[string]
+    var availabilityZone: js.UndefOr[string]
+    var instanceType: js.UndefOr[NonEmptyString]
+    var sourceName: js.UndefOr[ResourceName]
+  }
+
+  object InstanceEntry {
+    def apply(
+      portInfoSource: js.UndefOr[PortInfoSourceType] = js.undefined,
+      userData: js.UndefOr[string] = js.undefined,
+      availabilityZone: js.UndefOr[string] = js.undefined,
+      instanceType: js.UndefOr[NonEmptyString] = js.undefined,
+      sourceName: js.UndefOr[ResourceName] = js.undefined): InstanceEntry = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "portInfoSource" -> portInfoSource.map { x => x.asInstanceOf[js.Any] },
+        "userData" -> userData.map { x => x.asInstanceOf[js.Any] },
+        "availabilityZone" -> availabilityZone.map { x => x.asInstanceOf[js.Any] },
+        "instanceType" -> instanceType.map { x => x.asInstanceOf[js.Any] },
+        "sourceName" -> sourceName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[InstanceEntry]
+    }
   }
 
   /**
@@ -3524,6 +4007,7 @@ package lightsail {
     var state: js.UndefOr[InstanceSnapshotState]
     var fromInstanceName: js.UndefOr[ResourceName]
     var resourceType: js.UndefOr[ResourceType]
+    var tags: js.UndefOr[TagList]
     var fromBundleId: js.UndefOr[string]
     var fromBlueprintId: js.UndefOr[string]
     var progress: js.UndefOr[string]
@@ -3542,6 +4026,7 @@ package lightsail {
       state: js.UndefOr[InstanceSnapshotState] = js.undefined,
       fromInstanceName: js.UndefOr[ResourceName] = js.undefined,
       resourceType: js.UndefOr[ResourceType] = js.undefined,
+      tags: js.UndefOr[TagList] = js.undefined,
       fromBundleId: js.UndefOr[string] = js.undefined,
       fromBlueprintId: js.UndefOr[string] = js.undefined,
       progress: js.UndefOr[string] = js.undefined,
@@ -3557,6 +4042,7 @@ package lightsail {
         "state" -> state.map { x => x.asInstanceOf[js.Any] },
         "fromInstanceName" -> fromInstanceName.map { x => x.asInstanceOf[js.Any] },
         "resourceType" -> resourceType.map { x => x.asInstanceOf[js.Any] },
+        "tags" -> tags.map { x => x.asInstanceOf[js.Any] },
         "fromBundleId" -> fromBundleId.map { x => x.asInstanceOf[js.Any] },
         "fromBlueprintId" -> fromBlueprintId.map { x => x.asInstanceOf[js.Any] },
         "progress" -> progress.map { x => x.asInstanceOf[js.Any] },
@@ -3567,6 +4053,30 @@ package lightsail {
         "supportCode" -> supportCode.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[InstanceSnapshot]
+    }
+  }
+
+  /**
+   * <p>Describes an instance snapshot.</p>
+   */
+  @js.native
+  trait InstanceSnapshotInfo extends js.Object {
+    var fromBundleId: js.UndefOr[NonEmptyString]
+    var fromBlueprintId: js.UndefOr[NonEmptyString]
+    var fromDiskInfo: js.UndefOr[DiskInfoList]
+  }
+
+  object InstanceSnapshotInfo {
+    def apply(
+      fromBundleId: js.UndefOr[NonEmptyString] = js.undefined,
+      fromBlueprintId: js.UndefOr[NonEmptyString] = js.undefined,
+      fromDiskInfo: js.UndefOr[DiskInfoList] = js.undefined): InstanceSnapshotInfo = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "fromBundleId" -> fromBundleId.map { x => x.asInstanceOf[js.Any] },
+        "fromBlueprintId" -> fromBlueprintId.map { x => x.asInstanceOf[js.Any] },
+        "fromDiskInfo" -> fromDiskInfo.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[InstanceSnapshotInfo]
     }
   }
 
@@ -3637,6 +4147,7 @@ package lightsail {
     var fingerprint: js.UndefOr[Base64]
     var location: js.UndefOr[ResourceLocation]
     var resourceType: js.UndefOr[ResourceType]
+    var tags: js.UndefOr[TagList]
     var createdAt: js.UndefOr[IsoDate]
     var supportCode: js.UndefOr[string]
   }
@@ -3648,6 +4159,7 @@ package lightsail {
       fingerprint: js.UndefOr[Base64] = js.undefined,
       location: js.UndefOr[ResourceLocation] = js.undefined,
       resourceType: js.UndefOr[ResourceType] = js.undefined,
+      tags: js.UndefOr[TagList] = js.undefined,
       createdAt: js.UndefOr[IsoDate] = js.undefined,
       supportCode: js.UndefOr[string] = js.undefined): KeyPair = {
       val _fields = IndexedSeq[(String, js.Any)](
@@ -3656,6 +4168,7 @@ package lightsail {
         "fingerprint" -> fingerprint.map { x => x.asInstanceOf[js.Any] },
         "location" -> location.map { x => x.asInstanceOf[js.Any] },
         "resourceType" -> resourceType.map { x => x.asInstanceOf[js.Any] },
+        "tags" -> tags.map { x => x.asInstanceOf[js.Any] },
         "createdAt" -> createdAt.map { x => x.asInstanceOf[js.Any] },
         "supportCode" -> supportCode.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
@@ -3674,6 +4187,7 @@ package lightsail {
     var location: js.UndefOr[ResourceLocation]
     var state: js.UndefOr[LoadBalancerState]
     var resourceType: js.UndefOr[ResourceType]
+    var tags: js.UndefOr[TagList]
     var instancePort: js.UndefOr[integer]
     var healthCheckPath: js.UndefOr[NonEmptyString]
     var dnsName: js.UndefOr[NonEmptyString]
@@ -3693,6 +4207,7 @@ package lightsail {
       location: js.UndefOr[ResourceLocation] = js.undefined,
       state: js.UndefOr[LoadBalancerState] = js.undefined,
       resourceType: js.UndefOr[ResourceType] = js.undefined,
+      tags: js.UndefOr[TagList] = js.undefined,
       instancePort: js.UndefOr[integer] = js.undefined,
       healthCheckPath: js.UndefOr[NonEmptyString] = js.undefined,
       dnsName: js.UndefOr[NonEmptyString] = js.undefined,
@@ -3709,6 +4224,7 @@ package lightsail {
         "location" -> location.map { x => x.asInstanceOf[js.Any] },
         "state" -> state.map { x => x.asInstanceOf[js.Any] },
         "resourceType" -> resourceType.map { x => x.asInstanceOf[js.Any] },
+        "tags" -> tags.map { x => x.asInstanceOf[js.Any] },
         "instancePort" -> instancePort.map { x => x.asInstanceOf[js.Any] },
         "healthCheckPath" -> healthCheckPath.map { x => x.asInstanceOf[js.Any] },
         "dnsName" -> dnsName.map { x => x.asInstanceOf[js.Any] },
@@ -3780,6 +4296,7 @@ package lightsail {
     var notAfter: js.UndefOr[IsoDate]
     var revocationReason: js.UndefOr[LoadBalancerTlsCertificateRevocationReason]
     var resourceType: js.UndefOr[ResourceType]
+    var tags: js.UndefOr[TagList]
     var revokedAt: js.UndefOr[IsoDate]
     var issuer: js.UndefOr[NonEmptyString]
     var keyAlgorithm: js.UndefOr[NonEmptyString]
@@ -3808,6 +4325,7 @@ package lightsail {
       notAfter: js.UndefOr[IsoDate] = js.undefined,
       revocationReason: js.UndefOr[LoadBalancerTlsCertificateRevocationReason] = js.undefined,
       resourceType: js.UndefOr[ResourceType] = js.undefined,
+      tags: js.UndefOr[TagList] = js.undefined,
       revokedAt: js.UndefOr[IsoDate] = js.undefined,
       issuer: js.UndefOr[NonEmptyString] = js.undefined,
       keyAlgorithm: js.UndefOr[NonEmptyString] = js.undefined,
@@ -3833,6 +4351,7 @@ package lightsail {
         "notAfter" -> notAfter.map { x => x.asInstanceOf[js.Any] },
         "revocationReason" -> revocationReason.map { x => x.asInstanceOf[js.Any] },
         "resourceType" -> resourceType.map { x => x.asInstanceOf[js.Any] },
+        "tags" -> tags.map { x => x.asInstanceOf[js.Any] },
         "revokedAt" -> revokedAt.map { x => x.asInstanceOf[js.Any] },
         "issuer" -> issuer.map { x => x.asInstanceOf[js.Any] },
         "keyAlgorithm" -> keyAlgorithm.map { x => x.asInstanceOf[js.Any] },
@@ -4254,8 +4773,18 @@ package lightsail {
     val CreateDiskSnapshot = "CreateDiskSnapshot"
     val DeleteDiskSnapshot = "DeleteDiskSnapshot"
     val CreateDiskFromSnapshot = "CreateDiskFromSnapshot"
+    val CreateRelationalDatabase = "CreateRelationalDatabase"
+    val UpdateRelationalDatabase = "UpdateRelationalDatabase"
+    val DeleteRelationalDatabase = "DeleteRelationalDatabase"
+    val CreateRelationalDatabaseFromSnapshot = "CreateRelationalDatabaseFromSnapshot"
+    val CreateRelationalDatabaseSnapshot = "CreateRelationalDatabaseSnapshot"
+    val DeleteRelationalDatabaseSnapshot = "DeleteRelationalDatabaseSnapshot"
+    val UpdateRelationalDatabaseParameters = "UpdateRelationalDatabaseParameters"
+    val StartRelationalDatabase = "StartRelationalDatabase"
+    val RebootRelationalDatabase = "RebootRelationalDatabase"
+    val StopRelationalDatabase = "StopRelationalDatabase"
 
-    val values = IndexedSeq(DeleteInstance, CreateInstance, StopInstance, StartInstance, RebootInstance, OpenInstancePublicPorts, PutInstancePublicPorts, CloseInstancePublicPorts, AllocateStaticIp, ReleaseStaticIp, AttachStaticIp, DetachStaticIp, UpdateDomainEntry, DeleteDomainEntry, CreateDomain, DeleteDomain, CreateInstanceSnapshot, DeleteInstanceSnapshot, CreateInstancesFromSnapshot, CreateLoadBalancer, DeleteLoadBalancer, AttachInstancesToLoadBalancer, DetachInstancesFromLoadBalancer, UpdateLoadBalancerAttribute, CreateLoadBalancerTlsCertificate, DeleteLoadBalancerTlsCertificate, AttachLoadBalancerTlsCertificate, CreateDisk, DeleteDisk, AttachDisk, DetachDisk, CreateDiskSnapshot, DeleteDiskSnapshot, CreateDiskFromSnapshot)
+    val values = IndexedSeq(DeleteInstance, CreateInstance, StopInstance, StartInstance, RebootInstance, OpenInstancePublicPorts, PutInstancePublicPorts, CloseInstancePublicPorts, AllocateStaticIp, ReleaseStaticIp, AttachStaticIp, DetachStaticIp, UpdateDomainEntry, DeleteDomainEntry, CreateDomain, DeleteDomain, CreateInstanceSnapshot, DeleteInstanceSnapshot, CreateInstancesFromSnapshot, CreateLoadBalancer, DeleteLoadBalancer, AttachInstancesToLoadBalancer, DetachInstancesFromLoadBalancer, UpdateLoadBalancerAttribute, CreateLoadBalancerTlsCertificate, DeleteLoadBalancerTlsCertificate, AttachLoadBalancerTlsCertificate, CreateDisk, DeleteDisk, AttachDisk, DetachDisk, CreateDiskSnapshot, DeleteDiskSnapshot, CreateDiskFromSnapshot, CreateRelationalDatabase, UpdateRelationalDatabase, DeleteRelationalDatabase, CreateRelationalDatabaseFromSnapshot, CreateRelationalDatabaseSnapshot, DeleteRelationalDatabaseSnapshot, UpdateRelationalDatabaseParameters, StartRelationalDatabase, RebootRelationalDatabase, StopRelationalDatabase)
   }
 
   /**
@@ -4386,6 +4915,14 @@ package lightsail {
     }
   }
 
+  object PortInfoSourceTypeEnum {
+    val DEFAULT = "DEFAULT"
+    val INSTANCE = "INSTANCE"
+    val NONE = "NONE"
+
+    val values = IndexedSeq(DEFAULT, INSTANCE, NONE)
+  }
+
   object PortStateEnum {
     val open = "open"
     val closed = "closed"
@@ -4486,6 +5023,14 @@ package lightsail {
     }
   }
 
+  object RecordStateEnum {
+    val Started = "Started"
+    val Succeeded = "Succeeded"
+    val Failed = "Failed"
+
+    val values = IndexedSeq(Started, Succeeded, Failed)
+  }
+
   /**
    * <p>Describes the AWS Region.</p>
    */
@@ -4553,6 +5098,7 @@ package lightsail {
     var backupRetentionEnabled: js.UndefOr[boolean]
     var resourceType: js.UndefOr[ResourceType]
     var parameterApplyStatus: js.UndefOr[NonEmptyString]
+    var tags: js.UndefOr[TagList]
     var secondaryAvailabilityZone: js.UndefOr[string]
     var preferredMaintenanceWindow: js.UndefOr[NonEmptyString]
     var hardware: js.UndefOr[RelationalDatabaseHardware]
@@ -4581,6 +5127,7 @@ package lightsail {
       backupRetentionEnabled: js.UndefOr[boolean] = js.undefined,
       resourceType: js.UndefOr[ResourceType] = js.undefined,
       parameterApplyStatus: js.UndefOr[NonEmptyString] = js.undefined,
+      tags: js.UndefOr[TagList] = js.undefined,
       secondaryAvailabilityZone: js.UndefOr[string] = js.undefined,
       preferredMaintenanceWindow: js.UndefOr[NonEmptyString] = js.undefined,
       hardware: js.UndefOr[RelationalDatabaseHardware] = js.undefined,
@@ -4606,6 +5153,7 @@ package lightsail {
         "backupRetentionEnabled" -> backupRetentionEnabled.map { x => x.asInstanceOf[js.Any] },
         "resourceType" -> resourceType.map { x => x.asInstanceOf[js.Any] },
         "parameterApplyStatus" -> parameterApplyStatus.map { x => x.asInstanceOf[js.Any] },
+        "tags" -> tags.map { x => x.asInstanceOf[js.Any] },
         "secondaryAvailabilityZone" -> secondaryAvailabilityZone.map { x => x.asInstanceOf[js.Any] },
         "preferredMaintenanceWindow" -> preferredMaintenanceWindow.map { x => x.asInstanceOf[js.Any] },
         "hardware" -> hardware.map { x => x.asInstanceOf[js.Any] },
@@ -4850,6 +5398,7 @@ package lightsail {
     var state: js.UndefOr[NonEmptyString]
     var resourceType: js.UndefOr[ResourceType]
     var fromRelationalDatabaseBlueprintId: js.UndefOr[string]
+    var tags: js.UndefOr[TagList]
     var createdAt: js.UndefOr[IsoDate]
     var sizeInGb: js.UndefOr[integer]
     var engineVersion: js.UndefOr[NonEmptyString]
@@ -4868,6 +5417,7 @@ package lightsail {
       state: js.UndefOr[NonEmptyString] = js.undefined,
       resourceType: js.UndefOr[ResourceType] = js.undefined,
       fromRelationalDatabaseBlueprintId: js.UndefOr[string] = js.undefined,
+      tags: js.UndefOr[TagList] = js.undefined,
       createdAt: js.UndefOr[IsoDate] = js.undefined,
       sizeInGb: js.UndefOr[integer] = js.undefined,
       engineVersion: js.UndefOr[NonEmptyString] = js.undefined,
@@ -4883,6 +5433,7 @@ package lightsail {
         "state" -> state.map { x => x.asInstanceOf[js.Any] },
         "resourceType" -> resourceType.map { x => x.asInstanceOf[js.Any] },
         "fromRelationalDatabaseBlueprintId" -> fromRelationalDatabaseBlueprintId.map { x => x.asInstanceOf[js.Any] },
+        "tags" -> tags.map { x => x.asInstanceOf[js.Any] },
         "createdAt" -> createdAt.map { x => x.asInstanceOf[js.Any] },
         "sizeInGb" -> sizeInGb.map { x => x.asInstanceOf[js.Any] },
         "engineVersion" -> engineVersion.map { x => x.asInstanceOf[js.Any] },
@@ -4957,8 +5508,10 @@ package lightsail {
     val DiskSnapshot = "DiskSnapshot"
     val RelationalDatabase = "RelationalDatabase"
     val RelationalDatabaseSnapshot = "RelationalDatabaseSnapshot"
+    val ExportSnapshotRecord = "ExportSnapshotRecord"
+    val CloudFormationStackRecord = "CloudFormationStackRecord"
 
-    val values = IndexedSeq(Instance, StaticIp, KeyPair, InstanceSnapshot, Domain, PeeredVpc, LoadBalancer, LoadBalancerTlsCertificate, Disk, DiskSnapshot, RelationalDatabase, RelationalDatabaseSnapshot)
+    val values = IndexedSeq(Instance, StaticIp, KeyPair, InstanceSnapshot, Domain, PeeredVpc, LoadBalancer, LoadBalancerTlsCertificate, Disk, DiskSnapshot, RelationalDatabase, RelationalDatabaseSnapshot, ExportSnapshotRecord, CloudFormationStackRecord)
   }
 
   @js.native
@@ -5129,6 +5682,60 @@ package lightsail {
     }
   }
 
+  /**
+   * <p>Describes a tag key and optional value assigned to an Amazon Lightsail resource.</p> <p>For more information about tags in Lightsail, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-tags">Lightsail Dev Guide</a>.</p>
+   */
+  @js.native
+  trait Tag extends js.Object {
+    var key: js.UndefOr[TagKey]
+    var value: js.UndefOr[TagValue]
+  }
+
+  object Tag {
+    def apply(
+      key: js.UndefOr[TagKey] = js.undefined,
+      value: js.UndefOr[TagValue] = js.undefined): Tag = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "key" -> key.map { x => x.asInstanceOf[js.Any] },
+        "value" -> value.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Tag]
+    }
+  }
+
+  @js.native
+  trait TagResourceRequest extends js.Object {
+    var resourceName: js.UndefOr[ResourceName]
+    var tags: js.UndefOr[TagList]
+  }
+
+  object TagResourceRequest {
+    def apply(
+      resourceName: js.UndefOr[ResourceName] = js.undefined,
+      tags: js.UndefOr[TagList] = js.undefined): TagResourceRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "resourceName" -> resourceName.map { x => x.asInstanceOf[js.Any] },
+        "tags" -> tags.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TagResourceRequest]
+    }
+  }
+
+  @js.native
+  trait TagResourceResult extends js.Object {
+    var operations: js.UndefOr[OperationList]
+  }
+
+  object TagResourceResult {
+    def apply(
+      operations: js.UndefOr[OperationList] = js.undefined): TagResourceResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "operations" -> operations.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TagResourceResult]
+    }
+  }
+
   @js.native
   trait UnpeerVpcRequest extends js.Object {
 
@@ -5154,6 +5761,39 @@ package lightsail {
         "operation" -> operation.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UnpeerVpcResult]
+    }
+  }
+
+  @js.native
+  trait UntagResourceRequest extends js.Object {
+    var resourceName: js.UndefOr[ResourceName]
+    var tagKeys: js.UndefOr[TagKeyList]
+  }
+
+  object UntagResourceRequest {
+    def apply(
+      resourceName: js.UndefOr[ResourceName] = js.undefined,
+      tagKeys: js.UndefOr[TagKeyList] = js.undefined): UntagResourceRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "resourceName" -> resourceName.map { x => x.asInstanceOf[js.Any] },
+        "tagKeys" -> tagKeys.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UntagResourceRequest]
+    }
+  }
+
+  @js.native
+  trait UntagResourceResult extends js.Object {
+    var operations: js.UndefOr[OperationList]
+  }
+
+  object UntagResourceResult {
+    def apply(
+      operations: js.UndefOr[OperationList] = js.undefined): UntagResourceResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "operations" -> operations.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UntagResourceResult]
     }
   }
 

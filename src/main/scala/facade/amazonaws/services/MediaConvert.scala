@@ -59,6 +59,7 @@ package object mediaconvert {
   type DashIsoHbbtvCompliance = String
   type DashIsoSegmentControl = String
   type DashIsoWriteSegmentTimelineInRepresentation = String
+  type DecryptionMode = String
   type DeinterlaceAlgorithm = String
   type DeinterlacerControl = String
   type DeinterlacerMode = String
@@ -173,6 +174,8 @@ package object mediaconvert {
   type M3u8NielsenId3 = String
   type M3u8PcrControl = String
   type M3u8Scte35Source = String
+  type MotionImageInsertionMode = String
+  type MotionImagePlayback = String
   type MovClapAtom = String
   type MovCslgAtom = String
   type MovMpeg2FourCCControl = String
@@ -271,8 +274,10 @@ package object mediaconvert {
   type __integerMin1Max10000000 = Int
   type __integerMin1Max1001 = Int
   type __integerMin1Max16 = Int
+  type __integerMin1Max17895697 = Int
   type __integerMin1Max2 = Int
   type __integerMin1Max20 = Int
+  type __integerMin1Max2147483640 = Int
   type __integerMin1Max2147483647 = Int
   type __integerMin1Max31 = Int
   type __integerMin1Max32 = Int
@@ -334,13 +339,18 @@ package object mediaconvert {
   type __string = String
   type __stringMin0 = String
   type __stringMin1 = String
+  type __stringMin11Max11Pattern01D20305D205D = String
+  type __stringMin14Max1285PatternS3Mov09Png = String
   type __stringMin14PatternS3BmpBMPPngPNG = String
   type __stringMin14PatternS3BmpBMPPngPNGTgaTGA = String
   type __stringMin14PatternS3SccSCCTtmlTTMLDfxpDFXPStlSTLSrtSRTSmiSMI = String
+  type __stringMin16Max24PatternAZaZ0922AZaZ0916 = String
   type __stringMin1Max256 = String
+  type __stringMin24Max512PatternAZaZ0902 = String
   type __stringMin32Max32Pattern09aFAF32 = String
   type __stringMin3Max3Pattern1809aFAF09aEAE = String
   type __stringMin3Max3PatternAZaZ3 = String
+  type __stringMin9Max19PatternAZ26EastWestCentralNorthSouthEastWest1912 = String
   type __stringPattern = String
   type __stringPattern010920405090509092 = String
   type __stringPattern01D20305D205D = String
@@ -348,6 +358,7 @@ package object mediaconvert {
   type __stringPattern09aFAF809aFAF409aFAF409aFAF409aFAF12 = String
   type __stringPatternAZaZ0902 = String
   type __stringPatternAZaZ0932 = String
+  type __stringPatternArnAwsAcm = String
   type __stringPatternDD = String
   type __stringPatternHttps = String
   type __stringPatternIdentityAZaZ26AZaZ09163 = String
@@ -362,6 +373,7 @@ package mediaconvert {
   @js.native
   @JSImport("aws-sdk", "MediaConvert")
   class MediaConvert(config: AWSConfig) extends js.Object {
+    def associateCertificate(params: AssociateCertificateRequest): Request[AssociateCertificateResponse] = js.native
     def cancelJob(params: CancelJobRequest): Request[CancelJobResponse] = js.native
     def createJob(params: CreateJobRequest): Request[CreateJobResponse] = js.native
     def createJobTemplate(params: CreateJobTemplateRequest): Request[CreateJobTemplateResponse] = js.native
@@ -371,6 +383,7 @@ package mediaconvert {
     def deletePreset(params: DeletePresetRequest): Request[DeletePresetResponse] = js.native
     def deleteQueue(params: DeleteQueueRequest): Request[DeleteQueueResponse] = js.native
     def describeEndpoints(params: DescribeEndpointsRequest): Request[DescribeEndpointsResponse] = js.native
+    def disassociateCertificate(params: DisassociateCertificateRequest): Request[DisassociateCertificateResponse] = js.native
     def getJob(params: GetJobRequest): Request[GetJobResponse] = js.native
     def getJobTemplate(params: GetJobTemplateRequest): Request[GetJobTemplateResponse] = js.native
     def getPreset(params: GetPresetRequest): Request[GetPresetResponse] = js.native
@@ -603,7 +616,7 @@ package mediaconvert {
   }
 
   /**
-   * This setting only applies to H.264 and MPEG2 outputs. Use Insert AFD signaling (AfdSignaling) to specify whether the service includes AFD values in the output video data and what those values are. * Choose None to remove all AFD values from this output. * Choose Fixed to ignore input AFD values and instead encode the value specified in the job. * Choose Auto to calculate output AFD values based on the input AFD scaler data.
+   * This setting only applies to H.264, H.265, and MPEG2 outputs. Use Insert AFD signaling  (AfdSignaling) to specify whether the service includes AFD values in the output video data  and what those values are. * Choose None to remove all AFD values from this output. * Choose Fixed to ignore input AFD values and instead encode the value specified in the job. * Choose Auto to calculate output AFD values based on the input AFD scaler data.
    */
   object AfdSignalingEnum {
     val NONE = "NONE"
@@ -663,6 +676,34 @@ package mediaconvert {
     val ENABLED = "ENABLED"
 
     val values = IndexedSeq(DISABLED, ENABLED)
+  }
+
+  @js.native
+  trait AssociateCertificateRequest extends js.Object {
+    var Arn: js.UndefOr[__string]
+  }
+
+  object AssociateCertificateRequest {
+    def apply(
+      Arn: js.UndefOr[__string] = js.undefined): AssociateCertificateRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Arn" -> Arn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AssociateCertificateRequest]
+    }
+  }
+
+  @js.native
+  trait AssociateCertificateResponse extends js.Object {
+
+  }
+
+  object AssociateCertificateResponse {
+    def apply(): AssociateCertificateResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AssociateCertificateResponse]
+    }
   }
 
   /**
@@ -1221,19 +1262,22 @@ package mediaconvert {
   }
 
   /**
-   * Type of Caption output, including Burn-In, Embedded, SCC, SRT, TTML, WebVTT, DVB-Sub, Teletext.
+   * Type of Caption output, including Burn-In, Embedded (with or without SCTE20), SCC, SMI, SRT, TTML, WebVTT, DVB-Sub, Teletext.
    */
   object CaptionDestinationTypeEnum {
     val BURN_IN = "BURN_IN"
     val DVB_SUB = "DVB_SUB"
     val EMBEDDED = "EMBEDDED"
+    val EMBEDDED_PLUS_SCTE20 = "EMBEDDED_PLUS_SCTE20"
+    val SCTE20_PLUS_EMBEDDED = "SCTE20_PLUS_EMBEDDED"
     val SCC = "SCC"
     val SRT = "SRT"
+    val SMI = "SMI"
     val TELETEXT = "TELETEXT"
     val TTML = "TTML"
     val WEBVTT = "WEBVTT"
 
-    val values = IndexedSeq(BURN_IN, DVB_SUB, EMBEDDED, SCC, SRT, TELETEXT, TTML, WEBVTT)
+    val values = IndexedSeq(BURN_IN, DVB_SUB, EMBEDDED, EMBEDDED_PLUS_SCTE20, SCTE20_PLUS_EMBEDDED, SCC, SRT, SMI, TELETEXT, TTML, WEBVTT)
   }
 
   /**
@@ -1300,14 +1344,16 @@ package mediaconvert {
     val ANCILLARY = "ANCILLARY"
     val DVB_SUB = "DVB_SUB"
     val EMBEDDED = "EMBEDDED"
+    val SCTE20 = "SCTE20"
     val SCC = "SCC"
     val TTML = "TTML"
     val STL = "STL"
     val SRT = "SRT"
+    val SMI = "SMI"
     val TELETEXT = "TELETEXT"
     val NULL_SOURCE = "NULL_SOURCE"
 
-    val values = IndexedSeq(ANCILLARY, DVB_SUB, EMBEDDED, SCC, TTML, STL, SRT, TELETEXT, NULL_SOURCE)
+    val values = IndexedSeq(ANCILLARY, DVB_SUB, EMBEDDED, SCTE20, SCC, TTML, STL, SRT, SMI, TELETEXT, NULL_SOURCE)
   }
 
   /**
@@ -1923,13 +1969,24 @@ package mediaconvert {
   }
 
   /**
-   * When ENABLED, segment durations are indicated in the manifest using SegmentTimeline and SegmentTimeline will be promoted down into Representation from AdaptationSet.
+   * When you enable Precise segment duration in manifests (writeSegmentTimelineInRepresentation), your DASH manifest shows precise segment durations. The segment duration information appears inside the SegmentTimeline element, inside SegmentTemplate at the Representation level. When this feature isn't enabled, the segment durations in your DASH manifest are approximate. The segment duration information appears in the duration attribute of the SegmentTemplate element.
    */
   object DashIsoWriteSegmentTimelineInRepresentationEnum {
     val ENABLED = "ENABLED"
     val DISABLED = "DISABLED"
 
     val values = IndexedSeq(ENABLED, DISABLED)
+  }
+
+  /**
+   * This specifies how the encrypted file needs to be decrypted.
+   */
+  object DecryptionModeEnum {
+    val AES_CTR = "AES_CTR"
+    val AES_CBC = "AES_CBC"
+    val AES_GCM = "AES_GCM"
+
+    val values = IndexedSeq(AES_CTR, AES_CBC, AES_GCM)
   }
 
   /**
@@ -2122,6 +2179,34 @@ package mediaconvert {
         "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeEndpointsResponse]
+    }
+  }
+
+  @js.native
+  trait DisassociateCertificateRequest extends js.Object {
+    var Arn: js.UndefOr[__string]
+  }
+
+  object DisassociateCertificateRequest {
+    def apply(
+      Arn: js.UndefOr[__string] = js.undefined): DisassociateCertificateRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Arn" -> Arn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DisassociateCertificateRequest]
+    }
+  }
+
+  @js.native
+  trait DisassociateCertificateResponse extends js.Object {
+
+  }
+
+  object DisassociateCertificateResponse {
+    def apply(): DisassociateCertificateResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DisassociateCertificateResponse]
     }
   }
 
@@ -4126,7 +4211,7 @@ package mediaconvert {
   }
 
   /**
-   * Enable the Image inserter (ImageInserter) feature to include a graphic overlay on your video. Enable or disable this feature for each output individually. This setting is disabled by default.
+   * Enable the Image inserter (ImageInserter) feature to include a graphic overlay on your video. Enable or disable this feature for each input or output individually. This setting is disabled by default.
    */
   @js.native
   trait ImageInserter extends js.Object {
@@ -4150,7 +4235,9 @@ package mediaconvert {
   trait Input extends js.Object {
     var InputClippings: js.UndefOr[__listOfInputClipping]
     var TimecodeSource: js.UndefOr[InputTimecodeSource]
+    var ImageInserter: js.UndefOr[ImageInserter]
     var FilterStrength: js.UndefOr[__integerMinNegative5Max5]
+    var DecryptionSettings: js.UndefOr[InputDecryptionSettings]
     var PsiControl: js.UndefOr[InputPsiControl]
     var FileInput: js.UndefOr[__stringPatternS3MM2VVMMPPEEGGAAVVIIMMPP4FFLLVVMMPPTTMMPPGGMM4VVTTRRPPFF4VVMM2TTSSTTSS264HH264MMKKVVMMOOVVMMTTSSMM2TTWWMMVVAASSFFVVOOBB3GGPP3GGPPPPMMXXFFDDIIVVXXXXVVIIDDRRAAWWDDVVGGXXFFMM1VV3GG2VVMMFFMM3UU8LLCCHHGGXXFFMMPPEEGG2MMXXFFMMPPEEGG2MMXXFFHHDDWWAAVVYY4MM]
     var FilterEnable: js.UndefOr[InputFilterEnable]
@@ -4167,7 +4254,9 @@ package mediaconvert {
     def apply(
       InputClippings: js.UndefOr[__listOfInputClipping] = js.undefined,
       TimecodeSource: js.UndefOr[InputTimecodeSource] = js.undefined,
+      ImageInserter: js.UndefOr[ImageInserter] = js.undefined,
       FilterStrength: js.UndefOr[__integerMinNegative5Max5] = js.undefined,
+      DecryptionSettings: js.UndefOr[InputDecryptionSettings] = js.undefined,
       PsiControl: js.UndefOr[InputPsiControl] = js.undefined,
       FileInput: js.UndefOr[__stringPatternS3MM2VVMMPPEEGGAAVVIIMMPP4FFLLVVMMPPTTMMPPGGMM4VVTTRRPPFF4VVMM2TTSSTTSS264HH264MMKKVVMMOOVVMMTTSSMM2TTWWMMVVAASSFFVVOOBB3GGPP3GGPPPPMMXXFFDDIIVVXXXXVVIIDDRRAAWWDDVVGGXXFFMM1VV3GG2VVMMFFMM3UU8LLCCHHGGXXFFMMPPEEGG2MMXXFFMMPPEEGG2MMXXFFHHDDWWAAVVYY4MM] = js.undefined,
       FilterEnable: js.UndefOr[InputFilterEnable] = js.undefined,
@@ -4181,7 +4270,9 @@ package mediaconvert {
       val _fields = IndexedSeq[(String, js.Any)](
         "InputClippings" -> InputClippings.map { x => x.asInstanceOf[js.Any] },
         "TimecodeSource" -> TimecodeSource.map { x => x.asInstanceOf[js.Any] },
+        "ImageInserter" -> ImageInserter.map { x => x.asInstanceOf[js.Any] },
         "FilterStrength" -> FilterStrength.map { x => x.asInstanceOf[js.Any] },
+        "DecryptionSettings" -> DecryptionSettings.map { x => x.asInstanceOf[js.Any] },
         "PsiControl" -> PsiControl.map { x => x.asInstanceOf[js.Any] },
         "FileInput" -> FileInput.map { x => x.asInstanceOf[js.Any] },
         "FilterEnable" -> FilterEnable.map { x => x.asInstanceOf[js.Any] },
@@ -4229,6 +4320,33 @@ package mediaconvert {
   }
 
   /**
+   * Specify the decryption settings used to decrypt encrypted input
+   */
+  @js.native
+  trait InputDecryptionSettings extends js.Object {
+    var DecryptionMode: js.UndefOr[DecryptionMode]
+    var EncryptedDecryptionKey: js.UndefOr[__stringMin24Max512PatternAZaZ0902]
+    var InitializationVector: js.UndefOr[__stringMin16Max24PatternAZaZ0922AZaZ0916]
+    var KmsKeyRegion: js.UndefOr[__stringMin9Max19PatternAZ26EastWestCentralNorthSouthEastWest1912]
+  }
+
+  object InputDecryptionSettings {
+    def apply(
+      DecryptionMode: js.UndefOr[DecryptionMode] = js.undefined,
+      EncryptedDecryptionKey: js.UndefOr[__stringMin24Max512PatternAZaZ0902] = js.undefined,
+      InitializationVector: js.UndefOr[__stringMin16Max24PatternAZaZ0922AZaZ0916] = js.undefined,
+      KmsKeyRegion: js.UndefOr[__stringMin9Max19PatternAZ26EastWestCentralNorthSouthEastWest1912] = js.undefined): InputDecryptionSettings = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "DecryptionMode" -> DecryptionMode.map { x => x.asInstanceOf[js.Any] },
+        "EncryptedDecryptionKey" -> EncryptedDecryptionKey.map { x => x.asInstanceOf[js.Any] },
+        "InitializationVector" -> InitializationVector.map { x => x.asInstanceOf[js.Any] },
+        "KmsKeyRegion" -> KmsKeyRegion.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[InputDecryptionSettings]
+    }
+  }
+
+  /**
    * Enable Denoise (InputDenoiseFilter) to filter noise from the input.  Default is disabled. Only applicable to MPEG2, H.264, H.265, and uncompressed video inputs.
    */
   object InputDenoiseFilterEnum {
@@ -4266,6 +4384,7 @@ package mediaconvert {
   trait InputTemplate extends js.Object {
     var InputClippings: js.UndefOr[__listOfInputClipping]
     var TimecodeSource: js.UndefOr[InputTimecodeSource]
+    var ImageInserter: js.UndefOr[ImageInserter]
     var FilterStrength: js.UndefOr[__integerMinNegative5Max5]
     var PsiControl: js.UndefOr[InputPsiControl]
     var FilterEnable: js.UndefOr[InputFilterEnable]
@@ -4282,6 +4401,7 @@ package mediaconvert {
     def apply(
       InputClippings: js.UndefOr[__listOfInputClipping] = js.undefined,
       TimecodeSource: js.UndefOr[InputTimecodeSource] = js.undefined,
+      ImageInserter: js.UndefOr[ImageInserter] = js.undefined,
       FilterStrength: js.UndefOr[__integerMinNegative5Max5] = js.undefined,
       PsiControl: js.UndefOr[InputPsiControl] = js.undefined,
       FilterEnable: js.UndefOr[InputFilterEnable] = js.undefined,
@@ -4295,6 +4415,7 @@ package mediaconvert {
       val _fields = IndexedSeq[(String, js.Any)](
         "InputClippings" -> InputClippings.map { x => x.asInstanceOf[js.Any] },
         "TimecodeSource" -> TimecodeSource.map { x => x.asInstanceOf[js.Any] },
+        "ImageInserter" -> ImageInserter.map { x => x.asInstanceOf[js.Any] },
         "FilterStrength" -> FilterStrength.map { x => x.asInstanceOf[js.Any] },
         "PsiControl" -> PsiControl.map { x => x.asInstanceOf[js.Any] },
         "FilterEnable" -> FilterEnable.map { x => x.asInstanceOf[js.Any] },
@@ -4322,35 +4443,35 @@ package mediaconvert {
   }
 
   /**
-   * Settings for Insertable Image
+   * Settings that specify how your overlay appears.
    */
   @js.native
   trait InsertableImage extends js.Object {
-    var ImageY: js.UndefOr[__integerMinNegative2147483648Max2147483647]
-    var Duration: js.UndefOr[__integerMinNegative2147483648Max2147483647]
-    var Width: js.UndefOr[__integerMinNegative2147483648Max2147483647]
+    var ImageY: js.UndefOr[__integerMin0Max2147483647]
+    var Duration: js.UndefOr[__integerMin0Max2147483647]
+    var Width: js.UndefOr[__integerMin0Max2147483647]
     var Layer: js.UndefOr[__integerMin0Max99]
-    var ImageX: js.UndefOr[__integerMinNegative2147483648Max2147483647]
+    var ImageX: js.UndefOr[__integerMin0Max2147483647]
     var StartTime: js.UndefOr[__stringPattern01D20305D205D]
     var Opacity: js.UndefOr[__integerMin0Max100]
-    var FadeIn: js.UndefOr[__integerMinNegative2147483648Max2147483647]
-    var FadeOut: js.UndefOr[__integerMinNegative2147483648Max2147483647]
-    var Height: js.UndefOr[__integerMinNegative2147483648Max2147483647]
+    var FadeIn: js.UndefOr[__integerMin0Max2147483647]
+    var FadeOut: js.UndefOr[__integerMin0Max2147483647]
+    var Height: js.UndefOr[__integerMin0Max2147483647]
     var ImageInserterInput: js.UndefOr[__stringMin14PatternS3BmpBMPPngPNGTgaTGA]
   }
 
   object InsertableImage {
     def apply(
-      ImageY: js.UndefOr[__integerMinNegative2147483648Max2147483647] = js.undefined,
-      Duration: js.UndefOr[__integerMinNegative2147483648Max2147483647] = js.undefined,
-      Width: js.UndefOr[__integerMinNegative2147483648Max2147483647] = js.undefined,
+      ImageY: js.UndefOr[__integerMin0Max2147483647] = js.undefined,
+      Duration: js.UndefOr[__integerMin0Max2147483647] = js.undefined,
+      Width: js.UndefOr[__integerMin0Max2147483647] = js.undefined,
       Layer: js.UndefOr[__integerMin0Max99] = js.undefined,
-      ImageX: js.UndefOr[__integerMinNegative2147483648Max2147483647] = js.undefined,
+      ImageX: js.UndefOr[__integerMin0Max2147483647] = js.undefined,
       StartTime: js.UndefOr[__stringPattern01D20305D205D] = js.undefined,
       Opacity: js.UndefOr[__integerMin0Max100] = js.undefined,
-      FadeIn: js.UndefOr[__integerMinNegative2147483648Max2147483647] = js.undefined,
-      FadeOut: js.UndefOr[__integerMinNegative2147483648Max2147483647] = js.undefined,
-      Height: js.UndefOr[__integerMinNegative2147483648Max2147483647] = js.undefined,
+      FadeIn: js.UndefOr[__integerMin0Max2147483647] = js.undefined,
+      FadeOut: js.UndefOr[__integerMin0Max2147483647] = js.undefined,
+      Height: js.UndefOr[__integerMin0Max2147483647] = js.undefined,
       ImageInserterInput: js.UndefOr[__stringMin14PatternS3BmpBMPPngPNGTgaTGA] = js.undefined): InsertableImage = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ImageY" -> ImageY.map { x => x.asInstanceOf[js.Any] },
@@ -4435,6 +4556,7 @@ package mediaconvert {
     var NielsenConfiguration: js.UndefOr[NielsenConfiguration]
     var TimedMetadataInsertion: js.UndefOr[TimedMetadataInsertion]
     var Inputs: js.UndefOr[__listOfInput]
+    var MotionImageInserter: js.UndefOr[MotionImageInserter]
     var TimecodeConfig: js.UndefOr[TimecodeConfig]
     var AdAvailOffset: js.UndefOr[__integerMinNegative1000Max1000]
     var OutputGroups: js.UndefOr[__listOfOutputGroup]
@@ -4446,6 +4568,7 @@ package mediaconvert {
       NielsenConfiguration: js.UndefOr[NielsenConfiguration] = js.undefined,
       TimedMetadataInsertion: js.UndefOr[TimedMetadataInsertion] = js.undefined,
       Inputs: js.UndefOr[__listOfInput] = js.undefined,
+      MotionImageInserter: js.UndefOr[MotionImageInserter] = js.undefined,
       TimecodeConfig: js.UndefOr[TimecodeConfig] = js.undefined,
       AdAvailOffset: js.UndefOr[__integerMinNegative1000Max1000] = js.undefined,
       OutputGroups: js.UndefOr[__listOfOutputGroup] = js.undefined): JobSettings = {
@@ -4454,6 +4577,7 @@ package mediaconvert {
         "NielsenConfiguration" -> NielsenConfiguration.map { x => x.asInstanceOf[js.Any] },
         "TimedMetadataInsertion" -> TimedMetadataInsertion.map { x => x.asInstanceOf[js.Any] },
         "Inputs" -> Inputs.map { x => x.asInstanceOf[js.Any] },
+        "MotionImageInserter" -> MotionImageInserter.map { x => x.asInstanceOf[js.Any] },
         "TimecodeConfig" -> TimecodeConfig.map { x => x.asInstanceOf[js.Any] },
         "AdAvailOffset" -> AdAvailOffset.map { x => x.asInstanceOf[js.Any] },
         "OutputGroups" -> OutputGroups.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
@@ -4537,6 +4661,7 @@ package mediaconvert {
     var NielsenConfiguration: js.UndefOr[NielsenConfiguration]
     var TimedMetadataInsertion: js.UndefOr[TimedMetadataInsertion]
     var Inputs: js.UndefOr[__listOfInputTemplate]
+    var MotionImageInserter: js.UndefOr[MotionImageInserter]
     var TimecodeConfig: js.UndefOr[TimecodeConfig]
     var AdAvailOffset: js.UndefOr[__integerMinNegative1000Max1000]
     var OutputGroups: js.UndefOr[__listOfOutputGroup]
@@ -4548,6 +4673,7 @@ package mediaconvert {
       NielsenConfiguration: js.UndefOr[NielsenConfiguration] = js.undefined,
       TimedMetadataInsertion: js.UndefOr[TimedMetadataInsertion] = js.undefined,
       Inputs: js.UndefOr[__listOfInputTemplate] = js.undefined,
+      MotionImageInserter: js.UndefOr[MotionImageInserter] = js.undefined,
       TimecodeConfig: js.UndefOr[TimecodeConfig] = js.undefined,
       AdAvailOffset: js.UndefOr[__integerMinNegative1000Max1000] = js.undefined,
       OutputGroups: js.UndefOr[__listOfOutputGroup] = js.undefined): JobTemplateSettings = {
@@ -4556,6 +4682,7 @@ package mediaconvert {
         "NielsenConfiguration" -> NielsenConfiguration.map { x => x.asInstanceOf[js.Any] },
         "TimedMetadataInsertion" -> TimedMetadataInsertion.map { x => x.asInstanceOf[js.Any] },
         "Inputs" -> Inputs.map { x => x.asInstanceOf[js.Any] },
+        "MotionImageInserter" -> MotionImageInserter.map { x => x.asInstanceOf[js.Any] },
         "TimecodeConfig" -> TimecodeConfig.map { x => x.asInstanceOf[js.Any] },
         "AdAvailOffset" -> AdAvailOffset.map { x => x.asInstanceOf[js.Any] },
         "OutputGroups" -> OutputGroups.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
@@ -5292,6 +5419,101 @@ package mediaconvert {
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[M3u8Settings]
     }
+  }
+
+  /**
+   * Overlay motion graphics on top of your video at the time that you specify.
+   */
+  @js.native
+  trait MotionImageInserter extends js.Object {
+    var Playback: js.UndefOr[MotionImagePlayback]
+    var StartTime: js.UndefOr[__stringMin11Max11Pattern01D20305D205D]
+    var Input: js.UndefOr[__stringMin14Max1285PatternS3Mov09Png]
+    var InsertionMode: js.UndefOr[MotionImageInsertionMode]
+    var Offset: js.UndefOr[MotionImageInsertionOffset]
+    var Framerate: js.UndefOr[MotionImageInsertionFramerate]
+  }
+
+  object MotionImageInserter {
+    def apply(
+      Playback: js.UndefOr[MotionImagePlayback] = js.undefined,
+      StartTime: js.UndefOr[__stringMin11Max11Pattern01D20305D205D] = js.undefined,
+      Input: js.UndefOr[__stringMin14Max1285PatternS3Mov09Png] = js.undefined,
+      InsertionMode: js.UndefOr[MotionImageInsertionMode] = js.undefined,
+      Offset: js.UndefOr[MotionImageInsertionOffset] = js.undefined,
+      Framerate: js.UndefOr[MotionImageInsertionFramerate] = js.undefined): MotionImageInserter = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Playback" -> Playback.map { x => x.asInstanceOf[js.Any] },
+        "StartTime" -> StartTime.map { x => x.asInstanceOf[js.Any] },
+        "Input" -> Input.map { x => x.asInstanceOf[js.Any] },
+        "InsertionMode" -> InsertionMode.map { x => x.asInstanceOf[js.Any] },
+        "Offset" -> Offset.map { x => x.asInstanceOf[js.Any] },
+        "Framerate" -> Framerate.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[MotionImageInserter]
+    }
+  }
+
+  /**
+   * For motion overlays that don't have a built-in framerate, specify the framerate of the overlay in frames per second, as a fraction. For example, specify 24 fps as 24/1. The overlay framerate doesn't need to match the framerate of the underlying video.
+   */
+  @js.native
+  trait MotionImageInsertionFramerate extends js.Object {
+    var FramerateDenominator: js.UndefOr[__integerMin1Max17895697]
+    var FramerateNumerator: js.UndefOr[__integerMin1Max2147483640]
+  }
+
+  object MotionImageInsertionFramerate {
+    def apply(
+      FramerateDenominator: js.UndefOr[__integerMin1Max17895697] = js.undefined,
+      FramerateNumerator: js.UndefOr[__integerMin1Max2147483640] = js.undefined): MotionImageInsertionFramerate = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "FramerateDenominator" -> FramerateDenominator.map { x => x.asInstanceOf[js.Any] },
+        "FramerateNumerator" -> FramerateNumerator.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[MotionImageInsertionFramerate]
+    }
+  }
+
+  /**
+   * Choose the type of motion graphic asset that you are providing for your overlay. You can choose either a .mov file or a series of .png files.
+   */
+  object MotionImageInsertionModeEnum {
+    val MOV = "MOV"
+    val PNG = "PNG"
+
+    val values = IndexedSeq(MOV, PNG)
+  }
+
+  /**
+   * Specify the offset between the upper-left corner of the video frame and the top left corner of the overlay.
+   */
+  @js.native
+  trait MotionImageInsertionOffset extends js.Object {
+    var ImageX: js.UndefOr[__integerMin0Max2147483647]
+    var ImageY: js.UndefOr[__integerMin0Max2147483647]
+  }
+
+  object MotionImageInsertionOffset {
+    def apply(
+      ImageX: js.UndefOr[__integerMin0Max2147483647] = js.undefined,
+      ImageY: js.UndefOr[__integerMin0Max2147483647] = js.undefined): MotionImageInsertionOffset = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ImageX" -> ImageX.map { x => x.asInstanceOf[js.Any] },
+        "ImageY" -> ImageY.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[MotionImageInsertionOffset]
+    }
+  }
+
+  /**
+   * Specify whether your motion graphic overlay repeats on a loop or plays only once.
+   */
+  object MotionImagePlaybackEnum {
+    val ONCE = "ONCE"
+    val REPEAT = "REPEAT"
+
+    val values = IndexedSeq(ONCE, REPEAT)
   }
 
   /**
@@ -6621,6 +6843,7 @@ package mediaconvert {
    */
   @js.native
   trait SpekeKeyProvider extends js.Object {
+    var CertificateArn: js.UndefOr[__stringPatternArnAwsAcm]
     var ResourceId: js.UndefOr[__string]
     var SystemIds: js.UndefOr[__listOf__stringPattern09aFAF809aFAF409aFAF409aFAF409aFAF12]
     var Url: js.UndefOr[__stringPatternHttps]
@@ -6628,10 +6851,12 @@ package mediaconvert {
 
   object SpekeKeyProvider {
     def apply(
+      CertificateArn: js.UndefOr[__stringPatternArnAwsAcm] = js.undefined,
       ResourceId: js.UndefOr[__string] = js.undefined,
       SystemIds: js.UndefOr[__listOf__stringPattern09aFAF809aFAF409aFAF409aFAF409aFAF12] = js.undefined,
       Url: js.UndefOr[__stringPatternHttps] = js.undefined): SpekeKeyProvider = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "CertificateArn" -> CertificateArn.map { x => x.asInstanceOf[js.Any] },
         "ResourceId" -> ResourceId.map { x => x.asInstanceOf[js.Any] },
         "SystemIds" -> SystemIds.map { x => x.asInstanceOf[js.Any] },
         "Url" -> Url.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
@@ -6641,7 +6866,7 @@ package mediaconvert {
   }
 
   /**
-   * Settings for use with a SPEKE key provider.
+   * Use these settings to set up encryption with a static key provider.
    */
   @js.native
   trait StaticKeyProvider extends js.Object {

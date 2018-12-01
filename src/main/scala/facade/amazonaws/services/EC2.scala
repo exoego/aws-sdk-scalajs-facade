@@ -22,6 +22,7 @@ package object ec2 {
   type ArchitectureValues = String
   type AssociationIdList = js.Array[String]
   type AttachmentStatus = String
+  type AutoAcceptSharedAttachmentsValue = String
   type AutoPlacement = String
   type AvailabilityZoneList = js.Array[AvailabilityZone]
   type AvailabilityZoneMessageList = js.Array[AvailabilityZoneMessage]
@@ -66,6 +67,8 @@ package object ec2 {
   type CustomerGatewayList = js.Array[CustomerGateway]
   type DatafeedSubscriptionState = String
   type DateTime = js.Date
+  type DefaultRouteTableAssociationValue = String
+  type DefaultRouteTablePropagationValue = String
   type DefaultTargetCapacityType = String
   type DeleteFleetErrorCode = String
   type DeleteFleetErrorSet = js.Array[DeleteFleetErrorItem]
@@ -83,6 +86,7 @@ package object ec2 {
   type DiskImageFormat = String
   type DiskImageList = js.Array[DiskImage]
   type DnsEntrySet = js.Array[DnsEntry]
+  type DnsSupportValue = String
   type DomainType = String
   type EgressOnlyInternetGatewayId = String
   type EgressOnlyInternetGatewayIdList = js.Array[EgressOnlyInternetGatewayId]
@@ -95,6 +99,8 @@ package object ec2 {
   type ElasticGpuSpecifications = js.Array[ElasticGpuSpecification]
   type ElasticGpuState = String
   type ElasticGpuStatus = String
+  type ElasticInferenceAcceleratorAssociationList = js.Array[ElasticInferenceAcceleratorAssociation]
+  type ElasticInferenceAccelerators = js.Array[ElasticInferenceAccelerator]
   type EndDateType = String
   type EventCode = String
   type EventType = String
@@ -191,6 +197,7 @@ package object ec2 {
   type Ipv6AddressList = js.Array[String]
   type Ipv6CidrBlockSet = js.Array[Ipv6CidrBlock]
   type Ipv6RangeList = js.Array[Ipv6Range]
+  type Ipv6SupportValue = String
   type KeyNameStringList = js.Array[String]
   type KeyPairList = js.Array[KeyPairInfo]
   type LaunchPermissionList = js.Array[LaunchPermission]
@@ -198,9 +205,13 @@ package object ec2 {
   type LaunchTemplateBlockDeviceMappingList = js.Array[LaunchTemplateBlockDeviceMapping]
   type LaunchTemplateBlockDeviceMappingRequestList = js.Array[LaunchTemplateBlockDeviceMappingRequest]
   type LaunchTemplateConfigList = js.Array[LaunchTemplateConfig]
+  type LaunchTemplateElasticInferenceAcceleratorList = js.Array[LaunchTemplateElasticInferenceAccelerator]
+  type LaunchTemplateElasticInferenceAcceleratorResponseList = js.Array[LaunchTemplateElasticInferenceAcceleratorResponse]
   type LaunchTemplateErrorCode = String
   type LaunchTemplateInstanceNetworkInterfaceSpecificationList = js.Array[LaunchTemplateInstanceNetworkInterfaceSpecification]
   type LaunchTemplateInstanceNetworkInterfaceSpecificationRequestList = js.Array[LaunchTemplateInstanceNetworkInterfaceSpecificationRequest]
+  type LaunchTemplateLicenseList = js.Array[LaunchTemplateLicenseConfiguration]
+  type LaunchTemplateLicenseSpecificationListRequest = js.Array[LaunchTemplateLicenseConfigurationRequest]
   type LaunchTemplateName = String
   type LaunchTemplateNameStringList = js.Array[LaunchTemplateName]
   type LaunchTemplateOverridesList = js.Array[LaunchTemplateOverrides]
@@ -208,6 +219,8 @@ package object ec2 {
   type LaunchTemplateTagSpecificationList = js.Array[LaunchTemplateTagSpecification]
   type LaunchTemplateTagSpecificationRequestList = js.Array[LaunchTemplateTagSpecificationRequest]
   type LaunchTemplateVersionSet = js.Array[LaunchTemplateVersion]
+  type LicenseList = js.Array[LicenseConfiguration]
+  type LicenseSpecificationListRequest = js.Array[LicenseConfigurationRequest]
   type ListingState = String
   type ListingStatus = String
   type LoadPermissionList = js.Array[LoadPermission]
@@ -365,6 +378,27 @@ package object ec2 {
   type TelemetryStatus = String
   type Tenancy = String
   type TrafficType = String
+  type TransitGatewayAssociationState = String
+  type TransitGatewayAttachmentIdStringList = js.Array[String]
+  type TransitGatewayAttachmentList = js.Array[TransitGatewayAttachment]
+  type TransitGatewayAttachmentPropagationList = js.Array[TransitGatewayAttachmentPropagation]
+  type TransitGatewayAttachmentResourceType = String
+  type TransitGatewayAttachmentState = String
+  type TransitGatewayIdStringList = js.Array[String]
+  type TransitGatewayList = js.Array[TransitGateway]
+  type TransitGatewayMaxResults = Int
+  type TransitGatewayPropagationState = String
+  type TransitGatewayRouteAttachmentList = js.Array[TransitGatewayRouteAttachment]
+  type TransitGatewayRouteList = js.Array[TransitGatewayRoute]
+  type TransitGatewayRouteState = String
+  type TransitGatewayRouteTableAssociationList = js.Array[TransitGatewayRouteTableAssociation]
+  type TransitGatewayRouteTableIdStringList = js.Array[String]
+  type TransitGatewayRouteTableList = js.Array[TransitGatewayRouteTable]
+  type TransitGatewayRouteTablePropagationList = js.Array[TransitGatewayRouteTablePropagation]
+  type TransitGatewayRouteTableState = String
+  type TransitGatewayRouteType = String
+  type TransitGatewayState = String
+  type TransitGatewayVpcAttachmentList = js.Array[TransitGatewayVpcAttachment]
   type TunnelOptionsList = js.Array[VpnTunnelOptionsSpecification]
   type UnsuccessfulInstanceCreditSpecificationErrorCode = String
   type UnsuccessfulInstanceCreditSpecificationSet = js.Array[UnsuccessfulInstanceCreditSpecificationItem]
@@ -412,11 +446,13 @@ package object ec2 {
   type VpcTenancy = String
   type VpnConnectionIdStringList = js.Array[String]
   type VpnConnectionList = js.Array[VpnConnection]
+  type VpnEcmpSupportValue = String
   type VpnGatewayIdStringList = js.Array[String]
   type VpnGatewayList = js.Array[VpnGateway]
   type VpnState = String
   type VpnStaticRouteList = js.Array[VpnStaticRoute]
   type VpnStaticRouteSource = String
+  type ZoneIdStringList = js.Array[String]
   type ZoneNameStringList = js.Array[String]
   type scope = String
 }
@@ -426,6 +462,7 @@ package ec2 {
   @JSImport("aws-sdk", "EC2")
   class EC2(config: AWSConfig) extends js.Object {
     def acceptReservedInstancesExchangeQuote(params: AcceptReservedInstancesExchangeQuoteRequest): Request[AcceptReservedInstancesExchangeQuoteResult] = js.native
+    def acceptTransitGatewayVpcAttachment(params: AcceptTransitGatewayVpcAttachmentRequest): Request[AcceptTransitGatewayVpcAttachmentResult] = js.native
     def acceptVpcEndpointConnections(params: AcceptVpcEndpointConnectionsRequest): Request[AcceptVpcEndpointConnectionsResult] = js.native
     def acceptVpcPeeringConnection(params: AcceptVpcPeeringConnectionRequest): Request[AcceptVpcPeeringConnectionResult] = js.native
     def advertiseByoipCidr(params: AdvertiseByoipCidrRequest): Request[AdvertiseByoipCidrResult] = js.native
@@ -438,6 +475,7 @@ package ec2 {
     def associateIamInstanceProfile(params: AssociateIamInstanceProfileRequest): Request[AssociateIamInstanceProfileResult] = js.native
     def associateRouteTable(params: AssociateRouteTableRequest): Request[AssociateRouteTableResult] = js.native
     def associateSubnetCidrBlock(params: AssociateSubnetCidrBlockRequest): Request[AssociateSubnetCidrBlockResult] = js.native
+    def associateTransitGatewayRouteTable(params: AssociateTransitGatewayRouteTableRequest): Request[AssociateTransitGatewayRouteTableResult] = js.native
     def associateVpcCidrBlock(params: AssociateVpcCidrBlockRequest): Request[AssociateVpcCidrBlockResult] = js.native
     def attachClassicLinkVpc(params: AttachClassicLinkVpcRequest): Request[AttachClassicLinkVpcResult] = js.native
     def attachInternetGateway(params: AttachInternetGatewayRequest): Request[js.Object] = js.native
@@ -488,6 +526,10 @@ package ec2 {
     def createSpotDatafeedSubscription(params: CreateSpotDatafeedSubscriptionRequest): Request[CreateSpotDatafeedSubscriptionResult] = js.native
     def createSubnet(params: CreateSubnetRequest): Request[CreateSubnetResult] = js.native
     def createTags(params: CreateTagsRequest): Request[js.Object] = js.native
+    def createTransitGateway(params: CreateTransitGatewayRequest): Request[CreateTransitGatewayResult] = js.native
+    def createTransitGatewayRoute(params: CreateTransitGatewayRouteRequest): Request[CreateTransitGatewayRouteResult] = js.native
+    def createTransitGatewayRouteTable(params: CreateTransitGatewayRouteTableRequest): Request[CreateTransitGatewayRouteTableResult] = js.native
+    def createTransitGatewayVpcAttachment(params: CreateTransitGatewayVpcAttachmentRequest): Request[CreateTransitGatewayVpcAttachmentResult] = js.native
     def createVolume(params: CreateVolumeRequest): Request[Volume] = js.native
     def createVpc(params: CreateVpcRequest): Request[CreateVpcResult] = js.native
     def createVpcEndpoint(params: CreateVpcEndpointRequest): Request[CreateVpcEndpointResult] = js.native
@@ -520,6 +562,10 @@ package ec2 {
     def deleteSpotDatafeedSubscription(params: DeleteSpotDatafeedSubscriptionRequest): Request[js.Object] = js.native
     def deleteSubnet(params: DeleteSubnetRequest): Request[js.Object] = js.native
     def deleteTags(params: DeleteTagsRequest): Request[js.Object] = js.native
+    def deleteTransitGateway(params: DeleteTransitGatewayRequest): Request[DeleteTransitGatewayResult] = js.native
+    def deleteTransitGatewayRoute(params: DeleteTransitGatewayRouteRequest): Request[DeleteTransitGatewayRouteResult] = js.native
+    def deleteTransitGatewayRouteTable(params: DeleteTransitGatewayRouteTableRequest): Request[DeleteTransitGatewayRouteTableResult] = js.native
+    def deleteTransitGatewayVpcAttachment(params: DeleteTransitGatewayVpcAttachmentRequest): Request[DeleteTransitGatewayVpcAttachmentResult] = js.native
     def deleteVolume(params: DeleteVolumeRequest): Request[js.Object] = js.native
     def deleteVpc(params: DeleteVpcRequest): Request[js.Object] = js.native
     def deleteVpcEndpointConnectionNotifications(params: DeleteVpcEndpointConnectionNotificationsRequest): Request[DeleteVpcEndpointConnectionNotificationsResult] = js.native
@@ -600,6 +646,10 @@ package ec2 {
     def describeStaleSecurityGroups(params: DescribeStaleSecurityGroupsRequest): Request[DescribeStaleSecurityGroupsResult] = js.native
     def describeSubnets(params: DescribeSubnetsRequest): Request[DescribeSubnetsResult] = js.native
     def describeTags(params: DescribeTagsRequest): Request[DescribeTagsResult] = js.native
+    def describeTransitGatewayAttachments(params: DescribeTransitGatewayAttachmentsRequest): Request[DescribeTransitGatewayAttachmentsResult] = js.native
+    def describeTransitGatewayRouteTables(params: DescribeTransitGatewayRouteTablesRequest): Request[DescribeTransitGatewayRouteTablesResult] = js.native
+    def describeTransitGatewayVpcAttachments(params: DescribeTransitGatewayVpcAttachmentsRequest): Request[DescribeTransitGatewayVpcAttachmentsResult] = js.native
+    def describeTransitGateways(params: DescribeTransitGatewaysRequest): Request[DescribeTransitGatewaysResult] = js.native
     def describeVolumeAttribute(params: DescribeVolumeAttributeRequest): Request[DescribeVolumeAttributeResult] = js.native
     def describeVolumeStatus(params: DescribeVolumeStatusRequest): Request[DescribeVolumeStatusResult] = js.native
     def describeVolumes(params: DescribeVolumesRequest): Request[DescribeVolumesResult] = js.native
@@ -622,6 +672,7 @@ package ec2 {
     def detachNetworkInterface(params: DetachNetworkInterfaceRequest): Request[js.Object] = js.native
     def detachVolume(params: DetachVolumeRequest): Request[VolumeAttachment] = js.native
     def detachVpnGateway(params: DetachVpnGatewayRequest): Request[js.Object] = js.native
+    def disableTransitGatewayRouteTablePropagation(params: DisableTransitGatewayRouteTablePropagationRequest): Request[DisableTransitGatewayRouteTablePropagationResult] = js.native
     def disableVgwRoutePropagation(params: DisableVgwRoutePropagationRequest): Request[js.Object] = js.native
     def disableVpcClassicLink(params: DisableVpcClassicLinkRequest): Request[DisableVpcClassicLinkResult] = js.native
     def disableVpcClassicLinkDnsSupport(params: DisableVpcClassicLinkDnsSupportRequest): Request[DisableVpcClassicLinkDnsSupportResult] = js.native
@@ -629,17 +680,23 @@ package ec2 {
     def disassociateIamInstanceProfile(params: DisassociateIamInstanceProfileRequest): Request[DisassociateIamInstanceProfileResult] = js.native
     def disassociateRouteTable(params: DisassociateRouteTableRequest): Request[js.Object] = js.native
     def disassociateSubnetCidrBlock(params: DisassociateSubnetCidrBlockRequest): Request[DisassociateSubnetCidrBlockResult] = js.native
+    def disassociateTransitGatewayRouteTable(params: DisassociateTransitGatewayRouteTableRequest): Request[DisassociateTransitGatewayRouteTableResult] = js.native
     def disassociateVpcCidrBlock(params: DisassociateVpcCidrBlockRequest): Request[DisassociateVpcCidrBlockResult] = js.native
+    def enableTransitGatewayRouteTablePropagation(params: EnableTransitGatewayRouteTablePropagationRequest): Request[EnableTransitGatewayRouteTablePropagationResult] = js.native
     def enableVgwRoutePropagation(params: EnableVgwRoutePropagationRequest): Request[js.Object] = js.native
     def enableVolumeIO(params: EnableVolumeIORequest): Request[js.Object] = js.native
     def enableVpcClassicLink(params: EnableVpcClassicLinkRequest): Request[EnableVpcClassicLinkResult] = js.native
     def enableVpcClassicLinkDnsSupport(params: EnableVpcClassicLinkDnsSupportRequest): Request[EnableVpcClassicLinkDnsSupportResult] = js.native
+    def exportTransitGatewayRoutes(params: ExportTransitGatewayRoutesRequest): Request[ExportTransitGatewayRoutesResult] = js.native
     def getConsoleOutput(params: GetConsoleOutputRequest): Request[GetConsoleOutputResult] = js.native
     def getConsoleScreenshot(params: GetConsoleScreenshotRequest): Request[GetConsoleScreenshotResult] = js.native
     def getHostReservationPurchasePreview(params: GetHostReservationPurchasePreviewRequest): Request[GetHostReservationPurchasePreviewResult] = js.native
     def getLaunchTemplateData(params: GetLaunchTemplateDataRequest): Request[GetLaunchTemplateDataResult] = js.native
     def getPasswordData(params: GetPasswordDataRequest): Request[GetPasswordDataResult] = js.native
     def getReservedInstancesExchangeQuote(params: GetReservedInstancesExchangeQuoteRequest): Request[GetReservedInstancesExchangeQuoteResult] = js.native
+    def getTransitGatewayAttachmentPropagations(params: GetTransitGatewayAttachmentPropagationsRequest): Request[GetTransitGatewayAttachmentPropagationsResult] = js.native
+    def getTransitGatewayRouteTableAssociations(params: GetTransitGatewayRouteTableAssociationsRequest): Request[GetTransitGatewayRouteTableAssociationsResult] = js.native
+    def getTransitGatewayRouteTablePropagations(params: GetTransitGatewayRouteTablePropagationsRequest): Request[GetTransitGatewayRouteTablePropagationsResult] = js.native
     def importImage(params: ImportImageRequest): Request[ImportImageResult] = js.native
     def importInstance(params: ImportInstanceRequest): Request[ImportInstanceResult] = js.native
     def importKeyPair(params: ImportKeyPairRequest): Request[ImportKeyPairResult] = js.native
@@ -662,6 +719,7 @@ package ec2 {
     def modifySnapshotAttribute(params: ModifySnapshotAttributeRequest): Request[js.Object] = js.native
     def modifySpotFleetRequest(params: ModifySpotFleetRequestRequest): Request[ModifySpotFleetRequestResponse] = js.native
     def modifySubnetAttribute(params: ModifySubnetAttributeRequest): Request[js.Object] = js.native
+    def modifyTransitGatewayVpcAttachment(params: ModifyTransitGatewayVpcAttachmentRequest): Request[ModifyTransitGatewayVpcAttachmentResult] = js.native
     def modifyVolume(params: ModifyVolumeRequest): Request[ModifyVolumeResult] = js.native
     def modifyVolumeAttribute(params: ModifyVolumeAttributeRequest): Request[js.Object] = js.native
     def modifyVpcAttribute(params: ModifyVpcAttributeRequest): Request[js.Object] = js.native
@@ -679,6 +737,7 @@ package ec2 {
     def purchaseScheduledInstances(params: PurchaseScheduledInstancesRequest): Request[PurchaseScheduledInstancesResult] = js.native
     def rebootInstances(params: RebootInstancesRequest): Request[js.Object] = js.native
     def registerImage(params: RegisterImageRequest): Request[RegisterImageResult] = js.native
+    def rejectTransitGatewayVpcAttachment(params: RejectTransitGatewayVpcAttachmentRequest): Request[RejectTransitGatewayVpcAttachmentResult] = js.native
     def rejectVpcEndpointConnections(params: RejectVpcEndpointConnectionsRequest): Request[RejectVpcEndpointConnectionsResult] = js.native
     def rejectVpcPeeringConnection(params: RejectVpcPeeringConnectionRequest): Request[RejectVpcPeeringConnectionResult] = js.native
     def releaseAddress(params: ReleaseAddressRequest): Request[js.Object] = js.native
@@ -688,6 +747,7 @@ package ec2 {
     def replaceNetworkAclEntry(params: ReplaceNetworkAclEntryRequest): Request[js.Object] = js.native
     def replaceRoute(params: ReplaceRouteRequest): Request[js.Object] = js.native
     def replaceRouteTableAssociation(params: ReplaceRouteTableAssociationRequest): Request[ReplaceRouteTableAssociationResult] = js.native
+    def replaceTransitGatewayRoute(params: ReplaceTransitGatewayRouteRequest): Request[ReplaceTransitGatewayRouteResult] = js.native
     def reportInstanceStatus(params: ReportInstanceStatusRequest): Request[js.Object] = js.native
     def requestSpotFleet(params: RequestSpotFleetRequest): Request[RequestSpotFleetResponse] = js.native
     def requestSpotInstances(params: RequestSpotInstancesRequest): Request[RequestSpotInstancesResult] = js.native
@@ -701,6 +761,7 @@ package ec2 {
     def revokeSecurityGroupIngress(params: RevokeSecurityGroupIngressRequest): Request[js.Object] = js.native
     def runInstances(params: RunInstancesRequest): Request[Reservation] = js.native
     def runScheduledInstances(params: RunScheduledInstancesRequest): Request[RunScheduledInstancesResult] = js.native
+    def searchTransitGatewayRoutes(params: SearchTransitGatewayRoutesRequest): Request[SearchTransitGatewayRoutesResult] = js.native
     def startInstances(params: StartInstancesRequest): Request[StartInstancesResult] = js.native
     def stopInstances(params: StopInstancesRequest): Request[StopInstancesResult] = js.native
     def terminateInstances(params: TerminateInstancesRequest): Request[TerminateInstancesResult] = js.native
@@ -751,6 +812,39 @@ package ec2 {
         "ExchangeId" -> ExchangeId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AcceptReservedInstancesExchangeQuoteResult]
+    }
+  }
+
+  @js.native
+  trait AcceptTransitGatewayVpcAttachmentRequest extends js.Object {
+    var TransitGatewayAttachmentId: js.UndefOr[String]
+    var DryRun: js.UndefOr[Boolean]
+  }
+
+  object AcceptTransitGatewayVpcAttachmentRequest {
+    def apply(
+      TransitGatewayAttachmentId: js.UndefOr[String] = js.undefined,
+      DryRun: js.UndefOr[Boolean] = js.undefined): AcceptTransitGatewayVpcAttachmentRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "TransitGatewayAttachmentId" -> TransitGatewayAttachmentId.map { x => x.asInstanceOf[js.Any] },
+        "DryRun" -> DryRun.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AcceptTransitGatewayVpcAttachmentRequest]
+    }
+  }
+
+  @js.native
+  trait AcceptTransitGatewayVpcAttachmentResult extends js.Object {
+    var TransitGatewayVpcAttachment: js.UndefOr[TransitGatewayVpcAttachment]
+  }
+
+  object AcceptTransitGatewayVpcAttachmentResult {
+    def apply(
+      TransitGatewayVpcAttachment: js.UndefOr[TransitGatewayVpcAttachment] = js.undefined): AcceptTransitGatewayVpcAttachmentResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "TransitGatewayVpcAttachment" -> TransitGatewayVpcAttachment.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AcceptTransitGatewayVpcAttachmentResult]
     }
   }
 
@@ -1127,8 +1221,9 @@ package ec2 {
   object ArchitectureValuesEnum {
     val i386 = "i386"
     val x86_64 = "x86_64"
+    val arm64 = "arm64"
 
-    val values = IndexedSeq(i386, x86_64)
+    val values = IndexedSeq(i386, x86_64, arm64)
   }
 
   @js.native
@@ -1368,6 +1463,42 @@ package ec2 {
         "SubnetId" -> SubnetId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AssociateSubnetCidrBlockResult]
+    }
+  }
+
+  @js.native
+  trait AssociateTransitGatewayRouteTableRequest extends js.Object {
+    var TransitGatewayRouteTableId: js.UndefOr[String]
+    var TransitGatewayAttachmentId: js.UndefOr[String]
+    var DryRun: js.UndefOr[Boolean]
+  }
+
+  object AssociateTransitGatewayRouteTableRequest {
+    def apply(
+      TransitGatewayRouteTableId: js.UndefOr[String] = js.undefined,
+      TransitGatewayAttachmentId: js.UndefOr[String] = js.undefined,
+      DryRun: js.UndefOr[Boolean] = js.undefined): AssociateTransitGatewayRouteTableRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "TransitGatewayRouteTableId" -> TransitGatewayRouteTableId.map { x => x.asInstanceOf[js.Any] },
+        "TransitGatewayAttachmentId" -> TransitGatewayAttachmentId.map { x => x.asInstanceOf[js.Any] },
+        "DryRun" -> DryRun.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AssociateTransitGatewayRouteTableRequest]
+    }
+  }
+
+  @js.native
+  trait AssociateTransitGatewayRouteTableResult extends js.Object {
+    var Association: js.UndefOr[TransitGatewayAssociation]
+  }
+
+  object AssociateTransitGatewayRouteTableResult {
+    def apply(
+      Association: js.UndefOr[TransitGatewayAssociation] = js.undefined): AssociateTransitGatewayRouteTableResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Association" -> Association.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AssociateTransitGatewayRouteTableResult]
     }
   }
 
@@ -1713,6 +1844,13 @@ package ec2 {
     }
   }
 
+  object AutoAcceptSharedAttachmentsValueEnum {
+    val enable = "enable"
+    val disable = "disable"
+
+    val values = IndexedSeq(enable, disable)
+  }
+
   object AutoPlacementEnum {
     val on = "on"
     val off = "off"
@@ -1725,23 +1863,26 @@ package ec2 {
    */
   @js.native
   trait AvailabilityZone extends js.Object {
-    var State: js.UndefOr[AvailabilityZoneState]
-    var Messages: js.UndefOr[AvailabilityZoneMessageList]
+    var ZoneId: js.UndefOr[String]
     var RegionName: js.UndefOr[String]
+    var Messages: js.UndefOr[AvailabilityZoneMessageList]
     var ZoneName: js.UndefOr[String]
+    var State: js.UndefOr[AvailabilityZoneState]
   }
 
   object AvailabilityZone {
     def apply(
-      State: js.UndefOr[AvailabilityZoneState] = js.undefined,
-      Messages: js.UndefOr[AvailabilityZoneMessageList] = js.undefined,
+      ZoneId: js.UndefOr[String] = js.undefined,
       RegionName: js.UndefOr[String] = js.undefined,
-      ZoneName: js.UndefOr[String] = js.undefined): AvailabilityZone = {
+      Messages: js.UndefOr[AvailabilityZoneMessageList] = js.undefined,
+      ZoneName: js.UndefOr[String] = js.undefined,
+      State: js.UndefOr[AvailabilityZoneState] = js.undefined): AvailabilityZone = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "State" -> State.map { x => x.asInstanceOf[js.Any] },
-        "Messages" -> Messages.map { x => x.asInstanceOf[js.Any] },
+        "ZoneId" -> ZoneId.map { x => x.asInstanceOf[js.Any] },
         "RegionName" -> RegionName.map { x => x.asInstanceOf[js.Any] },
-        "ZoneName" -> ZoneName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Messages" -> Messages.map { x => x.asInstanceOf[js.Any] },
+        "ZoneName" -> ZoneName.map { x => x.asInstanceOf[js.Any] },
+        "State" -> State.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AvailabilityZone]
     }
@@ -2715,9 +2856,6 @@ package ec2 {
     }
   }
 
-  /**
-   * <p>Contains the parameters for ConfirmProductInstance.</p>
-   */
   @js.native
   trait ConfirmProductInstanceRequest extends js.Object {
     var InstanceId: js.UndefOr[String]
@@ -2739,9 +2877,6 @@ package ec2 {
     }
   }
 
-  /**
-   * <p>Contains the output of ConfirmProductInstance.</p>
-   */
   @js.native
   trait ConfirmProductInstanceResult extends js.Object {
     var OwnerId: js.UndefOr[String]
@@ -4000,9 +4135,6 @@ package ec2 {
     }
   }
 
-  /**
-   * <p>Contains the parameters for CreatePlacementGroup.</p>
-   */
   @js.native
   trait CreatePlacementGroupRequest extends js.Object {
     var DryRun: js.UndefOr[Boolean]
@@ -4075,6 +4207,7 @@ package ec2 {
     var DestinationCidrBlock: js.UndefOr[String]
     var VpcPeeringConnectionId: js.UndefOr[String]
     var NatGatewayId: js.UndefOr[String]
+    var TransitGatewayId: js.UndefOr[String]
     var EgressOnlyInternetGatewayId: js.UndefOr[String]
     var RouteTableId: js.UndefOr[String]
     var InstanceId: js.UndefOr[String]
@@ -4089,6 +4222,7 @@ package ec2 {
       DestinationCidrBlock: js.UndefOr[String] = js.undefined,
       VpcPeeringConnectionId: js.UndefOr[String] = js.undefined,
       NatGatewayId: js.UndefOr[String] = js.undefined,
+      TransitGatewayId: js.UndefOr[String] = js.undefined,
       EgressOnlyInternetGatewayId: js.UndefOr[String] = js.undefined,
       RouteTableId: js.UndefOr[String] = js.undefined,
       InstanceId: js.UndefOr[String] = js.undefined,
@@ -4100,6 +4234,7 @@ package ec2 {
         "DestinationCidrBlock" -> DestinationCidrBlock.map { x => x.asInstanceOf[js.Any] },
         "VpcPeeringConnectionId" -> VpcPeeringConnectionId.map { x => x.asInstanceOf[js.Any] },
         "NatGatewayId" -> NatGatewayId.map { x => x.asInstanceOf[js.Any] },
+        "TransitGatewayId" -> TransitGatewayId.map { x => x.asInstanceOf[js.Any] },
         "EgressOnlyInternetGatewayId" -> EgressOnlyInternetGatewayId.map { x => x.asInstanceOf[js.Any] },
         "RouteTableId" -> RouteTableId.map { x => x.asInstanceOf[js.Any] },
         "InstanceId" -> InstanceId.map { x => x.asInstanceOf[js.Any] },
@@ -4273,6 +4408,7 @@ package ec2 {
     var Ipv6CidrBlock: js.UndefOr[String]
     var CidrBlock: js.UndefOr[String]
     var AvailabilityZone: js.UndefOr[String]
+    var AvailabilityZoneId: js.UndefOr[String]
     var VpcId: js.UndefOr[String]
   }
 
@@ -4282,12 +4418,14 @@ package ec2 {
       Ipv6CidrBlock: js.UndefOr[String] = js.undefined,
       CidrBlock: js.UndefOr[String] = js.undefined,
       AvailabilityZone: js.UndefOr[String] = js.undefined,
+      AvailabilityZoneId: js.UndefOr[String] = js.undefined,
       VpcId: js.UndefOr[String] = js.undefined): CreateSubnetRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DryRun" -> DryRun.map { x => x.asInstanceOf[js.Any] },
         "Ipv6CidrBlock" -> Ipv6CidrBlock.map { x => x.asInstanceOf[js.Any] },
         "CidrBlock" -> CidrBlock.map { x => x.asInstanceOf[js.Any] },
         "AvailabilityZone" -> AvailabilityZone.map { x => x.asInstanceOf[js.Any] },
+        "AvailabilityZoneId" -> AvailabilityZoneId.map { x => x.asInstanceOf[js.Any] },
         "VpcId" -> VpcId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateSubnetRequest]
@@ -4327,6 +4465,189 @@ package ec2 {
         "Tags" -> Tags.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateTagsRequest]
+    }
+  }
+
+  @js.native
+  trait CreateTransitGatewayRequest extends js.Object {
+    var Description: js.UndefOr[String]
+    var Options: js.UndefOr[TransitGatewayRequestOptions]
+    var TagSpecifications: js.UndefOr[TagSpecificationList]
+    var DryRun: js.UndefOr[Boolean]
+  }
+
+  object CreateTransitGatewayRequest {
+    def apply(
+      Description: js.UndefOr[String] = js.undefined,
+      Options: js.UndefOr[TransitGatewayRequestOptions] = js.undefined,
+      TagSpecifications: js.UndefOr[TagSpecificationList] = js.undefined,
+      DryRun: js.UndefOr[Boolean] = js.undefined): CreateTransitGatewayRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
+        "Options" -> Options.map { x => x.asInstanceOf[js.Any] },
+        "TagSpecifications" -> TagSpecifications.map { x => x.asInstanceOf[js.Any] },
+        "DryRun" -> DryRun.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateTransitGatewayRequest]
+    }
+  }
+
+  @js.native
+  trait CreateTransitGatewayResult extends js.Object {
+    var TransitGateway: js.UndefOr[TransitGateway]
+  }
+
+  object CreateTransitGatewayResult {
+    def apply(
+      TransitGateway: js.UndefOr[TransitGateway] = js.undefined): CreateTransitGatewayResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "TransitGateway" -> TransitGateway.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateTransitGatewayResult]
+    }
+  }
+
+  @js.native
+  trait CreateTransitGatewayRouteRequest extends js.Object {
+    var DryRun: js.UndefOr[Boolean]
+    var DestinationCidrBlock: js.UndefOr[String]
+    var Blackhole: js.UndefOr[Boolean]
+    var TransitGatewayAttachmentId: js.UndefOr[String]
+    var TransitGatewayRouteTableId: js.UndefOr[String]
+  }
+
+  object CreateTransitGatewayRouteRequest {
+    def apply(
+      DryRun: js.UndefOr[Boolean] = js.undefined,
+      DestinationCidrBlock: js.UndefOr[String] = js.undefined,
+      Blackhole: js.UndefOr[Boolean] = js.undefined,
+      TransitGatewayAttachmentId: js.UndefOr[String] = js.undefined,
+      TransitGatewayRouteTableId: js.UndefOr[String] = js.undefined): CreateTransitGatewayRouteRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "DryRun" -> DryRun.map { x => x.asInstanceOf[js.Any] },
+        "DestinationCidrBlock" -> DestinationCidrBlock.map { x => x.asInstanceOf[js.Any] },
+        "Blackhole" -> Blackhole.map { x => x.asInstanceOf[js.Any] },
+        "TransitGatewayAttachmentId" -> TransitGatewayAttachmentId.map { x => x.asInstanceOf[js.Any] },
+        "TransitGatewayRouteTableId" -> TransitGatewayRouteTableId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateTransitGatewayRouteRequest]
+    }
+  }
+
+  @js.native
+  trait CreateTransitGatewayRouteResult extends js.Object {
+    var Route: js.UndefOr[TransitGatewayRoute]
+  }
+
+  object CreateTransitGatewayRouteResult {
+    def apply(
+      Route: js.UndefOr[TransitGatewayRoute] = js.undefined): CreateTransitGatewayRouteResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Route" -> Route.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateTransitGatewayRouteResult]
+    }
+  }
+
+  @js.native
+  trait CreateTransitGatewayRouteTableRequest extends js.Object {
+    var TransitGatewayId: js.UndefOr[String]
+    var TagSpecifications: js.UndefOr[TagSpecificationList]
+    var DryRun: js.UndefOr[Boolean]
+  }
+
+  object CreateTransitGatewayRouteTableRequest {
+    def apply(
+      TransitGatewayId: js.UndefOr[String] = js.undefined,
+      TagSpecifications: js.UndefOr[TagSpecificationList] = js.undefined,
+      DryRun: js.UndefOr[Boolean] = js.undefined): CreateTransitGatewayRouteTableRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "TransitGatewayId" -> TransitGatewayId.map { x => x.asInstanceOf[js.Any] },
+        "TagSpecifications" -> TagSpecifications.map { x => x.asInstanceOf[js.Any] },
+        "DryRun" -> DryRun.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateTransitGatewayRouteTableRequest]
+    }
+  }
+
+  @js.native
+  trait CreateTransitGatewayRouteTableResult extends js.Object {
+    var TransitGatewayRouteTable: js.UndefOr[TransitGatewayRouteTable]
+  }
+
+  object CreateTransitGatewayRouteTableResult {
+    def apply(
+      TransitGatewayRouteTable: js.UndefOr[TransitGatewayRouteTable] = js.undefined): CreateTransitGatewayRouteTableResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "TransitGatewayRouteTable" -> TransitGatewayRouteTable.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateTransitGatewayRouteTableResult]
+    }
+  }
+
+  @js.native
+  trait CreateTransitGatewayVpcAttachmentRequest extends js.Object {
+    var DryRun: js.UndefOr[Boolean]
+    var TagSpecifications: js.UndefOr[TagSpecificationList]
+    var TransitGatewayId: js.UndefOr[String]
+    var Options: js.UndefOr[CreateTransitGatewayVpcAttachmentRequestOptions]
+    var SubnetIds: js.UndefOr[ValueStringList]
+    var VpcId: js.UndefOr[String]
+  }
+
+  object CreateTransitGatewayVpcAttachmentRequest {
+    def apply(
+      DryRun: js.UndefOr[Boolean] = js.undefined,
+      TagSpecifications: js.UndefOr[TagSpecificationList] = js.undefined,
+      TransitGatewayId: js.UndefOr[String] = js.undefined,
+      Options: js.UndefOr[CreateTransitGatewayVpcAttachmentRequestOptions] = js.undefined,
+      SubnetIds: js.UndefOr[ValueStringList] = js.undefined,
+      VpcId: js.UndefOr[String] = js.undefined): CreateTransitGatewayVpcAttachmentRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "DryRun" -> DryRun.map { x => x.asInstanceOf[js.Any] },
+        "TagSpecifications" -> TagSpecifications.map { x => x.asInstanceOf[js.Any] },
+        "TransitGatewayId" -> TransitGatewayId.map { x => x.asInstanceOf[js.Any] },
+        "Options" -> Options.map { x => x.asInstanceOf[js.Any] },
+        "SubnetIds" -> SubnetIds.map { x => x.asInstanceOf[js.Any] },
+        "VpcId" -> VpcId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateTransitGatewayVpcAttachmentRequest]
+    }
+  }
+
+  /**
+   * <p>Describes the options for a VPC attachment.</p>
+   */
+  @js.native
+  trait CreateTransitGatewayVpcAttachmentRequestOptions extends js.Object {
+    var DnsSupport: js.UndefOr[DnsSupportValue]
+    var Ipv6Support: js.UndefOr[Ipv6SupportValue]
+  }
+
+  object CreateTransitGatewayVpcAttachmentRequestOptions {
+    def apply(
+      DnsSupport: js.UndefOr[DnsSupportValue] = js.undefined,
+      Ipv6Support: js.UndefOr[Ipv6SupportValue] = js.undefined): CreateTransitGatewayVpcAttachmentRequestOptions = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "DnsSupport" -> DnsSupport.map { x => x.asInstanceOf[js.Any] },
+        "Ipv6Support" -> Ipv6Support.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateTransitGatewayVpcAttachmentRequestOptions]
+    }
+  }
+
+  @js.native
+  trait CreateTransitGatewayVpcAttachmentResult extends js.Object {
+    var TransitGatewayVpcAttachment: js.UndefOr[TransitGatewayVpcAttachment]
+  }
+
+  object CreateTransitGatewayVpcAttachmentResult {
+    def apply(
+      TransitGatewayVpcAttachment: js.UndefOr[TransitGatewayVpcAttachment] = js.undefined): CreateTransitGatewayVpcAttachmentResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "TransitGatewayVpcAttachment" -> TransitGatewayVpcAttachment.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateTransitGatewayVpcAttachmentResult]
     }
   }
 
@@ -4658,6 +4979,7 @@ package ec2 {
   trait CreateVpnConnectionRequest extends js.Object {
     var DryRun: js.UndefOr[Boolean]
     var CustomerGatewayId: js.UndefOr[String]
+    var TransitGatewayId: js.UndefOr[String]
     var Options: js.UndefOr[VpnConnectionOptionsSpecification]
     var VpnGatewayId: js.UndefOr[String]
     var Type: js.UndefOr[String]
@@ -4667,12 +4989,14 @@ package ec2 {
     def apply(
       DryRun: js.UndefOr[Boolean] = js.undefined,
       CustomerGatewayId: js.UndefOr[String] = js.undefined,
+      TransitGatewayId: js.UndefOr[String] = js.undefined,
       Options: js.UndefOr[VpnConnectionOptionsSpecification] = js.undefined,
       VpnGatewayId: js.UndefOr[String] = js.undefined,
       Type: js.UndefOr[String] = js.undefined): CreateVpnConnectionRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DryRun" -> DryRun.map { x => x.asInstanceOf[js.Any] },
         "CustomerGatewayId" -> CustomerGatewayId.map { x => x.asInstanceOf[js.Any] },
+        "TransitGatewayId" -> TransitGatewayId.map { x => x.asInstanceOf[js.Any] },
         "Options" -> Options.map { x => x.asInstanceOf[js.Any] },
         "VpnGatewayId" -> VpnGatewayId.map { x => x.asInstanceOf[js.Any] },
         "Type" -> Type.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
@@ -4845,6 +5169,20 @@ package ec2 {
     val Inactive = "Inactive"
 
     val values = IndexedSeq(Active, Inactive)
+  }
+
+  object DefaultRouteTableAssociationValueEnum {
+    val enable = "enable"
+    val disable = "disable"
+
+    val values = IndexedSeq(enable, disable)
+  }
+
+  object DefaultRouteTablePropagationValueEnum {
+    val enable = "enable"
+    val disable = "disable"
+
+    val values = IndexedSeq(enable, disable)
   }
 
   object DefaultTargetCapacityTypeEnum {
@@ -5406,9 +5744,6 @@ package ec2 {
     }
   }
 
-  /**
-   * <p>Contains the parameters for DeletePlacementGroup.</p>
-   */
   @js.native
   trait DeletePlacementGroupRequest extends js.Object {
     var DryRun: js.UndefOr[Boolean]
@@ -5565,6 +5900,141 @@ package ec2 {
         "Tags" -> Tags.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteTagsRequest]
+    }
+  }
+
+  @js.native
+  trait DeleteTransitGatewayRequest extends js.Object {
+    var TransitGatewayId: js.UndefOr[String]
+    var DryRun: js.UndefOr[Boolean]
+  }
+
+  object DeleteTransitGatewayRequest {
+    def apply(
+      TransitGatewayId: js.UndefOr[String] = js.undefined,
+      DryRun: js.UndefOr[Boolean] = js.undefined): DeleteTransitGatewayRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "TransitGatewayId" -> TransitGatewayId.map { x => x.asInstanceOf[js.Any] },
+        "DryRun" -> DryRun.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteTransitGatewayRequest]
+    }
+  }
+
+  @js.native
+  trait DeleteTransitGatewayResult extends js.Object {
+    var TransitGateway: js.UndefOr[TransitGateway]
+  }
+
+  object DeleteTransitGatewayResult {
+    def apply(
+      TransitGateway: js.UndefOr[TransitGateway] = js.undefined): DeleteTransitGatewayResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "TransitGateway" -> TransitGateway.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteTransitGatewayResult]
+    }
+  }
+
+  @js.native
+  trait DeleteTransitGatewayRouteRequest extends js.Object {
+    var TransitGatewayRouteTableId: js.UndefOr[String]
+    var DestinationCidrBlock: js.UndefOr[String]
+    var DryRun: js.UndefOr[Boolean]
+  }
+
+  object DeleteTransitGatewayRouteRequest {
+    def apply(
+      TransitGatewayRouteTableId: js.UndefOr[String] = js.undefined,
+      DestinationCidrBlock: js.UndefOr[String] = js.undefined,
+      DryRun: js.UndefOr[Boolean] = js.undefined): DeleteTransitGatewayRouteRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "TransitGatewayRouteTableId" -> TransitGatewayRouteTableId.map { x => x.asInstanceOf[js.Any] },
+        "DestinationCidrBlock" -> DestinationCidrBlock.map { x => x.asInstanceOf[js.Any] },
+        "DryRun" -> DryRun.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteTransitGatewayRouteRequest]
+    }
+  }
+
+  @js.native
+  trait DeleteTransitGatewayRouteResult extends js.Object {
+    var Route: js.UndefOr[TransitGatewayRoute]
+  }
+
+  object DeleteTransitGatewayRouteResult {
+    def apply(
+      Route: js.UndefOr[TransitGatewayRoute] = js.undefined): DeleteTransitGatewayRouteResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Route" -> Route.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteTransitGatewayRouteResult]
+    }
+  }
+
+  @js.native
+  trait DeleteTransitGatewayRouteTableRequest extends js.Object {
+    var TransitGatewayRouteTableId: js.UndefOr[String]
+    var DryRun: js.UndefOr[Boolean]
+  }
+
+  object DeleteTransitGatewayRouteTableRequest {
+    def apply(
+      TransitGatewayRouteTableId: js.UndefOr[String] = js.undefined,
+      DryRun: js.UndefOr[Boolean] = js.undefined): DeleteTransitGatewayRouteTableRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "TransitGatewayRouteTableId" -> TransitGatewayRouteTableId.map { x => x.asInstanceOf[js.Any] },
+        "DryRun" -> DryRun.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteTransitGatewayRouteTableRequest]
+    }
+  }
+
+  @js.native
+  trait DeleteTransitGatewayRouteTableResult extends js.Object {
+    var TransitGatewayRouteTable: js.UndefOr[TransitGatewayRouteTable]
+  }
+
+  object DeleteTransitGatewayRouteTableResult {
+    def apply(
+      TransitGatewayRouteTable: js.UndefOr[TransitGatewayRouteTable] = js.undefined): DeleteTransitGatewayRouteTableResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "TransitGatewayRouteTable" -> TransitGatewayRouteTable.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteTransitGatewayRouteTableResult]
+    }
+  }
+
+  @js.native
+  trait DeleteTransitGatewayVpcAttachmentRequest extends js.Object {
+    var TransitGatewayAttachmentId: js.UndefOr[String]
+    var DryRun: js.UndefOr[Boolean]
+  }
+
+  object DeleteTransitGatewayVpcAttachmentRequest {
+    def apply(
+      TransitGatewayAttachmentId: js.UndefOr[String] = js.undefined,
+      DryRun: js.UndefOr[Boolean] = js.undefined): DeleteTransitGatewayVpcAttachmentRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "TransitGatewayAttachmentId" -> TransitGatewayAttachmentId.map { x => x.asInstanceOf[js.Any] },
+        "DryRun" -> DryRun.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteTransitGatewayVpcAttachmentRequest]
+    }
+  }
+
+  @js.native
+  trait DeleteTransitGatewayVpcAttachmentResult extends js.Object {
+    var TransitGatewayVpcAttachment: js.UndefOr[TransitGatewayVpcAttachment]
+  }
+
+  object DeleteTransitGatewayVpcAttachmentResult {
+    def apply(
+      TransitGatewayVpcAttachment: js.UndefOr[TransitGatewayVpcAttachment] = js.undefined): DeleteTransitGatewayVpcAttachmentResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "TransitGatewayVpcAttachment" -> TransitGatewayVpcAttachment.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteTransitGatewayVpcAttachmentResult]
     }
   }
 
@@ -5862,9 +6332,6 @@ package ec2 {
     }
   }
 
-  /**
-   * <p>Contains the parameters for DescribeAccountAttributes.</p>
-   */
   @js.native
   trait DescribeAccountAttributesRequest extends js.Object {
     var AttributeNames: js.UndefOr[AccountAttributeNameStringList]
@@ -5883,9 +6350,6 @@ package ec2 {
     }
   }
 
-  /**
-   * <p>Contains the output of DescribeAccountAttributes.</p>
-   */
   @js.native
   trait DescribeAccountAttributesResult extends js.Object {
     var AccountAttributes: js.UndefOr[AccountAttributeList]
@@ -5973,13 +6437,11 @@ package ec2 {
     }
   }
 
-  /**
-   * <p>Contains the parameters for DescribeAvailabilityZones.</p>
-   */
   @js.native
   trait DescribeAvailabilityZonesRequest extends js.Object {
     var Filters: js.UndefOr[FilterList]
     var ZoneNames: js.UndefOr[ZoneNameStringList]
+    var ZoneIds: js.UndefOr[ZoneIdStringList]
     var DryRun: js.UndefOr[Boolean]
   }
 
@@ -5987,19 +6449,18 @@ package ec2 {
     def apply(
       Filters: js.UndefOr[FilterList] = js.undefined,
       ZoneNames: js.UndefOr[ZoneNameStringList] = js.undefined,
+      ZoneIds: js.UndefOr[ZoneIdStringList] = js.undefined,
       DryRun: js.UndefOr[Boolean] = js.undefined): DescribeAvailabilityZonesRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Filters" -> Filters.map { x => x.asInstanceOf[js.Any] },
         "ZoneNames" -> ZoneNames.map { x => x.asInstanceOf[js.Any] },
+        "ZoneIds" -> ZoneIds.map { x => x.asInstanceOf[js.Any] },
         "DryRun" -> DryRun.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeAvailabilityZonesRequest]
     }
   }
 
-  /**
-   * <p>Contains the output of DescribeAvailabiltyZones.</p>
-   */
   @js.native
   trait DescribeAvailabilityZonesResult extends js.Object {
     var AvailabilityZones: js.UndefOr[AvailabilityZoneList]
@@ -6939,9 +7400,6 @@ package ec2 {
     }
   }
 
-  /**
-   * <p>Contains the parameters for DescribeIdFormat.</p>
-   */
   @js.native
   trait DescribeIdFormatRequest extends js.Object {
     var Resource: js.UndefOr[String]
@@ -6957,9 +7415,6 @@ package ec2 {
     }
   }
 
-  /**
-   * <p>Contains the output of DescribeIdFormat.</p>
-   */
   @js.native
   trait DescribeIdFormatResult extends js.Object {
     var Statuses: js.UndefOr[IdFormatList]
@@ -6975,9 +7430,6 @@ package ec2 {
     }
   }
 
-  /**
-   * <p>Contains the parameters for DescribeIdentityIdFormat.</p>
-   */
   @js.native
   trait DescribeIdentityIdFormatRequest extends js.Object {
     var PrincipalArn: js.UndefOr[String]
@@ -6996,9 +7448,6 @@ package ec2 {
     }
   }
 
-  /**
-   * <p>Contains the output of DescribeIdentityIdFormat.</p>
-   */
   @js.native
   trait DescribeIdentityIdFormatResult extends js.Object {
     var Statuses: js.UndefOr[IdFormatList]
@@ -7188,9 +7637,6 @@ package ec2 {
     }
   }
 
-  /**
-   * <p>Contains the parameters for DescribeInstanceAttribute.</p>
-   */
   @js.native
   trait DescribeInstanceAttributeRequest extends js.Object {
     var Attribute: js.UndefOr[InstanceAttributeName]
@@ -7257,9 +7703,6 @@ package ec2 {
     }
   }
 
-  /**
-   * <p>Contains the parameters for DescribeInstanceStatus.</p>
-   */
   @js.native
   trait DescribeInstanceStatusRequest extends js.Object {
     var DryRun: js.UndefOr[Boolean]
@@ -7290,9 +7733,6 @@ package ec2 {
     }
   }
 
-  /**
-   * <p>Contains the output of DescribeInstanceStatus.</p>
-   */
   @js.native
   trait DescribeInstanceStatusResult extends js.Object {
     var InstanceStatuses: js.UndefOr[InstanceStatusList]
@@ -7311,9 +7751,6 @@ package ec2 {
     }
   }
 
-  /**
-   * <p>Contains the parameters for DescribeInstances.</p>
-   */
   @js.native
   trait DescribeInstancesRequest extends js.Object {
     var DryRun: js.UndefOr[Boolean]
@@ -7341,9 +7778,6 @@ package ec2 {
     }
   }
 
-  /**
-   * <p>Contains the output of DescribeInstances.</p>
-   */
   @js.native
   trait DescribeInstancesResult extends js.Object {
     var Reservations: js.UndefOr[ReservationList]
@@ -7815,9 +8249,6 @@ package ec2 {
     }
   }
 
-  /**
-   * <p>Contains the parameters for DescribePlacementGroups.</p>
-   */
   @js.native
   trait DescribePlacementGroupsRequest extends js.Object {
     var Filters: js.UndefOr[FilterList]
@@ -7839,9 +8270,6 @@ package ec2 {
     }
   }
 
-  /**
-   * <p>Contains the output of DescribePlacementGroups.</p>
-   */
   @js.native
   trait DescribePlacementGroupsResult extends js.Object {
     var PlacementGroups: js.UndefOr[PlacementGroupList]
@@ -7983,9 +8411,6 @@ package ec2 {
     }
   }
 
-  /**
-   * <p>Contains the parameters for DescribeRegions.</p>
-   */
   @js.native
   trait DescribeRegionsRequest extends js.Object {
     var Filters: js.UndefOr[FilterList]
@@ -8007,9 +8432,6 @@ package ec2 {
     }
   }
 
-  /**
-   * <p>Contains the output of DescribeRegions.</p>
-   */
   @js.native
   trait DescribeRegionsResult extends js.Object {
     var Regions: js.UndefOr[RegionList]
@@ -9012,6 +9434,186 @@ package ec2 {
     }
   }
 
+  @js.native
+  trait DescribeTransitGatewayAttachmentsRequest extends js.Object {
+    var DryRun: js.UndefOr[Boolean]
+    var TransitGatewayAttachmentIds: js.UndefOr[TransitGatewayAttachmentIdStringList]
+    var MaxResults: js.UndefOr[TransitGatewayMaxResults]
+    var Filters: js.UndefOr[FilterList]
+    var NextToken: js.UndefOr[String]
+  }
+
+  object DescribeTransitGatewayAttachmentsRequest {
+    def apply(
+      DryRun: js.UndefOr[Boolean] = js.undefined,
+      TransitGatewayAttachmentIds: js.UndefOr[TransitGatewayAttachmentIdStringList] = js.undefined,
+      MaxResults: js.UndefOr[TransitGatewayMaxResults] = js.undefined,
+      Filters: js.UndefOr[FilterList] = js.undefined,
+      NextToken: js.UndefOr[String] = js.undefined): DescribeTransitGatewayAttachmentsRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "DryRun" -> DryRun.map { x => x.asInstanceOf[js.Any] },
+        "TransitGatewayAttachmentIds" -> TransitGatewayAttachmentIds.map { x => x.asInstanceOf[js.Any] },
+        "MaxResults" -> MaxResults.map { x => x.asInstanceOf[js.Any] },
+        "Filters" -> Filters.map { x => x.asInstanceOf[js.Any] },
+        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeTransitGatewayAttachmentsRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeTransitGatewayAttachmentsResult extends js.Object {
+    var TransitGatewayAttachments: js.UndefOr[TransitGatewayAttachmentList]
+    var NextToken: js.UndefOr[String]
+  }
+
+  object DescribeTransitGatewayAttachmentsResult {
+    def apply(
+      TransitGatewayAttachments: js.UndefOr[TransitGatewayAttachmentList] = js.undefined,
+      NextToken: js.UndefOr[String] = js.undefined): DescribeTransitGatewayAttachmentsResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "TransitGatewayAttachments" -> TransitGatewayAttachments.map { x => x.asInstanceOf[js.Any] },
+        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeTransitGatewayAttachmentsResult]
+    }
+  }
+
+  @js.native
+  trait DescribeTransitGatewayRouteTablesRequest extends js.Object {
+    var DryRun: js.UndefOr[Boolean]
+    var MaxResults: js.UndefOr[TransitGatewayMaxResults]
+    var Filters: js.UndefOr[FilterList]
+    var NextToken: js.UndefOr[String]
+    var TransitGatewayRouteTableIds: js.UndefOr[TransitGatewayRouteTableIdStringList]
+  }
+
+  object DescribeTransitGatewayRouteTablesRequest {
+    def apply(
+      DryRun: js.UndefOr[Boolean] = js.undefined,
+      MaxResults: js.UndefOr[TransitGatewayMaxResults] = js.undefined,
+      Filters: js.UndefOr[FilterList] = js.undefined,
+      NextToken: js.UndefOr[String] = js.undefined,
+      TransitGatewayRouteTableIds: js.UndefOr[TransitGatewayRouteTableIdStringList] = js.undefined): DescribeTransitGatewayRouteTablesRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "DryRun" -> DryRun.map { x => x.asInstanceOf[js.Any] },
+        "MaxResults" -> MaxResults.map { x => x.asInstanceOf[js.Any] },
+        "Filters" -> Filters.map { x => x.asInstanceOf[js.Any] },
+        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
+        "TransitGatewayRouteTableIds" -> TransitGatewayRouteTableIds.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeTransitGatewayRouteTablesRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeTransitGatewayRouteTablesResult extends js.Object {
+    var TransitGatewayRouteTables: js.UndefOr[TransitGatewayRouteTableList]
+    var NextToken: js.UndefOr[String]
+  }
+
+  object DescribeTransitGatewayRouteTablesResult {
+    def apply(
+      TransitGatewayRouteTables: js.UndefOr[TransitGatewayRouteTableList] = js.undefined,
+      NextToken: js.UndefOr[String] = js.undefined): DescribeTransitGatewayRouteTablesResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "TransitGatewayRouteTables" -> TransitGatewayRouteTables.map { x => x.asInstanceOf[js.Any] },
+        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeTransitGatewayRouteTablesResult]
+    }
+  }
+
+  @js.native
+  trait DescribeTransitGatewayVpcAttachmentsRequest extends js.Object {
+    var DryRun: js.UndefOr[Boolean]
+    var TransitGatewayAttachmentIds: js.UndefOr[TransitGatewayAttachmentIdStringList]
+    var MaxResults: js.UndefOr[TransitGatewayMaxResults]
+    var Filters: js.UndefOr[FilterList]
+    var NextToken: js.UndefOr[String]
+  }
+
+  object DescribeTransitGatewayVpcAttachmentsRequest {
+    def apply(
+      DryRun: js.UndefOr[Boolean] = js.undefined,
+      TransitGatewayAttachmentIds: js.UndefOr[TransitGatewayAttachmentIdStringList] = js.undefined,
+      MaxResults: js.UndefOr[TransitGatewayMaxResults] = js.undefined,
+      Filters: js.UndefOr[FilterList] = js.undefined,
+      NextToken: js.UndefOr[String] = js.undefined): DescribeTransitGatewayVpcAttachmentsRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "DryRun" -> DryRun.map { x => x.asInstanceOf[js.Any] },
+        "TransitGatewayAttachmentIds" -> TransitGatewayAttachmentIds.map { x => x.asInstanceOf[js.Any] },
+        "MaxResults" -> MaxResults.map { x => x.asInstanceOf[js.Any] },
+        "Filters" -> Filters.map { x => x.asInstanceOf[js.Any] },
+        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeTransitGatewayVpcAttachmentsRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeTransitGatewayVpcAttachmentsResult extends js.Object {
+    var TransitGatewayVpcAttachments: js.UndefOr[TransitGatewayVpcAttachmentList]
+    var NextToken: js.UndefOr[String]
+  }
+
+  object DescribeTransitGatewayVpcAttachmentsResult {
+    def apply(
+      TransitGatewayVpcAttachments: js.UndefOr[TransitGatewayVpcAttachmentList] = js.undefined,
+      NextToken: js.UndefOr[String] = js.undefined): DescribeTransitGatewayVpcAttachmentsResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "TransitGatewayVpcAttachments" -> TransitGatewayVpcAttachments.map { x => x.asInstanceOf[js.Any] },
+        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeTransitGatewayVpcAttachmentsResult]
+    }
+  }
+
+  @js.native
+  trait DescribeTransitGatewaysRequest extends js.Object {
+    var DryRun: js.UndefOr[Boolean]
+    var MaxResults: js.UndefOr[TransitGatewayMaxResults]
+    var TransitGatewayIds: js.UndefOr[TransitGatewayIdStringList]
+    var Filters: js.UndefOr[FilterList]
+    var NextToken: js.UndefOr[String]
+  }
+
+  object DescribeTransitGatewaysRequest {
+    def apply(
+      DryRun: js.UndefOr[Boolean] = js.undefined,
+      MaxResults: js.UndefOr[TransitGatewayMaxResults] = js.undefined,
+      TransitGatewayIds: js.UndefOr[TransitGatewayIdStringList] = js.undefined,
+      Filters: js.UndefOr[FilterList] = js.undefined,
+      NextToken: js.UndefOr[String] = js.undefined): DescribeTransitGatewaysRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "DryRun" -> DryRun.map { x => x.asInstanceOf[js.Any] },
+        "MaxResults" -> MaxResults.map { x => x.asInstanceOf[js.Any] },
+        "TransitGatewayIds" -> TransitGatewayIds.map { x => x.asInstanceOf[js.Any] },
+        "Filters" -> Filters.map { x => x.asInstanceOf[js.Any] },
+        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeTransitGatewaysRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeTransitGatewaysResult extends js.Object {
+    var TransitGateways: js.UndefOr[TransitGatewayList]
+    var NextToken: js.UndefOr[String]
+  }
+
+  object DescribeTransitGatewaysResult {
+    def apply(
+      TransitGateways: js.UndefOr[TransitGatewayList] = js.undefined,
+      NextToken: js.UndefOr[String] = js.undefined): DescribeTransitGatewaysResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "TransitGateways" -> TransitGateways.map { x => x.asInstanceOf[js.Any] },
+        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeTransitGatewaysResult]
+    }
+  }
+
   /**
    * <p>Contains the parameters for DescribeVolumeAttribute.</p>
    */
@@ -9932,6 +10534,7 @@ package ec2 {
   trait DhcpOptions extends js.Object {
     var DhcpConfigurations: js.UndefOr[DhcpConfigurationList]
     var DhcpOptionsId: js.UndefOr[String]
+    var OwnerId: js.UndefOr[String]
     var Tags: js.UndefOr[TagList]
   }
 
@@ -9939,13 +10542,51 @@ package ec2 {
     def apply(
       DhcpConfigurations: js.UndefOr[DhcpConfigurationList] = js.undefined,
       DhcpOptionsId: js.UndefOr[String] = js.undefined,
+      OwnerId: js.UndefOr[String] = js.undefined,
       Tags: js.UndefOr[TagList] = js.undefined): DhcpOptions = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DhcpConfigurations" -> DhcpConfigurations.map { x => x.asInstanceOf[js.Any] },
         "DhcpOptionsId" -> DhcpOptionsId.map { x => x.asInstanceOf[js.Any] },
+        "OwnerId" -> OwnerId.map { x => x.asInstanceOf[js.Any] },
         "Tags" -> Tags.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DhcpOptions]
+    }
+  }
+
+  @js.native
+  trait DisableTransitGatewayRouteTablePropagationRequest extends js.Object {
+    var TransitGatewayRouteTableId: js.UndefOr[String]
+    var TransitGatewayAttachmentId: js.UndefOr[String]
+    var DryRun: js.UndefOr[Boolean]
+  }
+
+  object DisableTransitGatewayRouteTablePropagationRequest {
+    def apply(
+      TransitGatewayRouteTableId: js.UndefOr[String] = js.undefined,
+      TransitGatewayAttachmentId: js.UndefOr[String] = js.undefined,
+      DryRun: js.UndefOr[Boolean] = js.undefined): DisableTransitGatewayRouteTablePropagationRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "TransitGatewayRouteTableId" -> TransitGatewayRouteTableId.map { x => x.asInstanceOf[js.Any] },
+        "TransitGatewayAttachmentId" -> TransitGatewayAttachmentId.map { x => x.asInstanceOf[js.Any] },
+        "DryRun" -> DryRun.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DisableTransitGatewayRouteTablePropagationRequest]
+    }
+  }
+
+  @js.native
+  trait DisableTransitGatewayRouteTablePropagationResult extends js.Object {
+    var Propagation: js.UndefOr[TransitGatewayPropagation]
+  }
+
+  object DisableTransitGatewayRouteTablePropagationResult {
+    def apply(
+      Propagation: js.UndefOr[TransitGatewayPropagation] = js.undefined): DisableTransitGatewayRouteTablePropagationResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Propagation" -> Propagation.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DisableTransitGatewayRouteTablePropagationResult]
     }
   }
 
@@ -10136,6 +10777,42 @@ package ec2 {
   }
 
   @js.native
+  trait DisassociateTransitGatewayRouteTableRequest extends js.Object {
+    var TransitGatewayRouteTableId: js.UndefOr[String]
+    var TransitGatewayAttachmentId: js.UndefOr[String]
+    var DryRun: js.UndefOr[Boolean]
+  }
+
+  object DisassociateTransitGatewayRouteTableRequest {
+    def apply(
+      TransitGatewayRouteTableId: js.UndefOr[String] = js.undefined,
+      TransitGatewayAttachmentId: js.UndefOr[String] = js.undefined,
+      DryRun: js.UndefOr[Boolean] = js.undefined): DisassociateTransitGatewayRouteTableRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "TransitGatewayRouteTableId" -> TransitGatewayRouteTableId.map { x => x.asInstanceOf[js.Any] },
+        "TransitGatewayAttachmentId" -> TransitGatewayAttachmentId.map { x => x.asInstanceOf[js.Any] },
+        "DryRun" -> DryRun.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DisassociateTransitGatewayRouteTableRequest]
+    }
+  }
+
+  @js.native
+  trait DisassociateTransitGatewayRouteTableResult extends js.Object {
+    var Association: js.UndefOr[TransitGatewayAssociation]
+  }
+
+  object DisassociateTransitGatewayRouteTableResult {
+    def apply(
+      Association: js.UndefOr[TransitGatewayAssociation] = js.undefined): DisassociateTransitGatewayRouteTableResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Association" -> Association.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DisassociateTransitGatewayRouteTableResult]
+    }
+  }
+
+  @js.native
   trait DisassociateVpcCidrBlockRequest extends js.Object {
     var AssociationId: js.UndefOr[String]
   }
@@ -10296,6 +10973,13 @@ package ec2 {
     }
   }
 
+  object DnsSupportValueEnum {
+    val enable = "enable"
+    val disable = "disable"
+
+    val values = IndexedSeq(enable, disable)
+  }
+
   object DomainTypeEnum {
     val vpc = "vpc"
     val standard = "standard"
@@ -10409,7 +11093,7 @@ package ec2 {
   }
 
   /**
-   * <p>Describes the association between an instance and an Elastic GPU.</p>
+   * <p>Describes the association between an instance and an Elastic Graphics accelerator.</p>
    */
   @js.native
   trait ElasticGpuAssociation extends js.Object {
@@ -10436,7 +11120,7 @@ package ec2 {
   }
 
   /**
-   * <p>Describes the status of an Elastic GPU.</p>
+   * <p>Describes the status of an Elastic Graphics accelerator.</p>
    */
   @js.native
   trait ElasticGpuHealth extends js.Object {
@@ -10454,7 +11138,7 @@ package ec2 {
   }
 
   /**
-   * <p>A specification for an Elastic GPU.</p>
+   * <p>A specification for an Elastic Graphics accelerator.</p>
    */
   @js.native
   trait ElasticGpuSpecification extends js.Object {
@@ -10503,7 +11187,7 @@ package ec2 {
   }
 
   /**
-   * <p>Describes an Elastic GPU.</p>
+   * <p>Describes an Elastic Graphics accelerator.</p>
    */
   @js.native
   trait ElasticGpus extends js.Object {
@@ -10532,6 +11216,87 @@ package ec2 {
         "InstanceId" -> InstanceId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ElasticGpus]
+    }
+  }
+
+  /**
+   * <p> Describes an elastic inference accelerator. </p>
+   */
+  @js.native
+  trait ElasticInferenceAccelerator extends js.Object {
+    var Type: js.UndefOr[String]
+  }
+
+  object ElasticInferenceAccelerator {
+    def apply(
+      Type: js.UndefOr[String] = js.undefined): ElasticInferenceAccelerator = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Type" -> Type.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ElasticInferenceAccelerator]
+    }
+  }
+
+  /**
+   * <p> Describes the association between an instance and an elastic inference accelerator. </p>
+   */
+  @js.native
+  trait ElasticInferenceAcceleratorAssociation extends js.Object {
+    var ElasticInferenceAcceleratorArn: js.UndefOr[String]
+    var ElasticInferenceAcceleratorAssociationId: js.UndefOr[String]
+    var ElasticInferenceAcceleratorAssociationState: js.UndefOr[String]
+    var ElasticInferenceAcceleratorAssociationTime: js.UndefOr[DateTime]
+  }
+
+  object ElasticInferenceAcceleratorAssociation {
+    def apply(
+      ElasticInferenceAcceleratorArn: js.UndefOr[String] = js.undefined,
+      ElasticInferenceAcceleratorAssociationId: js.UndefOr[String] = js.undefined,
+      ElasticInferenceAcceleratorAssociationState: js.UndefOr[String] = js.undefined,
+      ElasticInferenceAcceleratorAssociationTime: js.UndefOr[DateTime] = js.undefined): ElasticInferenceAcceleratorAssociation = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ElasticInferenceAcceleratorArn" -> ElasticInferenceAcceleratorArn.map { x => x.asInstanceOf[js.Any] },
+        "ElasticInferenceAcceleratorAssociationId" -> ElasticInferenceAcceleratorAssociationId.map { x => x.asInstanceOf[js.Any] },
+        "ElasticInferenceAcceleratorAssociationState" -> ElasticInferenceAcceleratorAssociationState.map { x => x.asInstanceOf[js.Any] },
+        "ElasticInferenceAcceleratorAssociationTime" -> ElasticInferenceAcceleratorAssociationTime.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ElasticInferenceAcceleratorAssociation]
+    }
+  }
+
+  @js.native
+  trait EnableTransitGatewayRouteTablePropagationRequest extends js.Object {
+    var TransitGatewayRouteTableId: js.UndefOr[String]
+    var TransitGatewayAttachmentId: js.UndefOr[String]
+    var DryRun: js.UndefOr[Boolean]
+  }
+
+  object EnableTransitGatewayRouteTablePropagationRequest {
+    def apply(
+      TransitGatewayRouteTableId: js.UndefOr[String] = js.undefined,
+      TransitGatewayAttachmentId: js.UndefOr[String] = js.undefined,
+      DryRun: js.UndefOr[Boolean] = js.undefined): EnableTransitGatewayRouteTablePropagationRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "TransitGatewayRouteTableId" -> TransitGatewayRouteTableId.map { x => x.asInstanceOf[js.Any] },
+        "TransitGatewayAttachmentId" -> TransitGatewayAttachmentId.map { x => x.asInstanceOf[js.Any] },
+        "DryRun" -> DryRun.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EnableTransitGatewayRouteTablePropagationRequest]
+    }
+  }
+
+  @js.native
+  trait EnableTransitGatewayRouteTablePropagationResult extends js.Object {
+    var Propagation: js.UndefOr[TransitGatewayPropagation]
+  }
+
+  object EnableTransitGatewayRouteTablePropagationResult {
+    def apply(
+      Propagation: js.UndefOr[TransitGatewayPropagation] = js.undefined): EnableTransitGatewayRouteTablePropagationResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Propagation" -> Propagation.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EnableTransitGatewayRouteTablePropagationResult]
     }
   }
 
@@ -10797,6 +11562,45 @@ package ec2 {
         "S3Prefix" -> S3Prefix.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ExportToS3TaskSpecification]
+    }
+  }
+
+  @js.native
+  trait ExportTransitGatewayRoutesRequest extends js.Object {
+    var TransitGatewayRouteTableId: js.UndefOr[String]
+    var Filters: js.UndefOr[FilterList]
+    var S3Bucket: js.UndefOr[String]
+    var DryRun: js.UndefOr[Boolean]
+  }
+
+  object ExportTransitGatewayRoutesRequest {
+    def apply(
+      TransitGatewayRouteTableId: js.UndefOr[String] = js.undefined,
+      Filters: js.UndefOr[FilterList] = js.undefined,
+      S3Bucket: js.UndefOr[String] = js.undefined,
+      DryRun: js.UndefOr[Boolean] = js.undefined): ExportTransitGatewayRoutesRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "TransitGatewayRouteTableId" -> TransitGatewayRouteTableId.map { x => x.asInstanceOf[js.Any] },
+        "Filters" -> Filters.map { x => x.asInstanceOf[js.Any] },
+        "S3Bucket" -> S3Bucket.map { x => x.asInstanceOf[js.Any] },
+        "DryRun" -> DryRun.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ExportTransitGatewayRoutesRequest]
+    }
+  }
+
+  @js.native
+  trait ExportTransitGatewayRoutesResult extends js.Object {
+    var S3Location: js.UndefOr[String]
+  }
+
+  object ExportTransitGatewayRoutesResult {
+    def apply(
+      S3Location: js.UndefOr[String] = js.undefined): ExportTransitGatewayRoutesResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "S3Location" -> S3Location.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ExportTransitGatewayRoutesResult]
     }
   }
 
@@ -11297,9 +12101,6 @@ package ec2 {
     val values = IndexedSeq(`ipsec.1`)
   }
 
-  /**
-   * <p>Contains the parameters for GetConsoleOutput.</p>
-   */
   @js.native
   trait GetConsoleOutputRequest extends js.Object {
     var InstanceId: js.UndefOr[String]
@@ -11321,9 +12122,6 @@ package ec2 {
     }
   }
 
-  /**
-   * <p>Contains the output of GetConsoleOutput.</p>
-   */
   @js.native
   trait GetConsoleOutputResult extends js.Object {
     var InstanceId: js.UndefOr[String]
@@ -11345,9 +12143,6 @@ package ec2 {
     }
   }
 
-  /**
-   * <p>Contains the parameters for the request.</p>
-   */
   @js.native
   trait GetConsoleScreenshotRequest extends js.Object {
     var DryRun: js.UndefOr[Boolean]
@@ -11369,9 +12164,6 @@ package ec2 {
     }
   }
 
-  /**
-   * <p>Contains the output of the request.</p>
-   */
   @js.native
   trait GetConsoleScreenshotResult extends js.Object {
     var ImageData: js.UndefOr[String]
@@ -11465,9 +12257,6 @@ package ec2 {
     }
   }
 
-  /**
-   * <p>Contains the parameters for GetPasswordData.</p>
-   */
   @js.native
   trait GetPasswordDataRequest extends js.Object {
     var InstanceId: js.UndefOr[String]
@@ -11486,9 +12275,6 @@ package ec2 {
     }
   }
 
-  /**
-   * <p>Contains the output of GetPasswordData.</p>
-   */
   @js.native
   trait GetPasswordDataResult extends js.Object {
     var InstanceId: js.UndefOr[String]
@@ -11576,6 +12362,141 @@ package ec2 {
     }
   }
 
+  @js.native
+  trait GetTransitGatewayAttachmentPropagationsRequest extends js.Object {
+    var DryRun: js.UndefOr[Boolean]
+    var MaxResults: js.UndefOr[TransitGatewayMaxResults]
+    var TransitGatewayAttachmentId: js.UndefOr[String]
+    var Filters: js.UndefOr[FilterList]
+    var NextToken: js.UndefOr[String]
+  }
+
+  object GetTransitGatewayAttachmentPropagationsRequest {
+    def apply(
+      DryRun: js.UndefOr[Boolean] = js.undefined,
+      MaxResults: js.UndefOr[TransitGatewayMaxResults] = js.undefined,
+      TransitGatewayAttachmentId: js.UndefOr[String] = js.undefined,
+      Filters: js.UndefOr[FilterList] = js.undefined,
+      NextToken: js.UndefOr[String] = js.undefined): GetTransitGatewayAttachmentPropagationsRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "DryRun" -> DryRun.map { x => x.asInstanceOf[js.Any] },
+        "MaxResults" -> MaxResults.map { x => x.asInstanceOf[js.Any] },
+        "TransitGatewayAttachmentId" -> TransitGatewayAttachmentId.map { x => x.asInstanceOf[js.Any] },
+        "Filters" -> Filters.map { x => x.asInstanceOf[js.Any] },
+        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetTransitGatewayAttachmentPropagationsRequest]
+    }
+  }
+
+  @js.native
+  trait GetTransitGatewayAttachmentPropagationsResult extends js.Object {
+    var TransitGatewayAttachmentPropagations: js.UndefOr[TransitGatewayAttachmentPropagationList]
+    var NextToken: js.UndefOr[String]
+  }
+
+  object GetTransitGatewayAttachmentPropagationsResult {
+    def apply(
+      TransitGatewayAttachmentPropagations: js.UndefOr[TransitGatewayAttachmentPropagationList] = js.undefined,
+      NextToken: js.UndefOr[String] = js.undefined): GetTransitGatewayAttachmentPropagationsResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "TransitGatewayAttachmentPropagations" -> TransitGatewayAttachmentPropagations.map { x => x.asInstanceOf[js.Any] },
+        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetTransitGatewayAttachmentPropagationsResult]
+    }
+  }
+
+  @js.native
+  trait GetTransitGatewayRouteTableAssociationsRequest extends js.Object {
+    var DryRun: js.UndefOr[Boolean]
+    var MaxResults: js.UndefOr[TransitGatewayMaxResults]
+    var TransitGatewayRouteTableId: js.UndefOr[String]
+    var Filters: js.UndefOr[FilterList]
+    var NextToken: js.UndefOr[String]
+  }
+
+  object GetTransitGatewayRouteTableAssociationsRequest {
+    def apply(
+      DryRun: js.UndefOr[Boolean] = js.undefined,
+      MaxResults: js.UndefOr[TransitGatewayMaxResults] = js.undefined,
+      TransitGatewayRouteTableId: js.UndefOr[String] = js.undefined,
+      Filters: js.UndefOr[FilterList] = js.undefined,
+      NextToken: js.UndefOr[String] = js.undefined): GetTransitGatewayRouteTableAssociationsRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "DryRun" -> DryRun.map { x => x.asInstanceOf[js.Any] },
+        "MaxResults" -> MaxResults.map { x => x.asInstanceOf[js.Any] },
+        "TransitGatewayRouteTableId" -> TransitGatewayRouteTableId.map { x => x.asInstanceOf[js.Any] },
+        "Filters" -> Filters.map { x => x.asInstanceOf[js.Any] },
+        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetTransitGatewayRouteTableAssociationsRequest]
+    }
+  }
+
+  @js.native
+  trait GetTransitGatewayRouteTableAssociationsResult extends js.Object {
+    var Associations: js.UndefOr[TransitGatewayRouteTableAssociationList]
+    var NextToken: js.UndefOr[String]
+  }
+
+  object GetTransitGatewayRouteTableAssociationsResult {
+    def apply(
+      Associations: js.UndefOr[TransitGatewayRouteTableAssociationList] = js.undefined,
+      NextToken: js.UndefOr[String] = js.undefined): GetTransitGatewayRouteTableAssociationsResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Associations" -> Associations.map { x => x.asInstanceOf[js.Any] },
+        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetTransitGatewayRouteTableAssociationsResult]
+    }
+  }
+
+  @js.native
+  trait GetTransitGatewayRouteTablePropagationsRequest extends js.Object {
+    var DryRun: js.UndefOr[Boolean]
+    var MaxResults: js.UndefOr[TransitGatewayMaxResults]
+    var TransitGatewayRouteTableId: js.UndefOr[String]
+    var Filters: js.UndefOr[FilterList]
+    var NextToken: js.UndefOr[String]
+  }
+
+  object GetTransitGatewayRouteTablePropagationsRequest {
+    def apply(
+      DryRun: js.UndefOr[Boolean] = js.undefined,
+      MaxResults: js.UndefOr[TransitGatewayMaxResults] = js.undefined,
+      TransitGatewayRouteTableId: js.UndefOr[String] = js.undefined,
+      Filters: js.UndefOr[FilterList] = js.undefined,
+      NextToken: js.UndefOr[String] = js.undefined): GetTransitGatewayRouteTablePropagationsRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "DryRun" -> DryRun.map { x => x.asInstanceOf[js.Any] },
+        "MaxResults" -> MaxResults.map { x => x.asInstanceOf[js.Any] },
+        "TransitGatewayRouteTableId" -> TransitGatewayRouteTableId.map { x => x.asInstanceOf[js.Any] },
+        "Filters" -> Filters.map { x => x.asInstanceOf[js.Any] },
+        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetTransitGatewayRouteTablePropagationsRequest]
+    }
+  }
+
+  @js.native
+  trait GetTransitGatewayRouteTablePropagationsResult extends js.Object {
+    var TransitGatewayRouteTablePropagations: js.UndefOr[TransitGatewayRouteTablePropagationList]
+    var NextToken: js.UndefOr[String]
+  }
+
+  object GetTransitGatewayRouteTablePropagationsResult {
+    def apply(
+      TransitGatewayRouteTablePropagations: js.UndefOr[TransitGatewayRouteTablePropagationList] = js.undefined,
+      NextToken: js.UndefOr[String] = js.undefined): GetTransitGatewayRouteTablePropagationsResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "TransitGatewayRouteTablePropagations" -> TransitGatewayRouteTablePropagations.map { x => x.asInstanceOf[js.Any] },
+        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetTransitGatewayRouteTablePropagationsResult]
+    }
+  }
+
   /**
    * <p>Describes a security group.</p>
    */
@@ -11594,6 +12515,42 @@ package ec2 {
         "GroupId" -> GroupId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GroupIdentifier]
+    }
+  }
+
+  /**
+   * <p>Indicates whether your instance is configured for hibernation. This parameter is valid only if the instance meets the <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html#hibernating-prerequisites">hibernation prerequisites</a>. Hibernation is currently supported only for Amazon Linux. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate Your Instance</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+   */
+  @js.native
+  trait HibernationOptions extends js.Object {
+    var Configured: js.UndefOr[Boolean]
+  }
+
+  object HibernationOptions {
+    def apply(
+      Configured: js.UndefOr[Boolean] = js.undefined): HibernationOptions = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Configured" -> Configured.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[HibernationOptions]
+    }
+  }
+
+  /**
+   * <p>Indicates whether your instance is configured for hibernation. This parameter is valid only if the instance meets the <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html#hibernating-prerequisites">hibernation prerequisites</a>. Hibernation is currently supported only for Amazon Linux. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate Your Instance</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+   */
+  @js.native
+  trait HibernationOptionsRequest extends js.Object {
+    var Configured: js.UndefOr[Boolean]
+  }
+
+  object HibernationOptionsRequest {
+    def apply(
+      Configured: js.UndefOr[Boolean] = js.undefined): HibernationOptionsRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Configured" -> Configured.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[HibernationOptionsRequest]
     }
   }
 
@@ -12697,6 +13654,7 @@ package ec2 {
     var RamdiskId: js.UndefOr[String]
     var BlockDeviceMappings: js.UndefOr[InstanceBlockDeviceMappingList]
     var CapacityReservationSpecification: js.UndefOr[CapacityReservationSpecificationResponse]
+    var Licenses: js.UndefOr[LicenseList]
     var ImageId: js.UndefOr[String]
     var PrivateIpAddress: js.UndefOr[String]
     var RootDeviceName: js.UndefOr[String]
@@ -12711,12 +13669,14 @@ package ec2 {
     var SecurityGroups: js.UndefOr[GroupIdentifierList]
     var KernelId: js.UndefOr[String]
     var EnaSupport: js.UndefOr[Boolean]
+    var ElasticInferenceAcceleratorAssociations: js.UndefOr[ElasticInferenceAcceleratorAssociationList]
     var ElasticGpuAssociations: js.UndefOr[ElasticGpuAssociationList]
     var RootDeviceType: js.UndefOr[DeviceType]
     var PublicIpAddress: js.UndefOr[String]
     var ProductCodes: js.UndefOr[ProductCodeList]
     var KeyName: js.UndefOr[String]
     var Hypervisor: js.UndefOr[HypervisorType]
+    var HibernationOptions: js.UndefOr[HibernationOptions]
     var InstanceType: js.UndefOr[InstanceType]
     var CapacityReservationId: js.UndefOr[String]
     var InstanceId: js.UndefOr[String]
@@ -12743,6 +13703,7 @@ package ec2 {
       RamdiskId: js.UndefOr[String] = js.undefined,
       BlockDeviceMappings: js.UndefOr[InstanceBlockDeviceMappingList] = js.undefined,
       CapacityReservationSpecification: js.UndefOr[CapacityReservationSpecificationResponse] = js.undefined,
+      Licenses: js.UndefOr[LicenseList] = js.undefined,
       ImageId: js.UndefOr[String] = js.undefined,
       PrivateIpAddress: js.UndefOr[String] = js.undefined,
       RootDeviceName: js.UndefOr[String] = js.undefined,
@@ -12757,12 +13718,14 @@ package ec2 {
       SecurityGroups: js.UndefOr[GroupIdentifierList] = js.undefined,
       KernelId: js.UndefOr[String] = js.undefined,
       EnaSupport: js.UndefOr[Boolean] = js.undefined,
+      ElasticInferenceAcceleratorAssociations: js.UndefOr[ElasticInferenceAcceleratorAssociationList] = js.undefined,
       ElasticGpuAssociations: js.UndefOr[ElasticGpuAssociationList] = js.undefined,
       RootDeviceType: js.UndefOr[DeviceType] = js.undefined,
       PublicIpAddress: js.UndefOr[String] = js.undefined,
       ProductCodes: js.UndefOr[ProductCodeList] = js.undefined,
       KeyName: js.UndefOr[String] = js.undefined,
       Hypervisor: js.UndefOr[HypervisorType] = js.undefined,
+      HibernationOptions: js.UndefOr[HibernationOptions] = js.undefined,
       InstanceType: js.UndefOr[InstanceType] = js.undefined,
       CapacityReservationId: js.UndefOr[String] = js.undefined,
       InstanceId: js.UndefOr[String] = js.undefined,
@@ -12786,6 +13749,7 @@ package ec2 {
         "RamdiskId" -> RamdiskId.map { x => x.asInstanceOf[js.Any] },
         "BlockDeviceMappings" -> BlockDeviceMappings.map { x => x.asInstanceOf[js.Any] },
         "CapacityReservationSpecification" -> CapacityReservationSpecification.map { x => x.asInstanceOf[js.Any] },
+        "Licenses" -> Licenses.map { x => x.asInstanceOf[js.Any] },
         "ImageId" -> ImageId.map { x => x.asInstanceOf[js.Any] },
         "PrivateIpAddress" -> PrivateIpAddress.map { x => x.asInstanceOf[js.Any] },
         "RootDeviceName" -> RootDeviceName.map { x => x.asInstanceOf[js.Any] },
@@ -12800,12 +13764,14 @@ package ec2 {
         "SecurityGroups" -> SecurityGroups.map { x => x.asInstanceOf[js.Any] },
         "KernelId" -> KernelId.map { x => x.asInstanceOf[js.Any] },
         "EnaSupport" -> EnaSupport.map { x => x.asInstanceOf[js.Any] },
+        "ElasticInferenceAcceleratorAssociations" -> ElasticInferenceAcceleratorAssociations.map { x => x.asInstanceOf[js.Any] },
         "ElasticGpuAssociations" -> ElasticGpuAssociations.map { x => x.asInstanceOf[js.Any] },
         "RootDeviceType" -> RootDeviceType.map { x => x.asInstanceOf[js.Any] },
         "PublicIpAddress" -> PublicIpAddress.map { x => x.asInstanceOf[js.Any] },
         "ProductCodes" -> ProductCodes.map { x => x.asInstanceOf[js.Any] },
         "KeyName" -> KeyName.map { x => x.asInstanceOf[js.Any] },
         "Hypervisor" -> Hypervisor.map { x => x.asInstanceOf[js.Any] },
+        "HibernationOptions" -> HibernationOptions.map { x => x.asInstanceOf[js.Any] },
         "InstanceType" -> InstanceType.map { x => x.asInstanceOf[js.Any] },
         "CapacityReservationId" -> CapacityReservationId.map { x => x.asInstanceOf[js.Any] },
         "InstanceId" -> InstanceId.map { x => x.asInstanceOf[js.Any] },
@@ -13644,6 +14610,12 @@ package ec2 {
     val `c5d.4xlarge` = "c5d.4xlarge"
     val `c5d.9xlarge` = "c5d.9xlarge"
     val `c5d.18xlarge` = "c5d.18xlarge"
+    val `c5n.large` = "c5n.large"
+    val `c5n.xlarge` = "c5n.xlarge"
+    val `c5n.2xlarge` = "c5n.2xlarge"
+    val `c5n.4xlarge` = "c5n.4xlarge"
+    val `c5n.9xlarge` = "c5n.9xlarge"
+    val `c5n.18xlarge` = "c5n.18xlarge"
     val `cc1.4xlarge` = "cc1.4xlarge"
     val `cc2.8xlarge` = "cc2.8xlarge"
     val `g2.2xlarge` = "g2.2xlarge"
@@ -13697,8 +14669,13 @@ package ec2 {
     val `u-6tb1.metal` = "u-6tb1.metal"
     val `u-9tb1.metal` = "u-9tb1.metal"
     val `u-12tb1.metal` = "u-12tb1.metal"
+    val `a1.medium` = "a1.medium"
+    val `a1.large` = "a1.large"
+    val `a1.xlarge` = "a1.xlarge"
+    val `a1.2xlarge` = "a1.2xlarge"
+    val `a1.4xlarge` = "a1.4xlarge"
 
-    val values = IndexedSeq(`t1.micro`, `t2.nano`, `t2.micro`, `t2.small`, `t2.medium`, `t2.large`, `t2.xlarge`, `t2.2xlarge`, `t3.nano`, `t3.micro`, `t3.small`, `t3.medium`, `t3.large`, `t3.xlarge`, `t3.2xlarge`, `m1.small`, `m1.medium`, `m1.large`, `m1.xlarge`, `m3.medium`, `m3.large`, `m3.xlarge`, `m3.2xlarge`, `m4.large`, `m4.xlarge`, `m4.2xlarge`, `m4.4xlarge`, `m4.10xlarge`, `m4.16xlarge`, `m2.xlarge`, `m2.2xlarge`, `m2.4xlarge`, `cr1.8xlarge`, `r3.large`, `r3.xlarge`, `r3.2xlarge`, `r3.4xlarge`, `r3.8xlarge`, `r4.large`, `r4.xlarge`, `r4.2xlarge`, `r4.4xlarge`, `r4.8xlarge`, `r4.16xlarge`, `r5.large`, `r5.xlarge`, `r5.2xlarge`, `r5.4xlarge`, `r5.8xlarge`, `r5.12xlarge`, `r5.16xlarge`, `r5.24xlarge`, `r5.metal`, `r5a.large`, `r5a.xlarge`, `r5a.2xlarge`, `r5a.4xlarge`, `r5a.12xlarge`, `r5a.24xlarge`, `r5d.large`, `r5d.xlarge`, `r5d.2xlarge`, `r5d.4xlarge`, `r5d.8xlarge`, `r5d.12xlarge`, `r5d.16xlarge`, `r5d.24xlarge`, `r5d.metal`, `x1.16xlarge`, `x1.32xlarge`, `x1e.xlarge`, `x1e.2xlarge`, `x1e.4xlarge`, `x1e.8xlarge`, `x1e.16xlarge`, `x1e.32xlarge`, `i2.xlarge`, `i2.2xlarge`, `i2.4xlarge`, `i2.8xlarge`, `i3.large`, `i3.xlarge`, `i3.2xlarge`, `i3.4xlarge`, `i3.8xlarge`, `i3.16xlarge`, `i3.metal`, `hi1.4xlarge`, `hs1.8xlarge`, `c1.medium`, `c1.xlarge`, `c3.large`, `c3.xlarge`, `c3.2xlarge`, `c3.4xlarge`, `c3.8xlarge`, `c4.large`, `c4.xlarge`, `c4.2xlarge`, `c4.4xlarge`, `c4.8xlarge`, `c5.large`, `c5.xlarge`, `c5.2xlarge`, `c5.4xlarge`, `c5.9xlarge`, `c5.18xlarge`, `c5d.large`, `c5d.xlarge`, `c5d.2xlarge`, `c5d.4xlarge`, `c5d.9xlarge`, `c5d.18xlarge`, `cc1.4xlarge`, `cc2.8xlarge`, `g2.2xlarge`, `g2.8xlarge`, `g3.4xlarge`, `g3.8xlarge`, `g3.16xlarge`, `g3s.xlarge`, `cg1.4xlarge`, `p2.xlarge`, `p2.8xlarge`, `p2.16xlarge`, `p3.2xlarge`, `p3.8xlarge`, `p3.16xlarge`, `d2.xlarge`, `d2.2xlarge`, `d2.4xlarge`, `d2.8xlarge`, `f1.2xlarge`, `f1.4xlarge`, `f1.16xlarge`, `m5.large`, `m5.xlarge`, `m5.2xlarge`, `m5.4xlarge`, `m5.12xlarge`, `m5.24xlarge`, `m5a.large`, `m5a.xlarge`, `m5a.2xlarge`, `m5a.4xlarge`, `m5a.12xlarge`, `m5a.24xlarge`, `m5d.large`, `m5d.xlarge`, `m5d.2xlarge`, `m5d.4xlarge`, `m5d.12xlarge`, `m5d.24xlarge`, `h1.2xlarge`, `h1.4xlarge`, `h1.8xlarge`, `h1.16xlarge`, `z1d.large`, `z1d.xlarge`, `z1d.2xlarge`, `z1d.3xlarge`, `z1d.6xlarge`, `z1d.12xlarge`, `u-6tb1.metal`, `u-9tb1.metal`, `u-12tb1.metal`)
+    val values = IndexedSeq(`t1.micro`, `t2.nano`, `t2.micro`, `t2.small`, `t2.medium`, `t2.large`, `t2.xlarge`, `t2.2xlarge`, `t3.nano`, `t3.micro`, `t3.small`, `t3.medium`, `t3.large`, `t3.xlarge`, `t3.2xlarge`, `m1.small`, `m1.medium`, `m1.large`, `m1.xlarge`, `m3.medium`, `m3.large`, `m3.xlarge`, `m3.2xlarge`, `m4.large`, `m4.xlarge`, `m4.2xlarge`, `m4.4xlarge`, `m4.10xlarge`, `m4.16xlarge`, `m2.xlarge`, `m2.2xlarge`, `m2.4xlarge`, `cr1.8xlarge`, `r3.large`, `r3.xlarge`, `r3.2xlarge`, `r3.4xlarge`, `r3.8xlarge`, `r4.large`, `r4.xlarge`, `r4.2xlarge`, `r4.4xlarge`, `r4.8xlarge`, `r4.16xlarge`, `r5.large`, `r5.xlarge`, `r5.2xlarge`, `r5.4xlarge`, `r5.8xlarge`, `r5.12xlarge`, `r5.16xlarge`, `r5.24xlarge`, `r5.metal`, `r5a.large`, `r5a.xlarge`, `r5a.2xlarge`, `r5a.4xlarge`, `r5a.12xlarge`, `r5a.24xlarge`, `r5d.large`, `r5d.xlarge`, `r5d.2xlarge`, `r5d.4xlarge`, `r5d.8xlarge`, `r5d.12xlarge`, `r5d.16xlarge`, `r5d.24xlarge`, `r5d.metal`, `x1.16xlarge`, `x1.32xlarge`, `x1e.xlarge`, `x1e.2xlarge`, `x1e.4xlarge`, `x1e.8xlarge`, `x1e.16xlarge`, `x1e.32xlarge`, `i2.xlarge`, `i2.2xlarge`, `i2.4xlarge`, `i2.8xlarge`, `i3.large`, `i3.xlarge`, `i3.2xlarge`, `i3.4xlarge`, `i3.8xlarge`, `i3.16xlarge`, `i3.metal`, `hi1.4xlarge`, `hs1.8xlarge`, `c1.medium`, `c1.xlarge`, `c3.large`, `c3.xlarge`, `c3.2xlarge`, `c3.4xlarge`, `c3.8xlarge`, `c4.large`, `c4.xlarge`, `c4.2xlarge`, `c4.4xlarge`, `c4.8xlarge`, `c5.large`, `c5.xlarge`, `c5.2xlarge`, `c5.4xlarge`, `c5.9xlarge`, `c5.18xlarge`, `c5d.large`, `c5d.xlarge`, `c5d.2xlarge`, `c5d.4xlarge`, `c5d.9xlarge`, `c5d.18xlarge`, `c5n.large`, `c5n.xlarge`, `c5n.2xlarge`, `c5n.4xlarge`, `c5n.9xlarge`, `c5n.18xlarge`, `cc1.4xlarge`, `cc2.8xlarge`, `g2.2xlarge`, `g2.8xlarge`, `g3.4xlarge`, `g3.8xlarge`, `g3.16xlarge`, `g3s.xlarge`, `cg1.4xlarge`, `p2.xlarge`, `p2.8xlarge`, `p2.16xlarge`, `p3.2xlarge`, `p3.8xlarge`, `p3.16xlarge`, `d2.xlarge`, `d2.2xlarge`, `d2.4xlarge`, `d2.8xlarge`, `f1.2xlarge`, `f1.4xlarge`, `f1.16xlarge`, `m5.large`, `m5.xlarge`, `m5.2xlarge`, `m5.4xlarge`, `m5.12xlarge`, `m5.24xlarge`, `m5a.large`, `m5a.xlarge`, `m5a.2xlarge`, `m5a.4xlarge`, `m5a.12xlarge`, `m5a.24xlarge`, `m5d.large`, `m5d.xlarge`, `m5d.2xlarge`, `m5d.4xlarge`, `m5d.12xlarge`, `m5d.24xlarge`, `h1.2xlarge`, `h1.4xlarge`, `h1.8xlarge`, `h1.16xlarge`, `z1d.large`, `z1d.xlarge`, `z1d.2xlarge`, `z1d.3xlarge`, `z1d.6xlarge`, `z1d.12xlarge`, `u-6tb1.metal`, `u-9tb1.metal`, `u-12tb1.metal`, `a1.medium`, `a1.large`, `a1.xlarge`, `a1.2xlarge`, `a1.4xlarge`)
   }
 
   object InterfacePermissionTypeEnum {
@@ -13715,6 +14692,7 @@ package ec2 {
   trait InternetGateway extends js.Object {
     var Attachments: js.UndefOr[InternetGatewayAttachmentList]
     var InternetGatewayId: js.UndefOr[String]
+    var OwnerId: js.UndefOr[String]
     var Tags: js.UndefOr[TagList]
   }
 
@@ -13722,10 +14700,12 @@ package ec2 {
     def apply(
       Attachments: js.UndefOr[InternetGatewayAttachmentList] = js.undefined,
       InternetGatewayId: js.UndefOr[String] = js.undefined,
+      OwnerId: js.UndefOr[String] = js.undefined,
       Tags: js.UndefOr[TagList] = js.undefined): InternetGateway = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Attachments" -> Attachments.map { x => x.asInstanceOf[js.Any] },
         "InternetGatewayId" -> InternetGatewayId.map { x => x.asInstanceOf[js.Any] },
+        "OwnerId" -> OwnerId.map { x => x.asInstanceOf[js.Any] },
         "Tags" -> Tags.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[InternetGateway]
@@ -13847,6 +14827,13 @@ package ec2 {
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Ipv6Range]
     }
+  }
+
+  object Ipv6SupportValueEnum {
+    val enable = "enable"
+    val disable = "disable"
+
+    val values = IndexedSeq(enable, disable)
   }
 
   /**
@@ -14284,6 +15271,42 @@ package ec2 {
     }
   }
 
+  /**
+   * <p> Describes an elastic inference accelerator. </p>
+   */
+  @js.native
+  trait LaunchTemplateElasticInferenceAccelerator extends js.Object {
+    var Type: js.UndefOr[String]
+  }
+
+  object LaunchTemplateElasticInferenceAccelerator {
+    def apply(
+      Type: js.UndefOr[String] = js.undefined): LaunchTemplateElasticInferenceAccelerator = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Type" -> Type.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[LaunchTemplateElasticInferenceAccelerator]
+    }
+  }
+
+  /**
+   * <p> Describes an elastic inference accelerator. </p>
+   */
+  @js.native
+  trait LaunchTemplateElasticInferenceAcceleratorResponse extends js.Object {
+    var Type: js.UndefOr[String]
+  }
+
+  object LaunchTemplateElasticInferenceAcceleratorResponse {
+    def apply(
+      Type: js.UndefOr[String] = js.undefined): LaunchTemplateElasticInferenceAcceleratorResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Type" -> Type.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[LaunchTemplateElasticInferenceAcceleratorResponse]
+    }
+  }
+
   object LaunchTemplateErrorCodeEnum {
     val launchTemplateIdDoesNotExist = "launchTemplateIdDoesNotExist"
     val launchTemplateIdMalformed = "launchTemplateIdMalformed"
@@ -14293,6 +15316,42 @@ package ec2 {
     val unexpectedError = "unexpectedError"
 
     val values = IndexedSeq(launchTemplateIdDoesNotExist, launchTemplateIdMalformed, launchTemplateNameDoesNotExist, launchTemplateNameMalformed, launchTemplateVersionDoesNotExist, unexpectedError)
+  }
+
+  /**
+   * <p>Indicates whether an instance is configured for hibernation.</p>
+   */
+  @js.native
+  trait LaunchTemplateHibernationOptions extends js.Object {
+    var Configured: js.UndefOr[Boolean]
+  }
+
+  object LaunchTemplateHibernationOptions {
+    def apply(
+      Configured: js.UndefOr[Boolean] = js.undefined): LaunchTemplateHibernationOptions = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Configured" -> Configured.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[LaunchTemplateHibernationOptions]
+    }
+  }
+
+  /**
+   * <p>Indicates whether the instance is configured for hibernation. This parameter is valid only if the instance meets the <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html#hibernating-prerequisites">hibernation prerequisites</a>. Hibernation is currently supported only for Amazon Linux.</p>
+   */
+  @js.native
+  trait LaunchTemplateHibernationOptionsRequest extends js.Object {
+    var Configured: js.UndefOr[Boolean]
+  }
+
+  object LaunchTemplateHibernationOptionsRequest {
+    def apply(
+      Configured: js.UndefOr[Boolean] = js.undefined): LaunchTemplateHibernationOptionsRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Configured" -> Configured.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[LaunchTemplateHibernationOptionsRequest]
+    }
   }
 
   /**
@@ -14482,6 +15541,42 @@ package ec2 {
   }
 
   /**
+   * <p>Describes a license configuration.</p>
+   */
+  @js.native
+  trait LaunchTemplateLicenseConfiguration extends js.Object {
+    var LicenseConfigurationArn: js.UndefOr[String]
+  }
+
+  object LaunchTemplateLicenseConfiguration {
+    def apply(
+      LicenseConfigurationArn: js.UndefOr[String] = js.undefined): LaunchTemplateLicenseConfiguration = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "LicenseConfigurationArn" -> LicenseConfigurationArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[LaunchTemplateLicenseConfiguration]
+    }
+  }
+
+  /**
+   * <p>Describes a license configuration.</p>
+   */
+  @js.native
+  trait LaunchTemplateLicenseConfigurationRequest extends js.Object {
+    var LicenseConfigurationArn: js.UndefOr[String]
+  }
+
+  object LaunchTemplateLicenseConfigurationRequest {
+    def apply(
+      LicenseConfigurationArn: js.UndefOr[String] = js.undefined): LaunchTemplateLicenseConfigurationRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "LicenseConfigurationArn" -> LicenseConfigurationArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[LaunchTemplateLicenseConfigurationRequest]
+    }
+  }
+
+  /**
    * <p>Describes overrides for a launch template.</p>
    */
   @js.native
@@ -14548,7 +15643,7 @@ package ec2 {
   }
 
   /**
-   * <p>The placement for the instance.</p>
+   * <p>Describes the placement of an instance.</p>
    */
   @js.native
   trait LaunchTemplatePlacementRequest extends js.Object {
@@ -14778,6 +15873,42 @@ package ec2 {
         "Enabled" -> Enabled.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[LaunchTemplatesMonitoringRequest]
+    }
+  }
+
+  /**
+   * <p>Describes a license configuration.</p>
+   */
+  @js.native
+  trait LicenseConfiguration extends js.Object {
+    var LicenseConfigurationArn: js.UndefOr[String]
+  }
+
+  object LicenseConfiguration {
+    def apply(
+      LicenseConfigurationArn: js.UndefOr[String] = js.undefined): LicenseConfiguration = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "LicenseConfigurationArn" -> LicenseConfigurationArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[LicenseConfiguration]
+    }
+  }
+
+  /**
+   * <p>Describes a license configuration.</p>
+   */
+  @js.native
+  trait LicenseConfigurationRequest extends js.Object {
+    var LicenseConfigurationArn: js.UndefOr[String]
+  }
+
+  object LicenseConfigurationRequest {
+    def apply(
+      LicenseConfigurationArn: js.UndefOr[String] = js.undefined): LicenseConfigurationRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "LicenseConfigurationArn" -> LicenseConfigurationArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[LicenseConfigurationRequest]
     }
   }
 
@@ -15070,9 +16201,6 @@ package ec2 {
     }
   }
 
-  /**
-   * <p>Contains the parameters of ModifyIdFormat.</p>
-   */
   @js.native
   trait ModifyIdFormatRequest extends js.Object {
     var Resource: js.UndefOr[String]
@@ -15091,9 +16219,6 @@ package ec2 {
     }
   }
 
-  /**
-   * <p>Contains the parameters of ModifyIdentityIdFormat.</p>
-   */
   @js.native
   trait ModifyIdentityIdFormatRequest extends js.Object {
     var PrincipalArn: js.UndefOr[String]
@@ -15160,9 +16285,6 @@ package ec2 {
     }
   }
 
-  /**
-   * <p>Contains the parameters for ModifyInstanceAttribute.</p>
-   */
   @js.native
   trait ModifyInstanceAttributeRequest extends js.Object {
     var BlockDeviceMappings: js.UndefOr[InstanceBlockDeviceMappingSpecificationList]
@@ -15556,6 +16678,69 @@ package ec2 {
     }
   }
 
+  @js.native
+  trait ModifyTransitGatewayVpcAttachmentRequest extends js.Object {
+    var DryRun: js.UndefOr[Boolean]
+    var AddSubnetIds: js.UndefOr[ValueStringList]
+    var TransitGatewayAttachmentId: js.UndefOr[String]
+    var Options: js.UndefOr[ModifyTransitGatewayVpcAttachmentRequestOptions]
+    var RemoveSubnetIds: js.UndefOr[ValueStringList]
+  }
+
+  object ModifyTransitGatewayVpcAttachmentRequest {
+    def apply(
+      DryRun: js.UndefOr[Boolean] = js.undefined,
+      AddSubnetIds: js.UndefOr[ValueStringList] = js.undefined,
+      TransitGatewayAttachmentId: js.UndefOr[String] = js.undefined,
+      Options: js.UndefOr[ModifyTransitGatewayVpcAttachmentRequestOptions] = js.undefined,
+      RemoveSubnetIds: js.UndefOr[ValueStringList] = js.undefined): ModifyTransitGatewayVpcAttachmentRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "DryRun" -> DryRun.map { x => x.asInstanceOf[js.Any] },
+        "AddSubnetIds" -> AddSubnetIds.map { x => x.asInstanceOf[js.Any] },
+        "TransitGatewayAttachmentId" -> TransitGatewayAttachmentId.map { x => x.asInstanceOf[js.Any] },
+        "Options" -> Options.map { x => x.asInstanceOf[js.Any] },
+        "RemoveSubnetIds" -> RemoveSubnetIds.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ModifyTransitGatewayVpcAttachmentRequest]
+    }
+  }
+
+  /**
+   * <p>Describes the options for a VPC attachment.</p>
+   */
+  @js.native
+  trait ModifyTransitGatewayVpcAttachmentRequestOptions extends js.Object {
+    var DnsSupport: js.UndefOr[DnsSupportValue]
+    var Ipv6Support: js.UndefOr[Ipv6SupportValue]
+  }
+
+  object ModifyTransitGatewayVpcAttachmentRequestOptions {
+    def apply(
+      DnsSupport: js.UndefOr[DnsSupportValue] = js.undefined,
+      Ipv6Support: js.UndefOr[Ipv6SupportValue] = js.undefined): ModifyTransitGatewayVpcAttachmentRequestOptions = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "DnsSupport" -> DnsSupport.map { x => x.asInstanceOf[js.Any] },
+        "Ipv6Support" -> Ipv6Support.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ModifyTransitGatewayVpcAttachmentRequestOptions]
+    }
+  }
+
+  @js.native
+  trait ModifyTransitGatewayVpcAttachmentResult extends js.Object {
+    var TransitGatewayVpcAttachment: js.UndefOr[TransitGatewayVpcAttachment]
+  }
+
+  object ModifyTransitGatewayVpcAttachmentResult {
+    def apply(
+      TransitGatewayVpcAttachment: js.UndefOr[TransitGatewayVpcAttachment] = js.undefined): ModifyTransitGatewayVpcAttachmentResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "TransitGatewayVpcAttachment" -> TransitGatewayVpcAttachment.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ModifyTransitGatewayVpcAttachmentResult]
+    }
+  }
+
   /**
    * <p>Contains the parameters for ModifyVolumeAttribute.</p>
    */
@@ -15904,9 +17089,6 @@ package ec2 {
     }
   }
 
-  /**
-   * <p>Contains the parameters for MonitorInstances.</p>
-   */
   @js.native
   trait MonitorInstancesRequest extends js.Object {
     var InstanceIds: js.UndefOr[InstanceIdStringList]
@@ -15925,9 +17107,6 @@ package ec2 {
     }
   }
 
-  /**
-   * <p>Contains the output of MonitorInstances.</p>
-   */
   @js.native
   trait MonitorInstancesResult extends js.Object {
     var InstanceMonitorings: js.UndefOr[InstanceMonitoringList]
@@ -16126,6 +17305,7 @@ package ec2 {
   trait NetworkAcl extends js.Object {
     var Associations: js.UndefOr[NetworkAclAssociationList]
     var Entries: js.UndefOr[NetworkAclEntryList]
+    var OwnerId: js.UndefOr[String]
     var NetworkAclId: js.UndefOr[String]
     var Tags: js.UndefOr[TagList]
     var IsDefault: js.UndefOr[Boolean]
@@ -16136,6 +17316,7 @@ package ec2 {
     def apply(
       Associations: js.UndefOr[NetworkAclAssociationList] = js.undefined,
       Entries: js.UndefOr[NetworkAclEntryList] = js.undefined,
+      OwnerId: js.UndefOr[String] = js.undefined,
       NetworkAclId: js.UndefOr[String] = js.undefined,
       Tags: js.UndefOr[TagList] = js.undefined,
       IsDefault: js.UndefOr[Boolean] = js.undefined,
@@ -16143,6 +17324,7 @@ package ec2 {
       val _fields = IndexedSeq[(String, js.Any)](
         "Associations" -> Associations.map { x => x.asInstanceOf[js.Any] },
         "Entries" -> Entries.map { x => x.asInstanceOf[js.Any] },
+        "OwnerId" -> OwnerId.map { x => x.asInstanceOf[js.Any] },
         "NetworkAclId" -> NetworkAclId.map { x => x.asInstanceOf[js.Any] },
         "Tags" -> Tags.map { x => x.asInstanceOf[js.Any] },
         "IsDefault" -> IsDefault.map { x => x.asInstanceOf[js.Any] },
@@ -17368,9 +18550,6 @@ package ec2 {
     val values = IndexedSeq(`Linux/UNIX`, `Linux/UNIX (Amazon VPC)`, Windows, `Windows (Amazon VPC)`)
   }
 
-  /**
-   * <p>Contains the parameters for RebootInstances.</p>
-   */
   @js.native
   trait RebootInstancesRequest extends js.Object {
     var InstanceIds: js.UndefOr[InstanceIdStringList]
@@ -17506,6 +18685,39 @@ package ec2 {
         "ImageId" -> ImageId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RegisterImageResult]
+    }
+  }
+
+  @js.native
+  trait RejectTransitGatewayVpcAttachmentRequest extends js.Object {
+    var TransitGatewayAttachmentId: js.UndefOr[String]
+    var DryRun: js.UndefOr[Boolean]
+  }
+
+  object RejectTransitGatewayVpcAttachmentRequest {
+    def apply(
+      TransitGatewayAttachmentId: js.UndefOr[String] = js.undefined,
+      DryRun: js.UndefOr[Boolean] = js.undefined): RejectTransitGatewayVpcAttachmentRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "TransitGatewayAttachmentId" -> TransitGatewayAttachmentId.map { x => x.asInstanceOf[js.Any] },
+        "DryRun" -> DryRun.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RejectTransitGatewayVpcAttachmentRequest]
+    }
+  }
+
+  @js.native
+  trait RejectTransitGatewayVpcAttachmentResult extends js.Object {
+    var TransitGatewayVpcAttachment: js.UndefOr[TransitGatewayVpcAttachment]
+  }
+
+  object RejectTransitGatewayVpcAttachmentResult {
+    def apply(
+      TransitGatewayVpcAttachment: js.UndefOr[TransitGatewayVpcAttachment] = js.undefined): RejectTransitGatewayVpcAttachmentResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "TransitGatewayVpcAttachment" -> TransitGatewayVpcAttachment.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RejectTransitGatewayVpcAttachmentResult]
     }
   }
 
@@ -17749,6 +18961,7 @@ package ec2 {
     var DestinationCidrBlock: js.UndefOr[String]
     var VpcPeeringConnectionId: js.UndefOr[String]
     var NatGatewayId: js.UndefOr[String]
+    var TransitGatewayId: js.UndefOr[String]
     var EgressOnlyInternetGatewayId: js.UndefOr[String]
     var RouteTableId: js.UndefOr[String]
     var InstanceId: js.UndefOr[String]
@@ -17763,6 +18976,7 @@ package ec2 {
       DestinationCidrBlock: js.UndefOr[String] = js.undefined,
       VpcPeeringConnectionId: js.UndefOr[String] = js.undefined,
       NatGatewayId: js.UndefOr[String] = js.undefined,
+      TransitGatewayId: js.UndefOr[String] = js.undefined,
       EgressOnlyInternetGatewayId: js.UndefOr[String] = js.undefined,
       RouteTableId: js.UndefOr[String] = js.undefined,
       InstanceId: js.UndefOr[String] = js.undefined,
@@ -17774,6 +18988,7 @@ package ec2 {
         "DestinationCidrBlock" -> DestinationCidrBlock.map { x => x.asInstanceOf[js.Any] },
         "VpcPeeringConnectionId" -> VpcPeeringConnectionId.map { x => x.asInstanceOf[js.Any] },
         "NatGatewayId" -> NatGatewayId.map { x => x.asInstanceOf[js.Any] },
+        "TransitGatewayId" -> TransitGatewayId.map { x => x.asInstanceOf[js.Any] },
         "EgressOnlyInternetGatewayId" -> EgressOnlyInternetGatewayId.map { x => x.asInstanceOf[js.Any] },
         "RouteTableId" -> RouteTableId.map { x => x.asInstanceOf[js.Any] },
         "InstanceId" -> InstanceId.map { x => x.asInstanceOf[js.Any] },
@@ -17821,6 +19036,48 @@ package ec2 {
     }
   }
 
+  @js.native
+  trait ReplaceTransitGatewayRouteRequest extends js.Object {
+    var DryRun: js.UndefOr[Boolean]
+    var DestinationCidrBlock: js.UndefOr[String]
+    var Blackhole: js.UndefOr[Boolean]
+    var TransitGatewayAttachmentId: js.UndefOr[String]
+    var TransitGatewayRouteTableId: js.UndefOr[String]
+  }
+
+  object ReplaceTransitGatewayRouteRequest {
+    def apply(
+      DryRun: js.UndefOr[Boolean] = js.undefined,
+      DestinationCidrBlock: js.UndefOr[String] = js.undefined,
+      Blackhole: js.UndefOr[Boolean] = js.undefined,
+      TransitGatewayAttachmentId: js.UndefOr[String] = js.undefined,
+      TransitGatewayRouteTableId: js.UndefOr[String] = js.undefined): ReplaceTransitGatewayRouteRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "DryRun" -> DryRun.map { x => x.asInstanceOf[js.Any] },
+        "DestinationCidrBlock" -> DestinationCidrBlock.map { x => x.asInstanceOf[js.Any] },
+        "Blackhole" -> Blackhole.map { x => x.asInstanceOf[js.Any] },
+        "TransitGatewayAttachmentId" -> TransitGatewayAttachmentId.map { x => x.asInstanceOf[js.Any] },
+        "TransitGatewayRouteTableId" -> TransitGatewayRouteTableId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ReplaceTransitGatewayRouteRequest]
+    }
+  }
+
+  @js.native
+  trait ReplaceTransitGatewayRouteResult extends js.Object {
+    var Route: js.UndefOr[TransitGatewayRoute]
+  }
+
+  object ReplaceTransitGatewayRouteResult {
+    def apply(
+      Route: js.UndefOr[TransitGatewayRoute] = js.undefined): ReplaceTransitGatewayRouteResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Route" -> Route.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ReplaceTransitGatewayRouteResult]
+    }
+  }
+
   object ReportInstanceReasonCodesEnum {
     val `instance-stuck-in-state` = "instance-stuck-in-state"
     val unresponsive = "unresponsive"
@@ -17835,9 +19092,6 @@ package ec2 {
     val values = IndexedSeq(`instance-stuck-in-state`, unresponsive, `not-accepting-credentials`, `password-not-available`, `performance-network`, `performance-instance-store`, `performance-ebs-volume`, `performance-other`, other)
   }
 
-  /**
-   * <p>Contains the parameters for ReportInstanceStatus.</p>
-   */
   @js.native
   trait ReportInstanceStatusRequest extends js.Object {
     var DryRun: js.UndefOr[Boolean]
@@ -17895,16 +19149,19 @@ package ec2 {
     var RamDiskId: js.UndefOr[String]
     var DisableApiTermination: js.UndefOr[Boolean]
     var UserData: js.UndefOr[String]
+    var LicenseSpecifications: js.UndefOr[LaunchTemplateLicenseSpecificationListRequest]
     var SecurityGroups: js.UndefOr[SecurityGroupStringList]
     var KernelId: js.UndefOr[String]
     var InstanceMarketOptions: js.UndefOr[LaunchTemplateInstanceMarketOptionsRequest]
     var SecurityGroupIds: js.UndefOr[SecurityGroupIdStringList]
     var ElasticGpuSpecifications: js.UndefOr[ElasticGpuSpecificationList]
     var KeyName: js.UndefOr[String]
+    var HibernationOptions: js.UndefOr[LaunchTemplateHibernationOptionsRequest]
     var InstanceType: js.UndefOr[InstanceType]
     var Monitoring: js.UndefOr[LaunchTemplatesMonitoringRequest]
     var IamInstanceProfile: js.UndefOr[LaunchTemplateIamInstanceProfileSpecificationRequest]
     var CpuOptions: js.UndefOr[LaunchTemplateCpuOptionsRequest]
+    var ElasticInferenceAccelerators: js.UndefOr[LaunchTemplateElasticInferenceAcceleratorList]
   }
 
   object RequestLaunchTemplateData {
@@ -17921,16 +19178,19 @@ package ec2 {
       RamDiskId: js.UndefOr[String] = js.undefined,
       DisableApiTermination: js.UndefOr[Boolean] = js.undefined,
       UserData: js.UndefOr[String] = js.undefined,
+      LicenseSpecifications: js.UndefOr[LaunchTemplateLicenseSpecificationListRequest] = js.undefined,
       SecurityGroups: js.UndefOr[SecurityGroupStringList] = js.undefined,
       KernelId: js.UndefOr[String] = js.undefined,
       InstanceMarketOptions: js.UndefOr[LaunchTemplateInstanceMarketOptionsRequest] = js.undefined,
       SecurityGroupIds: js.UndefOr[SecurityGroupIdStringList] = js.undefined,
       ElasticGpuSpecifications: js.UndefOr[ElasticGpuSpecificationList] = js.undefined,
       KeyName: js.UndefOr[String] = js.undefined,
+      HibernationOptions: js.UndefOr[LaunchTemplateHibernationOptionsRequest] = js.undefined,
       InstanceType: js.UndefOr[InstanceType] = js.undefined,
       Monitoring: js.UndefOr[LaunchTemplatesMonitoringRequest] = js.undefined,
       IamInstanceProfile: js.UndefOr[LaunchTemplateIamInstanceProfileSpecificationRequest] = js.undefined,
-      CpuOptions: js.UndefOr[LaunchTemplateCpuOptionsRequest] = js.undefined): RequestLaunchTemplateData = {
+      CpuOptions: js.UndefOr[LaunchTemplateCpuOptionsRequest] = js.undefined,
+      ElasticInferenceAccelerators: js.UndefOr[LaunchTemplateElasticInferenceAcceleratorList] = js.undefined): RequestLaunchTemplateData = {
       val _fields = IndexedSeq[(String, js.Any)](
         "NetworkInterfaces" -> NetworkInterfaces.map { x => x.asInstanceOf[js.Any] },
         "BlockDeviceMappings" -> BlockDeviceMappings.map { x => x.asInstanceOf[js.Any] },
@@ -17944,16 +19204,19 @@ package ec2 {
         "RamDiskId" -> RamDiskId.map { x => x.asInstanceOf[js.Any] },
         "DisableApiTermination" -> DisableApiTermination.map { x => x.asInstanceOf[js.Any] },
         "UserData" -> UserData.map { x => x.asInstanceOf[js.Any] },
+        "LicenseSpecifications" -> LicenseSpecifications.map { x => x.asInstanceOf[js.Any] },
         "SecurityGroups" -> SecurityGroups.map { x => x.asInstanceOf[js.Any] },
         "KernelId" -> KernelId.map { x => x.asInstanceOf[js.Any] },
         "InstanceMarketOptions" -> InstanceMarketOptions.map { x => x.asInstanceOf[js.Any] },
         "SecurityGroupIds" -> SecurityGroupIds.map { x => x.asInstanceOf[js.Any] },
         "ElasticGpuSpecifications" -> ElasticGpuSpecifications.map { x => x.asInstanceOf[js.Any] },
         "KeyName" -> KeyName.map { x => x.asInstanceOf[js.Any] },
+        "HibernationOptions" -> HibernationOptions.map { x => x.asInstanceOf[js.Any] },
         "InstanceType" -> InstanceType.map { x => x.asInstanceOf[js.Any] },
         "Monitoring" -> Monitoring.map { x => x.asInstanceOf[js.Any] },
         "IamInstanceProfile" -> IamInstanceProfile.map { x => x.asInstanceOf[js.Any] },
-        "CpuOptions" -> CpuOptions.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "CpuOptions" -> CpuOptions.map { x => x.asInstanceOf[js.Any] },
+        "ElasticInferenceAccelerators" -> ElasticInferenceAccelerators.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RequestLaunchTemplateData]
     }
@@ -18601,9 +19864,6 @@ package ec2 {
     }
   }
 
-  /**
-   * <p>Contains the parameters for ResetInstanceAttribute.</p>
-   */
   @js.native
   trait ResetInstanceAttributeRequest extends js.Object {
     var Attribute: js.UndefOr[InstanceAttributeName]
@@ -18677,23 +19937,32 @@ package ec2 {
     val `customer-gateway` = "customer-gateway"
     val `dedicated-host` = "dedicated-host"
     val `dhcp-options` = "dhcp-options"
+    val `elastic-ip` = "elastic-ip"
+    val fleet = "fleet"
+    val `fpga-image` = "fpga-image"
     val image = "image"
     val instance = "instance"
     val `internet-gateway` = "internet-gateway"
+    val `launch-template` = "launch-template"
+    val natgateway = "natgateway"
     val `network-acl` = "network-acl"
     val `network-interface` = "network-interface"
     val `reserved-instances` = "reserved-instances"
     val `route-table` = "route-table"
+    val `security-group` = "security-group"
     val snapshot = "snapshot"
     val `spot-instances-request` = "spot-instances-request"
     val subnet = "subnet"
-    val `security-group` = "security-group"
+    val `transit-gateway` = "transit-gateway"
+    val `transit-gateway-attachment` = "transit-gateway-attachment"
+    val `transit-gateway-route-table` = "transit-gateway-route-table"
     val volume = "volume"
     val vpc = "vpc"
+    val `vpc-peering-connection` = "vpc-peering-connection"
     val `vpn-connection` = "vpn-connection"
     val `vpn-gateway` = "vpn-gateway"
 
-    val values = IndexedSeq(`customer-gateway`, `dedicated-host`, `dhcp-options`, image, instance, `internet-gateway`, `network-acl`, `network-interface`, `reserved-instances`, `route-table`, snapshot, `spot-instances-request`, subnet, `security-group`, volume, vpc, `vpn-connection`, `vpn-gateway`)
+    val values = IndexedSeq(`customer-gateway`, `dedicated-host`, `dhcp-options`, `elastic-ip`, fleet, `fpga-image`, image, instance, `internet-gateway`, `launch-template`, natgateway, `network-acl`, `network-interface`, `reserved-instances`, `route-table`, `security-group`, snapshot, `spot-instances-request`, subnet, `transit-gateway`, `transit-gateway-attachment`, `transit-gateway-route-table`, volume, vpc, `vpc-peering-connection`, `vpn-connection`, `vpn-gateway`)
   }
 
   /**
@@ -18734,16 +20003,19 @@ package ec2 {
     var RamDiskId: js.UndefOr[String]
     var DisableApiTermination: js.UndefOr[Boolean]
     var UserData: js.UndefOr[String]
+    var LicenseSpecifications: js.UndefOr[LaunchTemplateLicenseList]
     var SecurityGroups: js.UndefOr[ValueStringList]
     var KernelId: js.UndefOr[String]
     var InstanceMarketOptions: js.UndefOr[LaunchTemplateInstanceMarketOptions]
     var SecurityGroupIds: js.UndefOr[ValueStringList]
     var ElasticGpuSpecifications: js.UndefOr[ElasticGpuSpecificationResponseList]
     var KeyName: js.UndefOr[String]
+    var HibernationOptions: js.UndefOr[LaunchTemplateHibernationOptions]
     var InstanceType: js.UndefOr[InstanceType]
     var Monitoring: js.UndefOr[LaunchTemplatesMonitoring]
     var IamInstanceProfile: js.UndefOr[LaunchTemplateIamInstanceProfileSpecification]
     var CpuOptions: js.UndefOr[LaunchTemplateCpuOptions]
+    var ElasticInferenceAccelerators: js.UndefOr[LaunchTemplateElasticInferenceAcceleratorResponseList]
   }
 
   object ResponseLaunchTemplateData {
@@ -18760,16 +20032,19 @@ package ec2 {
       RamDiskId: js.UndefOr[String] = js.undefined,
       DisableApiTermination: js.UndefOr[Boolean] = js.undefined,
       UserData: js.UndefOr[String] = js.undefined,
+      LicenseSpecifications: js.UndefOr[LaunchTemplateLicenseList] = js.undefined,
       SecurityGroups: js.UndefOr[ValueStringList] = js.undefined,
       KernelId: js.UndefOr[String] = js.undefined,
       InstanceMarketOptions: js.UndefOr[LaunchTemplateInstanceMarketOptions] = js.undefined,
       SecurityGroupIds: js.UndefOr[ValueStringList] = js.undefined,
       ElasticGpuSpecifications: js.UndefOr[ElasticGpuSpecificationResponseList] = js.undefined,
       KeyName: js.UndefOr[String] = js.undefined,
+      HibernationOptions: js.UndefOr[LaunchTemplateHibernationOptions] = js.undefined,
       InstanceType: js.UndefOr[InstanceType] = js.undefined,
       Monitoring: js.UndefOr[LaunchTemplatesMonitoring] = js.undefined,
       IamInstanceProfile: js.UndefOr[LaunchTemplateIamInstanceProfileSpecification] = js.undefined,
-      CpuOptions: js.UndefOr[LaunchTemplateCpuOptions] = js.undefined): ResponseLaunchTemplateData = {
+      CpuOptions: js.UndefOr[LaunchTemplateCpuOptions] = js.undefined,
+      ElasticInferenceAccelerators: js.UndefOr[LaunchTemplateElasticInferenceAcceleratorResponseList] = js.undefined): ResponseLaunchTemplateData = {
       val _fields = IndexedSeq[(String, js.Any)](
         "NetworkInterfaces" -> NetworkInterfaces.map { x => x.asInstanceOf[js.Any] },
         "BlockDeviceMappings" -> BlockDeviceMappings.map { x => x.asInstanceOf[js.Any] },
@@ -18783,16 +20058,19 @@ package ec2 {
         "RamDiskId" -> RamDiskId.map { x => x.asInstanceOf[js.Any] },
         "DisableApiTermination" -> DisableApiTermination.map { x => x.asInstanceOf[js.Any] },
         "UserData" -> UserData.map { x => x.asInstanceOf[js.Any] },
+        "LicenseSpecifications" -> LicenseSpecifications.map { x => x.asInstanceOf[js.Any] },
         "SecurityGroups" -> SecurityGroups.map { x => x.asInstanceOf[js.Any] },
         "KernelId" -> KernelId.map { x => x.asInstanceOf[js.Any] },
         "InstanceMarketOptions" -> InstanceMarketOptions.map { x => x.asInstanceOf[js.Any] },
         "SecurityGroupIds" -> SecurityGroupIds.map { x => x.asInstanceOf[js.Any] },
         "ElasticGpuSpecifications" -> ElasticGpuSpecifications.map { x => x.asInstanceOf[js.Any] },
         "KeyName" -> KeyName.map { x => x.asInstanceOf[js.Any] },
+        "HibernationOptions" -> HibernationOptions.map { x => x.asInstanceOf[js.Any] },
         "InstanceType" -> InstanceType.map { x => x.asInstanceOf[js.Any] },
         "Monitoring" -> Monitoring.map { x => x.asInstanceOf[js.Any] },
         "IamInstanceProfile" -> IamInstanceProfile.map { x => x.asInstanceOf[js.Any] },
-        "CpuOptions" -> CpuOptions.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "CpuOptions" -> CpuOptions.map { x => x.asInstanceOf[js.Any] },
+        "ElasticInferenceAccelerators" -> ElasticInferenceAccelerators.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ResponseLaunchTemplateData]
     }
@@ -18926,6 +20204,7 @@ package ec2 {
     var DestinationPrefixListId: js.UndefOr[String]
     var NatGatewayId: js.UndefOr[String]
     var Origin: js.UndefOr[RouteOrigin]
+    var TransitGatewayId: js.UndefOr[String]
     var EgressOnlyInternetGatewayId: js.UndefOr[String]
     var InstanceId: js.UndefOr[String]
     var NetworkInterfaceId: js.UndefOr[String]
@@ -18942,6 +20221,7 @@ package ec2 {
       DestinationPrefixListId: js.UndefOr[String] = js.undefined,
       NatGatewayId: js.UndefOr[String] = js.undefined,
       Origin: js.UndefOr[RouteOrigin] = js.undefined,
+      TransitGatewayId: js.UndefOr[String] = js.undefined,
       EgressOnlyInternetGatewayId: js.UndefOr[String] = js.undefined,
       InstanceId: js.UndefOr[String] = js.undefined,
       NetworkInterfaceId: js.UndefOr[String] = js.undefined,
@@ -18955,6 +20235,7 @@ package ec2 {
         "DestinationPrefixListId" -> DestinationPrefixListId.map { x => x.asInstanceOf[js.Any] },
         "NatGatewayId" -> NatGatewayId.map { x => x.asInstanceOf[js.Any] },
         "Origin" -> Origin.map { x => x.asInstanceOf[js.Any] },
+        "TransitGatewayId" -> TransitGatewayId.map { x => x.asInstanceOf[js.Any] },
         "EgressOnlyInternetGatewayId" -> EgressOnlyInternetGatewayId.map { x => x.asInstanceOf[js.Any] },
         "InstanceId" -> InstanceId.map { x => x.asInstanceOf[js.Any] },
         "NetworkInterfaceId" -> NetworkInterfaceId.map { x => x.asInstanceOf[js.Any] },
@@ -18987,6 +20268,7 @@ package ec2 {
   @js.native
   trait RouteTable extends js.Object {
     var Associations: js.UndefOr[RouteTableAssociationList]
+    var OwnerId: js.UndefOr[String]
     var RouteTableId: js.UndefOr[String]
     var Routes: js.UndefOr[RouteList]
     var Tags: js.UndefOr[TagList]
@@ -18997,6 +20279,7 @@ package ec2 {
   object RouteTable {
     def apply(
       Associations: js.UndefOr[RouteTableAssociationList] = js.undefined,
+      OwnerId: js.UndefOr[String] = js.undefined,
       RouteTableId: js.UndefOr[String] = js.undefined,
       Routes: js.UndefOr[RouteList] = js.undefined,
       Tags: js.UndefOr[TagList] = js.undefined,
@@ -19004,6 +20287,7 @@ package ec2 {
       VpcId: js.UndefOr[String] = js.undefined): RouteTable = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Associations" -> Associations.map { x => x.asInstanceOf[js.Any] },
+        "OwnerId" -> OwnerId.map { x => x.asInstanceOf[js.Any] },
         "RouteTableId" -> RouteTableId.map { x => x.asInstanceOf[js.Any] },
         "Routes" -> Routes.map { x => x.asInstanceOf[js.Any] },
         "Tags" -> Tags.map { x => x.asInstanceOf[js.Any] },
@@ -19066,9 +20350,6 @@ package ec2 {
     }
   }
 
-  /**
-   * <p>Contains the parameters for RunInstances.</p>
-   */
   @js.native
   trait RunInstancesRequest extends js.Object {
     var NetworkInterfaces: js.UndefOr[InstanceNetworkInterfaceSpecificationList]
@@ -19089,6 +20370,7 @@ package ec2 {
     var DisableApiTermination: js.UndefOr[Boolean]
     var UserData: js.UndefOr[String]
     var LaunchTemplate: js.UndefOr[LaunchTemplateSpecification]
+    var LicenseSpecifications: js.UndefOr[LicenseSpecificationListRequest]
     var SecurityGroups: js.UndefOr[SecurityGroupStringList]
     var Ipv6AddressCount: js.UndefOr[Int]
     var MinCount: js.UndefOr[Int]
@@ -19097,11 +20379,13 @@ package ec2 {
     var SecurityGroupIds: js.UndefOr[SecurityGroupIdStringList]
     var MaxCount: js.UndefOr[Int]
     var KeyName: js.UndefOr[String]
+    var HibernationOptions: js.UndefOr[HibernationOptionsRequest]
     var InstanceType: js.UndefOr[InstanceType]
     var AdditionalInfo: js.UndefOr[String]
     var Monitoring: js.UndefOr[RunInstancesMonitoringEnabled]
     var IamInstanceProfile: js.UndefOr[IamInstanceProfileSpecification]
     var CpuOptions: js.UndefOr[CpuOptionsRequest]
+    var ElasticInferenceAccelerators: js.UndefOr[ElasticInferenceAccelerators]
     var SubnetId: js.UndefOr[String]
   }
 
@@ -19125,6 +20409,7 @@ package ec2 {
       DisableApiTermination: js.UndefOr[Boolean] = js.undefined,
       UserData: js.UndefOr[String] = js.undefined,
       LaunchTemplate: js.UndefOr[LaunchTemplateSpecification] = js.undefined,
+      LicenseSpecifications: js.UndefOr[LicenseSpecificationListRequest] = js.undefined,
       SecurityGroups: js.UndefOr[SecurityGroupStringList] = js.undefined,
       Ipv6AddressCount: js.UndefOr[Int] = js.undefined,
       MinCount: js.UndefOr[Int] = js.undefined,
@@ -19133,11 +20418,13 @@ package ec2 {
       SecurityGroupIds: js.UndefOr[SecurityGroupIdStringList] = js.undefined,
       MaxCount: js.UndefOr[Int] = js.undefined,
       KeyName: js.UndefOr[String] = js.undefined,
+      HibernationOptions: js.UndefOr[HibernationOptionsRequest] = js.undefined,
       InstanceType: js.UndefOr[InstanceType] = js.undefined,
       AdditionalInfo: js.UndefOr[String] = js.undefined,
       Monitoring: js.UndefOr[RunInstancesMonitoringEnabled] = js.undefined,
       IamInstanceProfile: js.UndefOr[IamInstanceProfileSpecification] = js.undefined,
       CpuOptions: js.UndefOr[CpuOptionsRequest] = js.undefined,
+      ElasticInferenceAccelerators: js.UndefOr[ElasticInferenceAccelerators] = js.undefined,
       SubnetId: js.UndefOr[String] = js.undefined): RunInstancesRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "NetworkInterfaces" -> NetworkInterfaces.map { x => x.asInstanceOf[js.Any] },
@@ -19158,6 +20445,7 @@ package ec2 {
         "DisableApiTermination" -> DisableApiTermination.map { x => x.asInstanceOf[js.Any] },
         "UserData" -> UserData.map { x => x.asInstanceOf[js.Any] },
         "LaunchTemplate" -> LaunchTemplate.map { x => x.asInstanceOf[js.Any] },
+        "LicenseSpecifications" -> LicenseSpecifications.map { x => x.asInstanceOf[js.Any] },
         "SecurityGroups" -> SecurityGroups.map { x => x.asInstanceOf[js.Any] },
         "Ipv6AddressCount" -> Ipv6AddressCount.map { x => x.asInstanceOf[js.Any] },
         "MinCount" -> MinCount.map { x => x.asInstanceOf[js.Any] },
@@ -19166,11 +20454,13 @@ package ec2 {
         "SecurityGroupIds" -> SecurityGroupIds.map { x => x.asInstanceOf[js.Any] },
         "MaxCount" -> MaxCount.map { x => x.asInstanceOf[js.Any] },
         "KeyName" -> KeyName.map { x => x.asInstanceOf[js.Any] },
+        "HibernationOptions" -> HibernationOptions.map { x => x.asInstanceOf[js.Any] },
         "InstanceType" -> InstanceType.map { x => x.asInstanceOf[js.Any] },
         "AdditionalInfo" -> AdditionalInfo.map { x => x.asInstanceOf[js.Any] },
         "Monitoring" -> Monitoring.map { x => x.asInstanceOf[js.Any] },
         "IamInstanceProfile" -> IamInstanceProfile.map { x => x.asInstanceOf[js.Any] },
         "CpuOptions" -> CpuOptions.map { x => x.asInstanceOf[js.Any] },
+        "ElasticInferenceAccelerators" -> ElasticInferenceAccelerators.map { x => x.asInstanceOf[js.Any] },
         "SubnetId" -> SubnetId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RunInstancesRequest]
@@ -19693,6 +20983,48 @@ package ec2 {
         "PrivateIpAddress" -> PrivateIpAddress.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ScheduledInstancesPrivateIpAddressConfig]
+    }
+  }
+
+  @js.native
+  trait SearchTransitGatewayRoutesRequest extends js.Object {
+    var TransitGatewayRouteTableId: js.UndefOr[String]
+    var Filters: js.UndefOr[FilterList]
+    var MaxResults: js.UndefOr[TransitGatewayMaxResults]
+    var DryRun: js.UndefOr[Boolean]
+  }
+
+  object SearchTransitGatewayRoutesRequest {
+    def apply(
+      TransitGatewayRouteTableId: js.UndefOr[String] = js.undefined,
+      Filters: js.UndefOr[FilterList] = js.undefined,
+      MaxResults: js.UndefOr[TransitGatewayMaxResults] = js.undefined,
+      DryRun: js.UndefOr[Boolean] = js.undefined): SearchTransitGatewayRoutesRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "TransitGatewayRouteTableId" -> TransitGatewayRouteTableId.map { x => x.asInstanceOf[js.Any] },
+        "Filters" -> Filters.map { x => x.asInstanceOf[js.Any] },
+        "MaxResults" -> MaxResults.map { x => x.asInstanceOf[js.Any] },
+        "DryRun" -> DryRun.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SearchTransitGatewayRoutesRequest]
+    }
+  }
+
+  @js.native
+  trait SearchTransitGatewayRoutesResult extends js.Object {
+    var Routes: js.UndefOr[TransitGatewayRouteList]
+    var AdditionalRoutesAvailable: js.UndefOr[Boolean]
+  }
+
+  object SearchTransitGatewayRoutesResult {
+    def apply(
+      Routes: js.UndefOr[TransitGatewayRouteList] = js.undefined,
+      AdditionalRoutesAvailable: js.UndefOr[Boolean] = js.undefined): SearchTransitGatewayRoutesResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Routes" -> Routes.map { x => x.asInstanceOf[js.Any] },
+        "AdditionalRoutesAvailable" -> AdditionalRoutesAvailable.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SearchTransitGatewayRoutesResult]
     }
   }
 
@@ -20739,9 +22071,6 @@ package ec2 {
     }
   }
 
-  /**
-   * <p>Contains the parameters for StartInstances.</p>
-   */
   @js.native
   trait StartInstancesRequest extends js.Object {
     var InstanceIds: js.UndefOr[InstanceIdStringList]
@@ -20763,9 +22092,6 @@ package ec2 {
     }
   }
 
-  /**
-   * <p>Contains the output of StartInstances.</p>
-   */
   @js.native
   trait StartInstancesResult extends js.Object {
     var StartingInstances: js.UndefOr[InstanceStateChangeList]
@@ -20838,12 +22164,10 @@ package ec2 {
     val values = IndexedSeq(passed, failed, `insufficient-data`, initializing)
   }
 
-  /**
-   * <p>Contains the parameters for StopInstances.</p>
-   */
   @js.native
   trait StopInstancesRequest extends js.Object {
     var InstanceIds: js.UndefOr[InstanceIdStringList]
+    var Hibernate: js.UndefOr[Boolean]
     var DryRun: js.UndefOr[Boolean]
     var Force: js.UndefOr[Boolean]
   }
@@ -20851,10 +22175,12 @@ package ec2 {
   object StopInstancesRequest {
     def apply(
       InstanceIds: js.UndefOr[InstanceIdStringList] = js.undefined,
+      Hibernate: js.UndefOr[Boolean] = js.undefined,
       DryRun: js.UndefOr[Boolean] = js.undefined,
       Force: js.UndefOr[Boolean] = js.undefined): StopInstancesRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "InstanceIds" -> InstanceIds.map { x => x.asInstanceOf[js.Any] },
+        "Hibernate" -> Hibernate.map { x => x.asInstanceOf[js.Any] },
         "DryRun" -> DryRun.map { x => x.asInstanceOf[js.Any] },
         "Force" -> Force.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
@@ -20862,9 +22188,6 @@ package ec2 {
     }
   }
 
-  /**
-   * <p>Contains the output of StopInstances.</p>
-   */
   @js.native
   trait StopInstancesResult extends js.Object {
     var StoppingInstances: js.UndefOr[InstanceStateChangeList]
@@ -20924,12 +22247,15 @@ package ec2 {
    */
   @js.native
   trait Subnet extends js.Object {
+    var SubnetArn: js.UndefOr[String]
     var CidrBlock: js.UndefOr[String]
     var AvailabilityZone: js.UndefOr[String]
+    var OwnerId: js.UndefOr[String]
     var Ipv6CidrBlockAssociationSet: js.UndefOr[SubnetIpv6CidrBlockAssociationSet]
     var Tags: js.UndefOr[TagList]
     var AssignIpv6AddressOnCreation: js.UndefOr[Boolean]
     var DefaultForAz: js.UndefOr[Boolean]
+    var AvailabilityZoneId: js.UndefOr[String]
     var AvailableIpAddressCount: js.UndefOr[Int]
     var MapPublicIpOnLaunch: js.UndefOr[Boolean]
     var State: js.UndefOr[SubnetState]
@@ -20939,24 +22265,30 @@ package ec2 {
 
   object Subnet {
     def apply(
+      SubnetArn: js.UndefOr[String] = js.undefined,
       CidrBlock: js.UndefOr[String] = js.undefined,
       AvailabilityZone: js.UndefOr[String] = js.undefined,
+      OwnerId: js.UndefOr[String] = js.undefined,
       Ipv6CidrBlockAssociationSet: js.UndefOr[SubnetIpv6CidrBlockAssociationSet] = js.undefined,
       Tags: js.UndefOr[TagList] = js.undefined,
       AssignIpv6AddressOnCreation: js.UndefOr[Boolean] = js.undefined,
       DefaultForAz: js.UndefOr[Boolean] = js.undefined,
+      AvailabilityZoneId: js.UndefOr[String] = js.undefined,
       AvailableIpAddressCount: js.UndefOr[Int] = js.undefined,
       MapPublicIpOnLaunch: js.UndefOr[Boolean] = js.undefined,
       State: js.UndefOr[SubnetState] = js.undefined,
       VpcId: js.UndefOr[String] = js.undefined,
       SubnetId: js.UndefOr[String] = js.undefined): Subnet = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "SubnetArn" -> SubnetArn.map { x => x.asInstanceOf[js.Any] },
         "CidrBlock" -> CidrBlock.map { x => x.asInstanceOf[js.Any] },
         "AvailabilityZone" -> AvailabilityZone.map { x => x.asInstanceOf[js.Any] },
+        "OwnerId" -> OwnerId.map { x => x.asInstanceOf[js.Any] },
         "Ipv6CidrBlockAssociationSet" -> Ipv6CidrBlockAssociationSet.map { x => x.asInstanceOf[js.Any] },
         "Tags" -> Tags.map { x => x.asInstanceOf[js.Any] },
         "AssignIpv6AddressOnCreation" -> AssignIpv6AddressOnCreation.map { x => x.asInstanceOf[js.Any] },
         "DefaultForAz" -> DefaultForAz.map { x => x.asInstanceOf[js.Any] },
+        "AvailabilityZoneId" -> AvailabilityZoneId.map { x => x.asInstanceOf[js.Any] },
         "AvailableIpAddressCount" -> AvailableIpAddressCount.map { x => x.asInstanceOf[js.Any] },
         "MapPublicIpOnLaunch" -> MapPublicIpOnLaunch.map { x => x.asInstanceOf[js.Any] },
         "State" -> State.map { x => x.asInstanceOf[js.Any] },
@@ -21295,9 +22627,6 @@ package ec2 {
     val values = IndexedSeq(default, dedicated, host)
   }
 
-  /**
-   * <p>Contains the parameters for TerminateInstances.</p>
-   */
   @js.native
   trait TerminateInstancesRequest extends js.Object {
     var InstanceIds: js.UndefOr[InstanceIdStringList]
@@ -21316,9 +22645,6 @@ package ec2 {
     }
   }
 
-  /**
-   * <p>Contains the output of TerminateInstances.</p>
-   */
   @js.native
   trait TerminateInstancesResult extends js.Object {
     var TerminatingInstances: js.UndefOr[InstanceStateChangeList]
@@ -21340,6 +22666,545 @@ package ec2 {
     val ALL = "ALL"
 
     val values = IndexedSeq(ACCEPT, REJECT, ALL)
+  }
+
+  /**
+   * <p>Describes a transit gateway.</p>
+   */
+  @js.native
+  trait TransitGateway extends js.Object {
+    var TransitGatewayArn: js.UndefOr[String]
+    var Description: js.UndefOr[String]
+    var TransitGatewayId: js.UndefOr[String]
+    var OwnerId: js.UndefOr[String]
+    var Tags: js.UndefOr[TagList]
+    var Options: js.UndefOr[TransitGatewayOptions]
+    var State: js.UndefOr[TransitGatewayState]
+    var CreationTime: js.UndefOr[DateTime]
+  }
+
+  object TransitGateway {
+    def apply(
+      TransitGatewayArn: js.UndefOr[String] = js.undefined,
+      Description: js.UndefOr[String] = js.undefined,
+      TransitGatewayId: js.UndefOr[String] = js.undefined,
+      OwnerId: js.UndefOr[String] = js.undefined,
+      Tags: js.UndefOr[TagList] = js.undefined,
+      Options: js.UndefOr[TransitGatewayOptions] = js.undefined,
+      State: js.UndefOr[TransitGatewayState] = js.undefined,
+      CreationTime: js.UndefOr[DateTime] = js.undefined): TransitGateway = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "TransitGatewayArn" -> TransitGatewayArn.map { x => x.asInstanceOf[js.Any] },
+        "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
+        "TransitGatewayId" -> TransitGatewayId.map { x => x.asInstanceOf[js.Any] },
+        "OwnerId" -> OwnerId.map { x => x.asInstanceOf[js.Any] },
+        "Tags" -> Tags.map { x => x.asInstanceOf[js.Any] },
+        "Options" -> Options.map { x => x.asInstanceOf[js.Any] },
+        "State" -> State.map { x => x.asInstanceOf[js.Any] },
+        "CreationTime" -> CreationTime.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TransitGateway]
+    }
+  }
+
+  /**
+   * <p>Describes an association between a resource attachment and a transit gateway route table.</p>
+   */
+  @js.native
+  trait TransitGatewayAssociation extends js.Object {
+    var ResourceId: js.UndefOr[String]
+    var ResourceType: js.UndefOr[TransitGatewayAttachmentResourceType]
+    var TransitGatewayAttachmentId: js.UndefOr[String]
+    var TransitGatewayRouteTableId: js.UndefOr[String]
+    var State: js.UndefOr[TransitGatewayAssociationState]
+  }
+
+  object TransitGatewayAssociation {
+    def apply(
+      ResourceId: js.UndefOr[String] = js.undefined,
+      ResourceType: js.UndefOr[TransitGatewayAttachmentResourceType] = js.undefined,
+      TransitGatewayAttachmentId: js.UndefOr[String] = js.undefined,
+      TransitGatewayRouteTableId: js.UndefOr[String] = js.undefined,
+      State: js.UndefOr[TransitGatewayAssociationState] = js.undefined): TransitGatewayAssociation = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ResourceId" -> ResourceId.map { x => x.asInstanceOf[js.Any] },
+        "ResourceType" -> ResourceType.map { x => x.asInstanceOf[js.Any] },
+        "TransitGatewayAttachmentId" -> TransitGatewayAttachmentId.map { x => x.asInstanceOf[js.Any] },
+        "TransitGatewayRouteTableId" -> TransitGatewayRouteTableId.map { x => x.asInstanceOf[js.Any] },
+        "State" -> State.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TransitGatewayAssociation]
+    }
+  }
+
+  object TransitGatewayAssociationStateEnum {
+    val associating = "associating"
+    val associated = "associated"
+    val disassociating = "disassociating"
+    val disassociated = "disassociated"
+
+    val values = IndexedSeq(associating, associated, disassociating, disassociated)
+  }
+
+  /**
+   * <p>Describes an attachment between a resource and a transit gateway.</p>
+   */
+  @js.native
+  trait TransitGatewayAttachment extends js.Object {
+    var ResourceId: js.UndefOr[String]
+    var TransitGatewayId: js.UndefOr[String]
+    var ResourceType: js.UndefOr[TransitGatewayAttachmentResourceType]
+    var ResourceOwnerId: js.UndefOr[String]
+    var TransitGatewayAttachmentId: js.UndefOr[String]
+    var Association: js.UndefOr[TransitGatewayAttachmentAssociation]
+    var Tags: js.UndefOr[TagList]
+    var TransitGatewayOwnerId: js.UndefOr[String]
+    var State: js.UndefOr[TransitGatewayAttachmentState]
+    var CreationTime: js.UndefOr[DateTime]
+  }
+
+  object TransitGatewayAttachment {
+    def apply(
+      ResourceId: js.UndefOr[String] = js.undefined,
+      TransitGatewayId: js.UndefOr[String] = js.undefined,
+      ResourceType: js.UndefOr[TransitGatewayAttachmentResourceType] = js.undefined,
+      ResourceOwnerId: js.UndefOr[String] = js.undefined,
+      TransitGatewayAttachmentId: js.UndefOr[String] = js.undefined,
+      Association: js.UndefOr[TransitGatewayAttachmentAssociation] = js.undefined,
+      Tags: js.UndefOr[TagList] = js.undefined,
+      TransitGatewayOwnerId: js.UndefOr[String] = js.undefined,
+      State: js.UndefOr[TransitGatewayAttachmentState] = js.undefined,
+      CreationTime: js.UndefOr[DateTime] = js.undefined): TransitGatewayAttachment = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ResourceId" -> ResourceId.map { x => x.asInstanceOf[js.Any] },
+        "TransitGatewayId" -> TransitGatewayId.map { x => x.asInstanceOf[js.Any] },
+        "ResourceType" -> ResourceType.map { x => x.asInstanceOf[js.Any] },
+        "ResourceOwnerId" -> ResourceOwnerId.map { x => x.asInstanceOf[js.Any] },
+        "TransitGatewayAttachmentId" -> TransitGatewayAttachmentId.map { x => x.asInstanceOf[js.Any] },
+        "Association" -> Association.map { x => x.asInstanceOf[js.Any] },
+        "Tags" -> Tags.map { x => x.asInstanceOf[js.Any] },
+        "TransitGatewayOwnerId" -> TransitGatewayOwnerId.map { x => x.asInstanceOf[js.Any] },
+        "State" -> State.map { x => x.asInstanceOf[js.Any] },
+        "CreationTime" -> CreationTime.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TransitGatewayAttachment]
+    }
+  }
+
+  /**
+   * <p>Describes an association.</p>
+   */
+  @js.native
+  trait TransitGatewayAttachmentAssociation extends js.Object {
+    var TransitGatewayRouteTableId: js.UndefOr[String]
+    var State: js.UndefOr[TransitGatewayAssociationState]
+  }
+
+  object TransitGatewayAttachmentAssociation {
+    def apply(
+      TransitGatewayRouteTableId: js.UndefOr[String] = js.undefined,
+      State: js.UndefOr[TransitGatewayAssociationState] = js.undefined): TransitGatewayAttachmentAssociation = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "TransitGatewayRouteTableId" -> TransitGatewayRouteTableId.map { x => x.asInstanceOf[js.Any] },
+        "State" -> State.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TransitGatewayAttachmentAssociation]
+    }
+  }
+
+  /**
+   * <p>Describes a propagation route table.</p>
+   */
+  @js.native
+  trait TransitGatewayAttachmentPropagation extends js.Object {
+    var TransitGatewayRouteTableId: js.UndefOr[String]
+    var State: js.UndefOr[TransitGatewayPropagationState]
+  }
+
+  object TransitGatewayAttachmentPropagation {
+    def apply(
+      TransitGatewayRouteTableId: js.UndefOr[String] = js.undefined,
+      State: js.UndefOr[TransitGatewayPropagationState] = js.undefined): TransitGatewayAttachmentPropagation = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "TransitGatewayRouteTableId" -> TransitGatewayRouteTableId.map { x => x.asInstanceOf[js.Any] },
+        "State" -> State.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TransitGatewayAttachmentPropagation]
+    }
+  }
+
+  object TransitGatewayAttachmentResourceTypeEnum {
+    val vpc = "vpc"
+    val vpn = "vpn"
+
+    val values = IndexedSeq(vpc, vpn)
+  }
+
+  object TransitGatewayAttachmentStateEnum {
+    val pendingAcceptance = "pendingAcceptance"
+    val rollingBack = "rollingBack"
+    val pending = "pending"
+    val available = "available"
+    val modifying = "modifying"
+    val deleting = "deleting"
+    val deleted = "deleted"
+    val failed = "failed"
+    val rejected = "rejected"
+    val rejecting = "rejecting"
+    val failing = "failing"
+
+    val values = IndexedSeq(pendingAcceptance, rollingBack, pending, available, modifying, deleting, deleted, failed, rejected, rejecting, failing)
+  }
+
+  /**
+   * <p>Describes the options for a transit gateway.</p>
+   */
+  @js.native
+  trait TransitGatewayOptions extends js.Object {
+    var DefaultRouteTablePropagation: js.UndefOr[DefaultRouteTablePropagationValue]
+    var PropagationDefaultRouteTableId: js.UndefOr[String]
+    var DefaultRouteTableAssociation: js.UndefOr[DefaultRouteTableAssociationValue]
+    var AssociationDefaultRouteTableId: js.UndefOr[String]
+    var DnsSupport: js.UndefOr[DnsSupportValue]
+    var VpnEcmpSupport: js.UndefOr[VpnEcmpSupportValue]
+    var AmazonSideAsn: js.UndefOr[Double]
+    var AutoAcceptSharedAttachments: js.UndefOr[AutoAcceptSharedAttachmentsValue]
+  }
+
+  object TransitGatewayOptions {
+    def apply(
+      DefaultRouteTablePropagation: js.UndefOr[DefaultRouteTablePropagationValue] = js.undefined,
+      PropagationDefaultRouteTableId: js.UndefOr[String] = js.undefined,
+      DefaultRouteTableAssociation: js.UndefOr[DefaultRouteTableAssociationValue] = js.undefined,
+      AssociationDefaultRouteTableId: js.UndefOr[String] = js.undefined,
+      DnsSupport: js.UndefOr[DnsSupportValue] = js.undefined,
+      VpnEcmpSupport: js.UndefOr[VpnEcmpSupportValue] = js.undefined,
+      AmazonSideAsn: js.UndefOr[Double] = js.undefined,
+      AutoAcceptSharedAttachments: js.UndefOr[AutoAcceptSharedAttachmentsValue] = js.undefined): TransitGatewayOptions = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "DefaultRouteTablePropagation" -> DefaultRouteTablePropagation.map { x => x.asInstanceOf[js.Any] },
+        "PropagationDefaultRouteTableId" -> PropagationDefaultRouteTableId.map { x => x.asInstanceOf[js.Any] },
+        "DefaultRouteTableAssociation" -> DefaultRouteTableAssociation.map { x => x.asInstanceOf[js.Any] },
+        "AssociationDefaultRouteTableId" -> AssociationDefaultRouteTableId.map { x => x.asInstanceOf[js.Any] },
+        "DnsSupport" -> DnsSupport.map { x => x.asInstanceOf[js.Any] },
+        "VpnEcmpSupport" -> VpnEcmpSupport.map { x => x.asInstanceOf[js.Any] },
+        "AmazonSideAsn" -> AmazonSideAsn.map { x => x.asInstanceOf[js.Any] },
+        "AutoAcceptSharedAttachments" -> AutoAcceptSharedAttachments.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TransitGatewayOptions]
+    }
+  }
+
+  /**
+   * <p>Describes route propagation.</p>
+   */
+  @js.native
+  trait TransitGatewayPropagation extends js.Object {
+    var ResourceId: js.UndefOr[String]
+    var ResourceType: js.UndefOr[TransitGatewayAttachmentResourceType]
+    var TransitGatewayAttachmentId: js.UndefOr[String]
+    var TransitGatewayRouteTableId: js.UndefOr[String]
+    var State: js.UndefOr[TransitGatewayPropagationState]
+  }
+
+  object TransitGatewayPropagation {
+    def apply(
+      ResourceId: js.UndefOr[String] = js.undefined,
+      ResourceType: js.UndefOr[TransitGatewayAttachmentResourceType] = js.undefined,
+      TransitGatewayAttachmentId: js.UndefOr[String] = js.undefined,
+      TransitGatewayRouteTableId: js.UndefOr[String] = js.undefined,
+      State: js.UndefOr[TransitGatewayPropagationState] = js.undefined): TransitGatewayPropagation = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ResourceId" -> ResourceId.map { x => x.asInstanceOf[js.Any] },
+        "ResourceType" -> ResourceType.map { x => x.asInstanceOf[js.Any] },
+        "TransitGatewayAttachmentId" -> TransitGatewayAttachmentId.map { x => x.asInstanceOf[js.Any] },
+        "TransitGatewayRouteTableId" -> TransitGatewayRouteTableId.map { x => x.asInstanceOf[js.Any] },
+        "State" -> State.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TransitGatewayPropagation]
+    }
+  }
+
+  object TransitGatewayPropagationStateEnum {
+    val enabling = "enabling"
+    val enabled = "enabled"
+    val disabling = "disabling"
+    val disabled = "disabled"
+
+    val values = IndexedSeq(enabling, enabled, disabling, disabled)
+  }
+
+  /**
+   * <p>Describes the options for a transit gateway.</p>
+   */
+  @js.native
+  trait TransitGatewayRequestOptions extends js.Object {
+    var DefaultRouteTablePropagation: js.UndefOr[DefaultRouteTablePropagationValue]
+    var DefaultRouteTableAssociation: js.UndefOr[DefaultRouteTableAssociationValue]
+    var DnsSupport: js.UndefOr[DnsSupportValue]
+    var VpnEcmpSupport: js.UndefOr[VpnEcmpSupportValue]
+    var AmazonSideAsn: js.UndefOr[Double]
+    var AutoAcceptSharedAttachments: js.UndefOr[AutoAcceptSharedAttachmentsValue]
+  }
+
+  object TransitGatewayRequestOptions {
+    def apply(
+      DefaultRouteTablePropagation: js.UndefOr[DefaultRouteTablePropagationValue] = js.undefined,
+      DefaultRouteTableAssociation: js.UndefOr[DefaultRouteTableAssociationValue] = js.undefined,
+      DnsSupport: js.UndefOr[DnsSupportValue] = js.undefined,
+      VpnEcmpSupport: js.UndefOr[VpnEcmpSupportValue] = js.undefined,
+      AmazonSideAsn: js.UndefOr[Double] = js.undefined,
+      AutoAcceptSharedAttachments: js.UndefOr[AutoAcceptSharedAttachmentsValue] = js.undefined): TransitGatewayRequestOptions = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "DefaultRouteTablePropagation" -> DefaultRouteTablePropagation.map { x => x.asInstanceOf[js.Any] },
+        "DefaultRouteTableAssociation" -> DefaultRouteTableAssociation.map { x => x.asInstanceOf[js.Any] },
+        "DnsSupport" -> DnsSupport.map { x => x.asInstanceOf[js.Any] },
+        "VpnEcmpSupport" -> VpnEcmpSupport.map { x => x.asInstanceOf[js.Any] },
+        "AmazonSideAsn" -> AmazonSideAsn.map { x => x.asInstanceOf[js.Any] },
+        "AutoAcceptSharedAttachments" -> AutoAcceptSharedAttachments.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TransitGatewayRequestOptions]
+    }
+  }
+
+  /**
+   * <p>Describes a route for a transit gateway route table.</p>
+   */
+  @js.native
+  trait TransitGatewayRoute extends js.Object {
+    var DestinationCidrBlock: js.UndefOr[String]
+    var TransitGatewayAttachments: js.UndefOr[TransitGatewayRouteAttachmentList]
+    var Type: js.UndefOr[TransitGatewayRouteType]
+    var State: js.UndefOr[TransitGatewayRouteState]
+  }
+
+  object TransitGatewayRoute {
+    def apply(
+      DestinationCidrBlock: js.UndefOr[String] = js.undefined,
+      TransitGatewayAttachments: js.UndefOr[TransitGatewayRouteAttachmentList] = js.undefined,
+      Type: js.UndefOr[TransitGatewayRouteType] = js.undefined,
+      State: js.UndefOr[TransitGatewayRouteState] = js.undefined): TransitGatewayRoute = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "DestinationCidrBlock" -> DestinationCidrBlock.map { x => x.asInstanceOf[js.Any] },
+        "TransitGatewayAttachments" -> TransitGatewayAttachments.map { x => x.asInstanceOf[js.Any] },
+        "Type" -> Type.map { x => x.asInstanceOf[js.Any] },
+        "State" -> State.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TransitGatewayRoute]
+    }
+  }
+
+  /**
+   * <p>Describes a route attachment.</p>
+   */
+  @js.native
+  trait TransitGatewayRouteAttachment extends js.Object {
+    var ResourceId: js.UndefOr[String]
+    var TransitGatewayAttachmentId: js.UndefOr[String]
+    var ResourceType: js.UndefOr[TransitGatewayAttachmentResourceType]
+  }
+
+  object TransitGatewayRouteAttachment {
+    def apply(
+      ResourceId: js.UndefOr[String] = js.undefined,
+      TransitGatewayAttachmentId: js.UndefOr[String] = js.undefined,
+      ResourceType: js.UndefOr[TransitGatewayAttachmentResourceType] = js.undefined): TransitGatewayRouteAttachment = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ResourceId" -> ResourceId.map { x => x.asInstanceOf[js.Any] },
+        "TransitGatewayAttachmentId" -> TransitGatewayAttachmentId.map { x => x.asInstanceOf[js.Any] },
+        "ResourceType" -> ResourceType.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TransitGatewayRouteAttachment]
+    }
+  }
+
+  object TransitGatewayRouteStateEnum {
+    val pending = "pending"
+    val active = "active"
+    val blackhole = "blackhole"
+    val deleting = "deleting"
+    val deleted = "deleted"
+
+    val values = IndexedSeq(pending, active, blackhole, deleting, deleted)
+  }
+
+  /**
+   * <p>Describes a transit gateway route table.</p>
+   */
+  @js.native
+  trait TransitGatewayRouteTable extends js.Object {
+    var DefaultAssociationRouteTable: js.UndefOr[Boolean]
+    var DefaultPropagationRouteTable: js.UndefOr[Boolean]
+    var TransitGatewayId: js.UndefOr[String]
+    var Tags: js.UndefOr[TagList]
+    var TransitGatewayRouteTableId: js.UndefOr[String]
+    var State: js.UndefOr[TransitGatewayRouteTableState]
+    var CreationTime: js.UndefOr[DateTime]
+  }
+
+  object TransitGatewayRouteTable {
+    def apply(
+      DefaultAssociationRouteTable: js.UndefOr[Boolean] = js.undefined,
+      DefaultPropagationRouteTable: js.UndefOr[Boolean] = js.undefined,
+      TransitGatewayId: js.UndefOr[String] = js.undefined,
+      Tags: js.UndefOr[TagList] = js.undefined,
+      TransitGatewayRouteTableId: js.UndefOr[String] = js.undefined,
+      State: js.UndefOr[TransitGatewayRouteTableState] = js.undefined,
+      CreationTime: js.UndefOr[DateTime] = js.undefined): TransitGatewayRouteTable = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "DefaultAssociationRouteTable" -> DefaultAssociationRouteTable.map { x => x.asInstanceOf[js.Any] },
+        "DefaultPropagationRouteTable" -> DefaultPropagationRouteTable.map { x => x.asInstanceOf[js.Any] },
+        "TransitGatewayId" -> TransitGatewayId.map { x => x.asInstanceOf[js.Any] },
+        "Tags" -> Tags.map { x => x.asInstanceOf[js.Any] },
+        "TransitGatewayRouteTableId" -> TransitGatewayRouteTableId.map { x => x.asInstanceOf[js.Any] },
+        "State" -> State.map { x => x.asInstanceOf[js.Any] },
+        "CreationTime" -> CreationTime.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TransitGatewayRouteTable]
+    }
+  }
+
+  /**
+   * <p>Describes an association between a route table and a resource attachment.</p>
+   */
+  @js.native
+  trait TransitGatewayRouteTableAssociation extends js.Object {
+    var TransitGatewayAttachmentId: js.UndefOr[String]
+    var ResourceId: js.UndefOr[String]
+    var ResourceType: js.UndefOr[TransitGatewayAttachmentResourceType]
+    var State: js.UndefOr[TransitGatewayAssociationState]
+  }
+
+  object TransitGatewayRouteTableAssociation {
+    def apply(
+      TransitGatewayAttachmentId: js.UndefOr[String] = js.undefined,
+      ResourceId: js.UndefOr[String] = js.undefined,
+      ResourceType: js.UndefOr[TransitGatewayAttachmentResourceType] = js.undefined,
+      State: js.UndefOr[TransitGatewayAssociationState] = js.undefined): TransitGatewayRouteTableAssociation = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "TransitGatewayAttachmentId" -> TransitGatewayAttachmentId.map { x => x.asInstanceOf[js.Any] },
+        "ResourceId" -> ResourceId.map { x => x.asInstanceOf[js.Any] },
+        "ResourceType" -> ResourceType.map { x => x.asInstanceOf[js.Any] },
+        "State" -> State.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TransitGatewayRouteTableAssociation]
+    }
+  }
+
+  /**
+   * <p>Describes a route table propagation.</p>
+   */
+  @js.native
+  trait TransitGatewayRouteTablePropagation extends js.Object {
+    var TransitGatewayAttachmentId: js.UndefOr[String]
+    var ResourceId: js.UndefOr[String]
+    var ResourceType: js.UndefOr[TransitGatewayAttachmentResourceType]
+    var State: js.UndefOr[TransitGatewayPropagationState]
+  }
+
+  object TransitGatewayRouteTablePropagation {
+    def apply(
+      TransitGatewayAttachmentId: js.UndefOr[String] = js.undefined,
+      ResourceId: js.UndefOr[String] = js.undefined,
+      ResourceType: js.UndefOr[TransitGatewayAttachmentResourceType] = js.undefined,
+      State: js.UndefOr[TransitGatewayPropagationState] = js.undefined): TransitGatewayRouteTablePropagation = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "TransitGatewayAttachmentId" -> TransitGatewayAttachmentId.map { x => x.asInstanceOf[js.Any] },
+        "ResourceId" -> ResourceId.map { x => x.asInstanceOf[js.Any] },
+        "ResourceType" -> ResourceType.map { x => x.asInstanceOf[js.Any] },
+        "State" -> State.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TransitGatewayRouteTablePropagation]
+    }
+  }
+
+  object TransitGatewayRouteTableStateEnum {
+    val pending = "pending"
+    val available = "available"
+    val deleting = "deleting"
+    val deleted = "deleted"
+
+    val values = IndexedSeq(pending, available, deleting, deleted)
+  }
+
+  object TransitGatewayRouteTypeEnum {
+    val static = "static"
+    val propagated = "propagated"
+
+    val values = IndexedSeq(static, propagated)
+  }
+
+  object TransitGatewayStateEnum {
+    val pending = "pending"
+    val available = "available"
+    val modifying = "modifying"
+    val deleting = "deleting"
+    val deleted = "deleted"
+
+    val values = IndexedSeq(pending, available, modifying, deleting, deleted)
+  }
+
+  /**
+   * <p>Describes a VPC attachment.</p>
+   */
+  @js.native
+  trait TransitGatewayVpcAttachment extends js.Object {
+    var TransitGatewayId: js.UndefOr[String]
+    var TransitGatewayAttachmentId: js.UndefOr[String]
+    var Tags: js.UndefOr[TagList]
+    var Options: js.UndefOr[TransitGatewayVpcAttachmentOptions]
+    var VpcOwnerId: js.UndefOr[String]
+    var SubnetIds: js.UndefOr[ValueStringList]
+    var State: js.UndefOr[TransitGatewayAttachmentState]
+    var CreationTime: js.UndefOr[DateTime]
+    var VpcId: js.UndefOr[String]
+  }
+
+  object TransitGatewayVpcAttachment {
+    def apply(
+      TransitGatewayId: js.UndefOr[String] = js.undefined,
+      TransitGatewayAttachmentId: js.UndefOr[String] = js.undefined,
+      Tags: js.UndefOr[TagList] = js.undefined,
+      Options: js.UndefOr[TransitGatewayVpcAttachmentOptions] = js.undefined,
+      VpcOwnerId: js.UndefOr[String] = js.undefined,
+      SubnetIds: js.UndefOr[ValueStringList] = js.undefined,
+      State: js.UndefOr[TransitGatewayAttachmentState] = js.undefined,
+      CreationTime: js.UndefOr[DateTime] = js.undefined,
+      VpcId: js.UndefOr[String] = js.undefined): TransitGatewayVpcAttachment = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "TransitGatewayId" -> TransitGatewayId.map { x => x.asInstanceOf[js.Any] },
+        "TransitGatewayAttachmentId" -> TransitGatewayAttachmentId.map { x => x.asInstanceOf[js.Any] },
+        "Tags" -> Tags.map { x => x.asInstanceOf[js.Any] },
+        "Options" -> Options.map { x => x.asInstanceOf[js.Any] },
+        "VpcOwnerId" -> VpcOwnerId.map { x => x.asInstanceOf[js.Any] },
+        "SubnetIds" -> SubnetIds.map { x => x.asInstanceOf[js.Any] },
+        "State" -> State.map { x => x.asInstanceOf[js.Any] },
+        "CreationTime" -> CreationTime.map { x => x.asInstanceOf[js.Any] },
+        "VpcId" -> VpcId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TransitGatewayVpcAttachment]
+    }
+  }
+
+  /**
+   * <p>Describes the VPC attachment options.</p>
+   */
+  @js.native
+  trait TransitGatewayVpcAttachmentOptions extends js.Object {
+    var DnsSupport: js.UndefOr[DnsSupportValue]
+    var Ipv6Support: js.UndefOr[Ipv6SupportValue]
+  }
+
+  object TransitGatewayVpcAttachmentOptions {
+    def apply(
+      DnsSupport: js.UndefOr[DnsSupportValue] = js.undefined,
+      Ipv6Support: js.UndefOr[Ipv6SupportValue] = js.undefined): TransitGatewayVpcAttachmentOptions = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "DnsSupport" -> DnsSupport.map { x => x.asInstanceOf[js.Any] },
+        "Ipv6Support" -> Ipv6Support.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TransitGatewayVpcAttachmentOptions]
+    }
   }
 
   @js.native
@@ -21399,9 +23264,6 @@ package ec2 {
     }
   }
 
-  /**
-   * <p>Contains the parameters for UnmonitorInstances.</p>
-   */
   @js.native
   trait UnmonitorInstancesRequest extends js.Object {
     var InstanceIds: js.UndefOr[InstanceIdStringList]
@@ -21420,9 +23282,6 @@ package ec2 {
     }
   }
 
-  /**
-   * <p>Contains the output of UnmonitorInstances.</p>
-   */
   @js.native
   trait UnmonitorInstancesResult extends js.Object {
     var InstanceMonitorings: js.UndefOr[InstanceMonitoringList]
@@ -22093,6 +23952,7 @@ package ec2 {
   trait Vpc extends js.Object {
     var DhcpOptionsId: js.UndefOr[String]
     var CidrBlock: js.UndefOr[String]
+    var OwnerId: js.UndefOr[String]
     var Ipv6CidrBlockAssociationSet: js.UndefOr[VpcIpv6CidrBlockAssociationSet]
     var Tags: js.UndefOr[TagList]
     var CidrBlockAssociationSet: js.UndefOr[VpcCidrBlockAssociationSet]
@@ -22106,6 +23966,7 @@ package ec2 {
     def apply(
       DhcpOptionsId: js.UndefOr[String] = js.undefined,
       CidrBlock: js.UndefOr[String] = js.undefined,
+      OwnerId: js.UndefOr[String] = js.undefined,
       Ipv6CidrBlockAssociationSet: js.UndefOr[VpcIpv6CidrBlockAssociationSet] = js.undefined,
       Tags: js.UndefOr[TagList] = js.undefined,
       CidrBlockAssociationSet: js.UndefOr[VpcCidrBlockAssociationSet] = js.undefined,
@@ -22116,6 +23977,7 @@ package ec2 {
       val _fields = IndexedSeq[(String, js.Any)](
         "DhcpOptionsId" -> DhcpOptionsId.map { x => x.asInstanceOf[js.Any] },
         "CidrBlock" -> CidrBlock.map { x => x.asInstanceOf[js.Any] },
+        "OwnerId" -> OwnerId.map { x => x.asInstanceOf[js.Any] },
         "Ipv6CidrBlockAssociationSet" -> Ipv6CidrBlockAssociationSet.map { x => x.asInstanceOf[js.Any] },
         "Tags" -> Tags.map { x => x.asInstanceOf[js.Any] },
         "CidrBlockAssociationSet" -> CidrBlockAssociationSet.map { x => x.asInstanceOf[js.Any] },
@@ -22499,6 +24361,7 @@ package ec2 {
   trait VpnConnection extends js.Object {
     var Category: js.UndefOr[String]
     var CustomerGatewayId: js.UndefOr[String]
+    var TransitGatewayId: js.UndefOr[String]
     var VpnConnectionId: js.UndefOr[String]
     var VgwTelemetry: js.UndefOr[VgwTelemetryList]
     var Routes: js.UndefOr[VpnStaticRouteList]
@@ -22514,6 +24377,7 @@ package ec2 {
     def apply(
       Category: js.UndefOr[String] = js.undefined,
       CustomerGatewayId: js.UndefOr[String] = js.undefined,
+      TransitGatewayId: js.UndefOr[String] = js.undefined,
       VpnConnectionId: js.UndefOr[String] = js.undefined,
       VgwTelemetry: js.UndefOr[VgwTelemetryList] = js.undefined,
       Routes: js.UndefOr[VpnStaticRouteList] = js.undefined,
@@ -22526,6 +24390,7 @@ package ec2 {
       val _fields = IndexedSeq[(String, js.Any)](
         "Category" -> Category.map { x => x.asInstanceOf[js.Any] },
         "CustomerGatewayId" -> CustomerGatewayId.map { x => x.asInstanceOf[js.Any] },
+        "TransitGatewayId" -> TransitGatewayId.map { x => x.asInstanceOf[js.Any] },
         "VpnConnectionId" -> VpnConnectionId.map { x => x.asInstanceOf[js.Any] },
         "VgwTelemetry" -> VgwTelemetry.map { x => x.asInstanceOf[js.Any] },
         "Routes" -> Routes.map { x => x.asInstanceOf[js.Any] },
@@ -22577,6 +24442,13 @@ package ec2 {
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[VpnConnectionOptionsSpecification]
     }
+  }
+
+  object VpnEcmpSupportValueEnum {
+    val enable = "enable"
+    val disable = "disable"
+
+    val values = IndexedSeq(enable, disable)
   }
 
   /**

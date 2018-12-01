@@ -9,18 +9,22 @@ import facade.amazonaws._
 package object appsync {
   type ApiKeys = js.Array[ApiKey]
   type AuthenticationType = String
+  type AuthorizationType = String
   type Blob = nodejs.buffer.Buffer | nodejs.stream.Readable | js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
   type DataSourceType = String
   type DataSources = js.Array[DataSource]
   type DefaultAction = String
-  type ErrorMessage = String
   type FieldLogLevel = String
+  type Functions = js.Array[FunctionConfiguration]
+  type FunctionsIds = js.Array[String]
   type GraphqlApis = js.Array[GraphqlApi]
   type MapOfStringToString = js.Dictionary[String]
   type MappingTemplate = String
   type MaxResults = Int
   type OutputType = String
   type PaginationToken = String
+  type RelationalDatabaseSourceType = String
+  type ResolverKind = String
   type Resolvers = js.Array[Resolver]
   type ResourceName = String
   type SchemaStatus = String
@@ -34,15 +38,18 @@ package appsync {
   class AppSync(config: AWSConfig) extends js.Object {
     def createApiKey(params: CreateApiKeyRequest): Request[CreateApiKeyResponse] = js.native
     def createDataSource(params: CreateDataSourceRequest): Request[CreateDataSourceResponse] = js.native
+    def createFunction(params: CreateFunctionRequest): Request[CreateFunctionResponse] = js.native
     def createGraphqlApi(params: CreateGraphqlApiRequest): Request[CreateGraphqlApiResponse] = js.native
     def createResolver(params: CreateResolverRequest): Request[CreateResolverResponse] = js.native
     def createType(params: CreateTypeRequest): Request[CreateTypeResponse] = js.native
     def deleteApiKey(params: DeleteApiKeyRequest): Request[DeleteApiKeyResponse] = js.native
     def deleteDataSource(params: DeleteDataSourceRequest): Request[DeleteDataSourceResponse] = js.native
+    def deleteFunction(params: DeleteFunctionRequest): Request[DeleteFunctionResponse] = js.native
     def deleteGraphqlApi(params: DeleteGraphqlApiRequest): Request[DeleteGraphqlApiResponse] = js.native
     def deleteResolver(params: DeleteResolverRequest): Request[DeleteResolverResponse] = js.native
     def deleteType(params: DeleteTypeRequest): Request[DeleteTypeResponse] = js.native
     def getDataSource(params: GetDataSourceRequest): Request[GetDataSourceResponse] = js.native
+    def getFunction(params: GetFunctionRequest): Request[GetFunctionResponse] = js.native
     def getGraphqlApi(params: GetGraphqlApiRequest): Request[GetGraphqlApiResponse] = js.native
     def getIntrospectionSchema(params: GetIntrospectionSchemaRequest): Request[GetIntrospectionSchemaResponse] = js.native
     def getResolver(params: GetResolverRequest): Request[GetResolverResponse] = js.native
@@ -50,19 +57,22 @@ package appsync {
     def getType(params: GetTypeRequest): Request[GetTypeResponse] = js.native
     def listApiKeys(params: ListApiKeysRequest): Request[ListApiKeysResponse] = js.native
     def listDataSources(params: ListDataSourcesRequest): Request[ListDataSourcesResponse] = js.native
+    def listFunctions(params: ListFunctionsRequest): Request[ListFunctionsResponse] = js.native
     def listGraphqlApis(params: ListGraphqlApisRequest): Request[ListGraphqlApisResponse] = js.native
     def listResolvers(params: ListResolversRequest): Request[ListResolversResponse] = js.native
+    def listResolversByFunction(params: ListResolversByFunctionRequest): Request[ListResolversByFunctionResponse] = js.native
     def listTypes(params: ListTypesRequest): Request[ListTypesResponse] = js.native
     def startSchemaCreation(params: StartSchemaCreationRequest): Request[StartSchemaCreationResponse] = js.native
     def updateApiKey(params: UpdateApiKeyRequest): Request[UpdateApiKeyResponse] = js.native
     def updateDataSource(params: UpdateDataSourceRequest): Request[UpdateDataSourceResponse] = js.native
+    def updateFunction(params: UpdateFunctionRequest): Request[UpdateFunctionResponse] = js.native
     def updateGraphqlApi(params: UpdateGraphqlApiRequest): Request[UpdateGraphqlApiResponse] = js.native
     def updateResolver(params: UpdateResolverRequest): Request[UpdateResolverResponse] = js.native
     def updateType(params: UpdateTypeRequest): Request[UpdateTypeResponse] = js.native
   }
 
   /**
-   * <p>Describes an API key.</p> <p>Customers invoke AWS AppSync GraphQL APIs with API keys as an identity mechanism. There are two key versions:</p> <p> <b>da1</b>: This version was introduced at launch in November 2017. These keys always expire after 7 days. Key expiration is managed by DynamoDB TTL. The keys will cease to be valid after Feb 21, 2018 and should not be used after that date.</p> <ul> <li> <p> <code>ListApiKeys</code> returns the expiration time in milliseconds.</p> </li> <li> <p> <code>CreateApiKey</code> returns the expiration time in milliseconds.</p> </li> <li> <p> <code>UpdateApiKey</code> is not available for this key version.</p> </li> <li> <p> <code>DeleteApiKey</code> deletes the item from the table.</p> </li> <li> <p>Expiration is stored in DynamoDB as milliseconds. This results in a bug where keys are not automatically deleted because DynamoDB expects the TTL to be stored in seconds. As a one-time action, we will delete these keys from the table after Feb 21, 2018.</p> </li> </ul> <p> <b>da2</b>: This version was introduced in February 2018 when AppSync added support to extend key expiration.</p> <ul> <li> <p> <code>ListApiKeys</code> returns the expiration time in seconds.</p> </li> <li> <p> <code>CreateApiKey</code> returns the expiration time in seconds and accepts a user-provided expiration time in seconds.</p> </li> <li> <p> <code>UpdateApiKey</code> returns the expiration time in seconds and accepts a user-provided expiration time in seconds. Key expiration can only be updated while the key has not expired.</p> </li> <li> <p> <code>DeleteApiKey</code> deletes the item from the table.</p> </li> <li> <p>Expiration is stored in DynamoDB as seconds.</p> </li> </ul>
+   * <p>Describes an API key.</p> <p>Customers invoke AWS AppSync GraphQL API operations with API keys as an identity mechanism. There are two key versions:</p> <p> <b>da1</b>: This version was introduced at launch in November 2017. These keys always expire after 7 days. Key expiration is managed by Amazon DynamoDB TTL. The keys ceased to be valid after February 21, 2018 and should not be used after that date.</p> <ul> <li> <p> <code>ListApiKeys</code> returns the expiration time in milliseconds.</p> </li> <li> <p> <code>CreateApiKey</code> returns the expiration time in milliseconds.</p> </li> <li> <p> <code>UpdateApiKey</code> is not available for this key version.</p> </li> <li> <p> <code>DeleteApiKey</code> deletes the item from the table.</p> </li> <li> <p>Expiration is stored in Amazon DynamoDB as milliseconds. This results in a bug where keys are not automatically deleted because DynamoDB expects the TTL to be stored in seconds. As a one-time action, we will delete these keys from the table after February 21, 2018.</p> </li> </ul> <p> <b>da2</b>: This version was introduced in February 2018 when AppSync added support to extend key expiration.</p> <ul> <li> <p> <code>ListApiKeys</code> returns the expiration time in seconds.</p> </li> <li> <p> <code>CreateApiKey</code> returns the expiration time in seconds and accepts a user-provided expiration time in seconds.</p> </li> <li> <p> <code>UpdateApiKey</code> returns the expiration time in seconds and accepts a user-provided expiration time in seconds. Key expiration can only be updated while the key has not expired.</p> </li> <li> <p> <code>DeleteApiKey</code> deletes the item from the table.</p> </li> <li> <p>Expiration is stored in Amazon DynamoDB as seconds.</p> </li> </ul>
    */
   @js.native
   trait ApiKey extends js.Object {
@@ -85,30 +95,6 @@ package appsync {
     }
   }
 
-  /**
-   * <p>The API key exceeded a limit. Try your request again.</p>
-   */
-  @js.native
-  trait ApiKeyLimitExceededExceptionException extends js.Object {
-    val message: String
-  }
-
-  /**
-   * <p>The API key expiration must be set to a value between 1 and 365 days from creation (for <code>CreateApiKey</code>) or from update (for <code>UpdateApiKey</code>).</p>
-   */
-  @js.native
-  trait ApiKeyValidityOutOfBoundsExceptionException extends js.Object {
-    val message: String
-  }
-
-  /**
-   * <p>The GraphQL API exceeded a limit. Try your request again.</p>
-   */
-  @js.native
-  trait ApiLimitExceededExceptionException extends js.Object {
-    val message: String
-  }
-
   object AuthenticationTypeEnum {
     val API_KEY = "API_KEY"
     val AWS_IAM = "AWS_IAM"
@@ -119,19 +105,51 @@ package appsync {
   }
 
   /**
-   * <p>The request is not well formed. For example, a value is invalid or a required field is missing. Check the field values, and try again. </p>
+   * <p>The authorization config in case the HTTP endpoint requires authorization.</p>
    */
   @js.native
-  trait BadRequestExceptionException extends js.Object {
-    val message: ErrorMessage
+  trait AuthorizationConfig extends js.Object {
+    var authorizationType: js.UndefOr[AuthorizationType]
+    var awsIamConfig: js.UndefOr[AwsIamConfig]
+  }
+
+  object AuthorizationConfig {
+    def apply(
+      authorizationType: js.UndefOr[AuthorizationType] = js.undefined,
+      awsIamConfig: js.UndefOr[AwsIamConfig] = js.undefined): AuthorizationConfig = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "authorizationType" -> authorizationType.map { x => x.asInstanceOf[js.Any] },
+        "awsIamConfig" -> awsIamConfig.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AuthorizationConfig]
+    }
+  }
+
+  object AuthorizationTypeEnum {
+    val AWS_IAM = "AWS_IAM"
+
+    val values = IndexedSeq(AWS_IAM)
   }
 
   /**
-   * <p>Another modification is being made. That modification must complete before you can make your change. </p>
+   * <p>The AWS IAM configuration.</p>
    */
   @js.native
-  trait ConcurrentModificationExceptionException extends js.Object {
-    val message: ErrorMessage
+  trait AwsIamConfig extends js.Object {
+    var signingRegion: js.UndefOr[String]
+    var signingServiceName: js.UndefOr[String]
+  }
+
+  object AwsIamConfig {
+    def apply(
+      signingRegion: js.UndefOr[String] = js.undefined,
+      signingServiceName: js.UndefOr[String] = js.undefined): AwsIamConfig = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "signingRegion" -> signingRegion.map { x => x.asInstanceOf[js.Any] },
+        "signingServiceName" -> signingServiceName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AwsIamConfig]
+    }
   }
 
   @js.native
@@ -176,6 +194,7 @@ package appsync {
     var elasticsearchConfig: js.UndefOr[ElasticsearchDataSourceConfig]
     var description: js.UndefOr[String]
     var serviceRoleArn: js.UndefOr[String]
+    var relationalDatabaseConfig: js.UndefOr[RelationalDatabaseDataSourceConfig]
     var apiId: js.UndefOr[String]
     var dynamodbConfig: js.UndefOr[DynamodbDataSourceConfig]
     var `type`: js.UndefOr[DataSourceType]
@@ -189,6 +208,7 @@ package appsync {
       elasticsearchConfig: js.UndefOr[ElasticsearchDataSourceConfig] = js.undefined,
       description: js.UndefOr[String] = js.undefined,
       serviceRoleArn: js.UndefOr[String] = js.undefined,
+      relationalDatabaseConfig: js.UndefOr[RelationalDatabaseDataSourceConfig] = js.undefined,
       apiId: js.UndefOr[String] = js.undefined,
       dynamodbConfig: js.UndefOr[DynamodbDataSourceConfig] = js.undefined,
       `type`: js.UndefOr[DataSourceType] = js.undefined,
@@ -199,6 +219,7 @@ package appsync {
         "elasticsearchConfig" -> elasticsearchConfig.map { x => x.asInstanceOf[js.Any] },
         "description" -> description.map { x => x.asInstanceOf[js.Any] },
         "serviceRoleArn" -> serviceRoleArn.map { x => x.asInstanceOf[js.Any] },
+        "relationalDatabaseConfig" -> relationalDatabaseConfig.map { x => x.asInstanceOf[js.Any] },
         "apiId" -> apiId.map { x => x.asInstanceOf[js.Any] },
         "dynamodbConfig" -> dynamodbConfig.map { x => x.asInstanceOf[js.Any] },
         "`type`" -> `type`.map { x => x.asInstanceOf[js.Any] },
@@ -221,6 +242,54 @@ package appsync {
         "dataSource" -> dataSource.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateDataSourceResponse]
+    }
+  }
+
+  @js.native
+  trait CreateFunctionRequest extends js.Object {
+    var name: js.UndefOr[ResourceName]
+    var responseMappingTemplate: js.UndefOr[MappingTemplate]
+    var requestMappingTemplate: js.UndefOr[MappingTemplate]
+    var description: js.UndefOr[String]
+    var functionVersion: js.UndefOr[String]
+    var dataSourceName: js.UndefOr[ResourceName]
+    var apiId: js.UndefOr[String]
+  }
+
+  object CreateFunctionRequest {
+    def apply(
+      name: js.UndefOr[ResourceName] = js.undefined,
+      responseMappingTemplate: js.UndefOr[MappingTemplate] = js.undefined,
+      requestMappingTemplate: js.UndefOr[MappingTemplate] = js.undefined,
+      description: js.UndefOr[String] = js.undefined,
+      functionVersion: js.UndefOr[String] = js.undefined,
+      dataSourceName: js.UndefOr[ResourceName] = js.undefined,
+      apiId: js.UndefOr[String] = js.undefined): CreateFunctionRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "name" -> name.map { x => x.asInstanceOf[js.Any] },
+        "responseMappingTemplate" -> responseMappingTemplate.map { x => x.asInstanceOf[js.Any] },
+        "requestMappingTemplate" -> requestMappingTemplate.map { x => x.asInstanceOf[js.Any] },
+        "description" -> description.map { x => x.asInstanceOf[js.Any] },
+        "functionVersion" -> functionVersion.map { x => x.asInstanceOf[js.Any] },
+        "dataSourceName" -> dataSourceName.map { x => x.asInstanceOf[js.Any] },
+        "apiId" -> apiId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateFunctionRequest]
+    }
+  }
+
+  @js.native
+  trait CreateFunctionResponse extends js.Object {
+    var functionConfiguration: js.UndefOr[FunctionConfiguration]
+  }
+
+  object CreateFunctionResponse {
+    def apply(
+      functionConfiguration: js.UndefOr[FunctionConfiguration] = js.undefined): CreateFunctionResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "functionConfiguration" -> functionConfiguration.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateFunctionResponse]
     }
   }
 
@@ -268,29 +337,35 @@ package appsync {
 
   @js.native
   trait CreateResolverRequest extends js.Object {
+    var pipelineConfig: js.UndefOr[PipelineConfig]
     var responseMappingTemplate: js.UndefOr[MappingTemplate]
     var requestMappingTemplate: js.UndefOr[MappingTemplate]
     var typeName: js.UndefOr[ResourceName]
     var dataSourceName: js.UndefOr[ResourceName]
     var fieldName: js.UndefOr[ResourceName]
     var apiId: js.UndefOr[String]
+    var kind: js.UndefOr[ResolverKind]
   }
 
   object CreateResolverRequest {
     def apply(
+      pipelineConfig: js.UndefOr[PipelineConfig] = js.undefined,
       responseMappingTemplate: js.UndefOr[MappingTemplate] = js.undefined,
       requestMappingTemplate: js.UndefOr[MappingTemplate] = js.undefined,
       typeName: js.UndefOr[ResourceName] = js.undefined,
       dataSourceName: js.UndefOr[ResourceName] = js.undefined,
       fieldName: js.UndefOr[ResourceName] = js.undefined,
-      apiId: js.UndefOr[String] = js.undefined): CreateResolverRequest = {
+      apiId: js.UndefOr[String] = js.undefined,
+      kind: js.UndefOr[ResolverKind] = js.undefined): CreateResolverRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "pipelineConfig" -> pipelineConfig.map { x => x.asInstanceOf[js.Any] },
         "responseMappingTemplate" -> responseMappingTemplate.map { x => x.asInstanceOf[js.Any] },
         "requestMappingTemplate" -> requestMappingTemplate.map { x => x.asInstanceOf[js.Any] },
         "typeName" -> typeName.map { x => x.asInstanceOf[js.Any] },
         "dataSourceName" -> dataSourceName.map { x => x.asInstanceOf[js.Any] },
         "fieldName" -> fieldName.map { x => x.asInstanceOf[js.Any] },
-        "apiId" -> apiId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "apiId" -> apiId.map { x => x.asInstanceOf[js.Any] },
+        "kind" -> kind.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateResolverRequest]
     }
@@ -357,6 +432,7 @@ package appsync {
     var description: js.UndefOr[String]
     var dataSourceArn: js.UndefOr[String]
     var serviceRoleArn: js.UndefOr[String]
+    var relationalDatabaseConfig: js.UndefOr[RelationalDatabaseDataSourceConfig]
     var dynamodbConfig: js.UndefOr[DynamodbDataSourceConfig]
     var `type`: js.UndefOr[DataSourceType]
     var lambdaConfig: js.UndefOr[LambdaDataSourceConfig]
@@ -370,6 +446,7 @@ package appsync {
       description: js.UndefOr[String] = js.undefined,
       dataSourceArn: js.UndefOr[String] = js.undefined,
       serviceRoleArn: js.UndefOr[String] = js.undefined,
+      relationalDatabaseConfig: js.UndefOr[RelationalDatabaseDataSourceConfig] = js.undefined,
       dynamodbConfig: js.UndefOr[DynamodbDataSourceConfig] = js.undefined,
       `type`: js.UndefOr[DataSourceType] = js.undefined,
       lambdaConfig: js.UndefOr[LambdaDataSourceConfig] = js.undefined,
@@ -380,6 +457,7 @@ package appsync {
         "description" -> description.map { x => x.asInstanceOf[js.Any] },
         "dataSourceArn" -> dataSourceArn.map { x => x.asInstanceOf[js.Any] },
         "serviceRoleArn" -> serviceRoleArn.map { x => x.asInstanceOf[js.Any] },
+        "relationalDatabaseConfig" -> relationalDatabaseConfig.map { x => x.asInstanceOf[js.Any] },
         "dynamodbConfig" -> dynamodbConfig.map { x => x.asInstanceOf[js.Any] },
         "`type`" -> `type`.map { x => x.asInstanceOf[js.Any] },
         "lambdaConfig" -> lambdaConfig.map { x => x.asInstanceOf[js.Any] },
@@ -395,8 +473,9 @@ package appsync {
     val AMAZON_ELASTICSEARCH = "AMAZON_ELASTICSEARCH"
     val NONE = "NONE"
     val HTTP = "HTTP"
+    val RELATIONAL_DATABASE = "RELATIONAL_DATABASE"
 
-    val values = IndexedSeq(AWS_LAMBDA, AMAZON_DYNAMODB, AMAZON_ELASTICSEARCH, NONE, HTTP)
+    val values = IndexedSeq(AWS_LAMBDA, AMAZON_DYNAMODB, AMAZON_ELASTICSEARCH, NONE, HTTP, RELATIONAL_DATABASE)
   }
 
   object DefaultActionEnum {
@@ -465,6 +544,37 @@ package appsync {
       val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteDataSourceResponse]
+    }
+  }
+
+  @js.native
+  trait DeleteFunctionRequest extends js.Object {
+    var apiId: js.UndefOr[String]
+    var functionId: js.UndefOr[ResourceName]
+  }
+
+  object DeleteFunctionRequest {
+    def apply(
+      apiId: js.UndefOr[String] = js.undefined,
+      functionId: js.UndefOr[ResourceName] = js.undefined): DeleteFunctionRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "apiId" -> apiId.map { x => x.asInstanceOf[js.Any] },
+        "functionId" -> functionId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteFunctionRequest]
+    }
+  }
+
+  @js.native
+  trait DeleteFunctionResponse extends js.Object {
+
+  }
+
+  object DeleteFunctionResponse {
+    def apply(): DeleteFunctionResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteFunctionResponse]
     }
   }
 
@@ -562,7 +672,7 @@ package appsync {
   }
 
   /**
-   * <p>Describes a DynamoDB data source configuration.</p>
+   * <p>Describes an Amazon DynamoDB data source configuration.</p>
    */
   @js.native
   trait DynamodbDataSourceConfig extends js.Object {
@@ -614,6 +724,45 @@ package appsync {
     val values = IndexedSeq(NONE, ERROR, ALL)
   }
 
+  /**
+   * <p>A function is a reusable entity. Multiple functions can be used to compose the resolver logic.</p>
+   */
+  @js.native
+  trait FunctionConfiguration extends js.Object {
+    var name: js.UndefOr[ResourceName]
+    var responseMappingTemplate: js.UndefOr[MappingTemplate]
+    var requestMappingTemplate: js.UndefOr[MappingTemplate]
+    var functionId: js.UndefOr[String]
+    var description: js.UndefOr[String]
+    var functionVersion: js.UndefOr[String]
+    var dataSourceName: js.UndefOr[ResourceName]
+    var functionArn: js.UndefOr[String]
+  }
+
+  object FunctionConfiguration {
+    def apply(
+      name: js.UndefOr[ResourceName] = js.undefined,
+      responseMappingTemplate: js.UndefOr[MappingTemplate] = js.undefined,
+      requestMappingTemplate: js.UndefOr[MappingTemplate] = js.undefined,
+      functionId: js.UndefOr[String] = js.undefined,
+      description: js.UndefOr[String] = js.undefined,
+      functionVersion: js.UndefOr[String] = js.undefined,
+      dataSourceName: js.UndefOr[ResourceName] = js.undefined,
+      functionArn: js.UndefOr[String] = js.undefined): FunctionConfiguration = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "name" -> name.map { x => x.asInstanceOf[js.Any] },
+        "responseMappingTemplate" -> responseMappingTemplate.map { x => x.asInstanceOf[js.Any] },
+        "requestMappingTemplate" -> requestMappingTemplate.map { x => x.asInstanceOf[js.Any] },
+        "functionId" -> functionId.map { x => x.asInstanceOf[js.Any] },
+        "description" -> description.map { x => x.asInstanceOf[js.Any] },
+        "functionVersion" -> functionVersion.map { x => x.asInstanceOf[js.Any] },
+        "dataSourceName" -> dataSourceName.map { x => x.asInstanceOf[js.Any] },
+        "functionArn" -> functionArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[FunctionConfiguration]
+    }
+  }
+
   @js.native
   trait GetDataSourceRequest extends js.Object {
     var apiId: js.UndefOr[String]
@@ -644,6 +793,39 @@ package appsync {
         "dataSource" -> dataSource.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetDataSourceResponse]
+    }
+  }
+
+  @js.native
+  trait GetFunctionRequest extends js.Object {
+    var apiId: js.UndefOr[String]
+    var functionId: js.UndefOr[ResourceName]
+  }
+
+  object GetFunctionRequest {
+    def apply(
+      apiId: js.UndefOr[String] = js.undefined,
+      functionId: js.UndefOr[ResourceName] = js.undefined): GetFunctionRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "apiId" -> apiId.map { x => x.asInstanceOf[js.Any] },
+        "functionId" -> functionId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetFunctionRequest]
+    }
+  }
+
+  @js.native
+  trait GetFunctionResponse extends js.Object {
+    var functionConfiguration: js.UndefOr[FunctionConfiguration]
+  }
+
+  object GetFunctionResponse {
+    def apply(
+      functionConfiguration: js.UndefOr[FunctionConfiguration] = js.undefined): GetFunctionResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "functionConfiguration" -> functionConfiguration.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetFunctionResponse]
     }
   }
 
@@ -816,14 +998,6 @@ package appsync {
   }
 
   /**
-   * <p>The GraphQL schema is not valid.</p>
-   */
-  @js.native
-  trait GraphQLSchemaExceptionException extends js.Object {
-    val message: ErrorMessage
-  }
-
-  /**
    * <p>Describes a GraphQL API.</p>
    */
   @js.native
@@ -863,33 +1037,28 @@ package appsync {
   }
 
   /**
-   * <p>Describes a Http data source configuration.</p>
+   * <p>Describes an HTTP data source configuration.</p>
    */
   @js.native
   trait HttpDataSourceConfig extends js.Object {
     var endpoint: js.UndefOr[String]
+    var authorizationConfig: js.UndefOr[AuthorizationConfig]
   }
 
   object HttpDataSourceConfig {
     def apply(
-      endpoint: js.UndefOr[String] = js.undefined): HttpDataSourceConfig = {
+      endpoint: js.UndefOr[String] = js.undefined,
+      authorizationConfig: js.UndefOr[AuthorizationConfig] = js.undefined): HttpDataSourceConfig = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "endpoint" -> endpoint.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "endpoint" -> endpoint.map { x => x.asInstanceOf[js.Any] },
+        "authorizationConfig" -> authorizationConfig.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[HttpDataSourceConfig]
     }
   }
 
   /**
-   * <p>An internal AWS AppSync error occurred. Try your request again.</p>
-   */
-  @js.native
-  trait InternalFailureExceptionException extends js.Object {
-    val message: String
-  }
-
-  /**
-   * <p>Describes a Lambda data source configuration.</p>
+   * <p>Describes an AWS Lambda data source configuration.</p>
    */
   @js.native
   trait LambdaDataSourceConfig extends js.Object {
@@ -904,14 +1073,6 @@ package appsync {
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[LambdaDataSourceConfig]
     }
-  }
-
-  /**
-   * <p>The request exceeded a limit. Try your request again.</p>
-   */
-  @js.native
-  trait LimitExceededExceptionException extends js.Object {
-    val message: String
   }
 
   @js.native
@@ -993,6 +1154,45 @@ package appsync {
   }
 
   @js.native
+  trait ListFunctionsRequest extends js.Object {
+    var apiId: js.UndefOr[String]
+    var nextToken: js.UndefOr[PaginationToken]
+    var maxResults: js.UndefOr[MaxResults]
+  }
+
+  object ListFunctionsRequest {
+    def apply(
+      apiId: js.UndefOr[String] = js.undefined,
+      nextToken: js.UndefOr[PaginationToken] = js.undefined,
+      maxResults: js.UndefOr[MaxResults] = js.undefined): ListFunctionsRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "apiId" -> apiId.map { x => x.asInstanceOf[js.Any] },
+        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] },
+        "maxResults" -> maxResults.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListFunctionsRequest]
+    }
+  }
+
+  @js.native
+  trait ListFunctionsResponse extends js.Object {
+    var functions: js.UndefOr[Functions]
+    var nextToken: js.UndefOr[PaginationToken]
+  }
+
+  object ListFunctionsResponse {
+    def apply(
+      functions: js.UndefOr[Functions] = js.undefined,
+      nextToken: js.UndefOr[PaginationToken] = js.undefined): ListFunctionsResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "functions" -> functions.map { x => x.asInstanceOf[js.Any] },
+        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListFunctionsResponse]
+    }
+  }
+
+  @js.native
   trait ListGraphqlApisRequest extends js.Object {
     var nextToken: js.UndefOr[PaginationToken]
     var maxResults: js.UndefOr[MaxResults]
@@ -1025,6 +1225,48 @@ package appsync {
         "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListGraphqlApisResponse]
+    }
+  }
+
+  @js.native
+  trait ListResolversByFunctionRequest extends js.Object {
+    var apiId: js.UndefOr[String]
+    var functionId: js.UndefOr[String]
+    var nextToken: js.UndefOr[PaginationToken]
+    var maxResults: js.UndefOr[MaxResults]
+  }
+
+  object ListResolversByFunctionRequest {
+    def apply(
+      apiId: js.UndefOr[String] = js.undefined,
+      functionId: js.UndefOr[String] = js.undefined,
+      nextToken: js.UndefOr[PaginationToken] = js.undefined,
+      maxResults: js.UndefOr[MaxResults] = js.undefined): ListResolversByFunctionRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "apiId" -> apiId.map { x => x.asInstanceOf[js.Any] },
+        "functionId" -> functionId.map { x => x.asInstanceOf[js.Any] },
+        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] },
+        "maxResults" -> maxResults.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListResolversByFunctionRequest]
+    }
+  }
+
+  @js.native
+  trait ListResolversByFunctionResponse extends js.Object {
+    var resolvers: js.UndefOr[Resolvers]
+    var nextToken: js.UndefOr[PaginationToken]
+  }
+
+  object ListResolversByFunctionResponse {
+    def apply(
+      resolvers: js.UndefOr[Resolvers] = js.undefined,
+      nextToken: js.UndefOr[PaginationToken] = js.undefined): ListResolversByFunctionResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "resolvers" -> resolvers.map { x => x.asInstanceOf[js.Any] },
+        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListResolversByFunctionResponse]
     }
   }
 
@@ -1134,15 +1376,7 @@ package appsync {
   }
 
   /**
-   * <p>The resource specified in the request was not found. Check the resource and try again.</p>
-   */
-  @js.native
-  trait NotFoundExceptionException extends js.Object {
-    val message: String
-  }
-
-  /**
-   * <p>Describes an Open Id Connect configuration.</p>
+   * <p>Describes an OpenID Connect configuration.</p>
    */
   @js.native
   trait OpenIDConnectConfig extends js.Object {
@@ -1176,36 +1410,124 @@ package appsync {
   }
 
   /**
+   * <p>The pipeline configuration for a resolver of kind <code>PIPELINE</code>.</p>
+   */
+  @js.native
+  trait PipelineConfig extends js.Object {
+    var functions: js.UndefOr[FunctionsIds]
+  }
+
+  object PipelineConfig {
+    def apply(
+      functions: js.UndefOr[FunctionsIds] = js.undefined): PipelineConfig = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "functions" -> functions.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PipelineConfig]
+    }
+  }
+
+  /**
+   * <p>The Amazon RDS HTTP endpoint configuration.</p>
+   */
+  @js.native
+  trait RdsHttpEndpointConfig extends js.Object {
+    var dbClusterIdentifier: js.UndefOr[String]
+    var awsRegion: js.UndefOr[String]
+    var awsSecretStoreArn: js.UndefOr[String]
+    var schema: js.UndefOr[String]
+    var databaseName: js.UndefOr[String]
+  }
+
+  object RdsHttpEndpointConfig {
+    def apply(
+      dbClusterIdentifier: js.UndefOr[String] = js.undefined,
+      awsRegion: js.UndefOr[String] = js.undefined,
+      awsSecretStoreArn: js.UndefOr[String] = js.undefined,
+      schema: js.UndefOr[String] = js.undefined,
+      databaseName: js.UndefOr[String] = js.undefined): RdsHttpEndpointConfig = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "dbClusterIdentifier" -> dbClusterIdentifier.map { x => x.asInstanceOf[js.Any] },
+        "awsRegion" -> awsRegion.map { x => x.asInstanceOf[js.Any] },
+        "awsSecretStoreArn" -> awsSecretStoreArn.map { x => x.asInstanceOf[js.Any] },
+        "schema" -> schema.map { x => x.asInstanceOf[js.Any] },
+        "databaseName" -> databaseName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RdsHttpEndpointConfig]
+    }
+  }
+
+  /**
+   * <p>Describes a relational database data source configuration.</p>
+   */
+  @js.native
+  trait RelationalDatabaseDataSourceConfig extends js.Object {
+    var relationalDatabaseSourceType: js.UndefOr[RelationalDatabaseSourceType]
+    var rdsHttpEndpointConfig: js.UndefOr[RdsHttpEndpointConfig]
+  }
+
+  object RelationalDatabaseDataSourceConfig {
+    def apply(
+      relationalDatabaseSourceType: js.UndefOr[RelationalDatabaseSourceType] = js.undefined,
+      rdsHttpEndpointConfig: js.UndefOr[RdsHttpEndpointConfig] = js.undefined): RelationalDatabaseDataSourceConfig = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "relationalDatabaseSourceType" -> relationalDatabaseSourceType.map { x => x.asInstanceOf[js.Any] },
+        "rdsHttpEndpointConfig" -> rdsHttpEndpointConfig.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RelationalDatabaseDataSourceConfig]
+    }
+  }
+
+  object RelationalDatabaseSourceTypeEnum {
+    val RDS_HTTP_ENDPOINT = "RDS_HTTP_ENDPOINT"
+
+    val values = IndexedSeq(RDS_HTTP_ENDPOINT)
+  }
+
+  /**
    * <p>Describes a resolver.</p>
    */
   @js.native
   trait Resolver extends js.Object {
+    var pipelineConfig: js.UndefOr[PipelineConfig]
     var responseMappingTemplate: js.UndefOr[MappingTemplate]
     var requestMappingTemplate: js.UndefOr[MappingTemplate]
     var typeName: js.UndefOr[ResourceName]
     var dataSourceName: js.UndefOr[ResourceName]
     var fieldName: js.UndefOr[ResourceName]
     var resolverArn: js.UndefOr[String]
+    var kind: js.UndefOr[ResolverKind]
   }
 
   object Resolver {
     def apply(
+      pipelineConfig: js.UndefOr[PipelineConfig] = js.undefined,
       responseMappingTemplate: js.UndefOr[MappingTemplate] = js.undefined,
       requestMappingTemplate: js.UndefOr[MappingTemplate] = js.undefined,
       typeName: js.UndefOr[ResourceName] = js.undefined,
       dataSourceName: js.UndefOr[ResourceName] = js.undefined,
       fieldName: js.UndefOr[ResourceName] = js.undefined,
-      resolverArn: js.UndefOr[String] = js.undefined): Resolver = {
+      resolverArn: js.UndefOr[String] = js.undefined,
+      kind: js.UndefOr[ResolverKind] = js.undefined): Resolver = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "pipelineConfig" -> pipelineConfig.map { x => x.asInstanceOf[js.Any] },
         "responseMappingTemplate" -> responseMappingTemplate.map { x => x.asInstanceOf[js.Any] },
         "requestMappingTemplate" -> requestMappingTemplate.map { x => x.asInstanceOf[js.Any] },
         "typeName" -> typeName.map { x => x.asInstanceOf[js.Any] },
         "dataSourceName" -> dataSourceName.map { x => x.asInstanceOf[js.Any] },
         "fieldName" -> fieldName.map { x => x.asInstanceOf[js.Any] },
-        "resolverArn" -> resolverArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "resolverArn" -> resolverArn.map { x => x.asInstanceOf[js.Any] },
+        "kind" -> kind.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Resolver]
     }
+  }
+
+  object ResolverKindEnum {
+    val UNIT = "UNIT"
+    val PIPELINE = "PIPELINE"
+
+    val values = IndexedSeq(UNIT, PIPELINE)
   }
 
   object SchemaStatusEnum {
@@ -1286,14 +1608,6 @@ package appsync {
     val values = IndexedSeq(SDL, JSON)
   }
 
-  /**
-   * <p>You are not authorized to perform this operation.</p>
-   */
-  @js.native
-  trait UnauthorizedExceptionException extends js.Object {
-    val message: String
-  }
-
   @js.native
   trait UpdateApiKeyRequest extends js.Object {
     var apiId: js.UndefOr[String]
@@ -1339,6 +1653,7 @@ package appsync {
     var elasticsearchConfig: js.UndefOr[ElasticsearchDataSourceConfig]
     var description: js.UndefOr[String]
     var serviceRoleArn: js.UndefOr[String]
+    var relationalDatabaseConfig: js.UndefOr[RelationalDatabaseDataSourceConfig]
     var apiId: js.UndefOr[String]
     var dynamodbConfig: js.UndefOr[DynamodbDataSourceConfig]
     var `type`: js.UndefOr[DataSourceType]
@@ -1352,6 +1667,7 @@ package appsync {
       elasticsearchConfig: js.UndefOr[ElasticsearchDataSourceConfig] = js.undefined,
       description: js.UndefOr[String] = js.undefined,
       serviceRoleArn: js.UndefOr[String] = js.undefined,
+      relationalDatabaseConfig: js.UndefOr[RelationalDatabaseDataSourceConfig] = js.undefined,
       apiId: js.UndefOr[String] = js.undefined,
       dynamodbConfig: js.UndefOr[DynamodbDataSourceConfig] = js.undefined,
       `type`: js.UndefOr[DataSourceType] = js.undefined,
@@ -1362,6 +1678,7 @@ package appsync {
         "elasticsearchConfig" -> elasticsearchConfig.map { x => x.asInstanceOf[js.Any] },
         "description" -> description.map { x => x.asInstanceOf[js.Any] },
         "serviceRoleArn" -> serviceRoleArn.map { x => x.asInstanceOf[js.Any] },
+        "relationalDatabaseConfig" -> relationalDatabaseConfig.map { x => x.asInstanceOf[js.Any] },
         "apiId" -> apiId.map { x => x.asInstanceOf[js.Any] },
         "dynamodbConfig" -> dynamodbConfig.map { x => x.asInstanceOf[js.Any] },
         "`type`" -> `type`.map { x => x.asInstanceOf[js.Any] },
@@ -1384,6 +1701,57 @@ package appsync {
         "dataSource" -> dataSource.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateDataSourceResponse]
+    }
+  }
+
+  @js.native
+  trait UpdateFunctionRequest extends js.Object {
+    var name: js.UndefOr[ResourceName]
+    var responseMappingTemplate: js.UndefOr[MappingTemplate]
+    var requestMappingTemplate: js.UndefOr[MappingTemplate]
+    var functionId: js.UndefOr[ResourceName]
+    var description: js.UndefOr[String]
+    var functionVersion: js.UndefOr[String]
+    var dataSourceName: js.UndefOr[ResourceName]
+    var apiId: js.UndefOr[String]
+  }
+
+  object UpdateFunctionRequest {
+    def apply(
+      name: js.UndefOr[ResourceName] = js.undefined,
+      responseMappingTemplate: js.UndefOr[MappingTemplate] = js.undefined,
+      requestMappingTemplate: js.UndefOr[MappingTemplate] = js.undefined,
+      functionId: js.UndefOr[ResourceName] = js.undefined,
+      description: js.UndefOr[String] = js.undefined,
+      functionVersion: js.UndefOr[String] = js.undefined,
+      dataSourceName: js.UndefOr[ResourceName] = js.undefined,
+      apiId: js.UndefOr[String] = js.undefined): UpdateFunctionRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "name" -> name.map { x => x.asInstanceOf[js.Any] },
+        "responseMappingTemplate" -> responseMappingTemplate.map { x => x.asInstanceOf[js.Any] },
+        "requestMappingTemplate" -> requestMappingTemplate.map { x => x.asInstanceOf[js.Any] },
+        "functionId" -> functionId.map { x => x.asInstanceOf[js.Any] },
+        "description" -> description.map { x => x.asInstanceOf[js.Any] },
+        "functionVersion" -> functionVersion.map { x => x.asInstanceOf[js.Any] },
+        "dataSourceName" -> dataSourceName.map { x => x.asInstanceOf[js.Any] },
+        "apiId" -> apiId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateFunctionRequest]
+    }
+  }
+
+  @js.native
+  trait UpdateFunctionResponse extends js.Object {
+    var functionConfiguration: js.UndefOr[FunctionConfiguration]
+  }
+
+  object UpdateFunctionResponse {
+    def apply(
+      functionConfiguration: js.UndefOr[FunctionConfiguration] = js.undefined): UpdateFunctionResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "functionConfiguration" -> functionConfiguration.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateFunctionResponse]
     }
   }
 
@@ -1434,29 +1802,35 @@ package appsync {
 
   @js.native
   trait UpdateResolverRequest extends js.Object {
+    var pipelineConfig: js.UndefOr[PipelineConfig]
     var responseMappingTemplate: js.UndefOr[MappingTemplate]
     var requestMappingTemplate: js.UndefOr[MappingTemplate]
     var typeName: js.UndefOr[ResourceName]
     var dataSourceName: js.UndefOr[ResourceName]
     var fieldName: js.UndefOr[ResourceName]
     var apiId: js.UndefOr[String]
+    var kind: js.UndefOr[ResolverKind]
   }
 
   object UpdateResolverRequest {
     def apply(
+      pipelineConfig: js.UndefOr[PipelineConfig] = js.undefined,
       responseMappingTemplate: js.UndefOr[MappingTemplate] = js.undefined,
       requestMappingTemplate: js.UndefOr[MappingTemplate] = js.undefined,
       typeName: js.UndefOr[ResourceName] = js.undefined,
       dataSourceName: js.UndefOr[ResourceName] = js.undefined,
       fieldName: js.UndefOr[ResourceName] = js.undefined,
-      apiId: js.UndefOr[String] = js.undefined): UpdateResolverRequest = {
+      apiId: js.UndefOr[String] = js.undefined,
+      kind: js.UndefOr[ResolverKind] = js.undefined): UpdateResolverRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "pipelineConfig" -> pipelineConfig.map { x => x.asInstanceOf[js.Any] },
         "responseMappingTemplate" -> responseMappingTemplate.map { x => x.asInstanceOf[js.Any] },
         "requestMappingTemplate" -> requestMappingTemplate.map { x => x.asInstanceOf[js.Any] },
         "typeName" -> typeName.map { x => x.asInstanceOf[js.Any] },
         "dataSourceName" -> dataSourceName.map { x => x.asInstanceOf[js.Any] },
         "fieldName" -> fieldName.map { x => x.asInstanceOf[js.Any] },
-        "apiId" -> apiId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "apiId" -> apiId.map { x => x.asInstanceOf[js.Any] },
+        "kind" -> kind.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateResolverRequest]
     }
@@ -1517,7 +1891,7 @@ package appsync {
   }
 
   /**
-   * <p>Describes an Amazon Cognito User Pool configuration.</p>
+   * <p>Describes an Amazon Cognito user pool configuration.</p>
    */
   @js.native
   trait UserPoolConfig extends js.Object {

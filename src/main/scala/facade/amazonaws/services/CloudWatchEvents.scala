@@ -21,6 +21,7 @@ package object cloudwatchevents {
   type LaunchType = String
   type LimitMax100 = Int
   type LimitMin1 = Int
+  type ManagedBy = String
   type MessageGroupId = String
   type NextToken = String
   type Principal = String
@@ -195,13 +196,16 @@ package cloudwatchevents {
   @js.native
   trait DeleteRuleRequest extends js.Object {
     var Name: js.UndefOr[RuleName]
+    var Force: js.UndefOr[Boolean]
   }
 
   object DeleteRuleRequest {
     def apply(
-      Name: js.UndefOr[RuleName] = js.undefined): DeleteRuleRequest = {
+      Name: js.UndefOr[RuleName] = js.undefined,
+      Force: js.UndefOr[Boolean] = js.undefined): DeleteRuleRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
+        "Force" -> Force.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteRuleRequest]
     }
@@ -260,6 +264,7 @@ package cloudwatchevents {
   trait DescribeRuleResponse extends js.Object {
     var Name: js.UndefOr[RuleName]
     var Description: js.UndefOr[RuleDescription]
+    var ManagedBy: js.UndefOr[ManagedBy]
     var Arn: js.UndefOr[RuleArn]
     var EventPattern: js.UndefOr[EventPattern]
     var ScheduleExpression: js.UndefOr[ScheduleExpression]
@@ -271,6 +276,7 @@ package cloudwatchevents {
     def apply(
       Name: js.UndefOr[RuleName] = js.undefined,
       Description: js.UndefOr[RuleDescription] = js.undefined,
+      ManagedBy: js.UndefOr[ManagedBy] = js.undefined,
       Arn: js.UndefOr[RuleArn] = js.undefined,
       EventPattern: js.UndefOr[EventPattern] = js.undefined,
       ScheduleExpression: js.UndefOr[ScheduleExpression] = js.undefined,
@@ -279,6 +285,7 @@ package cloudwatchevents {
       val _fields = IndexedSeq[(String, js.Any)](
         "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
         "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
+        "ManagedBy" -> ManagedBy.map { x => x.asInstanceOf[js.Any] },
         "Arn" -> Arn.map { x => x.asInstanceOf[js.Any] },
         "EventPattern" -> EventPattern.map { x => x.asInstanceOf[js.Any] },
         "ScheduleExpression" -> ScheduleExpression.map { x => x.asInstanceOf[js.Any] },
@@ -768,15 +775,18 @@ package cloudwatchevents {
   trait RemoveTargetsRequest extends js.Object {
     var Rule: js.UndefOr[RuleName]
     var Ids: js.UndefOr[TargetIdList]
+    var Force: js.UndefOr[Boolean]
   }
 
   object RemoveTargetsRequest {
     def apply(
       Rule: js.UndefOr[RuleName] = js.undefined,
-      Ids: js.UndefOr[TargetIdList] = js.undefined): RemoveTargetsRequest = {
+      Ids: js.UndefOr[TargetIdList] = js.undefined,
+      Force: js.UndefOr[Boolean] = js.undefined): RemoveTargetsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Rule" -> Rule.map { x => x.asInstanceOf[js.Any] },
-        "Ids" -> Ids.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Ids" -> Ids.map { x => x.asInstanceOf[js.Any] },
+        "Force" -> Force.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RemoveTargetsRequest]
     }
@@ -831,6 +841,7 @@ package cloudwatchevents {
   trait Rule extends js.Object {
     var Name: js.UndefOr[RuleName]
     var Description: js.UndefOr[RuleDescription]
+    var ManagedBy: js.UndefOr[ManagedBy]
     var Arn: js.UndefOr[RuleArn]
     var EventPattern: js.UndefOr[EventPattern]
     var ScheduleExpression: js.UndefOr[ScheduleExpression]
@@ -842,6 +853,7 @@ package cloudwatchevents {
     def apply(
       Name: js.UndefOr[RuleName] = js.undefined,
       Description: js.UndefOr[RuleDescription] = js.undefined,
+      ManagedBy: js.UndefOr[ManagedBy] = js.undefined,
       Arn: js.UndefOr[RuleArn] = js.undefined,
       EventPattern: js.UndefOr[EventPattern] = js.undefined,
       ScheduleExpression: js.UndefOr[ScheduleExpression] = js.undefined,
@@ -850,6 +862,7 @@ package cloudwatchevents {
       val _fields = IndexedSeq[(String, js.Any)](
         "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
         "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
+        "ManagedBy" -> ManagedBy.map { x => x.asInstanceOf[js.Any] },
         "Arn" -> Arn.map { x => x.asInstanceOf[js.Any] },
         "EventPattern" -> EventPattern.map { x => x.asInstanceOf[js.Any] },
         "ScheduleExpression" -> ScheduleExpression.map { x => x.asInstanceOf[js.Any] },

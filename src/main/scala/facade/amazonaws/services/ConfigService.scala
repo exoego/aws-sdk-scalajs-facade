@@ -58,12 +58,14 @@ package object configservice {
   type DeliveryChannelStatusList = js.Array[DeliveryChannelStatus]
   type DeliveryStatus = String
   type DescribePendingAggregationRequestsLimit = Int
+  type DiscoveredResourceIdentifierList = js.Array[AggregateResourceIdentifier]
   type EarlierTime = js.Date
   type EmptiableStringWithCharLimit256 = String
   type EvaluationResults = js.Array[EvaluationResult]
   type Evaluations = js.Array[Evaluation]
   type EventSource = String
   type GroupByAPILimit = Int
+  type GroupedResourceCountList = js.Array[GroupedResourceCount]
   type IncludeGlobalResourceTypes = Boolean
   type LaterTime = js.Date
   type Limit = Int
@@ -81,12 +83,14 @@ package object configservice {
   type RelatedEventList = js.Array[RelatedEvent]
   type RelationshipList = js.Array[Relationship]
   type RelationshipName = String
+  type ResourceCountGroupKey = String
   type ResourceCounts = js.Array[ResourceCount]
   type ResourceCreationTime = js.Date
   type ResourceDeletionTime = js.Date
   type ResourceId = String
   type ResourceIdList = js.Array[ResourceId]
   type ResourceIdentifierList = js.Array[ResourceIdentifier]
+  type ResourceIdentifiersList = js.Array[AggregateResourceIdentifier]
   type ResourceKeys = js.Array[ResourceKey]
   type ResourceName = String
   type ResourceType = String
@@ -106,6 +110,7 @@ package object configservice {
   type SupplementaryConfigurationName = String
   type SupplementaryConfigurationValue = String
   type Tags = js.Dictionary[Value]
+  type UnprocessedResourceIdentifierList = js.Array[AggregateResourceIdentifier]
   type Value = String
   type Version = String
 }
@@ -114,6 +119,7 @@ package configservice {
   @js.native
   @JSImport("aws-sdk", "ConfigService")
   class ConfigService(config: AWSConfig) extends js.Object {
+    def batchGetAggregateResourceConfig(params: BatchGetAggregateResourceConfigRequest): Request[BatchGetAggregateResourceConfigResponse] = js.native
     def batchGetResourceConfig(params: BatchGetResourceConfigRequest): Request[BatchGetResourceConfigResponse] = js.native
     def deleteAggregationAuthorization(params: DeleteAggregationAuthorizationRequest): Request[js.Object] = js.native
     def deleteConfigRule(params: DeleteConfigRuleRequest): Request[js.Object] = js.native
@@ -140,12 +146,15 @@ package configservice {
     def describeRetentionConfigurations(params: DescribeRetentionConfigurationsRequest): Request[DescribeRetentionConfigurationsResponse] = js.native
     def getAggregateComplianceDetailsByConfigRule(params: GetAggregateComplianceDetailsByConfigRuleRequest): Request[GetAggregateComplianceDetailsByConfigRuleResponse] = js.native
     def getAggregateConfigRuleComplianceSummary(params: GetAggregateConfigRuleComplianceSummaryRequest): Request[GetAggregateConfigRuleComplianceSummaryResponse] = js.native
+    def getAggregateDiscoveredResourceCounts(params: GetAggregateDiscoveredResourceCountsRequest): Request[GetAggregateDiscoveredResourceCountsResponse] = js.native
+    def getAggregateResourceConfig(params: GetAggregateResourceConfigRequest): Request[GetAggregateResourceConfigResponse] = js.native
     def getComplianceDetailsByConfigRule(params: GetComplianceDetailsByConfigRuleRequest): Request[GetComplianceDetailsByConfigRuleResponse] = js.native
     def getComplianceDetailsByResource(params: GetComplianceDetailsByResourceRequest): Request[GetComplianceDetailsByResourceResponse] = js.native
     def getComplianceSummaryByConfigRule(): Request[GetComplianceSummaryByConfigRuleResponse] = js.native
     def getComplianceSummaryByResourceType(params: GetComplianceSummaryByResourceTypeRequest): Request[GetComplianceSummaryByResourceTypeResponse] = js.native
     def getDiscoveredResourceCounts(params: GetDiscoveredResourceCountsRequest): Request[GetDiscoveredResourceCountsResponse] = js.native
     def getResourceConfigHistory(params: GetResourceConfigHistoryRequest): Request[GetResourceConfigHistoryResponse] = js.native
+    def listAggregateDiscoveredResources(params: ListAggregateDiscoveredResourcesRequest): Request[ListAggregateDiscoveredResourcesResponse] = js.native
     def listDiscoveredResources(params: ListDiscoveredResourcesRequest): Request[ListDiscoveredResourcesResponse] = js.native
     def putAggregationAuthorization(params: PutAggregationAuthorizationRequest): Request[PutAggregationAuthorizationResponse] = js.native
     def putConfigRule(params: PutConfigRuleRequest): Request[js.Object] = js.native
@@ -264,6 +273,36 @@ package configservice {
         "AccountId" -> AccountId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AggregateEvaluationResult]
+    }
+  }
+
+  /**
+   * <p>The details that identify a resource that is collected by AWS Config aggregator, including the resource type, ID, (if available) the custom resource name, the source account, and source region.</p>
+   */
+  @js.native
+  trait AggregateResourceIdentifier extends js.Object {
+    var SourceRegion: js.UndefOr[AwsRegion]
+    var ResourceName: js.UndefOr[ResourceName]
+    var ResourceId: js.UndefOr[ResourceId]
+    var SourceAccountId: js.UndefOr[AccountId]
+    var ResourceType: js.UndefOr[ResourceType]
+  }
+
+  object AggregateResourceIdentifier {
+    def apply(
+      SourceRegion: js.UndefOr[AwsRegion] = js.undefined,
+      ResourceName: js.UndefOr[ResourceName] = js.undefined,
+      ResourceId: js.UndefOr[ResourceId] = js.undefined,
+      SourceAccountId: js.UndefOr[AccountId] = js.undefined,
+      ResourceType: js.UndefOr[ResourceType] = js.undefined): AggregateResourceIdentifier = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "SourceRegion" -> SourceRegion.map { x => x.asInstanceOf[js.Any] },
+        "ResourceName" -> ResourceName.map { x => x.asInstanceOf[js.Any] },
+        "ResourceId" -> ResourceId.map { x => x.asInstanceOf[js.Any] },
+        "SourceAccountId" -> SourceAccountId.map { x => x.asInstanceOf[js.Any] },
+        "ResourceType" -> ResourceType.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AggregateResourceIdentifier]
     }
   }
 
@@ -399,6 +438,42 @@ package configservice {
         "configurationStateId" -> configurationStateId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BaseConfigurationItem]
+    }
+  }
+
+  @js.native
+  trait BatchGetAggregateResourceConfigRequest extends js.Object {
+    var ConfigurationAggregatorName: js.UndefOr[ConfigurationAggregatorName]
+    var ResourceIdentifiers: js.UndefOr[ResourceIdentifiersList]
+  }
+
+  object BatchGetAggregateResourceConfigRequest {
+    def apply(
+      ConfigurationAggregatorName: js.UndefOr[ConfigurationAggregatorName] = js.undefined,
+      ResourceIdentifiers: js.UndefOr[ResourceIdentifiersList] = js.undefined): BatchGetAggregateResourceConfigRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ConfigurationAggregatorName" -> ConfigurationAggregatorName.map { x => x.asInstanceOf[js.Any] },
+        "ResourceIdentifiers" -> ResourceIdentifiers.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BatchGetAggregateResourceConfigRequest]
+    }
+  }
+
+  @js.native
+  trait BatchGetAggregateResourceConfigResponse extends js.Object {
+    var BaseConfigurationItems: js.UndefOr[BaseConfigurationItems]
+    var UnprocessedResourceIdentifiers: js.UndefOr[UnprocessedResourceIdentifierList]
+  }
+
+  object BatchGetAggregateResourceConfigResponse {
+    def apply(
+      BaseConfigurationItems: js.UndefOr[BaseConfigurationItems] = js.undefined,
+      UnprocessedResourceIdentifiers: js.UndefOr[UnprocessedResourceIdentifierList] = js.undefined): BatchGetAggregateResourceConfigResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "BaseConfigurationItems" -> BaseConfigurationItems.map { x => x.asInstanceOf[js.Any] },
+        "UnprocessedResourceIdentifiers" -> UnprocessedResourceIdentifiers.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BatchGetAggregateResourceConfigResponse]
     }
   }
 
@@ -2019,6 +2094,90 @@ package configservice {
     }
   }
 
+  @js.native
+  trait GetAggregateDiscoveredResourceCountsRequest extends js.Object {
+    var GroupByKey: js.UndefOr[ResourceCountGroupKey]
+    var Limit: js.UndefOr[GroupByAPILimit]
+    var ConfigurationAggregatorName: js.UndefOr[ConfigurationAggregatorName]
+    var Filters: js.UndefOr[ResourceCountFilters]
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object GetAggregateDiscoveredResourceCountsRequest {
+    def apply(
+      GroupByKey: js.UndefOr[ResourceCountGroupKey] = js.undefined,
+      Limit: js.UndefOr[GroupByAPILimit] = js.undefined,
+      ConfigurationAggregatorName: js.UndefOr[ConfigurationAggregatorName] = js.undefined,
+      Filters: js.UndefOr[ResourceCountFilters] = js.undefined,
+      NextToken: js.UndefOr[NextToken] = js.undefined): GetAggregateDiscoveredResourceCountsRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "GroupByKey" -> GroupByKey.map { x => x.asInstanceOf[js.Any] },
+        "Limit" -> Limit.map { x => x.asInstanceOf[js.Any] },
+        "ConfigurationAggregatorName" -> ConfigurationAggregatorName.map { x => x.asInstanceOf[js.Any] },
+        "Filters" -> Filters.map { x => x.asInstanceOf[js.Any] },
+        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetAggregateDiscoveredResourceCountsRequest]
+    }
+  }
+
+  @js.native
+  trait GetAggregateDiscoveredResourceCountsResponse extends js.Object {
+    var TotalDiscoveredResources: js.UndefOr[Double]
+    var GroupByKey: js.UndefOr[StringWithCharLimit256]
+    var GroupedResourceCounts: js.UndefOr[GroupedResourceCountList]
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object GetAggregateDiscoveredResourceCountsResponse {
+    def apply(
+      TotalDiscoveredResources: js.UndefOr[Double] = js.undefined,
+      GroupByKey: js.UndefOr[StringWithCharLimit256] = js.undefined,
+      GroupedResourceCounts: js.UndefOr[GroupedResourceCountList] = js.undefined,
+      NextToken: js.UndefOr[NextToken] = js.undefined): GetAggregateDiscoveredResourceCountsResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "TotalDiscoveredResources" -> TotalDiscoveredResources.map { x => x.asInstanceOf[js.Any] },
+        "GroupByKey" -> GroupByKey.map { x => x.asInstanceOf[js.Any] },
+        "GroupedResourceCounts" -> GroupedResourceCounts.map { x => x.asInstanceOf[js.Any] },
+        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetAggregateDiscoveredResourceCountsResponse]
+    }
+  }
+
+  @js.native
+  trait GetAggregateResourceConfigRequest extends js.Object {
+    var ConfigurationAggregatorName: js.UndefOr[ConfigurationAggregatorName]
+    var ResourceIdentifier: js.UndefOr[AggregateResourceIdentifier]
+  }
+
+  object GetAggregateResourceConfigRequest {
+    def apply(
+      ConfigurationAggregatorName: js.UndefOr[ConfigurationAggregatorName] = js.undefined,
+      ResourceIdentifier: js.UndefOr[AggregateResourceIdentifier] = js.undefined): GetAggregateResourceConfigRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ConfigurationAggregatorName" -> ConfigurationAggregatorName.map { x => x.asInstanceOf[js.Any] },
+        "ResourceIdentifier" -> ResourceIdentifier.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetAggregateResourceConfigRequest]
+    }
+  }
+
+  @js.native
+  trait GetAggregateResourceConfigResponse extends js.Object {
+    var ConfigurationItem: js.UndefOr[ConfigurationItem]
+  }
+
+  object GetAggregateResourceConfigResponse {
+    def apply(
+      ConfigurationItem: js.UndefOr[ConfigurationItem] = js.undefined): GetAggregateResourceConfigResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ConfigurationItem" -> ConfigurationItem.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetAggregateResourceConfigResponse]
+    }
+  }
+
   /**
    * <p/>
    */
@@ -2265,6 +2424,72 @@ package configservice {
         "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetResourceConfigHistoryResponse]
+    }
+  }
+
+  /**
+   * <p>The count of resources that are grouped by the group name.</p>
+   */
+  @js.native
+  trait GroupedResourceCount extends js.Object {
+    var GroupName: js.UndefOr[StringWithCharLimit256]
+    var ResourceCount: js.UndefOr[Double]
+  }
+
+  object GroupedResourceCount {
+    def apply(
+      GroupName: js.UndefOr[StringWithCharLimit256] = js.undefined,
+      ResourceCount: js.UndefOr[Double] = js.undefined): GroupedResourceCount = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "GroupName" -> GroupName.map { x => x.asInstanceOf[js.Any] },
+        "ResourceCount" -> ResourceCount.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GroupedResourceCount]
+    }
+  }
+
+  @js.native
+  trait ListAggregateDiscoveredResourcesRequest extends js.Object {
+    var Limit: js.UndefOr[Limit]
+    var ResourceType: js.UndefOr[ResourceType]
+    var ConfigurationAggregatorName: js.UndefOr[ConfigurationAggregatorName]
+    var Filters: js.UndefOr[ResourceFilters]
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object ListAggregateDiscoveredResourcesRequest {
+    def apply(
+      Limit: js.UndefOr[Limit] = js.undefined,
+      ResourceType: js.UndefOr[ResourceType] = js.undefined,
+      ConfigurationAggregatorName: js.UndefOr[ConfigurationAggregatorName] = js.undefined,
+      Filters: js.UndefOr[ResourceFilters] = js.undefined,
+      NextToken: js.UndefOr[NextToken] = js.undefined): ListAggregateDiscoveredResourcesRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Limit" -> Limit.map { x => x.asInstanceOf[js.Any] },
+        "ResourceType" -> ResourceType.map { x => x.asInstanceOf[js.Any] },
+        "ConfigurationAggregatorName" -> ConfigurationAggregatorName.map { x => x.asInstanceOf[js.Any] },
+        "Filters" -> Filters.map { x => x.asInstanceOf[js.Any] },
+        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListAggregateDiscoveredResourcesRequest]
+    }
+  }
+
+  @js.native
+  trait ListAggregateDiscoveredResourcesResponse extends js.Object {
+    var ResourceIdentifiers: js.UndefOr[DiscoveredResourceIdentifierList]
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object ListAggregateDiscoveredResourcesResponse {
+    def apply(
+      ResourceIdentifiers: js.UndefOr[DiscoveredResourceIdentifierList] = js.undefined,
+      NextToken: js.UndefOr[NextToken] = js.undefined): ListAggregateDiscoveredResourcesResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ResourceIdentifiers" -> ResourceIdentifiers.map { x => x.asInstanceOf[js.Any] },
+        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListAggregateDiscoveredResourcesResponse]
     }
   }
 
@@ -2662,6 +2887,65 @@ package configservice {
         "count" -> count.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ResourceCount]
+    }
+  }
+
+  /**
+   * <p>Filters the resource count based on account ID, region, and resource type.</p>
+   */
+  @js.native
+  trait ResourceCountFilters extends js.Object {
+    var ResourceType: js.UndefOr[ResourceType]
+    var AccountId: js.UndefOr[AccountId]
+    var Region: js.UndefOr[AwsRegion]
+  }
+
+  object ResourceCountFilters {
+    def apply(
+      ResourceType: js.UndefOr[ResourceType] = js.undefined,
+      AccountId: js.UndefOr[AccountId] = js.undefined,
+      Region: js.UndefOr[AwsRegion] = js.undefined): ResourceCountFilters = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ResourceType" -> ResourceType.map { x => x.asInstanceOf[js.Any] },
+        "AccountId" -> AccountId.map { x => x.asInstanceOf[js.Any] },
+        "Region" -> Region.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ResourceCountFilters]
+    }
+  }
+
+  object ResourceCountGroupKeyEnum {
+    val RESOURCE_TYPE = "RESOURCE_TYPE"
+    val ACCOUNT_ID = "ACCOUNT_ID"
+    val AWS_REGION = "AWS_REGION"
+
+    val values = IndexedSeq(RESOURCE_TYPE, ACCOUNT_ID, AWS_REGION)
+  }
+
+  /**
+   * <p>Filters the results by resource account ID, region, resource ID, and resource name.</p>
+   */
+  @js.native
+  trait ResourceFilters extends js.Object {
+    var AccountId: js.UndefOr[AccountId]
+    var ResourceId: js.UndefOr[ResourceId]
+    var ResourceName: js.UndefOr[ResourceName]
+    var Region: js.UndefOr[AwsRegion]
+  }
+
+  object ResourceFilters {
+    def apply(
+      AccountId: js.UndefOr[AccountId] = js.undefined,
+      ResourceId: js.UndefOr[ResourceId] = js.undefined,
+      ResourceName: js.UndefOr[ResourceName] = js.undefined,
+      Region: js.UndefOr[AwsRegion] = js.undefined): ResourceFilters = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "AccountId" -> AccountId.map { x => x.asInstanceOf[js.Any] },
+        "ResourceId" -> ResourceId.map { x => x.asInstanceOf[js.Any] },
+        "ResourceName" -> ResourceName.map { x => x.asInstanceOf[js.Any] },
+        "Region" -> Region.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ResourceFilters]
     }
   }
 
