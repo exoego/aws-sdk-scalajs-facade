@@ -7,6 +7,9 @@ import io.scalajs.nodejs
 import facade.amazonaws._
 
 package object iot {
+  type AbortAction = String
+  type AbortCriteriaList = js.Array[AbortCriteria]
+  type AbortThresholdPercentage = Double
   type ActionList = js.Array[Action]
   type ActionType = String
   type ActiveViolations = js.Array[ActiveViolation]
@@ -53,6 +56,11 @@ package object iot {
   type BehaviorMetric = String
   type BehaviorName = String
   type Behaviors = js.Array[Behavior]
+  type BillingGroupArn = String
+  type BillingGroupDescription = String
+  type BillingGroupId = String
+  type BillingGroupName = String
+  type BillingGroupNameAndArnList = js.Array[GroupNameAndArn]
   type BucketName = String
   type CACertificateStatus = String
   type CACertificates = js.Array[CACertificate]
@@ -77,6 +85,7 @@ package object iot {
   type Comment = String
   type ComparisonOperator = String
   type CompliantChecksCount = Int
+  type ConnectivityTimestamp = Double
   type Count = Int
   type CreatedAtDate = js.Date
   type CreationDate = js.Date
@@ -95,6 +104,7 @@ package object iot {
   type DetailsValue = String
   type DisableAllLogs = Boolean
   type DurationSeconds = Int
+  type DynamicGroupStatus = String
   type DynamoKeyType = String
   type DynamoOperation = String
   type EffectivePolicies = js.Array[EffectivePolicy]
@@ -132,11 +142,13 @@ package object iot {
   type InProgressChecksCount = Int
   type InProgressThings = Int
   type InProgressTimeoutInMinutes = Double
+  type IncrementFactor = Double
   type IndexName = String
   type IndexNamesList = js.Array[IndexName]
   type IndexSchema = String
   type IndexStatus = String
   type InlineDocument = String
+  type InputName = String
   type IsAuthenticated = Boolean
   type IsDefaultVersion = Boolean
   type IsDisabled = Boolean
@@ -144,6 +156,7 @@ package object iot {
   type JobDescription = String
   type JobDocument = String
   type JobDocumentSource = String
+  type JobExecutionFailureType = String
   type JobExecutionStatus = String
   type JobExecutionSummaryForJobList = js.Array[JobExecutionSummaryForJob]
   type JobExecutionSummaryForThingList = js.Array[JobExecutionSummaryForThing]
@@ -167,11 +180,14 @@ package object iot {
   type MaximumPerMinute = Int
   type Message = String
   type MessageFormat = String
+  type MessageId = String
+  type MinimumNumberOfExecutedThings = Int
   type MissingContextValue = String
   type MissingContextValues = js.Array[MissingContextValue]
   type NextToken = String
   type NonCompliantChecksCount = Int
   type NonCompliantResourcesCount = Double
+  type NumberOfThings = Int
   type OTAUpdateArn = String
   type OTAUpdateDescription = String
   type OTAUpdateErrorMessage = String
@@ -182,6 +198,7 @@ package object iot {
   type OTAUpdatesSummary = js.Array[OTAUpdateSummary]
   type OptionalVersion = Double
   type OutgoingCertificates = js.Array[OutgoingCertificate]
+  type OverrideDynamicGroups = Boolean
   type PageSize = Int
   type Parameter = String
   type Parameters = js.Dictionary[Value]
@@ -218,6 +235,7 @@ package object iot {
   type QueuedThings = Int
   type RangeKeyField = String
   type RangeKeyValue = String
+  type ReasonCode = String
   type ReasonForNonCompliance = String
   type ReasonForNonComplianceCode = String
   type Recursive = Boolean
@@ -242,6 +260,7 @@ package object iot {
   type RoleAliasArn = String
   type RoleAliases = js.Array[RoleAlias]
   type RoleArn = String
+  type RolloutRatePerMinute = Int
   type RuleArn = String
   type RuleName = String
   type S3Bucket = String
@@ -286,6 +305,10 @@ package object iot {
   type StringMap = js.Dictionary[String]
   type SucceededThings = Int
   type TableName = String
+  type TagKey = String
+  type TagKeyList = js.Array[TagKey]
+  type TagList = js.Array[Tag]
+  type TagValue = String
   type Target = String
   type TargetArn = String
   type TargetAuditCheckNames = js.Array[AuditCheckName]
@@ -296,6 +319,7 @@ package object iot {
   type TemplateBody = String
   type ThingArn = String
   type ThingAttributeList = js.Array[ThingAttribute]
+  type ThingConnectivityIndexingMode = String
   type ThingDocumentList = js.Array[ThingDocument]
   type ThingGroupArn = String
   type ThingGroupDescription = String
@@ -344,6 +368,7 @@ package iot {
   @JSImport("aws-sdk", "Iot")
   class Iot(config: AWSConfig) extends js.Object {
     def acceptCertificateTransfer(params: AcceptCertificateTransferRequest): Request[js.Object] = js.native
+    def addThingToBillingGroup(params: AddThingToBillingGroupRequest): Request[AddThingToBillingGroupResponse] = js.native
     def addThingToThingGroup(params: AddThingToThingGroupRequest): Request[AddThingToThingGroupResponse] = js.native
     def associateTargetsWithJob(params: AssociateTargetsWithJobRequest): Request[AssociateTargetsWithJobResponse] = js.native
     def attachPolicy(params: AttachPolicyRequest): Request[js.Object] = js.native
@@ -356,7 +381,9 @@ package iot {
     def cancelJobExecution(params: CancelJobExecutionRequest): Request[js.Object] = js.native
     def clearDefaultAuthorizer(params: ClearDefaultAuthorizerRequest): Request[ClearDefaultAuthorizerResponse] = js.native
     def createAuthorizer(params: CreateAuthorizerRequest): Request[CreateAuthorizerResponse] = js.native
+    def createBillingGroup(params: CreateBillingGroupRequest): Request[CreateBillingGroupResponse] = js.native
     def createCertificateFromCsr(params: CreateCertificateFromCsrRequest): Request[CreateCertificateFromCsrResponse] = js.native
+    def createDynamicThingGroup(params: CreateDynamicThingGroupRequest): Request[CreateDynamicThingGroupResponse] = js.native
     def createJob(params: CreateJobRequest): Request[CreateJobResponse] = js.native
     def createKeysAndCertificate(params: CreateKeysAndCertificateRequest): Request[CreateKeysAndCertificateResponse] = js.native
     def createOTAUpdate(params: CreateOTAUpdateRequest): Request[CreateOTAUpdateResponse] = js.native
@@ -372,8 +399,10 @@ package iot {
     def createTopicRule(params: CreateTopicRuleRequest): Request[js.Object] = js.native
     def deleteAccountAuditConfiguration(params: DeleteAccountAuditConfigurationRequest): Request[DeleteAccountAuditConfigurationResponse] = js.native
     def deleteAuthorizer(params: DeleteAuthorizerRequest): Request[DeleteAuthorizerResponse] = js.native
+    def deleteBillingGroup(params: DeleteBillingGroupRequest): Request[DeleteBillingGroupResponse] = js.native
     def deleteCACertificate(params: DeleteCACertificateRequest): Request[DeleteCACertificateResponse] = js.native
     def deleteCertificate(params: DeleteCertificateRequest): Request[js.Object] = js.native
+    def deleteDynamicThingGroup(params: DeleteDynamicThingGroupRequest): Request[DeleteDynamicThingGroupResponse] = js.native
     def deleteJob(params: DeleteJobRequest): Request[js.Object] = js.native
     def deleteJobExecution(params: DeleteJobExecutionRequest): Request[js.Object] = js.native
     def deleteOTAUpdate(params: DeleteOTAUpdateRequest): Request[DeleteOTAUpdateResponse] = js.native
@@ -393,6 +422,7 @@ package iot {
     def describeAccountAuditConfiguration(params: DescribeAccountAuditConfigurationRequest): Request[DescribeAccountAuditConfigurationResponse] = js.native
     def describeAuditTask(params: DescribeAuditTaskRequest): Request[DescribeAuditTaskResponse] = js.native
     def describeAuthorizer(params: DescribeAuthorizerRequest): Request[DescribeAuthorizerResponse] = js.native
+    def describeBillingGroup(params: DescribeBillingGroupRequest): Request[DescribeBillingGroupResponse] = js.native
     def describeCACertificate(params: DescribeCACertificateRequest): Request[DescribeCACertificateResponse] = js.native
     def describeCertificate(params: DescribeCertificateRequest): Request[DescribeCertificateResponse] = js.native
     def describeDefaultAuthorizer(params: DescribeDefaultAuthorizerRequest): Request[DescribeDefaultAuthorizerResponse] = js.native
@@ -430,6 +460,7 @@ package iot {
     def listAuditFindings(params: ListAuditFindingsRequest): Request[ListAuditFindingsResponse] = js.native
     def listAuditTasks(params: ListAuditTasksRequest): Request[ListAuditTasksResponse] = js.native
     def listAuthorizers(params: ListAuthorizersRequest): Request[ListAuthorizersResponse] = js.native
+    def listBillingGroups(params: ListBillingGroupsRequest): Request[ListBillingGroupsResponse] = js.native
     def listCACertificates(params: ListCACertificatesRequest): Request[ListCACertificatesResponse] = js.native
     def listCertificates(params: ListCertificatesRequest): Request[ListCertificatesResponse] = js.native
     def listCertificatesByCA(params: ListCertificatesByCARequest): Request[ListCertificatesByCAResponse] = js.native
@@ -449,6 +480,7 @@ package iot {
     def listSecurityProfiles(params: ListSecurityProfilesRequest): Request[ListSecurityProfilesResponse] = js.native
     def listSecurityProfilesForTarget(params: ListSecurityProfilesForTargetRequest): Request[ListSecurityProfilesForTargetResponse] = js.native
     def listStreams(params: ListStreamsRequest): Request[ListStreamsResponse] = js.native
+    def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
     def listTargetsForPolicy(params: ListTargetsForPolicyRequest): Request[ListTargetsForPolicyResponse] = js.native
     def listTargetsForSecurityProfile(params: ListTargetsForSecurityProfileRequest): Request[ListTargetsForSecurityProfileResponse] = js.native
     def listThingGroups(params: ListThingGroupsRequest): Request[ListThingGroupsResponse] = js.native
@@ -458,6 +490,7 @@ package iot {
     def listThingRegistrationTasks(params: ListThingRegistrationTasksRequest): Request[ListThingRegistrationTasksResponse] = js.native
     def listThingTypes(params: ListThingTypesRequest): Request[ListThingTypesResponse] = js.native
     def listThings(params: ListThingsRequest): Request[ListThingsResponse] = js.native
+    def listThingsInBillingGroup(params: ListThingsInBillingGroupRequest): Request[ListThingsInBillingGroupResponse] = js.native
     def listThingsInThingGroup(params: ListThingsInThingGroupRequest): Request[ListThingsInThingGroupResponse] = js.native
     def listTopicRules(params: ListTopicRulesRequest): Request[ListTopicRulesResponse] = js.native
     def listV2LoggingLevels(params: ListV2LoggingLevelsRequest): Request[ListV2LoggingLevelsResponse] = js.native
@@ -466,6 +499,7 @@ package iot {
     def registerCertificate(params: RegisterCertificateRequest): Request[RegisterCertificateResponse] = js.native
     def registerThing(params: RegisterThingRequest): Request[RegisterThingResponse] = js.native
     def rejectCertificateTransfer(params: RejectCertificateTransferRequest): Request[js.Object] = js.native
+    def removeThingFromBillingGroup(params: RemoveThingFromBillingGroupRequest): Request[RemoveThingFromBillingGroupResponse] = js.native
     def removeThingFromThingGroup(params: RemoveThingFromThingGroupRequest): Request[RemoveThingFromThingGroupResponse] = js.native
     def replaceTopicRule(params: ReplaceTopicRuleRequest): Request[js.Object] = js.native
     def searchIndex(params: SearchIndexRequest): Request[SearchIndexResponse] = js.native
@@ -477,15 +511,20 @@ package iot {
     def startOnDemandAuditTask(params: StartOnDemandAuditTaskRequest): Request[StartOnDemandAuditTaskResponse] = js.native
     def startThingRegistrationTask(params: StartThingRegistrationTaskRequest): Request[StartThingRegistrationTaskResponse] = js.native
     def stopThingRegistrationTask(params: StopThingRegistrationTaskRequest): Request[StopThingRegistrationTaskResponse] = js.native
+    def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
     def testAuthorization(params: TestAuthorizationRequest): Request[TestAuthorizationResponse] = js.native
     def testInvokeAuthorizer(params: TestInvokeAuthorizerRequest): Request[TestInvokeAuthorizerResponse] = js.native
     def transferCertificate(params: TransferCertificateRequest): Request[TransferCertificateResponse] = js.native
+    def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
     def updateAccountAuditConfiguration(params: UpdateAccountAuditConfigurationRequest): Request[UpdateAccountAuditConfigurationResponse] = js.native
     def updateAuthorizer(params: UpdateAuthorizerRequest): Request[UpdateAuthorizerResponse] = js.native
+    def updateBillingGroup(params: UpdateBillingGroupRequest): Request[UpdateBillingGroupResponse] = js.native
     def updateCACertificate(params: UpdateCACertificateRequest): Request[js.Object] = js.native
     def updateCertificate(params: UpdateCertificateRequest): Request[js.Object] = js.native
+    def updateDynamicThingGroup(params: UpdateDynamicThingGroupRequest): Request[UpdateDynamicThingGroupResponse] = js.native
     def updateEventConfigurations(params: UpdateEventConfigurationsRequest): Request[UpdateEventConfigurationsResponse] = js.native
     def updateIndexingConfiguration(params: UpdateIndexingConfigurationRequest): Request[UpdateIndexingConfigurationResponse] = js.native
+    def updateJob(params: UpdateJobRequest): Request[js.Object] = js.native
     def updateRoleAlias(params: UpdateRoleAliasRequest): Request[UpdateRoleAliasResponse] = js.native
     def updateScheduledAudit(params: UpdateScheduledAuditRequest): Request[UpdateScheduledAuditResponse] = js.native
     def updateSecurityProfile(params: UpdateSecurityProfileRequest): Request[UpdateSecurityProfileResponse] = js.native
@@ -494,6 +533,57 @@ package iot {
     def updateThingGroup(params: UpdateThingGroupRequest): Request[UpdateThingGroupResponse] = js.native
     def updateThingGroupsForThing(params: UpdateThingGroupsForThingRequest): Request[UpdateThingGroupsForThingResponse] = js.native
     def validateSecurityProfileBehaviors(params: ValidateSecurityProfileBehaviorsRequest): Request[ValidateSecurityProfileBehaviorsResponse] = js.native
+  }
+
+  object AbortActionEnum {
+    val CANCEL = "CANCEL"
+
+    val values = IndexedSeq(CANCEL)
+  }
+
+  /**
+   * <p>Details of abort criteria to abort the job.</p>
+   */
+  @js.native
+  trait AbortConfig extends js.Object {
+    var criteriaList: js.UndefOr[AbortCriteriaList]
+  }
+
+  object AbortConfig {
+    def apply(
+      criteriaList: js.UndefOr[AbortCriteriaList] = js.undefined): AbortConfig = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "criteriaList" -> criteriaList.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AbortConfig]
+    }
+  }
+
+  /**
+   * <p>Details of abort criteria to define rules to abort the job.</p>
+   */
+  @js.native
+  trait AbortCriteria extends js.Object {
+    var failureType: js.UndefOr[JobExecutionFailureType]
+    var action: js.UndefOr[AbortAction]
+    var thresholdPercentage: js.UndefOr[AbortThresholdPercentage]
+    var minNumberOfExecutedThings: js.UndefOr[MinimumNumberOfExecutedThings]
+  }
+
+  object AbortCriteria {
+    def apply(
+      failureType: js.UndefOr[JobExecutionFailureType] = js.undefined,
+      action: js.UndefOr[AbortAction] = js.undefined,
+      thresholdPercentage: js.UndefOr[AbortThresholdPercentage] = js.undefined,
+      minNumberOfExecutedThings: js.UndefOr[MinimumNumberOfExecutedThings] = js.undefined): AbortCriteria = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "failureType" -> failureType.map { x => x.asInstanceOf[js.Any] },
+        "action" -> action.map { x => x.asInstanceOf[js.Any] },
+        "thresholdPercentage" -> thresholdPercentage.map { x => x.asInstanceOf[js.Any] },
+        "minNumberOfExecutedThings" -> minNumberOfExecutedThings.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AbortCriteria]
+    }
   }
 
   /**
@@ -523,6 +613,7 @@ package iot {
   @js.native
   trait Action extends js.Object {
     var sns: js.UndefOr[SnsAction]
+    var iotEvents: js.UndefOr[IotEventsAction]
     var s3: js.UndefOr[S3Action]
     var cloudwatchAlarm: js.UndefOr[CloudwatchAlarmAction]
     var dynamoDBv2: js.UndefOr[DynamoDBv2Action]
@@ -542,6 +633,7 @@ package iot {
   object Action {
     def apply(
       sns: js.UndefOr[SnsAction] = js.undefined,
+      iotEvents: js.UndefOr[IotEventsAction] = js.undefined,
       s3: js.UndefOr[S3Action] = js.undefined,
       cloudwatchAlarm: js.UndefOr[CloudwatchAlarmAction] = js.undefined,
       dynamoDBv2: js.UndefOr[DynamoDBv2Action] = js.undefined,
@@ -558,6 +650,7 @@ package iot {
       stepFunctions: js.UndefOr[StepFunctionsAction] = js.undefined): Action = {
       val _fields = IndexedSeq[(String, js.Any)](
         "sns" -> sns.map { x => x.asInstanceOf[js.Any] },
+        "iotEvents" -> iotEvents.map { x => x.asInstanceOf[js.Any] },
         "s3" -> s3.map { x => x.asInstanceOf[js.Any] },
         "cloudwatchAlarm" -> cloudwatchAlarm.map { x => x.asInstanceOf[js.Any] },
         "dynamoDBv2" -> dynamoDBv2.map { x => x.asInstanceOf[js.Any] },
@@ -623,24 +716,64 @@ package iot {
   }
 
   @js.native
-  trait AddThingToThingGroupRequest extends js.Object {
-    var thingGroupName: js.UndefOr[ThingGroupName]
-    var thingGroupArn: js.UndefOr[ThingGroupArn]
+  trait AddThingToBillingGroupRequest extends js.Object {
+    var billingGroupName: js.UndefOr[BillingGroupName]
+    var billingGroupArn: js.UndefOr[BillingGroupArn]
     var thingName: js.UndefOr[ThingName]
     var thingArn: js.UndefOr[ThingArn]
+  }
+
+  object AddThingToBillingGroupRequest {
+    def apply(
+      billingGroupName: js.UndefOr[BillingGroupName] = js.undefined,
+      billingGroupArn: js.UndefOr[BillingGroupArn] = js.undefined,
+      thingName: js.UndefOr[ThingName] = js.undefined,
+      thingArn: js.UndefOr[ThingArn] = js.undefined): AddThingToBillingGroupRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "billingGroupName" -> billingGroupName.map { x => x.asInstanceOf[js.Any] },
+        "billingGroupArn" -> billingGroupArn.map { x => x.asInstanceOf[js.Any] },
+        "thingName" -> thingName.map { x => x.asInstanceOf[js.Any] },
+        "thingArn" -> thingArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AddThingToBillingGroupRequest]
+    }
+  }
+
+  @js.native
+  trait AddThingToBillingGroupResponse extends js.Object {
+
+  }
+
+  object AddThingToBillingGroupResponse {
+    def apply(): AddThingToBillingGroupResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AddThingToBillingGroupResponse]
+    }
+  }
+
+  @js.native
+  trait AddThingToThingGroupRequest extends js.Object {
+    var thingGroupName: js.UndefOr[ThingGroupName]
+    var thingName: js.UndefOr[ThingName]
+    var thingArn: js.UndefOr[ThingArn]
+    var thingGroupArn: js.UndefOr[ThingGroupArn]
+    var overrideDynamicGroups: js.UndefOr[OverrideDynamicGroups]
   }
 
   object AddThingToThingGroupRequest {
     def apply(
       thingGroupName: js.UndefOr[ThingGroupName] = js.undefined,
-      thingGroupArn: js.UndefOr[ThingGroupArn] = js.undefined,
       thingName: js.UndefOr[ThingName] = js.undefined,
-      thingArn: js.UndefOr[ThingArn] = js.undefined): AddThingToThingGroupRequest = {
+      thingArn: js.UndefOr[ThingArn] = js.undefined,
+      thingGroupArn: js.UndefOr[ThingGroupArn] = js.undefined,
+      overrideDynamicGroups: js.UndefOr[OverrideDynamicGroups] = js.undefined): AddThingToThingGroupRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "thingGroupName" -> thingGroupName.map { x => x.asInstanceOf[js.Any] },
-        "thingGroupArn" -> thingGroupArn.map { x => x.asInstanceOf[js.Any] },
         "thingName" -> thingName.map { x => x.asInstanceOf[js.Any] },
-        "thingArn" -> thingArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "thingArn" -> thingArn.map { x => x.asInstanceOf[js.Any] },
+        "thingGroupArn" -> thingGroupArn.map { x => x.asInstanceOf[js.Any] },
+        "overrideDynamicGroups" -> overrideDynamicGroups.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AddThingToThingGroupRequest]
     }
@@ -1269,6 +1402,42 @@ package iot {
   }
 
   /**
+   * <p>Additional information about the billing group.</p>
+   */
+  @js.native
+  trait BillingGroupMetadata extends js.Object {
+    var creationDate: js.UndefOr[CreationDate]
+  }
+
+  object BillingGroupMetadata {
+    def apply(
+      creationDate: js.UndefOr[CreationDate] = js.undefined): BillingGroupMetadata = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "creationDate" -> creationDate.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BillingGroupMetadata]
+    }
+  }
+
+  /**
+   * <p>The properties of a billing group.</p>
+   */
+  @js.native
+  trait BillingGroupProperties extends js.Object {
+    var billingGroupDescription: js.UndefOr[BillingGroupDescription]
+  }
+
+  object BillingGroupProperties {
+    def apply(
+      billingGroupDescription: js.UndefOr[BillingGroupDescription] = js.undefined): BillingGroupProperties = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "billingGroupDescription" -> billingGroupDescription.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BillingGroupProperties]
+    }
+  }
+
+  /**
    * <p>A CA certificate.</p>
    */
   @js.native
@@ -1426,6 +1595,7 @@ package iot {
   @js.native
   trait CancelJobRequest extends js.Object {
     var jobId: js.UndefOr[JobId]
+    var reasonCode: js.UndefOr[ReasonCode]
     var comment: js.UndefOr[Comment]
     var force: js.UndefOr[ForceFlag]
   }
@@ -1433,10 +1603,12 @@ package iot {
   object CancelJobRequest {
     def apply(
       jobId: js.UndefOr[JobId] = js.undefined,
+      reasonCode: js.UndefOr[ReasonCode] = js.undefined,
       comment: js.UndefOr[Comment] = js.undefined,
       force: js.UndefOr[ForceFlag] = js.undefined): CancelJobRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "jobId" -> jobId.map { x => x.asInstanceOf[js.Any] },
+        "reasonCode" -> reasonCode.map { x => x.asInstanceOf[js.Any] },
         "comment" -> comment.map { x => x.asInstanceOf[js.Any] },
         "force" -> force.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
@@ -1816,6 +1988,48 @@ package iot {
     }
   }
 
+  @js.native
+  trait CreateBillingGroupRequest extends js.Object {
+    var billingGroupName: js.UndefOr[BillingGroupName]
+    var billingGroupProperties: js.UndefOr[BillingGroupProperties]
+    var tags: js.UndefOr[TagList]
+  }
+
+  object CreateBillingGroupRequest {
+    def apply(
+      billingGroupName: js.UndefOr[BillingGroupName] = js.undefined,
+      billingGroupProperties: js.UndefOr[BillingGroupProperties] = js.undefined,
+      tags: js.UndefOr[TagList] = js.undefined): CreateBillingGroupRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "billingGroupName" -> billingGroupName.map { x => x.asInstanceOf[js.Any] },
+        "billingGroupProperties" -> billingGroupProperties.map { x => x.asInstanceOf[js.Any] },
+        "tags" -> tags.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateBillingGroupRequest]
+    }
+  }
+
+  @js.native
+  trait CreateBillingGroupResponse extends js.Object {
+    var billingGroupName: js.UndefOr[BillingGroupName]
+    var billingGroupArn: js.UndefOr[BillingGroupArn]
+    var billingGroupId: js.UndefOr[BillingGroupId]
+  }
+
+  object CreateBillingGroupResponse {
+    def apply(
+      billingGroupName: js.UndefOr[BillingGroupName] = js.undefined,
+      billingGroupArn: js.UndefOr[BillingGroupArn] = js.undefined,
+      billingGroupId: js.UndefOr[BillingGroupId] = js.undefined): CreateBillingGroupResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "billingGroupName" -> billingGroupName.map { x => x.asInstanceOf[js.Any] },
+        "billingGroupArn" -> billingGroupArn.map { x => x.asInstanceOf[js.Any] },
+        "billingGroupId" -> billingGroupId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateBillingGroupResponse]
+    }
+  }
+
   /**
    * <p>The input for the CreateCertificateFromCsr operation.</p>
    */
@@ -1862,13 +2076,75 @@ package iot {
   }
 
   @js.native
+  trait CreateDynamicThingGroupRequest extends js.Object {
+    var thingGroupName: js.UndefOr[ThingGroupName]
+    var tags: js.UndefOr[TagList]
+    var queryString: js.UndefOr[QueryString]
+    var indexName: js.UndefOr[IndexName]
+    var thingGroupProperties: js.UndefOr[ThingGroupProperties]
+    var queryVersion: js.UndefOr[QueryVersion]
+  }
+
+  object CreateDynamicThingGroupRequest {
+    def apply(
+      thingGroupName: js.UndefOr[ThingGroupName] = js.undefined,
+      tags: js.UndefOr[TagList] = js.undefined,
+      queryString: js.UndefOr[QueryString] = js.undefined,
+      indexName: js.UndefOr[IndexName] = js.undefined,
+      thingGroupProperties: js.UndefOr[ThingGroupProperties] = js.undefined,
+      queryVersion: js.UndefOr[QueryVersion] = js.undefined): CreateDynamicThingGroupRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "thingGroupName" -> thingGroupName.map { x => x.asInstanceOf[js.Any] },
+        "tags" -> tags.map { x => x.asInstanceOf[js.Any] },
+        "queryString" -> queryString.map { x => x.asInstanceOf[js.Any] },
+        "indexName" -> indexName.map { x => x.asInstanceOf[js.Any] },
+        "thingGroupProperties" -> thingGroupProperties.map { x => x.asInstanceOf[js.Any] },
+        "queryVersion" -> queryVersion.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateDynamicThingGroupRequest]
+    }
+  }
+
+  @js.native
+  trait CreateDynamicThingGroupResponse extends js.Object {
+    var thingGroupName: js.UndefOr[ThingGroupName]
+    var queryString: js.UndefOr[QueryString]
+    var thingGroupId: js.UndefOr[ThingGroupId]
+    var indexName: js.UndefOr[IndexName]
+    var thingGroupArn: js.UndefOr[ThingGroupArn]
+    var queryVersion: js.UndefOr[QueryVersion]
+  }
+
+  object CreateDynamicThingGroupResponse {
+    def apply(
+      thingGroupName: js.UndefOr[ThingGroupName] = js.undefined,
+      queryString: js.UndefOr[QueryString] = js.undefined,
+      thingGroupId: js.UndefOr[ThingGroupId] = js.undefined,
+      indexName: js.UndefOr[IndexName] = js.undefined,
+      thingGroupArn: js.UndefOr[ThingGroupArn] = js.undefined,
+      queryVersion: js.UndefOr[QueryVersion] = js.undefined): CreateDynamicThingGroupResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "thingGroupName" -> thingGroupName.map { x => x.asInstanceOf[js.Any] },
+        "queryString" -> queryString.map { x => x.asInstanceOf[js.Any] },
+        "thingGroupId" -> thingGroupId.map { x => x.asInstanceOf[js.Any] },
+        "indexName" -> indexName.map { x => x.asInstanceOf[js.Any] },
+        "thingGroupArn" -> thingGroupArn.map { x => x.asInstanceOf[js.Any] },
+        "queryVersion" -> queryVersion.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateDynamicThingGroupResponse]
+    }
+  }
+
+  @js.native
   trait CreateJobRequest extends js.Object {
     var targets: js.UndefOr[JobTargets]
     var jobExecutionsRolloutConfig: js.UndefOr[JobExecutionsRolloutConfig]
     var description: js.UndefOr[JobDescription]
     var document: js.UndefOr[JobDocument]
+    var tags: js.UndefOr[TagList]
     var presignedUrlConfig: js.UndefOr[PresignedUrlConfig]
     var jobId: js.UndefOr[JobId]
+    var abortConfig: js.UndefOr[AbortConfig]
     var targetSelection: js.UndefOr[TargetSelection]
     var timeoutConfig: js.UndefOr[TimeoutConfig]
     var documentSource: js.UndefOr[JobDocumentSource]
@@ -1880,8 +2156,10 @@ package iot {
       jobExecutionsRolloutConfig: js.UndefOr[JobExecutionsRolloutConfig] = js.undefined,
       description: js.UndefOr[JobDescription] = js.undefined,
       document: js.UndefOr[JobDocument] = js.undefined,
+      tags: js.UndefOr[TagList] = js.undefined,
       presignedUrlConfig: js.UndefOr[PresignedUrlConfig] = js.undefined,
       jobId: js.UndefOr[JobId] = js.undefined,
+      abortConfig: js.UndefOr[AbortConfig] = js.undefined,
       targetSelection: js.UndefOr[TargetSelection] = js.undefined,
       timeoutConfig: js.UndefOr[TimeoutConfig] = js.undefined,
       documentSource: js.UndefOr[JobDocumentSource] = js.undefined): CreateJobRequest = {
@@ -1890,8 +2168,10 @@ package iot {
         "jobExecutionsRolloutConfig" -> jobExecutionsRolloutConfig.map { x => x.asInstanceOf[js.Any] },
         "description" -> description.map { x => x.asInstanceOf[js.Any] },
         "document" -> document.map { x => x.asInstanceOf[js.Any] },
+        "tags" -> tags.map { x => x.asInstanceOf[js.Any] },
         "presignedUrlConfig" -> presignedUrlConfig.map { x => x.asInstanceOf[js.Any] },
         "jobId" -> jobId.map { x => x.asInstanceOf[js.Any] },
+        "abortConfig" -> abortConfig.map { x => x.asInstanceOf[js.Any] },
         "targetSelection" -> targetSelection.map { x => x.asInstanceOf[js.Any] },
         "timeoutConfig" -> timeoutConfig.map { x => x.asInstanceOf[js.Any] },
         "documentSource" -> documentSource.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
@@ -2211,22 +2491,25 @@ package iot {
 
   @js.native
   trait CreateSecurityProfileRequest extends js.Object {
+    var tags: js.UndefOr[TagList]
+    var behaviors: js.UndefOr[Behaviors]
     var securityProfileName: js.UndefOr[SecurityProfileName]
     var securityProfileDescription: js.UndefOr[SecurityProfileDescription]
-    var behaviors: js.UndefOr[Behaviors]
     var alertTargets: js.UndefOr[AlertTargets]
   }
 
   object CreateSecurityProfileRequest {
     def apply(
+      tags: js.UndefOr[TagList] = js.undefined,
+      behaviors: js.UndefOr[Behaviors] = js.undefined,
       securityProfileName: js.UndefOr[SecurityProfileName] = js.undefined,
       securityProfileDescription: js.UndefOr[SecurityProfileDescription] = js.undefined,
-      behaviors: js.UndefOr[Behaviors] = js.undefined,
       alertTargets: js.UndefOr[AlertTargets] = js.undefined): CreateSecurityProfileRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "tags" -> tags.map { x => x.asInstanceOf[js.Any] },
+        "behaviors" -> behaviors.map { x => x.asInstanceOf[js.Any] },
         "securityProfileName" -> securityProfileName.map { x => x.asInstanceOf[js.Any] },
         "securityProfileDescription" -> securityProfileDescription.map { x => x.asInstanceOf[js.Any] },
-        "behaviors" -> behaviors.map { x => x.asInstanceOf[js.Any] },
         "alertTargets" -> alertTargets.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateSecurityProfileRequest]
@@ -2304,17 +2587,20 @@ package iot {
     var thingGroupName: js.UndefOr[ThingGroupName]
     var parentGroupName: js.UndefOr[ThingGroupName]
     var thingGroupProperties: js.UndefOr[ThingGroupProperties]
+    var tags: js.UndefOr[TagList]
   }
 
   object CreateThingGroupRequest {
     def apply(
       thingGroupName: js.UndefOr[ThingGroupName] = js.undefined,
       parentGroupName: js.UndefOr[ThingGroupName] = js.undefined,
-      thingGroupProperties: js.UndefOr[ThingGroupProperties] = js.undefined): CreateThingGroupRequest = {
+      thingGroupProperties: js.UndefOr[ThingGroupProperties] = js.undefined,
+      tags: js.UndefOr[TagList] = js.undefined): CreateThingGroupRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "thingGroupName" -> thingGroupName.map { x => x.asInstanceOf[js.Any] },
         "parentGroupName" -> parentGroupName.map { x => x.asInstanceOf[js.Any] },
-        "thingGroupProperties" -> thingGroupProperties.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "thingGroupProperties" -> thingGroupProperties.map { x => x.asInstanceOf[js.Any] },
+        "tags" -> tags.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateThingGroupRequest]
     }
@@ -2349,17 +2635,20 @@ package iot {
     var thingName: js.UndefOr[ThingName]
     var thingTypeName: js.UndefOr[ThingTypeName]
     var attributePayload: js.UndefOr[AttributePayload]
+    var billingGroupName: js.UndefOr[BillingGroupName]
   }
 
   object CreateThingRequest {
     def apply(
       thingName: js.UndefOr[ThingName] = js.undefined,
       thingTypeName: js.UndefOr[ThingTypeName] = js.undefined,
-      attributePayload: js.UndefOr[AttributePayload] = js.undefined): CreateThingRequest = {
+      attributePayload: js.UndefOr[AttributePayload] = js.undefined,
+      billingGroupName: js.UndefOr[BillingGroupName] = js.undefined): CreateThingRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "thingName" -> thingName.map { x => x.asInstanceOf[js.Any] },
         "thingTypeName" -> thingTypeName.map { x => x.asInstanceOf[js.Any] },
-        "attributePayload" -> attributePayload.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "attributePayload" -> attributePayload.map { x => x.asInstanceOf[js.Any] },
+        "billingGroupName" -> billingGroupName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateThingRequest]
     }
@@ -2396,15 +2685,18 @@ package iot {
   trait CreateThingTypeRequest extends js.Object {
     var thingTypeName: js.UndefOr[ThingTypeName]
     var thingTypeProperties: js.UndefOr[ThingTypeProperties]
+    var tags: js.UndefOr[TagList]
   }
 
   object CreateThingTypeRequest {
     def apply(
       thingTypeName: js.UndefOr[ThingTypeName] = js.undefined,
-      thingTypeProperties: js.UndefOr[ThingTypeProperties] = js.undefined): CreateThingTypeRequest = {
+      thingTypeProperties: js.UndefOr[ThingTypeProperties] = js.undefined,
+      tags: js.UndefOr[TagList] = js.undefined): CreateThingTypeRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "thingTypeName" -> thingTypeName.map { x => x.asInstanceOf[js.Any] },
-        "thingTypeProperties" -> thingTypeProperties.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "thingTypeProperties" -> thingTypeProperties.map { x => x.asInstanceOf[js.Any] },
+        "tags" -> tags.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateThingTypeRequest]
     }
@@ -2550,6 +2842,37 @@ package iot {
     }
   }
 
+  @js.native
+  trait DeleteBillingGroupRequest extends js.Object {
+    var billingGroupName: js.UndefOr[BillingGroupName]
+    var expectedVersion: js.UndefOr[OptionalVersion]
+  }
+
+  object DeleteBillingGroupRequest {
+    def apply(
+      billingGroupName: js.UndefOr[BillingGroupName] = js.undefined,
+      expectedVersion: js.UndefOr[OptionalVersion] = js.undefined): DeleteBillingGroupRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "billingGroupName" -> billingGroupName.map { x => x.asInstanceOf[js.Any] },
+        "expectedVersion" -> expectedVersion.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteBillingGroupRequest]
+    }
+  }
+
+  @js.native
+  trait DeleteBillingGroupResponse extends js.Object {
+
+  }
+
+  object DeleteBillingGroupResponse {
+    def apply(): DeleteBillingGroupResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteBillingGroupResponse]
+    }
+  }
+
   /**
    * <p>Input for the DeleteCACertificate operation.</p>
    */
@@ -2602,6 +2925,37 @@ package iot {
         "forceDelete" -> forceDelete.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteCertificateRequest]
+    }
+  }
+
+  @js.native
+  trait DeleteDynamicThingGroupRequest extends js.Object {
+    var thingGroupName: js.UndefOr[ThingGroupName]
+    var expectedVersion: js.UndefOr[OptionalVersion]
+  }
+
+  object DeleteDynamicThingGroupRequest {
+    def apply(
+      thingGroupName: js.UndefOr[ThingGroupName] = js.undefined,
+      expectedVersion: js.UndefOr[OptionalVersion] = js.undefined): DeleteDynamicThingGroupRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "thingGroupName" -> thingGroupName.map { x => x.asInstanceOf[js.Any] },
+        "expectedVersion" -> expectedVersion.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteDynamicThingGroupRequest]
+    }
+  }
+
+  @js.native
+  trait DeleteDynamicThingGroupResponse extends js.Object {
+
+  }
+
+  object DeleteDynamicThingGroupResponse {
+    def apply(): DeleteDynamicThingGroupResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteDynamicThingGroupResponse]
     }
   }
 
@@ -3172,6 +3526,51 @@ package iot {
     }
   }
 
+  @js.native
+  trait DescribeBillingGroupRequest extends js.Object {
+    var billingGroupName: js.UndefOr[BillingGroupName]
+  }
+
+  object DescribeBillingGroupRequest {
+    def apply(
+      billingGroupName: js.UndefOr[BillingGroupName] = js.undefined): DescribeBillingGroupRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "billingGroupName" -> billingGroupName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeBillingGroupRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeBillingGroupResponse extends js.Object {
+    var billingGroupArn: js.UndefOr[BillingGroupArn]
+    var billingGroupId: js.UndefOr[BillingGroupId]
+    var version: js.UndefOr[Version]
+    var billingGroupProperties: js.UndefOr[BillingGroupProperties]
+    var billingGroupMetadata: js.UndefOr[BillingGroupMetadata]
+    var billingGroupName: js.UndefOr[BillingGroupName]
+  }
+
+  object DescribeBillingGroupResponse {
+    def apply(
+      billingGroupArn: js.UndefOr[BillingGroupArn] = js.undefined,
+      billingGroupId: js.UndefOr[BillingGroupId] = js.undefined,
+      version: js.UndefOr[Version] = js.undefined,
+      billingGroupProperties: js.UndefOr[BillingGroupProperties] = js.undefined,
+      billingGroupMetadata: js.UndefOr[BillingGroupMetadata] = js.undefined,
+      billingGroupName: js.UndefOr[BillingGroupName] = js.undefined): DescribeBillingGroupResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "billingGroupArn" -> billingGroupArn.map { x => x.asInstanceOf[js.Any] },
+        "billingGroupId" -> billingGroupId.map { x => x.asInstanceOf[js.Any] },
+        "version" -> version.map { x => x.asInstanceOf[js.Any] },
+        "billingGroupProperties" -> billingGroupProperties.map { x => x.asInstanceOf[js.Any] },
+        "billingGroupMetadata" -> billingGroupMetadata.map { x => x.asInstanceOf[js.Any] },
+        "billingGroupName" -> billingGroupName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeBillingGroupResponse]
+    }
+  }
+
   /**
    * <p>The input for the DescribeCACertificate operation.</p>
    */
@@ -3625,27 +4024,39 @@ package iot {
   trait DescribeThingGroupResponse extends js.Object {
     var thingGroupName: js.UndefOr[ThingGroupName]
     var thingGroupMetadata: js.UndefOr[ThingGroupMetadata]
+    var queryString: js.UndefOr[QueryString]
     var thingGroupId: js.UndefOr[ThingGroupId]
     var version: js.UndefOr[Version]
+    var status: js.UndefOr[DynamicGroupStatus]
+    var indexName: js.UndefOr[IndexName]
     var thingGroupArn: js.UndefOr[ThingGroupArn]
     var thingGroupProperties: js.UndefOr[ThingGroupProperties]
+    var queryVersion: js.UndefOr[QueryVersion]
   }
 
   object DescribeThingGroupResponse {
     def apply(
       thingGroupName: js.UndefOr[ThingGroupName] = js.undefined,
       thingGroupMetadata: js.UndefOr[ThingGroupMetadata] = js.undefined,
+      queryString: js.UndefOr[QueryString] = js.undefined,
       thingGroupId: js.UndefOr[ThingGroupId] = js.undefined,
       version: js.UndefOr[Version] = js.undefined,
+      status: js.UndefOr[DynamicGroupStatus] = js.undefined,
+      indexName: js.UndefOr[IndexName] = js.undefined,
       thingGroupArn: js.UndefOr[ThingGroupArn] = js.undefined,
-      thingGroupProperties: js.UndefOr[ThingGroupProperties] = js.undefined): DescribeThingGroupResponse = {
+      thingGroupProperties: js.UndefOr[ThingGroupProperties] = js.undefined,
+      queryVersion: js.UndefOr[QueryVersion] = js.undefined): DescribeThingGroupResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
         "thingGroupName" -> thingGroupName.map { x => x.asInstanceOf[js.Any] },
         "thingGroupMetadata" -> thingGroupMetadata.map { x => x.asInstanceOf[js.Any] },
+        "queryString" -> queryString.map { x => x.asInstanceOf[js.Any] },
         "thingGroupId" -> thingGroupId.map { x => x.asInstanceOf[js.Any] },
         "version" -> version.map { x => x.asInstanceOf[js.Any] },
+        "status" -> status.map { x => x.asInstanceOf[js.Any] },
+        "indexName" -> indexName.map { x => x.asInstanceOf[js.Any] },
         "thingGroupArn" -> thingGroupArn.map { x => x.asInstanceOf[js.Any] },
-        "thingGroupProperties" -> thingGroupProperties.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "thingGroupProperties" -> thingGroupProperties.map { x => x.asInstanceOf[js.Any] },
+        "queryVersion" -> queryVersion.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeThingGroupResponse]
     }
@@ -3744,6 +4155,7 @@ package iot {
     var defaultClientId: js.UndefOr[ClientId]
     var version: js.UndefOr[Version]
     var thingArn: js.UndefOr[ThingArn]
+    var billingGroupName: js.UndefOr[BillingGroupName]
   }
 
   object DescribeThingResponse {
@@ -3754,7 +4166,8 @@ package iot {
       thingTypeName: js.UndefOr[ThingTypeName] = js.undefined,
       defaultClientId: js.UndefOr[ClientId] = js.undefined,
       version: js.UndefOr[Version] = js.undefined,
-      thingArn: js.UndefOr[ThingArn] = js.undefined): DescribeThingResponse = {
+      thingArn: js.UndefOr[ThingArn] = js.undefined,
+      billingGroupName: js.UndefOr[BillingGroupName] = js.undefined): DescribeThingResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
         "thingId" -> thingId.map { x => x.asInstanceOf[js.Any] },
         "attributes" -> attributes.map { x => x.asInstanceOf[js.Any] },
@@ -3762,7 +4175,8 @@ package iot {
         "thingTypeName" -> thingTypeName.map { x => x.asInstanceOf[js.Any] },
         "defaultClientId" -> defaultClientId.map { x => x.asInstanceOf[js.Any] },
         "version" -> version.map { x => x.asInstanceOf[js.Any] },
-        "thingArn" -> thingArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "thingArn" -> thingArn.map { x => x.asInstanceOf[js.Any] },
+        "billingGroupName" -> billingGroupName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeThingResponse]
     }
@@ -3957,6 +4371,14 @@ package iot {
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DisableTopicRuleRequest]
     }
+  }
+
+  object DynamicGroupStatusEnum {
+    val ACTIVE = "ACTIVE"
+    val BUILDING = "BUILDING"
+    val REBUILDING = "REBUILDING"
+
+    val values = IndexedSeq(ACTIVE, BUILDING, REBUILDING)
   }
 
   /**
@@ -4156,6 +4578,30 @@ package iot {
         "policies" -> policies.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ExplicitDeny]
+    }
+  }
+
+  /**
+   * <p>Allows you to create an exponential rate of rollout for a job.</p>
+   */
+  @js.native
+  trait ExponentialRolloutRate extends js.Object {
+    var baseRatePerMinute: js.UndefOr[RolloutRatePerMinute]
+    var incrementFactor: js.UndefOr[IncrementFactor]
+    var rateIncreaseCriteria: js.UndefOr[RateIncreaseCriteria]
+  }
+
+  object ExponentialRolloutRate {
+    def apply(
+      baseRatePerMinute: js.UndefOr[RolloutRatePerMinute] = js.undefined,
+      incrementFactor: js.UndefOr[IncrementFactor] = js.undefined,
+      rateIncreaseCriteria: js.UndefOr[RateIncreaseCriteria] = js.undefined): ExponentialRolloutRate = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "baseRatePerMinute" -> baseRatePerMinute.map { x => x.asInstanceOf[js.Any] },
+        "incrementFactor" -> incrementFactor.map { x => x.asInstanceOf[js.Any] },
+        "rateIncreaseCriteria" -> rateIncreaseCriteria.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ExponentialRolloutRate]
     }
   }
 
@@ -4661,6 +5107,30 @@ package iot {
   }
 
   /**
+   * <p>Sends an input to an AWS IoT Events detector.</p>
+   */
+  @js.native
+  trait IotEventsAction extends js.Object {
+    var inputName: js.UndefOr[InputName]
+    var messageId: js.UndefOr[MessageId]
+    var roleArn: js.UndefOr[AwsArn]
+  }
+
+  object IotEventsAction {
+    def apply(
+      inputName: js.UndefOr[InputName] = js.undefined,
+      messageId: js.UndefOr[MessageId] = js.undefined,
+      roleArn: js.UndefOr[AwsArn] = js.undefined): IotEventsAction = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "inputName" -> inputName.map { x => x.asInstanceOf[js.Any] },
+        "messageId" -> messageId.map { x => x.asInstanceOf[js.Any] },
+        "roleArn" -> roleArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[IotEventsAction]
+    }
+  }
+
+  /**
    * <p>The <code>Job</code> object contains details about a job.</p>
    */
   @js.native
@@ -4671,11 +5141,13 @@ package iot {
     var forceCanceled: js.UndefOr[Forced]
     var description: js.UndefOr[JobDescription]
     var jobArn: js.UndefOr[JobArn]
+    var reasonCode: js.UndefOr[ReasonCode]
     var presignedUrlConfig: js.UndefOr[PresignedUrlConfig]
     var status: js.UndefOr[JobStatus]
     var comment: js.UndefOr[Comment]
     var jobId: js.UndefOr[JobId]
     var createdAt: js.UndefOr[DateType]
+    var abortConfig: js.UndefOr[AbortConfig]
     var targetSelection: js.UndefOr[TargetSelection]
     var timeoutConfig: js.UndefOr[TimeoutConfig]
     var lastUpdatedAt: js.UndefOr[DateType]
@@ -4690,11 +5162,13 @@ package iot {
       forceCanceled: js.UndefOr[Forced] = js.undefined,
       description: js.UndefOr[JobDescription] = js.undefined,
       jobArn: js.UndefOr[JobArn] = js.undefined,
+      reasonCode: js.UndefOr[ReasonCode] = js.undefined,
       presignedUrlConfig: js.UndefOr[PresignedUrlConfig] = js.undefined,
       status: js.UndefOr[JobStatus] = js.undefined,
       comment: js.UndefOr[Comment] = js.undefined,
       jobId: js.UndefOr[JobId] = js.undefined,
       createdAt: js.UndefOr[DateType] = js.undefined,
+      abortConfig: js.UndefOr[AbortConfig] = js.undefined,
       targetSelection: js.UndefOr[TargetSelection] = js.undefined,
       timeoutConfig: js.UndefOr[TimeoutConfig] = js.undefined,
       lastUpdatedAt: js.UndefOr[DateType] = js.undefined,
@@ -4706,11 +5180,13 @@ package iot {
         "forceCanceled" -> forceCanceled.map { x => x.asInstanceOf[js.Any] },
         "description" -> description.map { x => x.asInstanceOf[js.Any] },
         "jobArn" -> jobArn.map { x => x.asInstanceOf[js.Any] },
+        "reasonCode" -> reasonCode.map { x => x.asInstanceOf[js.Any] },
         "presignedUrlConfig" -> presignedUrlConfig.map { x => x.asInstanceOf[js.Any] },
         "status" -> status.map { x => x.asInstanceOf[js.Any] },
         "comment" -> comment.map { x => x.asInstanceOf[js.Any] },
         "jobId" -> jobId.map { x => x.asInstanceOf[js.Any] },
         "createdAt" -> createdAt.map { x => x.asInstanceOf[js.Any] },
+        "abortConfig" -> abortConfig.map { x => x.asInstanceOf[js.Any] },
         "targetSelection" -> targetSelection.map { x => x.asInstanceOf[js.Any] },
         "timeoutConfig" -> timeoutConfig.map { x => x.asInstanceOf[js.Any] },
         "lastUpdatedAt" -> lastUpdatedAt.map { x => x.asInstanceOf[js.Any] },
@@ -4766,6 +5242,15 @@ package iot {
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[JobExecution]
     }
+  }
+
+  object JobExecutionFailureTypeEnum {
+    val FAILED = "FAILED"
+    val REJECTED = "REJECTED"
+    val TIMED_OUT = "TIMED_OUT"
+    val ALL = "ALL"
+
+    val values = IndexedSeq(FAILED, REJECTED, TIMED_OUT, ALL)
   }
 
   object JobExecutionStatusEnum {
@@ -4877,13 +5362,16 @@ package iot {
   @js.native
   trait JobExecutionsRolloutConfig extends js.Object {
     var maximumPerMinute: js.UndefOr[MaxJobExecutionsPerMin]
+    var exponentialRate: js.UndefOr[ExponentialRolloutRate]
   }
 
   object JobExecutionsRolloutConfig {
     def apply(
-      maximumPerMinute: js.UndefOr[MaxJobExecutionsPerMin] = js.undefined): JobExecutionsRolloutConfig = {
+      maximumPerMinute: js.UndefOr[MaxJobExecutionsPerMin] = js.undefined,
+      exponentialRate: js.UndefOr[ExponentialRolloutRate] = js.undefined): JobExecutionsRolloutConfig = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "maximumPerMinute" -> maximumPerMinute.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "maximumPerMinute" -> maximumPerMinute.map { x => x.asInstanceOf[js.Any] },
+        "exponentialRate" -> exponentialRate.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[JobExecutionsRolloutConfig]
     }
@@ -5264,6 +5752,45 @@ package iot {
         "nextMarker" -> nextMarker.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListAuthorizersResponse]
+    }
+  }
+
+  @js.native
+  trait ListBillingGroupsRequest extends js.Object {
+    var nextToken: js.UndefOr[NextToken]
+    var maxResults: js.UndefOr[RegistryMaxResults]
+    var namePrefixFilter: js.UndefOr[BillingGroupName]
+  }
+
+  object ListBillingGroupsRequest {
+    def apply(
+      nextToken: js.UndefOr[NextToken] = js.undefined,
+      maxResults: js.UndefOr[RegistryMaxResults] = js.undefined,
+      namePrefixFilter: js.UndefOr[BillingGroupName] = js.undefined): ListBillingGroupsRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] },
+        "maxResults" -> maxResults.map { x => x.asInstanceOf[js.Any] },
+        "namePrefixFilter" -> namePrefixFilter.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListBillingGroupsRequest]
+    }
+  }
+
+  @js.native
+  trait ListBillingGroupsResponse extends js.Object {
+    var billingGroups: js.UndefOr[BillingGroupNameAndArnList]
+    var nextToken: js.UndefOr[NextToken]
+  }
+
+  object ListBillingGroupsResponse {
+    def apply(
+      billingGroups: js.UndefOr[BillingGroupNameAndArnList] = js.undefined,
+      nextToken: js.UndefOr[NextToken] = js.undefined): ListBillingGroupsResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "billingGroups" -> billingGroups.map { x => x.asInstanceOf[js.Any] },
+        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListBillingGroupsResponse]
     }
   }
 
@@ -6072,6 +6599,42 @@ package iot {
   }
 
   @js.native
+  trait ListTagsForResourceRequest extends js.Object {
+    var resourceArn: js.UndefOr[ResourceArn]
+    var nextToken: js.UndefOr[NextToken]
+  }
+
+  object ListTagsForResourceRequest {
+    def apply(
+      resourceArn: js.UndefOr[ResourceArn] = js.undefined,
+      nextToken: js.UndefOr[NextToken] = js.undefined): ListTagsForResourceRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "resourceArn" -> resourceArn.map { x => x.asInstanceOf[js.Any] },
+        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListTagsForResourceRequest]
+    }
+  }
+
+  @js.native
+  trait ListTagsForResourceResponse extends js.Object {
+    var tags: js.UndefOr[TagList]
+    var nextToken: js.UndefOr[NextToken]
+  }
+
+  object ListTagsForResourceResponse {
+    def apply(
+      tags: js.UndefOr[TagList] = js.undefined,
+      nextToken: js.UndefOr[NextToken] = js.undefined): ListTagsForResourceResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "tags" -> tags.map { x => x.asInstanceOf[js.Any] },
+        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListTagsForResourceResponse]
+    }
+  }
+
+  @js.native
   trait ListTargetsForPolicyRequest extends js.Object {
     var policyName: js.UndefOr[PolicyName]
     var marker: js.UndefOr[Marker]
@@ -6395,6 +6958,45 @@ package iot {
         "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListThingTypesResponse]
+    }
+  }
+
+  @js.native
+  trait ListThingsInBillingGroupRequest extends js.Object {
+    var billingGroupName: js.UndefOr[BillingGroupName]
+    var nextToken: js.UndefOr[NextToken]
+    var maxResults: js.UndefOr[RegistryMaxResults]
+  }
+
+  object ListThingsInBillingGroupRequest {
+    def apply(
+      billingGroupName: js.UndefOr[BillingGroupName] = js.undefined,
+      nextToken: js.UndefOr[NextToken] = js.undefined,
+      maxResults: js.UndefOr[RegistryMaxResults] = js.undefined): ListThingsInBillingGroupRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "billingGroupName" -> billingGroupName.map { x => x.asInstanceOf[js.Any] },
+        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] },
+        "maxResults" -> maxResults.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListThingsInBillingGroupRequest]
+    }
+  }
+
+  @js.native
+  trait ListThingsInBillingGroupResponse extends js.Object {
+    var things: js.UndefOr[ThingNameList]
+    var nextToken: js.UndefOr[NextToken]
+  }
+
+  object ListThingsInBillingGroupResponse {
+    def apply(
+      things: js.UndefOr[ThingNameList] = js.undefined,
+      nextToken: js.UndefOr[NextToken] = js.undefined): ListThingsInBillingGroupResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "things" -> things.map { x => x.asInstanceOf[js.Any] },
+        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListThingsInBillingGroupResponse]
     }
   }
 
@@ -7020,6 +7622,27 @@ package iot {
   }
 
   /**
+   * <p>Allows you to define a criteria to initiate the increase in rate of rollout for a job.</p>
+   */
+  @js.native
+  trait RateIncreaseCriteria extends js.Object {
+    var numberOfNotifiedThings: js.UndefOr[NumberOfThings]
+    var numberOfSucceededThings: js.UndefOr[NumberOfThings]
+  }
+
+  object RateIncreaseCriteria {
+    def apply(
+      numberOfNotifiedThings: js.UndefOr[NumberOfThings] = js.undefined,
+      numberOfSucceededThings: js.UndefOr[NumberOfThings] = js.undefined): RateIncreaseCriteria = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "numberOfNotifiedThings" -> numberOfNotifiedThings.map { x => x.asInstanceOf[js.Any] },
+        "numberOfSucceededThings" -> numberOfSucceededThings.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RateIncreaseCriteria]
+    }
+  }
+
+  /**
    * <p>The input to the RegisterCACertificate operation.</p>
    */
   @js.native
@@ -7217,6 +7840,43 @@ package iot {
         "additionalInfo" -> additionalInfo.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RelatedResource]
+    }
+  }
+
+  @js.native
+  trait RemoveThingFromBillingGroupRequest extends js.Object {
+    var billingGroupName: js.UndefOr[BillingGroupName]
+    var billingGroupArn: js.UndefOr[BillingGroupArn]
+    var thingName: js.UndefOr[ThingName]
+    var thingArn: js.UndefOr[ThingArn]
+  }
+
+  object RemoveThingFromBillingGroupRequest {
+    def apply(
+      billingGroupName: js.UndefOr[BillingGroupName] = js.undefined,
+      billingGroupArn: js.UndefOr[BillingGroupArn] = js.undefined,
+      thingName: js.UndefOr[ThingName] = js.undefined,
+      thingArn: js.UndefOr[ThingArn] = js.undefined): RemoveThingFromBillingGroupRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "billingGroupName" -> billingGroupName.map { x => x.asInstanceOf[js.Any] },
+        "billingGroupArn" -> billingGroupArn.map { x => x.asInstanceOf[js.Any] },
+        "thingName" -> thingName.map { x => x.asInstanceOf[js.Any] },
+        "thingArn" -> thingArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RemoveThingFromBillingGroupRequest]
+    }
+  }
+
+  @js.native
+  trait RemoveThingFromBillingGroupResponse extends js.Object {
+
+  }
+
+  object RemoveThingFromBillingGroupResponse {
+    def apply(): RemoveThingFromBillingGroupResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RemoveThingFromBillingGroupResponse]
     }
   }
 
@@ -8063,6 +8723,58 @@ package iot {
     }
   }
 
+  /**
+   * <p>A set of key/value pairs that are used to manage the resource.</p>
+   */
+  @js.native
+  trait Tag extends js.Object {
+    var Key: js.UndefOr[TagKey]
+    var Value: js.UndefOr[TagValue]
+  }
+
+  object Tag {
+    def apply(
+      Key: js.UndefOr[TagKey] = js.undefined,
+      Value: js.UndefOr[TagValue] = js.undefined): Tag = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Key" -> Key.map { x => x.asInstanceOf[js.Any] },
+        "Value" -> Value.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Tag]
+    }
+  }
+
+  @js.native
+  trait TagResourceRequest extends js.Object {
+    var resourceArn: js.UndefOr[ResourceArn]
+    var tags: js.UndefOr[TagList]
+  }
+
+  object TagResourceRequest {
+    def apply(
+      resourceArn: js.UndefOr[ResourceArn] = js.undefined,
+      tags: js.UndefOr[TagList] = js.undefined): TagResourceRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "resourceArn" -> resourceArn.map { x => x.asInstanceOf[js.Any] },
+        "tags" -> tags.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TagResourceRequest]
+    }
+  }
+
+  @js.native
+  trait TagResourceResponse extends js.Object {
+
+  }
+
+  object TagResourceResponse {
+    def apply(): TagResourceResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TagResourceResponse]
+    }
+  }
+
   object TargetSelectionEnum {
     val CONTINUOUS = "CONTINUOUS"
     val SNAPSHOT = "SNAPSHOT"
@@ -8230,6 +8942,34 @@ package iot {
   }
 
   /**
+   * <p>The connectivity status of the thing.</p>
+   */
+  @js.native
+  trait ThingConnectivity extends js.Object {
+    var connected: js.UndefOr[Boolean]
+    var timestamp: js.UndefOr[ConnectivityTimestamp]
+  }
+
+  object ThingConnectivity {
+    def apply(
+      connected: js.UndefOr[Boolean] = js.undefined,
+      timestamp: js.UndefOr[ConnectivityTimestamp] = js.undefined): ThingConnectivity = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "connected" -> connected.map { x => x.asInstanceOf[js.Any] },
+        "timestamp" -> timestamp.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ThingConnectivity]
+    }
+  }
+
+  object ThingConnectivityIndexingModeEnum {
+    val OFF = "OFF"
+    val STATUS = "STATUS"
+
+    val values = IndexedSeq(OFF, STATUS)
+  }
+
+  /**
    * <p>The thing search index document.</p>
    */
   @js.native
@@ -8240,6 +8980,7 @@ package iot {
     var attributes: js.UndefOr[Attributes]
     var thingName: js.UndefOr[ThingName]
     var thingTypeName: js.UndefOr[ThingTypeName]
+    var connectivity: js.UndefOr[ThingConnectivity]
   }
 
   object ThingDocument {
@@ -8249,14 +8990,16 @@ package iot {
       thingId: js.UndefOr[ThingId] = js.undefined,
       attributes: js.UndefOr[Attributes] = js.undefined,
       thingName: js.UndefOr[ThingName] = js.undefined,
-      thingTypeName: js.UndefOr[ThingTypeName] = js.undefined): ThingDocument = {
+      thingTypeName: js.UndefOr[ThingTypeName] = js.undefined,
+      connectivity: js.UndefOr[ThingConnectivity] = js.undefined): ThingDocument = {
       val _fields = IndexedSeq[(String, js.Any)](
         "thingGroupNames" -> thingGroupNames.map { x => x.asInstanceOf[js.Any] },
         "shadow" -> shadow.map { x => x.asInstanceOf[js.Any] },
         "thingId" -> thingId.map { x => x.asInstanceOf[js.Any] },
         "attributes" -> attributes.map { x => x.asInstanceOf[js.Any] },
         "thingName" -> thingName.map { x => x.asInstanceOf[js.Any] },
-        "thingTypeName" -> thingTypeName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "thingTypeName" -> thingTypeName.map { x => x.asInstanceOf[js.Any] },
+        "connectivity" -> connectivity.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ThingDocument]
     }
@@ -8363,18 +9106,21 @@ package iot {
   }
 
   /**
-   * <p>Thing indexing configuration.</p>
+   * <p>The thing indexing configuration. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/managing-index.html">Managing Thing Indexing</a>.</p>
    */
   @js.native
   trait ThingIndexingConfiguration extends js.Object {
     var thingIndexingMode: js.UndefOr[ThingIndexingMode]
+    var thingConnectivityIndexingMode: js.UndefOr[ThingConnectivityIndexingMode]
   }
 
   object ThingIndexingConfiguration {
     def apply(
-      thingIndexingMode: js.UndefOr[ThingIndexingMode] = js.undefined): ThingIndexingConfiguration = {
+      thingIndexingMode: js.UndefOr[ThingIndexingMode] = js.undefined,
+      thingConnectivityIndexingMode: js.UndefOr[ThingConnectivityIndexingMode] = js.undefined): ThingIndexingConfiguration = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "thingIndexingMode" -> thingIndexingMode.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "thingIndexingMode" -> thingIndexingMode.map { x => x.asInstanceOf[js.Any] },
+        "thingConnectivityIndexingMode" -> thingConnectivityIndexingMode.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ThingIndexingConfiguration]
     }
@@ -8653,6 +9399,37 @@ package iot {
   }
 
   @js.native
+  trait UntagResourceRequest extends js.Object {
+    var resourceArn: js.UndefOr[ResourceArn]
+    var tagKeys: js.UndefOr[TagKeyList]
+  }
+
+  object UntagResourceRequest {
+    def apply(
+      resourceArn: js.UndefOr[ResourceArn] = js.undefined,
+      tagKeys: js.UndefOr[TagKeyList] = js.undefined): UntagResourceRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "resourceArn" -> resourceArn.map { x => x.asInstanceOf[js.Any] },
+        "tagKeys" -> tagKeys.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UntagResourceRequest]
+    }
+  }
+
+  @js.native
+  trait UntagResourceResponse extends js.Object {
+
+  }
+
+  object UntagResourceResponse {
+    def apply(): UntagResourceResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UntagResourceResponse]
+    }
+  }
+
+  @js.native
   trait UpdateAccountAuditConfigurationRequest extends js.Object {
     var roleArn: js.UndefOr[RoleArn]
     var auditNotificationTargetConfigurations: js.UndefOr[AuditNotificationTargetConfigurations]
@@ -8731,6 +9508,42 @@ package iot {
     }
   }
 
+  @js.native
+  trait UpdateBillingGroupRequest extends js.Object {
+    var billingGroupName: js.UndefOr[BillingGroupName]
+    var billingGroupProperties: js.UndefOr[BillingGroupProperties]
+    var expectedVersion: js.UndefOr[OptionalVersion]
+  }
+
+  object UpdateBillingGroupRequest {
+    def apply(
+      billingGroupName: js.UndefOr[BillingGroupName] = js.undefined,
+      billingGroupProperties: js.UndefOr[BillingGroupProperties] = js.undefined,
+      expectedVersion: js.UndefOr[OptionalVersion] = js.undefined): UpdateBillingGroupRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "billingGroupName" -> billingGroupName.map { x => x.asInstanceOf[js.Any] },
+        "billingGroupProperties" -> billingGroupProperties.map { x => x.asInstanceOf[js.Any] },
+        "expectedVersion" -> expectedVersion.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateBillingGroupRequest]
+    }
+  }
+
+  @js.native
+  trait UpdateBillingGroupResponse extends js.Object {
+    var version: js.UndefOr[Version]
+  }
+
+  object UpdateBillingGroupResponse {
+    def apply(
+      version: js.UndefOr[Version] = js.undefined): UpdateBillingGroupResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "version" -> version.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateBillingGroupResponse]
+    }
+  }
+
   /**
    * <p>The input to the UpdateCACertificate operation.</p>
    */
@@ -8779,6 +9592,51 @@ package iot {
         "newStatus" -> newStatus.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateCertificateRequest]
+    }
+  }
+
+  @js.native
+  trait UpdateDynamicThingGroupRequest extends js.Object {
+    var thingGroupName: js.UndefOr[ThingGroupName]
+    var expectedVersion: js.UndefOr[OptionalVersion]
+    var queryString: js.UndefOr[QueryString]
+    var indexName: js.UndefOr[IndexName]
+    var thingGroupProperties: js.UndefOr[ThingGroupProperties]
+    var queryVersion: js.UndefOr[QueryVersion]
+  }
+
+  object UpdateDynamicThingGroupRequest {
+    def apply(
+      thingGroupName: js.UndefOr[ThingGroupName] = js.undefined,
+      expectedVersion: js.UndefOr[OptionalVersion] = js.undefined,
+      queryString: js.UndefOr[QueryString] = js.undefined,
+      indexName: js.UndefOr[IndexName] = js.undefined,
+      thingGroupProperties: js.UndefOr[ThingGroupProperties] = js.undefined,
+      queryVersion: js.UndefOr[QueryVersion] = js.undefined): UpdateDynamicThingGroupRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "thingGroupName" -> thingGroupName.map { x => x.asInstanceOf[js.Any] },
+        "expectedVersion" -> expectedVersion.map { x => x.asInstanceOf[js.Any] },
+        "queryString" -> queryString.map { x => x.asInstanceOf[js.Any] },
+        "indexName" -> indexName.map { x => x.asInstanceOf[js.Any] },
+        "thingGroupProperties" -> thingGroupProperties.map { x => x.asInstanceOf[js.Any] },
+        "queryVersion" -> queryVersion.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateDynamicThingGroupRequest]
+    }
+  }
+
+  @js.native
+  trait UpdateDynamicThingGroupResponse extends js.Object {
+    var version: js.UndefOr[Version]
+  }
+
+  object UpdateDynamicThingGroupResponse {
+    def apply(
+      version: js.UndefOr[Version] = js.undefined): UpdateDynamicThingGroupResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "version" -> version.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateDynamicThingGroupResponse]
     }
   }
 
@@ -8838,6 +9696,36 @@ package iot {
       val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateIndexingConfigurationResponse]
+    }
+  }
+
+  @js.native
+  trait UpdateJobRequest extends js.Object {
+    var jobExecutionsRolloutConfig: js.UndefOr[JobExecutionsRolloutConfig]
+    var description: js.UndefOr[JobDescription]
+    var presignedUrlConfig: js.UndefOr[PresignedUrlConfig]
+    var jobId: js.UndefOr[JobId]
+    var abortConfig: js.UndefOr[AbortConfig]
+    var timeoutConfig: js.UndefOr[TimeoutConfig]
+  }
+
+  object UpdateJobRequest {
+    def apply(
+      jobExecutionsRolloutConfig: js.UndefOr[JobExecutionsRolloutConfig] = js.undefined,
+      description: js.UndefOr[JobDescription] = js.undefined,
+      presignedUrlConfig: js.UndefOr[PresignedUrlConfig] = js.undefined,
+      jobId: js.UndefOr[JobId] = js.undefined,
+      abortConfig: js.UndefOr[AbortConfig] = js.undefined,
+      timeoutConfig: js.UndefOr[TimeoutConfig] = js.undefined): UpdateJobRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "jobExecutionsRolloutConfig" -> jobExecutionsRolloutConfig.map { x => x.asInstanceOf[js.Any] },
+        "description" -> description.map { x => x.asInstanceOf[js.Any] },
+        "presignedUrlConfig" -> presignedUrlConfig.map { x => x.asInstanceOf[js.Any] },
+        "jobId" -> jobId.map { x => x.asInstanceOf[js.Any] },
+        "abortConfig" -> abortConfig.map { x => x.asInstanceOf[js.Any] },
+        "timeoutConfig" -> timeoutConfig.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateJobRequest]
     }
   }
 
@@ -9074,17 +9962,20 @@ package iot {
     var thingName: js.UndefOr[ThingName]
     var thingGroupsToAdd: js.UndefOr[ThingGroupList]
     var thingGroupsToRemove: js.UndefOr[ThingGroupList]
+    var overrideDynamicGroups: js.UndefOr[OverrideDynamicGroups]
   }
 
   object UpdateThingGroupsForThingRequest {
     def apply(
       thingName: js.UndefOr[ThingName] = js.undefined,
       thingGroupsToAdd: js.UndefOr[ThingGroupList] = js.undefined,
-      thingGroupsToRemove: js.UndefOr[ThingGroupList] = js.undefined): UpdateThingGroupsForThingRequest = {
+      thingGroupsToRemove: js.UndefOr[ThingGroupList] = js.undefined,
+      overrideDynamicGroups: js.UndefOr[OverrideDynamicGroups] = js.undefined): UpdateThingGroupsForThingRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "thingName" -> thingName.map { x => x.asInstanceOf[js.Any] },
         "thingGroupsToAdd" -> thingGroupsToAdd.map { x => x.asInstanceOf[js.Any] },
-        "thingGroupsToRemove" -> thingGroupsToRemove.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "thingGroupsToRemove" -> thingGroupsToRemove.map { x => x.asInstanceOf[js.Any] },
+        "overrideDynamicGroups" -> overrideDynamicGroups.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateThingGroupsForThingRequest]
     }

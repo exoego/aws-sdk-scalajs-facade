@@ -23,6 +23,7 @@ package object iotanalytics {
   type DatasetActionType = String
   type DatasetActions = js.Array[DatasetAction]
   type DatasetArn = String
+  type DatasetContentDeliveryRules = js.Array[DatasetContentDeliveryRule]
   type DatasetContentState = String
   type DatasetContentSummaries = js.Array[DatasetContentSummary]
   type DatasetContentVersion = String
@@ -43,6 +44,7 @@ package object iotanalytics {
   type FilterExpression = String
   type Image = String
   type IncludeStatisticsFlag = Boolean
+  type IotEventsInputName = String
   type LambdaName = String
   type LogResult = String
   type LoggingEnabled = Boolean
@@ -460,6 +462,7 @@ package iotanalytics {
     var tags: js.UndefOr[TagList]
     var retentionPeriod: js.UndefOr[RetentionPeriod]
     var datasetName: js.UndefOr[DatasetName]
+    var contentDeliveryRules: js.UndefOr[DatasetContentDeliveryRules]
     var triggers: js.UndefOr[DatasetTriggers]
     var actions: js.UndefOr[DatasetActions]
   }
@@ -469,12 +472,14 @@ package iotanalytics {
       tags: js.UndefOr[TagList] = js.undefined,
       retentionPeriod: js.UndefOr[RetentionPeriod] = js.undefined,
       datasetName: js.UndefOr[DatasetName] = js.undefined,
+      contentDeliveryRules: js.UndefOr[DatasetContentDeliveryRules] = js.undefined,
       triggers: js.UndefOr[DatasetTriggers] = js.undefined,
       actions: js.UndefOr[DatasetActions] = js.undefined): CreateDatasetRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "tags" -> tags.map { x => x.asInstanceOf[js.Any] },
         "retentionPeriod" -> retentionPeriod.map { x => x.asInstanceOf[js.Any] },
         "datasetName" -> datasetName.map { x => x.asInstanceOf[js.Any] },
+        "contentDeliveryRules" -> contentDeliveryRules.map { x => x.asInstanceOf[js.Any] },
         "triggers" -> triggers.map { x => x.asInstanceOf[js.Any] },
         "actions" -> actions.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
@@ -593,6 +598,7 @@ package iotanalytics {
     var name: js.UndefOr[DatasetName]
     var lastUpdateTime: js.UndefOr[Timestamp]
     var retentionPeriod: js.UndefOr[RetentionPeriod]
+    var contentDeliveryRules: js.UndefOr[DatasetContentDeliveryRules]
     var triggers: js.UndefOr[DatasetTriggers]
     var status: js.UndefOr[DatasetStatus]
     var actions: js.UndefOr[DatasetActions]
@@ -605,6 +611,7 @@ package iotanalytics {
       name: js.UndefOr[DatasetName] = js.undefined,
       lastUpdateTime: js.UndefOr[Timestamp] = js.undefined,
       retentionPeriod: js.UndefOr[RetentionPeriod] = js.undefined,
+      contentDeliveryRules: js.UndefOr[DatasetContentDeliveryRules] = js.undefined,
       triggers: js.UndefOr[DatasetTriggers] = js.undefined,
       status: js.UndefOr[DatasetStatus] = js.undefined,
       actions: js.UndefOr[DatasetActions] = js.undefined,
@@ -614,6 +621,7 @@ package iotanalytics {
         "name" -> name.map { x => x.asInstanceOf[js.Any] },
         "lastUpdateTime" -> lastUpdateTime.map { x => x.asInstanceOf[js.Any] },
         "retentionPeriod" -> retentionPeriod.map { x => x.asInstanceOf[js.Any] },
+        "contentDeliveryRules" -> contentDeliveryRules.map { x => x.asInstanceOf[js.Any] },
         "triggers" -> triggers.map { x => x.asInstanceOf[js.Any] },
         "status" -> status.map { x => x.asInstanceOf[js.Any] },
         "actions" -> actions.map { x => x.asInstanceOf[js.Any] },
@@ -673,6 +681,39 @@ package iotanalytics {
     val CONTAINER = "CONTAINER"
 
     val values = IndexedSeq(QUERY, CONTAINER)
+  }
+
+  @js.native
+  trait DatasetContentDeliveryDestination extends js.Object {
+    var iotEventsDestinationConfiguration: js.UndefOr[IotEventsDestinationConfiguration]
+  }
+
+  object DatasetContentDeliveryDestination {
+    def apply(
+      iotEventsDestinationConfiguration: js.UndefOr[IotEventsDestinationConfiguration] = js.undefined): DatasetContentDeliveryDestination = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "iotEventsDestinationConfiguration" -> iotEventsDestinationConfiguration.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DatasetContentDeliveryDestination]
+    }
+  }
+
+  @js.native
+  trait DatasetContentDeliveryRule extends js.Object {
+    var entryName: js.UndefOr[EntryName]
+    var destination: js.UndefOr[DatasetContentDeliveryDestination]
+  }
+
+  object DatasetContentDeliveryRule {
+    def apply(
+      entryName: js.UndefOr[EntryName] = js.undefined,
+      destination: js.UndefOr[DatasetContentDeliveryDestination] = js.undefined): DatasetContentDeliveryRule = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "entryName" -> entryName.map { x => x.asInstanceOf[js.Any] },
+        "destination" -> destination.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DatasetContentDeliveryRule]
+    }
   }
 
   object DatasetContentStateEnum {
@@ -1339,6 +1380,24 @@ package iotanalytics {
         "status" -> status.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetDatasetContentResponse]
+    }
+  }
+
+  @js.native
+  trait IotEventsDestinationConfiguration extends js.Object {
+    var inputName: js.UndefOr[IotEventsInputName]
+    var roleArn: js.UndefOr[RoleArn]
+  }
+
+  object IotEventsDestinationConfiguration {
+    def apply(
+      inputName: js.UndefOr[IotEventsInputName] = js.undefined,
+      roleArn: js.UndefOr[RoleArn] = js.undefined): IotEventsDestinationConfiguration = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "inputName" -> inputName.map { x => x.asInstanceOf[js.Any] },
+        "roleArn" -> roleArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[IotEventsDestinationConfiguration]
     }
   }
 
@@ -2210,23 +2269,26 @@ package iotanalytics {
 
   @js.native
   trait UpdateDatasetRequest extends js.Object {
-    var datasetName: js.UndefOr[DatasetName]
-    var actions: js.UndefOr[DatasetActions]
-    var triggers: js.UndefOr[DatasetTriggers]
     var retentionPeriod: js.UndefOr[RetentionPeriod]
+    var datasetName: js.UndefOr[DatasetName]
+    var contentDeliveryRules: js.UndefOr[DatasetContentDeliveryRules]
+    var triggers: js.UndefOr[DatasetTriggers]
+    var actions: js.UndefOr[DatasetActions]
   }
 
   object UpdateDatasetRequest {
     def apply(
+      retentionPeriod: js.UndefOr[RetentionPeriod] = js.undefined,
       datasetName: js.UndefOr[DatasetName] = js.undefined,
-      actions: js.UndefOr[DatasetActions] = js.undefined,
+      contentDeliveryRules: js.UndefOr[DatasetContentDeliveryRules] = js.undefined,
       triggers: js.UndefOr[DatasetTriggers] = js.undefined,
-      retentionPeriod: js.UndefOr[RetentionPeriod] = js.undefined): UpdateDatasetRequest = {
+      actions: js.UndefOr[DatasetActions] = js.undefined): UpdateDatasetRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "retentionPeriod" -> retentionPeriod.map { x => x.asInstanceOf[js.Any] },
         "datasetName" -> datasetName.map { x => x.asInstanceOf[js.Any] },
-        "actions" -> actions.map { x => x.asInstanceOf[js.Any] },
+        "contentDeliveryRules" -> contentDeliveryRules.map { x => x.asInstanceOf[js.Any] },
         "triggers" -> triggers.map { x => x.asInstanceOf[js.Any] },
-        "retentionPeriod" -> retentionPeriod.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "actions" -> actions.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateDatasetRequest]
     }

@@ -203,14 +203,6 @@ package devicefarm {
   }
 
   /**
-   * <p>An invalid argument was specified.</p>
-   */
-  @js.native
-  trait ArgumentExceptionException extends js.Object {
-    val message: Message
-  }
-
-  /**
    * <p>Represents the output of a test. Examples of artifacts include logs and screenshots.</p>
    */
   @js.native
@@ -1852,14 +1844,6 @@ package devicefarm {
   }
 
   /**
-   * <p>An entity with the same name already exists.</p>
-   */
-  @js.native
-  trait IdempotencyExceptionException extends js.Object {
-    val message: Message
-  }
-
-  /**
    * <p>Represents information about incompatibility.</p>
    */
   @js.native
@@ -1970,14 +1954,6 @@ package devicefarm {
   }
 
   /**
-   * <p>There was an error with the update request, or you do not have sufficient permissions to update this VPC endpoint configuration.</p>
-   */
-  @js.native
-  trait InvalidOperationExceptionException extends js.Object {
-    val message: Message
-  }
-
-  /**
    * <p>Represents a device.</p>
    */
   @js.native
@@ -2035,14 +2011,6 @@ package devicefarm {
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Job]
     }
-  }
-
-  /**
-   * <p>A limit was exceeded.</p>
-   */
-  @js.native
-  trait LimitExceededExceptionException extends js.Object {
-    val message: Message
   }
 
   /**
@@ -2917,22 +2885,6 @@ package devicefarm {
   }
 
   /**
-   * <p>Exception gets thrown when a user is not eligible to perform the specified transaction.</p>
-   */
-  @js.native
-  trait NotEligibleExceptionException extends js.Object {
-    val message: Message
-  }
-
-  /**
-   * <p>The specified entity was not found.</p>
-   */
-  @js.native
-  trait NotFoundExceptionException extends js.Object {
-    val message: Message
-  }
-
-  /**
    * <p>Represents the metadata of a device offering.</p>
    */
   @js.native
@@ -3655,7 +3607,7 @@ package devicefarm {
   }
 
   /**
-   * <p>Represents additional test settings.</p>
+   * <p>Represents test settings. This data structure is passed in as the "test" parameter to ScheduleRun. For an example of the JSON request syntax, see <a>ScheduleRun</a>.</p>
    */
   @js.native
   trait ScheduleRunTest extends js.Object {
@@ -3682,14 +3634,6 @@ package devicefarm {
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ScheduleRunTest]
     }
-  }
-
-  /**
-   * <p>There was a problem with the service account.</p>
-   */
-  @js.native
-  trait ServiceAccountExceptionException extends js.Object {
-    val message: Message
   }
 
   @js.native

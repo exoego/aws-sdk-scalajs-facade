@@ -21,8 +21,18 @@ package object xray {
   type EncryptionKeyId = String
   type EncryptionStatus = String
   type EncryptionType = String
+  type ErrorRootCauseEntityPath = js.Array[ErrorRootCauseEntity]
+  type ErrorRootCauseServices = js.Array[ErrorRootCauseService]
+  type ErrorRootCauses = js.Array[ErrorRootCause]
+  type FaultRootCauseEntityPath = js.Array[FaultRootCauseEntity]
+  type FaultRootCauseServices = js.Array[FaultRootCauseService]
+  type FaultRootCauses = js.Array[FaultRootCause]
   type FilterExpression = String
   type FixedRate = Double
+  type GetGroupsNextToken = String
+  type GroupARN = String
+  type GroupName = String
+  type GroupSummaryList = js.Array[GroupSummary]
   type HTTPMethod = String
   type Histogram = js.Array[HistogramEntry]
   type Host = String
@@ -35,6 +45,10 @@ package object xray {
   type RequestCount = Int
   type ReservoirSize = Int
   type ResourceARN = String
+  type ResponseTimeRootCauseEntityPath = js.Array[ResponseTimeRootCauseEntity]
+  type ResponseTimeRootCauseServices = js.Array[ResponseTimeRootCauseService]
+  type ResponseTimeRootCauses = js.Array[ResponseTimeRootCause]
+  type RootCauseExceptions = js.Array[RootCauseException]
   type RuleName = String
   type SampledCount = Int
   type SamplingRuleRecordList = js.Array[SamplingRuleRecord]
@@ -51,9 +65,12 @@ package object xray {
   type ServiceType = String
   type TelemetryRecordList = js.Array[TelemetryRecord]
   type Timestamp = js.Date
+  type TraceAvailabilityZones = js.Array[AvailabilityZoneDetail]
   type TraceId = String
   type TraceIdList = js.Array[TraceId]
+  type TraceInstanceIds = js.Array[InstanceIdDetail]
   type TraceList = js.Array[Trace]
+  type TraceResourceARNs = js.Array[ResourceARNDetail]
   type TraceSegmentDocument = String
   type TraceSegmentDocumentList = js.Array[TraceSegmentDocument]
   type TraceSummaryList = js.Array[TraceSummary]
@@ -71,9 +88,13 @@ package xray {
   @JSImport("aws-sdk", "XRay")
   class XRay(config: AWSConfig) extends js.Object {
     def batchGetTraces(params: BatchGetTracesRequest): Request[BatchGetTracesResult] = js.native
+    def createGroup(params: CreateGroupRequest): Request[CreateGroupResult] = js.native
     def createSamplingRule(params: CreateSamplingRuleRequest): Request[CreateSamplingRuleResult] = js.native
+    def deleteGroup(params: DeleteGroupRequest): Request[DeleteGroupResult] = js.native
     def deleteSamplingRule(params: DeleteSamplingRuleRequest): Request[DeleteSamplingRuleResult] = js.native
     def getEncryptionConfig(params: GetEncryptionConfigRequest): Request[GetEncryptionConfigResult] = js.native
+    def getGroup(params: GetGroupRequest): Request[GetGroupResult] = js.native
+    def getGroups(params: GetGroupsRequest): Request[GetGroupsResult] = js.native
     def getSamplingRules(params: GetSamplingRulesRequest): Request[GetSamplingRulesResult] = js.native
     def getSamplingStatisticSummaries(params: GetSamplingStatisticSummariesRequest): Request[GetSamplingStatisticSummariesResult] = js.native
     def getSamplingTargets(params: GetSamplingTargetsRequest): Request[GetSamplingTargetsResult] = js.native
@@ -83,6 +104,7 @@ package xray {
     def putEncryptionConfig(params: PutEncryptionConfigRequest): Request[PutEncryptionConfigResult] = js.native
     def putTelemetryRecords(params: PutTelemetryRecordsRequest): Request[PutTelemetryRecordsResult] = js.native
     def putTraceSegments(params: PutTraceSegmentsRequest): Request[PutTraceSegmentsResult] = js.native
+    def updateGroup(params: UpdateGroupRequest): Request[UpdateGroupResult] = js.native
     def updateSamplingRule(params: UpdateSamplingRuleRequest): Request[UpdateSamplingRuleResult] = js.native
   }
 
@@ -131,6 +153,24 @@ package xray {
         "StringValue" -> StringValue.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AnnotationValue]
+    }
+  }
+
+  /**
+   * <p>A list of availability zones corresponding to the segments in a trace.</p>
+   */
+  @js.native
+  trait AvailabilityZoneDetail extends js.Object {
+    var Name: js.UndefOr[String]
+  }
+
+  object AvailabilityZoneDetail {
+    def apply(
+      Name: js.UndefOr[String] = js.undefined): AvailabilityZoneDetail = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Name" -> Name.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AvailabilityZoneDetail]
     }
   }
 
@@ -207,6 +247,39 @@ package xray {
   }
 
   @js.native
+  trait CreateGroupRequest extends js.Object {
+    var GroupName: js.UndefOr[GroupName]
+    var FilterExpression: js.UndefOr[FilterExpression]
+  }
+
+  object CreateGroupRequest {
+    def apply(
+      GroupName: js.UndefOr[GroupName] = js.undefined,
+      FilterExpression: js.UndefOr[FilterExpression] = js.undefined): CreateGroupRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "GroupName" -> GroupName.map { x => x.asInstanceOf[js.Any] },
+        "FilterExpression" -> FilterExpression.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateGroupRequest]
+    }
+  }
+
+  @js.native
+  trait CreateGroupResult extends js.Object {
+    var Group: js.UndefOr[Group]
+  }
+
+  object CreateGroupResult {
+    def apply(
+      Group: js.UndefOr[Group] = js.undefined): CreateGroupResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Group" -> Group.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateGroupResult]
+    }
+  }
+
+  @js.native
   trait CreateSamplingRuleRequest extends js.Object {
     var SamplingRule: js.UndefOr[SamplingRule]
   }
@@ -233,6 +306,37 @@ package xray {
         "SamplingRuleRecord" -> SamplingRuleRecord.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateSamplingRuleResult]
+    }
+  }
+
+  @js.native
+  trait DeleteGroupRequest extends js.Object {
+    var GroupName: js.UndefOr[GroupName]
+    var GroupARN: js.UndefOr[GroupARN]
+  }
+
+  object DeleteGroupRequest {
+    def apply(
+      GroupName: js.UndefOr[GroupName] = js.undefined,
+      GroupARN: js.UndefOr[GroupARN] = js.undefined): DeleteGroupRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "GroupName" -> GroupName.map { x => x.asInstanceOf[js.Any] },
+        "GroupARN" -> GroupARN.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteGroupRequest]
+    }
+  }
+
+  @js.native
+  trait DeleteGroupResult extends js.Object {
+
+  }
+
+  object DeleteGroupResult {
+    def apply(): DeleteGroupResult = {
+      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteGroupResult]
     }
   }
 
@@ -371,6 +475,81 @@ package xray {
   }
 
   /**
+   * <p>The root cause of a trace summary error.</p>
+   */
+  @js.native
+  trait ErrorRootCause extends js.Object {
+    var Services: js.UndefOr[ErrorRootCauseServices]
+  }
+
+  object ErrorRootCause {
+    def apply(
+      Services: js.UndefOr[ErrorRootCauseServices] = js.undefined): ErrorRootCause = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Services" -> Services.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ErrorRootCause]
+    }
+  }
+
+  /**
+   * <p>A collection of segments and corresponding subsegments associated to a trace summary error.</p>
+   */
+  @js.native
+  trait ErrorRootCauseEntity extends js.Object {
+    var Name: js.UndefOr[String]
+    var Exceptions: js.UndefOr[RootCauseExceptions]
+    var Remote: js.UndefOr[NullableBoolean]
+  }
+
+  object ErrorRootCauseEntity {
+    def apply(
+      Name: js.UndefOr[String] = js.undefined,
+      Exceptions: js.UndefOr[RootCauseExceptions] = js.undefined,
+      Remote: js.UndefOr[NullableBoolean] = js.undefined): ErrorRootCauseEntity = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
+        "Exceptions" -> Exceptions.map { x => x.asInstanceOf[js.Any] },
+        "Remote" -> Remote.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ErrorRootCauseEntity]
+    }
+  }
+
+  /**
+   * <p>A collection of fields identifying the services in a trace summary error.</p>
+   */
+  @js.native
+  trait ErrorRootCauseService extends js.Object {
+    var EntityPath: js.UndefOr[ErrorRootCauseEntityPath]
+    var Name: js.UndefOr[String]
+    var Inferred: js.UndefOr[NullableBoolean]
+    var Names: js.UndefOr[ServiceNames]
+    var AccountId: js.UndefOr[String]
+    var Type: js.UndefOr[String]
+  }
+
+  object ErrorRootCauseService {
+    def apply(
+      EntityPath: js.UndefOr[ErrorRootCauseEntityPath] = js.undefined,
+      Name: js.UndefOr[String] = js.undefined,
+      Inferred: js.UndefOr[NullableBoolean] = js.undefined,
+      Names: js.UndefOr[ServiceNames] = js.undefined,
+      AccountId: js.UndefOr[String] = js.undefined,
+      Type: js.UndefOr[String] = js.undefined): ErrorRootCauseService = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "EntityPath" -> EntityPath.map { x => x.asInstanceOf[js.Any] },
+        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
+        "Inferred" -> Inferred.map { x => x.asInstanceOf[js.Any] },
+        "Names" -> Names.map { x => x.asInstanceOf[js.Any] },
+        "AccountId" -> AccountId.map { x => x.asInstanceOf[js.Any] },
+        "Type" -> Type.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ErrorRootCauseService]
+    }
+  }
+
+  /**
    * <p>Information about requests that failed with a 4xx Client Error status code.</p>
    */
   @js.native
@@ -391,6 +570,81 @@ package xray {
         "TotalCount" -> TotalCount.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ErrorStatistics]
+    }
+  }
+
+  /**
+   * <p>The root cause information for a trace summary fault.</p>
+   */
+  @js.native
+  trait FaultRootCause extends js.Object {
+    var Services: js.UndefOr[FaultRootCauseServices]
+  }
+
+  object FaultRootCause {
+    def apply(
+      Services: js.UndefOr[FaultRootCauseServices] = js.undefined): FaultRootCause = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Services" -> Services.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[FaultRootCause]
+    }
+  }
+
+  /**
+   * <p>A collection of segments and corresponding subsegments associated to a trace summary fault error.</p>
+   */
+  @js.native
+  trait FaultRootCauseEntity extends js.Object {
+    var Name: js.UndefOr[String]
+    var Exceptions: js.UndefOr[RootCauseExceptions]
+    var Remote: js.UndefOr[NullableBoolean]
+  }
+
+  object FaultRootCauseEntity {
+    def apply(
+      Name: js.UndefOr[String] = js.undefined,
+      Exceptions: js.UndefOr[RootCauseExceptions] = js.undefined,
+      Remote: js.UndefOr[NullableBoolean] = js.undefined): FaultRootCauseEntity = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
+        "Exceptions" -> Exceptions.map { x => x.asInstanceOf[js.Any] },
+        "Remote" -> Remote.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[FaultRootCauseEntity]
+    }
+  }
+
+  /**
+   * <p>A collection of fields identifying the services in a trace summary fault.</p>
+   */
+  @js.native
+  trait FaultRootCauseService extends js.Object {
+    var EntityPath: js.UndefOr[FaultRootCauseEntityPath]
+    var Name: js.UndefOr[String]
+    var Inferred: js.UndefOr[NullableBoolean]
+    var Names: js.UndefOr[ServiceNames]
+    var AccountId: js.UndefOr[String]
+    var Type: js.UndefOr[String]
+  }
+
+  object FaultRootCauseService {
+    def apply(
+      EntityPath: js.UndefOr[FaultRootCauseEntityPath] = js.undefined,
+      Name: js.UndefOr[String] = js.undefined,
+      Inferred: js.UndefOr[NullableBoolean] = js.undefined,
+      Names: js.UndefOr[ServiceNames] = js.undefined,
+      AccountId: js.UndefOr[String] = js.undefined,
+      Type: js.UndefOr[String] = js.undefined): FaultRootCauseService = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "EntityPath" -> EntityPath.map { x => x.asInstanceOf[js.Any] },
+        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
+        "Inferred" -> Inferred.map { x => x.asInstanceOf[js.Any] },
+        "Names" -> Names.map { x => x.asInstanceOf[js.Any] },
+        "AccountId" -> AccountId.map { x => x.asInstanceOf[js.Any] },
+        "Type" -> Type.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[FaultRootCauseService]
     }
   }
 
@@ -440,6 +694,72 @@ package xray {
         "EncryptionConfig" -> EncryptionConfig.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetEncryptionConfigResult]
+    }
+  }
+
+  @js.native
+  trait GetGroupRequest extends js.Object {
+    var GroupName: js.UndefOr[GroupName]
+    var GroupARN: js.UndefOr[GroupARN]
+  }
+
+  object GetGroupRequest {
+    def apply(
+      GroupName: js.UndefOr[GroupName] = js.undefined,
+      GroupARN: js.UndefOr[GroupARN] = js.undefined): GetGroupRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "GroupName" -> GroupName.map { x => x.asInstanceOf[js.Any] },
+        "GroupARN" -> GroupARN.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetGroupRequest]
+    }
+  }
+
+  @js.native
+  trait GetGroupResult extends js.Object {
+    var Group: js.UndefOr[Group]
+  }
+
+  object GetGroupResult {
+    def apply(
+      Group: js.UndefOr[Group] = js.undefined): GetGroupResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Group" -> Group.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetGroupResult]
+    }
+  }
+
+  @js.native
+  trait GetGroupsRequest extends js.Object {
+    var NextToken: js.UndefOr[GetGroupsNextToken]
+  }
+
+  object GetGroupsRequest {
+    def apply(
+      NextToken: js.UndefOr[GetGroupsNextToken] = js.undefined): GetGroupsRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetGroupsRequest]
+    }
+  }
+
+  @js.native
+  trait GetGroupsResult extends js.Object {
+    var Groups: js.UndefOr[GroupSummaryList]
+    var NextToken: js.UndefOr[String]
+  }
+
+  object GetGroupsResult {
+    def apply(
+      Groups: js.UndefOr[GroupSummaryList] = js.undefined,
+      NextToken: js.UndefOr[String] = js.undefined): GetGroupsResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Groups" -> Groups.map { x => x.asInstanceOf[js.Any] },
+        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetGroupsResult]
     }
   }
 
@@ -547,19 +867,25 @@ package xray {
 
   @js.native
   trait GetServiceGraphRequest extends js.Object {
+    var GroupName: js.UndefOr[GroupName]
     var StartTime: js.UndefOr[Timestamp]
     var EndTime: js.UndefOr[Timestamp]
+    var GroupARN: js.UndefOr[GroupARN]
     var NextToken: js.UndefOr[String]
   }
 
   object GetServiceGraphRequest {
     def apply(
+      GroupName: js.UndefOr[GroupName] = js.undefined,
       StartTime: js.UndefOr[Timestamp] = js.undefined,
       EndTime: js.UndefOr[Timestamp] = js.undefined,
+      GroupARN: js.UndefOr[GroupARN] = js.undefined,
       NextToken: js.UndefOr[String] = js.undefined): GetServiceGraphRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "GroupName" -> GroupName.map { x => x.asInstanceOf[js.Any] },
         "StartTime" -> StartTime.map { x => x.asInstanceOf[js.Any] },
         "EndTime" -> EndTime.map { x => x.asInstanceOf[js.Any] },
+        "GroupARN" -> GroupARN.map { x => x.asInstanceOf[js.Any] },
         "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetServiceGraphRequest]
@@ -568,6 +894,7 @@ package xray {
 
   @js.native
   trait GetServiceGraphResult extends js.Object {
+    var ContainsOldGroupVersions: js.UndefOr[Boolean]
     var StartTime: js.UndefOr[Timestamp]
     var EndTime: js.UndefOr[Timestamp]
     var Services: js.UndefOr[ServiceList]
@@ -576,11 +903,13 @@ package xray {
 
   object GetServiceGraphResult {
     def apply(
+      ContainsOldGroupVersions: js.UndefOr[Boolean] = js.undefined,
       StartTime: js.UndefOr[Timestamp] = js.undefined,
       EndTime: js.UndefOr[Timestamp] = js.undefined,
       Services: js.UndefOr[ServiceList] = js.undefined,
       NextToken: js.UndefOr[String] = js.undefined): GetServiceGraphResult = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "ContainsOldGroupVersions" -> ContainsOldGroupVersions.map { x => x.asInstanceOf[js.Any] },
         "StartTime" -> StartTime.map { x => x.asInstanceOf[js.Any] },
         "EndTime" -> EndTime.map { x => x.asInstanceOf[js.Any] },
         "Services" -> Services.map { x => x.asInstanceOf[js.Any] },
@@ -678,6 +1007,54 @@ package xray {
   }
 
   /**
+   * <p>Details and metadata for a group.</p>
+   */
+  @js.native
+  trait Group extends js.Object {
+    var GroupName: js.UndefOr[String]
+    var GroupARN: js.UndefOr[String]
+    var FilterExpression: js.UndefOr[String]
+  }
+
+  object Group {
+    def apply(
+      GroupName: js.UndefOr[String] = js.undefined,
+      GroupARN: js.UndefOr[String] = js.undefined,
+      FilterExpression: js.UndefOr[String] = js.undefined): Group = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "GroupName" -> GroupName.map { x => x.asInstanceOf[js.Any] },
+        "GroupARN" -> GroupARN.map { x => x.asInstanceOf[js.Any] },
+        "FilterExpression" -> FilterExpression.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Group]
+    }
+  }
+
+  /**
+   * <p>Details for a group without metadata.</p>
+   */
+  @js.native
+  trait GroupSummary extends js.Object {
+    var GroupName: js.UndefOr[String]
+    var GroupARN: js.UndefOr[String]
+    var FilterExpression: js.UndefOr[String]
+  }
+
+  object GroupSummary {
+    def apply(
+      GroupName: js.UndefOr[String] = js.undefined,
+      GroupARN: js.UndefOr[String] = js.undefined,
+      FilterExpression: js.UndefOr[String] = js.undefined): GroupSummary = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "GroupName" -> GroupName.map { x => x.asInstanceOf[js.Any] },
+        "GroupARN" -> GroupARN.map { x => x.asInstanceOf[js.Any] },
+        "FilterExpression" -> FilterExpression.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GroupSummary]
+    }
+  }
+
+  /**
    * <p>An entry in a histogram for a statistic. A histogram maps the range of observed values on the X axis, and the prevalence of each value on the Y axis.</p>
    */
   @js.native
@@ -725,6 +1102,24 @@ package xray {
         "HttpMethod" -> HttpMethod.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Http]
+    }
+  }
+
+  /**
+   * <p>A list of EC2 instance IDs corresponding to the segments in a trace. </p>
+   */
+  @js.native
+  trait InstanceIdDetail extends js.Object {
+    var Id: js.UndefOr[String]
+  }
+
+  object InstanceIdDetail {
+    def apply(
+      Id: js.UndefOr[String] = js.undefined): InstanceIdDetail = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Id" -> Id.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[InstanceIdDetail]
     }
   }
 
@@ -825,6 +1220,120 @@ package xray {
         "UnprocessedTraceSegments" -> UnprocessedTraceSegments.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutTraceSegmentsResult]
+    }
+  }
+
+  /**
+   * <p>A list of resources ARNs corresponding to the segments in a trace.</p>
+   */
+  @js.native
+  trait ResourceARNDetail extends js.Object {
+    var ARN: js.UndefOr[String]
+  }
+
+  object ResourceARNDetail {
+    def apply(
+      ARN: js.UndefOr[String] = js.undefined): ResourceARNDetail = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ARN" -> ARN.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ResourceARNDetail]
+    }
+  }
+
+  /**
+   * <p>The root cause information for a response time warning.</p>
+   */
+  @js.native
+  trait ResponseTimeRootCause extends js.Object {
+    var Services: js.UndefOr[ResponseTimeRootCauseServices]
+  }
+
+  object ResponseTimeRootCause {
+    def apply(
+      Services: js.UndefOr[ResponseTimeRootCauseServices] = js.undefined): ResponseTimeRootCause = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Services" -> Services.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ResponseTimeRootCause]
+    }
+  }
+
+  /**
+   * <p>A collection of segments and corresponding subsegments associated to a response time warning.</p>
+   */
+  @js.native
+  trait ResponseTimeRootCauseEntity extends js.Object {
+    var Name: js.UndefOr[String]
+    var Coverage: js.UndefOr[NullableDouble]
+    var Remote: js.UndefOr[NullableBoolean]
+  }
+
+  object ResponseTimeRootCauseEntity {
+    def apply(
+      Name: js.UndefOr[String] = js.undefined,
+      Coverage: js.UndefOr[NullableDouble] = js.undefined,
+      Remote: js.UndefOr[NullableBoolean] = js.undefined): ResponseTimeRootCauseEntity = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
+        "Coverage" -> Coverage.map { x => x.asInstanceOf[js.Any] },
+        "Remote" -> Remote.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ResponseTimeRootCauseEntity]
+    }
+  }
+
+  /**
+   * <p>A collection of fields identifying the service in a response time warning.</p>
+   */
+  @js.native
+  trait ResponseTimeRootCauseService extends js.Object {
+    var EntityPath: js.UndefOr[ResponseTimeRootCauseEntityPath]
+    var Name: js.UndefOr[String]
+    var Inferred: js.UndefOr[NullableBoolean]
+    var Names: js.UndefOr[ServiceNames]
+    var AccountId: js.UndefOr[String]
+    var Type: js.UndefOr[String]
+  }
+
+  object ResponseTimeRootCauseService {
+    def apply(
+      EntityPath: js.UndefOr[ResponseTimeRootCauseEntityPath] = js.undefined,
+      Name: js.UndefOr[String] = js.undefined,
+      Inferred: js.UndefOr[NullableBoolean] = js.undefined,
+      Names: js.UndefOr[ServiceNames] = js.undefined,
+      AccountId: js.UndefOr[String] = js.undefined,
+      Type: js.UndefOr[String] = js.undefined): ResponseTimeRootCauseService = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "EntityPath" -> EntityPath.map { x => x.asInstanceOf[js.Any] },
+        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
+        "Inferred" -> Inferred.map { x => x.asInstanceOf[js.Any] },
+        "Names" -> Names.map { x => x.asInstanceOf[js.Any] },
+        "AccountId" -> AccountId.map { x => x.asInstanceOf[js.Any] },
+        "Type" -> Type.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ResponseTimeRootCauseService]
+    }
+  }
+
+  /**
+   * <p>The exception associated with a root cause.</p>
+   */
+  @js.native
+  trait RootCauseException extends js.Object {
+    var Name: js.UndefOr[String]
+    var Message: js.UndefOr[String]
+  }
+
+  object RootCauseException {
+    def apply(
+      Name: js.UndefOr[String] = js.undefined,
+      Message: js.UndefOr[String] = js.undefined): RootCauseException = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
+        "Message" -> Message.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RootCauseException]
     }
   }
 
@@ -1249,12 +1758,20 @@ package xray {
     var Http: js.UndefOr[Http]
     var Users: js.UndefOr[TraceUsers]
     var Duration: js.UndefOr[NullableDouble]
+    var ResponseTimeRootCauses: js.UndefOr[ResponseTimeRootCauses]
     var ServiceIds: js.UndefOr[ServiceIds]
+    var ErrorRootCauses: js.UndefOr[ErrorRootCauses]
+    var Revision: js.UndefOr[Int]
     var IsPartial: js.UndefOr[NullableBoolean]
     var ResponseTime: js.UndefOr[NullableDouble]
+    var ResourceARNs: js.UndefOr[TraceResourceARNs]
+    var EntryPoint: js.UndefOr[ServiceId]
+    var InstanceIds: js.UndefOr[TraceInstanceIds]
+    var FaultRootCauses: js.UndefOr[FaultRootCauses]
     var Annotations: js.UndefOr[Annotations]
     var HasThrottle: js.UndefOr[NullableBoolean]
     var HasFault: js.UndefOr[NullableBoolean]
+    var AvailabilityZones: js.UndefOr[TraceAvailabilityZones]
   }
 
   object TraceSummary {
@@ -1264,24 +1781,40 @@ package xray {
       Http: js.UndefOr[Http] = js.undefined,
       Users: js.UndefOr[TraceUsers] = js.undefined,
       Duration: js.UndefOr[NullableDouble] = js.undefined,
+      ResponseTimeRootCauses: js.UndefOr[ResponseTimeRootCauses] = js.undefined,
       ServiceIds: js.UndefOr[ServiceIds] = js.undefined,
+      ErrorRootCauses: js.UndefOr[ErrorRootCauses] = js.undefined,
+      Revision: js.UndefOr[Int] = js.undefined,
       IsPartial: js.UndefOr[NullableBoolean] = js.undefined,
       ResponseTime: js.UndefOr[NullableDouble] = js.undefined,
+      ResourceARNs: js.UndefOr[TraceResourceARNs] = js.undefined,
+      EntryPoint: js.UndefOr[ServiceId] = js.undefined,
+      InstanceIds: js.UndefOr[TraceInstanceIds] = js.undefined,
+      FaultRootCauses: js.UndefOr[FaultRootCauses] = js.undefined,
       Annotations: js.UndefOr[Annotations] = js.undefined,
       HasThrottle: js.UndefOr[NullableBoolean] = js.undefined,
-      HasFault: js.UndefOr[NullableBoolean] = js.undefined): TraceSummary = {
+      HasFault: js.UndefOr[NullableBoolean] = js.undefined,
+      AvailabilityZones: js.UndefOr[TraceAvailabilityZones] = js.undefined): TraceSummary = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Id" -> Id.map { x => x.asInstanceOf[js.Any] },
         "HasError" -> HasError.map { x => x.asInstanceOf[js.Any] },
         "Http" -> Http.map { x => x.asInstanceOf[js.Any] },
         "Users" -> Users.map { x => x.asInstanceOf[js.Any] },
         "Duration" -> Duration.map { x => x.asInstanceOf[js.Any] },
+        "ResponseTimeRootCauses" -> ResponseTimeRootCauses.map { x => x.asInstanceOf[js.Any] },
         "ServiceIds" -> ServiceIds.map { x => x.asInstanceOf[js.Any] },
+        "ErrorRootCauses" -> ErrorRootCauses.map { x => x.asInstanceOf[js.Any] },
+        "Revision" -> Revision.map { x => x.asInstanceOf[js.Any] },
         "IsPartial" -> IsPartial.map { x => x.asInstanceOf[js.Any] },
         "ResponseTime" -> ResponseTime.map { x => x.asInstanceOf[js.Any] },
+        "ResourceARNs" -> ResourceARNs.map { x => x.asInstanceOf[js.Any] },
+        "EntryPoint" -> EntryPoint.map { x => x.asInstanceOf[js.Any] },
+        "InstanceIds" -> InstanceIds.map { x => x.asInstanceOf[js.Any] },
+        "FaultRootCauses" -> FaultRootCauses.map { x => x.asInstanceOf[js.Any] },
         "Annotations" -> Annotations.map { x => x.asInstanceOf[js.Any] },
         "HasThrottle" -> HasThrottle.map { x => x.asInstanceOf[js.Any] },
-        "HasFault" -> HasFault.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "HasFault" -> HasFault.map { x => x.asInstanceOf[js.Any] },
+        "AvailabilityZones" -> AvailabilityZones.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TraceSummary]
     }
@@ -1353,6 +1886,42 @@ package xray {
         "Message" -> Message.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UnprocessedTraceSegment]
+    }
+  }
+
+  @js.native
+  trait UpdateGroupRequest extends js.Object {
+    var GroupName: js.UndefOr[GroupName]
+    var GroupARN: js.UndefOr[GroupARN]
+    var FilterExpression: js.UndefOr[FilterExpression]
+  }
+
+  object UpdateGroupRequest {
+    def apply(
+      GroupName: js.UndefOr[GroupName] = js.undefined,
+      GroupARN: js.UndefOr[GroupARN] = js.undefined,
+      FilterExpression: js.UndefOr[FilterExpression] = js.undefined): UpdateGroupRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "GroupName" -> GroupName.map { x => x.asInstanceOf[js.Any] },
+        "GroupARN" -> GroupARN.map { x => x.asInstanceOf[js.Any] },
+        "FilterExpression" -> FilterExpression.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateGroupRequest]
+    }
+  }
+
+  @js.native
+  trait UpdateGroupResult extends js.Object {
+    var Group: js.UndefOr[Group]
+  }
+
+  object UpdateGroupResult {
+    def apply(
+      Group: js.UndefOr[Group] = js.undefined): UpdateGroupResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Group" -> Group.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateGroupResult]
     }
   }
 

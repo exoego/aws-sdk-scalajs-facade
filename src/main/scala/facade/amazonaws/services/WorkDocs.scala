@@ -7,6 +7,7 @@ import io.scalajs.nodejs
 import facade.amazonaws._
 
 package object workdocs {
+  type ActivityNamesFilterType = String
   type ActivityType = String
   type AuthenticationHeaderType = String
   type BooleanEnumType = String
@@ -31,8 +32,6 @@ package object workdocs {
   type DocumentVersionMetadataList = js.Array[DocumentVersionMetadata]
   type DocumentVersionStatus = String
   type EmailAddressType = String
-  type EntityIdList = js.Array[IdType]
-  type ErrorMessageType = String
   type FieldNamesType = String
   type FolderContentType = String
   type FolderMetadataList = js.Array[FolderMetadata]
@@ -55,6 +54,7 @@ package object workdocs {
   type PositiveSizeType = Double
   type PrincipalList = js.Array[Principal]
   type PrincipalType = String
+  type ResourceCollectionType = String
   type ResourceIdType = String
   type ResourceNameType = String
   type ResourcePathComponentList = js.Array[ResourcePathComponent]
@@ -127,6 +127,7 @@ package workdocs {
     def getDocumentVersion(params: GetDocumentVersionRequest): Request[GetDocumentVersionResponse] = js.native
     def getFolder(params: GetFolderRequest): Request[GetFolderResponse] = js.native
     def getFolderPath(params: GetFolderPathRequest): Request[GetFolderPathResponse] = js.native
+    def getResources(params: GetResourcesRequest): Request[GetResourcesResponse] = js.native
     def initiateDocumentVersionUpload(params: InitiateDocumentVersionUploadRequest): Request[InitiateDocumentVersionUploadResponse] = js.native
     def removeAllResourcePermissions(params: RemoveAllResourcePermissionsRequest): Request[js.Object] = js.native
     def removeResourcePermission(params: RemoveResourcePermissionRequest): Request[js.Object] = js.native
@@ -197,6 +198,7 @@ package workdocs {
   trait Activity extends js.Object {
     var Initiator: js.UndefOr[UserMetadata]
     var TimeStamp: js.UndefOr[TimestampType]
+    var IsIndirectActivity: js.UndefOr[BooleanType]
     var ResourceMetadata: js.UndefOr[ResourceMetadata]
     var OrganizationId: js.UndefOr[IdType]
     var OriginalParent: js.UndefOr[ResourceMetadata]
@@ -209,6 +211,7 @@ package workdocs {
     def apply(
       Initiator: js.UndefOr[UserMetadata] = js.undefined,
       TimeStamp: js.UndefOr[TimestampType] = js.undefined,
+      IsIndirectActivity: js.UndefOr[BooleanType] = js.undefined,
       ResourceMetadata: js.UndefOr[ResourceMetadata] = js.undefined,
       OrganizationId: js.UndefOr[IdType] = js.undefined,
       OriginalParent: js.UndefOr[ResourceMetadata] = js.undefined,
@@ -218,6 +221,7 @@ package workdocs {
       val _fields = IndexedSeq[(String, js.Any)](
         "Initiator" -> Initiator.map { x => x.asInstanceOf[js.Any] },
         "TimeStamp" -> TimeStamp.map { x => x.asInstanceOf[js.Any] },
+        "IsIndirectActivity" -> IsIndirectActivity.map { x => x.asInstanceOf[js.Any] },
         "ResourceMetadata" -> ResourceMetadata.map { x => x.asInstanceOf[js.Any] },
         "OrganizationId" -> OrganizationId.map { x => x.asInstanceOf[js.Any] },
         "OriginalParent" -> OriginalParent.map { x => x.asInstanceOf[js.Any] },
@@ -235,6 +239,8 @@ package workdocs {
     val DOCUMENT_RENAMED = "DOCUMENT_RENAMED"
     val DOCUMENT_VERSION_UPLOADED = "DOCUMENT_VERSION_UPLOADED"
     val DOCUMENT_VERSION_DELETED = "DOCUMENT_VERSION_DELETED"
+    val DOCUMENT_VERSION_VIEWED = "DOCUMENT_VERSION_VIEWED"
+    val DOCUMENT_VERSION_DOWNLOADED = "DOCUMENT_VERSION_DOWNLOADED"
     val DOCUMENT_RECYCLED = "DOCUMENT_RECYCLED"
     val DOCUMENT_RESTORED = "DOCUMENT_RESTORED"
     val DOCUMENT_REVERTED = "DOCUMENT_REVERTED"
@@ -262,7 +268,7 @@ package workdocs {
     val FOLDER_SHAREABLE_LINK_PERMISSION_CHANGED = "FOLDER_SHAREABLE_LINK_PERMISSION_CHANGED"
     val FOLDER_MOVED = "FOLDER_MOVED"
 
-    val values = IndexedSeq(DOCUMENT_CHECKED_IN, DOCUMENT_CHECKED_OUT, DOCUMENT_RENAMED, DOCUMENT_VERSION_UPLOADED, DOCUMENT_VERSION_DELETED, DOCUMENT_RECYCLED, DOCUMENT_RESTORED, DOCUMENT_REVERTED, DOCUMENT_SHARED, DOCUMENT_UNSHARED, DOCUMENT_SHARE_PERMISSION_CHANGED, DOCUMENT_SHAREABLE_LINK_CREATED, DOCUMENT_SHAREABLE_LINK_REMOVED, DOCUMENT_SHAREABLE_LINK_PERMISSION_CHANGED, DOCUMENT_MOVED, DOCUMENT_COMMENT_ADDED, DOCUMENT_COMMENT_DELETED, DOCUMENT_ANNOTATION_ADDED, DOCUMENT_ANNOTATION_DELETED, FOLDER_CREATED, FOLDER_DELETED, FOLDER_RENAMED, FOLDER_RECYCLED, FOLDER_RESTORED, FOLDER_SHARED, FOLDER_UNSHARED, FOLDER_SHARE_PERMISSION_CHANGED, FOLDER_SHAREABLE_LINK_CREATED, FOLDER_SHAREABLE_LINK_REMOVED, FOLDER_SHAREABLE_LINK_PERMISSION_CHANGED, FOLDER_MOVED)
+    val values = IndexedSeq(DOCUMENT_CHECKED_IN, DOCUMENT_CHECKED_OUT, DOCUMENT_RENAMED, DOCUMENT_VERSION_UPLOADED, DOCUMENT_VERSION_DELETED, DOCUMENT_VERSION_VIEWED, DOCUMENT_VERSION_DOWNLOADED, DOCUMENT_RECYCLED, DOCUMENT_RESTORED, DOCUMENT_REVERTED, DOCUMENT_SHARED, DOCUMENT_UNSHARED, DOCUMENT_SHARE_PERMISSION_CHANGED, DOCUMENT_SHAREABLE_LINK_CREATED, DOCUMENT_SHAREABLE_LINK_REMOVED, DOCUMENT_SHAREABLE_LINK_PERMISSION_CHANGED, DOCUMENT_MOVED, DOCUMENT_COMMENT_ADDED, DOCUMENT_COMMENT_DELETED, DOCUMENT_ANNOTATION_ADDED, DOCUMENT_ANNOTATION_DELETED, FOLDER_CREATED, FOLDER_DELETED, FOLDER_RENAMED, FOLDER_RECYCLED, FOLDER_RESTORED, FOLDER_SHARED, FOLDER_UNSHARED, FOLDER_SHARE_PERMISSION_CHANGED, FOLDER_SHAREABLE_LINK_CREATED, FOLDER_SHAREABLE_LINK_REMOVED, FOLDER_SHAREABLE_LINK_PERMISSION_CHANGED, FOLDER_MOVED)
   }
 
   @js.native
@@ -396,14 +402,6 @@ package workdocs {
     val PRIVATE = "PRIVATE"
 
     val values = IndexedSeq(PUBLIC, PRIVATE)
-  }
-
-  /**
-   * <p>The resource hierarchy is changing.</p>
-   */
-  @js.native
-  trait ConcurrentModificationExceptionException extends js.Object {
-    val Message: ErrorMessageType
   }
 
   @js.native
@@ -657,14 +655,6 @@ package workdocs {
     }
   }
 
-  /**
-   * <p>The limit has been reached on the number of custom properties for the specified resource.</p>
-   */
-  @js.native
-  trait CustomMetadataLimitExceededExceptionException extends js.Object {
-    val Message: ErrorMessageType
-  }
-
   @js.native
   trait DeactivateUserRequest extends js.Object {
     var UserId: js.UndefOr[IdType]
@@ -681,14 +671,6 @@ package workdocs {
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeactivateUserRequest]
     }
-  }
-
-  /**
-   * <p>The last user in the organization is being deactivated.</p>
-   */
-  @js.native
-  trait DeactivatingLastSystemUserExceptionException extends js.Object {
-
   }
 
   @js.native
@@ -884,9 +866,12 @@ package workdocs {
 
   @js.native
   trait DescribeActivitiesRequest extends js.Object {
+    var ActivityTypes: js.UndefOr[ActivityNamesFilterType]
+    var ResourceId: js.UndefOr[IdType]
     var AuthenticationToken: js.UndefOr[AuthenticationHeaderType]
     var Limit: js.UndefOr[LimitType]
     var StartTime: js.UndefOr[TimestampType]
+    var IncludeIndirectActivities: js.UndefOr[BooleanType]
     var EndTime: js.UndefOr[TimestampType]
     var OrganizationId: js.UndefOr[IdType]
     var UserId: js.UndefOr[IdType]
@@ -895,17 +880,23 @@ package workdocs {
 
   object DescribeActivitiesRequest {
     def apply(
+      ActivityTypes: js.UndefOr[ActivityNamesFilterType] = js.undefined,
+      ResourceId: js.UndefOr[IdType] = js.undefined,
       AuthenticationToken: js.UndefOr[AuthenticationHeaderType] = js.undefined,
       Limit: js.UndefOr[LimitType] = js.undefined,
       StartTime: js.UndefOr[TimestampType] = js.undefined,
+      IncludeIndirectActivities: js.UndefOr[BooleanType] = js.undefined,
       EndTime: js.UndefOr[TimestampType] = js.undefined,
       OrganizationId: js.UndefOr[IdType] = js.undefined,
       UserId: js.UndefOr[IdType] = js.undefined,
       Marker: js.UndefOr[MarkerType] = js.undefined): DescribeActivitiesRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "ActivityTypes" -> ActivityTypes.map { x => x.asInstanceOf[js.Any] },
+        "ResourceId" -> ResourceId.map { x => x.asInstanceOf[js.Any] },
         "AuthenticationToken" -> AuthenticationToken.map { x => x.asInstanceOf[js.Any] },
         "Limit" -> Limit.map { x => x.asInstanceOf[js.Any] },
         "StartTime" -> StartTime.map { x => x.asInstanceOf[js.Any] },
+        "IncludeIndirectActivities" -> IncludeIndirectActivities.map { x => x.asInstanceOf[js.Any] },
         "EndTime" -> EndTime.map { x => x.asInstanceOf[js.Any] },
         "OrganizationId" -> OrganizationId.map { x => x.asInstanceOf[js.Any] },
         "UserId" -> UserId.map { x => x.asInstanceOf[js.Any] },
@@ -1315,14 +1306,6 @@ package workdocs {
   }
 
   /**
-   * <p>This exception is thrown when the document is locked for comments and user tries to create or delete a comment on that document.</p>
-   */
-  @js.native
-  trait DocumentLockedForCommentsExceptionException extends js.Object {
-    val Message: ErrorMessageType
-  }
-
-  /**
    * <p>Describes the document.</p>
    */
   @js.native
@@ -1441,39 +1424,6 @@ package workdocs {
     val ACTIVE = "ACTIVE"
 
     val values = IndexedSeq(ACTIVE)
-  }
-
-  /**
-   * <p>This exception is thrown when a valid checkout ID is not presented on document version upload calls for a document that has been checked out from Web client.</p>
-   */
-  @js.native
-  trait DraftUploadOutOfSyncExceptionException extends js.Object {
-    val Message: ErrorMessageType
-  }
-
-  /**
-   * <p>The resource already exists.</p>
-   */
-  @js.native
-  trait EntityAlreadyExistsExceptionException extends js.Object {
-    val Message: ErrorMessageType
-  }
-
-  /**
-   * <p>The resource does not exist.</p>
-   */
-  @js.native
-  trait EntityNotExistsExceptionException extends js.Object {
-    val Message: ErrorMessageType
-    val EntityIds: EntityIdList
-  }
-
-  /**
-   * <p>The AWS Directory Service cannot reach an on-premises instance. Or a dependency under the control of the organization is failing, such as a connected Active Directory.</p>
-   */
-  @js.native
-  trait FailedDependencyExceptionException extends js.Object {
-    val Message: ErrorMessageType
   }
 
   object FolderContentTypeEnum {
@@ -1769,6 +1719,54 @@ package workdocs {
     }
   }
 
+  @js.native
+  trait GetResourcesRequest extends js.Object {
+    var CollectionType: js.UndefOr[ResourceCollectionType]
+    var AuthenticationToken: js.UndefOr[AuthenticationHeaderType]
+    var Limit: js.UndefOr[LimitType]
+    var UserId: js.UndefOr[IdType]
+    var Marker: js.UndefOr[PageMarkerType]
+  }
+
+  object GetResourcesRequest {
+    def apply(
+      CollectionType: js.UndefOr[ResourceCollectionType] = js.undefined,
+      AuthenticationToken: js.UndefOr[AuthenticationHeaderType] = js.undefined,
+      Limit: js.UndefOr[LimitType] = js.undefined,
+      UserId: js.UndefOr[IdType] = js.undefined,
+      Marker: js.UndefOr[PageMarkerType] = js.undefined): GetResourcesRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "CollectionType" -> CollectionType.map { x => x.asInstanceOf[js.Any] },
+        "AuthenticationToken" -> AuthenticationToken.map { x => x.asInstanceOf[js.Any] },
+        "Limit" -> Limit.map { x => x.asInstanceOf[js.Any] },
+        "UserId" -> UserId.map { x => x.asInstanceOf[js.Any] },
+        "Marker" -> Marker.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetResourcesRequest]
+    }
+  }
+
+  @js.native
+  trait GetResourcesResponse extends js.Object {
+    var Folders: js.UndefOr[FolderMetadataList]
+    var Documents: js.UndefOr[DocumentMetadataList]
+    var Marker: js.UndefOr[PageMarkerType]
+  }
+
+  object GetResourcesResponse {
+    def apply(
+      Folders: js.UndefOr[FolderMetadataList] = js.undefined,
+      Documents: js.UndefOr[DocumentMetadataList] = js.undefined,
+      Marker: js.UndefOr[PageMarkerType] = js.undefined): GetResourcesResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Folders" -> Folders.map { x => x.asInstanceOf[js.Any] },
+        "Documents" -> Documents.map { x => x.asInstanceOf[js.Any] },
+        "Marker" -> Marker.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetResourcesResponse]
+    }
+  }
+
   /**
    * <p>Describes the metadata of a user group.</p>
    */
@@ -1788,14 +1786,6 @@ package workdocs {
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GroupMetadata]
     }
-  }
-
-  /**
-   * <p>The user is undergoing transfer of ownership.</p>
-   */
-  @js.native
-  trait IllegalUserStateExceptionException extends js.Object {
-    val Message: ErrorMessageType
   }
 
   @js.native
@@ -1850,38 +1840,6 @@ package workdocs {
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[InitiateDocumentVersionUploadResponse]
     }
-  }
-
-  /**
-   * <p>The pagination marker or limit fields are not valid.</p>
-   */
-  @js.native
-  trait InvalidArgumentExceptionException extends js.Object {
-    val Message: ErrorMessageType
-  }
-
-  /**
-   * <p>The operation is invalid.</p>
-   */
-  @js.native
-  trait InvalidOperationExceptionException extends js.Object {
-    val Message: ErrorMessageType
-  }
-
-  /**
-   * <p>The password is invalid.</p>
-   */
-  @js.native
-  trait InvalidPasswordExceptionException extends js.Object {
-    val Message: ErrorMessageType
-  }
-
-  /**
-   * <p>The maximum of 100,000 folders under the parent folder has been exceeded.</p>
-   */
-  @js.native
-  trait LimitExceededExceptionException extends js.Object {
-    val Message: ErrorMessageType
   }
 
   object LocaleTypeEnum {
@@ -2004,14 +1962,6 @@ package workdocs {
     val values = IndexedSeq(USER, GROUP, INVITE, ANONYMOUS, ORGANIZATION)
   }
 
-  /**
-   * <p>The specified document version is not in the INITIALIZED state.</p>
-   */
-  @js.native
-  trait ProhibitedStateExceptionException extends js.Object {
-    val Message: ErrorMessageType
-  }
-
   @js.native
   trait RemoveAllResourcePermissionsRequest extends js.Object {
     var AuthenticationToken: js.UndefOr[AuthenticationHeaderType]
@@ -2054,12 +2004,10 @@ package workdocs {
     }
   }
 
-  /**
-   * <p>The resource is already checked out.</p>
-   */
-  @js.native
-  trait ResourceAlreadyCheckedOutExceptionException extends js.Object {
-    val Message: ErrorMessageType
+  object ResourceCollectionTypeEnum {
+    val SHARED_WITH_ME = "SHARED_WITH_ME"
+
+    val values = IndexedSeq(SHARED_WITH_ME)
   }
 
   /**
@@ -2177,14 +2125,6 @@ package workdocs {
   }
 
   /**
-   * <p>One or more of the dependencies is unavailable.</p>
-   */
-  @js.native
-  trait ServiceUnavailableExceptionException extends js.Object {
-    val Message: ErrorMessageType
-  }
-
-  /**
    * <p>Describes the recipient type and ID, if available.</p>
    */
   @js.native
@@ -2216,6 +2156,7 @@ package workdocs {
     var StatusMessage: js.UndefOr[MessageType]
     var Role: js.UndefOr[RoleType]
     var PrincipalId: js.UndefOr[IdType]
+    var InviteePrincipalId: js.UndefOr[IdType]
     var ShareId: js.UndefOr[ResourceIdType]
     var Status: js.UndefOr[ShareStatusType]
   }
@@ -2225,12 +2166,14 @@ package workdocs {
       StatusMessage: js.UndefOr[MessageType] = js.undefined,
       Role: js.UndefOr[RoleType] = js.undefined,
       PrincipalId: js.UndefOr[IdType] = js.undefined,
+      InviteePrincipalId: js.UndefOr[IdType] = js.undefined,
       ShareId: js.UndefOr[ResourceIdType] = js.undefined,
       Status: js.UndefOr[ShareStatusType] = js.undefined): ShareResult = {
       val _fields = IndexedSeq[(String, js.Any)](
         "StatusMessage" -> StatusMessage.map { x => x.asInstanceOf[js.Any] },
         "Role" -> Role.map { x => x.asInstanceOf[js.Any] },
         "PrincipalId" -> PrincipalId.map { x => x.asInstanceOf[js.Any] },
+        "InviteePrincipalId" -> InviteePrincipalId.map { x => x.asInstanceOf[js.Any] },
         "ShareId" -> ShareId.map { x => x.asInstanceOf[js.Any] },
         "Status" -> Status.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
@@ -2243,22 +2186,6 @@ package workdocs {
     val FAILURE = "FAILURE"
 
     val values = IndexedSeq(SUCCESS, FAILURE)
-  }
-
-  /**
-   * <p>The storage limit has been exceeded.</p>
-   */
-  @js.native
-  trait StorageLimitExceededExceptionException extends js.Object {
-    val Message: ErrorMessageType
-  }
-
-  /**
-   * <p>The storage limit will be exceeded.</p>
-   */
-  @js.native
-  trait StorageLimitWillExceedExceptionException extends js.Object {
-    val Message: ErrorMessageType
   }
 
   /**
@@ -2323,38 +2250,6 @@ package workdocs {
     val ALL = "ALL"
 
     val values = IndexedSeq(ALL)
-  }
-
-  /**
-   * <p>The limit has been reached on the number of labels for the specified resource.</p>
-   */
-  @js.native
-  trait TooManyLabelsExceptionException extends js.Object {
-    val Message: ErrorMessageType
-  }
-
-  /**
-   * <p>You've reached the limit on the number of subscriptions for the WorkDocs instance.</p>
-   */
-  @js.native
-  trait TooManySubscriptionsExceptionException extends js.Object {
-    val Message: ErrorMessageType
-  }
-
-  /**
-   * <p>The operation is not permitted.</p>
-   */
-  @js.native
-  trait UnauthorizedOperationExceptionException extends js.Object {
-
-  }
-
-  /**
-   * <p>The caller does not have access to perform the action on the resource.</p>
-   */
-  @js.native
-  trait UnauthorizedResourceAccessExceptionException extends js.Object {
-    val Message: ErrorMessageType
   }
 
   @js.native

@@ -284,8 +284,9 @@ package cloudformation {
   object CapabilityEnum {
     val CAPABILITY_IAM = "CAPABILITY_IAM"
     val CAPABILITY_NAMED_IAM = "CAPABILITY_NAMED_IAM"
+    val CAPABILITY_AUTO_EXPAND = "CAPABILITY_AUTO_EXPAND"
 
-    val values = IndexedSeq(CAPABILITY_IAM, CAPABILITY_NAMED_IAM)
+    val values = IndexedSeq(CAPABILITY_IAM, CAPABILITY_NAMED_IAM, CAPABILITY_AUTO_EXPAND)
   }
 
   /**

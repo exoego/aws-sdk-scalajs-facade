@@ -14,6 +14,7 @@ package object greengrass {
   type Deployments = js.Array[Deployment]
   type EncodingType = String
   type ErrorDetails = js.Array[ErrorDetail]
+  type FunctionIsolationMode = String
   type LoggerComponent = String
   type LoggerLevel = String
   type LoggerType = String
@@ -27,6 +28,7 @@ package object greengrass {
   type __boolean = Boolean
   type __integer = Int
   type __listOfConnectivityInfo = js.Array[ConnectivityInfo]
+  type __listOfConnector = js.Array[Connector]
   type __listOfCore = js.Array[Core]
   type __listOfDefinitionInformation = js.Array[DefinitionInformation]
   type __listOfDevice = js.Array[Device]
@@ -38,6 +40,7 @@ package object greengrass {
   type __listOfResourceAccessPolicy = js.Array[ResourceAccessPolicy]
   type __listOfSubscription = js.Array[Subscription]
   type __listOfVersionInformation = js.Array[VersionInformation]
+  type __listOf__string = js.Array[__string]
   type __mapOf__string = js.Dictionary[__string]
   type __string = String
 }
@@ -48,6 +51,8 @@ package greengrass {
   class Greengrass(config: AWSConfig) extends js.Object {
     def associateRoleToGroup(params: AssociateRoleToGroupRequest): Request[AssociateRoleToGroupResponse] = js.native
     def associateServiceRoleToAccount(params: AssociateServiceRoleToAccountRequest): Request[AssociateServiceRoleToAccountResponse] = js.native
+    def createConnectorDefinition(params: CreateConnectorDefinitionRequest): Request[CreateConnectorDefinitionResponse] = js.native
+    def createConnectorDefinitionVersion(params: CreateConnectorDefinitionVersionRequest): Request[CreateConnectorDefinitionVersionResponse] = js.native
     def createCoreDefinition(params: CreateCoreDefinitionRequest): Request[CreateCoreDefinitionResponse] = js.native
     def createCoreDefinitionVersion(params: CreateCoreDefinitionVersionRequest): Request[CreateCoreDefinitionVersionResponse] = js.native
     def createDeployment(params: CreateDeploymentRequest): Request[CreateDeploymentResponse] = js.native
@@ -65,6 +70,7 @@ package greengrass {
     def createSoftwareUpdateJob(params: CreateSoftwareUpdateJobRequest): Request[CreateSoftwareUpdateJobResponse] = js.native
     def createSubscriptionDefinition(params: CreateSubscriptionDefinitionRequest): Request[CreateSubscriptionDefinitionResponse] = js.native
     def createSubscriptionDefinitionVersion(params: CreateSubscriptionDefinitionVersionRequest): Request[CreateSubscriptionDefinitionVersionResponse] = js.native
+    def deleteConnectorDefinition(params: DeleteConnectorDefinitionRequest): Request[DeleteConnectorDefinitionResponse] = js.native
     def deleteCoreDefinition(params: DeleteCoreDefinitionRequest): Request[DeleteCoreDefinitionResponse] = js.native
     def deleteDeviceDefinition(params: DeleteDeviceDefinitionRequest): Request[DeleteDeviceDefinitionResponse] = js.native
     def deleteFunctionDefinition(params: DeleteFunctionDefinitionRequest): Request[DeleteFunctionDefinitionResponse] = js.native
@@ -77,6 +83,8 @@ package greengrass {
     def getAssociatedRole(params: GetAssociatedRoleRequest): Request[GetAssociatedRoleResponse] = js.native
     def getBulkDeploymentStatus(params: GetBulkDeploymentStatusRequest): Request[GetBulkDeploymentStatusResponse] = js.native
     def getConnectivityInfo(params: GetConnectivityInfoRequest): Request[GetConnectivityInfoResponse] = js.native
+    def getConnectorDefinition(params: GetConnectorDefinitionRequest): Request[GetConnectorDefinitionResponse] = js.native
+    def getConnectorDefinitionVersion(params: GetConnectorDefinitionVersionRequest): Request[GetConnectorDefinitionVersionResponse] = js.native
     def getCoreDefinition(params: GetCoreDefinitionRequest): Request[GetCoreDefinitionResponse] = js.native
     def getCoreDefinitionVersion(params: GetCoreDefinitionVersionRequest): Request[GetCoreDefinitionVersionResponse] = js.native
     def getDeploymentStatus(params: GetDeploymentStatusRequest): Request[GetDeploymentStatusResponse] = js.native
@@ -97,6 +105,8 @@ package greengrass {
     def getSubscriptionDefinitionVersion(params: GetSubscriptionDefinitionVersionRequest): Request[GetSubscriptionDefinitionVersionResponse] = js.native
     def listBulkDeploymentDetailedReports(params: ListBulkDeploymentDetailedReportsRequest): Request[ListBulkDeploymentDetailedReportsResponse] = js.native
     def listBulkDeployments(params: ListBulkDeploymentsRequest): Request[ListBulkDeploymentsResponse] = js.native
+    def listConnectorDefinitionVersions(params: ListConnectorDefinitionVersionsRequest): Request[ListConnectorDefinitionVersionsResponse] = js.native
+    def listConnectorDefinitions(params: ListConnectorDefinitionsRequest): Request[ListConnectorDefinitionsResponse] = js.native
     def listCoreDefinitionVersions(params: ListCoreDefinitionVersionsRequest): Request[ListCoreDefinitionVersionsResponse] = js.native
     def listCoreDefinitions(params: ListCoreDefinitionsRequest): Request[ListCoreDefinitionsResponse] = js.native
     def listDeployments(params: ListDeploymentsRequest): Request[ListDeploymentsResponse] = js.native
@@ -117,6 +127,7 @@ package greengrass {
     def startBulkDeployment(params: StartBulkDeploymentRequest): Request[StartBulkDeploymentResponse] = js.native
     def stopBulkDeployment(params: StopBulkDeploymentRequest): Request[StopBulkDeploymentResponse] = js.native
     def updateConnectivityInfo(params: UpdateConnectivityInfoRequest): Request[UpdateConnectivityInfoResponse] = js.native
+    def updateConnectorDefinition(params: UpdateConnectorDefinitionRequest): Request[UpdateConnectorDefinitionResponse] = js.native
     def updateCoreDefinition(params: UpdateCoreDefinitionRequest): Request[UpdateCoreDefinitionResponse] = js.native
     def updateDeviceDefinition(params: UpdateDeviceDefinitionRequest): Request[UpdateDeviceDefinitionResponse] = js.native
     def updateFunctionDefinition(params: UpdateFunctionDefinitionRequest): Request[UpdateFunctionDefinitionResponse] = js.native
@@ -191,7 +202,7 @@ package greengrass {
   }
 
   /**
-   * Information about a bulk deployment.
+   * Information about a bulk deployment. You cannot start a new bulk deployment while another one is still running or in a non-terminal state.
    */
   @js.native
   trait BulkDeployment extends js.Object {
@@ -319,6 +330,48 @@ package greengrass {
   }
 
   /**
+   * Information about a connector. Connectors run on the Greengrass core and contain built-in integration with local infrastructure, device protocols, AWS, and other cloud services.
+   */
+  @js.native
+  trait Connector extends js.Object {
+    var ConnectorArn: js.UndefOr[__string]
+    var Id: js.UndefOr[__string]
+    var Parameters: js.UndefOr[__mapOf__string]
+  }
+
+  object Connector {
+    def apply(
+      ConnectorArn: js.UndefOr[__string] = js.undefined,
+      Id: js.UndefOr[__string] = js.undefined,
+      Parameters: js.UndefOr[__mapOf__string] = js.undefined): Connector = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ConnectorArn" -> ConnectorArn.map { x => x.asInstanceOf[js.Any] },
+        "Id" -> Id.map { x => x.asInstanceOf[js.Any] },
+        "Parameters" -> Parameters.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Connector]
+    }
+  }
+
+  /**
+   * Information about the connector definition version, which is a container for connectors.
+   */
+  @js.native
+  trait ConnectorDefinitionVersion extends js.Object {
+    var Connectors: js.UndefOr[__listOfConnector]
+  }
+
+  object ConnectorDefinitionVersion {
+    def apply(
+      Connectors: js.UndefOr[__listOfConnector] = js.undefined): ConnectorDefinitionVersion = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Connectors" -> Connectors.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ConnectorDefinitionVersion]
+    }
+  }
+
+  /**
    * Information about a core.
    */
   @js.native
@@ -360,6 +413,105 @@ package greengrass {
         "Cores" -> Cores.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CoreDefinitionVersion]
+    }
+  }
+
+  @js.native
+  trait CreateConnectorDefinitionRequest extends js.Object {
+    var AmznClientToken: js.UndefOr[__string]
+    var InitialVersion: js.UndefOr[ConnectorDefinitionVersion]
+    var Name: js.UndefOr[__string]
+  }
+
+  object CreateConnectorDefinitionRequest {
+    def apply(
+      AmznClientToken: js.UndefOr[__string] = js.undefined,
+      InitialVersion: js.UndefOr[ConnectorDefinitionVersion] = js.undefined,
+      Name: js.UndefOr[__string] = js.undefined): CreateConnectorDefinitionRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "AmznClientToken" -> AmznClientToken.map { x => x.asInstanceOf[js.Any] },
+        "InitialVersion" -> InitialVersion.map { x => x.asInstanceOf[js.Any] },
+        "Name" -> Name.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateConnectorDefinitionRequest]
+    }
+  }
+
+  @js.native
+  trait CreateConnectorDefinitionResponse extends js.Object {
+    var Id: js.UndefOr[__string]
+    var LatestVersionArn: js.UndefOr[__string]
+    var Name: js.UndefOr[__string]
+    var LastUpdatedTimestamp: js.UndefOr[__string]
+    var Arn: js.UndefOr[__string]
+    var CreationTimestamp: js.UndefOr[__string]
+    var LatestVersion: js.UndefOr[__string]
+  }
+
+  object CreateConnectorDefinitionResponse {
+    def apply(
+      Id: js.UndefOr[__string] = js.undefined,
+      LatestVersionArn: js.UndefOr[__string] = js.undefined,
+      Name: js.UndefOr[__string] = js.undefined,
+      LastUpdatedTimestamp: js.UndefOr[__string] = js.undefined,
+      Arn: js.UndefOr[__string] = js.undefined,
+      CreationTimestamp: js.UndefOr[__string] = js.undefined,
+      LatestVersion: js.UndefOr[__string] = js.undefined): CreateConnectorDefinitionResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Id" -> Id.map { x => x.asInstanceOf[js.Any] },
+        "LatestVersionArn" -> LatestVersionArn.map { x => x.asInstanceOf[js.Any] },
+        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
+        "LastUpdatedTimestamp" -> LastUpdatedTimestamp.map { x => x.asInstanceOf[js.Any] },
+        "Arn" -> Arn.map { x => x.asInstanceOf[js.Any] },
+        "CreationTimestamp" -> CreationTimestamp.map { x => x.asInstanceOf[js.Any] },
+        "LatestVersion" -> LatestVersion.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateConnectorDefinitionResponse]
+    }
+  }
+
+  @js.native
+  trait CreateConnectorDefinitionVersionRequest extends js.Object {
+    var AmznClientToken: js.UndefOr[__string]
+    var ConnectorDefinitionId: js.UndefOr[__string]
+    var Connectors: js.UndefOr[__listOfConnector]
+  }
+
+  object CreateConnectorDefinitionVersionRequest {
+    def apply(
+      AmznClientToken: js.UndefOr[__string] = js.undefined,
+      ConnectorDefinitionId: js.UndefOr[__string] = js.undefined,
+      Connectors: js.UndefOr[__listOfConnector] = js.undefined): CreateConnectorDefinitionVersionRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "AmznClientToken" -> AmznClientToken.map { x => x.asInstanceOf[js.Any] },
+        "ConnectorDefinitionId" -> ConnectorDefinitionId.map { x => x.asInstanceOf[js.Any] },
+        "Connectors" -> Connectors.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateConnectorDefinitionVersionRequest]
+    }
+  }
+
+  @js.native
+  trait CreateConnectorDefinitionVersionResponse extends js.Object {
+    var Arn: js.UndefOr[__string]
+    var CreationTimestamp: js.UndefOr[__string]
+    var Id: js.UndefOr[__string]
+    var Version: js.UndefOr[__string]
+  }
+
+  object CreateConnectorDefinitionVersionResponse {
+    def apply(
+      Arn: js.UndefOr[__string] = js.undefined,
+      CreationTimestamp: js.UndefOr[__string] = js.undefined,
+      Id: js.UndefOr[__string] = js.undefined,
+      Version: js.UndefOr[__string] = js.undefined): CreateConnectorDefinitionVersionResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Arn" -> Arn.map { x => x.asInstanceOf[js.Any] },
+        "CreationTimestamp" -> CreationTimestamp.map { x => x.asInstanceOf[js.Any] },
+        "Id" -> Id.map { x => x.asInstanceOf[js.Any] },
+        "Version" -> Version.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateConnectorDefinitionVersionResponse]
     }
   }
 
@@ -669,6 +821,7 @@ package greengrass {
   @js.native
   trait CreateFunctionDefinitionVersionRequest extends js.Object {
     var AmznClientToken: js.UndefOr[__string]
+    var DefaultConfig: js.UndefOr[FunctionDefaultConfig]
     var FunctionDefinitionId: js.UndefOr[__string]
     var Functions: js.UndefOr[__listOfFunction]
   }
@@ -676,10 +829,12 @@ package greengrass {
   object CreateFunctionDefinitionVersionRequest {
     def apply(
       AmznClientToken: js.UndefOr[__string] = js.undefined,
+      DefaultConfig: js.UndefOr[FunctionDefaultConfig] = js.undefined,
       FunctionDefinitionId: js.UndefOr[__string] = js.undefined,
       Functions: js.UndefOr[__listOfFunction] = js.undefined): CreateFunctionDefinitionVersionRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AmznClientToken" -> AmznClientToken.map { x => x.asInstanceOf[js.Any] },
+        "DefaultConfig" -> DefaultConfig.map { x => x.asInstanceOf[js.Any] },
         "FunctionDefinitionId" -> FunctionDefinitionId.map { x => x.asInstanceOf[js.Any] },
         "Functions" -> Functions.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
@@ -805,6 +960,7 @@ package greengrass {
     var CoreDefinitionVersionArn: js.UndefOr[__string]
     var GroupId: js.UndefOr[__string]
     var ResourceDefinitionVersionArn: js.UndefOr[__string]
+    var ConnectorDefinitionVersionArn: js.UndefOr[__string]
     var DeviceDefinitionVersionArn: js.UndefOr[__string]
     var LoggerDefinitionVersionArn: js.UndefOr[__string]
     var AmznClientToken: js.UndefOr[__string]
@@ -817,6 +973,7 @@ package greengrass {
       CoreDefinitionVersionArn: js.UndefOr[__string] = js.undefined,
       GroupId: js.UndefOr[__string] = js.undefined,
       ResourceDefinitionVersionArn: js.UndefOr[__string] = js.undefined,
+      ConnectorDefinitionVersionArn: js.UndefOr[__string] = js.undefined,
       DeviceDefinitionVersionArn: js.UndefOr[__string] = js.undefined,
       LoggerDefinitionVersionArn: js.UndefOr[__string] = js.undefined,
       AmznClientToken: js.UndefOr[__string] = js.undefined): CreateGroupVersionRequest = {
@@ -826,6 +983,7 @@ package greengrass {
         "CoreDefinitionVersionArn" -> CoreDefinitionVersionArn.map { x => x.asInstanceOf[js.Any] },
         "GroupId" -> GroupId.map { x => x.asInstanceOf[js.Any] },
         "ResourceDefinitionVersionArn" -> ResourceDefinitionVersionArn.map { x => x.asInstanceOf[js.Any] },
+        "ConnectorDefinitionVersionArn" -> ConnectorDefinitionVersionArn.map { x => x.asInstanceOf[js.Any] },
         "DeviceDefinitionVersionArn" -> DeviceDefinitionVersionArn.map { x => x.asInstanceOf[js.Any] },
         "LoggerDefinitionVersionArn" -> LoggerDefinitionVersionArn.map { x => x.asInstanceOf[js.Any] },
         "AmznClientToken" -> AmznClientToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
@@ -1239,6 +1397,34 @@ package greengrass {
         "LatestVersion" -> LatestVersion.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DefinitionInformation]
+    }
+  }
+
+  @js.native
+  trait DeleteConnectorDefinitionRequest extends js.Object {
+    var ConnectorDefinitionId: js.UndefOr[__string]
+  }
+
+  object DeleteConnectorDefinitionRequest {
+    def apply(
+      ConnectorDefinitionId: js.UndefOr[__string] = js.undefined): DeleteConnectorDefinitionRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ConnectorDefinitionId" -> ConnectorDefinitionId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteConnectorDefinitionRequest]
+    }
+  }
+
+  @js.native
+  trait DeleteConnectorDefinitionResponse extends js.Object {
+
+  }
+
+  object DeleteConnectorDefinitionResponse {
+    def apply(): DeleteConnectorDefinitionResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteConnectorDefinitionResponse]
     }
   }
 
@@ -1677,6 +1863,7 @@ package greengrass {
   @js.native
   trait FunctionConfigurationEnvironment extends js.Object {
     var AccessSysfs: js.UndefOr[__boolean]
+    var Execution: js.UndefOr[FunctionExecutionConfig]
     var ResourceAccessPolicies: js.UndefOr[__listOfResourceAccessPolicy]
     var Variables: js.UndefOr[__mapOf__string]
   }
@@ -1684,10 +1871,12 @@ package greengrass {
   object FunctionConfigurationEnvironment {
     def apply(
       AccessSysfs: js.UndefOr[__boolean] = js.undefined,
+      Execution: js.UndefOr[FunctionExecutionConfig] = js.undefined,
       ResourceAccessPolicies: js.UndefOr[__listOfResourceAccessPolicy] = js.undefined,
       Variables: js.UndefOr[__mapOf__string] = js.undefined): FunctionConfigurationEnvironment = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AccessSysfs" -> AccessSysfs.map { x => x.asInstanceOf[js.Any] },
+        "Execution" -> Execution.map { x => x.asInstanceOf[js.Any] },
         "ResourceAccessPolicies" -> ResourceAccessPolicies.map { x => x.asInstanceOf[js.Any] },
         "Variables" -> Variables.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
@@ -1696,20 +1885,111 @@ package greengrass {
   }
 
   /**
+   * Default configuration that will apply to all Lambda functions in the group.
+   */
+  @js.native
+  trait FunctionDefaultConfig extends js.Object {
+    var Execution: js.UndefOr[FunctionDefaultExecutionConfig]
+  }
+
+  object FunctionDefaultConfig {
+    def apply(
+      Execution: js.UndefOr[FunctionDefaultExecutionConfig] = js.undefined): FunctionDefaultConfig = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Execution" -> Execution.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[FunctionDefaultConfig]
+    }
+  }
+
+  /**
+   * Configuration that defines the default containerization used for when running Lambda functions in the group. Individual Lambda functions can be override this setting.
+   */
+  @js.native
+  trait FunctionDefaultExecutionConfig extends js.Object {
+    var IsolationMode: js.UndefOr[FunctionIsolationMode]
+  }
+
+  object FunctionDefaultExecutionConfig {
+    def apply(
+      IsolationMode: js.UndefOr[FunctionIsolationMode] = js.undefined): FunctionDefaultExecutionConfig = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "IsolationMode" -> IsolationMode.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[FunctionDefaultExecutionConfig]
+    }
+  }
+
+  /**
    * Information about a function definition version.
    */
   @js.native
   trait FunctionDefinitionVersion extends js.Object {
+    var DefaultConfig: js.UndefOr[FunctionDefaultConfig]
     var Functions: js.UndefOr[__listOfFunction]
   }
 
   object FunctionDefinitionVersion {
     def apply(
+      DefaultConfig: js.UndefOr[FunctionDefaultConfig] = js.undefined,
       Functions: js.UndefOr[__listOfFunction] = js.undefined): FunctionDefinitionVersion = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "DefaultConfig" -> DefaultConfig.map { x => x.asInstanceOf[js.Any] },
         "Functions" -> Functions.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[FunctionDefinitionVersion]
+    }
+  }
+
+  /**
+   * Configuration information that specifies how the Lambda function runs.
+   */
+  @js.native
+  trait FunctionExecutionConfig extends js.Object {
+    var IsolationMode: js.UndefOr[FunctionIsolationMode]
+    var RunAs: js.UndefOr[FunctionRunAsConfig]
+  }
+
+  object FunctionExecutionConfig {
+    def apply(
+      IsolationMode: js.UndefOr[FunctionIsolationMode] = js.undefined,
+      RunAs: js.UndefOr[FunctionRunAsConfig] = js.undefined): FunctionExecutionConfig = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "IsolationMode" -> IsolationMode.map { x => x.asInstanceOf[js.Any] },
+        "RunAs" -> RunAs.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[FunctionExecutionConfig]
+    }
+  }
+
+  /**
+   * Specifies whether the Lambda function runs in a Greengrass container (default) or without containerization. Unless your scenario requires that you run without containerization, we recommend that you run in a Greengrass container. Omit this value to run the Lambda function with the default containerization for the group.
+   */
+  object FunctionIsolationModeEnum {
+    val GreengrassContainer = "GreengrassContainer"
+    val NoContainer = "NoContainer"
+
+    val values = IndexedSeq(GreengrassContainer, NoContainer)
+  }
+
+  /**
+   * Specifies the user and/or group whose permissions are used when running the Lambda function. You can specify one or both values to override the default values (ggc_user/ggc_group). We recommend that you avoid running as root unless absolutely necessary to minimize the risk of unintended changes or malicious attacks. To run as root, you must set IsolationMode to NoContainer and you must update config.json in greengrass-root/config to set allowFunctionsToRunAsRoot to yes.
+   */
+  @js.native
+  trait FunctionRunAsConfig extends js.Object {
+    var Gid: js.UndefOr[__integer]
+    var Uid: js.UndefOr[__integer]
+  }
+
+  object FunctionRunAsConfig {
+    def apply(
+      Gid: js.UndefOr[__integer] = js.undefined,
+      Uid: js.UndefOr[__integer] = js.undefined): FunctionRunAsConfig = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Gid" -> Gid.map { x => x.asInstanceOf[js.Any] },
+        "Uid" -> Uid.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[FunctionRunAsConfig]
     }
   }
 
@@ -1818,6 +2098,105 @@ package greengrass {
         "Message" -> Message.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetConnectivityInfoResponse]
+    }
+  }
+
+  @js.native
+  trait GetConnectorDefinitionRequest extends js.Object {
+    var ConnectorDefinitionId: js.UndefOr[__string]
+  }
+
+  object GetConnectorDefinitionRequest {
+    def apply(
+      ConnectorDefinitionId: js.UndefOr[__string] = js.undefined): GetConnectorDefinitionRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ConnectorDefinitionId" -> ConnectorDefinitionId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetConnectorDefinitionRequest]
+    }
+  }
+
+  @js.native
+  trait GetConnectorDefinitionResponse extends js.Object {
+    var Id: js.UndefOr[__string]
+    var LatestVersionArn: js.UndefOr[__string]
+    var Name: js.UndefOr[__string]
+    var LastUpdatedTimestamp: js.UndefOr[__string]
+    var Arn: js.UndefOr[__string]
+    var CreationTimestamp: js.UndefOr[__string]
+    var LatestVersion: js.UndefOr[__string]
+  }
+
+  object GetConnectorDefinitionResponse {
+    def apply(
+      Id: js.UndefOr[__string] = js.undefined,
+      LatestVersionArn: js.UndefOr[__string] = js.undefined,
+      Name: js.UndefOr[__string] = js.undefined,
+      LastUpdatedTimestamp: js.UndefOr[__string] = js.undefined,
+      Arn: js.UndefOr[__string] = js.undefined,
+      CreationTimestamp: js.UndefOr[__string] = js.undefined,
+      LatestVersion: js.UndefOr[__string] = js.undefined): GetConnectorDefinitionResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Id" -> Id.map { x => x.asInstanceOf[js.Any] },
+        "LatestVersionArn" -> LatestVersionArn.map { x => x.asInstanceOf[js.Any] },
+        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
+        "LastUpdatedTimestamp" -> LastUpdatedTimestamp.map { x => x.asInstanceOf[js.Any] },
+        "Arn" -> Arn.map { x => x.asInstanceOf[js.Any] },
+        "CreationTimestamp" -> CreationTimestamp.map { x => x.asInstanceOf[js.Any] },
+        "LatestVersion" -> LatestVersion.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetConnectorDefinitionResponse]
+    }
+  }
+
+  @js.native
+  trait GetConnectorDefinitionVersionRequest extends js.Object {
+    var ConnectorDefinitionId: js.UndefOr[__string]
+    var ConnectorDefinitionVersionId: js.UndefOr[__string]
+    var NextToken: js.UndefOr[__string]
+  }
+
+  object GetConnectorDefinitionVersionRequest {
+    def apply(
+      ConnectorDefinitionId: js.UndefOr[__string] = js.undefined,
+      ConnectorDefinitionVersionId: js.UndefOr[__string] = js.undefined,
+      NextToken: js.UndefOr[__string] = js.undefined): GetConnectorDefinitionVersionRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ConnectorDefinitionId" -> ConnectorDefinitionId.map { x => x.asInstanceOf[js.Any] },
+        "ConnectorDefinitionVersionId" -> ConnectorDefinitionVersionId.map { x => x.asInstanceOf[js.Any] },
+        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetConnectorDefinitionVersionRequest]
+    }
+  }
+
+  @js.native
+  trait GetConnectorDefinitionVersionResponse extends js.Object {
+    var Id: js.UndefOr[__string]
+    var Version: js.UndefOr[__string]
+    var Definition: js.UndefOr[ConnectorDefinitionVersion]
+    var Arn: js.UndefOr[__string]
+    var CreationTimestamp: js.UndefOr[__string]
+    var NextToken: js.UndefOr[__string]
+  }
+
+  object GetConnectorDefinitionVersionResponse {
+    def apply(
+      Id: js.UndefOr[__string] = js.undefined,
+      Version: js.UndefOr[__string] = js.undefined,
+      Definition: js.UndefOr[ConnectorDefinitionVersion] = js.undefined,
+      Arn: js.UndefOr[__string] = js.undefined,
+      CreationTimestamp: js.UndefOr[__string] = js.undefined,
+      NextToken: js.UndefOr[__string] = js.undefined): GetConnectorDefinitionVersionResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Id" -> Id.map { x => x.asInstanceOf[js.Any] },
+        "Version" -> Version.map { x => x.asInstanceOf[js.Any] },
+        "Definition" -> Definition.map { x => x.asInstanceOf[js.Any] },
+        "Arn" -> Arn.map { x => x.asInstanceOf[js.Any] },
+        "CreationTimestamp" -> CreationTimestamp.map { x => x.asInstanceOf[js.Any] },
+        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetConnectorDefinitionVersionResponse]
     }
   }
 
@@ -2734,6 +3113,7 @@ package greengrass {
     var SubscriptionDefinitionVersionArn: js.UndefOr[__string]
     var CoreDefinitionVersionArn: js.UndefOr[__string]
     var ResourceDefinitionVersionArn: js.UndefOr[__string]
+    var ConnectorDefinitionVersionArn: js.UndefOr[__string]
     var DeviceDefinitionVersionArn: js.UndefOr[__string]
     var LoggerDefinitionVersionArn: js.UndefOr[__string]
   }
@@ -2744,6 +3124,7 @@ package greengrass {
       SubscriptionDefinitionVersionArn: js.UndefOr[__string] = js.undefined,
       CoreDefinitionVersionArn: js.UndefOr[__string] = js.undefined,
       ResourceDefinitionVersionArn: js.UndefOr[__string] = js.undefined,
+      ConnectorDefinitionVersionArn: js.UndefOr[__string] = js.undefined,
       DeviceDefinitionVersionArn: js.UndefOr[__string] = js.undefined,
       LoggerDefinitionVersionArn: js.UndefOr[__string] = js.undefined): GroupVersion = {
       val _fields = IndexedSeq[(String, js.Any)](
@@ -2751,6 +3132,7 @@ package greengrass {
         "SubscriptionDefinitionVersionArn" -> SubscriptionDefinitionVersionArn.map { x => x.asInstanceOf[js.Any] },
         "CoreDefinitionVersionArn" -> CoreDefinitionVersionArn.map { x => x.asInstanceOf[js.Any] },
         "ResourceDefinitionVersionArn" -> ResourceDefinitionVersionArn.map { x => x.asInstanceOf[js.Any] },
+        "ConnectorDefinitionVersionArn" -> ConnectorDefinitionVersionArn.map { x => x.asInstanceOf[js.Any] },
         "DeviceDefinitionVersionArn" -> DeviceDefinitionVersionArn.map { x => x.asInstanceOf[js.Any] },
         "LoggerDefinitionVersionArn" -> LoggerDefinitionVersionArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
@@ -2830,6 +3212,81 @@ package greengrass {
         "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListBulkDeploymentsResponse]
+    }
+  }
+
+  @js.native
+  trait ListConnectorDefinitionVersionsRequest extends js.Object {
+    var ConnectorDefinitionId: js.UndefOr[__string]
+    var MaxResults: js.UndefOr[__string]
+    var NextToken: js.UndefOr[__string]
+  }
+
+  object ListConnectorDefinitionVersionsRequest {
+    def apply(
+      ConnectorDefinitionId: js.UndefOr[__string] = js.undefined,
+      MaxResults: js.UndefOr[__string] = js.undefined,
+      NextToken: js.UndefOr[__string] = js.undefined): ListConnectorDefinitionVersionsRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ConnectorDefinitionId" -> ConnectorDefinitionId.map { x => x.asInstanceOf[js.Any] },
+        "MaxResults" -> MaxResults.map { x => x.asInstanceOf[js.Any] },
+        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListConnectorDefinitionVersionsRequest]
+    }
+  }
+
+  @js.native
+  trait ListConnectorDefinitionVersionsResponse extends js.Object {
+    var NextToken: js.UndefOr[__string]
+    var Versions: js.UndefOr[__listOfVersionInformation]
+  }
+
+  object ListConnectorDefinitionVersionsResponse {
+    def apply(
+      NextToken: js.UndefOr[__string] = js.undefined,
+      Versions: js.UndefOr[__listOfVersionInformation] = js.undefined): ListConnectorDefinitionVersionsResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
+        "Versions" -> Versions.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListConnectorDefinitionVersionsResponse]
+    }
+  }
+
+  @js.native
+  trait ListConnectorDefinitionsRequest extends js.Object {
+    var MaxResults: js.UndefOr[__string]
+    var NextToken: js.UndefOr[__string]
+  }
+
+  object ListConnectorDefinitionsRequest {
+    def apply(
+      MaxResults: js.UndefOr[__string] = js.undefined,
+      NextToken: js.UndefOr[__string] = js.undefined): ListConnectorDefinitionsRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "MaxResults" -> MaxResults.map { x => x.asInstanceOf[js.Any] },
+        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListConnectorDefinitionsRequest]
+    }
+  }
+
+  @js.native
+  trait ListConnectorDefinitionsResponse extends js.Object {
+    var Definitions: js.UndefOr[__listOfDefinitionInformation]
+    var NextToken: js.UndefOr[__string]
+  }
+
+  object ListConnectorDefinitionsResponse {
+    def apply(
+      Definitions: js.UndefOr[__listOfDefinitionInformation] = js.undefined,
+      NextToken: js.UndefOr[__string] = js.undefined): ListConnectorDefinitionsResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Definitions" -> Definitions.map { x => x.asInstanceOf[js.Any] },
+        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListConnectorDefinitionsResponse]
     }
   }
 
@@ -3642,26 +4099,29 @@ package greengrass {
   }
 
   /**
-   * A container for resource data. The container takes only one of the following supported resource data types: ''LocalDeviceResourceData'', ''LocalVolumeResourceData'', ''SageMakerMachineLearningModelResourceData'', ''S3MachineLearningModelResourceData''.
+   * A container for resource data. The container takes only one of the following supported resource data types: ''LocalDeviceResourceData'', ''LocalVolumeResourceData'', ''SageMakerMachineLearningModelResourceData'', ''S3MachineLearningModelResourceData'', ''SecretsManagerSecretResourceData''.
    */
   @js.native
   trait ResourceDataContainer extends js.Object {
     var LocalDeviceResourceData: js.UndefOr[LocalDeviceResourceData]
-    var LocalVolumeResourceData: js.UndefOr[LocalVolumeResourceData]
     var S3MachineLearningModelResourceData: js.UndefOr[S3MachineLearningModelResourceData]
+    var SecretsManagerSecretResourceData: js.UndefOr[SecretsManagerSecretResourceData]
+    var LocalVolumeResourceData: js.UndefOr[LocalVolumeResourceData]
     var SageMakerMachineLearningModelResourceData: js.UndefOr[SageMakerMachineLearningModelResourceData]
   }
 
   object ResourceDataContainer {
     def apply(
       LocalDeviceResourceData: js.UndefOr[LocalDeviceResourceData] = js.undefined,
-      LocalVolumeResourceData: js.UndefOr[LocalVolumeResourceData] = js.undefined,
       S3MachineLearningModelResourceData: js.UndefOr[S3MachineLearningModelResourceData] = js.undefined,
+      SecretsManagerSecretResourceData: js.UndefOr[SecretsManagerSecretResourceData] = js.undefined,
+      LocalVolumeResourceData: js.UndefOr[LocalVolumeResourceData] = js.undefined,
       SageMakerMachineLearningModelResourceData: js.UndefOr[SageMakerMachineLearningModelResourceData] = js.undefined): ResourceDataContainer = {
       val _fields = IndexedSeq[(String, js.Any)](
         "LocalDeviceResourceData" -> LocalDeviceResourceData.map { x => x.asInstanceOf[js.Any] },
-        "LocalVolumeResourceData" -> LocalVolumeResourceData.map { x => x.asInstanceOf[js.Any] },
         "S3MachineLearningModelResourceData" -> S3MachineLearningModelResourceData.map { x => x.asInstanceOf[js.Any] },
+        "SecretsManagerSecretResourceData" -> SecretsManagerSecretResourceData.map { x => x.asInstanceOf[js.Any] },
+        "LocalVolumeResourceData" -> LocalVolumeResourceData.map { x => x.asInstanceOf[js.Any] },
         "SageMakerMachineLearningModelResourceData" -> SageMakerMachineLearningModelResourceData.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ResourceDataContainer]
@@ -3687,7 +4147,7 @@ package greengrass {
   }
 
   /**
-   * Attributes that define an S3 machine learning resource.
+   * Attributes that define an Amazon S3 machine learning resource.
    */
   @js.native
   trait S3MachineLearningModelResourceData extends js.Object {
@@ -3708,7 +4168,7 @@ package greengrass {
   }
 
   /**
-   * Attributes that define an SageMaker machine learning resource.
+   * Attributes that define an Amazon SageMaker machine learning resource.
    */
   @js.native
   trait SageMakerMachineLearningModelResourceData extends js.Object {
@@ -3725,6 +4185,27 @@ package greengrass {
         "SageMakerJobArn" -> SageMakerJobArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SageMakerMachineLearningModelResourceData]
+    }
+  }
+
+  /**
+   * Attributes that define a secret resource, which references a secret from AWS Secrets Manager. AWS IoT Greengrass stores a local, encrypted copy of the secret on the Greengrass core, where it can be securely accessed by connectors and Lambda functions.
+   */
+  @js.native
+  trait SecretsManagerSecretResourceData extends js.Object {
+    var ARN: js.UndefOr[__string]
+    var AdditionalStagingLabelsToDownload: js.UndefOr[__listOf__string]
+  }
+
+  object SecretsManagerSecretResourceData {
+    def apply(
+      ARN: js.UndefOr[__string] = js.undefined,
+      AdditionalStagingLabelsToDownload: js.UndefOr[__listOf__string] = js.undefined): SecretsManagerSecretResourceData = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ARN" -> ARN.map { x => x.asInstanceOf[js.Any] },
+        "AdditionalStagingLabelsToDownload" -> AdditionalStagingLabelsToDownload.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SecretsManagerSecretResourceData]
     }
   }
 
@@ -3902,6 +4383,37 @@ package greengrass {
         "Version" -> Version.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateConnectivityInfoResponse]
+    }
+  }
+
+  @js.native
+  trait UpdateConnectorDefinitionRequest extends js.Object {
+    var ConnectorDefinitionId: js.UndefOr[__string]
+    var Name: js.UndefOr[__string]
+  }
+
+  object UpdateConnectorDefinitionRequest {
+    def apply(
+      ConnectorDefinitionId: js.UndefOr[__string] = js.undefined,
+      Name: js.UndefOr[__string] = js.undefined): UpdateConnectorDefinitionRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ConnectorDefinitionId" -> ConnectorDefinitionId.map { x => x.asInstanceOf[js.Any] },
+        "Name" -> Name.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateConnectorDefinitionRequest]
+    }
+  }
+
+  @js.native
+  trait UpdateConnectorDefinitionResponse extends js.Object {
+
+  }
+
+  object UpdateConnectorDefinitionResponse {
+    def apply(): UpdateConnectorDefinitionResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateConnectorDefinitionResponse]
     }
   }
 

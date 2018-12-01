@@ -29,6 +29,7 @@ package object s3 {
   type BucketName = String
   type BucketVersioningStatus = String
   type Buckets = js.Array[Bucket]
+  type BypassGovernanceRetention = Boolean
   type BytesProcessed = Double
   type BytesReturned = Double
   type BytesScanned = Double
@@ -159,6 +160,13 @@ package object s3 {
   type ObjectIdentifierList = js.Array[ObjectIdentifier]
   type ObjectKey = String
   type ObjectList = js.Array[Object]
+  type ObjectLockEnabled = String
+  type ObjectLockEnabledForBucket = Boolean
+  type ObjectLockLegalHoldStatus = String
+  type ObjectLockMode = String
+  type ObjectLockRetainUntilDate = js.Date
+  type ObjectLockRetentionMode = String
+  type ObjectLockToken = String
   type ObjectStorageClass = String
   type ObjectVersionId = String
   type ObjectVersionList = js.Array[ObjectVersion]
@@ -235,6 +243,7 @@ package object s3 {
   type Value = String
   type VersionIdMarker = String
   type WebsiteRedirectLocation = String
+  type Years = Int
 }
 
 package s3 {
@@ -283,6 +292,9 @@ package s3 {
     def getBucketWebsite(params: GetBucketWebsiteRequest): Request[GetBucketWebsiteOutput] = js.native
     def getObject(params: GetObjectRequest): Request[GetObjectOutput] = js.native
     def getObjectAcl(params: GetObjectAclRequest): Request[GetObjectAclOutput] = js.native
+    def getObjectLegalHold(params: GetObjectLegalHoldRequest): Request[GetObjectLegalHoldOutput] = js.native
+    def getObjectLockConfiguration(params: GetObjectLockConfigurationRequest): Request[GetObjectLockConfigurationOutput] = js.native
+    def getObjectRetention(params: GetObjectRetentionRequest): Request[GetObjectRetentionOutput] = js.native
     def getObjectTagging(params: GetObjectTaggingRequest): Request[GetObjectTaggingOutput] = js.native
     def getObjectTorrent(params: GetObjectTorrentRequest): Request[GetObjectTorrentOutput] = js.native
     def getPublicAccessBlock(params: GetPublicAccessBlockRequest): Request[GetPublicAccessBlockOutput] = js.native
@@ -317,6 +329,9 @@ package s3 {
     def putBucketWebsite(params: PutBucketWebsiteRequest): Request[js.Object] = js.native
     def putObject(params: PutObjectRequest): Request[PutObjectOutput] = js.native
     def putObjectAcl(params: PutObjectAclRequest): Request[PutObjectAclOutput] = js.native
+    def putObjectLegalHold(params: PutObjectLegalHoldRequest): Request[PutObjectLegalHoldOutput] = js.native
+    def putObjectLockConfiguration(params: PutObjectLockConfigurationRequest): Request[PutObjectLockConfigurationOutput] = js.native
+    def putObjectRetention(params: PutObjectRetentionRequest): Request[PutObjectRetentionOutput] = js.native
     def putObjectTagging(params: PutObjectTaggingRequest): Request[PutObjectTaggingOutput] = js.native
     def putPublicAccessBlock(params: PutPublicAccessBlockRequest): Request[js.Object] = js.native
     def restoreObject(params: RestoreObjectRequest): Request[RestoreObjectOutput] = js.native
@@ -967,6 +982,8 @@ package s3 {
     var TaggingDirective: js.UndefOr[TaggingDirective]
     var CopySource: js.UndefOr[CopySource]
     var CopySourceIfModifiedSince: js.UndefOr[CopySourceIfModifiedSince]
+    var ObjectLockMode: js.UndefOr[ObjectLockMode]
+    var ObjectLockRetainUntilDate: js.UndefOr[ObjectLockRetainUntilDate]
     var CopySourceIfNoneMatch: js.UndefOr[CopySourceIfNoneMatch]
     var CopySourceSSECustomerKey: js.UndefOr[CopySourceSSECustomerKey]
     var SSEKMSKeyId: js.UndefOr[SSEKMSKeyId]
@@ -985,6 +1002,7 @@ package s3 {
     var MetadataDirective: js.UndefOr[MetadataDirective]
     var GrantReadACP: js.UndefOr[GrantReadACP]
     var ContentLanguage: js.UndefOr[ContentLanguage]
+    var ObjectLockLegalHoldStatus: js.UndefOr[ObjectLockLegalHoldStatus]
     var ContentDisposition: js.UndefOr[ContentDisposition]
     var GrantRead: js.UndefOr[GrantRead]
     var WebsiteRedirectLocation: js.UndefOr[WebsiteRedirectLocation]
@@ -1004,6 +1022,8 @@ package s3 {
       TaggingDirective: js.UndefOr[TaggingDirective] = js.undefined,
       CopySource: js.UndefOr[CopySource] = js.undefined,
       CopySourceIfModifiedSince: js.UndefOr[CopySourceIfModifiedSince] = js.undefined,
+      ObjectLockMode: js.UndefOr[ObjectLockMode] = js.undefined,
+      ObjectLockRetainUntilDate: js.UndefOr[ObjectLockRetainUntilDate] = js.undefined,
       CopySourceIfNoneMatch: js.UndefOr[CopySourceIfNoneMatch] = js.undefined,
       CopySourceSSECustomerKey: js.UndefOr[CopySourceSSECustomerKey] = js.undefined,
       SSEKMSKeyId: js.UndefOr[SSEKMSKeyId] = js.undefined,
@@ -1022,6 +1042,7 @@ package s3 {
       MetadataDirective: js.UndefOr[MetadataDirective] = js.undefined,
       GrantReadACP: js.UndefOr[GrantReadACP] = js.undefined,
       ContentLanguage: js.UndefOr[ContentLanguage] = js.undefined,
+      ObjectLockLegalHoldStatus: js.UndefOr[ObjectLockLegalHoldStatus] = js.undefined,
       ContentDisposition: js.UndefOr[ContentDisposition] = js.undefined,
       GrantRead: js.UndefOr[GrantRead] = js.undefined,
       WebsiteRedirectLocation: js.UndefOr[WebsiteRedirectLocation] = js.undefined,
@@ -1038,6 +1059,8 @@ package s3 {
         "TaggingDirective" -> TaggingDirective.map { x => x.asInstanceOf[js.Any] },
         "CopySource" -> CopySource.map { x => x.asInstanceOf[js.Any] },
         "CopySourceIfModifiedSince" -> CopySourceIfModifiedSince.map { x => x.asInstanceOf[js.Any] },
+        "ObjectLockMode" -> ObjectLockMode.map { x => x.asInstanceOf[js.Any] },
+        "ObjectLockRetainUntilDate" -> ObjectLockRetainUntilDate.map { x => x.asInstanceOf[js.Any] },
         "CopySourceIfNoneMatch" -> CopySourceIfNoneMatch.map { x => x.asInstanceOf[js.Any] },
         "CopySourceSSECustomerKey" -> CopySourceSSECustomerKey.map { x => x.asInstanceOf[js.Any] },
         "SSEKMSKeyId" -> SSEKMSKeyId.map { x => x.asInstanceOf[js.Any] },
@@ -1056,6 +1079,7 @@ package s3 {
         "MetadataDirective" -> MetadataDirective.map { x => x.asInstanceOf[js.Any] },
         "GrantReadACP" -> GrantReadACP.map { x => x.asInstanceOf[js.Any] },
         "ContentLanguage" -> ContentLanguage.map { x => x.asInstanceOf[js.Any] },
+        "ObjectLockLegalHoldStatus" -> ObjectLockLegalHoldStatus.map { x => x.asInstanceOf[js.Any] },
         "ContentDisposition" -> ContentDisposition.map { x => x.asInstanceOf[js.Any] },
         "GrantRead" -> GrantRead.map { x => x.asInstanceOf[js.Any] },
         "WebsiteRedirectLocation" -> WebsiteRedirectLocation.map { x => x.asInstanceOf[js.Any] },
@@ -1145,6 +1169,7 @@ package s3 {
     var GrantFullControl: js.UndefOr[GrantFullControl]
     var GrantWriteACP: js.UndefOr[GrantWriteACP]
     var ACL: js.UndefOr[BucketCannedACL]
+    var ObjectLockEnabledForBucket: js.UndefOr[ObjectLockEnabledForBucket]
     var GrantReadACP: js.UndefOr[GrantReadACP]
     var GrantRead: js.UndefOr[GrantRead]
   }
@@ -1157,6 +1182,7 @@ package s3 {
       GrantFullControl: js.UndefOr[GrantFullControl] = js.undefined,
       GrantWriteACP: js.UndefOr[GrantWriteACP] = js.undefined,
       ACL: js.UndefOr[BucketCannedACL] = js.undefined,
+      ObjectLockEnabledForBucket: js.UndefOr[ObjectLockEnabledForBucket] = js.undefined,
       GrantReadACP: js.UndefOr[GrantReadACP] = js.undefined,
       GrantRead: js.UndefOr[GrantRead] = js.undefined): CreateBucketRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
@@ -1166,6 +1192,7 @@ package s3 {
         "GrantFullControl" -> GrantFullControl.map { x => x.asInstanceOf[js.Any] },
         "GrantWriteACP" -> GrantWriteACP.map { x => x.asInstanceOf[js.Any] },
         "ACL" -> ACL.map { x => x.asInstanceOf[js.Any] },
+        "ObjectLockEnabledForBucket" -> ObjectLockEnabledForBucket.map { x => x.asInstanceOf[js.Any] },
         "GrantReadACP" -> GrantReadACP.map { x => x.asInstanceOf[js.Any] },
         "GrantRead" -> GrantRead.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
@@ -1219,6 +1246,8 @@ package s3 {
   trait CreateMultipartUploadRequest extends js.Object {
     var Bucket: js.UndefOr[BucketName]
     var Metadata: js.UndefOr[Metadata]
+    var ObjectLockMode: js.UndefOr[ObjectLockMode]
+    var ObjectLockRetainUntilDate: js.UndefOr[ObjectLockRetainUntilDate]
     var SSEKMSKeyId: js.UndefOr[SSEKMSKeyId]
     var GrantFullControl: js.UndefOr[GrantFullControl]
     var ServerSideEncryption: js.UndefOr[ServerSideEncryption]
@@ -1232,6 +1261,7 @@ package s3 {
     var SSECustomerAlgorithm: js.UndefOr[SSECustomerAlgorithm]
     var GrantReadACP: js.UndefOr[GrantReadACP]
     var ContentLanguage: js.UndefOr[ContentLanguage]
+    var ObjectLockLegalHoldStatus: js.UndefOr[ObjectLockLegalHoldStatus]
     var ContentDisposition: js.UndefOr[ContentDisposition]
     var GrantRead: js.UndefOr[GrantRead]
     var WebsiteRedirectLocation: js.UndefOr[WebsiteRedirectLocation]
@@ -1246,6 +1276,8 @@ package s3 {
     def apply(
       Bucket: js.UndefOr[BucketName] = js.undefined,
       Metadata: js.UndefOr[Metadata] = js.undefined,
+      ObjectLockMode: js.UndefOr[ObjectLockMode] = js.undefined,
+      ObjectLockRetainUntilDate: js.UndefOr[ObjectLockRetainUntilDate] = js.undefined,
       SSEKMSKeyId: js.UndefOr[SSEKMSKeyId] = js.undefined,
       GrantFullControl: js.UndefOr[GrantFullControl] = js.undefined,
       ServerSideEncryption: js.UndefOr[ServerSideEncryption] = js.undefined,
@@ -1259,6 +1291,7 @@ package s3 {
       SSECustomerAlgorithm: js.UndefOr[SSECustomerAlgorithm] = js.undefined,
       GrantReadACP: js.UndefOr[GrantReadACP] = js.undefined,
       ContentLanguage: js.UndefOr[ContentLanguage] = js.undefined,
+      ObjectLockLegalHoldStatus: js.UndefOr[ObjectLockLegalHoldStatus] = js.undefined,
       ContentDisposition: js.UndefOr[ContentDisposition] = js.undefined,
       GrantRead: js.UndefOr[GrantRead] = js.undefined,
       WebsiteRedirectLocation: js.UndefOr[WebsiteRedirectLocation] = js.undefined,
@@ -1270,6 +1303,8 @@ package s3 {
       val _fields = IndexedSeq[(String, js.Any)](
         "Bucket" -> Bucket.map { x => x.asInstanceOf[js.Any] },
         "Metadata" -> Metadata.map { x => x.asInstanceOf[js.Any] },
+        "ObjectLockMode" -> ObjectLockMode.map { x => x.asInstanceOf[js.Any] },
+        "ObjectLockRetainUntilDate" -> ObjectLockRetainUntilDate.map { x => x.asInstanceOf[js.Any] },
         "SSEKMSKeyId" -> SSEKMSKeyId.map { x => x.asInstanceOf[js.Any] },
         "GrantFullControl" -> GrantFullControl.map { x => x.asInstanceOf[js.Any] },
         "ServerSideEncryption" -> ServerSideEncryption.map { x => x.asInstanceOf[js.Any] },
@@ -1283,6 +1318,7 @@ package s3 {
         "SSECustomerAlgorithm" -> SSECustomerAlgorithm.map { x => x.asInstanceOf[js.Any] },
         "GrantReadACP" -> GrantReadACP.map { x => x.asInstanceOf[js.Any] },
         "ContentLanguage" -> ContentLanguage.map { x => x.asInstanceOf[js.Any] },
+        "ObjectLockLegalHoldStatus" -> ObjectLockLegalHoldStatus.map { x => x.asInstanceOf[js.Any] },
         "ContentDisposition" -> ContentDisposition.map { x => x.asInstanceOf[js.Any] },
         "GrantRead" -> GrantRead.map { x => x.asInstanceOf[js.Any] },
         "WebsiteRedirectLocation" -> WebsiteRedirectLocation.map { x => x.asInstanceOf[js.Any] },
@@ -1293,6 +1329,30 @@ package s3 {
         "SSECustomerKey" -> SSECustomerKey.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateMultipartUploadRequest]
+    }
+  }
+
+  /**
+   * <p>The container element for specifying the default Object Lock retention settings for new objects placed in the specified bucket.</p>
+   */
+  @js.native
+  trait DefaultRetention extends js.Object {
+    var Mode: js.UndefOr[ObjectLockRetentionMode]
+    var Days: js.UndefOr[Days]
+    var Years: js.UndefOr[Years]
+  }
+
+  object DefaultRetention {
+    def apply(
+      Mode: js.UndefOr[ObjectLockRetentionMode] = js.undefined,
+      Days: js.UndefOr[Days] = js.undefined,
+      Years: js.UndefOr[Years] = js.undefined): DefaultRetention = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Mode" -> Mode.map { x => x.asInstanceOf[js.Any] },
+        "Days" -> Days.map { x => x.asInstanceOf[js.Any] },
+        "Years" -> Years.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DefaultRetention]
     }
   }
 
@@ -1567,6 +1627,7 @@ package s3 {
     var RequestPayer: js.UndefOr[RequestPayer]
     var VersionId: js.UndefOr[ObjectVersionId]
     var MFA: js.UndefOr[MFA]
+    var BypassGovernanceRetention: js.UndefOr[BypassGovernanceRetention]
     var Key: js.UndefOr[ObjectKey]
   }
 
@@ -1576,12 +1637,14 @@ package s3 {
       RequestPayer: js.UndefOr[RequestPayer] = js.undefined,
       VersionId: js.UndefOr[ObjectVersionId] = js.undefined,
       MFA: js.UndefOr[MFA] = js.undefined,
+      BypassGovernanceRetention: js.UndefOr[BypassGovernanceRetention] = js.undefined,
       Key: js.UndefOr[ObjectKey] = js.undefined): DeleteObjectRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Bucket" -> Bucket.map { x => x.asInstanceOf[js.Any] },
         "RequestPayer" -> RequestPayer.map { x => x.asInstanceOf[js.Any] },
         "VersionId" -> VersionId.map { x => x.asInstanceOf[js.Any] },
         "MFA" -> MFA.map { x => x.asInstanceOf[js.Any] },
+        "BypassGovernanceRetention" -> BypassGovernanceRetention.map { x => x.asInstanceOf[js.Any] },
         "Key" -> Key.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteObjectRequest]
@@ -1649,21 +1712,24 @@ package s3 {
   trait DeleteObjectsRequest extends js.Object {
     var Bucket: js.UndefOr[BucketName]
     var Delete: js.UndefOr[Delete]
-    var MFA: js.UndefOr[MFA]
     var RequestPayer: js.UndefOr[RequestPayer]
+    var MFA: js.UndefOr[MFA]
+    var BypassGovernanceRetention: js.UndefOr[BypassGovernanceRetention]
   }
 
   object DeleteObjectsRequest {
     def apply(
       Bucket: js.UndefOr[BucketName] = js.undefined,
       Delete: js.UndefOr[Delete] = js.undefined,
+      RequestPayer: js.UndefOr[RequestPayer] = js.undefined,
       MFA: js.UndefOr[MFA] = js.undefined,
-      RequestPayer: js.UndefOr[RequestPayer] = js.undefined): DeleteObjectsRequest = {
+      BypassGovernanceRetention: js.UndefOr[BypassGovernanceRetention] = js.undefined): DeleteObjectsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Bucket" -> Bucket.map { x => x.asInstanceOf[js.Any] },
         "Delete" -> Delete.map { x => x.asInstanceOf[js.Any] },
+        "RequestPayer" -> RequestPayer.map { x => x.asInstanceOf[js.Any] },
         "MFA" -> MFA.map { x => x.asInstanceOf[js.Any] },
-        "RequestPayer" -> RequestPayer.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "BypassGovernanceRetention" -> BypassGovernanceRetention.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteObjectsRequest]
     }
@@ -1854,8 +1920,10 @@ package s3 {
     val `s3:ObjectRemoved:*` = "s3:ObjectRemoved:*"
     val `s3:ObjectRemoved:Delete` = "s3:ObjectRemoved:Delete"
     val `s3:ObjectRemoved:DeleteMarkerCreated` = "s3:ObjectRemoved:DeleteMarkerCreated"
+    val `s3:ObjectRestore:Post` = "s3:ObjectRestore:Post"
+    val `s3:ObjectRestore:Completed` = "s3:ObjectRestore:Completed"
 
-    val values = IndexedSeq(`s3:ReducedRedundancyLostObject`, `s3:ObjectCreated:*`, `s3:ObjectCreated:Put`, `s3:ObjectCreated:Post`, `s3:ObjectCreated:Copy`, `s3:ObjectCreated:CompleteMultipartUpload`, `s3:ObjectRemoved:*`, `s3:ObjectRemoved:Delete`, `s3:ObjectRemoved:DeleteMarkerCreated`)
+    val values = IndexedSeq(`s3:ReducedRedundancyLostObject`, `s3:ObjectCreated:*`, `s3:ObjectCreated:Put`, `s3:ObjectCreated:Post`, `s3:ObjectCreated:Copy`, `s3:ObjectCreated:CompleteMultipartUpload`, `s3:ObjectRemoved:*`, `s3:ObjectRemoved:Delete`, `s3:ObjectRemoved:DeleteMarkerCreated`, `s3:ObjectRestore:Post`, `s3:ObjectRestore:Completed`)
   }
 
   object ExpirationStatusEnum {
@@ -2532,10 +2600,81 @@ package s3 {
   }
 
   @js.native
+  trait GetObjectLegalHoldOutput extends js.Object {
+    var LegalHold: js.UndefOr[ObjectLockLegalHold]
+  }
+
+  object GetObjectLegalHoldOutput {
+    def apply(
+      LegalHold: js.UndefOr[ObjectLockLegalHold] = js.undefined): GetObjectLegalHoldOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "LegalHold" -> LegalHold.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetObjectLegalHoldOutput]
+    }
+  }
+
+  @js.native
+  trait GetObjectLegalHoldRequest extends js.Object {
+    var Bucket: js.UndefOr[BucketName]
+    var Key: js.UndefOr[ObjectKey]
+    var VersionId: js.UndefOr[ObjectVersionId]
+    var RequestPayer: js.UndefOr[RequestPayer]
+  }
+
+  object GetObjectLegalHoldRequest {
+    def apply(
+      Bucket: js.UndefOr[BucketName] = js.undefined,
+      Key: js.UndefOr[ObjectKey] = js.undefined,
+      VersionId: js.UndefOr[ObjectVersionId] = js.undefined,
+      RequestPayer: js.UndefOr[RequestPayer] = js.undefined): GetObjectLegalHoldRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Bucket" -> Bucket.map { x => x.asInstanceOf[js.Any] },
+        "Key" -> Key.map { x => x.asInstanceOf[js.Any] },
+        "VersionId" -> VersionId.map { x => x.asInstanceOf[js.Any] },
+        "RequestPayer" -> RequestPayer.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetObjectLegalHoldRequest]
+    }
+  }
+
+  @js.native
+  trait GetObjectLockConfigurationOutput extends js.Object {
+    var ObjectLockConfiguration: js.UndefOr[ObjectLockConfiguration]
+  }
+
+  object GetObjectLockConfigurationOutput {
+    def apply(
+      ObjectLockConfiguration: js.UndefOr[ObjectLockConfiguration] = js.undefined): GetObjectLockConfigurationOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ObjectLockConfiguration" -> ObjectLockConfiguration.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetObjectLockConfigurationOutput]
+    }
+  }
+
+  @js.native
+  trait GetObjectLockConfigurationRequest extends js.Object {
+    var Bucket: js.UndefOr[BucketName]
+  }
+
+  object GetObjectLockConfigurationRequest {
+    def apply(
+      Bucket: js.UndefOr[BucketName] = js.undefined): GetObjectLockConfigurationRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Bucket" -> Bucket.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetObjectLockConfigurationRequest]
+    }
+  }
+
+  @js.native
   trait GetObjectOutput extends js.Object {
     var ContentRange: js.UndefOr[ContentRange]
     var Metadata: js.UndefOr[Metadata]
     var Restore: js.UndefOr[Restore]
+    var ObjectLockMode: js.UndefOr[ObjectLockMode]
+    var ObjectLockRetainUntilDate: js.UndefOr[ObjectLockRetainUntilDate]
     var SSEKMSKeyId: js.UndefOr[SSEKMSKeyId]
     var ReplicationStatus: js.UndefOr[ReplicationStatus]
     var ServerSideEncryption: js.UndefOr[ServerSideEncryption]
@@ -2552,6 +2691,7 @@ package s3 {
     var ContentLength: js.UndefOr[ContentLength]
     var Expiration: js.UndefOr[Expiration]
     var ContentLanguage: js.UndefOr[ContentLanguage]
+    var ObjectLockLegalHoldStatus: js.UndefOr[ObjectLockLegalHoldStatus]
     var ContentDisposition: js.UndefOr[ContentDisposition]
     var AcceptRanges: js.UndefOr[AcceptRanges]
     var TagCount: js.UndefOr[TagCount]
@@ -2568,6 +2708,8 @@ package s3 {
       ContentRange: js.UndefOr[ContentRange] = js.undefined,
       Metadata: js.UndefOr[Metadata] = js.undefined,
       Restore: js.UndefOr[Restore] = js.undefined,
+      ObjectLockMode: js.UndefOr[ObjectLockMode] = js.undefined,
+      ObjectLockRetainUntilDate: js.UndefOr[ObjectLockRetainUntilDate] = js.undefined,
       SSEKMSKeyId: js.UndefOr[SSEKMSKeyId] = js.undefined,
       ReplicationStatus: js.UndefOr[ReplicationStatus] = js.undefined,
       ServerSideEncryption: js.UndefOr[ServerSideEncryption] = js.undefined,
@@ -2584,6 +2726,7 @@ package s3 {
       ContentLength: js.UndefOr[ContentLength] = js.undefined,
       Expiration: js.UndefOr[Expiration] = js.undefined,
       ContentLanguage: js.UndefOr[ContentLanguage] = js.undefined,
+      ObjectLockLegalHoldStatus: js.UndefOr[ObjectLockLegalHoldStatus] = js.undefined,
       ContentDisposition: js.UndefOr[ContentDisposition] = js.undefined,
       AcceptRanges: js.UndefOr[AcceptRanges] = js.undefined,
       TagCount: js.UndefOr[TagCount] = js.undefined,
@@ -2597,6 +2740,8 @@ package s3 {
         "ContentRange" -> ContentRange.map { x => x.asInstanceOf[js.Any] },
         "Metadata" -> Metadata.map { x => x.asInstanceOf[js.Any] },
         "Restore" -> Restore.map { x => x.asInstanceOf[js.Any] },
+        "ObjectLockMode" -> ObjectLockMode.map { x => x.asInstanceOf[js.Any] },
+        "ObjectLockRetainUntilDate" -> ObjectLockRetainUntilDate.map { x => x.asInstanceOf[js.Any] },
         "SSEKMSKeyId" -> SSEKMSKeyId.map { x => x.asInstanceOf[js.Any] },
         "ReplicationStatus" -> ReplicationStatus.map { x => x.asInstanceOf[js.Any] },
         "ServerSideEncryption" -> ServerSideEncryption.map { x => x.asInstanceOf[js.Any] },
@@ -2613,6 +2758,7 @@ package s3 {
         "ContentLength" -> ContentLength.map { x => x.asInstanceOf[js.Any] },
         "Expiration" -> Expiration.map { x => x.asInstanceOf[js.Any] },
         "ContentLanguage" -> ContentLanguage.map { x => x.asInstanceOf[js.Any] },
+        "ObjectLockLegalHoldStatus" -> ObjectLockLegalHoldStatus.map { x => x.asInstanceOf[js.Any] },
         "ContentDisposition" -> ContentDisposition.map { x => x.asInstanceOf[js.Any] },
         "AcceptRanges" -> AcceptRanges.map { x => x.asInstanceOf[js.Any] },
         "TagCount" -> TagCount.map { x => x.asInstanceOf[js.Any] },
@@ -2693,6 +2839,45 @@ package s3 {
         "SSECustomerKey" -> SSECustomerKey.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetObjectRequest]
+    }
+  }
+
+  @js.native
+  trait GetObjectRetentionOutput extends js.Object {
+    var Retention: js.UndefOr[ObjectLockRetention]
+  }
+
+  object GetObjectRetentionOutput {
+    def apply(
+      Retention: js.UndefOr[ObjectLockRetention] = js.undefined): GetObjectRetentionOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Retention" -> Retention.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetObjectRetentionOutput]
+    }
+  }
+
+  @js.native
+  trait GetObjectRetentionRequest extends js.Object {
+    var Bucket: js.UndefOr[BucketName]
+    var Key: js.UndefOr[ObjectKey]
+    var VersionId: js.UndefOr[ObjectVersionId]
+    var RequestPayer: js.UndefOr[RequestPayer]
+  }
+
+  object GetObjectRetentionRequest {
+    def apply(
+      Bucket: js.UndefOr[BucketName] = js.undefined,
+      Key: js.UndefOr[ObjectKey] = js.undefined,
+      VersionId: js.UndefOr[ObjectVersionId] = js.undefined,
+      RequestPayer: js.UndefOr[RequestPayer] = js.undefined): GetObjectRetentionRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Bucket" -> Bucket.map { x => x.asInstanceOf[js.Any] },
+        "Key" -> Key.map { x => x.asInstanceOf[js.Any] },
+        "VersionId" -> VersionId.map { x => x.asInstanceOf[js.Any] },
+        "RequestPayer" -> RequestPayer.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetObjectRetentionRequest]
     }
   }
 
@@ -2883,6 +3068,8 @@ package s3 {
   trait HeadObjectOutput extends js.Object {
     var Metadata: js.UndefOr[Metadata]
     var Restore: js.UndefOr[Restore]
+    var ObjectLockMode: js.UndefOr[ObjectLockMode]
+    var ObjectLockRetainUntilDate: js.UndefOr[ObjectLockRetainUntilDate]
     var SSEKMSKeyId: js.UndefOr[SSEKMSKeyId]
     var ReplicationStatus: js.UndefOr[ReplicationStatus]
     var ServerSideEncryption: js.UndefOr[ServerSideEncryption]
@@ -2898,6 +3085,7 @@ package s3 {
     var ContentLength: js.UndefOr[ContentLength]
     var Expiration: js.UndefOr[Expiration]
     var ContentLanguage: js.UndefOr[ContentLanguage]
+    var ObjectLockLegalHoldStatus: js.UndefOr[ObjectLockLegalHoldStatus]
     var ContentDisposition: js.UndefOr[ContentDisposition]
     var AcceptRanges: js.UndefOr[AcceptRanges]
     var WebsiteRedirectLocation: js.UndefOr[WebsiteRedirectLocation]
@@ -2912,6 +3100,8 @@ package s3 {
     def apply(
       Metadata: js.UndefOr[Metadata] = js.undefined,
       Restore: js.UndefOr[Restore] = js.undefined,
+      ObjectLockMode: js.UndefOr[ObjectLockMode] = js.undefined,
+      ObjectLockRetainUntilDate: js.UndefOr[ObjectLockRetainUntilDate] = js.undefined,
       SSEKMSKeyId: js.UndefOr[SSEKMSKeyId] = js.undefined,
       ReplicationStatus: js.UndefOr[ReplicationStatus] = js.undefined,
       ServerSideEncryption: js.UndefOr[ServerSideEncryption] = js.undefined,
@@ -2927,6 +3117,7 @@ package s3 {
       ContentLength: js.UndefOr[ContentLength] = js.undefined,
       Expiration: js.UndefOr[Expiration] = js.undefined,
       ContentLanguage: js.UndefOr[ContentLanguage] = js.undefined,
+      ObjectLockLegalHoldStatus: js.UndefOr[ObjectLockLegalHoldStatus] = js.undefined,
       ContentDisposition: js.UndefOr[ContentDisposition] = js.undefined,
       AcceptRanges: js.UndefOr[AcceptRanges] = js.undefined,
       WebsiteRedirectLocation: js.UndefOr[WebsiteRedirectLocation] = js.undefined,
@@ -2938,6 +3129,8 @@ package s3 {
       val _fields = IndexedSeq[(String, js.Any)](
         "Metadata" -> Metadata.map { x => x.asInstanceOf[js.Any] },
         "Restore" -> Restore.map { x => x.asInstanceOf[js.Any] },
+        "ObjectLockMode" -> ObjectLockMode.map { x => x.asInstanceOf[js.Any] },
+        "ObjectLockRetainUntilDate" -> ObjectLockRetainUntilDate.map { x => x.asInstanceOf[js.Any] },
         "SSEKMSKeyId" -> SSEKMSKeyId.map { x => x.asInstanceOf[js.Any] },
         "ReplicationStatus" -> ReplicationStatus.map { x => x.asInstanceOf[js.Any] },
         "ServerSideEncryption" -> ServerSideEncryption.map { x => x.asInstanceOf[js.Any] },
@@ -2953,6 +3146,7 @@ package s3 {
         "ContentLength" -> ContentLength.map { x => x.asInstanceOf[js.Any] },
         "Expiration" -> Expiration.map { x => x.asInstanceOf[js.Any] },
         "ContentLanguage" -> ContentLanguage.map { x => x.asInstanceOf[js.Any] },
+        "ObjectLockLegalHoldStatus" -> ObjectLockLegalHoldStatus.map { x => x.asInstanceOf[js.Any] },
         "ContentDisposition" -> ContentDisposition.map { x => x.asInstanceOf[js.Any] },
         "AcceptRanges" -> AcceptRanges.map { x => x.asInstanceOf[js.Any] },
         "WebsiteRedirectLocation" -> WebsiteRedirectLocation.map { x => x.asInstanceOf[js.Any] },
@@ -3190,8 +3384,11 @@ package s3 {
     val IsMultipartUploaded = "IsMultipartUploaded"
     val ReplicationStatus = "ReplicationStatus"
     val EncryptionStatus = "EncryptionStatus"
+    val ObjectLockRetainUntilDate = "ObjectLockRetainUntilDate"
+    val ObjectLockMode = "ObjectLockMode"
+    val ObjectLockLegalHoldStatus = "ObjectLockLegalHoldStatus"
 
-    val values = IndexedSeq(Size, LastModifiedDate, StorageClass, ETag, IsMultipartUploaded, ReplicationStatus, EncryptionStatus)
+    val values = IndexedSeq(Size, LastModifiedDate, StorageClass, ETag, IsMultipartUploaded, ReplicationStatus, EncryptionStatus, ObjectLockRetainUntilDate, ObjectLockMode, ObjectLockLegalHoldStatus)
   }
 
   @js.native
@@ -4147,7 +4344,7 @@ package s3 {
   }
 
   /**
-   * <p>Container for the transition rule that describes when noncurrent objects transition to the STANDARD_IA, ONEZONE_IA, or GLACIER storage class. If your bucket is versioning-enabled (or versioning is suspended), you can set this action to request that Amazon S3 transition noncurrent object versions to the STANDARD_IA, ONEZONE_IA, or GLACIER storage class at a specific period in the object's lifetime.</p>
+   * <p>Container for the transition rule that describes when noncurrent objects transition to the STANDARD_IA, ONEZONE_IA, INTELLIGENT_TIERING or GLACIER storage class. If your bucket is versioning-enabled (or versioning is suspended), you can set this action to request that Amazon S3 transition noncurrent object versions to the STANDARD_IA, ONEZONE_IA, INTELLIGENT_TIERING or GLACIER storage class at a specific period in the object's lifetime.</p>
    */
   @js.native
   trait NoncurrentVersionTransition extends js.Object {
@@ -4290,14 +4487,120 @@ package s3 {
     }
   }
 
+  /**
+   * <p>The container element for Object Lock configuration parameters.</p>
+   */
+  @js.native
+  trait ObjectLockConfiguration extends js.Object {
+    var ObjectLockEnabled: js.UndefOr[ObjectLockEnabled]
+    var Rule: js.UndefOr[ObjectLockRule]
+  }
+
+  object ObjectLockConfiguration {
+    def apply(
+      ObjectLockEnabled: js.UndefOr[ObjectLockEnabled] = js.undefined,
+      Rule: js.UndefOr[ObjectLockRule] = js.undefined): ObjectLockConfiguration = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ObjectLockEnabled" -> ObjectLockEnabled.map { x => x.asInstanceOf[js.Any] },
+        "Rule" -> Rule.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ObjectLockConfiguration]
+    }
+  }
+
+  object ObjectLockEnabledEnum {
+    val Enabled = "Enabled"
+
+    val values = IndexedSeq(Enabled)
+  }
+
+  /**
+   * <p>A Legal Hold configuration for an object.</p>
+   */
+  @js.native
+  trait ObjectLockLegalHold extends js.Object {
+    var Status: js.UndefOr[ObjectLockLegalHoldStatus]
+  }
+
+  object ObjectLockLegalHold {
+    def apply(
+      Status: js.UndefOr[ObjectLockLegalHoldStatus] = js.undefined): ObjectLockLegalHold = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Status" -> Status.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ObjectLockLegalHold]
+    }
+  }
+
+  object ObjectLockLegalHoldStatusEnum {
+    val ON = "ON"
+    val OFF = "OFF"
+
+    val values = IndexedSeq(ON, OFF)
+  }
+
+  object ObjectLockModeEnum {
+    val GOVERNANCE = "GOVERNANCE"
+    val COMPLIANCE = "COMPLIANCE"
+
+    val values = IndexedSeq(GOVERNANCE, COMPLIANCE)
+  }
+
+  /**
+   * <p>A Retention configuration for an object.</p>
+   */
+  @js.native
+  trait ObjectLockRetention extends js.Object {
+    var Mode: js.UndefOr[ObjectLockRetentionMode]
+    var RetainUntilDate: js.UndefOr[Date]
+  }
+
+  object ObjectLockRetention {
+    def apply(
+      Mode: js.UndefOr[ObjectLockRetentionMode] = js.undefined,
+      RetainUntilDate: js.UndefOr[Date] = js.undefined): ObjectLockRetention = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Mode" -> Mode.map { x => x.asInstanceOf[js.Any] },
+        "RetainUntilDate" -> RetainUntilDate.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ObjectLockRetention]
+    }
+  }
+
+  object ObjectLockRetentionModeEnum {
+    val GOVERNANCE = "GOVERNANCE"
+    val COMPLIANCE = "COMPLIANCE"
+
+    val values = IndexedSeq(GOVERNANCE, COMPLIANCE)
+  }
+
+  /**
+   * <p>The container element for an Object Lock rule.</p>
+   */
+  @js.native
+  trait ObjectLockRule extends js.Object {
+    var DefaultRetention: js.UndefOr[DefaultRetention]
+  }
+
+  object ObjectLockRule {
+    def apply(
+      DefaultRetention: js.UndefOr[DefaultRetention] = js.undefined): ObjectLockRule = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "DefaultRetention" -> DefaultRetention.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ObjectLockRule]
+    }
+  }
+
   object ObjectStorageClassEnum {
     val STANDARD = "STANDARD"
     val REDUCED_REDUNDANCY = "REDUCED_REDUNDANCY"
     val GLACIER = "GLACIER"
     val STANDARD_IA = "STANDARD_IA"
     val ONEZONE_IA = "ONEZONE_IA"
+    val INTELLIGENT_TIERING = "INTELLIGENT_TIERING"
 
-    val values = IndexedSeq(STANDARD, REDUCED_REDUNDANCY, GLACIER, STANDARD_IA, ONEZONE_IA)
+    val values = IndexedSeq(STANDARD, REDUCED_REDUNDANCY, GLACIER, STANDARD_IA, ONEZONE_IA, INTELLIGENT_TIERING)
   }
 
   @js.native
@@ -4460,7 +4763,7 @@ package s3 {
   }
 
   /**
-   * <p>The container element for this bucket's public-policy status.</p>
+   * <p>The container element for a bucket's policy status.</p>
    */
   @js.native
   trait PolicyStatus extends js.Object {
@@ -4520,9 +4823,6 @@ package s3 {
     val values = IndexedSeq(http, https)
   }
 
-  /**
-   * <p>The container element for all Public Access Block configuration options. You can enable the configuration options in any combination.</p> <p>Amazon S3 considers a bucket policy public unless at least one of the following conditions is true:</p> <ol> <li> <p>The policy limits access to a set of CIDRs using <code>aws:SourceIp</code>. For more information on CIDR, see <a href="http://www.rfc-editor.org/rfc/rfc4632.txt">http://www.rfc-editor.org/rfc/rfc4632.txt</a> </p> </li> <li> <p>The policy grants permissions, not including any "bad actions," to one of the following:</p> <ul> <li> <p>A fixed AWS principal, user, role, or service principal</p> </li> <li> <p>A fixed <code>aws:SourceArn</code> </p> </li> <li> <p>A fixed <code>aws:SourceVpc</code> </p> </li> <li> <p>A fixed <code>aws:SourceVpce</code> </p> </li> <li> <p>A fixed <code>aws:SourceOwner</code> </p> </li> <li> <p>A fixed <code>aws:SourceAccount</code> </p> </li> <li> <p>A fixed value of <code>s3:x-amz-server-side-encryption-aws-kms-key-id</code> </p> </li> <li> <p>A fixed value of <code>aws:userid</code> outside the pattern "<code>AROLEID:*</code>"</p> </li> </ul> </li> </ol> <p>"Bad actions" are those that could expose the data inside a bucket to reads or writes by the public. These actions are <code>s3:Get*</code>, <code>s3:List*</code>, <code>s3:AbortMultipartUpload</code>, <code>s3:Delete*</code>, <code>s3:Put*</code>, and <code>s3:RestoreObject</code>.</p> <p>The star notation for bad actions indicates that all matching operations are considered bad actions. For example, because <code>s3:Get*</code> is a bad action, <code>s3:GetObject</code>, <code>s3:GetObjectVersion</code>, and <code>s3:GetObjectAcl</code> are all bad actions.</p>
-   */
   @js.native
   trait PublicAccessBlockConfiguration extends js.Object {
     var BlockPublicAcls: js.UndefOr[Setting]
@@ -5004,6 +5304,93 @@ package s3 {
   }
 
   @js.native
+  trait PutObjectLegalHoldOutput extends js.Object {
+    var RequestCharged: js.UndefOr[RequestCharged]
+  }
+
+  object PutObjectLegalHoldOutput {
+    def apply(
+      RequestCharged: js.UndefOr[RequestCharged] = js.undefined): PutObjectLegalHoldOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "RequestCharged" -> RequestCharged.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutObjectLegalHoldOutput]
+    }
+  }
+
+  @js.native
+  trait PutObjectLegalHoldRequest extends js.Object {
+    var Bucket: js.UndefOr[BucketName]
+    var LegalHold: js.UndefOr[ObjectLockLegalHold]
+    var RequestPayer: js.UndefOr[RequestPayer]
+    var VersionId: js.UndefOr[ObjectVersionId]
+    var ContentMD5: js.UndefOr[ContentMD5]
+    var Key: js.UndefOr[ObjectKey]
+  }
+
+  object PutObjectLegalHoldRequest {
+    def apply(
+      Bucket: js.UndefOr[BucketName] = js.undefined,
+      LegalHold: js.UndefOr[ObjectLockLegalHold] = js.undefined,
+      RequestPayer: js.UndefOr[RequestPayer] = js.undefined,
+      VersionId: js.UndefOr[ObjectVersionId] = js.undefined,
+      ContentMD5: js.UndefOr[ContentMD5] = js.undefined,
+      Key: js.UndefOr[ObjectKey] = js.undefined): PutObjectLegalHoldRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Bucket" -> Bucket.map { x => x.asInstanceOf[js.Any] },
+        "LegalHold" -> LegalHold.map { x => x.asInstanceOf[js.Any] },
+        "RequestPayer" -> RequestPayer.map { x => x.asInstanceOf[js.Any] },
+        "VersionId" -> VersionId.map { x => x.asInstanceOf[js.Any] },
+        "ContentMD5" -> ContentMD5.map { x => x.asInstanceOf[js.Any] },
+        "Key" -> Key.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutObjectLegalHoldRequest]
+    }
+  }
+
+  @js.native
+  trait PutObjectLockConfigurationOutput extends js.Object {
+    var RequestCharged: js.UndefOr[RequestCharged]
+  }
+
+  object PutObjectLockConfigurationOutput {
+    def apply(
+      RequestCharged: js.UndefOr[RequestCharged] = js.undefined): PutObjectLockConfigurationOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "RequestCharged" -> RequestCharged.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutObjectLockConfigurationOutput]
+    }
+  }
+
+  @js.native
+  trait PutObjectLockConfigurationRequest extends js.Object {
+    var Bucket: js.UndefOr[BucketName]
+    var ObjectLockConfiguration: js.UndefOr[ObjectLockConfiguration]
+    var RequestPayer: js.UndefOr[RequestPayer]
+    var ContentMD5: js.UndefOr[ContentMD5]
+    var Token: js.UndefOr[ObjectLockToken]
+  }
+
+  object PutObjectLockConfigurationRequest {
+    def apply(
+      Bucket: js.UndefOr[BucketName] = js.undefined,
+      ObjectLockConfiguration: js.UndefOr[ObjectLockConfiguration] = js.undefined,
+      RequestPayer: js.UndefOr[RequestPayer] = js.undefined,
+      ContentMD5: js.UndefOr[ContentMD5] = js.undefined,
+      Token: js.UndefOr[ObjectLockToken] = js.undefined): PutObjectLockConfigurationRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Bucket" -> Bucket.map { x => x.asInstanceOf[js.Any] },
+        "ObjectLockConfiguration" -> ObjectLockConfiguration.map { x => x.asInstanceOf[js.Any] },
+        "RequestPayer" -> RequestPayer.map { x => x.asInstanceOf[js.Any] },
+        "ContentMD5" -> ContentMD5.map { x => x.asInstanceOf[js.Any] },
+        "Token" -> Token.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutObjectLockConfigurationRequest]
+    }
+  }
+
+  @js.native
   trait PutObjectOutput extends js.Object {
     var SSEKMSKeyId: js.UndefOr[SSEKMSKeyId]
     var ServerSideEncryption: js.UndefOr[ServerSideEncryption]
@@ -5043,6 +5430,8 @@ package s3 {
   trait PutObjectRequest extends js.Object {
     var Bucket: js.UndefOr[BucketName]
     var Metadata: js.UndefOr[Metadata]
+    var ObjectLockMode: js.UndefOr[ObjectLockMode]
+    var ObjectLockRetainUntilDate: js.UndefOr[ObjectLockRetainUntilDate]
     var SSEKMSKeyId: js.UndefOr[SSEKMSKeyId]
     var GrantFullControl: js.UndefOr[GrantFullControl]
     var ServerSideEncryption: js.UndefOr[ServerSideEncryption]
@@ -5058,6 +5447,7 @@ package s3 {
     var ContentLength: js.UndefOr[ContentLength]
     var GrantReadACP: js.UndefOr[GrantReadACP]
     var ContentLanguage: js.UndefOr[ContentLanguage]
+    var ObjectLockLegalHoldStatus: js.UndefOr[ObjectLockLegalHoldStatus]
     var ContentDisposition: js.UndefOr[ContentDisposition]
     var GrantRead: js.UndefOr[GrantRead]
     var WebsiteRedirectLocation: js.UndefOr[WebsiteRedirectLocation]
@@ -5073,6 +5463,8 @@ package s3 {
     def apply(
       Bucket: js.UndefOr[BucketName] = js.undefined,
       Metadata: js.UndefOr[Metadata] = js.undefined,
+      ObjectLockMode: js.UndefOr[ObjectLockMode] = js.undefined,
+      ObjectLockRetainUntilDate: js.UndefOr[ObjectLockRetainUntilDate] = js.undefined,
       SSEKMSKeyId: js.UndefOr[SSEKMSKeyId] = js.undefined,
       GrantFullControl: js.UndefOr[GrantFullControl] = js.undefined,
       ServerSideEncryption: js.UndefOr[ServerSideEncryption] = js.undefined,
@@ -5088,6 +5480,7 @@ package s3 {
       ContentLength: js.UndefOr[ContentLength] = js.undefined,
       GrantReadACP: js.UndefOr[GrantReadACP] = js.undefined,
       ContentLanguage: js.UndefOr[ContentLanguage] = js.undefined,
+      ObjectLockLegalHoldStatus: js.UndefOr[ObjectLockLegalHoldStatus] = js.undefined,
       ContentDisposition: js.UndefOr[ContentDisposition] = js.undefined,
       GrantRead: js.UndefOr[GrantRead] = js.undefined,
       WebsiteRedirectLocation: js.UndefOr[WebsiteRedirectLocation] = js.undefined,
@@ -5100,6 +5493,8 @@ package s3 {
       val _fields = IndexedSeq[(String, js.Any)](
         "Bucket" -> Bucket.map { x => x.asInstanceOf[js.Any] },
         "Metadata" -> Metadata.map { x => x.asInstanceOf[js.Any] },
+        "ObjectLockMode" -> ObjectLockMode.map { x => x.asInstanceOf[js.Any] },
+        "ObjectLockRetainUntilDate" -> ObjectLockRetainUntilDate.map { x => x.asInstanceOf[js.Any] },
         "SSEKMSKeyId" -> SSEKMSKeyId.map { x => x.asInstanceOf[js.Any] },
         "GrantFullControl" -> GrantFullControl.map { x => x.asInstanceOf[js.Any] },
         "ServerSideEncryption" -> ServerSideEncryption.map { x => x.asInstanceOf[js.Any] },
@@ -5115,6 +5510,7 @@ package s3 {
         "ContentLength" -> ContentLength.map { x => x.asInstanceOf[js.Any] },
         "GrantReadACP" -> GrantReadACP.map { x => x.asInstanceOf[js.Any] },
         "ContentLanguage" -> ContentLanguage.map { x => x.asInstanceOf[js.Any] },
+        "ObjectLockLegalHoldStatus" -> ObjectLockLegalHoldStatus.map { x => x.asInstanceOf[js.Any] },
         "ContentDisposition" -> ContentDisposition.map { x => x.asInstanceOf[js.Any] },
         "GrantRead" -> GrantRead.map { x => x.asInstanceOf[js.Any] },
         "WebsiteRedirectLocation" -> WebsiteRedirectLocation.map { x => x.asInstanceOf[js.Any] },
@@ -5126,6 +5522,54 @@ package s3 {
         "SSECustomerKey" -> SSECustomerKey.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutObjectRequest]
+    }
+  }
+
+  @js.native
+  trait PutObjectRetentionOutput extends js.Object {
+    var RequestCharged: js.UndefOr[RequestCharged]
+  }
+
+  object PutObjectRetentionOutput {
+    def apply(
+      RequestCharged: js.UndefOr[RequestCharged] = js.undefined): PutObjectRetentionOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "RequestCharged" -> RequestCharged.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutObjectRetentionOutput]
+    }
+  }
+
+  @js.native
+  trait PutObjectRetentionRequest extends js.Object {
+    var Bucket: js.UndefOr[BucketName]
+    var Retention: js.UndefOr[ObjectLockRetention]
+    var RequestPayer: js.UndefOr[RequestPayer]
+    var VersionId: js.UndefOr[ObjectVersionId]
+    var BypassGovernanceRetention: js.UndefOr[BypassGovernanceRetention]
+    var ContentMD5: js.UndefOr[ContentMD5]
+    var Key: js.UndefOr[ObjectKey]
+  }
+
+  object PutObjectRetentionRequest {
+    def apply(
+      Bucket: js.UndefOr[BucketName] = js.undefined,
+      Retention: js.UndefOr[ObjectLockRetention] = js.undefined,
+      RequestPayer: js.UndefOr[RequestPayer] = js.undefined,
+      VersionId: js.UndefOr[ObjectVersionId] = js.undefined,
+      BypassGovernanceRetention: js.UndefOr[BypassGovernanceRetention] = js.undefined,
+      ContentMD5: js.UndefOr[ContentMD5] = js.undefined,
+      Key: js.UndefOr[ObjectKey] = js.undefined): PutObjectRetentionRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Bucket" -> Bucket.map { x => x.asInstanceOf[js.Any] },
+        "Retention" -> Retention.map { x => x.asInstanceOf[js.Any] },
+        "RequestPayer" -> RequestPayer.map { x => x.asInstanceOf[js.Any] },
+        "VersionId" -> VersionId.map { x => x.asInstanceOf[js.Any] },
+        "BypassGovernanceRetention" -> BypassGovernanceRetention.map { x => x.asInstanceOf[js.Any] },
+        "ContentMD5" -> ContentMD5.map { x => x.asInstanceOf[js.Any] },
+        "Key" -> Key.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutObjectRetentionRequest]
     }
   }
 
@@ -5970,8 +6414,10 @@ package s3 {
     val REDUCED_REDUNDANCY = "REDUCED_REDUNDANCY"
     val STANDARD_IA = "STANDARD_IA"
     val ONEZONE_IA = "ONEZONE_IA"
+    val INTELLIGENT_TIERING = "INTELLIGENT_TIERING"
+    val GLACIER = "GLACIER"
 
-    val values = IndexedSeq(STANDARD, REDUCED_REDUNDANCY, STANDARD_IA, ONEZONE_IA)
+    val values = IndexedSeq(STANDARD, REDUCED_REDUNDANCY, STANDARD_IA, ONEZONE_IA, INTELLIGENT_TIERING, GLACIER)
   }
 
   @js.native
@@ -6155,8 +6601,9 @@ package s3 {
     val GLACIER = "GLACIER"
     val STANDARD_IA = "STANDARD_IA"
     val ONEZONE_IA = "ONEZONE_IA"
+    val INTELLIGENT_TIERING = "INTELLIGENT_TIERING"
 
-    val values = IndexedSeq(GLACIER, STANDARD_IA, ONEZONE_IA)
+    val values = IndexedSeq(GLACIER, STANDARD_IA, ONEZONE_IA, INTELLIGENT_TIERING)
   }
 
   object TypeEnum {

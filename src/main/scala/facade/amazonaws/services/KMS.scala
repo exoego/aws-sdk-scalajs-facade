@@ -14,13 +14,18 @@ package object kms {
   type ArnType = String
   type BooleanType = Boolean
   type CiphertextType = nodejs.buffer.Buffer | nodejs.stream.Readable | js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
+  type CloudHsmClusterIdType = String
+  type ConnectionErrorCodeType = String
+  type ConnectionStateType = String
+  type CustomKeyStoreIdType = String
+  type CustomKeyStoreNameType = String
+  type CustomKeyStoresList = js.Array[CustomKeyStoresListEntry]
   type DataKeySpec = String
   type DateType = js.Date
   type DescriptionType = String
   type EncryptionContextKey = String
   type EncryptionContextType = js.Dictionary[EncryptionContextValue]
   type EncryptionContextValue = String
-  type ErrorMessageType = String
   type ExpirationModelType = String
   type GrantIdType = String
   type GrantList = js.Array[GrantListEntry]
@@ -33,6 +38,7 @@ package object kms {
   type KeyList = js.Array[KeyListEntry]
   type KeyManagerType = String
   type KeyState = String
+  type KeyStorePasswordType = String
   type KeyUsageType = String
   type LimitType = Int
   type MarkerType = String
@@ -48,6 +54,7 @@ package object kms {
   type TagKeyType = String
   type TagList = js.Array[Tag]
   type TagValueType = String
+  type TrustAnchorCertificateType = String
   type WrappingKeySpec = String
 }
 
@@ -56,15 +63,20 @@ package kms {
   @JSImport("aws-sdk", "KMS")
   class KMS(config: AWSConfig) extends js.Object {
     def cancelKeyDeletion(params: CancelKeyDeletionRequest): Request[CancelKeyDeletionResponse] = js.native
+    def connectCustomKeyStore(params: ConnectCustomKeyStoreRequest): Request[ConnectCustomKeyStoreResponse] = js.native
     def createAlias(params: CreateAliasRequest): Request[js.Object] = js.native
+    def createCustomKeyStore(params: CreateCustomKeyStoreRequest): Request[CreateCustomKeyStoreResponse] = js.native
     def createGrant(params: CreateGrantRequest): Request[CreateGrantResponse] = js.native
     def createKey(params: CreateKeyRequest): Request[CreateKeyResponse] = js.native
     def decrypt(params: DecryptRequest): Request[DecryptResponse] = js.native
     def deleteAlias(params: DeleteAliasRequest): Request[js.Object] = js.native
+    def deleteCustomKeyStore(params: DeleteCustomKeyStoreRequest): Request[DeleteCustomKeyStoreResponse] = js.native
     def deleteImportedKeyMaterial(params: DeleteImportedKeyMaterialRequest): Request[js.Object] = js.native
+    def describeCustomKeyStores(params: DescribeCustomKeyStoresRequest): Request[DescribeCustomKeyStoresResponse] = js.native
     def describeKey(params: DescribeKeyRequest): Request[DescribeKeyResponse] = js.native
     def disableKey(params: DisableKeyRequest): Request[js.Object] = js.native
     def disableKeyRotation(params: DisableKeyRotationRequest): Request[js.Object] = js.native
+    def disconnectCustomKeyStore(params: DisconnectCustomKeyStoreRequest): Request[DisconnectCustomKeyStoreResponse] = js.native
     def enableKey(params: EnableKeyRequest): Request[js.Object] = js.native
     def enableKeyRotation(params: EnableKeyRotationRequest): Request[js.Object] = js.native
     def encrypt(params: EncryptRequest): Request[EncryptResponse] = js.native
@@ -89,6 +101,7 @@ package kms {
     def tagResource(params: TagResourceRequest): Request[js.Object] = js.native
     def untagResource(params: UntagResourceRequest): Request[js.Object] = js.native
     def updateAlias(params: UpdateAliasRequest): Request[js.Object] = js.native
+    def updateCustomKeyStore(params: UpdateCustomKeyStoreRequest): Request[UpdateCustomKeyStoreResponse] = js.native
     def updateKeyDescription(params: UpdateKeyDescriptionRequest): Request[js.Object] = js.native
   }
 
@@ -124,14 +137,6 @@ package kms {
     }
   }
 
-  /**
-   * <p>The request was rejected because it attempted to create a resource that already exists.</p>
-   */
-  @js.native
-  trait AlreadyExistsExceptionException extends js.Object {
-    val message: ErrorMessageType
-  }
-
   @js.native
   trait CancelKeyDeletionRequest extends js.Object {
     var KeyId: js.UndefOr[KeyIdType]
@@ -163,6 +168,54 @@ package kms {
   }
 
   @js.native
+  trait ConnectCustomKeyStoreRequest extends js.Object {
+    var CustomKeyStoreId: js.UndefOr[CustomKeyStoreIdType]
+  }
+
+  object ConnectCustomKeyStoreRequest {
+    def apply(
+      CustomKeyStoreId: js.UndefOr[CustomKeyStoreIdType] = js.undefined): ConnectCustomKeyStoreRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "CustomKeyStoreId" -> CustomKeyStoreId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ConnectCustomKeyStoreRequest]
+    }
+  }
+
+  @js.native
+  trait ConnectCustomKeyStoreResponse extends js.Object {
+
+  }
+
+  object ConnectCustomKeyStoreResponse {
+    def apply(): ConnectCustomKeyStoreResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ConnectCustomKeyStoreResponse]
+    }
+  }
+
+  object ConnectionErrorCodeTypeEnum {
+    val INVALID_CREDENTIALS = "INVALID_CREDENTIALS"
+    val CLUSTER_NOT_FOUND = "CLUSTER_NOT_FOUND"
+    val NETWORK_ERRORS = "NETWORK_ERRORS"
+    val INSUFFICIENT_CLOUDHSM_HSMS = "INSUFFICIENT_CLOUDHSM_HSMS"
+    val USER_LOCKED_OUT = "USER_LOCKED_OUT"
+
+    val values = IndexedSeq(INVALID_CREDENTIALS, CLUSTER_NOT_FOUND, NETWORK_ERRORS, INSUFFICIENT_CLOUDHSM_HSMS, USER_LOCKED_OUT)
+  }
+
+  object ConnectionStateTypeEnum {
+    val CONNECTED = "CONNECTED"
+    val CONNECTING = "CONNECTING"
+    val FAILED = "FAILED"
+    val DISCONNECTED = "DISCONNECTED"
+    val DISCONNECTING = "DISCONNECTING"
+
+    val values = IndexedSeq(CONNECTED, CONNECTING, FAILED, DISCONNECTED, DISCONNECTING)
+  }
+
+  @js.native
   trait CreateAliasRequest extends js.Object {
     var AliasName: js.UndefOr[AliasNameType]
     var TargetKeyId: js.UndefOr[KeyIdType]
@@ -177,6 +230,45 @@ package kms {
         "TargetKeyId" -> TargetKeyId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateAliasRequest]
+    }
+  }
+
+  @js.native
+  trait CreateCustomKeyStoreRequest extends js.Object {
+    var CustomKeyStoreName: js.UndefOr[CustomKeyStoreNameType]
+    var CloudHsmClusterId: js.UndefOr[CloudHsmClusterIdType]
+    var TrustAnchorCertificate: js.UndefOr[TrustAnchorCertificateType]
+    var KeyStorePassword: js.UndefOr[KeyStorePasswordType]
+  }
+
+  object CreateCustomKeyStoreRequest {
+    def apply(
+      CustomKeyStoreName: js.UndefOr[CustomKeyStoreNameType] = js.undefined,
+      CloudHsmClusterId: js.UndefOr[CloudHsmClusterIdType] = js.undefined,
+      TrustAnchorCertificate: js.UndefOr[TrustAnchorCertificateType] = js.undefined,
+      KeyStorePassword: js.UndefOr[KeyStorePasswordType] = js.undefined): CreateCustomKeyStoreRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "CustomKeyStoreName" -> CustomKeyStoreName.map { x => x.asInstanceOf[js.Any] },
+        "CloudHsmClusterId" -> CloudHsmClusterId.map { x => x.asInstanceOf[js.Any] },
+        "TrustAnchorCertificate" -> TrustAnchorCertificate.map { x => x.asInstanceOf[js.Any] },
+        "KeyStorePassword" -> KeyStorePassword.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateCustomKeyStoreRequest]
+    }
+  }
+
+  @js.native
+  trait CreateCustomKeyStoreResponse extends js.Object {
+    var CustomKeyStoreId: js.UndefOr[CustomKeyStoreIdType]
+  }
+
+  object CreateCustomKeyStoreResponse {
+    def apply(
+      CustomKeyStoreId: js.UndefOr[CustomKeyStoreIdType] = js.undefined): CreateCustomKeyStoreResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "CustomKeyStoreId" -> CustomKeyStoreId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateCustomKeyStoreResponse]
     }
   }
 
@@ -234,6 +326,7 @@ package kms {
   @js.native
   trait CreateKeyRequest extends js.Object {
     var KeyUsage: js.UndefOr[KeyUsageType]
+    var CustomKeyStoreId: js.UndefOr[CustomKeyStoreIdType]
     var Origin: js.UndefOr[OriginType]
     var Description: js.UndefOr[DescriptionType]
     var Policy: js.UndefOr[PolicyType]
@@ -244,6 +337,7 @@ package kms {
   object CreateKeyRequest {
     def apply(
       KeyUsage: js.UndefOr[KeyUsageType] = js.undefined,
+      CustomKeyStoreId: js.UndefOr[CustomKeyStoreIdType] = js.undefined,
       Origin: js.UndefOr[OriginType] = js.undefined,
       Description: js.UndefOr[DescriptionType] = js.undefined,
       Policy: js.UndefOr[PolicyType] = js.undefined,
@@ -251,6 +345,7 @@ package kms {
       Tags: js.UndefOr[TagList] = js.undefined): CreateKeyRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "KeyUsage" -> KeyUsage.map { x => x.asInstanceOf[js.Any] },
+        "CustomKeyStoreId" -> CustomKeyStoreId.map { x => x.asInstanceOf[js.Any] },
         "Origin" -> Origin.map { x => x.asInstanceOf[js.Any] },
         "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
         "Policy" -> Policy.map { x => x.asInstanceOf[js.Any] },
@@ -273,6 +368,42 @@ package kms {
         "KeyMetadata" -> KeyMetadata.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateKeyResponse]
+    }
+  }
+
+  /**
+   * <p>Contains information about each custom key store in the custom key store list.</p>
+   */
+  @js.native
+  trait CustomKeyStoresListEntry extends js.Object {
+    var CreationDate: js.UndefOr[DateType]
+    var CustomKeyStoreId: js.UndefOr[CustomKeyStoreIdType]
+    var CustomKeyStoreName: js.UndefOr[CustomKeyStoreNameType]
+    var CloudHsmClusterId: js.UndefOr[CloudHsmClusterIdType]
+    var TrustAnchorCertificate: js.UndefOr[TrustAnchorCertificateType]
+    var ConnectionState: js.UndefOr[ConnectionStateType]
+    var ConnectionErrorCode: js.UndefOr[ConnectionErrorCodeType]
+  }
+
+  object CustomKeyStoresListEntry {
+    def apply(
+      CreationDate: js.UndefOr[DateType] = js.undefined,
+      CustomKeyStoreId: js.UndefOr[CustomKeyStoreIdType] = js.undefined,
+      CustomKeyStoreName: js.UndefOr[CustomKeyStoreNameType] = js.undefined,
+      CloudHsmClusterId: js.UndefOr[CloudHsmClusterIdType] = js.undefined,
+      TrustAnchorCertificate: js.UndefOr[TrustAnchorCertificateType] = js.undefined,
+      ConnectionState: js.UndefOr[ConnectionStateType] = js.undefined,
+      ConnectionErrorCode: js.UndefOr[ConnectionErrorCodeType] = js.undefined): CustomKeyStoresListEntry = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "CreationDate" -> CreationDate.map { x => x.asInstanceOf[js.Any] },
+        "CustomKeyStoreId" -> CustomKeyStoreId.map { x => x.asInstanceOf[js.Any] },
+        "CustomKeyStoreName" -> CustomKeyStoreName.map { x => x.asInstanceOf[js.Any] },
+        "CloudHsmClusterId" -> CloudHsmClusterId.map { x => x.asInstanceOf[js.Any] },
+        "TrustAnchorCertificate" -> TrustAnchorCertificate.map { x => x.asInstanceOf[js.Any] },
+        "ConnectionState" -> ConnectionState.map { x => x.asInstanceOf[js.Any] },
+        "ConnectionErrorCode" -> ConnectionErrorCode.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CustomKeyStoresListEntry]
     }
   }
 
@@ -338,6 +469,34 @@ package kms {
   }
 
   @js.native
+  trait DeleteCustomKeyStoreRequest extends js.Object {
+    var CustomKeyStoreId: js.UndefOr[CustomKeyStoreIdType]
+  }
+
+  object DeleteCustomKeyStoreRequest {
+    def apply(
+      CustomKeyStoreId: js.UndefOr[CustomKeyStoreIdType] = js.undefined): DeleteCustomKeyStoreRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "CustomKeyStoreId" -> CustomKeyStoreId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteCustomKeyStoreRequest]
+    }
+  }
+
+  @js.native
+  trait DeleteCustomKeyStoreResponse extends js.Object {
+
+  }
+
+  object DeleteCustomKeyStoreResponse {
+    def apply(): DeleteCustomKeyStoreResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteCustomKeyStoreResponse]
+    }
+  }
+
+  @js.native
   trait DeleteImportedKeyMaterialRequest extends js.Object {
     var KeyId: js.UndefOr[KeyIdType]
   }
@@ -352,12 +511,49 @@ package kms {
     }
   }
 
-  /**
-   * <p>The system timed out while trying to fulfill the request. The request can be retried.</p>
-   */
   @js.native
-  trait DependencyTimeoutExceptionException extends js.Object {
-    val message: ErrorMessageType
+  trait DescribeCustomKeyStoresRequest extends js.Object {
+    var CustomKeyStoreId: js.UndefOr[CustomKeyStoreIdType]
+    var CustomKeyStoreName: js.UndefOr[CustomKeyStoreNameType]
+    var Limit: js.UndefOr[LimitType]
+    var Marker: js.UndefOr[MarkerType]
+  }
+
+  object DescribeCustomKeyStoresRequest {
+    def apply(
+      CustomKeyStoreId: js.UndefOr[CustomKeyStoreIdType] = js.undefined,
+      CustomKeyStoreName: js.UndefOr[CustomKeyStoreNameType] = js.undefined,
+      Limit: js.UndefOr[LimitType] = js.undefined,
+      Marker: js.UndefOr[MarkerType] = js.undefined): DescribeCustomKeyStoresRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "CustomKeyStoreId" -> CustomKeyStoreId.map { x => x.asInstanceOf[js.Any] },
+        "CustomKeyStoreName" -> CustomKeyStoreName.map { x => x.asInstanceOf[js.Any] },
+        "Limit" -> Limit.map { x => x.asInstanceOf[js.Any] },
+        "Marker" -> Marker.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeCustomKeyStoresRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeCustomKeyStoresResponse extends js.Object {
+    var CustomKeyStores: js.UndefOr[CustomKeyStoresList]
+    var NextMarker: js.UndefOr[MarkerType]
+    var Truncated: js.UndefOr[BooleanType]
+  }
+
+  object DescribeCustomKeyStoresResponse {
+    def apply(
+      CustomKeyStores: js.UndefOr[CustomKeyStoresList] = js.undefined,
+      NextMarker: js.UndefOr[MarkerType] = js.undefined,
+      Truncated: js.UndefOr[BooleanType] = js.undefined): DescribeCustomKeyStoresResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "CustomKeyStores" -> CustomKeyStores.map { x => x.asInstanceOf[js.Any] },
+        "NextMarker" -> NextMarker.map { x => x.asInstanceOf[js.Any] },
+        "Truncated" -> Truncated.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeCustomKeyStoresResponse]
+    }
   }
 
   @js.native
@@ -423,12 +619,32 @@ package kms {
     }
   }
 
-  /**
-   * <p>The request was rejected because the specified CMK is not enabled.</p>
-   */
   @js.native
-  trait DisabledExceptionException extends js.Object {
-    val message: ErrorMessageType
+  trait DisconnectCustomKeyStoreRequest extends js.Object {
+    var CustomKeyStoreId: js.UndefOr[CustomKeyStoreIdType]
+  }
+
+  object DisconnectCustomKeyStoreRequest {
+    def apply(
+      CustomKeyStoreId: js.UndefOr[CustomKeyStoreIdType] = js.undefined): DisconnectCustomKeyStoreRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "CustomKeyStoreId" -> CustomKeyStoreId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DisconnectCustomKeyStoreRequest]
+    }
+  }
+
+  @js.native
+  trait DisconnectCustomKeyStoreResponse extends js.Object {
+
+  }
+
+  object DisconnectCustomKeyStoreResponse {
+    def apply(): DisconnectCustomKeyStoreResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DisconnectCustomKeyStoreResponse]
+    }
   }
 
   @js.native
@@ -508,14 +724,6 @@ package kms {
     val KEY_MATERIAL_DOES_NOT_EXPIRE = "KEY_MATERIAL_DOES_NOT_EXPIRE"
 
     val values = IndexedSeq(KEY_MATERIAL_EXPIRES, KEY_MATERIAL_DOES_NOT_EXPIRE)
-  }
-
-  /**
-   * <p>The request was rejected because the provided import token is expired. Use <a>GetParametersForImport</a> to get a new import token and public key, use the new public key to encrypt the key material, and then try the request again.</p>
-   */
-  @js.native
-  trait ExpiredImportTokenExceptionException extends js.Object {
-    val message: ErrorMessageType
   }
 
   @js.native
@@ -614,13 +822,16 @@ package kms {
   @js.native
   trait GenerateRandomRequest extends js.Object {
     var NumberOfBytes: js.UndefOr[NumberOfBytesType]
+    var CustomKeyStoreId: js.UndefOr[CustomKeyStoreIdType]
   }
 
   object GenerateRandomRequest {
     def apply(
-      NumberOfBytes: js.UndefOr[NumberOfBytesType] = js.undefined): GenerateRandomRequest = {
+      NumberOfBytes: js.UndefOr[NumberOfBytesType] = js.undefined,
+      CustomKeyStoreId: js.UndefOr[CustomKeyStoreIdType] = js.undefined): GenerateRandomRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "NumberOfBytes" -> NumberOfBytes.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "NumberOfBytes" -> NumberOfBytes.map { x => x.asInstanceOf[js.Any] },
+        "CustomKeyStoreId" -> CustomKeyStoreId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GenerateRandomRequest]
     }
@@ -750,7 +961,7 @@ package kms {
   }
 
   /**
-   * <p>A structure that you can use to allow certain operations in the grant only when the preferred encryption context is present. For more information about encryption context, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/encryption-context.html">Encryption Context</a> in the <i>AWS Key Management Service Developer Guide</i>.</p> <p>Grant constraints apply only to operations that accept encryption context as input. For example, the <code> <a>DescribeKey</a> </code> operation does not accept encryption context as input. A grant that allows the <code>DescribeKey</code> operation does so regardless of the grant constraints. In contrast, the <code> <a>Encrypt</a> </code> operation accepts encryption context as input. A grant that allows the <code>Encrypt</code> operation does so only when the encryption context of the <code>Encrypt</code> operation satisfies the grant constraints.</p>
+   * <p>A structure that you can use to allow certain operations in the grant only when the desired encryption context is present. For more information about encryption context, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/encryption-context.html">Encryption Context</a> in the <i>AWS Key Management Service Developer Guide</i>.</p> <p>Grant constraints apply only to operations that accept encryption context as input. For example, the <code> <a>DescribeKey</a> </code> operation does not accept encryption context as input. A grant that allows the <code>DescribeKey</code> operation does so regardless of the grant constraints. In constrast, the <code> <a>Encrypt</a> </code> operation accepts encryption context as input. A grant that allows the <code>Encrypt</code> operation does so only when the encryption context of the <code>Encrypt</code> operation satisfies the grant constraints.</p>
    */
   @js.native
   trait GrantConstraints extends js.Object {
@@ -867,94 +1078,6 @@ package kms {
   }
 
   /**
-   * <p>The request was rejected because the provided key material is invalid or is not the same key material that was previously imported into this customer master key (CMK).</p>
-   */
-  @js.native
-  trait IncorrectKeyMaterialExceptionException extends js.Object {
-    val message: ErrorMessageType
-  }
-
-  /**
-   * <p>The request was rejected because the specified alias name is not valid.</p>
-   */
-  @js.native
-  trait InvalidAliasNameExceptionException extends js.Object {
-    val message: ErrorMessageType
-  }
-
-  /**
-   * <p>The request was rejected because a specified ARN was not valid.</p>
-   */
-  @js.native
-  trait InvalidArnExceptionException extends js.Object {
-    val message: ErrorMessageType
-  }
-
-  /**
-   * <p>The request was rejected because the specified ciphertext, or additional authenticated data incorporated into the ciphertext, such as the encryption context, is corrupted, missing, or otherwise invalid.</p>
-   */
-  @js.native
-  trait InvalidCiphertextExceptionException extends js.Object {
-    val message: ErrorMessageType
-  }
-
-  /**
-   * <p>The request was rejected because the specified <code>GrantId</code> is not valid.</p>
-   */
-  @js.native
-  trait InvalidGrantIdExceptionException extends js.Object {
-    val message: ErrorMessageType
-  }
-
-  /**
-   * <p>The request was rejected because the specified grant token is not valid.</p>
-   */
-  @js.native
-  trait InvalidGrantTokenExceptionException extends js.Object {
-    val message: ErrorMessageType
-  }
-
-  /**
-   * <p>The request was rejected because the provided import token is invalid or is associated with a different customer master key (CMK).</p>
-   */
-  @js.native
-  trait InvalidImportTokenExceptionException extends js.Object {
-    val message: ErrorMessageType
-  }
-
-  /**
-   * <p>The request was rejected because the specified <code>KeySpec</code> value is not valid.</p>
-   */
-  @js.native
-  trait InvalidKeyUsageExceptionException extends js.Object {
-    val message: ErrorMessageType
-  }
-
-  /**
-   * <p>The request was rejected because the marker that specifies where pagination should next begin is not valid.</p>
-   */
-  @js.native
-  trait InvalidMarkerExceptionException extends js.Object {
-    val message: ErrorMessageType
-  }
-
-  /**
-   * <p>The request was rejected because an internal exception occurred. The request can be retried.</p>
-   */
-  @js.native
-  trait KMSInternalExceptionException extends js.Object {
-    val message: ErrorMessageType
-  }
-
-  /**
-   * <p>The request was rejected because the state of the specified resource is not valid for this request.</p> <p>For more information about how key state affects the use of a CMK, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
-   */
-  @js.native
-  trait KMSInvalidStateExceptionException extends js.Object {
-    val message: ErrorMessageType
-  }
-
-  /**
    * <p>Contains information about each entry in the key list.</p>
    */
   @js.native
@@ -991,9 +1114,11 @@ package kms {
     var ExpirationModel: js.UndefOr[ExpirationModelType]
     var KeyUsage: js.UndefOr[KeyUsageType]
     var Enabled: js.UndefOr[BooleanType]
+    var CustomKeyStoreId: js.UndefOr[CustomKeyStoreIdType]
     var Origin: js.UndefOr[OriginType]
     var Description: js.UndefOr[DescriptionType]
     var AWSAccountId: js.UndefOr[AWSAccountIdType]
+    var CloudHsmClusterId: js.UndefOr[CloudHsmClusterIdType]
     var Arn: js.UndefOr[ArnType]
     var KeyState: js.UndefOr[KeyState]
     var KeyId: js.UndefOr[KeyIdType]
@@ -1008,9 +1133,11 @@ package kms {
       ExpirationModel: js.UndefOr[ExpirationModelType] = js.undefined,
       KeyUsage: js.UndefOr[KeyUsageType] = js.undefined,
       Enabled: js.UndefOr[BooleanType] = js.undefined,
+      CustomKeyStoreId: js.UndefOr[CustomKeyStoreIdType] = js.undefined,
       Origin: js.UndefOr[OriginType] = js.undefined,
       Description: js.UndefOr[DescriptionType] = js.undefined,
       AWSAccountId: js.UndefOr[AWSAccountIdType] = js.undefined,
+      CloudHsmClusterId: js.UndefOr[CloudHsmClusterIdType] = js.undefined,
       Arn: js.UndefOr[ArnType] = js.undefined,
       KeyState: js.UndefOr[KeyState] = js.undefined,
       KeyId: js.UndefOr[KeyIdType] = js.undefined,
@@ -1022,9 +1149,11 @@ package kms {
         "ExpirationModel" -> ExpirationModel.map { x => x.asInstanceOf[js.Any] },
         "KeyUsage" -> KeyUsage.map { x => x.asInstanceOf[js.Any] },
         "Enabled" -> Enabled.map { x => x.asInstanceOf[js.Any] },
+        "CustomKeyStoreId" -> CustomKeyStoreId.map { x => x.asInstanceOf[js.Any] },
         "Origin" -> Origin.map { x => x.asInstanceOf[js.Any] },
         "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
         "AWSAccountId" -> AWSAccountId.map { x => x.asInstanceOf[js.Any] },
+        "CloudHsmClusterId" -> CloudHsmClusterId.map { x => x.asInstanceOf[js.Any] },
         "Arn" -> Arn.map { x => x.asInstanceOf[js.Any] },
         "KeyState" -> KeyState.map { x => x.asInstanceOf[js.Any] },
         "KeyId" -> KeyId.map { x => x.asInstanceOf[js.Any] },
@@ -1041,30 +1170,15 @@ package kms {
     val Disabled = "Disabled"
     val PendingDeletion = "PendingDeletion"
     val PendingImport = "PendingImport"
+    val Unavailable = "Unavailable"
 
-    val values = IndexedSeq(Enabled, Disabled, PendingDeletion, PendingImport)
-  }
-
-  /**
-   * <p>The request was rejected because the specified CMK was not available. The request can be retried.</p>
-   */
-  @js.native
-  trait KeyUnavailableExceptionException extends js.Object {
-    val message: ErrorMessageType
+    val values = IndexedSeq(Enabled, Disabled, PendingDeletion, PendingImport, Unavailable)
   }
 
   object KeyUsageTypeEnum {
     val ENCRYPT_DECRYPT = "ENCRYPT_DECRYPT"
 
     val values = IndexedSeq(ENCRYPT_DECRYPT)
-  }
-
-  /**
-   * <p>The request was rejected because a limit was exceeded. For more information, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/limits.html">Limits</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
-   */
-  @js.native
-  trait LimitExceededExceptionException extends js.Object {
-    val message: ErrorMessageType
   }
 
   @js.native
@@ -1295,27 +1409,12 @@ package kms {
     }
   }
 
-  /**
-   * <p>The request was rejected because the specified policy is not syntactically or semantically correct.</p>
-   */
-  @js.native
-  trait MalformedPolicyDocumentExceptionException extends js.Object {
-    val message: ErrorMessageType
-  }
-
-  /**
-   * <p>The request was rejected because the specified entity or resource could not be found.</p>
-   */
-  @js.native
-  trait NotFoundExceptionException extends js.Object {
-    val message: ErrorMessageType
-  }
-
   object OriginTypeEnum {
     val AWS_KMS = "AWS_KMS"
     val EXTERNAL = "EXTERNAL"
+    val AWS_CLOUDHSM = "AWS_CLOUDHSM"
 
-    val values = IndexedSeq(AWS_KMS, EXTERNAL)
+    val values = IndexedSeq(AWS_KMS, EXTERNAL, AWS_CLOUDHSM)
   }
 
   @js.native
@@ -1486,14 +1585,6 @@ package kms {
     }
   }
 
-  /**
-   * <p>The request was rejected because one or more tags are not valid.</p>
-   */
-  @js.native
-  trait TagExceptionException extends js.Object {
-    val message: ErrorMessageType
-  }
-
   @js.native
   trait TagResourceRequest extends js.Object {
     var KeyId: js.UndefOr[KeyIdType]
@@ -1510,14 +1601,6 @@ package kms {
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TagResourceRequest]
     }
-  }
-
-  /**
-   * <p>The request was rejected because a specified parameter is not supported or a specified resource is not valid for this operation.</p>
-   */
-  @js.native
-  trait UnsupportedOperationExceptionException extends js.Object {
-    val message: ErrorMessageType
   }
 
   @js.native
@@ -1553,6 +1636,43 @@ package kms {
         "TargetKeyId" -> TargetKeyId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateAliasRequest]
+    }
+  }
+
+  @js.native
+  trait UpdateCustomKeyStoreRequest extends js.Object {
+    var CustomKeyStoreId: js.UndefOr[CustomKeyStoreIdType]
+    var NewCustomKeyStoreName: js.UndefOr[CustomKeyStoreNameType]
+    var KeyStorePassword: js.UndefOr[KeyStorePasswordType]
+    var CloudHsmClusterId: js.UndefOr[CloudHsmClusterIdType]
+  }
+
+  object UpdateCustomKeyStoreRequest {
+    def apply(
+      CustomKeyStoreId: js.UndefOr[CustomKeyStoreIdType] = js.undefined,
+      NewCustomKeyStoreName: js.UndefOr[CustomKeyStoreNameType] = js.undefined,
+      KeyStorePassword: js.UndefOr[KeyStorePasswordType] = js.undefined,
+      CloudHsmClusterId: js.UndefOr[CloudHsmClusterIdType] = js.undefined): UpdateCustomKeyStoreRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "CustomKeyStoreId" -> CustomKeyStoreId.map { x => x.asInstanceOf[js.Any] },
+        "NewCustomKeyStoreName" -> NewCustomKeyStoreName.map { x => x.asInstanceOf[js.Any] },
+        "KeyStorePassword" -> KeyStorePassword.map { x => x.asInstanceOf[js.Any] },
+        "CloudHsmClusterId" -> CloudHsmClusterId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateCustomKeyStoreRequest]
+    }
+  }
+
+  @js.native
+  trait UpdateCustomKeyStoreResponse extends js.Object {
+
+  }
+
+  object UpdateCustomKeyStoreResponse {
+    def apply(): UpdateCustomKeyStoreResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateCustomKeyStoreResponse]
     }
   }
 

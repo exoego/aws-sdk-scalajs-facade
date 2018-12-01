@@ -44,6 +44,16 @@ package object ssm {
   type AssociationStatusName = String
   type AssociationVersion = String
   type AssociationVersionList = js.Array[AssociationVersionInfo]
+  type AttachmentContentList = js.Array[AttachmentContent]
+  type AttachmentHash = String
+  type AttachmentHashType = String
+  type AttachmentInformationList = js.Array[AttachmentInformation]
+  type AttachmentName = String
+  type AttachmentUrl = String
+  type AttachmentsSourceKey = String
+  type AttachmentsSourceList = js.Array[AttachmentsSource]
+  type AttachmentsSourceValue = String
+  type AttachmentsSourceValues = js.Array[AttachmentsSourceValue]
   type AttributeName = String
   type AttributeValue = String
   type AutomationActionName = String
@@ -105,6 +115,7 @@ package object ssm {
   type ComplianceTypeName = String
   type ComputerName = String
   type ConnectionStatus = String
+  type ContentLength = Double
   type CreateAssociationBatchRequestEntries = js.Array[CreateAssociationBatchRequestEntry]
   type CreatedDate = js.Date
   type DateTime = js.Date
@@ -138,9 +149,11 @@ package object ssm {
   type DocumentSchemaVersion = String
   type DocumentSha1 = String
   type DocumentStatus = String
+  type DocumentStatusInformation = String
   type DocumentType = String
   type DocumentVersion = String
   type DocumentVersionList = js.Array[DocumentVersionInfo]
+  type DocumentVersionName = String
   type DocumentVersionNumber = String
   type DryRun = Boolean
   type EffectiveInstanceAssociationMaxResults = Int
@@ -1064,6 +1077,87 @@ package ssm {
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AssociationVersionInfo]
     }
+  }
+
+  /**
+   * <p>A structure that includes attributes that describe a document attachment.</p>
+   */
+  @js.native
+  trait AttachmentContent extends js.Object {
+    var Name: js.UndefOr[AttachmentName]
+    var Size: js.UndefOr[ContentLength]
+    var HashType: js.UndefOr[AttachmentHashType]
+    var Url: js.UndefOr[AttachmentUrl]
+    var Hash: js.UndefOr[AttachmentHash]
+  }
+
+  object AttachmentContent {
+    def apply(
+      Name: js.UndefOr[AttachmentName] = js.undefined,
+      Size: js.UndefOr[ContentLength] = js.undefined,
+      HashType: js.UndefOr[AttachmentHashType] = js.undefined,
+      Url: js.UndefOr[AttachmentUrl] = js.undefined,
+      Hash: js.UndefOr[AttachmentHash] = js.undefined): AttachmentContent = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
+        "Size" -> Size.map { x => x.asInstanceOf[js.Any] },
+        "HashType" -> HashType.map { x => x.asInstanceOf[js.Any] },
+        "Url" -> Url.map { x => x.asInstanceOf[js.Any] },
+        "Hash" -> Hash.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AttachmentContent]
+    }
+  }
+
+  object AttachmentHashTypeEnum {
+    val Sha256 = "Sha256"
+
+    val values = IndexedSeq(Sha256)
+  }
+
+  /**
+   * <p>An attribute of an attachment, such as the attachment name or size.</p>
+   */
+  @js.native
+  trait AttachmentInformation extends js.Object {
+    var Name: js.UndefOr[AttachmentName]
+  }
+
+  object AttachmentInformation {
+    def apply(
+      Name: js.UndefOr[AttachmentName] = js.undefined): AttachmentInformation = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Name" -> Name.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AttachmentInformation]
+    }
+  }
+
+  /**
+   * <p>A key and value pair that identifies the location of an attachment to a document.</p>
+   */
+  @js.native
+  trait AttachmentsSource extends js.Object {
+    var Key: js.UndefOr[AttachmentsSourceKey]
+    var Values: js.UndefOr[AttachmentsSourceValues]
+  }
+
+  object AttachmentsSource {
+    def apply(
+      Key: js.UndefOr[AttachmentsSourceKey] = js.undefined,
+      Values: js.UndefOr[AttachmentsSourceValues] = js.undefined): AttachmentsSource = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Key" -> Key.map { x => x.asInstanceOf[js.Any] },
+        "Values" -> Values.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AttachmentsSource]
+    }
+  }
+
+  object AttachmentsSourceKeyEnum {
+    val SourceUrl = "SourceUrl"
+
+    val values = IndexedSeq(SourceUrl)
   }
 
   /**
@@ -2035,7 +2129,9 @@ package ssm {
     var TargetType: js.UndefOr[TargetType]
     var Content: js.UndefOr[DocumentContent]
     var Name: js.UndefOr[DocumentName]
+    var VersionName: js.UndefOr[DocumentVersionName]
     var DocumentFormat: js.UndefOr[DocumentFormat]
+    var Attachments: js.UndefOr[AttachmentsSourceList]
     var DocumentType: js.UndefOr[DocumentType]
   }
 
@@ -2044,13 +2140,17 @@ package ssm {
       TargetType: js.UndefOr[TargetType] = js.undefined,
       Content: js.UndefOr[DocumentContent] = js.undefined,
       Name: js.UndefOr[DocumentName] = js.undefined,
+      VersionName: js.UndefOr[DocumentVersionName] = js.undefined,
       DocumentFormat: js.UndefOr[DocumentFormat] = js.undefined,
+      Attachments: js.UndefOr[AttachmentsSourceList] = js.undefined,
       DocumentType: js.UndefOr[DocumentType] = js.undefined): CreateDocumentRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "TargetType" -> TargetType.map { x => x.asInstanceOf[js.Any] },
         "Content" -> Content.map { x => x.asInstanceOf[js.Any] },
         "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
+        "VersionName" -> VersionName.map { x => x.asInstanceOf[js.Any] },
         "DocumentFormat" -> DocumentFormat.map { x => x.asInstanceOf[js.Any] },
+        "Attachments" -> Attachments.map { x => x.asInstanceOf[js.Any] },
         "DocumentType" -> DocumentType.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateDocumentRequest]
@@ -3000,15 +3100,18 @@ package ssm {
   trait DescribeDocumentRequest extends js.Object {
     var Name: js.UndefOr[DocumentARN]
     var DocumentVersion: js.UndefOr[DocumentVersion]
+    var VersionName: js.UndefOr[DocumentVersionName]
   }
 
   object DescribeDocumentRequest {
     def apply(
       Name: js.UndefOr[DocumentARN] = js.undefined,
-      DocumentVersion: js.UndefOr[DocumentVersion] = js.undefined): DescribeDocumentRequest = {
+      DocumentVersion: js.UndefOr[DocumentVersion] = js.undefined,
+      VersionName: js.UndefOr[DocumentVersionName] = js.undefined): DescribeDocumentRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
-        "DocumentVersion" -> DocumentVersion.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "DocumentVersion" -> DocumentVersion.map { x => x.asInstanceOf[js.Any] },
+        "VersionName" -> VersionName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeDocumentRequest]
     }
@@ -3909,15 +4012,18 @@ package ssm {
   trait DocumentDefaultVersionDescription extends js.Object {
     var Name: js.UndefOr[DocumentName]
     var DefaultVersion: js.UndefOr[DocumentVersion]
+    var DefaultVersionName: js.UndefOr[DocumentVersionName]
   }
 
   object DocumentDefaultVersionDescription {
     def apply(
       Name: js.UndefOr[DocumentName] = js.undefined,
-      DefaultVersion: js.UndefOr[DocumentVersion] = js.undefined): DocumentDefaultVersionDescription = {
+      DefaultVersion: js.UndefOr[DocumentVersion] = js.undefined,
+      DefaultVersionName: js.UndefOr[DocumentVersionName] = js.undefined): DocumentDefaultVersionDescription = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
-        "DefaultVersion" -> DefaultVersion.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "DefaultVersion" -> DefaultVersion.map { x => x.asInstanceOf[js.Any] },
+        "DefaultVersionName" -> DefaultVersionName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DocumentDefaultVersionDescription]
     }
@@ -3930,10 +4036,12 @@ package ssm {
   trait DocumentDescription extends js.Object {
     var TargetType: js.UndefOr[TargetType]
     var Name: js.UndefOr[DocumentARN]
+    var VersionName: js.UndefOr[DocumentVersionName]
     var DocumentFormat: js.UndefOr[DocumentFormat]
     var CreatedDate: js.UndefOr[DateTime]
     var SchemaVersion: js.UndefOr[DocumentSchemaVersion]
     var Description: js.UndefOr[DescriptionInDocument]
+    var StatusInformation: js.UndefOr[DocumentStatusInformation]
     var HashType: js.UndefOr[DocumentHashType]
     var Parameters: js.UndefOr[DocumentParameterList]
     var DefaultVersion: js.UndefOr[DocumentVersion]
@@ -3942,6 +4050,7 @@ package ssm {
     var Sha1: js.UndefOr[DocumentSha1]
     var DocumentType: js.UndefOr[DocumentType]
     var Tags: js.UndefOr[TagList]
+    var AttachmentsInformation: js.UndefOr[AttachmentInformationList]
     var LatestVersion: js.UndefOr[DocumentVersion]
     var Owner: js.UndefOr[DocumentOwner]
     var Hash: js.UndefOr[DocumentHash]
@@ -3952,10 +4061,12 @@ package ssm {
     def apply(
       TargetType: js.UndefOr[TargetType] = js.undefined,
       Name: js.UndefOr[DocumentARN] = js.undefined,
+      VersionName: js.UndefOr[DocumentVersionName] = js.undefined,
       DocumentFormat: js.UndefOr[DocumentFormat] = js.undefined,
       CreatedDate: js.UndefOr[DateTime] = js.undefined,
       SchemaVersion: js.UndefOr[DocumentSchemaVersion] = js.undefined,
       Description: js.UndefOr[DescriptionInDocument] = js.undefined,
+      StatusInformation: js.UndefOr[DocumentStatusInformation] = js.undefined,
       HashType: js.UndefOr[DocumentHashType] = js.undefined,
       Parameters: js.UndefOr[DocumentParameterList] = js.undefined,
       DefaultVersion: js.UndefOr[DocumentVersion] = js.undefined,
@@ -3964,6 +4075,7 @@ package ssm {
       Sha1: js.UndefOr[DocumentSha1] = js.undefined,
       DocumentType: js.UndefOr[DocumentType] = js.undefined,
       Tags: js.UndefOr[TagList] = js.undefined,
+      AttachmentsInformation: js.UndefOr[AttachmentInformationList] = js.undefined,
       LatestVersion: js.UndefOr[DocumentVersion] = js.undefined,
       Owner: js.UndefOr[DocumentOwner] = js.undefined,
       Hash: js.UndefOr[DocumentHash] = js.undefined,
@@ -3971,10 +4083,12 @@ package ssm {
       val _fields = IndexedSeq[(String, js.Any)](
         "TargetType" -> TargetType.map { x => x.asInstanceOf[js.Any] },
         "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
+        "VersionName" -> VersionName.map { x => x.asInstanceOf[js.Any] },
         "DocumentFormat" -> DocumentFormat.map { x => x.asInstanceOf[js.Any] },
         "CreatedDate" -> CreatedDate.map { x => x.asInstanceOf[js.Any] },
         "SchemaVersion" -> SchemaVersion.map { x => x.asInstanceOf[js.Any] },
         "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
+        "StatusInformation" -> StatusInformation.map { x => x.asInstanceOf[js.Any] },
         "HashType" -> HashType.map { x => x.asInstanceOf[js.Any] },
         "Parameters" -> Parameters.map { x => x.asInstanceOf[js.Any] },
         "DefaultVersion" -> DefaultVersion.map { x => x.asInstanceOf[js.Any] },
@@ -3983,6 +4097,7 @@ package ssm {
         "Sha1" -> Sha1.map { x => x.asInstanceOf[js.Any] },
         "DocumentType" -> DocumentType.map { x => x.asInstanceOf[js.Any] },
         "Tags" -> Tags.map { x => x.asInstanceOf[js.Any] },
+        "AttachmentsInformation" -> AttachmentsInformation.map { x => x.asInstanceOf[js.Any] },
         "LatestVersion" -> LatestVersion.map { x => x.asInstanceOf[js.Any] },
         "Owner" -> Owner.map { x => x.asInstanceOf[js.Any] },
         "Hash" -> Hash.map { x => x.asInstanceOf[js.Any] },
@@ -4043,6 +4158,7 @@ package ssm {
   trait DocumentIdentifier extends js.Object {
     var TargetType: js.UndefOr[TargetType]
     var Name: js.UndefOr[DocumentARN]
+    var VersionName: js.UndefOr[DocumentVersionName]
     var DocumentFormat: js.UndefOr[DocumentFormat]
     var SchemaVersion: js.UndefOr[DocumentSchemaVersion]
     var PlatformTypes: js.UndefOr[PlatformTypeList]
@@ -4056,6 +4172,7 @@ package ssm {
     def apply(
       TargetType: js.UndefOr[TargetType] = js.undefined,
       Name: js.UndefOr[DocumentARN] = js.undefined,
+      VersionName: js.UndefOr[DocumentVersionName] = js.undefined,
       DocumentFormat: js.UndefOr[DocumentFormat] = js.undefined,
       SchemaVersion: js.UndefOr[DocumentSchemaVersion] = js.undefined,
       PlatformTypes: js.UndefOr[PlatformTypeList] = js.undefined,
@@ -4066,6 +4183,7 @@ package ssm {
       val _fields = IndexedSeq[(String, js.Any)](
         "TargetType" -> TargetType.map { x => x.asInstanceOf[js.Any] },
         "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
+        "VersionName" -> VersionName.map { x => x.asInstanceOf[js.Any] },
         "DocumentFormat" -> DocumentFormat.map { x => x.asInstanceOf[js.Any] },
         "SchemaVersion" -> SchemaVersion.map { x => x.asInstanceOf[js.Any] },
         "PlatformTypes" -> PlatformTypes.map { x => x.asInstanceOf[js.Any] },
@@ -4139,13 +4257,17 @@ package ssm {
     val values = IndexedSeq(Share)
   }
 
+  /**
+   * <p>The status of a document.</p>
+   */
   object DocumentStatusEnum {
     val Creating = "Creating"
     val Active = "Active"
     val Updating = "Updating"
     val Deleting = "Deleting"
+    val Failed = "Failed"
 
-    val values = IndexedSeq(Creating, Active, Updating, Deleting)
+    val values = IndexedSeq(Creating, Active, Updating, Deleting, Failed)
   }
 
   object DocumentTypeEnum {
@@ -4153,8 +4275,9 @@ package ssm {
     val Policy = "Policy"
     val Automation = "Automation"
     val Session = "Session"
+    val Package = "Package"
 
-    val values = IndexedSeq(Command, Policy, Automation, Session)
+    val values = IndexedSeq(Command, Policy, Automation, Session, Package)
   }
 
   /**
@@ -4163,25 +4286,34 @@ package ssm {
   @js.native
   trait DocumentVersionInfo extends js.Object {
     var Name: js.UndefOr[DocumentName]
+    var VersionName: js.UndefOr[DocumentVersionName]
     var DocumentFormat: js.UndefOr[DocumentFormat]
     var CreatedDate: js.UndefOr[DateTime]
+    var StatusInformation: js.UndefOr[DocumentStatusInformation]
     var IsDefaultVersion: js.UndefOr[Boolean]
     var DocumentVersion: js.UndefOr[DocumentVersion]
+    var Status: js.UndefOr[DocumentStatus]
   }
 
   object DocumentVersionInfo {
     def apply(
       Name: js.UndefOr[DocumentName] = js.undefined,
+      VersionName: js.UndefOr[DocumentVersionName] = js.undefined,
       DocumentFormat: js.UndefOr[DocumentFormat] = js.undefined,
       CreatedDate: js.UndefOr[DateTime] = js.undefined,
+      StatusInformation: js.UndefOr[DocumentStatusInformation] = js.undefined,
       IsDefaultVersion: js.UndefOr[Boolean] = js.undefined,
-      DocumentVersion: js.UndefOr[DocumentVersion] = js.undefined): DocumentVersionInfo = {
+      DocumentVersion: js.UndefOr[DocumentVersion] = js.undefined,
+      Status: js.UndefOr[DocumentStatus] = js.undefined): DocumentVersionInfo = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
+        "VersionName" -> VersionName.map { x => x.asInstanceOf[js.Any] },
         "DocumentFormat" -> DocumentFormat.map { x => x.asInstanceOf[js.Any] },
         "CreatedDate" -> CreatedDate.map { x => x.asInstanceOf[js.Any] },
+        "StatusInformation" -> StatusInformation.map { x => x.asInstanceOf[js.Any] },
         "IsDefaultVersion" -> IsDefaultVersion.map { x => x.asInstanceOf[js.Any] },
-        "DocumentVersion" -> DocumentVersion.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "DocumentVersion" -> DocumentVersion.map { x => x.asInstanceOf[js.Any] },
+        "Status" -> Status.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DocumentVersionInfo]
     }
@@ -4496,6 +4628,7 @@ package ssm {
   @js.native
   trait GetDocumentRequest extends js.Object {
     var Name: js.UndefOr[DocumentARN]
+    var VersionName: js.UndefOr[DocumentVersionName]
     var DocumentVersion: js.UndefOr[DocumentVersion]
     var DocumentFormat: js.UndefOr[DocumentFormat]
   }
@@ -4503,10 +4636,12 @@ package ssm {
   object GetDocumentRequest {
     def apply(
       Name: js.UndefOr[DocumentARN] = js.undefined,
+      VersionName: js.UndefOr[DocumentVersionName] = js.undefined,
       DocumentVersion: js.UndefOr[DocumentVersion] = js.undefined,
       DocumentFormat: js.UndefOr[DocumentFormat] = js.undefined): GetDocumentRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
+        "VersionName" -> VersionName.map { x => x.asInstanceOf[js.Any] },
         "DocumentVersion" -> DocumentVersion.map { x => x.asInstanceOf[js.Any] },
         "DocumentFormat" -> DocumentFormat.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
@@ -4518,24 +4653,36 @@ package ssm {
   trait GetDocumentResult extends js.Object {
     var Content: js.UndefOr[DocumentContent]
     var Name: js.UndefOr[DocumentARN]
+    var VersionName: js.UndefOr[DocumentVersionName]
     var DocumentFormat: js.UndefOr[DocumentFormat]
+    var StatusInformation: js.UndefOr[DocumentStatusInformation]
+    var AttachmentsContent: js.UndefOr[AttachmentContentList]
     var DocumentVersion: js.UndefOr[DocumentVersion]
     var DocumentType: js.UndefOr[DocumentType]
+    var Status: js.UndefOr[DocumentStatus]
   }
 
   object GetDocumentResult {
     def apply(
       Content: js.UndefOr[DocumentContent] = js.undefined,
       Name: js.UndefOr[DocumentARN] = js.undefined,
+      VersionName: js.UndefOr[DocumentVersionName] = js.undefined,
       DocumentFormat: js.UndefOr[DocumentFormat] = js.undefined,
+      StatusInformation: js.UndefOr[DocumentStatusInformation] = js.undefined,
+      AttachmentsContent: js.UndefOr[AttachmentContentList] = js.undefined,
       DocumentVersion: js.UndefOr[DocumentVersion] = js.undefined,
-      DocumentType: js.UndefOr[DocumentType] = js.undefined): GetDocumentResult = {
+      DocumentType: js.UndefOr[DocumentType] = js.undefined,
+      Status: js.UndefOr[DocumentStatus] = js.undefined): GetDocumentResult = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Content" -> Content.map { x => x.asInstanceOf[js.Any] },
         "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
+        "VersionName" -> VersionName.map { x => x.asInstanceOf[js.Any] },
         "DocumentFormat" -> DocumentFormat.map { x => x.asInstanceOf[js.Any] },
+        "StatusInformation" -> StatusInformation.map { x => x.asInstanceOf[js.Any] },
+        "AttachmentsContent" -> AttachmentsContent.map { x => x.asInstanceOf[js.Any] },
         "DocumentVersion" -> DocumentVersion.map { x => x.asInstanceOf[js.Any] },
-        "DocumentType" -> DocumentType.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "DocumentType" -> DocumentType.map { x => x.asInstanceOf[js.Any] },
+        "Status" -> Status.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetDocumentResult]
     }
@@ -9058,7 +9205,9 @@ package ssm {
     var TargetType: js.UndefOr[TargetType]
     var Content: js.UndefOr[DocumentContent]
     var Name: js.UndefOr[DocumentName]
+    var VersionName: js.UndefOr[DocumentVersionName]
     var DocumentFormat: js.UndefOr[DocumentFormat]
+    var Attachments: js.UndefOr[AttachmentsSourceList]
     var DocumentVersion: js.UndefOr[DocumentVersion]
   }
 
@@ -9067,13 +9216,17 @@ package ssm {
       TargetType: js.UndefOr[TargetType] = js.undefined,
       Content: js.UndefOr[DocumentContent] = js.undefined,
       Name: js.UndefOr[DocumentName] = js.undefined,
+      VersionName: js.UndefOr[DocumentVersionName] = js.undefined,
       DocumentFormat: js.UndefOr[DocumentFormat] = js.undefined,
+      Attachments: js.UndefOr[AttachmentsSourceList] = js.undefined,
       DocumentVersion: js.UndefOr[DocumentVersion] = js.undefined): UpdateDocumentRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "TargetType" -> TargetType.map { x => x.asInstanceOf[js.Any] },
         "Content" -> Content.map { x => x.asInstanceOf[js.Any] },
         "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
+        "VersionName" -> VersionName.map { x => x.asInstanceOf[js.Any] },
         "DocumentFormat" -> DocumentFormat.map { x => x.asInstanceOf[js.Any] },
+        "Attachments" -> Attachments.map { x => x.asInstanceOf[js.Any] },
         "DocumentVersion" -> DocumentVersion.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateDocumentRequest]

@@ -12,6 +12,7 @@ package object serverlessapplicationrepository {
   type Status = String
   type __boolean = Boolean
   type __integer = Int
+  type __listOfApplicationDependencySummary = js.Array[ApplicationDependencySummary]
   type __listOfApplicationPolicyStatement = js.Array[ApplicationPolicyStatement]
   type __listOfApplicationSummary = js.Array[ApplicationSummary]
   type __listOfCapability = js.Array[Capability]
@@ -36,10 +37,32 @@ package serverlessapplicationrepository {
     def getApplication(params: GetApplicationRequest): Request[GetApplicationResponse] = js.native
     def getApplicationPolicy(params: GetApplicationPolicyRequest): Request[GetApplicationPolicyResponse] = js.native
     def getCloudFormationTemplate(params: GetCloudFormationTemplateRequest): Request[GetCloudFormationTemplateResponse] = js.native
+    def listApplicationDependencies(params: ListApplicationDependenciesRequest): Request[ListApplicationDependenciesResponse] = js.native
     def listApplicationVersions(params: ListApplicationVersionsRequest): Request[ListApplicationVersionsResponse] = js.native
     def listApplications(params: ListApplicationsRequest): Request[ListApplicationsResponse] = js.native
     def putApplicationPolicy(params: PutApplicationPolicyRequest): Request[PutApplicationPolicyResponse] = js.native
     def updateApplication(params: UpdateApplicationRequest): Request[UpdateApplicationResponse] = js.native
+  }
+
+  /**
+   * <p>A nested application summary.</p>
+   */
+  @js.native
+  trait ApplicationDependencySummary extends js.Object {
+    var ApplicationId: js.UndefOr[__string]
+    var SemanticVersion: js.UndefOr[__string]
+  }
+
+  object ApplicationDependencySummary {
+    def apply(
+      ApplicationId: js.UndefOr[__string] = js.undefined,
+      SemanticVersion: js.UndefOr[__string] = js.undefined): ApplicationDependencySummary = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ApplicationId" -> ApplicationId.map { x => x.asInstanceOf[js.Any] },
+        "SemanticVersion" -> SemanticVersion.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ApplicationDependencySummary]
+    }
   }
 
   /**
@@ -105,6 +128,9 @@ package serverlessapplicationrepository {
     }
   }
 
+  /**
+   * <p>Values that must be specified in order to deploy some applications.</p>
+   */
   object CapabilityEnum {
     val CAPABILITY_IAM = "CAPABILITY_IAM"
     val CAPABILITY_NAMED_IAM = "CAPABILITY_NAMED_IAM"
@@ -562,6 +588,48 @@ package serverlessapplicationrepository {
   }
 
   @js.native
+  trait ListApplicationDependenciesRequest extends js.Object {
+    var ApplicationId: js.UndefOr[__string]
+    var MaxItems: js.UndefOr[MaxItems]
+    var NextToken: js.UndefOr[__string]
+    var SemanticVersion: js.UndefOr[__string]
+  }
+
+  object ListApplicationDependenciesRequest {
+    def apply(
+      ApplicationId: js.UndefOr[__string] = js.undefined,
+      MaxItems: js.UndefOr[MaxItems] = js.undefined,
+      NextToken: js.UndefOr[__string] = js.undefined,
+      SemanticVersion: js.UndefOr[__string] = js.undefined): ListApplicationDependenciesRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ApplicationId" -> ApplicationId.map { x => x.asInstanceOf[js.Any] },
+        "MaxItems" -> MaxItems.map { x => x.asInstanceOf[js.Any] },
+        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
+        "SemanticVersion" -> SemanticVersion.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListApplicationDependenciesRequest]
+    }
+  }
+
+  @js.native
+  trait ListApplicationDependenciesResponse extends js.Object {
+    var Dependencies: js.UndefOr[__listOfApplicationDependencySummary]
+    var NextToken: js.UndefOr[__string]
+  }
+
+  object ListApplicationDependenciesResponse {
+    def apply(
+      Dependencies: js.UndefOr[__listOfApplicationDependencySummary] = js.undefined,
+      NextToken: js.UndefOr[__string] = js.undefined): ListApplicationDependenciesResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Dependencies" -> Dependencies.map { x => x.asInstanceOf[js.Any] },
+        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListApplicationDependenciesResponse]
+    }
+  }
+
+  @js.native
   trait ListApplicationVersionsRequest extends js.Object {
     var ApplicationId: js.UndefOr[__string]
     var MaxItems: js.UndefOr[MaxItems]
@@ -745,11 +813,7 @@ package serverlessapplicationrepository {
   }
 
   /**
-   * <p>This property corresponds to the
-   * <i>AWS CloudFormation
-   * <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RollbackConfiguration">
-   * RollbackConfiguration</a></i>
-   * Data Type.</p>
+   * <p>This property corresponds to the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RollbackConfiguration">RollbackConfiguration</a></i> Data Type.</p>
    */
   @js.native
   trait RollbackConfiguration extends js.Object {
@@ -770,11 +834,7 @@ package serverlessapplicationrepository {
   }
 
   /**
-   * <p>This property corresponds to the
-   * <i>AWS CloudFormation
-   * <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RollbackTrigger">
-   * RollbackTrigger</a></i>
-   * Data Type.</p>
+   * <p>This property corresponds to the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RollbackTrigger">RollbackTrigger</a></i> Data Type.</p>
    */
   @js.native
   trait RollbackTrigger extends js.Object {
@@ -803,11 +863,7 @@ package serverlessapplicationrepository {
   }
 
   /**
-   * <p>This property corresponds to the
-   * <i>AWS CloudFormation
-   * <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/Tag">
-   * Tag</a></i>
-   * Data Type.</p>
+   * <p>This property corresponds to the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/Tag">Tag</a></i> Data Type.</p>
    */
   @js.native
   trait Tag extends js.Object {

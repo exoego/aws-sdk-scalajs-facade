@@ -48,6 +48,8 @@ package object rds {
   type EventSubscriptionsList = js.Array[EventSubscription]
   type FilterList = js.Array[Filter]
   type FilterValueList = js.Array[String]
+  type GlobalClusterList = js.Array[GlobalCluster]
+  type GlobalClusterMemberList = js.Array[GlobalClusterMember]
   type IPRangeList = js.Array[IPRange]
   type IntegerOptional = Int
   type KeyList = js.Array[String]
@@ -75,6 +77,7 @@ package object rds {
   type ReadReplicaDBClusterIdentifierList = js.Array[String]
   type ReadReplicaDBInstanceIdentifierList = js.Array[String]
   type ReadReplicaIdentifierList = js.Array[String]
+  type ReadersArnList = js.Array[String]
   type RecurringChargeList = js.Array[RecurringCharge]
   type ReservedDBInstanceList = js.Array[ReservedDBInstance]
   type ReservedDBInstancesOfferingList = js.Array[ReservedDBInstancesOffering]
@@ -120,6 +123,7 @@ package rds {
     def createDBSnapshot(params: CreateDBSnapshotMessage): Request[CreateDBSnapshotResult] = js.native
     def createDBSubnetGroup(params: CreateDBSubnetGroupMessage): Request[CreateDBSubnetGroupResult] = js.native
     def createEventSubscription(params: CreateEventSubscriptionMessage): Request[CreateEventSubscriptionResult] = js.native
+    def createGlobalCluster(params: CreateGlobalClusterMessage): Request[CreateGlobalClusterResult] = js.native
     def createOptionGroup(params: CreateOptionGroupMessage): Request[CreateOptionGroupResult] = js.native
     def deleteDBCluster(params: DeleteDBClusterMessage): Request[DeleteDBClusterResult] = js.native
     def deleteDBClusterEndpoint(params: DeleteDBClusterEndpointMessage): Request[DBClusterEndpoint] = js.native
@@ -132,6 +136,7 @@ package rds {
     def deleteDBSnapshot(params: DeleteDBSnapshotMessage): Request[DeleteDBSnapshotResult] = js.native
     def deleteDBSubnetGroup(params: DeleteDBSubnetGroupMessage): Request[js.Object] = js.native
     def deleteEventSubscription(params: DeleteEventSubscriptionMessage): Request[DeleteEventSubscriptionResult] = js.native
+    def deleteGlobalCluster(params: DeleteGlobalClusterMessage): Request[DeleteGlobalClusterResult] = js.native
     def deleteOptionGroup(params: DeleteOptionGroupMessage): Request[js.Object] = js.native
     def describeAccountAttributes(params: DescribeAccountAttributesMessage): Request[AccountAttributesMessage] = js.native
     def describeCertificates(params: DescribeCertificatesMessage): Request[CertificateMessage] = js.native
@@ -157,6 +162,7 @@ package rds {
     def describeEventCategories(params: DescribeEventCategoriesMessage): Request[EventCategoriesMessage] = js.native
     def describeEventSubscriptions(params: DescribeEventSubscriptionsMessage): Request[EventSubscriptionsMessage] = js.native
     def describeEvents(params: DescribeEventsMessage): Request[EventsMessage] = js.native
+    def describeGlobalClusters(params: DescribeGlobalClustersMessage): Request[GlobalClustersMessage] = js.native
     def describeOptionGroupOptions(params: DescribeOptionGroupOptionsMessage): Request[OptionGroupOptionsMessage] = js.native
     def describeOptionGroups(params: DescribeOptionGroupsMessage): Request[OptionGroups] = js.native
     def describeOrderableDBInstanceOptions(params: DescribeOrderableDBInstanceOptionsMessage): Request[OrderableDBInstanceOptionsMessage] = js.native
@@ -179,11 +185,13 @@ package rds {
     def modifyDBSnapshotAttribute(params: ModifyDBSnapshotAttributeMessage): Request[ModifyDBSnapshotAttributeResult] = js.native
     def modifyDBSubnetGroup(params: ModifyDBSubnetGroupMessage): Request[ModifyDBSubnetGroupResult] = js.native
     def modifyEventSubscription(params: ModifyEventSubscriptionMessage): Request[ModifyEventSubscriptionResult] = js.native
+    def modifyGlobalCluster(params: ModifyGlobalClusterMessage): Request[ModifyGlobalClusterResult] = js.native
     def modifyOptionGroup(params: ModifyOptionGroupMessage): Request[ModifyOptionGroupResult] = js.native
     def promoteReadReplica(params: PromoteReadReplicaMessage): Request[PromoteReadReplicaResult] = js.native
     def promoteReadReplicaDBCluster(params: PromoteReadReplicaDBClusterMessage): Request[PromoteReadReplicaDBClusterResult] = js.native
     def purchaseReservedDBInstancesOffering(params: PurchaseReservedDBInstancesOfferingMessage): Request[PurchaseReservedDBInstancesOfferingResult] = js.native
     def rebootDBInstance(params: RebootDBInstanceMessage): Request[RebootDBInstanceResult] = js.native
+    def removeFromGlobalCluster(params: RemoveFromGlobalClusterMessage): Request[RemoveFromGlobalClusterResult] = js.native
     def removeRoleFromDBCluster(params: RemoveRoleFromDBClusterMessage): Request[js.Object] = js.native
     def removeSourceIdentifierFromSubscription(params: RemoveSourceIdentifierFromSubscriptionMessage): Request[RemoveSourceIdentifierFromSubscriptionResult] = js.native
     def removeTagsFromResource(params: RemoveTagsFromResourceMessage): Request[js.Object] = js.native
@@ -851,6 +859,7 @@ package rds {
     var BackupRetentionPeriod: js.UndefOr[IntegerOptional]
     var MasterUsername: js.UndefOr[String]
     var VpcSecurityGroupIds: js.UndefOr[VpcSecurityGroupIdList]
+    var GlobalClusterIdentifier: js.UndefOr[String]
     var EngineVersion: js.UndefOr[String]
     var DBSubnetGroupName: js.UndefOr[String]
     var Port: js.UndefOr[IntegerOptional]
@@ -883,6 +892,7 @@ package rds {
       BackupRetentionPeriod: js.UndefOr[IntegerOptional] = js.undefined,
       MasterUsername: js.UndefOr[String] = js.undefined,
       VpcSecurityGroupIds: js.UndefOr[VpcSecurityGroupIdList] = js.undefined,
+      GlobalClusterIdentifier: js.UndefOr[String] = js.undefined,
       EngineVersion: js.UndefOr[String] = js.undefined,
       DBSubnetGroupName: js.UndefOr[String] = js.undefined,
       Port: js.UndefOr[IntegerOptional] = js.undefined,
@@ -912,6 +922,7 @@ package rds {
         "BackupRetentionPeriod" -> BackupRetentionPeriod.map { x => x.asInstanceOf[js.Any] },
         "MasterUsername" -> MasterUsername.map { x => x.asInstanceOf[js.Any] },
         "VpcSecurityGroupIds" -> VpcSecurityGroupIds.map { x => x.asInstanceOf[js.Any] },
+        "GlobalClusterIdentifier" -> GlobalClusterIdentifier.map { x => x.asInstanceOf[js.Any] },
         "EngineVersion" -> EngineVersion.map { x => x.asInstanceOf[js.Any] },
         "DBSubnetGroupName" -> DBSubnetGroupName.map { x => x.asInstanceOf[js.Any] },
         "Port" -> Port.map { x => x.asInstanceOf[js.Any] },
@@ -1193,6 +1204,7 @@ package rds {
     var AvailabilityZone: js.UndefOr[String]
     var AutoMinorVersionUpgrade: js.UndefOr[BooleanOptional]
     var CopyTagsToSnapshot: js.UndefOr[BooleanOptional]
+    var VpcSecurityGroupIds: js.UndefOr[VpcSecurityGroupIdList]
     var DBSubnetGroupName: js.UndefOr[String]
     var Port: js.UndefOr[IntegerOptional]
     var EnableIAMDatabaseAuthentication: js.UndefOr[BooleanOptional]
@@ -1224,6 +1236,7 @@ package rds {
       AvailabilityZone: js.UndefOr[String] = js.undefined,
       AutoMinorVersionUpgrade: js.UndefOr[BooleanOptional] = js.undefined,
       CopyTagsToSnapshot: js.UndefOr[BooleanOptional] = js.undefined,
+      VpcSecurityGroupIds: js.UndefOr[VpcSecurityGroupIdList] = js.undefined,
       DBSubnetGroupName: js.UndefOr[String] = js.undefined,
       Port: js.UndefOr[IntegerOptional] = js.undefined,
       EnableIAMDatabaseAuthentication: js.UndefOr[BooleanOptional] = js.undefined,
@@ -1252,6 +1265,7 @@ package rds {
         "AvailabilityZone" -> AvailabilityZone.map { x => x.asInstanceOf[js.Any] },
         "AutoMinorVersionUpgrade" -> AutoMinorVersionUpgrade.map { x => x.asInstanceOf[js.Any] },
         "CopyTagsToSnapshot" -> CopyTagsToSnapshot.map { x => x.asInstanceOf[js.Any] },
+        "VpcSecurityGroupIds" -> VpcSecurityGroupIds.map { x => x.asInstanceOf[js.Any] },
         "DBSubnetGroupName" -> DBSubnetGroupName.map { x => x.asInstanceOf[js.Any] },
         "Port" -> Port.map { x => x.asInstanceOf[js.Any] },
         "EnableIAMDatabaseAuthentication" -> EnableIAMDatabaseAuthentication.map { x => x.asInstanceOf[js.Any] },
@@ -1511,6 +1525,54 @@ package rds {
     }
   }
 
+  @js.native
+  trait CreateGlobalClusterMessage extends js.Object {
+    var Engine: js.UndefOr[String]
+    var DatabaseName: js.UndefOr[String]
+    var GlobalClusterIdentifier: js.UndefOr[String]
+    var EngineVersion: js.UndefOr[String]
+    var DeletionProtection: js.UndefOr[BooleanOptional]
+    var SourceDBClusterIdentifier: js.UndefOr[String]
+    var StorageEncrypted: js.UndefOr[BooleanOptional]
+  }
+
+  object CreateGlobalClusterMessage {
+    def apply(
+      Engine: js.UndefOr[String] = js.undefined,
+      DatabaseName: js.UndefOr[String] = js.undefined,
+      GlobalClusterIdentifier: js.UndefOr[String] = js.undefined,
+      EngineVersion: js.UndefOr[String] = js.undefined,
+      DeletionProtection: js.UndefOr[BooleanOptional] = js.undefined,
+      SourceDBClusterIdentifier: js.UndefOr[String] = js.undefined,
+      StorageEncrypted: js.UndefOr[BooleanOptional] = js.undefined): CreateGlobalClusterMessage = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Engine" -> Engine.map { x => x.asInstanceOf[js.Any] },
+        "DatabaseName" -> DatabaseName.map { x => x.asInstanceOf[js.Any] },
+        "GlobalClusterIdentifier" -> GlobalClusterIdentifier.map { x => x.asInstanceOf[js.Any] },
+        "EngineVersion" -> EngineVersion.map { x => x.asInstanceOf[js.Any] },
+        "DeletionProtection" -> DeletionProtection.map { x => x.asInstanceOf[js.Any] },
+        "SourceDBClusterIdentifier" -> SourceDBClusterIdentifier.map { x => x.asInstanceOf[js.Any] },
+        "StorageEncrypted" -> StorageEncrypted.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateGlobalClusterMessage]
+    }
+  }
+
+  @js.native
+  trait CreateGlobalClusterResult extends js.Object {
+    var GlobalCluster: js.UndefOr[GlobalCluster]
+  }
+
+  object CreateGlobalClusterResult {
+    def apply(
+      GlobalCluster: js.UndefOr[GlobalCluster] = js.undefined): CreateGlobalClusterResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "GlobalCluster" -> GlobalCluster.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateGlobalClusterResult]
+    }
+  }
+
   /**
    * <p/>
    */
@@ -1570,6 +1632,7 @@ package rds {
     var MultiAZ: js.UndefOr[Boolean]
     var DBSubnetGroup: js.UndefOr[String]
     var Endpoint: js.UndefOr[String]
+    var HttpEndpointEnabled: js.UndefOr[Boolean]
     var ReplicationSourceIdentifier: js.UndefOr[String]
     var DatabaseName: js.UndefOr[String]
     var CloneGroupId: js.UndefOr[String]
@@ -1618,6 +1681,7 @@ package rds {
       MultiAZ: js.UndefOr[Boolean] = js.undefined,
       DBSubnetGroup: js.UndefOr[String] = js.undefined,
       Endpoint: js.UndefOr[String] = js.undefined,
+      HttpEndpointEnabled: js.UndefOr[Boolean] = js.undefined,
       ReplicationSourceIdentifier: js.UndefOr[String] = js.undefined,
       DatabaseName: js.UndefOr[String] = js.undefined,
       CloneGroupId: js.UndefOr[String] = js.undefined,
@@ -1663,6 +1727,7 @@ package rds {
         "MultiAZ" -> MultiAZ.map { x => x.asInstanceOf[js.Any] },
         "DBSubnetGroup" -> DBSubnetGroup.map { x => x.asInstanceOf[js.Any] },
         "Endpoint" -> Endpoint.map { x => x.asInstanceOf[js.Any] },
+        "HttpEndpointEnabled" -> HttpEndpointEnabled.map { x => x.asInstanceOf[js.Any] },
         "ReplicationSourceIdentifier" -> ReplicationSourceIdentifier.map { x => x.asInstanceOf[js.Any] },
         "DatabaseName" -> DatabaseName.map { x => x.asInstanceOf[js.Any] },
         "CloneGroupId" -> CloneGroupId.map { x => x.asInstanceOf[js.Any] },
@@ -3278,6 +3343,36 @@ package rds {
     }
   }
 
+  @js.native
+  trait DeleteGlobalClusterMessage extends js.Object {
+    var GlobalClusterIdentifier: js.UndefOr[String]
+  }
+
+  object DeleteGlobalClusterMessage {
+    def apply(
+      GlobalClusterIdentifier: js.UndefOr[String] = js.undefined): DeleteGlobalClusterMessage = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "GlobalClusterIdentifier" -> GlobalClusterIdentifier.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteGlobalClusterMessage]
+    }
+  }
+
+  @js.native
+  trait DeleteGlobalClusterResult extends js.Object {
+    var GlobalCluster: js.UndefOr[GlobalCluster]
+  }
+
+  object DeleteGlobalClusterResult {
+    def apply(
+      GlobalCluster: js.UndefOr[GlobalCluster] = js.undefined): DeleteGlobalClusterResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "GlobalCluster" -> GlobalCluster.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteGlobalClusterResult]
+    }
+  }
+
   /**
    * <p/>
    */
@@ -4086,6 +4181,30 @@ package rds {
     }
   }
 
+  @js.native
+  trait DescribeGlobalClustersMessage extends js.Object {
+    var GlobalClusterIdentifier: js.UndefOr[String]
+    var Filters: js.UndefOr[FilterList]
+    var MaxRecords: js.UndefOr[IntegerOptional]
+    var Marker: js.UndefOr[String]
+  }
+
+  object DescribeGlobalClustersMessage {
+    def apply(
+      GlobalClusterIdentifier: js.UndefOr[String] = js.undefined,
+      Filters: js.UndefOr[FilterList] = js.undefined,
+      MaxRecords: js.UndefOr[IntegerOptional] = js.undefined,
+      Marker: js.UndefOr[String] = js.undefined): DescribeGlobalClustersMessage = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "GlobalClusterIdentifier" -> GlobalClusterIdentifier.map { x => x.asInstanceOf[js.Any] },
+        "Filters" -> Filters.map { x => x.asInstanceOf[js.Any] },
+        "MaxRecords" -> MaxRecords.map { x => x.asInstanceOf[js.Any] },
+        "Marker" -> Marker.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeGlobalClustersMessage]
+    }
+  }
+
   /**
    * <p/>
    */
@@ -4753,6 +4872,93 @@ package rds {
   }
 
   /**
+   * <p>A data type representing an Aurora global database.</p>
+   */
+  @js.native
+  trait GlobalCluster extends js.Object {
+    var Engine: js.UndefOr[String]
+    var GlobalClusterMembers: js.UndefOr[GlobalClusterMemberList]
+    var GlobalClusterArn: js.UndefOr[String]
+    var DatabaseName: js.UndefOr[String]
+    var GlobalClusterIdentifier: js.UndefOr[String]
+    var EngineVersion: js.UndefOr[String]
+    var DeletionProtection: js.UndefOr[BooleanOptional]
+    var GlobalClusterResourceId: js.UndefOr[String]
+    var StorageEncrypted: js.UndefOr[BooleanOptional]
+    var Status: js.UndefOr[String]
+  }
+
+  object GlobalCluster {
+    def apply(
+      Engine: js.UndefOr[String] = js.undefined,
+      GlobalClusterMembers: js.UndefOr[GlobalClusterMemberList] = js.undefined,
+      GlobalClusterArn: js.UndefOr[String] = js.undefined,
+      DatabaseName: js.UndefOr[String] = js.undefined,
+      GlobalClusterIdentifier: js.UndefOr[String] = js.undefined,
+      EngineVersion: js.UndefOr[String] = js.undefined,
+      DeletionProtection: js.UndefOr[BooleanOptional] = js.undefined,
+      GlobalClusterResourceId: js.UndefOr[String] = js.undefined,
+      StorageEncrypted: js.UndefOr[BooleanOptional] = js.undefined,
+      Status: js.UndefOr[String] = js.undefined): GlobalCluster = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Engine" -> Engine.map { x => x.asInstanceOf[js.Any] },
+        "GlobalClusterMembers" -> GlobalClusterMembers.map { x => x.asInstanceOf[js.Any] },
+        "GlobalClusterArn" -> GlobalClusterArn.map { x => x.asInstanceOf[js.Any] },
+        "DatabaseName" -> DatabaseName.map { x => x.asInstanceOf[js.Any] },
+        "GlobalClusterIdentifier" -> GlobalClusterIdentifier.map { x => x.asInstanceOf[js.Any] },
+        "EngineVersion" -> EngineVersion.map { x => x.asInstanceOf[js.Any] },
+        "DeletionProtection" -> DeletionProtection.map { x => x.asInstanceOf[js.Any] },
+        "GlobalClusterResourceId" -> GlobalClusterResourceId.map { x => x.asInstanceOf[js.Any] },
+        "StorageEncrypted" -> StorageEncrypted.map { x => x.asInstanceOf[js.Any] },
+        "Status" -> Status.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GlobalCluster]
+    }
+  }
+
+  /**
+   * <p> A data structure with information about any primary and secondary clusters associated with an Aurora global database. </p>
+   */
+  @js.native
+  trait GlobalClusterMember extends js.Object {
+    var DBClusterArn: js.UndefOr[String]
+    var Readers: js.UndefOr[ReadersArnList]
+    var IsWriter: js.UndefOr[Boolean]
+  }
+
+  object GlobalClusterMember {
+    def apply(
+      DBClusterArn: js.UndefOr[String] = js.undefined,
+      Readers: js.UndefOr[ReadersArnList] = js.undefined,
+      IsWriter: js.UndefOr[Boolean] = js.undefined): GlobalClusterMember = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "DBClusterArn" -> DBClusterArn.map { x => x.asInstanceOf[js.Any] },
+        "Readers" -> Readers.map { x => x.asInstanceOf[js.Any] },
+        "IsWriter" -> IsWriter.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GlobalClusterMember]
+    }
+  }
+
+  @js.native
+  trait GlobalClustersMessage extends js.Object {
+    var Marker: js.UndefOr[String]
+    var GlobalClusters: js.UndefOr[GlobalClusterList]
+  }
+
+  object GlobalClustersMessage {
+    def apply(
+      Marker: js.UndefOr[String] = js.undefined,
+      GlobalClusters: js.UndefOr[GlobalClusterList] = js.undefined): GlobalClustersMessage = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Marker" -> Marker.map { x => x.asInstanceOf[js.Any] },
+        "GlobalClusters" -> GlobalClusters.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GlobalClustersMessage]
+    }
+  }
+
+  /**
    * <p> This data type is used as a response element in the <a>DescribeDBSecurityGroups</a> action. </p>
    */
   @js.native
@@ -4872,6 +5078,7 @@ package rds {
     var CloudwatchLogsExportConfiguration: js.UndefOr[CloudwatchLogsExportConfiguration]
     var DBClusterIdentifier: js.UndefOr[String]
     var OptionGroupName: js.UndefOr[String]
+    var EnableHttpEndpoint: js.UndefOr[BooleanOptional]
     var DBClusterParameterGroupName: js.UndefOr[String]
     var ScalingConfiguration: js.UndefOr[ScalingConfiguration]
     var BackupRetentionPeriod: js.UndefOr[IntegerOptional]
@@ -4893,6 +5100,7 @@ package rds {
       CloudwatchLogsExportConfiguration: js.UndefOr[CloudwatchLogsExportConfiguration] = js.undefined,
       DBClusterIdentifier: js.UndefOr[String] = js.undefined,
       OptionGroupName: js.UndefOr[String] = js.undefined,
+      EnableHttpEndpoint: js.UndefOr[BooleanOptional] = js.undefined,
       DBClusterParameterGroupName: js.UndefOr[String] = js.undefined,
       ScalingConfiguration: js.UndefOr[ScalingConfiguration] = js.undefined,
       BackupRetentionPeriod: js.UndefOr[IntegerOptional] = js.undefined,
@@ -4911,6 +5119,7 @@ package rds {
         "CloudwatchLogsExportConfiguration" -> CloudwatchLogsExportConfiguration.map { x => x.asInstanceOf[js.Any] },
         "DBClusterIdentifier" -> DBClusterIdentifier.map { x => x.asInstanceOf[js.Any] },
         "OptionGroupName" -> OptionGroupName.map { x => x.asInstanceOf[js.Any] },
+        "EnableHttpEndpoint" -> EnableHttpEndpoint.map { x => x.asInstanceOf[js.Any] },
         "DBClusterParameterGroupName" -> DBClusterParameterGroupName.map { x => x.asInstanceOf[js.Any] },
         "ScalingConfiguration" -> ScalingConfiguration.map { x => x.asInstanceOf[js.Any] },
         "BackupRetentionPeriod" -> BackupRetentionPeriod.map { x => x.asInstanceOf[js.Any] },
@@ -5337,6 +5546,42 @@ package rds {
         "EventSubscription" -> EventSubscription.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ModifyEventSubscriptionResult]
+    }
+  }
+
+  @js.native
+  trait ModifyGlobalClusterMessage extends js.Object {
+    var GlobalClusterIdentifier: js.UndefOr[String]
+    var NewGlobalClusterIdentifier: js.UndefOr[String]
+    var DeletionProtection: js.UndefOr[BooleanOptional]
+  }
+
+  object ModifyGlobalClusterMessage {
+    def apply(
+      GlobalClusterIdentifier: js.UndefOr[String] = js.undefined,
+      NewGlobalClusterIdentifier: js.UndefOr[String] = js.undefined,
+      DeletionProtection: js.UndefOr[BooleanOptional] = js.undefined): ModifyGlobalClusterMessage = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "GlobalClusterIdentifier" -> GlobalClusterIdentifier.map { x => x.asInstanceOf[js.Any] },
+        "NewGlobalClusterIdentifier" -> NewGlobalClusterIdentifier.map { x => x.asInstanceOf[js.Any] },
+        "DeletionProtection" -> DeletionProtection.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ModifyGlobalClusterMessage]
+    }
+  }
+
+  @js.native
+  trait ModifyGlobalClusterResult extends js.Object {
+    var GlobalCluster: js.UndefOr[GlobalCluster]
+  }
+
+  object ModifyGlobalClusterResult {
+    def apply(
+      GlobalCluster: js.UndefOr[GlobalCluster] = js.undefined): ModifyGlobalClusterResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "GlobalCluster" -> GlobalCluster.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ModifyGlobalClusterResult]
     }
   }
 
@@ -6226,6 +6471,39 @@ package rds {
   }
 
   @js.native
+  trait RemoveFromGlobalClusterMessage extends js.Object {
+    var GlobalClusterIdentifier: js.UndefOr[String]
+    var DbClusterIdentifier: js.UndefOr[String]
+  }
+
+  object RemoveFromGlobalClusterMessage {
+    def apply(
+      GlobalClusterIdentifier: js.UndefOr[String] = js.undefined,
+      DbClusterIdentifier: js.UndefOr[String] = js.undefined): RemoveFromGlobalClusterMessage = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "GlobalClusterIdentifier" -> GlobalClusterIdentifier.map { x => x.asInstanceOf[js.Any] },
+        "DbClusterIdentifier" -> DbClusterIdentifier.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RemoveFromGlobalClusterMessage]
+    }
+  }
+
+  @js.native
+  trait RemoveFromGlobalClusterResult extends js.Object {
+    var GlobalCluster: js.UndefOr[GlobalCluster]
+  }
+
+  object RemoveFromGlobalClusterResult {
+    def apply(
+      GlobalCluster: js.UndefOr[GlobalCluster] = js.undefined): RemoveFromGlobalClusterResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "GlobalCluster" -> GlobalCluster.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RemoveFromGlobalClusterResult]
+    }
+  }
+
+  @js.native
   trait RemoveRoleFromDBClusterMessage extends js.Object {
     var DBClusterIdentifier: js.UndefOr[String]
     var RoleArn: js.UndefOr[String]
@@ -6810,6 +7088,7 @@ package rds {
     var AutoMinorVersionUpgrade: js.UndefOr[BooleanOptional]
     var CopyTagsToSnapshot: js.UndefOr[BooleanOptional]
     var DomainIAMRoleName: js.UndefOr[String]
+    var VpcSecurityGroupIds: js.UndefOr[VpcSecurityGroupIdList]
     var DBSubnetGroupName: js.UndefOr[String]
     var Port: js.UndefOr[IntegerOptional]
     var EnableIAMDatabaseAuthentication: js.UndefOr[BooleanOptional]
@@ -6841,6 +7120,7 @@ package rds {
       AutoMinorVersionUpgrade: js.UndefOr[BooleanOptional] = js.undefined,
       CopyTagsToSnapshot: js.UndefOr[BooleanOptional] = js.undefined,
       DomainIAMRoleName: js.UndefOr[String] = js.undefined,
+      VpcSecurityGroupIds: js.UndefOr[VpcSecurityGroupIdList] = js.undefined,
       DBSubnetGroupName: js.UndefOr[String] = js.undefined,
       Port: js.UndefOr[IntegerOptional] = js.undefined,
       EnableIAMDatabaseAuthentication: js.UndefOr[BooleanOptional] = js.undefined,
@@ -6869,6 +7149,7 @@ package rds {
         "AutoMinorVersionUpgrade" -> AutoMinorVersionUpgrade.map { x => x.asInstanceOf[js.Any] },
         "CopyTagsToSnapshot" -> CopyTagsToSnapshot.map { x => x.asInstanceOf[js.Any] },
         "DomainIAMRoleName" -> DomainIAMRoleName.map { x => x.asInstanceOf[js.Any] },
+        "VpcSecurityGroupIds" -> VpcSecurityGroupIds.map { x => x.asInstanceOf[js.Any] },
         "DBSubnetGroupName" -> DBSubnetGroupName.map { x => x.asInstanceOf[js.Any] },
         "Port" -> Port.map { x => x.asInstanceOf[js.Any] },
         "EnableIAMDatabaseAuthentication" -> EnableIAMDatabaseAuthentication.map { x => x.asInstanceOf[js.Any] },
@@ -7079,6 +7360,7 @@ package rds {
     var AutoMinorVersionUpgrade: js.UndefOr[BooleanOptional]
     var CopyTagsToSnapshot: js.UndefOr[BooleanOptional]
     var DomainIAMRoleName: js.UndefOr[String]
+    var VpcSecurityGroupIds: js.UndefOr[VpcSecurityGroupIdList]
     var DBSubnetGroupName: js.UndefOr[String]
     var Port: js.UndefOr[IntegerOptional]
     var EnableIAMDatabaseAuthentication: js.UndefOr[BooleanOptional]
@@ -7113,6 +7395,7 @@ package rds {
       AutoMinorVersionUpgrade: js.UndefOr[BooleanOptional] = js.undefined,
       CopyTagsToSnapshot: js.UndefOr[BooleanOptional] = js.undefined,
       DomainIAMRoleName: js.UndefOr[String] = js.undefined,
+      VpcSecurityGroupIds: js.UndefOr[VpcSecurityGroupIdList] = js.undefined,
       DBSubnetGroupName: js.UndefOr[String] = js.undefined,
       Port: js.UndefOr[IntegerOptional] = js.undefined,
       EnableIAMDatabaseAuthentication: js.UndefOr[BooleanOptional] = js.undefined,
@@ -7144,6 +7427,7 @@ package rds {
         "AutoMinorVersionUpgrade" -> AutoMinorVersionUpgrade.map { x => x.asInstanceOf[js.Any] },
         "CopyTagsToSnapshot" -> CopyTagsToSnapshot.map { x => x.asInstanceOf[js.Any] },
         "DomainIAMRoleName" -> DomainIAMRoleName.map { x => x.asInstanceOf[js.Any] },
+        "VpcSecurityGroupIds" -> VpcSecurityGroupIds.map { x => x.asInstanceOf[js.Any] },
         "DBSubnetGroupName" -> DBSubnetGroupName.map { x => x.asInstanceOf[js.Any] },
         "Port" -> Port.map { x => x.asInstanceOf[js.Any] },
         "EnableIAMDatabaseAuthentication" -> EnableIAMDatabaseAuthentication.map { x => x.asInstanceOf[js.Any] },

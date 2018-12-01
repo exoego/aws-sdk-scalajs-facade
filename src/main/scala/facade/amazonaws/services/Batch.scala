@@ -27,6 +27,9 @@ package object batch {
   type JobStatus = String
   type JobSummaryList = js.Array[JobSummary]
   type MountPoints = js.Array[MountPoint]
+  type NetworkInterfaceList = js.Array[NetworkInterface]
+  type NodePropertyOverrides = js.Array[NodePropertyOverride]
+  type NodeRangeProperties = js.Array[NodeRangeProperty]
   type ParametersMap = js.Dictionary[String]
   type StringList = js.Array[String]
   type TagsMap = js.Dictionary[String]
@@ -131,6 +134,7 @@ package batch {
    */
   @js.native
   trait AttemptContainerDetail extends js.Object {
+    var networkInterfaces: js.UndefOr[NetworkInterfaceList]
     var exitCode: js.UndefOr[Int]
     var reason: js.UndefOr[String]
     var logStreamName: js.UndefOr[String]
@@ -140,12 +144,14 @@ package batch {
 
   object AttemptContainerDetail {
     def apply(
+      networkInterfaces: js.UndefOr[NetworkInterfaceList] = js.undefined,
       exitCode: js.UndefOr[Int] = js.undefined,
       reason: js.UndefOr[String] = js.undefined,
       logStreamName: js.UndefOr[String] = js.undefined,
       taskArn: js.UndefOr[String] = js.undefined,
       containerInstanceArn: js.UndefOr[String] = js.undefined): AttemptContainerDetail = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "networkInterfaces" -> networkInterfaces.map { x => x.asInstanceOf[js.Any] },
         "exitCode" -> exitCode.map { x => x.asInstanceOf[js.Any] },
         "reason" -> reason.map { x => x.asInstanceOf[js.Any] },
         "logStreamName" -> logStreamName.map { x => x.asInstanceOf[js.Any] },
@@ -320,6 +326,7 @@ package batch {
     var tags: js.UndefOr[TagsMap]
     var desiredvCpus: js.UndefOr[Int]
     var ec2KeyPair: js.UndefOr[String]
+    var placementGroup: js.UndefOr[String]
     var securityGroupIds: js.UndefOr[StringList]
     var launchTemplate: js.UndefOr[LaunchTemplateSpecification]
     var instanceTypes: js.UndefOr[StringList]
@@ -338,6 +345,7 @@ package batch {
       tags: js.UndefOr[TagsMap] = js.undefined,
       desiredvCpus: js.UndefOr[Int] = js.undefined,
       ec2KeyPair: js.UndefOr[String] = js.undefined,
+      placementGroup: js.UndefOr[String] = js.undefined,
       securityGroupIds: js.UndefOr[StringList] = js.undefined,
       launchTemplate: js.UndefOr[LaunchTemplateSpecification] = js.undefined,
       instanceTypes: js.UndefOr[StringList] = js.undefined,
@@ -353,6 +361,7 @@ package batch {
         "tags" -> tags.map { x => x.asInstanceOf[js.Any] },
         "desiredvCpus" -> desiredvCpus.map { x => x.asInstanceOf[js.Any] },
         "ec2KeyPair" -> ec2KeyPair.map { x => x.asInstanceOf[js.Any] },
+        "placementGroup" -> placementGroup.map { x => x.asInstanceOf[js.Any] },
         "securityGroupIds" -> securityGroupIds.map { x => x.asInstanceOf[js.Any] },
         "launchTemplate" -> launchTemplate.map { x => x.asInstanceOf[js.Any] },
         "instanceTypes" -> instanceTypes.map { x => x.asInstanceOf[js.Any] },
@@ -398,11 +407,13 @@ package batch {
     var ulimits: js.UndefOr[Ulimits]
     var mountPoints: js.UndefOr[MountPoints]
     var vcpus: js.UndefOr[Int]
+    var networkInterfaces: js.UndefOr[NetworkInterfaceList]
     var readonlyRootFilesystem: js.UndefOr[Boolean]
     var image: js.UndefOr[String]
     var exitCode: js.UndefOr[Int]
     var command: js.UndefOr[StringList]
     var reason: js.UndefOr[String]
+    var instanceType: js.UndefOr[String]
     var volumes: js.UndefOr[Volumes]
     var logStreamName: js.UndefOr[String]
     var environment: js.UndefOr[EnvironmentVariables]
@@ -419,11 +430,13 @@ package batch {
       ulimits: js.UndefOr[Ulimits] = js.undefined,
       mountPoints: js.UndefOr[MountPoints] = js.undefined,
       vcpus: js.UndefOr[Int] = js.undefined,
+      networkInterfaces: js.UndefOr[NetworkInterfaceList] = js.undefined,
       readonlyRootFilesystem: js.UndefOr[Boolean] = js.undefined,
       image: js.UndefOr[String] = js.undefined,
       exitCode: js.UndefOr[Int] = js.undefined,
       command: js.UndefOr[StringList] = js.undefined,
       reason: js.UndefOr[String] = js.undefined,
+      instanceType: js.UndefOr[String] = js.undefined,
       volumes: js.UndefOr[Volumes] = js.undefined,
       logStreamName: js.UndefOr[String] = js.undefined,
       environment: js.UndefOr[EnvironmentVariables] = js.undefined,
@@ -437,11 +450,13 @@ package batch {
         "ulimits" -> ulimits.map { x => x.asInstanceOf[js.Any] },
         "mountPoints" -> mountPoints.map { x => x.asInstanceOf[js.Any] },
         "vcpus" -> vcpus.map { x => x.asInstanceOf[js.Any] },
+        "networkInterfaces" -> networkInterfaces.map { x => x.asInstanceOf[js.Any] },
         "readonlyRootFilesystem" -> readonlyRootFilesystem.map { x => x.asInstanceOf[js.Any] },
         "image" -> image.map { x => x.asInstanceOf[js.Any] },
         "exitCode" -> exitCode.map { x => x.asInstanceOf[js.Any] },
         "command" -> command.map { x => x.asInstanceOf[js.Any] },
         "reason" -> reason.map { x => x.asInstanceOf[js.Any] },
+        "instanceType" -> instanceType.map { x => x.asInstanceOf[js.Any] },
         "volumes" -> volumes.map { x => x.asInstanceOf[js.Any] },
         "logStreamName" -> logStreamName.map { x => x.asInstanceOf[js.Any] },
         "environment" -> environment.map { x => x.asInstanceOf[js.Any] },
@@ -462,22 +477,25 @@ package batch {
   @js.native
   trait ContainerOverrides extends js.Object {
     var vcpus: js.UndefOr[Int]
-    var memory: js.UndefOr[Int]
     var command: js.UndefOr[StringList]
+    var instanceType: js.UndefOr[String]
     var environment: js.UndefOr[EnvironmentVariables]
+    var memory: js.UndefOr[Int]
   }
 
   object ContainerOverrides {
     def apply(
       vcpus: js.UndefOr[Int] = js.undefined,
-      memory: js.UndefOr[Int] = js.undefined,
       command: js.UndefOr[StringList] = js.undefined,
-      environment: js.UndefOr[EnvironmentVariables] = js.undefined): ContainerOverrides = {
+      instanceType: js.UndefOr[String] = js.undefined,
+      environment: js.UndefOr[EnvironmentVariables] = js.undefined,
+      memory: js.UndefOr[Int] = js.undefined): ContainerOverrides = {
       val _fields = IndexedSeq[(String, js.Any)](
         "vcpus" -> vcpus.map { x => x.asInstanceOf[js.Any] },
-        "memory" -> memory.map { x => x.asInstanceOf[js.Any] },
         "command" -> command.map { x => x.asInstanceOf[js.Any] },
-        "environment" -> environment.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "instanceType" -> instanceType.map { x => x.asInstanceOf[js.Any] },
+        "environment" -> environment.map { x => x.asInstanceOf[js.Any] },
+        "memory" -> memory.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ContainerOverrides]
     }
@@ -494,6 +512,7 @@ package batch {
     var readonlyRootFilesystem: js.UndefOr[Boolean]
     var image: js.UndefOr[String]
     var command: js.UndefOr[StringList]
+    var instanceType: js.UndefOr[String]
     var volumes: js.UndefOr[Volumes]
     var environment: js.UndefOr[EnvironmentVariables]
     var privileged: js.UndefOr[Boolean]
@@ -510,6 +529,7 @@ package batch {
       readonlyRootFilesystem: js.UndefOr[Boolean] = js.undefined,
       image: js.UndefOr[String] = js.undefined,
       command: js.UndefOr[StringList] = js.undefined,
+      instanceType: js.UndefOr[String] = js.undefined,
       volumes: js.UndefOr[Volumes] = js.undefined,
       environment: js.UndefOr[EnvironmentVariables] = js.undefined,
       privileged: js.UndefOr[Boolean] = js.undefined,
@@ -523,6 +543,7 @@ package batch {
         "readonlyRootFilesystem" -> readonlyRootFilesystem.map { x => x.asInstanceOf[js.Any] },
         "image" -> image.map { x => x.asInstanceOf[js.Any] },
         "command" -> command.map { x => x.asInstanceOf[js.Any] },
+        "instanceType" -> instanceType.map { x => x.asInstanceOf[js.Any] },
         "volumes" -> volumes.map { x => x.asInstanceOf[js.Any] },
         "environment" -> environment.map { x => x.asInstanceOf[js.Any] },
         "privileged" -> privileged.map { x => x.asInstanceOf[js.Any] },
@@ -923,6 +944,7 @@ package batch {
     var retryStrategy: js.UndefOr[RetryStrategy]
     var containerProperties: js.UndefOr[ContainerProperties]
     var revision: js.UndefOr[Int]
+    var nodeProperties: js.UndefOr[NodeProperties]
     var status: js.UndefOr[String]
     var jobDefinitionArn: js.UndefOr[String]
     var `type`: js.UndefOr[String]
@@ -936,6 +958,7 @@ package batch {
       retryStrategy: js.UndefOr[RetryStrategy] = js.undefined,
       containerProperties: js.UndefOr[ContainerProperties] = js.undefined,
       revision: js.UndefOr[Int] = js.undefined,
+      nodeProperties: js.UndefOr[NodeProperties] = js.undefined,
       status: js.UndefOr[String] = js.undefined,
       jobDefinitionArn: js.UndefOr[String] = js.undefined,
       `type`: js.UndefOr[String] = js.undefined,
@@ -946,6 +969,7 @@ package batch {
         "retryStrategy" -> retryStrategy.map { x => x.asInstanceOf[js.Any] },
         "containerProperties" -> containerProperties.map { x => x.asInstanceOf[js.Any] },
         "revision" -> revision.map { x => x.asInstanceOf[js.Any] },
+        "nodeProperties" -> nodeProperties.map { x => x.asInstanceOf[js.Any] },
         "status" -> status.map { x => x.asInstanceOf[js.Any] },
         "jobDefinitionArn" -> jobDefinitionArn.map { x => x.asInstanceOf[js.Any] },
         "`type`" -> `type`.map { x => x.asInstanceOf[js.Any] },
@@ -959,8 +983,9 @@ package batch {
 
   object JobDefinitionTypeEnum {
     val container = "container"
+    val multinode = "multinode"
 
-    val values = IndexedSeq(container)
+    val values = IndexedSeq(container, multinode)
   }
 
   /**
@@ -997,6 +1022,8 @@ package batch {
     var jobQueue: js.UndefOr[String]
     var stoppedAt: js.UndefOr[Double]
     var container: js.UndefOr[ContainerDetail]
+    var nodeDetails: js.UndefOr[NodeDetails]
+    var nodeProperties: js.UndefOr[NodeProperties]
     var dependsOn: js.UndefOr[JobDependencyList]
     var status: js.UndefOr[JobStatus]
     var jobId: js.UndefOr[String]
@@ -1017,6 +1044,8 @@ package batch {
       jobQueue: js.UndefOr[String] = js.undefined,
       stoppedAt: js.UndefOr[Double] = js.undefined,
       container: js.UndefOr[ContainerDetail] = js.undefined,
+      nodeDetails: js.UndefOr[NodeDetails] = js.undefined,
+      nodeProperties: js.UndefOr[NodeProperties] = js.undefined,
       dependsOn: js.UndefOr[JobDependencyList] = js.undefined,
       status: js.UndefOr[JobStatus] = js.undefined,
       jobId: js.UndefOr[String] = js.undefined,
@@ -1034,6 +1063,8 @@ package batch {
         "jobQueue" -> jobQueue.map { x => x.asInstanceOf[js.Any] },
         "stoppedAt" -> stoppedAt.map { x => x.asInstanceOf[js.Any] },
         "container" -> container.map { x => x.asInstanceOf[js.Any] },
+        "nodeDetails" -> nodeDetails.map { x => x.asInstanceOf[js.Any] },
+        "nodeProperties" -> nodeProperties.map { x => x.asInstanceOf[js.Any] },
         "dependsOn" -> dependsOn.map { x => x.asInstanceOf[js.Any] },
         "status" -> status.map { x => x.asInstanceOf[js.Any] },
         "jobId" -> jobId.map { x => x.asInstanceOf[js.Any] },
@@ -1104,6 +1135,7 @@ package batch {
     var statusReason: js.UndefOr[String]
     var stoppedAt: js.UndefOr[Double]
     var container: js.UndefOr[ContainerSummary]
+    var nodeProperties: js.UndefOr[NodePropertiesSummary]
     var status: js.UndefOr[JobStatus]
     var jobId: js.UndefOr[String]
     var createdAt: js.UndefOr[Double]
@@ -1117,6 +1149,7 @@ package batch {
       statusReason: js.UndefOr[String] = js.undefined,
       stoppedAt: js.UndefOr[Double] = js.undefined,
       container: js.UndefOr[ContainerSummary] = js.undefined,
+      nodeProperties: js.UndefOr[NodePropertiesSummary] = js.undefined,
       status: js.UndefOr[JobStatus] = js.undefined,
       jobId: js.UndefOr[String] = js.undefined,
       createdAt: js.UndefOr[Double] = js.undefined,
@@ -1127,6 +1160,7 @@ package batch {
         "statusReason" -> statusReason.map { x => x.asInstanceOf[js.Any] },
         "stoppedAt" -> stoppedAt.map { x => x.asInstanceOf[js.Any] },
         "container" -> container.map { x => x.asInstanceOf[js.Any] },
+        "nodeProperties" -> nodeProperties.map { x => x.asInstanceOf[js.Any] },
         "status" -> status.map { x => x.asInstanceOf[js.Any] },
         "jobId" -> jobId.map { x => x.asInstanceOf[js.Any] },
         "createdAt" -> createdAt.map { x => x.asInstanceOf[js.Any] },
@@ -1204,6 +1238,7 @@ package batch {
   trait ListJobsRequest extends js.Object {
     var jobQueue: js.UndefOr[String]
     var maxResults: js.UndefOr[Int]
+    var multiNodeJobId: js.UndefOr[String]
     var jobStatus: js.UndefOr[JobStatus]
     var nextToken: js.UndefOr[String]
     var arrayJobId: js.UndefOr[String]
@@ -1213,12 +1248,14 @@ package batch {
     def apply(
       jobQueue: js.UndefOr[String] = js.undefined,
       maxResults: js.UndefOr[Int] = js.undefined,
+      multiNodeJobId: js.UndefOr[String] = js.undefined,
       jobStatus: js.UndefOr[JobStatus] = js.undefined,
       nextToken: js.UndefOr[String] = js.undefined,
       arrayJobId: js.UndefOr[String] = js.undefined): ListJobsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "jobQueue" -> jobQueue.map { x => x.asInstanceOf[js.Any] },
         "maxResults" -> maxResults.map { x => x.asInstanceOf[js.Any] },
+        "multiNodeJobId" -> multiNodeJobId.map { x => x.asInstanceOf[js.Any] },
         "jobStatus" -> jobStatus.map { x => x.asInstanceOf[js.Any] },
         "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] },
         "arrayJobId" -> arrayJobId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
@@ -1269,10 +1306,164 @@ package batch {
     }
   }
 
+  /**
+   * <p>An object representing the elastic network interface for a multi-node parallel job node.</p>
+   */
+  @js.native
+  trait NetworkInterface extends js.Object {
+    var attachmentId: js.UndefOr[String]
+    var ipv6Address: js.UndefOr[String]
+    var privateIpv4Address: js.UndefOr[String]
+  }
+
+  object NetworkInterface {
+    def apply(
+      attachmentId: js.UndefOr[String] = js.undefined,
+      ipv6Address: js.UndefOr[String] = js.undefined,
+      privateIpv4Address: js.UndefOr[String] = js.undefined): NetworkInterface = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "attachmentId" -> attachmentId.map { x => x.asInstanceOf[js.Any] },
+        "ipv6Address" -> ipv6Address.map { x => x.asInstanceOf[js.Any] },
+        "privateIpv4Address" -> privateIpv4Address.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[NetworkInterface]
+    }
+  }
+
+  /**
+   * <p>An object representing the details of a multi-node parallel job node.</p>
+   */
+  @js.native
+  trait NodeDetails extends js.Object {
+    var nodeIndex: js.UndefOr[Int]
+    var isMainNode: js.UndefOr[Boolean]
+  }
+
+  object NodeDetails {
+    def apply(
+      nodeIndex: js.UndefOr[Int] = js.undefined,
+      isMainNode: js.UndefOr[Boolean] = js.undefined): NodeDetails = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "nodeIndex" -> nodeIndex.map { x => x.asInstanceOf[js.Any] },
+        "isMainNode" -> isMainNode.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[NodeDetails]
+    }
+  }
+
+  /**
+   * <p>Object representing any node overrides to a job definition that is used in a <a>SubmitJob</a> API operation.</p>
+   */
+  @js.native
+  trait NodeOverrides extends js.Object {
+    var nodePropertyOverrides: js.UndefOr[NodePropertyOverrides]
+  }
+
+  object NodeOverrides {
+    def apply(
+      nodePropertyOverrides: js.UndefOr[NodePropertyOverrides] = js.undefined): NodeOverrides = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "nodePropertyOverrides" -> nodePropertyOverrides.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[NodeOverrides]
+    }
+  }
+
+  /**
+   * <p>An object representing the node properties of a multi-node parallel job.</p>
+   */
+  @js.native
+  trait NodeProperties extends js.Object {
+    var numNodes: js.UndefOr[Int]
+    var mainNode: js.UndefOr[Int]
+    var nodeRangeProperties: js.UndefOr[NodeRangeProperties]
+  }
+
+  object NodeProperties {
+    def apply(
+      numNodes: js.UndefOr[Int] = js.undefined,
+      mainNode: js.UndefOr[Int] = js.undefined,
+      nodeRangeProperties: js.UndefOr[NodeRangeProperties] = js.undefined): NodeProperties = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "numNodes" -> numNodes.map { x => x.asInstanceOf[js.Any] },
+        "mainNode" -> mainNode.map { x => x.asInstanceOf[js.Any] },
+        "nodeRangeProperties" -> nodeRangeProperties.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[NodeProperties]
+    }
+  }
+
+  /**
+   * <p>An object representing the properties of a node that is associated with a multi-node parallel job.</p>
+   */
+  @js.native
+  trait NodePropertiesSummary extends js.Object {
+    var isMainNode: js.UndefOr[Boolean]
+    var numNodes: js.UndefOr[Int]
+    var nodeIndex: js.UndefOr[Int]
+  }
+
+  object NodePropertiesSummary {
+    def apply(
+      isMainNode: js.UndefOr[Boolean] = js.undefined,
+      numNodes: js.UndefOr[Int] = js.undefined,
+      nodeIndex: js.UndefOr[Int] = js.undefined): NodePropertiesSummary = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "isMainNode" -> isMainNode.map { x => x.asInstanceOf[js.Any] },
+        "numNodes" -> numNodes.map { x => x.asInstanceOf[js.Any] },
+        "nodeIndex" -> nodeIndex.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[NodePropertiesSummary]
+    }
+  }
+
+  /**
+   * <p>Object representing any node overrides to a job definition that is used in a <a>SubmitJob</a> API operation.</p>
+   */
+  @js.native
+  trait NodePropertyOverride extends js.Object {
+    var targetNodes: js.UndefOr[String]
+    var containerOverrides: js.UndefOr[ContainerOverrides]
+  }
+
+  object NodePropertyOverride {
+    def apply(
+      targetNodes: js.UndefOr[String] = js.undefined,
+      containerOverrides: js.UndefOr[ContainerOverrides] = js.undefined): NodePropertyOverride = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "targetNodes" -> targetNodes.map { x => x.asInstanceOf[js.Any] },
+        "containerOverrides" -> containerOverrides.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[NodePropertyOverride]
+    }
+  }
+
+  /**
+   * <p>An object representing the properties of the node range for a multi-node parallel job.</p>
+   */
+  @js.native
+  trait NodeRangeProperty extends js.Object {
+    var targetNodes: js.UndefOr[String]
+    var container: js.UndefOr[ContainerProperties]
+  }
+
+  object NodeRangeProperty {
+    def apply(
+      targetNodes: js.UndefOr[String] = js.undefined,
+      container: js.UndefOr[ContainerProperties] = js.undefined): NodeRangeProperty = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "targetNodes" -> targetNodes.map { x => x.asInstanceOf[js.Any] },
+        "container" -> container.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[NodeRangeProperty]
+    }
+  }
+
   @js.native
   trait RegisterJobDefinitionRequest extends js.Object {
     var retryStrategy: js.UndefOr[RetryStrategy]
     var containerProperties: js.UndefOr[ContainerProperties]
+    var nodeProperties: js.UndefOr[NodeProperties]
     var `type`: js.UndefOr[JobDefinitionType]
     var timeout: js.UndefOr[JobTimeout]
     var parameters: js.UndefOr[ParametersMap]
@@ -1283,6 +1474,7 @@ package batch {
     def apply(
       retryStrategy: js.UndefOr[RetryStrategy] = js.undefined,
       containerProperties: js.UndefOr[ContainerProperties] = js.undefined,
+      nodeProperties: js.UndefOr[NodeProperties] = js.undefined,
       `type`: js.UndefOr[JobDefinitionType] = js.undefined,
       timeout: js.UndefOr[JobTimeout] = js.undefined,
       parameters: js.UndefOr[ParametersMap] = js.undefined,
@@ -1290,6 +1482,7 @@ package batch {
       val _fields = IndexedSeq[(String, js.Any)](
         "retryStrategy" -> retryStrategy.map { x => x.asInstanceOf[js.Any] },
         "containerProperties" -> containerProperties.map { x => x.asInstanceOf[js.Any] },
+        "nodeProperties" -> nodeProperties.map { x => x.asInstanceOf[js.Any] },
         "`type`" -> `type`.map { x => x.asInstanceOf[js.Any] },
         "timeout" -> timeout.map { x => x.asInstanceOf[js.Any] },
         "parameters" -> parameters.map { x => x.asInstanceOf[js.Any] },
@@ -1343,6 +1536,7 @@ package batch {
     var jobDefinition: js.UndefOr[String]
     var jobName: js.UndefOr[String]
     var retryStrategy: js.UndefOr[RetryStrategy]
+    var nodeOverrides: js.UndefOr[NodeOverrides]
     var containerOverrides: js.UndefOr[ContainerOverrides]
     var jobQueue: js.UndefOr[String]
     var dependsOn: js.UndefOr[JobDependencyList]
@@ -1356,6 +1550,7 @@ package batch {
       jobDefinition: js.UndefOr[String] = js.undefined,
       jobName: js.UndefOr[String] = js.undefined,
       retryStrategy: js.UndefOr[RetryStrategy] = js.undefined,
+      nodeOverrides: js.UndefOr[NodeOverrides] = js.undefined,
       containerOverrides: js.UndefOr[ContainerOverrides] = js.undefined,
       jobQueue: js.UndefOr[String] = js.undefined,
       dependsOn: js.UndefOr[JobDependencyList] = js.undefined,
@@ -1366,6 +1561,7 @@ package batch {
         "jobDefinition" -> jobDefinition.map { x => x.asInstanceOf[js.Any] },
         "jobName" -> jobName.map { x => x.asInstanceOf[js.Any] },
         "retryStrategy" -> retryStrategy.map { x => x.asInstanceOf[js.Any] },
+        "nodeOverrides" -> nodeOverrides.map { x => x.asInstanceOf[js.Any] },
         "containerOverrides" -> containerOverrides.map { x => x.asInstanceOf[js.Any] },
         "jobQueue" -> jobQueue.map { x => x.asInstanceOf[js.Any] },
         "dependsOn" -> dependsOn.map { x => x.asInstanceOf[js.Any] },

@@ -264,7 +264,7 @@ package snowball {
   }
 
   /**
-   * <p>A JSON-formatted object that describes a compatible Amazon Machine Image (AMI), including the ID and name for a Snowball Edge AMI. This AMI is compatible with the device's physical hardware requirements, and it should be able to be run in an SBE1 instance on the device.</p>
+   * <p>A JSON-formatted object that describes a compatible Amazon Machine Image (AMI). For more information on compatible AMIs, see <a href="http://docs.aws.amazon.com/snowball/latest/developer-guide/using-ec2.html">Using Amazon EC2 Compute Instances</a> in the <i>AWS Snowball Developer Guide</i>.</p>
    */
   @js.native
   trait CompatibleImage extends js.Object {
@@ -1188,16 +1188,19 @@ package snowball {
     val T50 = "T50"
     val T80 = "T80"
     val T100 = "T100"
+    val T42 = "T42"
     val NoPreference = "NoPreference"
 
-    val values = IndexedSeq(T50, T80, T100, NoPreference)
+    val values = IndexedSeq(T50, T80, T100, T42, NoPreference)
   }
 
   object SnowballTypeEnum {
     val STANDARD = "STANDARD"
     val EDGE = "EDGE"
+    val EDGE_C = "EDGE_C"
+    val EDGE_CG = "EDGE_CG"
 
-    val values = IndexedSeq(STANDARD, EDGE)
+    val values = IndexedSeq(STANDARD, EDGE, EDGE_C, EDGE_CG)
   }
 
   @js.native

@@ -94,6 +94,7 @@ package cloudtrail {
     var Name: js.UndefOr[String]
     var KmsKeyId: js.UndefOr[String]
     var IsMultiRegionTrail: js.UndefOr[Boolean]
+    var IsOrganizationTrail: js.UndefOr[Boolean]
     var S3BucketName: js.UndefOr[String]
     var SnsTopicName: js.UndefOr[String]
     var S3KeyPrefix: js.UndefOr[String]
@@ -108,6 +109,7 @@ package cloudtrail {
       Name: js.UndefOr[String] = js.undefined,
       KmsKeyId: js.UndefOr[String] = js.undefined,
       IsMultiRegionTrail: js.UndefOr[Boolean] = js.undefined,
+      IsOrganizationTrail: js.UndefOr[Boolean] = js.undefined,
       S3BucketName: js.UndefOr[String] = js.undefined,
       SnsTopicName: js.UndefOr[String] = js.undefined,
       S3KeyPrefix: js.UndefOr[String] = js.undefined,
@@ -119,6 +121,7 @@ package cloudtrail {
         "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
         "KmsKeyId" -> KmsKeyId.map { x => x.asInstanceOf[js.Any] },
         "IsMultiRegionTrail" -> IsMultiRegionTrail.map { x => x.asInstanceOf[js.Any] },
+        "IsOrganizationTrail" -> IsOrganizationTrail.map { x => x.asInstanceOf[js.Any] },
         "S3BucketName" -> S3BucketName.map { x => x.asInstanceOf[js.Any] },
         "SnsTopicName" -> SnsTopicName.map { x => x.asInstanceOf[js.Any] },
         "S3KeyPrefix" -> S3KeyPrefix.map { x => x.asInstanceOf[js.Any] },
@@ -140,6 +143,7 @@ package cloudtrail {
     var SnsTopicARN: js.UndefOr[String]
     var KmsKeyId: js.UndefOr[String]
     var IsMultiRegionTrail: js.UndefOr[Boolean]
+    var IsOrganizationTrail: js.UndefOr[Boolean]
     var S3BucketName: js.UndefOr[String]
     var SnsTopicName: js.UndefOr[String]
     var LogFileValidationEnabled: js.UndefOr[Boolean]
@@ -156,6 +160,7 @@ package cloudtrail {
       SnsTopicARN: js.UndefOr[String] = js.undefined,
       KmsKeyId: js.UndefOr[String] = js.undefined,
       IsMultiRegionTrail: js.UndefOr[Boolean] = js.undefined,
+      IsOrganizationTrail: js.UndefOr[Boolean] = js.undefined,
       S3BucketName: js.UndefOr[String] = js.undefined,
       SnsTopicName: js.UndefOr[String] = js.undefined,
       LogFileValidationEnabled: js.UndefOr[Boolean] = js.undefined,
@@ -169,6 +174,7 @@ package cloudtrail {
         "SnsTopicARN" -> SnsTopicARN.map { x => x.asInstanceOf[js.Any] },
         "KmsKeyId" -> KmsKeyId.map { x => x.asInstanceOf[js.Any] },
         "IsMultiRegionTrail" -> IsMultiRegionTrail.map { x => x.asInstanceOf[js.Any] },
+        "IsOrganizationTrail" -> IsOrganizationTrail.map { x => x.asInstanceOf[js.Any] },
         "S3BucketName" -> S3BucketName.map { x => x.asInstanceOf[js.Any] },
         "SnsTopicName" -> SnsTopicName.map { x => x.asInstanceOf[js.Any] },
         "LogFileValidationEnabled" -> LogFileValidationEnabled.map { x => x.asInstanceOf[js.Any] },
@@ -181,7 +187,7 @@ package cloudtrail {
   }
 
   /**
-   * <p>The Amazon S3 buckets or AWS Lambda functions that you specify in your event selectors for your trail to log data events. Data events provide insight into the resource operations performed on or within a resource itself. These are also known as data plane operations. You can specify up to 250 data resources for a trail.</p> <note> <p>The total number of allowed data resources is 250. This number can be distributed between 1 and 5 event selectors, but the total cannot exceed 250 across all selectors.</p> </note> <p>The following example demonstrates how logging works when you configure logging of all data events for an S3 bucket named <code>bucket-1</code>. In this example, the CloudTrail user spcified an empty prefix, and the option to log both <code>Read</code> and <code>Write</code> data events.</p> <ol> <li> <p>A user uploads an image file to <code>bucket-1</code>.</p> </li> <li> <p>The <code>PutObject</code> API operation is an Amazon S3 object-level API. It is recorded as a data event in CloudTrail. Because the CloudTrail user specified an S3 bucket with an empty prefix, events that occur on any object in that bucket are logged. The trail processes and logs the event.</p> </li> <li> <p>A user uploads an object to an Amazon S3 bucket named <code>arn:aws:s3:::bucket-2</code>.</p> </li> <li> <p>The <code>PutObject</code> API operation occurred for an object in an S3 bucket that the CloudTrail user didn't specify for the trail. The trail doesn’t log the event.</p> </li> </ol> <p>The following example demonstrates how logging works when you configure logging of AWS Lambda data events for a Lambda function named <i>MyLambdaFunction</i>, but not for all AWS Lambda functions.</p> <ol> <li> <p>A user runs a script that includes a call to the <i>MyLambdaFunction</i> function and the <i>MyOtherLambdaFunction</i> function.</p> </li> <li> <p>The <code>Invoke</code> API operation on <i>MyLambdaFunction</i> is an AWS Lambda API. It is recorded as a data event in CloudTrail. Because the CloudTrail user specified logging data events for <i>MyLambdaFunction</i>, any invocations of that function are logged. The trail processes and logs the event. </p> </li> <li> <p>The <code>Invoke</code> API operation on <i>MyOtherLambdaFunction</i> is an AWS Lambda API. Because the CloudTrail user did not specify logging data events for all Lambda functions, the <code>Invoke</code> operation for <i>MyOtherLambdaFunction</i> does not match the function specified for the trail. The trail doesn’t log the event. </p> </li> </ol>
+   * <p>The Amazon S3 buckets or AWS Lambda functions that you specify in your event selectors for your trail to log data events. Data events provide insight into the resource operations performed on or within a resource itself. These are also known as data plane operations. You can specify up to 250 data resources for a trail.</p> <note> <p>The total number of allowed data resources is 250. This number can be distributed between 1 and 5 event selectors, but the total cannot exceed 250 across all selectors.</p> </note> <p>The following example demonstrates how logging works when you configure logging of all data events for an S3 bucket named <code>bucket-1</code>. In this example, the CloudTrail user spcified an empty prefix, and the option to log both <code>Read</code> and <code>Write</code> data events.</p> <ol> <li> <p>A user uploads an image file to <code>bucket-1</code>.</p> </li> <li> <p>The <code>PutObject</code> API operation is an Amazon S3 object-level API. It is recorded as a data event in CloudTrail. Because the CloudTrail user specified an S3 bucket with an empty prefix, events that occur on any object in that bucket are logged. The trail processes and logs the event.</p> </li> <li> <p>A user uploads an object to an Amazon S3 bucket named <code>arn:aws:s3:::bucket-2</code>.</p> </li> <li> <p>The <code>PutObject</code> API operation occurred for an object in an S3 bucket that the CloudTrail user didn't specify for the trail. The trail doesn�ft log the event.</p> </li> </ol> <p>The following example demonstrates how logging works when you configure logging of AWS Lambda data events for a Lambda function named <i>MyLambdaFunction</i>, but not for all AWS Lambda functions.</p> <ol> <li> <p>A user runs a script that includes a call to the <i>MyLambdaFunction</i> function and the <i>MyOtherLambdaFunction</i> function.</p> </li> <li> <p>The <code>Invoke</code> API operation on <i>MyLambdaFunction</i> is an AWS Lambda API. It is recorded as a data event in CloudTrail. Because the CloudTrail user specified logging data events for <i>MyLambdaFunction</i>, any invocations of that function are logged. The trail processes and logs the event. </p> </li> <li> <p>The <code>Invoke</code> API operation on <i>MyOtherLambdaFunction</i> is an AWS Lambda API. Because the CloudTrail user did not specify logging data events for all Lambda functions, the <code>Invoke</code> operation for <i>MyOtherLambdaFunction</i> does not match the function specified for the trail. The trail doesn�ft log the event. </p> </li> </ol>
    */
   @js.native
   trait DataResource extends js.Object {
@@ -880,6 +886,7 @@ package cloudtrail {
     var SnsTopicARN: js.UndefOr[String]
     var KmsKeyId: js.UndefOr[String]
     var IsMultiRegionTrail: js.UndefOr[Boolean]
+    var IsOrganizationTrail: js.UndefOr[Boolean]
     var S3BucketName: js.UndefOr[String]
     var SnsTopicName: js.UndefOr[String]
     var LogFileValidationEnabled: js.UndefOr[Boolean]
@@ -898,6 +905,7 @@ package cloudtrail {
       SnsTopicARN: js.UndefOr[String] = js.undefined,
       KmsKeyId: js.UndefOr[String] = js.undefined,
       IsMultiRegionTrail: js.UndefOr[Boolean] = js.undefined,
+      IsOrganizationTrail: js.UndefOr[Boolean] = js.undefined,
       S3BucketName: js.UndefOr[String] = js.undefined,
       SnsTopicName: js.UndefOr[String] = js.undefined,
       LogFileValidationEnabled: js.UndefOr[Boolean] = js.undefined,
@@ -913,6 +921,7 @@ package cloudtrail {
         "SnsTopicARN" -> SnsTopicARN.map { x => x.asInstanceOf[js.Any] },
         "KmsKeyId" -> KmsKeyId.map { x => x.asInstanceOf[js.Any] },
         "IsMultiRegionTrail" -> IsMultiRegionTrail.map { x => x.asInstanceOf[js.Any] },
+        "IsOrganizationTrail" -> IsOrganizationTrail.map { x => x.asInstanceOf[js.Any] },
         "S3BucketName" -> S3BucketName.map { x => x.asInstanceOf[js.Any] },
         "SnsTopicName" -> SnsTopicName.map { x => x.asInstanceOf[js.Any] },
         "LogFileValidationEnabled" -> LogFileValidationEnabled.map { x => x.asInstanceOf[js.Any] },
@@ -935,6 +944,7 @@ package cloudtrail {
     var Name: js.UndefOr[String]
     var KmsKeyId: js.UndefOr[String]
     var IsMultiRegionTrail: js.UndefOr[Boolean]
+    var IsOrganizationTrail: js.UndefOr[Boolean]
     var S3BucketName: js.UndefOr[String]
     var SnsTopicName: js.UndefOr[String]
     var S3KeyPrefix: js.UndefOr[String]
@@ -949,6 +959,7 @@ package cloudtrail {
       Name: js.UndefOr[String] = js.undefined,
       KmsKeyId: js.UndefOr[String] = js.undefined,
       IsMultiRegionTrail: js.UndefOr[Boolean] = js.undefined,
+      IsOrganizationTrail: js.UndefOr[Boolean] = js.undefined,
       S3BucketName: js.UndefOr[String] = js.undefined,
       SnsTopicName: js.UndefOr[String] = js.undefined,
       S3KeyPrefix: js.UndefOr[String] = js.undefined,
@@ -960,6 +971,7 @@ package cloudtrail {
         "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
         "KmsKeyId" -> KmsKeyId.map { x => x.asInstanceOf[js.Any] },
         "IsMultiRegionTrail" -> IsMultiRegionTrail.map { x => x.asInstanceOf[js.Any] },
+        "IsOrganizationTrail" -> IsOrganizationTrail.map { x => x.asInstanceOf[js.Any] },
         "S3BucketName" -> S3BucketName.map { x => x.asInstanceOf[js.Any] },
         "SnsTopicName" -> SnsTopicName.map { x => x.asInstanceOf[js.Any] },
         "S3KeyPrefix" -> S3KeyPrefix.map { x => x.asInstanceOf[js.Any] },
@@ -981,6 +993,7 @@ package cloudtrail {
     var SnsTopicARN: js.UndefOr[String]
     var KmsKeyId: js.UndefOr[String]
     var IsMultiRegionTrail: js.UndefOr[Boolean]
+    var IsOrganizationTrail: js.UndefOr[Boolean]
     var S3BucketName: js.UndefOr[String]
     var SnsTopicName: js.UndefOr[String]
     var LogFileValidationEnabled: js.UndefOr[Boolean]
@@ -997,6 +1010,7 @@ package cloudtrail {
       SnsTopicARN: js.UndefOr[String] = js.undefined,
       KmsKeyId: js.UndefOr[String] = js.undefined,
       IsMultiRegionTrail: js.UndefOr[Boolean] = js.undefined,
+      IsOrganizationTrail: js.UndefOr[Boolean] = js.undefined,
       S3BucketName: js.UndefOr[String] = js.undefined,
       SnsTopicName: js.UndefOr[String] = js.undefined,
       LogFileValidationEnabled: js.UndefOr[Boolean] = js.undefined,
@@ -1010,6 +1024,7 @@ package cloudtrail {
         "SnsTopicARN" -> SnsTopicARN.map { x => x.asInstanceOf[js.Any] },
         "KmsKeyId" -> KmsKeyId.map { x => x.asInstanceOf[js.Any] },
         "IsMultiRegionTrail" -> IsMultiRegionTrail.map { x => x.asInstanceOf[js.Any] },
+        "IsOrganizationTrail" -> IsOrganizationTrail.map { x => x.asInstanceOf[js.Any] },
         "S3BucketName" -> S3BucketName.map { x => x.asInstanceOf[js.Any] },
         "SnsTopicName" -> SnsTopicName.map { x => x.asInstanceOf[js.Any] },
         "LogFileValidationEnabled" -> LogFileValidationEnabled.map { x => x.asInstanceOf[js.Any] },

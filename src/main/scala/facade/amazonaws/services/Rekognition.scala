@@ -1755,8 +1755,13 @@ package rekognition {
     val mouthDown = "mouthDown"
     val leftPupil = "leftPupil"
     val rightPupil = "rightPupil"
+    val upperJawlineLeft = "upperJawlineLeft"
+    val midJawlineLeft = "midJawlineLeft"
+    val chinBottom = "chinBottom"
+    val midJawlineRight = "midJawlineRight"
+    val upperJawlineRight = "upperJawlineRight"
 
-    val values = IndexedSeq(eyeLeft, eyeRight, nose, mouthLeft, mouthRight, leftEyeBrowLeft, leftEyeBrowRight, leftEyeBrowUp, rightEyeBrowLeft, rightEyeBrowRight, rightEyeBrowUp, leftEyeLeft, leftEyeRight, leftEyeUp, leftEyeDown, rightEyeLeft, rightEyeRight, rightEyeUp, rightEyeDown, noseLeft, noseRight, mouthUp, mouthDown, leftPupil, rightPupil)
+    val values = IndexedSeq(eyeLeft, eyeRight, nose, mouthLeft, mouthRight, leftEyeBrowLeft, leftEyeBrowRight, leftEyeBrowUp, rightEyeBrowLeft, rightEyeBrowRight, rightEyeBrowUp, leftEyeLeft, leftEyeRight, leftEyeUp, leftEyeDown, rightEyeLeft, rightEyeRight, rightEyeUp, rightEyeDown, noseLeft, noseRight, mouthUp, mouthDown, leftPupil, rightPupil, upperJawlineLeft, midJawlineLeft, chinBottom, midJawlineRight, upperJawlineRight)
   }
 
   @js.native

@@ -14,13 +14,14 @@ package object servicediscovery {
   type Code = String
   type CustomHealthStatus = String
   type DnsRecordList = js.Array[DnsRecord]
-  type ErrorMessage = String
   type FailureThreshold = Int
   type FilterCondition = String
   type FilterValue = String
   type FilterValues = js.Array[FilterValue]
   type HealthCheckType = String
   type HealthStatus = String
+  type HealthStatusFilter = String
+  type HttpInstanceSummaryList = js.Array[HttpInstanceSummary]
   type InstanceHealthStatusMap = js.Dictionary[HealthStatus]
   type InstanceIdList = js.Array[ResourceId]
   type InstanceSummaryList = js.Array[InstanceSummary]
@@ -58,12 +59,14 @@ package servicediscovery {
   @js.native
   @JSImport("aws-sdk", "ServiceDiscovery")
   class ServiceDiscovery(config: AWSConfig) extends js.Object {
+    def createHttpNamespace(params: CreateHttpNamespaceRequest): Request[CreateHttpNamespaceResponse] = js.native
     def createPrivateDnsNamespace(params: CreatePrivateDnsNamespaceRequest): Request[CreatePrivateDnsNamespaceResponse] = js.native
     def createPublicDnsNamespace(params: CreatePublicDnsNamespaceRequest): Request[CreatePublicDnsNamespaceResponse] = js.native
     def createService(params: CreateServiceRequest): Request[CreateServiceResponse] = js.native
     def deleteNamespace(params: DeleteNamespaceRequest): Request[DeleteNamespaceResponse] = js.native
     def deleteService(params: DeleteServiceRequest): Request[DeleteServiceResponse] = js.native
     def deregisterInstance(params: DeregisterInstanceRequest): Request[DeregisterInstanceResponse] = js.native
+    def discoverInstances(params: DiscoverInstancesRequest): Request[DiscoverInstancesResponse] = js.native
     def getInstance(params: GetInstanceRequest): Request[GetInstanceResponse] = js.native
     def getInstancesHealthStatus(params: GetInstancesHealthStatusRequest): Request[GetInstancesHealthStatusResponse] = js.native
     def getNamespace(params: GetNamespaceRequest): Request[GetNamespaceResponse] = js.native
@@ -76,6 +79,42 @@ package servicediscovery {
     def registerInstance(params: RegisterInstanceRequest): Request[RegisterInstanceResponse] = js.native
     def updateInstanceCustomHealthStatus(params: UpdateInstanceCustomHealthStatusRequest): Request[js.Object] = js.native
     def updateService(params: UpdateServiceRequest): Request[UpdateServiceResponse] = js.native
+  }
+
+  @js.native
+  trait CreateHttpNamespaceRequest extends js.Object {
+    var Name: js.UndefOr[NamespaceName]
+    var CreatorRequestId: js.UndefOr[ResourceId]
+    var Description: js.UndefOr[ResourceDescription]
+  }
+
+  object CreateHttpNamespaceRequest {
+    def apply(
+      Name: js.UndefOr[NamespaceName] = js.undefined,
+      CreatorRequestId: js.UndefOr[ResourceId] = js.undefined,
+      Description: js.UndefOr[ResourceDescription] = js.undefined): CreateHttpNamespaceRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
+        "CreatorRequestId" -> CreatorRequestId.map { x => x.asInstanceOf[js.Any] },
+        "Description" -> Description.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateHttpNamespaceRequest]
+    }
+  }
+
+  @js.native
+  trait CreateHttpNamespaceResponse extends js.Object {
+    var OperationId: js.UndefOr[OperationId]
+  }
+
+  object CreateHttpNamespaceResponse {
+    def apply(
+      OperationId: js.UndefOr[OperationId] = js.undefined): CreateHttpNamespaceResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "OperationId" -> OperationId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateHttpNamespaceResponse]
+    }
   }
 
   @js.native
@@ -160,6 +199,7 @@ package servicediscovery {
     var DnsConfig: js.UndefOr[DnsConfig]
     var CreatorRequestId: js.UndefOr[ResourceId]
     var HealthCheckConfig: js.UndefOr[HealthCheckConfig]
+    var NamespaceId: js.UndefOr[ResourceId]
     var HealthCheckCustomConfig: js.UndefOr[HealthCheckCustomConfig]
   }
 
@@ -170,6 +210,7 @@ package servicediscovery {
       DnsConfig: js.UndefOr[DnsConfig] = js.undefined,
       CreatorRequestId: js.UndefOr[ResourceId] = js.undefined,
       HealthCheckConfig: js.UndefOr[HealthCheckConfig] = js.undefined,
+      NamespaceId: js.UndefOr[ResourceId] = js.undefined,
       HealthCheckCustomConfig: js.UndefOr[HealthCheckCustomConfig] = js.undefined): CreateServiceRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
@@ -177,6 +218,7 @@ package servicediscovery {
         "DnsConfig" -> DnsConfig.map { x => x.asInstanceOf[js.Any] },
         "CreatorRequestId" -> CreatorRequestId.map { x => x.asInstanceOf[js.Any] },
         "HealthCheckConfig" -> HealthCheckConfig.map { x => x.asInstanceOf[js.Any] },
+        "NamespaceId" -> NamespaceId.map { x => x.asInstanceOf[js.Any] },
         "HealthCheckCustomConfig" -> HealthCheckCustomConfig.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateServiceRequest]
@@ -196,11 +238,6 @@ package servicediscovery {
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateServiceResponse]
     }
-  }
-
-  @js.native
-  trait CustomHealthNotFoundException extends js.Object {
-    val Message: ErrorMessage
   }
 
   object CustomHealthStatusEnum {
@@ -301,8 +338,50 @@ package servicediscovery {
     }
   }
 
+  @js.native
+  trait DiscoverInstancesRequest extends js.Object {
+    var ServiceName: js.UndefOr[ServiceName]
+    var QueryParameters: js.UndefOr[Attributes]
+    var MaxResults: js.UndefOr[MaxResults]
+    var HealthStatus: js.UndefOr[HealthStatusFilter]
+    var NamespaceName: js.UndefOr[NamespaceName]
+  }
+
+  object DiscoverInstancesRequest {
+    def apply(
+      ServiceName: js.UndefOr[ServiceName] = js.undefined,
+      QueryParameters: js.UndefOr[Attributes] = js.undefined,
+      MaxResults: js.UndefOr[MaxResults] = js.undefined,
+      HealthStatus: js.UndefOr[HealthStatusFilter] = js.undefined,
+      NamespaceName: js.UndefOr[NamespaceName] = js.undefined): DiscoverInstancesRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ServiceName" -> ServiceName.map { x => x.asInstanceOf[js.Any] },
+        "QueryParameters" -> QueryParameters.map { x => x.asInstanceOf[js.Any] },
+        "MaxResults" -> MaxResults.map { x => x.asInstanceOf[js.Any] },
+        "HealthStatus" -> HealthStatus.map { x => x.asInstanceOf[js.Any] },
+        "NamespaceName" -> NamespaceName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DiscoverInstancesRequest]
+    }
+  }
+
+  @js.native
+  trait DiscoverInstancesResponse extends js.Object {
+    var Instances: js.UndefOr[HttpInstanceSummaryList]
+  }
+
+  object DiscoverInstancesResponse {
+    def apply(
+      Instances: js.UndefOr[HttpInstanceSummaryList] = js.undefined): DiscoverInstancesResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Instances" -> Instances.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DiscoverInstancesResponse]
+    }
+  }
+
   /**
-   * <p>A complex type that contains information about the records that you want Amazon Route 53 to create when you register an instance.</p>
+   * <p>A complex type that contains information about the Amazon Route 53 DNS records that you want AWS Cloud Map to create when you register an instance.</p>
    */
   @js.native
   trait DnsConfig extends js.Object {
@@ -326,7 +405,7 @@ package servicediscovery {
   }
 
   /**
-   * <p>A complex type that contains information about changes to the records that Route 53 creates when you register an instance.</p>
+   * <p>A complex type that contains information about changes to the Route 53 DNS records that AWS Cloud Map creates when you register an instance.</p>
    */
   @js.native
   trait DnsConfigChange extends js.Object {
@@ -344,7 +423,7 @@ package servicediscovery {
   }
 
   /**
-   * <p>A complex type that contains the ID for the hosted zone that Route 53 creates when you create a namespace.</p>
+   * <p>A complex type that contains the ID for the Route 53 hosted zone that AWS Cloud Map creates when you create a namespace.</p>
    */
   @js.native
   trait DnsProperties extends js.Object {
@@ -362,7 +441,7 @@ package servicediscovery {
   }
 
   /**
-   * <p>A complex type that contains information about the records that you want Route 53 to create when you register an instance.</p>
+   * <p>A complex type that contains information about the Route 53 DNS records that you want AWS Cloud Map to create when you register an instance.</p>
    */
   @js.native
   trait DnsRecord extends js.Object {
@@ -380,14 +459,6 @@ package servicediscovery {
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DnsRecord]
     }
-  }
-
-  /**
-   * <p>The operation is already in progress.</p>
-   */
-  @js.native
-  trait DuplicateRequestException extends js.Object {
-    val Message: ErrorMessage
   }
 
   object FilterConditionEnum {
@@ -564,7 +635,7 @@ package servicediscovery {
   }
 
   /**
-   * <p> <i>Public DNS namespaces only.</i> A complex type that contains settings for an optional health check. If you specify settings for a health check, Amazon Route 53 associates the health check with all the records that you specify in <code>DnsConfig</code>.</p> <p> <b>A and AAAA records</b> </p> <p>If <code>DnsConfig</code> includes configurations for both A and AAAA records, Route 53 creates a health check that uses the IPv4 address to check the health of the resource. If the endpoint that is specified by the IPv4 address is unhealthy, Route 53 considers both the A and AAAA records to be unhealthy. </p> <p> <b>CNAME records</b> </p> <p>You can't specify settings for <code>HealthCheckConfig</code> when the <code>DNSConfig</code> includes <code>CNAME</code> for the value of <code>Type</code>. If you do, the <code>CreateService</code> request will fail with an <code>InvalidInput</code> error.</p> <p> <b>Request interval</b> </p> <p>The health check uses 30 seconds as the request interval. This is the number of seconds between the time that each Route 53 health checker gets a response from your endpoint and the time that it sends the next health check request. A health checker in each data center around the world sends your endpoint a health check request every 30 seconds. On average, your endpoint receives a health check request about every two seconds. Health checkers in different data centers don't coordinate with one another, so you'll sometimes see several requests per second followed by a few seconds with no health checks at all.</p> <p> <b>Health checking regions</b> </p> <p>Health checkers perform checks from all Route 53 health-checking regions. For a list of the current regions, see <a href="http://docs.aws.amazon.com/Route53/latest/APIReference/API_HealthCheckConfig.html#Route53-Type-HealthCheckConfig-Regions">Regions</a>.</p> <p> <b>Alias records</b> </p> <p>When you register an instance, if you include the <code>AWS_ALIAS_DNS_NAME</code> attribute, Route 53 creates an alias record. Note the following:</p> <ul> <li> <p>Route 53 automatically sets <code>EvaluateTargetHealth</code> to true for alias records. When <code>EvaluateTargetHealth</code> is true, the alias record inherits the health of the referenced AWS resource. such as an ELB load balancer. For more information, see <a href="http://docs.aws.amazon.com/Route53/latest/APIReference/API_AliasTarget.html#Route53-Type-AliasTarget-EvaluateTargetHealth">EvaluateTargetHealth</a>.</p> </li> <li> <p>If you include <code>HealthCheckConfig</code> and then use the service to register an instance that creates an alias record, Route 53 doesn't create the health check.</p> </li> </ul> <p>For information about the charges for health checks, see <a href="http://aws.amazon.com/route53/pricing">Route 53 Pricing</a>.</p>
+   * <p> <i>Public DNS namespaces only.</i> A complex type that contains settings for an optional health check. If you specify settings for a health check, AWS Cloud Map associates the health check with the records that you specify in <code>DnsConfig</code>.</p> <important> <p>If you specify a health check configuration, you can specify either <code>HealthCheckCustomConfig</code> or <code>HealthCheckConfig</code> but not both.</p> </important> <p>Health checks are basic Route 53 health checks that monitor an AWS endpoint. For information about pricing for health checks, see <a href="http://aws.amazon.com/route53/pricing/">Amazon Route 53 Pricing</a>.</p> <p>Note the following about configuring health checks.</p> <p> <b>A and AAAA records</b> </p> <p>If <code>DnsConfig</code> includes configurations for both A and AAAA records, AWS Cloud Map creates a health check that uses the IPv4 address to check the health of the resource. If the endpoint that is specified by the IPv4 address is unhealthy, Route 53 considers both the A and AAAA records to be unhealthy. </p> <p> <b>CNAME records</b> </p> <p>You can't specify settings for <code>HealthCheckConfig</code> when the <code>DNSConfig</code> includes <code>CNAME</code> for the value of <code>Type</code>. If you do, the <code>CreateService</code> request will fail with an <code>InvalidInput</code> error.</p> <p> <b>Request interval</b> </p> <p>A Route 53 health checker in each health-checking region sends a health check request to an endpoint every 30 seconds. On average, your endpoint receives a health check request about every two seconds. However, health checkers don't coordinate with one another, so you'll sometimes see several requests per second followed by a few seconds with no health checks at all.</p> <p> <b>Health checking regions</b> </p> <p>Health checkers perform checks from all Route 53 health-checking regions. For a list of the current regions, see <a href="http://docs.aws.amazon.com/Route53/latest/APIReference/API_HealthCheckConfig.html#Route53-Type-HealthCheckConfig-Regions">Regions</a>.</p> <p> <b>Alias records</b> </p> <p>When you register an instance, if you include the <code>AWS_ALIAS_DNS_NAME</code> attribute, AWS Cloud Map creates a Route 53 alias record. Note the following:</p> <ul> <li> <p>Route 53 automatically sets <code>EvaluateTargetHealth</code> to true for alias records. When <code>EvaluateTargetHealth</code> is true, the alias record inherits the health of the referenced AWS resource. such as an ELB load balancer. For more information, see <a href="http://docs.aws.amazon.com/Route53/latest/APIReference/API_AliasTarget.html#Route53-Type-AliasTarget-EvaluateTargetHealth">EvaluateTargetHealth</a>.</p> </li> <li> <p>If you include <code>HealthCheckConfig</code> and then use the service to register an instance that creates an alias record, Route 53 doesn't create the health check.</p> </li> </ul> <p> <b>Charges for health checks</b> </p> <p>Health checks are basic Route 53 health checks that monitor an AWS endpoint. For information about pricing for health checks, see <a href="http://aws.amazon.com/route53/pricing/">Amazon Route 53 Pricing</a>.</p>
    */
   @js.native
   trait HealthCheckConfig extends js.Object {
@@ -587,6 +658,9 @@ package servicediscovery {
     }
   }
 
+  /**
+   * <p>A complex type that contains information about an optional custom health check. A custom health check, which requires that you use a third-party health checker to evaluate the health of your resources, is useful in the following circumstances:</p> <ul> <li> <p>You can't use a health check that is defined by <code>HealthCheckConfig</code> because the resource isn't available over the internet. For example, you can use a custom health check when the instance is in an Amazon VPC. (To check the health of resources in a VPC, the health checker must also be in the VPC.)</p> </li> <li> <p>You want to use a third-party health checker regardless of where your resources are.</p> </li> </ul> <important> <p>If you specify a health check configuration, you can specify either <code>HealthCheckCustomConfig</code> or <code>HealthCheckConfig</code> but not both.</p> </important> <p>To change the status of a custom health check, submit an <code>UpdateInstanceCustomHealthStatus</code> request. Cloud Map doesn't monitor the status of the resource, it just keeps a record of the status specified in the most recent <code>UpdateInstanceCustomHealthStatus</code> request.</p> <p>Here's how custom health checks work:</p> <ol> <li> <p>You create a service and specify a value for <code>FailureThreshold</code>. </p> <p>The failure threshold indicates the number of 30-second intervals you want AWS Cloud Map to wait between the time that your application sends an <a>UpdateInstanceCustomHealthStatus</a> request and the time that AWS Cloud Map stops routing internet traffic to the corresponding resource.</p> </li> <li> <p>You register an instance.</p> </li> <li> <p>You configure a third-party health checker to monitor the resource that is associated with the new instance. </p> <note> <p>AWS Cloud Map doesn't check the health of the resource directly. </p> </note> </li> <li> <p>The third-party health-checker determines that the resource is unhealthy and notifies your application.</p> </li> <li> <p>Your application submits an <code>UpdateInstanceCustomHealthStatus</code> request.</p> </li> <li> <p>AWS Cloud Map waits for (<code>FailureThreshold</code> x 30) seconds.</p> </li> <li> <p>If another <code>UpdateInstanceCustomHealthStatus</code> request doesn't arrive during that time to change the status back to healthy, AWS Cloud Map stops routing traffic to the resource.</p> </li> </ol> <p>Note the following about configuring custom health checks.</p>
+   */
   @js.native
   trait HealthCheckCustomConfig extends js.Object {
     var FailureThreshold: js.UndefOr[FailureThreshold]
@@ -618,8 +692,64 @@ package servicediscovery {
     val values = IndexedSeq(HEALTHY, UNHEALTHY, UNKNOWN)
   }
 
+  object HealthStatusFilterEnum {
+    val HEALTHY = "HEALTHY"
+    val UNHEALTHY = "UNHEALTHY"
+    val ALL = "ALL"
+
+    val values = IndexedSeq(HEALTHY, UNHEALTHY, ALL)
+  }
+
   /**
-   * <p>A complex type that contains information about an instance that Amazon Route 53 creates when you submit a <code>RegisterInstance</code> request.</p>
+   * <p>In a response to a <a>DiscoverInstance</a> request, <code>HttpInstanceSummary</code> contains information about one instance that matches the values that you specified in the request.</p>
+   */
+  @js.native
+  trait HttpInstanceSummary extends js.Object {
+    var ServiceName: js.UndefOr[ServiceName]
+    var Attributes: js.UndefOr[Attributes]
+    var HealthStatus: js.UndefOr[HealthStatus]
+    var NamespaceName: js.UndefOr[NamespaceName]
+    var InstanceId: js.UndefOr[ResourceId]
+  }
+
+  object HttpInstanceSummary {
+    def apply(
+      ServiceName: js.UndefOr[ServiceName] = js.undefined,
+      Attributes: js.UndefOr[Attributes] = js.undefined,
+      HealthStatus: js.UndefOr[HealthStatus] = js.undefined,
+      NamespaceName: js.UndefOr[NamespaceName] = js.undefined,
+      InstanceId: js.UndefOr[ResourceId] = js.undefined): HttpInstanceSummary = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ServiceName" -> ServiceName.map { x => x.asInstanceOf[js.Any] },
+        "Attributes" -> Attributes.map { x => x.asInstanceOf[js.Any] },
+        "HealthStatus" -> HealthStatus.map { x => x.asInstanceOf[js.Any] },
+        "NamespaceName" -> NamespaceName.map { x => x.asInstanceOf[js.Any] },
+        "InstanceId" -> InstanceId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[HttpInstanceSummary]
+    }
+  }
+
+  /**
+   * <p>A complex type that contains the name of an HTTP namespace.</p>
+   */
+  @js.native
+  trait HttpProperties extends js.Object {
+    var HttpName: js.UndefOr[NamespaceName]
+  }
+
+  object HttpProperties {
+    def apply(
+      HttpName: js.UndefOr[NamespaceName] = js.undefined): HttpProperties = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "HttpName" -> HttpName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[HttpProperties]
+    }
+  }
+
+  /**
+   * <p>A complex type that contains information about an instance that AWS Cloud Map creates when you submit a <code>RegisterInstance</code> request.</p>
    */
   @js.native
   trait Instance extends js.Object {
@@ -643,14 +773,6 @@ package servicediscovery {
   }
 
   /**
-   * <p>No instance exists with the specified ID, or the instance was recently registered, and information about the instance hasn't propagated yet.</p>
-   */
-  @js.native
-  trait InstanceNotFoundException extends js.Object {
-    val Message: ErrorMessage
-  }
-
-  /**
    * <p>A complex type that contains information about the instances that you registered by using a specified service.</p>
    */
   @js.native
@@ -669,14 +791,6 @@ package servicediscovery {
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[InstanceSummary]
     }
-  }
-
-  /**
-   * <p>One or more specified values aren't valid. For example, when you're creating a namespace, the value of <code>Name</code> might not be a valid DNS name.</p>
-   */
-  @js.native
-  trait InvalidInputException extends js.Object {
-    val Message: ErrorMessage
   }
 
   @js.native
@@ -878,16 +992,6 @@ package servicediscovery {
   }
 
   /**
-   * <p>The namespace that you're trying to create already exists.</p>
-   */
-  @js.native
-  trait NamespaceAlreadyExistsException extends js.Object {
-    val Message: ErrorMessage
-    val CreatorRequestId: ResourceId
-    val NamespaceId: ResourceId
-  }
-
-  /**
    * <p>A complex type that identifies the namespaces that you want to list. You can choose to list public or private namespaces.</p>
    */
   @js.native
@@ -918,26 +1022,21 @@ package servicediscovery {
   }
 
   /**
-   * <p>No namespace exists with the specified ID.</p>
-   */
-  @js.native
-  trait NamespaceNotFoundException extends js.Object {
-    val Message: ErrorMessage
-  }
-
-  /**
    * <p>A complex type that contains information that is specific to the namespace type.</p>
    */
   @js.native
   trait NamespaceProperties extends js.Object {
     var DnsProperties: js.UndefOr[DnsProperties]
+    var HttpProperties: js.UndefOr[HttpProperties]
   }
 
   object NamespaceProperties {
     def apply(
-      DnsProperties: js.UndefOr[DnsProperties] = js.undefined): NamespaceProperties = {
+      DnsProperties: js.UndefOr[DnsProperties] = js.undefined,
+      HttpProperties: js.UndefOr[HttpProperties] = js.undefined): NamespaceProperties = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "DnsProperties" -> DnsProperties.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "DnsProperties" -> DnsProperties.map { x => x.asInstanceOf[js.Any] },
+        "HttpProperties" -> HttpProperties.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[NamespaceProperties]
     }
@@ -948,22 +1047,34 @@ package servicediscovery {
    */
   @js.native
   trait NamespaceSummary extends js.Object {
+    var Properties: js.UndefOr[NamespaceProperties]
     var Id: js.UndefOr[ResourceId]
-    var Arn: js.UndefOr[Arn]
     var Name: js.UndefOr[NamespaceName]
+    var Description: js.UndefOr[ResourceDescription]
+    var Arn: js.UndefOr[Arn]
+    var CreateDate: js.UndefOr[Timestamp]
+    var ServiceCount: js.UndefOr[ResourceCount]
     var Type: js.UndefOr[NamespaceType]
   }
 
   object NamespaceSummary {
     def apply(
+      Properties: js.UndefOr[NamespaceProperties] = js.undefined,
       Id: js.UndefOr[ResourceId] = js.undefined,
-      Arn: js.UndefOr[Arn] = js.undefined,
       Name: js.UndefOr[NamespaceName] = js.undefined,
+      Description: js.UndefOr[ResourceDescription] = js.undefined,
+      Arn: js.UndefOr[Arn] = js.undefined,
+      CreateDate: js.UndefOr[Timestamp] = js.undefined,
+      ServiceCount: js.UndefOr[ResourceCount] = js.undefined,
       Type: js.UndefOr[NamespaceType] = js.undefined): NamespaceSummary = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "Properties" -> Properties.map { x => x.asInstanceOf[js.Any] },
         "Id" -> Id.map { x => x.asInstanceOf[js.Any] },
-        "Arn" -> Arn.map { x => x.asInstanceOf[js.Any] },
         "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
+        "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
+        "Arn" -> Arn.map { x => x.asInstanceOf[js.Any] },
+        "CreateDate" -> CreateDate.map { x => x.asInstanceOf[js.Any] },
+        "ServiceCount" -> ServiceCount.map { x => x.asInstanceOf[js.Any] },
         "Type" -> Type.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[NamespaceSummary]
@@ -973,8 +1084,9 @@ package servicediscovery {
   object NamespaceTypeEnum {
     val DNS_PUBLIC = "DNS_PUBLIC"
     val DNS_PRIVATE = "DNS_PRIVATE"
+    val HTTP = "HTTP"
 
-    val values = IndexedSeq(DNS_PUBLIC, DNS_PRIVATE)
+    val values = IndexedSeq(DNS_PUBLIC, DNS_PRIVATE, HTTP)
   }
 
   /**
@@ -1048,14 +1160,6 @@ package servicediscovery {
     val UPDATE_DATE = "UPDATE_DATE"
 
     val values = IndexedSeq(NAMESPACE_ID, SERVICE_ID, STATUS, TYPE, UPDATE_DATE)
-  }
-
-  /**
-   * <p>No operation exists with the specified ID.</p>
-   */
-  @js.native
-  trait OperationNotFoundException extends js.Object {
-    val Message: ErrorMessage
   }
 
   object OperationStatusEnum {
@@ -1154,22 +1258,6 @@ package servicediscovery {
     }
   }
 
-  /**
-   * <p>The specified resource can't be deleted because it contains other resources. For example, you can't delete a service that contains any instances.</p>
-   */
-  @js.native
-  trait ResourceInUseException extends js.Object {
-    val Message: ErrorMessage
-  }
-
-  /**
-   * <p>The resource can't be created because you've reached the limit on the number of resources.</p>
-   */
-  @js.native
-  trait ResourceLimitExceededException extends js.Object {
-    val Message: ErrorMessage
-  }
-
   object RoutingPolicyEnum {
     val MULTIVALUE = "MULTIVALUE"
     val WEIGHTED = "WEIGHTED"
@@ -1191,6 +1279,7 @@ package servicediscovery {
     var CreateDate: js.UndefOr[Timestamp]
     var CreatorRequestId: js.UndefOr[ResourceId]
     var HealthCheckConfig: js.UndefOr[HealthCheckConfig]
+    var NamespaceId: js.UndefOr[ResourceId]
     var HealthCheckCustomConfig: js.UndefOr[HealthCheckCustomConfig]
   }
 
@@ -1205,6 +1294,7 @@ package servicediscovery {
       CreateDate: js.UndefOr[Timestamp] = js.undefined,
       CreatorRequestId: js.UndefOr[ResourceId] = js.undefined,
       HealthCheckConfig: js.UndefOr[HealthCheckConfig] = js.undefined,
+      NamespaceId: js.UndefOr[ResourceId] = js.undefined,
       HealthCheckCustomConfig: js.UndefOr[HealthCheckCustomConfig] = js.undefined): Service = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Id" -> Id.map { x => x.asInstanceOf[js.Any] },
@@ -1216,20 +1306,11 @@ package servicediscovery {
         "CreateDate" -> CreateDate.map { x => x.asInstanceOf[js.Any] },
         "CreatorRequestId" -> CreatorRequestId.map { x => x.asInstanceOf[js.Any] },
         "HealthCheckConfig" -> HealthCheckConfig.map { x => x.asInstanceOf[js.Any] },
+        "NamespaceId" -> NamespaceId.map { x => x.asInstanceOf[js.Any] },
         "HealthCheckCustomConfig" -> HealthCheckCustomConfig.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Service]
     }
-  }
-
-  /**
-   * <p>The service can't be created because a service with the same name already exists.</p>
-   */
-  @js.native
-  trait ServiceAlreadyExistsException extends js.Object {
-    val Message: ErrorMessage
-    val CreatorRequestId: ResourceId
-    val ServiceId: ResourceId
   }
 
   /**
@@ -1287,14 +1368,6 @@ package servicediscovery {
   }
 
   /**
-   * <p>No service exists with the specified ID.</p>
-   */
-  @js.native
-  trait ServiceNotFoundException extends js.Object {
-    val Message: ErrorMessage
-  }
-
-  /**
    * <p>A complex type that contains information about a specified service.</p>
    */
   @js.native
@@ -1303,7 +1376,11 @@ package servicediscovery {
     var Name: js.UndefOr[ServiceName]
     var Description: js.UndefOr[ResourceDescription]
     var InstanceCount: js.UndefOr[ResourceCount]
+    var DnsConfig: js.UndefOr[DnsConfig]
     var Arn: js.UndefOr[Arn]
+    var CreateDate: js.UndefOr[Timestamp]
+    var HealthCheckConfig: js.UndefOr[HealthCheckConfig]
+    var HealthCheckCustomConfig: js.UndefOr[HealthCheckCustomConfig]
   }
 
   object ServiceSummary {
@@ -1312,13 +1389,21 @@ package servicediscovery {
       Name: js.UndefOr[ServiceName] = js.undefined,
       Description: js.UndefOr[ResourceDescription] = js.undefined,
       InstanceCount: js.UndefOr[ResourceCount] = js.undefined,
-      Arn: js.UndefOr[Arn] = js.undefined): ServiceSummary = {
+      DnsConfig: js.UndefOr[DnsConfig] = js.undefined,
+      Arn: js.UndefOr[Arn] = js.undefined,
+      CreateDate: js.UndefOr[Timestamp] = js.undefined,
+      HealthCheckConfig: js.UndefOr[HealthCheckConfig] = js.undefined,
+      HealthCheckCustomConfig: js.UndefOr[HealthCheckCustomConfig] = js.undefined): ServiceSummary = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Id" -> Id.map { x => x.asInstanceOf[js.Any] },
         "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
         "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
         "InstanceCount" -> InstanceCount.map { x => x.asInstanceOf[js.Any] },
-        "Arn" -> Arn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "DnsConfig" -> DnsConfig.map { x => x.asInstanceOf[js.Any] },
+        "Arn" -> Arn.map { x => x.asInstanceOf[js.Any] },
+        "CreateDate" -> CreateDate.map { x => x.asInstanceOf[js.Any] },
+        "HealthCheckConfig" -> HealthCheckConfig.map { x => x.asInstanceOf[js.Any] },
+        "HealthCheckCustomConfig" -> HealthCheckCustomConfig.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ServiceSummary]
     }

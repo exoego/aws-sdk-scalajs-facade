@@ -13,6 +13,7 @@ package object cloudwatchlogs {
   type DefaultValue = Double
   type Descending = Boolean
   type DescribeLimit = Int
+  type DescribeQueriesMaxResults = Int
   type DestinationArn = String
   type DestinationName = String
   type Destinations = js.Array[Destination]
@@ -29,6 +30,7 @@ package object cloudwatchlogs {
   type ExportTaskStatusMessage = String
   type ExportTasks = js.Array[ExportTask]
   type ExtractedValues = js.Dictionary[Value]
+  type Field = String
   type FilterCount = Int
   type FilterName = String
   type FilterPattern = String
@@ -38,8 +40,11 @@ package object cloudwatchlogs {
   type Interleaved = Boolean
   type KmsKeyId = String
   type LogEventIndex = Int
+  type LogGroupFieldList = js.Array[LogGroupField]
   type LogGroupName = String
   type LogGroups = js.Array[LogGroup]
+  type LogRecord = js.Dictionary[Value]
+  type LogRecordPointer = String
   type LogStreamName = String
   type LogStreamSearchedCompletely = Boolean
   type LogStreams = js.Array[LogStream]
@@ -52,15 +57,24 @@ package object cloudwatchlogs {
   type NextToken = String
   type OrderBy = String
   type OutputLogEvents = js.Array[OutputLogEvent]
+  type Percentage = Int
   type PolicyDocument = String
   type PolicyName = String
+  type QueryId = String
+  type QueryInfoList = js.Array[QueryInfo]
+  type QueryResults = js.Array[ResultRows]
+  type QueryStatus = String
+  type QueryString = String
   type ResourcePolicies = js.Array[ResourcePolicy]
+  type ResultRows = js.Array[ResultField]
   type RoleArn = String
   type SearchedLogStreams = js.Array[SearchedLogStream]
   type SequenceToken = String
   type StartFromHead = Boolean
+  type StatsValue = Double
   type StoredBytes = Double
   type SubscriptionFilters = js.Array[SubscriptionFilter]
+  type Success = Boolean
   type TagKey = String
   type TagList = js.Array[TagKey]
   type TagValue = String
@@ -93,11 +107,15 @@ package cloudwatchlogs {
     def describeLogGroups(params: DescribeLogGroupsRequest): Request[DescribeLogGroupsResponse] = js.native
     def describeLogStreams(params: DescribeLogStreamsRequest): Request[DescribeLogStreamsResponse] = js.native
     def describeMetricFilters(params: DescribeMetricFiltersRequest): Request[DescribeMetricFiltersResponse] = js.native
+    def describeQueries(params: DescribeQueriesRequest): Request[DescribeQueriesResponse] = js.native
     def describeResourcePolicies(params: DescribeResourcePoliciesRequest): Request[DescribeResourcePoliciesResponse] = js.native
     def describeSubscriptionFilters(params: DescribeSubscriptionFiltersRequest): Request[DescribeSubscriptionFiltersResponse] = js.native
     def disassociateKmsKey(params: DisassociateKmsKeyRequest): Request[js.Object] = js.native
     def filterLogEvents(params: FilterLogEventsRequest): Request[FilterLogEventsResponse] = js.native
     def getLogEvents(params: GetLogEventsRequest): Request[GetLogEventsResponse] = js.native
+    def getLogGroupFields(params: GetLogGroupFieldsRequest): Request[GetLogGroupFieldsResponse] = js.native
+    def getLogRecord(params: GetLogRecordRequest): Request[GetLogRecordResponse] = js.native
+    def getQueryResults(params: GetQueryResultsRequest): Request[GetQueryResultsResponse] = js.native
     def listTagsLogGroup(params: ListTagsLogGroupRequest): Request[ListTagsLogGroupResponse] = js.native
     def putDestination(params: PutDestinationRequest): Request[PutDestinationResponse] = js.native
     def putDestinationPolicy(params: PutDestinationPolicyRequest): Request[js.Object] = js.native
@@ -106,6 +124,8 @@ package cloudwatchlogs {
     def putResourcePolicy(params: PutResourcePolicyRequest): Request[PutResourcePolicyResponse] = js.native
     def putRetentionPolicy(params: PutRetentionPolicyRequest): Request[js.Object] = js.native
     def putSubscriptionFilter(params: PutSubscriptionFilterRequest): Request[js.Object] = js.native
+    def startQuery(params: StartQueryRequest): Request[StartQueryResponse] = js.native
+    def stopQuery(params: StopQueryRequest): Request[StopQueryResponse] = js.native
     def tagLogGroup(params: TagLogGroupRequest): Request[js.Object] = js.native
     def testMetricFilter(params: TestMetricFilterRequest): Request[TestMetricFilterResponse] = js.native
     def untagLogGroup(params: UntagLogGroupRequest): Request[js.Object] = js.native
@@ -562,6 +582,48 @@ package cloudwatchlogs {
   }
 
   @js.native
+  trait DescribeQueriesRequest extends js.Object {
+    var logGroupName: js.UndefOr[LogGroupName]
+    var status: js.UndefOr[QueryStatus]
+    var maxResults: js.UndefOr[DescribeQueriesMaxResults]
+    var nextToken: js.UndefOr[NextToken]
+  }
+
+  object DescribeQueriesRequest {
+    def apply(
+      logGroupName: js.UndefOr[LogGroupName] = js.undefined,
+      status: js.UndefOr[QueryStatus] = js.undefined,
+      maxResults: js.UndefOr[DescribeQueriesMaxResults] = js.undefined,
+      nextToken: js.UndefOr[NextToken] = js.undefined): DescribeQueriesRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "logGroupName" -> logGroupName.map { x => x.asInstanceOf[js.Any] },
+        "status" -> status.map { x => x.asInstanceOf[js.Any] },
+        "maxResults" -> maxResults.map { x => x.asInstanceOf[js.Any] },
+        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeQueriesRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeQueriesResponse extends js.Object {
+    var queries: js.UndefOr[QueryInfoList]
+    var nextToken: js.UndefOr[NextToken]
+  }
+
+  object DescribeQueriesResponse {
+    def apply(
+      queries: js.UndefOr[QueryInfoList] = js.undefined,
+      nextToken: js.UndefOr[NextToken] = js.undefined): DescribeQueriesResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "queries" -> queries.map { x => x.asInstanceOf[js.Any] },
+        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeQueriesResponse]
+    }
+  }
+
+  @js.native
   trait DescribeResourcePoliciesRequest extends js.Object {
     var nextToken: js.UndefOr[NextToken]
     var limit: js.UndefOr[DescribeLimit]
@@ -936,6 +998,105 @@ package cloudwatchlogs {
     }
   }
 
+  @js.native
+  trait GetLogGroupFieldsRequest extends js.Object {
+    var logGroupName: js.UndefOr[LogGroupName]
+    var time: js.UndefOr[Timestamp]
+  }
+
+  object GetLogGroupFieldsRequest {
+    def apply(
+      logGroupName: js.UndefOr[LogGroupName] = js.undefined,
+      time: js.UndefOr[Timestamp] = js.undefined): GetLogGroupFieldsRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "logGroupName" -> logGroupName.map { x => x.asInstanceOf[js.Any] },
+        "time" -> time.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetLogGroupFieldsRequest]
+    }
+  }
+
+  @js.native
+  trait GetLogGroupFieldsResponse extends js.Object {
+    var logGroupFields: js.UndefOr[LogGroupFieldList]
+  }
+
+  object GetLogGroupFieldsResponse {
+    def apply(
+      logGroupFields: js.UndefOr[LogGroupFieldList] = js.undefined): GetLogGroupFieldsResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "logGroupFields" -> logGroupFields.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetLogGroupFieldsResponse]
+    }
+  }
+
+  @js.native
+  trait GetLogRecordRequest extends js.Object {
+    var logRecordPointer: js.UndefOr[LogRecordPointer]
+  }
+
+  object GetLogRecordRequest {
+    def apply(
+      logRecordPointer: js.UndefOr[LogRecordPointer] = js.undefined): GetLogRecordRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "logRecordPointer" -> logRecordPointer.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetLogRecordRequest]
+    }
+  }
+
+  @js.native
+  trait GetLogRecordResponse extends js.Object {
+    var logRecord: js.UndefOr[LogRecord]
+  }
+
+  object GetLogRecordResponse {
+    def apply(
+      logRecord: js.UndefOr[LogRecord] = js.undefined): GetLogRecordResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "logRecord" -> logRecord.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetLogRecordResponse]
+    }
+  }
+
+  @js.native
+  trait GetQueryResultsRequest extends js.Object {
+    var queryId: js.UndefOr[QueryId]
+  }
+
+  object GetQueryResultsRequest {
+    def apply(
+      queryId: js.UndefOr[QueryId] = js.undefined): GetQueryResultsRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "queryId" -> queryId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetQueryResultsRequest]
+    }
+  }
+
+  @js.native
+  trait GetQueryResultsResponse extends js.Object {
+    var results: js.UndefOr[QueryResults]
+    var statistics: js.UndefOr[QueryStatistics]
+    var status: js.UndefOr[QueryStatus]
+  }
+
+  object GetQueryResultsResponse {
+    def apply(
+      results: js.UndefOr[QueryResults] = js.undefined,
+      statistics: js.UndefOr[QueryStatistics] = js.undefined,
+      status: js.UndefOr[QueryStatus] = js.undefined): GetQueryResultsResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "results" -> results.map { x => x.asInstanceOf[js.Any] },
+        "statistics" -> statistics.map { x => x.asInstanceOf[js.Any] },
+        "status" -> status.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetQueryResultsResponse]
+    }
+  }
+
   /**
    * <p>Represents a log event, which is a record of activity that was recorded by the application or resource being monitored.</p>
    */
@@ -1020,6 +1181,27 @@ package cloudwatchlogs {
         "creationTime" -> creationTime.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[LogGroup]
+    }
+  }
+
+  /**
+   * <p>The fields contained in log events found by a <code>GetLogGroupFields</code> operation, along with the percentage of queried log events in which each field appears.</p>
+   */
+  @js.native
+  trait LogGroupField extends js.Object {
+    var name: js.UndefOr[Field]
+    var percent: js.UndefOr[Percentage]
+  }
+
+  object LogGroupField {
+    def apply(
+      name: js.UndefOr[Field] = js.undefined,
+      percent: js.UndefOr[Percentage] = js.undefined): LogGroupField = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "name" -> name.map { x => x.asInstanceOf[js.Any] },
+        "percent" -> percent.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[LogGroupField]
     }
   }
 
@@ -1117,7 +1299,7 @@ package cloudwatchlogs {
   }
 
   /**
-   * <p>Indicates how to transform ingested log events in to metric data in a CloudWatch metric.</p>
+   * <p>Indicates how to transform ingested log eventsto metric data in a CloudWatch metric.</p>
    */
   @js.native
   trait MetricTransformation extends js.Object {
@@ -1376,6 +1558,70 @@ package cloudwatchlogs {
   }
 
   /**
+   * <p>Information about one CloudWatch Logs Insights query that matches the request in a <code>DescribeQueries</code> operation. </p>
+   */
+  @js.native
+  trait QueryInfo extends js.Object {
+    var queryId: js.UndefOr[QueryId]
+    var createTime: js.UndefOr[Timestamp]
+    var queryString: js.UndefOr[QueryString]
+    var status: js.UndefOr[QueryStatus]
+    var logGroupName: js.UndefOr[LogGroupName]
+  }
+
+  object QueryInfo {
+    def apply(
+      queryId: js.UndefOr[QueryId] = js.undefined,
+      createTime: js.UndefOr[Timestamp] = js.undefined,
+      queryString: js.UndefOr[QueryString] = js.undefined,
+      status: js.UndefOr[QueryStatus] = js.undefined,
+      logGroupName: js.UndefOr[LogGroupName] = js.undefined): QueryInfo = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "queryId" -> queryId.map { x => x.asInstanceOf[js.Any] },
+        "createTime" -> createTime.map { x => x.asInstanceOf[js.Any] },
+        "queryString" -> queryString.map { x => x.asInstanceOf[js.Any] },
+        "status" -> status.map { x => x.asInstanceOf[js.Any] },
+        "logGroupName" -> logGroupName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[QueryInfo]
+    }
+  }
+
+  /**
+   * <p>Contains the number of log events scanned by the query, the number of log events that matched the query criteria, and the total number of bytes in the log events that were scanned.</p>
+   */
+  @js.native
+  trait QueryStatistics extends js.Object {
+    var recordsMatched: js.UndefOr[StatsValue]
+    var recordsScanned: js.UndefOr[StatsValue]
+    var bytesScanned: js.UndefOr[StatsValue]
+  }
+
+  object QueryStatistics {
+    def apply(
+      recordsMatched: js.UndefOr[StatsValue] = js.undefined,
+      recordsScanned: js.UndefOr[StatsValue] = js.undefined,
+      bytesScanned: js.UndefOr[StatsValue] = js.undefined): QueryStatistics = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "recordsMatched" -> recordsMatched.map { x => x.asInstanceOf[js.Any] },
+        "recordsScanned" -> recordsScanned.map { x => x.asInstanceOf[js.Any] },
+        "bytesScanned" -> bytesScanned.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[QueryStatistics]
+    }
+  }
+
+  object QueryStatusEnum {
+    val Scheduled = "Scheduled"
+    val Running = "Running"
+    val Complete = "Complete"
+    val Failed = "Failed"
+    val Cancelled = "Cancelled"
+
+    val values = IndexedSeq(Scheduled, Running, Complete, Failed, Cancelled)
+  }
+
+  /**
    * <p>Represents the rejected events.</p>
    */
   @js.native
@@ -1424,6 +1670,27 @@ package cloudwatchlogs {
   }
 
   /**
+   * <p>Contains one field from one log event returned by a CloudWatch Logs Insights query, along with the value of that field.</p>
+   */
+  @js.native
+  trait ResultField extends js.Object {
+    var field: js.UndefOr[Field]
+    var value: js.UndefOr[Value]
+  }
+
+  object ResultField {
+    def apply(
+      field: js.UndefOr[Field] = js.undefined,
+      value: js.UndefOr[Value] = js.undefined): ResultField = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "field" -> field.map { x => x.asInstanceOf[js.Any] },
+        "value" -> value.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ResultField]
+    }
+  }
+
+  /**
    * <p>Represents the search status of a log stream.</p>
    */
   @js.native
@@ -1441,6 +1708,78 @@ package cloudwatchlogs {
         "searchedCompletely" -> searchedCompletely.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SearchedLogStream]
+    }
+  }
+
+  @js.native
+  trait StartQueryRequest extends js.Object {
+    var startTime: js.UndefOr[Timestamp]
+    var queryString: js.UndefOr[QueryString]
+    var endTime: js.UndefOr[Timestamp]
+    var logGroupName: js.UndefOr[LogGroupName]
+    var limit: js.UndefOr[EventsLimit]
+  }
+
+  object StartQueryRequest {
+    def apply(
+      startTime: js.UndefOr[Timestamp] = js.undefined,
+      queryString: js.UndefOr[QueryString] = js.undefined,
+      endTime: js.UndefOr[Timestamp] = js.undefined,
+      logGroupName: js.UndefOr[LogGroupName] = js.undefined,
+      limit: js.UndefOr[EventsLimit] = js.undefined): StartQueryRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "startTime" -> startTime.map { x => x.asInstanceOf[js.Any] },
+        "queryString" -> queryString.map { x => x.asInstanceOf[js.Any] },
+        "endTime" -> endTime.map { x => x.asInstanceOf[js.Any] },
+        "logGroupName" -> logGroupName.map { x => x.asInstanceOf[js.Any] },
+        "limit" -> limit.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StartQueryRequest]
+    }
+  }
+
+  @js.native
+  trait StartQueryResponse extends js.Object {
+    var queryId: js.UndefOr[QueryId]
+  }
+
+  object StartQueryResponse {
+    def apply(
+      queryId: js.UndefOr[QueryId] = js.undefined): StartQueryResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "queryId" -> queryId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StartQueryResponse]
+    }
+  }
+
+  @js.native
+  trait StopQueryRequest extends js.Object {
+    var queryId: js.UndefOr[QueryId]
+  }
+
+  object StopQueryRequest {
+    def apply(
+      queryId: js.UndefOr[QueryId] = js.undefined): StopQueryRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "queryId" -> queryId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StopQueryRequest]
+    }
+  }
+
+  @js.native
+  trait StopQueryResponse extends js.Object {
+    var success: js.UndefOr[Success]
+  }
+
+  object StopQueryResponse {
+    def apply(
+      success: js.UndefOr[Success] = js.undefined): StopQueryResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "success" -> success.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StopQueryResponse]
     }
   }
 

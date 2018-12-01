@@ -9,6 +9,7 @@ import facade.amazonaws._
 package object marketplacemetering {
   type CustomerIdentifier = String
   type NonEmptyString = String
+  type Nonce = String
   type ProductCode = String
   type Timestamp = js.Date
   type UsageDimension = String
@@ -16,7 +17,7 @@ package object marketplacemetering {
   type UsageRecordList = js.Array[UsageRecord]
   type UsageRecordResultList = js.Array[UsageRecordResult]
   type UsageRecordResultStatus = String
-  type errorMessage = String
+  type VersionInteger = Int
 }
 
 package marketplacemetering {
@@ -25,6 +26,7 @@ package marketplacemetering {
   class MarketplaceMetering(config: AWSConfig) extends js.Object {
     def batchMeterUsage(params: BatchMeterUsageRequest): Request[BatchMeterUsageResult] = js.native
     def meterUsage(params: MeterUsageRequest): Request[MeterUsageResult] = js.native
+    def registerUsage(params: RegisterUsageRequest): Request[RegisterUsageResult] = js.native
     def resolveCustomer(params: ResolveCustomerRequest): Request[ResolveCustomerResult] = js.native
   }
 
@@ -70,67 +72,6 @@ package marketplacemetering {
     }
   }
 
-  /**
-   * <p>A metering record has already been emitted by the same EC2 instance for the given {usageDimension, timestamp} with a different usageQuantity.</p>
-   */
-  @js.native
-  trait DuplicateRequestExceptionException extends js.Object {
-    val message: errorMessage
-  }
-
-  /**
-   * <p>The submitted registration token has expired. This can happen if the buyer's browser takes too long to redirect to your page, the buyer has resubmitted the registration token, or your application has held on to the registration token for too long. Your SaaS registration website should redeem this token as soon as it is submitted by the buyer's browser.</p>
-   */
-  @js.native
-  trait ExpiredTokenExceptionException extends js.Object {
-    val message: errorMessage
-  }
-
-  /**
-   * <p>An internal error has occurred. Retry your request. If the problem persists, post a message with details on the AWS forums.</p>
-   */
-  @js.native
-  trait InternalServiceErrorExceptionException extends js.Object {
-    val message: errorMessage
-  }
-
-  /**
-   * <p>You have metered usage for a CustomerIdentifier that does not exist.</p>
-   */
-  @js.native
-  trait InvalidCustomerIdentifierExceptionException extends js.Object {
-    val message: errorMessage
-  }
-
-  /**
-   * <p>The endpoint being called is in a region different from your EC2 instance. The region of the Metering service endpoint and the region of the EC2 instance must match.</p>
-   */
-  @js.native
-  trait InvalidEndpointRegionExceptionException extends js.Object {
-    val message: errorMessage
-  }
-
-  /**
-   * <p>The product code passed does not match the product code used for publishing the product.</p>
-   */
-  @js.native
-  trait InvalidProductCodeExceptionException extends js.Object {
-    val message: errorMessage
-  }
-
-  @js.native
-  trait InvalidTokenExceptionException extends js.Object {
-    val message: errorMessage
-  }
-
-  /**
-   * <p>The usage dimension does not match one of the UsageDimensions associated with products.</p>
-   */
-  @js.native
-  trait InvalidUsageDimensionExceptionException extends js.Object {
-    val message: errorMessage
-  }
-
   @js.native
   trait MeterUsageRequest extends js.Object {
     var ProductCode: js.UndefOr[ProductCode]
@@ -173,6 +114,45 @@ package marketplacemetering {
     }
   }
 
+  @js.native
+  trait RegisterUsageRequest extends js.Object {
+    var ProductCode: js.UndefOr[ProductCode]
+    var PublicKeyVersion: js.UndefOr[VersionInteger]
+    var Nonce: js.UndefOr[Nonce]
+  }
+
+  object RegisterUsageRequest {
+    def apply(
+      ProductCode: js.UndefOr[ProductCode] = js.undefined,
+      PublicKeyVersion: js.UndefOr[VersionInteger] = js.undefined,
+      Nonce: js.UndefOr[Nonce] = js.undefined): RegisterUsageRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ProductCode" -> ProductCode.map { x => x.asInstanceOf[js.Any] },
+        "PublicKeyVersion" -> PublicKeyVersion.map { x => x.asInstanceOf[js.Any] },
+        "Nonce" -> Nonce.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RegisterUsageRequest]
+    }
+  }
+
+  @js.native
+  trait RegisterUsageResult extends js.Object {
+    var PublicKeyRotationTimestamp: js.UndefOr[Timestamp]
+    var Signature: js.UndefOr[NonEmptyString]
+  }
+
+  object RegisterUsageResult {
+    def apply(
+      PublicKeyRotationTimestamp: js.UndefOr[Timestamp] = js.undefined,
+      Signature: js.UndefOr[NonEmptyString] = js.undefined): RegisterUsageResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "PublicKeyRotationTimestamp" -> PublicKeyRotationTimestamp.map { x => x.asInstanceOf[js.Any] },
+        "Signature" -> Signature.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RegisterUsageResult]
+    }
+  }
+
   /**
    * <p>Contains input to the ResolveCustomer operation.</p>
    */
@@ -210,22 +190,6 @@ package marketplacemetering {
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ResolveCustomerResult]
     }
-  }
-
-  /**
-   * <p>The calls to the MeterUsage API are throttled.</p>
-   */
-  @js.native
-  trait ThrottlingExceptionException extends js.Object {
-    val message: errorMessage
-  }
-
-  /**
-   * <p>The timestamp value passed in the meterUsage() is out of allowed range.</p>
-   */
-  @js.native
-  trait TimestampOutOfBoundsExceptionException extends js.Object {
-    val message: errorMessage
   }
 
   /**
