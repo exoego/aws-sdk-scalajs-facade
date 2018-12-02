@@ -1,0 +1,4 @@
+-Xss4M
+-Xmx8G
+-XX:MaxMetaspaceSize=8G
+-XX:+CMSClassUnloadingEnabled
