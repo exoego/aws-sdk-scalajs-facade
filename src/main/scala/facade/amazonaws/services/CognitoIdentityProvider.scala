@@ -263,17 +263,17 @@ package cognitoidentityprovider {
    */
   @js.native
   trait AccountTakeoverActionType extends js.Object {
-    var Notify: js.UndefOr[AccountTakeoverActionNotifyType]
-    var EventAction: js.UndefOr[AccountTakeoverEventActionType]
+    var EventAction: AccountTakeoverEventActionType
+    var Notify: AccountTakeoverActionNotifyType
   }
 
   object AccountTakeoverActionType {
     def apply(
-      Notify: js.UndefOr[AccountTakeoverActionNotifyType] = js.undefined,
-      EventAction: js.UndefOr[AccountTakeoverEventActionType] = js.undefined): AccountTakeoverActionType = {
+      EventAction: AccountTakeoverEventActionType,
+      Notify: AccountTakeoverActionNotifyType): AccountTakeoverActionType = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Notify" -> Notify.map { x => x.asInstanceOf[js.Any] },
-        "EventAction" -> EventAction.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "EventAction" -> EventAction.asInstanceOf[js.Any],
+        "Notify" -> Notify.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AccountTakeoverActionType]
     }
@@ -284,20 +284,20 @@ package cognitoidentityprovider {
    */
   @js.native
   trait AccountTakeoverActionsType extends js.Object {
+    var HighAction: js.UndefOr[AccountTakeoverActionType]
     var LowAction: js.UndefOr[AccountTakeoverActionType]
     var MediumAction: js.UndefOr[AccountTakeoverActionType]
-    var HighAction: js.UndefOr[AccountTakeoverActionType]
   }
 
   object AccountTakeoverActionsType {
     def apply(
+      HighAction: js.UndefOr[AccountTakeoverActionType] = js.undefined,
       LowAction: js.UndefOr[AccountTakeoverActionType] = js.undefined,
-      MediumAction: js.UndefOr[AccountTakeoverActionType] = js.undefined,
-      HighAction: js.UndefOr[AccountTakeoverActionType] = js.undefined): AccountTakeoverActionsType = {
+      MediumAction: js.UndefOr[AccountTakeoverActionType] = js.undefined): AccountTakeoverActionsType = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "HighAction" -> HighAction.map { x => x.asInstanceOf[js.Any] },
         "LowAction" -> LowAction.map { x => x.asInstanceOf[js.Any] },
-        "MediumAction" -> MediumAction.map { x => x.asInstanceOf[js.Any] },
-        "HighAction" -> HighAction.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "MediumAction" -> MediumAction.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AccountTakeoverActionsType]
     }
@@ -317,17 +317,17 @@ package cognitoidentityprovider {
    */
   @js.native
   trait AccountTakeoverRiskConfigurationType extends js.Object {
+    var Actions: AccountTakeoverActionsType
     var NotifyConfiguration: js.UndefOr[NotifyConfigurationType]
-    var Actions: js.UndefOr[AccountTakeoverActionsType]
   }
 
   object AccountTakeoverRiskConfigurationType {
     def apply(
-      NotifyConfiguration: js.UndefOr[NotifyConfigurationType] = js.undefined,
-      Actions: js.UndefOr[AccountTakeoverActionsType] = js.undefined): AccountTakeoverRiskConfigurationType = {
+      Actions: AccountTakeoverActionsType,
+      NotifyConfiguration: js.UndefOr[NotifyConfigurationType] = js.undefined): AccountTakeoverRiskConfigurationType = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "NotifyConfiguration" -> NotifyConfiguration.map { x => x.asInstanceOf[js.Any] },
-        "Actions" -> Actions.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Actions" -> Actions.asInstanceOf[js.Any],
+        "NotifyConfiguration" -> NotifyConfiguration.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AccountTakeoverRiskConfigurationType]
     }
@@ -338,17 +338,17 @@ package cognitoidentityprovider {
    */
   @js.native
   trait AddCustomAttributesRequest extends js.Object {
-    var UserPoolId: js.UndefOr[UserPoolIdType]
-    var CustomAttributes: js.UndefOr[CustomAttributesListType]
+    var CustomAttributes: CustomAttributesListType
+    var UserPoolId: UserPoolIdType
   }
 
   object AddCustomAttributesRequest {
     def apply(
-      UserPoolId: js.UndefOr[UserPoolIdType] = js.undefined,
-      CustomAttributes: js.UndefOr[CustomAttributesListType] = js.undefined): AddCustomAttributesRequest = {
+      CustomAttributes: CustomAttributesListType,
+      UserPoolId: UserPoolIdType): AddCustomAttributesRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "UserPoolId" -> UserPoolId.map { x => x.asInstanceOf[js.Any] },
-        "CustomAttributes" -> CustomAttributes.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "CustomAttributes" -> CustomAttributes.asInstanceOf[js.Any],
+        "UserPoolId" -> UserPoolId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AddCustomAttributesRequest]
     }
@@ -372,20 +372,20 @@ package cognitoidentityprovider {
 
   @js.native
   trait AdminAddUserToGroupRequest extends js.Object {
-    var UserPoolId: js.UndefOr[UserPoolIdType]
-    var Username: js.UndefOr[UsernameType]
-    var GroupName: js.UndefOr[GroupNameType]
+    var GroupName: GroupNameType
+    var UserPoolId: UserPoolIdType
+    var Username: UsernameType
   }
 
   object AdminAddUserToGroupRequest {
     def apply(
-      UserPoolId: js.UndefOr[UserPoolIdType] = js.undefined,
-      Username: js.UndefOr[UsernameType] = js.undefined,
-      GroupName: js.UndefOr[GroupNameType] = js.undefined): AdminAddUserToGroupRequest = {
+      GroupName: GroupNameType,
+      UserPoolId: UserPoolIdType,
+      Username: UsernameType): AdminAddUserToGroupRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "UserPoolId" -> UserPoolId.map { x => x.asInstanceOf[js.Any] },
-        "Username" -> Username.map { x => x.asInstanceOf[js.Any] },
-        "GroupName" -> GroupName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "GroupName" -> GroupName.asInstanceOf[js.Any],
+        "UserPoolId" -> UserPoolId.asInstanceOf[js.Any],
+        "Username" -> Username.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AdminAddUserToGroupRequest]
     }
@@ -396,17 +396,17 @@ package cognitoidentityprovider {
    */
   @js.native
   trait AdminConfirmSignUpRequest extends js.Object {
-    var UserPoolId: js.UndefOr[UserPoolIdType]
-    var Username: js.UndefOr[UsernameType]
+    var UserPoolId: UserPoolIdType
+    var Username: UsernameType
   }
 
   object AdminConfirmSignUpRequest {
     def apply(
-      UserPoolId: js.UndefOr[UserPoolIdType] = js.undefined,
-      Username: js.UndefOr[UsernameType] = js.undefined): AdminConfirmSignUpRequest = {
+      UserPoolId: UserPoolIdType,
+      Username: UsernameType): AdminConfirmSignUpRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "UserPoolId" -> UserPoolId.map { x => x.asInstanceOf[js.Any] },
-        "Username" -> Username.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "UserPoolId" -> UserPoolId.asInstanceOf[js.Any],
+        "Username" -> Username.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AdminConfirmSignUpRequest]
     }
@@ -434,19 +434,19 @@ package cognitoidentityprovider {
   @js.native
   trait AdminCreateUserConfigType extends js.Object {
     var AllowAdminCreateUserOnly: js.UndefOr[BooleanType]
-    var UnusedAccountValidityDays: js.UndefOr[AdminCreateUserUnusedAccountValidityDaysType]
     var InviteMessageTemplate: js.UndefOr[MessageTemplateType]
+    var UnusedAccountValidityDays: js.UndefOr[AdminCreateUserUnusedAccountValidityDaysType]
   }
 
   object AdminCreateUserConfigType {
     def apply(
       AllowAdminCreateUserOnly: js.UndefOr[BooleanType] = js.undefined,
-      UnusedAccountValidityDays: js.UndefOr[AdminCreateUserUnusedAccountValidityDaysType] = js.undefined,
-      InviteMessageTemplate: js.UndefOr[MessageTemplateType] = js.undefined): AdminCreateUserConfigType = {
+      InviteMessageTemplate: js.UndefOr[MessageTemplateType] = js.undefined,
+      UnusedAccountValidityDays: js.UndefOr[AdminCreateUserUnusedAccountValidityDaysType] = js.undefined): AdminCreateUserConfigType = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AllowAdminCreateUserOnly" -> AllowAdminCreateUserOnly.map { x => x.asInstanceOf[js.Any] },
-        "UnusedAccountValidityDays" -> UnusedAccountValidityDays.map { x => x.asInstanceOf[js.Any] },
-        "InviteMessageTemplate" -> InviteMessageTemplate.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "InviteMessageTemplate" -> InviteMessageTemplate.map { x => x.asInstanceOf[js.Any] },
+        "UnusedAccountValidityDays" -> UnusedAccountValidityDays.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AdminCreateUserConfigType]
     }
@@ -457,35 +457,35 @@ package cognitoidentityprovider {
    */
   @js.native
   trait AdminCreateUserRequest extends js.Object {
-    var Username: js.UndefOr[UsernameType]
+    var UserPoolId: UserPoolIdType
+    var Username: UsernameType
     var DesiredDeliveryMediums: js.UndefOr[DeliveryMediumListType]
-    var UserPoolId: js.UndefOr[UserPoolIdType]
-    var ValidationData: js.UndefOr[AttributeListType]
     var ForceAliasCreation: js.UndefOr[ForceAliasCreation]
-    var UserAttributes: js.UndefOr[AttributeListType]
     var MessageAction: js.UndefOr[MessageActionType]
     var TemporaryPassword: js.UndefOr[PasswordType]
+    var UserAttributes: js.UndefOr[AttributeListType]
+    var ValidationData: js.UndefOr[AttributeListType]
   }
 
   object AdminCreateUserRequest {
     def apply(
-      Username: js.UndefOr[UsernameType] = js.undefined,
+      UserPoolId: UserPoolIdType,
+      Username: UsernameType,
       DesiredDeliveryMediums: js.UndefOr[DeliveryMediumListType] = js.undefined,
-      UserPoolId: js.UndefOr[UserPoolIdType] = js.undefined,
-      ValidationData: js.UndefOr[AttributeListType] = js.undefined,
       ForceAliasCreation: js.UndefOr[ForceAliasCreation] = js.undefined,
-      UserAttributes: js.UndefOr[AttributeListType] = js.undefined,
       MessageAction: js.UndefOr[MessageActionType] = js.undefined,
-      TemporaryPassword: js.UndefOr[PasswordType] = js.undefined): AdminCreateUserRequest = {
+      TemporaryPassword: js.UndefOr[PasswordType] = js.undefined,
+      UserAttributes: js.UndefOr[AttributeListType] = js.undefined,
+      ValidationData: js.UndefOr[AttributeListType] = js.undefined): AdminCreateUserRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Username" -> Username.map { x => x.asInstanceOf[js.Any] },
+        "UserPoolId" -> UserPoolId.asInstanceOf[js.Any],
+        "Username" -> Username.asInstanceOf[js.Any],
         "DesiredDeliveryMediums" -> DesiredDeliveryMediums.map { x => x.asInstanceOf[js.Any] },
-        "UserPoolId" -> UserPoolId.map { x => x.asInstanceOf[js.Any] },
-        "ValidationData" -> ValidationData.map { x => x.asInstanceOf[js.Any] },
         "ForceAliasCreation" -> ForceAliasCreation.map { x => x.asInstanceOf[js.Any] },
-        "UserAttributes" -> UserAttributes.map { x => x.asInstanceOf[js.Any] },
         "MessageAction" -> MessageAction.map { x => x.asInstanceOf[js.Any] },
-        "TemporaryPassword" -> TemporaryPassword.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "TemporaryPassword" -> TemporaryPassword.map { x => x.asInstanceOf[js.Any] },
+        "UserAttributes" -> UserAttributes.map { x => x.asInstanceOf[js.Any] },
+        "ValidationData" -> ValidationData.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AdminCreateUserRequest]
     }
@@ -514,20 +514,20 @@ package cognitoidentityprovider {
    */
   @js.native
   trait AdminDeleteUserAttributesRequest extends js.Object {
-    var UserPoolId: js.UndefOr[UserPoolIdType]
-    var Username: js.UndefOr[UsernameType]
-    var UserAttributeNames: js.UndefOr[AttributeNameListType]
+    var UserAttributeNames: AttributeNameListType
+    var UserPoolId: UserPoolIdType
+    var Username: UsernameType
   }
 
   object AdminDeleteUserAttributesRequest {
     def apply(
-      UserPoolId: js.UndefOr[UserPoolIdType] = js.undefined,
-      Username: js.UndefOr[UsernameType] = js.undefined,
-      UserAttributeNames: js.UndefOr[AttributeNameListType] = js.undefined): AdminDeleteUserAttributesRequest = {
+      UserAttributeNames: AttributeNameListType,
+      UserPoolId: UserPoolIdType,
+      Username: UsernameType): AdminDeleteUserAttributesRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "UserPoolId" -> UserPoolId.map { x => x.asInstanceOf[js.Any] },
-        "Username" -> Username.map { x => x.asInstanceOf[js.Any] },
-        "UserAttributeNames" -> UserAttributeNames.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "UserAttributeNames" -> UserAttributeNames.asInstanceOf[js.Any],
+        "UserPoolId" -> UserPoolId.asInstanceOf[js.Any],
+        "Username" -> Username.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AdminDeleteUserAttributesRequest]
     }
@@ -554,17 +554,17 @@ package cognitoidentityprovider {
    */
   @js.native
   trait AdminDeleteUserRequest extends js.Object {
-    var UserPoolId: js.UndefOr[UserPoolIdType]
-    var Username: js.UndefOr[UsernameType]
+    var UserPoolId: UserPoolIdType
+    var Username: UsernameType
   }
 
   object AdminDeleteUserRequest {
     def apply(
-      UserPoolId: js.UndefOr[UserPoolIdType] = js.undefined,
-      Username: js.UndefOr[UsernameType] = js.undefined): AdminDeleteUserRequest = {
+      UserPoolId: UserPoolIdType,
+      Username: UsernameType): AdminDeleteUserRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "UserPoolId" -> UserPoolId.map { x => x.asInstanceOf[js.Any] },
-        "Username" -> Username.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "UserPoolId" -> UserPoolId.asInstanceOf[js.Any],
+        "Username" -> Username.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AdminDeleteUserRequest]
     }
@@ -572,17 +572,17 @@ package cognitoidentityprovider {
 
   @js.native
   trait AdminDisableProviderForUserRequest extends js.Object {
-    var UserPoolId: js.UndefOr[StringType]
-    var User: js.UndefOr[ProviderUserIdentifierType]
+    var User: ProviderUserIdentifierType
+    var UserPoolId: StringType
   }
 
   object AdminDisableProviderForUserRequest {
     def apply(
-      UserPoolId: js.UndefOr[StringType] = js.undefined,
-      User: js.UndefOr[ProviderUserIdentifierType] = js.undefined): AdminDisableProviderForUserRequest = {
+      User: ProviderUserIdentifierType,
+      UserPoolId: StringType): AdminDisableProviderForUserRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "UserPoolId" -> UserPoolId.map { x => x.asInstanceOf[js.Any] },
-        "User" -> User.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "User" -> User.asInstanceOf[js.Any],
+        "UserPoolId" -> UserPoolId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AdminDisableProviderForUserRequest]
     }
@@ -606,17 +606,17 @@ package cognitoidentityprovider {
    */
   @js.native
   trait AdminDisableUserRequest extends js.Object {
-    var UserPoolId: js.UndefOr[UserPoolIdType]
-    var Username: js.UndefOr[UsernameType]
+    var UserPoolId: UserPoolIdType
+    var Username: UsernameType
   }
 
   object AdminDisableUserRequest {
     def apply(
-      UserPoolId: js.UndefOr[UserPoolIdType] = js.undefined,
-      Username: js.UndefOr[UsernameType] = js.undefined): AdminDisableUserRequest = {
+      UserPoolId: UserPoolIdType,
+      Username: UsernameType): AdminDisableUserRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "UserPoolId" -> UserPoolId.map { x => x.asInstanceOf[js.Any] },
-        "Username" -> Username.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "UserPoolId" -> UserPoolId.asInstanceOf[js.Any],
+        "Username" -> Username.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AdminDisableUserRequest]
     }
@@ -643,17 +643,17 @@ package cognitoidentityprovider {
    */
   @js.native
   trait AdminEnableUserRequest extends js.Object {
-    var UserPoolId: js.UndefOr[UserPoolIdType]
-    var Username: js.UndefOr[UsernameType]
+    var UserPoolId: UserPoolIdType
+    var Username: UsernameType
   }
 
   object AdminEnableUserRequest {
     def apply(
-      UserPoolId: js.UndefOr[UserPoolIdType] = js.undefined,
-      Username: js.UndefOr[UsernameType] = js.undefined): AdminEnableUserRequest = {
+      UserPoolId: UserPoolIdType,
+      Username: UsernameType): AdminEnableUserRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "UserPoolId" -> UserPoolId.map { x => x.asInstanceOf[js.Any] },
-        "Username" -> Username.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "UserPoolId" -> UserPoolId.asInstanceOf[js.Any],
+        "Username" -> Username.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AdminEnableUserRequest]
     }
@@ -680,20 +680,20 @@ package cognitoidentityprovider {
    */
   @js.native
   trait AdminForgetDeviceRequest extends js.Object {
-    var UserPoolId: js.UndefOr[UserPoolIdType]
-    var Username: js.UndefOr[UsernameType]
-    var DeviceKey: js.UndefOr[DeviceKeyType]
+    var DeviceKey: DeviceKeyType
+    var UserPoolId: UserPoolIdType
+    var Username: UsernameType
   }
 
   object AdminForgetDeviceRequest {
     def apply(
-      UserPoolId: js.UndefOr[UserPoolIdType] = js.undefined,
-      Username: js.UndefOr[UsernameType] = js.undefined,
-      DeviceKey: js.UndefOr[DeviceKeyType] = js.undefined): AdminForgetDeviceRequest = {
+      DeviceKey: DeviceKeyType,
+      UserPoolId: UserPoolIdType,
+      Username: UsernameType): AdminForgetDeviceRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "UserPoolId" -> UserPoolId.map { x => x.asInstanceOf[js.Any] },
-        "Username" -> Username.map { x => x.asInstanceOf[js.Any] },
-        "DeviceKey" -> DeviceKey.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "DeviceKey" -> DeviceKey.asInstanceOf[js.Any],
+        "UserPoolId" -> UserPoolId.asInstanceOf[js.Any],
+        "Username" -> Username.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AdminForgetDeviceRequest]
     }
@@ -704,20 +704,20 @@ package cognitoidentityprovider {
    */
   @js.native
   trait AdminGetDeviceRequest extends js.Object {
-    var DeviceKey: js.UndefOr[DeviceKeyType]
-    var UserPoolId: js.UndefOr[UserPoolIdType]
-    var Username: js.UndefOr[UsernameType]
+    var DeviceKey: DeviceKeyType
+    var UserPoolId: UserPoolIdType
+    var Username: UsernameType
   }
 
   object AdminGetDeviceRequest {
     def apply(
-      DeviceKey: js.UndefOr[DeviceKeyType] = js.undefined,
-      UserPoolId: js.UndefOr[UserPoolIdType] = js.undefined,
-      Username: js.UndefOr[UsernameType] = js.undefined): AdminGetDeviceRequest = {
+      DeviceKey: DeviceKeyType,
+      UserPoolId: UserPoolIdType,
+      Username: UsernameType): AdminGetDeviceRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "DeviceKey" -> DeviceKey.map { x => x.asInstanceOf[js.Any] },
-        "UserPoolId" -> UserPoolId.map { x => x.asInstanceOf[js.Any] },
-        "Username" -> Username.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "DeviceKey" -> DeviceKey.asInstanceOf[js.Any],
+        "UserPoolId" -> UserPoolId.asInstanceOf[js.Any],
+        "Username" -> Username.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AdminGetDeviceRequest]
     }
@@ -728,14 +728,14 @@ package cognitoidentityprovider {
    */
   @js.native
   trait AdminGetDeviceResponse extends js.Object {
-    var Device: js.UndefOr[DeviceType]
+    var Device: DeviceType
   }
 
   object AdminGetDeviceResponse {
     def apply(
-      Device: js.UndefOr[DeviceType] = js.undefined): AdminGetDeviceResponse = {
+      Device: DeviceType): AdminGetDeviceResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Device" -> Device.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Device" -> Device.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AdminGetDeviceResponse]
     }
@@ -746,17 +746,17 @@ package cognitoidentityprovider {
    */
   @js.native
   trait AdminGetUserRequest extends js.Object {
-    var UserPoolId: js.UndefOr[UserPoolIdType]
-    var Username: js.UndefOr[UsernameType]
+    var UserPoolId: UserPoolIdType
+    var Username: UsernameType
   }
 
   object AdminGetUserRequest {
     def apply(
-      UserPoolId: js.UndefOr[UserPoolIdType] = js.undefined,
-      Username: js.UndefOr[UsernameType] = js.undefined): AdminGetUserRequest = {
+      UserPoolId: UserPoolIdType,
+      Username: UsernameType): AdminGetUserRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "UserPoolId" -> UserPoolId.map { x => x.asInstanceOf[js.Any] },
-        "Username" -> Username.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "UserPoolId" -> UserPoolId.asInstanceOf[js.Any],
+        "Username" -> Username.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AdminGetUserRequest]
     }
@@ -767,38 +767,38 @@ package cognitoidentityprovider {
    */
   @js.native
   trait AdminGetUserResponse extends js.Object {
-    var Username: js.UndefOr[UsernameType]
-    var UserLastModifiedDate: js.UndefOr[DateType]
-    var UserStatus: js.UndefOr[UserStatusType]
-    var MFAOptions: js.UndefOr[MFAOptionListType]
+    var Username: UsernameType
     var Enabled: js.UndefOr[BooleanType]
-    var UserAttributes: js.UndefOr[AttributeListType]
+    var MFAOptions: js.UndefOr[MFAOptionListType]
     var PreferredMfaSetting: js.UndefOr[StringType]
-    var UserMFASettingList: js.UndefOr[UserMFASettingListType]
+    var UserAttributes: js.UndefOr[AttributeListType]
     var UserCreateDate: js.UndefOr[DateType]
+    var UserLastModifiedDate: js.UndefOr[DateType]
+    var UserMFASettingList: js.UndefOr[UserMFASettingListType]
+    var UserStatus: js.UndefOr[UserStatusType]
   }
 
   object AdminGetUserResponse {
     def apply(
-      Username: js.UndefOr[UsernameType] = js.undefined,
-      UserLastModifiedDate: js.UndefOr[DateType] = js.undefined,
-      UserStatus: js.UndefOr[UserStatusType] = js.undefined,
-      MFAOptions: js.UndefOr[MFAOptionListType] = js.undefined,
+      Username: UsernameType,
       Enabled: js.UndefOr[BooleanType] = js.undefined,
-      UserAttributes: js.UndefOr[AttributeListType] = js.undefined,
+      MFAOptions: js.UndefOr[MFAOptionListType] = js.undefined,
       PreferredMfaSetting: js.UndefOr[StringType] = js.undefined,
+      UserAttributes: js.UndefOr[AttributeListType] = js.undefined,
+      UserCreateDate: js.UndefOr[DateType] = js.undefined,
+      UserLastModifiedDate: js.UndefOr[DateType] = js.undefined,
       UserMFASettingList: js.UndefOr[UserMFASettingListType] = js.undefined,
-      UserCreateDate: js.UndefOr[DateType] = js.undefined): AdminGetUserResponse = {
+      UserStatus: js.UndefOr[UserStatusType] = js.undefined): AdminGetUserResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Username" -> Username.map { x => x.asInstanceOf[js.Any] },
-        "UserLastModifiedDate" -> UserLastModifiedDate.map { x => x.asInstanceOf[js.Any] },
-        "UserStatus" -> UserStatus.map { x => x.asInstanceOf[js.Any] },
-        "MFAOptions" -> MFAOptions.map { x => x.asInstanceOf[js.Any] },
+        "Username" -> Username.asInstanceOf[js.Any],
         "Enabled" -> Enabled.map { x => x.asInstanceOf[js.Any] },
-        "UserAttributes" -> UserAttributes.map { x => x.asInstanceOf[js.Any] },
+        "MFAOptions" -> MFAOptions.map { x => x.asInstanceOf[js.Any] },
         "PreferredMfaSetting" -> PreferredMfaSetting.map { x => x.asInstanceOf[js.Any] },
+        "UserAttributes" -> UserAttributes.map { x => x.asInstanceOf[js.Any] },
+        "UserCreateDate" -> UserCreateDate.map { x => x.asInstanceOf[js.Any] },
+        "UserLastModifiedDate" -> UserLastModifiedDate.map { x => x.asInstanceOf[js.Any] },
         "UserMFASettingList" -> UserMFASettingList.map { x => x.asInstanceOf[js.Any] },
-        "UserCreateDate" -> UserCreateDate.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "UserStatus" -> UserStatus.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AdminGetUserResponse]
     }
@@ -809,32 +809,32 @@ package cognitoidentityprovider {
    */
   @js.native
   trait AdminInitiateAuthRequest extends js.Object {
-    var ClientMetadata: js.UndefOr[ClientMetadataType]
-    var UserPoolId: js.UndefOr[UserPoolIdType]
-    var AuthParameters: js.UndefOr[AuthParametersType]
-    var ContextData: js.UndefOr[ContextDataType]
-    var ClientId: js.UndefOr[ClientIdType]
-    var AuthFlow: js.UndefOr[AuthFlowType]
+    var AuthFlow: AuthFlowType
+    var ClientId: ClientIdType
+    var UserPoolId: UserPoolIdType
     var AnalyticsMetadata: js.UndefOr[AnalyticsMetadataType]
+    var AuthParameters: js.UndefOr[AuthParametersType]
+    var ClientMetadata: js.UndefOr[ClientMetadataType]
+    var ContextData: js.UndefOr[ContextDataType]
   }
 
   object AdminInitiateAuthRequest {
     def apply(
-      ClientMetadata: js.UndefOr[ClientMetadataType] = js.undefined,
-      UserPoolId: js.UndefOr[UserPoolIdType] = js.undefined,
+      AuthFlow: AuthFlowType,
+      ClientId: ClientIdType,
+      UserPoolId: UserPoolIdType,
+      AnalyticsMetadata: js.UndefOr[AnalyticsMetadataType] = js.undefined,
       AuthParameters: js.UndefOr[AuthParametersType] = js.undefined,
-      ContextData: js.UndefOr[ContextDataType] = js.undefined,
-      ClientId: js.UndefOr[ClientIdType] = js.undefined,
-      AuthFlow: js.UndefOr[AuthFlowType] = js.undefined,
-      AnalyticsMetadata: js.UndefOr[AnalyticsMetadataType] = js.undefined): AdminInitiateAuthRequest = {
+      ClientMetadata: js.UndefOr[ClientMetadataType] = js.undefined,
+      ContextData: js.UndefOr[ContextDataType] = js.undefined): AdminInitiateAuthRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ClientMetadata" -> ClientMetadata.map { x => x.asInstanceOf[js.Any] },
-        "UserPoolId" -> UserPoolId.map { x => x.asInstanceOf[js.Any] },
+        "AuthFlow" -> AuthFlow.asInstanceOf[js.Any],
+        "ClientId" -> ClientId.asInstanceOf[js.Any],
+        "UserPoolId" -> UserPoolId.asInstanceOf[js.Any],
+        "AnalyticsMetadata" -> AnalyticsMetadata.map { x => x.asInstanceOf[js.Any] },
         "AuthParameters" -> AuthParameters.map { x => x.asInstanceOf[js.Any] },
-        "ContextData" -> ContextData.map { x => x.asInstanceOf[js.Any] },
-        "ClientId" -> ClientId.map { x => x.asInstanceOf[js.Any] },
-        "AuthFlow" -> AuthFlow.map { x => x.asInstanceOf[js.Any] },
-        "AnalyticsMetadata" -> AnalyticsMetadata.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ClientMetadata" -> ClientMetadata.map { x => x.asInstanceOf[js.Any] },
+        "ContextData" -> ContextData.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AdminInitiateAuthRequest]
     }
@@ -845,23 +845,23 @@ package cognitoidentityprovider {
    */
   @js.native
   trait AdminInitiateAuthResponse extends js.Object {
-    var ChallengeName: js.UndefOr[ChallengeNameType]
-    var Session: js.UndefOr[SessionType]
-    var ChallengeParameters: js.UndefOr[ChallengeParametersType]
     var AuthenticationResult: js.UndefOr[AuthenticationResultType]
+    var ChallengeName: js.UndefOr[ChallengeNameType]
+    var ChallengeParameters: js.UndefOr[ChallengeParametersType]
+    var Session: js.UndefOr[SessionType]
   }
 
   object AdminInitiateAuthResponse {
     def apply(
+      AuthenticationResult: js.UndefOr[AuthenticationResultType] = js.undefined,
       ChallengeName: js.UndefOr[ChallengeNameType] = js.undefined,
-      Session: js.UndefOr[SessionType] = js.undefined,
       ChallengeParameters: js.UndefOr[ChallengeParametersType] = js.undefined,
-      AuthenticationResult: js.UndefOr[AuthenticationResultType] = js.undefined): AdminInitiateAuthResponse = {
+      Session: js.UndefOr[SessionType] = js.undefined): AdminInitiateAuthResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "AuthenticationResult" -> AuthenticationResult.map { x => x.asInstanceOf[js.Any] },
         "ChallengeName" -> ChallengeName.map { x => x.asInstanceOf[js.Any] },
-        "Session" -> Session.map { x => x.asInstanceOf[js.Any] },
         "ChallengeParameters" -> ChallengeParameters.map { x => x.asInstanceOf[js.Any] },
-        "AuthenticationResult" -> AuthenticationResult.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Session" -> Session.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AdminInitiateAuthResponse]
     }
@@ -869,20 +869,20 @@ package cognitoidentityprovider {
 
   @js.native
   trait AdminLinkProviderForUserRequest extends js.Object {
-    var UserPoolId: js.UndefOr[StringType]
-    var DestinationUser: js.UndefOr[ProviderUserIdentifierType]
-    var SourceUser: js.UndefOr[ProviderUserIdentifierType]
+    var DestinationUser: ProviderUserIdentifierType
+    var SourceUser: ProviderUserIdentifierType
+    var UserPoolId: StringType
   }
 
   object AdminLinkProviderForUserRequest {
     def apply(
-      UserPoolId: js.UndefOr[StringType] = js.undefined,
-      DestinationUser: js.UndefOr[ProviderUserIdentifierType] = js.undefined,
-      SourceUser: js.UndefOr[ProviderUserIdentifierType] = js.undefined): AdminLinkProviderForUserRequest = {
+      DestinationUser: ProviderUserIdentifierType,
+      SourceUser: ProviderUserIdentifierType,
+      UserPoolId: StringType): AdminLinkProviderForUserRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "UserPoolId" -> UserPoolId.map { x => x.asInstanceOf[js.Any] },
-        "DestinationUser" -> DestinationUser.map { x => x.asInstanceOf[js.Any] },
-        "SourceUser" -> SourceUser.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "DestinationUser" -> DestinationUser.asInstanceOf[js.Any],
+        "SourceUser" -> SourceUser.asInstanceOf[js.Any],
+        "UserPoolId" -> UserPoolId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AdminLinkProviderForUserRequest]
     }
@@ -906,21 +906,21 @@ package cognitoidentityprovider {
    */
   @js.native
   trait AdminListDevicesRequest extends js.Object {
-    var UserPoolId: js.UndefOr[UserPoolIdType]
-    var Username: js.UndefOr[UsernameType]
+    var UserPoolId: UserPoolIdType
+    var Username: UsernameType
     var Limit: js.UndefOr[QueryLimitType]
     var PaginationToken: js.UndefOr[SearchPaginationTokenType]
   }
 
   object AdminListDevicesRequest {
     def apply(
-      UserPoolId: js.UndefOr[UserPoolIdType] = js.undefined,
-      Username: js.UndefOr[UsernameType] = js.undefined,
+      UserPoolId: UserPoolIdType,
+      Username: UsernameType,
       Limit: js.UndefOr[QueryLimitType] = js.undefined,
       PaginationToken: js.UndefOr[SearchPaginationTokenType] = js.undefined): AdminListDevicesRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "UserPoolId" -> UserPoolId.map { x => x.asInstanceOf[js.Any] },
-        "Username" -> Username.map { x => x.asInstanceOf[js.Any] },
+        "UserPoolId" -> UserPoolId.asInstanceOf[js.Any],
+        "Username" -> Username.asInstanceOf[js.Any],
         "Limit" -> Limit.map { x => x.asInstanceOf[js.Any] },
         "PaginationToken" -> PaginationToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
@@ -951,21 +951,21 @@ package cognitoidentityprovider {
 
   @js.native
   trait AdminListGroupsForUserRequest extends js.Object {
-    var Username: js.UndefOr[UsernameType]
-    var UserPoolId: js.UndefOr[UserPoolIdType]
+    var UserPoolId: UserPoolIdType
+    var Username: UsernameType
     var Limit: js.UndefOr[QueryLimitType]
     var NextToken: js.UndefOr[PaginationKey]
   }
 
   object AdminListGroupsForUserRequest {
     def apply(
-      Username: js.UndefOr[UsernameType] = js.undefined,
-      UserPoolId: js.UndefOr[UserPoolIdType] = js.undefined,
+      UserPoolId: UserPoolIdType,
+      Username: UsernameType,
       Limit: js.UndefOr[QueryLimitType] = js.undefined,
       NextToken: js.UndefOr[PaginationKey] = js.undefined): AdminListGroupsForUserRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Username" -> Username.map { x => x.asInstanceOf[js.Any] },
-        "UserPoolId" -> UserPoolId.map { x => x.asInstanceOf[js.Any] },
+        "UserPoolId" -> UserPoolId.asInstanceOf[js.Any],
+        "Username" -> Username.asInstanceOf[js.Any],
         "Limit" -> Limit.map { x => x.asInstanceOf[js.Any] },
         "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
@@ -993,21 +993,21 @@ package cognitoidentityprovider {
 
   @js.native
   trait AdminListUserAuthEventsRequest extends js.Object {
-    var UserPoolId: js.UndefOr[UserPoolIdType]
-    var Username: js.UndefOr[UsernameType]
+    var UserPoolId: UserPoolIdType
+    var Username: UsernameType
     var MaxResults: js.UndefOr[QueryLimitType]
     var NextToken: js.UndefOr[PaginationKey]
   }
 
   object AdminListUserAuthEventsRequest {
     def apply(
-      UserPoolId: js.UndefOr[UserPoolIdType] = js.undefined,
-      Username: js.UndefOr[UsernameType] = js.undefined,
+      UserPoolId: UserPoolIdType,
+      Username: UsernameType,
       MaxResults: js.UndefOr[QueryLimitType] = js.undefined,
       NextToken: js.UndefOr[PaginationKey] = js.undefined): AdminListUserAuthEventsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "UserPoolId" -> UserPoolId.map { x => x.asInstanceOf[js.Any] },
-        "Username" -> Username.map { x => x.asInstanceOf[js.Any] },
+        "UserPoolId" -> UserPoolId.asInstanceOf[js.Any],
+        "Username" -> Username.asInstanceOf[js.Any],
         "MaxResults" -> MaxResults.map { x => x.asInstanceOf[js.Any] },
         "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
@@ -1035,20 +1035,20 @@ package cognitoidentityprovider {
 
   @js.native
   trait AdminRemoveUserFromGroupRequest extends js.Object {
-    var UserPoolId: js.UndefOr[UserPoolIdType]
-    var Username: js.UndefOr[UsernameType]
-    var GroupName: js.UndefOr[GroupNameType]
+    var GroupName: GroupNameType
+    var UserPoolId: UserPoolIdType
+    var Username: UsernameType
   }
 
   object AdminRemoveUserFromGroupRequest {
     def apply(
-      UserPoolId: js.UndefOr[UserPoolIdType] = js.undefined,
-      Username: js.UndefOr[UsernameType] = js.undefined,
-      GroupName: js.UndefOr[GroupNameType] = js.undefined): AdminRemoveUserFromGroupRequest = {
+      GroupName: GroupNameType,
+      UserPoolId: UserPoolIdType,
+      Username: UsernameType): AdminRemoveUserFromGroupRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "UserPoolId" -> UserPoolId.map { x => x.asInstanceOf[js.Any] },
-        "Username" -> Username.map { x => x.asInstanceOf[js.Any] },
-        "GroupName" -> GroupName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "GroupName" -> GroupName.asInstanceOf[js.Any],
+        "UserPoolId" -> UserPoolId.asInstanceOf[js.Any],
+        "Username" -> Username.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AdminRemoveUserFromGroupRequest]
     }
@@ -1059,17 +1059,17 @@ package cognitoidentityprovider {
    */
   @js.native
   trait AdminResetUserPasswordRequest extends js.Object {
-    var UserPoolId: js.UndefOr[UserPoolIdType]
-    var Username: js.UndefOr[UsernameType]
+    var UserPoolId: UserPoolIdType
+    var Username: UsernameType
   }
 
   object AdminResetUserPasswordRequest {
     def apply(
-      UserPoolId: js.UndefOr[UserPoolIdType] = js.undefined,
-      Username: js.UndefOr[UsernameType] = js.undefined): AdminResetUserPasswordRequest = {
+      UserPoolId: UserPoolIdType,
+      Username: UsernameType): AdminResetUserPasswordRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "UserPoolId" -> UserPoolId.map { x => x.asInstanceOf[js.Any] },
-        "Username" -> Username.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "UserPoolId" -> UserPoolId.asInstanceOf[js.Any],
+        "Username" -> Username.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AdminResetUserPasswordRequest]
     }
@@ -1096,32 +1096,32 @@ package cognitoidentityprovider {
    */
   @js.native
   trait AdminRespondToAuthChallengeRequest extends js.Object {
-    var ChallengeName: js.UndefOr[ChallengeNameType]
-    var UserPoolId: js.UndefOr[UserPoolIdType]
-    var Session: js.UndefOr[SessionType]
-    var ContextData: js.UndefOr[ContextDataType]
-    var ClientId: js.UndefOr[ClientIdType]
-    var ChallengeResponses: js.UndefOr[ChallengeResponsesType]
+    var ChallengeName: ChallengeNameType
+    var ClientId: ClientIdType
+    var UserPoolId: UserPoolIdType
     var AnalyticsMetadata: js.UndefOr[AnalyticsMetadataType]
+    var ChallengeResponses: js.UndefOr[ChallengeResponsesType]
+    var ContextData: js.UndefOr[ContextDataType]
+    var Session: js.UndefOr[SessionType]
   }
 
   object AdminRespondToAuthChallengeRequest {
     def apply(
-      ChallengeName: js.UndefOr[ChallengeNameType] = js.undefined,
-      UserPoolId: js.UndefOr[UserPoolIdType] = js.undefined,
-      Session: js.UndefOr[SessionType] = js.undefined,
-      ContextData: js.UndefOr[ContextDataType] = js.undefined,
-      ClientId: js.UndefOr[ClientIdType] = js.undefined,
+      ChallengeName: ChallengeNameType,
+      ClientId: ClientIdType,
+      UserPoolId: UserPoolIdType,
+      AnalyticsMetadata: js.UndefOr[AnalyticsMetadataType] = js.undefined,
       ChallengeResponses: js.UndefOr[ChallengeResponsesType] = js.undefined,
-      AnalyticsMetadata: js.UndefOr[AnalyticsMetadataType] = js.undefined): AdminRespondToAuthChallengeRequest = {
+      ContextData: js.UndefOr[ContextDataType] = js.undefined,
+      Session: js.UndefOr[SessionType] = js.undefined): AdminRespondToAuthChallengeRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ChallengeName" -> ChallengeName.map { x => x.asInstanceOf[js.Any] },
-        "UserPoolId" -> UserPoolId.map { x => x.asInstanceOf[js.Any] },
-        "Session" -> Session.map { x => x.asInstanceOf[js.Any] },
-        "ContextData" -> ContextData.map { x => x.asInstanceOf[js.Any] },
-        "ClientId" -> ClientId.map { x => x.asInstanceOf[js.Any] },
+        "ChallengeName" -> ChallengeName.asInstanceOf[js.Any],
+        "ClientId" -> ClientId.asInstanceOf[js.Any],
+        "UserPoolId" -> UserPoolId.asInstanceOf[js.Any],
+        "AnalyticsMetadata" -> AnalyticsMetadata.map { x => x.asInstanceOf[js.Any] },
         "ChallengeResponses" -> ChallengeResponses.map { x => x.asInstanceOf[js.Any] },
-        "AnalyticsMetadata" -> AnalyticsMetadata.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ContextData" -> ContextData.map { x => x.asInstanceOf[js.Any] },
+        "Session" -> Session.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AdminRespondToAuthChallengeRequest]
     }
@@ -1132,23 +1132,23 @@ package cognitoidentityprovider {
    */
   @js.native
   trait AdminRespondToAuthChallengeResponse extends js.Object {
-    var ChallengeName: js.UndefOr[ChallengeNameType]
-    var Session: js.UndefOr[SessionType]
-    var ChallengeParameters: js.UndefOr[ChallengeParametersType]
     var AuthenticationResult: js.UndefOr[AuthenticationResultType]
+    var ChallengeName: js.UndefOr[ChallengeNameType]
+    var ChallengeParameters: js.UndefOr[ChallengeParametersType]
+    var Session: js.UndefOr[SessionType]
   }
 
   object AdminRespondToAuthChallengeResponse {
     def apply(
+      AuthenticationResult: js.UndefOr[AuthenticationResultType] = js.undefined,
       ChallengeName: js.UndefOr[ChallengeNameType] = js.undefined,
-      Session: js.UndefOr[SessionType] = js.undefined,
       ChallengeParameters: js.UndefOr[ChallengeParametersType] = js.undefined,
-      AuthenticationResult: js.UndefOr[AuthenticationResultType] = js.undefined): AdminRespondToAuthChallengeResponse = {
+      Session: js.UndefOr[SessionType] = js.undefined): AdminRespondToAuthChallengeResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "AuthenticationResult" -> AuthenticationResult.map { x => x.asInstanceOf[js.Any] },
         "ChallengeName" -> ChallengeName.map { x => x.asInstanceOf[js.Any] },
-        "Session" -> Session.map { x => x.asInstanceOf[js.Any] },
         "ChallengeParameters" -> ChallengeParameters.map { x => x.asInstanceOf[js.Any] },
-        "AuthenticationResult" -> AuthenticationResult.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Session" -> Session.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AdminRespondToAuthChallengeResponse]
     }
@@ -1156,23 +1156,23 @@ package cognitoidentityprovider {
 
   @js.native
   trait AdminSetUserMFAPreferenceRequest extends js.Object {
+    var UserPoolId: UserPoolIdType
+    var Username: UsernameType
     var SMSMfaSettings: js.UndefOr[SMSMfaSettingsType]
     var SoftwareTokenMfaSettings: js.UndefOr[SoftwareTokenMfaSettingsType]
-    var Username: js.UndefOr[UsernameType]
-    var UserPoolId: js.UndefOr[UserPoolIdType]
   }
 
   object AdminSetUserMFAPreferenceRequest {
     def apply(
+      UserPoolId: UserPoolIdType,
+      Username: UsernameType,
       SMSMfaSettings: js.UndefOr[SMSMfaSettingsType] = js.undefined,
-      SoftwareTokenMfaSettings: js.UndefOr[SoftwareTokenMfaSettingsType] = js.undefined,
-      Username: js.UndefOr[UsernameType] = js.undefined,
-      UserPoolId: js.UndefOr[UserPoolIdType] = js.undefined): AdminSetUserMFAPreferenceRequest = {
+      SoftwareTokenMfaSettings: js.UndefOr[SoftwareTokenMfaSettingsType] = js.undefined): AdminSetUserMFAPreferenceRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "UserPoolId" -> UserPoolId.asInstanceOf[js.Any],
+        "Username" -> Username.asInstanceOf[js.Any],
         "SMSMfaSettings" -> SMSMfaSettings.map { x => x.asInstanceOf[js.Any] },
-        "SoftwareTokenMfaSettings" -> SoftwareTokenMfaSettings.map { x => x.asInstanceOf[js.Any] },
-        "Username" -> Username.map { x => x.asInstanceOf[js.Any] },
-        "UserPoolId" -> UserPoolId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "SoftwareTokenMfaSettings" -> SoftwareTokenMfaSettings.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AdminSetUserMFAPreferenceRequest]
     }
@@ -1196,20 +1196,20 @@ package cognitoidentityprovider {
    */
   @js.native
   trait AdminSetUserSettingsRequest extends js.Object {
-    var UserPoolId: js.UndefOr[UserPoolIdType]
-    var Username: js.UndefOr[UsernameType]
-    var MFAOptions: js.UndefOr[MFAOptionListType]
+    var MFAOptions: MFAOptionListType
+    var UserPoolId: UserPoolIdType
+    var Username: UsernameType
   }
 
   object AdminSetUserSettingsRequest {
     def apply(
-      UserPoolId: js.UndefOr[UserPoolIdType] = js.undefined,
-      Username: js.UndefOr[UsernameType] = js.undefined,
-      MFAOptions: js.UndefOr[MFAOptionListType] = js.undefined): AdminSetUserSettingsRequest = {
+      MFAOptions: MFAOptionListType,
+      UserPoolId: UserPoolIdType,
+      Username: UsernameType): AdminSetUserSettingsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "UserPoolId" -> UserPoolId.map { x => x.asInstanceOf[js.Any] },
-        "Username" -> Username.map { x => x.asInstanceOf[js.Any] },
-        "MFAOptions" -> MFAOptions.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "MFAOptions" -> MFAOptions.asInstanceOf[js.Any],
+        "UserPoolId" -> UserPoolId.asInstanceOf[js.Any],
+        "Username" -> Username.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AdminSetUserSettingsRequest]
     }
@@ -1233,23 +1233,23 @@ package cognitoidentityprovider {
 
   @js.native
   trait AdminUpdateAuthEventFeedbackRequest extends js.Object {
-    var UserPoolId: js.UndefOr[UserPoolIdType]
-    var Username: js.UndefOr[UsernameType]
-    var EventId: js.UndefOr[EventIdType]
-    var FeedbackValue: js.UndefOr[FeedbackValueType]
+    var EventId: EventIdType
+    var FeedbackValue: FeedbackValueType
+    var UserPoolId: UserPoolIdType
+    var Username: UsernameType
   }
 
   object AdminUpdateAuthEventFeedbackRequest {
     def apply(
-      UserPoolId: js.UndefOr[UserPoolIdType] = js.undefined,
-      Username: js.UndefOr[UsernameType] = js.undefined,
-      EventId: js.UndefOr[EventIdType] = js.undefined,
-      FeedbackValue: js.UndefOr[FeedbackValueType] = js.undefined): AdminUpdateAuthEventFeedbackRequest = {
+      EventId: EventIdType,
+      FeedbackValue: FeedbackValueType,
+      UserPoolId: UserPoolIdType,
+      Username: UsernameType): AdminUpdateAuthEventFeedbackRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "UserPoolId" -> UserPoolId.map { x => x.asInstanceOf[js.Any] },
-        "Username" -> Username.map { x => x.asInstanceOf[js.Any] },
-        "EventId" -> EventId.map { x => x.asInstanceOf[js.Any] },
-        "FeedbackValue" -> FeedbackValue.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "EventId" -> EventId.asInstanceOf[js.Any],
+        "FeedbackValue" -> FeedbackValue.asInstanceOf[js.Any],
+        "UserPoolId" -> UserPoolId.asInstanceOf[js.Any],
+        "Username" -> Username.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AdminUpdateAuthEventFeedbackRequest]
     }
@@ -1273,22 +1273,22 @@ package cognitoidentityprovider {
    */
   @js.native
   trait AdminUpdateDeviceStatusRequest extends js.Object {
-    var UserPoolId: js.UndefOr[UserPoolIdType]
-    var Username: js.UndefOr[UsernameType]
-    var DeviceKey: js.UndefOr[DeviceKeyType]
+    var DeviceKey: DeviceKeyType
+    var UserPoolId: UserPoolIdType
+    var Username: UsernameType
     var DeviceRememberedStatus: js.UndefOr[DeviceRememberedStatusType]
   }
 
   object AdminUpdateDeviceStatusRequest {
     def apply(
-      UserPoolId: js.UndefOr[UserPoolIdType] = js.undefined,
-      Username: js.UndefOr[UsernameType] = js.undefined,
-      DeviceKey: js.UndefOr[DeviceKeyType] = js.undefined,
+      DeviceKey: DeviceKeyType,
+      UserPoolId: UserPoolIdType,
+      Username: UsernameType,
       DeviceRememberedStatus: js.UndefOr[DeviceRememberedStatusType] = js.undefined): AdminUpdateDeviceStatusRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "UserPoolId" -> UserPoolId.map { x => x.asInstanceOf[js.Any] },
-        "Username" -> Username.map { x => x.asInstanceOf[js.Any] },
-        "DeviceKey" -> DeviceKey.map { x => x.asInstanceOf[js.Any] },
+        "DeviceKey" -> DeviceKey.asInstanceOf[js.Any],
+        "UserPoolId" -> UserPoolId.asInstanceOf[js.Any],
+        "Username" -> Username.asInstanceOf[js.Any],
         "DeviceRememberedStatus" -> DeviceRememberedStatus.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AdminUpdateDeviceStatusRequest]
@@ -1316,20 +1316,20 @@ package cognitoidentityprovider {
    */
   @js.native
   trait AdminUpdateUserAttributesRequest extends js.Object {
-    var UserPoolId: js.UndefOr[UserPoolIdType]
-    var Username: js.UndefOr[UsernameType]
-    var UserAttributes: js.UndefOr[AttributeListType]
+    var UserAttributes: AttributeListType
+    var UserPoolId: UserPoolIdType
+    var Username: UsernameType
   }
 
   object AdminUpdateUserAttributesRequest {
     def apply(
-      UserPoolId: js.UndefOr[UserPoolIdType] = js.undefined,
-      Username: js.UndefOr[UsernameType] = js.undefined,
-      UserAttributes: js.UndefOr[AttributeListType] = js.undefined): AdminUpdateUserAttributesRequest = {
+      UserAttributes: AttributeListType,
+      UserPoolId: UserPoolIdType,
+      Username: UsernameType): AdminUpdateUserAttributesRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "UserPoolId" -> UserPoolId.map { x => x.asInstanceOf[js.Any] },
-        "Username" -> Username.map { x => x.asInstanceOf[js.Any] },
-        "UserAttributes" -> UserAttributes.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "UserAttributes" -> UserAttributes.asInstanceOf[js.Any],
+        "UserPoolId" -> UserPoolId.asInstanceOf[js.Any],
+        "Username" -> Username.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AdminUpdateUserAttributesRequest]
     }
@@ -1356,17 +1356,17 @@ package cognitoidentityprovider {
    */
   @js.native
   trait AdminUserGlobalSignOutRequest extends js.Object {
-    var UserPoolId: js.UndefOr[UserPoolIdType]
-    var Username: js.UndefOr[UsernameType]
+    var UserPoolId: UserPoolIdType
+    var Username: UsernameType
   }
 
   object AdminUserGlobalSignOutRequest {
     def apply(
-      UserPoolId: js.UndefOr[UserPoolIdType] = js.undefined,
-      Username: js.UndefOr[UsernameType] = js.undefined): AdminUserGlobalSignOutRequest = {
+      UserPoolId: UserPoolIdType,
+      Username: UsernameType): AdminUserGlobalSignOutRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "UserPoolId" -> UserPoolId.map { x => x.asInstanceOf[js.Any] },
-        "Username" -> Username.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "UserPoolId" -> UserPoolId.asInstanceOf[js.Any],
+        "Username" -> Username.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AdminUserGlobalSignOutRequest]
     }
@@ -1409,22 +1409,22 @@ package cognitoidentityprovider {
    */
   @js.native
   trait AnalyticsConfigurationType extends js.Object {
-    var ApplicationId: js.UndefOr[HexStringType]
-    var RoleArn: js.UndefOr[ArnType]
-    var ExternalId: js.UndefOr[StringType]
+    var ApplicationId: HexStringType
+    var ExternalId: StringType
+    var RoleArn: ArnType
     var UserDataShared: js.UndefOr[BooleanType]
   }
 
   object AnalyticsConfigurationType {
     def apply(
-      ApplicationId: js.UndefOr[HexStringType] = js.undefined,
-      RoleArn: js.UndefOr[ArnType] = js.undefined,
-      ExternalId: js.UndefOr[StringType] = js.undefined,
+      ApplicationId: HexStringType,
+      ExternalId: StringType,
+      RoleArn: ArnType,
       UserDataShared: js.UndefOr[BooleanType] = js.undefined): AnalyticsConfigurationType = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ApplicationId" -> ApplicationId.map { x => x.asInstanceOf[js.Any] },
-        "RoleArn" -> RoleArn.map { x => x.asInstanceOf[js.Any] },
-        "ExternalId" -> ExternalId.map { x => x.asInstanceOf[js.Any] },
+        "ApplicationId" -> ApplicationId.asInstanceOf[js.Any],
+        "ExternalId" -> ExternalId.asInstanceOf[js.Any],
+        "RoleArn" -> RoleArn.asInstanceOf[js.Any],
         "UserDataShared" -> UserDataShared.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AnalyticsConfigurationType]
@@ -1499,16 +1499,16 @@ package cognitoidentityprovider {
    */
   @js.native
   trait AttributeType extends js.Object {
-    var Name: js.UndefOr[AttributeNameType]
+    var Name: AttributeNameType
     var Value: js.UndefOr[AttributeValueType]
   }
 
   object AttributeType {
     def apply(
-      Name: js.UndefOr[AttributeNameType] = js.undefined,
+      Name: AttributeNameType,
       Value: js.UndefOr[AttributeValueType] = js.undefined): AttributeType = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
+        "Name" -> Name.asInstanceOf[js.Any],
         "Value" -> Value.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AttributeType]
@@ -1520,35 +1520,35 @@ package cognitoidentityprovider {
    */
   @js.native
   trait AuthEventType extends js.Object {
-    var CreationDate: js.UndefOr[DateType]
-    var EventFeedback: js.UndefOr[EventFeedbackType]
-    var EventType: js.UndefOr[EventType]
-    var EventId: js.UndefOr[StringType]
-    var EventRisk: js.UndefOr[EventRiskType]
-    var EventContextData: js.UndefOr[EventContextDataType]
     var ChallengeResponses: js.UndefOr[ChallengeResponseListType]
+    var CreationDate: js.UndefOr[DateType]
+    var EventContextData: js.UndefOr[EventContextDataType]
+    var EventFeedback: js.UndefOr[EventFeedbackType]
+    var EventId: js.UndefOr[StringType]
     var EventResponse: js.UndefOr[EventResponseType]
+    var EventRisk: js.UndefOr[EventRiskType]
+    var EventType: js.UndefOr[EventType]
   }
 
   object AuthEventType {
     def apply(
-      CreationDate: js.UndefOr[DateType] = js.undefined,
-      EventFeedback: js.UndefOr[EventFeedbackType] = js.undefined,
-      EventType: js.UndefOr[EventType] = js.undefined,
-      EventId: js.UndefOr[StringType] = js.undefined,
-      EventRisk: js.UndefOr[EventRiskType] = js.undefined,
-      EventContextData: js.UndefOr[EventContextDataType] = js.undefined,
       ChallengeResponses: js.UndefOr[ChallengeResponseListType] = js.undefined,
-      EventResponse: js.UndefOr[EventResponseType] = js.undefined): AuthEventType = {
+      CreationDate: js.UndefOr[DateType] = js.undefined,
+      EventContextData: js.UndefOr[EventContextDataType] = js.undefined,
+      EventFeedback: js.UndefOr[EventFeedbackType] = js.undefined,
+      EventId: js.UndefOr[StringType] = js.undefined,
+      EventResponse: js.UndefOr[EventResponseType] = js.undefined,
+      EventRisk: js.UndefOr[EventRiskType] = js.undefined,
+      EventType: js.UndefOr[EventType] = js.undefined): AuthEventType = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "CreationDate" -> CreationDate.map { x => x.asInstanceOf[js.Any] },
-        "EventFeedback" -> EventFeedback.map { x => x.asInstanceOf[js.Any] },
-        "EventType" -> EventType.map { x => x.asInstanceOf[js.Any] },
-        "EventId" -> EventId.map { x => x.asInstanceOf[js.Any] },
-        "EventRisk" -> EventRisk.map { x => x.asInstanceOf[js.Any] },
-        "EventContextData" -> EventContextData.map { x => x.asInstanceOf[js.Any] },
         "ChallengeResponses" -> ChallengeResponses.map { x => x.asInstanceOf[js.Any] },
-        "EventResponse" -> EventResponse.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "CreationDate" -> CreationDate.map { x => x.asInstanceOf[js.Any] },
+        "EventContextData" -> EventContextData.map { x => x.asInstanceOf[js.Any] },
+        "EventFeedback" -> EventFeedback.map { x => x.asInstanceOf[js.Any] },
+        "EventId" -> EventId.map { x => x.asInstanceOf[js.Any] },
+        "EventResponse" -> EventResponse.map { x => x.asInstanceOf[js.Any] },
+        "EventRisk" -> EventRisk.map { x => x.asInstanceOf[js.Any] },
+        "EventType" -> EventType.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AuthEventType]
     }
@@ -1571,28 +1571,28 @@ package cognitoidentityprovider {
   @js.native
   trait AuthenticationResultType extends js.Object {
     var AccessToken: js.UndefOr[TokenModelType]
-    var NewDeviceMetadata: js.UndefOr[NewDeviceMetadataType]
+    var ExpiresIn: js.UndefOr[IntegerType]
     var IdToken: js.UndefOr[TokenModelType]
+    var NewDeviceMetadata: js.UndefOr[NewDeviceMetadataType]
     var RefreshToken: js.UndefOr[TokenModelType]
     var TokenType: js.UndefOr[StringType]
-    var ExpiresIn: js.UndefOr[IntegerType]
   }
 
   object AuthenticationResultType {
     def apply(
       AccessToken: js.UndefOr[TokenModelType] = js.undefined,
-      NewDeviceMetadata: js.UndefOr[NewDeviceMetadataType] = js.undefined,
+      ExpiresIn: js.UndefOr[IntegerType] = js.undefined,
       IdToken: js.UndefOr[TokenModelType] = js.undefined,
+      NewDeviceMetadata: js.UndefOr[NewDeviceMetadataType] = js.undefined,
       RefreshToken: js.UndefOr[TokenModelType] = js.undefined,
-      TokenType: js.UndefOr[StringType] = js.undefined,
-      ExpiresIn: js.UndefOr[IntegerType] = js.undefined): AuthenticationResultType = {
+      TokenType: js.UndefOr[StringType] = js.undefined): AuthenticationResultType = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AccessToken" -> AccessToken.map { x => x.asInstanceOf[js.Any] },
-        "NewDeviceMetadata" -> NewDeviceMetadata.map { x => x.asInstanceOf[js.Any] },
+        "ExpiresIn" -> ExpiresIn.map { x => x.asInstanceOf[js.Any] },
         "IdToken" -> IdToken.map { x => x.asInstanceOf[js.Any] },
+        "NewDeviceMetadata" -> NewDeviceMetadata.map { x => x.asInstanceOf[js.Any] },
         "RefreshToken" -> RefreshToken.map { x => x.asInstanceOf[js.Any] },
-        "TokenType" -> TokenType.map { x => x.asInstanceOf[js.Any] },
-        "ExpiresIn" -> ExpiresIn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "TokenType" -> TokenType.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AuthenticationResultType]
     }
@@ -1653,20 +1653,20 @@ package cognitoidentityprovider {
    */
   @js.native
   trait ChangePasswordRequest extends js.Object {
-    var PreviousPassword: js.UndefOr[PasswordType]
-    var ProposedPassword: js.UndefOr[PasswordType]
-    var AccessToken: js.UndefOr[TokenModelType]
+    var AccessToken: TokenModelType
+    var PreviousPassword: PasswordType
+    var ProposedPassword: PasswordType
   }
 
   object ChangePasswordRequest {
     def apply(
-      PreviousPassword: js.UndefOr[PasswordType] = js.undefined,
-      ProposedPassword: js.UndefOr[PasswordType] = js.undefined,
-      AccessToken: js.UndefOr[TokenModelType] = js.undefined): ChangePasswordRequest = {
+      AccessToken: TokenModelType,
+      PreviousPassword: PasswordType,
+      ProposedPassword: PasswordType): ChangePasswordRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "PreviousPassword" -> PreviousPassword.map { x => x.asInstanceOf[js.Any] },
-        "ProposedPassword" -> ProposedPassword.map { x => x.asInstanceOf[js.Any] },
-        "AccessToken" -> AccessToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "AccessToken" -> AccessToken.asInstanceOf[js.Any],
+        "PreviousPassword" -> PreviousPassword.asInstanceOf[js.Any],
+        "ProposedPassword" -> ProposedPassword.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ChangePasswordRequest]
     }
@@ -1693,20 +1693,20 @@ package cognitoidentityprovider {
    */
   @js.native
   trait CodeDeliveryDetailsType extends js.Object {
-    var Destination: js.UndefOr[StringType]
-    var DeliveryMedium: js.UndefOr[DeliveryMediumType]
     var AttributeName: js.UndefOr[AttributeNameType]
+    var DeliveryMedium: js.UndefOr[DeliveryMediumType]
+    var Destination: js.UndefOr[StringType]
   }
 
   object CodeDeliveryDetailsType {
     def apply(
-      Destination: js.UndefOr[StringType] = js.undefined,
+      AttributeName: js.UndefOr[AttributeNameType] = js.undefined,
       DeliveryMedium: js.UndefOr[DeliveryMediumType] = js.undefined,
-      AttributeName: js.UndefOr[AttributeNameType] = js.undefined): CodeDeliveryDetailsType = {
+      Destination: js.UndefOr[StringType] = js.undefined): CodeDeliveryDetailsType = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Destination" -> Destination.map { x => x.asInstanceOf[js.Any] },
+        "AttributeName" -> AttributeName.map { x => x.asInstanceOf[js.Any] },
         "DeliveryMedium" -> DeliveryMedium.map { x => x.asInstanceOf[js.Any] },
-        "AttributeName" -> AttributeName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Destination" -> Destination.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CodeDeliveryDetailsType]
     }
@@ -1717,14 +1717,14 @@ package cognitoidentityprovider {
    */
   @js.native
   trait CompromisedCredentialsActionsType extends js.Object {
-    var EventAction: js.UndefOr[CompromisedCredentialsEventActionType]
+    var EventAction: CompromisedCredentialsEventActionType
   }
 
   object CompromisedCredentialsActionsType {
     def apply(
-      EventAction: js.UndefOr[CompromisedCredentialsEventActionType] = js.undefined): CompromisedCredentialsActionsType = {
+      EventAction: CompromisedCredentialsEventActionType): CompromisedCredentialsActionsType = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "EventAction" -> EventAction.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "EventAction" -> EventAction.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CompromisedCredentialsActionsType]
     }
@@ -1742,17 +1742,17 @@ package cognitoidentityprovider {
    */
   @js.native
   trait CompromisedCredentialsRiskConfigurationType extends js.Object {
+    var Actions: CompromisedCredentialsActionsType
     var EventFilter: js.UndefOr[EventFiltersType]
-    var Actions: js.UndefOr[CompromisedCredentialsActionsType]
   }
 
   object CompromisedCredentialsRiskConfigurationType {
     def apply(
-      EventFilter: js.UndefOr[EventFiltersType] = js.undefined,
-      Actions: js.UndefOr[CompromisedCredentialsActionsType] = js.undefined): CompromisedCredentialsRiskConfigurationType = {
+      Actions: CompromisedCredentialsActionsType,
+      EventFilter: js.UndefOr[EventFiltersType] = js.undefined): CompromisedCredentialsRiskConfigurationType = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "EventFilter" -> EventFilter.map { x => x.asInstanceOf[js.Any] },
-        "Actions" -> Actions.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Actions" -> Actions.asInstanceOf[js.Any],
+        "EventFilter" -> EventFilter.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CompromisedCredentialsRiskConfigurationType]
     }
@@ -1763,23 +1763,23 @@ package cognitoidentityprovider {
    */
   @js.native
   trait ConfirmDeviceRequest extends js.Object {
-    var AccessToken: js.UndefOr[TokenModelType]
-    var DeviceKey: js.UndefOr[DeviceKeyType]
-    var DeviceSecretVerifierConfig: js.UndefOr[DeviceSecretVerifierConfigType]
+    var AccessToken: TokenModelType
+    var DeviceKey: DeviceKeyType
     var DeviceName: js.UndefOr[DeviceNameType]
+    var DeviceSecretVerifierConfig: js.UndefOr[DeviceSecretVerifierConfigType]
   }
 
   object ConfirmDeviceRequest {
     def apply(
-      AccessToken: js.UndefOr[TokenModelType] = js.undefined,
-      DeviceKey: js.UndefOr[DeviceKeyType] = js.undefined,
-      DeviceSecretVerifierConfig: js.UndefOr[DeviceSecretVerifierConfigType] = js.undefined,
-      DeviceName: js.UndefOr[DeviceNameType] = js.undefined): ConfirmDeviceRequest = {
+      AccessToken: TokenModelType,
+      DeviceKey: DeviceKeyType,
+      DeviceName: js.UndefOr[DeviceNameType] = js.undefined,
+      DeviceSecretVerifierConfig: js.UndefOr[DeviceSecretVerifierConfigType] = js.undefined): ConfirmDeviceRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "AccessToken" -> AccessToken.map { x => x.asInstanceOf[js.Any] },
-        "DeviceKey" -> DeviceKey.map { x => x.asInstanceOf[js.Any] },
-        "DeviceSecretVerifierConfig" -> DeviceSecretVerifierConfig.map { x => x.asInstanceOf[js.Any] },
-        "DeviceName" -> DeviceName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "AccessToken" -> AccessToken.asInstanceOf[js.Any],
+        "DeviceKey" -> DeviceKey.asInstanceOf[js.Any],
+        "DeviceName" -> DeviceName.map { x => x.asInstanceOf[js.Any] },
+        "DeviceSecretVerifierConfig" -> DeviceSecretVerifierConfig.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ConfirmDeviceRequest]
     }
@@ -1808,32 +1808,32 @@ package cognitoidentityprovider {
    */
   @js.native
   trait ConfirmForgotPasswordRequest extends js.Object {
-    var Username: js.UndefOr[UsernameType]
-    var SecretHash: js.UndefOr[SecretHashType]
-    var Password: js.UndefOr[PasswordType]
-    var ClientId: js.UndefOr[ClientIdType]
-    var ConfirmationCode: js.UndefOr[ConfirmationCodeType]
-    var UserContextData: js.UndefOr[UserContextDataType]
+    var ClientId: ClientIdType
+    var ConfirmationCode: ConfirmationCodeType
+    var Password: PasswordType
+    var Username: UsernameType
     var AnalyticsMetadata: js.UndefOr[AnalyticsMetadataType]
+    var SecretHash: js.UndefOr[SecretHashType]
+    var UserContextData: js.UndefOr[UserContextDataType]
   }
 
   object ConfirmForgotPasswordRequest {
     def apply(
-      Username: js.UndefOr[UsernameType] = js.undefined,
+      ClientId: ClientIdType,
+      ConfirmationCode: ConfirmationCodeType,
+      Password: PasswordType,
+      Username: UsernameType,
+      AnalyticsMetadata: js.UndefOr[AnalyticsMetadataType] = js.undefined,
       SecretHash: js.UndefOr[SecretHashType] = js.undefined,
-      Password: js.UndefOr[PasswordType] = js.undefined,
-      ClientId: js.UndefOr[ClientIdType] = js.undefined,
-      ConfirmationCode: js.UndefOr[ConfirmationCodeType] = js.undefined,
-      UserContextData: js.UndefOr[UserContextDataType] = js.undefined,
-      AnalyticsMetadata: js.UndefOr[AnalyticsMetadataType] = js.undefined): ConfirmForgotPasswordRequest = {
+      UserContextData: js.UndefOr[UserContextDataType] = js.undefined): ConfirmForgotPasswordRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Username" -> Username.map { x => x.asInstanceOf[js.Any] },
+        "ClientId" -> ClientId.asInstanceOf[js.Any],
+        "ConfirmationCode" -> ConfirmationCode.asInstanceOf[js.Any],
+        "Password" -> Password.asInstanceOf[js.Any],
+        "Username" -> Username.asInstanceOf[js.Any],
+        "AnalyticsMetadata" -> AnalyticsMetadata.map { x => x.asInstanceOf[js.Any] },
         "SecretHash" -> SecretHash.map { x => x.asInstanceOf[js.Any] },
-        "Password" -> Password.map { x => x.asInstanceOf[js.Any] },
-        "ClientId" -> ClientId.map { x => x.asInstanceOf[js.Any] },
-        "ConfirmationCode" -> ConfirmationCode.map { x => x.asInstanceOf[js.Any] },
-        "UserContextData" -> UserContextData.map { x => x.asInstanceOf[js.Any] },
-        "AnalyticsMetadata" -> AnalyticsMetadata.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "UserContextData" -> UserContextData.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ConfirmForgotPasswordRequest]
     }
@@ -1860,32 +1860,32 @@ package cognitoidentityprovider {
    */
   @js.native
   trait ConfirmSignUpRequest extends js.Object {
-    var Username: js.UndefOr[UsernameType]
-    var SecretHash: js.UndefOr[SecretHashType]
-    var ForceAliasCreation: js.UndefOr[ForceAliasCreation]
-    var ClientId: js.UndefOr[ClientIdType]
-    var ConfirmationCode: js.UndefOr[ConfirmationCodeType]
-    var UserContextData: js.UndefOr[UserContextDataType]
+    var ClientId: ClientIdType
+    var ConfirmationCode: ConfirmationCodeType
+    var Username: UsernameType
     var AnalyticsMetadata: js.UndefOr[AnalyticsMetadataType]
+    var ForceAliasCreation: js.UndefOr[ForceAliasCreation]
+    var SecretHash: js.UndefOr[SecretHashType]
+    var UserContextData: js.UndefOr[UserContextDataType]
   }
 
   object ConfirmSignUpRequest {
     def apply(
-      Username: js.UndefOr[UsernameType] = js.undefined,
-      SecretHash: js.UndefOr[SecretHashType] = js.undefined,
+      ClientId: ClientIdType,
+      ConfirmationCode: ConfirmationCodeType,
+      Username: UsernameType,
+      AnalyticsMetadata: js.UndefOr[AnalyticsMetadataType] = js.undefined,
       ForceAliasCreation: js.UndefOr[ForceAliasCreation] = js.undefined,
-      ClientId: js.UndefOr[ClientIdType] = js.undefined,
-      ConfirmationCode: js.UndefOr[ConfirmationCodeType] = js.undefined,
-      UserContextData: js.UndefOr[UserContextDataType] = js.undefined,
-      AnalyticsMetadata: js.UndefOr[AnalyticsMetadataType] = js.undefined): ConfirmSignUpRequest = {
+      SecretHash: js.UndefOr[SecretHashType] = js.undefined,
+      UserContextData: js.UndefOr[UserContextDataType] = js.undefined): ConfirmSignUpRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Username" -> Username.map { x => x.asInstanceOf[js.Any] },
-        "SecretHash" -> SecretHash.map { x => x.asInstanceOf[js.Any] },
+        "ClientId" -> ClientId.asInstanceOf[js.Any],
+        "ConfirmationCode" -> ConfirmationCode.asInstanceOf[js.Any],
+        "Username" -> Username.asInstanceOf[js.Any],
+        "AnalyticsMetadata" -> AnalyticsMetadata.map { x => x.asInstanceOf[js.Any] },
         "ForceAliasCreation" -> ForceAliasCreation.map { x => x.asInstanceOf[js.Any] },
-        "ClientId" -> ClientId.map { x => x.asInstanceOf[js.Any] },
-        "ConfirmationCode" -> ConfirmationCode.map { x => x.asInstanceOf[js.Any] },
-        "UserContextData" -> UserContextData.map { x => x.asInstanceOf[js.Any] },
-        "AnalyticsMetadata" -> AnalyticsMetadata.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "SecretHash" -> SecretHash.map { x => x.asInstanceOf[js.Any] },
+        "UserContextData" -> UserContextData.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ConfirmSignUpRequest]
     }
@@ -1912,26 +1912,26 @@ package cognitoidentityprovider {
    */
   @js.native
   trait ContextDataType extends js.Object {
-    var HttpHeaders: js.UndefOr[HttpHeaderList]
-    var IpAddress: js.UndefOr[StringType]
-    var ServerName: js.UndefOr[StringType]
+    var HttpHeaders: HttpHeaderList
+    var IpAddress: StringType
+    var ServerName: StringType
+    var ServerPath: StringType
     var EncodedData: js.UndefOr[StringType]
-    var ServerPath: js.UndefOr[StringType]
   }
 
   object ContextDataType {
     def apply(
-      HttpHeaders: js.UndefOr[HttpHeaderList] = js.undefined,
-      IpAddress: js.UndefOr[StringType] = js.undefined,
-      ServerName: js.UndefOr[StringType] = js.undefined,
-      EncodedData: js.UndefOr[StringType] = js.undefined,
-      ServerPath: js.UndefOr[StringType] = js.undefined): ContextDataType = {
+      HttpHeaders: HttpHeaderList,
+      IpAddress: StringType,
+      ServerName: StringType,
+      ServerPath: StringType,
+      EncodedData: js.UndefOr[StringType] = js.undefined): ContextDataType = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "HttpHeaders" -> HttpHeaders.map { x => x.asInstanceOf[js.Any] },
-        "IpAddress" -> IpAddress.map { x => x.asInstanceOf[js.Any] },
-        "ServerName" -> ServerName.map { x => x.asInstanceOf[js.Any] },
-        "EncodedData" -> EncodedData.map { x => x.asInstanceOf[js.Any] },
-        "ServerPath" -> ServerPath.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "HttpHeaders" -> HttpHeaders.asInstanceOf[js.Any],
+        "IpAddress" -> IpAddress.asInstanceOf[js.Any],
+        "ServerName" -> ServerName.asInstanceOf[js.Any],
+        "ServerPath" -> ServerPath.asInstanceOf[js.Any],
+        "EncodedData" -> EncodedData.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ContextDataType]
     }
@@ -1939,24 +1939,24 @@ package cognitoidentityprovider {
 
   @js.native
   trait CreateGroupRequest extends js.Object {
-    var GroupName: js.UndefOr[GroupNameType]
+    var GroupName: GroupNameType
+    var UserPoolId: UserPoolIdType
     var Description: js.UndefOr[DescriptionType]
-    var UserPoolId: js.UndefOr[UserPoolIdType]
     var Precedence: js.UndefOr[PrecedenceType]
     var RoleArn: js.UndefOr[ArnType]
   }
 
   object CreateGroupRequest {
     def apply(
-      GroupName: js.UndefOr[GroupNameType] = js.undefined,
+      GroupName: GroupNameType,
+      UserPoolId: UserPoolIdType,
       Description: js.UndefOr[DescriptionType] = js.undefined,
-      UserPoolId: js.UndefOr[UserPoolIdType] = js.undefined,
       Precedence: js.UndefOr[PrecedenceType] = js.undefined,
       RoleArn: js.UndefOr[ArnType] = js.undefined): CreateGroupRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "GroupName" -> GroupName.map { x => x.asInstanceOf[js.Any] },
+        "GroupName" -> GroupName.asInstanceOf[js.Any],
+        "UserPoolId" -> UserPoolId.asInstanceOf[js.Any],
         "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
-        "UserPoolId" -> UserPoolId.map { x => x.asInstanceOf[js.Any] },
         "Precedence" -> Precedence.map { x => x.asInstanceOf[js.Any] },
         "RoleArn" -> RoleArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
@@ -1981,29 +1981,29 @@ package cognitoidentityprovider {
 
   @js.native
   trait CreateIdentityProviderRequest extends js.Object {
-    var ProviderDetails: js.UndefOr[ProviderDetailsType]
+    var ProviderDetails: ProviderDetailsType
+    var ProviderName: ProviderNameTypeV1
+    var ProviderType: IdentityProviderTypeType
+    var UserPoolId: UserPoolIdType
     var AttributeMapping: js.UndefOr[AttributeMappingType]
-    var ProviderType: js.UndefOr[IdentityProviderTypeType]
-    var UserPoolId: js.UndefOr[UserPoolIdType]
     var IdpIdentifiers: js.UndefOr[IdpIdentifiersListType]
-    var ProviderName: js.UndefOr[ProviderNameTypeV1]
   }
 
   object CreateIdentityProviderRequest {
     def apply(
-      ProviderDetails: js.UndefOr[ProviderDetailsType] = js.undefined,
+      ProviderDetails: ProviderDetailsType,
+      ProviderName: ProviderNameTypeV1,
+      ProviderType: IdentityProviderTypeType,
+      UserPoolId: UserPoolIdType,
       AttributeMapping: js.UndefOr[AttributeMappingType] = js.undefined,
-      ProviderType: js.UndefOr[IdentityProviderTypeType] = js.undefined,
-      UserPoolId: js.UndefOr[UserPoolIdType] = js.undefined,
-      IdpIdentifiers: js.UndefOr[IdpIdentifiersListType] = js.undefined,
-      ProviderName: js.UndefOr[ProviderNameTypeV1] = js.undefined): CreateIdentityProviderRequest = {
+      IdpIdentifiers: js.UndefOr[IdpIdentifiersListType] = js.undefined): CreateIdentityProviderRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ProviderDetails" -> ProviderDetails.map { x => x.asInstanceOf[js.Any] },
+        "ProviderDetails" -> ProviderDetails.asInstanceOf[js.Any],
+        "ProviderName" -> ProviderName.asInstanceOf[js.Any],
+        "ProviderType" -> ProviderType.asInstanceOf[js.Any],
+        "UserPoolId" -> UserPoolId.asInstanceOf[js.Any],
         "AttributeMapping" -> AttributeMapping.map { x => x.asInstanceOf[js.Any] },
-        "ProviderType" -> ProviderType.map { x => x.asInstanceOf[js.Any] },
-        "UserPoolId" -> UserPoolId.map { x => x.asInstanceOf[js.Any] },
-        "IdpIdentifiers" -> IdpIdentifiers.map { x => x.asInstanceOf[js.Any] },
-        "ProviderName" -> ProviderName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "IdpIdentifiers" -> IdpIdentifiers.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateIdentityProviderRequest]
     }
@@ -2011,14 +2011,14 @@ package cognitoidentityprovider {
 
   @js.native
   trait CreateIdentityProviderResponse extends js.Object {
-    var IdentityProvider: js.UndefOr[IdentityProviderType]
+    var IdentityProvider: IdentityProviderType
   }
 
   object CreateIdentityProviderResponse {
     def apply(
-      IdentityProvider: js.UndefOr[IdentityProviderType] = js.undefined): CreateIdentityProviderResponse = {
+      IdentityProvider: IdentityProviderType): CreateIdentityProviderResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "IdentityProvider" -> IdentityProvider.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "IdentityProvider" -> IdentityProvider.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateIdentityProviderResponse]
     }
@@ -2026,22 +2026,22 @@ package cognitoidentityprovider {
 
   @js.native
   trait CreateResourceServerRequest extends js.Object {
-    var UserPoolId: js.UndefOr[UserPoolIdType]
-    var Identifier: js.UndefOr[ResourceServerIdentifierType]
-    var Name: js.UndefOr[ResourceServerNameType]
+    var Identifier: ResourceServerIdentifierType
+    var Name: ResourceServerNameType
+    var UserPoolId: UserPoolIdType
     var Scopes: js.UndefOr[ResourceServerScopeListType]
   }
 
   object CreateResourceServerRequest {
     def apply(
-      UserPoolId: js.UndefOr[UserPoolIdType] = js.undefined,
-      Identifier: js.UndefOr[ResourceServerIdentifierType] = js.undefined,
-      Name: js.UndefOr[ResourceServerNameType] = js.undefined,
+      Identifier: ResourceServerIdentifierType,
+      Name: ResourceServerNameType,
+      UserPoolId: UserPoolIdType,
       Scopes: js.UndefOr[ResourceServerScopeListType] = js.undefined): CreateResourceServerRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "UserPoolId" -> UserPoolId.map { x => x.asInstanceOf[js.Any] },
-        "Identifier" -> Identifier.map { x => x.asInstanceOf[js.Any] },
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
+        "Identifier" -> Identifier.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
+        "UserPoolId" -> UserPoolId.asInstanceOf[js.Any],
         "Scopes" -> Scopes.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateResourceServerRequest]
@@ -2050,14 +2050,14 @@ package cognitoidentityprovider {
 
   @js.native
   trait CreateResourceServerResponse extends js.Object {
-    var ResourceServer: js.UndefOr[ResourceServerType]
+    var ResourceServer: ResourceServerType
   }
 
   object CreateResourceServerResponse {
     def apply(
-      ResourceServer: js.UndefOr[ResourceServerType] = js.undefined): CreateResourceServerResponse = {
+      ResourceServer: ResourceServerType): CreateResourceServerResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ResourceServer" -> ResourceServer.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ResourceServer" -> ResourceServer.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateResourceServerResponse]
     }
@@ -2068,20 +2068,20 @@ package cognitoidentityprovider {
    */
   @js.native
   trait CreateUserImportJobRequest extends js.Object {
-    var JobName: js.UndefOr[UserImportJobNameType]
-    var UserPoolId: js.UndefOr[UserPoolIdType]
-    var CloudWatchLogsRoleArn: js.UndefOr[ArnType]
+    var CloudWatchLogsRoleArn: ArnType
+    var JobName: UserImportJobNameType
+    var UserPoolId: UserPoolIdType
   }
 
   object CreateUserImportJobRequest {
     def apply(
-      JobName: js.UndefOr[UserImportJobNameType] = js.undefined,
-      UserPoolId: js.UndefOr[UserPoolIdType] = js.undefined,
-      CloudWatchLogsRoleArn: js.UndefOr[ArnType] = js.undefined): CreateUserImportJobRequest = {
+      CloudWatchLogsRoleArn: ArnType,
+      JobName: UserImportJobNameType,
+      UserPoolId: UserPoolIdType): CreateUserImportJobRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "JobName" -> JobName.map { x => x.asInstanceOf[js.Any] },
-        "UserPoolId" -> UserPoolId.map { x => x.asInstanceOf[js.Any] },
-        "CloudWatchLogsRoleArn" -> CloudWatchLogsRoleArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "CloudWatchLogsRoleArn" -> CloudWatchLogsRoleArn.asInstanceOf[js.Any],
+        "JobName" -> JobName.asInstanceOf[js.Any],
+        "UserPoolId" -> UserPoolId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateUserImportJobRequest]
     }
@@ -2110,56 +2110,56 @@ package cognitoidentityprovider {
    */
   @js.native
   trait CreateUserPoolClientRequest extends js.Object {
-    var AllowedOAuthFlowsUserPoolClient: js.UndefOr[BooleanType]
-    var GenerateSecret: js.UndefOr[GenerateSecret]
-    var ExplicitAuthFlows: js.UndefOr[ExplicitAuthFlowsListType]
-    var RefreshTokenValidity: js.UndefOr[RefreshTokenValidityType]
-    var DefaultRedirectURI: js.UndefOr[RedirectUrlType]
-    var WriteAttributes: js.UndefOr[ClientPermissionListType]
-    var UserPoolId: js.UndefOr[UserPoolIdType]
-    var AllowedOAuthScopes: js.UndefOr[ScopeListType]
+    var ClientName: ClientNameType
+    var UserPoolId: UserPoolIdType
     var AllowedOAuthFlows: js.UndefOr[OAuthFlowsType]
-    var ClientName: js.UndefOr[ClientNameType]
-    var ReadAttributes: js.UndefOr[ClientPermissionListType]
-    var SupportedIdentityProviders: js.UndefOr[SupportedIdentityProvidersListType]
+    var AllowedOAuthFlowsUserPoolClient: js.UndefOr[BooleanType]
+    var AllowedOAuthScopes: js.UndefOr[ScopeListType]
     var AnalyticsConfiguration: js.UndefOr[AnalyticsConfigurationType]
     var CallbackURLs: js.UndefOr[CallbackURLsListType]
+    var DefaultRedirectURI: js.UndefOr[RedirectUrlType]
+    var ExplicitAuthFlows: js.UndefOr[ExplicitAuthFlowsListType]
+    var GenerateSecret: js.UndefOr[GenerateSecret]
     var LogoutURLs: js.UndefOr[LogoutURLsListType]
+    var ReadAttributes: js.UndefOr[ClientPermissionListType]
+    var RefreshTokenValidity: js.UndefOr[RefreshTokenValidityType]
+    var SupportedIdentityProviders: js.UndefOr[SupportedIdentityProvidersListType]
+    var WriteAttributes: js.UndefOr[ClientPermissionListType]
   }
 
   object CreateUserPoolClientRequest {
     def apply(
-      AllowedOAuthFlowsUserPoolClient: js.UndefOr[BooleanType] = js.undefined,
-      GenerateSecret: js.UndefOr[GenerateSecret] = js.undefined,
-      ExplicitAuthFlows: js.UndefOr[ExplicitAuthFlowsListType] = js.undefined,
-      RefreshTokenValidity: js.UndefOr[RefreshTokenValidityType] = js.undefined,
-      DefaultRedirectURI: js.UndefOr[RedirectUrlType] = js.undefined,
-      WriteAttributes: js.UndefOr[ClientPermissionListType] = js.undefined,
-      UserPoolId: js.UndefOr[UserPoolIdType] = js.undefined,
-      AllowedOAuthScopes: js.UndefOr[ScopeListType] = js.undefined,
+      ClientName: ClientNameType,
+      UserPoolId: UserPoolIdType,
       AllowedOAuthFlows: js.UndefOr[OAuthFlowsType] = js.undefined,
-      ClientName: js.UndefOr[ClientNameType] = js.undefined,
-      ReadAttributes: js.UndefOr[ClientPermissionListType] = js.undefined,
-      SupportedIdentityProviders: js.UndefOr[SupportedIdentityProvidersListType] = js.undefined,
+      AllowedOAuthFlowsUserPoolClient: js.UndefOr[BooleanType] = js.undefined,
+      AllowedOAuthScopes: js.UndefOr[ScopeListType] = js.undefined,
       AnalyticsConfiguration: js.UndefOr[AnalyticsConfigurationType] = js.undefined,
       CallbackURLs: js.UndefOr[CallbackURLsListType] = js.undefined,
-      LogoutURLs: js.UndefOr[LogoutURLsListType] = js.undefined): CreateUserPoolClientRequest = {
+      DefaultRedirectURI: js.UndefOr[RedirectUrlType] = js.undefined,
+      ExplicitAuthFlows: js.UndefOr[ExplicitAuthFlowsListType] = js.undefined,
+      GenerateSecret: js.UndefOr[GenerateSecret] = js.undefined,
+      LogoutURLs: js.UndefOr[LogoutURLsListType] = js.undefined,
+      ReadAttributes: js.UndefOr[ClientPermissionListType] = js.undefined,
+      RefreshTokenValidity: js.UndefOr[RefreshTokenValidityType] = js.undefined,
+      SupportedIdentityProviders: js.UndefOr[SupportedIdentityProvidersListType] = js.undefined,
+      WriteAttributes: js.UndefOr[ClientPermissionListType] = js.undefined): CreateUserPoolClientRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "AllowedOAuthFlowsUserPoolClient" -> AllowedOAuthFlowsUserPoolClient.map { x => x.asInstanceOf[js.Any] },
-        "GenerateSecret" -> GenerateSecret.map { x => x.asInstanceOf[js.Any] },
-        "ExplicitAuthFlows" -> ExplicitAuthFlows.map { x => x.asInstanceOf[js.Any] },
-        "RefreshTokenValidity" -> RefreshTokenValidity.map { x => x.asInstanceOf[js.Any] },
-        "DefaultRedirectURI" -> DefaultRedirectURI.map { x => x.asInstanceOf[js.Any] },
-        "WriteAttributes" -> WriteAttributes.map { x => x.asInstanceOf[js.Any] },
-        "UserPoolId" -> UserPoolId.map { x => x.asInstanceOf[js.Any] },
-        "AllowedOAuthScopes" -> AllowedOAuthScopes.map { x => x.asInstanceOf[js.Any] },
+        "ClientName" -> ClientName.asInstanceOf[js.Any],
+        "UserPoolId" -> UserPoolId.asInstanceOf[js.Any],
         "AllowedOAuthFlows" -> AllowedOAuthFlows.map { x => x.asInstanceOf[js.Any] },
-        "ClientName" -> ClientName.map { x => x.asInstanceOf[js.Any] },
-        "ReadAttributes" -> ReadAttributes.map { x => x.asInstanceOf[js.Any] },
-        "SupportedIdentityProviders" -> SupportedIdentityProviders.map { x => x.asInstanceOf[js.Any] },
+        "AllowedOAuthFlowsUserPoolClient" -> AllowedOAuthFlowsUserPoolClient.map { x => x.asInstanceOf[js.Any] },
+        "AllowedOAuthScopes" -> AllowedOAuthScopes.map { x => x.asInstanceOf[js.Any] },
         "AnalyticsConfiguration" -> AnalyticsConfiguration.map { x => x.asInstanceOf[js.Any] },
         "CallbackURLs" -> CallbackURLs.map { x => x.asInstanceOf[js.Any] },
-        "LogoutURLs" -> LogoutURLs.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "DefaultRedirectURI" -> DefaultRedirectURI.map { x => x.asInstanceOf[js.Any] },
+        "ExplicitAuthFlows" -> ExplicitAuthFlows.map { x => x.asInstanceOf[js.Any] },
+        "GenerateSecret" -> GenerateSecret.map { x => x.asInstanceOf[js.Any] },
+        "LogoutURLs" -> LogoutURLs.map { x => x.asInstanceOf[js.Any] },
+        "ReadAttributes" -> ReadAttributes.map { x => x.asInstanceOf[js.Any] },
+        "RefreshTokenValidity" -> RefreshTokenValidity.map { x => x.asInstanceOf[js.Any] },
+        "SupportedIdentityProviders" -> SupportedIdentityProviders.map { x => x.asInstanceOf[js.Any] },
+        "WriteAttributes" -> WriteAttributes.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateUserPoolClientRequest]
     }
@@ -2185,19 +2185,19 @@ package cognitoidentityprovider {
 
   @js.native
   trait CreateUserPoolDomainRequest extends js.Object {
-    var Domain: js.UndefOr[DomainType]
-    var UserPoolId: js.UndefOr[UserPoolIdType]
+    var Domain: DomainType
+    var UserPoolId: UserPoolIdType
     var CustomDomainConfig: js.UndefOr[CustomDomainConfigType]
   }
 
   object CreateUserPoolDomainRequest {
     def apply(
-      Domain: js.UndefOr[DomainType] = js.undefined,
-      UserPoolId: js.UndefOr[UserPoolIdType] = js.undefined,
+      Domain: DomainType,
+      UserPoolId: UserPoolIdType,
       CustomDomainConfig: js.UndefOr[CustomDomainConfigType] = js.undefined): CreateUserPoolDomainRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Domain" -> Domain.map { x => x.asInstanceOf[js.Any] },
-        "UserPoolId" -> UserPoolId.map { x => x.asInstanceOf[js.Any] },
+        "Domain" -> Domain.asInstanceOf[js.Any],
+        "UserPoolId" -> UserPoolId.asInstanceOf[js.Any],
         "CustomDomainConfig" -> CustomDomainConfig.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateUserPoolDomainRequest]
@@ -2224,67 +2224,67 @@ package cognitoidentityprovider {
    */
   @js.native
   trait CreateUserPoolRequest extends js.Object {
-    var SmsVerificationMessage: js.UndefOr[SmsVerificationMessageType]
-    var AutoVerifiedAttributes: js.UndefOr[VerifiedAttributesListType]
-    var Policies: js.UndefOr[UserPoolPolicyType]
-    var UserPoolAddOns: js.UndefOr[UserPoolAddOnsType]
-    var EmailConfiguration: js.UndefOr[EmailConfigurationType]
+    var PoolName: UserPoolNameType
     var AdminCreateUserConfig: js.UndefOr[AdminCreateUserConfigType]
-    var UsernameAttributes: js.UndefOr[UsernameAttributesListType]
-    var MfaConfiguration: js.UndefOr[UserPoolMfaType]
-    var EmailVerificationSubject: js.UndefOr[EmailVerificationSubjectType]
-    var EmailVerificationMessage: js.UndefOr[EmailVerificationMessageType]
     var AliasAttributes: js.UndefOr[AliasAttributesListType]
-    var Schema: js.UndefOr[SchemaAttributesListType]
-    var SmsConfiguration: js.UndefOr[SmsConfigurationType]
-    var UserPoolTags: js.UndefOr[UserPoolTagsType]
-    var PoolName: js.UndefOr[UserPoolNameType]
-    var LambdaConfig: js.UndefOr[LambdaConfigType]
-    var SmsAuthenticationMessage: js.UndefOr[SmsVerificationMessageType]
+    var AutoVerifiedAttributes: js.UndefOr[VerifiedAttributesListType]
     var DeviceConfiguration: js.UndefOr[DeviceConfigurationType]
+    var EmailConfiguration: js.UndefOr[EmailConfigurationType]
+    var EmailVerificationMessage: js.UndefOr[EmailVerificationMessageType]
+    var EmailVerificationSubject: js.UndefOr[EmailVerificationSubjectType]
+    var LambdaConfig: js.UndefOr[LambdaConfigType]
+    var MfaConfiguration: js.UndefOr[UserPoolMfaType]
+    var Policies: js.UndefOr[UserPoolPolicyType]
+    var Schema: js.UndefOr[SchemaAttributesListType]
+    var SmsAuthenticationMessage: js.UndefOr[SmsVerificationMessageType]
+    var SmsConfiguration: js.UndefOr[SmsConfigurationType]
+    var SmsVerificationMessage: js.UndefOr[SmsVerificationMessageType]
+    var UserPoolAddOns: js.UndefOr[UserPoolAddOnsType]
+    var UserPoolTags: js.UndefOr[UserPoolTagsType]
+    var UsernameAttributes: js.UndefOr[UsernameAttributesListType]
     var VerificationMessageTemplate: js.UndefOr[VerificationMessageTemplateType]
   }
 
   object CreateUserPoolRequest {
     def apply(
-      SmsVerificationMessage: js.UndefOr[SmsVerificationMessageType] = js.undefined,
-      AutoVerifiedAttributes: js.UndefOr[VerifiedAttributesListType] = js.undefined,
-      Policies: js.UndefOr[UserPoolPolicyType] = js.undefined,
-      UserPoolAddOns: js.UndefOr[UserPoolAddOnsType] = js.undefined,
-      EmailConfiguration: js.UndefOr[EmailConfigurationType] = js.undefined,
+      PoolName: UserPoolNameType,
       AdminCreateUserConfig: js.UndefOr[AdminCreateUserConfigType] = js.undefined,
-      UsernameAttributes: js.UndefOr[UsernameAttributesListType] = js.undefined,
-      MfaConfiguration: js.UndefOr[UserPoolMfaType] = js.undefined,
-      EmailVerificationSubject: js.UndefOr[EmailVerificationSubjectType] = js.undefined,
-      EmailVerificationMessage: js.UndefOr[EmailVerificationMessageType] = js.undefined,
       AliasAttributes: js.UndefOr[AliasAttributesListType] = js.undefined,
-      Schema: js.UndefOr[SchemaAttributesListType] = js.undefined,
-      SmsConfiguration: js.UndefOr[SmsConfigurationType] = js.undefined,
-      UserPoolTags: js.UndefOr[UserPoolTagsType] = js.undefined,
-      PoolName: js.UndefOr[UserPoolNameType] = js.undefined,
-      LambdaConfig: js.UndefOr[LambdaConfigType] = js.undefined,
-      SmsAuthenticationMessage: js.UndefOr[SmsVerificationMessageType] = js.undefined,
+      AutoVerifiedAttributes: js.UndefOr[VerifiedAttributesListType] = js.undefined,
       DeviceConfiguration: js.UndefOr[DeviceConfigurationType] = js.undefined,
+      EmailConfiguration: js.UndefOr[EmailConfigurationType] = js.undefined,
+      EmailVerificationMessage: js.UndefOr[EmailVerificationMessageType] = js.undefined,
+      EmailVerificationSubject: js.UndefOr[EmailVerificationSubjectType] = js.undefined,
+      LambdaConfig: js.UndefOr[LambdaConfigType] = js.undefined,
+      MfaConfiguration: js.UndefOr[UserPoolMfaType] = js.undefined,
+      Policies: js.UndefOr[UserPoolPolicyType] = js.undefined,
+      Schema: js.UndefOr[SchemaAttributesListType] = js.undefined,
+      SmsAuthenticationMessage: js.UndefOr[SmsVerificationMessageType] = js.undefined,
+      SmsConfiguration: js.UndefOr[SmsConfigurationType] = js.undefined,
+      SmsVerificationMessage: js.UndefOr[SmsVerificationMessageType] = js.undefined,
+      UserPoolAddOns: js.UndefOr[UserPoolAddOnsType] = js.undefined,
+      UserPoolTags: js.UndefOr[UserPoolTagsType] = js.undefined,
+      UsernameAttributes: js.UndefOr[UsernameAttributesListType] = js.undefined,
       VerificationMessageTemplate: js.UndefOr[VerificationMessageTemplateType] = js.undefined): CreateUserPoolRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "SmsVerificationMessage" -> SmsVerificationMessage.map { x => x.asInstanceOf[js.Any] },
-        "AutoVerifiedAttributes" -> AutoVerifiedAttributes.map { x => x.asInstanceOf[js.Any] },
-        "Policies" -> Policies.map { x => x.asInstanceOf[js.Any] },
-        "UserPoolAddOns" -> UserPoolAddOns.map { x => x.asInstanceOf[js.Any] },
-        "EmailConfiguration" -> EmailConfiguration.map { x => x.asInstanceOf[js.Any] },
+        "PoolName" -> PoolName.asInstanceOf[js.Any],
         "AdminCreateUserConfig" -> AdminCreateUserConfig.map { x => x.asInstanceOf[js.Any] },
-        "UsernameAttributes" -> UsernameAttributes.map { x => x.asInstanceOf[js.Any] },
-        "MfaConfiguration" -> MfaConfiguration.map { x => x.asInstanceOf[js.Any] },
-        "EmailVerificationSubject" -> EmailVerificationSubject.map { x => x.asInstanceOf[js.Any] },
-        "EmailVerificationMessage" -> EmailVerificationMessage.map { x => x.asInstanceOf[js.Any] },
         "AliasAttributes" -> AliasAttributes.map { x => x.asInstanceOf[js.Any] },
-        "Schema" -> Schema.map { x => x.asInstanceOf[js.Any] },
-        "SmsConfiguration" -> SmsConfiguration.map { x => x.asInstanceOf[js.Any] },
-        "UserPoolTags" -> UserPoolTags.map { x => x.asInstanceOf[js.Any] },
-        "PoolName" -> PoolName.map { x => x.asInstanceOf[js.Any] },
-        "LambdaConfig" -> LambdaConfig.map { x => x.asInstanceOf[js.Any] },
-        "SmsAuthenticationMessage" -> SmsAuthenticationMessage.map { x => x.asInstanceOf[js.Any] },
+        "AutoVerifiedAttributes" -> AutoVerifiedAttributes.map { x => x.asInstanceOf[js.Any] },
         "DeviceConfiguration" -> DeviceConfiguration.map { x => x.asInstanceOf[js.Any] },
+        "EmailConfiguration" -> EmailConfiguration.map { x => x.asInstanceOf[js.Any] },
+        "EmailVerificationMessage" -> EmailVerificationMessage.map { x => x.asInstanceOf[js.Any] },
+        "EmailVerificationSubject" -> EmailVerificationSubject.map { x => x.asInstanceOf[js.Any] },
+        "LambdaConfig" -> LambdaConfig.map { x => x.asInstanceOf[js.Any] },
+        "MfaConfiguration" -> MfaConfiguration.map { x => x.asInstanceOf[js.Any] },
+        "Policies" -> Policies.map { x => x.asInstanceOf[js.Any] },
+        "Schema" -> Schema.map { x => x.asInstanceOf[js.Any] },
+        "SmsAuthenticationMessage" -> SmsAuthenticationMessage.map { x => x.asInstanceOf[js.Any] },
+        "SmsConfiguration" -> SmsConfiguration.map { x => x.asInstanceOf[js.Any] },
+        "SmsVerificationMessage" -> SmsVerificationMessage.map { x => x.asInstanceOf[js.Any] },
+        "UserPoolAddOns" -> UserPoolAddOns.map { x => x.asInstanceOf[js.Any] },
+        "UserPoolTags" -> UserPoolTags.map { x => x.asInstanceOf[js.Any] },
+        "UsernameAttributes" -> UsernameAttributes.map { x => x.asInstanceOf[js.Any] },
         "VerificationMessageTemplate" -> VerificationMessageTemplate.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateUserPoolRequest]
@@ -2314,14 +2314,14 @@ package cognitoidentityprovider {
    */
   @js.native
   trait CustomDomainConfigType extends js.Object {
-    var CertificateArn: js.UndefOr[ArnType]
+    var CertificateArn: ArnType
   }
 
   object CustomDomainConfigType {
     def apply(
-      CertificateArn: js.UndefOr[ArnType] = js.undefined): CustomDomainConfigType = {
+      CertificateArn: ArnType): CustomDomainConfigType = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "CertificateArn" -> CertificateArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "CertificateArn" -> CertificateArn.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CustomDomainConfigType]
     }
@@ -2336,17 +2336,17 @@ package cognitoidentityprovider {
 
   @js.native
   trait DeleteGroupRequest extends js.Object {
-    var GroupName: js.UndefOr[GroupNameType]
-    var UserPoolId: js.UndefOr[UserPoolIdType]
+    var GroupName: GroupNameType
+    var UserPoolId: UserPoolIdType
   }
 
   object DeleteGroupRequest {
     def apply(
-      GroupName: js.UndefOr[GroupNameType] = js.undefined,
-      UserPoolId: js.UndefOr[UserPoolIdType] = js.undefined): DeleteGroupRequest = {
+      GroupName: GroupNameType,
+      UserPoolId: UserPoolIdType): DeleteGroupRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "GroupName" -> GroupName.map { x => x.asInstanceOf[js.Any] },
-        "UserPoolId" -> UserPoolId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "GroupName" -> GroupName.asInstanceOf[js.Any],
+        "UserPoolId" -> UserPoolId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteGroupRequest]
     }
@@ -2354,17 +2354,17 @@ package cognitoidentityprovider {
 
   @js.native
   trait DeleteIdentityProviderRequest extends js.Object {
-    var UserPoolId: js.UndefOr[UserPoolIdType]
-    var ProviderName: js.UndefOr[ProviderNameType]
+    var ProviderName: ProviderNameType
+    var UserPoolId: UserPoolIdType
   }
 
   object DeleteIdentityProviderRequest {
     def apply(
-      UserPoolId: js.UndefOr[UserPoolIdType] = js.undefined,
-      ProviderName: js.UndefOr[ProviderNameType] = js.undefined): DeleteIdentityProviderRequest = {
+      ProviderName: ProviderNameType,
+      UserPoolId: UserPoolIdType): DeleteIdentityProviderRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "UserPoolId" -> UserPoolId.map { x => x.asInstanceOf[js.Any] },
-        "ProviderName" -> ProviderName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ProviderName" -> ProviderName.asInstanceOf[js.Any],
+        "UserPoolId" -> UserPoolId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteIdentityProviderRequest]
     }
@@ -2372,17 +2372,17 @@ package cognitoidentityprovider {
 
   @js.native
   trait DeleteResourceServerRequest extends js.Object {
-    var UserPoolId: js.UndefOr[UserPoolIdType]
-    var Identifier: js.UndefOr[ResourceServerIdentifierType]
+    var Identifier: ResourceServerIdentifierType
+    var UserPoolId: UserPoolIdType
   }
 
   object DeleteResourceServerRequest {
     def apply(
-      UserPoolId: js.UndefOr[UserPoolIdType] = js.undefined,
-      Identifier: js.UndefOr[ResourceServerIdentifierType] = js.undefined): DeleteResourceServerRequest = {
+      Identifier: ResourceServerIdentifierType,
+      UserPoolId: UserPoolIdType): DeleteResourceServerRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "UserPoolId" -> UserPoolId.map { x => x.asInstanceOf[js.Any] },
-        "Identifier" -> Identifier.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Identifier" -> Identifier.asInstanceOf[js.Any],
+        "UserPoolId" -> UserPoolId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteResourceServerRequest]
     }
@@ -2393,17 +2393,17 @@ package cognitoidentityprovider {
    */
   @js.native
   trait DeleteUserAttributesRequest extends js.Object {
-    var UserAttributeNames: js.UndefOr[AttributeNameListType]
-    var AccessToken: js.UndefOr[TokenModelType]
+    var AccessToken: TokenModelType
+    var UserAttributeNames: AttributeNameListType
   }
 
   object DeleteUserAttributesRequest {
     def apply(
-      UserAttributeNames: js.UndefOr[AttributeNameListType] = js.undefined,
-      AccessToken: js.UndefOr[TokenModelType] = js.undefined): DeleteUserAttributesRequest = {
+      AccessToken: TokenModelType,
+      UserAttributeNames: AttributeNameListType): DeleteUserAttributesRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "UserAttributeNames" -> UserAttributeNames.map { x => x.asInstanceOf[js.Any] },
-        "AccessToken" -> AccessToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "AccessToken" -> AccessToken.asInstanceOf[js.Any],
+        "UserAttributeNames" -> UserAttributeNames.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteUserAttributesRequest]
     }
@@ -2430,17 +2430,17 @@ package cognitoidentityprovider {
    */
   @js.native
   trait DeleteUserPoolClientRequest extends js.Object {
-    var UserPoolId: js.UndefOr[UserPoolIdType]
-    var ClientId: js.UndefOr[ClientIdType]
+    var ClientId: ClientIdType
+    var UserPoolId: UserPoolIdType
   }
 
   object DeleteUserPoolClientRequest {
     def apply(
-      UserPoolId: js.UndefOr[UserPoolIdType] = js.undefined,
-      ClientId: js.UndefOr[ClientIdType] = js.undefined): DeleteUserPoolClientRequest = {
+      ClientId: ClientIdType,
+      UserPoolId: UserPoolIdType): DeleteUserPoolClientRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "UserPoolId" -> UserPoolId.map { x => x.asInstanceOf[js.Any] },
-        "ClientId" -> ClientId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ClientId" -> ClientId.asInstanceOf[js.Any],
+        "UserPoolId" -> UserPoolId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteUserPoolClientRequest]
     }
@@ -2448,17 +2448,17 @@ package cognitoidentityprovider {
 
   @js.native
   trait DeleteUserPoolDomainRequest extends js.Object {
-    var Domain: js.UndefOr[DomainType]
-    var UserPoolId: js.UndefOr[UserPoolIdType]
+    var Domain: DomainType
+    var UserPoolId: UserPoolIdType
   }
 
   object DeleteUserPoolDomainRequest {
     def apply(
-      Domain: js.UndefOr[DomainType] = js.undefined,
-      UserPoolId: js.UndefOr[UserPoolIdType] = js.undefined): DeleteUserPoolDomainRequest = {
+      Domain: DomainType,
+      UserPoolId: UserPoolIdType): DeleteUserPoolDomainRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Domain" -> Domain.map { x => x.asInstanceOf[js.Any] },
-        "UserPoolId" -> UserPoolId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Domain" -> Domain.asInstanceOf[js.Any],
+        "UserPoolId" -> UserPoolId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteUserPoolDomainRequest]
     }
@@ -2482,14 +2482,14 @@ package cognitoidentityprovider {
    */
   @js.native
   trait DeleteUserPoolRequest extends js.Object {
-    var UserPoolId: js.UndefOr[UserPoolIdType]
+    var UserPoolId: UserPoolIdType
   }
 
   object DeleteUserPoolRequest {
     def apply(
-      UserPoolId: js.UndefOr[UserPoolIdType] = js.undefined): DeleteUserPoolRequest = {
+      UserPoolId: UserPoolIdType): DeleteUserPoolRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "UserPoolId" -> UserPoolId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "UserPoolId" -> UserPoolId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteUserPoolRequest]
     }
@@ -2500,14 +2500,14 @@ package cognitoidentityprovider {
    */
   @js.native
   trait DeleteUserRequest extends js.Object {
-    var AccessToken: js.UndefOr[TokenModelType]
+    var AccessToken: TokenModelType
   }
 
   object DeleteUserRequest {
     def apply(
-      AccessToken: js.UndefOr[TokenModelType] = js.undefined): DeleteUserRequest = {
+      AccessToken: TokenModelType): DeleteUserRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "AccessToken" -> AccessToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "AccessToken" -> AccessToken.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteUserRequest]
     }
@@ -2522,17 +2522,17 @@ package cognitoidentityprovider {
 
   @js.native
   trait DescribeIdentityProviderRequest extends js.Object {
-    var UserPoolId: js.UndefOr[UserPoolIdType]
-    var ProviderName: js.UndefOr[ProviderNameType]
+    var ProviderName: ProviderNameType
+    var UserPoolId: UserPoolIdType
   }
 
   object DescribeIdentityProviderRequest {
     def apply(
-      UserPoolId: js.UndefOr[UserPoolIdType] = js.undefined,
-      ProviderName: js.UndefOr[ProviderNameType] = js.undefined): DescribeIdentityProviderRequest = {
+      ProviderName: ProviderNameType,
+      UserPoolId: UserPoolIdType): DescribeIdentityProviderRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "UserPoolId" -> UserPoolId.map { x => x.asInstanceOf[js.Any] },
-        "ProviderName" -> ProviderName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ProviderName" -> ProviderName.asInstanceOf[js.Any],
+        "UserPoolId" -> UserPoolId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeIdentityProviderRequest]
     }
@@ -2540,14 +2540,14 @@ package cognitoidentityprovider {
 
   @js.native
   trait DescribeIdentityProviderResponse extends js.Object {
-    var IdentityProvider: js.UndefOr[IdentityProviderType]
+    var IdentityProvider: IdentityProviderType
   }
 
   object DescribeIdentityProviderResponse {
     def apply(
-      IdentityProvider: js.UndefOr[IdentityProviderType] = js.undefined): DescribeIdentityProviderResponse = {
+      IdentityProvider: IdentityProviderType): DescribeIdentityProviderResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "IdentityProvider" -> IdentityProvider.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "IdentityProvider" -> IdentityProvider.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeIdentityProviderResponse]
     }
@@ -2555,17 +2555,17 @@ package cognitoidentityprovider {
 
   @js.native
   trait DescribeResourceServerRequest extends js.Object {
-    var UserPoolId: js.UndefOr[UserPoolIdType]
-    var Identifier: js.UndefOr[ResourceServerIdentifierType]
+    var Identifier: ResourceServerIdentifierType
+    var UserPoolId: UserPoolIdType
   }
 
   object DescribeResourceServerRequest {
     def apply(
-      UserPoolId: js.UndefOr[UserPoolIdType] = js.undefined,
-      Identifier: js.UndefOr[ResourceServerIdentifierType] = js.undefined): DescribeResourceServerRequest = {
+      Identifier: ResourceServerIdentifierType,
+      UserPoolId: UserPoolIdType): DescribeResourceServerRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "UserPoolId" -> UserPoolId.map { x => x.asInstanceOf[js.Any] },
-        "Identifier" -> Identifier.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Identifier" -> Identifier.asInstanceOf[js.Any],
+        "UserPoolId" -> UserPoolId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeResourceServerRequest]
     }
@@ -2573,14 +2573,14 @@ package cognitoidentityprovider {
 
   @js.native
   trait DescribeResourceServerResponse extends js.Object {
-    var ResourceServer: js.UndefOr[ResourceServerType]
+    var ResourceServer: ResourceServerType
   }
 
   object DescribeResourceServerResponse {
     def apply(
-      ResourceServer: js.UndefOr[ResourceServerType] = js.undefined): DescribeResourceServerResponse = {
+      ResourceServer: ResourceServerType): DescribeResourceServerResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ResourceServer" -> ResourceServer.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ResourceServer" -> ResourceServer.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeResourceServerResponse]
     }
@@ -2588,16 +2588,16 @@ package cognitoidentityprovider {
 
   @js.native
   trait DescribeRiskConfigurationRequest extends js.Object {
-    var UserPoolId: js.UndefOr[UserPoolIdType]
+    var UserPoolId: UserPoolIdType
     var ClientId: js.UndefOr[ClientIdType]
   }
 
   object DescribeRiskConfigurationRequest {
     def apply(
-      UserPoolId: js.UndefOr[UserPoolIdType] = js.undefined,
+      UserPoolId: UserPoolIdType,
       ClientId: js.UndefOr[ClientIdType] = js.undefined): DescribeRiskConfigurationRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "UserPoolId" -> UserPoolId.map { x => x.asInstanceOf[js.Any] },
+        "UserPoolId" -> UserPoolId.asInstanceOf[js.Any],
         "ClientId" -> ClientId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeRiskConfigurationRequest]
@@ -2606,14 +2606,14 @@ package cognitoidentityprovider {
 
   @js.native
   trait DescribeRiskConfigurationResponse extends js.Object {
-    var RiskConfiguration: js.UndefOr[RiskConfigurationType]
+    var RiskConfiguration: RiskConfigurationType
   }
 
   object DescribeRiskConfigurationResponse {
     def apply(
-      RiskConfiguration: js.UndefOr[RiskConfigurationType] = js.undefined): DescribeRiskConfigurationResponse = {
+      RiskConfiguration: RiskConfigurationType): DescribeRiskConfigurationResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "RiskConfiguration" -> RiskConfiguration.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "RiskConfiguration" -> RiskConfiguration.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeRiskConfigurationResponse]
     }
@@ -2624,17 +2624,17 @@ package cognitoidentityprovider {
    */
   @js.native
   trait DescribeUserImportJobRequest extends js.Object {
-    var UserPoolId: js.UndefOr[UserPoolIdType]
-    var JobId: js.UndefOr[UserImportJobIdType]
+    var JobId: UserImportJobIdType
+    var UserPoolId: UserPoolIdType
   }
 
   object DescribeUserImportJobRequest {
     def apply(
-      UserPoolId: js.UndefOr[UserPoolIdType] = js.undefined,
-      JobId: js.UndefOr[UserImportJobIdType] = js.undefined): DescribeUserImportJobRequest = {
+      JobId: UserImportJobIdType,
+      UserPoolId: UserPoolIdType): DescribeUserImportJobRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "UserPoolId" -> UserPoolId.map { x => x.asInstanceOf[js.Any] },
-        "JobId" -> JobId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "JobId" -> JobId.asInstanceOf[js.Any],
+        "UserPoolId" -> UserPoolId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeUserImportJobRequest]
     }
@@ -2663,17 +2663,17 @@ package cognitoidentityprovider {
    */
   @js.native
   trait DescribeUserPoolClientRequest extends js.Object {
-    var UserPoolId: js.UndefOr[UserPoolIdType]
-    var ClientId: js.UndefOr[ClientIdType]
+    var ClientId: ClientIdType
+    var UserPoolId: UserPoolIdType
   }
 
   object DescribeUserPoolClientRequest {
     def apply(
-      UserPoolId: js.UndefOr[UserPoolIdType] = js.undefined,
-      ClientId: js.UndefOr[ClientIdType] = js.undefined): DescribeUserPoolClientRequest = {
+      ClientId: ClientIdType,
+      UserPoolId: UserPoolIdType): DescribeUserPoolClientRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "UserPoolId" -> UserPoolId.map { x => x.asInstanceOf[js.Any] },
-        "ClientId" -> ClientId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ClientId" -> ClientId.asInstanceOf[js.Any],
+        "UserPoolId" -> UserPoolId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeUserPoolClientRequest]
     }
@@ -2699,14 +2699,14 @@ package cognitoidentityprovider {
 
   @js.native
   trait DescribeUserPoolDomainRequest extends js.Object {
-    var Domain: js.UndefOr[DomainType]
+    var Domain: DomainType
   }
 
   object DescribeUserPoolDomainRequest {
     def apply(
-      Domain: js.UndefOr[DomainType] = js.undefined): DescribeUserPoolDomainRequest = {
+      Domain: DomainType): DescribeUserPoolDomainRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Domain" -> Domain.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Domain" -> Domain.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeUserPoolDomainRequest]
     }
@@ -2732,14 +2732,14 @@ package cognitoidentityprovider {
    */
   @js.native
   trait DescribeUserPoolRequest extends js.Object {
-    var UserPoolId: js.UndefOr[UserPoolIdType]
+    var UserPoolId: UserPoolIdType
   }
 
   object DescribeUserPoolRequest {
     def apply(
-      UserPoolId: js.UndefOr[UserPoolIdType] = js.undefined): DescribeUserPoolRequest = {
+      UserPoolId: UserPoolIdType): DescribeUserPoolRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "UserPoolId" -> UserPoolId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "UserPoolId" -> UserPoolId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeUserPoolRequest]
     }
@@ -2818,25 +2818,25 @@ package cognitoidentityprovider {
   @js.native
   trait DeviceType extends js.Object {
     var DeviceAttributes: js.UndefOr[AttributeListType]
-    var DeviceLastAuthenticatedDate: js.UndefOr[DateType]
-    var DeviceLastModifiedDate: js.UndefOr[DateType]
     var DeviceCreateDate: js.UndefOr[DateType]
     var DeviceKey: js.UndefOr[DeviceKeyType]
+    var DeviceLastAuthenticatedDate: js.UndefOr[DateType]
+    var DeviceLastModifiedDate: js.UndefOr[DateType]
   }
 
   object DeviceType {
     def apply(
       DeviceAttributes: js.UndefOr[AttributeListType] = js.undefined,
-      DeviceLastAuthenticatedDate: js.UndefOr[DateType] = js.undefined,
-      DeviceLastModifiedDate: js.UndefOr[DateType] = js.undefined,
       DeviceCreateDate: js.UndefOr[DateType] = js.undefined,
-      DeviceKey: js.UndefOr[DeviceKeyType] = js.undefined): DeviceType = {
+      DeviceKey: js.UndefOr[DeviceKeyType] = js.undefined,
+      DeviceLastAuthenticatedDate: js.UndefOr[DateType] = js.undefined,
+      DeviceLastModifiedDate: js.UndefOr[DateType] = js.undefined): DeviceType = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DeviceAttributes" -> DeviceAttributes.map { x => x.asInstanceOf[js.Any] },
-        "DeviceLastAuthenticatedDate" -> DeviceLastAuthenticatedDate.map { x => x.asInstanceOf[js.Any] },
-        "DeviceLastModifiedDate" -> DeviceLastModifiedDate.map { x => x.asInstanceOf[js.Any] },
         "DeviceCreateDate" -> DeviceCreateDate.map { x => x.asInstanceOf[js.Any] },
-        "DeviceKey" -> DeviceKey.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "DeviceKey" -> DeviceKey.map { x => x.asInstanceOf[js.Any] },
+        "DeviceLastAuthenticatedDate" -> DeviceLastAuthenticatedDate.map { x => x.asInstanceOf[js.Any] },
+        "DeviceLastModifiedDate" -> DeviceLastModifiedDate.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeviceType]
     }
@@ -2847,35 +2847,35 @@ package cognitoidentityprovider {
    */
   @js.native
   trait DomainDescriptionType extends js.Object {
-    var S3Bucket: js.UndefOr[S3BucketType]
-    var Version: js.UndefOr[DomainVersionType]
-    var UserPoolId: js.UndefOr[UserPoolIdType]
     var AWSAccountId: js.UndefOr[AWSAccountIdType]
     var CloudFrontDistribution: js.UndefOr[StringType]
     var CustomDomainConfig: js.UndefOr[CustomDomainConfigType]
     var Domain: js.UndefOr[DomainType]
+    var S3Bucket: js.UndefOr[S3BucketType]
     var Status: js.UndefOr[DomainStatusType]
+    var UserPoolId: js.UndefOr[UserPoolIdType]
+    var Version: js.UndefOr[DomainVersionType]
   }
 
   object DomainDescriptionType {
     def apply(
-      S3Bucket: js.UndefOr[S3BucketType] = js.undefined,
-      Version: js.UndefOr[DomainVersionType] = js.undefined,
-      UserPoolId: js.UndefOr[UserPoolIdType] = js.undefined,
       AWSAccountId: js.UndefOr[AWSAccountIdType] = js.undefined,
       CloudFrontDistribution: js.UndefOr[StringType] = js.undefined,
       CustomDomainConfig: js.UndefOr[CustomDomainConfigType] = js.undefined,
       Domain: js.UndefOr[DomainType] = js.undefined,
-      Status: js.UndefOr[DomainStatusType] = js.undefined): DomainDescriptionType = {
+      S3Bucket: js.UndefOr[S3BucketType] = js.undefined,
+      Status: js.UndefOr[DomainStatusType] = js.undefined,
+      UserPoolId: js.UndefOr[UserPoolIdType] = js.undefined,
+      Version: js.UndefOr[DomainVersionType] = js.undefined): DomainDescriptionType = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "S3Bucket" -> S3Bucket.map { x => x.asInstanceOf[js.Any] },
-        "Version" -> Version.map { x => x.asInstanceOf[js.Any] },
-        "UserPoolId" -> UserPoolId.map { x => x.asInstanceOf[js.Any] },
         "AWSAccountId" -> AWSAccountId.map { x => x.asInstanceOf[js.Any] },
         "CloudFrontDistribution" -> CloudFrontDistribution.map { x => x.asInstanceOf[js.Any] },
         "CustomDomainConfig" -> CustomDomainConfig.map { x => x.asInstanceOf[js.Any] },
         "Domain" -> Domain.map { x => x.asInstanceOf[js.Any] },
-        "Status" -> Status.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "S3Bucket" -> S3Bucket.map { x => x.asInstanceOf[js.Any] },
+        "Status" -> Status.map { x => x.asInstanceOf[js.Any] },
+        "UserPoolId" -> UserPoolId.map { x => x.asInstanceOf[js.Any] },
+        "Version" -> Version.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DomainDescriptionType]
     }
@@ -2896,17 +2896,17 @@ package cognitoidentityprovider {
    */
   @js.native
   trait EmailConfigurationType extends js.Object {
-    var SourceArn: js.UndefOr[ArnType]
     var ReplyToEmailAddress: js.UndefOr[EmailAddressType]
+    var SourceArn: js.UndefOr[ArnType]
   }
 
   object EmailConfigurationType {
     def apply(
-      SourceArn: js.UndefOr[ArnType] = js.undefined,
-      ReplyToEmailAddress: js.UndefOr[EmailAddressType] = js.undefined): EmailConfigurationType = {
+      ReplyToEmailAddress: js.UndefOr[EmailAddressType] = js.undefined,
+      SourceArn: js.UndefOr[ArnType] = js.undefined): EmailConfigurationType = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "SourceArn" -> SourceArn.map { x => x.asInstanceOf[js.Any] },
-        "ReplyToEmailAddress" -> ReplyToEmailAddress.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ReplyToEmailAddress" -> ReplyToEmailAddress.map { x => x.asInstanceOf[js.Any] },
+        "SourceArn" -> SourceArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EmailConfigurationType]
     }
@@ -2917,26 +2917,26 @@ package cognitoidentityprovider {
    */
   @js.native
   trait EventContextDataType extends js.Object {
-    var Timezone: js.UndefOr[StringType]
-    var Country: js.UndefOr[StringType]
-    var IpAddress: js.UndefOr[StringType]
     var City: js.UndefOr[StringType]
+    var Country: js.UndefOr[StringType]
     var DeviceName: js.UndefOr[StringType]
+    var IpAddress: js.UndefOr[StringType]
+    var Timezone: js.UndefOr[StringType]
   }
 
   object EventContextDataType {
     def apply(
-      Timezone: js.UndefOr[StringType] = js.undefined,
-      Country: js.UndefOr[StringType] = js.undefined,
-      IpAddress: js.UndefOr[StringType] = js.undefined,
       City: js.UndefOr[StringType] = js.undefined,
-      DeviceName: js.UndefOr[StringType] = js.undefined): EventContextDataType = {
+      Country: js.UndefOr[StringType] = js.undefined,
+      DeviceName: js.UndefOr[StringType] = js.undefined,
+      IpAddress: js.UndefOr[StringType] = js.undefined,
+      Timezone: js.UndefOr[StringType] = js.undefined): EventContextDataType = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Timezone" -> Timezone.map { x => x.asInstanceOf[js.Any] },
-        "Country" -> Country.map { x => x.asInstanceOf[js.Any] },
-        "IpAddress" -> IpAddress.map { x => x.asInstanceOf[js.Any] },
         "City" -> City.map { x => x.asInstanceOf[js.Any] },
-        "DeviceName" -> DeviceName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Country" -> Country.map { x => x.asInstanceOf[js.Any] },
+        "DeviceName" -> DeviceName.map { x => x.asInstanceOf[js.Any] },
+        "IpAddress" -> IpAddress.map { x => x.asInstanceOf[js.Any] },
+        "Timezone" -> Timezone.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EventContextDataType]
     }
@@ -2947,19 +2947,19 @@ package cognitoidentityprovider {
    */
   @js.native
   trait EventFeedbackType extends js.Object {
-    var FeedbackValue: js.UndefOr[FeedbackValueType]
-    var Provider: js.UndefOr[StringType]
+    var FeedbackValue: FeedbackValueType
+    var Provider: StringType
     var FeedbackDate: js.UndefOr[DateType]
   }
 
   object EventFeedbackType {
     def apply(
-      FeedbackValue: js.UndefOr[FeedbackValueType] = js.undefined,
-      Provider: js.UndefOr[StringType] = js.undefined,
+      FeedbackValue: FeedbackValueType,
+      Provider: StringType,
       FeedbackDate: js.UndefOr[DateType] = js.undefined): EventFeedbackType = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "FeedbackValue" -> FeedbackValue.map { x => x.asInstanceOf[js.Any] },
-        "Provider" -> Provider.map { x => x.asInstanceOf[js.Any] },
+        "FeedbackValue" -> FeedbackValue.asInstanceOf[js.Any],
+        "Provider" -> Provider.asInstanceOf[js.Any],
         "FeedbackDate" -> FeedbackDate.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EventFeedbackType]
@@ -3030,17 +3030,17 @@ package cognitoidentityprovider {
    */
   @js.native
   trait ForgetDeviceRequest extends js.Object {
+    var DeviceKey: DeviceKeyType
     var AccessToken: js.UndefOr[TokenModelType]
-    var DeviceKey: js.UndefOr[DeviceKeyType]
   }
 
   object ForgetDeviceRequest {
     def apply(
-      AccessToken: js.UndefOr[TokenModelType] = js.undefined,
-      DeviceKey: js.UndefOr[DeviceKeyType] = js.undefined): ForgetDeviceRequest = {
+      DeviceKey: DeviceKeyType,
+      AccessToken: js.UndefOr[TokenModelType] = js.undefined): ForgetDeviceRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "AccessToken" -> AccessToken.map { x => x.asInstanceOf[js.Any] },
-        "DeviceKey" -> DeviceKey.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "DeviceKey" -> DeviceKey.asInstanceOf[js.Any],
+        "AccessToken" -> AccessToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ForgetDeviceRequest]
     }
@@ -3051,26 +3051,26 @@ package cognitoidentityprovider {
    */
   @js.native
   trait ForgotPasswordRequest extends js.Object {
-    var Username: js.UndefOr[UsernameType]
-    var SecretHash: js.UndefOr[SecretHashType]
-    var ClientId: js.UndefOr[ClientIdType]
-    var UserContextData: js.UndefOr[UserContextDataType]
+    var ClientId: ClientIdType
+    var Username: UsernameType
     var AnalyticsMetadata: js.UndefOr[AnalyticsMetadataType]
+    var SecretHash: js.UndefOr[SecretHashType]
+    var UserContextData: js.UndefOr[UserContextDataType]
   }
 
   object ForgotPasswordRequest {
     def apply(
-      Username: js.UndefOr[UsernameType] = js.undefined,
+      ClientId: ClientIdType,
+      Username: UsernameType,
+      AnalyticsMetadata: js.UndefOr[AnalyticsMetadataType] = js.undefined,
       SecretHash: js.UndefOr[SecretHashType] = js.undefined,
-      ClientId: js.UndefOr[ClientIdType] = js.undefined,
-      UserContextData: js.UndefOr[UserContextDataType] = js.undefined,
-      AnalyticsMetadata: js.UndefOr[AnalyticsMetadataType] = js.undefined): ForgotPasswordRequest = {
+      UserContextData: js.UndefOr[UserContextDataType] = js.undefined): ForgotPasswordRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Username" -> Username.map { x => x.asInstanceOf[js.Any] },
+        "ClientId" -> ClientId.asInstanceOf[js.Any],
+        "Username" -> Username.asInstanceOf[js.Any],
+        "AnalyticsMetadata" -> AnalyticsMetadata.map { x => x.asInstanceOf[js.Any] },
         "SecretHash" -> SecretHash.map { x => x.asInstanceOf[js.Any] },
-        "ClientId" -> ClientId.map { x => x.asInstanceOf[js.Any] },
-        "UserContextData" -> UserContextData.map { x => x.asInstanceOf[js.Any] },
-        "AnalyticsMetadata" -> AnalyticsMetadata.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "UserContextData" -> UserContextData.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ForgotPasswordRequest]
     }
@@ -3099,14 +3099,14 @@ package cognitoidentityprovider {
    */
   @js.native
   trait GetCSVHeaderRequest extends js.Object {
-    var UserPoolId: js.UndefOr[UserPoolIdType]
+    var UserPoolId: UserPoolIdType
   }
 
   object GetCSVHeaderRequest {
     def apply(
-      UserPoolId: js.UndefOr[UserPoolIdType] = js.undefined): GetCSVHeaderRequest = {
+      UserPoolId: UserPoolIdType): GetCSVHeaderRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "UserPoolId" -> UserPoolId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "UserPoolId" -> UserPoolId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetCSVHeaderRequest]
     }
@@ -3117,17 +3117,17 @@ package cognitoidentityprovider {
    */
   @js.native
   trait GetCSVHeaderResponse extends js.Object {
-    var UserPoolId: js.UndefOr[UserPoolIdType]
     var CSVHeader: js.UndefOr[ListOfStringTypes]
+    var UserPoolId: js.UndefOr[UserPoolIdType]
   }
 
   object GetCSVHeaderResponse {
     def apply(
-      UserPoolId: js.UndefOr[UserPoolIdType] = js.undefined,
-      CSVHeader: js.UndefOr[ListOfStringTypes] = js.undefined): GetCSVHeaderResponse = {
+      CSVHeader: js.UndefOr[ListOfStringTypes] = js.undefined,
+      UserPoolId: js.UndefOr[UserPoolIdType] = js.undefined): GetCSVHeaderResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "UserPoolId" -> UserPoolId.map { x => x.asInstanceOf[js.Any] },
-        "CSVHeader" -> CSVHeader.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "CSVHeader" -> CSVHeader.map { x => x.asInstanceOf[js.Any] },
+        "UserPoolId" -> UserPoolId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetCSVHeaderResponse]
     }
@@ -3138,16 +3138,16 @@ package cognitoidentityprovider {
    */
   @js.native
   trait GetDeviceRequest extends js.Object {
-    var DeviceKey: js.UndefOr[DeviceKeyType]
+    var DeviceKey: DeviceKeyType
     var AccessToken: js.UndefOr[TokenModelType]
   }
 
   object GetDeviceRequest {
     def apply(
-      DeviceKey: js.UndefOr[DeviceKeyType] = js.undefined,
+      DeviceKey: DeviceKeyType,
       AccessToken: js.UndefOr[TokenModelType] = js.undefined): GetDeviceRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "DeviceKey" -> DeviceKey.map { x => x.asInstanceOf[js.Any] },
+        "DeviceKey" -> DeviceKey.asInstanceOf[js.Any],
         "AccessToken" -> AccessToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetDeviceRequest]
@@ -3159,14 +3159,14 @@ package cognitoidentityprovider {
    */
   @js.native
   trait GetDeviceResponse extends js.Object {
-    var Device: js.UndefOr[DeviceType]
+    var Device: DeviceType
   }
 
   object GetDeviceResponse {
     def apply(
-      Device: js.UndefOr[DeviceType] = js.undefined): GetDeviceResponse = {
+      Device: DeviceType): GetDeviceResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Device" -> Device.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Device" -> Device.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetDeviceResponse]
     }
@@ -3174,17 +3174,17 @@ package cognitoidentityprovider {
 
   @js.native
   trait GetGroupRequest extends js.Object {
-    var GroupName: js.UndefOr[GroupNameType]
-    var UserPoolId: js.UndefOr[UserPoolIdType]
+    var GroupName: GroupNameType
+    var UserPoolId: UserPoolIdType
   }
 
   object GetGroupRequest {
     def apply(
-      GroupName: js.UndefOr[GroupNameType] = js.undefined,
-      UserPoolId: js.UndefOr[UserPoolIdType] = js.undefined): GetGroupRequest = {
+      GroupName: GroupNameType,
+      UserPoolId: UserPoolIdType): GetGroupRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "GroupName" -> GroupName.map { x => x.asInstanceOf[js.Any] },
-        "UserPoolId" -> UserPoolId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "GroupName" -> GroupName.asInstanceOf[js.Any],
+        "UserPoolId" -> UserPoolId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetGroupRequest]
     }
@@ -3207,17 +3207,17 @@ package cognitoidentityprovider {
 
   @js.native
   trait GetIdentityProviderByIdentifierRequest extends js.Object {
-    var UserPoolId: js.UndefOr[UserPoolIdType]
-    var IdpIdentifier: js.UndefOr[IdpIdentifierType]
+    var IdpIdentifier: IdpIdentifierType
+    var UserPoolId: UserPoolIdType
   }
 
   object GetIdentityProviderByIdentifierRequest {
     def apply(
-      UserPoolId: js.UndefOr[UserPoolIdType] = js.undefined,
-      IdpIdentifier: js.UndefOr[IdpIdentifierType] = js.undefined): GetIdentityProviderByIdentifierRequest = {
+      IdpIdentifier: IdpIdentifierType,
+      UserPoolId: UserPoolIdType): GetIdentityProviderByIdentifierRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "UserPoolId" -> UserPoolId.map { x => x.asInstanceOf[js.Any] },
-        "IdpIdentifier" -> IdpIdentifier.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "IdpIdentifier" -> IdpIdentifier.asInstanceOf[js.Any],
+        "UserPoolId" -> UserPoolId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetIdentityProviderByIdentifierRequest]
     }
@@ -3225,14 +3225,14 @@ package cognitoidentityprovider {
 
   @js.native
   trait GetIdentityProviderByIdentifierResponse extends js.Object {
-    var IdentityProvider: js.UndefOr[IdentityProviderType]
+    var IdentityProvider: IdentityProviderType
   }
 
   object GetIdentityProviderByIdentifierResponse {
     def apply(
-      IdentityProvider: js.UndefOr[IdentityProviderType] = js.undefined): GetIdentityProviderByIdentifierResponse = {
+      IdentityProvider: IdentityProviderType): GetIdentityProviderByIdentifierResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "IdentityProvider" -> IdentityProvider.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "IdentityProvider" -> IdentityProvider.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetIdentityProviderByIdentifierResponse]
     }
@@ -3243,14 +3243,14 @@ package cognitoidentityprovider {
    */
   @js.native
   trait GetSigningCertificateRequest extends js.Object {
-    var UserPoolId: js.UndefOr[UserPoolIdType]
+    var UserPoolId: UserPoolIdType
   }
 
   object GetSigningCertificateRequest {
     def apply(
-      UserPoolId: js.UndefOr[UserPoolIdType] = js.undefined): GetSigningCertificateRequest = {
+      UserPoolId: UserPoolIdType): GetSigningCertificateRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "UserPoolId" -> UserPoolId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "UserPoolId" -> UserPoolId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetSigningCertificateRequest]
     }
@@ -3276,16 +3276,16 @@ package cognitoidentityprovider {
 
   @js.native
   trait GetUICustomizationRequest extends js.Object {
-    var UserPoolId: js.UndefOr[UserPoolIdType]
+    var UserPoolId: UserPoolIdType
     var ClientId: js.UndefOr[ClientIdType]
   }
 
   object GetUICustomizationRequest {
     def apply(
-      UserPoolId: js.UndefOr[UserPoolIdType] = js.undefined,
+      UserPoolId: UserPoolIdType,
       ClientId: js.UndefOr[ClientIdType] = js.undefined): GetUICustomizationRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "UserPoolId" -> UserPoolId.map { x => x.asInstanceOf[js.Any] },
+        "UserPoolId" -> UserPoolId.asInstanceOf[js.Any],
         "ClientId" -> ClientId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetUICustomizationRequest]
@@ -3294,14 +3294,14 @@ package cognitoidentityprovider {
 
   @js.native
   trait GetUICustomizationResponse extends js.Object {
-    var UICustomization: js.UndefOr[UICustomizationType]
+    var UICustomization: UICustomizationType
   }
 
   object GetUICustomizationResponse {
     def apply(
-      UICustomization: js.UndefOr[UICustomizationType] = js.undefined): GetUICustomizationResponse = {
+      UICustomization: UICustomizationType): GetUICustomizationResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "UICustomization" -> UICustomization.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "UICustomization" -> UICustomization.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetUICustomizationResponse]
     }
@@ -3312,17 +3312,17 @@ package cognitoidentityprovider {
    */
   @js.native
   trait GetUserAttributeVerificationCodeRequest extends js.Object {
-    var AccessToken: js.UndefOr[TokenModelType]
-    var AttributeName: js.UndefOr[AttributeNameType]
+    var AccessToken: TokenModelType
+    var AttributeName: AttributeNameType
   }
 
   object GetUserAttributeVerificationCodeRequest {
     def apply(
-      AccessToken: js.UndefOr[TokenModelType] = js.undefined,
-      AttributeName: js.UndefOr[AttributeNameType] = js.undefined): GetUserAttributeVerificationCodeRequest = {
+      AccessToken: TokenModelType,
+      AttributeName: AttributeNameType): GetUserAttributeVerificationCodeRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "AccessToken" -> AccessToken.map { x => x.asInstanceOf[js.Any] },
-        "AttributeName" -> AttributeName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "AccessToken" -> AccessToken.asInstanceOf[js.Any],
+        "AttributeName" -> AttributeName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetUserAttributeVerificationCodeRequest]
     }
@@ -3348,14 +3348,14 @@ package cognitoidentityprovider {
 
   @js.native
   trait GetUserPoolMfaConfigRequest extends js.Object {
-    var UserPoolId: js.UndefOr[UserPoolIdType]
+    var UserPoolId: UserPoolIdType
   }
 
   object GetUserPoolMfaConfigRequest {
     def apply(
-      UserPoolId: js.UndefOr[UserPoolIdType] = js.undefined): GetUserPoolMfaConfigRequest = {
+      UserPoolId: UserPoolIdType): GetUserPoolMfaConfigRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "UserPoolId" -> UserPoolId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "UserPoolId" -> UserPoolId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetUserPoolMfaConfigRequest]
     }
@@ -3363,20 +3363,20 @@ package cognitoidentityprovider {
 
   @js.native
   trait GetUserPoolMfaConfigResponse extends js.Object {
+    var MfaConfiguration: js.UndefOr[UserPoolMfaType]
     var SmsMfaConfiguration: js.UndefOr[SmsMfaConfigType]
     var SoftwareTokenMfaConfiguration: js.UndefOr[SoftwareTokenMfaConfigType]
-    var MfaConfiguration: js.UndefOr[UserPoolMfaType]
   }
 
   object GetUserPoolMfaConfigResponse {
     def apply(
+      MfaConfiguration: js.UndefOr[UserPoolMfaType] = js.undefined,
       SmsMfaConfiguration: js.UndefOr[SmsMfaConfigType] = js.undefined,
-      SoftwareTokenMfaConfiguration: js.UndefOr[SoftwareTokenMfaConfigType] = js.undefined,
-      MfaConfiguration: js.UndefOr[UserPoolMfaType] = js.undefined): GetUserPoolMfaConfigResponse = {
+      SoftwareTokenMfaConfiguration: js.UndefOr[SoftwareTokenMfaConfigType] = js.undefined): GetUserPoolMfaConfigResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "MfaConfiguration" -> MfaConfiguration.map { x => x.asInstanceOf[js.Any] },
         "SmsMfaConfiguration" -> SmsMfaConfiguration.map { x => x.asInstanceOf[js.Any] },
-        "SoftwareTokenMfaConfiguration" -> SoftwareTokenMfaConfiguration.map { x => x.asInstanceOf[js.Any] },
-        "MfaConfiguration" -> MfaConfiguration.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "SoftwareTokenMfaConfiguration" -> SoftwareTokenMfaConfiguration.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetUserPoolMfaConfigResponse]
     }
@@ -3387,14 +3387,14 @@ package cognitoidentityprovider {
    */
   @js.native
   trait GetUserRequest extends js.Object {
-    var AccessToken: js.UndefOr[TokenModelType]
+    var AccessToken: TokenModelType
   }
 
   object GetUserRequest {
     def apply(
-      AccessToken: js.UndefOr[TokenModelType] = js.undefined): GetUserRequest = {
+      AccessToken: TokenModelType): GetUserRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "AccessToken" -> AccessToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "AccessToken" -> AccessToken.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetUserRequest]
     }
@@ -3405,24 +3405,24 @@ package cognitoidentityprovider {
    */
   @js.native
   trait GetUserResponse extends js.Object {
-    var Username: js.UndefOr[UsernameType]
+    var UserAttributes: AttributeListType
+    var Username: UsernameType
     var MFAOptions: js.UndefOr[MFAOptionListType]
-    var UserAttributes: js.UndefOr[AttributeListType]
     var PreferredMfaSetting: js.UndefOr[StringType]
     var UserMFASettingList: js.UndefOr[UserMFASettingListType]
   }
 
   object GetUserResponse {
     def apply(
-      Username: js.UndefOr[UsernameType] = js.undefined,
+      UserAttributes: AttributeListType,
+      Username: UsernameType,
       MFAOptions: js.UndefOr[MFAOptionListType] = js.undefined,
-      UserAttributes: js.UndefOr[AttributeListType] = js.undefined,
       PreferredMfaSetting: js.UndefOr[StringType] = js.undefined,
       UserMFASettingList: js.UndefOr[UserMFASettingListType] = js.undefined): GetUserResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Username" -> Username.map { x => x.asInstanceOf[js.Any] },
+        "UserAttributes" -> UserAttributes.asInstanceOf[js.Any],
+        "Username" -> Username.asInstanceOf[js.Any],
         "MFAOptions" -> MFAOptions.map { x => x.asInstanceOf[js.Any] },
-        "UserAttributes" -> UserAttributes.map { x => x.asInstanceOf[js.Any] },
         "PreferredMfaSetting" -> PreferredMfaSetting.map { x => x.asInstanceOf[js.Any] },
         "UserMFASettingList" -> UserMFASettingList.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
@@ -3435,14 +3435,14 @@ package cognitoidentityprovider {
    */
   @js.native
   trait GlobalSignOutRequest extends js.Object {
-    var AccessToken: js.UndefOr[TokenModelType]
+    var AccessToken: TokenModelType
   }
 
   object GlobalSignOutRequest {
     def apply(
-      AccessToken: js.UndefOr[TokenModelType] = js.undefined): GlobalSignOutRequest = {
+      AccessToken: TokenModelType): GlobalSignOutRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "AccessToken" -> AccessToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "AccessToken" -> AccessToken.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GlobalSignOutRequest]
     }
@@ -3470,31 +3470,31 @@ package cognitoidentityprovider {
   @js.native
   trait GroupType extends js.Object {
     var CreationDate: js.UndefOr[DateType]
-    var LastModifiedDate: js.UndefOr[DateType]
-    var GroupName: js.UndefOr[GroupNameType]
     var Description: js.UndefOr[DescriptionType]
-    var UserPoolId: js.UndefOr[UserPoolIdType]
+    var GroupName: js.UndefOr[GroupNameType]
+    var LastModifiedDate: js.UndefOr[DateType]
     var Precedence: js.UndefOr[PrecedenceType]
     var RoleArn: js.UndefOr[ArnType]
+    var UserPoolId: js.UndefOr[UserPoolIdType]
   }
 
   object GroupType {
     def apply(
       CreationDate: js.UndefOr[DateType] = js.undefined,
-      LastModifiedDate: js.UndefOr[DateType] = js.undefined,
-      GroupName: js.UndefOr[GroupNameType] = js.undefined,
       Description: js.UndefOr[DescriptionType] = js.undefined,
-      UserPoolId: js.UndefOr[UserPoolIdType] = js.undefined,
+      GroupName: js.UndefOr[GroupNameType] = js.undefined,
+      LastModifiedDate: js.UndefOr[DateType] = js.undefined,
       Precedence: js.UndefOr[PrecedenceType] = js.undefined,
-      RoleArn: js.UndefOr[ArnType] = js.undefined): GroupType = {
+      RoleArn: js.UndefOr[ArnType] = js.undefined,
+      UserPoolId: js.UndefOr[UserPoolIdType] = js.undefined): GroupType = {
       val _fields = IndexedSeq[(String, js.Any)](
         "CreationDate" -> CreationDate.map { x => x.asInstanceOf[js.Any] },
-        "LastModifiedDate" -> LastModifiedDate.map { x => x.asInstanceOf[js.Any] },
-        "GroupName" -> GroupName.map { x => x.asInstanceOf[js.Any] },
         "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
-        "UserPoolId" -> UserPoolId.map { x => x.asInstanceOf[js.Any] },
+        "GroupName" -> GroupName.map { x => x.asInstanceOf[js.Any] },
+        "LastModifiedDate" -> LastModifiedDate.map { x => x.asInstanceOf[js.Any] },
         "Precedence" -> Precedence.map { x => x.asInstanceOf[js.Any] },
-        "RoleArn" -> RoleArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "RoleArn" -> RoleArn.map { x => x.asInstanceOf[js.Any] },
+        "UserPoolId" -> UserPoolId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GroupType]
     }
@@ -3526,35 +3526,35 @@ package cognitoidentityprovider {
    */
   @js.native
   trait IdentityProviderType extends js.Object {
-    var ProviderDetails: js.UndefOr[ProviderDetailsType]
-    var CreationDate: js.UndefOr[DateType]
     var AttributeMapping: js.UndefOr[AttributeMappingType]
+    var CreationDate: js.UndefOr[DateType]
+    var IdpIdentifiers: js.UndefOr[IdpIdentifiersListType]
     var LastModifiedDate: js.UndefOr[DateType]
+    var ProviderDetails: js.UndefOr[ProviderDetailsType]
+    var ProviderName: js.UndefOr[ProviderNameType]
     var ProviderType: js.UndefOr[IdentityProviderTypeType]
     var UserPoolId: js.UndefOr[UserPoolIdType]
-    var IdpIdentifiers: js.UndefOr[IdpIdentifiersListType]
-    var ProviderName: js.UndefOr[ProviderNameType]
   }
 
   object IdentityProviderType {
     def apply(
-      ProviderDetails: js.UndefOr[ProviderDetailsType] = js.undefined,
-      CreationDate: js.UndefOr[DateType] = js.undefined,
       AttributeMapping: js.UndefOr[AttributeMappingType] = js.undefined,
-      LastModifiedDate: js.UndefOr[DateType] = js.undefined,
-      ProviderType: js.UndefOr[IdentityProviderTypeType] = js.undefined,
-      UserPoolId: js.UndefOr[UserPoolIdType] = js.undefined,
+      CreationDate: js.UndefOr[DateType] = js.undefined,
       IdpIdentifiers: js.UndefOr[IdpIdentifiersListType] = js.undefined,
-      ProviderName: js.UndefOr[ProviderNameType] = js.undefined): IdentityProviderType = {
+      LastModifiedDate: js.UndefOr[DateType] = js.undefined,
+      ProviderDetails: js.UndefOr[ProviderDetailsType] = js.undefined,
+      ProviderName: js.UndefOr[ProviderNameType] = js.undefined,
+      ProviderType: js.UndefOr[IdentityProviderTypeType] = js.undefined,
+      UserPoolId: js.UndefOr[UserPoolIdType] = js.undefined): IdentityProviderType = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ProviderDetails" -> ProviderDetails.map { x => x.asInstanceOf[js.Any] },
-        "CreationDate" -> CreationDate.map { x => x.asInstanceOf[js.Any] },
         "AttributeMapping" -> AttributeMapping.map { x => x.asInstanceOf[js.Any] },
-        "LastModifiedDate" -> LastModifiedDate.map { x => x.asInstanceOf[js.Any] },
-        "ProviderType" -> ProviderType.map { x => x.asInstanceOf[js.Any] },
-        "UserPoolId" -> UserPoolId.map { x => x.asInstanceOf[js.Any] },
+        "CreationDate" -> CreationDate.map { x => x.asInstanceOf[js.Any] },
         "IdpIdentifiers" -> IdpIdentifiers.map { x => x.asInstanceOf[js.Any] },
-        "ProviderName" -> ProviderName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "LastModifiedDate" -> LastModifiedDate.map { x => x.asInstanceOf[js.Any] },
+        "ProviderDetails" -> ProviderDetails.map { x => x.asInstanceOf[js.Any] },
+        "ProviderName" -> ProviderName.map { x => x.asInstanceOf[js.Any] },
+        "ProviderType" -> ProviderType.map { x => x.asInstanceOf[js.Any] },
+        "UserPoolId" -> UserPoolId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[IdentityProviderType]
     }
@@ -3575,29 +3575,29 @@ package cognitoidentityprovider {
    */
   @js.native
   trait InitiateAuthRequest extends js.Object {
-    var ClientMetadata: js.UndefOr[ClientMetadataType]
-    var AuthParameters: js.UndefOr[AuthParametersType]
-    var ClientId: js.UndefOr[ClientIdType]
-    var AuthFlow: js.UndefOr[AuthFlowType]
-    var UserContextData: js.UndefOr[UserContextDataType]
+    var AuthFlow: AuthFlowType
+    var ClientId: ClientIdType
     var AnalyticsMetadata: js.UndefOr[AnalyticsMetadataType]
+    var AuthParameters: js.UndefOr[AuthParametersType]
+    var ClientMetadata: js.UndefOr[ClientMetadataType]
+    var UserContextData: js.UndefOr[UserContextDataType]
   }
 
   object InitiateAuthRequest {
     def apply(
-      ClientMetadata: js.UndefOr[ClientMetadataType] = js.undefined,
+      AuthFlow: AuthFlowType,
+      ClientId: ClientIdType,
+      AnalyticsMetadata: js.UndefOr[AnalyticsMetadataType] = js.undefined,
       AuthParameters: js.UndefOr[AuthParametersType] = js.undefined,
-      ClientId: js.UndefOr[ClientIdType] = js.undefined,
-      AuthFlow: js.UndefOr[AuthFlowType] = js.undefined,
-      UserContextData: js.UndefOr[UserContextDataType] = js.undefined,
-      AnalyticsMetadata: js.UndefOr[AnalyticsMetadataType] = js.undefined): InitiateAuthRequest = {
+      ClientMetadata: js.UndefOr[ClientMetadataType] = js.undefined,
+      UserContextData: js.UndefOr[UserContextDataType] = js.undefined): InitiateAuthRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ClientMetadata" -> ClientMetadata.map { x => x.asInstanceOf[js.Any] },
+        "AuthFlow" -> AuthFlow.asInstanceOf[js.Any],
+        "ClientId" -> ClientId.asInstanceOf[js.Any],
+        "AnalyticsMetadata" -> AnalyticsMetadata.map { x => x.asInstanceOf[js.Any] },
         "AuthParameters" -> AuthParameters.map { x => x.asInstanceOf[js.Any] },
-        "ClientId" -> ClientId.map { x => x.asInstanceOf[js.Any] },
-        "AuthFlow" -> AuthFlow.map { x => x.asInstanceOf[js.Any] },
-        "UserContextData" -> UserContextData.map { x => x.asInstanceOf[js.Any] },
-        "AnalyticsMetadata" -> AnalyticsMetadata.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ClientMetadata" -> ClientMetadata.map { x => x.asInstanceOf[js.Any] },
+        "UserContextData" -> UserContextData.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[InitiateAuthRequest]
     }
@@ -3608,23 +3608,23 @@ package cognitoidentityprovider {
    */
   @js.native
   trait InitiateAuthResponse extends js.Object {
-    var ChallengeName: js.UndefOr[ChallengeNameType]
-    var Session: js.UndefOr[SessionType]
-    var ChallengeParameters: js.UndefOr[ChallengeParametersType]
     var AuthenticationResult: js.UndefOr[AuthenticationResultType]
+    var ChallengeName: js.UndefOr[ChallengeNameType]
+    var ChallengeParameters: js.UndefOr[ChallengeParametersType]
+    var Session: js.UndefOr[SessionType]
   }
 
   object InitiateAuthResponse {
     def apply(
+      AuthenticationResult: js.UndefOr[AuthenticationResultType] = js.undefined,
       ChallengeName: js.UndefOr[ChallengeNameType] = js.undefined,
-      Session: js.UndefOr[SessionType] = js.undefined,
       ChallengeParameters: js.UndefOr[ChallengeParametersType] = js.undefined,
-      AuthenticationResult: js.UndefOr[AuthenticationResultType] = js.undefined): InitiateAuthResponse = {
+      Session: js.UndefOr[SessionType] = js.undefined): InitiateAuthResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "AuthenticationResult" -> AuthenticationResult.map { x => x.asInstanceOf[js.Any] },
         "ChallengeName" -> ChallengeName.map { x => x.asInstanceOf[js.Any] },
-        "Session" -> Session.map { x => x.asInstanceOf[js.Any] },
         "ChallengeParameters" -> ChallengeParameters.map { x => x.asInstanceOf[js.Any] },
-        "AuthenticationResult" -> AuthenticationResult.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Session" -> Session.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[InitiateAuthResponse]
     }
@@ -3635,40 +3635,40 @@ package cognitoidentityprovider {
    */
   @js.native
   trait LambdaConfigType extends js.Object {
-    var PostConfirmation: js.UndefOr[ArnType]
-    var PostAuthentication: js.UndefOr[ArnType]
-    var PreAuthentication: js.UndefOr[ArnType]
-    var UserMigration: js.UndefOr[ArnType]
-    var PreTokenGeneration: js.UndefOr[ArnType]
+    var CreateAuthChallenge: js.UndefOr[ArnType]
     var CustomMessage: js.UndefOr[ArnType]
     var DefineAuthChallenge: js.UndefOr[ArnType]
-    var CreateAuthChallenge: js.UndefOr[ArnType]
+    var PostAuthentication: js.UndefOr[ArnType]
+    var PostConfirmation: js.UndefOr[ArnType]
+    var PreAuthentication: js.UndefOr[ArnType]
     var PreSignUp: js.UndefOr[ArnType]
+    var PreTokenGeneration: js.UndefOr[ArnType]
+    var UserMigration: js.UndefOr[ArnType]
     var VerifyAuthChallengeResponse: js.UndefOr[ArnType]
   }
 
   object LambdaConfigType {
     def apply(
-      PostConfirmation: js.UndefOr[ArnType] = js.undefined,
-      PostAuthentication: js.UndefOr[ArnType] = js.undefined,
-      PreAuthentication: js.UndefOr[ArnType] = js.undefined,
-      UserMigration: js.UndefOr[ArnType] = js.undefined,
-      PreTokenGeneration: js.UndefOr[ArnType] = js.undefined,
+      CreateAuthChallenge: js.UndefOr[ArnType] = js.undefined,
       CustomMessage: js.UndefOr[ArnType] = js.undefined,
       DefineAuthChallenge: js.UndefOr[ArnType] = js.undefined,
-      CreateAuthChallenge: js.UndefOr[ArnType] = js.undefined,
+      PostAuthentication: js.UndefOr[ArnType] = js.undefined,
+      PostConfirmation: js.UndefOr[ArnType] = js.undefined,
+      PreAuthentication: js.UndefOr[ArnType] = js.undefined,
       PreSignUp: js.UndefOr[ArnType] = js.undefined,
+      PreTokenGeneration: js.UndefOr[ArnType] = js.undefined,
+      UserMigration: js.UndefOr[ArnType] = js.undefined,
       VerifyAuthChallengeResponse: js.UndefOr[ArnType] = js.undefined): LambdaConfigType = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "PostConfirmation" -> PostConfirmation.map { x => x.asInstanceOf[js.Any] },
-        "PostAuthentication" -> PostAuthentication.map { x => x.asInstanceOf[js.Any] },
-        "PreAuthentication" -> PreAuthentication.map { x => x.asInstanceOf[js.Any] },
-        "UserMigration" -> UserMigration.map { x => x.asInstanceOf[js.Any] },
-        "PreTokenGeneration" -> PreTokenGeneration.map { x => x.asInstanceOf[js.Any] },
+        "CreateAuthChallenge" -> CreateAuthChallenge.map { x => x.asInstanceOf[js.Any] },
         "CustomMessage" -> CustomMessage.map { x => x.asInstanceOf[js.Any] },
         "DefineAuthChallenge" -> DefineAuthChallenge.map { x => x.asInstanceOf[js.Any] },
-        "CreateAuthChallenge" -> CreateAuthChallenge.map { x => x.asInstanceOf[js.Any] },
+        "PostAuthentication" -> PostAuthentication.map { x => x.asInstanceOf[js.Any] },
+        "PostConfirmation" -> PostConfirmation.map { x => x.asInstanceOf[js.Any] },
+        "PreAuthentication" -> PreAuthentication.map { x => x.asInstanceOf[js.Any] },
         "PreSignUp" -> PreSignUp.map { x => x.asInstanceOf[js.Any] },
+        "PreTokenGeneration" -> PreTokenGeneration.map { x => x.asInstanceOf[js.Any] },
+        "UserMigration" -> UserMigration.map { x => x.asInstanceOf[js.Any] },
         "VerifyAuthChallengeResponse" -> VerifyAuthChallengeResponse.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[LambdaConfigType]
@@ -3680,18 +3680,18 @@ package cognitoidentityprovider {
    */
   @js.native
   trait ListDevicesRequest extends js.Object {
-    var AccessToken: js.UndefOr[TokenModelType]
+    var AccessToken: TokenModelType
     var Limit: js.UndefOr[QueryLimitType]
     var PaginationToken: js.UndefOr[SearchPaginationTokenType]
   }
 
   object ListDevicesRequest {
     def apply(
-      AccessToken: js.UndefOr[TokenModelType] = js.undefined,
+      AccessToken: TokenModelType,
       Limit: js.UndefOr[QueryLimitType] = js.undefined,
       PaginationToken: js.UndefOr[SearchPaginationTokenType] = js.undefined): ListDevicesRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "AccessToken" -> AccessToken.map { x => x.asInstanceOf[js.Any] },
+        "AccessToken" -> AccessToken.asInstanceOf[js.Any],
         "Limit" -> Limit.map { x => x.asInstanceOf[js.Any] },
         "PaginationToken" -> PaginationToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
@@ -3722,18 +3722,18 @@ package cognitoidentityprovider {
 
   @js.native
   trait ListGroupsRequest extends js.Object {
-    var UserPoolId: js.UndefOr[UserPoolIdType]
+    var UserPoolId: UserPoolIdType
     var Limit: js.UndefOr[QueryLimitType]
     var NextToken: js.UndefOr[PaginationKey]
   }
 
   object ListGroupsRequest {
     def apply(
-      UserPoolId: js.UndefOr[UserPoolIdType] = js.undefined,
+      UserPoolId: UserPoolIdType,
       Limit: js.UndefOr[QueryLimitType] = js.undefined,
       NextToken: js.UndefOr[PaginationKey] = js.undefined): ListGroupsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "UserPoolId" -> UserPoolId.map { x => x.asInstanceOf[js.Any] },
+        "UserPoolId" -> UserPoolId.asInstanceOf[js.Any],
         "Limit" -> Limit.map { x => x.asInstanceOf[js.Any] },
         "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
@@ -3761,18 +3761,18 @@ package cognitoidentityprovider {
 
   @js.native
   trait ListIdentityProvidersRequest extends js.Object {
-    var UserPoolId: js.UndefOr[UserPoolIdType]
+    var UserPoolId: UserPoolIdType
     var MaxResults: js.UndefOr[ListProvidersLimitType]
     var NextToken: js.UndefOr[PaginationKeyType]
   }
 
   object ListIdentityProvidersRequest {
     def apply(
-      UserPoolId: js.UndefOr[UserPoolIdType] = js.undefined,
+      UserPoolId: UserPoolIdType,
       MaxResults: js.UndefOr[ListProvidersLimitType] = js.undefined,
       NextToken: js.UndefOr[PaginationKeyType] = js.undefined): ListIdentityProvidersRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "UserPoolId" -> UserPoolId.map { x => x.asInstanceOf[js.Any] },
+        "UserPoolId" -> UserPoolId.asInstanceOf[js.Any],
         "MaxResults" -> MaxResults.map { x => x.asInstanceOf[js.Any] },
         "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
@@ -3782,16 +3782,16 @@ package cognitoidentityprovider {
 
   @js.native
   trait ListIdentityProvidersResponse extends js.Object {
-    var Providers: js.UndefOr[ProvidersListType]
+    var Providers: ProvidersListType
     var NextToken: js.UndefOr[PaginationKeyType]
   }
 
   object ListIdentityProvidersResponse {
     def apply(
-      Providers: js.UndefOr[ProvidersListType] = js.undefined,
+      Providers: ProvidersListType,
       NextToken: js.UndefOr[PaginationKeyType] = js.undefined): ListIdentityProvidersResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Providers" -> Providers.map { x => x.asInstanceOf[js.Any] },
+        "Providers" -> Providers.asInstanceOf[js.Any],
         "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListIdentityProvidersResponse]
@@ -3800,18 +3800,18 @@ package cognitoidentityprovider {
 
   @js.native
   trait ListResourceServersRequest extends js.Object {
-    var UserPoolId: js.UndefOr[UserPoolIdType]
+    var UserPoolId: UserPoolIdType
     var MaxResults: js.UndefOr[ListResourceServersLimitType]
     var NextToken: js.UndefOr[PaginationKeyType]
   }
 
   object ListResourceServersRequest {
     def apply(
-      UserPoolId: js.UndefOr[UserPoolIdType] = js.undefined,
+      UserPoolId: UserPoolIdType,
       MaxResults: js.UndefOr[ListResourceServersLimitType] = js.undefined,
       NextToken: js.UndefOr[PaginationKeyType] = js.undefined): ListResourceServersRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "UserPoolId" -> UserPoolId.map { x => x.asInstanceOf[js.Any] },
+        "UserPoolId" -> UserPoolId.asInstanceOf[js.Any],
         "MaxResults" -> MaxResults.map { x => x.asInstanceOf[js.Any] },
         "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
@@ -3821,16 +3821,16 @@ package cognitoidentityprovider {
 
   @js.native
   trait ListResourceServersResponse extends js.Object {
-    var ResourceServers: js.UndefOr[ResourceServersListType]
+    var ResourceServers: ResourceServersListType
     var NextToken: js.UndefOr[PaginationKeyType]
   }
 
   object ListResourceServersResponse {
     def apply(
-      ResourceServers: js.UndefOr[ResourceServersListType] = js.undefined,
+      ResourceServers: ResourceServersListType,
       NextToken: js.UndefOr[PaginationKeyType] = js.undefined): ListResourceServersResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ResourceServers" -> ResourceServers.map { x => x.asInstanceOf[js.Any] },
+        "ResourceServers" -> ResourceServers.asInstanceOf[js.Any],
         "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListResourceServersResponse]
@@ -3842,19 +3842,19 @@ package cognitoidentityprovider {
    */
   @js.native
   trait ListUserImportJobsRequest extends js.Object {
-    var UserPoolId: js.UndefOr[UserPoolIdType]
-    var MaxResults: js.UndefOr[PoolQueryLimitType]
+    var MaxResults: PoolQueryLimitType
+    var UserPoolId: UserPoolIdType
     var PaginationToken: js.UndefOr[PaginationKeyType]
   }
 
   object ListUserImportJobsRequest {
     def apply(
-      UserPoolId: js.UndefOr[UserPoolIdType] = js.undefined,
-      MaxResults: js.UndefOr[PoolQueryLimitType] = js.undefined,
+      MaxResults: PoolQueryLimitType,
+      UserPoolId: UserPoolIdType,
       PaginationToken: js.UndefOr[PaginationKeyType] = js.undefined): ListUserImportJobsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "UserPoolId" -> UserPoolId.map { x => x.asInstanceOf[js.Any] },
-        "MaxResults" -> MaxResults.map { x => x.asInstanceOf[js.Any] },
+        "MaxResults" -> MaxResults.asInstanceOf[js.Any],
+        "UserPoolId" -> UserPoolId.asInstanceOf[js.Any],
         "PaginationToken" -> PaginationToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListUserImportJobsRequest]
@@ -3866,17 +3866,17 @@ package cognitoidentityprovider {
    */
   @js.native
   trait ListUserImportJobsResponse extends js.Object {
-    var UserImportJobs: js.UndefOr[UserImportJobsListType]
     var PaginationToken: js.UndefOr[PaginationKeyType]
+    var UserImportJobs: js.UndefOr[UserImportJobsListType]
   }
 
   object ListUserImportJobsResponse {
     def apply(
-      UserImportJobs: js.UndefOr[UserImportJobsListType] = js.undefined,
-      PaginationToken: js.UndefOr[PaginationKeyType] = js.undefined): ListUserImportJobsResponse = {
+      PaginationToken: js.UndefOr[PaginationKeyType] = js.undefined,
+      UserImportJobs: js.UndefOr[UserImportJobsListType] = js.undefined): ListUserImportJobsResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "UserImportJobs" -> UserImportJobs.map { x => x.asInstanceOf[js.Any] },
-        "PaginationToken" -> PaginationToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "PaginationToken" -> PaginationToken.map { x => x.asInstanceOf[js.Any] },
+        "UserImportJobs" -> UserImportJobs.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListUserImportJobsResponse]
     }
@@ -3887,18 +3887,18 @@ package cognitoidentityprovider {
    */
   @js.native
   trait ListUserPoolClientsRequest extends js.Object {
-    var UserPoolId: js.UndefOr[UserPoolIdType]
+    var UserPoolId: UserPoolIdType
     var MaxResults: js.UndefOr[QueryLimit]
     var NextToken: js.UndefOr[PaginationKey]
   }
 
   object ListUserPoolClientsRequest {
     def apply(
-      UserPoolId: js.UndefOr[UserPoolIdType] = js.undefined,
+      UserPoolId: UserPoolIdType,
       MaxResults: js.UndefOr[QueryLimit] = js.undefined,
       NextToken: js.UndefOr[PaginationKey] = js.undefined): ListUserPoolClientsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "UserPoolId" -> UserPoolId.map { x => x.asInstanceOf[js.Any] },
+        "UserPoolId" -> UserPoolId.asInstanceOf[js.Any],
         "MaxResults" -> MaxResults.map { x => x.asInstanceOf[js.Any] },
         "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
@@ -3911,17 +3911,17 @@ package cognitoidentityprovider {
    */
   @js.native
   trait ListUserPoolClientsResponse extends js.Object {
-    var UserPoolClients: js.UndefOr[UserPoolClientListType]
     var NextToken: js.UndefOr[PaginationKey]
+    var UserPoolClients: js.UndefOr[UserPoolClientListType]
   }
 
   object ListUserPoolClientsResponse {
     def apply(
-      UserPoolClients: js.UndefOr[UserPoolClientListType] = js.undefined,
-      NextToken: js.UndefOr[PaginationKey] = js.undefined): ListUserPoolClientsResponse = {
+      NextToken: js.UndefOr[PaginationKey] = js.undefined,
+      UserPoolClients: js.UndefOr[UserPoolClientListType] = js.undefined): ListUserPoolClientsResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "UserPoolClients" -> UserPoolClients.map { x => x.asInstanceOf[js.Any] },
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
+        "UserPoolClients" -> UserPoolClients.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListUserPoolClientsResponse]
     }
@@ -3932,17 +3932,17 @@ package cognitoidentityprovider {
    */
   @js.native
   trait ListUserPoolsRequest extends js.Object {
+    var MaxResults: PoolQueryLimitType
     var NextToken: js.UndefOr[PaginationKeyType]
-    var MaxResults: js.UndefOr[PoolQueryLimitType]
   }
 
   object ListUserPoolsRequest {
     def apply(
-      NextToken: js.UndefOr[PaginationKeyType] = js.undefined,
-      MaxResults: js.UndefOr[PoolQueryLimitType] = js.undefined): ListUserPoolsRequest = {
+      MaxResults: PoolQueryLimitType,
+      NextToken: js.UndefOr[PaginationKeyType] = js.undefined): ListUserPoolsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
-        "MaxResults" -> MaxResults.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "MaxResults" -> MaxResults.asInstanceOf[js.Any],
+        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListUserPoolsRequest]
     }
@@ -3953,17 +3953,17 @@ package cognitoidentityprovider {
    */
   @js.native
   trait ListUserPoolsResponse extends js.Object {
-    var UserPools: js.UndefOr[UserPoolListType]
     var NextToken: js.UndefOr[PaginationKeyType]
+    var UserPools: js.UndefOr[UserPoolListType]
   }
 
   object ListUserPoolsResponse {
     def apply(
-      UserPools: js.UndefOr[UserPoolListType] = js.undefined,
-      NextToken: js.UndefOr[PaginationKeyType] = js.undefined): ListUserPoolsResponse = {
+      NextToken: js.UndefOr[PaginationKeyType] = js.undefined,
+      UserPools: js.UndefOr[UserPoolListType] = js.undefined): ListUserPoolsResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "UserPools" -> UserPools.map { x => x.asInstanceOf[js.Any] },
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
+        "UserPools" -> UserPools.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListUserPoolsResponse]
     }
@@ -3971,21 +3971,21 @@ package cognitoidentityprovider {
 
   @js.native
   trait ListUsersInGroupRequest extends js.Object {
-    var UserPoolId: js.UndefOr[UserPoolIdType]
-    var GroupName: js.UndefOr[GroupNameType]
+    var GroupName: GroupNameType
+    var UserPoolId: UserPoolIdType
     var Limit: js.UndefOr[QueryLimitType]
     var NextToken: js.UndefOr[PaginationKey]
   }
 
   object ListUsersInGroupRequest {
     def apply(
-      UserPoolId: js.UndefOr[UserPoolIdType] = js.undefined,
-      GroupName: js.UndefOr[GroupNameType] = js.undefined,
+      GroupName: GroupNameType,
+      UserPoolId: UserPoolIdType,
       Limit: js.UndefOr[QueryLimitType] = js.undefined,
       NextToken: js.UndefOr[PaginationKey] = js.undefined): ListUsersInGroupRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "UserPoolId" -> UserPoolId.map { x => x.asInstanceOf[js.Any] },
-        "GroupName" -> GroupName.map { x => x.asInstanceOf[js.Any] },
+        "GroupName" -> GroupName.asInstanceOf[js.Any],
+        "UserPoolId" -> UserPoolId.asInstanceOf[js.Any],
         "Limit" -> Limit.map { x => x.asInstanceOf[js.Any] },
         "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
@@ -3995,17 +3995,17 @@ package cognitoidentityprovider {
 
   @js.native
   trait ListUsersInGroupResponse extends js.Object {
-    var Users: js.UndefOr[UsersListType]
     var NextToken: js.UndefOr[PaginationKey]
+    var Users: js.UndefOr[UsersListType]
   }
 
   object ListUsersInGroupResponse {
     def apply(
-      Users: js.UndefOr[UsersListType] = js.undefined,
-      NextToken: js.UndefOr[PaginationKey] = js.undefined): ListUsersInGroupResponse = {
+      NextToken: js.UndefOr[PaginationKey] = js.undefined,
+      Users: js.UndefOr[UsersListType] = js.undefined): ListUsersInGroupResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Users" -> Users.map { x => x.asInstanceOf[js.Any] },
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
+        "Users" -> Users.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListUsersInGroupResponse]
     }
@@ -4016,26 +4016,26 @@ package cognitoidentityprovider {
    */
   @js.native
   trait ListUsersRequest extends js.Object {
-    var Limit: js.UndefOr[QueryLimitType]
-    var UserPoolId: js.UndefOr[UserPoolIdType]
-    var PaginationToken: js.UndefOr[SearchPaginationTokenType]
+    var UserPoolId: UserPoolIdType
     var AttributesToGet: js.UndefOr[SearchedAttributeNamesListType]
     var Filter: js.UndefOr[UserFilterType]
+    var Limit: js.UndefOr[QueryLimitType]
+    var PaginationToken: js.UndefOr[SearchPaginationTokenType]
   }
 
   object ListUsersRequest {
     def apply(
-      Limit: js.UndefOr[QueryLimitType] = js.undefined,
-      UserPoolId: js.UndefOr[UserPoolIdType] = js.undefined,
-      PaginationToken: js.UndefOr[SearchPaginationTokenType] = js.undefined,
+      UserPoolId: UserPoolIdType,
       AttributesToGet: js.UndefOr[SearchedAttributeNamesListType] = js.undefined,
-      Filter: js.UndefOr[UserFilterType] = js.undefined): ListUsersRequest = {
+      Filter: js.UndefOr[UserFilterType] = js.undefined,
+      Limit: js.UndefOr[QueryLimitType] = js.undefined,
+      PaginationToken: js.UndefOr[SearchPaginationTokenType] = js.undefined): ListUsersRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Limit" -> Limit.map { x => x.asInstanceOf[js.Any] },
-        "UserPoolId" -> UserPoolId.map { x => x.asInstanceOf[js.Any] },
-        "PaginationToken" -> PaginationToken.map { x => x.asInstanceOf[js.Any] },
+        "UserPoolId" -> UserPoolId.asInstanceOf[js.Any],
         "AttributesToGet" -> AttributesToGet.map { x => x.asInstanceOf[js.Any] },
-        "Filter" -> Filter.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Filter" -> Filter.map { x => x.asInstanceOf[js.Any] },
+        "Limit" -> Limit.map { x => x.asInstanceOf[js.Any] },
+        "PaginationToken" -> PaginationToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListUsersRequest]
     }
@@ -4046,17 +4046,17 @@ package cognitoidentityprovider {
    */
   @js.native
   trait ListUsersResponse extends js.Object {
-    var Users: js.UndefOr[UsersListType]
     var PaginationToken: js.UndefOr[SearchPaginationTokenType]
+    var Users: js.UndefOr[UsersListType]
   }
 
   object ListUsersResponse {
     def apply(
-      Users: js.UndefOr[UsersListType] = js.undefined,
-      PaginationToken: js.UndefOr[SearchPaginationTokenType] = js.undefined): ListUsersResponse = {
+      PaginationToken: js.UndefOr[SearchPaginationTokenType] = js.undefined,
+      Users: js.UndefOr[UsersListType] = js.undefined): ListUsersResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Users" -> Users.map { x => x.asInstanceOf[js.Any] },
-        "PaginationToken" -> PaginationToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "PaginationToken" -> PaginationToken.map { x => x.asInstanceOf[js.Any] },
+        "Users" -> Users.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListUsersResponse]
     }
@@ -4067,17 +4067,17 @@ package cognitoidentityprovider {
    */
   @js.native
   trait MFAOptionType extends js.Object {
-    var DeliveryMedium: js.UndefOr[DeliveryMediumType]
     var AttributeName: js.UndefOr[AttributeNameType]
+    var DeliveryMedium: js.UndefOr[DeliveryMediumType]
   }
 
   object MFAOptionType {
     def apply(
-      DeliveryMedium: js.UndefOr[DeliveryMediumType] = js.undefined,
-      AttributeName: js.UndefOr[AttributeNameType] = js.undefined): MFAOptionType = {
+      AttributeName: js.UndefOr[AttributeNameType] = js.undefined,
+      DeliveryMedium: js.UndefOr[DeliveryMediumType] = js.undefined): MFAOptionType = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "DeliveryMedium" -> DeliveryMedium.map { x => x.asInstanceOf[js.Any] },
-        "AttributeName" -> AttributeName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "AttributeName" -> AttributeName.map { x => x.asInstanceOf[js.Any] },
+        "DeliveryMedium" -> DeliveryMedium.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[MFAOptionType]
     }
@@ -4095,20 +4095,20 @@ package cognitoidentityprovider {
    */
   @js.native
   trait MessageTemplateType extends js.Object {
-    var SMSMessage: js.UndefOr[SmsVerificationMessageType]
     var EmailMessage: js.UndefOr[EmailVerificationMessageType]
     var EmailSubject: js.UndefOr[EmailVerificationSubjectType]
+    var SMSMessage: js.UndefOr[SmsVerificationMessageType]
   }
 
   object MessageTemplateType {
     def apply(
-      SMSMessage: js.UndefOr[SmsVerificationMessageType] = js.undefined,
       EmailMessage: js.UndefOr[EmailVerificationMessageType] = js.undefined,
-      EmailSubject: js.UndefOr[EmailVerificationSubjectType] = js.undefined): MessageTemplateType = {
+      EmailSubject: js.UndefOr[EmailVerificationSubjectType] = js.undefined,
+      SMSMessage: js.UndefOr[SmsVerificationMessageType] = js.undefined): MessageTemplateType = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "SMSMessage" -> SMSMessage.map { x => x.asInstanceOf[js.Any] },
         "EmailMessage" -> EmailMessage.map { x => x.asInstanceOf[js.Any] },
-        "EmailSubject" -> EmailSubject.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "EmailSubject" -> EmailSubject.map { x => x.asInstanceOf[js.Any] },
+        "SMSMessage" -> SMSMessage.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[MessageTemplateType]
     }
@@ -4119,17 +4119,17 @@ package cognitoidentityprovider {
    */
   @js.native
   trait NewDeviceMetadataType extends js.Object {
-    var DeviceKey: js.UndefOr[DeviceKeyType]
     var DeviceGroupKey: js.UndefOr[StringType]
+    var DeviceKey: js.UndefOr[DeviceKeyType]
   }
 
   object NewDeviceMetadataType {
     def apply(
-      DeviceKey: js.UndefOr[DeviceKeyType] = js.undefined,
-      DeviceGroupKey: js.UndefOr[StringType] = js.undefined): NewDeviceMetadataType = {
+      DeviceGroupKey: js.UndefOr[StringType] = js.undefined,
+      DeviceKey: js.UndefOr[DeviceKeyType] = js.undefined): NewDeviceMetadataType = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "DeviceKey" -> DeviceKey.map { x => x.asInstanceOf[js.Any] },
-        "DeviceGroupKey" -> DeviceGroupKey.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "DeviceGroupKey" -> DeviceGroupKey.map { x => x.asInstanceOf[js.Any] },
+        "DeviceKey" -> DeviceKey.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[NewDeviceMetadataType]
     }
@@ -4140,29 +4140,29 @@ package cognitoidentityprovider {
    */
   @js.native
   trait NotifyConfigurationType extends js.Object {
-    var MfaEmail: js.UndefOr[NotifyEmailType]
-    var ReplyTo: js.UndefOr[StringType]
-    var NoActionEmail: js.UndefOr[NotifyEmailType]
-    var SourceArn: js.UndefOr[ArnType]
+    var SourceArn: ArnType
     var BlockEmail: js.UndefOr[NotifyEmailType]
     var From: js.UndefOr[StringType]
+    var MfaEmail: js.UndefOr[NotifyEmailType]
+    var NoActionEmail: js.UndefOr[NotifyEmailType]
+    var ReplyTo: js.UndefOr[StringType]
   }
 
   object NotifyConfigurationType {
     def apply(
-      MfaEmail: js.UndefOr[NotifyEmailType] = js.undefined,
-      ReplyTo: js.UndefOr[StringType] = js.undefined,
-      NoActionEmail: js.UndefOr[NotifyEmailType] = js.undefined,
-      SourceArn: js.UndefOr[ArnType] = js.undefined,
+      SourceArn: ArnType,
       BlockEmail: js.UndefOr[NotifyEmailType] = js.undefined,
-      From: js.UndefOr[StringType] = js.undefined): NotifyConfigurationType = {
+      From: js.UndefOr[StringType] = js.undefined,
+      MfaEmail: js.UndefOr[NotifyEmailType] = js.undefined,
+      NoActionEmail: js.UndefOr[NotifyEmailType] = js.undefined,
+      ReplyTo: js.UndefOr[StringType] = js.undefined): NotifyConfigurationType = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "MfaEmail" -> MfaEmail.map { x => x.asInstanceOf[js.Any] },
-        "ReplyTo" -> ReplyTo.map { x => x.asInstanceOf[js.Any] },
-        "NoActionEmail" -> NoActionEmail.map { x => x.asInstanceOf[js.Any] },
-        "SourceArn" -> SourceArn.map { x => x.asInstanceOf[js.Any] },
+        "SourceArn" -> SourceArn.asInstanceOf[js.Any],
         "BlockEmail" -> BlockEmail.map { x => x.asInstanceOf[js.Any] },
-        "From" -> From.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "From" -> From.map { x => x.asInstanceOf[js.Any] },
+        "MfaEmail" -> MfaEmail.map { x => x.asInstanceOf[js.Any] },
+        "NoActionEmail" -> NoActionEmail.map { x => x.asInstanceOf[js.Any] },
+        "ReplyTo" -> ReplyTo.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[NotifyConfigurationType]
     }
@@ -4173,18 +4173,18 @@ package cognitoidentityprovider {
    */
   @js.native
   trait NotifyEmailType extends js.Object {
-    var Subject: js.UndefOr[EmailNotificationSubjectType]
+    var Subject: EmailNotificationSubjectType
     var HtmlBody: js.UndefOr[EmailNotificationBodyType]
     var TextBody: js.UndefOr[EmailNotificationBodyType]
   }
 
   object NotifyEmailType {
     def apply(
-      Subject: js.UndefOr[EmailNotificationSubjectType] = js.undefined,
+      Subject: EmailNotificationSubjectType,
       HtmlBody: js.UndefOr[EmailNotificationBodyType] = js.undefined,
       TextBody: js.UndefOr[EmailNotificationBodyType] = js.undefined): NotifyEmailType = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Subject" -> Subject.map { x => x.asInstanceOf[js.Any] },
+        "Subject" -> Subject.asInstanceOf[js.Any],
         "HtmlBody" -> HtmlBody.map { x => x.asInstanceOf[js.Any] },
         "TextBody" -> TextBody.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
@@ -4197,17 +4197,17 @@ package cognitoidentityprovider {
    */
   @js.native
   trait NumberAttributeConstraintsType extends js.Object {
-    var MinValue: js.UndefOr[StringType]
     var MaxValue: js.UndefOr[StringType]
+    var MinValue: js.UndefOr[StringType]
   }
 
   object NumberAttributeConstraintsType {
     def apply(
-      MinValue: js.UndefOr[StringType] = js.undefined,
-      MaxValue: js.UndefOr[StringType] = js.undefined): NumberAttributeConstraintsType = {
+      MaxValue: js.UndefOr[StringType] = js.undefined,
+      MinValue: js.UndefOr[StringType] = js.undefined): NumberAttributeConstraintsType = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "MinValue" -> MinValue.map { x => x.asInstanceOf[js.Any] },
-        "MaxValue" -> MaxValue.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "MaxValue" -> MaxValue.map { x => x.asInstanceOf[js.Any] },
+        "MinValue" -> MinValue.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[NumberAttributeConstraintsType]
     }
@@ -4227,25 +4227,25 @@ package cognitoidentityprovider {
   @js.native
   trait PasswordPolicyType extends js.Object {
     var MinimumLength: js.UndefOr[PasswordPolicyMinLengthType]
-    var RequireNumbers: js.UndefOr[BooleanType]
     var RequireLowercase: js.UndefOr[BooleanType]
-    var RequireUppercase: js.UndefOr[BooleanType]
+    var RequireNumbers: js.UndefOr[BooleanType]
     var RequireSymbols: js.UndefOr[BooleanType]
+    var RequireUppercase: js.UndefOr[BooleanType]
   }
 
   object PasswordPolicyType {
     def apply(
       MinimumLength: js.UndefOr[PasswordPolicyMinLengthType] = js.undefined,
-      RequireNumbers: js.UndefOr[BooleanType] = js.undefined,
       RequireLowercase: js.UndefOr[BooleanType] = js.undefined,
-      RequireUppercase: js.UndefOr[BooleanType] = js.undefined,
-      RequireSymbols: js.UndefOr[BooleanType] = js.undefined): PasswordPolicyType = {
+      RequireNumbers: js.UndefOr[BooleanType] = js.undefined,
+      RequireSymbols: js.UndefOr[BooleanType] = js.undefined,
+      RequireUppercase: js.UndefOr[BooleanType] = js.undefined): PasswordPolicyType = {
       val _fields = IndexedSeq[(String, js.Any)](
         "MinimumLength" -> MinimumLength.map { x => x.asInstanceOf[js.Any] },
-        "RequireNumbers" -> RequireNumbers.map { x => x.asInstanceOf[js.Any] },
         "RequireLowercase" -> RequireLowercase.map { x => x.asInstanceOf[js.Any] },
-        "RequireUppercase" -> RequireUppercase.map { x => x.asInstanceOf[js.Any] },
-        "RequireSymbols" -> RequireSymbols.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "RequireNumbers" -> RequireNumbers.map { x => x.asInstanceOf[js.Any] },
+        "RequireSymbols" -> RequireSymbols.map { x => x.asInstanceOf[js.Any] },
+        "RequireUppercase" -> RequireUppercase.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PasswordPolicyType]
     }
@@ -4256,23 +4256,23 @@ package cognitoidentityprovider {
    */
   @js.native
   trait ProviderDescription extends js.Object {
+    var CreationDate: js.UndefOr[DateType]
+    var LastModifiedDate: js.UndefOr[DateType]
     var ProviderName: js.UndefOr[ProviderNameType]
     var ProviderType: js.UndefOr[IdentityProviderTypeType]
-    var LastModifiedDate: js.UndefOr[DateType]
-    var CreationDate: js.UndefOr[DateType]
   }
 
   object ProviderDescription {
     def apply(
-      ProviderName: js.UndefOr[ProviderNameType] = js.undefined,
-      ProviderType: js.UndefOr[IdentityProviderTypeType] = js.undefined,
+      CreationDate: js.UndefOr[DateType] = js.undefined,
       LastModifiedDate: js.UndefOr[DateType] = js.undefined,
-      CreationDate: js.UndefOr[DateType] = js.undefined): ProviderDescription = {
+      ProviderName: js.UndefOr[ProviderNameType] = js.undefined,
+      ProviderType: js.UndefOr[IdentityProviderTypeType] = js.undefined): ProviderDescription = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ProviderName" -> ProviderName.map { x => x.asInstanceOf[js.Any] },
-        "ProviderType" -> ProviderType.map { x => x.asInstanceOf[js.Any] },
+        "CreationDate" -> CreationDate.map { x => x.asInstanceOf[js.Any] },
         "LastModifiedDate" -> LastModifiedDate.map { x => x.asInstanceOf[js.Any] },
-        "CreationDate" -> CreationDate.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ProviderName" -> ProviderName.map { x => x.asInstanceOf[js.Any] },
+        "ProviderType" -> ProviderType.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ProviderDescription]
     }
@@ -4283,20 +4283,20 @@ package cognitoidentityprovider {
    */
   @js.native
   trait ProviderUserIdentifierType extends js.Object {
-    var ProviderName: js.UndefOr[ProviderNameType]
     var ProviderAttributeName: js.UndefOr[StringType]
     var ProviderAttributeValue: js.UndefOr[StringType]
+    var ProviderName: js.UndefOr[ProviderNameType]
   }
 
   object ProviderUserIdentifierType {
     def apply(
-      ProviderName: js.UndefOr[ProviderNameType] = js.undefined,
       ProviderAttributeName: js.UndefOr[StringType] = js.undefined,
-      ProviderAttributeValue: js.UndefOr[StringType] = js.undefined): ProviderUserIdentifierType = {
+      ProviderAttributeValue: js.UndefOr[StringType] = js.undefined,
+      ProviderName: js.UndefOr[ProviderNameType] = js.undefined): ProviderUserIdentifierType = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ProviderName" -> ProviderName.map { x => x.asInstanceOf[js.Any] },
         "ProviderAttributeName" -> ProviderAttributeName.map { x => x.asInstanceOf[js.Any] },
-        "ProviderAttributeValue" -> ProviderAttributeValue.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ProviderAttributeValue" -> ProviderAttributeValue.map { x => x.asInstanceOf[js.Any] },
+        "ProviderName" -> ProviderName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ProviderUserIdentifierType]
     }
@@ -4307,26 +4307,26 @@ package cognitoidentityprovider {
    */
   @js.native
   trait ResendConfirmationCodeRequest extends js.Object {
-    var Username: js.UndefOr[UsernameType]
-    var SecretHash: js.UndefOr[SecretHashType]
-    var ClientId: js.UndefOr[ClientIdType]
-    var UserContextData: js.UndefOr[UserContextDataType]
+    var ClientId: ClientIdType
+    var Username: UsernameType
     var AnalyticsMetadata: js.UndefOr[AnalyticsMetadataType]
+    var SecretHash: js.UndefOr[SecretHashType]
+    var UserContextData: js.UndefOr[UserContextDataType]
   }
 
   object ResendConfirmationCodeRequest {
     def apply(
-      Username: js.UndefOr[UsernameType] = js.undefined,
+      ClientId: ClientIdType,
+      Username: UsernameType,
+      AnalyticsMetadata: js.UndefOr[AnalyticsMetadataType] = js.undefined,
       SecretHash: js.UndefOr[SecretHashType] = js.undefined,
-      ClientId: js.UndefOr[ClientIdType] = js.undefined,
-      UserContextData: js.UndefOr[UserContextDataType] = js.undefined,
-      AnalyticsMetadata: js.UndefOr[AnalyticsMetadataType] = js.undefined): ResendConfirmationCodeRequest = {
+      UserContextData: js.UndefOr[UserContextDataType] = js.undefined): ResendConfirmationCodeRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Username" -> Username.map { x => x.asInstanceOf[js.Any] },
+        "ClientId" -> ClientId.asInstanceOf[js.Any],
+        "Username" -> Username.asInstanceOf[js.Any],
+        "AnalyticsMetadata" -> AnalyticsMetadata.map { x => x.asInstanceOf[js.Any] },
         "SecretHash" -> SecretHash.map { x => x.asInstanceOf[js.Any] },
-        "ClientId" -> ClientId.map { x => x.asInstanceOf[js.Any] },
-        "UserContextData" -> UserContextData.map { x => x.asInstanceOf[js.Any] },
-        "AnalyticsMetadata" -> AnalyticsMetadata.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "UserContextData" -> UserContextData.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ResendConfirmationCodeRequest]
     }
@@ -4355,17 +4355,17 @@ package cognitoidentityprovider {
    */
   @js.native
   trait ResourceServerScopeType extends js.Object {
-    var ScopeName: js.UndefOr[ResourceServerScopeNameType]
-    var ScopeDescription: js.UndefOr[ResourceServerScopeDescriptionType]
+    var ScopeDescription: ResourceServerScopeDescriptionType
+    var ScopeName: ResourceServerScopeNameType
   }
 
   object ResourceServerScopeType {
     def apply(
-      ScopeName: js.UndefOr[ResourceServerScopeNameType] = js.undefined,
-      ScopeDescription: js.UndefOr[ResourceServerScopeDescriptionType] = js.undefined): ResourceServerScopeType = {
+      ScopeDescription: ResourceServerScopeDescriptionType,
+      ScopeName: ResourceServerScopeNameType): ResourceServerScopeType = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ScopeName" -> ScopeName.map { x => x.asInstanceOf[js.Any] },
-        "ScopeDescription" -> ScopeDescription.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ScopeDescription" -> ScopeDescription.asInstanceOf[js.Any],
+        "ScopeName" -> ScopeName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ResourceServerScopeType]
     }
@@ -4376,23 +4376,23 @@ package cognitoidentityprovider {
    */
   @js.native
   trait ResourceServerType extends js.Object {
-    var UserPoolId: js.UndefOr[UserPoolIdType]
     var Identifier: js.UndefOr[ResourceServerIdentifierType]
     var Name: js.UndefOr[ResourceServerNameType]
     var Scopes: js.UndefOr[ResourceServerScopeListType]
+    var UserPoolId: js.UndefOr[UserPoolIdType]
   }
 
   object ResourceServerType {
     def apply(
-      UserPoolId: js.UndefOr[UserPoolIdType] = js.undefined,
       Identifier: js.UndefOr[ResourceServerIdentifierType] = js.undefined,
       Name: js.UndefOr[ResourceServerNameType] = js.undefined,
-      Scopes: js.UndefOr[ResourceServerScopeListType] = js.undefined): ResourceServerType = {
+      Scopes: js.UndefOr[ResourceServerScopeListType] = js.undefined,
+      UserPoolId: js.UndefOr[UserPoolIdType] = js.undefined): ResourceServerType = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "UserPoolId" -> UserPoolId.map { x => x.asInstanceOf[js.Any] },
         "Identifier" -> Identifier.map { x => x.asInstanceOf[js.Any] },
         "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
-        "Scopes" -> Scopes.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Scopes" -> Scopes.map { x => x.asInstanceOf[js.Any] },
+        "UserPoolId" -> UserPoolId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ResourceServerType]
     }
@@ -4403,29 +4403,29 @@ package cognitoidentityprovider {
    */
   @js.native
   trait RespondToAuthChallengeRequest extends js.Object {
-    var ChallengeName: js.UndefOr[ChallengeNameType]
-    var Session: js.UndefOr[SessionType]
-    var ClientId: js.UndefOr[ClientIdType]
-    var ChallengeResponses: js.UndefOr[ChallengeResponsesType]
-    var UserContextData: js.UndefOr[UserContextDataType]
+    var ChallengeName: ChallengeNameType
+    var ClientId: ClientIdType
     var AnalyticsMetadata: js.UndefOr[AnalyticsMetadataType]
+    var ChallengeResponses: js.UndefOr[ChallengeResponsesType]
+    var Session: js.UndefOr[SessionType]
+    var UserContextData: js.UndefOr[UserContextDataType]
   }
 
   object RespondToAuthChallengeRequest {
     def apply(
-      ChallengeName: js.UndefOr[ChallengeNameType] = js.undefined,
-      Session: js.UndefOr[SessionType] = js.undefined,
-      ClientId: js.UndefOr[ClientIdType] = js.undefined,
+      ChallengeName: ChallengeNameType,
+      ClientId: ClientIdType,
+      AnalyticsMetadata: js.UndefOr[AnalyticsMetadataType] = js.undefined,
       ChallengeResponses: js.UndefOr[ChallengeResponsesType] = js.undefined,
-      UserContextData: js.UndefOr[UserContextDataType] = js.undefined,
-      AnalyticsMetadata: js.UndefOr[AnalyticsMetadataType] = js.undefined): RespondToAuthChallengeRequest = {
+      Session: js.UndefOr[SessionType] = js.undefined,
+      UserContextData: js.UndefOr[UserContextDataType] = js.undefined): RespondToAuthChallengeRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ChallengeName" -> ChallengeName.map { x => x.asInstanceOf[js.Any] },
-        "Session" -> Session.map { x => x.asInstanceOf[js.Any] },
-        "ClientId" -> ClientId.map { x => x.asInstanceOf[js.Any] },
+        "ChallengeName" -> ChallengeName.asInstanceOf[js.Any],
+        "ClientId" -> ClientId.asInstanceOf[js.Any],
+        "AnalyticsMetadata" -> AnalyticsMetadata.map { x => x.asInstanceOf[js.Any] },
         "ChallengeResponses" -> ChallengeResponses.map { x => x.asInstanceOf[js.Any] },
-        "UserContextData" -> UserContextData.map { x => x.asInstanceOf[js.Any] },
-        "AnalyticsMetadata" -> AnalyticsMetadata.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Session" -> Session.map { x => x.asInstanceOf[js.Any] },
+        "UserContextData" -> UserContextData.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RespondToAuthChallengeRequest]
     }
@@ -4436,23 +4436,23 @@ package cognitoidentityprovider {
    */
   @js.native
   trait RespondToAuthChallengeResponse extends js.Object {
-    var ChallengeName: js.UndefOr[ChallengeNameType]
-    var Session: js.UndefOr[SessionType]
-    var ChallengeParameters: js.UndefOr[ChallengeParametersType]
     var AuthenticationResult: js.UndefOr[AuthenticationResultType]
+    var ChallengeName: js.UndefOr[ChallengeNameType]
+    var ChallengeParameters: js.UndefOr[ChallengeParametersType]
+    var Session: js.UndefOr[SessionType]
   }
 
   object RespondToAuthChallengeResponse {
     def apply(
+      AuthenticationResult: js.UndefOr[AuthenticationResultType] = js.undefined,
       ChallengeName: js.UndefOr[ChallengeNameType] = js.undefined,
-      Session: js.UndefOr[SessionType] = js.undefined,
       ChallengeParameters: js.UndefOr[ChallengeParametersType] = js.undefined,
-      AuthenticationResult: js.UndefOr[AuthenticationResultType] = js.undefined): RespondToAuthChallengeResponse = {
+      Session: js.UndefOr[SessionType] = js.undefined): RespondToAuthChallengeResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "AuthenticationResult" -> AuthenticationResult.map { x => x.asInstanceOf[js.Any] },
         "ChallengeName" -> ChallengeName.map { x => x.asInstanceOf[js.Any] },
-        "Session" -> Session.map { x => x.asInstanceOf[js.Any] },
         "ChallengeParameters" -> ChallengeParameters.map { x => x.asInstanceOf[js.Any] },
-        "AuthenticationResult" -> AuthenticationResult.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Session" -> Session.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RespondToAuthChallengeResponse]
     }
@@ -4463,29 +4463,29 @@ package cognitoidentityprovider {
    */
   @js.native
   trait RiskConfigurationType extends js.Object {
-    var RiskExceptionConfiguration: js.UndefOr[RiskExceptionConfigurationType]
-    var LastModifiedDate: js.UndefOr[DateType]
-    var UserPoolId: js.UndefOr[UserPoolIdType]
+    var AccountTakeoverRiskConfiguration: js.UndefOr[AccountTakeoverRiskConfigurationType]
     var ClientId: js.UndefOr[ClientIdType]
     var CompromisedCredentialsRiskConfiguration: js.UndefOr[CompromisedCredentialsRiskConfigurationType]
-    var AccountTakeoverRiskConfiguration: js.UndefOr[AccountTakeoverRiskConfigurationType]
+    var LastModifiedDate: js.UndefOr[DateType]
+    var RiskExceptionConfiguration: js.UndefOr[RiskExceptionConfigurationType]
+    var UserPoolId: js.UndefOr[UserPoolIdType]
   }
 
   object RiskConfigurationType {
     def apply(
-      RiskExceptionConfiguration: js.UndefOr[RiskExceptionConfigurationType] = js.undefined,
-      LastModifiedDate: js.UndefOr[DateType] = js.undefined,
-      UserPoolId: js.UndefOr[UserPoolIdType] = js.undefined,
+      AccountTakeoverRiskConfiguration: js.UndefOr[AccountTakeoverRiskConfigurationType] = js.undefined,
       ClientId: js.UndefOr[ClientIdType] = js.undefined,
       CompromisedCredentialsRiskConfiguration: js.UndefOr[CompromisedCredentialsRiskConfigurationType] = js.undefined,
-      AccountTakeoverRiskConfiguration: js.UndefOr[AccountTakeoverRiskConfigurationType] = js.undefined): RiskConfigurationType = {
+      LastModifiedDate: js.UndefOr[DateType] = js.undefined,
+      RiskExceptionConfiguration: js.UndefOr[RiskExceptionConfigurationType] = js.undefined,
+      UserPoolId: js.UndefOr[UserPoolIdType] = js.undefined): RiskConfigurationType = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "RiskExceptionConfiguration" -> RiskExceptionConfiguration.map { x => x.asInstanceOf[js.Any] },
-        "LastModifiedDate" -> LastModifiedDate.map { x => x.asInstanceOf[js.Any] },
-        "UserPoolId" -> UserPoolId.map { x => x.asInstanceOf[js.Any] },
+        "AccountTakeoverRiskConfiguration" -> AccountTakeoverRiskConfiguration.map { x => x.asInstanceOf[js.Any] },
         "ClientId" -> ClientId.map { x => x.asInstanceOf[js.Any] },
         "CompromisedCredentialsRiskConfiguration" -> CompromisedCredentialsRiskConfiguration.map { x => x.asInstanceOf[js.Any] },
-        "AccountTakeoverRiskConfiguration" -> AccountTakeoverRiskConfiguration.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "LastModifiedDate" -> LastModifiedDate.map { x => x.asInstanceOf[js.Any] },
+        "RiskExceptionConfiguration" -> RiskExceptionConfiguration.map { x => x.asInstanceOf[js.Any] },
+        "UserPoolId" -> UserPoolId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RiskConfigurationType]
     }
@@ -4554,32 +4554,32 @@ package cognitoidentityprovider {
    */
   @js.native
   trait SchemaAttributeType extends js.Object {
-    var Name: js.UndefOr[CustomAttributeNameType]
     var AttributeDataType: js.UndefOr[AttributeDataType]
-    var Required: js.UndefOr[BooleanType]
-    var NumberAttributeConstraints: js.UndefOr[NumberAttributeConstraintsType]
-    var Mutable: js.UndefOr[BooleanType]
-    var StringAttributeConstraints: js.UndefOr[StringAttributeConstraintsType]
     var DeveloperOnlyAttribute: js.UndefOr[BooleanType]
+    var Mutable: js.UndefOr[BooleanType]
+    var Name: js.UndefOr[CustomAttributeNameType]
+    var NumberAttributeConstraints: js.UndefOr[NumberAttributeConstraintsType]
+    var Required: js.UndefOr[BooleanType]
+    var StringAttributeConstraints: js.UndefOr[StringAttributeConstraintsType]
   }
 
   object SchemaAttributeType {
     def apply(
-      Name: js.UndefOr[CustomAttributeNameType] = js.undefined,
       AttributeDataType: js.UndefOr[AttributeDataType] = js.undefined,
-      Required: js.UndefOr[BooleanType] = js.undefined,
-      NumberAttributeConstraints: js.UndefOr[NumberAttributeConstraintsType] = js.undefined,
+      DeveloperOnlyAttribute: js.UndefOr[BooleanType] = js.undefined,
       Mutable: js.UndefOr[BooleanType] = js.undefined,
-      StringAttributeConstraints: js.UndefOr[StringAttributeConstraintsType] = js.undefined,
-      DeveloperOnlyAttribute: js.UndefOr[BooleanType] = js.undefined): SchemaAttributeType = {
+      Name: js.UndefOr[CustomAttributeNameType] = js.undefined,
+      NumberAttributeConstraints: js.UndefOr[NumberAttributeConstraintsType] = js.undefined,
+      Required: js.UndefOr[BooleanType] = js.undefined,
+      StringAttributeConstraints: js.UndefOr[StringAttributeConstraintsType] = js.undefined): SchemaAttributeType = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
         "AttributeDataType" -> AttributeDataType.map { x => x.asInstanceOf[js.Any] },
-        "Required" -> Required.map { x => x.asInstanceOf[js.Any] },
-        "NumberAttributeConstraints" -> NumberAttributeConstraints.map { x => x.asInstanceOf[js.Any] },
+        "DeveloperOnlyAttribute" -> DeveloperOnlyAttribute.map { x => x.asInstanceOf[js.Any] },
         "Mutable" -> Mutable.map { x => x.asInstanceOf[js.Any] },
-        "StringAttributeConstraints" -> StringAttributeConstraints.map { x => x.asInstanceOf[js.Any] },
-        "DeveloperOnlyAttribute" -> DeveloperOnlyAttribute.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
+        "NumberAttributeConstraints" -> NumberAttributeConstraints.map { x => x.asInstanceOf[js.Any] },
+        "Required" -> Required.map { x => x.asInstanceOf[js.Any] },
+        "StringAttributeConstraints" -> StringAttributeConstraints.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SchemaAttributeType]
     }
@@ -4587,26 +4587,26 @@ package cognitoidentityprovider {
 
   @js.native
   trait SetRiskConfigurationRequest extends js.Object {
-    var RiskExceptionConfiguration: js.UndefOr[RiskExceptionConfigurationType]
-    var UserPoolId: js.UndefOr[UserPoolIdType]
+    var UserPoolId: UserPoolIdType
+    var AccountTakeoverRiskConfiguration: js.UndefOr[AccountTakeoverRiskConfigurationType]
     var ClientId: js.UndefOr[ClientIdType]
     var CompromisedCredentialsRiskConfiguration: js.UndefOr[CompromisedCredentialsRiskConfigurationType]
-    var AccountTakeoverRiskConfiguration: js.UndefOr[AccountTakeoverRiskConfigurationType]
+    var RiskExceptionConfiguration: js.UndefOr[RiskExceptionConfigurationType]
   }
 
   object SetRiskConfigurationRequest {
     def apply(
-      RiskExceptionConfiguration: js.UndefOr[RiskExceptionConfigurationType] = js.undefined,
-      UserPoolId: js.UndefOr[UserPoolIdType] = js.undefined,
+      UserPoolId: UserPoolIdType,
+      AccountTakeoverRiskConfiguration: js.UndefOr[AccountTakeoverRiskConfigurationType] = js.undefined,
       ClientId: js.UndefOr[ClientIdType] = js.undefined,
       CompromisedCredentialsRiskConfiguration: js.UndefOr[CompromisedCredentialsRiskConfigurationType] = js.undefined,
-      AccountTakeoverRiskConfiguration: js.UndefOr[AccountTakeoverRiskConfigurationType] = js.undefined): SetRiskConfigurationRequest = {
+      RiskExceptionConfiguration: js.UndefOr[RiskExceptionConfigurationType] = js.undefined): SetRiskConfigurationRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "RiskExceptionConfiguration" -> RiskExceptionConfiguration.map { x => x.asInstanceOf[js.Any] },
-        "UserPoolId" -> UserPoolId.map { x => x.asInstanceOf[js.Any] },
+        "UserPoolId" -> UserPoolId.asInstanceOf[js.Any],
+        "AccountTakeoverRiskConfiguration" -> AccountTakeoverRiskConfiguration.map { x => x.asInstanceOf[js.Any] },
         "ClientId" -> ClientId.map { x => x.asInstanceOf[js.Any] },
         "CompromisedCredentialsRiskConfiguration" -> CompromisedCredentialsRiskConfiguration.map { x => x.asInstanceOf[js.Any] },
-        "AccountTakeoverRiskConfiguration" -> AccountTakeoverRiskConfiguration.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "RiskExceptionConfiguration" -> RiskExceptionConfiguration.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SetRiskConfigurationRequest]
     }
@@ -4614,14 +4614,14 @@ package cognitoidentityprovider {
 
   @js.native
   trait SetRiskConfigurationResponse extends js.Object {
-    var RiskConfiguration: js.UndefOr[RiskConfigurationType]
+    var RiskConfiguration: RiskConfigurationType
   }
 
   object SetRiskConfigurationResponse {
     def apply(
-      RiskConfiguration: js.UndefOr[RiskConfigurationType] = js.undefined): SetRiskConfigurationResponse = {
+      RiskConfiguration: RiskConfigurationType): SetRiskConfigurationResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "RiskConfiguration" -> RiskConfiguration.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "RiskConfiguration" -> RiskConfiguration.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SetRiskConfigurationResponse]
     }
@@ -4629,22 +4629,22 @@ package cognitoidentityprovider {
 
   @js.native
   trait SetUICustomizationRequest extends js.Object {
-    var UserPoolId: js.UndefOr[UserPoolIdType]
-    var ClientId: js.UndefOr[ClientIdType]
+    var UserPoolId: UserPoolIdType
     var CSS: js.UndefOr[CSSType]
+    var ClientId: js.UndefOr[ClientIdType]
     var ImageFile: js.UndefOr[ImageFileType]
   }
 
   object SetUICustomizationRequest {
     def apply(
-      UserPoolId: js.UndefOr[UserPoolIdType] = js.undefined,
-      ClientId: js.UndefOr[ClientIdType] = js.undefined,
+      UserPoolId: UserPoolIdType,
       CSS: js.UndefOr[CSSType] = js.undefined,
+      ClientId: js.UndefOr[ClientIdType] = js.undefined,
       ImageFile: js.UndefOr[ImageFileType] = js.undefined): SetUICustomizationRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "UserPoolId" -> UserPoolId.map { x => x.asInstanceOf[js.Any] },
-        "ClientId" -> ClientId.map { x => x.asInstanceOf[js.Any] },
+        "UserPoolId" -> UserPoolId.asInstanceOf[js.Any],
         "CSS" -> CSS.map { x => x.asInstanceOf[js.Any] },
+        "ClientId" -> ClientId.map { x => x.asInstanceOf[js.Any] },
         "ImageFile" -> ImageFile.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SetUICustomizationRequest]
@@ -4653,14 +4653,14 @@ package cognitoidentityprovider {
 
   @js.native
   trait SetUICustomizationResponse extends js.Object {
-    var UICustomization: js.UndefOr[UICustomizationType]
+    var UICustomization: UICustomizationType
   }
 
   object SetUICustomizationResponse {
     def apply(
-      UICustomization: js.UndefOr[UICustomizationType] = js.undefined): SetUICustomizationResponse = {
+      UICustomization: UICustomizationType): SetUICustomizationResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "UICustomization" -> UICustomization.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "UICustomization" -> UICustomization.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SetUICustomizationResponse]
     }
@@ -4668,20 +4668,20 @@ package cognitoidentityprovider {
 
   @js.native
   trait SetUserMFAPreferenceRequest extends js.Object {
+    var AccessToken: TokenModelType
     var SMSMfaSettings: js.UndefOr[SMSMfaSettingsType]
     var SoftwareTokenMfaSettings: js.UndefOr[SoftwareTokenMfaSettingsType]
-    var AccessToken: js.UndefOr[TokenModelType]
   }
 
   object SetUserMFAPreferenceRequest {
     def apply(
+      AccessToken: TokenModelType,
       SMSMfaSettings: js.UndefOr[SMSMfaSettingsType] = js.undefined,
-      SoftwareTokenMfaSettings: js.UndefOr[SoftwareTokenMfaSettingsType] = js.undefined,
-      AccessToken: js.UndefOr[TokenModelType] = js.undefined): SetUserMFAPreferenceRequest = {
+      SoftwareTokenMfaSettings: js.UndefOr[SoftwareTokenMfaSettingsType] = js.undefined): SetUserMFAPreferenceRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "AccessToken" -> AccessToken.asInstanceOf[js.Any],
         "SMSMfaSettings" -> SMSMfaSettings.map { x => x.asInstanceOf[js.Any] },
-        "SoftwareTokenMfaSettings" -> SoftwareTokenMfaSettings.map { x => x.asInstanceOf[js.Any] },
-        "AccessToken" -> AccessToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "SoftwareTokenMfaSettings" -> SoftwareTokenMfaSettings.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SetUserMFAPreferenceRequest]
     }
@@ -4702,23 +4702,23 @@ package cognitoidentityprovider {
 
   @js.native
   trait SetUserPoolMfaConfigRequest extends js.Object {
-    var UserPoolId: js.UndefOr[UserPoolIdType]
+    var UserPoolId: UserPoolIdType
+    var MfaConfiguration: js.UndefOr[UserPoolMfaType]
     var SmsMfaConfiguration: js.UndefOr[SmsMfaConfigType]
     var SoftwareTokenMfaConfiguration: js.UndefOr[SoftwareTokenMfaConfigType]
-    var MfaConfiguration: js.UndefOr[UserPoolMfaType]
   }
 
   object SetUserPoolMfaConfigRequest {
     def apply(
-      UserPoolId: js.UndefOr[UserPoolIdType] = js.undefined,
+      UserPoolId: UserPoolIdType,
+      MfaConfiguration: js.UndefOr[UserPoolMfaType] = js.undefined,
       SmsMfaConfiguration: js.UndefOr[SmsMfaConfigType] = js.undefined,
-      SoftwareTokenMfaConfiguration: js.UndefOr[SoftwareTokenMfaConfigType] = js.undefined,
-      MfaConfiguration: js.UndefOr[UserPoolMfaType] = js.undefined): SetUserPoolMfaConfigRequest = {
+      SoftwareTokenMfaConfiguration: js.UndefOr[SoftwareTokenMfaConfigType] = js.undefined): SetUserPoolMfaConfigRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "UserPoolId" -> UserPoolId.map { x => x.asInstanceOf[js.Any] },
+        "UserPoolId" -> UserPoolId.asInstanceOf[js.Any],
+        "MfaConfiguration" -> MfaConfiguration.map { x => x.asInstanceOf[js.Any] },
         "SmsMfaConfiguration" -> SmsMfaConfiguration.map { x => x.asInstanceOf[js.Any] },
-        "SoftwareTokenMfaConfiguration" -> SoftwareTokenMfaConfiguration.map { x => x.asInstanceOf[js.Any] },
-        "MfaConfiguration" -> MfaConfiguration.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "SoftwareTokenMfaConfiguration" -> SoftwareTokenMfaConfiguration.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SetUserPoolMfaConfigRequest]
     }
@@ -4726,20 +4726,20 @@ package cognitoidentityprovider {
 
   @js.native
   trait SetUserPoolMfaConfigResponse extends js.Object {
+    var MfaConfiguration: js.UndefOr[UserPoolMfaType]
     var SmsMfaConfiguration: js.UndefOr[SmsMfaConfigType]
     var SoftwareTokenMfaConfiguration: js.UndefOr[SoftwareTokenMfaConfigType]
-    var MfaConfiguration: js.UndefOr[UserPoolMfaType]
   }
 
   object SetUserPoolMfaConfigResponse {
     def apply(
+      MfaConfiguration: js.UndefOr[UserPoolMfaType] = js.undefined,
       SmsMfaConfiguration: js.UndefOr[SmsMfaConfigType] = js.undefined,
-      SoftwareTokenMfaConfiguration: js.UndefOr[SoftwareTokenMfaConfigType] = js.undefined,
-      MfaConfiguration: js.UndefOr[UserPoolMfaType] = js.undefined): SetUserPoolMfaConfigResponse = {
+      SoftwareTokenMfaConfiguration: js.UndefOr[SoftwareTokenMfaConfigType] = js.undefined): SetUserPoolMfaConfigResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "MfaConfiguration" -> MfaConfiguration.map { x => x.asInstanceOf[js.Any] },
         "SmsMfaConfiguration" -> SmsMfaConfiguration.map { x => x.asInstanceOf[js.Any] },
-        "SoftwareTokenMfaConfiguration" -> SoftwareTokenMfaConfiguration.map { x => x.asInstanceOf[js.Any] },
-        "MfaConfiguration" -> MfaConfiguration.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "SoftwareTokenMfaConfiguration" -> SoftwareTokenMfaConfiguration.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SetUserPoolMfaConfigResponse]
     }
@@ -4750,17 +4750,17 @@ package cognitoidentityprovider {
    */
   @js.native
   trait SetUserSettingsRequest extends js.Object {
-    var AccessToken: js.UndefOr[TokenModelType]
-    var MFAOptions: js.UndefOr[MFAOptionListType]
+    var AccessToken: TokenModelType
+    var MFAOptions: MFAOptionListType
   }
 
   object SetUserSettingsRequest {
     def apply(
-      AccessToken: js.UndefOr[TokenModelType] = js.undefined,
-      MFAOptions: js.UndefOr[MFAOptionListType] = js.undefined): SetUserSettingsRequest = {
+      AccessToken: TokenModelType,
+      MFAOptions: MFAOptionListType): SetUserSettingsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "AccessToken" -> AccessToken.map { x => x.asInstanceOf[js.Any] },
-        "MFAOptions" -> MFAOptions.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "AccessToken" -> AccessToken.asInstanceOf[js.Any],
+        "MFAOptions" -> MFAOptions.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SetUserSettingsRequest]
     }
@@ -4787,35 +4787,35 @@ package cognitoidentityprovider {
    */
   @js.native
   trait SignUpRequest extends js.Object {
-    var Username: js.UndefOr[UsernameType]
+    var ClientId: ClientIdType
+    var Password: PasswordType
+    var Username: UsernameType
+    var AnalyticsMetadata: js.UndefOr[AnalyticsMetadataType]
     var SecretHash: js.UndefOr[SecretHashType]
-    var ValidationData: js.UndefOr[AttributeListType]
-    var Password: js.UndefOr[PasswordType]
-    var ClientId: js.UndefOr[ClientIdType]
     var UserAttributes: js.UndefOr[AttributeListType]
     var UserContextData: js.UndefOr[UserContextDataType]
-    var AnalyticsMetadata: js.UndefOr[AnalyticsMetadataType]
+    var ValidationData: js.UndefOr[AttributeListType]
   }
 
   object SignUpRequest {
     def apply(
-      Username: js.UndefOr[UsernameType] = js.undefined,
+      ClientId: ClientIdType,
+      Password: PasswordType,
+      Username: UsernameType,
+      AnalyticsMetadata: js.UndefOr[AnalyticsMetadataType] = js.undefined,
       SecretHash: js.UndefOr[SecretHashType] = js.undefined,
-      ValidationData: js.UndefOr[AttributeListType] = js.undefined,
-      Password: js.UndefOr[PasswordType] = js.undefined,
-      ClientId: js.UndefOr[ClientIdType] = js.undefined,
       UserAttributes: js.UndefOr[AttributeListType] = js.undefined,
       UserContextData: js.UndefOr[UserContextDataType] = js.undefined,
-      AnalyticsMetadata: js.UndefOr[AnalyticsMetadataType] = js.undefined): SignUpRequest = {
+      ValidationData: js.UndefOr[AttributeListType] = js.undefined): SignUpRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Username" -> Username.map { x => x.asInstanceOf[js.Any] },
+        "ClientId" -> ClientId.asInstanceOf[js.Any],
+        "Password" -> Password.asInstanceOf[js.Any],
+        "Username" -> Username.asInstanceOf[js.Any],
+        "AnalyticsMetadata" -> AnalyticsMetadata.map { x => x.asInstanceOf[js.Any] },
         "SecretHash" -> SecretHash.map { x => x.asInstanceOf[js.Any] },
-        "ValidationData" -> ValidationData.map { x => x.asInstanceOf[js.Any] },
-        "Password" -> Password.map { x => x.asInstanceOf[js.Any] },
-        "ClientId" -> ClientId.map { x => x.asInstanceOf[js.Any] },
         "UserAttributes" -> UserAttributes.map { x => x.asInstanceOf[js.Any] },
         "UserContextData" -> UserContextData.map { x => x.asInstanceOf[js.Any] },
-        "AnalyticsMetadata" -> AnalyticsMetadata.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ValidationData" -> ValidationData.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SignUpRequest]
     }
@@ -4826,20 +4826,20 @@ package cognitoidentityprovider {
    */
   @js.native
   trait SignUpResponse extends js.Object {
-    var UserConfirmed: js.UndefOr[BooleanType]
+    var UserConfirmed: BooleanType
+    var UserSub: StringType
     var CodeDeliveryDetails: js.UndefOr[CodeDeliveryDetailsType]
-    var UserSub: js.UndefOr[StringType]
   }
 
   object SignUpResponse {
     def apply(
-      UserConfirmed: js.UndefOr[BooleanType] = js.undefined,
-      CodeDeliveryDetails: js.UndefOr[CodeDeliveryDetailsType] = js.undefined,
-      UserSub: js.UndefOr[StringType] = js.undefined): SignUpResponse = {
+      UserConfirmed: BooleanType,
+      UserSub: StringType,
+      CodeDeliveryDetails: js.UndefOr[CodeDeliveryDetailsType] = js.undefined): SignUpResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "UserConfirmed" -> UserConfirmed.map { x => x.asInstanceOf[js.Any] },
-        "CodeDeliveryDetails" -> CodeDeliveryDetails.map { x => x.asInstanceOf[js.Any] },
-        "UserSub" -> UserSub.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "UserConfirmed" -> UserConfirmed.asInstanceOf[js.Any],
+        "UserSub" -> UserSub.asInstanceOf[js.Any],
+        "CodeDeliveryDetails" -> CodeDeliveryDetails.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SignUpResponse]
     }
@@ -4850,16 +4850,16 @@ package cognitoidentityprovider {
    */
   @js.native
   trait SmsConfigurationType extends js.Object {
-    var SnsCallerArn: js.UndefOr[ArnType]
+    var SnsCallerArn: ArnType
     var ExternalId: js.UndefOr[StringType]
   }
 
   object SmsConfigurationType {
     def apply(
-      SnsCallerArn: js.UndefOr[ArnType] = js.undefined,
+      SnsCallerArn: ArnType,
       ExternalId: js.UndefOr[StringType] = js.undefined): SmsConfigurationType = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "SnsCallerArn" -> SnsCallerArn.map { x => x.asInstanceOf[js.Any] },
+        "SnsCallerArn" -> SnsCallerArn.asInstanceOf[js.Any],
         "ExternalId" -> ExternalId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SmsConfigurationType]
@@ -4931,17 +4931,17 @@ package cognitoidentityprovider {
    */
   @js.native
   trait StartUserImportJobRequest extends js.Object {
-    var UserPoolId: js.UndefOr[UserPoolIdType]
-    var JobId: js.UndefOr[UserImportJobIdType]
+    var JobId: UserImportJobIdType
+    var UserPoolId: UserPoolIdType
   }
 
   object StartUserImportJobRequest {
     def apply(
-      UserPoolId: js.UndefOr[UserPoolIdType] = js.undefined,
-      JobId: js.UndefOr[UserImportJobIdType] = js.undefined): StartUserImportJobRequest = {
+      JobId: UserImportJobIdType,
+      UserPoolId: UserPoolIdType): StartUserImportJobRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "UserPoolId" -> UserPoolId.map { x => x.asInstanceOf[js.Any] },
-        "JobId" -> JobId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "JobId" -> JobId.asInstanceOf[js.Any],
+        "UserPoolId" -> UserPoolId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StartUserImportJobRequest]
     }
@@ -4977,17 +4977,17 @@ package cognitoidentityprovider {
    */
   @js.native
   trait StopUserImportJobRequest extends js.Object {
-    var UserPoolId: js.UndefOr[UserPoolIdType]
-    var JobId: js.UndefOr[UserImportJobIdType]
+    var JobId: UserImportJobIdType
+    var UserPoolId: UserPoolIdType
   }
 
   object StopUserImportJobRequest {
     def apply(
-      UserPoolId: js.UndefOr[UserPoolIdType] = js.undefined,
-      JobId: js.UndefOr[UserImportJobIdType] = js.undefined): StopUserImportJobRequest = {
+      JobId: UserImportJobIdType,
+      UserPoolId: UserPoolIdType): StopUserImportJobRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "UserPoolId" -> UserPoolId.map { x => x.asInstanceOf[js.Any] },
-        "JobId" -> JobId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "JobId" -> JobId.asInstanceOf[js.Any],
+        "UserPoolId" -> UserPoolId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StopUserImportJobRequest]
     }
@@ -5016,17 +5016,17 @@ package cognitoidentityprovider {
    */
   @js.native
   trait StringAttributeConstraintsType extends js.Object {
-    var MinLength: js.UndefOr[StringType]
     var MaxLength: js.UndefOr[StringType]
+    var MinLength: js.UndefOr[StringType]
   }
 
   object StringAttributeConstraintsType {
     def apply(
-      MinLength: js.UndefOr[StringType] = js.undefined,
-      MaxLength: js.UndefOr[StringType] = js.undefined): StringAttributeConstraintsType = {
+      MaxLength: js.UndefOr[StringType] = js.undefined,
+      MinLength: js.UndefOr[StringType] = js.undefined): StringAttributeConstraintsType = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "MinLength" -> MinLength.map { x => x.asInstanceOf[js.Any] },
-        "MaxLength" -> MaxLength.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "MaxLength" -> MaxLength.map { x => x.asInstanceOf[js.Any] },
+        "MinLength" -> MinLength.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StringAttributeConstraintsType]
     }
@@ -5037,32 +5037,32 @@ package cognitoidentityprovider {
    */
   @js.native
   trait UICustomizationType extends js.Object {
-    var CreationDate: js.UndefOr[DateType]
     var CSS: js.UndefOr[CSSType]
+    var CSSVersion: js.UndefOr[CSSVersionType]
+    var ClientId: js.UndefOr[ClientIdType]
+    var CreationDate: js.UndefOr[DateType]
+    var ImageUrl: js.UndefOr[ImageUrlType]
     var LastModifiedDate: js.UndefOr[DateType]
     var UserPoolId: js.UndefOr[UserPoolIdType]
-    var ClientId: js.UndefOr[ClientIdType]
-    var CSSVersion: js.UndefOr[CSSVersionType]
-    var ImageUrl: js.UndefOr[ImageUrlType]
   }
 
   object UICustomizationType {
     def apply(
-      CreationDate: js.UndefOr[DateType] = js.undefined,
       CSS: js.UndefOr[CSSType] = js.undefined,
-      LastModifiedDate: js.UndefOr[DateType] = js.undefined,
-      UserPoolId: js.UndefOr[UserPoolIdType] = js.undefined,
-      ClientId: js.UndefOr[ClientIdType] = js.undefined,
       CSSVersion: js.UndefOr[CSSVersionType] = js.undefined,
-      ImageUrl: js.UndefOr[ImageUrlType] = js.undefined): UICustomizationType = {
+      ClientId: js.UndefOr[ClientIdType] = js.undefined,
+      CreationDate: js.UndefOr[DateType] = js.undefined,
+      ImageUrl: js.UndefOr[ImageUrlType] = js.undefined,
+      LastModifiedDate: js.UndefOr[DateType] = js.undefined,
+      UserPoolId: js.UndefOr[UserPoolIdType] = js.undefined): UICustomizationType = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "CreationDate" -> CreationDate.map { x => x.asInstanceOf[js.Any] },
         "CSS" -> CSS.map { x => x.asInstanceOf[js.Any] },
-        "LastModifiedDate" -> LastModifiedDate.map { x => x.asInstanceOf[js.Any] },
-        "UserPoolId" -> UserPoolId.map { x => x.asInstanceOf[js.Any] },
-        "ClientId" -> ClientId.map { x => x.asInstanceOf[js.Any] },
         "CSSVersion" -> CSSVersion.map { x => x.asInstanceOf[js.Any] },
-        "ImageUrl" -> ImageUrl.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ClientId" -> ClientId.map { x => x.asInstanceOf[js.Any] },
+        "CreationDate" -> CreationDate.map { x => x.asInstanceOf[js.Any] },
+        "ImageUrl" -> ImageUrl.map { x => x.asInstanceOf[js.Any] },
+        "LastModifiedDate" -> LastModifiedDate.map { x => x.asInstanceOf[js.Any] },
+        "UserPoolId" -> UserPoolId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UICustomizationType]
     }
@@ -5070,26 +5070,26 @@ package cognitoidentityprovider {
 
   @js.native
   trait UpdateAuthEventFeedbackRequest extends js.Object {
-    var Username: js.UndefOr[UsernameType]
-    var FeedbackValue: js.UndefOr[FeedbackValueType]
-    var UserPoolId: js.UndefOr[UserPoolIdType]
-    var EventId: js.UndefOr[EventIdType]
-    var FeedbackToken: js.UndefOr[TokenModelType]
+    var EventId: EventIdType
+    var FeedbackToken: TokenModelType
+    var FeedbackValue: FeedbackValueType
+    var UserPoolId: UserPoolIdType
+    var Username: UsernameType
   }
 
   object UpdateAuthEventFeedbackRequest {
     def apply(
-      Username: js.UndefOr[UsernameType] = js.undefined,
-      FeedbackValue: js.UndefOr[FeedbackValueType] = js.undefined,
-      UserPoolId: js.UndefOr[UserPoolIdType] = js.undefined,
-      EventId: js.UndefOr[EventIdType] = js.undefined,
-      FeedbackToken: js.UndefOr[TokenModelType] = js.undefined): UpdateAuthEventFeedbackRequest = {
+      EventId: EventIdType,
+      FeedbackToken: TokenModelType,
+      FeedbackValue: FeedbackValueType,
+      UserPoolId: UserPoolIdType,
+      Username: UsernameType): UpdateAuthEventFeedbackRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Username" -> Username.map { x => x.asInstanceOf[js.Any] },
-        "FeedbackValue" -> FeedbackValue.map { x => x.asInstanceOf[js.Any] },
-        "UserPoolId" -> UserPoolId.map { x => x.asInstanceOf[js.Any] },
-        "EventId" -> EventId.map { x => x.asInstanceOf[js.Any] },
-        "FeedbackToken" -> FeedbackToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "EventId" -> EventId.asInstanceOf[js.Any],
+        "FeedbackToken" -> FeedbackToken.asInstanceOf[js.Any],
+        "FeedbackValue" -> FeedbackValue.asInstanceOf[js.Any],
+        "UserPoolId" -> UserPoolId.asInstanceOf[js.Any],
+        "Username" -> Username.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateAuthEventFeedbackRequest]
     }
@@ -5113,19 +5113,19 @@ package cognitoidentityprovider {
    */
   @js.native
   trait UpdateDeviceStatusRequest extends js.Object {
-    var AccessToken: js.UndefOr[TokenModelType]
-    var DeviceKey: js.UndefOr[DeviceKeyType]
+    var AccessToken: TokenModelType
+    var DeviceKey: DeviceKeyType
     var DeviceRememberedStatus: js.UndefOr[DeviceRememberedStatusType]
   }
 
   object UpdateDeviceStatusRequest {
     def apply(
-      AccessToken: js.UndefOr[TokenModelType] = js.undefined,
-      DeviceKey: js.UndefOr[DeviceKeyType] = js.undefined,
+      AccessToken: TokenModelType,
+      DeviceKey: DeviceKeyType,
       DeviceRememberedStatus: js.UndefOr[DeviceRememberedStatusType] = js.undefined): UpdateDeviceStatusRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "AccessToken" -> AccessToken.map { x => x.asInstanceOf[js.Any] },
-        "DeviceKey" -> DeviceKey.map { x => x.asInstanceOf[js.Any] },
+        "AccessToken" -> AccessToken.asInstanceOf[js.Any],
+        "DeviceKey" -> DeviceKey.asInstanceOf[js.Any],
         "DeviceRememberedStatus" -> DeviceRememberedStatus.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateDeviceStatusRequest]
@@ -5150,24 +5150,24 @@ package cognitoidentityprovider {
 
   @js.native
   trait UpdateGroupRequest extends js.Object {
-    var GroupName: js.UndefOr[GroupNameType]
+    var GroupName: GroupNameType
+    var UserPoolId: UserPoolIdType
     var Description: js.UndefOr[DescriptionType]
-    var UserPoolId: js.UndefOr[UserPoolIdType]
     var Precedence: js.UndefOr[PrecedenceType]
     var RoleArn: js.UndefOr[ArnType]
   }
 
   object UpdateGroupRequest {
     def apply(
-      GroupName: js.UndefOr[GroupNameType] = js.undefined,
+      GroupName: GroupNameType,
+      UserPoolId: UserPoolIdType,
       Description: js.UndefOr[DescriptionType] = js.undefined,
-      UserPoolId: js.UndefOr[UserPoolIdType] = js.undefined,
       Precedence: js.UndefOr[PrecedenceType] = js.undefined,
       RoleArn: js.UndefOr[ArnType] = js.undefined): UpdateGroupRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "GroupName" -> GroupName.map { x => x.asInstanceOf[js.Any] },
+        "GroupName" -> GroupName.asInstanceOf[js.Any],
+        "UserPoolId" -> UserPoolId.asInstanceOf[js.Any],
         "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
-        "UserPoolId" -> UserPoolId.map { x => x.asInstanceOf[js.Any] },
         "Precedence" -> Precedence.map { x => x.asInstanceOf[js.Any] },
         "RoleArn" -> RoleArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
@@ -5192,26 +5192,26 @@ package cognitoidentityprovider {
 
   @js.native
   trait UpdateIdentityProviderRequest extends js.Object {
-    var ProviderDetails: js.UndefOr[ProviderDetailsType]
+    var ProviderName: ProviderNameType
+    var UserPoolId: UserPoolIdType
     var AttributeMapping: js.UndefOr[AttributeMappingType]
-    var UserPoolId: js.UndefOr[UserPoolIdType]
     var IdpIdentifiers: js.UndefOr[IdpIdentifiersListType]
-    var ProviderName: js.UndefOr[ProviderNameType]
+    var ProviderDetails: js.UndefOr[ProviderDetailsType]
   }
 
   object UpdateIdentityProviderRequest {
     def apply(
-      ProviderDetails: js.UndefOr[ProviderDetailsType] = js.undefined,
+      ProviderName: ProviderNameType,
+      UserPoolId: UserPoolIdType,
       AttributeMapping: js.UndefOr[AttributeMappingType] = js.undefined,
-      UserPoolId: js.UndefOr[UserPoolIdType] = js.undefined,
       IdpIdentifiers: js.UndefOr[IdpIdentifiersListType] = js.undefined,
-      ProviderName: js.UndefOr[ProviderNameType] = js.undefined): UpdateIdentityProviderRequest = {
+      ProviderDetails: js.UndefOr[ProviderDetailsType] = js.undefined): UpdateIdentityProviderRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ProviderDetails" -> ProviderDetails.map { x => x.asInstanceOf[js.Any] },
+        "ProviderName" -> ProviderName.asInstanceOf[js.Any],
+        "UserPoolId" -> UserPoolId.asInstanceOf[js.Any],
         "AttributeMapping" -> AttributeMapping.map { x => x.asInstanceOf[js.Any] },
-        "UserPoolId" -> UserPoolId.map { x => x.asInstanceOf[js.Any] },
         "IdpIdentifiers" -> IdpIdentifiers.map { x => x.asInstanceOf[js.Any] },
-        "ProviderName" -> ProviderName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ProviderDetails" -> ProviderDetails.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateIdentityProviderRequest]
     }
@@ -5219,14 +5219,14 @@ package cognitoidentityprovider {
 
   @js.native
   trait UpdateIdentityProviderResponse extends js.Object {
-    var IdentityProvider: js.UndefOr[IdentityProviderType]
+    var IdentityProvider: IdentityProviderType
   }
 
   object UpdateIdentityProviderResponse {
     def apply(
-      IdentityProvider: js.UndefOr[IdentityProviderType] = js.undefined): UpdateIdentityProviderResponse = {
+      IdentityProvider: IdentityProviderType): UpdateIdentityProviderResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "IdentityProvider" -> IdentityProvider.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "IdentityProvider" -> IdentityProvider.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateIdentityProviderResponse]
     }
@@ -5234,22 +5234,22 @@ package cognitoidentityprovider {
 
   @js.native
   trait UpdateResourceServerRequest extends js.Object {
-    var UserPoolId: js.UndefOr[UserPoolIdType]
-    var Identifier: js.UndefOr[ResourceServerIdentifierType]
-    var Name: js.UndefOr[ResourceServerNameType]
+    var Identifier: ResourceServerIdentifierType
+    var Name: ResourceServerNameType
+    var UserPoolId: UserPoolIdType
     var Scopes: js.UndefOr[ResourceServerScopeListType]
   }
 
   object UpdateResourceServerRequest {
     def apply(
-      UserPoolId: js.UndefOr[UserPoolIdType] = js.undefined,
-      Identifier: js.UndefOr[ResourceServerIdentifierType] = js.undefined,
-      Name: js.UndefOr[ResourceServerNameType] = js.undefined,
+      Identifier: ResourceServerIdentifierType,
+      Name: ResourceServerNameType,
+      UserPoolId: UserPoolIdType,
       Scopes: js.UndefOr[ResourceServerScopeListType] = js.undefined): UpdateResourceServerRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "UserPoolId" -> UserPoolId.map { x => x.asInstanceOf[js.Any] },
-        "Identifier" -> Identifier.map { x => x.asInstanceOf[js.Any] },
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
+        "Identifier" -> Identifier.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
+        "UserPoolId" -> UserPoolId.asInstanceOf[js.Any],
         "Scopes" -> Scopes.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateResourceServerRequest]
@@ -5258,14 +5258,14 @@ package cognitoidentityprovider {
 
   @js.native
   trait UpdateResourceServerResponse extends js.Object {
-    var ResourceServer: js.UndefOr[ResourceServerType]
+    var ResourceServer: ResourceServerType
   }
 
   object UpdateResourceServerResponse {
     def apply(
-      ResourceServer: js.UndefOr[ResourceServerType] = js.undefined): UpdateResourceServerResponse = {
+      ResourceServer: ResourceServerType): UpdateResourceServerResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ResourceServer" -> ResourceServer.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ResourceServer" -> ResourceServer.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateResourceServerResponse]
     }
@@ -5276,17 +5276,17 @@ package cognitoidentityprovider {
    */
   @js.native
   trait UpdateUserAttributesRequest extends js.Object {
-    var UserAttributes: js.UndefOr[AttributeListType]
-    var AccessToken: js.UndefOr[TokenModelType]
+    var AccessToken: TokenModelType
+    var UserAttributes: AttributeListType
   }
 
   object UpdateUserAttributesRequest {
     def apply(
-      UserAttributes: js.UndefOr[AttributeListType] = js.undefined,
-      AccessToken: js.UndefOr[TokenModelType] = js.undefined): UpdateUserAttributesRequest = {
+      AccessToken: TokenModelType,
+      UserAttributes: AttributeListType): UpdateUserAttributesRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "UserAttributes" -> UserAttributes.map { x => x.asInstanceOf[js.Any] },
-        "AccessToken" -> AccessToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "AccessToken" -> AccessToken.asInstanceOf[js.Any],
+        "UserAttributes" -> UserAttributes.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateUserAttributesRequest]
     }
@@ -5315,56 +5315,56 @@ package cognitoidentityprovider {
    */
   @js.native
   trait UpdateUserPoolClientRequest extends js.Object {
-    var AllowedOAuthFlowsUserPoolClient: js.UndefOr[BooleanType]
-    var ExplicitAuthFlows: js.UndefOr[ExplicitAuthFlowsListType]
-    var RefreshTokenValidity: js.UndefOr[RefreshTokenValidityType]
-    var DefaultRedirectURI: js.UndefOr[RedirectUrlType]
-    var WriteAttributes: js.UndefOr[ClientPermissionListType]
-    var UserPoolId: js.UndefOr[UserPoolIdType]
-    var AllowedOAuthScopes: js.UndefOr[ScopeListType]
+    var ClientId: ClientIdType
+    var UserPoolId: UserPoolIdType
     var AllowedOAuthFlows: js.UndefOr[OAuthFlowsType]
-    var ClientId: js.UndefOr[ClientIdType]
-    var ClientName: js.UndefOr[ClientNameType]
-    var ReadAttributes: js.UndefOr[ClientPermissionListType]
-    var SupportedIdentityProviders: js.UndefOr[SupportedIdentityProvidersListType]
+    var AllowedOAuthFlowsUserPoolClient: js.UndefOr[BooleanType]
+    var AllowedOAuthScopes: js.UndefOr[ScopeListType]
     var AnalyticsConfiguration: js.UndefOr[AnalyticsConfigurationType]
     var CallbackURLs: js.UndefOr[CallbackURLsListType]
+    var ClientName: js.UndefOr[ClientNameType]
+    var DefaultRedirectURI: js.UndefOr[RedirectUrlType]
+    var ExplicitAuthFlows: js.UndefOr[ExplicitAuthFlowsListType]
     var LogoutURLs: js.UndefOr[LogoutURLsListType]
+    var ReadAttributes: js.UndefOr[ClientPermissionListType]
+    var RefreshTokenValidity: js.UndefOr[RefreshTokenValidityType]
+    var SupportedIdentityProviders: js.UndefOr[SupportedIdentityProvidersListType]
+    var WriteAttributes: js.UndefOr[ClientPermissionListType]
   }
 
   object UpdateUserPoolClientRequest {
     def apply(
-      AllowedOAuthFlowsUserPoolClient: js.UndefOr[BooleanType] = js.undefined,
-      ExplicitAuthFlows: js.UndefOr[ExplicitAuthFlowsListType] = js.undefined,
-      RefreshTokenValidity: js.UndefOr[RefreshTokenValidityType] = js.undefined,
-      DefaultRedirectURI: js.UndefOr[RedirectUrlType] = js.undefined,
-      WriteAttributes: js.UndefOr[ClientPermissionListType] = js.undefined,
-      UserPoolId: js.UndefOr[UserPoolIdType] = js.undefined,
-      AllowedOAuthScopes: js.UndefOr[ScopeListType] = js.undefined,
+      ClientId: ClientIdType,
+      UserPoolId: UserPoolIdType,
       AllowedOAuthFlows: js.UndefOr[OAuthFlowsType] = js.undefined,
-      ClientId: js.UndefOr[ClientIdType] = js.undefined,
-      ClientName: js.UndefOr[ClientNameType] = js.undefined,
-      ReadAttributes: js.UndefOr[ClientPermissionListType] = js.undefined,
-      SupportedIdentityProviders: js.UndefOr[SupportedIdentityProvidersListType] = js.undefined,
+      AllowedOAuthFlowsUserPoolClient: js.UndefOr[BooleanType] = js.undefined,
+      AllowedOAuthScopes: js.UndefOr[ScopeListType] = js.undefined,
       AnalyticsConfiguration: js.UndefOr[AnalyticsConfigurationType] = js.undefined,
       CallbackURLs: js.UndefOr[CallbackURLsListType] = js.undefined,
-      LogoutURLs: js.UndefOr[LogoutURLsListType] = js.undefined): UpdateUserPoolClientRequest = {
+      ClientName: js.UndefOr[ClientNameType] = js.undefined,
+      DefaultRedirectURI: js.UndefOr[RedirectUrlType] = js.undefined,
+      ExplicitAuthFlows: js.UndefOr[ExplicitAuthFlowsListType] = js.undefined,
+      LogoutURLs: js.UndefOr[LogoutURLsListType] = js.undefined,
+      ReadAttributes: js.UndefOr[ClientPermissionListType] = js.undefined,
+      RefreshTokenValidity: js.UndefOr[RefreshTokenValidityType] = js.undefined,
+      SupportedIdentityProviders: js.UndefOr[SupportedIdentityProvidersListType] = js.undefined,
+      WriteAttributes: js.UndefOr[ClientPermissionListType] = js.undefined): UpdateUserPoolClientRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "AllowedOAuthFlowsUserPoolClient" -> AllowedOAuthFlowsUserPoolClient.map { x => x.asInstanceOf[js.Any] },
-        "ExplicitAuthFlows" -> ExplicitAuthFlows.map { x => x.asInstanceOf[js.Any] },
-        "RefreshTokenValidity" -> RefreshTokenValidity.map { x => x.asInstanceOf[js.Any] },
-        "DefaultRedirectURI" -> DefaultRedirectURI.map { x => x.asInstanceOf[js.Any] },
-        "WriteAttributes" -> WriteAttributes.map { x => x.asInstanceOf[js.Any] },
-        "UserPoolId" -> UserPoolId.map { x => x.asInstanceOf[js.Any] },
-        "AllowedOAuthScopes" -> AllowedOAuthScopes.map { x => x.asInstanceOf[js.Any] },
+        "ClientId" -> ClientId.asInstanceOf[js.Any],
+        "UserPoolId" -> UserPoolId.asInstanceOf[js.Any],
         "AllowedOAuthFlows" -> AllowedOAuthFlows.map { x => x.asInstanceOf[js.Any] },
-        "ClientId" -> ClientId.map { x => x.asInstanceOf[js.Any] },
-        "ClientName" -> ClientName.map { x => x.asInstanceOf[js.Any] },
-        "ReadAttributes" -> ReadAttributes.map { x => x.asInstanceOf[js.Any] },
-        "SupportedIdentityProviders" -> SupportedIdentityProviders.map { x => x.asInstanceOf[js.Any] },
+        "AllowedOAuthFlowsUserPoolClient" -> AllowedOAuthFlowsUserPoolClient.map { x => x.asInstanceOf[js.Any] },
+        "AllowedOAuthScopes" -> AllowedOAuthScopes.map { x => x.asInstanceOf[js.Any] },
         "AnalyticsConfiguration" -> AnalyticsConfiguration.map { x => x.asInstanceOf[js.Any] },
         "CallbackURLs" -> CallbackURLs.map { x => x.asInstanceOf[js.Any] },
-        "LogoutURLs" -> LogoutURLs.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ClientName" -> ClientName.map { x => x.asInstanceOf[js.Any] },
+        "DefaultRedirectURI" -> DefaultRedirectURI.map { x => x.asInstanceOf[js.Any] },
+        "ExplicitAuthFlows" -> ExplicitAuthFlows.map { x => x.asInstanceOf[js.Any] },
+        "LogoutURLs" -> LogoutURLs.map { x => x.asInstanceOf[js.Any] },
+        "ReadAttributes" -> ReadAttributes.map { x => x.asInstanceOf[js.Any] },
+        "RefreshTokenValidity" -> RefreshTokenValidity.map { x => x.asInstanceOf[js.Any] },
+        "SupportedIdentityProviders" -> SupportedIdentityProviders.map { x => x.asInstanceOf[js.Any] },
+        "WriteAttributes" -> WriteAttributes.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateUserPoolClientRequest]
     }
@@ -5393,58 +5393,58 @@ package cognitoidentityprovider {
    */
   @js.native
   trait UpdateUserPoolRequest extends js.Object {
-    var SmsVerificationMessage: js.UndefOr[SmsVerificationMessageType]
-    var AutoVerifiedAttributes: js.UndefOr[VerifiedAttributesListType]
-    var Policies: js.UndefOr[UserPoolPolicyType]
-    var UserPoolAddOns: js.UndefOr[UserPoolAddOnsType]
-    var EmailConfiguration: js.UndefOr[EmailConfigurationType]
+    var UserPoolId: UserPoolIdType
     var AdminCreateUserConfig: js.UndefOr[AdminCreateUserConfigType]
-    var UserPoolId: js.UndefOr[UserPoolIdType]
-    var MfaConfiguration: js.UndefOr[UserPoolMfaType]
-    var EmailVerificationSubject: js.UndefOr[EmailVerificationSubjectType]
-    var EmailVerificationMessage: js.UndefOr[EmailVerificationMessageType]
-    var SmsConfiguration: js.UndefOr[SmsConfigurationType]
-    var UserPoolTags: js.UndefOr[UserPoolTagsType]
-    var LambdaConfig: js.UndefOr[LambdaConfigType]
-    var SmsAuthenticationMessage: js.UndefOr[SmsVerificationMessageType]
+    var AutoVerifiedAttributes: js.UndefOr[VerifiedAttributesListType]
     var DeviceConfiguration: js.UndefOr[DeviceConfigurationType]
+    var EmailConfiguration: js.UndefOr[EmailConfigurationType]
+    var EmailVerificationMessage: js.UndefOr[EmailVerificationMessageType]
+    var EmailVerificationSubject: js.UndefOr[EmailVerificationSubjectType]
+    var LambdaConfig: js.UndefOr[LambdaConfigType]
+    var MfaConfiguration: js.UndefOr[UserPoolMfaType]
+    var Policies: js.UndefOr[UserPoolPolicyType]
+    var SmsAuthenticationMessage: js.UndefOr[SmsVerificationMessageType]
+    var SmsConfiguration: js.UndefOr[SmsConfigurationType]
+    var SmsVerificationMessage: js.UndefOr[SmsVerificationMessageType]
+    var UserPoolAddOns: js.UndefOr[UserPoolAddOnsType]
+    var UserPoolTags: js.UndefOr[UserPoolTagsType]
     var VerificationMessageTemplate: js.UndefOr[VerificationMessageTemplateType]
   }
 
   object UpdateUserPoolRequest {
     def apply(
-      SmsVerificationMessage: js.UndefOr[SmsVerificationMessageType] = js.undefined,
-      AutoVerifiedAttributes: js.UndefOr[VerifiedAttributesListType] = js.undefined,
-      Policies: js.UndefOr[UserPoolPolicyType] = js.undefined,
-      UserPoolAddOns: js.UndefOr[UserPoolAddOnsType] = js.undefined,
-      EmailConfiguration: js.UndefOr[EmailConfigurationType] = js.undefined,
+      UserPoolId: UserPoolIdType,
       AdminCreateUserConfig: js.UndefOr[AdminCreateUserConfigType] = js.undefined,
-      UserPoolId: js.UndefOr[UserPoolIdType] = js.undefined,
-      MfaConfiguration: js.UndefOr[UserPoolMfaType] = js.undefined,
-      EmailVerificationSubject: js.UndefOr[EmailVerificationSubjectType] = js.undefined,
-      EmailVerificationMessage: js.UndefOr[EmailVerificationMessageType] = js.undefined,
-      SmsConfiguration: js.UndefOr[SmsConfigurationType] = js.undefined,
-      UserPoolTags: js.UndefOr[UserPoolTagsType] = js.undefined,
-      LambdaConfig: js.UndefOr[LambdaConfigType] = js.undefined,
-      SmsAuthenticationMessage: js.UndefOr[SmsVerificationMessageType] = js.undefined,
+      AutoVerifiedAttributes: js.UndefOr[VerifiedAttributesListType] = js.undefined,
       DeviceConfiguration: js.UndefOr[DeviceConfigurationType] = js.undefined,
+      EmailConfiguration: js.UndefOr[EmailConfigurationType] = js.undefined,
+      EmailVerificationMessage: js.UndefOr[EmailVerificationMessageType] = js.undefined,
+      EmailVerificationSubject: js.UndefOr[EmailVerificationSubjectType] = js.undefined,
+      LambdaConfig: js.UndefOr[LambdaConfigType] = js.undefined,
+      MfaConfiguration: js.UndefOr[UserPoolMfaType] = js.undefined,
+      Policies: js.UndefOr[UserPoolPolicyType] = js.undefined,
+      SmsAuthenticationMessage: js.UndefOr[SmsVerificationMessageType] = js.undefined,
+      SmsConfiguration: js.UndefOr[SmsConfigurationType] = js.undefined,
+      SmsVerificationMessage: js.UndefOr[SmsVerificationMessageType] = js.undefined,
+      UserPoolAddOns: js.UndefOr[UserPoolAddOnsType] = js.undefined,
+      UserPoolTags: js.UndefOr[UserPoolTagsType] = js.undefined,
       VerificationMessageTemplate: js.UndefOr[VerificationMessageTemplateType] = js.undefined): UpdateUserPoolRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "SmsVerificationMessage" -> SmsVerificationMessage.map { x => x.asInstanceOf[js.Any] },
-        "AutoVerifiedAttributes" -> AutoVerifiedAttributes.map { x => x.asInstanceOf[js.Any] },
-        "Policies" -> Policies.map { x => x.asInstanceOf[js.Any] },
-        "UserPoolAddOns" -> UserPoolAddOns.map { x => x.asInstanceOf[js.Any] },
-        "EmailConfiguration" -> EmailConfiguration.map { x => x.asInstanceOf[js.Any] },
+        "UserPoolId" -> UserPoolId.asInstanceOf[js.Any],
         "AdminCreateUserConfig" -> AdminCreateUserConfig.map { x => x.asInstanceOf[js.Any] },
-        "UserPoolId" -> UserPoolId.map { x => x.asInstanceOf[js.Any] },
-        "MfaConfiguration" -> MfaConfiguration.map { x => x.asInstanceOf[js.Any] },
-        "EmailVerificationSubject" -> EmailVerificationSubject.map { x => x.asInstanceOf[js.Any] },
-        "EmailVerificationMessage" -> EmailVerificationMessage.map { x => x.asInstanceOf[js.Any] },
-        "SmsConfiguration" -> SmsConfiguration.map { x => x.asInstanceOf[js.Any] },
-        "UserPoolTags" -> UserPoolTags.map { x => x.asInstanceOf[js.Any] },
-        "LambdaConfig" -> LambdaConfig.map { x => x.asInstanceOf[js.Any] },
-        "SmsAuthenticationMessage" -> SmsAuthenticationMessage.map { x => x.asInstanceOf[js.Any] },
+        "AutoVerifiedAttributes" -> AutoVerifiedAttributes.map { x => x.asInstanceOf[js.Any] },
         "DeviceConfiguration" -> DeviceConfiguration.map { x => x.asInstanceOf[js.Any] },
+        "EmailConfiguration" -> EmailConfiguration.map { x => x.asInstanceOf[js.Any] },
+        "EmailVerificationMessage" -> EmailVerificationMessage.map { x => x.asInstanceOf[js.Any] },
+        "EmailVerificationSubject" -> EmailVerificationSubject.map { x => x.asInstanceOf[js.Any] },
+        "LambdaConfig" -> LambdaConfig.map { x => x.asInstanceOf[js.Any] },
+        "MfaConfiguration" -> MfaConfiguration.map { x => x.asInstanceOf[js.Any] },
+        "Policies" -> Policies.map { x => x.asInstanceOf[js.Any] },
+        "SmsAuthenticationMessage" -> SmsAuthenticationMessage.map { x => x.asInstanceOf[js.Any] },
+        "SmsConfiguration" -> SmsConfiguration.map { x => x.asInstanceOf[js.Any] },
+        "SmsVerificationMessage" -> SmsVerificationMessage.map { x => x.asInstanceOf[js.Any] },
+        "UserPoolAddOns" -> UserPoolAddOns.map { x => x.asInstanceOf[js.Any] },
+        "UserPoolTags" -> UserPoolTags.map { x => x.asInstanceOf[js.Any] },
         "VerificationMessageTemplate" -> VerificationMessageTemplate.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateUserPoolRequest]
@@ -5503,50 +5503,50 @@ package cognitoidentityprovider {
    */
   @js.native
   trait UserImportJobType extends js.Object {
-    var CreationDate: js.UndefOr[DateType]
     var CloudWatchLogsRoleArn: js.UndefOr[ArnType]
     var CompletionDate: js.UndefOr[DateType]
-    var JobId: js.UndefOr[UserImportJobIdType]
     var CompletionMessage: js.UndefOr[CompletionMessageType]
-    var UserPoolId: js.UndefOr[UserPoolIdType]
-    var PreSignedUrl: js.UndefOr[PreSignedUrlType]
-    var JobName: js.UndefOr[UserImportJobNameType]
+    var CreationDate: js.UndefOr[DateType]
+    var FailedUsers: js.UndefOr[LongType]
     var ImportedUsers: js.UndefOr[LongType]
+    var JobId: js.UndefOr[UserImportJobIdType]
+    var JobName: js.UndefOr[UserImportJobNameType]
+    var PreSignedUrl: js.UndefOr[PreSignedUrlType]
     var SkippedUsers: js.UndefOr[LongType]
     var StartDate: js.UndefOr[DateType]
-    var FailedUsers: js.UndefOr[LongType]
     var Status: js.UndefOr[UserImportJobStatusType]
+    var UserPoolId: js.UndefOr[UserPoolIdType]
   }
 
   object UserImportJobType {
     def apply(
-      CreationDate: js.UndefOr[DateType] = js.undefined,
       CloudWatchLogsRoleArn: js.UndefOr[ArnType] = js.undefined,
       CompletionDate: js.UndefOr[DateType] = js.undefined,
-      JobId: js.UndefOr[UserImportJobIdType] = js.undefined,
       CompletionMessage: js.UndefOr[CompletionMessageType] = js.undefined,
-      UserPoolId: js.UndefOr[UserPoolIdType] = js.undefined,
-      PreSignedUrl: js.UndefOr[PreSignedUrlType] = js.undefined,
-      JobName: js.UndefOr[UserImportJobNameType] = js.undefined,
+      CreationDate: js.UndefOr[DateType] = js.undefined,
+      FailedUsers: js.UndefOr[LongType] = js.undefined,
       ImportedUsers: js.UndefOr[LongType] = js.undefined,
+      JobId: js.UndefOr[UserImportJobIdType] = js.undefined,
+      JobName: js.UndefOr[UserImportJobNameType] = js.undefined,
+      PreSignedUrl: js.UndefOr[PreSignedUrlType] = js.undefined,
       SkippedUsers: js.UndefOr[LongType] = js.undefined,
       StartDate: js.UndefOr[DateType] = js.undefined,
-      FailedUsers: js.UndefOr[LongType] = js.undefined,
-      Status: js.UndefOr[UserImportJobStatusType] = js.undefined): UserImportJobType = {
+      Status: js.UndefOr[UserImportJobStatusType] = js.undefined,
+      UserPoolId: js.UndefOr[UserPoolIdType] = js.undefined): UserImportJobType = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "CreationDate" -> CreationDate.map { x => x.asInstanceOf[js.Any] },
         "CloudWatchLogsRoleArn" -> CloudWatchLogsRoleArn.map { x => x.asInstanceOf[js.Any] },
         "CompletionDate" -> CompletionDate.map { x => x.asInstanceOf[js.Any] },
-        "JobId" -> JobId.map { x => x.asInstanceOf[js.Any] },
         "CompletionMessage" -> CompletionMessage.map { x => x.asInstanceOf[js.Any] },
-        "UserPoolId" -> UserPoolId.map { x => x.asInstanceOf[js.Any] },
-        "PreSignedUrl" -> PreSignedUrl.map { x => x.asInstanceOf[js.Any] },
-        "JobName" -> JobName.map { x => x.asInstanceOf[js.Any] },
+        "CreationDate" -> CreationDate.map { x => x.asInstanceOf[js.Any] },
+        "FailedUsers" -> FailedUsers.map { x => x.asInstanceOf[js.Any] },
         "ImportedUsers" -> ImportedUsers.map { x => x.asInstanceOf[js.Any] },
+        "JobId" -> JobId.map { x => x.asInstanceOf[js.Any] },
+        "JobName" -> JobName.map { x => x.asInstanceOf[js.Any] },
+        "PreSignedUrl" -> PreSignedUrl.map { x => x.asInstanceOf[js.Any] },
         "SkippedUsers" -> SkippedUsers.map { x => x.asInstanceOf[js.Any] },
         "StartDate" -> StartDate.map { x => x.asInstanceOf[js.Any] },
-        "FailedUsers" -> FailedUsers.map { x => x.asInstanceOf[js.Any] },
-        "Status" -> Status.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Status" -> Status.map { x => x.asInstanceOf[js.Any] },
+        "UserPoolId" -> UserPoolId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UserImportJobType]
     }
@@ -5557,14 +5557,14 @@ package cognitoidentityprovider {
    */
   @js.native
   trait UserPoolAddOnsType extends js.Object {
-    var AdvancedSecurityMode: js.UndefOr[AdvancedSecurityModeType]
+    var AdvancedSecurityMode: AdvancedSecurityModeType
   }
 
   object UserPoolAddOnsType {
     def apply(
-      AdvancedSecurityMode: js.UndefOr[AdvancedSecurityModeType] = js.undefined): UserPoolAddOnsType = {
+      AdvancedSecurityMode: AdvancedSecurityModeType): UserPoolAddOnsType = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "AdvancedSecurityMode" -> AdvancedSecurityMode.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "AdvancedSecurityMode" -> AdvancedSecurityMode.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UserPoolAddOnsType]
     }
@@ -5576,19 +5576,19 @@ package cognitoidentityprovider {
   @js.native
   trait UserPoolClientDescription extends js.Object {
     var ClientId: js.UndefOr[ClientIdType]
-    var UserPoolId: js.UndefOr[UserPoolIdType]
     var ClientName: js.UndefOr[ClientNameType]
+    var UserPoolId: js.UndefOr[UserPoolIdType]
   }
 
   object UserPoolClientDescription {
     def apply(
       ClientId: js.UndefOr[ClientIdType] = js.undefined,
-      UserPoolId: js.UndefOr[UserPoolIdType] = js.undefined,
-      ClientName: js.UndefOr[ClientNameType] = js.undefined): UserPoolClientDescription = {
+      ClientName: js.UndefOr[ClientNameType] = js.undefined,
+      UserPoolId: js.UndefOr[UserPoolIdType] = js.undefined): UserPoolClientDescription = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ClientId" -> ClientId.map { x => x.asInstanceOf[js.Any] },
-        "UserPoolId" -> UserPoolId.map { x => x.asInstanceOf[js.Any] },
-        "ClientName" -> ClientName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ClientName" -> ClientName.map { x => x.asInstanceOf[js.Any] },
+        "UserPoolId" -> UserPoolId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UserPoolClientDescription]
     }
@@ -5599,65 +5599,65 @@ package cognitoidentityprovider {
    */
   @js.native
   trait UserPoolClientType extends js.Object {
-    var CreationDate: js.UndefOr[DateType]
-    var AllowedOAuthFlowsUserPoolClient: js.UndefOr[BooleanType]
-    var LastModifiedDate: js.UndefOr[DateType]
-    var ExplicitAuthFlows: js.UndefOr[ExplicitAuthFlowsListType]
-    var RefreshTokenValidity: js.UndefOr[RefreshTokenValidityType]
-    var DefaultRedirectURI: js.UndefOr[RedirectUrlType]
-    var WriteAttributes: js.UndefOr[ClientPermissionListType]
-    var UserPoolId: js.UndefOr[UserPoolIdType]
-    var AllowedOAuthScopes: js.UndefOr[ScopeListType]
     var AllowedOAuthFlows: js.UndefOr[OAuthFlowsType]
-    var ClientId: js.UndefOr[ClientIdType]
-    var ClientSecret: js.UndefOr[ClientSecretType]
-    var ClientName: js.UndefOr[ClientNameType]
-    var ReadAttributes: js.UndefOr[ClientPermissionListType]
-    var SupportedIdentityProviders: js.UndefOr[SupportedIdentityProvidersListType]
+    var AllowedOAuthFlowsUserPoolClient: js.UndefOr[BooleanType]
+    var AllowedOAuthScopes: js.UndefOr[ScopeListType]
     var AnalyticsConfiguration: js.UndefOr[AnalyticsConfigurationType]
     var CallbackURLs: js.UndefOr[CallbackURLsListType]
+    var ClientId: js.UndefOr[ClientIdType]
+    var ClientName: js.UndefOr[ClientNameType]
+    var ClientSecret: js.UndefOr[ClientSecretType]
+    var CreationDate: js.UndefOr[DateType]
+    var DefaultRedirectURI: js.UndefOr[RedirectUrlType]
+    var ExplicitAuthFlows: js.UndefOr[ExplicitAuthFlowsListType]
+    var LastModifiedDate: js.UndefOr[DateType]
     var LogoutURLs: js.UndefOr[LogoutURLsListType]
+    var ReadAttributes: js.UndefOr[ClientPermissionListType]
+    var RefreshTokenValidity: js.UndefOr[RefreshTokenValidityType]
+    var SupportedIdentityProviders: js.UndefOr[SupportedIdentityProvidersListType]
+    var UserPoolId: js.UndefOr[UserPoolIdType]
+    var WriteAttributes: js.UndefOr[ClientPermissionListType]
   }
 
   object UserPoolClientType {
     def apply(
-      CreationDate: js.UndefOr[DateType] = js.undefined,
-      AllowedOAuthFlowsUserPoolClient: js.UndefOr[BooleanType] = js.undefined,
-      LastModifiedDate: js.UndefOr[DateType] = js.undefined,
-      ExplicitAuthFlows: js.UndefOr[ExplicitAuthFlowsListType] = js.undefined,
-      RefreshTokenValidity: js.UndefOr[RefreshTokenValidityType] = js.undefined,
-      DefaultRedirectURI: js.UndefOr[RedirectUrlType] = js.undefined,
-      WriteAttributes: js.UndefOr[ClientPermissionListType] = js.undefined,
-      UserPoolId: js.UndefOr[UserPoolIdType] = js.undefined,
-      AllowedOAuthScopes: js.UndefOr[ScopeListType] = js.undefined,
       AllowedOAuthFlows: js.UndefOr[OAuthFlowsType] = js.undefined,
-      ClientId: js.UndefOr[ClientIdType] = js.undefined,
-      ClientSecret: js.UndefOr[ClientSecretType] = js.undefined,
-      ClientName: js.UndefOr[ClientNameType] = js.undefined,
-      ReadAttributes: js.UndefOr[ClientPermissionListType] = js.undefined,
-      SupportedIdentityProviders: js.UndefOr[SupportedIdentityProvidersListType] = js.undefined,
+      AllowedOAuthFlowsUserPoolClient: js.UndefOr[BooleanType] = js.undefined,
+      AllowedOAuthScopes: js.UndefOr[ScopeListType] = js.undefined,
       AnalyticsConfiguration: js.UndefOr[AnalyticsConfigurationType] = js.undefined,
       CallbackURLs: js.UndefOr[CallbackURLsListType] = js.undefined,
-      LogoutURLs: js.UndefOr[LogoutURLsListType] = js.undefined): UserPoolClientType = {
+      ClientId: js.UndefOr[ClientIdType] = js.undefined,
+      ClientName: js.UndefOr[ClientNameType] = js.undefined,
+      ClientSecret: js.UndefOr[ClientSecretType] = js.undefined,
+      CreationDate: js.UndefOr[DateType] = js.undefined,
+      DefaultRedirectURI: js.UndefOr[RedirectUrlType] = js.undefined,
+      ExplicitAuthFlows: js.UndefOr[ExplicitAuthFlowsListType] = js.undefined,
+      LastModifiedDate: js.UndefOr[DateType] = js.undefined,
+      LogoutURLs: js.UndefOr[LogoutURLsListType] = js.undefined,
+      ReadAttributes: js.UndefOr[ClientPermissionListType] = js.undefined,
+      RefreshTokenValidity: js.UndefOr[RefreshTokenValidityType] = js.undefined,
+      SupportedIdentityProviders: js.UndefOr[SupportedIdentityProvidersListType] = js.undefined,
+      UserPoolId: js.UndefOr[UserPoolIdType] = js.undefined,
+      WriteAttributes: js.UndefOr[ClientPermissionListType] = js.undefined): UserPoolClientType = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "CreationDate" -> CreationDate.map { x => x.asInstanceOf[js.Any] },
-        "AllowedOAuthFlowsUserPoolClient" -> AllowedOAuthFlowsUserPoolClient.map { x => x.asInstanceOf[js.Any] },
-        "LastModifiedDate" -> LastModifiedDate.map { x => x.asInstanceOf[js.Any] },
-        "ExplicitAuthFlows" -> ExplicitAuthFlows.map { x => x.asInstanceOf[js.Any] },
-        "RefreshTokenValidity" -> RefreshTokenValidity.map { x => x.asInstanceOf[js.Any] },
-        "DefaultRedirectURI" -> DefaultRedirectURI.map { x => x.asInstanceOf[js.Any] },
-        "WriteAttributes" -> WriteAttributes.map { x => x.asInstanceOf[js.Any] },
-        "UserPoolId" -> UserPoolId.map { x => x.asInstanceOf[js.Any] },
-        "AllowedOAuthScopes" -> AllowedOAuthScopes.map { x => x.asInstanceOf[js.Any] },
         "AllowedOAuthFlows" -> AllowedOAuthFlows.map { x => x.asInstanceOf[js.Any] },
-        "ClientId" -> ClientId.map { x => x.asInstanceOf[js.Any] },
-        "ClientSecret" -> ClientSecret.map { x => x.asInstanceOf[js.Any] },
-        "ClientName" -> ClientName.map { x => x.asInstanceOf[js.Any] },
-        "ReadAttributes" -> ReadAttributes.map { x => x.asInstanceOf[js.Any] },
-        "SupportedIdentityProviders" -> SupportedIdentityProviders.map { x => x.asInstanceOf[js.Any] },
+        "AllowedOAuthFlowsUserPoolClient" -> AllowedOAuthFlowsUserPoolClient.map { x => x.asInstanceOf[js.Any] },
+        "AllowedOAuthScopes" -> AllowedOAuthScopes.map { x => x.asInstanceOf[js.Any] },
         "AnalyticsConfiguration" -> AnalyticsConfiguration.map { x => x.asInstanceOf[js.Any] },
         "CallbackURLs" -> CallbackURLs.map { x => x.asInstanceOf[js.Any] },
-        "LogoutURLs" -> LogoutURLs.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ClientId" -> ClientId.map { x => x.asInstanceOf[js.Any] },
+        "ClientName" -> ClientName.map { x => x.asInstanceOf[js.Any] },
+        "ClientSecret" -> ClientSecret.map { x => x.asInstanceOf[js.Any] },
+        "CreationDate" -> CreationDate.map { x => x.asInstanceOf[js.Any] },
+        "DefaultRedirectURI" -> DefaultRedirectURI.map { x => x.asInstanceOf[js.Any] },
+        "ExplicitAuthFlows" -> ExplicitAuthFlows.map { x => x.asInstanceOf[js.Any] },
+        "LastModifiedDate" -> LastModifiedDate.map { x => x.asInstanceOf[js.Any] },
+        "LogoutURLs" -> LogoutURLs.map { x => x.asInstanceOf[js.Any] },
+        "ReadAttributes" -> ReadAttributes.map { x => x.asInstanceOf[js.Any] },
+        "RefreshTokenValidity" -> RefreshTokenValidity.map { x => x.asInstanceOf[js.Any] },
+        "SupportedIdentityProviders" -> SupportedIdentityProviders.map { x => x.asInstanceOf[js.Any] },
+        "UserPoolId" -> UserPoolId.map { x => x.asInstanceOf[js.Any] },
+        "WriteAttributes" -> WriteAttributes.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UserPoolClientType]
     }
@@ -5670,9 +5670,9 @@ package cognitoidentityprovider {
   trait UserPoolDescriptionType extends js.Object {
     var CreationDate: js.UndefOr[DateType]
     var Id: js.UndefOr[UserPoolIdType]
-    var Name: js.UndefOr[UserPoolNameType]
-    var LastModifiedDate: js.UndefOr[DateType]
     var LambdaConfig: js.UndefOr[LambdaConfigType]
+    var LastModifiedDate: js.UndefOr[DateType]
+    var Name: js.UndefOr[UserPoolNameType]
     var Status: js.UndefOr[StatusType]
   }
 
@@ -5680,16 +5680,16 @@ package cognitoidentityprovider {
     def apply(
       CreationDate: js.UndefOr[DateType] = js.undefined,
       Id: js.UndefOr[UserPoolIdType] = js.undefined,
-      Name: js.UndefOr[UserPoolNameType] = js.undefined,
-      LastModifiedDate: js.UndefOr[DateType] = js.undefined,
       LambdaConfig: js.UndefOr[LambdaConfigType] = js.undefined,
+      LastModifiedDate: js.UndefOr[DateType] = js.undefined,
+      Name: js.UndefOr[UserPoolNameType] = js.undefined,
       Status: js.UndefOr[StatusType] = js.undefined): UserPoolDescriptionType = {
       val _fields = IndexedSeq[(String, js.Any)](
         "CreationDate" -> CreationDate.map { x => x.asInstanceOf[js.Any] },
         "Id" -> Id.map { x => x.asInstanceOf[js.Any] },
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
-        "LastModifiedDate" -> LastModifiedDate.map { x => x.asInstanceOf[js.Any] },
         "LambdaConfig" -> LambdaConfig.map { x => x.asInstanceOf[js.Any] },
+        "LastModifiedDate" -> LastModifiedDate.map { x => x.asInstanceOf[js.Any] },
+        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
         "Status" -> Status.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UserPoolDescriptionType]
@@ -5727,98 +5727,98 @@ package cognitoidentityprovider {
    */
   @js.native
   trait UserPoolType extends js.Object {
+    var AdminCreateUserConfig: js.UndefOr[AdminCreateUserConfigType]
+    var AliasAttributes: js.UndefOr[AliasAttributesListType]
+    var Arn: js.UndefOr[ArnType]
+    var AutoVerifiedAttributes: js.UndefOr[VerifiedAttributesListType]
     var CreationDate: js.UndefOr[DateType]
     var CustomDomain: js.UndefOr[DomainType]
-    var Id: js.UndefOr[UserPoolIdType]
-    var SmsVerificationMessage: js.UndefOr[SmsVerificationMessageType]
-    var Name: js.UndefOr[UserPoolNameType]
-    var LastModifiedDate: js.UndefOr[DateType]
-    var AutoVerifiedAttributes: js.UndefOr[VerifiedAttributesListType]
-    var EmailConfigurationFailure: js.UndefOr[StringType]
-    var Policies: js.UndefOr[UserPoolPolicyType]
-    var UserPoolAddOns: js.UndefOr[UserPoolAddOnsType]
-    var EmailConfiguration: js.UndefOr[EmailConfigurationType]
-    var AdminCreateUserConfig: js.UndefOr[AdminCreateUserConfigType]
-    var UsernameAttributes: js.UndefOr[UsernameAttributesListType]
-    var MfaConfiguration: js.UndefOr[UserPoolMfaType]
-    var Arn: js.UndefOr[ArnType]
-    var EmailVerificationSubject: js.UndefOr[EmailVerificationSubjectType]
-    var SchemaAttributes: js.UndefOr[SchemaAttributesListType]
-    var EmailVerificationMessage: js.UndefOr[EmailVerificationMessageType]
-    var AliasAttributes: js.UndefOr[AliasAttributesListType]
-    var SmsConfigurationFailure: js.UndefOr[StringType]
-    var SmsConfiguration: js.UndefOr[SmsConfigurationType]
-    var UserPoolTags: js.UndefOr[UserPoolTagsType]
-    var EstimatedNumberOfUsers: js.UndefOr[IntegerType]
-    var LambdaConfig: js.UndefOr[LambdaConfigType]
-    var SmsAuthenticationMessage: js.UndefOr[SmsVerificationMessageType]
-    var Domain: js.UndefOr[DomainType]
     var DeviceConfiguration: js.UndefOr[DeviceConfigurationType]
-    var VerificationMessageTemplate: js.UndefOr[VerificationMessageTemplateType]
+    var Domain: js.UndefOr[DomainType]
+    var EmailConfiguration: js.UndefOr[EmailConfigurationType]
+    var EmailConfigurationFailure: js.UndefOr[StringType]
+    var EmailVerificationMessage: js.UndefOr[EmailVerificationMessageType]
+    var EmailVerificationSubject: js.UndefOr[EmailVerificationSubjectType]
+    var EstimatedNumberOfUsers: js.UndefOr[IntegerType]
+    var Id: js.UndefOr[UserPoolIdType]
+    var LambdaConfig: js.UndefOr[LambdaConfigType]
+    var LastModifiedDate: js.UndefOr[DateType]
+    var MfaConfiguration: js.UndefOr[UserPoolMfaType]
+    var Name: js.UndefOr[UserPoolNameType]
+    var Policies: js.UndefOr[UserPoolPolicyType]
+    var SchemaAttributes: js.UndefOr[SchemaAttributesListType]
+    var SmsAuthenticationMessage: js.UndefOr[SmsVerificationMessageType]
+    var SmsConfiguration: js.UndefOr[SmsConfigurationType]
+    var SmsConfigurationFailure: js.UndefOr[StringType]
+    var SmsVerificationMessage: js.UndefOr[SmsVerificationMessageType]
     var Status: js.UndefOr[StatusType]
+    var UserPoolAddOns: js.UndefOr[UserPoolAddOnsType]
+    var UserPoolTags: js.UndefOr[UserPoolTagsType]
+    var UsernameAttributes: js.UndefOr[UsernameAttributesListType]
+    var VerificationMessageTemplate: js.UndefOr[VerificationMessageTemplateType]
   }
 
   object UserPoolType {
     def apply(
+      AdminCreateUserConfig: js.UndefOr[AdminCreateUserConfigType] = js.undefined,
+      AliasAttributes: js.UndefOr[AliasAttributesListType] = js.undefined,
+      Arn: js.UndefOr[ArnType] = js.undefined,
+      AutoVerifiedAttributes: js.UndefOr[VerifiedAttributesListType] = js.undefined,
       CreationDate: js.UndefOr[DateType] = js.undefined,
       CustomDomain: js.UndefOr[DomainType] = js.undefined,
-      Id: js.UndefOr[UserPoolIdType] = js.undefined,
-      SmsVerificationMessage: js.UndefOr[SmsVerificationMessageType] = js.undefined,
-      Name: js.UndefOr[UserPoolNameType] = js.undefined,
-      LastModifiedDate: js.UndefOr[DateType] = js.undefined,
-      AutoVerifiedAttributes: js.UndefOr[VerifiedAttributesListType] = js.undefined,
-      EmailConfigurationFailure: js.UndefOr[StringType] = js.undefined,
-      Policies: js.UndefOr[UserPoolPolicyType] = js.undefined,
-      UserPoolAddOns: js.UndefOr[UserPoolAddOnsType] = js.undefined,
-      EmailConfiguration: js.UndefOr[EmailConfigurationType] = js.undefined,
-      AdminCreateUserConfig: js.UndefOr[AdminCreateUserConfigType] = js.undefined,
-      UsernameAttributes: js.UndefOr[UsernameAttributesListType] = js.undefined,
-      MfaConfiguration: js.UndefOr[UserPoolMfaType] = js.undefined,
-      Arn: js.UndefOr[ArnType] = js.undefined,
-      EmailVerificationSubject: js.UndefOr[EmailVerificationSubjectType] = js.undefined,
-      SchemaAttributes: js.UndefOr[SchemaAttributesListType] = js.undefined,
-      EmailVerificationMessage: js.UndefOr[EmailVerificationMessageType] = js.undefined,
-      AliasAttributes: js.UndefOr[AliasAttributesListType] = js.undefined,
-      SmsConfigurationFailure: js.UndefOr[StringType] = js.undefined,
-      SmsConfiguration: js.UndefOr[SmsConfigurationType] = js.undefined,
-      UserPoolTags: js.UndefOr[UserPoolTagsType] = js.undefined,
-      EstimatedNumberOfUsers: js.UndefOr[IntegerType] = js.undefined,
-      LambdaConfig: js.UndefOr[LambdaConfigType] = js.undefined,
-      SmsAuthenticationMessage: js.UndefOr[SmsVerificationMessageType] = js.undefined,
-      Domain: js.UndefOr[DomainType] = js.undefined,
       DeviceConfiguration: js.UndefOr[DeviceConfigurationType] = js.undefined,
-      VerificationMessageTemplate: js.UndefOr[VerificationMessageTemplateType] = js.undefined,
-      Status: js.UndefOr[StatusType] = js.undefined): UserPoolType = {
+      Domain: js.UndefOr[DomainType] = js.undefined,
+      EmailConfiguration: js.UndefOr[EmailConfigurationType] = js.undefined,
+      EmailConfigurationFailure: js.UndefOr[StringType] = js.undefined,
+      EmailVerificationMessage: js.UndefOr[EmailVerificationMessageType] = js.undefined,
+      EmailVerificationSubject: js.UndefOr[EmailVerificationSubjectType] = js.undefined,
+      EstimatedNumberOfUsers: js.UndefOr[IntegerType] = js.undefined,
+      Id: js.UndefOr[UserPoolIdType] = js.undefined,
+      LambdaConfig: js.UndefOr[LambdaConfigType] = js.undefined,
+      LastModifiedDate: js.UndefOr[DateType] = js.undefined,
+      MfaConfiguration: js.UndefOr[UserPoolMfaType] = js.undefined,
+      Name: js.UndefOr[UserPoolNameType] = js.undefined,
+      Policies: js.UndefOr[UserPoolPolicyType] = js.undefined,
+      SchemaAttributes: js.UndefOr[SchemaAttributesListType] = js.undefined,
+      SmsAuthenticationMessage: js.UndefOr[SmsVerificationMessageType] = js.undefined,
+      SmsConfiguration: js.UndefOr[SmsConfigurationType] = js.undefined,
+      SmsConfigurationFailure: js.UndefOr[StringType] = js.undefined,
+      SmsVerificationMessage: js.UndefOr[SmsVerificationMessageType] = js.undefined,
+      Status: js.UndefOr[StatusType] = js.undefined,
+      UserPoolAddOns: js.UndefOr[UserPoolAddOnsType] = js.undefined,
+      UserPoolTags: js.UndefOr[UserPoolTagsType] = js.undefined,
+      UsernameAttributes: js.UndefOr[UsernameAttributesListType] = js.undefined,
+      VerificationMessageTemplate: js.UndefOr[VerificationMessageTemplateType] = js.undefined): UserPoolType = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "AdminCreateUserConfig" -> AdminCreateUserConfig.map { x => x.asInstanceOf[js.Any] },
+        "AliasAttributes" -> AliasAttributes.map { x => x.asInstanceOf[js.Any] },
+        "Arn" -> Arn.map { x => x.asInstanceOf[js.Any] },
+        "AutoVerifiedAttributes" -> AutoVerifiedAttributes.map { x => x.asInstanceOf[js.Any] },
         "CreationDate" -> CreationDate.map { x => x.asInstanceOf[js.Any] },
         "CustomDomain" -> CustomDomain.map { x => x.asInstanceOf[js.Any] },
-        "Id" -> Id.map { x => x.asInstanceOf[js.Any] },
-        "SmsVerificationMessage" -> SmsVerificationMessage.map { x => x.asInstanceOf[js.Any] },
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
-        "LastModifiedDate" -> LastModifiedDate.map { x => x.asInstanceOf[js.Any] },
-        "AutoVerifiedAttributes" -> AutoVerifiedAttributes.map { x => x.asInstanceOf[js.Any] },
-        "EmailConfigurationFailure" -> EmailConfigurationFailure.map { x => x.asInstanceOf[js.Any] },
-        "Policies" -> Policies.map { x => x.asInstanceOf[js.Any] },
-        "UserPoolAddOns" -> UserPoolAddOns.map { x => x.asInstanceOf[js.Any] },
-        "EmailConfiguration" -> EmailConfiguration.map { x => x.asInstanceOf[js.Any] },
-        "AdminCreateUserConfig" -> AdminCreateUserConfig.map { x => x.asInstanceOf[js.Any] },
-        "UsernameAttributes" -> UsernameAttributes.map { x => x.asInstanceOf[js.Any] },
-        "MfaConfiguration" -> MfaConfiguration.map { x => x.asInstanceOf[js.Any] },
-        "Arn" -> Arn.map { x => x.asInstanceOf[js.Any] },
-        "EmailVerificationSubject" -> EmailVerificationSubject.map { x => x.asInstanceOf[js.Any] },
-        "SchemaAttributes" -> SchemaAttributes.map { x => x.asInstanceOf[js.Any] },
-        "EmailVerificationMessage" -> EmailVerificationMessage.map { x => x.asInstanceOf[js.Any] },
-        "AliasAttributes" -> AliasAttributes.map { x => x.asInstanceOf[js.Any] },
-        "SmsConfigurationFailure" -> SmsConfigurationFailure.map { x => x.asInstanceOf[js.Any] },
-        "SmsConfiguration" -> SmsConfiguration.map { x => x.asInstanceOf[js.Any] },
-        "UserPoolTags" -> UserPoolTags.map { x => x.asInstanceOf[js.Any] },
-        "EstimatedNumberOfUsers" -> EstimatedNumberOfUsers.map { x => x.asInstanceOf[js.Any] },
-        "LambdaConfig" -> LambdaConfig.map { x => x.asInstanceOf[js.Any] },
-        "SmsAuthenticationMessage" -> SmsAuthenticationMessage.map { x => x.asInstanceOf[js.Any] },
-        "Domain" -> Domain.map { x => x.asInstanceOf[js.Any] },
         "DeviceConfiguration" -> DeviceConfiguration.map { x => x.asInstanceOf[js.Any] },
-        "VerificationMessageTemplate" -> VerificationMessageTemplate.map { x => x.asInstanceOf[js.Any] },
-        "Status" -> Status.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Domain" -> Domain.map { x => x.asInstanceOf[js.Any] },
+        "EmailConfiguration" -> EmailConfiguration.map { x => x.asInstanceOf[js.Any] },
+        "EmailConfigurationFailure" -> EmailConfigurationFailure.map { x => x.asInstanceOf[js.Any] },
+        "EmailVerificationMessage" -> EmailVerificationMessage.map { x => x.asInstanceOf[js.Any] },
+        "EmailVerificationSubject" -> EmailVerificationSubject.map { x => x.asInstanceOf[js.Any] },
+        "EstimatedNumberOfUsers" -> EstimatedNumberOfUsers.map { x => x.asInstanceOf[js.Any] },
+        "Id" -> Id.map { x => x.asInstanceOf[js.Any] },
+        "LambdaConfig" -> LambdaConfig.map { x => x.asInstanceOf[js.Any] },
+        "LastModifiedDate" -> LastModifiedDate.map { x => x.asInstanceOf[js.Any] },
+        "MfaConfiguration" -> MfaConfiguration.map { x => x.asInstanceOf[js.Any] },
+        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
+        "Policies" -> Policies.map { x => x.asInstanceOf[js.Any] },
+        "SchemaAttributes" -> SchemaAttributes.map { x => x.asInstanceOf[js.Any] },
+        "SmsAuthenticationMessage" -> SmsAuthenticationMessage.map { x => x.asInstanceOf[js.Any] },
+        "SmsConfiguration" -> SmsConfiguration.map { x => x.asInstanceOf[js.Any] },
+        "SmsConfigurationFailure" -> SmsConfigurationFailure.map { x => x.asInstanceOf[js.Any] },
+        "SmsVerificationMessage" -> SmsVerificationMessage.map { x => x.asInstanceOf[js.Any] },
+        "Status" -> Status.map { x => x.asInstanceOf[js.Any] },
+        "UserPoolAddOns" -> UserPoolAddOns.map { x => x.asInstanceOf[js.Any] },
+        "UserPoolTags" -> UserPoolTags.map { x => x.asInstanceOf[js.Any] },
+        "UsernameAttributes" -> UsernameAttributes.map { x => x.asInstanceOf[js.Any] },
+        "VerificationMessageTemplate" -> VerificationMessageTemplate.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UserPoolType]
     }
@@ -5841,32 +5841,32 @@ package cognitoidentityprovider {
    */
   @js.native
   trait UserType extends js.Object {
-    var Username: js.UndefOr[UsernameType]
-    var UserLastModifiedDate: js.UndefOr[DateType]
-    var UserStatus: js.UndefOr[UserStatusType]
-    var MFAOptions: js.UndefOr[MFAOptionListType]
     var Attributes: js.UndefOr[AttributeListType]
     var Enabled: js.UndefOr[BooleanType]
+    var MFAOptions: js.UndefOr[MFAOptionListType]
     var UserCreateDate: js.UndefOr[DateType]
+    var UserLastModifiedDate: js.UndefOr[DateType]
+    var UserStatus: js.UndefOr[UserStatusType]
+    var Username: js.UndefOr[UsernameType]
   }
 
   object UserType {
     def apply(
-      Username: js.UndefOr[UsernameType] = js.undefined,
-      UserLastModifiedDate: js.UndefOr[DateType] = js.undefined,
-      UserStatus: js.UndefOr[UserStatusType] = js.undefined,
-      MFAOptions: js.UndefOr[MFAOptionListType] = js.undefined,
       Attributes: js.UndefOr[AttributeListType] = js.undefined,
       Enabled: js.UndefOr[BooleanType] = js.undefined,
-      UserCreateDate: js.UndefOr[DateType] = js.undefined): UserType = {
+      MFAOptions: js.UndefOr[MFAOptionListType] = js.undefined,
+      UserCreateDate: js.UndefOr[DateType] = js.undefined,
+      UserLastModifiedDate: js.UndefOr[DateType] = js.undefined,
+      UserStatus: js.UndefOr[UserStatusType] = js.undefined,
+      Username: js.UndefOr[UsernameType] = js.undefined): UserType = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Username" -> Username.map { x => x.asInstanceOf[js.Any] },
-        "UserLastModifiedDate" -> UserLastModifiedDate.map { x => x.asInstanceOf[js.Any] },
-        "UserStatus" -> UserStatus.map { x => x.asInstanceOf[js.Any] },
-        "MFAOptions" -> MFAOptions.map { x => x.asInstanceOf[js.Any] },
         "Attributes" -> Attributes.map { x => x.asInstanceOf[js.Any] },
         "Enabled" -> Enabled.map { x => x.asInstanceOf[js.Any] },
-        "UserCreateDate" -> UserCreateDate.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "MFAOptions" -> MFAOptions.map { x => x.asInstanceOf[js.Any] },
+        "UserCreateDate" -> UserCreateDate.map { x => x.asInstanceOf[js.Any] },
+        "UserLastModifiedDate" -> UserLastModifiedDate.map { x => x.asInstanceOf[js.Any] },
+        "UserStatus" -> UserStatus.map { x => x.asInstanceOf[js.Any] },
+        "Username" -> Username.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UserType]
     }
@@ -5885,28 +5885,28 @@ package cognitoidentityprovider {
   @js.native
   trait VerificationMessageTemplateType extends js.Object {
     var DefaultEmailOption: js.UndefOr[DefaultEmailOptionType]
-    var SmsMessage: js.UndefOr[SmsVerificationMessageType]
     var EmailMessage: js.UndefOr[EmailVerificationMessageType]
     var EmailMessageByLink: js.UndefOr[EmailVerificationMessageByLinkType]
     var EmailSubject: js.UndefOr[EmailVerificationSubjectType]
     var EmailSubjectByLink: js.UndefOr[EmailVerificationSubjectByLinkType]
+    var SmsMessage: js.UndefOr[SmsVerificationMessageType]
   }
 
   object VerificationMessageTemplateType {
     def apply(
       DefaultEmailOption: js.UndefOr[DefaultEmailOptionType] = js.undefined,
-      SmsMessage: js.UndefOr[SmsVerificationMessageType] = js.undefined,
       EmailMessage: js.UndefOr[EmailVerificationMessageType] = js.undefined,
       EmailMessageByLink: js.UndefOr[EmailVerificationMessageByLinkType] = js.undefined,
       EmailSubject: js.UndefOr[EmailVerificationSubjectType] = js.undefined,
-      EmailSubjectByLink: js.UndefOr[EmailVerificationSubjectByLinkType] = js.undefined): VerificationMessageTemplateType = {
+      EmailSubjectByLink: js.UndefOr[EmailVerificationSubjectByLinkType] = js.undefined,
+      SmsMessage: js.UndefOr[SmsVerificationMessageType] = js.undefined): VerificationMessageTemplateType = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DefaultEmailOption" -> DefaultEmailOption.map { x => x.asInstanceOf[js.Any] },
-        "SmsMessage" -> SmsMessage.map { x => x.asInstanceOf[js.Any] },
         "EmailMessage" -> EmailMessage.map { x => x.asInstanceOf[js.Any] },
         "EmailMessageByLink" -> EmailMessageByLink.map { x => x.asInstanceOf[js.Any] },
         "EmailSubject" -> EmailSubject.map { x => x.asInstanceOf[js.Any] },
-        "EmailSubjectByLink" -> EmailSubjectByLink.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "EmailSubjectByLink" -> EmailSubjectByLink.map { x => x.asInstanceOf[js.Any] },
+        "SmsMessage" -> SmsMessage.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[VerificationMessageTemplateType]
     }
@@ -5921,23 +5921,23 @@ package cognitoidentityprovider {
 
   @js.native
   trait VerifySoftwareTokenRequest extends js.Object {
+    var UserCode: SoftwareTokenMFAUserCodeType
     var AccessToken: js.UndefOr[TokenModelType]
-    var Session: js.UndefOr[SessionType]
-    var UserCode: js.UndefOr[SoftwareTokenMFAUserCodeType]
     var FriendlyDeviceName: js.UndefOr[StringType]
+    var Session: js.UndefOr[SessionType]
   }
 
   object VerifySoftwareTokenRequest {
     def apply(
+      UserCode: SoftwareTokenMFAUserCodeType,
       AccessToken: js.UndefOr[TokenModelType] = js.undefined,
-      Session: js.UndefOr[SessionType] = js.undefined,
-      UserCode: js.UndefOr[SoftwareTokenMFAUserCodeType] = js.undefined,
-      FriendlyDeviceName: js.UndefOr[StringType] = js.undefined): VerifySoftwareTokenRequest = {
+      FriendlyDeviceName: js.UndefOr[StringType] = js.undefined,
+      Session: js.UndefOr[SessionType] = js.undefined): VerifySoftwareTokenRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "UserCode" -> UserCode.asInstanceOf[js.Any],
         "AccessToken" -> AccessToken.map { x => x.asInstanceOf[js.Any] },
-        "Session" -> Session.map { x => x.asInstanceOf[js.Any] },
-        "UserCode" -> UserCode.map { x => x.asInstanceOf[js.Any] },
-        "FriendlyDeviceName" -> FriendlyDeviceName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "FriendlyDeviceName" -> FriendlyDeviceName.map { x => x.asInstanceOf[js.Any] },
+        "Session" -> Session.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[VerifySoftwareTokenRequest]
     }
@@ -5945,17 +5945,17 @@ package cognitoidentityprovider {
 
   @js.native
   trait VerifySoftwareTokenResponse extends js.Object {
-    var Status: js.UndefOr[VerifySoftwareTokenResponseType]
     var Session: js.UndefOr[SessionType]
+    var Status: js.UndefOr[VerifySoftwareTokenResponseType]
   }
 
   object VerifySoftwareTokenResponse {
     def apply(
-      Status: js.UndefOr[VerifySoftwareTokenResponseType] = js.undefined,
-      Session: js.UndefOr[SessionType] = js.undefined): VerifySoftwareTokenResponse = {
+      Session: js.UndefOr[SessionType] = js.undefined,
+      Status: js.UndefOr[VerifySoftwareTokenResponseType] = js.undefined): VerifySoftwareTokenResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Status" -> Status.map { x => x.asInstanceOf[js.Any] },
-        "Session" -> Session.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Session" -> Session.map { x => x.asInstanceOf[js.Any] },
+        "Status" -> Status.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[VerifySoftwareTokenResponse]
     }
@@ -5973,20 +5973,20 @@ package cognitoidentityprovider {
    */
   @js.native
   trait VerifyUserAttributeRequest extends js.Object {
-    var AccessToken: js.UndefOr[TokenModelType]
-    var AttributeName: js.UndefOr[AttributeNameType]
-    var Code: js.UndefOr[ConfirmationCodeType]
+    var AccessToken: TokenModelType
+    var AttributeName: AttributeNameType
+    var Code: ConfirmationCodeType
   }
 
   object VerifyUserAttributeRequest {
     def apply(
-      AccessToken: js.UndefOr[TokenModelType] = js.undefined,
-      AttributeName: js.UndefOr[AttributeNameType] = js.undefined,
-      Code: js.UndefOr[ConfirmationCodeType] = js.undefined): VerifyUserAttributeRequest = {
+      AccessToken: TokenModelType,
+      AttributeName: AttributeNameType,
+      Code: ConfirmationCodeType): VerifyUserAttributeRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "AccessToken" -> AccessToken.map { x => x.asInstanceOf[js.Any] },
-        "AttributeName" -> AttributeName.map { x => x.asInstanceOf[js.Any] },
-        "Code" -> Code.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "AccessToken" -> AccessToken.asInstanceOf[js.Any],
+        "AttributeName" -> AttributeName.asInstanceOf[js.Any],
+        "Code" -> Code.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[VerifyUserAttributeRequest]
     }

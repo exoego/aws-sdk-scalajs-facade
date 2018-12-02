@@ -94,26 +94,26 @@ package route53domains {
    */
   @js.native
   trait BillingRecord extends js.Object {
-    var Price: js.UndefOr[Price]
-    var Operation: js.UndefOr[OperationType]
+    var BillDate: js.UndefOr[Timestamp]
     var DomainName: js.UndefOr[DomainName]
     var InvoiceId: js.UndefOr[InvoiceId]
-    var BillDate: js.UndefOr[Timestamp]
+    var Operation: js.UndefOr[OperationType]
+    var Price: js.UndefOr[Price]
   }
 
   object BillingRecord {
     def apply(
-      Price: js.UndefOr[Price] = js.undefined,
-      Operation: js.UndefOr[OperationType] = js.undefined,
+      BillDate: js.UndefOr[Timestamp] = js.undefined,
       DomainName: js.UndefOr[DomainName] = js.undefined,
       InvoiceId: js.UndefOr[InvoiceId] = js.undefined,
-      BillDate: js.UndefOr[Timestamp] = js.undefined): BillingRecord = {
+      Operation: js.UndefOr[OperationType] = js.undefined,
+      Price: js.UndefOr[Price] = js.undefined): BillingRecord = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Price" -> Price.map { x => x.asInstanceOf[js.Any] },
-        "Operation" -> Operation.map { x => x.asInstanceOf[js.Any] },
+        "BillDate" -> BillDate.map { x => x.asInstanceOf[js.Any] },
         "DomainName" -> DomainName.map { x => x.asInstanceOf[js.Any] },
         "InvoiceId" -> InvoiceId.map { x => x.asInstanceOf[js.Any] },
-        "BillDate" -> BillDate.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Operation" -> Operation.map { x => x.asInstanceOf[js.Any] },
+        "Price" -> Price.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BillingRecord]
     }
@@ -124,16 +124,16 @@ package route53domains {
    */
   @js.native
   trait CheckDomainAvailabilityRequest extends js.Object {
-    var DomainName: js.UndefOr[DomainName]
+    var DomainName: DomainName
     var IdnLangCode: js.UndefOr[LangCode]
   }
 
   object CheckDomainAvailabilityRequest {
     def apply(
-      DomainName: js.UndefOr[DomainName] = js.undefined,
+      DomainName: DomainName,
       IdnLangCode: js.UndefOr[LangCode] = js.undefined): CheckDomainAvailabilityRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "DomainName" -> DomainName.map { x => x.asInstanceOf[js.Any] },
+        "DomainName" -> DomainName.asInstanceOf[js.Any],
         "IdnLangCode" -> IdnLangCode.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CheckDomainAvailabilityRequest]
@@ -145,14 +145,14 @@ package route53domains {
    */
   @js.native
   trait CheckDomainAvailabilityResponse extends js.Object {
-    var Availability: js.UndefOr[DomainAvailability]
+    var Availability: DomainAvailability
   }
 
   object CheckDomainAvailabilityResponse {
     def apply(
-      Availability: js.UndefOr[DomainAvailability] = js.undefined): CheckDomainAvailabilityResponse = {
+      Availability: DomainAvailability): CheckDomainAvailabilityResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Availability" -> Availability.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Availability" -> Availability.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CheckDomainAvailabilityResponse]
     }
@@ -163,16 +163,16 @@ package route53domains {
    */
   @js.native
   trait CheckDomainTransferabilityRequest extends js.Object {
-    var DomainName: js.UndefOr[DomainName]
+    var DomainName: DomainName
     var AuthCode: js.UndefOr[DomainAuthCode]
   }
 
   object CheckDomainTransferabilityRequest {
     def apply(
-      DomainName: js.UndefOr[DomainName] = js.undefined,
+      DomainName: DomainName,
       AuthCode: js.UndefOr[DomainAuthCode] = js.undefined): CheckDomainTransferabilityRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "DomainName" -> DomainName.map { x => x.asInstanceOf[js.Any] },
+        "DomainName" -> DomainName.asInstanceOf[js.Any],
         "AuthCode" -> AuthCode.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CheckDomainTransferabilityRequest]
@@ -184,14 +184,14 @@ package route53domains {
    */
   @js.native
   trait CheckDomainTransferabilityResponse extends js.Object {
-    var Transferability: js.UndefOr[DomainTransferability]
+    var Transferability: DomainTransferability
   }
 
   object CheckDomainTransferabilityResponse {
     def apply(
-      Transferability: js.UndefOr[DomainTransferability] = js.undefined): CheckDomainTransferabilityResponse = {
+      Transferability: DomainTransferability): CheckDomainTransferabilityResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Transferability" -> Transferability.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Transferability" -> Transferability.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CheckDomainTransferabilityResponse]
     }
@@ -202,53 +202,53 @@ package route53domains {
    */
   @js.native
   trait ContactDetail extends js.Object {
-    var LastName: js.UndefOr[ContactName]
-    var CountryCode: js.UndefOr[CountryCode]
-    var OrganizationName: js.UndefOr[ContactName]
     var AddressLine1: js.UndefOr[AddressLine]
-    var FirstName: js.UndefOr[ContactName]
-    var Fax: js.UndefOr[ContactNumber]
-    var PhoneNumber: js.UndefOr[ContactNumber]
-    var Email: js.UndefOr[Email]
-    var City: js.UndefOr[City]
     var AddressLine2: js.UndefOr[AddressLine]
-    var ZipCode: js.UndefOr[ZipCode]
-    var State: js.UndefOr[State]
+    var City: js.UndefOr[City]
     var ContactType: js.UndefOr[ContactType]
+    var CountryCode: js.UndefOr[CountryCode]
+    var Email: js.UndefOr[Email]
     var ExtraParams: js.UndefOr[ExtraParamList]
+    var Fax: js.UndefOr[ContactNumber]
+    var FirstName: js.UndefOr[ContactName]
+    var LastName: js.UndefOr[ContactName]
+    var OrganizationName: js.UndefOr[ContactName]
+    var PhoneNumber: js.UndefOr[ContactNumber]
+    var State: js.UndefOr[State]
+    var ZipCode: js.UndefOr[ZipCode]
   }
 
   object ContactDetail {
     def apply(
-      LastName: js.UndefOr[ContactName] = js.undefined,
-      CountryCode: js.UndefOr[CountryCode] = js.undefined,
-      OrganizationName: js.UndefOr[ContactName] = js.undefined,
       AddressLine1: js.UndefOr[AddressLine] = js.undefined,
-      FirstName: js.UndefOr[ContactName] = js.undefined,
-      Fax: js.UndefOr[ContactNumber] = js.undefined,
-      PhoneNumber: js.UndefOr[ContactNumber] = js.undefined,
-      Email: js.UndefOr[Email] = js.undefined,
-      City: js.UndefOr[City] = js.undefined,
       AddressLine2: js.UndefOr[AddressLine] = js.undefined,
-      ZipCode: js.UndefOr[ZipCode] = js.undefined,
-      State: js.UndefOr[State] = js.undefined,
+      City: js.UndefOr[City] = js.undefined,
       ContactType: js.UndefOr[ContactType] = js.undefined,
-      ExtraParams: js.UndefOr[ExtraParamList] = js.undefined): ContactDetail = {
+      CountryCode: js.UndefOr[CountryCode] = js.undefined,
+      Email: js.UndefOr[Email] = js.undefined,
+      ExtraParams: js.UndefOr[ExtraParamList] = js.undefined,
+      Fax: js.UndefOr[ContactNumber] = js.undefined,
+      FirstName: js.UndefOr[ContactName] = js.undefined,
+      LastName: js.UndefOr[ContactName] = js.undefined,
+      OrganizationName: js.UndefOr[ContactName] = js.undefined,
+      PhoneNumber: js.UndefOr[ContactNumber] = js.undefined,
+      State: js.UndefOr[State] = js.undefined,
+      ZipCode: js.UndefOr[ZipCode] = js.undefined): ContactDetail = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "LastName" -> LastName.map { x => x.asInstanceOf[js.Any] },
-        "CountryCode" -> CountryCode.map { x => x.asInstanceOf[js.Any] },
-        "OrganizationName" -> OrganizationName.map { x => x.asInstanceOf[js.Any] },
         "AddressLine1" -> AddressLine1.map { x => x.asInstanceOf[js.Any] },
-        "FirstName" -> FirstName.map { x => x.asInstanceOf[js.Any] },
-        "Fax" -> Fax.map { x => x.asInstanceOf[js.Any] },
-        "PhoneNumber" -> PhoneNumber.map { x => x.asInstanceOf[js.Any] },
-        "Email" -> Email.map { x => x.asInstanceOf[js.Any] },
-        "City" -> City.map { x => x.asInstanceOf[js.Any] },
         "AddressLine2" -> AddressLine2.map { x => x.asInstanceOf[js.Any] },
-        "ZipCode" -> ZipCode.map { x => x.asInstanceOf[js.Any] },
-        "State" -> State.map { x => x.asInstanceOf[js.Any] },
+        "City" -> City.map { x => x.asInstanceOf[js.Any] },
         "ContactType" -> ContactType.map { x => x.asInstanceOf[js.Any] },
-        "ExtraParams" -> ExtraParams.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "CountryCode" -> CountryCode.map { x => x.asInstanceOf[js.Any] },
+        "Email" -> Email.map { x => x.asInstanceOf[js.Any] },
+        "ExtraParams" -> ExtraParams.map { x => x.asInstanceOf[js.Any] },
+        "Fax" -> Fax.map { x => x.asInstanceOf[js.Any] },
+        "FirstName" -> FirstName.map { x => x.asInstanceOf[js.Any] },
+        "LastName" -> LastName.map { x => x.asInstanceOf[js.Any] },
+        "OrganizationName" -> OrganizationName.map { x => x.asInstanceOf[js.Any] },
+        "PhoneNumber" -> PhoneNumber.map { x => x.asInstanceOf[js.Any] },
+        "State" -> State.map { x => x.asInstanceOf[js.Any] },
+        "ZipCode" -> ZipCode.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ContactDetail]
     }
@@ -503,17 +503,17 @@ package route53domains {
    */
   @js.native
   trait DeleteTagsForDomainRequest extends js.Object {
-    var DomainName: js.UndefOr[DomainName]
-    var TagsToDelete: js.UndefOr[TagKeyList]
+    var DomainName: DomainName
+    var TagsToDelete: TagKeyList
   }
 
   object DeleteTagsForDomainRequest {
     def apply(
-      DomainName: js.UndefOr[DomainName] = js.undefined,
-      TagsToDelete: js.UndefOr[TagKeyList] = js.undefined): DeleteTagsForDomainRequest = {
+      DomainName: DomainName,
+      TagsToDelete: TagKeyList): DeleteTagsForDomainRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "DomainName" -> DomainName.map { x => x.asInstanceOf[js.Any] },
-        "TagsToDelete" -> TagsToDelete.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "DomainName" -> DomainName.asInstanceOf[js.Any],
+        "TagsToDelete" -> TagsToDelete.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteTagsForDomainRequest]
     }
@@ -534,14 +534,14 @@ package route53domains {
 
   @js.native
   trait DisableDomainAutoRenewRequest extends js.Object {
-    var DomainName: js.UndefOr[DomainName]
+    var DomainName: DomainName
   }
 
   object DisableDomainAutoRenewRequest {
     def apply(
-      DomainName: js.UndefOr[DomainName] = js.undefined): DisableDomainAutoRenewRequest = {
+      DomainName: DomainName): DisableDomainAutoRenewRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "DomainName" -> DomainName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "DomainName" -> DomainName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DisableDomainAutoRenewRequest]
     }
@@ -565,14 +565,14 @@ package route53domains {
    */
   @js.native
   trait DisableDomainTransferLockRequest extends js.Object {
-    var DomainName: js.UndefOr[DomainName]
+    var DomainName: DomainName
   }
 
   object DisableDomainTransferLockRequest {
     def apply(
-      DomainName: js.UndefOr[DomainName] = js.undefined): DisableDomainTransferLockRequest = {
+      DomainName: DomainName): DisableDomainTransferLockRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "DomainName" -> DomainName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "DomainName" -> DomainName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DisableDomainTransferLockRequest]
     }
@@ -583,14 +583,14 @@ package route53domains {
    */
   @js.native
   trait DisableDomainTransferLockResponse extends js.Object {
-    var OperationId: js.UndefOr[OperationId]
+    var OperationId: OperationId
   }
 
   object DisableDomainTransferLockResponse {
     def apply(
-      OperationId: js.UndefOr[OperationId] = js.undefined): DisableDomainTransferLockResponse = {
+      OperationId: OperationId): DisableDomainTransferLockResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "OperationId" -> OperationId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "OperationId" -> OperationId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DisableDomainTransferLockResponse]
     }
@@ -622,17 +622,17 @@ package route53domains {
    */
   @js.native
   trait DomainSuggestion extends js.Object {
-    var DomainName: js.UndefOr[DomainName]
     var Availability: js.UndefOr[String]
+    var DomainName: js.UndefOr[DomainName]
   }
 
   object DomainSuggestion {
     def apply(
-      DomainName: js.UndefOr[DomainName] = js.undefined,
-      Availability: js.UndefOr[String] = js.undefined): DomainSuggestion = {
+      Availability: js.UndefOr[String] = js.undefined,
+      DomainName: js.UndefOr[DomainName] = js.undefined): DomainSuggestion = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "DomainName" -> DomainName.map { x => x.asInstanceOf[js.Any] },
-        "Availability" -> Availability.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Availability" -> Availability.map { x => x.asInstanceOf[js.Any] },
+        "DomainName" -> DomainName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DomainSuggestion]
     }
@@ -643,23 +643,23 @@ package route53domains {
    */
   @js.native
   trait DomainSummary extends js.Object {
-    var DomainName: js.UndefOr[DomainName]
+    var DomainName: DomainName
     var AutoRenew: js.UndefOr[Boolean]
-    var TransferLock: js.UndefOr[Boolean]
     var Expiry: js.UndefOr[Timestamp]
+    var TransferLock: js.UndefOr[Boolean]
   }
 
   object DomainSummary {
     def apply(
-      DomainName: js.UndefOr[DomainName] = js.undefined,
+      DomainName: DomainName,
       AutoRenew: js.UndefOr[Boolean] = js.undefined,
-      TransferLock: js.UndefOr[Boolean] = js.undefined,
-      Expiry: js.UndefOr[Timestamp] = js.undefined): DomainSummary = {
+      Expiry: js.UndefOr[Timestamp] = js.undefined,
+      TransferLock: js.UndefOr[Boolean] = js.undefined): DomainSummary = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "DomainName" -> DomainName.map { x => x.asInstanceOf[js.Any] },
+        "DomainName" -> DomainName.asInstanceOf[js.Any],
         "AutoRenew" -> AutoRenew.map { x => x.asInstanceOf[js.Any] },
-        "TransferLock" -> TransferLock.map { x => x.asInstanceOf[js.Any] },
-        "Expiry" -> Expiry.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Expiry" -> Expiry.map { x => x.asInstanceOf[js.Any] },
+        "TransferLock" -> TransferLock.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DomainSummary]
     }
@@ -693,14 +693,14 @@ package route53domains {
 
   @js.native
   trait EnableDomainAutoRenewRequest extends js.Object {
-    var DomainName: js.UndefOr[DomainName]
+    var DomainName: DomainName
   }
 
   object EnableDomainAutoRenewRequest {
     def apply(
-      DomainName: js.UndefOr[DomainName] = js.undefined): EnableDomainAutoRenewRequest = {
+      DomainName: DomainName): EnableDomainAutoRenewRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "DomainName" -> DomainName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "DomainName" -> DomainName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EnableDomainAutoRenewRequest]
     }
@@ -724,14 +724,14 @@ package route53domains {
    */
   @js.native
   trait EnableDomainTransferLockRequest extends js.Object {
-    var DomainName: js.UndefOr[DomainName]
+    var DomainName: DomainName
   }
 
   object EnableDomainTransferLockRequest {
     def apply(
-      DomainName: js.UndefOr[DomainName] = js.undefined): EnableDomainTransferLockRequest = {
+      DomainName: DomainName): EnableDomainTransferLockRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "DomainName" -> DomainName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "DomainName" -> DomainName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EnableDomainTransferLockRequest]
     }
@@ -742,14 +742,14 @@ package route53domains {
    */
   @js.native
   trait EnableDomainTransferLockResponse extends js.Object {
-    var OperationId: js.UndefOr[OperationId]
+    var OperationId: OperationId
   }
 
   object EnableDomainTransferLockResponse {
     def apply(
-      OperationId: js.UndefOr[OperationId] = js.undefined): EnableDomainTransferLockResponse = {
+      OperationId: OperationId): EnableDomainTransferLockResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "OperationId" -> OperationId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "OperationId" -> OperationId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EnableDomainTransferLockResponse]
     }
@@ -760,17 +760,17 @@ package route53domains {
    */
   @js.native
   trait ExtraParam extends js.Object {
-    var Name: js.UndefOr[ExtraParamName]
-    var Value: js.UndefOr[ExtraParamValue]
+    var Name: ExtraParamName
+    var Value: ExtraParamValue
   }
 
   object ExtraParam {
     def apply(
-      Name: js.UndefOr[ExtraParamName] = js.undefined,
-      Value: js.UndefOr[ExtraParamValue] = js.undefined): ExtraParam = {
+      Name: ExtraParamName,
+      Value: ExtraParamValue): ExtraParam = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
-        "Value" -> Value.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Name" -> Name.asInstanceOf[js.Any],
+        "Value" -> Value.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ExtraParam]
     }
@@ -845,14 +845,14 @@ package route53domains {
    */
   @js.native
   trait GetDomainDetailRequest extends js.Object {
-    var DomainName: js.UndefOr[DomainName]
+    var DomainName: DomainName
   }
 
   object GetDomainDetailRequest {
     def apply(
-      DomainName: js.UndefOr[DomainName] = js.undefined): GetDomainDetailRequest = {
+      DomainName: DomainName): GetDomainDetailRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "DomainName" -> DomainName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "DomainName" -> DomainName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetDomainDetailRequest]
     }
@@ -863,74 +863,74 @@ package route53domains {
    */
   @js.native
   trait GetDomainDetailResponse extends js.Object {
-    var CreationDate: js.UndefOr[Timestamp]
-    var RegistrarName: js.UndefOr[RegistrarName]
-    var TechPrivacy: js.UndefOr[Boolean]
-    var TechContact: js.UndefOr[ContactDetail]
-    var Reseller: js.UndefOr[Reseller]
-    var RegistrantPrivacy: js.UndefOr[Boolean]
-    var DnsSec: js.UndefOr[DNSSec]
-    var StatusList: js.UndefOr[DomainStatusList]
-    var RegistrantContact: js.UndefOr[ContactDetail]
-    var ExpirationDate: js.UndefOr[Timestamp]
-    var RegistryDomainId: js.UndefOr[RegistryDomainId]
-    var Nameservers: js.UndefOr[NameserverList]
-    var DomainName: js.UndefOr[DomainName]
-    var AbuseContactPhone: js.UndefOr[ContactNumber]
+    var AdminContact: ContactDetail
+    var DomainName: DomainName
+    var Nameservers: NameserverList
+    var RegistrantContact: ContactDetail
+    var TechContact: ContactDetail
     var AbuseContactEmail: js.UndefOr[Email]
-    var UpdatedDate: js.UndefOr[Timestamp]
-    var AutoRenew: js.UndefOr[Boolean]
-    var WhoIsServer: js.UndefOr[RegistrarWhoIsServer]
+    var AbuseContactPhone: js.UndefOr[ContactNumber]
     var AdminPrivacy: js.UndefOr[Boolean]
-    var AdminContact: js.UndefOr[ContactDetail]
+    var AutoRenew: js.UndefOr[Boolean]
+    var CreationDate: js.UndefOr[Timestamp]
+    var DnsSec: js.UndefOr[DNSSec]
+    var ExpirationDate: js.UndefOr[Timestamp]
+    var RegistrantPrivacy: js.UndefOr[Boolean]
+    var RegistrarName: js.UndefOr[RegistrarName]
     var RegistrarUrl: js.UndefOr[RegistrarUrl]
+    var RegistryDomainId: js.UndefOr[RegistryDomainId]
+    var Reseller: js.UndefOr[Reseller]
+    var StatusList: js.UndefOr[DomainStatusList]
+    var TechPrivacy: js.UndefOr[Boolean]
+    var UpdatedDate: js.UndefOr[Timestamp]
+    var WhoIsServer: js.UndefOr[RegistrarWhoIsServer]
   }
 
   object GetDomainDetailResponse {
     def apply(
-      CreationDate: js.UndefOr[Timestamp] = js.undefined,
-      RegistrarName: js.UndefOr[RegistrarName] = js.undefined,
-      TechPrivacy: js.UndefOr[Boolean] = js.undefined,
-      TechContact: js.UndefOr[ContactDetail] = js.undefined,
-      Reseller: js.UndefOr[Reseller] = js.undefined,
-      RegistrantPrivacy: js.UndefOr[Boolean] = js.undefined,
-      DnsSec: js.UndefOr[DNSSec] = js.undefined,
-      StatusList: js.UndefOr[DomainStatusList] = js.undefined,
-      RegistrantContact: js.UndefOr[ContactDetail] = js.undefined,
-      ExpirationDate: js.UndefOr[Timestamp] = js.undefined,
-      RegistryDomainId: js.UndefOr[RegistryDomainId] = js.undefined,
-      Nameservers: js.UndefOr[NameserverList] = js.undefined,
-      DomainName: js.UndefOr[DomainName] = js.undefined,
-      AbuseContactPhone: js.UndefOr[ContactNumber] = js.undefined,
+      AdminContact: ContactDetail,
+      DomainName: DomainName,
+      Nameservers: NameserverList,
+      RegistrantContact: ContactDetail,
+      TechContact: ContactDetail,
       AbuseContactEmail: js.UndefOr[Email] = js.undefined,
-      UpdatedDate: js.UndefOr[Timestamp] = js.undefined,
-      AutoRenew: js.UndefOr[Boolean] = js.undefined,
-      WhoIsServer: js.UndefOr[RegistrarWhoIsServer] = js.undefined,
+      AbuseContactPhone: js.UndefOr[ContactNumber] = js.undefined,
       AdminPrivacy: js.UndefOr[Boolean] = js.undefined,
-      AdminContact: js.UndefOr[ContactDetail] = js.undefined,
-      RegistrarUrl: js.UndefOr[RegistrarUrl] = js.undefined): GetDomainDetailResponse = {
+      AutoRenew: js.UndefOr[Boolean] = js.undefined,
+      CreationDate: js.UndefOr[Timestamp] = js.undefined,
+      DnsSec: js.UndefOr[DNSSec] = js.undefined,
+      ExpirationDate: js.UndefOr[Timestamp] = js.undefined,
+      RegistrantPrivacy: js.UndefOr[Boolean] = js.undefined,
+      RegistrarName: js.UndefOr[RegistrarName] = js.undefined,
+      RegistrarUrl: js.UndefOr[RegistrarUrl] = js.undefined,
+      RegistryDomainId: js.UndefOr[RegistryDomainId] = js.undefined,
+      Reseller: js.UndefOr[Reseller] = js.undefined,
+      StatusList: js.UndefOr[DomainStatusList] = js.undefined,
+      TechPrivacy: js.UndefOr[Boolean] = js.undefined,
+      UpdatedDate: js.UndefOr[Timestamp] = js.undefined,
+      WhoIsServer: js.UndefOr[RegistrarWhoIsServer] = js.undefined): GetDomainDetailResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "CreationDate" -> CreationDate.map { x => x.asInstanceOf[js.Any] },
-        "RegistrarName" -> RegistrarName.map { x => x.asInstanceOf[js.Any] },
-        "TechPrivacy" -> TechPrivacy.map { x => x.asInstanceOf[js.Any] },
-        "TechContact" -> TechContact.map { x => x.asInstanceOf[js.Any] },
-        "Reseller" -> Reseller.map { x => x.asInstanceOf[js.Any] },
-        "RegistrantPrivacy" -> RegistrantPrivacy.map { x => x.asInstanceOf[js.Any] },
-        "DnsSec" -> DnsSec.map { x => x.asInstanceOf[js.Any] },
-        "StatusList" -> StatusList.map { x => x.asInstanceOf[js.Any] },
-        "RegistrantContact" -> RegistrantContact.map { x => x.asInstanceOf[js.Any] },
-        "ExpirationDate" -> ExpirationDate.map { x => x.asInstanceOf[js.Any] },
-        "RegistryDomainId" -> RegistryDomainId.map { x => x.asInstanceOf[js.Any] },
-        "Nameservers" -> Nameservers.map { x => x.asInstanceOf[js.Any] },
-        "DomainName" -> DomainName.map { x => x.asInstanceOf[js.Any] },
-        "AbuseContactPhone" -> AbuseContactPhone.map { x => x.asInstanceOf[js.Any] },
+        "AdminContact" -> AdminContact.asInstanceOf[js.Any],
+        "DomainName" -> DomainName.asInstanceOf[js.Any],
+        "Nameservers" -> Nameservers.asInstanceOf[js.Any],
+        "RegistrantContact" -> RegistrantContact.asInstanceOf[js.Any],
+        "TechContact" -> TechContact.asInstanceOf[js.Any],
         "AbuseContactEmail" -> AbuseContactEmail.map { x => x.asInstanceOf[js.Any] },
-        "UpdatedDate" -> UpdatedDate.map { x => x.asInstanceOf[js.Any] },
-        "AutoRenew" -> AutoRenew.map { x => x.asInstanceOf[js.Any] },
-        "WhoIsServer" -> WhoIsServer.map { x => x.asInstanceOf[js.Any] },
+        "AbuseContactPhone" -> AbuseContactPhone.map { x => x.asInstanceOf[js.Any] },
         "AdminPrivacy" -> AdminPrivacy.map { x => x.asInstanceOf[js.Any] },
-        "AdminContact" -> AdminContact.map { x => x.asInstanceOf[js.Any] },
-        "RegistrarUrl" -> RegistrarUrl.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "AutoRenew" -> AutoRenew.map { x => x.asInstanceOf[js.Any] },
+        "CreationDate" -> CreationDate.map { x => x.asInstanceOf[js.Any] },
+        "DnsSec" -> DnsSec.map { x => x.asInstanceOf[js.Any] },
+        "ExpirationDate" -> ExpirationDate.map { x => x.asInstanceOf[js.Any] },
+        "RegistrantPrivacy" -> RegistrantPrivacy.map { x => x.asInstanceOf[js.Any] },
+        "RegistrarName" -> RegistrarName.map { x => x.asInstanceOf[js.Any] },
+        "RegistrarUrl" -> RegistrarUrl.map { x => x.asInstanceOf[js.Any] },
+        "RegistryDomainId" -> RegistryDomainId.map { x => x.asInstanceOf[js.Any] },
+        "Reseller" -> Reseller.map { x => x.asInstanceOf[js.Any] },
+        "StatusList" -> StatusList.map { x => x.asInstanceOf[js.Any] },
+        "TechPrivacy" -> TechPrivacy.map { x => x.asInstanceOf[js.Any] },
+        "UpdatedDate" -> UpdatedDate.map { x => x.asInstanceOf[js.Any] },
+        "WhoIsServer" -> WhoIsServer.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetDomainDetailResponse]
     }
@@ -938,20 +938,20 @@ package route53domains {
 
   @js.native
   trait GetDomainSuggestionsRequest extends js.Object {
-    var DomainName: js.UndefOr[DomainName]
-    var SuggestionCount: js.UndefOr[Int]
-    var OnlyAvailable: js.UndefOr[Boolean]
+    var DomainName: DomainName
+    var OnlyAvailable: Boolean
+    var SuggestionCount: Int
   }
 
   object GetDomainSuggestionsRequest {
     def apply(
-      DomainName: js.UndefOr[DomainName] = js.undefined,
-      SuggestionCount: js.UndefOr[Int] = js.undefined,
-      OnlyAvailable: js.UndefOr[Boolean] = js.undefined): GetDomainSuggestionsRequest = {
+      DomainName: DomainName,
+      OnlyAvailable: Boolean,
+      SuggestionCount: Int): GetDomainSuggestionsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "DomainName" -> DomainName.map { x => x.asInstanceOf[js.Any] },
-        "SuggestionCount" -> SuggestionCount.map { x => x.asInstanceOf[js.Any] },
-        "OnlyAvailable" -> OnlyAvailable.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "DomainName" -> DomainName.asInstanceOf[js.Any],
+        "OnlyAvailable" -> OnlyAvailable.asInstanceOf[js.Any],
+        "SuggestionCount" -> SuggestionCount.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetDomainSuggestionsRequest]
     }
@@ -977,14 +977,14 @@ package route53domains {
    */
   @js.native
   trait GetOperationDetailRequest extends js.Object {
-    var OperationId: js.UndefOr[OperationId]
+    var OperationId: OperationId
   }
 
   object GetOperationDetailRequest {
     def apply(
-      OperationId: js.UndefOr[OperationId] = js.undefined): GetOperationDetailRequest = {
+      OperationId: OperationId): GetOperationDetailRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "OperationId" -> OperationId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "OperationId" -> OperationId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetOperationDetailRequest]
     }
@@ -995,28 +995,28 @@ package route53domains {
    */
   @js.native
   trait GetOperationDetailResponse extends js.Object {
-    var SubmittedDate: js.UndefOr[Timestamp]
     var DomainName: js.UndefOr[DomainName]
-    var OperationId: js.UndefOr[OperationId]
     var Message: js.UndefOr[ErrorMessage]
+    var OperationId: js.UndefOr[OperationId]
     var Status: js.UndefOr[OperationStatus]
+    var SubmittedDate: js.UndefOr[Timestamp]
     var Type: js.UndefOr[OperationType]
   }
 
   object GetOperationDetailResponse {
     def apply(
-      SubmittedDate: js.UndefOr[Timestamp] = js.undefined,
       DomainName: js.UndefOr[DomainName] = js.undefined,
-      OperationId: js.UndefOr[OperationId] = js.undefined,
       Message: js.UndefOr[ErrorMessage] = js.undefined,
+      OperationId: js.UndefOr[OperationId] = js.undefined,
       Status: js.UndefOr[OperationStatus] = js.undefined,
+      SubmittedDate: js.UndefOr[Timestamp] = js.undefined,
       Type: js.UndefOr[OperationType] = js.undefined): GetOperationDetailResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "SubmittedDate" -> SubmittedDate.map { x => x.asInstanceOf[js.Any] },
         "DomainName" -> DomainName.map { x => x.asInstanceOf[js.Any] },
-        "OperationId" -> OperationId.map { x => x.asInstanceOf[js.Any] },
         "Message" -> Message.map { x => x.asInstanceOf[js.Any] },
+        "OperationId" -> OperationId.map { x => x.asInstanceOf[js.Any] },
         "Status" -> Status.map { x => x.asInstanceOf[js.Any] },
+        "SubmittedDate" -> SubmittedDate.map { x => x.asInstanceOf[js.Any] },
         "Type" -> Type.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetOperationDetailResponse]
@@ -1057,16 +1057,16 @@ package route53domains {
    */
   @js.native
   trait ListDomainsResponse extends js.Object {
-    var Domains: js.UndefOr[DomainSummaryList]
+    var Domains: DomainSummaryList
     var NextPageMarker: js.UndefOr[PageMarker]
   }
 
   object ListDomainsResponse {
     def apply(
-      Domains: js.UndefOr[DomainSummaryList] = js.undefined,
+      Domains: DomainSummaryList,
       NextPageMarker: js.UndefOr[PageMarker] = js.undefined): ListDomainsResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Domains" -> Domains.map { x => x.asInstanceOf[js.Any] },
+        "Domains" -> Domains.asInstanceOf[js.Any],
         "NextPageMarker" -> NextPageMarker.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListDomainsResponse]
@@ -1078,20 +1078,20 @@ package route53domains {
    */
   @js.native
   trait ListOperationsRequest extends js.Object {
-    var SubmittedSince: js.UndefOr[Timestamp]
     var Marker: js.UndefOr[PageMarker]
     var MaxItems: js.UndefOr[PageMaxItems]
+    var SubmittedSince: js.UndefOr[Timestamp]
   }
 
   object ListOperationsRequest {
     def apply(
-      SubmittedSince: js.UndefOr[Timestamp] = js.undefined,
       Marker: js.UndefOr[PageMarker] = js.undefined,
-      MaxItems: js.UndefOr[PageMaxItems] = js.undefined): ListOperationsRequest = {
+      MaxItems: js.UndefOr[PageMaxItems] = js.undefined,
+      SubmittedSince: js.UndefOr[Timestamp] = js.undefined): ListOperationsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "SubmittedSince" -> SubmittedSince.map { x => x.asInstanceOf[js.Any] },
         "Marker" -> Marker.map { x => x.asInstanceOf[js.Any] },
-        "MaxItems" -> MaxItems.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "MaxItems" -> MaxItems.map { x => x.asInstanceOf[js.Any] },
+        "SubmittedSince" -> SubmittedSince.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListOperationsRequest]
     }
@@ -1102,16 +1102,16 @@ package route53domains {
    */
   @js.native
   trait ListOperationsResponse extends js.Object {
-    var Operations: js.UndefOr[OperationSummaryList]
+    var Operations: OperationSummaryList
     var NextPageMarker: js.UndefOr[PageMarker]
   }
 
   object ListOperationsResponse {
     def apply(
-      Operations: js.UndefOr[OperationSummaryList] = js.undefined,
+      Operations: OperationSummaryList,
       NextPageMarker: js.UndefOr[PageMarker] = js.undefined): ListOperationsResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Operations" -> Operations.map { x => x.asInstanceOf[js.Any] },
+        "Operations" -> Operations.asInstanceOf[js.Any],
         "NextPageMarker" -> NextPageMarker.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListOperationsResponse]
@@ -1123,14 +1123,14 @@ package route53domains {
    */
   @js.native
   trait ListTagsForDomainRequest extends js.Object {
-    var DomainName: js.UndefOr[DomainName]
+    var DomainName: DomainName
   }
 
   object ListTagsForDomainRequest {
     def apply(
-      DomainName: js.UndefOr[DomainName] = js.undefined): ListTagsForDomainRequest = {
+      DomainName: DomainName): ListTagsForDomainRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "DomainName" -> DomainName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "DomainName" -> DomainName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListTagsForDomainRequest]
     }
@@ -1141,14 +1141,14 @@ package route53domains {
    */
   @js.native
   trait ListTagsForDomainResponse extends js.Object {
-    var TagList: js.UndefOr[TagList]
+    var TagList: TagList
   }
 
   object ListTagsForDomainResponse {
     def apply(
-      TagList: js.UndefOr[TagList] = js.undefined): ListTagsForDomainResponse = {
+      TagList: TagList): ListTagsForDomainResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "TagList" -> TagList.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "TagList" -> TagList.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListTagsForDomainResponse]
     }
@@ -1159,16 +1159,16 @@ package route53domains {
    */
   @js.native
   trait Nameserver extends js.Object {
-    var Name: js.UndefOr[HostName]
+    var Name: HostName
     var GlueIps: js.UndefOr[GlueIpList]
   }
 
   object Nameserver {
     def apply(
-      Name: js.UndefOr[HostName] = js.undefined,
+      Name: HostName,
       GlueIps: js.UndefOr[GlueIpList] = js.undefined): Nameserver = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
+        "Name" -> Name.asInstanceOf[js.Any],
         "GlueIps" -> GlueIps.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Nameserver]
@@ -1198,23 +1198,23 @@ package route53domains {
    */
   @js.native
   trait OperationSummary extends js.Object {
-    var OperationId: js.UndefOr[OperationId]
-    var Status: js.UndefOr[OperationStatus]
-    var Type: js.UndefOr[OperationType]
-    var SubmittedDate: js.UndefOr[Timestamp]
+    var OperationId: OperationId
+    var Status: OperationStatus
+    var SubmittedDate: Timestamp
+    var Type: OperationType
   }
 
   object OperationSummary {
     def apply(
-      OperationId: js.UndefOr[OperationId] = js.undefined,
-      Status: js.UndefOr[OperationStatus] = js.undefined,
-      Type: js.UndefOr[OperationType] = js.undefined,
-      SubmittedDate: js.UndefOr[Timestamp] = js.undefined): OperationSummary = {
+      OperationId: OperationId,
+      Status: OperationStatus,
+      SubmittedDate: Timestamp,
+      Type: OperationType): OperationSummary = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "OperationId" -> OperationId.map { x => x.asInstanceOf[js.Any] },
-        "Status" -> Status.map { x => x.asInstanceOf[js.Any] },
-        "Type" -> Type.map { x => x.asInstanceOf[js.Any] },
-        "SubmittedDate" -> SubmittedDate.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "OperationId" -> OperationId.asInstanceOf[js.Any],
+        "Status" -> Status.asInstanceOf[js.Any],
+        "SubmittedDate" -> SubmittedDate.asInstanceOf[js.Any],
+        "Type" -> Type.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[OperationSummary]
     }
@@ -1254,41 +1254,41 @@ package route53domains {
    */
   @js.native
   trait RegisterDomainRequest extends js.Object {
-    var TechContact: js.UndefOr[ContactDetail]
-    var PrivacyProtectTechContact: js.UndefOr[Boolean]
-    var PrivacyProtectRegistrantContact: js.UndefOr[Boolean]
-    var RegistrantContact: js.UndefOr[ContactDetail]
-    var IdnLangCode: js.UndefOr[LangCode]
-    var DomainName: js.UndefOr[DomainName]
-    var DurationInYears: js.UndefOr[DurationInYears]
+    var AdminContact: ContactDetail
+    var DomainName: DomainName
+    var DurationInYears: DurationInYears
+    var RegistrantContact: ContactDetail
+    var TechContact: ContactDetail
     var AutoRenew: js.UndefOr[Boolean]
+    var IdnLangCode: js.UndefOr[LangCode]
     var PrivacyProtectAdminContact: js.UndefOr[Boolean]
-    var AdminContact: js.UndefOr[ContactDetail]
+    var PrivacyProtectRegistrantContact: js.UndefOr[Boolean]
+    var PrivacyProtectTechContact: js.UndefOr[Boolean]
   }
 
   object RegisterDomainRequest {
     def apply(
-      TechContact: js.UndefOr[ContactDetail] = js.undefined,
-      PrivacyProtectTechContact: js.UndefOr[Boolean] = js.undefined,
-      PrivacyProtectRegistrantContact: js.UndefOr[Boolean] = js.undefined,
-      RegistrantContact: js.UndefOr[ContactDetail] = js.undefined,
-      IdnLangCode: js.UndefOr[LangCode] = js.undefined,
-      DomainName: js.UndefOr[DomainName] = js.undefined,
-      DurationInYears: js.UndefOr[DurationInYears] = js.undefined,
+      AdminContact: ContactDetail,
+      DomainName: DomainName,
+      DurationInYears: DurationInYears,
+      RegistrantContact: ContactDetail,
+      TechContact: ContactDetail,
       AutoRenew: js.UndefOr[Boolean] = js.undefined,
+      IdnLangCode: js.UndefOr[LangCode] = js.undefined,
       PrivacyProtectAdminContact: js.UndefOr[Boolean] = js.undefined,
-      AdminContact: js.UndefOr[ContactDetail] = js.undefined): RegisterDomainRequest = {
+      PrivacyProtectRegistrantContact: js.UndefOr[Boolean] = js.undefined,
+      PrivacyProtectTechContact: js.UndefOr[Boolean] = js.undefined): RegisterDomainRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "TechContact" -> TechContact.map { x => x.asInstanceOf[js.Any] },
-        "PrivacyProtectTechContact" -> PrivacyProtectTechContact.map { x => x.asInstanceOf[js.Any] },
-        "PrivacyProtectRegistrantContact" -> PrivacyProtectRegistrantContact.map { x => x.asInstanceOf[js.Any] },
-        "RegistrantContact" -> RegistrantContact.map { x => x.asInstanceOf[js.Any] },
-        "IdnLangCode" -> IdnLangCode.map { x => x.asInstanceOf[js.Any] },
-        "DomainName" -> DomainName.map { x => x.asInstanceOf[js.Any] },
-        "DurationInYears" -> DurationInYears.map { x => x.asInstanceOf[js.Any] },
+        "AdminContact" -> AdminContact.asInstanceOf[js.Any],
+        "DomainName" -> DomainName.asInstanceOf[js.Any],
+        "DurationInYears" -> DurationInYears.asInstanceOf[js.Any],
+        "RegistrantContact" -> RegistrantContact.asInstanceOf[js.Any],
+        "TechContact" -> TechContact.asInstanceOf[js.Any],
         "AutoRenew" -> AutoRenew.map { x => x.asInstanceOf[js.Any] },
+        "IdnLangCode" -> IdnLangCode.map { x => x.asInstanceOf[js.Any] },
         "PrivacyProtectAdminContact" -> PrivacyProtectAdminContact.map { x => x.asInstanceOf[js.Any] },
-        "AdminContact" -> AdminContact.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "PrivacyProtectRegistrantContact" -> PrivacyProtectRegistrantContact.map { x => x.asInstanceOf[js.Any] },
+        "PrivacyProtectTechContact" -> PrivacyProtectTechContact.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RegisterDomainRequest]
     }
@@ -1299,14 +1299,14 @@ package route53domains {
    */
   @js.native
   trait RegisterDomainResponse extends js.Object {
-    var OperationId: js.UndefOr[OperationId]
+    var OperationId: OperationId
   }
 
   object RegisterDomainResponse {
     def apply(
-      OperationId: js.UndefOr[OperationId] = js.undefined): RegisterDomainResponse = {
+      OperationId: OperationId): RegisterDomainResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "OperationId" -> OperationId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "OperationId" -> OperationId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RegisterDomainResponse]
     }
@@ -1317,20 +1317,20 @@ package route53domains {
    */
   @js.native
   trait RenewDomainRequest extends js.Object {
-    var DomainName: js.UndefOr[DomainName]
+    var CurrentExpiryYear: CurrentExpiryYear
+    var DomainName: DomainName
     var DurationInYears: js.UndefOr[DurationInYears]
-    var CurrentExpiryYear: js.UndefOr[CurrentExpiryYear]
   }
 
   object RenewDomainRequest {
     def apply(
-      DomainName: js.UndefOr[DomainName] = js.undefined,
-      DurationInYears: js.UndefOr[DurationInYears] = js.undefined,
-      CurrentExpiryYear: js.UndefOr[CurrentExpiryYear] = js.undefined): RenewDomainRequest = {
+      CurrentExpiryYear: CurrentExpiryYear,
+      DomainName: DomainName,
+      DurationInYears: js.UndefOr[DurationInYears] = js.undefined): RenewDomainRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "DomainName" -> DomainName.map { x => x.asInstanceOf[js.Any] },
-        "DurationInYears" -> DurationInYears.map { x => x.asInstanceOf[js.Any] },
-        "CurrentExpiryYear" -> CurrentExpiryYear.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "CurrentExpiryYear" -> CurrentExpiryYear.asInstanceOf[js.Any],
+        "DomainName" -> DomainName.asInstanceOf[js.Any],
+        "DurationInYears" -> DurationInYears.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RenewDomainRequest]
     }
@@ -1338,14 +1338,14 @@ package route53domains {
 
   @js.native
   trait RenewDomainResponse extends js.Object {
-    var OperationId: js.UndefOr[OperationId]
+    var OperationId: OperationId
   }
 
   object RenewDomainResponse {
     def apply(
-      OperationId: js.UndefOr[OperationId] = js.undefined): RenewDomainResponse = {
+      OperationId: OperationId): RenewDomainResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "OperationId" -> OperationId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "OperationId" -> OperationId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RenewDomainResponse]
     }
@@ -1392,14 +1392,14 @@ package route53domains {
    */
   @js.native
   trait RetrieveDomainAuthCodeRequest extends js.Object {
-    var DomainName: js.UndefOr[DomainName]
+    var DomainName: DomainName
   }
 
   object RetrieveDomainAuthCodeRequest {
     def apply(
-      DomainName: js.UndefOr[DomainName] = js.undefined): RetrieveDomainAuthCodeRequest = {
+      DomainName: DomainName): RetrieveDomainAuthCodeRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "DomainName" -> DomainName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "DomainName" -> DomainName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RetrieveDomainAuthCodeRequest]
     }
@@ -1410,14 +1410,14 @@ package route53domains {
    */
   @js.native
   trait RetrieveDomainAuthCodeResponse extends js.Object {
-    var AuthCode: js.UndefOr[DomainAuthCode]
+    var AuthCode: DomainAuthCode
   }
 
   object RetrieveDomainAuthCodeResponse {
     def apply(
-      AuthCode: js.UndefOr[DomainAuthCode] = js.undefined): RetrieveDomainAuthCodeResponse = {
+      AuthCode: DomainAuthCode): RetrieveDomainAuthCodeResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "AuthCode" -> AuthCode.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "AuthCode" -> AuthCode.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RetrieveDomainAuthCodeResponse]
     }
@@ -1457,47 +1457,47 @@ package route53domains {
    */
   @js.native
   trait TransferDomainRequest extends js.Object {
-    var TechContact: js.UndefOr[ContactDetail]
-    var PrivacyProtectTechContact: js.UndefOr[Boolean]
-    var PrivacyProtectRegistrantContact: js.UndefOr[Boolean]
+    var AdminContact: ContactDetail
+    var DomainName: DomainName
+    var DurationInYears: DurationInYears
+    var RegistrantContact: ContactDetail
+    var TechContact: ContactDetail
     var AuthCode: js.UndefOr[DomainAuthCode]
-    var RegistrantContact: js.UndefOr[ContactDetail]
+    var AutoRenew: js.UndefOr[Boolean]
     var IdnLangCode: js.UndefOr[LangCode]
     var Nameservers: js.UndefOr[NameserverList]
-    var DomainName: js.UndefOr[DomainName]
-    var DurationInYears: js.UndefOr[DurationInYears]
-    var AutoRenew: js.UndefOr[Boolean]
     var PrivacyProtectAdminContact: js.UndefOr[Boolean]
-    var AdminContact: js.UndefOr[ContactDetail]
+    var PrivacyProtectRegistrantContact: js.UndefOr[Boolean]
+    var PrivacyProtectTechContact: js.UndefOr[Boolean]
   }
 
   object TransferDomainRequest {
     def apply(
-      TechContact: js.UndefOr[ContactDetail] = js.undefined,
-      PrivacyProtectTechContact: js.UndefOr[Boolean] = js.undefined,
-      PrivacyProtectRegistrantContact: js.UndefOr[Boolean] = js.undefined,
+      AdminContact: ContactDetail,
+      DomainName: DomainName,
+      DurationInYears: DurationInYears,
+      RegistrantContact: ContactDetail,
+      TechContact: ContactDetail,
       AuthCode: js.UndefOr[DomainAuthCode] = js.undefined,
-      RegistrantContact: js.UndefOr[ContactDetail] = js.undefined,
+      AutoRenew: js.UndefOr[Boolean] = js.undefined,
       IdnLangCode: js.UndefOr[LangCode] = js.undefined,
       Nameservers: js.UndefOr[NameserverList] = js.undefined,
-      DomainName: js.UndefOr[DomainName] = js.undefined,
-      DurationInYears: js.UndefOr[DurationInYears] = js.undefined,
-      AutoRenew: js.UndefOr[Boolean] = js.undefined,
       PrivacyProtectAdminContact: js.UndefOr[Boolean] = js.undefined,
-      AdminContact: js.UndefOr[ContactDetail] = js.undefined): TransferDomainRequest = {
+      PrivacyProtectRegistrantContact: js.UndefOr[Boolean] = js.undefined,
+      PrivacyProtectTechContact: js.UndefOr[Boolean] = js.undefined): TransferDomainRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "TechContact" -> TechContact.map { x => x.asInstanceOf[js.Any] },
-        "PrivacyProtectTechContact" -> PrivacyProtectTechContact.map { x => x.asInstanceOf[js.Any] },
-        "PrivacyProtectRegistrantContact" -> PrivacyProtectRegistrantContact.map { x => x.asInstanceOf[js.Any] },
+        "AdminContact" -> AdminContact.asInstanceOf[js.Any],
+        "DomainName" -> DomainName.asInstanceOf[js.Any],
+        "DurationInYears" -> DurationInYears.asInstanceOf[js.Any],
+        "RegistrantContact" -> RegistrantContact.asInstanceOf[js.Any],
+        "TechContact" -> TechContact.asInstanceOf[js.Any],
         "AuthCode" -> AuthCode.map { x => x.asInstanceOf[js.Any] },
-        "RegistrantContact" -> RegistrantContact.map { x => x.asInstanceOf[js.Any] },
+        "AutoRenew" -> AutoRenew.map { x => x.asInstanceOf[js.Any] },
         "IdnLangCode" -> IdnLangCode.map { x => x.asInstanceOf[js.Any] },
         "Nameservers" -> Nameservers.map { x => x.asInstanceOf[js.Any] },
-        "DomainName" -> DomainName.map { x => x.asInstanceOf[js.Any] },
-        "DurationInYears" -> DurationInYears.map { x => x.asInstanceOf[js.Any] },
-        "AutoRenew" -> AutoRenew.map { x => x.asInstanceOf[js.Any] },
         "PrivacyProtectAdminContact" -> PrivacyProtectAdminContact.map { x => x.asInstanceOf[js.Any] },
-        "AdminContact" -> AdminContact.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "PrivacyProtectRegistrantContact" -> PrivacyProtectRegistrantContact.map { x => x.asInstanceOf[js.Any] },
+        "PrivacyProtectTechContact" -> PrivacyProtectTechContact.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TransferDomainRequest]
     }
@@ -1508,14 +1508,14 @@ package route53domains {
    */
   @js.native
   trait TransferDomainResponse extends js.Object {
-    var OperationId: js.UndefOr[OperationId]
+    var OperationId: OperationId
   }
 
   object TransferDomainResponse {
     def apply(
-      OperationId: js.UndefOr[OperationId] = js.undefined): TransferDomainResponse = {
+      OperationId: OperationId): TransferDomainResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "OperationId" -> OperationId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "OperationId" -> OperationId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TransferDomainResponse]
     }
@@ -1545,7 +1545,7 @@ package route53domains {
    */
   @js.native
   trait UpdateDomainContactPrivacyRequest extends js.Object {
-    var DomainName: js.UndefOr[DomainName]
+    var DomainName: DomainName
     var AdminPrivacy: js.UndefOr[Boolean]
     var RegistrantPrivacy: js.UndefOr[Boolean]
     var TechPrivacy: js.UndefOr[Boolean]
@@ -1553,12 +1553,12 @@ package route53domains {
 
   object UpdateDomainContactPrivacyRequest {
     def apply(
-      DomainName: js.UndefOr[DomainName] = js.undefined,
+      DomainName: DomainName,
       AdminPrivacy: js.UndefOr[Boolean] = js.undefined,
       RegistrantPrivacy: js.UndefOr[Boolean] = js.undefined,
       TechPrivacy: js.UndefOr[Boolean] = js.undefined): UpdateDomainContactPrivacyRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "DomainName" -> DomainName.map { x => x.asInstanceOf[js.Any] },
+        "DomainName" -> DomainName.asInstanceOf[js.Any],
         "AdminPrivacy" -> AdminPrivacy.map { x => x.asInstanceOf[js.Any] },
         "RegistrantPrivacy" -> RegistrantPrivacy.map { x => x.asInstanceOf[js.Any] },
         "TechPrivacy" -> TechPrivacy.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
@@ -1572,14 +1572,14 @@ package route53domains {
    */
   @js.native
   trait UpdateDomainContactPrivacyResponse extends js.Object {
-    var OperationId: js.UndefOr[OperationId]
+    var OperationId: OperationId
   }
 
   object UpdateDomainContactPrivacyResponse {
     def apply(
-      OperationId: js.UndefOr[OperationId] = js.undefined): UpdateDomainContactPrivacyResponse = {
+      OperationId: OperationId): UpdateDomainContactPrivacyResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "OperationId" -> OperationId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "OperationId" -> OperationId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateDomainContactPrivacyResponse]
     }
@@ -1590,7 +1590,7 @@ package route53domains {
    */
   @js.native
   trait UpdateDomainContactRequest extends js.Object {
-    var DomainName: js.UndefOr[DomainName]
+    var DomainName: DomainName
     var AdminContact: js.UndefOr[ContactDetail]
     var RegistrantContact: js.UndefOr[ContactDetail]
     var TechContact: js.UndefOr[ContactDetail]
@@ -1598,12 +1598,12 @@ package route53domains {
 
   object UpdateDomainContactRequest {
     def apply(
-      DomainName: js.UndefOr[DomainName] = js.undefined,
+      DomainName: DomainName,
       AdminContact: js.UndefOr[ContactDetail] = js.undefined,
       RegistrantContact: js.UndefOr[ContactDetail] = js.undefined,
       TechContact: js.UndefOr[ContactDetail] = js.undefined): UpdateDomainContactRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "DomainName" -> DomainName.map { x => x.asInstanceOf[js.Any] },
+        "DomainName" -> DomainName.asInstanceOf[js.Any],
         "AdminContact" -> AdminContact.map { x => x.asInstanceOf[js.Any] },
         "RegistrantContact" -> RegistrantContact.map { x => x.asInstanceOf[js.Any] },
         "TechContact" -> TechContact.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
@@ -1617,14 +1617,14 @@ package route53domains {
    */
   @js.native
   trait UpdateDomainContactResponse extends js.Object {
-    var OperationId: js.UndefOr[OperationId]
+    var OperationId: OperationId
   }
 
   object UpdateDomainContactResponse {
     def apply(
-      OperationId: js.UndefOr[OperationId] = js.undefined): UpdateDomainContactResponse = {
+      OperationId: OperationId): UpdateDomainContactResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "OperationId" -> OperationId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "OperationId" -> OperationId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateDomainContactResponse]
     }
@@ -1635,20 +1635,20 @@ package route53domains {
    */
   @js.native
   trait UpdateDomainNameserversRequest extends js.Object {
-    var DomainName: js.UndefOr[DomainName]
+    var DomainName: DomainName
+    var Nameservers: NameserverList
     var FIAuthKey: js.UndefOr[FIAuthKey]
-    var Nameservers: js.UndefOr[NameserverList]
   }
 
   object UpdateDomainNameserversRequest {
     def apply(
-      DomainName: js.UndefOr[DomainName] = js.undefined,
-      FIAuthKey: js.UndefOr[FIAuthKey] = js.undefined,
-      Nameservers: js.UndefOr[NameserverList] = js.undefined): UpdateDomainNameserversRequest = {
+      DomainName: DomainName,
+      Nameservers: NameserverList,
+      FIAuthKey: js.UndefOr[FIAuthKey] = js.undefined): UpdateDomainNameserversRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "DomainName" -> DomainName.map { x => x.asInstanceOf[js.Any] },
-        "FIAuthKey" -> FIAuthKey.map { x => x.asInstanceOf[js.Any] },
-        "Nameservers" -> Nameservers.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "DomainName" -> DomainName.asInstanceOf[js.Any],
+        "Nameservers" -> Nameservers.asInstanceOf[js.Any],
+        "FIAuthKey" -> FIAuthKey.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateDomainNameserversRequest]
     }
@@ -1659,14 +1659,14 @@ package route53domains {
    */
   @js.native
   trait UpdateDomainNameserversResponse extends js.Object {
-    var OperationId: js.UndefOr[OperationId]
+    var OperationId: OperationId
   }
 
   object UpdateDomainNameserversResponse {
     def apply(
-      OperationId: js.UndefOr[OperationId] = js.undefined): UpdateDomainNameserversResponse = {
+      OperationId: OperationId): UpdateDomainNameserversResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "OperationId" -> OperationId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "OperationId" -> OperationId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateDomainNameserversResponse]
     }
@@ -1677,16 +1677,16 @@ package route53domains {
    */
   @js.native
   trait UpdateTagsForDomainRequest extends js.Object {
-    var DomainName: js.UndefOr[DomainName]
+    var DomainName: DomainName
     var TagsToUpdate: js.UndefOr[TagList]
   }
 
   object UpdateTagsForDomainRequest {
     def apply(
-      DomainName: js.UndefOr[DomainName] = js.undefined,
+      DomainName: DomainName,
       TagsToUpdate: js.UndefOr[TagList] = js.undefined): UpdateTagsForDomainRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "DomainName" -> DomainName.map { x => x.asInstanceOf[js.Any] },
+        "DomainName" -> DomainName.asInstanceOf[js.Any],
         "TagsToUpdate" -> TagsToUpdate.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateTagsForDomainRequest]
@@ -1711,23 +1711,23 @@ package route53domains {
    */
   @js.native
   trait ViewBillingRequest extends js.Object {
-    var Start: js.UndefOr[Timestamp]
     var End: js.UndefOr[Timestamp]
     var Marker: js.UndefOr[PageMarker]
     var MaxItems: js.UndefOr[PageMaxItems]
+    var Start: js.UndefOr[Timestamp]
   }
 
   object ViewBillingRequest {
     def apply(
-      Start: js.UndefOr[Timestamp] = js.undefined,
       End: js.UndefOr[Timestamp] = js.undefined,
       Marker: js.UndefOr[PageMarker] = js.undefined,
-      MaxItems: js.UndefOr[PageMaxItems] = js.undefined): ViewBillingRequest = {
+      MaxItems: js.UndefOr[PageMaxItems] = js.undefined,
+      Start: js.UndefOr[Timestamp] = js.undefined): ViewBillingRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Start" -> Start.map { x => x.asInstanceOf[js.Any] },
         "End" -> End.map { x => x.asInstanceOf[js.Any] },
         "Marker" -> Marker.map { x => x.asInstanceOf[js.Any] },
-        "MaxItems" -> MaxItems.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "MaxItems" -> MaxItems.map { x => x.asInstanceOf[js.Any] },
+        "Start" -> Start.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ViewBillingRequest]
     }
@@ -1738,17 +1738,17 @@ package route53domains {
    */
   @js.native
   trait ViewBillingResponse extends js.Object {
-    var NextPageMarker: js.UndefOr[PageMarker]
     var BillingRecords: js.UndefOr[BillingRecords]
+    var NextPageMarker: js.UndefOr[PageMarker]
   }
 
   object ViewBillingResponse {
     def apply(
-      NextPageMarker: js.UndefOr[PageMarker] = js.undefined,
-      BillingRecords: js.UndefOr[BillingRecords] = js.undefined): ViewBillingResponse = {
+      BillingRecords: js.UndefOr[BillingRecords] = js.undefined,
+      NextPageMarker: js.UndefOr[PageMarker] = js.undefined): ViewBillingResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "NextPageMarker" -> NextPageMarker.map { x => x.asInstanceOf[js.Any] },
-        "BillingRecords" -> BillingRecords.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "BillingRecords" -> BillingRecords.map { x => x.asInstanceOf[js.Any] },
+        "NextPageMarker" -> NextPageMarker.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ViewBillingResponse]
     }

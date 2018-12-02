@@ -77,41 +77,41 @@ package fsx {
    */
   @js.native
   trait Backup extends js.Object {
-    var Lifecycle: js.UndefOr[BackupLifecycle]
-    var FileSystem: js.UndefOr[FileSystem]
-    var KmsKeyId: js.UndefOr[KmsKeyId]
-    var ResourceARN: js.UndefOr[ResourceARN]
-    var BackupId: js.UndefOr[BackupId]
-    var Tags: js.UndefOr[Tags]
-    var ProgressPercent: js.UndefOr[ProgressPercent]
+    var BackupId: BackupId
+    var CreationTime: CreationTime
+    var FileSystem: FileSystem
+    var Lifecycle: BackupLifecycle
+    var Type: BackupType
     var FailureDetails: js.UndefOr[BackupFailureDetails]
-    var Type: js.UndefOr[BackupType]
-    var CreationTime: js.UndefOr[CreationTime]
+    var KmsKeyId: js.UndefOr[KmsKeyId]
+    var ProgressPercent: js.UndefOr[ProgressPercent]
+    var ResourceARN: js.UndefOr[ResourceARN]
+    var Tags: js.UndefOr[Tags]
   }
 
   object Backup {
     def apply(
-      Lifecycle: js.UndefOr[BackupLifecycle] = js.undefined,
-      FileSystem: js.UndefOr[FileSystem] = js.undefined,
-      KmsKeyId: js.UndefOr[KmsKeyId] = js.undefined,
-      ResourceARN: js.UndefOr[ResourceARN] = js.undefined,
-      BackupId: js.UndefOr[BackupId] = js.undefined,
-      Tags: js.UndefOr[Tags] = js.undefined,
-      ProgressPercent: js.UndefOr[ProgressPercent] = js.undefined,
+      BackupId: BackupId,
+      CreationTime: CreationTime,
+      FileSystem: FileSystem,
+      Lifecycle: BackupLifecycle,
+      Type: BackupType,
       FailureDetails: js.UndefOr[BackupFailureDetails] = js.undefined,
-      Type: js.UndefOr[BackupType] = js.undefined,
-      CreationTime: js.UndefOr[CreationTime] = js.undefined): Backup = {
+      KmsKeyId: js.UndefOr[KmsKeyId] = js.undefined,
+      ProgressPercent: js.UndefOr[ProgressPercent] = js.undefined,
+      ResourceARN: js.UndefOr[ResourceARN] = js.undefined,
+      Tags: js.UndefOr[Tags] = js.undefined): Backup = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Lifecycle" -> Lifecycle.map { x => x.asInstanceOf[js.Any] },
-        "FileSystem" -> FileSystem.map { x => x.asInstanceOf[js.Any] },
-        "KmsKeyId" -> KmsKeyId.map { x => x.asInstanceOf[js.Any] },
-        "ResourceARN" -> ResourceARN.map { x => x.asInstanceOf[js.Any] },
-        "BackupId" -> BackupId.map { x => x.asInstanceOf[js.Any] },
-        "Tags" -> Tags.map { x => x.asInstanceOf[js.Any] },
-        "ProgressPercent" -> ProgressPercent.map { x => x.asInstanceOf[js.Any] },
+        "BackupId" -> BackupId.asInstanceOf[js.Any],
+        "CreationTime" -> CreationTime.asInstanceOf[js.Any],
+        "FileSystem" -> FileSystem.asInstanceOf[js.Any],
+        "Lifecycle" -> Lifecycle.asInstanceOf[js.Any],
+        "Type" -> Type.asInstanceOf[js.Any],
         "FailureDetails" -> FailureDetails.map { x => x.asInstanceOf[js.Any] },
-        "Type" -> Type.map { x => x.asInstanceOf[js.Any] },
-        "CreationTime" -> CreationTime.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "KmsKeyId" -> KmsKeyId.map { x => x.asInstanceOf[js.Any] },
+        "ProgressPercent" -> ProgressPercent.map { x => x.asInstanceOf[js.Any] },
+        "ResourceARN" -> ResourceARN.map { x => x.asInstanceOf[js.Any] },
+        "Tags" -> Tags.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Backup]
     }
@@ -162,18 +162,18 @@ package fsx {
    */
   @js.native
   trait CreateBackupRequest extends js.Object {
-    var FileSystemId: js.UndefOr[FileSystemId]
+    var FileSystemId: FileSystemId
     var ClientRequestToken: js.UndefOr[ClientRequestToken]
     var Tags: js.UndefOr[Tags]
   }
 
   object CreateBackupRequest {
     def apply(
-      FileSystemId: js.UndefOr[FileSystemId] = js.undefined,
+      FileSystemId: FileSystemId,
       ClientRequestToken: js.UndefOr[ClientRequestToken] = js.undefined,
       Tags: js.UndefOr[Tags] = js.undefined): CreateBackupRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "FileSystemId" -> FileSystemId.map { x => x.asInstanceOf[js.Any] },
+        "FileSystemId" -> FileSystemId.asInstanceOf[js.Any],
         "ClientRequestToken" -> ClientRequestToken.map { x => x.asInstanceOf[js.Any] },
         "Tags" -> Tags.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
@@ -204,28 +204,28 @@ package fsx {
    */
   @js.native
   trait CreateFileSystemFromBackupRequest extends js.Object {
-    var BackupId: js.UndefOr[BackupId]
-    var SecurityGroupIds: js.UndefOr[SecurityGroupIds]
+    var BackupId: BackupId
+    var SubnetIds: SubnetIds
     var ClientRequestToken: js.UndefOr[ClientRequestToken]
+    var SecurityGroupIds: js.UndefOr[SecurityGroupIds]
     var Tags: js.UndefOr[Tags]
-    var SubnetIds: js.UndefOr[SubnetIds]
     var WindowsConfiguration: js.UndefOr[CreateFileSystemWindowsConfiguration]
   }
 
   object CreateFileSystemFromBackupRequest {
     def apply(
-      BackupId: js.UndefOr[BackupId] = js.undefined,
-      SecurityGroupIds: js.UndefOr[SecurityGroupIds] = js.undefined,
+      BackupId: BackupId,
+      SubnetIds: SubnetIds,
       ClientRequestToken: js.UndefOr[ClientRequestToken] = js.undefined,
+      SecurityGroupIds: js.UndefOr[SecurityGroupIds] = js.undefined,
       Tags: js.UndefOr[Tags] = js.undefined,
-      SubnetIds: js.UndefOr[SubnetIds] = js.undefined,
       WindowsConfiguration: js.UndefOr[CreateFileSystemWindowsConfiguration] = js.undefined): CreateFileSystemFromBackupRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "BackupId" -> BackupId.map { x => x.asInstanceOf[js.Any] },
-        "SecurityGroupIds" -> SecurityGroupIds.map { x => x.asInstanceOf[js.Any] },
+        "BackupId" -> BackupId.asInstanceOf[js.Any],
+        "SubnetIds" -> SubnetIds.asInstanceOf[js.Any],
         "ClientRequestToken" -> ClientRequestToken.map { x => x.asInstanceOf[js.Any] },
+        "SecurityGroupIds" -> SecurityGroupIds.map { x => x.asInstanceOf[js.Any] },
         "Tags" -> Tags.map { x => x.asInstanceOf[js.Any] },
-        "SubnetIds" -> SubnetIds.map { x => x.asInstanceOf[js.Any] },
         "WindowsConfiguration" -> WindowsConfiguration.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateFileSystemFromBackupRequest]
@@ -255,20 +255,20 @@ package fsx {
    */
   @js.native
   trait CreateFileSystemLustreConfiguration extends js.Object {
-    var WeeklyMaintenanceStartTime: js.UndefOr[WeeklyTime]
     var ImportPath: js.UndefOr[ArchivePath]
     var ImportedFileChunkSize: js.UndefOr[Megabytes]
+    var WeeklyMaintenanceStartTime: js.UndefOr[WeeklyTime]
   }
 
   object CreateFileSystemLustreConfiguration {
     def apply(
-      WeeklyMaintenanceStartTime: js.UndefOr[WeeklyTime] = js.undefined,
       ImportPath: js.UndefOr[ArchivePath] = js.undefined,
-      ImportedFileChunkSize: js.UndefOr[Megabytes] = js.undefined): CreateFileSystemLustreConfiguration = {
+      ImportedFileChunkSize: js.UndefOr[Megabytes] = js.undefined,
+      WeeklyMaintenanceStartTime: js.UndefOr[WeeklyTime] = js.undefined): CreateFileSystemLustreConfiguration = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "WeeklyMaintenanceStartTime" -> WeeklyMaintenanceStartTime.map { x => x.asInstanceOf[js.Any] },
         "ImportPath" -> ImportPath.map { x => x.asInstanceOf[js.Any] },
-        "ImportedFileChunkSize" -> ImportedFileChunkSize.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ImportedFileChunkSize" -> ImportedFileChunkSize.map { x => x.asInstanceOf[js.Any] },
+        "WeeklyMaintenanceStartTime" -> WeeklyMaintenanceStartTime.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateFileSystemLustreConfiguration]
     }
@@ -279,37 +279,37 @@ package fsx {
    */
   @js.native
   trait CreateFileSystemRequest extends js.Object {
-    var KmsKeyId: js.UndefOr[KmsKeyId]
-    var StorageCapacity: js.UndefOr[StorageCapacity]
-    var FileSystemType: js.UndefOr[FileSystemType]
-    var SecurityGroupIds: js.UndefOr[SecurityGroupIds]
-    var LustreConfiguration: js.UndefOr[CreateFileSystemLustreConfiguration]
+    var FileSystemType: FileSystemType
+    var StorageCapacity: StorageCapacity
+    var SubnetIds: SubnetIds
     var ClientRequestToken: js.UndefOr[ClientRequestToken]
+    var KmsKeyId: js.UndefOr[KmsKeyId]
+    var LustreConfiguration: js.UndefOr[CreateFileSystemLustreConfiguration]
+    var SecurityGroupIds: js.UndefOr[SecurityGroupIds]
     var Tags: js.UndefOr[Tags]
-    var SubnetIds: js.UndefOr[SubnetIds]
     var WindowsConfiguration: js.UndefOr[CreateFileSystemWindowsConfiguration]
   }
 
   object CreateFileSystemRequest {
     def apply(
-      KmsKeyId: js.UndefOr[KmsKeyId] = js.undefined,
-      StorageCapacity: js.UndefOr[StorageCapacity] = js.undefined,
-      FileSystemType: js.UndefOr[FileSystemType] = js.undefined,
-      SecurityGroupIds: js.UndefOr[SecurityGroupIds] = js.undefined,
-      LustreConfiguration: js.UndefOr[CreateFileSystemLustreConfiguration] = js.undefined,
+      FileSystemType: FileSystemType,
+      StorageCapacity: StorageCapacity,
+      SubnetIds: SubnetIds,
       ClientRequestToken: js.UndefOr[ClientRequestToken] = js.undefined,
+      KmsKeyId: js.UndefOr[KmsKeyId] = js.undefined,
+      LustreConfiguration: js.UndefOr[CreateFileSystemLustreConfiguration] = js.undefined,
+      SecurityGroupIds: js.UndefOr[SecurityGroupIds] = js.undefined,
       Tags: js.UndefOr[Tags] = js.undefined,
-      SubnetIds: js.UndefOr[SubnetIds] = js.undefined,
       WindowsConfiguration: js.UndefOr[CreateFileSystemWindowsConfiguration] = js.undefined): CreateFileSystemRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "KmsKeyId" -> KmsKeyId.map { x => x.asInstanceOf[js.Any] },
-        "StorageCapacity" -> StorageCapacity.map { x => x.asInstanceOf[js.Any] },
-        "FileSystemType" -> FileSystemType.map { x => x.asInstanceOf[js.Any] },
-        "SecurityGroupIds" -> SecurityGroupIds.map { x => x.asInstanceOf[js.Any] },
-        "LustreConfiguration" -> LustreConfiguration.map { x => x.asInstanceOf[js.Any] },
+        "FileSystemType" -> FileSystemType.asInstanceOf[js.Any],
+        "StorageCapacity" -> StorageCapacity.asInstanceOf[js.Any],
+        "SubnetIds" -> SubnetIds.asInstanceOf[js.Any],
         "ClientRequestToken" -> ClientRequestToken.map { x => x.asInstanceOf[js.Any] },
+        "KmsKeyId" -> KmsKeyId.map { x => x.asInstanceOf[js.Any] },
+        "LustreConfiguration" -> LustreConfiguration.map { x => x.asInstanceOf[js.Any] },
+        "SecurityGroupIds" -> SecurityGroupIds.map { x => x.asInstanceOf[js.Any] },
         "Tags" -> Tags.map { x => x.asInstanceOf[js.Any] },
-        "SubnetIds" -> SubnetIds.map { x => x.asInstanceOf[js.Any] },
         "WindowsConfiguration" -> WindowsConfiguration.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateFileSystemRequest]
@@ -339,29 +339,29 @@ package fsx {
    */
   @js.native
   trait CreateFileSystemWindowsConfiguration extends js.Object {
-    var WeeklyMaintenanceStartTime: js.UndefOr[WeeklyTime]
+    var ThroughputCapacity: MegabytesPerSecond
     var ActiveDirectoryId: js.UndefOr[DirectoryId]
-    var CopyTagsToBackups: js.UndefOr[Flag]
     var AutomaticBackupRetentionDays: js.UndefOr[AutomaticBackupRetentionDays]
-    var ThroughputCapacity: js.UndefOr[MegabytesPerSecond]
+    var CopyTagsToBackups: js.UndefOr[Flag]
     var DailyAutomaticBackupStartTime: js.UndefOr[DailyTime]
+    var WeeklyMaintenanceStartTime: js.UndefOr[WeeklyTime]
   }
 
   object CreateFileSystemWindowsConfiguration {
     def apply(
-      WeeklyMaintenanceStartTime: js.UndefOr[WeeklyTime] = js.undefined,
+      ThroughputCapacity: MegabytesPerSecond,
       ActiveDirectoryId: js.UndefOr[DirectoryId] = js.undefined,
-      CopyTagsToBackups: js.UndefOr[Flag] = js.undefined,
       AutomaticBackupRetentionDays: js.UndefOr[AutomaticBackupRetentionDays] = js.undefined,
-      ThroughputCapacity: js.UndefOr[MegabytesPerSecond] = js.undefined,
-      DailyAutomaticBackupStartTime: js.UndefOr[DailyTime] = js.undefined): CreateFileSystemWindowsConfiguration = {
+      CopyTagsToBackups: js.UndefOr[Flag] = js.undefined,
+      DailyAutomaticBackupStartTime: js.UndefOr[DailyTime] = js.undefined,
+      WeeklyMaintenanceStartTime: js.UndefOr[WeeklyTime] = js.undefined): CreateFileSystemWindowsConfiguration = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "WeeklyMaintenanceStartTime" -> WeeklyMaintenanceStartTime.map { x => x.asInstanceOf[js.Any] },
+        "ThroughputCapacity" -> ThroughputCapacity.asInstanceOf[js.Any],
         "ActiveDirectoryId" -> ActiveDirectoryId.map { x => x.asInstanceOf[js.Any] },
-        "CopyTagsToBackups" -> CopyTagsToBackups.map { x => x.asInstanceOf[js.Any] },
         "AutomaticBackupRetentionDays" -> AutomaticBackupRetentionDays.map { x => x.asInstanceOf[js.Any] },
-        "ThroughputCapacity" -> ThroughputCapacity.map { x => x.asInstanceOf[js.Any] },
-        "DailyAutomaticBackupStartTime" -> DailyAutomaticBackupStartTime.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "CopyTagsToBackups" -> CopyTagsToBackups.map { x => x.asInstanceOf[js.Any] },
+        "DailyAutomaticBackupStartTime" -> DailyAutomaticBackupStartTime.map { x => x.asInstanceOf[js.Any] },
+        "WeeklyMaintenanceStartTime" -> WeeklyMaintenanceStartTime.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateFileSystemWindowsConfiguration]
     }
@@ -372,19 +372,19 @@ package fsx {
    */
   @js.native
   trait DataRepositoryConfiguration extends js.Object {
-    var ImportPath: js.UndefOr[ArchivePath]
     var ExportPath: js.UndefOr[ArchivePath]
+    var ImportPath: js.UndefOr[ArchivePath]
     var ImportedFileChunkSize: js.UndefOr[Megabytes]
   }
 
   object DataRepositoryConfiguration {
     def apply(
-      ImportPath: js.UndefOr[ArchivePath] = js.undefined,
       ExportPath: js.UndefOr[ArchivePath] = js.undefined,
+      ImportPath: js.UndefOr[ArchivePath] = js.undefined,
       ImportedFileChunkSize: js.UndefOr[Megabytes] = js.undefined): DataRepositoryConfiguration = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ImportPath" -> ImportPath.map { x => x.asInstanceOf[js.Any] },
         "ExportPath" -> ExportPath.map { x => x.asInstanceOf[js.Any] },
+        "ImportPath" -> ImportPath.map { x => x.asInstanceOf[js.Any] },
         "ImportedFileChunkSize" -> ImportedFileChunkSize.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DataRepositoryConfiguration]
@@ -396,16 +396,16 @@ package fsx {
    */
   @js.native
   trait DeleteBackupRequest extends js.Object {
-    var BackupId: js.UndefOr[BackupId]
+    var BackupId: BackupId
     var ClientRequestToken: js.UndefOr[ClientRequestToken]
   }
 
   object DeleteBackupRequest {
     def apply(
-      BackupId: js.UndefOr[BackupId] = js.undefined,
+      BackupId: BackupId,
       ClientRequestToken: js.UndefOr[ClientRequestToken] = js.undefined): DeleteBackupRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "BackupId" -> BackupId.map { x => x.asInstanceOf[js.Any] },
+        "BackupId" -> BackupId.asInstanceOf[js.Any],
         "ClientRequestToken" -> ClientRequestToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteBackupRequest]
@@ -438,18 +438,18 @@ package fsx {
    */
   @js.native
   trait DeleteFileSystemRequest extends js.Object {
-    var FileSystemId: js.UndefOr[FileSystemId]
+    var FileSystemId: FileSystemId
     var ClientRequestToken: js.UndefOr[ClientRequestToken]
     var WindowsConfiguration: js.UndefOr[DeleteFileSystemWindowsConfiguration]
   }
 
   object DeleteFileSystemRequest {
     def apply(
-      FileSystemId: js.UndefOr[FileSystemId] = js.undefined,
+      FileSystemId: FileSystemId,
       ClientRequestToken: js.UndefOr[ClientRequestToken] = js.undefined,
       WindowsConfiguration: js.UndefOr[DeleteFileSystemWindowsConfiguration] = js.undefined): DeleteFileSystemRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "FileSystemId" -> FileSystemId.map { x => x.asInstanceOf[js.Any] },
+        "FileSystemId" -> FileSystemId.asInstanceOf[js.Any],
         "ClientRequestToken" -> ClientRequestToken.map { x => x.asInstanceOf[js.Any] },
         "WindowsConfiguration" -> WindowsConfiguration.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
@@ -486,17 +486,17 @@ package fsx {
    */
   @js.native
   trait DeleteFileSystemWindowsConfiguration extends js.Object {
-    var SkipFinalBackup: js.UndefOr[Flag]
     var FinalBackupTags: js.UndefOr[Tags]
+    var SkipFinalBackup: js.UndefOr[Flag]
   }
 
   object DeleteFileSystemWindowsConfiguration {
     def apply(
-      SkipFinalBackup: js.UndefOr[Flag] = js.undefined,
-      FinalBackupTags: js.UndefOr[Tags] = js.undefined): DeleteFileSystemWindowsConfiguration = {
+      FinalBackupTags: js.UndefOr[Tags] = js.undefined,
+      SkipFinalBackup: js.UndefOr[Flag] = js.undefined): DeleteFileSystemWindowsConfiguration = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "SkipFinalBackup" -> SkipFinalBackup.map { x => x.asInstanceOf[js.Any] },
-        "FinalBackupTags" -> FinalBackupTags.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "FinalBackupTags" -> FinalBackupTags.map { x => x.asInstanceOf[js.Any] },
+        "SkipFinalBackup" -> SkipFinalBackup.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteFileSystemWindowsConfiguration]
     }
@@ -621,59 +621,59 @@ package fsx {
    */
   @js.native
   trait FileSystem extends js.Object {
-    var Lifecycle: js.UndefOr[FileSystemLifecycle]
-    var NetworkInterfaceIds: js.UndefOr[NetworkInterfaceIds]
-    var KmsKeyId: js.UndefOr[KmsKeyId]
-    var ResourceARN: js.UndefOr[ResourceARN]
-    var FileSystemId: js.UndefOr[FileSystemId]
-    var StorageCapacity: js.UndefOr[StorageCapacity]
-    var FileSystemType: js.UndefOr[FileSystemType]
-    var OwnerId: js.UndefOr[AWSAccountId]
-    var LustreConfiguration: js.UndefOr[LustreFileSystemConfiguration]
-    var Tags: js.UndefOr[Tags]
-    var SubnetIds: js.UndefOr[SubnetIds]
-    var WindowsConfiguration: js.UndefOr[WindowsFileSystemConfiguration]
+    var CreationTime: js.UndefOr[CreationTime]
     var DNSName: js.UndefOr[DNSName]
     var FailureDetails: js.UndefOr[FileSystemFailureDetails]
-    var CreationTime: js.UndefOr[CreationTime]
+    var FileSystemId: js.UndefOr[FileSystemId]
+    var FileSystemType: js.UndefOr[FileSystemType]
+    var KmsKeyId: js.UndefOr[KmsKeyId]
+    var Lifecycle: js.UndefOr[FileSystemLifecycle]
+    var LustreConfiguration: js.UndefOr[LustreFileSystemConfiguration]
+    var NetworkInterfaceIds: js.UndefOr[NetworkInterfaceIds]
+    var OwnerId: js.UndefOr[AWSAccountId]
+    var ResourceARN: js.UndefOr[ResourceARN]
+    var StorageCapacity: js.UndefOr[StorageCapacity]
+    var SubnetIds: js.UndefOr[SubnetIds]
+    var Tags: js.UndefOr[Tags]
     var VpcId: js.UndefOr[VpcId]
+    var WindowsConfiguration: js.UndefOr[WindowsFileSystemConfiguration]
   }
 
   object FileSystem {
     def apply(
-      Lifecycle: js.UndefOr[FileSystemLifecycle] = js.undefined,
-      NetworkInterfaceIds: js.UndefOr[NetworkInterfaceIds] = js.undefined,
-      KmsKeyId: js.UndefOr[KmsKeyId] = js.undefined,
-      ResourceARN: js.UndefOr[ResourceARN] = js.undefined,
-      FileSystemId: js.UndefOr[FileSystemId] = js.undefined,
-      StorageCapacity: js.UndefOr[StorageCapacity] = js.undefined,
-      FileSystemType: js.UndefOr[FileSystemType] = js.undefined,
-      OwnerId: js.UndefOr[AWSAccountId] = js.undefined,
-      LustreConfiguration: js.UndefOr[LustreFileSystemConfiguration] = js.undefined,
-      Tags: js.UndefOr[Tags] = js.undefined,
-      SubnetIds: js.UndefOr[SubnetIds] = js.undefined,
-      WindowsConfiguration: js.UndefOr[WindowsFileSystemConfiguration] = js.undefined,
+      CreationTime: js.UndefOr[CreationTime] = js.undefined,
       DNSName: js.UndefOr[DNSName] = js.undefined,
       FailureDetails: js.UndefOr[FileSystemFailureDetails] = js.undefined,
-      CreationTime: js.UndefOr[CreationTime] = js.undefined,
-      VpcId: js.UndefOr[VpcId] = js.undefined): FileSystem = {
+      FileSystemId: js.UndefOr[FileSystemId] = js.undefined,
+      FileSystemType: js.UndefOr[FileSystemType] = js.undefined,
+      KmsKeyId: js.UndefOr[KmsKeyId] = js.undefined,
+      Lifecycle: js.UndefOr[FileSystemLifecycle] = js.undefined,
+      LustreConfiguration: js.UndefOr[LustreFileSystemConfiguration] = js.undefined,
+      NetworkInterfaceIds: js.UndefOr[NetworkInterfaceIds] = js.undefined,
+      OwnerId: js.UndefOr[AWSAccountId] = js.undefined,
+      ResourceARN: js.UndefOr[ResourceARN] = js.undefined,
+      StorageCapacity: js.UndefOr[StorageCapacity] = js.undefined,
+      SubnetIds: js.UndefOr[SubnetIds] = js.undefined,
+      Tags: js.UndefOr[Tags] = js.undefined,
+      VpcId: js.UndefOr[VpcId] = js.undefined,
+      WindowsConfiguration: js.UndefOr[WindowsFileSystemConfiguration] = js.undefined): FileSystem = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Lifecycle" -> Lifecycle.map { x => x.asInstanceOf[js.Any] },
-        "NetworkInterfaceIds" -> NetworkInterfaceIds.map { x => x.asInstanceOf[js.Any] },
-        "KmsKeyId" -> KmsKeyId.map { x => x.asInstanceOf[js.Any] },
-        "ResourceARN" -> ResourceARN.map { x => x.asInstanceOf[js.Any] },
-        "FileSystemId" -> FileSystemId.map { x => x.asInstanceOf[js.Any] },
-        "StorageCapacity" -> StorageCapacity.map { x => x.asInstanceOf[js.Any] },
-        "FileSystemType" -> FileSystemType.map { x => x.asInstanceOf[js.Any] },
-        "OwnerId" -> OwnerId.map { x => x.asInstanceOf[js.Any] },
-        "LustreConfiguration" -> LustreConfiguration.map { x => x.asInstanceOf[js.Any] },
-        "Tags" -> Tags.map { x => x.asInstanceOf[js.Any] },
-        "SubnetIds" -> SubnetIds.map { x => x.asInstanceOf[js.Any] },
-        "WindowsConfiguration" -> WindowsConfiguration.map { x => x.asInstanceOf[js.Any] },
+        "CreationTime" -> CreationTime.map { x => x.asInstanceOf[js.Any] },
         "DNSName" -> DNSName.map { x => x.asInstanceOf[js.Any] },
         "FailureDetails" -> FailureDetails.map { x => x.asInstanceOf[js.Any] },
-        "CreationTime" -> CreationTime.map { x => x.asInstanceOf[js.Any] },
-        "VpcId" -> VpcId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "FileSystemId" -> FileSystemId.map { x => x.asInstanceOf[js.Any] },
+        "FileSystemType" -> FileSystemType.map { x => x.asInstanceOf[js.Any] },
+        "KmsKeyId" -> KmsKeyId.map { x => x.asInstanceOf[js.Any] },
+        "Lifecycle" -> Lifecycle.map { x => x.asInstanceOf[js.Any] },
+        "LustreConfiguration" -> LustreConfiguration.map { x => x.asInstanceOf[js.Any] },
+        "NetworkInterfaceIds" -> NetworkInterfaceIds.map { x => x.asInstanceOf[js.Any] },
+        "OwnerId" -> OwnerId.map { x => x.asInstanceOf[js.Any] },
+        "ResourceARN" -> ResourceARN.map { x => x.asInstanceOf[js.Any] },
+        "StorageCapacity" -> StorageCapacity.map { x => x.asInstanceOf[js.Any] },
+        "SubnetIds" -> SubnetIds.map { x => x.asInstanceOf[js.Any] },
+        "Tags" -> Tags.map { x => x.asInstanceOf[js.Any] },
+        "VpcId" -> VpcId.map { x => x.asInstanceOf[js.Any] },
+        "WindowsConfiguration" -> WindowsConfiguration.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[FileSystem]
     }
@@ -765,18 +765,18 @@ package fsx {
    */
   @js.native
   trait ListTagsForResourceRequest extends js.Object {
-    var ResourceARN: js.UndefOr[ResourceARN]
+    var ResourceARN: ResourceARN
     var MaxResults: js.UndefOr[MaxResults]
     var NextToken: js.UndefOr[NextToken]
   }
 
   object ListTagsForResourceRequest {
     def apply(
-      ResourceARN: js.UndefOr[ResourceARN] = js.undefined,
+      ResourceARN: ResourceARN,
       MaxResults: js.UndefOr[MaxResults] = js.undefined,
       NextToken: js.UndefOr[NextToken] = js.undefined): ListTagsForResourceRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ResourceARN" -> ResourceARN.map { x => x.asInstanceOf[js.Any] },
+        "ResourceARN" -> ResourceARN.asInstanceOf[js.Any],
         "MaxResults" -> MaxResults.map { x => x.asInstanceOf[js.Any] },
         "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
@@ -789,17 +789,17 @@ package fsx {
    */
   @js.native
   trait ListTagsForResourceResponse extends js.Object {
-    var Tags: js.UndefOr[Tags]
     var NextToken: js.UndefOr[NextToken]
+    var Tags: js.UndefOr[Tags]
   }
 
   object ListTagsForResourceResponse {
     def apply(
-      Tags: js.UndefOr[Tags] = js.undefined,
-      NextToken: js.UndefOr[NextToken] = js.undefined): ListTagsForResourceResponse = {
+      NextToken: js.UndefOr[NextToken] = js.undefined,
+      Tags: js.UndefOr[Tags] = js.undefined): ListTagsForResourceResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Tags" -> Tags.map { x => x.asInstanceOf[js.Any] },
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
+        "Tags" -> Tags.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListTagsForResourceResponse]
     }
@@ -810,17 +810,17 @@ package fsx {
    */
   @js.native
   trait LustreFileSystemConfiguration extends js.Object {
-    var WeeklyMaintenanceStartTime: js.UndefOr[WeeklyTime]
     var DataRepositoryConfiguration: js.UndefOr[DataRepositoryConfiguration]
+    var WeeklyMaintenanceStartTime: js.UndefOr[WeeklyTime]
   }
 
   object LustreFileSystemConfiguration {
     def apply(
-      WeeklyMaintenanceStartTime: js.UndefOr[WeeklyTime] = js.undefined,
-      DataRepositoryConfiguration: js.UndefOr[DataRepositoryConfiguration] = js.undefined): LustreFileSystemConfiguration = {
+      DataRepositoryConfiguration: js.UndefOr[DataRepositoryConfiguration] = js.undefined,
+      WeeklyMaintenanceStartTime: js.UndefOr[WeeklyTime] = js.undefined): LustreFileSystemConfiguration = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "WeeklyMaintenanceStartTime" -> WeeklyMaintenanceStartTime.map { x => x.asInstanceOf[js.Any] },
-        "DataRepositoryConfiguration" -> DataRepositoryConfiguration.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "DataRepositoryConfiguration" -> DataRepositoryConfiguration.map { x => x.asInstanceOf[js.Any] },
+        "WeeklyMaintenanceStartTime" -> WeeklyMaintenanceStartTime.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[LustreFileSystemConfiguration]
     }
@@ -852,17 +852,17 @@ package fsx {
    */
   @js.native
   trait TagResourceRequest extends js.Object {
-    var ResourceARN: js.UndefOr[ResourceARN]
-    var Tags: js.UndefOr[Tags]
+    var ResourceARN: ResourceARN
+    var Tags: Tags
   }
 
   object TagResourceRequest {
     def apply(
-      ResourceARN: js.UndefOr[ResourceARN] = js.undefined,
-      Tags: js.UndefOr[Tags] = js.undefined): TagResourceRequest = {
+      ResourceARN: ResourceARN,
+      Tags: Tags): TagResourceRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ResourceARN" -> ResourceARN.map { x => x.asInstanceOf[js.Any] },
-        "Tags" -> Tags.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ResourceARN" -> ResourceARN.asInstanceOf[js.Any],
+        "Tags" -> Tags.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TagResourceRequest]
     }
@@ -889,17 +889,17 @@ package fsx {
    */
   @js.native
   trait UntagResourceRequest extends js.Object {
-    var ResourceARN: js.UndefOr[ResourceARN]
-    var TagKeys: js.UndefOr[TagKeys]
+    var ResourceARN: ResourceARN
+    var TagKeys: TagKeys
   }
 
   object UntagResourceRequest {
     def apply(
-      ResourceARN: js.UndefOr[ResourceARN] = js.undefined,
-      TagKeys: js.UndefOr[TagKeys] = js.undefined): UntagResourceRequest = {
+      ResourceARN: ResourceARN,
+      TagKeys: TagKeys): UntagResourceRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ResourceARN" -> ResourceARN.map { x => x.asInstanceOf[js.Any] },
-        "TagKeys" -> TagKeys.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ResourceARN" -> ResourceARN.asInstanceOf[js.Any],
+        "TagKeys" -> TagKeys.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UntagResourceRequest]
     }
@@ -944,23 +944,23 @@ package fsx {
    */
   @js.native
   trait UpdateFileSystemRequest extends js.Object {
-    var FileSystemId: js.UndefOr[FileSystemId]
+    var FileSystemId: FileSystemId
     var ClientRequestToken: js.UndefOr[ClientRequestToken]
-    var WindowsConfiguration: js.UndefOr[UpdateFileSystemWindowsConfiguration]
     var LustreConfiguration: js.UndefOr[UpdateFileSystemLustreConfiguration]
+    var WindowsConfiguration: js.UndefOr[UpdateFileSystemWindowsConfiguration]
   }
 
   object UpdateFileSystemRequest {
     def apply(
-      FileSystemId: js.UndefOr[FileSystemId] = js.undefined,
+      FileSystemId: FileSystemId,
       ClientRequestToken: js.UndefOr[ClientRequestToken] = js.undefined,
-      WindowsConfiguration: js.UndefOr[UpdateFileSystemWindowsConfiguration] = js.undefined,
-      LustreConfiguration: js.UndefOr[UpdateFileSystemLustreConfiguration] = js.undefined): UpdateFileSystemRequest = {
+      LustreConfiguration: js.UndefOr[UpdateFileSystemLustreConfiguration] = js.undefined,
+      WindowsConfiguration: js.UndefOr[UpdateFileSystemWindowsConfiguration] = js.undefined): UpdateFileSystemRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "FileSystemId" -> FileSystemId.map { x => x.asInstanceOf[js.Any] },
+        "FileSystemId" -> FileSystemId.asInstanceOf[js.Any],
         "ClientRequestToken" -> ClientRequestToken.map { x => x.asInstanceOf[js.Any] },
-        "WindowsConfiguration" -> WindowsConfiguration.map { x => x.asInstanceOf[js.Any] },
-        "LustreConfiguration" -> LustreConfiguration.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "LustreConfiguration" -> LustreConfiguration.map { x => x.asInstanceOf[js.Any] },
+        "WindowsConfiguration" -> WindowsConfiguration.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateFileSystemRequest]
     }
@@ -989,20 +989,20 @@ package fsx {
    */
   @js.native
   trait UpdateFileSystemWindowsConfiguration extends js.Object {
-    var WeeklyMaintenanceStartTime: js.UndefOr[WeeklyTime]
-    var DailyAutomaticBackupStartTime: js.UndefOr[DailyTime]
     var AutomaticBackupRetentionDays: js.UndefOr[AutomaticBackupRetentionDays]
+    var DailyAutomaticBackupStartTime: js.UndefOr[DailyTime]
+    var WeeklyMaintenanceStartTime: js.UndefOr[WeeklyTime]
   }
 
   object UpdateFileSystemWindowsConfiguration {
     def apply(
-      WeeklyMaintenanceStartTime: js.UndefOr[WeeklyTime] = js.undefined,
+      AutomaticBackupRetentionDays: js.UndefOr[AutomaticBackupRetentionDays] = js.undefined,
       DailyAutomaticBackupStartTime: js.UndefOr[DailyTime] = js.undefined,
-      AutomaticBackupRetentionDays: js.UndefOr[AutomaticBackupRetentionDays] = js.undefined): UpdateFileSystemWindowsConfiguration = {
+      WeeklyMaintenanceStartTime: js.UndefOr[WeeklyTime] = js.undefined): UpdateFileSystemWindowsConfiguration = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "WeeklyMaintenanceStartTime" -> WeeklyMaintenanceStartTime.map { x => x.asInstanceOf[js.Any] },
+        "AutomaticBackupRetentionDays" -> AutomaticBackupRetentionDays.map { x => x.asInstanceOf[js.Any] },
         "DailyAutomaticBackupStartTime" -> DailyAutomaticBackupStartTime.map { x => x.asInstanceOf[js.Any] },
-        "AutomaticBackupRetentionDays" -> AutomaticBackupRetentionDays.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "WeeklyMaintenanceStartTime" -> WeeklyMaintenanceStartTime.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateFileSystemWindowsConfiguration]
     }
@@ -1013,32 +1013,32 @@ package fsx {
    */
   @js.native
   trait WindowsFileSystemConfiguration extends js.Object {
-    var WeeklyMaintenanceStartTime: js.UndefOr[WeeklyTime]
     var ActiveDirectoryId: js.UndefOr[DirectoryId]
-    var CopyTagsToBackups: js.UndefOr[Flag]
     var AutomaticBackupRetentionDays: js.UndefOr[AutomaticBackupRetentionDays]
+    var CopyTagsToBackups: js.UndefOr[Flag]
+    var DailyAutomaticBackupStartTime: js.UndefOr[DailyTime]
     var MaintenanceOperationsInProgress: js.UndefOr[FileSystemMaintenanceOperations]
     var ThroughputCapacity: js.UndefOr[MegabytesPerSecond]
-    var DailyAutomaticBackupStartTime: js.UndefOr[DailyTime]
+    var WeeklyMaintenanceStartTime: js.UndefOr[WeeklyTime]
   }
 
   object WindowsFileSystemConfiguration {
     def apply(
-      WeeklyMaintenanceStartTime: js.UndefOr[WeeklyTime] = js.undefined,
       ActiveDirectoryId: js.UndefOr[DirectoryId] = js.undefined,
-      CopyTagsToBackups: js.UndefOr[Flag] = js.undefined,
       AutomaticBackupRetentionDays: js.UndefOr[AutomaticBackupRetentionDays] = js.undefined,
+      CopyTagsToBackups: js.UndefOr[Flag] = js.undefined,
+      DailyAutomaticBackupStartTime: js.UndefOr[DailyTime] = js.undefined,
       MaintenanceOperationsInProgress: js.UndefOr[FileSystemMaintenanceOperations] = js.undefined,
       ThroughputCapacity: js.UndefOr[MegabytesPerSecond] = js.undefined,
-      DailyAutomaticBackupStartTime: js.UndefOr[DailyTime] = js.undefined): WindowsFileSystemConfiguration = {
+      WeeklyMaintenanceStartTime: js.UndefOr[WeeklyTime] = js.undefined): WindowsFileSystemConfiguration = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "WeeklyMaintenanceStartTime" -> WeeklyMaintenanceStartTime.map { x => x.asInstanceOf[js.Any] },
         "ActiveDirectoryId" -> ActiveDirectoryId.map { x => x.asInstanceOf[js.Any] },
-        "CopyTagsToBackups" -> CopyTagsToBackups.map { x => x.asInstanceOf[js.Any] },
         "AutomaticBackupRetentionDays" -> AutomaticBackupRetentionDays.map { x => x.asInstanceOf[js.Any] },
+        "CopyTagsToBackups" -> CopyTagsToBackups.map { x => x.asInstanceOf[js.Any] },
+        "DailyAutomaticBackupStartTime" -> DailyAutomaticBackupStartTime.map { x => x.asInstanceOf[js.Any] },
         "MaintenanceOperationsInProgress" -> MaintenanceOperationsInProgress.map { x => x.asInstanceOf[js.Any] },
         "ThroughputCapacity" -> ThroughputCapacity.map { x => x.asInstanceOf[js.Any] },
-        "DailyAutomaticBackupStartTime" -> DailyAutomaticBackupStartTime.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "WeeklyMaintenanceStartTime" -> WeeklyMaintenanceStartTime.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[WindowsFileSystemConfiguration]
     }

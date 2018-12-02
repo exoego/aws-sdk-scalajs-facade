@@ -93,64 +93,64 @@ package applicationdiscovery {
   @js.native
   trait AgentConfigurationStatus extends js.Object {
     var agentId: js.UndefOr[String]
-    var operationSucceeded: js.UndefOr[Boolean]
     var description: js.UndefOr[String]
+    var operationSucceeded: js.UndefOr[Boolean]
   }
 
   object AgentConfigurationStatus {
     def apply(
       agentId: js.UndefOr[String] = js.undefined,
-      operationSucceeded: js.UndefOr[Boolean] = js.undefined,
-      description: js.UndefOr[String] = js.undefined): AgentConfigurationStatus = {
+      description: js.UndefOr[String] = js.undefined,
+      operationSucceeded: js.UndefOr[Boolean] = js.undefined): AgentConfigurationStatus = {
       val _fields = IndexedSeq[(String, js.Any)](
         "agentId" -> agentId.map { x => x.asInstanceOf[js.Any] },
-        "operationSucceeded" -> operationSucceeded.map { x => x.asInstanceOf[js.Any] },
-        "description" -> description.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "description" -> description.map { x => x.asInstanceOf[js.Any] },
+        "operationSucceeded" -> operationSucceeded.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AgentConfigurationStatus]
     }
   }
 
   /**
-   * <p>Information about agents or connectors associated with the user’s AWS account. Information includes agent or connector IDs, IP addresses, media access control (MAC) addresses, agent or connector health, hostname where the agent or connector resides, and agent version for each agent.</p>
+   * <p>Information about agents or connectors associated with the user�fs AWS account. Information includes agent or connector IDs, IP addresses, media access control (MAC) addresses, agent or connector health, hostname where the agent or connector resides, and agent version for each agent.</p>
    */
   @js.native
   trait AgentInfo extends js.Object {
-    var health: js.UndefOr[AgentStatus]
-    var lastHealthPingTime: js.UndefOr[String]
     var agentId: js.UndefOr[AgentId]
     var agentNetworkInfoList: js.UndefOr[AgentNetworkInfoList]
-    var connectorId: js.UndefOr[String]
-    var hostName: js.UndefOr[String]
     var agentType: js.UndefOr[String]
-    var version: js.UndefOr[String]
-    var registeredTime: js.UndefOr[String]
     var collectionStatus: js.UndefOr[String]
+    var connectorId: js.UndefOr[String]
+    var health: js.UndefOr[AgentStatus]
+    var hostName: js.UndefOr[String]
+    var lastHealthPingTime: js.UndefOr[String]
+    var registeredTime: js.UndefOr[String]
+    var version: js.UndefOr[String]
   }
 
   object AgentInfo {
     def apply(
-      health: js.UndefOr[AgentStatus] = js.undefined,
-      lastHealthPingTime: js.UndefOr[String] = js.undefined,
       agentId: js.UndefOr[AgentId] = js.undefined,
       agentNetworkInfoList: js.UndefOr[AgentNetworkInfoList] = js.undefined,
-      connectorId: js.UndefOr[String] = js.undefined,
-      hostName: js.UndefOr[String] = js.undefined,
       agentType: js.UndefOr[String] = js.undefined,
-      version: js.UndefOr[String] = js.undefined,
+      collectionStatus: js.UndefOr[String] = js.undefined,
+      connectorId: js.UndefOr[String] = js.undefined,
+      health: js.UndefOr[AgentStatus] = js.undefined,
+      hostName: js.UndefOr[String] = js.undefined,
+      lastHealthPingTime: js.UndefOr[String] = js.undefined,
       registeredTime: js.UndefOr[String] = js.undefined,
-      collectionStatus: js.UndefOr[String] = js.undefined): AgentInfo = {
+      version: js.UndefOr[String] = js.undefined): AgentInfo = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "health" -> health.map { x => x.asInstanceOf[js.Any] },
-        "lastHealthPingTime" -> lastHealthPingTime.map { x => x.asInstanceOf[js.Any] },
         "agentId" -> agentId.map { x => x.asInstanceOf[js.Any] },
         "agentNetworkInfoList" -> agentNetworkInfoList.map { x => x.asInstanceOf[js.Any] },
-        "connectorId" -> connectorId.map { x => x.asInstanceOf[js.Any] },
-        "hostName" -> hostName.map { x => x.asInstanceOf[js.Any] },
         "agentType" -> agentType.map { x => x.asInstanceOf[js.Any] },
-        "version" -> version.map { x => x.asInstanceOf[js.Any] },
+        "collectionStatus" -> collectionStatus.map { x => x.asInstanceOf[js.Any] },
+        "connectorId" -> connectorId.map { x => x.asInstanceOf[js.Any] },
+        "health" -> health.map { x => x.asInstanceOf[js.Any] },
+        "hostName" -> hostName.map { x => x.asInstanceOf[js.Any] },
+        "lastHealthPingTime" -> lastHealthPingTime.map { x => x.asInstanceOf[js.Any] },
         "registeredTime" -> registeredTime.map { x => x.asInstanceOf[js.Any] },
-        "collectionStatus" -> collectionStatus.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "version" -> version.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AgentInfo]
     }
@@ -190,17 +190,17 @@ package applicationdiscovery {
 
   @js.native
   trait AssociateConfigurationItemsToApplicationRequest extends js.Object {
-    var applicationConfigurationId: js.UndefOr[ApplicationId]
-    var configurationIds: js.UndefOr[ConfigurationIdList]
+    var applicationConfigurationId: ApplicationId
+    var configurationIds: ConfigurationIdList
   }
 
   object AssociateConfigurationItemsToApplicationRequest {
     def apply(
-      applicationConfigurationId: js.UndefOr[ApplicationId] = js.undefined,
-      configurationIds: js.UndefOr[ConfigurationIdList] = js.undefined): AssociateConfigurationItemsToApplicationRequest = {
+      applicationConfigurationId: ApplicationId,
+      configurationIds: ConfigurationIdList): AssociateConfigurationItemsToApplicationRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "applicationConfigurationId" -> applicationConfigurationId.map { x => x.asInstanceOf[js.Any] },
-        "configurationIds" -> configurationIds.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "applicationConfigurationId" -> applicationConfigurationId.asInstanceOf[js.Any],
+        "configurationIds" -> configurationIds.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AssociateConfigurationItemsToApplicationRequest]
     }
@@ -235,8 +235,8 @@ package applicationdiscovery {
   trait ConfigurationTag extends js.Object {
     var configurationId: js.UndefOr[ConfigurationId]
     var configurationType: js.UndefOr[ConfigurationItemType]
-    var timeOfCreation: js.UndefOr[TimeStamp]
     var key: js.UndefOr[TagKey]
+    var timeOfCreation: js.UndefOr[TimeStamp]
     var value: js.UndefOr[TagValue]
   }
 
@@ -244,14 +244,14 @@ package applicationdiscovery {
     def apply(
       configurationId: js.UndefOr[ConfigurationId] = js.undefined,
       configurationType: js.UndefOr[ConfigurationItemType] = js.undefined,
-      timeOfCreation: js.UndefOr[TimeStamp] = js.undefined,
       key: js.UndefOr[TagKey] = js.undefined,
+      timeOfCreation: js.UndefOr[TimeStamp] = js.undefined,
       value: js.UndefOr[TagValue] = js.undefined): ConfigurationTag = {
       val _fields = IndexedSeq[(String, js.Any)](
         "configurationId" -> configurationId.map { x => x.asInstanceOf[js.Any] },
         "configurationType" -> configurationType.map { x => x.asInstanceOf[js.Any] },
-        "timeOfCreation" -> timeOfCreation.map { x => x.asInstanceOf[js.Any] },
         "key" -> key.map { x => x.asInstanceOf[js.Any] },
+        "timeOfCreation" -> timeOfCreation.map { x => x.asInstanceOf[js.Any] },
         "value" -> value.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ConfigurationTag]
@@ -263,11 +263,11 @@ package applicationdiscovery {
    */
   @js.native
   trait ContinuousExportDescription extends js.Object {
-    var exportId: js.UndefOr[ConfigurationsExportId]
-    var startTime: js.UndefOr[TimeStamp]
-    var s3Bucket: js.UndefOr[S3Bucket]
     var dataSource: js.UndefOr[DataSource]
+    var exportId: js.UndefOr[ConfigurationsExportId]
+    var s3Bucket: js.UndefOr[S3Bucket]
     var schemaStorageConfig: js.UndefOr[SchemaStorageConfig]
+    var startTime: js.UndefOr[TimeStamp]
     var status: js.UndefOr[ContinuousExportStatus]
     var statusDetail: js.UndefOr[StringMax255]
     var stopTime: js.UndefOr[TimeStamp]
@@ -275,20 +275,20 @@ package applicationdiscovery {
 
   object ContinuousExportDescription {
     def apply(
-      exportId: js.UndefOr[ConfigurationsExportId] = js.undefined,
-      startTime: js.UndefOr[TimeStamp] = js.undefined,
-      s3Bucket: js.UndefOr[S3Bucket] = js.undefined,
       dataSource: js.UndefOr[DataSource] = js.undefined,
+      exportId: js.UndefOr[ConfigurationsExportId] = js.undefined,
+      s3Bucket: js.UndefOr[S3Bucket] = js.undefined,
       schemaStorageConfig: js.UndefOr[SchemaStorageConfig] = js.undefined,
+      startTime: js.UndefOr[TimeStamp] = js.undefined,
       status: js.UndefOr[ContinuousExportStatus] = js.undefined,
       statusDetail: js.UndefOr[StringMax255] = js.undefined,
       stopTime: js.UndefOr[TimeStamp] = js.undefined): ContinuousExportDescription = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "exportId" -> exportId.map { x => x.asInstanceOf[js.Any] },
-        "startTime" -> startTime.map { x => x.asInstanceOf[js.Any] },
-        "s3Bucket" -> s3Bucket.map { x => x.asInstanceOf[js.Any] },
         "dataSource" -> dataSource.map { x => x.asInstanceOf[js.Any] },
+        "exportId" -> exportId.map { x => x.asInstanceOf[js.Any] },
+        "s3Bucket" -> s3Bucket.map { x => x.asInstanceOf[js.Any] },
         "schemaStorageConfig" -> schemaStorageConfig.map { x => x.asInstanceOf[js.Any] },
+        "startTime" -> startTime.map { x => x.asInstanceOf[js.Any] },
         "status" -> status.map { x => x.asInstanceOf[js.Any] },
         "statusDetail" -> statusDetail.map { x => x.asInstanceOf[js.Any] },
         "stopTime" -> stopTime.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
@@ -311,16 +311,16 @@ package applicationdiscovery {
 
   @js.native
   trait CreateApplicationRequest extends js.Object {
-    var name: js.UndefOr[String]
+    var name: String
     var description: js.UndefOr[String]
   }
 
   object CreateApplicationRequest {
     def apply(
-      name: js.UndefOr[String] = js.undefined,
+      name: String,
       description: js.UndefOr[String] = js.undefined): CreateApplicationRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "name" -> name.map { x => x.asInstanceOf[js.Any] },
+        "name" -> name.asInstanceOf[js.Any],
         "description" -> description.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateApplicationRequest]
@@ -344,17 +344,17 @@ package applicationdiscovery {
 
   @js.native
   trait CreateTagsRequest extends js.Object {
-    var configurationIds: js.UndefOr[ConfigurationIdList]
-    var tags: js.UndefOr[TagSet]
+    var configurationIds: ConfigurationIdList
+    var tags: TagSet
   }
 
   object CreateTagsRequest {
     def apply(
-      configurationIds: js.UndefOr[ConfigurationIdList] = js.undefined,
-      tags: js.UndefOr[TagSet] = js.undefined): CreateTagsRequest = {
+      configurationIds: ConfigurationIdList,
+      tags: TagSet): CreateTagsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "configurationIds" -> configurationIds.map { x => x.asInstanceOf[js.Any] },
-        "tags" -> tags.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "configurationIds" -> configurationIds.asInstanceOf[js.Any],
+        "tags" -> tags.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateTagsRequest]
     }
@@ -378,32 +378,32 @@ package applicationdiscovery {
    */
   @js.native
   trait CustomerAgentInfo extends js.Object {
-    var unhealthyAgents: js.UndefOr[Int]
-    var healthyAgents: js.UndefOr[Int]
-    var unknownAgents: js.UndefOr[Int]
-    var blackListedAgents: js.UndefOr[Int]
-    var shutdownAgents: js.UndefOr[Int]
-    var totalAgents: js.UndefOr[Int]
-    var activeAgents: js.UndefOr[Int]
+    var activeAgents: Int
+    var blackListedAgents: Int
+    var healthyAgents: Int
+    var shutdownAgents: Int
+    var totalAgents: Int
+    var unhealthyAgents: Int
+    var unknownAgents: Int
   }
 
   object CustomerAgentInfo {
     def apply(
-      unhealthyAgents: js.UndefOr[Int] = js.undefined,
-      healthyAgents: js.UndefOr[Int] = js.undefined,
-      unknownAgents: js.UndefOr[Int] = js.undefined,
-      blackListedAgents: js.UndefOr[Int] = js.undefined,
-      shutdownAgents: js.UndefOr[Int] = js.undefined,
-      totalAgents: js.UndefOr[Int] = js.undefined,
-      activeAgents: js.UndefOr[Int] = js.undefined): CustomerAgentInfo = {
+      activeAgents: Int,
+      blackListedAgents: Int,
+      healthyAgents: Int,
+      shutdownAgents: Int,
+      totalAgents: Int,
+      unhealthyAgents: Int,
+      unknownAgents: Int): CustomerAgentInfo = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "unhealthyAgents" -> unhealthyAgents.map { x => x.asInstanceOf[js.Any] },
-        "healthyAgents" -> healthyAgents.map { x => x.asInstanceOf[js.Any] },
-        "unknownAgents" -> unknownAgents.map { x => x.asInstanceOf[js.Any] },
-        "blackListedAgents" -> blackListedAgents.map { x => x.asInstanceOf[js.Any] },
-        "shutdownAgents" -> shutdownAgents.map { x => x.asInstanceOf[js.Any] },
-        "totalAgents" -> totalAgents.map { x => x.asInstanceOf[js.Any] },
-        "activeAgents" -> activeAgents.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "activeAgents" -> activeAgents.asInstanceOf[js.Any],
+        "blackListedAgents" -> blackListedAgents.asInstanceOf[js.Any],
+        "healthyAgents" -> healthyAgents.asInstanceOf[js.Any],
+        "shutdownAgents" -> shutdownAgents.asInstanceOf[js.Any],
+        "totalAgents" -> totalAgents.asInstanceOf[js.Any],
+        "unhealthyAgents" -> unhealthyAgents.asInstanceOf[js.Any],
+        "unknownAgents" -> unknownAgents.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CustomerAgentInfo]
     }
@@ -414,32 +414,32 @@ package applicationdiscovery {
    */
   @js.native
   trait CustomerConnectorInfo extends js.Object {
-    var unknownConnectors: js.UndefOr[Int]
-    var totalConnectors: js.UndefOr[Int]
-    var healthyConnectors: js.UndefOr[Int]
-    var activeConnectors: js.UndefOr[Int]
-    var shutdownConnectors: js.UndefOr[Int]
-    var unhealthyConnectors: js.UndefOr[Int]
-    var blackListedConnectors: js.UndefOr[Int]
+    var activeConnectors: Int
+    var blackListedConnectors: Int
+    var healthyConnectors: Int
+    var shutdownConnectors: Int
+    var totalConnectors: Int
+    var unhealthyConnectors: Int
+    var unknownConnectors: Int
   }
 
   object CustomerConnectorInfo {
     def apply(
-      unknownConnectors: js.UndefOr[Int] = js.undefined,
-      totalConnectors: js.UndefOr[Int] = js.undefined,
-      healthyConnectors: js.UndefOr[Int] = js.undefined,
-      activeConnectors: js.UndefOr[Int] = js.undefined,
-      shutdownConnectors: js.UndefOr[Int] = js.undefined,
-      unhealthyConnectors: js.UndefOr[Int] = js.undefined,
-      blackListedConnectors: js.UndefOr[Int] = js.undefined): CustomerConnectorInfo = {
+      activeConnectors: Int,
+      blackListedConnectors: Int,
+      healthyConnectors: Int,
+      shutdownConnectors: Int,
+      totalConnectors: Int,
+      unhealthyConnectors: Int,
+      unknownConnectors: Int): CustomerConnectorInfo = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "unknownConnectors" -> unknownConnectors.map { x => x.asInstanceOf[js.Any] },
-        "totalConnectors" -> totalConnectors.map { x => x.asInstanceOf[js.Any] },
-        "healthyConnectors" -> healthyConnectors.map { x => x.asInstanceOf[js.Any] },
-        "activeConnectors" -> activeConnectors.map { x => x.asInstanceOf[js.Any] },
-        "shutdownConnectors" -> shutdownConnectors.map { x => x.asInstanceOf[js.Any] },
-        "unhealthyConnectors" -> unhealthyConnectors.map { x => x.asInstanceOf[js.Any] },
-        "blackListedConnectors" -> blackListedConnectors.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "activeConnectors" -> activeConnectors.asInstanceOf[js.Any],
+        "blackListedConnectors" -> blackListedConnectors.asInstanceOf[js.Any],
+        "healthyConnectors" -> healthyConnectors.asInstanceOf[js.Any],
+        "shutdownConnectors" -> shutdownConnectors.asInstanceOf[js.Any],
+        "totalConnectors" -> totalConnectors.asInstanceOf[js.Any],
+        "unhealthyConnectors" -> unhealthyConnectors.asInstanceOf[js.Any],
+        "unknownConnectors" -> unknownConnectors.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CustomerConnectorInfo]
     }
@@ -453,14 +453,14 @@ package applicationdiscovery {
 
   @js.native
   trait DeleteApplicationsRequest extends js.Object {
-    var configurationIds: js.UndefOr[ApplicationIdsList]
+    var configurationIds: ApplicationIdsList
   }
 
   object DeleteApplicationsRequest {
     def apply(
-      configurationIds: js.UndefOr[ApplicationIdsList] = js.undefined): DeleteApplicationsRequest = {
+      configurationIds: ApplicationIdsList): DeleteApplicationsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "configurationIds" -> configurationIds.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "configurationIds" -> configurationIds.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteApplicationsRequest]
     }
@@ -481,16 +481,16 @@ package applicationdiscovery {
 
   @js.native
   trait DeleteTagsRequest extends js.Object {
-    var configurationIds: js.UndefOr[ConfigurationIdList]
+    var configurationIds: ConfigurationIdList
     var tags: js.UndefOr[TagSet]
   }
 
   object DeleteTagsRequest {
     def apply(
-      configurationIds: js.UndefOr[ConfigurationIdList] = js.undefined,
+      configurationIds: ConfigurationIdList,
       tags: js.UndefOr[TagSet] = js.undefined): DeleteTagsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "configurationIds" -> configurationIds.map { x => x.asInstanceOf[js.Any] },
+        "configurationIds" -> configurationIds.asInstanceOf[js.Any],
         "tags" -> tags.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteTagsRequest]
@@ -554,14 +554,14 @@ package applicationdiscovery {
 
   @js.native
   trait DescribeConfigurationsRequest extends js.Object {
-    var configurationIds: js.UndefOr[ConfigurationIdList]
+    var configurationIds: ConfigurationIdList
   }
 
   object DescribeConfigurationsRequest {
     def apply(
-      configurationIds: js.UndefOr[ConfigurationIdList] = js.undefined): DescribeConfigurationsRequest = {
+      configurationIds: ConfigurationIdList): DescribeConfigurationsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "configurationIds" -> configurationIds.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "configurationIds" -> configurationIds.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeConfigurationsRequest]
     }
@@ -725,17 +725,17 @@ package applicationdiscovery {
 
   @js.native
   trait DescribeTagsResponse extends js.Object {
-    var tags: js.UndefOr[ConfigurationTagSet]
     var nextToken: js.UndefOr[NextToken]
+    var tags: js.UndefOr[ConfigurationTagSet]
   }
 
   object DescribeTagsResponse {
     def apply(
-      tags: js.UndefOr[ConfigurationTagSet] = js.undefined,
-      nextToken: js.UndefOr[NextToken] = js.undefined): DescribeTagsResponse = {
+      nextToken: js.UndefOr[NextToken] = js.undefined,
+      tags: js.UndefOr[ConfigurationTagSet] = js.undefined): DescribeTagsResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "tags" -> tags.map { x => x.asInstanceOf[js.Any] },
-        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] },
+        "tags" -> tags.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeTagsResponse]
     }
@@ -743,17 +743,17 @@ package applicationdiscovery {
 
   @js.native
   trait DisassociateConfigurationItemsFromApplicationRequest extends js.Object {
-    var applicationConfigurationId: js.UndefOr[ApplicationId]
-    var configurationIds: js.UndefOr[ConfigurationIdList]
+    var applicationConfigurationId: ApplicationId
+    var configurationIds: ConfigurationIdList
   }
 
   object DisassociateConfigurationItemsFromApplicationRequest {
     def apply(
-      applicationConfigurationId: js.UndefOr[ApplicationId] = js.undefined,
-      configurationIds: js.UndefOr[ConfigurationIdList] = js.undefined): DisassociateConfigurationItemsFromApplicationRequest = {
+      applicationConfigurationId: ApplicationId,
+      configurationIds: ConfigurationIdList): DisassociateConfigurationItemsFromApplicationRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "applicationConfigurationId" -> applicationConfigurationId.map { x => x.asInstanceOf[js.Any] },
-        "configurationIds" -> configurationIds.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "applicationConfigurationId" -> applicationConfigurationId.asInstanceOf[js.Any],
+        "configurationIds" -> configurationIds.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DisassociateConfigurationItemsFromApplicationRequest]
     }
@@ -799,20 +799,20 @@ package applicationdiscovery {
    */
   @js.native
   trait ExportFilter extends js.Object {
-    var name: js.UndefOr[FilterName]
-    var values: js.UndefOr[FilterValues]
-    var condition: js.UndefOr[Condition]
+    var condition: Condition
+    var name: FilterName
+    var values: FilterValues
   }
 
   object ExportFilter {
     def apply(
-      name: js.UndefOr[FilterName] = js.undefined,
-      values: js.UndefOr[FilterValues] = js.undefined,
-      condition: js.UndefOr[Condition] = js.undefined): ExportFilter = {
+      condition: Condition,
+      name: FilterName,
+      values: FilterValues): ExportFilter = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "name" -> name.map { x => x.asInstanceOf[js.Any] },
-        "values" -> values.map { x => x.asInstanceOf[js.Any] },
-        "condition" -> condition.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "condition" -> condition.asInstanceOf[js.Any],
+        "name" -> name.asInstanceOf[js.Any],
+        "values" -> values.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ExportFilter]
     }
@@ -823,35 +823,35 @@ package applicationdiscovery {
    */
   @js.native
   trait ExportInfo extends js.Object {
-    var exportId: js.UndefOr[ConfigurationsExportId]
-    var requestedStartTime: js.UndefOr[TimeStamp]
+    var exportId: ConfigurationsExportId
+    var exportRequestTime: ExportRequestTime
+    var exportStatus: ExportStatus
+    var statusMessage: ExportStatusMessage
     var configurationsDownloadUrl: js.UndefOr[ConfigurationsDownloadUrl]
-    var requestedEndTime: js.UndefOr[TimeStamp]
-    var exportRequestTime: js.UndefOr[ExportRequestTime]
-    var exportStatus: js.UndefOr[ExportStatus]
     var isTruncated: js.UndefOr[Boolean]
-    var statusMessage: js.UndefOr[ExportStatusMessage]
+    var requestedEndTime: js.UndefOr[TimeStamp]
+    var requestedStartTime: js.UndefOr[TimeStamp]
   }
 
   object ExportInfo {
     def apply(
-      exportId: js.UndefOr[ConfigurationsExportId] = js.undefined,
-      requestedStartTime: js.UndefOr[TimeStamp] = js.undefined,
+      exportId: ConfigurationsExportId,
+      exportRequestTime: ExportRequestTime,
+      exportStatus: ExportStatus,
+      statusMessage: ExportStatusMessage,
       configurationsDownloadUrl: js.UndefOr[ConfigurationsDownloadUrl] = js.undefined,
-      requestedEndTime: js.UndefOr[TimeStamp] = js.undefined,
-      exportRequestTime: js.UndefOr[ExportRequestTime] = js.undefined,
-      exportStatus: js.UndefOr[ExportStatus] = js.undefined,
       isTruncated: js.UndefOr[Boolean] = js.undefined,
-      statusMessage: js.UndefOr[ExportStatusMessage] = js.undefined): ExportInfo = {
+      requestedEndTime: js.UndefOr[TimeStamp] = js.undefined,
+      requestedStartTime: js.UndefOr[TimeStamp] = js.undefined): ExportInfo = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "exportId" -> exportId.map { x => x.asInstanceOf[js.Any] },
-        "requestedStartTime" -> requestedStartTime.map { x => x.asInstanceOf[js.Any] },
+        "exportId" -> exportId.asInstanceOf[js.Any],
+        "exportRequestTime" -> exportRequestTime.asInstanceOf[js.Any],
+        "exportStatus" -> exportStatus.asInstanceOf[js.Any],
+        "statusMessage" -> statusMessage.asInstanceOf[js.Any],
         "configurationsDownloadUrl" -> configurationsDownloadUrl.map { x => x.asInstanceOf[js.Any] },
-        "requestedEndTime" -> requestedEndTime.map { x => x.asInstanceOf[js.Any] },
-        "exportRequestTime" -> exportRequestTime.map { x => x.asInstanceOf[js.Any] },
-        "exportStatus" -> exportStatus.map { x => x.asInstanceOf[js.Any] },
         "isTruncated" -> isTruncated.map { x => x.asInstanceOf[js.Any] },
-        "statusMessage" -> statusMessage.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "requestedEndTime" -> requestedEndTime.map { x => x.asInstanceOf[js.Any] },
+        "requestedStartTime" -> requestedStartTime.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ExportInfo]
     }
@@ -870,20 +870,20 @@ package applicationdiscovery {
    */
   @js.native
   trait Filter extends js.Object {
-    var name: js.UndefOr[String]
-    var values: js.UndefOr[FilterValues]
-    var condition: js.UndefOr[Condition]
+    var condition: Condition
+    var name: String
+    var values: FilterValues
   }
 
   object Filter {
     def apply(
-      name: js.UndefOr[String] = js.undefined,
-      values: js.UndefOr[FilterValues] = js.undefined,
-      condition: js.UndefOr[Condition] = js.undefined): Filter = {
+      condition: Condition,
+      name: String,
+      values: FilterValues): Filter = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "name" -> name.map { x => x.asInstanceOf[js.Any] },
-        "values" -> values.map { x => x.asInstanceOf[js.Any] },
-        "condition" -> condition.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "condition" -> condition.asInstanceOf[js.Any],
+        "name" -> name.asInstanceOf[js.Any],
+        "values" -> values.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Filter]
     }
@@ -904,29 +904,29 @@ package applicationdiscovery {
 
   @js.native
   trait GetDiscoverySummaryResponse extends js.Object {
-    var connectorSummary: js.UndefOr[CustomerConnectorInfo]
     var agentSummary: js.UndefOr[CustomerAgentInfo]
     var applications: js.UndefOr[Double]
+    var connectorSummary: js.UndefOr[CustomerConnectorInfo]
     var servers: js.UndefOr[Double]
-    var serversMappedtoTags: js.UndefOr[Double]
     var serversMappedToApplications: js.UndefOr[Double]
+    var serversMappedtoTags: js.UndefOr[Double]
   }
 
   object GetDiscoverySummaryResponse {
     def apply(
-      connectorSummary: js.UndefOr[CustomerConnectorInfo] = js.undefined,
       agentSummary: js.UndefOr[CustomerAgentInfo] = js.undefined,
       applications: js.UndefOr[Double] = js.undefined,
+      connectorSummary: js.UndefOr[CustomerConnectorInfo] = js.undefined,
       servers: js.UndefOr[Double] = js.undefined,
-      serversMappedtoTags: js.UndefOr[Double] = js.undefined,
-      serversMappedToApplications: js.UndefOr[Double] = js.undefined): GetDiscoverySummaryResponse = {
+      serversMappedToApplications: js.UndefOr[Double] = js.undefined,
+      serversMappedtoTags: js.UndefOr[Double] = js.undefined): GetDiscoverySummaryResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "connectorSummary" -> connectorSummary.map { x => x.asInstanceOf[js.Any] },
         "agentSummary" -> agentSummary.map { x => x.asInstanceOf[js.Any] },
         "applications" -> applications.map { x => x.asInstanceOf[js.Any] },
+        "connectorSummary" -> connectorSummary.map { x => x.asInstanceOf[js.Any] },
         "servers" -> servers.map { x => x.asInstanceOf[js.Any] },
-        "serversMappedtoTags" -> serversMappedtoTags.map { x => x.asInstanceOf[js.Any] },
-        "serversMappedToApplications" -> serversMappedToApplications.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "serversMappedToApplications" -> serversMappedToApplications.map { x => x.asInstanceOf[js.Any] },
+        "serversMappedtoTags" -> serversMappedtoTags.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetDiscoverySummaryResponse]
     }
@@ -934,25 +934,25 @@ package applicationdiscovery {
 
   @js.native
   trait ListConfigurationsRequest extends js.Object {
-    var configurationType: js.UndefOr[ConfigurationItemType]
+    var configurationType: ConfigurationItemType
+    var filters: js.UndefOr[Filters]
     var maxResults: js.UndefOr[Int]
     var nextToken: js.UndefOr[NextToken]
-    var filters: js.UndefOr[Filters]
     var orderBy: js.UndefOr[OrderByList]
   }
 
   object ListConfigurationsRequest {
     def apply(
-      configurationType: js.UndefOr[ConfigurationItemType] = js.undefined,
+      configurationType: ConfigurationItemType,
+      filters: js.UndefOr[Filters] = js.undefined,
       maxResults: js.UndefOr[Int] = js.undefined,
       nextToken: js.UndefOr[NextToken] = js.undefined,
-      filters: js.UndefOr[Filters] = js.undefined,
       orderBy: js.UndefOr[OrderByList] = js.undefined): ListConfigurationsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "configurationType" -> configurationType.map { x => x.asInstanceOf[js.Any] },
+        "configurationType" -> configurationType.asInstanceOf[js.Any],
+        "filters" -> filters.map { x => x.asInstanceOf[js.Any] },
         "maxResults" -> maxResults.map { x => x.asInstanceOf[js.Any] },
         "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] },
-        "filters" -> filters.map { x => x.asInstanceOf[js.Any] },
         "orderBy" -> orderBy.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListConfigurationsRequest]
@@ -979,25 +979,25 @@ package applicationdiscovery {
 
   @js.native
   trait ListServerNeighborsRequest extends js.Object {
-    var configurationId: js.UndefOr[ConfigurationId]
+    var configurationId: ConfigurationId
     var maxResults: js.UndefOr[Int]
-    var nextToken: js.UndefOr[String]
     var neighborConfigurationIds: js.UndefOr[ConfigurationIdList]
+    var nextToken: js.UndefOr[String]
     var portInformationNeeded: js.UndefOr[Boolean]
   }
 
   object ListServerNeighborsRequest {
     def apply(
-      configurationId: js.UndefOr[ConfigurationId] = js.undefined,
+      configurationId: ConfigurationId,
       maxResults: js.UndefOr[Int] = js.undefined,
-      nextToken: js.UndefOr[String] = js.undefined,
       neighborConfigurationIds: js.UndefOr[ConfigurationIdList] = js.undefined,
+      nextToken: js.UndefOr[String] = js.undefined,
       portInformationNeeded: js.UndefOr[Boolean] = js.undefined): ListServerNeighborsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "configurationId" -> configurationId.map { x => x.asInstanceOf[js.Any] },
+        "configurationId" -> configurationId.asInstanceOf[js.Any],
         "maxResults" -> maxResults.map { x => x.asInstanceOf[js.Any] },
-        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] },
         "neighborConfigurationIds" -> neighborConfigurationIds.map { x => x.asInstanceOf[js.Any] },
+        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] },
         "portInformationNeeded" -> portInformationNeeded.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListServerNeighborsRequest]
@@ -1006,20 +1006,20 @@ package applicationdiscovery {
 
   @js.native
   trait ListServerNeighborsResponse extends js.Object {
-    var neighbors: js.UndefOr[NeighborDetailsList]
-    var nextToken: js.UndefOr[String]
+    var neighbors: NeighborDetailsList
     var knownDependencyCount: js.UndefOr[Double]
+    var nextToken: js.UndefOr[String]
   }
 
   object ListServerNeighborsResponse {
     def apply(
-      neighbors: js.UndefOr[NeighborDetailsList] = js.undefined,
-      nextToken: js.UndefOr[String] = js.undefined,
-      knownDependencyCount: js.UndefOr[Double] = js.undefined): ListServerNeighborsResponse = {
+      neighbors: NeighborDetailsList,
+      knownDependencyCount: js.UndefOr[Double] = js.undefined,
+      nextToken: js.UndefOr[String] = js.undefined): ListServerNeighborsResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "neighbors" -> neighbors.map { x => x.asInstanceOf[js.Any] },
-        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] },
-        "knownDependencyCount" -> knownDependencyCount.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "neighbors" -> neighbors.asInstanceOf[js.Any],
+        "knownDependencyCount" -> knownDependencyCount.map { x => x.asInstanceOf[js.Any] },
+        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListServerNeighborsResponse]
     }
@@ -1030,26 +1030,26 @@ package applicationdiscovery {
    */
   @js.native
   trait NeighborConnectionDetail extends js.Object {
-    var transportProtocol: js.UndefOr[String]
-    var sourceServerId: js.UndefOr[ConfigurationId]
+    var connectionsCount: Double
+    var destinationServerId: ConfigurationId
+    var sourceServerId: ConfigurationId
     var destinationPort: js.UndefOr[BoxedInteger]
-    var connectionsCount: js.UndefOr[Double]
-    var destinationServerId: js.UndefOr[ConfigurationId]
+    var transportProtocol: js.UndefOr[String]
   }
 
   object NeighborConnectionDetail {
     def apply(
-      transportProtocol: js.UndefOr[String] = js.undefined,
-      sourceServerId: js.UndefOr[ConfigurationId] = js.undefined,
+      connectionsCount: Double,
+      destinationServerId: ConfigurationId,
+      sourceServerId: ConfigurationId,
       destinationPort: js.UndefOr[BoxedInteger] = js.undefined,
-      connectionsCount: js.UndefOr[Double] = js.undefined,
-      destinationServerId: js.UndefOr[ConfigurationId] = js.undefined): NeighborConnectionDetail = {
+      transportProtocol: js.UndefOr[String] = js.undefined): NeighborConnectionDetail = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "transportProtocol" -> transportProtocol.map { x => x.asInstanceOf[js.Any] },
-        "sourceServerId" -> sourceServerId.map { x => x.asInstanceOf[js.Any] },
+        "connectionsCount" -> connectionsCount.asInstanceOf[js.Any],
+        "destinationServerId" -> destinationServerId.asInstanceOf[js.Any],
+        "sourceServerId" -> sourceServerId.asInstanceOf[js.Any],
         "destinationPort" -> destinationPort.map { x => x.asInstanceOf[js.Any] },
-        "connectionsCount" -> connectionsCount.map { x => x.asInstanceOf[js.Any] },
-        "destinationServerId" -> destinationServerId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "transportProtocol" -> transportProtocol.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[NeighborConnectionDetail]
     }
@@ -1060,16 +1060,16 @@ package applicationdiscovery {
    */
   @js.native
   trait OrderByElement extends js.Object {
-    var fieldName: js.UndefOr[String]
+    var fieldName: String
     var sortOrder: js.UndefOr[orderString]
   }
 
   object OrderByElement {
     def apply(
-      fieldName: js.UndefOr[String] = js.undefined,
+      fieldName: String,
       sortOrder: js.UndefOr[orderString] = js.undefined): OrderByElement = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "fieldName" -> fieldName.map { x => x.asInstanceOf[js.Any] },
+        "fieldName" -> fieldName.asInstanceOf[js.Any],
         "sortOrder" -> sortOrder.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[OrderByElement]
@@ -1091,26 +1091,26 @@ package applicationdiscovery {
 
   @js.native
   trait StartContinuousExportResponse extends js.Object {
-    var exportId: js.UndefOr[ConfigurationsExportId]
-    var startTime: js.UndefOr[TimeStamp]
-    var s3Bucket: js.UndefOr[S3Bucket]
     var dataSource: js.UndefOr[DataSource]
+    var exportId: js.UndefOr[ConfigurationsExportId]
+    var s3Bucket: js.UndefOr[S3Bucket]
     var schemaStorageConfig: js.UndefOr[SchemaStorageConfig]
+    var startTime: js.UndefOr[TimeStamp]
   }
 
   object StartContinuousExportResponse {
     def apply(
-      exportId: js.UndefOr[ConfigurationsExportId] = js.undefined,
-      startTime: js.UndefOr[TimeStamp] = js.undefined,
-      s3Bucket: js.UndefOr[S3Bucket] = js.undefined,
       dataSource: js.UndefOr[DataSource] = js.undefined,
-      schemaStorageConfig: js.UndefOr[SchemaStorageConfig] = js.undefined): StartContinuousExportResponse = {
+      exportId: js.UndefOr[ConfigurationsExportId] = js.undefined,
+      s3Bucket: js.UndefOr[S3Bucket] = js.undefined,
+      schemaStorageConfig: js.UndefOr[SchemaStorageConfig] = js.undefined,
+      startTime: js.UndefOr[TimeStamp] = js.undefined): StartContinuousExportResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "exportId" -> exportId.map { x => x.asInstanceOf[js.Any] },
-        "startTime" -> startTime.map { x => x.asInstanceOf[js.Any] },
-        "s3Bucket" -> s3Bucket.map { x => x.asInstanceOf[js.Any] },
         "dataSource" -> dataSource.map { x => x.asInstanceOf[js.Any] },
-        "schemaStorageConfig" -> schemaStorageConfig.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "exportId" -> exportId.map { x => x.asInstanceOf[js.Any] },
+        "s3Bucket" -> s3Bucket.map { x => x.asInstanceOf[js.Any] },
+        "schemaStorageConfig" -> schemaStorageConfig.map { x => x.asInstanceOf[js.Any] },
+        "startTime" -> startTime.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StartContinuousExportResponse]
     }
@@ -1118,14 +1118,14 @@ package applicationdiscovery {
 
   @js.native
   trait StartDataCollectionByAgentIdsRequest extends js.Object {
-    var agentIds: js.UndefOr[AgentIds]
+    var agentIds: AgentIds
   }
 
   object StartDataCollectionByAgentIdsRequest {
     def apply(
-      agentIds: js.UndefOr[AgentIds] = js.undefined): StartDataCollectionByAgentIdsRequest = {
+      agentIds: AgentIds): StartDataCollectionByAgentIdsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "agentIds" -> agentIds.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "agentIds" -> agentIds.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StartDataCollectionByAgentIdsRequest]
     }
@@ -1148,23 +1148,23 @@ package applicationdiscovery {
 
   @js.native
   trait StartExportTaskRequest extends js.Object {
+    var endTime: js.UndefOr[TimeStamp]
     var exportDataFormat: js.UndefOr[ExportDataFormats]
     var filters: js.UndefOr[ExportFilters]
     var startTime: js.UndefOr[TimeStamp]
-    var endTime: js.UndefOr[TimeStamp]
   }
 
   object StartExportTaskRequest {
     def apply(
+      endTime: js.UndefOr[TimeStamp] = js.undefined,
       exportDataFormat: js.UndefOr[ExportDataFormats] = js.undefined,
       filters: js.UndefOr[ExportFilters] = js.undefined,
-      startTime: js.UndefOr[TimeStamp] = js.undefined,
-      endTime: js.UndefOr[TimeStamp] = js.undefined): StartExportTaskRequest = {
+      startTime: js.UndefOr[TimeStamp] = js.undefined): StartExportTaskRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "endTime" -> endTime.map { x => x.asInstanceOf[js.Any] },
         "exportDataFormat" -> exportDataFormat.map { x => x.asInstanceOf[js.Any] },
         "filters" -> filters.map { x => x.asInstanceOf[js.Any] },
-        "startTime" -> startTime.map { x => x.asInstanceOf[js.Any] },
-        "endTime" -> endTime.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "startTime" -> startTime.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StartExportTaskRequest]
     }
@@ -1187,14 +1187,14 @@ package applicationdiscovery {
 
   @js.native
   trait StopContinuousExportRequest extends js.Object {
-    var exportId: js.UndefOr[ConfigurationsExportId]
+    var exportId: ConfigurationsExportId
   }
 
   object StopContinuousExportRequest {
     def apply(
-      exportId: js.UndefOr[ConfigurationsExportId] = js.undefined): StopContinuousExportRequest = {
+      exportId: ConfigurationsExportId): StopContinuousExportRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "exportId" -> exportId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "exportId" -> exportId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StopContinuousExportRequest]
     }
@@ -1220,14 +1220,14 @@ package applicationdiscovery {
 
   @js.native
   trait StopDataCollectionByAgentIdsRequest extends js.Object {
-    var agentIds: js.UndefOr[AgentIds]
+    var agentIds: AgentIds
   }
 
   object StopDataCollectionByAgentIdsRequest {
     def apply(
-      agentIds: js.UndefOr[AgentIds] = js.undefined): StopDataCollectionByAgentIdsRequest = {
+      agentIds: AgentIds): StopDataCollectionByAgentIdsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "agentIds" -> agentIds.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "agentIds" -> agentIds.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StopDataCollectionByAgentIdsRequest]
     }
@@ -1253,17 +1253,17 @@ package applicationdiscovery {
    */
   @js.native
   trait Tag extends js.Object {
-    var key: js.UndefOr[TagKey]
-    var value: js.UndefOr[TagValue]
+    var key: TagKey
+    var value: TagValue
   }
 
   object Tag {
     def apply(
-      key: js.UndefOr[TagKey] = js.undefined,
-      value: js.UndefOr[TagValue] = js.undefined): Tag = {
+      key: TagKey,
+      value: TagValue): Tag = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "key" -> key.map { x => x.asInstanceOf[js.Any] },
-        "value" -> value.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "key" -> key.asInstanceOf[js.Any],
+        "value" -> value.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Tag]
     }
@@ -1274,17 +1274,17 @@ package applicationdiscovery {
    */
   @js.native
   trait TagFilter extends js.Object {
-    var name: js.UndefOr[FilterName]
-    var values: js.UndefOr[FilterValues]
+    var name: FilterName
+    var values: FilterValues
   }
 
   object TagFilter {
     def apply(
-      name: js.UndefOr[FilterName] = js.undefined,
-      values: js.UndefOr[FilterValues] = js.undefined): TagFilter = {
+      name: FilterName,
+      values: FilterValues): TagFilter = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "name" -> name.map { x => x.asInstanceOf[js.Any] },
-        "values" -> values.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "name" -> name.asInstanceOf[js.Any],
+        "values" -> values.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TagFilter]
     }
@@ -1292,20 +1292,20 @@ package applicationdiscovery {
 
   @js.native
   trait UpdateApplicationRequest extends js.Object {
-    var configurationId: js.UndefOr[ApplicationId]
-    var name: js.UndefOr[String]
+    var configurationId: ApplicationId
     var description: js.UndefOr[String]
+    var name: js.UndefOr[String]
   }
 
   object UpdateApplicationRequest {
     def apply(
-      configurationId: js.UndefOr[ApplicationId] = js.undefined,
-      name: js.UndefOr[String] = js.undefined,
-      description: js.UndefOr[String] = js.undefined): UpdateApplicationRequest = {
+      configurationId: ApplicationId,
+      description: js.UndefOr[String] = js.undefined,
+      name: js.UndefOr[String] = js.undefined): UpdateApplicationRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "configurationId" -> configurationId.map { x => x.asInstanceOf[js.Any] },
-        "name" -> name.map { x => x.asInstanceOf[js.Any] },
-        "description" -> description.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "configurationId" -> configurationId.asInstanceOf[js.Any],
+        "description" -> description.map { x => x.asInstanceOf[js.Any] },
+        "name" -> name.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateApplicationRequest]
     }

@@ -58,17 +58,17 @@ package licensemanager {
    */
   @js.native
   trait ConsumedLicenseSummary extends js.Object {
-    var ResourceType: js.UndefOr[ResourceType]
     var ConsumedLicenses: js.UndefOr[BoxLong]
+    var ResourceType: js.UndefOr[ResourceType]
   }
 
   object ConsumedLicenseSummary {
     def apply(
-      ResourceType: js.UndefOr[ResourceType] = js.undefined,
-      ConsumedLicenses: js.UndefOr[BoxLong] = js.undefined): ConsumedLicenseSummary = {
+      ConsumedLicenses: js.UndefOr[BoxLong] = js.undefined,
+      ResourceType: js.UndefOr[ResourceType] = js.undefined): ConsumedLicenseSummary = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ResourceType" -> ResourceType.map { x => x.asInstanceOf[js.Any] },
-        "ConsumedLicenses" -> ConsumedLicenses.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ConsumedLicenses" -> ConsumedLicenses.map { x => x.asInstanceOf[js.Any] },
+        "ResourceType" -> ResourceType.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ConsumedLicenseSummary]
     }
@@ -76,32 +76,32 @@ package licensemanager {
 
   @js.native
   trait CreateLicenseConfigurationRequest extends js.Object {
-    var Name: js.UndefOr[String]
-    var LicenseCountHardLimit: js.UndefOr[BoxBoolean]
+    var LicenseCountingType: LicenseCountingType
+    var Name: String
     var Description: js.UndefOr[String]
+    var LicenseCount: js.UndefOr[BoxLong]
+    var LicenseCountHardLimit: js.UndefOr[BoxBoolean]
     var LicenseRules: js.UndefOr[StringList]
     var Tags: js.UndefOr[TagList]
-    var LicenseCountingType: js.UndefOr[LicenseCountingType]
-    var LicenseCount: js.UndefOr[BoxLong]
   }
 
   object CreateLicenseConfigurationRequest {
     def apply(
-      Name: js.UndefOr[String] = js.undefined,
-      LicenseCountHardLimit: js.UndefOr[BoxBoolean] = js.undefined,
+      LicenseCountingType: LicenseCountingType,
+      Name: String,
       Description: js.UndefOr[String] = js.undefined,
+      LicenseCount: js.UndefOr[BoxLong] = js.undefined,
+      LicenseCountHardLimit: js.UndefOr[BoxBoolean] = js.undefined,
       LicenseRules: js.UndefOr[StringList] = js.undefined,
-      Tags: js.UndefOr[TagList] = js.undefined,
-      LicenseCountingType: js.UndefOr[LicenseCountingType] = js.undefined,
-      LicenseCount: js.UndefOr[BoxLong] = js.undefined): CreateLicenseConfigurationRequest = {
+      Tags: js.UndefOr[TagList] = js.undefined): CreateLicenseConfigurationRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
-        "LicenseCountHardLimit" -> LicenseCountHardLimit.map { x => x.asInstanceOf[js.Any] },
+        "LicenseCountingType" -> LicenseCountingType.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
         "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
+        "LicenseCount" -> LicenseCount.map { x => x.asInstanceOf[js.Any] },
+        "LicenseCountHardLimit" -> LicenseCountHardLimit.map { x => x.asInstanceOf[js.Any] },
         "LicenseRules" -> LicenseRules.map { x => x.asInstanceOf[js.Any] },
-        "Tags" -> Tags.map { x => x.asInstanceOf[js.Any] },
-        "LicenseCountingType" -> LicenseCountingType.map { x => x.asInstanceOf[js.Any] },
-        "LicenseCount" -> LicenseCount.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Tags" -> Tags.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateLicenseConfigurationRequest]
     }
@@ -124,14 +124,14 @@ package licensemanager {
 
   @js.native
   trait DeleteLicenseConfigurationRequest extends js.Object {
-    var LicenseConfigurationArn: js.UndefOr[String]
+    var LicenseConfigurationArn: String
   }
 
   object DeleteLicenseConfigurationRequest {
     def apply(
-      LicenseConfigurationArn: js.UndefOr[String] = js.undefined): DeleteLicenseConfigurationRequest = {
+      LicenseConfigurationArn: String): DeleteLicenseConfigurationRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "LicenseConfigurationArn" -> LicenseConfigurationArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "LicenseConfigurationArn" -> LicenseConfigurationArn.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteLicenseConfigurationRequest]
     }
@@ -173,14 +173,14 @@ package licensemanager {
 
   @js.native
   trait GetLicenseConfigurationRequest extends js.Object {
-    var LicenseConfigurationArn: js.UndefOr[String]
+    var LicenseConfigurationArn: String
   }
 
   object GetLicenseConfigurationRequest {
     def apply(
-      LicenseConfigurationArn: js.UndefOr[String] = js.undefined): GetLicenseConfigurationRequest = {
+      LicenseConfigurationArn: String): GetLicenseConfigurationRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "LicenseConfigurationArn" -> LicenseConfigurationArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "LicenseConfigurationArn" -> LicenseConfigurationArn.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetLicenseConfigurationRequest]
     }
@@ -188,53 +188,53 @@ package licensemanager {
 
   @js.native
   trait GetLicenseConfigurationResponse extends js.Object {
-    var LicenseConfigurationArn: js.UndefOr[String]
     var ConsumedLicenseSummaryList: js.UndefOr[ConsumedLicenseSummaryList]
+    var ConsumedLicenses: js.UndefOr[BoxLong]
+    var Description: js.UndefOr[String]
+    var LicenseConfigurationArn: js.UndefOr[String]
+    var LicenseConfigurationId: js.UndefOr[String]
+    var LicenseCount: js.UndefOr[BoxLong]
+    var LicenseCountHardLimit: js.UndefOr[BoxBoolean]
+    var LicenseCountingType: js.UndefOr[LicenseCountingType]
+    var LicenseRules: js.UndefOr[StringList]
+    var ManagedResourceSummaryList: js.UndefOr[ManagedResourceSummaryList]
     var Name: js.UndefOr[String]
     var OwnerAccountId: js.UndefOr[String]
-    var LicenseCountHardLimit: js.UndefOr[BoxBoolean]
-    var LicenseConfigurationId: js.UndefOr[String]
-    var Description: js.UndefOr[String]
-    var LicenseRules: js.UndefOr[StringList]
-    var Tags: js.UndefOr[TagList]
-    var LicenseCountingType: js.UndefOr[LicenseCountingType]
-    var ConsumedLicenses: js.UndefOr[BoxLong]
-    var ManagedResourceSummaryList: js.UndefOr[ManagedResourceSummaryList]
     var Status: js.UndefOr[String]
-    var LicenseCount: js.UndefOr[BoxLong]
+    var Tags: js.UndefOr[TagList]
   }
 
   object GetLicenseConfigurationResponse {
     def apply(
-      LicenseConfigurationArn: js.UndefOr[String] = js.undefined,
       ConsumedLicenseSummaryList: js.UndefOr[ConsumedLicenseSummaryList] = js.undefined,
+      ConsumedLicenses: js.UndefOr[BoxLong] = js.undefined,
+      Description: js.UndefOr[String] = js.undefined,
+      LicenseConfigurationArn: js.UndefOr[String] = js.undefined,
+      LicenseConfigurationId: js.UndefOr[String] = js.undefined,
+      LicenseCount: js.UndefOr[BoxLong] = js.undefined,
+      LicenseCountHardLimit: js.UndefOr[BoxBoolean] = js.undefined,
+      LicenseCountingType: js.UndefOr[LicenseCountingType] = js.undefined,
+      LicenseRules: js.UndefOr[StringList] = js.undefined,
+      ManagedResourceSummaryList: js.UndefOr[ManagedResourceSummaryList] = js.undefined,
       Name: js.UndefOr[String] = js.undefined,
       OwnerAccountId: js.UndefOr[String] = js.undefined,
-      LicenseCountHardLimit: js.UndefOr[BoxBoolean] = js.undefined,
-      LicenseConfigurationId: js.UndefOr[String] = js.undefined,
-      Description: js.UndefOr[String] = js.undefined,
-      LicenseRules: js.UndefOr[StringList] = js.undefined,
-      Tags: js.UndefOr[TagList] = js.undefined,
-      LicenseCountingType: js.UndefOr[LicenseCountingType] = js.undefined,
-      ConsumedLicenses: js.UndefOr[BoxLong] = js.undefined,
-      ManagedResourceSummaryList: js.UndefOr[ManagedResourceSummaryList] = js.undefined,
       Status: js.UndefOr[String] = js.undefined,
-      LicenseCount: js.UndefOr[BoxLong] = js.undefined): GetLicenseConfigurationResponse = {
+      Tags: js.UndefOr[TagList] = js.undefined): GetLicenseConfigurationResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "LicenseConfigurationArn" -> LicenseConfigurationArn.map { x => x.asInstanceOf[js.Any] },
         "ConsumedLicenseSummaryList" -> ConsumedLicenseSummaryList.map { x => x.asInstanceOf[js.Any] },
+        "ConsumedLicenses" -> ConsumedLicenses.map { x => x.asInstanceOf[js.Any] },
+        "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
+        "LicenseConfigurationArn" -> LicenseConfigurationArn.map { x => x.asInstanceOf[js.Any] },
+        "LicenseConfigurationId" -> LicenseConfigurationId.map { x => x.asInstanceOf[js.Any] },
+        "LicenseCount" -> LicenseCount.map { x => x.asInstanceOf[js.Any] },
+        "LicenseCountHardLimit" -> LicenseCountHardLimit.map { x => x.asInstanceOf[js.Any] },
+        "LicenseCountingType" -> LicenseCountingType.map { x => x.asInstanceOf[js.Any] },
+        "LicenseRules" -> LicenseRules.map { x => x.asInstanceOf[js.Any] },
+        "ManagedResourceSummaryList" -> ManagedResourceSummaryList.map { x => x.asInstanceOf[js.Any] },
         "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
         "OwnerAccountId" -> OwnerAccountId.map { x => x.asInstanceOf[js.Any] },
-        "LicenseCountHardLimit" -> LicenseCountHardLimit.map { x => x.asInstanceOf[js.Any] },
-        "LicenseConfigurationId" -> LicenseConfigurationId.map { x => x.asInstanceOf[js.Any] },
-        "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
-        "LicenseRules" -> LicenseRules.map { x => x.asInstanceOf[js.Any] },
-        "Tags" -> Tags.map { x => x.asInstanceOf[js.Any] },
-        "LicenseCountingType" -> LicenseCountingType.map { x => x.asInstanceOf[js.Any] },
-        "ConsumedLicenses" -> ConsumedLicenses.map { x => x.asInstanceOf[js.Any] },
-        "ManagedResourceSummaryList" -> ManagedResourceSummaryList.map { x => x.asInstanceOf[js.Any] },
         "Status" -> Status.map { x => x.asInstanceOf[js.Any] },
-        "LicenseCount" -> LicenseCount.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Tags" -> Tags.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetLicenseConfigurationResponse]
     }
@@ -255,23 +255,23 @@ package licensemanager {
 
   @js.native
   trait GetServiceSettingsResponse extends js.Object {
+    var EnableCrossAccountsDiscovery: js.UndefOr[BoxBoolean]
+    var OrganizationConfiguration: js.UndefOr[OrganizationConfiguration]
     var S3BucketArn: js.UndefOr[String]
     var SnsTopicArn: js.UndefOr[String]
-    var OrganizationConfiguration: js.UndefOr[OrganizationConfiguration]
-    var EnableCrossAccountsDiscovery: js.UndefOr[BoxBoolean]
   }
 
   object GetServiceSettingsResponse {
     def apply(
-      S3BucketArn: js.UndefOr[String] = js.undefined,
-      SnsTopicArn: js.UndefOr[String] = js.undefined,
+      EnableCrossAccountsDiscovery: js.UndefOr[BoxBoolean] = js.undefined,
       OrganizationConfiguration: js.UndefOr[OrganizationConfiguration] = js.undefined,
-      EnableCrossAccountsDiscovery: js.UndefOr[BoxBoolean] = js.undefined): GetServiceSettingsResponse = {
+      S3BucketArn: js.UndefOr[String] = js.undefined,
+      SnsTopicArn: js.UndefOr[String] = js.undefined): GetServiceSettingsResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "S3BucketArn" -> S3BucketArn.map { x => x.asInstanceOf[js.Any] },
-        "SnsTopicArn" -> SnsTopicArn.map { x => x.asInstanceOf[js.Any] },
+        "EnableCrossAccountsDiscovery" -> EnableCrossAccountsDiscovery.map { x => x.asInstanceOf[js.Any] },
         "OrganizationConfiguration" -> OrganizationConfiguration.map { x => x.asInstanceOf[js.Any] },
-        "EnableCrossAccountsDiscovery" -> EnableCrossAccountsDiscovery.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "S3BucketArn" -> S3BucketArn.map { x => x.asInstanceOf[js.Any] },
+        "SnsTopicArn" -> SnsTopicArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetServiceSettingsResponse]
     }
@@ -282,19 +282,19 @@ package licensemanager {
    */
   @js.native
   trait InventoryFilter extends js.Object {
-    var Name: js.UndefOr[String]
-    var Condition: js.UndefOr[InventoryFilterCondition]
+    var Condition: InventoryFilterCondition
+    var Name: String
     var Value: js.UndefOr[String]
   }
 
   object InventoryFilter {
     def apply(
-      Name: js.UndefOr[String] = js.undefined,
-      Condition: js.UndefOr[InventoryFilterCondition] = js.undefined,
+      Condition: InventoryFilterCondition,
+      Name: String,
       Value: js.UndefOr[String] = js.undefined): InventoryFilter = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
-        "Condition" -> Condition.map { x => x.asInstanceOf[js.Any] },
+        "Condition" -> Condition.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
         "Value" -> Value.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[InventoryFilter]
@@ -315,50 +315,50 @@ package licensemanager {
    */
   @js.native
   trait LicenseConfiguration extends js.Object {
-    var LicenseConfigurationArn: js.UndefOr[String]
     var ConsumedLicenseSummaryList: js.UndefOr[ConsumedLicenseSummaryList]
+    var ConsumedLicenses: js.UndefOr[BoxLong]
+    var Description: js.UndefOr[String]
+    var LicenseConfigurationArn: js.UndefOr[String]
+    var LicenseConfigurationId: js.UndefOr[String]
+    var LicenseCount: js.UndefOr[BoxLong]
+    var LicenseCountHardLimit: js.UndefOr[BoxBoolean]
+    var LicenseCountingType: js.UndefOr[LicenseCountingType]
+    var LicenseRules: js.UndefOr[StringList]
+    var ManagedResourceSummaryList: js.UndefOr[ManagedResourceSummaryList]
     var Name: js.UndefOr[String]
     var OwnerAccountId: js.UndefOr[String]
-    var LicenseCountHardLimit: js.UndefOr[BoxBoolean]
-    var LicenseConfigurationId: js.UndefOr[String]
-    var Description: js.UndefOr[String]
-    var LicenseRules: js.UndefOr[StringList]
-    var LicenseCountingType: js.UndefOr[LicenseCountingType]
-    var ConsumedLicenses: js.UndefOr[BoxLong]
-    var ManagedResourceSummaryList: js.UndefOr[ManagedResourceSummaryList]
     var Status: js.UndefOr[String]
-    var LicenseCount: js.UndefOr[BoxLong]
   }
 
   object LicenseConfiguration {
     def apply(
-      LicenseConfigurationArn: js.UndefOr[String] = js.undefined,
       ConsumedLicenseSummaryList: js.UndefOr[ConsumedLicenseSummaryList] = js.undefined,
+      ConsumedLicenses: js.UndefOr[BoxLong] = js.undefined,
+      Description: js.UndefOr[String] = js.undefined,
+      LicenseConfigurationArn: js.UndefOr[String] = js.undefined,
+      LicenseConfigurationId: js.UndefOr[String] = js.undefined,
+      LicenseCount: js.UndefOr[BoxLong] = js.undefined,
+      LicenseCountHardLimit: js.UndefOr[BoxBoolean] = js.undefined,
+      LicenseCountingType: js.UndefOr[LicenseCountingType] = js.undefined,
+      LicenseRules: js.UndefOr[StringList] = js.undefined,
+      ManagedResourceSummaryList: js.UndefOr[ManagedResourceSummaryList] = js.undefined,
       Name: js.UndefOr[String] = js.undefined,
       OwnerAccountId: js.UndefOr[String] = js.undefined,
-      LicenseCountHardLimit: js.UndefOr[BoxBoolean] = js.undefined,
-      LicenseConfigurationId: js.UndefOr[String] = js.undefined,
-      Description: js.UndefOr[String] = js.undefined,
-      LicenseRules: js.UndefOr[StringList] = js.undefined,
-      LicenseCountingType: js.UndefOr[LicenseCountingType] = js.undefined,
-      ConsumedLicenses: js.UndefOr[BoxLong] = js.undefined,
-      ManagedResourceSummaryList: js.UndefOr[ManagedResourceSummaryList] = js.undefined,
-      Status: js.UndefOr[String] = js.undefined,
-      LicenseCount: js.UndefOr[BoxLong] = js.undefined): LicenseConfiguration = {
+      Status: js.UndefOr[String] = js.undefined): LicenseConfiguration = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "LicenseConfigurationArn" -> LicenseConfigurationArn.map { x => x.asInstanceOf[js.Any] },
         "ConsumedLicenseSummaryList" -> ConsumedLicenseSummaryList.map { x => x.asInstanceOf[js.Any] },
+        "ConsumedLicenses" -> ConsumedLicenses.map { x => x.asInstanceOf[js.Any] },
+        "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
+        "LicenseConfigurationArn" -> LicenseConfigurationArn.map { x => x.asInstanceOf[js.Any] },
+        "LicenseConfigurationId" -> LicenseConfigurationId.map { x => x.asInstanceOf[js.Any] },
+        "LicenseCount" -> LicenseCount.map { x => x.asInstanceOf[js.Any] },
+        "LicenseCountHardLimit" -> LicenseCountHardLimit.map { x => x.asInstanceOf[js.Any] },
+        "LicenseCountingType" -> LicenseCountingType.map { x => x.asInstanceOf[js.Any] },
+        "LicenseRules" -> LicenseRules.map { x => x.asInstanceOf[js.Any] },
+        "ManagedResourceSummaryList" -> ManagedResourceSummaryList.map { x => x.asInstanceOf[js.Any] },
         "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
         "OwnerAccountId" -> OwnerAccountId.map { x => x.asInstanceOf[js.Any] },
-        "LicenseCountHardLimit" -> LicenseCountHardLimit.map { x => x.asInstanceOf[js.Any] },
-        "LicenseConfigurationId" -> LicenseConfigurationId.map { x => x.asInstanceOf[js.Any] },
-        "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
-        "LicenseRules" -> LicenseRules.map { x => x.asInstanceOf[js.Any] },
-        "LicenseCountingType" -> LicenseCountingType.map { x => x.asInstanceOf[js.Any] },
-        "ConsumedLicenses" -> ConsumedLicenses.map { x => x.asInstanceOf[js.Any] },
-        "ManagedResourceSummaryList" -> ManagedResourceSummaryList.map { x => x.asInstanceOf[js.Any] },
-        "Status" -> Status.map { x => x.asInstanceOf[js.Any] },
-        "LicenseCount" -> LicenseCount.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Status" -> Status.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[LicenseConfiguration]
     }
@@ -369,23 +369,23 @@ package licensemanager {
    */
   @js.native
   trait LicenseConfigurationAssociation extends js.Object {
-    var ResourceArn: js.UndefOr[String]
-    var ResourceType: js.UndefOr[ResourceType]
-    var ResourceOwnerId: js.UndefOr[String]
     var AssociationTime: js.UndefOr[DateTime]
+    var ResourceArn: js.UndefOr[String]
+    var ResourceOwnerId: js.UndefOr[String]
+    var ResourceType: js.UndefOr[ResourceType]
   }
 
   object LicenseConfigurationAssociation {
     def apply(
+      AssociationTime: js.UndefOr[DateTime] = js.undefined,
       ResourceArn: js.UndefOr[String] = js.undefined,
-      ResourceType: js.UndefOr[ResourceType] = js.undefined,
       ResourceOwnerId: js.UndefOr[String] = js.undefined,
-      AssociationTime: js.UndefOr[DateTime] = js.undefined): LicenseConfigurationAssociation = {
+      ResourceType: js.UndefOr[ResourceType] = js.undefined): LicenseConfigurationAssociation = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "AssociationTime" -> AssociationTime.map { x => x.asInstanceOf[js.Any] },
         "ResourceArn" -> ResourceArn.map { x => x.asInstanceOf[js.Any] },
-        "ResourceType" -> ResourceType.map { x => x.asInstanceOf[js.Any] },
         "ResourceOwnerId" -> ResourceOwnerId.map { x => x.asInstanceOf[js.Any] },
-        "AssociationTime" -> AssociationTime.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ResourceType" -> ResourceType.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[LicenseConfigurationAssociation]
     }
@@ -403,29 +403,29 @@ package licensemanager {
    */
   @js.native
   trait LicenseConfigurationUsage extends js.Object {
-    var ResourceStatus: js.UndefOr[String]
-    var ResourceArn: js.UndefOr[String]
-    var ResourceType: js.UndefOr[ResourceType]
-    var ResourceOwnerId: js.UndefOr[String]
     var AssociationTime: js.UndefOr[DateTime]
     var ConsumedLicenses: js.UndefOr[BoxLong]
+    var ResourceArn: js.UndefOr[String]
+    var ResourceOwnerId: js.UndefOr[String]
+    var ResourceStatus: js.UndefOr[String]
+    var ResourceType: js.UndefOr[ResourceType]
   }
 
   object LicenseConfigurationUsage {
     def apply(
-      ResourceStatus: js.UndefOr[String] = js.undefined,
-      ResourceArn: js.UndefOr[String] = js.undefined,
-      ResourceType: js.UndefOr[ResourceType] = js.undefined,
-      ResourceOwnerId: js.UndefOr[String] = js.undefined,
       AssociationTime: js.UndefOr[DateTime] = js.undefined,
-      ConsumedLicenses: js.UndefOr[BoxLong] = js.undefined): LicenseConfigurationUsage = {
+      ConsumedLicenses: js.UndefOr[BoxLong] = js.undefined,
+      ResourceArn: js.UndefOr[String] = js.undefined,
+      ResourceOwnerId: js.UndefOr[String] = js.undefined,
+      ResourceStatus: js.UndefOr[String] = js.undefined,
+      ResourceType: js.UndefOr[ResourceType] = js.undefined): LicenseConfigurationUsage = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ResourceStatus" -> ResourceStatus.map { x => x.asInstanceOf[js.Any] },
-        "ResourceArn" -> ResourceArn.map { x => x.asInstanceOf[js.Any] },
-        "ResourceType" -> ResourceType.map { x => x.asInstanceOf[js.Any] },
-        "ResourceOwnerId" -> ResourceOwnerId.map { x => x.asInstanceOf[js.Any] },
         "AssociationTime" -> AssociationTime.map { x => x.asInstanceOf[js.Any] },
-        "ConsumedLicenses" -> ConsumedLicenses.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ConsumedLicenses" -> ConsumedLicenses.map { x => x.asInstanceOf[js.Any] },
+        "ResourceArn" -> ResourceArn.map { x => x.asInstanceOf[js.Any] },
+        "ResourceOwnerId" -> ResourceOwnerId.map { x => x.asInstanceOf[js.Any] },
+        "ResourceStatus" -> ResourceStatus.map { x => x.asInstanceOf[js.Any] },
+        "ResourceType" -> ResourceType.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[LicenseConfigurationUsage]
     }
@@ -445,14 +445,14 @@ package licensemanager {
    */
   @js.native
   trait LicenseSpecification extends js.Object {
-    var LicenseConfigurationArn: js.UndefOr[String]
+    var LicenseConfigurationArn: String
   }
 
   object LicenseSpecification {
     def apply(
-      LicenseConfigurationArn: js.UndefOr[String] = js.undefined): LicenseSpecification = {
+      LicenseConfigurationArn: String): LicenseSpecification = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "LicenseConfigurationArn" -> LicenseConfigurationArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "LicenseConfigurationArn" -> LicenseConfigurationArn.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[LicenseSpecification]
     }
@@ -460,18 +460,18 @@ package licensemanager {
 
   @js.native
   trait ListAssociationsForLicenseConfigurationRequest extends js.Object {
-    var LicenseConfigurationArn: js.UndefOr[String]
+    var LicenseConfigurationArn: String
     var MaxResults: js.UndefOr[BoxInteger]
     var NextToken: js.UndefOr[String]
   }
 
   object ListAssociationsForLicenseConfigurationRequest {
     def apply(
-      LicenseConfigurationArn: js.UndefOr[String] = js.undefined,
+      LicenseConfigurationArn: String,
       MaxResults: js.UndefOr[BoxInteger] = js.undefined,
       NextToken: js.UndefOr[String] = js.undefined): ListAssociationsForLicenseConfigurationRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "LicenseConfigurationArn" -> LicenseConfigurationArn.map { x => x.asInstanceOf[js.Any] },
+        "LicenseConfigurationArn" -> LicenseConfigurationArn.asInstanceOf[js.Any],
         "MaxResults" -> MaxResults.map { x => x.asInstanceOf[js.Any] },
         "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
@@ -499,23 +499,23 @@ package licensemanager {
 
   @js.native
   trait ListLicenseConfigurationsRequest extends js.Object {
+    var Filters: js.UndefOr[Filters]
     var LicenseConfigurationArns: js.UndefOr[StringList]
     var MaxResults: js.UndefOr[BoxInteger]
     var NextToken: js.UndefOr[String]
-    var Filters: js.UndefOr[Filters]
   }
 
   object ListLicenseConfigurationsRequest {
     def apply(
+      Filters: js.UndefOr[Filters] = js.undefined,
       LicenseConfigurationArns: js.UndefOr[StringList] = js.undefined,
       MaxResults: js.UndefOr[BoxInteger] = js.undefined,
-      NextToken: js.UndefOr[String] = js.undefined,
-      Filters: js.UndefOr[Filters] = js.undefined): ListLicenseConfigurationsRequest = {
+      NextToken: js.UndefOr[String] = js.undefined): ListLicenseConfigurationsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "Filters" -> Filters.map { x => x.asInstanceOf[js.Any] },
         "LicenseConfigurationArns" -> LicenseConfigurationArns.map { x => x.asInstanceOf[js.Any] },
         "MaxResults" -> MaxResults.map { x => x.asInstanceOf[js.Any] },
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
-        "Filters" -> Filters.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListLicenseConfigurationsRequest]
     }
@@ -541,18 +541,18 @@ package licensemanager {
 
   @js.native
   trait ListLicenseSpecificationsForResourceRequest extends js.Object {
-    var ResourceArn: js.UndefOr[String]
+    var ResourceArn: String
     var MaxResults: js.UndefOr[BoxInteger]
     var NextToken: js.UndefOr[String]
   }
 
   object ListLicenseSpecificationsForResourceRequest {
     def apply(
-      ResourceArn: js.UndefOr[String] = js.undefined,
+      ResourceArn: String,
       MaxResults: js.UndefOr[BoxInteger] = js.undefined,
       NextToken: js.UndefOr[String] = js.undefined): ListLicenseSpecificationsForResourceRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ResourceArn" -> ResourceArn.map { x => x.asInstanceOf[js.Any] },
+        "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
         "MaxResults" -> MaxResults.map { x => x.asInstanceOf[js.Any] },
         "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
@@ -580,20 +580,20 @@ package licensemanager {
 
   @js.native
   trait ListResourceInventoryRequest extends js.Object {
+    var Filters: js.UndefOr[InventoryFilterList]
     var MaxResults: js.UndefOr[BoxInteger]
     var NextToken: js.UndefOr[String]
-    var Filters: js.UndefOr[InventoryFilterList]
   }
 
   object ListResourceInventoryRequest {
     def apply(
+      Filters: js.UndefOr[InventoryFilterList] = js.undefined,
       MaxResults: js.UndefOr[BoxInteger] = js.undefined,
-      NextToken: js.UndefOr[String] = js.undefined,
-      Filters: js.UndefOr[InventoryFilterList] = js.undefined): ListResourceInventoryRequest = {
+      NextToken: js.UndefOr[String] = js.undefined): ListResourceInventoryRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "Filters" -> Filters.map { x => x.asInstanceOf[js.Any] },
         "MaxResults" -> MaxResults.map { x => x.asInstanceOf[js.Any] },
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
-        "Filters" -> Filters.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListResourceInventoryRequest]
     }
@@ -601,17 +601,17 @@ package licensemanager {
 
   @js.native
   trait ListResourceInventoryResponse extends js.Object {
-    var ResourceInventoryList: js.UndefOr[ResourceInventoryList]
     var NextToken: js.UndefOr[String]
+    var ResourceInventoryList: js.UndefOr[ResourceInventoryList]
   }
 
   object ListResourceInventoryResponse {
     def apply(
-      ResourceInventoryList: js.UndefOr[ResourceInventoryList] = js.undefined,
-      NextToken: js.UndefOr[String] = js.undefined): ListResourceInventoryResponse = {
+      NextToken: js.UndefOr[String] = js.undefined,
+      ResourceInventoryList: js.UndefOr[ResourceInventoryList] = js.undefined): ListResourceInventoryResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ResourceInventoryList" -> ResourceInventoryList.map { x => x.asInstanceOf[js.Any] },
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
+        "ResourceInventoryList" -> ResourceInventoryList.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListResourceInventoryResponse]
     }
@@ -619,14 +619,14 @@ package licensemanager {
 
   @js.native
   trait ListTagsForResourceRequest extends js.Object {
-    var ResourceArn: js.UndefOr[String]
+    var ResourceArn: String
   }
 
   object ListTagsForResourceRequest {
     def apply(
-      ResourceArn: js.UndefOr[String] = js.undefined): ListTagsForResourceRequest = {
+      ResourceArn: String): ListTagsForResourceRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ResourceArn" -> ResourceArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListTagsForResourceRequest]
     }
@@ -649,23 +649,23 @@ package licensemanager {
 
   @js.native
   trait ListUsageForLicenseConfigurationRequest extends js.Object {
-    var LicenseConfigurationArn: js.UndefOr[String]
+    var LicenseConfigurationArn: String
+    var Filters: js.UndefOr[Filters]
     var MaxResults: js.UndefOr[BoxInteger]
     var NextToken: js.UndefOr[String]
-    var Filters: js.UndefOr[Filters]
   }
 
   object ListUsageForLicenseConfigurationRequest {
     def apply(
-      LicenseConfigurationArn: js.UndefOr[String] = js.undefined,
+      LicenseConfigurationArn: String,
+      Filters: js.UndefOr[Filters] = js.undefined,
       MaxResults: js.UndefOr[BoxInteger] = js.undefined,
-      NextToken: js.UndefOr[String] = js.undefined,
-      Filters: js.UndefOr[Filters] = js.undefined): ListUsageForLicenseConfigurationRequest = {
+      NextToken: js.UndefOr[String] = js.undefined): ListUsageForLicenseConfigurationRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "LicenseConfigurationArn" -> LicenseConfigurationArn.map { x => x.asInstanceOf[js.Any] },
+        "LicenseConfigurationArn" -> LicenseConfigurationArn.asInstanceOf[js.Any],
+        "Filters" -> Filters.map { x => x.asInstanceOf[js.Any] },
         "MaxResults" -> MaxResults.map { x => x.asInstanceOf[js.Any] },
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
-        "Filters" -> Filters.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListUsageForLicenseConfigurationRequest]
     }
@@ -694,17 +694,17 @@ package licensemanager {
    */
   @js.native
   trait ManagedResourceSummary extends js.Object {
-    var ResourceType: js.UndefOr[ResourceType]
     var AssociationCount: js.UndefOr[BoxLong]
+    var ResourceType: js.UndefOr[ResourceType]
   }
 
   object ManagedResourceSummary {
     def apply(
-      ResourceType: js.UndefOr[ResourceType] = js.undefined,
-      AssociationCount: js.UndefOr[BoxLong] = js.undefined): ManagedResourceSummary = {
+      AssociationCount: js.UndefOr[BoxLong] = js.undefined,
+      ResourceType: js.UndefOr[ResourceType] = js.undefined): ManagedResourceSummary = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ResourceType" -> ResourceType.map { x => x.asInstanceOf[js.Any] },
-        "AssociationCount" -> AssociationCount.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "AssociationCount" -> AssociationCount.map { x => x.asInstanceOf[js.Any] },
+        "ResourceType" -> ResourceType.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ManagedResourceSummary]
     }
@@ -715,14 +715,14 @@ package licensemanager {
    */
   @js.native
   trait OrganizationConfiguration extends js.Object {
-    var EnableIntegration: js.UndefOr[Boolean]
+    var EnableIntegration: Boolean
   }
 
   object OrganizationConfiguration {
     def apply(
-      EnableIntegration: js.UndefOr[Boolean] = js.undefined): OrganizationConfiguration = {
+      EnableIntegration: Boolean): OrganizationConfiguration = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "EnableIntegration" -> EnableIntegration.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "EnableIntegration" -> EnableIntegration.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[OrganizationConfiguration]
     }
@@ -733,29 +733,29 @@ package licensemanager {
    */
   @js.native
   trait ResourceInventory extends js.Object {
-    var ResourceId: js.UndefOr[String]
+    var Platform: js.UndefOr[String]
     var PlatformVersion: js.UndefOr[String]
     var ResourceArn: js.UndefOr[String]
-    var Platform: js.UndefOr[String]
-    var ResourceType: js.UndefOr[ResourceType]
+    var ResourceId: js.UndefOr[String]
     var ResourceOwningAccountId: js.UndefOr[String]
+    var ResourceType: js.UndefOr[ResourceType]
   }
 
   object ResourceInventory {
     def apply(
-      ResourceId: js.UndefOr[String] = js.undefined,
+      Platform: js.UndefOr[String] = js.undefined,
       PlatformVersion: js.UndefOr[String] = js.undefined,
       ResourceArn: js.UndefOr[String] = js.undefined,
-      Platform: js.UndefOr[String] = js.undefined,
-      ResourceType: js.UndefOr[ResourceType] = js.undefined,
-      ResourceOwningAccountId: js.UndefOr[String] = js.undefined): ResourceInventory = {
+      ResourceId: js.UndefOr[String] = js.undefined,
+      ResourceOwningAccountId: js.UndefOr[String] = js.undefined,
+      ResourceType: js.UndefOr[ResourceType] = js.undefined): ResourceInventory = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ResourceId" -> ResourceId.map { x => x.asInstanceOf[js.Any] },
+        "Platform" -> Platform.map { x => x.asInstanceOf[js.Any] },
         "PlatformVersion" -> PlatformVersion.map { x => x.asInstanceOf[js.Any] },
         "ResourceArn" -> ResourceArn.map { x => x.asInstanceOf[js.Any] },
-        "Platform" -> Platform.map { x => x.asInstanceOf[js.Any] },
-        "ResourceType" -> ResourceType.map { x => x.asInstanceOf[js.Any] },
-        "ResourceOwningAccountId" -> ResourceOwningAccountId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ResourceId" -> ResourceId.map { x => x.asInstanceOf[js.Any] },
+        "ResourceOwningAccountId" -> ResourceOwningAccountId.map { x => x.asInstanceOf[js.Any] },
+        "ResourceType" -> ResourceType.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ResourceInventory]
     }
@@ -792,17 +792,17 @@ package licensemanager {
 
   @js.native
   trait TagResourceRequest extends js.Object {
-    var ResourceArn: js.UndefOr[String]
-    var Tags: js.UndefOr[TagList]
+    var ResourceArn: String
+    var Tags: TagList
   }
 
   object TagResourceRequest {
     def apply(
-      ResourceArn: js.UndefOr[String] = js.undefined,
-      Tags: js.UndefOr[TagList] = js.undefined): TagResourceRequest = {
+      ResourceArn: String,
+      Tags: TagList): TagResourceRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ResourceArn" -> ResourceArn.map { x => x.asInstanceOf[js.Any] },
-        "Tags" -> Tags.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
+        "Tags" -> Tags.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TagResourceRequest]
     }
@@ -823,17 +823,17 @@ package licensemanager {
 
   @js.native
   trait UntagResourceRequest extends js.Object {
-    var ResourceArn: js.UndefOr[String]
-    var TagKeys: js.UndefOr[TagKeyList]
+    var ResourceArn: String
+    var TagKeys: TagKeyList
   }
 
   object UntagResourceRequest {
     def apply(
-      ResourceArn: js.UndefOr[String] = js.undefined,
-      TagKeys: js.UndefOr[TagKeyList] = js.undefined): UntagResourceRequest = {
+      ResourceArn: String,
+      TagKeys: TagKeyList): UntagResourceRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ResourceArn" -> ResourceArn.map { x => x.asInstanceOf[js.Any] },
-        "TagKeys" -> TagKeys.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
+        "TagKeys" -> TagKeys.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UntagResourceRequest]
     }
@@ -854,32 +854,32 @@ package licensemanager {
 
   @js.native
   trait UpdateLicenseConfigurationRequest extends js.Object {
-    var LicenseConfigurationArn: js.UndefOr[String]
-    var Name: js.UndefOr[String]
-    var LicenseCountHardLimit: js.UndefOr[BoxBoolean]
+    var LicenseConfigurationArn: String
     var Description: js.UndefOr[String]
-    var LicenseRules: js.UndefOr[StringList]
     var LicenseConfigurationStatus: js.UndefOr[LicenseConfigurationStatus]
     var LicenseCount: js.UndefOr[BoxLong]
+    var LicenseCountHardLimit: js.UndefOr[BoxBoolean]
+    var LicenseRules: js.UndefOr[StringList]
+    var Name: js.UndefOr[String]
   }
 
   object UpdateLicenseConfigurationRequest {
     def apply(
-      LicenseConfigurationArn: js.UndefOr[String] = js.undefined,
-      Name: js.UndefOr[String] = js.undefined,
-      LicenseCountHardLimit: js.UndefOr[BoxBoolean] = js.undefined,
+      LicenseConfigurationArn: String,
       Description: js.UndefOr[String] = js.undefined,
-      LicenseRules: js.UndefOr[StringList] = js.undefined,
       LicenseConfigurationStatus: js.UndefOr[LicenseConfigurationStatus] = js.undefined,
-      LicenseCount: js.UndefOr[BoxLong] = js.undefined): UpdateLicenseConfigurationRequest = {
+      LicenseCount: js.UndefOr[BoxLong] = js.undefined,
+      LicenseCountHardLimit: js.UndefOr[BoxBoolean] = js.undefined,
+      LicenseRules: js.UndefOr[StringList] = js.undefined,
+      Name: js.UndefOr[String] = js.undefined): UpdateLicenseConfigurationRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "LicenseConfigurationArn" -> LicenseConfigurationArn.map { x => x.asInstanceOf[js.Any] },
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
-        "LicenseCountHardLimit" -> LicenseCountHardLimit.map { x => x.asInstanceOf[js.Any] },
+        "LicenseConfigurationArn" -> LicenseConfigurationArn.asInstanceOf[js.Any],
         "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
-        "LicenseRules" -> LicenseRules.map { x => x.asInstanceOf[js.Any] },
         "LicenseConfigurationStatus" -> LicenseConfigurationStatus.map { x => x.asInstanceOf[js.Any] },
-        "LicenseCount" -> LicenseCount.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "LicenseCount" -> LicenseCount.map { x => x.asInstanceOf[js.Any] },
+        "LicenseCountHardLimit" -> LicenseCountHardLimit.map { x => x.asInstanceOf[js.Any] },
+        "LicenseRules" -> LicenseRules.map { x => x.asInstanceOf[js.Any] },
+        "Name" -> Name.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateLicenseConfigurationRequest]
     }
@@ -900,18 +900,18 @@ package licensemanager {
 
   @js.native
   trait UpdateLicenseSpecificationsForResourceRequest extends js.Object {
-    var ResourceArn: js.UndefOr[String]
+    var ResourceArn: String
     var AddLicenseSpecifications: js.UndefOr[LicenseSpecifications]
     var RemoveLicenseSpecifications: js.UndefOr[LicenseSpecifications]
   }
 
   object UpdateLicenseSpecificationsForResourceRequest {
     def apply(
-      ResourceArn: js.UndefOr[String] = js.undefined,
+      ResourceArn: String,
       AddLicenseSpecifications: js.UndefOr[LicenseSpecifications] = js.undefined,
       RemoveLicenseSpecifications: js.UndefOr[LicenseSpecifications] = js.undefined): UpdateLicenseSpecificationsForResourceRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ResourceArn" -> ResourceArn.map { x => x.asInstanceOf[js.Any] },
+        "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
         "AddLicenseSpecifications" -> AddLicenseSpecifications.map { x => x.asInstanceOf[js.Any] },
         "RemoveLicenseSpecifications" -> RemoveLicenseSpecifications.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
@@ -934,23 +934,23 @@ package licensemanager {
 
   @js.native
   trait UpdateServiceSettingsRequest extends js.Object {
+    var EnableCrossAccountsDiscovery: js.UndefOr[BoxBoolean]
+    var OrganizationConfiguration: js.UndefOr[OrganizationConfiguration]
     var S3BucketArn: js.UndefOr[String]
     var SnsTopicArn: js.UndefOr[String]
-    var OrganizationConfiguration: js.UndefOr[OrganizationConfiguration]
-    var EnableCrossAccountsDiscovery: js.UndefOr[BoxBoolean]
   }
 
   object UpdateServiceSettingsRequest {
     def apply(
-      S3BucketArn: js.UndefOr[String] = js.undefined,
-      SnsTopicArn: js.UndefOr[String] = js.undefined,
+      EnableCrossAccountsDiscovery: js.UndefOr[BoxBoolean] = js.undefined,
       OrganizationConfiguration: js.UndefOr[OrganizationConfiguration] = js.undefined,
-      EnableCrossAccountsDiscovery: js.UndefOr[BoxBoolean] = js.undefined): UpdateServiceSettingsRequest = {
+      S3BucketArn: js.UndefOr[String] = js.undefined,
+      SnsTopicArn: js.UndefOr[String] = js.undefined): UpdateServiceSettingsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "S3BucketArn" -> S3BucketArn.map { x => x.asInstanceOf[js.Any] },
-        "SnsTopicArn" -> SnsTopicArn.map { x => x.asInstanceOf[js.Any] },
+        "EnableCrossAccountsDiscovery" -> EnableCrossAccountsDiscovery.map { x => x.asInstanceOf[js.Any] },
         "OrganizationConfiguration" -> OrganizationConfiguration.map { x => x.asInstanceOf[js.Any] },
-        "EnableCrossAccountsDiscovery" -> EnableCrossAccountsDiscovery.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "S3BucketArn" -> S3BucketArn.map { x => x.asInstanceOf[js.Any] },
+        "SnsTopicArn" -> SnsTopicArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateServiceSettingsRequest]
     }

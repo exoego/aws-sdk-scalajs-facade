@@ -27,53 +27,53 @@ package rdsdataservice {
    */
   @js.native
   trait ColumnMetadata extends js.Object {
-    var isAutoIncrement: js.UndefOr[Boolean]
-    var nullable: js.UndefOr[Int]
-    var name: js.UndefOr[String]
-    var precision: js.UndefOr[Int]
-    var isSigned: js.UndefOr[Boolean]
-    var scale: js.UndefOr[Int]
-    var label: js.UndefOr[String]
     var arrayBaseColumnType: js.UndefOr[Int]
-    var typeName: js.UndefOr[String]
+    var isAutoIncrement: js.UndefOr[Boolean]
+    var isCaseSensitive: js.UndefOr[Boolean]
     var isCurrency: js.UndefOr[Boolean]
+    var isSigned: js.UndefOr[Boolean]
+    var label: js.UndefOr[String]
+    var name: js.UndefOr[String]
+    var nullable: js.UndefOr[Int]
+    var precision: js.UndefOr[Int]
+    var scale: js.UndefOr[Int]
     var schemaName: js.UndefOr[String]
     var tableName: js.UndefOr[String]
     var `type`: js.UndefOr[Int]
-    var isCaseSensitive: js.UndefOr[Boolean]
+    var typeName: js.UndefOr[String]
   }
 
   object ColumnMetadata {
     def apply(
-      isAutoIncrement: js.UndefOr[Boolean] = js.undefined,
-      nullable: js.UndefOr[Int] = js.undefined,
-      name: js.UndefOr[String] = js.undefined,
-      precision: js.UndefOr[Int] = js.undefined,
-      isSigned: js.UndefOr[Boolean] = js.undefined,
-      scale: js.UndefOr[Int] = js.undefined,
-      label: js.UndefOr[String] = js.undefined,
       arrayBaseColumnType: js.UndefOr[Int] = js.undefined,
-      typeName: js.UndefOr[String] = js.undefined,
+      isAutoIncrement: js.UndefOr[Boolean] = js.undefined,
+      isCaseSensitive: js.UndefOr[Boolean] = js.undefined,
       isCurrency: js.UndefOr[Boolean] = js.undefined,
+      isSigned: js.UndefOr[Boolean] = js.undefined,
+      label: js.UndefOr[String] = js.undefined,
+      name: js.UndefOr[String] = js.undefined,
+      nullable: js.UndefOr[Int] = js.undefined,
+      precision: js.UndefOr[Int] = js.undefined,
+      scale: js.UndefOr[Int] = js.undefined,
       schemaName: js.UndefOr[String] = js.undefined,
       tableName: js.UndefOr[String] = js.undefined,
       `type`: js.UndefOr[Int] = js.undefined,
-      isCaseSensitive: js.UndefOr[Boolean] = js.undefined): ColumnMetadata = {
+      typeName: js.UndefOr[String] = js.undefined): ColumnMetadata = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "isAutoIncrement" -> isAutoIncrement.map { x => x.asInstanceOf[js.Any] },
-        "nullable" -> nullable.map { x => x.asInstanceOf[js.Any] },
-        "name" -> name.map { x => x.asInstanceOf[js.Any] },
-        "precision" -> precision.map { x => x.asInstanceOf[js.Any] },
-        "isSigned" -> isSigned.map { x => x.asInstanceOf[js.Any] },
-        "scale" -> scale.map { x => x.asInstanceOf[js.Any] },
-        "label" -> label.map { x => x.asInstanceOf[js.Any] },
         "arrayBaseColumnType" -> arrayBaseColumnType.map { x => x.asInstanceOf[js.Any] },
-        "typeName" -> typeName.map { x => x.asInstanceOf[js.Any] },
+        "isAutoIncrement" -> isAutoIncrement.map { x => x.asInstanceOf[js.Any] },
+        "isCaseSensitive" -> isCaseSensitive.map { x => x.asInstanceOf[js.Any] },
         "isCurrency" -> isCurrency.map { x => x.asInstanceOf[js.Any] },
+        "isSigned" -> isSigned.map { x => x.asInstanceOf[js.Any] },
+        "label" -> label.map { x => x.asInstanceOf[js.Any] },
+        "name" -> name.map { x => x.asInstanceOf[js.Any] },
+        "nullable" -> nullable.map { x => x.asInstanceOf[js.Any] },
+        "precision" -> precision.map { x => x.asInstanceOf[js.Any] },
+        "scale" -> scale.map { x => x.asInstanceOf[js.Any] },
         "schemaName" -> schemaName.map { x => x.asInstanceOf[js.Any] },
         "tableName" -> tableName.map { x => x.asInstanceOf[js.Any] },
         "`type`" -> `type`.map { x => x.asInstanceOf[js.Any] },
-        "isCaseSensitive" -> isCaseSensitive.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "typeName" -> typeName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ColumnMetadata]
     }
@@ -84,26 +84,26 @@ package rdsdataservice {
    */
   @js.native
   trait ExecuteSqlRequest extends js.Object {
+    var awsSecretStoreArn: String
+    var dbClusterOrInstanceArn: String
+    var sqlStatements: String
     var database: js.UndefOr[String]
-    var dbClusterOrInstanceArn: js.UndefOr[String]
-    var awsSecretStoreArn: js.UndefOr[String]
     var schema: js.UndefOr[String]
-    var sqlStatements: js.UndefOr[String]
   }
 
   object ExecuteSqlRequest {
     def apply(
+      awsSecretStoreArn: String,
+      dbClusterOrInstanceArn: String,
+      sqlStatements: String,
       database: js.UndefOr[String] = js.undefined,
-      dbClusterOrInstanceArn: js.UndefOr[String] = js.undefined,
-      awsSecretStoreArn: js.UndefOr[String] = js.undefined,
-      schema: js.UndefOr[String] = js.undefined,
-      sqlStatements: js.UndefOr[String] = js.undefined): ExecuteSqlRequest = {
+      schema: js.UndefOr[String] = js.undefined): ExecuteSqlRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "awsSecretStoreArn" -> awsSecretStoreArn.asInstanceOf[js.Any],
+        "dbClusterOrInstanceArn" -> dbClusterOrInstanceArn.asInstanceOf[js.Any],
+        "sqlStatements" -> sqlStatements.asInstanceOf[js.Any],
         "database" -> database.map { x => x.asInstanceOf[js.Any] },
-        "dbClusterOrInstanceArn" -> dbClusterOrInstanceArn.map { x => x.asInstanceOf[js.Any] },
-        "awsSecretStoreArn" -> awsSecretStoreArn.map { x => x.asInstanceOf[js.Any] },
-        "schema" -> schema.map { x => x.asInstanceOf[js.Any] },
-        "sqlStatements" -> sqlStatements.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "schema" -> schema.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ExecuteSqlRequest]
     }
@@ -114,14 +114,14 @@ package rdsdataservice {
    */
   @js.native
   trait ExecuteSqlResponse extends js.Object {
-    var sqlStatementResults: js.UndefOr[SqlStatementResults]
+    var sqlStatementResults: SqlStatementResults
   }
 
   object ExecuteSqlResponse {
     def apply(
-      sqlStatementResults: js.UndefOr[SqlStatementResults] = js.undefined): ExecuteSqlResponse = {
+      sqlStatementResults: SqlStatementResults): ExecuteSqlResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "sqlStatementResults" -> sqlStatementResults.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "sqlStatementResults" -> sqlStatementResults.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ExecuteSqlResponse]
     }
@@ -231,40 +231,40 @@ package rdsdataservice {
    */
   @js.native
   trait Value extends js.Object {
+    var arrayValues: js.UndefOr[ArrayValues]
+    var bigIntValue: js.UndefOr[Double]
+    var bitValue: js.UndefOr[Boolean]
     var blobValue: js.UndefOr[Blob]
     var doubleValue: js.UndefOr[Double]
-    var isNull: js.UndefOr[Boolean]
-    var bitValue: js.UndefOr[Boolean]
-    var bigIntValue: js.UndefOr[Double]
-    var stringValue: js.UndefOr[String]
-    var realValue: js.UndefOr[Float]
     var intValue: js.UndefOr[Int]
-    var arrayValues: js.UndefOr[ArrayValues]
+    var isNull: js.UndefOr[Boolean]
+    var realValue: js.UndefOr[Float]
+    var stringValue: js.UndefOr[String]
     var structValue: js.UndefOr[StructValue]
   }
 
   object Value {
     def apply(
+      arrayValues: js.UndefOr[ArrayValues] = js.undefined,
+      bigIntValue: js.UndefOr[Double] = js.undefined,
+      bitValue: js.UndefOr[Boolean] = js.undefined,
       blobValue: js.UndefOr[Blob] = js.undefined,
       doubleValue: js.UndefOr[Double] = js.undefined,
-      isNull: js.UndefOr[Boolean] = js.undefined,
-      bitValue: js.UndefOr[Boolean] = js.undefined,
-      bigIntValue: js.UndefOr[Double] = js.undefined,
-      stringValue: js.UndefOr[String] = js.undefined,
-      realValue: js.UndefOr[Float] = js.undefined,
       intValue: js.UndefOr[Int] = js.undefined,
-      arrayValues: js.UndefOr[ArrayValues] = js.undefined,
+      isNull: js.UndefOr[Boolean] = js.undefined,
+      realValue: js.UndefOr[Float] = js.undefined,
+      stringValue: js.UndefOr[String] = js.undefined,
       structValue: js.UndefOr[StructValue] = js.undefined): Value = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "arrayValues" -> arrayValues.map { x => x.asInstanceOf[js.Any] },
+        "bigIntValue" -> bigIntValue.map { x => x.asInstanceOf[js.Any] },
+        "bitValue" -> bitValue.map { x => x.asInstanceOf[js.Any] },
         "blobValue" -> blobValue.map { x => x.asInstanceOf[js.Any] },
         "doubleValue" -> doubleValue.map { x => x.asInstanceOf[js.Any] },
-        "isNull" -> isNull.map { x => x.asInstanceOf[js.Any] },
-        "bitValue" -> bitValue.map { x => x.asInstanceOf[js.Any] },
-        "bigIntValue" -> bigIntValue.map { x => x.asInstanceOf[js.Any] },
-        "stringValue" -> stringValue.map { x => x.asInstanceOf[js.Any] },
-        "realValue" -> realValue.map { x => x.asInstanceOf[js.Any] },
         "intValue" -> intValue.map { x => x.asInstanceOf[js.Any] },
-        "arrayValues" -> arrayValues.map { x => x.asInstanceOf[js.Any] },
+        "isNull" -> isNull.map { x => x.asInstanceOf[js.Any] },
+        "realValue" -> realValue.map { x => x.asInstanceOf[js.Any] },
+        "stringValue" -> stringValue.map { x => x.asInstanceOf[js.Any] },
         "structValue" -> structValue.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Value]

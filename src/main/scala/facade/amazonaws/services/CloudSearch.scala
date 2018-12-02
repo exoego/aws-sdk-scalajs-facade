@@ -83,17 +83,17 @@ package cloudsearch {
    */
   @js.native
   trait AccessPoliciesStatus extends js.Object {
-    var Options: js.UndefOr[PolicyDocument]
-    var Status: js.UndefOr[OptionStatus]
+    var Options: PolicyDocument
+    var Status: OptionStatus
   }
 
   object AccessPoliciesStatus {
     def apply(
-      Options: js.UndefOr[PolicyDocument] = js.undefined,
-      Status: js.UndefOr[OptionStatus] = js.undefined): AccessPoliciesStatus = {
+      Options: PolicyDocument,
+      Status: OptionStatus): AccessPoliciesStatus = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Options" -> Options.map { x => x.asInstanceOf[js.Any] },
-        "Status" -> Status.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Options" -> Options.asInstanceOf[js.Any],
+        "Status" -> Status.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AccessPoliciesStatus]
     }
@@ -113,25 +113,25 @@ package cloudsearch {
    */
   @js.native
   trait AnalysisOptions extends js.Object {
-    var Stopwords: js.UndefOr[String]
-    var StemmingDictionary: js.UndefOr[String]
-    var JapaneseTokenizationDictionary: js.UndefOr[String]
     var AlgorithmicStemming: js.UndefOr[AlgorithmicStemming]
+    var JapaneseTokenizationDictionary: js.UndefOr[String]
+    var StemmingDictionary: js.UndefOr[String]
+    var Stopwords: js.UndefOr[String]
     var Synonyms: js.UndefOr[String]
   }
 
   object AnalysisOptions {
     def apply(
-      Stopwords: js.UndefOr[String] = js.undefined,
-      StemmingDictionary: js.UndefOr[String] = js.undefined,
-      JapaneseTokenizationDictionary: js.UndefOr[String] = js.undefined,
       AlgorithmicStemming: js.UndefOr[AlgorithmicStemming] = js.undefined,
+      JapaneseTokenizationDictionary: js.UndefOr[String] = js.undefined,
+      StemmingDictionary: js.UndefOr[String] = js.undefined,
+      Stopwords: js.UndefOr[String] = js.undefined,
       Synonyms: js.UndefOr[String] = js.undefined): AnalysisOptions = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Stopwords" -> Stopwords.map { x => x.asInstanceOf[js.Any] },
-        "StemmingDictionary" -> StemmingDictionary.map { x => x.asInstanceOf[js.Any] },
-        "JapaneseTokenizationDictionary" -> JapaneseTokenizationDictionary.map { x => x.asInstanceOf[js.Any] },
         "AlgorithmicStemming" -> AlgorithmicStemming.map { x => x.asInstanceOf[js.Any] },
+        "JapaneseTokenizationDictionary" -> JapaneseTokenizationDictionary.map { x => x.asInstanceOf[js.Any] },
+        "StemmingDictionary" -> StemmingDictionary.map { x => x.asInstanceOf[js.Any] },
+        "Stopwords" -> Stopwords.map { x => x.asInstanceOf[js.Any] },
         "Synonyms" -> Synonyms.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AnalysisOptions]
@@ -143,19 +143,19 @@ package cloudsearch {
    */
   @js.native
   trait AnalysisScheme extends js.Object {
-    var AnalysisSchemeName: js.UndefOr[StandardName]
-    var AnalysisSchemeLanguage: js.UndefOr[AnalysisSchemeLanguage]
+    var AnalysisSchemeLanguage: AnalysisSchemeLanguage
+    var AnalysisSchemeName: StandardName
     var AnalysisOptions: js.UndefOr[AnalysisOptions]
   }
 
   object AnalysisScheme {
     def apply(
-      AnalysisSchemeName: js.UndefOr[StandardName] = js.undefined,
-      AnalysisSchemeLanguage: js.UndefOr[AnalysisSchemeLanguage] = js.undefined,
+      AnalysisSchemeLanguage: AnalysisSchemeLanguage,
+      AnalysisSchemeName: StandardName,
       AnalysisOptions: js.UndefOr[AnalysisOptions] = js.undefined): AnalysisScheme = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "AnalysisSchemeName" -> AnalysisSchemeName.map { x => x.asInstanceOf[js.Any] },
-        "AnalysisSchemeLanguage" -> AnalysisSchemeLanguage.map { x => x.asInstanceOf[js.Any] },
+        "AnalysisSchemeLanguage" -> AnalysisSchemeLanguage.asInstanceOf[js.Any],
+        "AnalysisSchemeName" -> AnalysisSchemeName.asInstanceOf[js.Any],
         "AnalysisOptions" -> AnalysisOptions.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AnalysisScheme]
@@ -210,17 +210,17 @@ package cloudsearch {
    */
   @js.native
   trait AnalysisSchemeStatus extends js.Object {
-    var Options: js.UndefOr[AnalysisScheme]
-    var Status: js.UndefOr[OptionStatus]
+    var Options: AnalysisScheme
+    var Status: OptionStatus
   }
 
   object AnalysisSchemeStatus {
     def apply(
-      Options: js.UndefOr[AnalysisScheme] = js.undefined,
-      Status: js.UndefOr[OptionStatus] = js.undefined): AnalysisSchemeStatus = {
+      Options: AnalysisScheme,
+      Status: OptionStatus): AnalysisSchemeStatus = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Options" -> Options.map { x => x.asInstanceOf[js.Any] },
-        "Status" -> Status.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Options" -> Options.asInstanceOf[js.Any],
+        "Status" -> Status.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AnalysisSchemeStatus]
     }
@@ -231,17 +231,17 @@ package cloudsearch {
    */
   @js.native
   trait AvailabilityOptionsStatus extends js.Object {
-    var Options: js.UndefOr[MultiAZ]
-    var Status: js.UndefOr[OptionStatus]
+    var Options: MultiAZ
+    var Status: OptionStatus
   }
 
   object AvailabilityOptionsStatus {
     def apply(
-      Options: js.UndefOr[MultiAZ] = js.undefined,
-      Status: js.UndefOr[OptionStatus] = js.undefined): AvailabilityOptionsStatus = {
+      Options: MultiAZ,
+      Status: OptionStatus): AvailabilityOptionsStatus = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Options" -> Options.map { x => x.asInstanceOf[js.Any] },
-        "Status" -> Status.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Options" -> Options.asInstanceOf[js.Any],
+        "Status" -> Status.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AvailabilityOptionsStatus]
     }
@@ -261,14 +261,14 @@ package cloudsearch {
    */
   @js.native
   trait BuildSuggestersRequest extends js.Object {
-    var DomainName: js.UndefOr[DomainName]
+    var DomainName: DomainName
   }
 
   object BuildSuggestersRequest {
     def apply(
-      DomainName: js.UndefOr[DomainName] = js.undefined): BuildSuggestersRequest = {
+      DomainName: DomainName): BuildSuggestersRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "DomainName" -> DomainName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "DomainName" -> DomainName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BuildSuggestersRequest]
     }
@@ -297,14 +297,14 @@ package cloudsearch {
    */
   @js.native
   trait CreateDomainRequest extends js.Object {
-    var DomainName: js.UndefOr[DomainName]
+    var DomainName: DomainName
   }
 
   object CreateDomainRequest {
     def apply(
-      DomainName: js.UndefOr[DomainName] = js.undefined): CreateDomainRequest = {
+      DomainName: DomainName): CreateDomainRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "DomainName" -> DomainName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "DomainName" -> DomainName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateDomainRequest]
     }
@@ -333,26 +333,26 @@ package cloudsearch {
    */
   @js.native
   trait DateArrayOptions extends js.Object {
-    var SearchEnabled: js.UndefOr[Boolean]
-    var FacetEnabled: js.UndefOr[Boolean]
     var DefaultValue: js.UndefOr[FieldValue]
-    var SourceFields: js.UndefOr[FieldNameCommaList]
+    var FacetEnabled: js.UndefOr[Boolean]
     var ReturnEnabled: js.UndefOr[Boolean]
+    var SearchEnabled: js.UndefOr[Boolean]
+    var SourceFields: js.UndefOr[FieldNameCommaList]
   }
 
   object DateArrayOptions {
     def apply(
-      SearchEnabled: js.UndefOr[Boolean] = js.undefined,
-      FacetEnabled: js.UndefOr[Boolean] = js.undefined,
       DefaultValue: js.UndefOr[FieldValue] = js.undefined,
-      SourceFields: js.UndefOr[FieldNameCommaList] = js.undefined,
-      ReturnEnabled: js.UndefOr[Boolean] = js.undefined): DateArrayOptions = {
+      FacetEnabled: js.UndefOr[Boolean] = js.undefined,
+      ReturnEnabled: js.UndefOr[Boolean] = js.undefined,
+      SearchEnabled: js.UndefOr[Boolean] = js.undefined,
+      SourceFields: js.UndefOr[FieldNameCommaList] = js.undefined): DateArrayOptions = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "SearchEnabled" -> SearchEnabled.map { x => x.asInstanceOf[js.Any] },
-        "FacetEnabled" -> FacetEnabled.map { x => x.asInstanceOf[js.Any] },
         "DefaultValue" -> DefaultValue.map { x => x.asInstanceOf[js.Any] },
-        "SourceFields" -> SourceFields.map { x => x.asInstanceOf[js.Any] },
-        "ReturnEnabled" -> ReturnEnabled.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "FacetEnabled" -> FacetEnabled.map { x => x.asInstanceOf[js.Any] },
+        "ReturnEnabled" -> ReturnEnabled.map { x => x.asInstanceOf[js.Any] },
+        "SearchEnabled" -> SearchEnabled.map { x => x.asInstanceOf[js.Any] },
+        "SourceFields" -> SourceFields.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DateArrayOptions]
     }
@@ -363,29 +363,29 @@ package cloudsearch {
    */
   @js.native
   trait DateOptions extends js.Object {
-    var SearchEnabled: js.UndefOr[Boolean]
-    var SourceField: js.UndefOr[FieldName]
-    var FacetEnabled: js.UndefOr[Boolean]
-    var SortEnabled: js.UndefOr[Boolean]
     var DefaultValue: js.UndefOr[FieldValue]
+    var FacetEnabled: js.UndefOr[Boolean]
     var ReturnEnabled: js.UndefOr[Boolean]
+    var SearchEnabled: js.UndefOr[Boolean]
+    var SortEnabled: js.UndefOr[Boolean]
+    var SourceField: js.UndefOr[FieldName]
   }
 
   object DateOptions {
     def apply(
-      SearchEnabled: js.UndefOr[Boolean] = js.undefined,
-      SourceField: js.UndefOr[FieldName] = js.undefined,
-      FacetEnabled: js.UndefOr[Boolean] = js.undefined,
-      SortEnabled: js.UndefOr[Boolean] = js.undefined,
       DefaultValue: js.UndefOr[FieldValue] = js.undefined,
-      ReturnEnabled: js.UndefOr[Boolean] = js.undefined): DateOptions = {
+      FacetEnabled: js.UndefOr[Boolean] = js.undefined,
+      ReturnEnabled: js.UndefOr[Boolean] = js.undefined,
+      SearchEnabled: js.UndefOr[Boolean] = js.undefined,
+      SortEnabled: js.UndefOr[Boolean] = js.undefined,
+      SourceField: js.UndefOr[FieldName] = js.undefined): DateOptions = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "SearchEnabled" -> SearchEnabled.map { x => x.asInstanceOf[js.Any] },
-        "SourceField" -> SourceField.map { x => x.asInstanceOf[js.Any] },
-        "FacetEnabled" -> FacetEnabled.map { x => x.asInstanceOf[js.Any] },
-        "SortEnabled" -> SortEnabled.map { x => x.asInstanceOf[js.Any] },
         "DefaultValue" -> DefaultValue.map { x => x.asInstanceOf[js.Any] },
-        "ReturnEnabled" -> ReturnEnabled.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "FacetEnabled" -> FacetEnabled.map { x => x.asInstanceOf[js.Any] },
+        "ReturnEnabled" -> ReturnEnabled.map { x => x.asInstanceOf[js.Any] },
+        "SearchEnabled" -> SearchEnabled.map { x => x.asInstanceOf[js.Any] },
+        "SortEnabled" -> SortEnabled.map { x => x.asInstanceOf[js.Any] },
+        "SourceField" -> SourceField.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DateOptions]
     }
@@ -396,17 +396,17 @@ package cloudsearch {
    */
   @js.native
   trait DefineAnalysisSchemeRequest extends js.Object {
-    var DomainName: js.UndefOr[DomainName]
-    var AnalysisScheme: js.UndefOr[AnalysisScheme]
+    var AnalysisScheme: AnalysisScheme
+    var DomainName: DomainName
   }
 
   object DefineAnalysisSchemeRequest {
     def apply(
-      DomainName: js.UndefOr[DomainName] = js.undefined,
-      AnalysisScheme: js.UndefOr[AnalysisScheme] = js.undefined): DefineAnalysisSchemeRequest = {
+      AnalysisScheme: AnalysisScheme,
+      DomainName: DomainName): DefineAnalysisSchemeRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "DomainName" -> DomainName.map { x => x.asInstanceOf[js.Any] },
-        "AnalysisScheme" -> AnalysisScheme.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "AnalysisScheme" -> AnalysisScheme.asInstanceOf[js.Any],
+        "DomainName" -> DomainName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DefineAnalysisSchemeRequest]
     }
@@ -417,14 +417,14 @@ package cloudsearch {
    */
   @js.native
   trait DefineAnalysisSchemeResponse extends js.Object {
-    var AnalysisScheme: js.UndefOr[AnalysisSchemeStatus]
+    var AnalysisScheme: AnalysisSchemeStatus
   }
 
   object DefineAnalysisSchemeResponse {
     def apply(
-      AnalysisScheme: js.UndefOr[AnalysisSchemeStatus] = js.undefined): DefineAnalysisSchemeResponse = {
+      AnalysisScheme: AnalysisSchemeStatus): DefineAnalysisSchemeResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "AnalysisScheme" -> AnalysisScheme.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "AnalysisScheme" -> AnalysisScheme.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DefineAnalysisSchemeResponse]
     }
@@ -435,17 +435,17 @@ package cloudsearch {
    */
   @js.native
   trait DefineExpressionRequest extends js.Object {
-    var DomainName: js.UndefOr[DomainName]
-    var Expression: js.UndefOr[Expression]
+    var DomainName: DomainName
+    var Expression: Expression
   }
 
   object DefineExpressionRequest {
     def apply(
-      DomainName: js.UndefOr[DomainName] = js.undefined,
-      Expression: js.UndefOr[Expression] = js.undefined): DefineExpressionRequest = {
+      DomainName: DomainName,
+      Expression: Expression): DefineExpressionRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "DomainName" -> DomainName.map { x => x.asInstanceOf[js.Any] },
-        "Expression" -> Expression.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "DomainName" -> DomainName.asInstanceOf[js.Any],
+        "Expression" -> Expression.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DefineExpressionRequest]
     }
@@ -456,14 +456,14 @@ package cloudsearch {
    */
   @js.native
   trait DefineExpressionResponse extends js.Object {
-    var Expression: js.UndefOr[ExpressionStatus]
+    var Expression: ExpressionStatus
   }
 
   object DefineExpressionResponse {
     def apply(
-      Expression: js.UndefOr[ExpressionStatus] = js.undefined): DefineExpressionResponse = {
+      Expression: ExpressionStatus): DefineExpressionResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Expression" -> Expression.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Expression" -> Expression.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DefineExpressionResponse]
     }
@@ -474,17 +474,17 @@ package cloudsearch {
    */
   @js.native
   trait DefineIndexFieldRequest extends js.Object {
-    var DomainName: js.UndefOr[DomainName]
-    var IndexField: js.UndefOr[IndexField]
+    var DomainName: DomainName
+    var IndexField: IndexField
   }
 
   object DefineIndexFieldRequest {
     def apply(
-      DomainName: js.UndefOr[DomainName] = js.undefined,
-      IndexField: js.UndefOr[IndexField] = js.undefined): DefineIndexFieldRequest = {
+      DomainName: DomainName,
+      IndexField: IndexField): DefineIndexFieldRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "DomainName" -> DomainName.map { x => x.asInstanceOf[js.Any] },
-        "IndexField" -> IndexField.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "DomainName" -> DomainName.asInstanceOf[js.Any],
+        "IndexField" -> IndexField.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DefineIndexFieldRequest]
     }
@@ -495,14 +495,14 @@ package cloudsearch {
    */
   @js.native
   trait DefineIndexFieldResponse extends js.Object {
-    var IndexField: js.UndefOr[IndexFieldStatus]
+    var IndexField: IndexFieldStatus
   }
 
   object DefineIndexFieldResponse {
     def apply(
-      IndexField: js.UndefOr[IndexFieldStatus] = js.undefined): DefineIndexFieldResponse = {
+      IndexField: IndexFieldStatus): DefineIndexFieldResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "IndexField" -> IndexField.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "IndexField" -> IndexField.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DefineIndexFieldResponse]
     }
@@ -513,17 +513,17 @@ package cloudsearch {
    */
   @js.native
   trait DefineSuggesterRequest extends js.Object {
-    var DomainName: js.UndefOr[DomainName]
-    var Suggester: js.UndefOr[Suggester]
+    var DomainName: DomainName
+    var Suggester: Suggester
   }
 
   object DefineSuggesterRequest {
     def apply(
-      DomainName: js.UndefOr[DomainName] = js.undefined,
-      Suggester: js.UndefOr[Suggester] = js.undefined): DefineSuggesterRequest = {
+      DomainName: DomainName,
+      Suggester: Suggester): DefineSuggesterRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "DomainName" -> DomainName.map { x => x.asInstanceOf[js.Any] },
-        "Suggester" -> Suggester.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "DomainName" -> DomainName.asInstanceOf[js.Any],
+        "Suggester" -> Suggester.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DefineSuggesterRequest]
     }
@@ -534,14 +534,14 @@ package cloudsearch {
    */
   @js.native
   trait DefineSuggesterResponse extends js.Object {
-    var Suggester: js.UndefOr[SuggesterStatus]
+    var Suggester: SuggesterStatus
   }
 
   object DefineSuggesterResponse {
     def apply(
-      Suggester: js.UndefOr[SuggesterStatus] = js.undefined): DefineSuggesterResponse = {
+      Suggester: SuggesterStatus): DefineSuggesterResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Suggester" -> Suggester.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Suggester" -> Suggester.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DefineSuggesterResponse]
     }
@@ -552,17 +552,17 @@ package cloudsearch {
    */
   @js.native
   trait DeleteAnalysisSchemeRequest extends js.Object {
-    var DomainName: js.UndefOr[DomainName]
-    var AnalysisSchemeName: js.UndefOr[StandardName]
+    var AnalysisSchemeName: StandardName
+    var DomainName: DomainName
   }
 
   object DeleteAnalysisSchemeRequest {
     def apply(
-      DomainName: js.UndefOr[DomainName] = js.undefined,
-      AnalysisSchemeName: js.UndefOr[StandardName] = js.undefined): DeleteAnalysisSchemeRequest = {
+      AnalysisSchemeName: StandardName,
+      DomainName: DomainName): DeleteAnalysisSchemeRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "DomainName" -> DomainName.map { x => x.asInstanceOf[js.Any] },
-        "AnalysisSchemeName" -> AnalysisSchemeName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "AnalysisSchemeName" -> AnalysisSchemeName.asInstanceOf[js.Any],
+        "DomainName" -> DomainName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteAnalysisSchemeRequest]
     }
@@ -573,14 +573,14 @@ package cloudsearch {
    */
   @js.native
   trait DeleteAnalysisSchemeResponse extends js.Object {
-    var AnalysisScheme: js.UndefOr[AnalysisSchemeStatus]
+    var AnalysisScheme: AnalysisSchemeStatus
   }
 
   object DeleteAnalysisSchemeResponse {
     def apply(
-      AnalysisScheme: js.UndefOr[AnalysisSchemeStatus] = js.undefined): DeleteAnalysisSchemeResponse = {
+      AnalysisScheme: AnalysisSchemeStatus): DeleteAnalysisSchemeResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "AnalysisScheme" -> AnalysisScheme.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "AnalysisScheme" -> AnalysisScheme.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteAnalysisSchemeResponse]
     }
@@ -591,14 +591,14 @@ package cloudsearch {
    */
   @js.native
   trait DeleteDomainRequest extends js.Object {
-    var DomainName: js.UndefOr[DomainName]
+    var DomainName: DomainName
   }
 
   object DeleteDomainRequest {
     def apply(
-      DomainName: js.UndefOr[DomainName] = js.undefined): DeleteDomainRequest = {
+      DomainName: DomainName): DeleteDomainRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "DomainName" -> DomainName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "DomainName" -> DomainName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteDomainRequest]
     }
@@ -627,17 +627,17 @@ package cloudsearch {
    */
   @js.native
   trait DeleteExpressionRequest extends js.Object {
-    var DomainName: js.UndefOr[DomainName]
-    var ExpressionName: js.UndefOr[StandardName]
+    var DomainName: DomainName
+    var ExpressionName: StandardName
   }
 
   object DeleteExpressionRequest {
     def apply(
-      DomainName: js.UndefOr[DomainName] = js.undefined,
-      ExpressionName: js.UndefOr[StandardName] = js.undefined): DeleteExpressionRequest = {
+      DomainName: DomainName,
+      ExpressionName: StandardName): DeleteExpressionRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "DomainName" -> DomainName.map { x => x.asInstanceOf[js.Any] },
-        "ExpressionName" -> ExpressionName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "DomainName" -> DomainName.asInstanceOf[js.Any],
+        "ExpressionName" -> ExpressionName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteExpressionRequest]
     }
@@ -648,14 +648,14 @@ package cloudsearch {
    */
   @js.native
   trait DeleteExpressionResponse extends js.Object {
-    var Expression: js.UndefOr[ExpressionStatus]
+    var Expression: ExpressionStatus
   }
 
   object DeleteExpressionResponse {
     def apply(
-      Expression: js.UndefOr[ExpressionStatus] = js.undefined): DeleteExpressionResponse = {
+      Expression: ExpressionStatus): DeleteExpressionResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Expression" -> Expression.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Expression" -> Expression.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteExpressionResponse]
     }
@@ -666,17 +666,17 @@ package cloudsearch {
    */
   @js.native
   trait DeleteIndexFieldRequest extends js.Object {
-    var DomainName: js.UndefOr[DomainName]
-    var IndexFieldName: js.UndefOr[DynamicFieldName]
+    var DomainName: DomainName
+    var IndexFieldName: DynamicFieldName
   }
 
   object DeleteIndexFieldRequest {
     def apply(
-      DomainName: js.UndefOr[DomainName] = js.undefined,
-      IndexFieldName: js.UndefOr[DynamicFieldName] = js.undefined): DeleteIndexFieldRequest = {
+      DomainName: DomainName,
+      IndexFieldName: DynamicFieldName): DeleteIndexFieldRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "DomainName" -> DomainName.map { x => x.asInstanceOf[js.Any] },
-        "IndexFieldName" -> IndexFieldName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "DomainName" -> DomainName.asInstanceOf[js.Any],
+        "IndexFieldName" -> IndexFieldName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteIndexFieldRequest]
     }
@@ -687,14 +687,14 @@ package cloudsearch {
    */
   @js.native
   trait DeleteIndexFieldResponse extends js.Object {
-    var IndexField: js.UndefOr[IndexFieldStatus]
+    var IndexField: IndexFieldStatus
   }
 
   object DeleteIndexFieldResponse {
     def apply(
-      IndexField: js.UndefOr[IndexFieldStatus] = js.undefined): DeleteIndexFieldResponse = {
+      IndexField: IndexFieldStatus): DeleteIndexFieldResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "IndexField" -> IndexField.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "IndexField" -> IndexField.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteIndexFieldResponse]
     }
@@ -705,17 +705,17 @@ package cloudsearch {
    */
   @js.native
   trait DeleteSuggesterRequest extends js.Object {
-    var DomainName: js.UndefOr[DomainName]
-    var SuggesterName: js.UndefOr[StandardName]
+    var DomainName: DomainName
+    var SuggesterName: StandardName
   }
 
   object DeleteSuggesterRequest {
     def apply(
-      DomainName: js.UndefOr[DomainName] = js.undefined,
-      SuggesterName: js.UndefOr[StandardName] = js.undefined): DeleteSuggesterRequest = {
+      DomainName: DomainName,
+      SuggesterName: StandardName): DeleteSuggesterRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "DomainName" -> DomainName.map { x => x.asInstanceOf[js.Any] },
-        "SuggesterName" -> SuggesterName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "DomainName" -> DomainName.asInstanceOf[js.Any],
+        "SuggesterName" -> SuggesterName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteSuggesterRequest]
     }
@@ -726,14 +726,14 @@ package cloudsearch {
    */
   @js.native
   trait DeleteSuggesterResponse extends js.Object {
-    var Suggester: js.UndefOr[SuggesterStatus]
+    var Suggester: SuggesterStatus
   }
 
   object DeleteSuggesterResponse {
     def apply(
-      Suggester: js.UndefOr[SuggesterStatus] = js.undefined): DeleteSuggesterResponse = {
+      Suggester: SuggesterStatus): DeleteSuggesterResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Suggester" -> Suggester.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Suggester" -> Suggester.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteSuggesterResponse]
     }
@@ -744,18 +744,18 @@ package cloudsearch {
    */
   @js.native
   trait DescribeAnalysisSchemesRequest extends js.Object {
-    var DomainName: js.UndefOr[DomainName]
+    var DomainName: DomainName
     var AnalysisSchemeNames: js.UndefOr[StandardNameList]
     var Deployed: js.UndefOr[Boolean]
   }
 
   object DescribeAnalysisSchemesRequest {
     def apply(
-      DomainName: js.UndefOr[DomainName] = js.undefined,
+      DomainName: DomainName,
       AnalysisSchemeNames: js.UndefOr[StandardNameList] = js.undefined,
       Deployed: js.UndefOr[Boolean] = js.undefined): DescribeAnalysisSchemesRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "DomainName" -> DomainName.map { x => x.asInstanceOf[js.Any] },
+        "DomainName" -> DomainName.asInstanceOf[js.Any],
         "AnalysisSchemeNames" -> AnalysisSchemeNames.map { x => x.asInstanceOf[js.Any] },
         "Deployed" -> Deployed.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
@@ -768,14 +768,14 @@ package cloudsearch {
    */
   @js.native
   trait DescribeAnalysisSchemesResponse extends js.Object {
-    var AnalysisSchemes: js.UndefOr[AnalysisSchemeStatusList]
+    var AnalysisSchemes: AnalysisSchemeStatusList
   }
 
   object DescribeAnalysisSchemesResponse {
     def apply(
-      AnalysisSchemes: js.UndefOr[AnalysisSchemeStatusList] = js.undefined): DescribeAnalysisSchemesResponse = {
+      AnalysisSchemes: AnalysisSchemeStatusList): DescribeAnalysisSchemesResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "AnalysisSchemes" -> AnalysisSchemes.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "AnalysisSchemes" -> AnalysisSchemes.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeAnalysisSchemesResponse]
     }
@@ -786,16 +786,16 @@ package cloudsearch {
    */
   @js.native
   trait DescribeAvailabilityOptionsRequest extends js.Object {
-    var DomainName: js.UndefOr[DomainName]
+    var DomainName: DomainName
     var Deployed: js.UndefOr[Boolean]
   }
 
   object DescribeAvailabilityOptionsRequest {
     def apply(
-      DomainName: js.UndefOr[DomainName] = js.undefined,
+      DomainName: DomainName,
       Deployed: js.UndefOr[Boolean] = js.undefined): DescribeAvailabilityOptionsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "DomainName" -> DomainName.map { x => x.asInstanceOf[js.Any] },
+        "DomainName" -> DomainName.asInstanceOf[js.Any],
         "Deployed" -> Deployed.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeAvailabilityOptionsRequest]
@@ -843,14 +843,14 @@ package cloudsearch {
    */
   @js.native
   trait DescribeDomainsResponse extends js.Object {
-    var DomainStatusList: js.UndefOr[DomainStatusList]
+    var DomainStatusList: DomainStatusList
   }
 
   object DescribeDomainsResponse {
     def apply(
-      DomainStatusList: js.UndefOr[DomainStatusList] = js.undefined): DescribeDomainsResponse = {
+      DomainStatusList: DomainStatusList): DescribeDomainsResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "DomainStatusList" -> DomainStatusList.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "DomainStatusList" -> DomainStatusList.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeDomainsResponse]
     }
@@ -861,20 +861,20 @@ package cloudsearch {
    */
   @js.native
   trait DescribeExpressionsRequest extends js.Object {
-    var DomainName: js.UndefOr[DomainName]
-    var ExpressionNames: js.UndefOr[StandardNameList]
+    var DomainName: DomainName
     var Deployed: js.UndefOr[Boolean]
+    var ExpressionNames: js.UndefOr[StandardNameList]
   }
 
   object DescribeExpressionsRequest {
     def apply(
-      DomainName: js.UndefOr[DomainName] = js.undefined,
-      ExpressionNames: js.UndefOr[StandardNameList] = js.undefined,
-      Deployed: js.UndefOr[Boolean] = js.undefined): DescribeExpressionsRequest = {
+      DomainName: DomainName,
+      Deployed: js.UndefOr[Boolean] = js.undefined,
+      ExpressionNames: js.UndefOr[StandardNameList] = js.undefined): DescribeExpressionsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "DomainName" -> DomainName.map { x => x.asInstanceOf[js.Any] },
-        "ExpressionNames" -> ExpressionNames.map { x => x.asInstanceOf[js.Any] },
-        "Deployed" -> Deployed.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "DomainName" -> DomainName.asInstanceOf[js.Any],
+        "Deployed" -> Deployed.map { x => x.asInstanceOf[js.Any] },
+        "ExpressionNames" -> ExpressionNames.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeExpressionsRequest]
     }
@@ -885,14 +885,14 @@ package cloudsearch {
    */
   @js.native
   trait DescribeExpressionsResponse extends js.Object {
-    var Expressions: js.UndefOr[ExpressionStatusList]
+    var Expressions: ExpressionStatusList
   }
 
   object DescribeExpressionsResponse {
     def apply(
-      Expressions: js.UndefOr[ExpressionStatusList] = js.undefined): DescribeExpressionsResponse = {
+      Expressions: ExpressionStatusList): DescribeExpressionsResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Expressions" -> Expressions.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Expressions" -> Expressions.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeExpressionsResponse]
     }
@@ -903,20 +903,20 @@ package cloudsearch {
    */
   @js.native
   trait DescribeIndexFieldsRequest extends js.Object {
-    var DomainName: js.UndefOr[DomainName]
-    var FieldNames: js.UndefOr[DynamicFieldNameList]
+    var DomainName: DomainName
     var Deployed: js.UndefOr[Boolean]
+    var FieldNames: js.UndefOr[DynamicFieldNameList]
   }
 
   object DescribeIndexFieldsRequest {
     def apply(
-      DomainName: js.UndefOr[DomainName] = js.undefined,
-      FieldNames: js.UndefOr[DynamicFieldNameList] = js.undefined,
-      Deployed: js.UndefOr[Boolean] = js.undefined): DescribeIndexFieldsRequest = {
+      DomainName: DomainName,
+      Deployed: js.UndefOr[Boolean] = js.undefined,
+      FieldNames: js.UndefOr[DynamicFieldNameList] = js.undefined): DescribeIndexFieldsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "DomainName" -> DomainName.map { x => x.asInstanceOf[js.Any] },
-        "FieldNames" -> FieldNames.map { x => x.asInstanceOf[js.Any] },
-        "Deployed" -> Deployed.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "DomainName" -> DomainName.asInstanceOf[js.Any],
+        "Deployed" -> Deployed.map { x => x.asInstanceOf[js.Any] },
+        "FieldNames" -> FieldNames.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeIndexFieldsRequest]
     }
@@ -927,14 +927,14 @@ package cloudsearch {
    */
   @js.native
   trait DescribeIndexFieldsResponse extends js.Object {
-    var IndexFields: js.UndefOr[IndexFieldStatusList]
+    var IndexFields: IndexFieldStatusList
   }
 
   object DescribeIndexFieldsResponse {
     def apply(
-      IndexFields: js.UndefOr[IndexFieldStatusList] = js.undefined): DescribeIndexFieldsResponse = {
+      IndexFields: IndexFieldStatusList): DescribeIndexFieldsResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "IndexFields" -> IndexFields.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "IndexFields" -> IndexFields.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeIndexFieldsResponse]
     }
@@ -945,14 +945,14 @@ package cloudsearch {
    */
   @js.native
   trait DescribeScalingParametersRequest extends js.Object {
-    var DomainName: js.UndefOr[DomainName]
+    var DomainName: DomainName
   }
 
   object DescribeScalingParametersRequest {
     def apply(
-      DomainName: js.UndefOr[DomainName] = js.undefined): DescribeScalingParametersRequest = {
+      DomainName: DomainName): DescribeScalingParametersRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "DomainName" -> DomainName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "DomainName" -> DomainName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeScalingParametersRequest]
     }
@@ -963,14 +963,14 @@ package cloudsearch {
    */
   @js.native
   trait DescribeScalingParametersResponse extends js.Object {
-    var ScalingParameters: js.UndefOr[ScalingParametersStatus]
+    var ScalingParameters: ScalingParametersStatus
   }
 
   object DescribeScalingParametersResponse {
     def apply(
-      ScalingParameters: js.UndefOr[ScalingParametersStatus] = js.undefined): DescribeScalingParametersResponse = {
+      ScalingParameters: ScalingParametersStatus): DescribeScalingParametersResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ScalingParameters" -> ScalingParameters.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ScalingParameters" -> ScalingParameters.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeScalingParametersResponse]
     }
@@ -981,16 +981,16 @@ package cloudsearch {
    */
   @js.native
   trait DescribeServiceAccessPoliciesRequest extends js.Object {
-    var DomainName: js.UndefOr[DomainName]
+    var DomainName: DomainName
     var Deployed: js.UndefOr[Boolean]
   }
 
   object DescribeServiceAccessPoliciesRequest {
     def apply(
-      DomainName: js.UndefOr[DomainName] = js.undefined,
+      DomainName: DomainName,
       Deployed: js.UndefOr[Boolean] = js.undefined): DescribeServiceAccessPoliciesRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "DomainName" -> DomainName.map { x => x.asInstanceOf[js.Any] },
+        "DomainName" -> DomainName.asInstanceOf[js.Any],
         "Deployed" -> Deployed.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeServiceAccessPoliciesRequest]
@@ -1002,14 +1002,14 @@ package cloudsearch {
    */
   @js.native
   trait DescribeServiceAccessPoliciesResponse extends js.Object {
-    var AccessPolicies: js.UndefOr[AccessPoliciesStatus]
+    var AccessPolicies: AccessPoliciesStatus
   }
 
   object DescribeServiceAccessPoliciesResponse {
     def apply(
-      AccessPolicies: js.UndefOr[AccessPoliciesStatus] = js.undefined): DescribeServiceAccessPoliciesResponse = {
+      AccessPolicies: AccessPoliciesStatus): DescribeServiceAccessPoliciesResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "AccessPolicies" -> AccessPolicies.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "AccessPolicies" -> AccessPolicies.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeServiceAccessPoliciesResponse]
     }
@@ -1020,20 +1020,20 @@ package cloudsearch {
    */
   @js.native
   trait DescribeSuggestersRequest extends js.Object {
-    var DomainName: js.UndefOr[DomainName]
-    var SuggesterNames: js.UndefOr[StandardNameList]
+    var DomainName: DomainName
     var Deployed: js.UndefOr[Boolean]
+    var SuggesterNames: js.UndefOr[StandardNameList]
   }
 
   object DescribeSuggestersRequest {
     def apply(
-      DomainName: js.UndefOr[DomainName] = js.undefined,
-      SuggesterNames: js.UndefOr[StandardNameList] = js.undefined,
-      Deployed: js.UndefOr[Boolean] = js.undefined): DescribeSuggestersRequest = {
+      DomainName: DomainName,
+      Deployed: js.UndefOr[Boolean] = js.undefined,
+      SuggesterNames: js.UndefOr[StandardNameList] = js.undefined): DescribeSuggestersRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "DomainName" -> DomainName.map { x => x.asInstanceOf[js.Any] },
-        "SuggesterNames" -> SuggesterNames.map { x => x.asInstanceOf[js.Any] },
-        "Deployed" -> Deployed.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "DomainName" -> DomainName.asInstanceOf[js.Any],
+        "Deployed" -> Deployed.map { x => x.asInstanceOf[js.Any] },
+        "SuggesterNames" -> SuggesterNames.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeSuggestersRequest]
     }
@@ -1044,14 +1044,14 @@ package cloudsearch {
    */
   @js.native
   trait DescribeSuggestersResponse extends js.Object {
-    var Suggesters: js.UndefOr[SuggesterStatusList]
+    var Suggesters: SuggesterStatusList
   }
 
   object DescribeSuggestersResponse {
     def apply(
-      Suggesters: js.UndefOr[SuggesterStatusList] = js.undefined): DescribeSuggestersResponse = {
+      Suggesters: SuggesterStatusList): DescribeSuggestersResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Suggesters" -> Suggesters.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Suggesters" -> Suggesters.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeSuggestersResponse]
     }
@@ -1070,18 +1070,18 @@ package cloudsearch {
    */
   @js.native
   trait DocumentSuggesterOptions extends js.Object {
-    var SourceField: js.UndefOr[FieldName]
+    var SourceField: FieldName
     var FuzzyMatching: js.UndefOr[SuggesterFuzzyMatching]
     var SortExpression: js.UndefOr[String]
   }
 
   object DocumentSuggesterOptions {
     def apply(
-      SourceField: js.UndefOr[FieldName] = js.undefined,
+      SourceField: FieldName,
       FuzzyMatching: js.UndefOr[SuggesterFuzzyMatching] = js.undefined,
       SortExpression: js.UndefOr[String] = js.undefined): DocumentSuggesterOptions = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "SourceField" -> SourceField.map { x => x.asInstanceOf[js.Any] },
+        "SourceField" -> SourceField.asInstanceOf[js.Any],
         "FuzzyMatching" -> FuzzyMatching.map { x => x.asInstanceOf[js.Any] },
         "SortExpression" -> SortExpression.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
@@ -1094,50 +1094,50 @@ package cloudsearch {
    */
   @js.native
   trait DomainStatus extends js.Object {
+    var DomainId: DomainId
+    var DomainName: DomainName
+    var RequiresIndexDocuments: Boolean
     var ARN: js.UndefOr[ARN]
     var Created: js.UndefOr[Boolean]
     var Deleted: js.UndefOr[Boolean]
     var DocService: js.UndefOr[ServiceEndpoint]
-    var SearchInstanceType: js.UndefOr[SearchInstanceType]
+    var Limits: js.UndefOr[Limits]
     var Processing: js.UndefOr[Boolean]
     var SearchInstanceCount: js.UndefOr[InstanceCount]
-    var DomainId: js.UndefOr[DomainId]
-    var DomainName: js.UndefOr[DomainName]
+    var SearchInstanceType: js.UndefOr[SearchInstanceType]
     var SearchPartitionCount: js.UndefOr[PartitionCount]
     var SearchService: js.UndefOr[ServiceEndpoint]
-    var RequiresIndexDocuments: js.UndefOr[Boolean]
-    var Limits: js.UndefOr[Limits]
   }
 
   object DomainStatus {
     def apply(
+      DomainId: DomainId,
+      DomainName: DomainName,
+      RequiresIndexDocuments: Boolean,
       ARN: js.UndefOr[ARN] = js.undefined,
       Created: js.UndefOr[Boolean] = js.undefined,
       Deleted: js.UndefOr[Boolean] = js.undefined,
       DocService: js.UndefOr[ServiceEndpoint] = js.undefined,
-      SearchInstanceType: js.UndefOr[SearchInstanceType] = js.undefined,
+      Limits: js.UndefOr[Limits] = js.undefined,
       Processing: js.UndefOr[Boolean] = js.undefined,
       SearchInstanceCount: js.UndefOr[InstanceCount] = js.undefined,
-      DomainId: js.UndefOr[DomainId] = js.undefined,
-      DomainName: js.UndefOr[DomainName] = js.undefined,
+      SearchInstanceType: js.UndefOr[SearchInstanceType] = js.undefined,
       SearchPartitionCount: js.UndefOr[PartitionCount] = js.undefined,
-      SearchService: js.UndefOr[ServiceEndpoint] = js.undefined,
-      RequiresIndexDocuments: js.UndefOr[Boolean] = js.undefined,
-      Limits: js.UndefOr[Limits] = js.undefined): DomainStatus = {
+      SearchService: js.UndefOr[ServiceEndpoint] = js.undefined): DomainStatus = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "DomainId" -> DomainId.asInstanceOf[js.Any],
+        "DomainName" -> DomainName.asInstanceOf[js.Any],
+        "RequiresIndexDocuments" -> RequiresIndexDocuments.asInstanceOf[js.Any],
         "ARN" -> ARN.map { x => x.asInstanceOf[js.Any] },
         "Created" -> Created.map { x => x.asInstanceOf[js.Any] },
         "Deleted" -> Deleted.map { x => x.asInstanceOf[js.Any] },
         "DocService" -> DocService.map { x => x.asInstanceOf[js.Any] },
-        "SearchInstanceType" -> SearchInstanceType.map { x => x.asInstanceOf[js.Any] },
+        "Limits" -> Limits.map { x => x.asInstanceOf[js.Any] },
         "Processing" -> Processing.map { x => x.asInstanceOf[js.Any] },
         "SearchInstanceCount" -> SearchInstanceCount.map { x => x.asInstanceOf[js.Any] },
-        "DomainId" -> DomainId.map { x => x.asInstanceOf[js.Any] },
-        "DomainName" -> DomainName.map { x => x.asInstanceOf[js.Any] },
+        "SearchInstanceType" -> SearchInstanceType.map { x => x.asInstanceOf[js.Any] },
         "SearchPartitionCount" -> SearchPartitionCount.map { x => x.asInstanceOf[js.Any] },
-        "SearchService" -> SearchService.map { x => x.asInstanceOf[js.Any] },
-        "RequiresIndexDocuments" -> RequiresIndexDocuments.map { x => x.asInstanceOf[js.Any] },
-        "Limits" -> Limits.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "SearchService" -> SearchService.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DomainStatus]
     }
@@ -1148,26 +1148,26 @@ package cloudsearch {
    */
   @js.native
   trait DoubleArrayOptions extends js.Object {
-    var SearchEnabled: js.UndefOr[Boolean]
-    var FacetEnabled: js.UndefOr[Boolean]
     var DefaultValue: js.UndefOr[Double]
-    var SourceFields: js.UndefOr[FieldNameCommaList]
+    var FacetEnabled: js.UndefOr[Boolean]
     var ReturnEnabled: js.UndefOr[Boolean]
+    var SearchEnabled: js.UndefOr[Boolean]
+    var SourceFields: js.UndefOr[FieldNameCommaList]
   }
 
   object DoubleArrayOptions {
     def apply(
-      SearchEnabled: js.UndefOr[Boolean] = js.undefined,
-      FacetEnabled: js.UndefOr[Boolean] = js.undefined,
       DefaultValue: js.UndefOr[Double] = js.undefined,
-      SourceFields: js.UndefOr[FieldNameCommaList] = js.undefined,
-      ReturnEnabled: js.UndefOr[Boolean] = js.undefined): DoubleArrayOptions = {
+      FacetEnabled: js.UndefOr[Boolean] = js.undefined,
+      ReturnEnabled: js.UndefOr[Boolean] = js.undefined,
+      SearchEnabled: js.UndefOr[Boolean] = js.undefined,
+      SourceFields: js.UndefOr[FieldNameCommaList] = js.undefined): DoubleArrayOptions = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "SearchEnabled" -> SearchEnabled.map { x => x.asInstanceOf[js.Any] },
-        "FacetEnabled" -> FacetEnabled.map { x => x.asInstanceOf[js.Any] },
         "DefaultValue" -> DefaultValue.map { x => x.asInstanceOf[js.Any] },
-        "SourceFields" -> SourceFields.map { x => x.asInstanceOf[js.Any] },
-        "ReturnEnabled" -> ReturnEnabled.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "FacetEnabled" -> FacetEnabled.map { x => x.asInstanceOf[js.Any] },
+        "ReturnEnabled" -> ReturnEnabled.map { x => x.asInstanceOf[js.Any] },
+        "SearchEnabled" -> SearchEnabled.map { x => x.asInstanceOf[js.Any] },
+        "SourceFields" -> SourceFields.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DoubleArrayOptions]
     }
@@ -1178,29 +1178,29 @@ package cloudsearch {
    */
   @js.native
   trait DoubleOptions extends js.Object {
-    var SearchEnabled: js.UndefOr[Boolean]
-    var SourceField: js.UndefOr[FieldName]
-    var FacetEnabled: js.UndefOr[Boolean]
-    var SortEnabled: js.UndefOr[Boolean]
     var DefaultValue: js.UndefOr[Double]
+    var FacetEnabled: js.UndefOr[Boolean]
     var ReturnEnabled: js.UndefOr[Boolean]
+    var SearchEnabled: js.UndefOr[Boolean]
+    var SortEnabled: js.UndefOr[Boolean]
+    var SourceField: js.UndefOr[FieldName]
   }
 
   object DoubleOptions {
     def apply(
-      SearchEnabled: js.UndefOr[Boolean] = js.undefined,
-      SourceField: js.UndefOr[FieldName] = js.undefined,
-      FacetEnabled: js.UndefOr[Boolean] = js.undefined,
-      SortEnabled: js.UndefOr[Boolean] = js.undefined,
       DefaultValue: js.UndefOr[Double] = js.undefined,
-      ReturnEnabled: js.UndefOr[Boolean] = js.undefined): DoubleOptions = {
+      FacetEnabled: js.UndefOr[Boolean] = js.undefined,
+      ReturnEnabled: js.UndefOr[Boolean] = js.undefined,
+      SearchEnabled: js.UndefOr[Boolean] = js.undefined,
+      SortEnabled: js.UndefOr[Boolean] = js.undefined,
+      SourceField: js.UndefOr[FieldName] = js.undefined): DoubleOptions = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "SearchEnabled" -> SearchEnabled.map { x => x.asInstanceOf[js.Any] },
-        "SourceField" -> SourceField.map { x => x.asInstanceOf[js.Any] },
-        "FacetEnabled" -> FacetEnabled.map { x => x.asInstanceOf[js.Any] },
-        "SortEnabled" -> SortEnabled.map { x => x.asInstanceOf[js.Any] },
         "DefaultValue" -> DefaultValue.map { x => x.asInstanceOf[js.Any] },
-        "ReturnEnabled" -> ReturnEnabled.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "FacetEnabled" -> FacetEnabled.map { x => x.asInstanceOf[js.Any] },
+        "ReturnEnabled" -> ReturnEnabled.map { x => x.asInstanceOf[js.Any] },
+        "SearchEnabled" -> SearchEnabled.map { x => x.asInstanceOf[js.Any] },
+        "SortEnabled" -> SortEnabled.map { x => x.asInstanceOf[js.Any] },
+        "SourceField" -> SourceField.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DoubleOptions]
     }
@@ -1211,17 +1211,17 @@ package cloudsearch {
    */
   @js.native
   trait Expression extends js.Object {
-    var ExpressionName: js.UndefOr[StandardName]
-    var ExpressionValue: js.UndefOr[ExpressionValue]
+    var ExpressionName: StandardName
+    var ExpressionValue: ExpressionValue
   }
 
   object Expression {
     def apply(
-      ExpressionName: js.UndefOr[StandardName] = js.undefined,
-      ExpressionValue: js.UndefOr[ExpressionValue] = js.undefined): Expression = {
+      ExpressionName: StandardName,
+      ExpressionValue: ExpressionValue): Expression = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ExpressionName" -> ExpressionName.map { x => x.asInstanceOf[js.Any] },
-        "ExpressionValue" -> ExpressionValue.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ExpressionName" -> ExpressionName.asInstanceOf[js.Any],
+        "ExpressionValue" -> ExpressionValue.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Expression]
     }
@@ -1232,17 +1232,17 @@ package cloudsearch {
    */
   @js.native
   trait ExpressionStatus extends js.Object {
-    var Options: js.UndefOr[Expression]
-    var Status: js.UndefOr[OptionStatus]
+    var Options: Expression
+    var Status: OptionStatus
   }
 
   object ExpressionStatus {
     def apply(
-      Options: js.UndefOr[Expression] = js.undefined,
-      Status: js.UndefOr[OptionStatus] = js.undefined): ExpressionStatus = {
+      Options: Expression,
+      Status: OptionStatus): ExpressionStatus = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Options" -> Options.map { x => x.asInstanceOf[js.Any] },
-        "Status" -> Status.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Options" -> Options.asInstanceOf[js.Any],
+        "Status" -> Status.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ExpressionStatus]
     }
@@ -1253,14 +1253,14 @@ package cloudsearch {
    */
   @js.native
   trait IndexDocumentsRequest extends js.Object {
-    var DomainName: js.UndefOr[DomainName]
+    var DomainName: DomainName
   }
 
   object IndexDocumentsRequest {
     def apply(
-      DomainName: js.UndefOr[DomainName] = js.undefined): IndexDocumentsRequest = {
+      DomainName: DomainName): IndexDocumentsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "DomainName" -> DomainName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "DomainName" -> DomainName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[IndexDocumentsRequest]
     }
@@ -1289,50 +1289,50 @@ package cloudsearch {
    */
   @js.native
   trait IndexField extends js.Object {
-    var IntOptions: js.UndefOr[IntOptions]
-    var IndexFieldType: js.UndefOr[IndexFieldType]
-    var TextOptions: js.UndefOr[TextOptions]
-    var LiteralArrayOptions: js.UndefOr[LiteralArrayOptions]
-    var DoubleOptions: js.UndefOr[DoubleOptions]
+    var IndexFieldName: DynamicFieldName
+    var IndexFieldType: IndexFieldType
     var DateArrayOptions: js.UndefOr[DateArrayOptions]
-    var IntArrayOptions: js.UndefOr[IntArrayOptions]
-    var LatLonOptions: js.UndefOr[LatLonOptions]
+    var DateOptions: js.UndefOr[DateOptions]
     var DoubleArrayOptions: js.UndefOr[DoubleArrayOptions]
-    var IndexFieldName: js.UndefOr[DynamicFieldName]
+    var DoubleOptions: js.UndefOr[DoubleOptions]
+    var IntArrayOptions: js.UndefOr[IntArrayOptions]
+    var IntOptions: js.UndefOr[IntOptions]
+    var LatLonOptions: js.UndefOr[LatLonOptions]
+    var LiteralArrayOptions: js.UndefOr[LiteralArrayOptions]
     var LiteralOptions: js.UndefOr[LiteralOptions]
     var TextArrayOptions: js.UndefOr[TextArrayOptions]
-    var DateOptions: js.UndefOr[DateOptions]
+    var TextOptions: js.UndefOr[TextOptions]
   }
 
   object IndexField {
     def apply(
-      IntOptions: js.UndefOr[IntOptions] = js.undefined,
-      IndexFieldType: js.UndefOr[IndexFieldType] = js.undefined,
-      TextOptions: js.UndefOr[TextOptions] = js.undefined,
-      LiteralArrayOptions: js.UndefOr[LiteralArrayOptions] = js.undefined,
-      DoubleOptions: js.UndefOr[DoubleOptions] = js.undefined,
+      IndexFieldName: DynamicFieldName,
+      IndexFieldType: IndexFieldType,
       DateArrayOptions: js.UndefOr[DateArrayOptions] = js.undefined,
-      IntArrayOptions: js.UndefOr[IntArrayOptions] = js.undefined,
-      LatLonOptions: js.UndefOr[LatLonOptions] = js.undefined,
+      DateOptions: js.UndefOr[DateOptions] = js.undefined,
       DoubleArrayOptions: js.UndefOr[DoubleArrayOptions] = js.undefined,
-      IndexFieldName: js.UndefOr[DynamicFieldName] = js.undefined,
+      DoubleOptions: js.UndefOr[DoubleOptions] = js.undefined,
+      IntArrayOptions: js.UndefOr[IntArrayOptions] = js.undefined,
+      IntOptions: js.UndefOr[IntOptions] = js.undefined,
+      LatLonOptions: js.UndefOr[LatLonOptions] = js.undefined,
+      LiteralArrayOptions: js.UndefOr[LiteralArrayOptions] = js.undefined,
       LiteralOptions: js.UndefOr[LiteralOptions] = js.undefined,
       TextArrayOptions: js.UndefOr[TextArrayOptions] = js.undefined,
-      DateOptions: js.UndefOr[DateOptions] = js.undefined): IndexField = {
+      TextOptions: js.UndefOr[TextOptions] = js.undefined): IndexField = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "IntOptions" -> IntOptions.map { x => x.asInstanceOf[js.Any] },
-        "IndexFieldType" -> IndexFieldType.map { x => x.asInstanceOf[js.Any] },
-        "TextOptions" -> TextOptions.map { x => x.asInstanceOf[js.Any] },
-        "LiteralArrayOptions" -> LiteralArrayOptions.map { x => x.asInstanceOf[js.Any] },
-        "DoubleOptions" -> DoubleOptions.map { x => x.asInstanceOf[js.Any] },
+        "IndexFieldName" -> IndexFieldName.asInstanceOf[js.Any],
+        "IndexFieldType" -> IndexFieldType.asInstanceOf[js.Any],
         "DateArrayOptions" -> DateArrayOptions.map { x => x.asInstanceOf[js.Any] },
-        "IntArrayOptions" -> IntArrayOptions.map { x => x.asInstanceOf[js.Any] },
-        "LatLonOptions" -> LatLonOptions.map { x => x.asInstanceOf[js.Any] },
+        "DateOptions" -> DateOptions.map { x => x.asInstanceOf[js.Any] },
         "DoubleArrayOptions" -> DoubleArrayOptions.map { x => x.asInstanceOf[js.Any] },
-        "IndexFieldName" -> IndexFieldName.map { x => x.asInstanceOf[js.Any] },
+        "DoubleOptions" -> DoubleOptions.map { x => x.asInstanceOf[js.Any] },
+        "IntArrayOptions" -> IntArrayOptions.map { x => x.asInstanceOf[js.Any] },
+        "IntOptions" -> IntOptions.map { x => x.asInstanceOf[js.Any] },
+        "LatLonOptions" -> LatLonOptions.map { x => x.asInstanceOf[js.Any] },
+        "LiteralArrayOptions" -> LiteralArrayOptions.map { x => x.asInstanceOf[js.Any] },
         "LiteralOptions" -> LiteralOptions.map { x => x.asInstanceOf[js.Any] },
         "TextArrayOptions" -> TextArrayOptions.map { x => x.asInstanceOf[js.Any] },
-        "DateOptions" -> DateOptions.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "TextOptions" -> TextOptions.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[IndexField]
     }
@@ -1343,17 +1343,17 @@ package cloudsearch {
    */
   @js.native
   trait IndexFieldStatus extends js.Object {
-    var Options: js.UndefOr[IndexField]
-    var Status: js.UndefOr[OptionStatus]
+    var Options: IndexField
+    var Status: OptionStatus
   }
 
   object IndexFieldStatus {
     def apply(
-      Options: js.UndefOr[IndexField] = js.undefined,
-      Status: js.UndefOr[OptionStatus] = js.undefined): IndexFieldStatus = {
+      Options: IndexField,
+      Status: OptionStatus): IndexFieldStatus = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Options" -> Options.map { x => x.asInstanceOf[js.Any] },
-        "Status" -> Status.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Options" -> Options.asInstanceOf[js.Any],
+        "Status" -> Status.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[IndexFieldStatus]
     }
@@ -1383,26 +1383,26 @@ package cloudsearch {
    */
   @js.native
   trait IntArrayOptions extends js.Object {
-    var SearchEnabled: js.UndefOr[Boolean]
-    var FacetEnabled: js.UndefOr[Boolean]
     var DefaultValue: js.UndefOr[Double]
-    var SourceFields: js.UndefOr[FieldNameCommaList]
+    var FacetEnabled: js.UndefOr[Boolean]
     var ReturnEnabled: js.UndefOr[Boolean]
+    var SearchEnabled: js.UndefOr[Boolean]
+    var SourceFields: js.UndefOr[FieldNameCommaList]
   }
 
   object IntArrayOptions {
     def apply(
-      SearchEnabled: js.UndefOr[Boolean] = js.undefined,
-      FacetEnabled: js.UndefOr[Boolean] = js.undefined,
       DefaultValue: js.UndefOr[Double] = js.undefined,
-      SourceFields: js.UndefOr[FieldNameCommaList] = js.undefined,
-      ReturnEnabled: js.UndefOr[Boolean] = js.undefined): IntArrayOptions = {
+      FacetEnabled: js.UndefOr[Boolean] = js.undefined,
+      ReturnEnabled: js.UndefOr[Boolean] = js.undefined,
+      SearchEnabled: js.UndefOr[Boolean] = js.undefined,
+      SourceFields: js.UndefOr[FieldNameCommaList] = js.undefined): IntArrayOptions = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "SearchEnabled" -> SearchEnabled.map { x => x.asInstanceOf[js.Any] },
-        "FacetEnabled" -> FacetEnabled.map { x => x.asInstanceOf[js.Any] },
         "DefaultValue" -> DefaultValue.map { x => x.asInstanceOf[js.Any] },
-        "SourceFields" -> SourceFields.map { x => x.asInstanceOf[js.Any] },
-        "ReturnEnabled" -> ReturnEnabled.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "FacetEnabled" -> FacetEnabled.map { x => x.asInstanceOf[js.Any] },
+        "ReturnEnabled" -> ReturnEnabled.map { x => x.asInstanceOf[js.Any] },
+        "SearchEnabled" -> SearchEnabled.map { x => x.asInstanceOf[js.Any] },
+        "SourceFields" -> SourceFields.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[IntArrayOptions]
     }
@@ -1413,29 +1413,29 @@ package cloudsearch {
    */
   @js.native
   trait IntOptions extends js.Object {
-    var SearchEnabled: js.UndefOr[Boolean]
-    var SourceField: js.UndefOr[FieldName]
-    var FacetEnabled: js.UndefOr[Boolean]
-    var SortEnabled: js.UndefOr[Boolean]
     var DefaultValue: js.UndefOr[Double]
+    var FacetEnabled: js.UndefOr[Boolean]
     var ReturnEnabled: js.UndefOr[Boolean]
+    var SearchEnabled: js.UndefOr[Boolean]
+    var SortEnabled: js.UndefOr[Boolean]
+    var SourceField: js.UndefOr[FieldName]
   }
 
   object IntOptions {
     def apply(
-      SearchEnabled: js.UndefOr[Boolean] = js.undefined,
-      SourceField: js.UndefOr[FieldName] = js.undefined,
-      FacetEnabled: js.UndefOr[Boolean] = js.undefined,
-      SortEnabled: js.UndefOr[Boolean] = js.undefined,
       DefaultValue: js.UndefOr[Double] = js.undefined,
-      ReturnEnabled: js.UndefOr[Boolean] = js.undefined): IntOptions = {
+      FacetEnabled: js.UndefOr[Boolean] = js.undefined,
+      ReturnEnabled: js.UndefOr[Boolean] = js.undefined,
+      SearchEnabled: js.UndefOr[Boolean] = js.undefined,
+      SortEnabled: js.UndefOr[Boolean] = js.undefined,
+      SourceField: js.UndefOr[FieldName] = js.undefined): IntOptions = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "SearchEnabled" -> SearchEnabled.map { x => x.asInstanceOf[js.Any] },
-        "SourceField" -> SourceField.map { x => x.asInstanceOf[js.Any] },
-        "FacetEnabled" -> FacetEnabled.map { x => x.asInstanceOf[js.Any] },
-        "SortEnabled" -> SortEnabled.map { x => x.asInstanceOf[js.Any] },
         "DefaultValue" -> DefaultValue.map { x => x.asInstanceOf[js.Any] },
-        "ReturnEnabled" -> ReturnEnabled.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "FacetEnabled" -> FacetEnabled.map { x => x.asInstanceOf[js.Any] },
+        "ReturnEnabled" -> ReturnEnabled.map { x => x.asInstanceOf[js.Any] },
+        "SearchEnabled" -> SearchEnabled.map { x => x.asInstanceOf[js.Any] },
+        "SortEnabled" -> SortEnabled.map { x => x.asInstanceOf[js.Any] },
+        "SourceField" -> SourceField.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[IntOptions]
     }
@@ -1462,29 +1462,29 @@ package cloudsearch {
    */
   @js.native
   trait LatLonOptions extends js.Object {
-    var SearchEnabled: js.UndefOr[Boolean]
-    var SourceField: js.UndefOr[FieldName]
-    var FacetEnabled: js.UndefOr[Boolean]
-    var SortEnabled: js.UndefOr[Boolean]
     var DefaultValue: js.UndefOr[FieldValue]
+    var FacetEnabled: js.UndefOr[Boolean]
     var ReturnEnabled: js.UndefOr[Boolean]
+    var SearchEnabled: js.UndefOr[Boolean]
+    var SortEnabled: js.UndefOr[Boolean]
+    var SourceField: js.UndefOr[FieldName]
   }
 
   object LatLonOptions {
     def apply(
-      SearchEnabled: js.UndefOr[Boolean] = js.undefined,
-      SourceField: js.UndefOr[FieldName] = js.undefined,
-      FacetEnabled: js.UndefOr[Boolean] = js.undefined,
-      SortEnabled: js.UndefOr[Boolean] = js.undefined,
       DefaultValue: js.UndefOr[FieldValue] = js.undefined,
-      ReturnEnabled: js.UndefOr[Boolean] = js.undefined): LatLonOptions = {
+      FacetEnabled: js.UndefOr[Boolean] = js.undefined,
+      ReturnEnabled: js.UndefOr[Boolean] = js.undefined,
+      SearchEnabled: js.UndefOr[Boolean] = js.undefined,
+      SortEnabled: js.UndefOr[Boolean] = js.undefined,
+      SourceField: js.UndefOr[FieldName] = js.undefined): LatLonOptions = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "SearchEnabled" -> SearchEnabled.map { x => x.asInstanceOf[js.Any] },
-        "SourceField" -> SourceField.map { x => x.asInstanceOf[js.Any] },
-        "FacetEnabled" -> FacetEnabled.map { x => x.asInstanceOf[js.Any] },
-        "SortEnabled" -> SortEnabled.map { x => x.asInstanceOf[js.Any] },
         "DefaultValue" -> DefaultValue.map { x => x.asInstanceOf[js.Any] },
-        "ReturnEnabled" -> ReturnEnabled.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "FacetEnabled" -> FacetEnabled.map { x => x.asInstanceOf[js.Any] },
+        "ReturnEnabled" -> ReturnEnabled.map { x => x.asInstanceOf[js.Any] },
+        "SearchEnabled" -> SearchEnabled.map { x => x.asInstanceOf[js.Any] },
+        "SortEnabled" -> SortEnabled.map { x => x.asInstanceOf[js.Any] },
+        "SourceField" -> SourceField.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[LatLonOptions]
     }
@@ -1500,17 +1500,17 @@ package cloudsearch {
 
   @js.native
   trait Limits extends js.Object {
-    var MaximumReplicationCount: js.UndefOr[MaximumReplicationCount]
-    var MaximumPartitionCount: js.UndefOr[MaximumPartitionCount]
+    var MaximumPartitionCount: MaximumPartitionCount
+    var MaximumReplicationCount: MaximumReplicationCount
   }
 
   object Limits {
     def apply(
-      MaximumReplicationCount: js.UndefOr[MaximumReplicationCount] = js.undefined,
-      MaximumPartitionCount: js.UndefOr[MaximumPartitionCount] = js.undefined): Limits = {
+      MaximumPartitionCount: MaximumPartitionCount,
+      MaximumReplicationCount: MaximumReplicationCount): Limits = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "MaximumReplicationCount" -> MaximumReplicationCount.map { x => x.asInstanceOf[js.Any] },
-        "MaximumPartitionCount" -> MaximumPartitionCount.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "MaximumPartitionCount" -> MaximumPartitionCount.asInstanceOf[js.Any],
+        "MaximumReplicationCount" -> MaximumReplicationCount.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Limits]
     }
@@ -1539,26 +1539,26 @@ package cloudsearch {
    */
   @js.native
   trait LiteralArrayOptions extends js.Object {
-    var SearchEnabled: js.UndefOr[Boolean]
-    var FacetEnabled: js.UndefOr[Boolean]
     var DefaultValue: js.UndefOr[FieldValue]
-    var SourceFields: js.UndefOr[FieldNameCommaList]
+    var FacetEnabled: js.UndefOr[Boolean]
     var ReturnEnabled: js.UndefOr[Boolean]
+    var SearchEnabled: js.UndefOr[Boolean]
+    var SourceFields: js.UndefOr[FieldNameCommaList]
   }
 
   object LiteralArrayOptions {
     def apply(
-      SearchEnabled: js.UndefOr[Boolean] = js.undefined,
-      FacetEnabled: js.UndefOr[Boolean] = js.undefined,
       DefaultValue: js.UndefOr[FieldValue] = js.undefined,
-      SourceFields: js.UndefOr[FieldNameCommaList] = js.undefined,
-      ReturnEnabled: js.UndefOr[Boolean] = js.undefined): LiteralArrayOptions = {
+      FacetEnabled: js.UndefOr[Boolean] = js.undefined,
+      ReturnEnabled: js.UndefOr[Boolean] = js.undefined,
+      SearchEnabled: js.UndefOr[Boolean] = js.undefined,
+      SourceFields: js.UndefOr[FieldNameCommaList] = js.undefined): LiteralArrayOptions = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "SearchEnabled" -> SearchEnabled.map { x => x.asInstanceOf[js.Any] },
-        "FacetEnabled" -> FacetEnabled.map { x => x.asInstanceOf[js.Any] },
         "DefaultValue" -> DefaultValue.map { x => x.asInstanceOf[js.Any] },
-        "SourceFields" -> SourceFields.map { x => x.asInstanceOf[js.Any] },
-        "ReturnEnabled" -> ReturnEnabled.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "FacetEnabled" -> FacetEnabled.map { x => x.asInstanceOf[js.Any] },
+        "ReturnEnabled" -> ReturnEnabled.map { x => x.asInstanceOf[js.Any] },
+        "SearchEnabled" -> SearchEnabled.map { x => x.asInstanceOf[js.Any] },
+        "SourceFields" -> SourceFields.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[LiteralArrayOptions]
     }
@@ -1569,29 +1569,29 @@ package cloudsearch {
    */
   @js.native
   trait LiteralOptions extends js.Object {
-    var SearchEnabled: js.UndefOr[Boolean]
-    var SourceField: js.UndefOr[FieldName]
-    var FacetEnabled: js.UndefOr[Boolean]
-    var SortEnabled: js.UndefOr[Boolean]
     var DefaultValue: js.UndefOr[FieldValue]
+    var FacetEnabled: js.UndefOr[Boolean]
     var ReturnEnabled: js.UndefOr[Boolean]
+    var SearchEnabled: js.UndefOr[Boolean]
+    var SortEnabled: js.UndefOr[Boolean]
+    var SourceField: js.UndefOr[FieldName]
   }
 
   object LiteralOptions {
     def apply(
-      SearchEnabled: js.UndefOr[Boolean] = js.undefined,
-      SourceField: js.UndefOr[FieldName] = js.undefined,
-      FacetEnabled: js.UndefOr[Boolean] = js.undefined,
-      SortEnabled: js.UndefOr[Boolean] = js.undefined,
       DefaultValue: js.UndefOr[FieldValue] = js.undefined,
-      ReturnEnabled: js.UndefOr[Boolean] = js.undefined): LiteralOptions = {
+      FacetEnabled: js.UndefOr[Boolean] = js.undefined,
+      ReturnEnabled: js.UndefOr[Boolean] = js.undefined,
+      SearchEnabled: js.UndefOr[Boolean] = js.undefined,
+      SortEnabled: js.UndefOr[Boolean] = js.undefined,
+      SourceField: js.UndefOr[FieldName] = js.undefined): LiteralOptions = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "SearchEnabled" -> SearchEnabled.map { x => x.asInstanceOf[js.Any] },
-        "SourceField" -> SourceField.map { x => x.asInstanceOf[js.Any] },
-        "FacetEnabled" -> FacetEnabled.map { x => x.asInstanceOf[js.Any] },
-        "SortEnabled" -> SortEnabled.map { x => x.asInstanceOf[js.Any] },
         "DefaultValue" -> DefaultValue.map { x => x.asInstanceOf[js.Any] },
-        "ReturnEnabled" -> ReturnEnabled.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "FacetEnabled" -> FacetEnabled.map { x => x.asInstanceOf[js.Any] },
+        "ReturnEnabled" -> ReturnEnabled.map { x => x.asInstanceOf[js.Any] },
+        "SearchEnabled" -> SearchEnabled.map { x => x.asInstanceOf[js.Any] },
+        "SortEnabled" -> SortEnabled.map { x => x.asInstanceOf[js.Any] },
+        "SourceField" -> SourceField.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[LiteralOptions]
     }
@@ -1614,26 +1614,26 @@ package cloudsearch {
    */
   @js.native
   trait OptionStatus extends js.Object {
-    var CreationDate: js.UndefOr[UpdateTimestamp]
-    var UpdateDate: js.UndefOr[UpdateTimestamp]
-    var UpdateVersion: js.UndefOr[UIntValue]
-    var State: js.UndefOr[OptionState]
+    var CreationDate: UpdateTimestamp
+    var State: OptionState
+    var UpdateDate: UpdateTimestamp
     var PendingDeletion: js.UndefOr[Boolean]
+    var UpdateVersion: js.UndefOr[UIntValue]
   }
 
   object OptionStatus {
     def apply(
-      CreationDate: js.UndefOr[UpdateTimestamp] = js.undefined,
-      UpdateDate: js.UndefOr[UpdateTimestamp] = js.undefined,
-      UpdateVersion: js.UndefOr[UIntValue] = js.undefined,
-      State: js.UndefOr[OptionState] = js.undefined,
-      PendingDeletion: js.UndefOr[Boolean] = js.undefined): OptionStatus = {
+      CreationDate: UpdateTimestamp,
+      State: OptionState,
+      UpdateDate: UpdateTimestamp,
+      PendingDeletion: js.UndefOr[Boolean] = js.undefined,
+      UpdateVersion: js.UndefOr[UIntValue] = js.undefined): OptionStatus = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "CreationDate" -> CreationDate.map { x => x.asInstanceOf[js.Any] },
-        "UpdateDate" -> UpdateDate.map { x => x.asInstanceOf[js.Any] },
-        "UpdateVersion" -> UpdateVersion.map { x => x.asInstanceOf[js.Any] },
-        "State" -> State.map { x => x.asInstanceOf[js.Any] },
-        "PendingDeletion" -> PendingDeletion.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "CreationDate" -> CreationDate.asInstanceOf[js.Any],
+        "State" -> State.asInstanceOf[js.Any],
+        "UpdateDate" -> UpdateDate.asInstanceOf[js.Any],
+        "PendingDeletion" -> PendingDeletion.map { x => x.asInstanceOf[js.Any] },
+        "UpdateVersion" -> UpdateVersion.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[OptionStatus]
     }
@@ -1669,19 +1669,19 @@ package cloudsearch {
   @js.native
   trait ScalingParameters extends js.Object {
     var DesiredInstanceType: js.UndefOr[PartitionInstanceType]
-    var DesiredReplicationCount: js.UndefOr[UIntValue]
     var DesiredPartitionCount: js.UndefOr[UIntValue]
+    var DesiredReplicationCount: js.UndefOr[UIntValue]
   }
 
   object ScalingParameters {
     def apply(
       DesiredInstanceType: js.UndefOr[PartitionInstanceType] = js.undefined,
-      DesiredReplicationCount: js.UndefOr[UIntValue] = js.undefined,
-      DesiredPartitionCount: js.UndefOr[UIntValue] = js.undefined): ScalingParameters = {
+      DesiredPartitionCount: js.UndefOr[UIntValue] = js.undefined,
+      DesiredReplicationCount: js.UndefOr[UIntValue] = js.undefined): ScalingParameters = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DesiredInstanceType" -> DesiredInstanceType.map { x => x.asInstanceOf[js.Any] },
-        "DesiredReplicationCount" -> DesiredReplicationCount.map { x => x.asInstanceOf[js.Any] },
-        "DesiredPartitionCount" -> DesiredPartitionCount.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "DesiredPartitionCount" -> DesiredPartitionCount.map { x => x.asInstanceOf[js.Any] },
+        "DesiredReplicationCount" -> DesiredReplicationCount.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ScalingParameters]
     }
@@ -1692,17 +1692,17 @@ package cloudsearch {
    */
   @js.native
   trait ScalingParametersStatus extends js.Object {
-    var Options: js.UndefOr[ScalingParameters]
-    var Status: js.UndefOr[OptionStatus]
+    var Options: ScalingParameters
+    var Status: OptionStatus
   }
 
   object ScalingParametersStatus {
     def apply(
-      Options: js.UndefOr[ScalingParameters] = js.undefined,
-      Status: js.UndefOr[OptionStatus] = js.undefined): ScalingParametersStatus = {
+      Options: ScalingParameters,
+      Status: OptionStatus): ScalingParametersStatus = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Options" -> Options.map { x => x.asInstanceOf[js.Any] },
-        "Status" -> Status.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Options" -> Options.asInstanceOf[js.Any],
+        "Status" -> Status.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ScalingParametersStatus]
     }
@@ -1731,17 +1731,17 @@ package cloudsearch {
    */
   @js.native
   trait Suggester extends js.Object {
-    var SuggesterName: js.UndefOr[StandardName]
-    var DocumentSuggesterOptions: js.UndefOr[DocumentSuggesterOptions]
+    var DocumentSuggesterOptions: DocumentSuggesterOptions
+    var SuggesterName: StandardName
   }
 
   object Suggester {
     def apply(
-      SuggesterName: js.UndefOr[StandardName] = js.undefined,
-      DocumentSuggesterOptions: js.UndefOr[DocumentSuggesterOptions] = js.undefined): Suggester = {
+      DocumentSuggesterOptions: DocumentSuggesterOptions,
+      SuggesterName: StandardName): Suggester = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "SuggesterName" -> SuggesterName.map { x => x.asInstanceOf[js.Any] },
-        "DocumentSuggesterOptions" -> DocumentSuggesterOptions.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "DocumentSuggesterOptions" -> DocumentSuggesterOptions.asInstanceOf[js.Any],
+        "SuggesterName" -> SuggesterName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Suggester]
     }
@@ -1760,17 +1760,17 @@ package cloudsearch {
    */
   @js.native
   trait SuggesterStatus extends js.Object {
-    var Options: js.UndefOr[Suggester]
-    var Status: js.UndefOr[OptionStatus]
+    var Options: Suggester
+    var Status: OptionStatus
   }
 
   object SuggesterStatus {
     def apply(
-      Options: js.UndefOr[Suggester] = js.undefined,
-      Status: js.UndefOr[OptionStatus] = js.undefined): SuggesterStatus = {
+      Options: Suggester,
+      Status: OptionStatus): SuggesterStatus = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Options" -> Options.map { x => x.asInstanceOf[js.Any] },
-        "Status" -> Status.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Options" -> Options.asInstanceOf[js.Any],
+        "Status" -> Status.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SuggesterStatus]
     }
@@ -1781,26 +1781,26 @@ package cloudsearch {
    */
   @js.native
   trait TextArrayOptions extends js.Object {
-    var HighlightEnabled: js.UndefOr[Boolean]
     var AnalysisScheme: js.UndefOr[Word]
     var DefaultValue: js.UndefOr[FieldValue]
-    var SourceFields: js.UndefOr[FieldNameCommaList]
+    var HighlightEnabled: js.UndefOr[Boolean]
     var ReturnEnabled: js.UndefOr[Boolean]
+    var SourceFields: js.UndefOr[FieldNameCommaList]
   }
 
   object TextArrayOptions {
     def apply(
-      HighlightEnabled: js.UndefOr[Boolean] = js.undefined,
       AnalysisScheme: js.UndefOr[Word] = js.undefined,
       DefaultValue: js.UndefOr[FieldValue] = js.undefined,
-      SourceFields: js.UndefOr[FieldNameCommaList] = js.undefined,
-      ReturnEnabled: js.UndefOr[Boolean] = js.undefined): TextArrayOptions = {
+      HighlightEnabled: js.UndefOr[Boolean] = js.undefined,
+      ReturnEnabled: js.UndefOr[Boolean] = js.undefined,
+      SourceFields: js.UndefOr[FieldNameCommaList] = js.undefined): TextArrayOptions = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "HighlightEnabled" -> HighlightEnabled.map { x => x.asInstanceOf[js.Any] },
         "AnalysisScheme" -> AnalysisScheme.map { x => x.asInstanceOf[js.Any] },
         "DefaultValue" -> DefaultValue.map { x => x.asInstanceOf[js.Any] },
-        "SourceFields" -> SourceFields.map { x => x.asInstanceOf[js.Any] },
-        "ReturnEnabled" -> ReturnEnabled.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "HighlightEnabled" -> HighlightEnabled.map { x => x.asInstanceOf[js.Any] },
+        "ReturnEnabled" -> ReturnEnabled.map { x => x.asInstanceOf[js.Any] },
+        "SourceFields" -> SourceFields.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TextArrayOptions]
     }
@@ -1811,29 +1811,29 @@ package cloudsearch {
    */
   @js.native
   trait TextOptions extends js.Object {
-    var HighlightEnabled: js.UndefOr[Boolean]
     var AnalysisScheme: js.UndefOr[Word]
-    var SourceField: js.UndefOr[FieldName]
-    var SortEnabled: js.UndefOr[Boolean]
     var DefaultValue: js.UndefOr[FieldValue]
+    var HighlightEnabled: js.UndefOr[Boolean]
     var ReturnEnabled: js.UndefOr[Boolean]
+    var SortEnabled: js.UndefOr[Boolean]
+    var SourceField: js.UndefOr[FieldName]
   }
 
   object TextOptions {
     def apply(
-      HighlightEnabled: js.UndefOr[Boolean] = js.undefined,
       AnalysisScheme: js.UndefOr[Word] = js.undefined,
-      SourceField: js.UndefOr[FieldName] = js.undefined,
-      SortEnabled: js.UndefOr[Boolean] = js.undefined,
       DefaultValue: js.UndefOr[FieldValue] = js.undefined,
-      ReturnEnabled: js.UndefOr[Boolean] = js.undefined): TextOptions = {
+      HighlightEnabled: js.UndefOr[Boolean] = js.undefined,
+      ReturnEnabled: js.UndefOr[Boolean] = js.undefined,
+      SortEnabled: js.UndefOr[Boolean] = js.undefined,
+      SourceField: js.UndefOr[FieldName] = js.undefined): TextOptions = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "HighlightEnabled" -> HighlightEnabled.map { x => x.asInstanceOf[js.Any] },
         "AnalysisScheme" -> AnalysisScheme.map { x => x.asInstanceOf[js.Any] },
-        "SourceField" -> SourceField.map { x => x.asInstanceOf[js.Any] },
-        "SortEnabled" -> SortEnabled.map { x => x.asInstanceOf[js.Any] },
         "DefaultValue" -> DefaultValue.map { x => x.asInstanceOf[js.Any] },
-        "ReturnEnabled" -> ReturnEnabled.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "HighlightEnabled" -> HighlightEnabled.map { x => x.asInstanceOf[js.Any] },
+        "ReturnEnabled" -> ReturnEnabled.map { x => x.asInstanceOf[js.Any] },
+        "SortEnabled" -> SortEnabled.map { x => x.asInstanceOf[js.Any] },
+        "SourceField" -> SourceField.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TextOptions]
     }
@@ -1844,17 +1844,17 @@ package cloudsearch {
    */
   @js.native
   trait UpdateAvailabilityOptionsRequest extends js.Object {
-    var DomainName: js.UndefOr[DomainName]
-    var MultiAZ: js.UndefOr[Boolean]
+    var DomainName: DomainName
+    var MultiAZ: Boolean
   }
 
   object UpdateAvailabilityOptionsRequest {
     def apply(
-      DomainName: js.UndefOr[DomainName] = js.undefined,
-      MultiAZ: js.UndefOr[Boolean] = js.undefined): UpdateAvailabilityOptionsRequest = {
+      DomainName: DomainName,
+      MultiAZ: Boolean): UpdateAvailabilityOptionsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "DomainName" -> DomainName.map { x => x.asInstanceOf[js.Any] },
-        "MultiAZ" -> MultiAZ.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "DomainName" -> DomainName.asInstanceOf[js.Any],
+        "MultiAZ" -> MultiAZ.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateAvailabilityOptionsRequest]
     }
@@ -1883,17 +1883,17 @@ package cloudsearch {
    */
   @js.native
   trait UpdateScalingParametersRequest extends js.Object {
-    var DomainName: js.UndefOr[DomainName]
-    var ScalingParameters: js.UndefOr[ScalingParameters]
+    var DomainName: DomainName
+    var ScalingParameters: ScalingParameters
   }
 
   object UpdateScalingParametersRequest {
     def apply(
-      DomainName: js.UndefOr[DomainName] = js.undefined,
-      ScalingParameters: js.UndefOr[ScalingParameters] = js.undefined): UpdateScalingParametersRequest = {
+      DomainName: DomainName,
+      ScalingParameters: ScalingParameters): UpdateScalingParametersRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "DomainName" -> DomainName.map { x => x.asInstanceOf[js.Any] },
-        "ScalingParameters" -> ScalingParameters.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "DomainName" -> DomainName.asInstanceOf[js.Any],
+        "ScalingParameters" -> ScalingParameters.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateScalingParametersRequest]
     }
@@ -1904,14 +1904,14 @@ package cloudsearch {
    */
   @js.native
   trait UpdateScalingParametersResponse extends js.Object {
-    var ScalingParameters: js.UndefOr[ScalingParametersStatus]
+    var ScalingParameters: ScalingParametersStatus
   }
 
   object UpdateScalingParametersResponse {
     def apply(
-      ScalingParameters: js.UndefOr[ScalingParametersStatus] = js.undefined): UpdateScalingParametersResponse = {
+      ScalingParameters: ScalingParametersStatus): UpdateScalingParametersResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ScalingParameters" -> ScalingParameters.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ScalingParameters" -> ScalingParameters.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateScalingParametersResponse]
     }
@@ -1922,17 +1922,17 @@ package cloudsearch {
    */
   @js.native
   trait UpdateServiceAccessPoliciesRequest extends js.Object {
-    var DomainName: js.UndefOr[DomainName]
-    var AccessPolicies: js.UndefOr[PolicyDocument]
+    var AccessPolicies: PolicyDocument
+    var DomainName: DomainName
   }
 
   object UpdateServiceAccessPoliciesRequest {
     def apply(
-      DomainName: js.UndefOr[DomainName] = js.undefined,
-      AccessPolicies: js.UndefOr[PolicyDocument] = js.undefined): UpdateServiceAccessPoliciesRequest = {
+      AccessPolicies: PolicyDocument,
+      DomainName: DomainName): UpdateServiceAccessPoliciesRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "DomainName" -> DomainName.map { x => x.asInstanceOf[js.Any] },
-        "AccessPolicies" -> AccessPolicies.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "AccessPolicies" -> AccessPolicies.asInstanceOf[js.Any],
+        "DomainName" -> DomainName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateServiceAccessPoliciesRequest]
     }
@@ -1943,14 +1943,14 @@ package cloudsearch {
    */
   @js.native
   trait UpdateServiceAccessPoliciesResponse extends js.Object {
-    var AccessPolicies: js.UndefOr[AccessPoliciesStatus]
+    var AccessPolicies: AccessPoliciesStatus
   }
 
   object UpdateServiceAccessPoliciesResponse {
     def apply(
-      AccessPolicies: js.UndefOr[AccessPoliciesStatus] = js.undefined): UpdateServiceAccessPoliciesResponse = {
+      AccessPolicies: AccessPoliciesStatus): UpdateServiceAccessPoliciesResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "AccessPolicies" -> AccessPolicies.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "AccessPolicies" -> AccessPolicies.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateServiceAccessPoliciesResponse]
     }

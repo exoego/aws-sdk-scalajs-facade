@@ -22,14 +22,14 @@ package s3control {
 
   @js.native
   trait DeletePublicAccessBlockRequest extends js.Object {
-    var AccountId: js.UndefOr[AccountId]
+    var AccountId: AccountId
   }
 
   object DeletePublicAccessBlockRequest {
     def apply(
-      AccountId: js.UndefOr[AccountId] = js.undefined): DeletePublicAccessBlockRequest = {
+      AccountId: AccountId): DeletePublicAccessBlockRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "AccountId" -> AccountId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "AccountId" -> AccountId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeletePublicAccessBlockRequest]
     }
@@ -52,14 +52,14 @@ package s3control {
 
   @js.native
   trait GetPublicAccessBlockRequest extends js.Object {
-    var AccountId: js.UndefOr[AccountId]
+    var AccountId: AccountId
   }
 
   object GetPublicAccessBlockRequest {
     def apply(
-      AccountId: js.UndefOr[AccountId] = js.undefined): GetPublicAccessBlockRequest = {
+      AccountId: AccountId): GetPublicAccessBlockRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "AccountId" -> AccountId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "AccountId" -> AccountId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetPublicAccessBlockRequest]
     }
@@ -71,21 +71,21 @@ package s3control {
   @js.native
   trait PublicAccessBlockConfiguration extends js.Object {
     var BlockPublicAcls: js.UndefOr[Setting]
-    var IgnorePublicAcls: js.UndefOr[Setting]
     var BlockPublicPolicy: js.UndefOr[Setting]
+    var IgnorePublicAcls: js.UndefOr[Setting]
     var RestrictPublicBuckets: js.UndefOr[Setting]
   }
 
   object PublicAccessBlockConfiguration {
     def apply(
       BlockPublicAcls: js.UndefOr[Setting] = js.undefined,
-      IgnorePublicAcls: js.UndefOr[Setting] = js.undefined,
       BlockPublicPolicy: js.UndefOr[Setting] = js.undefined,
+      IgnorePublicAcls: js.UndefOr[Setting] = js.undefined,
       RestrictPublicBuckets: js.UndefOr[Setting] = js.undefined): PublicAccessBlockConfiguration = {
       val _fields = IndexedSeq[(String, js.Any)](
         "BlockPublicAcls" -> BlockPublicAcls.map { x => x.asInstanceOf[js.Any] },
-        "IgnorePublicAcls" -> IgnorePublicAcls.map { x => x.asInstanceOf[js.Any] },
         "BlockPublicPolicy" -> BlockPublicPolicy.map { x => x.asInstanceOf[js.Any] },
+        "IgnorePublicAcls" -> IgnorePublicAcls.map { x => x.asInstanceOf[js.Any] },
         "RestrictPublicBuckets" -> RestrictPublicBuckets.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PublicAccessBlockConfiguration]
@@ -94,17 +94,17 @@ package s3control {
 
   @js.native
   trait PutPublicAccessBlockRequest extends js.Object {
-    var PublicAccessBlockConfiguration: js.UndefOr[PublicAccessBlockConfiguration]
-    var AccountId: js.UndefOr[AccountId]
+    var AccountId: AccountId
+    var PublicAccessBlockConfiguration: PublicAccessBlockConfiguration
   }
 
   object PutPublicAccessBlockRequest {
     def apply(
-      PublicAccessBlockConfiguration: js.UndefOr[PublicAccessBlockConfiguration] = js.undefined,
-      AccountId: js.UndefOr[AccountId] = js.undefined): PutPublicAccessBlockRequest = {
+      AccountId: AccountId,
+      PublicAccessBlockConfiguration: PublicAccessBlockConfiguration): PutPublicAccessBlockRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "PublicAccessBlockConfiguration" -> PublicAccessBlockConfiguration.map { x => x.asInstanceOf[js.Any] },
-        "AccountId" -> AccountId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "AccountId" -> AccountId.asInstanceOf[js.Any],
+        "PublicAccessBlockConfiguration" -> PublicAccessBlockConfiguration.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutPublicAccessBlockRequest]
     }

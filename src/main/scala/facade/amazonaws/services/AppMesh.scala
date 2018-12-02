@@ -64,17 +64,17 @@ package appmesh {
    */
   @js.native
   trait CreateMeshInput extends js.Object {
+    var meshName: ResourceName
     var clientToken: js.UndefOr[String]
-    var meshName: js.UndefOr[ResourceName]
   }
 
   object CreateMeshInput {
     def apply(
-      clientToken: js.UndefOr[String] = js.undefined,
-      meshName: js.UndefOr[ResourceName] = js.undefined): CreateMeshInput = {
+      meshName: ResourceName,
+      clientToken: js.UndefOr[String] = js.undefined): CreateMeshInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "clientToken" -> clientToken.map { x => x.asInstanceOf[js.Any] },
-        "meshName" -> meshName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "meshName" -> meshName.asInstanceOf[js.Any],
+        "clientToken" -> clientToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateMeshInput]
     }
@@ -103,26 +103,26 @@ package appmesh {
    */
   @js.native
   trait CreateRouteInput extends js.Object {
-    var meshName: js.UndefOr[ResourceName]
-    var virtualRouterName: js.UndefOr[ResourceName]
+    var meshName: ResourceName
+    var routeName: ResourceName
+    var spec: RouteSpec
+    var virtualRouterName: ResourceName
     var clientToken: js.UndefOr[String]
-    var spec: js.UndefOr[RouteSpec]
-    var routeName: js.UndefOr[ResourceName]
   }
 
   object CreateRouteInput {
     def apply(
-      meshName: js.UndefOr[ResourceName] = js.undefined,
-      virtualRouterName: js.UndefOr[ResourceName] = js.undefined,
-      clientToken: js.UndefOr[String] = js.undefined,
-      spec: js.UndefOr[RouteSpec] = js.undefined,
-      routeName: js.UndefOr[ResourceName] = js.undefined): CreateRouteInput = {
+      meshName: ResourceName,
+      routeName: ResourceName,
+      spec: RouteSpec,
+      virtualRouterName: ResourceName,
+      clientToken: js.UndefOr[String] = js.undefined): CreateRouteInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "meshName" -> meshName.map { x => x.asInstanceOf[js.Any] },
-        "virtualRouterName" -> virtualRouterName.map { x => x.asInstanceOf[js.Any] },
-        "clientToken" -> clientToken.map { x => x.asInstanceOf[js.Any] },
-        "spec" -> spec.map { x => x.asInstanceOf[js.Any] },
-        "routeName" -> routeName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "meshName" -> meshName.asInstanceOf[js.Any],
+        "routeName" -> routeName.asInstanceOf[js.Any],
+        "spec" -> spec.asInstanceOf[js.Any],
+        "virtualRouterName" -> virtualRouterName.asInstanceOf[js.Any],
+        "clientToken" -> clientToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateRouteInput]
     }
@@ -151,23 +151,23 @@ package appmesh {
    */
   @js.native
   trait CreateVirtualNodeInput extends js.Object {
+    var meshName: ResourceName
+    var spec: VirtualNodeSpec
+    var virtualNodeName: ResourceName
     var clientToken: js.UndefOr[String]
-    var meshName: js.UndefOr[ResourceName]
-    var spec: js.UndefOr[VirtualNodeSpec]
-    var virtualNodeName: js.UndefOr[ResourceName]
   }
 
   object CreateVirtualNodeInput {
     def apply(
-      clientToken: js.UndefOr[String] = js.undefined,
-      meshName: js.UndefOr[ResourceName] = js.undefined,
-      spec: js.UndefOr[VirtualNodeSpec] = js.undefined,
-      virtualNodeName: js.UndefOr[ResourceName] = js.undefined): CreateVirtualNodeInput = {
+      meshName: ResourceName,
+      spec: VirtualNodeSpec,
+      virtualNodeName: ResourceName,
+      clientToken: js.UndefOr[String] = js.undefined): CreateVirtualNodeInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "clientToken" -> clientToken.map { x => x.asInstanceOf[js.Any] },
-        "meshName" -> meshName.map { x => x.asInstanceOf[js.Any] },
-        "spec" -> spec.map { x => x.asInstanceOf[js.Any] },
-        "virtualNodeName" -> virtualNodeName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "meshName" -> meshName.asInstanceOf[js.Any],
+        "spec" -> spec.asInstanceOf[js.Any],
+        "virtualNodeName" -> virtualNodeName.asInstanceOf[js.Any],
+        "clientToken" -> clientToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateVirtualNodeInput]
     }
@@ -196,23 +196,23 @@ package appmesh {
    */
   @js.native
   trait CreateVirtualRouterInput extends js.Object {
+    var meshName: ResourceName
+    var spec: VirtualRouterSpec
+    var virtualRouterName: ResourceName
     var clientToken: js.UndefOr[String]
-    var meshName: js.UndefOr[ResourceName]
-    var spec: js.UndefOr[VirtualRouterSpec]
-    var virtualRouterName: js.UndefOr[ResourceName]
   }
 
   object CreateVirtualRouterInput {
     def apply(
-      clientToken: js.UndefOr[String] = js.undefined,
-      meshName: js.UndefOr[ResourceName] = js.undefined,
-      spec: js.UndefOr[VirtualRouterSpec] = js.undefined,
-      virtualRouterName: js.UndefOr[ResourceName] = js.undefined): CreateVirtualRouterInput = {
+      meshName: ResourceName,
+      spec: VirtualRouterSpec,
+      virtualRouterName: ResourceName,
+      clientToken: js.UndefOr[String] = js.undefined): CreateVirtualRouterInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "clientToken" -> clientToken.map { x => x.asInstanceOf[js.Any] },
-        "meshName" -> meshName.map { x => x.asInstanceOf[js.Any] },
-        "spec" -> spec.map { x => x.asInstanceOf[js.Any] },
-        "virtualRouterName" -> virtualRouterName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "meshName" -> meshName.asInstanceOf[js.Any],
+        "spec" -> spec.asInstanceOf[js.Any],
+        "virtualRouterName" -> virtualRouterName.asInstanceOf[js.Any],
+        "clientToken" -> clientToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateVirtualRouterInput]
     }
@@ -241,14 +241,14 @@ package appmesh {
    */
   @js.native
   trait DeleteMeshInput extends js.Object {
-    var meshName: js.UndefOr[ResourceName]
+    var meshName: ResourceName
   }
 
   object DeleteMeshInput {
     def apply(
-      meshName: js.UndefOr[ResourceName] = js.undefined): DeleteMeshInput = {
+      meshName: ResourceName): DeleteMeshInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "meshName" -> meshName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "meshName" -> meshName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteMeshInput]
     }
@@ -277,20 +277,20 @@ package appmesh {
    */
   @js.native
   trait DeleteRouteInput extends js.Object {
-    var meshName: js.UndefOr[ResourceName]
-    var routeName: js.UndefOr[ResourceName]
-    var virtualRouterName: js.UndefOr[ResourceName]
+    var meshName: ResourceName
+    var routeName: ResourceName
+    var virtualRouterName: ResourceName
   }
 
   object DeleteRouteInput {
     def apply(
-      meshName: js.UndefOr[ResourceName] = js.undefined,
-      routeName: js.UndefOr[ResourceName] = js.undefined,
-      virtualRouterName: js.UndefOr[ResourceName] = js.undefined): DeleteRouteInput = {
+      meshName: ResourceName,
+      routeName: ResourceName,
+      virtualRouterName: ResourceName): DeleteRouteInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "meshName" -> meshName.map { x => x.asInstanceOf[js.Any] },
-        "routeName" -> routeName.map { x => x.asInstanceOf[js.Any] },
-        "virtualRouterName" -> virtualRouterName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "meshName" -> meshName.asInstanceOf[js.Any],
+        "routeName" -> routeName.asInstanceOf[js.Any],
+        "virtualRouterName" -> virtualRouterName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteRouteInput]
     }
@@ -319,17 +319,17 @@ package appmesh {
    */
   @js.native
   trait DeleteVirtualNodeInput extends js.Object {
-    var meshName: js.UndefOr[ResourceName]
-    var virtualNodeName: js.UndefOr[ResourceName]
+    var meshName: ResourceName
+    var virtualNodeName: ResourceName
   }
 
   object DeleteVirtualNodeInput {
     def apply(
-      meshName: js.UndefOr[ResourceName] = js.undefined,
-      virtualNodeName: js.UndefOr[ResourceName] = js.undefined): DeleteVirtualNodeInput = {
+      meshName: ResourceName,
+      virtualNodeName: ResourceName): DeleteVirtualNodeInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "meshName" -> meshName.map { x => x.asInstanceOf[js.Any] },
-        "virtualNodeName" -> virtualNodeName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "meshName" -> meshName.asInstanceOf[js.Any],
+        "virtualNodeName" -> virtualNodeName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteVirtualNodeInput]
     }
@@ -358,17 +358,17 @@ package appmesh {
    */
   @js.native
   trait DeleteVirtualRouterInput extends js.Object {
-    var meshName: js.UndefOr[ResourceName]
-    var virtualRouterName: js.UndefOr[ResourceName]
+    var meshName: ResourceName
+    var virtualRouterName: ResourceName
   }
 
   object DeleteVirtualRouterInput {
     def apply(
-      meshName: js.UndefOr[ResourceName] = js.undefined,
-      virtualRouterName: js.UndefOr[ResourceName] = js.undefined): DeleteVirtualRouterInput = {
+      meshName: ResourceName,
+      virtualRouterName: ResourceName): DeleteVirtualRouterInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "meshName" -> meshName.map { x => x.asInstanceOf[js.Any] },
-        "virtualRouterName" -> virtualRouterName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "meshName" -> meshName.asInstanceOf[js.Any],
+        "virtualRouterName" -> virtualRouterName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteVirtualRouterInput]
     }
@@ -397,14 +397,14 @@ package appmesh {
    */
   @js.native
   trait DescribeMeshInput extends js.Object {
-    var meshName: js.UndefOr[ResourceName]
+    var meshName: ResourceName
   }
 
   object DescribeMeshInput {
     def apply(
-      meshName: js.UndefOr[ResourceName] = js.undefined): DescribeMeshInput = {
+      meshName: ResourceName): DescribeMeshInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "meshName" -> meshName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "meshName" -> meshName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeMeshInput]
     }
@@ -433,20 +433,20 @@ package appmesh {
    */
   @js.native
   trait DescribeRouteInput extends js.Object {
-    var meshName: js.UndefOr[ResourceName]
-    var routeName: js.UndefOr[ResourceName]
-    var virtualRouterName: js.UndefOr[ResourceName]
+    var meshName: ResourceName
+    var routeName: ResourceName
+    var virtualRouterName: ResourceName
   }
 
   object DescribeRouteInput {
     def apply(
-      meshName: js.UndefOr[ResourceName] = js.undefined,
-      routeName: js.UndefOr[ResourceName] = js.undefined,
-      virtualRouterName: js.UndefOr[ResourceName] = js.undefined): DescribeRouteInput = {
+      meshName: ResourceName,
+      routeName: ResourceName,
+      virtualRouterName: ResourceName): DescribeRouteInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "meshName" -> meshName.map { x => x.asInstanceOf[js.Any] },
-        "routeName" -> routeName.map { x => x.asInstanceOf[js.Any] },
-        "virtualRouterName" -> virtualRouterName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "meshName" -> meshName.asInstanceOf[js.Any],
+        "routeName" -> routeName.asInstanceOf[js.Any],
+        "virtualRouterName" -> virtualRouterName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeRouteInput]
     }
@@ -475,17 +475,17 @@ package appmesh {
    */
   @js.native
   trait DescribeVirtualNodeInput extends js.Object {
-    var meshName: js.UndefOr[ResourceName]
-    var virtualNodeName: js.UndefOr[ResourceName]
+    var meshName: ResourceName
+    var virtualNodeName: ResourceName
   }
 
   object DescribeVirtualNodeInput {
     def apply(
-      meshName: js.UndefOr[ResourceName] = js.undefined,
-      virtualNodeName: js.UndefOr[ResourceName] = js.undefined): DescribeVirtualNodeInput = {
+      meshName: ResourceName,
+      virtualNodeName: ResourceName): DescribeVirtualNodeInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "meshName" -> meshName.map { x => x.asInstanceOf[js.Any] },
-        "virtualNodeName" -> virtualNodeName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "meshName" -> meshName.asInstanceOf[js.Any],
+        "virtualNodeName" -> virtualNodeName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeVirtualNodeInput]
     }
@@ -514,17 +514,17 @@ package appmesh {
    */
   @js.native
   trait DescribeVirtualRouterInput extends js.Object {
-    var meshName: js.UndefOr[ResourceName]
-    var virtualRouterName: js.UndefOr[ResourceName]
+    var meshName: ResourceName
+    var virtualRouterName: ResourceName
   }
 
   object DescribeVirtualRouterInput {
     def apply(
-      meshName: js.UndefOr[ResourceName] = js.undefined,
-      virtualRouterName: js.UndefOr[ResourceName] = js.undefined): DescribeVirtualRouterInput = {
+      meshName: ResourceName,
+      virtualRouterName: ResourceName): DescribeVirtualRouterInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "meshName" -> meshName.map { x => x.asInstanceOf[js.Any] },
-        "virtualRouterName" -> virtualRouterName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "meshName" -> meshName.asInstanceOf[js.Any],
+        "virtualRouterName" -> virtualRouterName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeVirtualRouterInput]
     }
@@ -574,32 +574,32 @@ package appmesh {
    */
   @js.native
   trait HealthCheckPolicy extends js.Object {
+    var healthyThreshold: js.UndefOr[NonNegativeInt]
     var intervalMillis: js.UndefOr[DurationMillis]
     var path: js.UndefOr[String]
-    var timeoutMillis: js.UndefOr[DurationMillis]
-    var healthyThreshold: js.UndefOr[NonNegativeInt]
-    var unhealthyThreshold: js.UndefOr[NonNegativeInt]
     var port: js.UndefOr[PortNumber]
     var protocol: js.UndefOr[PortProtocol]
+    var timeoutMillis: js.UndefOr[DurationMillis]
+    var unhealthyThreshold: js.UndefOr[NonNegativeInt]
   }
 
   object HealthCheckPolicy {
     def apply(
+      healthyThreshold: js.UndefOr[NonNegativeInt] = js.undefined,
       intervalMillis: js.UndefOr[DurationMillis] = js.undefined,
       path: js.UndefOr[String] = js.undefined,
-      timeoutMillis: js.UndefOr[DurationMillis] = js.undefined,
-      healthyThreshold: js.UndefOr[NonNegativeInt] = js.undefined,
-      unhealthyThreshold: js.UndefOr[NonNegativeInt] = js.undefined,
       port: js.UndefOr[PortNumber] = js.undefined,
-      protocol: js.UndefOr[PortProtocol] = js.undefined): HealthCheckPolicy = {
+      protocol: js.UndefOr[PortProtocol] = js.undefined,
+      timeoutMillis: js.UndefOr[DurationMillis] = js.undefined,
+      unhealthyThreshold: js.UndefOr[NonNegativeInt] = js.undefined): HealthCheckPolicy = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "healthyThreshold" -> healthyThreshold.map { x => x.asInstanceOf[js.Any] },
         "intervalMillis" -> intervalMillis.map { x => x.asInstanceOf[js.Any] },
         "path" -> path.map { x => x.asInstanceOf[js.Any] },
-        "timeoutMillis" -> timeoutMillis.map { x => x.asInstanceOf[js.Any] },
-        "healthyThreshold" -> healthyThreshold.map { x => x.asInstanceOf[js.Any] },
-        "unhealthyThreshold" -> unhealthyThreshold.map { x => x.asInstanceOf[js.Any] },
         "port" -> port.map { x => x.asInstanceOf[js.Any] },
-        "protocol" -> protocol.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "protocol" -> protocol.map { x => x.asInstanceOf[js.Any] },
+        "timeoutMillis" -> timeoutMillis.map { x => x.asInstanceOf[js.Any] },
+        "unhealthyThreshold" -> unhealthyThreshold.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[HealthCheckPolicy]
     }
@@ -690,16 +690,16 @@ package appmesh {
    */
   @js.native
   trait ListMeshesOutput extends js.Object {
-    var meshes: js.UndefOr[MeshList]
+    var meshes: MeshList
     var nextToken: js.UndefOr[String]
   }
 
   object ListMeshesOutput {
     def apply(
-      meshes: js.UndefOr[MeshList] = js.undefined,
+      meshes: MeshList,
       nextToken: js.UndefOr[String] = js.undefined): ListMeshesOutput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "meshes" -> meshes.map { x => x.asInstanceOf[js.Any] },
+        "meshes" -> meshes.asInstanceOf[js.Any],
         "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListMeshesOutput]
@@ -711,23 +711,23 @@ package appmesh {
    */
   @js.native
   trait ListRoutesInput extends js.Object {
+    var meshName: ResourceName
+    var virtualRouterName: ResourceName
     var limit: js.UndefOr[ListRoutesLimit]
-    var meshName: js.UndefOr[ResourceName]
     var nextToken: js.UndefOr[String]
-    var virtualRouterName: js.UndefOr[ResourceName]
   }
 
   object ListRoutesInput {
     def apply(
+      meshName: ResourceName,
+      virtualRouterName: ResourceName,
       limit: js.UndefOr[ListRoutesLimit] = js.undefined,
-      meshName: js.UndefOr[ResourceName] = js.undefined,
-      nextToken: js.UndefOr[String] = js.undefined,
-      virtualRouterName: js.UndefOr[ResourceName] = js.undefined): ListRoutesInput = {
+      nextToken: js.UndefOr[String] = js.undefined): ListRoutesInput = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "meshName" -> meshName.asInstanceOf[js.Any],
+        "virtualRouterName" -> virtualRouterName.asInstanceOf[js.Any],
         "limit" -> limit.map { x => x.asInstanceOf[js.Any] },
-        "meshName" -> meshName.map { x => x.asInstanceOf[js.Any] },
-        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] },
-        "virtualRouterName" -> virtualRouterName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListRoutesInput]
     }
@@ -738,17 +738,17 @@ package appmesh {
    */
   @js.native
   trait ListRoutesOutput extends js.Object {
+    var routes: RouteList
     var nextToken: js.UndefOr[String]
-    var routes: js.UndefOr[RouteList]
   }
 
   object ListRoutesOutput {
     def apply(
-      nextToken: js.UndefOr[String] = js.undefined,
-      routes: js.UndefOr[RouteList] = js.undefined): ListRoutesOutput = {
+      routes: RouteList,
+      nextToken: js.UndefOr[String] = js.undefined): ListRoutesOutput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] },
-        "routes" -> routes.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "routes" -> routes.asInstanceOf[js.Any],
+        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListRoutesOutput]
     }
@@ -759,19 +759,19 @@ package appmesh {
    */
   @js.native
   trait ListVirtualNodesInput extends js.Object {
+    var meshName: ResourceName
     var limit: js.UndefOr[ListVirtualNodesLimit]
-    var meshName: js.UndefOr[ResourceName]
     var nextToken: js.UndefOr[String]
   }
 
   object ListVirtualNodesInput {
     def apply(
+      meshName: ResourceName,
       limit: js.UndefOr[ListVirtualNodesLimit] = js.undefined,
-      meshName: js.UndefOr[ResourceName] = js.undefined,
       nextToken: js.UndefOr[String] = js.undefined): ListVirtualNodesInput = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "meshName" -> meshName.asInstanceOf[js.Any],
         "limit" -> limit.map { x => x.asInstanceOf[js.Any] },
-        "meshName" -> meshName.map { x => x.asInstanceOf[js.Any] },
         "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListVirtualNodesInput]
@@ -783,17 +783,17 @@ package appmesh {
    */
   @js.native
   trait ListVirtualNodesOutput extends js.Object {
+    var virtualNodes: VirtualNodeList
     var nextToken: js.UndefOr[String]
-    var virtualNodes: js.UndefOr[VirtualNodeList]
   }
 
   object ListVirtualNodesOutput {
     def apply(
-      nextToken: js.UndefOr[String] = js.undefined,
-      virtualNodes: js.UndefOr[VirtualNodeList] = js.undefined): ListVirtualNodesOutput = {
+      virtualNodes: VirtualNodeList,
+      nextToken: js.UndefOr[String] = js.undefined): ListVirtualNodesOutput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] },
-        "virtualNodes" -> virtualNodes.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "virtualNodes" -> virtualNodes.asInstanceOf[js.Any],
+        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListVirtualNodesOutput]
     }
@@ -804,19 +804,19 @@ package appmesh {
    */
   @js.native
   trait ListVirtualRoutersInput extends js.Object {
+    var meshName: ResourceName
     var limit: js.UndefOr[ListVirtualRoutersLimit]
-    var meshName: js.UndefOr[ResourceName]
     var nextToken: js.UndefOr[String]
   }
 
   object ListVirtualRoutersInput {
     def apply(
+      meshName: ResourceName,
       limit: js.UndefOr[ListVirtualRoutersLimit] = js.undefined,
-      meshName: js.UndefOr[ResourceName] = js.undefined,
       nextToken: js.UndefOr[String] = js.undefined): ListVirtualRoutersInput = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "meshName" -> meshName.asInstanceOf[js.Any],
         "limit" -> limit.map { x => x.asInstanceOf[js.Any] },
-        "meshName" -> meshName.map { x => x.asInstanceOf[js.Any] },
         "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListVirtualRoutersInput]
@@ -828,17 +828,17 @@ package appmesh {
    */
   @js.native
   trait ListVirtualRoutersOutput extends js.Object {
+    var virtualRouters: VirtualRouterList
     var nextToken: js.UndefOr[String]
-    var virtualRouters: js.UndefOr[VirtualRouterList]
   }
 
   object ListVirtualRoutersOutput {
     def apply(
-      nextToken: js.UndefOr[String] = js.undefined,
-      virtualRouters: js.UndefOr[VirtualRouterList] = js.undefined): ListVirtualRoutersOutput = {
+      virtualRouters: VirtualRouterList,
+      nextToken: js.UndefOr[String] = js.undefined): ListVirtualRoutersOutput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] },
-        "virtualRouters" -> virtualRouters.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "virtualRouters" -> virtualRouters.asInstanceOf[js.Any],
+        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListVirtualRoutersOutput]
     }
@@ -870,19 +870,19 @@ package appmesh {
    */
   @js.native
   trait MeshData extends js.Object {
-    var meshName: js.UndefOr[ResourceName]
-    var metadata: js.UndefOr[ResourceMetadata]
+    var meshName: ResourceName
+    var metadata: ResourceMetadata
     var status: js.UndefOr[MeshStatus]
   }
 
   object MeshData {
     def apply(
-      meshName: js.UndefOr[ResourceName] = js.undefined,
-      metadata: js.UndefOr[ResourceMetadata] = js.undefined,
+      meshName: ResourceName,
+      metadata: ResourceMetadata,
       status: js.UndefOr[MeshStatus] = js.undefined): MeshData = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "meshName" -> meshName.map { x => x.asInstanceOf[js.Any] },
-        "metadata" -> metadata.map { x => x.asInstanceOf[js.Any] },
+        "meshName" -> meshName.asInstanceOf[js.Any],
+        "metadata" -> metadata.asInstanceOf[js.Any],
         "status" -> status.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[MeshData]
@@ -970,25 +970,25 @@ package appmesh {
   @js.native
   trait ResourceMetadata extends js.Object {
     var arn: js.UndefOr[Arn]
-    var version: js.UndefOr[Double]
     var createdAt: js.UndefOr[Timestamp]
-    var uid: js.UndefOr[String]
     var lastUpdatedAt: js.UndefOr[Timestamp]
+    var uid: js.UndefOr[String]
+    var version: js.UndefOr[Double]
   }
 
   object ResourceMetadata {
     def apply(
       arn: js.UndefOr[Arn] = js.undefined,
-      version: js.UndefOr[Double] = js.undefined,
       createdAt: js.UndefOr[Timestamp] = js.undefined,
+      lastUpdatedAt: js.UndefOr[Timestamp] = js.undefined,
       uid: js.UndefOr[String] = js.undefined,
-      lastUpdatedAt: js.UndefOr[Timestamp] = js.undefined): ResourceMetadata = {
+      version: js.UndefOr[Double] = js.undefined): ResourceMetadata = {
       val _fields = IndexedSeq[(String, js.Any)](
         "arn" -> arn.map { x => x.asInstanceOf[js.Any] },
-        "version" -> version.map { x => x.asInstanceOf[js.Any] },
         "createdAt" -> createdAt.map { x => x.asInstanceOf[js.Any] },
+        "lastUpdatedAt" -> lastUpdatedAt.map { x => x.asInstanceOf[js.Any] },
         "uid" -> uid.map { x => x.asInstanceOf[js.Any] },
-        "lastUpdatedAt" -> lastUpdatedAt.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "version" -> version.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ResourceMetadata]
     }
@@ -999,29 +999,29 @@ package appmesh {
    */
   @js.native
   trait RouteData extends js.Object {
-    var meshName: js.UndefOr[ResourceName]
-    var virtualRouterName: js.UndefOr[ResourceName]
-    var status: js.UndefOr[RouteStatus]
-    var spec: js.UndefOr[RouteSpec]
-    var routeName: js.UndefOr[ResourceName]
+    var meshName: ResourceName
+    var routeName: ResourceName
+    var virtualRouterName: ResourceName
     var metadata: js.UndefOr[ResourceMetadata]
+    var spec: js.UndefOr[RouteSpec]
+    var status: js.UndefOr[RouteStatus]
   }
 
   object RouteData {
     def apply(
-      meshName: js.UndefOr[ResourceName] = js.undefined,
-      virtualRouterName: js.UndefOr[ResourceName] = js.undefined,
-      status: js.UndefOr[RouteStatus] = js.undefined,
+      meshName: ResourceName,
+      routeName: ResourceName,
+      virtualRouterName: ResourceName,
+      metadata: js.UndefOr[ResourceMetadata] = js.undefined,
       spec: js.UndefOr[RouteSpec] = js.undefined,
-      routeName: js.UndefOr[ResourceName] = js.undefined,
-      metadata: js.UndefOr[ResourceMetadata] = js.undefined): RouteData = {
+      status: js.UndefOr[RouteStatus] = js.undefined): RouteData = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "meshName" -> meshName.map { x => x.asInstanceOf[js.Any] },
-        "virtualRouterName" -> virtualRouterName.map { x => x.asInstanceOf[js.Any] },
-        "status" -> status.map { x => x.asInstanceOf[js.Any] },
+        "meshName" -> meshName.asInstanceOf[js.Any],
+        "routeName" -> routeName.asInstanceOf[js.Any],
+        "virtualRouterName" -> virtualRouterName.asInstanceOf[js.Any],
+        "metadata" -> metadata.map { x => x.asInstanceOf[js.Any] },
         "spec" -> spec.map { x => x.asInstanceOf[js.Any] },
-        "routeName" -> routeName.map { x => x.asInstanceOf[js.Any] },
-        "metadata" -> metadata.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "status" -> status.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RouteData]
     }
@@ -1121,26 +1121,26 @@ package appmesh {
    */
   @js.native
   trait UpdateRouteInput extends js.Object {
-    var meshName: js.UndefOr[ResourceName]
-    var virtualRouterName: js.UndefOr[ResourceName]
+    var meshName: ResourceName
+    var routeName: ResourceName
+    var spec: RouteSpec
+    var virtualRouterName: ResourceName
     var clientToken: js.UndefOr[String]
-    var spec: js.UndefOr[RouteSpec]
-    var routeName: js.UndefOr[ResourceName]
   }
 
   object UpdateRouteInput {
     def apply(
-      meshName: js.UndefOr[ResourceName] = js.undefined,
-      virtualRouterName: js.UndefOr[ResourceName] = js.undefined,
-      clientToken: js.UndefOr[String] = js.undefined,
-      spec: js.UndefOr[RouteSpec] = js.undefined,
-      routeName: js.UndefOr[ResourceName] = js.undefined): UpdateRouteInput = {
+      meshName: ResourceName,
+      routeName: ResourceName,
+      spec: RouteSpec,
+      virtualRouterName: ResourceName,
+      clientToken: js.UndefOr[String] = js.undefined): UpdateRouteInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "meshName" -> meshName.map { x => x.asInstanceOf[js.Any] },
-        "virtualRouterName" -> virtualRouterName.map { x => x.asInstanceOf[js.Any] },
-        "clientToken" -> clientToken.map { x => x.asInstanceOf[js.Any] },
-        "spec" -> spec.map { x => x.asInstanceOf[js.Any] },
-        "routeName" -> routeName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "meshName" -> meshName.asInstanceOf[js.Any],
+        "routeName" -> routeName.asInstanceOf[js.Any],
+        "spec" -> spec.asInstanceOf[js.Any],
+        "virtualRouterName" -> virtualRouterName.asInstanceOf[js.Any],
+        "clientToken" -> clientToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateRouteInput]
     }
@@ -1169,23 +1169,23 @@ package appmesh {
    */
   @js.native
   trait UpdateVirtualNodeInput extends js.Object {
+    var meshName: ResourceName
+    var spec: VirtualNodeSpec
+    var virtualNodeName: ResourceName
     var clientToken: js.UndefOr[String]
-    var meshName: js.UndefOr[ResourceName]
-    var spec: js.UndefOr[VirtualNodeSpec]
-    var virtualNodeName: js.UndefOr[ResourceName]
   }
 
   object UpdateVirtualNodeInput {
     def apply(
-      clientToken: js.UndefOr[String] = js.undefined,
-      meshName: js.UndefOr[ResourceName] = js.undefined,
-      spec: js.UndefOr[VirtualNodeSpec] = js.undefined,
-      virtualNodeName: js.UndefOr[ResourceName] = js.undefined): UpdateVirtualNodeInput = {
+      meshName: ResourceName,
+      spec: VirtualNodeSpec,
+      virtualNodeName: ResourceName,
+      clientToken: js.UndefOr[String] = js.undefined): UpdateVirtualNodeInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "clientToken" -> clientToken.map { x => x.asInstanceOf[js.Any] },
-        "meshName" -> meshName.map { x => x.asInstanceOf[js.Any] },
-        "spec" -> spec.map { x => x.asInstanceOf[js.Any] },
-        "virtualNodeName" -> virtualNodeName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "meshName" -> meshName.asInstanceOf[js.Any],
+        "spec" -> spec.asInstanceOf[js.Any],
+        "virtualNodeName" -> virtualNodeName.asInstanceOf[js.Any],
+        "clientToken" -> clientToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateVirtualNodeInput]
     }
@@ -1214,23 +1214,23 @@ package appmesh {
    */
   @js.native
   trait UpdateVirtualRouterInput extends js.Object {
+    var meshName: ResourceName
+    var spec: VirtualRouterSpec
+    var virtualRouterName: ResourceName
     var clientToken: js.UndefOr[String]
-    var meshName: js.UndefOr[ResourceName]
-    var spec: js.UndefOr[VirtualRouterSpec]
-    var virtualRouterName: js.UndefOr[ResourceName]
   }
 
   object UpdateVirtualRouterInput {
     def apply(
-      clientToken: js.UndefOr[String] = js.undefined,
-      meshName: js.UndefOr[ResourceName] = js.undefined,
-      spec: js.UndefOr[VirtualRouterSpec] = js.undefined,
-      virtualRouterName: js.UndefOr[ResourceName] = js.undefined): UpdateVirtualRouterInput = {
+      meshName: ResourceName,
+      spec: VirtualRouterSpec,
+      virtualRouterName: ResourceName,
+      clientToken: js.UndefOr[String] = js.undefined): UpdateVirtualRouterInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "clientToken" -> clientToken.map { x => x.asInstanceOf[js.Any] },
-        "meshName" -> meshName.map { x => x.asInstanceOf[js.Any] },
-        "spec" -> spec.map { x => x.asInstanceOf[js.Any] },
-        "virtualRouterName" -> virtualRouterName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "meshName" -> meshName.asInstanceOf[js.Any],
+        "spec" -> spec.asInstanceOf[js.Any],
+        "virtualRouterName" -> virtualRouterName.asInstanceOf[js.Any],
+        "clientToken" -> clientToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateVirtualRouterInput]
     }
@@ -1259,26 +1259,26 @@ package appmesh {
    */
   @js.native
   trait VirtualNodeData extends js.Object {
-    var meshName: js.UndefOr[ResourceName]
-    var status: js.UndefOr[VirtualNodeStatus]
-    var spec: js.UndefOr[VirtualNodeSpec]
+    var meshName: ResourceName
+    var virtualNodeName: ResourceName
     var metadata: js.UndefOr[ResourceMetadata]
-    var virtualNodeName: js.UndefOr[ResourceName]
+    var spec: js.UndefOr[VirtualNodeSpec]
+    var status: js.UndefOr[VirtualNodeStatus]
   }
 
   object VirtualNodeData {
     def apply(
-      meshName: js.UndefOr[ResourceName] = js.undefined,
-      status: js.UndefOr[VirtualNodeStatus] = js.undefined,
-      spec: js.UndefOr[VirtualNodeSpec] = js.undefined,
+      meshName: ResourceName,
+      virtualNodeName: ResourceName,
       metadata: js.UndefOr[ResourceMetadata] = js.undefined,
-      virtualNodeName: js.UndefOr[ResourceName] = js.undefined): VirtualNodeData = {
+      spec: js.UndefOr[VirtualNodeSpec] = js.undefined,
+      status: js.UndefOr[VirtualNodeStatus] = js.undefined): VirtualNodeData = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "meshName" -> meshName.map { x => x.asInstanceOf[js.Any] },
-        "status" -> status.map { x => x.asInstanceOf[js.Any] },
-        "spec" -> spec.map { x => x.asInstanceOf[js.Any] },
+        "meshName" -> meshName.asInstanceOf[js.Any],
+        "virtualNodeName" -> virtualNodeName.asInstanceOf[js.Any],
         "metadata" -> metadata.map { x => x.asInstanceOf[js.Any] },
-        "virtualNodeName" -> virtualNodeName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "spec" -> spec.map { x => x.asInstanceOf[js.Any] },
+        "status" -> status.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[VirtualNodeData]
     }
@@ -1363,26 +1363,26 @@ package appmesh {
    */
   @js.native
   trait VirtualRouterData extends js.Object {
-    var meshName: js.UndefOr[ResourceName]
-    var virtualRouterName: js.UndefOr[ResourceName]
-    var status: js.UndefOr[VirtualRouterStatus]
-    var spec: js.UndefOr[VirtualRouterSpec]
+    var meshName: ResourceName
+    var virtualRouterName: ResourceName
     var metadata: js.UndefOr[ResourceMetadata]
+    var spec: js.UndefOr[VirtualRouterSpec]
+    var status: js.UndefOr[VirtualRouterStatus]
   }
 
   object VirtualRouterData {
     def apply(
-      meshName: js.UndefOr[ResourceName] = js.undefined,
-      virtualRouterName: js.UndefOr[ResourceName] = js.undefined,
-      status: js.UndefOr[VirtualRouterStatus] = js.undefined,
+      meshName: ResourceName,
+      virtualRouterName: ResourceName,
+      metadata: js.UndefOr[ResourceMetadata] = js.undefined,
       spec: js.UndefOr[VirtualRouterSpec] = js.undefined,
-      metadata: js.UndefOr[ResourceMetadata] = js.undefined): VirtualRouterData = {
+      status: js.UndefOr[VirtualRouterStatus] = js.undefined): VirtualRouterData = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "meshName" -> meshName.map { x => x.asInstanceOf[js.Any] },
-        "virtualRouterName" -> virtualRouterName.map { x => x.asInstanceOf[js.Any] },
-        "status" -> status.map { x => x.asInstanceOf[js.Any] },
+        "meshName" -> meshName.asInstanceOf[js.Any],
+        "virtualRouterName" -> virtualRouterName.asInstanceOf[js.Any],
+        "metadata" -> metadata.map { x => x.asInstanceOf[js.Any] },
         "spec" -> spec.map { x => x.asInstanceOf[js.Any] },
-        "metadata" -> metadata.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "status" -> status.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[VirtualRouterData]
     }

@@ -40,14 +40,14 @@ package mediastoredata {
 
   @js.native
   trait DeleteObjectRequest extends js.Object {
-    var Path: js.UndefOr[PathNaming]
+    var Path: PathNaming
   }
 
   object DeleteObjectRequest {
     def apply(
-      Path: js.UndefOr[PathNaming] = js.undefined): DeleteObjectRequest = {
+      Path: PathNaming): DeleteObjectRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Path" -> Path.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Path" -> Path.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteObjectRequest]
     }
@@ -68,14 +68,14 @@ package mediastoredata {
 
   @js.native
   trait DescribeObjectRequest extends js.Object {
-    var Path: js.UndefOr[PathNaming]
+    var Path: PathNaming
   }
 
   object DescribeObjectRequest {
     def apply(
-      Path: js.UndefOr[PathNaming] = js.undefined): DescribeObjectRequest = {
+      Path: PathNaming): DescribeObjectRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Path" -> Path.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Path" -> Path.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeObjectRequest]
     }
@@ -83,26 +83,26 @@ package mediastoredata {
 
   @js.native
   trait DescribeObjectResponse extends js.Object {
-    var LastModified: js.UndefOr[TimeStamp]
-    var ContentLength: js.UndefOr[NonNegativeLong]
     var CacheControl: js.UndefOr[StringPrimitive]
-    var ETag: js.UndefOr[ETag]
+    var ContentLength: js.UndefOr[NonNegativeLong]
     var ContentType: js.UndefOr[ContentType]
+    var ETag: js.UndefOr[ETag]
+    var LastModified: js.UndefOr[TimeStamp]
   }
 
   object DescribeObjectResponse {
     def apply(
-      LastModified: js.UndefOr[TimeStamp] = js.undefined,
-      ContentLength: js.UndefOr[NonNegativeLong] = js.undefined,
       CacheControl: js.UndefOr[StringPrimitive] = js.undefined,
+      ContentLength: js.UndefOr[NonNegativeLong] = js.undefined,
+      ContentType: js.UndefOr[ContentType] = js.undefined,
       ETag: js.UndefOr[ETag] = js.undefined,
-      ContentType: js.UndefOr[ContentType] = js.undefined): DescribeObjectResponse = {
+      LastModified: js.UndefOr[TimeStamp] = js.undefined): DescribeObjectResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "LastModified" -> LastModified.map { x => x.asInstanceOf[js.Any] },
-        "ContentLength" -> ContentLength.map { x => x.asInstanceOf[js.Any] },
         "CacheControl" -> CacheControl.map { x => x.asInstanceOf[js.Any] },
+        "ContentLength" -> ContentLength.map { x => x.asInstanceOf[js.Any] },
+        "ContentType" -> ContentType.map { x => x.asInstanceOf[js.Any] },
         "ETag" -> ETag.map { x => x.asInstanceOf[js.Any] },
-        "ContentType" -> ContentType.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "LastModified" -> LastModified.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeObjectResponse]
     }
@@ -110,16 +110,16 @@ package mediastoredata {
 
   @js.native
   trait GetObjectRequest extends js.Object {
-    var Path: js.UndefOr[PathNaming]
+    var Path: PathNaming
     var Range: js.UndefOr[RangePattern]
   }
 
   object GetObjectRequest {
     def apply(
-      Path: js.UndefOr[PathNaming] = js.undefined,
+      Path: PathNaming,
       Range: js.UndefOr[RangePattern] = js.undefined): GetObjectRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Path" -> Path.map { x => x.asInstanceOf[js.Any] },
+        "Path" -> Path.asInstanceOf[js.Any],
         "Range" -> Range.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetObjectRequest]
@@ -128,35 +128,35 @@ package mediastoredata {
 
   @js.native
   trait GetObjectResponse extends js.Object {
-    var ContentRange: js.UndefOr[ContentRangePattern]
-    var StatusCode: js.UndefOr[statusCode]
-    var LastModified: js.UndefOr[TimeStamp]
+    var StatusCode: statusCode
     var Body: js.UndefOr[PayloadBlob]
-    var ContentLength: js.UndefOr[NonNegativeLong]
     var CacheControl: js.UndefOr[StringPrimitive]
-    var ETag: js.UndefOr[ETag]
+    var ContentLength: js.UndefOr[NonNegativeLong]
+    var ContentRange: js.UndefOr[ContentRangePattern]
     var ContentType: js.UndefOr[ContentType]
+    var ETag: js.UndefOr[ETag]
+    var LastModified: js.UndefOr[TimeStamp]
   }
 
   object GetObjectResponse {
     def apply(
-      ContentRange: js.UndefOr[ContentRangePattern] = js.undefined,
-      StatusCode: js.UndefOr[statusCode] = js.undefined,
-      LastModified: js.UndefOr[TimeStamp] = js.undefined,
+      StatusCode: statusCode,
       Body: js.UndefOr[PayloadBlob] = js.undefined,
-      ContentLength: js.UndefOr[NonNegativeLong] = js.undefined,
       CacheControl: js.UndefOr[StringPrimitive] = js.undefined,
+      ContentLength: js.UndefOr[NonNegativeLong] = js.undefined,
+      ContentRange: js.UndefOr[ContentRangePattern] = js.undefined,
+      ContentType: js.UndefOr[ContentType] = js.undefined,
       ETag: js.UndefOr[ETag] = js.undefined,
-      ContentType: js.UndefOr[ContentType] = js.undefined): GetObjectResponse = {
+      LastModified: js.UndefOr[TimeStamp] = js.undefined): GetObjectResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ContentRange" -> ContentRange.map { x => x.asInstanceOf[js.Any] },
-        "StatusCode" -> StatusCode.map { x => x.asInstanceOf[js.Any] },
-        "LastModified" -> LastModified.map { x => x.asInstanceOf[js.Any] },
+        "StatusCode" -> StatusCode.asInstanceOf[js.Any],
         "Body" -> Body.map { x => x.asInstanceOf[js.Any] },
-        "ContentLength" -> ContentLength.map { x => x.asInstanceOf[js.Any] },
         "CacheControl" -> CacheControl.map { x => x.asInstanceOf[js.Any] },
+        "ContentLength" -> ContentLength.map { x => x.asInstanceOf[js.Any] },
+        "ContentRange" -> ContentRange.map { x => x.asInstanceOf[js.Any] },
+        "ContentType" -> ContentType.map { x => x.asInstanceOf[js.Any] },
         "ETag" -> ETag.map { x => x.asInstanceOf[js.Any] },
-        "ContentType" -> ContentType.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "LastModified" -> LastModified.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetObjectResponse]
     }
@@ -167,28 +167,28 @@ package mediastoredata {
    */
   @js.native
   trait Item extends js.Object {
-    var Name: js.UndefOr[ItemName]
-    var LastModified: js.UndefOr[TimeStamp]
     var ContentLength: js.UndefOr[NonNegativeLong]
-    var ETag: js.UndefOr[ETag]
     var ContentType: js.UndefOr[ContentType]
+    var ETag: js.UndefOr[ETag]
+    var LastModified: js.UndefOr[TimeStamp]
+    var Name: js.UndefOr[ItemName]
     var Type: js.UndefOr[ItemType]
   }
 
   object Item {
     def apply(
-      Name: js.UndefOr[ItemName] = js.undefined,
-      LastModified: js.UndefOr[TimeStamp] = js.undefined,
       ContentLength: js.UndefOr[NonNegativeLong] = js.undefined,
-      ETag: js.UndefOr[ETag] = js.undefined,
       ContentType: js.UndefOr[ContentType] = js.undefined,
+      ETag: js.UndefOr[ETag] = js.undefined,
+      LastModified: js.UndefOr[TimeStamp] = js.undefined,
+      Name: js.UndefOr[ItemName] = js.undefined,
       Type: js.UndefOr[ItemType] = js.undefined): Item = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
-        "LastModified" -> LastModified.map { x => x.asInstanceOf[js.Any] },
         "ContentLength" -> ContentLength.map { x => x.asInstanceOf[js.Any] },
-        "ETag" -> ETag.map { x => x.asInstanceOf[js.Any] },
         "ContentType" -> ContentType.map { x => x.asInstanceOf[js.Any] },
+        "ETag" -> ETag.map { x => x.asInstanceOf[js.Any] },
+        "LastModified" -> LastModified.map { x => x.asInstanceOf[js.Any] },
+        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
         "Type" -> Type.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Item]
@@ -204,20 +204,20 @@ package mediastoredata {
 
   @js.native
   trait ListItemsRequest extends js.Object {
-    var Path: js.UndefOr[ListPathNaming]
     var MaxResults: js.UndefOr[ListLimit]
     var NextToken: js.UndefOr[PaginationToken]
+    var Path: js.UndefOr[ListPathNaming]
   }
 
   object ListItemsRequest {
     def apply(
-      Path: js.UndefOr[ListPathNaming] = js.undefined,
       MaxResults: js.UndefOr[ListLimit] = js.undefined,
-      NextToken: js.UndefOr[PaginationToken] = js.undefined): ListItemsRequest = {
+      NextToken: js.UndefOr[PaginationToken] = js.undefined,
+      Path: js.UndefOr[ListPathNaming] = js.undefined): ListItemsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Path" -> Path.map { x => x.asInstanceOf[js.Any] },
         "MaxResults" -> MaxResults.map { x => x.asInstanceOf[js.Any] },
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
+        "Path" -> Path.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListItemsRequest]
     }
@@ -243,8 +243,8 @@ package mediastoredata {
 
   @js.native
   trait PutObjectRequest extends js.Object {
-    var Path: js.UndefOr[PathNaming]
-    var Body: js.UndefOr[PayloadBlob]
+    var Body: PayloadBlob
+    var Path: PathNaming
     var CacheControl: js.UndefOr[StringPrimitive]
     var ContentType: js.UndefOr[ContentType]
     var StorageClass: js.UndefOr[StorageClass]
@@ -252,14 +252,14 @@ package mediastoredata {
 
   object PutObjectRequest {
     def apply(
-      Path: js.UndefOr[PathNaming] = js.undefined,
-      Body: js.UndefOr[PayloadBlob] = js.undefined,
+      Body: PayloadBlob,
+      Path: PathNaming,
       CacheControl: js.UndefOr[StringPrimitive] = js.undefined,
       ContentType: js.UndefOr[ContentType] = js.undefined,
       StorageClass: js.UndefOr[StorageClass] = js.undefined): PutObjectRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Path" -> Path.map { x => x.asInstanceOf[js.Any] },
-        "Body" -> Body.map { x => x.asInstanceOf[js.Any] },
+        "Body" -> Body.asInstanceOf[js.Any],
+        "Path" -> Path.asInstanceOf[js.Any],
         "CacheControl" -> CacheControl.map { x => x.asInstanceOf[js.Any] },
         "ContentType" -> ContentType.map { x => x.asInstanceOf[js.Any] },
         "StorageClass" -> StorageClass.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))

@@ -185,16 +185,16 @@ package autoscaling {
 
   @js.native
   trait ActivitiesType extends js.Object {
-    var Activities: js.UndefOr[Activities]
+    var Activities: Activities
     var NextToken: js.UndefOr[XmlString]
   }
 
   object ActivitiesType {
     def apply(
-      Activities: js.UndefOr[Activities] = js.undefined,
+      Activities: Activities,
       NextToken: js.UndefOr[XmlString] = js.undefined): ActivitiesType = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Activities" -> Activities.map { x => x.asInstanceOf[js.Any] },
+        "Activities" -> Activities.asInstanceOf[js.Any],
         "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ActivitiesType]
@@ -206,41 +206,41 @@ package autoscaling {
    */
   @js.native
   trait Activity extends js.Object {
-    var StatusMessage: js.UndefOr[XmlStringMaxLen255]
-    var Cause: js.UndefOr[XmlStringMaxLen1023]
-    var AutoScalingGroupName: js.UndefOr[XmlStringMaxLen255]
-    var StatusCode: js.UndefOr[ScalingActivityStatusCode]
+    var ActivityId: XmlString
+    var AutoScalingGroupName: XmlStringMaxLen255
+    var Cause: XmlStringMaxLen1023
+    var StartTime: TimestampType
+    var StatusCode: ScalingActivityStatusCode
     var Description: js.UndefOr[XmlString]
-    var StartTime: js.UndefOr[TimestampType]
-    var EndTime: js.UndefOr[TimestampType]
     var Details: js.UndefOr[XmlString]
-    var ActivityId: js.UndefOr[XmlString]
+    var EndTime: js.UndefOr[TimestampType]
     var Progress: js.UndefOr[Progress]
+    var StatusMessage: js.UndefOr[XmlStringMaxLen255]
   }
 
   object Activity {
     def apply(
-      StatusMessage: js.UndefOr[XmlStringMaxLen255] = js.undefined,
-      Cause: js.UndefOr[XmlStringMaxLen1023] = js.undefined,
-      AutoScalingGroupName: js.UndefOr[XmlStringMaxLen255] = js.undefined,
-      StatusCode: js.UndefOr[ScalingActivityStatusCode] = js.undefined,
+      ActivityId: XmlString,
+      AutoScalingGroupName: XmlStringMaxLen255,
+      Cause: XmlStringMaxLen1023,
+      StartTime: TimestampType,
+      StatusCode: ScalingActivityStatusCode,
       Description: js.UndefOr[XmlString] = js.undefined,
-      StartTime: js.UndefOr[TimestampType] = js.undefined,
-      EndTime: js.UndefOr[TimestampType] = js.undefined,
       Details: js.UndefOr[XmlString] = js.undefined,
-      ActivityId: js.UndefOr[XmlString] = js.undefined,
-      Progress: js.UndefOr[Progress] = js.undefined): Activity = {
+      EndTime: js.UndefOr[TimestampType] = js.undefined,
+      Progress: js.UndefOr[Progress] = js.undefined,
+      StatusMessage: js.UndefOr[XmlStringMaxLen255] = js.undefined): Activity = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "StatusMessage" -> StatusMessage.map { x => x.asInstanceOf[js.Any] },
-        "Cause" -> Cause.map { x => x.asInstanceOf[js.Any] },
-        "AutoScalingGroupName" -> AutoScalingGroupName.map { x => x.asInstanceOf[js.Any] },
-        "StatusCode" -> StatusCode.map { x => x.asInstanceOf[js.Any] },
+        "ActivityId" -> ActivityId.asInstanceOf[js.Any],
+        "AutoScalingGroupName" -> AutoScalingGroupName.asInstanceOf[js.Any],
+        "Cause" -> Cause.asInstanceOf[js.Any],
+        "StartTime" -> StartTime.asInstanceOf[js.Any],
+        "StatusCode" -> StatusCode.asInstanceOf[js.Any],
         "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
-        "StartTime" -> StartTime.map { x => x.asInstanceOf[js.Any] },
-        "EndTime" -> EndTime.map { x => x.asInstanceOf[js.Any] },
         "Details" -> Details.map { x => x.asInstanceOf[js.Any] },
-        "ActivityId" -> ActivityId.map { x => x.asInstanceOf[js.Any] },
-        "Progress" -> Progress.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "EndTime" -> EndTime.map { x => x.asInstanceOf[js.Any] },
+        "Progress" -> Progress.map { x => x.asInstanceOf[js.Any] },
+        "StatusMessage" -> StatusMessage.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Activity]
     }
@@ -284,17 +284,17 @@ package autoscaling {
    */
   @js.native
   trait Alarm extends js.Object {
-    var AlarmName: js.UndefOr[XmlStringMaxLen255]
     var AlarmARN: js.UndefOr[ResourceName]
+    var AlarmName: js.UndefOr[XmlStringMaxLen255]
   }
 
   object Alarm {
     def apply(
-      AlarmName: js.UndefOr[XmlStringMaxLen255] = js.undefined,
-      AlarmARN: js.UndefOr[ResourceName] = js.undefined): Alarm = {
+      AlarmARN: js.UndefOr[ResourceName] = js.undefined,
+      AlarmName: js.UndefOr[XmlStringMaxLen255] = js.undefined): Alarm = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "AlarmName" -> AlarmName.map { x => x.asInstanceOf[js.Any] },
-        "AlarmARN" -> AlarmARN.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "AlarmARN" -> AlarmARN.map { x => x.asInstanceOf[js.Any] },
+        "AlarmName" -> AlarmName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Alarm]
     }
@@ -302,17 +302,17 @@ package autoscaling {
 
   @js.native
   trait AttachInstancesQuery extends js.Object {
+    var AutoScalingGroupName: ResourceName
     var InstanceIds: js.UndefOr[InstanceIds]
-    var AutoScalingGroupName: js.UndefOr[ResourceName]
   }
 
   object AttachInstancesQuery {
     def apply(
-      InstanceIds: js.UndefOr[InstanceIds] = js.undefined,
-      AutoScalingGroupName: js.UndefOr[ResourceName] = js.undefined): AttachInstancesQuery = {
+      AutoScalingGroupName: ResourceName,
+      InstanceIds: js.UndefOr[InstanceIds] = js.undefined): AttachInstancesQuery = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "InstanceIds" -> InstanceIds.map { x => x.asInstanceOf[js.Any] },
-        "AutoScalingGroupName" -> AutoScalingGroupName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "AutoScalingGroupName" -> AutoScalingGroupName.asInstanceOf[js.Any],
+        "InstanceIds" -> InstanceIds.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AttachInstancesQuery]
     }
@@ -333,17 +333,17 @@ package autoscaling {
 
   @js.native
   trait AttachLoadBalancerTargetGroupsType extends js.Object {
-    var AutoScalingGroupName: js.UndefOr[ResourceName]
-    var TargetGroupARNs: js.UndefOr[TargetGroupARNs]
+    var AutoScalingGroupName: ResourceName
+    var TargetGroupARNs: TargetGroupARNs
   }
 
   object AttachLoadBalancerTargetGroupsType {
     def apply(
-      AutoScalingGroupName: js.UndefOr[ResourceName] = js.undefined,
-      TargetGroupARNs: js.UndefOr[TargetGroupARNs] = js.undefined): AttachLoadBalancerTargetGroupsType = {
+      AutoScalingGroupName: ResourceName,
+      TargetGroupARNs: TargetGroupARNs): AttachLoadBalancerTargetGroupsType = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "AutoScalingGroupName" -> AutoScalingGroupName.map { x => x.asInstanceOf[js.Any] },
-        "TargetGroupARNs" -> TargetGroupARNs.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "AutoScalingGroupName" -> AutoScalingGroupName.asInstanceOf[js.Any],
+        "TargetGroupARNs" -> TargetGroupARNs.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AttachLoadBalancerTargetGroupsType]
     }
@@ -364,17 +364,17 @@ package autoscaling {
 
   @js.native
   trait AttachLoadBalancersType extends js.Object {
-    var AutoScalingGroupName: js.UndefOr[ResourceName]
-    var LoadBalancerNames: js.UndefOr[LoadBalancerNames]
+    var AutoScalingGroupName: ResourceName
+    var LoadBalancerNames: LoadBalancerNames
   }
 
   object AttachLoadBalancersType {
     def apply(
-      AutoScalingGroupName: js.UndefOr[ResourceName] = js.undefined,
-      LoadBalancerNames: js.UndefOr[LoadBalancerNames] = js.undefined): AttachLoadBalancersType = {
+      AutoScalingGroupName: ResourceName,
+      LoadBalancerNames: LoadBalancerNames): AttachLoadBalancersType = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "AutoScalingGroupName" -> AutoScalingGroupName.map { x => x.asInstanceOf[js.Any] },
-        "LoadBalancerNames" -> LoadBalancerNames.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "AutoScalingGroupName" -> AutoScalingGroupName.asInstanceOf[js.Any],
+        "LoadBalancerNames" -> LoadBalancerNames.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AttachLoadBalancersType]
     }
@@ -385,86 +385,86 @@ package autoscaling {
    */
   @js.native
   trait AutoScalingGroup extends js.Object {
-    var DefaultCooldown: js.UndefOr[Cooldown]
-    var CreatedTime: js.UndefOr[TimestampType]
-    var PlacementGroup: js.UndefOr[XmlStringMaxLen255]
-    var TerminationPolicies: js.UndefOr[TerminationPolicies]
-    var SuspendedProcesses: js.UndefOr[SuspendedProcesses]
-    var AutoScalingGroupName: js.UndefOr[XmlStringMaxLen255]
-    var LoadBalancerNames: js.UndefOr[LoadBalancerNames]
-    var EnabledMetrics: js.UndefOr[EnabledMetrics]
+    var AutoScalingGroupName: XmlStringMaxLen255
+    var AvailabilityZones: AvailabilityZones
+    var CreatedTime: TimestampType
+    var DefaultCooldown: Cooldown
+    var DesiredCapacity: AutoScalingGroupDesiredCapacity
+    var HealthCheckType: XmlStringMaxLen32
+    var MaxSize: AutoScalingGroupMaxSize
+    var MinSize: AutoScalingGroupMinSize
     var AutoScalingGroupARN: js.UndefOr[ResourceName]
-    var LaunchTemplate: js.UndefOr[LaunchTemplateSpecification]
-    var HealthCheckType: js.UndefOr[XmlStringMaxLen32]
-    var VPCZoneIdentifier: js.UndefOr[XmlStringMaxLen2047]
-    var MaxSize: js.UndefOr[AutoScalingGroupMaxSize]
-    var MinSize: js.UndefOr[AutoScalingGroupMinSize]
-    var TargetGroupARNs: js.UndefOr[TargetGroupARNs]
-    var Instances: js.UndefOr[Instances]
-    var DesiredCapacity: js.UndefOr[AutoScalingGroupDesiredCapacity]
-    var MixedInstancesPolicy: js.UndefOr[MixedInstancesPolicy]
-    var ServiceLinkedRoleARN: js.UndefOr[ResourceName]
-    var Tags: js.UndefOr[TagDescriptionList]
-    var NewInstancesProtectedFromScaleIn: js.UndefOr[InstanceProtected]
-    var LaunchConfigurationName: js.UndefOr[XmlStringMaxLen255]
+    var EnabledMetrics: js.UndefOr[EnabledMetrics]
     var HealthCheckGracePeriod: js.UndefOr[HealthCheckGracePeriod]
+    var Instances: js.UndefOr[Instances]
+    var LaunchConfigurationName: js.UndefOr[XmlStringMaxLen255]
+    var LaunchTemplate: js.UndefOr[LaunchTemplateSpecification]
+    var LoadBalancerNames: js.UndefOr[LoadBalancerNames]
+    var MixedInstancesPolicy: js.UndefOr[MixedInstancesPolicy]
+    var NewInstancesProtectedFromScaleIn: js.UndefOr[InstanceProtected]
+    var PlacementGroup: js.UndefOr[XmlStringMaxLen255]
+    var ServiceLinkedRoleARN: js.UndefOr[ResourceName]
     var Status: js.UndefOr[XmlStringMaxLen255]
-    var AvailabilityZones: js.UndefOr[AvailabilityZones]
+    var SuspendedProcesses: js.UndefOr[SuspendedProcesses]
+    var Tags: js.UndefOr[TagDescriptionList]
+    var TargetGroupARNs: js.UndefOr[TargetGroupARNs]
+    var TerminationPolicies: js.UndefOr[TerminationPolicies]
+    var VPCZoneIdentifier: js.UndefOr[XmlStringMaxLen2047]
   }
 
   object AutoScalingGroup {
     def apply(
-      DefaultCooldown: js.UndefOr[Cooldown] = js.undefined,
-      CreatedTime: js.UndefOr[TimestampType] = js.undefined,
-      PlacementGroup: js.UndefOr[XmlStringMaxLen255] = js.undefined,
-      TerminationPolicies: js.UndefOr[TerminationPolicies] = js.undefined,
-      SuspendedProcesses: js.UndefOr[SuspendedProcesses] = js.undefined,
-      AutoScalingGroupName: js.UndefOr[XmlStringMaxLen255] = js.undefined,
-      LoadBalancerNames: js.UndefOr[LoadBalancerNames] = js.undefined,
-      EnabledMetrics: js.UndefOr[EnabledMetrics] = js.undefined,
+      AutoScalingGroupName: XmlStringMaxLen255,
+      AvailabilityZones: AvailabilityZones,
+      CreatedTime: TimestampType,
+      DefaultCooldown: Cooldown,
+      DesiredCapacity: AutoScalingGroupDesiredCapacity,
+      HealthCheckType: XmlStringMaxLen32,
+      MaxSize: AutoScalingGroupMaxSize,
+      MinSize: AutoScalingGroupMinSize,
       AutoScalingGroupARN: js.UndefOr[ResourceName] = js.undefined,
-      LaunchTemplate: js.UndefOr[LaunchTemplateSpecification] = js.undefined,
-      HealthCheckType: js.UndefOr[XmlStringMaxLen32] = js.undefined,
-      VPCZoneIdentifier: js.UndefOr[XmlStringMaxLen2047] = js.undefined,
-      MaxSize: js.UndefOr[AutoScalingGroupMaxSize] = js.undefined,
-      MinSize: js.UndefOr[AutoScalingGroupMinSize] = js.undefined,
-      TargetGroupARNs: js.UndefOr[TargetGroupARNs] = js.undefined,
-      Instances: js.UndefOr[Instances] = js.undefined,
-      DesiredCapacity: js.UndefOr[AutoScalingGroupDesiredCapacity] = js.undefined,
-      MixedInstancesPolicy: js.UndefOr[MixedInstancesPolicy] = js.undefined,
-      ServiceLinkedRoleARN: js.UndefOr[ResourceName] = js.undefined,
-      Tags: js.UndefOr[TagDescriptionList] = js.undefined,
-      NewInstancesProtectedFromScaleIn: js.UndefOr[InstanceProtected] = js.undefined,
-      LaunchConfigurationName: js.UndefOr[XmlStringMaxLen255] = js.undefined,
+      EnabledMetrics: js.UndefOr[EnabledMetrics] = js.undefined,
       HealthCheckGracePeriod: js.UndefOr[HealthCheckGracePeriod] = js.undefined,
+      Instances: js.UndefOr[Instances] = js.undefined,
+      LaunchConfigurationName: js.UndefOr[XmlStringMaxLen255] = js.undefined,
+      LaunchTemplate: js.UndefOr[LaunchTemplateSpecification] = js.undefined,
+      LoadBalancerNames: js.UndefOr[LoadBalancerNames] = js.undefined,
+      MixedInstancesPolicy: js.UndefOr[MixedInstancesPolicy] = js.undefined,
+      NewInstancesProtectedFromScaleIn: js.UndefOr[InstanceProtected] = js.undefined,
+      PlacementGroup: js.UndefOr[XmlStringMaxLen255] = js.undefined,
+      ServiceLinkedRoleARN: js.UndefOr[ResourceName] = js.undefined,
       Status: js.UndefOr[XmlStringMaxLen255] = js.undefined,
-      AvailabilityZones: js.UndefOr[AvailabilityZones] = js.undefined): AutoScalingGroup = {
+      SuspendedProcesses: js.UndefOr[SuspendedProcesses] = js.undefined,
+      Tags: js.UndefOr[TagDescriptionList] = js.undefined,
+      TargetGroupARNs: js.UndefOr[TargetGroupARNs] = js.undefined,
+      TerminationPolicies: js.UndefOr[TerminationPolicies] = js.undefined,
+      VPCZoneIdentifier: js.UndefOr[XmlStringMaxLen2047] = js.undefined): AutoScalingGroup = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "DefaultCooldown" -> DefaultCooldown.map { x => x.asInstanceOf[js.Any] },
-        "CreatedTime" -> CreatedTime.map { x => x.asInstanceOf[js.Any] },
-        "PlacementGroup" -> PlacementGroup.map { x => x.asInstanceOf[js.Any] },
-        "TerminationPolicies" -> TerminationPolicies.map { x => x.asInstanceOf[js.Any] },
-        "SuspendedProcesses" -> SuspendedProcesses.map { x => x.asInstanceOf[js.Any] },
-        "AutoScalingGroupName" -> AutoScalingGroupName.map { x => x.asInstanceOf[js.Any] },
-        "LoadBalancerNames" -> LoadBalancerNames.map { x => x.asInstanceOf[js.Any] },
-        "EnabledMetrics" -> EnabledMetrics.map { x => x.asInstanceOf[js.Any] },
+        "AutoScalingGroupName" -> AutoScalingGroupName.asInstanceOf[js.Any],
+        "AvailabilityZones" -> AvailabilityZones.asInstanceOf[js.Any],
+        "CreatedTime" -> CreatedTime.asInstanceOf[js.Any],
+        "DefaultCooldown" -> DefaultCooldown.asInstanceOf[js.Any],
+        "DesiredCapacity" -> DesiredCapacity.asInstanceOf[js.Any],
+        "HealthCheckType" -> HealthCheckType.asInstanceOf[js.Any],
+        "MaxSize" -> MaxSize.asInstanceOf[js.Any],
+        "MinSize" -> MinSize.asInstanceOf[js.Any],
         "AutoScalingGroupARN" -> AutoScalingGroupARN.map { x => x.asInstanceOf[js.Any] },
-        "LaunchTemplate" -> LaunchTemplate.map { x => x.asInstanceOf[js.Any] },
-        "HealthCheckType" -> HealthCheckType.map { x => x.asInstanceOf[js.Any] },
-        "VPCZoneIdentifier" -> VPCZoneIdentifier.map { x => x.asInstanceOf[js.Any] },
-        "MaxSize" -> MaxSize.map { x => x.asInstanceOf[js.Any] },
-        "MinSize" -> MinSize.map { x => x.asInstanceOf[js.Any] },
-        "TargetGroupARNs" -> TargetGroupARNs.map { x => x.asInstanceOf[js.Any] },
-        "Instances" -> Instances.map { x => x.asInstanceOf[js.Any] },
-        "DesiredCapacity" -> DesiredCapacity.map { x => x.asInstanceOf[js.Any] },
-        "MixedInstancesPolicy" -> MixedInstancesPolicy.map { x => x.asInstanceOf[js.Any] },
-        "ServiceLinkedRoleARN" -> ServiceLinkedRoleARN.map { x => x.asInstanceOf[js.Any] },
-        "Tags" -> Tags.map { x => x.asInstanceOf[js.Any] },
-        "NewInstancesProtectedFromScaleIn" -> NewInstancesProtectedFromScaleIn.map { x => x.asInstanceOf[js.Any] },
-        "LaunchConfigurationName" -> LaunchConfigurationName.map { x => x.asInstanceOf[js.Any] },
+        "EnabledMetrics" -> EnabledMetrics.map { x => x.asInstanceOf[js.Any] },
         "HealthCheckGracePeriod" -> HealthCheckGracePeriod.map { x => x.asInstanceOf[js.Any] },
+        "Instances" -> Instances.map { x => x.asInstanceOf[js.Any] },
+        "LaunchConfigurationName" -> LaunchConfigurationName.map { x => x.asInstanceOf[js.Any] },
+        "LaunchTemplate" -> LaunchTemplate.map { x => x.asInstanceOf[js.Any] },
+        "LoadBalancerNames" -> LoadBalancerNames.map { x => x.asInstanceOf[js.Any] },
+        "MixedInstancesPolicy" -> MixedInstancesPolicy.map { x => x.asInstanceOf[js.Any] },
+        "NewInstancesProtectedFromScaleIn" -> NewInstancesProtectedFromScaleIn.map { x => x.asInstanceOf[js.Any] },
+        "PlacementGroup" -> PlacementGroup.map { x => x.asInstanceOf[js.Any] },
+        "ServiceLinkedRoleARN" -> ServiceLinkedRoleARN.map { x => x.asInstanceOf[js.Any] },
         "Status" -> Status.map { x => x.asInstanceOf[js.Any] },
-        "AvailabilityZones" -> AvailabilityZones.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "SuspendedProcesses" -> SuspendedProcesses.map { x => x.asInstanceOf[js.Any] },
+        "Tags" -> Tags.map { x => x.asInstanceOf[js.Any] },
+        "TargetGroupARNs" -> TargetGroupARNs.map { x => x.asInstanceOf[js.Any] },
+        "TerminationPolicies" -> TerminationPolicies.map { x => x.asInstanceOf[js.Any] },
+        "VPCZoneIdentifier" -> VPCZoneIdentifier.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AutoScalingGroup]
     }
@@ -473,19 +473,19 @@ package autoscaling {
   @js.native
   trait AutoScalingGroupNamesType extends js.Object {
     var AutoScalingGroupNames: js.UndefOr[AutoScalingGroupNames]
-    var NextToken: js.UndefOr[XmlString]
     var MaxRecords: js.UndefOr[MaxRecords]
+    var NextToken: js.UndefOr[XmlString]
   }
 
   object AutoScalingGroupNamesType {
     def apply(
       AutoScalingGroupNames: js.UndefOr[AutoScalingGroupNames] = js.undefined,
-      NextToken: js.UndefOr[XmlString] = js.undefined,
-      MaxRecords: js.UndefOr[MaxRecords] = js.undefined): AutoScalingGroupNamesType = {
+      MaxRecords: js.UndefOr[MaxRecords] = js.undefined,
+      NextToken: js.UndefOr[XmlString] = js.undefined): AutoScalingGroupNamesType = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AutoScalingGroupNames" -> AutoScalingGroupNames.map { x => x.asInstanceOf[js.Any] },
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
-        "MaxRecords" -> MaxRecords.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "MaxRecords" -> MaxRecords.map { x => x.asInstanceOf[js.Any] },
+        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AutoScalingGroupNamesType]
     }
@@ -493,16 +493,16 @@ package autoscaling {
 
   @js.native
   trait AutoScalingGroupsType extends js.Object {
-    var AutoScalingGroups: js.UndefOr[AutoScalingGroups]
+    var AutoScalingGroups: AutoScalingGroups
     var NextToken: js.UndefOr[XmlString]
   }
 
   object AutoScalingGroupsType {
     def apply(
-      AutoScalingGroups: js.UndefOr[AutoScalingGroups] = js.undefined,
+      AutoScalingGroups: AutoScalingGroups,
       NextToken: js.UndefOr[XmlString] = js.undefined): AutoScalingGroupsType = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "AutoScalingGroups" -> AutoScalingGroups.map { x => x.asInstanceOf[js.Any] },
+        "AutoScalingGroups" -> AutoScalingGroups.asInstanceOf[js.Any],
         "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AutoScalingGroupsType]
@@ -514,35 +514,35 @@ package autoscaling {
    */
   @js.native
   trait AutoScalingInstanceDetails extends js.Object {
-    var AutoScalingGroupName: js.UndefOr[XmlStringMaxLen255]
-    var ProtectedFromScaleIn: js.UndefOr[InstanceProtected]
-    var LaunchTemplate: js.UndefOr[LaunchTemplateSpecification]
-    var LifecycleState: js.UndefOr[XmlStringMaxLen32]
-    var AvailabilityZone: js.UndefOr[XmlStringMaxLen255]
-    var HealthStatus: js.UndefOr[XmlStringMaxLen32]
-    var InstanceId: js.UndefOr[XmlStringMaxLen19]
+    var AutoScalingGroupName: XmlStringMaxLen255
+    var AvailabilityZone: XmlStringMaxLen255
+    var HealthStatus: XmlStringMaxLen32
+    var InstanceId: XmlStringMaxLen19
+    var LifecycleState: XmlStringMaxLen32
+    var ProtectedFromScaleIn: InstanceProtected
     var LaunchConfigurationName: js.UndefOr[XmlStringMaxLen255]
+    var LaunchTemplate: js.UndefOr[LaunchTemplateSpecification]
   }
 
   object AutoScalingInstanceDetails {
     def apply(
-      AutoScalingGroupName: js.UndefOr[XmlStringMaxLen255] = js.undefined,
-      ProtectedFromScaleIn: js.UndefOr[InstanceProtected] = js.undefined,
-      LaunchTemplate: js.UndefOr[LaunchTemplateSpecification] = js.undefined,
-      LifecycleState: js.UndefOr[XmlStringMaxLen32] = js.undefined,
-      AvailabilityZone: js.UndefOr[XmlStringMaxLen255] = js.undefined,
-      HealthStatus: js.UndefOr[XmlStringMaxLen32] = js.undefined,
-      InstanceId: js.UndefOr[XmlStringMaxLen19] = js.undefined,
-      LaunchConfigurationName: js.UndefOr[XmlStringMaxLen255] = js.undefined): AutoScalingInstanceDetails = {
+      AutoScalingGroupName: XmlStringMaxLen255,
+      AvailabilityZone: XmlStringMaxLen255,
+      HealthStatus: XmlStringMaxLen32,
+      InstanceId: XmlStringMaxLen19,
+      LifecycleState: XmlStringMaxLen32,
+      ProtectedFromScaleIn: InstanceProtected,
+      LaunchConfigurationName: js.UndefOr[XmlStringMaxLen255] = js.undefined,
+      LaunchTemplate: js.UndefOr[LaunchTemplateSpecification] = js.undefined): AutoScalingInstanceDetails = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "AutoScalingGroupName" -> AutoScalingGroupName.map { x => x.asInstanceOf[js.Any] },
-        "ProtectedFromScaleIn" -> ProtectedFromScaleIn.map { x => x.asInstanceOf[js.Any] },
-        "LaunchTemplate" -> LaunchTemplate.map { x => x.asInstanceOf[js.Any] },
-        "LifecycleState" -> LifecycleState.map { x => x.asInstanceOf[js.Any] },
-        "AvailabilityZone" -> AvailabilityZone.map { x => x.asInstanceOf[js.Any] },
-        "HealthStatus" -> HealthStatus.map { x => x.asInstanceOf[js.Any] },
-        "InstanceId" -> InstanceId.map { x => x.asInstanceOf[js.Any] },
-        "LaunchConfigurationName" -> LaunchConfigurationName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "AutoScalingGroupName" -> AutoScalingGroupName.asInstanceOf[js.Any],
+        "AvailabilityZone" -> AvailabilityZone.asInstanceOf[js.Any],
+        "HealthStatus" -> HealthStatus.asInstanceOf[js.Any],
+        "InstanceId" -> InstanceId.asInstanceOf[js.Any],
+        "LifecycleState" -> LifecycleState.asInstanceOf[js.Any],
+        "ProtectedFromScaleIn" -> ProtectedFromScaleIn.asInstanceOf[js.Any],
+        "LaunchConfigurationName" -> LaunchConfigurationName.map { x => x.asInstanceOf[js.Any] },
+        "LaunchTemplate" -> LaunchTemplate.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AutoScalingInstanceDetails]
     }
@@ -583,17 +583,17 @@ package autoscaling {
 
   @js.native
   trait BatchDeleteScheduledActionType extends js.Object {
-    var AutoScalingGroupName: js.UndefOr[ResourceName]
-    var ScheduledActionNames: js.UndefOr[ScheduledActionNames]
+    var AutoScalingGroupName: ResourceName
+    var ScheduledActionNames: ScheduledActionNames
   }
 
   object BatchDeleteScheduledActionType {
     def apply(
-      AutoScalingGroupName: js.UndefOr[ResourceName] = js.undefined,
-      ScheduledActionNames: js.UndefOr[ScheduledActionNames] = js.undefined): BatchDeleteScheduledActionType = {
+      AutoScalingGroupName: ResourceName,
+      ScheduledActionNames: ScheduledActionNames): BatchDeleteScheduledActionType = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "AutoScalingGroupName" -> AutoScalingGroupName.map { x => x.asInstanceOf[js.Any] },
-        "ScheduledActionNames" -> ScheduledActionNames.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "AutoScalingGroupName" -> AutoScalingGroupName.asInstanceOf[js.Any],
+        "ScheduledActionNames" -> ScheduledActionNames.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BatchDeleteScheduledActionType]
     }
@@ -616,17 +616,17 @@ package autoscaling {
 
   @js.native
   trait BatchPutScheduledUpdateGroupActionType extends js.Object {
-    var AutoScalingGroupName: js.UndefOr[ResourceName]
-    var ScheduledUpdateGroupActions: js.UndefOr[ScheduledUpdateGroupActionRequests]
+    var AutoScalingGroupName: ResourceName
+    var ScheduledUpdateGroupActions: ScheduledUpdateGroupActionRequests
   }
 
   object BatchPutScheduledUpdateGroupActionType {
     def apply(
-      AutoScalingGroupName: js.UndefOr[ResourceName] = js.undefined,
-      ScheduledUpdateGroupActions: js.UndefOr[ScheduledUpdateGroupActionRequests] = js.undefined): BatchPutScheduledUpdateGroupActionType = {
+      AutoScalingGroupName: ResourceName,
+      ScheduledUpdateGroupActions: ScheduledUpdateGroupActionRequests): BatchPutScheduledUpdateGroupActionType = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "AutoScalingGroupName" -> AutoScalingGroupName.map { x => x.asInstanceOf[js.Any] },
-        "ScheduledUpdateGroupActions" -> ScheduledUpdateGroupActions.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "AutoScalingGroupName" -> AutoScalingGroupName.asInstanceOf[js.Any],
+        "ScheduledUpdateGroupActions" -> ScheduledUpdateGroupActions.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BatchPutScheduledUpdateGroupActionType]
     }
@@ -637,23 +637,23 @@ package autoscaling {
    */
   @js.native
   trait BlockDeviceMapping extends js.Object {
-    var VirtualName: js.UndefOr[XmlStringMaxLen255]
-    var DeviceName: js.UndefOr[XmlStringMaxLen255]
+    var DeviceName: XmlStringMaxLen255
     var Ebs: js.UndefOr[Ebs]
     var NoDevice: js.UndefOr[NoDevice]
+    var VirtualName: js.UndefOr[XmlStringMaxLen255]
   }
 
   object BlockDeviceMapping {
     def apply(
-      VirtualName: js.UndefOr[XmlStringMaxLen255] = js.undefined,
-      DeviceName: js.UndefOr[XmlStringMaxLen255] = js.undefined,
+      DeviceName: XmlStringMaxLen255,
       Ebs: js.UndefOr[Ebs] = js.undefined,
-      NoDevice: js.UndefOr[NoDevice] = js.undefined): BlockDeviceMapping = {
+      NoDevice: js.UndefOr[NoDevice] = js.undefined,
+      VirtualName: js.UndefOr[XmlStringMaxLen255] = js.undefined): BlockDeviceMapping = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "VirtualName" -> VirtualName.map { x => x.asInstanceOf[js.Any] },
-        "DeviceName" -> DeviceName.map { x => x.asInstanceOf[js.Any] },
+        "DeviceName" -> DeviceName.asInstanceOf[js.Any],
         "Ebs" -> Ebs.map { x => x.asInstanceOf[js.Any] },
-        "NoDevice" -> NoDevice.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "NoDevice" -> NoDevice.map { x => x.asInstanceOf[js.Any] },
+        "VirtualName" -> VirtualName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BlockDeviceMapping]
     }
@@ -674,26 +674,26 @@ package autoscaling {
 
   @js.native
   trait CompleteLifecycleActionType extends js.Object {
-    var LifecycleHookName: js.UndefOr[AsciiStringMaxLen255]
-    var AutoScalingGroupName: js.UndefOr[ResourceName]
-    var LifecycleActionResult: js.UndefOr[LifecycleActionResult]
-    var LifecycleActionToken: js.UndefOr[LifecycleActionToken]
+    var AutoScalingGroupName: ResourceName
+    var LifecycleActionResult: LifecycleActionResult
+    var LifecycleHookName: AsciiStringMaxLen255
     var InstanceId: js.UndefOr[XmlStringMaxLen19]
+    var LifecycleActionToken: js.UndefOr[LifecycleActionToken]
   }
 
   object CompleteLifecycleActionType {
     def apply(
-      LifecycleHookName: js.UndefOr[AsciiStringMaxLen255] = js.undefined,
-      AutoScalingGroupName: js.UndefOr[ResourceName] = js.undefined,
-      LifecycleActionResult: js.UndefOr[LifecycleActionResult] = js.undefined,
-      LifecycleActionToken: js.UndefOr[LifecycleActionToken] = js.undefined,
-      InstanceId: js.UndefOr[XmlStringMaxLen19] = js.undefined): CompleteLifecycleActionType = {
+      AutoScalingGroupName: ResourceName,
+      LifecycleActionResult: LifecycleActionResult,
+      LifecycleHookName: AsciiStringMaxLen255,
+      InstanceId: js.UndefOr[XmlStringMaxLen19] = js.undefined,
+      LifecycleActionToken: js.UndefOr[LifecycleActionToken] = js.undefined): CompleteLifecycleActionType = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "LifecycleHookName" -> LifecycleHookName.map { x => x.asInstanceOf[js.Any] },
-        "AutoScalingGroupName" -> AutoScalingGroupName.map { x => x.asInstanceOf[js.Any] },
-        "LifecycleActionResult" -> LifecycleActionResult.map { x => x.asInstanceOf[js.Any] },
-        "LifecycleActionToken" -> LifecycleActionToken.map { x => x.asInstanceOf[js.Any] },
-        "InstanceId" -> InstanceId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "AutoScalingGroupName" -> AutoScalingGroupName.asInstanceOf[js.Any],
+        "LifecycleActionResult" -> LifecycleActionResult.asInstanceOf[js.Any],
+        "LifecycleHookName" -> LifecycleHookName.asInstanceOf[js.Any],
+        "InstanceId" -> InstanceId.map { x => x.asInstanceOf[js.Any] },
+        "LifecycleActionToken" -> LifecycleActionToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CompleteLifecycleActionType]
     }
@@ -701,74 +701,74 @@ package autoscaling {
 
   @js.native
   trait CreateAutoScalingGroupType extends js.Object {
+    var AutoScalingGroupName: XmlStringMaxLen255
+    var MaxSize: AutoScalingGroupMaxSize
+    var MinSize: AutoScalingGroupMinSize
+    var AvailabilityZones: js.UndefOr[AvailabilityZones]
     var DefaultCooldown: js.UndefOr[Cooldown]
-    var PlacementGroup: js.UndefOr[XmlStringMaxLen255]
-    var TerminationPolicies: js.UndefOr[TerminationPolicies]
-    var AutoScalingGroupName: js.UndefOr[XmlStringMaxLen255]
-    var LoadBalancerNames: js.UndefOr[LoadBalancerNames]
+    var DesiredCapacity: js.UndefOr[AutoScalingGroupDesiredCapacity]
+    var HealthCheckGracePeriod: js.UndefOr[HealthCheckGracePeriod]
+    var HealthCheckType: js.UndefOr[XmlStringMaxLen32]
+    var InstanceId: js.UndefOr[XmlStringMaxLen19]
+    var LaunchConfigurationName: js.UndefOr[ResourceName]
     var LaunchTemplate: js.UndefOr[LaunchTemplateSpecification]
     var LifecycleHookSpecificationList: js.UndefOr[LifecycleHookSpecifications]
-    var HealthCheckType: js.UndefOr[XmlStringMaxLen32]
-    var VPCZoneIdentifier: js.UndefOr[XmlStringMaxLen2047]
-    var MaxSize: js.UndefOr[AutoScalingGroupMaxSize]
-    var MinSize: js.UndefOr[AutoScalingGroupMinSize]
-    var TargetGroupARNs: js.UndefOr[TargetGroupARNs]
-    var InstanceId: js.UndefOr[XmlStringMaxLen19]
-    var DesiredCapacity: js.UndefOr[AutoScalingGroupDesiredCapacity]
+    var LoadBalancerNames: js.UndefOr[LoadBalancerNames]
     var MixedInstancesPolicy: js.UndefOr[MixedInstancesPolicy]
+    var NewInstancesProtectedFromScaleIn: js.UndefOr[InstanceProtected]
+    var PlacementGroup: js.UndefOr[XmlStringMaxLen255]
     var ServiceLinkedRoleARN: js.UndefOr[ResourceName]
     var Tags: js.UndefOr[Tags]
-    var NewInstancesProtectedFromScaleIn: js.UndefOr[InstanceProtected]
-    var LaunchConfigurationName: js.UndefOr[ResourceName]
-    var HealthCheckGracePeriod: js.UndefOr[HealthCheckGracePeriod]
-    var AvailabilityZones: js.UndefOr[AvailabilityZones]
+    var TargetGroupARNs: js.UndefOr[TargetGroupARNs]
+    var TerminationPolicies: js.UndefOr[TerminationPolicies]
+    var VPCZoneIdentifier: js.UndefOr[XmlStringMaxLen2047]
   }
 
   object CreateAutoScalingGroupType {
     def apply(
+      AutoScalingGroupName: XmlStringMaxLen255,
+      MaxSize: AutoScalingGroupMaxSize,
+      MinSize: AutoScalingGroupMinSize,
+      AvailabilityZones: js.UndefOr[AvailabilityZones] = js.undefined,
       DefaultCooldown: js.UndefOr[Cooldown] = js.undefined,
-      PlacementGroup: js.UndefOr[XmlStringMaxLen255] = js.undefined,
-      TerminationPolicies: js.UndefOr[TerminationPolicies] = js.undefined,
-      AutoScalingGroupName: js.UndefOr[XmlStringMaxLen255] = js.undefined,
-      LoadBalancerNames: js.UndefOr[LoadBalancerNames] = js.undefined,
+      DesiredCapacity: js.UndefOr[AutoScalingGroupDesiredCapacity] = js.undefined,
+      HealthCheckGracePeriod: js.UndefOr[HealthCheckGracePeriod] = js.undefined,
+      HealthCheckType: js.UndefOr[XmlStringMaxLen32] = js.undefined,
+      InstanceId: js.UndefOr[XmlStringMaxLen19] = js.undefined,
+      LaunchConfigurationName: js.UndefOr[ResourceName] = js.undefined,
       LaunchTemplate: js.UndefOr[LaunchTemplateSpecification] = js.undefined,
       LifecycleHookSpecificationList: js.UndefOr[LifecycleHookSpecifications] = js.undefined,
-      HealthCheckType: js.UndefOr[XmlStringMaxLen32] = js.undefined,
-      VPCZoneIdentifier: js.UndefOr[XmlStringMaxLen2047] = js.undefined,
-      MaxSize: js.UndefOr[AutoScalingGroupMaxSize] = js.undefined,
-      MinSize: js.UndefOr[AutoScalingGroupMinSize] = js.undefined,
-      TargetGroupARNs: js.UndefOr[TargetGroupARNs] = js.undefined,
-      InstanceId: js.UndefOr[XmlStringMaxLen19] = js.undefined,
-      DesiredCapacity: js.UndefOr[AutoScalingGroupDesiredCapacity] = js.undefined,
+      LoadBalancerNames: js.UndefOr[LoadBalancerNames] = js.undefined,
       MixedInstancesPolicy: js.UndefOr[MixedInstancesPolicy] = js.undefined,
+      NewInstancesProtectedFromScaleIn: js.UndefOr[InstanceProtected] = js.undefined,
+      PlacementGroup: js.UndefOr[XmlStringMaxLen255] = js.undefined,
       ServiceLinkedRoleARN: js.UndefOr[ResourceName] = js.undefined,
       Tags: js.UndefOr[Tags] = js.undefined,
-      NewInstancesProtectedFromScaleIn: js.UndefOr[InstanceProtected] = js.undefined,
-      LaunchConfigurationName: js.UndefOr[ResourceName] = js.undefined,
-      HealthCheckGracePeriod: js.UndefOr[HealthCheckGracePeriod] = js.undefined,
-      AvailabilityZones: js.UndefOr[AvailabilityZones] = js.undefined): CreateAutoScalingGroupType = {
+      TargetGroupARNs: js.UndefOr[TargetGroupARNs] = js.undefined,
+      TerminationPolicies: js.UndefOr[TerminationPolicies] = js.undefined,
+      VPCZoneIdentifier: js.UndefOr[XmlStringMaxLen2047] = js.undefined): CreateAutoScalingGroupType = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "AutoScalingGroupName" -> AutoScalingGroupName.asInstanceOf[js.Any],
+        "MaxSize" -> MaxSize.asInstanceOf[js.Any],
+        "MinSize" -> MinSize.asInstanceOf[js.Any],
+        "AvailabilityZones" -> AvailabilityZones.map { x => x.asInstanceOf[js.Any] },
         "DefaultCooldown" -> DefaultCooldown.map { x => x.asInstanceOf[js.Any] },
-        "PlacementGroup" -> PlacementGroup.map { x => x.asInstanceOf[js.Any] },
-        "TerminationPolicies" -> TerminationPolicies.map { x => x.asInstanceOf[js.Any] },
-        "AutoScalingGroupName" -> AutoScalingGroupName.map { x => x.asInstanceOf[js.Any] },
-        "LoadBalancerNames" -> LoadBalancerNames.map { x => x.asInstanceOf[js.Any] },
+        "DesiredCapacity" -> DesiredCapacity.map { x => x.asInstanceOf[js.Any] },
+        "HealthCheckGracePeriod" -> HealthCheckGracePeriod.map { x => x.asInstanceOf[js.Any] },
+        "HealthCheckType" -> HealthCheckType.map { x => x.asInstanceOf[js.Any] },
+        "InstanceId" -> InstanceId.map { x => x.asInstanceOf[js.Any] },
+        "LaunchConfigurationName" -> LaunchConfigurationName.map { x => x.asInstanceOf[js.Any] },
         "LaunchTemplate" -> LaunchTemplate.map { x => x.asInstanceOf[js.Any] },
         "LifecycleHookSpecificationList" -> LifecycleHookSpecificationList.map { x => x.asInstanceOf[js.Any] },
-        "HealthCheckType" -> HealthCheckType.map { x => x.asInstanceOf[js.Any] },
-        "VPCZoneIdentifier" -> VPCZoneIdentifier.map { x => x.asInstanceOf[js.Any] },
-        "MaxSize" -> MaxSize.map { x => x.asInstanceOf[js.Any] },
-        "MinSize" -> MinSize.map { x => x.asInstanceOf[js.Any] },
-        "TargetGroupARNs" -> TargetGroupARNs.map { x => x.asInstanceOf[js.Any] },
-        "InstanceId" -> InstanceId.map { x => x.asInstanceOf[js.Any] },
-        "DesiredCapacity" -> DesiredCapacity.map { x => x.asInstanceOf[js.Any] },
+        "LoadBalancerNames" -> LoadBalancerNames.map { x => x.asInstanceOf[js.Any] },
         "MixedInstancesPolicy" -> MixedInstancesPolicy.map { x => x.asInstanceOf[js.Any] },
+        "NewInstancesProtectedFromScaleIn" -> NewInstancesProtectedFromScaleIn.map { x => x.asInstanceOf[js.Any] },
+        "PlacementGroup" -> PlacementGroup.map { x => x.asInstanceOf[js.Any] },
         "ServiceLinkedRoleARN" -> ServiceLinkedRoleARN.map { x => x.asInstanceOf[js.Any] },
         "Tags" -> Tags.map { x => x.asInstanceOf[js.Any] },
-        "NewInstancesProtectedFromScaleIn" -> NewInstancesProtectedFromScaleIn.map { x => x.asInstanceOf[js.Any] },
-        "LaunchConfigurationName" -> LaunchConfigurationName.map { x => x.asInstanceOf[js.Any] },
-        "HealthCheckGracePeriod" -> HealthCheckGracePeriod.map { x => x.asInstanceOf[js.Any] },
-        "AvailabilityZones" -> AvailabilityZones.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "TargetGroupARNs" -> TargetGroupARNs.map { x => x.asInstanceOf[js.Any] },
+        "TerminationPolicies" -> TerminationPolicies.map { x => x.asInstanceOf[js.Any] },
+        "VPCZoneIdentifier" -> VPCZoneIdentifier.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateAutoScalingGroupType]
     }
@@ -776,65 +776,65 @@ package autoscaling {
 
   @js.native
   trait CreateLaunchConfigurationType extends js.Object {
-    var RamdiskId: js.UndefOr[XmlStringMaxLen255]
+    var LaunchConfigurationName: XmlStringMaxLen255
+    var AssociatePublicIpAddress: js.UndefOr[AssociatePublicIpAddress]
     var BlockDeviceMappings: js.UndefOr[BlockDeviceMappings]
     var ClassicLinkVPCId: js.UndefOr[XmlStringMaxLen255]
-    var ImageId: js.UndefOr[XmlStringMaxLen255]
-    var EbsOptimized: js.UndefOr[EbsOptimized]
-    var UserData: js.UndefOr[XmlStringUserData]
-    var SecurityGroups: js.UndefOr[SecurityGroups]
-    var KernelId: js.UndefOr[XmlStringMaxLen255]
     var ClassicLinkVPCSecurityGroups: js.UndefOr[ClassicLinkVPCSecurityGroups]
-    var KeyName: js.UndefOr[XmlStringMaxLen255]
-    var InstanceType: js.UndefOr[XmlStringMaxLen255]
-    var InstanceId: js.UndefOr[XmlStringMaxLen19]
-    var AssociatePublicIpAddress: js.UndefOr[AssociatePublicIpAddress]
-    var SpotPrice: js.UndefOr[SpotPrice]
-    var PlacementTenancy: js.UndefOr[XmlStringMaxLen64]
+    var EbsOptimized: js.UndefOr[EbsOptimized]
     var IamInstanceProfile: js.UndefOr[XmlStringMaxLen1600]
-    var LaunchConfigurationName: js.UndefOr[XmlStringMaxLen255]
+    var ImageId: js.UndefOr[XmlStringMaxLen255]
+    var InstanceId: js.UndefOr[XmlStringMaxLen19]
     var InstanceMonitoring: js.UndefOr[InstanceMonitoring]
+    var InstanceType: js.UndefOr[XmlStringMaxLen255]
+    var KernelId: js.UndefOr[XmlStringMaxLen255]
+    var KeyName: js.UndefOr[XmlStringMaxLen255]
+    var PlacementTenancy: js.UndefOr[XmlStringMaxLen64]
+    var RamdiskId: js.UndefOr[XmlStringMaxLen255]
+    var SecurityGroups: js.UndefOr[SecurityGroups]
+    var SpotPrice: js.UndefOr[SpotPrice]
+    var UserData: js.UndefOr[XmlStringUserData]
   }
 
   object CreateLaunchConfigurationType {
     def apply(
-      RamdiskId: js.UndefOr[XmlStringMaxLen255] = js.undefined,
+      LaunchConfigurationName: XmlStringMaxLen255,
+      AssociatePublicIpAddress: js.UndefOr[AssociatePublicIpAddress] = js.undefined,
       BlockDeviceMappings: js.UndefOr[BlockDeviceMappings] = js.undefined,
       ClassicLinkVPCId: js.UndefOr[XmlStringMaxLen255] = js.undefined,
-      ImageId: js.UndefOr[XmlStringMaxLen255] = js.undefined,
-      EbsOptimized: js.UndefOr[EbsOptimized] = js.undefined,
-      UserData: js.UndefOr[XmlStringUserData] = js.undefined,
-      SecurityGroups: js.UndefOr[SecurityGroups] = js.undefined,
-      KernelId: js.UndefOr[XmlStringMaxLen255] = js.undefined,
       ClassicLinkVPCSecurityGroups: js.UndefOr[ClassicLinkVPCSecurityGroups] = js.undefined,
-      KeyName: js.UndefOr[XmlStringMaxLen255] = js.undefined,
-      InstanceType: js.UndefOr[XmlStringMaxLen255] = js.undefined,
-      InstanceId: js.UndefOr[XmlStringMaxLen19] = js.undefined,
-      AssociatePublicIpAddress: js.UndefOr[AssociatePublicIpAddress] = js.undefined,
-      SpotPrice: js.UndefOr[SpotPrice] = js.undefined,
-      PlacementTenancy: js.UndefOr[XmlStringMaxLen64] = js.undefined,
+      EbsOptimized: js.UndefOr[EbsOptimized] = js.undefined,
       IamInstanceProfile: js.UndefOr[XmlStringMaxLen1600] = js.undefined,
-      LaunchConfigurationName: js.UndefOr[XmlStringMaxLen255] = js.undefined,
-      InstanceMonitoring: js.UndefOr[InstanceMonitoring] = js.undefined): CreateLaunchConfigurationType = {
+      ImageId: js.UndefOr[XmlStringMaxLen255] = js.undefined,
+      InstanceId: js.UndefOr[XmlStringMaxLen19] = js.undefined,
+      InstanceMonitoring: js.UndefOr[InstanceMonitoring] = js.undefined,
+      InstanceType: js.UndefOr[XmlStringMaxLen255] = js.undefined,
+      KernelId: js.UndefOr[XmlStringMaxLen255] = js.undefined,
+      KeyName: js.UndefOr[XmlStringMaxLen255] = js.undefined,
+      PlacementTenancy: js.UndefOr[XmlStringMaxLen64] = js.undefined,
+      RamdiskId: js.UndefOr[XmlStringMaxLen255] = js.undefined,
+      SecurityGroups: js.UndefOr[SecurityGroups] = js.undefined,
+      SpotPrice: js.UndefOr[SpotPrice] = js.undefined,
+      UserData: js.UndefOr[XmlStringUserData] = js.undefined): CreateLaunchConfigurationType = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "RamdiskId" -> RamdiskId.map { x => x.asInstanceOf[js.Any] },
+        "LaunchConfigurationName" -> LaunchConfigurationName.asInstanceOf[js.Any],
+        "AssociatePublicIpAddress" -> AssociatePublicIpAddress.map { x => x.asInstanceOf[js.Any] },
         "BlockDeviceMappings" -> BlockDeviceMappings.map { x => x.asInstanceOf[js.Any] },
         "ClassicLinkVPCId" -> ClassicLinkVPCId.map { x => x.asInstanceOf[js.Any] },
-        "ImageId" -> ImageId.map { x => x.asInstanceOf[js.Any] },
-        "EbsOptimized" -> EbsOptimized.map { x => x.asInstanceOf[js.Any] },
-        "UserData" -> UserData.map { x => x.asInstanceOf[js.Any] },
-        "SecurityGroups" -> SecurityGroups.map { x => x.asInstanceOf[js.Any] },
-        "KernelId" -> KernelId.map { x => x.asInstanceOf[js.Any] },
         "ClassicLinkVPCSecurityGroups" -> ClassicLinkVPCSecurityGroups.map { x => x.asInstanceOf[js.Any] },
-        "KeyName" -> KeyName.map { x => x.asInstanceOf[js.Any] },
-        "InstanceType" -> InstanceType.map { x => x.asInstanceOf[js.Any] },
-        "InstanceId" -> InstanceId.map { x => x.asInstanceOf[js.Any] },
-        "AssociatePublicIpAddress" -> AssociatePublicIpAddress.map { x => x.asInstanceOf[js.Any] },
-        "SpotPrice" -> SpotPrice.map { x => x.asInstanceOf[js.Any] },
-        "PlacementTenancy" -> PlacementTenancy.map { x => x.asInstanceOf[js.Any] },
+        "EbsOptimized" -> EbsOptimized.map { x => x.asInstanceOf[js.Any] },
         "IamInstanceProfile" -> IamInstanceProfile.map { x => x.asInstanceOf[js.Any] },
-        "LaunchConfigurationName" -> LaunchConfigurationName.map { x => x.asInstanceOf[js.Any] },
-        "InstanceMonitoring" -> InstanceMonitoring.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ImageId" -> ImageId.map { x => x.asInstanceOf[js.Any] },
+        "InstanceId" -> InstanceId.map { x => x.asInstanceOf[js.Any] },
+        "InstanceMonitoring" -> InstanceMonitoring.map { x => x.asInstanceOf[js.Any] },
+        "InstanceType" -> InstanceType.map { x => x.asInstanceOf[js.Any] },
+        "KernelId" -> KernelId.map { x => x.asInstanceOf[js.Any] },
+        "KeyName" -> KeyName.map { x => x.asInstanceOf[js.Any] },
+        "PlacementTenancy" -> PlacementTenancy.map { x => x.asInstanceOf[js.Any] },
+        "RamdiskId" -> RamdiskId.map { x => x.asInstanceOf[js.Any] },
+        "SecurityGroups" -> SecurityGroups.map { x => x.asInstanceOf[js.Any] },
+        "SpotPrice" -> SpotPrice.map { x => x.asInstanceOf[js.Any] },
+        "UserData" -> UserData.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateLaunchConfigurationType]
     }
@@ -842,14 +842,14 @@ package autoscaling {
 
   @js.native
   trait CreateOrUpdateTagsType extends js.Object {
-    var Tags: js.UndefOr[Tags]
+    var Tags: Tags
   }
 
   object CreateOrUpdateTagsType {
     def apply(
-      Tags: js.UndefOr[Tags] = js.undefined): CreateOrUpdateTagsType = {
+      Tags: Tags): CreateOrUpdateTagsType = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Tags" -> Tags.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Tags" -> Tags.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateOrUpdateTagsType]
     }
@@ -860,26 +860,26 @@ package autoscaling {
    */
   @js.native
   trait CustomizedMetricSpecification extends js.Object {
+    var MetricName: MetricName
+    var Namespace: MetricNamespace
+    var Statistic: MetricStatistic
     var Dimensions: js.UndefOr[MetricDimensions]
-    var Statistic: js.UndefOr[MetricStatistic]
-    var Namespace: js.UndefOr[MetricNamespace]
     var Unit: js.UndefOr[MetricUnit]
-    var MetricName: js.UndefOr[MetricName]
   }
 
   object CustomizedMetricSpecification {
     def apply(
+      MetricName: MetricName,
+      Namespace: MetricNamespace,
+      Statistic: MetricStatistic,
       Dimensions: js.UndefOr[MetricDimensions] = js.undefined,
-      Statistic: js.UndefOr[MetricStatistic] = js.undefined,
-      Namespace: js.UndefOr[MetricNamespace] = js.undefined,
-      Unit: js.UndefOr[MetricUnit] = js.undefined,
-      MetricName: js.UndefOr[MetricName] = js.undefined): CustomizedMetricSpecification = {
+      Unit: js.UndefOr[MetricUnit] = js.undefined): CustomizedMetricSpecification = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "MetricName" -> MetricName.asInstanceOf[js.Any],
+        "Namespace" -> Namespace.asInstanceOf[js.Any],
+        "Statistic" -> Statistic.asInstanceOf[js.Any],
         "Dimensions" -> Dimensions.map { x => x.asInstanceOf[js.Any] },
-        "Statistic" -> Statistic.map { x => x.asInstanceOf[js.Any] },
-        "Namespace" -> Namespace.map { x => x.asInstanceOf[js.Any] },
-        "Unit" -> Unit.map { x => x.asInstanceOf[js.Any] },
-        "MetricName" -> MetricName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Unit" -> Unit.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CustomizedMetricSpecification]
     }
@@ -887,16 +887,16 @@ package autoscaling {
 
   @js.native
   trait DeleteAutoScalingGroupType extends js.Object {
-    var AutoScalingGroupName: js.UndefOr[ResourceName]
+    var AutoScalingGroupName: ResourceName
     var ForceDelete: js.UndefOr[ForceDelete]
   }
 
   object DeleteAutoScalingGroupType {
     def apply(
-      AutoScalingGroupName: js.UndefOr[ResourceName] = js.undefined,
+      AutoScalingGroupName: ResourceName,
       ForceDelete: js.UndefOr[ForceDelete] = js.undefined): DeleteAutoScalingGroupType = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "AutoScalingGroupName" -> AutoScalingGroupName.map { x => x.asInstanceOf[js.Any] },
+        "AutoScalingGroupName" -> AutoScalingGroupName.asInstanceOf[js.Any],
         "ForceDelete" -> ForceDelete.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteAutoScalingGroupType]
@@ -918,17 +918,17 @@ package autoscaling {
 
   @js.native
   trait DeleteLifecycleHookType extends js.Object {
-    var LifecycleHookName: js.UndefOr[AsciiStringMaxLen255]
-    var AutoScalingGroupName: js.UndefOr[ResourceName]
+    var AutoScalingGroupName: ResourceName
+    var LifecycleHookName: AsciiStringMaxLen255
   }
 
   object DeleteLifecycleHookType {
     def apply(
-      LifecycleHookName: js.UndefOr[AsciiStringMaxLen255] = js.undefined,
-      AutoScalingGroupName: js.UndefOr[ResourceName] = js.undefined): DeleteLifecycleHookType = {
+      AutoScalingGroupName: ResourceName,
+      LifecycleHookName: AsciiStringMaxLen255): DeleteLifecycleHookType = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "LifecycleHookName" -> LifecycleHookName.map { x => x.asInstanceOf[js.Any] },
-        "AutoScalingGroupName" -> AutoScalingGroupName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "AutoScalingGroupName" -> AutoScalingGroupName.asInstanceOf[js.Any],
+        "LifecycleHookName" -> LifecycleHookName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteLifecycleHookType]
     }
@@ -936,17 +936,17 @@ package autoscaling {
 
   @js.native
   trait DeleteNotificationConfigurationType extends js.Object {
-    var AutoScalingGroupName: js.UndefOr[ResourceName]
-    var TopicARN: js.UndefOr[ResourceName]
+    var AutoScalingGroupName: ResourceName
+    var TopicARN: ResourceName
   }
 
   object DeleteNotificationConfigurationType {
     def apply(
-      AutoScalingGroupName: js.UndefOr[ResourceName] = js.undefined,
-      TopicARN: js.UndefOr[ResourceName] = js.undefined): DeleteNotificationConfigurationType = {
+      AutoScalingGroupName: ResourceName,
+      TopicARN: ResourceName): DeleteNotificationConfigurationType = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "AutoScalingGroupName" -> AutoScalingGroupName.map { x => x.asInstanceOf[js.Any] },
-        "TopicARN" -> TopicARN.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "AutoScalingGroupName" -> AutoScalingGroupName.asInstanceOf[js.Any],
+        "TopicARN" -> TopicARN.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteNotificationConfigurationType]
     }
@@ -954,17 +954,17 @@ package autoscaling {
 
   @js.native
   trait DeletePolicyType extends js.Object {
+    var PolicyName: ResourceName
     var AutoScalingGroupName: js.UndefOr[ResourceName]
-    var PolicyName: js.UndefOr[ResourceName]
   }
 
   object DeletePolicyType {
     def apply(
-      AutoScalingGroupName: js.UndefOr[ResourceName] = js.undefined,
-      PolicyName: js.UndefOr[ResourceName] = js.undefined): DeletePolicyType = {
+      PolicyName: ResourceName,
+      AutoScalingGroupName: js.UndefOr[ResourceName] = js.undefined): DeletePolicyType = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "AutoScalingGroupName" -> AutoScalingGroupName.map { x => x.asInstanceOf[js.Any] },
-        "PolicyName" -> PolicyName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "PolicyName" -> PolicyName.asInstanceOf[js.Any],
+        "AutoScalingGroupName" -> AutoScalingGroupName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeletePolicyType]
     }
@@ -972,17 +972,17 @@ package autoscaling {
 
   @js.native
   trait DeleteScheduledActionType extends js.Object {
-    var AutoScalingGroupName: js.UndefOr[ResourceName]
-    var ScheduledActionName: js.UndefOr[ResourceName]
+    var AutoScalingGroupName: ResourceName
+    var ScheduledActionName: ResourceName
   }
 
   object DeleteScheduledActionType {
     def apply(
-      AutoScalingGroupName: js.UndefOr[ResourceName] = js.undefined,
-      ScheduledActionName: js.UndefOr[ResourceName] = js.undefined): DeleteScheduledActionType = {
+      AutoScalingGroupName: ResourceName,
+      ScheduledActionName: ResourceName): DeleteScheduledActionType = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "AutoScalingGroupName" -> AutoScalingGroupName.map { x => x.asInstanceOf[js.Any] },
-        "ScheduledActionName" -> ScheduledActionName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "AutoScalingGroupName" -> AutoScalingGroupName.asInstanceOf[js.Any],
+        "ScheduledActionName" -> ScheduledActionName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteScheduledActionType]
     }
@@ -990,14 +990,14 @@ package autoscaling {
 
   @js.native
   trait DeleteTagsType extends js.Object {
-    var Tags: js.UndefOr[Tags]
+    var Tags: Tags
   }
 
   object DeleteTagsType {
     def apply(
-      Tags: js.UndefOr[Tags] = js.undefined): DeleteTagsType = {
+      Tags: Tags): DeleteTagsType = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Tags" -> Tags.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Tags" -> Tags.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteTagsType]
     }
@@ -1110,16 +1110,16 @@ package autoscaling {
 
   @js.native
   trait DescribeLifecycleHooksType extends js.Object {
-    var AutoScalingGroupName: js.UndefOr[ResourceName]
+    var AutoScalingGroupName: ResourceName
     var LifecycleHookNames: js.UndefOr[LifecycleHookNames]
   }
 
   object DescribeLifecycleHooksType {
     def apply(
-      AutoScalingGroupName: js.UndefOr[ResourceName] = js.undefined,
+      AutoScalingGroupName: ResourceName,
       LifecycleHookNames: js.UndefOr[LifecycleHookNames] = js.undefined): DescribeLifecycleHooksType = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "AutoScalingGroupName" -> AutoScalingGroupName.map { x => x.asInstanceOf[js.Any] },
+        "AutoScalingGroupName" -> AutoScalingGroupName.asInstanceOf[js.Any],
         "LifecycleHookNames" -> LifecycleHookNames.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeLifecycleHooksType]
@@ -1128,20 +1128,20 @@ package autoscaling {
 
   @js.native
   trait DescribeLoadBalancerTargetGroupsRequest extends js.Object {
-    var AutoScalingGroupName: js.UndefOr[ResourceName]
-    var NextToken: js.UndefOr[XmlString]
+    var AutoScalingGroupName: ResourceName
     var MaxRecords: js.UndefOr[MaxRecords]
+    var NextToken: js.UndefOr[XmlString]
   }
 
   object DescribeLoadBalancerTargetGroupsRequest {
     def apply(
-      AutoScalingGroupName: js.UndefOr[ResourceName] = js.undefined,
-      NextToken: js.UndefOr[XmlString] = js.undefined,
-      MaxRecords: js.UndefOr[MaxRecords] = js.undefined): DescribeLoadBalancerTargetGroupsRequest = {
+      AutoScalingGroupName: ResourceName,
+      MaxRecords: js.UndefOr[MaxRecords] = js.undefined,
+      NextToken: js.UndefOr[XmlString] = js.undefined): DescribeLoadBalancerTargetGroupsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "AutoScalingGroupName" -> AutoScalingGroupName.map { x => x.asInstanceOf[js.Any] },
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
-        "MaxRecords" -> MaxRecords.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "AutoScalingGroupName" -> AutoScalingGroupName.asInstanceOf[js.Any],
+        "MaxRecords" -> MaxRecords.map { x => x.asInstanceOf[js.Any] },
+        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeLoadBalancerTargetGroupsRequest]
     }
@@ -1167,20 +1167,20 @@ package autoscaling {
 
   @js.native
   trait DescribeLoadBalancersRequest extends js.Object {
-    var AutoScalingGroupName: js.UndefOr[ResourceName]
-    var NextToken: js.UndefOr[XmlString]
+    var AutoScalingGroupName: ResourceName
     var MaxRecords: js.UndefOr[MaxRecords]
+    var NextToken: js.UndefOr[XmlString]
   }
 
   object DescribeLoadBalancersRequest {
     def apply(
-      AutoScalingGroupName: js.UndefOr[ResourceName] = js.undefined,
-      NextToken: js.UndefOr[XmlString] = js.undefined,
-      MaxRecords: js.UndefOr[MaxRecords] = js.undefined): DescribeLoadBalancersRequest = {
+      AutoScalingGroupName: ResourceName,
+      MaxRecords: js.UndefOr[MaxRecords] = js.undefined,
+      NextToken: js.UndefOr[XmlString] = js.undefined): DescribeLoadBalancersRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "AutoScalingGroupName" -> AutoScalingGroupName.map { x => x.asInstanceOf[js.Any] },
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
-        "MaxRecords" -> MaxRecords.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "AutoScalingGroupName" -> AutoScalingGroupName.asInstanceOf[js.Any],
+        "MaxRecords" -> MaxRecords.map { x => x.asInstanceOf[js.Any] },
+        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeLoadBalancersRequest]
     }
@@ -1206,17 +1206,17 @@ package autoscaling {
 
   @js.native
   trait DescribeMetricCollectionTypesAnswer extends js.Object {
-    var Metrics: js.UndefOr[MetricCollectionTypes]
     var Granularities: js.UndefOr[MetricGranularityTypes]
+    var Metrics: js.UndefOr[MetricCollectionTypes]
   }
 
   object DescribeMetricCollectionTypesAnswer {
     def apply(
-      Metrics: js.UndefOr[MetricCollectionTypes] = js.undefined,
-      Granularities: js.UndefOr[MetricGranularityTypes] = js.undefined): DescribeMetricCollectionTypesAnswer = {
+      Granularities: js.UndefOr[MetricGranularityTypes] = js.undefined,
+      Metrics: js.UndefOr[MetricCollectionTypes] = js.undefined): DescribeMetricCollectionTypesAnswer = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Metrics" -> Metrics.map { x => x.asInstanceOf[js.Any] },
-        "Granularities" -> Granularities.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Granularities" -> Granularities.map { x => x.asInstanceOf[js.Any] },
+        "Metrics" -> Metrics.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeMetricCollectionTypesAnswer]
     }
@@ -1224,16 +1224,16 @@ package autoscaling {
 
   @js.native
   trait DescribeNotificationConfigurationsAnswer extends js.Object {
-    var NotificationConfigurations: js.UndefOr[NotificationConfigurations]
+    var NotificationConfigurations: NotificationConfigurations
     var NextToken: js.UndefOr[XmlString]
   }
 
   object DescribeNotificationConfigurationsAnswer {
     def apply(
-      NotificationConfigurations: js.UndefOr[NotificationConfigurations] = js.undefined,
+      NotificationConfigurations: NotificationConfigurations,
       NextToken: js.UndefOr[XmlString] = js.undefined): DescribeNotificationConfigurationsAnswer = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "NotificationConfigurations" -> NotificationConfigurations.map { x => x.asInstanceOf[js.Any] },
+        "NotificationConfigurations" -> NotificationConfigurations.asInstanceOf[js.Any],
         "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeNotificationConfigurationsAnswer]
@@ -1243,19 +1243,19 @@ package autoscaling {
   @js.native
   trait DescribeNotificationConfigurationsType extends js.Object {
     var AutoScalingGroupNames: js.UndefOr[AutoScalingGroupNames]
-    var NextToken: js.UndefOr[XmlString]
     var MaxRecords: js.UndefOr[MaxRecords]
+    var NextToken: js.UndefOr[XmlString]
   }
 
   object DescribeNotificationConfigurationsType {
     def apply(
       AutoScalingGroupNames: js.UndefOr[AutoScalingGroupNames] = js.undefined,
-      NextToken: js.UndefOr[XmlString] = js.undefined,
-      MaxRecords: js.UndefOr[MaxRecords] = js.undefined): DescribeNotificationConfigurationsType = {
+      MaxRecords: js.UndefOr[MaxRecords] = js.undefined,
+      NextToken: js.UndefOr[XmlString] = js.undefined): DescribeNotificationConfigurationsType = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AutoScalingGroupNames" -> AutoScalingGroupNames.map { x => x.asInstanceOf[js.Any] },
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
-        "MaxRecords" -> MaxRecords.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "MaxRecords" -> MaxRecords.map { x => x.asInstanceOf[js.Any] },
+        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeNotificationConfigurationsType]
     }
@@ -1263,26 +1263,26 @@ package autoscaling {
 
   @js.native
   trait DescribePoliciesType extends js.Object {
-    var PolicyNames: js.UndefOr[PolicyNames]
     var AutoScalingGroupName: js.UndefOr[ResourceName]
-    var PolicyTypes: js.UndefOr[PolicyTypes]
     var MaxRecords: js.UndefOr[MaxRecords]
     var NextToken: js.UndefOr[XmlString]
+    var PolicyNames: js.UndefOr[PolicyNames]
+    var PolicyTypes: js.UndefOr[PolicyTypes]
   }
 
   object DescribePoliciesType {
     def apply(
-      PolicyNames: js.UndefOr[PolicyNames] = js.undefined,
       AutoScalingGroupName: js.UndefOr[ResourceName] = js.undefined,
-      PolicyTypes: js.UndefOr[PolicyTypes] = js.undefined,
       MaxRecords: js.UndefOr[MaxRecords] = js.undefined,
-      NextToken: js.UndefOr[XmlString] = js.undefined): DescribePoliciesType = {
+      NextToken: js.UndefOr[XmlString] = js.undefined,
+      PolicyNames: js.UndefOr[PolicyNames] = js.undefined,
+      PolicyTypes: js.UndefOr[PolicyTypes] = js.undefined): DescribePoliciesType = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "PolicyNames" -> PolicyNames.map { x => x.asInstanceOf[js.Any] },
         "AutoScalingGroupName" -> AutoScalingGroupName.map { x => x.asInstanceOf[js.Any] },
-        "PolicyTypes" -> PolicyTypes.map { x => x.asInstanceOf[js.Any] },
         "MaxRecords" -> MaxRecords.map { x => x.asInstanceOf[js.Any] },
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
+        "PolicyNames" -> PolicyNames.map { x => x.asInstanceOf[js.Any] },
+        "PolicyTypes" -> PolicyTypes.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribePoliciesType]
     }
@@ -1315,28 +1315,28 @@ package autoscaling {
   @js.native
   trait DescribeScheduledActionsType extends js.Object {
     var AutoScalingGroupName: js.UndefOr[ResourceName]
-    var StartTime: js.UndefOr[TimestampType]
     var EndTime: js.UndefOr[TimestampType]
     var MaxRecords: js.UndefOr[MaxRecords]
     var NextToken: js.UndefOr[XmlString]
     var ScheduledActionNames: js.UndefOr[ScheduledActionNames]
+    var StartTime: js.UndefOr[TimestampType]
   }
 
   object DescribeScheduledActionsType {
     def apply(
       AutoScalingGroupName: js.UndefOr[ResourceName] = js.undefined,
-      StartTime: js.UndefOr[TimestampType] = js.undefined,
       EndTime: js.UndefOr[TimestampType] = js.undefined,
       MaxRecords: js.UndefOr[MaxRecords] = js.undefined,
       NextToken: js.UndefOr[XmlString] = js.undefined,
-      ScheduledActionNames: js.UndefOr[ScheduledActionNames] = js.undefined): DescribeScheduledActionsType = {
+      ScheduledActionNames: js.UndefOr[ScheduledActionNames] = js.undefined,
+      StartTime: js.UndefOr[TimestampType] = js.undefined): DescribeScheduledActionsType = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AutoScalingGroupName" -> AutoScalingGroupName.map { x => x.asInstanceOf[js.Any] },
-        "StartTime" -> StartTime.map { x => x.asInstanceOf[js.Any] },
         "EndTime" -> EndTime.map { x => x.asInstanceOf[js.Any] },
         "MaxRecords" -> MaxRecords.map { x => x.asInstanceOf[js.Any] },
         "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
-        "ScheduledActionNames" -> ScheduledActionNames.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ScheduledActionNames" -> ScheduledActionNames.map { x => x.asInstanceOf[js.Any] },
+        "StartTime" -> StartTime.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeScheduledActionsType]
     }
@@ -1345,19 +1345,19 @@ package autoscaling {
   @js.native
   trait DescribeTagsType extends js.Object {
     var Filters: js.UndefOr[Filters]
-    var NextToken: js.UndefOr[XmlString]
     var MaxRecords: js.UndefOr[MaxRecords]
+    var NextToken: js.UndefOr[XmlString]
   }
 
   object DescribeTagsType {
     def apply(
       Filters: js.UndefOr[Filters] = js.undefined,
-      NextToken: js.UndefOr[XmlString] = js.undefined,
-      MaxRecords: js.UndefOr[MaxRecords] = js.undefined): DescribeTagsType = {
+      MaxRecords: js.UndefOr[MaxRecords] = js.undefined,
+      NextToken: js.UndefOr[XmlString] = js.undefined): DescribeTagsType = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Filters" -> Filters.map { x => x.asInstanceOf[js.Any] },
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
-        "MaxRecords" -> MaxRecords.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "MaxRecords" -> MaxRecords.map { x => x.asInstanceOf[js.Any] },
+        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeTagsType]
     }
@@ -1395,20 +1395,20 @@ package autoscaling {
 
   @js.native
   trait DetachInstancesQuery extends js.Object {
+    var AutoScalingGroupName: ResourceName
+    var ShouldDecrementDesiredCapacity: ShouldDecrementDesiredCapacity
     var InstanceIds: js.UndefOr[InstanceIds]
-    var AutoScalingGroupName: js.UndefOr[ResourceName]
-    var ShouldDecrementDesiredCapacity: js.UndefOr[ShouldDecrementDesiredCapacity]
   }
 
   object DetachInstancesQuery {
     def apply(
-      InstanceIds: js.UndefOr[InstanceIds] = js.undefined,
-      AutoScalingGroupName: js.UndefOr[ResourceName] = js.undefined,
-      ShouldDecrementDesiredCapacity: js.UndefOr[ShouldDecrementDesiredCapacity] = js.undefined): DetachInstancesQuery = {
+      AutoScalingGroupName: ResourceName,
+      ShouldDecrementDesiredCapacity: ShouldDecrementDesiredCapacity,
+      InstanceIds: js.UndefOr[InstanceIds] = js.undefined): DetachInstancesQuery = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "InstanceIds" -> InstanceIds.map { x => x.asInstanceOf[js.Any] },
-        "AutoScalingGroupName" -> AutoScalingGroupName.map { x => x.asInstanceOf[js.Any] },
-        "ShouldDecrementDesiredCapacity" -> ShouldDecrementDesiredCapacity.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "AutoScalingGroupName" -> AutoScalingGroupName.asInstanceOf[js.Any],
+        "ShouldDecrementDesiredCapacity" -> ShouldDecrementDesiredCapacity.asInstanceOf[js.Any],
+        "InstanceIds" -> InstanceIds.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DetachInstancesQuery]
     }
@@ -1429,17 +1429,17 @@ package autoscaling {
 
   @js.native
   trait DetachLoadBalancerTargetGroupsType extends js.Object {
-    var AutoScalingGroupName: js.UndefOr[ResourceName]
-    var TargetGroupARNs: js.UndefOr[TargetGroupARNs]
+    var AutoScalingGroupName: ResourceName
+    var TargetGroupARNs: TargetGroupARNs
   }
 
   object DetachLoadBalancerTargetGroupsType {
     def apply(
-      AutoScalingGroupName: js.UndefOr[ResourceName] = js.undefined,
-      TargetGroupARNs: js.UndefOr[TargetGroupARNs] = js.undefined): DetachLoadBalancerTargetGroupsType = {
+      AutoScalingGroupName: ResourceName,
+      TargetGroupARNs: TargetGroupARNs): DetachLoadBalancerTargetGroupsType = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "AutoScalingGroupName" -> AutoScalingGroupName.map { x => x.asInstanceOf[js.Any] },
-        "TargetGroupARNs" -> TargetGroupARNs.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "AutoScalingGroupName" -> AutoScalingGroupName.asInstanceOf[js.Any],
+        "TargetGroupARNs" -> TargetGroupARNs.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DetachLoadBalancerTargetGroupsType]
     }
@@ -1460,17 +1460,17 @@ package autoscaling {
 
   @js.native
   trait DetachLoadBalancersType extends js.Object {
-    var AutoScalingGroupName: js.UndefOr[ResourceName]
-    var LoadBalancerNames: js.UndefOr[LoadBalancerNames]
+    var AutoScalingGroupName: ResourceName
+    var LoadBalancerNames: LoadBalancerNames
   }
 
   object DetachLoadBalancersType {
     def apply(
-      AutoScalingGroupName: js.UndefOr[ResourceName] = js.undefined,
-      LoadBalancerNames: js.UndefOr[LoadBalancerNames] = js.undefined): DetachLoadBalancersType = {
+      AutoScalingGroupName: ResourceName,
+      LoadBalancerNames: LoadBalancerNames): DetachLoadBalancersType = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "AutoScalingGroupName" -> AutoScalingGroupName.map { x => x.asInstanceOf[js.Any] },
-        "LoadBalancerNames" -> LoadBalancerNames.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "AutoScalingGroupName" -> AutoScalingGroupName.asInstanceOf[js.Any],
+        "LoadBalancerNames" -> LoadBalancerNames.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DetachLoadBalancersType]
     }
@@ -1478,16 +1478,16 @@ package autoscaling {
 
   @js.native
   trait DisableMetricsCollectionQuery extends js.Object {
-    var AutoScalingGroupName: js.UndefOr[ResourceName]
+    var AutoScalingGroupName: ResourceName
     var Metrics: js.UndefOr[Metrics]
   }
 
   object DisableMetricsCollectionQuery {
     def apply(
-      AutoScalingGroupName: js.UndefOr[ResourceName] = js.undefined,
+      AutoScalingGroupName: ResourceName,
       Metrics: js.UndefOr[Metrics] = js.undefined): DisableMetricsCollectionQuery = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "AutoScalingGroupName" -> AutoScalingGroupName.map { x => x.asInstanceOf[js.Any] },
+        "AutoScalingGroupName" -> AutoScalingGroupName.asInstanceOf[js.Any],
         "Metrics" -> Metrics.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DisableMetricsCollectionQuery]
@@ -1499,29 +1499,29 @@ package autoscaling {
    */
   @js.native
   trait Ebs extends js.Object {
-    var VolumeType: js.UndefOr[BlockDeviceEbsVolumeType]
-    var SnapshotId: js.UndefOr[XmlStringMaxLen255]
-    var Encrypted: js.UndefOr[BlockDeviceEbsEncrypted]
-    var VolumeSize: js.UndefOr[BlockDeviceEbsVolumeSize]
-    var Iops: js.UndefOr[BlockDeviceEbsIops]
     var DeleteOnTermination: js.UndefOr[BlockDeviceEbsDeleteOnTermination]
+    var Encrypted: js.UndefOr[BlockDeviceEbsEncrypted]
+    var Iops: js.UndefOr[BlockDeviceEbsIops]
+    var SnapshotId: js.UndefOr[XmlStringMaxLen255]
+    var VolumeSize: js.UndefOr[BlockDeviceEbsVolumeSize]
+    var VolumeType: js.UndefOr[BlockDeviceEbsVolumeType]
   }
 
   object Ebs {
     def apply(
-      VolumeType: js.UndefOr[BlockDeviceEbsVolumeType] = js.undefined,
-      SnapshotId: js.UndefOr[XmlStringMaxLen255] = js.undefined,
+      DeleteOnTermination: js.UndefOr[BlockDeviceEbsDeleteOnTermination] = js.undefined,
       Encrypted: js.UndefOr[BlockDeviceEbsEncrypted] = js.undefined,
-      VolumeSize: js.UndefOr[BlockDeviceEbsVolumeSize] = js.undefined,
       Iops: js.UndefOr[BlockDeviceEbsIops] = js.undefined,
-      DeleteOnTermination: js.UndefOr[BlockDeviceEbsDeleteOnTermination] = js.undefined): Ebs = {
+      SnapshotId: js.UndefOr[XmlStringMaxLen255] = js.undefined,
+      VolumeSize: js.UndefOr[BlockDeviceEbsVolumeSize] = js.undefined,
+      VolumeType: js.UndefOr[BlockDeviceEbsVolumeType] = js.undefined): Ebs = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "VolumeType" -> VolumeType.map { x => x.asInstanceOf[js.Any] },
-        "SnapshotId" -> SnapshotId.map { x => x.asInstanceOf[js.Any] },
+        "DeleteOnTermination" -> DeleteOnTermination.map { x => x.asInstanceOf[js.Any] },
         "Encrypted" -> Encrypted.map { x => x.asInstanceOf[js.Any] },
-        "VolumeSize" -> VolumeSize.map { x => x.asInstanceOf[js.Any] },
         "Iops" -> Iops.map { x => x.asInstanceOf[js.Any] },
-        "DeleteOnTermination" -> DeleteOnTermination.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "SnapshotId" -> SnapshotId.map { x => x.asInstanceOf[js.Any] },
+        "VolumeSize" -> VolumeSize.map { x => x.asInstanceOf[js.Any] },
+        "VolumeType" -> VolumeType.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Ebs]
     }
@@ -1529,20 +1529,20 @@ package autoscaling {
 
   @js.native
   trait EnableMetricsCollectionQuery extends js.Object {
-    var AutoScalingGroupName: js.UndefOr[ResourceName]
+    var AutoScalingGroupName: ResourceName
+    var Granularity: XmlStringMaxLen255
     var Metrics: js.UndefOr[Metrics]
-    var Granularity: js.UndefOr[XmlStringMaxLen255]
   }
 
   object EnableMetricsCollectionQuery {
     def apply(
-      AutoScalingGroupName: js.UndefOr[ResourceName] = js.undefined,
-      Metrics: js.UndefOr[Metrics] = js.undefined,
-      Granularity: js.UndefOr[XmlStringMaxLen255] = js.undefined): EnableMetricsCollectionQuery = {
+      AutoScalingGroupName: ResourceName,
+      Granularity: XmlStringMaxLen255,
+      Metrics: js.UndefOr[Metrics] = js.undefined): EnableMetricsCollectionQuery = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "AutoScalingGroupName" -> AutoScalingGroupName.map { x => x.asInstanceOf[js.Any] },
-        "Metrics" -> Metrics.map { x => x.asInstanceOf[js.Any] },
-        "Granularity" -> Granularity.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "AutoScalingGroupName" -> AutoScalingGroupName.asInstanceOf[js.Any],
+        "Granularity" -> Granularity.asInstanceOf[js.Any],
+        "Metrics" -> Metrics.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EnableMetricsCollectionQuery]
     }
@@ -1553,17 +1553,17 @@ package autoscaling {
    */
   @js.native
   trait EnabledMetric extends js.Object {
-    var Metric: js.UndefOr[XmlStringMaxLen255]
     var Granularity: js.UndefOr[XmlStringMaxLen255]
+    var Metric: js.UndefOr[XmlStringMaxLen255]
   }
 
   object EnabledMetric {
     def apply(
-      Metric: js.UndefOr[XmlStringMaxLen255] = js.undefined,
-      Granularity: js.UndefOr[XmlStringMaxLen255] = js.undefined): EnabledMetric = {
+      Granularity: js.UndefOr[XmlStringMaxLen255] = js.undefined,
+      Metric: js.UndefOr[XmlStringMaxLen255] = js.undefined): EnabledMetric = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Metric" -> Metric.map { x => x.asInstanceOf[js.Any] },
-        "Granularity" -> Granularity.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Granularity" -> Granularity.map { x => x.asInstanceOf[js.Any] },
+        "Metric" -> Metric.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EnabledMetric]
     }
@@ -1586,20 +1586,20 @@ package autoscaling {
 
   @js.native
   trait EnterStandbyQuery extends js.Object {
+    var AutoScalingGroupName: ResourceName
+    var ShouldDecrementDesiredCapacity: ShouldDecrementDesiredCapacity
     var InstanceIds: js.UndefOr[InstanceIds]
-    var AutoScalingGroupName: js.UndefOr[ResourceName]
-    var ShouldDecrementDesiredCapacity: js.UndefOr[ShouldDecrementDesiredCapacity]
   }
 
   object EnterStandbyQuery {
     def apply(
-      InstanceIds: js.UndefOr[InstanceIds] = js.undefined,
-      AutoScalingGroupName: js.UndefOr[ResourceName] = js.undefined,
-      ShouldDecrementDesiredCapacity: js.UndefOr[ShouldDecrementDesiredCapacity] = js.undefined): EnterStandbyQuery = {
+      AutoScalingGroupName: ResourceName,
+      ShouldDecrementDesiredCapacity: ShouldDecrementDesiredCapacity,
+      InstanceIds: js.UndefOr[InstanceIds] = js.undefined): EnterStandbyQuery = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "InstanceIds" -> InstanceIds.map { x => x.asInstanceOf[js.Any] },
-        "AutoScalingGroupName" -> AutoScalingGroupName.map { x => x.asInstanceOf[js.Any] },
-        "ShouldDecrementDesiredCapacity" -> ShouldDecrementDesiredCapacity.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "AutoScalingGroupName" -> AutoScalingGroupName.asInstanceOf[js.Any],
+        "ShouldDecrementDesiredCapacity" -> ShouldDecrementDesiredCapacity.asInstanceOf[js.Any],
+        "InstanceIds" -> InstanceIds.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EnterStandbyQuery]
     }
@@ -1607,26 +1607,26 @@ package autoscaling {
 
   @js.native
   trait ExecutePolicyType extends js.Object {
+    var PolicyName: ResourceName
     var AutoScalingGroupName: js.UndefOr[ResourceName]
-    var MetricValue: js.UndefOr[MetricScale]
     var BreachThreshold: js.UndefOr[MetricScale]
     var HonorCooldown: js.UndefOr[HonorCooldown]
-    var PolicyName: js.UndefOr[ResourceName]
+    var MetricValue: js.UndefOr[MetricScale]
   }
 
   object ExecutePolicyType {
     def apply(
+      PolicyName: ResourceName,
       AutoScalingGroupName: js.UndefOr[ResourceName] = js.undefined,
-      MetricValue: js.UndefOr[MetricScale] = js.undefined,
       BreachThreshold: js.UndefOr[MetricScale] = js.undefined,
       HonorCooldown: js.UndefOr[HonorCooldown] = js.undefined,
-      PolicyName: js.UndefOr[ResourceName] = js.undefined): ExecutePolicyType = {
+      MetricValue: js.UndefOr[MetricScale] = js.undefined): ExecutePolicyType = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "PolicyName" -> PolicyName.asInstanceOf[js.Any],
         "AutoScalingGroupName" -> AutoScalingGroupName.map { x => x.asInstanceOf[js.Any] },
-        "MetricValue" -> MetricValue.map { x => x.asInstanceOf[js.Any] },
         "BreachThreshold" -> BreachThreshold.map { x => x.asInstanceOf[js.Any] },
         "HonorCooldown" -> HonorCooldown.map { x => x.asInstanceOf[js.Any] },
-        "PolicyName" -> PolicyName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "MetricValue" -> MetricValue.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ExecutePolicyType]
     }
@@ -1649,17 +1649,17 @@ package autoscaling {
 
   @js.native
   trait ExitStandbyQuery extends js.Object {
+    var AutoScalingGroupName: ResourceName
     var InstanceIds: js.UndefOr[InstanceIds]
-    var AutoScalingGroupName: js.UndefOr[ResourceName]
   }
 
   object ExitStandbyQuery {
     def apply(
-      InstanceIds: js.UndefOr[InstanceIds] = js.undefined,
-      AutoScalingGroupName: js.UndefOr[ResourceName] = js.undefined): ExitStandbyQuery = {
+      AutoScalingGroupName: ResourceName,
+      InstanceIds: js.UndefOr[InstanceIds] = js.undefined): ExitStandbyQuery = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "InstanceIds" -> InstanceIds.map { x => x.asInstanceOf[js.Any] },
-        "AutoScalingGroupName" -> AutoScalingGroupName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "AutoScalingGroupName" -> AutoScalingGroupName.asInstanceOf[js.Any],
+        "InstanceIds" -> InstanceIds.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ExitStandbyQuery]
     }
@@ -1670,18 +1670,18 @@ package autoscaling {
    */
   @js.native
   trait FailedScheduledUpdateGroupActionRequest extends js.Object {
-    var ScheduledActionName: js.UndefOr[XmlStringMaxLen255]
+    var ScheduledActionName: XmlStringMaxLen255
     var ErrorCode: js.UndefOr[XmlStringMaxLen64]
     var ErrorMessage: js.UndefOr[XmlString]
   }
 
   object FailedScheduledUpdateGroupActionRequest {
     def apply(
-      ScheduledActionName: js.UndefOr[XmlStringMaxLen255] = js.undefined,
+      ScheduledActionName: XmlStringMaxLen255,
       ErrorCode: js.UndefOr[XmlStringMaxLen64] = js.undefined,
       ErrorMessage: js.UndefOr[XmlString] = js.undefined): FailedScheduledUpdateGroupActionRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ScheduledActionName" -> ScheduledActionName.map { x => x.asInstanceOf[js.Any] },
+        "ScheduledActionName" -> ScheduledActionName.asInstanceOf[js.Any],
         "ErrorCode" -> ErrorCode.map { x => x.asInstanceOf[js.Any] },
         "ErrorMessage" -> ErrorMessage.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
@@ -1715,32 +1715,32 @@ package autoscaling {
    */
   @js.native
   trait Instance extends js.Object {
-    var ProtectedFromScaleIn: js.UndefOr[InstanceProtected]
-    var LaunchTemplate: js.UndefOr[LaunchTemplateSpecification]
-    var LifecycleState: js.UndefOr[LifecycleState]
-    var AvailabilityZone: js.UndefOr[XmlStringMaxLen255]
-    var HealthStatus: js.UndefOr[XmlStringMaxLen32]
-    var InstanceId: js.UndefOr[XmlStringMaxLen19]
+    var AvailabilityZone: XmlStringMaxLen255
+    var HealthStatus: XmlStringMaxLen32
+    var InstanceId: XmlStringMaxLen19
+    var LifecycleState: LifecycleState
+    var ProtectedFromScaleIn: InstanceProtected
     var LaunchConfigurationName: js.UndefOr[XmlStringMaxLen255]
+    var LaunchTemplate: js.UndefOr[LaunchTemplateSpecification]
   }
 
   object Instance {
     def apply(
-      ProtectedFromScaleIn: js.UndefOr[InstanceProtected] = js.undefined,
-      LaunchTemplate: js.UndefOr[LaunchTemplateSpecification] = js.undefined,
-      LifecycleState: js.UndefOr[LifecycleState] = js.undefined,
-      AvailabilityZone: js.UndefOr[XmlStringMaxLen255] = js.undefined,
-      HealthStatus: js.UndefOr[XmlStringMaxLen32] = js.undefined,
-      InstanceId: js.UndefOr[XmlStringMaxLen19] = js.undefined,
-      LaunchConfigurationName: js.UndefOr[XmlStringMaxLen255] = js.undefined): Instance = {
+      AvailabilityZone: XmlStringMaxLen255,
+      HealthStatus: XmlStringMaxLen32,
+      InstanceId: XmlStringMaxLen19,
+      LifecycleState: LifecycleState,
+      ProtectedFromScaleIn: InstanceProtected,
+      LaunchConfigurationName: js.UndefOr[XmlStringMaxLen255] = js.undefined,
+      LaunchTemplate: js.UndefOr[LaunchTemplateSpecification] = js.undefined): Instance = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ProtectedFromScaleIn" -> ProtectedFromScaleIn.map { x => x.asInstanceOf[js.Any] },
-        "LaunchTemplate" -> LaunchTemplate.map { x => x.asInstanceOf[js.Any] },
-        "LifecycleState" -> LifecycleState.map { x => x.asInstanceOf[js.Any] },
-        "AvailabilityZone" -> AvailabilityZone.map { x => x.asInstanceOf[js.Any] },
-        "HealthStatus" -> HealthStatus.map { x => x.asInstanceOf[js.Any] },
-        "InstanceId" -> InstanceId.map { x => x.asInstanceOf[js.Any] },
-        "LaunchConfigurationName" -> LaunchConfigurationName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "AvailabilityZone" -> AvailabilityZone.asInstanceOf[js.Any],
+        "HealthStatus" -> HealthStatus.asInstanceOf[js.Any],
+        "InstanceId" -> InstanceId.asInstanceOf[js.Any],
+        "LifecycleState" -> LifecycleState.asInstanceOf[js.Any],
+        "ProtectedFromScaleIn" -> ProtectedFromScaleIn.asInstanceOf[js.Any],
+        "LaunchConfigurationName" -> LaunchConfigurationName.map { x => x.asInstanceOf[js.Any] },
+        "LaunchTemplate" -> LaunchTemplate.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Instance]
     }
@@ -1769,29 +1769,29 @@ package autoscaling {
    */
   @js.native
   trait InstancesDistribution extends js.Object {
-    var SpotAllocationStrategy: js.UndefOr[XmlString]
-    var SpotMaxPrice: js.UndefOr[SpotPrice]
-    var OnDemandBaseCapacity: js.UndefOr[OnDemandBaseCapacity]
     var OnDemandAllocationStrategy: js.UndefOr[XmlString]
+    var OnDemandBaseCapacity: js.UndefOr[OnDemandBaseCapacity]
     var OnDemandPercentageAboveBaseCapacity: js.UndefOr[OnDemandPercentageAboveBaseCapacity]
+    var SpotAllocationStrategy: js.UndefOr[XmlString]
     var SpotInstancePools: js.UndefOr[SpotInstancePools]
+    var SpotMaxPrice: js.UndefOr[SpotPrice]
   }
 
   object InstancesDistribution {
     def apply(
-      SpotAllocationStrategy: js.UndefOr[XmlString] = js.undefined,
-      SpotMaxPrice: js.UndefOr[SpotPrice] = js.undefined,
-      OnDemandBaseCapacity: js.UndefOr[OnDemandBaseCapacity] = js.undefined,
       OnDemandAllocationStrategy: js.UndefOr[XmlString] = js.undefined,
+      OnDemandBaseCapacity: js.UndefOr[OnDemandBaseCapacity] = js.undefined,
       OnDemandPercentageAboveBaseCapacity: js.UndefOr[OnDemandPercentageAboveBaseCapacity] = js.undefined,
-      SpotInstancePools: js.UndefOr[SpotInstancePools] = js.undefined): InstancesDistribution = {
+      SpotAllocationStrategy: js.UndefOr[XmlString] = js.undefined,
+      SpotInstancePools: js.UndefOr[SpotInstancePools] = js.undefined,
+      SpotMaxPrice: js.UndefOr[SpotPrice] = js.undefined): InstancesDistribution = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "SpotAllocationStrategy" -> SpotAllocationStrategy.map { x => x.asInstanceOf[js.Any] },
-        "SpotMaxPrice" -> SpotMaxPrice.map { x => x.asInstanceOf[js.Any] },
-        "OnDemandBaseCapacity" -> OnDemandBaseCapacity.map { x => x.asInstanceOf[js.Any] },
         "OnDemandAllocationStrategy" -> OnDemandAllocationStrategy.map { x => x.asInstanceOf[js.Any] },
+        "OnDemandBaseCapacity" -> OnDemandBaseCapacity.map { x => x.asInstanceOf[js.Any] },
         "OnDemandPercentageAboveBaseCapacity" -> OnDemandPercentageAboveBaseCapacity.map { x => x.asInstanceOf[js.Any] },
-        "SpotInstancePools" -> SpotInstancePools.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "SpotAllocationStrategy" -> SpotAllocationStrategy.map { x => x.asInstanceOf[js.Any] },
+        "SpotInstancePools" -> SpotInstancePools.map { x => x.asInstanceOf[js.Any] },
+        "SpotMaxPrice" -> SpotMaxPrice.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[InstancesDistribution]
     }
@@ -1802,68 +1802,68 @@ package autoscaling {
    */
   @js.native
   trait LaunchConfiguration extends js.Object {
-    var RamdiskId: js.UndefOr[XmlStringMaxLen255]
+    var CreatedTime: TimestampType
+    var ImageId: XmlStringMaxLen255
+    var InstanceType: XmlStringMaxLen255
+    var LaunchConfigurationName: XmlStringMaxLen255
+    var AssociatePublicIpAddress: js.UndefOr[AssociatePublicIpAddress]
     var BlockDeviceMappings: js.UndefOr[BlockDeviceMappings]
     var ClassicLinkVPCId: js.UndefOr[XmlStringMaxLen255]
-    var ImageId: js.UndefOr[XmlStringMaxLen255]
-    var CreatedTime: js.UndefOr[TimestampType]
-    var EbsOptimized: js.UndefOr[EbsOptimized]
-    var UserData: js.UndefOr[XmlStringUserData]
-    var SecurityGroups: js.UndefOr[SecurityGroups]
-    var KernelId: js.UndefOr[XmlStringMaxLen255]
     var ClassicLinkVPCSecurityGroups: js.UndefOr[ClassicLinkVPCSecurityGroups]
-    var KeyName: js.UndefOr[XmlStringMaxLen255]
-    var InstanceType: js.UndefOr[XmlStringMaxLen255]
-    var AssociatePublicIpAddress: js.UndefOr[AssociatePublicIpAddress]
-    var SpotPrice: js.UndefOr[SpotPrice]
-    var PlacementTenancy: js.UndefOr[XmlStringMaxLen64]
+    var EbsOptimized: js.UndefOr[EbsOptimized]
     var IamInstanceProfile: js.UndefOr[XmlStringMaxLen1600]
-    var LaunchConfigurationName: js.UndefOr[XmlStringMaxLen255]
     var InstanceMonitoring: js.UndefOr[InstanceMonitoring]
+    var KernelId: js.UndefOr[XmlStringMaxLen255]
+    var KeyName: js.UndefOr[XmlStringMaxLen255]
     var LaunchConfigurationARN: js.UndefOr[ResourceName]
+    var PlacementTenancy: js.UndefOr[XmlStringMaxLen64]
+    var RamdiskId: js.UndefOr[XmlStringMaxLen255]
+    var SecurityGroups: js.UndefOr[SecurityGroups]
+    var SpotPrice: js.UndefOr[SpotPrice]
+    var UserData: js.UndefOr[XmlStringUserData]
   }
 
   object LaunchConfiguration {
     def apply(
-      RamdiskId: js.UndefOr[XmlStringMaxLen255] = js.undefined,
+      CreatedTime: TimestampType,
+      ImageId: XmlStringMaxLen255,
+      InstanceType: XmlStringMaxLen255,
+      LaunchConfigurationName: XmlStringMaxLen255,
+      AssociatePublicIpAddress: js.UndefOr[AssociatePublicIpAddress] = js.undefined,
       BlockDeviceMappings: js.UndefOr[BlockDeviceMappings] = js.undefined,
       ClassicLinkVPCId: js.UndefOr[XmlStringMaxLen255] = js.undefined,
-      ImageId: js.UndefOr[XmlStringMaxLen255] = js.undefined,
-      CreatedTime: js.UndefOr[TimestampType] = js.undefined,
-      EbsOptimized: js.UndefOr[EbsOptimized] = js.undefined,
-      UserData: js.UndefOr[XmlStringUserData] = js.undefined,
-      SecurityGroups: js.UndefOr[SecurityGroups] = js.undefined,
-      KernelId: js.UndefOr[XmlStringMaxLen255] = js.undefined,
       ClassicLinkVPCSecurityGroups: js.UndefOr[ClassicLinkVPCSecurityGroups] = js.undefined,
-      KeyName: js.UndefOr[XmlStringMaxLen255] = js.undefined,
-      InstanceType: js.UndefOr[XmlStringMaxLen255] = js.undefined,
-      AssociatePublicIpAddress: js.UndefOr[AssociatePublicIpAddress] = js.undefined,
-      SpotPrice: js.UndefOr[SpotPrice] = js.undefined,
-      PlacementTenancy: js.UndefOr[XmlStringMaxLen64] = js.undefined,
+      EbsOptimized: js.UndefOr[EbsOptimized] = js.undefined,
       IamInstanceProfile: js.UndefOr[XmlStringMaxLen1600] = js.undefined,
-      LaunchConfigurationName: js.UndefOr[XmlStringMaxLen255] = js.undefined,
       InstanceMonitoring: js.UndefOr[InstanceMonitoring] = js.undefined,
-      LaunchConfigurationARN: js.UndefOr[ResourceName] = js.undefined): LaunchConfiguration = {
+      KernelId: js.UndefOr[XmlStringMaxLen255] = js.undefined,
+      KeyName: js.UndefOr[XmlStringMaxLen255] = js.undefined,
+      LaunchConfigurationARN: js.UndefOr[ResourceName] = js.undefined,
+      PlacementTenancy: js.UndefOr[XmlStringMaxLen64] = js.undefined,
+      RamdiskId: js.UndefOr[XmlStringMaxLen255] = js.undefined,
+      SecurityGroups: js.UndefOr[SecurityGroups] = js.undefined,
+      SpotPrice: js.UndefOr[SpotPrice] = js.undefined,
+      UserData: js.UndefOr[XmlStringUserData] = js.undefined): LaunchConfiguration = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "RamdiskId" -> RamdiskId.map { x => x.asInstanceOf[js.Any] },
+        "CreatedTime" -> CreatedTime.asInstanceOf[js.Any],
+        "ImageId" -> ImageId.asInstanceOf[js.Any],
+        "InstanceType" -> InstanceType.asInstanceOf[js.Any],
+        "LaunchConfigurationName" -> LaunchConfigurationName.asInstanceOf[js.Any],
+        "AssociatePublicIpAddress" -> AssociatePublicIpAddress.map { x => x.asInstanceOf[js.Any] },
         "BlockDeviceMappings" -> BlockDeviceMappings.map { x => x.asInstanceOf[js.Any] },
         "ClassicLinkVPCId" -> ClassicLinkVPCId.map { x => x.asInstanceOf[js.Any] },
-        "ImageId" -> ImageId.map { x => x.asInstanceOf[js.Any] },
-        "CreatedTime" -> CreatedTime.map { x => x.asInstanceOf[js.Any] },
-        "EbsOptimized" -> EbsOptimized.map { x => x.asInstanceOf[js.Any] },
-        "UserData" -> UserData.map { x => x.asInstanceOf[js.Any] },
-        "SecurityGroups" -> SecurityGroups.map { x => x.asInstanceOf[js.Any] },
-        "KernelId" -> KernelId.map { x => x.asInstanceOf[js.Any] },
         "ClassicLinkVPCSecurityGroups" -> ClassicLinkVPCSecurityGroups.map { x => x.asInstanceOf[js.Any] },
-        "KeyName" -> KeyName.map { x => x.asInstanceOf[js.Any] },
-        "InstanceType" -> InstanceType.map { x => x.asInstanceOf[js.Any] },
-        "AssociatePublicIpAddress" -> AssociatePublicIpAddress.map { x => x.asInstanceOf[js.Any] },
-        "SpotPrice" -> SpotPrice.map { x => x.asInstanceOf[js.Any] },
-        "PlacementTenancy" -> PlacementTenancy.map { x => x.asInstanceOf[js.Any] },
+        "EbsOptimized" -> EbsOptimized.map { x => x.asInstanceOf[js.Any] },
         "IamInstanceProfile" -> IamInstanceProfile.map { x => x.asInstanceOf[js.Any] },
-        "LaunchConfigurationName" -> LaunchConfigurationName.map { x => x.asInstanceOf[js.Any] },
         "InstanceMonitoring" -> InstanceMonitoring.map { x => x.asInstanceOf[js.Any] },
-        "LaunchConfigurationARN" -> LaunchConfigurationARN.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "KernelId" -> KernelId.map { x => x.asInstanceOf[js.Any] },
+        "KeyName" -> KeyName.map { x => x.asInstanceOf[js.Any] },
+        "LaunchConfigurationARN" -> LaunchConfigurationARN.map { x => x.asInstanceOf[js.Any] },
+        "PlacementTenancy" -> PlacementTenancy.map { x => x.asInstanceOf[js.Any] },
+        "RamdiskId" -> RamdiskId.map { x => x.asInstanceOf[js.Any] },
+        "SecurityGroups" -> SecurityGroups.map { x => x.asInstanceOf[js.Any] },
+        "SpotPrice" -> SpotPrice.map { x => x.asInstanceOf[js.Any] },
+        "UserData" -> UserData.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[LaunchConfiguration]
     }
@@ -1871,14 +1871,14 @@ package autoscaling {
 
   @js.native
   trait LaunchConfigurationNameType extends js.Object {
-    var LaunchConfigurationName: js.UndefOr[ResourceName]
+    var LaunchConfigurationName: ResourceName
   }
 
   object LaunchConfigurationNameType {
     def apply(
-      LaunchConfigurationName: js.UndefOr[ResourceName] = js.undefined): LaunchConfigurationNameType = {
+      LaunchConfigurationName: ResourceName): LaunchConfigurationNameType = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "LaunchConfigurationName" -> LaunchConfigurationName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "LaunchConfigurationName" -> LaunchConfigurationName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[LaunchConfigurationNameType]
     }
@@ -1887,19 +1887,19 @@ package autoscaling {
   @js.native
   trait LaunchConfigurationNamesType extends js.Object {
     var LaunchConfigurationNames: js.UndefOr[LaunchConfigurationNames]
-    var NextToken: js.UndefOr[XmlString]
     var MaxRecords: js.UndefOr[MaxRecords]
+    var NextToken: js.UndefOr[XmlString]
   }
 
   object LaunchConfigurationNamesType {
     def apply(
       LaunchConfigurationNames: js.UndefOr[LaunchConfigurationNames] = js.undefined,
-      NextToken: js.UndefOr[XmlString] = js.undefined,
-      MaxRecords: js.UndefOr[MaxRecords] = js.undefined): LaunchConfigurationNamesType = {
+      MaxRecords: js.UndefOr[MaxRecords] = js.undefined,
+      NextToken: js.UndefOr[XmlString] = js.undefined): LaunchConfigurationNamesType = {
       val _fields = IndexedSeq[(String, js.Any)](
         "LaunchConfigurationNames" -> LaunchConfigurationNames.map { x => x.asInstanceOf[js.Any] },
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
-        "MaxRecords" -> MaxRecords.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "MaxRecords" -> MaxRecords.map { x => x.asInstanceOf[js.Any] },
+        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[LaunchConfigurationNamesType]
     }
@@ -1907,16 +1907,16 @@ package autoscaling {
 
   @js.native
   trait LaunchConfigurationsType extends js.Object {
-    var LaunchConfigurations: js.UndefOr[LaunchConfigurations]
+    var LaunchConfigurations: LaunchConfigurations
     var NextToken: js.UndefOr[XmlString]
   }
 
   object LaunchConfigurationsType {
     def apply(
-      LaunchConfigurations: js.UndefOr[LaunchConfigurations] = js.undefined,
+      LaunchConfigurations: LaunchConfigurations,
       NextToken: js.UndefOr[XmlString] = js.undefined): LaunchConfigurationsType = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "LaunchConfigurations" -> LaunchConfigurations.map { x => x.asInstanceOf[js.Any] },
+        "LaunchConfigurations" -> LaunchConfigurations.asInstanceOf[js.Any],
         "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[LaunchConfigurationsType]
@@ -1991,38 +1991,38 @@ package autoscaling {
    */
   @js.native
   trait LifecycleHook extends js.Object {
-    var NotificationMetadata: js.UndefOr[XmlStringMaxLen1023]
-    var LifecycleHookName: js.UndefOr[AsciiStringMaxLen255]
     var AutoScalingGroupName: js.UndefOr[ResourceName]
+    var DefaultResult: js.UndefOr[LifecycleActionResult]
+    var GlobalTimeout: js.UndefOr[GlobalTimeout]
+    var HeartbeatTimeout: js.UndefOr[HeartbeatTimeout]
+    var LifecycleHookName: js.UndefOr[AsciiStringMaxLen255]
+    var LifecycleTransition: js.UndefOr[LifecycleTransition]
+    var NotificationMetadata: js.UndefOr[XmlStringMaxLen1023]
     var NotificationTargetARN: js.UndefOr[ResourceName]
     var RoleARN: js.UndefOr[ResourceName]
-    var HeartbeatTimeout: js.UndefOr[HeartbeatTimeout]
-    var LifecycleTransition: js.UndefOr[LifecycleTransition]
-    var GlobalTimeout: js.UndefOr[GlobalTimeout]
-    var DefaultResult: js.UndefOr[LifecycleActionResult]
   }
 
   object LifecycleHook {
     def apply(
-      NotificationMetadata: js.UndefOr[XmlStringMaxLen1023] = js.undefined,
-      LifecycleHookName: js.UndefOr[AsciiStringMaxLen255] = js.undefined,
       AutoScalingGroupName: js.UndefOr[ResourceName] = js.undefined,
-      NotificationTargetARN: js.UndefOr[ResourceName] = js.undefined,
-      RoleARN: js.UndefOr[ResourceName] = js.undefined,
-      HeartbeatTimeout: js.UndefOr[HeartbeatTimeout] = js.undefined,
-      LifecycleTransition: js.UndefOr[LifecycleTransition] = js.undefined,
+      DefaultResult: js.UndefOr[LifecycleActionResult] = js.undefined,
       GlobalTimeout: js.UndefOr[GlobalTimeout] = js.undefined,
-      DefaultResult: js.UndefOr[LifecycleActionResult] = js.undefined): LifecycleHook = {
+      HeartbeatTimeout: js.UndefOr[HeartbeatTimeout] = js.undefined,
+      LifecycleHookName: js.UndefOr[AsciiStringMaxLen255] = js.undefined,
+      LifecycleTransition: js.UndefOr[LifecycleTransition] = js.undefined,
+      NotificationMetadata: js.UndefOr[XmlStringMaxLen1023] = js.undefined,
+      NotificationTargetARN: js.UndefOr[ResourceName] = js.undefined,
+      RoleARN: js.UndefOr[ResourceName] = js.undefined): LifecycleHook = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "NotificationMetadata" -> NotificationMetadata.map { x => x.asInstanceOf[js.Any] },
-        "LifecycleHookName" -> LifecycleHookName.map { x => x.asInstanceOf[js.Any] },
         "AutoScalingGroupName" -> AutoScalingGroupName.map { x => x.asInstanceOf[js.Any] },
-        "NotificationTargetARN" -> NotificationTargetARN.map { x => x.asInstanceOf[js.Any] },
-        "RoleARN" -> RoleARN.map { x => x.asInstanceOf[js.Any] },
-        "HeartbeatTimeout" -> HeartbeatTimeout.map { x => x.asInstanceOf[js.Any] },
-        "LifecycleTransition" -> LifecycleTransition.map { x => x.asInstanceOf[js.Any] },
+        "DefaultResult" -> DefaultResult.map { x => x.asInstanceOf[js.Any] },
         "GlobalTimeout" -> GlobalTimeout.map { x => x.asInstanceOf[js.Any] },
-        "DefaultResult" -> DefaultResult.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "HeartbeatTimeout" -> HeartbeatTimeout.map { x => x.asInstanceOf[js.Any] },
+        "LifecycleHookName" -> LifecycleHookName.map { x => x.asInstanceOf[js.Any] },
+        "LifecycleTransition" -> LifecycleTransition.map { x => x.asInstanceOf[js.Any] },
+        "NotificationMetadata" -> NotificationMetadata.map { x => x.asInstanceOf[js.Any] },
+        "NotificationTargetARN" -> NotificationTargetARN.map { x => x.asInstanceOf[js.Any] },
+        "RoleARN" -> RoleARN.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[LifecycleHook]
     }
@@ -2033,32 +2033,32 @@ package autoscaling {
    */
   @js.native
   trait LifecycleHookSpecification extends js.Object {
+    var LifecycleHookName: AsciiStringMaxLen255
+    var LifecycleTransition: LifecycleTransition
+    var DefaultResult: js.UndefOr[LifecycleActionResult]
+    var HeartbeatTimeout: js.UndefOr[HeartbeatTimeout]
     var NotificationMetadata: js.UndefOr[XmlStringMaxLen1023]
-    var LifecycleHookName: js.UndefOr[AsciiStringMaxLen255]
     var NotificationTargetARN: js.UndefOr[NotificationTargetResourceName]
     var RoleARN: js.UndefOr[ResourceName]
-    var HeartbeatTimeout: js.UndefOr[HeartbeatTimeout]
-    var LifecycleTransition: js.UndefOr[LifecycleTransition]
-    var DefaultResult: js.UndefOr[LifecycleActionResult]
   }
 
   object LifecycleHookSpecification {
     def apply(
-      NotificationMetadata: js.UndefOr[XmlStringMaxLen1023] = js.undefined,
-      LifecycleHookName: js.UndefOr[AsciiStringMaxLen255] = js.undefined,
-      NotificationTargetARN: js.UndefOr[NotificationTargetResourceName] = js.undefined,
-      RoleARN: js.UndefOr[ResourceName] = js.undefined,
+      LifecycleHookName: AsciiStringMaxLen255,
+      LifecycleTransition: LifecycleTransition,
+      DefaultResult: js.UndefOr[LifecycleActionResult] = js.undefined,
       HeartbeatTimeout: js.UndefOr[HeartbeatTimeout] = js.undefined,
-      LifecycleTransition: js.UndefOr[LifecycleTransition] = js.undefined,
-      DefaultResult: js.UndefOr[LifecycleActionResult] = js.undefined): LifecycleHookSpecification = {
+      NotificationMetadata: js.UndefOr[XmlStringMaxLen1023] = js.undefined,
+      NotificationTargetARN: js.UndefOr[NotificationTargetResourceName] = js.undefined,
+      RoleARN: js.UndefOr[ResourceName] = js.undefined): LifecycleHookSpecification = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "NotificationMetadata" -> NotificationMetadata.map { x => x.asInstanceOf[js.Any] },
-        "LifecycleHookName" -> LifecycleHookName.map { x => x.asInstanceOf[js.Any] },
-        "NotificationTargetARN" -> NotificationTargetARN.map { x => x.asInstanceOf[js.Any] },
-        "RoleARN" -> RoleARN.map { x => x.asInstanceOf[js.Any] },
+        "LifecycleHookName" -> LifecycleHookName.asInstanceOf[js.Any],
+        "LifecycleTransition" -> LifecycleTransition.asInstanceOf[js.Any],
+        "DefaultResult" -> DefaultResult.map { x => x.asInstanceOf[js.Any] },
         "HeartbeatTimeout" -> HeartbeatTimeout.map { x => x.asInstanceOf[js.Any] },
-        "LifecycleTransition" -> LifecycleTransition.map { x => x.asInstanceOf[js.Any] },
-        "DefaultResult" -> DefaultResult.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "NotificationMetadata" -> NotificationMetadata.map { x => x.asInstanceOf[js.Any] },
+        "NotificationTargetARN" -> NotificationTargetARN.map { x => x.asInstanceOf[js.Any] },
+        "RoleARN" -> RoleARN.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[LifecycleHookSpecification]
     }
@@ -2147,17 +2147,17 @@ package autoscaling {
    */
   @js.native
   trait MetricDimension extends js.Object {
-    var Name: js.UndefOr[MetricDimensionName]
-    var Value: js.UndefOr[MetricDimensionValue]
+    var Name: MetricDimensionName
+    var Value: MetricDimensionValue
   }
 
   object MetricDimension {
     def apply(
-      Name: js.UndefOr[MetricDimensionName] = js.undefined,
-      Value: js.UndefOr[MetricDimensionValue] = js.undefined): MetricDimension = {
+      Name: MetricDimensionName,
+      Value: MetricDimensionValue): MetricDimension = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
-        "Value" -> Value.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Name" -> Name.asInstanceOf[js.Any],
+        "Value" -> Value.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[MetricDimension]
     }
@@ -2205,17 +2205,17 @@ package autoscaling {
    */
   @js.native
   trait MixedInstancesPolicy extends js.Object {
-    var LaunchTemplate: js.UndefOr[LaunchTemplate]
     var InstancesDistribution: js.UndefOr[InstancesDistribution]
+    var LaunchTemplate: js.UndefOr[LaunchTemplate]
   }
 
   object MixedInstancesPolicy {
     def apply(
-      LaunchTemplate: js.UndefOr[LaunchTemplate] = js.undefined,
-      InstancesDistribution: js.UndefOr[InstancesDistribution] = js.undefined): MixedInstancesPolicy = {
+      InstancesDistribution: js.UndefOr[InstancesDistribution] = js.undefined,
+      LaunchTemplate: js.UndefOr[LaunchTemplate] = js.undefined): MixedInstancesPolicy = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "LaunchTemplate" -> LaunchTemplate.map { x => x.asInstanceOf[js.Any] },
-        "InstancesDistribution" -> InstancesDistribution.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "InstancesDistribution" -> InstancesDistribution.map { x => x.asInstanceOf[js.Any] },
+        "LaunchTemplate" -> LaunchTemplate.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[MixedInstancesPolicy]
     }
@@ -2227,19 +2227,19 @@ package autoscaling {
   @js.native
   trait NotificationConfiguration extends js.Object {
     var AutoScalingGroupName: js.UndefOr[ResourceName]
-    var TopicARN: js.UndefOr[ResourceName]
     var NotificationType: js.UndefOr[XmlStringMaxLen255]
+    var TopicARN: js.UndefOr[ResourceName]
   }
 
   object NotificationConfiguration {
     def apply(
       AutoScalingGroupName: js.UndefOr[ResourceName] = js.undefined,
-      TopicARN: js.UndefOr[ResourceName] = js.undefined,
-      NotificationType: js.UndefOr[XmlStringMaxLen255] = js.undefined): NotificationConfiguration = {
+      NotificationType: js.UndefOr[XmlStringMaxLen255] = js.undefined,
+      TopicARN: js.UndefOr[ResourceName] = js.undefined): NotificationConfiguration = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AutoScalingGroupName" -> AutoScalingGroupName.map { x => x.asInstanceOf[js.Any] },
-        "TopicARN" -> TopicARN.map { x => x.asInstanceOf[js.Any] },
-        "NotificationType" -> NotificationType.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "NotificationType" -> NotificationType.map { x => x.asInstanceOf[js.Any] },
+        "TopicARN" -> TopicARN.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[NotificationConfiguration]
     }
@@ -2247,17 +2247,17 @@ package autoscaling {
 
   @js.native
   trait PoliciesType extends js.Object {
-    var ScalingPolicies: js.UndefOr[ScalingPolicies]
     var NextToken: js.UndefOr[XmlString]
+    var ScalingPolicies: js.UndefOr[ScalingPolicies]
   }
 
   object PoliciesType {
     def apply(
-      ScalingPolicies: js.UndefOr[ScalingPolicies] = js.undefined,
-      NextToken: js.UndefOr[XmlString] = js.undefined): PoliciesType = {
+      NextToken: js.UndefOr[XmlString] = js.undefined,
+      ScalingPolicies: js.UndefOr[ScalingPolicies] = js.undefined): PoliciesType = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ScalingPolicies" -> ScalingPolicies.map { x => x.asInstanceOf[js.Any] },
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
+        "ScalingPolicies" -> ScalingPolicies.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PoliciesType]
     }
@@ -2268,17 +2268,17 @@ package autoscaling {
    */
   @js.native
   trait PolicyARNType extends js.Object {
-    var PolicyARN: js.UndefOr[ResourceName]
     var Alarms: js.UndefOr[Alarms]
+    var PolicyARN: js.UndefOr[ResourceName]
   }
 
   object PolicyARNType {
     def apply(
-      PolicyARN: js.UndefOr[ResourceName] = js.undefined,
-      Alarms: js.UndefOr[Alarms] = js.undefined): PolicyARNType = {
+      Alarms: js.UndefOr[Alarms] = js.undefined,
+      PolicyARN: js.UndefOr[ResourceName] = js.undefined): PolicyARNType = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "PolicyARN" -> PolicyARN.map { x => x.asInstanceOf[js.Any] },
-        "Alarms" -> Alarms.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Alarms" -> Alarms.map { x => x.asInstanceOf[js.Any] },
+        "PolicyARN" -> PolicyARN.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PolicyARNType]
     }
@@ -2289,16 +2289,16 @@ package autoscaling {
    */
   @js.native
   trait PredefinedMetricSpecification extends js.Object {
-    var PredefinedMetricType: js.UndefOr[MetricType]
+    var PredefinedMetricType: MetricType
     var ResourceLabel: js.UndefOr[XmlStringMaxLen1023]
   }
 
   object PredefinedMetricSpecification {
     def apply(
-      PredefinedMetricType: js.UndefOr[MetricType] = js.undefined,
+      PredefinedMetricType: MetricType,
       ResourceLabel: js.UndefOr[XmlStringMaxLen1023] = js.undefined): PredefinedMetricSpecification = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "PredefinedMetricType" -> PredefinedMetricType.map { x => x.asInstanceOf[js.Any] },
+        "PredefinedMetricType" -> PredefinedMetricType.asInstanceOf[js.Any],
         "ResourceLabel" -> ResourceLabel.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PredefinedMetricSpecification]
@@ -2310,14 +2310,14 @@ package autoscaling {
    */
   @js.native
   trait ProcessType extends js.Object {
-    var ProcessName: js.UndefOr[XmlStringMaxLen255]
+    var ProcessName: XmlStringMaxLen255
   }
 
   object ProcessType {
     def apply(
-      ProcessName: js.UndefOr[XmlStringMaxLen255] = js.undefined): ProcessType = {
+      ProcessName: XmlStringMaxLen255): ProcessType = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ProcessName" -> ProcessName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ProcessName" -> ProcessName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ProcessType]
     }
@@ -2353,35 +2353,35 @@ package autoscaling {
 
   @js.native
   trait PutLifecycleHookType extends js.Object {
-    var NotificationMetadata: js.UndefOr[XmlStringMaxLen1023]
-    var LifecycleHookName: js.UndefOr[AsciiStringMaxLen255]
-    var AutoScalingGroupName: js.UndefOr[ResourceName]
-    var NotificationTargetARN: js.UndefOr[NotificationTargetResourceName]
-    var RoleARN: js.UndefOr[ResourceName]
+    var AutoScalingGroupName: ResourceName
+    var LifecycleHookName: AsciiStringMaxLen255
+    var DefaultResult: js.UndefOr[LifecycleActionResult]
     var HeartbeatTimeout: js.UndefOr[HeartbeatTimeout]
     var LifecycleTransition: js.UndefOr[LifecycleTransition]
-    var DefaultResult: js.UndefOr[LifecycleActionResult]
+    var NotificationMetadata: js.UndefOr[XmlStringMaxLen1023]
+    var NotificationTargetARN: js.UndefOr[NotificationTargetResourceName]
+    var RoleARN: js.UndefOr[ResourceName]
   }
 
   object PutLifecycleHookType {
     def apply(
-      NotificationMetadata: js.UndefOr[XmlStringMaxLen1023] = js.undefined,
-      LifecycleHookName: js.UndefOr[AsciiStringMaxLen255] = js.undefined,
-      AutoScalingGroupName: js.UndefOr[ResourceName] = js.undefined,
-      NotificationTargetARN: js.UndefOr[NotificationTargetResourceName] = js.undefined,
-      RoleARN: js.UndefOr[ResourceName] = js.undefined,
+      AutoScalingGroupName: ResourceName,
+      LifecycleHookName: AsciiStringMaxLen255,
+      DefaultResult: js.UndefOr[LifecycleActionResult] = js.undefined,
       HeartbeatTimeout: js.UndefOr[HeartbeatTimeout] = js.undefined,
       LifecycleTransition: js.UndefOr[LifecycleTransition] = js.undefined,
-      DefaultResult: js.UndefOr[LifecycleActionResult] = js.undefined): PutLifecycleHookType = {
+      NotificationMetadata: js.UndefOr[XmlStringMaxLen1023] = js.undefined,
+      NotificationTargetARN: js.UndefOr[NotificationTargetResourceName] = js.undefined,
+      RoleARN: js.UndefOr[ResourceName] = js.undefined): PutLifecycleHookType = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "NotificationMetadata" -> NotificationMetadata.map { x => x.asInstanceOf[js.Any] },
-        "LifecycleHookName" -> LifecycleHookName.map { x => x.asInstanceOf[js.Any] },
-        "AutoScalingGroupName" -> AutoScalingGroupName.map { x => x.asInstanceOf[js.Any] },
-        "NotificationTargetARN" -> NotificationTargetARN.map { x => x.asInstanceOf[js.Any] },
-        "RoleARN" -> RoleARN.map { x => x.asInstanceOf[js.Any] },
+        "AutoScalingGroupName" -> AutoScalingGroupName.asInstanceOf[js.Any],
+        "LifecycleHookName" -> LifecycleHookName.asInstanceOf[js.Any],
+        "DefaultResult" -> DefaultResult.map { x => x.asInstanceOf[js.Any] },
         "HeartbeatTimeout" -> HeartbeatTimeout.map { x => x.asInstanceOf[js.Any] },
         "LifecycleTransition" -> LifecycleTransition.map { x => x.asInstanceOf[js.Any] },
-        "DefaultResult" -> DefaultResult.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "NotificationMetadata" -> NotificationMetadata.map { x => x.asInstanceOf[js.Any] },
+        "NotificationTargetARN" -> NotificationTargetARN.map { x => x.asInstanceOf[js.Any] },
+        "RoleARN" -> RoleARN.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutLifecycleHookType]
     }
@@ -2389,20 +2389,20 @@ package autoscaling {
 
   @js.native
   trait PutNotificationConfigurationType extends js.Object {
-    var AutoScalingGroupName: js.UndefOr[ResourceName]
-    var TopicARN: js.UndefOr[ResourceName]
-    var NotificationTypes: js.UndefOr[AutoScalingNotificationTypes]
+    var AutoScalingGroupName: ResourceName
+    var NotificationTypes: AutoScalingNotificationTypes
+    var TopicARN: ResourceName
   }
 
   object PutNotificationConfigurationType {
     def apply(
-      AutoScalingGroupName: js.UndefOr[ResourceName] = js.undefined,
-      TopicARN: js.UndefOr[ResourceName] = js.undefined,
-      NotificationTypes: js.UndefOr[AutoScalingNotificationTypes] = js.undefined): PutNotificationConfigurationType = {
+      AutoScalingGroupName: ResourceName,
+      NotificationTypes: AutoScalingNotificationTypes,
+      TopicARN: ResourceName): PutNotificationConfigurationType = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "AutoScalingGroupName" -> AutoScalingGroupName.map { x => x.asInstanceOf[js.Any] },
-        "TopicARN" -> TopicARN.map { x => x.asInstanceOf[js.Any] },
-        "NotificationTypes" -> NotificationTypes.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "AutoScalingGroupName" -> AutoScalingGroupName.asInstanceOf[js.Any],
+        "NotificationTypes" -> NotificationTypes.asInstanceOf[js.Any],
+        "TopicARN" -> TopicARN.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutNotificationConfigurationType]
     }
@@ -2410,47 +2410,47 @@ package autoscaling {
 
   @js.native
   trait PutScalingPolicyType extends js.Object {
-    var PolicyType: js.UndefOr[XmlStringMaxLen64]
-    var MetricAggregationType: js.UndefOr[XmlStringMaxLen32]
-    var AutoScalingGroupName: js.UndefOr[ResourceName]
-    var ScalingAdjustment: js.UndefOr[PolicyIncrement]
+    var AutoScalingGroupName: ResourceName
+    var PolicyName: XmlStringMaxLen255
+    var AdjustmentType: js.UndefOr[XmlStringMaxLen255]
     var Cooldown: js.UndefOr[Cooldown]
+    var EstimatedInstanceWarmup: js.UndefOr[EstimatedInstanceWarmup]
+    var MetricAggregationType: js.UndefOr[XmlStringMaxLen32]
+    var MinAdjustmentMagnitude: js.UndefOr[MinAdjustmentMagnitude]
+    var MinAdjustmentStep: js.UndefOr[MinAdjustmentStep]
+    var PolicyType: js.UndefOr[XmlStringMaxLen64]
+    var ScalingAdjustment: js.UndefOr[PolicyIncrement]
     var StepAdjustments: js.UndefOr[StepAdjustments]
     var TargetTrackingConfiguration: js.UndefOr[TargetTrackingConfiguration]
-    var MinAdjustmentMagnitude: js.UndefOr[MinAdjustmentMagnitude]
-    var PolicyName: js.UndefOr[XmlStringMaxLen255]
-    var EstimatedInstanceWarmup: js.UndefOr[EstimatedInstanceWarmup]
-    var AdjustmentType: js.UndefOr[XmlStringMaxLen255]
-    var MinAdjustmentStep: js.UndefOr[MinAdjustmentStep]
   }
 
   object PutScalingPolicyType {
     def apply(
-      PolicyType: js.UndefOr[XmlStringMaxLen64] = js.undefined,
-      MetricAggregationType: js.UndefOr[XmlStringMaxLen32] = js.undefined,
-      AutoScalingGroupName: js.UndefOr[ResourceName] = js.undefined,
-      ScalingAdjustment: js.UndefOr[PolicyIncrement] = js.undefined,
-      Cooldown: js.UndefOr[Cooldown] = js.undefined,
-      StepAdjustments: js.UndefOr[StepAdjustments] = js.undefined,
-      TargetTrackingConfiguration: js.UndefOr[TargetTrackingConfiguration] = js.undefined,
-      MinAdjustmentMagnitude: js.UndefOr[MinAdjustmentMagnitude] = js.undefined,
-      PolicyName: js.UndefOr[XmlStringMaxLen255] = js.undefined,
-      EstimatedInstanceWarmup: js.UndefOr[EstimatedInstanceWarmup] = js.undefined,
+      AutoScalingGroupName: ResourceName,
+      PolicyName: XmlStringMaxLen255,
       AdjustmentType: js.UndefOr[XmlStringMaxLen255] = js.undefined,
-      MinAdjustmentStep: js.UndefOr[MinAdjustmentStep] = js.undefined): PutScalingPolicyType = {
+      Cooldown: js.UndefOr[Cooldown] = js.undefined,
+      EstimatedInstanceWarmup: js.UndefOr[EstimatedInstanceWarmup] = js.undefined,
+      MetricAggregationType: js.UndefOr[XmlStringMaxLen32] = js.undefined,
+      MinAdjustmentMagnitude: js.UndefOr[MinAdjustmentMagnitude] = js.undefined,
+      MinAdjustmentStep: js.UndefOr[MinAdjustmentStep] = js.undefined,
+      PolicyType: js.UndefOr[XmlStringMaxLen64] = js.undefined,
+      ScalingAdjustment: js.UndefOr[PolicyIncrement] = js.undefined,
+      StepAdjustments: js.UndefOr[StepAdjustments] = js.undefined,
+      TargetTrackingConfiguration: js.UndefOr[TargetTrackingConfiguration] = js.undefined): PutScalingPolicyType = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "PolicyType" -> PolicyType.map { x => x.asInstanceOf[js.Any] },
-        "MetricAggregationType" -> MetricAggregationType.map { x => x.asInstanceOf[js.Any] },
-        "AutoScalingGroupName" -> AutoScalingGroupName.map { x => x.asInstanceOf[js.Any] },
-        "ScalingAdjustment" -> ScalingAdjustment.map { x => x.asInstanceOf[js.Any] },
-        "Cooldown" -> Cooldown.map { x => x.asInstanceOf[js.Any] },
-        "StepAdjustments" -> StepAdjustments.map { x => x.asInstanceOf[js.Any] },
-        "TargetTrackingConfiguration" -> TargetTrackingConfiguration.map { x => x.asInstanceOf[js.Any] },
-        "MinAdjustmentMagnitude" -> MinAdjustmentMagnitude.map { x => x.asInstanceOf[js.Any] },
-        "PolicyName" -> PolicyName.map { x => x.asInstanceOf[js.Any] },
-        "EstimatedInstanceWarmup" -> EstimatedInstanceWarmup.map { x => x.asInstanceOf[js.Any] },
+        "AutoScalingGroupName" -> AutoScalingGroupName.asInstanceOf[js.Any],
+        "PolicyName" -> PolicyName.asInstanceOf[js.Any],
         "AdjustmentType" -> AdjustmentType.map { x => x.asInstanceOf[js.Any] },
-        "MinAdjustmentStep" -> MinAdjustmentStep.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Cooldown" -> Cooldown.map { x => x.asInstanceOf[js.Any] },
+        "EstimatedInstanceWarmup" -> EstimatedInstanceWarmup.map { x => x.asInstanceOf[js.Any] },
+        "MetricAggregationType" -> MetricAggregationType.map { x => x.asInstanceOf[js.Any] },
+        "MinAdjustmentMagnitude" -> MinAdjustmentMagnitude.map { x => x.asInstanceOf[js.Any] },
+        "MinAdjustmentStep" -> MinAdjustmentStep.map { x => x.asInstanceOf[js.Any] },
+        "PolicyType" -> PolicyType.map { x => x.asInstanceOf[js.Any] },
+        "ScalingAdjustment" -> ScalingAdjustment.map { x => x.asInstanceOf[js.Any] },
+        "StepAdjustments" -> StepAdjustments.map { x => x.asInstanceOf[js.Any] },
+        "TargetTrackingConfiguration" -> TargetTrackingConfiguration.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutScalingPolicyType]
     }
@@ -2458,38 +2458,38 @@ package autoscaling {
 
   @js.native
   trait PutScheduledUpdateGroupActionType extends js.Object {
-    var AutoScalingGroupName: js.UndefOr[ResourceName]
-    var MaxSize: js.UndefOr[AutoScalingGroupMaxSize]
-    var StartTime: js.UndefOr[TimestampType]
-    var EndTime: js.UndefOr[TimestampType]
-    var MinSize: js.UndefOr[AutoScalingGroupMinSize]
+    var AutoScalingGroupName: ResourceName
+    var ScheduledActionName: XmlStringMaxLen255
     var DesiredCapacity: js.UndefOr[AutoScalingGroupDesiredCapacity]
-    var ScheduledActionName: js.UndefOr[XmlStringMaxLen255]
-    var Time: js.UndefOr[TimestampType]
+    var EndTime: js.UndefOr[TimestampType]
+    var MaxSize: js.UndefOr[AutoScalingGroupMaxSize]
+    var MinSize: js.UndefOr[AutoScalingGroupMinSize]
     var Recurrence: js.UndefOr[XmlStringMaxLen255]
+    var StartTime: js.UndefOr[TimestampType]
+    var Time: js.UndefOr[TimestampType]
   }
 
   object PutScheduledUpdateGroupActionType {
     def apply(
-      AutoScalingGroupName: js.UndefOr[ResourceName] = js.undefined,
-      MaxSize: js.UndefOr[AutoScalingGroupMaxSize] = js.undefined,
-      StartTime: js.UndefOr[TimestampType] = js.undefined,
-      EndTime: js.UndefOr[TimestampType] = js.undefined,
-      MinSize: js.UndefOr[AutoScalingGroupMinSize] = js.undefined,
+      AutoScalingGroupName: ResourceName,
+      ScheduledActionName: XmlStringMaxLen255,
       DesiredCapacity: js.UndefOr[AutoScalingGroupDesiredCapacity] = js.undefined,
-      ScheduledActionName: js.UndefOr[XmlStringMaxLen255] = js.undefined,
-      Time: js.UndefOr[TimestampType] = js.undefined,
-      Recurrence: js.UndefOr[XmlStringMaxLen255] = js.undefined): PutScheduledUpdateGroupActionType = {
+      EndTime: js.UndefOr[TimestampType] = js.undefined,
+      MaxSize: js.UndefOr[AutoScalingGroupMaxSize] = js.undefined,
+      MinSize: js.UndefOr[AutoScalingGroupMinSize] = js.undefined,
+      Recurrence: js.UndefOr[XmlStringMaxLen255] = js.undefined,
+      StartTime: js.UndefOr[TimestampType] = js.undefined,
+      Time: js.UndefOr[TimestampType] = js.undefined): PutScheduledUpdateGroupActionType = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "AutoScalingGroupName" -> AutoScalingGroupName.map { x => x.asInstanceOf[js.Any] },
-        "MaxSize" -> MaxSize.map { x => x.asInstanceOf[js.Any] },
-        "StartTime" -> StartTime.map { x => x.asInstanceOf[js.Any] },
-        "EndTime" -> EndTime.map { x => x.asInstanceOf[js.Any] },
-        "MinSize" -> MinSize.map { x => x.asInstanceOf[js.Any] },
+        "AutoScalingGroupName" -> AutoScalingGroupName.asInstanceOf[js.Any],
+        "ScheduledActionName" -> ScheduledActionName.asInstanceOf[js.Any],
         "DesiredCapacity" -> DesiredCapacity.map { x => x.asInstanceOf[js.Any] },
-        "ScheduledActionName" -> ScheduledActionName.map { x => x.asInstanceOf[js.Any] },
-        "Time" -> Time.map { x => x.asInstanceOf[js.Any] },
-        "Recurrence" -> Recurrence.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "EndTime" -> EndTime.map { x => x.asInstanceOf[js.Any] },
+        "MaxSize" -> MaxSize.map { x => x.asInstanceOf[js.Any] },
+        "MinSize" -> MinSize.map { x => x.asInstanceOf[js.Any] },
+        "Recurrence" -> Recurrence.map { x => x.asInstanceOf[js.Any] },
+        "StartTime" -> StartTime.map { x => x.asInstanceOf[js.Any] },
+        "Time" -> Time.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutScheduledUpdateGroupActionType]
     }
@@ -2510,23 +2510,23 @@ package autoscaling {
 
   @js.native
   trait RecordLifecycleActionHeartbeatType extends js.Object {
-    var LifecycleHookName: js.UndefOr[AsciiStringMaxLen255]
-    var AutoScalingGroupName: js.UndefOr[ResourceName]
-    var LifecycleActionToken: js.UndefOr[LifecycleActionToken]
+    var AutoScalingGroupName: ResourceName
+    var LifecycleHookName: AsciiStringMaxLen255
     var InstanceId: js.UndefOr[XmlStringMaxLen19]
+    var LifecycleActionToken: js.UndefOr[LifecycleActionToken]
   }
 
   object RecordLifecycleActionHeartbeatType {
     def apply(
-      LifecycleHookName: js.UndefOr[AsciiStringMaxLen255] = js.undefined,
-      AutoScalingGroupName: js.UndefOr[ResourceName] = js.undefined,
-      LifecycleActionToken: js.UndefOr[LifecycleActionToken] = js.undefined,
-      InstanceId: js.UndefOr[XmlStringMaxLen19] = js.undefined): RecordLifecycleActionHeartbeatType = {
+      AutoScalingGroupName: ResourceName,
+      LifecycleHookName: AsciiStringMaxLen255,
+      InstanceId: js.UndefOr[XmlStringMaxLen19] = js.undefined,
+      LifecycleActionToken: js.UndefOr[LifecycleActionToken] = js.undefined): RecordLifecycleActionHeartbeatType = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "LifecycleHookName" -> LifecycleHookName.map { x => x.asInstanceOf[js.Any] },
-        "AutoScalingGroupName" -> AutoScalingGroupName.map { x => x.asInstanceOf[js.Any] },
-        "LifecycleActionToken" -> LifecycleActionToken.map { x => x.asInstanceOf[js.Any] },
-        "InstanceId" -> InstanceId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "AutoScalingGroupName" -> AutoScalingGroupName.asInstanceOf[js.Any],
+        "LifecycleHookName" -> LifecycleHookName.asInstanceOf[js.Any],
+        "InstanceId" -> InstanceId.map { x => x.asInstanceOf[js.Any] },
+        "LifecycleActionToken" -> LifecycleActionToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RecordLifecycleActionHeartbeatType]
     }
@@ -2554,53 +2554,53 @@ package autoscaling {
    */
   @js.native
   trait ScalingPolicy extends js.Object {
-    var PolicyType: js.UndefOr[XmlStringMaxLen64]
-    var MetricAggregationType: js.UndefOr[XmlStringMaxLen32]
+    var AdjustmentType: js.UndefOr[XmlStringMaxLen255]
+    var Alarms: js.UndefOr[Alarms]
     var AutoScalingGroupName: js.UndefOr[XmlStringMaxLen255]
-    var ScalingAdjustment: js.UndefOr[PolicyIncrement]
     var Cooldown: js.UndefOr[Cooldown]
+    var EstimatedInstanceWarmup: js.UndefOr[EstimatedInstanceWarmup]
+    var MetricAggregationType: js.UndefOr[XmlStringMaxLen32]
+    var MinAdjustmentMagnitude: js.UndefOr[MinAdjustmentMagnitude]
+    var MinAdjustmentStep: js.UndefOr[MinAdjustmentStep]
+    var PolicyARN: js.UndefOr[ResourceName]
+    var PolicyName: js.UndefOr[XmlStringMaxLen255]
+    var PolicyType: js.UndefOr[XmlStringMaxLen64]
+    var ScalingAdjustment: js.UndefOr[PolicyIncrement]
     var StepAdjustments: js.UndefOr[StepAdjustments]
     var TargetTrackingConfiguration: js.UndefOr[TargetTrackingConfiguration]
-    var MinAdjustmentMagnitude: js.UndefOr[MinAdjustmentMagnitude]
-    var PolicyName: js.UndefOr[XmlStringMaxLen255]
-    var Alarms: js.UndefOr[Alarms]
-    var EstimatedInstanceWarmup: js.UndefOr[EstimatedInstanceWarmup]
-    var AdjustmentType: js.UndefOr[XmlStringMaxLen255]
-    var PolicyARN: js.UndefOr[ResourceName]
-    var MinAdjustmentStep: js.UndefOr[MinAdjustmentStep]
   }
 
   object ScalingPolicy {
     def apply(
-      PolicyType: js.UndefOr[XmlStringMaxLen64] = js.undefined,
-      MetricAggregationType: js.UndefOr[XmlStringMaxLen32] = js.undefined,
-      AutoScalingGroupName: js.UndefOr[XmlStringMaxLen255] = js.undefined,
-      ScalingAdjustment: js.UndefOr[PolicyIncrement] = js.undefined,
-      Cooldown: js.UndefOr[Cooldown] = js.undefined,
-      StepAdjustments: js.UndefOr[StepAdjustments] = js.undefined,
-      TargetTrackingConfiguration: js.UndefOr[TargetTrackingConfiguration] = js.undefined,
-      MinAdjustmentMagnitude: js.UndefOr[MinAdjustmentMagnitude] = js.undefined,
-      PolicyName: js.UndefOr[XmlStringMaxLen255] = js.undefined,
-      Alarms: js.UndefOr[Alarms] = js.undefined,
-      EstimatedInstanceWarmup: js.UndefOr[EstimatedInstanceWarmup] = js.undefined,
       AdjustmentType: js.UndefOr[XmlStringMaxLen255] = js.undefined,
+      Alarms: js.UndefOr[Alarms] = js.undefined,
+      AutoScalingGroupName: js.UndefOr[XmlStringMaxLen255] = js.undefined,
+      Cooldown: js.UndefOr[Cooldown] = js.undefined,
+      EstimatedInstanceWarmup: js.UndefOr[EstimatedInstanceWarmup] = js.undefined,
+      MetricAggregationType: js.UndefOr[XmlStringMaxLen32] = js.undefined,
+      MinAdjustmentMagnitude: js.UndefOr[MinAdjustmentMagnitude] = js.undefined,
+      MinAdjustmentStep: js.UndefOr[MinAdjustmentStep] = js.undefined,
       PolicyARN: js.UndefOr[ResourceName] = js.undefined,
-      MinAdjustmentStep: js.UndefOr[MinAdjustmentStep] = js.undefined): ScalingPolicy = {
+      PolicyName: js.UndefOr[XmlStringMaxLen255] = js.undefined,
+      PolicyType: js.UndefOr[XmlStringMaxLen64] = js.undefined,
+      ScalingAdjustment: js.UndefOr[PolicyIncrement] = js.undefined,
+      StepAdjustments: js.UndefOr[StepAdjustments] = js.undefined,
+      TargetTrackingConfiguration: js.UndefOr[TargetTrackingConfiguration] = js.undefined): ScalingPolicy = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "PolicyType" -> PolicyType.map { x => x.asInstanceOf[js.Any] },
-        "MetricAggregationType" -> MetricAggregationType.map { x => x.asInstanceOf[js.Any] },
-        "AutoScalingGroupName" -> AutoScalingGroupName.map { x => x.asInstanceOf[js.Any] },
-        "ScalingAdjustment" -> ScalingAdjustment.map { x => x.asInstanceOf[js.Any] },
-        "Cooldown" -> Cooldown.map { x => x.asInstanceOf[js.Any] },
-        "StepAdjustments" -> StepAdjustments.map { x => x.asInstanceOf[js.Any] },
-        "TargetTrackingConfiguration" -> TargetTrackingConfiguration.map { x => x.asInstanceOf[js.Any] },
-        "MinAdjustmentMagnitude" -> MinAdjustmentMagnitude.map { x => x.asInstanceOf[js.Any] },
-        "PolicyName" -> PolicyName.map { x => x.asInstanceOf[js.Any] },
-        "Alarms" -> Alarms.map { x => x.asInstanceOf[js.Any] },
-        "EstimatedInstanceWarmup" -> EstimatedInstanceWarmup.map { x => x.asInstanceOf[js.Any] },
         "AdjustmentType" -> AdjustmentType.map { x => x.asInstanceOf[js.Any] },
+        "Alarms" -> Alarms.map { x => x.asInstanceOf[js.Any] },
+        "AutoScalingGroupName" -> AutoScalingGroupName.map { x => x.asInstanceOf[js.Any] },
+        "Cooldown" -> Cooldown.map { x => x.asInstanceOf[js.Any] },
+        "EstimatedInstanceWarmup" -> EstimatedInstanceWarmup.map { x => x.asInstanceOf[js.Any] },
+        "MetricAggregationType" -> MetricAggregationType.map { x => x.asInstanceOf[js.Any] },
+        "MinAdjustmentMagnitude" -> MinAdjustmentMagnitude.map { x => x.asInstanceOf[js.Any] },
+        "MinAdjustmentStep" -> MinAdjustmentStep.map { x => x.asInstanceOf[js.Any] },
         "PolicyARN" -> PolicyARN.map { x => x.asInstanceOf[js.Any] },
-        "MinAdjustmentStep" -> MinAdjustmentStep.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "PolicyName" -> PolicyName.map { x => x.asInstanceOf[js.Any] },
+        "PolicyType" -> PolicyType.map { x => x.asInstanceOf[js.Any] },
+        "ScalingAdjustment" -> ScalingAdjustment.map { x => x.asInstanceOf[js.Any] },
+        "StepAdjustments" -> StepAdjustments.map { x => x.asInstanceOf[js.Any] },
+        "TargetTrackingConfiguration" -> TargetTrackingConfiguration.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ScalingPolicy]
     }
@@ -2608,16 +2608,16 @@ package autoscaling {
 
   @js.native
   trait ScalingProcessQuery extends js.Object {
-    var AutoScalingGroupName: js.UndefOr[ResourceName]
+    var AutoScalingGroupName: ResourceName
     var ScalingProcesses: js.UndefOr[ProcessNames]
   }
 
   object ScalingProcessQuery {
     def apply(
-      AutoScalingGroupName: js.UndefOr[ResourceName] = js.undefined,
+      AutoScalingGroupName: ResourceName,
       ScalingProcesses: js.UndefOr[ProcessNames] = js.undefined): ScalingProcessQuery = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "AutoScalingGroupName" -> AutoScalingGroupName.map { x => x.asInstanceOf[js.Any] },
+        "AutoScalingGroupName" -> AutoScalingGroupName.asInstanceOf[js.Any],
         "ScalingProcesses" -> ScalingProcesses.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ScalingProcessQuery]
@@ -2626,17 +2626,17 @@ package autoscaling {
 
   @js.native
   trait ScheduledActionsType extends js.Object {
-    var ScheduledUpdateGroupActions: js.UndefOr[ScheduledUpdateGroupActions]
     var NextToken: js.UndefOr[XmlString]
+    var ScheduledUpdateGroupActions: js.UndefOr[ScheduledUpdateGroupActions]
   }
 
   object ScheduledActionsType {
     def apply(
-      ScheduledUpdateGroupActions: js.UndefOr[ScheduledUpdateGroupActions] = js.undefined,
-      NextToken: js.UndefOr[XmlString] = js.undefined): ScheduledActionsType = {
+      NextToken: js.UndefOr[XmlString] = js.undefined,
+      ScheduledUpdateGroupActions: js.UndefOr[ScheduledUpdateGroupActions] = js.undefined): ScheduledActionsType = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ScheduledUpdateGroupActions" -> ScheduledUpdateGroupActions.map { x => x.asInstanceOf[js.Any] },
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
+        "ScheduledUpdateGroupActions" -> ScheduledUpdateGroupActions.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ScheduledActionsType]
     }
@@ -2647,41 +2647,41 @@ package autoscaling {
    */
   @js.native
   trait ScheduledUpdateGroupAction extends js.Object {
-    var ScheduledActionARN: js.UndefOr[ResourceName]
     var AutoScalingGroupName: js.UndefOr[XmlStringMaxLen255]
-    var MaxSize: js.UndefOr[AutoScalingGroupMaxSize]
-    var StartTime: js.UndefOr[TimestampType]
-    var EndTime: js.UndefOr[TimestampType]
-    var MinSize: js.UndefOr[AutoScalingGroupMinSize]
     var DesiredCapacity: js.UndefOr[AutoScalingGroupDesiredCapacity]
-    var ScheduledActionName: js.UndefOr[XmlStringMaxLen255]
-    var Time: js.UndefOr[TimestampType]
+    var EndTime: js.UndefOr[TimestampType]
+    var MaxSize: js.UndefOr[AutoScalingGroupMaxSize]
+    var MinSize: js.UndefOr[AutoScalingGroupMinSize]
     var Recurrence: js.UndefOr[XmlStringMaxLen255]
+    var ScheduledActionARN: js.UndefOr[ResourceName]
+    var ScheduledActionName: js.UndefOr[XmlStringMaxLen255]
+    var StartTime: js.UndefOr[TimestampType]
+    var Time: js.UndefOr[TimestampType]
   }
 
   object ScheduledUpdateGroupAction {
     def apply(
-      ScheduledActionARN: js.UndefOr[ResourceName] = js.undefined,
       AutoScalingGroupName: js.UndefOr[XmlStringMaxLen255] = js.undefined,
-      MaxSize: js.UndefOr[AutoScalingGroupMaxSize] = js.undefined,
-      StartTime: js.UndefOr[TimestampType] = js.undefined,
-      EndTime: js.UndefOr[TimestampType] = js.undefined,
-      MinSize: js.UndefOr[AutoScalingGroupMinSize] = js.undefined,
       DesiredCapacity: js.UndefOr[AutoScalingGroupDesiredCapacity] = js.undefined,
+      EndTime: js.UndefOr[TimestampType] = js.undefined,
+      MaxSize: js.UndefOr[AutoScalingGroupMaxSize] = js.undefined,
+      MinSize: js.UndefOr[AutoScalingGroupMinSize] = js.undefined,
+      Recurrence: js.UndefOr[XmlStringMaxLen255] = js.undefined,
+      ScheduledActionARN: js.UndefOr[ResourceName] = js.undefined,
       ScheduledActionName: js.UndefOr[XmlStringMaxLen255] = js.undefined,
-      Time: js.UndefOr[TimestampType] = js.undefined,
-      Recurrence: js.UndefOr[XmlStringMaxLen255] = js.undefined): ScheduledUpdateGroupAction = {
+      StartTime: js.UndefOr[TimestampType] = js.undefined,
+      Time: js.UndefOr[TimestampType] = js.undefined): ScheduledUpdateGroupAction = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ScheduledActionARN" -> ScheduledActionARN.map { x => x.asInstanceOf[js.Any] },
         "AutoScalingGroupName" -> AutoScalingGroupName.map { x => x.asInstanceOf[js.Any] },
-        "MaxSize" -> MaxSize.map { x => x.asInstanceOf[js.Any] },
-        "StartTime" -> StartTime.map { x => x.asInstanceOf[js.Any] },
-        "EndTime" -> EndTime.map { x => x.asInstanceOf[js.Any] },
-        "MinSize" -> MinSize.map { x => x.asInstanceOf[js.Any] },
         "DesiredCapacity" -> DesiredCapacity.map { x => x.asInstanceOf[js.Any] },
+        "EndTime" -> EndTime.map { x => x.asInstanceOf[js.Any] },
+        "MaxSize" -> MaxSize.map { x => x.asInstanceOf[js.Any] },
+        "MinSize" -> MinSize.map { x => x.asInstanceOf[js.Any] },
+        "Recurrence" -> Recurrence.map { x => x.asInstanceOf[js.Any] },
+        "ScheduledActionARN" -> ScheduledActionARN.map { x => x.asInstanceOf[js.Any] },
         "ScheduledActionName" -> ScheduledActionName.map { x => x.asInstanceOf[js.Any] },
-        "Time" -> Time.map { x => x.asInstanceOf[js.Any] },
-        "Recurrence" -> Recurrence.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "StartTime" -> StartTime.map { x => x.asInstanceOf[js.Any] },
+        "Time" -> Time.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ScheduledUpdateGroupAction]
     }
@@ -2692,32 +2692,32 @@ package autoscaling {
    */
   @js.native
   trait ScheduledUpdateGroupActionRequest extends js.Object {
-    var MaxSize: js.UndefOr[AutoScalingGroupMaxSize]
-    var StartTime: js.UndefOr[TimestampType]
-    var EndTime: js.UndefOr[TimestampType]
-    var MinSize: js.UndefOr[AutoScalingGroupMinSize]
+    var ScheduledActionName: XmlStringMaxLen255
     var DesiredCapacity: js.UndefOr[AutoScalingGroupDesiredCapacity]
-    var ScheduledActionName: js.UndefOr[XmlStringMaxLen255]
+    var EndTime: js.UndefOr[TimestampType]
+    var MaxSize: js.UndefOr[AutoScalingGroupMaxSize]
+    var MinSize: js.UndefOr[AutoScalingGroupMinSize]
     var Recurrence: js.UndefOr[XmlStringMaxLen255]
+    var StartTime: js.UndefOr[TimestampType]
   }
 
   object ScheduledUpdateGroupActionRequest {
     def apply(
-      MaxSize: js.UndefOr[AutoScalingGroupMaxSize] = js.undefined,
-      StartTime: js.UndefOr[TimestampType] = js.undefined,
-      EndTime: js.UndefOr[TimestampType] = js.undefined,
-      MinSize: js.UndefOr[AutoScalingGroupMinSize] = js.undefined,
+      ScheduledActionName: XmlStringMaxLen255,
       DesiredCapacity: js.UndefOr[AutoScalingGroupDesiredCapacity] = js.undefined,
-      ScheduledActionName: js.UndefOr[XmlStringMaxLen255] = js.undefined,
-      Recurrence: js.UndefOr[XmlStringMaxLen255] = js.undefined): ScheduledUpdateGroupActionRequest = {
+      EndTime: js.UndefOr[TimestampType] = js.undefined,
+      MaxSize: js.UndefOr[AutoScalingGroupMaxSize] = js.undefined,
+      MinSize: js.UndefOr[AutoScalingGroupMinSize] = js.undefined,
+      Recurrence: js.UndefOr[XmlStringMaxLen255] = js.undefined,
+      StartTime: js.UndefOr[TimestampType] = js.undefined): ScheduledUpdateGroupActionRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "MaxSize" -> MaxSize.map { x => x.asInstanceOf[js.Any] },
-        "StartTime" -> StartTime.map { x => x.asInstanceOf[js.Any] },
-        "EndTime" -> EndTime.map { x => x.asInstanceOf[js.Any] },
-        "MinSize" -> MinSize.map { x => x.asInstanceOf[js.Any] },
+        "ScheduledActionName" -> ScheduledActionName.asInstanceOf[js.Any],
         "DesiredCapacity" -> DesiredCapacity.map { x => x.asInstanceOf[js.Any] },
-        "ScheduledActionName" -> ScheduledActionName.map { x => x.asInstanceOf[js.Any] },
-        "Recurrence" -> Recurrence.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "EndTime" -> EndTime.map { x => x.asInstanceOf[js.Any] },
+        "MaxSize" -> MaxSize.map { x => x.asInstanceOf[js.Any] },
+        "MinSize" -> MinSize.map { x => x.asInstanceOf[js.Any] },
+        "Recurrence" -> Recurrence.map { x => x.asInstanceOf[js.Any] },
+        "StartTime" -> StartTime.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ScheduledUpdateGroupActionRequest]
     }
@@ -2725,19 +2725,19 @@ package autoscaling {
 
   @js.native
   trait SetDesiredCapacityType extends js.Object {
-    var AutoScalingGroupName: js.UndefOr[ResourceName]
-    var DesiredCapacity: js.UndefOr[AutoScalingGroupDesiredCapacity]
+    var AutoScalingGroupName: ResourceName
+    var DesiredCapacity: AutoScalingGroupDesiredCapacity
     var HonorCooldown: js.UndefOr[HonorCooldown]
   }
 
   object SetDesiredCapacityType {
     def apply(
-      AutoScalingGroupName: js.UndefOr[ResourceName] = js.undefined,
-      DesiredCapacity: js.UndefOr[AutoScalingGroupDesiredCapacity] = js.undefined,
+      AutoScalingGroupName: ResourceName,
+      DesiredCapacity: AutoScalingGroupDesiredCapacity,
       HonorCooldown: js.UndefOr[HonorCooldown] = js.undefined): SetDesiredCapacityType = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "AutoScalingGroupName" -> AutoScalingGroupName.map { x => x.asInstanceOf[js.Any] },
-        "DesiredCapacity" -> DesiredCapacity.map { x => x.asInstanceOf[js.Any] },
+        "AutoScalingGroupName" -> AutoScalingGroupName.asInstanceOf[js.Any],
+        "DesiredCapacity" -> DesiredCapacity.asInstanceOf[js.Any],
         "HonorCooldown" -> HonorCooldown.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SetDesiredCapacityType]
@@ -2746,19 +2746,19 @@ package autoscaling {
 
   @js.native
   trait SetInstanceHealthQuery extends js.Object {
-    var InstanceId: js.UndefOr[XmlStringMaxLen19]
-    var HealthStatus: js.UndefOr[XmlStringMaxLen32]
+    var HealthStatus: XmlStringMaxLen32
+    var InstanceId: XmlStringMaxLen19
     var ShouldRespectGracePeriod: js.UndefOr[ShouldRespectGracePeriod]
   }
 
   object SetInstanceHealthQuery {
     def apply(
-      InstanceId: js.UndefOr[XmlStringMaxLen19] = js.undefined,
-      HealthStatus: js.UndefOr[XmlStringMaxLen32] = js.undefined,
+      HealthStatus: XmlStringMaxLen32,
+      InstanceId: XmlStringMaxLen19,
       ShouldRespectGracePeriod: js.UndefOr[ShouldRespectGracePeriod] = js.undefined): SetInstanceHealthQuery = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "InstanceId" -> InstanceId.map { x => x.asInstanceOf[js.Any] },
-        "HealthStatus" -> HealthStatus.map { x => x.asInstanceOf[js.Any] },
+        "HealthStatus" -> HealthStatus.asInstanceOf[js.Any],
+        "InstanceId" -> InstanceId.asInstanceOf[js.Any],
         "ShouldRespectGracePeriod" -> ShouldRespectGracePeriod.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SetInstanceHealthQuery]
@@ -2780,20 +2780,20 @@ package autoscaling {
 
   @js.native
   trait SetInstanceProtectionQuery extends js.Object {
-    var InstanceIds: js.UndefOr[InstanceIds]
-    var AutoScalingGroupName: js.UndefOr[ResourceName]
-    var ProtectedFromScaleIn: js.UndefOr[ProtectedFromScaleIn]
+    var AutoScalingGroupName: ResourceName
+    var InstanceIds: InstanceIds
+    var ProtectedFromScaleIn: ProtectedFromScaleIn
   }
 
   object SetInstanceProtectionQuery {
     def apply(
-      InstanceIds: js.UndefOr[InstanceIds] = js.undefined,
-      AutoScalingGroupName: js.UndefOr[ResourceName] = js.undefined,
-      ProtectedFromScaleIn: js.UndefOr[ProtectedFromScaleIn] = js.undefined): SetInstanceProtectionQuery = {
+      AutoScalingGroupName: ResourceName,
+      InstanceIds: InstanceIds,
+      ProtectedFromScaleIn: ProtectedFromScaleIn): SetInstanceProtectionQuery = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "InstanceIds" -> InstanceIds.map { x => x.asInstanceOf[js.Any] },
-        "AutoScalingGroupName" -> AutoScalingGroupName.map { x => x.asInstanceOf[js.Any] },
-        "ProtectedFromScaleIn" -> ProtectedFromScaleIn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "AutoScalingGroupName" -> AutoScalingGroupName.asInstanceOf[js.Any],
+        "InstanceIds" -> InstanceIds.asInstanceOf[js.Any],
+        "ProtectedFromScaleIn" -> ProtectedFromScaleIn.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SetInstanceProtectionQuery]
     }
@@ -2804,20 +2804,20 @@ package autoscaling {
    */
   @js.native
   trait StepAdjustment extends js.Object {
+    var ScalingAdjustment: PolicyIncrement
     var MetricIntervalLowerBound: js.UndefOr[MetricScale]
     var MetricIntervalUpperBound: js.UndefOr[MetricScale]
-    var ScalingAdjustment: js.UndefOr[PolicyIncrement]
   }
 
   object StepAdjustment {
     def apply(
+      ScalingAdjustment: PolicyIncrement,
       MetricIntervalLowerBound: js.UndefOr[MetricScale] = js.undefined,
-      MetricIntervalUpperBound: js.UndefOr[MetricScale] = js.undefined,
-      ScalingAdjustment: js.UndefOr[PolicyIncrement] = js.undefined): StepAdjustment = {
+      MetricIntervalUpperBound: js.UndefOr[MetricScale] = js.undefined): StepAdjustment = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "ScalingAdjustment" -> ScalingAdjustment.asInstanceOf[js.Any],
         "MetricIntervalLowerBound" -> MetricIntervalLowerBound.map { x => x.asInstanceOf[js.Any] },
-        "MetricIntervalUpperBound" -> MetricIntervalUpperBound.map { x => x.asInstanceOf[js.Any] },
-        "ScalingAdjustment" -> ScalingAdjustment.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "MetricIntervalUpperBound" -> MetricIntervalUpperBound.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StepAdjustment]
     }
@@ -2849,26 +2849,26 @@ package autoscaling {
    */
   @js.native
   trait Tag extends js.Object {
-    var ResourceId: js.UndefOr[XmlString]
+    var Key: TagKey
     var PropagateAtLaunch: js.UndefOr[PropagateAtLaunch]
+    var ResourceId: js.UndefOr[XmlString]
     var ResourceType: js.UndefOr[XmlString]
     var Value: js.UndefOr[TagValue]
-    var Key: js.UndefOr[TagKey]
   }
 
   object Tag {
     def apply(
-      ResourceId: js.UndefOr[XmlString] = js.undefined,
+      Key: TagKey,
       PropagateAtLaunch: js.UndefOr[PropagateAtLaunch] = js.undefined,
+      ResourceId: js.UndefOr[XmlString] = js.undefined,
       ResourceType: js.UndefOr[XmlString] = js.undefined,
-      Value: js.UndefOr[TagValue] = js.undefined,
-      Key: js.UndefOr[TagKey] = js.undefined): Tag = {
+      Value: js.UndefOr[TagValue] = js.undefined): Tag = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ResourceId" -> ResourceId.map { x => x.asInstanceOf[js.Any] },
+        "Key" -> Key.asInstanceOf[js.Any],
         "PropagateAtLaunch" -> PropagateAtLaunch.map { x => x.asInstanceOf[js.Any] },
+        "ResourceId" -> ResourceId.map { x => x.asInstanceOf[js.Any] },
         "ResourceType" -> ResourceType.map { x => x.asInstanceOf[js.Any] },
-        "Value" -> Value.map { x => x.asInstanceOf[js.Any] },
-        "Key" -> Key.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Value" -> Value.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Tag]
     }
@@ -2879,26 +2879,26 @@ package autoscaling {
    */
   @js.native
   trait TagDescription extends js.Object {
-    var ResourceId: js.UndefOr[XmlString]
+    var Key: js.UndefOr[TagKey]
     var PropagateAtLaunch: js.UndefOr[PropagateAtLaunch]
+    var ResourceId: js.UndefOr[XmlString]
     var ResourceType: js.UndefOr[XmlString]
     var Value: js.UndefOr[TagValue]
-    var Key: js.UndefOr[TagKey]
   }
 
   object TagDescription {
     def apply(
-      ResourceId: js.UndefOr[XmlString] = js.undefined,
+      Key: js.UndefOr[TagKey] = js.undefined,
       PropagateAtLaunch: js.UndefOr[PropagateAtLaunch] = js.undefined,
+      ResourceId: js.UndefOr[XmlString] = js.undefined,
       ResourceType: js.UndefOr[XmlString] = js.undefined,
-      Value: js.UndefOr[TagValue] = js.undefined,
-      Key: js.UndefOr[TagKey] = js.undefined): TagDescription = {
+      Value: js.UndefOr[TagValue] = js.undefined): TagDescription = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ResourceId" -> ResourceId.map { x => x.asInstanceOf[js.Any] },
+        "Key" -> Key.map { x => x.asInstanceOf[js.Any] },
         "PropagateAtLaunch" -> PropagateAtLaunch.map { x => x.asInstanceOf[js.Any] },
+        "ResourceId" -> ResourceId.map { x => x.asInstanceOf[js.Any] },
         "ResourceType" -> ResourceType.map { x => x.asInstanceOf[js.Any] },
-        "Value" -> Value.map { x => x.asInstanceOf[js.Any] },
-        "Key" -> Key.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Value" -> Value.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TagDescription]
     }
@@ -2906,17 +2906,17 @@ package autoscaling {
 
   @js.native
   trait TagsType extends js.Object {
-    var Tags: js.UndefOr[TagDescriptionList]
     var NextToken: js.UndefOr[XmlString]
+    var Tags: js.UndefOr[TagDescriptionList]
   }
 
   object TagsType {
     def apply(
-      Tags: js.UndefOr[TagDescriptionList] = js.undefined,
-      NextToken: js.UndefOr[XmlString] = js.undefined): TagsType = {
+      NextToken: js.UndefOr[XmlString] = js.undefined,
+      Tags: js.UndefOr[TagDescriptionList] = js.undefined): TagsType = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Tags" -> Tags.map { x => x.asInstanceOf[js.Any] },
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
+        "Tags" -> Tags.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TagsType]
     }
@@ -2927,23 +2927,23 @@ package autoscaling {
    */
   @js.native
   trait TargetTrackingConfiguration extends js.Object {
-    var PredefinedMetricSpecification: js.UndefOr[PredefinedMetricSpecification]
+    var TargetValue: MetricScale
     var CustomizedMetricSpecification: js.UndefOr[CustomizedMetricSpecification]
-    var TargetValue: js.UndefOr[MetricScale]
     var DisableScaleIn: js.UndefOr[DisableScaleIn]
+    var PredefinedMetricSpecification: js.UndefOr[PredefinedMetricSpecification]
   }
 
   object TargetTrackingConfiguration {
     def apply(
-      PredefinedMetricSpecification: js.UndefOr[PredefinedMetricSpecification] = js.undefined,
+      TargetValue: MetricScale,
       CustomizedMetricSpecification: js.UndefOr[CustomizedMetricSpecification] = js.undefined,
-      TargetValue: js.UndefOr[MetricScale] = js.undefined,
-      DisableScaleIn: js.UndefOr[DisableScaleIn] = js.undefined): TargetTrackingConfiguration = {
+      DisableScaleIn: js.UndefOr[DisableScaleIn] = js.undefined,
+      PredefinedMetricSpecification: js.UndefOr[PredefinedMetricSpecification] = js.undefined): TargetTrackingConfiguration = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "PredefinedMetricSpecification" -> PredefinedMetricSpecification.map { x => x.asInstanceOf[js.Any] },
+        "TargetValue" -> TargetValue.asInstanceOf[js.Any],
         "CustomizedMetricSpecification" -> CustomizedMetricSpecification.map { x => x.asInstanceOf[js.Any] },
-        "TargetValue" -> TargetValue.map { x => x.asInstanceOf[js.Any] },
-        "DisableScaleIn" -> DisableScaleIn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "DisableScaleIn" -> DisableScaleIn.map { x => x.asInstanceOf[js.Any] },
+        "PredefinedMetricSpecification" -> PredefinedMetricSpecification.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TargetTrackingConfiguration]
     }
@@ -2951,17 +2951,17 @@ package autoscaling {
 
   @js.native
   trait TerminateInstanceInAutoScalingGroupType extends js.Object {
-    var InstanceId: js.UndefOr[XmlStringMaxLen19]
-    var ShouldDecrementDesiredCapacity: js.UndefOr[ShouldDecrementDesiredCapacity]
+    var InstanceId: XmlStringMaxLen19
+    var ShouldDecrementDesiredCapacity: ShouldDecrementDesiredCapacity
   }
 
   object TerminateInstanceInAutoScalingGroupType {
     def apply(
-      InstanceId: js.UndefOr[XmlStringMaxLen19] = js.undefined,
-      ShouldDecrementDesiredCapacity: js.UndefOr[ShouldDecrementDesiredCapacity] = js.undefined): TerminateInstanceInAutoScalingGroupType = {
+      InstanceId: XmlStringMaxLen19,
+      ShouldDecrementDesiredCapacity: ShouldDecrementDesiredCapacity): TerminateInstanceInAutoScalingGroupType = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "InstanceId" -> InstanceId.map { x => x.asInstanceOf[js.Any] },
-        "ShouldDecrementDesiredCapacity" -> ShouldDecrementDesiredCapacity.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "InstanceId" -> InstanceId.asInstanceOf[js.Any],
+        "ShouldDecrementDesiredCapacity" -> ShouldDecrementDesiredCapacity.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TerminateInstanceInAutoScalingGroupType]
     }
@@ -2969,59 +2969,59 @@ package autoscaling {
 
   @js.native
   trait UpdateAutoScalingGroupType extends js.Object {
+    var AutoScalingGroupName: ResourceName
+    var AvailabilityZones: js.UndefOr[AvailabilityZones]
     var DefaultCooldown: js.UndefOr[Cooldown]
-    var PlacementGroup: js.UndefOr[XmlStringMaxLen255]
-    var TerminationPolicies: js.UndefOr[TerminationPolicies]
-    var AutoScalingGroupName: js.UndefOr[ResourceName]
-    var LaunchTemplate: js.UndefOr[LaunchTemplateSpecification]
+    var DesiredCapacity: js.UndefOr[AutoScalingGroupDesiredCapacity]
+    var HealthCheckGracePeriod: js.UndefOr[HealthCheckGracePeriod]
     var HealthCheckType: js.UndefOr[XmlStringMaxLen32]
-    var VPCZoneIdentifier: js.UndefOr[XmlStringMaxLen2047]
+    var LaunchConfigurationName: js.UndefOr[ResourceName]
+    var LaunchTemplate: js.UndefOr[LaunchTemplateSpecification]
     var MaxSize: js.UndefOr[AutoScalingGroupMaxSize]
     var MinSize: js.UndefOr[AutoScalingGroupMinSize]
-    var DesiredCapacity: js.UndefOr[AutoScalingGroupDesiredCapacity]
     var MixedInstancesPolicy: js.UndefOr[MixedInstancesPolicy]
-    var ServiceLinkedRoleARN: js.UndefOr[ResourceName]
     var NewInstancesProtectedFromScaleIn: js.UndefOr[InstanceProtected]
-    var LaunchConfigurationName: js.UndefOr[ResourceName]
-    var HealthCheckGracePeriod: js.UndefOr[HealthCheckGracePeriod]
-    var AvailabilityZones: js.UndefOr[AvailabilityZones]
+    var PlacementGroup: js.UndefOr[XmlStringMaxLen255]
+    var ServiceLinkedRoleARN: js.UndefOr[ResourceName]
+    var TerminationPolicies: js.UndefOr[TerminationPolicies]
+    var VPCZoneIdentifier: js.UndefOr[XmlStringMaxLen2047]
   }
 
   object UpdateAutoScalingGroupType {
     def apply(
+      AutoScalingGroupName: ResourceName,
+      AvailabilityZones: js.UndefOr[AvailabilityZones] = js.undefined,
       DefaultCooldown: js.UndefOr[Cooldown] = js.undefined,
-      PlacementGroup: js.UndefOr[XmlStringMaxLen255] = js.undefined,
-      TerminationPolicies: js.UndefOr[TerminationPolicies] = js.undefined,
-      AutoScalingGroupName: js.UndefOr[ResourceName] = js.undefined,
-      LaunchTemplate: js.UndefOr[LaunchTemplateSpecification] = js.undefined,
+      DesiredCapacity: js.UndefOr[AutoScalingGroupDesiredCapacity] = js.undefined,
+      HealthCheckGracePeriod: js.UndefOr[HealthCheckGracePeriod] = js.undefined,
       HealthCheckType: js.UndefOr[XmlStringMaxLen32] = js.undefined,
-      VPCZoneIdentifier: js.UndefOr[XmlStringMaxLen2047] = js.undefined,
+      LaunchConfigurationName: js.UndefOr[ResourceName] = js.undefined,
+      LaunchTemplate: js.UndefOr[LaunchTemplateSpecification] = js.undefined,
       MaxSize: js.UndefOr[AutoScalingGroupMaxSize] = js.undefined,
       MinSize: js.UndefOr[AutoScalingGroupMinSize] = js.undefined,
-      DesiredCapacity: js.UndefOr[AutoScalingGroupDesiredCapacity] = js.undefined,
       MixedInstancesPolicy: js.UndefOr[MixedInstancesPolicy] = js.undefined,
-      ServiceLinkedRoleARN: js.UndefOr[ResourceName] = js.undefined,
       NewInstancesProtectedFromScaleIn: js.UndefOr[InstanceProtected] = js.undefined,
-      LaunchConfigurationName: js.UndefOr[ResourceName] = js.undefined,
-      HealthCheckGracePeriod: js.UndefOr[HealthCheckGracePeriod] = js.undefined,
-      AvailabilityZones: js.UndefOr[AvailabilityZones] = js.undefined): UpdateAutoScalingGroupType = {
+      PlacementGroup: js.UndefOr[XmlStringMaxLen255] = js.undefined,
+      ServiceLinkedRoleARN: js.UndefOr[ResourceName] = js.undefined,
+      TerminationPolicies: js.UndefOr[TerminationPolicies] = js.undefined,
+      VPCZoneIdentifier: js.UndefOr[XmlStringMaxLen2047] = js.undefined): UpdateAutoScalingGroupType = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "AutoScalingGroupName" -> AutoScalingGroupName.asInstanceOf[js.Any],
+        "AvailabilityZones" -> AvailabilityZones.map { x => x.asInstanceOf[js.Any] },
         "DefaultCooldown" -> DefaultCooldown.map { x => x.asInstanceOf[js.Any] },
-        "PlacementGroup" -> PlacementGroup.map { x => x.asInstanceOf[js.Any] },
-        "TerminationPolicies" -> TerminationPolicies.map { x => x.asInstanceOf[js.Any] },
-        "AutoScalingGroupName" -> AutoScalingGroupName.map { x => x.asInstanceOf[js.Any] },
-        "LaunchTemplate" -> LaunchTemplate.map { x => x.asInstanceOf[js.Any] },
+        "DesiredCapacity" -> DesiredCapacity.map { x => x.asInstanceOf[js.Any] },
+        "HealthCheckGracePeriod" -> HealthCheckGracePeriod.map { x => x.asInstanceOf[js.Any] },
         "HealthCheckType" -> HealthCheckType.map { x => x.asInstanceOf[js.Any] },
-        "VPCZoneIdentifier" -> VPCZoneIdentifier.map { x => x.asInstanceOf[js.Any] },
+        "LaunchConfigurationName" -> LaunchConfigurationName.map { x => x.asInstanceOf[js.Any] },
+        "LaunchTemplate" -> LaunchTemplate.map { x => x.asInstanceOf[js.Any] },
         "MaxSize" -> MaxSize.map { x => x.asInstanceOf[js.Any] },
         "MinSize" -> MinSize.map { x => x.asInstanceOf[js.Any] },
-        "DesiredCapacity" -> DesiredCapacity.map { x => x.asInstanceOf[js.Any] },
         "MixedInstancesPolicy" -> MixedInstancesPolicy.map { x => x.asInstanceOf[js.Any] },
-        "ServiceLinkedRoleARN" -> ServiceLinkedRoleARN.map { x => x.asInstanceOf[js.Any] },
         "NewInstancesProtectedFromScaleIn" -> NewInstancesProtectedFromScaleIn.map { x => x.asInstanceOf[js.Any] },
-        "LaunchConfigurationName" -> LaunchConfigurationName.map { x => x.asInstanceOf[js.Any] },
-        "HealthCheckGracePeriod" -> HealthCheckGracePeriod.map { x => x.asInstanceOf[js.Any] },
-        "AvailabilityZones" -> AvailabilityZones.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "PlacementGroup" -> PlacementGroup.map { x => x.asInstanceOf[js.Any] },
+        "ServiceLinkedRoleARN" -> ServiceLinkedRoleARN.map { x => x.asInstanceOf[js.Any] },
+        "TerminationPolicies" -> TerminationPolicies.map { x => x.asInstanceOf[js.Any] },
+        "VPCZoneIdentifier" -> VPCZoneIdentifier.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateAutoScalingGroupType]
     }

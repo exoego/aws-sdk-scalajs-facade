@@ -72,18 +72,18 @@ package pinpointsmsvoice {
    */
   @js.native
   trait CreateConfigurationSetEventDestinationRequest extends js.Object {
-    var ConfigurationSetName: js.UndefOr[__string]
+    var ConfigurationSetName: __string
     var EventDestination: js.UndefOr[EventDestinationDefinition]
     var EventDestinationName: js.UndefOr[NonEmptyString]
   }
 
   object CreateConfigurationSetEventDestinationRequest {
     def apply(
-      ConfigurationSetName: js.UndefOr[__string] = js.undefined,
+      ConfigurationSetName: __string,
       EventDestination: js.UndefOr[EventDestinationDefinition] = js.undefined,
       EventDestinationName: js.UndefOr[NonEmptyString] = js.undefined): CreateConfigurationSetEventDestinationRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ConfigurationSetName" -> ConfigurationSetName.map { x => x.asInstanceOf[js.Any] },
+        "ConfigurationSetName" -> ConfigurationSetName.asInstanceOf[js.Any],
         "EventDestination" -> EventDestination.map { x => x.asInstanceOf[js.Any] },
         "EventDestinationName" -> EventDestinationName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
@@ -143,17 +143,17 @@ package pinpointsmsvoice {
 
   @js.native
   trait DeleteConfigurationSetEventDestinationRequest extends js.Object {
-    var ConfigurationSetName: js.UndefOr[__string]
-    var EventDestinationName: js.UndefOr[__string]
+    var ConfigurationSetName: __string
+    var EventDestinationName: __string
   }
 
   object DeleteConfigurationSetEventDestinationRequest {
     def apply(
-      ConfigurationSetName: js.UndefOr[__string] = js.undefined,
-      EventDestinationName: js.UndefOr[__string] = js.undefined): DeleteConfigurationSetEventDestinationRequest = {
+      ConfigurationSetName: __string,
+      EventDestinationName: __string): DeleteConfigurationSetEventDestinationRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ConfigurationSetName" -> ConfigurationSetName.map { x => x.asInstanceOf[js.Any] },
-        "EventDestinationName" -> EventDestinationName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ConfigurationSetName" -> ConfigurationSetName.asInstanceOf[js.Any],
+        "EventDestinationName" -> EventDestinationName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteConfigurationSetEventDestinationRequest]
     }
@@ -177,14 +177,14 @@ package pinpointsmsvoice {
 
   @js.native
   trait DeleteConfigurationSetRequest extends js.Object {
-    var ConfigurationSetName: js.UndefOr[__string]
+    var ConfigurationSetName: __string
   }
 
   object DeleteConfigurationSetRequest {
     def apply(
-      ConfigurationSetName: js.UndefOr[__string] = js.undefined): DeleteConfigurationSetRequest = {
+      ConfigurationSetName: __string): DeleteConfigurationSetRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ConfigurationSetName" -> ConfigurationSetName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ConfigurationSetName" -> ConfigurationSetName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteConfigurationSetRequest]
     }
@@ -211,26 +211,26 @@ package pinpointsmsvoice {
    */
   @js.native
   trait EventDestination extends js.Object {
-    var Name: js.UndefOr[String]
-    var Enabled: js.UndefOr[Boolean]
     var CloudWatchLogsDestination: js.UndefOr[CloudWatchLogsDestination]
+    var Enabled: js.UndefOr[Boolean]
     var KinesisFirehoseDestination: js.UndefOr[KinesisFirehoseDestination]
     var MatchingEventTypes: js.UndefOr[EventTypes]
+    var Name: js.UndefOr[String]
   }
 
   object EventDestination {
     def apply(
-      Name: js.UndefOr[String] = js.undefined,
-      Enabled: js.UndefOr[Boolean] = js.undefined,
       CloudWatchLogsDestination: js.UndefOr[CloudWatchLogsDestination] = js.undefined,
+      Enabled: js.UndefOr[Boolean] = js.undefined,
       KinesisFirehoseDestination: js.UndefOr[KinesisFirehoseDestination] = js.undefined,
-      MatchingEventTypes: js.UndefOr[EventTypes] = js.undefined): EventDestination = {
+      MatchingEventTypes: js.UndefOr[EventTypes] = js.undefined,
+      Name: js.UndefOr[String] = js.undefined): EventDestination = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
-        "Enabled" -> Enabled.map { x => x.asInstanceOf[js.Any] },
         "CloudWatchLogsDestination" -> CloudWatchLogsDestination.map { x => x.asInstanceOf[js.Any] },
+        "Enabled" -> Enabled.map { x => x.asInstanceOf[js.Any] },
         "KinesisFirehoseDestination" -> KinesisFirehoseDestination.map { x => x.asInstanceOf[js.Any] },
-        "MatchingEventTypes" -> MatchingEventTypes.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "MatchingEventTypes" -> MatchingEventTypes.map { x => x.asInstanceOf[js.Any] },
+        "Name" -> Name.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EventDestination]
     }
@@ -280,14 +280,14 @@ package pinpointsmsvoice {
 
   @js.native
   trait GetConfigurationSetEventDestinationsRequest extends js.Object {
-    var ConfigurationSetName: js.UndefOr[__string]
+    var ConfigurationSetName: __string
   }
 
   object GetConfigurationSetEventDestinationsRequest {
     def apply(
-      ConfigurationSetName: js.UndefOr[__string] = js.undefined): GetConfigurationSetEventDestinationsRequest = {
+      ConfigurationSetName: __string): GetConfigurationSetEventDestinationsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ConfigurationSetName" -> ConfigurationSetName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ConfigurationSetName" -> ConfigurationSetName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetConfigurationSetEventDestinationsRequest]
     }
@@ -385,26 +385,26 @@ package pinpointsmsvoice {
    */
   @js.native
   trait SendVoiceMessageRequest extends js.Object {
-    var Content: js.UndefOr[VoiceMessageContent]
-    var OriginationPhoneNumber: js.UndefOr[NonEmptyString]
-    var DestinationPhoneNumber: js.UndefOr[NonEmptyString]
     var CallerId: js.UndefOr[String]
     var ConfigurationSetName: js.UndefOr[WordCharactersWithDelimiters]
+    var Content: js.UndefOr[VoiceMessageContent]
+    var DestinationPhoneNumber: js.UndefOr[NonEmptyString]
+    var OriginationPhoneNumber: js.UndefOr[NonEmptyString]
   }
 
   object SendVoiceMessageRequest {
     def apply(
-      Content: js.UndefOr[VoiceMessageContent] = js.undefined,
-      OriginationPhoneNumber: js.UndefOr[NonEmptyString] = js.undefined,
-      DestinationPhoneNumber: js.UndefOr[NonEmptyString] = js.undefined,
       CallerId: js.UndefOr[String] = js.undefined,
-      ConfigurationSetName: js.UndefOr[WordCharactersWithDelimiters] = js.undefined): SendVoiceMessageRequest = {
+      ConfigurationSetName: js.UndefOr[WordCharactersWithDelimiters] = js.undefined,
+      Content: js.UndefOr[VoiceMessageContent] = js.undefined,
+      DestinationPhoneNumber: js.UndefOr[NonEmptyString] = js.undefined,
+      OriginationPhoneNumber: js.UndefOr[NonEmptyString] = js.undefined): SendVoiceMessageRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Content" -> Content.map { x => x.asInstanceOf[js.Any] },
-        "OriginationPhoneNumber" -> OriginationPhoneNumber.map { x => x.asInstanceOf[js.Any] },
-        "DestinationPhoneNumber" -> DestinationPhoneNumber.map { x => x.asInstanceOf[js.Any] },
         "CallerId" -> CallerId.map { x => x.asInstanceOf[js.Any] },
-        "ConfigurationSetName" -> ConfigurationSetName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ConfigurationSetName" -> ConfigurationSetName.map { x => x.asInstanceOf[js.Any] },
+        "Content" -> Content.map { x => x.asInstanceOf[js.Any] },
+        "DestinationPhoneNumber" -> DestinationPhoneNumber.map { x => x.asInstanceOf[js.Any] },
+        "OriginationPhoneNumber" -> OriginationPhoneNumber.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SendVoiceMessageRequest]
     }
@@ -433,20 +433,20 @@ package pinpointsmsvoice {
    */
   @js.native
   trait UpdateConfigurationSetEventDestinationRequest extends js.Object {
-    var ConfigurationSetName: js.UndefOr[__string]
+    var ConfigurationSetName: __string
+    var EventDestinationName: __string
     var EventDestination: js.UndefOr[EventDestinationDefinition]
-    var EventDestinationName: js.UndefOr[__string]
   }
 
   object UpdateConfigurationSetEventDestinationRequest {
     def apply(
-      ConfigurationSetName: js.UndefOr[__string] = js.undefined,
-      EventDestination: js.UndefOr[EventDestinationDefinition] = js.undefined,
-      EventDestinationName: js.UndefOr[__string] = js.undefined): UpdateConfigurationSetEventDestinationRequest = {
+      ConfigurationSetName: __string,
+      EventDestinationName: __string,
+      EventDestination: js.UndefOr[EventDestinationDefinition] = js.undefined): UpdateConfigurationSetEventDestinationRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ConfigurationSetName" -> ConfigurationSetName.map { x => x.asInstanceOf[js.Any] },
-        "EventDestination" -> EventDestination.map { x => x.asInstanceOf[js.Any] },
-        "EventDestinationName" -> EventDestinationName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ConfigurationSetName" -> ConfigurationSetName.asInstanceOf[js.Any],
+        "EventDestinationName" -> EventDestinationName.asInstanceOf[js.Any],
+        "EventDestination" -> EventDestination.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateConfigurationSetEventDestinationRequest]
     }

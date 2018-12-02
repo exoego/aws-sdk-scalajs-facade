@@ -47,44 +47,44 @@ package eks {
    */
   @js.native
   trait Cluster extends js.Object {
-    var certificateAuthority: js.UndefOr[Certificate]
     var arn: js.UndefOr[String]
-    var name: js.UndefOr[String]
-    var platformVersion: js.UndefOr[String]
-    var version: js.UndefOr[String]
+    var certificateAuthority: js.UndefOr[Certificate]
     var clientRequestToken: js.UndefOr[String]
-    var roleArn: js.UndefOr[String]
-    var status: js.UndefOr[ClusterStatus]
     var createdAt: js.UndefOr[Timestamp]
     var endpoint: js.UndefOr[String]
+    var name: js.UndefOr[String]
+    var platformVersion: js.UndefOr[String]
     var resourcesVpcConfig: js.UndefOr[VpcConfigResponse]
+    var roleArn: js.UndefOr[String]
+    var status: js.UndefOr[ClusterStatus]
+    var version: js.UndefOr[String]
   }
 
   object Cluster {
     def apply(
-      certificateAuthority: js.UndefOr[Certificate] = js.undefined,
       arn: js.UndefOr[String] = js.undefined,
-      name: js.UndefOr[String] = js.undefined,
-      platformVersion: js.UndefOr[String] = js.undefined,
-      version: js.UndefOr[String] = js.undefined,
+      certificateAuthority: js.UndefOr[Certificate] = js.undefined,
       clientRequestToken: js.UndefOr[String] = js.undefined,
-      roleArn: js.UndefOr[String] = js.undefined,
-      status: js.UndefOr[ClusterStatus] = js.undefined,
       createdAt: js.UndefOr[Timestamp] = js.undefined,
       endpoint: js.UndefOr[String] = js.undefined,
-      resourcesVpcConfig: js.UndefOr[VpcConfigResponse] = js.undefined): Cluster = {
+      name: js.UndefOr[String] = js.undefined,
+      platformVersion: js.UndefOr[String] = js.undefined,
+      resourcesVpcConfig: js.UndefOr[VpcConfigResponse] = js.undefined,
+      roleArn: js.UndefOr[String] = js.undefined,
+      status: js.UndefOr[ClusterStatus] = js.undefined,
+      version: js.UndefOr[String] = js.undefined): Cluster = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "certificateAuthority" -> certificateAuthority.map { x => x.asInstanceOf[js.Any] },
         "arn" -> arn.map { x => x.asInstanceOf[js.Any] },
-        "name" -> name.map { x => x.asInstanceOf[js.Any] },
-        "platformVersion" -> platformVersion.map { x => x.asInstanceOf[js.Any] },
-        "version" -> version.map { x => x.asInstanceOf[js.Any] },
+        "certificateAuthority" -> certificateAuthority.map { x => x.asInstanceOf[js.Any] },
         "clientRequestToken" -> clientRequestToken.map { x => x.asInstanceOf[js.Any] },
-        "roleArn" -> roleArn.map { x => x.asInstanceOf[js.Any] },
-        "status" -> status.map { x => x.asInstanceOf[js.Any] },
         "createdAt" -> createdAt.map { x => x.asInstanceOf[js.Any] },
         "endpoint" -> endpoint.map { x => x.asInstanceOf[js.Any] },
-        "resourcesVpcConfig" -> resourcesVpcConfig.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "name" -> name.map { x => x.asInstanceOf[js.Any] },
+        "platformVersion" -> platformVersion.map { x => x.asInstanceOf[js.Any] },
+        "resourcesVpcConfig" -> resourcesVpcConfig.map { x => x.asInstanceOf[js.Any] },
+        "roleArn" -> roleArn.map { x => x.asInstanceOf[js.Any] },
+        "status" -> status.map { x => x.asInstanceOf[js.Any] },
+        "version" -> version.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Cluster]
     }
@@ -101,26 +101,26 @@ package eks {
 
   @js.native
   trait CreateClusterRequest extends js.Object {
-    var name: js.UndefOr[ClusterName]
-    var version: js.UndefOr[String]
+    var name: ClusterName
+    var resourcesVpcConfig: VpcConfigRequest
+    var roleArn: String
     var clientRequestToken: js.UndefOr[String]
-    var roleArn: js.UndefOr[String]
-    var resourcesVpcConfig: js.UndefOr[VpcConfigRequest]
+    var version: js.UndefOr[String]
   }
 
   object CreateClusterRequest {
     def apply(
-      name: js.UndefOr[ClusterName] = js.undefined,
-      version: js.UndefOr[String] = js.undefined,
+      name: ClusterName,
+      resourcesVpcConfig: VpcConfigRequest,
+      roleArn: String,
       clientRequestToken: js.UndefOr[String] = js.undefined,
-      roleArn: js.UndefOr[String] = js.undefined,
-      resourcesVpcConfig: js.UndefOr[VpcConfigRequest] = js.undefined): CreateClusterRequest = {
+      version: js.UndefOr[String] = js.undefined): CreateClusterRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "name" -> name.map { x => x.asInstanceOf[js.Any] },
-        "version" -> version.map { x => x.asInstanceOf[js.Any] },
+        "name" -> name.asInstanceOf[js.Any],
+        "resourcesVpcConfig" -> resourcesVpcConfig.asInstanceOf[js.Any],
+        "roleArn" -> roleArn.asInstanceOf[js.Any],
         "clientRequestToken" -> clientRequestToken.map { x => x.asInstanceOf[js.Any] },
-        "roleArn" -> roleArn.map { x => x.asInstanceOf[js.Any] },
-        "resourcesVpcConfig" -> resourcesVpcConfig.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "version" -> version.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateClusterRequest]
     }
@@ -143,14 +143,14 @@ package eks {
 
   @js.native
   trait DeleteClusterRequest extends js.Object {
-    var name: js.UndefOr[String]
+    var name: String
   }
 
   object DeleteClusterRequest {
     def apply(
-      name: js.UndefOr[String] = js.undefined): DeleteClusterRequest = {
+      name: String): DeleteClusterRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "name" -> name.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "name" -> name.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteClusterRequest]
     }
@@ -173,14 +173,14 @@ package eks {
 
   @js.native
   trait DescribeClusterRequest extends js.Object {
-    var name: js.UndefOr[String]
+    var name: String
   }
 
   object DescribeClusterRequest {
     def apply(
-      name: js.UndefOr[String] = js.undefined): DescribeClusterRequest = {
+      name: String): DescribeClusterRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "name" -> name.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "name" -> name.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeClusterRequest]
     }
@@ -242,16 +242,16 @@ package eks {
    */
   @js.native
   trait VpcConfigRequest extends js.Object {
-    var subnetIds: js.UndefOr[StringList]
+    var subnetIds: StringList
     var securityGroupIds: js.UndefOr[StringList]
   }
 
   object VpcConfigRequest {
     def apply(
-      subnetIds: js.UndefOr[StringList] = js.undefined,
+      subnetIds: StringList,
       securityGroupIds: js.UndefOr[StringList] = js.undefined): VpcConfigRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "subnetIds" -> subnetIds.map { x => x.asInstanceOf[js.Any] },
+        "subnetIds" -> subnetIds.asInstanceOf[js.Any],
         "securityGroupIds" -> securityGroupIds.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[VpcConfigRequest]
@@ -263,19 +263,19 @@ package eks {
    */
   @js.native
   trait VpcConfigResponse extends js.Object {
-    var subnetIds: js.UndefOr[StringList]
     var securityGroupIds: js.UndefOr[StringList]
+    var subnetIds: js.UndefOr[StringList]
     var vpcId: js.UndefOr[String]
   }
 
   object VpcConfigResponse {
     def apply(
-      subnetIds: js.UndefOr[StringList] = js.undefined,
       securityGroupIds: js.UndefOr[StringList] = js.undefined,
+      subnetIds: js.UndefOr[StringList] = js.undefined,
       vpcId: js.UndefOr[String] = js.undefined): VpcConfigResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "subnetIds" -> subnetIds.map { x => x.asInstanceOf[js.Any] },
         "securityGroupIds" -> securityGroupIds.map { x => x.asInstanceOf[js.Any] },
+        "subnetIds" -> subnetIds.map { x => x.asInstanceOf[js.Any] },
         "vpcId" -> vpcId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[VpcConfigResponse]

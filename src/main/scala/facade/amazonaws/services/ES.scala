@@ -105,17 +105,17 @@ package es {
    */
   @js.native
   trait AccessPoliciesStatus extends js.Object {
-    var Options: js.UndefOr[PolicyDocument]
-    var Status: js.UndefOr[OptionStatus]
+    var Options: PolicyDocument
+    var Status: OptionStatus
   }
 
   object AccessPoliciesStatus {
     def apply(
-      Options: js.UndefOr[PolicyDocument] = js.undefined,
-      Status: js.UndefOr[OptionStatus] = js.undefined): AccessPoliciesStatus = {
+      Options: PolicyDocument,
+      Status: OptionStatus): AccessPoliciesStatus = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Options" -> Options.map { x => x.asInstanceOf[js.Any] },
-        "Status" -> Status.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Options" -> Options.asInstanceOf[js.Any],
+        "Status" -> Status.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AccessPoliciesStatus]
     }
@@ -126,17 +126,17 @@ package es {
    */
   @js.native
   trait AddTagsRequest extends js.Object {
-    var ARN: js.UndefOr[ARN]
-    var TagList: js.UndefOr[TagList]
+    var ARN: ARN
+    var TagList: TagList
   }
 
   object AddTagsRequest {
     def apply(
-      ARN: js.UndefOr[ARN] = js.undefined,
-      TagList: js.UndefOr[TagList] = js.undefined): AddTagsRequest = {
+      ARN: ARN,
+      TagList: TagList): AddTagsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ARN" -> ARN.map { x => x.asInstanceOf[js.Any] },
-        "TagList" -> TagList.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ARN" -> ARN.asInstanceOf[js.Any],
+        "TagList" -> TagList.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AddTagsRequest]
     }
@@ -168,17 +168,17 @@ package es {
    */
   @js.native
   trait AdvancedOptionsStatus extends js.Object {
-    var Options: js.UndefOr[AdvancedOptions]
-    var Status: js.UndefOr[OptionStatus]
+    var Options: AdvancedOptions
+    var Status: OptionStatus
   }
 
   object AdvancedOptionsStatus {
     def apply(
-      Options: js.UndefOr[AdvancedOptions] = js.undefined,
-      Status: js.UndefOr[OptionStatus] = js.undefined): AdvancedOptionsStatus = {
+      Options: AdvancedOptions,
+      Status: OptionStatus): AdvancedOptionsStatus = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Options" -> Options.map { x => x.asInstanceOf[js.Any] },
-        "Status" -> Status.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Options" -> Options.asInstanceOf[js.Any],
+        "Status" -> Status.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AdvancedOptionsStatus]
     }
@@ -189,14 +189,14 @@ package es {
    */
   @js.native
   trait CancelElasticsearchServiceSoftwareUpdateRequest extends js.Object {
-    var DomainName: js.UndefOr[DomainName]
+    var DomainName: DomainName
   }
 
   object CancelElasticsearchServiceSoftwareUpdateRequest {
     def apply(
-      DomainName: js.UndefOr[DomainName] = js.undefined): CancelElasticsearchServiceSoftwareUpdateRequest = {
+      DomainName: DomainName): CancelElasticsearchServiceSoftwareUpdateRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "DomainName" -> DomainName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "DomainName" -> DomainName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CancelElasticsearchServiceSoftwareUpdateRequest]
     }
@@ -226,22 +226,22 @@ package es {
   @js.native
   trait CognitoOptions extends js.Object {
     var Enabled: js.UndefOr[Boolean]
-    var UserPoolId: js.UndefOr[UserPoolId]
     var IdentityPoolId: js.UndefOr[IdentityPoolId]
     var RoleArn: js.UndefOr[RoleArn]
+    var UserPoolId: js.UndefOr[UserPoolId]
   }
 
   object CognitoOptions {
     def apply(
       Enabled: js.UndefOr[Boolean] = js.undefined,
-      UserPoolId: js.UndefOr[UserPoolId] = js.undefined,
       IdentityPoolId: js.UndefOr[IdentityPoolId] = js.undefined,
-      RoleArn: js.UndefOr[RoleArn] = js.undefined): CognitoOptions = {
+      RoleArn: js.UndefOr[RoleArn] = js.undefined,
+      UserPoolId: js.UndefOr[UserPoolId] = js.undefined): CognitoOptions = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Enabled" -> Enabled.map { x => x.asInstanceOf[js.Any] },
-        "UserPoolId" -> UserPoolId.map { x => x.asInstanceOf[js.Any] },
         "IdentityPoolId" -> IdentityPoolId.map { x => x.asInstanceOf[js.Any] },
-        "RoleArn" -> RoleArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "RoleArn" -> RoleArn.map { x => x.asInstanceOf[js.Any] },
+        "UserPoolId" -> UserPoolId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CognitoOptions]
     }
@@ -252,17 +252,17 @@ package es {
    */
   @js.native
   trait CognitoOptionsStatus extends js.Object {
-    var Options: js.UndefOr[CognitoOptions]
-    var Status: js.UndefOr[OptionStatus]
+    var Options: CognitoOptions
+    var Status: OptionStatus
   }
 
   object CognitoOptionsStatus {
     def apply(
-      Options: js.UndefOr[CognitoOptions] = js.undefined,
-      Status: js.UndefOr[OptionStatus] = js.undefined): CognitoOptionsStatus = {
+      Options: CognitoOptions,
+      Status: OptionStatus): CognitoOptionsStatus = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Options" -> Options.map { x => x.asInstanceOf[js.Any] },
-        "Status" -> Status.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Options" -> Options.asInstanceOf[js.Any],
+        "Status" -> Status.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CognitoOptionsStatus]
     }
@@ -291,47 +291,47 @@ package es {
 
   @js.native
   trait CreateElasticsearchDomainRequest extends js.Object {
-    var EncryptionAtRestOptions: js.UndefOr[EncryptionAtRestOptions]
-    var VPCOptions: js.UndefOr[VPCOptions]
+    var DomainName: DomainName
     var AccessPolicies: js.UndefOr[PolicyDocument]
-    var ElasticsearchClusterConfig: js.UndefOr[ElasticsearchClusterConfig]
     var AdvancedOptions: js.UndefOr[AdvancedOptions]
-    var NodeToNodeEncryptionOptions: js.UndefOr[NodeToNodeEncryptionOptions]
-    var DomainName: js.UndefOr[DomainName]
-    var LogPublishingOptions: js.UndefOr[LogPublishingOptions]
-    var EBSOptions: js.UndefOr[EBSOptions]
-    var SnapshotOptions: js.UndefOr[SnapshotOptions]
-    var ElasticsearchVersion: js.UndefOr[ElasticsearchVersionString]
     var CognitoOptions: js.UndefOr[CognitoOptions]
+    var EBSOptions: js.UndefOr[EBSOptions]
+    var ElasticsearchClusterConfig: js.UndefOr[ElasticsearchClusterConfig]
+    var ElasticsearchVersion: js.UndefOr[ElasticsearchVersionString]
+    var EncryptionAtRestOptions: js.UndefOr[EncryptionAtRestOptions]
+    var LogPublishingOptions: js.UndefOr[LogPublishingOptions]
+    var NodeToNodeEncryptionOptions: js.UndefOr[NodeToNodeEncryptionOptions]
+    var SnapshotOptions: js.UndefOr[SnapshotOptions]
+    var VPCOptions: js.UndefOr[VPCOptions]
   }
 
   object CreateElasticsearchDomainRequest {
     def apply(
-      EncryptionAtRestOptions: js.UndefOr[EncryptionAtRestOptions] = js.undefined,
-      VPCOptions: js.UndefOr[VPCOptions] = js.undefined,
+      DomainName: DomainName,
       AccessPolicies: js.UndefOr[PolicyDocument] = js.undefined,
-      ElasticsearchClusterConfig: js.UndefOr[ElasticsearchClusterConfig] = js.undefined,
       AdvancedOptions: js.UndefOr[AdvancedOptions] = js.undefined,
-      NodeToNodeEncryptionOptions: js.UndefOr[NodeToNodeEncryptionOptions] = js.undefined,
-      DomainName: js.UndefOr[DomainName] = js.undefined,
-      LogPublishingOptions: js.UndefOr[LogPublishingOptions] = js.undefined,
+      CognitoOptions: js.UndefOr[CognitoOptions] = js.undefined,
       EBSOptions: js.UndefOr[EBSOptions] = js.undefined,
-      SnapshotOptions: js.UndefOr[SnapshotOptions] = js.undefined,
+      ElasticsearchClusterConfig: js.UndefOr[ElasticsearchClusterConfig] = js.undefined,
       ElasticsearchVersion: js.UndefOr[ElasticsearchVersionString] = js.undefined,
-      CognitoOptions: js.UndefOr[CognitoOptions] = js.undefined): CreateElasticsearchDomainRequest = {
+      EncryptionAtRestOptions: js.UndefOr[EncryptionAtRestOptions] = js.undefined,
+      LogPublishingOptions: js.UndefOr[LogPublishingOptions] = js.undefined,
+      NodeToNodeEncryptionOptions: js.UndefOr[NodeToNodeEncryptionOptions] = js.undefined,
+      SnapshotOptions: js.UndefOr[SnapshotOptions] = js.undefined,
+      VPCOptions: js.UndefOr[VPCOptions] = js.undefined): CreateElasticsearchDomainRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "EncryptionAtRestOptions" -> EncryptionAtRestOptions.map { x => x.asInstanceOf[js.Any] },
-        "VPCOptions" -> VPCOptions.map { x => x.asInstanceOf[js.Any] },
+        "DomainName" -> DomainName.asInstanceOf[js.Any],
         "AccessPolicies" -> AccessPolicies.map { x => x.asInstanceOf[js.Any] },
-        "ElasticsearchClusterConfig" -> ElasticsearchClusterConfig.map { x => x.asInstanceOf[js.Any] },
         "AdvancedOptions" -> AdvancedOptions.map { x => x.asInstanceOf[js.Any] },
-        "NodeToNodeEncryptionOptions" -> NodeToNodeEncryptionOptions.map { x => x.asInstanceOf[js.Any] },
-        "DomainName" -> DomainName.map { x => x.asInstanceOf[js.Any] },
-        "LogPublishingOptions" -> LogPublishingOptions.map { x => x.asInstanceOf[js.Any] },
+        "CognitoOptions" -> CognitoOptions.map { x => x.asInstanceOf[js.Any] },
         "EBSOptions" -> EBSOptions.map { x => x.asInstanceOf[js.Any] },
-        "SnapshotOptions" -> SnapshotOptions.map { x => x.asInstanceOf[js.Any] },
+        "ElasticsearchClusterConfig" -> ElasticsearchClusterConfig.map { x => x.asInstanceOf[js.Any] },
         "ElasticsearchVersion" -> ElasticsearchVersion.map { x => x.asInstanceOf[js.Any] },
-        "CognitoOptions" -> CognitoOptions.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "EncryptionAtRestOptions" -> EncryptionAtRestOptions.map { x => x.asInstanceOf[js.Any] },
+        "LogPublishingOptions" -> LogPublishingOptions.map { x => x.asInstanceOf[js.Any] },
+        "NodeToNodeEncryptionOptions" -> NodeToNodeEncryptionOptions.map { x => x.asInstanceOf[js.Any] },
+        "SnapshotOptions" -> SnapshotOptions.map { x => x.asInstanceOf[js.Any] },
+        "VPCOptions" -> VPCOptions.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateElasticsearchDomainRequest]
     }
@@ -360,14 +360,14 @@ package es {
    */
   @js.native
   trait DeleteElasticsearchDomainRequest extends js.Object {
-    var DomainName: js.UndefOr[DomainName]
+    var DomainName: DomainName
   }
 
   object DeleteElasticsearchDomainRequest {
     def apply(
-      DomainName: js.UndefOr[DomainName] = js.undefined): DeleteElasticsearchDomainRequest = {
+      DomainName: DomainName): DeleteElasticsearchDomainRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "DomainName" -> DomainName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "DomainName" -> DomainName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteElasticsearchDomainRequest]
     }
@@ -406,14 +406,14 @@ package es {
    */
   @js.native
   trait DescribeElasticsearchDomainConfigRequest extends js.Object {
-    var DomainName: js.UndefOr[DomainName]
+    var DomainName: DomainName
   }
 
   object DescribeElasticsearchDomainConfigRequest {
     def apply(
-      DomainName: js.UndefOr[DomainName] = js.undefined): DescribeElasticsearchDomainConfigRequest = {
+      DomainName: DomainName): DescribeElasticsearchDomainConfigRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "DomainName" -> DomainName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "DomainName" -> DomainName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeElasticsearchDomainConfigRequest]
     }
@@ -424,14 +424,14 @@ package es {
    */
   @js.native
   trait DescribeElasticsearchDomainConfigResponse extends js.Object {
-    var DomainConfig: js.UndefOr[ElasticsearchDomainConfig]
+    var DomainConfig: ElasticsearchDomainConfig
   }
 
   object DescribeElasticsearchDomainConfigResponse {
     def apply(
-      DomainConfig: js.UndefOr[ElasticsearchDomainConfig] = js.undefined): DescribeElasticsearchDomainConfigResponse = {
+      DomainConfig: ElasticsearchDomainConfig): DescribeElasticsearchDomainConfigResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "DomainConfig" -> DomainConfig.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "DomainConfig" -> DomainConfig.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeElasticsearchDomainConfigResponse]
     }
@@ -442,14 +442,14 @@ package es {
    */
   @js.native
   trait DescribeElasticsearchDomainRequest extends js.Object {
-    var DomainName: js.UndefOr[DomainName]
+    var DomainName: DomainName
   }
 
   object DescribeElasticsearchDomainRequest {
     def apply(
-      DomainName: js.UndefOr[DomainName] = js.undefined): DescribeElasticsearchDomainRequest = {
+      DomainName: DomainName): DescribeElasticsearchDomainRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "DomainName" -> DomainName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "DomainName" -> DomainName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeElasticsearchDomainRequest]
     }
@@ -460,14 +460,14 @@ package es {
    */
   @js.native
   trait DescribeElasticsearchDomainResponse extends js.Object {
-    var DomainStatus: js.UndefOr[ElasticsearchDomainStatus]
+    var DomainStatus: ElasticsearchDomainStatus
   }
 
   object DescribeElasticsearchDomainResponse {
     def apply(
-      DomainStatus: js.UndefOr[ElasticsearchDomainStatus] = js.undefined): DescribeElasticsearchDomainResponse = {
+      DomainStatus: ElasticsearchDomainStatus): DescribeElasticsearchDomainResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "DomainStatus" -> DomainStatus.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "DomainStatus" -> DomainStatus.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeElasticsearchDomainResponse]
     }
@@ -478,14 +478,14 @@ package es {
    */
   @js.native
   trait DescribeElasticsearchDomainsRequest extends js.Object {
-    var DomainNames: js.UndefOr[DomainNameList]
+    var DomainNames: DomainNameList
   }
 
   object DescribeElasticsearchDomainsRequest {
     def apply(
-      DomainNames: js.UndefOr[DomainNameList] = js.undefined): DescribeElasticsearchDomainsRequest = {
+      DomainNames: DomainNameList): DescribeElasticsearchDomainsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "DomainNames" -> DomainNames.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "DomainNames" -> DomainNames.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeElasticsearchDomainsRequest]
     }
@@ -496,14 +496,14 @@ package es {
    */
   @js.native
   trait DescribeElasticsearchDomainsResponse extends js.Object {
-    var DomainStatusList: js.UndefOr[ElasticsearchDomainStatusList]
+    var DomainStatusList: ElasticsearchDomainStatusList
   }
 
   object DescribeElasticsearchDomainsResponse {
     def apply(
-      DomainStatusList: js.UndefOr[ElasticsearchDomainStatusList] = js.undefined): DescribeElasticsearchDomainsResponse = {
+      DomainStatusList: ElasticsearchDomainStatusList): DescribeElasticsearchDomainsResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "DomainStatusList" -> DomainStatusList.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "DomainStatusList" -> DomainStatusList.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeElasticsearchDomainsResponse]
     }
@@ -514,20 +514,20 @@ package es {
    */
   @js.native
   trait DescribeElasticsearchInstanceTypeLimitsRequest extends js.Object {
+    var ElasticsearchVersion: ElasticsearchVersionString
+    var InstanceType: ESPartitionInstanceType
     var DomainName: js.UndefOr[DomainName]
-    var InstanceType: js.UndefOr[ESPartitionInstanceType]
-    var ElasticsearchVersion: js.UndefOr[ElasticsearchVersionString]
   }
 
   object DescribeElasticsearchInstanceTypeLimitsRequest {
     def apply(
-      DomainName: js.UndefOr[DomainName] = js.undefined,
-      InstanceType: js.UndefOr[ESPartitionInstanceType] = js.undefined,
-      ElasticsearchVersion: js.UndefOr[ElasticsearchVersionString] = js.undefined): DescribeElasticsearchInstanceTypeLimitsRequest = {
+      ElasticsearchVersion: ElasticsearchVersionString,
+      InstanceType: ESPartitionInstanceType,
+      DomainName: js.UndefOr[DomainName] = js.undefined): DescribeElasticsearchInstanceTypeLimitsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "DomainName" -> DomainName.map { x => x.asInstanceOf[js.Any] },
-        "InstanceType" -> InstanceType.map { x => x.asInstanceOf[js.Any] },
-        "ElasticsearchVersion" -> ElasticsearchVersion.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ElasticsearchVersion" -> ElasticsearchVersion.asInstanceOf[js.Any],
+        "InstanceType" -> InstanceType.asInstanceOf[js.Any],
+        "DomainName" -> DomainName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeElasticsearchInstanceTypeLimitsRequest]
     }
@@ -556,20 +556,20 @@ package es {
    */
   @js.native
   trait DescribeReservedElasticsearchInstanceOfferingsRequest extends js.Object {
-    var ReservedElasticsearchInstanceOfferingId: js.UndefOr[GUID]
     var MaxResults: js.UndefOr[MaxResults]
     var NextToken: js.UndefOr[NextToken]
+    var ReservedElasticsearchInstanceOfferingId: js.UndefOr[GUID]
   }
 
   object DescribeReservedElasticsearchInstanceOfferingsRequest {
     def apply(
-      ReservedElasticsearchInstanceOfferingId: js.UndefOr[GUID] = js.undefined,
       MaxResults: js.UndefOr[MaxResults] = js.undefined,
-      NextToken: js.UndefOr[NextToken] = js.undefined): DescribeReservedElasticsearchInstanceOfferingsRequest = {
+      NextToken: js.UndefOr[NextToken] = js.undefined,
+      ReservedElasticsearchInstanceOfferingId: js.UndefOr[GUID] = js.undefined): DescribeReservedElasticsearchInstanceOfferingsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ReservedElasticsearchInstanceOfferingId" -> ReservedElasticsearchInstanceOfferingId.map { x => x.asInstanceOf[js.Any] },
         "MaxResults" -> MaxResults.map { x => x.asInstanceOf[js.Any] },
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
+        "ReservedElasticsearchInstanceOfferingId" -> ReservedElasticsearchInstanceOfferingId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeReservedElasticsearchInstanceOfferingsRequest]
     }
@@ -601,20 +601,20 @@ package es {
    */
   @js.native
   trait DescribeReservedElasticsearchInstancesRequest extends js.Object {
-    var ReservedElasticsearchInstanceId: js.UndefOr[GUID]
     var MaxResults: js.UndefOr[MaxResults]
     var NextToken: js.UndefOr[NextToken]
+    var ReservedElasticsearchInstanceId: js.UndefOr[GUID]
   }
 
   object DescribeReservedElasticsearchInstancesRequest {
     def apply(
-      ReservedElasticsearchInstanceId: js.UndefOr[GUID] = js.undefined,
       MaxResults: js.UndefOr[MaxResults] = js.undefined,
-      NextToken: js.UndefOr[NextToken] = js.undefined): DescribeReservedElasticsearchInstancesRequest = {
+      NextToken: js.UndefOr[NextToken] = js.undefined,
+      ReservedElasticsearchInstanceId: js.UndefOr[GUID] = js.undefined): DescribeReservedElasticsearchInstancesRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ReservedElasticsearchInstanceId" -> ReservedElasticsearchInstanceId.map { x => x.asInstanceOf[js.Any] },
         "MaxResults" -> MaxResults.map { x => x.asInstanceOf[js.Any] },
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
+        "ReservedElasticsearchInstanceId" -> ReservedElasticsearchInstanceId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeReservedElasticsearchInstancesRequest]
     }
@@ -662,22 +662,22 @@ package es {
   @js.native
   trait EBSOptions extends js.Object {
     var EBSEnabled: js.UndefOr[Boolean]
-    var VolumeType: js.UndefOr[VolumeType]
-    var VolumeSize: js.UndefOr[IntegerClass]
     var Iops: js.UndefOr[IntegerClass]
+    var VolumeSize: js.UndefOr[IntegerClass]
+    var VolumeType: js.UndefOr[VolumeType]
   }
 
   object EBSOptions {
     def apply(
       EBSEnabled: js.UndefOr[Boolean] = js.undefined,
-      VolumeType: js.UndefOr[VolumeType] = js.undefined,
+      Iops: js.UndefOr[IntegerClass] = js.undefined,
       VolumeSize: js.UndefOr[IntegerClass] = js.undefined,
-      Iops: js.UndefOr[IntegerClass] = js.undefined): EBSOptions = {
+      VolumeType: js.UndefOr[VolumeType] = js.undefined): EBSOptions = {
       val _fields = IndexedSeq[(String, js.Any)](
         "EBSEnabled" -> EBSEnabled.map { x => x.asInstanceOf[js.Any] },
-        "VolumeType" -> VolumeType.map { x => x.asInstanceOf[js.Any] },
+        "Iops" -> Iops.map { x => x.asInstanceOf[js.Any] },
         "VolumeSize" -> VolumeSize.map { x => x.asInstanceOf[js.Any] },
-        "Iops" -> Iops.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "VolumeType" -> VolumeType.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EBSOptions]
     }
@@ -688,17 +688,17 @@ package es {
    */
   @js.native
   trait EBSOptionsStatus extends js.Object {
-    var Options: js.UndefOr[EBSOptions]
-    var Status: js.UndefOr[OptionStatus]
+    var Options: EBSOptions
+    var Status: OptionStatus
   }
 
   object EBSOptionsStatus {
     def apply(
-      Options: js.UndefOr[EBSOptions] = js.undefined,
-      Status: js.UndefOr[OptionStatus] = js.undefined): EBSOptionsStatus = {
+      Options: EBSOptions,
+      Status: OptionStatus): EBSOptionsStatus = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Options" -> Options.map { x => x.asInstanceOf[js.Any] },
-        "Status" -> Status.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Options" -> Options.asInstanceOf[js.Any],
+        "Status" -> Status.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EBSOptionsStatus]
     }
@@ -754,9 +754,9 @@ package es {
    */
   @js.native
   trait ElasticsearchClusterConfig extends js.Object {
-    var DedicatedMasterType: js.UndefOr[ESPartitionInstanceType]
-    var DedicatedMasterEnabled: js.UndefOr[Boolean]
     var DedicatedMasterCount: js.UndefOr[IntegerClass]
+    var DedicatedMasterEnabled: js.UndefOr[Boolean]
+    var DedicatedMasterType: js.UndefOr[ESPartitionInstanceType]
     var InstanceCount: js.UndefOr[IntegerClass]
     var InstanceType: js.UndefOr[ESPartitionInstanceType]
     var ZoneAwarenessEnabled: js.UndefOr[Boolean]
@@ -764,16 +764,16 @@ package es {
 
   object ElasticsearchClusterConfig {
     def apply(
-      DedicatedMasterType: js.UndefOr[ESPartitionInstanceType] = js.undefined,
-      DedicatedMasterEnabled: js.UndefOr[Boolean] = js.undefined,
       DedicatedMasterCount: js.UndefOr[IntegerClass] = js.undefined,
+      DedicatedMasterEnabled: js.UndefOr[Boolean] = js.undefined,
+      DedicatedMasterType: js.UndefOr[ESPartitionInstanceType] = js.undefined,
       InstanceCount: js.UndefOr[IntegerClass] = js.undefined,
       InstanceType: js.UndefOr[ESPartitionInstanceType] = js.undefined,
       ZoneAwarenessEnabled: js.UndefOr[Boolean] = js.undefined): ElasticsearchClusterConfig = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "DedicatedMasterType" -> DedicatedMasterType.map { x => x.asInstanceOf[js.Any] },
-        "DedicatedMasterEnabled" -> DedicatedMasterEnabled.map { x => x.asInstanceOf[js.Any] },
         "DedicatedMasterCount" -> DedicatedMasterCount.map { x => x.asInstanceOf[js.Any] },
+        "DedicatedMasterEnabled" -> DedicatedMasterEnabled.map { x => x.asInstanceOf[js.Any] },
+        "DedicatedMasterType" -> DedicatedMasterType.map { x => x.asInstanceOf[js.Any] },
         "InstanceCount" -> InstanceCount.map { x => x.asInstanceOf[js.Any] },
         "InstanceType" -> InstanceType.map { x => x.asInstanceOf[js.Any] },
         "ZoneAwarenessEnabled" -> ZoneAwarenessEnabled.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
@@ -787,17 +787,17 @@ package es {
    */
   @js.native
   trait ElasticsearchClusterConfigStatus extends js.Object {
-    var Options: js.UndefOr[ElasticsearchClusterConfig]
-    var Status: js.UndefOr[OptionStatus]
+    var Options: ElasticsearchClusterConfig
+    var Status: OptionStatus
   }
 
   object ElasticsearchClusterConfigStatus {
     def apply(
-      Options: js.UndefOr[ElasticsearchClusterConfig] = js.undefined,
-      Status: js.UndefOr[OptionStatus] = js.undefined): ElasticsearchClusterConfigStatus = {
+      Options: ElasticsearchClusterConfig,
+      Status: OptionStatus): ElasticsearchClusterConfigStatus = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Options" -> Options.map { x => x.asInstanceOf[js.Any] },
-        "Status" -> Status.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Options" -> Options.asInstanceOf[js.Any],
+        "Status" -> Status.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ElasticsearchClusterConfigStatus]
     }
@@ -808,44 +808,44 @@ package es {
    */
   @js.native
   trait ElasticsearchDomainConfig extends js.Object {
-    var EncryptionAtRestOptions: js.UndefOr[EncryptionAtRestOptionsStatus]
-    var VPCOptions: js.UndefOr[VPCDerivedInfoStatus]
     var AccessPolicies: js.UndefOr[AccessPoliciesStatus]
-    var ElasticsearchClusterConfig: js.UndefOr[ElasticsearchClusterConfigStatus]
     var AdvancedOptions: js.UndefOr[AdvancedOptionsStatus]
-    var NodeToNodeEncryptionOptions: js.UndefOr[NodeToNodeEncryptionOptionsStatus]
-    var LogPublishingOptions: js.UndefOr[LogPublishingOptionsStatus]
-    var EBSOptions: js.UndefOr[EBSOptionsStatus]
-    var SnapshotOptions: js.UndefOr[SnapshotOptionsStatus]
-    var ElasticsearchVersion: js.UndefOr[ElasticsearchVersionStatus]
     var CognitoOptions: js.UndefOr[CognitoOptionsStatus]
+    var EBSOptions: js.UndefOr[EBSOptionsStatus]
+    var ElasticsearchClusterConfig: js.UndefOr[ElasticsearchClusterConfigStatus]
+    var ElasticsearchVersion: js.UndefOr[ElasticsearchVersionStatus]
+    var EncryptionAtRestOptions: js.UndefOr[EncryptionAtRestOptionsStatus]
+    var LogPublishingOptions: js.UndefOr[LogPublishingOptionsStatus]
+    var NodeToNodeEncryptionOptions: js.UndefOr[NodeToNodeEncryptionOptionsStatus]
+    var SnapshotOptions: js.UndefOr[SnapshotOptionsStatus]
+    var VPCOptions: js.UndefOr[VPCDerivedInfoStatus]
   }
 
   object ElasticsearchDomainConfig {
     def apply(
-      EncryptionAtRestOptions: js.UndefOr[EncryptionAtRestOptionsStatus] = js.undefined,
-      VPCOptions: js.UndefOr[VPCDerivedInfoStatus] = js.undefined,
       AccessPolicies: js.UndefOr[AccessPoliciesStatus] = js.undefined,
-      ElasticsearchClusterConfig: js.UndefOr[ElasticsearchClusterConfigStatus] = js.undefined,
       AdvancedOptions: js.UndefOr[AdvancedOptionsStatus] = js.undefined,
-      NodeToNodeEncryptionOptions: js.UndefOr[NodeToNodeEncryptionOptionsStatus] = js.undefined,
-      LogPublishingOptions: js.UndefOr[LogPublishingOptionsStatus] = js.undefined,
+      CognitoOptions: js.UndefOr[CognitoOptionsStatus] = js.undefined,
       EBSOptions: js.UndefOr[EBSOptionsStatus] = js.undefined,
-      SnapshotOptions: js.UndefOr[SnapshotOptionsStatus] = js.undefined,
+      ElasticsearchClusterConfig: js.UndefOr[ElasticsearchClusterConfigStatus] = js.undefined,
       ElasticsearchVersion: js.UndefOr[ElasticsearchVersionStatus] = js.undefined,
-      CognitoOptions: js.UndefOr[CognitoOptionsStatus] = js.undefined): ElasticsearchDomainConfig = {
+      EncryptionAtRestOptions: js.UndefOr[EncryptionAtRestOptionsStatus] = js.undefined,
+      LogPublishingOptions: js.UndefOr[LogPublishingOptionsStatus] = js.undefined,
+      NodeToNodeEncryptionOptions: js.UndefOr[NodeToNodeEncryptionOptionsStatus] = js.undefined,
+      SnapshotOptions: js.UndefOr[SnapshotOptionsStatus] = js.undefined,
+      VPCOptions: js.UndefOr[VPCDerivedInfoStatus] = js.undefined): ElasticsearchDomainConfig = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "EncryptionAtRestOptions" -> EncryptionAtRestOptions.map { x => x.asInstanceOf[js.Any] },
-        "VPCOptions" -> VPCOptions.map { x => x.asInstanceOf[js.Any] },
         "AccessPolicies" -> AccessPolicies.map { x => x.asInstanceOf[js.Any] },
-        "ElasticsearchClusterConfig" -> ElasticsearchClusterConfig.map { x => x.asInstanceOf[js.Any] },
         "AdvancedOptions" -> AdvancedOptions.map { x => x.asInstanceOf[js.Any] },
-        "NodeToNodeEncryptionOptions" -> NodeToNodeEncryptionOptions.map { x => x.asInstanceOf[js.Any] },
-        "LogPublishingOptions" -> LogPublishingOptions.map { x => x.asInstanceOf[js.Any] },
+        "CognitoOptions" -> CognitoOptions.map { x => x.asInstanceOf[js.Any] },
         "EBSOptions" -> EBSOptions.map { x => x.asInstanceOf[js.Any] },
-        "SnapshotOptions" -> SnapshotOptions.map { x => x.asInstanceOf[js.Any] },
+        "ElasticsearchClusterConfig" -> ElasticsearchClusterConfig.map { x => x.asInstanceOf[js.Any] },
         "ElasticsearchVersion" -> ElasticsearchVersion.map { x => x.asInstanceOf[js.Any] },
-        "CognitoOptions" -> CognitoOptions.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "EncryptionAtRestOptions" -> EncryptionAtRestOptions.map { x => x.asInstanceOf[js.Any] },
+        "LogPublishingOptions" -> LogPublishingOptions.map { x => x.asInstanceOf[js.Any] },
+        "NodeToNodeEncryptionOptions" -> NodeToNodeEncryptionOptions.map { x => x.asInstanceOf[js.Any] },
+        "SnapshotOptions" -> SnapshotOptions.map { x => x.asInstanceOf[js.Any] },
+        "VPCOptions" -> VPCOptions.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ElasticsearchDomainConfig]
     }
@@ -856,74 +856,74 @@ package es {
    */
   @js.native
   trait ElasticsearchDomainStatus extends js.Object {
-    var EncryptionAtRestOptions: js.UndefOr[EncryptionAtRestOptions]
-    var VPCOptions: js.UndefOr[VPCDerivedInfo]
-    var ARN: js.UndefOr[ARN]
+    var ARN: ARN
+    var DomainId: DomainId
+    var DomainName: DomainName
+    var ElasticsearchClusterConfig: ElasticsearchClusterConfig
     var AccessPolicies: js.UndefOr[PolicyDocument]
+    var AdvancedOptions: js.UndefOr[AdvancedOptions]
+    var CognitoOptions: js.UndefOr[CognitoOptions]
     var Created: js.UndefOr[Boolean]
     var Deleted: js.UndefOr[Boolean]
-    var ElasticsearchClusterConfig: js.UndefOr[ElasticsearchClusterConfig]
-    var ServiceSoftwareOptions: js.UndefOr[ServiceSoftwareOptions]
-    var AdvancedOptions: js.UndefOr[AdvancedOptions]
-    var Endpoint: js.UndefOr[ServiceUrl]
-    var Processing: js.UndefOr[Boolean]
-    var NodeToNodeEncryptionOptions: js.UndefOr[NodeToNodeEncryptionOptions]
-    var DomainId: js.UndefOr[DomainId]
-    var DomainName: js.UndefOr[DomainName]
-    var LogPublishingOptions: js.UndefOr[LogPublishingOptions]
     var EBSOptions: js.UndefOr[EBSOptions]
-    var UpgradeProcessing: js.UndefOr[Boolean]
-    var SnapshotOptions: js.UndefOr[SnapshotOptions]
     var ElasticsearchVersion: js.UndefOr[ElasticsearchVersionString]
-    var CognitoOptions: js.UndefOr[CognitoOptions]
+    var EncryptionAtRestOptions: js.UndefOr[EncryptionAtRestOptions]
+    var Endpoint: js.UndefOr[ServiceUrl]
     var Endpoints: js.UndefOr[EndpointsMap]
+    var LogPublishingOptions: js.UndefOr[LogPublishingOptions]
+    var NodeToNodeEncryptionOptions: js.UndefOr[NodeToNodeEncryptionOptions]
+    var Processing: js.UndefOr[Boolean]
+    var ServiceSoftwareOptions: js.UndefOr[ServiceSoftwareOptions]
+    var SnapshotOptions: js.UndefOr[SnapshotOptions]
+    var UpgradeProcessing: js.UndefOr[Boolean]
+    var VPCOptions: js.UndefOr[VPCDerivedInfo]
   }
 
   object ElasticsearchDomainStatus {
     def apply(
-      EncryptionAtRestOptions: js.UndefOr[EncryptionAtRestOptions] = js.undefined,
-      VPCOptions: js.UndefOr[VPCDerivedInfo] = js.undefined,
-      ARN: js.UndefOr[ARN] = js.undefined,
+      ARN: ARN,
+      DomainId: DomainId,
+      DomainName: DomainName,
+      ElasticsearchClusterConfig: ElasticsearchClusterConfig,
       AccessPolicies: js.UndefOr[PolicyDocument] = js.undefined,
+      AdvancedOptions: js.UndefOr[AdvancedOptions] = js.undefined,
+      CognitoOptions: js.UndefOr[CognitoOptions] = js.undefined,
       Created: js.UndefOr[Boolean] = js.undefined,
       Deleted: js.UndefOr[Boolean] = js.undefined,
-      ElasticsearchClusterConfig: js.UndefOr[ElasticsearchClusterConfig] = js.undefined,
-      ServiceSoftwareOptions: js.UndefOr[ServiceSoftwareOptions] = js.undefined,
-      AdvancedOptions: js.UndefOr[AdvancedOptions] = js.undefined,
-      Endpoint: js.UndefOr[ServiceUrl] = js.undefined,
-      Processing: js.UndefOr[Boolean] = js.undefined,
-      NodeToNodeEncryptionOptions: js.UndefOr[NodeToNodeEncryptionOptions] = js.undefined,
-      DomainId: js.UndefOr[DomainId] = js.undefined,
-      DomainName: js.UndefOr[DomainName] = js.undefined,
-      LogPublishingOptions: js.UndefOr[LogPublishingOptions] = js.undefined,
       EBSOptions: js.UndefOr[EBSOptions] = js.undefined,
-      UpgradeProcessing: js.UndefOr[Boolean] = js.undefined,
-      SnapshotOptions: js.UndefOr[SnapshotOptions] = js.undefined,
       ElasticsearchVersion: js.UndefOr[ElasticsearchVersionString] = js.undefined,
-      CognitoOptions: js.UndefOr[CognitoOptions] = js.undefined,
-      Endpoints: js.UndefOr[EndpointsMap] = js.undefined): ElasticsearchDomainStatus = {
+      EncryptionAtRestOptions: js.UndefOr[EncryptionAtRestOptions] = js.undefined,
+      Endpoint: js.UndefOr[ServiceUrl] = js.undefined,
+      Endpoints: js.UndefOr[EndpointsMap] = js.undefined,
+      LogPublishingOptions: js.UndefOr[LogPublishingOptions] = js.undefined,
+      NodeToNodeEncryptionOptions: js.UndefOr[NodeToNodeEncryptionOptions] = js.undefined,
+      Processing: js.UndefOr[Boolean] = js.undefined,
+      ServiceSoftwareOptions: js.UndefOr[ServiceSoftwareOptions] = js.undefined,
+      SnapshotOptions: js.UndefOr[SnapshotOptions] = js.undefined,
+      UpgradeProcessing: js.UndefOr[Boolean] = js.undefined,
+      VPCOptions: js.UndefOr[VPCDerivedInfo] = js.undefined): ElasticsearchDomainStatus = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "EncryptionAtRestOptions" -> EncryptionAtRestOptions.map { x => x.asInstanceOf[js.Any] },
-        "VPCOptions" -> VPCOptions.map { x => x.asInstanceOf[js.Any] },
-        "ARN" -> ARN.map { x => x.asInstanceOf[js.Any] },
+        "ARN" -> ARN.asInstanceOf[js.Any],
+        "DomainId" -> DomainId.asInstanceOf[js.Any],
+        "DomainName" -> DomainName.asInstanceOf[js.Any],
+        "ElasticsearchClusterConfig" -> ElasticsearchClusterConfig.asInstanceOf[js.Any],
         "AccessPolicies" -> AccessPolicies.map { x => x.asInstanceOf[js.Any] },
+        "AdvancedOptions" -> AdvancedOptions.map { x => x.asInstanceOf[js.Any] },
+        "CognitoOptions" -> CognitoOptions.map { x => x.asInstanceOf[js.Any] },
         "Created" -> Created.map { x => x.asInstanceOf[js.Any] },
         "Deleted" -> Deleted.map { x => x.asInstanceOf[js.Any] },
-        "ElasticsearchClusterConfig" -> ElasticsearchClusterConfig.map { x => x.asInstanceOf[js.Any] },
-        "ServiceSoftwareOptions" -> ServiceSoftwareOptions.map { x => x.asInstanceOf[js.Any] },
-        "AdvancedOptions" -> AdvancedOptions.map { x => x.asInstanceOf[js.Any] },
-        "Endpoint" -> Endpoint.map { x => x.asInstanceOf[js.Any] },
-        "Processing" -> Processing.map { x => x.asInstanceOf[js.Any] },
-        "NodeToNodeEncryptionOptions" -> NodeToNodeEncryptionOptions.map { x => x.asInstanceOf[js.Any] },
-        "DomainId" -> DomainId.map { x => x.asInstanceOf[js.Any] },
-        "DomainName" -> DomainName.map { x => x.asInstanceOf[js.Any] },
-        "LogPublishingOptions" -> LogPublishingOptions.map { x => x.asInstanceOf[js.Any] },
         "EBSOptions" -> EBSOptions.map { x => x.asInstanceOf[js.Any] },
-        "UpgradeProcessing" -> UpgradeProcessing.map { x => x.asInstanceOf[js.Any] },
-        "SnapshotOptions" -> SnapshotOptions.map { x => x.asInstanceOf[js.Any] },
         "ElasticsearchVersion" -> ElasticsearchVersion.map { x => x.asInstanceOf[js.Any] },
-        "CognitoOptions" -> CognitoOptions.map { x => x.asInstanceOf[js.Any] },
-        "Endpoints" -> Endpoints.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "EncryptionAtRestOptions" -> EncryptionAtRestOptions.map { x => x.asInstanceOf[js.Any] },
+        "Endpoint" -> Endpoint.map { x => x.asInstanceOf[js.Any] },
+        "Endpoints" -> Endpoints.map { x => x.asInstanceOf[js.Any] },
+        "LogPublishingOptions" -> LogPublishingOptions.map { x => x.asInstanceOf[js.Any] },
+        "NodeToNodeEncryptionOptions" -> NodeToNodeEncryptionOptions.map { x => x.asInstanceOf[js.Any] },
+        "Processing" -> Processing.map { x => x.asInstanceOf[js.Any] },
+        "ServiceSoftwareOptions" -> ServiceSoftwareOptions.map { x => x.asInstanceOf[js.Any] },
+        "SnapshotOptions" -> SnapshotOptions.map { x => x.asInstanceOf[js.Any] },
+        "UpgradeProcessing" -> UpgradeProcessing.map { x => x.asInstanceOf[js.Any] },
+        "VPCOptions" -> VPCOptions.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ElasticsearchDomainStatus]
     }
@@ -934,17 +934,17 @@ package es {
    */
   @js.native
   trait ElasticsearchVersionStatus extends js.Object {
-    var Options: js.UndefOr[ElasticsearchVersionString]
-    var Status: js.UndefOr[OptionStatus]
+    var Options: ElasticsearchVersionString
+    var Status: OptionStatus
   }
 
   object ElasticsearchVersionStatus {
     def apply(
-      Options: js.UndefOr[ElasticsearchVersionString] = js.undefined,
-      Status: js.UndefOr[OptionStatus] = js.undefined): ElasticsearchVersionStatus = {
+      Options: ElasticsearchVersionString,
+      Status: OptionStatus): ElasticsearchVersionStatus = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Options" -> Options.map { x => x.asInstanceOf[js.Any] },
-        "Status" -> Status.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Options" -> Options.asInstanceOf[js.Any],
+        "Status" -> Status.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ElasticsearchVersionStatus]
     }
@@ -976,17 +976,17 @@ package es {
    */
   @js.native
   trait EncryptionAtRestOptionsStatus extends js.Object {
-    var Options: js.UndefOr[EncryptionAtRestOptions]
-    var Status: js.UndefOr[OptionStatus]
+    var Options: EncryptionAtRestOptions
+    var Status: OptionStatus
   }
 
   object EncryptionAtRestOptionsStatus {
     def apply(
-      Options: js.UndefOr[EncryptionAtRestOptions] = js.undefined,
-      Status: js.UndefOr[OptionStatus] = js.undefined): EncryptionAtRestOptionsStatus = {
+      Options: EncryptionAtRestOptions,
+      Status: OptionStatus): EncryptionAtRestOptionsStatus = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Options" -> Options.map { x => x.asInstanceOf[js.Any] },
-        "Status" -> Status.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Options" -> Options.asInstanceOf[js.Any],
+        "Status" -> Status.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EncryptionAtRestOptionsStatus]
     }
@@ -1033,18 +1033,18 @@ package es {
    */
   @js.native
   trait GetUpgradeHistoryRequest extends js.Object {
-    var DomainName: js.UndefOr[DomainName]
+    var DomainName: DomainName
     var MaxResults: js.UndefOr[MaxResults]
     var NextToken: js.UndefOr[NextToken]
   }
 
   object GetUpgradeHistoryRequest {
     def apply(
-      DomainName: js.UndefOr[DomainName] = js.undefined,
+      DomainName: DomainName,
       MaxResults: js.UndefOr[MaxResults] = js.undefined,
       NextToken: js.UndefOr[NextToken] = js.undefined): GetUpgradeHistoryRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "DomainName" -> DomainName.map { x => x.asInstanceOf[js.Any] },
+        "DomainName" -> DomainName.asInstanceOf[js.Any],
         "MaxResults" -> MaxResults.map { x => x.asInstanceOf[js.Any] },
         "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
@@ -1057,17 +1057,17 @@ package es {
    */
   @js.native
   trait GetUpgradeHistoryResponse extends js.Object {
-    var UpgradeHistories: js.UndefOr[UpgradeHistoryList]
     var NextToken: js.UndefOr[String]
+    var UpgradeHistories: js.UndefOr[UpgradeHistoryList]
   }
 
   object GetUpgradeHistoryResponse {
     def apply(
-      UpgradeHistories: js.UndefOr[UpgradeHistoryList] = js.undefined,
-      NextToken: js.UndefOr[String] = js.undefined): GetUpgradeHistoryResponse = {
+      NextToken: js.UndefOr[String] = js.undefined,
+      UpgradeHistories: js.UndefOr[UpgradeHistoryList] = js.undefined): GetUpgradeHistoryResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "UpgradeHistories" -> UpgradeHistories.map { x => x.asInstanceOf[js.Any] },
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
+        "UpgradeHistories" -> UpgradeHistories.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetUpgradeHistoryResponse]
     }
@@ -1078,14 +1078,14 @@ package es {
    */
   @js.native
   trait GetUpgradeStatusRequest extends js.Object {
-    var DomainName: js.UndefOr[DomainName]
+    var DomainName: DomainName
   }
 
   object GetUpgradeStatusRequest {
     def apply(
-      DomainName: js.UndefOr[DomainName] = js.undefined): GetUpgradeStatusRequest = {
+      DomainName: DomainName): GetUpgradeStatusRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "DomainName" -> DomainName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "DomainName" -> DomainName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetUpgradeStatusRequest]
     }
@@ -1096,20 +1096,20 @@ package es {
    */
   @js.native
   trait GetUpgradeStatusResponse extends js.Object {
-    var UpgradeStep: js.UndefOr[UpgradeStep]
     var StepStatus: js.UndefOr[UpgradeStatus]
     var UpgradeName: js.UndefOr[UpgradeName]
+    var UpgradeStep: js.UndefOr[UpgradeStep]
   }
 
   object GetUpgradeStatusResponse {
     def apply(
-      UpgradeStep: js.UndefOr[UpgradeStep] = js.undefined,
       StepStatus: js.UndefOr[UpgradeStatus] = js.undefined,
-      UpgradeName: js.UndefOr[UpgradeName] = js.undefined): GetUpgradeStatusResponse = {
+      UpgradeName: js.UndefOr[UpgradeName] = js.undefined,
+      UpgradeStep: js.UndefOr[UpgradeStep] = js.undefined): GetUpgradeStatusResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "UpgradeStep" -> UpgradeStep.map { x => x.asInstanceOf[js.Any] },
         "StepStatus" -> StepStatus.map { x => x.asInstanceOf[js.Any] },
-        "UpgradeName" -> UpgradeName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "UpgradeName" -> UpgradeName.map { x => x.asInstanceOf[js.Any] },
+        "UpgradeStep" -> UpgradeStep.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetUpgradeStatusResponse]
     }
@@ -1120,17 +1120,17 @@ package es {
    */
   @js.native
   trait InstanceCountLimits extends js.Object {
-    var MinimumInstanceCount: js.UndefOr[MinimumInstanceCount]
     var MaximumInstanceCount: js.UndefOr[MaximumInstanceCount]
+    var MinimumInstanceCount: js.UndefOr[MinimumInstanceCount]
   }
 
   object InstanceCountLimits {
     def apply(
-      MinimumInstanceCount: js.UndefOr[MinimumInstanceCount] = js.undefined,
-      MaximumInstanceCount: js.UndefOr[MaximumInstanceCount] = js.undefined): InstanceCountLimits = {
+      MaximumInstanceCount: js.UndefOr[MaximumInstanceCount] = js.undefined,
+      MinimumInstanceCount: js.UndefOr[MinimumInstanceCount] = js.undefined): InstanceCountLimits = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "MinimumInstanceCount" -> MinimumInstanceCount.map { x => x.asInstanceOf[js.Any] },
-        "MaximumInstanceCount" -> MaximumInstanceCount.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "MaximumInstanceCount" -> MaximumInstanceCount.map { x => x.asInstanceOf[js.Any] },
+        "MinimumInstanceCount" -> MinimumInstanceCount.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[InstanceCountLimits]
     }
@@ -1159,20 +1159,20 @@ package es {
    */
   @js.native
   trait Limits extends js.Object {
-    var StorageTypes: js.UndefOr[StorageTypeList]
-    var InstanceLimits: js.UndefOr[InstanceLimits]
     var AdditionalLimits: js.UndefOr[AdditionalLimitList]
+    var InstanceLimits: js.UndefOr[InstanceLimits]
+    var StorageTypes: js.UndefOr[StorageTypeList]
   }
 
   object Limits {
     def apply(
-      StorageTypes: js.UndefOr[StorageTypeList] = js.undefined,
+      AdditionalLimits: js.UndefOr[AdditionalLimitList] = js.undefined,
       InstanceLimits: js.UndefOr[InstanceLimits] = js.undefined,
-      AdditionalLimits: js.UndefOr[AdditionalLimitList] = js.undefined): Limits = {
+      StorageTypes: js.UndefOr[StorageTypeList] = js.undefined): Limits = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "StorageTypes" -> StorageTypes.map { x => x.asInstanceOf[js.Any] },
+        "AdditionalLimits" -> AdditionalLimits.map { x => x.asInstanceOf[js.Any] },
         "InstanceLimits" -> InstanceLimits.map { x => x.asInstanceOf[js.Any] },
-        "AdditionalLimits" -> AdditionalLimits.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "StorageTypes" -> StorageTypes.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Limits]
     }
@@ -1201,7 +1201,7 @@ package es {
    */
   @js.native
   trait ListElasticsearchInstanceTypesRequest extends js.Object {
-    var ElasticsearchVersion: js.UndefOr[ElasticsearchVersionString]
+    var ElasticsearchVersion: ElasticsearchVersionString
     var DomainName: js.UndefOr[DomainName]
     var MaxResults: js.UndefOr[MaxResults]
     var NextToken: js.UndefOr[NextToken]
@@ -1209,12 +1209,12 @@ package es {
 
   object ListElasticsearchInstanceTypesRequest {
     def apply(
-      ElasticsearchVersion: js.UndefOr[ElasticsearchVersionString] = js.undefined,
+      ElasticsearchVersion: ElasticsearchVersionString,
       DomainName: js.UndefOr[DomainName] = js.undefined,
       MaxResults: js.UndefOr[MaxResults] = js.undefined,
       NextToken: js.UndefOr[NextToken] = js.undefined): ListElasticsearchInstanceTypesRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ElasticsearchVersion" -> ElasticsearchVersion.map { x => x.asInstanceOf[js.Any] },
+        "ElasticsearchVersion" -> ElasticsearchVersion.asInstanceOf[js.Any],
         "DomainName" -> DomainName.map { x => x.asInstanceOf[js.Any] },
         "MaxResults" -> MaxResults.map { x => x.asInstanceOf[js.Any] },
         "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
@@ -1291,14 +1291,14 @@ package es {
    */
   @js.native
   trait ListTagsRequest extends js.Object {
-    var ARN: js.UndefOr[ARN]
+    var ARN: ARN
   }
 
   object ListTagsRequest {
     def apply(
-      ARN: js.UndefOr[ARN] = js.undefined): ListTagsRequest = {
+      ARN: ARN): ListTagsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ARN" -> ARN.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ARN" -> ARN.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListTagsRequest]
     }
@@ -1398,17 +1398,17 @@ package es {
    */
   @js.native
   trait NodeToNodeEncryptionOptionsStatus extends js.Object {
-    var Options: js.UndefOr[NodeToNodeEncryptionOptions]
-    var Status: js.UndefOr[OptionStatus]
+    var Options: NodeToNodeEncryptionOptions
+    var Status: OptionStatus
   }
 
   object NodeToNodeEncryptionOptionsStatus {
     def apply(
-      Options: js.UndefOr[NodeToNodeEncryptionOptions] = js.undefined,
-      Status: js.UndefOr[OptionStatus] = js.undefined): NodeToNodeEncryptionOptionsStatus = {
+      Options: NodeToNodeEncryptionOptions,
+      Status: OptionStatus): NodeToNodeEncryptionOptionsStatus = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Options" -> Options.map { x => x.asInstanceOf[js.Any] },
-        "Status" -> Status.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Options" -> Options.asInstanceOf[js.Any],
+        "Status" -> Status.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[NodeToNodeEncryptionOptionsStatus]
     }
@@ -1430,26 +1430,26 @@ package es {
    */
   @js.native
   trait OptionStatus extends js.Object {
-    var CreationDate: js.UndefOr[UpdateTimestamp]
-    var UpdateDate: js.UndefOr[UpdateTimestamp]
-    var UpdateVersion: js.UndefOr[UIntValue]
-    var State: js.UndefOr[OptionState]
+    var CreationDate: UpdateTimestamp
+    var State: OptionState
+    var UpdateDate: UpdateTimestamp
     var PendingDeletion: js.UndefOr[Boolean]
+    var UpdateVersion: js.UndefOr[UIntValue]
   }
 
   object OptionStatus {
     def apply(
-      CreationDate: js.UndefOr[UpdateTimestamp] = js.undefined,
-      UpdateDate: js.UndefOr[UpdateTimestamp] = js.undefined,
-      UpdateVersion: js.UndefOr[UIntValue] = js.undefined,
-      State: js.UndefOr[OptionState] = js.undefined,
-      PendingDeletion: js.UndefOr[Boolean] = js.undefined): OptionStatus = {
+      CreationDate: UpdateTimestamp,
+      State: OptionState,
+      UpdateDate: UpdateTimestamp,
+      PendingDeletion: js.UndefOr[Boolean] = js.undefined,
+      UpdateVersion: js.UndefOr[UIntValue] = js.undefined): OptionStatus = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "CreationDate" -> CreationDate.map { x => x.asInstanceOf[js.Any] },
-        "UpdateDate" -> UpdateDate.map { x => x.asInstanceOf[js.Any] },
-        "UpdateVersion" -> UpdateVersion.map { x => x.asInstanceOf[js.Any] },
-        "State" -> State.map { x => x.asInstanceOf[js.Any] },
-        "PendingDeletion" -> PendingDeletion.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "CreationDate" -> CreationDate.asInstanceOf[js.Any],
+        "State" -> State.asInstanceOf[js.Any],
+        "UpdateDate" -> UpdateDate.asInstanceOf[js.Any],
+        "PendingDeletion" -> PendingDeletion.map { x => x.asInstanceOf[js.Any] },
+        "UpdateVersion" -> UpdateVersion.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[OptionStatus]
     }
@@ -1460,19 +1460,19 @@ package es {
    */
   @js.native
   trait PurchaseReservedElasticsearchInstanceOfferingRequest extends js.Object {
-    var ReservedElasticsearchInstanceOfferingId: js.UndefOr[GUID]
-    var ReservationName: js.UndefOr[ReservationToken]
+    var ReservationName: ReservationToken
+    var ReservedElasticsearchInstanceOfferingId: GUID
     var InstanceCount: js.UndefOr[InstanceCount]
   }
 
   object PurchaseReservedElasticsearchInstanceOfferingRequest {
     def apply(
-      ReservedElasticsearchInstanceOfferingId: js.UndefOr[GUID] = js.undefined,
-      ReservationName: js.UndefOr[ReservationToken] = js.undefined,
+      ReservationName: ReservationToken,
+      ReservedElasticsearchInstanceOfferingId: GUID,
       InstanceCount: js.UndefOr[InstanceCount] = js.undefined): PurchaseReservedElasticsearchInstanceOfferingRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ReservedElasticsearchInstanceOfferingId" -> ReservedElasticsearchInstanceOfferingId.map { x => x.asInstanceOf[js.Any] },
-        "ReservationName" -> ReservationName.map { x => x.asInstanceOf[js.Any] },
+        "ReservationName" -> ReservationName.asInstanceOf[js.Any],
+        "ReservedElasticsearchInstanceOfferingId" -> ReservedElasticsearchInstanceOfferingId.asInstanceOf[js.Any],
         "InstanceCount" -> InstanceCount.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PurchaseReservedElasticsearchInstanceOfferingRequest]
@@ -1484,17 +1484,17 @@ package es {
    */
   @js.native
   trait PurchaseReservedElasticsearchInstanceOfferingResponse extends js.Object {
-    var ReservedElasticsearchInstanceId: js.UndefOr[GUID]
     var ReservationName: js.UndefOr[ReservationToken]
+    var ReservedElasticsearchInstanceId: js.UndefOr[GUID]
   }
 
   object PurchaseReservedElasticsearchInstanceOfferingResponse {
     def apply(
-      ReservedElasticsearchInstanceId: js.UndefOr[GUID] = js.undefined,
-      ReservationName: js.UndefOr[ReservationToken] = js.undefined): PurchaseReservedElasticsearchInstanceOfferingResponse = {
+      ReservationName: js.UndefOr[ReservationToken] = js.undefined,
+      ReservedElasticsearchInstanceId: js.UndefOr[GUID] = js.undefined): PurchaseReservedElasticsearchInstanceOfferingResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ReservedElasticsearchInstanceId" -> ReservedElasticsearchInstanceId.map { x => x.asInstanceOf[js.Any] },
-        "ReservationName" -> ReservationName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ReservationName" -> ReservationName.map { x => x.asInstanceOf[js.Any] },
+        "ReservedElasticsearchInstanceId" -> ReservedElasticsearchInstanceId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PurchaseReservedElasticsearchInstanceOfferingResponse]
     }
@@ -1526,17 +1526,17 @@ package es {
    */
   @js.native
   trait RemoveTagsRequest extends js.Object {
-    var ARN: js.UndefOr[ARN]
-    var TagKeys: js.UndefOr[StringList]
+    var ARN: ARN
+    var TagKeys: StringList
   }
 
   object RemoveTagsRequest {
     def apply(
-      ARN: js.UndefOr[ARN] = js.undefined,
-      TagKeys: js.UndefOr[StringList] = js.undefined): RemoveTagsRequest = {
+      ARN: ARN,
+      TagKeys: StringList): RemoveTagsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ARN" -> ARN.map { x => x.asInstanceOf[js.Any] },
-        "TagKeys" -> TagKeys.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ARN" -> ARN.asInstanceOf[js.Any],
+        "TagKeys" -> TagKeys.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RemoveTagsRequest]
     }
@@ -1547,50 +1547,50 @@ package es {
    */
   @js.native
   trait ReservedElasticsearchInstance extends js.Object {
-    var PaymentOption: js.UndefOr[ReservedElasticsearchInstancePaymentOption]
-    var ElasticsearchInstanceCount: js.UndefOr[Int]
     var CurrencyCode: js.UndefOr[String]
     var Duration: js.UndefOr[Int]
-    var FixedPrice: js.UndefOr[Double]
-    var RecurringCharges: js.UndefOr[RecurringChargeList]
-    var ReservedElasticsearchInstanceId: js.UndefOr[GUID]
-    var StartTime: js.UndefOr[UpdateTimestamp]
-    var UsagePrice: js.UndefOr[Double]
+    var ElasticsearchInstanceCount: js.UndefOr[Int]
     var ElasticsearchInstanceType: js.UndefOr[ESPartitionInstanceType]
-    var ReservedElasticsearchInstanceOfferingId: js.UndefOr[String]
+    var FixedPrice: js.UndefOr[Double]
+    var PaymentOption: js.UndefOr[ReservedElasticsearchInstancePaymentOption]
+    var RecurringCharges: js.UndefOr[RecurringChargeList]
     var ReservationName: js.UndefOr[ReservationToken]
+    var ReservedElasticsearchInstanceId: js.UndefOr[GUID]
+    var ReservedElasticsearchInstanceOfferingId: js.UndefOr[String]
+    var StartTime: js.UndefOr[UpdateTimestamp]
     var State: js.UndefOr[String]
+    var UsagePrice: js.UndefOr[Double]
   }
 
   object ReservedElasticsearchInstance {
     def apply(
-      PaymentOption: js.UndefOr[ReservedElasticsearchInstancePaymentOption] = js.undefined,
-      ElasticsearchInstanceCount: js.UndefOr[Int] = js.undefined,
       CurrencyCode: js.UndefOr[String] = js.undefined,
       Duration: js.UndefOr[Int] = js.undefined,
-      FixedPrice: js.UndefOr[Double] = js.undefined,
-      RecurringCharges: js.UndefOr[RecurringChargeList] = js.undefined,
-      ReservedElasticsearchInstanceId: js.UndefOr[GUID] = js.undefined,
-      StartTime: js.UndefOr[UpdateTimestamp] = js.undefined,
-      UsagePrice: js.UndefOr[Double] = js.undefined,
+      ElasticsearchInstanceCount: js.UndefOr[Int] = js.undefined,
       ElasticsearchInstanceType: js.UndefOr[ESPartitionInstanceType] = js.undefined,
-      ReservedElasticsearchInstanceOfferingId: js.UndefOr[String] = js.undefined,
+      FixedPrice: js.UndefOr[Double] = js.undefined,
+      PaymentOption: js.UndefOr[ReservedElasticsearchInstancePaymentOption] = js.undefined,
+      RecurringCharges: js.UndefOr[RecurringChargeList] = js.undefined,
       ReservationName: js.UndefOr[ReservationToken] = js.undefined,
-      State: js.UndefOr[String] = js.undefined): ReservedElasticsearchInstance = {
+      ReservedElasticsearchInstanceId: js.UndefOr[GUID] = js.undefined,
+      ReservedElasticsearchInstanceOfferingId: js.UndefOr[String] = js.undefined,
+      StartTime: js.UndefOr[UpdateTimestamp] = js.undefined,
+      State: js.UndefOr[String] = js.undefined,
+      UsagePrice: js.UndefOr[Double] = js.undefined): ReservedElasticsearchInstance = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "PaymentOption" -> PaymentOption.map { x => x.asInstanceOf[js.Any] },
-        "ElasticsearchInstanceCount" -> ElasticsearchInstanceCount.map { x => x.asInstanceOf[js.Any] },
         "CurrencyCode" -> CurrencyCode.map { x => x.asInstanceOf[js.Any] },
         "Duration" -> Duration.map { x => x.asInstanceOf[js.Any] },
-        "FixedPrice" -> FixedPrice.map { x => x.asInstanceOf[js.Any] },
-        "RecurringCharges" -> RecurringCharges.map { x => x.asInstanceOf[js.Any] },
-        "ReservedElasticsearchInstanceId" -> ReservedElasticsearchInstanceId.map { x => x.asInstanceOf[js.Any] },
-        "StartTime" -> StartTime.map { x => x.asInstanceOf[js.Any] },
-        "UsagePrice" -> UsagePrice.map { x => x.asInstanceOf[js.Any] },
+        "ElasticsearchInstanceCount" -> ElasticsearchInstanceCount.map { x => x.asInstanceOf[js.Any] },
         "ElasticsearchInstanceType" -> ElasticsearchInstanceType.map { x => x.asInstanceOf[js.Any] },
-        "ReservedElasticsearchInstanceOfferingId" -> ReservedElasticsearchInstanceOfferingId.map { x => x.asInstanceOf[js.Any] },
+        "FixedPrice" -> FixedPrice.map { x => x.asInstanceOf[js.Any] },
+        "PaymentOption" -> PaymentOption.map { x => x.asInstanceOf[js.Any] },
+        "RecurringCharges" -> RecurringCharges.map { x => x.asInstanceOf[js.Any] },
         "ReservationName" -> ReservationName.map { x => x.asInstanceOf[js.Any] },
-        "State" -> State.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ReservedElasticsearchInstanceId" -> ReservedElasticsearchInstanceId.map { x => x.asInstanceOf[js.Any] },
+        "ReservedElasticsearchInstanceOfferingId" -> ReservedElasticsearchInstanceOfferingId.map { x => x.asInstanceOf[js.Any] },
+        "StartTime" -> StartTime.map { x => x.asInstanceOf[js.Any] },
+        "State" -> State.map { x => x.asInstanceOf[js.Any] },
+        "UsagePrice" -> UsagePrice.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ReservedElasticsearchInstance]
     }
@@ -1601,35 +1601,35 @@ package es {
    */
   @js.native
   trait ReservedElasticsearchInstanceOffering extends js.Object {
-    var PaymentOption: js.UndefOr[ReservedElasticsearchInstancePaymentOption]
     var CurrencyCode: js.UndefOr[String]
     var Duration: js.UndefOr[Int]
-    var FixedPrice: js.UndefOr[Double]
-    var RecurringCharges: js.UndefOr[RecurringChargeList]
-    var UsagePrice: js.UndefOr[Double]
     var ElasticsearchInstanceType: js.UndefOr[ESPartitionInstanceType]
+    var FixedPrice: js.UndefOr[Double]
+    var PaymentOption: js.UndefOr[ReservedElasticsearchInstancePaymentOption]
+    var RecurringCharges: js.UndefOr[RecurringChargeList]
     var ReservedElasticsearchInstanceOfferingId: js.UndefOr[GUID]
+    var UsagePrice: js.UndefOr[Double]
   }
 
   object ReservedElasticsearchInstanceOffering {
     def apply(
-      PaymentOption: js.UndefOr[ReservedElasticsearchInstancePaymentOption] = js.undefined,
       CurrencyCode: js.UndefOr[String] = js.undefined,
       Duration: js.UndefOr[Int] = js.undefined,
-      FixedPrice: js.UndefOr[Double] = js.undefined,
-      RecurringCharges: js.UndefOr[RecurringChargeList] = js.undefined,
-      UsagePrice: js.UndefOr[Double] = js.undefined,
       ElasticsearchInstanceType: js.UndefOr[ESPartitionInstanceType] = js.undefined,
-      ReservedElasticsearchInstanceOfferingId: js.UndefOr[GUID] = js.undefined): ReservedElasticsearchInstanceOffering = {
+      FixedPrice: js.UndefOr[Double] = js.undefined,
+      PaymentOption: js.UndefOr[ReservedElasticsearchInstancePaymentOption] = js.undefined,
+      RecurringCharges: js.UndefOr[RecurringChargeList] = js.undefined,
+      ReservedElasticsearchInstanceOfferingId: js.UndefOr[GUID] = js.undefined,
+      UsagePrice: js.UndefOr[Double] = js.undefined): ReservedElasticsearchInstanceOffering = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "PaymentOption" -> PaymentOption.map { x => x.asInstanceOf[js.Any] },
         "CurrencyCode" -> CurrencyCode.map { x => x.asInstanceOf[js.Any] },
         "Duration" -> Duration.map { x => x.asInstanceOf[js.Any] },
-        "FixedPrice" -> FixedPrice.map { x => x.asInstanceOf[js.Any] },
-        "RecurringCharges" -> RecurringCharges.map { x => x.asInstanceOf[js.Any] },
-        "UsagePrice" -> UsagePrice.map { x => x.asInstanceOf[js.Any] },
         "ElasticsearchInstanceType" -> ElasticsearchInstanceType.map { x => x.asInstanceOf[js.Any] },
-        "ReservedElasticsearchInstanceOfferingId" -> ReservedElasticsearchInstanceOfferingId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "FixedPrice" -> FixedPrice.map { x => x.asInstanceOf[js.Any] },
+        "PaymentOption" -> PaymentOption.map { x => x.asInstanceOf[js.Any] },
+        "RecurringCharges" -> RecurringCharges.map { x => x.asInstanceOf[js.Any] },
+        "ReservedElasticsearchInstanceOfferingId" -> ReservedElasticsearchInstanceOfferingId.map { x => x.asInstanceOf[js.Any] },
+        "UsagePrice" -> UsagePrice.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ReservedElasticsearchInstanceOffering]
     }
@@ -1648,32 +1648,32 @@ package es {
    */
   @js.native
   trait ServiceSoftwareOptions extends js.Object {
-    var NewVersion: js.UndefOr[String]
-    var UpdateAvailable: js.UndefOr[Boolean]
-    var Description: js.UndefOr[String]
-    var UpdateStatus: js.UndefOr[DeploymentStatus]
+    var AutomatedUpdateDate: js.UndefOr[DeploymentCloseDateTimeStamp]
     var Cancellable: js.UndefOr[Boolean]
     var CurrentVersion: js.UndefOr[String]
-    var AutomatedUpdateDate: js.UndefOr[DeploymentCloseDateTimeStamp]
+    var Description: js.UndefOr[String]
+    var NewVersion: js.UndefOr[String]
+    var UpdateAvailable: js.UndefOr[Boolean]
+    var UpdateStatus: js.UndefOr[DeploymentStatus]
   }
 
   object ServiceSoftwareOptions {
     def apply(
-      NewVersion: js.UndefOr[String] = js.undefined,
-      UpdateAvailable: js.UndefOr[Boolean] = js.undefined,
-      Description: js.UndefOr[String] = js.undefined,
-      UpdateStatus: js.UndefOr[DeploymentStatus] = js.undefined,
+      AutomatedUpdateDate: js.UndefOr[DeploymentCloseDateTimeStamp] = js.undefined,
       Cancellable: js.UndefOr[Boolean] = js.undefined,
       CurrentVersion: js.UndefOr[String] = js.undefined,
-      AutomatedUpdateDate: js.UndefOr[DeploymentCloseDateTimeStamp] = js.undefined): ServiceSoftwareOptions = {
+      Description: js.UndefOr[String] = js.undefined,
+      NewVersion: js.UndefOr[String] = js.undefined,
+      UpdateAvailable: js.UndefOr[Boolean] = js.undefined,
+      UpdateStatus: js.UndefOr[DeploymentStatus] = js.undefined): ServiceSoftwareOptions = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "NewVersion" -> NewVersion.map { x => x.asInstanceOf[js.Any] },
-        "UpdateAvailable" -> UpdateAvailable.map { x => x.asInstanceOf[js.Any] },
-        "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
-        "UpdateStatus" -> UpdateStatus.map { x => x.asInstanceOf[js.Any] },
+        "AutomatedUpdateDate" -> AutomatedUpdateDate.map { x => x.asInstanceOf[js.Any] },
         "Cancellable" -> Cancellable.map { x => x.asInstanceOf[js.Any] },
         "CurrentVersion" -> CurrentVersion.map { x => x.asInstanceOf[js.Any] },
-        "AutomatedUpdateDate" -> AutomatedUpdateDate.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
+        "NewVersion" -> NewVersion.map { x => x.asInstanceOf[js.Any] },
+        "UpdateAvailable" -> UpdateAvailable.map { x => x.asInstanceOf[js.Any] },
+        "UpdateStatus" -> UpdateStatus.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ServiceSoftwareOptions]
     }
@@ -1702,17 +1702,17 @@ package es {
    */
   @js.native
   trait SnapshotOptionsStatus extends js.Object {
-    var Options: js.UndefOr[SnapshotOptions]
-    var Status: js.UndefOr[OptionStatus]
+    var Options: SnapshotOptions
+    var Status: OptionStatus
   }
 
   object SnapshotOptionsStatus {
     def apply(
-      Options: js.UndefOr[SnapshotOptions] = js.undefined,
-      Status: js.UndefOr[OptionStatus] = js.undefined): SnapshotOptionsStatus = {
+      Options: SnapshotOptions,
+      Status: OptionStatus): SnapshotOptionsStatus = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Options" -> Options.map { x => x.asInstanceOf[js.Any] },
-        "Status" -> Status.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Options" -> Options.asInstanceOf[js.Any],
+        "Status" -> Status.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SnapshotOptionsStatus]
     }
@@ -1723,14 +1723,14 @@ package es {
    */
   @js.native
   trait StartElasticsearchServiceSoftwareUpdateRequest extends js.Object {
-    var DomainName: js.UndefOr[DomainName]
+    var DomainName: DomainName
   }
 
   object StartElasticsearchServiceSoftwareUpdateRequest {
     def apply(
-      DomainName: js.UndefOr[DomainName] = js.undefined): StartElasticsearchServiceSoftwareUpdateRequest = {
+      DomainName: DomainName): StartElasticsearchServiceSoftwareUpdateRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "DomainName" -> DomainName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "DomainName" -> DomainName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StartElasticsearchServiceSoftwareUpdateRequest]
     }
@@ -1759,20 +1759,20 @@ package es {
    */
   @js.native
   trait StorageType extends js.Object {
-    var StorageTypeName: js.UndefOr[StorageTypeName]
     var StorageSubTypeName: js.UndefOr[StorageSubTypeName]
     var StorageTypeLimits: js.UndefOr[StorageTypeLimitList]
+    var StorageTypeName: js.UndefOr[StorageTypeName]
   }
 
   object StorageType {
     def apply(
-      StorageTypeName: js.UndefOr[StorageTypeName] = js.undefined,
       StorageSubTypeName: js.UndefOr[StorageSubTypeName] = js.undefined,
-      StorageTypeLimits: js.UndefOr[StorageTypeLimitList] = js.undefined): StorageType = {
+      StorageTypeLimits: js.UndefOr[StorageTypeLimitList] = js.undefined,
+      StorageTypeName: js.UndefOr[StorageTypeName] = js.undefined): StorageType = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "StorageTypeName" -> StorageTypeName.map { x => x.asInstanceOf[js.Any] },
         "StorageSubTypeName" -> StorageSubTypeName.map { x => x.asInstanceOf[js.Any] },
-        "StorageTypeLimits" -> StorageTypeLimits.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "StorageTypeLimits" -> StorageTypeLimits.map { x => x.asInstanceOf[js.Any] },
+        "StorageTypeName" -> StorageTypeName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StorageType]
     }
@@ -1804,17 +1804,17 @@ package es {
    */
   @js.native
   trait Tag extends js.Object {
-    var Key: js.UndefOr[TagKey]
-    var Value: js.UndefOr[TagValue]
+    var Key: TagKey
+    var Value: TagValue
   }
 
   object Tag {
     def apply(
-      Key: js.UndefOr[TagKey] = js.undefined,
-      Value: js.UndefOr[TagValue] = js.undefined): Tag = {
+      Key: TagKey,
+      Value: TagValue): Tag = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Key" -> Key.map { x => x.asInstanceOf[js.Any] },
-        "Value" -> Value.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Key" -> Key.asInstanceOf[js.Any],
+        "Value" -> Value.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Tag]
     }
@@ -1825,38 +1825,38 @@ package es {
    */
   @js.native
   trait UpdateElasticsearchDomainConfigRequest extends js.Object {
-    var VPCOptions: js.UndefOr[VPCOptions]
+    var DomainName: DomainName
     var AccessPolicies: js.UndefOr[PolicyDocument]
-    var ElasticsearchClusterConfig: js.UndefOr[ElasticsearchClusterConfig]
     var AdvancedOptions: js.UndefOr[AdvancedOptions]
-    var DomainName: js.UndefOr[DomainName]
-    var LogPublishingOptions: js.UndefOr[LogPublishingOptions]
-    var EBSOptions: js.UndefOr[EBSOptions]
-    var SnapshotOptions: js.UndefOr[SnapshotOptions]
     var CognitoOptions: js.UndefOr[CognitoOptions]
+    var EBSOptions: js.UndefOr[EBSOptions]
+    var ElasticsearchClusterConfig: js.UndefOr[ElasticsearchClusterConfig]
+    var LogPublishingOptions: js.UndefOr[LogPublishingOptions]
+    var SnapshotOptions: js.UndefOr[SnapshotOptions]
+    var VPCOptions: js.UndefOr[VPCOptions]
   }
 
   object UpdateElasticsearchDomainConfigRequest {
     def apply(
-      VPCOptions: js.UndefOr[VPCOptions] = js.undefined,
+      DomainName: DomainName,
       AccessPolicies: js.UndefOr[PolicyDocument] = js.undefined,
-      ElasticsearchClusterConfig: js.UndefOr[ElasticsearchClusterConfig] = js.undefined,
       AdvancedOptions: js.UndefOr[AdvancedOptions] = js.undefined,
-      DomainName: js.UndefOr[DomainName] = js.undefined,
-      LogPublishingOptions: js.UndefOr[LogPublishingOptions] = js.undefined,
+      CognitoOptions: js.UndefOr[CognitoOptions] = js.undefined,
       EBSOptions: js.UndefOr[EBSOptions] = js.undefined,
+      ElasticsearchClusterConfig: js.UndefOr[ElasticsearchClusterConfig] = js.undefined,
+      LogPublishingOptions: js.UndefOr[LogPublishingOptions] = js.undefined,
       SnapshotOptions: js.UndefOr[SnapshotOptions] = js.undefined,
-      CognitoOptions: js.UndefOr[CognitoOptions] = js.undefined): UpdateElasticsearchDomainConfigRequest = {
+      VPCOptions: js.UndefOr[VPCOptions] = js.undefined): UpdateElasticsearchDomainConfigRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "VPCOptions" -> VPCOptions.map { x => x.asInstanceOf[js.Any] },
+        "DomainName" -> DomainName.asInstanceOf[js.Any],
         "AccessPolicies" -> AccessPolicies.map { x => x.asInstanceOf[js.Any] },
-        "ElasticsearchClusterConfig" -> ElasticsearchClusterConfig.map { x => x.asInstanceOf[js.Any] },
         "AdvancedOptions" -> AdvancedOptions.map { x => x.asInstanceOf[js.Any] },
-        "DomainName" -> DomainName.map { x => x.asInstanceOf[js.Any] },
-        "LogPublishingOptions" -> LogPublishingOptions.map { x => x.asInstanceOf[js.Any] },
+        "CognitoOptions" -> CognitoOptions.map { x => x.asInstanceOf[js.Any] },
         "EBSOptions" -> EBSOptions.map { x => x.asInstanceOf[js.Any] },
+        "ElasticsearchClusterConfig" -> ElasticsearchClusterConfig.map { x => x.asInstanceOf[js.Any] },
+        "LogPublishingOptions" -> LogPublishingOptions.map { x => x.asInstanceOf[js.Any] },
         "SnapshotOptions" -> SnapshotOptions.map { x => x.asInstanceOf[js.Any] },
-        "CognitoOptions" -> CognitoOptions.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "VPCOptions" -> VPCOptions.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateElasticsearchDomainConfigRequest]
     }
@@ -1867,14 +1867,14 @@ package es {
    */
   @js.native
   trait UpdateElasticsearchDomainConfigResponse extends js.Object {
-    var DomainConfig: js.UndefOr[ElasticsearchDomainConfig]
+    var DomainConfig: ElasticsearchDomainConfig
   }
 
   object UpdateElasticsearchDomainConfigResponse {
     def apply(
-      DomainConfig: js.UndefOr[ElasticsearchDomainConfig] = js.undefined): UpdateElasticsearchDomainConfigResponse = {
+      DomainConfig: ElasticsearchDomainConfig): UpdateElasticsearchDomainConfigResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "DomainConfig" -> DomainConfig.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "DomainConfig" -> DomainConfig.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateElasticsearchDomainConfigResponse]
     }
@@ -1885,19 +1885,19 @@ package es {
    */
   @js.native
   trait UpgradeElasticsearchDomainRequest extends js.Object {
-    var DomainName: js.UndefOr[DomainName]
-    var TargetVersion: js.UndefOr[ElasticsearchVersionString]
+    var DomainName: DomainName
+    var TargetVersion: ElasticsearchVersionString
     var PerformCheckOnly: js.UndefOr[Boolean]
   }
 
   object UpgradeElasticsearchDomainRequest {
     def apply(
-      DomainName: js.UndefOr[DomainName] = js.undefined,
-      TargetVersion: js.UndefOr[ElasticsearchVersionString] = js.undefined,
+      DomainName: DomainName,
+      TargetVersion: ElasticsearchVersionString,
       PerformCheckOnly: js.UndefOr[Boolean] = js.undefined): UpgradeElasticsearchDomainRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "DomainName" -> DomainName.map { x => x.asInstanceOf[js.Any] },
-        "TargetVersion" -> TargetVersion.map { x => x.asInstanceOf[js.Any] },
+        "DomainName" -> DomainName.asInstanceOf[js.Any],
+        "TargetVersion" -> TargetVersion.asInstanceOf[js.Any],
         "PerformCheckOnly" -> PerformCheckOnly.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpgradeElasticsearchDomainRequest]
@@ -1910,19 +1910,19 @@ package es {
   @js.native
   trait UpgradeElasticsearchDomainResponse extends js.Object {
     var DomainName: js.UndefOr[DomainName]
-    var TargetVersion: js.UndefOr[ElasticsearchVersionString]
     var PerformCheckOnly: js.UndefOr[Boolean]
+    var TargetVersion: js.UndefOr[ElasticsearchVersionString]
   }
 
   object UpgradeElasticsearchDomainResponse {
     def apply(
       DomainName: js.UndefOr[DomainName] = js.undefined,
-      TargetVersion: js.UndefOr[ElasticsearchVersionString] = js.undefined,
-      PerformCheckOnly: js.UndefOr[Boolean] = js.undefined): UpgradeElasticsearchDomainResponse = {
+      PerformCheckOnly: js.UndefOr[Boolean] = js.undefined,
+      TargetVersion: js.UndefOr[ElasticsearchVersionString] = js.undefined): UpgradeElasticsearchDomainResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DomainName" -> DomainName.map { x => x.asInstanceOf[js.Any] },
-        "TargetVersion" -> TargetVersion.map { x => x.asInstanceOf[js.Any] },
-        "PerformCheckOnly" -> PerformCheckOnly.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "PerformCheckOnly" -> PerformCheckOnly.map { x => x.asInstanceOf[js.Any] },
+        "TargetVersion" -> TargetVersion.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpgradeElasticsearchDomainResponse]
     }
@@ -1933,23 +1933,23 @@ package es {
    */
   @js.native
   trait UpgradeHistory extends js.Object {
-    var UpgradeName: js.UndefOr[UpgradeName]
     var StartTimestamp: js.UndefOr[StartTimestamp]
-    var UpgradeStatus: js.UndefOr[UpgradeStatus]
     var StepsList: js.UndefOr[UpgradeStepsList]
+    var UpgradeName: js.UndefOr[UpgradeName]
+    var UpgradeStatus: js.UndefOr[UpgradeStatus]
   }
 
   object UpgradeHistory {
     def apply(
-      UpgradeName: js.UndefOr[UpgradeName] = js.undefined,
       StartTimestamp: js.UndefOr[StartTimestamp] = js.undefined,
-      UpgradeStatus: js.UndefOr[UpgradeStatus] = js.undefined,
-      StepsList: js.UndefOr[UpgradeStepsList] = js.undefined): UpgradeHistory = {
+      StepsList: js.UndefOr[UpgradeStepsList] = js.undefined,
+      UpgradeName: js.UndefOr[UpgradeName] = js.undefined,
+      UpgradeStatus: js.UndefOr[UpgradeStatus] = js.undefined): UpgradeHistory = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "UpgradeName" -> UpgradeName.map { x => x.asInstanceOf[js.Any] },
         "StartTimestamp" -> StartTimestamp.map { x => x.asInstanceOf[js.Any] },
-        "UpgradeStatus" -> UpgradeStatus.map { x => x.asInstanceOf[js.Any] },
-        "StepsList" -> StepsList.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "StepsList" -> StepsList.map { x => x.asInstanceOf[js.Any] },
+        "UpgradeName" -> UpgradeName.map { x => x.asInstanceOf[js.Any] },
+        "UpgradeStatus" -> UpgradeStatus.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpgradeHistory]
     }
@@ -1977,23 +1977,23 @@ package es {
    */
   @js.native
   trait UpgradeStepItem extends js.Object {
-    var UpgradeStep: js.UndefOr[UpgradeStep]
-    var UpgradeStepStatus: js.UndefOr[UpgradeStatus]
     var Issues: js.UndefOr[Issues]
     var ProgressPercent: js.UndefOr[Double]
+    var UpgradeStep: js.UndefOr[UpgradeStep]
+    var UpgradeStepStatus: js.UndefOr[UpgradeStatus]
   }
 
   object UpgradeStepItem {
     def apply(
-      UpgradeStep: js.UndefOr[UpgradeStep] = js.undefined,
-      UpgradeStepStatus: js.UndefOr[UpgradeStatus] = js.undefined,
       Issues: js.UndefOr[Issues] = js.undefined,
-      ProgressPercent: js.UndefOr[Double] = js.undefined): UpgradeStepItem = {
+      ProgressPercent: js.UndefOr[Double] = js.undefined,
+      UpgradeStep: js.UndefOr[UpgradeStep] = js.undefined,
+      UpgradeStepStatus: js.UndefOr[UpgradeStatus] = js.undefined): UpgradeStepItem = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "UpgradeStep" -> UpgradeStep.map { x => x.asInstanceOf[js.Any] },
-        "UpgradeStepStatus" -> UpgradeStepStatus.map { x => x.asInstanceOf[js.Any] },
         "Issues" -> Issues.map { x => x.asInstanceOf[js.Any] },
-        "ProgressPercent" -> ProgressPercent.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ProgressPercent" -> ProgressPercent.map { x => x.asInstanceOf[js.Any] },
+        "UpgradeStep" -> UpgradeStep.map { x => x.asInstanceOf[js.Any] },
+        "UpgradeStepStatus" -> UpgradeStepStatus.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpgradeStepItem]
     }
@@ -2004,23 +2004,23 @@ package es {
    */
   @js.native
   trait VPCDerivedInfo extends js.Object {
-    var VPCId: js.UndefOr[String]
-    var SubnetIds: js.UndefOr[StringList]
     var AvailabilityZones: js.UndefOr[StringList]
     var SecurityGroupIds: js.UndefOr[StringList]
+    var SubnetIds: js.UndefOr[StringList]
+    var VPCId: js.UndefOr[String]
   }
 
   object VPCDerivedInfo {
     def apply(
-      VPCId: js.UndefOr[String] = js.undefined,
-      SubnetIds: js.UndefOr[StringList] = js.undefined,
       AvailabilityZones: js.UndefOr[StringList] = js.undefined,
-      SecurityGroupIds: js.UndefOr[StringList] = js.undefined): VPCDerivedInfo = {
+      SecurityGroupIds: js.UndefOr[StringList] = js.undefined,
+      SubnetIds: js.UndefOr[StringList] = js.undefined,
+      VPCId: js.UndefOr[String] = js.undefined): VPCDerivedInfo = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "VPCId" -> VPCId.map { x => x.asInstanceOf[js.Any] },
-        "SubnetIds" -> SubnetIds.map { x => x.asInstanceOf[js.Any] },
         "AvailabilityZones" -> AvailabilityZones.map { x => x.asInstanceOf[js.Any] },
-        "SecurityGroupIds" -> SecurityGroupIds.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "SecurityGroupIds" -> SecurityGroupIds.map { x => x.asInstanceOf[js.Any] },
+        "SubnetIds" -> SubnetIds.map { x => x.asInstanceOf[js.Any] },
+        "VPCId" -> VPCId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[VPCDerivedInfo]
     }
@@ -2031,17 +2031,17 @@ package es {
    */
   @js.native
   trait VPCDerivedInfoStatus extends js.Object {
-    var Options: js.UndefOr[VPCDerivedInfo]
-    var Status: js.UndefOr[OptionStatus]
+    var Options: VPCDerivedInfo
+    var Status: OptionStatus
   }
 
   object VPCDerivedInfoStatus {
     def apply(
-      Options: js.UndefOr[VPCDerivedInfo] = js.undefined,
-      Status: js.UndefOr[OptionStatus] = js.undefined): VPCDerivedInfoStatus = {
+      Options: VPCDerivedInfo,
+      Status: OptionStatus): VPCDerivedInfoStatus = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Options" -> Options.map { x => x.asInstanceOf[js.Any] },
-        "Status" -> Status.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Options" -> Options.asInstanceOf[js.Any],
+        "Status" -> Status.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[VPCDerivedInfoStatus]
     }
@@ -2052,17 +2052,17 @@ package es {
    */
   @js.native
   trait VPCOptions extends js.Object {
-    var SubnetIds: js.UndefOr[StringList]
     var SecurityGroupIds: js.UndefOr[StringList]
+    var SubnetIds: js.UndefOr[StringList]
   }
 
   object VPCOptions {
     def apply(
-      SubnetIds: js.UndefOr[StringList] = js.undefined,
-      SecurityGroupIds: js.UndefOr[StringList] = js.undefined): VPCOptions = {
+      SecurityGroupIds: js.UndefOr[StringList] = js.undefined,
+      SubnetIds: js.UndefOr[StringList] = js.undefined): VPCOptions = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "SubnetIds" -> SubnetIds.map { x => x.asInstanceOf[js.Any] },
-        "SecurityGroupIds" -> SecurityGroupIds.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "SecurityGroupIds" -> SecurityGroupIds.map { x => x.asInstanceOf[js.Any] },
+        "SubnetIds" -> SubnetIds.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[VPCOptions]
     }

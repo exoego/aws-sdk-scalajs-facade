@@ -61,32 +61,32 @@ package marketplacecommerceanalytics {
    */
   @js.native
   trait GenerateDataSetRequest extends js.Object {
-    var destinationS3BucketName: js.UndefOr[DestinationS3BucketName]
-    var dataSetType: js.UndefOr[DataSetType]
+    var dataSetPublicationDate: DataSetPublicationDate
+    var dataSetType: DataSetType
+    var destinationS3BucketName: DestinationS3BucketName
+    var roleNameArn: RoleNameArn
+    var snsTopicArn: SnsTopicArn
     var customerDefinedValues: js.UndefOr[CustomerDefinedValues]
-    var dataSetPublicationDate: js.UndefOr[DataSetPublicationDate]
-    var roleNameArn: js.UndefOr[RoleNameArn]
     var destinationS3Prefix: js.UndefOr[DestinationS3Prefix]
-    var snsTopicArn: js.UndefOr[SnsTopicArn]
   }
 
   object GenerateDataSetRequest {
     def apply(
-      destinationS3BucketName: js.UndefOr[DestinationS3BucketName] = js.undefined,
-      dataSetType: js.UndefOr[DataSetType] = js.undefined,
+      dataSetPublicationDate: DataSetPublicationDate,
+      dataSetType: DataSetType,
+      destinationS3BucketName: DestinationS3BucketName,
+      roleNameArn: RoleNameArn,
+      snsTopicArn: SnsTopicArn,
       customerDefinedValues: js.UndefOr[CustomerDefinedValues] = js.undefined,
-      dataSetPublicationDate: js.UndefOr[DataSetPublicationDate] = js.undefined,
-      roleNameArn: js.UndefOr[RoleNameArn] = js.undefined,
-      destinationS3Prefix: js.UndefOr[DestinationS3Prefix] = js.undefined,
-      snsTopicArn: js.UndefOr[SnsTopicArn] = js.undefined): GenerateDataSetRequest = {
+      destinationS3Prefix: js.UndefOr[DestinationS3Prefix] = js.undefined): GenerateDataSetRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "destinationS3BucketName" -> destinationS3BucketName.map { x => x.asInstanceOf[js.Any] },
-        "dataSetType" -> dataSetType.map { x => x.asInstanceOf[js.Any] },
+        "dataSetPublicationDate" -> dataSetPublicationDate.asInstanceOf[js.Any],
+        "dataSetType" -> dataSetType.asInstanceOf[js.Any],
+        "destinationS3BucketName" -> destinationS3BucketName.asInstanceOf[js.Any],
+        "roleNameArn" -> roleNameArn.asInstanceOf[js.Any],
+        "snsTopicArn" -> snsTopicArn.asInstanceOf[js.Any],
         "customerDefinedValues" -> customerDefinedValues.map { x => x.asInstanceOf[js.Any] },
-        "dataSetPublicationDate" -> dataSetPublicationDate.map { x => x.asInstanceOf[js.Any] },
-        "roleNameArn" -> roleNameArn.map { x => x.asInstanceOf[js.Any] },
-        "destinationS3Prefix" -> destinationS3Prefix.map { x => x.asInstanceOf[js.Any] },
-        "snsTopicArn" -> snsTopicArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "destinationS3Prefix" -> destinationS3Prefix.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GenerateDataSetRequest]
     }
@@ -123,32 +123,32 @@ package marketplacecommerceanalytics {
    */
   @js.native
   trait StartSupportDataExportRequest extends js.Object {
-    var destinationS3BucketName: js.UndefOr[DestinationS3BucketName]
-    var dataSetType: js.UndefOr[SupportDataSetType]
+    var dataSetType: SupportDataSetType
+    var destinationS3BucketName: DestinationS3BucketName
+    var fromDate: FromDate
+    var roleNameArn: RoleNameArn
+    var snsTopicArn: SnsTopicArn
     var customerDefinedValues: js.UndefOr[CustomerDefinedValues]
-    var fromDate: js.UndefOr[FromDate]
-    var roleNameArn: js.UndefOr[RoleNameArn]
     var destinationS3Prefix: js.UndefOr[DestinationS3Prefix]
-    var snsTopicArn: js.UndefOr[SnsTopicArn]
   }
 
   object StartSupportDataExportRequest {
     def apply(
-      destinationS3BucketName: js.UndefOr[DestinationS3BucketName] = js.undefined,
-      dataSetType: js.UndefOr[SupportDataSetType] = js.undefined,
+      dataSetType: SupportDataSetType,
+      destinationS3BucketName: DestinationS3BucketName,
+      fromDate: FromDate,
+      roleNameArn: RoleNameArn,
+      snsTopicArn: SnsTopicArn,
       customerDefinedValues: js.UndefOr[CustomerDefinedValues] = js.undefined,
-      fromDate: js.UndefOr[FromDate] = js.undefined,
-      roleNameArn: js.UndefOr[RoleNameArn] = js.undefined,
-      destinationS3Prefix: js.UndefOr[DestinationS3Prefix] = js.undefined,
-      snsTopicArn: js.UndefOr[SnsTopicArn] = js.undefined): StartSupportDataExportRequest = {
+      destinationS3Prefix: js.UndefOr[DestinationS3Prefix] = js.undefined): StartSupportDataExportRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "destinationS3BucketName" -> destinationS3BucketName.map { x => x.asInstanceOf[js.Any] },
-        "dataSetType" -> dataSetType.map { x => x.asInstanceOf[js.Any] },
+        "dataSetType" -> dataSetType.asInstanceOf[js.Any],
+        "destinationS3BucketName" -> destinationS3BucketName.asInstanceOf[js.Any],
+        "fromDate" -> fromDate.asInstanceOf[js.Any],
+        "roleNameArn" -> roleNameArn.asInstanceOf[js.Any],
+        "snsTopicArn" -> snsTopicArn.asInstanceOf[js.Any],
         "customerDefinedValues" -> customerDefinedValues.map { x => x.asInstanceOf[js.Any] },
-        "fromDate" -> fromDate.map { x => x.asInstanceOf[js.Any] },
-        "roleNameArn" -> roleNameArn.map { x => x.asInstanceOf[js.Any] },
-        "destinationS3Prefix" -> destinationS3Prefix.map { x => x.asInstanceOf[js.Any] },
-        "snsTopicArn" -> snsTopicArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "destinationS3Prefix" -> destinationS3Prefix.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StartSupportDataExportRequest]
     }

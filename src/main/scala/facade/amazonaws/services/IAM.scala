@@ -281,26 +281,26 @@ package iam {
    */
   @js.native
   trait AccessKey extends js.Object {
-    var SecretAccessKey: js.UndefOr[accessKeySecretType]
-    var UserName: js.UndefOr[userNameType]
-    var AccessKeyId: js.UndefOr[accessKeyIdType]
+    var AccessKeyId: accessKeyIdType
+    var SecretAccessKey: accessKeySecretType
+    var Status: statusType
+    var UserName: userNameType
     var CreateDate: js.UndefOr[dateType]
-    var Status: js.UndefOr[statusType]
   }
 
   object AccessKey {
     def apply(
-      SecretAccessKey: js.UndefOr[accessKeySecretType] = js.undefined,
-      UserName: js.UndefOr[userNameType] = js.undefined,
-      AccessKeyId: js.UndefOr[accessKeyIdType] = js.undefined,
-      CreateDate: js.UndefOr[dateType] = js.undefined,
-      Status: js.UndefOr[statusType] = js.undefined): AccessKey = {
+      AccessKeyId: accessKeyIdType,
+      SecretAccessKey: accessKeySecretType,
+      Status: statusType,
+      UserName: userNameType,
+      CreateDate: js.UndefOr[dateType] = js.undefined): AccessKey = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "SecretAccessKey" -> SecretAccessKey.map { x => x.asInstanceOf[js.Any] },
-        "UserName" -> UserName.map { x => x.asInstanceOf[js.Any] },
-        "AccessKeyId" -> AccessKeyId.map { x => x.asInstanceOf[js.Any] },
-        "CreateDate" -> CreateDate.map { x => x.asInstanceOf[js.Any] },
-        "Status" -> Status.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "AccessKeyId" -> AccessKeyId.asInstanceOf[js.Any],
+        "SecretAccessKey" -> SecretAccessKey.asInstanceOf[js.Any],
+        "Status" -> Status.asInstanceOf[js.Any],
+        "UserName" -> UserName.asInstanceOf[js.Any],
+        "CreateDate" -> CreateDate.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AccessKey]
     }
@@ -311,20 +311,20 @@ package iam {
    */
   @js.native
   trait AccessKeyLastUsed extends js.Object {
-    var LastUsedDate: js.UndefOr[dateType]
-    var ServiceName: js.UndefOr[stringType]
-    var Region: js.UndefOr[stringType]
+    var LastUsedDate: dateType
+    var Region: stringType
+    var ServiceName: stringType
   }
 
   object AccessKeyLastUsed {
     def apply(
-      LastUsedDate: js.UndefOr[dateType] = js.undefined,
-      ServiceName: js.UndefOr[stringType] = js.undefined,
-      Region: js.UndefOr[stringType] = js.undefined): AccessKeyLastUsed = {
+      LastUsedDate: dateType,
+      Region: stringType,
+      ServiceName: stringType): AccessKeyLastUsed = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "LastUsedDate" -> LastUsedDate.map { x => x.asInstanceOf[js.Any] },
-        "ServiceName" -> ServiceName.map { x => x.asInstanceOf[js.Any] },
-        "Region" -> Region.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "LastUsedDate" -> LastUsedDate.asInstanceOf[js.Any],
+        "Region" -> Region.asInstanceOf[js.Any],
+        "ServiceName" -> ServiceName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AccessKeyLastUsed]
     }
@@ -335,23 +335,23 @@ package iam {
    */
   @js.native
   trait AccessKeyMetadata extends js.Object {
-    var UserName: js.UndefOr[userNameType]
     var AccessKeyId: js.UndefOr[accessKeyIdType]
-    var Status: js.UndefOr[statusType]
     var CreateDate: js.UndefOr[dateType]
+    var Status: js.UndefOr[statusType]
+    var UserName: js.UndefOr[userNameType]
   }
 
   object AccessKeyMetadata {
     def apply(
-      UserName: js.UndefOr[userNameType] = js.undefined,
       AccessKeyId: js.UndefOr[accessKeyIdType] = js.undefined,
+      CreateDate: js.UndefOr[dateType] = js.undefined,
       Status: js.UndefOr[statusType] = js.undefined,
-      CreateDate: js.UndefOr[dateType] = js.undefined): AccessKeyMetadata = {
+      UserName: js.UndefOr[userNameType] = js.undefined): AccessKeyMetadata = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "UserName" -> UserName.map { x => x.asInstanceOf[js.Any] },
         "AccessKeyId" -> AccessKeyId.map { x => x.asInstanceOf[js.Any] },
+        "CreateDate" -> CreateDate.map { x => x.asInstanceOf[js.Any] },
         "Status" -> Status.map { x => x.asInstanceOf[js.Any] },
-        "CreateDate" -> CreateDate.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "UserName" -> UserName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AccessKeyMetadata]
     }
@@ -359,17 +359,17 @@ package iam {
 
   @js.native
   trait AddClientIDToOpenIDConnectProviderRequest extends js.Object {
-    var OpenIDConnectProviderArn: js.UndefOr[arnType]
-    var ClientID: js.UndefOr[clientIDType]
+    var ClientID: clientIDType
+    var OpenIDConnectProviderArn: arnType
   }
 
   object AddClientIDToOpenIDConnectProviderRequest {
     def apply(
-      OpenIDConnectProviderArn: js.UndefOr[arnType] = js.undefined,
-      ClientID: js.UndefOr[clientIDType] = js.undefined): AddClientIDToOpenIDConnectProviderRequest = {
+      ClientID: clientIDType,
+      OpenIDConnectProviderArn: arnType): AddClientIDToOpenIDConnectProviderRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "OpenIDConnectProviderArn" -> OpenIDConnectProviderArn.map { x => x.asInstanceOf[js.Any] },
-        "ClientID" -> ClientID.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ClientID" -> ClientID.asInstanceOf[js.Any],
+        "OpenIDConnectProviderArn" -> OpenIDConnectProviderArn.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AddClientIDToOpenIDConnectProviderRequest]
     }
@@ -377,17 +377,17 @@ package iam {
 
   @js.native
   trait AddRoleToInstanceProfileRequest extends js.Object {
-    var InstanceProfileName: js.UndefOr[instanceProfileNameType]
-    var RoleName: js.UndefOr[roleNameType]
+    var InstanceProfileName: instanceProfileNameType
+    var RoleName: roleNameType
   }
 
   object AddRoleToInstanceProfileRequest {
     def apply(
-      InstanceProfileName: js.UndefOr[instanceProfileNameType] = js.undefined,
-      RoleName: js.UndefOr[roleNameType] = js.undefined): AddRoleToInstanceProfileRequest = {
+      InstanceProfileName: instanceProfileNameType,
+      RoleName: roleNameType): AddRoleToInstanceProfileRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "InstanceProfileName" -> InstanceProfileName.map { x => x.asInstanceOf[js.Any] },
-        "RoleName" -> RoleName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "InstanceProfileName" -> InstanceProfileName.asInstanceOf[js.Any],
+        "RoleName" -> RoleName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AddRoleToInstanceProfileRequest]
     }
@@ -395,17 +395,17 @@ package iam {
 
   @js.native
   trait AddUserToGroupRequest extends js.Object {
-    var GroupName: js.UndefOr[groupNameType]
-    var UserName: js.UndefOr[existingUserNameType]
+    var GroupName: groupNameType
+    var UserName: existingUserNameType
   }
 
   object AddUserToGroupRequest {
     def apply(
-      GroupName: js.UndefOr[groupNameType] = js.undefined,
-      UserName: js.UndefOr[existingUserNameType] = js.undefined): AddUserToGroupRequest = {
+      GroupName: groupNameType,
+      UserName: existingUserNameType): AddUserToGroupRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "GroupName" -> GroupName.map { x => x.asInstanceOf[js.Any] },
-        "UserName" -> UserName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "GroupName" -> GroupName.asInstanceOf[js.Any],
+        "UserName" -> UserName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AddUserToGroupRequest]
     }
@@ -413,17 +413,17 @@ package iam {
 
   @js.native
   trait AttachGroupPolicyRequest extends js.Object {
-    var GroupName: js.UndefOr[groupNameType]
-    var PolicyArn: js.UndefOr[arnType]
+    var GroupName: groupNameType
+    var PolicyArn: arnType
   }
 
   object AttachGroupPolicyRequest {
     def apply(
-      GroupName: js.UndefOr[groupNameType] = js.undefined,
-      PolicyArn: js.UndefOr[arnType] = js.undefined): AttachGroupPolicyRequest = {
+      GroupName: groupNameType,
+      PolicyArn: arnType): AttachGroupPolicyRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "GroupName" -> GroupName.map { x => x.asInstanceOf[js.Any] },
-        "PolicyArn" -> PolicyArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "GroupName" -> GroupName.asInstanceOf[js.Any],
+        "PolicyArn" -> PolicyArn.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AttachGroupPolicyRequest]
     }
@@ -431,17 +431,17 @@ package iam {
 
   @js.native
   trait AttachRolePolicyRequest extends js.Object {
-    var RoleName: js.UndefOr[roleNameType]
-    var PolicyArn: js.UndefOr[arnType]
+    var PolicyArn: arnType
+    var RoleName: roleNameType
   }
 
   object AttachRolePolicyRequest {
     def apply(
-      RoleName: js.UndefOr[roleNameType] = js.undefined,
-      PolicyArn: js.UndefOr[arnType] = js.undefined): AttachRolePolicyRequest = {
+      PolicyArn: arnType,
+      RoleName: roleNameType): AttachRolePolicyRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "RoleName" -> RoleName.map { x => x.asInstanceOf[js.Any] },
-        "PolicyArn" -> PolicyArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "PolicyArn" -> PolicyArn.asInstanceOf[js.Any],
+        "RoleName" -> RoleName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AttachRolePolicyRequest]
     }
@@ -449,17 +449,17 @@ package iam {
 
   @js.native
   trait AttachUserPolicyRequest extends js.Object {
-    var UserName: js.UndefOr[userNameType]
-    var PolicyArn: js.UndefOr[arnType]
+    var PolicyArn: arnType
+    var UserName: userNameType
   }
 
   object AttachUserPolicyRequest {
     def apply(
-      UserName: js.UndefOr[userNameType] = js.undefined,
-      PolicyArn: js.UndefOr[arnType] = js.undefined): AttachUserPolicyRequest = {
+      PolicyArn: arnType,
+      UserName: userNameType): AttachUserPolicyRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "UserName" -> UserName.map { x => x.asInstanceOf[js.Any] },
-        "PolicyArn" -> PolicyArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "PolicyArn" -> PolicyArn.asInstanceOf[js.Any],
+        "UserName" -> UserName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AttachUserPolicyRequest]
     }
@@ -470,17 +470,17 @@ package iam {
    */
   @js.native
   trait AttachedPermissionsBoundary extends js.Object {
-    var PermissionsBoundaryType: js.UndefOr[PermissionsBoundaryAttachmentType]
     var PermissionsBoundaryArn: js.UndefOr[arnType]
+    var PermissionsBoundaryType: js.UndefOr[PermissionsBoundaryAttachmentType]
   }
 
   object AttachedPermissionsBoundary {
     def apply(
-      PermissionsBoundaryType: js.UndefOr[PermissionsBoundaryAttachmentType] = js.undefined,
-      PermissionsBoundaryArn: js.UndefOr[arnType] = js.undefined): AttachedPermissionsBoundary = {
+      PermissionsBoundaryArn: js.UndefOr[arnType] = js.undefined,
+      PermissionsBoundaryType: js.UndefOr[PermissionsBoundaryAttachmentType] = js.undefined): AttachedPermissionsBoundary = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "PermissionsBoundaryType" -> PermissionsBoundaryType.map { x => x.asInstanceOf[js.Any] },
-        "PermissionsBoundaryArn" -> PermissionsBoundaryArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "PermissionsBoundaryArn" -> PermissionsBoundaryArn.map { x => x.asInstanceOf[js.Any] },
+        "PermissionsBoundaryType" -> PermissionsBoundaryType.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AttachedPermissionsBoundary]
     }
@@ -491,17 +491,17 @@ package iam {
    */
   @js.native
   trait AttachedPolicy extends js.Object {
-    var PolicyName: js.UndefOr[policyNameType]
     var PolicyArn: js.UndefOr[arnType]
+    var PolicyName: js.UndefOr[policyNameType]
   }
 
   object AttachedPolicy {
     def apply(
-      PolicyName: js.UndefOr[policyNameType] = js.undefined,
-      PolicyArn: js.UndefOr[arnType] = js.undefined): AttachedPolicy = {
+      PolicyArn: js.UndefOr[arnType] = js.undefined,
+      PolicyName: js.UndefOr[policyNameType] = js.undefined): AttachedPolicy = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "PolicyName" -> PolicyName.map { x => x.asInstanceOf[js.Any] },
-        "PolicyArn" -> PolicyArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "PolicyArn" -> PolicyArn.map { x => x.asInstanceOf[js.Any] },
+        "PolicyName" -> PolicyName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AttachedPolicy]
     }
@@ -509,17 +509,17 @@ package iam {
 
   @js.native
   trait ChangePasswordRequest extends js.Object {
-    var OldPassword: js.UndefOr[passwordType]
-    var NewPassword: js.UndefOr[passwordType]
+    var NewPassword: passwordType
+    var OldPassword: passwordType
   }
 
   object ChangePasswordRequest {
     def apply(
-      OldPassword: js.UndefOr[passwordType] = js.undefined,
-      NewPassword: js.UndefOr[passwordType] = js.undefined): ChangePasswordRequest = {
+      NewPassword: passwordType,
+      OldPassword: passwordType): ChangePasswordRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "OldPassword" -> OldPassword.map { x => x.asInstanceOf[js.Any] },
-        "NewPassword" -> NewPassword.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "NewPassword" -> NewPassword.asInstanceOf[js.Any],
+        "OldPassword" -> OldPassword.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ChangePasswordRequest]
     }
@@ -531,19 +531,19 @@ package iam {
   @js.native
   trait ContextEntry extends js.Object {
     var ContextKeyName: js.UndefOr[ContextKeyNameType]
-    var ContextKeyValues: js.UndefOr[ContextKeyValueListType]
     var ContextKeyType: js.UndefOr[ContextKeyTypeEnum]
+    var ContextKeyValues: js.UndefOr[ContextKeyValueListType]
   }
 
   object ContextEntry {
     def apply(
       ContextKeyName: js.UndefOr[ContextKeyNameType] = js.undefined,
-      ContextKeyValues: js.UndefOr[ContextKeyValueListType] = js.undefined,
-      ContextKeyType: js.UndefOr[ContextKeyTypeEnum] = js.undefined): ContextEntry = {
+      ContextKeyType: js.UndefOr[ContextKeyTypeEnum] = js.undefined,
+      ContextKeyValues: js.UndefOr[ContextKeyValueListType] = js.undefined): ContextEntry = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ContextKeyName" -> ContextKeyName.map { x => x.asInstanceOf[js.Any] },
-        "ContextKeyValues" -> ContextKeyValues.map { x => x.asInstanceOf[js.Any] },
-        "ContextKeyType" -> ContextKeyType.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ContextKeyType" -> ContextKeyType.map { x => x.asInstanceOf[js.Any] },
+        "ContextKeyValues" -> ContextKeyValues.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ContextEntry]
     }
@@ -586,14 +586,14 @@ package iam {
    */
   @js.native
   trait CreateAccessKeyResponse extends js.Object {
-    var AccessKey: js.UndefOr[AccessKey]
+    var AccessKey: AccessKey
   }
 
   object CreateAccessKeyResponse {
     def apply(
-      AccessKey: js.UndefOr[AccessKey] = js.undefined): CreateAccessKeyResponse = {
+      AccessKey: AccessKey): CreateAccessKeyResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "AccessKey" -> AccessKey.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "AccessKey" -> AccessKey.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateAccessKeyResponse]
     }
@@ -601,14 +601,14 @@ package iam {
 
   @js.native
   trait CreateAccountAliasRequest extends js.Object {
-    var AccountAlias: js.UndefOr[accountAliasType]
+    var AccountAlias: accountAliasType
   }
 
   object CreateAccountAliasRequest {
     def apply(
-      AccountAlias: js.UndefOr[accountAliasType] = js.undefined): CreateAccountAliasRequest = {
+      AccountAlias: accountAliasType): CreateAccountAliasRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "AccountAlias" -> AccountAlias.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "AccountAlias" -> AccountAlias.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateAccountAliasRequest]
     }
@@ -616,17 +616,17 @@ package iam {
 
   @js.native
   trait CreateGroupRequest extends js.Object {
+    var GroupName: groupNameType
     var Path: js.UndefOr[pathType]
-    var GroupName: js.UndefOr[groupNameType]
   }
 
   object CreateGroupRequest {
     def apply(
-      Path: js.UndefOr[pathType] = js.undefined,
-      GroupName: js.UndefOr[groupNameType] = js.undefined): CreateGroupRequest = {
+      GroupName: groupNameType,
+      Path: js.UndefOr[pathType] = js.undefined): CreateGroupRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Path" -> Path.map { x => x.asInstanceOf[js.Any] },
-        "GroupName" -> GroupName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "GroupName" -> GroupName.asInstanceOf[js.Any],
+        "Path" -> Path.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateGroupRequest]
     }
@@ -637,14 +637,14 @@ package iam {
    */
   @js.native
   trait CreateGroupResponse extends js.Object {
-    var Group: js.UndefOr[Group]
+    var Group: Group
   }
 
   object CreateGroupResponse {
     def apply(
-      Group: js.UndefOr[Group] = js.undefined): CreateGroupResponse = {
+      Group: Group): CreateGroupResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Group" -> Group.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Group" -> Group.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateGroupResponse]
     }
@@ -652,16 +652,16 @@ package iam {
 
   @js.native
   trait CreateInstanceProfileRequest extends js.Object {
-    var InstanceProfileName: js.UndefOr[instanceProfileNameType]
+    var InstanceProfileName: instanceProfileNameType
     var Path: js.UndefOr[pathType]
   }
 
   object CreateInstanceProfileRequest {
     def apply(
-      InstanceProfileName: js.UndefOr[instanceProfileNameType] = js.undefined,
+      InstanceProfileName: instanceProfileNameType,
       Path: js.UndefOr[pathType] = js.undefined): CreateInstanceProfileRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "InstanceProfileName" -> InstanceProfileName.map { x => x.asInstanceOf[js.Any] },
+        "InstanceProfileName" -> InstanceProfileName.asInstanceOf[js.Any],
         "Path" -> Path.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateInstanceProfileRequest]
@@ -673,14 +673,14 @@ package iam {
    */
   @js.native
   trait CreateInstanceProfileResponse extends js.Object {
-    var InstanceProfile: js.UndefOr[InstanceProfile]
+    var InstanceProfile: InstanceProfile
   }
 
   object CreateInstanceProfileResponse {
     def apply(
-      InstanceProfile: js.UndefOr[InstanceProfile] = js.undefined): CreateInstanceProfileResponse = {
+      InstanceProfile: InstanceProfile): CreateInstanceProfileResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "InstanceProfile" -> InstanceProfile.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "InstanceProfile" -> InstanceProfile.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateInstanceProfileResponse]
     }
@@ -688,19 +688,19 @@ package iam {
 
   @js.native
   trait CreateLoginProfileRequest extends js.Object {
-    var UserName: js.UndefOr[userNameType]
-    var Password: js.UndefOr[passwordType]
+    var Password: passwordType
+    var UserName: userNameType
     var PasswordResetRequired: js.UndefOr[booleanType]
   }
 
   object CreateLoginProfileRequest {
     def apply(
-      UserName: js.UndefOr[userNameType] = js.undefined,
-      Password: js.UndefOr[passwordType] = js.undefined,
+      Password: passwordType,
+      UserName: userNameType,
       PasswordResetRequired: js.UndefOr[booleanType] = js.undefined): CreateLoginProfileRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "UserName" -> UserName.map { x => x.asInstanceOf[js.Any] },
-        "Password" -> Password.map { x => x.asInstanceOf[js.Any] },
+        "Password" -> Password.asInstanceOf[js.Any],
+        "UserName" -> UserName.asInstanceOf[js.Any],
         "PasswordResetRequired" -> PasswordResetRequired.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateLoginProfileRequest]
@@ -712,14 +712,14 @@ package iam {
    */
   @js.native
   trait CreateLoginProfileResponse extends js.Object {
-    var LoginProfile: js.UndefOr[LoginProfile]
+    var LoginProfile: LoginProfile
   }
 
   object CreateLoginProfileResponse {
     def apply(
-      LoginProfile: js.UndefOr[LoginProfile] = js.undefined): CreateLoginProfileResponse = {
+      LoginProfile: LoginProfile): CreateLoginProfileResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "LoginProfile" -> LoginProfile.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "LoginProfile" -> LoginProfile.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateLoginProfileResponse]
     }
@@ -727,20 +727,20 @@ package iam {
 
   @js.native
   trait CreateOpenIDConnectProviderRequest extends js.Object {
-    var Url: js.UndefOr[OpenIDConnectProviderUrlType]
+    var ThumbprintList: thumbprintListType
+    var Url: OpenIDConnectProviderUrlType
     var ClientIDList: js.UndefOr[clientIDListType]
-    var ThumbprintList: js.UndefOr[thumbprintListType]
   }
 
   object CreateOpenIDConnectProviderRequest {
     def apply(
-      Url: js.UndefOr[OpenIDConnectProviderUrlType] = js.undefined,
-      ClientIDList: js.UndefOr[clientIDListType] = js.undefined,
-      ThumbprintList: js.UndefOr[thumbprintListType] = js.undefined): CreateOpenIDConnectProviderRequest = {
+      ThumbprintList: thumbprintListType,
+      Url: OpenIDConnectProviderUrlType,
+      ClientIDList: js.UndefOr[clientIDListType] = js.undefined): CreateOpenIDConnectProviderRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Url" -> Url.map { x => x.asInstanceOf[js.Any] },
-        "ClientIDList" -> ClientIDList.map { x => x.asInstanceOf[js.Any] },
-        "ThumbprintList" -> ThumbprintList.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ThumbprintList" -> ThumbprintList.asInstanceOf[js.Any],
+        "Url" -> Url.asInstanceOf[js.Any],
+        "ClientIDList" -> ClientIDList.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateOpenIDConnectProviderRequest]
     }
@@ -766,23 +766,23 @@ package iam {
 
   @js.native
   trait CreatePolicyRequest extends js.Object {
-    var PolicyName: js.UndefOr[policyNameType]
-    var Path: js.UndefOr[policyPathType]
-    var PolicyDocument: js.UndefOr[policyDocumentType]
+    var PolicyDocument: policyDocumentType
+    var PolicyName: policyNameType
     var Description: js.UndefOr[policyDescriptionType]
+    var Path: js.UndefOr[policyPathType]
   }
 
   object CreatePolicyRequest {
     def apply(
-      PolicyName: js.UndefOr[policyNameType] = js.undefined,
-      Path: js.UndefOr[policyPathType] = js.undefined,
-      PolicyDocument: js.UndefOr[policyDocumentType] = js.undefined,
-      Description: js.UndefOr[policyDescriptionType] = js.undefined): CreatePolicyRequest = {
+      PolicyDocument: policyDocumentType,
+      PolicyName: policyNameType,
+      Description: js.UndefOr[policyDescriptionType] = js.undefined,
+      Path: js.UndefOr[policyPathType] = js.undefined): CreatePolicyRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "PolicyName" -> PolicyName.map { x => x.asInstanceOf[js.Any] },
-        "Path" -> Path.map { x => x.asInstanceOf[js.Any] },
-        "PolicyDocument" -> PolicyDocument.map { x => x.asInstanceOf[js.Any] },
-        "Description" -> Description.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "PolicyDocument" -> PolicyDocument.asInstanceOf[js.Any],
+        "PolicyName" -> PolicyName.asInstanceOf[js.Any],
+        "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
+        "Path" -> Path.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreatePolicyRequest]
     }
@@ -808,19 +808,19 @@ package iam {
 
   @js.native
   trait CreatePolicyVersionRequest extends js.Object {
-    var PolicyArn: js.UndefOr[arnType]
-    var PolicyDocument: js.UndefOr[policyDocumentType]
+    var PolicyArn: arnType
+    var PolicyDocument: policyDocumentType
     var SetAsDefault: js.UndefOr[booleanType]
   }
 
   object CreatePolicyVersionRequest {
     def apply(
-      PolicyArn: js.UndefOr[arnType] = js.undefined,
-      PolicyDocument: js.UndefOr[policyDocumentType] = js.undefined,
+      PolicyArn: arnType,
+      PolicyDocument: policyDocumentType,
       SetAsDefault: js.UndefOr[booleanType] = js.undefined): CreatePolicyVersionRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "PolicyArn" -> PolicyArn.map { x => x.asInstanceOf[js.Any] },
-        "PolicyDocument" -> PolicyDocument.map { x => x.asInstanceOf[js.Any] },
+        "PolicyArn" -> PolicyArn.asInstanceOf[js.Any],
+        "PolicyDocument" -> PolicyDocument.asInstanceOf[js.Any],
         "SetAsDefault" -> SetAsDefault.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreatePolicyVersionRequest]
@@ -847,32 +847,32 @@ package iam {
 
   @js.native
   trait CreateRoleRequest extends js.Object {
-    var Path: js.UndefOr[pathType]
+    var AssumeRolePolicyDocument: policyDocumentType
+    var RoleName: roleNameType
     var Description: js.UndefOr[roleDescriptionType]
-    var AssumeRolePolicyDocument: js.UndefOr[policyDocumentType]
-    var PermissionsBoundary: js.UndefOr[arnType]
-    var RoleName: js.UndefOr[roleNameType]
-    var Tags: js.UndefOr[tagListType]
     var MaxSessionDuration: js.UndefOr[roleMaxSessionDurationType]
+    var Path: js.UndefOr[pathType]
+    var PermissionsBoundary: js.UndefOr[arnType]
+    var Tags: js.UndefOr[tagListType]
   }
 
   object CreateRoleRequest {
     def apply(
-      Path: js.UndefOr[pathType] = js.undefined,
+      AssumeRolePolicyDocument: policyDocumentType,
+      RoleName: roleNameType,
       Description: js.UndefOr[roleDescriptionType] = js.undefined,
-      AssumeRolePolicyDocument: js.UndefOr[policyDocumentType] = js.undefined,
+      MaxSessionDuration: js.UndefOr[roleMaxSessionDurationType] = js.undefined,
+      Path: js.UndefOr[pathType] = js.undefined,
       PermissionsBoundary: js.UndefOr[arnType] = js.undefined,
-      RoleName: js.UndefOr[roleNameType] = js.undefined,
-      Tags: js.UndefOr[tagListType] = js.undefined,
-      MaxSessionDuration: js.UndefOr[roleMaxSessionDurationType] = js.undefined): CreateRoleRequest = {
+      Tags: js.UndefOr[tagListType] = js.undefined): CreateRoleRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Path" -> Path.map { x => x.asInstanceOf[js.Any] },
+        "AssumeRolePolicyDocument" -> AssumeRolePolicyDocument.asInstanceOf[js.Any],
+        "RoleName" -> RoleName.asInstanceOf[js.Any],
         "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
-        "AssumeRolePolicyDocument" -> AssumeRolePolicyDocument.map { x => x.asInstanceOf[js.Any] },
+        "MaxSessionDuration" -> MaxSessionDuration.map { x => x.asInstanceOf[js.Any] },
+        "Path" -> Path.map { x => x.asInstanceOf[js.Any] },
         "PermissionsBoundary" -> PermissionsBoundary.map { x => x.asInstanceOf[js.Any] },
-        "RoleName" -> RoleName.map { x => x.asInstanceOf[js.Any] },
-        "Tags" -> Tags.map { x => x.asInstanceOf[js.Any] },
-        "MaxSessionDuration" -> MaxSessionDuration.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Tags" -> Tags.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateRoleRequest]
     }
@@ -883,14 +883,14 @@ package iam {
    */
   @js.native
   trait CreateRoleResponse extends js.Object {
-    var Role: js.UndefOr[Role]
+    var Role: Role
   }
 
   object CreateRoleResponse {
     def apply(
-      Role: js.UndefOr[Role] = js.undefined): CreateRoleResponse = {
+      Role: Role): CreateRoleResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Role" -> Role.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Role" -> Role.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateRoleResponse]
     }
@@ -898,17 +898,17 @@ package iam {
 
   @js.native
   trait CreateSAMLProviderRequest extends js.Object {
-    var SAMLMetadataDocument: js.UndefOr[SAMLMetadataDocumentType]
-    var Name: js.UndefOr[SAMLProviderNameType]
+    var Name: SAMLProviderNameType
+    var SAMLMetadataDocument: SAMLMetadataDocumentType
   }
 
   object CreateSAMLProviderRequest {
     def apply(
-      SAMLMetadataDocument: js.UndefOr[SAMLMetadataDocumentType] = js.undefined,
-      Name: js.UndefOr[SAMLProviderNameType] = js.undefined): CreateSAMLProviderRequest = {
+      Name: SAMLProviderNameType,
+      SAMLMetadataDocument: SAMLMetadataDocumentType): CreateSAMLProviderRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "SAMLMetadataDocument" -> SAMLMetadataDocument.map { x => x.asInstanceOf[js.Any] },
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Name" -> Name.asInstanceOf[js.Any],
+        "SAMLMetadataDocument" -> SAMLMetadataDocument.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateSAMLProviderRequest]
     }
@@ -934,20 +934,20 @@ package iam {
 
   @js.native
   trait CreateServiceLinkedRoleRequest extends js.Object {
-    var AWSServiceName: js.UndefOr[groupNameType]
-    var Description: js.UndefOr[roleDescriptionType]
+    var AWSServiceName: groupNameType
     var CustomSuffix: js.UndefOr[customSuffixType]
+    var Description: js.UndefOr[roleDescriptionType]
   }
 
   object CreateServiceLinkedRoleRequest {
     def apply(
-      AWSServiceName: js.UndefOr[groupNameType] = js.undefined,
-      Description: js.UndefOr[roleDescriptionType] = js.undefined,
-      CustomSuffix: js.UndefOr[customSuffixType] = js.undefined): CreateServiceLinkedRoleRequest = {
+      AWSServiceName: groupNameType,
+      CustomSuffix: js.UndefOr[customSuffixType] = js.undefined,
+      Description: js.UndefOr[roleDescriptionType] = js.undefined): CreateServiceLinkedRoleRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "AWSServiceName" -> AWSServiceName.map { x => x.asInstanceOf[js.Any] },
-        "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
-        "CustomSuffix" -> CustomSuffix.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "AWSServiceName" -> AWSServiceName.asInstanceOf[js.Any],
+        "CustomSuffix" -> CustomSuffix.map { x => x.asInstanceOf[js.Any] },
+        "Description" -> Description.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateServiceLinkedRoleRequest]
     }
@@ -970,17 +970,17 @@ package iam {
 
   @js.native
   trait CreateServiceSpecificCredentialRequest extends js.Object {
-    var UserName: js.UndefOr[userNameType]
-    var ServiceName: js.UndefOr[serviceName]
+    var ServiceName: serviceName
+    var UserName: userNameType
   }
 
   object CreateServiceSpecificCredentialRequest {
     def apply(
-      UserName: js.UndefOr[userNameType] = js.undefined,
-      ServiceName: js.UndefOr[serviceName] = js.undefined): CreateServiceSpecificCredentialRequest = {
+      ServiceName: serviceName,
+      UserName: userNameType): CreateServiceSpecificCredentialRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "UserName" -> UserName.map { x => x.asInstanceOf[js.Any] },
-        "ServiceName" -> ServiceName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ServiceName" -> ServiceName.asInstanceOf[js.Any],
+        "UserName" -> UserName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateServiceSpecificCredentialRequest]
     }
@@ -1003,23 +1003,23 @@ package iam {
 
   @js.native
   trait CreateUserRequest extends js.Object {
+    var UserName: userNameType
     var Path: js.UndefOr[pathType]
-    var UserName: js.UndefOr[userNameType]
-    var Tags: js.UndefOr[tagListType]
     var PermissionsBoundary: js.UndefOr[arnType]
+    var Tags: js.UndefOr[tagListType]
   }
 
   object CreateUserRequest {
     def apply(
+      UserName: userNameType,
       Path: js.UndefOr[pathType] = js.undefined,
-      UserName: js.UndefOr[userNameType] = js.undefined,
-      Tags: js.UndefOr[tagListType] = js.undefined,
-      PermissionsBoundary: js.UndefOr[arnType] = js.undefined): CreateUserRequest = {
+      PermissionsBoundary: js.UndefOr[arnType] = js.undefined,
+      Tags: js.UndefOr[tagListType] = js.undefined): CreateUserRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "UserName" -> UserName.asInstanceOf[js.Any],
         "Path" -> Path.map { x => x.asInstanceOf[js.Any] },
-        "UserName" -> UserName.map { x => x.asInstanceOf[js.Any] },
-        "Tags" -> Tags.map { x => x.asInstanceOf[js.Any] },
-        "PermissionsBoundary" -> PermissionsBoundary.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "PermissionsBoundary" -> PermissionsBoundary.map { x => x.asInstanceOf[js.Any] },
+        "Tags" -> Tags.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateUserRequest]
     }
@@ -1045,17 +1045,17 @@ package iam {
 
   @js.native
   trait CreateVirtualMFADeviceRequest extends js.Object {
+    var VirtualMFADeviceName: virtualMFADeviceName
     var Path: js.UndefOr[pathType]
-    var VirtualMFADeviceName: js.UndefOr[virtualMFADeviceName]
   }
 
   object CreateVirtualMFADeviceRequest {
     def apply(
-      Path: js.UndefOr[pathType] = js.undefined,
-      VirtualMFADeviceName: js.UndefOr[virtualMFADeviceName] = js.undefined): CreateVirtualMFADeviceRequest = {
+      VirtualMFADeviceName: virtualMFADeviceName,
+      Path: js.UndefOr[pathType] = js.undefined): CreateVirtualMFADeviceRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Path" -> Path.map { x => x.asInstanceOf[js.Any] },
-        "VirtualMFADeviceName" -> VirtualMFADeviceName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "VirtualMFADeviceName" -> VirtualMFADeviceName.asInstanceOf[js.Any],
+        "Path" -> Path.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateVirtualMFADeviceRequest]
     }
@@ -1066,14 +1066,14 @@ package iam {
    */
   @js.native
   trait CreateVirtualMFADeviceResponse extends js.Object {
-    var VirtualMFADevice: js.UndefOr[VirtualMFADevice]
+    var VirtualMFADevice: VirtualMFADevice
   }
 
   object CreateVirtualMFADeviceResponse {
     def apply(
-      VirtualMFADevice: js.UndefOr[VirtualMFADevice] = js.undefined): CreateVirtualMFADeviceResponse = {
+      VirtualMFADevice: VirtualMFADevice): CreateVirtualMFADeviceResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "VirtualMFADevice" -> VirtualMFADevice.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "VirtualMFADevice" -> VirtualMFADevice.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateVirtualMFADeviceResponse]
     }
@@ -1081,17 +1081,17 @@ package iam {
 
   @js.native
   trait DeactivateMFADeviceRequest extends js.Object {
-    var UserName: js.UndefOr[existingUserNameType]
-    var SerialNumber: js.UndefOr[serialNumberType]
+    var SerialNumber: serialNumberType
+    var UserName: existingUserNameType
   }
 
   object DeactivateMFADeviceRequest {
     def apply(
-      UserName: js.UndefOr[existingUserNameType] = js.undefined,
-      SerialNumber: js.UndefOr[serialNumberType] = js.undefined): DeactivateMFADeviceRequest = {
+      SerialNumber: serialNumberType,
+      UserName: existingUserNameType): DeactivateMFADeviceRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "UserName" -> UserName.map { x => x.asInstanceOf[js.Any] },
-        "SerialNumber" -> SerialNumber.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "SerialNumber" -> SerialNumber.asInstanceOf[js.Any],
+        "UserName" -> UserName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeactivateMFADeviceRequest]
     }
@@ -1099,17 +1099,17 @@ package iam {
 
   @js.native
   trait DeleteAccessKeyRequest extends js.Object {
+    var AccessKeyId: accessKeyIdType
     var UserName: js.UndefOr[existingUserNameType]
-    var AccessKeyId: js.UndefOr[accessKeyIdType]
   }
 
   object DeleteAccessKeyRequest {
     def apply(
-      UserName: js.UndefOr[existingUserNameType] = js.undefined,
-      AccessKeyId: js.UndefOr[accessKeyIdType] = js.undefined): DeleteAccessKeyRequest = {
+      AccessKeyId: accessKeyIdType,
+      UserName: js.UndefOr[existingUserNameType] = js.undefined): DeleteAccessKeyRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "UserName" -> UserName.map { x => x.asInstanceOf[js.Any] },
-        "AccessKeyId" -> AccessKeyId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "AccessKeyId" -> AccessKeyId.asInstanceOf[js.Any],
+        "UserName" -> UserName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteAccessKeyRequest]
     }
@@ -1117,14 +1117,14 @@ package iam {
 
   @js.native
   trait DeleteAccountAliasRequest extends js.Object {
-    var AccountAlias: js.UndefOr[accountAliasType]
+    var AccountAlias: accountAliasType
   }
 
   object DeleteAccountAliasRequest {
     def apply(
-      AccountAlias: js.UndefOr[accountAliasType] = js.undefined): DeleteAccountAliasRequest = {
+      AccountAlias: accountAliasType): DeleteAccountAliasRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "AccountAlias" -> AccountAlias.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "AccountAlias" -> AccountAlias.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteAccountAliasRequest]
     }
@@ -1132,17 +1132,17 @@ package iam {
 
   @js.native
   trait DeleteGroupPolicyRequest extends js.Object {
-    var GroupName: js.UndefOr[groupNameType]
-    var PolicyName: js.UndefOr[policyNameType]
+    var GroupName: groupNameType
+    var PolicyName: policyNameType
   }
 
   object DeleteGroupPolicyRequest {
     def apply(
-      GroupName: js.UndefOr[groupNameType] = js.undefined,
-      PolicyName: js.UndefOr[policyNameType] = js.undefined): DeleteGroupPolicyRequest = {
+      GroupName: groupNameType,
+      PolicyName: policyNameType): DeleteGroupPolicyRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "GroupName" -> GroupName.map { x => x.asInstanceOf[js.Any] },
-        "PolicyName" -> PolicyName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "GroupName" -> GroupName.asInstanceOf[js.Any],
+        "PolicyName" -> PolicyName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteGroupPolicyRequest]
     }
@@ -1150,14 +1150,14 @@ package iam {
 
   @js.native
   trait DeleteGroupRequest extends js.Object {
-    var GroupName: js.UndefOr[groupNameType]
+    var GroupName: groupNameType
   }
 
   object DeleteGroupRequest {
     def apply(
-      GroupName: js.UndefOr[groupNameType] = js.undefined): DeleteGroupRequest = {
+      GroupName: groupNameType): DeleteGroupRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "GroupName" -> GroupName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "GroupName" -> GroupName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteGroupRequest]
     }
@@ -1165,14 +1165,14 @@ package iam {
 
   @js.native
   trait DeleteInstanceProfileRequest extends js.Object {
-    var InstanceProfileName: js.UndefOr[instanceProfileNameType]
+    var InstanceProfileName: instanceProfileNameType
   }
 
   object DeleteInstanceProfileRequest {
     def apply(
-      InstanceProfileName: js.UndefOr[instanceProfileNameType] = js.undefined): DeleteInstanceProfileRequest = {
+      InstanceProfileName: instanceProfileNameType): DeleteInstanceProfileRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "InstanceProfileName" -> InstanceProfileName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "InstanceProfileName" -> InstanceProfileName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteInstanceProfileRequest]
     }
@@ -1180,14 +1180,14 @@ package iam {
 
   @js.native
   trait DeleteLoginProfileRequest extends js.Object {
-    var UserName: js.UndefOr[userNameType]
+    var UserName: userNameType
   }
 
   object DeleteLoginProfileRequest {
     def apply(
-      UserName: js.UndefOr[userNameType] = js.undefined): DeleteLoginProfileRequest = {
+      UserName: userNameType): DeleteLoginProfileRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "UserName" -> UserName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "UserName" -> UserName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteLoginProfileRequest]
     }
@@ -1195,14 +1195,14 @@ package iam {
 
   @js.native
   trait DeleteOpenIDConnectProviderRequest extends js.Object {
-    var OpenIDConnectProviderArn: js.UndefOr[arnType]
+    var OpenIDConnectProviderArn: arnType
   }
 
   object DeleteOpenIDConnectProviderRequest {
     def apply(
-      OpenIDConnectProviderArn: js.UndefOr[arnType] = js.undefined): DeleteOpenIDConnectProviderRequest = {
+      OpenIDConnectProviderArn: arnType): DeleteOpenIDConnectProviderRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "OpenIDConnectProviderArn" -> OpenIDConnectProviderArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "OpenIDConnectProviderArn" -> OpenIDConnectProviderArn.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteOpenIDConnectProviderRequest]
     }
@@ -1210,14 +1210,14 @@ package iam {
 
   @js.native
   trait DeletePolicyRequest extends js.Object {
-    var PolicyArn: js.UndefOr[arnType]
+    var PolicyArn: arnType
   }
 
   object DeletePolicyRequest {
     def apply(
-      PolicyArn: js.UndefOr[arnType] = js.undefined): DeletePolicyRequest = {
+      PolicyArn: arnType): DeletePolicyRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "PolicyArn" -> PolicyArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "PolicyArn" -> PolicyArn.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeletePolicyRequest]
     }
@@ -1225,17 +1225,17 @@ package iam {
 
   @js.native
   trait DeletePolicyVersionRequest extends js.Object {
-    var PolicyArn: js.UndefOr[arnType]
-    var VersionId: js.UndefOr[policyVersionIdType]
+    var PolicyArn: arnType
+    var VersionId: policyVersionIdType
   }
 
   object DeletePolicyVersionRequest {
     def apply(
-      PolicyArn: js.UndefOr[arnType] = js.undefined,
-      VersionId: js.UndefOr[policyVersionIdType] = js.undefined): DeletePolicyVersionRequest = {
+      PolicyArn: arnType,
+      VersionId: policyVersionIdType): DeletePolicyVersionRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "PolicyArn" -> PolicyArn.map { x => x.asInstanceOf[js.Any] },
-        "VersionId" -> VersionId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "PolicyArn" -> PolicyArn.asInstanceOf[js.Any],
+        "VersionId" -> VersionId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeletePolicyVersionRequest]
     }
@@ -1243,14 +1243,14 @@ package iam {
 
   @js.native
   trait DeleteRolePermissionsBoundaryRequest extends js.Object {
-    var RoleName: js.UndefOr[roleNameType]
+    var RoleName: roleNameType
   }
 
   object DeleteRolePermissionsBoundaryRequest {
     def apply(
-      RoleName: js.UndefOr[roleNameType] = js.undefined): DeleteRolePermissionsBoundaryRequest = {
+      RoleName: roleNameType): DeleteRolePermissionsBoundaryRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "RoleName" -> RoleName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "RoleName" -> RoleName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteRolePermissionsBoundaryRequest]
     }
@@ -1258,17 +1258,17 @@ package iam {
 
   @js.native
   trait DeleteRolePolicyRequest extends js.Object {
-    var RoleName: js.UndefOr[roleNameType]
-    var PolicyName: js.UndefOr[policyNameType]
+    var PolicyName: policyNameType
+    var RoleName: roleNameType
   }
 
   object DeleteRolePolicyRequest {
     def apply(
-      RoleName: js.UndefOr[roleNameType] = js.undefined,
-      PolicyName: js.UndefOr[policyNameType] = js.undefined): DeleteRolePolicyRequest = {
+      PolicyName: policyNameType,
+      RoleName: roleNameType): DeleteRolePolicyRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "RoleName" -> RoleName.map { x => x.asInstanceOf[js.Any] },
-        "PolicyName" -> PolicyName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "PolicyName" -> PolicyName.asInstanceOf[js.Any],
+        "RoleName" -> RoleName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteRolePolicyRequest]
     }
@@ -1276,14 +1276,14 @@ package iam {
 
   @js.native
   trait DeleteRoleRequest extends js.Object {
-    var RoleName: js.UndefOr[roleNameType]
+    var RoleName: roleNameType
   }
 
   object DeleteRoleRequest {
     def apply(
-      RoleName: js.UndefOr[roleNameType] = js.undefined): DeleteRoleRequest = {
+      RoleName: roleNameType): DeleteRoleRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "RoleName" -> RoleName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "RoleName" -> RoleName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteRoleRequest]
     }
@@ -1291,14 +1291,14 @@ package iam {
 
   @js.native
   trait DeleteSAMLProviderRequest extends js.Object {
-    var SAMLProviderArn: js.UndefOr[arnType]
+    var SAMLProviderArn: arnType
   }
 
   object DeleteSAMLProviderRequest {
     def apply(
-      SAMLProviderArn: js.UndefOr[arnType] = js.undefined): DeleteSAMLProviderRequest = {
+      SAMLProviderArn: arnType): DeleteSAMLProviderRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "SAMLProviderArn" -> SAMLProviderArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "SAMLProviderArn" -> SAMLProviderArn.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteSAMLProviderRequest]
     }
@@ -1306,17 +1306,17 @@ package iam {
 
   @js.native
   trait DeleteSSHPublicKeyRequest extends js.Object {
-    var UserName: js.UndefOr[userNameType]
-    var SSHPublicKeyId: js.UndefOr[publicKeyIdType]
+    var SSHPublicKeyId: publicKeyIdType
+    var UserName: userNameType
   }
 
   object DeleteSSHPublicKeyRequest {
     def apply(
-      UserName: js.UndefOr[userNameType] = js.undefined,
-      SSHPublicKeyId: js.UndefOr[publicKeyIdType] = js.undefined): DeleteSSHPublicKeyRequest = {
+      SSHPublicKeyId: publicKeyIdType,
+      UserName: userNameType): DeleteSSHPublicKeyRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "UserName" -> UserName.map { x => x.asInstanceOf[js.Any] },
-        "SSHPublicKeyId" -> SSHPublicKeyId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "SSHPublicKeyId" -> SSHPublicKeyId.asInstanceOf[js.Any],
+        "UserName" -> UserName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteSSHPublicKeyRequest]
     }
@@ -1324,14 +1324,14 @@ package iam {
 
   @js.native
   trait DeleteServerCertificateRequest extends js.Object {
-    var ServerCertificateName: js.UndefOr[serverCertificateNameType]
+    var ServerCertificateName: serverCertificateNameType
   }
 
   object DeleteServerCertificateRequest {
     def apply(
-      ServerCertificateName: js.UndefOr[serverCertificateNameType] = js.undefined): DeleteServerCertificateRequest = {
+      ServerCertificateName: serverCertificateNameType): DeleteServerCertificateRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ServerCertificateName" -> ServerCertificateName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ServerCertificateName" -> ServerCertificateName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteServerCertificateRequest]
     }
@@ -1339,14 +1339,14 @@ package iam {
 
   @js.native
   trait DeleteServiceLinkedRoleRequest extends js.Object {
-    var RoleName: js.UndefOr[roleNameType]
+    var RoleName: roleNameType
   }
 
   object DeleteServiceLinkedRoleRequest {
     def apply(
-      RoleName: js.UndefOr[roleNameType] = js.undefined): DeleteServiceLinkedRoleRequest = {
+      RoleName: roleNameType): DeleteServiceLinkedRoleRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "RoleName" -> RoleName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "RoleName" -> RoleName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteServiceLinkedRoleRequest]
     }
@@ -1354,14 +1354,14 @@ package iam {
 
   @js.native
   trait DeleteServiceLinkedRoleResponse extends js.Object {
-    var DeletionTaskId: js.UndefOr[DeletionTaskIdType]
+    var DeletionTaskId: DeletionTaskIdType
   }
 
   object DeleteServiceLinkedRoleResponse {
     def apply(
-      DeletionTaskId: js.UndefOr[DeletionTaskIdType] = js.undefined): DeleteServiceLinkedRoleResponse = {
+      DeletionTaskId: DeletionTaskIdType): DeleteServiceLinkedRoleResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "DeletionTaskId" -> DeletionTaskId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "DeletionTaskId" -> DeletionTaskId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteServiceLinkedRoleResponse]
     }
@@ -1369,17 +1369,17 @@ package iam {
 
   @js.native
   trait DeleteServiceSpecificCredentialRequest extends js.Object {
+    var ServiceSpecificCredentialId: serviceSpecificCredentialId
     var UserName: js.UndefOr[userNameType]
-    var ServiceSpecificCredentialId: js.UndefOr[serviceSpecificCredentialId]
   }
 
   object DeleteServiceSpecificCredentialRequest {
     def apply(
-      UserName: js.UndefOr[userNameType] = js.undefined,
-      ServiceSpecificCredentialId: js.UndefOr[serviceSpecificCredentialId] = js.undefined): DeleteServiceSpecificCredentialRequest = {
+      ServiceSpecificCredentialId: serviceSpecificCredentialId,
+      UserName: js.UndefOr[userNameType] = js.undefined): DeleteServiceSpecificCredentialRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "UserName" -> UserName.map { x => x.asInstanceOf[js.Any] },
-        "ServiceSpecificCredentialId" -> ServiceSpecificCredentialId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ServiceSpecificCredentialId" -> ServiceSpecificCredentialId.asInstanceOf[js.Any],
+        "UserName" -> UserName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteServiceSpecificCredentialRequest]
     }
@@ -1387,17 +1387,17 @@ package iam {
 
   @js.native
   trait DeleteSigningCertificateRequest extends js.Object {
+    var CertificateId: certificateIdType
     var UserName: js.UndefOr[existingUserNameType]
-    var CertificateId: js.UndefOr[certificateIdType]
   }
 
   object DeleteSigningCertificateRequest {
     def apply(
-      UserName: js.UndefOr[existingUserNameType] = js.undefined,
-      CertificateId: js.UndefOr[certificateIdType] = js.undefined): DeleteSigningCertificateRequest = {
+      CertificateId: certificateIdType,
+      UserName: js.UndefOr[existingUserNameType] = js.undefined): DeleteSigningCertificateRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "UserName" -> UserName.map { x => x.asInstanceOf[js.Any] },
-        "CertificateId" -> CertificateId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "CertificateId" -> CertificateId.asInstanceOf[js.Any],
+        "UserName" -> UserName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteSigningCertificateRequest]
     }
@@ -1405,14 +1405,14 @@ package iam {
 
   @js.native
   trait DeleteUserPermissionsBoundaryRequest extends js.Object {
-    var UserName: js.UndefOr[userNameType]
+    var UserName: userNameType
   }
 
   object DeleteUserPermissionsBoundaryRequest {
     def apply(
-      UserName: js.UndefOr[userNameType] = js.undefined): DeleteUserPermissionsBoundaryRequest = {
+      UserName: userNameType): DeleteUserPermissionsBoundaryRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "UserName" -> UserName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "UserName" -> UserName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteUserPermissionsBoundaryRequest]
     }
@@ -1420,17 +1420,17 @@ package iam {
 
   @js.native
   trait DeleteUserPolicyRequest extends js.Object {
-    var UserName: js.UndefOr[existingUserNameType]
-    var PolicyName: js.UndefOr[policyNameType]
+    var PolicyName: policyNameType
+    var UserName: existingUserNameType
   }
 
   object DeleteUserPolicyRequest {
     def apply(
-      UserName: js.UndefOr[existingUserNameType] = js.undefined,
-      PolicyName: js.UndefOr[policyNameType] = js.undefined): DeleteUserPolicyRequest = {
+      PolicyName: policyNameType,
+      UserName: existingUserNameType): DeleteUserPolicyRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "UserName" -> UserName.map { x => x.asInstanceOf[js.Any] },
-        "PolicyName" -> PolicyName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "PolicyName" -> PolicyName.asInstanceOf[js.Any],
+        "UserName" -> UserName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteUserPolicyRequest]
     }
@@ -1438,14 +1438,14 @@ package iam {
 
   @js.native
   trait DeleteUserRequest extends js.Object {
-    var UserName: js.UndefOr[existingUserNameType]
+    var UserName: existingUserNameType
   }
 
   object DeleteUserRequest {
     def apply(
-      UserName: js.UndefOr[existingUserNameType] = js.undefined): DeleteUserRequest = {
+      UserName: existingUserNameType): DeleteUserRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "UserName" -> UserName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "UserName" -> UserName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteUserRequest]
     }
@@ -1453,14 +1453,14 @@ package iam {
 
   @js.native
   trait DeleteVirtualMFADeviceRequest extends js.Object {
-    var SerialNumber: js.UndefOr[serialNumberType]
+    var SerialNumber: serialNumberType
   }
 
   object DeleteVirtualMFADeviceRequest {
     def apply(
-      SerialNumber: js.UndefOr[serialNumberType] = js.undefined): DeleteVirtualMFADeviceRequest = {
+      SerialNumber: serialNumberType): DeleteVirtualMFADeviceRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "SerialNumber" -> SerialNumber.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "SerialNumber" -> SerialNumber.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteVirtualMFADeviceRequest]
     }
@@ -1498,17 +1498,17 @@ package iam {
 
   @js.native
   trait DetachGroupPolicyRequest extends js.Object {
-    var GroupName: js.UndefOr[groupNameType]
-    var PolicyArn: js.UndefOr[arnType]
+    var GroupName: groupNameType
+    var PolicyArn: arnType
   }
 
   object DetachGroupPolicyRequest {
     def apply(
-      GroupName: js.UndefOr[groupNameType] = js.undefined,
-      PolicyArn: js.UndefOr[arnType] = js.undefined): DetachGroupPolicyRequest = {
+      GroupName: groupNameType,
+      PolicyArn: arnType): DetachGroupPolicyRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "GroupName" -> GroupName.map { x => x.asInstanceOf[js.Any] },
-        "PolicyArn" -> PolicyArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "GroupName" -> GroupName.asInstanceOf[js.Any],
+        "PolicyArn" -> PolicyArn.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DetachGroupPolicyRequest]
     }
@@ -1516,17 +1516,17 @@ package iam {
 
   @js.native
   trait DetachRolePolicyRequest extends js.Object {
-    var RoleName: js.UndefOr[roleNameType]
-    var PolicyArn: js.UndefOr[arnType]
+    var PolicyArn: arnType
+    var RoleName: roleNameType
   }
 
   object DetachRolePolicyRequest {
     def apply(
-      RoleName: js.UndefOr[roleNameType] = js.undefined,
-      PolicyArn: js.UndefOr[arnType] = js.undefined): DetachRolePolicyRequest = {
+      PolicyArn: arnType,
+      RoleName: roleNameType): DetachRolePolicyRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "RoleName" -> RoleName.map { x => x.asInstanceOf[js.Any] },
-        "PolicyArn" -> PolicyArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "PolicyArn" -> PolicyArn.asInstanceOf[js.Any],
+        "RoleName" -> RoleName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DetachRolePolicyRequest]
     }
@@ -1534,17 +1534,17 @@ package iam {
 
   @js.native
   trait DetachUserPolicyRequest extends js.Object {
-    var UserName: js.UndefOr[userNameType]
-    var PolicyArn: js.UndefOr[arnType]
+    var PolicyArn: arnType
+    var UserName: userNameType
   }
 
   object DetachUserPolicyRequest {
     def apply(
-      UserName: js.UndefOr[userNameType] = js.undefined,
-      PolicyArn: js.UndefOr[arnType] = js.undefined): DetachUserPolicyRequest = {
+      PolicyArn: arnType,
+      UserName: userNameType): DetachUserPolicyRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "UserName" -> UserName.map { x => x.asInstanceOf[js.Any] },
-        "PolicyArn" -> PolicyArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "PolicyArn" -> PolicyArn.asInstanceOf[js.Any],
+        "UserName" -> UserName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DetachUserPolicyRequest]
     }
@@ -1552,23 +1552,23 @@ package iam {
 
   @js.native
   trait EnableMFADeviceRequest extends js.Object {
-    var UserName: js.UndefOr[existingUserNameType]
-    var SerialNumber: js.UndefOr[serialNumberType]
-    var AuthenticationCode1: js.UndefOr[authenticationCodeType]
-    var AuthenticationCode2: js.UndefOr[authenticationCodeType]
+    var AuthenticationCode1: authenticationCodeType
+    var AuthenticationCode2: authenticationCodeType
+    var SerialNumber: serialNumberType
+    var UserName: existingUserNameType
   }
 
   object EnableMFADeviceRequest {
     def apply(
-      UserName: js.UndefOr[existingUserNameType] = js.undefined,
-      SerialNumber: js.UndefOr[serialNumberType] = js.undefined,
-      AuthenticationCode1: js.UndefOr[authenticationCodeType] = js.undefined,
-      AuthenticationCode2: js.UndefOr[authenticationCodeType] = js.undefined): EnableMFADeviceRequest = {
+      AuthenticationCode1: authenticationCodeType,
+      AuthenticationCode2: authenticationCodeType,
+      SerialNumber: serialNumberType,
+      UserName: existingUserNameType): EnableMFADeviceRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "UserName" -> UserName.map { x => x.asInstanceOf[js.Any] },
-        "SerialNumber" -> SerialNumber.map { x => x.asInstanceOf[js.Any] },
-        "AuthenticationCode1" -> AuthenticationCode1.map { x => x.asInstanceOf[js.Any] },
-        "AuthenticationCode2" -> AuthenticationCode2.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "AuthenticationCode1" -> AuthenticationCode1.asInstanceOf[js.Any],
+        "AuthenticationCode2" -> AuthenticationCode2.asInstanceOf[js.Any],
+        "SerialNumber" -> SerialNumber.asInstanceOf[js.Any],
+        "UserName" -> UserName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EnableMFADeviceRequest]
     }
@@ -1589,35 +1589,35 @@ package iam {
    */
   @js.native
   trait EvaluationResult extends js.Object {
-    var OrganizationsDecisionDetail: js.UndefOr[OrganizationsDecisionDetail]
-    var EvalActionName: js.UndefOr[ActionNameType]
-    var MissingContextValues: js.UndefOr[ContextKeyNamesResultListType]
-    var EvalResourceName: js.UndefOr[ResourceNameType]
-    var EvalDecision: js.UndefOr[PolicyEvaluationDecisionType]
-    var ResourceSpecificResults: js.UndefOr[ResourceSpecificResultListType]
+    var EvalActionName: ActionNameType
+    var EvalDecision: PolicyEvaluationDecisionType
     var EvalDecisionDetails: js.UndefOr[EvalDecisionDetailsType]
+    var EvalResourceName: js.UndefOr[ResourceNameType]
     var MatchedStatements: js.UndefOr[StatementListType]
+    var MissingContextValues: js.UndefOr[ContextKeyNamesResultListType]
+    var OrganizationsDecisionDetail: js.UndefOr[OrganizationsDecisionDetail]
+    var ResourceSpecificResults: js.UndefOr[ResourceSpecificResultListType]
   }
 
   object EvaluationResult {
     def apply(
-      OrganizationsDecisionDetail: js.UndefOr[OrganizationsDecisionDetail] = js.undefined,
-      EvalActionName: js.UndefOr[ActionNameType] = js.undefined,
-      MissingContextValues: js.UndefOr[ContextKeyNamesResultListType] = js.undefined,
-      EvalResourceName: js.UndefOr[ResourceNameType] = js.undefined,
-      EvalDecision: js.UndefOr[PolicyEvaluationDecisionType] = js.undefined,
-      ResourceSpecificResults: js.UndefOr[ResourceSpecificResultListType] = js.undefined,
+      EvalActionName: ActionNameType,
+      EvalDecision: PolicyEvaluationDecisionType,
       EvalDecisionDetails: js.UndefOr[EvalDecisionDetailsType] = js.undefined,
-      MatchedStatements: js.UndefOr[StatementListType] = js.undefined): EvaluationResult = {
+      EvalResourceName: js.UndefOr[ResourceNameType] = js.undefined,
+      MatchedStatements: js.UndefOr[StatementListType] = js.undefined,
+      MissingContextValues: js.UndefOr[ContextKeyNamesResultListType] = js.undefined,
+      OrganizationsDecisionDetail: js.UndefOr[OrganizationsDecisionDetail] = js.undefined,
+      ResourceSpecificResults: js.UndefOr[ResourceSpecificResultListType] = js.undefined): EvaluationResult = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "OrganizationsDecisionDetail" -> OrganizationsDecisionDetail.map { x => x.asInstanceOf[js.Any] },
-        "EvalActionName" -> EvalActionName.map { x => x.asInstanceOf[js.Any] },
-        "MissingContextValues" -> MissingContextValues.map { x => x.asInstanceOf[js.Any] },
-        "EvalResourceName" -> EvalResourceName.map { x => x.asInstanceOf[js.Any] },
-        "EvalDecision" -> EvalDecision.map { x => x.asInstanceOf[js.Any] },
-        "ResourceSpecificResults" -> ResourceSpecificResults.map { x => x.asInstanceOf[js.Any] },
+        "EvalActionName" -> EvalActionName.asInstanceOf[js.Any],
+        "EvalDecision" -> EvalDecision.asInstanceOf[js.Any],
         "EvalDecisionDetails" -> EvalDecisionDetails.map { x => x.asInstanceOf[js.Any] },
-        "MatchedStatements" -> MatchedStatements.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "EvalResourceName" -> EvalResourceName.map { x => x.asInstanceOf[js.Any] },
+        "MatchedStatements" -> MatchedStatements.map { x => x.asInstanceOf[js.Any] },
+        "MissingContextValues" -> MissingContextValues.map { x => x.asInstanceOf[js.Any] },
+        "OrganizationsDecisionDetail" -> OrganizationsDecisionDetail.map { x => x.asInstanceOf[js.Any] },
+        "ResourceSpecificResults" -> ResourceSpecificResults.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EvaluationResult]
     }
@@ -1628,17 +1628,17 @@ package iam {
    */
   @js.native
   trait GenerateCredentialReportResponse extends js.Object {
-    var State: js.UndefOr[ReportStateType]
     var Description: js.UndefOr[ReportStateDescriptionType]
+    var State: js.UndefOr[ReportStateType]
   }
 
   object GenerateCredentialReportResponse {
     def apply(
-      State: js.UndefOr[ReportStateType] = js.undefined,
-      Description: js.UndefOr[ReportStateDescriptionType] = js.undefined): GenerateCredentialReportResponse = {
+      Description: js.UndefOr[ReportStateDescriptionType] = js.undefined,
+      State: js.UndefOr[ReportStateType] = js.undefined): GenerateCredentialReportResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "State" -> State.map { x => x.asInstanceOf[js.Any] },
-        "Description" -> Description.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
+        "State" -> State.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GenerateCredentialReportResponse]
     }
@@ -1646,14 +1646,14 @@ package iam {
 
   @js.native
   trait GetAccessKeyLastUsedRequest extends js.Object {
-    var AccessKeyId: js.UndefOr[accessKeyIdType]
+    var AccessKeyId: accessKeyIdType
   }
 
   object GetAccessKeyLastUsedRequest {
     def apply(
-      AccessKeyId: js.UndefOr[accessKeyIdType] = js.undefined): GetAccessKeyLastUsedRequest = {
+      AccessKeyId: accessKeyIdType): GetAccessKeyLastUsedRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "AccessKeyId" -> AccessKeyId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "AccessKeyId" -> AccessKeyId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetAccessKeyLastUsedRequest]
     }
@@ -1664,17 +1664,17 @@ package iam {
    */
   @js.native
   trait GetAccessKeyLastUsedResponse extends js.Object {
-    var UserName: js.UndefOr[existingUserNameType]
     var AccessKeyLastUsed: js.UndefOr[AccessKeyLastUsed]
+    var UserName: js.UndefOr[existingUserNameType]
   }
 
   object GetAccessKeyLastUsedResponse {
     def apply(
-      UserName: js.UndefOr[existingUserNameType] = js.undefined,
-      AccessKeyLastUsed: js.UndefOr[AccessKeyLastUsed] = js.undefined): GetAccessKeyLastUsedResponse = {
+      AccessKeyLastUsed: js.UndefOr[AccessKeyLastUsed] = js.undefined,
+      UserName: js.UndefOr[existingUserNameType] = js.undefined): GetAccessKeyLastUsedResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "UserName" -> UserName.map { x => x.asInstanceOf[js.Any] },
-        "AccessKeyLastUsed" -> AccessKeyLastUsed.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "AccessKeyLastUsed" -> AccessKeyLastUsed.map { x => x.asInstanceOf[js.Any] },
+        "UserName" -> UserName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetAccessKeyLastUsedResponse]
     }
@@ -1683,19 +1683,19 @@ package iam {
   @js.native
   trait GetAccountAuthorizationDetailsRequest extends js.Object {
     var Filter: js.UndefOr[entityListType]
-    var MaxItems: js.UndefOr[maxItemsType]
     var Marker: js.UndefOr[markerType]
+    var MaxItems: js.UndefOr[maxItemsType]
   }
 
   object GetAccountAuthorizationDetailsRequest {
     def apply(
       Filter: js.UndefOr[entityListType] = js.undefined,
-      MaxItems: js.UndefOr[maxItemsType] = js.undefined,
-      Marker: js.UndefOr[markerType] = js.undefined): GetAccountAuthorizationDetailsRequest = {
+      Marker: js.UndefOr[markerType] = js.undefined,
+      MaxItems: js.UndefOr[maxItemsType] = js.undefined): GetAccountAuthorizationDetailsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Filter" -> Filter.map { x => x.asInstanceOf[js.Any] },
-        "MaxItems" -> MaxItems.map { x => x.asInstanceOf[js.Any] },
-        "Marker" -> Marker.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Marker" -> Marker.map { x => x.asInstanceOf[js.Any] },
+        "MaxItems" -> MaxItems.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetAccountAuthorizationDetailsRequest]
     }
@@ -1706,29 +1706,29 @@ package iam {
    */
   @js.native
   trait GetAccountAuthorizationDetailsResponse extends js.Object {
+    var GroupDetailList: js.UndefOr[groupDetailListType]
     var IsTruncated: js.UndefOr[booleanType]
-    var UserDetailList: js.UndefOr[userDetailListType]
+    var Marker: js.UndefOr[markerType]
     var Policies: js.UndefOr[ManagedPolicyDetailListType]
     var RoleDetailList: js.UndefOr[roleDetailListType]
-    var GroupDetailList: js.UndefOr[groupDetailListType]
-    var Marker: js.UndefOr[markerType]
+    var UserDetailList: js.UndefOr[userDetailListType]
   }
 
   object GetAccountAuthorizationDetailsResponse {
     def apply(
+      GroupDetailList: js.UndefOr[groupDetailListType] = js.undefined,
       IsTruncated: js.UndefOr[booleanType] = js.undefined,
-      UserDetailList: js.UndefOr[userDetailListType] = js.undefined,
+      Marker: js.UndefOr[markerType] = js.undefined,
       Policies: js.UndefOr[ManagedPolicyDetailListType] = js.undefined,
       RoleDetailList: js.UndefOr[roleDetailListType] = js.undefined,
-      GroupDetailList: js.UndefOr[groupDetailListType] = js.undefined,
-      Marker: js.UndefOr[markerType] = js.undefined): GetAccountAuthorizationDetailsResponse = {
+      UserDetailList: js.UndefOr[userDetailListType] = js.undefined): GetAccountAuthorizationDetailsResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "GroupDetailList" -> GroupDetailList.map { x => x.asInstanceOf[js.Any] },
         "IsTruncated" -> IsTruncated.map { x => x.asInstanceOf[js.Any] },
-        "UserDetailList" -> UserDetailList.map { x => x.asInstanceOf[js.Any] },
+        "Marker" -> Marker.map { x => x.asInstanceOf[js.Any] },
         "Policies" -> Policies.map { x => x.asInstanceOf[js.Any] },
         "RoleDetailList" -> RoleDetailList.map { x => x.asInstanceOf[js.Any] },
-        "GroupDetailList" -> GroupDetailList.map { x => x.asInstanceOf[js.Any] },
-        "Marker" -> Marker.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "UserDetailList" -> UserDetailList.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetAccountAuthorizationDetailsResponse]
     }
@@ -1739,14 +1739,14 @@ package iam {
    */
   @js.native
   trait GetAccountPasswordPolicyResponse extends js.Object {
-    var PasswordPolicy: js.UndefOr[PasswordPolicy]
+    var PasswordPolicy: PasswordPolicy
   }
 
   object GetAccountPasswordPolicyResponse {
     def apply(
-      PasswordPolicy: js.UndefOr[PasswordPolicy] = js.undefined): GetAccountPasswordPolicyResponse = {
+      PasswordPolicy: PasswordPolicy): GetAccountPasswordPolicyResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "PasswordPolicy" -> PasswordPolicy.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "PasswordPolicy" -> PasswordPolicy.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetAccountPasswordPolicyResponse]
     }
@@ -1772,14 +1772,14 @@ package iam {
 
   @js.native
   trait GetContextKeysForCustomPolicyRequest extends js.Object {
-    var PolicyInputList: js.UndefOr[SimulationPolicyListType]
+    var PolicyInputList: SimulationPolicyListType
   }
 
   object GetContextKeysForCustomPolicyRequest {
     def apply(
-      PolicyInputList: js.UndefOr[SimulationPolicyListType] = js.undefined): GetContextKeysForCustomPolicyRequest = {
+      PolicyInputList: SimulationPolicyListType): GetContextKeysForCustomPolicyRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "PolicyInputList" -> PolicyInputList.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "PolicyInputList" -> PolicyInputList.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetContextKeysForCustomPolicyRequest]
     }
@@ -1805,16 +1805,16 @@ package iam {
 
   @js.native
   trait GetContextKeysForPrincipalPolicyRequest extends js.Object {
-    var PolicySourceArn: js.UndefOr[arnType]
+    var PolicySourceArn: arnType
     var PolicyInputList: js.UndefOr[SimulationPolicyListType]
   }
 
   object GetContextKeysForPrincipalPolicyRequest {
     def apply(
-      PolicySourceArn: js.UndefOr[arnType] = js.undefined,
+      PolicySourceArn: arnType,
       PolicyInputList: js.UndefOr[SimulationPolicyListType] = js.undefined): GetContextKeysForPrincipalPolicyRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "PolicySourceArn" -> PolicySourceArn.map { x => x.asInstanceOf[js.Any] },
+        "PolicySourceArn" -> PolicySourceArn.asInstanceOf[js.Any],
         "PolicyInputList" -> PolicyInputList.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetContextKeysForPrincipalPolicyRequest]
@@ -1827,19 +1827,19 @@ package iam {
   @js.native
   trait GetCredentialReportResponse extends js.Object {
     var Content: js.UndefOr[ReportContentType]
-    var ReportFormat: js.UndefOr[ReportFormatType]
     var GeneratedTime: js.UndefOr[dateType]
+    var ReportFormat: js.UndefOr[ReportFormatType]
   }
 
   object GetCredentialReportResponse {
     def apply(
       Content: js.UndefOr[ReportContentType] = js.undefined,
-      ReportFormat: js.UndefOr[ReportFormatType] = js.undefined,
-      GeneratedTime: js.UndefOr[dateType] = js.undefined): GetCredentialReportResponse = {
+      GeneratedTime: js.UndefOr[dateType] = js.undefined,
+      ReportFormat: js.UndefOr[ReportFormatType] = js.undefined): GetCredentialReportResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Content" -> Content.map { x => x.asInstanceOf[js.Any] },
-        "ReportFormat" -> ReportFormat.map { x => x.asInstanceOf[js.Any] },
-        "GeneratedTime" -> GeneratedTime.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "GeneratedTime" -> GeneratedTime.map { x => x.asInstanceOf[js.Any] },
+        "ReportFormat" -> ReportFormat.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetCredentialReportResponse]
     }
@@ -1847,17 +1847,17 @@ package iam {
 
   @js.native
   trait GetGroupPolicyRequest extends js.Object {
-    var GroupName: js.UndefOr[groupNameType]
-    var PolicyName: js.UndefOr[policyNameType]
+    var GroupName: groupNameType
+    var PolicyName: policyNameType
   }
 
   object GetGroupPolicyRequest {
     def apply(
-      GroupName: js.UndefOr[groupNameType] = js.undefined,
-      PolicyName: js.UndefOr[policyNameType] = js.undefined): GetGroupPolicyRequest = {
+      GroupName: groupNameType,
+      PolicyName: policyNameType): GetGroupPolicyRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "GroupName" -> GroupName.map { x => x.asInstanceOf[js.Any] },
-        "PolicyName" -> PolicyName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "GroupName" -> GroupName.asInstanceOf[js.Any],
+        "PolicyName" -> PolicyName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetGroupPolicyRequest]
     }
@@ -1868,20 +1868,20 @@ package iam {
    */
   @js.native
   trait GetGroupPolicyResponse extends js.Object {
-    var GroupName: js.UndefOr[groupNameType]
-    var PolicyName: js.UndefOr[policyNameType]
-    var PolicyDocument: js.UndefOr[policyDocumentType]
+    var GroupName: groupNameType
+    var PolicyDocument: policyDocumentType
+    var PolicyName: policyNameType
   }
 
   object GetGroupPolicyResponse {
     def apply(
-      GroupName: js.UndefOr[groupNameType] = js.undefined,
-      PolicyName: js.UndefOr[policyNameType] = js.undefined,
-      PolicyDocument: js.UndefOr[policyDocumentType] = js.undefined): GetGroupPolicyResponse = {
+      GroupName: groupNameType,
+      PolicyDocument: policyDocumentType,
+      PolicyName: policyNameType): GetGroupPolicyResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "GroupName" -> GroupName.map { x => x.asInstanceOf[js.Any] },
-        "PolicyName" -> PolicyName.map { x => x.asInstanceOf[js.Any] },
-        "PolicyDocument" -> PolicyDocument.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "GroupName" -> GroupName.asInstanceOf[js.Any],
+        "PolicyDocument" -> PolicyDocument.asInstanceOf[js.Any],
+        "PolicyName" -> PolicyName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetGroupPolicyResponse]
     }
@@ -1889,18 +1889,18 @@ package iam {
 
   @js.native
   trait GetGroupRequest extends js.Object {
-    var GroupName: js.UndefOr[groupNameType]
+    var GroupName: groupNameType
     var Marker: js.UndefOr[markerType]
     var MaxItems: js.UndefOr[maxItemsType]
   }
 
   object GetGroupRequest {
     def apply(
-      GroupName: js.UndefOr[groupNameType] = js.undefined,
+      GroupName: groupNameType,
       Marker: js.UndefOr[markerType] = js.undefined,
       MaxItems: js.UndefOr[maxItemsType] = js.undefined): GetGroupRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "GroupName" -> GroupName.map { x => x.asInstanceOf[js.Any] },
+        "GroupName" -> GroupName.asInstanceOf[js.Any],
         "Marker" -> Marker.map { x => x.asInstanceOf[js.Any] },
         "MaxItems" -> MaxItems.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
@@ -1913,21 +1913,21 @@ package iam {
    */
   @js.native
   trait GetGroupResponse extends js.Object {
-    var Group: js.UndefOr[Group]
-    var Users: js.UndefOr[userListType]
+    var Group: Group
+    var Users: userListType
     var IsTruncated: js.UndefOr[booleanType]
     var Marker: js.UndefOr[markerType]
   }
 
   object GetGroupResponse {
     def apply(
-      Group: js.UndefOr[Group] = js.undefined,
-      Users: js.UndefOr[userListType] = js.undefined,
+      Group: Group,
+      Users: userListType,
       IsTruncated: js.UndefOr[booleanType] = js.undefined,
       Marker: js.UndefOr[markerType] = js.undefined): GetGroupResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Group" -> Group.map { x => x.asInstanceOf[js.Any] },
-        "Users" -> Users.map { x => x.asInstanceOf[js.Any] },
+        "Group" -> Group.asInstanceOf[js.Any],
+        "Users" -> Users.asInstanceOf[js.Any],
         "IsTruncated" -> IsTruncated.map { x => x.asInstanceOf[js.Any] },
         "Marker" -> Marker.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
@@ -1937,14 +1937,14 @@ package iam {
 
   @js.native
   trait GetInstanceProfileRequest extends js.Object {
-    var InstanceProfileName: js.UndefOr[instanceProfileNameType]
+    var InstanceProfileName: instanceProfileNameType
   }
 
   object GetInstanceProfileRequest {
     def apply(
-      InstanceProfileName: js.UndefOr[instanceProfileNameType] = js.undefined): GetInstanceProfileRequest = {
+      InstanceProfileName: instanceProfileNameType): GetInstanceProfileRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "InstanceProfileName" -> InstanceProfileName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "InstanceProfileName" -> InstanceProfileName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetInstanceProfileRequest]
     }
@@ -1955,14 +1955,14 @@ package iam {
    */
   @js.native
   trait GetInstanceProfileResponse extends js.Object {
-    var InstanceProfile: js.UndefOr[InstanceProfile]
+    var InstanceProfile: InstanceProfile
   }
 
   object GetInstanceProfileResponse {
     def apply(
-      InstanceProfile: js.UndefOr[InstanceProfile] = js.undefined): GetInstanceProfileResponse = {
+      InstanceProfile: InstanceProfile): GetInstanceProfileResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "InstanceProfile" -> InstanceProfile.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "InstanceProfile" -> InstanceProfile.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetInstanceProfileResponse]
     }
@@ -1970,14 +1970,14 @@ package iam {
 
   @js.native
   trait GetLoginProfileRequest extends js.Object {
-    var UserName: js.UndefOr[userNameType]
+    var UserName: userNameType
   }
 
   object GetLoginProfileRequest {
     def apply(
-      UserName: js.UndefOr[userNameType] = js.undefined): GetLoginProfileRequest = {
+      UserName: userNameType): GetLoginProfileRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "UserName" -> UserName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "UserName" -> UserName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetLoginProfileRequest]
     }
@@ -1988,14 +1988,14 @@ package iam {
    */
   @js.native
   trait GetLoginProfileResponse extends js.Object {
-    var LoginProfile: js.UndefOr[LoginProfile]
+    var LoginProfile: LoginProfile
   }
 
   object GetLoginProfileResponse {
     def apply(
-      LoginProfile: js.UndefOr[LoginProfile] = js.undefined): GetLoginProfileResponse = {
+      LoginProfile: LoginProfile): GetLoginProfileResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "LoginProfile" -> LoginProfile.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "LoginProfile" -> LoginProfile.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetLoginProfileResponse]
     }
@@ -2003,14 +2003,14 @@ package iam {
 
   @js.native
   trait GetOpenIDConnectProviderRequest extends js.Object {
-    var OpenIDConnectProviderArn: js.UndefOr[arnType]
+    var OpenIDConnectProviderArn: arnType
   }
 
   object GetOpenIDConnectProviderRequest {
     def apply(
-      OpenIDConnectProviderArn: js.UndefOr[arnType] = js.undefined): GetOpenIDConnectProviderRequest = {
+      OpenIDConnectProviderArn: arnType): GetOpenIDConnectProviderRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "OpenIDConnectProviderArn" -> OpenIDConnectProviderArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "OpenIDConnectProviderArn" -> OpenIDConnectProviderArn.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetOpenIDConnectProviderRequest]
     }
@@ -2021,23 +2021,23 @@ package iam {
    */
   @js.native
   trait GetOpenIDConnectProviderResponse extends js.Object {
-    var Url: js.UndefOr[OpenIDConnectProviderUrlType]
     var ClientIDList: js.UndefOr[clientIDListType]
-    var ThumbprintList: js.UndefOr[thumbprintListType]
     var CreateDate: js.UndefOr[dateType]
+    var ThumbprintList: js.UndefOr[thumbprintListType]
+    var Url: js.UndefOr[OpenIDConnectProviderUrlType]
   }
 
   object GetOpenIDConnectProviderResponse {
     def apply(
-      Url: js.UndefOr[OpenIDConnectProviderUrlType] = js.undefined,
       ClientIDList: js.UndefOr[clientIDListType] = js.undefined,
+      CreateDate: js.UndefOr[dateType] = js.undefined,
       ThumbprintList: js.UndefOr[thumbprintListType] = js.undefined,
-      CreateDate: js.UndefOr[dateType] = js.undefined): GetOpenIDConnectProviderResponse = {
+      Url: js.UndefOr[OpenIDConnectProviderUrlType] = js.undefined): GetOpenIDConnectProviderResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Url" -> Url.map { x => x.asInstanceOf[js.Any] },
         "ClientIDList" -> ClientIDList.map { x => x.asInstanceOf[js.Any] },
+        "CreateDate" -> CreateDate.map { x => x.asInstanceOf[js.Any] },
         "ThumbprintList" -> ThumbprintList.map { x => x.asInstanceOf[js.Any] },
-        "CreateDate" -> CreateDate.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Url" -> Url.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetOpenIDConnectProviderResponse]
     }
@@ -2045,14 +2045,14 @@ package iam {
 
   @js.native
   trait GetPolicyRequest extends js.Object {
-    var PolicyArn: js.UndefOr[arnType]
+    var PolicyArn: arnType
   }
 
   object GetPolicyRequest {
     def apply(
-      PolicyArn: js.UndefOr[arnType] = js.undefined): GetPolicyRequest = {
+      PolicyArn: arnType): GetPolicyRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "PolicyArn" -> PolicyArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "PolicyArn" -> PolicyArn.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetPolicyRequest]
     }
@@ -2078,17 +2078,17 @@ package iam {
 
   @js.native
   trait GetPolicyVersionRequest extends js.Object {
-    var PolicyArn: js.UndefOr[arnType]
-    var VersionId: js.UndefOr[policyVersionIdType]
+    var PolicyArn: arnType
+    var VersionId: policyVersionIdType
   }
 
   object GetPolicyVersionRequest {
     def apply(
-      PolicyArn: js.UndefOr[arnType] = js.undefined,
-      VersionId: js.UndefOr[policyVersionIdType] = js.undefined): GetPolicyVersionRequest = {
+      PolicyArn: arnType,
+      VersionId: policyVersionIdType): GetPolicyVersionRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "PolicyArn" -> PolicyArn.map { x => x.asInstanceOf[js.Any] },
-        "VersionId" -> VersionId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "PolicyArn" -> PolicyArn.asInstanceOf[js.Any],
+        "VersionId" -> VersionId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetPolicyVersionRequest]
     }
@@ -2114,17 +2114,17 @@ package iam {
 
   @js.native
   trait GetRolePolicyRequest extends js.Object {
-    var RoleName: js.UndefOr[roleNameType]
-    var PolicyName: js.UndefOr[policyNameType]
+    var PolicyName: policyNameType
+    var RoleName: roleNameType
   }
 
   object GetRolePolicyRequest {
     def apply(
-      RoleName: js.UndefOr[roleNameType] = js.undefined,
-      PolicyName: js.UndefOr[policyNameType] = js.undefined): GetRolePolicyRequest = {
+      PolicyName: policyNameType,
+      RoleName: roleNameType): GetRolePolicyRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "RoleName" -> RoleName.map { x => x.asInstanceOf[js.Any] },
-        "PolicyName" -> PolicyName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "PolicyName" -> PolicyName.asInstanceOf[js.Any],
+        "RoleName" -> RoleName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetRolePolicyRequest]
     }
@@ -2135,20 +2135,20 @@ package iam {
    */
   @js.native
   trait GetRolePolicyResponse extends js.Object {
-    var RoleName: js.UndefOr[roleNameType]
-    var PolicyName: js.UndefOr[policyNameType]
-    var PolicyDocument: js.UndefOr[policyDocumentType]
+    var PolicyDocument: policyDocumentType
+    var PolicyName: policyNameType
+    var RoleName: roleNameType
   }
 
   object GetRolePolicyResponse {
     def apply(
-      RoleName: js.UndefOr[roleNameType] = js.undefined,
-      PolicyName: js.UndefOr[policyNameType] = js.undefined,
-      PolicyDocument: js.UndefOr[policyDocumentType] = js.undefined): GetRolePolicyResponse = {
+      PolicyDocument: policyDocumentType,
+      PolicyName: policyNameType,
+      RoleName: roleNameType): GetRolePolicyResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "RoleName" -> RoleName.map { x => x.asInstanceOf[js.Any] },
-        "PolicyName" -> PolicyName.map { x => x.asInstanceOf[js.Any] },
-        "PolicyDocument" -> PolicyDocument.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "PolicyDocument" -> PolicyDocument.asInstanceOf[js.Any],
+        "PolicyName" -> PolicyName.asInstanceOf[js.Any],
+        "RoleName" -> RoleName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetRolePolicyResponse]
     }
@@ -2156,14 +2156,14 @@ package iam {
 
   @js.native
   trait GetRoleRequest extends js.Object {
-    var RoleName: js.UndefOr[roleNameType]
+    var RoleName: roleNameType
   }
 
   object GetRoleRequest {
     def apply(
-      RoleName: js.UndefOr[roleNameType] = js.undefined): GetRoleRequest = {
+      RoleName: roleNameType): GetRoleRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "RoleName" -> RoleName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "RoleName" -> RoleName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetRoleRequest]
     }
@@ -2174,14 +2174,14 @@ package iam {
    */
   @js.native
   trait GetRoleResponse extends js.Object {
-    var Role: js.UndefOr[Role]
+    var Role: Role
   }
 
   object GetRoleResponse {
     def apply(
-      Role: js.UndefOr[Role] = js.undefined): GetRoleResponse = {
+      Role: Role): GetRoleResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Role" -> Role.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Role" -> Role.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetRoleResponse]
     }
@@ -2189,14 +2189,14 @@ package iam {
 
   @js.native
   trait GetSAMLProviderRequest extends js.Object {
-    var SAMLProviderArn: js.UndefOr[arnType]
+    var SAMLProviderArn: arnType
   }
 
   object GetSAMLProviderRequest {
     def apply(
-      SAMLProviderArn: js.UndefOr[arnType] = js.undefined): GetSAMLProviderRequest = {
+      SAMLProviderArn: arnType): GetSAMLProviderRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "SAMLProviderArn" -> SAMLProviderArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "SAMLProviderArn" -> SAMLProviderArn.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetSAMLProviderRequest]
     }
@@ -2207,19 +2207,19 @@ package iam {
    */
   @js.native
   trait GetSAMLProviderResponse extends js.Object {
-    var SAMLMetadataDocument: js.UndefOr[SAMLMetadataDocumentType]
     var CreateDate: js.UndefOr[dateType]
+    var SAMLMetadataDocument: js.UndefOr[SAMLMetadataDocumentType]
     var ValidUntil: js.UndefOr[dateType]
   }
 
   object GetSAMLProviderResponse {
     def apply(
-      SAMLMetadataDocument: js.UndefOr[SAMLMetadataDocumentType] = js.undefined,
       CreateDate: js.UndefOr[dateType] = js.undefined,
+      SAMLMetadataDocument: js.UndefOr[SAMLMetadataDocumentType] = js.undefined,
       ValidUntil: js.UndefOr[dateType] = js.undefined): GetSAMLProviderResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "SAMLMetadataDocument" -> SAMLMetadataDocument.map { x => x.asInstanceOf[js.Any] },
         "CreateDate" -> CreateDate.map { x => x.asInstanceOf[js.Any] },
+        "SAMLMetadataDocument" -> SAMLMetadataDocument.map { x => x.asInstanceOf[js.Any] },
         "ValidUntil" -> ValidUntil.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetSAMLProviderResponse]
@@ -2228,20 +2228,20 @@ package iam {
 
   @js.native
   trait GetSSHPublicKeyRequest extends js.Object {
-    var UserName: js.UndefOr[userNameType]
-    var SSHPublicKeyId: js.UndefOr[publicKeyIdType]
-    var Encoding: js.UndefOr[encodingType]
+    var Encoding: encodingType
+    var SSHPublicKeyId: publicKeyIdType
+    var UserName: userNameType
   }
 
   object GetSSHPublicKeyRequest {
     def apply(
-      UserName: js.UndefOr[userNameType] = js.undefined,
-      SSHPublicKeyId: js.UndefOr[publicKeyIdType] = js.undefined,
-      Encoding: js.UndefOr[encodingType] = js.undefined): GetSSHPublicKeyRequest = {
+      Encoding: encodingType,
+      SSHPublicKeyId: publicKeyIdType,
+      UserName: userNameType): GetSSHPublicKeyRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "UserName" -> UserName.map { x => x.asInstanceOf[js.Any] },
-        "SSHPublicKeyId" -> SSHPublicKeyId.map { x => x.asInstanceOf[js.Any] },
-        "Encoding" -> Encoding.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Encoding" -> Encoding.asInstanceOf[js.Any],
+        "SSHPublicKeyId" -> SSHPublicKeyId.asInstanceOf[js.Any],
+        "UserName" -> UserName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetSSHPublicKeyRequest]
     }
@@ -2267,14 +2267,14 @@ package iam {
 
   @js.native
   trait GetServerCertificateRequest extends js.Object {
-    var ServerCertificateName: js.UndefOr[serverCertificateNameType]
+    var ServerCertificateName: serverCertificateNameType
   }
 
   object GetServerCertificateRequest {
     def apply(
-      ServerCertificateName: js.UndefOr[serverCertificateNameType] = js.undefined): GetServerCertificateRequest = {
+      ServerCertificateName: serverCertificateNameType): GetServerCertificateRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ServerCertificateName" -> ServerCertificateName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ServerCertificateName" -> ServerCertificateName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetServerCertificateRequest]
     }
@@ -2285,14 +2285,14 @@ package iam {
    */
   @js.native
   trait GetServerCertificateResponse extends js.Object {
-    var ServerCertificate: js.UndefOr[ServerCertificate]
+    var ServerCertificate: ServerCertificate
   }
 
   object GetServerCertificateResponse {
     def apply(
-      ServerCertificate: js.UndefOr[ServerCertificate] = js.undefined): GetServerCertificateResponse = {
+      ServerCertificate: ServerCertificate): GetServerCertificateResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ServerCertificate" -> ServerCertificate.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ServerCertificate" -> ServerCertificate.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetServerCertificateResponse]
     }
@@ -2300,14 +2300,14 @@ package iam {
 
   @js.native
   trait GetServiceLinkedRoleDeletionStatusRequest extends js.Object {
-    var DeletionTaskId: js.UndefOr[DeletionTaskIdType]
+    var DeletionTaskId: DeletionTaskIdType
   }
 
   object GetServiceLinkedRoleDeletionStatusRequest {
     def apply(
-      DeletionTaskId: js.UndefOr[DeletionTaskIdType] = js.undefined): GetServiceLinkedRoleDeletionStatusRequest = {
+      DeletionTaskId: DeletionTaskIdType): GetServiceLinkedRoleDeletionStatusRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "DeletionTaskId" -> DeletionTaskId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "DeletionTaskId" -> DeletionTaskId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetServiceLinkedRoleDeletionStatusRequest]
     }
@@ -2315,16 +2315,16 @@ package iam {
 
   @js.native
   trait GetServiceLinkedRoleDeletionStatusResponse extends js.Object {
-    var Status: js.UndefOr[DeletionTaskStatusType]
+    var Status: DeletionTaskStatusType
     var Reason: js.UndefOr[DeletionTaskFailureReasonType]
   }
 
   object GetServiceLinkedRoleDeletionStatusResponse {
     def apply(
-      Status: js.UndefOr[DeletionTaskStatusType] = js.undefined,
+      Status: DeletionTaskStatusType,
       Reason: js.UndefOr[DeletionTaskFailureReasonType] = js.undefined): GetServiceLinkedRoleDeletionStatusResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Status" -> Status.map { x => x.asInstanceOf[js.Any] },
+        "Status" -> Status.asInstanceOf[js.Any],
         "Reason" -> Reason.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetServiceLinkedRoleDeletionStatusResponse]
@@ -2333,17 +2333,17 @@ package iam {
 
   @js.native
   trait GetUserPolicyRequest extends js.Object {
-    var UserName: js.UndefOr[existingUserNameType]
-    var PolicyName: js.UndefOr[policyNameType]
+    var PolicyName: policyNameType
+    var UserName: existingUserNameType
   }
 
   object GetUserPolicyRequest {
     def apply(
-      UserName: js.UndefOr[existingUserNameType] = js.undefined,
-      PolicyName: js.UndefOr[policyNameType] = js.undefined): GetUserPolicyRequest = {
+      PolicyName: policyNameType,
+      UserName: existingUserNameType): GetUserPolicyRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "UserName" -> UserName.map { x => x.asInstanceOf[js.Any] },
-        "PolicyName" -> PolicyName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "PolicyName" -> PolicyName.asInstanceOf[js.Any],
+        "UserName" -> UserName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetUserPolicyRequest]
     }
@@ -2354,20 +2354,20 @@ package iam {
    */
   @js.native
   trait GetUserPolicyResponse extends js.Object {
-    var UserName: js.UndefOr[existingUserNameType]
-    var PolicyName: js.UndefOr[policyNameType]
-    var PolicyDocument: js.UndefOr[policyDocumentType]
+    var PolicyDocument: policyDocumentType
+    var PolicyName: policyNameType
+    var UserName: existingUserNameType
   }
 
   object GetUserPolicyResponse {
     def apply(
-      UserName: js.UndefOr[existingUserNameType] = js.undefined,
-      PolicyName: js.UndefOr[policyNameType] = js.undefined,
-      PolicyDocument: js.UndefOr[policyDocumentType] = js.undefined): GetUserPolicyResponse = {
+      PolicyDocument: policyDocumentType,
+      PolicyName: policyNameType,
+      UserName: existingUserNameType): GetUserPolicyResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "UserName" -> UserName.map { x => x.asInstanceOf[js.Any] },
-        "PolicyName" -> PolicyName.map { x => x.asInstanceOf[js.Any] },
-        "PolicyDocument" -> PolicyDocument.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "PolicyDocument" -> PolicyDocument.asInstanceOf[js.Any],
+        "PolicyName" -> PolicyName.asInstanceOf[js.Any],
+        "UserName" -> UserName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetUserPolicyResponse]
     }
@@ -2393,14 +2393,14 @@ package iam {
    */
   @js.native
   trait GetUserResponse extends js.Object {
-    var User: js.UndefOr[User]
+    var User: User
   }
 
   object GetUserResponse {
     def apply(
-      User: js.UndefOr[User] = js.undefined): GetUserResponse = {
+      User: User): GetUserResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "User" -> User.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "User" -> User.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetUserResponse]
     }
@@ -2411,26 +2411,26 @@ package iam {
    */
   @js.native
   trait Group extends js.Object {
-    var Path: js.UndefOr[pathType]
-    var GroupName: js.UndefOr[groupNameType]
-    var GroupId: js.UndefOr[idType]
-    var Arn: js.UndefOr[arnType]
-    var CreateDate: js.UndefOr[dateType]
+    var Arn: arnType
+    var CreateDate: dateType
+    var GroupId: idType
+    var GroupName: groupNameType
+    var Path: pathType
   }
 
   object Group {
     def apply(
-      Path: js.UndefOr[pathType] = js.undefined,
-      GroupName: js.UndefOr[groupNameType] = js.undefined,
-      GroupId: js.UndefOr[idType] = js.undefined,
-      Arn: js.UndefOr[arnType] = js.undefined,
-      CreateDate: js.UndefOr[dateType] = js.undefined): Group = {
+      Arn: arnType,
+      CreateDate: dateType,
+      GroupId: idType,
+      GroupName: groupNameType,
+      Path: pathType): Group = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Path" -> Path.map { x => x.asInstanceOf[js.Any] },
-        "GroupName" -> GroupName.map { x => x.asInstanceOf[js.Any] },
-        "GroupId" -> GroupId.map { x => x.asInstanceOf[js.Any] },
-        "Arn" -> Arn.map { x => x.asInstanceOf[js.Any] },
-        "CreateDate" -> CreateDate.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Arn" -> Arn.asInstanceOf[js.Any],
+        "CreateDate" -> CreateDate.asInstanceOf[js.Any],
+        "GroupId" -> GroupId.asInstanceOf[js.Any],
+        "GroupName" -> GroupName.asInstanceOf[js.Any],
+        "Path" -> Path.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Group]
     }
@@ -2441,32 +2441,32 @@ package iam {
    */
   @js.native
   trait GroupDetail extends js.Object {
-    var AttachedManagedPolicies: js.UndefOr[attachedPoliciesListType]
-    var Path: js.UndefOr[pathType]
-    var GroupName: js.UndefOr[groupNameType]
-    var GroupId: js.UndefOr[idType]
     var Arn: js.UndefOr[arnType]
+    var AttachedManagedPolicies: js.UndefOr[attachedPoliciesListType]
     var CreateDate: js.UndefOr[dateType]
+    var GroupId: js.UndefOr[idType]
+    var GroupName: js.UndefOr[groupNameType]
     var GroupPolicyList: js.UndefOr[policyDetailListType]
+    var Path: js.UndefOr[pathType]
   }
 
   object GroupDetail {
     def apply(
-      AttachedManagedPolicies: js.UndefOr[attachedPoliciesListType] = js.undefined,
-      Path: js.UndefOr[pathType] = js.undefined,
-      GroupName: js.UndefOr[groupNameType] = js.undefined,
-      GroupId: js.UndefOr[idType] = js.undefined,
       Arn: js.UndefOr[arnType] = js.undefined,
+      AttachedManagedPolicies: js.UndefOr[attachedPoliciesListType] = js.undefined,
       CreateDate: js.UndefOr[dateType] = js.undefined,
-      GroupPolicyList: js.UndefOr[policyDetailListType] = js.undefined): GroupDetail = {
+      GroupId: js.UndefOr[idType] = js.undefined,
+      GroupName: js.UndefOr[groupNameType] = js.undefined,
+      GroupPolicyList: js.UndefOr[policyDetailListType] = js.undefined,
+      Path: js.UndefOr[pathType] = js.undefined): GroupDetail = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "AttachedManagedPolicies" -> AttachedManagedPolicies.map { x => x.asInstanceOf[js.Any] },
-        "Path" -> Path.map { x => x.asInstanceOf[js.Any] },
-        "GroupName" -> GroupName.map { x => x.asInstanceOf[js.Any] },
-        "GroupId" -> GroupId.map { x => x.asInstanceOf[js.Any] },
         "Arn" -> Arn.map { x => x.asInstanceOf[js.Any] },
+        "AttachedManagedPolicies" -> AttachedManagedPolicies.map { x => x.asInstanceOf[js.Any] },
         "CreateDate" -> CreateDate.map { x => x.asInstanceOf[js.Any] },
-        "GroupPolicyList" -> GroupPolicyList.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "GroupId" -> GroupId.map { x => x.asInstanceOf[js.Any] },
+        "GroupName" -> GroupName.map { x => x.asInstanceOf[js.Any] },
+        "GroupPolicyList" -> GroupPolicyList.map { x => x.asInstanceOf[js.Any] },
+        "Path" -> Path.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GroupDetail]
     }
@@ -2477,29 +2477,29 @@ package iam {
    */
   @js.native
   trait InstanceProfile extends js.Object {
-    var Path: js.UndefOr[pathType]
-    var InstanceProfileName: js.UndefOr[instanceProfileNameType]
-    var Arn: js.UndefOr[arnType]
-    var CreateDate: js.UndefOr[dateType]
-    var InstanceProfileId: js.UndefOr[idType]
-    var Roles: js.UndefOr[roleListType]
+    var Arn: arnType
+    var CreateDate: dateType
+    var InstanceProfileId: idType
+    var InstanceProfileName: instanceProfileNameType
+    var Path: pathType
+    var Roles: roleListType
   }
 
   object InstanceProfile {
     def apply(
-      Path: js.UndefOr[pathType] = js.undefined,
-      InstanceProfileName: js.UndefOr[instanceProfileNameType] = js.undefined,
-      Arn: js.UndefOr[arnType] = js.undefined,
-      CreateDate: js.UndefOr[dateType] = js.undefined,
-      InstanceProfileId: js.UndefOr[idType] = js.undefined,
-      Roles: js.UndefOr[roleListType] = js.undefined): InstanceProfile = {
+      Arn: arnType,
+      CreateDate: dateType,
+      InstanceProfileId: idType,
+      InstanceProfileName: instanceProfileNameType,
+      Path: pathType,
+      Roles: roleListType): InstanceProfile = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Path" -> Path.map { x => x.asInstanceOf[js.Any] },
-        "InstanceProfileName" -> InstanceProfileName.map { x => x.asInstanceOf[js.Any] },
-        "Arn" -> Arn.map { x => x.asInstanceOf[js.Any] },
-        "CreateDate" -> CreateDate.map { x => x.asInstanceOf[js.Any] },
-        "InstanceProfileId" -> InstanceProfileId.map { x => x.asInstanceOf[js.Any] },
-        "Roles" -> Roles.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Arn" -> Arn.asInstanceOf[js.Any],
+        "CreateDate" -> CreateDate.asInstanceOf[js.Any],
+        "InstanceProfileId" -> InstanceProfileId.asInstanceOf[js.Any],
+        "InstanceProfileName" -> InstanceProfileName.asInstanceOf[js.Any],
+        "Path" -> Path.asInstanceOf[js.Any],
+        "Roles" -> Roles.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[InstanceProfile]
     }
@@ -2507,20 +2507,20 @@ package iam {
 
   @js.native
   trait ListAccessKeysRequest extends js.Object {
-    var UserName: js.UndefOr[existingUserNameType]
     var Marker: js.UndefOr[markerType]
     var MaxItems: js.UndefOr[maxItemsType]
+    var UserName: js.UndefOr[existingUserNameType]
   }
 
   object ListAccessKeysRequest {
     def apply(
-      UserName: js.UndefOr[existingUserNameType] = js.undefined,
       Marker: js.UndefOr[markerType] = js.undefined,
-      MaxItems: js.UndefOr[maxItemsType] = js.undefined): ListAccessKeysRequest = {
+      MaxItems: js.UndefOr[maxItemsType] = js.undefined,
+      UserName: js.UndefOr[existingUserNameType] = js.undefined): ListAccessKeysRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "UserName" -> UserName.map { x => x.asInstanceOf[js.Any] },
         "Marker" -> Marker.map { x => x.asInstanceOf[js.Any] },
-        "MaxItems" -> MaxItems.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "MaxItems" -> MaxItems.map { x => x.asInstanceOf[js.Any] },
+        "UserName" -> UserName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListAccessKeysRequest]
     }
@@ -2531,18 +2531,18 @@ package iam {
    */
   @js.native
   trait ListAccessKeysResponse extends js.Object {
-    var AccessKeyMetadata: js.UndefOr[accessKeyMetadataListType]
+    var AccessKeyMetadata: accessKeyMetadataListType
     var IsTruncated: js.UndefOr[booleanType]
     var Marker: js.UndefOr[markerType]
   }
 
   object ListAccessKeysResponse {
     def apply(
-      AccessKeyMetadata: js.UndefOr[accessKeyMetadataListType] = js.undefined,
+      AccessKeyMetadata: accessKeyMetadataListType,
       IsTruncated: js.UndefOr[booleanType] = js.undefined,
       Marker: js.UndefOr[markerType] = js.undefined): ListAccessKeysResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "AccessKeyMetadata" -> AccessKeyMetadata.map { x => x.asInstanceOf[js.Any] },
+        "AccessKeyMetadata" -> AccessKeyMetadata.asInstanceOf[js.Any],
         "IsTruncated" -> IsTruncated.map { x => x.asInstanceOf[js.Any] },
         "Marker" -> Marker.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
@@ -2573,18 +2573,18 @@ package iam {
    */
   @js.native
   trait ListAccountAliasesResponse extends js.Object {
-    var AccountAliases: js.UndefOr[accountAliasListType]
+    var AccountAliases: accountAliasListType
     var IsTruncated: js.UndefOr[booleanType]
     var Marker: js.UndefOr[markerType]
   }
 
   object ListAccountAliasesResponse {
     def apply(
-      AccountAliases: js.UndefOr[accountAliasListType] = js.undefined,
+      AccountAliases: accountAliasListType,
       IsTruncated: js.UndefOr[booleanType] = js.undefined,
       Marker: js.UndefOr[markerType] = js.undefined): ListAccountAliasesResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "AccountAliases" -> AccountAliases.map { x => x.asInstanceOf[js.Any] },
+        "AccountAliases" -> AccountAliases.asInstanceOf[js.Any],
         "IsTruncated" -> IsTruncated.map { x => x.asInstanceOf[js.Any] },
         "Marker" -> Marker.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
@@ -2594,23 +2594,23 @@ package iam {
 
   @js.native
   trait ListAttachedGroupPoliciesRequest extends js.Object {
-    var GroupName: js.UndefOr[groupNameType]
-    var PathPrefix: js.UndefOr[policyPathType]
+    var GroupName: groupNameType
     var Marker: js.UndefOr[markerType]
     var MaxItems: js.UndefOr[maxItemsType]
+    var PathPrefix: js.UndefOr[policyPathType]
   }
 
   object ListAttachedGroupPoliciesRequest {
     def apply(
-      GroupName: js.UndefOr[groupNameType] = js.undefined,
-      PathPrefix: js.UndefOr[policyPathType] = js.undefined,
+      GroupName: groupNameType,
       Marker: js.UndefOr[markerType] = js.undefined,
-      MaxItems: js.UndefOr[maxItemsType] = js.undefined): ListAttachedGroupPoliciesRequest = {
+      MaxItems: js.UndefOr[maxItemsType] = js.undefined,
+      PathPrefix: js.UndefOr[policyPathType] = js.undefined): ListAttachedGroupPoliciesRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "GroupName" -> GroupName.map { x => x.asInstanceOf[js.Any] },
-        "PathPrefix" -> PathPrefix.map { x => x.asInstanceOf[js.Any] },
+        "GroupName" -> GroupName.asInstanceOf[js.Any],
         "Marker" -> Marker.map { x => x.asInstanceOf[js.Any] },
-        "MaxItems" -> MaxItems.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "MaxItems" -> MaxItems.map { x => x.asInstanceOf[js.Any] },
+        "PathPrefix" -> PathPrefix.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListAttachedGroupPoliciesRequest]
     }
@@ -2642,23 +2642,23 @@ package iam {
 
   @js.native
   trait ListAttachedRolePoliciesRequest extends js.Object {
-    var RoleName: js.UndefOr[roleNameType]
-    var PathPrefix: js.UndefOr[policyPathType]
+    var RoleName: roleNameType
     var Marker: js.UndefOr[markerType]
     var MaxItems: js.UndefOr[maxItemsType]
+    var PathPrefix: js.UndefOr[policyPathType]
   }
 
   object ListAttachedRolePoliciesRequest {
     def apply(
-      RoleName: js.UndefOr[roleNameType] = js.undefined,
-      PathPrefix: js.UndefOr[policyPathType] = js.undefined,
+      RoleName: roleNameType,
       Marker: js.UndefOr[markerType] = js.undefined,
-      MaxItems: js.UndefOr[maxItemsType] = js.undefined): ListAttachedRolePoliciesRequest = {
+      MaxItems: js.UndefOr[maxItemsType] = js.undefined,
+      PathPrefix: js.UndefOr[policyPathType] = js.undefined): ListAttachedRolePoliciesRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "RoleName" -> RoleName.map { x => x.asInstanceOf[js.Any] },
-        "PathPrefix" -> PathPrefix.map { x => x.asInstanceOf[js.Any] },
+        "RoleName" -> RoleName.asInstanceOf[js.Any],
         "Marker" -> Marker.map { x => x.asInstanceOf[js.Any] },
-        "MaxItems" -> MaxItems.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "MaxItems" -> MaxItems.map { x => x.asInstanceOf[js.Any] },
+        "PathPrefix" -> PathPrefix.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListAttachedRolePoliciesRequest]
     }
@@ -2690,23 +2690,23 @@ package iam {
 
   @js.native
   trait ListAttachedUserPoliciesRequest extends js.Object {
-    var UserName: js.UndefOr[userNameType]
-    var PathPrefix: js.UndefOr[policyPathType]
+    var UserName: userNameType
     var Marker: js.UndefOr[markerType]
     var MaxItems: js.UndefOr[maxItemsType]
+    var PathPrefix: js.UndefOr[policyPathType]
   }
 
   object ListAttachedUserPoliciesRequest {
     def apply(
-      UserName: js.UndefOr[userNameType] = js.undefined,
-      PathPrefix: js.UndefOr[policyPathType] = js.undefined,
+      UserName: userNameType,
       Marker: js.UndefOr[markerType] = js.undefined,
-      MaxItems: js.UndefOr[maxItemsType] = js.undefined): ListAttachedUserPoliciesRequest = {
+      MaxItems: js.UndefOr[maxItemsType] = js.undefined,
+      PathPrefix: js.UndefOr[policyPathType] = js.undefined): ListAttachedUserPoliciesRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "UserName" -> UserName.map { x => x.asInstanceOf[js.Any] },
-        "PathPrefix" -> PathPrefix.map { x => x.asInstanceOf[js.Any] },
+        "UserName" -> UserName.asInstanceOf[js.Any],
         "Marker" -> Marker.map { x => x.asInstanceOf[js.Any] },
-        "MaxItems" -> MaxItems.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "MaxItems" -> MaxItems.map { x => x.asInstanceOf[js.Any] },
+        "PathPrefix" -> PathPrefix.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListAttachedUserPoliciesRequest]
     }
@@ -2738,29 +2738,29 @@ package iam {
 
   @js.native
   trait ListEntitiesForPolicyRequest extends js.Object {
-    var PolicyUsageFilter: js.UndefOr[PolicyUsageType]
-    var MaxItems: js.UndefOr[maxItemsType]
+    var PolicyArn: arnType
     var EntityFilter: js.UndefOr[EntityType]
-    var PolicyArn: js.UndefOr[arnType]
-    var PathPrefix: js.UndefOr[pathType]
     var Marker: js.UndefOr[markerType]
+    var MaxItems: js.UndefOr[maxItemsType]
+    var PathPrefix: js.UndefOr[pathType]
+    var PolicyUsageFilter: js.UndefOr[PolicyUsageType]
   }
 
   object ListEntitiesForPolicyRequest {
     def apply(
-      PolicyUsageFilter: js.UndefOr[PolicyUsageType] = js.undefined,
-      MaxItems: js.UndefOr[maxItemsType] = js.undefined,
+      PolicyArn: arnType,
       EntityFilter: js.UndefOr[EntityType] = js.undefined,
-      PolicyArn: js.UndefOr[arnType] = js.undefined,
+      Marker: js.UndefOr[markerType] = js.undefined,
+      MaxItems: js.UndefOr[maxItemsType] = js.undefined,
       PathPrefix: js.UndefOr[pathType] = js.undefined,
-      Marker: js.UndefOr[markerType] = js.undefined): ListEntitiesForPolicyRequest = {
+      PolicyUsageFilter: js.UndefOr[PolicyUsageType] = js.undefined): ListEntitiesForPolicyRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "PolicyUsageFilter" -> PolicyUsageFilter.map { x => x.asInstanceOf[js.Any] },
-        "MaxItems" -> MaxItems.map { x => x.asInstanceOf[js.Any] },
+        "PolicyArn" -> PolicyArn.asInstanceOf[js.Any],
         "EntityFilter" -> EntityFilter.map { x => x.asInstanceOf[js.Any] },
-        "PolicyArn" -> PolicyArn.map { x => x.asInstanceOf[js.Any] },
+        "Marker" -> Marker.map { x => x.asInstanceOf[js.Any] },
+        "MaxItems" -> MaxItems.map { x => x.asInstanceOf[js.Any] },
         "PathPrefix" -> PathPrefix.map { x => x.asInstanceOf[js.Any] },
-        "Marker" -> Marker.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "PolicyUsageFilter" -> PolicyUsageFilter.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListEntitiesForPolicyRequest]
     }
@@ -2772,25 +2772,25 @@ package iam {
   @js.native
   trait ListEntitiesForPolicyResponse extends js.Object {
     var IsTruncated: js.UndefOr[booleanType]
-    var PolicyRoles: js.UndefOr[PolicyRoleListType]
-    var PolicyGroups: js.UndefOr[PolicyGroupListType]
-    var PolicyUsers: js.UndefOr[PolicyUserListType]
     var Marker: js.UndefOr[markerType]
+    var PolicyGroups: js.UndefOr[PolicyGroupListType]
+    var PolicyRoles: js.UndefOr[PolicyRoleListType]
+    var PolicyUsers: js.UndefOr[PolicyUserListType]
   }
 
   object ListEntitiesForPolicyResponse {
     def apply(
       IsTruncated: js.UndefOr[booleanType] = js.undefined,
-      PolicyRoles: js.UndefOr[PolicyRoleListType] = js.undefined,
+      Marker: js.UndefOr[markerType] = js.undefined,
       PolicyGroups: js.UndefOr[PolicyGroupListType] = js.undefined,
-      PolicyUsers: js.UndefOr[PolicyUserListType] = js.undefined,
-      Marker: js.UndefOr[markerType] = js.undefined): ListEntitiesForPolicyResponse = {
+      PolicyRoles: js.UndefOr[PolicyRoleListType] = js.undefined,
+      PolicyUsers: js.UndefOr[PolicyUserListType] = js.undefined): ListEntitiesForPolicyResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
         "IsTruncated" -> IsTruncated.map { x => x.asInstanceOf[js.Any] },
-        "PolicyRoles" -> PolicyRoles.map { x => x.asInstanceOf[js.Any] },
+        "Marker" -> Marker.map { x => x.asInstanceOf[js.Any] },
         "PolicyGroups" -> PolicyGroups.map { x => x.asInstanceOf[js.Any] },
-        "PolicyUsers" -> PolicyUsers.map { x => x.asInstanceOf[js.Any] },
-        "Marker" -> Marker.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "PolicyRoles" -> PolicyRoles.map { x => x.asInstanceOf[js.Any] },
+        "PolicyUsers" -> PolicyUsers.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListEntitiesForPolicyResponse]
     }
@@ -2798,18 +2798,18 @@ package iam {
 
   @js.native
   trait ListGroupPoliciesRequest extends js.Object {
-    var GroupName: js.UndefOr[groupNameType]
+    var GroupName: groupNameType
     var Marker: js.UndefOr[markerType]
     var MaxItems: js.UndefOr[maxItemsType]
   }
 
   object ListGroupPoliciesRequest {
     def apply(
-      GroupName: js.UndefOr[groupNameType] = js.undefined,
+      GroupName: groupNameType,
       Marker: js.UndefOr[markerType] = js.undefined,
       MaxItems: js.UndefOr[maxItemsType] = js.undefined): ListGroupPoliciesRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "GroupName" -> GroupName.map { x => x.asInstanceOf[js.Any] },
+        "GroupName" -> GroupName.asInstanceOf[js.Any],
         "Marker" -> Marker.map { x => x.asInstanceOf[js.Any] },
         "MaxItems" -> MaxItems.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
@@ -2822,18 +2822,18 @@ package iam {
    */
   @js.native
   trait ListGroupPoliciesResponse extends js.Object {
-    var PolicyNames: js.UndefOr[policyNameListType]
+    var PolicyNames: policyNameListType
     var IsTruncated: js.UndefOr[booleanType]
     var Marker: js.UndefOr[markerType]
   }
 
   object ListGroupPoliciesResponse {
     def apply(
-      PolicyNames: js.UndefOr[policyNameListType] = js.undefined,
+      PolicyNames: policyNameListType,
       IsTruncated: js.UndefOr[booleanType] = js.undefined,
       Marker: js.UndefOr[markerType] = js.undefined): ListGroupPoliciesResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "PolicyNames" -> PolicyNames.map { x => x.asInstanceOf[js.Any] },
+        "PolicyNames" -> PolicyNames.asInstanceOf[js.Any],
         "IsTruncated" -> IsTruncated.map { x => x.asInstanceOf[js.Any] },
         "Marker" -> Marker.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
@@ -2843,18 +2843,18 @@ package iam {
 
   @js.native
   trait ListGroupsForUserRequest extends js.Object {
-    var UserName: js.UndefOr[existingUserNameType]
+    var UserName: existingUserNameType
     var Marker: js.UndefOr[markerType]
     var MaxItems: js.UndefOr[maxItemsType]
   }
 
   object ListGroupsForUserRequest {
     def apply(
-      UserName: js.UndefOr[existingUserNameType] = js.undefined,
+      UserName: existingUserNameType,
       Marker: js.UndefOr[markerType] = js.undefined,
       MaxItems: js.UndefOr[maxItemsType] = js.undefined): ListGroupsForUserRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "UserName" -> UserName.map { x => x.asInstanceOf[js.Any] },
+        "UserName" -> UserName.asInstanceOf[js.Any],
         "Marker" -> Marker.map { x => x.asInstanceOf[js.Any] },
         "MaxItems" -> MaxItems.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
@@ -2867,18 +2867,18 @@ package iam {
    */
   @js.native
   trait ListGroupsForUserResponse extends js.Object {
-    var Groups: js.UndefOr[groupListType]
+    var Groups: groupListType
     var IsTruncated: js.UndefOr[booleanType]
     var Marker: js.UndefOr[markerType]
   }
 
   object ListGroupsForUserResponse {
     def apply(
-      Groups: js.UndefOr[groupListType] = js.undefined,
+      Groups: groupListType,
       IsTruncated: js.UndefOr[booleanType] = js.undefined,
       Marker: js.UndefOr[markerType] = js.undefined): ListGroupsForUserResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Groups" -> Groups.map { x => x.asInstanceOf[js.Any] },
+        "Groups" -> Groups.asInstanceOf[js.Any],
         "IsTruncated" -> IsTruncated.map { x => x.asInstanceOf[js.Any] },
         "Marker" -> Marker.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
@@ -2888,20 +2888,20 @@ package iam {
 
   @js.native
   trait ListGroupsRequest extends js.Object {
-    var PathPrefix: js.UndefOr[pathPrefixType]
     var Marker: js.UndefOr[markerType]
     var MaxItems: js.UndefOr[maxItemsType]
+    var PathPrefix: js.UndefOr[pathPrefixType]
   }
 
   object ListGroupsRequest {
     def apply(
-      PathPrefix: js.UndefOr[pathPrefixType] = js.undefined,
       Marker: js.UndefOr[markerType] = js.undefined,
-      MaxItems: js.UndefOr[maxItemsType] = js.undefined): ListGroupsRequest = {
+      MaxItems: js.UndefOr[maxItemsType] = js.undefined,
+      PathPrefix: js.UndefOr[pathPrefixType] = js.undefined): ListGroupsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "PathPrefix" -> PathPrefix.map { x => x.asInstanceOf[js.Any] },
         "Marker" -> Marker.map { x => x.asInstanceOf[js.Any] },
-        "MaxItems" -> MaxItems.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "MaxItems" -> MaxItems.map { x => x.asInstanceOf[js.Any] },
+        "PathPrefix" -> PathPrefix.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListGroupsRequest]
     }
@@ -2912,18 +2912,18 @@ package iam {
    */
   @js.native
   trait ListGroupsResponse extends js.Object {
-    var Groups: js.UndefOr[groupListType]
+    var Groups: groupListType
     var IsTruncated: js.UndefOr[booleanType]
     var Marker: js.UndefOr[markerType]
   }
 
   object ListGroupsResponse {
     def apply(
-      Groups: js.UndefOr[groupListType] = js.undefined,
+      Groups: groupListType,
       IsTruncated: js.UndefOr[booleanType] = js.undefined,
       Marker: js.UndefOr[markerType] = js.undefined): ListGroupsResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Groups" -> Groups.map { x => x.asInstanceOf[js.Any] },
+        "Groups" -> Groups.asInstanceOf[js.Any],
         "IsTruncated" -> IsTruncated.map { x => x.asInstanceOf[js.Any] },
         "Marker" -> Marker.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
@@ -2933,18 +2933,18 @@ package iam {
 
   @js.native
   trait ListInstanceProfilesForRoleRequest extends js.Object {
-    var RoleName: js.UndefOr[roleNameType]
+    var RoleName: roleNameType
     var Marker: js.UndefOr[markerType]
     var MaxItems: js.UndefOr[maxItemsType]
   }
 
   object ListInstanceProfilesForRoleRequest {
     def apply(
-      RoleName: js.UndefOr[roleNameType] = js.undefined,
+      RoleName: roleNameType,
       Marker: js.UndefOr[markerType] = js.undefined,
       MaxItems: js.UndefOr[maxItemsType] = js.undefined): ListInstanceProfilesForRoleRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "RoleName" -> RoleName.map { x => x.asInstanceOf[js.Any] },
+        "RoleName" -> RoleName.asInstanceOf[js.Any],
         "Marker" -> Marker.map { x => x.asInstanceOf[js.Any] },
         "MaxItems" -> MaxItems.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
@@ -2957,18 +2957,18 @@ package iam {
    */
   @js.native
   trait ListInstanceProfilesForRoleResponse extends js.Object {
-    var InstanceProfiles: js.UndefOr[instanceProfileListType]
+    var InstanceProfiles: instanceProfileListType
     var IsTruncated: js.UndefOr[booleanType]
     var Marker: js.UndefOr[markerType]
   }
 
   object ListInstanceProfilesForRoleResponse {
     def apply(
-      InstanceProfiles: js.UndefOr[instanceProfileListType] = js.undefined,
+      InstanceProfiles: instanceProfileListType,
       IsTruncated: js.UndefOr[booleanType] = js.undefined,
       Marker: js.UndefOr[markerType] = js.undefined): ListInstanceProfilesForRoleResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "InstanceProfiles" -> InstanceProfiles.map { x => x.asInstanceOf[js.Any] },
+        "InstanceProfiles" -> InstanceProfiles.asInstanceOf[js.Any],
         "IsTruncated" -> IsTruncated.map { x => x.asInstanceOf[js.Any] },
         "Marker" -> Marker.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
@@ -2978,20 +2978,20 @@ package iam {
 
   @js.native
   trait ListInstanceProfilesRequest extends js.Object {
-    var PathPrefix: js.UndefOr[pathPrefixType]
     var Marker: js.UndefOr[markerType]
     var MaxItems: js.UndefOr[maxItemsType]
+    var PathPrefix: js.UndefOr[pathPrefixType]
   }
 
   object ListInstanceProfilesRequest {
     def apply(
-      PathPrefix: js.UndefOr[pathPrefixType] = js.undefined,
       Marker: js.UndefOr[markerType] = js.undefined,
-      MaxItems: js.UndefOr[maxItemsType] = js.undefined): ListInstanceProfilesRequest = {
+      MaxItems: js.UndefOr[maxItemsType] = js.undefined,
+      PathPrefix: js.UndefOr[pathPrefixType] = js.undefined): ListInstanceProfilesRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "PathPrefix" -> PathPrefix.map { x => x.asInstanceOf[js.Any] },
         "Marker" -> Marker.map { x => x.asInstanceOf[js.Any] },
-        "MaxItems" -> MaxItems.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "MaxItems" -> MaxItems.map { x => x.asInstanceOf[js.Any] },
+        "PathPrefix" -> PathPrefix.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListInstanceProfilesRequest]
     }
@@ -3002,18 +3002,18 @@ package iam {
    */
   @js.native
   trait ListInstanceProfilesResponse extends js.Object {
-    var InstanceProfiles: js.UndefOr[instanceProfileListType]
+    var InstanceProfiles: instanceProfileListType
     var IsTruncated: js.UndefOr[booleanType]
     var Marker: js.UndefOr[markerType]
   }
 
   object ListInstanceProfilesResponse {
     def apply(
-      InstanceProfiles: js.UndefOr[instanceProfileListType] = js.undefined,
+      InstanceProfiles: instanceProfileListType,
       IsTruncated: js.UndefOr[booleanType] = js.undefined,
       Marker: js.UndefOr[markerType] = js.undefined): ListInstanceProfilesResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "InstanceProfiles" -> InstanceProfiles.map { x => x.asInstanceOf[js.Any] },
+        "InstanceProfiles" -> InstanceProfiles.asInstanceOf[js.Any],
         "IsTruncated" -> IsTruncated.map { x => x.asInstanceOf[js.Any] },
         "Marker" -> Marker.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
@@ -3023,20 +3023,20 @@ package iam {
 
   @js.native
   trait ListMFADevicesRequest extends js.Object {
-    var UserName: js.UndefOr[existingUserNameType]
     var Marker: js.UndefOr[markerType]
     var MaxItems: js.UndefOr[maxItemsType]
+    var UserName: js.UndefOr[existingUserNameType]
   }
 
   object ListMFADevicesRequest {
     def apply(
-      UserName: js.UndefOr[existingUserNameType] = js.undefined,
       Marker: js.UndefOr[markerType] = js.undefined,
-      MaxItems: js.UndefOr[maxItemsType] = js.undefined): ListMFADevicesRequest = {
+      MaxItems: js.UndefOr[maxItemsType] = js.undefined,
+      UserName: js.UndefOr[existingUserNameType] = js.undefined): ListMFADevicesRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "UserName" -> UserName.map { x => x.asInstanceOf[js.Any] },
         "Marker" -> Marker.map { x => x.asInstanceOf[js.Any] },
-        "MaxItems" -> MaxItems.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "MaxItems" -> MaxItems.map { x => x.asInstanceOf[js.Any] },
+        "UserName" -> UserName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListMFADevicesRequest]
     }
@@ -3047,18 +3047,18 @@ package iam {
    */
   @js.native
   trait ListMFADevicesResponse extends js.Object {
-    var MFADevices: js.UndefOr[mfaDeviceListType]
+    var MFADevices: mfaDeviceListType
     var IsTruncated: js.UndefOr[booleanType]
     var Marker: js.UndefOr[markerType]
   }
 
   object ListMFADevicesResponse {
     def apply(
-      MFADevices: js.UndefOr[mfaDeviceListType] = js.undefined,
+      MFADevices: mfaDeviceListType,
       IsTruncated: js.UndefOr[booleanType] = js.undefined,
       Marker: js.UndefOr[markerType] = js.undefined): ListMFADevicesResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "MFADevices" -> MFADevices.map { x => x.asInstanceOf[js.Any] },
+        "MFADevices" -> MFADevices.asInstanceOf[js.Any],
         "IsTruncated" -> IsTruncated.map { x => x.asInstanceOf[js.Any] },
         "Marker" -> Marker.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
@@ -3099,29 +3099,29 @@ package iam {
 
   @js.native
   trait ListPoliciesRequest extends js.Object {
-    var Scope: js.UndefOr[policyScopeType]
-    var PolicyUsageFilter: js.UndefOr[PolicyUsageType]
+    var Marker: js.UndefOr[markerType]
     var MaxItems: js.UndefOr[maxItemsType]
     var OnlyAttached: js.UndefOr[booleanType]
     var PathPrefix: js.UndefOr[policyPathType]
-    var Marker: js.UndefOr[markerType]
+    var PolicyUsageFilter: js.UndefOr[PolicyUsageType]
+    var Scope: js.UndefOr[policyScopeType]
   }
 
   object ListPoliciesRequest {
     def apply(
-      Scope: js.UndefOr[policyScopeType] = js.undefined,
-      PolicyUsageFilter: js.UndefOr[PolicyUsageType] = js.undefined,
+      Marker: js.UndefOr[markerType] = js.undefined,
       MaxItems: js.UndefOr[maxItemsType] = js.undefined,
       OnlyAttached: js.UndefOr[booleanType] = js.undefined,
       PathPrefix: js.UndefOr[policyPathType] = js.undefined,
-      Marker: js.UndefOr[markerType] = js.undefined): ListPoliciesRequest = {
+      PolicyUsageFilter: js.UndefOr[PolicyUsageType] = js.undefined,
+      Scope: js.UndefOr[policyScopeType] = js.undefined): ListPoliciesRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Scope" -> Scope.map { x => x.asInstanceOf[js.Any] },
-        "PolicyUsageFilter" -> PolicyUsageFilter.map { x => x.asInstanceOf[js.Any] },
+        "Marker" -> Marker.map { x => x.asInstanceOf[js.Any] },
         "MaxItems" -> MaxItems.map { x => x.asInstanceOf[js.Any] },
         "OnlyAttached" -> OnlyAttached.map { x => x.asInstanceOf[js.Any] },
         "PathPrefix" -> PathPrefix.map { x => x.asInstanceOf[js.Any] },
-        "Marker" -> Marker.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "PolicyUsageFilter" -> PolicyUsageFilter.map { x => x.asInstanceOf[js.Any] },
+        "Scope" -> Scope.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListPoliciesRequest]
     }
@@ -3132,20 +3132,20 @@ package iam {
    */
   @js.native
   trait ListPoliciesResponse extends js.Object {
-    var Policies: js.UndefOr[policyListType]
     var IsTruncated: js.UndefOr[booleanType]
     var Marker: js.UndefOr[markerType]
+    var Policies: js.UndefOr[policyListType]
   }
 
   object ListPoliciesResponse {
     def apply(
-      Policies: js.UndefOr[policyListType] = js.undefined,
       IsTruncated: js.UndefOr[booleanType] = js.undefined,
-      Marker: js.UndefOr[markerType] = js.undefined): ListPoliciesResponse = {
+      Marker: js.UndefOr[markerType] = js.undefined,
+      Policies: js.UndefOr[policyListType] = js.undefined): ListPoliciesResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Policies" -> Policies.map { x => x.asInstanceOf[js.Any] },
         "IsTruncated" -> IsTruncated.map { x => x.asInstanceOf[js.Any] },
-        "Marker" -> Marker.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Marker" -> Marker.map { x => x.asInstanceOf[js.Any] },
+        "Policies" -> Policies.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListPoliciesResponse]
     }
@@ -3153,18 +3153,18 @@ package iam {
 
   @js.native
   trait ListPolicyVersionsRequest extends js.Object {
-    var PolicyArn: js.UndefOr[arnType]
+    var PolicyArn: arnType
     var Marker: js.UndefOr[markerType]
     var MaxItems: js.UndefOr[maxItemsType]
   }
 
   object ListPolicyVersionsRequest {
     def apply(
-      PolicyArn: js.UndefOr[arnType] = js.undefined,
+      PolicyArn: arnType,
       Marker: js.UndefOr[markerType] = js.undefined,
       MaxItems: js.UndefOr[maxItemsType] = js.undefined): ListPolicyVersionsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "PolicyArn" -> PolicyArn.map { x => x.asInstanceOf[js.Any] },
+        "PolicyArn" -> PolicyArn.asInstanceOf[js.Any],
         "Marker" -> Marker.map { x => x.asInstanceOf[js.Any] },
         "MaxItems" -> MaxItems.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
@@ -3177,20 +3177,20 @@ package iam {
    */
   @js.native
   trait ListPolicyVersionsResponse extends js.Object {
-    var Versions: js.UndefOr[policyDocumentVersionListType]
     var IsTruncated: js.UndefOr[booleanType]
     var Marker: js.UndefOr[markerType]
+    var Versions: js.UndefOr[policyDocumentVersionListType]
   }
 
   object ListPolicyVersionsResponse {
     def apply(
-      Versions: js.UndefOr[policyDocumentVersionListType] = js.undefined,
       IsTruncated: js.UndefOr[booleanType] = js.undefined,
-      Marker: js.UndefOr[markerType] = js.undefined): ListPolicyVersionsResponse = {
+      Marker: js.UndefOr[markerType] = js.undefined,
+      Versions: js.UndefOr[policyDocumentVersionListType] = js.undefined): ListPolicyVersionsResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Versions" -> Versions.map { x => x.asInstanceOf[js.Any] },
         "IsTruncated" -> IsTruncated.map { x => x.asInstanceOf[js.Any] },
-        "Marker" -> Marker.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Marker" -> Marker.map { x => x.asInstanceOf[js.Any] },
+        "Versions" -> Versions.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListPolicyVersionsResponse]
     }
@@ -3198,18 +3198,18 @@ package iam {
 
   @js.native
   trait ListRolePoliciesRequest extends js.Object {
-    var RoleName: js.UndefOr[roleNameType]
+    var RoleName: roleNameType
     var Marker: js.UndefOr[markerType]
     var MaxItems: js.UndefOr[maxItemsType]
   }
 
   object ListRolePoliciesRequest {
     def apply(
-      RoleName: js.UndefOr[roleNameType] = js.undefined,
+      RoleName: roleNameType,
       Marker: js.UndefOr[markerType] = js.undefined,
       MaxItems: js.UndefOr[maxItemsType] = js.undefined): ListRolePoliciesRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "RoleName" -> RoleName.map { x => x.asInstanceOf[js.Any] },
+        "RoleName" -> RoleName.asInstanceOf[js.Any],
         "Marker" -> Marker.map { x => x.asInstanceOf[js.Any] },
         "MaxItems" -> MaxItems.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
@@ -3222,18 +3222,18 @@ package iam {
    */
   @js.native
   trait ListRolePoliciesResponse extends js.Object {
-    var PolicyNames: js.UndefOr[policyNameListType]
+    var PolicyNames: policyNameListType
     var IsTruncated: js.UndefOr[booleanType]
     var Marker: js.UndefOr[markerType]
   }
 
   object ListRolePoliciesResponse {
     def apply(
-      PolicyNames: js.UndefOr[policyNameListType] = js.undefined,
+      PolicyNames: policyNameListType,
       IsTruncated: js.UndefOr[booleanType] = js.undefined,
       Marker: js.UndefOr[markerType] = js.undefined): ListRolePoliciesResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "PolicyNames" -> PolicyNames.map { x => x.asInstanceOf[js.Any] },
+        "PolicyNames" -> PolicyNames.asInstanceOf[js.Any],
         "IsTruncated" -> IsTruncated.map { x => x.asInstanceOf[js.Any] },
         "Marker" -> Marker.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
@@ -3243,18 +3243,18 @@ package iam {
 
   @js.native
   trait ListRoleTagsRequest extends js.Object {
-    var RoleName: js.UndefOr[roleNameType]
+    var RoleName: roleNameType
     var Marker: js.UndefOr[markerType]
     var MaxItems: js.UndefOr[maxItemsType]
   }
 
   object ListRoleTagsRequest {
     def apply(
-      RoleName: js.UndefOr[roleNameType] = js.undefined,
+      RoleName: roleNameType,
       Marker: js.UndefOr[markerType] = js.undefined,
       MaxItems: js.UndefOr[maxItemsType] = js.undefined): ListRoleTagsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "RoleName" -> RoleName.map { x => x.asInstanceOf[js.Any] },
+        "RoleName" -> RoleName.asInstanceOf[js.Any],
         "Marker" -> Marker.map { x => x.asInstanceOf[js.Any] },
         "MaxItems" -> MaxItems.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
@@ -3264,18 +3264,18 @@ package iam {
 
   @js.native
   trait ListRoleTagsResponse extends js.Object {
-    var Tags: js.UndefOr[tagListType]
+    var Tags: tagListType
     var IsTruncated: js.UndefOr[booleanType]
     var Marker: js.UndefOr[markerType]
   }
 
   object ListRoleTagsResponse {
     def apply(
-      Tags: js.UndefOr[tagListType] = js.undefined,
+      Tags: tagListType,
       IsTruncated: js.UndefOr[booleanType] = js.undefined,
       Marker: js.UndefOr[markerType] = js.undefined): ListRoleTagsResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Tags" -> Tags.map { x => x.asInstanceOf[js.Any] },
+        "Tags" -> Tags.asInstanceOf[js.Any],
         "IsTruncated" -> IsTruncated.map { x => x.asInstanceOf[js.Any] },
         "Marker" -> Marker.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
@@ -3285,20 +3285,20 @@ package iam {
 
   @js.native
   trait ListRolesRequest extends js.Object {
-    var PathPrefix: js.UndefOr[pathPrefixType]
     var Marker: js.UndefOr[markerType]
     var MaxItems: js.UndefOr[maxItemsType]
+    var PathPrefix: js.UndefOr[pathPrefixType]
   }
 
   object ListRolesRequest {
     def apply(
-      PathPrefix: js.UndefOr[pathPrefixType] = js.undefined,
       Marker: js.UndefOr[markerType] = js.undefined,
-      MaxItems: js.UndefOr[maxItemsType] = js.undefined): ListRolesRequest = {
+      MaxItems: js.UndefOr[maxItemsType] = js.undefined,
+      PathPrefix: js.UndefOr[pathPrefixType] = js.undefined): ListRolesRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "PathPrefix" -> PathPrefix.map { x => x.asInstanceOf[js.Any] },
         "Marker" -> Marker.map { x => x.asInstanceOf[js.Any] },
-        "MaxItems" -> MaxItems.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "MaxItems" -> MaxItems.map { x => x.asInstanceOf[js.Any] },
+        "PathPrefix" -> PathPrefix.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListRolesRequest]
     }
@@ -3309,18 +3309,18 @@ package iam {
    */
   @js.native
   trait ListRolesResponse extends js.Object {
-    var Roles: js.UndefOr[roleListType]
+    var Roles: roleListType
     var IsTruncated: js.UndefOr[booleanType]
     var Marker: js.UndefOr[markerType]
   }
 
   object ListRolesResponse {
     def apply(
-      Roles: js.UndefOr[roleListType] = js.undefined,
+      Roles: roleListType,
       IsTruncated: js.UndefOr[booleanType] = js.undefined,
       Marker: js.UndefOr[markerType] = js.undefined): ListRolesResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Roles" -> Roles.map { x => x.asInstanceOf[js.Any] },
+        "Roles" -> Roles.asInstanceOf[js.Any],
         "IsTruncated" -> IsTruncated.map { x => x.asInstanceOf[js.Any] },
         "Marker" -> Marker.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
@@ -3361,20 +3361,20 @@ package iam {
 
   @js.native
   trait ListSSHPublicKeysRequest extends js.Object {
-    var UserName: js.UndefOr[userNameType]
     var Marker: js.UndefOr[markerType]
     var MaxItems: js.UndefOr[maxItemsType]
+    var UserName: js.UndefOr[userNameType]
   }
 
   object ListSSHPublicKeysRequest {
     def apply(
-      UserName: js.UndefOr[userNameType] = js.undefined,
       Marker: js.UndefOr[markerType] = js.undefined,
-      MaxItems: js.UndefOr[maxItemsType] = js.undefined): ListSSHPublicKeysRequest = {
+      MaxItems: js.UndefOr[maxItemsType] = js.undefined,
+      UserName: js.UndefOr[userNameType] = js.undefined): ListSSHPublicKeysRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "UserName" -> UserName.map { x => x.asInstanceOf[js.Any] },
         "Marker" -> Marker.map { x => x.asInstanceOf[js.Any] },
-        "MaxItems" -> MaxItems.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "MaxItems" -> MaxItems.map { x => x.asInstanceOf[js.Any] },
+        "UserName" -> UserName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListSSHPublicKeysRequest]
     }
@@ -3385,20 +3385,20 @@ package iam {
    */
   @js.native
   trait ListSSHPublicKeysResponse extends js.Object {
-    var SSHPublicKeys: js.UndefOr[SSHPublicKeyListType]
     var IsTruncated: js.UndefOr[booleanType]
     var Marker: js.UndefOr[markerType]
+    var SSHPublicKeys: js.UndefOr[SSHPublicKeyListType]
   }
 
   object ListSSHPublicKeysResponse {
     def apply(
-      SSHPublicKeys: js.UndefOr[SSHPublicKeyListType] = js.undefined,
       IsTruncated: js.UndefOr[booleanType] = js.undefined,
-      Marker: js.UndefOr[markerType] = js.undefined): ListSSHPublicKeysResponse = {
+      Marker: js.UndefOr[markerType] = js.undefined,
+      SSHPublicKeys: js.UndefOr[SSHPublicKeyListType] = js.undefined): ListSSHPublicKeysResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "SSHPublicKeys" -> SSHPublicKeys.map { x => x.asInstanceOf[js.Any] },
         "IsTruncated" -> IsTruncated.map { x => x.asInstanceOf[js.Any] },
-        "Marker" -> Marker.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Marker" -> Marker.map { x => x.asInstanceOf[js.Any] },
+        "SSHPublicKeys" -> SSHPublicKeys.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListSSHPublicKeysResponse]
     }
@@ -3406,20 +3406,20 @@ package iam {
 
   @js.native
   trait ListServerCertificatesRequest extends js.Object {
-    var PathPrefix: js.UndefOr[pathPrefixType]
     var Marker: js.UndefOr[markerType]
     var MaxItems: js.UndefOr[maxItemsType]
+    var PathPrefix: js.UndefOr[pathPrefixType]
   }
 
   object ListServerCertificatesRequest {
     def apply(
-      PathPrefix: js.UndefOr[pathPrefixType] = js.undefined,
       Marker: js.UndefOr[markerType] = js.undefined,
-      MaxItems: js.UndefOr[maxItemsType] = js.undefined): ListServerCertificatesRequest = {
+      MaxItems: js.UndefOr[maxItemsType] = js.undefined,
+      PathPrefix: js.UndefOr[pathPrefixType] = js.undefined): ListServerCertificatesRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "PathPrefix" -> PathPrefix.map { x => x.asInstanceOf[js.Any] },
         "Marker" -> Marker.map { x => x.asInstanceOf[js.Any] },
-        "MaxItems" -> MaxItems.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "MaxItems" -> MaxItems.map { x => x.asInstanceOf[js.Any] },
+        "PathPrefix" -> PathPrefix.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListServerCertificatesRequest]
     }
@@ -3430,18 +3430,18 @@ package iam {
    */
   @js.native
   trait ListServerCertificatesResponse extends js.Object {
-    var ServerCertificateMetadataList: js.UndefOr[serverCertificateMetadataListType]
+    var ServerCertificateMetadataList: serverCertificateMetadataListType
     var IsTruncated: js.UndefOr[booleanType]
     var Marker: js.UndefOr[markerType]
   }
 
   object ListServerCertificatesResponse {
     def apply(
-      ServerCertificateMetadataList: js.UndefOr[serverCertificateMetadataListType] = js.undefined,
+      ServerCertificateMetadataList: serverCertificateMetadataListType,
       IsTruncated: js.UndefOr[booleanType] = js.undefined,
       Marker: js.UndefOr[markerType] = js.undefined): ListServerCertificatesResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ServerCertificateMetadataList" -> ServerCertificateMetadataList.map { x => x.asInstanceOf[js.Any] },
+        "ServerCertificateMetadataList" -> ServerCertificateMetadataList.asInstanceOf[js.Any],
         "IsTruncated" -> IsTruncated.map { x => x.asInstanceOf[js.Any] },
         "Marker" -> Marker.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
@@ -3451,17 +3451,17 @@ package iam {
 
   @js.native
   trait ListServiceSpecificCredentialsRequest extends js.Object {
-    var UserName: js.UndefOr[userNameType]
     var ServiceName: js.UndefOr[serviceName]
+    var UserName: js.UndefOr[userNameType]
   }
 
   object ListServiceSpecificCredentialsRequest {
     def apply(
-      UserName: js.UndefOr[userNameType] = js.undefined,
-      ServiceName: js.UndefOr[serviceName] = js.undefined): ListServiceSpecificCredentialsRequest = {
+      ServiceName: js.UndefOr[serviceName] = js.undefined,
+      UserName: js.UndefOr[userNameType] = js.undefined): ListServiceSpecificCredentialsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "UserName" -> UserName.map { x => x.asInstanceOf[js.Any] },
-        "ServiceName" -> ServiceName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ServiceName" -> ServiceName.map { x => x.asInstanceOf[js.Any] },
+        "UserName" -> UserName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListServiceSpecificCredentialsRequest]
     }
@@ -3484,20 +3484,20 @@ package iam {
 
   @js.native
   trait ListSigningCertificatesRequest extends js.Object {
-    var UserName: js.UndefOr[existingUserNameType]
     var Marker: js.UndefOr[markerType]
     var MaxItems: js.UndefOr[maxItemsType]
+    var UserName: js.UndefOr[existingUserNameType]
   }
 
   object ListSigningCertificatesRequest {
     def apply(
-      UserName: js.UndefOr[existingUserNameType] = js.undefined,
       Marker: js.UndefOr[markerType] = js.undefined,
-      MaxItems: js.UndefOr[maxItemsType] = js.undefined): ListSigningCertificatesRequest = {
+      MaxItems: js.UndefOr[maxItemsType] = js.undefined,
+      UserName: js.UndefOr[existingUserNameType] = js.undefined): ListSigningCertificatesRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "UserName" -> UserName.map { x => x.asInstanceOf[js.Any] },
         "Marker" -> Marker.map { x => x.asInstanceOf[js.Any] },
-        "MaxItems" -> MaxItems.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "MaxItems" -> MaxItems.map { x => x.asInstanceOf[js.Any] },
+        "UserName" -> UserName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListSigningCertificatesRequest]
     }
@@ -3508,18 +3508,18 @@ package iam {
    */
   @js.native
   trait ListSigningCertificatesResponse extends js.Object {
-    var Certificates: js.UndefOr[certificateListType]
+    var Certificates: certificateListType
     var IsTruncated: js.UndefOr[booleanType]
     var Marker: js.UndefOr[markerType]
   }
 
   object ListSigningCertificatesResponse {
     def apply(
-      Certificates: js.UndefOr[certificateListType] = js.undefined,
+      Certificates: certificateListType,
       IsTruncated: js.UndefOr[booleanType] = js.undefined,
       Marker: js.UndefOr[markerType] = js.undefined): ListSigningCertificatesResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Certificates" -> Certificates.map { x => x.asInstanceOf[js.Any] },
+        "Certificates" -> Certificates.asInstanceOf[js.Any],
         "IsTruncated" -> IsTruncated.map { x => x.asInstanceOf[js.Any] },
         "Marker" -> Marker.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
@@ -3529,18 +3529,18 @@ package iam {
 
   @js.native
   trait ListUserPoliciesRequest extends js.Object {
-    var UserName: js.UndefOr[existingUserNameType]
+    var UserName: existingUserNameType
     var Marker: js.UndefOr[markerType]
     var MaxItems: js.UndefOr[maxItemsType]
   }
 
   object ListUserPoliciesRequest {
     def apply(
-      UserName: js.UndefOr[existingUserNameType] = js.undefined,
+      UserName: existingUserNameType,
       Marker: js.UndefOr[markerType] = js.undefined,
       MaxItems: js.UndefOr[maxItemsType] = js.undefined): ListUserPoliciesRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "UserName" -> UserName.map { x => x.asInstanceOf[js.Any] },
+        "UserName" -> UserName.asInstanceOf[js.Any],
         "Marker" -> Marker.map { x => x.asInstanceOf[js.Any] },
         "MaxItems" -> MaxItems.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
@@ -3553,18 +3553,18 @@ package iam {
    */
   @js.native
   trait ListUserPoliciesResponse extends js.Object {
-    var PolicyNames: js.UndefOr[policyNameListType]
+    var PolicyNames: policyNameListType
     var IsTruncated: js.UndefOr[booleanType]
     var Marker: js.UndefOr[markerType]
   }
 
   object ListUserPoliciesResponse {
     def apply(
-      PolicyNames: js.UndefOr[policyNameListType] = js.undefined,
+      PolicyNames: policyNameListType,
       IsTruncated: js.UndefOr[booleanType] = js.undefined,
       Marker: js.UndefOr[markerType] = js.undefined): ListUserPoliciesResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "PolicyNames" -> PolicyNames.map { x => x.asInstanceOf[js.Any] },
+        "PolicyNames" -> PolicyNames.asInstanceOf[js.Any],
         "IsTruncated" -> IsTruncated.map { x => x.asInstanceOf[js.Any] },
         "Marker" -> Marker.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
@@ -3574,18 +3574,18 @@ package iam {
 
   @js.native
   trait ListUserTagsRequest extends js.Object {
-    var UserName: js.UndefOr[existingUserNameType]
+    var UserName: existingUserNameType
     var Marker: js.UndefOr[markerType]
     var MaxItems: js.UndefOr[maxItemsType]
   }
 
   object ListUserTagsRequest {
     def apply(
-      UserName: js.UndefOr[existingUserNameType] = js.undefined,
+      UserName: existingUserNameType,
       Marker: js.UndefOr[markerType] = js.undefined,
       MaxItems: js.UndefOr[maxItemsType] = js.undefined): ListUserTagsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "UserName" -> UserName.map { x => x.asInstanceOf[js.Any] },
+        "UserName" -> UserName.asInstanceOf[js.Any],
         "Marker" -> Marker.map { x => x.asInstanceOf[js.Any] },
         "MaxItems" -> MaxItems.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
@@ -3595,18 +3595,18 @@ package iam {
 
   @js.native
   trait ListUserTagsResponse extends js.Object {
-    var Tags: js.UndefOr[tagListType]
+    var Tags: tagListType
     var IsTruncated: js.UndefOr[booleanType]
     var Marker: js.UndefOr[markerType]
   }
 
   object ListUserTagsResponse {
     def apply(
-      Tags: js.UndefOr[tagListType] = js.undefined,
+      Tags: tagListType,
       IsTruncated: js.UndefOr[booleanType] = js.undefined,
       Marker: js.UndefOr[markerType] = js.undefined): ListUserTagsResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Tags" -> Tags.map { x => x.asInstanceOf[js.Any] },
+        "Tags" -> Tags.asInstanceOf[js.Any],
         "IsTruncated" -> IsTruncated.map { x => x.asInstanceOf[js.Any] },
         "Marker" -> Marker.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
@@ -3616,20 +3616,20 @@ package iam {
 
   @js.native
   trait ListUsersRequest extends js.Object {
-    var PathPrefix: js.UndefOr[pathPrefixType]
     var Marker: js.UndefOr[markerType]
     var MaxItems: js.UndefOr[maxItemsType]
+    var PathPrefix: js.UndefOr[pathPrefixType]
   }
 
   object ListUsersRequest {
     def apply(
-      PathPrefix: js.UndefOr[pathPrefixType] = js.undefined,
       Marker: js.UndefOr[markerType] = js.undefined,
-      MaxItems: js.UndefOr[maxItemsType] = js.undefined): ListUsersRequest = {
+      MaxItems: js.UndefOr[maxItemsType] = js.undefined,
+      PathPrefix: js.UndefOr[pathPrefixType] = js.undefined): ListUsersRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "PathPrefix" -> PathPrefix.map { x => x.asInstanceOf[js.Any] },
         "Marker" -> Marker.map { x => x.asInstanceOf[js.Any] },
-        "MaxItems" -> MaxItems.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "MaxItems" -> MaxItems.map { x => x.asInstanceOf[js.Any] },
+        "PathPrefix" -> PathPrefix.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListUsersRequest]
     }
@@ -3640,18 +3640,18 @@ package iam {
    */
   @js.native
   trait ListUsersResponse extends js.Object {
-    var Users: js.UndefOr[userListType]
+    var Users: userListType
     var IsTruncated: js.UndefOr[booleanType]
     var Marker: js.UndefOr[markerType]
   }
 
   object ListUsersResponse {
     def apply(
-      Users: js.UndefOr[userListType] = js.undefined,
+      Users: userListType,
       IsTruncated: js.UndefOr[booleanType] = js.undefined,
       Marker: js.UndefOr[markerType] = js.undefined): ListUsersResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Users" -> Users.map { x => x.asInstanceOf[js.Any] },
+        "Users" -> Users.asInstanceOf[js.Any],
         "IsTruncated" -> IsTruncated.map { x => x.asInstanceOf[js.Any] },
         "Marker" -> Marker.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
@@ -3685,18 +3685,18 @@ package iam {
    */
   @js.native
   trait ListVirtualMFADevicesResponse extends js.Object {
-    var VirtualMFADevices: js.UndefOr[virtualMFADeviceListType]
+    var VirtualMFADevices: virtualMFADeviceListType
     var IsTruncated: js.UndefOr[booleanType]
     var Marker: js.UndefOr[markerType]
   }
 
   object ListVirtualMFADevicesResponse {
     def apply(
-      VirtualMFADevices: js.UndefOr[virtualMFADeviceListType] = js.undefined,
+      VirtualMFADevices: virtualMFADeviceListType,
       IsTruncated: js.UndefOr[booleanType] = js.undefined,
       Marker: js.UndefOr[markerType] = js.undefined): ListVirtualMFADevicesResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "VirtualMFADevices" -> VirtualMFADevices.map { x => x.asInstanceOf[js.Any] },
+        "VirtualMFADevices" -> VirtualMFADevices.asInstanceOf[js.Any],
         "IsTruncated" -> IsTruncated.map { x => x.asInstanceOf[js.Any] },
         "Marker" -> Marker.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
@@ -3709,19 +3709,19 @@ package iam {
    */
   @js.native
   trait LoginProfile extends js.Object {
-    var UserName: js.UndefOr[userNameType]
-    var CreateDate: js.UndefOr[dateType]
+    var CreateDate: dateType
+    var UserName: userNameType
     var PasswordResetRequired: js.UndefOr[booleanType]
   }
 
   object LoginProfile {
     def apply(
-      UserName: js.UndefOr[userNameType] = js.undefined,
-      CreateDate: js.UndefOr[dateType] = js.undefined,
+      CreateDate: dateType,
+      UserName: userNameType,
       PasswordResetRequired: js.UndefOr[booleanType] = js.undefined): LoginProfile = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "UserName" -> UserName.map { x => x.asInstanceOf[js.Any] },
-        "CreateDate" -> CreateDate.map { x => x.asInstanceOf[js.Any] },
+        "CreateDate" -> CreateDate.asInstanceOf[js.Any],
+        "UserName" -> UserName.asInstanceOf[js.Any],
         "PasswordResetRequired" -> PasswordResetRequired.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[LoginProfile]
@@ -3733,20 +3733,20 @@ package iam {
    */
   @js.native
   trait MFADevice extends js.Object {
-    var UserName: js.UndefOr[userNameType]
-    var SerialNumber: js.UndefOr[serialNumberType]
-    var EnableDate: js.UndefOr[dateType]
+    var EnableDate: dateType
+    var SerialNumber: serialNumberType
+    var UserName: userNameType
   }
 
   object MFADevice {
     def apply(
-      UserName: js.UndefOr[userNameType] = js.undefined,
-      SerialNumber: js.UndefOr[serialNumberType] = js.undefined,
-      EnableDate: js.UndefOr[dateType] = js.undefined): MFADevice = {
+      EnableDate: dateType,
+      SerialNumber: serialNumberType,
+      UserName: userNameType): MFADevice = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "UserName" -> UserName.map { x => x.asInstanceOf[js.Any] },
-        "SerialNumber" -> SerialNumber.map { x => x.asInstanceOf[js.Any] },
-        "EnableDate" -> EnableDate.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "EnableDate" -> EnableDate.asInstanceOf[js.Any],
+        "SerialNumber" -> SerialNumber.asInstanceOf[js.Any],
+        "UserName" -> UserName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[MFADevice]
     }
@@ -3757,47 +3757,47 @@ package iam {
    */
   @js.native
   trait ManagedPolicyDetail extends js.Object {
-    var PolicyId: js.UndefOr[idType]
-    var DefaultVersionId: js.UndefOr[policyVersionIdType]
-    var Path: js.UndefOr[policyPathType]
-    var PolicyVersionList: js.UndefOr[policyDocumentVersionListType]
-    var Description: js.UndefOr[policyDescriptionType]
-    var UpdateDate: js.UndefOr[dateType]
     var Arn: js.UndefOr[arnType]
-    var CreateDate: js.UndefOr[dateType]
-    var PermissionsBoundaryUsageCount: js.UndefOr[attachmentCountType]
-    var PolicyName: js.UndefOr[policyNameType]
     var AttachmentCount: js.UndefOr[attachmentCountType]
+    var CreateDate: js.UndefOr[dateType]
+    var DefaultVersionId: js.UndefOr[policyVersionIdType]
+    var Description: js.UndefOr[policyDescriptionType]
     var IsAttachable: js.UndefOr[booleanType]
+    var Path: js.UndefOr[policyPathType]
+    var PermissionsBoundaryUsageCount: js.UndefOr[attachmentCountType]
+    var PolicyId: js.UndefOr[idType]
+    var PolicyName: js.UndefOr[policyNameType]
+    var PolicyVersionList: js.UndefOr[policyDocumentVersionListType]
+    var UpdateDate: js.UndefOr[dateType]
   }
 
   object ManagedPolicyDetail {
     def apply(
-      PolicyId: js.UndefOr[idType] = js.undefined,
-      DefaultVersionId: js.UndefOr[policyVersionIdType] = js.undefined,
-      Path: js.UndefOr[policyPathType] = js.undefined,
-      PolicyVersionList: js.UndefOr[policyDocumentVersionListType] = js.undefined,
-      Description: js.UndefOr[policyDescriptionType] = js.undefined,
-      UpdateDate: js.UndefOr[dateType] = js.undefined,
       Arn: js.UndefOr[arnType] = js.undefined,
-      CreateDate: js.UndefOr[dateType] = js.undefined,
-      PermissionsBoundaryUsageCount: js.UndefOr[attachmentCountType] = js.undefined,
-      PolicyName: js.UndefOr[policyNameType] = js.undefined,
       AttachmentCount: js.UndefOr[attachmentCountType] = js.undefined,
-      IsAttachable: js.UndefOr[booleanType] = js.undefined): ManagedPolicyDetail = {
+      CreateDate: js.UndefOr[dateType] = js.undefined,
+      DefaultVersionId: js.UndefOr[policyVersionIdType] = js.undefined,
+      Description: js.UndefOr[policyDescriptionType] = js.undefined,
+      IsAttachable: js.UndefOr[booleanType] = js.undefined,
+      Path: js.UndefOr[policyPathType] = js.undefined,
+      PermissionsBoundaryUsageCount: js.UndefOr[attachmentCountType] = js.undefined,
+      PolicyId: js.UndefOr[idType] = js.undefined,
+      PolicyName: js.UndefOr[policyNameType] = js.undefined,
+      PolicyVersionList: js.UndefOr[policyDocumentVersionListType] = js.undefined,
+      UpdateDate: js.UndefOr[dateType] = js.undefined): ManagedPolicyDetail = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "PolicyId" -> PolicyId.map { x => x.asInstanceOf[js.Any] },
-        "DefaultVersionId" -> DefaultVersionId.map { x => x.asInstanceOf[js.Any] },
-        "Path" -> Path.map { x => x.asInstanceOf[js.Any] },
-        "PolicyVersionList" -> PolicyVersionList.map { x => x.asInstanceOf[js.Any] },
-        "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
-        "UpdateDate" -> UpdateDate.map { x => x.asInstanceOf[js.Any] },
         "Arn" -> Arn.map { x => x.asInstanceOf[js.Any] },
-        "CreateDate" -> CreateDate.map { x => x.asInstanceOf[js.Any] },
-        "PermissionsBoundaryUsageCount" -> PermissionsBoundaryUsageCount.map { x => x.asInstanceOf[js.Any] },
-        "PolicyName" -> PolicyName.map { x => x.asInstanceOf[js.Any] },
         "AttachmentCount" -> AttachmentCount.map { x => x.asInstanceOf[js.Any] },
-        "IsAttachable" -> IsAttachable.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "CreateDate" -> CreateDate.map { x => x.asInstanceOf[js.Any] },
+        "DefaultVersionId" -> DefaultVersionId.map { x => x.asInstanceOf[js.Any] },
+        "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
+        "IsAttachable" -> IsAttachable.map { x => x.asInstanceOf[js.Any] },
+        "Path" -> Path.map { x => x.asInstanceOf[js.Any] },
+        "PermissionsBoundaryUsageCount" -> PermissionsBoundaryUsageCount.map { x => x.asInstanceOf[js.Any] },
+        "PolicyId" -> PolicyId.map { x => x.asInstanceOf[js.Any] },
+        "PolicyName" -> PolicyName.map { x => x.asInstanceOf[js.Any] },
+        "PolicyVersionList" -> PolicyVersionList.map { x => x.asInstanceOf[js.Any] },
+        "UpdateDate" -> UpdateDate.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ManagedPolicyDetail]
     }
@@ -3844,41 +3844,41 @@ package iam {
    */
   @js.native
   trait PasswordPolicy extends js.Object {
+    var AllowUsersToChangePassword: js.UndefOr[booleanType]
     var ExpirePasswords: js.UndefOr[booleanType]
+    var HardExpiry: js.UndefOr[booleanObjectType]
+    var MaxPasswordAge: js.UndefOr[maxPasswordAgeType]
     var MinimumPasswordLength: js.UndefOr[minimumPasswordLengthType]
     var PasswordReusePrevention: js.UndefOr[passwordReusePreventionType]
-    var HardExpiry: js.UndefOr[booleanObjectType]
-    var RequireNumbers: js.UndefOr[booleanType]
-    var RequireUppercaseCharacters: js.UndefOr[booleanType]
-    var AllowUsersToChangePassword: js.UndefOr[booleanType]
-    var MaxPasswordAge: js.UndefOr[maxPasswordAgeType]
-    var RequireSymbols: js.UndefOr[booleanType]
     var RequireLowercaseCharacters: js.UndefOr[booleanType]
+    var RequireNumbers: js.UndefOr[booleanType]
+    var RequireSymbols: js.UndefOr[booleanType]
+    var RequireUppercaseCharacters: js.UndefOr[booleanType]
   }
 
   object PasswordPolicy {
     def apply(
+      AllowUsersToChangePassword: js.UndefOr[booleanType] = js.undefined,
       ExpirePasswords: js.UndefOr[booleanType] = js.undefined,
+      HardExpiry: js.UndefOr[booleanObjectType] = js.undefined,
+      MaxPasswordAge: js.UndefOr[maxPasswordAgeType] = js.undefined,
       MinimumPasswordLength: js.UndefOr[minimumPasswordLengthType] = js.undefined,
       PasswordReusePrevention: js.UndefOr[passwordReusePreventionType] = js.undefined,
-      HardExpiry: js.UndefOr[booleanObjectType] = js.undefined,
+      RequireLowercaseCharacters: js.UndefOr[booleanType] = js.undefined,
       RequireNumbers: js.UndefOr[booleanType] = js.undefined,
-      RequireUppercaseCharacters: js.UndefOr[booleanType] = js.undefined,
-      AllowUsersToChangePassword: js.UndefOr[booleanType] = js.undefined,
-      MaxPasswordAge: js.UndefOr[maxPasswordAgeType] = js.undefined,
       RequireSymbols: js.UndefOr[booleanType] = js.undefined,
-      RequireLowercaseCharacters: js.UndefOr[booleanType] = js.undefined): PasswordPolicy = {
+      RequireUppercaseCharacters: js.UndefOr[booleanType] = js.undefined): PasswordPolicy = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "AllowUsersToChangePassword" -> AllowUsersToChangePassword.map { x => x.asInstanceOf[js.Any] },
         "ExpirePasswords" -> ExpirePasswords.map { x => x.asInstanceOf[js.Any] },
+        "HardExpiry" -> HardExpiry.map { x => x.asInstanceOf[js.Any] },
+        "MaxPasswordAge" -> MaxPasswordAge.map { x => x.asInstanceOf[js.Any] },
         "MinimumPasswordLength" -> MinimumPasswordLength.map { x => x.asInstanceOf[js.Any] },
         "PasswordReusePrevention" -> PasswordReusePrevention.map { x => x.asInstanceOf[js.Any] },
-        "HardExpiry" -> HardExpiry.map { x => x.asInstanceOf[js.Any] },
+        "RequireLowercaseCharacters" -> RequireLowercaseCharacters.map { x => x.asInstanceOf[js.Any] },
         "RequireNumbers" -> RequireNumbers.map { x => x.asInstanceOf[js.Any] },
-        "RequireUppercaseCharacters" -> RequireUppercaseCharacters.map { x => x.asInstanceOf[js.Any] },
-        "AllowUsersToChangePassword" -> AllowUsersToChangePassword.map { x => x.asInstanceOf[js.Any] },
-        "MaxPasswordAge" -> MaxPasswordAge.map { x => x.asInstanceOf[js.Any] },
         "RequireSymbols" -> RequireSymbols.map { x => x.asInstanceOf[js.Any] },
-        "RequireLowercaseCharacters" -> RequireLowercaseCharacters.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "RequireUppercaseCharacters" -> RequireUppercaseCharacters.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PasswordPolicy]
     }
@@ -3895,44 +3895,44 @@ package iam {
    */
   @js.native
   trait Policy extends js.Object {
-    var PolicyId: js.UndefOr[idType]
-    var DefaultVersionId: js.UndefOr[policyVersionIdType]
-    var Path: js.UndefOr[policyPathType]
-    var Description: js.UndefOr[policyDescriptionType]
-    var UpdateDate: js.UndefOr[dateType]
     var Arn: js.UndefOr[arnType]
-    var CreateDate: js.UndefOr[dateType]
-    var PermissionsBoundaryUsageCount: js.UndefOr[attachmentCountType]
-    var PolicyName: js.UndefOr[policyNameType]
     var AttachmentCount: js.UndefOr[attachmentCountType]
+    var CreateDate: js.UndefOr[dateType]
+    var DefaultVersionId: js.UndefOr[policyVersionIdType]
+    var Description: js.UndefOr[policyDescriptionType]
     var IsAttachable: js.UndefOr[booleanType]
+    var Path: js.UndefOr[policyPathType]
+    var PermissionsBoundaryUsageCount: js.UndefOr[attachmentCountType]
+    var PolicyId: js.UndefOr[idType]
+    var PolicyName: js.UndefOr[policyNameType]
+    var UpdateDate: js.UndefOr[dateType]
   }
 
   object Policy {
     def apply(
-      PolicyId: js.UndefOr[idType] = js.undefined,
-      DefaultVersionId: js.UndefOr[policyVersionIdType] = js.undefined,
-      Path: js.UndefOr[policyPathType] = js.undefined,
-      Description: js.UndefOr[policyDescriptionType] = js.undefined,
-      UpdateDate: js.UndefOr[dateType] = js.undefined,
       Arn: js.UndefOr[arnType] = js.undefined,
-      CreateDate: js.UndefOr[dateType] = js.undefined,
-      PermissionsBoundaryUsageCount: js.UndefOr[attachmentCountType] = js.undefined,
-      PolicyName: js.UndefOr[policyNameType] = js.undefined,
       AttachmentCount: js.UndefOr[attachmentCountType] = js.undefined,
-      IsAttachable: js.UndefOr[booleanType] = js.undefined): Policy = {
+      CreateDate: js.UndefOr[dateType] = js.undefined,
+      DefaultVersionId: js.UndefOr[policyVersionIdType] = js.undefined,
+      Description: js.UndefOr[policyDescriptionType] = js.undefined,
+      IsAttachable: js.UndefOr[booleanType] = js.undefined,
+      Path: js.UndefOr[policyPathType] = js.undefined,
+      PermissionsBoundaryUsageCount: js.UndefOr[attachmentCountType] = js.undefined,
+      PolicyId: js.UndefOr[idType] = js.undefined,
+      PolicyName: js.UndefOr[policyNameType] = js.undefined,
+      UpdateDate: js.UndefOr[dateType] = js.undefined): Policy = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "PolicyId" -> PolicyId.map { x => x.asInstanceOf[js.Any] },
-        "DefaultVersionId" -> DefaultVersionId.map { x => x.asInstanceOf[js.Any] },
-        "Path" -> Path.map { x => x.asInstanceOf[js.Any] },
-        "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
-        "UpdateDate" -> UpdateDate.map { x => x.asInstanceOf[js.Any] },
         "Arn" -> Arn.map { x => x.asInstanceOf[js.Any] },
-        "CreateDate" -> CreateDate.map { x => x.asInstanceOf[js.Any] },
-        "PermissionsBoundaryUsageCount" -> PermissionsBoundaryUsageCount.map { x => x.asInstanceOf[js.Any] },
-        "PolicyName" -> PolicyName.map { x => x.asInstanceOf[js.Any] },
         "AttachmentCount" -> AttachmentCount.map { x => x.asInstanceOf[js.Any] },
-        "IsAttachable" -> IsAttachable.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "CreateDate" -> CreateDate.map { x => x.asInstanceOf[js.Any] },
+        "DefaultVersionId" -> DefaultVersionId.map { x => x.asInstanceOf[js.Any] },
+        "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
+        "IsAttachable" -> IsAttachable.map { x => x.asInstanceOf[js.Any] },
+        "Path" -> Path.map { x => x.asInstanceOf[js.Any] },
+        "PermissionsBoundaryUsageCount" -> PermissionsBoundaryUsageCount.map { x => x.asInstanceOf[js.Any] },
+        "PolicyId" -> PolicyId.map { x => x.asInstanceOf[js.Any] },
+        "PolicyName" -> PolicyName.map { x => x.asInstanceOf[js.Any] },
+        "UpdateDate" -> UpdateDate.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Policy]
     }
@@ -3943,17 +3943,17 @@ package iam {
    */
   @js.native
   trait PolicyDetail extends js.Object {
-    var PolicyName: js.UndefOr[policyNameType]
     var PolicyDocument: js.UndefOr[policyDocumentType]
+    var PolicyName: js.UndefOr[policyNameType]
   }
 
   object PolicyDetail {
     def apply(
-      PolicyName: js.UndefOr[policyNameType] = js.undefined,
-      PolicyDocument: js.UndefOr[policyDocumentType] = js.undefined): PolicyDetail = {
+      PolicyDocument: js.UndefOr[policyDocumentType] = js.undefined,
+      PolicyName: js.UndefOr[policyNameType] = js.undefined): PolicyDetail = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "PolicyName" -> PolicyName.map { x => x.asInstanceOf[js.Any] },
-        "PolicyDocument" -> PolicyDocument.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "PolicyDocument" -> PolicyDocument.map { x => x.asInstanceOf[js.Any] },
+        "PolicyName" -> PolicyName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PolicyDetail]
     }
@@ -3972,17 +3972,17 @@ package iam {
    */
   @js.native
   trait PolicyGroup extends js.Object {
-    var GroupName: js.UndefOr[groupNameType]
     var GroupId: js.UndefOr[idType]
+    var GroupName: js.UndefOr[groupNameType]
   }
 
   object PolicyGroup {
     def apply(
-      GroupName: js.UndefOr[groupNameType] = js.undefined,
-      GroupId: js.UndefOr[idType] = js.undefined): PolicyGroup = {
+      GroupId: js.UndefOr[idType] = js.undefined,
+      GroupName: js.UndefOr[groupNameType] = js.undefined): PolicyGroup = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "GroupName" -> GroupName.map { x => x.asInstanceOf[js.Any] },
-        "GroupId" -> GroupId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "GroupId" -> GroupId.map { x => x.asInstanceOf[js.Any] },
+        "GroupName" -> GroupName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PolicyGroup]
     }
@@ -3993,17 +3993,17 @@ package iam {
    */
   @js.native
   trait PolicyRole extends js.Object {
-    var RoleName: js.UndefOr[roleNameType]
     var RoleId: js.UndefOr[idType]
+    var RoleName: js.UndefOr[roleNameType]
   }
 
   object PolicyRole {
     def apply(
-      RoleName: js.UndefOr[roleNameType] = js.undefined,
-      RoleId: js.UndefOr[idType] = js.undefined): PolicyRole = {
+      RoleId: js.UndefOr[idType] = js.undefined,
+      RoleName: js.UndefOr[roleNameType] = js.undefined): PolicyRole = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "RoleName" -> RoleName.map { x => x.asInstanceOf[js.Any] },
-        "RoleId" -> RoleId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "RoleId" -> RoleId.map { x => x.asInstanceOf[js.Any] },
+        "RoleName" -> RoleName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PolicyRole]
     }
@@ -4036,17 +4036,17 @@ package iam {
    */
   @js.native
   trait PolicyUser extends js.Object {
-    var UserName: js.UndefOr[userNameType]
     var UserId: js.UndefOr[idType]
+    var UserName: js.UndefOr[userNameType]
   }
 
   object PolicyUser {
     def apply(
-      UserName: js.UndefOr[userNameType] = js.undefined,
-      UserId: js.UndefOr[idType] = js.undefined): PolicyUser = {
+      UserId: js.UndefOr[idType] = js.undefined,
+      UserName: js.UndefOr[userNameType] = js.undefined): PolicyUser = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "UserName" -> UserName.map { x => x.asInstanceOf[js.Any] },
-        "UserId" -> UserId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "UserId" -> UserId.map { x => x.asInstanceOf[js.Any] },
+        "UserName" -> UserName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PolicyUser]
     }
@@ -4057,23 +4057,23 @@ package iam {
    */
   @js.native
   trait PolicyVersion extends js.Object {
-    var Document: js.UndefOr[policyDocumentType]
-    var VersionId: js.UndefOr[policyVersionIdType]
-    var IsDefaultVersion: js.UndefOr[booleanType]
     var CreateDate: js.UndefOr[dateType]
+    var Document: js.UndefOr[policyDocumentType]
+    var IsDefaultVersion: js.UndefOr[booleanType]
+    var VersionId: js.UndefOr[policyVersionIdType]
   }
 
   object PolicyVersion {
     def apply(
+      CreateDate: js.UndefOr[dateType] = js.undefined,
       Document: js.UndefOr[policyDocumentType] = js.undefined,
-      VersionId: js.UndefOr[policyVersionIdType] = js.undefined,
       IsDefaultVersion: js.UndefOr[booleanType] = js.undefined,
-      CreateDate: js.UndefOr[dateType] = js.undefined): PolicyVersion = {
+      VersionId: js.UndefOr[policyVersionIdType] = js.undefined): PolicyVersion = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "CreateDate" -> CreateDate.map { x => x.asInstanceOf[js.Any] },
         "Document" -> Document.map { x => x.asInstanceOf[js.Any] },
-        "VersionId" -> VersionId.map { x => x.asInstanceOf[js.Any] },
         "IsDefaultVersion" -> IsDefaultVersion.map { x => x.asInstanceOf[js.Any] },
-        "CreateDate" -> CreateDate.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "VersionId" -> VersionId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PolicyVersion]
     }
@@ -4084,17 +4084,17 @@ package iam {
    */
   @js.native
   trait Position extends js.Object {
-    var Line: js.UndefOr[LineNumber]
     var Column: js.UndefOr[ColumnNumber]
+    var Line: js.UndefOr[LineNumber]
   }
 
   object Position {
     def apply(
-      Line: js.UndefOr[LineNumber] = js.undefined,
-      Column: js.UndefOr[ColumnNumber] = js.undefined): Position = {
+      Column: js.UndefOr[ColumnNumber] = js.undefined,
+      Line: js.UndefOr[LineNumber] = js.undefined): Position = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Line" -> Line.map { x => x.asInstanceOf[js.Any] },
-        "Column" -> Column.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Column" -> Column.map { x => x.asInstanceOf[js.Any] },
+        "Line" -> Line.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Position]
     }
@@ -4102,20 +4102,20 @@ package iam {
 
   @js.native
   trait PutGroupPolicyRequest extends js.Object {
-    var GroupName: js.UndefOr[groupNameType]
-    var PolicyName: js.UndefOr[policyNameType]
-    var PolicyDocument: js.UndefOr[policyDocumentType]
+    var GroupName: groupNameType
+    var PolicyDocument: policyDocumentType
+    var PolicyName: policyNameType
   }
 
   object PutGroupPolicyRequest {
     def apply(
-      GroupName: js.UndefOr[groupNameType] = js.undefined,
-      PolicyName: js.UndefOr[policyNameType] = js.undefined,
-      PolicyDocument: js.UndefOr[policyDocumentType] = js.undefined): PutGroupPolicyRequest = {
+      GroupName: groupNameType,
+      PolicyDocument: policyDocumentType,
+      PolicyName: policyNameType): PutGroupPolicyRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "GroupName" -> GroupName.map { x => x.asInstanceOf[js.Any] },
-        "PolicyName" -> PolicyName.map { x => x.asInstanceOf[js.Any] },
-        "PolicyDocument" -> PolicyDocument.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "GroupName" -> GroupName.asInstanceOf[js.Any],
+        "PolicyDocument" -> PolicyDocument.asInstanceOf[js.Any],
+        "PolicyName" -> PolicyName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutGroupPolicyRequest]
     }
@@ -4123,17 +4123,17 @@ package iam {
 
   @js.native
   trait PutRolePermissionsBoundaryRequest extends js.Object {
-    var RoleName: js.UndefOr[roleNameType]
-    var PermissionsBoundary: js.UndefOr[arnType]
+    var PermissionsBoundary: arnType
+    var RoleName: roleNameType
   }
 
   object PutRolePermissionsBoundaryRequest {
     def apply(
-      RoleName: js.UndefOr[roleNameType] = js.undefined,
-      PermissionsBoundary: js.UndefOr[arnType] = js.undefined): PutRolePermissionsBoundaryRequest = {
+      PermissionsBoundary: arnType,
+      RoleName: roleNameType): PutRolePermissionsBoundaryRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "RoleName" -> RoleName.map { x => x.asInstanceOf[js.Any] },
-        "PermissionsBoundary" -> PermissionsBoundary.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "PermissionsBoundary" -> PermissionsBoundary.asInstanceOf[js.Any],
+        "RoleName" -> RoleName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutRolePermissionsBoundaryRequest]
     }
@@ -4141,20 +4141,20 @@ package iam {
 
   @js.native
   trait PutRolePolicyRequest extends js.Object {
-    var RoleName: js.UndefOr[roleNameType]
-    var PolicyName: js.UndefOr[policyNameType]
-    var PolicyDocument: js.UndefOr[policyDocumentType]
+    var PolicyDocument: policyDocumentType
+    var PolicyName: policyNameType
+    var RoleName: roleNameType
   }
 
   object PutRolePolicyRequest {
     def apply(
-      RoleName: js.UndefOr[roleNameType] = js.undefined,
-      PolicyName: js.UndefOr[policyNameType] = js.undefined,
-      PolicyDocument: js.UndefOr[policyDocumentType] = js.undefined): PutRolePolicyRequest = {
+      PolicyDocument: policyDocumentType,
+      PolicyName: policyNameType,
+      RoleName: roleNameType): PutRolePolicyRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "RoleName" -> RoleName.map { x => x.asInstanceOf[js.Any] },
-        "PolicyName" -> PolicyName.map { x => x.asInstanceOf[js.Any] },
-        "PolicyDocument" -> PolicyDocument.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "PolicyDocument" -> PolicyDocument.asInstanceOf[js.Any],
+        "PolicyName" -> PolicyName.asInstanceOf[js.Any],
+        "RoleName" -> RoleName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutRolePolicyRequest]
     }
@@ -4162,17 +4162,17 @@ package iam {
 
   @js.native
   trait PutUserPermissionsBoundaryRequest extends js.Object {
-    var UserName: js.UndefOr[userNameType]
-    var PermissionsBoundary: js.UndefOr[arnType]
+    var PermissionsBoundary: arnType
+    var UserName: userNameType
   }
 
   object PutUserPermissionsBoundaryRequest {
     def apply(
-      UserName: js.UndefOr[userNameType] = js.undefined,
-      PermissionsBoundary: js.UndefOr[arnType] = js.undefined): PutUserPermissionsBoundaryRequest = {
+      PermissionsBoundary: arnType,
+      UserName: userNameType): PutUserPermissionsBoundaryRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "UserName" -> UserName.map { x => x.asInstanceOf[js.Any] },
-        "PermissionsBoundary" -> PermissionsBoundary.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "PermissionsBoundary" -> PermissionsBoundary.asInstanceOf[js.Any],
+        "UserName" -> UserName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutUserPermissionsBoundaryRequest]
     }
@@ -4180,20 +4180,20 @@ package iam {
 
   @js.native
   trait PutUserPolicyRequest extends js.Object {
-    var UserName: js.UndefOr[existingUserNameType]
-    var PolicyName: js.UndefOr[policyNameType]
-    var PolicyDocument: js.UndefOr[policyDocumentType]
+    var PolicyDocument: policyDocumentType
+    var PolicyName: policyNameType
+    var UserName: existingUserNameType
   }
 
   object PutUserPolicyRequest {
     def apply(
-      UserName: js.UndefOr[existingUserNameType] = js.undefined,
-      PolicyName: js.UndefOr[policyNameType] = js.undefined,
-      PolicyDocument: js.UndefOr[policyDocumentType] = js.undefined): PutUserPolicyRequest = {
+      PolicyDocument: policyDocumentType,
+      PolicyName: policyNameType,
+      UserName: existingUserNameType): PutUserPolicyRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "UserName" -> UserName.map { x => x.asInstanceOf[js.Any] },
-        "PolicyName" -> PolicyName.map { x => x.asInstanceOf[js.Any] },
-        "PolicyDocument" -> PolicyDocument.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "PolicyDocument" -> PolicyDocument.asInstanceOf[js.Any],
+        "PolicyName" -> PolicyName.asInstanceOf[js.Any],
+        "UserName" -> UserName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutUserPolicyRequest]
     }
@@ -4201,17 +4201,17 @@ package iam {
 
   @js.native
   trait RemoveClientIDFromOpenIDConnectProviderRequest extends js.Object {
-    var OpenIDConnectProviderArn: js.UndefOr[arnType]
-    var ClientID: js.UndefOr[clientIDType]
+    var ClientID: clientIDType
+    var OpenIDConnectProviderArn: arnType
   }
 
   object RemoveClientIDFromOpenIDConnectProviderRequest {
     def apply(
-      OpenIDConnectProviderArn: js.UndefOr[arnType] = js.undefined,
-      ClientID: js.UndefOr[clientIDType] = js.undefined): RemoveClientIDFromOpenIDConnectProviderRequest = {
+      ClientID: clientIDType,
+      OpenIDConnectProviderArn: arnType): RemoveClientIDFromOpenIDConnectProviderRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "OpenIDConnectProviderArn" -> OpenIDConnectProviderArn.map { x => x.asInstanceOf[js.Any] },
-        "ClientID" -> ClientID.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ClientID" -> ClientID.asInstanceOf[js.Any],
+        "OpenIDConnectProviderArn" -> OpenIDConnectProviderArn.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RemoveClientIDFromOpenIDConnectProviderRequest]
     }
@@ -4219,17 +4219,17 @@ package iam {
 
   @js.native
   trait RemoveRoleFromInstanceProfileRequest extends js.Object {
-    var InstanceProfileName: js.UndefOr[instanceProfileNameType]
-    var RoleName: js.UndefOr[roleNameType]
+    var InstanceProfileName: instanceProfileNameType
+    var RoleName: roleNameType
   }
 
   object RemoveRoleFromInstanceProfileRequest {
     def apply(
-      InstanceProfileName: js.UndefOr[instanceProfileNameType] = js.undefined,
-      RoleName: js.UndefOr[roleNameType] = js.undefined): RemoveRoleFromInstanceProfileRequest = {
+      InstanceProfileName: instanceProfileNameType,
+      RoleName: roleNameType): RemoveRoleFromInstanceProfileRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "InstanceProfileName" -> InstanceProfileName.map { x => x.asInstanceOf[js.Any] },
-        "RoleName" -> RoleName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "InstanceProfileName" -> InstanceProfileName.asInstanceOf[js.Any],
+        "RoleName" -> RoleName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RemoveRoleFromInstanceProfileRequest]
     }
@@ -4237,17 +4237,17 @@ package iam {
 
   @js.native
   trait RemoveUserFromGroupRequest extends js.Object {
-    var GroupName: js.UndefOr[groupNameType]
-    var UserName: js.UndefOr[existingUserNameType]
+    var GroupName: groupNameType
+    var UserName: existingUserNameType
   }
 
   object RemoveUserFromGroupRequest {
     def apply(
-      GroupName: js.UndefOr[groupNameType] = js.undefined,
-      UserName: js.UndefOr[existingUserNameType] = js.undefined): RemoveUserFromGroupRequest = {
+      GroupName: groupNameType,
+      UserName: existingUserNameType): RemoveUserFromGroupRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "GroupName" -> GroupName.map { x => x.asInstanceOf[js.Any] },
-        "UserName" -> UserName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "GroupName" -> GroupName.asInstanceOf[js.Any],
+        "UserName" -> UserName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RemoveUserFromGroupRequest]
     }
@@ -4269,17 +4269,17 @@ package iam {
 
   @js.native
   trait ResetServiceSpecificCredentialRequest extends js.Object {
+    var ServiceSpecificCredentialId: serviceSpecificCredentialId
     var UserName: js.UndefOr[userNameType]
-    var ServiceSpecificCredentialId: js.UndefOr[serviceSpecificCredentialId]
   }
 
   object ResetServiceSpecificCredentialRequest {
     def apply(
-      UserName: js.UndefOr[userNameType] = js.undefined,
-      ServiceSpecificCredentialId: js.UndefOr[serviceSpecificCredentialId] = js.undefined): ResetServiceSpecificCredentialRequest = {
+      ServiceSpecificCredentialId: serviceSpecificCredentialId,
+      UserName: js.UndefOr[userNameType] = js.undefined): ResetServiceSpecificCredentialRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "UserName" -> UserName.map { x => x.asInstanceOf[js.Any] },
-        "ServiceSpecificCredentialId" -> ServiceSpecificCredentialId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ServiceSpecificCredentialId" -> ServiceSpecificCredentialId.asInstanceOf[js.Any],
+        "UserName" -> UserName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ResetServiceSpecificCredentialRequest]
     }
@@ -4305,26 +4305,26 @@ package iam {
    */
   @js.native
   trait ResourceSpecificResult extends js.Object {
-    var EvalResourceDecision: js.UndefOr[PolicyEvaluationDecisionType]
-    var MissingContextValues: js.UndefOr[ContextKeyNamesResultListType]
-    var EvalResourceName: js.UndefOr[ResourceNameType]
+    var EvalResourceDecision: PolicyEvaluationDecisionType
+    var EvalResourceName: ResourceNameType
     var EvalDecisionDetails: js.UndefOr[EvalDecisionDetailsType]
     var MatchedStatements: js.UndefOr[StatementListType]
+    var MissingContextValues: js.UndefOr[ContextKeyNamesResultListType]
   }
 
   object ResourceSpecificResult {
     def apply(
-      EvalResourceDecision: js.UndefOr[PolicyEvaluationDecisionType] = js.undefined,
-      MissingContextValues: js.UndefOr[ContextKeyNamesResultListType] = js.undefined,
-      EvalResourceName: js.UndefOr[ResourceNameType] = js.undefined,
+      EvalResourceDecision: PolicyEvaluationDecisionType,
+      EvalResourceName: ResourceNameType,
       EvalDecisionDetails: js.UndefOr[EvalDecisionDetailsType] = js.undefined,
-      MatchedStatements: js.UndefOr[StatementListType] = js.undefined): ResourceSpecificResult = {
+      MatchedStatements: js.UndefOr[StatementListType] = js.undefined,
+      MissingContextValues: js.UndefOr[ContextKeyNamesResultListType] = js.undefined): ResourceSpecificResult = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "EvalResourceDecision" -> EvalResourceDecision.map { x => x.asInstanceOf[js.Any] },
-        "MissingContextValues" -> MissingContextValues.map { x => x.asInstanceOf[js.Any] },
-        "EvalResourceName" -> EvalResourceName.map { x => x.asInstanceOf[js.Any] },
+        "EvalResourceDecision" -> EvalResourceDecision.asInstanceOf[js.Any],
+        "EvalResourceName" -> EvalResourceName.asInstanceOf[js.Any],
         "EvalDecisionDetails" -> EvalDecisionDetails.map { x => x.asInstanceOf[js.Any] },
-        "MatchedStatements" -> MatchedStatements.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "MatchedStatements" -> MatchedStatements.map { x => x.asInstanceOf[js.Any] },
+        "MissingContextValues" -> MissingContextValues.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ResourceSpecificResult]
     }
@@ -4332,23 +4332,23 @@ package iam {
 
   @js.native
   trait ResyncMFADeviceRequest extends js.Object {
-    var UserName: js.UndefOr[existingUserNameType]
-    var SerialNumber: js.UndefOr[serialNumberType]
-    var AuthenticationCode1: js.UndefOr[authenticationCodeType]
-    var AuthenticationCode2: js.UndefOr[authenticationCodeType]
+    var AuthenticationCode1: authenticationCodeType
+    var AuthenticationCode2: authenticationCodeType
+    var SerialNumber: serialNumberType
+    var UserName: existingUserNameType
   }
 
   object ResyncMFADeviceRequest {
     def apply(
-      UserName: js.UndefOr[existingUserNameType] = js.undefined,
-      SerialNumber: js.UndefOr[serialNumberType] = js.undefined,
-      AuthenticationCode1: js.UndefOr[authenticationCodeType] = js.undefined,
-      AuthenticationCode2: js.UndefOr[authenticationCodeType] = js.undefined): ResyncMFADeviceRequest = {
+      AuthenticationCode1: authenticationCodeType,
+      AuthenticationCode2: authenticationCodeType,
+      SerialNumber: serialNumberType,
+      UserName: existingUserNameType): ResyncMFADeviceRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "UserName" -> UserName.map { x => x.asInstanceOf[js.Any] },
-        "SerialNumber" -> SerialNumber.map { x => x.asInstanceOf[js.Any] },
-        "AuthenticationCode1" -> AuthenticationCode1.map { x => x.asInstanceOf[js.Any] },
-        "AuthenticationCode2" -> AuthenticationCode2.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "AuthenticationCode1" -> AuthenticationCode1.asInstanceOf[js.Any],
+        "AuthenticationCode2" -> AuthenticationCode2.asInstanceOf[js.Any],
+        "SerialNumber" -> SerialNumber.asInstanceOf[js.Any],
+        "UserName" -> UserName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ResyncMFADeviceRequest]
     }
@@ -4359,41 +4359,41 @@ package iam {
    */
   @js.native
   trait Role extends js.Object {
-    var RoleId: js.UndefOr[idType]
-    var Path: js.UndefOr[pathType]
-    var Description: js.UndefOr[roleDescriptionType]
+    var Arn: arnType
+    var CreateDate: dateType
+    var Path: pathType
+    var RoleId: idType
+    var RoleName: roleNameType
     var AssumeRolePolicyDocument: js.UndefOr[policyDocumentType]
-    var PermissionsBoundary: js.UndefOr[AttachedPermissionsBoundary]
-    var Arn: js.UndefOr[arnType]
-    var CreateDate: js.UndefOr[dateType]
-    var RoleName: js.UndefOr[roleNameType]
-    var Tags: js.UndefOr[tagListType]
+    var Description: js.UndefOr[roleDescriptionType]
     var MaxSessionDuration: js.UndefOr[roleMaxSessionDurationType]
+    var PermissionsBoundary: js.UndefOr[AttachedPermissionsBoundary]
+    var Tags: js.UndefOr[tagListType]
   }
 
   object Role {
     def apply(
-      RoleId: js.UndefOr[idType] = js.undefined,
-      Path: js.UndefOr[pathType] = js.undefined,
-      Description: js.UndefOr[roleDescriptionType] = js.undefined,
+      Arn: arnType,
+      CreateDate: dateType,
+      Path: pathType,
+      RoleId: idType,
+      RoleName: roleNameType,
       AssumeRolePolicyDocument: js.UndefOr[policyDocumentType] = js.undefined,
+      Description: js.UndefOr[roleDescriptionType] = js.undefined,
+      MaxSessionDuration: js.UndefOr[roleMaxSessionDurationType] = js.undefined,
       PermissionsBoundary: js.UndefOr[AttachedPermissionsBoundary] = js.undefined,
-      Arn: js.UndefOr[arnType] = js.undefined,
-      CreateDate: js.UndefOr[dateType] = js.undefined,
-      RoleName: js.UndefOr[roleNameType] = js.undefined,
-      Tags: js.UndefOr[tagListType] = js.undefined,
-      MaxSessionDuration: js.UndefOr[roleMaxSessionDurationType] = js.undefined): Role = {
+      Tags: js.UndefOr[tagListType] = js.undefined): Role = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "RoleId" -> RoleId.map { x => x.asInstanceOf[js.Any] },
-        "Path" -> Path.map { x => x.asInstanceOf[js.Any] },
-        "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
+        "Arn" -> Arn.asInstanceOf[js.Any],
+        "CreateDate" -> CreateDate.asInstanceOf[js.Any],
+        "Path" -> Path.asInstanceOf[js.Any],
+        "RoleId" -> RoleId.asInstanceOf[js.Any],
+        "RoleName" -> RoleName.asInstanceOf[js.Any],
         "AssumeRolePolicyDocument" -> AssumeRolePolicyDocument.map { x => x.asInstanceOf[js.Any] },
+        "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
+        "MaxSessionDuration" -> MaxSessionDuration.map { x => x.asInstanceOf[js.Any] },
         "PermissionsBoundary" -> PermissionsBoundary.map { x => x.asInstanceOf[js.Any] },
-        "Arn" -> Arn.map { x => x.asInstanceOf[js.Any] },
-        "CreateDate" -> CreateDate.map { x => x.asInstanceOf[js.Any] },
-        "RoleName" -> RoleName.map { x => x.asInstanceOf[js.Any] },
-        "Tags" -> Tags.map { x => x.asInstanceOf[js.Any] },
-        "MaxSessionDuration" -> MaxSessionDuration.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Tags" -> Tags.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Role]
     }
@@ -4404,44 +4404,44 @@ package iam {
    */
   @js.native
   trait RoleDetail extends js.Object {
-    var RoleId: js.UndefOr[idType]
-    var AttachedManagedPolicies: js.UndefOr[attachedPoliciesListType]
-    var Path: js.UndefOr[pathType]
-    var AssumeRolePolicyDocument: js.UndefOr[policyDocumentType]
-    var RolePolicyList: js.UndefOr[policyDetailListType]
-    var PermissionsBoundary: js.UndefOr[AttachedPermissionsBoundary]
     var Arn: js.UndefOr[arnType]
+    var AssumeRolePolicyDocument: js.UndefOr[policyDocumentType]
+    var AttachedManagedPolicies: js.UndefOr[attachedPoliciesListType]
     var CreateDate: js.UndefOr[dateType]
-    var RoleName: js.UndefOr[roleNameType]
-    var Tags: js.UndefOr[tagListType]
     var InstanceProfileList: js.UndefOr[instanceProfileListType]
+    var Path: js.UndefOr[pathType]
+    var PermissionsBoundary: js.UndefOr[AttachedPermissionsBoundary]
+    var RoleId: js.UndefOr[idType]
+    var RoleName: js.UndefOr[roleNameType]
+    var RolePolicyList: js.UndefOr[policyDetailListType]
+    var Tags: js.UndefOr[tagListType]
   }
 
   object RoleDetail {
     def apply(
-      RoleId: js.UndefOr[idType] = js.undefined,
-      AttachedManagedPolicies: js.UndefOr[attachedPoliciesListType] = js.undefined,
-      Path: js.UndefOr[pathType] = js.undefined,
-      AssumeRolePolicyDocument: js.UndefOr[policyDocumentType] = js.undefined,
-      RolePolicyList: js.UndefOr[policyDetailListType] = js.undefined,
-      PermissionsBoundary: js.UndefOr[AttachedPermissionsBoundary] = js.undefined,
       Arn: js.UndefOr[arnType] = js.undefined,
+      AssumeRolePolicyDocument: js.UndefOr[policyDocumentType] = js.undefined,
+      AttachedManagedPolicies: js.UndefOr[attachedPoliciesListType] = js.undefined,
       CreateDate: js.UndefOr[dateType] = js.undefined,
+      InstanceProfileList: js.UndefOr[instanceProfileListType] = js.undefined,
+      Path: js.UndefOr[pathType] = js.undefined,
+      PermissionsBoundary: js.UndefOr[AttachedPermissionsBoundary] = js.undefined,
+      RoleId: js.UndefOr[idType] = js.undefined,
       RoleName: js.UndefOr[roleNameType] = js.undefined,
-      Tags: js.UndefOr[tagListType] = js.undefined,
-      InstanceProfileList: js.UndefOr[instanceProfileListType] = js.undefined): RoleDetail = {
+      RolePolicyList: js.UndefOr[policyDetailListType] = js.undefined,
+      Tags: js.UndefOr[tagListType] = js.undefined): RoleDetail = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "RoleId" -> RoleId.map { x => x.asInstanceOf[js.Any] },
-        "AttachedManagedPolicies" -> AttachedManagedPolicies.map { x => x.asInstanceOf[js.Any] },
-        "Path" -> Path.map { x => x.asInstanceOf[js.Any] },
-        "AssumeRolePolicyDocument" -> AssumeRolePolicyDocument.map { x => x.asInstanceOf[js.Any] },
-        "RolePolicyList" -> RolePolicyList.map { x => x.asInstanceOf[js.Any] },
-        "PermissionsBoundary" -> PermissionsBoundary.map { x => x.asInstanceOf[js.Any] },
         "Arn" -> Arn.map { x => x.asInstanceOf[js.Any] },
+        "AssumeRolePolicyDocument" -> AssumeRolePolicyDocument.map { x => x.asInstanceOf[js.Any] },
+        "AttachedManagedPolicies" -> AttachedManagedPolicies.map { x => x.asInstanceOf[js.Any] },
         "CreateDate" -> CreateDate.map { x => x.asInstanceOf[js.Any] },
+        "InstanceProfileList" -> InstanceProfileList.map { x => x.asInstanceOf[js.Any] },
+        "Path" -> Path.map { x => x.asInstanceOf[js.Any] },
+        "PermissionsBoundary" -> PermissionsBoundary.map { x => x.asInstanceOf[js.Any] },
+        "RoleId" -> RoleId.map { x => x.asInstanceOf[js.Any] },
         "RoleName" -> RoleName.map { x => x.asInstanceOf[js.Any] },
-        "Tags" -> Tags.map { x => x.asInstanceOf[js.Any] },
-        "InstanceProfileList" -> InstanceProfileList.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "RolePolicyList" -> RolePolicyList.map { x => x.asInstanceOf[js.Any] },
+        "Tags" -> Tags.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RoleDetail]
     }
@@ -4474,19 +4474,19 @@ package iam {
   @js.native
   trait SAMLProviderListEntry extends js.Object {
     var Arn: js.UndefOr[arnType]
-    var ValidUntil: js.UndefOr[dateType]
     var CreateDate: js.UndefOr[dateType]
+    var ValidUntil: js.UndefOr[dateType]
   }
 
   object SAMLProviderListEntry {
     def apply(
       Arn: js.UndefOr[arnType] = js.undefined,
-      ValidUntil: js.UndefOr[dateType] = js.undefined,
-      CreateDate: js.UndefOr[dateType] = js.undefined): SAMLProviderListEntry = {
+      CreateDate: js.UndefOr[dateType] = js.undefined,
+      ValidUntil: js.UndefOr[dateType] = js.undefined): SAMLProviderListEntry = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Arn" -> Arn.map { x => x.asInstanceOf[js.Any] },
-        "ValidUntil" -> ValidUntil.map { x => x.asInstanceOf[js.Any] },
-        "CreateDate" -> CreateDate.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "CreateDate" -> CreateDate.map { x => x.asInstanceOf[js.Any] },
+        "ValidUntil" -> ValidUntil.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SAMLProviderListEntry]
     }
@@ -4497,29 +4497,29 @@ package iam {
    */
   @js.native
   trait SSHPublicKey extends js.Object {
-    var UserName: js.UndefOr[userNameType]
-    var SSHPublicKeyBody: js.UndefOr[publicKeyMaterialType]
-    var Fingerprint: js.UndefOr[publicKeyFingerprintType]
+    var Fingerprint: publicKeyFingerprintType
+    var SSHPublicKeyBody: publicKeyMaterialType
+    var SSHPublicKeyId: publicKeyIdType
+    var Status: statusType
+    var UserName: userNameType
     var UploadDate: js.UndefOr[dateType]
-    var SSHPublicKeyId: js.UndefOr[publicKeyIdType]
-    var Status: js.UndefOr[statusType]
   }
 
   object SSHPublicKey {
     def apply(
-      UserName: js.UndefOr[userNameType] = js.undefined,
-      SSHPublicKeyBody: js.UndefOr[publicKeyMaterialType] = js.undefined,
-      Fingerprint: js.UndefOr[publicKeyFingerprintType] = js.undefined,
-      UploadDate: js.UndefOr[dateType] = js.undefined,
-      SSHPublicKeyId: js.UndefOr[publicKeyIdType] = js.undefined,
-      Status: js.UndefOr[statusType] = js.undefined): SSHPublicKey = {
+      Fingerprint: publicKeyFingerprintType,
+      SSHPublicKeyBody: publicKeyMaterialType,
+      SSHPublicKeyId: publicKeyIdType,
+      Status: statusType,
+      UserName: userNameType,
+      UploadDate: js.UndefOr[dateType] = js.undefined): SSHPublicKey = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "UserName" -> UserName.map { x => x.asInstanceOf[js.Any] },
-        "SSHPublicKeyBody" -> SSHPublicKeyBody.map { x => x.asInstanceOf[js.Any] },
-        "Fingerprint" -> Fingerprint.map { x => x.asInstanceOf[js.Any] },
-        "UploadDate" -> UploadDate.map { x => x.asInstanceOf[js.Any] },
-        "SSHPublicKeyId" -> SSHPublicKeyId.map { x => x.asInstanceOf[js.Any] },
-        "Status" -> Status.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Fingerprint" -> Fingerprint.asInstanceOf[js.Any],
+        "SSHPublicKeyBody" -> SSHPublicKeyBody.asInstanceOf[js.Any],
+        "SSHPublicKeyId" -> SSHPublicKeyId.asInstanceOf[js.Any],
+        "Status" -> Status.asInstanceOf[js.Any],
+        "UserName" -> UserName.asInstanceOf[js.Any],
+        "UploadDate" -> UploadDate.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SSHPublicKey]
     }
@@ -4530,23 +4530,23 @@ package iam {
    */
   @js.native
   trait SSHPublicKeyMetadata extends js.Object {
-    var UserName: js.UndefOr[userNameType]
-    var SSHPublicKeyId: js.UndefOr[publicKeyIdType]
-    var Status: js.UndefOr[statusType]
-    var UploadDate: js.UndefOr[dateType]
+    var SSHPublicKeyId: publicKeyIdType
+    var Status: statusType
+    var UploadDate: dateType
+    var UserName: userNameType
   }
 
   object SSHPublicKeyMetadata {
     def apply(
-      UserName: js.UndefOr[userNameType] = js.undefined,
-      SSHPublicKeyId: js.UndefOr[publicKeyIdType] = js.undefined,
-      Status: js.UndefOr[statusType] = js.undefined,
-      UploadDate: js.UndefOr[dateType] = js.undefined): SSHPublicKeyMetadata = {
+      SSHPublicKeyId: publicKeyIdType,
+      Status: statusType,
+      UploadDate: dateType,
+      UserName: userNameType): SSHPublicKeyMetadata = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "UserName" -> UserName.map { x => x.asInstanceOf[js.Any] },
-        "SSHPublicKeyId" -> SSHPublicKeyId.map { x => x.asInstanceOf[js.Any] },
-        "Status" -> Status.map { x => x.asInstanceOf[js.Any] },
-        "UploadDate" -> UploadDate.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "SSHPublicKeyId" -> SSHPublicKeyId.asInstanceOf[js.Any],
+        "Status" -> Status.asInstanceOf[js.Any],
+        "UploadDate" -> UploadDate.asInstanceOf[js.Any],
+        "UserName" -> UserName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SSHPublicKeyMetadata]
     }
@@ -4557,19 +4557,19 @@ package iam {
    */
   @js.native
   trait ServerCertificate extends js.Object {
-    var ServerCertificateMetadata: js.UndefOr[ServerCertificateMetadata]
-    var CertificateBody: js.UndefOr[certificateBodyType]
+    var CertificateBody: certificateBodyType
+    var ServerCertificateMetadata: ServerCertificateMetadata
     var CertificateChain: js.UndefOr[certificateChainType]
   }
 
   object ServerCertificate {
     def apply(
-      ServerCertificateMetadata: js.UndefOr[ServerCertificateMetadata] = js.undefined,
-      CertificateBody: js.UndefOr[certificateBodyType] = js.undefined,
+      CertificateBody: certificateBodyType,
+      ServerCertificateMetadata: ServerCertificateMetadata,
       CertificateChain: js.UndefOr[certificateChainType] = js.undefined): ServerCertificate = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ServerCertificateMetadata" -> ServerCertificateMetadata.map { x => x.asInstanceOf[js.Any] },
-        "CertificateBody" -> CertificateBody.map { x => x.asInstanceOf[js.Any] },
+        "CertificateBody" -> CertificateBody.asInstanceOf[js.Any],
+        "ServerCertificateMetadata" -> ServerCertificateMetadata.asInstanceOf[js.Any],
         "CertificateChain" -> CertificateChain.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ServerCertificate]
@@ -4581,29 +4581,29 @@ package iam {
    */
   @js.native
   trait ServerCertificateMetadata extends js.Object {
-    var Path: js.UndefOr[pathType]
-    var ServerCertificateName: js.UndefOr[serverCertificateNameType]
-    var Arn: js.UndefOr[arnType]
-    var UploadDate: js.UndefOr[dateType]
-    var ServerCertificateId: js.UndefOr[idType]
+    var Arn: arnType
+    var Path: pathType
+    var ServerCertificateId: idType
+    var ServerCertificateName: serverCertificateNameType
     var Expiration: js.UndefOr[dateType]
+    var UploadDate: js.UndefOr[dateType]
   }
 
   object ServerCertificateMetadata {
     def apply(
-      Path: js.UndefOr[pathType] = js.undefined,
-      ServerCertificateName: js.UndefOr[serverCertificateNameType] = js.undefined,
-      Arn: js.UndefOr[arnType] = js.undefined,
-      UploadDate: js.UndefOr[dateType] = js.undefined,
-      ServerCertificateId: js.UndefOr[idType] = js.undefined,
-      Expiration: js.UndefOr[dateType] = js.undefined): ServerCertificateMetadata = {
+      Arn: arnType,
+      Path: pathType,
+      ServerCertificateId: idType,
+      ServerCertificateName: serverCertificateNameType,
+      Expiration: js.UndefOr[dateType] = js.undefined,
+      UploadDate: js.UndefOr[dateType] = js.undefined): ServerCertificateMetadata = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Path" -> Path.map { x => x.asInstanceOf[js.Any] },
-        "ServerCertificateName" -> ServerCertificateName.map { x => x.asInstanceOf[js.Any] },
-        "Arn" -> Arn.map { x => x.asInstanceOf[js.Any] },
-        "UploadDate" -> UploadDate.map { x => x.asInstanceOf[js.Any] },
-        "ServerCertificateId" -> ServerCertificateId.map { x => x.asInstanceOf[js.Any] },
-        "Expiration" -> Expiration.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Arn" -> Arn.asInstanceOf[js.Any],
+        "Path" -> Path.asInstanceOf[js.Any],
+        "ServerCertificateId" -> ServerCertificateId.asInstanceOf[js.Any],
+        "ServerCertificateName" -> ServerCertificateName.asInstanceOf[js.Any],
+        "Expiration" -> Expiration.map { x => x.asInstanceOf[js.Any] },
+        "UploadDate" -> UploadDate.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ServerCertificateMetadata]
     }
@@ -4614,32 +4614,32 @@ package iam {
    */
   @js.native
   trait ServiceSpecificCredential extends js.Object {
-    var UserName: js.UndefOr[userNameType]
-    var ServiceName: js.UndefOr[serviceName]
-    var ServiceSpecificCredentialId: js.UndefOr[serviceSpecificCredentialId]
-    var ServicePassword: js.UndefOr[servicePassword]
-    var CreateDate: js.UndefOr[dateType]
-    var ServiceUserName: js.UndefOr[serviceUserName]
-    var Status: js.UndefOr[statusType]
+    var CreateDate: dateType
+    var ServiceName: serviceName
+    var ServicePassword: servicePassword
+    var ServiceSpecificCredentialId: serviceSpecificCredentialId
+    var ServiceUserName: serviceUserName
+    var Status: statusType
+    var UserName: userNameType
   }
 
   object ServiceSpecificCredential {
     def apply(
-      UserName: js.UndefOr[userNameType] = js.undefined,
-      ServiceName: js.UndefOr[serviceName] = js.undefined,
-      ServiceSpecificCredentialId: js.UndefOr[serviceSpecificCredentialId] = js.undefined,
-      ServicePassword: js.UndefOr[servicePassword] = js.undefined,
-      CreateDate: js.UndefOr[dateType] = js.undefined,
-      ServiceUserName: js.UndefOr[serviceUserName] = js.undefined,
-      Status: js.UndefOr[statusType] = js.undefined): ServiceSpecificCredential = {
+      CreateDate: dateType,
+      ServiceName: serviceName,
+      ServicePassword: servicePassword,
+      ServiceSpecificCredentialId: serviceSpecificCredentialId,
+      ServiceUserName: serviceUserName,
+      Status: statusType,
+      UserName: userNameType): ServiceSpecificCredential = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "UserName" -> UserName.map { x => x.asInstanceOf[js.Any] },
-        "ServiceName" -> ServiceName.map { x => x.asInstanceOf[js.Any] },
-        "ServiceSpecificCredentialId" -> ServiceSpecificCredentialId.map { x => x.asInstanceOf[js.Any] },
-        "ServicePassword" -> ServicePassword.map { x => x.asInstanceOf[js.Any] },
-        "CreateDate" -> CreateDate.map { x => x.asInstanceOf[js.Any] },
-        "ServiceUserName" -> ServiceUserName.map { x => x.asInstanceOf[js.Any] },
-        "Status" -> Status.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "CreateDate" -> CreateDate.asInstanceOf[js.Any],
+        "ServiceName" -> ServiceName.asInstanceOf[js.Any],
+        "ServicePassword" -> ServicePassword.asInstanceOf[js.Any],
+        "ServiceSpecificCredentialId" -> ServiceSpecificCredentialId.asInstanceOf[js.Any],
+        "ServiceUserName" -> ServiceUserName.asInstanceOf[js.Any],
+        "Status" -> Status.asInstanceOf[js.Any],
+        "UserName" -> UserName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ServiceSpecificCredential]
     }
@@ -4650,29 +4650,29 @@ package iam {
    */
   @js.native
   trait ServiceSpecificCredentialMetadata extends js.Object {
-    var UserName: js.UndefOr[userNameType]
-    var ServiceName: js.UndefOr[serviceName]
-    var ServiceSpecificCredentialId: js.UndefOr[serviceSpecificCredentialId]
-    var CreateDate: js.UndefOr[dateType]
-    var ServiceUserName: js.UndefOr[serviceUserName]
-    var Status: js.UndefOr[statusType]
+    var CreateDate: dateType
+    var ServiceName: serviceName
+    var ServiceSpecificCredentialId: serviceSpecificCredentialId
+    var ServiceUserName: serviceUserName
+    var Status: statusType
+    var UserName: userNameType
   }
 
   object ServiceSpecificCredentialMetadata {
     def apply(
-      UserName: js.UndefOr[userNameType] = js.undefined,
-      ServiceName: js.UndefOr[serviceName] = js.undefined,
-      ServiceSpecificCredentialId: js.UndefOr[serviceSpecificCredentialId] = js.undefined,
-      CreateDate: js.UndefOr[dateType] = js.undefined,
-      ServiceUserName: js.UndefOr[serviceUserName] = js.undefined,
-      Status: js.UndefOr[statusType] = js.undefined): ServiceSpecificCredentialMetadata = {
+      CreateDate: dateType,
+      ServiceName: serviceName,
+      ServiceSpecificCredentialId: serviceSpecificCredentialId,
+      ServiceUserName: serviceUserName,
+      Status: statusType,
+      UserName: userNameType): ServiceSpecificCredentialMetadata = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "UserName" -> UserName.map { x => x.asInstanceOf[js.Any] },
-        "ServiceName" -> ServiceName.map { x => x.asInstanceOf[js.Any] },
-        "ServiceSpecificCredentialId" -> ServiceSpecificCredentialId.map { x => x.asInstanceOf[js.Any] },
-        "CreateDate" -> CreateDate.map { x => x.asInstanceOf[js.Any] },
-        "ServiceUserName" -> ServiceUserName.map { x => x.asInstanceOf[js.Any] },
-        "Status" -> Status.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "CreateDate" -> CreateDate.asInstanceOf[js.Any],
+        "ServiceName" -> ServiceName.asInstanceOf[js.Any],
+        "ServiceSpecificCredentialId" -> ServiceSpecificCredentialId.asInstanceOf[js.Any],
+        "ServiceUserName" -> ServiceUserName.asInstanceOf[js.Any],
+        "Status" -> Status.asInstanceOf[js.Any],
+        "UserName" -> UserName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ServiceSpecificCredentialMetadata]
     }
@@ -4680,17 +4680,17 @@ package iam {
 
   @js.native
   trait SetDefaultPolicyVersionRequest extends js.Object {
-    var PolicyArn: js.UndefOr[arnType]
-    var VersionId: js.UndefOr[policyVersionIdType]
+    var PolicyArn: arnType
+    var VersionId: policyVersionIdType
   }
 
   object SetDefaultPolicyVersionRequest {
     def apply(
-      PolicyArn: js.UndefOr[arnType] = js.undefined,
-      VersionId: js.UndefOr[policyVersionIdType] = js.undefined): SetDefaultPolicyVersionRequest = {
+      PolicyArn: arnType,
+      VersionId: policyVersionIdType): SetDefaultPolicyVersionRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "PolicyArn" -> PolicyArn.map { x => x.asInstanceOf[js.Any] },
-        "VersionId" -> VersionId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "PolicyArn" -> PolicyArn.asInstanceOf[js.Any],
+        "VersionId" -> VersionId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SetDefaultPolicyVersionRequest]
     }
@@ -4701,26 +4701,26 @@ package iam {
    */
   @js.native
   trait SigningCertificate extends js.Object {
-    var UserName: js.UndefOr[userNameType]
-    var CertificateBody: js.UndefOr[certificateBodyType]
-    var CertificateId: js.UndefOr[certificateIdType]
+    var CertificateBody: certificateBodyType
+    var CertificateId: certificateIdType
+    var Status: statusType
+    var UserName: userNameType
     var UploadDate: js.UndefOr[dateType]
-    var Status: js.UndefOr[statusType]
   }
 
   object SigningCertificate {
     def apply(
-      UserName: js.UndefOr[userNameType] = js.undefined,
-      CertificateBody: js.UndefOr[certificateBodyType] = js.undefined,
-      CertificateId: js.UndefOr[certificateIdType] = js.undefined,
-      UploadDate: js.UndefOr[dateType] = js.undefined,
-      Status: js.UndefOr[statusType] = js.undefined): SigningCertificate = {
+      CertificateBody: certificateBodyType,
+      CertificateId: certificateIdType,
+      Status: statusType,
+      UserName: userNameType,
+      UploadDate: js.UndefOr[dateType] = js.undefined): SigningCertificate = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "UserName" -> UserName.map { x => x.asInstanceOf[js.Any] },
-        "CertificateBody" -> CertificateBody.map { x => x.asInstanceOf[js.Any] },
-        "CertificateId" -> CertificateId.map { x => x.asInstanceOf[js.Any] },
-        "UploadDate" -> UploadDate.map { x => x.asInstanceOf[js.Any] },
-        "Status" -> Status.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "CertificateBody" -> CertificateBody.asInstanceOf[js.Any],
+        "CertificateId" -> CertificateId.asInstanceOf[js.Any],
+        "Status" -> Status.asInstanceOf[js.Any],
+        "UserName" -> UserName.asInstanceOf[js.Any],
+        "UploadDate" -> UploadDate.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SigningCertificate]
     }
@@ -4728,41 +4728,41 @@ package iam {
 
   @js.native
   trait SimulateCustomPolicyRequest extends js.Object {
-    var ResourceArns: js.UndefOr[ResourceNameListType]
-    var ResourceHandlingOption: js.UndefOr[ResourceHandlingOptionType]
-    var MaxItems: js.UndefOr[maxItemsType]
-    var ResourcePolicy: js.UndefOr[policyDocumentType]
-    var ResourceOwner: js.UndefOr[ResourceNameType]
+    var ActionNames: ActionNameListType
+    var PolicyInputList: SimulationPolicyListType
     var CallerArn: js.UndefOr[ResourceNameType]
-    var PolicyInputList: js.UndefOr[SimulationPolicyListType]
-    var ActionNames: js.UndefOr[ActionNameListType]
     var ContextEntries: js.UndefOr[ContextEntryListType]
     var Marker: js.UndefOr[markerType]
+    var MaxItems: js.UndefOr[maxItemsType]
+    var ResourceArns: js.UndefOr[ResourceNameListType]
+    var ResourceHandlingOption: js.UndefOr[ResourceHandlingOptionType]
+    var ResourceOwner: js.UndefOr[ResourceNameType]
+    var ResourcePolicy: js.UndefOr[policyDocumentType]
   }
 
   object SimulateCustomPolicyRequest {
     def apply(
+      ActionNames: ActionNameListType,
+      PolicyInputList: SimulationPolicyListType,
+      CallerArn: js.UndefOr[ResourceNameType] = js.undefined,
+      ContextEntries: js.UndefOr[ContextEntryListType] = js.undefined,
+      Marker: js.UndefOr[markerType] = js.undefined,
+      MaxItems: js.UndefOr[maxItemsType] = js.undefined,
       ResourceArns: js.UndefOr[ResourceNameListType] = js.undefined,
       ResourceHandlingOption: js.UndefOr[ResourceHandlingOptionType] = js.undefined,
-      MaxItems: js.UndefOr[maxItemsType] = js.undefined,
-      ResourcePolicy: js.UndefOr[policyDocumentType] = js.undefined,
       ResourceOwner: js.UndefOr[ResourceNameType] = js.undefined,
-      CallerArn: js.UndefOr[ResourceNameType] = js.undefined,
-      PolicyInputList: js.UndefOr[SimulationPolicyListType] = js.undefined,
-      ActionNames: js.UndefOr[ActionNameListType] = js.undefined,
-      ContextEntries: js.UndefOr[ContextEntryListType] = js.undefined,
-      Marker: js.UndefOr[markerType] = js.undefined): SimulateCustomPolicyRequest = {
+      ResourcePolicy: js.UndefOr[policyDocumentType] = js.undefined): SimulateCustomPolicyRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "ActionNames" -> ActionNames.asInstanceOf[js.Any],
+        "PolicyInputList" -> PolicyInputList.asInstanceOf[js.Any],
+        "CallerArn" -> CallerArn.map { x => x.asInstanceOf[js.Any] },
+        "ContextEntries" -> ContextEntries.map { x => x.asInstanceOf[js.Any] },
+        "Marker" -> Marker.map { x => x.asInstanceOf[js.Any] },
+        "MaxItems" -> MaxItems.map { x => x.asInstanceOf[js.Any] },
         "ResourceArns" -> ResourceArns.map { x => x.asInstanceOf[js.Any] },
         "ResourceHandlingOption" -> ResourceHandlingOption.map { x => x.asInstanceOf[js.Any] },
-        "MaxItems" -> MaxItems.map { x => x.asInstanceOf[js.Any] },
-        "ResourcePolicy" -> ResourcePolicy.map { x => x.asInstanceOf[js.Any] },
         "ResourceOwner" -> ResourceOwner.map { x => x.asInstanceOf[js.Any] },
-        "CallerArn" -> CallerArn.map { x => x.asInstanceOf[js.Any] },
-        "PolicyInputList" -> PolicyInputList.map { x => x.asInstanceOf[js.Any] },
-        "ActionNames" -> ActionNames.map { x => x.asInstanceOf[js.Any] },
-        "ContextEntries" -> ContextEntries.map { x => x.asInstanceOf[js.Any] },
-        "Marker" -> Marker.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ResourcePolicy" -> ResourcePolicy.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SimulateCustomPolicyRequest]
     }
@@ -4794,44 +4794,44 @@ package iam {
 
   @js.native
   trait SimulatePrincipalPolicyRequest extends js.Object {
-    var ResourceArns: js.UndefOr[ResourceNameListType]
-    var ResourceHandlingOption: js.UndefOr[ResourceHandlingOptionType]
-    var MaxItems: js.UndefOr[maxItemsType]
-    var ResourcePolicy: js.UndefOr[policyDocumentType]
-    var PolicySourceArn: js.UndefOr[arnType]
-    var ResourceOwner: js.UndefOr[ResourceNameType]
+    var ActionNames: ActionNameListType
+    var PolicySourceArn: arnType
     var CallerArn: js.UndefOr[ResourceNameType]
-    var PolicyInputList: js.UndefOr[SimulationPolicyListType]
-    var ActionNames: js.UndefOr[ActionNameListType]
     var ContextEntries: js.UndefOr[ContextEntryListType]
     var Marker: js.UndefOr[markerType]
+    var MaxItems: js.UndefOr[maxItemsType]
+    var PolicyInputList: js.UndefOr[SimulationPolicyListType]
+    var ResourceArns: js.UndefOr[ResourceNameListType]
+    var ResourceHandlingOption: js.UndefOr[ResourceHandlingOptionType]
+    var ResourceOwner: js.UndefOr[ResourceNameType]
+    var ResourcePolicy: js.UndefOr[policyDocumentType]
   }
 
   object SimulatePrincipalPolicyRequest {
     def apply(
+      ActionNames: ActionNameListType,
+      PolicySourceArn: arnType,
+      CallerArn: js.UndefOr[ResourceNameType] = js.undefined,
+      ContextEntries: js.UndefOr[ContextEntryListType] = js.undefined,
+      Marker: js.UndefOr[markerType] = js.undefined,
+      MaxItems: js.UndefOr[maxItemsType] = js.undefined,
+      PolicyInputList: js.UndefOr[SimulationPolicyListType] = js.undefined,
       ResourceArns: js.UndefOr[ResourceNameListType] = js.undefined,
       ResourceHandlingOption: js.UndefOr[ResourceHandlingOptionType] = js.undefined,
-      MaxItems: js.UndefOr[maxItemsType] = js.undefined,
-      ResourcePolicy: js.UndefOr[policyDocumentType] = js.undefined,
-      PolicySourceArn: js.UndefOr[arnType] = js.undefined,
       ResourceOwner: js.UndefOr[ResourceNameType] = js.undefined,
-      CallerArn: js.UndefOr[ResourceNameType] = js.undefined,
-      PolicyInputList: js.UndefOr[SimulationPolicyListType] = js.undefined,
-      ActionNames: js.UndefOr[ActionNameListType] = js.undefined,
-      ContextEntries: js.UndefOr[ContextEntryListType] = js.undefined,
-      Marker: js.UndefOr[markerType] = js.undefined): SimulatePrincipalPolicyRequest = {
+      ResourcePolicy: js.UndefOr[policyDocumentType] = js.undefined): SimulatePrincipalPolicyRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "ActionNames" -> ActionNames.asInstanceOf[js.Any],
+        "PolicySourceArn" -> PolicySourceArn.asInstanceOf[js.Any],
+        "CallerArn" -> CallerArn.map { x => x.asInstanceOf[js.Any] },
+        "ContextEntries" -> ContextEntries.map { x => x.asInstanceOf[js.Any] },
+        "Marker" -> Marker.map { x => x.asInstanceOf[js.Any] },
+        "MaxItems" -> MaxItems.map { x => x.asInstanceOf[js.Any] },
+        "PolicyInputList" -> PolicyInputList.map { x => x.asInstanceOf[js.Any] },
         "ResourceArns" -> ResourceArns.map { x => x.asInstanceOf[js.Any] },
         "ResourceHandlingOption" -> ResourceHandlingOption.map { x => x.asInstanceOf[js.Any] },
-        "MaxItems" -> MaxItems.map { x => x.asInstanceOf[js.Any] },
-        "ResourcePolicy" -> ResourcePolicy.map { x => x.asInstanceOf[js.Any] },
-        "PolicySourceArn" -> PolicySourceArn.map { x => x.asInstanceOf[js.Any] },
         "ResourceOwner" -> ResourceOwner.map { x => x.asInstanceOf[js.Any] },
-        "CallerArn" -> CallerArn.map { x => x.asInstanceOf[js.Any] },
-        "PolicyInputList" -> PolicyInputList.map { x => x.asInstanceOf[js.Any] },
-        "ActionNames" -> ActionNames.map { x => x.asInstanceOf[js.Any] },
-        "ContextEntries" -> ContextEntries.map { x => x.asInstanceOf[js.Any] },
-        "Marker" -> Marker.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ResourcePolicy" -> ResourcePolicy.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SimulatePrincipalPolicyRequest]
     }
@@ -4842,23 +4842,23 @@ package iam {
    */
   @js.native
   trait Statement extends js.Object {
+    var EndPosition: js.UndefOr[Position]
     var SourcePolicyId: js.UndefOr[PolicyIdentifierType]
     var SourcePolicyType: js.UndefOr[PolicySourceType]
     var StartPosition: js.UndefOr[Position]
-    var EndPosition: js.UndefOr[Position]
   }
 
   object Statement {
     def apply(
+      EndPosition: js.UndefOr[Position] = js.undefined,
       SourcePolicyId: js.UndefOr[PolicyIdentifierType] = js.undefined,
       SourcePolicyType: js.UndefOr[PolicySourceType] = js.undefined,
-      StartPosition: js.UndefOr[Position] = js.undefined,
-      EndPosition: js.UndefOr[Position] = js.undefined): Statement = {
+      StartPosition: js.UndefOr[Position] = js.undefined): Statement = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "EndPosition" -> EndPosition.map { x => x.asInstanceOf[js.Any] },
         "SourcePolicyId" -> SourcePolicyId.map { x => x.asInstanceOf[js.Any] },
         "SourcePolicyType" -> SourcePolicyType.map { x => x.asInstanceOf[js.Any] },
-        "StartPosition" -> StartPosition.map { x => x.asInstanceOf[js.Any] },
-        "EndPosition" -> EndPosition.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "StartPosition" -> StartPosition.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Statement]
     }
@@ -4869,17 +4869,17 @@ package iam {
    */
   @js.native
   trait Tag extends js.Object {
-    var Key: js.UndefOr[tagKeyType]
-    var Value: js.UndefOr[tagValueType]
+    var Key: tagKeyType
+    var Value: tagValueType
   }
 
   object Tag {
     def apply(
-      Key: js.UndefOr[tagKeyType] = js.undefined,
-      Value: js.UndefOr[tagValueType] = js.undefined): Tag = {
+      Key: tagKeyType,
+      Value: tagValueType): Tag = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Key" -> Key.map { x => x.asInstanceOf[js.Any] },
-        "Value" -> Value.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Key" -> Key.asInstanceOf[js.Any],
+        "Value" -> Value.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Tag]
     }
@@ -4887,17 +4887,17 @@ package iam {
 
   @js.native
   trait TagRoleRequest extends js.Object {
-    var RoleName: js.UndefOr[roleNameType]
-    var Tags: js.UndefOr[tagListType]
+    var RoleName: roleNameType
+    var Tags: tagListType
   }
 
   object TagRoleRequest {
     def apply(
-      RoleName: js.UndefOr[roleNameType] = js.undefined,
-      Tags: js.UndefOr[tagListType] = js.undefined): TagRoleRequest = {
+      RoleName: roleNameType,
+      Tags: tagListType): TagRoleRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "RoleName" -> RoleName.map { x => x.asInstanceOf[js.Any] },
-        "Tags" -> Tags.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "RoleName" -> RoleName.asInstanceOf[js.Any],
+        "Tags" -> Tags.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TagRoleRequest]
     }
@@ -4905,17 +4905,17 @@ package iam {
 
   @js.native
   trait TagUserRequest extends js.Object {
-    var UserName: js.UndefOr[existingUserNameType]
-    var Tags: js.UndefOr[tagListType]
+    var Tags: tagListType
+    var UserName: existingUserNameType
   }
 
   object TagUserRequest {
     def apply(
-      UserName: js.UndefOr[existingUserNameType] = js.undefined,
-      Tags: js.UndefOr[tagListType] = js.undefined): TagUserRequest = {
+      Tags: tagListType,
+      UserName: existingUserNameType): TagUserRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "UserName" -> UserName.map { x => x.asInstanceOf[js.Any] },
-        "Tags" -> Tags.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Tags" -> Tags.asInstanceOf[js.Any],
+        "UserName" -> UserName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TagUserRequest]
     }
@@ -4923,17 +4923,17 @@ package iam {
 
   @js.native
   trait UntagRoleRequest extends js.Object {
-    var RoleName: js.UndefOr[roleNameType]
-    var TagKeys: js.UndefOr[tagKeyListType]
+    var RoleName: roleNameType
+    var TagKeys: tagKeyListType
   }
 
   object UntagRoleRequest {
     def apply(
-      RoleName: js.UndefOr[roleNameType] = js.undefined,
-      TagKeys: js.UndefOr[tagKeyListType] = js.undefined): UntagRoleRequest = {
+      RoleName: roleNameType,
+      TagKeys: tagKeyListType): UntagRoleRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "RoleName" -> RoleName.map { x => x.asInstanceOf[js.Any] },
-        "TagKeys" -> TagKeys.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "RoleName" -> RoleName.asInstanceOf[js.Any],
+        "TagKeys" -> TagKeys.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UntagRoleRequest]
     }
@@ -4941,17 +4941,17 @@ package iam {
 
   @js.native
   trait UntagUserRequest extends js.Object {
-    var UserName: js.UndefOr[existingUserNameType]
-    var TagKeys: js.UndefOr[tagKeyListType]
+    var TagKeys: tagKeyListType
+    var UserName: existingUserNameType
   }
 
   object UntagUserRequest {
     def apply(
-      UserName: js.UndefOr[existingUserNameType] = js.undefined,
-      TagKeys: js.UndefOr[tagKeyListType] = js.undefined): UntagUserRequest = {
+      TagKeys: tagKeyListType,
+      UserName: existingUserNameType): UntagUserRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "UserName" -> UserName.map { x => x.asInstanceOf[js.Any] },
-        "TagKeys" -> TagKeys.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "TagKeys" -> TagKeys.asInstanceOf[js.Any],
+        "UserName" -> UserName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UntagUserRequest]
     }
@@ -4959,20 +4959,20 @@ package iam {
 
   @js.native
   trait UpdateAccessKeyRequest extends js.Object {
+    var AccessKeyId: accessKeyIdType
+    var Status: statusType
     var UserName: js.UndefOr[existingUserNameType]
-    var AccessKeyId: js.UndefOr[accessKeyIdType]
-    var Status: js.UndefOr[statusType]
   }
 
   object UpdateAccessKeyRequest {
     def apply(
-      UserName: js.UndefOr[existingUserNameType] = js.undefined,
-      AccessKeyId: js.UndefOr[accessKeyIdType] = js.undefined,
-      Status: js.UndefOr[statusType] = js.undefined): UpdateAccessKeyRequest = {
+      AccessKeyId: accessKeyIdType,
+      Status: statusType,
+      UserName: js.UndefOr[existingUserNameType] = js.undefined): UpdateAccessKeyRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "UserName" -> UserName.map { x => x.asInstanceOf[js.Any] },
-        "AccessKeyId" -> AccessKeyId.map { x => x.asInstanceOf[js.Any] },
-        "Status" -> Status.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "AccessKeyId" -> AccessKeyId.asInstanceOf[js.Any],
+        "Status" -> Status.asInstanceOf[js.Any],
+        "UserName" -> UserName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateAccessKeyRequest]
     }
@@ -4980,38 +4980,38 @@ package iam {
 
   @js.native
   trait UpdateAccountPasswordPolicyRequest extends js.Object {
+    var AllowUsersToChangePassword: js.UndefOr[booleanType]
+    var HardExpiry: js.UndefOr[booleanObjectType]
+    var MaxPasswordAge: js.UndefOr[maxPasswordAgeType]
     var MinimumPasswordLength: js.UndefOr[minimumPasswordLengthType]
     var PasswordReusePrevention: js.UndefOr[passwordReusePreventionType]
-    var HardExpiry: js.UndefOr[booleanObjectType]
-    var RequireNumbers: js.UndefOr[booleanType]
-    var RequireUppercaseCharacters: js.UndefOr[booleanType]
-    var AllowUsersToChangePassword: js.UndefOr[booleanType]
-    var MaxPasswordAge: js.UndefOr[maxPasswordAgeType]
-    var RequireSymbols: js.UndefOr[booleanType]
     var RequireLowercaseCharacters: js.UndefOr[booleanType]
+    var RequireNumbers: js.UndefOr[booleanType]
+    var RequireSymbols: js.UndefOr[booleanType]
+    var RequireUppercaseCharacters: js.UndefOr[booleanType]
   }
 
   object UpdateAccountPasswordPolicyRequest {
     def apply(
+      AllowUsersToChangePassword: js.UndefOr[booleanType] = js.undefined,
+      HardExpiry: js.UndefOr[booleanObjectType] = js.undefined,
+      MaxPasswordAge: js.UndefOr[maxPasswordAgeType] = js.undefined,
       MinimumPasswordLength: js.UndefOr[minimumPasswordLengthType] = js.undefined,
       PasswordReusePrevention: js.UndefOr[passwordReusePreventionType] = js.undefined,
-      HardExpiry: js.UndefOr[booleanObjectType] = js.undefined,
+      RequireLowercaseCharacters: js.UndefOr[booleanType] = js.undefined,
       RequireNumbers: js.UndefOr[booleanType] = js.undefined,
-      RequireUppercaseCharacters: js.UndefOr[booleanType] = js.undefined,
-      AllowUsersToChangePassword: js.UndefOr[booleanType] = js.undefined,
-      MaxPasswordAge: js.UndefOr[maxPasswordAgeType] = js.undefined,
       RequireSymbols: js.UndefOr[booleanType] = js.undefined,
-      RequireLowercaseCharacters: js.UndefOr[booleanType] = js.undefined): UpdateAccountPasswordPolicyRequest = {
+      RequireUppercaseCharacters: js.UndefOr[booleanType] = js.undefined): UpdateAccountPasswordPolicyRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "AllowUsersToChangePassword" -> AllowUsersToChangePassword.map { x => x.asInstanceOf[js.Any] },
+        "HardExpiry" -> HardExpiry.map { x => x.asInstanceOf[js.Any] },
+        "MaxPasswordAge" -> MaxPasswordAge.map { x => x.asInstanceOf[js.Any] },
         "MinimumPasswordLength" -> MinimumPasswordLength.map { x => x.asInstanceOf[js.Any] },
         "PasswordReusePrevention" -> PasswordReusePrevention.map { x => x.asInstanceOf[js.Any] },
-        "HardExpiry" -> HardExpiry.map { x => x.asInstanceOf[js.Any] },
+        "RequireLowercaseCharacters" -> RequireLowercaseCharacters.map { x => x.asInstanceOf[js.Any] },
         "RequireNumbers" -> RequireNumbers.map { x => x.asInstanceOf[js.Any] },
-        "RequireUppercaseCharacters" -> RequireUppercaseCharacters.map { x => x.asInstanceOf[js.Any] },
-        "AllowUsersToChangePassword" -> AllowUsersToChangePassword.map { x => x.asInstanceOf[js.Any] },
-        "MaxPasswordAge" -> MaxPasswordAge.map { x => x.asInstanceOf[js.Any] },
         "RequireSymbols" -> RequireSymbols.map { x => x.asInstanceOf[js.Any] },
-        "RequireLowercaseCharacters" -> RequireLowercaseCharacters.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "RequireUppercaseCharacters" -> RequireUppercaseCharacters.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateAccountPasswordPolicyRequest]
     }
@@ -5019,17 +5019,17 @@ package iam {
 
   @js.native
   trait UpdateAssumeRolePolicyRequest extends js.Object {
-    var RoleName: js.UndefOr[roleNameType]
-    var PolicyDocument: js.UndefOr[policyDocumentType]
+    var PolicyDocument: policyDocumentType
+    var RoleName: roleNameType
   }
 
   object UpdateAssumeRolePolicyRequest {
     def apply(
-      RoleName: js.UndefOr[roleNameType] = js.undefined,
-      PolicyDocument: js.UndefOr[policyDocumentType] = js.undefined): UpdateAssumeRolePolicyRequest = {
+      PolicyDocument: policyDocumentType,
+      RoleName: roleNameType): UpdateAssumeRolePolicyRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "RoleName" -> RoleName.map { x => x.asInstanceOf[js.Any] },
-        "PolicyDocument" -> PolicyDocument.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "PolicyDocument" -> PolicyDocument.asInstanceOf[js.Any],
+        "RoleName" -> RoleName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateAssumeRolePolicyRequest]
     }
@@ -5037,20 +5037,20 @@ package iam {
 
   @js.native
   trait UpdateGroupRequest extends js.Object {
-    var GroupName: js.UndefOr[groupNameType]
-    var NewPath: js.UndefOr[pathType]
+    var GroupName: groupNameType
     var NewGroupName: js.UndefOr[groupNameType]
+    var NewPath: js.UndefOr[pathType]
   }
 
   object UpdateGroupRequest {
     def apply(
-      GroupName: js.UndefOr[groupNameType] = js.undefined,
-      NewPath: js.UndefOr[pathType] = js.undefined,
-      NewGroupName: js.UndefOr[groupNameType] = js.undefined): UpdateGroupRequest = {
+      GroupName: groupNameType,
+      NewGroupName: js.UndefOr[groupNameType] = js.undefined,
+      NewPath: js.UndefOr[pathType] = js.undefined): UpdateGroupRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "GroupName" -> GroupName.map { x => x.asInstanceOf[js.Any] },
-        "NewPath" -> NewPath.map { x => x.asInstanceOf[js.Any] },
-        "NewGroupName" -> NewGroupName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "GroupName" -> GroupName.asInstanceOf[js.Any],
+        "NewGroupName" -> NewGroupName.map { x => x.asInstanceOf[js.Any] },
+        "NewPath" -> NewPath.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateGroupRequest]
     }
@@ -5058,18 +5058,18 @@ package iam {
 
   @js.native
   trait UpdateLoginProfileRequest extends js.Object {
-    var UserName: js.UndefOr[userNameType]
+    var UserName: userNameType
     var Password: js.UndefOr[passwordType]
     var PasswordResetRequired: js.UndefOr[booleanObjectType]
   }
 
   object UpdateLoginProfileRequest {
     def apply(
-      UserName: js.UndefOr[userNameType] = js.undefined,
+      UserName: userNameType,
       Password: js.UndefOr[passwordType] = js.undefined,
       PasswordResetRequired: js.UndefOr[booleanObjectType] = js.undefined): UpdateLoginProfileRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "UserName" -> UserName.map { x => x.asInstanceOf[js.Any] },
+        "UserName" -> UserName.asInstanceOf[js.Any],
         "Password" -> Password.map { x => x.asInstanceOf[js.Any] },
         "PasswordResetRequired" -> PasswordResetRequired.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
@@ -5079,17 +5079,17 @@ package iam {
 
   @js.native
   trait UpdateOpenIDConnectProviderThumbprintRequest extends js.Object {
-    var OpenIDConnectProviderArn: js.UndefOr[arnType]
-    var ThumbprintList: js.UndefOr[thumbprintListType]
+    var OpenIDConnectProviderArn: arnType
+    var ThumbprintList: thumbprintListType
   }
 
   object UpdateOpenIDConnectProviderThumbprintRequest {
     def apply(
-      OpenIDConnectProviderArn: js.UndefOr[arnType] = js.undefined,
-      ThumbprintList: js.UndefOr[thumbprintListType] = js.undefined): UpdateOpenIDConnectProviderThumbprintRequest = {
+      OpenIDConnectProviderArn: arnType,
+      ThumbprintList: thumbprintListType): UpdateOpenIDConnectProviderThumbprintRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "OpenIDConnectProviderArn" -> OpenIDConnectProviderArn.map { x => x.asInstanceOf[js.Any] },
-        "ThumbprintList" -> ThumbprintList.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "OpenIDConnectProviderArn" -> OpenIDConnectProviderArn.asInstanceOf[js.Any],
+        "ThumbprintList" -> ThumbprintList.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateOpenIDConnectProviderThumbprintRequest]
     }
@@ -5097,17 +5097,17 @@ package iam {
 
   @js.native
   trait UpdateRoleDescriptionRequest extends js.Object {
-    var RoleName: js.UndefOr[roleNameType]
-    var Description: js.UndefOr[roleDescriptionType]
+    var Description: roleDescriptionType
+    var RoleName: roleNameType
   }
 
   object UpdateRoleDescriptionRequest {
     def apply(
-      RoleName: js.UndefOr[roleNameType] = js.undefined,
-      Description: js.UndefOr[roleDescriptionType] = js.undefined): UpdateRoleDescriptionRequest = {
+      Description: roleDescriptionType,
+      RoleName: roleNameType): UpdateRoleDescriptionRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "RoleName" -> RoleName.map { x => x.asInstanceOf[js.Any] },
-        "Description" -> Description.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Description" -> Description.asInstanceOf[js.Any],
+        "RoleName" -> RoleName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateRoleDescriptionRequest]
     }
@@ -5130,18 +5130,18 @@ package iam {
 
   @js.native
   trait UpdateRoleRequest extends js.Object {
-    var RoleName: js.UndefOr[roleNameType]
+    var RoleName: roleNameType
     var Description: js.UndefOr[roleDescriptionType]
     var MaxSessionDuration: js.UndefOr[roleMaxSessionDurationType]
   }
 
   object UpdateRoleRequest {
     def apply(
-      RoleName: js.UndefOr[roleNameType] = js.undefined,
+      RoleName: roleNameType,
       Description: js.UndefOr[roleDescriptionType] = js.undefined,
       MaxSessionDuration: js.UndefOr[roleMaxSessionDurationType] = js.undefined): UpdateRoleRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "RoleName" -> RoleName.map { x => x.asInstanceOf[js.Any] },
+        "RoleName" -> RoleName.asInstanceOf[js.Any],
         "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
         "MaxSessionDuration" -> MaxSessionDuration.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
@@ -5164,17 +5164,17 @@ package iam {
 
   @js.native
   trait UpdateSAMLProviderRequest extends js.Object {
-    var SAMLMetadataDocument: js.UndefOr[SAMLMetadataDocumentType]
-    var SAMLProviderArn: js.UndefOr[arnType]
+    var SAMLMetadataDocument: SAMLMetadataDocumentType
+    var SAMLProviderArn: arnType
   }
 
   object UpdateSAMLProviderRequest {
     def apply(
-      SAMLMetadataDocument: js.UndefOr[SAMLMetadataDocumentType] = js.undefined,
-      SAMLProviderArn: js.UndefOr[arnType] = js.undefined): UpdateSAMLProviderRequest = {
+      SAMLMetadataDocument: SAMLMetadataDocumentType,
+      SAMLProviderArn: arnType): UpdateSAMLProviderRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "SAMLMetadataDocument" -> SAMLMetadataDocument.map { x => x.asInstanceOf[js.Any] },
-        "SAMLProviderArn" -> SAMLProviderArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "SAMLMetadataDocument" -> SAMLMetadataDocument.asInstanceOf[js.Any],
+        "SAMLProviderArn" -> SAMLProviderArn.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateSAMLProviderRequest]
     }
@@ -5200,20 +5200,20 @@ package iam {
 
   @js.native
   trait UpdateSSHPublicKeyRequest extends js.Object {
-    var UserName: js.UndefOr[userNameType]
-    var SSHPublicKeyId: js.UndefOr[publicKeyIdType]
-    var Status: js.UndefOr[statusType]
+    var SSHPublicKeyId: publicKeyIdType
+    var Status: statusType
+    var UserName: userNameType
   }
 
   object UpdateSSHPublicKeyRequest {
     def apply(
-      UserName: js.UndefOr[userNameType] = js.undefined,
-      SSHPublicKeyId: js.UndefOr[publicKeyIdType] = js.undefined,
-      Status: js.UndefOr[statusType] = js.undefined): UpdateSSHPublicKeyRequest = {
+      SSHPublicKeyId: publicKeyIdType,
+      Status: statusType,
+      UserName: userNameType): UpdateSSHPublicKeyRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "UserName" -> UserName.map { x => x.asInstanceOf[js.Any] },
-        "SSHPublicKeyId" -> SSHPublicKeyId.map { x => x.asInstanceOf[js.Any] },
-        "Status" -> Status.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "SSHPublicKeyId" -> SSHPublicKeyId.asInstanceOf[js.Any],
+        "Status" -> Status.asInstanceOf[js.Any],
+        "UserName" -> UserName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateSSHPublicKeyRequest]
     }
@@ -5221,18 +5221,18 @@ package iam {
 
   @js.native
   trait UpdateServerCertificateRequest extends js.Object {
-    var ServerCertificateName: js.UndefOr[serverCertificateNameType]
+    var ServerCertificateName: serverCertificateNameType
     var NewPath: js.UndefOr[pathType]
     var NewServerCertificateName: js.UndefOr[serverCertificateNameType]
   }
 
   object UpdateServerCertificateRequest {
     def apply(
-      ServerCertificateName: js.UndefOr[serverCertificateNameType] = js.undefined,
+      ServerCertificateName: serverCertificateNameType,
       NewPath: js.UndefOr[pathType] = js.undefined,
       NewServerCertificateName: js.UndefOr[serverCertificateNameType] = js.undefined): UpdateServerCertificateRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ServerCertificateName" -> ServerCertificateName.map { x => x.asInstanceOf[js.Any] },
+        "ServerCertificateName" -> ServerCertificateName.asInstanceOf[js.Any],
         "NewPath" -> NewPath.map { x => x.asInstanceOf[js.Any] },
         "NewServerCertificateName" -> NewServerCertificateName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
@@ -5242,20 +5242,20 @@ package iam {
 
   @js.native
   trait UpdateServiceSpecificCredentialRequest extends js.Object {
+    var ServiceSpecificCredentialId: serviceSpecificCredentialId
+    var Status: statusType
     var UserName: js.UndefOr[userNameType]
-    var ServiceSpecificCredentialId: js.UndefOr[serviceSpecificCredentialId]
-    var Status: js.UndefOr[statusType]
   }
 
   object UpdateServiceSpecificCredentialRequest {
     def apply(
-      UserName: js.UndefOr[userNameType] = js.undefined,
-      ServiceSpecificCredentialId: js.UndefOr[serviceSpecificCredentialId] = js.undefined,
-      Status: js.UndefOr[statusType] = js.undefined): UpdateServiceSpecificCredentialRequest = {
+      ServiceSpecificCredentialId: serviceSpecificCredentialId,
+      Status: statusType,
+      UserName: js.UndefOr[userNameType] = js.undefined): UpdateServiceSpecificCredentialRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "UserName" -> UserName.map { x => x.asInstanceOf[js.Any] },
-        "ServiceSpecificCredentialId" -> ServiceSpecificCredentialId.map { x => x.asInstanceOf[js.Any] },
-        "Status" -> Status.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ServiceSpecificCredentialId" -> ServiceSpecificCredentialId.asInstanceOf[js.Any],
+        "Status" -> Status.asInstanceOf[js.Any],
+        "UserName" -> UserName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateServiceSpecificCredentialRequest]
     }
@@ -5263,20 +5263,20 @@ package iam {
 
   @js.native
   trait UpdateSigningCertificateRequest extends js.Object {
+    var CertificateId: certificateIdType
+    var Status: statusType
     var UserName: js.UndefOr[existingUserNameType]
-    var CertificateId: js.UndefOr[certificateIdType]
-    var Status: js.UndefOr[statusType]
   }
 
   object UpdateSigningCertificateRequest {
     def apply(
-      UserName: js.UndefOr[existingUserNameType] = js.undefined,
-      CertificateId: js.UndefOr[certificateIdType] = js.undefined,
-      Status: js.UndefOr[statusType] = js.undefined): UpdateSigningCertificateRequest = {
+      CertificateId: certificateIdType,
+      Status: statusType,
+      UserName: js.UndefOr[existingUserNameType] = js.undefined): UpdateSigningCertificateRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "UserName" -> UserName.map { x => x.asInstanceOf[js.Any] },
-        "CertificateId" -> CertificateId.map { x => x.asInstanceOf[js.Any] },
-        "Status" -> Status.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "CertificateId" -> CertificateId.asInstanceOf[js.Any],
+        "Status" -> Status.asInstanceOf[js.Any],
+        "UserName" -> UserName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateSigningCertificateRequest]
     }
@@ -5284,18 +5284,18 @@ package iam {
 
   @js.native
   trait UpdateUserRequest extends js.Object {
-    var UserName: js.UndefOr[existingUserNameType]
+    var UserName: existingUserNameType
     var NewPath: js.UndefOr[pathType]
     var NewUserName: js.UndefOr[userNameType]
   }
 
   object UpdateUserRequest {
     def apply(
-      UserName: js.UndefOr[existingUserNameType] = js.undefined,
+      UserName: existingUserNameType,
       NewPath: js.UndefOr[pathType] = js.undefined,
       NewUserName: js.UndefOr[userNameType] = js.undefined): UpdateUserRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "UserName" -> UserName.map { x => x.asInstanceOf[js.Any] },
+        "UserName" -> UserName.asInstanceOf[js.Any],
         "NewPath" -> NewPath.map { x => x.asInstanceOf[js.Any] },
         "NewUserName" -> NewUserName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
@@ -5305,17 +5305,17 @@ package iam {
 
   @js.native
   trait UploadSSHPublicKeyRequest extends js.Object {
-    var UserName: js.UndefOr[userNameType]
-    var SSHPublicKeyBody: js.UndefOr[publicKeyMaterialType]
+    var SSHPublicKeyBody: publicKeyMaterialType
+    var UserName: userNameType
   }
 
   object UploadSSHPublicKeyRequest {
     def apply(
-      UserName: js.UndefOr[userNameType] = js.undefined,
-      SSHPublicKeyBody: js.UndefOr[publicKeyMaterialType] = js.undefined): UploadSSHPublicKeyRequest = {
+      SSHPublicKeyBody: publicKeyMaterialType,
+      UserName: userNameType): UploadSSHPublicKeyRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "UserName" -> UserName.map { x => x.asInstanceOf[js.Any] },
-        "SSHPublicKeyBody" -> SSHPublicKeyBody.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "SSHPublicKeyBody" -> SSHPublicKeyBody.asInstanceOf[js.Any],
+        "UserName" -> UserName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UploadSSHPublicKeyRequest]
     }
@@ -5341,26 +5341,26 @@ package iam {
 
   @js.native
   trait UploadServerCertificateRequest extends js.Object {
-    var CertificateBody: js.UndefOr[certificateBodyType]
-    var Path: js.UndefOr[pathType]
-    var ServerCertificateName: js.UndefOr[serverCertificateNameType]
-    var PrivateKey: js.UndefOr[privateKeyType]
+    var CertificateBody: certificateBodyType
+    var PrivateKey: privateKeyType
+    var ServerCertificateName: serverCertificateNameType
     var CertificateChain: js.UndefOr[certificateChainType]
+    var Path: js.UndefOr[pathType]
   }
 
   object UploadServerCertificateRequest {
     def apply(
-      CertificateBody: js.UndefOr[certificateBodyType] = js.undefined,
-      Path: js.UndefOr[pathType] = js.undefined,
-      ServerCertificateName: js.UndefOr[serverCertificateNameType] = js.undefined,
-      PrivateKey: js.UndefOr[privateKeyType] = js.undefined,
-      CertificateChain: js.UndefOr[certificateChainType] = js.undefined): UploadServerCertificateRequest = {
+      CertificateBody: certificateBodyType,
+      PrivateKey: privateKeyType,
+      ServerCertificateName: serverCertificateNameType,
+      CertificateChain: js.UndefOr[certificateChainType] = js.undefined,
+      Path: js.UndefOr[pathType] = js.undefined): UploadServerCertificateRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "CertificateBody" -> CertificateBody.map { x => x.asInstanceOf[js.Any] },
-        "Path" -> Path.map { x => x.asInstanceOf[js.Any] },
-        "ServerCertificateName" -> ServerCertificateName.map { x => x.asInstanceOf[js.Any] },
-        "PrivateKey" -> PrivateKey.map { x => x.asInstanceOf[js.Any] },
-        "CertificateChain" -> CertificateChain.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "CertificateBody" -> CertificateBody.asInstanceOf[js.Any],
+        "PrivateKey" -> PrivateKey.asInstanceOf[js.Any],
+        "ServerCertificateName" -> ServerCertificateName.asInstanceOf[js.Any],
+        "CertificateChain" -> CertificateChain.map { x => x.asInstanceOf[js.Any] },
+        "Path" -> Path.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UploadServerCertificateRequest]
     }
@@ -5386,17 +5386,17 @@ package iam {
 
   @js.native
   trait UploadSigningCertificateRequest extends js.Object {
+    var CertificateBody: certificateBodyType
     var UserName: js.UndefOr[existingUserNameType]
-    var CertificateBody: js.UndefOr[certificateBodyType]
   }
 
   object UploadSigningCertificateRequest {
     def apply(
-      UserName: js.UndefOr[existingUserNameType] = js.undefined,
-      CertificateBody: js.UndefOr[certificateBodyType] = js.undefined): UploadSigningCertificateRequest = {
+      CertificateBody: certificateBodyType,
+      UserName: js.UndefOr[existingUserNameType] = js.undefined): UploadSigningCertificateRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "UserName" -> UserName.map { x => x.asInstanceOf[js.Any] },
-        "CertificateBody" -> CertificateBody.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "CertificateBody" -> CertificateBody.asInstanceOf[js.Any],
+        "UserName" -> UserName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UploadSigningCertificateRequest]
     }
@@ -5407,14 +5407,14 @@ package iam {
    */
   @js.native
   trait UploadSigningCertificateResponse extends js.Object {
-    var Certificate: js.UndefOr[SigningCertificate]
+    var Certificate: SigningCertificate
   }
 
   object UploadSigningCertificateResponse {
     def apply(
-      Certificate: js.UndefOr[SigningCertificate] = js.undefined): UploadSigningCertificateResponse = {
+      Certificate: SigningCertificate): UploadSigningCertificateResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Certificate" -> Certificate.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Certificate" -> Certificate.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UploadSigningCertificateResponse]
     }
@@ -5425,35 +5425,35 @@ package iam {
    */
   @js.native
   trait User extends js.Object {
-    var UserName: js.UndefOr[userNameType]
-    var Path: js.UndefOr[pathType]
-    var PermissionsBoundary: js.UndefOr[AttachedPermissionsBoundary]
-    var Arn: js.UndefOr[arnType]
-    var CreateDate: js.UndefOr[dateType]
-    var Tags: js.UndefOr[tagListType]
+    var Arn: arnType
+    var CreateDate: dateType
+    var Path: pathType
+    var UserId: idType
+    var UserName: userNameType
     var PasswordLastUsed: js.UndefOr[dateType]
-    var UserId: js.UndefOr[idType]
+    var PermissionsBoundary: js.UndefOr[AttachedPermissionsBoundary]
+    var Tags: js.UndefOr[tagListType]
   }
 
   object User {
     def apply(
-      UserName: js.UndefOr[userNameType] = js.undefined,
-      Path: js.UndefOr[pathType] = js.undefined,
-      PermissionsBoundary: js.UndefOr[AttachedPermissionsBoundary] = js.undefined,
-      Arn: js.UndefOr[arnType] = js.undefined,
-      CreateDate: js.UndefOr[dateType] = js.undefined,
-      Tags: js.UndefOr[tagListType] = js.undefined,
+      Arn: arnType,
+      CreateDate: dateType,
+      Path: pathType,
+      UserId: idType,
+      UserName: userNameType,
       PasswordLastUsed: js.UndefOr[dateType] = js.undefined,
-      UserId: js.UndefOr[idType] = js.undefined): User = {
+      PermissionsBoundary: js.UndefOr[AttachedPermissionsBoundary] = js.undefined,
+      Tags: js.UndefOr[tagListType] = js.undefined): User = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "UserName" -> UserName.map { x => x.asInstanceOf[js.Any] },
-        "Path" -> Path.map { x => x.asInstanceOf[js.Any] },
-        "PermissionsBoundary" -> PermissionsBoundary.map { x => x.asInstanceOf[js.Any] },
-        "Arn" -> Arn.map { x => x.asInstanceOf[js.Any] },
-        "CreateDate" -> CreateDate.map { x => x.asInstanceOf[js.Any] },
-        "Tags" -> Tags.map { x => x.asInstanceOf[js.Any] },
+        "Arn" -> Arn.asInstanceOf[js.Any],
+        "CreateDate" -> CreateDate.asInstanceOf[js.Any],
+        "Path" -> Path.asInstanceOf[js.Any],
+        "UserId" -> UserId.asInstanceOf[js.Any],
+        "UserName" -> UserName.asInstanceOf[js.Any],
         "PasswordLastUsed" -> PasswordLastUsed.map { x => x.asInstanceOf[js.Any] },
-        "UserId" -> UserId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "PermissionsBoundary" -> PermissionsBoundary.map { x => x.asInstanceOf[js.Any] },
+        "Tags" -> Tags.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[User]
     }
@@ -5464,41 +5464,41 @@ package iam {
    */
   @js.native
   trait UserDetail extends js.Object {
-    var UserName: js.UndefOr[userNameType]
+    var Arn: js.UndefOr[arnType]
     var AttachedManagedPolicies: js.UndefOr[attachedPoliciesListType]
+    var CreateDate: js.UndefOr[dateType]
     var GroupList: js.UndefOr[groupNameListType]
     var Path: js.UndefOr[pathType]
-    var UserPolicyList: js.UndefOr[policyDetailListType]
     var PermissionsBoundary: js.UndefOr[AttachedPermissionsBoundary]
-    var Arn: js.UndefOr[arnType]
-    var CreateDate: js.UndefOr[dateType]
     var Tags: js.UndefOr[tagListType]
     var UserId: js.UndefOr[idType]
+    var UserName: js.UndefOr[userNameType]
+    var UserPolicyList: js.UndefOr[policyDetailListType]
   }
 
   object UserDetail {
     def apply(
-      UserName: js.UndefOr[userNameType] = js.undefined,
+      Arn: js.UndefOr[arnType] = js.undefined,
       AttachedManagedPolicies: js.UndefOr[attachedPoliciesListType] = js.undefined,
+      CreateDate: js.UndefOr[dateType] = js.undefined,
       GroupList: js.UndefOr[groupNameListType] = js.undefined,
       Path: js.UndefOr[pathType] = js.undefined,
-      UserPolicyList: js.UndefOr[policyDetailListType] = js.undefined,
       PermissionsBoundary: js.UndefOr[AttachedPermissionsBoundary] = js.undefined,
-      Arn: js.UndefOr[arnType] = js.undefined,
-      CreateDate: js.UndefOr[dateType] = js.undefined,
       Tags: js.UndefOr[tagListType] = js.undefined,
-      UserId: js.UndefOr[idType] = js.undefined): UserDetail = {
+      UserId: js.UndefOr[idType] = js.undefined,
+      UserName: js.UndefOr[userNameType] = js.undefined,
+      UserPolicyList: js.UndefOr[policyDetailListType] = js.undefined): UserDetail = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "UserName" -> UserName.map { x => x.asInstanceOf[js.Any] },
+        "Arn" -> Arn.map { x => x.asInstanceOf[js.Any] },
         "AttachedManagedPolicies" -> AttachedManagedPolicies.map { x => x.asInstanceOf[js.Any] },
+        "CreateDate" -> CreateDate.map { x => x.asInstanceOf[js.Any] },
         "GroupList" -> GroupList.map { x => x.asInstanceOf[js.Any] },
         "Path" -> Path.map { x => x.asInstanceOf[js.Any] },
-        "UserPolicyList" -> UserPolicyList.map { x => x.asInstanceOf[js.Any] },
         "PermissionsBoundary" -> PermissionsBoundary.map { x => x.asInstanceOf[js.Any] },
-        "Arn" -> Arn.map { x => x.asInstanceOf[js.Any] },
-        "CreateDate" -> CreateDate.map { x => x.asInstanceOf[js.Any] },
         "Tags" -> Tags.map { x => x.asInstanceOf[js.Any] },
-        "UserId" -> UserId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "UserId" -> UserId.map { x => x.asInstanceOf[js.Any] },
+        "UserName" -> UserName.map { x => x.asInstanceOf[js.Any] },
+        "UserPolicyList" -> UserPolicyList.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UserDetail]
     }
@@ -5509,26 +5509,26 @@ package iam {
    */
   @js.native
   trait VirtualMFADevice extends js.Object {
+    var SerialNumber: serialNumberType
+    var Base32StringSeed: js.UndefOr[BootstrapDatum]
     var EnableDate: js.UndefOr[dateType]
     var QRCodePNG: js.UndefOr[BootstrapDatum]
-    var Base32StringSeed: js.UndefOr[BootstrapDatum]
     var User: js.UndefOr[User]
-    var SerialNumber: js.UndefOr[serialNumberType]
   }
 
   object VirtualMFADevice {
     def apply(
+      SerialNumber: serialNumberType,
+      Base32StringSeed: js.UndefOr[BootstrapDatum] = js.undefined,
       EnableDate: js.UndefOr[dateType] = js.undefined,
       QRCodePNG: js.UndefOr[BootstrapDatum] = js.undefined,
-      Base32StringSeed: js.UndefOr[BootstrapDatum] = js.undefined,
-      User: js.UndefOr[User] = js.undefined,
-      SerialNumber: js.UndefOr[serialNumberType] = js.undefined): VirtualMFADevice = {
+      User: js.UndefOr[User] = js.undefined): VirtualMFADevice = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "SerialNumber" -> SerialNumber.asInstanceOf[js.Any],
+        "Base32StringSeed" -> Base32StringSeed.map { x => x.asInstanceOf[js.Any] },
         "EnableDate" -> EnableDate.map { x => x.asInstanceOf[js.Any] },
         "QRCodePNG" -> QRCodePNG.map { x => x.asInstanceOf[js.Any] },
-        "Base32StringSeed" -> Base32StringSeed.map { x => x.asInstanceOf[js.Any] },
-        "User" -> User.map { x => x.asInstanceOf[js.Any] },
-        "SerialNumber" -> SerialNumber.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "User" -> User.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[VirtualMFADevice]
     }

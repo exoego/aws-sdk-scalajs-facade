@@ -144,29 +144,29 @@ package workspaces {
    */
   @js.native
   trait AccountModification extends js.Object {
-    var ErrorCode: js.UndefOr[WorkspaceErrorCode]
-    var StartTime: js.UndefOr[Timestamp]
     var DedicatedTenancyManagementCidrRange: js.UndefOr[DedicatedTenancyManagementCidrRange]
-    var ModificationState: js.UndefOr[DedicatedTenancyModificationStateEnum]
     var DedicatedTenancySupport: js.UndefOr[DedicatedTenancySupportResultEnum]
+    var ErrorCode: js.UndefOr[WorkspaceErrorCode]
     var ErrorMessage: js.UndefOr[Description]
+    var ModificationState: js.UndefOr[DedicatedTenancyModificationStateEnum]
+    var StartTime: js.UndefOr[Timestamp]
   }
 
   object AccountModification {
     def apply(
-      ErrorCode: js.UndefOr[WorkspaceErrorCode] = js.undefined,
-      StartTime: js.UndefOr[Timestamp] = js.undefined,
       DedicatedTenancyManagementCidrRange: js.UndefOr[DedicatedTenancyManagementCidrRange] = js.undefined,
-      ModificationState: js.UndefOr[DedicatedTenancyModificationStateEnum] = js.undefined,
       DedicatedTenancySupport: js.UndefOr[DedicatedTenancySupportResultEnum] = js.undefined,
-      ErrorMessage: js.UndefOr[Description] = js.undefined): AccountModification = {
+      ErrorCode: js.UndefOr[WorkspaceErrorCode] = js.undefined,
+      ErrorMessage: js.UndefOr[Description] = js.undefined,
+      ModificationState: js.UndefOr[DedicatedTenancyModificationStateEnum] = js.undefined,
+      StartTime: js.UndefOr[Timestamp] = js.undefined): AccountModification = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ErrorCode" -> ErrorCode.map { x => x.asInstanceOf[js.Any] },
-        "StartTime" -> StartTime.map { x => x.asInstanceOf[js.Any] },
         "DedicatedTenancyManagementCidrRange" -> DedicatedTenancyManagementCidrRange.map { x => x.asInstanceOf[js.Any] },
-        "ModificationState" -> ModificationState.map { x => x.asInstanceOf[js.Any] },
         "DedicatedTenancySupport" -> DedicatedTenancySupport.map { x => x.asInstanceOf[js.Any] },
-        "ErrorMessage" -> ErrorMessage.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ErrorCode" -> ErrorCode.map { x => x.asInstanceOf[js.Any] },
+        "ErrorMessage" -> ErrorMessage.map { x => x.asInstanceOf[js.Any] },
+        "ModificationState" -> ModificationState.map { x => x.asInstanceOf[js.Any] },
+        "StartTime" -> StartTime.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AccountModification]
     }
@@ -174,17 +174,17 @@ package workspaces {
 
   @js.native
   trait AssociateIpGroupsRequest extends js.Object {
-    var DirectoryId: js.UndefOr[DirectoryId]
-    var GroupIds: js.UndefOr[IpGroupIdList]
+    var DirectoryId: DirectoryId
+    var GroupIds: IpGroupIdList
   }
 
   object AssociateIpGroupsRequest {
     def apply(
-      DirectoryId: js.UndefOr[DirectoryId] = js.undefined,
-      GroupIds: js.UndefOr[IpGroupIdList] = js.undefined): AssociateIpGroupsRequest = {
+      DirectoryId: DirectoryId,
+      GroupIds: IpGroupIdList): AssociateIpGroupsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "DirectoryId" -> DirectoryId.map { x => x.asInstanceOf[js.Any] },
-        "GroupIds" -> GroupIds.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "DirectoryId" -> DirectoryId.asInstanceOf[js.Any],
+        "GroupIds" -> GroupIds.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AssociateIpGroupsRequest]
     }
@@ -205,17 +205,17 @@ package workspaces {
 
   @js.native
   trait AuthorizeIpRulesRequest extends js.Object {
-    var GroupId: js.UndefOr[IpGroupId]
-    var UserRules: js.UndefOr[IpRuleList]
+    var GroupId: IpGroupId
+    var UserRules: IpRuleList
   }
 
   object AuthorizeIpRulesRequest {
     def apply(
-      GroupId: js.UndefOr[IpGroupId] = js.undefined,
-      UserRules: js.UndefOr[IpRuleList] = js.undefined): AuthorizeIpRulesRequest = {
+      GroupId: IpGroupId,
+      UserRules: IpRuleList): AuthorizeIpRulesRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "GroupId" -> GroupId.map { x => x.asInstanceOf[js.Any] },
-        "UserRules" -> UserRules.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "GroupId" -> GroupId.asInstanceOf[js.Any],
+        "UserRules" -> UserRules.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AuthorizeIpRulesRequest]
     }
@@ -257,17 +257,17 @@ package workspaces {
    */
   @js.native
   trait ClientPropertiesResult extends js.Object {
-    var ResourceId: js.UndefOr[NonEmptyString]
     var ClientProperties: js.UndefOr[ClientProperties]
+    var ResourceId: js.UndefOr[NonEmptyString]
   }
 
   object ClientPropertiesResult {
     def apply(
-      ResourceId: js.UndefOr[NonEmptyString] = js.undefined,
-      ClientProperties: js.UndefOr[ClientProperties] = js.undefined): ClientPropertiesResult = {
+      ClientProperties: js.UndefOr[ClientProperties] = js.undefined,
+      ResourceId: js.UndefOr[NonEmptyString] = js.undefined): ClientPropertiesResult = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ResourceId" -> ResourceId.map { x => x.asInstanceOf[js.Any] },
-        "ClientProperties" -> ClientProperties.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ClientProperties" -> ClientProperties.map { x => x.asInstanceOf[js.Any] },
+        "ResourceId" -> ResourceId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ClientPropertiesResult]
     }
@@ -313,18 +313,18 @@ package workspaces {
 
   @js.native
   trait CreateIpGroupRequest extends js.Object {
-    var GroupName: js.UndefOr[IpGroupName]
+    var GroupName: IpGroupName
     var GroupDesc: js.UndefOr[IpGroupDesc]
     var UserRules: js.UndefOr[IpRuleList]
   }
 
   object CreateIpGroupRequest {
     def apply(
-      GroupName: js.UndefOr[IpGroupName] = js.undefined,
+      GroupName: IpGroupName,
       GroupDesc: js.UndefOr[IpGroupDesc] = js.undefined,
       UserRules: js.UndefOr[IpRuleList] = js.undefined): CreateIpGroupRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "GroupName" -> GroupName.map { x => x.asInstanceOf[js.Any] },
+        "GroupName" -> GroupName.asInstanceOf[js.Any],
         "GroupDesc" -> GroupDesc.map { x => x.asInstanceOf[js.Any] },
         "UserRules" -> UserRules.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
@@ -349,17 +349,17 @@ package workspaces {
 
   @js.native
   trait CreateTagsRequest extends js.Object {
-    var ResourceId: js.UndefOr[NonEmptyString]
-    var Tags: js.UndefOr[TagList]
+    var ResourceId: NonEmptyString
+    var Tags: TagList
   }
 
   object CreateTagsRequest {
     def apply(
-      ResourceId: js.UndefOr[NonEmptyString] = js.undefined,
-      Tags: js.UndefOr[TagList] = js.undefined): CreateTagsRequest = {
+      ResourceId: NonEmptyString,
+      Tags: TagList): CreateTagsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ResourceId" -> ResourceId.map { x => x.asInstanceOf[js.Any] },
-        "Tags" -> Tags.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ResourceId" -> ResourceId.asInstanceOf[js.Any],
+        "Tags" -> Tags.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateTagsRequest]
     }
@@ -380,14 +380,14 @@ package workspaces {
 
   @js.native
   trait CreateWorkspacesRequest extends js.Object {
-    var Workspaces: js.UndefOr[WorkspaceRequestList]
+    var Workspaces: WorkspaceRequestList
   }
 
   object CreateWorkspacesRequest {
     def apply(
-      Workspaces: js.UndefOr[WorkspaceRequestList] = js.undefined): CreateWorkspacesRequest = {
+      Workspaces: WorkspaceRequestList): CreateWorkspacesRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Workspaces" -> Workspaces.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Workspaces" -> Workspaces.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateWorkspacesRequest]
     }
@@ -437,26 +437,26 @@ package workspaces {
    */
   @js.native
   trait DefaultWorkspaceCreationProperties extends js.Object {
+    var CustomSecurityGroupId: js.UndefOr[SecurityGroupId]
     var DefaultOu: js.UndefOr[DefaultOu]
+    var EnableInternetAccess: js.UndefOr[BooleanObject]
     var EnableWorkDocs: js.UndefOr[BooleanObject]
     var UserEnabledAsLocalAdministrator: js.UndefOr[BooleanObject]
-    var CustomSecurityGroupId: js.UndefOr[SecurityGroupId]
-    var EnableInternetAccess: js.UndefOr[BooleanObject]
   }
 
   object DefaultWorkspaceCreationProperties {
     def apply(
-      DefaultOu: js.UndefOr[DefaultOu] = js.undefined,
-      EnableWorkDocs: js.UndefOr[BooleanObject] = js.undefined,
-      UserEnabledAsLocalAdministrator: js.UndefOr[BooleanObject] = js.undefined,
       CustomSecurityGroupId: js.UndefOr[SecurityGroupId] = js.undefined,
-      EnableInternetAccess: js.UndefOr[BooleanObject] = js.undefined): DefaultWorkspaceCreationProperties = {
+      DefaultOu: js.UndefOr[DefaultOu] = js.undefined,
+      EnableInternetAccess: js.UndefOr[BooleanObject] = js.undefined,
+      EnableWorkDocs: js.UndefOr[BooleanObject] = js.undefined,
+      UserEnabledAsLocalAdministrator: js.UndefOr[BooleanObject] = js.undefined): DefaultWorkspaceCreationProperties = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "DefaultOu" -> DefaultOu.map { x => x.asInstanceOf[js.Any] },
-        "EnableWorkDocs" -> EnableWorkDocs.map { x => x.asInstanceOf[js.Any] },
-        "UserEnabledAsLocalAdministrator" -> UserEnabledAsLocalAdministrator.map { x => x.asInstanceOf[js.Any] },
         "CustomSecurityGroupId" -> CustomSecurityGroupId.map { x => x.asInstanceOf[js.Any] },
-        "EnableInternetAccess" -> EnableInternetAccess.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "DefaultOu" -> DefaultOu.map { x => x.asInstanceOf[js.Any] },
+        "EnableInternetAccess" -> EnableInternetAccess.map { x => x.asInstanceOf[js.Any] },
+        "EnableWorkDocs" -> EnableWorkDocs.map { x => x.asInstanceOf[js.Any] },
+        "UserEnabledAsLocalAdministrator" -> UserEnabledAsLocalAdministrator.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DefaultWorkspaceCreationProperties]
     }
@@ -464,14 +464,14 @@ package workspaces {
 
   @js.native
   trait DeleteIpGroupRequest extends js.Object {
-    var GroupId: js.UndefOr[IpGroupId]
+    var GroupId: IpGroupId
   }
 
   object DeleteIpGroupRequest {
     def apply(
-      GroupId: js.UndefOr[IpGroupId] = js.undefined): DeleteIpGroupRequest = {
+      GroupId: IpGroupId): DeleteIpGroupRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "GroupId" -> GroupId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "GroupId" -> GroupId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteIpGroupRequest]
     }
@@ -492,17 +492,17 @@ package workspaces {
 
   @js.native
   trait DeleteTagsRequest extends js.Object {
-    var ResourceId: js.UndefOr[NonEmptyString]
-    var TagKeys: js.UndefOr[TagKeyList]
+    var ResourceId: NonEmptyString
+    var TagKeys: TagKeyList
   }
 
   object DeleteTagsRequest {
     def apply(
-      ResourceId: js.UndefOr[NonEmptyString] = js.undefined,
-      TagKeys: js.UndefOr[TagKeyList] = js.undefined): DeleteTagsRequest = {
+      ResourceId: NonEmptyString,
+      TagKeys: TagKeyList): DeleteTagsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ResourceId" -> ResourceId.map { x => x.asInstanceOf[js.Any] },
-        "TagKeys" -> TagKeys.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ResourceId" -> ResourceId.asInstanceOf[js.Any],
+        "TagKeys" -> TagKeys.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteTagsRequest]
     }
@@ -523,14 +523,14 @@ package workspaces {
 
   @js.native
   trait DeleteWorkspaceImageRequest extends js.Object {
-    var ImageId: js.UndefOr[WorkspaceImageId]
+    var ImageId: WorkspaceImageId
   }
 
   object DeleteWorkspaceImageRequest {
     def apply(
-      ImageId: js.UndefOr[WorkspaceImageId] = js.undefined): DeleteWorkspaceImageRequest = {
+      ImageId: WorkspaceImageId): DeleteWorkspaceImageRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ImageId" -> ImageId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ImageId" -> ImageId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteWorkspaceImageRequest]
     }
@@ -597,17 +597,17 @@ package workspaces {
 
   @js.native
   trait DescribeAccountResult extends js.Object {
-    var DedicatedTenancySupport: js.UndefOr[DedicatedTenancySupportResultEnum]
     var DedicatedTenancyManagementCidrRange: js.UndefOr[DedicatedTenancyManagementCidrRange]
+    var DedicatedTenancySupport: js.UndefOr[DedicatedTenancySupportResultEnum]
   }
 
   object DescribeAccountResult {
     def apply(
-      DedicatedTenancySupport: js.UndefOr[DedicatedTenancySupportResultEnum] = js.undefined,
-      DedicatedTenancyManagementCidrRange: js.UndefOr[DedicatedTenancyManagementCidrRange] = js.undefined): DescribeAccountResult = {
+      DedicatedTenancyManagementCidrRange: js.UndefOr[DedicatedTenancyManagementCidrRange] = js.undefined,
+      DedicatedTenancySupport: js.UndefOr[DedicatedTenancySupportResultEnum] = js.undefined): DescribeAccountResult = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "DedicatedTenancySupport" -> DedicatedTenancySupport.map { x => x.asInstanceOf[js.Any] },
-        "DedicatedTenancyManagementCidrRange" -> DedicatedTenancyManagementCidrRange.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "DedicatedTenancyManagementCidrRange" -> DedicatedTenancyManagementCidrRange.map { x => x.asInstanceOf[js.Any] },
+        "DedicatedTenancySupport" -> DedicatedTenancySupport.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeAccountResult]
     }
@@ -615,14 +615,14 @@ package workspaces {
 
   @js.native
   trait DescribeClientPropertiesRequest extends js.Object {
-    var ResourceIds: js.UndefOr[ResourceIdList]
+    var ResourceIds: ResourceIdList
   }
 
   object DescribeClientPropertiesRequest {
     def apply(
-      ResourceIds: js.UndefOr[ResourceIdList] = js.undefined): DescribeClientPropertiesRequest = {
+      ResourceIds: ResourceIdList): DescribeClientPropertiesRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ResourceIds" -> ResourceIds.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ResourceIds" -> ResourceIds.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeClientPropertiesRequest]
     }
@@ -646,19 +646,19 @@ package workspaces {
   @js.native
   trait DescribeIpGroupsRequest extends js.Object {
     var GroupIds: js.UndefOr[IpGroupIdList]
-    var NextToken: js.UndefOr[PaginationToken]
     var MaxResults: js.UndefOr[Limit]
+    var NextToken: js.UndefOr[PaginationToken]
   }
 
   object DescribeIpGroupsRequest {
     def apply(
       GroupIds: js.UndefOr[IpGroupIdList] = js.undefined,
-      NextToken: js.UndefOr[PaginationToken] = js.undefined,
-      MaxResults: js.UndefOr[Limit] = js.undefined): DescribeIpGroupsRequest = {
+      MaxResults: js.UndefOr[Limit] = js.undefined,
+      NextToken: js.UndefOr[PaginationToken] = js.undefined): DescribeIpGroupsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "GroupIds" -> GroupIds.map { x => x.asInstanceOf[js.Any] },
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
-        "MaxResults" -> MaxResults.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "MaxResults" -> MaxResults.map { x => x.asInstanceOf[js.Any] },
+        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeIpGroupsRequest]
     }
@@ -666,17 +666,17 @@ package workspaces {
 
   @js.native
   trait DescribeIpGroupsResult extends js.Object {
-    var Result: js.UndefOr[WorkspacesIpGroupsList]
     var NextToken: js.UndefOr[PaginationToken]
+    var Result: js.UndefOr[WorkspacesIpGroupsList]
   }
 
   object DescribeIpGroupsResult {
     def apply(
-      Result: js.UndefOr[WorkspacesIpGroupsList] = js.undefined,
-      NextToken: js.UndefOr[PaginationToken] = js.undefined): DescribeIpGroupsResult = {
+      NextToken: js.UndefOr[PaginationToken] = js.undefined,
+      Result: js.UndefOr[WorkspacesIpGroupsList] = js.undefined): DescribeIpGroupsResult = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Result" -> Result.map { x => x.asInstanceOf[js.Any] },
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
+        "Result" -> Result.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeIpGroupsResult]
     }
@@ -684,14 +684,14 @@ package workspaces {
 
   @js.native
   trait DescribeTagsRequest extends js.Object {
-    var ResourceId: js.UndefOr[NonEmptyString]
+    var ResourceId: NonEmptyString
   }
 
   object DescribeTagsRequest {
     def apply(
-      ResourceId: js.UndefOr[NonEmptyString] = js.undefined): DescribeTagsRequest = {
+      ResourceId: NonEmptyString): DescribeTagsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ResourceId" -> ResourceId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ResourceId" -> ResourceId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeTagsRequest]
     }
@@ -715,19 +715,19 @@ package workspaces {
   @js.native
   trait DescribeWorkspaceBundlesRequest extends js.Object {
     var BundleIds: js.UndefOr[BundleIdList]
-    var Owner: js.UndefOr[BundleOwner]
     var NextToken: js.UndefOr[PaginationToken]
+    var Owner: js.UndefOr[BundleOwner]
   }
 
   object DescribeWorkspaceBundlesRequest {
     def apply(
       BundleIds: js.UndefOr[BundleIdList] = js.undefined,
-      Owner: js.UndefOr[BundleOwner] = js.undefined,
-      NextToken: js.UndefOr[PaginationToken] = js.undefined): DescribeWorkspaceBundlesRequest = {
+      NextToken: js.UndefOr[PaginationToken] = js.undefined,
+      Owner: js.UndefOr[BundleOwner] = js.undefined): DescribeWorkspaceBundlesRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "BundleIds" -> BundleIds.map { x => x.asInstanceOf[js.Any] },
-        "Owner" -> Owner.map { x => x.asInstanceOf[js.Any] },
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
+        "Owner" -> Owner.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeWorkspaceBundlesRequest]
     }
@@ -790,19 +790,19 @@ package workspaces {
   @js.native
   trait DescribeWorkspaceImagesRequest extends js.Object {
     var ImageIds: js.UndefOr[WorkspaceImageIdList]
-    var NextToken: js.UndefOr[PaginationToken]
     var MaxResults: js.UndefOr[Limit]
+    var NextToken: js.UndefOr[PaginationToken]
   }
 
   object DescribeWorkspaceImagesRequest {
     def apply(
       ImageIds: js.UndefOr[WorkspaceImageIdList] = js.undefined,
-      NextToken: js.UndefOr[PaginationToken] = js.undefined,
-      MaxResults: js.UndefOr[Limit] = js.undefined): DescribeWorkspaceImagesRequest = {
+      MaxResults: js.UndefOr[Limit] = js.undefined,
+      NextToken: js.UndefOr[PaginationToken] = js.undefined): DescribeWorkspaceImagesRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ImageIds" -> ImageIds.map { x => x.asInstanceOf[js.Any] },
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
-        "MaxResults" -> MaxResults.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "MaxResults" -> MaxResults.map { x => x.asInstanceOf[js.Any] },
+        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeWorkspaceImagesRequest]
     }
@@ -828,17 +828,17 @@ package workspaces {
 
   @js.native
   trait DescribeWorkspacesConnectionStatusRequest extends js.Object {
-    var WorkspaceIds: js.UndefOr[WorkspaceIdList]
     var NextToken: js.UndefOr[PaginationToken]
+    var WorkspaceIds: js.UndefOr[WorkspaceIdList]
   }
 
   object DescribeWorkspacesConnectionStatusRequest {
     def apply(
-      WorkspaceIds: js.UndefOr[WorkspaceIdList] = js.undefined,
-      NextToken: js.UndefOr[PaginationToken] = js.undefined): DescribeWorkspacesConnectionStatusRequest = {
+      NextToken: js.UndefOr[PaginationToken] = js.undefined,
+      WorkspaceIds: js.UndefOr[WorkspaceIdList] = js.undefined): DescribeWorkspacesConnectionStatusRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "WorkspaceIds" -> WorkspaceIds.map { x => x.asInstanceOf[js.Any] },
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
+        "WorkspaceIds" -> WorkspaceIds.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeWorkspacesConnectionStatusRequest]
     }
@@ -846,17 +846,17 @@ package workspaces {
 
   @js.native
   trait DescribeWorkspacesConnectionStatusResult extends js.Object {
-    var WorkspacesConnectionStatus: js.UndefOr[WorkspaceConnectionStatusList]
     var NextToken: js.UndefOr[PaginationToken]
+    var WorkspacesConnectionStatus: js.UndefOr[WorkspaceConnectionStatusList]
   }
 
   object DescribeWorkspacesConnectionStatusResult {
     def apply(
-      WorkspacesConnectionStatus: js.UndefOr[WorkspaceConnectionStatusList] = js.undefined,
-      NextToken: js.UndefOr[PaginationToken] = js.undefined): DescribeWorkspacesConnectionStatusResult = {
+      NextToken: js.UndefOr[PaginationToken] = js.undefined,
+      WorkspacesConnectionStatus: js.UndefOr[WorkspaceConnectionStatusList] = js.undefined): DescribeWorkspacesConnectionStatusResult = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "WorkspacesConnectionStatus" -> WorkspacesConnectionStatus.map { x => x.asInstanceOf[js.Any] },
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
+        "WorkspacesConnectionStatus" -> WorkspacesConnectionStatus.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeWorkspacesConnectionStatusResult]
     }
@@ -864,29 +864,29 @@ package workspaces {
 
   @js.native
   trait DescribeWorkspacesRequest extends js.Object {
-    var DirectoryId: js.UndefOr[DirectoryId]
-    var UserName: js.UndefOr[UserName]
     var BundleId: js.UndefOr[BundleId]
+    var DirectoryId: js.UndefOr[DirectoryId]
     var Limit: js.UndefOr[Limit]
-    var WorkspaceIds: js.UndefOr[WorkspaceIdList]
     var NextToken: js.UndefOr[PaginationToken]
+    var UserName: js.UndefOr[UserName]
+    var WorkspaceIds: js.UndefOr[WorkspaceIdList]
   }
 
   object DescribeWorkspacesRequest {
     def apply(
-      DirectoryId: js.UndefOr[DirectoryId] = js.undefined,
-      UserName: js.UndefOr[UserName] = js.undefined,
       BundleId: js.UndefOr[BundleId] = js.undefined,
+      DirectoryId: js.UndefOr[DirectoryId] = js.undefined,
       Limit: js.UndefOr[Limit] = js.undefined,
-      WorkspaceIds: js.UndefOr[WorkspaceIdList] = js.undefined,
-      NextToken: js.UndefOr[PaginationToken] = js.undefined): DescribeWorkspacesRequest = {
+      NextToken: js.UndefOr[PaginationToken] = js.undefined,
+      UserName: js.UndefOr[UserName] = js.undefined,
+      WorkspaceIds: js.UndefOr[WorkspaceIdList] = js.undefined): DescribeWorkspacesRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "DirectoryId" -> DirectoryId.map { x => x.asInstanceOf[js.Any] },
-        "UserName" -> UserName.map { x => x.asInstanceOf[js.Any] },
         "BundleId" -> BundleId.map { x => x.asInstanceOf[js.Any] },
+        "DirectoryId" -> DirectoryId.map { x => x.asInstanceOf[js.Any] },
         "Limit" -> Limit.map { x => x.asInstanceOf[js.Any] },
-        "WorkspaceIds" -> WorkspaceIds.map { x => x.asInstanceOf[js.Any] },
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
+        "UserName" -> UserName.map { x => x.asInstanceOf[js.Any] },
+        "WorkspaceIds" -> WorkspaceIds.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeWorkspacesRequest]
     }
@@ -894,17 +894,17 @@ package workspaces {
 
   @js.native
   trait DescribeWorkspacesResult extends js.Object {
-    var Workspaces: js.UndefOr[WorkspaceList]
     var NextToken: js.UndefOr[PaginationToken]
+    var Workspaces: js.UndefOr[WorkspaceList]
   }
 
   object DescribeWorkspacesResult {
     def apply(
-      Workspaces: js.UndefOr[WorkspaceList] = js.undefined,
-      NextToken: js.UndefOr[PaginationToken] = js.undefined): DescribeWorkspacesResult = {
+      NextToken: js.UndefOr[PaginationToken] = js.undefined,
+      Workspaces: js.UndefOr[WorkspaceList] = js.undefined): DescribeWorkspacesResult = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Workspaces" -> Workspaces.map { x => x.asInstanceOf[js.Any] },
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
+        "Workspaces" -> Workspaces.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeWorkspacesResult]
     }
@@ -912,17 +912,17 @@ package workspaces {
 
   @js.native
   trait DisassociateIpGroupsRequest extends js.Object {
-    var DirectoryId: js.UndefOr[DirectoryId]
-    var GroupIds: js.UndefOr[IpGroupIdList]
+    var DirectoryId: DirectoryId
+    var GroupIds: IpGroupIdList
   }
 
   object DisassociateIpGroupsRequest {
     def apply(
-      DirectoryId: js.UndefOr[DirectoryId] = js.undefined,
-      GroupIds: js.UndefOr[IpGroupIdList] = js.undefined): DisassociateIpGroupsRequest = {
+      DirectoryId: DirectoryId,
+      GroupIds: IpGroupIdList): DisassociateIpGroupsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "DirectoryId" -> DirectoryId.map { x => x.asInstanceOf[js.Any] },
-        "GroupIds" -> GroupIds.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "DirectoryId" -> DirectoryId.asInstanceOf[js.Any],
+        "GroupIds" -> GroupIds.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DisassociateIpGroupsRequest]
     }
@@ -946,20 +946,20 @@ package workspaces {
    */
   @js.native
   trait FailedCreateWorkspaceRequest extends js.Object {
-    var WorkspaceRequest: js.UndefOr[WorkspaceRequest]
     var ErrorCode: js.UndefOr[ErrorType]
     var ErrorMessage: js.UndefOr[Description]
+    var WorkspaceRequest: js.UndefOr[WorkspaceRequest]
   }
 
   object FailedCreateWorkspaceRequest {
     def apply(
-      WorkspaceRequest: js.UndefOr[WorkspaceRequest] = js.undefined,
       ErrorCode: js.UndefOr[ErrorType] = js.undefined,
-      ErrorMessage: js.UndefOr[Description] = js.undefined): FailedCreateWorkspaceRequest = {
+      ErrorMessage: js.UndefOr[Description] = js.undefined,
+      WorkspaceRequest: js.UndefOr[WorkspaceRequest] = js.undefined): FailedCreateWorkspaceRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "WorkspaceRequest" -> WorkspaceRequest.map { x => x.asInstanceOf[js.Any] },
         "ErrorCode" -> ErrorCode.map { x => x.asInstanceOf[js.Any] },
-        "ErrorMessage" -> ErrorMessage.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ErrorMessage" -> ErrorMessage.map { x => x.asInstanceOf[js.Any] },
+        "WorkspaceRequest" -> WorkspaceRequest.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[FailedCreateWorkspaceRequest]
     }
@@ -970,20 +970,20 @@ package workspaces {
    */
   @js.native
   trait FailedWorkspaceChangeRequest extends js.Object {
-    var WorkspaceId: js.UndefOr[WorkspaceId]
     var ErrorCode: js.UndefOr[ErrorType]
     var ErrorMessage: js.UndefOr[Description]
+    var WorkspaceId: js.UndefOr[WorkspaceId]
   }
 
   object FailedWorkspaceChangeRequest {
     def apply(
-      WorkspaceId: js.UndefOr[WorkspaceId] = js.undefined,
       ErrorCode: js.UndefOr[ErrorType] = js.undefined,
-      ErrorMessage: js.UndefOr[Description] = js.undefined): FailedWorkspaceChangeRequest = {
+      ErrorMessage: js.UndefOr[Description] = js.undefined,
+      WorkspaceId: js.UndefOr[WorkspaceId] = js.undefined): FailedWorkspaceChangeRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "WorkspaceId" -> WorkspaceId.map { x => x.asInstanceOf[js.Any] },
         "ErrorCode" -> ErrorCode.map { x => x.asInstanceOf[js.Any] },
-        "ErrorMessage" -> ErrorMessage.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ErrorMessage" -> ErrorMessage.map { x => x.asInstanceOf[js.Any] },
+        "WorkspaceId" -> WorkspaceId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[FailedWorkspaceChangeRequest]
     }
@@ -991,23 +991,23 @@ package workspaces {
 
   @js.native
   trait ImportWorkspaceImageRequest extends js.Object {
-    var Ec2ImageId: js.UndefOr[Ec2ImageId]
-    var IngestionProcess: js.UndefOr[WorkspaceImageIngestionProcess]
-    var ImageName: js.UndefOr[WorkspaceImageName]
-    var ImageDescription: js.UndefOr[WorkspaceImageDescription]
+    var Ec2ImageId: Ec2ImageId
+    var ImageDescription: WorkspaceImageDescription
+    var ImageName: WorkspaceImageName
+    var IngestionProcess: WorkspaceImageIngestionProcess
   }
 
   object ImportWorkspaceImageRequest {
     def apply(
-      Ec2ImageId: js.UndefOr[Ec2ImageId] = js.undefined,
-      IngestionProcess: js.UndefOr[WorkspaceImageIngestionProcess] = js.undefined,
-      ImageName: js.UndefOr[WorkspaceImageName] = js.undefined,
-      ImageDescription: js.UndefOr[WorkspaceImageDescription] = js.undefined): ImportWorkspaceImageRequest = {
+      Ec2ImageId: Ec2ImageId,
+      ImageDescription: WorkspaceImageDescription,
+      ImageName: WorkspaceImageName,
+      IngestionProcess: WorkspaceImageIngestionProcess): ImportWorkspaceImageRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Ec2ImageId" -> Ec2ImageId.map { x => x.asInstanceOf[js.Any] },
-        "IngestionProcess" -> IngestionProcess.map { x => x.asInstanceOf[js.Any] },
-        "ImageName" -> ImageName.map { x => x.asInstanceOf[js.Any] },
-        "ImageDescription" -> ImageDescription.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Ec2ImageId" -> Ec2ImageId.asInstanceOf[js.Any],
+        "ImageDescription" -> ImageDescription.asInstanceOf[js.Any],
+        "ImageName" -> ImageName.asInstanceOf[js.Any],
+        "IngestionProcess" -> IngestionProcess.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ImportWorkspaceImageRequest]
     }
@@ -1051,18 +1051,18 @@ package workspaces {
 
   @js.native
   trait ListAvailableManagementCidrRangesRequest extends js.Object {
-    var ManagementCidrRangeConstraint: js.UndefOr[ManagementCidrRangeConstraint]
+    var ManagementCidrRangeConstraint: ManagementCidrRangeConstraint
     var MaxResults: js.UndefOr[ManagementCidrRangeMaxResults]
     var NextToken: js.UndefOr[PaginationToken]
   }
 
   object ListAvailableManagementCidrRangesRequest {
     def apply(
-      ManagementCidrRangeConstraint: js.UndefOr[ManagementCidrRangeConstraint] = js.undefined,
+      ManagementCidrRangeConstraint: ManagementCidrRangeConstraint,
       MaxResults: js.UndefOr[ManagementCidrRangeMaxResults] = js.undefined,
       NextToken: js.UndefOr[PaginationToken] = js.undefined): ListAvailableManagementCidrRangesRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ManagementCidrRangeConstraint" -> ManagementCidrRangeConstraint.map { x => x.asInstanceOf[js.Any] },
+        "ManagementCidrRangeConstraint" -> ManagementCidrRangeConstraint.asInstanceOf[js.Any],
         "MaxResults" -> MaxResults.map { x => x.asInstanceOf[js.Any] },
         "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
@@ -1126,17 +1126,17 @@ package workspaces {
 
   @js.native
   trait ModifyAccountRequest extends js.Object {
-    var DedicatedTenancySupport: js.UndefOr[DedicatedTenancySupportEnum]
     var DedicatedTenancyManagementCidrRange: js.UndefOr[DedicatedTenancyManagementCidrRange]
+    var DedicatedTenancySupport: js.UndefOr[DedicatedTenancySupportEnum]
   }
 
   object ModifyAccountRequest {
     def apply(
-      DedicatedTenancySupport: js.UndefOr[DedicatedTenancySupportEnum] = js.undefined,
-      DedicatedTenancyManagementCidrRange: js.UndefOr[DedicatedTenancyManagementCidrRange] = js.undefined): ModifyAccountRequest = {
+      DedicatedTenancyManagementCidrRange: js.UndefOr[DedicatedTenancyManagementCidrRange] = js.undefined,
+      DedicatedTenancySupport: js.UndefOr[DedicatedTenancySupportEnum] = js.undefined): ModifyAccountRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "DedicatedTenancySupport" -> DedicatedTenancySupport.map { x => x.asInstanceOf[js.Any] },
-        "DedicatedTenancyManagementCidrRange" -> DedicatedTenancyManagementCidrRange.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "DedicatedTenancyManagementCidrRange" -> DedicatedTenancyManagementCidrRange.map { x => x.asInstanceOf[js.Any] },
+        "DedicatedTenancySupport" -> DedicatedTenancySupport.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ModifyAccountRequest]
     }
@@ -1157,16 +1157,16 @@ package workspaces {
 
   @js.native
   trait ModifyClientPropertiesRequest extends js.Object {
-    var ResourceId: js.UndefOr[NonEmptyString]
+    var ResourceId: NonEmptyString
     var ClientProperties: js.UndefOr[ClientProperties]
   }
 
   object ModifyClientPropertiesRequest {
     def apply(
-      ResourceId: js.UndefOr[NonEmptyString] = js.undefined,
+      ResourceId: NonEmptyString,
       ClientProperties: js.UndefOr[ClientProperties] = js.undefined): ModifyClientPropertiesRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ResourceId" -> ResourceId.map { x => x.asInstanceOf[js.Any] },
+        "ResourceId" -> ResourceId.asInstanceOf[js.Any],
         "ClientProperties" -> ClientProperties.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ModifyClientPropertiesRequest]
@@ -1188,17 +1188,17 @@ package workspaces {
 
   @js.native
   trait ModifyWorkspacePropertiesRequest extends js.Object {
-    var WorkspaceId: js.UndefOr[WorkspaceId]
-    var WorkspaceProperties: js.UndefOr[WorkspaceProperties]
+    var WorkspaceId: WorkspaceId
+    var WorkspaceProperties: WorkspaceProperties
   }
 
   object ModifyWorkspacePropertiesRequest {
     def apply(
-      WorkspaceId: js.UndefOr[WorkspaceId] = js.undefined,
-      WorkspaceProperties: js.UndefOr[WorkspaceProperties] = js.undefined): ModifyWorkspacePropertiesRequest = {
+      WorkspaceId: WorkspaceId,
+      WorkspaceProperties: WorkspaceProperties): ModifyWorkspacePropertiesRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "WorkspaceId" -> WorkspaceId.map { x => x.asInstanceOf[js.Any] },
-        "WorkspaceProperties" -> WorkspaceProperties.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "WorkspaceId" -> WorkspaceId.asInstanceOf[js.Any],
+        "WorkspaceProperties" -> WorkspaceProperties.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ModifyWorkspacePropertiesRequest]
     }
@@ -1219,17 +1219,17 @@ package workspaces {
 
   @js.native
   trait ModifyWorkspaceStateRequest extends js.Object {
-    var WorkspaceId: js.UndefOr[WorkspaceId]
-    var WorkspaceState: js.UndefOr[TargetWorkspaceState]
+    var WorkspaceId: WorkspaceId
+    var WorkspaceState: TargetWorkspaceState
   }
 
   object ModifyWorkspaceStateRequest {
     def apply(
-      WorkspaceId: js.UndefOr[WorkspaceId] = js.undefined,
-      WorkspaceState: js.UndefOr[TargetWorkspaceState] = js.undefined): ModifyWorkspaceStateRequest = {
+      WorkspaceId: WorkspaceId,
+      WorkspaceState: TargetWorkspaceState): ModifyWorkspaceStateRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "WorkspaceId" -> WorkspaceId.map { x => x.asInstanceOf[js.Any] },
-        "WorkspaceState" -> WorkspaceState.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "WorkspaceId" -> WorkspaceId.asInstanceOf[js.Any],
+        "WorkspaceState" -> WorkspaceState.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ModifyWorkspaceStateRequest]
     }
@@ -1278,14 +1278,14 @@ package workspaces {
    */
   @js.native
   trait RebootRequest extends js.Object {
-    var WorkspaceId: js.UndefOr[WorkspaceId]
+    var WorkspaceId: WorkspaceId
   }
 
   object RebootRequest {
     def apply(
-      WorkspaceId: js.UndefOr[WorkspaceId] = js.undefined): RebootRequest = {
+      WorkspaceId: WorkspaceId): RebootRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "WorkspaceId" -> WorkspaceId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "WorkspaceId" -> WorkspaceId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RebootRequest]
     }
@@ -1293,14 +1293,14 @@ package workspaces {
 
   @js.native
   trait RebootWorkspacesRequest extends js.Object {
-    var RebootWorkspaceRequests: js.UndefOr[RebootWorkspaceRequests]
+    var RebootWorkspaceRequests: RebootWorkspaceRequests
   }
 
   object RebootWorkspacesRequest {
     def apply(
-      RebootWorkspaceRequests: js.UndefOr[RebootWorkspaceRequests] = js.undefined): RebootWorkspacesRequest = {
+      RebootWorkspaceRequests: RebootWorkspaceRequests): RebootWorkspacesRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "RebootWorkspaceRequests" -> RebootWorkspaceRequests.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "RebootWorkspaceRequests" -> RebootWorkspaceRequests.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RebootWorkspacesRequest]
     }
@@ -1326,14 +1326,14 @@ package workspaces {
    */
   @js.native
   trait RebuildRequest extends js.Object {
-    var WorkspaceId: js.UndefOr[WorkspaceId]
+    var WorkspaceId: WorkspaceId
   }
 
   object RebuildRequest {
     def apply(
-      WorkspaceId: js.UndefOr[WorkspaceId] = js.undefined): RebuildRequest = {
+      WorkspaceId: WorkspaceId): RebuildRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "WorkspaceId" -> WorkspaceId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "WorkspaceId" -> WorkspaceId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RebuildRequest]
     }
@@ -1341,14 +1341,14 @@ package workspaces {
 
   @js.native
   trait RebuildWorkspacesRequest extends js.Object {
-    var RebuildWorkspaceRequests: js.UndefOr[RebuildWorkspaceRequests]
+    var RebuildWorkspaceRequests: RebuildWorkspaceRequests
   }
 
   object RebuildWorkspacesRequest {
     def apply(
-      RebuildWorkspaceRequests: js.UndefOr[RebuildWorkspaceRequests] = js.undefined): RebuildWorkspacesRequest = {
+      RebuildWorkspaceRequests: RebuildWorkspaceRequests): RebuildWorkspacesRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "RebuildWorkspaceRequests" -> RebuildWorkspaceRequests.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "RebuildWorkspaceRequests" -> RebuildWorkspaceRequests.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RebuildWorkspacesRequest]
     }
@@ -1378,17 +1378,17 @@ package workspaces {
 
   @js.native
   trait RevokeIpRulesRequest extends js.Object {
-    var GroupId: js.UndefOr[IpGroupId]
-    var UserRules: js.UndefOr[IpRevokedRuleList]
+    var GroupId: IpGroupId
+    var UserRules: IpRevokedRuleList
   }
 
   object RevokeIpRulesRequest {
     def apply(
-      GroupId: js.UndefOr[IpGroupId] = js.undefined,
-      UserRules: js.UndefOr[IpRevokedRuleList] = js.undefined): RevokeIpRulesRequest = {
+      GroupId: IpGroupId,
+      UserRules: IpRevokedRuleList): RevokeIpRulesRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "GroupId" -> GroupId.map { x => x.asInstanceOf[js.Any] },
-        "UserRules" -> UserRules.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "GroupId" -> GroupId.asInstanceOf[js.Any],
+        "UserRules" -> UserRules.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RevokeIpRulesRequest]
     }
@@ -1452,14 +1452,14 @@ package workspaces {
 
   @js.native
   trait StartWorkspacesRequest extends js.Object {
-    var StartWorkspaceRequests: js.UndefOr[StartWorkspaceRequests]
+    var StartWorkspaceRequests: StartWorkspaceRequests
   }
 
   object StartWorkspacesRequest {
     def apply(
-      StartWorkspaceRequests: js.UndefOr[StartWorkspaceRequests] = js.undefined): StartWorkspacesRequest = {
+      StartWorkspaceRequests: StartWorkspaceRequests): StartWorkspacesRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "StartWorkspaceRequests" -> StartWorkspaceRequests.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "StartWorkspaceRequests" -> StartWorkspaceRequests.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StartWorkspacesRequest]
     }
@@ -1500,14 +1500,14 @@ package workspaces {
 
   @js.native
   trait StopWorkspacesRequest extends js.Object {
-    var StopWorkspaceRequests: js.UndefOr[StopWorkspaceRequests]
+    var StopWorkspaceRequests: StopWorkspaceRequests
   }
 
   object StopWorkspacesRequest {
     def apply(
-      StopWorkspaceRequests: js.UndefOr[StopWorkspaceRequests] = js.undefined): StopWorkspacesRequest = {
+      StopWorkspaceRequests: StopWorkspaceRequests): StopWorkspacesRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "StopWorkspaceRequests" -> StopWorkspaceRequests.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "StopWorkspaceRequests" -> StopWorkspaceRequests.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StopWorkspacesRequest]
     }
@@ -1533,16 +1533,16 @@ package workspaces {
    */
   @js.native
   trait Tag extends js.Object {
-    var Key: js.UndefOr[TagKey]
+    var Key: TagKey
     var Value: js.UndefOr[TagValue]
   }
 
   object Tag {
     def apply(
-      Key: js.UndefOr[TagKey] = js.undefined,
+      Key: TagKey,
       Value: js.UndefOr[TagValue] = js.undefined): Tag = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Key" -> Key.map { x => x.asInstanceOf[js.Any] },
+        "Key" -> Key.asInstanceOf[js.Any],
         "Value" -> Value.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Tag]
@@ -1561,14 +1561,14 @@ package workspaces {
    */
   @js.native
   trait TerminateRequest extends js.Object {
-    var WorkspaceId: js.UndefOr[WorkspaceId]
+    var WorkspaceId: WorkspaceId
   }
 
   object TerminateRequest {
     def apply(
-      WorkspaceId: js.UndefOr[WorkspaceId] = js.undefined): TerminateRequest = {
+      WorkspaceId: WorkspaceId): TerminateRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "WorkspaceId" -> WorkspaceId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "WorkspaceId" -> WorkspaceId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TerminateRequest]
     }
@@ -1576,14 +1576,14 @@ package workspaces {
 
   @js.native
   trait TerminateWorkspacesRequest extends js.Object {
-    var TerminateWorkspaceRequests: js.UndefOr[TerminateWorkspaceRequests]
+    var TerminateWorkspaceRequests: TerminateWorkspaceRequests
   }
 
   object TerminateWorkspacesRequest {
     def apply(
-      TerminateWorkspaceRequests: js.UndefOr[TerminateWorkspaceRequests] = js.undefined): TerminateWorkspacesRequest = {
+      TerminateWorkspaceRequests: TerminateWorkspaceRequests): TerminateWorkspacesRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "TerminateWorkspaceRequests" -> TerminateWorkspaceRequests.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "TerminateWorkspaceRequests" -> TerminateWorkspaceRequests.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TerminateWorkspacesRequest]
     }
@@ -1606,17 +1606,17 @@ package workspaces {
 
   @js.native
   trait UpdateRulesOfIpGroupRequest extends js.Object {
-    var GroupId: js.UndefOr[IpGroupId]
-    var UserRules: js.UndefOr[IpRuleList]
+    var GroupId: IpGroupId
+    var UserRules: IpRuleList
   }
 
   object UpdateRulesOfIpGroupRequest {
     def apply(
-      GroupId: js.UndefOr[IpGroupId] = js.undefined,
-      UserRules: js.UndefOr[IpRuleList] = js.undefined): UpdateRulesOfIpGroupRequest = {
+      GroupId: IpGroupId,
+      UserRules: IpRuleList): UpdateRulesOfIpGroupRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "GroupId" -> GroupId.map { x => x.asInstanceOf[js.Any] },
-        "UserRules" -> UserRules.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "GroupId" -> GroupId.asInstanceOf[js.Any],
+        "UserRules" -> UserRules.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateRulesOfIpGroupRequest]
     }
@@ -1658,56 +1658,56 @@ package workspaces {
    */
   @js.native
   trait Workspace extends js.Object {
-    var VolumeEncryptionKey: js.UndefOr[VolumeEncryptionKey]
-    var ModificationStates: js.UndefOr[ModificationStateList]
-    var DirectoryId: js.UndefOr[DirectoryId]
-    var UserName: js.UndefOr[UserName]
     var BundleId: js.UndefOr[BundleId]
-    var ErrorCode: js.UndefOr[WorkspaceErrorCode]
-    var UserVolumeEncryptionEnabled: js.UndefOr[BooleanObject]
-    var IpAddress: js.UndefOr[IpAddress]
     var ComputerName: js.UndefOr[ComputerName]
-    var WorkspaceId: js.UndefOr[WorkspaceId]
-    var RootVolumeEncryptionEnabled: js.UndefOr[BooleanObject]
-    var WorkspaceProperties: js.UndefOr[WorkspaceProperties]
-    var State: js.UndefOr[WorkspaceState]
+    var DirectoryId: js.UndefOr[DirectoryId]
+    var ErrorCode: js.UndefOr[WorkspaceErrorCode]
     var ErrorMessage: js.UndefOr[Description]
+    var IpAddress: js.UndefOr[IpAddress]
+    var ModificationStates: js.UndefOr[ModificationStateList]
+    var RootVolumeEncryptionEnabled: js.UndefOr[BooleanObject]
+    var State: js.UndefOr[WorkspaceState]
     var SubnetId: js.UndefOr[SubnetId]
+    var UserName: js.UndefOr[UserName]
+    var UserVolumeEncryptionEnabled: js.UndefOr[BooleanObject]
+    var VolumeEncryptionKey: js.UndefOr[VolumeEncryptionKey]
+    var WorkspaceId: js.UndefOr[WorkspaceId]
+    var WorkspaceProperties: js.UndefOr[WorkspaceProperties]
   }
 
   object Workspace {
     def apply(
-      VolumeEncryptionKey: js.UndefOr[VolumeEncryptionKey] = js.undefined,
-      ModificationStates: js.UndefOr[ModificationStateList] = js.undefined,
-      DirectoryId: js.UndefOr[DirectoryId] = js.undefined,
-      UserName: js.UndefOr[UserName] = js.undefined,
       BundleId: js.UndefOr[BundleId] = js.undefined,
-      ErrorCode: js.UndefOr[WorkspaceErrorCode] = js.undefined,
-      UserVolumeEncryptionEnabled: js.UndefOr[BooleanObject] = js.undefined,
-      IpAddress: js.UndefOr[IpAddress] = js.undefined,
       ComputerName: js.UndefOr[ComputerName] = js.undefined,
-      WorkspaceId: js.UndefOr[WorkspaceId] = js.undefined,
-      RootVolumeEncryptionEnabled: js.UndefOr[BooleanObject] = js.undefined,
-      WorkspaceProperties: js.UndefOr[WorkspaceProperties] = js.undefined,
-      State: js.UndefOr[WorkspaceState] = js.undefined,
+      DirectoryId: js.UndefOr[DirectoryId] = js.undefined,
+      ErrorCode: js.UndefOr[WorkspaceErrorCode] = js.undefined,
       ErrorMessage: js.UndefOr[Description] = js.undefined,
-      SubnetId: js.UndefOr[SubnetId] = js.undefined): Workspace = {
+      IpAddress: js.UndefOr[IpAddress] = js.undefined,
+      ModificationStates: js.UndefOr[ModificationStateList] = js.undefined,
+      RootVolumeEncryptionEnabled: js.UndefOr[BooleanObject] = js.undefined,
+      State: js.UndefOr[WorkspaceState] = js.undefined,
+      SubnetId: js.UndefOr[SubnetId] = js.undefined,
+      UserName: js.UndefOr[UserName] = js.undefined,
+      UserVolumeEncryptionEnabled: js.UndefOr[BooleanObject] = js.undefined,
+      VolumeEncryptionKey: js.UndefOr[VolumeEncryptionKey] = js.undefined,
+      WorkspaceId: js.UndefOr[WorkspaceId] = js.undefined,
+      WorkspaceProperties: js.UndefOr[WorkspaceProperties] = js.undefined): Workspace = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "VolumeEncryptionKey" -> VolumeEncryptionKey.map { x => x.asInstanceOf[js.Any] },
-        "ModificationStates" -> ModificationStates.map { x => x.asInstanceOf[js.Any] },
-        "DirectoryId" -> DirectoryId.map { x => x.asInstanceOf[js.Any] },
-        "UserName" -> UserName.map { x => x.asInstanceOf[js.Any] },
         "BundleId" -> BundleId.map { x => x.asInstanceOf[js.Any] },
-        "ErrorCode" -> ErrorCode.map { x => x.asInstanceOf[js.Any] },
-        "UserVolumeEncryptionEnabled" -> UserVolumeEncryptionEnabled.map { x => x.asInstanceOf[js.Any] },
-        "IpAddress" -> IpAddress.map { x => x.asInstanceOf[js.Any] },
         "ComputerName" -> ComputerName.map { x => x.asInstanceOf[js.Any] },
-        "WorkspaceId" -> WorkspaceId.map { x => x.asInstanceOf[js.Any] },
-        "RootVolumeEncryptionEnabled" -> RootVolumeEncryptionEnabled.map { x => x.asInstanceOf[js.Any] },
-        "WorkspaceProperties" -> WorkspaceProperties.map { x => x.asInstanceOf[js.Any] },
-        "State" -> State.map { x => x.asInstanceOf[js.Any] },
+        "DirectoryId" -> DirectoryId.map { x => x.asInstanceOf[js.Any] },
+        "ErrorCode" -> ErrorCode.map { x => x.asInstanceOf[js.Any] },
         "ErrorMessage" -> ErrorMessage.map { x => x.asInstanceOf[js.Any] },
-        "SubnetId" -> SubnetId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "IpAddress" -> IpAddress.map { x => x.asInstanceOf[js.Any] },
+        "ModificationStates" -> ModificationStates.map { x => x.asInstanceOf[js.Any] },
+        "RootVolumeEncryptionEnabled" -> RootVolumeEncryptionEnabled.map { x => x.asInstanceOf[js.Any] },
+        "State" -> State.map { x => x.asInstanceOf[js.Any] },
+        "SubnetId" -> SubnetId.map { x => x.asInstanceOf[js.Any] },
+        "UserName" -> UserName.map { x => x.asInstanceOf[js.Any] },
+        "UserVolumeEncryptionEnabled" -> UserVolumeEncryptionEnabled.map { x => x.asInstanceOf[js.Any] },
+        "VolumeEncryptionKey" -> VolumeEncryptionKey.map { x => x.asInstanceOf[js.Any] },
+        "WorkspaceId" -> WorkspaceId.map { x => x.asInstanceOf[js.Any] },
+        "WorkspaceProperties" -> WorkspaceProperties.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Workspace]
     }
@@ -1719,31 +1719,31 @@ package workspaces {
   @js.native
   trait WorkspaceBundle extends js.Object {
     var BundleId: js.UndefOr[BundleId]
-    var Name: js.UndefOr[NonEmptyString]
+    var ComputeType: js.UndefOr[ComputeType]
     var Description: js.UndefOr[Description]
+    var Name: js.UndefOr[NonEmptyString]
+    var Owner: js.UndefOr[BundleOwner]
     var RootStorage: js.UndefOr[RootStorage]
     var UserStorage: js.UndefOr[UserStorage]
-    var Owner: js.UndefOr[BundleOwner]
-    var ComputeType: js.UndefOr[ComputeType]
   }
 
   object WorkspaceBundle {
     def apply(
       BundleId: js.UndefOr[BundleId] = js.undefined,
-      Name: js.UndefOr[NonEmptyString] = js.undefined,
+      ComputeType: js.UndefOr[ComputeType] = js.undefined,
       Description: js.UndefOr[Description] = js.undefined,
-      RootStorage: js.UndefOr[RootStorage] = js.undefined,
-      UserStorage: js.UndefOr[UserStorage] = js.undefined,
+      Name: js.UndefOr[NonEmptyString] = js.undefined,
       Owner: js.UndefOr[BundleOwner] = js.undefined,
-      ComputeType: js.UndefOr[ComputeType] = js.undefined): WorkspaceBundle = {
+      RootStorage: js.UndefOr[RootStorage] = js.undefined,
+      UserStorage: js.UndefOr[UserStorage] = js.undefined): WorkspaceBundle = {
       val _fields = IndexedSeq[(String, js.Any)](
         "BundleId" -> BundleId.map { x => x.asInstanceOf[js.Any] },
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
+        "ComputeType" -> ComputeType.map { x => x.asInstanceOf[js.Any] },
         "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
-        "RootStorage" -> RootStorage.map { x => x.asInstanceOf[js.Any] },
-        "UserStorage" -> UserStorage.map { x => x.asInstanceOf[js.Any] },
+        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
         "Owner" -> Owner.map { x => x.asInstanceOf[js.Any] },
-        "ComputeType" -> ComputeType.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "RootStorage" -> RootStorage.map { x => x.asInstanceOf[js.Any] },
+        "UserStorage" -> UserStorage.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[WorkspaceBundle]
     }
@@ -1754,23 +1754,23 @@ package workspaces {
    */
   @js.native
   trait WorkspaceConnectionStatus extends js.Object {
-    var WorkspaceId: js.UndefOr[WorkspaceId]
     var ConnectionState: js.UndefOr[ConnectionState]
     var ConnectionStateCheckTimestamp: js.UndefOr[Timestamp]
     var LastKnownUserConnectionTimestamp: js.UndefOr[Timestamp]
+    var WorkspaceId: js.UndefOr[WorkspaceId]
   }
 
   object WorkspaceConnectionStatus {
     def apply(
-      WorkspaceId: js.UndefOr[WorkspaceId] = js.undefined,
       ConnectionState: js.UndefOr[ConnectionState] = js.undefined,
       ConnectionStateCheckTimestamp: js.UndefOr[Timestamp] = js.undefined,
-      LastKnownUserConnectionTimestamp: js.UndefOr[Timestamp] = js.undefined): WorkspaceConnectionStatus = {
+      LastKnownUserConnectionTimestamp: js.UndefOr[Timestamp] = js.undefined,
+      WorkspaceId: js.UndefOr[WorkspaceId] = js.undefined): WorkspaceConnectionStatus = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "WorkspaceId" -> WorkspaceId.map { x => x.asInstanceOf[js.Any] },
         "ConnectionState" -> ConnectionState.map { x => x.asInstanceOf[js.Any] },
         "ConnectionStateCheckTimestamp" -> ConnectionStateCheckTimestamp.map { x => x.asInstanceOf[js.Any] },
-        "LastKnownUserConnectionTimestamp" -> LastKnownUserConnectionTimestamp.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "LastKnownUserConnectionTimestamp" -> LastKnownUserConnectionTimestamp.map { x => x.asInstanceOf[js.Any] },
+        "WorkspaceId" -> WorkspaceId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[WorkspaceConnectionStatus]
     }
@@ -1782,49 +1782,49 @@ package workspaces {
   @js.native
   trait WorkspaceDirectory extends js.Object {
     var Alias: js.UndefOr[Alias]
-    var DirectoryId: js.UndefOr[DirectoryId]
     var CustomerUserName: js.UndefOr[UserName]
-    var WorkspaceCreationProperties: js.UndefOr[DefaultWorkspaceCreationProperties]
-    var ipGroupIds: js.UndefOr[IpGroupIdList]
-    var DirectoryType: js.UndefOr[WorkspaceDirectoryType]
-    var RegistrationCode: js.UndefOr[RegistrationCode]
-    var IamRoleId: js.UndefOr[ARN]
+    var DirectoryId: js.UndefOr[DirectoryId]
     var DirectoryName: js.UndefOr[DirectoryName]
-    var SubnetIds: js.UndefOr[SubnetIds]
-    var State: js.UndefOr[WorkspaceDirectoryState]
+    var DirectoryType: js.UndefOr[WorkspaceDirectoryType]
     var DnsIpAddresses: js.UndefOr[DnsIpAddresses]
+    var IamRoleId: js.UndefOr[ARN]
+    var RegistrationCode: js.UndefOr[RegistrationCode]
+    var State: js.UndefOr[WorkspaceDirectoryState]
+    var SubnetIds: js.UndefOr[SubnetIds]
+    var WorkspaceCreationProperties: js.UndefOr[DefaultWorkspaceCreationProperties]
     var WorkspaceSecurityGroupId: js.UndefOr[SecurityGroupId]
+    var ipGroupIds: js.UndefOr[IpGroupIdList]
   }
 
   object WorkspaceDirectory {
     def apply(
       Alias: js.UndefOr[Alias] = js.undefined,
-      DirectoryId: js.UndefOr[DirectoryId] = js.undefined,
       CustomerUserName: js.UndefOr[UserName] = js.undefined,
-      WorkspaceCreationProperties: js.UndefOr[DefaultWorkspaceCreationProperties] = js.undefined,
-      ipGroupIds: js.UndefOr[IpGroupIdList] = js.undefined,
-      DirectoryType: js.UndefOr[WorkspaceDirectoryType] = js.undefined,
-      RegistrationCode: js.UndefOr[RegistrationCode] = js.undefined,
-      IamRoleId: js.UndefOr[ARN] = js.undefined,
+      DirectoryId: js.UndefOr[DirectoryId] = js.undefined,
       DirectoryName: js.UndefOr[DirectoryName] = js.undefined,
-      SubnetIds: js.UndefOr[SubnetIds] = js.undefined,
-      State: js.UndefOr[WorkspaceDirectoryState] = js.undefined,
+      DirectoryType: js.UndefOr[WorkspaceDirectoryType] = js.undefined,
       DnsIpAddresses: js.UndefOr[DnsIpAddresses] = js.undefined,
-      WorkspaceSecurityGroupId: js.UndefOr[SecurityGroupId] = js.undefined): WorkspaceDirectory = {
+      IamRoleId: js.UndefOr[ARN] = js.undefined,
+      RegistrationCode: js.UndefOr[RegistrationCode] = js.undefined,
+      State: js.UndefOr[WorkspaceDirectoryState] = js.undefined,
+      SubnetIds: js.UndefOr[SubnetIds] = js.undefined,
+      WorkspaceCreationProperties: js.UndefOr[DefaultWorkspaceCreationProperties] = js.undefined,
+      WorkspaceSecurityGroupId: js.UndefOr[SecurityGroupId] = js.undefined,
+      ipGroupIds: js.UndefOr[IpGroupIdList] = js.undefined): WorkspaceDirectory = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Alias" -> Alias.map { x => x.asInstanceOf[js.Any] },
-        "DirectoryId" -> DirectoryId.map { x => x.asInstanceOf[js.Any] },
         "CustomerUserName" -> CustomerUserName.map { x => x.asInstanceOf[js.Any] },
-        "WorkspaceCreationProperties" -> WorkspaceCreationProperties.map { x => x.asInstanceOf[js.Any] },
-        "ipGroupIds" -> ipGroupIds.map { x => x.asInstanceOf[js.Any] },
-        "DirectoryType" -> DirectoryType.map { x => x.asInstanceOf[js.Any] },
-        "RegistrationCode" -> RegistrationCode.map { x => x.asInstanceOf[js.Any] },
-        "IamRoleId" -> IamRoleId.map { x => x.asInstanceOf[js.Any] },
+        "DirectoryId" -> DirectoryId.map { x => x.asInstanceOf[js.Any] },
         "DirectoryName" -> DirectoryName.map { x => x.asInstanceOf[js.Any] },
-        "SubnetIds" -> SubnetIds.map { x => x.asInstanceOf[js.Any] },
-        "State" -> State.map { x => x.asInstanceOf[js.Any] },
+        "DirectoryType" -> DirectoryType.map { x => x.asInstanceOf[js.Any] },
         "DnsIpAddresses" -> DnsIpAddresses.map { x => x.asInstanceOf[js.Any] },
-        "WorkspaceSecurityGroupId" -> WorkspaceSecurityGroupId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "IamRoleId" -> IamRoleId.map { x => x.asInstanceOf[js.Any] },
+        "RegistrationCode" -> RegistrationCode.map { x => x.asInstanceOf[js.Any] },
+        "State" -> State.map { x => x.asInstanceOf[js.Any] },
+        "SubnetIds" -> SubnetIds.map { x => x.asInstanceOf[js.Any] },
+        "WorkspaceCreationProperties" -> WorkspaceCreationProperties.map { x => x.asInstanceOf[js.Any] },
+        "WorkspaceSecurityGroupId" -> WorkspaceSecurityGroupId.map { x => x.asInstanceOf[js.Any] },
+        "ipGroupIds" -> ipGroupIds.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[WorkspaceDirectory]
     }
@@ -1852,35 +1852,35 @@ package workspaces {
    */
   @js.native
   trait WorkspaceImage extends js.Object {
-    var OperatingSystem: js.UndefOr[OperatingSystem]
+    var Description: js.UndefOr[WorkspaceImageDescription]
+    var ErrorCode: js.UndefOr[WorkspaceImageErrorCode]
+    var ErrorMessage: js.UndefOr[Description]
     var ImageId: js.UndefOr[WorkspaceImageId]
     var Name: js.UndefOr[WorkspaceImageName]
-    var ErrorCode: js.UndefOr[WorkspaceImageErrorCode]
-    var Description: js.UndefOr[WorkspaceImageDescription]
+    var OperatingSystem: js.UndefOr[OperatingSystem]
     var RequiredTenancy: js.UndefOr[WorkspaceImageRequiredTenancy]
     var State: js.UndefOr[WorkspaceImageState]
-    var ErrorMessage: js.UndefOr[Description]
   }
 
   object WorkspaceImage {
     def apply(
-      OperatingSystem: js.UndefOr[OperatingSystem] = js.undefined,
+      Description: js.UndefOr[WorkspaceImageDescription] = js.undefined,
+      ErrorCode: js.UndefOr[WorkspaceImageErrorCode] = js.undefined,
+      ErrorMessage: js.UndefOr[Description] = js.undefined,
       ImageId: js.UndefOr[WorkspaceImageId] = js.undefined,
       Name: js.UndefOr[WorkspaceImageName] = js.undefined,
-      ErrorCode: js.UndefOr[WorkspaceImageErrorCode] = js.undefined,
-      Description: js.UndefOr[WorkspaceImageDescription] = js.undefined,
+      OperatingSystem: js.UndefOr[OperatingSystem] = js.undefined,
       RequiredTenancy: js.UndefOr[WorkspaceImageRequiredTenancy] = js.undefined,
-      State: js.UndefOr[WorkspaceImageState] = js.undefined,
-      ErrorMessage: js.UndefOr[Description] = js.undefined): WorkspaceImage = {
+      State: js.UndefOr[WorkspaceImageState] = js.undefined): WorkspaceImage = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "OperatingSystem" -> OperatingSystem.map { x => x.asInstanceOf[js.Any] },
+        "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
+        "ErrorCode" -> ErrorCode.map { x => x.asInstanceOf[js.Any] },
+        "ErrorMessage" -> ErrorMessage.map { x => x.asInstanceOf[js.Any] },
         "ImageId" -> ImageId.map { x => x.asInstanceOf[js.Any] },
         "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
-        "ErrorCode" -> ErrorCode.map { x => x.asInstanceOf[js.Any] },
-        "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
+        "OperatingSystem" -> OperatingSystem.map { x => x.asInstanceOf[js.Any] },
         "RequiredTenancy" -> RequiredTenancy.map { x => x.asInstanceOf[js.Any] },
-        "State" -> State.map { x => x.asInstanceOf[js.Any] },
-        "ErrorMessage" -> ErrorMessage.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "State" -> State.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[WorkspaceImage]
     }
@@ -1914,26 +1914,26 @@ package workspaces {
    */
   @js.native
   trait WorkspaceProperties extends js.Object {
-    var RunningMode: js.UndefOr[RunningMode]
     var ComputeTypeName: js.UndefOr[Compute]
     var RootVolumeSizeGib: js.UndefOr[RootVolumeSizeGib]
-    var UserVolumeSizeGib: js.UndefOr[UserVolumeSizeGib]
+    var RunningMode: js.UndefOr[RunningMode]
     var RunningModeAutoStopTimeoutInMinutes: js.UndefOr[RunningModeAutoStopTimeoutInMinutes]
+    var UserVolumeSizeGib: js.UndefOr[UserVolumeSizeGib]
   }
 
   object WorkspaceProperties {
     def apply(
-      RunningMode: js.UndefOr[RunningMode] = js.undefined,
       ComputeTypeName: js.UndefOr[Compute] = js.undefined,
       RootVolumeSizeGib: js.UndefOr[RootVolumeSizeGib] = js.undefined,
-      UserVolumeSizeGib: js.UndefOr[UserVolumeSizeGib] = js.undefined,
-      RunningModeAutoStopTimeoutInMinutes: js.UndefOr[RunningModeAutoStopTimeoutInMinutes] = js.undefined): WorkspaceProperties = {
+      RunningMode: js.UndefOr[RunningMode] = js.undefined,
+      RunningModeAutoStopTimeoutInMinutes: js.UndefOr[RunningModeAutoStopTimeoutInMinutes] = js.undefined,
+      UserVolumeSizeGib: js.UndefOr[UserVolumeSizeGib] = js.undefined): WorkspaceProperties = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "RunningMode" -> RunningMode.map { x => x.asInstanceOf[js.Any] },
         "ComputeTypeName" -> ComputeTypeName.map { x => x.asInstanceOf[js.Any] },
         "RootVolumeSizeGib" -> RootVolumeSizeGib.map { x => x.asInstanceOf[js.Any] },
-        "UserVolumeSizeGib" -> UserVolumeSizeGib.map { x => x.asInstanceOf[js.Any] },
-        "RunningModeAutoStopTimeoutInMinutes" -> RunningModeAutoStopTimeoutInMinutes.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "RunningMode" -> RunningMode.map { x => x.asInstanceOf[js.Any] },
+        "RunningModeAutoStopTimeoutInMinutes" -> RunningModeAutoStopTimeoutInMinutes.map { x => x.asInstanceOf[js.Any] },
+        "UserVolumeSizeGib" -> UserVolumeSizeGib.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[WorkspaceProperties]
     }
@@ -1944,35 +1944,35 @@ package workspaces {
    */
   @js.native
   trait WorkspaceRequest extends js.Object {
-    var VolumeEncryptionKey: js.UndefOr[VolumeEncryptionKey]
-    var DirectoryId: js.UndefOr[DirectoryId]
-    var UserName: js.UndefOr[UserName]
-    var BundleId: js.UndefOr[BundleId]
-    var UserVolumeEncryptionEnabled: js.UndefOr[BooleanObject]
+    var BundleId: BundleId
+    var DirectoryId: DirectoryId
+    var UserName: UserName
     var RootVolumeEncryptionEnabled: js.UndefOr[BooleanObject]
-    var WorkspaceProperties: js.UndefOr[WorkspaceProperties]
     var Tags: js.UndefOr[TagList]
+    var UserVolumeEncryptionEnabled: js.UndefOr[BooleanObject]
+    var VolumeEncryptionKey: js.UndefOr[VolumeEncryptionKey]
+    var WorkspaceProperties: js.UndefOr[WorkspaceProperties]
   }
 
   object WorkspaceRequest {
     def apply(
-      VolumeEncryptionKey: js.UndefOr[VolumeEncryptionKey] = js.undefined,
-      DirectoryId: js.UndefOr[DirectoryId] = js.undefined,
-      UserName: js.UndefOr[UserName] = js.undefined,
-      BundleId: js.UndefOr[BundleId] = js.undefined,
-      UserVolumeEncryptionEnabled: js.UndefOr[BooleanObject] = js.undefined,
+      BundleId: BundleId,
+      DirectoryId: DirectoryId,
+      UserName: UserName,
       RootVolumeEncryptionEnabled: js.UndefOr[BooleanObject] = js.undefined,
-      WorkspaceProperties: js.UndefOr[WorkspaceProperties] = js.undefined,
-      Tags: js.UndefOr[TagList] = js.undefined): WorkspaceRequest = {
+      Tags: js.UndefOr[TagList] = js.undefined,
+      UserVolumeEncryptionEnabled: js.UndefOr[BooleanObject] = js.undefined,
+      VolumeEncryptionKey: js.UndefOr[VolumeEncryptionKey] = js.undefined,
+      WorkspaceProperties: js.UndefOr[WorkspaceProperties] = js.undefined): WorkspaceRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "VolumeEncryptionKey" -> VolumeEncryptionKey.map { x => x.asInstanceOf[js.Any] },
-        "DirectoryId" -> DirectoryId.map { x => x.asInstanceOf[js.Any] },
-        "UserName" -> UserName.map { x => x.asInstanceOf[js.Any] },
-        "BundleId" -> BundleId.map { x => x.asInstanceOf[js.Any] },
-        "UserVolumeEncryptionEnabled" -> UserVolumeEncryptionEnabled.map { x => x.asInstanceOf[js.Any] },
+        "BundleId" -> BundleId.asInstanceOf[js.Any],
+        "DirectoryId" -> DirectoryId.asInstanceOf[js.Any],
+        "UserName" -> UserName.asInstanceOf[js.Any],
         "RootVolumeEncryptionEnabled" -> RootVolumeEncryptionEnabled.map { x => x.asInstanceOf[js.Any] },
-        "WorkspaceProperties" -> WorkspaceProperties.map { x => x.asInstanceOf[js.Any] },
-        "Tags" -> Tags.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Tags" -> Tags.map { x => x.asInstanceOf[js.Any] },
+        "UserVolumeEncryptionEnabled" -> UserVolumeEncryptionEnabled.map { x => x.asInstanceOf[js.Any] },
+        "VolumeEncryptionKey" -> VolumeEncryptionKey.map { x => x.asInstanceOf[js.Any] },
+        "WorkspaceProperties" -> WorkspaceProperties.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[WorkspaceRequest]
     }
@@ -2004,22 +2004,22 @@ package workspaces {
    */
   @js.native
   trait WorkspacesIpGroup extends js.Object {
+    var groupDesc: js.UndefOr[IpGroupDesc]
     var groupId: js.UndefOr[IpGroupId]
     var groupName: js.UndefOr[IpGroupName]
-    var groupDesc: js.UndefOr[IpGroupDesc]
     var userRules: js.UndefOr[IpRuleList]
   }
 
   object WorkspacesIpGroup {
     def apply(
+      groupDesc: js.UndefOr[IpGroupDesc] = js.undefined,
       groupId: js.UndefOr[IpGroupId] = js.undefined,
       groupName: js.UndefOr[IpGroupName] = js.undefined,
-      groupDesc: js.UndefOr[IpGroupDesc] = js.undefined,
       userRules: js.UndefOr[IpRuleList] = js.undefined): WorkspacesIpGroup = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "groupDesc" -> groupDesc.map { x => x.asInstanceOf[js.Any] },
         "groupId" -> groupId.map { x => x.asInstanceOf[js.Any] },
         "groupName" -> groupName.map { x => x.asInstanceOf[js.Any] },
-        "groupDesc" -> groupDesc.map { x => x.asInstanceOf[js.Any] },
         "userRules" -> userRules.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[WorkspacesIpGroup]

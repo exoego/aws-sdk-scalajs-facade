@@ -80,17 +80,17 @@ package support {
    */
   @js.native
   trait AddAttachmentsToSetRequest extends js.Object {
+    var attachments: Attachments
     var attachmentSetId: js.UndefOr[AttachmentSetId]
-    var attachments: js.UndefOr[Attachments]
   }
 
   object AddAttachmentsToSetRequest {
     def apply(
-      attachmentSetId: js.UndefOr[AttachmentSetId] = js.undefined,
-      attachments: js.UndefOr[Attachments] = js.undefined): AddAttachmentsToSetRequest = {
+      attachments: Attachments,
+      attachmentSetId: js.UndefOr[AttachmentSetId] = js.undefined): AddAttachmentsToSetRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "attachmentSetId" -> attachmentSetId.map { x => x.asInstanceOf[js.Any] },
-        "attachments" -> attachments.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "attachments" -> attachments.asInstanceOf[js.Any],
+        "attachmentSetId" -> attachmentSetId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AddAttachmentsToSetRequest]
     }
@@ -122,23 +122,23 @@ package support {
    */
   @js.native
   trait AddCommunicationToCaseRequest extends js.Object {
-    var caseId: js.UndefOr[CaseId]
-    var communicationBody: js.UndefOr[CommunicationBody]
-    var ccEmailAddresses: js.UndefOr[CcEmailAddressList]
+    var communicationBody: CommunicationBody
     var attachmentSetId: js.UndefOr[AttachmentSetId]
+    var caseId: js.UndefOr[CaseId]
+    var ccEmailAddresses: js.UndefOr[CcEmailAddressList]
   }
 
   object AddCommunicationToCaseRequest {
     def apply(
+      communicationBody: CommunicationBody,
+      attachmentSetId: js.UndefOr[AttachmentSetId] = js.undefined,
       caseId: js.UndefOr[CaseId] = js.undefined,
-      communicationBody: js.UndefOr[CommunicationBody] = js.undefined,
-      ccEmailAddresses: js.UndefOr[CcEmailAddressList] = js.undefined,
-      attachmentSetId: js.UndefOr[AttachmentSetId] = js.undefined): AddCommunicationToCaseRequest = {
+      ccEmailAddresses: js.UndefOr[CcEmailAddressList] = js.undefined): AddCommunicationToCaseRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "communicationBody" -> communicationBody.asInstanceOf[js.Any],
+        "attachmentSetId" -> attachmentSetId.map { x => x.asInstanceOf[js.Any] },
         "caseId" -> caseId.map { x => x.asInstanceOf[js.Any] },
-        "communicationBody" -> communicationBody.map { x => x.asInstanceOf[js.Any] },
-        "ccEmailAddresses" -> ccEmailAddresses.map { x => x.asInstanceOf[js.Any] },
-        "attachmentSetId" -> attachmentSetId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ccEmailAddresses" -> ccEmailAddresses.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AddCommunicationToCaseRequest]
     }
@@ -167,17 +167,17 @@ package support {
    */
   @js.native
   trait Attachment extends js.Object {
-    var fileName: js.UndefOr[FileName]
     var data: js.UndefOr[Data]
+    var fileName: js.UndefOr[FileName]
   }
 
   object Attachment {
     def apply(
-      fileName: js.UndefOr[FileName] = js.undefined,
-      data: js.UndefOr[Data] = js.undefined): Attachment = {
+      data: js.UndefOr[Data] = js.undefined,
+      fileName: js.UndefOr[FileName] = js.undefined): Attachment = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "fileName" -> fileName.map { x => x.asInstanceOf[js.Any] },
-        "data" -> data.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "data" -> data.map { x => x.asInstanceOf[js.Any] },
+        "fileName" -> fileName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Attachment]
     }
@@ -257,47 +257,47 @@ package support {
    */
   @js.native
   trait CaseDetails extends js.Object {
-    var subject: js.UndefOr[Subject]
+    var caseId: js.UndefOr[CaseId]
+    var categoryCode: js.UndefOr[CategoryCode]
+    var ccEmailAddresses: js.UndefOr[CcEmailAddressList]
+    var displayId: js.UndefOr[DisplayId]
+    var language: js.UndefOr[Language]
     var recentCommunications: js.UndefOr[RecentCaseCommunications]
     var serviceCode: js.UndefOr[ServiceCode]
-    var submittedBy: js.UndefOr[SubmittedBy]
-    var caseId: js.UndefOr[CaseId]
-    var timeCreated: js.UndefOr[TimeCreated]
-    var displayId: js.UndefOr[DisplayId]
     var severityCode: js.UndefOr[SeverityCode]
-    var language: js.UndefOr[Language]
     var status: js.UndefOr[Status]
-    var ccEmailAddresses: js.UndefOr[CcEmailAddressList]
-    var categoryCode: js.UndefOr[CategoryCode]
+    var subject: js.UndefOr[Subject]
+    var submittedBy: js.UndefOr[SubmittedBy]
+    var timeCreated: js.UndefOr[TimeCreated]
   }
 
   object CaseDetails {
     def apply(
-      subject: js.UndefOr[Subject] = js.undefined,
+      caseId: js.UndefOr[CaseId] = js.undefined,
+      categoryCode: js.UndefOr[CategoryCode] = js.undefined,
+      ccEmailAddresses: js.UndefOr[CcEmailAddressList] = js.undefined,
+      displayId: js.UndefOr[DisplayId] = js.undefined,
+      language: js.UndefOr[Language] = js.undefined,
       recentCommunications: js.UndefOr[RecentCaseCommunications] = js.undefined,
       serviceCode: js.UndefOr[ServiceCode] = js.undefined,
-      submittedBy: js.UndefOr[SubmittedBy] = js.undefined,
-      caseId: js.UndefOr[CaseId] = js.undefined,
-      timeCreated: js.UndefOr[TimeCreated] = js.undefined,
-      displayId: js.UndefOr[DisplayId] = js.undefined,
       severityCode: js.UndefOr[SeverityCode] = js.undefined,
-      language: js.UndefOr[Language] = js.undefined,
       status: js.UndefOr[Status] = js.undefined,
-      ccEmailAddresses: js.UndefOr[CcEmailAddressList] = js.undefined,
-      categoryCode: js.UndefOr[CategoryCode] = js.undefined): CaseDetails = {
+      subject: js.UndefOr[Subject] = js.undefined,
+      submittedBy: js.UndefOr[SubmittedBy] = js.undefined,
+      timeCreated: js.UndefOr[TimeCreated] = js.undefined): CaseDetails = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "subject" -> subject.map { x => x.asInstanceOf[js.Any] },
+        "caseId" -> caseId.map { x => x.asInstanceOf[js.Any] },
+        "categoryCode" -> categoryCode.map { x => x.asInstanceOf[js.Any] },
+        "ccEmailAddresses" -> ccEmailAddresses.map { x => x.asInstanceOf[js.Any] },
+        "displayId" -> displayId.map { x => x.asInstanceOf[js.Any] },
+        "language" -> language.map { x => x.asInstanceOf[js.Any] },
         "recentCommunications" -> recentCommunications.map { x => x.asInstanceOf[js.Any] },
         "serviceCode" -> serviceCode.map { x => x.asInstanceOf[js.Any] },
-        "submittedBy" -> submittedBy.map { x => x.asInstanceOf[js.Any] },
-        "caseId" -> caseId.map { x => x.asInstanceOf[js.Any] },
-        "timeCreated" -> timeCreated.map { x => x.asInstanceOf[js.Any] },
-        "displayId" -> displayId.map { x => x.asInstanceOf[js.Any] },
         "severityCode" -> severityCode.map { x => x.asInstanceOf[js.Any] },
-        "language" -> language.map { x => x.asInstanceOf[js.Any] },
         "status" -> status.map { x => x.asInstanceOf[js.Any] },
-        "ccEmailAddresses" -> ccEmailAddresses.map { x => x.asInstanceOf[js.Any] },
-        "categoryCode" -> categoryCode.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "subject" -> subject.map { x => x.asInstanceOf[js.Any] },
+        "submittedBy" -> submittedBy.map { x => x.asInstanceOf[js.Any] },
+        "timeCreated" -> timeCreated.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CaseDetails]
     }
@@ -337,25 +337,25 @@ package support {
    */
   @js.native
   trait Communication extends js.Object {
-    var body: js.UndefOr[CommunicationBody]
-    var submittedBy: js.UndefOr[SubmittedBy]
-    var caseId: js.UndefOr[CaseId]
     var attachmentSet: js.UndefOr[AttachmentSet]
+    var body: js.UndefOr[CommunicationBody]
+    var caseId: js.UndefOr[CaseId]
+    var submittedBy: js.UndefOr[SubmittedBy]
     var timeCreated: js.UndefOr[TimeCreated]
   }
 
   object Communication {
     def apply(
-      body: js.UndefOr[CommunicationBody] = js.undefined,
-      submittedBy: js.UndefOr[SubmittedBy] = js.undefined,
-      caseId: js.UndefOr[CaseId] = js.undefined,
       attachmentSet: js.UndefOr[AttachmentSet] = js.undefined,
+      body: js.UndefOr[CommunicationBody] = js.undefined,
+      caseId: js.UndefOr[CaseId] = js.undefined,
+      submittedBy: js.UndefOr[SubmittedBy] = js.undefined,
       timeCreated: js.UndefOr[TimeCreated] = js.undefined): Communication = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "body" -> body.map { x => x.asInstanceOf[js.Any] },
-        "submittedBy" -> submittedBy.map { x => x.asInstanceOf[js.Any] },
-        "caseId" -> caseId.map { x => x.asInstanceOf[js.Any] },
         "attachmentSet" -> attachmentSet.map { x => x.asInstanceOf[js.Any] },
+        "body" -> body.map { x => x.asInstanceOf[js.Any] },
+        "caseId" -> caseId.map { x => x.asInstanceOf[js.Any] },
+        "submittedBy" -> submittedBy.map { x => x.asInstanceOf[js.Any] },
         "timeCreated" -> timeCreated.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Communication]
@@ -367,38 +367,38 @@ package support {
    */
   @js.native
   trait CreateCaseRequest extends js.Object {
-    var subject: js.UndefOr[Subject]
-    var serviceCode: js.UndefOr[ServiceCode]
-    var issueType: js.UndefOr[IssueType]
-    var communicationBody: js.UndefOr[CommunicationBody]
+    var communicationBody: CommunicationBody
+    var subject: Subject
     var attachmentSetId: js.UndefOr[AttachmentSetId]
-    var severityCode: js.UndefOr[SeverityCode]
-    var language: js.UndefOr[Language]
-    var ccEmailAddresses: js.UndefOr[CcEmailAddressList]
     var categoryCode: js.UndefOr[CategoryCode]
+    var ccEmailAddresses: js.UndefOr[CcEmailAddressList]
+    var issueType: js.UndefOr[IssueType]
+    var language: js.UndefOr[Language]
+    var serviceCode: js.UndefOr[ServiceCode]
+    var severityCode: js.UndefOr[SeverityCode]
   }
 
   object CreateCaseRequest {
     def apply(
-      subject: js.UndefOr[Subject] = js.undefined,
-      serviceCode: js.UndefOr[ServiceCode] = js.undefined,
-      issueType: js.UndefOr[IssueType] = js.undefined,
-      communicationBody: js.UndefOr[CommunicationBody] = js.undefined,
+      communicationBody: CommunicationBody,
+      subject: Subject,
       attachmentSetId: js.UndefOr[AttachmentSetId] = js.undefined,
-      severityCode: js.UndefOr[SeverityCode] = js.undefined,
-      language: js.UndefOr[Language] = js.undefined,
+      categoryCode: js.UndefOr[CategoryCode] = js.undefined,
       ccEmailAddresses: js.UndefOr[CcEmailAddressList] = js.undefined,
-      categoryCode: js.UndefOr[CategoryCode] = js.undefined): CreateCaseRequest = {
+      issueType: js.UndefOr[IssueType] = js.undefined,
+      language: js.UndefOr[Language] = js.undefined,
+      serviceCode: js.UndefOr[ServiceCode] = js.undefined,
+      severityCode: js.UndefOr[SeverityCode] = js.undefined): CreateCaseRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "subject" -> subject.map { x => x.asInstanceOf[js.Any] },
-        "serviceCode" -> serviceCode.map { x => x.asInstanceOf[js.Any] },
-        "issueType" -> issueType.map { x => x.asInstanceOf[js.Any] },
-        "communicationBody" -> communicationBody.map { x => x.asInstanceOf[js.Any] },
+        "communicationBody" -> communicationBody.asInstanceOf[js.Any],
+        "subject" -> subject.asInstanceOf[js.Any],
         "attachmentSetId" -> attachmentSetId.map { x => x.asInstanceOf[js.Any] },
-        "severityCode" -> severityCode.map { x => x.asInstanceOf[js.Any] },
-        "language" -> language.map { x => x.asInstanceOf[js.Any] },
+        "categoryCode" -> categoryCode.map { x => x.asInstanceOf[js.Any] },
         "ccEmailAddresses" -> ccEmailAddresses.map { x => x.asInstanceOf[js.Any] },
-        "categoryCode" -> categoryCode.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "issueType" -> issueType.map { x => x.asInstanceOf[js.Any] },
+        "language" -> language.map { x => x.asInstanceOf[js.Any] },
+        "serviceCode" -> serviceCode.map { x => x.asInstanceOf[js.Any] },
+        "severityCode" -> severityCode.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateCaseRequest]
     }
@@ -432,14 +432,14 @@ package support {
 
   @js.native
   trait DescribeAttachmentRequest extends js.Object {
-    var attachmentId: js.UndefOr[AttachmentId]
+    var attachmentId: AttachmentId
   }
 
   object DescribeAttachmentRequest {
     def apply(
-      attachmentId: js.UndefOr[AttachmentId] = js.undefined): DescribeAttachmentRequest = {
+      attachmentId: AttachmentId): DescribeAttachmentRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "attachmentId" -> attachmentId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "attachmentId" -> attachmentId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeAttachmentRequest]
     }
@@ -468,38 +468,38 @@ package support {
    */
   @js.native
   trait DescribeCasesRequest extends js.Object {
-    var includeCommunications: js.UndefOr[IncludeCommunications]
-    var includeResolvedCases: js.UndefOr[IncludeResolvedCases]
-    var maxResults: js.UndefOr[MaxResults]
-    var nextToken: js.UndefOr[NextToken]
+    var afterTime: js.UndefOr[AfterTime]
     var beforeTime: js.UndefOr[BeforeTime]
     var caseIdList: js.UndefOr[CaseIdList]
     var displayId: js.UndefOr[DisplayId]
+    var includeCommunications: js.UndefOr[IncludeCommunications]
+    var includeResolvedCases: js.UndefOr[IncludeResolvedCases]
     var language: js.UndefOr[Language]
-    var afterTime: js.UndefOr[AfterTime]
+    var maxResults: js.UndefOr[MaxResults]
+    var nextToken: js.UndefOr[NextToken]
   }
 
   object DescribeCasesRequest {
     def apply(
-      includeCommunications: js.UndefOr[IncludeCommunications] = js.undefined,
-      includeResolvedCases: js.UndefOr[IncludeResolvedCases] = js.undefined,
-      maxResults: js.UndefOr[MaxResults] = js.undefined,
-      nextToken: js.UndefOr[NextToken] = js.undefined,
+      afterTime: js.UndefOr[AfterTime] = js.undefined,
       beforeTime: js.UndefOr[BeforeTime] = js.undefined,
       caseIdList: js.UndefOr[CaseIdList] = js.undefined,
       displayId: js.UndefOr[DisplayId] = js.undefined,
+      includeCommunications: js.UndefOr[IncludeCommunications] = js.undefined,
+      includeResolvedCases: js.UndefOr[IncludeResolvedCases] = js.undefined,
       language: js.UndefOr[Language] = js.undefined,
-      afterTime: js.UndefOr[AfterTime] = js.undefined): DescribeCasesRequest = {
+      maxResults: js.UndefOr[MaxResults] = js.undefined,
+      nextToken: js.UndefOr[NextToken] = js.undefined): DescribeCasesRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "includeCommunications" -> includeCommunications.map { x => x.asInstanceOf[js.Any] },
-        "includeResolvedCases" -> includeResolvedCases.map { x => x.asInstanceOf[js.Any] },
-        "maxResults" -> maxResults.map { x => x.asInstanceOf[js.Any] },
-        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] },
+        "afterTime" -> afterTime.map { x => x.asInstanceOf[js.Any] },
         "beforeTime" -> beforeTime.map { x => x.asInstanceOf[js.Any] },
         "caseIdList" -> caseIdList.map { x => x.asInstanceOf[js.Any] },
         "displayId" -> displayId.map { x => x.asInstanceOf[js.Any] },
+        "includeCommunications" -> includeCommunications.map { x => x.asInstanceOf[js.Any] },
+        "includeResolvedCases" -> includeResolvedCases.map { x => x.asInstanceOf[js.Any] },
         "language" -> language.map { x => x.asInstanceOf[js.Any] },
-        "afterTime" -> afterTime.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "maxResults" -> maxResults.map { x => x.asInstanceOf[js.Any] },
+        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeCasesRequest]
     }
@@ -531,26 +531,26 @@ package support {
    */
   @js.native
   trait DescribeCommunicationsRequest extends js.Object {
-    var maxResults: js.UndefOr[MaxResults]
-    var caseId: js.UndefOr[CaseId]
-    var nextToken: js.UndefOr[NextToken]
-    var beforeTime: js.UndefOr[BeforeTime]
+    var caseId: CaseId
     var afterTime: js.UndefOr[AfterTime]
+    var beforeTime: js.UndefOr[BeforeTime]
+    var maxResults: js.UndefOr[MaxResults]
+    var nextToken: js.UndefOr[NextToken]
   }
 
   object DescribeCommunicationsRequest {
     def apply(
-      maxResults: js.UndefOr[MaxResults] = js.undefined,
-      caseId: js.UndefOr[CaseId] = js.undefined,
-      nextToken: js.UndefOr[NextToken] = js.undefined,
+      caseId: CaseId,
+      afterTime: js.UndefOr[AfterTime] = js.undefined,
       beforeTime: js.UndefOr[BeforeTime] = js.undefined,
-      afterTime: js.UndefOr[AfterTime] = js.undefined): DescribeCommunicationsRequest = {
+      maxResults: js.UndefOr[MaxResults] = js.undefined,
+      nextToken: js.UndefOr[NextToken] = js.undefined): DescribeCommunicationsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "maxResults" -> maxResults.map { x => x.asInstanceOf[js.Any] },
-        "caseId" -> caseId.map { x => x.asInstanceOf[js.Any] },
-        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] },
+        "caseId" -> caseId.asInstanceOf[js.Any],
+        "afterTime" -> afterTime.map { x => x.asInstanceOf[js.Any] },
         "beforeTime" -> beforeTime.map { x => x.asInstanceOf[js.Any] },
-        "afterTime" -> afterTime.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "maxResults" -> maxResults.map { x => x.asInstanceOf[js.Any] },
+        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeCommunicationsRequest]
     }
@@ -582,17 +582,17 @@ package support {
    */
   @js.native
   trait DescribeServicesRequest extends js.Object {
-    var serviceCodeList: js.UndefOr[ServiceCodeList]
     var language: js.UndefOr[Language]
+    var serviceCodeList: js.UndefOr[ServiceCodeList]
   }
 
   object DescribeServicesRequest {
     def apply(
-      serviceCodeList: js.UndefOr[ServiceCodeList] = js.undefined,
-      language: js.UndefOr[Language] = js.undefined): DescribeServicesRequest = {
+      language: js.UndefOr[Language] = js.undefined,
+      serviceCodeList: js.UndefOr[ServiceCodeList] = js.undefined): DescribeServicesRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "serviceCodeList" -> serviceCodeList.map { x => x.asInstanceOf[js.Any] },
-        "language" -> language.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "language" -> language.map { x => x.asInstanceOf[js.Any] },
+        "serviceCodeList" -> serviceCodeList.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeServicesRequest]
     }
@@ -657,14 +657,14 @@ package support {
    */
   @js.native
   trait DescribeTrustedAdvisorCheckRefreshStatusesRequest extends js.Object {
-    var checkIds: js.UndefOr[StringList]
+    var checkIds: StringList
   }
 
   object DescribeTrustedAdvisorCheckRefreshStatusesRequest {
     def apply(
-      checkIds: js.UndefOr[StringList] = js.undefined): DescribeTrustedAdvisorCheckRefreshStatusesRequest = {
+      checkIds: StringList): DescribeTrustedAdvisorCheckRefreshStatusesRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "checkIds" -> checkIds.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "checkIds" -> checkIds.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeTrustedAdvisorCheckRefreshStatusesRequest]
     }
@@ -675,14 +675,14 @@ package support {
    */
   @js.native
   trait DescribeTrustedAdvisorCheckRefreshStatusesResponse extends js.Object {
-    var statuses: js.UndefOr[TrustedAdvisorCheckRefreshStatusList]
+    var statuses: TrustedAdvisorCheckRefreshStatusList
   }
 
   object DescribeTrustedAdvisorCheckRefreshStatusesResponse {
     def apply(
-      statuses: js.UndefOr[TrustedAdvisorCheckRefreshStatusList] = js.undefined): DescribeTrustedAdvisorCheckRefreshStatusesResponse = {
+      statuses: TrustedAdvisorCheckRefreshStatusList): DescribeTrustedAdvisorCheckRefreshStatusesResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "statuses" -> statuses.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "statuses" -> statuses.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeTrustedAdvisorCheckRefreshStatusesResponse]
     }
@@ -693,16 +693,16 @@ package support {
    */
   @js.native
   trait DescribeTrustedAdvisorCheckResultRequest extends js.Object {
-    var checkId: js.UndefOr[String]
+    var checkId: String
     var language: js.UndefOr[String]
   }
 
   object DescribeTrustedAdvisorCheckResultRequest {
     def apply(
-      checkId: js.UndefOr[String] = js.undefined,
+      checkId: String,
       language: js.UndefOr[String] = js.undefined): DescribeTrustedAdvisorCheckResultRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "checkId" -> checkId.map { x => x.asInstanceOf[js.Any] },
+        "checkId" -> checkId.asInstanceOf[js.Any],
         "language" -> language.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeTrustedAdvisorCheckResultRequest]
@@ -732,14 +732,14 @@ package support {
    */
   @js.native
   trait DescribeTrustedAdvisorCheckSummariesRequest extends js.Object {
-    var checkIds: js.UndefOr[StringList]
+    var checkIds: StringList
   }
 
   object DescribeTrustedAdvisorCheckSummariesRequest {
     def apply(
-      checkIds: js.UndefOr[StringList] = js.undefined): DescribeTrustedAdvisorCheckSummariesRequest = {
+      checkIds: StringList): DescribeTrustedAdvisorCheckSummariesRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "checkIds" -> checkIds.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "checkIds" -> checkIds.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeTrustedAdvisorCheckSummariesRequest]
     }
@@ -750,14 +750,14 @@ package support {
    */
   @js.native
   trait DescribeTrustedAdvisorCheckSummariesResponse extends js.Object {
-    var summaries: js.UndefOr[TrustedAdvisorCheckSummaryList]
+    var summaries: TrustedAdvisorCheckSummaryList
   }
 
   object DescribeTrustedAdvisorCheckSummariesResponse {
     def apply(
-      summaries: js.UndefOr[TrustedAdvisorCheckSummaryList] = js.undefined): DescribeTrustedAdvisorCheckSummariesResponse = {
+      summaries: TrustedAdvisorCheckSummaryList): DescribeTrustedAdvisorCheckSummariesResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "summaries" -> summaries.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "summaries" -> summaries.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeTrustedAdvisorCheckSummariesResponse]
     }
@@ -768,14 +768,14 @@ package support {
    */
   @js.native
   trait DescribeTrustedAdvisorChecksRequest extends js.Object {
-    var language: js.UndefOr[String]
+    var language: String
   }
 
   object DescribeTrustedAdvisorChecksRequest {
     def apply(
-      language: js.UndefOr[String] = js.undefined): DescribeTrustedAdvisorChecksRequest = {
+      language: String): DescribeTrustedAdvisorChecksRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "language" -> language.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "language" -> language.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeTrustedAdvisorChecksRequest]
     }
@@ -786,14 +786,14 @@ package support {
    */
   @js.native
   trait DescribeTrustedAdvisorChecksResponse extends js.Object {
-    var checks: js.UndefOr[TrustedAdvisorCheckList]
+    var checks: TrustedAdvisorCheckList
   }
 
   object DescribeTrustedAdvisorChecksResponse {
     def apply(
-      checks: js.UndefOr[TrustedAdvisorCheckList] = js.undefined): DescribeTrustedAdvisorChecksResponse = {
+      checks: TrustedAdvisorCheckList): DescribeTrustedAdvisorChecksResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "checks" -> checks.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "checks" -> checks.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeTrustedAdvisorChecksResponse]
     }
@@ -833,14 +833,14 @@ package support {
    */
   @js.native
   trait RefreshTrustedAdvisorCheckRequest extends js.Object {
-    var checkId: js.UndefOr[String]
+    var checkId: String
   }
 
   object RefreshTrustedAdvisorCheckRequest {
     def apply(
-      checkId: js.UndefOr[String] = js.undefined): RefreshTrustedAdvisorCheckRequest = {
+      checkId: String): RefreshTrustedAdvisorCheckRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "checkId" -> checkId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "checkId" -> checkId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RefreshTrustedAdvisorCheckRequest]
     }
@@ -851,14 +851,14 @@ package support {
    */
   @js.native
   trait RefreshTrustedAdvisorCheckResponse extends js.Object {
-    var status: js.UndefOr[TrustedAdvisorCheckRefreshStatus]
+    var status: TrustedAdvisorCheckRefreshStatus
   }
 
   object RefreshTrustedAdvisorCheckResponse {
     def apply(
-      status: js.UndefOr[TrustedAdvisorCheckRefreshStatus] = js.undefined): RefreshTrustedAdvisorCheckResponse = {
+      status: TrustedAdvisorCheckRefreshStatus): RefreshTrustedAdvisorCheckResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "status" -> status.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "status" -> status.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RefreshTrustedAdvisorCheckResponse]
     }
@@ -887,17 +887,17 @@ package support {
    */
   @js.native
   trait ResolveCaseResponse extends js.Object {
-    var initialCaseStatus: js.UndefOr[CaseStatus]
     var finalCaseStatus: js.UndefOr[CaseStatus]
+    var initialCaseStatus: js.UndefOr[CaseStatus]
   }
 
   object ResolveCaseResponse {
     def apply(
-      initialCaseStatus: js.UndefOr[CaseStatus] = js.undefined,
-      finalCaseStatus: js.UndefOr[CaseStatus] = js.undefined): ResolveCaseResponse = {
+      finalCaseStatus: js.UndefOr[CaseStatus] = js.undefined,
+      initialCaseStatus: js.UndefOr[CaseStatus] = js.undefined): ResolveCaseResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "initialCaseStatus" -> initialCaseStatus.map { x => x.asInstanceOf[js.Any] },
-        "finalCaseStatus" -> finalCaseStatus.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "finalCaseStatus" -> finalCaseStatus.map { x => x.asInstanceOf[js.Any] },
+        "initialCaseStatus" -> initialCaseStatus.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ResolveCaseResponse]
     }
@@ -908,20 +908,20 @@ package support {
    */
   @js.native
   trait Service extends js.Object {
+    var categories: js.UndefOr[CategoryList]
     var code: js.UndefOr[ServiceCode]
     var name: js.UndefOr[ServiceName]
-    var categories: js.UndefOr[CategoryList]
   }
 
   object Service {
     def apply(
+      categories: js.UndefOr[CategoryList] = js.undefined,
       code: js.UndefOr[ServiceCode] = js.undefined,
-      name: js.UndefOr[ServiceName] = js.undefined,
-      categories: js.UndefOr[CategoryList] = js.undefined): Service = {
+      name: js.UndefOr[ServiceName] = js.undefined): Service = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "categories" -> categories.map { x => x.asInstanceOf[js.Any] },
         "code" -> code.map { x => x.asInstanceOf[js.Any] },
-        "name" -> name.map { x => x.asInstanceOf[js.Any] },
-        "categories" -> categories.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "name" -> name.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Service]
     }
@@ -971,26 +971,26 @@ package support {
    */
   @js.native
   trait TrustedAdvisorCheckDescription extends js.Object {
-    var name: js.UndefOr[String]
-    var description: js.UndefOr[String]
-    var id: js.UndefOr[String]
-    var category: js.UndefOr[String]
-    var metadata: js.UndefOr[StringList]
+    var category: String
+    var description: String
+    var id: String
+    var metadata: StringList
+    var name: String
   }
 
   object TrustedAdvisorCheckDescription {
     def apply(
-      name: js.UndefOr[String] = js.undefined,
-      description: js.UndefOr[String] = js.undefined,
-      id: js.UndefOr[String] = js.undefined,
-      category: js.UndefOr[String] = js.undefined,
-      metadata: js.UndefOr[StringList] = js.undefined): TrustedAdvisorCheckDescription = {
+      category: String,
+      description: String,
+      id: String,
+      metadata: StringList,
+      name: String): TrustedAdvisorCheckDescription = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "name" -> name.map { x => x.asInstanceOf[js.Any] },
-        "description" -> description.map { x => x.asInstanceOf[js.Any] },
-        "id" -> id.map { x => x.asInstanceOf[js.Any] },
-        "category" -> category.map { x => x.asInstanceOf[js.Any] },
-        "metadata" -> metadata.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "category" -> category.asInstanceOf[js.Any],
+        "description" -> description.asInstanceOf[js.Any],
+        "id" -> id.asInstanceOf[js.Any],
+        "metadata" -> metadata.asInstanceOf[js.Any],
+        "name" -> name.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TrustedAdvisorCheckDescription]
     }
@@ -1001,20 +1001,20 @@ package support {
    */
   @js.native
   trait TrustedAdvisorCheckRefreshStatus extends js.Object {
-    var checkId: js.UndefOr[String]
-    var status: js.UndefOr[String]
-    var millisUntilNextRefreshable: js.UndefOr[Double]
+    var checkId: String
+    var millisUntilNextRefreshable: Double
+    var status: String
   }
 
   object TrustedAdvisorCheckRefreshStatus {
     def apply(
-      checkId: js.UndefOr[String] = js.undefined,
-      status: js.UndefOr[String] = js.undefined,
-      millisUntilNextRefreshable: js.UndefOr[Double] = js.undefined): TrustedAdvisorCheckRefreshStatus = {
+      checkId: String,
+      millisUntilNextRefreshable: Double,
+      status: String): TrustedAdvisorCheckRefreshStatus = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "checkId" -> checkId.map { x => x.asInstanceOf[js.Any] },
-        "status" -> status.map { x => x.asInstanceOf[js.Any] },
-        "millisUntilNextRefreshable" -> millisUntilNextRefreshable.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "checkId" -> checkId.asInstanceOf[js.Any],
+        "millisUntilNextRefreshable" -> millisUntilNextRefreshable.asInstanceOf[js.Any],
+        "status" -> status.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TrustedAdvisorCheckRefreshStatus]
     }
@@ -1025,29 +1025,29 @@ package support {
    */
   @js.native
   trait TrustedAdvisorCheckResult extends js.Object {
-    var timestamp: js.UndefOr[String]
-    var categorySpecificSummary: js.UndefOr[TrustedAdvisorCategorySpecificSummary]
-    var resourcesSummary: js.UndefOr[TrustedAdvisorResourcesSummary]
-    var status: js.UndefOr[String]
-    var flaggedResources: js.UndefOr[TrustedAdvisorResourceDetailList]
-    var checkId: js.UndefOr[String]
+    var categorySpecificSummary: TrustedAdvisorCategorySpecificSummary
+    var checkId: String
+    var flaggedResources: TrustedAdvisorResourceDetailList
+    var resourcesSummary: TrustedAdvisorResourcesSummary
+    var status: String
+    var timestamp: String
   }
 
   object TrustedAdvisorCheckResult {
     def apply(
-      timestamp: js.UndefOr[String] = js.undefined,
-      categorySpecificSummary: js.UndefOr[TrustedAdvisorCategorySpecificSummary] = js.undefined,
-      resourcesSummary: js.UndefOr[TrustedAdvisorResourcesSummary] = js.undefined,
-      status: js.UndefOr[String] = js.undefined,
-      flaggedResources: js.UndefOr[TrustedAdvisorResourceDetailList] = js.undefined,
-      checkId: js.UndefOr[String] = js.undefined): TrustedAdvisorCheckResult = {
+      categorySpecificSummary: TrustedAdvisorCategorySpecificSummary,
+      checkId: String,
+      flaggedResources: TrustedAdvisorResourceDetailList,
+      resourcesSummary: TrustedAdvisorResourcesSummary,
+      status: String,
+      timestamp: String): TrustedAdvisorCheckResult = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "timestamp" -> timestamp.map { x => x.asInstanceOf[js.Any] },
-        "categorySpecificSummary" -> categorySpecificSummary.map { x => x.asInstanceOf[js.Any] },
-        "resourcesSummary" -> resourcesSummary.map { x => x.asInstanceOf[js.Any] },
-        "status" -> status.map { x => x.asInstanceOf[js.Any] },
-        "flaggedResources" -> flaggedResources.map { x => x.asInstanceOf[js.Any] },
-        "checkId" -> checkId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "categorySpecificSummary" -> categorySpecificSummary.asInstanceOf[js.Any],
+        "checkId" -> checkId.asInstanceOf[js.Any],
+        "flaggedResources" -> flaggedResources.asInstanceOf[js.Any],
+        "resourcesSummary" -> resourcesSummary.asInstanceOf[js.Any],
+        "status" -> status.asInstanceOf[js.Any],
+        "timestamp" -> timestamp.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TrustedAdvisorCheckResult]
     }
@@ -1058,28 +1058,28 @@ package support {
    */
   @js.native
   trait TrustedAdvisorCheckSummary extends js.Object {
-    var timestamp: js.UndefOr[String]
-    var categorySpecificSummary: js.UndefOr[TrustedAdvisorCategorySpecificSummary]
-    var resourcesSummary: js.UndefOr[TrustedAdvisorResourcesSummary]
-    var status: js.UndefOr[String]
-    var checkId: js.UndefOr[String]
+    var categorySpecificSummary: TrustedAdvisorCategorySpecificSummary
+    var checkId: String
+    var resourcesSummary: TrustedAdvisorResourcesSummary
+    var status: String
+    var timestamp: String
     var hasFlaggedResources: js.UndefOr[Boolean]
   }
 
   object TrustedAdvisorCheckSummary {
     def apply(
-      timestamp: js.UndefOr[String] = js.undefined,
-      categorySpecificSummary: js.UndefOr[TrustedAdvisorCategorySpecificSummary] = js.undefined,
-      resourcesSummary: js.UndefOr[TrustedAdvisorResourcesSummary] = js.undefined,
-      status: js.UndefOr[String] = js.undefined,
-      checkId: js.UndefOr[String] = js.undefined,
+      categorySpecificSummary: TrustedAdvisorCategorySpecificSummary,
+      checkId: String,
+      resourcesSummary: TrustedAdvisorResourcesSummary,
+      status: String,
+      timestamp: String,
       hasFlaggedResources: js.UndefOr[Boolean] = js.undefined): TrustedAdvisorCheckSummary = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "timestamp" -> timestamp.map { x => x.asInstanceOf[js.Any] },
-        "categorySpecificSummary" -> categorySpecificSummary.map { x => x.asInstanceOf[js.Any] },
-        "resourcesSummary" -> resourcesSummary.map { x => x.asInstanceOf[js.Any] },
-        "status" -> status.map { x => x.asInstanceOf[js.Any] },
-        "checkId" -> checkId.map { x => x.asInstanceOf[js.Any] },
+        "categorySpecificSummary" -> categorySpecificSummary.asInstanceOf[js.Any],
+        "checkId" -> checkId.asInstanceOf[js.Any],
+        "resourcesSummary" -> resourcesSummary.asInstanceOf[js.Any],
+        "status" -> status.asInstanceOf[js.Any],
+        "timestamp" -> timestamp.asInstanceOf[js.Any],
         "hasFlaggedResources" -> hasFlaggedResources.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TrustedAdvisorCheckSummary]
@@ -1091,17 +1091,17 @@ package support {
    */
   @js.native
   trait TrustedAdvisorCostOptimizingSummary extends js.Object {
-    var estimatedMonthlySavings: js.UndefOr[Double]
-    var estimatedPercentMonthlySavings: js.UndefOr[Double]
+    var estimatedMonthlySavings: Double
+    var estimatedPercentMonthlySavings: Double
   }
 
   object TrustedAdvisorCostOptimizingSummary {
     def apply(
-      estimatedMonthlySavings: js.UndefOr[Double] = js.undefined,
-      estimatedPercentMonthlySavings: js.UndefOr[Double] = js.undefined): TrustedAdvisorCostOptimizingSummary = {
+      estimatedMonthlySavings: Double,
+      estimatedPercentMonthlySavings: Double): TrustedAdvisorCostOptimizingSummary = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "estimatedMonthlySavings" -> estimatedMonthlySavings.map { x => x.asInstanceOf[js.Any] },
-        "estimatedPercentMonthlySavings" -> estimatedPercentMonthlySavings.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "estimatedMonthlySavings" -> estimatedMonthlySavings.asInstanceOf[js.Any],
+        "estimatedPercentMonthlySavings" -> estimatedPercentMonthlySavings.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TrustedAdvisorCostOptimizingSummary]
     }
@@ -1112,26 +1112,26 @@ package support {
    */
   @js.native
   trait TrustedAdvisorResourceDetail extends js.Object {
-    var resourceId: js.UndefOr[String]
-    var status: js.UndefOr[String]
-    var region: js.UndefOr[String]
-    var metadata: js.UndefOr[StringList]
+    var metadata: StringList
+    var resourceId: String
+    var status: String
     var isSuppressed: js.UndefOr[Boolean]
+    var region: js.UndefOr[String]
   }
 
   object TrustedAdvisorResourceDetail {
     def apply(
-      resourceId: js.UndefOr[String] = js.undefined,
-      status: js.UndefOr[String] = js.undefined,
-      region: js.UndefOr[String] = js.undefined,
-      metadata: js.UndefOr[StringList] = js.undefined,
-      isSuppressed: js.UndefOr[Boolean] = js.undefined): TrustedAdvisorResourceDetail = {
+      metadata: StringList,
+      resourceId: String,
+      status: String,
+      isSuppressed: js.UndefOr[Boolean] = js.undefined,
+      region: js.UndefOr[String] = js.undefined): TrustedAdvisorResourceDetail = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "resourceId" -> resourceId.map { x => x.asInstanceOf[js.Any] },
-        "status" -> status.map { x => x.asInstanceOf[js.Any] },
-        "region" -> region.map { x => x.asInstanceOf[js.Any] },
-        "metadata" -> metadata.map { x => x.asInstanceOf[js.Any] },
-        "isSuppressed" -> isSuppressed.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "metadata" -> metadata.asInstanceOf[js.Any],
+        "resourceId" -> resourceId.asInstanceOf[js.Any],
+        "status" -> status.asInstanceOf[js.Any],
+        "isSuppressed" -> isSuppressed.map { x => x.asInstanceOf[js.Any] },
+        "region" -> region.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TrustedAdvisorResourceDetail]
     }
@@ -1142,23 +1142,23 @@ package support {
    */
   @js.native
   trait TrustedAdvisorResourcesSummary extends js.Object {
-    var resourcesProcessed: js.UndefOr[Double]
-    var resourcesFlagged: js.UndefOr[Double]
-    var resourcesIgnored: js.UndefOr[Double]
-    var resourcesSuppressed: js.UndefOr[Double]
+    var resourcesFlagged: Double
+    var resourcesIgnored: Double
+    var resourcesProcessed: Double
+    var resourcesSuppressed: Double
   }
 
   object TrustedAdvisorResourcesSummary {
     def apply(
-      resourcesProcessed: js.UndefOr[Double] = js.undefined,
-      resourcesFlagged: js.UndefOr[Double] = js.undefined,
-      resourcesIgnored: js.UndefOr[Double] = js.undefined,
-      resourcesSuppressed: js.UndefOr[Double] = js.undefined): TrustedAdvisorResourcesSummary = {
+      resourcesFlagged: Double,
+      resourcesIgnored: Double,
+      resourcesProcessed: Double,
+      resourcesSuppressed: Double): TrustedAdvisorResourcesSummary = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "resourcesProcessed" -> resourcesProcessed.map { x => x.asInstanceOf[js.Any] },
-        "resourcesFlagged" -> resourcesFlagged.map { x => x.asInstanceOf[js.Any] },
-        "resourcesIgnored" -> resourcesIgnored.map { x => x.asInstanceOf[js.Any] },
-        "resourcesSuppressed" -> resourcesSuppressed.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "resourcesFlagged" -> resourcesFlagged.asInstanceOf[js.Any],
+        "resourcesIgnored" -> resourcesIgnored.asInstanceOf[js.Any],
+        "resourcesProcessed" -> resourcesProcessed.asInstanceOf[js.Any],
+        "resourcesSuppressed" -> resourcesSuppressed.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TrustedAdvisorResourcesSummary]
     }

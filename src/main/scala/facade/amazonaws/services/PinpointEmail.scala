@@ -105,17 +105,17 @@ package pinpointemail {
    */
   @js.native
   trait Body extends js.Object {
-    var Text: js.UndefOr[Content]
     var Html: js.UndefOr[Content]
+    var Text: js.UndefOr[Content]
   }
 
   object Body {
     def apply(
-      Text: js.UndefOr[Content] = js.undefined,
-      Html: js.UndefOr[Content] = js.undefined): Body = {
+      Html: js.UndefOr[Content] = js.undefined,
+      Text: js.UndefOr[Content] = js.undefined): Body = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Text" -> Text.map { x => x.asInstanceOf[js.Any] },
-        "Html" -> Html.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Html" -> Html.map { x => x.asInstanceOf[js.Any] },
+        "Text" -> Text.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Body]
     }
@@ -126,14 +126,14 @@ package pinpointemail {
    */
   @js.native
   trait CloudWatchDestination extends js.Object {
-    var DimensionConfigurations: js.UndefOr[CloudWatchDimensionConfigurations]
+    var DimensionConfigurations: CloudWatchDimensionConfigurations
   }
 
   object CloudWatchDestination {
     def apply(
-      DimensionConfigurations: js.UndefOr[CloudWatchDimensionConfigurations] = js.undefined): CloudWatchDestination = {
+      DimensionConfigurations: CloudWatchDimensionConfigurations): CloudWatchDestination = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "DimensionConfigurations" -> DimensionConfigurations.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "DimensionConfigurations" -> DimensionConfigurations.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CloudWatchDestination]
     }
@@ -144,20 +144,20 @@ package pinpointemail {
    */
   @js.native
   trait CloudWatchDimensionConfiguration extends js.Object {
-    var DimensionName: js.UndefOr[DimensionName]
-    var DimensionValueSource: js.UndefOr[DimensionValueSource]
-    var DefaultDimensionValue: js.UndefOr[DefaultDimensionValue]
+    var DefaultDimensionValue: DefaultDimensionValue
+    var DimensionName: DimensionName
+    var DimensionValueSource: DimensionValueSource
   }
 
   object CloudWatchDimensionConfiguration {
     def apply(
-      DimensionName: js.UndefOr[DimensionName] = js.undefined,
-      DimensionValueSource: js.UndefOr[DimensionValueSource] = js.undefined,
-      DefaultDimensionValue: js.UndefOr[DefaultDimensionValue] = js.undefined): CloudWatchDimensionConfiguration = {
+      DefaultDimensionValue: DefaultDimensionValue,
+      DimensionName: DimensionName,
+      DimensionValueSource: DimensionValueSource): CloudWatchDimensionConfiguration = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "DimensionName" -> DimensionName.map { x => x.asInstanceOf[js.Any] },
-        "DimensionValueSource" -> DimensionValueSource.map { x => x.asInstanceOf[js.Any] },
-        "DefaultDimensionValue" -> DefaultDimensionValue.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "DefaultDimensionValue" -> DefaultDimensionValue.asInstanceOf[js.Any],
+        "DimensionName" -> DimensionName.asInstanceOf[js.Any],
+        "DimensionValueSource" -> DimensionValueSource.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CloudWatchDimensionConfiguration]
     }
@@ -168,16 +168,16 @@ package pinpointemail {
    */
   @js.native
   trait Content extends js.Object {
-    var Data: js.UndefOr[MessageData]
+    var Data: MessageData
     var Charset: js.UndefOr[Charset]
   }
 
   object Content {
     def apply(
-      Data: js.UndefOr[MessageData] = js.undefined,
+      Data: MessageData,
       Charset: js.UndefOr[Charset] = js.undefined): Content = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Data" -> Data.map { x => x.asInstanceOf[js.Any] },
+        "Data" -> Data.asInstanceOf[js.Any],
         "Charset" -> Charset.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Content]
@@ -189,20 +189,20 @@ package pinpointemail {
    */
   @js.native
   trait CreateConfigurationSetEventDestinationRequest extends js.Object {
-    var ConfigurationSetName: js.UndefOr[ConfigurationSetName]
-    var EventDestinationName: js.UndefOr[EventDestinationName]
-    var EventDestination: js.UndefOr[EventDestinationDefinition]
+    var ConfigurationSetName: ConfigurationSetName
+    var EventDestination: EventDestinationDefinition
+    var EventDestinationName: EventDestinationName
   }
 
   object CreateConfigurationSetEventDestinationRequest {
     def apply(
-      ConfigurationSetName: js.UndefOr[ConfigurationSetName] = js.undefined,
-      EventDestinationName: js.UndefOr[EventDestinationName] = js.undefined,
-      EventDestination: js.UndefOr[EventDestinationDefinition] = js.undefined): CreateConfigurationSetEventDestinationRequest = {
+      ConfigurationSetName: ConfigurationSetName,
+      EventDestination: EventDestinationDefinition,
+      EventDestinationName: EventDestinationName): CreateConfigurationSetEventDestinationRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ConfigurationSetName" -> ConfigurationSetName.map { x => x.asInstanceOf[js.Any] },
-        "EventDestinationName" -> EventDestinationName.map { x => x.asInstanceOf[js.Any] },
-        "EventDestination" -> EventDestination.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ConfigurationSetName" -> ConfigurationSetName.asInstanceOf[js.Any],
+        "EventDestination" -> EventDestination.asInstanceOf[js.Any],
+        "EventDestinationName" -> EventDestinationName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateConfigurationSetEventDestinationRequest]
     }
@@ -229,26 +229,26 @@ package pinpointemail {
    */
   @js.native
   trait CreateConfigurationSetRequest extends js.Object {
-    var TrackingOptions: js.UndefOr[TrackingOptions]
-    var SendingOptions: js.UndefOr[SendingOptions]
+    var ConfigurationSetName: js.UndefOr[ConfigurationSetName]
     var DeliveryOptions: js.UndefOr[DeliveryOptions]
     var ReputationOptions: js.UndefOr[ReputationOptions]
-    var ConfigurationSetName: js.UndefOr[ConfigurationSetName]
+    var SendingOptions: js.UndefOr[SendingOptions]
+    var TrackingOptions: js.UndefOr[TrackingOptions]
   }
 
   object CreateConfigurationSetRequest {
     def apply(
-      TrackingOptions: js.UndefOr[TrackingOptions] = js.undefined,
-      SendingOptions: js.UndefOr[SendingOptions] = js.undefined,
+      ConfigurationSetName: js.UndefOr[ConfigurationSetName] = js.undefined,
       DeliveryOptions: js.UndefOr[DeliveryOptions] = js.undefined,
       ReputationOptions: js.UndefOr[ReputationOptions] = js.undefined,
-      ConfigurationSetName: js.UndefOr[ConfigurationSetName] = js.undefined): CreateConfigurationSetRequest = {
+      SendingOptions: js.UndefOr[SendingOptions] = js.undefined,
+      TrackingOptions: js.UndefOr[TrackingOptions] = js.undefined): CreateConfigurationSetRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "TrackingOptions" -> TrackingOptions.map { x => x.asInstanceOf[js.Any] },
-        "SendingOptions" -> SendingOptions.map { x => x.asInstanceOf[js.Any] },
+        "ConfigurationSetName" -> ConfigurationSetName.map { x => x.asInstanceOf[js.Any] },
         "DeliveryOptions" -> DeliveryOptions.map { x => x.asInstanceOf[js.Any] },
         "ReputationOptions" -> ReputationOptions.map { x => x.asInstanceOf[js.Any] },
-        "ConfigurationSetName" -> ConfigurationSetName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "SendingOptions" -> SendingOptions.map { x => x.asInstanceOf[js.Any] },
+        "TrackingOptions" -> TrackingOptions.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateConfigurationSetRequest]
     }
@@ -275,14 +275,14 @@ package pinpointemail {
    */
   @js.native
   trait CreateDedicatedIpPoolRequest extends js.Object {
-    var PoolName: js.UndefOr[PoolName]
+    var PoolName: PoolName
   }
 
   object CreateDedicatedIpPoolRequest {
     def apply(
-      PoolName: js.UndefOr[PoolName] = js.undefined): CreateDedicatedIpPoolRequest = {
+      PoolName: PoolName): CreateDedicatedIpPoolRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "PoolName" -> PoolName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "PoolName" -> PoolName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateDedicatedIpPoolRequest]
     }
@@ -309,14 +309,14 @@ package pinpointemail {
    */
   @js.native
   trait CreateEmailIdentityRequest extends js.Object {
-    var EmailIdentity: js.UndefOr[Identity]
+    var EmailIdentity: Identity
   }
 
   object CreateEmailIdentityRequest {
     def apply(
-      EmailIdentity: js.UndefOr[Identity] = js.undefined): CreateEmailIdentityRequest = {
+      EmailIdentity: Identity): CreateEmailIdentityRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "EmailIdentity" -> EmailIdentity.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "EmailIdentity" -> EmailIdentity.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateEmailIdentityRequest]
     }
@@ -327,20 +327,20 @@ package pinpointemail {
    */
   @js.native
   trait CreateEmailIdentityResponse extends js.Object {
+    var DkimAttributes: js.UndefOr[DkimAttributes]
     var IdentityType: js.UndefOr[IdentityType]
     var VerifiedForSendingStatus: js.UndefOr[Enabled]
-    var DkimAttributes: js.UndefOr[DkimAttributes]
   }
 
   object CreateEmailIdentityResponse {
     def apply(
+      DkimAttributes: js.UndefOr[DkimAttributes] = js.undefined,
       IdentityType: js.UndefOr[IdentityType] = js.undefined,
-      VerifiedForSendingStatus: js.UndefOr[Enabled] = js.undefined,
-      DkimAttributes: js.UndefOr[DkimAttributes] = js.undefined): CreateEmailIdentityResponse = {
+      VerifiedForSendingStatus: js.UndefOr[Enabled] = js.undefined): CreateEmailIdentityResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "DkimAttributes" -> DkimAttributes.map { x => x.asInstanceOf[js.Any] },
         "IdentityType" -> IdentityType.map { x => x.asInstanceOf[js.Any] },
-        "VerifiedForSendingStatus" -> VerifiedForSendingStatus.map { x => x.asInstanceOf[js.Any] },
-        "DkimAttributes" -> DkimAttributes.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "VerifiedForSendingStatus" -> VerifiedForSendingStatus.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateEmailIdentityResponse]
     }
@@ -351,22 +351,22 @@ package pinpointemail {
    */
   @js.native
   trait DedicatedIp extends js.Object {
-    var Ip: js.UndefOr[Ip]
-    var WarmupStatus: js.UndefOr[WarmupStatus]
-    var WarmupPercentage: js.UndefOr[Percentage100Wrapper]
+    var Ip: Ip
+    var WarmupPercentage: Percentage100Wrapper
+    var WarmupStatus: WarmupStatus
     var PoolName: js.UndefOr[PoolName]
   }
 
   object DedicatedIp {
     def apply(
-      Ip: js.UndefOr[Ip] = js.undefined,
-      WarmupStatus: js.UndefOr[WarmupStatus] = js.undefined,
-      WarmupPercentage: js.UndefOr[Percentage100Wrapper] = js.undefined,
+      Ip: Ip,
+      WarmupPercentage: Percentage100Wrapper,
+      WarmupStatus: WarmupStatus,
       PoolName: js.UndefOr[PoolName] = js.undefined): DedicatedIp = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Ip" -> Ip.map { x => x.asInstanceOf[js.Any] },
-        "WarmupStatus" -> WarmupStatus.map { x => x.asInstanceOf[js.Any] },
-        "WarmupPercentage" -> WarmupPercentage.map { x => x.asInstanceOf[js.Any] },
+        "Ip" -> Ip.asInstanceOf[js.Any],
+        "WarmupPercentage" -> WarmupPercentage.asInstanceOf[js.Any],
+        "WarmupStatus" -> WarmupStatus.asInstanceOf[js.Any],
         "PoolName" -> PoolName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DedicatedIp]
@@ -378,17 +378,17 @@ package pinpointemail {
    */
   @js.native
   trait DeleteConfigurationSetEventDestinationRequest extends js.Object {
-    var ConfigurationSetName: js.UndefOr[ConfigurationSetName]
-    var EventDestinationName: js.UndefOr[EventDestinationName]
+    var ConfigurationSetName: ConfigurationSetName
+    var EventDestinationName: EventDestinationName
   }
 
   object DeleteConfigurationSetEventDestinationRequest {
     def apply(
-      ConfigurationSetName: js.UndefOr[ConfigurationSetName] = js.undefined,
-      EventDestinationName: js.UndefOr[EventDestinationName] = js.undefined): DeleteConfigurationSetEventDestinationRequest = {
+      ConfigurationSetName: ConfigurationSetName,
+      EventDestinationName: EventDestinationName): DeleteConfigurationSetEventDestinationRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ConfigurationSetName" -> ConfigurationSetName.map { x => x.asInstanceOf[js.Any] },
-        "EventDestinationName" -> EventDestinationName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ConfigurationSetName" -> ConfigurationSetName.asInstanceOf[js.Any],
+        "EventDestinationName" -> EventDestinationName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteConfigurationSetEventDestinationRequest]
     }
@@ -415,14 +415,14 @@ package pinpointemail {
    */
   @js.native
   trait DeleteConfigurationSetRequest extends js.Object {
-    var ConfigurationSetName: js.UndefOr[ConfigurationSetName]
+    var ConfigurationSetName: ConfigurationSetName
   }
 
   object DeleteConfigurationSetRequest {
     def apply(
-      ConfigurationSetName: js.UndefOr[ConfigurationSetName] = js.undefined): DeleteConfigurationSetRequest = {
+      ConfigurationSetName: ConfigurationSetName): DeleteConfigurationSetRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ConfigurationSetName" -> ConfigurationSetName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ConfigurationSetName" -> ConfigurationSetName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteConfigurationSetRequest]
     }
@@ -449,14 +449,14 @@ package pinpointemail {
    */
   @js.native
   trait DeleteDedicatedIpPoolRequest extends js.Object {
-    var PoolName: js.UndefOr[PoolName]
+    var PoolName: PoolName
   }
 
   object DeleteDedicatedIpPoolRequest {
     def apply(
-      PoolName: js.UndefOr[PoolName] = js.undefined): DeleteDedicatedIpPoolRequest = {
+      PoolName: PoolName): DeleteDedicatedIpPoolRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "PoolName" -> PoolName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "PoolName" -> PoolName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteDedicatedIpPoolRequest]
     }
@@ -483,14 +483,14 @@ package pinpointemail {
    */
   @js.native
   trait DeleteEmailIdentityRequest extends js.Object {
-    var EmailIdentity: js.UndefOr[Identity]
+    var EmailIdentity: Identity
   }
 
   object DeleteEmailIdentityRequest {
     def apply(
-      EmailIdentity: js.UndefOr[Identity] = js.undefined): DeleteEmailIdentityRequest = {
+      EmailIdentity: Identity): DeleteEmailIdentityRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "EmailIdentity" -> EmailIdentity.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "EmailIdentity" -> EmailIdentity.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteEmailIdentityRequest]
     }
@@ -535,20 +535,20 @@ package pinpointemail {
    */
   @js.native
   trait Destination extends js.Object {
-    var ToAddresses: js.UndefOr[EmailAddressList]
-    var CcAddresses: js.UndefOr[EmailAddressList]
     var BccAddresses: js.UndefOr[EmailAddressList]
+    var CcAddresses: js.UndefOr[EmailAddressList]
+    var ToAddresses: js.UndefOr[EmailAddressList]
   }
 
   object Destination {
     def apply(
-      ToAddresses: js.UndefOr[EmailAddressList] = js.undefined,
+      BccAddresses: js.UndefOr[EmailAddressList] = js.undefined,
       CcAddresses: js.UndefOr[EmailAddressList] = js.undefined,
-      BccAddresses: js.UndefOr[EmailAddressList] = js.undefined): Destination = {
+      ToAddresses: js.UndefOr[EmailAddressList] = js.undefined): Destination = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ToAddresses" -> ToAddresses.map { x => x.asInstanceOf[js.Any] },
+        "BccAddresses" -> BccAddresses.map { x => x.asInstanceOf[js.Any] },
         "CcAddresses" -> CcAddresses.map { x => x.asInstanceOf[js.Any] },
-        "BccAddresses" -> BccAddresses.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ToAddresses" -> ToAddresses.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Destination]
     }
@@ -590,7 +590,7 @@ package pinpointemail {
   }
 
   /**
-   * <p>The DKIM authentication status of the identity. The status can be one of the following:</p> <ul> <li> <p> <code>PENDING</code> – The DKIM verification process was initiated, and Amazon Pinpoint is still waiting for the required CNAME records to appear in the DNS configuration for the domain.</p> </li> <li> <p> <code>SUCCESS</code> – The DKIM authentication process completed successfully.</p> </li> <li> <p> <code>FAILED</code> – The DKIM authentication process failed. This can happen when Amazon Pinpoint fails to find the required CNAME records in the DNS configuration of the domain.</p> </li> <li> <p> <code>TEMPORARY_FAILURE</code> – A temporary issue is preventing Amazon Pinpoint from determining the DKIM authentication status of the domain.</p> </li> <li> <p> <code>NOT_STARTED</code> – The DKIM verification process hasn't been initiated for the domain.</p> </li> </ul>
+   * <p>The DKIM authentication status of the identity. The status can be one of the following:</p> <ul> <li> <p> <code>PENDING</code> ? The DKIM verification process was initiated, and Amazon Pinpoint is still waiting for the required CNAME records to appear in the DNS configuration for the domain.</p> </li> <li> <p> <code>SUCCESS</code> ? The DKIM authentication process completed successfully.</p> </li> <li> <p> <code>FAILED</code> ? The DKIM authentication process failed. This can happen when Amazon Pinpoint fails to find the required CNAME records in the DNS configuration of the domain.</p> </li> <li> <p> <code>TEMPORARY_FAILURE</code> ? A temporary issue is preventing Amazon Pinpoint from determining the DKIM authentication status of the domain.</p> </li> <li> <p> <code>NOT_STARTED</code> ? The DKIM verification process hasn't been initiated for the domain.</p> </li> </ul>
    */
   object DkimStatusEnum {
     val PENDING = "PENDING"
@@ -607,17 +607,17 @@ package pinpointemail {
    */
   @js.native
   trait EmailContent extends js.Object {
-    var Simple: js.UndefOr[Message]
     var Raw: js.UndefOr[RawMessage]
+    var Simple: js.UndefOr[Message]
   }
 
   object EmailContent {
     def apply(
-      Simple: js.UndefOr[Message] = js.undefined,
-      Raw: js.UndefOr[RawMessage] = js.undefined): EmailContent = {
+      Raw: js.UndefOr[RawMessage] = js.undefined,
+      Simple: js.UndefOr[Message] = js.undefined): EmailContent = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Simple" -> Simple.map { x => x.asInstanceOf[js.Any] },
-        "Raw" -> Raw.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Raw" -> Raw.map { x => x.asInstanceOf[js.Any] },
+        "Simple" -> Simple.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EmailContent]
     }
@@ -628,32 +628,32 @@ package pinpointemail {
    */
   @js.native
   trait EventDestination extends js.Object {
-    var Name: js.UndefOr[EventDestinationName]
+    var MatchingEventTypes: EventTypes
+    var Name: EventDestinationName
+    var CloudWatchDestination: js.UndefOr[CloudWatchDestination]
     var Enabled: js.UndefOr[Enabled]
     var KinesisFirehoseDestination: js.UndefOr[KinesisFirehoseDestination]
-    var CloudWatchDestination: js.UndefOr[CloudWatchDestination]
-    var MatchingEventTypes: js.UndefOr[EventTypes]
-    var SnsDestination: js.UndefOr[SnsDestination]
     var PinpointDestination: js.UndefOr[PinpointDestination]
+    var SnsDestination: js.UndefOr[SnsDestination]
   }
 
   object EventDestination {
     def apply(
-      Name: js.UndefOr[EventDestinationName] = js.undefined,
+      MatchingEventTypes: EventTypes,
+      Name: EventDestinationName,
+      CloudWatchDestination: js.UndefOr[CloudWatchDestination] = js.undefined,
       Enabled: js.UndefOr[Enabled] = js.undefined,
       KinesisFirehoseDestination: js.UndefOr[KinesisFirehoseDestination] = js.undefined,
-      CloudWatchDestination: js.UndefOr[CloudWatchDestination] = js.undefined,
-      MatchingEventTypes: js.UndefOr[EventTypes] = js.undefined,
-      SnsDestination: js.UndefOr[SnsDestination] = js.undefined,
-      PinpointDestination: js.UndefOr[PinpointDestination] = js.undefined): EventDestination = {
+      PinpointDestination: js.UndefOr[PinpointDestination] = js.undefined,
+      SnsDestination: js.UndefOr[SnsDestination] = js.undefined): EventDestination = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
+        "MatchingEventTypes" -> MatchingEventTypes.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
+        "CloudWatchDestination" -> CloudWatchDestination.map { x => x.asInstanceOf[js.Any] },
         "Enabled" -> Enabled.map { x => x.asInstanceOf[js.Any] },
         "KinesisFirehoseDestination" -> KinesisFirehoseDestination.map { x => x.asInstanceOf[js.Any] },
-        "CloudWatchDestination" -> CloudWatchDestination.map { x => x.asInstanceOf[js.Any] },
-        "MatchingEventTypes" -> MatchingEventTypes.map { x => x.asInstanceOf[js.Any] },
-        "SnsDestination" -> SnsDestination.map { x => x.asInstanceOf[js.Any] },
-        "PinpointDestination" -> PinpointDestination.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "PinpointDestination" -> PinpointDestination.map { x => x.asInstanceOf[js.Any] },
+        "SnsDestination" -> SnsDestination.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EventDestination]
     }
@@ -664,29 +664,29 @@ package pinpointemail {
    */
   @js.native
   trait EventDestinationDefinition extends js.Object {
+    var CloudWatchDestination: js.UndefOr[CloudWatchDestination]
     var Enabled: js.UndefOr[Enabled]
     var KinesisFirehoseDestination: js.UndefOr[KinesisFirehoseDestination]
-    var CloudWatchDestination: js.UndefOr[CloudWatchDestination]
     var MatchingEventTypes: js.UndefOr[EventTypes]
-    var SnsDestination: js.UndefOr[SnsDestination]
     var PinpointDestination: js.UndefOr[PinpointDestination]
+    var SnsDestination: js.UndefOr[SnsDestination]
   }
 
   object EventDestinationDefinition {
     def apply(
+      CloudWatchDestination: js.UndefOr[CloudWatchDestination] = js.undefined,
       Enabled: js.UndefOr[Enabled] = js.undefined,
       KinesisFirehoseDestination: js.UndefOr[KinesisFirehoseDestination] = js.undefined,
-      CloudWatchDestination: js.UndefOr[CloudWatchDestination] = js.undefined,
       MatchingEventTypes: js.UndefOr[EventTypes] = js.undefined,
-      SnsDestination: js.UndefOr[SnsDestination] = js.undefined,
-      PinpointDestination: js.UndefOr[PinpointDestination] = js.undefined): EventDestinationDefinition = {
+      PinpointDestination: js.UndefOr[PinpointDestination] = js.undefined,
+      SnsDestination: js.UndefOr[SnsDestination] = js.undefined): EventDestinationDefinition = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "CloudWatchDestination" -> CloudWatchDestination.map { x => x.asInstanceOf[js.Any] },
         "Enabled" -> Enabled.map { x => x.asInstanceOf[js.Any] },
         "KinesisFirehoseDestination" -> KinesisFirehoseDestination.map { x => x.asInstanceOf[js.Any] },
-        "CloudWatchDestination" -> CloudWatchDestination.map { x => x.asInstanceOf[js.Any] },
         "MatchingEventTypes" -> MatchingEventTypes.map { x => x.asInstanceOf[js.Any] },
-        "SnsDestination" -> SnsDestination.map { x => x.asInstanceOf[js.Any] },
-        "PinpointDestination" -> PinpointDestination.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "PinpointDestination" -> PinpointDestination.map { x => x.asInstanceOf[js.Any] },
+        "SnsDestination" -> SnsDestination.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EventDestinationDefinition]
     }
@@ -729,26 +729,26 @@ package pinpointemail {
    */
   @js.native
   trait GetAccountResponse extends js.Object {
-    var ProductionAccessEnabled: js.UndefOr[Enabled]
-    var SendingEnabled: js.UndefOr[Enabled]
-    var EnforcementStatus: js.UndefOr[GeneralEnforcementStatus]
-    var SendQuota: js.UndefOr[SendQuota]
     var DedicatedIpAutoWarmupEnabled: js.UndefOr[Enabled]
+    var EnforcementStatus: js.UndefOr[GeneralEnforcementStatus]
+    var ProductionAccessEnabled: js.UndefOr[Enabled]
+    var SendQuota: js.UndefOr[SendQuota]
+    var SendingEnabled: js.UndefOr[Enabled]
   }
 
   object GetAccountResponse {
     def apply(
-      ProductionAccessEnabled: js.UndefOr[Enabled] = js.undefined,
-      SendingEnabled: js.UndefOr[Enabled] = js.undefined,
+      DedicatedIpAutoWarmupEnabled: js.UndefOr[Enabled] = js.undefined,
       EnforcementStatus: js.UndefOr[GeneralEnforcementStatus] = js.undefined,
+      ProductionAccessEnabled: js.UndefOr[Enabled] = js.undefined,
       SendQuota: js.UndefOr[SendQuota] = js.undefined,
-      DedicatedIpAutoWarmupEnabled: js.UndefOr[Enabled] = js.undefined): GetAccountResponse = {
+      SendingEnabled: js.UndefOr[Enabled] = js.undefined): GetAccountResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ProductionAccessEnabled" -> ProductionAccessEnabled.map { x => x.asInstanceOf[js.Any] },
-        "SendingEnabled" -> SendingEnabled.map { x => x.asInstanceOf[js.Any] },
+        "DedicatedIpAutoWarmupEnabled" -> DedicatedIpAutoWarmupEnabled.map { x => x.asInstanceOf[js.Any] },
         "EnforcementStatus" -> EnforcementStatus.map { x => x.asInstanceOf[js.Any] },
+        "ProductionAccessEnabled" -> ProductionAccessEnabled.map { x => x.asInstanceOf[js.Any] },
         "SendQuota" -> SendQuota.map { x => x.asInstanceOf[js.Any] },
-        "DedicatedIpAutoWarmupEnabled" -> DedicatedIpAutoWarmupEnabled.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "SendingEnabled" -> SendingEnabled.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetAccountResponse]
     }
@@ -759,14 +759,14 @@ package pinpointemail {
    */
   @js.native
   trait GetConfigurationSetEventDestinationsRequest extends js.Object {
-    var ConfigurationSetName: js.UndefOr[ConfigurationSetName]
+    var ConfigurationSetName: ConfigurationSetName
   }
 
   object GetConfigurationSetEventDestinationsRequest {
     def apply(
-      ConfigurationSetName: js.UndefOr[ConfigurationSetName] = js.undefined): GetConfigurationSetEventDestinationsRequest = {
+      ConfigurationSetName: ConfigurationSetName): GetConfigurationSetEventDestinationsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ConfigurationSetName" -> ConfigurationSetName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ConfigurationSetName" -> ConfigurationSetName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetConfigurationSetEventDestinationsRequest]
     }
@@ -795,14 +795,14 @@ package pinpointemail {
    */
   @js.native
   trait GetConfigurationSetRequest extends js.Object {
-    var ConfigurationSetName: js.UndefOr[ConfigurationSetName]
+    var ConfigurationSetName: ConfigurationSetName
   }
 
   object GetConfigurationSetRequest {
     def apply(
-      ConfigurationSetName: js.UndefOr[ConfigurationSetName] = js.undefined): GetConfigurationSetRequest = {
+      ConfigurationSetName: ConfigurationSetName): GetConfigurationSetRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ConfigurationSetName" -> ConfigurationSetName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ConfigurationSetName" -> ConfigurationSetName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetConfigurationSetRequest]
     }
@@ -813,26 +813,26 @@ package pinpointemail {
    */
   @js.native
   trait GetConfigurationSetResponse extends js.Object {
-    var TrackingOptions: js.UndefOr[TrackingOptions]
-    var SendingOptions: js.UndefOr[SendingOptions]
+    var ConfigurationSetName: js.UndefOr[ConfigurationSetName]
     var DeliveryOptions: js.UndefOr[DeliveryOptions]
     var ReputationOptions: js.UndefOr[ReputationOptions]
-    var ConfigurationSetName: js.UndefOr[ConfigurationSetName]
+    var SendingOptions: js.UndefOr[SendingOptions]
+    var TrackingOptions: js.UndefOr[TrackingOptions]
   }
 
   object GetConfigurationSetResponse {
     def apply(
-      TrackingOptions: js.UndefOr[TrackingOptions] = js.undefined,
-      SendingOptions: js.UndefOr[SendingOptions] = js.undefined,
+      ConfigurationSetName: js.UndefOr[ConfigurationSetName] = js.undefined,
       DeliveryOptions: js.UndefOr[DeliveryOptions] = js.undefined,
       ReputationOptions: js.UndefOr[ReputationOptions] = js.undefined,
-      ConfigurationSetName: js.UndefOr[ConfigurationSetName] = js.undefined): GetConfigurationSetResponse = {
+      SendingOptions: js.UndefOr[SendingOptions] = js.undefined,
+      TrackingOptions: js.UndefOr[TrackingOptions] = js.undefined): GetConfigurationSetResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "TrackingOptions" -> TrackingOptions.map { x => x.asInstanceOf[js.Any] },
-        "SendingOptions" -> SendingOptions.map { x => x.asInstanceOf[js.Any] },
+        "ConfigurationSetName" -> ConfigurationSetName.map { x => x.asInstanceOf[js.Any] },
         "DeliveryOptions" -> DeliveryOptions.map { x => x.asInstanceOf[js.Any] },
         "ReputationOptions" -> ReputationOptions.map { x => x.asInstanceOf[js.Any] },
-        "ConfigurationSetName" -> ConfigurationSetName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "SendingOptions" -> SendingOptions.map { x => x.asInstanceOf[js.Any] },
+        "TrackingOptions" -> TrackingOptions.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetConfigurationSetResponse]
     }
@@ -843,14 +843,14 @@ package pinpointemail {
    */
   @js.native
   trait GetDedicatedIpRequest extends js.Object {
-    var Ip: js.UndefOr[Ip]
+    var Ip: Ip
   }
 
   object GetDedicatedIpRequest {
     def apply(
-      Ip: js.UndefOr[Ip] = js.undefined): GetDedicatedIpRequest = {
+      Ip: Ip): GetDedicatedIpRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Ip" -> Ip.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Ip" -> Ip.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetDedicatedIpRequest]
     }
@@ -879,20 +879,20 @@ package pinpointemail {
    */
   @js.native
   trait GetDedicatedIpsRequest extends js.Object {
-    var PoolName: js.UndefOr[PoolName]
     var NextToken: js.UndefOr[NextToken]
     var PageSize: js.UndefOr[MaxItems]
+    var PoolName: js.UndefOr[PoolName]
   }
 
   object GetDedicatedIpsRequest {
     def apply(
-      PoolName: js.UndefOr[PoolName] = js.undefined,
       NextToken: js.UndefOr[NextToken] = js.undefined,
-      PageSize: js.UndefOr[MaxItems] = js.undefined): GetDedicatedIpsRequest = {
+      PageSize: js.UndefOr[MaxItems] = js.undefined,
+      PoolName: js.UndefOr[PoolName] = js.undefined): GetDedicatedIpsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "PoolName" -> PoolName.map { x => x.asInstanceOf[js.Any] },
         "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
-        "PageSize" -> PageSize.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "PageSize" -> PageSize.map { x => x.asInstanceOf[js.Any] },
+        "PoolName" -> PoolName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetDedicatedIpsRequest]
     }
@@ -924,14 +924,14 @@ package pinpointemail {
    */
   @js.native
   trait GetEmailIdentityRequest extends js.Object {
-    var EmailIdentity: js.UndefOr[Identity]
+    var EmailIdentity: Identity
   }
 
   object GetEmailIdentityRequest {
     def apply(
-      EmailIdentity: js.UndefOr[Identity] = js.undefined): GetEmailIdentityRequest = {
+      EmailIdentity: Identity): GetEmailIdentityRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "EmailIdentity" -> EmailIdentity.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "EmailIdentity" -> EmailIdentity.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetEmailIdentityRequest]
     }
@@ -942,26 +942,26 @@ package pinpointemail {
    */
   @js.native
   trait GetEmailIdentityResponse extends js.Object {
+    var DkimAttributes: js.UndefOr[DkimAttributes]
+    var FeedbackForwardingStatus: js.UndefOr[Enabled]
     var IdentityType: js.UndefOr[IdentityType]
     var MailFromAttributes: js.UndefOr[MailFromAttributes]
     var VerifiedForSendingStatus: js.UndefOr[Enabled]
-    var DkimAttributes: js.UndefOr[DkimAttributes]
-    var FeedbackForwardingStatus: js.UndefOr[Enabled]
   }
 
   object GetEmailIdentityResponse {
     def apply(
+      DkimAttributes: js.UndefOr[DkimAttributes] = js.undefined,
+      FeedbackForwardingStatus: js.UndefOr[Enabled] = js.undefined,
       IdentityType: js.UndefOr[IdentityType] = js.undefined,
       MailFromAttributes: js.UndefOr[MailFromAttributes] = js.undefined,
-      VerifiedForSendingStatus: js.UndefOr[Enabled] = js.undefined,
-      DkimAttributes: js.UndefOr[DkimAttributes] = js.undefined,
-      FeedbackForwardingStatus: js.UndefOr[Enabled] = js.undefined): GetEmailIdentityResponse = {
+      VerifiedForSendingStatus: js.UndefOr[Enabled] = js.undefined): GetEmailIdentityResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "DkimAttributes" -> DkimAttributes.map { x => x.asInstanceOf[js.Any] },
+        "FeedbackForwardingStatus" -> FeedbackForwardingStatus.map { x => x.asInstanceOf[js.Any] },
         "IdentityType" -> IdentityType.map { x => x.asInstanceOf[js.Any] },
         "MailFromAttributes" -> MailFromAttributes.map { x => x.asInstanceOf[js.Any] },
-        "VerifiedForSendingStatus" -> VerifiedForSendingStatus.map { x => x.asInstanceOf[js.Any] },
-        "DkimAttributes" -> DkimAttributes.map { x => x.asInstanceOf[js.Any] },
-        "FeedbackForwardingStatus" -> FeedbackForwardingStatus.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "VerifiedForSendingStatus" -> VerifiedForSendingStatus.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetEmailIdentityResponse]
     }
@@ -972,19 +972,19 @@ package pinpointemail {
    */
   @js.native
   trait IdentityInfo extends js.Object {
-    var IdentityType: js.UndefOr[IdentityType]
     var IdentityName: js.UndefOr[Identity]
+    var IdentityType: js.UndefOr[IdentityType]
     var SendingEnabled: js.UndefOr[Enabled]
   }
 
   object IdentityInfo {
     def apply(
-      IdentityType: js.UndefOr[IdentityType] = js.undefined,
       IdentityName: js.UndefOr[Identity] = js.undefined,
+      IdentityType: js.UndefOr[IdentityType] = js.undefined,
       SendingEnabled: js.UndefOr[Enabled] = js.undefined): IdentityInfo = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "IdentityType" -> IdentityType.map { x => x.asInstanceOf[js.Any] },
         "IdentityName" -> IdentityName.map { x => x.asInstanceOf[js.Any] },
+        "IdentityType" -> IdentityType.map { x => x.asInstanceOf[js.Any] },
         "SendingEnabled" -> SendingEnabled.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[IdentityInfo]
@@ -992,7 +992,7 @@ package pinpointemail {
   }
 
   /**
-   * <p>The email identity type. The identity type can be one of the following:</p> <ul> <li> <p> <code>EMAIL_ADDRESS</code> – The identity is an email address.</p> </li> <li> <p> <code>DOMAIN</code> – The identity is a domain.</p> </li> </ul>
+   * <p>The email identity type. The identity type can be one of the following:</p> <ul> <li> <p> <code>EMAIL_ADDRESS</code> ? The identity is an email address.</p> </li> <li> <p> <code>DOMAIN</code> ? The identity is a domain.</p> </li> </ul>
    */
   object IdentityTypeEnum {
     val EMAIL_ADDRESS = "EMAIL_ADDRESS"
@@ -1007,17 +1007,17 @@ package pinpointemail {
    */
   @js.native
   trait KinesisFirehoseDestination extends js.Object {
-    var IamRoleArn: js.UndefOr[AmazonResourceName]
-    var DeliveryStreamArn: js.UndefOr[AmazonResourceName]
+    var DeliveryStreamArn: AmazonResourceName
+    var IamRoleArn: AmazonResourceName
   }
 
   object KinesisFirehoseDestination {
     def apply(
-      IamRoleArn: js.UndefOr[AmazonResourceName] = js.undefined,
-      DeliveryStreamArn: js.UndefOr[AmazonResourceName] = js.undefined): KinesisFirehoseDestination = {
+      DeliveryStreamArn: AmazonResourceName,
+      IamRoleArn: AmazonResourceName): KinesisFirehoseDestination = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "IamRoleArn" -> IamRoleArn.map { x => x.asInstanceOf[js.Any] },
-        "DeliveryStreamArn" -> DeliveryStreamArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "DeliveryStreamArn" -> DeliveryStreamArn.asInstanceOf[js.Any],
+        "IamRoleArn" -> IamRoleArn.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[KinesisFirehoseDestination]
     }
@@ -1154,27 +1154,27 @@ package pinpointemail {
    */
   @js.native
   trait MailFromAttributes extends js.Object {
-    var MailFromDomain: js.UndefOr[MailFromDomainName]
-    var MailFromDomainStatus: js.UndefOr[MailFromDomainStatus]
-    var BehaviorOnMxFailure: js.UndefOr[BehaviorOnMxFailure]
+    var BehaviorOnMxFailure: BehaviorOnMxFailure
+    var MailFromDomain: MailFromDomainName
+    var MailFromDomainStatus: MailFromDomainStatus
   }
 
   object MailFromAttributes {
     def apply(
-      MailFromDomain: js.UndefOr[MailFromDomainName] = js.undefined,
-      MailFromDomainStatus: js.UndefOr[MailFromDomainStatus] = js.undefined,
-      BehaviorOnMxFailure: js.UndefOr[BehaviorOnMxFailure] = js.undefined): MailFromAttributes = {
+      BehaviorOnMxFailure: BehaviorOnMxFailure,
+      MailFromDomain: MailFromDomainName,
+      MailFromDomainStatus: MailFromDomainStatus): MailFromAttributes = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "MailFromDomain" -> MailFromDomain.map { x => x.asInstanceOf[js.Any] },
-        "MailFromDomainStatus" -> MailFromDomainStatus.map { x => x.asInstanceOf[js.Any] },
-        "BehaviorOnMxFailure" -> BehaviorOnMxFailure.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "BehaviorOnMxFailure" -> BehaviorOnMxFailure.asInstanceOf[js.Any],
+        "MailFromDomain" -> MailFromDomain.asInstanceOf[js.Any],
+        "MailFromDomainStatus" -> MailFromDomainStatus.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[MailFromAttributes]
     }
   }
 
   /**
-   * <p>The status of the MAIL FROM domain. This status can have the following values:</p> <ul> <li> <p> <code>PENDING</code> – Amazon Pinpoint hasn't started searching for the MX record yet.</p> </li> <li> <p> <code>SUCCESS</code> – Amazon Pinpoint detected the required MX record for the MAIL FROM domain.</p> </li> <li> <p> <code>FAILED</code> – Amazon Pinpoint can't find the required MX record, or the record no longer exists.</p> </li> <li> <p> <code>TEMPORARY_FAILURE</code> – A temporary issue occurred, which prevented Amazon Pinpoint from determining the status of the MAIL FROM domain.</p> </li> </ul>
+   * <p>The status of the MAIL FROM domain. This status can have the following values:</p> <ul> <li> <p> <code>PENDING</code> ? Amazon Pinpoint hasn't started searching for the MX record yet.</p> </li> <li> <p> <code>SUCCESS</code> ? Amazon Pinpoint detected the required MX record for the MAIL FROM domain.</p> </li> <li> <p> <code>FAILED</code> ? Amazon Pinpoint can't find the required MX record, or the record no longer exists.</p> </li> <li> <p> <code>TEMPORARY_FAILURE</code> ? A temporary issue occurred, which prevented Amazon Pinpoint from determining the status of the MAIL FROM domain.</p> </li> </ul>
    */
   object MailFromDomainStatusEnum {
     val PENDING = "PENDING"
@@ -1190,17 +1190,17 @@ package pinpointemail {
    */
   @js.native
   trait Message extends js.Object {
-    var Subject: js.UndefOr[Content]
-    var Body: js.UndefOr[Body]
+    var Body: Body
+    var Subject: Content
   }
 
   object Message {
     def apply(
-      Subject: js.UndefOr[Content] = js.undefined,
-      Body: js.UndefOr[Body] = js.undefined): Message = {
+      Body: Body,
+      Subject: Content): Message = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Subject" -> Subject.map { x => x.asInstanceOf[js.Any] },
-        "Body" -> Body.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Body" -> Body.asInstanceOf[js.Any],
+        "Subject" -> Subject.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Message]
     }
@@ -1211,17 +1211,17 @@ package pinpointemail {
    */
   @js.native
   trait MessageTag extends js.Object {
-    var Name: js.UndefOr[MessageTagName]
-    var Value: js.UndefOr[MessageTagValue]
+    var Name: MessageTagName
+    var Value: MessageTagValue
   }
 
   object MessageTag {
     def apply(
-      Name: js.UndefOr[MessageTagName] = js.undefined,
-      Value: js.UndefOr[MessageTagValue] = js.undefined): MessageTag = {
+      Name: MessageTagName,
+      Value: MessageTagValue): MessageTag = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
-        "Value" -> Value.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Name" -> Name.asInstanceOf[js.Any],
+        "Value" -> Value.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[MessageTag]
     }
@@ -1318,16 +1318,16 @@ package pinpointemail {
    */
   @js.native
   trait PutConfigurationSetDeliveryOptionsRequest extends js.Object {
-    var ConfigurationSetName: js.UndefOr[ConfigurationSetName]
+    var ConfigurationSetName: ConfigurationSetName
     var SendingPoolName: js.UndefOr[SendingPoolName]
   }
 
   object PutConfigurationSetDeliveryOptionsRequest {
     def apply(
-      ConfigurationSetName: js.UndefOr[ConfigurationSetName] = js.undefined,
+      ConfigurationSetName: ConfigurationSetName,
       SendingPoolName: js.UndefOr[SendingPoolName] = js.undefined): PutConfigurationSetDeliveryOptionsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ConfigurationSetName" -> ConfigurationSetName.map { x => x.asInstanceOf[js.Any] },
+        "ConfigurationSetName" -> ConfigurationSetName.asInstanceOf[js.Any],
         "SendingPoolName" -> SendingPoolName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutConfigurationSetDeliveryOptionsRequest]
@@ -1355,16 +1355,16 @@ package pinpointemail {
    */
   @js.native
   trait PutConfigurationSetReputationOptionsRequest extends js.Object {
-    var ConfigurationSetName: js.UndefOr[ConfigurationSetName]
+    var ConfigurationSetName: ConfigurationSetName
     var ReputationMetricsEnabled: js.UndefOr[Enabled]
   }
 
   object PutConfigurationSetReputationOptionsRequest {
     def apply(
-      ConfigurationSetName: js.UndefOr[ConfigurationSetName] = js.undefined,
+      ConfigurationSetName: ConfigurationSetName,
       ReputationMetricsEnabled: js.UndefOr[Enabled] = js.undefined): PutConfigurationSetReputationOptionsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ConfigurationSetName" -> ConfigurationSetName.map { x => x.asInstanceOf[js.Any] },
+        "ConfigurationSetName" -> ConfigurationSetName.asInstanceOf[js.Any],
         "ReputationMetricsEnabled" -> ReputationMetricsEnabled.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutConfigurationSetReputationOptionsRequest]
@@ -1392,16 +1392,16 @@ package pinpointemail {
    */
   @js.native
   trait PutConfigurationSetSendingOptionsRequest extends js.Object {
-    var ConfigurationSetName: js.UndefOr[ConfigurationSetName]
+    var ConfigurationSetName: ConfigurationSetName
     var SendingEnabled: js.UndefOr[Enabled]
   }
 
   object PutConfigurationSetSendingOptionsRequest {
     def apply(
-      ConfigurationSetName: js.UndefOr[ConfigurationSetName] = js.undefined,
+      ConfigurationSetName: ConfigurationSetName,
       SendingEnabled: js.UndefOr[Enabled] = js.undefined): PutConfigurationSetSendingOptionsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ConfigurationSetName" -> ConfigurationSetName.map { x => x.asInstanceOf[js.Any] },
+        "ConfigurationSetName" -> ConfigurationSetName.asInstanceOf[js.Any],
         "SendingEnabled" -> SendingEnabled.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutConfigurationSetSendingOptionsRequest]
@@ -1429,16 +1429,16 @@ package pinpointemail {
    */
   @js.native
   trait PutConfigurationSetTrackingOptionsRequest extends js.Object {
-    var ConfigurationSetName: js.UndefOr[ConfigurationSetName]
+    var ConfigurationSetName: ConfigurationSetName
     var CustomRedirectDomain: js.UndefOr[CustomRedirectDomain]
   }
 
   object PutConfigurationSetTrackingOptionsRequest {
     def apply(
-      ConfigurationSetName: js.UndefOr[ConfigurationSetName] = js.undefined,
+      ConfigurationSetName: ConfigurationSetName,
       CustomRedirectDomain: js.UndefOr[CustomRedirectDomain] = js.undefined): PutConfigurationSetTrackingOptionsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ConfigurationSetName" -> ConfigurationSetName.map { x => x.asInstanceOf[js.Any] },
+        "ConfigurationSetName" -> ConfigurationSetName.asInstanceOf[js.Any],
         "CustomRedirectDomain" -> CustomRedirectDomain.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutConfigurationSetTrackingOptionsRequest]
@@ -1466,17 +1466,17 @@ package pinpointemail {
    */
   @js.native
   trait PutDedicatedIpInPoolRequest extends js.Object {
-    var Ip: js.UndefOr[Ip]
-    var DestinationPoolName: js.UndefOr[PoolName]
+    var DestinationPoolName: PoolName
+    var Ip: Ip
   }
 
   object PutDedicatedIpInPoolRequest {
     def apply(
-      Ip: js.UndefOr[Ip] = js.undefined,
-      DestinationPoolName: js.UndefOr[PoolName] = js.undefined): PutDedicatedIpInPoolRequest = {
+      DestinationPoolName: PoolName,
+      Ip: Ip): PutDedicatedIpInPoolRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Ip" -> Ip.map { x => x.asInstanceOf[js.Any] },
-        "DestinationPoolName" -> DestinationPoolName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "DestinationPoolName" -> DestinationPoolName.asInstanceOf[js.Any],
+        "Ip" -> Ip.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutDedicatedIpInPoolRequest]
     }
@@ -1500,17 +1500,17 @@ package pinpointemail {
    */
   @js.native
   trait PutDedicatedIpWarmupAttributesRequest extends js.Object {
-    var Ip: js.UndefOr[Ip]
-    var WarmupPercentage: js.UndefOr[Percentage100Wrapper]
+    var Ip: Ip
+    var WarmupPercentage: Percentage100Wrapper
   }
 
   object PutDedicatedIpWarmupAttributesRequest {
     def apply(
-      Ip: js.UndefOr[Ip] = js.undefined,
-      WarmupPercentage: js.UndefOr[Percentage100Wrapper] = js.undefined): PutDedicatedIpWarmupAttributesRequest = {
+      Ip: Ip,
+      WarmupPercentage: Percentage100Wrapper): PutDedicatedIpWarmupAttributesRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Ip" -> Ip.map { x => x.asInstanceOf[js.Any] },
-        "WarmupPercentage" -> WarmupPercentage.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Ip" -> Ip.asInstanceOf[js.Any],
+        "WarmupPercentage" -> WarmupPercentage.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutDedicatedIpWarmupAttributesRequest]
     }
@@ -1537,16 +1537,16 @@ package pinpointemail {
    */
   @js.native
   trait PutEmailIdentityDkimAttributesRequest extends js.Object {
-    var EmailIdentity: js.UndefOr[Identity]
+    var EmailIdentity: Identity
     var SigningEnabled: js.UndefOr[Enabled]
   }
 
   object PutEmailIdentityDkimAttributesRequest {
     def apply(
-      EmailIdentity: js.UndefOr[Identity] = js.undefined,
+      EmailIdentity: Identity,
       SigningEnabled: js.UndefOr[Enabled] = js.undefined): PutEmailIdentityDkimAttributesRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "EmailIdentity" -> EmailIdentity.map { x => x.asInstanceOf[js.Any] },
+        "EmailIdentity" -> EmailIdentity.asInstanceOf[js.Any],
         "SigningEnabled" -> SigningEnabled.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutEmailIdentityDkimAttributesRequest]
@@ -1574,16 +1574,16 @@ package pinpointemail {
    */
   @js.native
   trait PutEmailIdentityFeedbackAttributesRequest extends js.Object {
-    var EmailIdentity: js.UndefOr[Identity]
+    var EmailIdentity: Identity
     var EmailForwardingEnabled: js.UndefOr[Enabled]
   }
 
   object PutEmailIdentityFeedbackAttributesRequest {
     def apply(
-      EmailIdentity: js.UndefOr[Identity] = js.undefined,
+      EmailIdentity: Identity,
       EmailForwardingEnabled: js.UndefOr[Enabled] = js.undefined): PutEmailIdentityFeedbackAttributesRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "EmailIdentity" -> EmailIdentity.map { x => x.asInstanceOf[js.Any] },
+        "EmailIdentity" -> EmailIdentity.asInstanceOf[js.Any],
         "EmailForwardingEnabled" -> EmailForwardingEnabled.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutEmailIdentityFeedbackAttributesRequest]
@@ -1611,20 +1611,20 @@ package pinpointemail {
    */
   @js.native
   trait PutEmailIdentityMailFromAttributesRequest extends js.Object {
-    var EmailIdentity: js.UndefOr[Identity]
-    var MailFromDomain: js.UndefOr[MailFromDomainName]
+    var EmailIdentity: Identity
     var BehaviorOnMxFailure: js.UndefOr[BehaviorOnMxFailure]
+    var MailFromDomain: js.UndefOr[MailFromDomainName]
   }
 
   object PutEmailIdentityMailFromAttributesRequest {
     def apply(
-      EmailIdentity: js.UndefOr[Identity] = js.undefined,
-      MailFromDomain: js.UndefOr[MailFromDomainName] = js.undefined,
-      BehaviorOnMxFailure: js.UndefOr[BehaviorOnMxFailure] = js.undefined): PutEmailIdentityMailFromAttributesRequest = {
+      EmailIdentity: Identity,
+      BehaviorOnMxFailure: js.UndefOr[BehaviorOnMxFailure] = js.undefined,
+      MailFromDomain: js.UndefOr[MailFromDomainName] = js.undefined): PutEmailIdentityMailFromAttributesRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "EmailIdentity" -> EmailIdentity.map { x => x.asInstanceOf[js.Any] },
-        "MailFromDomain" -> MailFromDomain.map { x => x.asInstanceOf[js.Any] },
-        "BehaviorOnMxFailure" -> BehaviorOnMxFailure.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "EmailIdentity" -> EmailIdentity.asInstanceOf[js.Any],
+        "BehaviorOnMxFailure" -> BehaviorOnMxFailure.map { x => x.asInstanceOf[js.Any] },
+        "MailFromDomain" -> MailFromDomain.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutEmailIdentityMailFromAttributesRequest]
     }
@@ -1651,14 +1651,14 @@ package pinpointemail {
    */
   @js.native
   trait RawMessage extends js.Object {
-    var Data: js.UndefOr[RawMessageData]
+    var Data: RawMessageData
   }
 
   object RawMessage {
     def apply(
-      Data: js.UndefOr[RawMessageData] = js.undefined): RawMessage = {
+      Data: RawMessageData): RawMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Data" -> Data.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Data" -> Data.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RawMessage]
     }
@@ -1669,17 +1669,17 @@ package pinpointemail {
    */
   @js.native
   trait ReputationOptions extends js.Object {
-    var ReputationMetricsEnabled: js.UndefOr[Enabled]
     var LastFreshStart: js.UndefOr[LastFreshStart]
+    var ReputationMetricsEnabled: js.UndefOr[Enabled]
   }
 
   object ReputationOptions {
     def apply(
-      ReputationMetricsEnabled: js.UndefOr[Enabled] = js.undefined,
-      LastFreshStart: js.UndefOr[LastFreshStart] = js.undefined): ReputationOptions = {
+      LastFreshStart: js.UndefOr[LastFreshStart] = js.undefined,
+      ReputationMetricsEnabled: js.UndefOr[Enabled] = js.undefined): ReputationOptions = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ReputationMetricsEnabled" -> ReputationMetricsEnabled.map { x => x.asInstanceOf[js.Any] },
-        "LastFreshStart" -> LastFreshStart.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "LastFreshStart" -> LastFreshStart.map { x => x.asInstanceOf[js.Any] },
+        "ReputationMetricsEnabled" -> ReputationMetricsEnabled.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ReputationOptions]
     }
@@ -1690,32 +1690,32 @@ package pinpointemail {
    */
   @js.native
   trait SendEmailRequest extends js.Object {
+    var Content: EmailContent
+    var Destination: Destination
+    var ConfigurationSetName: js.UndefOr[ConfigurationSetName]
     var EmailTags: js.UndefOr[MessageTagList]
-    var Content: js.UndefOr[EmailContent]
-    var ReplyToAddresses: js.UndefOr[EmailAddressList]
     var FeedbackForwardingEmailAddress: js.UndefOr[EmailAddress]
     var FromEmailAddress: js.UndefOr[EmailAddress]
-    var ConfigurationSetName: js.UndefOr[ConfigurationSetName]
-    var Destination: js.UndefOr[Destination]
+    var ReplyToAddresses: js.UndefOr[EmailAddressList]
   }
 
   object SendEmailRequest {
     def apply(
+      Content: EmailContent,
+      Destination: Destination,
+      ConfigurationSetName: js.UndefOr[ConfigurationSetName] = js.undefined,
       EmailTags: js.UndefOr[MessageTagList] = js.undefined,
-      Content: js.UndefOr[EmailContent] = js.undefined,
-      ReplyToAddresses: js.UndefOr[EmailAddressList] = js.undefined,
       FeedbackForwardingEmailAddress: js.UndefOr[EmailAddress] = js.undefined,
       FromEmailAddress: js.UndefOr[EmailAddress] = js.undefined,
-      ConfigurationSetName: js.UndefOr[ConfigurationSetName] = js.undefined,
-      Destination: js.UndefOr[Destination] = js.undefined): SendEmailRequest = {
+      ReplyToAddresses: js.UndefOr[EmailAddressList] = js.undefined): SendEmailRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "Content" -> Content.asInstanceOf[js.Any],
+        "Destination" -> Destination.asInstanceOf[js.Any],
+        "ConfigurationSetName" -> ConfigurationSetName.map { x => x.asInstanceOf[js.Any] },
         "EmailTags" -> EmailTags.map { x => x.asInstanceOf[js.Any] },
-        "Content" -> Content.map { x => x.asInstanceOf[js.Any] },
-        "ReplyToAddresses" -> ReplyToAddresses.map { x => x.asInstanceOf[js.Any] },
         "FeedbackForwardingEmailAddress" -> FeedbackForwardingEmailAddress.map { x => x.asInstanceOf[js.Any] },
         "FromEmailAddress" -> FromEmailAddress.map { x => x.asInstanceOf[js.Any] },
-        "ConfigurationSetName" -> ConfigurationSetName.map { x => x.asInstanceOf[js.Any] },
-        "Destination" -> Destination.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ReplyToAddresses" -> ReplyToAddresses.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SendEmailRequest]
     }
@@ -1786,14 +1786,14 @@ package pinpointemail {
    */
   @js.native
   trait SnsDestination extends js.Object {
-    var TopicArn: js.UndefOr[AmazonResourceName]
+    var TopicArn: AmazonResourceName
   }
 
   object SnsDestination {
     def apply(
-      TopicArn: js.UndefOr[AmazonResourceName] = js.undefined): SnsDestination = {
+      TopicArn: AmazonResourceName): SnsDestination = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "TopicArn" -> TopicArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "TopicArn" -> TopicArn.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SnsDestination]
     }
@@ -1804,14 +1804,14 @@ package pinpointemail {
    */
   @js.native
   trait TrackingOptions extends js.Object {
-    var CustomRedirectDomain: js.UndefOr[CustomRedirectDomain]
+    var CustomRedirectDomain: CustomRedirectDomain
   }
 
   object TrackingOptions {
     def apply(
-      CustomRedirectDomain: js.UndefOr[CustomRedirectDomain] = js.undefined): TrackingOptions = {
+      CustomRedirectDomain: CustomRedirectDomain): TrackingOptions = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "CustomRedirectDomain" -> CustomRedirectDomain.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "CustomRedirectDomain" -> CustomRedirectDomain.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TrackingOptions]
     }
@@ -1822,20 +1822,20 @@ package pinpointemail {
    */
   @js.native
   trait UpdateConfigurationSetEventDestinationRequest extends js.Object {
-    var ConfigurationSetName: js.UndefOr[ConfigurationSetName]
-    var EventDestinationName: js.UndefOr[EventDestinationName]
-    var EventDestination: js.UndefOr[EventDestinationDefinition]
+    var ConfigurationSetName: ConfigurationSetName
+    var EventDestination: EventDestinationDefinition
+    var EventDestinationName: EventDestinationName
   }
 
   object UpdateConfigurationSetEventDestinationRequest {
     def apply(
-      ConfigurationSetName: js.UndefOr[ConfigurationSetName] = js.undefined,
-      EventDestinationName: js.UndefOr[EventDestinationName] = js.undefined,
-      EventDestination: js.UndefOr[EventDestinationDefinition] = js.undefined): UpdateConfigurationSetEventDestinationRequest = {
+      ConfigurationSetName: ConfigurationSetName,
+      EventDestination: EventDestinationDefinition,
+      EventDestinationName: EventDestinationName): UpdateConfigurationSetEventDestinationRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ConfigurationSetName" -> ConfigurationSetName.map { x => x.asInstanceOf[js.Any] },
-        "EventDestinationName" -> EventDestinationName.map { x => x.asInstanceOf[js.Any] },
-        "EventDestination" -> EventDestination.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ConfigurationSetName" -> ConfigurationSetName.asInstanceOf[js.Any],
+        "EventDestination" -> EventDestination.asInstanceOf[js.Any],
+        "EventDestinationName" -> EventDestinationName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateConfigurationSetEventDestinationRequest]
     }

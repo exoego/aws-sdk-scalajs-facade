@@ -61,32 +61,32 @@ package sts {
 
   @js.native
   trait AssumeRoleRequest extends js.Object {
-    var ExternalId: js.UndefOr[externalIdType]
+    var RoleArn: arnType
+    var RoleSessionName: roleSessionNameType
     var DurationSeconds: js.UndefOr[roleDurationSecondsType]
+    var ExternalId: js.UndefOr[externalIdType]
     var Policy: js.UndefOr[sessionPolicyDocumentType]
-    var TokenCode: js.UndefOr[tokenCodeType]
-    var RoleSessionName: js.UndefOr[roleSessionNameType]
-    var RoleArn: js.UndefOr[arnType]
     var SerialNumber: js.UndefOr[serialNumberType]
+    var TokenCode: js.UndefOr[tokenCodeType]
   }
 
   object AssumeRoleRequest {
     def apply(
-      ExternalId: js.UndefOr[externalIdType] = js.undefined,
+      RoleArn: arnType,
+      RoleSessionName: roleSessionNameType,
       DurationSeconds: js.UndefOr[roleDurationSecondsType] = js.undefined,
+      ExternalId: js.UndefOr[externalIdType] = js.undefined,
       Policy: js.UndefOr[sessionPolicyDocumentType] = js.undefined,
-      TokenCode: js.UndefOr[tokenCodeType] = js.undefined,
-      RoleSessionName: js.UndefOr[roleSessionNameType] = js.undefined,
-      RoleArn: js.UndefOr[arnType] = js.undefined,
-      SerialNumber: js.UndefOr[serialNumberType] = js.undefined): AssumeRoleRequest = {
+      SerialNumber: js.UndefOr[serialNumberType] = js.undefined,
+      TokenCode: js.UndefOr[tokenCodeType] = js.undefined): AssumeRoleRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ExternalId" -> ExternalId.map { x => x.asInstanceOf[js.Any] },
+        "RoleArn" -> RoleArn.asInstanceOf[js.Any],
+        "RoleSessionName" -> RoleSessionName.asInstanceOf[js.Any],
         "DurationSeconds" -> DurationSeconds.map { x => x.asInstanceOf[js.Any] },
+        "ExternalId" -> ExternalId.map { x => x.asInstanceOf[js.Any] },
         "Policy" -> Policy.map { x => x.asInstanceOf[js.Any] },
-        "TokenCode" -> TokenCode.map { x => x.asInstanceOf[js.Any] },
-        "RoleSessionName" -> RoleSessionName.map { x => x.asInstanceOf[js.Any] },
-        "RoleArn" -> RoleArn.map { x => x.asInstanceOf[js.Any] },
-        "SerialNumber" -> SerialNumber.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "SerialNumber" -> SerialNumber.map { x => x.asInstanceOf[js.Any] },
+        "TokenCode" -> TokenCode.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AssumeRoleRequest]
     }
@@ -97,19 +97,19 @@ package sts {
    */
   @js.native
   trait AssumeRoleResponse extends js.Object {
-    var Credentials: js.UndefOr[Credentials]
     var AssumedRoleUser: js.UndefOr[AssumedRoleUser]
+    var Credentials: js.UndefOr[Credentials]
     var PackedPolicySize: js.UndefOr[nonNegativeIntegerType]
   }
 
   object AssumeRoleResponse {
     def apply(
-      Credentials: js.UndefOr[Credentials] = js.undefined,
       AssumedRoleUser: js.UndefOr[AssumedRoleUser] = js.undefined,
+      Credentials: js.UndefOr[Credentials] = js.undefined,
       PackedPolicySize: js.UndefOr[nonNegativeIntegerType] = js.undefined): AssumeRoleResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Credentials" -> Credentials.map { x => x.asInstanceOf[js.Any] },
         "AssumedRoleUser" -> AssumedRoleUser.map { x => x.asInstanceOf[js.Any] },
+        "Credentials" -> Credentials.map { x => x.asInstanceOf[js.Any] },
         "PackedPolicySize" -> PackedPolicySize.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AssumeRoleResponse]
@@ -118,26 +118,26 @@ package sts {
 
   @js.native
   trait AssumeRoleWithSAMLRequest extends js.Object {
-    var SAMLAssertion: js.UndefOr[SAMLAssertionType]
+    var PrincipalArn: arnType
+    var RoleArn: arnType
+    var SAMLAssertion: SAMLAssertionType
     var DurationSeconds: js.UndefOr[roleDurationSecondsType]
     var Policy: js.UndefOr[sessionPolicyDocumentType]
-    var PrincipalArn: js.UndefOr[arnType]
-    var RoleArn: js.UndefOr[arnType]
   }
 
   object AssumeRoleWithSAMLRequest {
     def apply(
-      SAMLAssertion: js.UndefOr[SAMLAssertionType] = js.undefined,
+      PrincipalArn: arnType,
+      RoleArn: arnType,
+      SAMLAssertion: SAMLAssertionType,
       DurationSeconds: js.UndefOr[roleDurationSecondsType] = js.undefined,
-      Policy: js.UndefOr[sessionPolicyDocumentType] = js.undefined,
-      PrincipalArn: js.UndefOr[arnType] = js.undefined,
-      RoleArn: js.UndefOr[arnType] = js.undefined): AssumeRoleWithSAMLRequest = {
+      Policy: js.UndefOr[sessionPolicyDocumentType] = js.undefined): AssumeRoleWithSAMLRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "SAMLAssertion" -> SAMLAssertion.map { x => x.asInstanceOf[js.Any] },
+        "PrincipalArn" -> PrincipalArn.asInstanceOf[js.Any],
+        "RoleArn" -> RoleArn.asInstanceOf[js.Any],
+        "SAMLAssertion" -> SAMLAssertion.asInstanceOf[js.Any],
         "DurationSeconds" -> DurationSeconds.map { x => x.asInstanceOf[js.Any] },
-        "Policy" -> Policy.map { x => x.asInstanceOf[js.Any] },
-        "PrincipalArn" -> PrincipalArn.map { x => x.asInstanceOf[js.Any] },
-        "RoleArn" -> RoleArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Policy" -> Policy.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AssumeRoleWithSAMLRequest]
     }
@@ -148,35 +148,35 @@ package sts {
    */
   @js.native
   trait AssumeRoleWithSAMLResponse extends js.Object {
+    var AssumedRoleUser: js.UndefOr[AssumedRoleUser]
+    var Audience: js.UndefOr[Audience]
+    var Credentials: js.UndefOr[Credentials]
+    var Issuer: js.UndefOr[Issuer]
+    var NameQualifier: js.UndefOr[NameQualifier]
+    var PackedPolicySize: js.UndefOr[nonNegativeIntegerType]
     var Subject: js.UndefOr[Subject]
     var SubjectType: js.UndefOr[SubjectType]
-    var NameQualifier: js.UndefOr[NameQualifier]
-    var Audience: js.UndefOr[Audience]
-    var PackedPolicySize: js.UndefOr[nonNegativeIntegerType]
-    var AssumedRoleUser: js.UndefOr[AssumedRoleUser]
-    var Issuer: js.UndefOr[Issuer]
-    var Credentials: js.UndefOr[Credentials]
   }
 
   object AssumeRoleWithSAMLResponse {
     def apply(
-      Subject: js.UndefOr[Subject] = js.undefined,
-      SubjectType: js.UndefOr[SubjectType] = js.undefined,
-      NameQualifier: js.UndefOr[NameQualifier] = js.undefined,
-      Audience: js.UndefOr[Audience] = js.undefined,
-      PackedPolicySize: js.UndefOr[nonNegativeIntegerType] = js.undefined,
       AssumedRoleUser: js.UndefOr[AssumedRoleUser] = js.undefined,
+      Audience: js.UndefOr[Audience] = js.undefined,
+      Credentials: js.UndefOr[Credentials] = js.undefined,
       Issuer: js.UndefOr[Issuer] = js.undefined,
-      Credentials: js.UndefOr[Credentials] = js.undefined): AssumeRoleWithSAMLResponse = {
+      NameQualifier: js.UndefOr[NameQualifier] = js.undefined,
+      PackedPolicySize: js.UndefOr[nonNegativeIntegerType] = js.undefined,
+      Subject: js.UndefOr[Subject] = js.undefined,
+      SubjectType: js.UndefOr[SubjectType] = js.undefined): AssumeRoleWithSAMLResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Subject" -> Subject.map { x => x.asInstanceOf[js.Any] },
-        "SubjectType" -> SubjectType.map { x => x.asInstanceOf[js.Any] },
-        "NameQualifier" -> NameQualifier.map { x => x.asInstanceOf[js.Any] },
-        "Audience" -> Audience.map { x => x.asInstanceOf[js.Any] },
-        "PackedPolicySize" -> PackedPolicySize.map { x => x.asInstanceOf[js.Any] },
         "AssumedRoleUser" -> AssumedRoleUser.map { x => x.asInstanceOf[js.Any] },
+        "Audience" -> Audience.map { x => x.asInstanceOf[js.Any] },
+        "Credentials" -> Credentials.map { x => x.asInstanceOf[js.Any] },
         "Issuer" -> Issuer.map { x => x.asInstanceOf[js.Any] },
-        "Credentials" -> Credentials.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "NameQualifier" -> NameQualifier.map { x => x.asInstanceOf[js.Any] },
+        "PackedPolicySize" -> PackedPolicySize.map { x => x.asInstanceOf[js.Any] },
+        "Subject" -> Subject.map { x => x.asInstanceOf[js.Any] },
+        "SubjectType" -> SubjectType.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AssumeRoleWithSAMLResponse]
     }
@@ -184,29 +184,29 @@ package sts {
 
   @js.native
   trait AssumeRoleWithWebIdentityRequest extends js.Object {
+    var RoleArn: arnType
+    var RoleSessionName: roleSessionNameType
+    var WebIdentityToken: clientTokenType
     var DurationSeconds: js.UndefOr[roleDurationSecondsType]
     var Policy: js.UndefOr[sessionPolicyDocumentType]
-    var WebIdentityToken: js.UndefOr[clientTokenType]
     var ProviderId: js.UndefOr[urlType]
-    var RoleSessionName: js.UndefOr[roleSessionNameType]
-    var RoleArn: js.UndefOr[arnType]
   }
 
   object AssumeRoleWithWebIdentityRequest {
     def apply(
+      RoleArn: arnType,
+      RoleSessionName: roleSessionNameType,
+      WebIdentityToken: clientTokenType,
       DurationSeconds: js.UndefOr[roleDurationSecondsType] = js.undefined,
       Policy: js.UndefOr[sessionPolicyDocumentType] = js.undefined,
-      WebIdentityToken: js.UndefOr[clientTokenType] = js.undefined,
-      ProviderId: js.UndefOr[urlType] = js.undefined,
-      RoleSessionName: js.UndefOr[roleSessionNameType] = js.undefined,
-      RoleArn: js.UndefOr[arnType] = js.undefined): AssumeRoleWithWebIdentityRequest = {
+      ProviderId: js.UndefOr[urlType] = js.undefined): AssumeRoleWithWebIdentityRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "RoleArn" -> RoleArn.asInstanceOf[js.Any],
+        "RoleSessionName" -> RoleSessionName.asInstanceOf[js.Any],
+        "WebIdentityToken" -> WebIdentityToken.asInstanceOf[js.Any],
         "DurationSeconds" -> DurationSeconds.map { x => x.asInstanceOf[js.Any] },
         "Policy" -> Policy.map { x => x.asInstanceOf[js.Any] },
-        "WebIdentityToken" -> WebIdentityToken.map { x => x.asInstanceOf[js.Any] },
-        "ProviderId" -> ProviderId.map { x => x.asInstanceOf[js.Any] },
-        "RoleSessionName" -> RoleSessionName.map { x => x.asInstanceOf[js.Any] },
-        "RoleArn" -> RoleArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ProviderId" -> ProviderId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AssumeRoleWithWebIdentityRequest]
     }
@@ -217,29 +217,29 @@ package sts {
    */
   @js.native
   trait AssumeRoleWithWebIdentityResponse extends js.Object {
-    var Provider: js.UndefOr[Issuer]
-    var Audience: js.UndefOr[Audience]
-    var PackedPolicySize: js.UndefOr[nonNegativeIntegerType]
     var AssumedRoleUser: js.UndefOr[AssumedRoleUser]
-    var SubjectFromWebIdentityToken: js.UndefOr[webIdentitySubjectType]
+    var Audience: js.UndefOr[Audience]
     var Credentials: js.UndefOr[Credentials]
+    var PackedPolicySize: js.UndefOr[nonNegativeIntegerType]
+    var Provider: js.UndefOr[Issuer]
+    var SubjectFromWebIdentityToken: js.UndefOr[webIdentitySubjectType]
   }
 
   object AssumeRoleWithWebIdentityResponse {
     def apply(
-      Provider: js.UndefOr[Issuer] = js.undefined,
-      Audience: js.UndefOr[Audience] = js.undefined,
-      PackedPolicySize: js.UndefOr[nonNegativeIntegerType] = js.undefined,
       AssumedRoleUser: js.UndefOr[AssumedRoleUser] = js.undefined,
-      SubjectFromWebIdentityToken: js.UndefOr[webIdentitySubjectType] = js.undefined,
-      Credentials: js.UndefOr[Credentials] = js.undefined): AssumeRoleWithWebIdentityResponse = {
+      Audience: js.UndefOr[Audience] = js.undefined,
+      Credentials: js.UndefOr[Credentials] = js.undefined,
+      PackedPolicySize: js.UndefOr[nonNegativeIntegerType] = js.undefined,
+      Provider: js.UndefOr[Issuer] = js.undefined,
+      SubjectFromWebIdentityToken: js.UndefOr[webIdentitySubjectType] = js.undefined): AssumeRoleWithWebIdentityResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Provider" -> Provider.map { x => x.asInstanceOf[js.Any] },
-        "Audience" -> Audience.map { x => x.asInstanceOf[js.Any] },
-        "PackedPolicySize" -> PackedPolicySize.map { x => x.asInstanceOf[js.Any] },
         "AssumedRoleUser" -> AssumedRoleUser.map { x => x.asInstanceOf[js.Any] },
-        "SubjectFromWebIdentityToken" -> SubjectFromWebIdentityToken.map { x => x.asInstanceOf[js.Any] },
-        "Credentials" -> Credentials.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Audience" -> Audience.map { x => x.asInstanceOf[js.Any] },
+        "Credentials" -> Credentials.map { x => x.asInstanceOf[js.Any] },
+        "PackedPolicySize" -> PackedPolicySize.map { x => x.asInstanceOf[js.Any] },
+        "Provider" -> Provider.map { x => x.asInstanceOf[js.Any] },
+        "SubjectFromWebIdentityToken" -> SubjectFromWebIdentityToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AssumeRoleWithWebIdentityResponse]
     }
@@ -250,17 +250,17 @@ package sts {
    */
   @js.native
   trait AssumedRoleUser extends js.Object {
-    var AssumedRoleId: js.UndefOr[assumedRoleIdType]
-    var Arn: js.UndefOr[arnType]
+    var Arn: arnType
+    var AssumedRoleId: assumedRoleIdType
   }
 
   object AssumedRoleUser {
     def apply(
-      AssumedRoleId: js.UndefOr[assumedRoleIdType] = js.undefined,
-      Arn: js.UndefOr[arnType] = js.undefined): AssumedRoleUser = {
+      Arn: arnType,
+      AssumedRoleId: assumedRoleIdType): AssumedRoleUser = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "AssumedRoleId" -> AssumedRoleId.map { x => x.asInstanceOf[js.Any] },
-        "Arn" -> Arn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Arn" -> Arn.asInstanceOf[js.Any],
+        "AssumedRoleId" -> AssumedRoleId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AssumedRoleUser]
     }
@@ -271,23 +271,23 @@ package sts {
    */
   @js.native
   trait Credentials extends js.Object {
-    var AccessKeyId: js.UndefOr[accessKeyIdType]
-    var SecretAccessKey: js.UndefOr[accessKeySecretType]
-    var SessionToken: js.UndefOr[tokenType]
-    var Expiration: js.UndefOr[dateType]
+    var AccessKeyId: accessKeyIdType
+    var Expiration: dateType
+    var SecretAccessKey: accessKeySecretType
+    var SessionToken: tokenType
   }
 
   object Credentials {
     def apply(
-      AccessKeyId: js.UndefOr[accessKeyIdType] = js.undefined,
-      SecretAccessKey: js.UndefOr[accessKeySecretType] = js.undefined,
-      SessionToken: js.UndefOr[tokenType] = js.undefined,
-      Expiration: js.UndefOr[dateType] = js.undefined): Credentials = {
+      AccessKeyId: accessKeyIdType,
+      Expiration: dateType,
+      SecretAccessKey: accessKeySecretType,
+      SessionToken: tokenType): Credentials = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "AccessKeyId" -> AccessKeyId.map { x => x.asInstanceOf[js.Any] },
-        "SecretAccessKey" -> SecretAccessKey.map { x => x.asInstanceOf[js.Any] },
-        "SessionToken" -> SessionToken.map { x => x.asInstanceOf[js.Any] },
-        "Expiration" -> Expiration.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "AccessKeyId" -> AccessKeyId.asInstanceOf[js.Any],
+        "Expiration" -> Expiration.asInstanceOf[js.Any],
+        "SecretAccessKey" -> SecretAccessKey.asInstanceOf[js.Any],
+        "SessionToken" -> SessionToken.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Credentials]
     }
@@ -295,14 +295,14 @@ package sts {
 
   @js.native
   trait DecodeAuthorizationMessageRequest extends js.Object {
-    var EncodedMessage: js.UndefOr[encodedMessageType]
+    var EncodedMessage: encodedMessageType
   }
 
   object DecodeAuthorizationMessageRequest {
     def apply(
-      EncodedMessage: js.UndefOr[encodedMessageType] = js.undefined): DecodeAuthorizationMessageRequest = {
+      EncodedMessage: encodedMessageType): DecodeAuthorizationMessageRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "EncodedMessage" -> EncodedMessage.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "EncodedMessage" -> EncodedMessage.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DecodeAuthorizationMessageRequest]
     }
@@ -339,17 +339,17 @@ package sts {
    */
   @js.native
   trait FederatedUser extends js.Object {
-    var FederatedUserId: js.UndefOr[federatedIdType]
-    var Arn: js.UndefOr[arnType]
+    var Arn: arnType
+    var FederatedUserId: federatedIdType
   }
 
   object FederatedUser {
     def apply(
-      FederatedUserId: js.UndefOr[federatedIdType] = js.undefined,
-      Arn: js.UndefOr[arnType] = js.undefined): FederatedUser = {
+      Arn: arnType,
+      FederatedUserId: federatedIdType): FederatedUser = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "FederatedUserId" -> FederatedUserId.map { x => x.asInstanceOf[js.Any] },
-        "Arn" -> Arn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Arn" -> Arn.asInstanceOf[js.Any],
+        "FederatedUserId" -> FederatedUserId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[FederatedUser]
     }
@@ -373,20 +373,20 @@ package sts {
    */
   @js.native
   trait GetCallerIdentityResponse extends js.Object {
-    var UserId: js.UndefOr[userIdType]
     var Account: js.UndefOr[accountType]
     var Arn: js.UndefOr[arnType]
+    var UserId: js.UndefOr[userIdType]
   }
 
   object GetCallerIdentityResponse {
     def apply(
-      UserId: js.UndefOr[userIdType] = js.undefined,
       Account: js.UndefOr[accountType] = js.undefined,
-      Arn: js.UndefOr[arnType] = js.undefined): GetCallerIdentityResponse = {
+      Arn: js.UndefOr[arnType] = js.undefined,
+      UserId: js.UndefOr[userIdType] = js.undefined): GetCallerIdentityResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "UserId" -> UserId.map { x => x.asInstanceOf[js.Any] },
         "Account" -> Account.map { x => x.asInstanceOf[js.Any] },
-        "Arn" -> Arn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Arn" -> Arn.map { x => x.asInstanceOf[js.Any] },
+        "UserId" -> UserId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetCallerIdentityResponse]
     }
@@ -394,20 +394,20 @@ package sts {
 
   @js.native
   trait GetFederationTokenRequest extends js.Object {
-    var Name: js.UndefOr[userNameType]
-    var Policy: js.UndefOr[sessionPolicyDocumentType]
+    var Name: userNameType
     var DurationSeconds: js.UndefOr[durationSecondsType]
+    var Policy: js.UndefOr[sessionPolicyDocumentType]
   }
 
   object GetFederationTokenRequest {
     def apply(
-      Name: js.UndefOr[userNameType] = js.undefined,
-      Policy: js.UndefOr[sessionPolicyDocumentType] = js.undefined,
-      DurationSeconds: js.UndefOr[durationSecondsType] = js.undefined): GetFederationTokenRequest = {
+      Name: userNameType,
+      DurationSeconds: js.UndefOr[durationSecondsType] = js.undefined,
+      Policy: js.UndefOr[sessionPolicyDocumentType] = js.undefined): GetFederationTokenRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
-        "Policy" -> Policy.map { x => x.asInstanceOf[js.Any] },
-        "DurationSeconds" -> DurationSeconds.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Name" -> Name.asInstanceOf[js.Any],
+        "DurationSeconds" -> DurationSeconds.map { x => x.asInstanceOf[js.Any] },
+        "Policy" -> Policy.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetFederationTokenRequest]
     }

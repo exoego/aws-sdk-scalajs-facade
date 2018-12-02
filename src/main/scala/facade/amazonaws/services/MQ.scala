@@ -95,30 +95,30 @@ package mq {
    */
   @js.native
   trait BrokerSummary extends js.Object {
-    var Created: js.UndefOr[__timestampIso8601]
-    var BrokerName: js.UndefOr[__string]
     var BrokerArn: js.UndefOr[__string]
-    var BrokerState: js.UndefOr[BrokerState]
     var BrokerId: js.UndefOr[__string]
+    var BrokerName: js.UndefOr[__string]
+    var BrokerState: js.UndefOr[BrokerState]
+    var Created: js.UndefOr[__timestampIso8601]
     var DeploymentMode: js.UndefOr[DeploymentMode]
     var HostInstanceType: js.UndefOr[__string]
   }
 
   object BrokerSummary {
     def apply(
-      Created: js.UndefOr[__timestampIso8601] = js.undefined,
-      BrokerName: js.UndefOr[__string] = js.undefined,
       BrokerArn: js.UndefOr[__string] = js.undefined,
-      BrokerState: js.UndefOr[BrokerState] = js.undefined,
       BrokerId: js.UndefOr[__string] = js.undefined,
+      BrokerName: js.UndefOr[__string] = js.undefined,
+      BrokerState: js.UndefOr[BrokerState] = js.undefined,
+      Created: js.UndefOr[__timestampIso8601] = js.undefined,
       DeploymentMode: js.UndefOr[DeploymentMode] = js.undefined,
       HostInstanceType: js.UndefOr[__string] = js.undefined): BrokerSummary = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Created" -> Created.map { x => x.asInstanceOf[js.Any] },
-        "BrokerName" -> BrokerName.map { x => x.asInstanceOf[js.Any] },
         "BrokerArn" -> BrokerArn.map { x => x.asInstanceOf[js.Any] },
-        "BrokerState" -> BrokerState.map { x => x.asInstanceOf[js.Any] },
         "BrokerId" -> BrokerId.map { x => x.asInstanceOf[js.Any] },
+        "BrokerName" -> BrokerName.map { x => x.asInstanceOf[js.Any] },
+        "BrokerState" -> BrokerState.map { x => x.asInstanceOf[js.Any] },
+        "Created" -> Created.map { x => x.asInstanceOf[js.Any] },
         "DeploymentMode" -> DeploymentMode.map { x => x.asInstanceOf[js.Any] },
         "HostInstanceType" -> HostInstanceType.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
@@ -142,35 +142,35 @@ package mq {
    */
   @js.native
   trait Configuration extends js.Object {
-    var Id: js.UndefOr[__string]
-    var Name: js.UndefOr[__string]
+    var Arn: js.UndefOr[__string]
     var Created: js.UndefOr[__timestampIso8601]
     var Description: js.UndefOr[__string]
-    var LatestRevision: js.UndefOr[ConfigurationRevision]
-    var Arn: js.UndefOr[__string]
-    var EngineVersion: js.UndefOr[__string]
     var EngineType: js.UndefOr[EngineType]
+    var EngineVersion: js.UndefOr[__string]
+    var Id: js.UndefOr[__string]
+    var LatestRevision: js.UndefOr[ConfigurationRevision]
+    var Name: js.UndefOr[__string]
   }
 
   object Configuration {
     def apply(
-      Id: js.UndefOr[__string] = js.undefined,
-      Name: js.UndefOr[__string] = js.undefined,
+      Arn: js.UndefOr[__string] = js.undefined,
       Created: js.UndefOr[__timestampIso8601] = js.undefined,
       Description: js.UndefOr[__string] = js.undefined,
-      LatestRevision: js.UndefOr[ConfigurationRevision] = js.undefined,
-      Arn: js.UndefOr[__string] = js.undefined,
+      EngineType: js.UndefOr[EngineType] = js.undefined,
       EngineVersion: js.UndefOr[__string] = js.undefined,
-      EngineType: js.UndefOr[EngineType] = js.undefined): Configuration = {
+      Id: js.UndefOr[__string] = js.undefined,
+      LatestRevision: js.UndefOr[ConfigurationRevision] = js.undefined,
+      Name: js.UndefOr[__string] = js.undefined): Configuration = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Id" -> Id.map { x => x.asInstanceOf[js.Any] },
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
+        "Arn" -> Arn.map { x => x.asInstanceOf[js.Any] },
         "Created" -> Created.map { x => x.asInstanceOf[js.Any] },
         "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
-        "LatestRevision" -> LatestRevision.map { x => x.asInstanceOf[js.Any] },
-        "Arn" -> Arn.map { x => x.asInstanceOf[js.Any] },
+        "EngineType" -> EngineType.map { x => x.asInstanceOf[js.Any] },
         "EngineVersion" -> EngineVersion.map { x => x.asInstanceOf[js.Any] },
-        "EngineType" -> EngineType.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Id" -> Id.map { x => x.asInstanceOf[js.Any] },
+        "LatestRevision" -> LatestRevision.map { x => x.asInstanceOf[js.Any] },
+        "Name" -> Name.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Configuration]
     }
@@ -250,53 +250,53 @@ package mq {
    */
   @js.native
   trait CreateBrokerRequest extends js.Object {
-    var Users: js.UndefOr[__listOfUser]
-    var BrokerName: js.UndefOr[__string]
-    var Logs: js.UndefOr[Logs]
-    var Configuration: js.UndefOr[ConfigurationId]
-    var SecurityGroups: js.UndefOr[__listOf__string]
     var AutoMinorVersionUpgrade: js.UndefOr[__boolean]
+    var BrokerName: js.UndefOr[__string]
+    var Configuration: js.UndefOr[ConfigurationId]
+    var CreatorRequestId: js.UndefOr[__string]
+    var DeploymentMode: js.UndefOr[DeploymentMode]
+    var EngineType: js.UndefOr[EngineType]
     var EngineVersion: js.UndefOr[__string]
+    var HostInstanceType: js.UndefOr[__string]
+    var Logs: js.UndefOr[Logs]
     var MaintenanceWindowStartTime: js.UndefOr[WeeklyStartTime]
     var PubliclyAccessible: js.UndefOr[__boolean]
-    var DeploymentMode: js.UndefOr[DeploymentMode]
-    var CreatorRequestId: js.UndefOr[__string]
+    var SecurityGroups: js.UndefOr[__listOf__string]
     var SubnetIds: js.UndefOr[__listOf__string]
-    var EngineType: js.UndefOr[EngineType]
-    var HostInstanceType: js.UndefOr[__string]
+    var Users: js.UndefOr[__listOfUser]
   }
 
   object CreateBrokerRequest {
     def apply(
-      Users: js.UndefOr[__listOfUser] = js.undefined,
-      BrokerName: js.UndefOr[__string] = js.undefined,
-      Logs: js.UndefOr[Logs] = js.undefined,
-      Configuration: js.UndefOr[ConfigurationId] = js.undefined,
-      SecurityGroups: js.UndefOr[__listOf__string] = js.undefined,
       AutoMinorVersionUpgrade: js.UndefOr[__boolean] = js.undefined,
+      BrokerName: js.UndefOr[__string] = js.undefined,
+      Configuration: js.UndefOr[ConfigurationId] = js.undefined,
+      CreatorRequestId: js.UndefOr[__string] = js.undefined,
+      DeploymentMode: js.UndefOr[DeploymentMode] = js.undefined,
+      EngineType: js.UndefOr[EngineType] = js.undefined,
       EngineVersion: js.UndefOr[__string] = js.undefined,
+      HostInstanceType: js.UndefOr[__string] = js.undefined,
+      Logs: js.UndefOr[Logs] = js.undefined,
       MaintenanceWindowStartTime: js.UndefOr[WeeklyStartTime] = js.undefined,
       PubliclyAccessible: js.UndefOr[__boolean] = js.undefined,
-      DeploymentMode: js.UndefOr[DeploymentMode] = js.undefined,
-      CreatorRequestId: js.UndefOr[__string] = js.undefined,
+      SecurityGroups: js.UndefOr[__listOf__string] = js.undefined,
       SubnetIds: js.UndefOr[__listOf__string] = js.undefined,
-      EngineType: js.UndefOr[EngineType] = js.undefined,
-      HostInstanceType: js.UndefOr[__string] = js.undefined): CreateBrokerRequest = {
+      Users: js.UndefOr[__listOfUser] = js.undefined): CreateBrokerRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Users" -> Users.map { x => x.asInstanceOf[js.Any] },
-        "BrokerName" -> BrokerName.map { x => x.asInstanceOf[js.Any] },
-        "Logs" -> Logs.map { x => x.asInstanceOf[js.Any] },
-        "Configuration" -> Configuration.map { x => x.asInstanceOf[js.Any] },
-        "SecurityGroups" -> SecurityGroups.map { x => x.asInstanceOf[js.Any] },
         "AutoMinorVersionUpgrade" -> AutoMinorVersionUpgrade.map { x => x.asInstanceOf[js.Any] },
+        "BrokerName" -> BrokerName.map { x => x.asInstanceOf[js.Any] },
+        "Configuration" -> Configuration.map { x => x.asInstanceOf[js.Any] },
+        "CreatorRequestId" -> CreatorRequestId.map { x => x.asInstanceOf[js.Any] },
+        "DeploymentMode" -> DeploymentMode.map { x => x.asInstanceOf[js.Any] },
+        "EngineType" -> EngineType.map { x => x.asInstanceOf[js.Any] },
         "EngineVersion" -> EngineVersion.map { x => x.asInstanceOf[js.Any] },
+        "HostInstanceType" -> HostInstanceType.map { x => x.asInstanceOf[js.Any] },
+        "Logs" -> Logs.map { x => x.asInstanceOf[js.Any] },
         "MaintenanceWindowStartTime" -> MaintenanceWindowStartTime.map { x => x.asInstanceOf[js.Any] },
         "PubliclyAccessible" -> PubliclyAccessible.map { x => x.asInstanceOf[js.Any] },
-        "DeploymentMode" -> DeploymentMode.map { x => x.asInstanceOf[js.Any] },
-        "CreatorRequestId" -> CreatorRequestId.map { x => x.asInstanceOf[js.Any] },
+        "SecurityGroups" -> SecurityGroups.map { x => x.asInstanceOf[js.Any] },
         "SubnetIds" -> SubnetIds.map { x => x.asInstanceOf[js.Any] },
-        "EngineType" -> EngineType.map { x => x.asInstanceOf[js.Any] },
-        "HostInstanceType" -> HostInstanceType.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Users" -> Users.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateBrokerRequest]
     }
@@ -346,26 +346,26 @@ package mq {
 
   @js.native
   trait CreateConfigurationResponse extends js.Object {
-    var Id: js.UndefOr[__string]
-    var Name: js.UndefOr[__string]
-    var Created: js.UndefOr[__timestampIso8601]
-    var LatestRevision: js.UndefOr[ConfigurationRevision]
     var Arn: js.UndefOr[__string]
+    var Created: js.UndefOr[__timestampIso8601]
+    var Id: js.UndefOr[__string]
+    var LatestRevision: js.UndefOr[ConfigurationRevision]
+    var Name: js.UndefOr[__string]
   }
 
   object CreateConfigurationResponse {
     def apply(
-      Id: js.UndefOr[__string] = js.undefined,
-      Name: js.UndefOr[__string] = js.undefined,
+      Arn: js.UndefOr[__string] = js.undefined,
       Created: js.UndefOr[__timestampIso8601] = js.undefined,
+      Id: js.UndefOr[__string] = js.undefined,
       LatestRevision: js.UndefOr[ConfigurationRevision] = js.undefined,
-      Arn: js.UndefOr[__string] = js.undefined): CreateConfigurationResponse = {
+      Name: js.UndefOr[__string] = js.undefined): CreateConfigurationResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Id" -> Id.map { x => x.asInstanceOf[js.Any] },
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
+        "Arn" -> Arn.map { x => x.asInstanceOf[js.Any] },
         "Created" -> Created.map { x => x.asInstanceOf[js.Any] },
+        "Id" -> Id.map { x => x.asInstanceOf[js.Any] },
         "LatestRevision" -> LatestRevision.map { x => x.asInstanceOf[js.Any] },
-        "Arn" -> Arn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Name" -> Name.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateConfigurationResponse]
     }
@@ -376,26 +376,26 @@ package mq {
    */
   @js.native
   trait CreateUserRequest extends js.Object {
-    var Username: js.UndefOr[__string]
+    var BrokerId: __string
+    var Username: __string
     var ConsoleAccess: js.UndefOr[__boolean]
     var Groups: js.UndefOr[__listOf__string]
     var Password: js.UndefOr[__string]
-    var BrokerId: js.UndefOr[__string]
   }
 
   object CreateUserRequest {
     def apply(
-      Username: js.UndefOr[__string] = js.undefined,
+      BrokerId: __string,
+      Username: __string,
       ConsoleAccess: js.UndefOr[__boolean] = js.undefined,
       Groups: js.UndefOr[__listOf__string] = js.undefined,
-      Password: js.UndefOr[__string] = js.undefined,
-      BrokerId: js.UndefOr[__string] = js.undefined): CreateUserRequest = {
+      Password: js.UndefOr[__string] = js.undefined): CreateUserRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Username" -> Username.map { x => x.asInstanceOf[js.Any] },
+        "BrokerId" -> BrokerId.asInstanceOf[js.Any],
+        "Username" -> Username.asInstanceOf[js.Any],
         "ConsoleAccess" -> ConsoleAccess.map { x => x.asInstanceOf[js.Any] },
         "Groups" -> Groups.map { x => x.asInstanceOf[js.Any] },
-        "Password" -> Password.map { x => x.asInstanceOf[js.Any] },
-        "BrokerId" -> BrokerId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Password" -> Password.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateUserRequest]
     }
@@ -428,14 +428,14 @@ package mq {
 
   @js.native
   trait DeleteBrokerRequest extends js.Object {
-    var BrokerId: js.UndefOr[__string]
+    var BrokerId: __string
   }
 
   object DeleteBrokerRequest {
     def apply(
-      BrokerId: js.UndefOr[__string] = js.undefined): DeleteBrokerRequest = {
+      BrokerId: __string): DeleteBrokerRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "BrokerId" -> BrokerId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "BrokerId" -> BrokerId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteBrokerRequest]
     }
@@ -458,17 +458,17 @@ package mq {
 
   @js.native
   trait DeleteUserRequest extends js.Object {
-    var BrokerId: js.UndefOr[__string]
-    var Username: js.UndefOr[__string]
+    var BrokerId: __string
+    var Username: __string
   }
 
   object DeleteUserRequest {
     def apply(
-      BrokerId: js.UndefOr[__string] = js.undefined,
-      Username: js.UndefOr[__string] = js.undefined): DeleteUserRequest = {
+      BrokerId: __string,
+      Username: __string): DeleteUserRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "BrokerId" -> BrokerId.map { x => x.asInstanceOf[js.Any] },
-        "Username" -> Username.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "BrokerId" -> BrokerId.asInstanceOf[js.Any],
+        "Username" -> Username.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteUserRequest]
     }
@@ -499,14 +499,14 @@ package mq {
 
   @js.native
   trait DescribeBrokerRequest extends js.Object {
-    var BrokerId: js.UndefOr[__string]
+    var BrokerId: __string
   }
 
   object DescribeBrokerRequest {
     def apply(
-      BrokerId: js.UndefOr[__string] = js.undefined): DescribeBrokerRequest = {
+      BrokerId: __string): DescribeBrokerRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "BrokerId" -> BrokerId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "BrokerId" -> BrokerId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeBrokerRequest]
     }
@@ -514,68 +514,68 @@ package mq {
 
   @js.native
   trait DescribeBrokerResponse extends js.Object {
-    var Created: js.UndefOr[__timestampIso8601]
-    var Users: js.UndefOr[__listOfUserSummary]
-    var BrokerName: js.UndefOr[__string]
-    var Logs: js.UndefOr[LogsSummary]
-    var BrokerArn: js.UndefOr[__string]
-    var SecurityGroups: js.UndefOr[__listOf__string]
-    var Configurations: js.UndefOr[Configurations]
-    var PendingEngineVersion: js.UndefOr[__string]
-    var BrokerState: js.UndefOr[BrokerState]
     var AutoMinorVersionUpgrade: js.UndefOr[__boolean]
-    var EngineVersion: js.UndefOr[__string]
-    var MaintenanceWindowStartTime: js.UndefOr[WeeklyStartTime]
+    var BrokerArn: js.UndefOr[__string]
     var BrokerId: js.UndefOr[__string]
-    var PubliclyAccessible: js.UndefOr[__boolean]
-    var DeploymentMode: js.UndefOr[DeploymentMode]
-    var SubnetIds: js.UndefOr[__listOf__string]
-    var EngineType: js.UndefOr[EngineType]
     var BrokerInstances: js.UndefOr[__listOfBrokerInstance]
+    var BrokerName: js.UndefOr[__string]
+    var BrokerState: js.UndefOr[BrokerState]
+    var Configurations: js.UndefOr[Configurations]
+    var Created: js.UndefOr[__timestampIso8601]
+    var DeploymentMode: js.UndefOr[DeploymentMode]
+    var EngineType: js.UndefOr[EngineType]
+    var EngineVersion: js.UndefOr[__string]
     var HostInstanceType: js.UndefOr[__string]
+    var Logs: js.UndefOr[LogsSummary]
+    var MaintenanceWindowStartTime: js.UndefOr[WeeklyStartTime]
+    var PendingEngineVersion: js.UndefOr[__string]
+    var PubliclyAccessible: js.UndefOr[__boolean]
+    var SecurityGroups: js.UndefOr[__listOf__string]
+    var SubnetIds: js.UndefOr[__listOf__string]
+    var Users: js.UndefOr[__listOfUserSummary]
   }
 
   object DescribeBrokerResponse {
     def apply(
-      Created: js.UndefOr[__timestampIso8601] = js.undefined,
-      Users: js.UndefOr[__listOfUserSummary] = js.undefined,
-      BrokerName: js.UndefOr[__string] = js.undefined,
-      Logs: js.UndefOr[LogsSummary] = js.undefined,
-      BrokerArn: js.UndefOr[__string] = js.undefined,
-      SecurityGroups: js.UndefOr[__listOf__string] = js.undefined,
-      Configurations: js.UndefOr[Configurations] = js.undefined,
-      PendingEngineVersion: js.UndefOr[__string] = js.undefined,
-      BrokerState: js.UndefOr[BrokerState] = js.undefined,
       AutoMinorVersionUpgrade: js.UndefOr[__boolean] = js.undefined,
-      EngineVersion: js.UndefOr[__string] = js.undefined,
-      MaintenanceWindowStartTime: js.UndefOr[WeeklyStartTime] = js.undefined,
+      BrokerArn: js.UndefOr[__string] = js.undefined,
       BrokerId: js.UndefOr[__string] = js.undefined,
-      PubliclyAccessible: js.UndefOr[__boolean] = js.undefined,
-      DeploymentMode: js.UndefOr[DeploymentMode] = js.undefined,
-      SubnetIds: js.UndefOr[__listOf__string] = js.undefined,
-      EngineType: js.UndefOr[EngineType] = js.undefined,
       BrokerInstances: js.UndefOr[__listOfBrokerInstance] = js.undefined,
-      HostInstanceType: js.UndefOr[__string] = js.undefined): DescribeBrokerResponse = {
+      BrokerName: js.UndefOr[__string] = js.undefined,
+      BrokerState: js.UndefOr[BrokerState] = js.undefined,
+      Configurations: js.UndefOr[Configurations] = js.undefined,
+      Created: js.UndefOr[__timestampIso8601] = js.undefined,
+      DeploymentMode: js.UndefOr[DeploymentMode] = js.undefined,
+      EngineType: js.UndefOr[EngineType] = js.undefined,
+      EngineVersion: js.UndefOr[__string] = js.undefined,
+      HostInstanceType: js.UndefOr[__string] = js.undefined,
+      Logs: js.UndefOr[LogsSummary] = js.undefined,
+      MaintenanceWindowStartTime: js.UndefOr[WeeklyStartTime] = js.undefined,
+      PendingEngineVersion: js.UndefOr[__string] = js.undefined,
+      PubliclyAccessible: js.UndefOr[__boolean] = js.undefined,
+      SecurityGroups: js.UndefOr[__listOf__string] = js.undefined,
+      SubnetIds: js.UndefOr[__listOf__string] = js.undefined,
+      Users: js.UndefOr[__listOfUserSummary] = js.undefined): DescribeBrokerResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Created" -> Created.map { x => x.asInstanceOf[js.Any] },
-        "Users" -> Users.map { x => x.asInstanceOf[js.Any] },
-        "BrokerName" -> BrokerName.map { x => x.asInstanceOf[js.Any] },
-        "Logs" -> Logs.map { x => x.asInstanceOf[js.Any] },
-        "BrokerArn" -> BrokerArn.map { x => x.asInstanceOf[js.Any] },
-        "SecurityGroups" -> SecurityGroups.map { x => x.asInstanceOf[js.Any] },
-        "Configurations" -> Configurations.map { x => x.asInstanceOf[js.Any] },
-        "PendingEngineVersion" -> PendingEngineVersion.map { x => x.asInstanceOf[js.Any] },
-        "BrokerState" -> BrokerState.map { x => x.asInstanceOf[js.Any] },
         "AutoMinorVersionUpgrade" -> AutoMinorVersionUpgrade.map { x => x.asInstanceOf[js.Any] },
-        "EngineVersion" -> EngineVersion.map { x => x.asInstanceOf[js.Any] },
-        "MaintenanceWindowStartTime" -> MaintenanceWindowStartTime.map { x => x.asInstanceOf[js.Any] },
+        "BrokerArn" -> BrokerArn.map { x => x.asInstanceOf[js.Any] },
         "BrokerId" -> BrokerId.map { x => x.asInstanceOf[js.Any] },
-        "PubliclyAccessible" -> PubliclyAccessible.map { x => x.asInstanceOf[js.Any] },
-        "DeploymentMode" -> DeploymentMode.map { x => x.asInstanceOf[js.Any] },
-        "SubnetIds" -> SubnetIds.map { x => x.asInstanceOf[js.Any] },
-        "EngineType" -> EngineType.map { x => x.asInstanceOf[js.Any] },
         "BrokerInstances" -> BrokerInstances.map { x => x.asInstanceOf[js.Any] },
-        "HostInstanceType" -> HostInstanceType.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "BrokerName" -> BrokerName.map { x => x.asInstanceOf[js.Any] },
+        "BrokerState" -> BrokerState.map { x => x.asInstanceOf[js.Any] },
+        "Configurations" -> Configurations.map { x => x.asInstanceOf[js.Any] },
+        "Created" -> Created.map { x => x.asInstanceOf[js.Any] },
+        "DeploymentMode" -> DeploymentMode.map { x => x.asInstanceOf[js.Any] },
+        "EngineType" -> EngineType.map { x => x.asInstanceOf[js.Any] },
+        "EngineVersion" -> EngineVersion.map { x => x.asInstanceOf[js.Any] },
+        "HostInstanceType" -> HostInstanceType.map { x => x.asInstanceOf[js.Any] },
+        "Logs" -> Logs.map { x => x.asInstanceOf[js.Any] },
+        "MaintenanceWindowStartTime" -> MaintenanceWindowStartTime.map { x => x.asInstanceOf[js.Any] },
+        "PendingEngineVersion" -> PendingEngineVersion.map { x => x.asInstanceOf[js.Any] },
+        "PubliclyAccessible" -> PubliclyAccessible.map { x => x.asInstanceOf[js.Any] },
+        "SecurityGroups" -> SecurityGroups.map { x => x.asInstanceOf[js.Any] },
+        "SubnetIds" -> SubnetIds.map { x => x.asInstanceOf[js.Any] },
+        "Users" -> Users.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeBrokerResponse]
     }
@@ -583,14 +583,14 @@ package mq {
 
   @js.native
   trait DescribeConfigurationRequest extends js.Object {
-    var ConfigurationId: js.UndefOr[__string]
+    var ConfigurationId: __string
   }
 
   object DescribeConfigurationRequest {
     def apply(
-      ConfigurationId: js.UndefOr[__string] = js.undefined): DescribeConfigurationRequest = {
+      ConfigurationId: __string): DescribeConfigurationRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ConfigurationId" -> ConfigurationId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ConfigurationId" -> ConfigurationId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeConfigurationRequest]
     }
@@ -598,35 +598,35 @@ package mq {
 
   @js.native
   trait DescribeConfigurationResponse extends js.Object {
-    var Id: js.UndefOr[__string]
-    var Name: js.UndefOr[__string]
+    var Arn: js.UndefOr[__string]
     var Created: js.UndefOr[__timestampIso8601]
     var Description: js.UndefOr[__string]
-    var LatestRevision: js.UndefOr[ConfigurationRevision]
-    var Arn: js.UndefOr[__string]
-    var EngineVersion: js.UndefOr[__string]
     var EngineType: js.UndefOr[EngineType]
+    var EngineVersion: js.UndefOr[__string]
+    var Id: js.UndefOr[__string]
+    var LatestRevision: js.UndefOr[ConfigurationRevision]
+    var Name: js.UndefOr[__string]
   }
 
   object DescribeConfigurationResponse {
     def apply(
-      Id: js.UndefOr[__string] = js.undefined,
-      Name: js.UndefOr[__string] = js.undefined,
+      Arn: js.UndefOr[__string] = js.undefined,
       Created: js.UndefOr[__timestampIso8601] = js.undefined,
       Description: js.UndefOr[__string] = js.undefined,
-      LatestRevision: js.UndefOr[ConfigurationRevision] = js.undefined,
-      Arn: js.UndefOr[__string] = js.undefined,
+      EngineType: js.UndefOr[EngineType] = js.undefined,
       EngineVersion: js.UndefOr[__string] = js.undefined,
-      EngineType: js.UndefOr[EngineType] = js.undefined): DescribeConfigurationResponse = {
+      Id: js.UndefOr[__string] = js.undefined,
+      LatestRevision: js.UndefOr[ConfigurationRevision] = js.undefined,
+      Name: js.UndefOr[__string] = js.undefined): DescribeConfigurationResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Id" -> Id.map { x => x.asInstanceOf[js.Any] },
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
+        "Arn" -> Arn.map { x => x.asInstanceOf[js.Any] },
         "Created" -> Created.map { x => x.asInstanceOf[js.Any] },
         "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
-        "LatestRevision" -> LatestRevision.map { x => x.asInstanceOf[js.Any] },
-        "Arn" -> Arn.map { x => x.asInstanceOf[js.Any] },
+        "EngineType" -> EngineType.map { x => x.asInstanceOf[js.Any] },
         "EngineVersion" -> EngineVersion.map { x => x.asInstanceOf[js.Any] },
-        "EngineType" -> EngineType.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Id" -> Id.map { x => x.asInstanceOf[js.Any] },
+        "LatestRevision" -> LatestRevision.map { x => x.asInstanceOf[js.Any] },
+        "Name" -> Name.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeConfigurationResponse]
     }
@@ -634,17 +634,17 @@ package mq {
 
   @js.native
   trait DescribeConfigurationRevisionRequest extends js.Object {
-    var ConfigurationId: js.UndefOr[__string]
-    var ConfigurationRevision: js.UndefOr[__string]
+    var ConfigurationId: __string
+    var ConfigurationRevision: __string
   }
 
   object DescribeConfigurationRevisionRequest {
     def apply(
-      ConfigurationId: js.UndefOr[__string] = js.undefined,
-      ConfigurationRevision: js.UndefOr[__string] = js.undefined): DescribeConfigurationRevisionRequest = {
+      ConfigurationId: __string,
+      ConfigurationRevision: __string): DescribeConfigurationRevisionRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ConfigurationId" -> ConfigurationId.map { x => x.asInstanceOf[js.Any] },
-        "ConfigurationRevision" -> ConfigurationRevision.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ConfigurationId" -> ConfigurationId.asInstanceOf[js.Any],
+        "ConfigurationRevision" -> ConfigurationRevision.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeConfigurationRevisionRequest]
     }
@@ -676,17 +676,17 @@ package mq {
 
   @js.native
   trait DescribeUserRequest extends js.Object {
-    var BrokerId: js.UndefOr[__string]
-    var Username: js.UndefOr[__string]
+    var BrokerId: __string
+    var Username: __string
   }
 
   object DescribeUserRequest {
     def apply(
-      BrokerId: js.UndefOr[__string] = js.undefined,
-      Username: js.UndefOr[__string] = js.undefined): DescribeUserRequest = {
+      BrokerId: __string,
+      Username: __string): DescribeUserRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "BrokerId" -> BrokerId.map { x => x.asInstanceOf[js.Any] },
-        "Username" -> Username.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "BrokerId" -> BrokerId.asInstanceOf[js.Any],
+        "Username" -> Username.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeUserRequest]
     }
@@ -694,26 +694,26 @@ package mq {
 
   @js.native
   trait DescribeUserResponse extends js.Object {
-    var Pending: js.UndefOr[UserPendingChanges]
-    var Username: js.UndefOr[__string]
+    var BrokerId: js.UndefOr[__string]
     var ConsoleAccess: js.UndefOr[__boolean]
     var Groups: js.UndefOr[__listOf__string]
-    var BrokerId: js.UndefOr[__string]
+    var Pending: js.UndefOr[UserPendingChanges]
+    var Username: js.UndefOr[__string]
   }
 
   object DescribeUserResponse {
     def apply(
-      Pending: js.UndefOr[UserPendingChanges] = js.undefined,
-      Username: js.UndefOr[__string] = js.undefined,
+      BrokerId: js.UndefOr[__string] = js.undefined,
       ConsoleAccess: js.UndefOr[__boolean] = js.undefined,
       Groups: js.UndefOr[__listOf__string] = js.undefined,
-      BrokerId: js.UndefOr[__string] = js.undefined): DescribeUserResponse = {
+      Pending: js.UndefOr[UserPendingChanges] = js.undefined,
+      Username: js.UndefOr[__string] = js.undefined): DescribeUserResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Pending" -> Pending.map { x => x.asInstanceOf[js.Any] },
-        "Username" -> Username.map { x => x.asInstanceOf[js.Any] },
+        "BrokerId" -> BrokerId.map { x => x.asInstanceOf[js.Any] },
         "ConsoleAccess" -> ConsoleAccess.map { x => x.asInstanceOf[js.Any] },
         "Groups" -> Groups.map { x => x.asInstanceOf[js.Any] },
-        "BrokerId" -> BrokerId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Pending" -> Pending.map { x => x.asInstanceOf[js.Any] },
+        "Username" -> Username.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeUserResponse]
     }
@@ -766,18 +766,18 @@ package mq {
 
   @js.native
   trait ListConfigurationRevisionsRequest extends js.Object {
-    var ConfigurationId: js.UndefOr[__string]
+    var ConfigurationId: __string
     var MaxResults: js.UndefOr[MaxResults]
     var NextToken: js.UndefOr[__string]
   }
 
   object ListConfigurationRevisionsRequest {
     def apply(
-      ConfigurationId: js.UndefOr[__string] = js.undefined,
+      ConfigurationId: __string,
       MaxResults: js.UndefOr[MaxResults] = js.undefined,
       NextToken: js.UndefOr[__string] = js.undefined): ListConfigurationRevisionsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ConfigurationId" -> ConfigurationId.map { x => x.asInstanceOf[js.Any] },
+        "ConfigurationId" -> ConfigurationId.asInstanceOf[js.Any],
         "MaxResults" -> MaxResults.map { x => x.asInstanceOf[js.Any] },
         "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
@@ -850,18 +850,18 @@ package mq {
 
   @js.native
   trait ListUsersRequest extends js.Object {
-    var BrokerId: js.UndefOr[__string]
+    var BrokerId: __string
     var MaxResults: js.UndefOr[MaxResults]
     var NextToken: js.UndefOr[__string]
   }
 
   object ListUsersRequest {
     def apply(
-      BrokerId: js.UndefOr[__string] = js.undefined,
+      BrokerId: __string,
       MaxResults: js.UndefOr[MaxResults] = js.undefined,
       NextToken: js.UndefOr[__string] = js.undefined): ListUsersRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "BrokerId" -> BrokerId.map { x => x.asInstanceOf[js.Any] },
+        "BrokerId" -> BrokerId.asInstanceOf[js.Any],
         "MaxResults" -> MaxResults.map { x => x.asInstanceOf[js.Any] },
         "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
@@ -919,26 +919,26 @@ package mq {
    */
   @js.native
   trait LogsSummary extends js.Object {
-    var Pending: js.UndefOr[PendingLogs]
     var Audit: js.UndefOr[__boolean]
     var AuditLogGroup: js.UndefOr[__string]
-    var GeneralLogGroup: js.UndefOr[__string]
     var General: js.UndefOr[__boolean]
+    var GeneralLogGroup: js.UndefOr[__string]
+    var Pending: js.UndefOr[PendingLogs]
   }
 
   object LogsSummary {
     def apply(
-      Pending: js.UndefOr[PendingLogs] = js.undefined,
       Audit: js.UndefOr[__boolean] = js.undefined,
       AuditLogGroup: js.UndefOr[__string] = js.undefined,
+      General: js.UndefOr[__boolean] = js.undefined,
       GeneralLogGroup: js.UndefOr[__string] = js.undefined,
-      General: js.UndefOr[__boolean] = js.undefined): LogsSummary = {
+      Pending: js.UndefOr[PendingLogs] = js.undefined): LogsSummary = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Pending" -> Pending.map { x => x.asInstanceOf[js.Any] },
         "Audit" -> Audit.map { x => x.asInstanceOf[js.Any] },
         "AuditLogGroup" -> AuditLogGroup.map { x => x.asInstanceOf[js.Any] },
+        "General" -> General.map { x => x.asInstanceOf[js.Any] },
         "GeneralLogGroup" -> GeneralLogGroup.map { x => x.asInstanceOf[js.Any] },
-        "General" -> General.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Pending" -> Pending.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[LogsSummary]
     }
@@ -967,14 +967,14 @@ package mq {
 
   @js.native
   trait RebootBrokerRequest extends js.Object {
-    var BrokerId: js.UndefOr[__string]
+    var BrokerId: __string
   }
 
   object RebootBrokerRequest {
     def apply(
-      BrokerId: js.UndefOr[__string] = js.undefined): RebootBrokerRequest = {
+      BrokerId: __string): RebootBrokerRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "BrokerId" -> BrokerId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "BrokerId" -> BrokerId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RebootBrokerRequest]
     }
@@ -1033,26 +1033,26 @@ package mq {
    */
   @js.native
   trait UpdateBrokerRequest extends js.Object {
-    var Logs: js.UndefOr[Logs]
-    var Configuration: js.UndefOr[ConfigurationId]
+    var BrokerId: __string
     var AutoMinorVersionUpgrade: js.UndefOr[__boolean]
+    var Configuration: js.UndefOr[ConfigurationId]
     var EngineVersion: js.UndefOr[__string]
-    var BrokerId: js.UndefOr[__string]
+    var Logs: js.UndefOr[Logs]
   }
 
   object UpdateBrokerRequest {
     def apply(
-      Logs: js.UndefOr[Logs] = js.undefined,
-      Configuration: js.UndefOr[ConfigurationId] = js.undefined,
+      BrokerId: __string,
       AutoMinorVersionUpgrade: js.UndefOr[__boolean] = js.undefined,
+      Configuration: js.UndefOr[ConfigurationId] = js.undefined,
       EngineVersion: js.UndefOr[__string] = js.undefined,
-      BrokerId: js.UndefOr[__string] = js.undefined): UpdateBrokerRequest = {
+      Logs: js.UndefOr[Logs] = js.undefined): UpdateBrokerRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Logs" -> Logs.map { x => x.asInstanceOf[js.Any] },
-        "Configuration" -> Configuration.map { x => x.asInstanceOf[js.Any] },
+        "BrokerId" -> BrokerId.asInstanceOf[js.Any],
         "AutoMinorVersionUpgrade" -> AutoMinorVersionUpgrade.map { x => x.asInstanceOf[js.Any] },
+        "Configuration" -> Configuration.map { x => x.asInstanceOf[js.Any] },
         "EngineVersion" -> EngineVersion.map { x => x.asInstanceOf[js.Any] },
-        "BrokerId" -> BrokerId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Logs" -> Logs.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateBrokerRequest]
     }
@@ -1060,26 +1060,26 @@ package mq {
 
   @js.native
   trait UpdateBrokerResponse extends js.Object {
-    var Logs: js.UndefOr[Logs]
-    var Configuration: js.UndefOr[ConfigurationId]
     var AutoMinorVersionUpgrade: js.UndefOr[__boolean]
-    var EngineVersion: js.UndefOr[__string]
     var BrokerId: js.UndefOr[__string]
+    var Configuration: js.UndefOr[ConfigurationId]
+    var EngineVersion: js.UndefOr[__string]
+    var Logs: js.UndefOr[Logs]
   }
 
   object UpdateBrokerResponse {
     def apply(
-      Logs: js.UndefOr[Logs] = js.undefined,
-      Configuration: js.UndefOr[ConfigurationId] = js.undefined,
       AutoMinorVersionUpgrade: js.UndefOr[__boolean] = js.undefined,
+      BrokerId: js.UndefOr[__string] = js.undefined,
+      Configuration: js.UndefOr[ConfigurationId] = js.undefined,
       EngineVersion: js.UndefOr[__string] = js.undefined,
-      BrokerId: js.UndefOr[__string] = js.undefined): UpdateBrokerResponse = {
+      Logs: js.UndefOr[Logs] = js.undefined): UpdateBrokerResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Logs" -> Logs.map { x => x.asInstanceOf[js.Any] },
-        "Configuration" -> Configuration.map { x => x.asInstanceOf[js.Any] },
         "AutoMinorVersionUpgrade" -> AutoMinorVersionUpgrade.map { x => x.asInstanceOf[js.Any] },
+        "BrokerId" -> BrokerId.map { x => x.asInstanceOf[js.Any] },
+        "Configuration" -> Configuration.map { x => x.asInstanceOf[js.Any] },
         "EngineVersion" -> EngineVersion.map { x => x.asInstanceOf[js.Any] },
-        "BrokerId" -> BrokerId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Logs" -> Logs.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateBrokerResponse]
     }
@@ -1090,18 +1090,18 @@ package mq {
    */
   @js.native
   trait UpdateConfigurationRequest extends js.Object {
-    var ConfigurationId: js.UndefOr[__string]
+    var ConfigurationId: __string
     var Data: js.UndefOr[__string]
     var Description: js.UndefOr[__string]
   }
 
   object UpdateConfigurationRequest {
     def apply(
-      ConfigurationId: js.UndefOr[__string] = js.undefined,
+      ConfigurationId: __string,
       Data: js.UndefOr[__string] = js.undefined,
       Description: js.UndefOr[__string] = js.undefined): UpdateConfigurationRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ConfigurationId" -> ConfigurationId.map { x => x.asInstanceOf[js.Any] },
+        "ConfigurationId" -> ConfigurationId.asInstanceOf[js.Any],
         "Data" -> Data.map { x => x.asInstanceOf[js.Any] },
         "Description" -> Description.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
@@ -1111,28 +1111,28 @@ package mq {
 
   @js.native
   trait UpdateConfigurationResponse extends js.Object {
-    var Id: js.UndefOr[__string]
-    var Name: js.UndefOr[__string]
-    var Created: js.UndefOr[__timestampIso8601]
-    var LatestRevision: js.UndefOr[ConfigurationRevision]
     var Arn: js.UndefOr[__string]
+    var Created: js.UndefOr[__timestampIso8601]
+    var Id: js.UndefOr[__string]
+    var LatestRevision: js.UndefOr[ConfigurationRevision]
+    var Name: js.UndefOr[__string]
     var Warnings: js.UndefOr[__listOfSanitizationWarning]
   }
 
   object UpdateConfigurationResponse {
     def apply(
-      Id: js.UndefOr[__string] = js.undefined,
-      Name: js.UndefOr[__string] = js.undefined,
-      Created: js.UndefOr[__timestampIso8601] = js.undefined,
-      LatestRevision: js.UndefOr[ConfigurationRevision] = js.undefined,
       Arn: js.UndefOr[__string] = js.undefined,
+      Created: js.UndefOr[__timestampIso8601] = js.undefined,
+      Id: js.UndefOr[__string] = js.undefined,
+      LatestRevision: js.UndefOr[ConfigurationRevision] = js.undefined,
+      Name: js.UndefOr[__string] = js.undefined,
       Warnings: js.UndefOr[__listOfSanitizationWarning] = js.undefined): UpdateConfigurationResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Id" -> Id.map { x => x.asInstanceOf[js.Any] },
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
-        "Created" -> Created.map { x => x.asInstanceOf[js.Any] },
-        "LatestRevision" -> LatestRevision.map { x => x.asInstanceOf[js.Any] },
         "Arn" -> Arn.map { x => x.asInstanceOf[js.Any] },
+        "Created" -> Created.map { x => x.asInstanceOf[js.Any] },
+        "Id" -> Id.map { x => x.asInstanceOf[js.Any] },
+        "LatestRevision" -> LatestRevision.map { x => x.asInstanceOf[js.Any] },
+        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
         "Warnings" -> Warnings.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateConfigurationResponse]
@@ -1144,26 +1144,26 @@ package mq {
    */
   @js.native
   trait UpdateUserRequest extends js.Object {
-    var Username: js.UndefOr[__string]
+    var BrokerId: __string
+    var Username: __string
     var ConsoleAccess: js.UndefOr[__boolean]
     var Groups: js.UndefOr[__listOf__string]
     var Password: js.UndefOr[__string]
-    var BrokerId: js.UndefOr[__string]
   }
 
   object UpdateUserRequest {
     def apply(
-      Username: js.UndefOr[__string] = js.undefined,
+      BrokerId: __string,
+      Username: __string,
       ConsoleAccess: js.UndefOr[__boolean] = js.undefined,
       Groups: js.UndefOr[__listOf__string] = js.undefined,
-      Password: js.UndefOr[__string] = js.undefined,
-      BrokerId: js.UndefOr[__string] = js.undefined): UpdateUserRequest = {
+      Password: js.UndefOr[__string] = js.undefined): UpdateUserRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Username" -> Username.map { x => x.asInstanceOf[js.Any] },
+        "BrokerId" -> BrokerId.asInstanceOf[js.Any],
+        "Username" -> Username.asInstanceOf[js.Any],
         "ConsoleAccess" -> ConsoleAccess.map { x => x.asInstanceOf[js.Any] },
         "Groups" -> Groups.map { x => x.asInstanceOf[js.Any] },
-        "Password" -> Password.map { x => x.asInstanceOf[js.Any] },
-        "BrokerId" -> BrokerId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Password" -> Password.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateUserRequest]
     }

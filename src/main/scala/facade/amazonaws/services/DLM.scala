@@ -45,23 +45,23 @@ package dlm {
 
   @js.native
   trait CreateLifecyclePolicyRequest extends js.Object {
-    var ExecutionRoleArn: js.UndefOr[ExecutionRoleArn]
-    var Description: js.UndefOr[PolicyDescription]
-    var State: js.UndefOr[SettablePolicyStateValues]
-    var PolicyDetails: js.UndefOr[PolicyDetails]
+    var Description: PolicyDescription
+    var ExecutionRoleArn: ExecutionRoleArn
+    var PolicyDetails: PolicyDetails
+    var State: SettablePolicyStateValues
   }
 
   object CreateLifecyclePolicyRequest {
     def apply(
-      ExecutionRoleArn: js.UndefOr[ExecutionRoleArn] = js.undefined,
-      Description: js.UndefOr[PolicyDescription] = js.undefined,
-      State: js.UndefOr[SettablePolicyStateValues] = js.undefined,
-      PolicyDetails: js.UndefOr[PolicyDetails] = js.undefined): CreateLifecyclePolicyRequest = {
+      Description: PolicyDescription,
+      ExecutionRoleArn: ExecutionRoleArn,
+      PolicyDetails: PolicyDetails,
+      State: SettablePolicyStateValues): CreateLifecyclePolicyRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ExecutionRoleArn" -> ExecutionRoleArn.map { x => x.asInstanceOf[js.Any] },
-        "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
-        "State" -> State.map { x => x.asInstanceOf[js.Any] },
-        "PolicyDetails" -> PolicyDetails.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Description" -> Description.asInstanceOf[js.Any],
+        "ExecutionRoleArn" -> ExecutionRoleArn.asInstanceOf[js.Any],
+        "PolicyDetails" -> PolicyDetails.asInstanceOf[js.Any],
+        "State" -> State.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateLifecyclePolicyRequest]
     }
@@ -87,19 +87,19 @@ package dlm {
    */
   @js.native
   trait CreateRule extends js.Object {
-    var Interval: js.UndefOr[Interval]
-    var IntervalUnit: js.UndefOr[IntervalUnitValues]
+    var Interval: Interval
+    var IntervalUnit: IntervalUnitValues
     var Times: js.UndefOr[TimesList]
   }
 
   object CreateRule {
     def apply(
-      Interval: js.UndefOr[Interval] = js.undefined,
-      IntervalUnit: js.UndefOr[IntervalUnitValues] = js.undefined,
+      Interval: Interval,
+      IntervalUnit: IntervalUnitValues,
       Times: js.UndefOr[TimesList] = js.undefined): CreateRule = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Interval" -> Interval.map { x => x.asInstanceOf[js.Any] },
-        "IntervalUnit" -> IntervalUnit.map { x => x.asInstanceOf[js.Any] },
+        "Interval" -> Interval.asInstanceOf[js.Any],
+        "IntervalUnit" -> IntervalUnit.asInstanceOf[js.Any],
         "Times" -> Times.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateRule]
@@ -108,14 +108,14 @@ package dlm {
 
   @js.native
   trait DeleteLifecyclePolicyRequest extends js.Object {
-    var PolicyId: js.UndefOr[PolicyId]
+    var PolicyId: PolicyId
   }
 
   object DeleteLifecyclePolicyRequest {
     def apply(
-      PolicyId: js.UndefOr[PolicyId] = js.undefined): DeleteLifecyclePolicyRequest = {
+      PolicyId: PolicyId): DeleteLifecyclePolicyRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "PolicyId" -> PolicyId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "PolicyId" -> PolicyId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteLifecyclePolicyRequest]
     }
@@ -136,26 +136,26 @@ package dlm {
 
   @js.native
   trait GetLifecyclePoliciesRequest extends js.Object {
-    var TargetTags: js.UndefOr[TargetTagsFilterList]
     var PolicyIds: js.UndefOr[PolicyIdList]
-    var TagsToAdd: js.UndefOr[TagsToAddFilterList]
     var ResourceTypes: js.UndefOr[ResourceTypeValuesList]
     var State: js.UndefOr[GettablePolicyStateValues]
+    var TagsToAdd: js.UndefOr[TagsToAddFilterList]
+    var TargetTags: js.UndefOr[TargetTagsFilterList]
   }
 
   object GetLifecyclePoliciesRequest {
     def apply(
-      TargetTags: js.UndefOr[TargetTagsFilterList] = js.undefined,
       PolicyIds: js.UndefOr[PolicyIdList] = js.undefined,
-      TagsToAdd: js.UndefOr[TagsToAddFilterList] = js.undefined,
       ResourceTypes: js.UndefOr[ResourceTypeValuesList] = js.undefined,
-      State: js.UndefOr[GettablePolicyStateValues] = js.undefined): GetLifecyclePoliciesRequest = {
+      State: js.UndefOr[GettablePolicyStateValues] = js.undefined,
+      TagsToAdd: js.UndefOr[TagsToAddFilterList] = js.undefined,
+      TargetTags: js.UndefOr[TargetTagsFilterList] = js.undefined): GetLifecyclePoliciesRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "TargetTags" -> TargetTags.map { x => x.asInstanceOf[js.Any] },
         "PolicyIds" -> PolicyIds.map { x => x.asInstanceOf[js.Any] },
-        "TagsToAdd" -> TagsToAdd.map { x => x.asInstanceOf[js.Any] },
         "ResourceTypes" -> ResourceTypes.map { x => x.asInstanceOf[js.Any] },
-        "State" -> State.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "State" -> State.map { x => x.asInstanceOf[js.Any] },
+        "TagsToAdd" -> TagsToAdd.map { x => x.asInstanceOf[js.Any] },
+        "TargetTags" -> TargetTags.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetLifecyclePoliciesRequest]
     }
@@ -178,14 +178,14 @@ package dlm {
 
   @js.native
   trait GetLifecyclePolicyRequest extends js.Object {
-    var PolicyId: js.UndefOr[PolicyId]
+    var PolicyId: PolicyId
   }
 
   object GetLifecyclePolicyRequest {
     def apply(
-      PolicyId: js.UndefOr[PolicyId] = js.undefined): GetLifecyclePolicyRequest = {
+      PolicyId: PolicyId): GetLifecyclePolicyRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "PolicyId" -> PolicyId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "PolicyId" -> PolicyId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetLifecyclePolicyRequest]
     }
@@ -225,32 +225,32 @@ package dlm {
    */
   @js.native
   trait LifecyclePolicy extends js.Object {
-    var PolicyId: js.UndefOr[PolicyId]
+    var DateCreated: js.UndefOr[Timestamp]
     var DateModified: js.UndefOr[Timestamp]
     var Description: js.UndefOr[PolicyDescription]
-    var PolicyDetails: js.UndefOr[PolicyDetails]
-    var DateCreated: js.UndefOr[Timestamp]
-    var State: js.UndefOr[GettablePolicyStateValues]
     var ExecutionRoleArn: js.UndefOr[ExecutionRoleArn]
+    var PolicyDetails: js.UndefOr[PolicyDetails]
+    var PolicyId: js.UndefOr[PolicyId]
+    var State: js.UndefOr[GettablePolicyStateValues]
   }
 
   object LifecyclePolicy {
     def apply(
-      PolicyId: js.UndefOr[PolicyId] = js.undefined,
+      DateCreated: js.UndefOr[Timestamp] = js.undefined,
       DateModified: js.UndefOr[Timestamp] = js.undefined,
       Description: js.UndefOr[PolicyDescription] = js.undefined,
+      ExecutionRoleArn: js.UndefOr[ExecutionRoleArn] = js.undefined,
       PolicyDetails: js.UndefOr[PolicyDetails] = js.undefined,
-      DateCreated: js.UndefOr[Timestamp] = js.undefined,
-      State: js.UndefOr[GettablePolicyStateValues] = js.undefined,
-      ExecutionRoleArn: js.UndefOr[ExecutionRoleArn] = js.undefined): LifecyclePolicy = {
+      PolicyId: js.UndefOr[PolicyId] = js.undefined,
+      State: js.UndefOr[GettablePolicyStateValues] = js.undefined): LifecyclePolicy = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "PolicyId" -> PolicyId.map { x => x.asInstanceOf[js.Any] },
+        "DateCreated" -> DateCreated.map { x => x.asInstanceOf[js.Any] },
         "DateModified" -> DateModified.map { x => x.asInstanceOf[js.Any] },
         "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
+        "ExecutionRoleArn" -> ExecutionRoleArn.map { x => x.asInstanceOf[js.Any] },
         "PolicyDetails" -> PolicyDetails.map { x => x.asInstanceOf[js.Any] },
-        "DateCreated" -> DateCreated.map { x => x.asInstanceOf[js.Any] },
-        "State" -> State.map { x => x.asInstanceOf[js.Any] },
-        "ExecutionRoleArn" -> ExecutionRoleArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "PolicyId" -> PolicyId.map { x => x.asInstanceOf[js.Any] },
+        "State" -> State.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[LifecyclePolicy]
     }
@@ -261,19 +261,19 @@ package dlm {
    */
   @js.native
   trait LifecyclePolicySummary extends js.Object {
-    var PolicyId: js.UndefOr[PolicyId]
     var Description: js.UndefOr[PolicyDescription]
+    var PolicyId: js.UndefOr[PolicyId]
     var State: js.UndefOr[GettablePolicyStateValues]
   }
 
   object LifecyclePolicySummary {
     def apply(
-      PolicyId: js.UndefOr[PolicyId] = js.undefined,
       Description: js.UndefOr[PolicyDescription] = js.undefined,
+      PolicyId: js.UndefOr[PolicyId] = js.undefined,
       State: js.UndefOr[GettablePolicyStateValues] = js.undefined): LifecyclePolicySummary = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "PolicyId" -> PolicyId.map { x => x.asInstanceOf[js.Any] },
         "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
+        "PolicyId" -> PolicyId.map { x => x.asInstanceOf[js.Any] },
         "State" -> State.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[LifecyclePolicySummary]
@@ -286,19 +286,19 @@ package dlm {
   @js.native
   trait PolicyDetails extends js.Object {
     var ResourceTypes: js.UndefOr[ResourceTypeValuesList]
-    var TargetTags: js.UndefOr[TargetTagList]
     var Schedules: js.UndefOr[ScheduleList]
+    var TargetTags: js.UndefOr[TargetTagList]
   }
 
   object PolicyDetails {
     def apply(
       ResourceTypes: js.UndefOr[ResourceTypeValuesList] = js.undefined,
-      TargetTags: js.UndefOr[TargetTagList] = js.undefined,
-      Schedules: js.UndefOr[ScheduleList] = js.undefined): PolicyDetails = {
+      Schedules: js.UndefOr[ScheduleList] = js.undefined,
+      TargetTags: js.UndefOr[TargetTagList] = js.undefined): PolicyDetails = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ResourceTypes" -> ResourceTypes.map { x => x.asInstanceOf[js.Any] },
-        "TargetTags" -> TargetTags.map { x => x.asInstanceOf[js.Any] },
-        "Schedules" -> Schedules.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Schedules" -> Schedules.map { x => x.asInstanceOf[js.Any] },
+        "TargetTags" -> TargetTags.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PolicyDetails]
     }
@@ -315,14 +315,14 @@ package dlm {
    */
   @js.native
   trait RetainRule extends js.Object {
-    var Count: js.UndefOr[Count]
+    var Count: Count
   }
 
   object RetainRule {
     def apply(
-      Count: js.UndefOr[Count] = js.undefined): RetainRule = {
+      Count: Count): RetainRule = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Count" -> Count.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Count" -> Count.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RetainRule]
     }
@@ -333,26 +333,26 @@ package dlm {
    */
   @js.native
   trait Schedule extends js.Object {
+    var CopyTags: js.UndefOr[CopyTags]
+    var CreateRule: js.UndefOr[CreateRule]
     var Name: js.UndefOr[ScheduleName]
     var RetainRule: js.UndefOr[RetainRule]
     var TagsToAdd: js.UndefOr[TagsToAddList]
-    var CopyTags: js.UndefOr[CopyTags]
-    var CreateRule: js.UndefOr[CreateRule]
   }
 
   object Schedule {
     def apply(
+      CopyTags: js.UndefOr[CopyTags] = js.undefined,
+      CreateRule: js.UndefOr[CreateRule] = js.undefined,
       Name: js.UndefOr[ScheduleName] = js.undefined,
       RetainRule: js.UndefOr[RetainRule] = js.undefined,
-      TagsToAdd: js.UndefOr[TagsToAddList] = js.undefined,
-      CopyTags: js.UndefOr[CopyTags] = js.undefined,
-      CreateRule: js.UndefOr[CreateRule] = js.undefined): Schedule = {
+      TagsToAdd: js.UndefOr[TagsToAddList] = js.undefined): Schedule = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "CopyTags" -> CopyTags.map { x => x.asInstanceOf[js.Any] },
+        "CreateRule" -> CreateRule.map { x => x.asInstanceOf[js.Any] },
         "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
         "RetainRule" -> RetainRule.map { x => x.asInstanceOf[js.Any] },
-        "TagsToAdd" -> TagsToAdd.map { x => x.asInstanceOf[js.Any] },
-        "CopyTags" -> CopyTags.map { x => x.asInstanceOf[js.Any] },
-        "CreateRule" -> CreateRule.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "TagsToAdd" -> TagsToAdd.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Schedule]
     }
@@ -370,17 +370,17 @@ package dlm {
    */
   @js.native
   trait Tag extends js.Object {
-    var Key: js.UndefOr[String]
-    var Value: js.UndefOr[String]
+    var Key: String
+    var Value: String
   }
 
   object Tag {
     def apply(
-      Key: js.UndefOr[String] = js.undefined,
-      Value: js.UndefOr[String] = js.undefined): Tag = {
+      Key: String,
+      Value: String): Tag = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Key" -> Key.map { x => x.asInstanceOf[js.Any] },
-        "Value" -> Value.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Key" -> Key.asInstanceOf[js.Any],
+        "Value" -> Value.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Tag]
     }
@@ -388,26 +388,26 @@ package dlm {
 
   @js.native
   trait UpdateLifecyclePolicyRequest extends js.Object {
-    var PolicyId: js.UndefOr[PolicyId]
+    var PolicyId: PolicyId
     var Description: js.UndefOr[PolicyDescription]
+    var ExecutionRoleArn: js.UndefOr[ExecutionRoleArn]
     var PolicyDetails: js.UndefOr[PolicyDetails]
     var State: js.UndefOr[SettablePolicyStateValues]
-    var ExecutionRoleArn: js.UndefOr[ExecutionRoleArn]
   }
 
   object UpdateLifecyclePolicyRequest {
     def apply(
-      PolicyId: js.UndefOr[PolicyId] = js.undefined,
+      PolicyId: PolicyId,
       Description: js.UndefOr[PolicyDescription] = js.undefined,
+      ExecutionRoleArn: js.UndefOr[ExecutionRoleArn] = js.undefined,
       PolicyDetails: js.UndefOr[PolicyDetails] = js.undefined,
-      State: js.UndefOr[SettablePolicyStateValues] = js.undefined,
-      ExecutionRoleArn: js.UndefOr[ExecutionRoleArn] = js.undefined): UpdateLifecyclePolicyRequest = {
+      State: js.UndefOr[SettablePolicyStateValues] = js.undefined): UpdateLifecyclePolicyRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "PolicyId" -> PolicyId.map { x => x.asInstanceOf[js.Any] },
+        "PolicyId" -> PolicyId.asInstanceOf[js.Any],
         "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
+        "ExecutionRoleArn" -> ExecutionRoleArn.map { x => x.asInstanceOf[js.Any] },
         "PolicyDetails" -> PolicyDetails.map { x => x.asInstanceOf[js.Any] },
-        "State" -> State.map { x => x.asInstanceOf[js.Any] },
-        "ExecutionRoleArn" -> ExecutionRoleArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "State" -> State.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateLifecyclePolicyRequest]
     }

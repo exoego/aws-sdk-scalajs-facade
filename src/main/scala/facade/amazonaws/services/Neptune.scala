@@ -127,17 +127,17 @@ package neptune {
 
   @js.native
   trait AddRoleToDBClusterMessage extends js.Object {
-    var DBClusterIdentifier: js.UndefOr[String]
-    var RoleArn: js.UndefOr[String]
+    var DBClusterIdentifier: String
+    var RoleArn: String
   }
 
   object AddRoleToDBClusterMessage {
     def apply(
-      DBClusterIdentifier: js.UndefOr[String] = js.undefined,
-      RoleArn: js.UndefOr[String] = js.undefined): AddRoleToDBClusterMessage = {
+      DBClusterIdentifier: String,
+      RoleArn: String): AddRoleToDBClusterMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "DBClusterIdentifier" -> DBClusterIdentifier.map { x => x.asInstanceOf[js.Any] },
-        "RoleArn" -> RoleArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "DBClusterIdentifier" -> DBClusterIdentifier.asInstanceOf[js.Any],
+        "RoleArn" -> RoleArn.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AddRoleToDBClusterMessage]
     }
@@ -148,17 +148,17 @@ package neptune {
    */
   @js.native
   trait AddSourceIdentifierToSubscriptionMessage extends js.Object {
-    var SubscriptionName: js.UndefOr[String]
-    var SourceIdentifier: js.UndefOr[String]
+    var SourceIdentifier: String
+    var SubscriptionName: String
   }
 
   object AddSourceIdentifierToSubscriptionMessage {
     def apply(
-      SubscriptionName: js.UndefOr[String] = js.undefined,
-      SourceIdentifier: js.UndefOr[String] = js.undefined): AddSourceIdentifierToSubscriptionMessage = {
+      SourceIdentifier: String,
+      SubscriptionName: String): AddSourceIdentifierToSubscriptionMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "SubscriptionName" -> SubscriptionName.map { x => x.asInstanceOf[js.Any] },
-        "SourceIdentifier" -> SourceIdentifier.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "SourceIdentifier" -> SourceIdentifier.asInstanceOf[js.Any],
+        "SubscriptionName" -> SubscriptionName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AddSourceIdentifierToSubscriptionMessage]
     }
@@ -184,17 +184,17 @@ package neptune {
    */
   @js.native
   trait AddTagsToResourceMessage extends js.Object {
-    var ResourceName: js.UndefOr[String]
-    var Tags: js.UndefOr[TagList]
+    var ResourceName: String
+    var Tags: TagList
   }
 
   object AddTagsToResourceMessage {
     def apply(
-      ResourceName: js.UndefOr[String] = js.undefined,
-      Tags: js.UndefOr[TagList] = js.undefined): AddTagsToResourceMessage = {
+      ResourceName: String,
+      Tags: TagList): AddTagsToResourceMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ResourceName" -> ResourceName.map { x => x.asInstanceOf[js.Any] },
-        "Tags" -> Tags.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ResourceName" -> ResourceName.asInstanceOf[js.Any],
+        "Tags" -> Tags.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AddTagsToResourceMessage]
     }
@@ -212,20 +212,20 @@ package neptune {
    */
   @js.native
   trait ApplyPendingMaintenanceActionMessage extends js.Object {
-    var ResourceIdentifier: js.UndefOr[String]
-    var ApplyAction: js.UndefOr[String]
-    var OptInType: js.UndefOr[String]
+    var ApplyAction: String
+    var OptInType: String
+    var ResourceIdentifier: String
   }
 
   object ApplyPendingMaintenanceActionMessage {
     def apply(
-      ResourceIdentifier: js.UndefOr[String] = js.undefined,
-      ApplyAction: js.UndefOr[String] = js.undefined,
-      OptInType: js.UndefOr[String] = js.undefined): ApplyPendingMaintenanceActionMessage = {
+      ApplyAction: String,
+      OptInType: String,
+      ResourceIdentifier: String): ApplyPendingMaintenanceActionMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ResourceIdentifier" -> ResourceIdentifier.map { x => x.asInstanceOf[js.Any] },
-        "ApplyAction" -> ApplyAction.map { x => x.asInstanceOf[js.Any] },
-        "OptInType" -> OptInType.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ApplyAction" -> ApplyAction.asInstanceOf[js.Any],
+        "OptInType" -> OptInType.asInstanceOf[js.Any],
+        "ResourceIdentifier" -> ResourceIdentifier.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ApplyPendingMaintenanceActionMessage]
     }
@@ -285,17 +285,17 @@ package neptune {
    */
   @js.native
   trait CharacterSet extends js.Object {
-    var CharacterSetName: js.UndefOr[String]
     var CharacterSetDescription: js.UndefOr[String]
+    var CharacterSetName: js.UndefOr[String]
   }
 
   object CharacterSet {
     def apply(
-      CharacterSetName: js.UndefOr[String] = js.undefined,
-      CharacterSetDescription: js.UndefOr[String] = js.undefined): CharacterSet = {
+      CharacterSetDescription: js.UndefOr[String] = js.undefined,
+      CharacterSetName: js.UndefOr[String] = js.undefined): CharacterSet = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "CharacterSetName" -> CharacterSetName.map { x => x.asInstanceOf[js.Any] },
-        "CharacterSetDescription" -> CharacterSetDescription.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "CharacterSetDescription" -> CharacterSetDescription.map { x => x.asInstanceOf[js.Any] },
+        "CharacterSetName" -> CharacterSetName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CharacterSet]
     }
@@ -306,17 +306,17 @@ package neptune {
    */
   @js.native
   trait CloudwatchLogsExportConfiguration extends js.Object {
-    var EnableLogTypes: js.UndefOr[LogTypeList]
     var DisableLogTypes: js.UndefOr[LogTypeList]
+    var EnableLogTypes: js.UndefOr[LogTypeList]
   }
 
   object CloudwatchLogsExportConfiguration {
     def apply(
-      EnableLogTypes: js.UndefOr[LogTypeList] = js.undefined,
-      DisableLogTypes: js.UndefOr[LogTypeList] = js.undefined): CloudwatchLogsExportConfiguration = {
+      DisableLogTypes: js.UndefOr[LogTypeList] = js.undefined,
+      EnableLogTypes: js.UndefOr[LogTypeList] = js.undefined): CloudwatchLogsExportConfiguration = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "EnableLogTypes" -> EnableLogTypes.map { x => x.asInstanceOf[js.Any] },
-        "DisableLogTypes" -> DisableLogTypes.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "DisableLogTypes" -> DisableLogTypes.map { x => x.asInstanceOf[js.Any] },
+        "EnableLogTypes" -> EnableLogTypes.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CloudwatchLogsExportConfiguration]
     }
@@ -324,22 +324,22 @@ package neptune {
 
   @js.native
   trait CopyDBClusterParameterGroupMessage extends js.Object {
-    var SourceDBClusterParameterGroupIdentifier: js.UndefOr[String]
-    var TargetDBClusterParameterGroupIdentifier: js.UndefOr[String]
-    var TargetDBClusterParameterGroupDescription: js.UndefOr[String]
+    var SourceDBClusterParameterGroupIdentifier: String
+    var TargetDBClusterParameterGroupDescription: String
+    var TargetDBClusterParameterGroupIdentifier: String
     var Tags: js.UndefOr[TagList]
   }
 
   object CopyDBClusterParameterGroupMessage {
     def apply(
-      SourceDBClusterParameterGroupIdentifier: js.UndefOr[String] = js.undefined,
-      TargetDBClusterParameterGroupIdentifier: js.UndefOr[String] = js.undefined,
-      TargetDBClusterParameterGroupDescription: js.UndefOr[String] = js.undefined,
+      SourceDBClusterParameterGroupIdentifier: String,
+      TargetDBClusterParameterGroupDescription: String,
+      TargetDBClusterParameterGroupIdentifier: String,
       Tags: js.UndefOr[TagList] = js.undefined): CopyDBClusterParameterGroupMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "SourceDBClusterParameterGroupIdentifier" -> SourceDBClusterParameterGroupIdentifier.map { x => x.asInstanceOf[js.Any] },
-        "TargetDBClusterParameterGroupIdentifier" -> TargetDBClusterParameterGroupIdentifier.map { x => x.asInstanceOf[js.Any] },
-        "TargetDBClusterParameterGroupDescription" -> TargetDBClusterParameterGroupDescription.map { x => x.asInstanceOf[js.Any] },
+        "SourceDBClusterParameterGroupIdentifier" -> SourceDBClusterParameterGroupIdentifier.asInstanceOf[js.Any],
+        "TargetDBClusterParameterGroupDescription" -> TargetDBClusterParameterGroupDescription.asInstanceOf[js.Any],
+        "TargetDBClusterParameterGroupIdentifier" -> TargetDBClusterParameterGroupIdentifier.asInstanceOf[js.Any],
         "Tags" -> Tags.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CopyDBClusterParameterGroupMessage]
@@ -366,29 +366,29 @@ package neptune {
    */
   @js.native
   trait CopyDBClusterSnapshotMessage extends js.Object {
-    var SourceDBClusterSnapshotIdentifier: js.UndefOr[String]
+    var SourceDBClusterSnapshotIdentifier: String
+    var TargetDBClusterSnapshotIdentifier: String
+    var CopyTags: js.UndefOr[BooleanOptional]
     var KmsKeyId: js.UndefOr[String]
     var PreSignedUrl: js.UndefOr[String]
-    var CopyTags: js.UndefOr[BooleanOptional]
     var Tags: js.UndefOr[TagList]
-    var TargetDBClusterSnapshotIdentifier: js.UndefOr[String]
   }
 
   object CopyDBClusterSnapshotMessage {
     def apply(
-      SourceDBClusterSnapshotIdentifier: js.UndefOr[String] = js.undefined,
+      SourceDBClusterSnapshotIdentifier: String,
+      TargetDBClusterSnapshotIdentifier: String,
+      CopyTags: js.UndefOr[BooleanOptional] = js.undefined,
       KmsKeyId: js.UndefOr[String] = js.undefined,
       PreSignedUrl: js.UndefOr[String] = js.undefined,
-      CopyTags: js.UndefOr[BooleanOptional] = js.undefined,
-      Tags: js.UndefOr[TagList] = js.undefined,
-      TargetDBClusterSnapshotIdentifier: js.UndefOr[String] = js.undefined): CopyDBClusterSnapshotMessage = {
+      Tags: js.UndefOr[TagList] = js.undefined): CopyDBClusterSnapshotMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "SourceDBClusterSnapshotIdentifier" -> SourceDBClusterSnapshotIdentifier.map { x => x.asInstanceOf[js.Any] },
+        "SourceDBClusterSnapshotIdentifier" -> SourceDBClusterSnapshotIdentifier.asInstanceOf[js.Any],
+        "TargetDBClusterSnapshotIdentifier" -> TargetDBClusterSnapshotIdentifier.asInstanceOf[js.Any],
+        "CopyTags" -> CopyTags.map { x => x.asInstanceOf[js.Any] },
         "KmsKeyId" -> KmsKeyId.map { x => x.asInstanceOf[js.Any] },
         "PreSignedUrl" -> PreSignedUrl.map { x => x.asInstanceOf[js.Any] },
-        "CopyTags" -> CopyTags.map { x => x.asInstanceOf[js.Any] },
-        "Tags" -> Tags.map { x => x.asInstanceOf[js.Any] },
-        "TargetDBClusterSnapshotIdentifier" -> TargetDBClusterSnapshotIdentifier.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Tags" -> Tags.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CopyDBClusterSnapshotMessage]
     }
@@ -414,22 +414,22 @@ package neptune {
    */
   @js.native
   trait CopyDBParameterGroupMessage extends js.Object {
-    var SourceDBParameterGroupIdentifier: js.UndefOr[String]
-    var TargetDBParameterGroupIdentifier: js.UndefOr[String]
-    var TargetDBParameterGroupDescription: js.UndefOr[String]
+    var SourceDBParameterGroupIdentifier: String
+    var TargetDBParameterGroupDescription: String
+    var TargetDBParameterGroupIdentifier: String
     var Tags: js.UndefOr[TagList]
   }
 
   object CopyDBParameterGroupMessage {
     def apply(
-      SourceDBParameterGroupIdentifier: js.UndefOr[String] = js.undefined,
-      TargetDBParameterGroupIdentifier: js.UndefOr[String] = js.undefined,
-      TargetDBParameterGroupDescription: js.UndefOr[String] = js.undefined,
+      SourceDBParameterGroupIdentifier: String,
+      TargetDBParameterGroupDescription: String,
+      TargetDBParameterGroupIdentifier: String,
       Tags: js.UndefOr[TagList] = js.undefined): CopyDBParameterGroupMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "SourceDBParameterGroupIdentifier" -> SourceDBParameterGroupIdentifier.map { x => x.asInstanceOf[js.Any] },
-        "TargetDBParameterGroupIdentifier" -> TargetDBParameterGroupIdentifier.map { x => x.asInstanceOf[js.Any] },
-        "TargetDBParameterGroupDescription" -> TargetDBParameterGroupDescription.map { x => x.asInstanceOf[js.Any] },
+        "SourceDBParameterGroupIdentifier" -> SourceDBParameterGroupIdentifier.asInstanceOf[js.Any],
+        "TargetDBParameterGroupDescription" -> TargetDBParameterGroupDescription.asInstanceOf[js.Any],
+        "TargetDBParameterGroupIdentifier" -> TargetDBParameterGroupIdentifier.asInstanceOf[js.Any],
         "Tags" -> Tags.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CopyDBParameterGroupMessage]
@@ -456,77 +456,77 @@ package neptune {
    */
   @js.native
   trait CreateDBClusterMessage extends js.Object {
-    var PreferredMaintenanceWindow: js.UndefOr[String]
-    var DBClusterIdentifier: js.UndefOr[String]
-    var CharacterSetName: js.UndefOr[String]
-    var Engine: js.UndefOr[String]
-    var OptionGroupName: js.UndefOr[String]
-    var ReplicationSourceIdentifier: js.UndefOr[String]
-    var DBClusterParameterGroupName: js.UndefOr[String]
-    var DatabaseName: js.UndefOr[String]
-    var KmsKeyId: js.UndefOr[String]
-    var PreSignedUrl: js.UndefOr[String]
-    var BackupRetentionPeriod: js.UndefOr[IntegerOptional]
-    var MasterUsername: js.UndefOr[String]
-    var VpcSecurityGroupIds: js.UndefOr[VpcSecurityGroupIdList]
-    var EngineVersion: js.UndefOr[String]
-    var DBSubnetGroupName: js.UndefOr[String]
-    var Port: js.UndefOr[IntegerOptional]
-    var EnableIAMDatabaseAuthentication: js.UndefOr[BooleanOptional]
-    var MasterUserPassword: js.UndefOr[String]
-    var PreferredBackupWindow: js.UndefOr[String]
-    var Tags: js.UndefOr[TagList]
-    var StorageEncrypted: js.UndefOr[BooleanOptional]
+    var DBClusterIdentifier: String
+    var Engine: String
     var AvailabilityZones: js.UndefOr[AvailabilityZones]
+    var BackupRetentionPeriod: js.UndefOr[IntegerOptional]
+    var CharacterSetName: js.UndefOr[String]
+    var DBClusterParameterGroupName: js.UndefOr[String]
+    var DBSubnetGroupName: js.UndefOr[String]
+    var DatabaseName: js.UndefOr[String]
+    var EnableIAMDatabaseAuthentication: js.UndefOr[BooleanOptional]
+    var EngineVersion: js.UndefOr[String]
+    var KmsKeyId: js.UndefOr[String]
+    var MasterUserPassword: js.UndefOr[String]
+    var MasterUsername: js.UndefOr[String]
+    var OptionGroupName: js.UndefOr[String]
+    var Port: js.UndefOr[IntegerOptional]
+    var PreSignedUrl: js.UndefOr[String]
+    var PreferredBackupWindow: js.UndefOr[String]
+    var PreferredMaintenanceWindow: js.UndefOr[String]
+    var ReplicationSourceIdentifier: js.UndefOr[String]
+    var StorageEncrypted: js.UndefOr[BooleanOptional]
+    var Tags: js.UndefOr[TagList]
+    var VpcSecurityGroupIds: js.UndefOr[VpcSecurityGroupIdList]
   }
 
   object CreateDBClusterMessage {
     def apply(
-      PreferredMaintenanceWindow: js.UndefOr[String] = js.undefined,
-      DBClusterIdentifier: js.UndefOr[String] = js.undefined,
-      CharacterSetName: js.UndefOr[String] = js.undefined,
-      Engine: js.UndefOr[String] = js.undefined,
-      OptionGroupName: js.UndefOr[String] = js.undefined,
-      ReplicationSourceIdentifier: js.UndefOr[String] = js.undefined,
-      DBClusterParameterGroupName: js.UndefOr[String] = js.undefined,
-      DatabaseName: js.UndefOr[String] = js.undefined,
-      KmsKeyId: js.UndefOr[String] = js.undefined,
-      PreSignedUrl: js.UndefOr[String] = js.undefined,
+      DBClusterIdentifier: String,
+      Engine: String,
+      AvailabilityZones: js.UndefOr[AvailabilityZones] = js.undefined,
       BackupRetentionPeriod: js.UndefOr[IntegerOptional] = js.undefined,
-      MasterUsername: js.UndefOr[String] = js.undefined,
-      VpcSecurityGroupIds: js.UndefOr[VpcSecurityGroupIdList] = js.undefined,
-      EngineVersion: js.UndefOr[String] = js.undefined,
+      CharacterSetName: js.UndefOr[String] = js.undefined,
+      DBClusterParameterGroupName: js.UndefOr[String] = js.undefined,
       DBSubnetGroupName: js.UndefOr[String] = js.undefined,
-      Port: js.UndefOr[IntegerOptional] = js.undefined,
+      DatabaseName: js.UndefOr[String] = js.undefined,
       EnableIAMDatabaseAuthentication: js.UndefOr[BooleanOptional] = js.undefined,
+      EngineVersion: js.UndefOr[String] = js.undefined,
+      KmsKeyId: js.UndefOr[String] = js.undefined,
       MasterUserPassword: js.UndefOr[String] = js.undefined,
+      MasterUsername: js.UndefOr[String] = js.undefined,
+      OptionGroupName: js.UndefOr[String] = js.undefined,
+      Port: js.UndefOr[IntegerOptional] = js.undefined,
+      PreSignedUrl: js.UndefOr[String] = js.undefined,
       PreferredBackupWindow: js.UndefOr[String] = js.undefined,
-      Tags: js.UndefOr[TagList] = js.undefined,
+      PreferredMaintenanceWindow: js.UndefOr[String] = js.undefined,
+      ReplicationSourceIdentifier: js.UndefOr[String] = js.undefined,
       StorageEncrypted: js.UndefOr[BooleanOptional] = js.undefined,
-      AvailabilityZones: js.UndefOr[AvailabilityZones] = js.undefined): CreateDBClusterMessage = {
+      Tags: js.UndefOr[TagList] = js.undefined,
+      VpcSecurityGroupIds: js.UndefOr[VpcSecurityGroupIdList] = js.undefined): CreateDBClusterMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "PreferredMaintenanceWindow" -> PreferredMaintenanceWindow.map { x => x.asInstanceOf[js.Any] },
-        "DBClusterIdentifier" -> DBClusterIdentifier.map { x => x.asInstanceOf[js.Any] },
-        "CharacterSetName" -> CharacterSetName.map { x => x.asInstanceOf[js.Any] },
-        "Engine" -> Engine.map { x => x.asInstanceOf[js.Any] },
-        "OptionGroupName" -> OptionGroupName.map { x => x.asInstanceOf[js.Any] },
-        "ReplicationSourceIdentifier" -> ReplicationSourceIdentifier.map { x => x.asInstanceOf[js.Any] },
-        "DBClusterParameterGroupName" -> DBClusterParameterGroupName.map { x => x.asInstanceOf[js.Any] },
-        "DatabaseName" -> DatabaseName.map { x => x.asInstanceOf[js.Any] },
-        "KmsKeyId" -> KmsKeyId.map { x => x.asInstanceOf[js.Any] },
-        "PreSignedUrl" -> PreSignedUrl.map { x => x.asInstanceOf[js.Any] },
+        "DBClusterIdentifier" -> DBClusterIdentifier.asInstanceOf[js.Any],
+        "Engine" -> Engine.asInstanceOf[js.Any],
+        "AvailabilityZones" -> AvailabilityZones.map { x => x.asInstanceOf[js.Any] },
         "BackupRetentionPeriod" -> BackupRetentionPeriod.map { x => x.asInstanceOf[js.Any] },
-        "MasterUsername" -> MasterUsername.map { x => x.asInstanceOf[js.Any] },
-        "VpcSecurityGroupIds" -> VpcSecurityGroupIds.map { x => x.asInstanceOf[js.Any] },
-        "EngineVersion" -> EngineVersion.map { x => x.asInstanceOf[js.Any] },
+        "CharacterSetName" -> CharacterSetName.map { x => x.asInstanceOf[js.Any] },
+        "DBClusterParameterGroupName" -> DBClusterParameterGroupName.map { x => x.asInstanceOf[js.Any] },
         "DBSubnetGroupName" -> DBSubnetGroupName.map { x => x.asInstanceOf[js.Any] },
-        "Port" -> Port.map { x => x.asInstanceOf[js.Any] },
+        "DatabaseName" -> DatabaseName.map { x => x.asInstanceOf[js.Any] },
         "EnableIAMDatabaseAuthentication" -> EnableIAMDatabaseAuthentication.map { x => x.asInstanceOf[js.Any] },
+        "EngineVersion" -> EngineVersion.map { x => x.asInstanceOf[js.Any] },
+        "KmsKeyId" -> KmsKeyId.map { x => x.asInstanceOf[js.Any] },
         "MasterUserPassword" -> MasterUserPassword.map { x => x.asInstanceOf[js.Any] },
+        "MasterUsername" -> MasterUsername.map { x => x.asInstanceOf[js.Any] },
+        "OptionGroupName" -> OptionGroupName.map { x => x.asInstanceOf[js.Any] },
+        "Port" -> Port.map { x => x.asInstanceOf[js.Any] },
+        "PreSignedUrl" -> PreSignedUrl.map { x => x.asInstanceOf[js.Any] },
         "PreferredBackupWindow" -> PreferredBackupWindow.map { x => x.asInstanceOf[js.Any] },
-        "Tags" -> Tags.map { x => x.asInstanceOf[js.Any] },
+        "PreferredMaintenanceWindow" -> PreferredMaintenanceWindow.map { x => x.asInstanceOf[js.Any] },
+        "ReplicationSourceIdentifier" -> ReplicationSourceIdentifier.map { x => x.asInstanceOf[js.Any] },
         "StorageEncrypted" -> StorageEncrypted.map { x => x.asInstanceOf[js.Any] },
-        "AvailabilityZones" -> AvailabilityZones.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Tags" -> Tags.map { x => x.asInstanceOf[js.Any] },
+        "VpcSecurityGroupIds" -> VpcSecurityGroupIds.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateDBClusterMessage]
     }
@@ -537,22 +537,22 @@ package neptune {
    */
   @js.native
   trait CreateDBClusterParameterGroupMessage extends js.Object {
-    var DBClusterParameterGroupName: js.UndefOr[String]
-    var DBParameterGroupFamily: js.UndefOr[String]
-    var Description: js.UndefOr[String]
+    var DBClusterParameterGroupName: String
+    var DBParameterGroupFamily: String
+    var Description: String
     var Tags: js.UndefOr[TagList]
   }
 
   object CreateDBClusterParameterGroupMessage {
     def apply(
-      DBClusterParameterGroupName: js.UndefOr[String] = js.undefined,
-      DBParameterGroupFamily: js.UndefOr[String] = js.undefined,
-      Description: js.UndefOr[String] = js.undefined,
+      DBClusterParameterGroupName: String,
+      DBParameterGroupFamily: String,
+      Description: String,
       Tags: js.UndefOr[TagList] = js.undefined): CreateDBClusterParameterGroupMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "DBClusterParameterGroupName" -> DBClusterParameterGroupName.map { x => x.asInstanceOf[js.Any] },
-        "DBParameterGroupFamily" -> DBParameterGroupFamily.map { x => x.asInstanceOf[js.Any] },
-        "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
+        "DBClusterParameterGroupName" -> DBClusterParameterGroupName.asInstanceOf[js.Any],
+        "DBParameterGroupFamily" -> DBParameterGroupFamily.asInstanceOf[js.Any],
+        "Description" -> Description.asInstanceOf[js.Any],
         "Tags" -> Tags.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateDBClusterParameterGroupMessage]
@@ -594,19 +594,19 @@ package neptune {
    */
   @js.native
   trait CreateDBClusterSnapshotMessage extends js.Object {
-    var DBClusterSnapshotIdentifier: js.UndefOr[String]
-    var DBClusterIdentifier: js.UndefOr[String]
+    var DBClusterIdentifier: String
+    var DBClusterSnapshotIdentifier: String
     var Tags: js.UndefOr[TagList]
   }
 
   object CreateDBClusterSnapshotMessage {
     def apply(
-      DBClusterSnapshotIdentifier: js.UndefOr[String] = js.undefined,
-      DBClusterIdentifier: js.UndefOr[String] = js.undefined,
+      DBClusterIdentifier: String,
+      DBClusterSnapshotIdentifier: String,
       Tags: js.UndefOr[TagList] = js.undefined): CreateDBClusterSnapshotMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "DBClusterSnapshotIdentifier" -> DBClusterSnapshotIdentifier.map { x => x.asInstanceOf[js.Any] },
-        "DBClusterIdentifier" -> DBClusterIdentifier.map { x => x.asInstanceOf[js.Any] },
+        "DBClusterIdentifier" -> DBClusterIdentifier.asInstanceOf[js.Any],
+        "DBClusterSnapshotIdentifier" -> DBClusterSnapshotIdentifier.asInstanceOf[js.Any],
         "Tags" -> Tags.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateDBClusterSnapshotMessage]
@@ -633,137 +633,137 @@ package neptune {
    */
   @js.native
   trait CreateDBInstanceMessage extends js.Object {
-    var PreferredMaintenanceWindow: js.UndefOr[String]
-    var MonitoringInterval: js.UndefOr[IntegerOptional]
-    var PromotionTier: js.UndefOr[IntegerOptional]
-    var DBClusterIdentifier: js.UndefOr[String]
-    var CharacterSetName: js.UndefOr[String]
-    var Timezone: js.UndefOr[String]
-    var DBInstanceClass: js.UndefOr[String]
-    var TdeCredentialPassword: js.UndefOr[String]
-    var Engine: js.UndefOr[String]
-    var EnablePerformanceInsights: js.UndefOr[BooleanOptional]
-    var OptionGroupName: js.UndefOr[String]
-    var MultiAZ: js.UndefOr[BooleanOptional]
-    var DBSecurityGroups: js.UndefOr[DBSecurityGroupNameList]
-    var DBName: js.UndefOr[String]
-    var MonitoringRoleArn: js.UndefOr[String]
-    var KmsKeyId: js.UndefOr[String]
+    var DBInstanceClass: String
+    var DBInstanceIdentifier: String
+    var Engine: String
     var AllocatedStorage: js.UndefOr[IntegerOptional]
-    var DBInstanceIdentifier: js.UndefOr[String]
-    var BackupRetentionPeriod: js.UndefOr[IntegerOptional]
-    var MasterUsername: js.UndefOr[String]
-    var AvailabilityZone: js.UndefOr[String]
     var AutoMinorVersionUpgrade: js.UndefOr[BooleanOptional]
+    var AvailabilityZone: js.UndefOr[String]
+    var BackupRetentionPeriod: js.UndefOr[IntegerOptional]
+    var CharacterSetName: js.UndefOr[String]
     var CopyTagsToSnapshot: js.UndefOr[BooleanOptional]
-    var DomainIAMRoleName: js.UndefOr[String]
-    var VpcSecurityGroupIds: js.UndefOr[VpcSecurityGroupIdList]
-    var EngineVersion: js.UndefOr[String]
+    var DBClusterIdentifier: js.UndefOr[String]
+    var DBName: js.UndefOr[String]
+    var DBParameterGroupName: js.UndefOr[String]
+    var DBSecurityGroups: js.UndefOr[DBSecurityGroupNameList]
     var DBSubnetGroupName: js.UndefOr[String]
-    var Port: js.UndefOr[IntegerOptional]
+    var Domain: js.UndefOr[String]
+    var DomainIAMRoleName: js.UndefOr[String]
+    var EnableCloudwatchLogsExports: js.UndefOr[LogTypeList]
     var EnableIAMDatabaseAuthentication: js.UndefOr[BooleanOptional]
-    var MasterUserPassword: js.UndefOr[String]
-    var PreferredBackupWindow: js.UndefOr[String]
+    var EnablePerformanceInsights: js.UndefOr[BooleanOptional]
+    var EngineVersion: js.UndefOr[String]
     var Iops: js.UndefOr[IntegerOptional]
+    var KmsKeyId: js.UndefOr[String]
+    var LicenseModel: js.UndefOr[String]
+    var MasterUserPassword: js.UndefOr[String]
+    var MasterUsername: js.UndefOr[String]
+    var MonitoringInterval: js.UndefOr[IntegerOptional]
+    var MonitoringRoleArn: js.UndefOr[String]
+    var MultiAZ: js.UndefOr[BooleanOptional]
+    var OptionGroupName: js.UndefOr[String]
+    var PerformanceInsightsKMSKeyId: js.UndefOr[String]
+    var Port: js.UndefOr[IntegerOptional]
+    var PreferredBackupWindow: js.UndefOr[String]
+    var PreferredMaintenanceWindow: js.UndefOr[String]
+    var PromotionTier: js.UndefOr[IntegerOptional]
+    var PubliclyAccessible: js.UndefOr[BooleanOptional]
+    var StorageEncrypted: js.UndefOr[BooleanOptional]
     var StorageType: js.UndefOr[String]
     var Tags: js.UndefOr[TagList]
-    var PubliclyAccessible: js.UndefOr[BooleanOptional]
-    var EnableCloudwatchLogsExports: js.UndefOr[LogTypeList]
-    var PerformanceInsightsKMSKeyId: js.UndefOr[String]
-    var LicenseModel: js.UndefOr[String]
     var TdeCredentialArn: js.UndefOr[String]
-    var DBParameterGroupName: js.UndefOr[String]
-    var Domain: js.UndefOr[String]
-    var StorageEncrypted: js.UndefOr[BooleanOptional]
+    var TdeCredentialPassword: js.UndefOr[String]
+    var Timezone: js.UndefOr[String]
+    var VpcSecurityGroupIds: js.UndefOr[VpcSecurityGroupIdList]
   }
 
   object CreateDBInstanceMessage {
     def apply(
-      PreferredMaintenanceWindow: js.UndefOr[String] = js.undefined,
-      MonitoringInterval: js.UndefOr[IntegerOptional] = js.undefined,
-      PromotionTier: js.UndefOr[IntegerOptional] = js.undefined,
-      DBClusterIdentifier: js.UndefOr[String] = js.undefined,
-      CharacterSetName: js.UndefOr[String] = js.undefined,
-      Timezone: js.UndefOr[String] = js.undefined,
-      DBInstanceClass: js.UndefOr[String] = js.undefined,
-      TdeCredentialPassword: js.UndefOr[String] = js.undefined,
-      Engine: js.UndefOr[String] = js.undefined,
-      EnablePerformanceInsights: js.UndefOr[BooleanOptional] = js.undefined,
-      OptionGroupName: js.UndefOr[String] = js.undefined,
-      MultiAZ: js.UndefOr[BooleanOptional] = js.undefined,
-      DBSecurityGroups: js.UndefOr[DBSecurityGroupNameList] = js.undefined,
-      DBName: js.UndefOr[String] = js.undefined,
-      MonitoringRoleArn: js.UndefOr[String] = js.undefined,
-      KmsKeyId: js.UndefOr[String] = js.undefined,
+      DBInstanceClass: String,
+      DBInstanceIdentifier: String,
+      Engine: String,
       AllocatedStorage: js.UndefOr[IntegerOptional] = js.undefined,
-      DBInstanceIdentifier: js.UndefOr[String] = js.undefined,
-      BackupRetentionPeriod: js.UndefOr[IntegerOptional] = js.undefined,
-      MasterUsername: js.UndefOr[String] = js.undefined,
-      AvailabilityZone: js.UndefOr[String] = js.undefined,
       AutoMinorVersionUpgrade: js.UndefOr[BooleanOptional] = js.undefined,
+      AvailabilityZone: js.UndefOr[String] = js.undefined,
+      BackupRetentionPeriod: js.UndefOr[IntegerOptional] = js.undefined,
+      CharacterSetName: js.UndefOr[String] = js.undefined,
       CopyTagsToSnapshot: js.UndefOr[BooleanOptional] = js.undefined,
-      DomainIAMRoleName: js.UndefOr[String] = js.undefined,
-      VpcSecurityGroupIds: js.UndefOr[VpcSecurityGroupIdList] = js.undefined,
-      EngineVersion: js.UndefOr[String] = js.undefined,
+      DBClusterIdentifier: js.UndefOr[String] = js.undefined,
+      DBName: js.UndefOr[String] = js.undefined,
+      DBParameterGroupName: js.UndefOr[String] = js.undefined,
+      DBSecurityGroups: js.UndefOr[DBSecurityGroupNameList] = js.undefined,
       DBSubnetGroupName: js.UndefOr[String] = js.undefined,
-      Port: js.UndefOr[IntegerOptional] = js.undefined,
+      Domain: js.UndefOr[String] = js.undefined,
+      DomainIAMRoleName: js.UndefOr[String] = js.undefined,
+      EnableCloudwatchLogsExports: js.UndefOr[LogTypeList] = js.undefined,
       EnableIAMDatabaseAuthentication: js.UndefOr[BooleanOptional] = js.undefined,
-      MasterUserPassword: js.UndefOr[String] = js.undefined,
-      PreferredBackupWindow: js.UndefOr[String] = js.undefined,
+      EnablePerformanceInsights: js.UndefOr[BooleanOptional] = js.undefined,
+      EngineVersion: js.UndefOr[String] = js.undefined,
       Iops: js.UndefOr[IntegerOptional] = js.undefined,
+      KmsKeyId: js.UndefOr[String] = js.undefined,
+      LicenseModel: js.UndefOr[String] = js.undefined,
+      MasterUserPassword: js.UndefOr[String] = js.undefined,
+      MasterUsername: js.UndefOr[String] = js.undefined,
+      MonitoringInterval: js.UndefOr[IntegerOptional] = js.undefined,
+      MonitoringRoleArn: js.UndefOr[String] = js.undefined,
+      MultiAZ: js.UndefOr[BooleanOptional] = js.undefined,
+      OptionGroupName: js.UndefOr[String] = js.undefined,
+      PerformanceInsightsKMSKeyId: js.UndefOr[String] = js.undefined,
+      Port: js.UndefOr[IntegerOptional] = js.undefined,
+      PreferredBackupWindow: js.UndefOr[String] = js.undefined,
+      PreferredMaintenanceWindow: js.UndefOr[String] = js.undefined,
+      PromotionTier: js.UndefOr[IntegerOptional] = js.undefined,
+      PubliclyAccessible: js.UndefOr[BooleanOptional] = js.undefined,
+      StorageEncrypted: js.UndefOr[BooleanOptional] = js.undefined,
       StorageType: js.UndefOr[String] = js.undefined,
       Tags: js.UndefOr[TagList] = js.undefined,
-      PubliclyAccessible: js.UndefOr[BooleanOptional] = js.undefined,
-      EnableCloudwatchLogsExports: js.UndefOr[LogTypeList] = js.undefined,
-      PerformanceInsightsKMSKeyId: js.UndefOr[String] = js.undefined,
-      LicenseModel: js.UndefOr[String] = js.undefined,
       TdeCredentialArn: js.UndefOr[String] = js.undefined,
-      DBParameterGroupName: js.UndefOr[String] = js.undefined,
-      Domain: js.UndefOr[String] = js.undefined,
-      StorageEncrypted: js.UndefOr[BooleanOptional] = js.undefined): CreateDBInstanceMessage = {
+      TdeCredentialPassword: js.UndefOr[String] = js.undefined,
+      Timezone: js.UndefOr[String] = js.undefined,
+      VpcSecurityGroupIds: js.UndefOr[VpcSecurityGroupIdList] = js.undefined): CreateDBInstanceMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "PreferredMaintenanceWindow" -> PreferredMaintenanceWindow.map { x => x.asInstanceOf[js.Any] },
-        "MonitoringInterval" -> MonitoringInterval.map { x => x.asInstanceOf[js.Any] },
-        "PromotionTier" -> PromotionTier.map { x => x.asInstanceOf[js.Any] },
-        "DBClusterIdentifier" -> DBClusterIdentifier.map { x => x.asInstanceOf[js.Any] },
-        "CharacterSetName" -> CharacterSetName.map { x => x.asInstanceOf[js.Any] },
-        "Timezone" -> Timezone.map { x => x.asInstanceOf[js.Any] },
-        "DBInstanceClass" -> DBInstanceClass.map { x => x.asInstanceOf[js.Any] },
-        "TdeCredentialPassword" -> TdeCredentialPassword.map { x => x.asInstanceOf[js.Any] },
-        "Engine" -> Engine.map { x => x.asInstanceOf[js.Any] },
-        "EnablePerformanceInsights" -> EnablePerformanceInsights.map { x => x.asInstanceOf[js.Any] },
-        "OptionGroupName" -> OptionGroupName.map { x => x.asInstanceOf[js.Any] },
-        "MultiAZ" -> MultiAZ.map { x => x.asInstanceOf[js.Any] },
-        "DBSecurityGroups" -> DBSecurityGroups.map { x => x.asInstanceOf[js.Any] },
-        "DBName" -> DBName.map { x => x.asInstanceOf[js.Any] },
-        "MonitoringRoleArn" -> MonitoringRoleArn.map { x => x.asInstanceOf[js.Any] },
-        "KmsKeyId" -> KmsKeyId.map { x => x.asInstanceOf[js.Any] },
+        "DBInstanceClass" -> DBInstanceClass.asInstanceOf[js.Any],
+        "DBInstanceIdentifier" -> DBInstanceIdentifier.asInstanceOf[js.Any],
+        "Engine" -> Engine.asInstanceOf[js.Any],
         "AllocatedStorage" -> AllocatedStorage.map { x => x.asInstanceOf[js.Any] },
-        "DBInstanceIdentifier" -> DBInstanceIdentifier.map { x => x.asInstanceOf[js.Any] },
-        "BackupRetentionPeriod" -> BackupRetentionPeriod.map { x => x.asInstanceOf[js.Any] },
-        "MasterUsername" -> MasterUsername.map { x => x.asInstanceOf[js.Any] },
-        "AvailabilityZone" -> AvailabilityZone.map { x => x.asInstanceOf[js.Any] },
         "AutoMinorVersionUpgrade" -> AutoMinorVersionUpgrade.map { x => x.asInstanceOf[js.Any] },
+        "AvailabilityZone" -> AvailabilityZone.map { x => x.asInstanceOf[js.Any] },
+        "BackupRetentionPeriod" -> BackupRetentionPeriod.map { x => x.asInstanceOf[js.Any] },
+        "CharacterSetName" -> CharacterSetName.map { x => x.asInstanceOf[js.Any] },
         "CopyTagsToSnapshot" -> CopyTagsToSnapshot.map { x => x.asInstanceOf[js.Any] },
-        "DomainIAMRoleName" -> DomainIAMRoleName.map { x => x.asInstanceOf[js.Any] },
-        "VpcSecurityGroupIds" -> VpcSecurityGroupIds.map { x => x.asInstanceOf[js.Any] },
-        "EngineVersion" -> EngineVersion.map { x => x.asInstanceOf[js.Any] },
+        "DBClusterIdentifier" -> DBClusterIdentifier.map { x => x.asInstanceOf[js.Any] },
+        "DBName" -> DBName.map { x => x.asInstanceOf[js.Any] },
+        "DBParameterGroupName" -> DBParameterGroupName.map { x => x.asInstanceOf[js.Any] },
+        "DBSecurityGroups" -> DBSecurityGroups.map { x => x.asInstanceOf[js.Any] },
         "DBSubnetGroupName" -> DBSubnetGroupName.map { x => x.asInstanceOf[js.Any] },
-        "Port" -> Port.map { x => x.asInstanceOf[js.Any] },
+        "Domain" -> Domain.map { x => x.asInstanceOf[js.Any] },
+        "DomainIAMRoleName" -> DomainIAMRoleName.map { x => x.asInstanceOf[js.Any] },
+        "EnableCloudwatchLogsExports" -> EnableCloudwatchLogsExports.map { x => x.asInstanceOf[js.Any] },
         "EnableIAMDatabaseAuthentication" -> EnableIAMDatabaseAuthentication.map { x => x.asInstanceOf[js.Any] },
-        "MasterUserPassword" -> MasterUserPassword.map { x => x.asInstanceOf[js.Any] },
-        "PreferredBackupWindow" -> PreferredBackupWindow.map { x => x.asInstanceOf[js.Any] },
+        "EnablePerformanceInsights" -> EnablePerformanceInsights.map { x => x.asInstanceOf[js.Any] },
+        "EngineVersion" -> EngineVersion.map { x => x.asInstanceOf[js.Any] },
         "Iops" -> Iops.map { x => x.asInstanceOf[js.Any] },
+        "KmsKeyId" -> KmsKeyId.map { x => x.asInstanceOf[js.Any] },
+        "LicenseModel" -> LicenseModel.map { x => x.asInstanceOf[js.Any] },
+        "MasterUserPassword" -> MasterUserPassword.map { x => x.asInstanceOf[js.Any] },
+        "MasterUsername" -> MasterUsername.map { x => x.asInstanceOf[js.Any] },
+        "MonitoringInterval" -> MonitoringInterval.map { x => x.asInstanceOf[js.Any] },
+        "MonitoringRoleArn" -> MonitoringRoleArn.map { x => x.asInstanceOf[js.Any] },
+        "MultiAZ" -> MultiAZ.map { x => x.asInstanceOf[js.Any] },
+        "OptionGroupName" -> OptionGroupName.map { x => x.asInstanceOf[js.Any] },
+        "PerformanceInsightsKMSKeyId" -> PerformanceInsightsKMSKeyId.map { x => x.asInstanceOf[js.Any] },
+        "Port" -> Port.map { x => x.asInstanceOf[js.Any] },
+        "PreferredBackupWindow" -> PreferredBackupWindow.map { x => x.asInstanceOf[js.Any] },
+        "PreferredMaintenanceWindow" -> PreferredMaintenanceWindow.map { x => x.asInstanceOf[js.Any] },
+        "PromotionTier" -> PromotionTier.map { x => x.asInstanceOf[js.Any] },
+        "PubliclyAccessible" -> PubliclyAccessible.map { x => x.asInstanceOf[js.Any] },
+        "StorageEncrypted" -> StorageEncrypted.map { x => x.asInstanceOf[js.Any] },
         "StorageType" -> StorageType.map { x => x.asInstanceOf[js.Any] },
         "Tags" -> Tags.map { x => x.asInstanceOf[js.Any] },
-        "PubliclyAccessible" -> PubliclyAccessible.map { x => x.asInstanceOf[js.Any] },
-        "EnableCloudwatchLogsExports" -> EnableCloudwatchLogsExports.map { x => x.asInstanceOf[js.Any] },
-        "PerformanceInsightsKMSKeyId" -> PerformanceInsightsKMSKeyId.map { x => x.asInstanceOf[js.Any] },
-        "LicenseModel" -> LicenseModel.map { x => x.asInstanceOf[js.Any] },
         "TdeCredentialArn" -> TdeCredentialArn.map { x => x.asInstanceOf[js.Any] },
-        "DBParameterGroupName" -> DBParameterGroupName.map { x => x.asInstanceOf[js.Any] },
-        "Domain" -> Domain.map { x => x.asInstanceOf[js.Any] },
-        "StorageEncrypted" -> StorageEncrypted.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "TdeCredentialPassword" -> TdeCredentialPassword.map { x => x.asInstanceOf[js.Any] },
+        "Timezone" -> Timezone.map { x => x.asInstanceOf[js.Any] },
+        "VpcSecurityGroupIds" -> VpcSecurityGroupIds.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateDBInstanceMessage]
     }
@@ -789,22 +789,22 @@ package neptune {
    */
   @js.native
   trait CreateDBParameterGroupMessage extends js.Object {
-    var DBParameterGroupName: js.UndefOr[String]
-    var DBParameterGroupFamily: js.UndefOr[String]
-    var Description: js.UndefOr[String]
+    var DBParameterGroupFamily: String
+    var DBParameterGroupName: String
+    var Description: String
     var Tags: js.UndefOr[TagList]
   }
 
   object CreateDBParameterGroupMessage {
     def apply(
-      DBParameterGroupName: js.UndefOr[String] = js.undefined,
-      DBParameterGroupFamily: js.UndefOr[String] = js.undefined,
-      Description: js.UndefOr[String] = js.undefined,
+      DBParameterGroupFamily: String,
+      DBParameterGroupName: String,
+      Description: String,
       Tags: js.UndefOr[TagList] = js.undefined): CreateDBParameterGroupMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "DBParameterGroupName" -> DBParameterGroupName.map { x => x.asInstanceOf[js.Any] },
-        "DBParameterGroupFamily" -> DBParameterGroupFamily.map { x => x.asInstanceOf[js.Any] },
-        "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
+        "DBParameterGroupFamily" -> DBParameterGroupFamily.asInstanceOf[js.Any],
+        "DBParameterGroupName" -> DBParameterGroupName.asInstanceOf[js.Any],
+        "Description" -> Description.asInstanceOf[js.Any],
         "Tags" -> Tags.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateDBParameterGroupMessage]
@@ -831,22 +831,22 @@ package neptune {
    */
   @js.native
   trait CreateDBSubnetGroupMessage extends js.Object {
-    var DBSubnetGroupName: js.UndefOr[String]
-    var DBSubnetGroupDescription: js.UndefOr[String]
-    var SubnetIds: js.UndefOr[SubnetIdentifierList]
+    var DBSubnetGroupDescription: String
+    var DBSubnetGroupName: String
+    var SubnetIds: SubnetIdentifierList
     var Tags: js.UndefOr[TagList]
   }
 
   object CreateDBSubnetGroupMessage {
     def apply(
-      DBSubnetGroupName: js.UndefOr[String] = js.undefined,
-      DBSubnetGroupDescription: js.UndefOr[String] = js.undefined,
-      SubnetIds: js.UndefOr[SubnetIdentifierList] = js.undefined,
+      DBSubnetGroupDescription: String,
+      DBSubnetGroupName: String,
+      SubnetIds: SubnetIdentifierList,
       Tags: js.UndefOr[TagList] = js.undefined): CreateDBSubnetGroupMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "DBSubnetGroupName" -> DBSubnetGroupName.map { x => x.asInstanceOf[js.Any] },
-        "DBSubnetGroupDescription" -> DBSubnetGroupDescription.map { x => x.asInstanceOf[js.Any] },
-        "SubnetIds" -> SubnetIds.map { x => x.asInstanceOf[js.Any] },
+        "DBSubnetGroupDescription" -> DBSubnetGroupDescription.asInstanceOf[js.Any],
+        "DBSubnetGroupName" -> DBSubnetGroupName.asInstanceOf[js.Any],
+        "SubnetIds" -> SubnetIds.asInstanceOf[js.Any],
         "Tags" -> Tags.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateDBSubnetGroupMessage]
@@ -873,32 +873,32 @@ package neptune {
    */
   @js.native
   trait CreateEventSubscriptionMessage extends js.Object {
+    var SnsTopicArn: String
+    var SubscriptionName: String
     var Enabled: js.UndefOr[BooleanOptional]
-    var SourceIds: js.UndefOr[SourceIdsList]
-    var SubscriptionName: js.UndefOr[String]
-    var SnsTopicArn: js.UndefOr[String]
     var EventCategories: js.UndefOr[EventCategoriesList]
-    var Tags: js.UndefOr[TagList]
+    var SourceIds: js.UndefOr[SourceIdsList]
     var SourceType: js.UndefOr[String]
+    var Tags: js.UndefOr[TagList]
   }
 
   object CreateEventSubscriptionMessage {
     def apply(
+      SnsTopicArn: String,
+      SubscriptionName: String,
       Enabled: js.UndefOr[BooleanOptional] = js.undefined,
-      SourceIds: js.UndefOr[SourceIdsList] = js.undefined,
-      SubscriptionName: js.UndefOr[String] = js.undefined,
-      SnsTopicArn: js.UndefOr[String] = js.undefined,
       EventCategories: js.UndefOr[EventCategoriesList] = js.undefined,
-      Tags: js.UndefOr[TagList] = js.undefined,
-      SourceType: js.UndefOr[String] = js.undefined): CreateEventSubscriptionMessage = {
+      SourceIds: js.UndefOr[SourceIdsList] = js.undefined,
+      SourceType: js.UndefOr[String] = js.undefined,
+      Tags: js.UndefOr[TagList] = js.undefined): CreateEventSubscriptionMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "SnsTopicArn" -> SnsTopicArn.asInstanceOf[js.Any],
+        "SubscriptionName" -> SubscriptionName.asInstanceOf[js.Any],
         "Enabled" -> Enabled.map { x => x.asInstanceOf[js.Any] },
-        "SourceIds" -> SourceIds.map { x => x.asInstanceOf[js.Any] },
-        "SubscriptionName" -> SubscriptionName.map { x => x.asInstanceOf[js.Any] },
-        "SnsTopicArn" -> SnsTopicArn.map { x => x.asInstanceOf[js.Any] },
         "EventCategories" -> EventCategories.map { x => x.asInstanceOf[js.Any] },
-        "Tags" -> Tags.map { x => x.asInstanceOf[js.Any] },
-        "SourceType" -> SourceType.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "SourceIds" -> SourceIds.map { x => x.asInstanceOf[js.Any] },
+        "SourceType" -> SourceType.map { x => x.asInstanceOf[js.Any] },
+        "Tags" -> Tags.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateEventSubscriptionMessage]
     }
@@ -924,116 +924,116 @@ package neptune {
    */
   @js.native
   trait DBCluster extends js.Object {
-    var PreferredMaintenanceWindow: js.UndefOr[String]
-    var DBClusterIdentifier: js.UndefOr[String]
-    var CharacterSetName: js.UndefOr[String]
-    var AssociatedRoles: js.UndefOr[DBClusterRoles]
-    var Engine: js.UndefOr[String]
-    var MultiAZ: js.UndefOr[Boolean]
-    var DBSubnetGroup: js.UndefOr[String]
-    var Endpoint: js.UndefOr[String]
-    var ReplicationSourceIdentifier: js.UndefOr[String]
-    var DatabaseName: js.UndefOr[String]
-    var CloneGroupId: js.UndefOr[String]
-    var PercentProgress: js.UndefOr[String]
-    var KmsKeyId: js.UndefOr[String]
     var AllocatedStorage: js.UndefOr[IntegerOptional]
-    var DbClusterResourceId: js.UndefOr[String]
+    var AssociatedRoles: js.UndefOr[DBClusterRoles]
+    var AvailabilityZones: js.UndefOr[AvailabilityZones]
     var BackupRetentionPeriod: js.UndefOr[IntegerOptional]
+    var CharacterSetName: js.UndefOr[String]
+    var CloneGroupId: js.UndefOr[String]
+    var ClusterCreateTime: js.UndefOr[TStamp]
     var DBClusterArn: js.UndefOr[String]
-    var EarliestRestorableTime: js.UndefOr[TStamp]
-    var MasterUsername: js.UndefOr[String]
-    var DBClusterOptionGroupMemberships: js.UndefOr[DBClusterOptionGroupMemberships]
-    var VpcSecurityGroups: js.UndefOr[VpcSecurityGroupMembershipList]
-    var ReadReplicaIdentifiers: js.UndefOr[ReadReplicaIdentifierList]
+    var DBClusterIdentifier: js.UndefOr[String]
     var DBClusterMembers: js.UndefOr[DBClusterMemberList]
+    var DBClusterOptionGroupMemberships: js.UndefOr[DBClusterOptionGroupMemberships]
+    var DBClusterParameterGroup: js.UndefOr[String]
+    var DBSubnetGroup: js.UndefOr[String]
+    var DatabaseName: js.UndefOr[String]
+    var DbClusterResourceId: js.UndefOr[String]
+    var EarliestRestorableTime: js.UndefOr[TStamp]
+    var Endpoint: js.UndefOr[String]
+    var Engine: js.UndefOr[String]
     var EngineVersion: js.UndefOr[String]
+    var HostedZoneId: js.UndefOr[String]
     var IAMDatabaseAuthenticationEnabled: js.UndefOr[Boolean]
+    var KmsKeyId: js.UndefOr[String]
+    var LatestRestorableTime: js.UndefOr[TStamp]
+    var MasterUsername: js.UndefOr[String]
+    var MultiAZ: js.UndefOr[Boolean]
+    var PercentProgress: js.UndefOr[String]
     var Port: js.UndefOr[IntegerOptional]
     var PreferredBackupWindow: js.UndefOr[String]
-    var ClusterCreateTime: js.UndefOr[TStamp]
-    var LatestRestorableTime: js.UndefOr[TStamp]
+    var PreferredMaintenanceWindow: js.UndefOr[String]
+    var ReadReplicaIdentifiers: js.UndefOr[ReadReplicaIdentifierList]
     var ReaderEndpoint: js.UndefOr[String]
-    var DBClusterParameterGroup: js.UndefOr[String]
-    var StorageEncrypted: js.UndefOr[Boolean]
-    var HostedZoneId: js.UndefOr[String]
+    var ReplicationSourceIdentifier: js.UndefOr[String]
     var Status: js.UndefOr[String]
-    var AvailabilityZones: js.UndefOr[AvailabilityZones]
+    var StorageEncrypted: js.UndefOr[Boolean]
+    var VpcSecurityGroups: js.UndefOr[VpcSecurityGroupMembershipList]
   }
 
   object DBCluster {
     def apply(
-      PreferredMaintenanceWindow: js.UndefOr[String] = js.undefined,
-      DBClusterIdentifier: js.UndefOr[String] = js.undefined,
-      CharacterSetName: js.UndefOr[String] = js.undefined,
-      AssociatedRoles: js.UndefOr[DBClusterRoles] = js.undefined,
-      Engine: js.UndefOr[String] = js.undefined,
-      MultiAZ: js.UndefOr[Boolean] = js.undefined,
-      DBSubnetGroup: js.UndefOr[String] = js.undefined,
-      Endpoint: js.UndefOr[String] = js.undefined,
-      ReplicationSourceIdentifier: js.UndefOr[String] = js.undefined,
-      DatabaseName: js.UndefOr[String] = js.undefined,
-      CloneGroupId: js.UndefOr[String] = js.undefined,
-      PercentProgress: js.UndefOr[String] = js.undefined,
-      KmsKeyId: js.UndefOr[String] = js.undefined,
       AllocatedStorage: js.UndefOr[IntegerOptional] = js.undefined,
-      DbClusterResourceId: js.UndefOr[String] = js.undefined,
+      AssociatedRoles: js.UndefOr[DBClusterRoles] = js.undefined,
+      AvailabilityZones: js.UndefOr[AvailabilityZones] = js.undefined,
       BackupRetentionPeriod: js.UndefOr[IntegerOptional] = js.undefined,
+      CharacterSetName: js.UndefOr[String] = js.undefined,
+      CloneGroupId: js.UndefOr[String] = js.undefined,
+      ClusterCreateTime: js.UndefOr[TStamp] = js.undefined,
       DBClusterArn: js.UndefOr[String] = js.undefined,
-      EarliestRestorableTime: js.UndefOr[TStamp] = js.undefined,
-      MasterUsername: js.UndefOr[String] = js.undefined,
-      DBClusterOptionGroupMemberships: js.UndefOr[DBClusterOptionGroupMemberships] = js.undefined,
-      VpcSecurityGroups: js.UndefOr[VpcSecurityGroupMembershipList] = js.undefined,
-      ReadReplicaIdentifiers: js.UndefOr[ReadReplicaIdentifierList] = js.undefined,
+      DBClusterIdentifier: js.UndefOr[String] = js.undefined,
       DBClusterMembers: js.UndefOr[DBClusterMemberList] = js.undefined,
+      DBClusterOptionGroupMemberships: js.UndefOr[DBClusterOptionGroupMemberships] = js.undefined,
+      DBClusterParameterGroup: js.UndefOr[String] = js.undefined,
+      DBSubnetGroup: js.UndefOr[String] = js.undefined,
+      DatabaseName: js.UndefOr[String] = js.undefined,
+      DbClusterResourceId: js.UndefOr[String] = js.undefined,
+      EarliestRestorableTime: js.UndefOr[TStamp] = js.undefined,
+      Endpoint: js.UndefOr[String] = js.undefined,
+      Engine: js.UndefOr[String] = js.undefined,
       EngineVersion: js.UndefOr[String] = js.undefined,
+      HostedZoneId: js.UndefOr[String] = js.undefined,
       IAMDatabaseAuthenticationEnabled: js.UndefOr[Boolean] = js.undefined,
+      KmsKeyId: js.UndefOr[String] = js.undefined,
+      LatestRestorableTime: js.UndefOr[TStamp] = js.undefined,
+      MasterUsername: js.UndefOr[String] = js.undefined,
+      MultiAZ: js.UndefOr[Boolean] = js.undefined,
+      PercentProgress: js.UndefOr[String] = js.undefined,
       Port: js.UndefOr[IntegerOptional] = js.undefined,
       PreferredBackupWindow: js.UndefOr[String] = js.undefined,
-      ClusterCreateTime: js.UndefOr[TStamp] = js.undefined,
-      LatestRestorableTime: js.UndefOr[TStamp] = js.undefined,
+      PreferredMaintenanceWindow: js.UndefOr[String] = js.undefined,
+      ReadReplicaIdentifiers: js.UndefOr[ReadReplicaIdentifierList] = js.undefined,
       ReaderEndpoint: js.UndefOr[String] = js.undefined,
-      DBClusterParameterGroup: js.UndefOr[String] = js.undefined,
-      StorageEncrypted: js.UndefOr[Boolean] = js.undefined,
-      HostedZoneId: js.UndefOr[String] = js.undefined,
+      ReplicationSourceIdentifier: js.UndefOr[String] = js.undefined,
       Status: js.UndefOr[String] = js.undefined,
-      AvailabilityZones: js.UndefOr[AvailabilityZones] = js.undefined): DBCluster = {
+      StorageEncrypted: js.UndefOr[Boolean] = js.undefined,
+      VpcSecurityGroups: js.UndefOr[VpcSecurityGroupMembershipList] = js.undefined): DBCluster = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "PreferredMaintenanceWindow" -> PreferredMaintenanceWindow.map { x => x.asInstanceOf[js.Any] },
-        "DBClusterIdentifier" -> DBClusterIdentifier.map { x => x.asInstanceOf[js.Any] },
-        "CharacterSetName" -> CharacterSetName.map { x => x.asInstanceOf[js.Any] },
-        "AssociatedRoles" -> AssociatedRoles.map { x => x.asInstanceOf[js.Any] },
-        "Engine" -> Engine.map { x => x.asInstanceOf[js.Any] },
-        "MultiAZ" -> MultiAZ.map { x => x.asInstanceOf[js.Any] },
-        "DBSubnetGroup" -> DBSubnetGroup.map { x => x.asInstanceOf[js.Any] },
-        "Endpoint" -> Endpoint.map { x => x.asInstanceOf[js.Any] },
-        "ReplicationSourceIdentifier" -> ReplicationSourceIdentifier.map { x => x.asInstanceOf[js.Any] },
-        "DatabaseName" -> DatabaseName.map { x => x.asInstanceOf[js.Any] },
-        "CloneGroupId" -> CloneGroupId.map { x => x.asInstanceOf[js.Any] },
-        "PercentProgress" -> PercentProgress.map { x => x.asInstanceOf[js.Any] },
-        "KmsKeyId" -> KmsKeyId.map { x => x.asInstanceOf[js.Any] },
         "AllocatedStorage" -> AllocatedStorage.map { x => x.asInstanceOf[js.Any] },
-        "DbClusterResourceId" -> DbClusterResourceId.map { x => x.asInstanceOf[js.Any] },
+        "AssociatedRoles" -> AssociatedRoles.map { x => x.asInstanceOf[js.Any] },
+        "AvailabilityZones" -> AvailabilityZones.map { x => x.asInstanceOf[js.Any] },
         "BackupRetentionPeriod" -> BackupRetentionPeriod.map { x => x.asInstanceOf[js.Any] },
+        "CharacterSetName" -> CharacterSetName.map { x => x.asInstanceOf[js.Any] },
+        "CloneGroupId" -> CloneGroupId.map { x => x.asInstanceOf[js.Any] },
+        "ClusterCreateTime" -> ClusterCreateTime.map { x => x.asInstanceOf[js.Any] },
         "DBClusterArn" -> DBClusterArn.map { x => x.asInstanceOf[js.Any] },
-        "EarliestRestorableTime" -> EarliestRestorableTime.map { x => x.asInstanceOf[js.Any] },
-        "MasterUsername" -> MasterUsername.map { x => x.asInstanceOf[js.Any] },
-        "DBClusterOptionGroupMemberships" -> DBClusterOptionGroupMemberships.map { x => x.asInstanceOf[js.Any] },
-        "VpcSecurityGroups" -> VpcSecurityGroups.map { x => x.asInstanceOf[js.Any] },
-        "ReadReplicaIdentifiers" -> ReadReplicaIdentifiers.map { x => x.asInstanceOf[js.Any] },
+        "DBClusterIdentifier" -> DBClusterIdentifier.map { x => x.asInstanceOf[js.Any] },
         "DBClusterMembers" -> DBClusterMembers.map { x => x.asInstanceOf[js.Any] },
+        "DBClusterOptionGroupMemberships" -> DBClusterOptionGroupMemberships.map { x => x.asInstanceOf[js.Any] },
+        "DBClusterParameterGroup" -> DBClusterParameterGroup.map { x => x.asInstanceOf[js.Any] },
+        "DBSubnetGroup" -> DBSubnetGroup.map { x => x.asInstanceOf[js.Any] },
+        "DatabaseName" -> DatabaseName.map { x => x.asInstanceOf[js.Any] },
+        "DbClusterResourceId" -> DbClusterResourceId.map { x => x.asInstanceOf[js.Any] },
+        "EarliestRestorableTime" -> EarliestRestorableTime.map { x => x.asInstanceOf[js.Any] },
+        "Endpoint" -> Endpoint.map { x => x.asInstanceOf[js.Any] },
+        "Engine" -> Engine.map { x => x.asInstanceOf[js.Any] },
         "EngineVersion" -> EngineVersion.map { x => x.asInstanceOf[js.Any] },
+        "HostedZoneId" -> HostedZoneId.map { x => x.asInstanceOf[js.Any] },
         "IAMDatabaseAuthenticationEnabled" -> IAMDatabaseAuthenticationEnabled.map { x => x.asInstanceOf[js.Any] },
+        "KmsKeyId" -> KmsKeyId.map { x => x.asInstanceOf[js.Any] },
+        "LatestRestorableTime" -> LatestRestorableTime.map { x => x.asInstanceOf[js.Any] },
+        "MasterUsername" -> MasterUsername.map { x => x.asInstanceOf[js.Any] },
+        "MultiAZ" -> MultiAZ.map { x => x.asInstanceOf[js.Any] },
+        "PercentProgress" -> PercentProgress.map { x => x.asInstanceOf[js.Any] },
         "Port" -> Port.map { x => x.asInstanceOf[js.Any] },
         "PreferredBackupWindow" -> PreferredBackupWindow.map { x => x.asInstanceOf[js.Any] },
-        "ClusterCreateTime" -> ClusterCreateTime.map { x => x.asInstanceOf[js.Any] },
-        "LatestRestorableTime" -> LatestRestorableTime.map { x => x.asInstanceOf[js.Any] },
+        "PreferredMaintenanceWindow" -> PreferredMaintenanceWindow.map { x => x.asInstanceOf[js.Any] },
+        "ReadReplicaIdentifiers" -> ReadReplicaIdentifiers.map { x => x.asInstanceOf[js.Any] },
         "ReaderEndpoint" -> ReaderEndpoint.map { x => x.asInstanceOf[js.Any] },
-        "DBClusterParameterGroup" -> DBClusterParameterGroup.map { x => x.asInstanceOf[js.Any] },
-        "StorageEncrypted" -> StorageEncrypted.map { x => x.asInstanceOf[js.Any] },
-        "HostedZoneId" -> HostedZoneId.map { x => x.asInstanceOf[js.Any] },
+        "ReplicationSourceIdentifier" -> ReplicationSourceIdentifier.map { x => x.asInstanceOf[js.Any] },
         "Status" -> Status.map { x => x.asInstanceOf[js.Any] },
-        "AvailabilityZones" -> AvailabilityZones.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "StorageEncrypted" -> StorageEncrypted.map { x => x.asInstanceOf[js.Any] },
+        "VpcSecurityGroups" -> VpcSecurityGroups.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DBCluster]
     }
@@ -1052,22 +1052,22 @@ package neptune {
    */
   @js.native
   trait DBClusterMember extends js.Object {
+    var DBClusterParameterGroupStatus: js.UndefOr[String]
     var DBInstanceIdentifier: js.UndefOr[String]
     var IsClusterWriter: js.UndefOr[Boolean]
-    var DBClusterParameterGroupStatus: js.UndefOr[String]
     var PromotionTier: js.UndefOr[IntegerOptional]
   }
 
   object DBClusterMember {
     def apply(
+      DBClusterParameterGroupStatus: js.UndefOr[String] = js.undefined,
       DBInstanceIdentifier: js.UndefOr[String] = js.undefined,
       IsClusterWriter: js.UndefOr[Boolean] = js.undefined,
-      DBClusterParameterGroupStatus: js.UndefOr[String] = js.undefined,
       PromotionTier: js.UndefOr[IntegerOptional] = js.undefined): DBClusterMember = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "DBClusterParameterGroupStatus" -> DBClusterParameterGroupStatus.map { x => x.asInstanceOf[js.Any] },
         "DBInstanceIdentifier" -> DBInstanceIdentifier.map { x => x.asInstanceOf[js.Any] },
         "IsClusterWriter" -> IsClusterWriter.map { x => x.asInstanceOf[js.Any] },
-        "DBClusterParameterGroupStatus" -> DBClusterParameterGroupStatus.map { x => x.asInstanceOf[js.Any] },
         "PromotionTier" -> PromotionTier.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DBClusterMember]
@@ -1079,17 +1079,17 @@ package neptune {
    */
   @js.native
   trait DBClusterMessage extends js.Object {
-    var Marker: js.UndefOr[String]
     var DBClusters: js.UndefOr[DBClusterList]
+    var Marker: js.UndefOr[String]
   }
 
   object DBClusterMessage {
     def apply(
-      Marker: js.UndefOr[String] = js.undefined,
-      DBClusters: js.UndefOr[DBClusterList] = js.undefined): DBClusterMessage = {
+      DBClusters: js.UndefOr[DBClusterList] = js.undefined,
+      Marker: js.UndefOr[String] = js.undefined): DBClusterMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Marker" -> Marker.map { x => x.asInstanceOf[js.Any] },
-        "DBClusters" -> DBClusters.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "DBClusters" -> DBClusters.map { x => x.asInstanceOf[js.Any] },
+        "Marker" -> Marker.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DBClusterMessage]
     }
@@ -1129,23 +1129,23 @@ package neptune {
    */
   @js.native
   trait DBClusterParameterGroup extends js.Object {
+    var DBClusterParameterGroupArn: js.UndefOr[String]
     var DBClusterParameterGroupName: js.UndefOr[String]
     var DBParameterGroupFamily: js.UndefOr[String]
     var Description: js.UndefOr[String]
-    var DBClusterParameterGroupArn: js.UndefOr[String]
   }
 
   object DBClusterParameterGroup {
     def apply(
+      DBClusterParameterGroupArn: js.UndefOr[String] = js.undefined,
       DBClusterParameterGroupName: js.UndefOr[String] = js.undefined,
       DBParameterGroupFamily: js.UndefOr[String] = js.undefined,
-      Description: js.UndefOr[String] = js.undefined,
-      DBClusterParameterGroupArn: js.UndefOr[String] = js.undefined): DBClusterParameterGroup = {
+      Description: js.UndefOr[String] = js.undefined): DBClusterParameterGroup = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "DBClusterParameterGroupArn" -> DBClusterParameterGroupArn.map { x => x.asInstanceOf[js.Any] },
         "DBClusterParameterGroupName" -> DBClusterParameterGroupName.map { x => x.asInstanceOf[js.Any] },
         "DBParameterGroupFamily" -> DBParameterGroupFamily.map { x => x.asInstanceOf[js.Any] },
-        "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
-        "DBClusterParameterGroupArn" -> DBClusterParameterGroupArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Description" -> Description.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DBClusterParameterGroup]
     }
@@ -1156,17 +1156,17 @@ package neptune {
    */
   @js.native
   trait DBClusterParameterGroupDetails extends js.Object {
-    var Parameters: js.UndefOr[ParametersList]
     var Marker: js.UndefOr[String]
+    var Parameters: js.UndefOr[ParametersList]
   }
 
   object DBClusterParameterGroupDetails {
     def apply(
-      Parameters: js.UndefOr[ParametersList] = js.undefined,
-      Marker: js.UndefOr[String] = js.undefined): DBClusterParameterGroupDetails = {
+      Marker: js.UndefOr[String] = js.undefined,
+      Parameters: js.UndefOr[ParametersList] = js.undefined): DBClusterParameterGroupDetails = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Parameters" -> Parameters.map { x => x.asInstanceOf[js.Any] },
-        "Marker" -> Marker.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Marker" -> Marker.map { x => x.asInstanceOf[js.Any] },
+        "Parameters" -> Parameters.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DBClusterParameterGroupDetails]
     }
@@ -1203,17 +1203,17 @@ package neptune {
    */
   @js.native
   trait DBClusterParameterGroupsMessage extends js.Object {
-    var Marker: js.UndefOr[String]
     var DBClusterParameterGroups: js.UndefOr[DBClusterParameterGroupList]
+    var Marker: js.UndefOr[String]
   }
 
   object DBClusterParameterGroupsMessage {
     def apply(
-      Marker: js.UndefOr[String] = js.undefined,
-      DBClusterParameterGroups: js.UndefOr[DBClusterParameterGroupList] = js.undefined): DBClusterParameterGroupsMessage = {
+      DBClusterParameterGroups: js.UndefOr[DBClusterParameterGroupList] = js.undefined,
+      Marker: js.UndefOr[String] = js.undefined): DBClusterParameterGroupsMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Marker" -> Marker.map { x => x.asInstanceOf[js.Any] },
-        "DBClusterParameterGroups" -> DBClusterParameterGroups.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "DBClusterParameterGroups" -> DBClusterParameterGroups.map { x => x.asInstanceOf[js.Any] },
+        "Marker" -> Marker.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DBClusterParameterGroupsMessage]
     }
@@ -1277,70 +1277,70 @@ package neptune {
    */
   @js.native
   trait DBClusterSnapshot extends js.Object {
-    var DBClusterIdentifier: js.UndefOr[String]
-    var Engine: js.UndefOr[String]
-    var PercentProgress: js.UndefOr[Int]
-    var KmsKeyId: js.UndefOr[String]
     var AllocatedStorage: js.UndefOr[Int]
+    var AvailabilityZones: js.UndefOr[AvailabilityZones]
+    var ClusterCreateTime: js.UndefOr[TStamp]
+    var DBClusterIdentifier: js.UndefOr[String]
+    var DBClusterSnapshotArn: js.UndefOr[String]
     var DBClusterSnapshotIdentifier: js.UndefOr[String]
-    var SourceDBClusterSnapshotArn: js.UndefOr[String]
-    var SnapshotCreateTime: js.UndefOr[TStamp]
-    var SnapshotType: js.UndefOr[String]
-    var MasterUsername: js.UndefOr[String]
+    var Engine: js.UndefOr[String]
     var EngineVersion: js.UndefOr[String]
     var IAMDatabaseAuthenticationEnabled: js.UndefOr[Boolean]
-    var Port: js.UndefOr[Int]
-    var ClusterCreateTime: js.UndefOr[TStamp]
+    var KmsKeyId: js.UndefOr[String]
     var LicenseModel: js.UndefOr[String]
-    var StorageEncrypted: js.UndefOr[Boolean]
-    var DBClusterSnapshotArn: js.UndefOr[String]
+    var MasterUsername: js.UndefOr[String]
+    var PercentProgress: js.UndefOr[Int]
+    var Port: js.UndefOr[Int]
+    var SnapshotCreateTime: js.UndefOr[TStamp]
+    var SnapshotType: js.UndefOr[String]
+    var SourceDBClusterSnapshotArn: js.UndefOr[String]
     var Status: js.UndefOr[String]
-    var AvailabilityZones: js.UndefOr[AvailabilityZones]
+    var StorageEncrypted: js.UndefOr[Boolean]
     var VpcId: js.UndefOr[String]
   }
 
   object DBClusterSnapshot {
     def apply(
-      DBClusterIdentifier: js.UndefOr[String] = js.undefined,
-      Engine: js.UndefOr[String] = js.undefined,
-      PercentProgress: js.UndefOr[Int] = js.undefined,
-      KmsKeyId: js.UndefOr[String] = js.undefined,
       AllocatedStorage: js.UndefOr[Int] = js.undefined,
+      AvailabilityZones: js.UndefOr[AvailabilityZones] = js.undefined,
+      ClusterCreateTime: js.UndefOr[TStamp] = js.undefined,
+      DBClusterIdentifier: js.UndefOr[String] = js.undefined,
+      DBClusterSnapshotArn: js.UndefOr[String] = js.undefined,
       DBClusterSnapshotIdentifier: js.UndefOr[String] = js.undefined,
-      SourceDBClusterSnapshotArn: js.UndefOr[String] = js.undefined,
-      SnapshotCreateTime: js.UndefOr[TStamp] = js.undefined,
-      SnapshotType: js.UndefOr[String] = js.undefined,
-      MasterUsername: js.UndefOr[String] = js.undefined,
+      Engine: js.UndefOr[String] = js.undefined,
       EngineVersion: js.UndefOr[String] = js.undefined,
       IAMDatabaseAuthenticationEnabled: js.UndefOr[Boolean] = js.undefined,
-      Port: js.UndefOr[Int] = js.undefined,
-      ClusterCreateTime: js.UndefOr[TStamp] = js.undefined,
+      KmsKeyId: js.UndefOr[String] = js.undefined,
       LicenseModel: js.UndefOr[String] = js.undefined,
-      StorageEncrypted: js.UndefOr[Boolean] = js.undefined,
-      DBClusterSnapshotArn: js.UndefOr[String] = js.undefined,
+      MasterUsername: js.UndefOr[String] = js.undefined,
+      PercentProgress: js.UndefOr[Int] = js.undefined,
+      Port: js.UndefOr[Int] = js.undefined,
+      SnapshotCreateTime: js.UndefOr[TStamp] = js.undefined,
+      SnapshotType: js.UndefOr[String] = js.undefined,
+      SourceDBClusterSnapshotArn: js.UndefOr[String] = js.undefined,
       Status: js.UndefOr[String] = js.undefined,
-      AvailabilityZones: js.UndefOr[AvailabilityZones] = js.undefined,
+      StorageEncrypted: js.UndefOr[Boolean] = js.undefined,
       VpcId: js.UndefOr[String] = js.undefined): DBClusterSnapshot = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "DBClusterIdentifier" -> DBClusterIdentifier.map { x => x.asInstanceOf[js.Any] },
-        "Engine" -> Engine.map { x => x.asInstanceOf[js.Any] },
-        "PercentProgress" -> PercentProgress.map { x => x.asInstanceOf[js.Any] },
-        "KmsKeyId" -> KmsKeyId.map { x => x.asInstanceOf[js.Any] },
         "AllocatedStorage" -> AllocatedStorage.map { x => x.asInstanceOf[js.Any] },
+        "AvailabilityZones" -> AvailabilityZones.map { x => x.asInstanceOf[js.Any] },
+        "ClusterCreateTime" -> ClusterCreateTime.map { x => x.asInstanceOf[js.Any] },
+        "DBClusterIdentifier" -> DBClusterIdentifier.map { x => x.asInstanceOf[js.Any] },
+        "DBClusterSnapshotArn" -> DBClusterSnapshotArn.map { x => x.asInstanceOf[js.Any] },
         "DBClusterSnapshotIdentifier" -> DBClusterSnapshotIdentifier.map { x => x.asInstanceOf[js.Any] },
-        "SourceDBClusterSnapshotArn" -> SourceDBClusterSnapshotArn.map { x => x.asInstanceOf[js.Any] },
-        "SnapshotCreateTime" -> SnapshotCreateTime.map { x => x.asInstanceOf[js.Any] },
-        "SnapshotType" -> SnapshotType.map { x => x.asInstanceOf[js.Any] },
-        "MasterUsername" -> MasterUsername.map { x => x.asInstanceOf[js.Any] },
+        "Engine" -> Engine.map { x => x.asInstanceOf[js.Any] },
         "EngineVersion" -> EngineVersion.map { x => x.asInstanceOf[js.Any] },
         "IAMDatabaseAuthenticationEnabled" -> IAMDatabaseAuthenticationEnabled.map { x => x.asInstanceOf[js.Any] },
-        "Port" -> Port.map { x => x.asInstanceOf[js.Any] },
-        "ClusterCreateTime" -> ClusterCreateTime.map { x => x.asInstanceOf[js.Any] },
+        "KmsKeyId" -> KmsKeyId.map { x => x.asInstanceOf[js.Any] },
         "LicenseModel" -> LicenseModel.map { x => x.asInstanceOf[js.Any] },
-        "StorageEncrypted" -> StorageEncrypted.map { x => x.asInstanceOf[js.Any] },
-        "DBClusterSnapshotArn" -> DBClusterSnapshotArn.map { x => x.asInstanceOf[js.Any] },
+        "MasterUsername" -> MasterUsername.map { x => x.asInstanceOf[js.Any] },
+        "PercentProgress" -> PercentProgress.map { x => x.asInstanceOf[js.Any] },
+        "Port" -> Port.map { x => x.asInstanceOf[js.Any] },
+        "SnapshotCreateTime" -> SnapshotCreateTime.map { x => x.asInstanceOf[js.Any] },
+        "SnapshotType" -> SnapshotType.map { x => x.asInstanceOf[js.Any] },
+        "SourceDBClusterSnapshotArn" -> SourceDBClusterSnapshotArn.map { x => x.asInstanceOf[js.Any] },
         "Status" -> Status.map { x => x.asInstanceOf[js.Any] },
-        "AvailabilityZones" -> AvailabilityZones.map { x => x.asInstanceOf[js.Any] },
+        "StorageEncrypted" -> StorageEncrypted.map { x => x.asInstanceOf[js.Any] },
         "VpcId" -> VpcId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DBClusterSnapshot]
@@ -1381,17 +1381,17 @@ package neptune {
    */
   @js.native
   trait DBClusterSnapshotAttributesResult extends js.Object {
-    var DBClusterSnapshotIdentifier: js.UndefOr[String]
     var DBClusterSnapshotAttributes: js.UndefOr[DBClusterSnapshotAttributeList]
+    var DBClusterSnapshotIdentifier: js.UndefOr[String]
   }
 
   object DBClusterSnapshotAttributesResult {
     def apply(
-      DBClusterSnapshotIdentifier: js.UndefOr[String] = js.undefined,
-      DBClusterSnapshotAttributes: js.UndefOr[DBClusterSnapshotAttributeList] = js.undefined): DBClusterSnapshotAttributesResult = {
+      DBClusterSnapshotAttributes: js.UndefOr[DBClusterSnapshotAttributeList] = js.undefined,
+      DBClusterSnapshotIdentifier: js.UndefOr[String] = js.undefined): DBClusterSnapshotAttributesResult = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "DBClusterSnapshotIdentifier" -> DBClusterSnapshotIdentifier.map { x => x.asInstanceOf[js.Any] },
-        "DBClusterSnapshotAttributes" -> DBClusterSnapshotAttributes.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "DBClusterSnapshotAttributes" -> DBClusterSnapshotAttributes.map { x => x.asInstanceOf[js.Any] },
+        "DBClusterSnapshotIdentifier" -> DBClusterSnapshotIdentifier.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DBClusterSnapshotAttributesResult]
     }
@@ -1402,17 +1402,17 @@ package neptune {
    */
   @js.native
   trait DBClusterSnapshotMessage extends js.Object {
-    var Marker: js.UndefOr[String]
     var DBClusterSnapshots: js.UndefOr[DBClusterSnapshotList]
+    var Marker: js.UndefOr[String]
   }
 
   object DBClusterSnapshotMessage {
     def apply(
-      Marker: js.UndefOr[String] = js.undefined,
-      DBClusterSnapshots: js.UndefOr[DBClusterSnapshotList] = js.undefined): DBClusterSnapshotMessage = {
+      DBClusterSnapshots: js.UndefOr[DBClusterSnapshotList] = js.undefined,
+      Marker: js.UndefOr[String] = js.undefined): DBClusterSnapshotMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Marker" -> Marker.map { x => x.asInstanceOf[js.Any] },
-        "DBClusterSnapshots" -> DBClusterSnapshots.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "DBClusterSnapshots" -> DBClusterSnapshots.map { x => x.asInstanceOf[js.Any] },
+        "Marker" -> Marker.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DBClusterSnapshotMessage]
     }
@@ -1431,47 +1431,47 @@ package neptune {
    */
   @js.native
   trait DBEngineVersion extends js.Object {
-    var DefaultCharacterSet: js.UndefOr[CharacterSet]
-    var SupportsLogExportsToCloudwatchLogs: js.UndefOr[Boolean]
-    var Engine: js.UndefOr[String]
-    var DBEngineVersionDescription: js.UndefOr[String]
-    var SupportedTimezones: js.UndefOr[SupportedTimezonesList]
     var DBEngineDescription: js.UndefOr[String]
-    var ValidUpgradeTarget: js.UndefOr[ValidUpgradeTargetList]
+    var DBEngineVersionDescription: js.UndefOr[String]
     var DBParameterGroupFamily: js.UndefOr[String]
+    var DefaultCharacterSet: js.UndefOr[CharacterSet]
+    var Engine: js.UndefOr[String]
     var EngineVersion: js.UndefOr[String]
-    var SupportsReadReplica: js.UndefOr[Boolean]
     var ExportableLogTypes: js.UndefOr[LogTypeList]
     var SupportedCharacterSets: js.UndefOr[SupportedCharacterSetsList]
+    var SupportedTimezones: js.UndefOr[SupportedTimezonesList]
+    var SupportsLogExportsToCloudwatchLogs: js.UndefOr[Boolean]
+    var SupportsReadReplica: js.UndefOr[Boolean]
+    var ValidUpgradeTarget: js.UndefOr[ValidUpgradeTargetList]
   }
 
   object DBEngineVersion {
     def apply(
-      DefaultCharacterSet: js.UndefOr[CharacterSet] = js.undefined,
-      SupportsLogExportsToCloudwatchLogs: js.UndefOr[Boolean] = js.undefined,
-      Engine: js.UndefOr[String] = js.undefined,
-      DBEngineVersionDescription: js.UndefOr[String] = js.undefined,
-      SupportedTimezones: js.UndefOr[SupportedTimezonesList] = js.undefined,
       DBEngineDescription: js.UndefOr[String] = js.undefined,
-      ValidUpgradeTarget: js.UndefOr[ValidUpgradeTargetList] = js.undefined,
+      DBEngineVersionDescription: js.UndefOr[String] = js.undefined,
       DBParameterGroupFamily: js.UndefOr[String] = js.undefined,
+      DefaultCharacterSet: js.UndefOr[CharacterSet] = js.undefined,
+      Engine: js.UndefOr[String] = js.undefined,
       EngineVersion: js.UndefOr[String] = js.undefined,
-      SupportsReadReplica: js.UndefOr[Boolean] = js.undefined,
       ExportableLogTypes: js.UndefOr[LogTypeList] = js.undefined,
-      SupportedCharacterSets: js.UndefOr[SupportedCharacterSetsList] = js.undefined): DBEngineVersion = {
+      SupportedCharacterSets: js.UndefOr[SupportedCharacterSetsList] = js.undefined,
+      SupportedTimezones: js.UndefOr[SupportedTimezonesList] = js.undefined,
+      SupportsLogExportsToCloudwatchLogs: js.UndefOr[Boolean] = js.undefined,
+      SupportsReadReplica: js.UndefOr[Boolean] = js.undefined,
+      ValidUpgradeTarget: js.UndefOr[ValidUpgradeTargetList] = js.undefined): DBEngineVersion = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "DefaultCharacterSet" -> DefaultCharacterSet.map { x => x.asInstanceOf[js.Any] },
-        "SupportsLogExportsToCloudwatchLogs" -> SupportsLogExportsToCloudwatchLogs.map { x => x.asInstanceOf[js.Any] },
-        "Engine" -> Engine.map { x => x.asInstanceOf[js.Any] },
-        "DBEngineVersionDescription" -> DBEngineVersionDescription.map { x => x.asInstanceOf[js.Any] },
-        "SupportedTimezones" -> SupportedTimezones.map { x => x.asInstanceOf[js.Any] },
         "DBEngineDescription" -> DBEngineDescription.map { x => x.asInstanceOf[js.Any] },
-        "ValidUpgradeTarget" -> ValidUpgradeTarget.map { x => x.asInstanceOf[js.Any] },
+        "DBEngineVersionDescription" -> DBEngineVersionDescription.map { x => x.asInstanceOf[js.Any] },
         "DBParameterGroupFamily" -> DBParameterGroupFamily.map { x => x.asInstanceOf[js.Any] },
+        "DefaultCharacterSet" -> DefaultCharacterSet.map { x => x.asInstanceOf[js.Any] },
+        "Engine" -> Engine.map { x => x.asInstanceOf[js.Any] },
         "EngineVersion" -> EngineVersion.map { x => x.asInstanceOf[js.Any] },
-        "SupportsReadReplica" -> SupportsReadReplica.map { x => x.asInstanceOf[js.Any] },
         "ExportableLogTypes" -> ExportableLogTypes.map { x => x.asInstanceOf[js.Any] },
-        "SupportedCharacterSets" -> SupportedCharacterSets.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "SupportedCharacterSets" -> SupportedCharacterSets.map { x => x.asInstanceOf[js.Any] },
+        "SupportedTimezones" -> SupportedTimezones.map { x => x.asInstanceOf[js.Any] },
+        "SupportsLogExportsToCloudwatchLogs" -> SupportsLogExportsToCloudwatchLogs.map { x => x.asInstanceOf[js.Any] },
+        "SupportsReadReplica" -> SupportsReadReplica.map { x => x.asInstanceOf[js.Any] },
+        "ValidUpgradeTarget" -> ValidUpgradeTarget.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DBEngineVersion]
     }
@@ -1482,17 +1482,17 @@ package neptune {
    */
   @js.native
   trait DBEngineVersionMessage extends js.Object {
-    var Marker: js.UndefOr[String]
     var DBEngineVersions: js.UndefOr[DBEngineVersionList]
+    var Marker: js.UndefOr[String]
   }
 
   object DBEngineVersionMessage {
     def apply(
-      Marker: js.UndefOr[String] = js.undefined,
-      DBEngineVersions: js.UndefOr[DBEngineVersionList] = js.undefined): DBEngineVersionMessage = {
+      DBEngineVersions: js.UndefOr[DBEngineVersionList] = js.undefined,
+      Marker: js.UndefOr[String] = js.undefined): DBEngineVersionMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Marker" -> Marker.map { x => x.asInstanceOf[js.Any] },
-        "DBEngineVersions" -> DBEngineVersions.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "DBEngineVersions" -> DBEngineVersions.map { x => x.asInstanceOf[js.Any] },
+        "Marker" -> Marker.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DBEngineVersionMessage]
     }
@@ -1503,167 +1503,167 @@ package neptune {
    */
   @js.native
   trait DBInstance extends js.Object {
-    var PreferredMaintenanceWindow: js.UndefOr[String]
-    var MonitoringInterval: js.UndefOr[IntegerOptional]
-    var DomainMemberships: js.UndefOr[DomainMembershipList]
-    var DBInstanceArn: js.UndefOr[String]
-    var PromotionTier: js.UndefOr[IntegerOptional]
-    var DBClusterIdentifier: js.UndefOr[String]
-    var CharacterSetName: js.UndefOr[String]
-    var Timezone: js.UndefOr[String]
-    var DBInstanceClass: js.UndefOr[String]
-    var Engine: js.UndefOr[String]
-    var ReadReplicaDBInstanceIdentifiers: js.UndefOr[ReadReplicaDBInstanceIdentifierList]
-    var MultiAZ: js.UndefOr[Boolean]
-    var DBSecurityGroups: js.UndefOr[DBSecurityGroupMembershipList]
-    var DBName: js.UndefOr[String]
-    var DbiResourceId: js.UndefOr[String]
-    var StatusInfos: js.UndefOr[DBInstanceStatusInfoList]
-    var DBSubnetGroup: js.UndefOr[DBSubnetGroup]
-    var Endpoint: js.UndefOr[Endpoint]
-    var ReadReplicaDBClusterIdentifiers: js.UndefOr[ReadReplicaDBClusterIdentifierList]
-    var MonitoringRoleArn: js.UndefOr[String]
-    var KmsKeyId: js.UndefOr[String]
     var AllocatedStorage: js.UndefOr[Int]
-    var PendingModifiedValues: js.UndefOr[PendingModifiedValues]
-    var OptionGroupMemberships: js.UndefOr[OptionGroupMembershipList]
-    var DBInstanceIdentifier: js.UndefOr[String]
-    var BackupRetentionPeriod: js.UndefOr[Int]
-    var MasterUsername: js.UndefOr[String]
-    var AvailabilityZone: js.UndefOr[String]
-    var VpcSecurityGroups: js.UndefOr[VpcSecurityGroupMembershipList]
     var AutoMinorVersionUpgrade: js.UndefOr[Boolean]
-    var EnabledCloudwatchLogsExports: js.UndefOr[LogTypeList]
-    var CopyTagsToSnapshot: js.UndefOr[Boolean]
-    var EngineVersion: js.UndefOr[String]
-    var InstanceCreateTime: js.UndefOr[TStamp]
-    var IAMDatabaseAuthenticationEnabled: js.UndefOr[Boolean]
-    var PreferredBackupWindow: js.UndefOr[String]
-    var Iops: js.UndefOr[IntegerOptional]
-    var DBInstanceStatus: js.UndefOr[String]
-    var StorageType: js.UndefOr[String]
-    var LatestRestorableTime: js.UndefOr[TStamp]
-    var PubliclyAccessible: js.UndefOr[Boolean]
-    var SecondaryAvailabilityZone: js.UndefOr[String]
-    var ReadReplicaSourceDBInstanceIdentifier: js.UndefOr[String]
-    var DBParameterGroups: js.UndefOr[DBParameterGroupStatusList]
-    var DbInstancePort: js.UndefOr[Int]
+    var AvailabilityZone: js.UndefOr[String]
+    var BackupRetentionPeriod: js.UndefOr[Int]
     var CACertificateIdentifier: js.UndefOr[String]
-    var PerformanceInsightsKMSKeyId: js.UndefOr[String]
-    var PerformanceInsightsEnabled: js.UndefOr[BooleanOptional]
-    var LicenseModel: js.UndefOr[String]
+    var CharacterSetName: js.UndefOr[String]
+    var CopyTagsToSnapshot: js.UndefOr[Boolean]
+    var DBClusterIdentifier: js.UndefOr[String]
+    var DBInstanceArn: js.UndefOr[String]
+    var DBInstanceClass: js.UndefOr[String]
+    var DBInstanceIdentifier: js.UndefOr[String]
+    var DBInstanceStatus: js.UndefOr[String]
+    var DBName: js.UndefOr[String]
+    var DBParameterGroups: js.UndefOr[DBParameterGroupStatusList]
+    var DBSecurityGroups: js.UndefOr[DBSecurityGroupMembershipList]
+    var DBSubnetGroup: js.UndefOr[DBSubnetGroup]
+    var DbInstancePort: js.UndefOr[Int]
+    var DbiResourceId: js.UndefOr[String]
+    var DomainMemberships: js.UndefOr[DomainMembershipList]
+    var EnabledCloudwatchLogsExports: js.UndefOr[LogTypeList]
+    var Endpoint: js.UndefOr[Endpoint]
+    var Engine: js.UndefOr[String]
+    var EngineVersion: js.UndefOr[String]
     var EnhancedMonitoringResourceArn: js.UndefOr[String]
-    var TdeCredentialArn: js.UndefOr[String]
+    var IAMDatabaseAuthenticationEnabled: js.UndefOr[Boolean]
+    var InstanceCreateTime: js.UndefOr[TStamp]
+    var Iops: js.UndefOr[IntegerOptional]
+    var KmsKeyId: js.UndefOr[String]
+    var LatestRestorableTime: js.UndefOr[TStamp]
+    var LicenseModel: js.UndefOr[String]
+    var MasterUsername: js.UndefOr[String]
+    var MonitoringInterval: js.UndefOr[IntegerOptional]
+    var MonitoringRoleArn: js.UndefOr[String]
+    var MultiAZ: js.UndefOr[Boolean]
+    var OptionGroupMemberships: js.UndefOr[OptionGroupMembershipList]
+    var PendingModifiedValues: js.UndefOr[PendingModifiedValues]
+    var PerformanceInsightsEnabled: js.UndefOr[BooleanOptional]
+    var PerformanceInsightsKMSKeyId: js.UndefOr[String]
+    var PreferredBackupWindow: js.UndefOr[String]
+    var PreferredMaintenanceWindow: js.UndefOr[String]
+    var PromotionTier: js.UndefOr[IntegerOptional]
+    var PubliclyAccessible: js.UndefOr[Boolean]
+    var ReadReplicaDBClusterIdentifiers: js.UndefOr[ReadReplicaDBClusterIdentifierList]
+    var ReadReplicaDBInstanceIdentifiers: js.UndefOr[ReadReplicaDBInstanceIdentifierList]
+    var ReadReplicaSourceDBInstanceIdentifier: js.UndefOr[String]
+    var SecondaryAvailabilityZone: js.UndefOr[String]
+    var StatusInfos: js.UndefOr[DBInstanceStatusInfoList]
     var StorageEncrypted: js.UndefOr[Boolean]
+    var StorageType: js.UndefOr[String]
+    var TdeCredentialArn: js.UndefOr[String]
+    var Timezone: js.UndefOr[String]
+    var VpcSecurityGroups: js.UndefOr[VpcSecurityGroupMembershipList]
   }
 
   object DBInstance {
     def apply(
-      PreferredMaintenanceWindow: js.UndefOr[String] = js.undefined,
-      MonitoringInterval: js.UndefOr[IntegerOptional] = js.undefined,
-      DomainMemberships: js.UndefOr[DomainMembershipList] = js.undefined,
-      DBInstanceArn: js.UndefOr[String] = js.undefined,
-      PromotionTier: js.UndefOr[IntegerOptional] = js.undefined,
-      DBClusterIdentifier: js.UndefOr[String] = js.undefined,
-      CharacterSetName: js.UndefOr[String] = js.undefined,
-      Timezone: js.UndefOr[String] = js.undefined,
-      DBInstanceClass: js.UndefOr[String] = js.undefined,
-      Engine: js.UndefOr[String] = js.undefined,
-      ReadReplicaDBInstanceIdentifiers: js.UndefOr[ReadReplicaDBInstanceIdentifierList] = js.undefined,
-      MultiAZ: js.UndefOr[Boolean] = js.undefined,
-      DBSecurityGroups: js.UndefOr[DBSecurityGroupMembershipList] = js.undefined,
-      DBName: js.UndefOr[String] = js.undefined,
-      DbiResourceId: js.UndefOr[String] = js.undefined,
-      StatusInfos: js.UndefOr[DBInstanceStatusInfoList] = js.undefined,
-      DBSubnetGroup: js.UndefOr[DBSubnetGroup] = js.undefined,
-      Endpoint: js.UndefOr[Endpoint] = js.undefined,
-      ReadReplicaDBClusterIdentifiers: js.UndefOr[ReadReplicaDBClusterIdentifierList] = js.undefined,
-      MonitoringRoleArn: js.UndefOr[String] = js.undefined,
-      KmsKeyId: js.UndefOr[String] = js.undefined,
       AllocatedStorage: js.UndefOr[Int] = js.undefined,
-      PendingModifiedValues: js.UndefOr[PendingModifiedValues] = js.undefined,
-      OptionGroupMemberships: js.UndefOr[OptionGroupMembershipList] = js.undefined,
-      DBInstanceIdentifier: js.UndefOr[String] = js.undefined,
-      BackupRetentionPeriod: js.UndefOr[Int] = js.undefined,
-      MasterUsername: js.UndefOr[String] = js.undefined,
-      AvailabilityZone: js.UndefOr[String] = js.undefined,
-      VpcSecurityGroups: js.UndefOr[VpcSecurityGroupMembershipList] = js.undefined,
       AutoMinorVersionUpgrade: js.UndefOr[Boolean] = js.undefined,
-      EnabledCloudwatchLogsExports: js.UndefOr[LogTypeList] = js.undefined,
-      CopyTagsToSnapshot: js.UndefOr[Boolean] = js.undefined,
-      EngineVersion: js.UndefOr[String] = js.undefined,
-      InstanceCreateTime: js.UndefOr[TStamp] = js.undefined,
-      IAMDatabaseAuthenticationEnabled: js.UndefOr[Boolean] = js.undefined,
-      PreferredBackupWindow: js.UndefOr[String] = js.undefined,
-      Iops: js.UndefOr[IntegerOptional] = js.undefined,
-      DBInstanceStatus: js.UndefOr[String] = js.undefined,
-      StorageType: js.UndefOr[String] = js.undefined,
-      LatestRestorableTime: js.UndefOr[TStamp] = js.undefined,
-      PubliclyAccessible: js.UndefOr[Boolean] = js.undefined,
-      SecondaryAvailabilityZone: js.UndefOr[String] = js.undefined,
-      ReadReplicaSourceDBInstanceIdentifier: js.UndefOr[String] = js.undefined,
-      DBParameterGroups: js.UndefOr[DBParameterGroupStatusList] = js.undefined,
-      DbInstancePort: js.UndefOr[Int] = js.undefined,
+      AvailabilityZone: js.UndefOr[String] = js.undefined,
+      BackupRetentionPeriod: js.UndefOr[Int] = js.undefined,
       CACertificateIdentifier: js.UndefOr[String] = js.undefined,
-      PerformanceInsightsKMSKeyId: js.UndefOr[String] = js.undefined,
-      PerformanceInsightsEnabled: js.UndefOr[BooleanOptional] = js.undefined,
-      LicenseModel: js.UndefOr[String] = js.undefined,
+      CharacterSetName: js.UndefOr[String] = js.undefined,
+      CopyTagsToSnapshot: js.UndefOr[Boolean] = js.undefined,
+      DBClusterIdentifier: js.UndefOr[String] = js.undefined,
+      DBInstanceArn: js.UndefOr[String] = js.undefined,
+      DBInstanceClass: js.UndefOr[String] = js.undefined,
+      DBInstanceIdentifier: js.UndefOr[String] = js.undefined,
+      DBInstanceStatus: js.UndefOr[String] = js.undefined,
+      DBName: js.UndefOr[String] = js.undefined,
+      DBParameterGroups: js.UndefOr[DBParameterGroupStatusList] = js.undefined,
+      DBSecurityGroups: js.UndefOr[DBSecurityGroupMembershipList] = js.undefined,
+      DBSubnetGroup: js.UndefOr[DBSubnetGroup] = js.undefined,
+      DbInstancePort: js.UndefOr[Int] = js.undefined,
+      DbiResourceId: js.UndefOr[String] = js.undefined,
+      DomainMemberships: js.UndefOr[DomainMembershipList] = js.undefined,
+      EnabledCloudwatchLogsExports: js.UndefOr[LogTypeList] = js.undefined,
+      Endpoint: js.UndefOr[Endpoint] = js.undefined,
+      Engine: js.UndefOr[String] = js.undefined,
+      EngineVersion: js.UndefOr[String] = js.undefined,
       EnhancedMonitoringResourceArn: js.UndefOr[String] = js.undefined,
+      IAMDatabaseAuthenticationEnabled: js.UndefOr[Boolean] = js.undefined,
+      InstanceCreateTime: js.UndefOr[TStamp] = js.undefined,
+      Iops: js.UndefOr[IntegerOptional] = js.undefined,
+      KmsKeyId: js.UndefOr[String] = js.undefined,
+      LatestRestorableTime: js.UndefOr[TStamp] = js.undefined,
+      LicenseModel: js.UndefOr[String] = js.undefined,
+      MasterUsername: js.UndefOr[String] = js.undefined,
+      MonitoringInterval: js.UndefOr[IntegerOptional] = js.undefined,
+      MonitoringRoleArn: js.UndefOr[String] = js.undefined,
+      MultiAZ: js.UndefOr[Boolean] = js.undefined,
+      OptionGroupMemberships: js.UndefOr[OptionGroupMembershipList] = js.undefined,
+      PendingModifiedValues: js.UndefOr[PendingModifiedValues] = js.undefined,
+      PerformanceInsightsEnabled: js.UndefOr[BooleanOptional] = js.undefined,
+      PerformanceInsightsKMSKeyId: js.UndefOr[String] = js.undefined,
+      PreferredBackupWindow: js.UndefOr[String] = js.undefined,
+      PreferredMaintenanceWindow: js.UndefOr[String] = js.undefined,
+      PromotionTier: js.UndefOr[IntegerOptional] = js.undefined,
+      PubliclyAccessible: js.UndefOr[Boolean] = js.undefined,
+      ReadReplicaDBClusterIdentifiers: js.UndefOr[ReadReplicaDBClusterIdentifierList] = js.undefined,
+      ReadReplicaDBInstanceIdentifiers: js.UndefOr[ReadReplicaDBInstanceIdentifierList] = js.undefined,
+      ReadReplicaSourceDBInstanceIdentifier: js.UndefOr[String] = js.undefined,
+      SecondaryAvailabilityZone: js.UndefOr[String] = js.undefined,
+      StatusInfos: js.UndefOr[DBInstanceStatusInfoList] = js.undefined,
+      StorageEncrypted: js.UndefOr[Boolean] = js.undefined,
+      StorageType: js.UndefOr[String] = js.undefined,
       TdeCredentialArn: js.UndefOr[String] = js.undefined,
-      StorageEncrypted: js.UndefOr[Boolean] = js.undefined): DBInstance = {
+      Timezone: js.UndefOr[String] = js.undefined,
+      VpcSecurityGroups: js.UndefOr[VpcSecurityGroupMembershipList] = js.undefined): DBInstance = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "PreferredMaintenanceWindow" -> PreferredMaintenanceWindow.map { x => x.asInstanceOf[js.Any] },
-        "MonitoringInterval" -> MonitoringInterval.map { x => x.asInstanceOf[js.Any] },
-        "DomainMemberships" -> DomainMemberships.map { x => x.asInstanceOf[js.Any] },
-        "DBInstanceArn" -> DBInstanceArn.map { x => x.asInstanceOf[js.Any] },
-        "PromotionTier" -> PromotionTier.map { x => x.asInstanceOf[js.Any] },
-        "DBClusterIdentifier" -> DBClusterIdentifier.map { x => x.asInstanceOf[js.Any] },
-        "CharacterSetName" -> CharacterSetName.map { x => x.asInstanceOf[js.Any] },
-        "Timezone" -> Timezone.map { x => x.asInstanceOf[js.Any] },
-        "DBInstanceClass" -> DBInstanceClass.map { x => x.asInstanceOf[js.Any] },
-        "Engine" -> Engine.map { x => x.asInstanceOf[js.Any] },
-        "ReadReplicaDBInstanceIdentifiers" -> ReadReplicaDBInstanceIdentifiers.map { x => x.asInstanceOf[js.Any] },
-        "MultiAZ" -> MultiAZ.map { x => x.asInstanceOf[js.Any] },
-        "DBSecurityGroups" -> DBSecurityGroups.map { x => x.asInstanceOf[js.Any] },
-        "DBName" -> DBName.map { x => x.asInstanceOf[js.Any] },
-        "DbiResourceId" -> DbiResourceId.map { x => x.asInstanceOf[js.Any] },
-        "StatusInfos" -> StatusInfos.map { x => x.asInstanceOf[js.Any] },
-        "DBSubnetGroup" -> DBSubnetGroup.map { x => x.asInstanceOf[js.Any] },
-        "Endpoint" -> Endpoint.map { x => x.asInstanceOf[js.Any] },
-        "ReadReplicaDBClusterIdentifiers" -> ReadReplicaDBClusterIdentifiers.map { x => x.asInstanceOf[js.Any] },
-        "MonitoringRoleArn" -> MonitoringRoleArn.map { x => x.asInstanceOf[js.Any] },
-        "KmsKeyId" -> KmsKeyId.map { x => x.asInstanceOf[js.Any] },
         "AllocatedStorage" -> AllocatedStorage.map { x => x.asInstanceOf[js.Any] },
-        "PendingModifiedValues" -> PendingModifiedValues.map { x => x.asInstanceOf[js.Any] },
-        "OptionGroupMemberships" -> OptionGroupMemberships.map { x => x.asInstanceOf[js.Any] },
-        "DBInstanceIdentifier" -> DBInstanceIdentifier.map { x => x.asInstanceOf[js.Any] },
-        "BackupRetentionPeriod" -> BackupRetentionPeriod.map { x => x.asInstanceOf[js.Any] },
-        "MasterUsername" -> MasterUsername.map { x => x.asInstanceOf[js.Any] },
-        "AvailabilityZone" -> AvailabilityZone.map { x => x.asInstanceOf[js.Any] },
-        "VpcSecurityGroups" -> VpcSecurityGroups.map { x => x.asInstanceOf[js.Any] },
         "AutoMinorVersionUpgrade" -> AutoMinorVersionUpgrade.map { x => x.asInstanceOf[js.Any] },
-        "EnabledCloudwatchLogsExports" -> EnabledCloudwatchLogsExports.map { x => x.asInstanceOf[js.Any] },
-        "CopyTagsToSnapshot" -> CopyTagsToSnapshot.map { x => x.asInstanceOf[js.Any] },
-        "EngineVersion" -> EngineVersion.map { x => x.asInstanceOf[js.Any] },
-        "InstanceCreateTime" -> InstanceCreateTime.map { x => x.asInstanceOf[js.Any] },
-        "IAMDatabaseAuthenticationEnabled" -> IAMDatabaseAuthenticationEnabled.map { x => x.asInstanceOf[js.Any] },
-        "PreferredBackupWindow" -> PreferredBackupWindow.map { x => x.asInstanceOf[js.Any] },
-        "Iops" -> Iops.map { x => x.asInstanceOf[js.Any] },
-        "DBInstanceStatus" -> DBInstanceStatus.map { x => x.asInstanceOf[js.Any] },
-        "StorageType" -> StorageType.map { x => x.asInstanceOf[js.Any] },
-        "LatestRestorableTime" -> LatestRestorableTime.map { x => x.asInstanceOf[js.Any] },
-        "PubliclyAccessible" -> PubliclyAccessible.map { x => x.asInstanceOf[js.Any] },
-        "SecondaryAvailabilityZone" -> SecondaryAvailabilityZone.map { x => x.asInstanceOf[js.Any] },
-        "ReadReplicaSourceDBInstanceIdentifier" -> ReadReplicaSourceDBInstanceIdentifier.map { x => x.asInstanceOf[js.Any] },
-        "DBParameterGroups" -> DBParameterGroups.map { x => x.asInstanceOf[js.Any] },
-        "DbInstancePort" -> DbInstancePort.map { x => x.asInstanceOf[js.Any] },
+        "AvailabilityZone" -> AvailabilityZone.map { x => x.asInstanceOf[js.Any] },
+        "BackupRetentionPeriod" -> BackupRetentionPeriod.map { x => x.asInstanceOf[js.Any] },
         "CACertificateIdentifier" -> CACertificateIdentifier.map { x => x.asInstanceOf[js.Any] },
-        "PerformanceInsightsKMSKeyId" -> PerformanceInsightsKMSKeyId.map { x => x.asInstanceOf[js.Any] },
-        "PerformanceInsightsEnabled" -> PerformanceInsightsEnabled.map { x => x.asInstanceOf[js.Any] },
-        "LicenseModel" -> LicenseModel.map { x => x.asInstanceOf[js.Any] },
+        "CharacterSetName" -> CharacterSetName.map { x => x.asInstanceOf[js.Any] },
+        "CopyTagsToSnapshot" -> CopyTagsToSnapshot.map { x => x.asInstanceOf[js.Any] },
+        "DBClusterIdentifier" -> DBClusterIdentifier.map { x => x.asInstanceOf[js.Any] },
+        "DBInstanceArn" -> DBInstanceArn.map { x => x.asInstanceOf[js.Any] },
+        "DBInstanceClass" -> DBInstanceClass.map { x => x.asInstanceOf[js.Any] },
+        "DBInstanceIdentifier" -> DBInstanceIdentifier.map { x => x.asInstanceOf[js.Any] },
+        "DBInstanceStatus" -> DBInstanceStatus.map { x => x.asInstanceOf[js.Any] },
+        "DBName" -> DBName.map { x => x.asInstanceOf[js.Any] },
+        "DBParameterGroups" -> DBParameterGroups.map { x => x.asInstanceOf[js.Any] },
+        "DBSecurityGroups" -> DBSecurityGroups.map { x => x.asInstanceOf[js.Any] },
+        "DBSubnetGroup" -> DBSubnetGroup.map { x => x.asInstanceOf[js.Any] },
+        "DbInstancePort" -> DbInstancePort.map { x => x.asInstanceOf[js.Any] },
+        "DbiResourceId" -> DbiResourceId.map { x => x.asInstanceOf[js.Any] },
+        "DomainMemberships" -> DomainMemberships.map { x => x.asInstanceOf[js.Any] },
+        "EnabledCloudwatchLogsExports" -> EnabledCloudwatchLogsExports.map { x => x.asInstanceOf[js.Any] },
+        "Endpoint" -> Endpoint.map { x => x.asInstanceOf[js.Any] },
+        "Engine" -> Engine.map { x => x.asInstanceOf[js.Any] },
+        "EngineVersion" -> EngineVersion.map { x => x.asInstanceOf[js.Any] },
         "EnhancedMonitoringResourceArn" -> EnhancedMonitoringResourceArn.map { x => x.asInstanceOf[js.Any] },
+        "IAMDatabaseAuthenticationEnabled" -> IAMDatabaseAuthenticationEnabled.map { x => x.asInstanceOf[js.Any] },
+        "InstanceCreateTime" -> InstanceCreateTime.map { x => x.asInstanceOf[js.Any] },
+        "Iops" -> Iops.map { x => x.asInstanceOf[js.Any] },
+        "KmsKeyId" -> KmsKeyId.map { x => x.asInstanceOf[js.Any] },
+        "LatestRestorableTime" -> LatestRestorableTime.map { x => x.asInstanceOf[js.Any] },
+        "LicenseModel" -> LicenseModel.map { x => x.asInstanceOf[js.Any] },
+        "MasterUsername" -> MasterUsername.map { x => x.asInstanceOf[js.Any] },
+        "MonitoringInterval" -> MonitoringInterval.map { x => x.asInstanceOf[js.Any] },
+        "MonitoringRoleArn" -> MonitoringRoleArn.map { x => x.asInstanceOf[js.Any] },
+        "MultiAZ" -> MultiAZ.map { x => x.asInstanceOf[js.Any] },
+        "OptionGroupMemberships" -> OptionGroupMemberships.map { x => x.asInstanceOf[js.Any] },
+        "PendingModifiedValues" -> PendingModifiedValues.map { x => x.asInstanceOf[js.Any] },
+        "PerformanceInsightsEnabled" -> PerformanceInsightsEnabled.map { x => x.asInstanceOf[js.Any] },
+        "PerformanceInsightsKMSKeyId" -> PerformanceInsightsKMSKeyId.map { x => x.asInstanceOf[js.Any] },
+        "PreferredBackupWindow" -> PreferredBackupWindow.map { x => x.asInstanceOf[js.Any] },
+        "PreferredMaintenanceWindow" -> PreferredMaintenanceWindow.map { x => x.asInstanceOf[js.Any] },
+        "PromotionTier" -> PromotionTier.map { x => x.asInstanceOf[js.Any] },
+        "PubliclyAccessible" -> PubliclyAccessible.map { x => x.asInstanceOf[js.Any] },
+        "ReadReplicaDBClusterIdentifiers" -> ReadReplicaDBClusterIdentifiers.map { x => x.asInstanceOf[js.Any] },
+        "ReadReplicaDBInstanceIdentifiers" -> ReadReplicaDBInstanceIdentifiers.map { x => x.asInstanceOf[js.Any] },
+        "ReadReplicaSourceDBInstanceIdentifier" -> ReadReplicaSourceDBInstanceIdentifier.map { x => x.asInstanceOf[js.Any] },
+        "SecondaryAvailabilityZone" -> SecondaryAvailabilityZone.map { x => x.asInstanceOf[js.Any] },
+        "StatusInfos" -> StatusInfos.map { x => x.asInstanceOf[js.Any] },
+        "StorageEncrypted" -> StorageEncrypted.map { x => x.asInstanceOf[js.Any] },
+        "StorageType" -> StorageType.map { x => x.asInstanceOf[js.Any] },
         "TdeCredentialArn" -> TdeCredentialArn.map { x => x.asInstanceOf[js.Any] },
-        "StorageEncrypted" -> StorageEncrypted.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Timezone" -> Timezone.map { x => x.asInstanceOf[js.Any] },
+        "VpcSecurityGroups" -> VpcSecurityGroups.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DBInstance]
     }
@@ -1682,17 +1682,17 @@ package neptune {
    */
   @js.native
   trait DBInstanceMessage extends js.Object {
-    var Marker: js.UndefOr[String]
     var DBInstances: js.UndefOr[DBInstanceList]
+    var Marker: js.UndefOr[String]
   }
 
   object DBInstanceMessage {
     def apply(
-      Marker: js.UndefOr[String] = js.undefined,
-      DBInstances: js.UndefOr[DBInstanceList] = js.undefined): DBInstanceMessage = {
+      DBInstances: js.UndefOr[DBInstanceList] = js.undefined,
+      Marker: js.UndefOr[String] = js.undefined): DBInstanceMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Marker" -> Marker.map { x => x.asInstanceOf[js.Any] },
-        "DBInstances" -> DBInstances.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "DBInstances" -> DBInstances.map { x => x.asInstanceOf[js.Any] },
+        "Marker" -> Marker.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DBInstanceMessage]
     }
@@ -1711,23 +1711,23 @@ package neptune {
    */
   @js.native
   trait DBInstanceStatusInfo extends js.Object {
-    var StatusType: js.UndefOr[String]
+    var Message: js.UndefOr[String]
     var Normal: js.UndefOr[Boolean]
     var Status: js.UndefOr[String]
-    var Message: js.UndefOr[String]
+    var StatusType: js.UndefOr[String]
   }
 
   object DBInstanceStatusInfo {
     def apply(
-      StatusType: js.UndefOr[String] = js.undefined,
+      Message: js.UndefOr[String] = js.undefined,
       Normal: js.UndefOr[Boolean] = js.undefined,
       Status: js.UndefOr[String] = js.undefined,
-      Message: js.UndefOr[String] = js.undefined): DBInstanceStatusInfo = {
+      StatusType: js.UndefOr[String] = js.undefined): DBInstanceStatusInfo = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "StatusType" -> StatusType.map { x => x.asInstanceOf[js.Any] },
+        "Message" -> Message.map { x => x.asInstanceOf[js.Any] },
         "Normal" -> Normal.map { x => x.asInstanceOf[js.Any] },
         "Status" -> Status.map { x => x.asInstanceOf[js.Any] },
-        "Message" -> Message.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "StatusType" -> StatusType.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DBInstanceStatusInfo]
     }
@@ -1738,23 +1738,23 @@ package neptune {
    */
   @js.native
   trait DBParameterGroup extends js.Object {
-    var DBParameterGroupName: js.UndefOr[String]
-    var DBParameterGroupFamily: js.UndefOr[String]
-    var Description: js.UndefOr[String]
     var DBParameterGroupArn: js.UndefOr[String]
+    var DBParameterGroupFamily: js.UndefOr[String]
+    var DBParameterGroupName: js.UndefOr[String]
+    var Description: js.UndefOr[String]
   }
 
   object DBParameterGroup {
     def apply(
-      DBParameterGroupName: js.UndefOr[String] = js.undefined,
+      DBParameterGroupArn: js.UndefOr[String] = js.undefined,
       DBParameterGroupFamily: js.UndefOr[String] = js.undefined,
-      Description: js.UndefOr[String] = js.undefined,
-      DBParameterGroupArn: js.UndefOr[String] = js.undefined): DBParameterGroup = {
+      DBParameterGroupName: js.UndefOr[String] = js.undefined,
+      Description: js.UndefOr[String] = js.undefined): DBParameterGroup = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "DBParameterGroupName" -> DBParameterGroupName.map { x => x.asInstanceOf[js.Any] },
+        "DBParameterGroupArn" -> DBParameterGroupArn.map { x => x.asInstanceOf[js.Any] },
         "DBParameterGroupFamily" -> DBParameterGroupFamily.map { x => x.asInstanceOf[js.Any] },
-        "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
-        "DBParameterGroupArn" -> DBParameterGroupArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "DBParameterGroupName" -> DBParameterGroupName.map { x => x.asInstanceOf[js.Any] },
+        "Description" -> Description.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DBParameterGroup]
     }
@@ -1773,17 +1773,17 @@ package neptune {
    */
   @js.native
   trait DBParameterGroupDetails extends js.Object {
-    var Parameters: js.UndefOr[ParametersList]
     var Marker: js.UndefOr[String]
+    var Parameters: js.UndefOr[ParametersList]
   }
 
   object DBParameterGroupDetails {
     def apply(
-      Parameters: js.UndefOr[ParametersList] = js.undefined,
-      Marker: js.UndefOr[String] = js.undefined): DBParameterGroupDetails = {
+      Marker: js.UndefOr[String] = js.undefined,
+      Parameters: js.UndefOr[ParametersList] = js.undefined): DBParameterGroupDetails = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Parameters" -> Parameters.map { x => x.asInstanceOf[js.Any] },
-        "Marker" -> Marker.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Marker" -> Marker.map { x => x.asInstanceOf[js.Any] },
+        "Parameters" -> Parameters.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DBParameterGroupDetails]
     }
@@ -1849,17 +1849,17 @@ package neptune {
    */
   @js.native
   trait DBParameterGroupsMessage extends js.Object {
-    var Marker: js.UndefOr[String]
     var DBParameterGroups: js.UndefOr[DBParameterGroupList]
+    var Marker: js.UndefOr[String]
   }
 
   object DBParameterGroupsMessage {
     def apply(
-      Marker: js.UndefOr[String] = js.undefined,
-      DBParameterGroups: js.UndefOr[DBParameterGroupList] = js.undefined): DBParameterGroupsMessage = {
+      DBParameterGroups: js.UndefOr[DBParameterGroupList] = js.undefined,
+      Marker: js.UndefOr[String] = js.undefined): DBParameterGroupsMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Marker" -> Marker.map { x => x.asInstanceOf[js.Any] },
-        "DBParameterGroups" -> DBParameterGroups.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "DBParameterGroups" -> DBParameterGroups.map { x => x.asInstanceOf[js.Any] },
+        "Marker" -> Marker.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DBParameterGroupsMessage]
     }
@@ -1915,28 +1915,28 @@ package neptune {
    */
   @js.native
   trait DBSubnetGroup extends js.Object {
+    var DBSubnetGroupArn: js.UndefOr[String]
     var DBSubnetGroupDescription: js.UndefOr[String]
+    var DBSubnetGroupName: js.UndefOr[String]
     var SubnetGroupStatus: js.UndefOr[String]
     var Subnets: js.UndefOr[SubnetList]
-    var DBSubnetGroupName: js.UndefOr[String]
-    var DBSubnetGroupArn: js.UndefOr[String]
     var VpcId: js.UndefOr[String]
   }
 
   object DBSubnetGroup {
     def apply(
+      DBSubnetGroupArn: js.UndefOr[String] = js.undefined,
       DBSubnetGroupDescription: js.UndefOr[String] = js.undefined,
+      DBSubnetGroupName: js.UndefOr[String] = js.undefined,
       SubnetGroupStatus: js.UndefOr[String] = js.undefined,
       Subnets: js.UndefOr[SubnetList] = js.undefined,
-      DBSubnetGroupName: js.UndefOr[String] = js.undefined,
-      DBSubnetGroupArn: js.UndefOr[String] = js.undefined,
       VpcId: js.UndefOr[String] = js.undefined): DBSubnetGroup = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "DBSubnetGroupArn" -> DBSubnetGroupArn.map { x => x.asInstanceOf[js.Any] },
         "DBSubnetGroupDescription" -> DBSubnetGroupDescription.map { x => x.asInstanceOf[js.Any] },
+        "DBSubnetGroupName" -> DBSubnetGroupName.map { x => x.asInstanceOf[js.Any] },
         "SubnetGroupStatus" -> SubnetGroupStatus.map { x => x.asInstanceOf[js.Any] },
         "Subnets" -> Subnets.map { x => x.asInstanceOf[js.Any] },
-        "DBSubnetGroupName" -> DBSubnetGroupName.map { x => x.asInstanceOf[js.Any] },
-        "DBSubnetGroupArn" -> DBSubnetGroupArn.map { x => x.asInstanceOf[js.Any] },
         "VpcId" -> VpcId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DBSubnetGroup]
@@ -1964,17 +1964,17 @@ package neptune {
    */
   @js.native
   trait DBSubnetGroupMessage extends js.Object {
-    var Marker: js.UndefOr[String]
     var DBSubnetGroups: js.UndefOr[DBSubnetGroups]
+    var Marker: js.UndefOr[String]
   }
 
   object DBSubnetGroupMessage {
     def apply(
-      Marker: js.UndefOr[String] = js.undefined,
-      DBSubnetGroups: js.UndefOr[DBSubnetGroups] = js.undefined): DBSubnetGroupMessage = {
+      DBSubnetGroups: js.UndefOr[DBSubnetGroups] = js.undefined,
+      Marker: js.UndefOr[String] = js.undefined): DBSubnetGroupMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Marker" -> Marker.map { x => x.asInstanceOf[js.Any] },
-        "DBSubnetGroups" -> DBSubnetGroups.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "DBSubnetGroups" -> DBSubnetGroups.map { x => x.asInstanceOf[js.Any] },
+        "Marker" -> Marker.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DBSubnetGroupMessage]
     }
@@ -2017,20 +2017,20 @@ package neptune {
    */
   @js.native
   trait DeleteDBClusterMessage extends js.Object {
-    var DBClusterIdentifier: js.UndefOr[String]
-    var SkipFinalSnapshot: js.UndefOr[Boolean]
+    var DBClusterIdentifier: String
     var FinalDBSnapshotIdentifier: js.UndefOr[String]
+    var SkipFinalSnapshot: js.UndefOr[Boolean]
   }
 
   object DeleteDBClusterMessage {
     def apply(
-      DBClusterIdentifier: js.UndefOr[String] = js.undefined,
-      SkipFinalSnapshot: js.UndefOr[Boolean] = js.undefined,
-      FinalDBSnapshotIdentifier: js.UndefOr[String] = js.undefined): DeleteDBClusterMessage = {
+      DBClusterIdentifier: String,
+      FinalDBSnapshotIdentifier: js.UndefOr[String] = js.undefined,
+      SkipFinalSnapshot: js.UndefOr[Boolean] = js.undefined): DeleteDBClusterMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "DBClusterIdentifier" -> DBClusterIdentifier.map { x => x.asInstanceOf[js.Any] },
-        "SkipFinalSnapshot" -> SkipFinalSnapshot.map { x => x.asInstanceOf[js.Any] },
-        "FinalDBSnapshotIdentifier" -> FinalDBSnapshotIdentifier.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "DBClusterIdentifier" -> DBClusterIdentifier.asInstanceOf[js.Any],
+        "FinalDBSnapshotIdentifier" -> FinalDBSnapshotIdentifier.map { x => x.asInstanceOf[js.Any] },
+        "SkipFinalSnapshot" -> SkipFinalSnapshot.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteDBClusterMessage]
     }
@@ -2041,14 +2041,14 @@ package neptune {
    */
   @js.native
   trait DeleteDBClusterParameterGroupMessage extends js.Object {
-    var DBClusterParameterGroupName: js.UndefOr[String]
+    var DBClusterParameterGroupName: String
   }
 
   object DeleteDBClusterParameterGroupMessage {
     def apply(
-      DBClusterParameterGroupName: js.UndefOr[String] = js.undefined): DeleteDBClusterParameterGroupMessage = {
+      DBClusterParameterGroupName: String): DeleteDBClusterParameterGroupMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "DBClusterParameterGroupName" -> DBClusterParameterGroupName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "DBClusterParameterGroupName" -> DBClusterParameterGroupName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteDBClusterParameterGroupMessage]
     }
@@ -2074,14 +2074,14 @@ package neptune {
    */
   @js.native
   trait DeleteDBClusterSnapshotMessage extends js.Object {
-    var DBClusterSnapshotIdentifier: js.UndefOr[String]
+    var DBClusterSnapshotIdentifier: String
   }
 
   object DeleteDBClusterSnapshotMessage {
     def apply(
-      DBClusterSnapshotIdentifier: js.UndefOr[String] = js.undefined): DeleteDBClusterSnapshotMessage = {
+      DBClusterSnapshotIdentifier: String): DeleteDBClusterSnapshotMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "DBClusterSnapshotIdentifier" -> DBClusterSnapshotIdentifier.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "DBClusterSnapshotIdentifier" -> DBClusterSnapshotIdentifier.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteDBClusterSnapshotMessage]
     }
@@ -2107,20 +2107,20 @@ package neptune {
    */
   @js.native
   trait DeleteDBInstanceMessage extends js.Object {
-    var DBInstanceIdentifier: js.UndefOr[String]
-    var SkipFinalSnapshot: js.UndefOr[Boolean]
+    var DBInstanceIdentifier: String
     var FinalDBSnapshotIdentifier: js.UndefOr[String]
+    var SkipFinalSnapshot: js.UndefOr[Boolean]
   }
 
   object DeleteDBInstanceMessage {
     def apply(
-      DBInstanceIdentifier: js.UndefOr[String] = js.undefined,
-      SkipFinalSnapshot: js.UndefOr[Boolean] = js.undefined,
-      FinalDBSnapshotIdentifier: js.UndefOr[String] = js.undefined): DeleteDBInstanceMessage = {
+      DBInstanceIdentifier: String,
+      FinalDBSnapshotIdentifier: js.UndefOr[String] = js.undefined,
+      SkipFinalSnapshot: js.UndefOr[Boolean] = js.undefined): DeleteDBInstanceMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "DBInstanceIdentifier" -> DBInstanceIdentifier.map { x => x.asInstanceOf[js.Any] },
-        "SkipFinalSnapshot" -> SkipFinalSnapshot.map { x => x.asInstanceOf[js.Any] },
-        "FinalDBSnapshotIdentifier" -> FinalDBSnapshotIdentifier.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "DBInstanceIdentifier" -> DBInstanceIdentifier.asInstanceOf[js.Any],
+        "FinalDBSnapshotIdentifier" -> FinalDBSnapshotIdentifier.map { x => x.asInstanceOf[js.Any] },
+        "SkipFinalSnapshot" -> SkipFinalSnapshot.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteDBInstanceMessage]
     }
@@ -2146,14 +2146,14 @@ package neptune {
    */
   @js.native
   trait DeleteDBParameterGroupMessage extends js.Object {
-    var DBParameterGroupName: js.UndefOr[String]
+    var DBParameterGroupName: String
   }
 
   object DeleteDBParameterGroupMessage {
     def apply(
-      DBParameterGroupName: js.UndefOr[String] = js.undefined): DeleteDBParameterGroupMessage = {
+      DBParameterGroupName: String): DeleteDBParameterGroupMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "DBParameterGroupName" -> DBParameterGroupName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "DBParameterGroupName" -> DBParameterGroupName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteDBParameterGroupMessage]
     }
@@ -2164,14 +2164,14 @@ package neptune {
    */
   @js.native
   trait DeleteDBSubnetGroupMessage extends js.Object {
-    var DBSubnetGroupName: js.UndefOr[String]
+    var DBSubnetGroupName: String
   }
 
   object DeleteDBSubnetGroupMessage {
     def apply(
-      DBSubnetGroupName: js.UndefOr[String] = js.undefined): DeleteDBSubnetGroupMessage = {
+      DBSubnetGroupName: String): DeleteDBSubnetGroupMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "DBSubnetGroupName" -> DBSubnetGroupName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "DBSubnetGroupName" -> DBSubnetGroupName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteDBSubnetGroupMessage]
     }
@@ -2182,14 +2182,14 @@ package neptune {
    */
   @js.native
   trait DeleteEventSubscriptionMessage extends js.Object {
-    var SubscriptionName: js.UndefOr[String]
+    var SubscriptionName: String
   }
 
   object DeleteEventSubscriptionMessage {
     def apply(
-      SubscriptionName: js.UndefOr[String] = js.undefined): DeleteEventSubscriptionMessage = {
+      SubscriptionName: String): DeleteEventSubscriptionMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "SubscriptionName" -> SubscriptionName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "SubscriptionName" -> SubscriptionName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteEventSubscriptionMessage]
     }
@@ -2217,21 +2217,21 @@ package neptune {
   trait DescribeDBClusterParameterGroupsMessage extends js.Object {
     var DBClusterParameterGroupName: js.UndefOr[String]
     var Filters: js.UndefOr[FilterList]
-    var MaxRecords: js.UndefOr[IntegerOptional]
     var Marker: js.UndefOr[String]
+    var MaxRecords: js.UndefOr[IntegerOptional]
   }
 
   object DescribeDBClusterParameterGroupsMessage {
     def apply(
       DBClusterParameterGroupName: js.UndefOr[String] = js.undefined,
       Filters: js.UndefOr[FilterList] = js.undefined,
-      MaxRecords: js.UndefOr[IntegerOptional] = js.undefined,
-      Marker: js.UndefOr[String] = js.undefined): DescribeDBClusterParameterGroupsMessage = {
+      Marker: js.UndefOr[String] = js.undefined,
+      MaxRecords: js.UndefOr[IntegerOptional] = js.undefined): DescribeDBClusterParameterGroupsMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DBClusterParameterGroupName" -> DBClusterParameterGroupName.map { x => x.asInstanceOf[js.Any] },
         "Filters" -> Filters.map { x => x.asInstanceOf[js.Any] },
-        "MaxRecords" -> MaxRecords.map { x => x.asInstanceOf[js.Any] },
-        "Marker" -> Marker.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Marker" -> Marker.map { x => x.asInstanceOf[js.Any] },
+        "MaxRecords" -> MaxRecords.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeDBClusterParameterGroupsMessage]
     }
@@ -2242,26 +2242,26 @@ package neptune {
    */
   @js.native
   trait DescribeDBClusterParametersMessage extends js.Object {
-    var DBClusterParameterGroupName: js.UndefOr[String]
-    var MaxRecords: js.UndefOr[IntegerOptional]
-    var Source: js.UndefOr[String]
+    var DBClusterParameterGroupName: String
     var Filters: js.UndefOr[FilterList]
     var Marker: js.UndefOr[String]
+    var MaxRecords: js.UndefOr[IntegerOptional]
+    var Source: js.UndefOr[String]
   }
 
   object DescribeDBClusterParametersMessage {
     def apply(
-      DBClusterParameterGroupName: js.UndefOr[String] = js.undefined,
-      MaxRecords: js.UndefOr[IntegerOptional] = js.undefined,
-      Source: js.UndefOr[String] = js.undefined,
+      DBClusterParameterGroupName: String,
       Filters: js.UndefOr[FilterList] = js.undefined,
-      Marker: js.UndefOr[String] = js.undefined): DescribeDBClusterParametersMessage = {
+      Marker: js.UndefOr[String] = js.undefined,
+      MaxRecords: js.UndefOr[IntegerOptional] = js.undefined,
+      Source: js.UndefOr[String] = js.undefined): DescribeDBClusterParametersMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "DBClusterParameterGroupName" -> DBClusterParameterGroupName.map { x => x.asInstanceOf[js.Any] },
-        "MaxRecords" -> MaxRecords.map { x => x.asInstanceOf[js.Any] },
-        "Source" -> Source.map { x => x.asInstanceOf[js.Any] },
+        "DBClusterParameterGroupName" -> DBClusterParameterGroupName.asInstanceOf[js.Any],
         "Filters" -> Filters.map { x => x.asInstanceOf[js.Any] },
-        "Marker" -> Marker.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Marker" -> Marker.map { x => x.asInstanceOf[js.Any] },
+        "MaxRecords" -> MaxRecords.map { x => x.asInstanceOf[js.Any] },
+        "Source" -> Source.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeDBClusterParametersMessage]
     }
@@ -2272,14 +2272,14 @@ package neptune {
    */
   @js.native
   trait DescribeDBClusterSnapshotAttributesMessage extends js.Object {
-    var DBClusterSnapshotIdentifier: js.UndefOr[String]
+    var DBClusterSnapshotIdentifier: String
   }
 
   object DescribeDBClusterSnapshotAttributesMessage {
     def apply(
-      DBClusterSnapshotIdentifier: js.UndefOr[String] = js.undefined): DescribeDBClusterSnapshotAttributesMessage = {
+      DBClusterSnapshotIdentifier: String): DescribeDBClusterSnapshotAttributesMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "DBClusterSnapshotIdentifier" -> DBClusterSnapshotIdentifier.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "DBClusterSnapshotIdentifier" -> DBClusterSnapshotIdentifier.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeDBClusterSnapshotAttributesMessage]
     }
@@ -2305,35 +2305,35 @@ package neptune {
    */
   @js.native
   trait DescribeDBClusterSnapshotsMessage extends js.Object {
-    var IncludeShared: js.UndefOr[Boolean]
     var DBClusterIdentifier: js.UndefOr[String]
     var DBClusterSnapshotIdentifier: js.UndefOr[String]
-    var SnapshotType: js.UndefOr[String]
-    var MaxRecords: js.UndefOr[IntegerOptional]
-    var IncludePublic: js.UndefOr[Boolean]
     var Filters: js.UndefOr[FilterList]
+    var IncludePublic: js.UndefOr[Boolean]
+    var IncludeShared: js.UndefOr[Boolean]
     var Marker: js.UndefOr[String]
+    var MaxRecords: js.UndefOr[IntegerOptional]
+    var SnapshotType: js.UndefOr[String]
   }
 
   object DescribeDBClusterSnapshotsMessage {
     def apply(
-      IncludeShared: js.UndefOr[Boolean] = js.undefined,
       DBClusterIdentifier: js.UndefOr[String] = js.undefined,
       DBClusterSnapshotIdentifier: js.UndefOr[String] = js.undefined,
-      SnapshotType: js.UndefOr[String] = js.undefined,
-      MaxRecords: js.UndefOr[IntegerOptional] = js.undefined,
-      IncludePublic: js.UndefOr[Boolean] = js.undefined,
       Filters: js.UndefOr[FilterList] = js.undefined,
-      Marker: js.UndefOr[String] = js.undefined): DescribeDBClusterSnapshotsMessage = {
+      IncludePublic: js.UndefOr[Boolean] = js.undefined,
+      IncludeShared: js.UndefOr[Boolean] = js.undefined,
+      Marker: js.UndefOr[String] = js.undefined,
+      MaxRecords: js.UndefOr[IntegerOptional] = js.undefined,
+      SnapshotType: js.UndefOr[String] = js.undefined): DescribeDBClusterSnapshotsMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "IncludeShared" -> IncludeShared.map { x => x.asInstanceOf[js.Any] },
         "DBClusterIdentifier" -> DBClusterIdentifier.map { x => x.asInstanceOf[js.Any] },
         "DBClusterSnapshotIdentifier" -> DBClusterSnapshotIdentifier.map { x => x.asInstanceOf[js.Any] },
-        "SnapshotType" -> SnapshotType.map { x => x.asInstanceOf[js.Any] },
-        "MaxRecords" -> MaxRecords.map { x => x.asInstanceOf[js.Any] },
-        "IncludePublic" -> IncludePublic.map { x => x.asInstanceOf[js.Any] },
         "Filters" -> Filters.map { x => x.asInstanceOf[js.Any] },
-        "Marker" -> Marker.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "IncludePublic" -> IncludePublic.map { x => x.asInstanceOf[js.Any] },
+        "IncludeShared" -> IncludeShared.map { x => x.asInstanceOf[js.Any] },
+        "Marker" -> Marker.map { x => x.asInstanceOf[js.Any] },
+        "MaxRecords" -> MaxRecords.map { x => x.asInstanceOf[js.Any] },
+        "SnapshotType" -> SnapshotType.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeDBClusterSnapshotsMessage]
     }
@@ -2346,21 +2346,21 @@ package neptune {
   trait DescribeDBClustersMessage extends js.Object {
     var DBClusterIdentifier: js.UndefOr[String]
     var Filters: js.UndefOr[FilterList]
-    var MaxRecords: js.UndefOr[IntegerOptional]
     var Marker: js.UndefOr[String]
+    var MaxRecords: js.UndefOr[IntegerOptional]
   }
 
   object DescribeDBClustersMessage {
     def apply(
       DBClusterIdentifier: js.UndefOr[String] = js.undefined,
       Filters: js.UndefOr[FilterList] = js.undefined,
-      MaxRecords: js.UndefOr[IntegerOptional] = js.undefined,
-      Marker: js.UndefOr[String] = js.undefined): DescribeDBClustersMessage = {
+      Marker: js.UndefOr[String] = js.undefined,
+      MaxRecords: js.UndefOr[IntegerOptional] = js.undefined): DescribeDBClustersMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DBClusterIdentifier" -> DBClusterIdentifier.map { x => x.asInstanceOf[js.Any] },
         "Filters" -> Filters.map { x => x.asInstanceOf[js.Any] },
-        "MaxRecords" -> MaxRecords.map { x => x.asInstanceOf[js.Any] },
-        "Marker" -> Marker.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Marker" -> Marker.map { x => x.asInstanceOf[js.Any] },
+        "MaxRecords" -> MaxRecords.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeDBClustersMessage]
     }
@@ -2368,38 +2368,38 @@ package neptune {
 
   @js.native
   trait DescribeDBEngineVersionsMessage extends js.Object {
-    var Engine: js.UndefOr[String]
-    var DefaultOnly: js.UndefOr[Boolean]
-    var ListSupportedTimezones: js.UndefOr[BooleanOptional]
     var DBParameterGroupFamily: js.UndefOr[String]
+    var DefaultOnly: js.UndefOr[Boolean]
+    var Engine: js.UndefOr[String]
     var EngineVersion: js.UndefOr[String]
-    var MaxRecords: js.UndefOr[IntegerOptional]
-    var ListSupportedCharacterSets: js.UndefOr[BooleanOptional]
     var Filters: js.UndefOr[FilterList]
+    var ListSupportedCharacterSets: js.UndefOr[BooleanOptional]
+    var ListSupportedTimezones: js.UndefOr[BooleanOptional]
     var Marker: js.UndefOr[String]
+    var MaxRecords: js.UndefOr[IntegerOptional]
   }
 
   object DescribeDBEngineVersionsMessage {
     def apply(
-      Engine: js.UndefOr[String] = js.undefined,
-      DefaultOnly: js.UndefOr[Boolean] = js.undefined,
-      ListSupportedTimezones: js.UndefOr[BooleanOptional] = js.undefined,
       DBParameterGroupFamily: js.UndefOr[String] = js.undefined,
+      DefaultOnly: js.UndefOr[Boolean] = js.undefined,
+      Engine: js.UndefOr[String] = js.undefined,
       EngineVersion: js.UndefOr[String] = js.undefined,
-      MaxRecords: js.UndefOr[IntegerOptional] = js.undefined,
-      ListSupportedCharacterSets: js.UndefOr[BooleanOptional] = js.undefined,
       Filters: js.UndefOr[FilterList] = js.undefined,
-      Marker: js.UndefOr[String] = js.undefined): DescribeDBEngineVersionsMessage = {
+      ListSupportedCharacterSets: js.UndefOr[BooleanOptional] = js.undefined,
+      ListSupportedTimezones: js.UndefOr[BooleanOptional] = js.undefined,
+      Marker: js.UndefOr[String] = js.undefined,
+      MaxRecords: js.UndefOr[IntegerOptional] = js.undefined): DescribeDBEngineVersionsMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Engine" -> Engine.map { x => x.asInstanceOf[js.Any] },
-        "DefaultOnly" -> DefaultOnly.map { x => x.asInstanceOf[js.Any] },
-        "ListSupportedTimezones" -> ListSupportedTimezones.map { x => x.asInstanceOf[js.Any] },
         "DBParameterGroupFamily" -> DBParameterGroupFamily.map { x => x.asInstanceOf[js.Any] },
+        "DefaultOnly" -> DefaultOnly.map { x => x.asInstanceOf[js.Any] },
+        "Engine" -> Engine.map { x => x.asInstanceOf[js.Any] },
         "EngineVersion" -> EngineVersion.map { x => x.asInstanceOf[js.Any] },
-        "MaxRecords" -> MaxRecords.map { x => x.asInstanceOf[js.Any] },
-        "ListSupportedCharacterSets" -> ListSupportedCharacterSets.map { x => x.asInstanceOf[js.Any] },
         "Filters" -> Filters.map { x => x.asInstanceOf[js.Any] },
-        "Marker" -> Marker.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ListSupportedCharacterSets" -> ListSupportedCharacterSets.map { x => x.asInstanceOf[js.Any] },
+        "ListSupportedTimezones" -> ListSupportedTimezones.map { x => x.asInstanceOf[js.Any] },
+        "Marker" -> Marker.map { x => x.asInstanceOf[js.Any] },
+        "MaxRecords" -> MaxRecords.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeDBEngineVersionsMessage]
     }
@@ -2412,21 +2412,21 @@ package neptune {
   trait DescribeDBInstancesMessage extends js.Object {
     var DBInstanceIdentifier: js.UndefOr[String]
     var Filters: js.UndefOr[FilterList]
-    var MaxRecords: js.UndefOr[IntegerOptional]
     var Marker: js.UndefOr[String]
+    var MaxRecords: js.UndefOr[IntegerOptional]
   }
 
   object DescribeDBInstancesMessage {
     def apply(
       DBInstanceIdentifier: js.UndefOr[String] = js.undefined,
       Filters: js.UndefOr[FilterList] = js.undefined,
-      MaxRecords: js.UndefOr[IntegerOptional] = js.undefined,
-      Marker: js.UndefOr[String] = js.undefined): DescribeDBInstancesMessage = {
+      Marker: js.UndefOr[String] = js.undefined,
+      MaxRecords: js.UndefOr[IntegerOptional] = js.undefined): DescribeDBInstancesMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DBInstanceIdentifier" -> DBInstanceIdentifier.map { x => x.asInstanceOf[js.Any] },
         "Filters" -> Filters.map { x => x.asInstanceOf[js.Any] },
-        "MaxRecords" -> MaxRecords.map { x => x.asInstanceOf[js.Any] },
-        "Marker" -> Marker.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Marker" -> Marker.map { x => x.asInstanceOf[js.Any] },
+        "MaxRecords" -> MaxRecords.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeDBInstancesMessage]
     }
@@ -2439,21 +2439,21 @@ package neptune {
   trait DescribeDBParameterGroupsMessage extends js.Object {
     var DBParameterGroupName: js.UndefOr[String]
     var Filters: js.UndefOr[FilterList]
-    var MaxRecords: js.UndefOr[IntegerOptional]
     var Marker: js.UndefOr[String]
+    var MaxRecords: js.UndefOr[IntegerOptional]
   }
 
   object DescribeDBParameterGroupsMessage {
     def apply(
       DBParameterGroupName: js.UndefOr[String] = js.undefined,
       Filters: js.UndefOr[FilterList] = js.undefined,
-      MaxRecords: js.UndefOr[IntegerOptional] = js.undefined,
-      Marker: js.UndefOr[String] = js.undefined): DescribeDBParameterGroupsMessage = {
+      Marker: js.UndefOr[String] = js.undefined,
+      MaxRecords: js.UndefOr[IntegerOptional] = js.undefined): DescribeDBParameterGroupsMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DBParameterGroupName" -> DBParameterGroupName.map { x => x.asInstanceOf[js.Any] },
         "Filters" -> Filters.map { x => x.asInstanceOf[js.Any] },
-        "MaxRecords" -> MaxRecords.map { x => x.asInstanceOf[js.Any] },
-        "Marker" -> Marker.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Marker" -> Marker.map { x => x.asInstanceOf[js.Any] },
+        "MaxRecords" -> MaxRecords.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeDBParameterGroupsMessage]
     }
@@ -2461,26 +2461,26 @@ package neptune {
 
   @js.native
   trait DescribeDBParametersMessage extends js.Object {
+    var DBParameterGroupName: String
+    var Filters: js.UndefOr[FilterList]
+    var Marker: js.UndefOr[String]
     var MaxRecords: js.UndefOr[IntegerOptional]
     var Source: js.UndefOr[String]
-    var Filters: js.UndefOr[FilterList]
-    var DBParameterGroupName: js.UndefOr[String]
-    var Marker: js.UndefOr[String]
   }
 
   object DescribeDBParametersMessage {
     def apply(
-      MaxRecords: js.UndefOr[IntegerOptional] = js.undefined,
-      Source: js.UndefOr[String] = js.undefined,
+      DBParameterGroupName: String,
       Filters: js.UndefOr[FilterList] = js.undefined,
-      DBParameterGroupName: js.UndefOr[String] = js.undefined,
-      Marker: js.UndefOr[String] = js.undefined): DescribeDBParametersMessage = {
+      Marker: js.UndefOr[String] = js.undefined,
+      MaxRecords: js.UndefOr[IntegerOptional] = js.undefined,
+      Source: js.UndefOr[String] = js.undefined): DescribeDBParametersMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "MaxRecords" -> MaxRecords.map { x => x.asInstanceOf[js.Any] },
-        "Source" -> Source.map { x => x.asInstanceOf[js.Any] },
+        "DBParameterGroupName" -> DBParameterGroupName.asInstanceOf[js.Any],
         "Filters" -> Filters.map { x => x.asInstanceOf[js.Any] },
-        "DBParameterGroupName" -> DBParameterGroupName.map { x => x.asInstanceOf[js.Any] },
-        "Marker" -> Marker.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Marker" -> Marker.map { x => x.asInstanceOf[js.Any] },
+        "MaxRecords" -> MaxRecords.map { x => x.asInstanceOf[js.Any] },
+        "Source" -> Source.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeDBParametersMessage]
     }
@@ -2493,21 +2493,21 @@ package neptune {
   trait DescribeDBSubnetGroupsMessage extends js.Object {
     var DBSubnetGroupName: js.UndefOr[String]
     var Filters: js.UndefOr[FilterList]
-    var MaxRecords: js.UndefOr[IntegerOptional]
     var Marker: js.UndefOr[String]
+    var MaxRecords: js.UndefOr[IntegerOptional]
   }
 
   object DescribeDBSubnetGroupsMessage {
     def apply(
       DBSubnetGroupName: js.UndefOr[String] = js.undefined,
       Filters: js.UndefOr[FilterList] = js.undefined,
-      MaxRecords: js.UndefOr[IntegerOptional] = js.undefined,
-      Marker: js.UndefOr[String] = js.undefined): DescribeDBSubnetGroupsMessage = {
+      Marker: js.UndefOr[String] = js.undefined,
+      MaxRecords: js.UndefOr[IntegerOptional] = js.undefined): DescribeDBSubnetGroupsMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DBSubnetGroupName" -> DBSubnetGroupName.map { x => x.asInstanceOf[js.Any] },
         "Filters" -> Filters.map { x => x.asInstanceOf[js.Any] },
-        "MaxRecords" -> MaxRecords.map { x => x.asInstanceOf[js.Any] },
-        "Marker" -> Marker.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Marker" -> Marker.map { x => x.asInstanceOf[js.Any] },
+        "MaxRecords" -> MaxRecords.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeDBSubnetGroupsMessage]
     }
@@ -2518,23 +2518,23 @@ package neptune {
    */
   @js.native
   trait DescribeEngineDefaultClusterParametersMessage extends js.Object {
-    var DBParameterGroupFamily: js.UndefOr[String]
+    var DBParameterGroupFamily: String
     var Filters: js.UndefOr[FilterList]
-    var MaxRecords: js.UndefOr[IntegerOptional]
     var Marker: js.UndefOr[String]
+    var MaxRecords: js.UndefOr[IntegerOptional]
   }
 
   object DescribeEngineDefaultClusterParametersMessage {
     def apply(
-      DBParameterGroupFamily: js.UndefOr[String] = js.undefined,
+      DBParameterGroupFamily: String,
       Filters: js.UndefOr[FilterList] = js.undefined,
-      MaxRecords: js.UndefOr[IntegerOptional] = js.undefined,
-      Marker: js.UndefOr[String] = js.undefined): DescribeEngineDefaultClusterParametersMessage = {
+      Marker: js.UndefOr[String] = js.undefined,
+      MaxRecords: js.UndefOr[IntegerOptional] = js.undefined): DescribeEngineDefaultClusterParametersMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "DBParameterGroupFamily" -> DBParameterGroupFamily.map { x => x.asInstanceOf[js.Any] },
+        "DBParameterGroupFamily" -> DBParameterGroupFamily.asInstanceOf[js.Any],
         "Filters" -> Filters.map { x => x.asInstanceOf[js.Any] },
-        "MaxRecords" -> MaxRecords.map { x => x.asInstanceOf[js.Any] },
-        "Marker" -> Marker.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Marker" -> Marker.map { x => x.asInstanceOf[js.Any] },
+        "MaxRecords" -> MaxRecords.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeEngineDefaultClusterParametersMessage]
     }
@@ -2560,23 +2560,23 @@ package neptune {
    */
   @js.native
   trait DescribeEngineDefaultParametersMessage extends js.Object {
-    var DBParameterGroupFamily: js.UndefOr[String]
+    var DBParameterGroupFamily: String
     var Filters: js.UndefOr[FilterList]
-    var MaxRecords: js.UndefOr[IntegerOptional]
     var Marker: js.UndefOr[String]
+    var MaxRecords: js.UndefOr[IntegerOptional]
   }
 
   object DescribeEngineDefaultParametersMessage {
     def apply(
-      DBParameterGroupFamily: js.UndefOr[String] = js.undefined,
+      DBParameterGroupFamily: String,
       Filters: js.UndefOr[FilterList] = js.undefined,
-      MaxRecords: js.UndefOr[IntegerOptional] = js.undefined,
-      Marker: js.UndefOr[String] = js.undefined): DescribeEngineDefaultParametersMessage = {
+      Marker: js.UndefOr[String] = js.undefined,
+      MaxRecords: js.UndefOr[IntegerOptional] = js.undefined): DescribeEngineDefaultParametersMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "DBParameterGroupFamily" -> DBParameterGroupFamily.map { x => x.asInstanceOf[js.Any] },
+        "DBParameterGroupFamily" -> DBParameterGroupFamily.asInstanceOf[js.Any],
         "Filters" -> Filters.map { x => x.asInstanceOf[js.Any] },
-        "MaxRecords" -> MaxRecords.map { x => x.asInstanceOf[js.Any] },
-        "Marker" -> Marker.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Marker" -> Marker.map { x => x.asInstanceOf[js.Any] },
+        "MaxRecords" -> MaxRecords.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeEngineDefaultParametersMessage]
     }
@@ -2602,17 +2602,17 @@ package neptune {
    */
   @js.native
   trait DescribeEventCategoriesMessage extends js.Object {
-    var SourceType: js.UndefOr[String]
     var Filters: js.UndefOr[FilterList]
+    var SourceType: js.UndefOr[String]
   }
 
   object DescribeEventCategoriesMessage {
     def apply(
-      SourceType: js.UndefOr[String] = js.undefined,
-      Filters: js.UndefOr[FilterList] = js.undefined): DescribeEventCategoriesMessage = {
+      Filters: js.UndefOr[FilterList] = js.undefined,
+      SourceType: js.UndefOr[String] = js.undefined): DescribeEventCategoriesMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "SourceType" -> SourceType.map { x => x.asInstanceOf[js.Any] },
-        "Filters" -> Filters.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Filters" -> Filters.map { x => x.asInstanceOf[js.Any] },
+        "SourceType" -> SourceType.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeEventCategoriesMessage]
     }
@@ -2623,23 +2623,23 @@ package neptune {
    */
   @js.native
   trait DescribeEventSubscriptionsMessage extends js.Object {
-    var SubscriptionName: js.UndefOr[String]
     var Filters: js.UndefOr[FilterList]
-    var MaxRecords: js.UndefOr[IntegerOptional]
     var Marker: js.UndefOr[String]
+    var MaxRecords: js.UndefOr[IntegerOptional]
+    var SubscriptionName: js.UndefOr[String]
   }
 
   object DescribeEventSubscriptionsMessage {
     def apply(
-      SubscriptionName: js.UndefOr[String] = js.undefined,
       Filters: js.UndefOr[FilterList] = js.undefined,
+      Marker: js.UndefOr[String] = js.undefined,
       MaxRecords: js.UndefOr[IntegerOptional] = js.undefined,
-      Marker: js.UndefOr[String] = js.undefined): DescribeEventSubscriptionsMessage = {
+      SubscriptionName: js.UndefOr[String] = js.undefined): DescribeEventSubscriptionsMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "SubscriptionName" -> SubscriptionName.map { x => x.asInstanceOf[js.Any] },
         "Filters" -> Filters.map { x => x.asInstanceOf[js.Any] },
+        "Marker" -> Marker.map { x => x.asInstanceOf[js.Any] },
         "MaxRecords" -> MaxRecords.map { x => x.asInstanceOf[js.Any] },
-        "Marker" -> Marker.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "SubscriptionName" -> SubscriptionName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeEventSubscriptionsMessage]
     }
@@ -2651,37 +2651,37 @@ package neptune {
   @js.native
   trait DescribeEventsMessage extends js.Object {
     var Duration: js.UndefOr[IntegerOptional]
-    var SourceIdentifier: js.UndefOr[String]
-    var StartTime: js.UndefOr[TStamp]
     var EndTime: js.UndefOr[TStamp]
-    var MaxRecords: js.UndefOr[IntegerOptional]
     var EventCategories: js.UndefOr[EventCategoriesList]
-    var SourceType: js.UndefOr[SourceType]
     var Filters: js.UndefOr[FilterList]
     var Marker: js.UndefOr[String]
+    var MaxRecords: js.UndefOr[IntegerOptional]
+    var SourceIdentifier: js.UndefOr[String]
+    var SourceType: js.UndefOr[SourceType]
+    var StartTime: js.UndefOr[TStamp]
   }
 
   object DescribeEventsMessage {
     def apply(
       Duration: js.UndefOr[IntegerOptional] = js.undefined,
-      SourceIdentifier: js.UndefOr[String] = js.undefined,
-      StartTime: js.UndefOr[TStamp] = js.undefined,
       EndTime: js.UndefOr[TStamp] = js.undefined,
-      MaxRecords: js.UndefOr[IntegerOptional] = js.undefined,
       EventCategories: js.UndefOr[EventCategoriesList] = js.undefined,
-      SourceType: js.UndefOr[SourceType] = js.undefined,
       Filters: js.UndefOr[FilterList] = js.undefined,
-      Marker: js.UndefOr[String] = js.undefined): DescribeEventsMessage = {
+      Marker: js.UndefOr[String] = js.undefined,
+      MaxRecords: js.UndefOr[IntegerOptional] = js.undefined,
+      SourceIdentifier: js.UndefOr[String] = js.undefined,
+      SourceType: js.UndefOr[SourceType] = js.undefined,
+      StartTime: js.UndefOr[TStamp] = js.undefined): DescribeEventsMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Duration" -> Duration.map { x => x.asInstanceOf[js.Any] },
-        "SourceIdentifier" -> SourceIdentifier.map { x => x.asInstanceOf[js.Any] },
-        "StartTime" -> StartTime.map { x => x.asInstanceOf[js.Any] },
         "EndTime" -> EndTime.map { x => x.asInstanceOf[js.Any] },
-        "MaxRecords" -> MaxRecords.map { x => x.asInstanceOf[js.Any] },
         "EventCategories" -> EventCategories.map { x => x.asInstanceOf[js.Any] },
-        "SourceType" -> SourceType.map { x => x.asInstanceOf[js.Any] },
         "Filters" -> Filters.map { x => x.asInstanceOf[js.Any] },
-        "Marker" -> Marker.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Marker" -> Marker.map { x => x.asInstanceOf[js.Any] },
+        "MaxRecords" -> MaxRecords.map { x => x.asInstanceOf[js.Any] },
+        "SourceIdentifier" -> SourceIdentifier.map { x => x.asInstanceOf[js.Any] },
+        "SourceType" -> SourceType.map { x => x.asInstanceOf[js.Any] },
+        "StartTime" -> StartTime.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeEventsMessage]
     }
@@ -2692,35 +2692,35 @@ package neptune {
    */
   @js.native
   trait DescribeOrderableDBInstanceOptionsMessage extends js.Object {
+    var Engine: String
     var DBInstanceClass: js.UndefOr[String]
-    var Engine: js.UndefOr[String]
     var EngineVersion: js.UndefOr[String]
-    var MaxRecords: js.UndefOr[IntegerOptional]
-    var Vpc: js.UndefOr[BooleanOptional]
     var Filters: js.UndefOr[FilterList]
     var LicenseModel: js.UndefOr[String]
     var Marker: js.UndefOr[String]
+    var MaxRecords: js.UndefOr[IntegerOptional]
+    var Vpc: js.UndefOr[BooleanOptional]
   }
 
   object DescribeOrderableDBInstanceOptionsMessage {
     def apply(
+      Engine: String,
       DBInstanceClass: js.UndefOr[String] = js.undefined,
-      Engine: js.UndefOr[String] = js.undefined,
       EngineVersion: js.UndefOr[String] = js.undefined,
-      MaxRecords: js.UndefOr[IntegerOptional] = js.undefined,
-      Vpc: js.UndefOr[BooleanOptional] = js.undefined,
       Filters: js.UndefOr[FilterList] = js.undefined,
       LicenseModel: js.UndefOr[String] = js.undefined,
-      Marker: js.UndefOr[String] = js.undefined): DescribeOrderableDBInstanceOptionsMessage = {
+      Marker: js.UndefOr[String] = js.undefined,
+      MaxRecords: js.UndefOr[IntegerOptional] = js.undefined,
+      Vpc: js.UndefOr[BooleanOptional] = js.undefined): DescribeOrderableDBInstanceOptionsMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "Engine" -> Engine.asInstanceOf[js.Any],
         "DBInstanceClass" -> DBInstanceClass.map { x => x.asInstanceOf[js.Any] },
-        "Engine" -> Engine.map { x => x.asInstanceOf[js.Any] },
         "EngineVersion" -> EngineVersion.map { x => x.asInstanceOf[js.Any] },
-        "MaxRecords" -> MaxRecords.map { x => x.asInstanceOf[js.Any] },
-        "Vpc" -> Vpc.map { x => x.asInstanceOf[js.Any] },
         "Filters" -> Filters.map { x => x.asInstanceOf[js.Any] },
         "LicenseModel" -> LicenseModel.map { x => x.asInstanceOf[js.Any] },
-        "Marker" -> Marker.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Marker" -> Marker.map { x => x.asInstanceOf[js.Any] },
+        "MaxRecords" -> MaxRecords.map { x => x.asInstanceOf[js.Any] },
+        "Vpc" -> Vpc.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeOrderableDBInstanceOptionsMessage]
     }
@@ -2731,23 +2731,23 @@ package neptune {
    */
   @js.native
   trait DescribePendingMaintenanceActionsMessage extends js.Object {
-    var ResourceIdentifier: js.UndefOr[String]
     var Filters: js.UndefOr[FilterList]
     var Marker: js.UndefOr[String]
     var MaxRecords: js.UndefOr[IntegerOptional]
+    var ResourceIdentifier: js.UndefOr[String]
   }
 
   object DescribePendingMaintenanceActionsMessage {
     def apply(
-      ResourceIdentifier: js.UndefOr[String] = js.undefined,
       Filters: js.UndefOr[FilterList] = js.undefined,
       Marker: js.UndefOr[String] = js.undefined,
-      MaxRecords: js.UndefOr[IntegerOptional] = js.undefined): DescribePendingMaintenanceActionsMessage = {
+      MaxRecords: js.UndefOr[IntegerOptional] = js.undefined,
+      ResourceIdentifier: js.UndefOr[String] = js.undefined): DescribePendingMaintenanceActionsMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ResourceIdentifier" -> ResourceIdentifier.map { x => x.asInstanceOf[js.Any] },
         "Filters" -> Filters.map { x => x.asInstanceOf[js.Any] },
         "Marker" -> Marker.map { x => x.asInstanceOf[js.Any] },
-        "MaxRecords" -> MaxRecords.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "MaxRecords" -> MaxRecords.map { x => x.asInstanceOf[js.Any] },
+        "ResourceIdentifier" -> ResourceIdentifier.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribePendingMaintenanceActionsMessage]
     }
@@ -2758,14 +2758,14 @@ package neptune {
    */
   @js.native
   trait DescribeValidDBInstanceModificationsMessage extends js.Object {
-    var DBInstanceIdentifier: js.UndefOr[String]
+    var DBInstanceIdentifier: String
   }
 
   object DescribeValidDBInstanceModificationsMessage {
     def apply(
-      DBInstanceIdentifier: js.UndefOr[String] = js.undefined): DescribeValidDBInstanceModificationsMessage = {
+      DBInstanceIdentifier: String): DescribeValidDBInstanceModificationsMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "DBInstanceIdentifier" -> DBInstanceIdentifier.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "DBInstanceIdentifier" -> DBInstanceIdentifier.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeValidDBInstanceModificationsMessage]
     }
@@ -2792,22 +2792,22 @@ package neptune {
   @js.native
   trait DomainMembership extends js.Object {
     var Domain: js.UndefOr[String]
-    var Status: js.UndefOr[String]
     var FQDN: js.UndefOr[String]
     var IAMRoleName: js.UndefOr[String]
+    var Status: js.UndefOr[String]
   }
 
   object DomainMembership {
     def apply(
       Domain: js.UndefOr[String] = js.undefined,
-      Status: js.UndefOr[String] = js.undefined,
       FQDN: js.UndefOr[String] = js.undefined,
-      IAMRoleName: js.UndefOr[String] = js.undefined): DomainMembership = {
+      IAMRoleName: js.UndefOr[String] = js.undefined,
+      Status: js.UndefOr[String] = js.undefined): DomainMembership = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Domain" -> Domain.map { x => x.asInstanceOf[js.Any] },
-        "Status" -> Status.map { x => x.asInstanceOf[js.Any] },
         "FQDN" -> FQDN.map { x => x.asInstanceOf[js.Any] },
-        "IAMRoleName" -> IAMRoleName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "IAMRoleName" -> IAMRoleName.map { x => x.asInstanceOf[js.Any] },
+        "Status" -> Status.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DomainMembership]
     }
@@ -2848,19 +2848,19 @@ package neptune {
   @js.native
   trait Endpoint extends js.Object {
     var Address: js.UndefOr[String]
-    var Port: js.UndefOr[Int]
     var HostedZoneId: js.UndefOr[String]
+    var Port: js.UndefOr[Int]
   }
 
   object Endpoint {
     def apply(
       Address: js.UndefOr[String] = js.undefined,
-      Port: js.UndefOr[Int] = js.undefined,
-      HostedZoneId: js.UndefOr[String] = js.undefined): Endpoint = {
+      HostedZoneId: js.UndefOr[String] = js.undefined,
+      Port: js.UndefOr[Int] = js.undefined): Endpoint = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Address" -> Address.map { x => x.asInstanceOf[js.Any] },
-        "Port" -> Port.map { x => x.asInstanceOf[js.Any] },
-        "HostedZoneId" -> HostedZoneId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "HostedZoneId" -> HostedZoneId.map { x => x.asInstanceOf[js.Any] },
+        "Port" -> Port.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Endpoint]
     }
@@ -2895,29 +2895,29 @@ package neptune {
    */
   @js.native
   trait Event extends js.Object {
-    var SourceIdentifier: js.UndefOr[String]
+    var Date: js.UndefOr[TStamp]
     var EventCategories: js.UndefOr[EventCategoriesList]
     var Message: js.UndefOr[String]
-    var SourceType: js.UndefOr[SourceType]
-    var Date: js.UndefOr[TStamp]
     var SourceArn: js.UndefOr[String]
+    var SourceIdentifier: js.UndefOr[String]
+    var SourceType: js.UndefOr[SourceType]
   }
 
   object Event {
     def apply(
-      SourceIdentifier: js.UndefOr[String] = js.undefined,
+      Date: js.UndefOr[TStamp] = js.undefined,
       EventCategories: js.UndefOr[EventCategoriesList] = js.undefined,
       Message: js.UndefOr[String] = js.undefined,
-      SourceType: js.UndefOr[SourceType] = js.undefined,
-      Date: js.UndefOr[TStamp] = js.undefined,
-      SourceArn: js.UndefOr[String] = js.undefined): Event = {
+      SourceArn: js.UndefOr[String] = js.undefined,
+      SourceIdentifier: js.UndefOr[String] = js.undefined,
+      SourceType: js.UndefOr[SourceType] = js.undefined): Event = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "SourceIdentifier" -> SourceIdentifier.map { x => x.asInstanceOf[js.Any] },
+        "Date" -> Date.map { x => x.asInstanceOf[js.Any] },
         "EventCategories" -> EventCategories.map { x => x.asInstanceOf[js.Any] },
         "Message" -> Message.map { x => x.asInstanceOf[js.Any] },
-        "SourceType" -> SourceType.map { x => x.asInstanceOf[js.Any] },
-        "Date" -> Date.map { x => x.asInstanceOf[js.Any] },
-        "SourceArn" -> SourceArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "SourceArn" -> SourceArn.map { x => x.asInstanceOf[js.Any] },
+        "SourceIdentifier" -> SourceIdentifier.map { x => x.asInstanceOf[js.Any] },
+        "SourceType" -> SourceType.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Event]
     }
@@ -2928,17 +2928,17 @@ package neptune {
    */
   @js.native
   trait EventCategoriesMap extends js.Object {
-    var SourceType: js.UndefOr[String]
     var EventCategories: js.UndefOr[EventCategoriesList]
+    var SourceType: js.UndefOr[String]
   }
 
   object EventCategoriesMap {
     def apply(
-      SourceType: js.UndefOr[String] = js.undefined,
-      EventCategories: js.UndefOr[EventCategoriesList] = js.undefined): EventCategoriesMap = {
+      EventCategories: js.UndefOr[EventCategoriesList] = js.undefined,
+      SourceType: js.UndefOr[String] = js.undefined): EventCategoriesMap = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "SourceType" -> SourceType.map { x => x.asInstanceOf[js.Any] },
-        "EventCategories" -> EventCategories.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "EventCategories" -> EventCategories.map { x => x.asInstanceOf[js.Any] },
+        "SourceType" -> SourceType.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EventCategoriesMap]
     }
@@ -2967,41 +2967,41 @@ package neptune {
    */
   @js.native
   trait EventSubscription extends js.Object {
+    var CustSubscriptionId: js.UndefOr[String]
     var CustomerAwsId: js.UndefOr[String]
     var Enabled: js.UndefOr[Boolean]
-    var CustSubscriptionId: js.UndefOr[String]
-    var SnsTopicArn: js.UndefOr[String]
-    var EventSubscriptionArn: js.UndefOr[String]
-    var SourceType: js.UndefOr[String]
     var EventCategoriesList: js.UndefOr[EventCategoriesList]
+    var EventSubscriptionArn: js.UndefOr[String]
+    var SnsTopicArn: js.UndefOr[String]
     var SourceIdsList: js.UndefOr[SourceIdsList]
-    var SubscriptionCreationTime: js.UndefOr[String]
+    var SourceType: js.UndefOr[String]
     var Status: js.UndefOr[String]
+    var SubscriptionCreationTime: js.UndefOr[String]
   }
 
   object EventSubscription {
     def apply(
+      CustSubscriptionId: js.UndefOr[String] = js.undefined,
       CustomerAwsId: js.UndefOr[String] = js.undefined,
       Enabled: js.UndefOr[Boolean] = js.undefined,
-      CustSubscriptionId: js.UndefOr[String] = js.undefined,
-      SnsTopicArn: js.UndefOr[String] = js.undefined,
-      EventSubscriptionArn: js.UndefOr[String] = js.undefined,
-      SourceType: js.UndefOr[String] = js.undefined,
       EventCategoriesList: js.UndefOr[EventCategoriesList] = js.undefined,
+      EventSubscriptionArn: js.UndefOr[String] = js.undefined,
+      SnsTopicArn: js.UndefOr[String] = js.undefined,
       SourceIdsList: js.UndefOr[SourceIdsList] = js.undefined,
-      SubscriptionCreationTime: js.UndefOr[String] = js.undefined,
-      Status: js.UndefOr[String] = js.undefined): EventSubscription = {
+      SourceType: js.UndefOr[String] = js.undefined,
+      Status: js.UndefOr[String] = js.undefined,
+      SubscriptionCreationTime: js.UndefOr[String] = js.undefined): EventSubscription = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "CustSubscriptionId" -> CustSubscriptionId.map { x => x.asInstanceOf[js.Any] },
         "CustomerAwsId" -> CustomerAwsId.map { x => x.asInstanceOf[js.Any] },
         "Enabled" -> Enabled.map { x => x.asInstanceOf[js.Any] },
-        "CustSubscriptionId" -> CustSubscriptionId.map { x => x.asInstanceOf[js.Any] },
-        "SnsTopicArn" -> SnsTopicArn.map { x => x.asInstanceOf[js.Any] },
-        "EventSubscriptionArn" -> EventSubscriptionArn.map { x => x.asInstanceOf[js.Any] },
-        "SourceType" -> SourceType.map { x => x.asInstanceOf[js.Any] },
         "EventCategoriesList" -> EventCategoriesList.map { x => x.asInstanceOf[js.Any] },
+        "EventSubscriptionArn" -> EventSubscriptionArn.map { x => x.asInstanceOf[js.Any] },
+        "SnsTopicArn" -> SnsTopicArn.map { x => x.asInstanceOf[js.Any] },
         "SourceIdsList" -> SourceIdsList.map { x => x.asInstanceOf[js.Any] },
-        "SubscriptionCreationTime" -> SubscriptionCreationTime.map { x => x.asInstanceOf[js.Any] },
-        "Status" -> Status.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "SourceType" -> SourceType.map { x => x.asInstanceOf[js.Any] },
+        "Status" -> Status.map { x => x.asInstanceOf[js.Any] },
+        "SubscriptionCreationTime" -> SubscriptionCreationTime.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EventSubscription]
     }
@@ -3017,17 +3017,17 @@ package neptune {
    */
   @js.native
   trait EventSubscriptionsMessage extends js.Object {
-    var Marker: js.UndefOr[String]
     var EventSubscriptionsList: js.UndefOr[EventSubscriptionsList]
+    var Marker: js.UndefOr[String]
   }
 
   object EventSubscriptionsMessage {
     def apply(
-      Marker: js.UndefOr[String] = js.undefined,
-      EventSubscriptionsList: js.UndefOr[EventSubscriptionsList] = js.undefined): EventSubscriptionsMessage = {
+      EventSubscriptionsList: js.UndefOr[EventSubscriptionsList] = js.undefined,
+      Marker: js.UndefOr[String] = js.undefined): EventSubscriptionsMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Marker" -> Marker.map { x => x.asInstanceOf[js.Any] },
-        "EventSubscriptionsList" -> EventSubscriptionsList.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "EventSubscriptionsList" -> EventSubscriptionsList.map { x => x.asInstanceOf[js.Any] },
+        "Marker" -> Marker.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EventSubscriptionsMessage]
     }
@@ -3038,17 +3038,17 @@ package neptune {
    */
   @js.native
   trait EventsMessage extends js.Object {
-    var Marker: js.UndefOr[String]
     var Events: js.UndefOr[EventList]
+    var Marker: js.UndefOr[String]
   }
 
   object EventsMessage {
     def apply(
-      Marker: js.UndefOr[String] = js.undefined,
-      Events: js.UndefOr[EventList] = js.undefined): EventsMessage = {
+      Events: js.UndefOr[EventList] = js.undefined,
+      Marker: js.UndefOr[String] = js.undefined): EventsMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Marker" -> Marker.map { x => x.asInstanceOf[js.Any] },
-        "Events" -> Events.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Events" -> Events.map { x => x.asInstanceOf[js.Any] },
+        "Marker" -> Marker.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EventsMessage]
     }
@@ -3095,17 +3095,17 @@ package neptune {
    */
   @js.native
   trait Filter extends js.Object {
-    var Name: js.UndefOr[String]
-    var Values: js.UndefOr[FilterValueList]
+    var Name: String
+    var Values: FilterValueList
   }
 
   object Filter {
     def apply(
-      Name: js.UndefOr[String] = js.undefined,
-      Values: js.UndefOr[FilterValueList] = js.undefined): Filter = {
+      Name: String,
+      Values: FilterValueList): Filter = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
-        "Values" -> Values.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Name" -> Name.asInstanceOf[js.Any],
+        "Values" -> Values.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Filter]
     }
@@ -3249,16 +3249,16 @@ package neptune {
    */
   @js.native
   trait ListTagsForResourceMessage extends js.Object {
-    var ResourceName: js.UndefOr[String]
+    var ResourceName: String
     var Filters: js.UndefOr[FilterList]
   }
 
   object ListTagsForResourceMessage {
     def apply(
-      ResourceName: js.UndefOr[String] = js.undefined,
+      ResourceName: String,
       Filters: js.UndefOr[FilterList] = js.undefined): ListTagsForResourceMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ResourceName" -> ResourceName.map { x => x.asInstanceOf[js.Any] },
+        "ResourceName" -> ResourceName.asInstanceOf[js.Any],
         "Filters" -> Filters.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListTagsForResourceMessage]
@@ -3270,50 +3270,50 @@ package neptune {
    */
   @js.native
   trait ModifyDBClusterMessage extends js.Object {
-    var PreferredMaintenanceWindow: js.UndefOr[String]
-    var DBClusterIdentifier: js.UndefOr[String]
-    var OptionGroupName: js.UndefOr[String]
-    var DBClusterParameterGroupName: js.UndefOr[String]
-    var BackupRetentionPeriod: js.UndefOr[IntegerOptional]
-    var NewDBClusterIdentifier: js.UndefOr[String]
-    var VpcSecurityGroupIds: js.UndefOr[VpcSecurityGroupIdList]
-    var EngineVersion: js.UndefOr[String]
-    var Port: js.UndefOr[IntegerOptional]
-    var EnableIAMDatabaseAuthentication: js.UndefOr[BooleanOptional]
-    var MasterUserPassword: js.UndefOr[String]
-    var PreferredBackupWindow: js.UndefOr[String]
+    var DBClusterIdentifier: String
     var ApplyImmediately: js.UndefOr[Boolean]
+    var BackupRetentionPeriod: js.UndefOr[IntegerOptional]
+    var DBClusterParameterGroupName: js.UndefOr[String]
+    var EnableIAMDatabaseAuthentication: js.UndefOr[BooleanOptional]
+    var EngineVersion: js.UndefOr[String]
+    var MasterUserPassword: js.UndefOr[String]
+    var NewDBClusterIdentifier: js.UndefOr[String]
+    var OptionGroupName: js.UndefOr[String]
+    var Port: js.UndefOr[IntegerOptional]
+    var PreferredBackupWindow: js.UndefOr[String]
+    var PreferredMaintenanceWindow: js.UndefOr[String]
+    var VpcSecurityGroupIds: js.UndefOr[VpcSecurityGroupIdList]
   }
 
   object ModifyDBClusterMessage {
     def apply(
-      PreferredMaintenanceWindow: js.UndefOr[String] = js.undefined,
-      DBClusterIdentifier: js.UndefOr[String] = js.undefined,
-      OptionGroupName: js.UndefOr[String] = js.undefined,
-      DBClusterParameterGroupName: js.UndefOr[String] = js.undefined,
+      DBClusterIdentifier: String,
+      ApplyImmediately: js.UndefOr[Boolean] = js.undefined,
       BackupRetentionPeriod: js.UndefOr[IntegerOptional] = js.undefined,
-      NewDBClusterIdentifier: js.UndefOr[String] = js.undefined,
-      VpcSecurityGroupIds: js.UndefOr[VpcSecurityGroupIdList] = js.undefined,
-      EngineVersion: js.UndefOr[String] = js.undefined,
-      Port: js.UndefOr[IntegerOptional] = js.undefined,
+      DBClusterParameterGroupName: js.UndefOr[String] = js.undefined,
       EnableIAMDatabaseAuthentication: js.UndefOr[BooleanOptional] = js.undefined,
+      EngineVersion: js.UndefOr[String] = js.undefined,
       MasterUserPassword: js.UndefOr[String] = js.undefined,
+      NewDBClusterIdentifier: js.UndefOr[String] = js.undefined,
+      OptionGroupName: js.UndefOr[String] = js.undefined,
+      Port: js.UndefOr[IntegerOptional] = js.undefined,
       PreferredBackupWindow: js.UndefOr[String] = js.undefined,
-      ApplyImmediately: js.UndefOr[Boolean] = js.undefined): ModifyDBClusterMessage = {
+      PreferredMaintenanceWindow: js.UndefOr[String] = js.undefined,
+      VpcSecurityGroupIds: js.UndefOr[VpcSecurityGroupIdList] = js.undefined): ModifyDBClusterMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "PreferredMaintenanceWindow" -> PreferredMaintenanceWindow.map { x => x.asInstanceOf[js.Any] },
-        "DBClusterIdentifier" -> DBClusterIdentifier.map { x => x.asInstanceOf[js.Any] },
-        "OptionGroupName" -> OptionGroupName.map { x => x.asInstanceOf[js.Any] },
-        "DBClusterParameterGroupName" -> DBClusterParameterGroupName.map { x => x.asInstanceOf[js.Any] },
+        "DBClusterIdentifier" -> DBClusterIdentifier.asInstanceOf[js.Any],
+        "ApplyImmediately" -> ApplyImmediately.map { x => x.asInstanceOf[js.Any] },
         "BackupRetentionPeriod" -> BackupRetentionPeriod.map { x => x.asInstanceOf[js.Any] },
-        "NewDBClusterIdentifier" -> NewDBClusterIdentifier.map { x => x.asInstanceOf[js.Any] },
-        "VpcSecurityGroupIds" -> VpcSecurityGroupIds.map { x => x.asInstanceOf[js.Any] },
-        "EngineVersion" -> EngineVersion.map { x => x.asInstanceOf[js.Any] },
-        "Port" -> Port.map { x => x.asInstanceOf[js.Any] },
+        "DBClusterParameterGroupName" -> DBClusterParameterGroupName.map { x => x.asInstanceOf[js.Any] },
         "EnableIAMDatabaseAuthentication" -> EnableIAMDatabaseAuthentication.map { x => x.asInstanceOf[js.Any] },
+        "EngineVersion" -> EngineVersion.map { x => x.asInstanceOf[js.Any] },
         "MasterUserPassword" -> MasterUserPassword.map { x => x.asInstanceOf[js.Any] },
+        "NewDBClusterIdentifier" -> NewDBClusterIdentifier.map { x => x.asInstanceOf[js.Any] },
+        "OptionGroupName" -> OptionGroupName.map { x => x.asInstanceOf[js.Any] },
+        "Port" -> Port.map { x => x.asInstanceOf[js.Any] },
         "PreferredBackupWindow" -> PreferredBackupWindow.map { x => x.asInstanceOf[js.Any] },
-        "ApplyImmediately" -> ApplyImmediately.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "PreferredMaintenanceWindow" -> PreferredMaintenanceWindow.map { x => x.asInstanceOf[js.Any] },
+        "VpcSecurityGroupIds" -> VpcSecurityGroupIds.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ModifyDBClusterMessage]
     }
@@ -3324,17 +3324,17 @@ package neptune {
    */
   @js.native
   trait ModifyDBClusterParameterGroupMessage extends js.Object {
-    var DBClusterParameterGroupName: js.UndefOr[String]
-    var Parameters: js.UndefOr[ParametersList]
+    var DBClusterParameterGroupName: String
+    var Parameters: ParametersList
   }
 
   object ModifyDBClusterParameterGroupMessage {
     def apply(
-      DBClusterParameterGroupName: js.UndefOr[String] = js.undefined,
-      Parameters: js.UndefOr[ParametersList] = js.undefined): ModifyDBClusterParameterGroupMessage = {
+      DBClusterParameterGroupName: String,
+      Parameters: ParametersList): ModifyDBClusterParameterGroupMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "DBClusterParameterGroupName" -> DBClusterParameterGroupName.map { x => x.asInstanceOf[js.Any] },
-        "Parameters" -> Parameters.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "DBClusterParameterGroupName" -> DBClusterParameterGroupName.asInstanceOf[js.Any],
+        "Parameters" -> Parameters.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ModifyDBClusterParameterGroupMessage]
     }
@@ -3360,21 +3360,21 @@ package neptune {
    */
   @js.native
   trait ModifyDBClusterSnapshotAttributeMessage extends js.Object {
-    var DBClusterSnapshotIdentifier: js.UndefOr[String]
-    var AttributeName: js.UndefOr[String]
+    var AttributeName: String
+    var DBClusterSnapshotIdentifier: String
     var ValuesToAdd: js.UndefOr[AttributeValueList]
     var ValuesToRemove: js.UndefOr[AttributeValueList]
   }
 
   object ModifyDBClusterSnapshotAttributeMessage {
     def apply(
-      DBClusterSnapshotIdentifier: js.UndefOr[String] = js.undefined,
-      AttributeName: js.UndefOr[String] = js.undefined,
+      AttributeName: String,
+      DBClusterSnapshotIdentifier: String,
       ValuesToAdd: js.UndefOr[AttributeValueList] = js.undefined,
       ValuesToRemove: js.UndefOr[AttributeValueList] = js.undefined): ModifyDBClusterSnapshotAttributeMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "DBClusterSnapshotIdentifier" -> DBClusterSnapshotIdentifier.map { x => x.asInstanceOf[js.Any] },
-        "AttributeName" -> AttributeName.map { x => x.asInstanceOf[js.Any] },
+        "AttributeName" -> AttributeName.asInstanceOf[js.Any],
+        "DBClusterSnapshotIdentifier" -> DBClusterSnapshotIdentifier.asInstanceOf[js.Any],
         "ValuesToAdd" -> ValuesToAdd.map { x => x.asInstanceOf[js.Any] },
         "ValuesToRemove" -> ValuesToRemove.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
@@ -3402,119 +3402,119 @@ package neptune {
    */
   @js.native
   trait ModifyDBInstanceMessage extends js.Object {
-    var PreferredMaintenanceWindow: js.UndefOr[String]
-    var CloudwatchLogsExportConfiguration: js.UndefOr[CloudwatchLogsExportConfiguration]
-    var MonitoringInterval: js.UndefOr[IntegerOptional]
-    var PromotionTier: js.UndefOr[IntegerOptional]
-    var DBInstanceClass: js.UndefOr[String]
-    var TdeCredentialPassword: js.UndefOr[String]
-    var AllowMajorVersionUpgrade: js.UndefOr[Boolean]
-    var EnablePerformanceInsights: js.UndefOr[BooleanOptional]
-    var OptionGroupName: js.UndefOr[String]
-    var MultiAZ: js.UndefOr[BooleanOptional]
-    var DBSecurityGroups: js.UndefOr[DBSecurityGroupNameList]
-    var MonitoringRoleArn: js.UndefOr[String]
+    var DBInstanceIdentifier: String
     var AllocatedStorage: js.UndefOr[IntegerOptional]
-    var DBPortNumber: js.UndefOr[IntegerOptional]
-    var DBInstanceIdentifier: js.UndefOr[String]
-    var BackupRetentionPeriod: js.UndefOr[IntegerOptional]
-    var AutoMinorVersionUpgrade: js.UndefOr[BooleanOptional]
-    var CopyTagsToSnapshot: js.UndefOr[BooleanOptional]
-    var DomainIAMRoleName: js.UndefOr[String]
-    var VpcSecurityGroupIds: js.UndefOr[VpcSecurityGroupIdList]
-    var EngineVersion: js.UndefOr[String]
-    var DBSubnetGroupName: js.UndefOr[String]
-    var EnableIAMDatabaseAuthentication: js.UndefOr[BooleanOptional]
-    var MasterUserPassword: js.UndefOr[String]
-    var NewDBInstanceIdentifier: js.UndefOr[String]
-    var PreferredBackupWindow: js.UndefOr[String]
-    var Iops: js.UndefOr[IntegerOptional]
+    var AllowMajorVersionUpgrade: js.UndefOr[Boolean]
     var ApplyImmediately: js.UndefOr[Boolean]
-    var StorageType: js.UndefOr[String]
-    var PubliclyAccessible: js.UndefOr[BooleanOptional]
+    var AutoMinorVersionUpgrade: js.UndefOr[BooleanOptional]
+    var BackupRetentionPeriod: js.UndefOr[IntegerOptional]
     var CACertificateIdentifier: js.UndefOr[String]
-    var PerformanceInsightsKMSKeyId: js.UndefOr[String]
-    var LicenseModel: js.UndefOr[String]
-    var TdeCredentialArn: js.UndefOr[String]
+    var CloudwatchLogsExportConfiguration: js.UndefOr[CloudwatchLogsExportConfiguration]
+    var CopyTagsToSnapshot: js.UndefOr[BooleanOptional]
+    var DBInstanceClass: js.UndefOr[String]
     var DBParameterGroupName: js.UndefOr[String]
+    var DBPortNumber: js.UndefOr[IntegerOptional]
+    var DBSecurityGroups: js.UndefOr[DBSecurityGroupNameList]
+    var DBSubnetGroupName: js.UndefOr[String]
     var Domain: js.UndefOr[String]
+    var DomainIAMRoleName: js.UndefOr[String]
+    var EnableIAMDatabaseAuthentication: js.UndefOr[BooleanOptional]
+    var EnablePerformanceInsights: js.UndefOr[BooleanOptional]
+    var EngineVersion: js.UndefOr[String]
+    var Iops: js.UndefOr[IntegerOptional]
+    var LicenseModel: js.UndefOr[String]
+    var MasterUserPassword: js.UndefOr[String]
+    var MonitoringInterval: js.UndefOr[IntegerOptional]
+    var MonitoringRoleArn: js.UndefOr[String]
+    var MultiAZ: js.UndefOr[BooleanOptional]
+    var NewDBInstanceIdentifier: js.UndefOr[String]
+    var OptionGroupName: js.UndefOr[String]
+    var PerformanceInsightsKMSKeyId: js.UndefOr[String]
+    var PreferredBackupWindow: js.UndefOr[String]
+    var PreferredMaintenanceWindow: js.UndefOr[String]
+    var PromotionTier: js.UndefOr[IntegerOptional]
+    var PubliclyAccessible: js.UndefOr[BooleanOptional]
+    var StorageType: js.UndefOr[String]
+    var TdeCredentialArn: js.UndefOr[String]
+    var TdeCredentialPassword: js.UndefOr[String]
+    var VpcSecurityGroupIds: js.UndefOr[VpcSecurityGroupIdList]
   }
 
   object ModifyDBInstanceMessage {
     def apply(
-      PreferredMaintenanceWindow: js.UndefOr[String] = js.undefined,
-      CloudwatchLogsExportConfiguration: js.UndefOr[CloudwatchLogsExportConfiguration] = js.undefined,
-      MonitoringInterval: js.UndefOr[IntegerOptional] = js.undefined,
-      PromotionTier: js.UndefOr[IntegerOptional] = js.undefined,
-      DBInstanceClass: js.UndefOr[String] = js.undefined,
-      TdeCredentialPassword: js.UndefOr[String] = js.undefined,
-      AllowMajorVersionUpgrade: js.UndefOr[Boolean] = js.undefined,
-      EnablePerformanceInsights: js.UndefOr[BooleanOptional] = js.undefined,
-      OptionGroupName: js.UndefOr[String] = js.undefined,
-      MultiAZ: js.UndefOr[BooleanOptional] = js.undefined,
-      DBSecurityGroups: js.UndefOr[DBSecurityGroupNameList] = js.undefined,
-      MonitoringRoleArn: js.UndefOr[String] = js.undefined,
+      DBInstanceIdentifier: String,
       AllocatedStorage: js.UndefOr[IntegerOptional] = js.undefined,
-      DBPortNumber: js.UndefOr[IntegerOptional] = js.undefined,
-      DBInstanceIdentifier: js.UndefOr[String] = js.undefined,
-      BackupRetentionPeriod: js.UndefOr[IntegerOptional] = js.undefined,
-      AutoMinorVersionUpgrade: js.UndefOr[BooleanOptional] = js.undefined,
-      CopyTagsToSnapshot: js.UndefOr[BooleanOptional] = js.undefined,
-      DomainIAMRoleName: js.UndefOr[String] = js.undefined,
-      VpcSecurityGroupIds: js.UndefOr[VpcSecurityGroupIdList] = js.undefined,
-      EngineVersion: js.UndefOr[String] = js.undefined,
-      DBSubnetGroupName: js.UndefOr[String] = js.undefined,
-      EnableIAMDatabaseAuthentication: js.UndefOr[BooleanOptional] = js.undefined,
-      MasterUserPassword: js.UndefOr[String] = js.undefined,
-      NewDBInstanceIdentifier: js.UndefOr[String] = js.undefined,
-      PreferredBackupWindow: js.UndefOr[String] = js.undefined,
-      Iops: js.UndefOr[IntegerOptional] = js.undefined,
+      AllowMajorVersionUpgrade: js.UndefOr[Boolean] = js.undefined,
       ApplyImmediately: js.UndefOr[Boolean] = js.undefined,
-      StorageType: js.UndefOr[String] = js.undefined,
-      PubliclyAccessible: js.UndefOr[BooleanOptional] = js.undefined,
+      AutoMinorVersionUpgrade: js.UndefOr[BooleanOptional] = js.undefined,
+      BackupRetentionPeriod: js.UndefOr[IntegerOptional] = js.undefined,
       CACertificateIdentifier: js.UndefOr[String] = js.undefined,
-      PerformanceInsightsKMSKeyId: js.UndefOr[String] = js.undefined,
-      LicenseModel: js.UndefOr[String] = js.undefined,
-      TdeCredentialArn: js.UndefOr[String] = js.undefined,
+      CloudwatchLogsExportConfiguration: js.UndefOr[CloudwatchLogsExportConfiguration] = js.undefined,
+      CopyTagsToSnapshot: js.UndefOr[BooleanOptional] = js.undefined,
+      DBInstanceClass: js.UndefOr[String] = js.undefined,
       DBParameterGroupName: js.UndefOr[String] = js.undefined,
-      Domain: js.UndefOr[String] = js.undefined): ModifyDBInstanceMessage = {
+      DBPortNumber: js.UndefOr[IntegerOptional] = js.undefined,
+      DBSecurityGroups: js.UndefOr[DBSecurityGroupNameList] = js.undefined,
+      DBSubnetGroupName: js.UndefOr[String] = js.undefined,
+      Domain: js.UndefOr[String] = js.undefined,
+      DomainIAMRoleName: js.UndefOr[String] = js.undefined,
+      EnableIAMDatabaseAuthentication: js.UndefOr[BooleanOptional] = js.undefined,
+      EnablePerformanceInsights: js.UndefOr[BooleanOptional] = js.undefined,
+      EngineVersion: js.UndefOr[String] = js.undefined,
+      Iops: js.UndefOr[IntegerOptional] = js.undefined,
+      LicenseModel: js.UndefOr[String] = js.undefined,
+      MasterUserPassword: js.UndefOr[String] = js.undefined,
+      MonitoringInterval: js.UndefOr[IntegerOptional] = js.undefined,
+      MonitoringRoleArn: js.UndefOr[String] = js.undefined,
+      MultiAZ: js.UndefOr[BooleanOptional] = js.undefined,
+      NewDBInstanceIdentifier: js.UndefOr[String] = js.undefined,
+      OptionGroupName: js.UndefOr[String] = js.undefined,
+      PerformanceInsightsKMSKeyId: js.UndefOr[String] = js.undefined,
+      PreferredBackupWindow: js.UndefOr[String] = js.undefined,
+      PreferredMaintenanceWindow: js.UndefOr[String] = js.undefined,
+      PromotionTier: js.UndefOr[IntegerOptional] = js.undefined,
+      PubliclyAccessible: js.UndefOr[BooleanOptional] = js.undefined,
+      StorageType: js.UndefOr[String] = js.undefined,
+      TdeCredentialArn: js.UndefOr[String] = js.undefined,
+      TdeCredentialPassword: js.UndefOr[String] = js.undefined,
+      VpcSecurityGroupIds: js.UndefOr[VpcSecurityGroupIdList] = js.undefined): ModifyDBInstanceMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "PreferredMaintenanceWindow" -> PreferredMaintenanceWindow.map { x => x.asInstanceOf[js.Any] },
-        "CloudwatchLogsExportConfiguration" -> CloudwatchLogsExportConfiguration.map { x => x.asInstanceOf[js.Any] },
-        "MonitoringInterval" -> MonitoringInterval.map { x => x.asInstanceOf[js.Any] },
-        "PromotionTier" -> PromotionTier.map { x => x.asInstanceOf[js.Any] },
-        "DBInstanceClass" -> DBInstanceClass.map { x => x.asInstanceOf[js.Any] },
-        "TdeCredentialPassword" -> TdeCredentialPassword.map { x => x.asInstanceOf[js.Any] },
-        "AllowMajorVersionUpgrade" -> AllowMajorVersionUpgrade.map { x => x.asInstanceOf[js.Any] },
-        "EnablePerformanceInsights" -> EnablePerformanceInsights.map { x => x.asInstanceOf[js.Any] },
-        "OptionGroupName" -> OptionGroupName.map { x => x.asInstanceOf[js.Any] },
-        "MultiAZ" -> MultiAZ.map { x => x.asInstanceOf[js.Any] },
-        "DBSecurityGroups" -> DBSecurityGroups.map { x => x.asInstanceOf[js.Any] },
-        "MonitoringRoleArn" -> MonitoringRoleArn.map { x => x.asInstanceOf[js.Any] },
+        "DBInstanceIdentifier" -> DBInstanceIdentifier.asInstanceOf[js.Any],
         "AllocatedStorage" -> AllocatedStorage.map { x => x.asInstanceOf[js.Any] },
-        "DBPortNumber" -> DBPortNumber.map { x => x.asInstanceOf[js.Any] },
-        "DBInstanceIdentifier" -> DBInstanceIdentifier.map { x => x.asInstanceOf[js.Any] },
-        "BackupRetentionPeriod" -> BackupRetentionPeriod.map { x => x.asInstanceOf[js.Any] },
-        "AutoMinorVersionUpgrade" -> AutoMinorVersionUpgrade.map { x => x.asInstanceOf[js.Any] },
-        "CopyTagsToSnapshot" -> CopyTagsToSnapshot.map { x => x.asInstanceOf[js.Any] },
-        "DomainIAMRoleName" -> DomainIAMRoleName.map { x => x.asInstanceOf[js.Any] },
-        "VpcSecurityGroupIds" -> VpcSecurityGroupIds.map { x => x.asInstanceOf[js.Any] },
-        "EngineVersion" -> EngineVersion.map { x => x.asInstanceOf[js.Any] },
-        "DBSubnetGroupName" -> DBSubnetGroupName.map { x => x.asInstanceOf[js.Any] },
-        "EnableIAMDatabaseAuthentication" -> EnableIAMDatabaseAuthentication.map { x => x.asInstanceOf[js.Any] },
-        "MasterUserPassword" -> MasterUserPassword.map { x => x.asInstanceOf[js.Any] },
-        "NewDBInstanceIdentifier" -> NewDBInstanceIdentifier.map { x => x.asInstanceOf[js.Any] },
-        "PreferredBackupWindow" -> PreferredBackupWindow.map { x => x.asInstanceOf[js.Any] },
-        "Iops" -> Iops.map { x => x.asInstanceOf[js.Any] },
+        "AllowMajorVersionUpgrade" -> AllowMajorVersionUpgrade.map { x => x.asInstanceOf[js.Any] },
         "ApplyImmediately" -> ApplyImmediately.map { x => x.asInstanceOf[js.Any] },
-        "StorageType" -> StorageType.map { x => x.asInstanceOf[js.Any] },
-        "PubliclyAccessible" -> PubliclyAccessible.map { x => x.asInstanceOf[js.Any] },
+        "AutoMinorVersionUpgrade" -> AutoMinorVersionUpgrade.map { x => x.asInstanceOf[js.Any] },
+        "BackupRetentionPeriod" -> BackupRetentionPeriod.map { x => x.asInstanceOf[js.Any] },
         "CACertificateIdentifier" -> CACertificateIdentifier.map { x => x.asInstanceOf[js.Any] },
-        "PerformanceInsightsKMSKeyId" -> PerformanceInsightsKMSKeyId.map { x => x.asInstanceOf[js.Any] },
-        "LicenseModel" -> LicenseModel.map { x => x.asInstanceOf[js.Any] },
-        "TdeCredentialArn" -> TdeCredentialArn.map { x => x.asInstanceOf[js.Any] },
+        "CloudwatchLogsExportConfiguration" -> CloudwatchLogsExportConfiguration.map { x => x.asInstanceOf[js.Any] },
+        "CopyTagsToSnapshot" -> CopyTagsToSnapshot.map { x => x.asInstanceOf[js.Any] },
+        "DBInstanceClass" -> DBInstanceClass.map { x => x.asInstanceOf[js.Any] },
         "DBParameterGroupName" -> DBParameterGroupName.map { x => x.asInstanceOf[js.Any] },
-        "Domain" -> Domain.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "DBPortNumber" -> DBPortNumber.map { x => x.asInstanceOf[js.Any] },
+        "DBSecurityGroups" -> DBSecurityGroups.map { x => x.asInstanceOf[js.Any] },
+        "DBSubnetGroupName" -> DBSubnetGroupName.map { x => x.asInstanceOf[js.Any] },
+        "Domain" -> Domain.map { x => x.asInstanceOf[js.Any] },
+        "DomainIAMRoleName" -> DomainIAMRoleName.map { x => x.asInstanceOf[js.Any] },
+        "EnableIAMDatabaseAuthentication" -> EnableIAMDatabaseAuthentication.map { x => x.asInstanceOf[js.Any] },
+        "EnablePerformanceInsights" -> EnablePerformanceInsights.map { x => x.asInstanceOf[js.Any] },
+        "EngineVersion" -> EngineVersion.map { x => x.asInstanceOf[js.Any] },
+        "Iops" -> Iops.map { x => x.asInstanceOf[js.Any] },
+        "LicenseModel" -> LicenseModel.map { x => x.asInstanceOf[js.Any] },
+        "MasterUserPassword" -> MasterUserPassword.map { x => x.asInstanceOf[js.Any] },
+        "MonitoringInterval" -> MonitoringInterval.map { x => x.asInstanceOf[js.Any] },
+        "MonitoringRoleArn" -> MonitoringRoleArn.map { x => x.asInstanceOf[js.Any] },
+        "MultiAZ" -> MultiAZ.map { x => x.asInstanceOf[js.Any] },
+        "NewDBInstanceIdentifier" -> NewDBInstanceIdentifier.map { x => x.asInstanceOf[js.Any] },
+        "OptionGroupName" -> OptionGroupName.map { x => x.asInstanceOf[js.Any] },
+        "PerformanceInsightsKMSKeyId" -> PerformanceInsightsKMSKeyId.map { x => x.asInstanceOf[js.Any] },
+        "PreferredBackupWindow" -> PreferredBackupWindow.map { x => x.asInstanceOf[js.Any] },
+        "PreferredMaintenanceWindow" -> PreferredMaintenanceWindow.map { x => x.asInstanceOf[js.Any] },
+        "PromotionTier" -> PromotionTier.map { x => x.asInstanceOf[js.Any] },
+        "PubliclyAccessible" -> PubliclyAccessible.map { x => x.asInstanceOf[js.Any] },
+        "StorageType" -> StorageType.map { x => x.asInstanceOf[js.Any] },
+        "TdeCredentialArn" -> TdeCredentialArn.map { x => x.asInstanceOf[js.Any] },
+        "TdeCredentialPassword" -> TdeCredentialPassword.map { x => x.asInstanceOf[js.Any] },
+        "VpcSecurityGroupIds" -> VpcSecurityGroupIds.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ModifyDBInstanceMessage]
     }
@@ -3540,17 +3540,17 @@ package neptune {
    */
   @js.native
   trait ModifyDBParameterGroupMessage extends js.Object {
-    var DBParameterGroupName: js.UndefOr[String]
-    var Parameters: js.UndefOr[ParametersList]
+    var DBParameterGroupName: String
+    var Parameters: ParametersList
   }
 
   object ModifyDBParameterGroupMessage {
     def apply(
-      DBParameterGroupName: js.UndefOr[String] = js.undefined,
-      Parameters: js.UndefOr[ParametersList] = js.undefined): ModifyDBParameterGroupMessage = {
+      DBParameterGroupName: String,
+      Parameters: ParametersList): ModifyDBParameterGroupMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "DBParameterGroupName" -> DBParameterGroupName.map { x => x.asInstanceOf[js.Any] },
-        "Parameters" -> Parameters.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "DBParameterGroupName" -> DBParameterGroupName.asInstanceOf[js.Any],
+        "Parameters" -> Parameters.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ModifyDBParameterGroupMessage]
     }
@@ -3561,20 +3561,20 @@ package neptune {
    */
   @js.native
   trait ModifyDBSubnetGroupMessage extends js.Object {
-    var DBSubnetGroupName: js.UndefOr[String]
+    var DBSubnetGroupName: String
+    var SubnetIds: SubnetIdentifierList
     var DBSubnetGroupDescription: js.UndefOr[String]
-    var SubnetIds: js.UndefOr[SubnetIdentifierList]
   }
 
   object ModifyDBSubnetGroupMessage {
     def apply(
-      DBSubnetGroupName: js.UndefOr[String] = js.undefined,
-      DBSubnetGroupDescription: js.UndefOr[String] = js.undefined,
-      SubnetIds: js.UndefOr[SubnetIdentifierList] = js.undefined): ModifyDBSubnetGroupMessage = {
+      DBSubnetGroupName: String,
+      SubnetIds: SubnetIdentifierList,
+      DBSubnetGroupDescription: js.UndefOr[String] = js.undefined): ModifyDBSubnetGroupMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "DBSubnetGroupName" -> DBSubnetGroupName.map { x => x.asInstanceOf[js.Any] },
-        "DBSubnetGroupDescription" -> DBSubnetGroupDescription.map { x => x.asInstanceOf[js.Any] },
-        "SubnetIds" -> SubnetIds.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "DBSubnetGroupName" -> DBSubnetGroupName.asInstanceOf[js.Any],
+        "SubnetIds" -> SubnetIds.asInstanceOf[js.Any],
+        "DBSubnetGroupDescription" -> DBSubnetGroupDescription.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ModifyDBSubnetGroupMessage]
     }
@@ -3600,25 +3600,25 @@ package neptune {
    */
   @js.native
   trait ModifyEventSubscriptionMessage extends js.Object {
+    var SubscriptionName: String
     var Enabled: js.UndefOr[BooleanOptional]
-    var SubscriptionName: js.UndefOr[String]
-    var SnsTopicArn: js.UndefOr[String]
     var EventCategories: js.UndefOr[EventCategoriesList]
+    var SnsTopicArn: js.UndefOr[String]
     var SourceType: js.UndefOr[String]
   }
 
   object ModifyEventSubscriptionMessage {
     def apply(
+      SubscriptionName: String,
       Enabled: js.UndefOr[BooleanOptional] = js.undefined,
-      SubscriptionName: js.UndefOr[String] = js.undefined,
-      SnsTopicArn: js.UndefOr[String] = js.undefined,
       EventCategories: js.UndefOr[EventCategoriesList] = js.undefined,
+      SnsTopicArn: js.UndefOr[String] = js.undefined,
       SourceType: js.UndefOr[String] = js.undefined): ModifyEventSubscriptionMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "SubscriptionName" -> SubscriptionName.asInstanceOf[js.Any],
         "Enabled" -> Enabled.map { x => x.asInstanceOf[js.Any] },
-        "SubscriptionName" -> SubscriptionName.map { x => x.asInstanceOf[js.Any] },
-        "SnsTopicArn" -> SnsTopicArn.map { x => x.asInstanceOf[js.Any] },
         "EventCategories" -> EventCategories.map { x => x.asInstanceOf[js.Any] },
+        "SnsTopicArn" -> SnsTopicArn.map { x => x.asInstanceOf[js.Any] },
         "SourceType" -> SourceType.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ModifyEventSubscriptionMessage]
@@ -3671,71 +3671,71 @@ package neptune {
    */
   @js.native
   trait OrderableDBInstanceOption extends js.Object {
-    var SupportsIops: js.UndefOr[Boolean]
-    var DBInstanceClass: js.UndefOr[String]
-    var SupportsIAMDatabaseAuthentication: js.UndefOr[Boolean]
-    var Engine: js.UndefOr[String]
-    var MaxStorageSize: js.UndefOr[IntegerOptional]
-    var MultiAZCapable: js.UndefOr[Boolean]
-    var MinIopsPerDbInstance: js.UndefOr[IntegerOptional]
-    var MaxIopsPerGib: js.UndefOr[DoubleOptional]
-    var SupportsPerformanceInsights: js.UndefOr[Boolean]
-    var SupportsEnhancedMonitoring: js.UndefOr[Boolean]
-    var MinStorageSize: js.UndefOr[IntegerOptional]
-    var EngineVersion: js.UndefOr[String]
-    var ReadReplicaCapable: js.UndefOr[Boolean]
-    var SupportsStorageEncryption: js.UndefOr[Boolean]
-    var MinIopsPerGib: js.UndefOr[DoubleOptional]
-    var MaxIopsPerDbInstance: js.UndefOr[IntegerOptional]
-    var StorageType: js.UndefOr[String]
-    var Vpc: js.UndefOr[Boolean]
-    var LicenseModel: js.UndefOr[String]
     var AvailabilityZones: js.UndefOr[AvailabilityZoneList]
+    var DBInstanceClass: js.UndefOr[String]
+    var Engine: js.UndefOr[String]
+    var EngineVersion: js.UndefOr[String]
+    var LicenseModel: js.UndefOr[String]
+    var MaxIopsPerDbInstance: js.UndefOr[IntegerOptional]
+    var MaxIopsPerGib: js.UndefOr[DoubleOptional]
+    var MaxStorageSize: js.UndefOr[IntegerOptional]
+    var MinIopsPerDbInstance: js.UndefOr[IntegerOptional]
+    var MinIopsPerGib: js.UndefOr[DoubleOptional]
+    var MinStorageSize: js.UndefOr[IntegerOptional]
+    var MultiAZCapable: js.UndefOr[Boolean]
+    var ReadReplicaCapable: js.UndefOr[Boolean]
+    var StorageType: js.UndefOr[String]
+    var SupportsEnhancedMonitoring: js.UndefOr[Boolean]
+    var SupportsIAMDatabaseAuthentication: js.UndefOr[Boolean]
+    var SupportsIops: js.UndefOr[Boolean]
+    var SupportsPerformanceInsights: js.UndefOr[Boolean]
+    var SupportsStorageEncryption: js.UndefOr[Boolean]
+    var Vpc: js.UndefOr[Boolean]
   }
 
   object OrderableDBInstanceOption {
     def apply(
-      SupportsIops: js.UndefOr[Boolean] = js.undefined,
+      AvailabilityZones: js.UndefOr[AvailabilityZoneList] = js.undefined,
       DBInstanceClass: js.UndefOr[String] = js.undefined,
-      SupportsIAMDatabaseAuthentication: js.UndefOr[Boolean] = js.undefined,
       Engine: js.UndefOr[String] = js.undefined,
-      MaxStorageSize: js.UndefOr[IntegerOptional] = js.undefined,
-      MultiAZCapable: js.UndefOr[Boolean] = js.undefined,
-      MinIopsPerDbInstance: js.UndefOr[IntegerOptional] = js.undefined,
-      MaxIopsPerGib: js.UndefOr[DoubleOptional] = js.undefined,
-      SupportsPerformanceInsights: js.UndefOr[Boolean] = js.undefined,
-      SupportsEnhancedMonitoring: js.UndefOr[Boolean] = js.undefined,
-      MinStorageSize: js.UndefOr[IntegerOptional] = js.undefined,
       EngineVersion: js.UndefOr[String] = js.undefined,
-      ReadReplicaCapable: js.UndefOr[Boolean] = js.undefined,
-      SupportsStorageEncryption: js.UndefOr[Boolean] = js.undefined,
-      MinIopsPerGib: js.UndefOr[DoubleOptional] = js.undefined,
-      MaxIopsPerDbInstance: js.UndefOr[IntegerOptional] = js.undefined,
-      StorageType: js.UndefOr[String] = js.undefined,
-      Vpc: js.UndefOr[Boolean] = js.undefined,
       LicenseModel: js.UndefOr[String] = js.undefined,
-      AvailabilityZones: js.UndefOr[AvailabilityZoneList] = js.undefined): OrderableDBInstanceOption = {
+      MaxIopsPerDbInstance: js.UndefOr[IntegerOptional] = js.undefined,
+      MaxIopsPerGib: js.UndefOr[DoubleOptional] = js.undefined,
+      MaxStorageSize: js.UndefOr[IntegerOptional] = js.undefined,
+      MinIopsPerDbInstance: js.UndefOr[IntegerOptional] = js.undefined,
+      MinIopsPerGib: js.UndefOr[DoubleOptional] = js.undefined,
+      MinStorageSize: js.UndefOr[IntegerOptional] = js.undefined,
+      MultiAZCapable: js.UndefOr[Boolean] = js.undefined,
+      ReadReplicaCapable: js.UndefOr[Boolean] = js.undefined,
+      StorageType: js.UndefOr[String] = js.undefined,
+      SupportsEnhancedMonitoring: js.UndefOr[Boolean] = js.undefined,
+      SupportsIAMDatabaseAuthentication: js.UndefOr[Boolean] = js.undefined,
+      SupportsIops: js.UndefOr[Boolean] = js.undefined,
+      SupportsPerformanceInsights: js.UndefOr[Boolean] = js.undefined,
+      SupportsStorageEncryption: js.UndefOr[Boolean] = js.undefined,
+      Vpc: js.UndefOr[Boolean] = js.undefined): OrderableDBInstanceOption = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "SupportsIops" -> SupportsIops.map { x => x.asInstanceOf[js.Any] },
+        "AvailabilityZones" -> AvailabilityZones.map { x => x.asInstanceOf[js.Any] },
         "DBInstanceClass" -> DBInstanceClass.map { x => x.asInstanceOf[js.Any] },
-        "SupportsIAMDatabaseAuthentication" -> SupportsIAMDatabaseAuthentication.map { x => x.asInstanceOf[js.Any] },
         "Engine" -> Engine.map { x => x.asInstanceOf[js.Any] },
-        "MaxStorageSize" -> MaxStorageSize.map { x => x.asInstanceOf[js.Any] },
-        "MultiAZCapable" -> MultiAZCapable.map { x => x.asInstanceOf[js.Any] },
-        "MinIopsPerDbInstance" -> MinIopsPerDbInstance.map { x => x.asInstanceOf[js.Any] },
-        "MaxIopsPerGib" -> MaxIopsPerGib.map { x => x.asInstanceOf[js.Any] },
-        "SupportsPerformanceInsights" -> SupportsPerformanceInsights.map { x => x.asInstanceOf[js.Any] },
-        "SupportsEnhancedMonitoring" -> SupportsEnhancedMonitoring.map { x => x.asInstanceOf[js.Any] },
-        "MinStorageSize" -> MinStorageSize.map { x => x.asInstanceOf[js.Any] },
         "EngineVersion" -> EngineVersion.map { x => x.asInstanceOf[js.Any] },
-        "ReadReplicaCapable" -> ReadReplicaCapable.map { x => x.asInstanceOf[js.Any] },
-        "SupportsStorageEncryption" -> SupportsStorageEncryption.map { x => x.asInstanceOf[js.Any] },
-        "MinIopsPerGib" -> MinIopsPerGib.map { x => x.asInstanceOf[js.Any] },
-        "MaxIopsPerDbInstance" -> MaxIopsPerDbInstance.map { x => x.asInstanceOf[js.Any] },
-        "StorageType" -> StorageType.map { x => x.asInstanceOf[js.Any] },
-        "Vpc" -> Vpc.map { x => x.asInstanceOf[js.Any] },
         "LicenseModel" -> LicenseModel.map { x => x.asInstanceOf[js.Any] },
-        "AvailabilityZones" -> AvailabilityZones.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "MaxIopsPerDbInstance" -> MaxIopsPerDbInstance.map { x => x.asInstanceOf[js.Any] },
+        "MaxIopsPerGib" -> MaxIopsPerGib.map { x => x.asInstanceOf[js.Any] },
+        "MaxStorageSize" -> MaxStorageSize.map { x => x.asInstanceOf[js.Any] },
+        "MinIopsPerDbInstance" -> MinIopsPerDbInstance.map { x => x.asInstanceOf[js.Any] },
+        "MinIopsPerGib" -> MinIopsPerGib.map { x => x.asInstanceOf[js.Any] },
+        "MinStorageSize" -> MinStorageSize.map { x => x.asInstanceOf[js.Any] },
+        "MultiAZCapable" -> MultiAZCapable.map { x => x.asInstanceOf[js.Any] },
+        "ReadReplicaCapable" -> ReadReplicaCapable.map { x => x.asInstanceOf[js.Any] },
+        "StorageType" -> StorageType.map { x => x.asInstanceOf[js.Any] },
+        "SupportsEnhancedMonitoring" -> SupportsEnhancedMonitoring.map { x => x.asInstanceOf[js.Any] },
+        "SupportsIAMDatabaseAuthentication" -> SupportsIAMDatabaseAuthentication.map { x => x.asInstanceOf[js.Any] },
+        "SupportsIops" -> SupportsIops.map { x => x.asInstanceOf[js.Any] },
+        "SupportsPerformanceInsights" -> SupportsPerformanceInsights.map { x => x.asInstanceOf[js.Any] },
+        "SupportsStorageEncryption" -> SupportsStorageEncryption.map { x => x.asInstanceOf[js.Any] },
+        "Vpc" -> Vpc.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[OrderableDBInstanceOption]
     }
@@ -3746,17 +3746,17 @@ package neptune {
    */
   @js.native
   trait OrderableDBInstanceOptionsMessage extends js.Object {
-    var OrderableDBInstanceOptions: js.UndefOr[OrderableDBInstanceOptionsList]
     var Marker: js.UndefOr[String]
+    var OrderableDBInstanceOptions: js.UndefOr[OrderableDBInstanceOptionsList]
   }
 
   object OrderableDBInstanceOptionsMessage {
     def apply(
-      OrderableDBInstanceOptions: js.UndefOr[OrderableDBInstanceOptionsList] = js.undefined,
-      Marker: js.UndefOr[String] = js.undefined): OrderableDBInstanceOptionsMessage = {
+      Marker: js.UndefOr[String] = js.undefined,
+      OrderableDBInstanceOptions: js.UndefOr[OrderableDBInstanceOptionsList] = js.undefined): OrderableDBInstanceOptionsMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "OrderableDBInstanceOptions" -> OrderableDBInstanceOptions.map { x => x.asInstanceOf[js.Any] },
-        "Marker" -> Marker.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Marker" -> Marker.map { x => x.asInstanceOf[js.Any] },
+        "OrderableDBInstanceOptions" -> OrderableDBInstanceOptions.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[OrderableDBInstanceOptionsMessage]
     }
@@ -3767,41 +3767,41 @@ package neptune {
    */
   @js.native
   trait Parameter extends js.Object {
-    var IsModifiable: js.UndefOr[Boolean]
-    var ApplyType: js.UndefOr[String]
-    var Description: js.UndefOr[String]
     var AllowedValues: js.UndefOr[String]
-    var Source: js.UndefOr[String]
     var ApplyMethod: js.UndefOr[ApplyMethod]
-    var MinimumEngineVersion: js.UndefOr[String]
-    var ParameterValue: js.UndefOr[String]
-    var ParameterName: js.UndefOr[String]
+    var ApplyType: js.UndefOr[String]
     var DataType: js.UndefOr[String]
+    var Description: js.UndefOr[String]
+    var IsModifiable: js.UndefOr[Boolean]
+    var MinimumEngineVersion: js.UndefOr[String]
+    var ParameterName: js.UndefOr[String]
+    var ParameterValue: js.UndefOr[String]
+    var Source: js.UndefOr[String]
   }
 
   object Parameter {
     def apply(
-      IsModifiable: js.UndefOr[Boolean] = js.undefined,
-      ApplyType: js.UndefOr[String] = js.undefined,
-      Description: js.UndefOr[String] = js.undefined,
       AllowedValues: js.UndefOr[String] = js.undefined,
-      Source: js.UndefOr[String] = js.undefined,
       ApplyMethod: js.UndefOr[ApplyMethod] = js.undefined,
+      ApplyType: js.UndefOr[String] = js.undefined,
+      DataType: js.UndefOr[String] = js.undefined,
+      Description: js.UndefOr[String] = js.undefined,
+      IsModifiable: js.UndefOr[Boolean] = js.undefined,
       MinimumEngineVersion: js.UndefOr[String] = js.undefined,
-      ParameterValue: js.UndefOr[String] = js.undefined,
       ParameterName: js.UndefOr[String] = js.undefined,
-      DataType: js.UndefOr[String] = js.undefined): Parameter = {
+      ParameterValue: js.UndefOr[String] = js.undefined,
+      Source: js.UndefOr[String] = js.undefined): Parameter = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "IsModifiable" -> IsModifiable.map { x => x.asInstanceOf[js.Any] },
-        "ApplyType" -> ApplyType.map { x => x.asInstanceOf[js.Any] },
-        "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
         "AllowedValues" -> AllowedValues.map { x => x.asInstanceOf[js.Any] },
-        "Source" -> Source.map { x => x.asInstanceOf[js.Any] },
         "ApplyMethod" -> ApplyMethod.map { x => x.asInstanceOf[js.Any] },
+        "ApplyType" -> ApplyType.map { x => x.asInstanceOf[js.Any] },
+        "DataType" -> DataType.map { x => x.asInstanceOf[js.Any] },
+        "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
+        "IsModifiable" -> IsModifiable.map { x => x.asInstanceOf[js.Any] },
         "MinimumEngineVersion" -> MinimumEngineVersion.map { x => x.asInstanceOf[js.Any] },
-        "ParameterValue" -> ParameterValue.map { x => x.asInstanceOf[js.Any] },
         "ParameterName" -> ParameterName.map { x => x.asInstanceOf[js.Any] },
-        "DataType" -> DataType.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ParameterValue" -> ParameterValue.map { x => x.asInstanceOf[js.Any] },
+        "Source" -> Source.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Parameter]
     }
@@ -3812,17 +3812,17 @@ package neptune {
    */
   @js.native
   trait PendingCloudwatchLogsExports extends js.Object {
-    var LogTypesToEnable: js.UndefOr[LogTypeList]
     var LogTypesToDisable: js.UndefOr[LogTypeList]
+    var LogTypesToEnable: js.UndefOr[LogTypeList]
   }
 
   object PendingCloudwatchLogsExports {
     def apply(
-      LogTypesToEnable: js.UndefOr[LogTypeList] = js.undefined,
-      LogTypesToDisable: js.UndefOr[LogTypeList] = js.undefined): PendingCloudwatchLogsExports = {
+      LogTypesToDisable: js.UndefOr[LogTypeList] = js.undefined,
+      LogTypesToEnable: js.UndefOr[LogTypeList] = js.undefined): PendingCloudwatchLogsExports = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "LogTypesToEnable" -> LogTypesToEnable.map { x => x.asInstanceOf[js.Any] },
-        "LogTypesToDisable" -> LogTypesToDisable.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "LogTypesToDisable" -> LogTypesToDisable.map { x => x.asInstanceOf[js.Any] },
+        "LogTypesToEnable" -> LogTypesToEnable.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PendingCloudwatchLogsExports]
     }
@@ -3833,29 +3833,29 @@ package neptune {
    */
   @js.native
   trait PendingMaintenanceAction extends js.Object {
-    var Description: js.UndefOr[String]
-    var OptInStatus: js.UndefOr[String]
-    var AutoAppliedAfterDate: js.UndefOr[TStamp]
-    var ForcedApplyDate: js.UndefOr[TStamp]
     var Action: js.UndefOr[String]
+    var AutoAppliedAfterDate: js.UndefOr[TStamp]
     var CurrentApplyDate: js.UndefOr[TStamp]
+    var Description: js.UndefOr[String]
+    var ForcedApplyDate: js.UndefOr[TStamp]
+    var OptInStatus: js.UndefOr[String]
   }
 
   object PendingMaintenanceAction {
     def apply(
-      Description: js.UndefOr[String] = js.undefined,
-      OptInStatus: js.UndefOr[String] = js.undefined,
-      AutoAppliedAfterDate: js.UndefOr[TStamp] = js.undefined,
-      ForcedApplyDate: js.UndefOr[TStamp] = js.undefined,
       Action: js.UndefOr[String] = js.undefined,
-      CurrentApplyDate: js.UndefOr[TStamp] = js.undefined): PendingMaintenanceAction = {
+      AutoAppliedAfterDate: js.UndefOr[TStamp] = js.undefined,
+      CurrentApplyDate: js.UndefOr[TStamp] = js.undefined,
+      Description: js.UndefOr[String] = js.undefined,
+      ForcedApplyDate: js.UndefOr[TStamp] = js.undefined,
+      OptInStatus: js.UndefOr[String] = js.undefined): PendingMaintenanceAction = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
-        "OptInStatus" -> OptInStatus.map { x => x.asInstanceOf[js.Any] },
-        "AutoAppliedAfterDate" -> AutoAppliedAfterDate.map { x => x.asInstanceOf[js.Any] },
-        "ForcedApplyDate" -> ForcedApplyDate.map { x => x.asInstanceOf[js.Any] },
         "Action" -> Action.map { x => x.asInstanceOf[js.Any] },
-        "CurrentApplyDate" -> CurrentApplyDate.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "AutoAppliedAfterDate" -> AutoAppliedAfterDate.map { x => x.asInstanceOf[js.Any] },
+        "CurrentApplyDate" -> CurrentApplyDate.map { x => x.asInstanceOf[js.Any] },
+        "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
+        "ForcedApplyDate" -> ForcedApplyDate.map { x => x.asInstanceOf[js.Any] },
+        "OptInStatus" -> OptInStatus.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PendingMaintenanceAction]
     }
@@ -3866,17 +3866,17 @@ package neptune {
    */
   @js.native
   trait PendingMaintenanceActionsMessage extends js.Object {
-    var PendingMaintenanceActions: js.UndefOr[PendingMaintenanceActions]
     var Marker: js.UndefOr[String]
+    var PendingMaintenanceActions: js.UndefOr[PendingMaintenanceActions]
   }
 
   object PendingMaintenanceActionsMessage {
     def apply(
-      PendingMaintenanceActions: js.UndefOr[PendingMaintenanceActions] = js.undefined,
-      Marker: js.UndefOr[String] = js.undefined): PendingMaintenanceActionsMessage = {
+      Marker: js.UndefOr[String] = js.undefined,
+      PendingMaintenanceActions: js.UndefOr[PendingMaintenanceActions] = js.undefined): PendingMaintenanceActionsMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "PendingMaintenanceActions" -> PendingMaintenanceActions.map { x => x.asInstanceOf[js.Any] },
-        "Marker" -> Marker.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Marker" -> Marker.map { x => x.asInstanceOf[js.Any] },
+        "PendingMaintenanceActions" -> PendingMaintenanceActions.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PendingMaintenanceActionsMessage]
     }
@@ -3887,53 +3887,53 @@ package neptune {
    */
   @js.native
   trait PendingModifiedValues extends js.Object {
+    var AllocatedStorage: js.UndefOr[IntegerOptional]
+    var BackupRetentionPeriod: js.UndefOr[IntegerOptional]
+    var CACertificateIdentifier: js.UndefOr[String]
     var DBInstanceClass: js.UndefOr[String]
+    var DBInstanceIdentifier: js.UndefOr[String]
+    var DBSubnetGroupName: js.UndefOr[String]
+    var EngineVersion: js.UndefOr[String]
+    var Iops: js.UndefOr[IntegerOptional]
+    var LicenseModel: js.UndefOr[String]
+    var MasterUserPassword: js.UndefOr[String]
     var MultiAZ: js.UndefOr[BooleanOptional]
     var PendingCloudwatchLogsExports: js.UndefOr[PendingCloudwatchLogsExports]
-    var AllocatedStorage: js.UndefOr[IntegerOptional]
-    var DBInstanceIdentifier: js.UndefOr[String]
-    var BackupRetentionPeriod: js.UndefOr[IntegerOptional]
-    var EngineVersion: js.UndefOr[String]
-    var DBSubnetGroupName: js.UndefOr[String]
     var Port: js.UndefOr[IntegerOptional]
-    var MasterUserPassword: js.UndefOr[String]
-    var Iops: js.UndefOr[IntegerOptional]
     var StorageType: js.UndefOr[String]
-    var CACertificateIdentifier: js.UndefOr[String]
-    var LicenseModel: js.UndefOr[String]
   }
 
   object PendingModifiedValues {
     def apply(
+      AllocatedStorage: js.UndefOr[IntegerOptional] = js.undefined,
+      BackupRetentionPeriod: js.UndefOr[IntegerOptional] = js.undefined,
+      CACertificateIdentifier: js.UndefOr[String] = js.undefined,
       DBInstanceClass: js.UndefOr[String] = js.undefined,
+      DBInstanceIdentifier: js.UndefOr[String] = js.undefined,
+      DBSubnetGroupName: js.UndefOr[String] = js.undefined,
+      EngineVersion: js.UndefOr[String] = js.undefined,
+      Iops: js.UndefOr[IntegerOptional] = js.undefined,
+      LicenseModel: js.UndefOr[String] = js.undefined,
+      MasterUserPassword: js.UndefOr[String] = js.undefined,
       MultiAZ: js.UndefOr[BooleanOptional] = js.undefined,
       PendingCloudwatchLogsExports: js.UndefOr[PendingCloudwatchLogsExports] = js.undefined,
-      AllocatedStorage: js.UndefOr[IntegerOptional] = js.undefined,
-      DBInstanceIdentifier: js.UndefOr[String] = js.undefined,
-      BackupRetentionPeriod: js.UndefOr[IntegerOptional] = js.undefined,
-      EngineVersion: js.UndefOr[String] = js.undefined,
-      DBSubnetGroupName: js.UndefOr[String] = js.undefined,
       Port: js.UndefOr[IntegerOptional] = js.undefined,
-      MasterUserPassword: js.UndefOr[String] = js.undefined,
-      Iops: js.UndefOr[IntegerOptional] = js.undefined,
-      StorageType: js.UndefOr[String] = js.undefined,
-      CACertificateIdentifier: js.UndefOr[String] = js.undefined,
-      LicenseModel: js.UndefOr[String] = js.undefined): PendingModifiedValues = {
+      StorageType: js.UndefOr[String] = js.undefined): PendingModifiedValues = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "AllocatedStorage" -> AllocatedStorage.map { x => x.asInstanceOf[js.Any] },
+        "BackupRetentionPeriod" -> BackupRetentionPeriod.map { x => x.asInstanceOf[js.Any] },
+        "CACertificateIdentifier" -> CACertificateIdentifier.map { x => x.asInstanceOf[js.Any] },
         "DBInstanceClass" -> DBInstanceClass.map { x => x.asInstanceOf[js.Any] },
+        "DBInstanceIdentifier" -> DBInstanceIdentifier.map { x => x.asInstanceOf[js.Any] },
+        "DBSubnetGroupName" -> DBSubnetGroupName.map { x => x.asInstanceOf[js.Any] },
+        "EngineVersion" -> EngineVersion.map { x => x.asInstanceOf[js.Any] },
+        "Iops" -> Iops.map { x => x.asInstanceOf[js.Any] },
+        "LicenseModel" -> LicenseModel.map { x => x.asInstanceOf[js.Any] },
+        "MasterUserPassword" -> MasterUserPassword.map { x => x.asInstanceOf[js.Any] },
         "MultiAZ" -> MultiAZ.map { x => x.asInstanceOf[js.Any] },
         "PendingCloudwatchLogsExports" -> PendingCloudwatchLogsExports.map { x => x.asInstanceOf[js.Any] },
-        "AllocatedStorage" -> AllocatedStorage.map { x => x.asInstanceOf[js.Any] },
-        "DBInstanceIdentifier" -> DBInstanceIdentifier.map { x => x.asInstanceOf[js.Any] },
-        "BackupRetentionPeriod" -> BackupRetentionPeriod.map { x => x.asInstanceOf[js.Any] },
-        "EngineVersion" -> EngineVersion.map { x => x.asInstanceOf[js.Any] },
-        "DBSubnetGroupName" -> DBSubnetGroupName.map { x => x.asInstanceOf[js.Any] },
         "Port" -> Port.map { x => x.asInstanceOf[js.Any] },
-        "MasterUserPassword" -> MasterUserPassword.map { x => x.asInstanceOf[js.Any] },
-        "Iops" -> Iops.map { x => x.asInstanceOf[js.Any] },
-        "StorageType" -> StorageType.map { x => x.asInstanceOf[js.Any] },
-        "CACertificateIdentifier" -> CACertificateIdentifier.map { x => x.asInstanceOf[js.Any] },
-        "LicenseModel" -> LicenseModel.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "StorageType" -> StorageType.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PendingModifiedValues]
     }
@@ -3944,14 +3944,14 @@ package neptune {
    */
   @js.native
   trait PromoteReadReplicaDBClusterMessage extends js.Object {
-    var DBClusterIdentifier: js.UndefOr[String]
+    var DBClusterIdentifier: String
   }
 
   object PromoteReadReplicaDBClusterMessage {
     def apply(
-      DBClusterIdentifier: js.UndefOr[String] = js.undefined): PromoteReadReplicaDBClusterMessage = {
+      DBClusterIdentifier: String): PromoteReadReplicaDBClusterMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "DBClusterIdentifier" -> DBClusterIdentifier.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "DBClusterIdentifier" -> DBClusterIdentifier.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PromoteReadReplicaDBClusterMessage]
     }
@@ -3986,19 +3986,19 @@ package neptune {
   @js.native
   trait Range extends js.Object {
     var From: js.UndefOr[Int]
-    var To: js.UndefOr[Int]
     var Step: js.UndefOr[IntegerOptional]
+    var To: js.UndefOr[Int]
   }
 
   object Range {
     def apply(
       From: js.UndefOr[Int] = js.undefined,
-      To: js.UndefOr[Int] = js.undefined,
-      Step: js.UndefOr[IntegerOptional] = js.undefined): Range = {
+      Step: js.UndefOr[IntegerOptional] = js.undefined,
+      To: js.UndefOr[Int] = js.undefined): Range = {
       val _fields = IndexedSeq[(String, js.Any)](
         "From" -> From.map { x => x.asInstanceOf[js.Any] },
-        "To" -> To.map { x => x.asInstanceOf[js.Any] },
-        "Step" -> Step.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Step" -> Step.map { x => x.asInstanceOf[js.Any] },
+        "To" -> To.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Range]
     }
@@ -4009,16 +4009,16 @@ package neptune {
    */
   @js.native
   trait RebootDBInstanceMessage extends js.Object {
-    var DBInstanceIdentifier: js.UndefOr[String]
+    var DBInstanceIdentifier: String
     var ForceFailover: js.UndefOr[BooleanOptional]
   }
 
   object RebootDBInstanceMessage {
     def apply(
-      DBInstanceIdentifier: js.UndefOr[String] = js.undefined,
+      DBInstanceIdentifier: String,
       ForceFailover: js.UndefOr[BooleanOptional] = js.undefined): RebootDBInstanceMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "DBInstanceIdentifier" -> DBInstanceIdentifier.map { x => x.asInstanceOf[js.Any] },
+        "DBInstanceIdentifier" -> DBInstanceIdentifier.asInstanceOf[js.Any],
         "ForceFailover" -> ForceFailover.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RebootDBInstanceMessage]
@@ -4042,17 +4042,17 @@ package neptune {
 
   @js.native
   trait RemoveRoleFromDBClusterMessage extends js.Object {
-    var DBClusterIdentifier: js.UndefOr[String]
-    var RoleArn: js.UndefOr[String]
+    var DBClusterIdentifier: String
+    var RoleArn: String
   }
 
   object RemoveRoleFromDBClusterMessage {
     def apply(
-      DBClusterIdentifier: js.UndefOr[String] = js.undefined,
-      RoleArn: js.UndefOr[String] = js.undefined): RemoveRoleFromDBClusterMessage = {
+      DBClusterIdentifier: String,
+      RoleArn: String): RemoveRoleFromDBClusterMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "DBClusterIdentifier" -> DBClusterIdentifier.map { x => x.asInstanceOf[js.Any] },
-        "RoleArn" -> RoleArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "DBClusterIdentifier" -> DBClusterIdentifier.asInstanceOf[js.Any],
+        "RoleArn" -> RoleArn.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RemoveRoleFromDBClusterMessage]
     }
@@ -4063,17 +4063,17 @@ package neptune {
    */
   @js.native
   trait RemoveSourceIdentifierFromSubscriptionMessage extends js.Object {
-    var SubscriptionName: js.UndefOr[String]
-    var SourceIdentifier: js.UndefOr[String]
+    var SourceIdentifier: String
+    var SubscriptionName: String
   }
 
   object RemoveSourceIdentifierFromSubscriptionMessage {
     def apply(
-      SubscriptionName: js.UndefOr[String] = js.undefined,
-      SourceIdentifier: js.UndefOr[String] = js.undefined): RemoveSourceIdentifierFromSubscriptionMessage = {
+      SourceIdentifier: String,
+      SubscriptionName: String): RemoveSourceIdentifierFromSubscriptionMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "SubscriptionName" -> SubscriptionName.map { x => x.asInstanceOf[js.Any] },
-        "SourceIdentifier" -> SourceIdentifier.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "SourceIdentifier" -> SourceIdentifier.asInstanceOf[js.Any],
+        "SubscriptionName" -> SubscriptionName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RemoveSourceIdentifierFromSubscriptionMessage]
     }
@@ -4099,17 +4099,17 @@ package neptune {
    */
   @js.native
   trait RemoveTagsFromResourceMessage extends js.Object {
-    var ResourceName: js.UndefOr[String]
-    var TagKeys: js.UndefOr[KeyList]
+    var ResourceName: String
+    var TagKeys: KeyList
   }
 
   object RemoveTagsFromResourceMessage {
     def apply(
-      ResourceName: js.UndefOr[String] = js.undefined,
-      TagKeys: js.UndefOr[KeyList] = js.undefined): RemoveTagsFromResourceMessage = {
+      ResourceName: String,
+      TagKeys: KeyList): RemoveTagsFromResourceMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ResourceName" -> ResourceName.map { x => x.asInstanceOf[js.Any] },
-        "TagKeys" -> TagKeys.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ResourceName" -> ResourceName.asInstanceOf[js.Any],
+        "TagKeys" -> TagKeys.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RemoveTagsFromResourceMessage]
     }
@@ -4120,20 +4120,20 @@ package neptune {
    */
   @js.native
   trait ResetDBClusterParameterGroupMessage extends js.Object {
-    var DBClusterParameterGroupName: js.UndefOr[String]
-    var ResetAllParameters: js.UndefOr[Boolean]
+    var DBClusterParameterGroupName: String
     var Parameters: js.UndefOr[ParametersList]
+    var ResetAllParameters: js.UndefOr[Boolean]
   }
 
   object ResetDBClusterParameterGroupMessage {
     def apply(
-      DBClusterParameterGroupName: js.UndefOr[String] = js.undefined,
-      ResetAllParameters: js.UndefOr[Boolean] = js.undefined,
-      Parameters: js.UndefOr[ParametersList] = js.undefined): ResetDBClusterParameterGroupMessage = {
+      DBClusterParameterGroupName: String,
+      Parameters: js.UndefOr[ParametersList] = js.undefined,
+      ResetAllParameters: js.UndefOr[Boolean] = js.undefined): ResetDBClusterParameterGroupMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "DBClusterParameterGroupName" -> DBClusterParameterGroupName.map { x => x.asInstanceOf[js.Any] },
-        "ResetAllParameters" -> ResetAllParameters.map { x => x.asInstanceOf[js.Any] },
-        "Parameters" -> Parameters.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "DBClusterParameterGroupName" -> DBClusterParameterGroupName.asInstanceOf[js.Any],
+        "Parameters" -> Parameters.map { x => x.asInstanceOf[js.Any] },
+        "ResetAllParameters" -> ResetAllParameters.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ResetDBClusterParameterGroupMessage]
     }
@@ -4144,20 +4144,20 @@ package neptune {
    */
   @js.native
   trait ResetDBParameterGroupMessage extends js.Object {
-    var DBParameterGroupName: js.UndefOr[String]
-    var ResetAllParameters: js.UndefOr[Boolean]
+    var DBParameterGroupName: String
     var Parameters: js.UndefOr[ParametersList]
+    var ResetAllParameters: js.UndefOr[Boolean]
   }
 
   object ResetDBParameterGroupMessage {
     def apply(
-      DBParameterGroupName: js.UndefOr[String] = js.undefined,
-      ResetAllParameters: js.UndefOr[Boolean] = js.undefined,
-      Parameters: js.UndefOr[ParametersList] = js.undefined): ResetDBParameterGroupMessage = {
+      DBParameterGroupName: String,
+      Parameters: js.UndefOr[ParametersList] = js.undefined,
+      ResetAllParameters: js.UndefOr[Boolean] = js.undefined): ResetDBParameterGroupMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "DBParameterGroupName" -> DBParameterGroupName.map { x => x.asInstanceOf[js.Any] },
-        "ResetAllParameters" -> ResetAllParameters.map { x => x.asInstanceOf[js.Any] },
-        "Parameters" -> Parameters.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "DBParameterGroupName" -> DBParameterGroupName.asInstanceOf[js.Any],
+        "Parameters" -> Parameters.map { x => x.asInstanceOf[js.Any] },
+        "ResetAllParameters" -> ResetAllParameters.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ResetDBParameterGroupMessage]
     }
@@ -4176,17 +4176,17 @@ package neptune {
    */
   @js.native
   trait ResourcePendingMaintenanceActions extends js.Object {
-    var ResourceIdentifier: js.UndefOr[String]
     var PendingMaintenanceActionDetails: js.UndefOr[PendingMaintenanceActionDetails]
+    var ResourceIdentifier: js.UndefOr[String]
   }
 
   object ResourcePendingMaintenanceActions {
     def apply(
-      ResourceIdentifier: js.UndefOr[String] = js.undefined,
-      PendingMaintenanceActionDetails: js.UndefOr[PendingMaintenanceActionDetails] = js.undefined): ResourcePendingMaintenanceActions = {
+      PendingMaintenanceActionDetails: js.UndefOr[PendingMaintenanceActionDetails] = js.undefined,
+      ResourceIdentifier: js.UndefOr[String] = js.undefined): ResourcePendingMaintenanceActions = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ResourceIdentifier" -> ResourceIdentifier.map { x => x.asInstanceOf[js.Any] },
-        "PendingMaintenanceActionDetails" -> PendingMaintenanceActionDetails.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "PendingMaintenanceActionDetails" -> PendingMaintenanceActionDetails.map { x => x.asInstanceOf[js.Any] },
+        "ResourceIdentifier" -> ResourceIdentifier.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ResourcePendingMaintenanceActions]
     }
@@ -4197,50 +4197,50 @@ package neptune {
    */
   @js.native
   trait RestoreDBClusterFromSnapshotMessage extends js.Object {
-    var DBClusterIdentifier: js.UndefOr[String]
-    var Engine: js.UndefOr[String]
-    var OptionGroupName: js.UndefOr[String]
-    var DatabaseName: js.UndefOr[String]
-    var KmsKeyId: js.UndefOr[String]
-    var VpcSecurityGroupIds: js.UndefOr[VpcSecurityGroupIdList]
-    var EngineVersion: js.UndefOr[String]
-    var DBSubnetGroupName: js.UndefOr[String]
-    var Port: js.UndefOr[IntegerOptional]
-    var EnableIAMDatabaseAuthentication: js.UndefOr[BooleanOptional]
-    var Tags: js.UndefOr[TagList]
-    var SnapshotIdentifier: js.UndefOr[String]
+    var DBClusterIdentifier: String
+    var Engine: String
+    var SnapshotIdentifier: String
     var AvailabilityZones: js.UndefOr[AvailabilityZones]
+    var DBSubnetGroupName: js.UndefOr[String]
+    var DatabaseName: js.UndefOr[String]
+    var EnableIAMDatabaseAuthentication: js.UndefOr[BooleanOptional]
+    var EngineVersion: js.UndefOr[String]
+    var KmsKeyId: js.UndefOr[String]
+    var OptionGroupName: js.UndefOr[String]
+    var Port: js.UndefOr[IntegerOptional]
+    var Tags: js.UndefOr[TagList]
+    var VpcSecurityGroupIds: js.UndefOr[VpcSecurityGroupIdList]
   }
 
   object RestoreDBClusterFromSnapshotMessage {
     def apply(
-      DBClusterIdentifier: js.UndefOr[String] = js.undefined,
-      Engine: js.UndefOr[String] = js.undefined,
-      OptionGroupName: js.UndefOr[String] = js.undefined,
-      DatabaseName: js.UndefOr[String] = js.undefined,
-      KmsKeyId: js.UndefOr[String] = js.undefined,
-      VpcSecurityGroupIds: js.UndefOr[VpcSecurityGroupIdList] = js.undefined,
-      EngineVersion: js.UndefOr[String] = js.undefined,
+      DBClusterIdentifier: String,
+      Engine: String,
+      SnapshotIdentifier: String,
+      AvailabilityZones: js.UndefOr[AvailabilityZones] = js.undefined,
       DBSubnetGroupName: js.UndefOr[String] = js.undefined,
-      Port: js.UndefOr[IntegerOptional] = js.undefined,
+      DatabaseName: js.UndefOr[String] = js.undefined,
       EnableIAMDatabaseAuthentication: js.UndefOr[BooleanOptional] = js.undefined,
+      EngineVersion: js.UndefOr[String] = js.undefined,
+      KmsKeyId: js.UndefOr[String] = js.undefined,
+      OptionGroupName: js.UndefOr[String] = js.undefined,
+      Port: js.UndefOr[IntegerOptional] = js.undefined,
       Tags: js.UndefOr[TagList] = js.undefined,
-      SnapshotIdentifier: js.UndefOr[String] = js.undefined,
-      AvailabilityZones: js.UndefOr[AvailabilityZones] = js.undefined): RestoreDBClusterFromSnapshotMessage = {
+      VpcSecurityGroupIds: js.UndefOr[VpcSecurityGroupIdList] = js.undefined): RestoreDBClusterFromSnapshotMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "DBClusterIdentifier" -> DBClusterIdentifier.map { x => x.asInstanceOf[js.Any] },
-        "Engine" -> Engine.map { x => x.asInstanceOf[js.Any] },
-        "OptionGroupName" -> OptionGroupName.map { x => x.asInstanceOf[js.Any] },
-        "DatabaseName" -> DatabaseName.map { x => x.asInstanceOf[js.Any] },
-        "KmsKeyId" -> KmsKeyId.map { x => x.asInstanceOf[js.Any] },
-        "VpcSecurityGroupIds" -> VpcSecurityGroupIds.map { x => x.asInstanceOf[js.Any] },
-        "EngineVersion" -> EngineVersion.map { x => x.asInstanceOf[js.Any] },
+        "DBClusterIdentifier" -> DBClusterIdentifier.asInstanceOf[js.Any],
+        "Engine" -> Engine.asInstanceOf[js.Any],
+        "SnapshotIdentifier" -> SnapshotIdentifier.asInstanceOf[js.Any],
+        "AvailabilityZones" -> AvailabilityZones.map { x => x.asInstanceOf[js.Any] },
         "DBSubnetGroupName" -> DBSubnetGroupName.map { x => x.asInstanceOf[js.Any] },
-        "Port" -> Port.map { x => x.asInstanceOf[js.Any] },
+        "DatabaseName" -> DatabaseName.map { x => x.asInstanceOf[js.Any] },
         "EnableIAMDatabaseAuthentication" -> EnableIAMDatabaseAuthentication.map { x => x.asInstanceOf[js.Any] },
+        "EngineVersion" -> EngineVersion.map { x => x.asInstanceOf[js.Any] },
+        "KmsKeyId" -> KmsKeyId.map { x => x.asInstanceOf[js.Any] },
+        "OptionGroupName" -> OptionGroupName.map { x => x.asInstanceOf[js.Any] },
+        "Port" -> Port.map { x => x.asInstanceOf[js.Any] },
         "Tags" -> Tags.map { x => x.asInstanceOf[js.Any] },
-        "SnapshotIdentifier" -> SnapshotIdentifier.map { x => x.asInstanceOf[js.Any] },
-        "AvailabilityZones" -> AvailabilityZones.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "VpcSecurityGroupIds" -> VpcSecurityGroupIds.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RestoreDBClusterFromSnapshotMessage]
     }
@@ -4266,47 +4266,47 @@ package neptune {
    */
   @js.native
   trait RestoreDBClusterToPointInTimeMessage extends js.Object {
-    var DBClusterIdentifier: js.UndefOr[String]
-    var OptionGroupName: js.UndefOr[String]
-    var KmsKeyId: js.UndefOr[String]
-    var VpcSecurityGroupIds: js.UndefOr[VpcSecurityGroupIdList]
+    var DBClusterIdentifier: String
+    var SourceDBClusterIdentifier: String
     var DBSubnetGroupName: js.UndefOr[String]
-    var Port: js.UndefOr[IntegerOptional]
     var EnableIAMDatabaseAuthentication: js.UndefOr[BooleanOptional]
-    var RestoreType: js.UndefOr[String]
-    var UseLatestRestorableTime: js.UndefOr[Boolean]
-    var Tags: js.UndefOr[TagList]
-    var SourceDBClusterIdentifier: js.UndefOr[String]
+    var KmsKeyId: js.UndefOr[String]
+    var OptionGroupName: js.UndefOr[String]
+    var Port: js.UndefOr[IntegerOptional]
     var RestoreToTime: js.UndefOr[TStamp]
+    var RestoreType: js.UndefOr[String]
+    var Tags: js.UndefOr[TagList]
+    var UseLatestRestorableTime: js.UndefOr[Boolean]
+    var VpcSecurityGroupIds: js.UndefOr[VpcSecurityGroupIdList]
   }
 
   object RestoreDBClusterToPointInTimeMessage {
     def apply(
-      DBClusterIdentifier: js.UndefOr[String] = js.undefined,
-      OptionGroupName: js.UndefOr[String] = js.undefined,
-      KmsKeyId: js.UndefOr[String] = js.undefined,
-      VpcSecurityGroupIds: js.UndefOr[VpcSecurityGroupIdList] = js.undefined,
+      DBClusterIdentifier: String,
+      SourceDBClusterIdentifier: String,
       DBSubnetGroupName: js.UndefOr[String] = js.undefined,
-      Port: js.UndefOr[IntegerOptional] = js.undefined,
       EnableIAMDatabaseAuthentication: js.UndefOr[BooleanOptional] = js.undefined,
+      KmsKeyId: js.UndefOr[String] = js.undefined,
+      OptionGroupName: js.UndefOr[String] = js.undefined,
+      Port: js.UndefOr[IntegerOptional] = js.undefined,
+      RestoreToTime: js.UndefOr[TStamp] = js.undefined,
       RestoreType: js.UndefOr[String] = js.undefined,
-      UseLatestRestorableTime: js.UndefOr[Boolean] = js.undefined,
       Tags: js.UndefOr[TagList] = js.undefined,
-      SourceDBClusterIdentifier: js.UndefOr[String] = js.undefined,
-      RestoreToTime: js.UndefOr[TStamp] = js.undefined): RestoreDBClusterToPointInTimeMessage = {
+      UseLatestRestorableTime: js.UndefOr[Boolean] = js.undefined,
+      VpcSecurityGroupIds: js.UndefOr[VpcSecurityGroupIdList] = js.undefined): RestoreDBClusterToPointInTimeMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "DBClusterIdentifier" -> DBClusterIdentifier.map { x => x.asInstanceOf[js.Any] },
-        "OptionGroupName" -> OptionGroupName.map { x => x.asInstanceOf[js.Any] },
-        "KmsKeyId" -> KmsKeyId.map { x => x.asInstanceOf[js.Any] },
-        "VpcSecurityGroupIds" -> VpcSecurityGroupIds.map { x => x.asInstanceOf[js.Any] },
+        "DBClusterIdentifier" -> DBClusterIdentifier.asInstanceOf[js.Any],
+        "SourceDBClusterIdentifier" -> SourceDBClusterIdentifier.asInstanceOf[js.Any],
         "DBSubnetGroupName" -> DBSubnetGroupName.map { x => x.asInstanceOf[js.Any] },
-        "Port" -> Port.map { x => x.asInstanceOf[js.Any] },
         "EnableIAMDatabaseAuthentication" -> EnableIAMDatabaseAuthentication.map { x => x.asInstanceOf[js.Any] },
+        "KmsKeyId" -> KmsKeyId.map { x => x.asInstanceOf[js.Any] },
+        "OptionGroupName" -> OptionGroupName.map { x => x.asInstanceOf[js.Any] },
+        "Port" -> Port.map { x => x.asInstanceOf[js.Any] },
+        "RestoreToTime" -> RestoreToTime.map { x => x.asInstanceOf[js.Any] },
         "RestoreType" -> RestoreType.map { x => x.asInstanceOf[js.Any] },
-        "UseLatestRestorableTime" -> UseLatestRestorableTime.map { x => x.asInstanceOf[js.Any] },
         "Tags" -> Tags.map { x => x.asInstanceOf[js.Any] },
-        "SourceDBClusterIdentifier" -> SourceDBClusterIdentifier.map { x => x.asInstanceOf[js.Any] },
-        "RestoreToTime" -> RestoreToTime.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "UseLatestRestorableTime" -> UseLatestRestorableTime.map { x => x.asInstanceOf[js.Any] },
+        "VpcSecurityGroupIds" -> VpcSecurityGroupIds.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RestoreDBClusterToPointInTimeMessage]
     }
@@ -4395,19 +4395,19 @@ package neptune {
    */
   @js.native
   trait Subnet extends js.Object {
-    var SubnetIdentifier: js.UndefOr[String]
     var SubnetAvailabilityZone: js.UndefOr[AvailabilityZone]
+    var SubnetIdentifier: js.UndefOr[String]
     var SubnetStatus: js.UndefOr[String]
   }
 
   object Subnet {
     def apply(
-      SubnetIdentifier: js.UndefOr[String] = js.undefined,
       SubnetAvailabilityZone: js.UndefOr[AvailabilityZone] = js.undefined,
+      SubnetIdentifier: js.UndefOr[String] = js.undefined,
       SubnetStatus: js.UndefOr[String] = js.undefined): Subnet = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "SubnetIdentifier" -> SubnetIdentifier.map { x => x.asInstanceOf[js.Any] },
         "SubnetAvailabilityZone" -> SubnetAvailabilityZone.map { x => x.asInstanceOf[js.Any] },
+        "SubnetIdentifier" -> SubnetIdentifier.map { x => x.asInstanceOf[js.Any] },
         "SubnetStatus" -> SubnetStatus.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Subnet]
@@ -4499,24 +4499,24 @@ package neptune {
    */
   @js.native
   trait UpgradeTarget extends js.Object {
-    var Engine: js.UndefOr[String]
     var AutoUpgrade: js.UndefOr[Boolean]
     var Description: js.UndefOr[String]
+    var Engine: js.UndefOr[String]
     var EngineVersion: js.UndefOr[String]
     var IsMajorVersionUpgrade: js.UndefOr[Boolean]
   }
 
   object UpgradeTarget {
     def apply(
-      Engine: js.UndefOr[String] = js.undefined,
       AutoUpgrade: js.UndefOr[Boolean] = js.undefined,
       Description: js.UndefOr[String] = js.undefined,
+      Engine: js.UndefOr[String] = js.undefined,
       EngineVersion: js.UndefOr[String] = js.undefined,
       IsMajorVersionUpgrade: js.UndefOr[Boolean] = js.undefined): UpgradeTarget = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Engine" -> Engine.map { x => x.asInstanceOf[js.Any] },
         "AutoUpgrade" -> AutoUpgrade.map { x => x.asInstanceOf[js.Any] },
         "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
+        "Engine" -> Engine.map { x => x.asInstanceOf[js.Any] },
         "EngineVersion" -> EngineVersion.map { x => x.asInstanceOf[js.Any] },
         "IsMajorVersionUpgrade" -> IsMajorVersionUpgrade.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
@@ -4547,23 +4547,23 @@ package neptune {
    */
   @js.native
   trait ValidStorageOptions extends js.Object {
-    var StorageType: js.UndefOr[String]
-    var StorageSize: js.UndefOr[RangeList]
-    var ProvisionedIops: js.UndefOr[RangeList]
     var IopsToStorageRatio: js.UndefOr[DoubleRangeList]
+    var ProvisionedIops: js.UndefOr[RangeList]
+    var StorageSize: js.UndefOr[RangeList]
+    var StorageType: js.UndefOr[String]
   }
 
   object ValidStorageOptions {
     def apply(
-      StorageType: js.UndefOr[String] = js.undefined,
-      StorageSize: js.UndefOr[RangeList] = js.undefined,
+      IopsToStorageRatio: js.UndefOr[DoubleRangeList] = js.undefined,
       ProvisionedIops: js.UndefOr[RangeList] = js.undefined,
-      IopsToStorageRatio: js.UndefOr[DoubleRangeList] = js.undefined): ValidStorageOptions = {
+      StorageSize: js.UndefOr[RangeList] = js.undefined,
+      StorageType: js.UndefOr[String] = js.undefined): ValidStorageOptions = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "StorageType" -> StorageType.map { x => x.asInstanceOf[js.Any] },
-        "StorageSize" -> StorageSize.map { x => x.asInstanceOf[js.Any] },
+        "IopsToStorageRatio" -> IopsToStorageRatio.map { x => x.asInstanceOf[js.Any] },
         "ProvisionedIops" -> ProvisionedIops.map { x => x.asInstanceOf[js.Any] },
-        "IopsToStorageRatio" -> IopsToStorageRatio.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "StorageSize" -> StorageSize.map { x => x.asInstanceOf[js.Any] },
+        "StorageType" -> StorageType.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ValidStorageOptions]
     }
@@ -4574,17 +4574,17 @@ package neptune {
    */
   @js.native
   trait VpcSecurityGroupMembership extends js.Object {
-    var VpcSecurityGroupId: js.UndefOr[String]
     var Status: js.UndefOr[String]
+    var VpcSecurityGroupId: js.UndefOr[String]
   }
 
   object VpcSecurityGroupMembership {
     def apply(
-      VpcSecurityGroupId: js.UndefOr[String] = js.undefined,
-      Status: js.UndefOr[String] = js.undefined): VpcSecurityGroupMembership = {
+      Status: js.UndefOr[String] = js.undefined,
+      VpcSecurityGroupId: js.UndefOr[String] = js.undefined): VpcSecurityGroupMembership = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "VpcSecurityGroupId" -> VpcSecurityGroupId.map { x => x.asInstanceOf[js.Any] },
-        "Status" -> Status.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Status" -> Status.map { x => x.asInstanceOf[js.Any] },
+        "VpcSecurityGroupId" -> VpcSecurityGroupId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[VpcSecurityGroupMembership]
     }

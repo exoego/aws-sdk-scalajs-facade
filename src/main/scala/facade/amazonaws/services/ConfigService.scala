@@ -173,18 +173,18 @@ package configservice {
    */
   @js.native
   trait AccountAggregationSource extends js.Object {
-    var AccountIds: js.UndefOr[AccountAggregationSourceAccountList]
+    var AccountIds: AccountAggregationSourceAccountList
     var AllAwsRegions: js.UndefOr[Boolean]
     var AwsRegions: js.UndefOr[AggregatorRegionList]
   }
 
   object AccountAggregationSource {
     def apply(
-      AccountIds: js.UndefOr[AccountAggregationSourceAccountList] = js.undefined,
+      AccountIds: AccountAggregationSourceAccountList,
       AllAwsRegions: js.UndefOr[Boolean] = js.undefined,
       AwsRegions: js.UndefOr[AggregatorRegionList] = js.undefined): AccountAggregationSource = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "AccountIds" -> AccountIds.map { x => x.asInstanceOf[js.Any] },
+        "AccountIds" -> AccountIds.asInstanceOf[js.Any],
         "AllAwsRegions" -> AllAwsRegions.map { x => x.asInstanceOf[js.Any] },
         "AwsRegions" -> AwsRegions.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
@@ -197,23 +197,23 @@ package configservice {
    */
   @js.native
   trait AggregateComplianceByConfigRule extends js.Object {
-    var ConfigRuleName: js.UndefOr[ConfigRuleName]
-    var Compliance: js.UndefOr[Compliance]
     var AccountId: js.UndefOr[AccountId]
     var AwsRegion: js.UndefOr[AwsRegion]
+    var Compliance: js.UndefOr[Compliance]
+    var ConfigRuleName: js.UndefOr[ConfigRuleName]
   }
 
   object AggregateComplianceByConfigRule {
     def apply(
-      ConfigRuleName: js.UndefOr[ConfigRuleName] = js.undefined,
-      Compliance: js.UndefOr[Compliance] = js.undefined,
       AccountId: js.UndefOr[AccountId] = js.undefined,
-      AwsRegion: js.UndefOr[AwsRegion] = js.undefined): AggregateComplianceByConfigRule = {
+      AwsRegion: js.UndefOr[AwsRegion] = js.undefined,
+      Compliance: js.UndefOr[Compliance] = js.undefined,
+      ConfigRuleName: js.UndefOr[ConfigRuleName] = js.undefined): AggregateComplianceByConfigRule = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ConfigRuleName" -> ConfigRuleName.map { x => x.asInstanceOf[js.Any] },
-        "Compliance" -> Compliance.map { x => x.asInstanceOf[js.Any] },
         "AccountId" -> AccountId.map { x => x.asInstanceOf[js.Any] },
-        "AwsRegion" -> AwsRegion.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "AwsRegion" -> AwsRegion.map { x => x.asInstanceOf[js.Any] },
+        "Compliance" -> Compliance.map { x => x.asInstanceOf[js.Any] },
+        "ConfigRuleName" -> ConfigRuleName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AggregateComplianceByConfigRule]
     }
@@ -224,17 +224,17 @@ package configservice {
    */
   @js.native
   trait AggregateComplianceCount extends js.Object {
-    var GroupName: js.UndefOr[StringWithCharLimit256]
     var ComplianceSummary: js.UndefOr[ComplianceSummary]
+    var GroupName: js.UndefOr[StringWithCharLimit256]
   }
 
   object AggregateComplianceCount {
     def apply(
-      GroupName: js.UndefOr[StringWithCharLimit256] = js.undefined,
-      ComplianceSummary: js.UndefOr[ComplianceSummary] = js.undefined): AggregateComplianceCount = {
+      ComplianceSummary: js.UndefOr[ComplianceSummary] = js.undefined,
+      GroupName: js.UndefOr[StringWithCharLimit256] = js.undefined): AggregateComplianceCount = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "GroupName" -> GroupName.map { x => x.asInstanceOf[js.Any] },
-        "ComplianceSummary" -> ComplianceSummary.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ComplianceSummary" -> ComplianceSummary.map { x => x.asInstanceOf[js.Any] },
+        "GroupName" -> GroupName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AggregateComplianceCount]
     }
@@ -245,32 +245,32 @@ package configservice {
    */
   @js.native
   trait AggregateEvaluationResult extends js.Object {
-    var ConfigRuleInvokedTime: js.UndefOr[Date]
-    var AwsRegion: js.UndefOr[AwsRegion]
-    var EvaluationResultIdentifier: js.UndefOr[EvaluationResultIdentifier]
-    var Annotation: js.UndefOr[StringWithCharLimit256]
-    var ComplianceType: js.UndefOr[ComplianceType]
-    var ResultRecordedTime: js.UndefOr[Date]
     var AccountId: js.UndefOr[AccountId]
+    var Annotation: js.UndefOr[StringWithCharLimit256]
+    var AwsRegion: js.UndefOr[AwsRegion]
+    var ComplianceType: js.UndefOr[ComplianceType]
+    var ConfigRuleInvokedTime: js.UndefOr[Date]
+    var EvaluationResultIdentifier: js.UndefOr[EvaluationResultIdentifier]
+    var ResultRecordedTime: js.UndefOr[Date]
   }
 
   object AggregateEvaluationResult {
     def apply(
-      ConfigRuleInvokedTime: js.UndefOr[Date] = js.undefined,
-      AwsRegion: js.UndefOr[AwsRegion] = js.undefined,
-      EvaluationResultIdentifier: js.UndefOr[EvaluationResultIdentifier] = js.undefined,
+      AccountId: js.UndefOr[AccountId] = js.undefined,
       Annotation: js.UndefOr[StringWithCharLimit256] = js.undefined,
+      AwsRegion: js.UndefOr[AwsRegion] = js.undefined,
       ComplianceType: js.UndefOr[ComplianceType] = js.undefined,
-      ResultRecordedTime: js.UndefOr[Date] = js.undefined,
-      AccountId: js.UndefOr[AccountId] = js.undefined): AggregateEvaluationResult = {
+      ConfigRuleInvokedTime: js.UndefOr[Date] = js.undefined,
+      EvaluationResultIdentifier: js.UndefOr[EvaluationResultIdentifier] = js.undefined,
+      ResultRecordedTime: js.UndefOr[Date] = js.undefined): AggregateEvaluationResult = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ConfigRuleInvokedTime" -> ConfigRuleInvokedTime.map { x => x.asInstanceOf[js.Any] },
-        "AwsRegion" -> AwsRegion.map { x => x.asInstanceOf[js.Any] },
-        "EvaluationResultIdentifier" -> EvaluationResultIdentifier.map { x => x.asInstanceOf[js.Any] },
+        "AccountId" -> AccountId.map { x => x.asInstanceOf[js.Any] },
         "Annotation" -> Annotation.map { x => x.asInstanceOf[js.Any] },
+        "AwsRegion" -> AwsRegion.map { x => x.asInstanceOf[js.Any] },
         "ComplianceType" -> ComplianceType.map { x => x.asInstanceOf[js.Any] },
-        "ResultRecordedTime" -> ResultRecordedTime.map { x => x.asInstanceOf[js.Any] },
-        "AccountId" -> AccountId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ConfigRuleInvokedTime" -> ConfigRuleInvokedTime.map { x => x.asInstanceOf[js.Any] },
+        "EvaluationResultIdentifier" -> EvaluationResultIdentifier.map { x => x.asInstanceOf[js.Any] },
+        "ResultRecordedTime" -> ResultRecordedTime.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AggregateEvaluationResult]
     }
@@ -281,26 +281,26 @@ package configservice {
    */
   @js.native
   trait AggregateResourceIdentifier extends js.Object {
-    var SourceRegion: js.UndefOr[AwsRegion]
+    var ResourceId: ResourceId
+    var ResourceType: ResourceType
+    var SourceAccountId: AccountId
+    var SourceRegion: AwsRegion
     var ResourceName: js.UndefOr[ResourceName]
-    var ResourceId: js.UndefOr[ResourceId]
-    var SourceAccountId: js.UndefOr[AccountId]
-    var ResourceType: js.UndefOr[ResourceType]
   }
 
   object AggregateResourceIdentifier {
     def apply(
-      SourceRegion: js.UndefOr[AwsRegion] = js.undefined,
-      ResourceName: js.UndefOr[ResourceName] = js.undefined,
-      ResourceId: js.UndefOr[ResourceId] = js.undefined,
-      SourceAccountId: js.UndefOr[AccountId] = js.undefined,
-      ResourceType: js.UndefOr[ResourceType] = js.undefined): AggregateResourceIdentifier = {
+      ResourceId: ResourceId,
+      ResourceType: ResourceType,
+      SourceAccountId: AccountId,
+      SourceRegion: AwsRegion,
+      ResourceName: js.UndefOr[ResourceName] = js.undefined): AggregateResourceIdentifier = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "SourceRegion" -> SourceRegion.map { x => x.asInstanceOf[js.Any] },
-        "ResourceName" -> ResourceName.map { x => x.asInstanceOf[js.Any] },
-        "ResourceId" -> ResourceId.map { x => x.asInstanceOf[js.Any] },
-        "SourceAccountId" -> SourceAccountId.map { x => x.asInstanceOf[js.Any] },
-        "ResourceType" -> ResourceType.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ResourceId" -> ResourceId.asInstanceOf[js.Any],
+        "ResourceType" -> ResourceType.asInstanceOf[js.Any],
+        "SourceAccountId" -> SourceAccountId.asInstanceOf[js.Any],
+        "SourceRegion" -> SourceRegion.asInstanceOf[js.Any],
+        "ResourceName" -> ResourceName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AggregateResourceIdentifier]
     }
@@ -312,30 +312,30 @@ package configservice {
   @js.native
   trait AggregatedSourceStatus extends js.Object {
     var AwsRegion: js.UndefOr[AwsRegion]
-    var LastUpdateTime: js.UndefOr[Date]
-    var LastUpdateStatus: js.UndefOr[AggregatedSourceStatusType]
     var LastErrorCode: js.UndefOr[String]
-    var SourceId: js.UndefOr[String]
     var LastErrorMessage: js.UndefOr[String]
+    var LastUpdateStatus: js.UndefOr[AggregatedSourceStatusType]
+    var LastUpdateTime: js.UndefOr[Date]
+    var SourceId: js.UndefOr[String]
     var SourceType: js.UndefOr[AggregatedSourceType]
   }
 
   object AggregatedSourceStatus {
     def apply(
       AwsRegion: js.UndefOr[AwsRegion] = js.undefined,
-      LastUpdateTime: js.UndefOr[Date] = js.undefined,
-      LastUpdateStatus: js.UndefOr[AggregatedSourceStatusType] = js.undefined,
       LastErrorCode: js.UndefOr[String] = js.undefined,
-      SourceId: js.UndefOr[String] = js.undefined,
       LastErrorMessage: js.UndefOr[String] = js.undefined,
+      LastUpdateStatus: js.UndefOr[AggregatedSourceStatusType] = js.undefined,
+      LastUpdateTime: js.UndefOr[Date] = js.undefined,
+      SourceId: js.UndefOr[String] = js.undefined,
       SourceType: js.UndefOr[AggregatedSourceType] = js.undefined): AggregatedSourceStatus = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AwsRegion" -> AwsRegion.map { x => x.asInstanceOf[js.Any] },
-        "LastUpdateTime" -> LastUpdateTime.map { x => x.asInstanceOf[js.Any] },
-        "LastUpdateStatus" -> LastUpdateStatus.map { x => x.asInstanceOf[js.Any] },
         "LastErrorCode" -> LastErrorCode.map { x => x.asInstanceOf[js.Any] },
-        "SourceId" -> SourceId.map { x => x.asInstanceOf[js.Any] },
         "LastErrorMessage" -> LastErrorMessage.map { x => x.asInstanceOf[js.Any] },
+        "LastUpdateStatus" -> LastUpdateStatus.map { x => x.asInstanceOf[js.Any] },
+        "LastUpdateTime" -> LastUpdateTime.map { x => x.asInstanceOf[js.Any] },
+        "SourceId" -> SourceId.map { x => x.asInstanceOf[js.Any] },
         "SourceType" -> SourceType.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AggregatedSourceStatus]
@@ -389,53 +389,53 @@ package configservice {
    */
   @js.native
   trait BaseConfigurationItem extends js.Object {
-    var resourceId: js.UndefOr[ResourceId]
-    var arn: js.UndefOr[ARN]
-    var resourceType: js.UndefOr[ResourceType]
-    var availabilityZone: js.UndefOr[AvailabilityZone]
     var accountId: js.UndefOr[AccountId]
-    var supplementaryConfiguration: js.UndefOr[SupplementaryConfiguration]
-    var configurationItemCaptureTime: js.UndefOr[ConfigurationItemCaptureTime]
-    var resourceName: js.UndefOr[ResourceName]
-    var version: js.UndefOr[Version]
+    var arn: js.UndefOr[ARN]
+    var availabilityZone: js.UndefOr[AvailabilityZone]
     var awsRegion: js.UndefOr[AwsRegion]
-    var resourceCreationTime: js.UndefOr[ResourceCreationTime]
     var configuration: js.UndefOr[Configuration]
+    var configurationItemCaptureTime: js.UndefOr[ConfigurationItemCaptureTime]
     var configurationItemStatus: js.UndefOr[ConfigurationItemStatus]
     var configurationStateId: js.UndefOr[ConfigurationStateId]
+    var resourceCreationTime: js.UndefOr[ResourceCreationTime]
+    var resourceId: js.UndefOr[ResourceId]
+    var resourceName: js.UndefOr[ResourceName]
+    var resourceType: js.UndefOr[ResourceType]
+    var supplementaryConfiguration: js.UndefOr[SupplementaryConfiguration]
+    var version: js.UndefOr[Version]
   }
 
   object BaseConfigurationItem {
     def apply(
-      resourceId: js.UndefOr[ResourceId] = js.undefined,
-      arn: js.UndefOr[ARN] = js.undefined,
-      resourceType: js.UndefOr[ResourceType] = js.undefined,
-      availabilityZone: js.UndefOr[AvailabilityZone] = js.undefined,
       accountId: js.UndefOr[AccountId] = js.undefined,
-      supplementaryConfiguration: js.UndefOr[SupplementaryConfiguration] = js.undefined,
-      configurationItemCaptureTime: js.UndefOr[ConfigurationItemCaptureTime] = js.undefined,
-      resourceName: js.UndefOr[ResourceName] = js.undefined,
-      version: js.UndefOr[Version] = js.undefined,
+      arn: js.UndefOr[ARN] = js.undefined,
+      availabilityZone: js.UndefOr[AvailabilityZone] = js.undefined,
       awsRegion: js.UndefOr[AwsRegion] = js.undefined,
-      resourceCreationTime: js.UndefOr[ResourceCreationTime] = js.undefined,
       configuration: js.UndefOr[Configuration] = js.undefined,
+      configurationItemCaptureTime: js.UndefOr[ConfigurationItemCaptureTime] = js.undefined,
       configurationItemStatus: js.UndefOr[ConfigurationItemStatus] = js.undefined,
-      configurationStateId: js.UndefOr[ConfigurationStateId] = js.undefined): BaseConfigurationItem = {
+      configurationStateId: js.UndefOr[ConfigurationStateId] = js.undefined,
+      resourceCreationTime: js.UndefOr[ResourceCreationTime] = js.undefined,
+      resourceId: js.UndefOr[ResourceId] = js.undefined,
+      resourceName: js.UndefOr[ResourceName] = js.undefined,
+      resourceType: js.UndefOr[ResourceType] = js.undefined,
+      supplementaryConfiguration: js.UndefOr[SupplementaryConfiguration] = js.undefined,
+      version: js.UndefOr[Version] = js.undefined): BaseConfigurationItem = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "resourceId" -> resourceId.map { x => x.asInstanceOf[js.Any] },
-        "arn" -> arn.map { x => x.asInstanceOf[js.Any] },
-        "resourceType" -> resourceType.map { x => x.asInstanceOf[js.Any] },
-        "availabilityZone" -> availabilityZone.map { x => x.asInstanceOf[js.Any] },
         "accountId" -> accountId.map { x => x.asInstanceOf[js.Any] },
-        "supplementaryConfiguration" -> supplementaryConfiguration.map { x => x.asInstanceOf[js.Any] },
-        "configurationItemCaptureTime" -> configurationItemCaptureTime.map { x => x.asInstanceOf[js.Any] },
-        "resourceName" -> resourceName.map { x => x.asInstanceOf[js.Any] },
-        "version" -> version.map { x => x.asInstanceOf[js.Any] },
+        "arn" -> arn.map { x => x.asInstanceOf[js.Any] },
+        "availabilityZone" -> availabilityZone.map { x => x.asInstanceOf[js.Any] },
         "awsRegion" -> awsRegion.map { x => x.asInstanceOf[js.Any] },
-        "resourceCreationTime" -> resourceCreationTime.map { x => x.asInstanceOf[js.Any] },
         "configuration" -> configuration.map { x => x.asInstanceOf[js.Any] },
+        "configurationItemCaptureTime" -> configurationItemCaptureTime.map { x => x.asInstanceOf[js.Any] },
         "configurationItemStatus" -> configurationItemStatus.map { x => x.asInstanceOf[js.Any] },
-        "configurationStateId" -> configurationStateId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "configurationStateId" -> configurationStateId.map { x => x.asInstanceOf[js.Any] },
+        "resourceCreationTime" -> resourceCreationTime.map { x => x.asInstanceOf[js.Any] },
+        "resourceId" -> resourceId.map { x => x.asInstanceOf[js.Any] },
+        "resourceName" -> resourceName.map { x => x.asInstanceOf[js.Any] },
+        "resourceType" -> resourceType.map { x => x.asInstanceOf[js.Any] },
+        "supplementaryConfiguration" -> supplementaryConfiguration.map { x => x.asInstanceOf[js.Any] },
+        "version" -> version.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BaseConfigurationItem]
     }
@@ -443,17 +443,17 @@ package configservice {
 
   @js.native
   trait BatchGetAggregateResourceConfigRequest extends js.Object {
-    var ConfigurationAggregatorName: js.UndefOr[ConfigurationAggregatorName]
-    var ResourceIdentifiers: js.UndefOr[ResourceIdentifiersList]
+    var ConfigurationAggregatorName: ConfigurationAggregatorName
+    var ResourceIdentifiers: ResourceIdentifiersList
   }
 
   object BatchGetAggregateResourceConfigRequest {
     def apply(
-      ConfigurationAggregatorName: js.UndefOr[ConfigurationAggregatorName] = js.undefined,
-      ResourceIdentifiers: js.UndefOr[ResourceIdentifiersList] = js.undefined): BatchGetAggregateResourceConfigRequest = {
+      ConfigurationAggregatorName: ConfigurationAggregatorName,
+      ResourceIdentifiers: ResourceIdentifiersList): BatchGetAggregateResourceConfigRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ConfigurationAggregatorName" -> ConfigurationAggregatorName.map { x => x.asInstanceOf[js.Any] },
-        "ResourceIdentifiers" -> ResourceIdentifiers.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ConfigurationAggregatorName" -> ConfigurationAggregatorName.asInstanceOf[js.Any],
+        "ResourceIdentifiers" -> ResourceIdentifiers.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BatchGetAggregateResourceConfigRequest]
     }
@@ -479,14 +479,14 @@ package configservice {
 
   @js.native
   trait BatchGetResourceConfigRequest extends js.Object {
-    var resourceKeys: js.UndefOr[ResourceKeys]
+    var resourceKeys: ResourceKeys
   }
 
   object BatchGetResourceConfigRequest {
     def apply(
-      resourceKeys: js.UndefOr[ResourceKeys] = js.undefined): BatchGetResourceConfigRequest = {
+      resourceKeys: ResourceKeys): BatchGetResourceConfigRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "resourceKeys" -> resourceKeys.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "resourceKeys" -> resourceKeys.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BatchGetResourceConfigRequest]
     }
@@ -522,17 +522,17 @@ package configservice {
    */
   @js.native
   trait Compliance extends js.Object {
-    var ComplianceType: js.UndefOr[ComplianceType]
     var ComplianceContributorCount: js.UndefOr[ComplianceContributorCount]
+    var ComplianceType: js.UndefOr[ComplianceType]
   }
 
   object Compliance {
     def apply(
-      ComplianceType: js.UndefOr[ComplianceType] = js.undefined,
-      ComplianceContributorCount: js.UndefOr[ComplianceContributorCount] = js.undefined): Compliance = {
+      ComplianceContributorCount: js.UndefOr[ComplianceContributorCount] = js.undefined,
+      ComplianceType: js.UndefOr[ComplianceType] = js.undefined): Compliance = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ComplianceType" -> ComplianceType.map { x => x.asInstanceOf[js.Any] },
-        "ComplianceContributorCount" -> ComplianceContributorCount.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ComplianceContributorCount" -> ComplianceContributorCount.map { x => x.asInstanceOf[js.Any] },
+        "ComplianceType" -> ComplianceType.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Compliance]
     }
@@ -543,17 +543,17 @@ package configservice {
    */
   @js.native
   trait ComplianceByConfigRule extends js.Object {
-    var ConfigRuleName: js.UndefOr[StringWithCharLimit64]
     var Compliance: js.UndefOr[Compliance]
+    var ConfigRuleName: js.UndefOr[StringWithCharLimit64]
   }
 
   object ComplianceByConfigRule {
     def apply(
-      ConfigRuleName: js.UndefOr[StringWithCharLimit64] = js.undefined,
-      Compliance: js.UndefOr[Compliance] = js.undefined): ComplianceByConfigRule = {
+      Compliance: js.UndefOr[Compliance] = js.undefined,
+      ConfigRuleName: js.UndefOr[StringWithCharLimit64] = js.undefined): ComplianceByConfigRule = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ConfigRuleName" -> ConfigRuleName.map { x => x.asInstanceOf[js.Any] },
-        "Compliance" -> Compliance.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Compliance" -> Compliance.map { x => x.asInstanceOf[js.Any] },
+        "ConfigRuleName" -> ConfigRuleName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ComplianceByConfigRule]
     }
@@ -564,20 +564,20 @@ package configservice {
    */
   @js.native
   trait ComplianceByResource extends js.Object {
-    var ResourceType: js.UndefOr[StringWithCharLimit256]
-    var ResourceId: js.UndefOr[BaseResourceId]
     var Compliance: js.UndefOr[Compliance]
+    var ResourceId: js.UndefOr[BaseResourceId]
+    var ResourceType: js.UndefOr[StringWithCharLimit256]
   }
 
   object ComplianceByResource {
     def apply(
-      ResourceType: js.UndefOr[StringWithCharLimit256] = js.undefined,
+      Compliance: js.UndefOr[Compliance] = js.undefined,
       ResourceId: js.UndefOr[BaseResourceId] = js.undefined,
-      Compliance: js.UndefOr[Compliance] = js.undefined): ComplianceByResource = {
+      ResourceType: js.UndefOr[StringWithCharLimit256] = js.undefined): ComplianceByResource = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ResourceType" -> ResourceType.map { x => x.asInstanceOf[js.Any] },
+        "Compliance" -> Compliance.map { x => x.asInstanceOf[js.Any] },
         "ResourceId" -> ResourceId.map { x => x.asInstanceOf[js.Any] },
-        "Compliance" -> Compliance.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ResourceType" -> ResourceType.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ComplianceByResource]
     }
@@ -588,17 +588,17 @@ package configservice {
    */
   @js.native
   trait ComplianceContributorCount extends js.Object {
-    var CappedCount: js.UndefOr[Int]
     var CapExceeded: js.UndefOr[Boolean]
+    var CappedCount: js.UndefOr[Int]
   }
 
   object ComplianceContributorCount {
     def apply(
-      CappedCount: js.UndefOr[Int] = js.undefined,
-      CapExceeded: js.UndefOr[Boolean] = js.undefined): ComplianceContributorCount = {
+      CapExceeded: js.UndefOr[Boolean] = js.undefined,
+      CappedCount: js.UndefOr[Int] = js.undefined): ComplianceContributorCount = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "CappedCount" -> CappedCount.map { x => x.asInstanceOf[js.Any] },
-        "CapExceeded" -> CapExceeded.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "CapExceeded" -> CapExceeded.map { x => x.asInstanceOf[js.Any] },
+        "CappedCount" -> CappedCount.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ComplianceContributorCount]
     }
@@ -609,20 +609,20 @@ package configservice {
    */
   @js.native
   trait ComplianceSummary extends js.Object {
+    var ComplianceSummaryTimestamp: js.UndefOr[Date]
     var CompliantResourceCount: js.UndefOr[ComplianceContributorCount]
     var NonCompliantResourceCount: js.UndefOr[ComplianceContributorCount]
-    var ComplianceSummaryTimestamp: js.UndefOr[Date]
   }
 
   object ComplianceSummary {
     def apply(
+      ComplianceSummaryTimestamp: js.UndefOr[Date] = js.undefined,
       CompliantResourceCount: js.UndefOr[ComplianceContributorCount] = js.undefined,
-      NonCompliantResourceCount: js.UndefOr[ComplianceContributorCount] = js.undefined,
-      ComplianceSummaryTimestamp: js.UndefOr[Date] = js.undefined): ComplianceSummary = {
+      NonCompliantResourceCount: js.UndefOr[ComplianceContributorCount] = js.undefined): ComplianceSummary = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "ComplianceSummaryTimestamp" -> ComplianceSummaryTimestamp.map { x => x.asInstanceOf[js.Any] },
         "CompliantResourceCount" -> CompliantResourceCount.map { x => x.asInstanceOf[js.Any] },
-        "NonCompliantResourceCount" -> NonCompliantResourceCount.map { x => x.asInstanceOf[js.Any] },
-        "ComplianceSummaryTimestamp" -> ComplianceSummaryTimestamp.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "NonCompliantResourceCount" -> NonCompliantResourceCount.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ComplianceSummary]
     }
@@ -633,17 +633,17 @@ package configservice {
    */
   @js.native
   trait ComplianceSummaryByResourceType extends js.Object {
-    var ResourceType: js.UndefOr[StringWithCharLimit256]
     var ComplianceSummary: js.UndefOr[ComplianceSummary]
+    var ResourceType: js.UndefOr[StringWithCharLimit256]
   }
 
   object ComplianceSummaryByResourceType {
     def apply(
-      ResourceType: js.UndefOr[StringWithCharLimit256] = js.undefined,
-      ComplianceSummary: js.UndefOr[ComplianceSummary] = js.undefined): ComplianceSummaryByResourceType = {
+      ComplianceSummary: js.UndefOr[ComplianceSummary] = js.undefined,
+      ResourceType: js.UndefOr[StringWithCharLimit256] = js.undefined): ComplianceSummaryByResourceType = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ResourceType" -> ResourceType.map { x => x.asInstanceOf[js.Any] },
-        "ComplianceSummary" -> ComplianceSummary.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ComplianceSummary" -> ComplianceSummary.map { x => x.asInstanceOf[js.Any] },
+        "ResourceType" -> ResourceType.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ComplianceSummaryByResourceType]
     }
@@ -664,28 +664,28 @@ package configservice {
   @js.native
   trait ConfigExportDeliveryInfo extends js.Object {
     var lastAttemptTime: js.UndefOr[Date]
-    var lastStatus: js.UndefOr[DeliveryStatus]
-    var lastErrorMessage: js.UndefOr[String]
-    var nextDeliveryTime: js.UndefOr[Date]
     var lastErrorCode: js.UndefOr[String]
+    var lastErrorMessage: js.UndefOr[String]
+    var lastStatus: js.UndefOr[DeliveryStatus]
     var lastSuccessfulTime: js.UndefOr[Date]
+    var nextDeliveryTime: js.UndefOr[Date]
   }
 
   object ConfigExportDeliveryInfo {
     def apply(
       lastAttemptTime: js.UndefOr[Date] = js.undefined,
-      lastStatus: js.UndefOr[DeliveryStatus] = js.undefined,
-      lastErrorMessage: js.UndefOr[String] = js.undefined,
-      nextDeliveryTime: js.UndefOr[Date] = js.undefined,
       lastErrorCode: js.UndefOr[String] = js.undefined,
-      lastSuccessfulTime: js.UndefOr[Date] = js.undefined): ConfigExportDeliveryInfo = {
+      lastErrorMessage: js.UndefOr[String] = js.undefined,
+      lastStatus: js.UndefOr[DeliveryStatus] = js.undefined,
+      lastSuccessfulTime: js.UndefOr[Date] = js.undefined,
+      nextDeliveryTime: js.UndefOr[Date] = js.undefined): ConfigExportDeliveryInfo = {
       val _fields = IndexedSeq[(String, js.Any)](
         "lastAttemptTime" -> lastAttemptTime.map { x => x.asInstanceOf[js.Any] },
-        "lastStatus" -> lastStatus.map { x => x.asInstanceOf[js.Any] },
-        "lastErrorMessage" -> lastErrorMessage.map { x => x.asInstanceOf[js.Any] },
-        "nextDeliveryTime" -> nextDeliveryTime.map { x => x.asInstanceOf[js.Any] },
         "lastErrorCode" -> lastErrorCode.map { x => x.asInstanceOf[js.Any] },
-        "lastSuccessfulTime" -> lastSuccessfulTime.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "lastErrorMessage" -> lastErrorMessage.map { x => x.asInstanceOf[js.Any] },
+        "lastStatus" -> lastStatus.map { x => x.asInstanceOf[js.Any] },
+        "lastSuccessfulTime" -> lastSuccessfulTime.map { x => x.asInstanceOf[js.Any] },
+        "nextDeliveryTime" -> nextDeliveryTime.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ConfigExportDeliveryInfo]
     }
@@ -696,41 +696,41 @@ package configservice {
    */
   @js.native
   trait ConfigRule extends js.Object {
+    var Source: Source
+    var ConfigRuleArn: js.UndefOr[String]
     var ConfigRuleId: js.UndefOr[String]
-    var Scope: js.UndefOr[Scope]
     var ConfigRuleName: js.UndefOr[StringWithCharLimit64]
+    var ConfigRuleState: js.UndefOr[ConfigRuleState]
     var CreatedBy: js.UndefOr[StringWithCharLimit256]
     var Description: js.UndefOr[EmptiableStringWithCharLimit256]
-    var ConfigRuleArn: js.UndefOr[String]
-    var MaximumExecutionFrequency: js.UndefOr[MaximumExecutionFrequency]
-    var ConfigRuleState: js.UndefOr[ConfigRuleState]
-    var Source: js.UndefOr[Source]
     var InputParameters: js.UndefOr[StringWithCharLimit1024]
+    var MaximumExecutionFrequency: js.UndefOr[MaximumExecutionFrequency]
+    var Scope: js.UndefOr[Scope]
   }
 
   object ConfigRule {
     def apply(
+      Source: Source,
+      ConfigRuleArn: js.UndefOr[String] = js.undefined,
       ConfigRuleId: js.UndefOr[String] = js.undefined,
-      Scope: js.UndefOr[Scope] = js.undefined,
       ConfigRuleName: js.UndefOr[StringWithCharLimit64] = js.undefined,
+      ConfigRuleState: js.UndefOr[ConfigRuleState] = js.undefined,
       CreatedBy: js.UndefOr[StringWithCharLimit256] = js.undefined,
       Description: js.UndefOr[EmptiableStringWithCharLimit256] = js.undefined,
-      ConfigRuleArn: js.UndefOr[String] = js.undefined,
+      InputParameters: js.UndefOr[StringWithCharLimit1024] = js.undefined,
       MaximumExecutionFrequency: js.UndefOr[MaximumExecutionFrequency] = js.undefined,
-      ConfigRuleState: js.UndefOr[ConfigRuleState] = js.undefined,
-      Source: js.UndefOr[Source] = js.undefined,
-      InputParameters: js.UndefOr[StringWithCharLimit1024] = js.undefined): ConfigRule = {
+      Scope: js.UndefOr[Scope] = js.undefined): ConfigRule = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "Source" -> Source.asInstanceOf[js.Any],
+        "ConfigRuleArn" -> ConfigRuleArn.map { x => x.asInstanceOf[js.Any] },
         "ConfigRuleId" -> ConfigRuleId.map { x => x.asInstanceOf[js.Any] },
-        "Scope" -> Scope.map { x => x.asInstanceOf[js.Any] },
         "ConfigRuleName" -> ConfigRuleName.map { x => x.asInstanceOf[js.Any] },
+        "ConfigRuleState" -> ConfigRuleState.map { x => x.asInstanceOf[js.Any] },
         "CreatedBy" -> CreatedBy.map { x => x.asInstanceOf[js.Any] },
         "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
-        "ConfigRuleArn" -> ConfigRuleArn.map { x => x.asInstanceOf[js.Any] },
+        "InputParameters" -> InputParameters.map { x => x.asInstanceOf[js.Any] },
         "MaximumExecutionFrequency" -> MaximumExecutionFrequency.map { x => x.asInstanceOf[js.Any] },
-        "ConfigRuleState" -> ConfigRuleState.map { x => x.asInstanceOf[js.Any] },
-        "Source" -> Source.map { x => x.asInstanceOf[js.Any] },
-        "InputParameters" -> InputParameters.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Scope" -> Scope.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ConfigRule]
     }
@@ -741,23 +741,23 @@ package configservice {
    */
   @js.native
   trait ConfigRuleComplianceFilters extends js.Object {
-    var ConfigRuleName: js.UndefOr[ConfigRuleName]
-    var ComplianceType: js.UndefOr[ComplianceType]
     var AccountId: js.UndefOr[AccountId]
     var AwsRegion: js.UndefOr[AwsRegion]
+    var ComplianceType: js.UndefOr[ComplianceType]
+    var ConfigRuleName: js.UndefOr[ConfigRuleName]
   }
 
   object ConfigRuleComplianceFilters {
     def apply(
-      ConfigRuleName: js.UndefOr[ConfigRuleName] = js.undefined,
-      ComplianceType: js.UndefOr[ComplianceType] = js.undefined,
       AccountId: js.UndefOr[AccountId] = js.undefined,
-      AwsRegion: js.UndefOr[AwsRegion] = js.undefined): ConfigRuleComplianceFilters = {
+      AwsRegion: js.UndefOr[AwsRegion] = js.undefined,
+      ComplianceType: js.UndefOr[ComplianceType] = js.undefined,
+      ConfigRuleName: js.UndefOr[ConfigRuleName] = js.undefined): ConfigRuleComplianceFilters = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ConfigRuleName" -> ConfigRuleName.map { x => x.asInstanceOf[js.Any] },
-        "ComplianceType" -> ComplianceType.map { x => x.asInstanceOf[js.Any] },
         "AccountId" -> AccountId.map { x => x.asInstanceOf[js.Any] },
-        "AwsRegion" -> AwsRegion.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "AwsRegion" -> AwsRegion.map { x => x.asInstanceOf[js.Any] },
+        "ComplianceType" -> ComplianceType.map { x => x.asInstanceOf[js.Any] },
+        "ConfigRuleName" -> ConfigRuleName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ConfigRuleComplianceFilters]
     }
@@ -796,44 +796,44 @@ package configservice {
    */
   @js.native
   trait ConfigRuleEvaluationStatus extends js.Object {
-    var LastSuccessfulInvocationTime: js.UndefOr[Date]
+    var ConfigRuleArn: js.UndefOr[String]
     var ConfigRuleId: js.UndefOr[String]
     var ConfigRuleName: js.UndefOr[StringWithCharLimit64]
-    var LastFailedInvocationTime: js.UndefOr[Date]
-    var LastSuccessfulEvaluationTime: js.UndefOr[Date]
     var FirstActivatedTime: js.UndefOr[Date]
-    var LastFailedEvaluationTime: js.UndefOr[Date]
-    var ConfigRuleArn: js.UndefOr[String]
+    var FirstEvaluationStarted: js.UndefOr[Boolean]
     var LastErrorCode: js.UndefOr[String]
     var LastErrorMessage: js.UndefOr[String]
-    var FirstEvaluationStarted: js.UndefOr[Boolean]
+    var LastFailedEvaluationTime: js.UndefOr[Date]
+    var LastFailedInvocationTime: js.UndefOr[Date]
+    var LastSuccessfulEvaluationTime: js.UndefOr[Date]
+    var LastSuccessfulInvocationTime: js.UndefOr[Date]
   }
 
   object ConfigRuleEvaluationStatus {
     def apply(
-      LastSuccessfulInvocationTime: js.UndefOr[Date] = js.undefined,
+      ConfigRuleArn: js.UndefOr[String] = js.undefined,
       ConfigRuleId: js.UndefOr[String] = js.undefined,
       ConfigRuleName: js.UndefOr[StringWithCharLimit64] = js.undefined,
-      LastFailedInvocationTime: js.UndefOr[Date] = js.undefined,
-      LastSuccessfulEvaluationTime: js.UndefOr[Date] = js.undefined,
       FirstActivatedTime: js.UndefOr[Date] = js.undefined,
-      LastFailedEvaluationTime: js.UndefOr[Date] = js.undefined,
-      ConfigRuleArn: js.UndefOr[String] = js.undefined,
+      FirstEvaluationStarted: js.UndefOr[Boolean] = js.undefined,
       LastErrorCode: js.UndefOr[String] = js.undefined,
       LastErrorMessage: js.UndefOr[String] = js.undefined,
-      FirstEvaluationStarted: js.UndefOr[Boolean] = js.undefined): ConfigRuleEvaluationStatus = {
+      LastFailedEvaluationTime: js.UndefOr[Date] = js.undefined,
+      LastFailedInvocationTime: js.UndefOr[Date] = js.undefined,
+      LastSuccessfulEvaluationTime: js.UndefOr[Date] = js.undefined,
+      LastSuccessfulInvocationTime: js.UndefOr[Date] = js.undefined): ConfigRuleEvaluationStatus = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "LastSuccessfulInvocationTime" -> LastSuccessfulInvocationTime.map { x => x.asInstanceOf[js.Any] },
+        "ConfigRuleArn" -> ConfigRuleArn.map { x => x.asInstanceOf[js.Any] },
         "ConfigRuleId" -> ConfigRuleId.map { x => x.asInstanceOf[js.Any] },
         "ConfigRuleName" -> ConfigRuleName.map { x => x.asInstanceOf[js.Any] },
-        "LastFailedInvocationTime" -> LastFailedInvocationTime.map { x => x.asInstanceOf[js.Any] },
-        "LastSuccessfulEvaluationTime" -> LastSuccessfulEvaluationTime.map { x => x.asInstanceOf[js.Any] },
         "FirstActivatedTime" -> FirstActivatedTime.map { x => x.asInstanceOf[js.Any] },
-        "LastFailedEvaluationTime" -> LastFailedEvaluationTime.map { x => x.asInstanceOf[js.Any] },
-        "ConfigRuleArn" -> ConfigRuleArn.map { x => x.asInstanceOf[js.Any] },
+        "FirstEvaluationStarted" -> FirstEvaluationStarted.map { x => x.asInstanceOf[js.Any] },
         "LastErrorCode" -> LastErrorCode.map { x => x.asInstanceOf[js.Any] },
         "LastErrorMessage" -> LastErrorMessage.map { x => x.asInstanceOf[js.Any] },
-        "FirstEvaluationStarted" -> FirstEvaluationStarted.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "LastFailedEvaluationTime" -> LastFailedEvaluationTime.map { x => x.asInstanceOf[js.Any] },
+        "LastFailedInvocationTime" -> LastFailedInvocationTime.map { x => x.asInstanceOf[js.Any] },
+        "LastSuccessfulEvaluationTime" -> LastSuccessfulEvaluationTime.map { x => x.asInstanceOf[js.Any] },
+        "LastSuccessfulInvocationTime" -> LastSuccessfulInvocationTime.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ConfigRuleEvaluationStatus]
     }
@@ -871,22 +871,22 @@ package configservice {
    */
   @js.native
   trait ConfigStreamDeliveryInfo extends js.Object {
-    var lastStatus: js.UndefOr[DeliveryStatus]
     var lastErrorCode: js.UndefOr[String]
     var lastErrorMessage: js.UndefOr[String]
+    var lastStatus: js.UndefOr[DeliveryStatus]
     var lastStatusChangeTime: js.UndefOr[Date]
   }
 
   object ConfigStreamDeliveryInfo {
     def apply(
-      lastStatus: js.UndefOr[DeliveryStatus] = js.undefined,
       lastErrorCode: js.UndefOr[String] = js.undefined,
       lastErrorMessage: js.UndefOr[String] = js.undefined,
+      lastStatus: js.UndefOr[DeliveryStatus] = js.undefined,
       lastStatusChangeTime: js.UndefOr[Date] = js.undefined): ConfigStreamDeliveryInfo = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "lastStatus" -> lastStatus.map { x => x.asInstanceOf[js.Any] },
         "lastErrorCode" -> lastErrorCode.map { x => x.asInstanceOf[js.Any] },
         "lastErrorMessage" -> lastErrorMessage.map { x => x.asInstanceOf[js.Any] },
+        "lastStatus" -> lastStatus.map { x => x.asInstanceOf[js.Any] },
         "lastStatusChangeTime" -> lastStatusChangeTime.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ConfigStreamDeliveryInfo]
@@ -898,29 +898,29 @@ package configservice {
    */
   @js.native
   trait ConfigurationAggregator extends js.Object {
-    var ConfigurationAggregatorArn: js.UndefOr[ConfigurationAggregatorArn]
     var AccountAggregationSources: js.UndefOr[AccountAggregationSourceList]
-    var LastUpdatedTime: js.UndefOr[Date]
-    var OrganizationAggregationSource: js.UndefOr[OrganizationAggregationSource]
+    var ConfigurationAggregatorArn: js.UndefOr[ConfigurationAggregatorArn]
     var ConfigurationAggregatorName: js.UndefOr[ConfigurationAggregatorName]
     var CreationTime: js.UndefOr[Date]
+    var LastUpdatedTime: js.UndefOr[Date]
+    var OrganizationAggregationSource: js.UndefOr[OrganizationAggregationSource]
   }
 
   object ConfigurationAggregator {
     def apply(
-      ConfigurationAggregatorArn: js.UndefOr[ConfigurationAggregatorArn] = js.undefined,
       AccountAggregationSources: js.UndefOr[AccountAggregationSourceList] = js.undefined,
-      LastUpdatedTime: js.UndefOr[Date] = js.undefined,
-      OrganizationAggregationSource: js.UndefOr[OrganizationAggregationSource] = js.undefined,
+      ConfigurationAggregatorArn: js.UndefOr[ConfigurationAggregatorArn] = js.undefined,
       ConfigurationAggregatorName: js.UndefOr[ConfigurationAggregatorName] = js.undefined,
-      CreationTime: js.UndefOr[Date] = js.undefined): ConfigurationAggregator = {
+      CreationTime: js.UndefOr[Date] = js.undefined,
+      LastUpdatedTime: js.UndefOr[Date] = js.undefined,
+      OrganizationAggregationSource: js.UndefOr[OrganizationAggregationSource] = js.undefined): ConfigurationAggregator = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ConfigurationAggregatorArn" -> ConfigurationAggregatorArn.map { x => x.asInstanceOf[js.Any] },
         "AccountAggregationSources" -> AccountAggregationSources.map { x => x.asInstanceOf[js.Any] },
-        "LastUpdatedTime" -> LastUpdatedTime.map { x => x.asInstanceOf[js.Any] },
-        "OrganizationAggregationSource" -> OrganizationAggregationSource.map { x => x.asInstanceOf[js.Any] },
+        "ConfigurationAggregatorArn" -> ConfigurationAggregatorArn.map { x => x.asInstanceOf[js.Any] },
         "ConfigurationAggregatorName" -> ConfigurationAggregatorName.map { x => x.asInstanceOf[js.Any] },
-        "CreationTime" -> CreationTime.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "CreationTime" -> CreationTime.map { x => x.asInstanceOf[js.Any] },
+        "LastUpdatedTime" -> LastUpdatedTime.map { x => x.asInstanceOf[js.Any] },
+        "OrganizationAggregationSource" -> OrganizationAggregationSource.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ConfigurationAggregator]
     }
@@ -931,65 +931,65 @@ package configservice {
    */
   @js.native
   trait ConfigurationItem extends js.Object {
-    var resourceId: js.UndefOr[ResourceId]
-    var arn: js.UndefOr[ARN]
-    var resourceType: js.UndefOr[ResourceType]
-    var tags: js.UndefOr[Tags]
-    var availabilityZone: js.UndefOr[AvailabilityZone]
     var accountId: js.UndefOr[AccountId]
-    var supplementaryConfiguration: js.UndefOr[SupplementaryConfiguration]
-    var configurationItemCaptureTime: js.UndefOr[ConfigurationItemCaptureTime]
-    var resourceName: js.UndefOr[ResourceName]
-    var relationships: js.UndefOr[RelationshipList]
-    var version: js.UndefOr[Version]
-    var relatedEvents: js.UndefOr[RelatedEventList]
+    var arn: js.UndefOr[ARN]
+    var availabilityZone: js.UndefOr[AvailabilityZone]
     var awsRegion: js.UndefOr[AwsRegion]
-    var resourceCreationTime: js.UndefOr[ResourceCreationTime]
     var configuration: js.UndefOr[Configuration]
-    var configurationItemStatus: js.UndefOr[ConfigurationItemStatus]
+    var configurationItemCaptureTime: js.UndefOr[ConfigurationItemCaptureTime]
     var configurationItemMD5Hash: js.UndefOr[ConfigurationItemMD5Hash]
+    var configurationItemStatus: js.UndefOr[ConfigurationItemStatus]
     var configurationStateId: js.UndefOr[ConfigurationStateId]
+    var relatedEvents: js.UndefOr[RelatedEventList]
+    var relationships: js.UndefOr[RelationshipList]
+    var resourceCreationTime: js.UndefOr[ResourceCreationTime]
+    var resourceId: js.UndefOr[ResourceId]
+    var resourceName: js.UndefOr[ResourceName]
+    var resourceType: js.UndefOr[ResourceType]
+    var supplementaryConfiguration: js.UndefOr[SupplementaryConfiguration]
+    var tags: js.UndefOr[Tags]
+    var version: js.UndefOr[Version]
   }
 
   object ConfigurationItem {
     def apply(
-      resourceId: js.UndefOr[ResourceId] = js.undefined,
-      arn: js.UndefOr[ARN] = js.undefined,
-      resourceType: js.UndefOr[ResourceType] = js.undefined,
-      tags: js.UndefOr[Tags] = js.undefined,
-      availabilityZone: js.UndefOr[AvailabilityZone] = js.undefined,
       accountId: js.UndefOr[AccountId] = js.undefined,
-      supplementaryConfiguration: js.UndefOr[SupplementaryConfiguration] = js.undefined,
-      configurationItemCaptureTime: js.UndefOr[ConfigurationItemCaptureTime] = js.undefined,
-      resourceName: js.UndefOr[ResourceName] = js.undefined,
-      relationships: js.UndefOr[RelationshipList] = js.undefined,
-      version: js.UndefOr[Version] = js.undefined,
-      relatedEvents: js.UndefOr[RelatedEventList] = js.undefined,
+      arn: js.UndefOr[ARN] = js.undefined,
+      availabilityZone: js.UndefOr[AvailabilityZone] = js.undefined,
       awsRegion: js.UndefOr[AwsRegion] = js.undefined,
-      resourceCreationTime: js.UndefOr[ResourceCreationTime] = js.undefined,
       configuration: js.UndefOr[Configuration] = js.undefined,
-      configurationItemStatus: js.UndefOr[ConfigurationItemStatus] = js.undefined,
+      configurationItemCaptureTime: js.UndefOr[ConfigurationItemCaptureTime] = js.undefined,
       configurationItemMD5Hash: js.UndefOr[ConfigurationItemMD5Hash] = js.undefined,
-      configurationStateId: js.UndefOr[ConfigurationStateId] = js.undefined): ConfigurationItem = {
+      configurationItemStatus: js.UndefOr[ConfigurationItemStatus] = js.undefined,
+      configurationStateId: js.UndefOr[ConfigurationStateId] = js.undefined,
+      relatedEvents: js.UndefOr[RelatedEventList] = js.undefined,
+      relationships: js.UndefOr[RelationshipList] = js.undefined,
+      resourceCreationTime: js.UndefOr[ResourceCreationTime] = js.undefined,
+      resourceId: js.UndefOr[ResourceId] = js.undefined,
+      resourceName: js.UndefOr[ResourceName] = js.undefined,
+      resourceType: js.UndefOr[ResourceType] = js.undefined,
+      supplementaryConfiguration: js.UndefOr[SupplementaryConfiguration] = js.undefined,
+      tags: js.UndefOr[Tags] = js.undefined,
+      version: js.UndefOr[Version] = js.undefined): ConfigurationItem = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "resourceId" -> resourceId.map { x => x.asInstanceOf[js.Any] },
-        "arn" -> arn.map { x => x.asInstanceOf[js.Any] },
-        "resourceType" -> resourceType.map { x => x.asInstanceOf[js.Any] },
-        "tags" -> tags.map { x => x.asInstanceOf[js.Any] },
-        "availabilityZone" -> availabilityZone.map { x => x.asInstanceOf[js.Any] },
         "accountId" -> accountId.map { x => x.asInstanceOf[js.Any] },
-        "supplementaryConfiguration" -> supplementaryConfiguration.map { x => x.asInstanceOf[js.Any] },
-        "configurationItemCaptureTime" -> configurationItemCaptureTime.map { x => x.asInstanceOf[js.Any] },
-        "resourceName" -> resourceName.map { x => x.asInstanceOf[js.Any] },
-        "relationships" -> relationships.map { x => x.asInstanceOf[js.Any] },
-        "version" -> version.map { x => x.asInstanceOf[js.Any] },
-        "relatedEvents" -> relatedEvents.map { x => x.asInstanceOf[js.Any] },
+        "arn" -> arn.map { x => x.asInstanceOf[js.Any] },
+        "availabilityZone" -> availabilityZone.map { x => x.asInstanceOf[js.Any] },
         "awsRegion" -> awsRegion.map { x => x.asInstanceOf[js.Any] },
-        "resourceCreationTime" -> resourceCreationTime.map { x => x.asInstanceOf[js.Any] },
         "configuration" -> configuration.map { x => x.asInstanceOf[js.Any] },
-        "configurationItemStatus" -> configurationItemStatus.map { x => x.asInstanceOf[js.Any] },
+        "configurationItemCaptureTime" -> configurationItemCaptureTime.map { x => x.asInstanceOf[js.Any] },
         "configurationItemMD5Hash" -> configurationItemMD5Hash.map { x => x.asInstanceOf[js.Any] },
-        "configurationStateId" -> configurationStateId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "configurationItemStatus" -> configurationItemStatus.map { x => x.asInstanceOf[js.Any] },
+        "configurationStateId" -> configurationStateId.map { x => x.asInstanceOf[js.Any] },
+        "relatedEvents" -> relatedEvents.map { x => x.asInstanceOf[js.Any] },
+        "relationships" -> relationships.map { x => x.asInstanceOf[js.Any] },
+        "resourceCreationTime" -> resourceCreationTime.map { x => x.asInstanceOf[js.Any] },
+        "resourceId" -> resourceId.map { x => x.asInstanceOf[js.Any] },
+        "resourceName" -> resourceName.map { x => x.asInstanceOf[js.Any] },
+        "resourceType" -> resourceType.map { x => x.asInstanceOf[js.Any] },
+        "supplementaryConfiguration" -> supplementaryConfiguration.map { x => x.asInstanceOf[js.Any] },
+        "tags" -> tags.map { x => x.asInstanceOf[js.Any] },
+        "version" -> version.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ConfigurationItem]
     }
@@ -1011,19 +1011,19 @@ package configservice {
   @js.native
   trait ConfigurationRecorder extends js.Object {
     var name: js.UndefOr[RecorderName]
-    var roleARN: js.UndefOr[String]
     var recordingGroup: js.UndefOr[RecordingGroup]
+    var roleARN: js.UndefOr[String]
   }
 
   object ConfigurationRecorder {
     def apply(
       name: js.UndefOr[RecorderName] = js.undefined,
-      roleARN: js.UndefOr[String] = js.undefined,
-      recordingGroup: js.UndefOr[RecordingGroup] = js.undefined): ConfigurationRecorder = {
+      recordingGroup: js.UndefOr[RecordingGroup] = js.undefined,
+      roleARN: js.UndefOr[String] = js.undefined): ConfigurationRecorder = {
       val _fields = IndexedSeq[(String, js.Any)](
         "name" -> name.map { x => x.asInstanceOf[js.Any] },
-        "roleARN" -> roleARN.map { x => x.asInstanceOf[js.Any] },
-        "recordingGroup" -> recordingGroup.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "recordingGroup" -> recordingGroup.map { x => x.asInstanceOf[js.Any] },
+        "roleARN" -> roleARN.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ConfigurationRecorder]
     }
@@ -1034,34 +1034,34 @@ package configservice {
    */
   @js.native
   trait ConfigurationRecorderStatus extends js.Object {
-    var name: js.UndefOr[String]
-    var lastStatus: js.UndefOr[RecorderStatus]
-    var lastErrorMessage: js.UndefOr[String]
     var lastErrorCode: js.UndefOr[String]
+    var lastErrorMessage: js.UndefOr[String]
     var lastStartTime: js.UndefOr[Date]
+    var lastStatus: js.UndefOr[RecorderStatus]
     var lastStatusChangeTime: js.UndefOr[Date]
     var lastStopTime: js.UndefOr[Date]
+    var name: js.UndefOr[String]
     var recording: js.UndefOr[Boolean]
   }
 
   object ConfigurationRecorderStatus {
     def apply(
-      name: js.UndefOr[String] = js.undefined,
-      lastStatus: js.UndefOr[RecorderStatus] = js.undefined,
-      lastErrorMessage: js.UndefOr[String] = js.undefined,
       lastErrorCode: js.UndefOr[String] = js.undefined,
+      lastErrorMessage: js.UndefOr[String] = js.undefined,
       lastStartTime: js.UndefOr[Date] = js.undefined,
+      lastStatus: js.UndefOr[RecorderStatus] = js.undefined,
       lastStatusChangeTime: js.UndefOr[Date] = js.undefined,
       lastStopTime: js.UndefOr[Date] = js.undefined,
+      name: js.UndefOr[String] = js.undefined,
       recording: js.UndefOr[Boolean] = js.undefined): ConfigurationRecorderStatus = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "name" -> name.map { x => x.asInstanceOf[js.Any] },
-        "lastStatus" -> lastStatus.map { x => x.asInstanceOf[js.Any] },
-        "lastErrorMessage" -> lastErrorMessage.map { x => x.asInstanceOf[js.Any] },
         "lastErrorCode" -> lastErrorCode.map { x => x.asInstanceOf[js.Any] },
+        "lastErrorMessage" -> lastErrorMessage.map { x => x.asInstanceOf[js.Any] },
         "lastStartTime" -> lastStartTime.map { x => x.asInstanceOf[js.Any] },
+        "lastStatus" -> lastStatus.map { x => x.asInstanceOf[js.Any] },
         "lastStatusChangeTime" -> lastStatusChangeTime.map { x => x.asInstanceOf[js.Any] },
         "lastStopTime" -> lastStopTime.map { x => x.asInstanceOf[js.Any] },
+        "name" -> name.map { x => x.asInstanceOf[js.Any] },
         "recording" -> recording.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ConfigurationRecorderStatus]
@@ -1070,17 +1070,17 @@ package configservice {
 
   @js.native
   trait DeleteAggregationAuthorizationRequest extends js.Object {
-    var AuthorizedAccountId: js.UndefOr[AccountId]
-    var AuthorizedAwsRegion: js.UndefOr[AwsRegion]
+    var AuthorizedAccountId: AccountId
+    var AuthorizedAwsRegion: AwsRegion
   }
 
   object DeleteAggregationAuthorizationRequest {
     def apply(
-      AuthorizedAccountId: js.UndefOr[AccountId] = js.undefined,
-      AuthorizedAwsRegion: js.UndefOr[AwsRegion] = js.undefined): DeleteAggregationAuthorizationRequest = {
+      AuthorizedAccountId: AccountId,
+      AuthorizedAwsRegion: AwsRegion): DeleteAggregationAuthorizationRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "AuthorizedAccountId" -> AuthorizedAccountId.map { x => x.asInstanceOf[js.Any] },
-        "AuthorizedAwsRegion" -> AuthorizedAwsRegion.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "AuthorizedAccountId" -> AuthorizedAccountId.asInstanceOf[js.Any],
+        "AuthorizedAwsRegion" -> AuthorizedAwsRegion.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteAggregationAuthorizationRequest]
     }
@@ -1091,14 +1091,14 @@ package configservice {
    */
   @js.native
   trait DeleteConfigRuleRequest extends js.Object {
-    var ConfigRuleName: js.UndefOr[StringWithCharLimit64]
+    var ConfigRuleName: StringWithCharLimit64
   }
 
   object DeleteConfigRuleRequest {
     def apply(
-      ConfigRuleName: js.UndefOr[StringWithCharLimit64] = js.undefined): DeleteConfigRuleRequest = {
+      ConfigRuleName: StringWithCharLimit64): DeleteConfigRuleRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ConfigRuleName" -> ConfigRuleName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ConfigRuleName" -> ConfigRuleName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteConfigRuleRequest]
     }
@@ -1106,14 +1106,14 @@ package configservice {
 
   @js.native
   trait DeleteConfigurationAggregatorRequest extends js.Object {
-    var ConfigurationAggregatorName: js.UndefOr[ConfigurationAggregatorName]
+    var ConfigurationAggregatorName: ConfigurationAggregatorName
   }
 
   object DeleteConfigurationAggregatorRequest {
     def apply(
-      ConfigurationAggregatorName: js.UndefOr[ConfigurationAggregatorName] = js.undefined): DeleteConfigurationAggregatorRequest = {
+      ConfigurationAggregatorName: ConfigurationAggregatorName): DeleteConfigurationAggregatorRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ConfigurationAggregatorName" -> ConfigurationAggregatorName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ConfigurationAggregatorName" -> ConfigurationAggregatorName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteConfigurationAggregatorRequest]
     }
@@ -1124,14 +1124,14 @@ package configservice {
    */
   @js.native
   trait DeleteConfigurationRecorderRequest extends js.Object {
-    var ConfigurationRecorderName: js.UndefOr[RecorderName]
+    var ConfigurationRecorderName: RecorderName
   }
 
   object DeleteConfigurationRecorderRequest {
     def apply(
-      ConfigurationRecorderName: js.UndefOr[RecorderName] = js.undefined): DeleteConfigurationRecorderRequest = {
+      ConfigurationRecorderName: RecorderName): DeleteConfigurationRecorderRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ConfigurationRecorderName" -> ConfigurationRecorderName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ConfigurationRecorderName" -> ConfigurationRecorderName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteConfigurationRecorderRequest]
     }
@@ -1142,14 +1142,14 @@ package configservice {
    */
   @js.native
   trait DeleteDeliveryChannelRequest extends js.Object {
-    var DeliveryChannelName: js.UndefOr[ChannelName]
+    var DeliveryChannelName: ChannelName
   }
 
   object DeleteDeliveryChannelRequest {
     def apply(
-      DeliveryChannelName: js.UndefOr[ChannelName] = js.undefined): DeleteDeliveryChannelRequest = {
+      DeliveryChannelName: ChannelName): DeleteDeliveryChannelRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "DeliveryChannelName" -> DeliveryChannelName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "DeliveryChannelName" -> DeliveryChannelName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteDeliveryChannelRequest]
     }
@@ -1160,14 +1160,14 @@ package configservice {
    */
   @js.native
   trait DeleteEvaluationResultsRequest extends js.Object {
-    var ConfigRuleName: js.UndefOr[StringWithCharLimit64]
+    var ConfigRuleName: StringWithCharLimit64
   }
 
   object DeleteEvaluationResultsRequest {
     def apply(
-      ConfigRuleName: js.UndefOr[StringWithCharLimit64] = js.undefined): DeleteEvaluationResultsRequest = {
+      ConfigRuleName: StringWithCharLimit64): DeleteEvaluationResultsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ConfigRuleName" -> ConfigRuleName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ConfigRuleName" -> ConfigRuleName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteEvaluationResultsRequest]
     }
@@ -1191,17 +1191,17 @@ package configservice {
 
   @js.native
   trait DeletePendingAggregationRequestRequest extends js.Object {
-    var RequesterAccountId: js.UndefOr[AccountId]
-    var RequesterAwsRegion: js.UndefOr[AwsRegion]
+    var RequesterAccountId: AccountId
+    var RequesterAwsRegion: AwsRegion
   }
 
   object DeletePendingAggregationRequestRequest {
     def apply(
-      RequesterAccountId: js.UndefOr[AccountId] = js.undefined,
-      RequesterAwsRegion: js.UndefOr[AwsRegion] = js.undefined): DeletePendingAggregationRequestRequest = {
+      RequesterAccountId: AccountId,
+      RequesterAwsRegion: AwsRegion): DeletePendingAggregationRequestRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "RequesterAccountId" -> RequesterAccountId.map { x => x.asInstanceOf[js.Any] },
-        "RequesterAwsRegion" -> RequesterAwsRegion.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "RequesterAccountId" -> RequesterAccountId.asInstanceOf[js.Any],
+        "RequesterAwsRegion" -> RequesterAwsRegion.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeletePendingAggregationRequestRequest]
     }
@@ -1209,14 +1209,14 @@ package configservice {
 
   @js.native
   trait DeleteRetentionConfigurationRequest extends js.Object {
-    var RetentionConfigurationName: js.UndefOr[RetentionConfigurationName]
+    var RetentionConfigurationName: RetentionConfigurationName
   }
 
   object DeleteRetentionConfigurationRequest {
     def apply(
-      RetentionConfigurationName: js.UndefOr[RetentionConfigurationName] = js.undefined): DeleteRetentionConfigurationRequest = {
+      RetentionConfigurationName: RetentionConfigurationName): DeleteRetentionConfigurationRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "RetentionConfigurationName" -> RetentionConfigurationName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "RetentionConfigurationName" -> RetentionConfigurationName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteRetentionConfigurationRequest]
     }
@@ -1227,14 +1227,14 @@ package configservice {
    */
   @js.native
   trait DeliverConfigSnapshotRequest extends js.Object {
-    var deliveryChannelName: js.UndefOr[ChannelName]
+    var deliveryChannelName: ChannelName
   }
 
   object DeliverConfigSnapshotRequest {
     def apply(
-      deliveryChannelName: js.UndefOr[ChannelName] = js.undefined): DeliverConfigSnapshotRequest = {
+      deliveryChannelName: ChannelName): DeliverConfigSnapshotRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "deliveryChannelName" -> deliveryChannelName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "deliveryChannelName" -> deliveryChannelName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeliverConfigSnapshotRequest]
     }
@@ -1263,26 +1263,26 @@ package configservice {
    */
   @js.native
   trait DeliveryChannel extends js.Object {
-    var name: js.UndefOr[ChannelName]
     var configSnapshotDeliveryProperties: js.UndefOr[ConfigSnapshotDeliveryProperties]
+    var name: js.UndefOr[ChannelName]
     var s3BucketName: js.UndefOr[String]
-    var snsTopicARN: js.UndefOr[String]
     var s3KeyPrefix: js.UndefOr[String]
+    var snsTopicARN: js.UndefOr[String]
   }
 
   object DeliveryChannel {
     def apply(
-      name: js.UndefOr[ChannelName] = js.undefined,
       configSnapshotDeliveryProperties: js.UndefOr[ConfigSnapshotDeliveryProperties] = js.undefined,
+      name: js.UndefOr[ChannelName] = js.undefined,
       s3BucketName: js.UndefOr[String] = js.undefined,
-      snsTopicARN: js.UndefOr[String] = js.undefined,
-      s3KeyPrefix: js.UndefOr[String] = js.undefined): DeliveryChannel = {
+      s3KeyPrefix: js.UndefOr[String] = js.undefined,
+      snsTopicARN: js.UndefOr[String] = js.undefined): DeliveryChannel = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "name" -> name.map { x => x.asInstanceOf[js.Any] },
         "configSnapshotDeliveryProperties" -> configSnapshotDeliveryProperties.map { x => x.asInstanceOf[js.Any] },
+        "name" -> name.map { x => x.asInstanceOf[js.Any] },
         "s3BucketName" -> s3BucketName.map { x => x.asInstanceOf[js.Any] },
-        "snsTopicARN" -> snsTopicARN.map { x => x.asInstanceOf[js.Any] },
-        "s3KeyPrefix" -> s3KeyPrefix.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "s3KeyPrefix" -> s3KeyPrefix.map { x => x.asInstanceOf[js.Any] },
+        "snsTopicARN" -> snsTopicARN.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeliveryChannel]
     }
@@ -1293,23 +1293,23 @@ package configservice {
    */
   @js.native
   trait DeliveryChannelStatus extends js.Object {
-    var name: js.UndefOr[String]
-    var configSnapshotDeliveryInfo: js.UndefOr[ConfigExportDeliveryInfo]
     var configHistoryDeliveryInfo: js.UndefOr[ConfigExportDeliveryInfo]
+    var configSnapshotDeliveryInfo: js.UndefOr[ConfigExportDeliveryInfo]
     var configStreamDeliveryInfo: js.UndefOr[ConfigStreamDeliveryInfo]
+    var name: js.UndefOr[String]
   }
 
   object DeliveryChannelStatus {
     def apply(
-      name: js.UndefOr[String] = js.undefined,
-      configSnapshotDeliveryInfo: js.UndefOr[ConfigExportDeliveryInfo] = js.undefined,
       configHistoryDeliveryInfo: js.UndefOr[ConfigExportDeliveryInfo] = js.undefined,
-      configStreamDeliveryInfo: js.UndefOr[ConfigStreamDeliveryInfo] = js.undefined): DeliveryChannelStatus = {
+      configSnapshotDeliveryInfo: js.UndefOr[ConfigExportDeliveryInfo] = js.undefined,
+      configStreamDeliveryInfo: js.UndefOr[ConfigStreamDeliveryInfo] = js.undefined,
+      name: js.UndefOr[String] = js.undefined): DeliveryChannelStatus = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "name" -> name.map { x => x.asInstanceOf[js.Any] },
-        "configSnapshotDeliveryInfo" -> configSnapshotDeliveryInfo.map { x => x.asInstanceOf[js.Any] },
         "configHistoryDeliveryInfo" -> configHistoryDeliveryInfo.map { x => x.asInstanceOf[js.Any] },
-        "configStreamDeliveryInfo" -> configStreamDeliveryInfo.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "configSnapshotDeliveryInfo" -> configSnapshotDeliveryInfo.map { x => x.asInstanceOf[js.Any] },
+        "configStreamDeliveryInfo" -> configStreamDeliveryInfo.map { x => x.asInstanceOf[js.Any] },
+        "name" -> name.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeliveryChannelStatus]
     }
@@ -1325,7 +1325,7 @@ package configservice {
 
   @js.native
   trait DescribeAggregateComplianceByConfigRulesRequest extends js.Object {
-    var ConfigurationAggregatorName: js.UndefOr[ConfigurationAggregatorName]
+    var ConfigurationAggregatorName: ConfigurationAggregatorName
     var Filters: js.UndefOr[ConfigRuleComplianceFilters]
     var Limit: js.UndefOr[GroupByAPILimit]
     var NextToken: js.UndefOr[NextToken]
@@ -1333,12 +1333,12 @@ package configservice {
 
   object DescribeAggregateComplianceByConfigRulesRequest {
     def apply(
-      ConfigurationAggregatorName: js.UndefOr[ConfigurationAggregatorName] = js.undefined,
+      ConfigurationAggregatorName: ConfigurationAggregatorName,
       Filters: js.UndefOr[ConfigRuleComplianceFilters] = js.undefined,
       Limit: js.UndefOr[GroupByAPILimit] = js.undefined,
       NextToken: js.UndefOr[NextToken] = js.undefined): DescribeAggregateComplianceByConfigRulesRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ConfigurationAggregatorName" -> ConfigurationAggregatorName.map { x => x.asInstanceOf[js.Any] },
+        "ConfigurationAggregatorName" -> ConfigurationAggregatorName.asInstanceOf[js.Any],
         "Filters" -> Filters.map { x => x.asInstanceOf[js.Any] },
         "Limit" -> Limit.map { x => x.asInstanceOf[js.Any] },
         "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
@@ -1406,19 +1406,19 @@ package configservice {
    */
   @js.native
   trait DescribeComplianceByConfigRuleRequest extends js.Object {
-    var ConfigRuleNames: js.UndefOr[ConfigRuleNames]
     var ComplianceTypes: js.UndefOr[ComplianceTypes]
+    var ConfigRuleNames: js.UndefOr[ConfigRuleNames]
     var NextToken: js.UndefOr[String]
   }
 
   object DescribeComplianceByConfigRuleRequest {
     def apply(
-      ConfigRuleNames: js.UndefOr[ConfigRuleNames] = js.undefined,
       ComplianceTypes: js.UndefOr[ComplianceTypes] = js.undefined,
+      ConfigRuleNames: js.UndefOr[ConfigRuleNames] = js.undefined,
       NextToken: js.UndefOr[String] = js.undefined): DescribeComplianceByConfigRuleRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ConfigRuleNames" -> ConfigRuleNames.map { x => x.asInstanceOf[js.Any] },
         "ComplianceTypes" -> ComplianceTypes.map { x => x.asInstanceOf[js.Any] },
+        "ConfigRuleNames" -> ConfigRuleNames.map { x => x.asInstanceOf[js.Any] },
         "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeComplianceByConfigRuleRequest]
@@ -1451,26 +1451,26 @@ package configservice {
    */
   @js.native
   trait DescribeComplianceByResourceRequest extends js.Object {
-    var ResourceId: js.UndefOr[BaseResourceId]
-    var Limit: js.UndefOr[Limit]
-    var ResourceType: js.UndefOr[StringWithCharLimit256]
     var ComplianceTypes: js.UndefOr[ComplianceTypes]
+    var Limit: js.UndefOr[Limit]
     var NextToken: js.UndefOr[NextToken]
+    var ResourceId: js.UndefOr[BaseResourceId]
+    var ResourceType: js.UndefOr[StringWithCharLimit256]
   }
 
   object DescribeComplianceByResourceRequest {
     def apply(
-      ResourceId: js.UndefOr[BaseResourceId] = js.undefined,
-      Limit: js.UndefOr[Limit] = js.undefined,
-      ResourceType: js.UndefOr[StringWithCharLimit256] = js.undefined,
       ComplianceTypes: js.UndefOr[ComplianceTypes] = js.undefined,
-      NextToken: js.UndefOr[NextToken] = js.undefined): DescribeComplianceByResourceRequest = {
+      Limit: js.UndefOr[Limit] = js.undefined,
+      NextToken: js.UndefOr[NextToken] = js.undefined,
+      ResourceId: js.UndefOr[BaseResourceId] = js.undefined,
+      ResourceType: js.UndefOr[StringWithCharLimit256] = js.undefined): DescribeComplianceByResourceRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ResourceId" -> ResourceId.map { x => x.asInstanceOf[js.Any] },
-        "Limit" -> Limit.map { x => x.asInstanceOf[js.Any] },
-        "ResourceType" -> ResourceType.map { x => x.asInstanceOf[js.Any] },
         "ComplianceTypes" -> ComplianceTypes.map { x => x.asInstanceOf[js.Any] },
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Limit" -> Limit.map { x => x.asInstanceOf[js.Any] },
+        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
+        "ResourceId" -> ResourceId.map { x => x.asInstanceOf[js.Any] },
+        "ResourceType" -> ResourceType.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeComplianceByResourceRequest]
     }
@@ -1503,19 +1503,19 @@ package configservice {
   @js.native
   trait DescribeConfigRuleEvaluationStatusRequest extends js.Object {
     var ConfigRuleNames: js.UndefOr[ConfigRuleNames]
-    var NextToken: js.UndefOr[String]
     var Limit: js.UndefOr[RuleLimit]
+    var NextToken: js.UndefOr[String]
   }
 
   object DescribeConfigRuleEvaluationStatusRequest {
     def apply(
       ConfigRuleNames: js.UndefOr[ConfigRuleNames] = js.undefined,
-      NextToken: js.UndefOr[String] = js.undefined,
-      Limit: js.UndefOr[RuleLimit] = js.undefined): DescribeConfigRuleEvaluationStatusRequest = {
+      Limit: js.UndefOr[RuleLimit] = js.undefined,
+      NextToken: js.UndefOr[String] = js.undefined): DescribeConfigRuleEvaluationStatusRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ConfigRuleNames" -> ConfigRuleNames.map { x => x.asInstanceOf[js.Any] },
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
-        "Limit" -> Limit.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Limit" -> Limit.map { x => x.asInstanceOf[js.Any] },
+        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeConfigRuleEvaluationStatusRequest]
     }
@@ -1586,23 +1586,23 @@ package configservice {
 
   @js.native
   trait DescribeConfigurationAggregatorSourcesStatusRequest extends js.Object {
-    var ConfigurationAggregatorName: js.UndefOr[ConfigurationAggregatorName]
-    var UpdateStatus: js.UndefOr[AggregatedSourceStatusTypeList]
-    var NextToken: js.UndefOr[String]
+    var ConfigurationAggregatorName: ConfigurationAggregatorName
     var Limit: js.UndefOr[Limit]
+    var NextToken: js.UndefOr[String]
+    var UpdateStatus: js.UndefOr[AggregatedSourceStatusTypeList]
   }
 
   object DescribeConfigurationAggregatorSourcesStatusRequest {
     def apply(
-      ConfigurationAggregatorName: js.UndefOr[ConfigurationAggregatorName] = js.undefined,
-      UpdateStatus: js.UndefOr[AggregatedSourceStatusTypeList] = js.undefined,
+      ConfigurationAggregatorName: ConfigurationAggregatorName,
+      Limit: js.UndefOr[Limit] = js.undefined,
       NextToken: js.UndefOr[String] = js.undefined,
-      Limit: js.UndefOr[Limit] = js.undefined): DescribeConfigurationAggregatorSourcesStatusRequest = {
+      UpdateStatus: js.UndefOr[AggregatedSourceStatusTypeList] = js.undefined): DescribeConfigurationAggregatorSourcesStatusRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ConfigurationAggregatorName" -> ConfigurationAggregatorName.map { x => x.asInstanceOf[js.Any] },
-        "UpdateStatus" -> UpdateStatus.map { x => x.asInstanceOf[js.Any] },
+        "ConfigurationAggregatorName" -> ConfigurationAggregatorName.asInstanceOf[js.Any],
+        "Limit" -> Limit.map { x => x.asInstanceOf[js.Any] },
         "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
-        "Limit" -> Limit.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "UpdateStatus" -> UpdateStatus.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeConfigurationAggregatorSourcesStatusRequest]
     }
@@ -1629,19 +1629,19 @@ package configservice {
   @js.native
   trait DescribeConfigurationAggregatorsRequest extends js.Object {
     var ConfigurationAggregatorNames: js.UndefOr[ConfigurationAggregatorNameList]
-    var NextToken: js.UndefOr[String]
     var Limit: js.UndefOr[Limit]
+    var NextToken: js.UndefOr[String]
   }
 
   object DescribeConfigurationAggregatorsRequest {
     def apply(
       ConfigurationAggregatorNames: js.UndefOr[ConfigurationAggregatorNameList] = js.undefined,
-      NextToken: js.UndefOr[String] = js.undefined,
-      Limit: js.UndefOr[Limit] = js.undefined): DescribeConfigurationAggregatorsRequest = {
+      Limit: js.UndefOr[Limit] = js.undefined,
+      NextToken: js.UndefOr[String] = js.undefined): DescribeConfigurationAggregatorsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ConfigurationAggregatorNames" -> ConfigurationAggregatorNames.map { x => x.asInstanceOf[js.Any] },
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
-        "Limit" -> Limit.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Limit" -> Limit.map { x => x.asInstanceOf[js.Any] },
+        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeConfigurationAggregatorsRequest]
     }
@@ -1829,17 +1829,17 @@ package configservice {
 
   @js.native
   trait DescribePendingAggregationRequestsResponse extends js.Object {
-    var PendingAggregationRequests: js.UndefOr[PendingAggregationRequestList]
     var NextToken: js.UndefOr[String]
+    var PendingAggregationRequests: js.UndefOr[PendingAggregationRequestList]
   }
 
   object DescribePendingAggregationRequestsResponse {
     def apply(
-      PendingAggregationRequests: js.UndefOr[PendingAggregationRequestList] = js.undefined,
-      NextToken: js.UndefOr[String] = js.undefined): DescribePendingAggregationRequestsResponse = {
+      NextToken: js.UndefOr[String] = js.undefined,
+      PendingAggregationRequests: js.UndefOr[PendingAggregationRequestList] = js.undefined): DescribePendingAggregationRequestsResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "PendingAggregationRequests" -> PendingAggregationRequests.map { x => x.asInstanceOf[js.Any] },
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
+        "PendingAggregationRequests" -> PendingAggregationRequests.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribePendingAggregationRequestsResponse]
     }
@@ -1847,17 +1847,17 @@ package configservice {
 
   @js.native
   trait DescribeRetentionConfigurationsRequest extends js.Object {
-    var RetentionConfigurationNames: js.UndefOr[RetentionConfigurationNameList]
     var NextToken: js.UndefOr[NextToken]
+    var RetentionConfigurationNames: js.UndefOr[RetentionConfigurationNameList]
   }
 
   object DescribeRetentionConfigurationsRequest {
     def apply(
-      RetentionConfigurationNames: js.UndefOr[RetentionConfigurationNameList] = js.undefined,
-      NextToken: js.UndefOr[NextToken] = js.undefined): DescribeRetentionConfigurationsRequest = {
+      NextToken: js.UndefOr[NextToken] = js.undefined,
+      RetentionConfigurationNames: js.UndefOr[RetentionConfigurationNameList] = js.undefined): DescribeRetentionConfigurationsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "RetentionConfigurationNames" -> RetentionConfigurationNames.map { x => x.asInstanceOf[js.Any] },
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
+        "RetentionConfigurationNames" -> RetentionConfigurationNames.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeRetentionConfigurationsRequest]
     }
@@ -1865,17 +1865,17 @@ package configservice {
 
   @js.native
   trait DescribeRetentionConfigurationsResponse extends js.Object {
-    var RetentionConfigurations: js.UndefOr[RetentionConfigurationList]
     var NextToken: js.UndefOr[NextToken]
+    var RetentionConfigurations: js.UndefOr[RetentionConfigurationList]
   }
 
   object DescribeRetentionConfigurationsResponse {
     def apply(
-      RetentionConfigurations: js.UndefOr[RetentionConfigurationList] = js.undefined,
-      NextToken: js.UndefOr[NextToken] = js.undefined): DescribeRetentionConfigurationsResponse = {
+      NextToken: js.UndefOr[NextToken] = js.undefined,
+      RetentionConfigurations: js.UndefOr[RetentionConfigurationList] = js.undefined): DescribeRetentionConfigurationsResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "RetentionConfigurations" -> RetentionConfigurations.map { x => x.asInstanceOf[js.Any] },
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
+        "RetentionConfigurations" -> RetentionConfigurations.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeRetentionConfigurationsResponse]
     }
@@ -1886,26 +1886,26 @@ package configservice {
    */
   @js.native
   trait Evaluation extends js.Object {
-    var ComplianceResourceId: js.UndefOr[BaseResourceId]
+    var ComplianceResourceId: BaseResourceId
+    var ComplianceResourceType: StringWithCharLimit256
+    var ComplianceType: ComplianceType
+    var OrderingTimestamp: OrderingTimestamp
     var Annotation: js.UndefOr[StringWithCharLimit256]
-    var OrderingTimestamp: js.UndefOr[OrderingTimestamp]
-    var ComplianceType: js.UndefOr[ComplianceType]
-    var ComplianceResourceType: js.UndefOr[StringWithCharLimit256]
   }
 
   object Evaluation {
     def apply(
-      ComplianceResourceId: js.UndefOr[BaseResourceId] = js.undefined,
-      Annotation: js.UndefOr[StringWithCharLimit256] = js.undefined,
-      OrderingTimestamp: js.UndefOr[OrderingTimestamp] = js.undefined,
-      ComplianceType: js.UndefOr[ComplianceType] = js.undefined,
-      ComplianceResourceType: js.UndefOr[StringWithCharLimit256] = js.undefined): Evaluation = {
+      ComplianceResourceId: BaseResourceId,
+      ComplianceResourceType: StringWithCharLimit256,
+      ComplianceType: ComplianceType,
+      OrderingTimestamp: OrderingTimestamp,
+      Annotation: js.UndefOr[StringWithCharLimit256] = js.undefined): Evaluation = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ComplianceResourceId" -> ComplianceResourceId.map { x => x.asInstanceOf[js.Any] },
-        "Annotation" -> Annotation.map { x => x.asInstanceOf[js.Any] },
-        "OrderingTimestamp" -> OrderingTimestamp.map { x => x.asInstanceOf[js.Any] },
-        "ComplianceType" -> ComplianceType.map { x => x.asInstanceOf[js.Any] },
-        "ComplianceResourceType" -> ComplianceResourceType.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ComplianceResourceId" -> ComplianceResourceId.asInstanceOf[js.Any],
+        "ComplianceResourceType" -> ComplianceResourceType.asInstanceOf[js.Any],
+        "ComplianceType" -> ComplianceType.asInstanceOf[js.Any],
+        "OrderingTimestamp" -> OrderingTimestamp.asInstanceOf[js.Any],
+        "Annotation" -> Annotation.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Evaluation]
     }
@@ -1916,29 +1916,29 @@ package configservice {
    */
   @js.native
   trait EvaluationResult extends js.Object {
-    var ConfigRuleInvokedTime: js.UndefOr[Date]
-    var EvaluationResultIdentifier: js.UndefOr[EvaluationResultIdentifier]
-    var ResultToken: js.UndefOr[String]
     var Annotation: js.UndefOr[StringWithCharLimit256]
     var ComplianceType: js.UndefOr[ComplianceType]
+    var ConfigRuleInvokedTime: js.UndefOr[Date]
+    var EvaluationResultIdentifier: js.UndefOr[EvaluationResultIdentifier]
     var ResultRecordedTime: js.UndefOr[Date]
+    var ResultToken: js.UndefOr[String]
   }
 
   object EvaluationResult {
     def apply(
-      ConfigRuleInvokedTime: js.UndefOr[Date] = js.undefined,
-      EvaluationResultIdentifier: js.UndefOr[EvaluationResultIdentifier] = js.undefined,
-      ResultToken: js.UndefOr[String] = js.undefined,
       Annotation: js.UndefOr[StringWithCharLimit256] = js.undefined,
       ComplianceType: js.UndefOr[ComplianceType] = js.undefined,
-      ResultRecordedTime: js.UndefOr[Date] = js.undefined): EvaluationResult = {
+      ConfigRuleInvokedTime: js.UndefOr[Date] = js.undefined,
+      EvaluationResultIdentifier: js.UndefOr[EvaluationResultIdentifier] = js.undefined,
+      ResultRecordedTime: js.UndefOr[Date] = js.undefined,
+      ResultToken: js.UndefOr[String] = js.undefined): EvaluationResult = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ConfigRuleInvokedTime" -> ConfigRuleInvokedTime.map { x => x.asInstanceOf[js.Any] },
-        "EvaluationResultIdentifier" -> EvaluationResultIdentifier.map { x => x.asInstanceOf[js.Any] },
-        "ResultToken" -> ResultToken.map { x => x.asInstanceOf[js.Any] },
         "Annotation" -> Annotation.map { x => x.asInstanceOf[js.Any] },
         "ComplianceType" -> ComplianceType.map { x => x.asInstanceOf[js.Any] },
-        "ResultRecordedTime" -> ResultRecordedTime.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ConfigRuleInvokedTime" -> ConfigRuleInvokedTime.map { x => x.asInstanceOf[js.Any] },
+        "EvaluationResultIdentifier" -> EvaluationResultIdentifier.map { x => x.asInstanceOf[js.Any] },
+        "ResultRecordedTime" -> ResultRecordedTime.map { x => x.asInstanceOf[js.Any] },
+        "ResultToken" -> ResultToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EvaluationResult]
     }
@@ -1971,19 +1971,19 @@ package configservice {
   @js.native
   trait EvaluationResultQualifier extends js.Object {
     var ConfigRuleName: js.UndefOr[StringWithCharLimit64]
-    var ResourceType: js.UndefOr[StringWithCharLimit256]
     var ResourceId: js.UndefOr[BaseResourceId]
+    var ResourceType: js.UndefOr[StringWithCharLimit256]
   }
 
   object EvaluationResultQualifier {
     def apply(
       ConfigRuleName: js.UndefOr[StringWithCharLimit64] = js.undefined,
-      ResourceType: js.UndefOr[StringWithCharLimit256] = js.undefined,
-      ResourceId: js.UndefOr[BaseResourceId] = js.undefined): EvaluationResultQualifier = {
+      ResourceId: js.UndefOr[BaseResourceId] = js.undefined,
+      ResourceType: js.UndefOr[StringWithCharLimit256] = js.undefined): EvaluationResultQualifier = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ConfigRuleName" -> ConfigRuleName.map { x => x.asInstanceOf[js.Any] },
-        "ResourceType" -> ResourceType.map { x => x.asInstanceOf[js.Any] },
-        "ResourceId" -> ResourceId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ResourceId" -> ResourceId.map { x => x.asInstanceOf[js.Any] },
+        "ResourceType" -> ResourceType.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EvaluationResultQualifier]
     }
@@ -1997,31 +1997,31 @@ package configservice {
 
   @js.native
   trait GetAggregateComplianceDetailsByConfigRuleRequest extends js.Object {
-    var AwsRegion: js.UndefOr[AwsRegion]
-    var ConfigRuleName: js.UndefOr[ConfigRuleName]
-    var Limit: js.UndefOr[Limit]
+    var AccountId: AccountId
+    var AwsRegion: AwsRegion
+    var ConfigRuleName: ConfigRuleName
+    var ConfigurationAggregatorName: ConfigurationAggregatorName
     var ComplianceType: js.UndefOr[ComplianceType]
-    var ConfigurationAggregatorName: js.UndefOr[ConfigurationAggregatorName]
-    var AccountId: js.UndefOr[AccountId]
+    var Limit: js.UndefOr[Limit]
     var NextToken: js.UndefOr[NextToken]
   }
 
   object GetAggregateComplianceDetailsByConfigRuleRequest {
     def apply(
-      AwsRegion: js.UndefOr[AwsRegion] = js.undefined,
-      ConfigRuleName: js.UndefOr[ConfigRuleName] = js.undefined,
-      Limit: js.UndefOr[Limit] = js.undefined,
+      AccountId: AccountId,
+      AwsRegion: AwsRegion,
+      ConfigRuleName: ConfigRuleName,
+      ConfigurationAggregatorName: ConfigurationAggregatorName,
       ComplianceType: js.UndefOr[ComplianceType] = js.undefined,
-      ConfigurationAggregatorName: js.UndefOr[ConfigurationAggregatorName] = js.undefined,
-      AccountId: js.UndefOr[AccountId] = js.undefined,
+      Limit: js.UndefOr[Limit] = js.undefined,
       NextToken: js.UndefOr[NextToken] = js.undefined): GetAggregateComplianceDetailsByConfigRuleRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "AwsRegion" -> AwsRegion.map { x => x.asInstanceOf[js.Any] },
-        "ConfigRuleName" -> ConfigRuleName.map { x => x.asInstanceOf[js.Any] },
-        "Limit" -> Limit.map { x => x.asInstanceOf[js.Any] },
+        "AccountId" -> AccountId.asInstanceOf[js.Any],
+        "AwsRegion" -> AwsRegion.asInstanceOf[js.Any],
+        "ConfigRuleName" -> ConfigRuleName.asInstanceOf[js.Any],
+        "ConfigurationAggregatorName" -> ConfigurationAggregatorName.asInstanceOf[js.Any],
         "ComplianceType" -> ComplianceType.map { x => x.asInstanceOf[js.Any] },
-        "ConfigurationAggregatorName" -> ConfigurationAggregatorName.map { x => x.asInstanceOf[js.Any] },
-        "AccountId" -> AccountId.map { x => x.asInstanceOf[js.Any] },
+        "Limit" -> Limit.map { x => x.asInstanceOf[js.Any] },
         "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetAggregateComplianceDetailsByConfigRuleRequest]
@@ -2048,25 +2048,25 @@ package configservice {
 
   @js.native
   trait GetAggregateConfigRuleComplianceSummaryRequest extends js.Object {
+    var ConfigurationAggregatorName: ConfigurationAggregatorName
+    var Filters: js.UndefOr[ConfigRuleComplianceSummaryFilters]
     var GroupByKey: js.UndefOr[ConfigRuleComplianceSummaryGroupKey]
     var Limit: js.UndefOr[GroupByAPILimit]
-    var ConfigurationAggregatorName: js.UndefOr[ConfigurationAggregatorName]
-    var Filters: js.UndefOr[ConfigRuleComplianceSummaryFilters]
     var NextToken: js.UndefOr[NextToken]
   }
 
   object GetAggregateConfigRuleComplianceSummaryRequest {
     def apply(
+      ConfigurationAggregatorName: ConfigurationAggregatorName,
+      Filters: js.UndefOr[ConfigRuleComplianceSummaryFilters] = js.undefined,
       GroupByKey: js.UndefOr[ConfigRuleComplianceSummaryGroupKey] = js.undefined,
       Limit: js.UndefOr[GroupByAPILimit] = js.undefined,
-      ConfigurationAggregatorName: js.UndefOr[ConfigurationAggregatorName] = js.undefined,
-      Filters: js.UndefOr[ConfigRuleComplianceSummaryFilters] = js.undefined,
       NextToken: js.UndefOr[NextToken] = js.undefined): GetAggregateConfigRuleComplianceSummaryRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "ConfigurationAggregatorName" -> ConfigurationAggregatorName.asInstanceOf[js.Any],
+        "Filters" -> Filters.map { x => x.asInstanceOf[js.Any] },
         "GroupByKey" -> GroupByKey.map { x => x.asInstanceOf[js.Any] },
         "Limit" -> Limit.map { x => x.asInstanceOf[js.Any] },
-        "ConfigurationAggregatorName" -> ConfigurationAggregatorName.map { x => x.asInstanceOf[js.Any] },
-        "Filters" -> Filters.map { x => x.asInstanceOf[js.Any] },
         "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetAggregateConfigRuleComplianceSummaryRequest]
@@ -2075,19 +2075,19 @@ package configservice {
 
   @js.native
   trait GetAggregateConfigRuleComplianceSummaryResponse extends js.Object {
-    var GroupByKey: js.UndefOr[StringWithCharLimit256]
     var AggregateComplianceCounts: js.UndefOr[AggregateComplianceCountList]
+    var GroupByKey: js.UndefOr[StringWithCharLimit256]
     var NextToken: js.UndefOr[NextToken]
   }
 
   object GetAggregateConfigRuleComplianceSummaryResponse {
     def apply(
-      GroupByKey: js.UndefOr[StringWithCharLimit256] = js.undefined,
       AggregateComplianceCounts: js.UndefOr[AggregateComplianceCountList] = js.undefined,
+      GroupByKey: js.UndefOr[StringWithCharLimit256] = js.undefined,
       NextToken: js.UndefOr[NextToken] = js.undefined): GetAggregateConfigRuleComplianceSummaryResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "GroupByKey" -> GroupByKey.map { x => x.asInstanceOf[js.Any] },
         "AggregateComplianceCounts" -> AggregateComplianceCounts.map { x => x.asInstanceOf[js.Any] },
+        "GroupByKey" -> GroupByKey.map { x => x.asInstanceOf[js.Any] },
         "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetAggregateConfigRuleComplianceSummaryResponse]
@@ -2096,25 +2096,25 @@ package configservice {
 
   @js.native
   trait GetAggregateDiscoveredResourceCountsRequest extends js.Object {
+    var ConfigurationAggregatorName: ConfigurationAggregatorName
+    var Filters: js.UndefOr[ResourceCountFilters]
     var GroupByKey: js.UndefOr[ResourceCountGroupKey]
     var Limit: js.UndefOr[GroupByAPILimit]
-    var ConfigurationAggregatorName: js.UndefOr[ConfigurationAggregatorName]
-    var Filters: js.UndefOr[ResourceCountFilters]
     var NextToken: js.UndefOr[NextToken]
   }
 
   object GetAggregateDiscoveredResourceCountsRequest {
     def apply(
+      ConfigurationAggregatorName: ConfigurationAggregatorName,
+      Filters: js.UndefOr[ResourceCountFilters] = js.undefined,
       GroupByKey: js.UndefOr[ResourceCountGroupKey] = js.undefined,
       Limit: js.UndefOr[GroupByAPILimit] = js.undefined,
-      ConfigurationAggregatorName: js.UndefOr[ConfigurationAggregatorName] = js.undefined,
-      Filters: js.UndefOr[ResourceCountFilters] = js.undefined,
       NextToken: js.UndefOr[NextToken] = js.undefined): GetAggregateDiscoveredResourceCountsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "ConfigurationAggregatorName" -> ConfigurationAggregatorName.asInstanceOf[js.Any],
+        "Filters" -> Filters.map { x => x.asInstanceOf[js.Any] },
         "GroupByKey" -> GroupByKey.map { x => x.asInstanceOf[js.Any] },
         "Limit" -> Limit.map { x => x.asInstanceOf[js.Any] },
-        "ConfigurationAggregatorName" -> ConfigurationAggregatorName.map { x => x.asInstanceOf[js.Any] },
-        "Filters" -> Filters.map { x => x.asInstanceOf[js.Any] },
         "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetAggregateDiscoveredResourceCountsRequest]
@@ -2123,7 +2123,7 @@ package configservice {
 
   @js.native
   trait GetAggregateDiscoveredResourceCountsResponse extends js.Object {
-    var TotalDiscoveredResources: js.UndefOr[Double]
+    var TotalDiscoveredResources: Double
     var GroupByKey: js.UndefOr[StringWithCharLimit256]
     var GroupedResourceCounts: js.UndefOr[GroupedResourceCountList]
     var NextToken: js.UndefOr[NextToken]
@@ -2131,12 +2131,12 @@ package configservice {
 
   object GetAggregateDiscoveredResourceCountsResponse {
     def apply(
-      TotalDiscoveredResources: js.UndefOr[Double] = js.undefined,
+      TotalDiscoveredResources: Double,
       GroupByKey: js.UndefOr[StringWithCharLimit256] = js.undefined,
       GroupedResourceCounts: js.UndefOr[GroupedResourceCountList] = js.undefined,
       NextToken: js.UndefOr[NextToken] = js.undefined): GetAggregateDiscoveredResourceCountsResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "TotalDiscoveredResources" -> TotalDiscoveredResources.map { x => x.asInstanceOf[js.Any] },
+        "TotalDiscoveredResources" -> TotalDiscoveredResources.asInstanceOf[js.Any],
         "GroupByKey" -> GroupByKey.map { x => x.asInstanceOf[js.Any] },
         "GroupedResourceCounts" -> GroupedResourceCounts.map { x => x.asInstanceOf[js.Any] },
         "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
@@ -2147,17 +2147,17 @@ package configservice {
 
   @js.native
   trait GetAggregateResourceConfigRequest extends js.Object {
-    var ConfigurationAggregatorName: js.UndefOr[ConfigurationAggregatorName]
-    var ResourceIdentifier: js.UndefOr[AggregateResourceIdentifier]
+    var ConfigurationAggregatorName: ConfigurationAggregatorName
+    var ResourceIdentifier: AggregateResourceIdentifier
   }
 
   object GetAggregateResourceConfigRequest {
     def apply(
-      ConfigurationAggregatorName: js.UndefOr[ConfigurationAggregatorName] = js.undefined,
-      ResourceIdentifier: js.UndefOr[AggregateResourceIdentifier] = js.undefined): GetAggregateResourceConfigRequest = {
+      ConfigurationAggregatorName: ConfigurationAggregatorName,
+      ResourceIdentifier: AggregateResourceIdentifier): GetAggregateResourceConfigRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ConfigurationAggregatorName" -> ConfigurationAggregatorName.map { x => x.asInstanceOf[js.Any] },
-        "ResourceIdentifier" -> ResourceIdentifier.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ConfigurationAggregatorName" -> ConfigurationAggregatorName.asInstanceOf[js.Any],
+        "ResourceIdentifier" -> ResourceIdentifier.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetAggregateResourceConfigRequest]
     }
@@ -2183,7 +2183,7 @@ package configservice {
    */
   @js.native
   trait GetComplianceDetailsByConfigRuleRequest extends js.Object {
-    var ConfigRuleName: js.UndefOr[StringWithCharLimit64]
+    var ConfigRuleName: StringWithCharLimit64
     var ComplianceTypes: js.UndefOr[ComplianceTypes]
     var Limit: js.UndefOr[Limit]
     var NextToken: js.UndefOr[NextToken]
@@ -2191,12 +2191,12 @@ package configservice {
 
   object GetComplianceDetailsByConfigRuleRequest {
     def apply(
-      ConfigRuleName: js.UndefOr[StringWithCharLimit64] = js.undefined,
+      ConfigRuleName: StringWithCharLimit64,
       ComplianceTypes: js.UndefOr[ComplianceTypes] = js.undefined,
       Limit: js.UndefOr[Limit] = js.undefined,
       NextToken: js.UndefOr[NextToken] = js.undefined): GetComplianceDetailsByConfigRuleRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ConfigRuleName" -> ConfigRuleName.map { x => x.asInstanceOf[js.Any] },
+        "ConfigRuleName" -> ConfigRuleName.asInstanceOf[js.Any],
         "ComplianceTypes" -> ComplianceTypes.map { x => x.asInstanceOf[js.Any] },
         "Limit" -> Limit.map { x => x.asInstanceOf[js.Any] },
         "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
@@ -2231,21 +2231,21 @@ package configservice {
    */
   @js.native
   trait GetComplianceDetailsByResourceRequest extends js.Object {
-    var ResourceType: js.UndefOr[StringWithCharLimit256]
-    var ResourceId: js.UndefOr[BaseResourceId]
+    var ResourceId: BaseResourceId
+    var ResourceType: StringWithCharLimit256
     var ComplianceTypes: js.UndefOr[ComplianceTypes]
     var NextToken: js.UndefOr[String]
   }
 
   object GetComplianceDetailsByResourceRequest {
     def apply(
-      ResourceType: js.UndefOr[StringWithCharLimit256] = js.undefined,
-      ResourceId: js.UndefOr[BaseResourceId] = js.undefined,
+      ResourceId: BaseResourceId,
+      ResourceType: StringWithCharLimit256,
       ComplianceTypes: js.UndefOr[ComplianceTypes] = js.undefined,
       NextToken: js.UndefOr[String] = js.undefined): GetComplianceDetailsByResourceRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ResourceType" -> ResourceType.map { x => x.asInstanceOf[js.Any] },
-        "ResourceId" -> ResourceId.map { x => x.asInstanceOf[js.Any] },
+        "ResourceId" -> ResourceId.asInstanceOf[js.Any],
+        "ResourceType" -> ResourceType.asInstanceOf[js.Any],
         "ComplianceTypes" -> ComplianceTypes.map { x => x.asInstanceOf[js.Any] },
         "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
@@ -2330,20 +2330,20 @@ package configservice {
 
   @js.native
   trait GetDiscoveredResourceCountsRequest extends js.Object {
-    var resourceTypes: js.UndefOr[ResourceTypes]
     var limit: js.UndefOr[Limit]
     var nextToken: js.UndefOr[NextToken]
+    var resourceTypes: js.UndefOr[ResourceTypes]
   }
 
   object GetDiscoveredResourceCountsRequest {
     def apply(
-      resourceTypes: js.UndefOr[ResourceTypes] = js.undefined,
       limit: js.UndefOr[Limit] = js.undefined,
-      nextToken: js.UndefOr[NextToken] = js.undefined): GetDiscoveredResourceCountsRequest = {
+      nextToken: js.UndefOr[NextToken] = js.undefined,
+      resourceTypes: js.UndefOr[ResourceTypes] = js.undefined): GetDiscoveredResourceCountsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "resourceTypes" -> resourceTypes.map { x => x.asInstanceOf[js.Any] },
         "limit" -> limit.map { x => x.asInstanceOf[js.Any] },
-        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] },
+        "resourceTypes" -> resourceTypes.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetDiscoveredResourceCountsRequest]
     }
@@ -2351,20 +2351,20 @@ package configservice {
 
   @js.native
   trait GetDiscoveredResourceCountsResponse extends js.Object {
-    var totalDiscoveredResources: js.UndefOr[Double]
-    var resourceCounts: js.UndefOr[ResourceCounts]
     var nextToken: js.UndefOr[NextToken]
+    var resourceCounts: js.UndefOr[ResourceCounts]
+    var totalDiscoveredResources: js.UndefOr[Double]
   }
 
   object GetDiscoveredResourceCountsResponse {
     def apply(
-      totalDiscoveredResources: js.UndefOr[Double] = js.undefined,
+      nextToken: js.UndefOr[NextToken] = js.undefined,
       resourceCounts: js.UndefOr[ResourceCounts] = js.undefined,
-      nextToken: js.UndefOr[NextToken] = js.undefined): GetDiscoveredResourceCountsResponse = {
+      totalDiscoveredResources: js.UndefOr[Double] = js.undefined): GetDiscoveredResourceCountsResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "totalDiscoveredResources" -> totalDiscoveredResources.map { x => x.asInstanceOf[js.Any] },
+        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] },
         "resourceCounts" -> resourceCounts.map { x => x.asInstanceOf[js.Any] },
-        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "totalDiscoveredResources" -> totalDiscoveredResources.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetDiscoveredResourceCountsResponse]
     }
@@ -2375,32 +2375,32 @@ package configservice {
    */
   @js.native
   trait GetResourceConfigHistoryRequest extends js.Object {
-    var resourceId: js.UndefOr[ResourceId]
+    var resourceId: ResourceId
+    var resourceType: ResourceType
+    var chronologicalOrder: js.UndefOr[ChronologicalOrder]
     var earlierTime: js.UndefOr[EarlierTime]
     var laterTime: js.UndefOr[LaterTime]
-    var resourceType: js.UndefOr[ResourceType]
-    var nextToken: js.UndefOr[NextToken]
-    var chronologicalOrder: js.UndefOr[ChronologicalOrder]
     var limit: js.UndefOr[Limit]
+    var nextToken: js.UndefOr[NextToken]
   }
 
   object GetResourceConfigHistoryRequest {
     def apply(
-      resourceId: js.UndefOr[ResourceId] = js.undefined,
+      resourceId: ResourceId,
+      resourceType: ResourceType,
+      chronologicalOrder: js.UndefOr[ChronologicalOrder] = js.undefined,
       earlierTime: js.UndefOr[EarlierTime] = js.undefined,
       laterTime: js.UndefOr[LaterTime] = js.undefined,
-      resourceType: js.UndefOr[ResourceType] = js.undefined,
-      nextToken: js.UndefOr[NextToken] = js.undefined,
-      chronologicalOrder: js.UndefOr[ChronologicalOrder] = js.undefined,
-      limit: js.UndefOr[Limit] = js.undefined): GetResourceConfigHistoryRequest = {
+      limit: js.UndefOr[Limit] = js.undefined,
+      nextToken: js.UndefOr[NextToken] = js.undefined): GetResourceConfigHistoryRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "resourceId" -> resourceId.map { x => x.asInstanceOf[js.Any] },
+        "resourceId" -> resourceId.asInstanceOf[js.Any],
+        "resourceType" -> resourceType.asInstanceOf[js.Any],
+        "chronologicalOrder" -> chronologicalOrder.map { x => x.asInstanceOf[js.Any] },
         "earlierTime" -> earlierTime.map { x => x.asInstanceOf[js.Any] },
         "laterTime" -> laterTime.map { x => x.asInstanceOf[js.Any] },
-        "resourceType" -> resourceType.map { x => x.asInstanceOf[js.Any] },
-        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] },
-        "chronologicalOrder" -> chronologicalOrder.map { x => x.asInstanceOf[js.Any] },
-        "limit" -> limit.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "limit" -> limit.map { x => x.asInstanceOf[js.Any] },
+        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetResourceConfigHistoryRequest]
     }
@@ -2432,17 +2432,17 @@ package configservice {
    */
   @js.native
   trait GroupedResourceCount extends js.Object {
-    var GroupName: js.UndefOr[StringWithCharLimit256]
-    var ResourceCount: js.UndefOr[Double]
+    var GroupName: StringWithCharLimit256
+    var ResourceCount: Double
   }
 
   object GroupedResourceCount {
     def apply(
-      GroupName: js.UndefOr[StringWithCharLimit256] = js.undefined,
-      ResourceCount: js.UndefOr[Double] = js.undefined): GroupedResourceCount = {
+      GroupName: StringWithCharLimit256,
+      ResourceCount: Double): GroupedResourceCount = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "GroupName" -> GroupName.map { x => x.asInstanceOf[js.Any] },
-        "ResourceCount" -> ResourceCount.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "GroupName" -> GroupName.asInstanceOf[js.Any],
+        "ResourceCount" -> ResourceCount.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GroupedResourceCount]
     }
@@ -2450,25 +2450,25 @@ package configservice {
 
   @js.native
   trait ListAggregateDiscoveredResourcesRequest extends js.Object {
-    var Limit: js.UndefOr[Limit]
-    var ResourceType: js.UndefOr[ResourceType]
-    var ConfigurationAggregatorName: js.UndefOr[ConfigurationAggregatorName]
+    var ConfigurationAggregatorName: ConfigurationAggregatorName
+    var ResourceType: ResourceType
     var Filters: js.UndefOr[ResourceFilters]
+    var Limit: js.UndefOr[Limit]
     var NextToken: js.UndefOr[NextToken]
   }
 
   object ListAggregateDiscoveredResourcesRequest {
     def apply(
-      Limit: js.UndefOr[Limit] = js.undefined,
-      ResourceType: js.UndefOr[ResourceType] = js.undefined,
-      ConfigurationAggregatorName: js.UndefOr[ConfigurationAggregatorName] = js.undefined,
+      ConfigurationAggregatorName: ConfigurationAggregatorName,
+      ResourceType: ResourceType,
       Filters: js.UndefOr[ResourceFilters] = js.undefined,
+      Limit: js.UndefOr[Limit] = js.undefined,
       NextToken: js.UndefOr[NextToken] = js.undefined): ListAggregateDiscoveredResourcesRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Limit" -> Limit.map { x => x.asInstanceOf[js.Any] },
-        "ResourceType" -> ResourceType.map { x => x.asInstanceOf[js.Any] },
-        "ConfigurationAggregatorName" -> ConfigurationAggregatorName.map { x => x.asInstanceOf[js.Any] },
+        "ConfigurationAggregatorName" -> ConfigurationAggregatorName.asInstanceOf[js.Any],
+        "ResourceType" -> ResourceType.asInstanceOf[js.Any],
         "Filters" -> Filters.map { x => x.asInstanceOf[js.Any] },
+        "Limit" -> Limit.map { x => x.asInstanceOf[js.Any] },
         "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListAggregateDiscoveredResourcesRequest]
@@ -2477,17 +2477,17 @@ package configservice {
 
   @js.native
   trait ListAggregateDiscoveredResourcesResponse extends js.Object {
-    var ResourceIdentifiers: js.UndefOr[DiscoveredResourceIdentifierList]
     var NextToken: js.UndefOr[NextToken]
+    var ResourceIdentifiers: js.UndefOr[DiscoveredResourceIdentifierList]
   }
 
   object ListAggregateDiscoveredResourcesResponse {
     def apply(
-      ResourceIdentifiers: js.UndefOr[DiscoveredResourceIdentifierList] = js.undefined,
-      NextToken: js.UndefOr[NextToken] = js.undefined): ListAggregateDiscoveredResourcesResponse = {
+      NextToken: js.UndefOr[NextToken] = js.undefined,
+      ResourceIdentifiers: js.UndefOr[DiscoveredResourceIdentifierList] = js.undefined): ListAggregateDiscoveredResourcesResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ResourceIdentifiers" -> ResourceIdentifiers.map { x => x.asInstanceOf[js.Any] },
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
+        "ResourceIdentifiers" -> ResourceIdentifiers.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListAggregateDiscoveredResourcesResponse]
     }
@@ -2498,29 +2498,29 @@ package configservice {
    */
   @js.native
   trait ListDiscoveredResourcesRequest extends js.Object {
-    var resourceType: js.UndefOr[ResourceType]
-    var nextToken: js.UndefOr[NextToken]
-    var resourceName: js.UndefOr[ResourceName]
-    var resourceIds: js.UndefOr[ResourceIdList]
+    var resourceType: ResourceType
     var includeDeletedResources: js.UndefOr[Boolean]
     var limit: js.UndefOr[Limit]
+    var nextToken: js.UndefOr[NextToken]
+    var resourceIds: js.UndefOr[ResourceIdList]
+    var resourceName: js.UndefOr[ResourceName]
   }
 
   object ListDiscoveredResourcesRequest {
     def apply(
-      resourceType: js.UndefOr[ResourceType] = js.undefined,
-      nextToken: js.UndefOr[NextToken] = js.undefined,
-      resourceName: js.UndefOr[ResourceName] = js.undefined,
-      resourceIds: js.UndefOr[ResourceIdList] = js.undefined,
+      resourceType: ResourceType,
       includeDeletedResources: js.UndefOr[Boolean] = js.undefined,
-      limit: js.UndefOr[Limit] = js.undefined): ListDiscoveredResourcesRequest = {
+      limit: js.UndefOr[Limit] = js.undefined,
+      nextToken: js.UndefOr[NextToken] = js.undefined,
+      resourceIds: js.UndefOr[ResourceIdList] = js.undefined,
+      resourceName: js.UndefOr[ResourceName] = js.undefined): ListDiscoveredResourcesRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "resourceType" -> resourceType.map { x => x.asInstanceOf[js.Any] },
-        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] },
-        "resourceName" -> resourceName.map { x => x.asInstanceOf[js.Any] },
-        "resourceIds" -> resourceIds.map { x => x.asInstanceOf[js.Any] },
+        "resourceType" -> resourceType.asInstanceOf[js.Any],
         "includeDeletedResources" -> includeDeletedResources.map { x => x.asInstanceOf[js.Any] },
-        "limit" -> limit.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "limit" -> limit.map { x => x.asInstanceOf[js.Any] },
+        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] },
+        "resourceIds" -> resourceIds.map { x => x.asInstanceOf[js.Any] },
+        "resourceName" -> resourceName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListDiscoveredResourcesRequest]
     }
@@ -2531,17 +2531,17 @@ package configservice {
    */
   @js.native
   trait ListDiscoveredResourcesResponse extends js.Object {
-    var resourceIdentifiers: js.UndefOr[ResourceIdentifierList]
     var nextToken: js.UndefOr[NextToken]
+    var resourceIdentifiers: js.UndefOr[ResourceIdentifierList]
   }
 
   object ListDiscoveredResourcesResponse {
     def apply(
-      resourceIdentifiers: js.UndefOr[ResourceIdentifierList] = js.undefined,
-      nextToken: js.UndefOr[NextToken] = js.undefined): ListDiscoveredResourcesResponse = {
+      nextToken: js.UndefOr[NextToken] = js.undefined,
+      resourceIdentifiers: js.UndefOr[ResourceIdentifierList] = js.undefined): ListDiscoveredResourcesResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "resourceIdentifiers" -> resourceIdentifiers.map { x => x.asInstanceOf[js.Any] },
-        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] },
+        "resourceIdentifiers" -> resourceIdentifiers.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListDiscoveredResourcesResponse]
     }
@@ -2571,20 +2571,20 @@ package configservice {
    */
   @js.native
   trait OrganizationAggregationSource extends js.Object {
-    var RoleArn: js.UndefOr[String]
-    var AwsRegions: js.UndefOr[AggregatorRegionList]
+    var RoleArn: String
     var AllAwsRegions: js.UndefOr[Boolean]
+    var AwsRegions: js.UndefOr[AggregatorRegionList]
   }
 
   object OrganizationAggregationSource {
     def apply(
-      RoleArn: js.UndefOr[String] = js.undefined,
-      AwsRegions: js.UndefOr[AggregatorRegionList] = js.undefined,
-      AllAwsRegions: js.UndefOr[Boolean] = js.undefined): OrganizationAggregationSource = {
+      RoleArn: String,
+      AllAwsRegions: js.UndefOr[Boolean] = js.undefined,
+      AwsRegions: js.UndefOr[AggregatorRegionList] = js.undefined): OrganizationAggregationSource = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "RoleArn" -> RoleArn.map { x => x.asInstanceOf[js.Any] },
-        "AwsRegions" -> AwsRegions.map { x => x.asInstanceOf[js.Any] },
-        "AllAwsRegions" -> AllAwsRegions.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "RoleArn" -> RoleArn.asInstanceOf[js.Any],
+        "AllAwsRegions" -> AllAwsRegions.map { x => x.asInstanceOf[js.Any] },
+        "AwsRegions" -> AwsRegions.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[OrganizationAggregationSource]
     }
@@ -2620,17 +2620,17 @@ package configservice {
 
   @js.native
   trait PutAggregationAuthorizationRequest extends js.Object {
-    var AuthorizedAccountId: js.UndefOr[AccountId]
-    var AuthorizedAwsRegion: js.UndefOr[AwsRegion]
+    var AuthorizedAccountId: AccountId
+    var AuthorizedAwsRegion: AwsRegion
   }
 
   object PutAggregationAuthorizationRequest {
     def apply(
-      AuthorizedAccountId: js.UndefOr[AccountId] = js.undefined,
-      AuthorizedAwsRegion: js.UndefOr[AwsRegion] = js.undefined): PutAggregationAuthorizationRequest = {
+      AuthorizedAccountId: AccountId,
+      AuthorizedAwsRegion: AwsRegion): PutAggregationAuthorizationRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "AuthorizedAccountId" -> AuthorizedAccountId.map { x => x.asInstanceOf[js.Any] },
-        "AuthorizedAwsRegion" -> AuthorizedAwsRegion.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "AuthorizedAccountId" -> AuthorizedAccountId.asInstanceOf[js.Any],
+        "AuthorizedAwsRegion" -> AuthorizedAwsRegion.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutAggregationAuthorizationRequest]
     }
@@ -2653,14 +2653,14 @@ package configservice {
 
   @js.native
   trait PutConfigRuleRequest extends js.Object {
-    var ConfigRule: js.UndefOr[ConfigRule]
+    var ConfigRule: ConfigRule
   }
 
   object PutConfigRuleRequest {
     def apply(
-      ConfigRule: js.UndefOr[ConfigRule] = js.undefined): PutConfigRuleRequest = {
+      ConfigRule: ConfigRule): PutConfigRuleRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ConfigRule" -> ConfigRule.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ConfigRule" -> ConfigRule.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutConfigRuleRequest]
     }
@@ -2668,18 +2668,18 @@ package configservice {
 
   @js.native
   trait PutConfigurationAggregatorRequest extends js.Object {
-    var ConfigurationAggregatorName: js.UndefOr[ConfigurationAggregatorName]
+    var ConfigurationAggregatorName: ConfigurationAggregatorName
     var AccountAggregationSources: js.UndefOr[AccountAggregationSourceList]
     var OrganizationAggregationSource: js.UndefOr[OrganizationAggregationSource]
   }
 
   object PutConfigurationAggregatorRequest {
     def apply(
-      ConfigurationAggregatorName: js.UndefOr[ConfigurationAggregatorName] = js.undefined,
+      ConfigurationAggregatorName: ConfigurationAggregatorName,
       AccountAggregationSources: js.UndefOr[AccountAggregationSourceList] = js.undefined,
       OrganizationAggregationSource: js.UndefOr[OrganizationAggregationSource] = js.undefined): PutConfigurationAggregatorRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ConfigurationAggregatorName" -> ConfigurationAggregatorName.map { x => x.asInstanceOf[js.Any] },
+        "ConfigurationAggregatorName" -> ConfigurationAggregatorName.asInstanceOf[js.Any],
         "AccountAggregationSources" -> AccountAggregationSources.map { x => x.asInstanceOf[js.Any] },
         "OrganizationAggregationSource" -> OrganizationAggregationSource.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
@@ -2707,14 +2707,14 @@ package configservice {
    */
   @js.native
   trait PutConfigurationRecorderRequest extends js.Object {
-    var ConfigurationRecorder: js.UndefOr[ConfigurationRecorder]
+    var ConfigurationRecorder: ConfigurationRecorder
   }
 
   object PutConfigurationRecorderRequest {
     def apply(
-      ConfigurationRecorder: js.UndefOr[ConfigurationRecorder] = js.undefined): PutConfigurationRecorderRequest = {
+      ConfigurationRecorder: ConfigurationRecorder): PutConfigurationRecorderRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ConfigurationRecorder" -> ConfigurationRecorder.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ConfigurationRecorder" -> ConfigurationRecorder.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutConfigurationRecorderRequest]
     }
@@ -2725,14 +2725,14 @@ package configservice {
    */
   @js.native
   trait PutDeliveryChannelRequest extends js.Object {
-    var DeliveryChannel: js.UndefOr[DeliveryChannel]
+    var DeliveryChannel: DeliveryChannel
   }
 
   object PutDeliveryChannelRequest {
     def apply(
-      DeliveryChannel: js.UndefOr[DeliveryChannel] = js.undefined): PutDeliveryChannelRequest = {
+      DeliveryChannel: DeliveryChannel): PutDeliveryChannelRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "DeliveryChannel" -> DeliveryChannel.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "DeliveryChannel" -> DeliveryChannel.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutDeliveryChannelRequest]
     }
@@ -2743,19 +2743,19 @@ package configservice {
    */
   @js.native
   trait PutEvaluationsRequest extends js.Object {
+    var ResultToken: String
     var Evaluations: js.UndefOr[Evaluations]
-    var ResultToken: js.UndefOr[String]
     var TestMode: js.UndefOr[Boolean]
   }
 
   object PutEvaluationsRequest {
     def apply(
+      ResultToken: String,
       Evaluations: js.UndefOr[Evaluations] = js.undefined,
-      ResultToken: js.UndefOr[String] = js.undefined,
       TestMode: js.UndefOr[Boolean] = js.undefined): PutEvaluationsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "ResultToken" -> ResultToken.asInstanceOf[js.Any],
         "Evaluations" -> Evaluations.map { x => x.asInstanceOf[js.Any] },
-        "ResultToken" -> ResultToken.map { x => x.asInstanceOf[js.Any] },
         "TestMode" -> TestMode.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutEvaluationsRequest]
@@ -2782,14 +2782,14 @@ package configservice {
 
   @js.native
   trait PutRetentionConfigurationRequest extends js.Object {
-    var RetentionPeriodInDays: js.UndefOr[RetentionPeriodInDays]
+    var RetentionPeriodInDays: RetentionPeriodInDays
   }
 
   object PutRetentionConfigurationRequest {
     def apply(
-      RetentionPeriodInDays: js.UndefOr[RetentionPeriodInDays] = js.undefined): PutRetentionConfigurationRequest = {
+      RetentionPeriodInDays: RetentionPeriodInDays): PutRetentionConfigurationRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "RetentionPeriodInDays" -> RetentionPeriodInDays.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "RetentionPeriodInDays" -> RetentionPeriodInDays.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutRetentionConfigurationRequest]
     }
@@ -2847,23 +2847,23 @@ package configservice {
    */
   @js.native
   trait Relationship extends js.Object {
-    var resourceType: js.UndefOr[ResourceType]
+    var relationshipName: js.UndefOr[RelationshipName]
     var resourceId: js.UndefOr[ResourceId]
     var resourceName: js.UndefOr[ResourceName]
-    var relationshipName: js.UndefOr[RelationshipName]
+    var resourceType: js.UndefOr[ResourceType]
   }
 
   object Relationship {
     def apply(
-      resourceType: js.UndefOr[ResourceType] = js.undefined,
+      relationshipName: js.UndefOr[RelationshipName] = js.undefined,
       resourceId: js.UndefOr[ResourceId] = js.undefined,
       resourceName: js.UndefOr[ResourceName] = js.undefined,
-      relationshipName: js.UndefOr[RelationshipName] = js.undefined): Relationship = {
+      resourceType: js.UndefOr[ResourceType] = js.undefined): Relationship = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "resourceType" -> resourceType.map { x => x.asInstanceOf[js.Any] },
+        "relationshipName" -> relationshipName.map { x => x.asInstanceOf[js.Any] },
         "resourceId" -> resourceId.map { x => x.asInstanceOf[js.Any] },
         "resourceName" -> resourceName.map { x => x.asInstanceOf[js.Any] },
-        "relationshipName" -> relationshipName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "resourceType" -> resourceType.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Relationship]
     }
@@ -2874,17 +2874,17 @@ package configservice {
    */
   @js.native
   trait ResourceCount extends js.Object {
-    var resourceType: js.UndefOr[ResourceType]
     var count: js.UndefOr[Double]
+    var resourceType: js.UndefOr[ResourceType]
   }
 
   object ResourceCount {
     def apply(
-      resourceType: js.UndefOr[ResourceType] = js.undefined,
-      count: js.UndefOr[Double] = js.undefined): ResourceCount = {
+      count: js.UndefOr[Double] = js.undefined,
+      resourceType: js.UndefOr[ResourceType] = js.undefined): ResourceCount = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "resourceType" -> resourceType.map { x => x.asInstanceOf[js.Any] },
-        "count" -> count.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "count" -> count.map { x => x.asInstanceOf[js.Any] },
+        "resourceType" -> resourceType.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ResourceCount]
     }
@@ -2895,20 +2895,20 @@ package configservice {
    */
   @js.native
   trait ResourceCountFilters extends js.Object {
-    var ResourceType: js.UndefOr[ResourceType]
     var AccountId: js.UndefOr[AccountId]
     var Region: js.UndefOr[AwsRegion]
+    var ResourceType: js.UndefOr[ResourceType]
   }
 
   object ResourceCountFilters {
     def apply(
-      ResourceType: js.UndefOr[ResourceType] = js.undefined,
       AccountId: js.UndefOr[AccountId] = js.undefined,
-      Region: js.UndefOr[AwsRegion] = js.undefined): ResourceCountFilters = {
+      Region: js.UndefOr[AwsRegion] = js.undefined,
+      ResourceType: js.UndefOr[ResourceType] = js.undefined): ResourceCountFilters = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ResourceType" -> ResourceType.map { x => x.asInstanceOf[js.Any] },
         "AccountId" -> AccountId.map { x => x.asInstanceOf[js.Any] },
-        "Region" -> Region.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Region" -> Region.map { x => x.asInstanceOf[js.Any] },
+        "ResourceType" -> ResourceType.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ResourceCountFilters]
     }
@@ -2928,22 +2928,22 @@ package configservice {
   @js.native
   trait ResourceFilters extends js.Object {
     var AccountId: js.UndefOr[AccountId]
+    var Region: js.UndefOr[AwsRegion]
     var ResourceId: js.UndefOr[ResourceId]
     var ResourceName: js.UndefOr[ResourceName]
-    var Region: js.UndefOr[AwsRegion]
   }
 
   object ResourceFilters {
     def apply(
       AccountId: js.UndefOr[AccountId] = js.undefined,
+      Region: js.UndefOr[AwsRegion] = js.undefined,
       ResourceId: js.UndefOr[ResourceId] = js.undefined,
-      ResourceName: js.UndefOr[ResourceName] = js.undefined,
-      Region: js.UndefOr[AwsRegion] = js.undefined): ResourceFilters = {
+      ResourceName: js.UndefOr[ResourceName] = js.undefined): ResourceFilters = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AccountId" -> AccountId.map { x => x.asInstanceOf[js.Any] },
+        "Region" -> Region.map { x => x.asInstanceOf[js.Any] },
         "ResourceId" -> ResourceId.map { x => x.asInstanceOf[js.Any] },
-        "ResourceName" -> ResourceName.map { x => x.asInstanceOf[js.Any] },
-        "Region" -> Region.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ResourceName" -> ResourceName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ResourceFilters]
     }
@@ -2954,23 +2954,23 @@ package configservice {
    */
   @js.native
   trait ResourceIdentifier extends js.Object {
-    var resourceType: js.UndefOr[ResourceType]
+    var resourceDeletionTime: js.UndefOr[ResourceDeletionTime]
     var resourceId: js.UndefOr[ResourceId]
     var resourceName: js.UndefOr[ResourceName]
-    var resourceDeletionTime: js.UndefOr[ResourceDeletionTime]
+    var resourceType: js.UndefOr[ResourceType]
   }
 
   object ResourceIdentifier {
     def apply(
-      resourceType: js.UndefOr[ResourceType] = js.undefined,
+      resourceDeletionTime: js.UndefOr[ResourceDeletionTime] = js.undefined,
       resourceId: js.UndefOr[ResourceId] = js.undefined,
       resourceName: js.UndefOr[ResourceName] = js.undefined,
-      resourceDeletionTime: js.UndefOr[ResourceDeletionTime] = js.undefined): ResourceIdentifier = {
+      resourceType: js.UndefOr[ResourceType] = js.undefined): ResourceIdentifier = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "resourceType" -> resourceType.map { x => x.asInstanceOf[js.Any] },
+        "resourceDeletionTime" -> resourceDeletionTime.map { x => x.asInstanceOf[js.Any] },
         "resourceId" -> resourceId.map { x => x.asInstanceOf[js.Any] },
         "resourceName" -> resourceName.map { x => x.asInstanceOf[js.Any] },
-        "resourceDeletionTime" -> resourceDeletionTime.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "resourceType" -> resourceType.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ResourceIdentifier]
     }
@@ -2981,17 +2981,17 @@ package configservice {
    */
   @js.native
   trait ResourceKey extends js.Object {
-    var resourceType: js.UndefOr[ResourceType]
-    var resourceId: js.UndefOr[ResourceId]
+    var resourceId: ResourceId
+    var resourceType: ResourceType
   }
 
   object ResourceKey {
     def apply(
-      resourceType: js.UndefOr[ResourceType] = js.undefined,
-      resourceId: js.UndefOr[ResourceId] = js.undefined): ResourceKey = {
+      resourceId: ResourceId,
+      resourceType: ResourceType): ResourceKey = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "resourceType" -> resourceType.map { x => x.asInstanceOf[js.Any] },
-        "resourceId" -> resourceId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "resourceId" -> resourceId.asInstanceOf[js.Any],
+        "resourceType" -> resourceType.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ResourceKey]
     }
@@ -3071,17 +3071,17 @@ package configservice {
    */
   @js.native
   trait RetentionConfiguration extends js.Object {
-    var Name: js.UndefOr[RetentionConfigurationName]
-    var RetentionPeriodInDays: js.UndefOr[RetentionPeriodInDays]
+    var Name: RetentionConfigurationName
+    var RetentionPeriodInDays: RetentionPeriodInDays
   }
 
   object RetentionConfiguration {
     def apply(
-      Name: js.UndefOr[RetentionConfigurationName] = js.undefined,
-      RetentionPeriodInDays: js.UndefOr[RetentionPeriodInDays] = js.undefined): RetentionConfiguration = {
+      Name: RetentionConfigurationName,
+      RetentionPeriodInDays: RetentionPeriodInDays): RetentionConfiguration = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
-        "RetentionPeriodInDays" -> RetentionPeriodInDays.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Name" -> Name.asInstanceOf[js.Any],
+        "RetentionPeriodInDays" -> RetentionPeriodInDays.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RetentionConfiguration]
     }
@@ -3092,23 +3092,23 @@ package configservice {
    */
   @js.native
   trait Scope extends js.Object {
+    var ComplianceResourceId: js.UndefOr[BaseResourceId]
     var ComplianceResourceTypes: js.UndefOr[ComplianceResourceTypes]
     var TagKey: js.UndefOr[StringWithCharLimit128]
     var TagValue: js.UndefOr[StringWithCharLimit256]
-    var ComplianceResourceId: js.UndefOr[BaseResourceId]
   }
 
   object Scope {
     def apply(
+      ComplianceResourceId: js.UndefOr[BaseResourceId] = js.undefined,
       ComplianceResourceTypes: js.UndefOr[ComplianceResourceTypes] = js.undefined,
       TagKey: js.UndefOr[StringWithCharLimit128] = js.undefined,
-      TagValue: js.UndefOr[StringWithCharLimit256] = js.undefined,
-      ComplianceResourceId: js.UndefOr[BaseResourceId] = js.undefined): Scope = {
+      TagValue: js.UndefOr[StringWithCharLimit256] = js.undefined): Scope = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "ComplianceResourceId" -> ComplianceResourceId.map { x => x.asInstanceOf[js.Any] },
         "ComplianceResourceTypes" -> ComplianceResourceTypes.map { x => x.asInstanceOf[js.Any] },
         "TagKey" -> TagKey.map { x => x.asInstanceOf[js.Any] },
-        "TagValue" -> TagValue.map { x => x.asInstanceOf[js.Any] },
-        "ComplianceResourceId" -> ComplianceResourceId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "TagValue" -> TagValue.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Scope]
     }
@@ -3119,19 +3119,19 @@ package configservice {
    */
   @js.native
   trait Source extends js.Object {
-    var Owner: js.UndefOr[Owner]
-    var SourceIdentifier: js.UndefOr[StringWithCharLimit256]
+    var Owner: Owner
+    var SourceIdentifier: StringWithCharLimit256
     var SourceDetails: js.UndefOr[SourceDetails]
   }
 
   object Source {
     def apply(
-      Owner: js.UndefOr[Owner] = js.undefined,
-      SourceIdentifier: js.UndefOr[StringWithCharLimit256] = js.undefined,
+      Owner: Owner,
+      SourceIdentifier: StringWithCharLimit256,
       SourceDetails: js.UndefOr[SourceDetails] = js.undefined): Source = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Owner" -> Owner.map { x => x.asInstanceOf[js.Any] },
-        "SourceIdentifier" -> SourceIdentifier.map { x => x.asInstanceOf[js.Any] },
+        "Owner" -> Owner.asInstanceOf[js.Any],
+        "SourceIdentifier" -> SourceIdentifier.asInstanceOf[js.Any],
         "SourceDetails" -> SourceDetails.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Source]
@@ -3144,19 +3144,19 @@ package configservice {
   @js.native
   trait SourceDetail extends js.Object {
     var EventSource: js.UndefOr[EventSource]
-    var MessageType: js.UndefOr[MessageType]
     var MaximumExecutionFrequency: js.UndefOr[MaximumExecutionFrequency]
+    var MessageType: js.UndefOr[MessageType]
   }
 
   object SourceDetail {
     def apply(
       EventSource: js.UndefOr[EventSource] = js.undefined,
-      MessageType: js.UndefOr[MessageType] = js.undefined,
-      MaximumExecutionFrequency: js.UndefOr[MaximumExecutionFrequency] = js.undefined): SourceDetail = {
+      MaximumExecutionFrequency: js.UndefOr[MaximumExecutionFrequency] = js.undefined,
+      MessageType: js.UndefOr[MessageType] = js.undefined): SourceDetail = {
       val _fields = IndexedSeq[(String, js.Any)](
         "EventSource" -> EventSource.map { x => x.asInstanceOf[js.Any] },
-        "MessageType" -> MessageType.map { x => x.asInstanceOf[js.Any] },
-        "MaximumExecutionFrequency" -> MaximumExecutionFrequency.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "MaximumExecutionFrequency" -> MaximumExecutionFrequency.map { x => x.asInstanceOf[js.Any] },
+        "MessageType" -> MessageType.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SourceDetail]
     }
@@ -3201,14 +3201,14 @@ package configservice {
    */
   @js.native
   trait StartConfigurationRecorderRequest extends js.Object {
-    var ConfigurationRecorderName: js.UndefOr[RecorderName]
+    var ConfigurationRecorderName: RecorderName
   }
 
   object StartConfigurationRecorderRequest {
     def apply(
-      ConfigurationRecorderName: js.UndefOr[RecorderName] = js.undefined): StartConfigurationRecorderRequest = {
+      ConfigurationRecorderName: RecorderName): StartConfigurationRecorderRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ConfigurationRecorderName" -> ConfigurationRecorderName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ConfigurationRecorderName" -> ConfigurationRecorderName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StartConfigurationRecorderRequest]
     }
@@ -3219,14 +3219,14 @@ package configservice {
    */
   @js.native
   trait StopConfigurationRecorderRequest extends js.Object {
-    var ConfigurationRecorderName: js.UndefOr[RecorderName]
+    var ConfigurationRecorderName: RecorderName
   }
 
   object StopConfigurationRecorderRequest {
     def apply(
-      ConfigurationRecorderName: js.UndefOr[RecorderName] = js.undefined): StopConfigurationRecorderRequest = {
+      ConfigurationRecorderName: RecorderName): StopConfigurationRecorderRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ConfigurationRecorderName" -> ConfigurationRecorderName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ConfigurationRecorderName" -> ConfigurationRecorderName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StopConfigurationRecorderRequest]
     }

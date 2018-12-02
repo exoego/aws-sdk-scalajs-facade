@@ -546,14 +546,14 @@ package iot {
    */
   @js.native
   trait AbortConfig extends js.Object {
-    var criteriaList: js.UndefOr[AbortCriteriaList]
+    var criteriaList: AbortCriteriaList
   }
 
   object AbortConfig {
     def apply(
-      criteriaList: js.UndefOr[AbortCriteriaList] = js.undefined): AbortConfig = {
+      criteriaList: AbortCriteriaList): AbortConfig = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "criteriaList" -> criteriaList.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "criteriaList" -> criteriaList.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AbortConfig]
     }
@@ -564,23 +564,23 @@ package iot {
    */
   @js.native
   trait AbortCriteria extends js.Object {
-    var failureType: js.UndefOr[JobExecutionFailureType]
-    var action: js.UndefOr[AbortAction]
-    var thresholdPercentage: js.UndefOr[AbortThresholdPercentage]
-    var minNumberOfExecutedThings: js.UndefOr[MinimumNumberOfExecutedThings]
+    var action: AbortAction
+    var failureType: JobExecutionFailureType
+    var minNumberOfExecutedThings: MinimumNumberOfExecutedThings
+    var thresholdPercentage: AbortThresholdPercentage
   }
 
   object AbortCriteria {
     def apply(
-      failureType: js.UndefOr[JobExecutionFailureType] = js.undefined,
-      action: js.UndefOr[AbortAction] = js.undefined,
-      thresholdPercentage: js.UndefOr[AbortThresholdPercentage] = js.undefined,
-      minNumberOfExecutedThings: js.UndefOr[MinimumNumberOfExecutedThings] = js.undefined): AbortCriteria = {
+      action: AbortAction,
+      failureType: JobExecutionFailureType,
+      minNumberOfExecutedThings: MinimumNumberOfExecutedThings,
+      thresholdPercentage: AbortThresholdPercentage): AbortCriteria = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "failureType" -> failureType.map { x => x.asInstanceOf[js.Any] },
-        "action" -> action.map { x => x.asInstanceOf[js.Any] },
-        "thresholdPercentage" -> thresholdPercentage.map { x => x.asInstanceOf[js.Any] },
-        "minNumberOfExecutedThings" -> minNumberOfExecutedThings.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "action" -> action.asInstanceOf[js.Any],
+        "failureType" -> failureType.asInstanceOf[js.Any],
+        "minNumberOfExecutedThings" -> minNumberOfExecutedThings.asInstanceOf[js.Any],
+        "thresholdPercentage" -> thresholdPercentage.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AbortCriteria]
     }
@@ -591,16 +591,16 @@ package iot {
    */
   @js.native
   trait AcceptCertificateTransferRequest extends js.Object {
-    var certificateId: js.UndefOr[CertificateId]
+    var certificateId: CertificateId
     var setAsActive: js.UndefOr[SetAsActive]
   }
 
   object AcceptCertificateTransferRequest {
     def apply(
-      certificateId: js.UndefOr[CertificateId] = js.undefined,
+      certificateId: CertificateId,
       setAsActive: js.UndefOr[SetAsActive] = js.undefined): AcceptCertificateTransferRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "certificateId" -> certificateId.map { x => x.asInstanceOf[js.Any] },
+        "certificateId" -> certificateId.asInstanceOf[js.Any],
         "setAsActive" -> setAsActive.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AcceptCertificateTransferRequest]
@@ -612,58 +612,58 @@ package iot {
    */
   @js.native
   trait Action extends js.Object {
-    var sns: js.UndefOr[SnsAction]
-    var iotEvents: js.UndefOr[IotEventsAction]
-    var s3: js.UndefOr[S3Action]
     var cloudwatchAlarm: js.UndefOr[CloudwatchAlarmAction]
-    var dynamoDBv2: js.UndefOr[DynamoDBv2Action]
-    var lambda: js.UndefOr[LambdaAction]
-    var elasticsearch: js.UndefOr[ElasticsearchAction]
-    var iotAnalytics: js.UndefOr[IotAnalyticsAction]
-    var sqs: js.UndefOr[SqsAction]
     var cloudwatchMetric: js.UndefOr[CloudwatchMetricAction]
     var dynamoDB: js.UndefOr[DynamoDBAction]
-    var republish: js.UndefOr[RepublishAction]
-    var kinesis: js.UndefOr[KinesisAction]
+    var dynamoDBv2: js.UndefOr[DynamoDBv2Action]
+    var elasticsearch: js.UndefOr[ElasticsearchAction]
     var firehose: js.UndefOr[FirehoseAction]
+    var iotAnalytics: js.UndefOr[IotAnalyticsAction]
+    var iotEvents: js.UndefOr[IotEventsAction]
+    var kinesis: js.UndefOr[KinesisAction]
+    var lambda: js.UndefOr[LambdaAction]
+    var republish: js.UndefOr[RepublishAction]
+    var s3: js.UndefOr[S3Action]
     var salesforce: js.UndefOr[SalesforceAction]
+    var sns: js.UndefOr[SnsAction]
+    var sqs: js.UndefOr[SqsAction]
     var stepFunctions: js.UndefOr[StepFunctionsAction]
   }
 
   object Action {
     def apply(
-      sns: js.UndefOr[SnsAction] = js.undefined,
-      iotEvents: js.UndefOr[IotEventsAction] = js.undefined,
-      s3: js.UndefOr[S3Action] = js.undefined,
       cloudwatchAlarm: js.UndefOr[CloudwatchAlarmAction] = js.undefined,
-      dynamoDBv2: js.UndefOr[DynamoDBv2Action] = js.undefined,
-      lambda: js.UndefOr[LambdaAction] = js.undefined,
-      elasticsearch: js.UndefOr[ElasticsearchAction] = js.undefined,
-      iotAnalytics: js.UndefOr[IotAnalyticsAction] = js.undefined,
-      sqs: js.UndefOr[SqsAction] = js.undefined,
       cloudwatchMetric: js.UndefOr[CloudwatchMetricAction] = js.undefined,
       dynamoDB: js.UndefOr[DynamoDBAction] = js.undefined,
-      republish: js.UndefOr[RepublishAction] = js.undefined,
-      kinesis: js.UndefOr[KinesisAction] = js.undefined,
+      dynamoDBv2: js.UndefOr[DynamoDBv2Action] = js.undefined,
+      elasticsearch: js.UndefOr[ElasticsearchAction] = js.undefined,
       firehose: js.UndefOr[FirehoseAction] = js.undefined,
+      iotAnalytics: js.UndefOr[IotAnalyticsAction] = js.undefined,
+      iotEvents: js.UndefOr[IotEventsAction] = js.undefined,
+      kinesis: js.UndefOr[KinesisAction] = js.undefined,
+      lambda: js.UndefOr[LambdaAction] = js.undefined,
+      republish: js.UndefOr[RepublishAction] = js.undefined,
+      s3: js.UndefOr[S3Action] = js.undefined,
       salesforce: js.UndefOr[SalesforceAction] = js.undefined,
+      sns: js.UndefOr[SnsAction] = js.undefined,
+      sqs: js.UndefOr[SqsAction] = js.undefined,
       stepFunctions: js.UndefOr[StepFunctionsAction] = js.undefined): Action = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "sns" -> sns.map { x => x.asInstanceOf[js.Any] },
-        "iotEvents" -> iotEvents.map { x => x.asInstanceOf[js.Any] },
-        "s3" -> s3.map { x => x.asInstanceOf[js.Any] },
         "cloudwatchAlarm" -> cloudwatchAlarm.map { x => x.asInstanceOf[js.Any] },
-        "dynamoDBv2" -> dynamoDBv2.map { x => x.asInstanceOf[js.Any] },
-        "lambda" -> lambda.map { x => x.asInstanceOf[js.Any] },
-        "elasticsearch" -> elasticsearch.map { x => x.asInstanceOf[js.Any] },
-        "iotAnalytics" -> iotAnalytics.map { x => x.asInstanceOf[js.Any] },
-        "sqs" -> sqs.map { x => x.asInstanceOf[js.Any] },
         "cloudwatchMetric" -> cloudwatchMetric.map { x => x.asInstanceOf[js.Any] },
         "dynamoDB" -> dynamoDB.map { x => x.asInstanceOf[js.Any] },
-        "republish" -> republish.map { x => x.asInstanceOf[js.Any] },
-        "kinesis" -> kinesis.map { x => x.asInstanceOf[js.Any] },
+        "dynamoDBv2" -> dynamoDBv2.map { x => x.asInstanceOf[js.Any] },
+        "elasticsearch" -> elasticsearch.map { x => x.asInstanceOf[js.Any] },
         "firehose" -> firehose.map { x => x.asInstanceOf[js.Any] },
+        "iotAnalytics" -> iotAnalytics.map { x => x.asInstanceOf[js.Any] },
+        "iotEvents" -> iotEvents.map { x => x.asInstanceOf[js.Any] },
+        "kinesis" -> kinesis.map { x => x.asInstanceOf[js.Any] },
+        "lambda" -> lambda.map { x => x.asInstanceOf[js.Any] },
+        "republish" -> republish.map { x => x.asInstanceOf[js.Any] },
+        "s3" -> s3.map { x => x.asInstanceOf[js.Any] },
         "salesforce" -> salesforce.map { x => x.asInstanceOf[js.Any] },
+        "sns" -> sns.map { x => x.asInstanceOf[js.Any] },
+        "sqs" -> sqs.map { x => x.asInstanceOf[js.Any] },
         "stepFunctions" -> stepFunctions.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Action]
@@ -684,32 +684,32 @@ package iot {
    */
   @js.native
   trait ActiveViolation extends js.Object {
-    var thingName: js.UndefOr[ThingName]
+    var behavior: js.UndefOr[Behavior]
     var lastViolationTime: js.UndefOr[Timestamp]
     var lastViolationValue: js.UndefOr[MetricValue]
     var securityProfileName: js.UndefOr[SecurityProfileName]
-    var behavior: js.UndefOr[Behavior]
-    var violationStartTime: js.UndefOr[Timestamp]
+    var thingName: js.UndefOr[ThingName]
     var violationId: js.UndefOr[ViolationId]
+    var violationStartTime: js.UndefOr[Timestamp]
   }
 
   object ActiveViolation {
     def apply(
-      thingName: js.UndefOr[ThingName] = js.undefined,
+      behavior: js.UndefOr[Behavior] = js.undefined,
       lastViolationTime: js.UndefOr[Timestamp] = js.undefined,
       lastViolationValue: js.UndefOr[MetricValue] = js.undefined,
       securityProfileName: js.UndefOr[SecurityProfileName] = js.undefined,
-      behavior: js.UndefOr[Behavior] = js.undefined,
-      violationStartTime: js.UndefOr[Timestamp] = js.undefined,
-      violationId: js.UndefOr[ViolationId] = js.undefined): ActiveViolation = {
+      thingName: js.UndefOr[ThingName] = js.undefined,
+      violationId: js.UndefOr[ViolationId] = js.undefined,
+      violationStartTime: js.UndefOr[Timestamp] = js.undefined): ActiveViolation = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "thingName" -> thingName.map { x => x.asInstanceOf[js.Any] },
+        "behavior" -> behavior.map { x => x.asInstanceOf[js.Any] },
         "lastViolationTime" -> lastViolationTime.map { x => x.asInstanceOf[js.Any] },
         "lastViolationValue" -> lastViolationValue.map { x => x.asInstanceOf[js.Any] },
         "securityProfileName" -> securityProfileName.map { x => x.asInstanceOf[js.Any] },
-        "behavior" -> behavior.map { x => x.asInstanceOf[js.Any] },
-        "violationStartTime" -> violationStartTime.map { x => x.asInstanceOf[js.Any] },
-        "violationId" -> violationId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "thingName" -> thingName.map { x => x.asInstanceOf[js.Any] },
+        "violationId" -> violationId.map { x => x.asInstanceOf[js.Any] },
+        "violationStartTime" -> violationStartTime.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ActiveViolation]
     }
@@ -717,23 +717,23 @@ package iot {
 
   @js.native
   trait AddThingToBillingGroupRequest extends js.Object {
-    var billingGroupName: js.UndefOr[BillingGroupName]
     var billingGroupArn: js.UndefOr[BillingGroupArn]
-    var thingName: js.UndefOr[ThingName]
+    var billingGroupName: js.UndefOr[BillingGroupName]
     var thingArn: js.UndefOr[ThingArn]
+    var thingName: js.UndefOr[ThingName]
   }
 
   object AddThingToBillingGroupRequest {
     def apply(
-      billingGroupName: js.UndefOr[BillingGroupName] = js.undefined,
       billingGroupArn: js.UndefOr[BillingGroupArn] = js.undefined,
-      thingName: js.UndefOr[ThingName] = js.undefined,
-      thingArn: js.UndefOr[ThingArn] = js.undefined): AddThingToBillingGroupRequest = {
+      billingGroupName: js.UndefOr[BillingGroupName] = js.undefined,
+      thingArn: js.UndefOr[ThingArn] = js.undefined,
+      thingName: js.UndefOr[ThingName] = js.undefined): AddThingToBillingGroupRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "billingGroupName" -> billingGroupName.map { x => x.asInstanceOf[js.Any] },
         "billingGroupArn" -> billingGroupArn.map { x => x.asInstanceOf[js.Any] },
-        "thingName" -> thingName.map { x => x.asInstanceOf[js.Any] },
-        "thingArn" -> thingArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "billingGroupName" -> billingGroupName.map { x => x.asInstanceOf[js.Any] },
+        "thingArn" -> thingArn.map { x => x.asInstanceOf[js.Any] },
+        "thingName" -> thingName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AddThingToBillingGroupRequest]
     }
@@ -754,26 +754,26 @@ package iot {
 
   @js.native
   trait AddThingToThingGroupRequest extends js.Object {
-    var thingGroupName: js.UndefOr[ThingGroupName]
-    var thingName: js.UndefOr[ThingName]
+    var overrideDynamicGroups: js.UndefOr[OverrideDynamicGroups]
     var thingArn: js.UndefOr[ThingArn]
     var thingGroupArn: js.UndefOr[ThingGroupArn]
-    var overrideDynamicGroups: js.UndefOr[OverrideDynamicGroups]
+    var thingGroupName: js.UndefOr[ThingGroupName]
+    var thingName: js.UndefOr[ThingName]
   }
 
   object AddThingToThingGroupRequest {
     def apply(
-      thingGroupName: js.UndefOr[ThingGroupName] = js.undefined,
-      thingName: js.UndefOr[ThingName] = js.undefined,
+      overrideDynamicGroups: js.UndefOr[OverrideDynamicGroups] = js.undefined,
       thingArn: js.UndefOr[ThingArn] = js.undefined,
       thingGroupArn: js.UndefOr[ThingGroupArn] = js.undefined,
-      overrideDynamicGroups: js.UndefOr[OverrideDynamicGroups] = js.undefined): AddThingToThingGroupRequest = {
+      thingGroupName: js.UndefOr[ThingGroupName] = js.undefined,
+      thingName: js.UndefOr[ThingName] = js.undefined): AddThingToThingGroupRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "thingGroupName" -> thingGroupName.map { x => x.asInstanceOf[js.Any] },
-        "thingName" -> thingName.map { x => x.asInstanceOf[js.Any] },
+        "overrideDynamicGroups" -> overrideDynamicGroups.map { x => x.asInstanceOf[js.Any] },
         "thingArn" -> thingArn.map { x => x.asInstanceOf[js.Any] },
         "thingGroupArn" -> thingGroupArn.map { x => x.asInstanceOf[js.Any] },
-        "overrideDynamicGroups" -> overrideDynamicGroups.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "thingGroupName" -> thingGroupName.map { x => x.asInstanceOf[js.Any] },
+        "thingName" -> thingName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AddThingToThingGroupRequest]
     }
@@ -797,17 +797,17 @@ package iot {
    */
   @js.native
   trait AlertTarget extends js.Object {
-    var alertTargetArn: js.UndefOr[AlertTargetArn]
-    var roleArn: js.UndefOr[RoleArn]
+    var alertTargetArn: AlertTargetArn
+    var roleArn: RoleArn
   }
 
   object AlertTarget {
     def apply(
-      alertTargetArn: js.UndefOr[AlertTargetArn] = js.undefined,
-      roleArn: js.UndefOr[RoleArn] = js.undefined): AlertTarget = {
+      alertTargetArn: AlertTargetArn,
+      roleArn: RoleArn): AlertTarget = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "alertTargetArn" -> alertTargetArn.map { x => x.asInstanceOf[js.Any] },
-        "roleArn" -> roleArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "alertTargetArn" -> alertTargetArn.asInstanceOf[js.Any],
+        "roleArn" -> roleArn.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AlertTarget]
     }
@@ -842,19 +842,19 @@ package iot {
 
   @js.native
   trait AssociateTargetsWithJobRequest extends js.Object {
-    var targets: js.UndefOr[JobTargets]
-    var jobId: js.UndefOr[JobId]
+    var jobId: JobId
+    var targets: JobTargets
     var comment: js.UndefOr[Comment]
   }
 
   object AssociateTargetsWithJobRequest {
     def apply(
-      targets: js.UndefOr[JobTargets] = js.undefined,
-      jobId: js.UndefOr[JobId] = js.undefined,
+      jobId: JobId,
+      targets: JobTargets,
       comment: js.UndefOr[Comment] = js.undefined): AssociateTargetsWithJobRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "targets" -> targets.map { x => x.asInstanceOf[js.Any] },
-        "jobId" -> jobId.map { x => x.asInstanceOf[js.Any] },
+        "jobId" -> jobId.asInstanceOf[js.Any],
+        "targets" -> targets.asInstanceOf[js.Any],
         "comment" -> comment.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AssociateTargetsWithJobRequest]
@@ -863,20 +863,20 @@ package iot {
 
   @js.native
   trait AssociateTargetsWithJobResponse extends js.Object {
+    var description: js.UndefOr[JobDescription]
     var jobArn: js.UndefOr[JobArn]
     var jobId: js.UndefOr[JobId]
-    var description: js.UndefOr[JobDescription]
   }
 
   object AssociateTargetsWithJobResponse {
     def apply(
+      description: js.UndefOr[JobDescription] = js.undefined,
       jobArn: js.UndefOr[JobArn] = js.undefined,
-      jobId: js.UndefOr[JobId] = js.undefined,
-      description: js.UndefOr[JobDescription] = js.undefined): AssociateTargetsWithJobResponse = {
+      jobId: js.UndefOr[JobId] = js.undefined): AssociateTargetsWithJobResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "description" -> description.map { x => x.asInstanceOf[js.Any] },
         "jobArn" -> jobArn.map { x => x.asInstanceOf[js.Any] },
-        "jobId" -> jobId.map { x => x.asInstanceOf[js.Any] },
-        "description" -> description.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "jobId" -> jobId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AssociateTargetsWithJobResponse]
     }
@@ -884,17 +884,17 @@ package iot {
 
   @js.native
   trait AttachPolicyRequest extends js.Object {
-    var policyName: js.UndefOr[PolicyName]
-    var target: js.UndefOr[PolicyTarget]
+    var policyName: PolicyName
+    var target: PolicyTarget
   }
 
   object AttachPolicyRequest {
     def apply(
-      policyName: js.UndefOr[PolicyName] = js.undefined,
-      target: js.UndefOr[PolicyTarget] = js.undefined): AttachPolicyRequest = {
+      policyName: PolicyName,
+      target: PolicyTarget): AttachPolicyRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "policyName" -> policyName.map { x => x.asInstanceOf[js.Any] },
-        "target" -> target.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "policyName" -> policyName.asInstanceOf[js.Any],
+        "target" -> target.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AttachPolicyRequest]
     }
@@ -905,17 +905,17 @@ package iot {
    */
   @js.native
   trait AttachPrincipalPolicyRequest extends js.Object {
-    var policyName: js.UndefOr[PolicyName]
-    var principal: js.UndefOr[Principal]
+    var policyName: PolicyName
+    var principal: Principal
   }
 
   object AttachPrincipalPolicyRequest {
     def apply(
-      policyName: js.UndefOr[PolicyName] = js.undefined,
-      principal: js.UndefOr[Principal] = js.undefined): AttachPrincipalPolicyRequest = {
+      policyName: PolicyName,
+      principal: Principal): AttachPrincipalPolicyRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "policyName" -> policyName.map { x => x.asInstanceOf[js.Any] },
-        "principal" -> principal.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "policyName" -> policyName.asInstanceOf[js.Any],
+        "principal" -> principal.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AttachPrincipalPolicyRequest]
     }
@@ -923,17 +923,17 @@ package iot {
 
   @js.native
   trait AttachSecurityProfileRequest extends js.Object {
-    var securityProfileName: js.UndefOr[SecurityProfileName]
-    var securityProfileTargetArn: js.UndefOr[SecurityProfileTargetArn]
+    var securityProfileName: SecurityProfileName
+    var securityProfileTargetArn: SecurityProfileTargetArn
   }
 
   object AttachSecurityProfileRequest {
     def apply(
-      securityProfileName: js.UndefOr[SecurityProfileName] = js.undefined,
-      securityProfileTargetArn: js.UndefOr[SecurityProfileTargetArn] = js.undefined): AttachSecurityProfileRequest = {
+      securityProfileName: SecurityProfileName,
+      securityProfileTargetArn: SecurityProfileTargetArn): AttachSecurityProfileRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "securityProfileName" -> securityProfileName.map { x => x.asInstanceOf[js.Any] },
-        "securityProfileTargetArn" -> securityProfileTargetArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "securityProfileName" -> securityProfileName.asInstanceOf[js.Any],
+        "securityProfileTargetArn" -> securityProfileTargetArn.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AttachSecurityProfileRequest]
     }
@@ -957,17 +957,17 @@ package iot {
    */
   @js.native
   trait AttachThingPrincipalRequest extends js.Object {
-    var thingName: js.UndefOr[ThingName]
-    var principal: js.UndefOr[Principal]
+    var principal: Principal
+    var thingName: ThingName
   }
 
   object AttachThingPrincipalRequest {
     def apply(
-      thingName: js.UndefOr[ThingName] = js.undefined,
-      principal: js.UndefOr[Principal] = js.undefined): AttachThingPrincipalRequest = {
+      principal: Principal,
+      thingName: ThingName): AttachThingPrincipalRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "thingName" -> thingName.map { x => x.asInstanceOf[js.Any] },
-        "principal" -> principal.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "principal" -> principal.asInstanceOf[js.Any],
+        "thingName" -> thingName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AttachThingPrincipalRequest]
     }
@@ -1033,29 +1033,29 @@ package iot {
    */
   @js.native
   trait AuditCheckDetails extends js.Object {
-    var checkRunStatus: js.UndefOr[AuditCheckRunStatus]
-    var totalResourcesCount: js.UndefOr[TotalResourcesCount]
-    var nonCompliantResourcesCount: js.UndefOr[NonCompliantResourcesCount]
-    var errorCode: js.UndefOr[ErrorCode]
     var checkCompliant: js.UndefOr[CheckCompliant]
+    var checkRunStatus: js.UndefOr[AuditCheckRunStatus]
+    var errorCode: js.UndefOr[ErrorCode]
     var message: js.UndefOr[ErrorMessage]
+    var nonCompliantResourcesCount: js.UndefOr[NonCompliantResourcesCount]
+    var totalResourcesCount: js.UndefOr[TotalResourcesCount]
   }
 
   object AuditCheckDetails {
     def apply(
-      checkRunStatus: js.UndefOr[AuditCheckRunStatus] = js.undefined,
-      totalResourcesCount: js.UndefOr[TotalResourcesCount] = js.undefined,
-      nonCompliantResourcesCount: js.UndefOr[NonCompliantResourcesCount] = js.undefined,
-      errorCode: js.UndefOr[ErrorCode] = js.undefined,
       checkCompliant: js.UndefOr[CheckCompliant] = js.undefined,
-      message: js.UndefOr[ErrorMessage] = js.undefined): AuditCheckDetails = {
+      checkRunStatus: js.UndefOr[AuditCheckRunStatus] = js.undefined,
+      errorCode: js.UndefOr[ErrorCode] = js.undefined,
+      message: js.UndefOr[ErrorMessage] = js.undefined,
+      nonCompliantResourcesCount: js.UndefOr[NonCompliantResourcesCount] = js.undefined,
+      totalResourcesCount: js.UndefOr[TotalResourcesCount] = js.undefined): AuditCheckDetails = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "checkRunStatus" -> checkRunStatus.map { x => x.asInstanceOf[js.Any] },
-        "totalResourcesCount" -> totalResourcesCount.map { x => x.asInstanceOf[js.Any] },
-        "nonCompliantResourcesCount" -> nonCompliantResourcesCount.map { x => x.asInstanceOf[js.Any] },
-        "errorCode" -> errorCode.map { x => x.asInstanceOf[js.Any] },
         "checkCompliant" -> checkCompliant.map { x => x.asInstanceOf[js.Any] },
-        "message" -> message.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "checkRunStatus" -> checkRunStatus.map { x => x.asInstanceOf[js.Any] },
+        "errorCode" -> errorCode.map { x => x.asInstanceOf[js.Any] },
+        "message" -> message.map { x => x.asInstanceOf[js.Any] },
+        "nonCompliantResourcesCount" -> nonCompliantResourcesCount.map { x => x.asInstanceOf[js.Any] },
+        "totalResourcesCount" -> totalResourcesCount.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AuditCheckDetails]
     }
@@ -1077,38 +1077,38 @@ package iot {
    */
   @js.native
   trait AuditFinding extends js.Object {
+    var checkName: js.UndefOr[AuditCheckName]
     var findingTime: js.UndefOr[Timestamp]
-    var relatedResources: js.UndefOr[RelatedResources]
     var nonCompliantResource: js.UndefOr[NonCompliantResource]
     var reasonForNonCompliance: js.UndefOr[ReasonForNonCompliance]
-    var taskStartTime: js.UndefOr[Timestamp]
-    var severity: js.UndefOr[AuditFindingSeverity]
     var reasonForNonComplianceCode: js.UndefOr[ReasonForNonComplianceCode]
+    var relatedResources: js.UndefOr[RelatedResources]
+    var severity: js.UndefOr[AuditFindingSeverity]
     var taskId: js.UndefOr[AuditTaskId]
-    var checkName: js.UndefOr[AuditCheckName]
+    var taskStartTime: js.UndefOr[Timestamp]
   }
 
   object AuditFinding {
     def apply(
+      checkName: js.UndefOr[AuditCheckName] = js.undefined,
       findingTime: js.UndefOr[Timestamp] = js.undefined,
-      relatedResources: js.UndefOr[RelatedResources] = js.undefined,
       nonCompliantResource: js.UndefOr[NonCompliantResource] = js.undefined,
       reasonForNonCompliance: js.UndefOr[ReasonForNonCompliance] = js.undefined,
-      taskStartTime: js.UndefOr[Timestamp] = js.undefined,
-      severity: js.UndefOr[AuditFindingSeverity] = js.undefined,
       reasonForNonComplianceCode: js.UndefOr[ReasonForNonComplianceCode] = js.undefined,
+      relatedResources: js.UndefOr[RelatedResources] = js.undefined,
+      severity: js.UndefOr[AuditFindingSeverity] = js.undefined,
       taskId: js.UndefOr[AuditTaskId] = js.undefined,
-      checkName: js.UndefOr[AuditCheckName] = js.undefined): AuditFinding = {
+      taskStartTime: js.UndefOr[Timestamp] = js.undefined): AuditFinding = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "checkName" -> checkName.map { x => x.asInstanceOf[js.Any] },
         "findingTime" -> findingTime.map { x => x.asInstanceOf[js.Any] },
-        "relatedResources" -> relatedResources.map { x => x.asInstanceOf[js.Any] },
         "nonCompliantResource" -> nonCompliantResource.map { x => x.asInstanceOf[js.Any] },
         "reasonForNonCompliance" -> reasonForNonCompliance.map { x => x.asInstanceOf[js.Any] },
-        "taskStartTime" -> taskStartTime.map { x => x.asInstanceOf[js.Any] },
-        "severity" -> severity.map { x => x.asInstanceOf[js.Any] },
         "reasonForNonComplianceCode" -> reasonForNonComplianceCode.map { x => x.asInstanceOf[js.Any] },
+        "relatedResources" -> relatedResources.map { x => x.asInstanceOf[js.Any] },
+        "severity" -> severity.map { x => x.asInstanceOf[js.Any] },
         "taskId" -> taskId.map { x => x.asInstanceOf[js.Any] },
-        "checkName" -> checkName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "taskStartTime" -> taskStartTime.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AuditFinding]
     }
@@ -1137,20 +1137,20 @@ package iot {
    */
   @js.native
   trait AuditNotificationTarget extends js.Object {
-    var targetArn: js.UndefOr[TargetArn]
-    var roleArn: js.UndefOr[RoleArn]
     var enabled: js.UndefOr[Enabled]
+    var roleArn: js.UndefOr[RoleArn]
+    var targetArn: js.UndefOr[TargetArn]
   }
 
   object AuditNotificationTarget {
     def apply(
-      targetArn: js.UndefOr[TargetArn] = js.undefined,
+      enabled: js.UndefOr[Enabled] = js.undefined,
       roleArn: js.UndefOr[RoleArn] = js.undefined,
-      enabled: js.UndefOr[Enabled] = js.undefined): AuditNotificationTarget = {
+      targetArn: js.UndefOr[TargetArn] = js.undefined): AuditNotificationTarget = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "targetArn" -> targetArn.map { x => x.asInstanceOf[js.Any] },
+        "enabled" -> enabled.map { x => x.asInstanceOf[js.Any] },
         "roleArn" -> roleArn.map { x => x.asInstanceOf[js.Any] },
-        "enabled" -> enabled.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "targetArn" -> targetArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AuditNotificationTarget]
     }
@@ -1237,25 +1237,25 @@ package iot {
   @js.native
   trait AuthResult extends js.Object {
     var allowed: js.UndefOr[Allowed]
-    var missingContextValues: js.UndefOr[MissingContextValues]
     var authDecision: js.UndefOr[AuthDecision]
-    var denied: js.UndefOr[Denied]
     var authInfo: js.UndefOr[AuthInfo]
+    var denied: js.UndefOr[Denied]
+    var missingContextValues: js.UndefOr[MissingContextValues]
   }
 
   object AuthResult {
     def apply(
       allowed: js.UndefOr[Allowed] = js.undefined,
-      missingContextValues: js.UndefOr[MissingContextValues] = js.undefined,
       authDecision: js.UndefOr[AuthDecision] = js.undefined,
+      authInfo: js.UndefOr[AuthInfo] = js.undefined,
       denied: js.UndefOr[Denied] = js.undefined,
-      authInfo: js.UndefOr[AuthInfo] = js.undefined): AuthResult = {
+      missingContextValues: js.UndefOr[MissingContextValues] = js.undefined): AuthResult = {
       val _fields = IndexedSeq[(String, js.Any)](
         "allowed" -> allowed.map { x => x.asInstanceOf[js.Any] },
-        "missingContextValues" -> missingContextValues.map { x => x.asInstanceOf[js.Any] },
         "authDecision" -> authDecision.map { x => x.asInstanceOf[js.Any] },
+        "authInfo" -> authInfo.map { x => x.asInstanceOf[js.Any] },
         "denied" -> denied.map { x => x.asInstanceOf[js.Any] },
-        "authInfo" -> authInfo.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "missingContextValues" -> missingContextValues.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AuthResult]
     }
@@ -1266,35 +1266,35 @@ package iot {
    */
   @js.native
   trait AuthorizerDescription extends js.Object {
-    var tokenSigningPublicKeys: js.UndefOr[PublicKeyMap]
-    var authorizerFunctionArn: js.UndefOr[AuthorizerFunctionArn]
     var authorizerArn: js.UndefOr[AuthorizerArn]
-    var lastModifiedDate: js.UndefOr[DateType]
+    var authorizerFunctionArn: js.UndefOr[AuthorizerFunctionArn]
     var authorizerName: js.UndefOr[AuthorizerName]
-    var status: js.UndefOr[AuthorizerStatus]
     var creationDate: js.UndefOr[DateType]
+    var lastModifiedDate: js.UndefOr[DateType]
+    var status: js.UndefOr[AuthorizerStatus]
     var tokenKeyName: js.UndefOr[TokenKeyName]
+    var tokenSigningPublicKeys: js.UndefOr[PublicKeyMap]
   }
 
   object AuthorizerDescription {
     def apply(
-      tokenSigningPublicKeys: js.UndefOr[PublicKeyMap] = js.undefined,
-      authorizerFunctionArn: js.UndefOr[AuthorizerFunctionArn] = js.undefined,
       authorizerArn: js.UndefOr[AuthorizerArn] = js.undefined,
-      lastModifiedDate: js.UndefOr[DateType] = js.undefined,
+      authorizerFunctionArn: js.UndefOr[AuthorizerFunctionArn] = js.undefined,
       authorizerName: js.UndefOr[AuthorizerName] = js.undefined,
-      status: js.UndefOr[AuthorizerStatus] = js.undefined,
       creationDate: js.UndefOr[DateType] = js.undefined,
-      tokenKeyName: js.UndefOr[TokenKeyName] = js.undefined): AuthorizerDescription = {
+      lastModifiedDate: js.UndefOr[DateType] = js.undefined,
+      status: js.UndefOr[AuthorizerStatus] = js.undefined,
+      tokenKeyName: js.UndefOr[TokenKeyName] = js.undefined,
+      tokenSigningPublicKeys: js.UndefOr[PublicKeyMap] = js.undefined): AuthorizerDescription = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "tokenSigningPublicKeys" -> tokenSigningPublicKeys.map { x => x.asInstanceOf[js.Any] },
-        "authorizerFunctionArn" -> authorizerFunctionArn.map { x => x.asInstanceOf[js.Any] },
         "authorizerArn" -> authorizerArn.map { x => x.asInstanceOf[js.Any] },
-        "lastModifiedDate" -> lastModifiedDate.map { x => x.asInstanceOf[js.Any] },
+        "authorizerFunctionArn" -> authorizerFunctionArn.map { x => x.asInstanceOf[js.Any] },
         "authorizerName" -> authorizerName.map { x => x.asInstanceOf[js.Any] },
-        "status" -> status.map { x => x.asInstanceOf[js.Any] },
         "creationDate" -> creationDate.map { x => x.asInstanceOf[js.Any] },
-        "tokenKeyName" -> tokenKeyName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "lastModifiedDate" -> lastModifiedDate.map { x => x.asInstanceOf[js.Any] },
+        "status" -> status.map { x => x.asInstanceOf[js.Any] },
+        "tokenKeyName" -> tokenKeyName.map { x => x.asInstanceOf[js.Any] },
+        "tokenSigningPublicKeys" -> tokenSigningPublicKeys.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AuthorizerDescription]
     }
@@ -1312,17 +1312,17 @@ package iot {
    */
   @js.native
   trait AuthorizerSummary extends js.Object {
-    var authorizerName: js.UndefOr[AuthorizerName]
     var authorizerArn: js.UndefOr[AuthorizerArn]
+    var authorizerName: js.UndefOr[AuthorizerName]
   }
 
   object AuthorizerSummary {
     def apply(
-      authorizerName: js.UndefOr[AuthorizerName] = js.undefined,
-      authorizerArn: js.UndefOr[AuthorizerArn] = js.undefined): AuthorizerSummary = {
+      authorizerArn: js.UndefOr[AuthorizerArn] = js.undefined,
+      authorizerName: js.UndefOr[AuthorizerName] = js.undefined): AuthorizerSummary = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "authorizerName" -> authorizerName.map { x => x.asInstanceOf[js.Any] },
-        "authorizerArn" -> authorizerArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "authorizerArn" -> authorizerArn.map { x => x.asInstanceOf[js.Any] },
+        "authorizerName" -> authorizerName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AuthorizerSummary]
     }
@@ -1358,20 +1358,20 @@ package iot {
    */
   @js.native
   trait Behavior extends js.Object {
-    var name: js.UndefOr[BehaviorName]
-    var metric: js.UndefOr[BehaviorMetric]
+    var name: BehaviorName
     var criteria: js.UndefOr[BehaviorCriteria]
+    var metric: js.UndefOr[BehaviorMetric]
   }
 
   object Behavior {
     def apply(
-      name: js.UndefOr[BehaviorName] = js.undefined,
-      metric: js.UndefOr[BehaviorMetric] = js.undefined,
-      criteria: js.UndefOr[BehaviorCriteria] = js.undefined): Behavior = {
+      name: BehaviorName,
+      criteria: js.UndefOr[BehaviorCriteria] = js.undefined,
+      metric: js.UndefOr[BehaviorMetric] = js.undefined): Behavior = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "name" -> name.map { x => x.asInstanceOf[js.Any] },
-        "metric" -> metric.map { x => x.asInstanceOf[js.Any] },
-        "criteria" -> criteria.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "name" -> name.asInstanceOf[js.Any],
+        "criteria" -> criteria.map { x => x.asInstanceOf[js.Any] },
+        "metric" -> metric.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Behavior]
     }
@@ -1383,19 +1383,19 @@ package iot {
   @js.native
   trait BehaviorCriteria extends js.Object {
     var comparisonOperator: js.UndefOr[ComparisonOperator]
-    var value: js.UndefOr[MetricValue]
     var durationSeconds: js.UndefOr[DurationSeconds]
+    var value: js.UndefOr[MetricValue]
   }
 
   object BehaviorCriteria {
     def apply(
       comparisonOperator: js.UndefOr[ComparisonOperator] = js.undefined,
-      value: js.UndefOr[MetricValue] = js.undefined,
-      durationSeconds: js.UndefOr[DurationSeconds] = js.undefined): BehaviorCriteria = {
+      durationSeconds: js.UndefOr[DurationSeconds] = js.undefined,
+      value: js.UndefOr[MetricValue] = js.undefined): BehaviorCriteria = {
       val _fields = IndexedSeq[(String, js.Any)](
         "comparisonOperator" -> comparisonOperator.map { x => x.asInstanceOf[js.Any] },
-        "value" -> value.map { x => x.asInstanceOf[js.Any] },
-        "durationSeconds" -> durationSeconds.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "durationSeconds" -> durationSeconds.map { x => x.asInstanceOf[js.Any] },
+        "value" -> value.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BehaviorCriteria]
     }
@@ -1444,21 +1444,21 @@ package iot {
   trait CACertificate extends js.Object {
     var certificateArn: js.UndefOr[CertificateArn]
     var certificateId: js.UndefOr[CertificateId]
-    var status: js.UndefOr[CACertificateStatus]
     var creationDate: js.UndefOr[DateType]
+    var status: js.UndefOr[CACertificateStatus]
   }
 
   object CACertificate {
     def apply(
       certificateArn: js.UndefOr[CertificateArn] = js.undefined,
       certificateId: js.UndefOr[CertificateId] = js.undefined,
-      status: js.UndefOr[CACertificateStatus] = js.undefined,
-      creationDate: js.UndefOr[DateType] = js.undefined): CACertificate = {
+      creationDate: js.UndefOr[DateType] = js.undefined,
+      status: js.UndefOr[CACertificateStatus] = js.undefined): CACertificate = {
       val _fields = IndexedSeq[(String, js.Any)](
         "certificateArn" -> certificateArn.map { x => x.asInstanceOf[js.Any] },
         "certificateId" -> certificateId.map { x => x.asInstanceOf[js.Any] },
-        "status" -> status.map { x => x.asInstanceOf[js.Any] },
-        "creationDate" -> creationDate.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "creationDate" -> creationDate.map { x => x.asInstanceOf[js.Any] },
+        "status" -> status.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CACertificate]
     }
@@ -1469,44 +1469,44 @@ package iot {
    */
   @js.native
   trait CACertificateDescription extends js.Object {
-    var certificateId: js.UndefOr[CertificateId]
-    var lastModifiedDate: js.UndefOr[DateType]
-    var ownedBy: js.UndefOr[AwsAccountId]
-    var generationId: js.UndefOr[GenerationId]
-    var customerVersion: js.UndefOr[CustomerVersion]
     var autoRegistrationStatus: js.UndefOr[AutoRegistrationStatus]
     var certificateArn: js.UndefOr[CertificateArn]
-    var status: js.UndefOr[CACertificateStatus]
-    var creationDate: js.UndefOr[DateType]
-    var validity: js.UndefOr[CertificateValidity]
+    var certificateId: js.UndefOr[CertificateId]
     var certificatePem: js.UndefOr[CertificatePem]
+    var creationDate: js.UndefOr[DateType]
+    var customerVersion: js.UndefOr[CustomerVersion]
+    var generationId: js.UndefOr[GenerationId]
+    var lastModifiedDate: js.UndefOr[DateType]
+    var ownedBy: js.UndefOr[AwsAccountId]
+    var status: js.UndefOr[CACertificateStatus]
+    var validity: js.UndefOr[CertificateValidity]
   }
 
   object CACertificateDescription {
     def apply(
-      certificateId: js.UndefOr[CertificateId] = js.undefined,
-      lastModifiedDate: js.UndefOr[DateType] = js.undefined,
-      ownedBy: js.UndefOr[AwsAccountId] = js.undefined,
-      generationId: js.UndefOr[GenerationId] = js.undefined,
-      customerVersion: js.UndefOr[CustomerVersion] = js.undefined,
       autoRegistrationStatus: js.UndefOr[AutoRegistrationStatus] = js.undefined,
       certificateArn: js.UndefOr[CertificateArn] = js.undefined,
-      status: js.UndefOr[CACertificateStatus] = js.undefined,
+      certificateId: js.UndefOr[CertificateId] = js.undefined,
+      certificatePem: js.UndefOr[CertificatePem] = js.undefined,
       creationDate: js.UndefOr[DateType] = js.undefined,
-      validity: js.UndefOr[CertificateValidity] = js.undefined,
-      certificatePem: js.UndefOr[CertificatePem] = js.undefined): CACertificateDescription = {
+      customerVersion: js.UndefOr[CustomerVersion] = js.undefined,
+      generationId: js.UndefOr[GenerationId] = js.undefined,
+      lastModifiedDate: js.UndefOr[DateType] = js.undefined,
+      ownedBy: js.UndefOr[AwsAccountId] = js.undefined,
+      status: js.UndefOr[CACertificateStatus] = js.undefined,
+      validity: js.UndefOr[CertificateValidity] = js.undefined): CACertificateDescription = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "certificateId" -> certificateId.map { x => x.asInstanceOf[js.Any] },
-        "lastModifiedDate" -> lastModifiedDate.map { x => x.asInstanceOf[js.Any] },
-        "ownedBy" -> ownedBy.map { x => x.asInstanceOf[js.Any] },
-        "generationId" -> generationId.map { x => x.asInstanceOf[js.Any] },
-        "customerVersion" -> customerVersion.map { x => x.asInstanceOf[js.Any] },
         "autoRegistrationStatus" -> autoRegistrationStatus.map { x => x.asInstanceOf[js.Any] },
         "certificateArn" -> certificateArn.map { x => x.asInstanceOf[js.Any] },
-        "status" -> status.map { x => x.asInstanceOf[js.Any] },
+        "certificateId" -> certificateId.map { x => x.asInstanceOf[js.Any] },
+        "certificatePem" -> certificatePem.map { x => x.asInstanceOf[js.Any] },
         "creationDate" -> creationDate.map { x => x.asInstanceOf[js.Any] },
-        "validity" -> validity.map { x => x.asInstanceOf[js.Any] },
-        "certificatePem" -> certificatePem.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "customerVersion" -> customerVersion.map { x => x.asInstanceOf[js.Any] },
+        "generationId" -> generationId.map { x => x.asInstanceOf[js.Any] },
+        "lastModifiedDate" -> lastModifiedDate.map { x => x.asInstanceOf[js.Any] },
+        "ownedBy" -> ownedBy.map { x => x.asInstanceOf[js.Any] },
+        "status" -> status.map { x => x.asInstanceOf[js.Any] },
+        "validity" -> validity.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CACertificateDescription]
     }
@@ -1521,14 +1521,14 @@ package iot {
 
   @js.native
   trait CancelAuditTaskRequest extends js.Object {
-    var taskId: js.UndefOr[AuditTaskId]
+    var taskId: AuditTaskId
   }
 
   object CancelAuditTaskRequest {
     def apply(
-      taskId: js.UndefOr[AuditTaskId] = js.undefined): CancelAuditTaskRequest = {
+      taskId: AuditTaskId): CancelAuditTaskRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "taskId" -> taskId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "taskId" -> taskId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CancelAuditTaskRequest]
     }
@@ -1552,14 +1552,14 @@ package iot {
    */
   @js.native
   trait CancelCertificateTransferRequest extends js.Object {
-    var certificateId: js.UndefOr[CertificateId]
+    var certificateId: CertificateId
   }
 
   object CancelCertificateTransferRequest {
     def apply(
-      certificateId: js.UndefOr[CertificateId] = js.undefined): CancelCertificateTransferRequest = {
+      certificateId: CertificateId): CancelCertificateTransferRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "certificateId" -> certificateId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "certificateId" -> certificateId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CancelCertificateTransferRequest]
     }
@@ -1567,26 +1567,26 @@ package iot {
 
   @js.native
   trait CancelJobExecutionRequest extends js.Object {
+    var jobId: JobId
+    var thingName: ThingName
     var expectedVersion: js.UndefOr[ExpectedVersion]
     var force: js.UndefOr[ForceFlag]
-    var thingName: js.UndefOr[ThingName]
     var statusDetails: js.UndefOr[DetailsMap]
-    var jobId: js.UndefOr[JobId]
   }
 
   object CancelJobExecutionRequest {
     def apply(
+      jobId: JobId,
+      thingName: ThingName,
       expectedVersion: js.UndefOr[ExpectedVersion] = js.undefined,
       force: js.UndefOr[ForceFlag] = js.undefined,
-      thingName: js.UndefOr[ThingName] = js.undefined,
-      statusDetails: js.UndefOr[DetailsMap] = js.undefined,
-      jobId: js.UndefOr[JobId] = js.undefined): CancelJobExecutionRequest = {
+      statusDetails: js.UndefOr[DetailsMap] = js.undefined): CancelJobExecutionRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "jobId" -> jobId.asInstanceOf[js.Any],
+        "thingName" -> thingName.asInstanceOf[js.Any],
         "expectedVersion" -> expectedVersion.map { x => x.asInstanceOf[js.Any] },
         "force" -> force.map { x => x.asInstanceOf[js.Any] },
-        "thingName" -> thingName.map { x => x.asInstanceOf[js.Any] },
-        "statusDetails" -> statusDetails.map { x => x.asInstanceOf[js.Any] },
-        "jobId" -> jobId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "statusDetails" -> statusDetails.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CancelJobExecutionRequest]
     }
@@ -1594,23 +1594,23 @@ package iot {
 
   @js.native
   trait CancelJobRequest extends js.Object {
-    var jobId: js.UndefOr[JobId]
-    var reasonCode: js.UndefOr[ReasonCode]
+    var jobId: JobId
     var comment: js.UndefOr[Comment]
     var force: js.UndefOr[ForceFlag]
+    var reasonCode: js.UndefOr[ReasonCode]
   }
 
   object CancelJobRequest {
     def apply(
-      jobId: js.UndefOr[JobId] = js.undefined,
-      reasonCode: js.UndefOr[ReasonCode] = js.undefined,
+      jobId: JobId,
       comment: js.UndefOr[Comment] = js.undefined,
-      force: js.UndefOr[ForceFlag] = js.undefined): CancelJobRequest = {
+      force: js.UndefOr[ForceFlag] = js.undefined,
+      reasonCode: js.UndefOr[ReasonCode] = js.undefined): CancelJobRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "jobId" -> jobId.map { x => x.asInstanceOf[js.Any] },
-        "reasonCode" -> reasonCode.map { x => x.asInstanceOf[js.Any] },
+        "jobId" -> jobId.asInstanceOf[js.Any],
         "comment" -> comment.map { x => x.asInstanceOf[js.Any] },
-        "force" -> force.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "force" -> force.map { x => x.asInstanceOf[js.Any] },
+        "reasonCode" -> reasonCode.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CancelJobRequest]
     }
@@ -1618,20 +1618,20 @@ package iot {
 
   @js.native
   trait CancelJobResponse extends js.Object {
+    var description: js.UndefOr[JobDescription]
     var jobArn: js.UndefOr[JobArn]
     var jobId: js.UndefOr[JobId]
-    var description: js.UndefOr[JobDescription]
   }
 
   object CancelJobResponse {
     def apply(
+      description: js.UndefOr[JobDescription] = js.undefined,
       jobArn: js.UndefOr[JobArn] = js.undefined,
-      jobId: js.UndefOr[JobId] = js.undefined,
-      description: js.UndefOr[JobDescription] = js.undefined): CancelJobResponse = {
+      jobId: js.UndefOr[JobId] = js.undefined): CancelJobResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "description" -> description.map { x => x.asInstanceOf[js.Any] },
         "jobArn" -> jobArn.map { x => x.asInstanceOf[js.Any] },
-        "jobId" -> jobId.map { x => x.asInstanceOf[js.Any] },
-        "description" -> description.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "jobId" -> jobId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CancelJobResponse]
     }
@@ -1657,21 +1657,21 @@ package iot {
   trait Certificate extends js.Object {
     var certificateArn: js.UndefOr[CertificateArn]
     var certificateId: js.UndefOr[CertificateId]
-    var status: js.UndefOr[CertificateStatus]
     var creationDate: js.UndefOr[DateType]
+    var status: js.UndefOr[CertificateStatus]
   }
 
   object Certificate {
     def apply(
       certificateArn: js.UndefOr[CertificateArn] = js.undefined,
       certificateId: js.UndefOr[CertificateId] = js.undefined,
-      status: js.UndefOr[CertificateStatus] = js.undefined,
-      creationDate: js.UndefOr[DateType] = js.undefined): Certificate = {
+      creationDate: js.UndefOr[DateType] = js.undefined,
+      status: js.UndefOr[CertificateStatus] = js.undefined): Certificate = {
       val _fields = IndexedSeq[(String, js.Any)](
         "certificateArn" -> certificateArn.map { x => x.asInstanceOf[js.Any] },
         "certificateId" -> certificateId.map { x => x.asInstanceOf[js.Any] },
-        "status" -> status.map { x => x.asInstanceOf[js.Any] },
-        "creationDate" -> creationDate.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "creationDate" -> creationDate.map { x => x.asInstanceOf[js.Any] },
+        "status" -> status.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Certificate]
     }
@@ -1682,50 +1682,50 @@ package iot {
    */
   @js.native
   trait CertificateDescription extends js.Object {
+    var caCertificateId: js.UndefOr[CertificateId]
+    var certificateArn: js.UndefOr[CertificateArn]
     var certificateId: js.UndefOr[CertificateId]
+    var certificatePem: js.UndefOr[CertificatePem]
+    var creationDate: js.UndefOr[DateType]
+    var customerVersion: js.UndefOr[CustomerVersion]
+    var generationId: js.UndefOr[GenerationId]
     var lastModifiedDate: js.UndefOr[DateType]
     var ownedBy: js.UndefOr[AwsAccountId]
-    var generationId: js.UndefOr[GenerationId]
-    var customerVersion: js.UndefOr[CustomerVersion]
-    var certificateArn: js.UndefOr[CertificateArn]
-    var caCertificateId: js.UndefOr[CertificateId]
+    var previousOwnedBy: js.UndefOr[AwsAccountId]
     var status: js.UndefOr[CertificateStatus]
     var transferData: js.UndefOr[TransferData]
-    var creationDate: js.UndefOr[DateType]
     var validity: js.UndefOr[CertificateValidity]
-    var previousOwnedBy: js.UndefOr[AwsAccountId]
-    var certificatePem: js.UndefOr[CertificatePem]
   }
 
   object CertificateDescription {
     def apply(
+      caCertificateId: js.UndefOr[CertificateId] = js.undefined,
+      certificateArn: js.UndefOr[CertificateArn] = js.undefined,
       certificateId: js.UndefOr[CertificateId] = js.undefined,
+      certificatePem: js.UndefOr[CertificatePem] = js.undefined,
+      creationDate: js.UndefOr[DateType] = js.undefined,
+      customerVersion: js.UndefOr[CustomerVersion] = js.undefined,
+      generationId: js.UndefOr[GenerationId] = js.undefined,
       lastModifiedDate: js.UndefOr[DateType] = js.undefined,
       ownedBy: js.UndefOr[AwsAccountId] = js.undefined,
-      generationId: js.UndefOr[GenerationId] = js.undefined,
-      customerVersion: js.UndefOr[CustomerVersion] = js.undefined,
-      certificateArn: js.UndefOr[CertificateArn] = js.undefined,
-      caCertificateId: js.UndefOr[CertificateId] = js.undefined,
+      previousOwnedBy: js.UndefOr[AwsAccountId] = js.undefined,
       status: js.UndefOr[CertificateStatus] = js.undefined,
       transferData: js.UndefOr[TransferData] = js.undefined,
-      creationDate: js.UndefOr[DateType] = js.undefined,
-      validity: js.UndefOr[CertificateValidity] = js.undefined,
-      previousOwnedBy: js.UndefOr[AwsAccountId] = js.undefined,
-      certificatePem: js.UndefOr[CertificatePem] = js.undefined): CertificateDescription = {
+      validity: js.UndefOr[CertificateValidity] = js.undefined): CertificateDescription = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "caCertificateId" -> caCertificateId.map { x => x.asInstanceOf[js.Any] },
+        "certificateArn" -> certificateArn.map { x => x.asInstanceOf[js.Any] },
         "certificateId" -> certificateId.map { x => x.asInstanceOf[js.Any] },
+        "certificatePem" -> certificatePem.map { x => x.asInstanceOf[js.Any] },
+        "creationDate" -> creationDate.map { x => x.asInstanceOf[js.Any] },
+        "customerVersion" -> customerVersion.map { x => x.asInstanceOf[js.Any] },
+        "generationId" -> generationId.map { x => x.asInstanceOf[js.Any] },
         "lastModifiedDate" -> lastModifiedDate.map { x => x.asInstanceOf[js.Any] },
         "ownedBy" -> ownedBy.map { x => x.asInstanceOf[js.Any] },
-        "generationId" -> generationId.map { x => x.asInstanceOf[js.Any] },
-        "customerVersion" -> customerVersion.map { x => x.asInstanceOf[js.Any] },
-        "certificateArn" -> certificateArn.map { x => x.asInstanceOf[js.Any] },
-        "caCertificateId" -> caCertificateId.map { x => x.asInstanceOf[js.Any] },
+        "previousOwnedBy" -> previousOwnedBy.map { x => x.asInstanceOf[js.Any] },
         "status" -> status.map { x => x.asInstanceOf[js.Any] },
         "transferData" -> transferData.map { x => x.asInstanceOf[js.Any] },
-        "creationDate" -> creationDate.map { x => x.asInstanceOf[js.Any] },
-        "validity" -> validity.map { x => x.asInstanceOf[js.Any] },
-        "previousOwnedBy" -> previousOwnedBy.map { x => x.asInstanceOf[js.Any] },
-        "certificatePem" -> certificatePem.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "validity" -> validity.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CertificateDescription]
     }
@@ -1747,17 +1747,17 @@ package iot {
    */
   @js.native
   trait CertificateValidity extends js.Object {
-    var notBefore: js.UndefOr[DateType]
     var notAfter: js.UndefOr[DateType]
+    var notBefore: js.UndefOr[DateType]
   }
 
   object CertificateValidity {
     def apply(
-      notBefore: js.UndefOr[DateType] = js.undefined,
-      notAfter: js.UndefOr[DateType] = js.undefined): CertificateValidity = {
+      notAfter: js.UndefOr[DateType] = js.undefined,
+      notBefore: js.UndefOr[DateType] = js.undefined): CertificateValidity = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "notBefore" -> notBefore.map { x => x.asInstanceOf[js.Any] },
-        "notAfter" -> notAfter.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "notAfter" -> notAfter.map { x => x.asInstanceOf[js.Any] },
+        "notBefore" -> notBefore.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CertificateValidity]
     }
@@ -1794,23 +1794,23 @@ package iot {
    */
   @js.native
   trait CloudwatchAlarmAction extends js.Object {
-    var roleArn: js.UndefOr[AwsArn]
-    var alarmName: js.UndefOr[AlarmName]
-    var stateReason: js.UndefOr[StateReason]
-    var stateValue: js.UndefOr[StateValue]
+    var alarmName: AlarmName
+    var roleArn: AwsArn
+    var stateReason: StateReason
+    var stateValue: StateValue
   }
 
   object CloudwatchAlarmAction {
     def apply(
-      roleArn: js.UndefOr[AwsArn] = js.undefined,
-      alarmName: js.UndefOr[AlarmName] = js.undefined,
-      stateReason: js.UndefOr[StateReason] = js.undefined,
-      stateValue: js.UndefOr[StateValue] = js.undefined): CloudwatchAlarmAction = {
+      alarmName: AlarmName,
+      roleArn: AwsArn,
+      stateReason: StateReason,
+      stateValue: StateValue): CloudwatchAlarmAction = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "roleArn" -> roleArn.map { x => x.asInstanceOf[js.Any] },
-        "alarmName" -> alarmName.map { x => x.asInstanceOf[js.Any] },
-        "stateReason" -> stateReason.map { x => x.asInstanceOf[js.Any] },
-        "stateValue" -> stateValue.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "alarmName" -> alarmName.asInstanceOf[js.Any],
+        "roleArn" -> roleArn.asInstanceOf[js.Any],
+        "stateReason" -> stateReason.asInstanceOf[js.Any],
+        "stateValue" -> stateValue.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CloudwatchAlarmAction]
     }
@@ -1821,28 +1821,28 @@ package iot {
    */
   @js.native
   trait CloudwatchMetricAction extends js.Object {
-    var metricUnit: js.UndefOr[String]
-    var metricName: js.UndefOr[String]
-    var roleArn: js.UndefOr[AwsArn]
-    var metricNamespace: js.UndefOr[String]
-    var metricValue: js.UndefOr[String]
+    var metricName: String
+    var metricNamespace: String
+    var metricUnit: String
+    var metricValue: String
+    var roleArn: AwsArn
     var metricTimestamp: js.UndefOr[String]
   }
 
   object CloudwatchMetricAction {
     def apply(
-      metricUnit: js.UndefOr[String] = js.undefined,
-      metricName: js.UndefOr[String] = js.undefined,
-      roleArn: js.UndefOr[AwsArn] = js.undefined,
-      metricNamespace: js.UndefOr[String] = js.undefined,
-      metricValue: js.UndefOr[String] = js.undefined,
+      metricName: String,
+      metricNamespace: String,
+      metricUnit: String,
+      metricValue: String,
+      roleArn: AwsArn,
       metricTimestamp: js.UndefOr[String] = js.undefined): CloudwatchMetricAction = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "metricUnit" -> metricUnit.map { x => x.asInstanceOf[js.Any] },
-        "metricName" -> metricName.map { x => x.asInstanceOf[js.Any] },
-        "roleArn" -> roleArn.map { x => x.asInstanceOf[js.Any] },
-        "metricNamespace" -> metricNamespace.map { x => x.asInstanceOf[js.Any] },
-        "metricValue" -> metricValue.map { x => x.asInstanceOf[js.Any] },
+        "metricName" -> metricName.asInstanceOf[js.Any],
+        "metricNamespace" -> metricNamespace.asInstanceOf[js.Any],
+        "metricUnit" -> metricUnit.asInstanceOf[js.Any],
+        "metricValue" -> metricValue.asInstanceOf[js.Any],
+        "roleArn" -> roleArn.asInstanceOf[js.Any],
         "metricTimestamp" -> metricTimestamp.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CloudwatchMetricAction]
@@ -1855,19 +1855,19 @@ package iot {
   @js.native
   trait CodeSigning extends js.Object {
     var awsSignerJobId: js.UndefOr[SigningJobId]
-    var startSigningJobParameter: js.UndefOr[StartSigningJobParameter]
     var customCodeSigning: js.UndefOr[CustomCodeSigning]
+    var startSigningJobParameter: js.UndefOr[StartSigningJobParameter]
   }
 
   object CodeSigning {
     def apply(
       awsSignerJobId: js.UndefOr[SigningJobId] = js.undefined,
-      startSigningJobParameter: js.UndefOr[StartSigningJobParameter] = js.undefined,
-      customCodeSigning: js.UndefOr[CustomCodeSigning] = js.undefined): CodeSigning = {
+      customCodeSigning: js.UndefOr[CustomCodeSigning] = js.undefined,
+      startSigningJobParameter: js.UndefOr[StartSigningJobParameter] = js.undefined): CodeSigning = {
       val _fields = IndexedSeq[(String, js.Any)](
         "awsSignerJobId" -> awsSignerJobId.map { x => x.asInstanceOf[js.Any] },
-        "startSigningJobParameter" -> startSigningJobParameter.map { x => x.asInstanceOf[js.Any] },
-        "customCodeSigning" -> customCodeSigning.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "customCodeSigning" -> customCodeSigning.map { x => x.asInstanceOf[js.Any] },
+        "startSigningJobParameter" -> startSigningJobParameter.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CodeSigning]
     }
@@ -1945,26 +1945,26 @@ package iot {
 
   @js.native
   trait CreateAuthorizerRequest extends js.Object {
-    var tokenSigningPublicKeys: js.UndefOr[PublicKeyMap]
-    var authorizerFunctionArn: js.UndefOr[AuthorizerFunctionArn]
-    var authorizerName: js.UndefOr[AuthorizerName]
+    var authorizerFunctionArn: AuthorizerFunctionArn
+    var authorizerName: AuthorizerName
+    var tokenKeyName: TokenKeyName
+    var tokenSigningPublicKeys: PublicKeyMap
     var status: js.UndefOr[AuthorizerStatus]
-    var tokenKeyName: js.UndefOr[TokenKeyName]
   }
 
   object CreateAuthorizerRequest {
     def apply(
-      tokenSigningPublicKeys: js.UndefOr[PublicKeyMap] = js.undefined,
-      authorizerFunctionArn: js.UndefOr[AuthorizerFunctionArn] = js.undefined,
-      authorizerName: js.UndefOr[AuthorizerName] = js.undefined,
-      status: js.UndefOr[AuthorizerStatus] = js.undefined,
-      tokenKeyName: js.UndefOr[TokenKeyName] = js.undefined): CreateAuthorizerRequest = {
+      authorizerFunctionArn: AuthorizerFunctionArn,
+      authorizerName: AuthorizerName,
+      tokenKeyName: TokenKeyName,
+      tokenSigningPublicKeys: PublicKeyMap,
+      status: js.UndefOr[AuthorizerStatus] = js.undefined): CreateAuthorizerRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "tokenSigningPublicKeys" -> tokenSigningPublicKeys.map { x => x.asInstanceOf[js.Any] },
-        "authorizerFunctionArn" -> authorizerFunctionArn.map { x => x.asInstanceOf[js.Any] },
-        "authorizerName" -> authorizerName.map { x => x.asInstanceOf[js.Any] },
-        "status" -> status.map { x => x.asInstanceOf[js.Any] },
-        "tokenKeyName" -> tokenKeyName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "authorizerFunctionArn" -> authorizerFunctionArn.asInstanceOf[js.Any],
+        "authorizerName" -> authorizerName.asInstanceOf[js.Any],
+        "tokenKeyName" -> tokenKeyName.asInstanceOf[js.Any],
+        "tokenSigningPublicKeys" -> tokenSigningPublicKeys.asInstanceOf[js.Any],
+        "status" -> status.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateAuthorizerRequest]
     }
@@ -1972,17 +1972,17 @@ package iot {
 
   @js.native
   trait CreateAuthorizerResponse extends js.Object {
-    var authorizerName: js.UndefOr[AuthorizerName]
     var authorizerArn: js.UndefOr[AuthorizerArn]
+    var authorizerName: js.UndefOr[AuthorizerName]
   }
 
   object CreateAuthorizerResponse {
     def apply(
-      authorizerName: js.UndefOr[AuthorizerName] = js.undefined,
-      authorizerArn: js.UndefOr[AuthorizerArn] = js.undefined): CreateAuthorizerResponse = {
+      authorizerArn: js.UndefOr[AuthorizerArn] = js.undefined,
+      authorizerName: js.UndefOr[AuthorizerName] = js.undefined): CreateAuthorizerResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "authorizerName" -> authorizerName.map { x => x.asInstanceOf[js.Any] },
-        "authorizerArn" -> authorizerArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "authorizerArn" -> authorizerArn.map { x => x.asInstanceOf[js.Any] },
+        "authorizerName" -> authorizerName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateAuthorizerResponse]
     }
@@ -1990,18 +1990,18 @@ package iot {
 
   @js.native
   trait CreateBillingGroupRequest extends js.Object {
-    var billingGroupName: js.UndefOr[BillingGroupName]
+    var billingGroupName: BillingGroupName
     var billingGroupProperties: js.UndefOr[BillingGroupProperties]
     var tags: js.UndefOr[TagList]
   }
 
   object CreateBillingGroupRequest {
     def apply(
-      billingGroupName: js.UndefOr[BillingGroupName] = js.undefined,
+      billingGroupName: BillingGroupName,
       billingGroupProperties: js.UndefOr[BillingGroupProperties] = js.undefined,
       tags: js.UndefOr[TagList] = js.undefined): CreateBillingGroupRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "billingGroupName" -> billingGroupName.map { x => x.asInstanceOf[js.Any] },
+        "billingGroupName" -> billingGroupName.asInstanceOf[js.Any],
         "billingGroupProperties" -> billingGroupProperties.map { x => x.asInstanceOf[js.Any] },
         "tags" -> tags.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
@@ -2011,20 +2011,20 @@ package iot {
 
   @js.native
   trait CreateBillingGroupResponse extends js.Object {
-    var billingGroupName: js.UndefOr[BillingGroupName]
     var billingGroupArn: js.UndefOr[BillingGroupArn]
     var billingGroupId: js.UndefOr[BillingGroupId]
+    var billingGroupName: js.UndefOr[BillingGroupName]
   }
 
   object CreateBillingGroupResponse {
     def apply(
-      billingGroupName: js.UndefOr[BillingGroupName] = js.undefined,
       billingGroupArn: js.UndefOr[BillingGroupArn] = js.undefined,
-      billingGroupId: js.UndefOr[BillingGroupId] = js.undefined): CreateBillingGroupResponse = {
+      billingGroupId: js.UndefOr[BillingGroupId] = js.undefined,
+      billingGroupName: js.UndefOr[BillingGroupName] = js.undefined): CreateBillingGroupResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "billingGroupName" -> billingGroupName.map { x => x.asInstanceOf[js.Any] },
         "billingGroupArn" -> billingGroupArn.map { x => x.asInstanceOf[js.Any] },
-        "billingGroupId" -> billingGroupId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "billingGroupId" -> billingGroupId.map { x => x.asInstanceOf[js.Any] },
+        "billingGroupName" -> billingGroupName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateBillingGroupResponse]
     }
@@ -2035,16 +2035,16 @@ package iot {
    */
   @js.native
   trait CreateCertificateFromCsrRequest extends js.Object {
-    var certificateSigningRequest: js.UndefOr[CertificateSigningRequest]
+    var certificateSigningRequest: CertificateSigningRequest
     var setAsActive: js.UndefOr[SetAsActive]
   }
 
   object CreateCertificateFromCsrRequest {
     def apply(
-      certificateSigningRequest: js.UndefOr[CertificateSigningRequest] = js.undefined,
+      certificateSigningRequest: CertificateSigningRequest,
       setAsActive: js.UndefOr[SetAsActive] = js.undefined): CreateCertificateFromCsrRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "certificateSigningRequest" -> certificateSigningRequest.map { x => x.asInstanceOf[js.Any] },
+        "certificateSigningRequest" -> certificateSigningRequest.asInstanceOf[js.Any],
         "setAsActive" -> setAsActive.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateCertificateFromCsrRequest]
@@ -2077,29 +2077,29 @@ package iot {
 
   @js.native
   trait CreateDynamicThingGroupRequest extends js.Object {
-    var thingGroupName: js.UndefOr[ThingGroupName]
-    var tags: js.UndefOr[TagList]
-    var queryString: js.UndefOr[QueryString]
+    var queryString: QueryString
+    var thingGroupName: ThingGroupName
     var indexName: js.UndefOr[IndexName]
-    var thingGroupProperties: js.UndefOr[ThingGroupProperties]
     var queryVersion: js.UndefOr[QueryVersion]
+    var tags: js.UndefOr[TagList]
+    var thingGroupProperties: js.UndefOr[ThingGroupProperties]
   }
 
   object CreateDynamicThingGroupRequest {
     def apply(
-      thingGroupName: js.UndefOr[ThingGroupName] = js.undefined,
-      tags: js.UndefOr[TagList] = js.undefined,
-      queryString: js.UndefOr[QueryString] = js.undefined,
+      queryString: QueryString,
+      thingGroupName: ThingGroupName,
       indexName: js.UndefOr[IndexName] = js.undefined,
-      thingGroupProperties: js.UndefOr[ThingGroupProperties] = js.undefined,
-      queryVersion: js.UndefOr[QueryVersion] = js.undefined): CreateDynamicThingGroupRequest = {
+      queryVersion: js.UndefOr[QueryVersion] = js.undefined,
+      tags: js.UndefOr[TagList] = js.undefined,
+      thingGroupProperties: js.UndefOr[ThingGroupProperties] = js.undefined): CreateDynamicThingGroupRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "thingGroupName" -> thingGroupName.map { x => x.asInstanceOf[js.Any] },
-        "tags" -> tags.map { x => x.asInstanceOf[js.Any] },
-        "queryString" -> queryString.map { x => x.asInstanceOf[js.Any] },
+        "queryString" -> queryString.asInstanceOf[js.Any],
+        "thingGroupName" -> thingGroupName.asInstanceOf[js.Any],
         "indexName" -> indexName.map { x => x.asInstanceOf[js.Any] },
-        "thingGroupProperties" -> thingGroupProperties.map { x => x.asInstanceOf[js.Any] },
-        "queryVersion" -> queryVersion.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "queryVersion" -> queryVersion.map { x => x.asInstanceOf[js.Any] },
+        "tags" -> tags.map { x => x.asInstanceOf[js.Any] },
+        "thingGroupProperties" -> thingGroupProperties.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateDynamicThingGroupRequest]
     }
@@ -2107,29 +2107,29 @@ package iot {
 
   @js.native
   trait CreateDynamicThingGroupResponse extends js.Object {
-    var thingGroupName: js.UndefOr[ThingGroupName]
-    var queryString: js.UndefOr[QueryString]
-    var thingGroupId: js.UndefOr[ThingGroupId]
     var indexName: js.UndefOr[IndexName]
-    var thingGroupArn: js.UndefOr[ThingGroupArn]
+    var queryString: js.UndefOr[QueryString]
     var queryVersion: js.UndefOr[QueryVersion]
+    var thingGroupArn: js.UndefOr[ThingGroupArn]
+    var thingGroupId: js.UndefOr[ThingGroupId]
+    var thingGroupName: js.UndefOr[ThingGroupName]
   }
 
   object CreateDynamicThingGroupResponse {
     def apply(
-      thingGroupName: js.UndefOr[ThingGroupName] = js.undefined,
-      queryString: js.UndefOr[QueryString] = js.undefined,
-      thingGroupId: js.UndefOr[ThingGroupId] = js.undefined,
       indexName: js.UndefOr[IndexName] = js.undefined,
+      queryString: js.UndefOr[QueryString] = js.undefined,
+      queryVersion: js.UndefOr[QueryVersion] = js.undefined,
       thingGroupArn: js.UndefOr[ThingGroupArn] = js.undefined,
-      queryVersion: js.UndefOr[QueryVersion] = js.undefined): CreateDynamicThingGroupResponse = {
+      thingGroupId: js.UndefOr[ThingGroupId] = js.undefined,
+      thingGroupName: js.UndefOr[ThingGroupName] = js.undefined): CreateDynamicThingGroupResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "thingGroupName" -> thingGroupName.map { x => x.asInstanceOf[js.Any] },
-        "queryString" -> queryString.map { x => x.asInstanceOf[js.Any] },
-        "thingGroupId" -> thingGroupId.map { x => x.asInstanceOf[js.Any] },
         "indexName" -> indexName.map { x => x.asInstanceOf[js.Any] },
+        "queryString" -> queryString.map { x => x.asInstanceOf[js.Any] },
+        "queryVersion" -> queryVersion.map { x => x.asInstanceOf[js.Any] },
         "thingGroupArn" -> thingGroupArn.map { x => x.asInstanceOf[js.Any] },
-        "queryVersion" -> queryVersion.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "thingGroupId" -> thingGroupId.map { x => x.asInstanceOf[js.Any] },
+        "thingGroupName" -> thingGroupName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateDynamicThingGroupResponse]
     }
@@ -2137,44 +2137,44 @@ package iot {
 
   @js.native
   trait CreateJobRequest extends js.Object {
-    var targets: js.UndefOr[JobTargets]
-    var jobExecutionsRolloutConfig: js.UndefOr[JobExecutionsRolloutConfig]
+    var jobId: JobId
+    var targets: JobTargets
+    var abortConfig: js.UndefOr[AbortConfig]
     var description: js.UndefOr[JobDescription]
     var document: js.UndefOr[JobDocument]
-    var tags: js.UndefOr[TagList]
+    var documentSource: js.UndefOr[JobDocumentSource]
+    var jobExecutionsRolloutConfig: js.UndefOr[JobExecutionsRolloutConfig]
     var presignedUrlConfig: js.UndefOr[PresignedUrlConfig]
-    var jobId: js.UndefOr[JobId]
-    var abortConfig: js.UndefOr[AbortConfig]
+    var tags: js.UndefOr[TagList]
     var targetSelection: js.UndefOr[TargetSelection]
     var timeoutConfig: js.UndefOr[TimeoutConfig]
-    var documentSource: js.UndefOr[JobDocumentSource]
   }
 
   object CreateJobRequest {
     def apply(
-      targets: js.UndefOr[JobTargets] = js.undefined,
-      jobExecutionsRolloutConfig: js.UndefOr[JobExecutionsRolloutConfig] = js.undefined,
+      jobId: JobId,
+      targets: JobTargets,
+      abortConfig: js.UndefOr[AbortConfig] = js.undefined,
       description: js.UndefOr[JobDescription] = js.undefined,
       document: js.UndefOr[JobDocument] = js.undefined,
-      tags: js.UndefOr[TagList] = js.undefined,
+      documentSource: js.UndefOr[JobDocumentSource] = js.undefined,
+      jobExecutionsRolloutConfig: js.UndefOr[JobExecutionsRolloutConfig] = js.undefined,
       presignedUrlConfig: js.UndefOr[PresignedUrlConfig] = js.undefined,
-      jobId: js.UndefOr[JobId] = js.undefined,
-      abortConfig: js.UndefOr[AbortConfig] = js.undefined,
+      tags: js.UndefOr[TagList] = js.undefined,
       targetSelection: js.UndefOr[TargetSelection] = js.undefined,
-      timeoutConfig: js.UndefOr[TimeoutConfig] = js.undefined,
-      documentSource: js.UndefOr[JobDocumentSource] = js.undefined): CreateJobRequest = {
+      timeoutConfig: js.UndefOr[TimeoutConfig] = js.undefined): CreateJobRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "targets" -> targets.map { x => x.asInstanceOf[js.Any] },
-        "jobExecutionsRolloutConfig" -> jobExecutionsRolloutConfig.map { x => x.asInstanceOf[js.Any] },
+        "jobId" -> jobId.asInstanceOf[js.Any],
+        "targets" -> targets.asInstanceOf[js.Any],
+        "abortConfig" -> abortConfig.map { x => x.asInstanceOf[js.Any] },
         "description" -> description.map { x => x.asInstanceOf[js.Any] },
         "document" -> document.map { x => x.asInstanceOf[js.Any] },
-        "tags" -> tags.map { x => x.asInstanceOf[js.Any] },
+        "documentSource" -> documentSource.map { x => x.asInstanceOf[js.Any] },
+        "jobExecutionsRolloutConfig" -> jobExecutionsRolloutConfig.map { x => x.asInstanceOf[js.Any] },
         "presignedUrlConfig" -> presignedUrlConfig.map { x => x.asInstanceOf[js.Any] },
-        "jobId" -> jobId.map { x => x.asInstanceOf[js.Any] },
-        "abortConfig" -> abortConfig.map { x => x.asInstanceOf[js.Any] },
+        "tags" -> tags.map { x => x.asInstanceOf[js.Any] },
         "targetSelection" -> targetSelection.map { x => x.asInstanceOf[js.Any] },
-        "timeoutConfig" -> timeoutConfig.map { x => x.asInstanceOf[js.Any] },
-        "documentSource" -> documentSource.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "timeoutConfig" -> timeoutConfig.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateJobRequest]
     }
@@ -2182,20 +2182,20 @@ package iot {
 
   @js.native
   trait CreateJobResponse extends js.Object {
+    var description: js.UndefOr[JobDescription]
     var jobArn: js.UndefOr[JobArn]
     var jobId: js.UndefOr[JobId]
-    var description: js.UndefOr[JobDescription]
   }
 
   object CreateJobResponse {
     def apply(
+      description: js.UndefOr[JobDescription] = js.undefined,
       jobArn: js.UndefOr[JobArn] = js.undefined,
-      jobId: js.UndefOr[JobId] = js.undefined,
-      description: js.UndefOr[JobDescription] = js.undefined): CreateJobResponse = {
+      jobId: js.UndefOr[JobId] = js.undefined): CreateJobResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "description" -> description.map { x => x.asInstanceOf[js.Any] },
         "jobArn" -> jobArn.map { x => x.asInstanceOf[js.Any] },
-        "jobId" -> jobId.map { x => x.asInstanceOf[js.Any] },
-        "description" -> description.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "jobId" -> jobId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateJobResponse]
     }
@@ -2248,35 +2248,35 @@ package iot {
 
   @js.native
   trait CreateOTAUpdateRequest extends js.Object {
-    var targets: js.UndefOr[Targets]
-    var description: js.UndefOr[OTAUpdateDescription]
-    var awsJobExecutionsRolloutConfig: js.UndefOr[AwsJobExecutionsRolloutConfig]
-    var files: js.UndefOr[OTAUpdateFiles]
-    var roleArn: js.UndefOr[RoleArn]
-    var targetSelection: js.UndefOr[TargetSelection]
-    var otaUpdateId: js.UndefOr[OTAUpdateId]
+    var files: OTAUpdateFiles
+    var otaUpdateId: OTAUpdateId
+    var roleArn: RoleArn
+    var targets: Targets
     var additionalParameters: js.UndefOr[AdditionalParameterMap]
+    var awsJobExecutionsRolloutConfig: js.UndefOr[AwsJobExecutionsRolloutConfig]
+    var description: js.UndefOr[OTAUpdateDescription]
+    var targetSelection: js.UndefOr[TargetSelection]
   }
 
   object CreateOTAUpdateRequest {
     def apply(
-      targets: js.UndefOr[Targets] = js.undefined,
-      description: js.UndefOr[OTAUpdateDescription] = js.undefined,
+      files: OTAUpdateFiles,
+      otaUpdateId: OTAUpdateId,
+      roleArn: RoleArn,
+      targets: Targets,
+      additionalParameters: js.UndefOr[AdditionalParameterMap] = js.undefined,
       awsJobExecutionsRolloutConfig: js.UndefOr[AwsJobExecutionsRolloutConfig] = js.undefined,
-      files: js.UndefOr[OTAUpdateFiles] = js.undefined,
-      roleArn: js.UndefOr[RoleArn] = js.undefined,
-      targetSelection: js.UndefOr[TargetSelection] = js.undefined,
-      otaUpdateId: js.UndefOr[OTAUpdateId] = js.undefined,
-      additionalParameters: js.UndefOr[AdditionalParameterMap] = js.undefined): CreateOTAUpdateRequest = {
+      description: js.UndefOr[OTAUpdateDescription] = js.undefined,
+      targetSelection: js.UndefOr[TargetSelection] = js.undefined): CreateOTAUpdateRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "targets" -> targets.map { x => x.asInstanceOf[js.Any] },
-        "description" -> description.map { x => x.asInstanceOf[js.Any] },
+        "files" -> files.asInstanceOf[js.Any],
+        "otaUpdateId" -> otaUpdateId.asInstanceOf[js.Any],
+        "roleArn" -> roleArn.asInstanceOf[js.Any],
+        "targets" -> targets.asInstanceOf[js.Any],
+        "additionalParameters" -> additionalParameters.map { x => x.asInstanceOf[js.Any] },
         "awsJobExecutionsRolloutConfig" -> awsJobExecutionsRolloutConfig.map { x => x.asInstanceOf[js.Any] },
-        "files" -> files.map { x => x.asInstanceOf[js.Any] },
-        "roleArn" -> roleArn.map { x => x.asInstanceOf[js.Any] },
-        "targetSelection" -> targetSelection.map { x => x.asInstanceOf[js.Any] },
-        "otaUpdateId" -> otaUpdateId.map { x => x.asInstanceOf[js.Any] },
-        "additionalParameters" -> additionalParameters.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "description" -> description.map { x => x.asInstanceOf[js.Any] },
+        "targetSelection" -> targetSelection.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateOTAUpdateRequest]
     }
@@ -2284,26 +2284,26 @@ package iot {
 
   @js.native
   trait CreateOTAUpdateResponse extends js.Object {
-    var otaUpdateStatus: js.UndefOr[OTAUpdateStatus]
-    var otaUpdateArn: js.UndefOr[OTAUpdateArn]
     var awsIotJobArn: js.UndefOr[AwsIotJobArn]
     var awsIotJobId: js.UndefOr[AwsIotJobId]
+    var otaUpdateArn: js.UndefOr[OTAUpdateArn]
     var otaUpdateId: js.UndefOr[OTAUpdateId]
+    var otaUpdateStatus: js.UndefOr[OTAUpdateStatus]
   }
 
   object CreateOTAUpdateResponse {
     def apply(
-      otaUpdateStatus: js.UndefOr[OTAUpdateStatus] = js.undefined,
-      otaUpdateArn: js.UndefOr[OTAUpdateArn] = js.undefined,
       awsIotJobArn: js.UndefOr[AwsIotJobArn] = js.undefined,
       awsIotJobId: js.UndefOr[AwsIotJobId] = js.undefined,
-      otaUpdateId: js.UndefOr[OTAUpdateId] = js.undefined): CreateOTAUpdateResponse = {
+      otaUpdateArn: js.UndefOr[OTAUpdateArn] = js.undefined,
+      otaUpdateId: js.UndefOr[OTAUpdateId] = js.undefined,
+      otaUpdateStatus: js.UndefOr[OTAUpdateStatus] = js.undefined): CreateOTAUpdateResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "otaUpdateStatus" -> otaUpdateStatus.map { x => x.asInstanceOf[js.Any] },
-        "otaUpdateArn" -> otaUpdateArn.map { x => x.asInstanceOf[js.Any] },
         "awsIotJobArn" -> awsIotJobArn.map { x => x.asInstanceOf[js.Any] },
         "awsIotJobId" -> awsIotJobId.map { x => x.asInstanceOf[js.Any] },
-        "otaUpdateId" -> otaUpdateId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "otaUpdateArn" -> otaUpdateArn.map { x => x.asInstanceOf[js.Any] },
+        "otaUpdateId" -> otaUpdateId.map { x => x.asInstanceOf[js.Any] },
+        "otaUpdateStatus" -> otaUpdateStatus.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateOTAUpdateResponse]
     }
@@ -2314,17 +2314,17 @@ package iot {
    */
   @js.native
   trait CreatePolicyRequest extends js.Object {
-    var policyName: js.UndefOr[PolicyName]
-    var policyDocument: js.UndefOr[PolicyDocument]
+    var policyDocument: PolicyDocument
+    var policyName: PolicyName
   }
 
   object CreatePolicyRequest {
     def apply(
-      policyName: js.UndefOr[PolicyName] = js.undefined,
-      policyDocument: js.UndefOr[PolicyDocument] = js.undefined): CreatePolicyRequest = {
+      policyDocument: PolicyDocument,
+      policyName: PolicyName): CreatePolicyRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "policyName" -> policyName.map { x => x.asInstanceOf[js.Any] },
-        "policyDocument" -> policyDocument.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "policyDocument" -> policyDocument.asInstanceOf[js.Any],
+        "policyName" -> policyName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreatePolicyRequest]
     }
@@ -2335,22 +2335,22 @@ package iot {
    */
   @js.native
   trait CreatePolicyResponse extends js.Object {
-    var policyName: js.UndefOr[PolicyName]
     var policyArn: js.UndefOr[PolicyArn]
     var policyDocument: js.UndefOr[PolicyDocument]
+    var policyName: js.UndefOr[PolicyName]
     var policyVersionId: js.UndefOr[PolicyVersionId]
   }
 
   object CreatePolicyResponse {
     def apply(
-      policyName: js.UndefOr[PolicyName] = js.undefined,
       policyArn: js.UndefOr[PolicyArn] = js.undefined,
       policyDocument: js.UndefOr[PolicyDocument] = js.undefined,
+      policyName: js.UndefOr[PolicyName] = js.undefined,
       policyVersionId: js.UndefOr[PolicyVersionId] = js.undefined): CreatePolicyResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "policyName" -> policyName.map { x => x.asInstanceOf[js.Any] },
         "policyArn" -> policyArn.map { x => x.asInstanceOf[js.Any] },
         "policyDocument" -> policyDocument.map { x => x.asInstanceOf[js.Any] },
+        "policyName" -> policyName.map { x => x.asInstanceOf[js.Any] },
         "policyVersionId" -> policyVersionId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreatePolicyResponse]
@@ -2362,19 +2362,19 @@ package iot {
    */
   @js.native
   trait CreatePolicyVersionRequest extends js.Object {
-    var policyName: js.UndefOr[PolicyName]
-    var policyDocument: js.UndefOr[PolicyDocument]
+    var policyDocument: PolicyDocument
+    var policyName: PolicyName
     var setAsDefault: js.UndefOr[SetAsDefault]
   }
 
   object CreatePolicyVersionRequest {
     def apply(
-      policyName: js.UndefOr[PolicyName] = js.undefined,
-      policyDocument: js.UndefOr[PolicyDocument] = js.undefined,
+      policyDocument: PolicyDocument,
+      policyName: PolicyName,
       setAsDefault: js.UndefOr[SetAsDefault] = js.undefined): CreatePolicyVersionRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "policyName" -> policyName.map { x => x.asInstanceOf[js.Any] },
-        "policyDocument" -> policyDocument.map { x => x.asInstanceOf[js.Any] },
+        "policyDocument" -> policyDocument.asInstanceOf[js.Any],
+        "policyName" -> policyName.asInstanceOf[js.Any],
         "setAsDefault" -> setAsDefault.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreatePolicyVersionRequest]
@@ -2386,23 +2386,23 @@ package iot {
    */
   @js.native
   trait CreatePolicyVersionResponse extends js.Object {
+    var isDefaultVersion: js.UndefOr[IsDefaultVersion]
     var policyArn: js.UndefOr[PolicyArn]
     var policyDocument: js.UndefOr[PolicyDocument]
     var policyVersionId: js.UndefOr[PolicyVersionId]
-    var isDefaultVersion: js.UndefOr[IsDefaultVersion]
   }
 
   object CreatePolicyVersionResponse {
     def apply(
+      isDefaultVersion: js.UndefOr[IsDefaultVersion] = js.undefined,
       policyArn: js.UndefOr[PolicyArn] = js.undefined,
       policyDocument: js.UndefOr[PolicyDocument] = js.undefined,
-      policyVersionId: js.UndefOr[PolicyVersionId] = js.undefined,
-      isDefaultVersion: js.UndefOr[IsDefaultVersion] = js.undefined): CreatePolicyVersionResponse = {
+      policyVersionId: js.UndefOr[PolicyVersionId] = js.undefined): CreatePolicyVersionResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "isDefaultVersion" -> isDefaultVersion.map { x => x.asInstanceOf[js.Any] },
         "policyArn" -> policyArn.map { x => x.asInstanceOf[js.Any] },
         "policyDocument" -> policyDocument.map { x => x.asInstanceOf[js.Any] },
-        "policyVersionId" -> policyVersionId.map { x => x.asInstanceOf[js.Any] },
-        "isDefaultVersion" -> isDefaultVersion.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "policyVersionId" -> policyVersionId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreatePolicyVersionResponse]
     }
@@ -2410,19 +2410,19 @@ package iot {
 
   @js.native
   trait CreateRoleAliasRequest extends js.Object {
-    var roleAlias: js.UndefOr[RoleAlias]
-    var roleArn: js.UndefOr[RoleArn]
+    var roleAlias: RoleAlias
+    var roleArn: RoleArn
     var credentialDurationSeconds: js.UndefOr[CredentialDurationSeconds]
   }
 
   object CreateRoleAliasRequest {
     def apply(
-      roleAlias: js.UndefOr[RoleAlias] = js.undefined,
-      roleArn: js.UndefOr[RoleArn] = js.undefined,
+      roleAlias: RoleAlias,
+      roleArn: RoleArn,
       credentialDurationSeconds: js.UndefOr[CredentialDurationSeconds] = js.undefined): CreateRoleAliasRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "roleAlias" -> roleAlias.map { x => x.asInstanceOf[js.Any] },
-        "roleArn" -> roleArn.map { x => x.asInstanceOf[js.Any] },
+        "roleAlias" -> roleAlias.asInstanceOf[js.Any],
+        "roleArn" -> roleArn.asInstanceOf[js.Any],
         "credentialDurationSeconds" -> credentialDurationSeconds.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateRoleAliasRequest]
@@ -2449,26 +2449,26 @@ package iot {
 
   @js.native
   trait CreateScheduledAuditRequest extends js.Object {
-    var scheduledAuditName: js.UndefOr[ScheduledAuditName]
-    var dayOfWeek: js.UndefOr[DayOfWeek]
-    var targetCheckNames: js.UndefOr[TargetAuditCheckNames]
+    var frequency: AuditFrequency
+    var scheduledAuditName: ScheduledAuditName
+    var targetCheckNames: TargetAuditCheckNames
     var dayOfMonth: js.UndefOr[DayOfMonth]
-    var frequency: js.UndefOr[AuditFrequency]
+    var dayOfWeek: js.UndefOr[DayOfWeek]
   }
 
   object CreateScheduledAuditRequest {
     def apply(
-      scheduledAuditName: js.UndefOr[ScheduledAuditName] = js.undefined,
-      dayOfWeek: js.UndefOr[DayOfWeek] = js.undefined,
-      targetCheckNames: js.UndefOr[TargetAuditCheckNames] = js.undefined,
+      frequency: AuditFrequency,
+      scheduledAuditName: ScheduledAuditName,
+      targetCheckNames: TargetAuditCheckNames,
       dayOfMonth: js.UndefOr[DayOfMonth] = js.undefined,
-      frequency: js.UndefOr[AuditFrequency] = js.undefined): CreateScheduledAuditRequest = {
+      dayOfWeek: js.UndefOr[DayOfWeek] = js.undefined): CreateScheduledAuditRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "scheduledAuditName" -> scheduledAuditName.map { x => x.asInstanceOf[js.Any] },
-        "dayOfWeek" -> dayOfWeek.map { x => x.asInstanceOf[js.Any] },
-        "targetCheckNames" -> targetCheckNames.map { x => x.asInstanceOf[js.Any] },
+        "frequency" -> frequency.asInstanceOf[js.Any],
+        "scheduledAuditName" -> scheduledAuditName.asInstanceOf[js.Any],
+        "targetCheckNames" -> targetCheckNames.asInstanceOf[js.Any],
         "dayOfMonth" -> dayOfMonth.map { x => x.asInstanceOf[js.Any] },
-        "frequency" -> frequency.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "dayOfWeek" -> dayOfWeek.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateScheduledAuditRequest]
     }
@@ -2491,26 +2491,26 @@ package iot {
 
   @js.native
   trait CreateSecurityProfileRequest extends js.Object {
-    var tags: js.UndefOr[TagList]
-    var behaviors: js.UndefOr[Behaviors]
-    var securityProfileName: js.UndefOr[SecurityProfileName]
-    var securityProfileDescription: js.UndefOr[SecurityProfileDescription]
+    var behaviors: Behaviors
+    var securityProfileName: SecurityProfileName
     var alertTargets: js.UndefOr[AlertTargets]
+    var securityProfileDescription: js.UndefOr[SecurityProfileDescription]
+    var tags: js.UndefOr[TagList]
   }
 
   object CreateSecurityProfileRequest {
     def apply(
-      tags: js.UndefOr[TagList] = js.undefined,
-      behaviors: js.UndefOr[Behaviors] = js.undefined,
-      securityProfileName: js.UndefOr[SecurityProfileName] = js.undefined,
+      behaviors: Behaviors,
+      securityProfileName: SecurityProfileName,
+      alertTargets: js.UndefOr[AlertTargets] = js.undefined,
       securityProfileDescription: js.UndefOr[SecurityProfileDescription] = js.undefined,
-      alertTargets: js.UndefOr[AlertTargets] = js.undefined): CreateSecurityProfileRequest = {
+      tags: js.UndefOr[TagList] = js.undefined): CreateSecurityProfileRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "tags" -> tags.map { x => x.asInstanceOf[js.Any] },
-        "behaviors" -> behaviors.map { x => x.asInstanceOf[js.Any] },
-        "securityProfileName" -> securityProfileName.map { x => x.asInstanceOf[js.Any] },
+        "behaviors" -> behaviors.asInstanceOf[js.Any],
+        "securityProfileName" -> securityProfileName.asInstanceOf[js.Any],
+        "alertTargets" -> alertTargets.map { x => x.asInstanceOf[js.Any] },
         "securityProfileDescription" -> securityProfileDescription.map { x => x.asInstanceOf[js.Any] },
-        "alertTargets" -> alertTargets.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "tags" -> tags.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateSecurityProfileRequest]
     }
@@ -2518,17 +2518,17 @@ package iot {
 
   @js.native
   trait CreateSecurityProfileResponse extends js.Object {
-    var securityProfileName: js.UndefOr[SecurityProfileName]
     var securityProfileArn: js.UndefOr[SecurityProfileArn]
+    var securityProfileName: js.UndefOr[SecurityProfileName]
   }
 
   object CreateSecurityProfileResponse {
     def apply(
-      securityProfileName: js.UndefOr[SecurityProfileName] = js.undefined,
-      securityProfileArn: js.UndefOr[SecurityProfileArn] = js.undefined): CreateSecurityProfileResponse = {
+      securityProfileArn: js.UndefOr[SecurityProfileArn] = js.undefined,
+      securityProfileName: js.UndefOr[SecurityProfileName] = js.undefined): CreateSecurityProfileResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "securityProfileName" -> securityProfileName.map { x => x.asInstanceOf[js.Any] },
-        "securityProfileArn" -> securityProfileArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "securityProfileArn" -> securityProfileArn.map { x => x.asInstanceOf[js.Any] },
+        "securityProfileName" -> securityProfileName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateSecurityProfileResponse]
     }
@@ -2536,23 +2536,23 @@ package iot {
 
   @js.native
   trait CreateStreamRequest extends js.Object {
-    var streamId: js.UndefOr[StreamId]
+    var files: StreamFiles
+    var roleArn: RoleArn
+    var streamId: StreamId
     var description: js.UndefOr[StreamDescription]
-    var files: js.UndefOr[StreamFiles]
-    var roleArn: js.UndefOr[RoleArn]
   }
 
   object CreateStreamRequest {
     def apply(
-      streamId: js.UndefOr[StreamId] = js.undefined,
-      description: js.UndefOr[StreamDescription] = js.undefined,
-      files: js.UndefOr[StreamFiles] = js.undefined,
-      roleArn: js.UndefOr[RoleArn] = js.undefined): CreateStreamRequest = {
+      files: StreamFiles,
+      roleArn: RoleArn,
+      streamId: StreamId,
+      description: js.UndefOr[StreamDescription] = js.undefined): CreateStreamRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "streamId" -> streamId.map { x => x.asInstanceOf[js.Any] },
-        "description" -> description.map { x => x.asInstanceOf[js.Any] },
-        "files" -> files.map { x => x.asInstanceOf[js.Any] },
-        "roleArn" -> roleArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "files" -> files.asInstanceOf[js.Any],
+        "roleArn" -> roleArn.asInstanceOf[js.Any],
+        "streamId" -> streamId.asInstanceOf[js.Any],
+        "description" -> description.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateStreamRequest]
     }
@@ -2560,22 +2560,22 @@ package iot {
 
   @js.native
   trait CreateStreamResponse extends js.Object {
-    var streamId: js.UndefOr[StreamId]
-    var streamArn: js.UndefOr[StreamArn]
     var description: js.UndefOr[StreamDescription]
+    var streamArn: js.UndefOr[StreamArn]
+    var streamId: js.UndefOr[StreamId]
     var streamVersion: js.UndefOr[StreamVersion]
   }
 
   object CreateStreamResponse {
     def apply(
-      streamId: js.UndefOr[StreamId] = js.undefined,
-      streamArn: js.UndefOr[StreamArn] = js.undefined,
       description: js.UndefOr[StreamDescription] = js.undefined,
+      streamArn: js.UndefOr[StreamArn] = js.undefined,
+      streamId: js.UndefOr[StreamId] = js.undefined,
       streamVersion: js.UndefOr[StreamVersion] = js.undefined): CreateStreamResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "streamId" -> streamId.map { x => x.asInstanceOf[js.Any] },
-        "streamArn" -> streamArn.map { x => x.asInstanceOf[js.Any] },
         "description" -> description.map { x => x.asInstanceOf[js.Any] },
+        "streamArn" -> streamArn.map { x => x.asInstanceOf[js.Any] },
+        "streamId" -> streamId.map { x => x.asInstanceOf[js.Any] },
         "streamVersion" -> streamVersion.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateStreamResponse]
@@ -2584,23 +2584,23 @@ package iot {
 
   @js.native
   trait CreateThingGroupRequest extends js.Object {
-    var thingGroupName: js.UndefOr[ThingGroupName]
+    var thingGroupName: ThingGroupName
     var parentGroupName: js.UndefOr[ThingGroupName]
-    var thingGroupProperties: js.UndefOr[ThingGroupProperties]
     var tags: js.UndefOr[TagList]
+    var thingGroupProperties: js.UndefOr[ThingGroupProperties]
   }
 
   object CreateThingGroupRequest {
     def apply(
-      thingGroupName: js.UndefOr[ThingGroupName] = js.undefined,
+      thingGroupName: ThingGroupName,
       parentGroupName: js.UndefOr[ThingGroupName] = js.undefined,
-      thingGroupProperties: js.UndefOr[ThingGroupProperties] = js.undefined,
-      tags: js.UndefOr[TagList] = js.undefined): CreateThingGroupRequest = {
+      tags: js.UndefOr[TagList] = js.undefined,
+      thingGroupProperties: js.UndefOr[ThingGroupProperties] = js.undefined): CreateThingGroupRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "thingGroupName" -> thingGroupName.map { x => x.asInstanceOf[js.Any] },
+        "thingGroupName" -> thingGroupName.asInstanceOf[js.Any],
         "parentGroupName" -> parentGroupName.map { x => x.asInstanceOf[js.Any] },
-        "thingGroupProperties" -> thingGroupProperties.map { x => x.asInstanceOf[js.Any] },
-        "tags" -> tags.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "tags" -> tags.map { x => x.asInstanceOf[js.Any] },
+        "thingGroupProperties" -> thingGroupProperties.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateThingGroupRequest]
     }
@@ -2608,20 +2608,20 @@ package iot {
 
   @js.native
   trait CreateThingGroupResponse extends js.Object {
-    var thingGroupName: js.UndefOr[ThingGroupName]
     var thingGroupArn: js.UndefOr[ThingGroupArn]
     var thingGroupId: js.UndefOr[ThingGroupId]
+    var thingGroupName: js.UndefOr[ThingGroupName]
   }
 
   object CreateThingGroupResponse {
     def apply(
-      thingGroupName: js.UndefOr[ThingGroupName] = js.undefined,
       thingGroupArn: js.UndefOr[ThingGroupArn] = js.undefined,
-      thingGroupId: js.UndefOr[ThingGroupId] = js.undefined): CreateThingGroupResponse = {
+      thingGroupId: js.UndefOr[ThingGroupId] = js.undefined,
+      thingGroupName: js.UndefOr[ThingGroupName] = js.undefined): CreateThingGroupResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "thingGroupName" -> thingGroupName.map { x => x.asInstanceOf[js.Any] },
         "thingGroupArn" -> thingGroupArn.map { x => x.asInstanceOf[js.Any] },
-        "thingGroupId" -> thingGroupId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "thingGroupId" -> thingGroupId.map { x => x.asInstanceOf[js.Any] },
+        "thingGroupName" -> thingGroupName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateThingGroupResponse]
     }
@@ -2632,23 +2632,23 @@ package iot {
    */
   @js.native
   trait CreateThingRequest extends js.Object {
-    var thingName: js.UndefOr[ThingName]
-    var thingTypeName: js.UndefOr[ThingTypeName]
+    var thingName: ThingName
     var attributePayload: js.UndefOr[AttributePayload]
     var billingGroupName: js.UndefOr[BillingGroupName]
+    var thingTypeName: js.UndefOr[ThingTypeName]
   }
 
   object CreateThingRequest {
     def apply(
-      thingName: js.UndefOr[ThingName] = js.undefined,
-      thingTypeName: js.UndefOr[ThingTypeName] = js.undefined,
+      thingName: ThingName,
       attributePayload: js.UndefOr[AttributePayload] = js.undefined,
-      billingGroupName: js.UndefOr[BillingGroupName] = js.undefined): CreateThingRequest = {
+      billingGroupName: js.UndefOr[BillingGroupName] = js.undefined,
+      thingTypeName: js.UndefOr[ThingTypeName] = js.undefined): CreateThingRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "thingName" -> thingName.map { x => x.asInstanceOf[js.Any] },
-        "thingTypeName" -> thingTypeName.map { x => x.asInstanceOf[js.Any] },
+        "thingName" -> thingName.asInstanceOf[js.Any],
         "attributePayload" -> attributePayload.map { x => x.asInstanceOf[js.Any] },
-        "billingGroupName" -> billingGroupName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "billingGroupName" -> billingGroupName.map { x => x.asInstanceOf[js.Any] },
+        "thingTypeName" -> thingTypeName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateThingRequest]
     }
@@ -2659,20 +2659,20 @@ package iot {
    */
   @js.native
   trait CreateThingResponse extends js.Object {
-    var thingName: js.UndefOr[ThingName]
     var thingArn: js.UndefOr[ThingArn]
     var thingId: js.UndefOr[ThingId]
+    var thingName: js.UndefOr[ThingName]
   }
 
   object CreateThingResponse {
     def apply(
-      thingName: js.UndefOr[ThingName] = js.undefined,
       thingArn: js.UndefOr[ThingArn] = js.undefined,
-      thingId: js.UndefOr[ThingId] = js.undefined): CreateThingResponse = {
+      thingId: js.UndefOr[ThingId] = js.undefined,
+      thingName: js.UndefOr[ThingName] = js.undefined): CreateThingResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "thingName" -> thingName.map { x => x.asInstanceOf[js.Any] },
         "thingArn" -> thingArn.map { x => x.asInstanceOf[js.Any] },
-        "thingId" -> thingId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "thingId" -> thingId.map { x => x.asInstanceOf[js.Any] },
+        "thingName" -> thingName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateThingResponse]
     }
@@ -2683,20 +2683,20 @@ package iot {
    */
   @js.native
   trait CreateThingTypeRequest extends js.Object {
-    var thingTypeName: js.UndefOr[ThingTypeName]
-    var thingTypeProperties: js.UndefOr[ThingTypeProperties]
+    var thingTypeName: ThingTypeName
     var tags: js.UndefOr[TagList]
+    var thingTypeProperties: js.UndefOr[ThingTypeProperties]
   }
 
   object CreateThingTypeRequest {
     def apply(
-      thingTypeName: js.UndefOr[ThingTypeName] = js.undefined,
-      thingTypeProperties: js.UndefOr[ThingTypeProperties] = js.undefined,
-      tags: js.UndefOr[TagList] = js.undefined): CreateThingTypeRequest = {
+      thingTypeName: ThingTypeName,
+      tags: js.UndefOr[TagList] = js.undefined,
+      thingTypeProperties: js.UndefOr[ThingTypeProperties] = js.undefined): CreateThingTypeRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "thingTypeName" -> thingTypeName.map { x => x.asInstanceOf[js.Any] },
-        "thingTypeProperties" -> thingTypeProperties.map { x => x.asInstanceOf[js.Any] },
-        "tags" -> tags.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "thingTypeName" -> thingTypeName.asInstanceOf[js.Any],
+        "tags" -> tags.map { x => x.asInstanceOf[js.Any] },
+        "thingTypeProperties" -> thingTypeProperties.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateThingTypeRequest]
     }
@@ -2707,20 +2707,20 @@ package iot {
    */
   @js.native
   trait CreateThingTypeResponse extends js.Object {
-    var thingTypeName: js.UndefOr[ThingTypeName]
     var thingTypeArn: js.UndefOr[ThingTypeArn]
     var thingTypeId: js.UndefOr[ThingTypeId]
+    var thingTypeName: js.UndefOr[ThingTypeName]
   }
 
   object CreateThingTypeResponse {
     def apply(
-      thingTypeName: js.UndefOr[ThingTypeName] = js.undefined,
       thingTypeArn: js.UndefOr[ThingTypeArn] = js.undefined,
-      thingTypeId: js.UndefOr[ThingTypeId] = js.undefined): CreateThingTypeResponse = {
+      thingTypeId: js.UndefOr[ThingTypeId] = js.undefined,
+      thingTypeName: js.UndefOr[ThingTypeName] = js.undefined): CreateThingTypeResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "thingTypeName" -> thingTypeName.map { x => x.asInstanceOf[js.Any] },
         "thingTypeArn" -> thingTypeArn.map { x => x.asInstanceOf[js.Any] },
-        "thingTypeId" -> thingTypeId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "thingTypeId" -> thingTypeId.map { x => x.asInstanceOf[js.Any] },
+        "thingTypeName" -> thingTypeName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateThingTypeResponse]
     }
@@ -2731,17 +2731,17 @@ package iot {
    */
   @js.native
   trait CreateTopicRuleRequest extends js.Object {
-    var ruleName: js.UndefOr[RuleName]
-    var topicRulePayload: js.UndefOr[TopicRulePayload]
+    var ruleName: RuleName
+    var topicRulePayload: TopicRulePayload
   }
 
   object CreateTopicRuleRequest {
     def apply(
-      ruleName: js.UndefOr[RuleName] = js.undefined,
-      topicRulePayload: js.UndefOr[TopicRulePayload] = js.undefined): CreateTopicRuleRequest = {
+      ruleName: RuleName,
+      topicRulePayload: TopicRulePayload): CreateTopicRuleRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ruleName" -> ruleName.map { x => x.asInstanceOf[js.Any] },
-        "topicRulePayload" -> topicRulePayload.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ruleName" -> ruleName.asInstanceOf[js.Any],
+        "topicRulePayload" -> topicRulePayload.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateTopicRuleRequest]
     }
@@ -2752,22 +2752,22 @@ package iot {
    */
   @js.native
   trait CustomCodeSigning extends js.Object {
-    var signature: js.UndefOr[CodeSigningSignature]
     var certificateChain: js.UndefOr[CodeSigningCertificateChain]
     var hashAlgorithm: js.UndefOr[HashAlgorithm]
+    var signature: js.UndefOr[CodeSigningSignature]
     var signatureAlgorithm: js.UndefOr[SignatureAlgorithm]
   }
 
   object CustomCodeSigning {
     def apply(
-      signature: js.UndefOr[CodeSigningSignature] = js.undefined,
       certificateChain: js.UndefOr[CodeSigningCertificateChain] = js.undefined,
       hashAlgorithm: js.UndefOr[HashAlgorithm] = js.undefined,
+      signature: js.UndefOr[CodeSigningSignature] = js.undefined,
       signatureAlgorithm: js.UndefOr[SignatureAlgorithm] = js.undefined): CustomCodeSigning = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "signature" -> signature.map { x => x.asInstanceOf[js.Any] },
         "certificateChain" -> certificateChain.map { x => x.asInstanceOf[js.Any] },
         "hashAlgorithm" -> hashAlgorithm.map { x => x.asInstanceOf[js.Any] },
+        "signature" -> signature.map { x => x.asInstanceOf[js.Any] },
         "signatureAlgorithm" -> signatureAlgorithm.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CustomCodeSigning]
@@ -2816,14 +2816,14 @@ package iot {
 
   @js.native
   trait DeleteAuthorizerRequest extends js.Object {
-    var authorizerName: js.UndefOr[AuthorizerName]
+    var authorizerName: AuthorizerName
   }
 
   object DeleteAuthorizerRequest {
     def apply(
-      authorizerName: js.UndefOr[AuthorizerName] = js.undefined): DeleteAuthorizerRequest = {
+      authorizerName: AuthorizerName): DeleteAuthorizerRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "authorizerName" -> authorizerName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "authorizerName" -> authorizerName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteAuthorizerRequest]
     }
@@ -2844,16 +2844,16 @@ package iot {
 
   @js.native
   trait DeleteBillingGroupRequest extends js.Object {
-    var billingGroupName: js.UndefOr[BillingGroupName]
+    var billingGroupName: BillingGroupName
     var expectedVersion: js.UndefOr[OptionalVersion]
   }
 
   object DeleteBillingGroupRequest {
     def apply(
-      billingGroupName: js.UndefOr[BillingGroupName] = js.undefined,
+      billingGroupName: BillingGroupName,
       expectedVersion: js.UndefOr[OptionalVersion] = js.undefined): DeleteBillingGroupRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "billingGroupName" -> billingGroupName.map { x => x.asInstanceOf[js.Any] },
+        "billingGroupName" -> billingGroupName.asInstanceOf[js.Any],
         "expectedVersion" -> expectedVersion.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteBillingGroupRequest]
@@ -2878,14 +2878,14 @@ package iot {
    */
   @js.native
   trait DeleteCACertificateRequest extends js.Object {
-    var certificateId: js.UndefOr[CertificateId]
+    var certificateId: CertificateId
   }
 
   object DeleteCACertificateRequest {
     def apply(
-      certificateId: js.UndefOr[CertificateId] = js.undefined): DeleteCACertificateRequest = {
+      certificateId: CertificateId): DeleteCACertificateRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "certificateId" -> certificateId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "certificateId" -> certificateId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteCACertificateRequest]
     }
@@ -2912,16 +2912,16 @@ package iot {
    */
   @js.native
   trait DeleteCertificateRequest extends js.Object {
-    var certificateId: js.UndefOr[CertificateId]
+    var certificateId: CertificateId
     var forceDelete: js.UndefOr[ForceDelete]
   }
 
   object DeleteCertificateRequest {
     def apply(
-      certificateId: js.UndefOr[CertificateId] = js.undefined,
+      certificateId: CertificateId,
       forceDelete: js.UndefOr[ForceDelete] = js.undefined): DeleteCertificateRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "certificateId" -> certificateId.map { x => x.asInstanceOf[js.Any] },
+        "certificateId" -> certificateId.asInstanceOf[js.Any],
         "forceDelete" -> forceDelete.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteCertificateRequest]
@@ -2930,16 +2930,16 @@ package iot {
 
   @js.native
   trait DeleteDynamicThingGroupRequest extends js.Object {
-    var thingGroupName: js.UndefOr[ThingGroupName]
+    var thingGroupName: ThingGroupName
     var expectedVersion: js.UndefOr[OptionalVersion]
   }
 
   object DeleteDynamicThingGroupRequest {
     def apply(
-      thingGroupName: js.UndefOr[ThingGroupName] = js.undefined,
+      thingGroupName: ThingGroupName,
       expectedVersion: js.UndefOr[OptionalVersion] = js.undefined): DeleteDynamicThingGroupRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "thingGroupName" -> thingGroupName.map { x => x.asInstanceOf[js.Any] },
+        "thingGroupName" -> thingGroupName.asInstanceOf[js.Any],
         "expectedVersion" -> expectedVersion.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteDynamicThingGroupRequest]
@@ -2961,22 +2961,22 @@ package iot {
 
   @js.native
   trait DeleteJobExecutionRequest extends js.Object {
-    var jobId: js.UndefOr[JobId]
-    var thingName: js.UndefOr[ThingName]
-    var executionNumber: js.UndefOr[ExecutionNumber]
+    var executionNumber: ExecutionNumber
+    var jobId: JobId
+    var thingName: ThingName
     var force: js.UndefOr[ForceFlag]
   }
 
   object DeleteJobExecutionRequest {
     def apply(
-      jobId: js.UndefOr[JobId] = js.undefined,
-      thingName: js.UndefOr[ThingName] = js.undefined,
-      executionNumber: js.UndefOr[ExecutionNumber] = js.undefined,
+      executionNumber: ExecutionNumber,
+      jobId: JobId,
+      thingName: ThingName,
       force: js.UndefOr[ForceFlag] = js.undefined): DeleteJobExecutionRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "jobId" -> jobId.map { x => x.asInstanceOf[js.Any] },
-        "thingName" -> thingName.map { x => x.asInstanceOf[js.Any] },
-        "executionNumber" -> executionNumber.map { x => x.asInstanceOf[js.Any] },
+        "executionNumber" -> executionNumber.asInstanceOf[js.Any],
+        "jobId" -> jobId.asInstanceOf[js.Any],
+        "thingName" -> thingName.asInstanceOf[js.Any],
         "force" -> force.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteJobExecutionRequest]
@@ -2985,16 +2985,16 @@ package iot {
 
   @js.native
   trait DeleteJobRequest extends js.Object {
-    var jobId: js.UndefOr[JobId]
+    var jobId: JobId
     var force: js.UndefOr[ForceFlag]
   }
 
   object DeleteJobRequest {
     def apply(
-      jobId: js.UndefOr[JobId] = js.undefined,
+      jobId: JobId,
       force: js.UndefOr[ForceFlag] = js.undefined): DeleteJobRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "jobId" -> jobId.map { x => x.asInstanceOf[js.Any] },
+        "jobId" -> jobId.asInstanceOf[js.Any],
         "force" -> force.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteJobRequest]
@@ -3003,18 +3003,18 @@ package iot {
 
   @js.native
   trait DeleteOTAUpdateRequest extends js.Object {
-    var otaUpdateId: js.UndefOr[OTAUpdateId]
+    var otaUpdateId: OTAUpdateId
     var deleteStream: js.UndefOr[DeleteStream]
     var forceDeleteAWSJob: js.UndefOr[ForceDeleteAWSJob]
   }
 
   object DeleteOTAUpdateRequest {
     def apply(
-      otaUpdateId: js.UndefOr[OTAUpdateId] = js.undefined,
+      otaUpdateId: OTAUpdateId,
       deleteStream: js.UndefOr[DeleteStream] = js.undefined,
       forceDeleteAWSJob: js.UndefOr[ForceDeleteAWSJob] = js.undefined): DeleteOTAUpdateRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "otaUpdateId" -> otaUpdateId.map { x => x.asInstanceOf[js.Any] },
+        "otaUpdateId" -> otaUpdateId.asInstanceOf[js.Any],
         "deleteStream" -> deleteStream.map { x => x.asInstanceOf[js.Any] },
         "forceDeleteAWSJob" -> forceDeleteAWSJob.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
@@ -3040,14 +3040,14 @@ package iot {
    */
   @js.native
   trait DeletePolicyRequest extends js.Object {
-    var policyName: js.UndefOr[PolicyName]
+    var policyName: PolicyName
   }
 
   object DeletePolicyRequest {
     def apply(
-      policyName: js.UndefOr[PolicyName] = js.undefined): DeletePolicyRequest = {
+      policyName: PolicyName): DeletePolicyRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "policyName" -> policyName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "policyName" -> policyName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeletePolicyRequest]
     }
@@ -3058,17 +3058,17 @@ package iot {
    */
   @js.native
   trait DeletePolicyVersionRequest extends js.Object {
-    var policyName: js.UndefOr[PolicyName]
-    var policyVersionId: js.UndefOr[PolicyVersionId]
+    var policyName: PolicyName
+    var policyVersionId: PolicyVersionId
   }
 
   object DeletePolicyVersionRequest {
     def apply(
-      policyName: js.UndefOr[PolicyName] = js.undefined,
-      policyVersionId: js.UndefOr[PolicyVersionId] = js.undefined): DeletePolicyVersionRequest = {
+      policyName: PolicyName,
+      policyVersionId: PolicyVersionId): DeletePolicyVersionRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "policyName" -> policyName.map { x => x.asInstanceOf[js.Any] },
-        "policyVersionId" -> policyVersionId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "policyName" -> policyName.asInstanceOf[js.Any],
+        "policyVersionId" -> policyVersionId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeletePolicyVersionRequest]
     }
@@ -3108,14 +3108,14 @@ package iot {
 
   @js.native
   trait DeleteRoleAliasRequest extends js.Object {
-    var roleAlias: js.UndefOr[RoleAlias]
+    var roleAlias: RoleAlias
   }
 
   object DeleteRoleAliasRequest {
     def apply(
-      roleAlias: js.UndefOr[RoleAlias] = js.undefined): DeleteRoleAliasRequest = {
+      roleAlias: RoleAlias): DeleteRoleAliasRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "roleAlias" -> roleAlias.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "roleAlias" -> roleAlias.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteRoleAliasRequest]
     }
@@ -3136,14 +3136,14 @@ package iot {
 
   @js.native
   trait DeleteScheduledAuditRequest extends js.Object {
-    var scheduledAuditName: js.UndefOr[ScheduledAuditName]
+    var scheduledAuditName: ScheduledAuditName
   }
 
   object DeleteScheduledAuditRequest {
     def apply(
-      scheduledAuditName: js.UndefOr[ScheduledAuditName] = js.undefined): DeleteScheduledAuditRequest = {
+      scheduledAuditName: ScheduledAuditName): DeleteScheduledAuditRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "scheduledAuditName" -> scheduledAuditName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "scheduledAuditName" -> scheduledAuditName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteScheduledAuditRequest]
     }
@@ -3164,16 +3164,16 @@ package iot {
 
   @js.native
   trait DeleteSecurityProfileRequest extends js.Object {
-    var securityProfileName: js.UndefOr[SecurityProfileName]
+    var securityProfileName: SecurityProfileName
     var expectedVersion: js.UndefOr[OptionalVersion]
   }
 
   object DeleteSecurityProfileRequest {
     def apply(
-      securityProfileName: js.UndefOr[SecurityProfileName] = js.undefined,
+      securityProfileName: SecurityProfileName,
       expectedVersion: js.UndefOr[OptionalVersion] = js.undefined): DeleteSecurityProfileRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "securityProfileName" -> securityProfileName.map { x => x.asInstanceOf[js.Any] },
+        "securityProfileName" -> securityProfileName.asInstanceOf[js.Any],
         "expectedVersion" -> expectedVersion.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteSecurityProfileRequest]
@@ -3195,14 +3195,14 @@ package iot {
 
   @js.native
   trait DeleteStreamRequest extends js.Object {
-    var streamId: js.UndefOr[StreamId]
+    var streamId: StreamId
   }
 
   object DeleteStreamRequest {
     def apply(
-      streamId: js.UndefOr[StreamId] = js.undefined): DeleteStreamRequest = {
+      streamId: StreamId): DeleteStreamRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "streamId" -> streamId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "streamId" -> streamId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteStreamRequest]
     }
@@ -3223,16 +3223,16 @@ package iot {
 
   @js.native
   trait DeleteThingGroupRequest extends js.Object {
-    var thingGroupName: js.UndefOr[ThingGroupName]
+    var thingGroupName: ThingGroupName
     var expectedVersion: js.UndefOr[OptionalVersion]
   }
 
   object DeleteThingGroupRequest {
     def apply(
-      thingGroupName: js.UndefOr[ThingGroupName] = js.undefined,
+      thingGroupName: ThingGroupName,
       expectedVersion: js.UndefOr[OptionalVersion] = js.undefined): DeleteThingGroupRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "thingGroupName" -> thingGroupName.map { x => x.asInstanceOf[js.Any] },
+        "thingGroupName" -> thingGroupName.asInstanceOf[js.Any],
         "expectedVersion" -> expectedVersion.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteThingGroupRequest]
@@ -3257,16 +3257,16 @@ package iot {
    */
   @js.native
   trait DeleteThingRequest extends js.Object {
-    var thingName: js.UndefOr[ThingName]
+    var thingName: ThingName
     var expectedVersion: js.UndefOr[OptionalVersion]
   }
 
   object DeleteThingRequest {
     def apply(
-      thingName: js.UndefOr[ThingName] = js.undefined,
+      thingName: ThingName,
       expectedVersion: js.UndefOr[OptionalVersion] = js.undefined): DeleteThingRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "thingName" -> thingName.map { x => x.asInstanceOf[js.Any] },
+        "thingName" -> thingName.asInstanceOf[js.Any],
         "expectedVersion" -> expectedVersion.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteThingRequest]
@@ -3294,14 +3294,14 @@ package iot {
    */
   @js.native
   trait DeleteThingTypeRequest extends js.Object {
-    var thingTypeName: js.UndefOr[ThingTypeName]
+    var thingTypeName: ThingTypeName
   }
 
   object DeleteThingTypeRequest {
     def apply(
-      thingTypeName: js.UndefOr[ThingTypeName] = js.undefined): DeleteThingTypeRequest = {
+      thingTypeName: ThingTypeName): DeleteThingTypeRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "thingTypeName" -> thingTypeName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "thingTypeName" -> thingTypeName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteThingTypeRequest]
     }
@@ -3328,14 +3328,14 @@ package iot {
    */
   @js.native
   trait DeleteTopicRuleRequest extends js.Object {
-    var ruleName: js.UndefOr[RuleName]
+    var ruleName: RuleName
   }
 
   object DeleteTopicRuleRequest {
     def apply(
-      ruleName: js.UndefOr[RuleName] = js.undefined): DeleteTopicRuleRequest = {
+      ruleName: RuleName): DeleteTopicRuleRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ruleName" -> ruleName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ruleName" -> ruleName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteTopicRuleRequest]
     }
@@ -3343,17 +3343,17 @@ package iot {
 
   @js.native
   trait DeleteV2LoggingLevelRequest extends js.Object {
-    var targetType: js.UndefOr[LogTargetType]
-    var targetName: js.UndefOr[LogTargetName]
+    var targetName: LogTargetName
+    var targetType: LogTargetType
   }
 
   object DeleteV2LoggingLevelRequest {
     def apply(
-      targetType: js.UndefOr[LogTargetType] = js.undefined,
-      targetName: js.UndefOr[LogTargetName] = js.undefined): DeleteV2LoggingLevelRequest = {
+      targetName: LogTargetName,
+      targetType: LogTargetType): DeleteV2LoggingLevelRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "targetType" -> targetType.map { x => x.asInstanceOf[js.Any] },
-        "targetName" -> targetName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "targetName" -> targetName.asInstanceOf[js.Any],
+        "targetType" -> targetType.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteV2LoggingLevelRequest]
     }
@@ -3364,17 +3364,17 @@ package iot {
    */
   @js.native
   trait Denied extends js.Object {
-    var implicitDeny: js.UndefOr[ImplicitDeny]
     var explicitDeny: js.UndefOr[ExplicitDeny]
+    var implicitDeny: js.UndefOr[ImplicitDeny]
   }
 
   object Denied {
     def apply(
-      implicitDeny: js.UndefOr[ImplicitDeny] = js.undefined,
-      explicitDeny: js.UndefOr[ExplicitDeny] = js.undefined): Denied = {
+      explicitDeny: js.UndefOr[ExplicitDeny] = js.undefined,
+      implicitDeny: js.UndefOr[ImplicitDeny] = js.undefined): Denied = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "implicitDeny" -> implicitDeny.map { x => x.asInstanceOf[js.Any] },
-        "explicitDeny" -> explicitDeny.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "explicitDeny" -> explicitDeny.map { x => x.asInstanceOf[js.Any] },
+        "implicitDeny" -> implicitDeny.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Denied]
     }
@@ -3385,16 +3385,16 @@ package iot {
    */
   @js.native
   trait DeprecateThingTypeRequest extends js.Object {
-    var thingTypeName: js.UndefOr[ThingTypeName]
+    var thingTypeName: ThingTypeName
     var undoDeprecate: js.UndefOr[UndoDeprecate]
   }
 
   object DeprecateThingTypeRequest {
     def apply(
-      thingTypeName: js.UndefOr[ThingTypeName] = js.undefined,
+      thingTypeName: ThingTypeName,
       undoDeprecate: js.UndefOr[UndoDeprecate] = js.undefined): DeprecateThingTypeRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "thingTypeName" -> thingTypeName.map { x => x.asInstanceOf[js.Any] },
+        "thingTypeName" -> thingTypeName.asInstanceOf[js.Any],
         "undoDeprecate" -> undoDeprecate.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeprecateThingTypeRequest]
@@ -3432,20 +3432,20 @@ package iot {
 
   @js.native
   trait DescribeAccountAuditConfigurationResponse extends js.Object {
-    var roleArn: js.UndefOr[RoleArn]
-    var auditNotificationTargetConfigurations: js.UndefOr[AuditNotificationTargetConfigurations]
     var auditCheckConfigurations: js.UndefOr[AuditCheckConfigurations]
+    var auditNotificationTargetConfigurations: js.UndefOr[AuditNotificationTargetConfigurations]
+    var roleArn: js.UndefOr[RoleArn]
   }
 
   object DescribeAccountAuditConfigurationResponse {
     def apply(
-      roleArn: js.UndefOr[RoleArn] = js.undefined,
+      auditCheckConfigurations: js.UndefOr[AuditCheckConfigurations] = js.undefined,
       auditNotificationTargetConfigurations: js.UndefOr[AuditNotificationTargetConfigurations] = js.undefined,
-      auditCheckConfigurations: js.UndefOr[AuditCheckConfigurations] = js.undefined): DescribeAccountAuditConfigurationResponse = {
+      roleArn: js.UndefOr[RoleArn] = js.undefined): DescribeAccountAuditConfigurationResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "roleArn" -> roleArn.map { x => x.asInstanceOf[js.Any] },
+        "auditCheckConfigurations" -> auditCheckConfigurations.map { x => x.asInstanceOf[js.Any] },
         "auditNotificationTargetConfigurations" -> auditNotificationTargetConfigurations.map { x => x.asInstanceOf[js.Any] },
-        "auditCheckConfigurations" -> auditCheckConfigurations.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "roleArn" -> roleArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeAccountAuditConfigurationResponse]
     }
@@ -3453,14 +3453,14 @@ package iot {
 
   @js.native
   trait DescribeAuditTaskRequest extends js.Object {
-    var taskId: js.UndefOr[AuditTaskId]
+    var taskId: AuditTaskId
   }
 
   object DescribeAuditTaskRequest {
     def apply(
-      taskId: js.UndefOr[AuditTaskId] = js.undefined): DescribeAuditTaskRequest = {
+      taskId: AuditTaskId): DescribeAuditTaskRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "taskId" -> taskId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "taskId" -> taskId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeAuditTaskRequest]
     }
@@ -3468,28 +3468,28 @@ package iot {
 
   @js.native
   trait DescribeAuditTaskResponse extends js.Object {
-    var scheduledAuditName: js.UndefOr[ScheduledAuditName]
     var auditDetails: js.UndefOr[AuditDetails]
+    var scheduledAuditName: js.UndefOr[ScheduledAuditName]
+    var taskStartTime: js.UndefOr[Timestamp]
     var taskStatistics: js.UndefOr[TaskStatistics]
     var taskStatus: js.UndefOr[AuditTaskStatus]
-    var taskStartTime: js.UndefOr[Timestamp]
     var taskType: js.UndefOr[AuditTaskType]
   }
 
   object DescribeAuditTaskResponse {
     def apply(
-      scheduledAuditName: js.UndefOr[ScheduledAuditName] = js.undefined,
       auditDetails: js.UndefOr[AuditDetails] = js.undefined,
+      scheduledAuditName: js.UndefOr[ScheduledAuditName] = js.undefined,
+      taskStartTime: js.UndefOr[Timestamp] = js.undefined,
       taskStatistics: js.UndefOr[TaskStatistics] = js.undefined,
       taskStatus: js.UndefOr[AuditTaskStatus] = js.undefined,
-      taskStartTime: js.UndefOr[Timestamp] = js.undefined,
       taskType: js.UndefOr[AuditTaskType] = js.undefined): DescribeAuditTaskResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "scheduledAuditName" -> scheduledAuditName.map { x => x.asInstanceOf[js.Any] },
         "auditDetails" -> auditDetails.map { x => x.asInstanceOf[js.Any] },
+        "scheduledAuditName" -> scheduledAuditName.map { x => x.asInstanceOf[js.Any] },
+        "taskStartTime" -> taskStartTime.map { x => x.asInstanceOf[js.Any] },
         "taskStatistics" -> taskStatistics.map { x => x.asInstanceOf[js.Any] },
         "taskStatus" -> taskStatus.map { x => x.asInstanceOf[js.Any] },
-        "taskStartTime" -> taskStartTime.map { x => x.asInstanceOf[js.Any] },
         "taskType" -> taskType.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeAuditTaskResponse]
@@ -3498,14 +3498,14 @@ package iot {
 
   @js.native
   trait DescribeAuthorizerRequest extends js.Object {
-    var authorizerName: js.UndefOr[AuthorizerName]
+    var authorizerName: AuthorizerName
   }
 
   object DescribeAuthorizerRequest {
     def apply(
-      authorizerName: js.UndefOr[AuthorizerName] = js.undefined): DescribeAuthorizerRequest = {
+      authorizerName: AuthorizerName): DescribeAuthorizerRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "authorizerName" -> authorizerName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "authorizerName" -> authorizerName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeAuthorizerRequest]
     }
@@ -3528,14 +3528,14 @@ package iot {
 
   @js.native
   trait DescribeBillingGroupRequest extends js.Object {
-    var billingGroupName: js.UndefOr[BillingGroupName]
+    var billingGroupName: BillingGroupName
   }
 
   object DescribeBillingGroupRequest {
     def apply(
-      billingGroupName: js.UndefOr[BillingGroupName] = js.undefined): DescribeBillingGroupRequest = {
+      billingGroupName: BillingGroupName): DescribeBillingGroupRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "billingGroupName" -> billingGroupName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "billingGroupName" -> billingGroupName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeBillingGroupRequest]
     }
@@ -3545,27 +3545,27 @@ package iot {
   trait DescribeBillingGroupResponse extends js.Object {
     var billingGroupArn: js.UndefOr[BillingGroupArn]
     var billingGroupId: js.UndefOr[BillingGroupId]
-    var version: js.UndefOr[Version]
-    var billingGroupProperties: js.UndefOr[BillingGroupProperties]
     var billingGroupMetadata: js.UndefOr[BillingGroupMetadata]
     var billingGroupName: js.UndefOr[BillingGroupName]
+    var billingGroupProperties: js.UndefOr[BillingGroupProperties]
+    var version: js.UndefOr[Version]
   }
 
   object DescribeBillingGroupResponse {
     def apply(
       billingGroupArn: js.UndefOr[BillingGroupArn] = js.undefined,
       billingGroupId: js.UndefOr[BillingGroupId] = js.undefined,
-      version: js.UndefOr[Version] = js.undefined,
-      billingGroupProperties: js.UndefOr[BillingGroupProperties] = js.undefined,
       billingGroupMetadata: js.UndefOr[BillingGroupMetadata] = js.undefined,
-      billingGroupName: js.UndefOr[BillingGroupName] = js.undefined): DescribeBillingGroupResponse = {
+      billingGroupName: js.UndefOr[BillingGroupName] = js.undefined,
+      billingGroupProperties: js.UndefOr[BillingGroupProperties] = js.undefined,
+      version: js.UndefOr[Version] = js.undefined): DescribeBillingGroupResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
         "billingGroupArn" -> billingGroupArn.map { x => x.asInstanceOf[js.Any] },
         "billingGroupId" -> billingGroupId.map { x => x.asInstanceOf[js.Any] },
-        "version" -> version.map { x => x.asInstanceOf[js.Any] },
-        "billingGroupProperties" -> billingGroupProperties.map { x => x.asInstanceOf[js.Any] },
         "billingGroupMetadata" -> billingGroupMetadata.map { x => x.asInstanceOf[js.Any] },
-        "billingGroupName" -> billingGroupName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "billingGroupName" -> billingGroupName.map { x => x.asInstanceOf[js.Any] },
+        "billingGroupProperties" -> billingGroupProperties.map { x => x.asInstanceOf[js.Any] },
+        "version" -> version.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeBillingGroupResponse]
     }
@@ -3576,14 +3576,14 @@ package iot {
    */
   @js.native
   trait DescribeCACertificateRequest extends js.Object {
-    var certificateId: js.UndefOr[CertificateId]
+    var certificateId: CertificateId
   }
 
   object DescribeCACertificateRequest {
     def apply(
-      certificateId: js.UndefOr[CertificateId] = js.undefined): DescribeCACertificateRequest = {
+      certificateId: CertificateId): DescribeCACertificateRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "certificateId" -> certificateId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "certificateId" -> certificateId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeCACertificateRequest]
     }
@@ -3615,14 +3615,14 @@ package iot {
    */
   @js.native
   trait DescribeCertificateRequest extends js.Object {
-    var certificateId: js.UndefOr[CertificateId]
+    var certificateId: CertificateId
   }
 
   object DescribeCertificateRequest {
     def apply(
-      certificateId: js.UndefOr[CertificateId] = js.undefined): DescribeCertificateRequest = {
+      certificateId: CertificateId): DescribeCertificateRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "certificateId" -> certificateId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "certificateId" -> certificateId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeCertificateRequest]
     }
@@ -3725,19 +3725,19 @@ package iot {
 
   @js.native
   trait DescribeEventConfigurationsResponse extends js.Object {
-    var eventConfigurations: js.UndefOr[EventConfigurations]
     var creationDate: js.UndefOr[CreationDate]
+    var eventConfigurations: js.UndefOr[EventConfigurations]
     var lastModifiedDate: js.UndefOr[LastModifiedDate]
   }
 
   object DescribeEventConfigurationsResponse {
     def apply(
-      eventConfigurations: js.UndefOr[EventConfigurations] = js.undefined,
       creationDate: js.UndefOr[CreationDate] = js.undefined,
+      eventConfigurations: js.UndefOr[EventConfigurations] = js.undefined,
       lastModifiedDate: js.UndefOr[LastModifiedDate] = js.undefined): DescribeEventConfigurationsResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "eventConfigurations" -> eventConfigurations.map { x => x.asInstanceOf[js.Any] },
         "creationDate" -> creationDate.map { x => x.asInstanceOf[js.Any] },
+        "eventConfigurations" -> eventConfigurations.map { x => x.asInstanceOf[js.Any] },
         "lastModifiedDate" -> lastModifiedDate.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeEventConfigurationsResponse]
@@ -3746,14 +3746,14 @@ package iot {
 
   @js.native
   trait DescribeIndexRequest extends js.Object {
-    var indexName: js.UndefOr[IndexName]
+    var indexName: IndexName
   }
 
   object DescribeIndexRequest {
     def apply(
-      indexName: js.UndefOr[IndexName] = js.undefined): DescribeIndexRequest = {
+      indexName: IndexName): DescribeIndexRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "indexName" -> indexName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "indexName" -> indexName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeIndexRequest]
     }
@@ -3782,19 +3782,19 @@ package iot {
 
   @js.native
   trait DescribeJobExecutionRequest extends js.Object {
-    var jobId: js.UndefOr[JobId]
-    var thingName: js.UndefOr[ThingName]
+    var jobId: JobId
+    var thingName: ThingName
     var executionNumber: js.UndefOr[ExecutionNumber]
   }
 
   object DescribeJobExecutionRequest {
     def apply(
-      jobId: js.UndefOr[JobId] = js.undefined,
-      thingName: js.UndefOr[ThingName] = js.undefined,
+      jobId: JobId,
+      thingName: ThingName,
       executionNumber: js.UndefOr[ExecutionNumber] = js.undefined): DescribeJobExecutionRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "jobId" -> jobId.map { x => x.asInstanceOf[js.Any] },
-        "thingName" -> thingName.map { x => x.asInstanceOf[js.Any] },
+        "jobId" -> jobId.asInstanceOf[js.Any],
+        "thingName" -> thingName.asInstanceOf[js.Any],
         "executionNumber" -> executionNumber.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeJobExecutionRequest]
@@ -3818,14 +3818,14 @@ package iot {
 
   @js.native
   trait DescribeJobRequest extends js.Object {
-    var jobId: js.UndefOr[JobId]
+    var jobId: JobId
   }
 
   object DescribeJobRequest {
     def apply(
-      jobId: js.UndefOr[JobId] = js.undefined): DescribeJobRequest = {
+      jobId: JobId): DescribeJobRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "jobId" -> jobId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "jobId" -> jobId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeJobRequest]
     }
@@ -3851,14 +3851,14 @@ package iot {
 
   @js.native
   trait DescribeRoleAliasRequest extends js.Object {
-    var roleAlias: js.UndefOr[RoleAlias]
+    var roleAlias: RoleAlias
   }
 
   object DescribeRoleAliasRequest {
     def apply(
-      roleAlias: js.UndefOr[RoleAlias] = js.undefined): DescribeRoleAliasRequest = {
+      roleAlias: RoleAlias): DescribeRoleAliasRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "roleAlias" -> roleAlias.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "roleAlias" -> roleAlias.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeRoleAliasRequest]
     }
@@ -3881,14 +3881,14 @@ package iot {
 
   @js.native
   trait DescribeScheduledAuditRequest extends js.Object {
-    var scheduledAuditName: js.UndefOr[ScheduledAuditName]
+    var scheduledAuditName: ScheduledAuditName
   }
 
   object DescribeScheduledAuditRequest {
     def apply(
-      scheduledAuditName: js.UndefOr[ScheduledAuditName] = js.undefined): DescribeScheduledAuditRequest = {
+      scheduledAuditName: ScheduledAuditName): DescribeScheduledAuditRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "scheduledAuditName" -> scheduledAuditName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "scheduledAuditName" -> scheduledAuditName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeScheduledAuditRequest]
     }
@@ -3896,29 +3896,29 @@ package iot {
 
   @js.native
   trait DescribeScheduledAuditResponse extends js.Object {
-    var scheduledAuditName: js.UndefOr[ScheduledAuditName]
-    var dayOfWeek: js.UndefOr[DayOfWeek]
-    var targetCheckNames: js.UndefOr[TargetAuditCheckNames]
     var dayOfMonth: js.UndefOr[DayOfMonth]
-    var scheduledAuditArn: js.UndefOr[ScheduledAuditArn]
+    var dayOfWeek: js.UndefOr[DayOfWeek]
     var frequency: js.UndefOr[AuditFrequency]
+    var scheduledAuditArn: js.UndefOr[ScheduledAuditArn]
+    var scheduledAuditName: js.UndefOr[ScheduledAuditName]
+    var targetCheckNames: js.UndefOr[TargetAuditCheckNames]
   }
 
   object DescribeScheduledAuditResponse {
     def apply(
-      scheduledAuditName: js.UndefOr[ScheduledAuditName] = js.undefined,
-      dayOfWeek: js.UndefOr[DayOfWeek] = js.undefined,
-      targetCheckNames: js.UndefOr[TargetAuditCheckNames] = js.undefined,
       dayOfMonth: js.UndefOr[DayOfMonth] = js.undefined,
+      dayOfWeek: js.UndefOr[DayOfWeek] = js.undefined,
+      frequency: js.UndefOr[AuditFrequency] = js.undefined,
       scheduledAuditArn: js.UndefOr[ScheduledAuditArn] = js.undefined,
-      frequency: js.UndefOr[AuditFrequency] = js.undefined): DescribeScheduledAuditResponse = {
+      scheduledAuditName: js.UndefOr[ScheduledAuditName] = js.undefined,
+      targetCheckNames: js.UndefOr[TargetAuditCheckNames] = js.undefined): DescribeScheduledAuditResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "scheduledAuditName" -> scheduledAuditName.map { x => x.asInstanceOf[js.Any] },
-        "dayOfWeek" -> dayOfWeek.map { x => x.asInstanceOf[js.Any] },
-        "targetCheckNames" -> targetCheckNames.map { x => x.asInstanceOf[js.Any] },
         "dayOfMonth" -> dayOfMonth.map { x => x.asInstanceOf[js.Any] },
+        "dayOfWeek" -> dayOfWeek.map { x => x.asInstanceOf[js.Any] },
+        "frequency" -> frequency.map { x => x.asInstanceOf[js.Any] },
         "scheduledAuditArn" -> scheduledAuditArn.map { x => x.asInstanceOf[js.Any] },
-        "frequency" -> frequency.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "scheduledAuditName" -> scheduledAuditName.map { x => x.asInstanceOf[js.Any] },
+        "targetCheckNames" -> targetCheckNames.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeScheduledAuditResponse]
     }
@@ -3926,14 +3926,14 @@ package iot {
 
   @js.native
   trait DescribeSecurityProfileRequest extends js.Object {
-    var securityProfileName: js.UndefOr[SecurityProfileName]
+    var securityProfileName: SecurityProfileName
   }
 
   object DescribeSecurityProfileRequest {
     def apply(
-      securityProfileName: js.UndefOr[SecurityProfileName] = js.undefined): DescribeSecurityProfileRequest = {
+      securityProfileName: SecurityProfileName): DescribeSecurityProfileRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "securityProfileName" -> securityProfileName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "securityProfileName" -> securityProfileName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeSecurityProfileRequest]
     }
@@ -3941,35 +3941,35 @@ package iot {
 
   @js.native
   trait DescribeSecurityProfileResponse extends js.Object {
-    var lastModifiedDate: js.UndefOr[Timestamp]
-    var securityProfileArn: js.UndefOr[SecurityProfileArn]
-    var version: js.UndefOr[Version]
+    var alertTargets: js.UndefOr[AlertTargets]
     var behaviors: js.UndefOr[Behaviors]
     var creationDate: js.UndefOr[Timestamp]
-    var securityProfileName: js.UndefOr[SecurityProfileName]
+    var lastModifiedDate: js.UndefOr[Timestamp]
+    var securityProfileArn: js.UndefOr[SecurityProfileArn]
     var securityProfileDescription: js.UndefOr[SecurityProfileDescription]
-    var alertTargets: js.UndefOr[AlertTargets]
+    var securityProfileName: js.UndefOr[SecurityProfileName]
+    var version: js.UndefOr[Version]
   }
 
   object DescribeSecurityProfileResponse {
     def apply(
-      lastModifiedDate: js.UndefOr[Timestamp] = js.undefined,
-      securityProfileArn: js.UndefOr[SecurityProfileArn] = js.undefined,
-      version: js.UndefOr[Version] = js.undefined,
+      alertTargets: js.UndefOr[AlertTargets] = js.undefined,
       behaviors: js.UndefOr[Behaviors] = js.undefined,
       creationDate: js.UndefOr[Timestamp] = js.undefined,
-      securityProfileName: js.UndefOr[SecurityProfileName] = js.undefined,
+      lastModifiedDate: js.UndefOr[Timestamp] = js.undefined,
+      securityProfileArn: js.UndefOr[SecurityProfileArn] = js.undefined,
       securityProfileDescription: js.UndefOr[SecurityProfileDescription] = js.undefined,
-      alertTargets: js.UndefOr[AlertTargets] = js.undefined): DescribeSecurityProfileResponse = {
+      securityProfileName: js.UndefOr[SecurityProfileName] = js.undefined,
+      version: js.UndefOr[Version] = js.undefined): DescribeSecurityProfileResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "lastModifiedDate" -> lastModifiedDate.map { x => x.asInstanceOf[js.Any] },
-        "securityProfileArn" -> securityProfileArn.map { x => x.asInstanceOf[js.Any] },
-        "version" -> version.map { x => x.asInstanceOf[js.Any] },
+        "alertTargets" -> alertTargets.map { x => x.asInstanceOf[js.Any] },
         "behaviors" -> behaviors.map { x => x.asInstanceOf[js.Any] },
         "creationDate" -> creationDate.map { x => x.asInstanceOf[js.Any] },
-        "securityProfileName" -> securityProfileName.map { x => x.asInstanceOf[js.Any] },
+        "lastModifiedDate" -> lastModifiedDate.map { x => x.asInstanceOf[js.Any] },
+        "securityProfileArn" -> securityProfileArn.map { x => x.asInstanceOf[js.Any] },
         "securityProfileDescription" -> securityProfileDescription.map { x => x.asInstanceOf[js.Any] },
-        "alertTargets" -> alertTargets.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "securityProfileName" -> securityProfileName.map { x => x.asInstanceOf[js.Any] },
+        "version" -> version.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeSecurityProfileResponse]
     }
@@ -3977,14 +3977,14 @@ package iot {
 
   @js.native
   trait DescribeStreamRequest extends js.Object {
-    var streamId: js.UndefOr[StreamId]
+    var streamId: StreamId
   }
 
   object DescribeStreamRequest {
     def apply(
-      streamId: js.UndefOr[StreamId] = js.undefined): DescribeStreamRequest = {
+      streamId: StreamId): DescribeStreamRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "streamId" -> streamId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "streamId" -> streamId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeStreamRequest]
     }
@@ -4007,14 +4007,14 @@ package iot {
 
   @js.native
   trait DescribeThingGroupRequest extends js.Object {
-    var thingGroupName: js.UndefOr[ThingGroupName]
+    var thingGroupName: ThingGroupName
   }
 
   object DescribeThingGroupRequest {
     def apply(
-      thingGroupName: js.UndefOr[ThingGroupName] = js.undefined): DescribeThingGroupRequest = {
+      thingGroupName: ThingGroupName): DescribeThingGroupRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "thingGroupName" -> thingGroupName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "thingGroupName" -> thingGroupName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeThingGroupRequest]
     }
@@ -4022,41 +4022,41 @@ package iot {
 
   @js.native
   trait DescribeThingGroupResponse extends js.Object {
-    var thingGroupName: js.UndefOr[ThingGroupName]
-    var thingGroupMetadata: js.UndefOr[ThingGroupMetadata]
-    var queryString: js.UndefOr[QueryString]
-    var thingGroupId: js.UndefOr[ThingGroupId]
-    var version: js.UndefOr[Version]
-    var status: js.UndefOr[DynamicGroupStatus]
     var indexName: js.UndefOr[IndexName]
-    var thingGroupArn: js.UndefOr[ThingGroupArn]
-    var thingGroupProperties: js.UndefOr[ThingGroupProperties]
+    var queryString: js.UndefOr[QueryString]
     var queryVersion: js.UndefOr[QueryVersion]
+    var status: js.UndefOr[DynamicGroupStatus]
+    var thingGroupArn: js.UndefOr[ThingGroupArn]
+    var thingGroupId: js.UndefOr[ThingGroupId]
+    var thingGroupMetadata: js.UndefOr[ThingGroupMetadata]
+    var thingGroupName: js.UndefOr[ThingGroupName]
+    var thingGroupProperties: js.UndefOr[ThingGroupProperties]
+    var version: js.UndefOr[Version]
   }
 
   object DescribeThingGroupResponse {
     def apply(
-      thingGroupName: js.UndefOr[ThingGroupName] = js.undefined,
-      thingGroupMetadata: js.UndefOr[ThingGroupMetadata] = js.undefined,
-      queryString: js.UndefOr[QueryString] = js.undefined,
-      thingGroupId: js.UndefOr[ThingGroupId] = js.undefined,
-      version: js.UndefOr[Version] = js.undefined,
-      status: js.UndefOr[DynamicGroupStatus] = js.undefined,
       indexName: js.UndefOr[IndexName] = js.undefined,
+      queryString: js.UndefOr[QueryString] = js.undefined,
+      queryVersion: js.UndefOr[QueryVersion] = js.undefined,
+      status: js.UndefOr[DynamicGroupStatus] = js.undefined,
       thingGroupArn: js.UndefOr[ThingGroupArn] = js.undefined,
+      thingGroupId: js.UndefOr[ThingGroupId] = js.undefined,
+      thingGroupMetadata: js.UndefOr[ThingGroupMetadata] = js.undefined,
+      thingGroupName: js.UndefOr[ThingGroupName] = js.undefined,
       thingGroupProperties: js.UndefOr[ThingGroupProperties] = js.undefined,
-      queryVersion: js.UndefOr[QueryVersion] = js.undefined): DescribeThingGroupResponse = {
+      version: js.UndefOr[Version] = js.undefined): DescribeThingGroupResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "thingGroupName" -> thingGroupName.map { x => x.asInstanceOf[js.Any] },
-        "thingGroupMetadata" -> thingGroupMetadata.map { x => x.asInstanceOf[js.Any] },
-        "queryString" -> queryString.map { x => x.asInstanceOf[js.Any] },
-        "thingGroupId" -> thingGroupId.map { x => x.asInstanceOf[js.Any] },
-        "version" -> version.map { x => x.asInstanceOf[js.Any] },
-        "status" -> status.map { x => x.asInstanceOf[js.Any] },
         "indexName" -> indexName.map { x => x.asInstanceOf[js.Any] },
+        "queryString" -> queryString.map { x => x.asInstanceOf[js.Any] },
+        "queryVersion" -> queryVersion.map { x => x.asInstanceOf[js.Any] },
+        "status" -> status.map { x => x.asInstanceOf[js.Any] },
         "thingGroupArn" -> thingGroupArn.map { x => x.asInstanceOf[js.Any] },
+        "thingGroupId" -> thingGroupId.map { x => x.asInstanceOf[js.Any] },
+        "thingGroupMetadata" -> thingGroupMetadata.map { x => x.asInstanceOf[js.Any] },
+        "thingGroupName" -> thingGroupName.map { x => x.asInstanceOf[js.Any] },
         "thingGroupProperties" -> thingGroupProperties.map { x => x.asInstanceOf[js.Any] },
-        "queryVersion" -> queryVersion.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "version" -> version.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeThingGroupResponse]
     }
@@ -4064,14 +4064,14 @@ package iot {
 
   @js.native
   trait DescribeThingRegistrationTaskRequest extends js.Object {
-    var taskId: js.UndefOr[TaskId]
+    var taskId: TaskId
   }
 
   object DescribeThingRegistrationTaskRequest {
     def apply(
-      taskId: js.UndefOr[TaskId] = js.undefined): DescribeThingRegistrationTaskRequest = {
+      taskId: TaskId): DescribeThingRegistrationTaskRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "taskId" -> taskId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "taskId" -> taskId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeThingRegistrationTaskRequest]
     }
@@ -4079,47 +4079,47 @@ package iot {
 
   @js.native
   trait DescribeThingRegistrationTaskResponse extends js.Object {
-    var successCount: js.UndefOr[Count]
-    var inputFileKey: js.UndefOr[RegistryS3KeyName]
-    var inputFileBucket: js.UndefOr[RegistryS3BucketName]
-    var lastModifiedDate: js.UndefOr[LastModifiedDate]
+    var creationDate: js.UndefOr[CreationDate]
     var failureCount: js.UndefOr[Count]
+    var inputFileBucket: js.UndefOr[RegistryS3BucketName]
+    var inputFileKey: js.UndefOr[RegistryS3KeyName]
+    var lastModifiedDate: js.UndefOr[LastModifiedDate]
+    var message: js.UndefOr[ErrorMessage]
+    var percentageProgress: js.UndefOr[Percentage]
     var roleArn: js.UndefOr[RoleArn]
     var status: js.UndefOr[Status]
-    var creationDate: js.UndefOr[CreationDate]
-    var message: js.UndefOr[ErrorMessage]
-    var templateBody: js.UndefOr[TemplateBody]
+    var successCount: js.UndefOr[Count]
     var taskId: js.UndefOr[TaskId]
-    var percentageProgress: js.UndefOr[Percentage]
+    var templateBody: js.UndefOr[TemplateBody]
   }
 
   object DescribeThingRegistrationTaskResponse {
     def apply(
-      successCount: js.UndefOr[Count] = js.undefined,
-      inputFileKey: js.UndefOr[RegistryS3KeyName] = js.undefined,
-      inputFileBucket: js.UndefOr[RegistryS3BucketName] = js.undefined,
-      lastModifiedDate: js.UndefOr[LastModifiedDate] = js.undefined,
+      creationDate: js.UndefOr[CreationDate] = js.undefined,
       failureCount: js.UndefOr[Count] = js.undefined,
+      inputFileBucket: js.UndefOr[RegistryS3BucketName] = js.undefined,
+      inputFileKey: js.UndefOr[RegistryS3KeyName] = js.undefined,
+      lastModifiedDate: js.UndefOr[LastModifiedDate] = js.undefined,
+      message: js.UndefOr[ErrorMessage] = js.undefined,
+      percentageProgress: js.UndefOr[Percentage] = js.undefined,
       roleArn: js.UndefOr[RoleArn] = js.undefined,
       status: js.UndefOr[Status] = js.undefined,
-      creationDate: js.UndefOr[CreationDate] = js.undefined,
-      message: js.UndefOr[ErrorMessage] = js.undefined,
-      templateBody: js.UndefOr[TemplateBody] = js.undefined,
+      successCount: js.UndefOr[Count] = js.undefined,
       taskId: js.UndefOr[TaskId] = js.undefined,
-      percentageProgress: js.UndefOr[Percentage] = js.undefined): DescribeThingRegistrationTaskResponse = {
+      templateBody: js.UndefOr[TemplateBody] = js.undefined): DescribeThingRegistrationTaskResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "successCount" -> successCount.map { x => x.asInstanceOf[js.Any] },
-        "inputFileKey" -> inputFileKey.map { x => x.asInstanceOf[js.Any] },
-        "inputFileBucket" -> inputFileBucket.map { x => x.asInstanceOf[js.Any] },
-        "lastModifiedDate" -> lastModifiedDate.map { x => x.asInstanceOf[js.Any] },
+        "creationDate" -> creationDate.map { x => x.asInstanceOf[js.Any] },
         "failureCount" -> failureCount.map { x => x.asInstanceOf[js.Any] },
+        "inputFileBucket" -> inputFileBucket.map { x => x.asInstanceOf[js.Any] },
+        "inputFileKey" -> inputFileKey.map { x => x.asInstanceOf[js.Any] },
+        "lastModifiedDate" -> lastModifiedDate.map { x => x.asInstanceOf[js.Any] },
+        "message" -> message.map { x => x.asInstanceOf[js.Any] },
+        "percentageProgress" -> percentageProgress.map { x => x.asInstanceOf[js.Any] },
         "roleArn" -> roleArn.map { x => x.asInstanceOf[js.Any] },
         "status" -> status.map { x => x.asInstanceOf[js.Any] },
-        "creationDate" -> creationDate.map { x => x.asInstanceOf[js.Any] },
-        "message" -> message.map { x => x.asInstanceOf[js.Any] },
-        "templateBody" -> templateBody.map { x => x.asInstanceOf[js.Any] },
+        "successCount" -> successCount.map { x => x.asInstanceOf[js.Any] },
         "taskId" -> taskId.map { x => x.asInstanceOf[js.Any] },
-        "percentageProgress" -> percentageProgress.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "templateBody" -> templateBody.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeThingRegistrationTaskResponse]
     }
@@ -4130,14 +4130,14 @@ package iot {
    */
   @js.native
   trait DescribeThingRequest extends js.Object {
-    var thingName: js.UndefOr[ThingName]
+    var thingName: ThingName
   }
 
   object DescribeThingRequest {
     def apply(
-      thingName: js.UndefOr[ThingName] = js.undefined): DescribeThingRequest = {
+      thingName: ThingName): DescribeThingRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "thingName" -> thingName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "thingName" -> thingName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeThingRequest]
     }
@@ -4148,35 +4148,35 @@ package iot {
    */
   @js.native
   trait DescribeThingResponse extends js.Object {
-    var thingId: js.UndefOr[ThingId]
     var attributes: js.UndefOr[Attributes]
+    var billingGroupName: js.UndefOr[BillingGroupName]
+    var defaultClientId: js.UndefOr[ClientId]
+    var thingArn: js.UndefOr[ThingArn]
+    var thingId: js.UndefOr[ThingId]
     var thingName: js.UndefOr[ThingName]
     var thingTypeName: js.UndefOr[ThingTypeName]
-    var defaultClientId: js.UndefOr[ClientId]
     var version: js.UndefOr[Version]
-    var thingArn: js.UndefOr[ThingArn]
-    var billingGroupName: js.UndefOr[BillingGroupName]
   }
 
   object DescribeThingResponse {
     def apply(
-      thingId: js.UndefOr[ThingId] = js.undefined,
       attributes: js.UndefOr[Attributes] = js.undefined,
+      billingGroupName: js.UndefOr[BillingGroupName] = js.undefined,
+      defaultClientId: js.UndefOr[ClientId] = js.undefined,
+      thingArn: js.UndefOr[ThingArn] = js.undefined,
+      thingId: js.UndefOr[ThingId] = js.undefined,
       thingName: js.UndefOr[ThingName] = js.undefined,
       thingTypeName: js.UndefOr[ThingTypeName] = js.undefined,
-      defaultClientId: js.UndefOr[ClientId] = js.undefined,
-      version: js.UndefOr[Version] = js.undefined,
-      thingArn: js.UndefOr[ThingArn] = js.undefined,
-      billingGroupName: js.UndefOr[BillingGroupName] = js.undefined): DescribeThingResponse = {
+      version: js.UndefOr[Version] = js.undefined): DescribeThingResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "thingId" -> thingId.map { x => x.asInstanceOf[js.Any] },
         "attributes" -> attributes.map { x => x.asInstanceOf[js.Any] },
+        "billingGroupName" -> billingGroupName.map { x => x.asInstanceOf[js.Any] },
+        "defaultClientId" -> defaultClientId.map { x => x.asInstanceOf[js.Any] },
+        "thingArn" -> thingArn.map { x => x.asInstanceOf[js.Any] },
+        "thingId" -> thingId.map { x => x.asInstanceOf[js.Any] },
         "thingName" -> thingName.map { x => x.asInstanceOf[js.Any] },
         "thingTypeName" -> thingTypeName.map { x => x.asInstanceOf[js.Any] },
-        "defaultClientId" -> defaultClientId.map { x => x.asInstanceOf[js.Any] },
-        "version" -> version.map { x => x.asInstanceOf[js.Any] },
-        "thingArn" -> thingArn.map { x => x.asInstanceOf[js.Any] },
-        "billingGroupName" -> billingGroupName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "version" -> version.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeThingResponse]
     }
@@ -4187,14 +4187,14 @@ package iot {
    */
   @js.native
   trait DescribeThingTypeRequest extends js.Object {
-    var thingTypeName: js.UndefOr[ThingTypeName]
+    var thingTypeName: ThingTypeName
   }
 
   object DescribeThingTypeRequest {
     def apply(
-      thingTypeName: js.UndefOr[ThingTypeName] = js.undefined): DescribeThingTypeRequest = {
+      thingTypeName: ThingTypeName): DescribeThingTypeRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "thingTypeName" -> thingTypeName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "thingTypeName" -> thingTypeName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeThingTypeRequest]
     }
@@ -4205,26 +4205,26 @@ package iot {
    */
   @js.native
   trait DescribeThingTypeResponse extends js.Object {
-    var thingTypeMetadata: js.UndefOr[ThingTypeMetadata]
-    var thingTypeProperties: js.UndefOr[ThingTypeProperties]
-    var thingTypeName: js.UndefOr[ThingTypeName]
     var thingTypeArn: js.UndefOr[ThingTypeArn]
     var thingTypeId: js.UndefOr[ThingTypeId]
+    var thingTypeMetadata: js.UndefOr[ThingTypeMetadata]
+    var thingTypeName: js.UndefOr[ThingTypeName]
+    var thingTypeProperties: js.UndefOr[ThingTypeProperties]
   }
 
   object DescribeThingTypeResponse {
     def apply(
-      thingTypeMetadata: js.UndefOr[ThingTypeMetadata] = js.undefined,
-      thingTypeProperties: js.UndefOr[ThingTypeProperties] = js.undefined,
-      thingTypeName: js.UndefOr[ThingTypeName] = js.undefined,
       thingTypeArn: js.UndefOr[ThingTypeArn] = js.undefined,
-      thingTypeId: js.UndefOr[ThingTypeId] = js.undefined): DescribeThingTypeResponse = {
+      thingTypeId: js.UndefOr[ThingTypeId] = js.undefined,
+      thingTypeMetadata: js.UndefOr[ThingTypeMetadata] = js.undefined,
+      thingTypeName: js.UndefOr[ThingTypeName] = js.undefined,
+      thingTypeProperties: js.UndefOr[ThingTypeProperties] = js.undefined): DescribeThingTypeResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "thingTypeMetadata" -> thingTypeMetadata.map { x => x.asInstanceOf[js.Any] },
-        "thingTypeProperties" -> thingTypeProperties.map { x => x.asInstanceOf[js.Any] },
-        "thingTypeName" -> thingTypeName.map { x => x.asInstanceOf[js.Any] },
         "thingTypeArn" -> thingTypeArn.map { x => x.asInstanceOf[js.Any] },
-        "thingTypeId" -> thingTypeId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "thingTypeId" -> thingTypeId.map { x => x.asInstanceOf[js.Any] },
+        "thingTypeMetadata" -> thingTypeMetadata.map { x => x.asInstanceOf[js.Any] },
+        "thingTypeName" -> thingTypeName.map { x => x.asInstanceOf[js.Any] },
+        "thingTypeProperties" -> thingTypeProperties.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeThingTypeResponse]
     }
@@ -4250,17 +4250,17 @@ package iot {
 
   @js.native
   trait DetachPolicyRequest extends js.Object {
-    var policyName: js.UndefOr[PolicyName]
-    var target: js.UndefOr[PolicyTarget]
+    var policyName: PolicyName
+    var target: PolicyTarget
   }
 
   object DetachPolicyRequest {
     def apply(
-      policyName: js.UndefOr[PolicyName] = js.undefined,
-      target: js.UndefOr[PolicyTarget] = js.undefined): DetachPolicyRequest = {
+      policyName: PolicyName,
+      target: PolicyTarget): DetachPolicyRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "policyName" -> policyName.map { x => x.asInstanceOf[js.Any] },
-        "target" -> target.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "policyName" -> policyName.asInstanceOf[js.Any],
+        "target" -> target.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DetachPolicyRequest]
     }
@@ -4271,17 +4271,17 @@ package iot {
    */
   @js.native
   trait DetachPrincipalPolicyRequest extends js.Object {
-    var policyName: js.UndefOr[PolicyName]
-    var principal: js.UndefOr[Principal]
+    var policyName: PolicyName
+    var principal: Principal
   }
 
   object DetachPrincipalPolicyRequest {
     def apply(
-      policyName: js.UndefOr[PolicyName] = js.undefined,
-      principal: js.UndefOr[Principal] = js.undefined): DetachPrincipalPolicyRequest = {
+      policyName: PolicyName,
+      principal: Principal): DetachPrincipalPolicyRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "policyName" -> policyName.map { x => x.asInstanceOf[js.Any] },
-        "principal" -> principal.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "policyName" -> policyName.asInstanceOf[js.Any],
+        "principal" -> principal.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DetachPrincipalPolicyRequest]
     }
@@ -4289,17 +4289,17 @@ package iot {
 
   @js.native
   trait DetachSecurityProfileRequest extends js.Object {
-    var securityProfileName: js.UndefOr[SecurityProfileName]
-    var securityProfileTargetArn: js.UndefOr[SecurityProfileTargetArn]
+    var securityProfileName: SecurityProfileName
+    var securityProfileTargetArn: SecurityProfileTargetArn
   }
 
   object DetachSecurityProfileRequest {
     def apply(
-      securityProfileName: js.UndefOr[SecurityProfileName] = js.undefined,
-      securityProfileTargetArn: js.UndefOr[SecurityProfileTargetArn] = js.undefined): DetachSecurityProfileRequest = {
+      securityProfileName: SecurityProfileName,
+      securityProfileTargetArn: SecurityProfileTargetArn): DetachSecurityProfileRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "securityProfileName" -> securityProfileName.map { x => x.asInstanceOf[js.Any] },
-        "securityProfileTargetArn" -> securityProfileTargetArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "securityProfileName" -> securityProfileName.asInstanceOf[js.Any],
+        "securityProfileTargetArn" -> securityProfileTargetArn.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DetachSecurityProfileRequest]
     }
@@ -4323,17 +4323,17 @@ package iot {
    */
   @js.native
   trait DetachThingPrincipalRequest extends js.Object {
-    var thingName: js.UndefOr[ThingName]
-    var principal: js.UndefOr[Principal]
+    var principal: Principal
+    var thingName: ThingName
   }
 
   object DetachThingPrincipalRequest {
     def apply(
-      thingName: js.UndefOr[ThingName] = js.undefined,
-      principal: js.UndefOr[Principal] = js.undefined): DetachThingPrincipalRequest = {
+      principal: Principal,
+      thingName: ThingName): DetachThingPrincipalRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "thingName" -> thingName.map { x => x.asInstanceOf[js.Any] },
-        "principal" -> principal.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "principal" -> principal.asInstanceOf[js.Any],
+        "thingName" -> thingName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DetachThingPrincipalRequest]
     }
@@ -4360,14 +4360,14 @@ package iot {
    */
   @js.native
   trait DisableTopicRuleRequest extends js.Object {
-    var ruleName: js.UndefOr[RuleName]
+    var ruleName: RuleName
   }
 
   object DisableTopicRuleRequest {
     def apply(
-      ruleName: js.UndefOr[RuleName] = js.undefined): DisableTopicRuleRequest = {
+      ruleName: RuleName): DisableTopicRuleRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ruleName" -> ruleName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ruleName" -> ruleName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DisableTopicRuleRequest]
     }
@@ -4386,41 +4386,41 @@ package iot {
    */
   @js.native
   trait DynamoDBAction extends js.Object {
-    var rangeKeyType: js.UndefOr[DynamoKeyType]
-    var hashKeyValue: js.UndefOr[HashKeyValue]
+    var hashKeyField: HashKeyField
+    var hashKeyValue: HashKeyValue
+    var roleArn: AwsArn
+    var tableName: TableName
     var hashKeyType: js.UndefOr[DynamoKeyType]
-    var rangeKeyValue: js.UndefOr[RangeKeyValue]
-    var hashKeyField: js.UndefOr[HashKeyField]
     var operation: js.UndefOr[DynamoOperation]
-    var tableName: js.UndefOr[TableName]
-    var roleArn: js.UndefOr[AwsArn]
     var payloadField: js.UndefOr[PayloadField]
     var rangeKeyField: js.UndefOr[RangeKeyField]
+    var rangeKeyType: js.UndefOr[DynamoKeyType]
+    var rangeKeyValue: js.UndefOr[RangeKeyValue]
   }
 
   object DynamoDBAction {
     def apply(
-      rangeKeyType: js.UndefOr[DynamoKeyType] = js.undefined,
-      hashKeyValue: js.UndefOr[HashKeyValue] = js.undefined,
+      hashKeyField: HashKeyField,
+      hashKeyValue: HashKeyValue,
+      roleArn: AwsArn,
+      tableName: TableName,
       hashKeyType: js.UndefOr[DynamoKeyType] = js.undefined,
-      rangeKeyValue: js.UndefOr[RangeKeyValue] = js.undefined,
-      hashKeyField: js.UndefOr[HashKeyField] = js.undefined,
       operation: js.UndefOr[DynamoOperation] = js.undefined,
-      tableName: js.UndefOr[TableName] = js.undefined,
-      roleArn: js.UndefOr[AwsArn] = js.undefined,
       payloadField: js.UndefOr[PayloadField] = js.undefined,
-      rangeKeyField: js.UndefOr[RangeKeyField] = js.undefined): DynamoDBAction = {
+      rangeKeyField: js.UndefOr[RangeKeyField] = js.undefined,
+      rangeKeyType: js.UndefOr[DynamoKeyType] = js.undefined,
+      rangeKeyValue: js.UndefOr[RangeKeyValue] = js.undefined): DynamoDBAction = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "rangeKeyType" -> rangeKeyType.map { x => x.asInstanceOf[js.Any] },
-        "hashKeyValue" -> hashKeyValue.map { x => x.asInstanceOf[js.Any] },
+        "hashKeyField" -> hashKeyField.asInstanceOf[js.Any],
+        "hashKeyValue" -> hashKeyValue.asInstanceOf[js.Any],
+        "roleArn" -> roleArn.asInstanceOf[js.Any],
+        "tableName" -> tableName.asInstanceOf[js.Any],
         "hashKeyType" -> hashKeyType.map { x => x.asInstanceOf[js.Any] },
-        "rangeKeyValue" -> rangeKeyValue.map { x => x.asInstanceOf[js.Any] },
-        "hashKeyField" -> hashKeyField.map { x => x.asInstanceOf[js.Any] },
         "operation" -> operation.map { x => x.asInstanceOf[js.Any] },
-        "tableName" -> tableName.map { x => x.asInstanceOf[js.Any] },
-        "roleArn" -> roleArn.map { x => x.asInstanceOf[js.Any] },
         "payloadField" -> payloadField.map { x => x.asInstanceOf[js.Any] },
-        "rangeKeyField" -> rangeKeyField.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "rangeKeyField" -> rangeKeyField.map { x => x.asInstanceOf[js.Any] },
+        "rangeKeyType" -> rangeKeyType.map { x => x.asInstanceOf[js.Any] },
+        "rangeKeyValue" -> rangeKeyValue.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DynamoDBAction]
     }
@@ -4431,17 +4431,17 @@ package iot {
    */
   @js.native
   trait DynamoDBv2Action extends js.Object {
-    var roleArn: js.UndefOr[AwsArn]
     var putItem: js.UndefOr[PutItemInput]
+    var roleArn: js.UndefOr[AwsArn]
   }
 
   object DynamoDBv2Action {
     def apply(
-      roleArn: js.UndefOr[AwsArn] = js.undefined,
-      putItem: js.UndefOr[PutItemInput] = js.undefined): DynamoDBv2Action = {
+      putItem: js.UndefOr[PutItemInput] = js.undefined,
+      roleArn: js.UndefOr[AwsArn] = js.undefined): DynamoDBv2Action = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "roleArn" -> roleArn.map { x => x.asInstanceOf[js.Any] },
-        "putItem" -> putItem.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "putItem" -> putItem.map { x => x.asInstanceOf[js.Any] },
+        "roleArn" -> roleArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DynamoDBv2Action]
     }
@@ -4459,20 +4459,20 @@ package iot {
    */
   @js.native
   trait EffectivePolicy extends js.Object {
-    var policyName: js.UndefOr[PolicyName]
     var policyArn: js.UndefOr[PolicyArn]
     var policyDocument: js.UndefOr[PolicyDocument]
+    var policyName: js.UndefOr[PolicyName]
   }
 
   object EffectivePolicy {
     def apply(
-      policyName: js.UndefOr[PolicyName] = js.undefined,
       policyArn: js.UndefOr[PolicyArn] = js.undefined,
-      policyDocument: js.UndefOr[PolicyDocument] = js.undefined): EffectivePolicy = {
+      policyDocument: js.UndefOr[PolicyDocument] = js.undefined,
+      policyName: js.UndefOr[PolicyName] = js.undefined): EffectivePolicy = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "policyName" -> policyName.map { x => x.asInstanceOf[js.Any] },
         "policyArn" -> policyArn.map { x => x.asInstanceOf[js.Any] },
-        "policyDocument" -> policyDocument.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "policyDocument" -> policyDocument.map { x => x.asInstanceOf[js.Any] },
+        "policyName" -> policyName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EffectivePolicy]
     }
@@ -4483,26 +4483,26 @@ package iot {
    */
   @js.native
   trait ElasticsearchAction extends js.Object {
-    var id: js.UndefOr[ElasticsearchId]
-    var roleArn: js.UndefOr[AwsArn]
-    var endpoint: js.UndefOr[ElasticsearchEndpoint]
-    var `type`: js.UndefOr[ElasticsearchType]
-    var index: js.UndefOr[ElasticsearchIndex]
+    var endpoint: ElasticsearchEndpoint
+    var id: ElasticsearchId
+    var index: ElasticsearchIndex
+    var roleArn: AwsArn
+    var `type`: ElasticsearchType
   }
 
   object ElasticsearchAction {
     def apply(
-      id: js.UndefOr[ElasticsearchId] = js.undefined,
-      roleArn: js.UndefOr[AwsArn] = js.undefined,
-      endpoint: js.UndefOr[ElasticsearchEndpoint] = js.undefined,
-      `type`: js.UndefOr[ElasticsearchType] = js.undefined,
-      index: js.UndefOr[ElasticsearchIndex] = js.undefined): ElasticsearchAction = {
+      endpoint: ElasticsearchEndpoint,
+      id: ElasticsearchId,
+      index: ElasticsearchIndex,
+      roleArn: AwsArn,
+      `type`: ElasticsearchType): ElasticsearchAction = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "id" -> id.map { x => x.asInstanceOf[js.Any] },
-        "roleArn" -> roleArn.map { x => x.asInstanceOf[js.Any] },
-        "endpoint" -> endpoint.map { x => x.asInstanceOf[js.Any] },
-        "`type`" -> `type`.map { x => x.asInstanceOf[js.Any] },
-        "index" -> index.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "endpoint" -> endpoint.asInstanceOf[js.Any],
+        "id" -> id.asInstanceOf[js.Any],
+        "index" -> index.asInstanceOf[js.Any],
+        "roleArn" -> roleArn.asInstanceOf[js.Any],
+        "`type`" -> `type`.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ElasticsearchAction]
     }
@@ -4513,14 +4513,14 @@ package iot {
    */
   @js.native
   trait EnableTopicRuleRequest extends js.Object {
-    var ruleName: js.UndefOr[RuleName]
+    var ruleName: RuleName
   }
 
   object EnableTopicRuleRequest {
     def apply(
-      ruleName: js.UndefOr[RuleName] = js.undefined): EnableTopicRuleRequest = {
+      ruleName: RuleName): EnableTopicRuleRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ruleName" -> ruleName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ruleName" -> ruleName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EnableTopicRuleRequest]
     }
@@ -4586,20 +4586,20 @@ package iot {
    */
   @js.native
   trait ExponentialRolloutRate extends js.Object {
-    var baseRatePerMinute: js.UndefOr[RolloutRatePerMinute]
-    var incrementFactor: js.UndefOr[IncrementFactor]
-    var rateIncreaseCriteria: js.UndefOr[RateIncreaseCriteria]
+    var baseRatePerMinute: RolloutRatePerMinute
+    var incrementFactor: IncrementFactor
+    var rateIncreaseCriteria: RateIncreaseCriteria
   }
 
   object ExponentialRolloutRate {
     def apply(
-      baseRatePerMinute: js.UndefOr[RolloutRatePerMinute] = js.undefined,
-      incrementFactor: js.UndefOr[IncrementFactor] = js.undefined,
-      rateIncreaseCriteria: js.UndefOr[RateIncreaseCriteria] = js.undefined): ExponentialRolloutRate = {
+      baseRatePerMinute: RolloutRatePerMinute,
+      incrementFactor: IncrementFactor,
+      rateIncreaseCriteria: RateIncreaseCriteria): ExponentialRolloutRate = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "baseRatePerMinute" -> baseRatePerMinute.map { x => x.asInstanceOf[js.Any] },
-        "incrementFactor" -> incrementFactor.map { x => x.asInstanceOf[js.Any] },
-        "rateIncreaseCriteria" -> rateIncreaseCriteria.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "baseRatePerMinute" -> baseRatePerMinute.asInstanceOf[js.Any],
+        "incrementFactor" -> incrementFactor.asInstanceOf[js.Any],
+        "rateIncreaseCriteria" -> rateIncreaseCriteria.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ExponentialRolloutRate]
     }
@@ -4610,17 +4610,17 @@ package iot {
    */
   @js.native
   trait FileLocation extends js.Object {
-    var stream: js.UndefOr[Stream]
     var s3Location: js.UndefOr[S3Location]
+    var stream: js.UndefOr[Stream]
   }
 
   object FileLocation {
     def apply(
-      stream: js.UndefOr[Stream] = js.undefined,
-      s3Location: js.UndefOr[S3Location] = js.undefined): FileLocation = {
+      s3Location: js.UndefOr[S3Location] = js.undefined,
+      stream: js.UndefOr[Stream] = js.undefined): FileLocation = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "stream" -> stream.map { x => x.asInstanceOf[js.Any] },
-        "s3Location" -> s3Location.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "s3Location" -> s3Location.map { x => x.asInstanceOf[js.Any] },
+        "stream" -> stream.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[FileLocation]
     }
@@ -4631,19 +4631,19 @@ package iot {
    */
   @js.native
   trait FirehoseAction extends js.Object {
-    var roleArn: js.UndefOr[AwsArn]
-    var deliveryStreamName: js.UndefOr[DeliveryStreamName]
+    var deliveryStreamName: DeliveryStreamName
+    var roleArn: AwsArn
     var separator: js.UndefOr[FirehoseSeparator]
   }
 
   object FirehoseAction {
     def apply(
-      roleArn: js.UndefOr[AwsArn] = js.undefined,
-      deliveryStreamName: js.UndefOr[DeliveryStreamName] = js.undefined,
+      deliveryStreamName: DeliveryStreamName,
+      roleArn: AwsArn,
       separator: js.UndefOr[FirehoseSeparator] = js.undefined): FirehoseAction = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "roleArn" -> roleArn.map { x => x.asInstanceOf[js.Any] },
-        "deliveryStreamName" -> deliveryStreamName.map { x => x.asInstanceOf[js.Any] },
+        "deliveryStreamName" -> deliveryStreamName.asInstanceOf[js.Any],
+        "roleArn" -> roleArn.asInstanceOf[js.Any],
         "separator" -> separator.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[FirehoseAction]
@@ -4652,19 +4652,19 @@ package iot {
 
   @js.native
   trait GetEffectivePoliciesRequest extends js.Object {
-    var principal: js.UndefOr[Principal]
     var cognitoIdentityPoolId: js.UndefOr[CognitoIdentityPoolId]
+    var principal: js.UndefOr[Principal]
     var thingName: js.UndefOr[ThingName]
   }
 
   object GetEffectivePoliciesRequest {
     def apply(
-      principal: js.UndefOr[Principal] = js.undefined,
       cognitoIdentityPoolId: js.UndefOr[CognitoIdentityPoolId] = js.undefined,
+      principal: js.UndefOr[Principal] = js.undefined,
       thingName: js.UndefOr[ThingName] = js.undefined): GetEffectivePoliciesRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "principal" -> principal.map { x => x.asInstanceOf[js.Any] },
         "cognitoIdentityPoolId" -> cognitoIdentityPoolId.map { x => x.asInstanceOf[js.Any] },
+        "principal" -> principal.map { x => x.asInstanceOf[js.Any] },
         "thingName" -> thingName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetEffectivePoliciesRequest]
@@ -4701,17 +4701,17 @@ package iot {
 
   @js.native
   trait GetIndexingConfigurationResponse extends js.Object {
-    var thingIndexingConfiguration: js.UndefOr[ThingIndexingConfiguration]
     var thingGroupIndexingConfiguration: js.UndefOr[ThingGroupIndexingConfiguration]
+    var thingIndexingConfiguration: js.UndefOr[ThingIndexingConfiguration]
   }
 
   object GetIndexingConfigurationResponse {
     def apply(
-      thingIndexingConfiguration: js.UndefOr[ThingIndexingConfiguration] = js.undefined,
-      thingGroupIndexingConfiguration: js.UndefOr[ThingGroupIndexingConfiguration] = js.undefined): GetIndexingConfigurationResponse = {
+      thingGroupIndexingConfiguration: js.UndefOr[ThingGroupIndexingConfiguration] = js.undefined,
+      thingIndexingConfiguration: js.UndefOr[ThingIndexingConfiguration] = js.undefined): GetIndexingConfigurationResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "thingIndexingConfiguration" -> thingIndexingConfiguration.map { x => x.asInstanceOf[js.Any] },
-        "thingGroupIndexingConfiguration" -> thingGroupIndexingConfiguration.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "thingGroupIndexingConfiguration" -> thingGroupIndexingConfiguration.map { x => x.asInstanceOf[js.Any] },
+        "thingIndexingConfiguration" -> thingIndexingConfiguration.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetIndexingConfigurationResponse]
     }
@@ -4719,14 +4719,14 @@ package iot {
 
   @js.native
   trait GetJobDocumentRequest extends js.Object {
-    var jobId: js.UndefOr[JobId]
+    var jobId: JobId
   }
 
   object GetJobDocumentRequest {
     def apply(
-      jobId: js.UndefOr[JobId] = js.undefined): GetJobDocumentRequest = {
+      jobId: JobId): GetJobDocumentRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "jobId" -> jobId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "jobId" -> jobId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetJobDocumentRequest]
     }
@@ -4768,17 +4768,17 @@ package iot {
    */
   @js.native
   trait GetLoggingOptionsResponse extends js.Object {
-    var roleArn: js.UndefOr[AwsArn]
     var logLevel: js.UndefOr[LogLevel]
+    var roleArn: js.UndefOr[AwsArn]
   }
 
   object GetLoggingOptionsResponse {
     def apply(
-      roleArn: js.UndefOr[AwsArn] = js.undefined,
-      logLevel: js.UndefOr[LogLevel] = js.undefined): GetLoggingOptionsResponse = {
+      logLevel: js.UndefOr[LogLevel] = js.undefined,
+      roleArn: js.UndefOr[AwsArn] = js.undefined): GetLoggingOptionsResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "roleArn" -> roleArn.map { x => x.asInstanceOf[js.Any] },
-        "logLevel" -> logLevel.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "logLevel" -> logLevel.map { x => x.asInstanceOf[js.Any] },
+        "roleArn" -> roleArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetLoggingOptionsResponse]
     }
@@ -4786,14 +4786,14 @@ package iot {
 
   @js.native
   trait GetOTAUpdateRequest extends js.Object {
-    var otaUpdateId: js.UndefOr[OTAUpdateId]
+    var otaUpdateId: OTAUpdateId
   }
 
   object GetOTAUpdateRequest {
     def apply(
-      otaUpdateId: js.UndefOr[OTAUpdateId] = js.undefined): GetOTAUpdateRequest = {
+      otaUpdateId: OTAUpdateId): GetOTAUpdateRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "otaUpdateId" -> otaUpdateId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "otaUpdateId" -> otaUpdateId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetOTAUpdateRequest]
     }
@@ -4819,14 +4819,14 @@ package iot {
    */
   @js.native
   trait GetPolicyRequest extends js.Object {
-    var policyName: js.UndefOr[PolicyName]
+    var policyName: PolicyName
   }
 
   object GetPolicyRequest {
     def apply(
-      policyName: js.UndefOr[PolicyName] = js.undefined): GetPolicyRequest = {
+      policyName: PolicyName): GetPolicyRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "policyName" -> policyName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "policyName" -> policyName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetPolicyRequest]
     }
@@ -4837,32 +4837,32 @@ package iot {
    */
   @js.native
   trait GetPolicyResponse extends js.Object {
-    var defaultVersionId: js.UndefOr[PolicyVersionId]
-    var lastModifiedDate: js.UndefOr[DateType]
-    var generationId: js.UndefOr[GenerationId]
-    var policyName: js.UndefOr[PolicyName]
-    var policyDocument: js.UndefOr[PolicyDocument]
     var creationDate: js.UndefOr[DateType]
+    var defaultVersionId: js.UndefOr[PolicyVersionId]
+    var generationId: js.UndefOr[GenerationId]
+    var lastModifiedDate: js.UndefOr[DateType]
     var policyArn: js.UndefOr[PolicyArn]
+    var policyDocument: js.UndefOr[PolicyDocument]
+    var policyName: js.UndefOr[PolicyName]
   }
 
   object GetPolicyResponse {
     def apply(
-      defaultVersionId: js.UndefOr[PolicyVersionId] = js.undefined,
-      lastModifiedDate: js.UndefOr[DateType] = js.undefined,
-      generationId: js.UndefOr[GenerationId] = js.undefined,
-      policyName: js.UndefOr[PolicyName] = js.undefined,
-      policyDocument: js.UndefOr[PolicyDocument] = js.undefined,
       creationDate: js.UndefOr[DateType] = js.undefined,
-      policyArn: js.UndefOr[PolicyArn] = js.undefined): GetPolicyResponse = {
+      defaultVersionId: js.UndefOr[PolicyVersionId] = js.undefined,
+      generationId: js.UndefOr[GenerationId] = js.undefined,
+      lastModifiedDate: js.UndefOr[DateType] = js.undefined,
+      policyArn: js.UndefOr[PolicyArn] = js.undefined,
+      policyDocument: js.UndefOr[PolicyDocument] = js.undefined,
+      policyName: js.UndefOr[PolicyName] = js.undefined): GetPolicyResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "defaultVersionId" -> defaultVersionId.map { x => x.asInstanceOf[js.Any] },
-        "lastModifiedDate" -> lastModifiedDate.map { x => x.asInstanceOf[js.Any] },
-        "generationId" -> generationId.map { x => x.asInstanceOf[js.Any] },
-        "policyName" -> policyName.map { x => x.asInstanceOf[js.Any] },
-        "policyDocument" -> policyDocument.map { x => x.asInstanceOf[js.Any] },
         "creationDate" -> creationDate.map { x => x.asInstanceOf[js.Any] },
-        "policyArn" -> policyArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "defaultVersionId" -> defaultVersionId.map { x => x.asInstanceOf[js.Any] },
+        "generationId" -> generationId.map { x => x.asInstanceOf[js.Any] },
+        "lastModifiedDate" -> lastModifiedDate.map { x => x.asInstanceOf[js.Any] },
+        "policyArn" -> policyArn.map { x => x.asInstanceOf[js.Any] },
+        "policyDocument" -> policyDocument.map { x => x.asInstanceOf[js.Any] },
+        "policyName" -> policyName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetPolicyResponse]
     }
@@ -4873,17 +4873,17 @@ package iot {
    */
   @js.native
   trait GetPolicyVersionRequest extends js.Object {
-    var policyName: js.UndefOr[PolicyName]
-    var policyVersionId: js.UndefOr[PolicyVersionId]
+    var policyName: PolicyName
+    var policyVersionId: PolicyVersionId
   }
 
   object GetPolicyVersionRequest {
     def apply(
-      policyName: js.UndefOr[PolicyName] = js.undefined,
-      policyVersionId: js.UndefOr[PolicyVersionId] = js.undefined): GetPolicyVersionRequest = {
+      policyName: PolicyName,
+      policyVersionId: PolicyVersionId): GetPolicyVersionRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "policyName" -> policyName.map { x => x.asInstanceOf[js.Any] },
-        "policyVersionId" -> policyVersionId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "policyName" -> policyName.asInstanceOf[js.Any],
+        "policyVersionId" -> policyVersionId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetPolicyVersionRequest]
     }
@@ -4894,35 +4894,35 @@ package iot {
    */
   @js.native
   trait GetPolicyVersionResponse extends js.Object {
-    var lastModifiedDate: js.UndefOr[DateType]
-    var generationId: js.UndefOr[GenerationId]
-    var policyVersionId: js.UndefOr[PolicyVersionId]
-    var policyName: js.UndefOr[PolicyName]
-    var isDefaultVersion: js.UndefOr[IsDefaultVersion]
-    var policyDocument: js.UndefOr[PolicyDocument]
     var creationDate: js.UndefOr[DateType]
+    var generationId: js.UndefOr[GenerationId]
+    var isDefaultVersion: js.UndefOr[IsDefaultVersion]
+    var lastModifiedDate: js.UndefOr[DateType]
     var policyArn: js.UndefOr[PolicyArn]
+    var policyDocument: js.UndefOr[PolicyDocument]
+    var policyName: js.UndefOr[PolicyName]
+    var policyVersionId: js.UndefOr[PolicyVersionId]
   }
 
   object GetPolicyVersionResponse {
     def apply(
-      lastModifiedDate: js.UndefOr[DateType] = js.undefined,
-      generationId: js.UndefOr[GenerationId] = js.undefined,
-      policyVersionId: js.UndefOr[PolicyVersionId] = js.undefined,
-      policyName: js.UndefOr[PolicyName] = js.undefined,
-      isDefaultVersion: js.UndefOr[IsDefaultVersion] = js.undefined,
-      policyDocument: js.UndefOr[PolicyDocument] = js.undefined,
       creationDate: js.UndefOr[DateType] = js.undefined,
-      policyArn: js.UndefOr[PolicyArn] = js.undefined): GetPolicyVersionResponse = {
+      generationId: js.UndefOr[GenerationId] = js.undefined,
+      isDefaultVersion: js.UndefOr[IsDefaultVersion] = js.undefined,
+      lastModifiedDate: js.UndefOr[DateType] = js.undefined,
+      policyArn: js.UndefOr[PolicyArn] = js.undefined,
+      policyDocument: js.UndefOr[PolicyDocument] = js.undefined,
+      policyName: js.UndefOr[PolicyName] = js.undefined,
+      policyVersionId: js.UndefOr[PolicyVersionId] = js.undefined): GetPolicyVersionResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "lastModifiedDate" -> lastModifiedDate.map { x => x.asInstanceOf[js.Any] },
-        "generationId" -> generationId.map { x => x.asInstanceOf[js.Any] },
-        "policyVersionId" -> policyVersionId.map { x => x.asInstanceOf[js.Any] },
-        "policyName" -> policyName.map { x => x.asInstanceOf[js.Any] },
-        "isDefaultVersion" -> isDefaultVersion.map { x => x.asInstanceOf[js.Any] },
-        "policyDocument" -> policyDocument.map { x => x.asInstanceOf[js.Any] },
         "creationDate" -> creationDate.map { x => x.asInstanceOf[js.Any] },
-        "policyArn" -> policyArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "generationId" -> generationId.map { x => x.asInstanceOf[js.Any] },
+        "isDefaultVersion" -> isDefaultVersion.map { x => x.asInstanceOf[js.Any] },
+        "lastModifiedDate" -> lastModifiedDate.map { x => x.asInstanceOf[js.Any] },
+        "policyArn" -> policyArn.map { x => x.asInstanceOf[js.Any] },
+        "policyDocument" -> policyDocument.map { x => x.asInstanceOf[js.Any] },
+        "policyName" -> policyName.map { x => x.asInstanceOf[js.Any] },
+        "policyVersionId" -> policyVersionId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetPolicyVersionResponse]
     }
@@ -4967,14 +4967,14 @@ package iot {
    */
   @js.native
   trait GetTopicRuleRequest extends js.Object {
-    var ruleName: js.UndefOr[RuleName]
+    var ruleName: RuleName
   }
 
   object GetTopicRuleRequest {
     def apply(
-      ruleName: js.UndefOr[RuleName] = js.undefined): GetTopicRuleRequest = {
+      ruleName: RuleName): GetTopicRuleRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ruleName" -> ruleName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ruleName" -> ruleName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetTopicRuleRequest]
     }
@@ -4985,17 +4985,17 @@ package iot {
    */
   @js.native
   trait GetTopicRuleResponse extends js.Object {
-    var ruleArn: js.UndefOr[RuleArn]
     var rule: js.UndefOr[TopicRule]
+    var ruleArn: js.UndefOr[RuleArn]
   }
 
   object GetTopicRuleResponse {
     def apply(
-      ruleArn: js.UndefOr[RuleArn] = js.undefined,
-      rule: js.UndefOr[TopicRule] = js.undefined): GetTopicRuleResponse = {
+      rule: js.UndefOr[TopicRule] = js.undefined,
+      ruleArn: js.UndefOr[RuleArn] = js.undefined): GetTopicRuleResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ruleArn" -> ruleArn.map { x => x.asInstanceOf[js.Any] },
-        "rule" -> rule.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "rule" -> rule.map { x => x.asInstanceOf[js.Any] },
+        "ruleArn" -> ruleArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetTopicRuleResponse]
     }
@@ -5016,20 +5016,20 @@ package iot {
 
   @js.native
   trait GetV2LoggingOptionsResponse extends js.Object {
-    var roleArn: js.UndefOr[AwsArn]
     var defaultLogLevel: js.UndefOr[LogLevel]
     var disableAllLogs: js.UndefOr[DisableAllLogs]
+    var roleArn: js.UndefOr[AwsArn]
   }
 
   object GetV2LoggingOptionsResponse {
     def apply(
-      roleArn: js.UndefOr[AwsArn] = js.undefined,
       defaultLogLevel: js.UndefOr[LogLevel] = js.undefined,
-      disableAllLogs: js.UndefOr[DisableAllLogs] = js.undefined): GetV2LoggingOptionsResponse = {
+      disableAllLogs: js.UndefOr[DisableAllLogs] = js.undefined,
+      roleArn: js.UndefOr[AwsArn] = js.undefined): GetV2LoggingOptionsResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "roleArn" -> roleArn.map { x => x.asInstanceOf[js.Any] },
         "defaultLogLevel" -> defaultLogLevel.map { x => x.asInstanceOf[js.Any] },
-        "disableAllLogs" -> disableAllLogs.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "disableAllLogs" -> disableAllLogs.map { x => x.asInstanceOf[js.Any] },
+        "roleArn" -> roleArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetV2LoggingOptionsResponse]
     }
@@ -5040,17 +5040,17 @@ package iot {
    */
   @js.native
   trait GroupNameAndArn extends js.Object {
-    var groupName: js.UndefOr[ThingGroupName]
     var groupArn: js.UndefOr[ThingGroupArn]
+    var groupName: js.UndefOr[ThingGroupName]
   }
 
   object GroupNameAndArn {
     def apply(
-      groupName: js.UndefOr[ThingGroupName] = js.undefined,
-      groupArn: js.UndefOr[ThingGroupArn] = js.undefined): GroupNameAndArn = {
+      groupArn: js.UndefOr[ThingGroupArn] = js.undefined,
+      groupName: js.UndefOr[ThingGroupName] = js.undefined): GroupNameAndArn = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "groupName" -> groupName.map { x => x.asInstanceOf[js.Any] },
-        "groupArn" -> groupArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "groupArn" -> groupArn.map { x => x.asInstanceOf[js.Any] },
+        "groupName" -> groupName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GroupNameAndArn]
     }
@@ -5111,20 +5111,20 @@ package iot {
    */
   @js.native
   trait IotEventsAction extends js.Object {
-    var inputName: js.UndefOr[InputName]
+    var inputName: InputName
+    var roleArn: AwsArn
     var messageId: js.UndefOr[MessageId]
-    var roleArn: js.UndefOr[AwsArn]
   }
 
   object IotEventsAction {
     def apply(
-      inputName: js.UndefOr[InputName] = js.undefined,
-      messageId: js.UndefOr[MessageId] = js.undefined,
-      roleArn: js.UndefOr[AwsArn] = js.undefined): IotEventsAction = {
+      inputName: InputName,
+      roleArn: AwsArn,
+      messageId: js.UndefOr[MessageId] = js.undefined): IotEventsAction = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "inputName" -> inputName.map { x => x.asInstanceOf[js.Any] },
-        "messageId" -> messageId.map { x => x.asInstanceOf[js.Any] },
-        "roleArn" -> roleArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "inputName" -> inputName.asInstanceOf[js.Any],
+        "roleArn" -> roleArn.asInstanceOf[js.Any],
+        "messageId" -> messageId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[IotEventsAction]
     }
@@ -5135,62 +5135,62 @@ package iot {
    */
   @js.native
   trait Job extends js.Object {
-    var targets: js.UndefOr[JobTargets]
-    var jobExecutionsRolloutConfig: js.UndefOr[JobExecutionsRolloutConfig]
-    var completedAt: js.UndefOr[DateType]
-    var forceCanceled: js.UndefOr[Forced]
-    var description: js.UndefOr[JobDescription]
-    var jobArn: js.UndefOr[JobArn]
-    var reasonCode: js.UndefOr[ReasonCode]
-    var presignedUrlConfig: js.UndefOr[PresignedUrlConfig]
-    var status: js.UndefOr[JobStatus]
-    var comment: js.UndefOr[Comment]
-    var jobId: js.UndefOr[JobId]
-    var createdAt: js.UndefOr[DateType]
     var abortConfig: js.UndefOr[AbortConfig]
-    var targetSelection: js.UndefOr[TargetSelection]
-    var timeoutConfig: js.UndefOr[TimeoutConfig]
-    var lastUpdatedAt: js.UndefOr[DateType]
+    var comment: js.UndefOr[Comment]
+    var completedAt: js.UndefOr[DateType]
+    var createdAt: js.UndefOr[DateType]
+    var description: js.UndefOr[JobDescription]
+    var forceCanceled: js.UndefOr[Forced]
+    var jobArn: js.UndefOr[JobArn]
+    var jobExecutionsRolloutConfig: js.UndefOr[JobExecutionsRolloutConfig]
+    var jobId: js.UndefOr[JobId]
     var jobProcessDetails: js.UndefOr[JobProcessDetails]
+    var lastUpdatedAt: js.UndefOr[DateType]
+    var presignedUrlConfig: js.UndefOr[PresignedUrlConfig]
+    var reasonCode: js.UndefOr[ReasonCode]
+    var status: js.UndefOr[JobStatus]
+    var targetSelection: js.UndefOr[TargetSelection]
+    var targets: js.UndefOr[JobTargets]
+    var timeoutConfig: js.UndefOr[TimeoutConfig]
   }
 
   object Job {
     def apply(
-      targets: js.UndefOr[JobTargets] = js.undefined,
-      jobExecutionsRolloutConfig: js.UndefOr[JobExecutionsRolloutConfig] = js.undefined,
-      completedAt: js.UndefOr[DateType] = js.undefined,
-      forceCanceled: js.UndefOr[Forced] = js.undefined,
-      description: js.UndefOr[JobDescription] = js.undefined,
-      jobArn: js.UndefOr[JobArn] = js.undefined,
-      reasonCode: js.UndefOr[ReasonCode] = js.undefined,
-      presignedUrlConfig: js.UndefOr[PresignedUrlConfig] = js.undefined,
-      status: js.UndefOr[JobStatus] = js.undefined,
-      comment: js.UndefOr[Comment] = js.undefined,
-      jobId: js.UndefOr[JobId] = js.undefined,
-      createdAt: js.UndefOr[DateType] = js.undefined,
       abortConfig: js.UndefOr[AbortConfig] = js.undefined,
-      targetSelection: js.UndefOr[TargetSelection] = js.undefined,
-      timeoutConfig: js.UndefOr[TimeoutConfig] = js.undefined,
+      comment: js.UndefOr[Comment] = js.undefined,
+      completedAt: js.UndefOr[DateType] = js.undefined,
+      createdAt: js.UndefOr[DateType] = js.undefined,
+      description: js.UndefOr[JobDescription] = js.undefined,
+      forceCanceled: js.UndefOr[Forced] = js.undefined,
+      jobArn: js.UndefOr[JobArn] = js.undefined,
+      jobExecutionsRolloutConfig: js.UndefOr[JobExecutionsRolloutConfig] = js.undefined,
+      jobId: js.UndefOr[JobId] = js.undefined,
+      jobProcessDetails: js.UndefOr[JobProcessDetails] = js.undefined,
       lastUpdatedAt: js.UndefOr[DateType] = js.undefined,
-      jobProcessDetails: js.UndefOr[JobProcessDetails] = js.undefined): Job = {
+      presignedUrlConfig: js.UndefOr[PresignedUrlConfig] = js.undefined,
+      reasonCode: js.UndefOr[ReasonCode] = js.undefined,
+      status: js.UndefOr[JobStatus] = js.undefined,
+      targetSelection: js.UndefOr[TargetSelection] = js.undefined,
+      targets: js.UndefOr[JobTargets] = js.undefined,
+      timeoutConfig: js.UndefOr[TimeoutConfig] = js.undefined): Job = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "targets" -> targets.map { x => x.asInstanceOf[js.Any] },
-        "jobExecutionsRolloutConfig" -> jobExecutionsRolloutConfig.map { x => x.asInstanceOf[js.Any] },
-        "completedAt" -> completedAt.map { x => x.asInstanceOf[js.Any] },
-        "forceCanceled" -> forceCanceled.map { x => x.asInstanceOf[js.Any] },
-        "description" -> description.map { x => x.asInstanceOf[js.Any] },
-        "jobArn" -> jobArn.map { x => x.asInstanceOf[js.Any] },
-        "reasonCode" -> reasonCode.map { x => x.asInstanceOf[js.Any] },
-        "presignedUrlConfig" -> presignedUrlConfig.map { x => x.asInstanceOf[js.Any] },
-        "status" -> status.map { x => x.asInstanceOf[js.Any] },
-        "comment" -> comment.map { x => x.asInstanceOf[js.Any] },
-        "jobId" -> jobId.map { x => x.asInstanceOf[js.Any] },
-        "createdAt" -> createdAt.map { x => x.asInstanceOf[js.Any] },
         "abortConfig" -> abortConfig.map { x => x.asInstanceOf[js.Any] },
-        "targetSelection" -> targetSelection.map { x => x.asInstanceOf[js.Any] },
-        "timeoutConfig" -> timeoutConfig.map { x => x.asInstanceOf[js.Any] },
+        "comment" -> comment.map { x => x.asInstanceOf[js.Any] },
+        "completedAt" -> completedAt.map { x => x.asInstanceOf[js.Any] },
+        "createdAt" -> createdAt.map { x => x.asInstanceOf[js.Any] },
+        "description" -> description.map { x => x.asInstanceOf[js.Any] },
+        "forceCanceled" -> forceCanceled.map { x => x.asInstanceOf[js.Any] },
+        "jobArn" -> jobArn.map { x => x.asInstanceOf[js.Any] },
+        "jobExecutionsRolloutConfig" -> jobExecutionsRolloutConfig.map { x => x.asInstanceOf[js.Any] },
+        "jobId" -> jobId.map { x => x.asInstanceOf[js.Any] },
+        "jobProcessDetails" -> jobProcessDetails.map { x => x.asInstanceOf[js.Any] },
         "lastUpdatedAt" -> lastUpdatedAt.map { x => x.asInstanceOf[js.Any] },
-        "jobProcessDetails" -> jobProcessDetails.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "presignedUrlConfig" -> presignedUrlConfig.map { x => x.asInstanceOf[js.Any] },
+        "reasonCode" -> reasonCode.map { x => x.asInstanceOf[js.Any] },
+        "status" -> status.map { x => x.asInstanceOf[js.Any] },
+        "targetSelection" -> targetSelection.map { x => x.asInstanceOf[js.Any] },
+        "targets" -> targets.map { x => x.asInstanceOf[js.Any] },
+        "timeoutConfig" -> timeoutConfig.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Job]
     }
@@ -5201,44 +5201,44 @@ package iot {
    */
   @js.native
   trait JobExecution extends js.Object {
-    var versionNumber: js.UndefOr[VersionNumber]
+    var approximateSecondsBeforeTimedOut: js.UndefOr[ApproximateSecondsBeforeTimedOut]
     var executionNumber: js.UndefOr[ExecutionNumber]
     var forceCanceled: js.UndefOr[Forced]
+    var jobId: js.UndefOr[JobId]
+    var lastUpdatedAt: js.UndefOr[DateType]
+    var queuedAt: js.UndefOr[DateType]
+    var startedAt: js.UndefOr[DateType]
+    var status: js.UndefOr[JobExecutionStatus]
     var statusDetails: js.UndefOr[JobExecutionStatusDetails]
     var thingArn: js.UndefOr[ThingArn]
-    var status: js.UndefOr[JobExecutionStatus]
-    var queuedAt: js.UndefOr[DateType]
-    var jobId: js.UndefOr[JobId]
-    var startedAt: js.UndefOr[DateType]
-    var approximateSecondsBeforeTimedOut: js.UndefOr[ApproximateSecondsBeforeTimedOut]
-    var lastUpdatedAt: js.UndefOr[DateType]
+    var versionNumber: js.UndefOr[VersionNumber]
   }
 
   object JobExecution {
     def apply(
-      versionNumber: js.UndefOr[VersionNumber] = js.undefined,
+      approximateSecondsBeforeTimedOut: js.UndefOr[ApproximateSecondsBeforeTimedOut] = js.undefined,
       executionNumber: js.UndefOr[ExecutionNumber] = js.undefined,
       forceCanceled: js.UndefOr[Forced] = js.undefined,
+      jobId: js.UndefOr[JobId] = js.undefined,
+      lastUpdatedAt: js.UndefOr[DateType] = js.undefined,
+      queuedAt: js.UndefOr[DateType] = js.undefined,
+      startedAt: js.UndefOr[DateType] = js.undefined,
+      status: js.UndefOr[JobExecutionStatus] = js.undefined,
       statusDetails: js.UndefOr[JobExecutionStatusDetails] = js.undefined,
       thingArn: js.UndefOr[ThingArn] = js.undefined,
-      status: js.UndefOr[JobExecutionStatus] = js.undefined,
-      queuedAt: js.UndefOr[DateType] = js.undefined,
-      jobId: js.UndefOr[JobId] = js.undefined,
-      startedAt: js.UndefOr[DateType] = js.undefined,
-      approximateSecondsBeforeTimedOut: js.UndefOr[ApproximateSecondsBeforeTimedOut] = js.undefined,
-      lastUpdatedAt: js.UndefOr[DateType] = js.undefined): JobExecution = {
+      versionNumber: js.UndefOr[VersionNumber] = js.undefined): JobExecution = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "versionNumber" -> versionNumber.map { x => x.asInstanceOf[js.Any] },
+        "approximateSecondsBeforeTimedOut" -> approximateSecondsBeforeTimedOut.map { x => x.asInstanceOf[js.Any] },
         "executionNumber" -> executionNumber.map { x => x.asInstanceOf[js.Any] },
         "forceCanceled" -> forceCanceled.map { x => x.asInstanceOf[js.Any] },
+        "jobId" -> jobId.map { x => x.asInstanceOf[js.Any] },
+        "lastUpdatedAt" -> lastUpdatedAt.map { x => x.asInstanceOf[js.Any] },
+        "queuedAt" -> queuedAt.map { x => x.asInstanceOf[js.Any] },
+        "startedAt" -> startedAt.map { x => x.asInstanceOf[js.Any] },
+        "status" -> status.map { x => x.asInstanceOf[js.Any] },
         "statusDetails" -> statusDetails.map { x => x.asInstanceOf[js.Any] },
         "thingArn" -> thingArn.map { x => x.asInstanceOf[js.Any] },
-        "status" -> status.map { x => x.asInstanceOf[js.Any] },
-        "queuedAt" -> queuedAt.map { x => x.asInstanceOf[js.Any] },
-        "jobId" -> jobId.map { x => x.asInstanceOf[js.Any] },
-        "startedAt" -> startedAt.map { x => x.asInstanceOf[js.Any] },
-        "approximateSecondsBeforeTimedOut" -> approximateSecondsBeforeTimedOut.map { x => x.asInstanceOf[js.Any] },
-        "lastUpdatedAt" -> lastUpdatedAt.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "versionNumber" -> versionNumber.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[JobExecution]
     }
@@ -5290,25 +5290,25 @@ package iot {
   @js.native
   trait JobExecutionSummary extends js.Object {
     var executionNumber: js.UndefOr[ExecutionNumber]
-    var status: js.UndefOr[JobExecutionStatus]
+    var lastUpdatedAt: js.UndefOr[DateType]
     var queuedAt: js.UndefOr[DateType]
     var startedAt: js.UndefOr[DateType]
-    var lastUpdatedAt: js.UndefOr[DateType]
+    var status: js.UndefOr[JobExecutionStatus]
   }
 
   object JobExecutionSummary {
     def apply(
       executionNumber: js.UndefOr[ExecutionNumber] = js.undefined,
-      status: js.UndefOr[JobExecutionStatus] = js.undefined,
+      lastUpdatedAt: js.UndefOr[DateType] = js.undefined,
       queuedAt: js.UndefOr[DateType] = js.undefined,
       startedAt: js.UndefOr[DateType] = js.undefined,
-      lastUpdatedAt: js.UndefOr[DateType] = js.undefined): JobExecutionSummary = {
+      status: js.UndefOr[JobExecutionStatus] = js.undefined): JobExecutionSummary = {
       val _fields = IndexedSeq[(String, js.Any)](
         "executionNumber" -> executionNumber.map { x => x.asInstanceOf[js.Any] },
-        "status" -> status.map { x => x.asInstanceOf[js.Any] },
+        "lastUpdatedAt" -> lastUpdatedAt.map { x => x.asInstanceOf[js.Any] },
         "queuedAt" -> queuedAt.map { x => x.asInstanceOf[js.Any] },
         "startedAt" -> startedAt.map { x => x.asInstanceOf[js.Any] },
-        "lastUpdatedAt" -> lastUpdatedAt.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "status" -> status.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[JobExecutionSummary]
     }
@@ -5319,17 +5319,17 @@ package iot {
    */
   @js.native
   trait JobExecutionSummaryForJob extends js.Object {
-    var thingArn: js.UndefOr[ThingArn]
     var jobExecutionSummary: js.UndefOr[JobExecutionSummary]
+    var thingArn: js.UndefOr[ThingArn]
   }
 
   object JobExecutionSummaryForJob {
     def apply(
-      thingArn: js.UndefOr[ThingArn] = js.undefined,
-      jobExecutionSummary: js.UndefOr[JobExecutionSummary] = js.undefined): JobExecutionSummaryForJob = {
+      jobExecutionSummary: js.UndefOr[JobExecutionSummary] = js.undefined,
+      thingArn: js.UndefOr[ThingArn] = js.undefined): JobExecutionSummaryForJob = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "thingArn" -> thingArn.map { x => x.asInstanceOf[js.Any] },
-        "jobExecutionSummary" -> jobExecutionSummary.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "jobExecutionSummary" -> jobExecutionSummary.map { x => x.asInstanceOf[js.Any] },
+        "thingArn" -> thingArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[JobExecutionSummaryForJob]
     }
@@ -5340,17 +5340,17 @@ package iot {
    */
   @js.native
   trait JobExecutionSummaryForThing extends js.Object {
-    var jobId: js.UndefOr[JobId]
     var jobExecutionSummary: js.UndefOr[JobExecutionSummary]
+    var jobId: js.UndefOr[JobId]
   }
 
   object JobExecutionSummaryForThing {
     def apply(
-      jobId: js.UndefOr[JobId] = js.undefined,
-      jobExecutionSummary: js.UndefOr[JobExecutionSummary] = js.undefined): JobExecutionSummaryForThing = {
+      jobExecutionSummary: js.UndefOr[JobExecutionSummary] = js.undefined,
+      jobId: js.UndefOr[JobId] = js.undefined): JobExecutionSummaryForThing = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "jobId" -> jobId.map { x => x.asInstanceOf[js.Any] },
-        "jobExecutionSummary" -> jobExecutionSummary.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "jobExecutionSummary" -> jobExecutionSummary.map { x => x.asInstanceOf[js.Any] },
+        "jobId" -> jobId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[JobExecutionSummaryForThing]
     }
@@ -5361,17 +5361,17 @@ package iot {
    */
   @js.native
   trait JobExecutionsRolloutConfig extends js.Object {
-    var maximumPerMinute: js.UndefOr[MaxJobExecutionsPerMin]
     var exponentialRate: js.UndefOr[ExponentialRolloutRate]
+    var maximumPerMinute: js.UndefOr[MaxJobExecutionsPerMin]
   }
 
   object JobExecutionsRolloutConfig {
     def apply(
-      maximumPerMinute: js.UndefOr[MaxJobExecutionsPerMin] = js.undefined,
-      exponentialRate: js.UndefOr[ExponentialRolloutRate] = js.undefined): JobExecutionsRolloutConfig = {
+      exponentialRate: js.UndefOr[ExponentialRolloutRate] = js.undefined,
+      maximumPerMinute: js.UndefOr[MaxJobExecutionsPerMin] = js.undefined): JobExecutionsRolloutConfig = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "maximumPerMinute" -> maximumPerMinute.map { x => x.asInstanceOf[js.Any] },
-        "exponentialRate" -> exponentialRate.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "exponentialRate" -> exponentialRate.map { x => x.asInstanceOf[js.Any] },
+        "maximumPerMinute" -> maximumPerMinute.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[JobExecutionsRolloutConfig]
     }
@@ -5383,37 +5383,37 @@ package iot {
   @js.native
   trait JobProcessDetails extends js.Object {
     var numberOfCanceledThings: js.UndefOr[CanceledThings]
-    var numberOfRemovedThings: js.UndefOr[RemovedThings]
+    var numberOfFailedThings: js.UndefOr[FailedThings]
+    var numberOfInProgressThings: js.UndefOr[InProgressThings]
+    var numberOfQueuedThings: js.UndefOr[QueuedThings]
     var numberOfRejectedThings: js.UndefOr[RejectedThings]
+    var numberOfRemovedThings: js.UndefOr[RemovedThings]
+    var numberOfSucceededThings: js.UndefOr[SucceededThings]
     var numberOfTimedOutThings: js.UndefOr[TimedOutThings]
     var processingTargets: js.UndefOr[ProcessingTargetNameList]
-    var numberOfFailedThings: js.UndefOr[FailedThings]
-    var numberOfSucceededThings: js.UndefOr[SucceededThings]
-    var numberOfQueuedThings: js.UndefOr[QueuedThings]
-    var numberOfInProgressThings: js.UndefOr[InProgressThings]
   }
 
   object JobProcessDetails {
     def apply(
       numberOfCanceledThings: js.UndefOr[CanceledThings] = js.undefined,
-      numberOfRemovedThings: js.UndefOr[RemovedThings] = js.undefined,
-      numberOfRejectedThings: js.UndefOr[RejectedThings] = js.undefined,
-      numberOfTimedOutThings: js.UndefOr[TimedOutThings] = js.undefined,
-      processingTargets: js.UndefOr[ProcessingTargetNameList] = js.undefined,
       numberOfFailedThings: js.UndefOr[FailedThings] = js.undefined,
-      numberOfSucceededThings: js.UndefOr[SucceededThings] = js.undefined,
+      numberOfInProgressThings: js.UndefOr[InProgressThings] = js.undefined,
       numberOfQueuedThings: js.UndefOr[QueuedThings] = js.undefined,
-      numberOfInProgressThings: js.UndefOr[InProgressThings] = js.undefined): JobProcessDetails = {
+      numberOfRejectedThings: js.UndefOr[RejectedThings] = js.undefined,
+      numberOfRemovedThings: js.UndefOr[RemovedThings] = js.undefined,
+      numberOfSucceededThings: js.UndefOr[SucceededThings] = js.undefined,
+      numberOfTimedOutThings: js.UndefOr[TimedOutThings] = js.undefined,
+      processingTargets: js.UndefOr[ProcessingTargetNameList] = js.undefined): JobProcessDetails = {
       val _fields = IndexedSeq[(String, js.Any)](
         "numberOfCanceledThings" -> numberOfCanceledThings.map { x => x.asInstanceOf[js.Any] },
-        "numberOfRemovedThings" -> numberOfRemovedThings.map { x => x.asInstanceOf[js.Any] },
-        "numberOfRejectedThings" -> numberOfRejectedThings.map { x => x.asInstanceOf[js.Any] },
-        "numberOfTimedOutThings" -> numberOfTimedOutThings.map { x => x.asInstanceOf[js.Any] },
-        "processingTargets" -> processingTargets.map { x => x.asInstanceOf[js.Any] },
         "numberOfFailedThings" -> numberOfFailedThings.map { x => x.asInstanceOf[js.Any] },
-        "numberOfSucceededThings" -> numberOfSucceededThings.map { x => x.asInstanceOf[js.Any] },
+        "numberOfInProgressThings" -> numberOfInProgressThings.map { x => x.asInstanceOf[js.Any] },
         "numberOfQueuedThings" -> numberOfQueuedThings.map { x => x.asInstanceOf[js.Any] },
-        "numberOfInProgressThings" -> numberOfInProgressThings.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "numberOfRejectedThings" -> numberOfRejectedThings.map { x => x.asInstanceOf[js.Any] },
+        "numberOfRemovedThings" -> numberOfRemovedThings.map { x => x.asInstanceOf[js.Any] },
+        "numberOfSucceededThings" -> numberOfSucceededThings.map { x => x.asInstanceOf[js.Any] },
+        "numberOfTimedOutThings" -> numberOfTimedOutThings.map { x => x.asInstanceOf[js.Any] },
+        "processingTargets" -> processingTargets.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[JobProcessDetails]
     }
@@ -5434,34 +5434,34 @@ package iot {
   @js.native
   trait JobSummary extends js.Object {
     var completedAt: js.UndefOr[DateType]
-    var jobArn: js.UndefOr[JobArn]
-    var thingGroupId: js.UndefOr[ThingGroupId]
-    var status: js.UndefOr[JobStatus]
-    var jobId: js.UndefOr[JobId]
     var createdAt: js.UndefOr[DateType]
-    var targetSelection: js.UndefOr[TargetSelection]
+    var jobArn: js.UndefOr[JobArn]
+    var jobId: js.UndefOr[JobId]
     var lastUpdatedAt: js.UndefOr[DateType]
+    var status: js.UndefOr[JobStatus]
+    var targetSelection: js.UndefOr[TargetSelection]
+    var thingGroupId: js.UndefOr[ThingGroupId]
   }
 
   object JobSummary {
     def apply(
       completedAt: js.UndefOr[DateType] = js.undefined,
-      jobArn: js.UndefOr[JobArn] = js.undefined,
-      thingGroupId: js.UndefOr[ThingGroupId] = js.undefined,
-      status: js.UndefOr[JobStatus] = js.undefined,
-      jobId: js.UndefOr[JobId] = js.undefined,
       createdAt: js.UndefOr[DateType] = js.undefined,
+      jobArn: js.UndefOr[JobArn] = js.undefined,
+      jobId: js.UndefOr[JobId] = js.undefined,
+      lastUpdatedAt: js.UndefOr[DateType] = js.undefined,
+      status: js.UndefOr[JobStatus] = js.undefined,
       targetSelection: js.UndefOr[TargetSelection] = js.undefined,
-      lastUpdatedAt: js.UndefOr[DateType] = js.undefined): JobSummary = {
+      thingGroupId: js.UndefOr[ThingGroupId] = js.undefined): JobSummary = {
       val _fields = IndexedSeq[(String, js.Any)](
         "completedAt" -> completedAt.map { x => x.asInstanceOf[js.Any] },
-        "jobArn" -> jobArn.map { x => x.asInstanceOf[js.Any] },
-        "thingGroupId" -> thingGroupId.map { x => x.asInstanceOf[js.Any] },
-        "status" -> status.map { x => x.asInstanceOf[js.Any] },
-        "jobId" -> jobId.map { x => x.asInstanceOf[js.Any] },
         "createdAt" -> createdAt.map { x => x.asInstanceOf[js.Any] },
+        "jobArn" -> jobArn.map { x => x.asInstanceOf[js.Any] },
+        "jobId" -> jobId.map { x => x.asInstanceOf[js.Any] },
+        "lastUpdatedAt" -> lastUpdatedAt.map { x => x.asInstanceOf[js.Any] },
+        "status" -> status.map { x => x.asInstanceOf[js.Any] },
         "targetSelection" -> targetSelection.map { x => x.asInstanceOf[js.Any] },
-        "lastUpdatedAt" -> lastUpdatedAt.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "thingGroupId" -> thingGroupId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[JobSummary]
     }
@@ -5472,17 +5472,17 @@ package iot {
    */
   @js.native
   trait KeyPair extends js.Object {
-    var PublicKey: js.UndefOr[PublicKey]
     var PrivateKey: js.UndefOr[PrivateKey]
+    var PublicKey: js.UndefOr[PublicKey]
   }
 
   object KeyPair {
     def apply(
-      PublicKey: js.UndefOr[PublicKey] = js.undefined,
-      PrivateKey: js.UndefOr[PrivateKey] = js.undefined): KeyPair = {
+      PrivateKey: js.UndefOr[PrivateKey] = js.undefined,
+      PublicKey: js.UndefOr[PublicKey] = js.undefined): KeyPair = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "PublicKey" -> PublicKey.map { x => x.asInstanceOf[js.Any] },
-        "PrivateKey" -> PrivateKey.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "PrivateKey" -> PrivateKey.map { x => x.asInstanceOf[js.Any] },
+        "PublicKey" -> PublicKey.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[KeyPair]
     }
@@ -5493,19 +5493,19 @@ package iot {
    */
   @js.native
   trait KinesisAction extends js.Object {
-    var roleArn: js.UndefOr[AwsArn]
-    var streamName: js.UndefOr[StreamName]
+    var roleArn: AwsArn
+    var streamName: StreamName
     var partitionKey: js.UndefOr[PartitionKey]
   }
 
   object KinesisAction {
     def apply(
-      roleArn: js.UndefOr[AwsArn] = js.undefined,
-      streamName: js.UndefOr[StreamName] = js.undefined,
+      roleArn: AwsArn,
+      streamName: StreamName,
       partitionKey: js.UndefOr[PartitionKey] = js.undefined): KinesisAction = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "roleArn" -> roleArn.map { x => x.asInstanceOf[js.Any] },
-        "streamName" -> streamName.map { x => x.asInstanceOf[js.Any] },
+        "roleArn" -> roleArn.asInstanceOf[js.Any],
+        "streamName" -> streamName.asInstanceOf[js.Any],
         "partitionKey" -> partitionKey.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[KinesisAction]
@@ -5517,14 +5517,14 @@ package iot {
    */
   @js.native
   trait LambdaAction extends js.Object {
-    var functionArn: js.UndefOr[FunctionArn]
+    var functionArn: FunctionArn
   }
 
   object LambdaAction {
     def apply(
-      functionArn: js.UndefOr[FunctionArn] = js.undefined): LambdaAction = {
+      functionArn: FunctionArn): LambdaAction = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "functionArn" -> functionArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "functionArn" -> functionArn.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[LambdaAction]
     }
@@ -5532,23 +5532,23 @@ package iot {
 
   @js.native
   trait ListActiveViolationsRequest extends js.Object {
-    var thingName: js.UndefOr[ThingName]
-    var securityProfileName: js.UndefOr[SecurityProfileName]
-    var nextToken: js.UndefOr[NextToken]
     var maxResults: js.UndefOr[MaxResults]
+    var nextToken: js.UndefOr[NextToken]
+    var securityProfileName: js.UndefOr[SecurityProfileName]
+    var thingName: js.UndefOr[ThingName]
   }
 
   object ListActiveViolationsRequest {
     def apply(
-      thingName: js.UndefOr[ThingName] = js.undefined,
-      securityProfileName: js.UndefOr[SecurityProfileName] = js.undefined,
+      maxResults: js.UndefOr[MaxResults] = js.undefined,
       nextToken: js.UndefOr[NextToken] = js.undefined,
-      maxResults: js.UndefOr[MaxResults] = js.undefined): ListActiveViolationsRequest = {
+      securityProfileName: js.UndefOr[SecurityProfileName] = js.undefined,
+      thingName: js.UndefOr[ThingName] = js.undefined): ListActiveViolationsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "thingName" -> thingName.map { x => x.asInstanceOf[js.Any] },
-        "securityProfileName" -> securityProfileName.map { x => x.asInstanceOf[js.Any] },
+        "maxResults" -> maxResults.map { x => x.asInstanceOf[js.Any] },
         "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] },
-        "maxResults" -> maxResults.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "securityProfileName" -> securityProfileName.map { x => x.asInstanceOf[js.Any] },
+        "thingName" -> thingName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListActiveViolationsRequest]
     }
@@ -5574,23 +5574,23 @@ package iot {
 
   @js.native
   trait ListAttachedPoliciesRequest extends js.Object {
-    var target: js.UndefOr[PolicyTarget]
-    var recursive: js.UndefOr[Recursive]
+    var target: PolicyTarget
     var marker: js.UndefOr[Marker]
     var pageSize: js.UndefOr[PageSize]
+    var recursive: js.UndefOr[Recursive]
   }
 
   object ListAttachedPoliciesRequest {
     def apply(
-      target: js.UndefOr[PolicyTarget] = js.undefined,
-      recursive: js.UndefOr[Recursive] = js.undefined,
+      target: PolicyTarget,
       marker: js.UndefOr[Marker] = js.undefined,
-      pageSize: js.UndefOr[PageSize] = js.undefined): ListAttachedPoliciesRequest = {
+      pageSize: js.UndefOr[PageSize] = js.undefined,
+      recursive: js.UndefOr[Recursive] = js.undefined): ListAttachedPoliciesRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "target" -> target.map { x => x.asInstanceOf[js.Any] },
-        "recursive" -> recursive.map { x => x.asInstanceOf[js.Any] },
+        "target" -> target.asInstanceOf[js.Any],
         "marker" -> marker.map { x => x.asInstanceOf[js.Any] },
-        "pageSize" -> pageSize.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "pageSize" -> pageSize.map { x => x.asInstanceOf[js.Any] },
+        "recursive" -> recursive.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListAttachedPoliciesRequest]
     }
@@ -5598,17 +5598,17 @@ package iot {
 
   @js.native
   trait ListAttachedPoliciesResponse extends js.Object {
-    var policies: js.UndefOr[Policies]
     var nextMarker: js.UndefOr[Marker]
+    var policies: js.UndefOr[Policies]
   }
 
   object ListAttachedPoliciesResponse {
     def apply(
-      policies: js.UndefOr[Policies] = js.undefined,
-      nextMarker: js.UndefOr[Marker] = js.undefined): ListAttachedPoliciesResponse = {
+      nextMarker: js.UndefOr[Marker] = js.undefined,
+      policies: js.UndefOr[Policies] = js.undefined): ListAttachedPoliciesResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "policies" -> policies.map { x => x.asInstanceOf[js.Any] },
-        "nextMarker" -> nextMarker.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "nextMarker" -> nextMarker.map { x => x.asInstanceOf[js.Any] },
+        "policies" -> policies.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListAttachedPoliciesResponse]
     }
@@ -5616,32 +5616,32 @@ package iot {
 
   @js.native
   trait ListAuditFindingsRequest extends js.Object {
-    var startTime: js.UndefOr[Timestamp]
+    var checkName: js.UndefOr[AuditCheckName]
+    var endTime: js.UndefOr[Timestamp]
     var maxResults: js.UndefOr[MaxResults]
     var nextToken: js.UndefOr[NextToken]
-    var endTime: js.UndefOr[Timestamp]
-    var taskId: js.UndefOr[AuditTaskId]
     var resourceIdentifier: js.UndefOr[ResourceIdentifier]
-    var checkName: js.UndefOr[AuditCheckName]
+    var startTime: js.UndefOr[Timestamp]
+    var taskId: js.UndefOr[AuditTaskId]
   }
 
   object ListAuditFindingsRequest {
     def apply(
-      startTime: js.UndefOr[Timestamp] = js.undefined,
+      checkName: js.UndefOr[AuditCheckName] = js.undefined,
+      endTime: js.UndefOr[Timestamp] = js.undefined,
       maxResults: js.UndefOr[MaxResults] = js.undefined,
       nextToken: js.UndefOr[NextToken] = js.undefined,
-      endTime: js.UndefOr[Timestamp] = js.undefined,
-      taskId: js.UndefOr[AuditTaskId] = js.undefined,
       resourceIdentifier: js.UndefOr[ResourceIdentifier] = js.undefined,
-      checkName: js.UndefOr[AuditCheckName] = js.undefined): ListAuditFindingsRequest = {
+      startTime: js.UndefOr[Timestamp] = js.undefined,
+      taskId: js.UndefOr[AuditTaskId] = js.undefined): ListAuditFindingsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "startTime" -> startTime.map { x => x.asInstanceOf[js.Any] },
+        "checkName" -> checkName.map { x => x.asInstanceOf[js.Any] },
+        "endTime" -> endTime.map { x => x.asInstanceOf[js.Any] },
         "maxResults" -> maxResults.map { x => x.asInstanceOf[js.Any] },
         "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] },
-        "endTime" -> endTime.map { x => x.asInstanceOf[js.Any] },
-        "taskId" -> taskId.map { x => x.asInstanceOf[js.Any] },
         "resourceIdentifier" -> resourceIdentifier.map { x => x.asInstanceOf[js.Any] },
-        "checkName" -> checkName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "startTime" -> startTime.map { x => x.asInstanceOf[js.Any] },
+        "taskId" -> taskId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListAuditFindingsRequest]
     }
@@ -5667,27 +5667,27 @@ package iot {
 
   @js.native
   trait ListAuditTasksRequest extends js.Object {
-    var startTime: js.UndefOr[Timestamp]
+    var endTime: Timestamp
+    var startTime: Timestamp
     var maxResults: js.UndefOr[MaxResults]
     var nextToken: js.UndefOr[NextToken]
-    var endTime: js.UndefOr[Timestamp]
     var taskStatus: js.UndefOr[AuditTaskStatus]
     var taskType: js.UndefOr[AuditTaskType]
   }
 
   object ListAuditTasksRequest {
     def apply(
-      startTime: js.UndefOr[Timestamp] = js.undefined,
+      endTime: Timestamp,
+      startTime: Timestamp,
       maxResults: js.UndefOr[MaxResults] = js.undefined,
       nextToken: js.UndefOr[NextToken] = js.undefined,
-      endTime: js.UndefOr[Timestamp] = js.undefined,
       taskStatus: js.UndefOr[AuditTaskStatus] = js.undefined,
       taskType: js.UndefOr[AuditTaskType] = js.undefined): ListAuditTasksRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "startTime" -> startTime.map { x => x.asInstanceOf[js.Any] },
+        "endTime" -> endTime.asInstanceOf[js.Any],
+        "startTime" -> startTime.asInstanceOf[js.Any],
         "maxResults" -> maxResults.map { x => x.asInstanceOf[js.Any] },
         "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] },
-        "endTime" -> endTime.map { x => x.asInstanceOf[js.Any] },
         "taskStatus" -> taskStatus.map { x => x.asInstanceOf[js.Any] },
         "taskType" -> taskType.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
@@ -5697,17 +5697,17 @@ package iot {
 
   @js.native
   trait ListAuditTasksResponse extends js.Object {
-    var tasks: js.UndefOr[AuditTaskMetadataList]
     var nextToken: js.UndefOr[NextToken]
+    var tasks: js.UndefOr[AuditTaskMetadataList]
   }
 
   object ListAuditTasksResponse {
     def apply(
-      tasks: js.UndefOr[AuditTaskMetadataList] = js.undefined,
-      nextToken: js.UndefOr[NextToken] = js.undefined): ListAuditTasksResponse = {
+      nextToken: js.UndefOr[NextToken] = js.undefined,
+      tasks: js.UndefOr[AuditTaskMetadataList] = js.undefined): ListAuditTasksResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "tasks" -> tasks.map { x => x.asInstanceOf[js.Any] },
-        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] },
+        "tasks" -> tasks.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListAuditTasksResponse]
     }
@@ -5715,22 +5715,22 @@ package iot {
 
   @js.native
   trait ListAuthorizersRequest extends js.Object {
-    var pageSize: js.UndefOr[PageSize]
-    var marker: js.UndefOr[Marker]
     var ascendingOrder: js.UndefOr[AscendingOrder]
+    var marker: js.UndefOr[Marker]
+    var pageSize: js.UndefOr[PageSize]
     var status: js.UndefOr[AuthorizerStatus]
   }
 
   object ListAuthorizersRequest {
     def apply(
-      pageSize: js.UndefOr[PageSize] = js.undefined,
-      marker: js.UndefOr[Marker] = js.undefined,
       ascendingOrder: js.UndefOr[AscendingOrder] = js.undefined,
+      marker: js.UndefOr[Marker] = js.undefined,
+      pageSize: js.UndefOr[PageSize] = js.undefined,
       status: js.UndefOr[AuthorizerStatus] = js.undefined): ListAuthorizersRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "pageSize" -> pageSize.map { x => x.asInstanceOf[js.Any] },
-        "marker" -> marker.map { x => x.asInstanceOf[js.Any] },
         "ascendingOrder" -> ascendingOrder.map { x => x.asInstanceOf[js.Any] },
+        "marker" -> marker.map { x => x.asInstanceOf[js.Any] },
+        "pageSize" -> pageSize.map { x => x.asInstanceOf[js.Any] },
         "status" -> status.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListAuthorizersRequest]
@@ -5757,20 +5757,20 @@ package iot {
 
   @js.native
   trait ListBillingGroupsRequest extends js.Object {
-    var nextToken: js.UndefOr[NextToken]
     var maxResults: js.UndefOr[RegistryMaxResults]
     var namePrefixFilter: js.UndefOr[BillingGroupName]
+    var nextToken: js.UndefOr[NextToken]
   }
 
   object ListBillingGroupsRequest {
     def apply(
-      nextToken: js.UndefOr[NextToken] = js.undefined,
       maxResults: js.UndefOr[RegistryMaxResults] = js.undefined,
-      namePrefixFilter: js.UndefOr[BillingGroupName] = js.undefined): ListBillingGroupsRequest = {
+      namePrefixFilter: js.UndefOr[BillingGroupName] = js.undefined,
+      nextToken: js.UndefOr[NextToken] = js.undefined): ListBillingGroupsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] },
         "maxResults" -> maxResults.map { x => x.asInstanceOf[js.Any] },
-        "namePrefixFilter" -> namePrefixFilter.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "namePrefixFilter" -> namePrefixFilter.map { x => x.asInstanceOf[js.Any] },
+        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListBillingGroupsRequest]
     }
@@ -5799,20 +5799,20 @@ package iot {
    */
   @js.native
   trait ListCACertificatesRequest extends js.Object {
-    var pageSize: js.UndefOr[PageSize]
-    var marker: js.UndefOr[Marker]
     var ascendingOrder: js.UndefOr[AscendingOrder]
+    var marker: js.UndefOr[Marker]
+    var pageSize: js.UndefOr[PageSize]
   }
 
   object ListCACertificatesRequest {
     def apply(
-      pageSize: js.UndefOr[PageSize] = js.undefined,
+      ascendingOrder: js.UndefOr[AscendingOrder] = js.undefined,
       marker: js.UndefOr[Marker] = js.undefined,
-      ascendingOrder: js.UndefOr[AscendingOrder] = js.undefined): ListCACertificatesRequest = {
+      pageSize: js.UndefOr[PageSize] = js.undefined): ListCACertificatesRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "pageSize" -> pageSize.map { x => x.asInstanceOf[js.Any] },
+        "ascendingOrder" -> ascendingOrder.map { x => x.asInstanceOf[js.Any] },
         "marker" -> marker.map { x => x.asInstanceOf[js.Any] },
-        "ascendingOrder" -> ascendingOrder.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "pageSize" -> pageSize.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListCACertificatesRequest]
     }
@@ -5844,23 +5844,23 @@ package iot {
    */
   @js.native
   trait ListCertificatesByCARequest extends js.Object {
-    var caCertificateId: js.UndefOr[CertificateId]
-    var pageSize: js.UndefOr[PageSize]
-    var marker: js.UndefOr[Marker]
+    var caCertificateId: CertificateId
     var ascendingOrder: js.UndefOr[AscendingOrder]
+    var marker: js.UndefOr[Marker]
+    var pageSize: js.UndefOr[PageSize]
   }
 
   object ListCertificatesByCARequest {
     def apply(
-      caCertificateId: js.UndefOr[CertificateId] = js.undefined,
-      pageSize: js.UndefOr[PageSize] = js.undefined,
+      caCertificateId: CertificateId,
+      ascendingOrder: js.UndefOr[AscendingOrder] = js.undefined,
       marker: js.UndefOr[Marker] = js.undefined,
-      ascendingOrder: js.UndefOr[AscendingOrder] = js.undefined): ListCertificatesByCARequest = {
+      pageSize: js.UndefOr[PageSize] = js.undefined): ListCertificatesByCARequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "caCertificateId" -> caCertificateId.map { x => x.asInstanceOf[js.Any] },
-        "pageSize" -> pageSize.map { x => x.asInstanceOf[js.Any] },
+        "caCertificateId" -> caCertificateId.asInstanceOf[js.Any],
+        "ascendingOrder" -> ascendingOrder.map { x => x.asInstanceOf[js.Any] },
         "marker" -> marker.map { x => x.asInstanceOf[js.Any] },
-        "ascendingOrder" -> ascendingOrder.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "pageSize" -> pageSize.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListCertificatesByCARequest]
     }
@@ -5892,20 +5892,20 @@ package iot {
    */
   @js.native
   trait ListCertificatesRequest extends js.Object {
-    var pageSize: js.UndefOr[PageSize]
-    var marker: js.UndefOr[Marker]
     var ascendingOrder: js.UndefOr[AscendingOrder]
+    var marker: js.UndefOr[Marker]
+    var pageSize: js.UndefOr[PageSize]
   }
 
   object ListCertificatesRequest {
     def apply(
-      pageSize: js.UndefOr[PageSize] = js.undefined,
+      ascendingOrder: js.UndefOr[AscendingOrder] = js.undefined,
       marker: js.UndefOr[Marker] = js.undefined,
-      ascendingOrder: js.UndefOr[AscendingOrder] = js.undefined): ListCertificatesRequest = {
+      pageSize: js.UndefOr[PageSize] = js.undefined): ListCertificatesRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "pageSize" -> pageSize.map { x => x.asInstanceOf[js.Any] },
+        "ascendingOrder" -> ascendingOrder.map { x => x.asInstanceOf[js.Any] },
         "marker" -> marker.map { x => x.asInstanceOf[js.Any] },
-        "ascendingOrder" -> ascendingOrder.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "pageSize" -> pageSize.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListCertificatesRequest]
     }
@@ -5934,17 +5934,17 @@ package iot {
 
   @js.native
   trait ListIndicesRequest extends js.Object {
-    var nextToken: js.UndefOr[NextToken]
     var maxResults: js.UndefOr[QueryMaxResults]
+    var nextToken: js.UndefOr[NextToken]
   }
 
   object ListIndicesRequest {
     def apply(
-      nextToken: js.UndefOr[NextToken] = js.undefined,
-      maxResults: js.UndefOr[QueryMaxResults] = js.undefined): ListIndicesRequest = {
+      maxResults: js.UndefOr[QueryMaxResults] = js.undefined,
+      nextToken: js.UndefOr[NextToken] = js.undefined): ListIndicesRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] },
-        "maxResults" -> maxResults.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "maxResults" -> maxResults.map { x => x.asInstanceOf[js.Any] },
+        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListIndicesRequest]
     }
@@ -5970,23 +5970,23 @@ package iot {
 
   @js.native
   trait ListJobExecutionsForJobRequest extends js.Object {
-    var jobId: js.UndefOr[JobId]
-    var status: js.UndefOr[JobExecutionStatus]
+    var jobId: JobId
     var maxResults: js.UndefOr[LaserMaxResults]
     var nextToken: js.UndefOr[NextToken]
+    var status: js.UndefOr[JobExecutionStatus]
   }
 
   object ListJobExecutionsForJobRequest {
     def apply(
-      jobId: js.UndefOr[JobId] = js.undefined,
-      status: js.UndefOr[JobExecutionStatus] = js.undefined,
+      jobId: JobId,
       maxResults: js.UndefOr[LaserMaxResults] = js.undefined,
-      nextToken: js.UndefOr[NextToken] = js.undefined): ListJobExecutionsForJobRequest = {
+      nextToken: js.UndefOr[NextToken] = js.undefined,
+      status: js.UndefOr[JobExecutionStatus] = js.undefined): ListJobExecutionsForJobRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "jobId" -> jobId.map { x => x.asInstanceOf[js.Any] },
-        "status" -> status.map { x => x.asInstanceOf[js.Any] },
+        "jobId" -> jobId.asInstanceOf[js.Any],
         "maxResults" -> maxResults.map { x => x.asInstanceOf[js.Any] },
-        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] },
+        "status" -> status.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListJobExecutionsForJobRequest]
     }
@@ -6012,23 +6012,23 @@ package iot {
 
   @js.native
   trait ListJobExecutionsForThingRequest extends js.Object {
-    var thingName: js.UndefOr[ThingName]
-    var status: js.UndefOr[JobExecutionStatus]
+    var thingName: ThingName
     var maxResults: js.UndefOr[LaserMaxResults]
     var nextToken: js.UndefOr[NextToken]
+    var status: js.UndefOr[JobExecutionStatus]
   }
 
   object ListJobExecutionsForThingRequest {
     def apply(
-      thingName: js.UndefOr[ThingName] = js.undefined,
-      status: js.UndefOr[JobExecutionStatus] = js.undefined,
+      thingName: ThingName,
       maxResults: js.UndefOr[LaserMaxResults] = js.undefined,
-      nextToken: js.UndefOr[NextToken] = js.undefined): ListJobExecutionsForThingRequest = {
+      nextToken: js.UndefOr[NextToken] = js.undefined,
+      status: js.UndefOr[JobExecutionStatus] = js.undefined): ListJobExecutionsForThingRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "thingName" -> thingName.map { x => x.asInstanceOf[js.Any] },
-        "status" -> status.map { x => x.asInstanceOf[js.Any] },
+        "thingName" -> thingName.asInstanceOf[js.Any],
         "maxResults" -> maxResults.map { x => x.asInstanceOf[js.Any] },
-        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] },
+        "status" -> status.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListJobExecutionsForThingRequest]
     }
@@ -6054,29 +6054,29 @@ package iot {
 
   @js.native
   trait ListJobsRequest extends js.Object {
-    var thingGroupName: js.UndefOr[ThingGroupName]
     var maxResults: js.UndefOr[LaserMaxResults]
     var nextToken: js.UndefOr[NextToken]
-    var thingGroupId: js.UndefOr[ThingGroupId]
     var status: js.UndefOr[JobStatus]
     var targetSelection: js.UndefOr[TargetSelection]
+    var thingGroupId: js.UndefOr[ThingGroupId]
+    var thingGroupName: js.UndefOr[ThingGroupName]
   }
 
   object ListJobsRequest {
     def apply(
-      thingGroupName: js.UndefOr[ThingGroupName] = js.undefined,
       maxResults: js.UndefOr[LaserMaxResults] = js.undefined,
       nextToken: js.UndefOr[NextToken] = js.undefined,
-      thingGroupId: js.UndefOr[ThingGroupId] = js.undefined,
       status: js.UndefOr[JobStatus] = js.undefined,
-      targetSelection: js.UndefOr[TargetSelection] = js.undefined): ListJobsRequest = {
+      targetSelection: js.UndefOr[TargetSelection] = js.undefined,
+      thingGroupId: js.UndefOr[ThingGroupId] = js.undefined,
+      thingGroupName: js.UndefOr[ThingGroupName] = js.undefined): ListJobsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "thingGroupName" -> thingGroupName.map { x => x.asInstanceOf[js.Any] },
         "maxResults" -> maxResults.map { x => x.asInstanceOf[js.Any] },
         "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] },
-        "thingGroupId" -> thingGroupId.map { x => x.asInstanceOf[js.Any] },
         "status" -> status.map { x => x.asInstanceOf[js.Any] },
-        "targetSelection" -> targetSelection.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "targetSelection" -> targetSelection.map { x => x.asInstanceOf[js.Any] },
+        "thingGroupId" -> thingGroupId.map { x => x.asInstanceOf[js.Any] },
+        "thingGroupName" -> thingGroupName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListJobsRequest]
     }
@@ -6123,17 +6123,17 @@ package iot {
 
   @js.native
   trait ListOTAUpdatesResponse extends js.Object {
-    var otaUpdates: js.UndefOr[OTAUpdatesSummary]
     var nextToken: js.UndefOr[NextToken]
+    var otaUpdates: js.UndefOr[OTAUpdatesSummary]
   }
 
   object ListOTAUpdatesResponse {
     def apply(
-      otaUpdates: js.UndefOr[OTAUpdatesSummary] = js.undefined,
-      nextToken: js.UndefOr[NextToken] = js.undefined): ListOTAUpdatesResponse = {
+      nextToken: js.UndefOr[NextToken] = js.undefined,
+      otaUpdates: js.UndefOr[OTAUpdatesSummary] = js.undefined): ListOTAUpdatesResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "otaUpdates" -> otaUpdates.map { x => x.asInstanceOf[js.Any] },
-        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] },
+        "otaUpdates" -> otaUpdates.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListOTAUpdatesResponse]
     }
@@ -6144,20 +6144,20 @@ package iot {
    */
   @js.native
   trait ListOutgoingCertificatesRequest extends js.Object {
-    var pageSize: js.UndefOr[PageSize]
-    var marker: js.UndefOr[Marker]
     var ascendingOrder: js.UndefOr[AscendingOrder]
+    var marker: js.UndefOr[Marker]
+    var pageSize: js.UndefOr[PageSize]
   }
 
   object ListOutgoingCertificatesRequest {
     def apply(
-      pageSize: js.UndefOr[PageSize] = js.undefined,
+      ascendingOrder: js.UndefOr[AscendingOrder] = js.undefined,
       marker: js.UndefOr[Marker] = js.undefined,
-      ascendingOrder: js.UndefOr[AscendingOrder] = js.undefined): ListOutgoingCertificatesRequest = {
+      pageSize: js.UndefOr[PageSize] = js.undefined): ListOutgoingCertificatesRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "pageSize" -> pageSize.map { x => x.asInstanceOf[js.Any] },
+        "ascendingOrder" -> ascendingOrder.map { x => x.asInstanceOf[js.Any] },
         "marker" -> marker.map { x => x.asInstanceOf[js.Any] },
-        "ascendingOrder" -> ascendingOrder.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "pageSize" -> pageSize.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListOutgoingCertificatesRequest]
     }
@@ -6168,17 +6168,17 @@ package iot {
    */
   @js.native
   trait ListOutgoingCertificatesResponse extends js.Object {
-    var outgoingCertificates: js.UndefOr[OutgoingCertificates]
     var nextMarker: js.UndefOr[Marker]
+    var outgoingCertificates: js.UndefOr[OutgoingCertificates]
   }
 
   object ListOutgoingCertificatesResponse {
     def apply(
-      outgoingCertificates: js.UndefOr[OutgoingCertificates] = js.undefined,
-      nextMarker: js.UndefOr[Marker] = js.undefined): ListOutgoingCertificatesResponse = {
+      nextMarker: js.UndefOr[Marker] = js.undefined,
+      outgoingCertificates: js.UndefOr[OutgoingCertificates] = js.undefined): ListOutgoingCertificatesResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "outgoingCertificates" -> outgoingCertificates.map { x => x.asInstanceOf[js.Any] },
-        "nextMarker" -> nextMarker.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "nextMarker" -> nextMarker.map { x => x.asInstanceOf[js.Any] },
+        "outgoingCertificates" -> outgoingCertificates.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListOutgoingCertificatesResponse]
     }
@@ -6189,20 +6189,20 @@ package iot {
    */
   @js.native
   trait ListPoliciesRequest extends js.Object {
+    var ascendingOrder: js.UndefOr[AscendingOrder]
     var marker: js.UndefOr[Marker]
     var pageSize: js.UndefOr[PageSize]
-    var ascendingOrder: js.UndefOr[AscendingOrder]
   }
 
   object ListPoliciesRequest {
     def apply(
+      ascendingOrder: js.UndefOr[AscendingOrder] = js.undefined,
       marker: js.UndefOr[Marker] = js.undefined,
-      pageSize: js.UndefOr[PageSize] = js.undefined,
-      ascendingOrder: js.UndefOr[AscendingOrder] = js.undefined): ListPoliciesRequest = {
+      pageSize: js.UndefOr[PageSize] = js.undefined): ListPoliciesRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "ascendingOrder" -> ascendingOrder.map { x => x.asInstanceOf[js.Any] },
         "marker" -> marker.map { x => x.asInstanceOf[js.Any] },
-        "pageSize" -> pageSize.map { x => x.asInstanceOf[js.Any] },
-        "ascendingOrder" -> ascendingOrder.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "pageSize" -> pageSize.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListPoliciesRequest]
     }
@@ -6213,17 +6213,17 @@ package iot {
    */
   @js.native
   trait ListPoliciesResponse extends js.Object {
-    var policies: js.UndefOr[Policies]
     var nextMarker: js.UndefOr[Marker]
+    var policies: js.UndefOr[Policies]
   }
 
   object ListPoliciesResponse {
     def apply(
-      policies: js.UndefOr[Policies] = js.undefined,
-      nextMarker: js.UndefOr[Marker] = js.undefined): ListPoliciesResponse = {
+      nextMarker: js.UndefOr[Marker] = js.undefined,
+      policies: js.UndefOr[Policies] = js.undefined): ListPoliciesResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "policies" -> policies.map { x => x.asInstanceOf[js.Any] },
-        "nextMarker" -> nextMarker.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "nextMarker" -> nextMarker.map { x => x.asInstanceOf[js.Any] },
+        "policies" -> policies.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListPoliciesResponse]
     }
@@ -6234,23 +6234,23 @@ package iot {
    */
   @js.native
   trait ListPolicyPrincipalsRequest extends js.Object {
-    var policyName: js.UndefOr[PolicyName]
+    var policyName: PolicyName
+    var ascendingOrder: js.UndefOr[AscendingOrder]
     var marker: js.UndefOr[Marker]
     var pageSize: js.UndefOr[PageSize]
-    var ascendingOrder: js.UndefOr[AscendingOrder]
   }
 
   object ListPolicyPrincipalsRequest {
     def apply(
-      policyName: js.UndefOr[PolicyName] = js.undefined,
+      policyName: PolicyName,
+      ascendingOrder: js.UndefOr[AscendingOrder] = js.undefined,
       marker: js.UndefOr[Marker] = js.undefined,
-      pageSize: js.UndefOr[PageSize] = js.undefined,
-      ascendingOrder: js.UndefOr[AscendingOrder] = js.undefined): ListPolicyPrincipalsRequest = {
+      pageSize: js.UndefOr[PageSize] = js.undefined): ListPolicyPrincipalsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "policyName" -> policyName.map { x => x.asInstanceOf[js.Any] },
+        "policyName" -> policyName.asInstanceOf[js.Any],
+        "ascendingOrder" -> ascendingOrder.map { x => x.asInstanceOf[js.Any] },
         "marker" -> marker.map { x => x.asInstanceOf[js.Any] },
-        "pageSize" -> pageSize.map { x => x.asInstanceOf[js.Any] },
-        "ascendingOrder" -> ascendingOrder.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "pageSize" -> pageSize.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListPolicyPrincipalsRequest]
     }
@@ -6261,17 +6261,17 @@ package iot {
    */
   @js.native
   trait ListPolicyPrincipalsResponse extends js.Object {
-    var principals: js.UndefOr[Principals]
     var nextMarker: js.UndefOr[Marker]
+    var principals: js.UndefOr[Principals]
   }
 
   object ListPolicyPrincipalsResponse {
     def apply(
-      principals: js.UndefOr[Principals] = js.undefined,
-      nextMarker: js.UndefOr[Marker] = js.undefined): ListPolicyPrincipalsResponse = {
+      nextMarker: js.UndefOr[Marker] = js.undefined,
+      principals: js.UndefOr[Principals] = js.undefined): ListPolicyPrincipalsResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "principals" -> principals.map { x => x.asInstanceOf[js.Any] },
-        "nextMarker" -> nextMarker.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "nextMarker" -> nextMarker.map { x => x.asInstanceOf[js.Any] },
+        "principals" -> principals.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListPolicyPrincipalsResponse]
     }
@@ -6282,14 +6282,14 @@ package iot {
    */
   @js.native
   trait ListPolicyVersionsRequest extends js.Object {
-    var policyName: js.UndefOr[PolicyName]
+    var policyName: PolicyName
   }
 
   object ListPolicyVersionsRequest {
     def apply(
-      policyName: js.UndefOr[PolicyName] = js.undefined): ListPolicyVersionsRequest = {
+      policyName: PolicyName): ListPolicyVersionsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "policyName" -> policyName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "policyName" -> policyName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListPolicyVersionsRequest]
     }
@@ -6318,23 +6318,23 @@ package iot {
    */
   @js.native
   trait ListPrincipalPoliciesRequest extends js.Object {
-    var principal: js.UndefOr[Principal]
+    var principal: Principal
+    var ascendingOrder: js.UndefOr[AscendingOrder]
     var marker: js.UndefOr[Marker]
     var pageSize: js.UndefOr[PageSize]
-    var ascendingOrder: js.UndefOr[AscendingOrder]
   }
 
   object ListPrincipalPoliciesRequest {
     def apply(
-      principal: js.UndefOr[Principal] = js.undefined,
+      principal: Principal,
+      ascendingOrder: js.UndefOr[AscendingOrder] = js.undefined,
       marker: js.UndefOr[Marker] = js.undefined,
-      pageSize: js.UndefOr[PageSize] = js.undefined,
-      ascendingOrder: js.UndefOr[AscendingOrder] = js.undefined): ListPrincipalPoliciesRequest = {
+      pageSize: js.UndefOr[PageSize] = js.undefined): ListPrincipalPoliciesRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "principal" -> principal.map { x => x.asInstanceOf[js.Any] },
+        "principal" -> principal.asInstanceOf[js.Any],
+        "ascendingOrder" -> ascendingOrder.map { x => x.asInstanceOf[js.Any] },
         "marker" -> marker.map { x => x.asInstanceOf[js.Any] },
-        "pageSize" -> pageSize.map { x => x.asInstanceOf[js.Any] },
-        "ascendingOrder" -> ascendingOrder.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "pageSize" -> pageSize.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListPrincipalPoliciesRequest]
     }
@@ -6345,17 +6345,17 @@ package iot {
    */
   @js.native
   trait ListPrincipalPoliciesResponse extends js.Object {
-    var policies: js.UndefOr[Policies]
     var nextMarker: js.UndefOr[Marker]
+    var policies: js.UndefOr[Policies]
   }
 
   object ListPrincipalPoliciesResponse {
     def apply(
-      policies: js.UndefOr[Policies] = js.undefined,
-      nextMarker: js.UndefOr[Marker] = js.undefined): ListPrincipalPoliciesResponse = {
+      nextMarker: js.UndefOr[Marker] = js.undefined,
+      policies: js.UndefOr[Policies] = js.undefined): ListPrincipalPoliciesResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "policies" -> policies.map { x => x.asInstanceOf[js.Any] },
-        "nextMarker" -> nextMarker.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "nextMarker" -> nextMarker.map { x => x.asInstanceOf[js.Any] },
+        "policies" -> policies.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListPrincipalPoliciesResponse]
     }
@@ -6366,20 +6366,20 @@ package iot {
    */
   @js.native
   trait ListPrincipalThingsRequest extends js.Object {
-    var nextToken: js.UndefOr[NextToken]
+    var principal: Principal
     var maxResults: js.UndefOr[RegistryMaxResults]
-    var principal: js.UndefOr[Principal]
+    var nextToken: js.UndefOr[NextToken]
   }
 
   object ListPrincipalThingsRequest {
     def apply(
-      nextToken: js.UndefOr[NextToken] = js.undefined,
+      principal: Principal,
       maxResults: js.UndefOr[RegistryMaxResults] = js.undefined,
-      principal: js.UndefOr[Principal] = js.undefined): ListPrincipalThingsRequest = {
+      nextToken: js.UndefOr[NextToken] = js.undefined): ListPrincipalThingsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] },
+        "principal" -> principal.asInstanceOf[js.Any],
         "maxResults" -> maxResults.map { x => x.asInstanceOf[js.Any] },
-        "principal" -> principal.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListPrincipalThingsRequest]
     }
@@ -6390,17 +6390,17 @@ package iot {
    */
   @js.native
   trait ListPrincipalThingsResponse extends js.Object {
-    var things: js.UndefOr[ThingNameList]
     var nextToken: js.UndefOr[NextToken]
+    var things: js.UndefOr[ThingNameList]
   }
 
   object ListPrincipalThingsResponse {
     def apply(
-      things: js.UndefOr[ThingNameList] = js.undefined,
-      nextToken: js.UndefOr[NextToken] = js.undefined): ListPrincipalThingsResponse = {
+      nextToken: js.UndefOr[NextToken] = js.undefined,
+      things: js.UndefOr[ThingNameList] = js.undefined): ListPrincipalThingsResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "things" -> things.map { x => x.asInstanceOf[js.Any] },
-        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] },
+        "things" -> things.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListPrincipalThingsResponse]
     }
@@ -6408,20 +6408,20 @@ package iot {
 
   @js.native
   trait ListRoleAliasesRequest extends js.Object {
-    var pageSize: js.UndefOr[PageSize]
-    var marker: js.UndefOr[Marker]
     var ascendingOrder: js.UndefOr[AscendingOrder]
+    var marker: js.UndefOr[Marker]
+    var pageSize: js.UndefOr[PageSize]
   }
 
   object ListRoleAliasesRequest {
     def apply(
-      pageSize: js.UndefOr[PageSize] = js.undefined,
+      ascendingOrder: js.UndefOr[AscendingOrder] = js.undefined,
       marker: js.UndefOr[Marker] = js.undefined,
-      ascendingOrder: js.UndefOr[AscendingOrder] = js.undefined): ListRoleAliasesRequest = {
+      pageSize: js.UndefOr[PageSize] = js.undefined): ListRoleAliasesRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "pageSize" -> pageSize.map { x => x.asInstanceOf[js.Any] },
+        "ascendingOrder" -> ascendingOrder.map { x => x.asInstanceOf[js.Any] },
         "marker" -> marker.map { x => x.asInstanceOf[js.Any] },
-        "ascendingOrder" -> ascendingOrder.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "pageSize" -> pageSize.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListRoleAliasesRequest]
     }
@@ -6429,17 +6429,17 @@ package iot {
 
   @js.native
   trait ListRoleAliasesResponse extends js.Object {
-    var roleAliases: js.UndefOr[RoleAliases]
     var nextMarker: js.UndefOr[Marker]
+    var roleAliases: js.UndefOr[RoleAliases]
   }
 
   object ListRoleAliasesResponse {
     def apply(
-      roleAliases: js.UndefOr[RoleAliases] = js.undefined,
-      nextMarker: js.UndefOr[Marker] = js.undefined): ListRoleAliasesResponse = {
+      nextMarker: js.UndefOr[Marker] = js.undefined,
+      roleAliases: js.UndefOr[RoleAliases] = js.undefined): ListRoleAliasesResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "roleAliases" -> roleAliases.map { x => x.asInstanceOf[js.Any] },
-        "nextMarker" -> nextMarker.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "nextMarker" -> nextMarker.map { x => x.asInstanceOf[js.Any] },
+        "roleAliases" -> roleAliases.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListRoleAliasesResponse]
     }
@@ -6447,17 +6447,17 @@ package iot {
 
   @js.native
   trait ListScheduledAuditsRequest extends js.Object {
-    var nextToken: js.UndefOr[NextToken]
     var maxResults: js.UndefOr[MaxResults]
+    var nextToken: js.UndefOr[NextToken]
   }
 
   object ListScheduledAuditsRequest {
     def apply(
-      nextToken: js.UndefOr[NextToken] = js.undefined,
-      maxResults: js.UndefOr[MaxResults] = js.undefined): ListScheduledAuditsRequest = {
+      maxResults: js.UndefOr[MaxResults] = js.undefined,
+      nextToken: js.UndefOr[NextToken] = js.undefined): ListScheduledAuditsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] },
-        "maxResults" -> maxResults.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "maxResults" -> maxResults.map { x => x.asInstanceOf[js.Any] },
+        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListScheduledAuditsRequest]
     }
@@ -6465,17 +6465,17 @@ package iot {
 
   @js.native
   trait ListScheduledAuditsResponse extends js.Object {
-    var scheduledAudits: js.UndefOr[ScheduledAuditMetadataList]
     var nextToken: js.UndefOr[NextToken]
+    var scheduledAudits: js.UndefOr[ScheduledAuditMetadataList]
   }
 
   object ListScheduledAuditsResponse {
     def apply(
-      scheduledAudits: js.UndefOr[ScheduledAuditMetadataList] = js.undefined,
-      nextToken: js.UndefOr[NextToken] = js.undefined): ListScheduledAuditsResponse = {
+      nextToken: js.UndefOr[NextToken] = js.undefined,
+      scheduledAudits: js.UndefOr[ScheduledAuditMetadataList] = js.undefined): ListScheduledAuditsResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "scheduledAudits" -> scheduledAudits.map { x => x.asInstanceOf[js.Any] },
-        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] },
+        "scheduledAudits" -> scheduledAudits.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListScheduledAuditsResponse]
     }
@@ -6483,23 +6483,23 @@ package iot {
 
   @js.native
   trait ListSecurityProfilesForTargetRequest extends js.Object {
-    var nextToken: js.UndefOr[NextToken]
+    var securityProfileTargetArn: SecurityProfileTargetArn
     var maxResults: js.UndefOr[MaxResults]
+    var nextToken: js.UndefOr[NextToken]
     var recursive: js.UndefOr[Recursive]
-    var securityProfileTargetArn: js.UndefOr[SecurityProfileTargetArn]
   }
 
   object ListSecurityProfilesForTargetRequest {
     def apply(
-      nextToken: js.UndefOr[NextToken] = js.undefined,
+      securityProfileTargetArn: SecurityProfileTargetArn,
       maxResults: js.UndefOr[MaxResults] = js.undefined,
-      recursive: js.UndefOr[Recursive] = js.undefined,
-      securityProfileTargetArn: js.UndefOr[SecurityProfileTargetArn] = js.undefined): ListSecurityProfilesForTargetRequest = {
+      nextToken: js.UndefOr[NextToken] = js.undefined,
+      recursive: js.UndefOr[Recursive] = js.undefined): ListSecurityProfilesForTargetRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] },
+        "securityProfileTargetArn" -> securityProfileTargetArn.asInstanceOf[js.Any],
         "maxResults" -> maxResults.map { x => x.asInstanceOf[js.Any] },
-        "recursive" -> recursive.map { x => x.asInstanceOf[js.Any] },
-        "securityProfileTargetArn" -> securityProfileTargetArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] },
+        "recursive" -> recursive.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListSecurityProfilesForTargetRequest]
     }
@@ -6507,17 +6507,17 @@ package iot {
 
   @js.native
   trait ListSecurityProfilesForTargetResponse extends js.Object {
-    var securityProfileTargetMappings: js.UndefOr[SecurityProfileTargetMappings]
     var nextToken: js.UndefOr[NextToken]
+    var securityProfileTargetMappings: js.UndefOr[SecurityProfileTargetMappings]
   }
 
   object ListSecurityProfilesForTargetResponse {
     def apply(
-      securityProfileTargetMappings: js.UndefOr[SecurityProfileTargetMappings] = js.undefined,
-      nextToken: js.UndefOr[NextToken] = js.undefined): ListSecurityProfilesForTargetResponse = {
+      nextToken: js.UndefOr[NextToken] = js.undefined,
+      securityProfileTargetMappings: js.UndefOr[SecurityProfileTargetMappings] = js.undefined): ListSecurityProfilesForTargetResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "securityProfileTargetMappings" -> securityProfileTargetMappings.map { x => x.asInstanceOf[js.Any] },
-        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] },
+        "securityProfileTargetMappings" -> securityProfileTargetMappings.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListSecurityProfilesForTargetResponse]
     }
@@ -6525,17 +6525,17 @@ package iot {
 
   @js.native
   trait ListSecurityProfilesRequest extends js.Object {
-    var nextToken: js.UndefOr[NextToken]
     var maxResults: js.UndefOr[MaxResults]
+    var nextToken: js.UndefOr[NextToken]
   }
 
   object ListSecurityProfilesRequest {
     def apply(
-      nextToken: js.UndefOr[NextToken] = js.undefined,
-      maxResults: js.UndefOr[MaxResults] = js.undefined): ListSecurityProfilesRequest = {
+      maxResults: js.UndefOr[MaxResults] = js.undefined,
+      nextToken: js.UndefOr[NextToken] = js.undefined): ListSecurityProfilesRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] },
-        "maxResults" -> maxResults.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "maxResults" -> maxResults.map { x => x.asInstanceOf[js.Any] },
+        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListSecurityProfilesRequest]
     }
@@ -6543,17 +6543,17 @@ package iot {
 
   @js.native
   trait ListSecurityProfilesResponse extends js.Object {
-    var securityProfileIdentifiers: js.UndefOr[SecurityProfileIdentifiers]
     var nextToken: js.UndefOr[NextToken]
+    var securityProfileIdentifiers: js.UndefOr[SecurityProfileIdentifiers]
   }
 
   object ListSecurityProfilesResponse {
     def apply(
-      securityProfileIdentifiers: js.UndefOr[SecurityProfileIdentifiers] = js.undefined,
-      nextToken: js.UndefOr[NextToken] = js.undefined): ListSecurityProfilesResponse = {
+      nextToken: js.UndefOr[NextToken] = js.undefined,
+      securityProfileIdentifiers: js.UndefOr[SecurityProfileIdentifiers] = js.undefined): ListSecurityProfilesResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "securityProfileIdentifiers" -> securityProfileIdentifiers.map { x => x.asInstanceOf[js.Any] },
-        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] },
+        "securityProfileIdentifiers" -> securityProfileIdentifiers.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListSecurityProfilesResponse]
     }
@@ -6561,20 +6561,20 @@ package iot {
 
   @js.native
   trait ListStreamsRequest extends js.Object {
+    var ascendingOrder: js.UndefOr[AscendingOrder]
     var maxResults: js.UndefOr[MaxResults]
     var nextToken: js.UndefOr[NextToken]
-    var ascendingOrder: js.UndefOr[AscendingOrder]
   }
 
   object ListStreamsRequest {
     def apply(
+      ascendingOrder: js.UndefOr[AscendingOrder] = js.undefined,
       maxResults: js.UndefOr[MaxResults] = js.undefined,
-      nextToken: js.UndefOr[NextToken] = js.undefined,
-      ascendingOrder: js.UndefOr[AscendingOrder] = js.undefined): ListStreamsRequest = {
+      nextToken: js.UndefOr[NextToken] = js.undefined): ListStreamsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "ascendingOrder" -> ascendingOrder.map { x => x.asInstanceOf[js.Any] },
         "maxResults" -> maxResults.map { x => x.asInstanceOf[js.Any] },
-        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] },
-        "ascendingOrder" -> ascendingOrder.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListStreamsRequest]
     }
@@ -6582,17 +6582,17 @@ package iot {
 
   @js.native
   trait ListStreamsResponse extends js.Object {
-    var streams: js.UndefOr[StreamsSummary]
     var nextToken: js.UndefOr[NextToken]
+    var streams: js.UndefOr[StreamsSummary]
   }
 
   object ListStreamsResponse {
     def apply(
-      streams: js.UndefOr[StreamsSummary] = js.undefined,
-      nextToken: js.UndefOr[NextToken] = js.undefined): ListStreamsResponse = {
+      nextToken: js.UndefOr[NextToken] = js.undefined,
+      streams: js.UndefOr[StreamsSummary] = js.undefined): ListStreamsResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "streams" -> streams.map { x => x.asInstanceOf[js.Any] },
-        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] },
+        "streams" -> streams.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListStreamsResponse]
     }
@@ -6600,16 +6600,16 @@ package iot {
 
   @js.native
   trait ListTagsForResourceRequest extends js.Object {
-    var resourceArn: js.UndefOr[ResourceArn]
+    var resourceArn: ResourceArn
     var nextToken: js.UndefOr[NextToken]
   }
 
   object ListTagsForResourceRequest {
     def apply(
-      resourceArn: js.UndefOr[ResourceArn] = js.undefined,
+      resourceArn: ResourceArn,
       nextToken: js.UndefOr[NextToken] = js.undefined): ListTagsForResourceRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "resourceArn" -> resourceArn.map { x => x.asInstanceOf[js.Any] },
+        "resourceArn" -> resourceArn.asInstanceOf[js.Any],
         "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListTagsForResourceRequest]
@@ -6618,17 +6618,17 @@ package iot {
 
   @js.native
   trait ListTagsForResourceResponse extends js.Object {
-    var tags: js.UndefOr[TagList]
     var nextToken: js.UndefOr[NextToken]
+    var tags: js.UndefOr[TagList]
   }
 
   object ListTagsForResourceResponse {
     def apply(
-      tags: js.UndefOr[TagList] = js.undefined,
-      nextToken: js.UndefOr[NextToken] = js.undefined): ListTagsForResourceResponse = {
+      nextToken: js.UndefOr[NextToken] = js.undefined,
+      tags: js.UndefOr[TagList] = js.undefined): ListTagsForResourceResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "tags" -> tags.map { x => x.asInstanceOf[js.Any] },
-        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] },
+        "tags" -> tags.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListTagsForResourceResponse]
     }
@@ -6636,18 +6636,18 @@ package iot {
 
   @js.native
   trait ListTargetsForPolicyRequest extends js.Object {
-    var policyName: js.UndefOr[PolicyName]
+    var policyName: PolicyName
     var marker: js.UndefOr[Marker]
     var pageSize: js.UndefOr[PageSize]
   }
 
   object ListTargetsForPolicyRequest {
     def apply(
-      policyName: js.UndefOr[PolicyName] = js.undefined,
+      policyName: PolicyName,
       marker: js.UndefOr[Marker] = js.undefined,
       pageSize: js.UndefOr[PageSize] = js.undefined): ListTargetsForPolicyRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "policyName" -> policyName.map { x => x.asInstanceOf[js.Any] },
+        "policyName" -> policyName.asInstanceOf[js.Any],
         "marker" -> marker.map { x => x.asInstanceOf[js.Any] },
         "pageSize" -> pageSize.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
@@ -6657,17 +6657,17 @@ package iot {
 
   @js.native
   trait ListTargetsForPolicyResponse extends js.Object {
-    var targets: js.UndefOr[PolicyTargets]
     var nextMarker: js.UndefOr[Marker]
+    var targets: js.UndefOr[PolicyTargets]
   }
 
   object ListTargetsForPolicyResponse {
     def apply(
-      targets: js.UndefOr[PolicyTargets] = js.undefined,
-      nextMarker: js.UndefOr[Marker] = js.undefined): ListTargetsForPolicyResponse = {
+      nextMarker: js.UndefOr[Marker] = js.undefined,
+      targets: js.UndefOr[PolicyTargets] = js.undefined): ListTargetsForPolicyResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "targets" -> targets.map { x => x.asInstanceOf[js.Any] },
-        "nextMarker" -> nextMarker.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "nextMarker" -> nextMarker.map { x => x.asInstanceOf[js.Any] },
+        "targets" -> targets.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListTargetsForPolicyResponse]
     }
@@ -6675,20 +6675,20 @@ package iot {
 
   @js.native
   trait ListTargetsForSecurityProfileRequest extends js.Object {
-    var securityProfileName: js.UndefOr[SecurityProfileName]
-    var nextToken: js.UndefOr[NextToken]
+    var securityProfileName: SecurityProfileName
     var maxResults: js.UndefOr[MaxResults]
+    var nextToken: js.UndefOr[NextToken]
   }
 
   object ListTargetsForSecurityProfileRequest {
     def apply(
-      securityProfileName: js.UndefOr[SecurityProfileName] = js.undefined,
-      nextToken: js.UndefOr[NextToken] = js.undefined,
-      maxResults: js.UndefOr[MaxResults] = js.undefined): ListTargetsForSecurityProfileRequest = {
+      securityProfileName: SecurityProfileName,
+      maxResults: js.UndefOr[MaxResults] = js.undefined,
+      nextToken: js.UndefOr[NextToken] = js.undefined): ListTargetsForSecurityProfileRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "securityProfileName" -> securityProfileName.map { x => x.asInstanceOf[js.Any] },
-        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] },
-        "maxResults" -> maxResults.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "securityProfileName" -> securityProfileName.asInstanceOf[js.Any],
+        "maxResults" -> maxResults.map { x => x.asInstanceOf[js.Any] },
+        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListTargetsForSecurityProfileRequest]
     }
@@ -6696,17 +6696,17 @@ package iot {
 
   @js.native
   trait ListTargetsForSecurityProfileResponse extends js.Object {
-    var securityProfileTargets: js.UndefOr[SecurityProfileTargets]
     var nextToken: js.UndefOr[NextToken]
+    var securityProfileTargets: js.UndefOr[SecurityProfileTargets]
   }
 
   object ListTargetsForSecurityProfileResponse {
     def apply(
-      securityProfileTargets: js.UndefOr[SecurityProfileTargets] = js.undefined,
-      nextToken: js.UndefOr[NextToken] = js.undefined): ListTargetsForSecurityProfileResponse = {
+      nextToken: js.UndefOr[NextToken] = js.undefined,
+      securityProfileTargets: js.UndefOr[SecurityProfileTargets] = js.undefined): ListTargetsForSecurityProfileResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "securityProfileTargets" -> securityProfileTargets.map { x => x.asInstanceOf[js.Any] },
-        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] },
+        "securityProfileTargets" -> securityProfileTargets.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListTargetsForSecurityProfileResponse]
     }
@@ -6714,20 +6714,20 @@ package iot {
 
   @js.native
   trait ListThingGroupsForThingRequest extends js.Object {
-    var thingName: js.UndefOr[ThingName]
-    var nextToken: js.UndefOr[NextToken]
+    var thingName: ThingName
     var maxResults: js.UndefOr[RegistryMaxResults]
+    var nextToken: js.UndefOr[NextToken]
   }
 
   object ListThingGroupsForThingRequest {
     def apply(
-      thingName: js.UndefOr[ThingName] = js.undefined,
-      nextToken: js.UndefOr[NextToken] = js.undefined,
-      maxResults: js.UndefOr[RegistryMaxResults] = js.undefined): ListThingGroupsForThingRequest = {
+      thingName: ThingName,
+      maxResults: js.UndefOr[RegistryMaxResults] = js.undefined,
+      nextToken: js.UndefOr[NextToken] = js.undefined): ListThingGroupsForThingRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "thingName" -> thingName.map { x => x.asInstanceOf[js.Any] },
-        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] },
-        "maxResults" -> maxResults.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "thingName" -> thingName.asInstanceOf[js.Any],
+        "maxResults" -> maxResults.map { x => x.asInstanceOf[js.Any] },
+        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListThingGroupsForThingRequest]
     }
@@ -6735,17 +6735,17 @@ package iot {
 
   @js.native
   trait ListThingGroupsForThingResponse extends js.Object {
-    var thingGroups: js.UndefOr[ThingGroupNameAndArnList]
     var nextToken: js.UndefOr[NextToken]
+    var thingGroups: js.UndefOr[ThingGroupNameAndArnList]
   }
 
   object ListThingGroupsForThingResponse {
     def apply(
-      thingGroups: js.UndefOr[ThingGroupNameAndArnList] = js.undefined,
-      nextToken: js.UndefOr[NextToken] = js.undefined): ListThingGroupsForThingResponse = {
+      nextToken: js.UndefOr[NextToken] = js.undefined,
+      thingGroups: js.UndefOr[ThingGroupNameAndArnList] = js.undefined): ListThingGroupsForThingResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "thingGroups" -> thingGroups.map { x => x.asInstanceOf[js.Any] },
-        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] },
+        "thingGroups" -> thingGroups.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListThingGroupsForThingResponse]
     }
@@ -6754,25 +6754,25 @@ package iot {
   @js.native
   trait ListThingGroupsRequest extends js.Object {
     var maxResults: js.UndefOr[RegistryMaxResults]
-    var recursive: js.UndefOr[RecursiveWithoutDefault]
-    var nextToken: js.UndefOr[NextToken]
     var namePrefixFilter: js.UndefOr[ThingGroupName]
+    var nextToken: js.UndefOr[NextToken]
     var parentGroup: js.UndefOr[ThingGroupName]
+    var recursive: js.UndefOr[RecursiveWithoutDefault]
   }
 
   object ListThingGroupsRequest {
     def apply(
       maxResults: js.UndefOr[RegistryMaxResults] = js.undefined,
-      recursive: js.UndefOr[RecursiveWithoutDefault] = js.undefined,
-      nextToken: js.UndefOr[NextToken] = js.undefined,
       namePrefixFilter: js.UndefOr[ThingGroupName] = js.undefined,
-      parentGroup: js.UndefOr[ThingGroupName] = js.undefined): ListThingGroupsRequest = {
+      nextToken: js.UndefOr[NextToken] = js.undefined,
+      parentGroup: js.UndefOr[ThingGroupName] = js.undefined,
+      recursive: js.UndefOr[RecursiveWithoutDefault] = js.undefined): ListThingGroupsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "maxResults" -> maxResults.map { x => x.asInstanceOf[js.Any] },
-        "recursive" -> recursive.map { x => x.asInstanceOf[js.Any] },
-        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] },
         "namePrefixFilter" -> namePrefixFilter.map { x => x.asInstanceOf[js.Any] },
-        "parentGroup" -> parentGroup.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] },
+        "parentGroup" -> parentGroup.map { x => x.asInstanceOf[js.Any] },
+        "recursive" -> recursive.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListThingGroupsRequest]
     }
@@ -6780,17 +6780,17 @@ package iot {
 
   @js.native
   trait ListThingGroupsResponse extends js.Object {
-    var thingGroups: js.UndefOr[ThingGroupNameAndArnList]
     var nextToken: js.UndefOr[NextToken]
+    var thingGroups: js.UndefOr[ThingGroupNameAndArnList]
   }
 
   object ListThingGroupsResponse {
     def apply(
-      thingGroups: js.UndefOr[ThingGroupNameAndArnList] = js.undefined,
-      nextToken: js.UndefOr[NextToken] = js.undefined): ListThingGroupsResponse = {
+      nextToken: js.UndefOr[NextToken] = js.undefined,
+      thingGroups: js.UndefOr[ThingGroupNameAndArnList] = js.undefined): ListThingGroupsResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "thingGroups" -> thingGroups.map { x => x.asInstanceOf[js.Any] },
-        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] },
+        "thingGroups" -> thingGroups.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListThingGroupsResponse]
     }
@@ -6801,14 +6801,14 @@ package iot {
    */
   @js.native
   trait ListThingPrincipalsRequest extends js.Object {
-    var thingName: js.UndefOr[ThingName]
+    var thingName: ThingName
   }
 
   object ListThingPrincipalsRequest {
     def apply(
-      thingName: js.UndefOr[ThingName] = js.undefined): ListThingPrincipalsRequest = {
+      thingName: ThingName): ListThingPrincipalsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "thingName" -> thingName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "thingName" -> thingName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListThingPrincipalsRequest]
     }
@@ -6834,23 +6834,23 @@ package iot {
 
   @js.native
   trait ListThingRegistrationTaskReportsRequest extends js.Object {
-    var taskId: js.UndefOr[TaskId]
-    var reportType: js.UndefOr[ReportType]
-    var nextToken: js.UndefOr[NextToken]
+    var reportType: ReportType
+    var taskId: TaskId
     var maxResults: js.UndefOr[RegistryMaxResults]
+    var nextToken: js.UndefOr[NextToken]
   }
 
   object ListThingRegistrationTaskReportsRequest {
     def apply(
-      taskId: js.UndefOr[TaskId] = js.undefined,
-      reportType: js.UndefOr[ReportType] = js.undefined,
-      nextToken: js.UndefOr[NextToken] = js.undefined,
-      maxResults: js.UndefOr[RegistryMaxResults] = js.undefined): ListThingRegistrationTaskReportsRequest = {
+      reportType: ReportType,
+      taskId: TaskId,
+      maxResults: js.UndefOr[RegistryMaxResults] = js.undefined,
+      nextToken: js.UndefOr[NextToken] = js.undefined): ListThingRegistrationTaskReportsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "taskId" -> taskId.map { x => x.asInstanceOf[js.Any] },
-        "reportType" -> reportType.map { x => x.asInstanceOf[js.Any] },
-        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] },
-        "maxResults" -> maxResults.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "reportType" -> reportType.asInstanceOf[js.Any],
+        "taskId" -> taskId.asInstanceOf[js.Any],
+        "maxResults" -> maxResults.map { x => x.asInstanceOf[js.Any] },
+        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListThingRegistrationTaskReportsRequest]
     }
@@ -6858,20 +6858,20 @@ package iot {
 
   @js.native
   trait ListThingRegistrationTaskReportsResponse extends js.Object {
-    var resourceLinks: js.UndefOr[S3FileUrlList]
-    var reportType: js.UndefOr[ReportType]
     var nextToken: js.UndefOr[NextToken]
+    var reportType: js.UndefOr[ReportType]
+    var resourceLinks: js.UndefOr[S3FileUrlList]
   }
 
   object ListThingRegistrationTaskReportsResponse {
     def apply(
-      resourceLinks: js.UndefOr[S3FileUrlList] = js.undefined,
+      nextToken: js.UndefOr[NextToken] = js.undefined,
       reportType: js.UndefOr[ReportType] = js.undefined,
-      nextToken: js.UndefOr[NextToken] = js.undefined): ListThingRegistrationTaskReportsResponse = {
+      resourceLinks: js.UndefOr[S3FileUrlList] = js.undefined): ListThingRegistrationTaskReportsResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "resourceLinks" -> resourceLinks.map { x => x.asInstanceOf[js.Any] },
+        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] },
         "reportType" -> reportType.map { x => x.asInstanceOf[js.Any] },
-        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "resourceLinks" -> resourceLinks.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListThingRegistrationTaskReportsResponse]
     }
@@ -6879,19 +6879,19 @@ package iot {
 
   @js.native
   trait ListThingRegistrationTasksRequest extends js.Object {
-    var nextToken: js.UndefOr[NextToken]
     var maxResults: js.UndefOr[RegistryMaxResults]
+    var nextToken: js.UndefOr[NextToken]
     var status: js.UndefOr[Status]
   }
 
   object ListThingRegistrationTasksRequest {
     def apply(
-      nextToken: js.UndefOr[NextToken] = js.undefined,
       maxResults: js.UndefOr[RegistryMaxResults] = js.undefined,
+      nextToken: js.UndefOr[NextToken] = js.undefined,
       status: js.UndefOr[Status] = js.undefined): ListThingRegistrationTasksRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] },
         "maxResults" -> maxResults.map { x => x.asInstanceOf[js.Any] },
+        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] },
         "status" -> status.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListThingRegistrationTasksRequest]
@@ -6900,17 +6900,17 @@ package iot {
 
   @js.native
   trait ListThingRegistrationTasksResponse extends js.Object {
-    var taskIds: js.UndefOr[TaskIdList]
     var nextToken: js.UndefOr[NextToken]
+    var taskIds: js.UndefOr[TaskIdList]
   }
 
   object ListThingRegistrationTasksResponse {
     def apply(
-      taskIds: js.UndefOr[TaskIdList] = js.undefined,
-      nextToken: js.UndefOr[NextToken] = js.undefined): ListThingRegistrationTasksResponse = {
+      nextToken: js.UndefOr[NextToken] = js.undefined,
+      taskIds: js.UndefOr[TaskIdList] = js.undefined): ListThingRegistrationTasksResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "taskIds" -> taskIds.map { x => x.asInstanceOf[js.Any] },
-        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] },
+        "taskIds" -> taskIds.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListThingRegistrationTasksResponse]
     }
@@ -6921,19 +6921,19 @@ package iot {
    */
   @js.native
   trait ListThingTypesRequest extends js.Object {
-    var nextToken: js.UndefOr[NextToken]
     var maxResults: js.UndefOr[RegistryMaxResults]
+    var nextToken: js.UndefOr[NextToken]
     var thingTypeName: js.UndefOr[ThingTypeName]
   }
 
   object ListThingTypesRequest {
     def apply(
-      nextToken: js.UndefOr[NextToken] = js.undefined,
       maxResults: js.UndefOr[RegistryMaxResults] = js.undefined,
+      nextToken: js.UndefOr[NextToken] = js.undefined,
       thingTypeName: js.UndefOr[ThingTypeName] = js.undefined): ListThingTypesRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] },
         "maxResults" -> maxResults.map { x => x.asInstanceOf[js.Any] },
+        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] },
         "thingTypeName" -> thingTypeName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListThingTypesRequest]
@@ -6945,17 +6945,17 @@ package iot {
    */
   @js.native
   trait ListThingTypesResponse extends js.Object {
-    var thingTypes: js.UndefOr[ThingTypeList]
     var nextToken: js.UndefOr[NextToken]
+    var thingTypes: js.UndefOr[ThingTypeList]
   }
 
   object ListThingTypesResponse {
     def apply(
-      thingTypes: js.UndefOr[ThingTypeList] = js.undefined,
-      nextToken: js.UndefOr[NextToken] = js.undefined): ListThingTypesResponse = {
+      nextToken: js.UndefOr[NextToken] = js.undefined,
+      thingTypes: js.UndefOr[ThingTypeList] = js.undefined): ListThingTypesResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "thingTypes" -> thingTypes.map { x => x.asInstanceOf[js.Any] },
-        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] },
+        "thingTypes" -> thingTypes.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListThingTypesResponse]
     }
@@ -6963,20 +6963,20 @@ package iot {
 
   @js.native
   trait ListThingsInBillingGroupRequest extends js.Object {
-    var billingGroupName: js.UndefOr[BillingGroupName]
-    var nextToken: js.UndefOr[NextToken]
+    var billingGroupName: BillingGroupName
     var maxResults: js.UndefOr[RegistryMaxResults]
+    var nextToken: js.UndefOr[NextToken]
   }
 
   object ListThingsInBillingGroupRequest {
     def apply(
-      billingGroupName: js.UndefOr[BillingGroupName] = js.undefined,
-      nextToken: js.UndefOr[NextToken] = js.undefined,
-      maxResults: js.UndefOr[RegistryMaxResults] = js.undefined): ListThingsInBillingGroupRequest = {
+      billingGroupName: BillingGroupName,
+      maxResults: js.UndefOr[RegistryMaxResults] = js.undefined,
+      nextToken: js.UndefOr[NextToken] = js.undefined): ListThingsInBillingGroupRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "billingGroupName" -> billingGroupName.map { x => x.asInstanceOf[js.Any] },
-        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] },
-        "maxResults" -> maxResults.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "billingGroupName" -> billingGroupName.asInstanceOf[js.Any],
+        "maxResults" -> maxResults.map { x => x.asInstanceOf[js.Any] },
+        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListThingsInBillingGroupRequest]
     }
@@ -6984,17 +6984,17 @@ package iot {
 
   @js.native
   trait ListThingsInBillingGroupResponse extends js.Object {
-    var things: js.UndefOr[ThingNameList]
     var nextToken: js.UndefOr[NextToken]
+    var things: js.UndefOr[ThingNameList]
   }
 
   object ListThingsInBillingGroupResponse {
     def apply(
-      things: js.UndefOr[ThingNameList] = js.undefined,
-      nextToken: js.UndefOr[NextToken] = js.undefined): ListThingsInBillingGroupResponse = {
+      nextToken: js.UndefOr[NextToken] = js.undefined,
+      things: js.UndefOr[ThingNameList] = js.undefined): ListThingsInBillingGroupResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "things" -> things.map { x => x.asInstanceOf[js.Any] },
-        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] },
+        "things" -> things.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListThingsInBillingGroupResponse]
     }
@@ -7002,23 +7002,23 @@ package iot {
 
   @js.native
   trait ListThingsInThingGroupRequest extends js.Object {
-    var thingGroupName: js.UndefOr[ThingGroupName]
-    var recursive: js.UndefOr[Recursive]
-    var nextToken: js.UndefOr[NextToken]
+    var thingGroupName: ThingGroupName
     var maxResults: js.UndefOr[RegistryMaxResults]
+    var nextToken: js.UndefOr[NextToken]
+    var recursive: js.UndefOr[Recursive]
   }
 
   object ListThingsInThingGroupRequest {
     def apply(
-      thingGroupName: js.UndefOr[ThingGroupName] = js.undefined,
-      recursive: js.UndefOr[Recursive] = js.undefined,
+      thingGroupName: ThingGroupName,
+      maxResults: js.UndefOr[RegistryMaxResults] = js.undefined,
       nextToken: js.UndefOr[NextToken] = js.undefined,
-      maxResults: js.UndefOr[RegistryMaxResults] = js.undefined): ListThingsInThingGroupRequest = {
+      recursive: js.UndefOr[Recursive] = js.undefined): ListThingsInThingGroupRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "thingGroupName" -> thingGroupName.map { x => x.asInstanceOf[js.Any] },
-        "recursive" -> recursive.map { x => x.asInstanceOf[js.Any] },
+        "thingGroupName" -> thingGroupName.asInstanceOf[js.Any],
+        "maxResults" -> maxResults.map { x => x.asInstanceOf[js.Any] },
         "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] },
-        "maxResults" -> maxResults.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "recursive" -> recursive.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListThingsInThingGroupRequest]
     }
@@ -7026,17 +7026,17 @@ package iot {
 
   @js.native
   trait ListThingsInThingGroupResponse extends js.Object {
-    var things: js.UndefOr[ThingNameList]
     var nextToken: js.UndefOr[NextToken]
+    var things: js.UndefOr[ThingNameList]
   }
 
   object ListThingsInThingGroupResponse {
     def apply(
-      things: js.UndefOr[ThingNameList] = js.undefined,
-      nextToken: js.UndefOr[NextToken] = js.undefined): ListThingsInThingGroupResponse = {
+      nextToken: js.UndefOr[NextToken] = js.undefined,
+      things: js.UndefOr[ThingNameList] = js.undefined): ListThingsInThingGroupResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "things" -> things.map { x => x.asInstanceOf[js.Any] },
-        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] },
+        "things" -> things.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListThingsInThingGroupResponse]
     }
@@ -7047,25 +7047,25 @@ package iot {
    */
   @js.native
   trait ListThingsRequest extends js.Object {
-    var maxResults: js.UndefOr[RegistryMaxResults]
-    var attributeValue: js.UndefOr[AttributeValue]
-    var nextToken: js.UndefOr[NextToken]
     var attributeName: js.UndefOr[AttributeName]
+    var attributeValue: js.UndefOr[AttributeValue]
+    var maxResults: js.UndefOr[RegistryMaxResults]
+    var nextToken: js.UndefOr[NextToken]
     var thingTypeName: js.UndefOr[ThingTypeName]
   }
 
   object ListThingsRequest {
     def apply(
-      maxResults: js.UndefOr[RegistryMaxResults] = js.undefined,
-      attributeValue: js.UndefOr[AttributeValue] = js.undefined,
-      nextToken: js.UndefOr[NextToken] = js.undefined,
       attributeName: js.UndefOr[AttributeName] = js.undefined,
+      attributeValue: js.UndefOr[AttributeValue] = js.undefined,
+      maxResults: js.UndefOr[RegistryMaxResults] = js.undefined,
+      nextToken: js.UndefOr[NextToken] = js.undefined,
       thingTypeName: js.UndefOr[ThingTypeName] = js.undefined): ListThingsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "maxResults" -> maxResults.map { x => x.asInstanceOf[js.Any] },
-        "attributeValue" -> attributeValue.map { x => x.asInstanceOf[js.Any] },
-        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] },
         "attributeName" -> attributeName.map { x => x.asInstanceOf[js.Any] },
+        "attributeValue" -> attributeValue.map { x => x.asInstanceOf[js.Any] },
+        "maxResults" -> maxResults.map { x => x.asInstanceOf[js.Any] },
+        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] },
         "thingTypeName" -> thingTypeName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListThingsRequest]
@@ -7077,17 +7077,17 @@ package iot {
    */
   @js.native
   trait ListThingsResponse extends js.Object {
-    var things: js.UndefOr[ThingAttributeList]
     var nextToken: js.UndefOr[NextToken]
+    var things: js.UndefOr[ThingAttributeList]
   }
 
   object ListThingsResponse {
     def apply(
-      things: js.UndefOr[ThingAttributeList] = js.undefined,
-      nextToken: js.UndefOr[NextToken] = js.undefined): ListThingsResponse = {
+      nextToken: js.UndefOr[NextToken] = js.undefined,
+      things: js.UndefOr[ThingAttributeList] = js.undefined): ListThingsResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "things" -> things.map { x => x.asInstanceOf[js.Any] },
-        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] },
+        "things" -> things.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListThingsResponse]
     }
@@ -7098,23 +7098,23 @@ package iot {
    */
   @js.native
   trait ListTopicRulesRequest extends js.Object {
-    var topic: js.UndefOr[Topic]
     var maxResults: js.UndefOr[GEMaxResults]
     var nextToken: js.UndefOr[NextToken]
     var ruleDisabled: js.UndefOr[IsDisabled]
+    var topic: js.UndefOr[Topic]
   }
 
   object ListTopicRulesRequest {
     def apply(
-      topic: js.UndefOr[Topic] = js.undefined,
       maxResults: js.UndefOr[GEMaxResults] = js.undefined,
       nextToken: js.UndefOr[NextToken] = js.undefined,
-      ruleDisabled: js.UndefOr[IsDisabled] = js.undefined): ListTopicRulesRequest = {
+      ruleDisabled: js.UndefOr[IsDisabled] = js.undefined,
+      topic: js.UndefOr[Topic] = js.undefined): ListTopicRulesRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "topic" -> topic.map { x => x.asInstanceOf[js.Any] },
         "maxResults" -> maxResults.map { x => x.asInstanceOf[js.Any] },
         "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] },
-        "ruleDisabled" -> ruleDisabled.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ruleDisabled" -> ruleDisabled.map { x => x.asInstanceOf[js.Any] },
+        "topic" -> topic.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListTopicRulesRequest]
     }
@@ -7125,17 +7125,17 @@ package iot {
    */
   @js.native
   trait ListTopicRulesResponse extends js.Object {
-    var rules: js.UndefOr[TopicRuleList]
     var nextToken: js.UndefOr[NextToken]
+    var rules: js.UndefOr[TopicRuleList]
   }
 
   object ListTopicRulesResponse {
     def apply(
-      rules: js.UndefOr[TopicRuleList] = js.undefined,
-      nextToken: js.UndefOr[NextToken] = js.undefined): ListTopicRulesResponse = {
+      nextToken: js.UndefOr[NextToken] = js.undefined,
+      rules: js.UndefOr[TopicRuleList] = js.undefined): ListTopicRulesResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "rules" -> rules.map { x => x.asInstanceOf[js.Any] },
-        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] },
+        "rules" -> rules.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListTopicRulesResponse]
     }
@@ -7143,20 +7143,20 @@ package iot {
 
   @js.native
   trait ListV2LoggingLevelsRequest extends js.Object {
-    var targetType: js.UndefOr[LogTargetType]
-    var nextToken: js.UndefOr[NextToken]
     var maxResults: js.UndefOr[SkyfallMaxResults]
+    var nextToken: js.UndefOr[NextToken]
+    var targetType: js.UndefOr[LogTargetType]
   }
 
   object ListV2LoggingLevelsRequest {
     def apply(
-      targetType: js.UndefOr[LogTargetType] = js.undefined,
+      maxResults: js.UndefOr[SkyfallMaxResults] = js.undefined,
       nextToken: js.UndefOr[NextToken] = js.undefined,
-      maxResults: js.UndefOr[SkyfallMaxResults] = js.undefined): ListV2LoggingLevelsRequest = {
+      targetType: js.UndefOr[LogTargetType] = js.undefined): ListV2LoggingLevelsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "targetType" -> targetType.map { x => x.asInstanceOf[js.Any] },
+        "maxResults" -> maxResults.map { x => x.asInstanceOf[js.Any] },
         "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] },
-        "maxResults" -> maxResults.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "targetType" -> targetType.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListV2LoggingLevelsRequest]
     }
@@ -7182,29 +7182,29 @@ package iot {
 
   @js.native
   trait ListViolationEventsRequest extends js.Object {
-    var startTime: js.UndefOr[Timestamp]
+    var endTime: Timestamp
+    var startTime: Timestamp
     var maxResults: js.UndefOr[MaxResults]
     var nextToken: js.UndefOr[NextToken]
-    var thingName: js.UndefOr[ThingName]
-    var endTime: js.UndefOr[Timestamp]
     var securityProfileName: js.UndefOr[SecurityProfileName]
+    var thingName: js.UndefOr[ThingName]
   }
 
   object ListViolationEventsRequest {
     def apply(
-      startTime: js.UndefOr[Timestamp] = js.undefined,
+      endTime: Timestamp,
+      startTime: Timestamp,
       maxResults: js.UndefOr[MaxResults] = js.undefined,
       nextToken: js.UndefOr[NextToken] = js.undefined,
-      thingName: js.UndefOr[ThingName] = js.undefined,
-      endTime: js.UndefOr[Timestamp] = js.undefined,
-      securityProfileName: js.UndefOr[SecurityProfileName] = js.undefined): ListViolationEventsRequest = {
+      securityProfileName: js.UndefOr[SecurityProfileName] = js.undefined,
+      thingName: js.UndefOr[ThingName] = js.undefined): ListViolationEventsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "startTime" -> startTime.map { x => x.asInstanceOf[js.Any] },
+        "endTime" -> endTime.asInstanceOf[js.Any],
+        "startTime" -> startTime.asInstanceOf[js.Any],
         "maxResults" -> maxResults.map { x => x.asInstanceOf[js.Any] },
         "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] },
-        "thingName" -> thingName.map { x => x.asInstanceOf[js.Any] },
-        "endTime" -> endTime.map { x => x.asInstanceOf[js.Any] },
-        "securityProfileName" -> securityProfileName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "securityProfileName" -> securityProfileName.map { x => x.asInstanceOf[js.Any] },
+        "thingName" -> thingName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListViolationEventsRequest]
     }
@@ -7212,17 +7212,17 @@ package iot {
 
   @js.native
   trait ListViolationEventsResponse extends js.Object {
-    var violationEvents: js.UndefOr[ViolationEvents]
     var nextToken: js.UndefOr[NextToken]
+    var violationEvents: js.UndefOr[ViolationEvents]
   }
 
   object ListViolationEventsResponse {
     def apply(
-      violationEvents: js.UndefOr[ViolationEvents] = js.undefined,
-      nextToken: js.UndefOr[NextToken] = js.undefined): ListViolationEventsResponse = {
+      nextToken: js.UndefOr[NextToken] = js.undefined,
+      violationEvents: js.UndefOr[ViolationEvents] = js.undefined): ListViolationEventsResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "violationEvents" -> violationEvents.map { x => x.asInstanceOf[js.Any] },
-        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] },
+        "violationEvents" -> violationEvents.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListViolationEventsResponse]
     }
@@ -7243,16 +7243,16 @@ package iot {
    */
   @js.native
   trait LogTarget extends js.Object {
-    var targetType: js.UndefOr[LogTargetType]
+    var targetType: LogTargetType
     var targetName: js.UndefOr[LogTargetName]
   }
 
   object LogTarget {
     def apply(
-      targetType: js.UndefOr[LogTargetType] = js.undefined,
+      targetType: LogTargetType,
       targetName: js.UndefOr[LogTargetName] = js.undefined): LogTarget = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "targetType" -> targetType.map { x => x.asInstanceOf[js.Any] },
+        "targetType" -> targetType.asInstanceOf[js.Any],
         "targetName" -> targetName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[LogTarget]
@@ -7264,17 +7264,17 @@ package iot {
    */
   @js.native
   trait LogTargetConfiguration extends js.Object {
-    var logTarget: js.UndefOr[LogTarget]
     var logLevel: js.UndefOr[LogLevel]
+    var logTarget: js.UndefOr[LogTarget]
   }
 
   object LogTargetConfiguration {
     def apply(
-      logTarget: js.UndefOr[LogTarget] = js.undefined,
-      logLevel: js.UndefOr[LogLevel] = js.undefined): LogTargetConfiguration = {
+      logLevel: js.UndefOr[LogLevel] = js.undefined,
+      logTarget: js.UndefOr[LogTarget] = js.undefined): LogTargetConfiguration = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "logTarget" -> logTarget.map { x => x.asInstanceOf[js.Any] },
-        "logLevel" -> logLevel.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "logLevel" -> logLevel.map { x => x.asInstanceOf[js.Any] },
+        "logTarget" -> logTarget.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[LogTargetConfiguration]
     }
@@ -7292,16 +7292,16 @@ package iot {
    */
   @js.native
   trait LoggingOptionsPayload extends js.Object {
-    var roleArn: js.UndefOr[AwsArn]
+    var roleArn: AwsArn
     var logLevel: js.UndefOr[LogLevel]
   }
 
   object LoggingOptionsPayload {
     def apply(
-      roleArn: js.UndefOr[AwsArn] = js.undefined,
+      roleArn: AwsArn,
       logLevel: js.UndefOr[LogLevel] = js.undefined): LoggingOptionsPayload = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "roleArn" -> roleArn.map { x => x.asInstanceOf[js.Any] },
+        "roleArn" -> roleArn.asInstanceOf[js.Any],
         "logLevel" -> logLevel.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[LoggingOptionsPayload]
@@ -7320,19 +7320,19 @@ package iot {
    */
   @js.native
   trait MetricValue extends js.Object {
-    var count: js.UndefOr[UnsignedLong]
     var cidrs: js.UndefOr[Cidrs]
+    var count: js.UndefOr[UnsignedLong]
     var ports: js.UndefOr[Ports]
   }
 
   object MetricValue {
     def apply(
-      count: js.UndefOr[UnsignedLong] = js.undefined,
       cidrs: js.UndefOr[Cidrs] = js.undefined,
+      count: js.UndefOr[UnsignedLong] = js.undefined,
       ports: js.UndefOr[Ports] = js.undefined): MetricValue = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "count" -> count.map { x => x.asInstanceOf[js.Any] },
         "cidrs" -> cidrs.map { x => x.asInstanceOf[js.Any] },
+        "count" -> count.map { x => x.asInstanceOf[js.Any] },
         "ports" -> ports.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[MetricValue]
@@ -7344,20 +7344,20 @@ package iot {
    */
   @js.native
   trait NonCompliantResource extends js.Object {
-    var resourceType: js.UndefOr[ResourceType]
-    var resourceIdentifier: js.UndefOr[ResourceIdentifier]
     var additionalInfo: js.UndefOr[StringMap]
+    var resourceIdentifier: js.UndefOr[ResourceIdentifier]
+    var resourceType: js.UndefOr[ResourceType]
   }
 
   object NonCompliantResource {
     def apply(
-      resourceType: js.UndefOr[ResourceType] = js.undefined,
+      additionalInfo: js.UndefOr[StringMap] = js.undefined,
       resourceIdentifier: js.UndefOr[ResourceIdentifier] = js.undefined,
-      additionalInfo: js.UndefOr[StringMap] = js.undefined): NonCompliantResource = {
+      resourceType: js.UndefOr[ResourceType] = js.undefined): NonCompliantResource = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "resourceType" -> resourceType.map { x => x.asInstanceOf[js.Any] },
+        "additionalInfo" -> additionalInfo.map { x => x.asInstanceOf[js.Any] },
         "resourceIdentifier" -> resourceIdentifier.map { x => x.asInstanceOf[js.Any] },
-        "additionalInfo" -> additionalInfo.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "resourceType" -> resourceType.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[NonCompliantResource]
     }
@@ -7368,25 +7368,25 @@ package iot {
    */
   @js.native
   trait OTAUpdateFile extends js.Object {
-    var codeSigning: js.UndefOr[CodeSigning]
-    var fileName: js.UndefOr[FileName]
     var attributes: js.UndefOr[AttributesMap]
+    var codeSigning: js.UndefOr[CodeSigning]
     var fileLocation: js.UndefOr[FileLocation]
+    var fileName: js.UndefOr[FileName]
     var fileVersion: js.UndefOr[OTAUpdateFileVersion]
   }
 
   object OTAUpdateFile {
     def apply(
-      codeSigning: js.UndefOr[CodeSigning] = js.undefined,
-      fileName: js.UndefOr[FileName] = js.undefined,
       attributes: js.UndefOr[AttributesMap] = js.undefined,
+      codeSigning: js.UndefOr[CodeSigning] = js.undefined,
       fileLocation: js.UndefOr[FileLocation] = js.undefined,
+      fileName: js.UndefOr[FileName] = js.undefined,
       fileVersion: js.UndefOr[OTAUpdateFileVersion] = js.undefined): OTAUpdateFile = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "codeSigning" -> codeSigning.map { x => x.asInstanceOf[js.Any] },
-        "fileName" -> fileName.map { x => x.asInstanceOf[js.Any] },
         "attributes" -> attributes.map { x => x.asInstanceOf[js.Any] },
+        "codeSigning" -> codeSigning.map { x => x.asInstanceOf[js.Any] },
         "fileLocation" -> fileLocation.map { x => x.asInstanceOf[js.Any] },
+        "fileName" -> fileName.map { x => x.asInstanceOf[js.Any] },
         "fileVersion" -> fileVersion.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[OTAUpdateFile]
@@ -7398,53 +7398,53 @@ package iot {
    */
   @js.native
   trait OTAUpdateInfo extends js.Object {
-    var otaUpdateStatus: js.UndefOr[OTAUpdateStatus]
-    var errorInfo: js.UndefOr[ErrorInfo]
-    var targets: js.UndefOr[Targets]
-    var otaUpdateFiles: js.UndefOr[OTAUpdateFiles]
-    var description: js.UndefOr[OTAUpdateDescription]
-    var otaUpdateArn: js.UndefOr[OTAUpdateArn]
-    var lastModifiedDate: js.UndefOr[DateType]
-    var awsIotJobArn: js.UndefOr[AwsIotJobArn]
-    var awsJobExecutionsRolloutConfig: js.UndefOr[AwsJobExecutionsRolloutConfig]
-    var awsIotJobId: js.UndefOr[AwsIotJobId]
-    var creationDate: js.UndefOr[DateType]
-    var targetSelection: js.UndefOr[TargetSelection]
-    var otaUpdateId: js.UndefOr[OTAUpdateId]
     var additionalParameters: js.UndefOr[AdditionalParameterMap]
+    var awsIotJobArn: js.UndefOr[AwsIotJobArn]
+    var awsIotJobId: js.UndefOr[AwsIotJobId]
+    var awsJobExecutionsRolloutConfig: js.UndefOr[AwsJobExecutionsRolloutConfig]
+    var creationDate: js.UndefOr[DateType]
+    var description: js.UndefOr[OTAUpdateDescription]
+    var errorInfo: js.UndefOr[ErrorInfo]
+    var lastModifiedDate: js.UndefOr[DateType]
+    var otaUpdateArn: js.UndefOr[OTAUpdateArn]
+    var otaUpdateFiles: js.UndefOr[OTAUpdateFiles]
+    var otaUpdateId: js.UndefOr[OTAUpdateId]
+    var otaUpdateStatus: js.UndefOr[OTAUpdateStatus]
+    var targetSelection: js.UndefOr[TargetSelection]
+    var targets: js.UndefOr[Targets]
   }
 
   object OTAUpdateInfo {
     def apply(
-      otaUpdateStatus: js.UndefOr[OTAUpdateStatus] = js.undefined,
-      errorInfo: js.UndefOr[ErrorInfo] = js.undefined,
-      targets: js.UndefOr[Targets] = js.undefined,
-      otaUpdateFiles: js.UndefOr[OTAUpdateFiles] = js.undefined,
-      description: js.UndefOr[OTAUpdateDescription] = js.undefined,
-      otaUpdateArn: js.UndefOr[OTAUpdateArn] = js.undefined,
-      lastModifiedDate: js.UndefOr[DateType] = js.undefined,
+      additionalParameters: js.UndefOr[AdditionalParameterMap] = js.undefined,
       awsIotJobArn: js.UndefOr[AwsIotJobArn] = js.undefined,
-      awsJobExecutionsRolloutConfig: js.UndefOr[AwsJobExecutionsRolloutConfig] = js.undefined,
       awsIotJobId: js.UndefOr[AwsIotJobId] = js.undefined,
+      awsJobExecutionsRolloutConfig: js.UndefOr[AwsJobExecutionsRolloutConfig] = js.undefined,
       creationDate: js.UndefOr[DateType] = js.undefined,
-      targetSelection: js.UndefOr[TargetSelection] = js.undefined,
+      description: js.UndefOr[OTAUpdateDescription] = js.undefined,
+      errorInfo: js.UndefOr[ErrorInfo] = js.undefined,
+      lastModifiedDate: js.UndefOr[DateType] = js.undefined,
+      otaUpdateArn: js.UndefOr[OTAUpdateArn] = js.undefined,
+      otaUpdateFiles: js.UndefOr[OTAUpdateFiles] = js.undefined,
       otaUpdateId: js.UndefOr[OTAUpdateId] = js.undefined,
-      additionalParameters: js.UndefOr[AdditionalParameterMap] = js.undefined): OTAUpdateInfo = {
+      otaUpdateStatus: js.UndefOr[OTAUpdateStatus] = js.undefined,
+      targetSelection: js.UndefOr[TargetSelection] = js.undefined,
+      targets: js.UndefOr[Targets] = js.undefined): OTAUpdateInfo = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "otaUpdateStatus" -> otaUpdateStatus.map { x => x.asInstanceOf[js.Any] },
-        "errorInfo" -> errorInfo.map { x => x.asInstanceOf[js.Any] },
-        "targets" -> targets.map { x => x.asInstanceOf[js.Any] },
-        "otaUpdateFiles" -> otaUpdateFiles.map { x => x.asInstanceOf[js.Any] },
-        "description" -> description.map { x => x.asInstanceOf[js.Any] },
-        "otaUpdateArn" -> otaUpdateArn.map { x => x.asInstanceOf[js.Any] },
-        "lastModifiedDate" -> lastModifiedDate.map { x => x.asInstanceOf[js.Any] },
+        "additionalParameters" -> additionalParameters.map { x => x.asInstanceOf[js.Any] },
         "awsIotJobArn" -> awsIotJobArn.map { x => x.asInstanceOf[js.Any] },
-        "awsJobExecutionsRolloutConfig" -> awsJobExecutionsRolloutConfig.map { x => x.asInstanceOf[js.Any] },
         "awsIotJobId" -> awsIotJobId.map { x => x.asInstanceOf[js.Any] },
+        "awsJobExecutionsRolloutConfig" -> awsJobExecutionsRolloutConfig.map { x => x.asInstanceOf[js.Any] },
         "creationDate" -> creationDate.map { x => x.asInstanceOf[js.Any] },
-        "targetSelection" -> targetSelection.map { x => x.asInstanceOf[js.Any] },
+        "description" -> description.map { x => x.asInstanceOf[js.Any] },
+        "errorInfo" -> errorInfo.map { x => x.asInstanceOf[js.Any] },
+        "lastModifiedDate" -> lastModifiedDate.map { x => x.asInstanceOf[js.Any] },
+        "otaUpdateArn" -> otaUpdateArn.map { x => x.asInstanceOf[js.Any] },
+        "otaUpdateFiles" -> otaUpdateFiles.map { x => x.asInstanceOf[js.Any] },
         "otaUpdateId" -> otaUpdateId.map { x => x.asInstanceOf[js.Any] },
-        "additionalParameters" -> additionalParameters.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "otaUpdateStatus" -> otaUpdateStatus.map { x => x.asInstanceOf[js.Any] },
+        "targetSelection" -> targetSelection.map { x => x.asInstanceOf[js.Any] },
+        "targets" -> targets.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[OTAUpdateInfo]
     }
@@ -7464,20 +7464,20 @@ package iot {
    */
   @js.native
   trait OTAUpdateSummary extends js.Object {
-    var otaUpdateId: js.UndefOr[OTAUpdateId]
-    var otaUpdateArn: js.UndefOr[OTAUpdateArn]
     var creationDate: js.UndefOr[DateType]
+    var otaUpdateArn: js.UndefOr[OTAUpdateArn]
+    var otaUpdateId: js.UndefOr[OTAUpdateId]
   }
 
   object OTAUpdateSummary {
     def apply(
-      otaUpdateId: js.UndefOr[OTAUpdateId] = js.undefined,
+      creationDate: js.UndefOr[DateType] = js.undefined,
       otaUpdateArn: js.UndefOr[OTAUpdateArn] = js.undefined,
-      creationDate: js.UndefOr[DateType] = js.undefined): OTAUpdateSummary = {
+      otaUpdateId: js.UndefOr[OTAUpdateId] = js.undefined): OTAUpdateSummary = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "otaUpdateId" -> otaUpdateId.map { x => x.asInstanceOf[js.Any] },
+        "creationDate" -> creationDate.map { x => x.asInstanceOf[js.Any] },
         "otaUpdateArn" -> otaUpdateArn.map { x => x.asInstanceOf[js.Any] },
-        "creationDate" -> creationDate.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "otaUpdateId" -> otaUpdateId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[OTAUpdateSummary]
     }
@@ -7488,29 +7488,29 @@ package iot {
    */
   @js.native
   trait OutgoingCertificate extends js.Object {
-    var certificateId: js.UndefOr[CertificateId]
     var certificateArn: js.UndefOr[CertificateArn]
+    var certificateId: js.UndefOr[CertificateId]
+    var creationDate: js.UndefOr[DateType]
+    var transferDate: js.UndefOr[DateType]
     var transferMessage: js.UndefOr[Message]
     var transferredTo: js.UndefOr[AwsAccountId]
-    var transferDate: js.UndefOr[DateType]
-    var creationDate: js.UndefOr[DateType]
   }
 
   object OutgoingCertificate {
     def apply(
-      certificateId: js.UndefOr[CertificateId] = js.undefined,
       certificateArn: js.UndefOr[CertificateArn] = js.undefined,
-      transferMessage: js.UndefOr[Message] = js.undefined,
-      transferredTo: js.UndefOr[AwsAccountId] = js.undefined,
+      certificateId: js.UndefOr[CertificateId] = js.undefined,
+      creationDate: js.UndefOr[DateType] = js.undefined,
       transferDate: js.UndefOr[DateType] = js.undefined,
-      creationDate: js.UndefOr[DateType] = js.undefined): OutgoingCertificate = {
+      transferMessage: js.UndefOr[Message] = js.undefined,
+      transferredTo: js.UndefOr[AwsAccountId] = js.undefined): OutgoingCertificate = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "certificateId" -> certificateId.map { x => x.asInstanceOf[js.Any] },
         "certificateArn" -> certificateArn.map { x => x.asInstanceOf[js.Any] },
-        "transferMessage" -> transferMessage.map { x => x.asInstanceOf[js.Any] },
-        "transferredTo" -> transferredTo.map { x => x.asInstanceOf[js.Any] },
+        "certificateId" -> certificateId.map { x => x.asInstanceOf[js.Any] },
+        "creationDate" -> creationDate.map { x => x.asInstanceOf[js.Any] },
         "transferDate" -> transferDate.map { x => x.asInstanceOf[js.Any] },
-        "creationDate" -> creationDate.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "transferMessage" -> transferMessage.map { x => x.asInstanceOf[js.Any] },
+        "transferredTo" -> transferredTo.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[OutgoingCertificate]
     }
@@ -7521,17 +7521,17 @@ package iot {
    */
   @js.native
   trait Policy extends js.Object {
-    var policyName: js.UndefOr[PolicyName]
     var policyArn: js.UndefOr[PolicyArn]
+    var policyName: js.UndefOr[PolicyName]
   }
 
   object Policy {
     def apply(
-      policyName: js.UndefOr[PolicyName] = js.undefined,
-      policyArn: js.UndefOr[PolicyArn] = js.undefined): Policy = {
+      policyArn: js.UndefOr[PolicyArn] = js.undefined,
+      policyName: js.UndefOr[PolicyName] = js.undefined): Policy = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "policyName" -> policyName.map { x => x.asInstanceOf[js.Any] },
-        "policyArn" -> policyArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "policyArn" -> policyArn.map { x => x.asInstanceOf[js.Any] },
+        "policyName" -> policyName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Policy]
     }
@@ -7542,20 +7542,20 @@ package iot {
    */
   @js.native
   trait PolicyVersion extends js.Object {
-    var versionId: js.UndefOr[PolicyVersionId]
-    var isDefaultVersion: js.UndefOr[IsDefaultVersion]
     var createDate: js.UndefOr[DateType]
+    var isDefaultVersion: js.UndefOr[IsDefaultVersion]
+    var versionId: js.UndefOr[PolicyVersionId]
   }
 
   object PolicyVersion {
     def apply(
-      versionId: js.UndefOr[PolicyVersionId] = js.undefined,
+      createDate: js.UndefOr[DateType] = js.undefined,
       isDefaultVersion: js.UndefOr[IsDefaultVersion] = js.undefined,
-      createDate: js.UndefOr[DateType] = js.undefined): PolicyVersion = {
+      versionId: js.UndefOr[PolicyVersionId] = js.undefined): PolicyVersion = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "versionId" -> versionId.map { x => x.asInstanceOf[js.Any] },
+        "createDate" -> createDate.map { x => x.asInstanceOf[js.Any] },
         "isDefaultVersion" -> isDefaultVersion.map { x => x.asInstanceOf[js.Any] },
-        "createDate" -> createDate.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "versionId" -> versionId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PolicyVersion]
     }
@@ -7587,17 +7587,17 @@ package iot {
    */
   @js.native
   trait PresignedUrlConfig extends js.Object {
-    var roleArn: js.UndefOr[RoleArn]
     var expiresInSec: js.UndefOr[ExpiresInSec]
+    var roleArn: js.UndefOr[RoleArn]
   }
 
   object PresignedUrlConfig {
     def apply(
-      roleArn: js.UndefOr[RoleArn] = js.undefined,
-      expiresInSec: js.UndefOr[ExpiresInSec] = js.undefined): PresignedUrlConfig = {
+      expiresInSec: js.UndefOr[ExpiresInSec] = js.undefined,
+      roleArn: js.UndefOr[RoleArn] = js.undefined): PresignedUrlConfig = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "roleArn" -> roleArn.map { x => x.asInstanceOf[js.Any] },
-        "expiresInSec" -> expiresInSec.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "expiresInSec" -> expiresInSec.map { x => x.asInstanceOf[js.Any] },
+        "roleArn" -> roleArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PresignedUrlConfig]
     }
@@ -7608,14 +7608,14 @@ package iot {
    */
   @js.native
   trait PutItemInput extends js.Object {
-    var tableName: js.UndefOr[TableName]
+    var tableName: TableName
   }
 
   object PutItemInput {
     def apply(
-      tableName: js.UndefOr[TableName] = js.undefined): PutItemInput = {
+      tableName: TableName): PutItemInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "tableName" -> tableName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "tableName" -> tableName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutItemInput]
     }
@@ -7647,26 +7647,26 @@ package iot {
    */
   @js.native
   trait RegisterCACertificateRequest extends js.Object {
-    var setAsActive: js.UndefOr[SetAsActive]
-    var verificationCertificate: js.UndefOr[CertificatePem]
-    var caCertificate: js.UndefOr[CertificatePem]
-    var registrationConfig: js.UndefOr[RegistrationConfig]
+    var caCertificate: CertificatePem
+    var verificationCertificate: CertificatePem
     var allowAutoRegistration: js.UndefOr[AllowAutoRegistration]
+    var registrationConfig: js.UndefOr[RegistrationConfig]
+    var setAsActive: js.UndefOr[SetAsActive]
   }
 
   object RegisterCACertificateRequest {
     def apply(
-      setAsActive: js.UndefOr[SetAsActive] = js.undefined,
-      verificationCertificate: js.UndefOr[CertificatePem] = js.undefined,
-      caCertificate: js.UndefOr[CertificatePem] = js.undefined,
+      caCertificate: CertificatePem,
+      verificationCertificate: CertificatePem,
+      allowAutoRegistration: js.UndefOr[AllowAutoRegistration] = js.undefined,
       registrationConfig: js.UndefOr[RegistrationConfig] = js.undefined,
-      allowAutoRegistration: js.UndefOr[AllowAutoRegistration] = js.undefined): RegisterCACertificateRequest = {
+      setAsActive: js.UndefOr[SetAsActive] = js.undefined): RegisterCACertificateRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "setAsActive" -> setAsActive.map { x => x.asInstanceOf[js.Any] },
-        "verificationCertificate" -> verificationCertificate.map { x => x.asInstanceOf[js.Any] },
-        "caCertificate" -> caCertificate.map { x => x.asInstanceOf[js.Any] },
+        "caCertificate" -> caCertificate.asInstanceOf[js.Any],
+        "verificationCertificate" -> verificationCertificate.asInstanceOf[js.Any],
+        "allowAutoRegistration" -> allowAutoRegistration.map { x => x.asInstanceOf[js.Any] },
         "registrationConfig" -> registrationConfig.map { x => x.asInstanceOf[js.Any] },
-        "allowAutoRegistration" -> allowAutoRegistration.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "setAsActive" -> setAsActive.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RegisterCACertificateRequest]
     }
@@ -7698,7 +7698,7 @@ package iot {
    */
   @js.native
   trait RegisterCertificateRequest extends js.Object {
-    var certificatePem: js.UndefOr[CertificatePem]
+    var certificatePem: CertificatePem
     var caCertificatePem: js.UndefOr[CertificatePem]
     var setAsActive: js.UndefOr[SetAsActiveFlag]
     var status: js.UndefOr[CertificateStatus]
@@ -7706,12 +7706,12 @@ package iot {
 
   object RegisterCertificateRequest {
     def apply(
-      certificatePem: js.UndefOr[CertificatePem] = js.undefined,
+      certificatePem: CertificatePem,
       caCertificatePem: js.UndefOr[CertificatePem] = js.undefined,
       setAsActive: js.UndefOr[SetAsActiveFlag] = js.undefined,
       status: js.UndefOr[CertificateStatus] = js.undefined): RegisterCertificateRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "certificatePem" -> certificatePem.map { x => x.asInstanceOf[js.Any] },
+        "certificatePem" -> certificatePem.asInstanceOf[js.Any],
         "caCertificatePem" -> caCertificatePem.map { x => x.asInstanceOf[js.Any] },
         "setAsActive" -> setAsActive.map { x => x.asInstanceOf[js.Any] },
         "status" -> status.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
@@ -7743,16 +7743,16 @@ package iot {
 
   @js.native
   trait RegisterThingRequest extends js.Object {
-    var templateBody: js.UndefOr[TemplateBody]
+    var templateBody: TemplateBody
     var parameters: js.UndefOr[Parameters]
   }
 
   object RegisterThingRequest {
     def apply(
-      templateBody: js.UndefOr[TemplateBody] = js.undefined,
+      templateBody: TemplateBody,
       parameters: js.UndefOr[Parameters] = js.undefined): RegisterThingRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "templateBody" -> templateBody.map { x => x.asInstanceOf[js.Any] },
+        "templateBody" -> templateBody.asInstanceOf[js.Any],
         "parameters" -> parameters.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RegisterThingRequest]
@@ -7782,17 +7782,17 @@ package iot {
    */
   @js.native
   trait RegistrationConfig extends js.Object {
-    var templateBody: js.UndefOr[TemplateBody]
     var roleArn: js.UndefOr[RoleArn]
+    var templateBody: js.UndefOr[TemplateBody]
   }
 
   object RegistrationConfig {
     def apply(
-      templateBody: js.UndefOr[TemplateBody] = js.undefined,
-      roleArn: js.UndefOr[RoleArn] = js.undefined): RegistrationConfig = {
+      roleArn: js.UndefOr[RoleArn] = js.undefined,
+      templateBody: js.UndefOr[TemplateBody] = js.undefined): RegistrationConfig = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "templateBody" -> templateBody.map { x => x.asInstanceOf[js.Any] },
-        "roleArn" -> roleArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "roleArn" -> roleArn.map { x => x.asInstanceOf[js.Any] },
+        "templateBody" -> templateBody.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RegistrationConfig]
     }
@@ -7803,16 +7803,16 @@ package iot {
    */
   @js.native
   trait RejectCertificateTransferRequest extends js.Object {
-    var certificateId: js.UndefOr[CertificateId]
+    var certificateId: CertificateId
     var rejectReason: js.UndefOr[Message]
   }
 
   object RejectCertificateTransferRequest {
     def apply(
-      certificateId: js.UndefOr[CertificateId] = js.undefined,
+      certificateId: CertificateId,
       rejectReason: js.UndefOr[Message] = js.undefined): RejectCertificateTransferRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "certificateId" -> certificateId.map { x => x.asInstanceOf[js.Any] },
+        "certificateId" -> certificateId.asInstanceOf[js.Any],
         "rejectReason" -> rejectReason.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RejectCertificateTransferRequest]
@@ -7824,20 +7824,20 @@ package iot {
    */
   @js.native
   trait RelatedResource extends js.Object {
-    var resourceType: js.UndefOr[ResourceType]
-    var resourceIdentifier: js.UndefOr[ResourceIdentifier]
     var additionalInfo: js.UndefOr[StringMap]
+    var resourceIdentifier: js.UndefOr[ResourceIdentifier]
+    var resourceType: js.UndefOr[ResourceType]
   }
 
   object RelatedResource {
     def apply(
-      resourceType: js.UndefOr[ResourceType] = js.undefined,
+      additionalInfo: js.UndefOr[StringMap] = js.undefined,
       resourceIdentifier: js.UndefOr[ResourceIdentifier] = js.undefined,
-      additionalInfo: js.UndefOr[StringMap] = js.undefined): RelatedResource = {
+      resourceType: js.UndefOr[ResourceType] = js.undefined): RelatedResource = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "resourceType" -> resourceType.map { x => x.asInstanceOf[js.Any] },
+        "additionalInfo" -> additionalInfo.map { x => x.asInstanceOf[js.Any] },
         "resourceIdentifier" -> resourceIdentifier.map { x => x.asInstanceOf[js.Any] },
-        "additionalInfo" -> additionalInfo.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "resourceType" -> resourceType.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RelatedResource]
     }
@@ -7845,23 +7845,23 @@ package iot {
 
   @js.native
   trait RemoveThingFromBillingGroupRequest extends js.Object {
-    var billingGroupName: js.UndefOr[BillingGroupName]
     var billingGroupArn: js.UndefOr[BillingGroupArn]
-    var thingName: js.UndefOr[ThingName]
+    var billingGroupName: js.UndefOr[BillingGroupName]
     var thingArn: js.UndefOr[ThingArn]
+    var thingName: js.UndefOr[ThingName]
   }
 
   object RemoveThingFromBillingGroupRequest {
     def apply(
-      billingGroupName: js.UndefOr[BillingGroupName] = js.undefined,
       billingGroupArn: js.UndefOr[BillingGroupArn] = js.undefined,
-      thingName: js.UndefOr[ThingName] = js.undefined,
-      thingArn: js.UndefOr[ThingArn] = js.undefined): RemoveThingFromBillingGroupRequest = {
+      billingGroupName: js.UndefOr[BillingGroupName] = js.undefined,
+      thingArn: js.UndefOr[ThingArn] = js.undefined,
+      thingName: js.UndefOr[ThingName] = js.undefined): RemoveThingFromBillingGroupRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "billingGroupName" -> billingGroupName.map { x => x.asInstanceOf[js.Any] },
         "billingGroupArn" -> billingGroupArn.map { x => x.asInstanceOf[js.Any] },
-        "thingName" -> thingName.map { x => x.asInstanceOf[js.Any] },
-        "thingArn" -> thingArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "billingGroupName" -> billingGroupName.map { x => x.asInstanceOf[js.Any] },
+        "thingArn" -> thingArn.map { x => x.asInstanceOf[js.Any] },
+        "thingName" -> thingName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RemoveThingFromBillingGroupRequest]
     }
@@ -7882,23 +7882,23 @@ package iot {
 
   @js.native
   trait RemoveThingFromThingGroupRequest extends js.Object {
-    var thingGroupName: js.UndefOr[ThingGroupName]
-    var thingGroupArn: js.UndefOr[ThingGroupArn]
-    var thingName: js.UndefOr[ThingName]
     var thingArn: js.UndefOr[ThingArn]
+    var thingGroupArn: js.UndefOr[ThingGroupArn]
+    var thingGroupName: js.UndefOr[ThingGroupName]
+    var thingName: js.UndefOr[ThingName]
   }
 
   object RemoveThingFromThingGroupRequest {
     def apply(
-      thingGroupName: js.UndefOr[ThingGroupName] = js.undefined,
+      thingArn: js.UndefOr[ThingArn] = js.undefined,
       thingGroupArn: js.UndefOr[ThingGroupArn] = js.undefined,
-      thingName: js.UndefOr[ThingName] = js.undefined,
-      thingArn: js.UndefOr[ThingArn] = js.undefined): RemoveThingFromThingGroupRequest = {
+      thingGroupName: js.UndefOr[ThingGroupName] = js.undefined,
+      thingName: js.UndefOr[ThingName] = js.undefined): RemoveThingFromThingGroupRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "thingGroupName" -> thingGroupName.map { x => x.asInstanceOf[js.Any] },
+        "thingArn" -> thingArn.map { x => x.asInstanceOf[js.Any] },
         "thingGroupArn" -> thingGroupArn.map { x => x.asInstanceOf[js.Any] },
-        "thingName" -> thingName.map { x => x.asInstanceOf[js.Any] },
-        "thingArn" -> thingArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "thingGroupName" -> thingGroupName.map { x => x.asInstanceOf[js.Any] },
+        "thingName" -> thingName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RemoveThingFromThingGroupRequest]
     }
@@ -7922,17 +7922,17 @@ package iot {
    */
   @js.native
   trait ReplaceTopicRuleRequest extends js.Object {
-    var ruleName: js.UndefOr[RuleName]
-    var topicRulePayload: js.UndefOr[TopicRulePayload]
+    var ruleName: RuleName
+    var topicRulePayload: TopicRulePayload
   }
 
   object ReplaceTopicRuleRequest {
     def apply(
-      ruleName: js.UndefOr[RuleName] = js.undefined,
-      topicRulePayload: js.UndefOr[TopicRulePayload] = js.undefined): ReplaceTopicRuleRequest = {
+      ruleName: RuleName,
+      topicRulePayload: TopicRulePayload): ReplaceTopicRuleRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ruleName" -> ruleName.map { x => x.asInstanceOf[js.Any] },
-        "topicRulePayload" -> topicRulePayload.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ruleName" -> ruleName.asInstanceOf[js.Any],
+        "topicRulePayload" -> topicRulePayload.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ReplaceTopicRuleRequest]
     }
@@ -7950,17 +7950,17 @@ package iot {
    */
   @js.native
   trait RepublishAction extends js.Object {
-    var roleArn: js.UndefOr[AwsArn]
-    var topic: js.UndefOr[TopicPattern]
+    var roleArn: AwsArn
+    var topic: TopicPattern
   }
 
   object RepublishAction {
     def apply(
-      roleArn: js.UndefOr[AwsArn] = js.undefined,
-      topic: js.UndefOr[TopicPattern] = js.undefined): RepublishAction = {
+      roleArn: AwsArn,
+      topic: TopicPattern): RepublishAction = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "roleArn" -> roleArn.map { x => x.asInstanceOf[js.Any] },
-        "topic" -> topic.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "roleArn" -> roleArn.asInstanceOf[js.Any],
+        "topic" -> topic.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RepublishAction]
     }
@@ -7971,29 +7971,29 @@ package iot {
    */
   @js.native
   trait ResourceIdentifier extends js.Object {
-    var clientId: js.UndefOr[ClientId]
-    var policyVersionIdentifier: js.UndefOr[PolicyVersionIdentifier]
-    var cognitoIdentityPoolId: js.UndefOr[CognitoIdentityPoolId]
-    var caCertificateId: js.UndefOr[CertificateId]
     var account: js.UndefOr[AwsAccountId]
+    var caCertificateId: js.UndefOr[CertificateId]
+    var clientId: js.UndefOr[ClientId]
+    var cognitoIdentityPoolId: js.UndefOr[CognitoIdentityPoolId]
     var deviceCertificateId: js.UndefOr[CertificateId]
+    var policyVersionIdentifier: js.UndefOr[PolicyVersionIdentifier]
   }
 
   object ResourceIdentifier {
     def apply(
-      clientId: js.UndefOr[ClientId] = js.undefined,
-      policyVersionIdentifier: js.UndefOr[PolicyVersionIdentifier] = js.undefined,
-      cognitoIdentityPoolId: js.UndefOr[CognitoIdentityPoolId] = js.undefined,
-      caCertificateId: js.UndefOr[CertificateId] = js.undefined,
       account: js.UndefOr[AwsAccountId] = js.undefined,
-      deviceCertificateId: js.UndefOr[CertificateId] = js.undefined): ResourceIdentifier = {
+      caCertificateId: js.UndefOr[CertificateId] = js.undefined,
+      clientId: js.UndefOr[ClientId] = js.undefined,
+      cognitoIdentityPoolId: js.UndefOr[CognitoIdentityPoolId] = js.undefined,
+      deviceCertificateId: js.UndefOr[CertificateId] = js.undefined,
+      policyVersionIdentifier: js.UndefOr[PolicyVersionIdentifier] = js.undefined): ResourceIdentifier = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "clientId" -> clientId.map { x => x.asInstanceOf[js.Any] },
-        "policyVersionIdentifier" -> policyVersionIdentifier.map { x => x.asInstanceOf[js.Any] },
-        "cognitoIdentityPoolId" -> cognitoIdentityPoolId.map { x => x.asInstanceOf[js.Any] },
-        "caCertificateId" -> caCertificateId.map { x => x.asInstanceOf[js.Any] },
         "account" -> account.map { x => x.asInstanceOf[js.Any] },
-        "deviceCertificateId" -> deviceCertificateId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "caCertificateId" -> caCertificateId.map { x => x.asInstanceOf[js.Any] },
+        "clientId" -> clientId.map { x => x.asInstanceOf[js.Any] },
+        "cognitoIdentityPoolId" -> cognitoIdentityPoolId.map { x => x.asInstanceOf[js.Any] },
+        "deviceCertificateId" -> deviceCertificateId.map { x => x.asInstanceOf[js.Any] },
+        "policyVersionIdentifier" -> policyVersionIdentifier.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ResourceIdentifier]
     }
@@ -8015,32 +8015,32 @@ package iot {
    */
   @js.native
   trait RoleAliasDescription extends js.Object {
+    var creationDate: js.UndefOr[DateType]
     var credentialDurationSeconds: js.UndefOr[CredentialDurationSeconds]
     var lastModifiedDate: js.UndefOr[DateType]
-    var roleAlias: js.UndefOr[RoleAlias]
-    var roleArn: js.UndefOr[RoleArn]
-    var roleAliasArn: js.UndefOr[RoleAliasArn]
-    var creationDate: js.UndefOr[DateType]
     var owner: js.UndefOr[AwsAccountId]
+    var roleAlias: js.UndefOr[RoleAlias]
+    var roleAliasArn: js.UndefOr[RoleAliasArn]
+    var roleArn: js.UndefOr[RoleArn]
   }
 
   object RoleAliasDescription {
     def apply(
+      creationDate: js.UndefOr[DateType] = js.undefined,
       credentialDurationSeconds: js.UndefOr[CredentialDurationSeconds] = js.undefined,
       lastModifiedDate: js.UndefOr[DateType] = js.undefined,
+      owner: js.UndefOr[AwsAccountId] = js.undefined,
       roleAlias: js.UndefOr[RoleAlias] = js.undefined,
-      roleArn: js.UndefOr[RoleArn] = js.undefined,
       roleAliasArn: js.UndefOr[RoleAliasArn] = js.undefined,
-      creationDate: js.UndefOr[DateType] = js.undefined,
-      owner: js.UndefOr[AwsAccountId] = js.undefined): RoleAliasDescription = {
+      roleArn: js.UndefOr[RoleArn] = js.undefined): RoleAliasDescription = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "creationDate" -> creationDate.map { x => x.asInstanceOf[js.Any] },
         "credentialDurationSeconds" -> credentialDurationSeconds.map { x => x.asInstanceOf[js.Any] },
         "lastModifiedDate" -> lastModifiedDate.map { x => x.asInstanceOf[js.Any] },
+        "owner" -> owner.map { x => x.asInstanceOf[js.Any] },
         "roleAlias" -> roleAlias.map { x => x.asInstanceOf[js.Any] },
-        "roleArn" -> roleArn.map { x => x.asInstanceOf[js.Any] },
         "roleAliasArn" -> roleAliasArn.map { x => x.asInstanceOf[js.Any] },
-        "creationDate" -> creationDate.map { x => x.asInstanceOf[js.Any] },
-        "owner" -> owner.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "roleArn" -> roleArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RoleAliasDescription]
     }
@@ -8051,22 +8051,22 @@ package iot {
    */
   @js.native
   trait S3Action extends js.Object {
-    var roleArn: js.UndefOr[AwsArn]
-    var bucketName: js.UndefOr[BucketName]
-    var key: js.UndefOr[Key]
+    var bucketName: BucketName
+    var key: Key
+    var roleArn: AwsArn
     var cannedAcl: js.UndefOr[CannedAccessControlList]
   }
 
   object S3Action {
     def apply(
-      roleArn: js.UndefOr[AwsArn] = js.undefined,
-      bucketName: js.UndefOr[BucketName] = js.undefined,
-      key: js.UndefOr[Key] = js.undefined,
+      bucketName: BucketName,
+      key: Key,
+      roleArn: AwsArn,
       cannedAcl: js.UndefOr[CannedAccessControlList] = js.undefined): S3Action = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "roleArn" -> roleArn.map { x => x.asInstanceOf[js.Any] },
-        "bucketName" -> bucketName.map { x => x.asInstanceOf[js.Any] },
-        "key" -> key.map { x => x.asInstanceOf[js.Any] },
+        "bucketName" -> bucketName.asInstanceOf[js.Any],
+        "key" -> key.asInstanceOf[js.Any],
+        "roleArn" -> roleArn.asInstanceOf[js.Any],
         "cannedAcl" -> cannedAcl.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[S3Action]
@@ -8123,17 +8123,17 @@ package iot {
    */
   @js.native
   trait SalesforceAction extends js.Object {
-    var token: js.UndefOr[SalesforceToken]
-    var url: js.UndefOr[SalesforceEndpoint]
+    var token: SalesforceToken
+    var url: SalesforceEndpoint
   }
 
   object SalesforceAction {
     def apply(
-      token: js.UndefOr[SalesforceToken] = js.undefined,
-      url: js.UndefOr[SalesforceEndpoint] = js.undefined): SalesforceAction = {
+      token: SalesforceToken,
+      url: SalesforceEndpoint): SalesforceAction = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "token" -> token.map { x => x.asInstanceOf[js.Any] },
-        "url" -> url.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "token" -> token.asInstanceOf[js.Any],
+        "url" -> url.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SalesforceAction]
     }
@@ -8144,26 +8144,26 @@ package iot {
    */
   @js.native
   trait ScheduledAuditMetadata extends js.Object {
-    var scheduledAuditName: js.UndefOr[ScheduledAuditName]
-    var dayOfWeek: js.UndefOr[DayOfWeek]
     var dayOfMonth: js.UndefOr[DayOfMonth]
-    var scheduledAuditArn: js.UndefOr[ScheduledAuditArn]
+    var dayOfWeek: js.UndefOr[DayOfWeek]
     var frequency: js.UndefOr[AuditFrequency]
+    var scheduledAuditArn: js.UndefOr[ScheduledAuditArn]
+    var scheduledAuditName: js.UndefOr[ScheduledAuditName]
   }
 
   object ScheduledAuditMetadata {
     def apply(
-      scheduledAuditName: js.UndefOr[ScheduledAuditName] = js.undefined,
-      dayOfWeek: js.UndefOr[DayOfWeek] = js.undefined,
       dayOfMonth: js.UndefOr[DayOfMonth] = js.undefined,
+      dayOfWeek: js.UndefOr[DayOfWeek] = js.undefined,
+      frequency: js.UndefOr[AuditFrequency] = js.undefined,
       scheduledAuditArn: js.UndefOr[ScheduledAuditArn] = js.undefined,
-      frequency: js.UndefOr[AuditFrequency] = js.undefined): ScheduledAuditMetadata = {
+      scheduledAuditName: js.UndefOr[ScheduledAuditName] = js.undefined): ScheduledAuditMetadata = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "scheduledAuditName" -> scheduledAuditName.map { x => x.asInstanceOf[js.Any] },
-        "dayOfWeek" -> dayOfWeek.map { x => x.asInstanceOf[js.Any] },
         "dayOfMonth" -> dayOfMonth.map { x => x.asInstanceOf[js.Any] },
+        "dayOfWeek" -> dayOfWeek.map { x => x.asInstanceOf[js.Any] },
+        "frequency" -> frequency.map { x => x.asInstanceOf[js.Any] },
         "scheduledAuditArn" -> scheduledAuditArn.map { x => x.asInstanceOf[js.Any] },
-        "frequency" -> frequency.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "scheduledAuditName" -> scheduledAuditName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ScheduledAuditMetadata]
     }
@@ -8171,25 +8171,25 @@ package iot {
 
   @js.native
   trait SearchIndexRequest extends js.Object {
+    var queryString: QueryString
+    var indexName: js.UndefOr[IndexName]
     var maxResults: js.UndefOr[QueryMaxResults]
     var nextToken: js.UndefOr[NextToken]
-    var queryString: js.UndefOr[QueryString]
-    var indexName: js.UndefOr[IndexName]
     var queryVersion: js.UndefOr[QueryVersion]
   }
 
   object SearchIndexRequest {
     def apply(
+      queryString: QueryString,
+      indexName: js.UndefOr[IndexName] = js.undefined,
       maxResults: js.UndefOr[QueryMaxResults] = js.undefined,
       nextToken: js.UndefOr[NextToken] = js.undefined,
-      queryString: js.UndefOr[QueryString] = js.undefined,
-      indexName: js.UndefOr[IndexName] = js.undefined,
       queryVersion: js.UndefOr[QueryVersion] = js.undefined): SearchIndexRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "queryString" -> queryString.asInstanceOf[js.Any],
+        "indexName" -> indexName.map { x => x.asInstanceOf[js.Any] },
         "maxResults" -> maxResults.map { x => x.asInstanceOf[js.Any] },
         "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] },
-        "queryString" -> queryString.map { x => x.asInstanceOf[js.Any] },
-        "indexName" -> indexName.map { x => x.asInstanceOf[js.Any] },
         "queryVersion" -> queryVersion.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SearchIndexRequest]
@@ -8199,19 +8199,19 @@ package iot {
   @js.native
   trait SearchIndexResponse extends js.Object {
     var nextToken: js.UndefOr[NextToken]
-    var things: js.UndefOr[ThingDocumentList]
     var thingGroups: js.UndefOr[ThingGroupDocumentList]
+    var things: js.UndefOr[ThingDocumentList]
   }
 
   object SearchIndexResponse {
     def apply(
       nextToken: js.UndefOr[NextToken] = js.undefined,
-      things: js.UndefOr[ThingDocumentList] = js.undefined,
-      thingGroups: js.UndefOr[ThingGroupDocumentList] = js.undefined): SearchIndexResponse = {
+      thingGroups: js.UndefOr[ThingGroupDocumentList] = js.undefined,
+      things: js.UndefOr[ThingDocumentList] = js.undefined): SearchIndexResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
         "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] },
-        "things" -> things.map { x => x.asInstanceOf[js.Any] },
-        "thingGroups" -> thingGroups.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "thingGroups" -> thingGroups.map { x => x.asInstanceOf[js.Any] },
+        "things" -> things.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SearchIndexResponse]
     }
@@ -8222,17 +8222,17 @@ package iot {
    */
   @js.native
   trait SecurityProfileIdentifier extends js.Object {
-    var name: js.UndefOr[SecurityProfileName]
-    var arn: js.UndefOr[SecurityProfileArn]
+    var arn: SecurityProfileArn
+    var name: SecurityProfileName
   }
 
   object SecurityProfileIdentifier {
     def apply(
-      name: js.UndefOr[SecurityProfileName] = js.undefined,
-      arn: js.UndefOr[SecurityProfileArn] = js.undefined): SecurityProfileIdentifier = {
+      arn: SecurityProfileArn,
+      name: SecurityProfileName): SecurityProfileIdentifier = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "name" -> name.map { x => x.asInstanceOf[js.Any] },
-        "arn" -> arn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "arn" -> arn.asInstanceOf[js.Any],
+        "name" -> name.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SecurityProfileIdentifier]
     }
@@ -8243,14 +8243,14 @@ package iot {
    */
   @js.native
   trait SecurityProfileTarget extends js.Object {
-    var arn: js.UndefOr[SecurityProfileTargetArn]
+    var arn: SecurityProfileTargetArn
   }
 
   object SecurityProfileTarget {
     def apply(
-      arn: js.UndefOr[SecurityProfileTargetArn] = js.undefined): SecurityProfileTarget = {
+      arn: SecurityProfileTargetArn): SecurityProfileTarget = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "arn" -> arn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "arn" -> arn.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SecurityProfileTarget]
     }
@@ -8279,14 +8279,14 @@ package iot {
 
   @js.native
   trait SetDefaultAuthorizerRequest extends js.Object {
-    var authorizerName: js.UndefOr[AuthorizerName]
+    var authorizerName: AuthorizerName
   }
 
   object SetDefaultAuthorizerRequest {
     def apply(
-      authorizerName: js.UndefOr[AuthorizerName] = js.undefined): SetDefaultAuthorizerRequest = {
+      authorizerName: AuthorizerName): SetDefaultAuthorizerRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "authorizerName" -> authorizerName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "authorizerName" -> authorizerName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SetDefaultAuthorizerRequest]
     }
@@ -8294,17 +8294,17 @@ package iot {
 
   @js.native
   trait SetDefaultAuthorizerResponse extends js.Object {
-    var authorizerName: js.UndefOr[AuthorizerName]
     var authorizerArn: js.UndefOr[AuthorizerArn]
+    var authorizerName: js.UndefOr[AuthorizerName]
   }
 
   object SetDefaultAuthorizerResponse {
     def apply(
-      authorizerName: js.UndefOr[AuthorizerName] = js.undefined,
-      authorizerArn: js.UndefOr[AuthorizerArn] = js.undefined): SetDefaultAuthorizerResponse = {
+      authorizerArn: js.UndefOr[AuthorizerArn] = js.undefined,
+      authorizerName: js.UndefOr[AuthorizerName] = js.undefined): SetDefaultAuthorizerResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "authorizerName" -> authorizerName.map { x => x.asInstanceOf[js.Any] },
-        "authorizerArn" -> authorizerArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "authorizerArn" -> authorizerArn.map { x => x.asInstanceOf[js.Any] },
+        "authorizerName" -> authorizerName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SetDefaultAuthorizerResponse]
     }
@@ -8315,17 +8315,17 @@ package iot {
    */
   @js.native
   trait SetDefaultPolicyVersionRequest extends js.Object {
-    var policyName: js.UndefOr[PolicyName]
-    var policyVersionId: js.UndefOr[PolicyVersionId]
+    var policyName: PolicyName
+    var policyVersionId: PolicyVersionId
   }
 
   object SetDefaultPolicyVersionRequest {
     def apply(
-      policyName: js.UndefOr[PolicyName] = js.undefined,
-      policyVersionId: js.UndefOr[PolicyVersionId] = js.undefined): SetDefaultPolicyVersionRequest = {
+      policyName: PolicyName,
+      policyVersionId: PolicyVersionId): SetDefaultPolicyVersionRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "policyName" -> policyName.map { x => x.asInstanceOf[js.Any] },
-        "policyVersionId" -> policyVersionId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "policyName" -> policyName.asInstanceOf[js.Any],
+        "policyVersionId" -> policyVersionId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SetDefaultPolicyVersionRequest]
     }
@@ -8336,14 +8336,14 @@ package iot {
    */
   @js.native
   trait SetLoggingOptionsRequest extends js.Object {
-    var loggingOptionsPayload: js.UndefOr[LoggingOptionsPayload]
+    var loggingOptionsPayload: LoggingOptionsPayload
   }
 
   object SetLoggingOptionsRequest {
     def apply(
-      loggingOptionsPayload: js.UndefOr[LoggingOptionsPayload] = js.undefined): SetLoggingOptionsRequest = {
+      loggingOptionsPayload: LoggingOptionsPayload): SetLoggingOptionsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "loggingOptionsPayload" -> loggingOptionsPayload.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "loggingOptionsPayload" -> loggingOptionsPayload.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SetLoggingOptionsRequest]
     }
@@ -8351,17 +8351,17 @@ package iot {
 
   @js.native
   trait SetV2LoggingLevelRequest extends js.Object {
-    var logTarget: js.UndefOr[LogTarget]
-    var logLevel: js.UndefOr[LogLevel]
+    var logLevel: LogLevel
+    var logTarget: LogTarget
   }
 
   object SetV2LoggingLevelRequest {
     def apply(
-      logTarget: js.UndefOr[LogTarget] = js.undefined,
-      logLevel: js.UndefOr[LogLevel] = js.undefined): SetV2LoggingLevelRequest = {
+      logLevel: LogLevel,
+      logTarget: LogTarget): SetV2LoggingLevelRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "logTarget" -> logTarget.map { x => x.asInstanceOf[js.Any] },
-        "logLevel" -> logLevel.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "logLevel" -> logLevel.asInstanceOf[js.Any],
+        "logTarget" -> logTarget.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SetV2LoggingLevelRequest]
     }
@@ -8369,20 +8369,20 @@ package iot {
 
   @js.native
   trait SetV2LoggingOptionsRequest extends js.Object {
-    var roleArn: js.UndefOr[AwsArn]
     var defaultLogLevel: js.UndefOr[LogLevel]
     var disableAllLogs: js.UndefOr[DisableAllLogs]
+    var roleArn: js.UndefOr[AwsArn]
   }
 
   object SetV2LoggingOptionsRequest {
     def apply(
-      roleArn: js.UndefOr[AwsArn] = js.undefined,
       defaultLogLevel: js.UndefOr[LogLevel] = js.undefined,
-      disableAllLogs: js.UndefOr[DisableAllLogs] = js.undefined): SetV2LoggingOptionsRequest = {
+      disableAllLogs: js.UndefOr[DisableAllLogs] = js.undefined,
+      roleArn: js.UndefOr[AwsArn] = js.undefined): SetV2LoggingOptionsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "roleArn" -> roleArn.map { x => x.asInstanceOf[js.Any] },
         "defaultLogLevel" -> defaultLogLevel.map { x => x.asInstanceOf[js.Any] },
-        "disableAllLogs" -> disableAllLogs.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "disableAllLogs" -> disableAllLogs.map { x => x.asInstanceOf[js.Any] },
+        "roleArn" -> roleArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SetV2LoggingOptionsRequest]
     }
@@ -8394,19 +8394,19 @@ package iot {
   @js.native
   trait SigningProfileParameter extends js.Object {
     var certificateArn: js.UndefOr[CertificateArn]
-    var platform: js.UndefOr[Platform]
     var certificatePathOnDevice: js.UndefOr[CertificatePathOnDevice]
+    var platform: js.UndefOr[Platform]
   }
 
   object SigningProfileParameter {
     def apply(
       certificateArn: js.UndefOr[CertificateArn] = js.undefined,
-      platform: js.UndefOr[Platform] = js.undefined,
-      certificatePathOnDevice: js.UndefOr[CertificatePathOnDevice] = js.undefined): SigningProfileParameter = {
+      certificatePathOnDevice: js.UndefOr[CertificatePathOnDevice] = js.undefined,
+      platform: js.UndefOr[Platform] = js.undefined): SigningProfileParameter = {
       val _fields = IndexedSeq[(String, js.Any)](
         "certificateArn" -> certificateArn.map { x => x.asInstanceOf[js.Any] },
-        "platform" -> platform.map { x => x.asInstanceOf[js.Any] },
-        "certificatePathOnDevice" -> certificatePathOnDevice.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "certificatePathOnDevice" -> certificatePathOnDevice.map { x => x.asInstanceOf[js.Any] },
+        "platform" -> platform.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SigningProfileParameter]
     }
@@ -8417,19 +8417,19 @@ package iot {
    */
   @js.native
   trait SnsAction extends js.Object {
-    var targetArn: js.UndefOr[AwsArn]
-    var roleArn: js.UndefOr[AwsArn]
+    var roleArn: AwsArn
+    var targetArn: AwsArn
     var messageFormat: js.UndefOr[MessageFormat]
   }
 
   object SnsAction {
     def apply(
-      targetArn: js.UndefOr[AwsArn] = js.undefined,
-      roleArn: js.UndefOr[AwsArn] = js.undefined,
+      roleArn: AwsArn,
+      targetArn: AwsArn,
       messageFormat: js.UndefOr[MessageFormat] = js.undefined): SnsAction = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "targetArn" -> targetArn.map { x => x.asInstanceOf[js.Any] },
-        "roleArn" -> roleArn.map { x => x.asInstanceOf[js.Any] },
+        "roleArn" -> roleArn.asInstanceOf[js.Any],
+        "targetArn" -> targetArn.asInstanceOf[js.Any],
         "messageFormat" -> messageFormat.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SnsAction]
@@ -8441,19 +8441,19 @@ package iot {
    */
   @js.native
   trait SqsAction extends js.Object {
-    var roleArn: js.UndefOr[AwsArn]
-    var queueUrl: js.UndefOr[QueueUrl]
+    var queueUrl: QueueUrl
+    var roleArn: AwsArn
     var useBase64: js.UndefOr[UseBase64]
   }
 
   object SqsAction {
     def apply(
-      roleArn: js.UndefOr[AwsArn] = js.undefined,
-      queueUrl: js.UndefOr[QueueUrl] = js.undefined,
+      queueUrl: QueueUrl,
+      roleArn: AwsArn,
       useBase64: js.UndefOr[UseBase64] = js.undefined): SqsAction = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "roleArn" -> roleArn.map { x => x.asInstanceOf[js.Any] },
-        "queueUrl" -> queueUrl.map { x => x.asInstanceOf[js.Any] },
+        "queueUrl" -> queueUrl.asInstanceOf[js.Any],
+        "roleArn" -> roleArn.asInstanceOf[js.Any],
         "useBase64" -> useBase64.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SqsAction]
@@ -8462,14 +8462,14 @@ package iot {
 
   @js.native
   trait StartOnDemandAuditTaskRequest extends js.Object {
-    var targetCheckNames: js.UndefOr[TargetAuditCheckNames]
+    var targetCheckNames: TargetAuditCheckNames
   }
 
   object StartOnDemandAuditTaskRequest {
     def apply(
-      targetCheckNames: js.UndefOr[TargetAuditCheckNames] = js.undefined): StartOnDemandAuditTaskRequest = {
+      targetCheckNames: TargetAuditCheckNames): StartOnDemandAuditTaskRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "targetCheckNames" -> targetCheckNames.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "targetCheckNames" -> targetCheckNames.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StartOnDemandAuditTaskRequest]
     }
@@ -8495,20 +8495,20 @@ package iot {
    */
   @js.native
   trait StartSigningJobParameter extends js.Object {
-    var signingProfileParameter: js.UndefOr[SigningProfileParameter]
-    var signingProfileName: js.UndefOr[SigningProfileName]
     var destination: js.UndefOr[Destination]
+    var signingProfileName: js.UndefOr[SigningProfileName]
+    var signingProfileParameter: js.UndefOr[SigningProfileParameter]
   }
 
   object StartSigningJobParameter {
     def apply(
-      signingProfileParameter: js.UndefOr[SigningProfileParameter] = js.undefined,
+      destination: js.UndefOr[Destination] = js.undefined,
       signingProfileName: js.UndefOr[SigningProfileName] = js.undefined,
-      destination: js.UndefOr[Destination] = js.undefined): StartSigningJobParameter = {
+      signingProfileParameter: js.UndefOr[SigningProfileParameter] = js.undefined): StartSigningJobParameter = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "signingProfileParameter" -> signingProfileParameter.map { x => x.asInstanceOf[js.Any] },
+        "destination" -> destination.map { x => x.asInstanceOf[js.Any] },
         "signingProfileName" -> signingProfileName.map { x => x.asInstanceOf[js.Any] },
-        "destination" -> destination.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "signingProfileParameter" -> signingProfileParameter.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StartSigningJobParameter]
     }
@@ -8516,23 +8516,23 @@ package iot {
 
   @js.native
   trait StartThingRegistrationTaskRequest extends js.Object {
-    var templateBody: js.UndefOr[TemplateBody]
-    var inputFileBucket: js.UndefOr[RegistryS3BucketName]
-    var inputFileKey: js.UndefOr[RegistryS3KeyName]
-    var roleArn: js.UndefOr[RoleArn]
+    var inputFileBucket: RegistryS3BucketName
+    var inputFileKey: RegistryS3KeyName
+    var roleArn: RoleArn
+    var templateBody: TemplateBody
   }
 
   object StartThingRegistrationTaskRequest {
     def apply(
-      templateBody: js.UndefOr[TemplateBody] = js.undefined,
-      inputFileBucket: js.UndefOr[RegistryS3BucketName] = js.undefined,
-      inputFileKey: js.UndefOr[RegistryS3KeyName] = js.undefined,
-      roleArn: js.UndefOr[RoleArn] = js.undefined): StartThingRegistrationTaskRequest = {
+      inputFileBucket: RegistryS3BucketName,
+      inputFileKey: RegistryS3KeyName,
+      roleArn: RoleArn,
+      templateBody: TemplateBody): StartThingRegistrationTaskRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "templateBody" -> templateBody.map { x => x.asInstanceOf[js.Any] },
-        "inputFileBucket" -> inputFileBucket.map { x => x.asInstanceOf[js.Any] },
-        "inputFileKey" -> inputFileKey.map { x => x.asInstanceOf[js.Any] },
-        "roleArn" -> roleArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "inputFileBucket" -> inputFileBucket.asInstanceOf[js.Any],
+        "inputFileKey" -> inputFileKey.asInstanceOf[js.Any],
+        "roleArn" -> roleArn.asInstanceOf[js.Any],
+        "templateBody" -> templateBody.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StartThingRegistrationTaskRequest]
     }
@@ -8568,20 +8568,20 @@ package iot {
    */
   @js.native
   trait StepFunctionsAction extends js.Object {
+    var roleArn: AwsArn
+    var stateMachineName: StateMachineName
     var executionNamePrefix: js.UndefOr[ExecutionNamePrefix]
-    var stateMachineName: js.UndefOr[StateMachineName]
-    var roleArn: js.UndefOr[AwsArn]
   }
 
   object StepFunctionsAction {
     def apply(
-      executionNamePrefix: js.UndefOr[ExecutionNamePrefix] = js.undefined,
-      stateMachineName: js.UndefOr[StateMachineName] = js.undefined,
-      roleArn: js.UndefOr[AwsArn] = js.undefined): StepFunctionsAction = {
+      roleArn: AwsArn,
+      stateMachineName: StateMachineName,
+      executionNamePrefix: js.UndefOr[ExecutionNamePrefix] = js.undefined): StepFunctionsAction = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "executionNamePrefix" -> executionNamePrefix.map { x => x.asInstanceOf[js.Any] },
-        "stateMachineName" -> stateMachineName.map { x => x.asInstanceOf[js.Any] },
-        "roleArn" -> roleArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "roleArn" -> roleArn.asInstanceOf[js.Any],
+        "stateMachineName" -> stateMachineName.asInstanceOf[js.Any],
+        "executionNamePrefix" -> executionNamePrefix.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StepFunctionsAction]
     }
@@ -8589,14 +8589,14 @@ package iot {
 
   @js.native
   trait StopThingRegistrationTaskRequest extends js.Object {
-    var taskId: js.UndefOr[TaskId]
+    var taskId: TaskId
   }
 
   object StopThingRegistrationTaskRequest {
     def apply(
-      taskId: js.UndefOr[TaskId] = js.undefined): StopThingRegistrationTaskRequest = {
+      taskId: TaskId): StopThingRegistrationTaskRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "taskId" -> taskId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "taskId" -> taskId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StopThingRegistrationTaskRequest]
     }
@@ -8620,17 +8620,17 @@ package iot {
    */
   @js.native
   trait Stream extends js.Object {
-    var streamId: js.UndefOr[StreamId]
     var fileId: js.UndefOr[FileId]
+    var streamId: js.UndefOr[StreamId]
   }
 
   object Stream {
     def apply(
-      streamId: js.UndefOr[StreamId] = js.undefined,
-      fileId: js.UndefOr[FileId] = js.undefined): Stream = {
+      fileId: js.UndefOr[FileId] = js.undefined,
+      streamId: js.UndefOr[StreamId] = js.undefined): Stream = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "streamId" -> streamId.map { x => x.asInstanceOf[js.Any] },
-        "fileId" -> fileId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "fileId" -> fileId.map { x => x.asInstanceOf[js.Any] },
+        "streamId" -> streamId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Stream]
     }
@@ -8662,35 +8662,35 @@ package iot {
    */
   @js.native
   trait StreamInfo extends js.Object {
-    var streamId: js.UndefOr[StreamId]
+    var createdAt: js.UndefOr[DateType]
     var description: js.UndefOr[StreamDescription]
     var files: js.UndefOr[StreamFiles]
-    var roleArn: js.UndefOr[RoleArn]
-    var createdAt: js.UndefOr[DateType]
-    var streamVersion: js.UndefOr[StreamVersion]
-    var streamArn: js.UndefOr[StreamArn]
     var lastUpdatedAt: js.UndefOr[DateType]
+    var roleArn: js.UndefOr[RoleArn]
+    var streamArn: js.UndefOr[StreamArn]
+    var streamId: js.UndefOr[StreamId]
+    var streamVersion: js.UndefOr[StreamVersion]
   }
 
   object StreamInfo {
     def apply(
-      streamId: js.UndefOr[StreamId] = js.undefined,
+      createdAt: js.UndefOr[DateType] = js.undefined,
       description: js.UndefOr[StreamDescription] = js.undefined,
       files: js.UndefOr[StreamFiles] = js.undefined,
+      lastUpdatedAt: js.UndefOr[DateType] = js.undefined,
       roleArn: js.UndefOr[RoleArn] = js.undefined,
-      createdAt: js.UndefOr[DateType] = js.undefined,
-      streamVersion: js.UndefOr[StreamVersion] = js.undefined,
       streamArn: js.UndefOr[StreamArn] = js.undefined,
-      lastUpdatedAt: js.UndefOr[DateType] = js.undefined): StreamInfo = {
+      streamId: js.UndefOr[StreamId] = js.undefined,
+      streamVersion: js.UndefOr[StreamVersion] = js.undefined): StreamInfo = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "streamId" -> streamId.map { x => x.asInstanceOf[js.Any] },
+        "createdAt" -> createdAt.map { x => x.asInstanceOf[js.Any] },
         "description" -> description.map { x => x.asInstanceOf[js.Any] },
         "files" -> files.map { x => x.asInstanceOf[js.Any] },
+        "lastUpdatedAt" -> lastUpdatedAt.map { x => x.asInstanceOf[js.Any] },
         "roleArn" -> roleArn.map { x => x.asInstanceOf[js.Any] },
-        "createdAt" -> createdAt.map { x => x.asInstanceOf[js.Any] },
-        "streamVersion" -> streamVersion.map { x => x.asInstanceOf[js.Any] },
         "streamArn" -> streamArn.map { x => x.asInstanceOf[js.Any] },
-        "lastUpdatedAt" -> lastUpdatedAt.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "streamId" -> streamId.map { x => x.asInstanceOf[js.Any] },
+        "streamVersion" -> streamVersion.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StreamInfo]
     }
@@ -8701,23 +8701,23 @@ package iot {
    */
   @js.native
   trait StreamSummary extends js.Object {
-    var streamId: js.UndefOr[StreamId]
-    var streamArn: js.UndefOr[StreamArn]
-    var streamVersion: js.UndefOr[StreamVersion]
     var description: js.UndefOr[StreamDescription]
+    var streamArn: js.UndefOr[StreamArn]
+    var streamId: js.UndefOr[StreamId]
+    var streamVersion: js.UndefOr[StreamVersion]
   }
 
   object StreamSummary {
     def apply(
-      streamId: js.UndefOr[StreamId] = js.undefined,
+      description: js.UndefOr[StreamDescription] = js.undefined,
       streamArn: js.UndefOr[StreamArn] = js.undefined,
-      streamVersion: js.UndefOr[StreamVersion] = js.undefined,
-      description: js.UndefOr[StreamDescription] = js.undefined): StreamSummary = {
+      streamId: js.UndefOr[StreamId] = js.undefined,
+      streamVersion: js.UndefOr[StreamVersion] = js.undefined): StreamSummary = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "streamId" -> streamId.map { x => x.asInstanceOf[js.Any] },
+        "description" -> description.map { x => x.asInstanceOf[js.Any] },
         "streamArn" -> streamArn.map { x => x.asInstanceOf[js.Any] },
-        "streamVersion" -> streamVersion.map { x => x.asInstanceOf[js.Any] },
-        "description" -> description.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "streamId" -> streamId.map { x => x.asInstanceOf[js.Any] },
+        "streamVersion" -> streamVersion.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StreamSummary]
     }
@@ -8746,17 +8746,17 @@ package iot {
 
   @js.native
   trait TagResourceRequest extends js.Object {
-    var resourceArn: js.UndefOr[ResourceArn]
-    var tags: js.UndefOr[TagList]
+    var resourceArn: ResourceArn
+    var tags: TagList
   }
 
   object TagResourceRequest {
     def apply(
-      resourceArn: js.UndefOr[ResourceArn] = js.undefined,
-      tags: js.UndefOr[TagList] = js.undefined): TagResourceRequest = {
+      resourceArn: ResourceArn,
+      tags: TagList): TagResourceRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "resourceArn" -> resourceArn.map { x => x.asInstanceOf[js.Any] },
-        "tags" -> tags.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "resourceArn" -> resourceArn.asInstanceOf[js.Any],
+        "tags" -> tags.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TagResourceRequest]
     }
@@ -8787,32 +8787,32 @@ package iot {
    */
   @js.native
   trait TaskStatistics extends js.Object {
-    var waitingForDataCollectionChecks: js.UndefOr[WaitingForDataCollectionChecksCount]
-    var nonCompliantChecks: js.UndefOr[NonCompliantChecksCount]
-    var failedChecks: js.UndefOr[FailedChecksCount]
-    var totalChecks: js.UndefOr[TotalChecksCount]
-    var inProgressChecks: js.UndefOr[InProgressChecksCount]
     var canceledChecks: js.UndefOr[CanceledChecksCount]
     var compliantChecks: js.UndefOr[CompliantChecksCount]
+    var failedChecks: js.UndefOr[FailedChecksCount]
+    var inProgressChecks: js.UndefOr[InProgressChecksCount]
+    var nonCompliantChecks: js.UndefOr[NonCompliantChecksCount]
+    var totalChecks: js.UndefOr[TotalChecksCount]
+    var waitingForDataCollectionChecks: js.UndefOr[WaitingForDataCollectionChecksCount]
   }
 
   object TaskStatistics {
     def apply(
-      waitingForDataCollectionChecks: js.UndefOr[WaitingForDataCollectionChecksCount] = js.undefined,
-      nonCompliantChecks: js.UndefOr[NonCompliantChecksCount] = js.undefined,
-      failedChecks: js.UndefOr[FailedChecksCount] = js.undefined,
-      totalChecks: js.UndefOr[TotalChecksCount] = js.undefined,
-      inProgressChecks: js.UndefOr[InProgressChecksCount] = js.undefined,
       canceledChecks: js.UndefOr[CanceledChecksCount] = js.undefined,
-      compliantChecks: js.UndefOr[CompliantChecksCount] = js.undefined): TaskStatistics = {
+      compliantChecks: js.UndefOr[CompliantChecksCount] = js.undefined,
+      failedChecks: js.UndefOr[FailedChecksCount] = js.undefined,
+      inProgressChecks: js.UndefOr[InProgressChecksCount] = js.undefined,
+      nonCompliantChecks: js.UndefOr[NonCompliantChecksCount] = js.undefined,
+      totalChecks: js.UndefOr[TotalChecksCount] = js.undefined,
+      waitingForDataCollectionChecks: js.UndefOr[WaitingForDataCollectionChecksCount] = js.undefined): TaskStatistics = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "waitingForDataCollectionChecks" -> waitingForDataCollectionChecks.map { x => x.asInstanceOf[js.Any] },
-        "nonCompliantChecks" -> nonCompliantChecks.map { x => x.asInstanceOf[js.Any] },
-        "failedChecks" -> failedChecks.map { x => x.asInstanceOf[js.Any] },
-        "totalChecks" -> totalChecks.map { x => x.asInstanceOf[js.Any] },
-        "inProgressChecks" -> inProgressChecks.map { x => x.asInstanceOf[js.Any] },
         "canceledChecks" -> canceledChecks.map { x => x.asInstanceOf[js.Any] },
-        "compliantChecks" -> compliantChecks.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "compliantChecks" -> compliantChecks.map { x => x.asInstanceOf[js.Any] },
+        "failedChecks" -> failedChecks.map { x => x.asInstanceOf[js.Any] },
+        "inProgressChecks" -> inProgressChecks.map { x => x.asInstanceOf[js.Any] },
+        "nonCompliantChecks" -> nonCompliantChecks.map { x => x.asInstanceOf[js.Any] },
+        "totalChecks" -> totalChecks.map { x => x.asInstanceOf[js.Any] },
+        "waitingForDataCollectionChecks" -> waitingForDataCollectionChecks.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TaskStatistics]
     }
@@ -8820,29 +8820,29 @@ package iot {
 
   @js.native
   trait TestAuthorizationRequest extends js.Object {
-    var policyNamesToAdd: js.UndefOr[PolicyNames]
+    var authInfos: AuthInfos
     var clientId: js.UndefOr[ClientId]
     var cognitoIdentityPoolId: js.UndefOr[CognitoIdentityPoolId]
-    var principal: js.UndefOr[Principal]
-    var authInfos: js.UndefOr[AuthInfos]
+    var policyNamesToAdd: js.UndefOr[PolicyNames]
     var policyNamesToSkip: js.UndefOr[PolicyNames]
+    var principal: js.UndefOr[Principal]
   }
 
   object TestAuthorizationRequest {
     def apply(
-      policyNamesToAdd: js.UndefOr[PolicyNames] = js.undefined,
+      authInfos: AuthInfos,
       clientId: js.UndefOr[ClientId] = js.undefined,
       cognitoIdentityPoolId: js.UndefOr[CognitoIdentityPoolId] = js.undefined,
-      principal: js.UndefOr[Principal] = js.undefined,
-      authInfos: js.UndefOr[AuthInfos] = js.undefined,
-      policyNamesToSkip: js.UndefOr[PolicyNames] = js.undefined): TestAuthorizationRequest = {
+      policyNamesToAdd: js.UndefOr[PolicyNames] = js.undefined,
+      policyNamesToSkip: js.UndefOr[PolicyNames] = js.undefined,
+      principal: js.UndefOr[Principal] = js.undefined): TestAuthorizationRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "policyNamesToAdd" -> policyNamesToAdd.map { x => x.asInstanceOf[js.Any] },
+        "authInfos" -> authInfos.asInstanceOf[js.Any],
         "clientId" -> clientId.map { x => x.asInstanceOf[js.Any] },
         "cognitoIdentityPoolId" -> cognitoIdentityPoolId.map { x => x.asInstanceOf[js.Any] },
-        "principal" -> principal.map { x => x.asInstanceOf[js.Any] },
-        "authInfos" -> authInfos.map { x => x.asInstanceOf[js.Any] },
-        "policyNamesToSkip" -> policyNamesToSkip.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "policyNamesToAdd" -> policyNamesToAdd.map { x => x.asInstanceOf[js.Any] },
+        "policyNamesToSkip" -> policyNamesToSkip.map { x => x.asInstanceOf[js.Any] },
+        "principal" -> principal.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TestAuthorizationRequest]
     }
@@ -8865,20 +8865,20 @@ package iot {
 
   @js.native
   trait TestInvokeAuthorizerRequest extends js.Object {
-    var authorizerName: js.UndefOr[AuthorizerName]
-    var token: js.UndefOr[Token]
-    var tokenSignature: js.UndefOr[TokenSignature]
+    var authorizerName: AuthorizerName
+    var token: Token
+    var tokenSignature: TokenSignature
   }
 
   object TestInvokeAuthorizerRequest {
     def apply(
-      authorizerName: js.UndefOr[AuthorizerName] = js.undefined,
-      token: js.UndefOr[Token] = js.undefined,
-      tokenSignature: js.UndefOr[TokenSignature] = js.undefined): TestInvokeAuthorizerRequest = {
+      authorizerName: AuthorizerName,
+      token: Token,
+      tokenSignature: TokenSignature): TestInvokeAuthorizerRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "authorizerName" -> authorizerName.map { x => x.asInstanceOf[js.Any] },
-        "token" -> token.map { x => x.asInstanceOf[js.Any] },
-        "tokenSignature" -> tokenSignature.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "authorizerName" -> authorizerName.asInstanceOf[js.Any],
+        "token" -> token.asInstanceOf[js.Any],
+        "tokenSignature" -> tokenSignature.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TestInvokeAuthorizerRequest]
     }
@@ -8886,26 +8886,26 @@ package iot {
 
   @js.native
   trait TestInvokeAuthorizerResponse extends js.Object {
+    var disconnectAfterInSeconds: js.UndefOr[Seconds]
+    var isAuthenticated: js.UndefOr[IsAuthenticated]
+    var policyDocuments: js.UndefOr[PolicyDocuments]
     var principalId: js.UndefOr[PrincipalId]
     var refreshAfterInSeconds: js.UndefOr[Seconds]
-    var policyDocuments: js.UndefOr[PolicyDocuments]
-    var isAuthenticated: js.UndefOr[IsAuthenticated]
-    var disconnectAfterInSeconds: js.UndefOr[Seconds]
   }
 
   object TestInvokeAuthorizerResponse {
     def apply(
-      principalId: js.UndefOr[PrincipalId] = js.undefined,
-      refreshAfterInSeconds: js.UndefOr[Seconds] = js.undefined,
-      policyDocuments: js.UndefOr[PolicyDocuments] = js.undefined,
+      disconnectAfterInSeconds: js.UndefOr[Seconds] = js.undefined,
       isAuthenticated: js.UndefOr[IsAuthenticated] = js.undefined,
-      disconnectAfterInSeconds: js.UndefOr[Seconds] = js.undefined): TestInvokeAuthorizerResponse = {
+      policyDocuments: js.UndefOr[PolicyDocuments] = js.undefined,
+      principalId: js.UndefOr[PrincipalId] = js.undefined,
+      refreshAfterInSeconds: js.UndefOr[Seconds] = js.undefined): TestInvokeAuthorizerResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "principalId" -> principalId.map { x => x.asInstanceOf[js.Any] },
-        "refreshAfterInSeconds" -> refreshAfterInSeconds.map { x => x.asInstanceOf[js.Any] },
-        "policyDocuments" -> policyDocuments.map { x => x.asInstanceOf[js.Any] },
+        "disconnectAfterInSeconds" -> disconnectAfterInSeconds.map { x => x.asInstanceOf[js.Any] },
         "isAuthenticated" -> isAuthenticated.map { x => x.asInstanceOf[js.Any] },
-        "disconnectAfterInSeconds" -> disconnectAfterInSeconds.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "policyDocuments" -> policyDocuments.map { x => x.asInstanceOf[js.Any] },
+        "principalId" -> principalId.map { x => x.asInstanceOf[js.Any] },
+        "refreshAfterInSeconds" -> refreshAfterInSeconds.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TestInvokeAuthorizerResponse]
     }
@@ -8917,25 +8917,25 @@ package iot {
   @js.native
   trait ThingAttribute extends js.Object {
     var attributes: js.UndefOr[Attributes]
+    var thingArn: js.UndefOr[ThingArn]
     var thingName: js.UndefOr[ThingName]
     var thingTypeName: js.UndefOr[ThingTypeName]
     var version: js.UndefOr[Version]
-    var thingArn: js.UndefOr[ThingArn]
   }
 
   object ThingAttribute {
     def apply(
       attributes: js.UndefOr[Attributes] = js.undefined,
+      thingArn: js.UndefOr[ThingArn] = js.undefined,
       thingName: js.UndefOr[ThingName] = js.undefined,
       thingTypeName: js.UndefOr[ThingTypeName] = js.undefined,
-      version: js.UndefOr[Version] = js.undefined,
-      thingArn: js.UndefOr[ThingArn] = js.undefined): ThingAttribute = {
+      version: js.UndefOr[Version] = js.undefined): ThingAttribute = {
       val _fields = IndexedSeq[(String, js.Any)](
         "attributes" -> attributes.map { x => x.asInstanceOf[js.Any] },
+        "thingArn" -> thingArn.map { x => x.asInstanceOf[js.Any] },
         "thingName" -> thingName.map { x => x.asInstanceOf[js.Any] },
         "thingTypeName" -> thingTypeName.map { x => x.asInstanceOf[js.Any] },
-        "version" -> version.map { x => x.asInstanceOf[js.Any] },
-        "thingArn" -> thingArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "version" -> version.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ThingAttribute]
     }
@@ -8974,32 +8974,32 @@ package iot {
    */
   @js.native
   trait ThingDocument extends js.Object {
-    var thingGroupNames: js.UndefOr[ThingGroupNameList]
-    var shadow: js.UndefOr[JsonDocument]
-    var thingId: js.UndefOr[ThingId]
     var attributes: js.UndefOr[Attributes]
+    var connectivity: js.UndefOr[ThingConnectivity]
+    var shadow: js.UndefOr[JsonDocument]
+    var thingGroupNames: js.UndefOr[ThingGroupNameList]
+    var thingId: js.UndefOr[ThingId]
     var thingName: js.UndefOr[ThingName]
     var thingTypeName: js.UndefOr[ThingTypeName]
-    var connectivity: js.UndefOr[ThingConnectivity]
   }
 
   object ThingDocument {
     def apply(
-      thingGroupNames: js.UndefOr[ThingGroupNameList] = js.undefined,
-      shadow: js.UndefOr[JsonDocument] = js.undefined,
-      thingId: js.UndefOr[ThingId] = js.undefined,
       attributes: js.UndefOr[Attributes] = js.undefined,
+      connectivity: js.UndefOr[ThingConnectivity] = js.undefined,
+      shadow: js.UndefOr[JsonDocument] = js.undefined,
+      thingGroupNames: js.UndefOr[ThingGroupNameList] = js.undefined,
+      thingId: js.UndefOr[ThingId] = js.undefined,
       thingName: js.UndefOr[ThingName] = js.undefined,
-      thingTypeName: js.UndefOr[ThingTypeName] = js.undefined,
-      connectivity: js.UndefOr[ThingConnectivity] = js.undefined): ThingDocument = {
+      thingTypeName: js.UndefOr[ThingTypeName] = js.undefined): ThingDocument = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "thingGroupNames" -> thingGroupNames.map { x => x.asInstanceOf[js.Any] },
-        "shadow" -> shadow.map { x => x.asInstanceOf[js.Any] },
-        "thingId" -> thingId.map { x => x.asInstanceOf[js.Any] },
         "attributes" -> attributes.map { x => x.asInstanceOf[js.Any] },
+        "connectivity" -> connectivity.map { x => x.asInstanceOf[js.Any] },
+        "shadow" -> shadow.map { x => x.asInstanceOf[js.Any] },
+        "thingGroupNames" -> thingGroupNames.map { x => x.asInstanceOf[js.Any] },
+        "thingId" -> thingId.map { x => x.asInstanceOf[js.Any] },
         "thingName" -> thingName.map { x => x.asInstanceOf[js.Any] },
-        "thingTypeName" -> thingTypeName.map { x => x.asInstanceOf[js.Any] },
-        "connectivity" -> connectivity.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "thingTypeName" -> thingTypeName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ThingDocument]
     }
@@ -9010,26 +9010,26 @@ package iot {
    */
   @js.native
   trait ThingGroupDocument extends js.Object {
-    var thingGroupName: js.UndefOr[ThingGroupName]
-    var thingGroupDescription: js.UndefOr[ThingGroupDescription]
-    var parentGroupNames: js.UndefOr[ThingGroupNameList]
     var attributes: js.UndefOr[Attributes]
+    var parentGroupNames: js.UndefOr[ThingGroupNameList]
+    var thingGroupDescription: js.UndefOr[ThingGroupDescription]
     var thingGroupId: js.UndefOr[ThingGroupId]
+    var thingGroupName: js.UndefOr[ThingGroupName]
   }
 
   object ThingGroupDocument {
     def apply(
-      thingGroupName: js.UndefOr[ThingGroupName] = js.undefined,
-      thingGroupDescription: js.UndefOr[ThingGroupDescription] = js.undefined,
-      parentGroupNames: js.UndefOr[ThingGroupNameList] = js.undefined,
       attributes: js.UndefOr[Attributes] = js.undefined,
-      thingGroupId: js.UndefOr[ThingGroupId] = js.undefined): ThingGroupDocument = {
+      parentGroupNames: js.UndefOr[ThingGroupNameList] = js.undefined,
+      thingGroupDescription: js.UndefOr[ThingGroupDescription] = js.undefined,
+      thingGroupId: js.UndefOr[ThingGroupId] = js.undefined,
+      thingGroupName: js.UndefOr[ThingGroupName] = js.undefined): ThingGroupDocument = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "thingGroupName" -> thingGroupName.map { x => x.asInstanceOf[js.Any] },
-        "thingGroupDescription" -> thingGroupDescription.map { x => x.asInstanceOf[js.Any] },
-        "parentGroupNames" -> parentGroupNames.map { x => x.asInstanceOf[js.Any] },
         "attributes" -> attributes.map { x => x.asInstanceOf[js.Any] },
-        "thingGroupId" -> thingGroupId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "parentGroupNames" -> parentGroupNames.map { x => x.asInstanceOf[js.Any] },
+        "thingGroupDescription" -> thingGroupDescription.map { x => x.asInstanceOf[js.Any] },
+        "thingGroupId" -> thingGroupId.map { x => x.asInstanceOf[js.Any] },
+        "thingGroupName" -> thingGroupName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ThingGroupDocument]
     }
@@ -9040,14 +9040,14 @@ package iot {
    */
   @js.native
   trait ThingGroupIndexingConfiguration extends js.Object {
-    var thingGroupIndexingMode: js.UndefOr[ThingGroupIndexingMode]
+    var thingGroupIndexingMode: ThingGroupIndexingMode
   }
 
   object ThingGroupIndexingConfiguration {
     def apply(
-      thingGroupIndexingMode: js.UndefOr[ThingGroupIndexingMode] = js.undefined): ThingGroupIndexingConfiguration = {
+      thingGroupIndexingMode: ThingGroupIndexingMode): ThingGroupIndexingConfiguration = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "thingGroupIndexingMode" -> thingGroupIndexingMode.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "thingGroupIndexingMode" -> thingGroupIndexingMode.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ThingGroupIndexingConfiguration]
     }
@@ -9065,20 +9065,20 @@ package iot {
    */
   @js.native
   trait ThingGroupMetadata extends js.Object {
+    var creationDate: js.UndefOr[CreationDate]
     var parentGroupName: js.UndefOr[ThingGroupName]
     var rootToParentThingGroups: js.UndefOr[ThingGroupNameAndArnList]
-    var creationDate: js.UndefOr[CreationDate]
   }
 
   object ThingGroupMetadata {
     def apply(
+      creationDate: js.UndefOr[CreationDate] = js.undefined,
       parentGroupName: js.UndefOr[ThingGroupName] = js.undefined,
-      rootToParentThingGroups: js.UndefOr[ThingGroupNameAndArnList] = js.undefined,
-      creationDate: js.UndefOr[CreationDate] = js.undefined): ThingGroupMetadata = {
+      rootToParentThingGroups: js.UndefOr[ThingGroupNameAndArnList] = js.undefined): ThingGroupMetadata = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "creationDate" -> creationDate.map { x => x.asInstanceOf[js.Any] },
         "parentGroupName" -> parentGroupName.map { x => x.asInstanceOf[js.Any] },
-        "rootToParentThingGroups" -> rootToParentThingGroups.map { x => x.asInstanceOf[js.Any] },
-        "creationDate" -> creationDate.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "rootToParentThingGroups" -> rootToParentThingGroups.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ThingGroupMetadata]
     }
@@ -9089,17 +9089,17 @@ package iot {
    */
   @js.native
   trait ThingGroupProperties extends js.Object {
-    var thingGroupDescription: js.UndefOr[ThingGroupDescription]
     var attributePayload: js.UndefOr[AttributePayload]
+    var thingGroupDescription: js.UndefOr[ThingGroupDescription]
   }
 
   object ThingGroupProperties {
     def apply(
-      thingGroupDescription: js.UndefOr[ThingGroupDescription] = js.undefined,
-      attributePayload: js.UndefOr[AttributePayload] = js.undefined): ThingGroupProperties = {
+      attributePayload: js.UndefOr[AttributePayload] = js.undefined,
+      thingGroupDescription: js.UndefOr[ThingGroupDescription] = js.undefined): ThingGroupProperties = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "thingGroupDescription" -> thingGroupDescription.map { x => x.asInstanceOf[js.Any] },
-        "attributePayload" -> attributePayload.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "attributePayload" -> attributePayload.map { x => x.asInstanceOf[js.Any] },
+        "thingGroupDescription" -> thingGroupDescription.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ThingGroupProperties]
     }
@@ -9110,16 +9110,16 @@ package iot {
    */
   @js.native
   trait ThingIndexingConfiguration extends js.Object {
-    var thingIndexingMode: js.UndefOr[ThingIndexingMode]
+    var thingIndexingMode: ThingIndexingMode
     var thingConnectivityIndexingMode: js.UndefOr[ThingConnectivityIndexingMode]
   }
 
   object ThingIndexingConfiguration {
     def apply(
-      thingIndexingMode: js.UndefOr[ThingIndexingMode] = js.undefined,
+      thingIndexingMode: ThingIndexingMode,
       thingConnectivityIndexingMode: js.UndefOr[ThingConnectivityIndexingMode] = js.undefined): ThingIndexingConfiguration = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "thingIndexingMode" -> thingIndexingMode.map { x => x.asInstanceOf[js.Any] },
+        "thingIndexingMode" -> thingIndexingMode.asInstanceOf[js.Any],
         "thingConnectivityIndexingMode" -> thingConnectivityIndexingMode.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ThingIndexingConfiguration]
@@ -9139,23 +9139,23 @@ package iot {
    */
   @js.native
   trait ThingTypeDefinition extends js.Object {
-    var thingTypeName: js.UndefOr[ThingTypeName]
     var thingTypeArn: js.UndefOr[ThingTypeArn]
-    var thingTypeProperties: js.UndefOr[ThingTypeProperties]
     var thingTypeMetadata: js.UndefOr[ThingTypeMetadata]
+    var thingTypeName: js.UndefOr[ThingTypeName]
+    var thingTypeProperties: js.UndefOr[ThingTypeProperties]
   }
 
   object ThingTypeDefinition {
     def apply(
-      thingTypeName: js.UndefOr[ThingTypeName] = js.undefined,
       thingTypeArn: js.UndefOr[ThingTypeArn] = js.undefined,
-      thingTypeProperties: js.UndefOr[ThingTypeProperties] = js.undefined,
-      thingTypeMetadata: js.UndefOr[ThingTypeMetadata] = js.undefined): ThingTypeDefinition = {
+      thingTypeMetadata: js.UndefOr[ThingTypeMetadata] = js.undefined,
+      thingTypeName: js.UndefOr[ThingTypeName] = js.undefined,
+      thingTypeProperties: js.UndefOr[ThingTypeProperties] = js.undefined): ThingTypeDefinition = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "thingTypeName" -> thingTypeName.map { x => x.asInstanceOf[js.Any] },
         "thingTypeArn" -> thingTypeArn.map { x => x.asInstanceOf[js.Any] },
-        "thingTypeProperties" -> thingTypeProperties.map { x => x.asInstanceOf[js.Any] },
-        "thingTypeMetadata" -> thingTypeMetadata.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "thingTypeMetadata" -> thingTypeMetadata.map { x => x.asInstanceOf[js.Any] },
+        "thingTypeName" -> thingTypeName.map { x => x.asInstanceOf[js.Any] },
+        "thingTypeProperties" -> thingTypeProperties.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ThingTypeDefinition]
     }
@@ -9166,20 +9166,20 @@ package iot {
    */
   @js.native
   trait ThingTypeMetadata extends js.Object {
+    var creationDate: js.UndefOr[CreationDate]
     var deprecated: js.UndefOr[Boolean]
     var deprecationDate: js.UndefOr[DeprecationDate]
-    var creationDate: js.UndefOr[CreationDate]
   }
 
   object ThingTypeMetadata {
     def apply(
+      creationDate: js.UndefOr[CreationDate] = js.undefined,
       deprecated: js.UndefOr[Boolean] = js.undefined,
-      deprecationDate: js.UndefOr[DeprecationDate] = js.undefined,
-      creationDate: js.UndefOr[CreationDate] = js.undefined): ThingTypeMetadata = {
+      deprecationDate: js.UndefOr[DeprecationDate] = js.undefined): ThingTypeMetadata = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "creationDate" -> creationDate.map { x => x.asInstanceOf[js.Any] },
         "deprecated" -> deprecated.map { x => x.asInstanceOf[js.Any] },
-        "deprecationDate" -> deprecationDate.map { x => x.asInstanceOf[js.Any] },
-        "creationDate" -> creationDate.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "deprecationDate" -> deprecationDate.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ThingTypeMetadata]
     }
@@ -9190,17 +9190,17 @@ package iot {
    */
   @js.native
   trait ThingTypeProperties extends js.Object {
-    var thingTypeDescription: js.UndefOr[ThingTypeDescription]
     var searchableAttributes: js.UndefOr[SearchableAttributes]
+    var thingTypeDescription: js.UndefOr[ThingTypeDescription]
   }
 
   object ThingTypeProperties {
     def apply(
-      thingTypeDescription: js.UndefOr[ThingTypeDescription] = js.undefined,
-      searchableAttributes: js.UndefOr[SearchableAttributes] = js.undefined): ThingTypeProperties = {
+      searchableAttributes: js.UndefOr[SearchableAttributes] = js.undefined,
+      thingTypeDescription: js.UndefOr[ThingTypeDescription] = js.undefined): ThingTypeProperties = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "thingTypeDescription" -> thingTypeDescription.map { x => x.asInstanceOf[js.Any] },
-        "searchableAttributes" -> searchableAttributes.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "searchableAttributes" -> searchableAttributes.map { x => x.asInstanceOf[js.Any] },
+        "thingTypeDescription" -> thingTypeDescription.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ThingTypeProperties]
     }
@@ -9229,35 +9229,35 @@ package iot {
    */
   @js.native
   trait TopicRule extends js.Object {
-    var ruleName: js.UndefOr[RuleName]
+    var actions: js.UndefOr[ActionList]
     var awsIotSqlVersion: js.UndefOr[AwsIotSqlVersion]
-    var sql: js.UndefOr[SQL]
-    var ruleDisabled: js.UndefOr[IsDisabled]
+    var createdAt: js.UndefOr[CreatedAtDate]
     var description: js.UndefOr[Description]
     var errorAction: js.UndefOr[Action]
-    var createdAt: js.UndefOr[CreatedAtDate]
-    var actions: js.UndefOr[ActionList]
+    var ruleDisabled: js.UndefOr[IsDisabled]
+    var ruleName: js.UndefOr[RuleName]
+    var sql: js.UndefOr[SQL]
   }
 
   object TopicRule {
     def apply(
-      ruleName: js.UndefOr[RuleName] = js.undefined,
+      actions: js.UndefOr[ActionList] = js.undefined,
       awsIotSqlVersion: js.UndefOr[AwsIotSqlVersion] = js.undefined,
-      sql: js.UndefOr[SQL] = js.undefined,
-      ruleDisabled: js.UndefOr[IsDisabled] = js.undefined,
+      createdAt: js.UndefOr[CreatedAtDate] = js.undefined,
       description: js.UndefOr[Description] = js.undefined,
       errorAction: js.UndefOr[Action] = js.undefined,
-      createdAt: js.UndefOr[CreatedAtDate] = js.undefined,
-      actions: js.UndefOr[ActionList] = js.undefined): TopicRule = {
+      ruleDisabled: js.UndefOr[IsDisabled] = js.undefined,
+      ruleName: js.UndefOr[RuleName] = js.undefined,
+      sql: js.UndefOr[SQL] = js.undefined): TopicRule = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ruleName" -> ruleName.map { x => x.asInstanceOf[js.Any] },
+        "actions" -> actions.map { x => x.asInstanceOf[js.Any] },
         "awsIotSqlVersion" -> awsIotSqlVersion.map { x => x.asInstanceOf[js.Any] },
-        "sql" -> sql.map { x => x.asInstanceOf[js.Any] },
-        "ruleDisabled" -> ruleDisabled.map { x => x.asInstanceOf[js.Any] },
+        "createdAt" -> createdAt.map { x => x.asInstanceOf[js.Any] },
         "description" -> description.map { x => x.asInstanceOf[js.Any] },
         "errorAction" -> errorAction.map { x => x.asInstanceOf[js.Any] },
-        "createdAt" -> createdAt.map { x => x.asInstanceOf[js.Any] },
-        "actions" -> actions.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ruleDisabled" -> ruleDisabled.map { x => x.asInstanceOf[js.Any] },
+        "ruleName" -> ruleName.map { x => x.asInstanceOf[js.Any] },
+        "sql" -> sql.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TopicRule]
     }
@@ -9268,26 +9268,26 @@ package iot {
    */
   @js.native
   trait TopicRuleListItem extends js.Object {
-    var ruleName: js.UndefOr[RuleName]
-    var ruleDisabled: js.UndefOr[IsDisabled]
-    var topicPattern: js.UndefOr[TopicPattern]
     var createdAt: js.UndefOr[CreatedAtDate]
     var ruleArn: js.UndefOr[RuleArn]
+    var ruleDisabled: js.UndefOr[IsDisabled]
+    var ruleName: js.UndefOr[RuleName]
+    var topicPattern: js.UndefOr[TopicPattern]
   }
 
   object TopicRuleListItem {
     def apply(
-      ruleName: js.UndefOr[RuleName] = js.undefined,
-      ruleDisabled: js.UndefOr[IsDisabled] = js.undefined,
-      topicPattern: js.UndefOr[TopicPattern] = js.undefined,
       createdAt: js.UndefOr[CreatedAtDate] = js.undefined,
-      ruleArn: js.UndefOr[RuleArn] = js.undefined): TopicRuleListItem = {
+      ruleArn: js.UndefOr[RuleArn] = js.undefined,
+      ruleDisabled: js.UndefOr[IsDisabled] = js.undefined,
+      ruleName: js.UndefOr[RuleName] = js.undefined,
+      topicPattern: js.UndefOr[TopicPattern] = js.undefined): TopicRuleListItem = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ruleName" -> ruleName.map { x => x.asInstanceOf[js.Any] },
-        "ruleDisabled" -> ruleDisabled.map { x => x.asInstanceOf[js.Any] },
-        "topicPattern" -> topicPattern.map { x => x.asInstanceOf[js.Any] },
         "createdAt" -> createdAt.map { x => x.asInstanceOf[js.Any] },
-        "ruleArn" -> ruleArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ruleArn" -> ruleArn.map { x => x.asInstanceOf[js.Any] },
+        "ruleDisabled" -> ruleDisabled.map { x => x.asInstanceOf[js.Any] },
+        "ruleName" -> ruleName.map { x => x.asInstanceOf[js.Any] },
+        "topicPattern" -> topicPattern.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TopicRuleListItem]
     }
@@ -9298,29 +9298,29 @@ package iot {
    */
   @js.native
   trait TopicRulePayload extends js.Object {
+    var actions: ActionList
+    var sql: SQL
     var awsIotSqlVersion: js.UndefOr[AwsIotSqlVersion]
-    var sql: js.UndefOr[SQL]
-    var ruleDisabled: js.UndefOr[IsDisabled]
     var description: js.UndefOr[Description]
     var errorAction: js.UndefOr[Action]
-    var actions: js.UndefOr[ActionList]
+    var ruleDisabled: js.UndefOr[IsDisabled]
   }
 
   object TopicRulePayload {
     def apply(
+      actions: ActionList,
+      sql: SQL,
       awsIotSqlVersion: js.UndefOr[AwsIotSqlVersion] = js.undefined,
-      sql: js.UndefOr[SQL] = js.undefined,
-      ruleDisabled: js.UndefOr[IsDisabled] = js.undefined,
       description: js.UndefOr[Description] = js.undefined,
       errorAction: js.UndefOr[Action] = js.undefined,
-      actions: js.UndefOr[ActionList] = js.undefined): TopicRulePayload = {
+      ruleDisabled: js.UndefOr[IsDisabled] = js.undefined): TopicRulePayload = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "actions" -> actions.asInstanceOf[js.Any],
+        "sql" -> sql.asInstanceOf[js.Any],
         "awsIotSqlVersion" -> awsIotSqlVersion.map { x => x.asInstanceOf[js.Any] },
-        "sql" -> sql.map { x => x.asInstanceOf[js.Any] },
-        "ruleDisabled" -> ruleDisabled.map { x => x.asInstanceOf[js.Any] },
         "description" -> description.map { x => x.asInstanceOf[js.Any] },
         "errorAction" -> errorAction.map { x => x.asInstanceOf[js.Any] },
-        "actions" -> actions.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ruleDisabled" -> ruleDisabled.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TopicRulePayload]
     }
@@ -9331,19 +9331,19 @@ package iot {
    */
   @js.native
   trait TransferCertificateRequest extends js.Object {
-    var certificateId: js.UndefOr[CertificateId]
-    var targetAwsAccount: js.UndefOr[AwsAccountId]
+    var certificateId: CertificateId
+    var targetAwsAccount: AwsAccountId
     var transferMessage: js.UndefOr[Message]
   }
 
   object TransferCertificateRequest {
     def apply(
-      certificateId: js.UndefOr[CertificateId] = js.undefined,
-      targetAwsAccount: js.UndefOr[AwsAccountId] = js.undefined,
+      certificateId: CertificateId,
+      targetAwsAccount: AwsAccountId,
       transferMessage: js.UndefOr[Message] = js.undefined): TransferCertificateRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "certificateId" -> certificateId.map { x => x.asInstanceOf[js.Any] },
-        "targetAwsAccount" -> targetAwsAccount.map { x => x.asInstanceOf[js.Any] },
+        "certificateId" -> certificateId.asInstanceOf[js.Any],
+        "targetAwsAccount" -> targetAwsAccount.asInstanceOf[js.Any],
         "transferMessage" -> transferMessage.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TransferCertificateRequest]
@@ -9373,26 +9373,26 @@ package iot {
    */
   @js.native
   trait TransferData extends js.Object {
-    var rejectReason: js.UndefOr[Message]
-    var rejectDate: js.UndefOr[DateType]
-    var transferMessage: js.UndefOr[Message]
-    var transferDate: js.UndefOr[DateType]
     var acceptDate: js.UndefOr[DateType]
+    var rejectDate: js.UndefOr[DateType]
+    var rejectReason: js.UndefOr[Message]
+    var transferDate: js.UndefOr[DateType]
+    var transferMessage: js.UndefOr[Message]
   }
 
   object TransferData {
     def apply(
-      rejectReason: js.UndefOr[Message] = js.undefined,
+      acceptDate: js.UndefOr[DateType] = js.undefined,
       rejectDate: js.UndefOr[DateType] = js.undefined,
-      transferMessage: js.UndefOr[Message] = js.undefined,
+      rejectReason: js.UndefOr[Message] = js.undefined,
       transferDate: js.UndefOr[DateType] = js.undefined,
-      acceptDate: js.UndefOr[DateType] = js.undefined): TransferData = {
+      transferMessage: js.UndefOr[Message] = js.undefined): TransferData = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "rejectReason" -> rejectReason.map { x => x.asInstanceOf[js.Any] },
+        "acceptDate" -> acceptDate.map { x => x.asInstanceOf[js.Any] },
         "rejectDate" -> rejectDate.map { x => x.asInstanceOf[js.Any] },
-        "transferMessage" -> transferMessage.map { x => x.asInstanceOf[js.Any] },
+        "rejectReason" -> rejectReason.map { x => x.asInstanceOf[js.Any] },
         "transferDate" -> transferDate.map { x => x.asInstanceOf[js.Any] },
-        "acceptDate" -> acceptDate.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "transferMessage" -> transferMessage.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TransferData]
     }
@@ -9400,17 +9400,17 @@ package iot {
 
   @js.native
   trait UntagResourceRequest extends js.Object {
-    var resourceArn: js.UndefOr[ResourceArn]
-    var tagKeys: js.UndefOr[TagKeyList]
+    var resourceArn: ResourceArn
+    var tagKeys: TagKeyList
   }
 
   object UntagResourceRequest {
     def apply(
-      resourceArn: js.UndefOr[ResourceArn] = js.undefined,
-      tagKeys: js.UndefOr[TagKeyList] = js.undefined): UntagResourceRequest = {
+      resourceArn: ResourceArn,
+      tagKeys: TagKeyList): UntagResourceRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "resourceArn" -> resourceArn.map { x => x.asInstanceOf[js.Any] },
-        "tagKeys" -> tagKeys.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "resourceArn" -> resourceArn.asInstanceOf[js.Any],
+        "tagKeys" -> tagKeys.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UntagResourceRequest]
     }
@@ -9431,20 +9431,20 @@ package iot {
 
   @js.native
   trait UpdateAccountAuditConfigurationRequest extends js.Object {
-    var roleArn: js.UndefOr[RoleArn]
-    var auditNotificationTargetConfigurations: js.UndefOr[AuditNotificationTargetConfigurations]
     var auditCheckConfigurations: js.UndefOr[AuditCheckConfigurations]
+    var auditNotificationTargetConfigurations: js.UndefOr[AuditNotificationTargetConfigurations]
+    var roleArn: js.UndefOr[RoleArn]
   }
 
   object UpdateAccountAuditConfigurationRequest {
     def apply(
-      roleArn: js.UndefOr[RoleArn] = js.undefined,
+      auditCheckConfigurations: js.UndefOr[AuditCheckConfigurations] = js.undefined,
       auditNotificationTargetConfigurations: js.UndefOr[AuditNotificationTargetConfigurations] = js.undefined,
-      auditCheckConfigurations: js.UndefOr[AuditCheckConfigurations] = js.undefined): UpdateAccountAuditConfigurationRequest = {
+      roleArn: js.UndefOr[RoleArn] = js.undefined): UpdateAccountAuditConfigurationRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "roleArn" -> roleArn.map { x => x.asInstanceOf[js.Any] },
+        "auditCheckConfigurations" -> auditCheckConfigurations.map { x => x.asInstanceOf[js.Any] },
         "auditNotificationTargetConfigurations" -> auditNotificationTargetConfigurations.map { x => x.asInstanceOf[js.Any] },
-        "auditCheckConfigurations" -> auditCheckConfigurations.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "roleArn" -> roleArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateAccountAuditConfigurationRequest]
     }
@@ -9465,26 +9465,26 @@ package iot {
 
   @js.native
   trait UpdateAuthorizerRequest extends js.Object {
-    var tokenSigningPublicKeys: js.UndefOr[PublicKeyMap]
+    var authorizerName: AuthorizerName
     var authorizerFunctionArn: js.UndefOr[AuthorizerFunctionArn]
-    var authorizerName: js.UndefOr[AuthorizerName]
     var status: js.UndefOr[AuthorizerStatus]
     var tokenKeyName: js.UndefOr[TokenKeyName]
+    var tokenSigningPublicKeys: js.UndefOr[PublicKeyMap]
   }
 
   object UpdateAuthorizerRequest {
     def apply(
-      tokenSigningPublicKeys: js.UndefOr[PublicKeyMap] = js.undefined,
+      authorizerName: AuthorizerName,
       authorizerFunctionArn: js.UndefOr[AuthorizerFunctionArn] = js.undefined,
-      authorizerName: js.UndefOr[AuthorizerName] = js.undefined,
       status: js.UndefOr[AuthorizerStatus] = js.undefined,
-      tokenKeyName: js.UndefOr[TokenKeyName] = js.undefined): UpdateAuthorizerRequest = {
+      tokenKeyName: js.UndefOr[TokenKeyName] = js.undefined,
+      tokenSigningPublicKeys: js.UndefOr[PublicKeyMap] = js.undefined): UpdateAuthorizerRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "tokenSigningPublicKeys" -> tokenSigningPublicKeys.map { x => x.asInstanceOf[js.Any] },
+        "authorizerName" -> authorizerName.asInstanceOf[js.Any],
         "authorizerFunctionArn" -> authorizerFunctionArn.map { x => x.asInstanceOf[js.Any] },
-        "authorizerName" -> authorizerName.map { x => x.asInstanceOf[js.Any] },
         "status" -> status.map { x => x.asInstanceOf[js.Any] },
-        "tokenKeyName" -> tokenKeyName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "tokenKeyName" -> tokenKeyName.map { x => x.asInstanceOf[js.Any] },
+        "tokenSigningPublicKeys" -> tokenSigningPublicKeys.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateAuthorizerRequest]
     }
@@ -9492,17 +9492,17 @@ package iot {
 
   @js.native
   trait UpdateAuthorizerResponse extends js.Object {
-    var authorizerName: js.UndefOr[AuthorizerName]
     var authorizerArn: js.UndefOr[AuthorizerArn]
+    var authorizerName: js.UndefOr[AuthorizerName]
   }
 
   object UpdateAuthorizerResponse {
     def apply(
-      authorizerName: js.UndefOr[AuthorizerName] = js.undefined,
-      authorizerArn: js.UndefOr[AuthorizerArn] = js.undefined): UpdateAuthorizerResponse = {
+      authorizerArn: js.UndefOr[AuthorizerArn] = js.undefined,
+      authorizerName: js.UndefOr[AuthorizerName] = js.undefined): UpdateAuthorizerResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "authorizerName" -> authorizerName.map { x => x.asInstanceOf[js.Any] },
-        "authorizerArn" -> authorizerArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "authorizerArn" -> authorizerArn.map { x => x.asInstanceOf[js.Any] },
+        "authorizerName" -> authorizerName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateAuthorizerResponse]
     }
@@ -9510,19 +9510,19 @@ package iot {
 
   @js.native
   trait UpdateBillingGroupRequest extends js.Object {
-    var billingGroupName: js.UndefOr[BillingGroupName]
-    var billingGroupProperties: js.UndefOr[BillingGroupProperties]
+    var billingGroupName: BillingGroupName
+    var billingGroupProperties: BillingGroupProperties
     var expectedVersion: js.UndefOr[OptionalVersion]
   }
 
   object UpdateBillingGroupRequest {
     def apply(
-      billingGroupName: js.UndefOr[BillingGroupName] = js.undefined,
-      billingGroupProperties: js.UndefOr[BillingGroupProperties] = js.undefined,
+      billingGroupName: BillingGroupName,
+      billingGroupProperties: BillingGroupProperties,
       expectedVersion: js.UndefOr[OptionalVersion] = js.undefined): UpdateBillingGroupRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "billingGroupName" -> billingGroupName.map { x => x.asInstanceOf[js.Any] },
-        "billingGroupProperties" -> billingGroupProperties.map { x => x.asInstanceOf[js.Any] },
+        "billingGroupName" -> billingGroupName.asInstanceOf[js.Any],
+        "billingGroupProperties" -> billingGroupProperties.asInstanceOf[js.Any],
         "expectedVersion" -> expectedVersion.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateBillingGroupRequest]
@@ -9549,26 +9549,26 @@ package iot {
    */
   @js.native
   trait UpdateCACertificateRequest extends js.Object {
-    var certificateId: js.UndefOr[CertificateId]
-    var newStatus: js.UndefOr[CACertificateStatus]
-    var removeAutoRegistration: js.UndefOr[RemoveAutoRegistration]
+    var certificateId: CertificateId
     var newAutoRegistrationStatus: js.UndefOr[AutoRegistrationStatus]
+    var newStatus: js.UndefOr[CACertificateStatus]
     var registrationConfig: js.UndefOr[RegistrationConfig]
+    var removeAutoRegistration: js.UndefOr[RemoveAutoRegistration]
   }
 
   object UpdateCACertificateRequest {
     def apply(
-      certificateId: js.UndefOr[CertificateId] = js.undefined,
-      newStatus: js.UndefOr[CACertificateStatus] = js.undefined,
-      removeAutoRegistration: js.UndefOr[RemoveAutoRegistration] = js.undefined,
+      certificateId: CertificateId,
       newAutoRegistrationStatus: js.UndefOr[AutoRegistrationStatus] = js.undefined,
-      registrationConfig: js.UndefOr[RegistrationConfig] = js.undefined): UpdateCACertificateRequest = {
+      newStatus: js.UndefOr[CACertificateStatus] = js.undefined,
+      registrationConfig: js.UndefOr[RegistrationConfig] = js.undefined,
+      removeAutoRegistration: js.UndefOr[RemoveAutoRegistration] = js.undefined): UpdateCACertificateRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "certificateId" -> certificateId.map { x => x.asInstanceOf[js.Any] },
-        "newStatus" -> newStatus.map { x => x.asInstanceOf[js.Any] },
-        "removeAutoRegistration" -> removeAutoRegistration.map { x => x.asInstanceOf[js.Any] },
+        "certificateId" -> certificateId.asInstanceOf[js.Any],
         "newAutoRegistrationStatus" -> newAutoRegistrationStatus.map { x => x.asInstanceOf[js.Any] },
-        "registrationConfig" -> registrationConfig.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "newStatus" -> newStatus.map { x => x.asInstanceOf[js.Any] },
+        "registrationConfig" -> registrationConfig.map { x => x.asInstanceOf[js.Any] },
+        "removeAutoRegistration" -> removeAutoRegistration.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateCACertificateRequest]
     }
@@ -9579,17 +9579,17 @@ package iot {
    */
   @js.native
   trait UpdateCertificateRequest extends js.Object {
-    var certificateId: js.UndefOr[CertificateId]
-    var newStatus: js.UndefOr[CertificateStatus]
+    var certificateId: CertificateId
+    var newStatus: CertificateStatus
   }
 
   object UpdateCertificateRequest {
     def apply(
-      certificateId: js.UndefOr[CertificateId] = js.undefined,
-      newStatus: js.UndefOr[CertificateStatus] = js.undefined): UpdateCertificateRequest = {
+      certificateId: CertificateId,
+      newStatus: CertificateStatus): UpdateCertificateRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "certificateId" -> certificateId.map { x => x.asInstanceOf[js.Any] },
-        "newStatus" -> newStatus.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "certificateId" -> certificateId.asInstanceOf[js.Any],
+        "newStatus" -> newStatus.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateCertificateRequest]
     }
@@ -9597,28 +9597,28 @@ package iot {
 
   @js.native
   trait UpdateDynamicThingGroupRequest extends js.Object {
-    var thingGroupName: js.UndefOr[ThingGroupName]
+    var thingGroupName: ThingGroupName
+    var thingGroupProperties: ThingGroupProperties
     var expectedVersion: js.UndefOr[OptionalVersion]
-    var queryString: js.UndefOr[QueryString]
     var indexName: js.UndefOr[IndexName]
-    var thingGroupProperties: js.UndefOr[ThingGroupProperties]
+    var queryString: js.UndefOr[QueryString]
     var queryVersion: js.UndefOr[QueryVersion]
   }
 
   object UpdateDynamicThingGroupRequest {
     def apply(
-      thingGroupName: js.UndefOr[ThingGroupName] = js.undefined,
+      thingGroupName: ThingGroupName,
+      thingGroupProperties: ThingGroupProperties,
       expectedVersion: js.UndefOr[OptionalVersion] = js.undefined,
-      queryString: js.UndefOr[QueryString] = js.undefined,
       indexName: js.UndefOr[IndexName] = js.undefined,
-      thingGroupProperties: js.UndefOr[ThingGroupProperties] = js.undefined,
+      queryString: js.UndefOr[QueryString] = js.undefined,
       queryVersion: js.UndefOr[QueryVersion] = js.undefined): UpdateDynamicThingGroupRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "thingGroupName" -> thingGroupName.map { x => x.asInstanceOf[js.Any] },
+        "thingGroupName" -> thingGroupName.asInstanceOf[js.Any],
+        "thingGroupProperties" -> thingGroupProperties.asInstanceOf[js.Any],
         "expectedVersion" -> expectedVersion.map { x => x.asInstanceOf[js.Any] },
-        "queryString" -> queryString.map { x => x.asInstanceOf[js.Any] },
         "indexName" -> indexName.map { x => x.asInstanceOf[js.Any] },
-        "thingGroupProperties" -> thingGroupProperties.map { x => x.asInstanceOf[js.Any] },
+        "queryString" -> queryString.map { x => x.asInstanceOf[js.Any] },
         "queryVersion" -> queryVersion.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateDynamicThingGroupRequest]
@@ -9670,17 +9670,17 @@ package iot {
 
   @js.native
   trait UpdateIndexingConfigurationRequest extends js.Object {
-    var thingIndexingConfiguration: js.UndefOr[ThingIndexingConfiguration]
     var thingGroupIndexingConfiguration: js.UndefOr[ThingGroupIndexingConfiguration]
+    var thingIndexingConfiguration: js.UndefOr[ThingIndexingConfiguration]
   }
 
   object UpdateIndexingConfigurationRequest {
     def apply(
-      thingIndexingConfiguration: js.UndefOr[ThingIndexingConfiguration] = js.undefined,
-      thingGroupIndexingConfiguration: js.UndefOr[ThingGroupIndexingConfiguration] = js.undefined): UpdateIndexingConfigurationRequest = {
+      thingGroupIndexingConfiguration: js.UndefOr[ThingGroupIndexingConfiguration] = js.undefined,
+      thingIndexingConfiguration: js.UndefOr[ThingIndexingConfiguration] = js.undefined): UpdateIndexingConfigurationRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "thingIndexingConfiguration" -> thingIndexingConfiguration.map { x => x.asInstanceOf[js.Any] },
-        "thingGroupIndexingConfiguration" -> thingGroupIndexingConfiguration.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "thingGroupIndexingConfiguration" -> thingGroupIndexingConfiguration.map { x => x.asInstanceOf[js.Any] },
+        "thingIndexingConfiguration" -> thingIndexingConfiguration.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateIndexingConfigurationRequest]
     }
@@ -9701,28 +9701,28 @@ package iot {
 
   @js.native
   trait UpdateJobRequest extends js.Object {
-    var jobExecutionsRolloutConfig: js.UndefOr[JobExecutionsRolloutConfig]
-    var description: js.UndefOr[JobDescription]
-    var presignedUrlConfig: js.UndefOr[PresignedUrlConfig]
-    var jobId: js.UndefOr[JobId]
+    var jobId: JobId
     var abortConfig: js.UndefOr[AbortConfig]
+    var description: js.UndefOr[JobDescription]
+    var jobExecutionsRolloutConfig: js.UndefOr[JobExecutionsRolloutConfig]
+    var presignedUrlConfig: js.UndefOr[PresignedUrlConfig]
     var timeoutConfig: js.UndefOr[TimeoutConfig]
   }
 
   object UpdateJobRequest {
     def apply(
-      jobExecutionsRolloutConfig: js.UndefOr[JobExecutionsRolloutConfig] = js.undefined,
-      description: js.UndefOr[JobDescription] = js.undefined,
-      presignedUrlConfig: js.UndefOr[PresignedUrlConfig] = js.undefined,
-      jobId: js.UndefOr[JobId] = js.undefined,
+      jobId: JobId,
       abortConfig: js.UndefOr[AbortConfig] = js.undefined,
+      description: js.UndefOr[JobDescription] = js.undefined,
+      jobExecutionsRolloutConfig: js.UndefOr[JobExecutionsRolloutConfig] = js.undefined,
+      presignedUrlConfig: js.UndefOr[PresignedUrlConfig] = js.undefined,
       timeoutConfig: js.UndefOr[TimeoutConfig] = js.undefined): UpdateJobRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "jobExecutionsRolloutConfig" -> jobExecutionsRolloutConfig.map { x => x.asInstanceOf[js.Any] },
-        "description" -> description.map { x => x.asInstanceOf[js.Any] },
-        "presignedUrlConfig" -> presignedUrlConfig.map { x => x.asInstanceOf[js.Any] },
-        "jobId" -> jobId.map { x => x.asInstanceOf[js.Any] },
+        "jobId" -> jobId.asInstanceOf[js.Any],
         "abortConfig" -> abortConfig.map { x => x.asInstanceOf[js.Any] },
+        "description" -> description.map { x => x.asInstanceOf[js.Any] },
+        "jobExecutionsRolloutConfig" -> jobExecutionsRolloutConfig.map { x => x.asInstanceOf[js.Any] },
+        "presignedUrlConfig" -> presignedUrlConfig.map { x => x.asInstanceOf[js.Any] },
         "timeoutConfig" -> timeoutConfig.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateJobRequest]
@@ -9731,20 +9731,20 @@ package iot {
 
   @js.native
   trait UpdateRoleAliasRequest extends js.Object {
-    var roleAlias: js.UndefOr[RoleAlias]
-    var roleArn: js.UndefOr[RoleArn]
+    var roleAlias: RoleAlias
     var credentialDurationSeconds: js.UndefOr[CredentialDurationSeconds]
+    var roleArn: js.UndefOr[RoleArn]
   }
 
   object UpdateRoleAliasRequest {
     def apply(
-      roleAlias: js.UndefOr[RoleAlias] = js.undefined,
-      roleArn: js.UndefOr[RoleArn] = js.undefined,
-      credentialDurationSeconds: js.UndefOr[CredentialDurationSeconds] = js.undefined): UpdateRoleAliasRequest = {
+      roleAlias: RoleAlias,
+      credentialDurationSeconds: js.UndefOr[CredentialDurationSeconds] = js.undefined,
+      roleArn: js.UndefOr[RoleArn] = js.undefined): UpdateRoleAliasRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "roleAlias" -> roleAlias.map { x => x.asInstanceOf[js.Any] },
-        "roleArn" -> roleArn.map { x => x.asInstanceOf[js.Any] },
-        "credentialDurationSeconds" -> credentialDurationSeconds.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "roleAlias" -> roleAlias.asInstanceOf[js.Any],
+        "credentialDurationSeconds" -> credentialDurationSeconds.map { x => x.asInstanceOf[js.Any] },
+        "roleArn" -> roleArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateRoleAliasRequest]
     }
@@ -9770,26 +9770,26 @@ package iot {
 
   @js.native
   trait UpdateScheduledAuditRequest extends js.Object {
-    var scheduledAuditName: js.UndefOr[ScheduledAuditName]
-    var dayOfWeek: js.UndefOr[DayOfWeek]
-    var targetCheckNames: js.UndefOr[TargetAuditCheckNames]
+    var scheduledAuditName: ScheduledAuditName
     var dayOfMonth: js.UndefOr[DayOfMonth]
+    var dayOfWeek: js.UndefOr[DayOfWeek]
     var frequency: js.UndefOr[AuditFrequency]
+    var targetCheckNames: js.UndefOr[TargetAuditCheckNames]
   }
 
   object UpdateScheduledAuditRequest {
     def apply(
-      scheduledAuditName: js.UndefOr[ScheduledAuditName] = js.undefined,
-      dayOfWeek: js.UndefOr[DayOfWeek] = js.undefined,
-      targetCheckNames: js.UndefOr[TargetAuditCheckNames] = js.undefined,
+      scheduledAuditName: ScheduledAuditName,
       dayOfMonth: js.UndefOr[DayOfMonth] = js.undefined,
-      frequency: js.UndefOr[AuditFrequency] = js.undefined): UpdateScheduledAuditRequest = {
+      dayOfWeek: js.UndefOr[DayOfWeek] = js.undefined,
+      frequency: js.UndefOr[AuditFrequency] = js.undefined,
+      targetCheckNames: js.UndefOr[TargetAuditCheckNames] = js.undefined): UpdateScheduledAuditRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "scheduledAuditName" -> scheduledAuditName.map { x => x.asInstanceOf[js.Any] },
-        "dayOfWeek" -> dayOfWeek.map { x => x.asInstanceOf[js.Any] },
-        "targetCheckNames" -> targetCheckNames.map { x => x.asInstanceOf[js.Any] },
+        "scheduledAuditName" -> scheduledAuditName.asInstanceOf[js.Any],
         "dayOfMonth" -> dayOfMonth.map { x => x.asInstanceOf[js.Any] },
-        "frequency" -> frequency.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "dayOfWeek" -> dayOfWeek.map { x => x.asInstanceOf[js.Any] },
+        "frequency" -> frequency.map { x => x.asInstanceOf[js.Any] },
+        "targetCheckNames" -> targetCheckNames.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateScheduledAuditRequest]
     }
@@ -9812,26 +9812,26 @@ package iot {
 
   @js.native
   trait UpdateSecurityProfileRequest extends js.Object {
-    var expectedVersion: js.UndefOr[OptionalVersion]
-    var behaviors: js.UndefOr[Behaviors]
-    var securityProfileName: js.UndefOr[SecurityProfileName]
-    var securityProfileDescription: js.UndefOr[SecurityProfileDescription]
+    var securityProfileName: SecurityProfileName
     var alertTargets: js.UndefOr[AlertTargets]
+    var behaviors: js.UndefOr[Behaviors]
+    var expectedVersion: js.UndefOr[OptionalVersion]
+    var securityProfileDescription: js.UndefOr[SecurityProfileDescription]
   }
 
   object UpdateSecurityProfileRequest {
     def apply(
-      expectedVersion: js.UndefOr[OptionalVersion] = js.undefined,
+      securityProfileName: SecurityProfileName,
+      alertTargets: js.UndefOr[AlertTargets] = js.undefined,
       behaviors: js.UndefOr[Behaviors] = js.undefined,
-      securityProfileName: js.UndefOr[SecurityProfileName] = js.undefined,
-      securityProfileDescription: js.UndefOr[SecurityProfileDescription] = js.undefined,
-      alertTargets: js.UndefOr[AlertTargets] = js.undefined): UpdateSecurityProfileRequest = {
+      expectedVersion: js.UndefOr[OptionalVersion] = js.undefined,
+      securityProfileDescription: js.UndefOr[SecurityProfileDescription] = js.undefined): UpdateSecurityProfileRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "expectedVersion" -> expectedVersion.map { x => x.asInstanceOf[js.Any] },
+        "securityProfileName" -> securityProfileName.asInstanceOf[js.Any],
+        "alertTargets" -> alertTargets.map { x => x.asInstanceOf[js.Any] },
         "behaviors" -> behaviors.map { x => x.asInstanceOf[js.Any] },
-        "securityProfileName" -> securityProfileName.map { x => x.asInstanceOf[js.Any] },
-        "securityProfileDescription" -> securityProfileDescription.map { x => x.asInstanceOf[js.Any] },
-        "alertTargets" -> alertTargets.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "expectedVersion" -> expectedVersion.map { x => x.asInstanceOf[js.Any] },
+        "securityProfileDescription" -> securityProfileDescription.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateSecurityProfileRequest]
     }
@@ -9839,35 +9839,35 @@ package iot {
 
   @js.native
   trait UpdateSecurityProfileResponse extends js.Object {
-    var lastModifiedDate: js.UndefOr[Timestamp]
-    var securityProfileArn: js.UndefOr[SecurityProfileArn]
-    var version: js.UndefOr[Version]
+    var alertTargets: js.UndefOr[AlertTargets]
     var behaviors: js.UndefOr[Behaviors]
     var creationDate: js.UndefOr[Timestamp]
-    var securityProfileName: js.UndefOr[SecurityProfileName]
+    var lastModifiedDate: js.UndefOr[Timestamp]
+    var securityProfileArn: js.UndefOr[SecurityProfileArn]
     var securityProfileDescription: js.UndefOr[SecurityProfileDescription]
-    var alertTargets: js.UndefOr[AlertTargets]
+    var securityProfileName: js.UndefOr[SecurityProfileName]
+    var version: js.UndefOr[Version]
   }
 
   object UpdateSecurityProfileResponse {
     def apply(
-      lastModifiedDate: js.UndefOr[Timestamp] = js.undefined,
-      securityProfileArn: js.UndefOr[SecurityProfileArn] = js.undefined,
-      version: js.UndefOr[Version] = js.undefined,
+      alertTargets: js.UndefOr[AlertTargets] = js.undefined,
       behaviors: js.UndefOr[Behaviors] = js.undefined,
       creationDate: js.UndefOr[Timestamp] = js.undefined,
-      securityProfileName: js.UndefOr[SecurityProfileName] = js.undefined,
+      lastModifiedDate: js.UndefOr[Timestamp] = js.undefined,
+      securityProfileArn: js.UndefOr[SecurityProfileArn] = js.undefined,
       securityProfileDescription: js.UndefOr[SecurityProfileDescription] = js.undefined,
-      alertTargets: js.UndefOr[AlertTargets] = js.undefined): UpdateSecurityProfileResponse = {
+      securityProfileName: js.UndefOr[SecurityProfileName] = js.undefined,
+      version: js.UndefOr[Version] = js.undefined): UpdateSecurityProfileResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "lastModifiedDate" -> lastModifiedDate.map { x => x.asInstanceOf[js.Any] },
-        "securityProfileArn" -> securityProfileArn.map { x => x.asInstanceOf[js.Any] },
-        "version" -> version.map { x => x.asInstanceOf[js.Any] },
+        "alertTargets" -> alertTargets.map { x => x.asInstanceOf[js.Any] },
         "behaviors" -> behaviors.map { x => x.asInstanceOf[js.Any] },
         "creationDate" -> creationDate.map { x => x.asInstanceOf[js.Any] },
-        "securityProfileName" -> securityProfileName.map { x => x.asInstanceOf[js.Any] },
+        "lastModifiedDate" -> lastModifiedDate.map { x => x.asInstanceOf[js.Any] },
+        "securityProfileArn" -> securityProfileArn.map { x => x.asInstanceOf[js.Any] },
         "securityProfileDescription" -> securityProfileDescription.map { x => x.asInstanceOf[js.Any] },
-        "alertTargets" -> alertTargets.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "securityProfileName" -> securityProfileName.map { x => x.asInstanceOf[js.Any] },
+        "version" -> version.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateSecurityProfileResponse]
     }
@@ -9875,7 +9875,7 @@ package iot {
 
   @js.native
   trait UpdateStreamRequest extends js.Object {
-    var streamId: js.UndefOr[StreamId]
+    var streamId: StreamId
     var description: js.UndefOr[StreamDescription]
     var files: js.UndefOr[StreamFiles]
     var roleArn: js.UndefOr[RoleArn]
@@ -9883,12 +9883,12 @@ package iot {
 
   object UpdateStreamRequest {
     def apply(
-      streamId: js.UndefOr[StreamId] = js.undefined,
+      streamId: StreamId,
       description: js.UndefOr[StreamDescription] = js.undefined,
       files: js.UndefOr[StreamFiles] = js.undefined,
       roleArn: js.UndefOr[RoleArn] = js.undefined): UpdateStreamRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "streamId" -> streamId.map { x => x.asInstanceOf[js.Any] },
+        "streamId" -> streamId.asInstanceOf[js.Any],
         "description" -> description.map { x => x.asInstanceOf[js.Any] },
         "files" -> files.map { x => x.asInstanceOf[js.Any] },
         "roleArn" -> roleArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
@@ -9899,22 +9899,22 @@ package iot {
 
   @js.native
   trait UpdateStreamResponse extends js.Object {
-    var streamId: js.UndefOr[StreamId]
-    var streamArn: js.UndefOr[StreamArn]
     var description: js.UndefOr[StreamDescription]
+    var streamArn: js.UndefOr[StreamArn]
+    var streamId: js.UndefOr[StreamId]
     var streamVersion: js.UndefOr[StreamVersion]
   }
 
   object UpdateStreamResponse {
     def apply(
-      streamId: js.UndefOr[StreamId] = js.undefined,
-      streamArn: js.UndefOr[StreamArn] = js.undefined,
       description: js.UndefOr[StreamDescription] = js.undefined,
+      streamArn: js.UndefOr[StreamArn] = js.undefined,
+      streamId: js.UndefOr[StreamId] = js.undefined,
       streamVersion: js.UndefOr[StreamVersion] = js.undefined): UpdateStreamResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "streamId" -> streamId.map { x => x.asInstanceOf[js.Any] },
-        "streamArn" -> streamArn.map { x => x.asInstanceOf[js.Any] },
         "description" -> description.map { x => x.asInstanceOf[js.Any] },
+        "streamArn" -> streamArn.map { x => x.asInstanceOf[js.Any] },
+        "streamId" -> streamId.map { x => x.asInstanceOf[js.Any] },
         "streamVersion" -> streamVersion.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateStreamResponse]
@@ -9923,19 +9923,19 @@ package iot {
 
   @js.native
   trait UpdateThingGroupRequest extends js.Object {
-    var thingGroupName: js.UndefOr[ThingGroupName]
-    var thingGroupProperties: js.UndefOr[ThingGroupProperties]
+    var thingGroupName: ThingGroupName
+    var thingGroupProperties: ThingGroupProperties
     var expectedVersion: js.UndefOr[OptionalVersion]
   }
 
   object UpdateThingGroupRequest {
     def apply(
-      thingGroupName: js.UndefOr[ThingGroupName] = js.undefined,
-      thingGroupProperties: js.UndefOr[ThingGroupProperties] = js.undefined,
+      thingGroupName: ThingGroupName,
+      thingGroupProperties: ThingGroupProperties,
       expectedVersion: js.UndefOr[OptionalVersion] = js.undefined): UpdateThingGroupRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "thingGroupName" -> thingGroupName.map { x => x.asInstanceOf[js.Any] },
-        "thingGroupProperties" -> thingGroupProperties.map { x => x.asInstanceOf[js.Any] },
+        "thingGroupName" -> thingGroupName.asInstanceOf[js.Any],
+        "thingGroupProperties" -> thingGroupProperties.asInstanceOf[js.Any],
         "expectedVersion" -> expectedVersion.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateThingGroupRequest]
@@ -9959,23 +9959,23 @@ package iot {
 
   @js.native
   trait UpdateThingGroupsForThingRequest extends js.Object {
-    var thingName: js.UndefOr[ThingName]
+    var overrideDynamicGroups: js.UndefOr[OverrideDynamicGroups]
     var thingGroupsToAdd: js.UndefOr[ThingGroupList]
     var thingGroupsToRemove: js.UndefOr[ThingGroupList]
-    var overrideDynamicGroups: js.UndefOr[OverrideDynamicGroups]
+    var thingName: js.UndefOr[ThingName]
   }
 
   object UpdateThingGroupsForThingRequest {
     def apply(
-      thingName: js.UndefOr[ThingName] = js.undefined,
+      overrideDynamicGroups: js.UndefOr[OverrideDynamicGroups] = js.undefined,
       thingGroupsToAdd: js.UndefOr[ThingGroupList] = js.undefined,
       thingGroupsToRemove: js.UndefOr[ThingGroupList] = js.undefined,
-      overrideDynamicGroups: js.UndefOr[OverrideDynamicGroups] = js.undefined): UpdateThingGroupsForThingRequest = {
+      thingName: js.UndefOr[ThingName] = js.undefined): UpdateThingGroupsForThingRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "thingName" -> thingName.map { x => x.asInstanceOf[js.Any] },
+        "overrideDynamicGroups" -> overrideDynamicGroups.map { x => x.asInstanceOf[js.Any] },
         "thingGroupsToAdd" -> thingGroupsToAdd.map { x => x.asInstanceOf[js.Any] },
         "thingGroupsToRemove" -> thingGroupsToRemove.map { x => x.asInstanceOf[js.Any] },
-        "overrideDynamicGroups" -> overrideDynamicGroups.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "thingName" -> thingName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateThingGroupsForThingRequest]
     }
@@ -9999,25 +9999,25 @@ package iot {
    */
   @js.native
   trait UpdateThingRequest extends js.Object {
-    var expectedVersion: js.UndefOr[OptionalVersion]
+    var thingName: ThingName
     var attributePayload: js.UndefOr[AttributePayload]
+    var expectedVersion: js.UndefOr[OptionalVersion]
     var removeThingType: js.UndefOr[RemoveThingType]
-    var thingName: js.UndefOr[ThingName]
     var thingTypeName: js.UndefOr[ThingTypeName]
   }
 
   object UpdateThingRequest {
     def apply(
-      expectedVersion: js.UndefOr[OptionalVersion] = js.undefined,
+      thingName: ThingName,
       attributePayload: js.UndefOr[AttributePayload] = js.undefined,
+      expectedVersion: js.UndefOr[OptionalVersion] = js.undefined,
       removeThingType: js.UndefOr[RemoveThingType] = js.undefined,
-      thingName: js.UndefOr[ThingName] = js.undefined,
       thingTypeName: js.UndefOr[ThingTypeName] = js.undefined): UpdateThingRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "expectedVersion" -> expectedVersion.map { x => x.asInstanceOf[js.Any] },
+        "thingName" -> thingName.asInstanceOf[js.Any],
         "attributePayload" -> attributePayload.map { x => x.asInstanceOf[js.Any] },
+        "expectedVersion" -> expectedVersion.map { x => x.asInstanceOf[js.Any] },
         "removeThingType" -> removeThingType.map { x => x.asInstanceOf[js.Any] },
-        "thingName" -> thingName.map { x => x.asInstanceOf[js.Any] },
         "thingTypeName" -> thingTypeName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateThingRequest]
@@ -10042,14 +10042,14 @@ package iot {
 
   @js.native
   trait ValidateSecurityProfileBehaviorsRequest extends js.Object {
-    var behaviors: js.UndefOr[Behaviors]
+    var behaviors: Behaviors
   }
 
   object ValidateSecurityProfileBehaviorsRequest {
     def apply(
-      behaviors: js.UndefOr[Behaviors] = js.undefined): ValidateSecurityProfileBehaviorsRequest = {
+      behaviors: Behaviors): ValidateSecurityProfileBehaviorsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "behaviors" -> behaviors.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "behaviors" -> behaviors.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ValidateSecurityProfileBehaviorsRequest]
     }
@@ -10096,31 +10096,31 @@ package iot {
    */
   @js.native
   trait ViolationEvent extends js.Object {
-    var violationEventTime: js.UndefOr[Timestamp]
-    var thingName: js.UndefOr[ThingName]
-    var violationEventType: js.UndefOr[ViolationEventType]
-    var securityProfileName: js.UndefOr[SecurityProfileName]
-    var metricValue: js.UndefOr[MetricValue]
     var behavior: js.UndefOr[Behavior]
+    var metricValue: js.UndefOr[MetricValue]
+    var securityProfileName: js.UndefOr[SecurityProfileName]
+    var thingName: js.UndefOr[ThingName]
+    var violationEventTime: js.UndefOr[Timestamp]
+    var violationEventType: js.UndefOr[ViolationEventType]
     var violationId: js.UndefOr[ViolationId]
   }
 
   object ViolationEvent {
     def apply(
-      violationEventTime: js.UndefOr[Timestamp] = js.undefined,
-      thingName: js.UndefOr[ThingName] = js.undefined,
-      violationEventType: js.UndefOr[ViolationEventType] = js.undefined,
-      securityProfileName: js.UndefOr[SecurityProfileName] = js.undefined,
-      metricValue: js.UndefOr[MetricValue] = js.undefined,
       behavior: js.UndefOr[Behavior] = js.undefined,
+      metricValue: js.UndefOr[MetricValue] = js.undefined,
+      securityProfileName: js.UndefOr[SecurityProfileName] = js.undefined,
+      thingName: js.UndefOr[ThingName] = js.undefined,
+      violationEventTime: js.UndefOr[Timestamp] = js.undefined,
+      violationEventType: js.UndefOr[ViolationEventType] = js.undefined,
       violationId: js.UndefOr[ViolationId] = js.undefined): ViolationEvent = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "violationEventTime" -> violationEventTime.map { x => x.asInstanceOf[js.Any] },
-        "thingName" -> thingName.map { x => x.asInstanceOf[js.Any] },
-        "violationEventType" -> violationEventType.map { x => x.asInstanceOf[js.Any] },
-        "securityProfileName" -> securityProfileName.map { x => x.asInstanceOf[js.Any] },
-        "metricValue" -> metricValue.map { x => x.asInstanceOf[js.Any] },
         "behavior" -> behavior.map { x => x.asInstanceOf[js.Any] },
+        "metricValue" -> metricValue.map { x => x.asInstanceOf[js.Any] },
+        "securityProfileName" -> securityProfileName.map { x => x.asInstanceOf[js.Any] },
+        "thingName" -> thingName.map { x => x.asInstanceOf[js.Any] },
+        "violationEventTime" -> violationEventTime.map { x => x.asInstanceOf[js.Any] },
+        "violationEventType" -> violationEventType.map { x => x.asInstanceOf[js.Any] },
         "violationId" -> violationId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ViolationEvent]

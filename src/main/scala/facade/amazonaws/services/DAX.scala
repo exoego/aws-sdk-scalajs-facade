@@ -75,62 +75,62 @@ package dax {
    */
   @js.native
   trait Cluster extends js.Object {
-    var ClusterDiscoveryEndpoint: js.UndefOr[Endpoint]
-    var PreferredMaintenanceWindow: js.UndefOr[String]
-    var NodeIdsToRemove: js.UndefOr[NodeIdentifierList]
-    var NotificationConfiguration: js.UndefOr[NotificationConfiguration]
-    var ClusterName: js.UndefOr[String]
-    var SecurityGroups: js.UndefOr[SecurityGroupMembershipList]
-    var Description: js.UndefOr[String]
-    var NodeType: js.UndefOr[String]
-    var SubnetGroup: js.UndefOr[String]
     var ActiveNodes: js.UndefOr[IntegerOptional]
     var ClusterArn: js.UndefOr[String]
-    var TotalNodes: js.UndefOr[IntegerOptional]
+    var ClusterDiscoveryEndpoint: js.UndefOr[Endpoint]
+    var ClusterName: js.UndefOr[String]
+    var Description: js.UndefOr[String]
     var IamRoleArn: js.UndefOr[String]
-    var SSEDescription: js.UndefOr[SSEDescription]
-    var ParameterGroup: js.UndefOr[ParameterGroupStatus]
+    var NodeIdsToRemove: js.UndefOr[NodeIdentifierList]
+    var NodeType: js.UndefOr[String]
     var Nodes: js.UndefOr[NodeList]
+    var NotificationConfiguration: js.UndefOr[NotificationConfiguration]
+    var ParameterGroup: js.UndefOr[ParameterGroupStatus]
+    var PreferredMaintenanceWindow: js.UndefOr[String]
+    var SSEDescription: js.UndefOr[SSEDescription]
+    var SecurityGroups: js.UndefOr[SecurityGroupMembershipList]
     var Status: js.UndefOr[String]
+    var SubnetGroup: js.UndefOr[String]
+    var TotalNodes: js.UndefOr[IntegerOptional]
   }
 
   object Cluster {
     def apply(
-      ClusterDiscoveryEndpoint: js.UndefOr[Endpoint] = js.undefined,
-      PreferredMaintenanceWindow: js.UndefOr[String] = js.undefined,
-      NodeIdsToRemove: js.UndefOr[NodeIdentifierList] = js.undefined,
-      NotificationConfiguration: js.UndefOr[NotificationConfiguration] = js.undefined,
-      ClusterName: js.UndefOr[String] = js.undefined,
-      SecurityGroups: js.UndefOr[SecurityGroupMembershipList] = js.undefined,
-      Description: js.UndefOr[String] = js.undefined,
-      NodeType: js.UndefOr[String] = js.undefined,
-      SubnetGroup: js.UndefOr[String] = js.undefined,
       ActiveNodes: js.UndefOr[IntegerOptional] = js.undefined,
       ClusterArn: js.UndefOr[String] = js.undefined,
-      TotalNodes: js.UndefOr[IntegerOptional] = js.undefined,
+      ClusterDiscoveryEndpoint: js.UndefOr[Endpoint] = js.undefined,
+      ClusterName: js.UndefOr[String] = js.undefined,
+      Description: js.UndefOr[String] = js.undefined,
       IamRoleArn: js.UndefOr[String] = js.undefined,
-      SSEDescription: js.UndefOr[SSEDescription] = js.undefined,
-      ParameterGroup: js.UndefOr[ParameterGroupStatus] = js.undefined,
+      NodeIdsToRemove: js.UndefOr[NodeIdentifierList] = js.undefined,
+      NodeType: js.UndefOr[String] = js.undefined,
       Nodes: js.UndefOr[NodeList] = js.undefined,
-      Status: js.UndefOr[String] = js.undefined): Cluster = {
+      NotificationConfiguration: js.UndefOr[NotificationConfiguration] = js.undefined,
+      ParameterGroup: js.UndefOr[ParameterGroupStatus] = js.undefined,
+      PreferredMaintenanceWindow: js.UndefOr[String] = js.undefined,
+      SSEDescription: js.UndefOr[SSEDescription] = js.undefined,
+      SecurityGroups: js.UndefOr[SecurityGroupMembershipList] = js.undefined,
+      Status: js.UndefOr[String] = js.undefined,
+      SubnetGroup: js.UndefOr[String] = js.undefined,
+      TotalNodes: js.UndefOr[IntegerOptional] = js.undefined): Cluster = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ClusterDiscoveryEndpoint" -> ClusterDiscoveryEndpoint.map { x => x.asInstanceOf[js.Any] },
-        "PreferredMaintenanceWindow" -> PreferredMaintenanceWindow.map { x => x.asInstanceOf[js.Any] },
-        "NodeIdsToRemove" -> NodeIdsToRemove.map { x => x.asInstanceOf[js.Any] },
-        "NotificationConfiguration" -> NotificationConfiguration.map { x => x.asInstanceOf[js.Any] },
-        "ClusterName" -> ClusterName.map { x => x.asInstanceOf[js.Any] },
-        "SecurityGroups" -> SecurityGroups.map { x => x.asInstanceOf[js.Any] },
-        "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
-        "NodeType" -> NodeType.map { x => x.asInstanceOf[js.Any] },
-        "SubnetGroup" -> SubnetGroup.map { x => x.asInstanceOf[js.Any] },
         "ActiveNodes" -> ActiveNodes.map { x => x.asInstanceOf[js.Any] },
         "ClusterArn" -> ClusterArn.map { x => x.asInstanceOf[js.Any] },
-        "TotalNodes" -> TotalNodes.map { x => x.asInstanceOf[js.Any] },
+        "ClusterDiscoveryEndpoint" -> ClusterDiscoveryEndpoint.map { x => x.asInstanceOf[js.Any] },
+        "ClusterName" -> ClusterName.map { x => x.asInstanceOf[js.Any] },
+        "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
         "IamRoleArn" -> IamRoleArn.map { x => x.asInstanceOf[js.Any] },
-        "SSEDescription" -> SSEDescription.map { x => x.asInstanceOf[js.Any] },
-        "ParameterGroup" -> ParameterGroup.map { x => x.asInstanceOf[js.Any] },
+        "NodeIdsToRemove" -> NodeIdsToRemove.map { x => x.asInstanceOf[js.Any] },
+        "NodeType" -> NodeType.map { x => x.asInstanceOf[js.Any] },
         "Nodes" -> Nodes.map { x => x.asInstanceOf[js.Any] },
-        "Status" -> Status.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "NotificationConfiguration" -> NotificationConfiguration.map { x => x.asInstanceOf[js.Any] },
+        "ParameterGroup" -> ParameterGroup.map { x => x.asInstanceOf[js.Any] },
+        "PreferredMaintenanceWindow" -> PreferredMaintenanceWindow.map { x => x.asInstanceOf[js.Any] },
+        "SSEDescription" -> SSEDescription.map { x => x.asInstanceOf[js.Any] },
+        "SecurityGroups" -> SecurityGroups.map { x => x.asInstanceOf[js.Any] },
+        "Status" -> Status.map { x => x.asInstanceOf[js.Any] },
+        "SubnetGroup" -> SubnetGroup.map { x => x.asInstanceOf[js.Any] },
+        "TotalNodes" -> TotalNodes.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Cluster]
     }
@@ -138,50 +138,50 @@ package dax {
 
   @js.native
   trait CreateClusterRequest extends js.Object {
-    var PreferredMaintenanceWindow: js.UndefOr[String]
-    var ReplicationFactor: js.UndefOr[Int]
-    var SubnetGroupName: js.UndefOr[String]
-    var SSESpecification: js.UndefOr[SSESpecification]
-    var ParameterGroupName: js.UndefOr[String]
-    var ClusterName: js.UndefOr[String]
-    var Description: js.UndefOr[String]
-    var NodeType: js.UndefOr[String]
-    var SecurityGroupIds: js.UndefOr[SecurityGroupIdentifierList]
-    var NotificationTopicArn: js.UndefOr[String]
-    var Tags: js.UndefOr[TagList]
-    var IamRoleArn: js.UndefOr[String]
+    var ClusterName: String
+    var IamRoleArn: String
+    var NodeType: String
+    var ReplicationFactor: Int
     var AvailabilityZones: js.UndefOr[AvailabilityZoneList]
+    var Description: js.UndefOr[String]
+    var NotificationTopicArn: js.UndefOr[String]
+    var ParameterGroupName: js.UndefOr[String]
+    var PreferredMaintenanceWindow: js.UndefOr[String]
+    var SSESpecification: js.UndefOr[SSESpecification]
+    var SecurityGroupIds: js.UndefOr[SecurityGroupIdentifierList]
+    var SubnetGroupName: js.UndefOr[String]
+    var Tags: js.UndefOr[TagList]
   }
 
   object CreateClusterRequest {
     def apply(
-      PreferredMaintenanceWindow: js.UndefOr[String] = js.undefined,
-      ReplicationFactor: js.UndefOr[Int] = js.undefined,
-      SubnetGroupName: js.UndefOr[String] = js.undefined,
-      SSESpecification: js.UndefOr[SSESpecification] = js.undefined,
-      ParameterGroupName: js.UndefOr[String] = js.undefined,
-      ClusterName: js.UndefOr[String] = js.undefined,
+      ClusterName: String,
+      IamRoleArn: String,
+      NodeType: String,
+      ReplicationFactor: Int,
+      AvailabilityZones: js.UndefOr[AvailabilityZoneList] = js.undefined,
       Description: js.UndefOr[String] = js.undefined,
-      NodeType: js.UndefOr[String] = js.undefined,
-      SecurityGroupIds: js.UndefOr[SecurityGroupIdentifierList] = js.undefined,
       NotificationTopicArn: js.UndefOr[String] = js.undefined,
-      Tags: js.UndefOr[TagList] = js.undefined,
-      IamRoleArn: js.UndefOr[String] = js.undefined,
-      AvailabilityZones: js.UndefOr[AvailabilityZoneList] = js.undefined): CreateClusterRequest = {
+      ParameterGroupName: js.UndefOr[String] = js.undefined,
+      PreferredMaintenanceWindow: js.UndefOr[String] = js.undefined,
+      SSESpecification: js.UndefOr[SSESpecification] = js.undefined,
+      SecurityGroupIds: js.UndefOr[SecurityGroupIdentifierList] = js.undefined,
+      SubnetGroupName: js.UndefOr[String] = js.undefined,
+      Tags: js.UndefOr[TagList] = js.undefined): CreateClusterRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "PreferredMaintenanceWindow" -> PreferredMaintenanceWindow.map { x => x.asInstanceOf[js.Any] },
-        "ReplicationFactor" -> ReplicationFactor.map { x => x.asInstanceOf[js.Any] },
-        "SubnetGroupName" -> SubnetGroupName.map { x => x.asInstanceOf[js.Any] },
-        "SSESpecification" -> SSESpecification.map { x => x.asInstanceOf[js.Any] },
-        "ParameterGroupName" -> ParameterGroupName.map { x => x.asInstanceOf[js.Any] },
-        "ClusterName" -> ClusterName.map { x => x.asInstanceOf[js.Any] },
+        "ClusterName" -> ClusterName.asInstanceOf[js.Any],
+        "IamRoleArn" -> IamRoleArn.asInstanceOf[js.Any],
+        "NodeType" -> NodeType.asInstanceOf[js.Any],
+        "ReplicationFactor" -> ReplicationFactor.asInstanceOf[js.Any],
+        "AvailabilityZones" -> AvailabilityZones.map { x => x.asInstanceOf[js.Any] },
         "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
-        "NodeType" -> NodeType.map { x => x.asInstanceOf[js.Any] },
-        "SecurityGroupIds" -> SecurityGroupIds.map { x => x.asInstanceOf[js.Any] },
         "NotificationTopicArn" -> NotificationTopicArn.map { x => x.asInstanceOf[js.Any] },
-        "Tags" -> Tags.map { x => x.asInstanceOf[js.Any] },
-        "IamRoleArn" -> IamRoleArn.map { x => x.asInstanceOf[js.Any] },
-        "AvailabilityZones" -> AvailabilityZones.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ParameterGroupName" -> ParameterGroupName.map { x => x.asInstanceOf[js.Any] },
+        "PreferredMaintenanceWindow" -> PreferredMaintenanceWindow.map { x => x.asInstanceOf[js.Any] },
+        "SSESpecification" -> SSESpecification.map { x => x.asInstanceOf[js.Any] },
+        "SecurityGroupIds" -> SecurityGroupIds.map { x => x.asInstanceOf[js.Any] },
+        "SubnetGroupName" -> SubnetGroupName.map { x => x.asInstanceOf[js.Any] },
+        "Tags" -> Tags.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateClusterRequest]
     }
@@ -204,16 +204,16 @@ package dax {
 
   @js.native
   trait CreateParameterGroupRequest extends js.Object {
-    var ParameterGroupName: js.UndefOr[String]
+    var ParameterGroupName: String
     var Description: js.UndefOr[String]
   }
 
   object CreateParameterGroupRequest {
     def apply(
-      ParameterGroupName: js.UndefOr[String] = js.undefined,
+      ParameterGroupName: String,
       Description: js.UndefOr[String] = js.undefined): CreateParameterGroupRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ParameterGroupName" -> ParameterGroupName.map { x => x.asInstanceOf[js.Any] },
+        "ParameterGroupName" -> ParameterGroupName.asInstanceOf[js.Any],
         "Description" -> Description.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateParameterGroupRequest]
@@ -237,20 +237,20 @@ package dax {
 
   @js.native
   trait CreateSubnetGroupRequest extends js.Object {
-    var SubnetGroupName: js.UndefOr[String]
+    var SubnetGroupName: String
+    var SubnetIds: SubnetIdentifierList
     var Description: js.UndefOr[String]
-    var SubnetIds: js.UndefOr[SubnetIdentifierList]
   }
 
   object CreateSubnetGroupRequest {
     def apply(
-      SubnetGroupName: js.UndefOr[String] = js.undefined,
-      Description: js.UndefOr[String] = js.undefined,
-      SubnetIds: js.UndefOr[SubnetIdentifierList] = js.undefined): CreateSubnetGroupRequest = {
+      SubnetGroupName: String,
+      SubnetIds: SubnetIdentifierList,
+      Description: js.UndefOr[String] = js.undefined): CreateSubnetGroupRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "SubnetGroupName" -> SubnetGroupName.map { x => x.asInstanceOf[js.Any] },
-        "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
-        "SubnetIds" -> SubnetIds.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "SubnetGroupName" -> SubnetGroupName.asInstanceOf[js.Any],
+        "SubnetIds" -> SubnetIds.asInstanceOf[js.Any],
+        "Description" -> Description.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateSubnetGroupRequest]
     }
@@ -273,21 +273,21 @@ package dax {
 
   @js.native
   trait DecreaseReplicationFactorRequest extends js.Object {
-    var ClusterName: js.UndefOr[String]
-    var NewReplicationFactor: js.UndefOr[Int]
+    var ClusterName: String
+    var NewReplicationFactor: Int
     var AvailabilityZones: js.UndefOr[AvailabilityZoneList]
     var NodeIdsToRemove: js.UndefOr[NodeIdentifierList]
   }
 
   object DecreaseReplicationFactorRequest {
     def apply(
-      ClusterName: js.UndefOr[String] = js.undefined,
-      NewReplicationFactor: js.UndefOr[Int] = js.undefined,
+      ClusterName: String,
+      NewReplicationFactor: Int,
       AvailabilityZones: js.UndefOr[AvailabilityZoneList] = js.undefined,
       NodeIdsToRemove: js.UndefOr[NodeIdentifierList] = js.undefined): DecreaseReplicationFactorRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ClusterName" -> ClusterName.map { x => x.asInstanceOf[js.Any] },
-        "NewReplicationFactor" -> NewReplicationFactor.map { x => x.asInstanceOf[js.Any] },
+        "ClusterName" -> ClusterName.asInstanceOf[js.Any],
+        "NewReplicationFactor" -> NewReplicationFactor.asInstanceOf[js.Any],
         "AvailabilityZones" -> AvailabilityZones.map { x => x.asInstanceOf[js.Any] },
         "NodeIdsToRemove" -> NodeIdsToRemove.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
@@ -312,14 +312,14 @@ package dax {
 
   @js.native
   trait DeleteClusterRequest extends js.Object {
-    var ClusterName: js.UndefOr[String]
+    var ClusterName: String
   }
 
   object DeleteClusterRequest {
     def apply(
-      ClusterName: js.UndefOr[String] = js.undefined): DeleteClusterRequest = {
+      ClusterName: String): DeleteClusterRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ClusterName" -> ClusterName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ClusterName" -> ClusterName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteClusterRequest]
     }
@@ -342,14 +342,14 @@ package dax {
 
   @js.native
   trait DeleteParameterGroupRequest extends js.Object {
-    var ParameterGroupName: js.UndefOr[String]
+    var ParameterGroupName: String
   }
 
   object DeleteParameterGroupRequest {
     def apply(
-      ParameterGroupName: js.UndefOr[String] = js.undefined): DeleteParameterGroupRequest = {
+      ParameterGroupName: String): DeleteParameterGroupRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ParameterGroupName" -> ParameterGroupName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ParameterGroupName" -> ParameterGroupName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteParameterGroupRequest]
     }
@@ -372,14 +372,14 @@ package dax {
 
   @js.native
   trait DeleteSubnetGroupRequest extends js.Object {
-    var SubnetGroupName: js.UndefOr[String]
+    var SubnetGroupName: String
   }
 
   object DeleteSubnetGroupRequest {
     def apply(
-      SubnetGroupName: js.UndefOr[String] = js.undefined): DeleteSubnetGroupRequest = {
+      SubnetGroupName: String): DeleteSubnetGroupRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "SubnetGroupName" -> SubnetGroupName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "SubnetGroupName" -> SubnetGroupName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteSubnetGroupRequest]
     }
@@ -423,17 +423,17 @@ package dax {
 
   @js.native
   trait DescribeClustersResponse extends js.Object {
-    var NextToken: js.UndefOr[String]
     var Clusters: js.UndefOr[ClusterList]
+    var NextToken: js.UndefOr[String]
   }
 
   object DescribeClustersResponse {
     def apply(
-      NextToken: js.UndefOr[String] = js.undefined,
-      Clusters: js.UndefOr[ClusterList] = js.undefined): DescribeClustersResponse = {
+      Clusters: js.UndefOr[ClusterList] = js.undefined,
+      NextToken: js.UndefOr[String] = js.undefined): DescribeClustersResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
-        "Clusters" -> Clusters.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Clusters" -> Clusters.map { x => x.asInstanceOf[js.Any] },
+        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeClustersResponse]
     }
@@ -478,31 +478,31 @@ package dax {
   @js.native
   trait DescribeEventsRequest extends js.Object {
     var Duration: js.UndefOr[IntegerOptional]
-    var MaxResults: js.UndefOr[IntegerOptional]
-    var StartTime: js.UndefOr[TStamp]
     var EndTime: js.UndefOr[TStamp]
+    var MaxResults: js.UndefOr[IntegerOptional]
+    var NextToken: js.UndefOr[String]
     var SourceName: js.UndefOr[String]
     var SourceType: js.UndefOr[SourceType]
-    var NextToken: js.UndefOr[String]
+    var StartTime: js.UndefOr[TStamp]
   }
 
   object DescribeEventsRequest {
     def apply(
       Duration: js.UndefOr[IntegerOptional] = js.undefined,
-      MaxResults: js.UndefOr[IntegerOptional] = js.undefined,
-      StartTime: js.UndefOr[TStamp] = js.undefined,
       EndTime: js.UndefOr[TStamp] = js.undefined,
+      MaxResults: js.UndefOr[IntegerOptional] = js.undefined,
+      NextToken: js.UndefOr[String] = js.undefined,
       SourceName: js.UndefOr[String] = js.undefined,
       SourceType: js.UndefOr[SourceType] = js.undefined,
-      NextToken: js.UndefOr[String] = js.undefined): DescribeEventsRequest = {
+      StartTime: js.UndefOr[TStamp] = js.undefined): DescribeEventsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Duration" -> Duration.map { x => x.asInstanceOf[js.Any] },
-        "MaxResults" -> MaxResults.map { x => x.asInstanceOf[js.Any] },
-        "StartTime" -> StartTime.map { x => x.asInstanceOf[js.Any] },
         "EndTime" -> EndTime.map { x => x.asInstanceOf[js.Any] },
+        "MaxResults" -> MaxResults.map { x => x.asInstanceOf[js.Any] },
+        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
         "SourceName" -> SourceName.map { x => x.asInstanceOf[js.Any] },
         "SourceType" -> SourceType.map { x => x.asInstanceOf[js.Any] },
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "StartTime" -> StartTime.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeEventsRequest]
     }
@@ -510,17 +510,17 @@ package dax {
 
   @js.native
   trait DescribeEventsResponse extends js.Object {
-    var NextToken: js.UndefOr[String]
     var Events: js.UndefOr[EventList]
+    var NextToken: js.UndefOr[String]
   }
 
   object DescribeEventsResponse {
     def apply(
-      NextToken: js.UndefOr[String] = js.undefined,
-      Events: js.UndefOr[EventList] = js.undefined): DescribeEventsResponse = {
+      Events: js.UndefOr[EventList] = js.undefined,
+      NextToken: js.UndefOr[String] = js.undefined): DescribeEventsResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
-        "Events" -> Events.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Events" -> Events.map { x => x.asInstanceOf[js.Any] },
+        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeEventsResponse]
     }
@@ -528,20 +528,20 @@ package dax {
 
   @js.native
   trait DescribeParameterGroupsRequest extends js.Object {
-    var ParameterGroupNames: js.UndefOr[ParameterGroupNameList]
     var MaxResults: js.UndefOr[IntegerOptional]
     var NextToken: js.UndefOr[String]
+    var ParameterGroupNames: js.UndefOr[ParameterGroupNameList]
   }
 
   object DescribeParameterGroupsRequest {
     def apply(
-      ParameterGroupNames: js.UndefOr[ParameterGroupNameList] = js.undefined,
       MaxResults: js.UndefOr[IntegerOptional] = js.undefined,
-      NextToken: js.UndefOr[String] = js.undefined): DescribeParameterGroupsRequest = {
+      NextToken: js.UndefOr[String] = js.undefined,
+      ParameterGroupNames: js.UndefOr[ParameterGroupNameList] = js.undefined): DescribeParameterGroupsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ParameterGroupNames" -> ParameterGroupNames.map { x => x.asInstanceOf[js.Any] },
         "MaxResults" -> MaxResults.map { x => x.asInstanceOf[js.Any] },
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
+        "ParameterGroupNames" -> ParameterGroupNames.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeParameterGroupsRequest]
     }
@@ -567,23 +567,23 @@ package dax {
 
   @js.native
   trait DescribeParametersRequest extends js.Object {
-    var ParameterGroupName: js.UndefOr[String]
-    var Source: js.UndefOr[String]
+    var ParameterGroupName: String
     var MaxResults: js.UndefOr[IntegerOptional]
     var NextToken: js.UndefOr[String]
+    var Source: js.UndefOr[String]
   }
 
   object DescribeParametersRequest {
     def apply(
-      ParameterGroupName: js.UndefOr[String] = js.undefined,
-      Source: js.UndefOr[String] = js.undefined,
+      ParameterGroupName: String,
       MaxResults: js.UndefOr[IntegerOptional] = js.undefined,
-      NextToken: js.UndefOr[String] = js.undefined): DescribeParametersRequest = {
+      NextToken: js.UndefOr[String] = js.undefined,
+      Source: js.UndefOr[String] = js.undefined): DescribeParametersRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ParameterGroupName" -> ParameterGroupName.map { x => x.asInstanceOf[js.Any] },
-        "Source" -> Source.map { x => x.asInstanceOf[js.Any] },
+        "ParameterGroupName" -> ParameterGroupName.asInstanceOf[js.Any],
         "MaxResults" -> MaxResults.map { x => x.asInstanceOf[js.Any] },
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
+        "Source" -> Source.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeParametersRequest]
     }
@@ -609,20 +609,20 @@ package dax {
 
   @js.native
   trait DescribeSubnetGroupsRequest extends js.Object {
-    var SubnetGroupNames: js.UndefOr[SubnetGroupNameList]
     var MaxResults: js.UndefOr[IntegerOptional]
     var NextToken: js.UndefOr[String]
+    var SubnetGroupNames: js.UndefOr[SubnetGroupNameList]
   }
 
   object DescribeSubnetGroupsRequest {
     def apply(
-      SubnetGroupNames: js.UndefOr[SubnetGroupNameList] = js.undefined,
       MaxResults: js.UndefOr[IntegerOptional] = js.undefined,
-      NextToken: js.UndefOr[String] = js.undefined): DescribeSubnetGroupsRequest = {
+      NextToken: js.UndefOr[String] = js.undefined,
+      SubnetGroupNames: js.UndefOr[SubnetGroupNameList] = js.undefined): DescribeSubnetGroupsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "SubnetGroupNames" -> SubnetGroupNames.map { x => x.asInstanceOf[js.Any] },
         "MaxResults" -> MaxResults.map { x => x.asInstanceOf[js.Any] },
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
+        "SubnetGroupNames" -> SubnetGroupNames.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeSubnetGroupsRequest]
     }
@@ -672,23 +672,23 @@ package dax {
    */
   @js.native
   trait Event extends js.Object {
+    var Date: js.UndefOr[TStamp]
+    var Message: js.UndefOr[String]
     var SourceName: js.UndefOr[String]
     var SourceType: js.UndefOr[SourceType]
-    var Message: js.UndefOr[String]
-    var Date: js.UndefOr[TStamp]
   }
 
   object Event {
     def apply(
-      SourceName: js.UndefOr[String] = js.undefined,
-      SourceType: js.UndefOr[SourceType] = js.undefined,
+      Date: js.UndefOr[TStamp] = js.undefined,
       Message: js.UndefOr[String] = js.undefined,
-      Date: js.UndefOr[TStamp] = js.undefined): Event = {
+      SourceName: js.UndefOr[String] = js.undefined,
+      SourceType: js.UndefOr[SourceType] = js.undefined): Event = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "SourceName" -> SourceName.map { x => x.asInstanceOf[js.Any] },
-        "SourceType" -> SourceType.map { x => x.asInstanceOf[js.Any] },
+        "Date" -> Date.map { x => x.asInstanceOf[js.Any] },
         "Message" -> Message.map { x => x.asInstanceOf[js.Any] },
-        "Date" -> Date.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "SourceName" -> SourceName.map { x => x.asInstanceOf[js.Any] },
+        "SourceType" -> SourceType.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Event]
     }
@@ -696,19 +696,19 @@ package dax {
 
   @js.native
   trait IncreaseReplicationFactorRequest extends js.Object {
-    var ClusterName: js.UndefOr[String]
-    var NewReplicationFactor: js.UndefOr[Int]
+    var ClusterName: String
+    var NewReplicationFactor: Int
     var AvailabilityZones: js.UndefOr[AvailabilityZoneList]
   }
 
   object IncreaseReplicationFactorRequest {
     def apply(
-      ClusterName: js.UndefOr[String] = js.undefined,
-      NewReplicationFactor: js.UndefOr[Int] = js.undefined,
+      ClusterName: String,
+      NewReplicationFactor: Int,
       AvailabilityZones: js.UndefOr[AvailabilityZoneList] = js.undefined): IncreaseReplicationFactorRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ClusterName" -> ClusterName.map { x => x.asInstanceOf[js.Any] },
-        "NewReplicationFactor" -> NewReplicationFactor.map { x => x.asInstanceOf[js.Any] },
+        "ClusterName" -> ClusterName.asInstanceOf[js.Any],
+        "NewReplicationFactor" -> NewReplicationFactor.asInstanceOf[js.Any],
         "AvailabilityZones" -> AvailabilityZones.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[IncreaseReplicationFactorRequest]
@@ -740,16 +740,16 @@ package dax {
 
   @js.native
   trait ListTagsRequest extends js.Object {
-    var ResourceName: js.UndefOr[String]
+    var ResourceName: String
     var NextToken: js.UndefOr[String]
   }
 
   object ListTagsRequest {
     def apply(
-      ResourceName: js.UndefOr[String] = js.undefined,
+      ResourceName: String,
       NextToken: js.UndefOr[String] = js.undefined): ListTagsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ResourceName" -> ResourceName.map { x => x.asInstanceOf[js.Any] },
+        "ResourceName" -> ResourceName.asInstanceOf[js.Any],
         "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListTagsRequest]
@@ -758,17 +758,17 @@ package dax {
 
   @js.native
   trait ListTagsResponse extends js.Object {
-    var Tags: js.UndefOr[TagList]
     var NextToken: js.UndefOr[String]
+    var Tags: js.UndefOr[TagList]
   }
 
   object ListTagsResponse {
     def apply(
-      Tags: js.UndefOr[TagList] = js.undefined,
-      NextToken: js.UndefOr[String] = js.undefined): ListTagsResponse = {
+      NextToken: js.UndefOr[String] = js.undefined,
+      Tags: js.UndefOr[TagList] = js.undefined): ListTagsResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Tags" -> Tags.map { x => x.asInstanceOf[js.Any] },
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
+        "Tags" -> Tags.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListTagsResponse]
     }
@@ -779,28 +779,28 @@ package dax {
    */
   @js.native
   trait Node extends js.Object {
-    var NodeId: js.UndefOr[String]
-    var NodeCreateTime: js.UndefOr[TStamp]
-    var Endpoint: js.UndefOr[Endpoint]
-    var NodeStatus: js.UndefOr[String]
     var AvailabilityZone: js.UndefOr[String]
+    var Endpoint: js.UndefOr[Endpoint]
+    var NodeCreateTime: js.UndefOr[TStamp]
+    var NodeId: js.UndefOr[String]
+    var NodeStatus: js.UndefOr[String]
     var ParameterGroupStatus: js.UndefOr[String]
   }
 
   object Node {
     def apply(
-      NodeId: js.UndefOr[String] = js.undefined,
-      NodeCreateTime: js.UndefOr[TStamp] = js.undefined,
-      Endpoint: js.UndefOr[Endpoint] = js.undefined,
-      NodeStatus: js.UndefOr[String] = js.undefined,
       AvailabilityZone: js.UndefOr[String] = js.undefined,
+      Endpoint: js.UndefOr[Endpoint] = js.undefined,
+      NodeCreateTime: js.UndefOr[TStamp] = js.undefined,
+      NodeId: js.UndefOr[String] = js.undefined,
+      NodeStatus: js.UndefOr[String] = js.undefined,
       ParameterGroupStatus: js.UndefOr[String] = js.undefined): Node = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "NodeId" -> NodeId.map { x => x.asInstanceOf[js.Any] },
-        "NodeCreateTime" -> NodeCreateTime.map { x => x.asInstanceOf[js.Any] },
-        "Endpoint" -> Endpoint.map { x => x.asInstanceOf[js.Any] },
-        "NodeStatus" -> NodeStatus.map { x => x.asInstanceOf[js.Any] },
         "AvailabilityZone" -> AvailabilityZone.map { x => x.asInstanceOf[js.Any] },
+        "Endpoint" -> Endpoint.map { x => x.asInstanceOf[js.Any] },
+        "NodeCreateTime" -> NodeCreateTime.map { x => x.asInstanceOf[js.Any] },
+        "NodeId" -> NodeId.map { x => x.asInstanceOf[js.Any] },
+        "NodeStatus" -> NodeStatus.map { x => x.asInstanceOf[js.Any] },
         "ParameterGroupStatus" -> ParameterGroupStatus.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Node]
@@ -854,41 +854,41 @@ package dax {
    */
   @js.native
   trait Parameter extends js.Object {
-    var IsModifiable: js.UndefOr[IsModifiable]
-    var ParameterType: js.UndefOr[ParameterType]
-    var Description: js.UndefOr[String]
-    var ChangeType: js.UndefOr[ChangeType]
     var AllowedValues: js.UndefOr[String]
-    var Source: js.UndefOr[String]
-    var NodeTypeSpecificValues: js.UndefOr[NodeTypeSpecificValueList]
-    var ParameterValue: js.UndefOr[String]
-    var ParameterName: js.UndefOr[String]
+    var ChangeType: js.UndefOr[ChangeType]
     var DataType: js.UndefOr[String]
+    var Description: js.UndefOr[String]
+    var IsModifiable: js.UndefOr[IsModifiable]
+    var NodeTypeSpecificValues: js.UndefOr[NodeTypeSpecificValueList]
+    var ParameterName: js.UndefOr[String]
+    var ParameterType: js.UndefOr[ParameterType]
+    var ParameterValue: js.UndefOr[String]
+    var Source: js.UndefOr[String]
   }
 
   object Parameter {
     def apply(
-      IsModifiable: js.UndefOr[IsModifiable] = js.undefined,
-      ParameterType: js.UndefOr[ParameterType] = js.undefined,
-      Description: js.UndefOr[String] = js.undefined,
-      ChangeType: js.UndefOr[ChangeType] = js.undefined,
       AllowedValues: js.UndefOr[String] = js.undefined,
-      Source: js.UndefOr[String] = js.undefined,
+      ChangeType: js.UndefOr[ChangeType] = js.undefined,
+      DataType: js.UndefOr[String] = js.undefined,
+      Description: js.UndefOr[String] = js.undefined,
+      IsModifiable: js.UndefOr[IsModifiable] = js.undefined,
       NodeTypeSpecificValues: js.UndefOr[NodeTypeSpecificValueList] = js.undefined,
-      ParameterValue: js.UndefOr[String] = js.undefined,
       ParameterName: js.UndefOr[String] = js.undefined,
-      DataType: js.UndefOr[String] = js.undefined): Parameter = {
+      ParameterType: js.UndefOr[ParameterType] = js.undefined,
+      ParameterValue: js.UndefOr[String] = js.undefined,
+      Source: js.UndefOr[String] = js.undefined): Parameter = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "IsModifiable" -> IsModifiable.map { x => x.asInstanceOf[js.Any] },
-        "ParameterType" -> ParameterType.map { x => x.asInstanceOf[js.Any] },
-        "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
-        "ChangeType" -> ChangeType.map { x => x.asInstanceOf[js.Any] },
         "AllowedValues" -> AllowedValues.map { x => x.asInstanceOf[js.Any] },
-        "Source" -> Source.map { x => x.asInstanceOf[js.Any] },
+        "ChangeType" -> ChangeType.map { x => x.asInstanceOf[js.Any] },
+        "DataType" -> DataType.map { x => x.asInstanceOf[js.Any] },
+        "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
+        "IsModifiable" -> IsModifiable.map { x => x.asInstanceOf[js.Any] },
         "NodeTypeSpecificValues" -> NodeTypeSpecificValues.map { x => x.asInstanceOf[js.Any] },
-        "ParameterValue" -> ParameterValue.map { x => x.asInstanceOf[js.Any] },
         "ParameterName" -> ParameterName.map { x => x.asInstanceOf[js.Any] },
-        "DataType" -> DataType.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ParameterType" -> ParameterType.map { x => x.asInstanceOf[js.Any] },
+        "ParameterValue" -> ParameterValue.map { x => x.asInstanceOf[js.Any] },
+        "Source" -> Source.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Parameter]
     }
@@ -899,17 +899,17 @@ package dax {
    */
   @js.native
   trait ParameterGroup extends js.Object {
-    var ParameterGroupName: js.UndefOr[String]
     var Description: js.UndefOr[String]
+    var ParameterGroupName: js.UndefOr[String]
   }
 
   object ParameterGroup {
     def apply(
-      ParameterGroupName: js.UndefOr[String] = js.undefined,
-      Description: js.UndefOr[String] = js.undefined): ParameterGroup = {
+      Description: js.UndefOr[String] = js.undefined,
+      ParameterGroupName: js.UndefOr[String] = js.undefined): ParameterGroup = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ParameterGroupName" -> ParameterGroupName.map { x => x.asInstanceOf[js.Any] },
-        "Description" -> Description.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
+        "ParameterGroupName" -> ParameterGroupName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ParameterGroup]
     }
@@ -920,20 +920,20 @@ package dax {
    */
   @js.native
   trait ParameterGroupStatus extends js.Object {
-    var ParameterGroupName: js.UndefOr[String]
-    var ParameterApplyStatus: js.UndefOr[String]
     var NodeIdsToReboot: js.UndefOr[NodeIdentifierList]
+    var ParameterApplyStatus: js.UndefOr[String]
+    var ParameterGroupName: js.UndefOr[String]
   }
 
   object ParameterGroupStatus {
     def apply(
-      ParameterGroupName: js.UndefOr[String] = js.undefined,
+      NodeIdsToReboot: js.UndefOr[NodeIdentifierList] = js.undefined,
       ParameterApplyStatus: js.UndefOr[String] = js.undefined,
-      NodeIdsToReboot: js.UndefOr[NodeIdentifierList] = js.undefined): ParameterGroupStatus = {
+      ParameterGroupName: js.UndefOr[String] = js.undefined): ParameterGroupStatus = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ParameterGroupName" -> ParameterGroupName.map { x => x.asInstanceOf[js.Any] },
+        "NodeIdsToReboot" -> NodeIdsToReboot.map { x => x.asInstanceOf[js.Any] },
         "ParameterApplyStatus" -> ParameterApplyStatus.map { x => x.asInstanceOf[js.Any] },
-        "NodeIdsToReboot" -> NodeIdsToReboot.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ParameterGroupName" -> ParameterGroupName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ParameterGroupStatus]
     }
@@ -969,17 +969,17 @@ package dax {
 
   @js.native
   trait RebootNodeRequest extends js.Object {
-    var ClusterName: js.UndefOr[String]
-    var NodeId: js.UndefOr[String]
+    var ClusterName: String
+    var NodeId: String
   }
 
   object RebootNodeRequest {
     def apply(
-      ClusterName: js.UndefOr[String] = js.undefined,
-      NodeId: js.UndefOr[String] = js.undefined): RebootNodeRequest = {
+      ClusterName: String,
+      NodeId: String): RebootNodeRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ClusterName" -> ClusterName.map { x => x.asInstanceOf[js.Any] },
-        "NodeId" -> NodeId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ClusterName" -> ClusterName.asInstanceOf[js.Any],
+        "NodeId" -> NodeId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RebootNodeRequest]
     }
@@ -1023,14 +1023,14 @@ package dax {
    */
   @js.native
   trait SSESpecification extends js.Object {
-    var Enabled: js.UndefOr[SSEEnabled]
+    var Enabled: SSEEnabled
   }
 
   object SSESpecification {
     def apply(
-      Enabled: js.UndefOr[SSEEnabled] = js.undefined): SSESpecification = {
+      Enabled: SSEEnabled): SSESpecification = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Enabled" -> Enabled.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Enabled" -> Enabled.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SSESpecification]
     }
@@ -1079,17 +1079,17 @@ package dax {
    */
   @js.native
   trait Subnet extends js.Object {
-    var SubnetIdentifier: js.UndefOr[String]
     var SubnetAvailabilityZone: js.UndefOr[String]
+    var SubnetIdentifier: js.UndefOr[String]
   }
 
   object Subnet {
     def apply(
-      SubnetIdentifier: js.UndefOr[String] = js.undefined,
-      SubnetAvailabilityZone: js.UndefOr[String] = js.undefined): Subnet = {
+      SubnetAvailabilityZone: js.UndefOr[String] = js.undefined,
+      SubnetIdentifier: js.UndefOr[String] = js.undefined): Subnet = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "SubnetIdentifier" -> SubnetIdentifier.map { x => x.asInstanceOf[js.Any] },
-        "SubnetAvailabilityZone" -> SubnetAvailabilityZone.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "SubnetAvailabilityZone" -> SubnetAvailabilityZone.map { x => x.asInstanceOf[js.Any] },
+        "SubnetIdentifier" -> SubnetIdentifier.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Subnet]
     }
@@ -1100,23 +1100,23 @@ package dax {
    */
   @js.native
   trait SubnetGroup extends js.Object {
-    var SubnetGroupName: js.UndefOr[String]
     var Description: js.UndefOr[String]
-    var VpcId: js.UndefOr[String]
+    var SubnetGroupName: js.UndefOr[String]
     var Subnets: js.UndefOr[SubnetList]
+    var VpcId: js.UndefOr[String]
   }
 
   object SubnetGroup {
     def apply(
-      SubnetGroupName: js.UndefOr[String] = js.undefined,
       Description: js.UndefOr[String] = js.undefined,
-      VpcId: js.UndefOr[String] = js.undefined,
-      Subnets: js.UndefOr[SubnetList] = js.undefined): SubnetGroup = {
+      SubnetGroupName: js.UndefOr[String] = js.undefined,
+      Subnets: js.UndefOr[SubnetList] = js.undefined,
+      VpcId: js.UndefOr[String] = js.undefined): SubnetGroup = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "SubnetGroupName" -> SubnetGroupName.map { x => x.asInstanceOf[js.Any] },
         "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
-        "VpcId" -> VpcId.map { x => x.asInstanceOf[js.Any] },
-        "Subnets" -> Subnets.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "SubnetGroupName" -> SubnetGroupName.map { x => x.asInstanceOf[js.Any] },
+        "Subnets" -> Subnets.map { x => x.asInstanceOf[js.Any] },
+        "VpcId" -> VpcId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SubnetGroup]
     }
@@ -1145,17 +1145,17 @@ package dax {
 
   @js.native
   trait TagResourceRequest extends js.Object {
-    var ResourceName: js.UndefOr[String]
-    var Tags: js.UndefOr[TagList]
+    var ResourceName: String
+    var Tags: TagList
   }
 
   object TagResourceRequest {
     def apply(
-      ResourceName: js.UndefOr[String] = js.undefined,
-      Tags: js.UndefOr[TagList] = js.undefined): TagResourceRequest = {
+      ResourceName: String,
+      Tags: TagList): TagResourceRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ResourceName" -> ResourceName.map { x => x.asInstanceOf[js.Any] },
-        "Tags" -> Tags.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ResourceName" -> ResourceName.asInstanceOf[js.Any],
+        "Tags" -> Tags.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TagResourceRequest]
     }
@@ -1178,17 +1178,17 @@ package dax {
 
   @js.native
   trait UntagResourceRequest extends js.Object {
-    var ResourceName: js.UndefOr[String]
-    var TagKeys: js.UndefOr[KeyList]
+    var ResourceName: String
+    var TagKeys: KeyList
   }
 
   object UntagResourceRequest {
     def apply(
-      ResourceName: js.UndefOr[String] = js.undefined,
-      TagKeys: js.UndefOr[KeyList] = js.undefined): UntagResourceRequest = {
+      ResourceName: String,
+      TagKeys: KeyList): UntagResourceRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ResourceName" -> ResourceName.map { x => x.asInstanceOf[js.Any] },
-        "TagKeys" -> TagKeys.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ResourceName" -> ResourceName.asInstanceOf[js.Any],
+        "TagKeys" -> TagKeys.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UntagResourceRequest]
     }
@@ -1211,32 +1211,32 @@ package dax {
 
   @js.native
   trait UpdateClusterRequest extends js.Object {
-    var PreferredMaintenanceWindow: js.UndefOr[String]
-    var ParameterGroupName: js.UndefOr[String]
-    var ClusterName: js.UndefOr[String]
+    var ClusterName: String
     var Description: js.UndefOr[String]
-    var SecurityGroupIds: js.UndefOr[SecurityGroupIdentifierList]
     var NotificationTopicArn: js.UndefOr[String]
     var NotificationTopicStatus: js.UndefOr[String]
+    var ParameterGroupName: js.UndefOr[String]
+    var PreferredMaintenanceWindow: js.UndefOr[String]
+    var SecurityGroupIds: js.UndefOr[SecurityGroupIdentifierList]
   }
 
   object UpdateClusterRequest {
     def apply(
-      PreferredMaintenanceWindow: js.UndefOr[String] = js.undefined,
-      ParameterGroupName: js.UndefOr[String] = js.undefined,
-      ClusterName: js.UndefOr[String] = js.undefined,
+      ClusterName: String,
       Description: js.UndefOr[String] = js.undefined,
-      SecurityGroupIds: js.UndefOr[SecurityGroupIdentifierList] = js.undefined,
       NotificationTopicArn: js.UndefOr[String] = js.undefined,
-      NotificationTopicStatus: js.UndefOr[String] = js.undefined): UpdateClusterRequest = {
+      NotificationTopicStatus: js.UndefOr[String] = js.undefined,
+      ParameterGroupName: js.UndefOr[String] = js.undefined,
+      PreferredMaintenanceWindow: js.UndefOr[String] = js.undefined,
+      SecurityGroupIds: js.UndefOr[SecurityGroupIdentifierList] = js.undefined): UpdateClusterRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "PreferredMaintenanceWindow" -> PreferredMaintenanceWindow.map { x => x.asInstanceOf[js.Any] },
-        "ParameterGroupName" -> ParameterGroupName.map { x => x.asInstanceOf[js.Any] },
-        "ClusterName" -> ClusterName.map { x => x.asInstanceOf[js.Any] },
+        "ClusterName" -> ClusterName.asInstanceOf[js.Any],
         "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
-        "SecurityGroupIds" -> SecurityGroupIds.map { x => x.asInstanceOf[js.Any] },
         "NotificationTopicArn" -> NotificationTopicArn.map { x => x.asInstanceOf[js.Any] },
-        "NotificationTopicStatus" -> NotificationTopicStatus.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "NotificationTopicStatus" -> NotificationTopicStatus.map { x => x.asInstanceOf[js.Any] },
+        "ParameterGroupName" -> ParameterGroupName.map { x => x.asInstanceOf[js.Any] },
+        "PreferredMaintenanceWindow" -> PreferredMaintenanceWindow.map { x => x.asInstanceOf[js.Any] },
+        "SecurityGroupIds" -> SecurityGroupIds.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateClusterRequest]
     }
@@ -1259,17 +1259,17 @@ package dax {
 
   @js.native
   trait UpdateParameterGroupRequest extends js.Object {
-    var ParameterGroupName: js.UndefOr[String]
-    var ParameterNameValues: js.UndefOr[ParameterNameValueList]
+    var ParameterGroupName: String
+    var ParameterNameValues: ParameterNameValueList
   }
 
   object UpdateParameterGroupRequest {
     def apply(
-      ParameterGroupName: js.UndefOr[String] = js.undefined,
-      ParameterNameValues: js.UndefOr[ParameterNameValueList] = js.undefined): UpdateParameterGroupRequest = {
+      ParameterGroupName: String,
+      ParameterNameValues: ParameterNameValueList): UpdateParameterGroupRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ParameterGroupName" -> ParameterGroupName.map { x => x.asInstanceOf[js.Any] },
-        "ParameterNameValues" -> ParameterNameValues.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ParameterGroupName" -> ParameterGroupName.asInstanceOf[js.Any],
+        "ParameterNameValues" -> ParameterNameValues.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateParameterGroupRequest]
     }
@@ -1292,18 +1292,18 @@ package dax {
 
   @js.native
   trait UpdateSubnetGroupRequest extends js.Object {
-    var SubnetGroupName: js.UndefOr[String]
+    var SubnetGroupName: String
     var Description: js.UndefOr[String]
     var SubnetIds: js.UndefOr[SubnetIdentifierList]
   }
 
   object UpdateSubnetGroupRequest {
     def apply(
-      SubnetGroupName: js.UndefOr[String] = js.undefined,
+      SubnetGroupName: String,
       Description: js.UndefOr[String] = js.undefined,
       SubnetIds: js.UndefOr[SubnetIdentifierList] = js.undefined): UpdateSubnetGroupRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "SubnetGroupName" -> SubnetGroupName.map { x => x.asInstanceOf[js.Any] },
+        "SubnetGroupName" -> SubnetGroupName.asInstanceOf[js.Any],
         "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
         "SubnetIds" -> SubnetIds.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 

@@ -105,38 +105,38 @@ package connect {
 
   @js.native
   trait CreateUserRequest extends js.Object {
-    var SecurityProfileIds: js.UndefOr[SecurityProfileIds]
-    var Username: js.UndefOr[AgentUsername]
-    var HierarchyGroupId: js.UndefOr[HierarchyGroupId]
-    var PhoneConfig: js.UndefOr[UserPhoneConfig]
-    var Password: js.UndefOr[Password]
+    var InstanceId: InstanceId
+    var PhoneConfig: UserPhoneConfig
+    var RoutingProfileId: RoutingProfileId
+    var SecurityProfileIds: SecurityProfileIds
+    var Username: AgentUsername
     var DirectoryUserId: js.UndefOr[DirectoryUserId]
+    var HierarchyGroupId: js.UndefOr[HierarchyGroupId]
     var IdentityInfo: js.UndefOr[UserIdentityInfo]
-    var InstanceId: js.UndefOr[InstanceId]
-    var RoutingProfileId: js.UndefOr[RoutingProfileId]
+    var Password: js.UndefOr[Password]
   }
 
   object CreateUserRequest {
     def apply(
-      SecurityProfileIds: js.UndefOr[SecurityProfileIds] = js.undefined,
-      Username: js.UndefOr[AgentUsername] = js.undefined,
-      HierarchyGroupId: js.UndefOr[HierarchyGroupId] = js.undefined,
-      PhoneConfig: js.UndefOr[UserPhoneConfig] = js.undefined,
-      Password: js.UndefOr[Password] = js.undefined,
+      InstanceId: InstanceId,
+      PhoneConfig: UserPhoneConfig,
+      RoutingProfileId: RoutingProfileId,
+      SecurityProfileIds: SecurityProfileIds,
+      Username: AgentUsername,
       DirectoryUserId: js.UndefOr[DirectoryUserId] = js.undefined,
+      HierarchyGroupId: js.UndefOr[HierarchyGroupId] = js.undefined,
       IdentityInfo: js.UndefOr[UserIdentityInfo] = js.undefined,
-      InstanceId: js.UndefOr[InstanceId] = js.undefined,
-      RoutingProfileId: js.UndefOr[RoutingProfileId] = js.undefined): CreateUserRequest = {
+      Password: js.UndefOr[Password] = js.undefined): CreateUserRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "SecurityProfileIds" -> SecurityProfileIds.map { x => x.asInstanceOf[js.Any] },
-        "Username" -> Username.map { x => x.asInstanceOf[js.Any] },
-        "HierarchyGroupId" -> HierarchyGroupId.map { x => x.asInstanceOf[js.Any] },
-        "PhoneConfig" -> PhoneConfig.map { x => x.asInstanceOf[js.Any] },
-        "Password" -> Password.map { x => x.asInstanceOf[js.Any] },
+        "InstanceId" -> InstanceId.asInstanceOf[js.Any],
+        "PhoneConfig" -> PhoneConfig.asInstanceOf[js.Any],
+        "RoutingProfileId" -> RoutingProfileId.asInstanceOf[js.Any],
+        "SecurityProfileIds" -> SecurityProfileIds.asInstanceOf[js.Any],
+        "Username" -> Username.asInstanceOf[js.Any],
         "DirectoryUserId" -> DirectoryUserId.map { x => x.asInstanceOf[js.Any] },
+        "HierarchyGroupId" -> HierarchyGroupId.map { x => x.asInstanceOf[js.Any] },
         "IdentityInfo" -> IdentityInfo.map { x => x.asInstanceOf[js.Any] },
-        "InstanceId" -> InstanceId.map { x => x.asInstanceOf[js.Any] },
-        "RoutingProfileId" -> RoutingProfileId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Password" -> Password.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateUserRequest]
     }
@@ -144,17 +144,17 @@ package connect {
 
   @js.native
   trait CreateUserResponse extends js.Object {
-    var UserId: js.UndefOr[UserId]
     var UserArn: js.UndefOr[ARN]
+    var UserId: js.UndefOr[UserId]
   }
 
   object CreateUserResponse {
     def apply(
-      UserId: js.UndefOr[UserId] = js.undefined,
-      UserArn: js.UndefOr[ARN] = js.undefined): CreateUserResponse = {
+      UserArn: js.UndefOr[ARN] = js.undefined,
+      UserId: js.UndefOr[UserId] = js.undefined): CreateUserResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "UserId" -> UserId.map { x => x.asInstanceOf[js.Any] },
-        "UserArn" -> UserArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "UserArn" -> UserArn.map { x => x.asInstanceOf[js.Any] },
+        "UserId" -> UserId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateUserResponse]
     }
@@ -252,17 +252,17 @@ package connect {
    */
   @js.native
   trait CurrentMetricResult extends js.Object {
-    var Dimensions: js.UndefOr[Dimensions]
     var Collections: js.UndefOr[CurrentMetricDataCollections]
+    var Dimensions: js.UndefOr[Dimensions]
   }
 
   object CurrentMetricResult {
     def apply(
-      Dimensions: js.UndefOr[Dimensions] = js.undefined,
-      Collections: js.UndefOr[CurrentMetricDataCollections] = js.undefined): CurrentMetricResult = {
+      Collections: js.UndefOr[CurrentMetricDataCollections] = js.undefined,
+      Dimensions: js.UndefOr[Dimensions] = js.undefined): CurrentMetricResult = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Dimensions" -> Dimensions.map { x => x.asInstanceOf[js.Any] },
-        "Collections" -> Collections.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Collections" -> Collections.map { x => x.asInstanceOf[js.Any] },
+        "Dimensions" -> Dimensions.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CurrentMetricResult]
     }
@@ -270,17 +270,17 @@ package connect {
 
   @js.native
   trait DeleteUserRequest extends js.Object {
-    var InstanceId: js.UndefOr[InstanceId]
-    var UserId: js.UndefOr[UserId]
+    var InstanceId: InstanceId
+    var UserId: UserId
   }
 
   object DeleteUserRequest {
     def apply(
-      InstanceId: js.UndefOr[InstanceId] = js.undefined,
-      UserId: js.UndefOr[UserId] = js.undefined): DeleteUserRequest = {
+      InstanceId: InstanceId,
+      UserId: UserId): DeleteUserRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "InstanceId" -> InstanceId.map { x => x.asInstanceOf[js.Any] },
-        "UserId" -> UserId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "InstanceId" -> InstanceId.asInstanceOf[js.Any],
+        "UserId" -> UserId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteUserRequest]
     }
@@ -288,17 +288,17 @@ package connect {
 
   @js.native
   trait DescribeUserHierarchyGroupRequest extends js.Object {
-    var HierarchyGroupId: js.UndefOr[HierarchyGroupId]
-    var InstanceId: js.UndefOr[InstanceId]
+    var HierarchyGroupId: HierarchyGroupId
+    var InstanceId: InstanceId
   }
 
   object DescribeUserHierarchyGroupRequest {
     def apply(
-      HierarchyGroupId: js.UndefOr[HierarchyGroupId] = js.undefined,
-      InstanceId: js.UndefOr[InstanceId] = js.undefined): DescribeUserHierarchyGroupRequest = {
+      HierarchyGroupId: HierarchyGroupId,
+      InstanceId: InstanceId): DescribeUserHierarchyGroupRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "HierarchyGroupId" -> HierarchyGroupId.map { x => x.asInstanceOf[js.Any] },
-        "InstanceId" -> InstanceId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "HierarchyGroupId" -> HierarchyGroupId.asInstanceOf[js.Any],
+        "InstanceId" -> InstanceId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeUserHierarchyGroupRequest]
     }
@@ -321,14 +321,14 @@ package connect {
 
   @js.native
   trait DescribeUserHierarchyStructureRequest extends js.Object {
-    var InstanceId: js.UndefOr[InstanceId]
+    var InstanceId: InstanceId
   }
 
   object DescribeUserHierarchyStructureRequest {
     def apply(
-      InstanceId: js.UndefOr[InstanceId] = js.undefined): DescribeUserHierarchyStructureRequest = {
+      InstanceId: InstanceId): DescribeUserHierarchyStructureRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "InstanceId" -> InstanceId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "InstanceId" -> InstanceId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeUserHierarchyStructureRequest]
     }
@@ -351,17 +351,17 @@ package connect {
 
   @js.native
   trait DescribeUserRequest extends js.Object {
-    var UserId: js.UndefOr[UserId]
-    var InstanceId: js.UndefOr[InstanceId]
+    var InstanceId: InstanceId
+    var UserId: UserId
   }
 
   object DescribeUserRequest {
     def apply(
-      UserId: js.UndefOr[UserId] = js.undefined,
-      InstanceId: js.UndefOr[InstanceId] = js.undefined): DescribeUserRequest = {
+      InstanceId: InstanceId,
+      UserId: UserId): DescribeUserRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "UserId" -> UserId.map { x => x.asInstanceOf[js.Any] },
-        "InstanceId" -> InstanceId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "InstanceId" -> InstanceId.asInstanceOf[js.Any],
+        "UserId" -> UserId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeUserRequest]
     }
@@ -387,17 +387,17 @@ package connect {
    */
   @js.native
   trait Dimensions extends js.Object {
-    var Queue: js.UndefOr[QueueReference]
     var Channel: js.UndefOr[Channel]
+    var Queue: js.UndefOr[QueueReference]
   }
 
   object Dimensions {
     def apply(
-      Queue: js.UndefOr[QueueReference] = js.undefined,
-      Channel: js.UndefOr[Channel] = js.undefined): Dimensions = {
+      Channel: js.UndefOr[Channel] = js.undefined,
+      Queue: js.UndefOr[QueueReference] = js.undefined): Dimensions = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Queue" -> Queue.map { x => x.asInstanceOf[js.Any] },
-        "Channel" -> Channel.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Channel" -> Channel.map { x => x.asInstanceOf[js.Any] },
+        "Queue" -> Queue.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Dimensions]
     }
@@ -408,17 +408,17 @@ package connect {
    */
   @js.native
   trait Filters extends js.Object {
-    var Queues: js.UndefOr[Queues]
     var Channels: js.UndefOr[Channels]
+    var Queues: js.UndefOr[Queues]
   }
 
   object Filters {
     def apply(
-      Queues: js.UndefOr[Queues] = js.undefined,
-      Channels: js.UndefOr[Channels] = js.undefined): Filters = {
+      Channels: js.UndefOr[Channels] = js.undefined,
+      Queues: js.UndefOr[Queues] = js.undefined): Filters = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Queues" -> Queues.map { x => x.asInstanceOf[js.Any] },
-        "Channels" -> Channels.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Channels" -> Channels.map { x => x.asInstanceOf[js.Any] },
+        "Queues" -> Queues.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Filters]
     }
@@ -426,28 +426,28 @@ package connect {
 
   @js.native
   trait GetCurrentMetricDataRequest extends js.Object {
-    var CurrentMetrics: js.UndefOr[CurrentMetrics]
-    var MaxResults: js.UndefOr[MaxResult100]
+    var CurrentMetrics: CurrentMetrics
+    var Filters: Filters
+    var InstanceId: InstanceId
     var Groupings: js.UndefOr[Groupings]
-    var InstanceId: js.UndefOr[InstanceId]
-    var Filters: js.UndefOr[Filters]
+    var MaxResults: js.UndefOr[MaxResult100]
     var NextToken: js.UndefOr[NextToken]
   }
 
   object GetCurrentMetricDataRequest {
     def apply(
-      CurrentMetrics: js.UndefOr[CurrentMetrics] = js.undefined,
-      MaxResults: js.UndefOr[MaxResult100] = js.undefined,
+      CurrentMetrics: CurrentMetrics,
+      Filters: Filters,
+      InstanceId: InstanceId,
       Groupings: js.UndefOr[Groupings] = js.undefined,
-      InstanceId: js.UndefOr[InstanceId] = js.undefined,
-      Filters: js.UndefOr[Filters] = js.undefined,
+      MaxResults: js.UndefOr[MaxResult100] = js.undefined,
       NextToken: js.UndefOr[NextToken] = js.undefined): GetCurrentMetricDataRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "CurrentMetrics" -> CurrentMetrics.map { x => x.asInstanceOf[js.Any] },
-        "MaxResults" -> MaxResults.map { x => x.asInstanceOf[js.Any] },
+        "CurrentMetrics" -> CurrentMetrics.asInstanceOf[js.Any],
+        "Filters" -> Filters.asInstanceOf[js.Any],
+        "InstanceId" -> InstanceId.asInstanceOf[js.Any],
         "Groupings" -> Groupings.map { x => x.asInstanceOf[js.Any] },
-        "InstanceId" -> InstanceId.map { x => x.asInstanceOf[js.Any] },
-        "Filters" -> Filters.map { x => x.asInstanceOf[js.Any] },
+        "MaxResults" -> MaxResults.map { x => x.asInstanceOf[js.Any] },
         "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetCurrentMetricDataRequest]
@@ -456,20 +456,20 @@ package connect {
 
   @js.native
   trait GetCurrentMetricDataResponse extends js.Object {
-    var NextToken: js.UndefOr[NextToken]
-    var MetricResults: js.UndefOr[CurrentMetricResults]
     var DataSnapshotTime: js.UndefOr[timestamp]
+    var MetricResults: js.UndefOr[CurrentMetricResults]
+    var NextToken: js.UndefOr[NextToken]
   }
 
   object GetCurrentMetricDataResponse {
     def apply(
-      NextToken: js.UndefOr[NextToken] = js.undefined,
+      DataSnapshotTime: js.UndefOr[timestamp] = js.undefined,
       MetricResults: js.UndefOr[CurrentMetricResults] = js.undefined,
-      DataSnapshotTime: js.UndefOr[timestamp] = js.undefined): GetCurrentMetricDataResponse = {
+      NextToken: js.UndefOr[NextToken] = js.undefined): GetCurrentMetricDataResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
+        "DataSnapshotTime" -> DataSnapshotTime.map { x => x.asInstanceOf[js.Any] },
         "MetricResults" -> MetricResults.map { x => x.asInstanceOf[js.Any] },
-        "DataSnapshotTime" -> DataSnapshotTime.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetCurrentMetricDataResponse]
     }
@@ -477,14 +477,14 @@ package connect {
 
   @js.native
   trait GetFederationTokenRequest extends js.Object {
-    var InstanceId: js.UndefOr[InstanceId]
+    var InstanceId: InstanceId
   }
 
   object GetFederationTokenRequest {
     def apply(
-      InstanceId: js.UndefOr[InstanceId] = js.undefined): GetFederationTokenRequest = {
+      InstanceId: InstanceId): GetFederationTokenRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "InstanceId" -> InstanceId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "InstanceId" -> InstanceId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetFederationTokenRequest]
     }
@@ -507,34 +507,34 @@ package connect {
 
   @js.native
   trait GetMetricDataRequest extends js.Object {
-    var HistoricalMetrics: js.UndefOr[HistoricalMetrics]
-    var MaxResults: js.UndefOr[MaxResult100]
-    var StartTime: js.UndefOr[timestamp]
-    var EndTime: js.UndefOr[timestamp]
+    var EndTime: timestamp
+    var Filters: Filters
+    var HistoricalMetrics: HistoricalMetrics
+    var InstanceId: InstanceId
+    var StartTime: timestamp
     var Groupings: js.UndefOr[Groupings]
-    var InstanceId: js.UndefOr[InstanceId]
-    var Filters: js.UndefOr[Filters]
+    var MaxResults: js.UndefOr[MaxResult100]
     var NextToken: js.UndefOr[NextToken]
   }
 
   object GetMetricDataRequest {
     def apply(
-      HistoricalMetrics: js.UndefOr[HistoricalMetrics] = js.undefined,
-      MaxResults: js.UndefOr[MaxResult100] = js.undefined,
-      StartTime: js.UndefOr[timestamp] = js.undefined,
-      EndTime: js.UndefOr[timestamp] = js.undefined,
+      EndTime: timestamp,
+      Filters: Filters,
+      HistoricalMetrics: HistoricalMetrics,
+      InstanceId: InstanceId,
+      StartTime: timestamp,
       Groupings: js.UndefOr[Groupings] = js.undefined,
-      InstanceId: js.UndefOr[InstanceId] = js.undefined,
-      Filters: js.UndefOr[Filters] = js.undefined,
+      MaxResults: js.UndefOr[MaxResult100] = js.undefined,
       NextToken: js.UndefOr[NextToken] = js.undefined): GetMetricDataRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "HistoricalMetrics" -> HistoricalMetrics.map { x => x.asInstanceOf[js.Any] },
-        "MaxResults" -> MaxResults.map { x => x.asInstanceOf[js.Any] },
-        "StartTime" -> StartTime.map { x => x.asInstanceOf[js.Any] },
-        "EndTime" -> EndTime.map { x => x.asInstanceOf[js.Any] },
+        "EndTime" -> EndTime.asInstanceOf[js.Any],
+        "Filters" -> Filters.asInstanceOf[js.Any],
+        "HistoricalMetrics" -> HistoricalMetrics.asInstanceOf[js.Any],
+        "InstanceId" -> InstanceId.asInstanceOf[js.Any],
+        "StartTime" -> StartTime.asInstanceOf[js.Any],
         "Groupings" -> Groupings.map { x => x.asInstanceOf[js.Any] },
-        "InstanceId" -> InstanceId.map { x => x.asInstanceOf[js.Any] },
-        "Filters" -> Filters.map { x => x.asInstanceOf[js.Any] },
+        "MaxResults" -> MaxResults.map { x => x.asInstanceOf[js.Any] },
         "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetMetricDataRequest]
@@ -543,17 +543,17 @@ package connect {
 
   @js.native
   trait GetMetricDataResponse extends js.Object {
-    var NextToken: js.UndefOr[NextToken]
     var MetricResults: js.UndefOr[HistoricalMetricResults]
+    var NextToken: js.UndefOr[NextToken]
   }
 
   object GetMetricDataResponse {
     def apply(
-      NextToken: js.UndefOr[NextToken] = js.undefined,
-      MetricResults: js.UndefOr[HistoricalMetricResults] = js.undefined): GetMetricDataResponse = {
+      MetricResults: js.UndefOr[HistoricalMetricResults] = js.undefined,
+      NextToken: js.UndefOr[NextToken] = js.undefined): GetMetricDataResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
-        "MetricResults" -> MetricResults.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "MetricResults" -> MetricResults.map { x => x.asInstanceOf[js.Any] },
+        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetMetricDataResponse]
     }
@@ -571,26 +571,26 @@ package connect {
    */
   @js.native
   trait HierarchyGroup extends js.Object {
-    var Id: js.UndefOr[HierarchyGroupId]
-    var Name: js.UndefOr[HierarchyGroupName]
     var Arn: js.UndefOr[ARN]
     var HierarchyPath: js.UndefOr[HierarchyPath]
+    var Id: js.UndefOr[HierarchyGroupId]
     var LevelId: js.UndefOr[HierarchyLevelId]
+    var Name: js.UndefOr[HierarchyGroupName]
   }
 
   object HierarchyGroup {
     def apply(
-      Id: js.UndefOr[HierarchyGroupId] = js.undefined,
-      Name: js.UndefOr[HierarchyGroupName] = js.undefined,
       Arn: js.UndefOr[ARN] = js.undefined,
       HierarchyPath: js.UndefOr[HierarchyPath] = js.undefined,
-      LevelId: js.UndefOr[HierarchyLevelId] = js.undefined): HierarchyGroup = {
+      Id: js.UndefOr[HierarchyGroupId] = js.undefined,
+      LevelId: js.UndefOr[HierarchyLevelId] = js.undefined,
+      Name: js.UndefOr[HierarchyGroupName] = js.undefined): HierarchyGroup = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Id" -> Id.map { x => x.asInstanceOf[js.Any] },
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
         "Arn" -> Arn.map { x => x.asInstanceOf[js.Any] },
         "HierarchyPath" -> HierarchyPath.map { x => x.asInstanceOf[js.Any] },
-        "LevelId" -> LevelId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Id" -> Id.map { x => x.asInstanceOf[js.Any] },
+        "LevelId" -> LevelId.map { x => x.asInstanceOf[js.Any] },
+        "Name" -> Name.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[HierarchyGroup]
     }
@@ -601,19 +601,19 @@ package connect {
    */
   @js.native
   trait HierarchyGroupSummary extends js.Object {
-    var Id: js.UndefOr[HierarchyGroupId]
     var Arn: js.UndefOr[ARN]
+    var Id: js.UndefOr[HierarchyGroupId]
     var Name: js.UndefOr[HierarchyGroupName]
   }
 
   object HierarchyGroupSummary {
     def apply(
-      Id: js.UndefOr[HierarchyGroupId] = js.undefined,
       Arn: js.UndefOr[ARN] = js.undefined,
+      Id: js.UndefOr[HierarchyGroupId] = js.undefined,
       Name: js.UndefOr[HierarchyGroupName] = js.undefined): HierarchyGroupSummary = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Id" -> Id.map { x => x.asInstanceOf[js.Any] },
         "Arn" -> Arn.map { x => x.asInstanceOf[js.Any] },
+        "Id" -> Id.map { x => x.asInstanceOf[js.Any] },
         "Name" -> Name.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[HierarchyGroupSummary]
@@ -625,19 +625,19 @@ package connect {
    */
   @js.native
   trait HierarchyLevel extends js.Object {
-    var Id: js.UndefOr[HierarchyLevelId]
     var Arn: js.UndefOr[ARN]
+    var Id: js.UndefOr[HierarchyLevelId]
     var Name: js.UndefOr[HierarchyLevelName]
   }
 
   object HierarchyLevel {
     def apply(
-      Id: js.UndefOr[HierarchyLevelId] = js.undefined,
       Arn: js.UndefOr[ARN] = js.undefined,
+      Id: js.UndefOr[HierarchyLevelId] = js.undefined,
       Name: js.UndefOr[HierarchyLevelName] = js.undefined): HierarchyLevel = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Id" -> Id.map { x => x.asInstanceOf[js.Any] },
         "Arn" -> Arn.map { x => x.asInstanceOf[js.Any] },
+        "Id" -> Id.map { x => x.asInstanceOf[js.Any] },
         "Name" -> Name.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[HierarchyLevel]
@@ -649,26 +649,26 @@ package connect {
    */
   @js.native
   trait HierarchyPath extends js.Object {
-    var LevelFour: js.UndefOr[HierarchyGroupSummary]
-    var LevelTwo: js.UndefOr[HierarchyGroupSummary]
     var LevelFive: js.UndefOr[HierarchyGroupSummary]
-    var LevelThree: js.UndefOr[HierarchyGroupSummary]
+    var LevelFour: js.UndefOr[HierarchyGroupSummary]
     var LevelOne: js.UndefOr[HierarchyGroupSummary]
+    var LevelThree: js.UndefOr[HierarchyGroupSummary]
+    var LevelTwo: js.UndefOr[HierarchyGroupSummary]
   }
 
   object HierarchyPath {
     def apply(
-      LevelFour: js.UndefOr[HierarchyGroupSummary] = js.undefined,
-      LevelTwo: js.UndefOr[HierarchyGroupSummary] = js.undefined,
       LevelFive: js.UndefOr[HierarchyGroupSummary] = js.undefined,
+      LevelFour: js.UndefOr[HierarchyGroupSummary] = js.undefined,
+      LevelOne: js.UndefOr[HierarchyGroupSummary] = js.undefined,
       LevelThree: js.UndefOr[HierarchyGroupSummary] = js.undefined,
-      LevelOne: js.UndefOr[HierarchyGroupSummary] = js.undefined): HierarchyPath = {
+      LevelTwo: js.UndefOr[HierarchyGroupSummary] = js.undefined): HierarchyPath = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "LevelFour" -> LevelFour.map { x => x.asInstanceOf[js.Any] },
-        "LevelTwo" -> LevelTwo.map { x => x.asInstanceOf[js.Any] },
         "LevelFive" -> LevelFive.map { x => x.asInstanceOf[js.Any] },
+        "LevelFour" -> LevelFour.map { x => x.asInstanceOf[js.Any] },
+        "LevelOne" -> LevelOne.map { x => x.asInstanceOf[js.Any] },
         "LevelThree" -> LevelThree.map { x => x.asInstanceOf[js.Any] },
-        "LevelOne" -> LevelOne.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "LevelTwo" -> LevelTwo.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[HierarchyPath]
     }
@@ -679,26 +679,26 @@ package connect {
    */
   @js.native
   trait HierarchyStructure extends js.Object {
-    var LevelFour: js.UndefOr[HierarchyLevel]
-    var LevelTwo: js.UndefOr[HierarchyLevel]
     var LevelFive: js.UndefOr[HierarchyLevel]
-    var LevelThree: js.UndefOr[HierarchyLevel]
+    var LevelFour: js.UndefOr[HierarchyLevel]
     var LevelOne: js.UndefOr[HierarchyLevel]
+    var LevelThree: js.UndefOr[HierarchyLevel]
+    var LevelTwo: js.UndefOr[HierarchyLevel]
   }
 
   object HierarchyStructure {
     def apply(
-      LevelFour: js.UndefOr[HierarchyLevel] = js.undefined,
-      LevelTwo: js.UndefOr[HierarchyLevel] = js.undefined,
       LevelFive: js.UndefOr[HierarchyLevel] = js.undefined,
+      LevelFour: js.UndefOr[HierarchyLevel] = js.undefined,
+      LevelOne: js.UndefOr[HierarchyLevel] = js.undefined,
       LevelThree: js.UndefOr[HierarchyLevel] = js.undefined,
-      LevelOne: js.UndefOr[HierarchyLevel] = js.undefined): HierarchyStructure = {
+      LevelTwo: js.UndefOr[HierarchyLevel] = js.undefined): HierarchyStructure = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "LevelFour" -> LevelFour.map { x => x.asInstanceOf[js.Any] },
-        "LevelTwo" -> LevelTwo.map { x => x.asInstanceOf[js.Any] },
         "LevelFive" -> LevelFive.map { x => x.asInstanceOf[js.Any] },
+        "LevelFour" -> LevelFour.map { x => x.asInstanceOf[js.Any] },
+        "LevelOne" -> LevelOne.map { x => x.asInstanceOf[js.Any] },
         "LevelThree" -> LevelThree.map { x => x.asInstanceOf[js.Any] },
-        "LevelOne" -> LevelOne.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "LevelTwo" -> LevelTwo.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[HierarchyStructure]
     }
@@ -710,21 +710,21 @@ package connect {
   @js.native
   trait HistoricalMetric extends js.Object {
     var Name: js.UndefOr[HistoricalMetricName]
-    var Threshold: js.UndefOr[Threshold]
     var Statistic: js.UndefOr[Statistic]
+    var Threshold: js.UndefOr[Threshold]
     var Unit: js.UndefOr[Unit]
   }
 
   object HistoricalMetric {
     def apply(
       Name: js.UndefOr[HistoricalMetricName] = js.undefined,
-      Threshold: js.UndefOr[Threshold] = js.undefined,
       Statistic: js.UndefOr[Statistic] = js.undefined,
+      Threshold: js.UndefOr[Threshold] = js.undefined,
       Unit: js.UndefOr[Unit] = js.undefined): HistoricalMetric = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
-        "Threshold" -> Threshold.map { x => x.asInstanceOf[js.Any] },
         "Statistic" -> Statistic.map { x => x.asInstanceOf[js.Any] },
+        "Threshold" -> Threshold.map { x => x.asInstanceOf[js.Any] },
         "Unit" -> Unit.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[HistoricalMetric]
@@ -790,17 +790,17 @@ package connect {
    */
   @js.native
   trait HistoricalMetricResult extends js.Object {
-    var Dimensions: js.UndefOr[Dimensions]
     var Collections: js.UndefOr[HistoricalMetricDataCollections]
+    var Dimensions: js.UndefOr[Dimensions]
   }
 
   object HistoricalMetricResult {
     def apply(
-      Dimensions: js.UndefOr[Dimensions] = js.undefined,
-      Collections: js.UndefOr[HistoricalMetricDataCollections] = js.undefined): HistoricalMetricResult = {
+      Collections: js.UndefOr[HistoricalMetricDataCollections] = js.undefined,
+      Dimensions: js.UndefOr[Dimensions] = js.undefined): HistoricalMetricResult = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Dimensions" -> Dimensions.map { x => x.asInstanceOf[js.Any] },
-        "Collections" -> Collections.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Collections" -> Collections.map { x => x.asInstanceOf[js.Any] },
+        "Dimensions" -> Dimensions.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[HistoricalMetricResult]
     }
@@ -808,20 +808,20 @@ package connect {
 
   @js.native
   trait ListRoutingProfilesRequest extends js.Object {
-    var InstanceId: js.UndefOr[InstanceId]
-    var NextToken: js.UndefOr[NextToken]
+    var InstanceId: InstanceId
     var MaxResults: js.UndefOr[MaxResult1000]
+    var NextToken: js.UndefOr[NextToken]
   }
 
   object ListRoutingProfilesRequest {
     def apply(
-      InstanceId: js.UndefOr[InstanceId] = js.undefined,
-      NextToken: js.UndefOr[NextToken] = js.undefined,
-      MaxResults: js.UndefOr[MaxResult1000] = js.undefined): ListRoutingProfilesRequest = {
+      InstanceId: InstanceId,
+      MaxResults: js.UndefOr[MaxResult1000] = js.undefined,
+      NextToken: js.UndefOr[NextToken] = js.undefined): ListRoutingProfilesRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "InstanceId" -> InstanceId.map { x => x.asInstanceOf[js.Any] },
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
-        "MaxResults" -> MaxResults.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "InstanceId" -> InstanceId.asInstanceOf[js.Any],
+        "MaxResults" -> MaxResults.map { x => x.asInstanceOf[js.Any] },
+        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListRoutingProfilesRequest]
     }
@@ -829,17 +829,17 @@ package connect {
 
   @js.native
   trait ListRoutingProfilesResponse extends js.Object {
-    var RoutingProfileSummaryList: js.UndefOr[RoutingProfileSummaryList]
     var NextToken: js.UndefOr[NextToken]
+    var RoutingProfileSummaryList: js.UndefOr[RoutingProfileSummaryList]
   }
 
   object ListRoutingProfilesResponse {
     def apply(
-      RoutingProfileSummaryList: js.UndefOr[RoutingProfileSummaryList] = js.undefined,
-      NextToken: js.UndefOr[NextToken] = js.undefined): ListRoutingProfilesResponse = {
+      NextToken: js.UndefOr[NextToken] = js.undefined,
+      RoutingProfileSummaryList: js.UndefOr[RoutingProfileSummaryList] = js.undefined): ListRoutingProfilesResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "RoutingProfileSummaryList" -> RoutingProfileSummaryList.map { x => x.asInstanceOf[js.Any] },
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
+        "RoutingProfileSummaryList" -> RoutingProfileSummaryList.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListRoutingProfilesResponse]
     }
@@ -847,20 +847,20 @@ package connect {
 
   @js.native
   trait ListSecurityProfilesRequest extends js.Object {
-    var InstanceId: js.UndefOr[InstanceId]
-    var NextToken: js.UndefOr[NextToken]
+    var InstanceId: InstanceId
     var MaxResults: js.UndefOr[MaxResult1000]
+    var NextToken: js.UndefOr[NextToken]
   }
 
   object ListSecurityProfilesRequest {
     def apply(
-      InstanceId: js.UndefOr[InstanceId] = js.undefined,
-      NextToken: js.UndefOr[NextToken] = js.undefined,
-      MaxResults: js.UndefOr[MaxResult1000] = js.undefined): ListSecurityProfilesRequest = {
+      InstanceId: InstanceId,
+      MaxResults: js.UndefOr[MaxResult1000] = js.undefined,
+      NextToken: js.UndefOr[NextToken] = js.undefined): ListSecurityProfilesRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "InstanceId" -> InstanceId.map { x => x.asInstanceOf[js.Any] },
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
-        "MaxResults" -> MaxResults.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "InstanceId" -> InstanceId.asInstanceOf[js.Any],
+        "MaxResults" -> MaxResults.map { x => x.asInstanceOf[js.Any] },
+        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListSecurityProfilesRequest]
     }
@@ -868,17 +868,17 @@ package connect {
 
   @js.native
   trait ListSecurityProfilesResponse extends js.Object {
-    var SecurityProfileSummaryList: js.UndefOr[SecurityProfileSummaryList]
     var NextToken: js.UndefOr[NextToken]
+    var SecurityProfileSummaryList: js.UndefOr[SecurityProfileSummaryList]
   }
 
   object ListSecurityProfilesResponse {
     def apply(
-      SecurityProfileSummaryList: js.UndefOr[SecurityProfileSummaryList] = js.undefined,
-      NextToken: js.UndefOr[NextToken] = js.undefined): ListSecurityProfilesResponse = {
+      NextToken: js.UndefOr[NextToken] = js.undefined,
+      SecurityProfileSummaryList: js.UndefOr[SecurityProfileSummaryList] = js.undefined): ListSecurityProfilesResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "SecurityProfileSummaryList" -> SecurityProfileSummaryList.map { x => x.asInstanceOf[js.Any] },
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
+        "SecurityProfileSummaryList" -> SecurityProfileSummaryList.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListSecurityProfilesResponse]
     }
@@ -886,20 +886,20 @@ package connect {
 
   @js.native
   trait ListUserHierarchyGroupsRequest extends js.Object {
-    var InstanceId: js.UndefOr[InstanceId]
-    var NextToken: js.UndefOr[NextToken]
+    var InstanceId: InstanceId
     var MaxResults: js.UndefOr[MaxResult1000]
+    var NextToken: js.UndefOr[NextToken]
   }
 
   object ListUserHierarchyGroupsRequest {
     def apply(
-      InstanceId: js.UndefOr[InstanceId] = js.undefined,
-      NextToken: js.UndefOr[NextToken] = js.undefined,
-      MaxResults: js.UndefOr[MaxResult1000] = js.undefined): ListUserHierarchyGroupsRequest = {
+      InstanceId: InstanceId,
+      MaxResults: js.UndefOr[MaxResult1000] = js.undefined,
+      NextToken: js.UndefOr[NextToken] = js.undefined): ListUserHierarchyGroupsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "InstanceId" -> InstanceId.map { x => x.asInstanceOf[js.Any] },
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
-        "MaxResults" -> MaxResults.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "InstanceId" -> InstanceId.asInstanceOf[js.Any],
+        "MaxResults" -> MaxResults.map { x => x.asInstanceOf[js.Any] },
+        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListUserHierarchyGroupsRequest]
     }
@@ -907,17 +907,17 @@ package connect {
 
   @js.native
   trait ListUserHierarchyGroupsResponse extends js.Object {
-    var UserHierarchyGroupSummaryList: js.UndefOr[HierarchyGroupSummaryList]
     var NextToken: js.UndefOr[NextToken]
+    var UserHierarchyGroupSummaryList: js.UndefOr[HierarchyGroupSummaryList]
   }
 
   object ListUserHierarchyGroupsResponse {
     def apply(
-      UserHierarchyGroupSummaryList: js.UndefOr[HierarchyGroupSummaryList] = js.undefined,
-      NextToken: js.UndefOr[NextToken] = js.undefined): ListUserHierarchyGroupsResponse = {
+      NextToken: js.UndefOr[NextToken] = js.undefined,
+      UserHierarchyGroupSummaryList: js.UndefOr[HierarchyGroupSummaryList] = js.undefined): ListUserHierarchyGroupsResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "UserHierarchyGroupSummaryList" -> UserHierarchyGroupSummaryList.map { x => x.asInstanceOf[js.Any] },
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
+        "UserHierarchyGroupSummaryList" -> UserHierarchyGroupSummaryList.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListUserHierarchyGroupsResponse]
     }
@@ -925,20 +925,20 @@ package connect {
 
   @js.native
   trait ListUsersRequest extends js.Object {
-    var InstanceId: js.UndefOr[InstanceId]
-    var NextToken: js.UndefOr[NextToken]
+    var InstanceId: InstanceId
     var MaxResults: js.UndefOr[MaxResult1000]
+    var NextToken: js.UndefOr[NextToken]
   }
 
   object ListUsersRequest {
     def apply(
-      InstanceId: js.UndefOr[InstanceId] = js.undefined,
-      NextToken: js.UndefOr[NextToken] = js.undefined,
-      MaxResults: js.UndefOr[MaxResult1000] = js.undefined): ListUsersRequest = {
+      InstanceId: InstanceId,
+      MaxResults: js.UndefOr[MaxResult1000] = js.undefined,
+      NextToken: js.UndefOr[NextToken] = js.undefined): ListUsersRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "InstanceId" -> InstanceId.map { x => x.asInstanceOf[js.Any] },
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
-        "MaxResults" -> MaxResults.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "InstanceId" -> InstanceId.asInstanceOf[js.Any],
+        "MaxResults" -> MaxResults.map { x => x.asInstanceOf[js.Any] },
+        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListUsersRequest]
     }
@@ -946,17 +946,17 @@ package connect {
 
   @js.native
   trait ListUsersResponse extends js.Object {
-    var UserSummaryList: js.UndefOr[UserSummaryList]
     var NextToken: js.UndefOr[NextToken]
+    var UserSummaryList: js.UndefOr[UserSummaryList]
   }
 
   object ListUsersResponse {
     def apply(
-      UserSummaryList: js.UndefOr[UserSummaryList] = js.undefined,
-      NextToken: js.UndefOr[NextToken] = js.undefined): ListUsersResponse = {
+      NextToken: js.UndefOr[NextToken] = js.undefined,
+      UserSummaryList: js.UndefOr[UserSummaryList] = js.undefined): ListUsersResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "UserSummaryList" -> UserSummaryList.map { x => x.asInstanceOf[js.Any] },
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
+        "UserSummaryList" -> UserSummaryList.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListUsersResponse]
     }
@@ -974,17 +974,17 @@ package connect {
    */
   @js.native
   trait QueueReference extends js.Object {
-    var Id: js.UndefOr[QueueId]
     var Arn: js.UndefOr[ARN]
+    var Id: js.UndefOr[QueueId]
   }
 
   object QueueReference {
     def apply(
-      Id: js.UndefOr[QueueId] = js.undefined,
-      Arn: js.UndefOr[ARN] = js.undefined): QueueReference = {
+      Arn: js.UndefOr[ARN] = js.undefined,
+      Id: js.UndefOr[QueueId] = js.undefined): QueueReference = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Id" -> Id.map { x => x.asInstanceOf[js.Any] },
-        "Arn" -> Arn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Arn" -> Arn.map { x => x.asInstanceOf[js.Any] },
+        "Id" -> Id.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[QueueReference]
     }
@@ -995,19 +995,19 @@ package connect {
    */
   @js.native
   trait RoutingProfileSummary extends js.Object {
-    var Id: js.UndefOr[RoutingProfileId]
     var Arn: js.UndefOr[ARN]
+    var Id: js.UndefOr[RoutingProfileId]
     var Name: js.UndefOr[RoutingProfileName]
   }
 
   object RoutingProfileSummary {
     def apply(
-      Id: js.UndefOr[RoutingProfileId] = js.undefined,
       Arn: js.UndefOr[ARN] = js.undefined,
+      Id: js.UndefOr[RoutingProfileId] = js.undefined,
       Name: js.UndefOr[RoutingProfileName] = js.undefined): RoutingProfileSummary = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Id" -> Id.map { x => x.asInstanceOf[js.Any] },
         "Arn" -> Arn.map { x => x.asInstanceOf[js.Any] },
+        "Id" -> Id.map { x => x.asInstanceOf[js.Any] },
         "Name" -> Name.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RoutingProfileSummary]
@@ -1019,19 +1019,19 @@ package connect {
    */
   @js.native
   trait SecurityProfileSummary extends js.Object {
-    var Id: js.UndefOr[SecurityProfileId]
     var Arn: js.UndefOr[ARN]
+    var Id: js.UndefOr[SecurityProfileId]
     var Name: js.UndefOr[SecurityProfileName]
   }
 
   object SecurityProfileSummary {
     def apply(
-      Id: js.UndefOr[SecurityProfileId] = js.undefined,
       Arn: js.UndefOr[ARN] = js.undefined,
+      Id: js.UndefOr[SecurityProfileId] = js.undefined,
       Name: js.UndefOr[SecurityProfileName] = js.undefined): SecurityProfileSummary = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Id" -> Id.map { x => x.asInstanceOf[js.Any] },
         "Arn" -> Arn.map { x => x.asInstanceOf[js.Any] },
+        "Id" -> Id.map { x => x.asInstanceOf[js.Any] },
         "Name" -> Name.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SecurityProfileSummary]
@@ -1040,32 +1040,32 @@ package connect {
 
   @js.native
   trait StartOutboundVoiceContactRequest extends js.Object {
-    var ContactFlowId: js.UndefOr[ContactFlowId]
-    var DestinationPhoneNumber: js.UndefOr[PhoneNumber]
-    var ClientToken: js.UndefOr[ClientToken]
+    var ContactFlowId: ContactFlowId
+    var DestinationPhoneNumber: PhoneNumber
+    var InstanceId: InstanceId
     var Attributes: js.UndefOr[Attributes]
-    var SourcePhoneNumber: js.UndefOr[PhoneNumber]
-    var InstanceId: js.UndefOr[InstanceId]
+    var ClientToken: js.UndefOr[ClientToken]
     var QueueId: js.UndefOr[QueueId]
+    var SourcePhoneNumber: js.UndefOr[PhoneNumber]
   }
 
   object StartOutboundVoiceContactRequest {
     def apply(
-      ContactFlowId: js.UndefOr[ContactFlowId] = js.undefined,
-      DestinationPhoneNumber: js.UndefOr[PhoneNumber] = js.undefined,
-      ClientToken: js.UndefOr[ClientToken] = js.undefined,
+      ContactFlowId: ContactFlowId,
+      DestinationPhoneNumber: PhoneNumber,
+      InstanceId: InstanceId,
       Attributes: js.UndefOr[Attributes] = js.undefined,
-      SourcePhoneNumber: js.UndefOr[PhoneNumber] = js.undefined,
-      InstanceId: js.UndefOr[InstanceId] = js.undefined,
-      QueueId: js.UndefOr[QueueId] = js.undefined): StartOutboundVoiceContactRequest = {
+      ClientToken: js.UndefOr[ClientToken] = js.undefined,
+      QueueId: js.UndefOr[QueueId] = js.undefined,
+      SourcePhoneNumber: js.UndefOr[PhoneNumber] = js.undefined): StartOutboundVoiceContactRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ContactFlowId" -> ContactFlowId.map { x => x.asInstanceOf[js.Any] },
-        "DestinationPhoneNumber" -> DestinationPhoneNumber.map { x => x.asInstanceOf[js.Any] },
-        "ClientToken" -> ClientToken.map { x => x.asInstanceOf[js.Any] },
+        "ContactFlowId" -> ContactFlowId.asInstanceOf[js.Any],
+        "DestinationPhoneNumber" -> DestinationPhoneNumber.asInstanceOf[js.Any],
+        "InstanceId" -> InstanceId.asInstanceOf[js.Any],
         "Attributes" -> Attributes.map { x => x.asInstanceOf[js.Any] },
-        "SourcePhoneNumber" -> SourcePhoneNumber.map { x => x.asInstanceOf[js.Any] },
-        "InstanceId" -> InstanceId.map { x => x.asInstanceOf[js.Any] },
-        "QueueId" -> QueueId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ClientToken" -> ClientToken.map { x => x.asInstanceOf[js.Any] },
+        "QueueId" -> QueueId.map { x => x.asInstanceOf[js.Any] },
+        "SourcePhoneNumber" -> SourcePhoneNumber.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StartOutboundVoiceContactRequest]
     }
@@ -1096,17 +1096,17 @@ package connect {
 
   @js.native
   trait StopContactRequest extends js.Object {
-    var ContactId: js.UndefOr[ContactId]
-    var InstanceId: js.UndefOr[InstanceId]
+    var ContactId: ContactId
+    var InstanceId: InstanceId
   }
 
   object StopContactRequest {
     def apply(
-      ContactId: js.UndefOr[ContactId] = js.undefined,
-      InstanceId: js.UndefOr[InstanceId] = js.undefined): StopContactRequest = {
+      ContactId: ContactId,
+      InstanceId: InstanceId): StopContactRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ContactId" -> ContactId.map { x => x.asInstanceOf[js.Any] },
-        "InstanceId" -> InstanceId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ContactId" -> ContactId.asInstanceOf[js.Any],
+        "InstanceId" -> InstanceId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StopContactRequest]
     }
@@ -1156,20 +1156,20 @@ package connect {
 
   @js.native
   trait UpdateContactAttributesRequest extends js.Object {
-    var InitialContactId: js.UndefOr[ContactId]
-    var InstanceId: js.UndefOr[InstanceId]
-    var Attributes: js.UndefOr[Attributes]
+    var Attributes: Attributes
+    var InitialContactId: ContactId
+    var InstanceId: InstanceId
   }
 
   object UpdateContactAttributesRequest {
     def apply(
-      InitialContactId: js.UndefOr[ContactId] = js.undefined,
-      InstanceId: js.UndefOr[InstanceId] = js.undefined,
-      Attributes: js.UndefOr[Attributes] = js.undefined): UpdateContactAttributesRequest = {
+      Attributes: Attributes,
+      InitialContactId: ContactId,
+      InstanceId: InstanceId): UpdateContactAttributesRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "InitialContactId" -> InitialContactId.map { x => x.asInstanceOf[js.Any] },
-        "InstanceId" -> InstanceId.map { x => x.asInstanceOf[js.Any] },
-        "Attributes" -> Attributes.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Attributes" -> Attributes.asInstanceOf[js.Any],
+        "InitialContactId" -> InitialContactId.asInstanceOf[js.Any],
+        "InstanceId" -> InstanceId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateContactAttributesRequest]
     }
@@ -1190,20 +1190,20 @@ package connect {
 
   @js.native
   trait UpdateUserHierarchyRequest extends js.Object {
+    var InstanceId: InstanceId
+    var UserId: UserId
     var HierarchyGroupId: js.UndefOr[HierarchyGroupId]
-    var UserId: js.UndefOr[UserId]
-    var InstanceId: js.UndefOr[InstanceId]
   }
 
   object UpdateUserHierarchyRequest {
     def apply(
-      HierarchyGroupId: js.UndefOr[HierarchyGroupId] = js.undefined,
-      UserId: js.UndefOr[UserId] = js.undefined,
-      InstanceId: js.UndefOr[InstanceId] = js.undefined): UpdateUserHierarchyRequest = {
+      InstanceId: InstanceId,
+      UserId: UserId,
+      HierarchyGroupId: js.UndefOr[HierarchyGroupId] = js.undefined): UpdateUserHierarchyRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "HierarchyGroupId" -> HierarchyGroupId.map { x => x.asInstanceOf[js.Any] },
-        "UserId" -> UserId.map { x => x.asInstanceOf[js.Any] },
-        "InstanceId" -> InstanceId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "InstanceId" -> InstanceId.asInstanceOf[js.Any],
+        "UserId" -> UserId.asInstanceOf[js.Any],
+        "HierarchyGroupId" -> HierarchyGroupId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateUserHierarchyRequest]
     }
@@ -1211,20 +1211,20 @@ package connect {
 
   @js.native
   trait UpdateUserIdentityInfoRequest extends js.Object {
-    var IdentityInfo: js.UndefOr[UserIdentityInfo]
-    var UserId: js.UndefOr[UserId]
-    var InstanceId: js.UndefOr[InstanceId]
+    var IdentityInfo: UserIdentityInfo
+    var InstanceId: InstanceId
+    var UserId: UserId
   }
 
   object UpdateUserIdentityInfoRequest {
     def apply(
-      IdentityInfo: js.UndefOr[UserIdentityInfo] = js.undefined,
-      UserId: js.UndefOr[UserId] = js.undefined,
-      InstanceId: js.UndefOr[InstanceId] = js.undefined): UpdateUserIdentityInfoRequest = {
+      IdentityInfo: UserIdentityInfo,
+      InstanceId: InstanceId,
+      UserId: UserId): UpdateUserIdentityInfoRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "IdentityInfo" -> IdentityInfo.map { x => x.asInstanceOf[js.Any] },
-        "UserId" -> UserId.map { x => x.asInstanceOf[js.Any] },
-        "InstanceId" -> InstanceId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "IdentityInfo" -> IdentityInfo.asInstanceOf[js.Any],
+        "InstanceId" -> InstanceId.asInstanceOf[js.Any],
+        "UserId" -> UserId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateUserIdentityInfoRequest]
     }
@@ -1232,20 +1232,20 @@ package connect {
 
   @js.native
   trait UpdateUserPhoneConfigRequest extends js.Object {
-    var PhoneConfig: js.UndefOr[UserPhoneConfig]
-    var UserId: js.UndefOr[UserId]
-    var InstanceId: js.UndefOr[InstanceId]
+    var InstanceId: InstanceId
+    var PhoneConfig: UserPhoneConfig
+    var UserId: UserId
   }
 
   object UpdateUserPhoneConfigRequest {
     def apply(
-      PhoneConfig: js.UndefOr[UserPhoneConfig] = js.undefined,
-      UserId: js.UndefOr[UserId] = js.undefined,
-      InstanceId: js.UndefOr[InstanceId] = js.undefined): UpdateUserPhoneConfigRequest = {
+      InstanceId: InstanceId,
+      PhoneConfig: UserPhoneConfig,
+      UserId: UserId): UpdateUserPhoneConfigRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "PhoneConfig" -> PhoneConfig.map { x => x.asInstanceOf[js.Any] },
-        "UserId" -> UserId.map { x => x.asInstanceOf[js.Any] },
-        "InstanceId" -> InstanceId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "InstanceId" -> InstanceId.asInstanceOf[js.Any],
+        "PhoneConfig" -> PhoneConfig.asInstanceOf[js.Any],
+        "UserId" -> UserId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateUserPhoneConfigRequest]
     }
@@ -1253,20 +1253,20 @@ package connect {
 
   @js.native
   trait UpdateUserRoutingProfileRequest extends js.Object {
-    var RoutingProfileId: js.UndefOr[RoutingProfileId]
-    var UserId: js.UndefOr[UserId]
-    var InstanceId: js.UndefOr[InstanceId]
+    var InstanceId: InstanceId
+    var RoutingProfileId: RoutingProfileId
+    var UserId: UserId
   }
 
   object UpdateUserRoutingProfileRequest {
     def apply(
-      RoutingProfileId: js.UndefOr[RoutingProfileId] = js.undefined,
-      UserId: js.UndefOr[UserId] = js.undefined,
-      InstanceId: js.UndefOr[InstanceId] = js.undefined): UpdateUserRoutingProfileRequest = {
+      InstanceId: InstanceId,
+      RoutingProfileId: RoutingProfileId,
+      UserId: UserId): UpdateUserRoutingProfileRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "RoutingProfileId" -> RoutingProfileId.map { x => x.asInstanceOf[js.Any] },
-        "UserId" -> UserId.map { x => x.asInstanceOf[js.Any] },
-        "InstanceId" -> InstanceId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "InstanceId" -> InstanceId.asInstanceOf[js.Any],
+        "RoutingProfileId" -> RoutingProfileId.asInstanceOf[js.Any],
+        "UserId" -> UserId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateUserRoutingProfileRequest]
     }
@@ -1274,20 +1274,20 @@ package connect {
 
   @js.native
   trait UpdateUserSecurityProfilesRequest extends js.Object {
-    var SecurityProfileIds: js.UndefOr[SecurityProfileIds]
-    var UserId: js.UndefOr[UserId]
-    var InstanceId: js.UndefOr[InstanceId]
+    var InstanceId: InstanceId
+    var SecurityProfileIds: SecurityProfileIds
+    var UserId: UserId
   }
 
   object UpdateUserSecurityProfilesRequest {
     def apply(
-      SecurityProfileIds: js.UndefOr[SecurityProfileIds] = js.undefined,
-      UserId: js.UndefOr[UserId] = js.undefined,
-      InstanceId: js.UndefOr[InstanceId] = js.undefined): UpdateUserSecurityProfilesRequest = {
+      InstanceId: InstanceId,
+      SecurityProfileIds: SecurityProfileIds,
+      UserId: UserId): UpdateUserSecurityProfilesRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "SecurityProfileIds" -> SecurityProfileIds.map { x => x.asInstanceOf[js.Any] },
-        "UserId" -> UserId.map { x => x.asInstanceOf[js.Any] },
-        "InstanceId" -> InstanceId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "InstanceId" -> InstanceId.asInstanceOf[js.Any],
+        "SecurityProfileIds" -> SecurityProfileIds.asInstanceOf[js.Any],
+        "UserId" -> UserId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateUserSecurityProfilesRequest]
     }
@@ -1298,38 +1298,38 @@ package connect {
    */
   @js.native
   trait User extends js.Object {
+    var Arn: js.UndefOr[ARN]
+    var DirectoryUserId: js.UndefOr[DirectoryUserId]
+    var HierarchyGroupId: js.UndefOr[HierarchyGroupId]
+    var Id: js.UndefOr[UserId]
+    var IdentityInfo: js.UndefOr[UserIdentityInfo]
+    var PhoneConfig: js.UndefOr[UserPhoneConfig]
+    var RoutingProfileId: js.UndefOr[RoutingProfileId]
     var SecurityProfileIds: js.UndefOr[SecurityProfileIds]
     var Username: js.UndefOr[AgentUsername]
-    var Id: js.UndefOr[UserId]
-    var HierarchyGroupId: js.UndefOr[HierarchyGroupId]
-    var PhoneConfig: js.UndefOr[UserPhoneConfig]
-    var DirectoryUserId: js.UndefOr[DirectoryUserId]
-    var Arn: js.UndefOr[ARN]
-    var IdentityInfo: js.UndefOr[UserIdentityInfo]
-    var RoutingProfileId: js.UndefOr[RoutingProfileId]
   }
 
   object User {
     def apply(
-      SecurityProfileIds: js.UndefOr[SecurityProfileIds] = js.undefined,
-      Username: js.UndefOr[AgentUsername] = js.undefined,
-      Id: js.UndefOr[UserId] = js.undefined,
-      HierarchyGroupId: js.UndefOr[HierarchyGroupId] = js.undefined,
-      PhoneConfig: js.UndefOr[UserPhoneConfig] = js.undefined,
-      DirectoryUserId: js.UndefOr[DirectoryUserId] = js.undefined,
       Arn: js.UndefOr[ARN] = js.undefined,
+      DirectoryUserId: js.UndefOr[DirectoryUserId] = js.undefined,
+      HierarchyGroupId: js.UndefOr[HierarchyGroupId] = js.undefined,
+      Id: js.UndefOr[UserId] = js.undefined,
       IdentityInfo: js.UndefOr[UserIdentityInfo] = js.undefined,
-      RoutingProfileId: js.UndefOr[RoutingProfileId] = js.undefined): User = {
+      PhoneConfig: js.UndefOr[UserPhoneConfig] = js.undefined,
+      RoutingProfileId: js.UndefOr[RoutingProfileId] = js.undefined,
+      SecurityProfileIds: js.UndefOr[SecurityProfileIds] = js.undefined,
+      Username: js.UndefOr[AgentUsername] = js.undefined): User = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "SecurityProfileIds" -> SecurityProfileIds.map { x => x.asInstanceOf[js.Any] },
-        "Username" -> Username.map { x => x.asInstanceOf[js.Any] },
-        "Id" -> Id.map { x => x.asInstanceOf[js.Any] },
-        "HierarchyGroupId" -> HierarchyGroupId.map { x => x.asInstanceOf[js.Any] },
-        "PhoneConfig" -> PhoneConfig.map { x => x.asInstanceOf[js.Any] },
-        "DirectoryUserId" -> DirectoryUserId.map { x => x.asInstanceOf[js.Any] },
         "Arn" -> Arn.map { x => x.asInstanceOf[js.Any] },
+        "DirectoryUserId" -> DirectoryUserId.map { x => x.asInstanceOf[js.Any] },
+        "HierarchyGroupId" -> HierarchyGroupId.map { x => x.asInstanceOf[js.Any] },
+        "Id" -> Id.map { x => x.asInstanceOf[js.Any] },
         "IdentityInfo" -> IdentityInfo.map { x => x.asInstanceOf[js.Any] },
-        "RoutingProfileId" -> RoutingProfileId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "PhoneConfig" -> PhoneConfig.map { x => x.asInstanceOf[js.Any] },
+        "RoutingProfileId" -> RoutingProfileId.map { x => x.asInstanceOf[js.Any] },
+        "SecurityProfileIds" -> SecurityProfileIds.map { x => x.asInstanceOf[js.Any] },
+        "Username" -> Username.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[User]
     }
@@ -1340,20 +1340,20 @@ package connect {
    */
   @js.native
   trait UserIdentityInfo extends js.Object {
+    var Email: js.UndefOr[Email]
     var FirstName: js.UndefOr[AgentFirstName]
     var LastName: js.UndefOr[AgentLastName]
-    var Email: js.UndefOr[Email]
   }
 
   object UserIdentityInfo {
     def apply(
+      Email: js.UndefOr[Email] = js.undefined,
       FirstName: js.UndefOr[AgentFirstName] = js.undefined,
-      LastName: js.UndefOr[AgentLastName] = js.undefined,
-      Email: js.UndefOr[Email] = js.undefined): UserIdentityInfo = {
+      LastName: js.UndefOr[AgentLastName] = js.undefined): UserIdentityInfo = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "Email" -> Email.map { x => x.asInstanceOf[js.Any] },
         "FirstName" -> FirstName.map { x => x.asInstanceOf[js.Any] },
-        "LastName" -> LastName.map { x => x.asInstanceOf[js.Any] },
-        "Email" -> Email.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "LastName" -> LastName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UserIdentityInfo]
     }
@@ -1364,22 +1364,22 @@ package connect {
    */
   @js.native
   trait UserPhoneConfig extends js.Object {
-    var PhoneType: js.UndefOr[PhoneType]
-    var AutoAccept: js.UndefOr[AutoAccept]
+    var PhoneType: PhoneType
     var AfterContactWorkTimeLimit: js.UndefOr[AfterContactWorkTimeLimit]
+    var AutoAccept: js.UndefOr[AutoAccept]
     var DeskPhoneNumber: js.UndefOr[PhoneNumber]
   }
 
   object UserPhoneConfig {
     def apply(
-      PhoneType: js.UndefOr[PhoneType] = js.undefined,
-      AutoAccept: js.UndefOr[AutoAccept] = js.undefined,
+      PhoneType: PhoneType,
       AfterContactWorkTimeLimit: js.UndefOr[AfterContactWorkTimeLimit] = js.undefined,
+      AutoAccept: js.UndefOr[AutoAccept] = js.undefined,
       DeskPhoneNumber: js.UndefOr[PhoneNumber] = js.undefined): UserPhoneConfig = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "PhoneType" -> PhoneType.map { x => x.asInstanceOf[js.Any] },
-        "AutoAccept" -> AutoAccept.map { x => x.asInstanceOf[js.Any] },
+        "PhoneType" -> PhoneType.asInstanceOf[js.Any],
         "AfterContactWorkTimeLimit" -> AfterContactWorkTimeLimit.map { x => x.asInstanceOf[js.Any] },
+        "AutoAccept" -> AutoAccept.map { x => x.asInstanceOf[js.Any] },
         "DeskPhoneNumber" -> DeskPhoneNumber.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UserPhoneConfig]
@@ -1391,19 +1391,19 @@ package connect {
    */
   @js.native
   trait UserSummary extends js.Object {
-    var Id: js.UndefOr[UserId]
     var Arn: js.UndefOr[ARN]
+    var Id: js.UndefOr[UserId]
     var Username: js.UndefOr[AgentUsername]
   }
 
   object UserSummary {
     def apply(
-      Id: js.UndefOr[UserId] = js.undefined,
       Arn: js.UndefOr[ARN] = js.undefined,
+      Id: js.UndefOr[UserId] = js.undefined,
       Username: js.UndefOr[AgentUsername] = js.undefined): UserSummary = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Id" -> Id.map { x => x.asInstanceOf[js.Any] },
         "Arn" -> Arn.map { x => x.asInstanceOf[js.Any] },
+        "Id" -> Id.map { x => x.asInstanceOf[js.Any] },
         "Username" -> Username.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UserSummary]

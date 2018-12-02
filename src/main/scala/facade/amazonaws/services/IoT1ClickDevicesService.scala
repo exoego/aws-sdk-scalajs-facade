@@ -54,14 +54,14 @@ package iot1clickdevicesservice {
 
   @js.native
   trait ClaimDevicesByClaimCodeRequest extends js.Object {
-    var ClaimCode: js.UndefOr[__string]
+    var ClaimCode: __string
   }
 
   object ClaimDevicesByClaimCodeRequest {
     def apply(
-      ClaimCode: js.UndefOr[__string] = js.undefined): ClaimDevicesByClaimCodeRequest = {
+      ClaimCode: __string): ClaimDevicesByClaimCodeRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ClaimCode" -> ClaimCode.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ClaimCode" -> ClaimCode.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ClaimDevicesByClaimCodeRequest]
     }
@@ -87,14 +87,14 @@ package iot1clickdevicesservice {
 
   @js.native
   trait DescribeDeviceRequest extends js.Object {
-    var DeviceId: js.UndefOr[__string]
+    var DeviceId: __string
   }
 
   object DescribeDeviceRequest {
     def apply(
-      DeviceId: js.UndefOr[__string] = js.undefined): DescribeDeviceRequest = {
+      DeviceId: __string): DescribeDeviceRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "DeviceId" -> DeviceId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "DeviceId" -> DeviceId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeDeviceRequest]
     }
@@ -154,24 +154,24 @@ package iot1clickdevicesservice {
   @js.native
   trait DeviceDescription extends js.Object {
     var Attributes: js.UndefOr[DeviceAttributes]
+    var DeviceId: js.UndefOr[__string]
     var Enabled: js.UndefOr[__boolean]
     var RemainingLife: js.UndefOr[__doubleMin0Max100]
-    var DeviceId: js.UndefOr[__string]
     var Type: js.UndefOr[__string]
   }
 
   object DeviceDescription {
     def apply(
       Attributes: js.UndefOr[DeviceAttributes] = js.undefined,
+      DeviceId: js.UndefOr[__string] = js.undefined,
       Enabled: js.UndefOr[__boolean] = js.undefined,
       RemainingLife: js.UndefOr[__doubleMin0Max100] = js.undefined,
-      DeviceId: js.UndefOr[__string] = js.undefined,
       Type: js.UndefOr[__string] = js.undefined): DeviceDescription = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Attributes" -> Attributes.map { x => x.asInstanceOf[js.Any] },
+        "DeviceId" -> DeviceId.map { x => x.asInstanceOf[js.Any] },
         "Enabled" -> Enabled.map { x => x.asInstanceOf[js.Any] },
         "RemainingLife" -> RemainingLife.map { x => x.asInstanceOf[js.Any] },
-        "DeviceId" -> DeviceId.map { x => x.asInstanceOf[js.Any] },
         "Type" -> Type.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeviceDescription]
@@ -250,14 +250,14 @@ package iot1clickdevicesservice {
 
   @js.native
   trait FinalizeDeviceClaimRequest extends js.Object {
-    var DeviceId: js.UndefOr[__string]
+    var DeviceId: __string
   }
 
   object FinalizeDeviceClaimRequest {
     def apply(
-      DeviceId: js.UndefOr[__string] = js.undefined): FinalizeDeviceClaimRequest = {
+      DeviceId: __string): FinalizeDeviceClaimRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "DeviceId" -> DeviceId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "DeviceId" -> DeviceId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[FinalizeDeviceClaimRequest]
     }
@@ -286,14 +286,14 @@ package iot1clickdevicesservice {
 
   @js.native
   trait GetDeviceMethodsRequest extends js.Object {
-    var DeviceId: js.UndefOr[__string]
+    var DeviceId: __string
   }
 
   object GetDeviceMethodsRequest {
     def apply(
-      DeviceId: js.UndefOr[__string] = js.undefined): GetDeviceMethodsRequest = {
+      DeviceId: __string): GetDeviceMethodsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "DeviceId" -> DeviceId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "DeviceId" -> DeviceId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetDeviceMethodsRequest]
     }
@@ -316,14 +316,14 @@ package iot1clickdevicesservice {
 
   @js.native
   trait InitiateDeviceClaimRequest extends js.Object {
-    var DeviceId: js.UndefOr[__string]
+    var DeviceId: __string
   }
 
   object InitiateDeviceClaimRequest {
     def apply(
-      DeviceId: js.UndefOr[__string] = js.undefined): InitiateDeviceClaimRequest = {
+      DeviceId: __string): InitiateDeviceClaimRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "DeviceId" -> DeviceId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "DeviceId" -> DeviceId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[InitiateDeviceClaimRequest]
     }
@@ -358,18 +358,18 @@ package iot1clickdevicesservice {
 
   @js.native
   trait InvokeDeviceMethodRequest extends js.Object {
-    var DeviceId: js.UndefOr[__string]
+    var DeviceId: __string
     var DeviceMethod: js.UndefOr[DeviceMethod]
     var DeviceMethodParameters: js.UndefOr[__string]
   }
 
   object InvokeDeviceMethodRequest {
     def apply(
-      DeviceId: js.UndefOr[__string] = js.undefined,
+      DeviceId: __string,
       DeviceMethod: js.UndefOr[DeviceMethod] = js.undefined,
       DeviceMethodParameters: js.UndefOr[__string] = js.undefined): InvokeDeviceMethodRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "DeviceId" -> DeviceId.map { x => x.asInstanceOf[js.Any] },
+        "DeviceId" -> DeviceId.asInstanceOf[js.Any],
         "DeviceMethod" -> DeviceMethod.map { x => x.asInstanceOf[js.Any] },
         "DeviceMethodParameters" -> DeviceMethodParameters.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
@@ -394,25 +394,25 @@ package iot1clickdevicesservice {
 
   @js.native
   trait ListDeviceEventsRequest extends js.Object {
+    var DeviceId: __string
+    var FromTimeStamp: __timestampIso8601
+    var ToTimeStamp: __timestampIso8601
     var MaxResults: js.UndefOr[MaxResults]
-    var ToTimeStamp: js.UndefOr[__timestampIso8601]
-    var FromTimeStamp: js.UndefOr[__timestampIso8601]
-    var DeviceId: js.UndefOr[__string]
     var NextToken: js.UndefOr[__string]
   }
 
   object ListDeviceEventsRequest {
     def apply(
+      DeviceId: __string,
+      FromTimeStamp: __timestampIso8601,
+      ToTimeStamp: __timestampIso8601,
       MaxResults: js.UndefOr[MaxResults] = js.undefined,
-      ToTimeStamp: js.UndefOr[__timestampIso8601] = js.undefined,
-      FromTimeStamp: js.UndefOr[__timestampIso8601] = js.undefined,
-      DeviceId: js.UndefOr[__string] = js.undefined,
       NextToken: js.UndefOr[__string] = js.undefined): ListDeviceEventsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "DeviceId" -> DeviceId.asInstanceOf[js.Any],
+        "FromTimeStamp" -> FromTimeStamp.asInstanceOf[js.Any],
+        "ToTimeStamp" -> ToTimeStamp.asInstanceOf[js.Any],
         "MaxResults" -> MaxResults.map { x => x.asInstanceOf[js.Any] },
-        "ToTimeStamp" -> ToTimeStamp.map { x => x.asInstanceOf[js.Any] },
-        "FromTimeStamp" -> FromTimeStamp.map { x => x.asInstanceOf[js.Any] },
-        "DeviceId" -> DeviceId.map { x => x.asInstanceOf[js.Any] },
         "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListDeviceEventsRequest]
@@ -502,14 +502,14 @@ package iot1clickdevicesservice {
 
   @js.native
   trait UnclaimDeviceRequest extends js.Object {
-    var DeviceId: js.UndefOr[__string]
+    var DeviceId: __string
   }
 
   object UnclaimDeviceRequest {
     def apply(
-      DeviceId: js.UndefOr[__string] = js.undefined): UnclaimDeviceRequest = {
+      DeviceId: __string): UnclaimDeviceRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "DeviceId" -> DeviceId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "DeviceId" -> DeviceId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UnclaimDeviceRequest]
     }
@@ -532,16 +532,16 @@ package iot1clickdevicesservice {
 
   @js.native
   trait UpdateDeviceStateRequest extends js.Object {
-    var DeviceId: js.UndefOr[__string]
+    var DeviceId: __string
     var Enabled: js.UndefOr[__boolean]
   }
 
   object UpdateDeviceStateRequest {
     def apply(
-      DeviceId: js.UndefOr[__string] = js.undefined,
+      DeviceId: __string,
       Enabled: js.UndefOr[__boolean] = js.undefined): UpdateDeviceStateRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "DeviceId" -> DeviceId.map { x => x.asInstanceOf[js.Any] },
+        "DeviceId" -> DeviceId.asInstanceOf[js.Any],
         "Enabled" -> Enabled.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateDeviceStateRequest]
