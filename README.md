@@ -8,10 +8,9 @@ Now with AWS introduced in re:Invent 2018,
 
 ## Getting Started
 
-:sob: Sorry, this project is NOT published to Maven Central yet.
-
-It will be published soon...
-
+```sbt
+libraryDependencies += "net.exoego" %%% "aws-sdk-scalajs-facade" % "0.19.0"
+```
 
 ## Origin 
 
