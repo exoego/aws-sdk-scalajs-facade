@@ -82,20 +82,20 @@ package kinesisanalytics {
 
   @js.native
   trait AddApplicationCloudWatchLoggingOptionRequest extends js.Object {
-    var ApplicationName: js.UndefOr[ApplicationName]
-    var CurrentApplicationVersionId: js.UndefOr[ApplicationVersionId]
-    var CloudWatchLoggingOption: js.UndefOr[CloudWatchLoggingOption]
+    var ApplicationName: ApplicationName
+    var CloudWatchLoggingOption: CloudWatchLoggingOption
+    var CurrentApplicationVersionId: ApplicationVersionId
   }
 
   object AddApplicationCloudWatchLoggingOptionRequest {
     def apply(
-      ApplicationName: js.UndefOr[ApplicationName] = js.undefined,
-      CurrentApplicationVersionId: js.UndefOr[ApplicationVersionId] = js.undefined,
-      CloudWatchLoggingOption: js.UndefOr[CloudWatchLoggingOption] = js.undefined): AddApplicationCloudWatchLoggingOptionRequest = {
+      ApplicationName: ApplicationName,
+      CloudWatchLoggingOption: CloudWatchLoggingOption,
+      CurrentApplicationVersionId: ApplicationVersionId): AddApplicationCloudWatchLoggingOptionRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ApplicationName" -> ApplicationName.map { x => x.asInstanceOf[js.Any] },
-        "CurrentApplicationVersionId" -> CurrentApplicationVersionId.map { x => x.asInstanceOf[js.Any] },
-        "CloudWatchLoggingOption" -> CloudWatchLoggingOption.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ApplicationName" -> ApplicationName.asInstanceOf[js.Any],
+        "CloudWatchLoggingOption" -> CloudWatchLoggingOption.asInstanceOf[js.Any],
+        "CurrentApplicationVersionId" -> CurrentApplicationVersionId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AddApplicationCloudWatchLoggingOptionRequest]
     }
@@ -116,23 +116,23 @@ package kinesisanalytics {
 
   @js.native
   trait AddApplicationInputProcessingConfigurationRequest extends js.Object {
-    var ApplicationName: js.UndefOr[ApplicationName]
-    var CurrentApplicationVersionId: js.UndefOr[ApplicationVersionId]
-    var InputId: js.UndefOr[Id]
-    var InputProcessingConfiguration: js.UndefOr[InputProcessingConfiguration]
+    var ApplicationName: ApplicationName
+    var CurrentApplicationVersionId: ApplicationVersionId
+    var InputId: Id
+    var InputProcessingConfiguration: InputProcessingConfiguration
   }
 
   object AddApplicationInputProcessingConfigurationRequest {
     def apply(
-      ApplicationName: js.UndefOr[ApplicationName] = js.undefined,
-      CurrentApplicationVersionId: js.UndefOr[ApplicationVersionId] = js.undefined,
-      InputId: js.UndefOr[Id] = js.undefined,
-      InputProcessingConfiguration: js.UndefOr[InputProcessingConfiguration] = js.undefined): AddApplicationInputProcessingConfigurationRequest = {
+      ApplicationName: ApplicationName,
+      CurrentApplicationVersionId: ApplicationVersionId,
+      InputId: Id,
+      InputProcessingConfiguration: InputProcessingConfiguration): AddApplicationInputProcessingConfigurationRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ApplicationName" -> ApplicationName.map { x => x.asInstanceOf[js.Any] },
-        "CurrentApplicationVersionId" -> CurrentApplicationVersionId.map { x => x.asInstanceOf[js.Any] },
-        "InputId" -> InputId.map { x => x.asInstanceOf[js.Any] },
-        "InputProcessingConfiguration" -> InputProcessingConfiguration.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ApplicationName" -> ApplicationName.asInstanceOf[js.Any],
+        "CurrentApplicationVersionId" -> CurrentApplicationVersionId.asInstanceOf[js.Any],
+        "InputId" -> InputId.asInstanceOf[js.Any],
+        "InputProcessingConfiguration" -> InputProcessingConfiguration.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AddApplicationInputProcessingConfigurationRequest]
     }
@@ -156,20 +156,20 @@ package kinesisanalytics {
    */
   @js.native
   trait AddApplicationInputRequest extends js.Object {
-    var ApplicationName: js.UndefOr[ApplicationName]
-    var CurrentApplicationVersionId: js.UndefOr[ApplicationVersionId]
-    var Input: js.UndefOr[Input]
+    var ApplicationName: ApplicationName
+    var CurrentApplicationVersionId: ApplicationVersionId
+    var Input: Input
   }
 
   object AddApplicationInputRequest {
     def apply(
-      ApplicationName: js.UndefOr[ApplicationName] = js.undefined,
-      CurrentApplicationVersionId: js.UndefOr[ApplicationVersionId] = js.undefined,
-      Input: js.UndefOr[Input] = js.undefined): AddApplicationInputRequest = {
+      ApplicationName: ApplicationName,
+      CurrentApplicationVersionId: ApplicationVersionId,
+      Input: Input): AddApplicationInputRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ApplicationName" -> ApplicationName.map { x => x.asInstanceOf[js.Any] },
-        "CurrentApplicationVersionId" -> CurrentApplicationVersionId.map { x => x.asInstanceOf[js.Any] },
-        "Input" -> Input.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ApplicationName" -> ApplicationName.asInstanceOf[js.Any],
+        "CurrentApplicationVersionId" -> CurrentApplicationVersionId.asInstanceOf[js.Any],
+        "Input" -> Input.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AddApplicationInputRequest]
     }
@@ -196,20 +196,20 @@ package kinesisanalytics {
    */
   @js.native
   trait AddApplicationOutputRequest extends js.Object {
-    var ApplicationName: js.UndefOr[ApplicationName]
-    var CurrentApplicationVersionId: js.UndefOr[ApplicationVersionId]
-    var Output: js.UndefOr[Output]
+    var ApplicationName: ApplicationName
+    var CurrentApplicationVersionId: ApplicationVersionId
+    var Output: Output
   }
 
   object AddApplicationOutputRequest {
     def apply(
-      ApplicationName: js.UndefOr[ApplicationName] = js.undefined,
-      CurrentApplicationVersionId: js.UndefOr[ApplicationVersionId] = js.undefined,
-      Output: js.UndefOr[Output] = js.undefined): AddApplicationOutputRequest = {
+      ApplicationName: ApplicationName,
+      CurrentApplicationVersionId: ApplicationVersionId,
+      Output: Output): AddApplicationOutputRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ApplicationName" -> ApplicationName.map { x => x.asInstanceOf[js.Any] },
-        "CurrentApplicationVersionId" -> CurrentApplicationVersionId.map { x => x.asInstanceOf[js.Any] },
-        "Output" -> Output.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ApplicationName" -> ApplicationName.asInstanceOf[js.Any],
+        "CurrentApplicationVersionId" -> CurrentApplicationVersionId.asInstanceOf[js.Any],
+        "Output" -> Output.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AddApplicationOutputRequest]
     }
@@ -236,20 +236,20 @@ package kinesisanalytics {
    */
   @js.native
   trait AddApplicationReferenceDataSourceRequest extends js.Object {
-    var ApplicationName: js.UndefOr[ApplicationName]
-    var CurrentApplicationVersionId: js.UndefOr[ApplicationVersionId]
-    var ReferenceDataSource: js.UndefOr[ReferenceDataSource]
+    var ApplicationName: ApplicationName
+    var CurrentApplicationVersionId: ApplicationVersionId
+    var ReferenceDataSource: ReferenceDataSource
   }
 
   object AddApplicationReferenceDataSourceRequest {
     def apply(
-      ApplicationName: js.UndefOr[ApplicationName] = js.undefined,
-      CurrentApplicationVersionId: js.UndefOr[ApplicationVersionId] = js.undefined,
-      ReferenceDataSource: js.UndefOr[ReferenceDataSource] = js.undefined): AddApplicationReferenceDataSourceRequest = {
+      ApplicationName: ApplicationName,
+      CurrentApplicationVersionId: ApplicationVersionId,
+      ReferenceDataSource: ReferenceDataSource): AddApplicationReferenceDataSourceRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ApplicationName" -> ApplicationName.map { x => x.asInstanceOf[js.Any] },
-        "CurrentApplicationVersionId" -> CurrentApplicationVersionId.map { x => x.asInstanceOf[js.Any] },
-        "ReferenceDataSource" -> ReferenceDataSource.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ApplicationName" -> ApplicationName.asInstanceOf[js.Any],
+        "CurrentApplicationVersionId" -> CurrentApplicationVersionId.asInstanceOf[js.Any],
+        "ReferenceDataSource" -> ReferenceDataSource.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AddApplicationReferenceDataSourceRequest]
     }
@@ -276,47 +276,47 @@ package kinesisanalytics {
    */
   @js.native
   trait ApplicationDetail extends js.Object {
-    var CreateTimestamp: js.UndefOr[Timestamp]
-    var LastUpdateTimestamp: js.UndefOr[Timestamp]
-    var InputDescriptions: js.UndefOr[InputDescriptions]
-    var OutputDescriptions: js.UndefOr[OutputDescriptions]
-    var ApplicationDescription: js.UndefOr[ApplicationDescription]
-    var ApplicationStatus: js.UndefOr[ApplicationStatus]
-    var CloudWatchLoggingOptionDescriptions: js.UndefOr[CloudWatchLoggingOptionDescriptions]
-    var ApplicationVersionId: js.UndefOr[ApplicationVersionId]
-    var ApplicationName: js.UndefOr[ApplicationName]
-    var ReferenceDataSourceDescriptions: js.UndefOr[ReferenceDataSourceDescriptions]
-    var ApplicationARN: js.UndefOr[ResourceARN]
+    var ApplicationARN: ResourceARN
+    var ApplicationName: ApplicationName
+    var ApplicationStatus: ApplicationStatus
+    var ApplicationVersionId: ApplicationVersionId
     var ApplicationCode: js.UndefOr[ApplicationCode]
+    var ApplicationDescription: js.UndefOr[ApplicationDescription]
+    var CloudWatchLoggingOptionDescriptions: js.UndefOr[CloudWatchLoggingOptionDescriptions]
+    var CreateTimestamp: js.UndefOr[Timestamp]
+    var InputDescriptions: js.UndefOr[InputDescriptions]
+    var LastUpdateTimestamp: js.UndefOr[Timestamp]
+    var OutputDescriptions: js.UndefOr[OutputDescriptions]
+    var ReferenceDataSourceDescriptions: js.UndefOr[ReferenceDataSourceDescriptions]
   }
 
   object ApplicationDetail {
     def apply(
-      CreateTimestamp: js.UndefOr[Timestamp] = js.undefined,
-      LastUpdateTimestamp: js.UndefOr[Timestamp] = js.undefined,
-      InputDescriptions: js.UndefOr[InputDescriptions] = js.undefined,
-      OutputDescriptions: js.UndefOr[OutputDescriptions] = js.undefined,
+      ApplicationARN: ResourceARN,
+      ApplicationName: ApplicationName,
+      ApplicationStatus: ApplicationStatus,
+      ApplicationVersionId: ApplicationVersionId,
+      ApplicationCode: js.UndefOr[ApplicationCode] = js.undefined,
       ApplicationDescription: js.UndefOr[ApplicationDescription] = js.undefined,
-      ApplicationStatus: js.UndefOr[ApplicationStatus] = js.undefined,
       CloudWatchLoggingOptionDescriptions: js.UndefOr[CloudWatchLoggingOptionDescriptions] = js.undefined,
-      ApplicationVersionId: js.UndefOr[ApplicationVersionId] = js.undefined,
-      ApplicationName: js.UndefOr[ApplicationName] = js.undefined,
-      ReferenceDataSourceDescriptions: js.UndefOr[ReferenceDataSourceDescriptions] = js.undefined,
-      ApplicationARN: js.UndefOr[ResourceARN] = js.undefined,
-      ApplicationCode: js.UndefOr[ApplicationCode] = js.undefined): ApplicationDetail = {
+      CreateTimestamp: js.UndefOr[Timestamp] = js.undefined,
+      InputDescriptions: js.UndefOr[InputDescriptions] = js.undefined,
+      LastUpdateTimestamp: js.UndefOr[Timestamp] = js.undefined,
+      OutputDescriptions: js.UndefOr[OutputDescriptions] = js.undefined,
+      ReferenceDataSourceDescriptions: js.UndefOr[ReferenceDataSourceDescriptions] = js.undefined): ApplicationDetail = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "CreateTimestamp" -> CreateTimestamp.map { x => x.asInstanceOf[js.Any] },
-        "LastUpdateTimestamp" -> LastUpdateTimestamp.map { x => x.asInstanceOf[js.Any] },
-        "InputDescriptions" -> InputDescriptions.map { x => x.asInstanceOf[js.Any] },
-        "OutputDescriptions" -> OutputDescriptions.map { x => x.asInstanceOf[js.Any] },
+        "ApplicationARN" -> ApplicationARN.asInstanceOf[js.Any],
+        "ApplicationName" -> ApplicationName.asInstanceOf[js.Any],
+        "ApplicationStatus" -> ApplicationStatus.asInstanceOf[js.Any],
+        "ApplicationVersionId" -> ApplicationVersionId.asInstanceOf[js.Any],
+        "ApplicationCode" -> ApplicationCode.map { x => x.asInstanceOf[js.Any] },
         "ApplicationDescription" -> ApplicationDescription.map { x => x.asInstanceOf[js.Any] },
-        "ApplicationStatus" -> ApplicationStatus.map { x => x.asInstanceOf[js.Any] },
         "CloudWatchLoggingOptionDescriptions" -> CloudWatchLoggingOptionDescriptions.map { x => x.asInstanceOf[js.Any] },
-        "ApplicationVersionId" -> ApplicationVersionId.map { x => x.asInstanceOf[js.Any] },
-        "ApplicationName" -> ApplicationName.map { x => x.asInstanceOf[js.Any] },
-        "ReferenceDataSourceDescriptions" -> ReferenceDataSourceDescriptions.map { x => x.asInstanceOf[js.Any] },
-        "ApplicationARN" -> ApplicationARN.map { x => x.asInstanceOf[js.Any] },
-        "ApplicationCode" -> ApplicationCode.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "CreateTimestamp" -> CreateTimestamp.map { x => x.asInstanceOf[js.Any] },
+        "InputDescriptions" -> InputDescriptions.map { x => x.asInstanceOf[js.Any] },
+        "LastUpdateTimestamp" -> LastUpdateTimestamp.map { x => x.asInstanceOf[js.Any] },
+        "OutputDescriptions" -> OutputDescriptions.map { x => x.asInstanceOf[js.Any] },
+        "ReferenceDataSourceDescriptions" -> ReferenceDataSourceDescriptions.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ApplicationDetail]
     }
@@ -338,20 +338,20 @@ package kinesisanalytics {
    */
   @js.native
   trait ApplicationSummary extends js.Object {
-    var ApplicationName: js.UndefOr[ApplicationName]
-    var ApplicationARN: js.UndefOr[ResourceARN]
-    var ApplicationStatus: js.UndefOr[ApplicationStatus]
+    var ApplicationARN: ResourceARN
+    var ApplicationName: ApplicationName
+    var ApplicationStatus: ApplicationStatus
   }
 
   object ApplicationSummary {
     def apply(
-      ApplicationName: js.UndefOr[ApplicationName] = js.undefined,
-      ApplicationARN: js.UndefOr[ResourceARN] = js.undefined,
-      ApplicationStatus: js.UndefOr[ApplicationStatus] = js.undefined): ApplicationSummary = {
+      ApplicationARN: ResourceARN,
+      ApplicationName: ApplicationName,
+      ApplicationStatus: ApplicationStatus): ApplicationSummary = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ApplicationName" -> ApplicationName.map { x => x.asInstanceOf[js.Any] },
-        "ApplicationARN" -> ApplicationARN.map { x => x.asInstanceOf[js.Any] },
-        "ApplicationStatus" -> ApplicationStatus.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ApplicationARN" -> ApplicationARN.asInstanceOf[js.Any],
+        "ApplicationName" -> ApplicationName.asInstanceOf[js.Any],
+        "ApplicationStatus" -> ApplicationStatus.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ApplicationSummary]
     }
@@ -362,26 +362,26 @@ package kinesisanalytics {
    */
   @js.native
   trait ApplicationUpdate extends js.Object {
-    var CloudWatchLoggingOptionUpdates: js.UndefOr[CloudWatchLoggingOptionUpdates]
-    var OutputUpdates: js.UndefOr[OutputUpdates]
     var ApplicationCodeUpdate: js.UndefOr[ApplicationCode]
-    var ReferenceDataSourceUpdates: js.UndefOr[ReferenceDataSourceUpdates]
+    var CloudWatchLoggingOptionUpdates: js.UndefOr[CloudWatchLoggingOptionUpdates]
     var InputUpdates: js.UndefOr[InputUpdates]
+    var OutputUpdates: js.UndefOr[OutputUpdates]
+    var ReferenceDataSourceUpdates: js.UndefOr[ReferenceDataSourceUpdates]
   }
 
   object ApplicationUpdate {
     def apply(
-      CloudWatchLoggingOptionUpdates: js.UndefOr[CloudWatchLoggingOptionUpdates] = js.undefined,
-      OutputUpdates: js.UndefOr[OutputUpdates] = js.undefined,
       ApplicationCodeUpdate: js.UndefOr[ApplicationCode] = js.undefined,
-      ReferenceDataSourceUpdates: js.UndefOr[ReferenceDataSourceUpdates] = js.undefined,
-      InputUpdates: js.UndefOr[InputUpdates] = js.undefined): ApplicationUpdate = {
+      CloudWatchLoggingOptionUpdates: js.UndefOr[CloudWatchLoggingOptionUpdates] = js.undefined,
+      InputUpdates: js.UndefOr[InputUpdates] = js.undefined,
+      OutputUpdates: js.UndefOr[OutputUpdates] = js.undefined,
+      ReferenceDataSourceUpdates: js.UndefOr[ReferenceDataSourceUpdates] = js.undefined): ApplicationUpdate = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "CloudWatchLoggingOptionUpdates" -> CloudWatchLoggingOptionUpdates.map { x => x.asInstanceOf[js.Any] },
-        "OutputUpdates" -> OutputUpdates.map { x => x.asInstanceOf[js.Any] },
         "ApplicationCodeUpdate" -> ApplicationCodeUpdate.map { x => x.asInstanceOf[js.Any] },
-        "ReferenceDataSourceUpdates" -> ReferenceDataSourceUpdates.map { x => x.asInstanceOf[js.Any] },
-        "InputUpdates" -> InputUpdates.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "CloudWatchLoggingOptionUpdates" -> CloudWatchLoggingOptionUpdates.map { x => x.asInstanceOf[js.Any] },
+        "InputUpdates" -> InputUpdates.map { x => x.asInstanceOf[js.Any] },
+        "OutputUpdates" -> OutputUpdates.map { x => x.asInstanceOf[js.Any] },
+        "ReferenceDataSourceUpdates" -> ReferenceDataSourceUpdates.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ApplicationUpdate]
     }
@@ -392,17 +392,17 @@ package kinesisanalytics {
    */
   @js.native
   trait CSVMappingParameters extends js.Object {
-    var RecordRowDelimiter: js.UndefOr[RecordRowDelimiter]
-    var RecordColumnDelimiter: js.UndefOr[RecordColumnDelimiter]
+    var RecordColumnDelimiter: RecordColumnDelimiter
+    var RecordRowDelimiter: RecordRowDelimiter
   }
 
   object CSVMappingParameters {
     def apply(
-      RecordRowDelimiter: js.UndefOr[RecordRowDelimiter] = js.undefined,
-      RecordColumnDelimiter: js.UndefOr[RecordColumnDelimiter] = js.undefined): CSVMappingParameters = {
+      RecordColumnDelimiter: RecordColumnDelimiter,
+      RecordRowDelimiter: RecordRowDelimiter): CSVMappingParameters = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "RecordRowDelimiter" -> RecordRowDelimiter.map { x => x.asInstanceOf[js.Any] },
-        "RecordColumnDelimiter" -> RecordColumnDelimiter.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "RecordColumnDelimiter" -> RecordColumnDelimiter.asInstanceOf[js.Any],
+        "RecordRowDelimiter" -> RecordRowDelimiter.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CSVMappingParameters]
     }
@@ -413,17 +413,17 @@ package kinesisanalytics {
    */
   @js.native
   trait CloudWatchLoggingOption extends js.Object {
-    var LogStreamARN: js.UndefOr[LogStreamARN]
-    var RoleARN: js.UndefOr[RoleARN]
+    var LogStreamARN: LogStreamARN
+    var RoleARN: RoleARN
   }
 
   object CloudWatchLoggingOption {
     def apply(
-      LogStreamARN: js.UndefOr[LogStreamARN] = js.undefined,
-      RoleARN: js.UndefOr[RoleARN] = js.undefined): CloudWatchLoggingOption = {
+      LogStreamARN: LogStreamARN,
+      RoleARN: RoleARN): CloudWatchLoggingOption = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "LogStreamARN" -> LogStreamARN.map { x => x.asInstanceOf[js.Any] },
-        "RoleARN" -> RoleARN.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "LogStreamARN" -> LogStreamARN.asInstanceOf[js.Any],
+        "RoleARN" -> RoleARN.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CloudWatchLoggingOption]
     }
@@ -434,20 +434,20 @@ package kinesisanalytics {
    */
   @js.native
   trait CloudWatchLoggingOptionDescription extends js.Object {
+    var LogStreamARN: LogStreamARN
+    var RoleARN: RoleARN
     var CloudWatchLoggingOptionId: js.UndefOr[Id]
-    var LogStreamARN: js.UndefOr[LogStreamARN]
-    var RoleARN: js.UndefOr[RoleARN]
   }
 
   object CloudWatchLoggingOptionDescription {
     def apply(
-      CloudWatchLoggingOptionId: js.UndefOr[Id] = js.undefined,
-      LogStreamARN: js.UndefOr[LogStreamARN] = js.undefined,
-      RoleARN: js.UndefOr[RoleARN] = js.undefined): CloudWatchLoggingOptionDescription = {
+      LogStreamARN: LogStreamARN,
+      RoleARN: RoleARN,
+      CloudWatchLoggingOptionId: js.UndefOr[Id] = js.undefined): CloudWatchLoggingOptionDescription = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "CloudWatchLoggingOptionId" -> CloudWatchLoggingOptionId.map { x => x.asInstanceOf[js.Any] },
-        "LogStreamARN" -> LogStreamARN.map { x => x.asInstanceOf[js.Any] },
-        "RoleARN" -> RoleARN.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "LogStreamARN" -> LogStreamARN.asInstanceOf[js.Any],
+        "RoleARN" -> RoleARN.asInstanceOf[js.Any],
+        "CloudWatchLoggingOptionId" -> CloudWatchLoggingOptionId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CloudWatchLoggingOptionDescription]
     }
@@ -458,18 +458,18 @@ package kinesisanalytics {
    */
   @js.native
   trait CloudWatchLoggingOptionUpdate extends js.Object {
-    var CloudWatchLoggingOptionId: js.UndefOr[Id]
+    var CloudWatchLoggingOptionId: Id
     var LogStreamARNUpdate: js.UndefOr[LogStreamARN]
     var RoleARNUpdate: js.UndefOr[RoleARN]
   }
 
   object CloudWatchLoggingOptionUpdate {
     def apply(
-      CloudWatchLoggingOptionId: js.UndefOr[Id] = js.undefined,
+      CloudWatchLoggingOptionId: Id,
       LogStreamARNUpdate: js.UndefOr[LogStreamARN] = js.undefined,
       RoleARNUpdate: js.UndefOr[RoleARN] = js.undefined): CloudWatchLoggingOptionUpdate = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "CloudWatchLoggingOptionId" -> CloudWatchLoggingOptionId.map { x => x.asInstanceOf[js.Any] },
+        "CloudWatchLoggingOptionId" -> CloudWatchLoggingOptionId.asInstanceOf[js.Any],
         "LogStreamARNUpdate" -> LogStreamARNUpdate.map { x => x.asInstanceOf[js.Any] },
         "RoleARNUpdate" -> RoleARNUpdate.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
@@ -482,28 +482,28 @@ package kinesisanalytics {
    */
   @js.native
   trait CreateApplicationRequest extends js.Object {
+    var ApplicationName: ApplicationName
+    var ApplicationCode: js.UndefOr[ApplicationCode]
     var ApplicationDescription: js.UndefOr[ApplicationDescription]
     var CloudWatchLoggingOptions: js.UndefOr[CloudWatchLoggingOptions]
     var Inputs: js.UndefOr[Inputs]
-    var ApplicationName: js.UndefOr[ApplicationName]
-    var ApplicationCode: js.UndefOr[ApplicationCode]
     var Outputs: js.UndefOr[Outputs]
   }
 
   object CreateApplicationRequest {
     def apply(
+      ApplicationName: ApplicationName,
+      ApplicationCode: js.UndefOr[ApplicationCode] = js.undefined,
       ApplicationDescription: js.UndefOr[ApplicationDescription] = js.undefined,
       CloudWatchLoggingOptions: js.UndefOr[CloudWatchLoggingOptions] = js.undefined,
       Inputs: js.UndefOr[Inputs] = js.undefined,
-      ApplicationName: js.UndefOr[ApplicationName] = js.undefined,
-      ApplicationCode: js.UndefOr[ApplicationCode] = js.undefined,
       Outputs: js.UndefOr[Outputs] = js.undefined): CreateApplicationRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "ApplicationName" -> ApplicationName.asInstanceOf[js.Any],
+        "ApplicationCode" -> ApplicationCode.map { x => x.asInstanceOf[js.Any] },
         "ApplicationDescription" -> ApplicationDescription.map { x => x.asInstanceOf[js.Any] },
         "CloudWatchLoggingOptions" -> CloudWatchLoggingOptions.map { x => x.asInstanceOf[js.Any] },
         "Inputs" -> Inputs.map { x => x.asInstanceOf[js.Any] },
-        "ApplicationName" -> ApplicationName.map { x => x.asInstanceOf[js.Any] },
-        "ApplicationCode" -> ApplicationCode.map { x => x.asInstanceOf[js.Any] },
         "Outputs" -> Outputs.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateApplicationRequest]
@@ -515,14 +515,14 @@ package kinesisanalytics {
    */
   @js.native
   trait CreateApplicationResponse extends js.Object {
-    var ApplicationSummary: js.UndefOr[ApplicationSummary]
+    var ApplicationSummary: ApplicationSummary
   }
 
   object CreateApplicationResponse {
     def apply(
-      ApplicationSummary: js.UndefOr[ApplicationSummary] = js.undefined): CreateApplicationResponse = {
+      ApplicationSummary: ApplicationSummary): CreateApplicationResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ApplicationSummary" -> ApplicationSummary.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ApplicationSummary" -> ApplicationSummary.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateApplicationResponse]
     }
@@ -530,20 +530,20 @@ package kinesisanalytics {
 
   @js.native
   trait DeleteApplicationCloudWatchLoggingOptionRequest extends js.Object {
-    var ApplicationName: js.UndefOr[ApplicationName]
-    var CurrentApplicationVersionId: js.UndefOr[ApplicationVersionId]
-    var CloudWatchLoggingOptionId: js.UndefOr[Id]
+    var ApplicationName: ApplicationName
+    var CloudWatchLoggingOptionId: Id
+    var CurrentApplicationVersionId: ApplicationVersionId
   }
 
   object DeleteApplicationCloudWatchLoggingOptionRequest {
     def apply(
-      ApplicationName: js.UndefOr[ApplicationName] = js.undefined,
-      CurrentApplicationVersionId: js.UndefOr[ApplicationVersionId] = js.undefined,
-      CloudWatchLoggingOptionId: js.UndefOr[Id] = js.undefined): DeleteApplicationCloudWatchLoggingOptionRequest = {
+      ApplicationName: ApplicationName,
+      CloudWatchLoggingOptionId: Id,
+      CurrentApplicationVersionId: ApplicationVersionId): DeleteApplicationCloudWatchLoggingOptionRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ApplicationName" -> ApplicationName.map { x => x.asInstanceOf[js.Any] },
-        "CurrentApplicationVersionId" -> CurrentApplicationVersionId.map { x => x.asInstanceOf[js.Any] },
-        "CloudWatchLoggingOptionId" -> CloudWatchLoggingOptionId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ApplicationName" -> ApplicationName.asInstanceOf[js.Any],
+        "CloudWatchLoggingOptionId" -> CloudWatchLoggingOptionId.asInstanceOf[js.Any],
+        "CurrentApplicationVersionId" -> CurrentApplicationVersionId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteApplicationCloudWatchLoggingOptionRequest]
     }
@@ -564,20 +564,20 @@ package kinesisanalytics {
 
   @js.native
   trait DeleteApplicationInputProcessingConfigurationRequest extends js.Object {
-    var ApplicationName: js.UndefOr[ApplicationName]
-    var CurrentApplicationVersionId: js.UndefOr[ApplicationVersionId]
-    var InputId: js.UndefOr[Id]
+    var ApplicationName: ApplicationName
+    var CurrentApplicationVersionId: ApplicationVersionId
+    var InputId: Id
   }
 
   object DeleteApplicationInputProcessingConfigurationRequest {
     def apply(
-      ApplicationName: js.UndefOr[ApplicationName] = js.undefined,
-      CurrentApplicationVersionId: js.UndefOr[ApplicationVersionId] = js.undefined,
-      InputId: js.UndefOr[Id] = js.undefined): DeleteApplicationInputProcessingConfigurationRequest = {
+      ApplicationName: ApplicationName,
+      CurrentApplicationVersionId: ApplicationVersionId,
+      InputId: Id): DeleteApplicationInputProcessingConfigurationRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ApplicationName" -> ApplicationName.map { x => x.asInstanceOf[js.Any] },
-        "CurrentApplicationVersionId" -> CurrentApplicationVersionId.map { x => x.asInstanceOf[js.Any] },
-        "InputId" -> InputId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ApplicationName" -> ApplicationName.asInstanceOf[js.Any],
+        "CurrentApplicationVersionId" -> CurrentApplicationVersionId.asInstanceOf[js.Any],
+        "InputId" -> InputId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteApplicationInputProcessingConfigurationRequest]
     }
@@ -601,20 +601,20 @@ package kinesisanalytics {
    */
   @js.native
   trait DeleteApplicationOutputRequest extends js.Object {
-    var ApplicationName: js.UndefOr[ApplicationName]
-    var CurrentApplicationVersionId: js.UndefOr[ApplicationVersionId]
-    var OutputId: js.UndefOr[Id]
+    var ApplicationName: ApplicationName
+    var CurrentApplicationVersionId: ApplicationVersionId
+    var OutputId: Id
   }
 
   object DeleteApplicationOutputRequest {
     def apply(
-      ApplicationName: js.UndefOr[ApplicationName] = js.undefined,
-      CurrentApplicationVersionId: js.UndefOr[ApplicationVersionId] = js.undefined,
-      OutputId: js.UndefOr[Id] = js.undefined): DeleteApplicationOutputRequest = {
+      ApplicationName: ApplicationName,
+      CurrentApplicationVersionId: ApplicationVersionId,
+      OutputId: Id): DeleteApplicationOutputRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ApplicationName" -> ApplicationName.map { x => x.asInstanceOf[js.Any] },
-        "CurrentApplicationVersionId" -> CurrentApplicationVersionId.map { x => x.asInstanceOf[js.Any] },
-        "OutputId" -> OutputId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ApplicationName" -> ApplicationName.asInstanceOf[js.Any],
+        "CurrentApplicationVersionId" -> CurrentApplicationVersionId.asInstanceOf[js.Any],
+        "OutputId" -> OutputId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteApplicationOutputRequest]
     }
@@ -638,20 +638,20 @@ package kinesisanalytics {
 
   @js.native
   trait DeleteApplicationReferenceDataSourceRequest extends js.Object {
-    var ApplicationName: js.UndefOr[ApplicationName]
-    var CurrentApplicationVersionId: js.UndefOr[ApplicationVersionId]
-    var ReferenceId: js.UndefOr[Id]
+    var ApplicationName: ApplicationName
+    var CurrentApplicationVersionId: ApplicationVersionId
+    var ReferenceId: Id
   }
 
   object DeleteApplicationReferenceDataSourceRequest {
     def apply(
-      ApplicationName: js.UndefOr[ApplicationName] = js.undefined,
-      CurrentApplicationVersionId: js.UndefOr[ApplicationVersionId] = js.undefined,
-      ReferenceId: js.UndefOr[Id] = js.undefined): DeleteApplicationReferenceDataSourceRequest = {
+      ApplicationName: ApplicationName,
+      CurrentApplicationVersionId: ApplicationVersionId,
+      ReferenceId: Id): DeleteApplicationReferenceDataSourceRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ApplicationName" -> ApplicationName.map { x => x.asInstanceOf[js.Any] },
-        "CurrentApplicationVersionId" -> CurrentApplicationVersionId.map { x => x.asInstanceOf[js.Any] },
-        "ReferenceId" -> ReferenceId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ApplicationName" -> ApplicationName.asInstanceOf[js.Any],
+        "CurrentApplicationVersionId" -> CurrentApplicationVersionId.asInstanceOf[js.Any],
+        "ReferenceId" -> ReferenceId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteApplicationReferenceDataSourceRequest]
     }
@@ -675,17 +675,17 @@ package kinesisanalytics {
    */
   @js.native
   trait DeleteApplicationRequest extends js.Object {
-    var ApplicationName: js.UndefOr[ApplicationName]
-    var CreateTimestamp: js.UndefOr[Timestamp]
+    var ApplicationName: ApplicationName
+    var CreateTimestamp: Timestamp
   }
 
   object DeleteApplicationRequest {
     def apply(
-      ApplicationName: js.UndefOr[ApplicationName] = js.undefined,
-      CreateTimestamp: js.UndefOr[Timestamp] = js.undefined): DeleteApplicationRequest = {
+      ApplicationName: ApplicationName,
+      CreateTimestamp: Timestamp): DeleteApplicationRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ApplicationName" -> ApplicationName.map { x => x.asInstanceOf[js.Any] },
-        "CreateTimestamp" -> CreateTimestamp.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ApplicationName" -> ApplicationName.asInstanceOf[js.Any],
+        "CreateTimestamp" -> CreateTimestamp.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteApplicationRequest]
     }
@@ -712,14 +712,14 @@ package kinesisanalytics {
    */
   @js.native
   trait DescribeApplicationRequest extends js.Object {
-    var ApplicationName: js.UndefOr[ApplicationName]
+    var ApplicationName: ApplicationName
   }
 
   object DescribeApplicationRequest {
     def apply(
-      ApplicationName: js.UndefOr[ApplicationName] = js.undefined): DescribeApplicationRequest = {
+      ApplicationName: ApplicationName): DescribeApplicationRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ApplicationName" -> ApplicationName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ApplicationName" -> ApplicationName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeApplicationRequest]
     }
@@ -730,14 +730,14 @@ package kinesisanalytics {
    */
   @js.native
   trait DescribeApplicationResponse extends js.Object {
-    var ApplicationDetail: js.UndefOr[ApplicationDetail]
+    var ApplicationDetail: ApplicationDetail
   }
 
   object DescribeApplicationResponse {
     def apply(
-      ApplicationDetail: js.UndefOr[ApplicationDetail] = js.undefined): DescribeApplicationResponse = {
+      ApplicationDetail: ApplicationDetail): DescribeApplicationResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ApplicationDetail" -> ApplicationDetail.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ApplicationDetail" -> ApplicationDetail.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeApplicationResponse]
     }
@@ -748,14 +748,14 @@ package kinesisanalytics {
    */
   @js.native
   trait DestinationSchema extends js.Object {
-    var RecordFormatType: js.UndefOr[RecordFormatType]
+    var RecordFormatType: RecordFormatType
   }
 
   object DestinationSchema {
     def apply(
-      RecordFormatType: js.UndefOr[RecordFormatType] = js.undefined): DestinationSchema = {
+      RecordFormatType: RecordFormatType): DestinationSchema = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "RecordFormatType" -> RecordFormatType.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "RecordFormatType" -> RecordFormatType.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DestinationSchema]
     }
@@ -763,25 +763,25 @@ package kinesisanalytics {
 
   @js.native
   trait DiscoverInputSchemaRequest extends js.Object {
+    var InputProcessingConfiguration: js.UndefOr[InputProcessingConfiguration]
     var InputStartingPositionConfiguration: js.UndefOr[InputStartingPositionConfiguration]
     var ResourceARN: js.UndefOr[ResourceARN]
     var RoleARN: js.UndefOr[RoleARN]
-    var InputProcessingConfiguration: js.UndefOr[InputProcessingConfiguration]
     var S3Configuration: js.UndefOr[S3Configuration]
   }
 
   object DiscoverInputSchemaRequest {
     def apply(
+      InputProcessingConfiguration: js.UndefOr[InputProcessingConfiguration] = js.undefined,
       InputStartingPositionConfiguration: js.UndefOr[InputStartingPositionConfiguration] = js.undefined,
       ResourceARN: js.UndefOr[ResourceARN] = js.undefined,
       RoleARN: js.UndefOr[RoleARN] = js.undefined,
-      InputProcessingConfiguration: js.UndefOr[InputProcessingConfiguration] = js.undefined,
       S3Configuration: js.UndefOr[S3Configuration] = js.undefined): DiscoverInputSchemaRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "InputProcessingConfiguration" -> InputProcessingConfiguration.map { x => x.asInstanceOf[js.Any] },
         "InputStartingPositionConfiguration" -> InputStartingPositionConfiguration.map { x => x.asInstanceOf[js.Any] },
         "ResourceARN" -> ResourceARN.map { x => x.asInstanceOf[js.Any] },
         "RoleARN" -> RoleARN.map { x => x.asInstanceOf[js.Any] },
-        "InputProcessingConfiguration" -> InputProcessingConfiguration.map { x => x.asInstanceOf[js.Any] },
         "S3Configuration" -> S3Configuration.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DiscoverInputSchemaRequest]
@@ -820,29 +820,29 @@ package kinesisanalytics {
    */
   @js.native
   trait Input extends js.Object {
-    var KinesisFirehoseInput: js.UndefOr[KinesisFirehoseInput]
-    var InputSchema: js.UndefOr[SourceSchema]
-    var InputProcessingConfiguration: js.UndefOr[InputProcessingConfiguration]
-    var KinesisStreamsInput: js.UndefOr[KinesisStreamsInput]
-    var NamePrefix: js.UndefOr[InAppStreamName]
+    var InputSchema: SourceSchema
+    var NamePrefix: InAppStreamName
     var InputParallelism: js.UndefOr[InputParallelism]
+    var InputProcessingConfiguration: js.UndefOr[InputProcessingConfiguration]
+    var KinesisFirehoseInput: js.UndefOr[KinesisFirehoseInput]
+    var KinesisStreamsInput: js.UndefOr[KinesisStreamsInput]
   }
 
   object Input {
     def apply(
-      KinesisFirehoseInput: js.UndefOr[KinesisFirehoseInput] = js.undefined,
-      InputSchema: js.UndefOr[SourceSchema] = js.undefined,
+      InputSchema: SourceSchema,
+      NamePrefix: InAppStreamName,
+      InputParallelism: js.UndefOr[InputParallelism] = js.undefined,
       InputProcessingConfiguration: js.UndefOr[InputProcessingConfiguration] = js.undefined,
-      KinesisStreamsInput: js.UndefOr[KinesisStreamsInput] = js.undefined,
-      NamePrefix: js.UndefOr[InAppStreamName] = js.undefined,
-      InputParallelism: js.UndefOr[InputParallelism] = js.undefined): Input = {
+      KinesisFirehoseInput: js.UndefOr[KinesisFirehoseInput] = js.undefined,
+      KinesisStreamsInput: js.UndefOr[KinesisStreamsInput] = js.undefined): Input = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "KinesisFirehoseInput" -> KinesisFirehoseInput.map { x => x.asInstanceOf[js.Any] },
-        "InputSchema" -> InputSchema.map { x => x.asInstanceOf[js.Any] },
+        "InputSchema" -> InputSchema.asInstanceOf[js.Any],
+        "NamePrefix" -> NamePrefix.asInstanceOf[js.Any],
+        "InputParallelism" -> InputParallelism.map { x => x.asInstanceOf[js.Any] },
         "InputProcessingConfiguration" -> InputProcessingConfiguration.map { x => x.asInstanceOf[js.Any] },
-        "KinesisStreamsInput" -> KinesisStreamsInput.map { x => x.asInstanceOf[js.Any] },
-        "NamePrefix" -> NamePrefix.map { x => x.asInstanceOf[js.Any] },
-        "InputParallelism" -> InputParallelism.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "KinesisFirehoseInput" -> KinesisFirehoseInput.map { x => x.asInstanceOf[js.Any] },
+        "KinesisStreamsInput" -> KinesisStreamsInput.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Input]
     }
@@ -853,17 +853,17 @@ package kinesisanalytics {
    */
   @js.native
   trait InputConfiguration extends js.Object {
-    var Id: js.UndefOr[Id]
-    var InputStartingPositionConfiguration: js.UndefOr[InputStartingPositionConfiguration]
+    var Id: Id
+    var InputStartingPositionConfiguration: InputStartingPositionConfiguration
   }
 
   object InputConfiguration {
     def apply(
-      Id: js.UndefOr[Id] = js.undefined,
-      InputStartingPositionConfiguration: js.UndefOr[InputStartingPositionConfiguration] = js.undefined): InputConfiguration = {
+      Id: Id,
+      InputStartingPositionConfiguration: InputStartingPositionConfiguration): InputConfiguration = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Id" -> Id.map { x => x.asInstanceOf[js.Any] },
-        "InputStartingPositionConfiguration" -> InputStartingPositionConfiguration.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Id" -> Id.asInstanceOf[js.Any],
+        "InputStartingPositionConfiguration" -> InputStartingPositionConfiguration.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[InputConfiguration]
     }
@@ -874,38 +874,38 @@ package kinesisanalytics {
    */
   @js.native
   trait InputDescription extends js.Object {
-    var InputSchema: js.UndefOr[SourceSchema]
     var InAppStreamNames: js.UndefOr[InAppStreamNames]
+    var InputId: js.UndefOr[Id]
+    var InputParallelism: js.UndefOr[InputParallelism]
+    var InputProcessingConfigurationDescription: js.UndefOr[InputProcessingConfigurationDescription]
+    var InputSchema: js.UndefOr[SourceSchema]
     var InputStartingPositionConfiguration: js.UndefOr[InputStartingPositionConfiguration]
     var KinesisFirehoseInputDescription: js.UndefOr[KinesisFirehoseInputDescription]
-    var InputId: js.UndefOr[Id]
-    var NamePrefix: js.UndefOr[InAppStreamName]
-    var InputProcessingConfigurationDescription: js.UndefOr[InputProcessingConfigurationDescription]
     var KinesisStreamsInputDescription: js.UndefOr[KinesisStreamsInputDescription]
-    var InputParallelism: js.UndefOr[InputParallelism]
+    var NamePrefix: js.UndefOr[InAppStreamName]
   }
 
   object InputDescription {
     def apply(
-      InputSchema: js.UndefOr[SourceSchema] = js.undefined,
       InAppStreamNames: js.UndefOr[InAppStreamNames] = js.undefined,
+      InputId: js.UndefOr[Id] = js.undefined,
+      InputParallelism: js.UndefOr[InputParallelism] = js.undefined,
+      InputProcessingConfigurationDescription: js.UndefOr[InputProcessingConfigurationDescription] = js.undefined,
+      InputSchema: js.UndefOr[SourceSchema] = js.undefined,
       InputStartingPositionConfiguration: js.UndefOr[InputStartingPositionConfiguration] = js.undefined,
       KinesisFirehoseInputDescription: js.UndefOr[KinesisFirehoseInputDescription] = js.undefined,
-      InputId: js.UndefOr[Id] = js.undefined,
-      NamePrefix: js.UndefOr[InAppStreamName] = js.undefined,
-      InputProcessingConfigurationDescription: js.UndefOr[InputProcessingConfigurationDescription] = js.undefined,
       KinesisStreamsInputDescription: js.UndefOr[KinesisStreamsInputDescription] = js.undefined,
-      InputParallelism: js.UndefOr[InputParallelism] = js.undefined): InputDescription = {
+      NamePrefix: js.UndefOr[InAppStreamName] = js.undefined): InputDescription = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "InputSchema" -> InputSchema.map { x => x.asInstanceOf[js.Any] },
         "InAppStreamNames" -> InAppStreamNames.map { x => x.asInstanceOf[js.Any] },
+        "InputId" -> InputId.map { x => x.asInstanceOf[js.Any] },
+        "InputParallelism" -> InputParallelism.map { x => x.asInstanceOf[js.Any] },
+        "InputProcessingConfigurationDescription" -> InputProcessingConfigurationDescription.map { x => x.asInstanceOf[js.Any] },
+        "InputSchema" -> InputSchema.map { x => x.asInstanceOf[js.Any] },
         "InputStartingPositionConfiguration" -> InputStartingPositionConfiguration.map { x => x.asInstanceOf[js.Any] },
         "KinesisFirehoseInputDescription" -> KinesisFirehoseInputDescription.map { x => x.asInstanceOf[js.Any] },
-        "InputId" -> InputId.map { x => x.asInstanceOf[js.Any] },
-        "NamePrefix" -> NamePrefix.map { x => x.asInstanceOf[js.Any] },
-        "InputProcessingConfigurationDescription" -> InputProcessingConfigurationDescription.map { x => x.asInstanceOf[js.Any] },
         "KinesisStreamsInputDescription" -> KinesisStreamsInputDescription.map { x => x.asInstanceOf[js.Any] },
-        "InputParallelism" -> InputParallelism.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "NamePrefix" -> NamePrefix.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[InputDescription]
     }
@@ -916,17 +916,17 @@ package kinesisanalytics {
    */
   @js.native
   trait InputLambdaProcessor extends js.Object {
-    var ResourceARN: js.UndefOr[ResourceARN]
-    var RoleARN: js.UndefOr[RoleARN]
+    var ResourceARN: ResourceARN
+    var RoleARN: RoleARN
   }
 
   object InputLambdaProcessor {
     def apply(
-      ResourceARN: js.UndefOr[ResourceARN] = js.undefined,
-      RoleARN: js.UndefOr[RoleARN] = js.undefined): InputLambdaProcessor = {
+      ResourceARN: ResourceARN,
+      RoleARN: RoleARN): InputLambdaProcessor = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ResourceARN" -> ResourceARN.map { x => x.asInstanceOf[js.Any] },
-        "RoleARN" -> RoleARN.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ResourceARN" -> ResourceARN.asInstanceOf[js.Any],
+        "RoleARN" -> RoleARN.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[InputLambdaProcessor]
     }
@@ -1015,14 +1015,14 @@ package kinesisanalytics {
    */
   @js.native
   trait InputProcessingConfiguration extends js.Object {
-    var InputLambdaProcessor: js.UndefOr[InputLambdaProcessor]
+    var InputLambdaProcessor: InputLambdaProcessor
   }
 
   object InputProcessingConfiguration {
     def apply(
-      InputLambdaProcessor: js.UndefOr[InputLambdaProcessor] = js.undefined): InputProcessingConfiguration = {
+      InputLambdaProcessor: InputLambdaProcessor): InputProcessingConfiguration = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "InputLambdaProcessor" -> InputLambdaProcessor.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "InputLambdaProcessor" -> InputLambdaProcessor.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[InputProcessingConfiguration]
     }
@@ -1051,14 +1051,14 @@ package kinesisanalytics {
    */
   @js.native
   trait InputProcessingConfigurationUpdate extends js.Object {
-    var InputLambdaProcessorUpdate: js.UndefOr[InputLambdaProcessorUpdate]
+    var InputLambdaProcessorUpdate: InputLambdaProcessorUpdate
   }
 
   object InputProcessingConfigurationUpdate {
     def apply(
-      InputLambdaProcessorUpdate: js.UndefOr[InputLambdaProcessorUpdate] = js.undefined): InputProcessingConfigurationUpdate = {
+      InputLambdaProcessorUpdate: InputLambdaProcessorUpdate): InputProcessingConfigurationUpdate = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "InputLambdaProcessorUpdate" -> InputLambdaProcessorUpdate.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "InputLambdaProcessorUpdate" -> InputLambdaProcessorUpdate.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[InputProcessingConfigurationUpdate]
     }
@@ -1069,20 +1069,20 @@ package kinesisanalytics {
    */
   @js.native
   trait InputSchemaUpdate extends js.Object {
-    var RecordFormatUpdate: js.UndefOr[RecordFormat]
-    var RecordEncodingUpdate: js.UndefOr[RecordEncoding]
     var RecordColumnUpdates: js.UndefOr[RecordColumns]
+    var RecordEncodingUpdate: js.UndefOr[RecordEncoding]
+    var RecordFormatUpdate: js.UndefOr[RecordFormat]
   }
 
   object InputSchemaUpdate {
     def apply(
-      RecordFormatUpdate: js.UndefOr[RecordFormat] = js.undefined,
+      RecordColumnUpdates: js.UndefOr[RecordColumns] = js.undefined,
       RecordEncodingUpdate: js.UndefOr[RecordEncoding] = js.undefined,
-      RecordColumnUpdates: js.UndefOr[RecordColumns] = js.undefined): InputSchemaUpdate = {
+      RecordFormatUpdate: js.UndefOr[RecordFormat] = js.undefined): InputSchemaUpdate = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "RecordFormatUpdate" -> RecordFormatUpdate.map { x => x.asInstanceOf[js.Any] },
+        "RecordColumnUpdates" -> RecordColumnUpdates.map { x => x.asInstanceOf[js.Any] },
         "RecordEncodingUpdate" -> RecordEncodingUpdate.map { x => x.asInstanceOf[js.Any] },
-        "RecordColumnUpdates" -> RecordColumnUpdates.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "RecordFormatUpdate" -> RecordFormatUpdate.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[InputSchemaUpdate]
     }
@@ -1119,32 +1119,32 @@ package kinesisanalytics {
    */
   @js.native
   trait InputUpdate extends js.Object {
-    var NamePrefixUpdate: js.UndefOr[InAppStreamName]
-    var KinesisStreamsInputUpdate: js.UndefOr[KinesisStreamsInputUpdate]
-    var InputSchemaUpdate: js.UndefOr[InputSchemaUpdate]
-    var InputProcessingConfigurationUpdate: js.UndefOr[InputProcessingConfigurationUpdate]
+    var InputId: Id
     var InputParallelismUpdate: js.UndefOr[InputParallelismUpdate]
+    var InputProcessingConfigurationUpdate: js.UndefOr[InputProcessingConfigurationUpdate]
+    var InputSchemaUpdate: js.UndefOr[InputSchemaUpdate]
     var KinesisFirehoseInputUpdate: js.UndefOr[KinesisFirehoseInputUpdate]
-    var InputId: js.UndefOr[Id]
+    var KinesisStreamsInputUpdate: js.UndefOr[KinesisStreamsInputUpdate]
+    var NamePrefixUpdate: js.UndefOr[InAppStreamName]
   }
 
   object InputUpdate {
     def apply(
-      NamePrefixUpdate: js.UndefOr[InAppStreamName] = js.undefined,
-      KinesisStreamsInputUpdate: js.UndefOr[KinesisStreamsInputUpdate] = js.undefined,
-      InputSchemaUpdate: js.UndefOr[InputSchemaUpdate] = js.undefined,
-      InputProcessingConfigurationUpdate: js.UndefOr[InputProcessingConfigurationUpdate] = js.undefined,
+      InputId: Id,
       InputParallelismUpdate: js.UndefOr[InputParallelismUpdate] = js.undefined,
+      InputProcessingConfigurationUpdate: js.UndefOr[InputProcessingConfigurationUpdate] = js.undefined,
+      InputSchemaUpdate: js.UndefOr[InputSchemaUpdate] = js.undefined,
       KinesisFirehoseInputUpdate: js.UndefOr[KinesisFirehoseInputUpdate] = js.undefined,
-      InputId: js.UndefOr[Id] = js.undefined): InputUpdate = {
+      KinesisStreamsInputUpdate: js.UndefOr[KinesisStreamsInputUpdate] = js.undefined,
+      NamePrefixUpdate: js.UndefOr[InAppStreamName] = js.undefined): InputUpdate = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "NamePrefixUpdate" -> NamePrefixUpdate.map { x => x.asInstanceOf[js.Any] },
-        "KinesisStreamsInputUpdate" -> KinesisStreamsInputUpdate.map { x => x.asInstanceOf[js.Any] },
-        "InputSchemaUpdate" -> InputSchemaUpdate.map { x => x.asInstanceOf[js.Any] },
-        "InputProcessingConfigurationUpdate" -> InputProcessingConfigurationUpdate.map { x => x.asInstanceOf[js.Any] },
+        "InputId" -> InputId.asInstanceOf[js.Any],
         "InputParallelismUpdate" -> InputParallelismUpdate.map { x => x.asInstanceOf[js.Any] },
+        "InputProcessingConfigurationUpdate" -> InputProcessingConfigurationUpdate.map { x => x.asInstanceOf[js.Any] },
+        "InputSchemaUpdate" -> InputSchemaUpdate.map { x => x.asInstanceOf[js.Any] },
         "KinesisFirehoseInputUpdate" -> KinesisFirehoseInputUpdate.map { x => x.asInstanceOf[js.Any] },
-        "InputId" -> InputId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "KinesisStreamsInputUpdate" -> KinesisStreamsInputUpdate.map { x => x.asInstanceOf[js.Any] },
+        "NamePrefixUpdate" -> NamePrefixUpdate.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[InputUpdate]
     }
@@ -1155,14 +1155,14 @@ package kinesisanalytics {
    */
   @js.native
   trait JSONMappingParameters extends js.Object {
-    var RecordRowPath: js.UndefOr[RecordRowPath]
+    var RecordRowPath: RecordRowPath
   }
 
   object JSONMappingParameters {
     def apply(
-      RecordRowPath: js.UndefOr[RecordRowPath] = js.undefined): JSONMappingParameters = {
+      RecordRowPath: RecordRowPath): JSONMappingParameters = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "RecordRowPath" -> RecordRowPath.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "RecordRowPath" -> RecordRowPath.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[JSONMappingParameters]
     }
@@ -1173,17 +1173,17 @@ package kinesisanalytics {
    */
   @js.native
   trait KinesisFirehoseInput extends js.Object {
-    var ResourceARN: js.UndefOr[ResourceARN]
-    var RoleARN: js.UndefOr[RoleARN]
+    var ResourceARN: ResourceARN
+    var RoleARN: RoleARN
   }
 
   object KinesisFirehoseInput {
     def apply(
-      ResourceARN: js.UndefOr[ResourceARN] = js.undefined,
-      RoleARN: js.UndefOr[RoleARN] = js.undefined): KinesisFirehoseInput = {
+      ResourceARN: ResourceARN,
+      RoleARN: RoleARN): KinesisFirehoseInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ResourceARN" -> ResourceARN.map { x => x.asInstanceOf[js.Any] },
-        "RoleARN" -> RoleARN.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ResourceARN" -> ResourceARN.asInstanceOf[js.Any],
+        "RoleARN" -> RoleARN.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[KinesisFirehoseInput]
     }
@@ -1236,17 +1236,17 @@ package kinesisanalytics {
    */
   @js.native
   trait KinesisFirehoseOutput extends js.Object {
-    var ResourceARN: js.UndefOr[ResourceARN]
-    var RoleARN: js.UndefOr[RoleARN]
+    var ResourceARN: ResourceARN
+    var RoleARN: RoleARN
   }
 
   object KinesisFirehoseOutput {
     def apply(
-      ResourceARN: js.UndefOr[ResourceARN] = js.undefined,
-      RoleARN: js.UndefOr[RoleARN] = js.undefined): KinesisFirehoseOutput = {
+      ResourceARN: ResourceARN,
+      RoleARN: RoleARN): KinesisFirehoseOutput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ResourceARN" -> ResourceARN.map { x => x.asInstanceOf[js.Any] },
-        "RoleARN" -> RoleARN.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ResourceARN" -> ResourceARN.asInstanceOf[js.Any],
+        "RoleARN" -> RoleARN.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[KinesisFirehoseOutput]
     }
@@ -1299,17 +1299,17 @@ package kinesisanalytics {
    */
   @js.native
   trait KinesisStreamsInput extends js.Object {
-    var ResourceARN: js.UndefOr[ResourceARN]
-    var RoleARN: js.UndefOr[RoleARN]
+    var ResourceARN: ResourceARN
+    var RoleARN: RoleARN
   }
 
   object KinesisStreamsInput {
     def apply(
-      ResourceARN: js.UndefOr[ResourceARN] = js.undefined,
-      RoleARN: js.UndefOr[RoleARN] = js.undefined): KinesisStreamsInput = {
+      ResourceARN: ResourceARN,
+      RoleARN: RoleARN): KinesisStreamsInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ResourceARN" -> ResourceARN.map { x => x.asInstanceOf[js.Any] },
-        "RoleARN" -> RoleARN.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ResourceARN" -> ResourceARN.asInstanceOf[js.Any],
+        "RoleARN" -> RoleARN.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[KinesisStreamsInput]
     }
@@ -1362,17 +1362,17 @@ package kinesisanalytics {
    */
   @js.native
   trait KinesisStreamsOutput extends js.Object {
-    var ResourceARN: js.UndefOr[ResourceARN]
-    var RoleARN: js.UndefOr[RoleARN]
+    var ResourceARN: ResourceARN
+    var RoleARN: RoleARN
   }
 
   object KinesisStreamsOutput {
     def apply(
-      ResourceARN: js.UndefOr[ResourceARN] = js.undefined,
-      RoleARN: js.UndefOr[RoleARN] = js.undefined): KinesisStreamsOutput = {
+      ResourceARN: ResourceARN,
+      RoleARN: RoleARN): KinesisStreamsOutput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ResourceARN" -> ResourceARN.map { x => x.asInstanceOf[js.Any] },
-        "RoleARN" -> RoleARN.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ResourceARN" -> ResourceARN.asInstanceOf[js.Any],
+        "RoleARN" -> RoleARN.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[KinesisStreamsOutput]
     }
@@ -1425,17 +1425,17 @@ package kinesisanalytics {
    */
   @js.native
   trait LambdaOutput extends js.Object {
-    var ResourceARN: js.UndefOr[ResourceARN]
-    var RoleARN: js.UndefOr[RoleARN]
+    var ResourceARN: ResourceARN
+    var RoleARN: RoleARN
   }
 
   object LambdaOutput {
     def apply(
-      ResourceARN: js.UndefOr[ResourceARN] = js.undefined,
-      RoleARN: js.UndefOr[RoleARN] = js.undefined): LambdaOutput = {
+      ResourceARN: ResourceARN,
+      RoleARN: RoleARN): LambdaOutput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ResourceARN" -> ResourceARN.map { x => x.asInstanceOf[js.Any] },
-        "RoleARN" -> RoleARN.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ResourceARN" -> ResourceARN.asInstanceOf[js.Any],
+        "RoleARN" -> RoleARN.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[LambdaOutput]
     }
@@ -1488,17 +1488,17 @@ package kinesisanalytics {
    */
   @js.native
   trait ListApplicationsRequest extends js.Object {
-    var Limit: js.UndefOr[ListApplicationsInputLimit]
     var ExclusiveStartApplicationName: js.UndefOr[ApplicationName]
+    var Limit: js.UndefOr[ListApplicationsInputLimit]
   }
 
   object ListApplicationsRequest {
     def apply(
-      Limit: js.UndefOr[ListApplicationsInputLimit] = js.undefined,
-      ExclusiveStartApplicationName: js.UndefOr[ApplicationName] = js.undefined): ListApplicationsRequest = {
+      ExclusiveStartApplicationName: js.UndefOr[ApplicationName] = js.undefined,
+      Limit: js.UndefOr[ListApplicationsInputLimit] = js.undefined): ListApplicationsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Limit" -> Limit.map { x => x.asInstanceOf[js.Any] },
-        "ExclusiveStartApplicationName" -> ExclusiveStartApplicationName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ExclusiveStartApplicationName" -> ExclusiveStartApplicationName.map { x => x.asInstanceOf[js.Any] },
+        "Limit" -> Limit.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListApplicationsRequest]
     }
@@ -1509,17 +1509,17 @@ package kinesisanalytics {
    */
   @js.native
   trait ListApplicationsResponse extends js.Object {
-    var ApplicationSummaries: js.UndefOr[ApplicationSummaries]
-    var HasMoreApplications: js.UndefOr[BooleanObject]
+    var ApplicationSummaries: ApplicationSummaries
+    var HasMoreApplications: BooleanObject
   }
 
   object ListApplicationsResponse {
     def apply(
-      ApplicationSummaries: js.UndefOr[ApplicationSummaries] = js.undefined,
-      HasMoreApplications: js.UndefOr[BooleanObject] = js.undefined): ListApplicationsResponse = {
+      ApplicationSummaries: ApplicationSummaries,
+      HasMoreApplications: BooleanObject): ListApplicationsResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ApplicationSummaries" -> ApplicationSummaries.map { x => x.asInstanceOf[js.Any] },
-        "HasMoreApplications" -> HasMoreApplications.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ApplicationSummaries" -> ApplicationSummaries.asInstanceOf[js.Any],
+        "HasMoreApplications" -> HasMoreApplications.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListApplicationsResponse]
     }
@@ -1530,17 +1530,17 @@ package kinesisanalytics {
    */
   @js.native
   trait MappingParameters extends js.Object {
-    var JSONMappingParameters: js.UndefOr[JSONMappingParameters]
     var CSVMappingParameters: js.UndefOr[CSVMappingParameters]
+    var JSONMappingParameters: js.UndefOr[JSONMappingParameters]
   }
 
   object MappingParameters {
     def apply(
-      JSONMappingParameters: js.UndefOr[JSONMappingParameters] = js.undefined,
-      CSVMappingParameters: js.UndefOr[CSVMappingParameters] = js.undefined): MappingParameters = {
+      CSVMappingParameters: js.UndefOr[CSVMappingParameters] = js.undefined,
+      JSONMappingParameters: js.UndefOr[JSONMappingParameters] = js.undefined): MappingParameters = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "JSONMappingParameters" -> JSONMappingParameters.map { x => x.asInstanceOf[js.Any] },
-        "CSVMappingParameters" -> CSVMappingParameters.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "CSVMappingParameters" -> CSVMappingParameters.map { x => x.asInstanceOf[js.Any] },
+        "JSONMappingParameters" -> JSONMappingParameters.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[MappingParameters]
     }
@@ -1551,26 +1551,26 @@ package kinesisanalytics {
    */
   @js.native
   trait Output extends js.Object {
-    var Name: js.UndefOr[InAppStreamName]
-    var DestinationSchema: js.UndefOr[DestinationSchema]
+    var DestinationSchema: DestinationSchema
+    var Name: InAppStreamName
+    var KinesisFirehoseOutput: js.UndefOr[KinesisFirehoseOutput]
     var KinesisStreamsOutput: js.UndefOr[KinesisStreamsOutput]
     var LambdaOutput: js.UndefOr[LambdaOutput]
-    var KinesisFirehoseOutput: js.UndefOr[KinesisFirehoseOutput]
   }
 
   object Output {
     def apply(
-      Name: js.UndefOr[InAppStreamName] = js.undefined,
-      DestinationSchema: js.UndefOr[DestinationSchema] = js.undefined,
+      DestinationSchema: DestinationSchema,
+      Name: InAppStreamName,
+      KinesisFirehoseOutput: js.UndefOr[KinesisFirehoseOutput] = js.undefined,
       KinesisStreamsOutput: js.UndefOr[KinesisStreamsOutput] = js.undefined,
-      LambdaOutput: js.UndefOr[LambdaOutput] = js.undefined,
-      KinesisFirehoseOutput: js.UndefOr[KinesisFirehoseOutput] = js.undefined): Output = {
+      LambdaOutput: js.UndefOr[LambdaOutput] = js.undefined): Output = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
-        "DestinationSchema" -> DestinationSchema.map { x => x.asInstanceOf[js.Any] },
+        "DestinationSchema" -> DestinationSchema.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
+        "KinesisFirehoseOutput" -> KinesisFirehoseOutput.map { x => x.asInstanceOf[js.Any] },
         "KinesisStreamsOutput" -> KinesisStreamsOutput.map { x => x.asInstanceOf[js.Any] },
-        "LambdaOutput" -> LambdaOutput.map { x => x.asInstanceOf[js.Any] },
-        "KinesisFirehoseOutput" -> KinesisFirehoseOutput.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "LambdaOutput" -> LambdaOutput.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Output]
     }
@@ -1581,29 +1581,29 @@ package kinesisanalytics {
    */
   @js.native
   trait OutputDescription extends js.Object {
-    var Name: js.UndefOr[InAppStreamName]
-    var KinesisStreamsOutputDescription: js.UndefOr[KinesisStreamsOutputDescription]
     var DestinationSchema: js.UndefOr[DestinationSchema]
-    var OutputId: js.UndefOr[Id]
-    var LambdaOutputDescription: js.UndefOr[LambdaOutputDescription]
     var KinesisFirehoseOutputDescription: js.UndefOr[KinesisFirehoseOutputDescription]
+    var KinesisStreamsOutputDescription: js.UndefOr[KinesisStreamsOutputDescription]
+    var LambdaOutputDescription: js.UndefOr[LambdaOutputDescription]
+    var Name: js.UndefOr[InAppStreamName]
+    var OutputId: js.UndefOr[Id]
   }
 
   object OutputDescription {
     def apply(
-      Name: js.UndefOr[InAppStreamName] = js.undefined,
-      KinesisStreamsOutputDescription: js.UndefOr[KinesisStreamsOutputDescription] = js.undefined,
       DestinationSchema: js.UndefOr[DestinationSchema] = js.undefined,
-      OutputId: js.UndefOr[Id] = js.undefined,
+      KinesisFirehoseOutputDescription: js.UndefOr[KinesisFirehoseOutputDescription] = js.undefined,
+      KinesisStreamsOutputDescription: js.UndefOr[KinesisStreamsOutputDescription] = js.undefined,
       LambdaOutputDescription: js.UndefOr[LambdaOutputDescription] = js.undefined,
-      KinesisFirehoseOutputDescription: js.UndefOr[KinesisFirehoseOutputDescription] = js.undefined): OutputDescription = {
+      Name: js.UndefOr[InAppStreamName] = js.undefined,
+      OutputId: js.UndefOr[Id] = js.undefined): OutputDescription = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
-        "KinesisStreamsOutputDescription" -> KinesisStreamsOutputDescription.map { x => x.asInstanceOf[js.Any] },
         "DestinationSchema" -> DestinationSchema.map { x => x.asInstanceOf[js.Any] },
-        "OutputId" -> OutputId.map { x => x.asInstanceOf[js.Any] },
+        "KinesisFirehoseOutputDescription" -> KinesisFirehoseOutputDescription.map { x => x.asInstanceOf[js.Any] },
+        "KinesisStreamsOutputDescription" -> KinesisStreamsOutputDescription.map { x => x.asInstanceOf[js.Any] },
         "LambdaOutputDescription" -> LambdaOutputDescription.map { x => x.asInstanceOf[js.Any] },
-        "KinesisFirehoseOutputDescription" -> KinesisFirehoseOutputDescription.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
+        "OutputId" -> OutputId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[OutputDescription]
     }
@@ -1614,29 +1614,29 @@ package kinesisanalytics {
    */
   @js.native
   trait OutputUpdate extends js.Object {
+    var OutputId: Id
     var DestinationSchemaUpdate: js.UndefOr[DestinationSchema]
-    var NameUpdate: js.UndefOr[InAppStreamName]
-    var OutputId: js.UndefOr[Id]
-    var LambdaOutputUpdate: js.UndefOr[LambdaOutputUpdate]
-    var KinesisStreamsOutputUpdate: js.UndefOr[KinesisStreamsOutputUpdate]
     var KinesisFirehoseOutputUpdate: js.UndefOr[KinesisFirehoseOutputUpdate]
+    var KinesisStreamsOutputUpdate: js.UndefOr[KinesisStreamsOutputUpdate]
+    var LambdaOutputUpdate: js.UndefOr[LambdaOutputUpdate]
+    var NameUpdate: js.UndefOr[InAppStreamName]
   }
 
   object OutputUpdate {
     def apply(
+      OutputId: Id,
       DestinationSchemaUpdate: js.UndefOr[DestinationSchema] = js.undefined,
-      NameUpdate: js.UndefOr[InAppStreamName] = js.undefined,
-      OutputId: js.UndefOr[Id] = js.undefined,
-      LambdaOutputUpdate: js.UndefOr[LambdaOutputUpdate] = js.undefined,
+      KinesisFirehoseOutputUpdate: js.UndefOr[KinesisFirehoseOutputUpdate] = js.undefined,
       KinesisStreamsOutputUpdate: js.UndefOr[KinesisStreamsOutputUpdate] = js.undefined,
-      KinesisFirehoseOutputUpdate: js.UndefOr[KinesisFirehoseOutputUpdate] = js.undefined): OutputUpdate = {
+      LambdaOutputUpdate: js.UndefOr[LambdaOutputUpdate] = js.undefined,
+      NameUpdate: js.UndefOr[InAppStreamName] = js.undefined): OutputUpdate = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "OutputId" -> OutputId.asInstanceOf[js.Any],
         "DestinationSchemaUpdate" -> DestinationSchemaUpdate.map { x => x.asInstanceOf[js.Any] },
-        "NameUpdate" -> NameUpdate.map { x => x.asInstanceOf[js.Any] },
-        "OutputId" -> OutputId.map { x => x.asInstanceOf[js.Any] },
-        "LambdaOutputUpdate" -> LambdaOutputUpdate.map { x => x.asInstanceOf[js.Any] },
+        "KinesisFirehoseOutputUpdate" -> KinesisFirehoseOutputUpdate.map { x => x.asInstanceOf[js.Any] },
         "KinesisStreamsOutputUpdate" -> KinesisStreamsOutputUpdate.map { x => x.asInstanceOf[js.Any] },
-        "KinesisFirehoseOutputUpdate" -> KinesisFirehoseOutputUpdate.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "LambdaOutputUpdate" -> LambdaOutputUpdate.map { x => x.asInstanceOf[js.Any] },
+        "NameUpdate" -> NameUpdate.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[OutputUpdate]
     }
@@ -1647,20 +1647,20 @@ package kinesisanalytics {
    */
   @js.native
   trait RecordColumn extends js.Object {
-    var Name: js.UndefOr[RecordColumnName]
+    var Name: RecordColumnName
+    var SqlType: RecordColumnSqlType
     var Mapping: js.UndefOr[RecordColumnMapping]
-    var SqlType: js.UndefOr[RecordColumnSqlType]
   }
 
   object RecordColumn {
     def apply(
-      Name: js.UndefOr[RecordColumnName] = js.undefined,
-      Mapping: js.UndefOr[RecordColumnMapping] = js.undefined,
-      SqlType: js.UndefOr[RecordColumnSqlType] = js.undefined): RecordColumn = {
+      Name: RecordColumnName,
+      SqlType: RecordColumnSqlType,
+      Mapping: js.UndefOr[RecordColumnMapping] = js.undefined): RecordColumn = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
-        "Mapping" -> Mapping.map { x => x.asInstanceOf[js.Any] },
-        "SqlType" -> SqlType.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Name" -> Name.asInstanceOf[js.Any],
+        "SqlType" -> SqlType.asInstanceOf[js.Any],
+        "Mapping" -> Mapping.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RecordColumn]
     }
@@ -1671,16 +1671,16 @@ package kinesisanalytics {
    */
   @js.native
   trait RecordFormat extends js.Object {
-    var RecordFormatType: js.UndefOr[RecordFormatType]
+    var RecordFormatType: RecordFormatType
     var MappingParameters: js.UndefOr[MappingParameters]
   }
 
   object RecordFormat {
     def apply(
-      RecordFormatType: js.UndefOr[RecordFormatType] = js.undefined,
+      RecordFormatType: RecordFormatType,
       MappingParameters: js.UndefOr[MappingParameters] = js.undefined): RecordFormat = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "RecordFormatType" -> RecordFormatType.map { x => x.asInstanceOf[js.Any] },
+        "RecordFormatType" -> RecordFormatType.asInstanceOf[js.Any],
         "MappingParameters" -> MappingParameters.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RecordFormat]
@@ -1699,20 +1699,20 @@ package kinesisanalytics {
    */
   @js.native
   trait ReferenceDataSource extends js.Object {
-    var TableName: js.UndefOr[InAppTableName]
+    var ReferenceSchema: SourceSchema
+    var TableName: InAppTableName
     var S3ReferenceDataSource: js.UndefOr[S3ReferenceDataSource]
-    var ReferenceSchema: js.UndefOr[SourceSchema]
   }
 
   object ReferenceDataSource {
     def apply(
-      TableName: js.UndefOr[InAppTableName] = js.undefined,
-      S3ReferenceDataSource: js.UndefOr[S3ReferenceDataSource] = js.undefined,
-      ReferenceSchema: js.UndefOr[SourceSchema] = js.undefined): ReferenceDataSource = {
+      ReferenceSchema: SourceSchema,
+      TableName: InAppTableName,
+      S3ReferenceDataSource: js.UndefOr[S3ReferenceDataSource] = js.undefined): ReferenceDataSource = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "TableName" -> TableName.map { x => x.asInstanceOf[js.Any] },
-        "S3ReferenceDataSource" -> S3ReferenceDataSource.map { x => x.asInstanceOf[js.Any] },
-        "ReferenceSchema" -> ReferenceSchema.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ReferenceSchema" -> ReferenceSchema.asInstanceOf[js.Any],
+        "TableName" -> TableName.asInstanceOf[js.Any],
+        "S3ReferenceDataSource" -> S3ReferenceDataSource.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ReferenceDataSource]
     }
@@ -1723,22 +1723,22 @@ package kinesisanalytics {
    */
   @js.native
   trait ReferenceDataSourceDescription extends js.Object {
-    var ReferenceId: js.UndefOr[Id]
-    var TableName: js.UndefOr[InAppTableName]
-    var S3ReferenceDataSourceDescription: js.UndefOr[S3ReferenceDataSourceDescription]
+    var ReferenceId: Id
+    var S3ReferenceDataSourceDescription: S3ReferenceDataSourceDescription
+    var TableName: InAppTableName
     var ReferenceSchema: js.UndefOr[SourceSchema]
   }
 
   object ReferenceDataSourceDescription {
     def apply(
-      ReferenceId: js.UndefOr[Id] = js.undefined,
-      TableName: js.UndefOr[InAppTableName] = js.undefined,
-      S3ReferenceDataSourceDescription: js.UndefOr[S3ReferenceDataSourceDescription] = js.undefined,
+      ReferenceId: Id,
+      S3ReferenceDataSourceDescription: S3ReferenceDataSourceDescription,
+      TableName: InAppTableName,
       ReferenceSchema: js.UndefOr[SourceSchema] = js.undefined): ReferenceDataSourceDescription = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ReferenceId" -> ReferenceId.map { x => x.asInstanceOf[js.Any] },
-        "TableName" -> TableName.map { x => x.asInstanceOf[js.Any] },
-        "S3ReferenceDataSourceDescription" -> S3ReferenceDataSourceDescription.map { x => x.asInstanceOf[js.Any] },
+        "ReferenceId" -> ReferenceId.asInstanceOf[js.Any],
+        "S3ReferenceDataSourceDescription" -> S3ReferenceDataSourceDescription.asInstanceOf[js.Any],
+        "TableName" -> TableName.asInstanceOf[js.Any],
         "ReferenceSchema" -> ReferenceSchema.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ReferenceDataSourceDescription]
@@ -1750,23 +1750,23 @@ package kinesisanalytics {
    */
   @js.native
   trait ReferenceDataSourceUpdate extends js.Object {
-    var ReferenceId: js.UndefOr[Id]
-    var TableNameUpdate: js.UndefOr[InAppTableName]
-    var S3ReferenceDataSourceUpdate: js.UndefOr[S3ReferenceDataSourceUpdate]
+    var ReferenceId: Id
     var ReferenceSchemaUpdate: js.UndefOr[SourceSchema]
+    var S3ReferenceDataSourceUpdate: js.UndefOr[S3ReferenceDataSourceUpdate]
+    var TableNameUpdate: js.UndefOr[InAppTableName]
   }
 
   object ReferenceDataSourceUpdate {
     def apply(
-      ReferenceId: js.UndefOr[Id] = js.undefined,
-      TableNameUpdate: js.UndefOr[InAppTableName] = js.undefined,
+      ReferenceId: Id,
+      ReferenceSchemaUpdate: js.UndefOr[SourceSchema] = js.undefined,
       S3ReferenceDataSourceUpdate: js.UndefOr[S3ReferenceDataSourceUpdate] = js.undefined,
-      ReferenceSchemaUpdate: js.UndefOr[SourceSchema] = js.undefined): ReferenceDataSourceUpdate = {
+      TableNameUpdate: js.UndefOr[InAppTableName] = js.undefined): ReferenceDataSourceUpdate = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ReferenceId" -> ReferenceId.map { x => x.asInstanceOf[js.Any] },
-        "TableNameUpdate" -> TableNameUpdate.map { x => x.asInstanceOf[js.Any] },
+        "ReferenceId" -> ReferenceId.asInstanceOf[js.Any],
+        "ReferenceSchemaUpdate" -> ReferenceSchemaUpdate.map { x => x.asInstanceOf[js.Any] },
         "S3ReferenceDataSourceUpdate" -> S3ReferenceDataSourceUpdate.map { x => x.asInstanceOf[js.Any] },
-        "ReferenceSchemaUpdate" -> ReferenceSchemaUpdate.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "TableNameUpdate" -> TableNameUpdate.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ReferenceDataSourceUpdate]
     }
@@ -1777,20 +1777,20 @@ package kinesisanalytics {
    */
   @js.native
   trait S3Configuration extends js.Object {
-    var RoleARN: js.UndefOr[RoleARN]
-    var BucketARN: js.UndefOr[BucketARN]
-    var FileKey: js.UndefOr[FileKey]
+    var BucketARN: BucketARN
+    var FileKey: FileKey
+    var RoleARN: RoleARN
   }
 
   object S3Configuration {
     def apply(
-      RoleARN: js.UndefOr[RoleARN] = js.undefined,
-      BucketARN: js.UndefOr[BucketARN] = js.undefined,
-      FileKey: js.UndefOr[FileKey] = js.undefined): S3Configuration = {
+      BucketARN: BucketARN,
+      FileKey: FileKey,
+      RoleARN: RoleARN): S3Configuration = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "RoleARN" -> RoleARN.map { x => x.asInstanceOf[js.Any] },
-        "BucketARN" -> BucketARN.map { x => x.asInstanceOf[js.Any] },
-        "FileKey" -> FileKey.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "BucketARN" -> BucketARN.asInstanceOf[js.Any],
+        "FileKey" -> FileKey.asInstanceOf[js.Any],
+        "RoleARN" -> RoleARN.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[S3Configuration]
     }
@@ -1801,20 +1801,20 @@ package kinesisanalytics {
    */
   @js.native
   trait S3ReferenceDataSource extends js.Object {
-    var BucketARN: js.UndefOr[BucketARN]
-    var FileKey: js.UndefOr[FileKey]
-    var ReferenceRoleARN: js.UndefOr[RoleARN]
+    var BucketARN: BucketARN
+    var FileKey: FileKey
+    var ReferenceRoleARN: RoleARN
   }
 
   object S3ReferenceDataSource {
     def apply(
-      BucketARN: js.UndefOr[BucketARN] = js.undefined,
-      FileKey: js.UndefOr[FileKey] = js.undefined,
-      ReferenceRoleARN: js.UndefOr[RoleARN] = js.undefined): S3ReferenceDataSource = {
+      BucketARN: BucketARN,
+      FileKey: FileKey,
+      ReferenceRoleARN: RoleARN): S3ReferenceDataSource = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "BucketARN" -> BucketARN.map { x => x.asInstanceOf[js.Any] },
-        "FileKey" -> FileKey.map { x => x.asInstanceOf[js.Any] },
-        "ReferenceRoleARN" -> ReferenceRoleARN.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "BucketARN" -> BucketARN.asInstanceOf[js.Any],
+        "FileKey" -> FileKey.asInstanceOf[js.Any],
+        "ReferenceRoleARN" -> ReferenceRoleARN.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[S3ReferenceDataSource]
     }
@@ -1825,20 +1825,20 @@ package kinesisanalytics {
    */
   @js.native
   trait S3ReferenceDataSourceDescription extends js.Object {
-    var BucketARN: js.UndefOr[BucketARN]
-    var FileKey: js.UndefOr[FileKey]
-    var ReferenceRoleARN: js.UndefOr[RoleARN]
+    var BucketARN: BucketARN
+    var FileKey: FileKey
+    var ReferenceRoleARN: RoleARN
   }
 
   object S3ReferenceDataSourceDescription {
     def apply(
-      BucketARN: js.UndefOr[BucketARN] = js.undefined,
-      FileKey: js.UndefOr[FileKey] = js.undefined,
-      ReferenceRoleARN: js.UndefOr[RoleARN] = js.undefined): S3ReferenceDataSourceDescription = {
+      BucketARN: BucketARN,
+      FileKey: FileKey,
+      ReferenceRoleARN: RoleARN): S3ReferenceDataSourceDescription = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "BucketARN" -> BucketARN.map { x => x.asInstanceOf[js.Any] },
-        "FileKey" -> FileKey.map { x => x.asInstanceOf[js.Any] },
-        "ReferenceRoleARN" -> ReferenceRoleARN.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "BucketARN" -> BucketARN.asInstanceOf[js.Any],
+        "FileKey" -> FileKey.asInstanceOf[js.Any],
+        "ReferenceRoleARN" -> ReferenceRoleARN.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[S3ReferenceDataSourceDescription]
     }
@@ -1873,20 +1873,20 @@ package kinesisanalytics {
    */
   @js.native
   trait SourceSchema extends js.Object {
-    var RecordFormat: js.UndefOr[RecordFormat]
+    var RecordColumns: RecordColumns
+    var RecordFormat: RecordFormat
     var RecordEncoding: js.UndefOr[RecordEncoding]
-    var RecordColumns: js.UndefOr[RecordColumns]
   }
 
   object SourceSchema {
     def apply(
-      RecordFormat: js.UndefOr[RecordFormat] = js.undefined,
-      RecordEncoding: js.UndefOr[RecordEncoding] = js.undefined,
-      RecordColumns: js.UndefOr[RecordColumns] = js.undefined): SourceSchema = {
+      RecordColumns: RecordColumns,
+      RecordFormat: RecordFormat,
+      RecordEncoding: js.UndefOr[RecordEncoding] = js.undefined): SourceSchema = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "RecordFormat" -> RecordFormat.map { x => x.asInstanceOf[js.Any] },
-        "RecordEncoding" -> RecordEncoding.map { x => x.asInstanceOf[js.Any] },
-        "RecordColumns" -> RecordColumns.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "RecordColumns" -> RecordColumns.asInstanceOf[js.Any],
+        "RecordFormat" -> RecordFormat.asInstanceOf[js.Any],
+        "RecordEncoding" -> RecordEncoding.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SourceSchema]
     }
@@ -1897,17 +1897,17 @@ package kinesisanalytics {
    */
   @js.native
   trait StartApplicationRequest extends js.Object {
-    var ApplicationName: js.UndefOr[ApplicationName]
-    var InputConfigurations: js.UndefOr[InputConfigurations]
+    var ApplicationName: ApplicationName
+    var InputConfigurations: InputConfigurations
   }
 
   object StartApplicationRequest {
     def apply(
-      ApplicationName: js.UndefOr[ApplicationName] = js.undefined,
-      InputConfigurations: js.UndefOr[InputConfigurations] = js.undefined): StartApplicationRequest = {
+      ApplicationName: ApplicationName,
+      InputConfigurations: InputConfigurations): StartApplicationRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ApplicationName" -> ApplicationName.map { x => x.asInstanceOf[js.Any] },
-        "InputConfigurations" -> InputConfigurations.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ApplicationName" -> ApplicationName.asInstanceOf[js.Any],
+        "InputConfigurations" -> InputConfigurations.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StartApplicationRequest]
     }
@@ -1934,14 +1934,14 @@ package kinesisanalytics {
    */
   @js.native
   trait StopApplicationRequest extends js.Object {
-    var ApplicationName: js.UndefOr[ApplicationName]
+    var ApplicationName: ApplicationName
   }
 
   object StopApplicationRequest {
     def apply(
-      ApplicationName: js.UndefOr[ApplicationName] = js.undefined): StopApplicationRequest = {
+      ApplicationName: ApplicationName): StopApplicationRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ApplicationName" -> ApplicationName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ApplicationName" -> ApplicationName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StopApplicationRequest]
     }
@@ -1965,20 +1965,20 @@ package kinesisanalytics {
 
   @js.native
   trait UpdateApplicationRequest extends js.Object {
-    var ApplicationName: js.UndefOr[ApplicationName]
-    var CurrentApplicationVersionId: js.UndefOr[ApplicationVersionId]
-    var ApplicationUpdate: js.UndefOr[ApplicationUpdate]
+    var ApplicationName: ApplicationName
+    var ApplicationUpdate: ApplicationUpdate
+    var CurrentApplicationVersionId: ApplicationVersionId
   }
 
   object UpdateApplicationRequest {
     def apply(
-      ApplicationName: js.UndefOr[ApplicationName] = js.undefined,
-      CurrentApplicationVersionId: js.UndefOr[ApplicationVersionId] = js.undefined,
-      ApplicationUpdate: js.UndefOr[ApplicationUpdate] = js.undefined): UpdateApplicationRequest = {
+      ApplicationName: ApplicationName,
+      ApplicationUpdate: ApplicationUpdate,
+      CurrentApplicationVersionId: ApplicationVersionId): UpdateApplicationRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ApplicationName" -> ApplicationName.map { x => x.asInstanceOf[js.Any] },
-        "CurrentApplicationVersionId" -> CurrentApplicationVersionId.map { x => x.asInstanceOf[js.Any] },
-        "ApplicationUpdate" -> ApplicationUpdate.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ApplicationName" -> ApplicationName.asInstanceOf[js.Any],
+        "ApplicationUpdate" -> ApplicationUpdate.asInstanceOf[js.Any],
+        "CurrentApplicationVersionId" -> CurrentApplicationVersionId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateApplicationRequest]
     }

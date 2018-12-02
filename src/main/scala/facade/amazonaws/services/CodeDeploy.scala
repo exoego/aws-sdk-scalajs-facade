@@ -194,17 +194,17 @@ package codedeploy {
    */
   @js.native
   trait AddTagsToOnPremisesInstancesInput extends js.Object {
-    var tags: js.UndefOr[TagList]
-    var instanceNames: js.UndefOr[InstanceNameList]
+    var instanceNames: InstanceNameList
+    var tags: TagList
   }
 
   object AddTagsToOnPremisesInstancesInput {
     def apply(
-      tags: js.UndefOr[TagList] = js.undefined,
-      instanceNames: js.UndefOr[InstanceNameList] = js.undefined): AddTagsToOnPremisesInstancesInput = {
+      instanceNames: InstanceNameList,
+      tags: TagList): AddTagsToOnPremisesInstancesInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "tags" -> tags.map { x => x.asInstanceOf[js.Any] },
-        "instanceNames" -> instanceNames.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "instanceNames" -> instanceNames.asInstanceOf[js.Any],
+        "tags" -> tags.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AddTagsToOnPremisesInstancesInput]
     }
@@ -233,20 +233,20 @@ package codedeploy {
    */
   @js.native
   trait AlarmConfiguration extends js.Object {
+    var alarms: js.UndefOr[AlarmList]
     var enabled: js.UndefOr[Boolean]
     var ignorePollAlarmFailure: js.UndefOr[Boolean]
-    var alarms: js.UndefOr[AlarmList]
   }
 
   object AlarmConfiguration {
     def apply(
+      alarms: js.UndefOr[AlarmList] = js.undefined,
       enabled: js.UndefOr[Boolean] = js.undefined,
-      ignorePollAlarmFailure: js.UndefOr[Boolean] = js.undefined,
-      alarms: js.UndefOr[AlarmList] = js.undefined): AlarmConfiguration = {
+      ignorePollAlarmFailure: js.UndefOr[Boolean] = js.undefined): AlarmConfiguration = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "alarms" -> alarms.map { x => x.asInstanceOf[js.Any] },
         "enabled" -> enabled.map { x => x.asInstanceOf[js.Any] },
-        "ignorePollAlarmFailure" -> ignorePollAlarmFailure.map { x => x.asInstanceOf[js.Any] },
-        "alarms" -> alarms.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ignorePollAlarmFailure" -> ignorePollAlarmFailure.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AlarmConfiguration]
     }
@@ -278,28 +278,28 @@ package codedeploy {
    */
   @js.native
   trait ApplicationInfo extends js.Object {
-    var gitHubAccountName: js.UndefOr[GitHubAccountTokenName]
-    var computePlatform: js.UndefOr[ComputePlatform]
-    var createTime: js.UndefOr[Timestamp]
     var applicationId: js.UndefOr[ApplicationId]
     var applicationName: js.UndefOr[ApplicationName]
+    var computePlatform: js.UndefOr[ComputePlatform]
+    var createTime: js.UndefOr[Timestamp]
+    var gitHubAccountName: js.UndefOr[GitHubAccountTokenName]
     var linkedToGitHub: js.UndefOr[Boolean]
   }
 
   object ApplicationInfo {
     def apply(
-      gitHubAccountName: js.UndefOr[GitHubAccountTokenName] = js.undefined,
-      computePlatform: js.UndefOr[ComputePlatform] = js.undefined,
-      createTime: js.UndefOr[Timestamp] = js.undefined,
       applicationId: js.UndefOr[ApplicationId] = js.undefined,
       applicationName: js.UndefOr[ApplicationName] = js.undefined,
+      computePlatform: js.UndefOr[ComputePlatform] = js.undefined,
+      createTime: js.UndefOr[Timestamp] = js.undefined,
+      gitHubAccountName: js.UndefOr[GitHubAccountTokenName] = js.undefined,
       linkedToGitHub: js.UndefOr[Boolean] = js.undefined): ApplicationInfo = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "gitHubAccountName" -> gitHubAccountName.map { x => x.asInstanceOf[js.Any] },
-        "computePlatform" -> computePlatform.map { x => x.asInstanceOf[js.Any] },
-        "createTime" -> createTime.map { x => x.asInstanceOf[js.Any] },
         "applicationId" -> applicationId.map { x => x.asInstanceOf[js.Any] },
         "applicationName" -> applicationName.map { x => x.asInstanceOf[js.Any] },
+        "computePlatform" -> computePlatform.map { x => x.asInstanceOf[js.Any] },
+        "createTime" -> createTime.map { x => x.asInstanceOf[js.Any] },
+        "gitHubAccountName" -> gitHubAccountName.map { x => x.asInstanceOf[js.Any] },
         "linkedToGitHub" -> linkedToGitHub.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ApplicationInfo]
@@ -348,17 +348,17 @@ package codedeploy {
    */
   @js.native
   trait AutoScalingGroup extends js.Object {
-    var name: js.UndefOr[AutoScalingGroupName]
     var hook: js.UndefOr[AutoScalingGroupHook]
+    var name: js.UndefOr[AutoScalingGroupName]
   }
 
   object AutoScalingGroup {
     def apply(
-      name: js.UndefOr[AutoScalingGroupName] = js.undefined,
-      hook: js.UndefOr[AutoScalingGroupHook] = js.undefined): AutoScalingGroup = {
+      hook: js.UndefOr[AutoScalingGroupHook] = js.undefined,
+      name: js.UndefOr[AutoScalingGroupName] = js.undefined): AutoScalingGroup = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "name" -> name.map { x => x.asInstanceOf[js.Any] },
-        "hook" -> hook.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "hook" -> hook.map { x => x.asInstanceOf[js.Any] },
+        "name" -> name.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AutoScalingGroup]
     }
@@ -369,17 +369,17 @@ package codedeploy {
    */
   @js.native
   trait BatchGetApplicationRevisionsInput extends js.Object {
-    var applicationName: js.UndefOr[ApplicationName]
-    var revisions: js.UndefOr[RevisionLocationList]
+    var applicationName: ApplicationName
+    var revisions: RevisionLocationList
   }
 
   object BatchGetApplicationRevisionsInput {
     def apply(
-      applicationName: js.UndefOr[ApplicationName] = js.undefined,
-      revisions: js.UndefOr[RevisionLocationList] = js.undefined): BatchGetApplicationRevisionsInput = {
+      applicationName: ApplicationName,
+      revisions: RevisionLocationList): BatchGetApplicationRevisionsInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "applicationName" -> applicationName.map { x => x.asInstanceOf[js.Any] },
-        "revisions" -> revisions.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "applicationName" -> applicationName.asInstanceOf[js.Any],
+        "revisions" -> revisions.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BatchGetApplicationRevisionsInput]
     }
@@ -414,14 +414,14 @@ package codedeploy {
    */
   @js.native
   trait BatchGetApplicationsInput extends js.Object {
-    var applicationNames: js.UndefOr[ApplicationsList]
+    var applicationNames: ApplicationsList
   }
 
   object BatchGetApplicationsInput {
     def apply(
-      applicationNames: js.UndefOr[ApplicationsList] = js.undefined): BatchGetApplicationsInput = {
+      applicationNames: ApplicationsList): BatchGetApplicationsInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "applicationNames" -> applicationNames.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "applicationNames" -> applicationNames.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BatchGetApplicationsInput]
     }
@@ -450,17 +450,17 @@ package codedeploy {
    */
   @js.native
   trait BatchGetDeploymentGroupsInput extends js.Object {
-    var applicationName: js.UndefOr[ApplicationName]
-    var deploymentGroupNames: js.UndefOr[DeploymentGroupsList]
+    var applicationName: ApplicationName
+    var deploymentGroupNames: DeploymentGroupsList
   }
 
   object BatchGetDeploymentGroupsInput {
     def apply(
-      applicationName: js.UndefOr[ApplicationName] = js.undefined,
-      deploymentGroupNames: js.UndefOr[DeploymentGroupsList] = js.undefined): BatchGetDeploymentGroupsInput = {
+      applicationName: ApplicationName,
+      deploymentGroupNames: DeploymentGroupsList): BatchGetDeploymentGroupsInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "applicationName" -> applicationName.map { x => x.asInstanceOf[js.Any] },
-        "deploymentGroupNames" -> deploymentGroupNames.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "applicationName" -> applicationName.asInstanceOf[js.Any],
+        "deploymentGroupNames" -> deploymentGroupNames.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BatchGetDeploymentGroupsInput]
     }
@@ -492,17 +492,17 @@ package codedeploy {
    */
   @js.native
   trait BatchGetDeploymentInstancesInput extends js.Object {
-    var deploymentId: js.UndefOr[DeploymentId]
-    var instanceIds: js.UndefOr[InstancesList]
+    var deploymentId: DeploymentId
+    var instanceIds: InstancesList
   }
 
   object BatchGetDeploymentInstancesInput {
     def apply(
-      deploymentId: js.UndefOr[DeploymentId] = js.undefined,
-      instanceIds: js.UndefOr[InstancesList] = js.undefined): BatchGetDeploymentInstancesInput = {
+      deploymentId: DeploymentId,
+      instanceIds: InstancesList): BatchGetDeploymentInstancesInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "deploymentId" -> deploymentId.map { x => x.asInstanceOf[js.Any] },
-        "instanceIds" -> instanceIds.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "deploymentId" -> deploymentId.asInstanceOf[js.Any],
+        "instanceIds" -> instanceIds.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BatchGetDeploymentInstancesInput]
     }
@@ -513,17 +513,17 @@ package codedeploy {
    */
   @js.native
   trait BatchGetDeploymentInstancesOutput extends js.Object {
-    var instancesSummary: js.UndefOr[InstanceSummaryList]
     var errorMessage: js.UndefOr[ErrorMessage]
+    var instancesSummary: js.UndefOr[InstanceSummaryList]
   }
 
   object BatchGetDeploymentInstancesOutput {
     def apply(
-      instancesSummary: js.UndefOr[InstanceSummaryList] = js.undefined,
-      errorMessage: js.UndefOr[ErrorMessage] = js.undefined): BatchGetDeploymentInstancesOutput = {
+      errorMessage: js.UndefOr[ErrorMessage] = js.undefined,
+      instancesSummary: js.UndefOr[InstanceSummaryList] = js.undefined): BatchGetDeploymentInstancesOutput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "instancesSummary" -> instancesSummary.map { x => x.asInstanceOf[js.Any] },
-        "errorMessage" -> errorMessage.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "errorMessage" -> errorMessage.map { x => x.asInstanceOf[js.Any] },
+        "instancesSummary" -> instancesSummary.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BatchGetDeploymentInstancesOutput]
     }
@@ -567,14 +567,14 @@ package codedeploy {
    */
   @js.native
   trait BatchGetDeploymentsInput extends js.Object {
-    var deploymentIds: js.UndefOr[DeploymentsList]
+    var deploymentIds: DeploymentsList
   }
 
   object BatchGetDeploymentsInput {
     def apply(
-      deploymentIds: js.UndefOr[DeploymentsList] = js.undefined): BatchGetDeploymentsInput = {
+      deploymentIds: DeploymentsList): BatchGetDeploymentsInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "deploymentIds" -> deploymentIds.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "deploymentIds" -> deploymentIds.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BatchGetDeploymentsInput]
     }
@@ -603,14 +603,14 @@ package codedeploy {
    */
   @js.native
   trait BatchGetOnPremisesInstancesInput extends js.Object {
-    var instanceNames: js.UndefOr[InstanceNameList]
+    var instanceNames: InstanceNameList
   }
 
   object BatchGetOnPremisesInstancesInput {
     def apply(
-      instanceNames: js.UndefOr[InstanceNameList] = js.undefined): BatchGetOnPremisesInstancesInput = {
+      instanceNames: InstanceNameList): BatchGetOnPremisesInstancesInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "instanceNames" -> instanceNames.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "instanceNames" -> instanceNames.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BatchGetOnPremisesInstancesInput]
     }
@@ -639,20 +639,20 @@ package codedeploy {
    */
   @js.native
   trait BlueGreenDeploymentConfiguration extends js.Object {
-    var terminateBlueInstancesOnDeploymentSuccess: js.UndefOr[BlueInstanceTerminationOption]
     var deploymentReadyOption: js.UndefOr[DeploymentReadyOption]
     var greenFleetProvisioningOption: js.UndefOr[GreenFleetProvisioningOption]
+    var terminateBlueInstancesOnDeploymentSuccess: js.UndefOr[BlueInstanceTerminationOption]
   }
 
   object BlueGreenDeploymentConfiguration {
     def apply(
-      terminateBlueInstancesOnDeploymentSuccess: js.UndefOr[BlueInstanceTerminationOption] = js.undefined,
       deploymentReadyOption: js.UndefOr[DeploymentReadyOption] = js.undefined,
-      greenFleetProvisioningOption: js.UndefOr[GreenFleetProvisioningOption] = js.undefined): BlueGreenDeploymentConfiguration = {
+      greenFleetProvisioningOption: js.UndefOr[GreenFleetProvisioningOption] = js.undefined,
+      terminateBlueInstancesOnDeploymentSuccess: js.UndefOr[BlueInstanceTerminationOption] = js.undefined): BlueGreenDeploymentConfiguration = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "terminateBlueInstancesOnDeploymentSuccess" -> terminateBlueInstancesOnDeploymentSuccess.map { x => x.asInstanceOf[js.Any] },
         "deploymentReadyOption" -> deploymentReadyOption.map { x => x.asInstanceOf[js.Any] },
-        "greenFleetProvisioningOption" -> greenFleetProvisioningOption.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "greenFleetProvisioningOption" -> greenFleetProvisioningOption.map { x => x.asInstanceOf[js.Any] },
+        "terminateBlueInstancesOnDeploymentSuccess" -> terminateBlueInstancesOnDeploymentSuccess.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BlueGreenDeploymentConfiguration]
     }
@@ -720,16 +720,16 @@ package codedeploy {
    */
   @js.native
   trait CreateApplicationInput extends js.Object {
-    var applicationName: js.UndefOr[ApplicationName]
+    var applicationName: ApplicationName
     var computePlatform: js.UndefOr[ComputePlatform]
   }
 
   object CreateApplicationInput {
     def apply(
-      applicationName: js.UndefOr[ApplicationName] = js.undefined,
+      applicationName: ApplicationName,
       computePlatform: js.UndefOr[ComputePlatform] = js.undefined): CreateApplicationInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "applicationName" -> applicationName.map { x => x.asInstanceOf[js.Any] },
+        "applicationName" -> applicationName.asInstanceOf[js.Any],
         "computePlatform" -> computePlatform.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateApplicationInput]
@@ -759,23 +759,23 @@ package codedeploy {
    */
   @js.native
   trait CreateDeploymentConfigInput extends js.Object {
-    var deploymentConfigName: js.UndefOr[DeploymentConfigName]
+    var deploymentConfigName: DeploymentConfigName
+    var computePlatform: js.UndefOr[ComputePlatform]
     var minimumHealthyHosts: js.UndefOr[MinimumHealthyHosts]
     var trafficRoutingConfig: js.UndefOr[TrafficRoutingConfig]
-    var computePlatform: js.UndefOr[ComputePlatform]
   }
 
   object CreateDeploymentConfigInput {
     def apply(
-      deploymentConfigName: js.UndefOr[DeploymentConfigName] = js.undefined,
+      deploymentConfigName: DeploymentConfigName,
+      computePlatform: js.UndefOr[ComputePlatform] = js.undefined,
       minimumHealthyHosts: js.UndefOr[MinimumHealthyHosts] = js.undefined,
-      trafficRoutingConfig: js.UndefOr[TrafficRoutingConfig] = js.undefined,
-      computePlatform: js.UndefOr[ComputePlatform] = js.undefined): CreateDeploymentConfigInput = {
+      trafficRoutingConfig: js.UndefOr[TrafficRoutingConfig] = js.undefined): CreateDeploymentConfigInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "deploymentConfigName" -> deploymentConfigName.map { x => x.asInstanceOf[js.Any] },
+        "deploymentConfigName" -> deploymentConfigName.asInstanceOf[js.Any],
+        "computePlatform" -> computePlatform.map { x => x.asInstanceOf[js.Any] },
         "minimumHealthyHosts" -> minimumHealthyHosts.map { x => x.asInstanceOf[js.Any] },
-        "trafficRoutingConfig" -> trafficRoutingConfig.map { x => x.asInstanceOf[js.Any] },
-        "computePlatform" -> computePlatform.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "trafficRoutingConfig" -> trafficRoutingConfig.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateDeploymentConfigInput]
     }
@@ -804,59 +804,59 @@ package codedeploy {
    */
   @js.native
   trait CreateDeploymentGroupInput extends js.Object {
+    var applicationName: ApplicationName
+    var deploymentGroupName: DeploymentGroupName
+    var serviceRoleArn: Role
     var alarmConfiguration: js.UndefOr[AlarmConfiguration]
-    var blueGreenDeploymentConfiguration: js.UndefOr[BlueGreenDeploymentConfiguration]
-    var deploymentStyle: js.UndefOr[DeploymentStyle]
-    var serviceRoleArn: js.UndefOr[Role]
-    var autoScalingGroups: js.UndefOr[AutoScalingGroupNameList]
-    var triggerConfigurations: js.UndefOr[TriggerConfigList]
-    var applicationName: js.UndefOr[ApplicationName]
-    var onPremisesTagSet: js.UndefOr[OnPremisesTagSet]
-    var deploymentConfigName: js.UndefOr[DeploymentConfigName]
-    var onPremisesInstanceTagFilters: js.UndefOr[TagFilterList]
-    var ecsServices: js.UndefOr[ECSServiceList]
-    var deploymentGroupName: js.UndefOr[DeploymentGroupName]
-    var ec2TagFilters: js.UndefOr[EC2TagFilterList]
     var autoRollbackConfiguration: js.UndefOr[AutoRollbackConfiguration]
-    var loadBalancerInfo: js.UndefOr[LoadBalancerInfo]
+    var autoScalingGroups: js.UndefOr[AutoScalingGroupNameList]
+    var blueGreenDeploymentConfiguration: js.UndefOr[BlueGreenDeploymentConfiguration]
+    var deploymentConfigName: js.UndefOr[DeploymentConfigName]
+    var deploymentStyle: js.UndefOr[DeploymentStyle]
+    var ec2TagFilters: js.UndefOr[EC2TagFilterList]
     var ec2TagSet: js.UndefOr[EC2TagSet]
+    var ecsServices: js.UndefOr[ECSServiceList]
+    var loadBalancerInfo: js.UndefOr[LoadBalancerInfo]
+    var onPremisesInstanceTagFilters: js.UndefOr[TagFilterList]
+    var onPremisesTagSet: js.UndefOr[OnPremisesTagSet]
+    var triggerConfigurations: js.UndefOr[TriggerConfigList]
   }
 
   object CreateDeploymentGroupInput {
     def apply(
+      applicationName: ApplicationName,
+      deploymentGroupName: DeploymentGroupName,
+      serviceRoleArn: Role,
       alarmConfiguration: js.UndefOr[AlarmConfiguration] = js.undefined,
-      blueGreenDeploymentConfiguration: js.UndefOr[BlueGreenDeploymentConfiguration] = js.undefined,
-      deploymentStyle: js.UndefOr[DeploymentStyle] = js.undefined,
-      serviceRoleArn: js.UndefOr[Role] = js.undefined,
-      autoScalingGroups: js.UndefOr[AutoScalingGroupNameList] = js.undefined,
-      triggerConfigurations: js.UndefOr[TriggerConfigList] = js.undefined,
-      applicationName: js.UndefOr[ApplicationName] = js.undefined,
-      onPremisesTagSet: js.UndefOr[OnPremisesTagSet] = js.undefined,
-      deploymentConfigName: js.UndefOr[DeploymentConfigName] = js.undefined,
-      onPremisesInstanceTagFilters: js.UndefOr[TagFilterList] = js.undefined,
-      ecsServices: js.UndefOr[ECSServiceList] = js.undefined,
-      deploymentGroupName: js.UndefOr[DeploymentGroupName] = js.undefined,
-      ec2TagFilters: js.UndefOr[EC2TagFilterList] = js.undefined,
       autoRollbackConfiguration: js.UndefOr[AutoRollbackConfiguration] = js.undefined,
+      autoScalingGroups: js.UndefOr[AutoScalingGroupNameList] = js.undefined,
+      blueGreenDeploymentConfiguration: js.UndefOr[BlueGreenDeploymentConfiguration] = js.undefined,
+      deploymentConfigName: js.UndefOr[DeploymentConfigName] = js.undefined,
+      deploymentStyle: js.UndefOr[DeploymentStyle] = js.undefined,
+      ec2TagFilters: js.UndefOr[EC2TagFilterList] = js.undefined,
+      ec2TagSet: js.UndefOr[EC2TagSet] = js.undefined,
+      ecsServices: js.UndefOr[ECSServiceList] = js.undefined,
       loadBalancerInfo: js.UndefOr[LoadBalancerInfo] = js.undefined,
-      ec2TagSet: js.UndefOr[EC2TagSet] = js.undefined): CreateDeploymentGroupInput = {
+      onPremisesInstanceTagFilters: js.UndefOr[TagFilterList] = js.undefined,
+      onPremisesTagSet: js.UndefOr[OnPremisesTagSet] = js.undefined,
+      triggerConfigurations: js.UndefOr[TriggerConfigList] = js.undefined): CreateDeploymentGroupInput = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "applicationName" -> applicationName.asInstanceOf[js.Any],
+        "deploymentGroupName" -> deploymentGroupName.asInstanceOf[js.Any],
+        "serviceRoleArn" -> serviceRoleArn.asInstanceOf[js.Any],
         "alarmConfiguration" -> alarmConfiguration.map { x => x.asInstanceOf[js.Any] },
-        "blueGreenDeploymentConfiguration" -> blueGreenDeploymentConfiguration.map { x => x.asInstanceOf[js.Any] },
-        "deploymentStyle" -> deploymentStyle.map { x => x.asInstanceOf[js.Any] },
-        "serviceRoleArn" -> serviceRoleArn.map { x => x.asInstanceOf[js.Any] },
-        "autoScalingGroups" -> autoScalingGroups.map { x => x.asInstanceOf[js.Any] },
-        "triggerConfigurations" -> triggerConfigurations.map { x => x.asInstanceOf[js.Any] },
-        "applicationName" -> applicationName.map { x => x.asInstanceOf[js.Any] },
-        "onPremisesTagSet" -> onPremisesTagSet.map { x => x.asInstanceOf[js.Any] },
-        "deploymentConfigName" -> deploymentConfigName.map { x => x.asInstanceOf[js.Any] },
-        "onPremisesInstanceTagFilters" -> onPremisesInstanceTagFilters.map { x => x.asInstanceOf[js.Any] },
-        "ecsServices" -> ecsServices.map { x => x.asInstanceOf[js.Any] },
-        "deploymentGroupName" -> deploymentGroupName.map { x => x.asInstanceOf[js.Any] },
-        "ec2TagFilters" -> ec2TagFilters.map { x => x.asInstanceOf[js.Any] },
         "autoRollbackConfiguration" -> autoRollbackConfiguration.map { x => x.asInstanceOf[js.Any] },
+        "autoScalingGroups" -> autoScalingGroups.map { x => x.asInstanceOf[js.Any] },
+        "blueGreenDeploymentConfiguration" -> blueGreenDeploymentConfiguration.map { x => x.asInstanceOf[js.Any] },
+        "deploymentConfigName" -> deploymentConfigName.map { x => x.asInstanceOf[js.Any] },
+        "deploymentStyle" -> deploymentStyle.map { x => x.asInstanceOf[js.Any] },
+        "ec2TagFilters" -> ec2TagFilters.map { x => x.asInstanceOf[js.Any] },
+        "ec2TagSet" -> ec2TagSet.map { x => x.asInstanceOf[js.Any] },
+        "ecsServices" -> ecsServices.map { x => x.asInstanceOf[js.Any] },
         "loadBalancerInfo" -> loadBalancerInfo.map { x => x.asInstanceOf[js.Any] },
-        "ec2TagSet" -> ec2TagSet.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "onPremisesInstanceTagFilters" -> onPremisesInstanceTagFilters.map { x => x.asInstanceOf[js.Any] },
+        "onPremisesTagSet" -> onPremisesTagSet.map { x => x.asInstanceOf[js.Any] },
+        "triggerConfigurations" -> triggerConfigurations.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateDeploymentGroupInput]
     }
@@ -885,41 +885,41 @@ package codedeploy {
    */
   @js.native
   trait CreateDeploymentInput extends js.Object {
-    var targetInstances: js.UndefOr[TargetInstances]
-    var description: js.UndefOr[Description]
-    var applicationName: js.UndefOr[ApplicationName]
-    var revision: js.UndefOr[RevisionLocation]
+    var applicationName: ApplicationName
+    var autoRollbackConfiguration: js.UndefOr[AutoRollbackConfiguration]
     var deploymentConfigName: js.UndefOr[DeploymentConfigName]
     var deploymentGroupName: js.UndefOr[DeploymentGroupName]
-    var autoRollbackConfiguration: js.UndefOr[AutoRollbackConfiguration]
-    var ignoreApplicationStopFailures: js.UndefOr[Boolean]
-    var updateOutdatedInstancesOnly: js.UndefOr[Boolean]
+    var description: js.UndefOr[Description]
     var fileExistsBehavior: js.UndefOr[FileExistsBehavior]
+    var ignoreApplicationStopFailures: js.UndefOr[Boolean]
+    var revision: js.UndefOr[RevisionLocation]
+    var targetInstances: js.UndefOr[TargetInstances]
+    var updateOutdatedInstancesOnly: js.UndefOr[Boolean]
   }
 
   object CreateDeploymentInput {
     def apply(
-      targetInstances: js.UndefOr[TargetInstances] = js.undefined,
-      description: js.UndefOr[Description] = js.undefined,
-      applicationName: js.UndefOr[ApplicationName] = js.undefined,
-      revision: js.UndefOr[RevisionLocation] = js.undefined,
+      applicationName: ApplicationName,
+      autoRollbackConfiguration: js.UndefOr[AutoRollbackConfiguration] = js.undefined,
       deploymentConfigName: js.UndefOr[DeploymentConfigName] = js.undefined,
       deploymentGroupName: js.UndefOr[DeploymentGroupName] = js.undefined,
-      autoRollbackConfiguration: js.UndefOr[AutoRollbackConfiguration] = js.undefined,
+      description: js.UndefOr[Description] = js.undefined,
+      fileExistsBehavior: js.UndefOr[FileExistsBehavior] = js.undefined,
       ignoreApplicationStopFailures: js.UndefOr[Boolean] = js.undefined,
-      updateOutdatedInstancesOnly: js.UndefOr[Boolean] = js.undefined,
-      fileExistsBehavior: js.UndefOr[FileExistsBehavior] = js.undefined): CreateDeploymentInput = {
+      revision: js.UndefOr[RevisionLocation] = js.undefined,
+      targetInstances: js.UndefOr[TargetInstances] = js.undefined,
+      updateOutdatedInstancesOnly: js.UndefOr[Boolean] = js.undefined): CreateDeploymentInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "targetInstances" -> targetInstances.map { x => x.asInstanceOf[js.Any] },
-        "description" -> description.map { x => x.asInstanceOf[js.Any] },
-        "applicationName" -> applicationName.map { x => x.asInstanceOf[js.Any] },
-        "revision" -> revision.map { x => x.asInstanceOf[js.Any] },
+        "applicationName" -> applicationName.asInstanceOf[js.Any],
+        "autoRollbackConfiguration" -> autoRollbackConfiguration.map { x => x.asInstanceOf[js.Any] },
         "deploymentConfigName" -> deploymentConfigName.map { x => x.asInstanceOf[js.Any] },
         "deploymentGroupName" -> deploymentGroupName.map { x => x.asInstanceOf[js.Any] },
-        "autoRollbackConfiguration" -> autoRollbackConfiguration.map { x => x.asInstanceOf[js.Any] },
+        "description" -> description.map { x => x.asInstanceOf[js.Any] },
+        "fileExistsBehavior" -> fileExistsBehavior.map { x => x.asInstanceOf[js.Any] },
         "ignoreApplicationStopFailures" -> ignoreApplicationStopFailures.map { x => x.asInstanceOf[js.Any] },
-        "updateOutdatedInstancesOnly" -> updateOutdatedInstancesOnly.map { x => x.asInstanceOf[js.Any] },
-        "fileExistsBehavior" -> fileExistsBehavior.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "revision" -> revision.map { x => x.asInstanceOf[js.Any] },
+        "targetInstances" -> targetInstances.map { x => x.asInstanceOf[js.Any] },
+        "updateOutdatedInstancesOnly" -> updateOutdatedInstancesOnly.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateDeploymentInput]
     }
@@ -948,14 +948,14 @@ package codedeploy {
    */
   @js.native
   trait DeleteApplicationInput extends js.Object {
-    var applicationName: js.UndefOr[ApplicationName]
+    var applicationName: ApplicationName
   }
 
   object DeleteApplicationInput {
     def apply(
-      applicationName: js.UndefOr[ApplicationName] = js.undefined): DeleteApplicationInput = {
+      applicationName: ApplicationName): DeleteApplicationInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "applicationName" -> applicationName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "applicationName" -> applicationName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteApplicationInput]
     }
@@ -966,14 +966,14 @@ package codedeploy {
    */
   @js.native
   trait DeleteDeploymentConfigInput extends js.Object {
-    var deploymentConfigName: js.UndefOr[DeploymentConfigName]
+    var deploymentConfigName: DeploymentConfigName
   }
 
   object DeleteDeploymentConfigInput {
     def apply(
-      deploymentConfigName: js.UndefOr[DeploymentConfigName] = js.undefined): DeleteDeploymentConfigInput = {
+      deploymentConfigName: DeploymentConfigName): DeleteDeploymentConfigInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "deploymentConfigName" -> deploymentConfigName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "deploymentConfigName" -> deploymentConfigName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteDeploymentConfigInput]
     }
@@ -984,17 +984,17 @@ package codedeploy {
    */
   @js.native
   trait DeleteDeploymentGroupInput extends js.Object {
-    var applicationName: js.UndefOr[ApplicationName]
-    var deploymentGroupName: js.UndefOr[DeploymentGroupName]
+    var applicationName: ApplicationName
+    var deploymentGroupName: DeploymentGroupName
   }
 
   object DeleteDeploymentGroupInput {
     def apply(
-      applicationName: js.UndefOr[ApplicationName] = js.undefined,
-      deploymentGroupName: js.UndefOr[DeploymentGroupName] = js.undefined): DeleteDeploymentGroupInput = {
+      applicationName: ApplicationName,
+      deploymentGroupName: DeploymentGroupName): DeleteDeploymentGroupInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "applicationName" -> applicationName.map { x => x.asInstanceOf[js.Any] },
-        "deploymentGroupName" -> deploymentGroupName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "applicationName" -> applicationName.asInstanceOf[js.Any],
+        "deploymentGroupName" -> deploymentGroupName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteDeploymentGroupInput]
     }
@@ -1060,28 +1060,28 @@ package codedeploy {
   @js.native
   trait DeploymentConfigInfo extends js.Object {
     var computePlatform: js.UndefOr[ComputePlatform]
-    var minimumHealthyHosts: js.UndefOr[MinimumHealthyHosts]
     var createTime: js.UndefOr[Timestamp]
-    var trafficRoutingConfig: js.UndefOr[TrafficRoutingConfig]
     var deploymentConfigId: js.UndefOr[DeploymentConfigId]
     var deploymentConfigName: js.UndefOr[DeploymentConfigName]
+    var minimumHealthyHosts: js.UndefOr[MinimumHealthyHosts]
+    var trafficRoutingConfig: js.UndefOr[TrafficRoutingConfig]
   }
 
   object DeploymentConfigInfo {
     def apply(
       computePlatform: js.UndefOr[ComputePlatform] = js.undefined,
-      minimumHealthyHosts: js.UndefOr[MinimumHealthyHosts] = js.undefined,
       createTime: js.UndefOr[Timestamp] = js.undefined,
-      trafficRoutingConfig: js.UndefOr[TrafficRoutingConfig] = js.undefined,
       deploymentConfigId: js.UndefOr[DeploymentConfigId] = js.undefined,
-      deploymentConfigName: js.UndefOr[DeploymentConfigName] = js.undefined): DeploymentConfigInfo = {
+      deploymentConfigName: js.UndefOr[DeploymentConfigName] = js.undefined,
+      minimumHealthyHosts: js.UndefOr[MinimumHealthyHosts] = js.undefined,
+      trafficRoutingConfig: js.UndefOr[TrafficRoutingConfig] = js.undefined): DeploymentConfigInfo = {
       val _fields = IndexedSeq[(String, js.Any)](
         "computePlatform" -> computePlatform.map { x => x.asInstanceOf[js.Any] },
-        "minimumHealthyHosts" -> minimumHealthyHosts.map { x => x.asInstanceOf[js.Any] },
         "createTime" -> createTime.map { x => x.asInstanceOf[js.Any] },
-        "trafficRoutingConfig" -> trafficRoutingConfig.map { x => x.asInstanceOf[js.Any] },
         "deploymentConfigId" -> deploymentConfigId.map { x => x.asInstanceOf[js.Any] },
-        "deploymentConfigName" -> deploymentConfigName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "deploymentConfigName" -> deploymentConfigName.map { x => x.asInstanceOf[js.Any] },
+        "minimumHealthyHosts" -> minimumHealthyHosts.map { x => x.asInstanceOf[js.Any] },
+        "trafficRoutingConfig" -> trafficRoutingConfig.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeploymentConfigInfo]
     }
@@ -1101,73 +1101,73 @@ package codedeploy {
   @js.native
   trait DeploymentGroupInfo extends js.Object {
     var alarmConfiguration: js.UndefOr[AlarmConfiguration]
+    var applicationName: js.UndefOr[ApplicationName]
+    var autoRollbackConfiguration: js.UndefOr[AutoRollbackConfiguration]
+    var autoScalingGroups: js.UndefOr[AutoScalingGroupList]
     var blueGreenDeploymentConfiguration: js.UndefOr[BlueGreenDeploymentConfiguration]
     var computePlatform: js.UndefOr[ComputePlatform]
-    var deploymentStyle: js.UndefOr[DeploymentStyle]
-    var serviceRoleArn: js.UndefOr[Role]
-    var autoScalingGroups: js.UndefOr[AutoScalingGroupList]
-    var triggerConfigurations: js.UndefOr[TriggerConfigList]
-    var applicationName: js.UndefOr[ApplicationName]
-    var deploymentGroupId: js.UndefOr[DeploymentGroupId]
-    var targetRevision: js.UndefOr[RevisionLocation]
-    var onPremisesTagSet: js.UndefOr[OnPremisesTagSet]
     var deploymentConfigName: js.UndefOr[DeploymentConfigName]
-    var onPremisesInstanceTagFilters: js.UndefOr[TagFilterList]
-    var ecsServices: js.UndefOr[ECSServiceList]
+    var deploymentGroupId: js.UndefOr[DeploymentGroupId]
     var deploymentGroupName: js.UndefOr[DeploymentGroupName]
+    var deploymentStyle: js.UndefOr[DeploymentStyle]
     var ec2TagFilters: js.UndefOr[EC2TagFilterList]
-    var autoRollbackConfiguration: js.UndefOr[AutoRollbackConfiguration]
-    var loadBalancerInfo: js.UndefOr[LoadBalancerInfo]
+    var ec2TagSet: js.UndefOr[EC2TagSet]
+    var ecsServices: js.UndefOr[ECSServiceList]
     var lastAttemptedDeployment: js.UndefOr[LastDeploymentInfo]
     var lastSuccessfulDeployment: js.UndefOr[LastDeploymentInfo]
-    var ec2TagSet: js.UndefOr[EC2TagSet]
+    var loadBalancerInfo: js.UndefOr[LoadBalancerInfo]
+    var onPremisesInstanceTagFilters: js.UndefOr[TagFilterList]
+    var onPremisesTagSet: js.UndefOr[OnPremisesTagSet]
+    var serviceRoleArn: js.UndefOr[Role]
+    var targetRevision: js.UndefOr[RevisionLocation]
+    var triggerConfigurations: js.UndefOr[TriggerConfigList]
   }
 
   object DeploymentGroupInfo {
     def apply(
       alarmConfiguration: js.UndefOr[AlarmConfiguration] = js.undefined,
+      applicationName: js.UndefOr[ApplicationName] = js.undefined,
+      autoRollbackConfiguration: js.UndefOr[AutoRollbackConfiguration] = js.undefined,
+      autoScalingGroups: js.UndefOr[AutoScalingGroupList] = js.undefined,
       blueGreenDeploymentConfiguration: js.UndefOr[BlueGreenDeploymentConfiguration] = js.undefined,
       computePlatform: js.UndefOr[ComputePlatform] = js.undefined,
-      deploymentStyle: js.UndefOr[DeploymentStyle] = js.undefined,
-      serviceRoleArn: js.UndefOr[Role] = js.undefined,
-      autoScalingGroups: js.UndefOr[AutoScalingGroupList] = js.undefined,
-      triggerConfigurations: js.UndefOr[TriggerConfigList] = js.undefined,
-      applicationName: js.UndefOr[ApplicationName] = js.undefined,
-      deploymentGroupId: js.UndefOr[DeploymentGroupId] = js.undefined,
-      targetRevision: js.UndefOr[RevisionLocation] = js.undefined,
-      onPremisesTagSet: js.UndefOr[OnPremisesTagSet] = js.undefined,
       deploymentConfigName: js.UndefOr[DeploymentConfigName] = js.undefined,
-      onPremisesInstanceTagFilters: js.UndefOr[TagFilterList] = js.undefined,
-      ecsServices: js.UndefOr[ECSServiceList] = js.undefined,
+      deploymentGroupId: js.UndefOr[DeploymentGroupId] = js.undefined,
       deploymentGroupName: js.UndefOr[DeploymentGroupName] = js.undefined,
+      deploymentStyle: js.UndefOr[DeploymentStyle] = js.undefined,
       ec2TagFilters: js.UndefOr[EC2TagFilterList] = js.undefined,
-      autoRollbackConfiguration: js.UndefOr[AutoRollbackConfiguration] = js.undefined,
-      loadBalancerInfo: js.UndefOr[LoadBalancerInfo] = js.undefined,
+      ec2TagSet: js.UndefOr[EC2TagSet] = js.undefined,
+      ecsServices: js.UndefOr[ECSServiceList] = js.undefined,
       lastAttemptedDeployment: js.UndefOr[LastDeploymentInfo] = js.undefined,
       lastSuccessfulDeployment: js.UndefOr[LastDeploymentInfo] = js.undefined,
-      ec2TagSet: js.UndefOr[EC2TagSet] = js.undefined): DeploymentGroupInfo = {
+      loadBalancerInfo: js.UndefOr[LoadBalancerInfo] = js.undefined,
+      onPremisesInstanceTagFilters: js.UndefOr[TagFilterList] = js.undefined,
+      onPremisesTagSet: js.UndefOr[OnPremisesTagSet] = js.undefined,
+      serviceRoleArn: js.UndefOr[Role] = js.undefined,
+      targetRevision: js.UndefOr[RevisionLocation] = js.undefined,
+      triggerConfigurations: js.UndefOr[TriggerConfigList] = js.undefined): DeploymentGroupInfo = {
       val _fields = IndexedSeq[(String, js.Any)](
         "alarmConfiguration" -> alarmConfiguration.map { x => x.asInstanceOf[js.Any] },
+        "applicationName" -> applicationName.map { x => x.asInstanceOf[js.Any] },
+        "autoRollbackConfiguration" -> autoRollbackConfiguration.map { x => x.asInstanceOf[js.Any] },
+        "autoScalingGroups" -> autoScalingGroups.map { x => x.asInstanceOf[js.Any] },
         "blueGreenDeploymentConfiguration" -> blueGreenDeploymentConfiguration.map { x => x.asInstanceOf[js.Any] },
         "computePlatform" -> computePlatform.map { x => x.asInstanceOf[js.Any] },
-        "deploymentStyle" -> deploymentStyle.map { x => x.asInstanceOf[js.Any] },
-        "serviceRoleArn" -> serviceRoleArn.map { x => x.asInstanceOf[js.Any] },
-        "autoScalingGroups" -> autoScalingGroups.map { x => x.asInstanceOf[js.Any] },
-        "triggerConfigurations" -> triggerConfigurations.map { x => x.asInstanceOf[js.Any] },
-        "applicationName" -> applicationName.map { x => x.asInstanceOf[js.Any] },
-        "deploymentGroupId" -> deploymentGroupId.map { x => x.asInstanceOf[js.Any] },
-        "targetRevision" -> targetRevision.map { x => x.asInstanceOf[js.Any] },
-        "onPremisesTagSet" -> onPremisesTagSet.map { x => x.asInstanceOf[js.Any] },
         "deploymentConfigName" -> deploymentConfigName.map { x => x.asInstanceOf[js.Any] },
-        "onPremisesInstanceTagFilters" -> onPremisesInstanceTagFilters.map { x => x.asInstanceOf[js.Any] },
-        "ecsServices" -> ecsServices.map { x => x.asInstanceOf[js.Any] },
+        "deploymentGroupId" -> deploymentGroupId.map { x => x.asInstanceOf[js.Any] },
         "deploymentGroupName" -> deploymentGroupName.map { x => x.asInstanceOf[js.Any] },
+        "deploymentStyle" -> deploymentStyle.map { x => x.asInstanceOf[js.Any] },
         "ec2TagFilters" -> ec2TagFilters.map { x => x.asInstanceOf[js.Any] },
-        "autoRollbackConfiguration" -> autoRollbackConfiguration.map { x => x.asInstanceOf[js.Any] },
-        "loadBalancerInfo" -> loadBalancerInfo.map { x => x.asInstanceOf[js.Any] },
+        "ec2TagSet" -> ec2TagSet.map { x => x.asInstanceOf[js.Any] },
+        "ecsServices" -> ecsServices.map { x => x.asInstanceOf[js.Any] },
         "lastAttemptedDeployment" -> lastAttemptedDeployment.map { x => x.asInstanceOf[js.Any] },
         "lastSuccessfulDeployment" -> lastSuccessfulDeployment.map { x => x.asInstanceOf[js.Any] },
-        "ec2TagSet" -> ec2TagSet.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "loadBalancerInfo" -> loadBalancerInfo.map { x => x.asInstanceOf[js.Any] },
+        "onPremisesInstanceTagFilters" -> onPremisesInstanceTagFilters.map { x => x.asInstanceOf[js.Any] },
+        "onPremisesTagSet" -> onPremisesTagSet.map { x => x.asInstanceOf[js.Any] },
+        "serviceRoleArn" -> serviceRoleArn.map { x => x.asInstanceOf[js.Any] },
+        "targetRevision" -> targetRevision.map { x => x.asInstanceOf[js.Any] },
+        "triggerConfigurations" -> triggerConfigurations.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeploymentGroupInfo]
     }
@@ -1178,92 +1178,92 @@ package codedeploy {
    */
   @js.native
   trait DeploymentInfo extends js.Object {
-    var instanceTerminationWaitTimeStarted: js.UndefOr[Boolean]
-    var blueGreenDeploymentConfiguration: js.UndefOr[BlueGreenDeploymentConfiguration]
-    var rollbackInfo: js.UndefOr[RollbackInfo]
-    var startTime: js.UndefOr[Timestamp]
     var additionalDeploymentStatusInfo: js.UndefOr[AdditionalDeploymentStatusInfo]
-    var targetInstances: js.UndefOr[TargetInstances]
+    var applicationName: js.UndefOr[ApplicationName]
+    var autoRollbackConfiguration: js.UndefOr[AutoRollbackConfiguration]
+    var blueGreenDeploymentConfiguration: js.UndefOr[BlueGreenDeploymentConfiguration]
+    var completeTime: js.UndefOr[Timestamp]
     var computePlatform: js.UndefOr[ComputePlatform]
     var createTime: js.UndefOr[Timestamp]
-    var description: js.UndefOr[Description]
-    var deploymentStyle: js.UndefOr[DeploymentStyle]
-    var completeTime: js.UndefOr[Timestamp]
-    var deploymentId: js.UndefOr[DeploymentId]
-    var applicationName: js.UndefOr[ApplicationName]
     var creator: js.UndefOr[DeploymentCreator]
-    var deploymentOverview: js.UndefOr[DeploymentOverview]
-    var revision: js.UndefOr[RevisionLocation]
-    var deploymentStatusMessages: js.UndefOr[DeploymentStatusMessageList]
     var deploymentConfigName: js.UndefOr[DeploymentConfigName]
-    var status: js.UndefOr[DeploymentStatus]
     var deploymentGroupName: js.UndefOr[DeploymentGroupName]
-    var autoRollbackConfiguration: js.UndefOr[AutoRollbackConfiguration]
-    var loadBalancerInfo: js.UndefOr[LoadBalancerInfo]
-    var ignoreApplicationStopFailures: js.UndefOr[Boolean]
-    var previousRevision: js.UndefOr[RevisionLocation]
-    var updateOutdatedInstancesOnly: js.UndefOr[Boolean]
+    var deploymentId: js.UndefOr[DeploymentId]
+    var deploymentOverview: js.UndefOr[DeploymentOverview]
+    var deploymentStatusMessages: js.UndefOr[DeploymentStatusMessageList]
+    var deploymentStyle: js.UndefOr[DeploymentStyle]
+    var description: js.UndefOr[Description]
     var errorInformation: js.UndefOr[ErrorInformation]
     var fileExistsBehavior: js.UndefOr[FileExistsBehavior]
+    var ignoreApplicationStopFailures: js.UndefOr[Boolean]
+    var instanceTerminationWaitTimeStarted: js.UndefOr[Boolean]
+    var loadBalancerInfo: js.UndefOr[LoadBalancerInfo]
+    var previousRevision: js.UndefOr[RevisionLocation]
+    var revision: js.UndefOr[RevisionLocation]
+    var rollbackInfo: js.UndefOr[RollbackInfo]
+    var startTime: js.UndefOr[Timestamp]
+    var status: js.UndefOr[DeploymentStatus]
+    var targetInstances: js.UndefOr[TargetInstances]
+    var updateOutdatedInstancesOnly: js.UndefOr[Boolean]
   }
 
   object DeploymentInfo {
     def apply(
-      instanceTerminationWaitTimeStarted: js.UndefOr[Boolean] = js.undefined,
-      blueGreenDeploymentConfiguration: js.UndefOr[BlueGreenDeploymentConfiguration] = js.undefined,
-      rollbackInfo: js.UndefOr[RollbackInfo] = js.undefined,
-      startTime: js.UndefOr[Timestamp] = js.undefined,
       additionalDeploymentStatusInfo: js.UndefOr[AdditionalDeploymentStatusInfo] = js.undefined,
-      targetInstances: js.UndefOr[TargetInstances] = js.undefined,
+      applicationName: js.UndefOr[ApplicationName] = js.undefined,
+      autoRollbackConfiguration: js.UndefOr[AutoRollbackConfiguration] = js.undefined,
+      blueGreenDeploymentConfiguration: js.UndefOr[BlueGreenDeploymentConfiguration] = js.undefined,
+      completeTime: js.UndefOr[Timestamp] = js.undefined,
       computePlatform: js.UndefOr[ComputePlatform] = js.undefined,
       createTime: js.UndefOr[Timestamp] = js.undefined,
-      description: js.UndefOr[Description] = js.undefined,
-      deploymentStyle: js.UndefOr[DeploymentStyle] = js.undefined,
-      completeTime: js.UndefOr[Timestamp] = js.undefined,
-      deploymentId: js.UndefOr[DeploymentId] = js.undefined,
-      applicationName: js.UndefOr[ApplicationName] = js.undefined,
       creator: js.UndefOr[DeploymentCreator] = js.undefined,
-      deploymentOverview: js.UndefOr[DeploymentOverview] = js.undefined,
-      revision: js.UndefOr[RevisionLocation] = js.undefined,
-      deploymentStatusMessages: js.UndefOr[DeploymentStatusMessageList] = js.undefined,
       deploymentConfigName: js.UndefOr[DeploymentConfigName] = js.undefined,
-      status: js.UndefOr[DeploymentStatus] = js.undefined,
       deploymentGroupName: js.UndefOr[DeploymentGroupName] = js.undefined,
-      autoRollbackConfiguration: js.UndefOr[AutoRollbackConfiguration] = js.undefined,
-      loadBalancerInfo: js.UndefOr[LoadBalancerInfo] = js.undefined,
-      ignoreApplicationStopFailures: js.UndefOr[Boolean] = js.undefined,
-      previousRevision: js.UndefOr[RevisionLocation] = js.undefined,
-      updateOutdatedInstancesOnly: js.UndefOr[Boolean] = js.undefined,
+      deploymentId: js.UndefOr[DeploymentId] = js.undefined,
+      deploymentOverview: js.UndefOr[DeploymentOverview] = js.undefined,
+      deploymentStatusMessages: js.UndefOr[DeploymentStatusMessageList] = js.undefined,
+      deploymentStyle: js.UndefOr[DeploymentStyle] = js.undefined,
+      description: js.UndefOr[Description] = js.undefined,
       errorInformation: js.UndefOr[ErrorInformation] = js.undefined,
-      fileExistsBehavior: js.UndefOr[FileExistsBehavior] = js.undefined): DeploymentInfo = {
+      fileExistsBehavior: js.UndefOr[FileExistsBehavior] = js.undefined,
+      ignoreApplicationStopFailures: js.UndefOr[Boolean] = js.undefined,
+      instanceTerminationWaitTimeStarted: js.UndefOr[Boolean] = js.undefined,
+      loadBalancerInfo: js.UndefOr[LoadBalancerInfo] = js.undefined,
+      previousRevision: js.UndefOr[RevisionLocation] = js.undefined,
+      revision: js.UndefOr[RevisionLocation] = js.undefined,
+      rollbackInfo: js.UndefOr[RollbackInfo] = js.undefined,
+      startTime: js.UndefOr[Timestamp] = js.undefined,
+      status: js.UndefOr[DeploymentStatus] = js.undefined,
+      targetInstances: js.UndefOr[TargetInstances] = js.undefined,
+      updateOutdatedInstancesOnly: js.UndefOr[Boolean] = js.undefined): DeploymentInfo = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "instanceTerminationWaitTimeStarted" -> instanceTerminationWaitTimeStarted.map { x => x.asInstanceOf[js.Any] },
-        "blueGreenDeploymentConfiguration" -> blueGreenDeploymentConfiguration.map { x => x.asInstanceOf[js.Any] },
-        "rollbackInfo" -> rollbackInfo.map { x => x.asInstanceOf[js.Any] },
-        "startTime" -> startTime.map { x => x.asInstanceOf[js.Any] },
         "additionalDeploymentStatusInfo" -> additionalDeploymentStatusInfo.map { x => x.asInstanceOf[js.Any] },
-        "targetInstances" -> targetInstances.map { x => x.asInstanceOf[js.Any] },
+        "applicationName" -> applicationName.map { x => x.asInstanceOf[js.Any] },
+        "autoRollbackConfiguration" -> autoRollbackConfiguration.map { x => x.asInstanceOf[js.Any] },
+        "blueGreenDeploymentConfiguration" -> blueGreenDeploymentConfiguration.map { x => x.asInstanceOf[js.Any] },
+        "completeTime" -> completeTime.map { x => x.asInstanceOf[js.Any] },
         "computePlatform" -> computePlatform.map { x => x.asInstanceOf[js.Any] },
         "createTime" -> createTime.map { x => x.asInstanceOf[js.Any] },
-        "description" -> description.map { x => x.asInstanceOf[js.Any] },
-        "deploymentStyle" -> deploymentStyle.map { x => x.asInstanceOf[js.Any] },
-        "completeTime" -> completeTime.map { x => x.asInstanceOf[js.Any] },
-        "deploymentId" -> deploymentId.map { x => x.asInstanceOf[js.Any] },
-        "applicationName" -> applicationName.map { x => x.asInstanceOf[js.Any] },
         "creator" -> creator.map { x => x.asInstanceOf[js.Any] },
-        "deploymentOverview" -> deploymentOverview.map { x => x.asInstanceOf[js.Any] },
-        "revision" -> revision.map { x => x.asInstanceOf[js.Any] },
-        "deploymentStatusMessages" -> deploymentStatusMessages.map { x => x.asInstanceOf[js.Any] },
         "deploymentConfigName" -> deploymentConfigName.map { x => x.asInstanceOf[js.Any] },
-        "status" -> status.map { x => x.asInstanceOf[js.Any] },
         "deploymentGroupName" -> deploymentGroupName.map { x => x.asInstanceOf[js.Any] },
-        "autoRollbackConfiguration" -> autoRollbackConfiguration.map { x => x.asInstanceOf[js.Any] },
-        "loadBalancerInfo" -> loadBalancerInfo.map { x => x.asInstanceOf[js.Any] },
-        "ignoreApplicationStopFailures" -> ignoreApplicationStopFailures.map { x => x.asInstanceOf[js.Any] },
-        "previousRevision" -> previousRevision.map { x => x.asInstanceOf[js.Any] },
-        "updateOutdatedInstancesOnly" -> updateOutdatedInstancesOnly.map { x => x.asInstanceOf[js.Any] },
+        "deploymentId" -> deploymentId.map { x => x.asInstanceOf[js.Any] },
+        "deploymentOverview" -> deploymentOverview.map { x => x.asInstanceOf[js.Any] },
+        "deploymentStatusMessages" -> deploymentStatusMessages.map { x => x.asInstanceOf[js.Any] },
+        "deploymentStyle" -> deploymentStyle.map { x => x.asInstanceOf[js.Any] },
+        "description" -> description.map { x => x.asInstanceOf[js.Any] },
         "errorInformation" -> errorInformation.map { x => x.asInstanceOf[js.Any] },
-        "fileExistsBehavior" -> fileExistsBehavior.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "fileExistsBehavior" -> fileExistsBehavior.map { x => x.asInstanceOf[js.Any] },
+        "ignoreApplicationStopFailures" -> ignoreApplicationStopFailures.map { x => x.asInstanceOf[js.Any] },
+        "instanceTerminationWaitTimeStarted" -> instanceTerminationWaitTimeStarted.map { x => x.asInstanceOf[js.Any] },
+        "loadBalancerInfo" -> loadBalancerInfo.map { x => x.asInstanceOf[js.Any] },
+        "previousRevision" -> previousRevision.map { x => x.asInstanceOf[js.Any] },
+        "revision" -> revision.map { x => x.asInstanceOf[js.Any] },
+        "rollbackInfo" -> rollbackInfo.map { x => x.asInstanceOf[js.Any] },
+        "startTime" -> startTime.map { x => x.asInstanceOf[js.Any] },
+        "status" -> status.map { x => x.asInstanceOf[js.Any] },
+        "targetInstances" -> targetInstances.map { x => x.asInstanceOf[js.Any] },
+        "updateOutdatedInstancesOnly" -> updateOutdatedInstancesOnly.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeploymentInfo]
     }
@@ -1281,29 +1281,29 @@ package codedeploy {
    */
   @js.native
   trait DeploymentOverview extends js.Object {
+    var Failed: js.UndefOr[InstanceCount]
+    var InProgress: js.UndefOr[InstanceCount]
     var Pending: js.UndefOr[InstanceCount]
     var Ready: js.UndefOr[InstanceCount]
-    var InProgress: js.UndefOr[InstanceCount]
-    var Succeeded: js.UndefOr[InstanceCount]
     var Skipped: js.UndefOr[InstanceCount]
-    var Failed: js.UndefOr[InstanceCount]
+    var Succeeded: js.UndefOr[InstanceCount]
   }
 
   object DeploymentOverview {
     def apply(
+      Failed: js.UndefOr[InstanceCount] = js.undefined,
+      InProgress: js.UndefOr[InstanceCount] = js.undefined,
       Pending: js.UndefOr[InstanceCount] = js.undefined,
       Ready: js.UndefOr[InstanceCount] = js.undefined,
-      InProgress: js.UndefOr[InstanceCount] = js.undefined,
-      Succeeded: js.UndefOr[InstanceCount] = js.undefined,
       Skipped: js.UndefOr[InstanceCount] = js.undefined,
-      Failed: js.UndefOr[InstanceCount] = js.undefined): DeploymentOverview = {
+      Succeeded: js.UndefOr[InstanceCount] = js.undefined): DeploymentOverview = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "Failed" -> Failed.map { x => x.asInstanceOf[js.Any] },
+        "InProgress" -> InProgress.map { x => x.asInstanceOf[js.Any] },
         "Pending" -> Pending.map { x => x.asInstanceOf[js.Any] },
         "Ready" -> Ready.map { x => x.asInstanceOf[js.Any] },
-        "InProgress" -> InProgress.map { x => x.asInstanceOf[js.Any] },
-        "Succeeded" -> Succeeded.map { x => x.asInstanceOf[js.Any] },
         "Skipped" -> Skipped.map { x => x.asInstanceOf[js.Any] },
-        "Failed" -> Failed.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Succeeded" -> Succeeded.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeploymentOverview]
     }
@@ -1354,17 +1354,17 @@ package codedeploy {
    */
   @js.native
   trait DeploymentStyle extends js.Object {
-    var deploymentType: js.UndefOr[DeploymentType]
     var deploymentOption: js.UndefOr[DeploymentOption]
+    var deploymentType: js.UndefOr[DeploymentType]
   }
 
   object DeploymentStyle {
     def apply(
-      deploymentType: js.UndefOr[DeploymentType] = js.undefined,
-      deploymentOption: js.UndefOr[DeploymentOption] = js.undefined): DeploymentStyle = {
+      deploymentOption: js.UndefOr[DeploymentOption] = js.undefined,
+      deploymentType: js.UndefOr[DeploymentType] = js.undefined): DeploymentStyle = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "deploymentType" -> deploymentType.map { x => x.asInstanceOf[js.Any] },
-        "deploymentOption" -> deploymentOption.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "deploymentOption" -> deploymentOption.map { x => x.asInstanceOf[js.Any] },
+        "deploymentType" -> deploymentType.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeploymentStyle]
     }
@@ -1376,22 +1376,22 @@ package codedeploy {
   @js.native
   trait DeploymentTarget extends js.Object {
     var deploymentTargetType: js.UndefOr[DeploymentTargetType]
+    var ecsTarget: js.UndefOr[ECSTarget]
     var instanceTarget: js.UndefOr[InstanceTarget]
     var lambdaTarget: js.UndefOr[LambdaTarget]
-    var ecsTarget: js.UndefOr[ECSTarget]
   }
 
   object DeploymentTarget {
     def apply(
       deploymentTargetType: js.UndefOr[DeploymentTargetType] = js.undefined,
+      ecsTarget: js.UndefOr[ECSTarget] = js.undefined,
       instanceTarget: js.UndefOr[InstanceTarget] = js.undefined,
-      lambdaTarget: js.UndefOr[LambdaTarget] = js.undefined,
-      ecsTarget: js.UndefOr[ECSTarget] = js.undefined): DeploymentTarget = {
+      lambdaTarget: js.UndefOr[LambdaTarget] = js.undefined): DeploymentTarget = {
       val _fields = IndexedSeq[(String, js.Any)](
         "deploymentTargetType" -> deploymentTargetType.map { x => x.asInstanceOf[js.Any] },
+        "ecsTarget" -> ecsTarget.map { x => x.asInstanceOf[js.Any] },
         "instanceTarget" -> instanceTarget.map { x => x.asInstanceOf[js.Any] },
-        "lambdaTarget" -> lambdaTarget.map { x => x.asInstanceOf[js.Any] },
-        "ecsTarget" -> ecsTarget.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "lambdaTarget" -> lambdaTarget.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeploymentTarget]
     }
@@ -1424,14 +1424,14 @@ package codedeploy {
    */
   @js.native
   trait DeregisterOnPremisesInstanceInput extends js.Object {
-    var instanceName: js.UndefOr[InstanceName]
+    var instanceName: InstanceName
   }
 
   object DeregisterOnPremisesInstanceInput {
     def apply(
-      instanceName: js.UndefOr[InstanceName] = js.undefined): DeregisterOnPremisesInstanceInput = {
+      instanceName: InstanceName): DeregisterOnPremisesInstanceInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "instanceName" -> instanceName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "instanceName" -> instanceName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeregisterOnPremisesInstanceInput]
     }
@@ -1443,22 +1443,22 @@ package codedeploy {
   @js.native
   trait Diagnostics extends js.Object {
     var errorCode: js.UndefOr[LifecycleErrorCode]
-    var scriptName: js.UndefOr[ScriptName]
-    var message: js.UndefOr[LifecycleMessage]
     var logTail: js.UndefOr[LogTail]
+    var message: js.UndefOr[LifecycleMessage]
+    var scriptName: js.UndefOr[ScriptName]
   }
 
   object Diagnostics {
     def apply(
       errorCode: js.UndefOr[LifecycleErrorCode] = js.undefined,
-      scriptName: js.UndefOr[ScriptName] = js.undefined,
+      logTail: js.UndefOr[LogTail] = js.undefined,
       message: js.UndefOr[LifecycleMessage] = js.undefined,
-      logTail: js.UndefOr[LogTail] = js.undefined): Diagnostics = {
+      scriptName: js.UndefOr[ScriptName] = js.undefined): Diagnostics = {
       val _fields = IndexedSeq[(String, js.Any)](
         "errorCode" -> errorCode.map { x => x.asInstanceOf[js.Any] },
-        "scriptName" -> scriptName.map { x => x.asInstanceOf[js.Any] },
+        "logTail" -> logTail.map { x => x.asInstanceOf[js.Any] },
         "message" -> message.map { x => x.asInstanceOf[js.Any] },
-        "logTail" -> logTail.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "scriptName" -> scriptName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Diagnostics]
     }
@@ -1470,19 +1470,19 @@ package codedeploy {
   @js.native
   trait EC2TagFilter extends js.Object {
     var Key: js.UndefOr[Key]
-    var Value: js.UndefOr[Value]
     var Type: js.UndefOr[EC2TagFilterType]
+    var Value: js.UndefOr[Value]
   }
 
   object EC2TagFilter {
     def apply(
       Key: js.UndefOr[Key] = js.undefined,
-      Value: js.UndefOr[Value] = js.undefined,
-      Type: js.UndefOr[EC2TagFilterType] = js.undefined): EC2TagFilter = {
+      Type: js.UndefOr[EC2TagFilterType] = js.undefined,
+      Value: js.UndefOr[Value] = js.undefined): EC2TagFilter = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Key" -> Key.map { x => x.asInstanceOf[js.Any] },
-        "Value" -> Value.map { x => x.asInstanceOf[js.Any] },
-        "Type" -> Type.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Type" -> Type.map { x => x.asInstanceOf[js.Any] },
+        "Value" -> Value.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EC2TagFilter]
     }
@@ -1519,17 +1519,17 @@ package codedeploy {
    */
   @js.native
   trait ECSService extends js.Object {
-    var serviceName: js.UndefOr[ECSServiceName]
     var clusterName: js.UndefOr[ECSClusterName]
+    var serviceName: js.UndefOr[ECSServiceName]
   }
 
   object ECSService {
     def apply(
-      serviceName: js.UndefOr[ECSServiceName] = js.undefined,
-      clusterName: js.UndefOr[ECSClusterName] = js.undefined): ECSService = {
+      clusterName: js.UndefOr[ECSClusterName] = js.undefined,
+      serviceName: js.UndefOr[ECSServiceName] = js.undefined): ECSService = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "serviceName" -> serviceName.map { x => x.asInstanceOf[js.Any] },
-        "clusterName" -> clusterName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "clusterName" -> clusterName.map { x => x.asInstanceOf[js.Any] },
+        "serviceName" -> serviceName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ECSService]
     }
@@ -1540,32 +1540,32 @@ package codedeploy {
    */
   @js.native
   trait ECSTarget extends js.Object {
-    var targetArn: js.UndefOr[TargetArn]
     var deploymentId: js.UndefOr[DeploymentId]
-    var targetId: js.UndefOr[TargetId]
-    var lifecycleEvents: js.UndefOr[LifecycleEventList]
-    var taskSetsInfo: js.UndefOr[ECSTaskSetList]
-    var status: js.UndefOr[TargetStatus]
     var lastUpdatedAt: js.UndefOr[Time]
+    var lifecycleEvents: js.UndefOr[LifecycleEventList]
+    var status: js.UndefOr[TargetStatus]
+    var targetArn: js.UndefOr[TargetArn]
+    var targetId: js.UndefOr[TargetId]
+    var taskSetsInfo: js.UndefOr[ECSTaskSetList]
   }
 
   object ECSTarget {
     def apply(
-      targetArn: js.UndefOr[TargetArn] = js.undefined,
       deploymentId: js.UndefOr[DeploymentId] = js.undefined,
-      targetId: js.UndefOr[TargetId] = js.undefined,
+      lastUpdatedAt: js.UndefOr[Time] = js.undefined,
       lifecycleEvents: js.UndefOr[LifecycleEventList] = js.undefined,
-      taskSetsInfo: js.UndefOr[ECSTaskSetList] = js.undefined,
       status: js.UndefOr[TargetStatus] = js.undefined,
-      lastUpdatedAt: js.UndefOr[Time] = js.undefined): ECSTarget = {
+      targetArn: js.UndefOr[TargetArn] = js.undefined,
+      targetId: js.UndefOr[TargetId] = js.undefined,
+      taskSetsInfo: js.UndefOr[ECSTaskSetList] = js.undefined): ECSTarget = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "targetArn" -> targetArn.map { x => x.asInstanceOf[js.Any] },
         "deploymentId" -> deploymentId.map { x => x.asInstanceOf[js.Any] },
-        "targetId" -> targetId.map { x => x.asInstanceOf[js.Any] },
+        "lastUpdatedAt" -> lastUpdatedAt.map { x => x.asInstanceOf[js.Any] },
         "lifecycleEvents" -> lifecycleEvents.map { x => x.asInstanceOf[js.Any] },
-        "taskSetsInfo" -> taskSetsInfo.map { x => x.asInstanceOf[js.Any] },
         "status" -> status.map { x => x.asInstanceOf[js.Any] },
-        "lastUpdatedAt" -> lastUpdatedAt.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "targetArn" -> targetArn.map { x => x.asInstanceOf[js.Any] },
+        "targetId" -> targetId.map { x => x.asInstanceOf[js.Any] },
+        "taskSetsInfo" -> taskSetsInfo.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ECSTarget]
     }
@@ -1576,35 +1576,35 @@ package codedeploy {
    */
   @js.native
   trait ECSTaskSet extends js.Object {
-    var trafficWeight: js.UndefOr[TrafficWeight]
-    var runningCount: js.UndefOr[ECSTaskSetCount]
     var desiredCount: js.UndefOr[ECSTaskSetCount]
-    var targetGroup: js.UndefOr[TargetGroupInfo]
     var identifer: js.UndefOr[ECSTaskSetIdentifier]
-    var status: js.UndefOr[ECSTaskSetStatus]
     var pendingCount: js.UndefOr[ECSTaskSetCount]
+    var runningCount: js.UndefOr[ECSTaskSetCount]
+    var status: js.UndefOr[ECSTaskSetStatus]
+    var targetGroup: js.UndefOr[TargetGroupInfo]
     var taskSetLabel: js.UndefOr[TargetLabel]
+    var trafficWeight: js.UndefOr[TrafficWeight]
   }
 
   object ECSTaskSet {
     def apply(
-      trafficWeight: js.UndefOr[TrafficWeight] = js.undefined,
-      runningCount: js.UndefOr[ECSTaskSetCount] = js.undefined,
       desiredCount: js.UndefOr[ECSTaskSetCount] = js.undefined,
-      targetGroup: js.UndefOr[TargetGroupInfo] = js.undefined,
       identifer: js.UndefOr[ECSTaskSetIdentifier] = js.undefined,
-      status: js.UndefOr[ECSTaskSetStatus] = js.undefined,
       pendingCount: js.UndefOr[ECSTaskSetCount] = js.undefined,
-      taskSetLabel: js.UndefOr[TargetLabel] = js.undefined): ECSTaskSet = {
+      runningCount: js.UndefOr[ECSTaskSetCount] = js.undefined,
+      status: js.UndefOr[ECSTaskSetStatus] = js.undefined,
+      targetGroup: js.UndefOr[TargetGroupInfo] = js.undefined,
+      taskSetLabel: js.UndefOr[TargetLabel] = js.undefined,
+      trafficWeight: js.UndefOr[TrafficWeight] = js.undefined): ECSTaskSet = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "trafficWeight" -> trafficWeight.map { x => x.asInstanceOf[js.Any] },
-        "runningCount" -> runningCount.map { x => x.asInstanceOf[js.Any] },
         "desiredCount" -> desiredCount.map { x => x.asInstanceOf[js.Any] },
-        "targetGroup" -> targetGroup.map { x => x.asInstanceOf[js.Any] },
         "identifer" -> identifer.map { x => x.asInstanceOf[js.Any] },
-        "status" -> status.map { x => x.asInstanceOf[js.Any] },
         "pendingCount" -> pendingCount.map { x => x.asInstanceOf[js.Any] },
-        "taskSetLabel" -> taskSetLabel.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "runningCount" -> runningCount.map { x => x.asInstanceOf[js.Any] },
+        "status" -> status.map { x => x.asInstanceOf[js.Any] },
+        "targetGroup" -> targetGroup.map { x => x.asInstanceOf[js.Any] },
+        "taskSetLabel" -> taskSetLabel.map { x => x.asInstanceOf[js.Any] },
+        "trafficWeight" -> trafficWeight.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ECSTaskSet]
     }
@@ -1697,26 +1697,26 @@ package codedeploy {
    */
   @js.native
   trait GenericRevisionInfo extends js.Object {
-    var firstUsedTime: js.UndefOr[Timestamp]
-    var description: js.UndefOr[Description]
-    var registerTime: js.UndefOr[Timestamp]
     var deploymentGroups: js.UndefOr[DeploymentGroupsList]
+    var description: js.UndefOr[Description]
+    var firstUsedTime: js.UndefOr[Timestamp]
     var lastUsedTime: js.UndefOr[Timestamp]
+    var registerTime: js.UndefOr[Timestamp]
   }
 
   object GenericRevisionInfo {
     def apply(
-      firstUsedTime: js.UndefOr[Timestamp] = js.undefined,
-      description: js.UndefOr[Description] = js.undefined,
-      registerTime: js.UndefOr[Timestamp] = js.undefined,
       deploymentGroups: js.UndefOr[DeploymentGroupsList] = js.undefined,
-      lastUsedTime: js.UndefOr[Timestamp] = js.undefined): GenericRevisionInfo = {
+      description: js.UndefOr[Description] = js.undefined,
+      firstUsedTime: js.UndefOr[Timestamp] = js.undefined,
+      lastUsedTime: js.UndefOr[Timestamp] = js.undefined,
+      registerTime: js.UndefOr[Timestamp] = js.undefined): GenericRevisionInfo = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "firstUsedTime" -> firstUsedTime.map { x => x.asInstanceOf[js.Any] },
-        "description" -> description.map { x => x.asInstanceOf[js.Any] },
-        "registerTime" -> registerTime.map { x => x.asInstanceOf[js.Any] },
         "deploymentGroups" -> deploymentGroups.map { x => x.asInstanceOf[js.Any] },
-        "lastUsedTime" -> lastUsedTime.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "description" -> description.map { x => x.asInstanceOf[js.Any] },
+        "firstUsedTime" -> firstUsedTime.map { x => x.asInstanceOf[js.Any] },
+        "lastUsedTime" -> lastUsedTime.map { x => x.asInstanceOf[js.Any] },
+        "registerTime" -> registerTime.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GenericRevisionInfo]
     }
@@ -1727,14 +1727,14 @@ package codedeploy {
    */
   @js.native
   trait GetApplicationInput extends js.Object {
-    var applicationName: js.UndefOr[ApplicationName]
+    var applicationName: ApplicationName
   }
 
   object GetApplicationInput {
     def apply(
-      applicationName: js.UndefOr[ApplicationName] = js.undefined): GetApplicationInput = {
+      applicationName: ApplicationName): GetApplicationInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "applicationName" -> applicationName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "applicationName" -> applicationName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetApplicationInput]
     }
@@ -1763,17 +1763,17 @@ package codedeploy {
    */
   @js.native
   trait GetApplicationRevisionInput extends js.Object {
-    var applicationName: js.UndefOr[ApplicationName]
-    var revision: js.UndefOr[RevisionLocation]
+    var applicationName: ApplicationName
+    var revision: RevisionLocation
   }
 
   object GetApplicationRevisionInput {
     def apply(
-      applicationName: js.UndefOr[ApplicationName] = js.undefined,
-      revision: js.UndefOr[RevisionLocation] = js.undefined): GetApplicationRevisionInput = {
+      applicationName: ApplicationName,
+      revision: RevisionLocation): GetApplicationRevisionInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "applicationName" -> applicationName.map { x => x.asInstanceOf[js.Any] },
-        "revision" -> revision.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "applicationName" -> applicationName.asInstanceOf[js.Any],
+        "revision" -> revision.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetApplicationRevisionInput]
     }
@@ -1808,14 +1808,14 @@ package codedeploy {
    */
   @js.native
   trait GetDeploymentConfigInput extends js.Object {
-    var deploymentConfigName: js.UndefOr[DeploymentConfigName]
+    var deploymentConfigName: DeploymentConfigName
   }
 
   object GetDeploymentConfigInput {
     def apply(
-      deploymentConfigName: js.UndefOr[DeploymentConfigName] = js.undefined): GetDeploymentConfigInput = {
+      deploymentConfigName: DeploymentConfigName): GetDeploymentConfigInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "deploymentConfigName" -> deploymentConfigName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "deploymentConfigName" -> deploymentConfigName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetDeploymentConfigInput]
     }
@@ -1844,17 +1844,17 @@ package codedeploy {
    */
   @js.native
   trait GetDeploymentGroupInput extends js.Object {
-    var applicationName: js.UndefOr[ApplicationName]
-    var deploymentGroupName: js.UndefOr[DeploymentGroupName]
+    var applicationName: ApplicationName
+    var deploymentGroupName: DeploymentGroupName
   }
 
   object GetDeploymentGroupInput {
     def apply(
-      applicationName: js.UndefOr[ApplicationName] = js.undefined,
-      deploymentGroupName: js.UndefOr[DeploymentGroupName] = js.undefined): GetDeploymentGroupInput = {
+      applicationName: ApplicationName,
+      deploymentGroupName: DeploymentGroupName): GetDeploymentGroupInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "applicationName" -> applicationName.map { x => x.asInstanceOf[js.Any] },
-        "deploymentGroupName" -> deploymentGroupName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "applicationName" -> applicationName.asInstanceOf[js.Any],
+        "deploymentGroupName" -> deploymentGroupName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetDeploymentGroupInput]
     }
@@ -1883,14 +1883,14 @@ package codedeploy {
    */
   @js.native
   trait GetDeploymentInput extends js.Object {
-    var deploymentId: js.UndefOr[DeploymentId]
+    var deploymentId: DeploymentId
   }
 
   object GetDeploymentInput {
     def apply(
-      deploymentId: js.UndefOr[DeploymentId] = js.undefined): GetDeploymentInput = {
+      deploymentId: DeploymentId): GetDeploymentInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "deploymentId" -> deploymentId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "deploymentId" -> deploymentId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetDeploymentInput]
     }
@@ -1901,17 +1901,17 @@ package codedeploy {
    */
   @js.native
   trait GetDeploymentInstanceInput extends js.Object {
-    var deploymentId: js.UndefOr[DeploymentId]
-    var instanceId: js.UndefOr[InstanceId]
+    var deploymentId: DeploymentId
+    var instanceId: InstanceId
   }
 
   object GetDeploymentInstanceInput {
     def apply(
-      deploymentId: js.UndefOr[DeploymentId] = js.undefined,
-      instanceId: js.UndefOr[InstanceId] = js.undefined): GetDeploymentInstanceInput = {
+      deploymentId: DeploymentId,
+      instanceId: InstanceId): GetDeploymentInstanceInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "deploymentId" -> deploymentId.map { x => x.asInstanceOf[js.Any] },
-        "instanceId" -> instanceId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "deploymentId" -> deploymentId.asInstanceOf[js.Any],
+        "instanceId" -> instanceId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetDeploymentInstanceInput]
     }
@@ -1991,14 +1991,14 @@ package codedeploy {
    */
   @js.native
   trait GetOnPremisesInstanceInput extends js.Object {
-    var instanceName: js.UndefOr[InstanceName]
+    var instanceName: InstanceName
   }
 
   object GetOnPremisesInstanceInput {
     def apply(
-      instanceName: js.UndefOr[InstanceName] = js.undefined): GetOnPremisesInstanceInput = {
+      instanceName: InstanceName): GetOnPremisesInstanceInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "instanceName" -> instanceName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "instanceName" -> instanceName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetOnPremisesInstanceInput]
     }
@@ -2027,17 +2027,17 @@ package codedeploy {
    */
   @js.native
   trait GitHubLocation extends js.Object {
-    var repository: js.UndefOr[Repository]
     var commitId: js.UndefOr[CommitId]
+    var repository: js.UndefOr[Repository]
   }
 
   object GitHubLocation {
     def apply(
-      repository: js.UndefOr[Repository] = js.undefined,
-      commitId: js.UndefOr[CommitId] = js.undefined): GitHubLocation = {
+      commitId: js.UndefOr[CommitId] = js.undefined,
+      repository: js.UndefOr[Repository] = js.undefined): GitHubLocation = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "repository" -> repository.map { x => x.asInstanceOf[js.Any] },
-        "commitId" -> commitId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "commitId" -> commitId.map { x => x.asInstanceOf[js.Any] },
+        "repository" -> repository.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GitHubLocation]
     }
@@ -2080,32 +2080,32 @@ package codedeploy {
    */
   @js.native
   trait InstanceInfo extends js.Object {
-    var tags: js.UndefOr[TagList]
-    var registerTime: js.UndefOr[Timestamp]
     var deregisterTime: js.UndefOr[Timestamp]
     var iamSessionArn: js.UndefOr[IamSessionArn]
-    var instanceArn: js.UndefOr[InstanceArn]
     var iamUserArn: js.UndefOr[IamUserArn]
+    var instanceArn: js.UndefOr[InstanceArn]
     var instanceName: js.UndefOr[InstanceName]
+    var registerTime: js.UndefOr[Timestamp]
+    var tags: js.UndefOr[TagList]
   }
 
   object InstanceInfo {
     def apply(
-      tags: js.UndefOr[TagList] = js.undefined,
-      registerTime: js.UndefOr[Timestamp] = js.undefined,
       deregisterTime: js.UndefOr[Timestamp] = js.undefined,
       iamSessionArn: js.UndefOr[IamSessionArn] = js.undefined,
-      instanceArn: js.UndefOr[InstanceArn] = js.undefined,
       iamUserArn: js.UndefOr[IamUserArn] = js.undefined,
-      instanceName: js.UndefOr[InstanceName] = js.undefined): InstanceInfo = {
+      instanceArn: js.UndefOr[InstanceArn] = js.undefined,
+      instanceName: js.UndefOr[InstanceName] = js.undefined,
+      registerTime: js.UndefOr[Timestamp] = js.undefined,
+      tags: js.UndefOr[TagList] = js.undefined): InstanceInfo = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "tags" -> tags.map { x => x.asInstanceOf[js.Any] },
-        "registerTime" -> registerTime.map { x => x.asInstanceOf[js.Any] },
         "deregisterTime" -> deregisterTime.map { x => x.asInstanceOf[js.Any] },
         "iamSessionArn" -> iamSessionArn.map { x => x.asInstanceOf[js.Any] },
-        "instanceArn" -> instanceArn.map { x => x.asInstanceOf[js.Any] },
         "iamUserArn" -> iamUserArn.map { x => x.asInstanceOf[js.Any] },
-        "instanceName" -> instanceName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "instanceArn" -> instanceArn.map { x => x.asInstanceOf[js.Any] },
+        "instanceName" -> instanceName.map { x => x.asInstanceOf[js.Any] },
+        "registerTime" -> registerTime.map { x => x.asInstanceOf[js.Any] },
+        "tags" -> tags.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[InstanceInfo]
     }
@@ -2130,29 +2130,29 @@ package codedeploy {
   @deprecated
   @js.native
   trait InstanceSummary extends js.Object {
-    var instanceId: js.UndefOr[InstanceId]
     var deploymentId: js.UndefOr[DeploymentId]
+    var instanceId: js.UndefOr[InstanceId]
     var instanceType: js.UndefOr[InstanceType]
+    var lastUpdatedAt: js.UndefOr[Timestamp]
     var lifecycleEvents: js.UndefOr[LifecycleEventList]
     var status: js.UndefOr[InstanceStatus]
-    var lastUpdatedAt: js.UndefOr[Timestamp]
   }
 
   object InstanceSummary {
     def apply(
-      instanceId: js.UndefOr[InstanceId] = js.undefined,
       deploymentId: js.UndefOr[DeploymentId] = js.undefined,
+      instanceId: js.UndefOr[InstanceId] = js.undefined,
       instanceType: js.UndefOr[InstanceType] = js.undefined,
+      lastUpdatedAt: js.UndefOr[Timestamp] = js.undefined,
       lifecycleEvents: js.UndefOr[LifecycleEventList] = js.undefined,
-      status: js.UndefOr[InstanceStatus] = js.undefined,
-      lastUpdatedAt: js.UndefOr[Timestamp] = js.undefined): InstanceSummary = {
+      status: js.UndefOr[InstanceStatus] = js.undefined): InstanceSummary = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "instanceId" -> instanceId.map { x => x.asInstanceOf[js.Any] },
         "deploymentId" -> deploymentId.map { x => x.asInstanceOf[js.Any] },
+        "instanceId" -> instanceId.map { x => x.asInstanceOf[js.Any] },
         "instanceType" -> instanceType.map { x => x.asInstanceOf[js.Any] },
+        "lastUpdatedAt" -> lastUpdatedAt.map { x => x.asInstanceOf[js.Any] },
         "lifecycleEvents" -> lifecycleEvents.map { x => x.asInstanceOf[js.Any] },
-        "status" -> status.map { x => x.asInstanceOf[js.Any] },
-        "lastUpdatedAt" -> lastUpdatedAt.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "status" -> status.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[InstanceSummary]
     }
@@ -2163,32 +2163,32 @@ package codedeploy {
    */
   @js.native
   trait InstanceTarget extends js.Object {
-    var targetArn: js.UndefOr[TargetArn]
     var deploymentId: js.UndefOr[DeploymentId]
-    var targetId: js.UndefOr[TargetId]
-    var lifecycleEvents: js.UndefOr[LifecycleEventList]
     var instanceLabel: js.UndefOr[TargetLabel]
-    var status: js.UndefOr[TargetStatus]
     var lastUpdatedAt: js.UndefOr[Time]
+    var lifecycleEvents: js.UndefOr[LifecycleEventList]
+    var status: js.UndefOr[TargetStatus]
+    var targetArn: js.UndefOr[TargetArn]
+    var targetId: js.UndefOr[TargetId]
   }
 
   object InstanceTarget {
     def apply(
-      targetArn: js.UndefOr[TargetArn] = js.undefined,
       deploymentId: js.UndefOr[DeploymentId] = js.undefined,
-      targetId: js.UndefOr[TargetId] = js.undefined,
-      lifecycleEvents: js.UndefOr[LifecycleEventList] = js.undefined,
       instanceLabel: js.UndefOr[TargetLabel] = js.undefined,
+      lastUpdatedAt: js.UndefOr[Time] = js.undefined,
+      lifecycleEvents: js.UndefOr[LifecycleEventList] = js.undefined,
       status: js.UndefOr[TargetStatus] = js.undefined,
-      lastUpdatedAt: js.UndefOr[Time] = js.undefined): InstanceTarget = {
+      targetArn: js.UndefOr[TargetArn] = js.undefined,
+      targetId: js.UndefOr[TargetId] = js.undefined): InstanceTarget = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "targetArn" -> targetArn.map { x => x.asInstanceOf[js.Any] },
         "deploymentId" -> deploymentId.map { x => x.asInstanceOf[js.Any] },
-        "targetId" -> targetId.map { x => x.asInstanceOf[js.Any] },
-        "lifecycleEvents" -> lifecycleEvents.map { x => x.asInstanceOf[js.Any] },
         "instanceLabel" -> instanceLabel.map { x => x.asInstanceOf[js.Any] },
+        "lastUpdatedAt" -> lastUpdatedAt.map { x => x.asInstanceOf[js.Any] },
+        "lifecycleEvents" -> lifecycleEvents.map { x => x.asInstanceOf[js.Any] },
         "status" -> status.map { x => x.asInstanceOf[js.Any] },
-        "lastUpdatedAt" -> lastUpdatedAt.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "targetArn" -> targetArn.map { x => x.asInstanceOf[js.Any] },
+        "targetId" -> targetId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[InstanceTarget]
     }
@@ -2206,29 +2206,29 @@ package codedeploy {
    */
   @js.native
   trait LambdaTarget extends js.Object {
-    var targetArn: js.UndefOr[TargetArn]
     var deploymentId: js.UndefOr[DeploymentId]
-    var targetId: js.UndefOr[TargetId]
+    var lastUpdatedAt: js.UndefOr[Time]
     var lifecycleEvents: js.UndefOr[LifecycleEventList]
     var status: js.UndefOr[TargetStatus]
-    var lastUpdatedAt: js.UndefOr[Time]
+    var targetArn: js.UndefOr[TargetArn]
+    var targetId: js.UndefOr[TargetId]
   }
 
   object LambdaTarget {
     def apply(
-      targetArn: js.UndefOr[TargetArn] = js.undefined,
       deploymentId: js.UndefOr[DeploymentId] = js.undefined,
-      targetId: js.UndefOr[TargetId] = js.undefined,
+      lastUpdatedAt: js.UndefOr[Time] = js.undefined,
       lifecycleEvents: js.UndefOr[LifecycleEventList] = js.undefined,
       status: js.UndefOr[TargetStatus] = js.undefined,
-      lastUpdatedAt: js.UndefOr[Time] = js.undefined): LambdaTarget = {
+      targetArn: js.UndefOr[TargetArn] = js.undefined,
+      targetId: js.UndefOr[TargetId] = js.undefined): LambdaTarget = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "targetArn" -> targetArn.map { x => x.asInstanceOf[js.Any] },
         "deploymentId" -> deploymentId.map { x => x.asInstanceOf[js.Any] },
-        "targetId" -> targetId.map { x => x.asInstanceOf[js.Any] },
+        "lastUpdatedAt" -> lastUpdatedAt.map { x => x.asInstanceOf[js.Any] },
         "lifecycleEvents" -> lifecycleEvents.map { x => x.asInstanceOf[js.Any] },
         "status" -> status.map { x => x.asInstanceOf[js.Any] },
-        "lastUpdatedAt" -> lastUpdatedAt.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "targetArn" -> targetArn.map { x => x.asInstanceOf[js.Any] },
+        "targetId" -> targetId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[LambdaTarget]
     }
@@ -2239,23 +2239,23 @@ package codedeploy {
    */
   @js.native
   trait LastDeploymentInfo extends js.Object {
-    var deploymentId: js.UndefOr[DeploymentId]
-    var status: js.UndefOr[DeploymentStatus]
-    var endTime: js.UndefOr[Timestamp]
     var createTime: js.UndefOr[Timestamp]
+    var deploymentId: js.UndefOr[DeploymentId]
+    var endTime: js.UndefOr[Timestamp]
+    var status: js.UndefOr[DeploymentStatus]
   }
 
   object LastDeploymentInfo {
     def apply(
+      createTime: js.UndefOr[Timestamp] = js.undefined,
       deploymentId: js.UndefOr[DeploymentId] = js.undefined,
-      status: js.UndefOr[DeploymentStatus] = js.undefined,
       endTime: js.UndefOr[Timestamp] = js.undefined,
-      createTime: js.UndefOr[Timestamp] = js.undefined): LastDeploymentInfo = {
+      status: js.UndefOr[DeploymentStatus] = js.undefined): LastDeploymentInfo = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "createTime" -> createTime.map { x => x.asInstanceOf[js.Any] },
         "deploymentId" -> deploymentId.map { x => x.asInstanceOf[js.Any] },
-        "status" -> status.map { x => x.asInstanceOf[js.Any] },
         "endTime" -> endTime.map { x => x.asInstanceOf[js.Any] },
-        "createTime" -> createTime.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "status" -> status.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[LastDeploymentInfo]
     }
@@ -2277,26 +2277,26 @@ package codedeploy {
    */
   @js.native
   trait LifecycleEvent extends js.Object {
-    var startTime: js.UndefOr[Timestamp]
-    var endTime: js.UndefOr[Timestamp]
     var diagnostics: js.UndefOr[Diagnostics]
-    var status: js.UndefOr[LifecycleEventStatus]
+    var endTime: js.UndefOr[Timestamp]
     var lifecycleEventName: js.UndefOr[LifecycleEventName]
+    var startTime: js.UndefOr[Timestamp]
+    var status: js.UndefOr[LifecycleEventStatus]
   }
 
   object LifecycleEvent {
     def apply(
-      startTime: js.UndefOr[Timestamp] = js.undefined,
-      endTime: js.UndefOr[Timestamp] = js.undefined,
       diagnostics: js.UndefOr[Diagnostics] = js.undefined,
-      status: js.UndefOr[LifecycleEventStatus] = js.undefined,
-      lifecycleEventName: js.UndefOr[LifecycleEventName] = js.undefined): LifecycleEvent = {
+      endTime: js.UndefOr[Timestamp] = js.undefined,
+      lifecycleEventName: js.UndefOr[LifecycleEventName] = js.undefined,
+      startTime: js.UndefOr[Timestamp] = js.undefined,
+      status: js.UndefOr[LifecycleEventStatus] = js.undefined): LifecycleEvent = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "startTime" -> startTime.map { x => x.asInstanceOf[js.Any] },
-        "endTime" -> endTime.map { x => x.asInstanceOf[js.Any] },
         "diagnostics" -> diagnostics.map { x => x.asInstanceOf[js.Any] },
-        "status" -> status.map { x => x.asInstanceOf[js.Any] },
-        "lifecycleEventName" -> lifecycleEventName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "endTime" -> endTime.map { x => x.asInstanceOf[js.Any] },
+        "lifecycleEventName" -> lifecycleEventName.map { x => x.asInstanceOf[js.Any] },
+        "startTime" -> startTime.map { x => x.asInstanceOf[js.Any] },
+        "status" -> status.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[LifecycleEvent]
     }
@@ -2318,32 +2318,32 @@ package codedeploy {
    */
   @js.native
   trait ListApplicationRevisionsInput extends js.Object {
-    var s3Bucket: js.UndefOr[S3Bucket]
-    var sortBy: js.UndefOr[ApplicationRevisionSortBy]
-    var applicationName: js.UndefOr[ApplicationName]
-    var nextToken: js.UndefOr[NextToken]
+    var applicationName: ApplicationName
     var deployed: js.UndefOr[ListStateFilterAction]
-    var sortOrder: js.UndefOr[SortOrder]
+    var nextToken: js.UndefOr[NextToken]
+    var s3Bucket: js.UndefOr[S3Bucket]
     var s3KeyPrefix: js.UndefOr[S3Key]
+    var sortBy: js.UndefOr[ApplicationRevisionSortBy]
+    var sortOrder: js.UndefOr[SortOrder]
   }
 
   object ListApplicationRevisionsInput {
     def apply(
-      s3Bucket: js.UndefOr[S3Bucket] = js.undefined,
-      sortBy: js.UndefOr[ApplicationRevisionSortBy] = js.undefined,
-      applicationName: js.UndefOr[ApplicationName] = js.undefined,
-      nextToken: js.UndefOr[NextToken] = js.undefined,
+      applicationName: ApplicationName,
       deployed: js.UndefOr[ListStateFilterAction] = js.undefined,
-      sortOrder: js.UndefOr[SortOrder] = js.undefined,
-      s3KeyPrefix: js.UndefOr[S3Key] = js.undefined): ListApplicationRevisionsInput = {
+      nextToken: js.UndefOr[NextToken] = js.undefined,
+      s3Bucket: js.UndefOr[S3Bucket] = js.undefined,
+      s3KeyPrefix: js.UndefOr[S3Key] = js.undefined,
+      sortBy: js.UndefOr[ApplicationRevisionSortBy] = js.undefined,
+      sortOrder: js.UndefOr[SortOrder] = js.undefined): ListApplicationRevisionsInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "s3Bucket" -> s3Bucket.map { x => x.asInstanceOf[js.Any] },
-        "sortBy" -> sortBy.map { x => x.asInstanceOf[js.Any] },
-        "applicationName" -> applicationName.map { x => x.asInstanceOf[js.Any] },
-        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] },
+        "applicationName" -> applicationName.asInstanceOf[js.Any],
         "deployed" -> deployed.map { x => x.asInstanceOf[js.Any] },
-        "sortOrder" -> sortOrder.map { x => x.asInstanceOf[js.Any] },
-        "s3KeyPrefix" -> s3KeyPrefix.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] },
+        "s3Bucket" -> s3Bucket.map { x => x.asInstanceOf[js.Any] },
+        "s3KeyPrefix" -> s3KeyPrefix.map { x => x.asInstanceOf[js.Any] },
+        "sortBy" -> sortBy.map { x => x.asInstanceOf[js.Any] },
+        "sortOrder" -> sortOrder.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListApplicationRevisionsInput]
     }
@@ -2354,17 +2354,17 @@ package codedeploy {
    */
   @js.native
   trait ListApplicationRevisionsOutput extends js.Object {
-    var revisions: js.UndefOr[RevisionLocationList]
     var nextToken: js.UndefOr[NextToken]
+    var revisions: js.UndefOr[RevisionLocationList]
   }
 
   object ListApplicationRevisionsOutput {
     def apply(
-      revisions: js.UndefOr[RevisionLocationList] = js.undefined,
-      nextToken: js.UndefOr[NextToken] = js.undefined): ListApplicationRevisionsOutput = {
+      nextToken: js.UndefOr[NextToken] = js.undefined,
+      revisions: js.UndefOr[RevisionLocationList] = js.undefined): ListApplicationRevisionsOutput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "revisions" -> revisions.map { x => x.asInstanceOf[js.Any] },
-        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] },
+        "revisions" -> revisions.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListApplicationRevisionsOutput]
     }
@@ -2453,16 +2453,16 @@ package codedeploy {
    */
   @js.native
   trait ListDeploymentGroupsInput extends js.Object {
-    var applicationName: js.UndefOr[ApplicationName]
+    var applicationName: ApplicationName
     var nextToken: js.UndefOr[NextToken]
   }
 
   object ListDeploymentGroupsInput {
     def apply(
-      applicationName: js.UndefOr[ApplicationName] = js.undefined,
+      applicationName: ApplicationName,
       nextToken: js.UndefOr[NextToken] = js.undefined): ListDeploymentGroupsInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "applicationName" -> applicationName.map { x => x.asInstanceOf[js.Any] },
+        "applicationName" -> applicationName.asInstanceOf[js.Any],
         "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListDeploymentGroupsInput]
@@ -2498,23 +2498,23 @@ package codedeploy {
    */
   @js.native
   trait ListDeploymentInstancesInput extends js.Object {
-    var deploymentId: js.UndefOr[DeploymentId]
-    var nextToken: js.UndefOr[NextToken]
+    var deploymentId: DeploymentId
     var instanceStatusFilter: js.UndefOr[InstanceStatusList]
     var instanceTypeFilter: js.UndefOr[InstanceTypeList]
+    var nextToken: js.UndefOr[NextToken]
   }
 
   object ListDeploymentInstancesInput {
     def apply(
-      deploymentId: js.UndefOr[DeploymentId] = js.undefined,
-      nextToken: js.UndefOr[NextToken] = js.undefined,
+      deploymentId: DeploymentId,
       instanceStatusFilter: js.UndefOr[InstanceStatusList] = js.undefined,
-      instanceTypeFilter: js.UndefOr[InstanceTypeList] = js.undefined): ListDeploymentInstancesInput = {
+      instanceTypeFilter: js.UndefOr[InstanceTypeList] = js.undefined,
+      nextToken: js.UndefOr[NextToken] = js.undefined): ListDeploymentInstancesInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "deploymentId" -> deploymentId.map { x => x.asInstanceOf[js.Any] },
-        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] },
+        "deploymentId" -> deploymentId.asInstanceOf[js.Any],
         "instanceStatusFilter" -> instanceStatusFilter.map { x => x.asInstanceOf[js.Any] },
-        "instanceTypeFilter" -> instanceTypeFilter.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "instanceTypeFilter" -> instanceTypeFilter.map { x => x.asInstanceOf[js.Any] },
+        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListDeploymentInstancesInput]
     }
@@ -2564,17 +2564,17 @@ package codedeploy {
 
   @js.native
   trait ListDeploymentTargetsOutput extends js.Object {
-    var targetIds: js.UndefOr[TargetIdList]
     var nextToken: js.UndefOr[NextToken]
+    var targetIds: js.UndefOr[TargetIdList]
   }
 
   object ListDeploymentTargetsOutput {
     def apply(
-      targetIds: js.UndefOr[TargetIdList] = js.undefined,
-      nextToken: js.UndefOr[NextToken] = js.undefined): ListDeploymentTargetsOutput = {
+      nextToken: js.UndefOr[NextToken] = js.undefined,
+      targetIds: js.UndefOr[TargetIdList] = js.undefined): ListDeploymentTargetsOutput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "targetIds" -> targetIds.map { x => x.asInstanceOf[js.Any] },
-        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] },
+        "targetIds" -> targetIds.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListDeploymentTargetsOutput]
     }
@@ -2585,26 +2585,26 @@ package codedeploy {
    */
   @js.native
   trait ListDeploymentsInput extends js.Object {
-    var includeOnlyStatuses: js.UndefOr[DeploymentStatusList]
-    var createTimeRange: js.UndefOr[TimeRange]
     var applicationName: js.UndefOr[ApplicationName]
-    var nextToken: js.UndefOr[NextToken]
+    var createTimeRange: js.UndefOr[TimeRange]
     var deploymentGroupName: js.UndefOr[DeploymentGroupName]
+    var includeOnlyStatuses: js.UndefOr[DeploymentStatusList]
+    var nextToken: js.UndefOr[NextToken]
   }
 
   object ListDeploymentsInput {
     def apply(
-      includeOnlyStatuses: js.UndefOr[DeploymentStatusList] = js.undefined,
-      createTimeRange: js.UndefOr[TimeRange] = js.undefined,
       applicationName: js.UndefOr[ApplicationName] = js.undefined,
-      nextToken: js.UndefOr[NextToken] = js.undefined,
-      deploymentGroupName: js.UndefOr[DeploymentGroupName] = js.undefined): ListDeploymentsInput = {
+      createTimeRange: js.UndefOr[TimeRange] = js.undefined,
+      deploymentGroupName: js.UndefOr[DeploymentGroupName] = js.undefined,
+      includeOnlyStatuses: js.UndefOr[DeploymentStatusList] = js.undefined,
+      nextToken: js.UndefOr[NextToken] = js.undefined): ListDeploymentsInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "includeOnlyStatuses" -> includeOnlyStatuses.map { x => x.asInstanceOf[js.Any] },
-        "createTimeRange" -> createTimeRange.map { x => x.asInstanceOf[js.Any] },
         "applicationName" -> applicationName.map { x => x.asInstanceOf[js.Any] },
-        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] },
-        "deploymentGroupName" -> deploymentGroupName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "createTimeRange" -> createTimeRange.map { x => x.asInstanceOf[js.Any] },
+        "deploymentGroupName" -> deploymentGroupName.map { x => x.asInstanceOf[js.Any] },
+        "includeOnlyStatuses" -> includeOnlyStatuses.map { x => x.asInstanceOf[js.Any] },
+        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListDeploymentsInput]
     }
@@ -2654,17 +2654,17 @@ package codedeploy {
    */
   @js.native
   trait ListGitHubAccountTokenNamesOutput extends js.Object {
-    var tokenNameList: js.UndefOr[GitHubAccountTokenNameList]
     var nextToken: js.UndefOr[NextToken]
+    var tokenNameList: js.UndefOr[GitHubAccountTokenNameList]
   }
 
   object ListGitHubAccountTokenNamesOutput {
     def apply(
-      tokenNameList: js.UndefOr[GitHubAccountTokenNameList] = js.undefined,
-      nextToken: js.UndefOr[NextToken] = js.undefined): ListGitHubAccountTokenNamesOutput = {
+      nextToken: js.UndefOr[NextToken] = js.undefined,
+      tokenNameList: js.UndefOr[GitHubAccountTokenNameList] = js.undefined): ListGitHubAccountTokenNamesOutput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "tokenNameList" -> tokenNameList.map { x => x.asInstanceOf[js.Any] },
-        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] },
+        "tokenNameList" -> tokenNameList.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListGitHubAccountTokenNamesOutput]
     }
@@ -2675,20 +2675,20 @@ package codedeploy {
    */
   @js.native
   trait ListOnPremisesInstancesInput extends js.Object {
+    var nextToken: js.UndefOr[NextToken]
     var registrationStatus: js.UndefOr[RegistrationStatus]
     var tagFilters: js.UndefOr[TagFilterList]
-    var nextToken: js.UndefOr[NextToken]
   }
 
   object ListOnPremisesInstancesInput {
     def apply(
+      nextToken: js.UndefOr[NextToken] = js.undefined,
       registrationStatus: js.UndefOr[RegistrationStatus] = js.undefined,
-      tagFilters: js.UndefOr[TagFilterList] = js.undefined,
-      nextToken: js.UndefOr[NextToken] = js.undefined): ListOnPremisesInstancesInput = {
+      tagFilters: js.UndefOr[TagFilterList] = js.undefined): ListOnPremisesInstancesInput = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] },
         "registrationStatus" -> registrationStatus.map { x => x.asInstanceOf[js.Any] },
-        "tagFilters" -> tagFilters.map { x => x.asInstanceOf[js.Any] },
-        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "tagFilters" -> tagFilters.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListOnPremisesInstancesInput]
     }
@@ -2752,17 +2752,17 @@ package codedeploy {
    */
   @js.native
   trait MinimumHealthyHosts extends js.Object {
-    var value: js.UndefOr[MinimumHealthyHostsValue]
     var `type`: js.UndefOr[MinimumHealthyHostsType]
+    var value: js.UndefOr[MinimumHealthyHostsValue]
   }
 
   object MinimumHealthyHosts {
     def apply(
-      value: js.UndefOr[MinimumHealthyHostsValue] = js.undefined,
-      `type`: js.UndefOr[MinimumHealthyHostsType] = js.undefined): MinimumHealthyHosts = {
+      `type`: js.UndefOr[MinimumHealthyHostsType] = js.undefined,
+      value: js.UndefOr[MinimumHealthyHostsValue] = js.undefined): MinimumHealthyHosts = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "value" -> value.map { x => x.asInstanceOf[js.Any] },
-        "`type`" -> `type`.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "`type`" -> `type`.map { x => x.asInstanceOf[js.Any] },
+        "value" -> value.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[MinimumHealthyHosts]
     }
@@ -2856,20 +2856,20 @@ package codedeploy {
    */
   @js.native
   trait RegisterApplicationRevisionInput extends js.Object {
-    var applicationName: js.UndefOr[ApplicationName]
+    var applicationName: ApplicationName
+    var revision: RevisionLocation
     var description: js.UndefOr[Description]
-    var revision: js.UndefOr[RevisionLocation]
   }
 
   object RegisterApplicationRevisionInput {
     def apply(
-      applicationName: js.UndefOr[ApplicationName] = js.undefined,
-      description: js.UndefOr[Description] = js.undefined,
-      revision: js.UndefOr[RevisionLocation] = js.undefined): RegisterApplicationRevisionInput = {
+      applicationName: ApplicationName,
+      revision: RevisionLocation,
+      description: js.UndefOr[Description] = js.undefined): RegisterApplicationRevisionInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "applicationName" -> applicationName.map { x => x.asInstanceOf[js.Any] },
-        "description" -> description.map { x => x.asInstanceOf[js.Any] },
-        "revision" -> revision.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "applicationName" -> applicationName.asInstanceOf[js.Any],
+        "revision" -> revision.asInstanceOf[js.Any],
+        "description" -> description.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RegisterApplicationRevisionInput]
     }
@@ -2880,18 +2880,18 @@ package codedeploy {
    */
   @js.native
   trait RegisterOnPremisesInstanceInput extends js.Object {
-    var instanceName: js.UndefOr[InstanceName]
+    var instanceName: InstanceName
     var iamSessionArn: js.UndefOr[IamSessionArn]
     var iamUserArn: js.UndefOr[IamUserArn]
   }
 
   object RegisterOnPremisesInstanceInput {
     def apply(
-      instanceName: js.UndefOr[InstanceName] = js.undefined,
+      instanceName: InstanceName,
       iamSessionArn: js.UndefOr[IamSessionArn] = js.undefined,
       iamUserArn: js.UndefOr[IamUserArn] = js.undefined): RegisterOnPremisesInstanceInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "instanceName" -> instanceName.map { x => x.asInstanceOf[js.Any] },
+        "instanceName" -> instanceName.asInstanceOf[js.Any],
         "iamSessionArn" -> iamSessionArn.map { x => x.asInstanceOf[js.Any] },
         "iamUserArn" -> iamUserArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
@@ -2911,17 +2911,17 @@ package codedeploy {
    */
   @js.native
   trait RemoveTagsFromOnPremisesInstancesInput extends js.Object {
-    var tags: js.UndefOr[TagList]
-    var instanceNames: js.UndefOr[InstanceNameList]
+    var instanceNames: InstanceNameList
+    var tags: TagList
   }
 
   object RemoveTagsFromOnPremisesInstancesInput {
     def apply(
-      tags: js.UndefOr[TagList] = js.undefined,
-      instanceNames: js.UndefOr[InstanceNameList] = js.undefined): RemoveTagsFromOnPremisesInstancesInput = {
+      instanceNames: InstanceNameList,
+      tags: TagList): RemoveTagsFromOnPremisesInstancesInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "tags" -> tags.map { x => x.asInstanceOf[js.Any] },
-        "instanceNames" -> instanceNames.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "instanceNames" -> instanceNames.asInstanceOf[js.Any],
+        "tags" -> tags.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RemoveTagsFromOnPremisesInstancesInput]
     }
@@ -2932,17 +2932,17 @@ package codedeploy {
    */
   @js.native
   trait RevisionInfo extends js.Object {
-    var revisionLocation: js.UndefOr[RevisionLocation]
     var genericRevisionInfo: js.UndefOr[GenericRevisionInfo]
+    var revisionLocation: js.UndefOr[RevisionLocation]
   }
 
   object RevisionInfo {
     def apply(
-      revisionLocation: js.UndefOr[RevisionLocation] = js.undefined,
-      genericRevisionInfo: js.UndefOr[GenericRevisionInfo] = js.undefined): RevisionInfo = {
+      genericRevisionInfo: js.UndefOr[GenericRevisionInfo] = js.undefined,
+      revisionLocation: js.UndefOr[RevisionLocation] = js.undefined): RevisionInfo = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "revisionLocation" -> revisionLocation.map { x => x.asInstanceOf[js.Any] },
-        "genericRevisionInfo" -> genericRevisionInfo.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "genericRevisionInfo" -> genericRevisionInfo.map { x => x.asInstanceOf[js.Any] },
+        "revisionLocation" -> revisionLocation.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RevisionInfo]
     }
@@ -2953,26 +2953,26 @@ package codedeploy {
    */
   @js.native
   trait RevisionLocation extends js.Object {
+    var appSpecContent: js.UndefOr[AppSpecContent]
+    var gitHubLocation: js.UndefOr[GitHubLocation]
+    var revisionType: js.UndefOr[RevisionLocationType]
     var s3Location: js.UndefOr[S3Location]
     var string: js.UndefOr[RawString]
-    var appSpecContent: js.UndefOr[AppSpecContent]
-    var revisionType: js.UndefOr[RevisionLocationType]
-    var gitHubLocation: js.UndefOr[GitHubLocation]
   }
 
   object RevisionLocation {
     def apply(
-      s3Location: js.UndefOr[S3Location] = js.undefined,
-      string: js.UndefOr[RawString] = js.undefined,
       appSpecContent: js.UndefOr[AppSpecContent] = js.undefined,
+      gitHubLocation: js.UndefOr[GitHubLocation] = js.undefined,
       revisionType: js.UndefOr[RevisionLocationType] = js.undefined,
-      gitHubLocation: js.UndefOr[GitHubLocation] = js.undefined): RevisionLocation = {
+      s3Location: js.UndefOr[S3Location] = js.undefined,
+      string: js.UndefOr[RawString] = js.undefined): RevisionLocation = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "s3Location" -> s3Location.map { x => x.asInstanceOf[js.Any] },
-        "string" -> string.map { x => x.asInstanceOf[js.Any] },
         "appSpecContent" -> appSpecContent.map { x => x.asInstanceOf[js.Any] },
+        "gitHubLocation" -> gitHubLocation.map { x => x.asInstanceOf[js.Any] },
         "revisionType" -> revisionType.map { x => x.asInstanceOf[js.Any] },
-        "gitHubLocation" -> gitHubLocation.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "s3Location" -> s3Location.map { x => x.asInstanceOf[js.Any] },
+        "string" -> string.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RevisionLocation]
     }
@@ -2993,19 +2993,19 @@ package codedeploy {
   @js.native
   trait RollbackInfo extends js.Object {
     var rollbackDeploymentId: js.UndefOr[DeploymentId]
-    var rollbackTriggeringDeploymentId: js.UndefOr[DeploymentId]
     var rollbackMessage: js.UndefOr[Description]
+    var rollbackTriggeringDeploymentId: js.UndefOr[DeploymentId]
   }
 
   object RollbackInfo {
     def apply(
       rollbackDeploymentId: js.UndefOr[DeploymentId] = js.undefined,
-      rollbackTriggeringDeploymentId: js.UndefOr[DeploymentId] = js.undefined,
-      rollbackMessage: js.UndefOr[Description] = js.undefined): RollbackInfo = {
+      rollbackMessage: js.UndefOr[Description] = js.undefined,
+      rollbackTriggeringDeploymentId: js.UndefOr[DeploymentId] = js.undefined): RollbackInfo = {
       val _fields = IndexedSeq[(String, js.Any)](
         "rollbackDeploymentId" -> rollbackDeploymentId.map { x => x.asInstanceOf[js.Any] },
-        "rollbackTriggeringDeploymentId" -> rollbackTriggeringDeploymentId.map { x => x.asInstanceOf[js.Any] },
-        "rollbackMessage" -> rollbackMessage.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "rollbackMessage" -> rollbackMessage.map { x => x.asInstanceOf[js.Any] },
+        "rollbackTriggeringDeploymentId" -> rollbackTriggeringDeploymentId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RollbackInfo]
     }
@@ -3016,26 +3016,26 @@ package codedeploy {
    */
   @js.native
   trait S3Location extends js.Object {
+    var bucket: js.UndefOr[S3Bucket]
+    var bundleType: js.UndefOr[BundleType]
     var eTag: js.UndefOr[ETag]
     var key: js.UndefOr[S3Key]
     var version: js.UndefOr[VersionId]
-    var bundleType: js.UndefOr[BundleType]
-    var bucket: js.UndefOr[S3Bucket]
   }
 
   object S3Location {
     def apply(
+      bucket: js.UndefOr[S3Bucket] = js.undefined,
+      bundleType: js.UndefOr[BundleType] = js.undefined,
       eTag: js.UndefOr[ETag] = js.undefined,
       key: js.UndefOr[S3Key] = js.undefined,
-      version: js.UndefOr[VersionId] = js.undefined,
-      bundleType: js.UndefOr[BundleType] = js.undefined,
-      bucket: js.UndefOr[S3Bucket] = js.undefined): S3Location = {
+      version: js.UndefOr[VersionId] = js.undefined): S3Location = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "bucket" -> bucket.map { x => x.asInstanceOf[js.Any] },
+        "bundleType" -> bundleType.map { x => x.asInstanceOf[js.Any] },
         "eTag" -> eTag.map { x => x.asInstanceOf[js.Any] },
         "key" -> key.map { x => x.asInstanceOf[js.Any] },
-        "version" -> version.map { x => x.asInstanceOf[js.Any] },
-        "bundleType" -> bundleType.map { x => x.asInstanceOf[js.Any] },
-        "bucket" -> bucket.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "version" -> version.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[S3Location]
     }
@@ -3068,16 +3068,16 @@ package codedeploy {
    */
   @js.native
   trait StopDeploymentInput extends js.Object {
-    var deploymentId: js.UndefOr[DeploymentId]
+    var deploymentId: DeploymentId
     var autoRollbackEnabled: js.UndefOr[NullableBoolean]
   }
 
   object StopDeploymentInput {
     def apply(
-      deploymentId: js.UndefOr[DeploymentId] = js.undefined,
+      deploymentId: DeploymentId,
       autoRollbackEnabled: js.UndefOr[NullableBoolean] = js.undefined): StopDeploymentInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "deploymentId" -> deploymentId.map { x => x.asInstanceOf[js.Any] },
+        "deploymentId" -> deploymentId.asInstanceOf[js.Any],
         "autoRollbackEnabled" -> autoRollbackEnabled.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StopDeploymentInput]
@@ -3139,19 +3139,19 @@ package codedeploy {
   @js.native
   trait TagFilter extends js.Object {
     var Key: js.UndefOr[Key]
-    var Value: js.UndefOr[Value]
     var Type: js.UndefOr[TagFilterType]
+    var Value: js.UndefOr[Value]
   }
 
   object TagFilter {
     def apply(
       Key: js.UndefOr[Key] = js.undefined,
-      Value: js.UndefOr[Value] = js.undefined,
-      Type: js.UndefOr[TagFilterType] = js.undefined): TagFilter = {
+      Type: js.UndefOr[TagFilterType] = js.undefined,
+      Value: js.UndefOr[Value] = js.undefined): TagFilter = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Key" -> Key.map { x => x.asInstanceOf[js.Any] },
-        "Value" -> Value.map { x => x.asInstanceOf[js.Any] },
-        "Type" -> Type.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Type" -> Type.map { x => x.asInstanceOf[js.Any] },
+        "Value" -> Value.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TagFilter]
     }
@@ -3195,19 +3195,19 @@ package codedeploy {
    */
   @js.native
   trait TargetGroupPairInfo extends js.Object {
-    var targetGroups: js.UndefOr[TargetGroupInfoList]
     var prodTrafficRoute: js.UndefOr[TrafficRoute]
+    var targetGroups: js.UndefOr[TargetGroupInfoList]
     var testTrafficRoute: js.UndefOr[TrafficRoute]
   }
 
   object TargetGroupPairInfo {
     def apply(
-      targetGroups: js.UndefOr[TargetGroupInfoList] = js.undefined,
       prodTrafficRoute: js.UndefOr[TrafficRoute] = js.undefined,
+      targetGroups: js.UndefOr[TargetGroupInfoList] = js.undefined,
       testTrafficRoute: js.UndefOr[TrafficRoute] = js.undefined): TargetGroupPairInfo = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "targetGroups" -> targetGroups.map { x => x.asInstanceOf[js.Any] },
         "prodTrafficRoute" -> prodTrafficRoute.map { x => x.asInstanceOf[js.Any] },
+        "targetGroups" -> targetGroups.map { x => x.asInstanceOf[js.Any] },
         "testTrafficRoute" -> testTrafficRoute.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TargetGroupPairInfo]
@@ -3219,20 +3219,20 @@ package codedeploy {
    */
   @js.native
   trait TargetInstances extends js.Object {
-    var tagFilters: js.UndefOr[EC2TagFilterList]
     var autoScalingGroups: js.UndefOr[AutoScalingGroupNameList]
     var ec2TagSet: js.UndefOr[EC2TagSet]
+    var tagFilters: js.UndefOr[EC2TagFilterList]
   }
 
   object TargetInstances {
     def apply(
-      tagFilters: js.UndefOr[EC2TagFilterList] = js.undefined,
       autoScalingGroups: js.UndefOr[AutoScalingGroupNameList] = js.undefined,
-      ec2TagSet: js.UndefOr[EC2TagSet] = js.undefined): TargetInstances = {
+      ec2TagSet: js.UndefOr[EC2TagSet] = js.undefined,
+      tagFilters: js.UndefOr[EC2TagFilterList] = js.undefined): TargetInstances = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "tagFilters" -> tagFilters.map { x => x.asInstanceOf[js.Any] },
         "autoScalingGroups" -> autoScalingGroups.map { x => x.asInstanceOf[js.Any] },
-        "ec2TagSet" -> ec2TagSet.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ec2TagSet" -> ec2TagSet.map { x => x.asInstanceOf[js.Any] },
+        "tagFilters" -> tagFilters.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TargetInstances]
     }
@@ -3262,17 +3262,17 @@ package codedeploy {
    */
   @js.native
   trait TimeBasedCanary extends js.Object {
-    var canaryPercentage: js.UndefOr[Percentage]
     var canaryInterval: js.UndefOr[WaitTimeInMins]
+    var canaryPercentage: js.UndefOr[Percentage]
   }
 
   object TimeBasedCanary {
     def apply(
-      canaryPercentage: js.UndefOr[Percentage] = js.undefined,
-      canaryInterval: js.UndefOr[WaitTimeInMins] = js.undefined): TimeBasedCanary = {
+      canaryInterval: js.UndefOr[WaitTimeInMins] = js.undefined,
+      canaryPercentage: js.UndefOr[Percentage] = js.undefined): TimeBasedCanary = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "canaryPercentage" -> canaryPercentage.map { x => x.asInstanceOf[js.Any] },
-        "canaryInterval" -> canaryInterval.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "canaryInterval" -> canaryInterval.map { x => x.asInstanceOf[js.Any] },
+        "canaryPercentage" -> canaryPercentage.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TimeBasedCanary]
     }
@@ -3283,17 +3283,17 @@ package codedeploy {
    */
   @js.native
   trait TimeBasedLinear extends js.Object {
-    var linearPercentage: js.UndefOr[Percentage]
     var linearInterval: js.UndefOr[WaitTimeInMins]
+    var linearPercentage: js.UndefOr[Percentage]
   }
 
   object TimeBasedLinear {
     def apply(
-      linearPercentage: js.UndefOr[Percentage] = js.undefined,
-      linearInterval: js.UndefOr[WaitTimeInMins] = js.undefined): TimeBasedLinear = {
+      linearInterval: js.UndefOr[WaitTimeInMins] = js.undefined,
+      linearPercentage: js.UndefOr[Percentage] = js.undefined): TimeBasedLinear = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "linearPercentage" -> linearPercentage.map { x => x.asInstanceOf[js.Any] },
-        "linearInterval" -> linearInterval.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "linearInterval" -> linearInterval.map { x => x.asInstanceOf[js.Any] },
+        "linearPercentage" -> linearPercentage.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TimeBasedLinear]
     }
@@ -3304,17 +3304,17 @@ package codedeploy {
    */
   @js.native
   trait TimeRange extends js.Object {
-    var start: js.UndefOr[Timestamp]
     var end: js.UndefOr[Timestamp]
+    var start: js.UndefOr[Timestamp]
   }
 
   object TimeRange {
     def apply(
-      start: js.UndefOr[Timestamp] = js.undefined,
-      end: js.UndefOr[Timestamp] = js.undefined): TimeRange = {
+      end: js.UndefOr[Timestamp] = js.undefined,
+      start: js.UndefOr[Timestamp] = js.undefined): TimeRange = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "start" -> start.map { x => x.asInstanceOf[js.Any] },
-        "end" -> end.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "end" -> end.map { x => x.asInstanceOf[js.Any] },
+        "start" -> start.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TimeRange]
     }
@@ -3343,20 +3343,20 @@ package codedeploy {
    */
   @js.native
   trait TrafficRoutingConfig extends js.Object {
-    var `type`: js.UndefOr[TrafficRoutingType]
     var timeBasedCanary: js.UndefOr[TimeBasedCanary]
     var timeBasedLinear: js.UndefOr[TimeBasedLinear]
+    var `type`: js.UndefOr[TrafficRoutingType]
   }
 
   object TrafficRoutingConfig {
     def apply(
-      `type`: js.UndefOr[TrafficRoutingType] = js.undefined,
       timeBasedCanary: js.UndefOr[TimeBasedCanary] = js.undefined,
-      timeBasedLinear: js.UndefOr[TimeBasedLinear] = js.undefined): TrafficRoutingConfig = {
+      timeBasedLinear: js.UndefOr[TimeBasedLinear] = js.undefined,
+      `type`: js.UndefOr[TrafficRoutingType] = js.undefined): TrafficRoutingConfig = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "`type`" -> `type`.map { x => x.asInstanceOf[js.Any] },
         "timeBasedCanary" -> timeBasedCanary.map { x => x.asInstanceOf[js.Any] },
-        "timeBasedLinear" -> timeBasedLinear.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "timeBasedLinear" -> timeBasedLinear.map { x => x.asInstanceOf[js.Any] },
+        "`type`" -> `type`.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TrafficRoutingConfig]
     }
@@ -3375,20 +3375,20 @@ package codedeploy {
    */
   @js.native
   trait TriggerConfig extends js.Object {
+    var triggerEvents: js.UndefOr[TriggerEventTypeList]
     var triggerName: js.UndefOr[TriggerName]
     var triggerTargetArn: js.UndefOr[TriggerTargetArn]
-    var triggerEvents: js.UndefOr[TriggerEventTypeList]
   }
 
   object TriggerConfig {
     def apply(
+      triggerEvents: js.UndefOr[TriggerEventTypeList] = js.undefined,
       triggerName: js.UndefOr[TriggerName] = js.undefined,
-      triggerTargetArn: js.UndefOr[TriggerTargetArn] = js.undefined,
-      triggerEvents: js.UndefOr[TriggerEventTypeList] = js.undefined): TriggerConfig = {
+      triggerTargetArn: js.UndefOr[TriggerTargetArn] = js.undefined): TriggerConfig = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "triggerEvents" -> triggerEvents.map { x => x.asInstanceOf[js.Any] },
         "triggerName" -> triggerName.map { x => x.asInstanceOf[js.Any] },
-        "triggerTargetArn" -> triggerTargetArn.map { x => x.asInstanceOf[js.Any] },
-        "triggerEvents" -> triggerEvents.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "triggerTargetArn" -> triggerTargetArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TriggerConfig]
     }
@@ -3435,62 +3435,62 @@ package codedeploy {
    */
   @js.native
   trait UpdateDeploymentGroupInput extends js.Object {
+    var applicationName: ApplicationName
+    var currentDeploymentGroupName: DeploymentGroupName
     var alarmConfiguration: js.UndefOr[AlarmConfiguration]
-    var blueGreenDeploymentConfiguration: js.UndefOr[BlueGreenDeploymentConfiguration]
-    var currentDeploymentGroupName: js.UndefOr[DeploymentGroupName]
-    var deploymentStyle: js.UndefOr[DeploymentStyle]
-    var serviceRoleArn: js.UndefOr[Role]
-    var autoScalingGroups: js.UndefOr[AutoScalingGroupNameList]
-    var triggerConfigurations: js.UndefOr[TriggerConfigList]
-    var applicationName: js.UndefOr[ApplicationName]
-    var onPremisesTagSet: js.UndefOr[OnPremisesTagSet]
-    var deploymentConfigName: js.UndefOr[DeploymentConfigName]
-    var onPremisesInstanceTagFilters: js.UndefOr[TagFilterList]
-    var ecsServices: js.UndefOr[ECSServiceList]
-    var ec2TagFilters: js.UndefOr[EC2TagFilterList]
     var autoRollbackConfiguration: js.UndefOr[AutoRollbackConfiguration]
+    var autoScalingGroups: js.UndefOr[AutoScalingGroupNameList]
+    var blueGreenDeploymentConfiguration: js.UndefOr[BlueGreenDeploymentConfiguration]
+    var deploymentConfigName: js.UndefOr[DeploymentConfigName]
+    var deploymentStyle: js.UndefOr[DeploymentStyle]
+    var ec2TagFilters: js.UndefOr[EC2TagFilterList]
+    var ec2TagSet: js.UndefOr[EC2TagSet]
+    var ecsServices: js.UndefOr[ECSServiceList]
     var loadBalancerInfo: js.UndefOr[LoadBalancerInfo]
     var newDeploymentGroupName: js.UndefOr[DeploymentGroupName]
-    var ec2TagSet: js.UndefOr[EC2TagSet]
+    var onPremisesInstanceTagFilters: js.UndefOr[TagFilterList]
+    var onPremisesTagSet: js.UndefOr[OnPremisesTagSet]
+    var serviceRoleArn: js.UndefOr[Role]
+    var triggerConfigurations: js.UndefOr[TriggerConfigList]
   }
 
   object UpdateDeploymentGroupInput {
     def apply(
+      applicationName: ApplicationName,
+      currentDeploymentGroupName: DeploymentGroupName,
       alarmConfiguration: js.UndefOr[AlarmConfiguration] = js.undefined,
-      blueGreenDeploymentConfiguration: js.UndefOr[BlueGreenDeploymentConfiguration] = js.undefined,
-      currentDeploymentGroupName: js.UndefOr[DeploymentGroupName] = js.undefined,
-      deploymentStyle: js.UndefOr[DeploymentStyle] = js.undefined,
-      serviceRoleArn: js.UndefOr[Role] = js.undefined,
-      autoScalingGroups: js.UndefOr[AutoScalingGroupNameList] = js.undefined,
-      triggerConfigurations: js.UndefOr[TriggerConfigList] = js.undefined,
-      applicationName: js.UndefOr[ApplicationName] = js.undefined,
-      onPremisesTagSet: js.UndefOr[OnPremisesTagSet] = js.undefined,
-      deploymentConfigName: js.UndefOr[DeploymentConfigName] = js.undefined,
-      onPremisesInstanceTagFilters: js.UndefOr[TagFilterList] = js.undefined,
-      ecsServices: js.UndefOr[ECSServiceList] = js.undefined,
-      ec2TagFilters: js.UndefOr[EC2TagFilterList] = js.undefined,
       autoRollbackConfiguration: js.UndefOr[AutoRollbackConfiguration] = js.undefined,
+      autoScalingGroups: js.UndefOr[AutoScalingGroupNameList] = js.undefined,
+      blueGreenDeploymentConfiguration: js.UndefOr[BlueGreenDeploymentConfiguration] = js.undefined,
+      deploymentConfigName: js.UndefOr[DeploymentConfigName] = js.undefined,
+      deploymentStyle: js.UndefOr[DeploymentStyle] = js.undefined,
+      ec2TagFilters: js.UndefOr[EC2TagFilterList] = js.undefined,
+      ec2TagSet: js.UndefOr[EC2TagSet] = js.undefined,
+      ecsServices: js.UndefOr[ECSServiceList] = js.undefined,
       loadBalancerInfo: js.UndefOr[LoadBalancerInfo] = js.undefined,
       newDeploymentGroupName: js.UndefOr[DeploymentGroupName] = js.undefined,
-      ec2TagSet: js.UndefOr[EC2TagSet] = js.undefined): UpdateDeploymentGroupInput = {
+      onPremisesInstanceTagFilters: js.UndefOr[TagFilterList] = js.undefined,
+      onPremisesTagSet: js.UndefOr[OnPremisesTagSet] = js.undefined,
+      serviceRoleArn: js.UndefOr[Role] = js.undefined,
+      triggerConfigurations: js.UndefOr[TriggerConfigList] = js.undefined): UpdateDeploymentGroupInput = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "applicationName" -> applicationName.asInstanceOf[js.Any],
+        "currentDeploymentGroupName" -> currentDeploymentGroupName.asInstanceOf[js.Any],
         "alarmConfiguration" -> alarmConfiguration.map { x => x.asInstanceOf[js.Any] },
-        "blueGreenDeploymentConfiguration" -> blueGreenDeploymentConfiguration.map { x => x.asInstanceOf[js.Any] },
-        "currentDeploymentGroupName" -> currentDeploymentGroupName.map { x => x.asInstanceOf[js.Any] },
-        "deploymentStyle" -> deploymentStyle.map { x => x.asInstanceOf[js.Any] },
-        "serviceRoleArn" -> serviceRoleArn.map { x => x.asInstanceOf[js.Any] },
-        "autoScalingGroups" -> autoScalingGroups.map { x => x.asInstanceOf[js.Any] },
-        "triggerConfigurations" -> triggerConfigurations.map { x => x.asInstanceOf[js.Any] },
-        "applicationName" -> applicationName.map { x => x.asInstanceOf[js.Any] },
-        "onPremisesTagSet" -> onPremisesTagSet.map { x => x.asInstanceOf[js.Any] },
-        "deploymentConfigName" -> deploymentConfigName.map { x => x.asInstanceOf[js.Any] },
-        "onPremisesInstanceTagFilters" -> onPremisesInstanceTagFilters.map { x => x.asInstanceOf[js.Any] },
-        "ecsServices" -> ecsServices.map { x => x.asInstanceOf[js.Any] },
-        "ec2TagFilters" -> ec2TagFilters.map { x => x.asInstanceOf[js.Any] },
         "autoRollbackConfiguration" -> autoRollbackConfiguration.map { x => x.asInstanceOf[js.Any] },
+        "autoScalingGroups" -> autoScalingGroups.map { x => x.asInstanceOf[js.Any] },
+        "blueGreenDeploymentConfiguration" -> blueGreenDeploymentConfiguration.map { x => x.asInstanceOf[js.Any] },
+        "deploymentConfigName" -> deploymentConfigName.map { x => x.asInstanceOf[js.Any] },
+        "deploymentStyle" -> deploymentStyle.map { x => x.asInstanceOf[js.Any] },
+        "ec2TagFilters" -> ec2TagFilters.map { x => x.asInstanceOf[js.Any] },
+        "ec2TagSet" -> ec2TagSet.map { x => x.asInstanceOf[js.Any] },
+        "ecsServices" -> ecsServices.map { x => x.asInstanceOf[js.Any] },
         "loadBalancerInfo" -> loadBalancerInfo.map { x => x.asInstanceOf[js.Any] },
         "newDeploymentGroupName" -> newDeploymentGroupName.map { x => x.asInstanceOf[js.Any] },
-        "ec2TagSet" -> ec2TagSet.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "onPremisesInstanceTagFilters" -> onPremisesInstanceTagFilters.map { x => x.asInstanceOf[js.Any] },
+        "onPremisesTagSet" -> onPremisesTagSet.map { x => x.asInstanceOf[js.Any] },
+        "serviceRoleArn" -> serviceRoleArn.map { x => x.asInstanceOf[js.Any] },
+        "triggerConfigurations" -> triggerConfigurations.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateDeploymentGroupInput]
     }

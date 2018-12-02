@@ -38,22 +38,22 @@ package simpledb {
    */
   @js.native
   trait Attribute extends js.Object {
-    var Name: js.UndefOr[String]
+    var Name: String
+    var Value: String
     var AlternateNameEncoding: js.UndefOr[String]
-    var Value: js.UndefOr[String]
     var AlternateValueEncoding: js.UndefOr[String]
   }
 
   object Attribute {
     def apply(
-      Name: js.UndefOr[String] = js.undefined,
+      Name: String,
+      Value: String,
       AlternateNameEncoding: js.UndefOr[String] = js.undefined,
-      Value: js.UndefOr[String] = js.undefined,
       AlternateValueEncoding: js.UndefOr[String] = js.undefined): Attribute = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
+        "Name" -> Name.asInstanceOf[js.Any],
+        "Value" -> Value.asInstanceOf[js.Any],
         "AlternateNameEncoding" -> AlternateNameEncoding.map { x => x.asInstanceOf[js.Any] },
-        "Value" -> Value.map { x => x.asInstanceOf[js.Any] },
         "AlternateValueEncoding" -> AlternateValueEncoding.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Attribute]
@@ -70,17 +70,17 @@ package simpledb {
 
   @js.native
   trait BatchDeleteAttributesRequest extends js.Object {
-    var DomainName: js.UndefOr[String]
-    var Items: js.UndefOr[DeletableItemList]
+    var DomainName: String
+    var Items: DeletableItemList
   }
 
   object BatchDeleteAttributesRequest {
     def apply(
-      DomainName: js.UndefOr[String] = js.undefined,
-      Items: js.UndefOr[DeletableItemList] = js.undefined): BatchDeleteAttributesRequest = {
+      DomainName: String,
+      Items: DeletableItemList): BatchDeleteAttributesRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "DomainName" -> DomainName.map { x => x.asInstanceOf[js.Any] },
-        "Items" -> Items.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "DomainName" -> DomainName.asInstanceOf[js.Any],
+        "Items" -> Items.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BatchDeleteAttributesRequest]
     }
@@ -88,17 +88,17 @@ package simpledb {
 
   @js.native
   trait BatchPutAttributesRequest extends js.Object {
-    var DomainName: js.UndefOr[String]
-    var Items: js.UndefOr[ReplaceableItemList]
+    var DomainName: String
+    var Items: ReplaceableItemList
   }
 
   object BatchPutAttributesRequest {
     def apply(
-      DomainName: js.UndefOr[String] = js.undefined,
-      Items: js.UndefOr[ReplaceableItemList] = js.undefined): BatchPutAttributesRequest = {
+      DomainName: String,
+      Items: ReplaceableItemList): BatchPutAttributesRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "DomainName" -> DomainName.map { x => x.asInstanceOf[js.Any] },
-        "Items" -> Items.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "DomainName" -> DomainName.asInstanceOf[js.Any],
+        "Items" -> Items.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BatchPutAttributesRequest]
     }
@@ -106,14 +106,14 @@ package simpledb {
 
   @js.native
   trait CreateDomainRequest extends js.Object {
-    var DomainName: js.UndefOr[String]
+    var DomainName: String
   }
 
   object CreateDomainRequest {
     def apply(
-      DomainName: js.UndefOr[String] = js.undefined): CreateDomainRequest = {
+      DomainName: String): CreateDomainRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "DomainName" -> DomainName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "DomainName" -> DomainName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateDomainRequest]
     }
@@ -124,16 +124,16 @@ package simpledb {
    */
   @js.native
   trait DeletableAttribute extends js.Object {
-    var Name: js.UndefOr[String]
+    var Name: String
     var Value: js.UndefOr[String]
   }
 
   object DeletableAttribute {
     def apply(
-      Name: js.UndefOr[String] = js.undefined,
+      Name: String,
       Value: js.UndefOr[String] = js.undefined): DeletableAttribute = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
+        "Name" -> Name.asInstanceOf[js.Any],
         "Value" -> Value.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeletableAttribute]
@@ -142,16 +142,16 @@ package simpledb {
 
   @js.native
   trait DeletableItem extends js.Object {
-    var Name: js.UndefOr[String]
+    var Name: String
     var Attributes: js.UndefOr[DeletableAttributeList]
   }
 
   object DeletableItem {
     def apply(
-      Name: js.UndefOr[String] = js.undefined,
+      Name: String,
       Attributes: js.UndefOr[DeletableAttributeList] = js.undefined): DeletableItem = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
+        "Name" -> Name.asInstanceOf[js.Any],
         "Attributes" -> Attributes.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeletableItem]
@@ -160,21 +160,21 @@ package simpledb {
 
   @js.native
   trait DeleteAttributesRequest extends js.Object {
-    var DomainName: js.UndefOr[String]
-    var ItemName: js.UndefOr[String]
+    var DomainName: String
+    var ItemName: String
     var Attributes: js.UndefOr[DeletableAttributeList]
     var Expected: js.UndefOr[UpdateCondition]
   }
 
   object DeleteAttributesRequest {
     def apply(
-      DomainName: js.UndefOr[String] = js.undefined,
-      ItemName: js.UndefOr[String] = js.undefined,
+      DomainName: String,
+      ItemName: String,
       Attributes: js.UndefOr[DeletableAttributeList] = js.undefined,
       Expected: js.UndefOr[UpdateCondition] = js.undefined): DeleteAttributesRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "DomainName" -> DomainName.map { x => x.asInstanceOf[js.Any] },
-        "ItemName" -> ItemName.map { x => x.asInstanceOf[js.Any] },
+        "DomainName" -> DomainName.asInstanceOf[js.Any],
+        "ItemName" -> ItemName.asInstanceOf[js.Any],
         "Attributes" -> Attributes.map { x => x.asInstanceOf[js.Any] },
         "Expected" -> Expected.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
@@ -184,14 +184,14 @@ package simpledb {
 
   @js.native
   trait DeleteDomainRequest extends js.Object {
-    var DomainName: js.UndefOr[String]
+    var DomainName: String
   }
 
   object DeleteDomainRequest {
     def apply(
-      DomainName: js.UndefOr[String] = js.undefined): DeleteDomainRequest = {
+      DomainName: String): DeleteDomainRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "DomainName" -> DomainName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "DomainName" -> DomainName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteDomainRequest]
     }
@@ -199,14 +199,14 @@ package simpledb {
 
   @js.native
   trait DomainMetadataRequest extends js.Object {
-    var DomainName: js.UndefOr[String]
+    var DomainName: String
   }
 
   object DomainMetadataRequest {
     def apply(
-      DomainName: js.UndefOr[String] = js.undefined): DomainMetadataRequest = {
+      DomainName: String): DomainMetadataRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "DomainName" -> DomainName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "DomainName" -> DomainName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DomainMetadataRequest]
     }
@@ -214,32 +214,32 @@ package simpledb {
 
   @js.native
   trait DomainMetadataResult extends js.Object {
+    var AttributeNameCount: js.UndefOr[Int]
     var AttributeNamesSizeBytes: js.UndefOr[Double]
-    var ItemNamesSizeBytes: js.UndefOr[Double]
+    var AttributeValueCount: js.UndefOr[Int]
     var AttributeValuesSizeBytes: js.UndefOr[Double]
     var ItemCount: js.UndefOr[Int]
-    var AttributeValueCount: js.UndefOr[Int]
+    var ItemNamesSizeBytes: js.UndefOr[Double]
     var Timestamp: js.UndefOr[Int]
-    var AttributeNameCount: js.UndefOr[Int]
   }
 
   object DomainMetadataResult {
     def apply(
+      AttributeNameCount: js.UndefOr[Int] = js.undefined,
       AttributeNamesSizeBytes: js.UndefOr[Double] = js.undefined,
-      ItemNamesSizeBytes: js.UndefOr[Double] = js.undefined,
+      AttributeValueCount: js.UndefOr[Int] = js.undefined,
       AttributeValuesSizeBytes: js.UndefOr[Double] = js.undefined,
       ItemCount: js.UndefOr[Int] = js.undefined,
-      AttributeValueCount: js.UndefOr[Int] = js.undefined,
-      Timestamp: js.UndefOr[Int] = js.undefined,
-      AttributeNameCount: js.UndefOr[Int] = js.undefined): DomainMetadataResult = {
+      ItemNamesSizeBytes: js.UndefOr[Double] = js.undefined,
+      Timestamp: js.UndefOr[Int] = js.undefined): DomainMetadataResult = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "AttributeNameCount" -> AttributeNameCount.map { x => x.asInstanceOf[js.Any] },
         "AttributeNamesSizeBytes" -> AttributeNamesSizeBytes.map { x => x.asInstanceOf[js.Any] },
-        "ItemNamesSizeBytes" -> ItemNamesSizeBytes.map { x => x.asInstanceOf[js.Any] },
+        "AttributeValueCount" -> AttributeValueCount.map { x => x.asInstanceOf[js.Any] },
         "AttributeValuesSizeBytes" -> AttributeValuesSizeBytes.map { x => x.asInstanceOf[js.Any] },
         "ItemCount" -> ItemCount.map { x => x.asInstanceOf[js.Any] },
-        "AttributeValueCount" -> AttributeValueCount.map { x => x.asInstanceOf[js.Any] },
-        "Timestamp" -> Timestamp.map { x => x.asInstanceOf[js.Any] },
-        "AttributeNameCount" -> AttributeNameCount.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ItemNamesSizeBytes" -> ItemNamesSizeBytes.map { x => x.asInstanceOf[js.Any] },
+        "Timestamp" -> Timestamp.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DomainMetadataResult]
     }
@@ -255,21 +255,21 @@ package simpledb {
 
   @js.native
   trait GetAttributesRequest extends js.Object {
-    var DomainName: js.UndefOr[String]
-    var ItemName: js.UndefOr[String]
+    var DomainName: String
+    var ItemName: String
     var AttributeNames: js.UndefOr[AttributeNameList]
     var ConsistentRead: js.UndefOr[Boolean]
   }
 
   object GetAttributesRequest {
     def apply(
-      DomainName: js.UndefOr[String] = js.undefined,
-      ItemName: js.UndefOr[String] = js.undefined,
+      DomainName: String,
+      ItemName: String,
       AttributeNames: js.UndefOr[AttributeNameList] = js.undefined,
       ConsistentRead: js.UndefOr[Boolean] = js.undefined): GetAttributesRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "DomainName" -> DomainName.map { x => x.asInstanceOf[js.Any] },
-        "ItemName" -> ItemName.map { x => x.asInstanceOf[js.Any] },
+        "DomainName" -> DomainName.asInstanceOf[js.Any],
+        "ItemName" -> ItemName.asInstanceOf[js.Any],
         "AttributeNames" -> AttributeNames.map { x => x.asInstanceOf[js.Any] },
         "ConsistentRead" -> ConsistentRead.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
@@ -337,20 +337,20 @@ package simpledb {
    */
   @js.native
   trait Item extends js.Object {
-    var Name: js.UndefOr[String]
+    var Attributes: AttributeList
+    var Name: String
     var AlternateNameEncoding: js.UndefOr[String]
-    var Attributes: js.UndefOr[AttributeList]
   }
 
   object Item {
     def apply(
-      Name: js.UndefOr[String] = js.undefined,
-      AlternateNameEncoding: js.UndefOr[String] = js.undefined,
-      Attributes: js.UndefOr[AttributeList] = js.undefined): Item = {
+      Attributes: AttributeList,
+      Name: String,
+      AlternateNameEncoding: js.UndefOr[String] = js.undefined): Item = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
-        "AlternateNameEncoding" -> AlternateNameEncoding.map { x => x.asInstanceOf[js.Any] },
-        "Attributes" -> Attributes.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Attributes" -> Attributes.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
+        "AlternateNameEncoding" -> AlternateNameEncoding.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Item]
     }
@@ -458,22 +458,22 @@ package simpledb {
 
   @js.native
   trait PutAttributesRequest extends js.Object {
-    var DomainName: js.UndefOr[String]
-    var ItemName: js.UndefOr[String]
-    var Attributes: js.UndefOr[ReplaceableAttributeList]
+    var Attributes: ReplaceableAttributeList
+    var DomainName: String
+    var ItemName: String
     var Expected: js.UndefOr[UpdateCondition]
   }
 
   object PutAttributesRequest {
     def apply(
-      DomainName: js.UndefOr[String] = js.undefined,
-      ItemName: js.UndefOr[String] = js.undefined,
-      Attributes: js.UndefOr[ReplaceableAttributeList] = js.undefined,
+      Attributes: ReplaceableAttributeList,
+      DomainName: String,
+      ItemName: String,
       Expected: js.UndefOr[UpdateCondition] = js.undefined): PutAttributesRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "DomainName" -> DomainName.map { x => x.asInstanceOf[js.Any] },
-        "ItemName" -> ItemName.map { x => x.asInstanceOf[js.Any] },
-        "Attributes" -> Attributes.map { x => x.asInstanceOf[js.Any] },
+        "Attributes" -> Attributes.asInstanceOf[js.Any],
+        "DomainName" -> DomainName.asInstanceOf[js.Any],
+        "ItemName" -> ItemName.asInstanceOf[js.Any],
         "Expected" -> Expected.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutAttributesRequest]
@@ -485,19 +485,19 @@ package simpledb {
    */
   @js.native
   trait ReplaceableAttribute extends js.Object {
-    var Name: js.UndefOr[String]
-    var Value: js.UndefOr[String]
+    var Name: String
+    var Value: String
     var Replace: js.UndefOr[Boolean]
   }
 
   object ReplaceableAttribute {
     def apply(
-      Name: js.UndefOr[String] = js.undefined,
-      Value: js.UndefOr[String] = js.undefined,
+      Name: String,
+      Value: String,
       Replace: js.UndefOr[Boolean] = js.undefined): ReplaceableAttribute = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
-        "Value" -> Value.map { x => x.asInstanceOf[js.Any] },
+        "Name" -> Name.asInstanceOf[js.Any],
+        "Value" -> Value.asInstanceOf[js.Any],
         "Replace" -> Replace.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ReplaceableAttribute]
@@ -509,17 +509,17 @@ package simpledb {
    */
   @js.native
   trait ReplaceableItem extends js.Object {
-    var Name: js.UndefOr[String]
-    var Attributes: js.UndefOr[ReplaceableAttributeList]
+    var Attributes: ReplaceableAttributeList
+    var Name: String
   }
 
   object ReplaceableItem {
     def apply(
-      Name: js.UndefOr[String] = js.undefined,
-      Attributes: js.UndefOr[ReplaceableAttributeList] = js.undefined): ReplaceableItem = {
+      Attributes: ReplaceableAttributeList,
+      Name: String): ReplaceableItem = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
-        "Attributes" -> Attributes.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Attributes" -> Attributes.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ReplaceableItem]
     }
@@ -535,20 +535,20 @@ package simpledb {
 
   @js.native
   trait SelectRequest extends js.Object {
-    var SelectExpression: js.UndefOr[String]
-    var NextToken: js.UndefOr[String]
+    var SelectExpression: String
     var ConsistentRead: js.UndefOr[Boolean]
+    var NextToken: js.UndefOr[String]
   }
 
   object SelectRequest {
     def apply(
-      SelectExpression: js.UndefOr[String] = js.undefined,
-      NextToken: js.UndefOr[String] = js.undefined,
-      ConsistentRead: js.UndefOr[Boolean] = js.undefined): SelectRequest = {
+      SelectExpression: String,
+      ConsistentRead: js.UndefOr[Boolean] = js.undefined,
+      NextToken: js.UndefOr[String] = js.undefined): SelectRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "SelectExpression" -> SelectExpression.map { x => x.asInstanceOf[js.Any] },
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
-        "ConsistentRead" -> ConsistentRead.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "SelectExpression" -> SelectExpression.asInstanceOf[js.Any],
+        "ConsistentRead" -> ConsistentRead.map { x => x.asInstanceOf[js.Any] },
+        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SelectRequest]
     }
@@ -585,20 +585,20 @@ package simpledb {
    */
   @js.native
   trait UpdateCondition extends js.Object {
+    var Exists: js.UndefOr[Boolean]
     var Name: js.UndefOr[String]
     var Value: js.UndefOr[String]
-    var Exists: js.UndefOr[Boolean]
   }
 
   object UpdateCondition {
     def apply(
+      Exists: js.UndefOr[Boolean] = js.undefined,
       Name: js.UndefOr[String] = js.undefined,
-      Value: js.UndefOr[String] = js.undefined,
-      Exists: js.UndefOr[Boolean] = js.undefined): UpdateCondition = {
+      Value: js.UndefOr[String] = js.undefined): UpdateCondition = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "Exists" -> Exists.map { x => x.asInstanceOf[js.Any] },
         "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
-        "Value" -> Value.map { x => x.asInstanceOf[js.Any] },
-        "Exists" -> Exists.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Value" -> Value.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateCondition]
     }

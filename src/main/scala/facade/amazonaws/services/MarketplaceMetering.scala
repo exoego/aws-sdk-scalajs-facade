@@ -35,17 +35,17 @@ package marketplacemetering {
    */
   @js.native
   trait BatchMeterUsageRequest extends js.Object {
-    var UsageRecords: js.UndefOr[UsageRecordList]
-    var ProductCode: js.UndefOr[ProductCode]
+    var ProductCode: ProductCode
+    var UsageRecords: UsageRecordList
   }
 
   object BatchMeterUsageRequest {
     def apply(
-      UsageRecords: js.UndefOr[UsageRecordList] = js.undefined,
-      ProductCode: js.UndefOr[ProductCode] = js.undefined): BatchMeterUsageRequest = {
+      ProductCode: ProductCode,
+      UsageRecords: UsageRecordList): BatchMeterUsageRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "UsageRecords" -> UsageRecords.map { x => x.asInstanceOf[js.Any] },
-        "ProductCode" -> ProductCode.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ProductCode" -> ProductCode.asInstanceOf[js.Any],
+        "UsageRecords" -> UsageRecords.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BatchMeterUsageRequest]
     }
@@ -74,26 +74,26 @@ package marketplacemetering {
 
   @js.native
   trait MeterUsageRequest extends js.Object {
-    var ProductCode: js.UndefOr[ProductCode]
-    var DryRun: js.UndefOr[Boolean]
-    var Timestamp: js.UndefOr[Timestamp]
-    var UsageQuantity: js.UndefOr[UsageQuantity]
-    var UsageDimension: js.UndefOr[UsageDimension]
+    var DryRun: Boolean
+    var ProductCode: ProductCode
+    var Timestamp: Timestamp
+    var UsageDimension: UsageDimension
+    var UsageQuantity: UsageQuantity
   }
 
   object MeterUsageRequest {
     def apply(
-      ProductCode: js.UndefOr[ProductCode] = js.undefined,
-      DryRun: js.UndefOr[Boolean] = js.undefined,
-      Timestamp: js.UndefOr[Timestamp] = js.undefined,
-      UsageQuantity: js.UndefOr[UsageQuantity] = js.undefined,
-      UsageDimension: js.UndefOr[UsageDimension] = js.undefined): MeterUsageRequest = {
+      DryRun: Boolean,
+      ProductCode: ProductCode,
+      Timestamp: Timestamp,
+      UsageDimension: UsageDimension,
+      UsageQuantity: UsageQuantity): MeterUsageRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ProductCode" -> ProductCode.map { x => x.asInstanceOf[js.Any] },
-        "DryRun" -> DryRun.map { x => x.asInstanceOf[js.Any] },
-        "Timestamp" -> Timestamp.map { x => x.asInstanceOf[js.Any] },
-        "UsageQuantity" -> UsageQuantity.map { x => x.asInstanceOf[js.Any] },
-        "UsageDimension" -> UsageDimension.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "DryRun" -> DryRun.asInstanceOf[js.Any],
+        "ProductCode" -> ProductCode.asInstanceOf[js.Any],
+        "Timestamp" -> Timestamp.asInstanceOf[js.Any],
+        "UsageDimension" -> UsageDimension.asInstanceOf[js.Any],
+        "UsageQuantity" -> UsageQuantity.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[MeterUsageRequest]
     }
@@ -116,19 +116,19 @@ package marketplacemetering {
 
   @js.native
   trait RegisterUsageRequest extends js.Object {
-    var ProductCode: js.UndefOr[ProductCode]
-    var PublicKeyVersion: js.UndefOr[VersionInteger]
+    var ProductCode: ProductCode
+    var PublicKeyVersion: VersionInteger
     var Nonce: js.UndefOr[Nonce]
   }
 
   object RegisterUsageRequest {
     def apply(
-      ProductCode: js.UndefOr[ProductCode] = js.undefined,
-      PublicKeyVersion: js.UndefOr[VersionInteger] = js.undefined,
+      ProductCode: ProductCode,
+      PublicKeyVersion: VersionInteger,
       Nonce: js.UndefOr[Nonce] = js.undefined): RegisterUsageRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ProductCode" -> ProductCode.map { x => x.asInstanceOf[js.Any] },
-        "PublicKeyVersion" -> PublicKeyVersion.map { x => x.asInstanceOf[js.Any] },
+        "ProductCode" -> ProductCode.asInstanceOf[js.Any],
+        "PublicKeyVersion" -> PublicKeyVersion.asInstanceOf[js.Any],
         "Nonce" -> Nonce.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RegisterUsageRequest]
@@ -158,14 +158,14 @@ package marketplacemetering {
    */
   @js.native
   trait ResolveCustomerRequest extends js.Object {
-    var RegistrationToken: js.UndefOr[NonEmptyString]
+    var RegistrationToken: NonEmptyString
   }
 
   object ResolveCustomerRequest {
     def apply(
-      RegistrationToken: js.UndefOr[NonEmptyString] = js.undefined): ResolveCustomerRequest = {
+      RegistrationToken: NonEmptyString): ResolveCustomerRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "RegistrationToken" -> RegistrationToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "RegistrationToken" -> RegistrationToken.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ResolveCustomerRequest]
     }
@@ -197,23 +197,23 @@ package marketplacemetering {
    */
   @js.native
   trait UsageRecord extends js.Object {
-    var Timestamp: js.UndefOr[Timestamp]
-    var CustomerIdentifier: js.UndefOr[CustomerIdentifier]
-    var Dimension: js.UndefOr[UsageDimension]
-    var Quantity: js.UndefOr[UsageQuantity]
+    var CustomerIdentifier: CustomerIdentifier
+    var Dimension: UsageDimension
+    var Quantity: UsageQuantity
+    var Timestamp: Timestamp
   }
 
   object UsageRecord {
     def apply(
-      Timestamp: js.UndefOr[Timestamp] = js.undefined,
-      CustomerIdentifier: js.UndefOr[CustomerIdentifier] = js.undefined,
-      Dimension: js.UndefOr[UsageDimension] = js.undefined,
-      Quantity: js.UndefOr[UsageQuantity] = js.undefined): UsageRecord = {
+      CustomerIdentifier: CustomerIdentifier,
+      Dimension: UsageDimension,
+      Quantity: UsageQuantity,
+      Timestamp: Timestamp): UsageRecord = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Timestamp" -> Timestamp.map { x => x.asInstanceOf[js.Any] },
-        "CustomerIdentifier" -> CustomerIdentifier.map { x => x.asInstanceOf[js.Any] },
-        "Dimension" -> Dimension.map { x => x.asInstanceOf[js.Any] },
-        "Quantity" -> Quantity.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "CustomerIdentifier" -> CustomerIdentifier.asInstanceOf[js.Any],
+        "Dimension" -> Dimension.asInstanceOf[js.Any],
+        "Quantity" -> Quantity.asInstanceOf[js.Any],
+        "Timestamp" -> Timestamp.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UsageRecord]
     }
@@ -224,20 +224,20 @@ package marketplacemetering {
    */
   @js.native
   trait UsageRecordResult extends js.Object {
-    var UsageRecord: js.UndefOr[UsageRecord]
     var MeteringRecordId: js.UndefOr[String]
     var Status: js.UndefOr[UsageRecordResultStatus]
+    var UsageRecord: js.UndefOr[UsageRecord]
   }
 
   object UsageRecordResult {
     def apply(
-      UsageRecord: js.UndefOr[UsageRecord] = js.undefined,
       MeteringRecordId: js.UndefOr[String] = js.undefined,
-      Status: js.UndefOr[UsageRecordResultStatus] = js.undefined): UsageRecordResult = {
+      Status: js.UndefOr[UsageRecordResultStatus] = js.undefined,
+      UsageRecord: js.UndefOr[UsageRecord] = js.undefined): UsageRecordResult = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "UsageRecord" -> UsageRecord.map { x => x.asInstanceOf[js.Any] },
         "MeteringRecordId" -> MeteringRecordId.map { x => x.asInstanceOf[js.Any] },
-        "Status" -> Status.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Status" -> Status.map { x => x.asInstanceOf[js.Any] },
+        "UsageRecord" -> UsageRecord.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UsageRecordResult]
     }

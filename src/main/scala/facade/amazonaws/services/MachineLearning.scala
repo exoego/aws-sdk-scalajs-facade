@@ -116,20 +116,20 @@ package machinelearning {
 
   @js.native
   trait AddTagsInput extends js.Object {
-    var Tags: js.UndefOr[TagList]
-    var ResourceId: js.UndefOr[EntityId]
-    var ResourceType: js.UndefOr[TaggableResourceType]
+    var ResourceId: EntityId
+    var ResourceType: TaggableResourceType
+    var Tags: TagList
   }
 
   object AddTagsInput {
     def apply(
-      Tags: js.UndefOr[TagList] = js.undefined,
-      ResourceId: js.UndefOr[EntityId] = js.undefined,
-      ResourceType: js.UndefOr[TaggableResourceType] = js.undefined): AddTagsInput = {
+      ResourceId: EntityId,
+      ResourceType: TaggableResourceType,
+      Tags: TagList): AddTagsInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Tags" -> Tags.map { x => x.asInstanceOf[js.Any] },
-        "ResourceId" -> ResourceId.map { x => x.asInstanceOf[js.Any] },
-        "ResourceType" -> ResourceType.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ResourceId" -> ResourceId.asInstanceOf[js.Any],
+        "ResourceType" -> ResourceType.asInstanceOf[js.Any],
+        "Tags" -> Tags.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AddTagsInput]
     }
@@ -170,59 +170,59 @@ package machinelearning {
    */
   @js.native
   trait BatchPrediction extends js.Object {
-    var LastUpdatedAt: js.UndefOr[EpochTime]
-    var Name: js.UndefOr[EntityName]
-    var ComputeTime: js.UndefOr[LongType]
-    var StartedAt: js.UndefOr[EpochTime]
     var BatchPredictionDataSourceId: js.UndefOr[EntityId]
     var BatchPredictionId: js.UndefOr[EntityId]
-    var TotalRecordCount: js.UndefOr[LongType]
-    var CreatedByIamUser: js.UndefOr[AwsUserArn]
-    var InvalidRecordCount: js.UndefOr[LongType]
-    var InputDataLocationS3: js.UndefOr[S3Url]
-    var OutputUri: js.UndefOr[S3Url]
-    var Message: js.UndefOr[Message]
+    var ComputeTime: js.UndefOr[LongType]
     var CreatedAt: js.UndefOr[EpochTime]
+    var CreatedByIamUser: js.UndefOr[AwsUserArn]
     var FinishedAt: js.UndefOr[EpochTime]
+    var InputDataLocationS3: js.UndefOr[S3Url]
+    var InvalidRecordCount: js.UndefOr[LongType]
+    var LastUpdatedAt: js.UndefOr[EpochTime]
     var MLModelId: js.UndefOr[EntityId]
+    var Message: js.UndefOr[Message]
+    var Name: js.UndefOr[EntityName]
+    var OutputUri: js.UndefOr[S3Url]
+    var StartedAt: js.UndefOr[EpochTime]
     var Status: js.UndefOr[EntityStatus]
+    var TotalRecordCount: js.UndefOr[LongType]
   }
 
   object BatchPrediction {
     def apply(
-      LastUpdatedAt: js.UndefOr[EpochTime] = js.undefined,
-      Name: js.UndefOr[EntityName] = js.undefined,
-      ComputeTime: js.UndefOr[LongType] = js.undefined,
-      StartedAt: js.UndefOr[EpochTime] = js.undefined,
       BatchPredictionDataSourceId: js.UndefOr[EntityId] = js.undefined,
       BatchPredictionId: js.UndefOr[EntityId] = js.undefined,
-      TotalRecordCount: js.UndefOr[LongType] = js.undefined,
-      CreatedByIamUser: js.UndefOr[AwsUserArn] = js.undefined,
-      InvalidRecordCount: js.UndefOr[LongType] = js.undefined,
-      InputDataLocationS3: js.UndefOr[S3Url] = js.undefined,
-      OutputUri: js.UndefOr[S3Url] = js.undefined,
-      Message: js.UndefOr[Message] = js.undefined,
+      ComputeTime: js.UndefOr[LongType] = js.undefined,
       CreatedAt: js.UndefOr[EpochTime] = js.undefined,
+      CreatedByIamUser: js.UndefOr[AwsUserArn] = js.undefined,
       FinishedAt: js.UndefOr[EpochTime] = js.undefined,
+      InputDataLocationS3: js.UndefOr[S3Url] = js.undefined,
+      InvalidRecordCount: js.UndefOr[LongType] = js.undefined,
+      LastUpdatedAt: js.UndefOr[EpochTime] = js.undefined,
       MLModelId: js.UndefOr[EntityId] = js.undefined,
-      Status: js.UndefOr[EntityStatus] = js.undefined): BatchPrediction = {
+      Message: js.UndefOr[Message] = js.undefined,
+      Name: js.UndefOr[EntityName] = js.undefined,
+      OutputUri: js.UndefOr[S3Url] = js.undefined,
+      StartedAt: js.UndefOr[EpochTime] = js.undefined,
+      Status: js.UndefOr[EntityStatus] = js.undefined,
+      TotalRecordCount: js.UndefOr[LongType] = js.undefined): BatchPrediction = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "LastUpdatedAt" -> LastUpdatedAt.map { x => x.asInstanceOf[js.Any] },
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
-        "ComputeTime" -> ComputeTime.map { x => x.asInstanceOf[js.Any] },
-        "StartedAt" -> StartedAt.map { x => x.asInstanceOf[js.Any] },
         "BatchPredictionDataSourceId" -> BatchPredictionDataSourceId.map { x => x.asInstanceOf[js.Any] },
         "BatchPredictionId" -> BatchPredictionId.map { x => x.asInstanceOf[js.Any] },
-        "TotalRecordCount" -> TotalRecordCount.map { x => x.asInstanceOf[js.Any] },
-        "CreatedByIamUser" -> CreatedByIamUser.map { x => x.asInstanceOf[js.Any] },
-        "InvalidRecordCount" -> InvalidRecordCount.map { x => x.asInstanceOf[js.Any] },
-        "InputDataLocationS3" -> InputDataLocationS3.map { x => x.asInstanceOf[js.Any] },
-        "OutputUri" -> OutputUri.map { x => x.asInstanceOf[js.Any] },
-        "Message" -> Message.map { x => x.asInstanceOf[js.Any] },
+        "ComputeTime" -> ComputeTime.map { x => x.asInstanceOf[js.Any] },
         "CreatedAt" -> CreatedAt.map { x => x.asInstanceOf[js.Any] },
+        "CreatedByIamUser" -> CreatedByIamUser.map { x => x.asInstanceOf[js.Any] },
         "FinishedAt" -> FinishedAt.map { x => x.asInstanceOf[js.Any] },
+        "InputDataLocationS3" -> InputDataLocationS3.map { x => x.asInstanceOf[js.Any] },
+        "InvalidRecordCount" -> InvalidRecordCount.map { x => x.asInstanceOf[js.Any] },
+        "LastUpdatedAt" -> LastUpdatedAt.map { x => x.asInstanceOf[js.Any] },
         "MLModelId" -> MLModelId.map { x => x.asInstanceOf[js.Any] },
-        "Status" -> Status.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Message" -> Message.map { x => x.asInstanceOf[js.Any] },
+        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
+        "OutputUri" -> OutputUri.map { x => x.asInstanceOf[js.Any] },
+        "StartedAt" -> StartedAt.map { x => x.asInstanceOf[js.Any] },
+        "Status" -> Status.map { x => x.asInstanceOf[js.Any] },
+        "TotalRecordCount" -> TotalRecordCount.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BatchPrediction]
     }
@@ -246,26 +246,26 @@ package machinelearning {
 
   @js.native
   trait CreateBatchPredictionInput extends js.Object {
-    var BatchPredictionDataSourceId: js.UndefOr[EntityId]
-    var BatchPredictionId: js.UndefOr[EntityId]
+    var BatchPredictionDataSourceId: EntityId
+    var BatchPredictionId: EntityId
+    var MLModelId: EntityId
+    var OutputUri: S3Url
     var BatchPredictionName: js.UndefOr[EntityName]
-    var OutputUri: js.UndefOr[S3Url]
-    var MLModelId: js.UndefOr[EntityId]
   }
 
   object CreateBatchPredictionInput {
     def apply(
-      BatchPredictionDataSourceId: js.UndefOr[EntityId] = js.undefined,
-      BatchPredictionId: js.UndefOr[EntityId] = js.undefined,
-      BatchPredictionName: js.UndefOr[EntityName] = js.undefined,
-      OutputUri: js.UndefOr[S3Url] = js.undefined,
-      MLModelId: js.UndefOr[EntityId] = js.undefined): CreateBatchPredictionInput = {
+      BatchPredictionDataSourceId: EntityId,
+      BatchPredictionId: EntityId,
+      MLModelId: EntityId,
+      OutputUri: S3Url,
+      BatchPredictionName: js.UndefOr[EntityName] = js.undefined): CreateBatchPredictionInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "BatchPredictionDataSourceId" -> BatchPredictionDataSourceId.map { x => x.asInstanceOf[js.Any] },
-        "BatchPredictionId" -> BatchPredictionId.map { x => x.asInstanceOf[js.Any] },
-        "BatchPredictionName" -> BatchPredictionName.map { x => x.asInstanceOf[js.Any] },
-        "OutputUri" -> OutputUri.map { x => x.asInstanceOf[js.Any] },
-        "MLModelId" -> MLModelId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "BatchPredictionDataSourceId" -> BatchPredictionDataSourceId.asInstanceOf[js.Any],
+        "BatchPredictionId" -> BatchPredictionId.asInstanceOf[js.Any],
+        "MLModelId" -> MLModelId.asInstanceOf[js.Any],
+        "OutputUri" -> OutputUri.asInstanceOf[js.Any],
+        "BatchPredictionName" -> BatchPredictionName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateBatchPredictionInput]
     }
@@ -291,25 +291,25 @@ package machinelearning {
 
   @js.native
   trait CreateDataSourceFromRDSInput extends js.Object {
+    var DataSourceId: EntityId
+    var RDSData: RDSDataSpec
+    var RoleARN: RoleARN
     var ComputeStatistics: js.UndefOr[ComputeStatistics]
-    var RoleARN: js.UndefOr[RoleARN]
-    var RDSData: js.UndefOr[RDSDataSpec]
-    var DataSourceId: js.UndefOr[EntityId]
     var DataSourceName: js.UndefOr[EntityName]
   }
 
   object CreateDataSourceFromRDSInput {
     def apply(
+      DataSourceId: EntityId,
+      RDSData: RDSDataSpec,
+      RoleARN: RoleARN,
       ComputeStatistics: js.UndefOr[ComputeStatistics] = js.undefined,
-      RoleARN: js.UndefOr[RoleARN] = js.undefined,
-      RDSData: js.UndefOr[RDSDataSpec] = js.undefined,
-      DataSourceId: js.UndefOr[EntityId] = js.undefined,
       DataSourceName: js.UndefOr[EntityName] = js.undefined): CreateDataSourceFromRDSInput = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "DataSourceId" -> DataSourceId.asInstanceOf[js.Any],
+        "RDSData" -> RDSData.asInstanceOf[js.Any],
+        "RoleARN" -> RoleARN.asInstanceOf[js.Any],
         "ComputeStatistics" -> ComputeStatistics.map { x => x.asInstanceOf[js.Any] },
-        "RoleARN" -> RoleARN.map { x => x.asInstanceOf[js.Any] },
-        "RDSData" -> RDSData.map { x => x.asInstanceOf[js.Any] },
-        "DataSourceId" -> DataSourceId.map { x => x.asInstanceOf[js.Any] },
         "DataSourceName" -> DataSourceName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateDataSourceFromRDSInput]
@@ -336,25 +336,25 @@ package machinelearning {
 
   @js.native
   trait CreateDataSourceFromRedshiftInput extends js.Object {
+    var DataSourceId: EntityId
+    var DataSpec: RedshiftDataSpec
+    var RoleARN: RoleARN
     var ComputeStatistics: js.UndefOr[ComputeStatistics]
-    var DataSpec: js.UndefOr[RedshiftDataSpec]
-    var RoleARN: js.UndefOr[RoleARN]
-    var DataSourceId: js.UndefOr[EntityId]
     var DataSourceName: js.UndefOr[EntityName]
   }
 
   object CreateDataSourceFromRedshiftInput {
     def apply(
+      DataSourceId: EntityId,
+      DataSpec: RedshiftDataSpec,
+      RoleARN: RoleARN,
       ComputeStatistics: js.UndefOr[ComputeStatistics] = js.undefined,
-      DataSpec: js.UndefOr[RedshiftDataSpec] = js.undefined,
-      RoleARN: js.UndefOr[RoleARN] = js.undefined,
-      DataSourceId: js.UndefOr[EntityId] = js.undefined,
       DataSourceName: js.UndefOr[EntityName] = js.undefined): CreateDataSourceFromRedshiftInput = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "DataSourceId" -> DataSourceId.asInstanceOf[js.Any],
+        "DataSpec" -> DataSpec.asInstanceOf[js.Any],
+        "RoleARN" -> RoleARN.asInstanceOf[js.Any],
         "ComputeStatistics" -> ComputeStatistics.map { x => x.asInstanceOf[js.Any] },
-        "DataSpec" -> DataSpec.map { x => x.asInstanceOf[js.Any] },
-        "RoleARN" -> RoleARN.map { x => x.asInstanceOf[js.Any] },
-        "DataSourceId" -> DataSourceId.map { x => x.asInstanceOf[js.Any] },
         "DataSourceName" -> DataSourceName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateDataSourceFromRedshiftInput]
@@ -381,23 +381,23 @@ package machinelearning {
 
   @js.native
   trait CreateDataSourceFromS3Input extends js.Object {
-    var DataSourceId: js.UndefOr[EntityId]
-    var DataSourceName: js.UndefOr[EntityName]
-    var DataSpec: js.UndefOr[S3DataSpec]
+    var DataSourceId: EntityId
+    var DataSpec: S3DataSpec
     var ComputeStatistics: js.UndefOr[ComputeStatistics]
+    var DataSourceName: js.UndefOr[EntityName]
   }
 
   object CreateDataSourceFromS3Input {
     def apply(
-      DataSourceId: js.UndefOr[EntityId] = js.undefined,
-      DataSourceName: js.UndefOr[EntityName] = js.undefined,
-      DataSpec: js.UndefOr[S3DataSpec] = js.undefined,
-      ComputeStatistics: js.UndefOr[ComputeStatistics] = js.undefined): CreateDataSourceFromS3Input = {
+      DataSourceId: EntityId,
+      DataSpec: S3DataSpec,
+      ComputeStatistics: js.UndefOr[ComputeStatistics] = js.undefined,
+      DataSourceName: js.UndefOr[EntityName] = js.undefined): CreateDataSourceFromS3Input = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "DataSourceId" -> DataSourceId.map { x => x.asInstanceOf[js.Any] },
-        "DataSourceName" -> DataSourceName.map { x => x.asInstanceOf[js.Any] },
-        "DataSpec" -> DataSpec.map { x => x.asInstanceOf[js.Any] },
-        "ComputeStatistics" -> ComputeStatistics.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "DataSourceId" -> DataSourceId.asInstanceOf[js.Any],
+        "DataSpec" -> DataSpec.asInstanceOf[js.Any],
+        "ComputeStatistics" -> ComputeStatistics.map { x => x.asInstanceOf[js.Any] },
+        "DataSourceName" -> DataSourceName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateDataSourceFromS3Input]
     }
@@ -423,23 +423,23 @@ package machinelearning {
 
   @js.native
   trait CreateEvaluationInput extends js.Object {
-    var EvaluationId: js.UndefOr[EntityId]
+    var EvaluationDataSourceId: EntityId
+    var EvaluationId: EntityId
+    var MLModelId: EntityId
     var EvaluationName: js.UndefOr[EntityName]
-    var MLModelId: js.UndefOr[EntityId]
-    var EvaluationDataSourceId: js.UndefOr[EntityId]
   }
 
   object CreateEvaluationInput {
     def apply(
-      EvaluationId: js.UndefOr[EntityId] = js.undefined,
-      EvaluationName: js.UndefOr[EntityName] = js.undefined,
-      MLModelId: js.UndefOr[EntityId] = js.undefined,
-      EvaluationDataSourceId: js.UndefOr[EntityId] = js.undefined): CreateEvaluationInput = {
+      EvaluationDataSourceId: EntityId,
+      EvaluationId: EntityId,
+      MLModelId: EntityId,
+      EvaluationName: js.UndefOr[EntityName] = js.undefined): CreateEvaluationInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "EvaluationId" -> EvaluationId.map { x => x.asInstanceOf[js.Any] },
-        "EvaluationName" -> EvaluationName.map { x => x.asInstanceOf[js.Any] },
-        "MLModelId" -> MLModelId.map { x => x.asInstanceOf[js.Any] },
-        "EvaluationDataSourceId" -> EvaluationDataSourceId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "EvaluationDataSourceId" -> EvaluationDataSourceId.asInstanceOf[js.Any],
+        "EvaluationId" -> EvaluationId.asInstanceOf[js.Any],
+        "MLModelId" -> MLModelId.asInstanceOf[js.Any],
+        "EvaluationName" -> EvaluationName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateEvaluationInput]
     }
@@ -465,32 +465,32 @@ package machinelearning {
 
   @js.native
   trait CreateMLModelInput extends js.Object {
-    var TrainingDataSourceId: js.UndefOr[EntityId]
-    var RecipeUri: js.UndefOr[S3Url]
-    var Parameters: js.UndefOr[TrainingParameters]
+    var MLModelId: EntityId
+    var MLModelType: MLModelType
+    var TrainingDataSourceId: EntityId
     var MLModelName: js.UndefOr[EntityName]
-    var MLModelType: js.UndefOr[MLModelType]
+    var Parameters: js.UndefOr[TrainingParameters]
     var Recipe: js.UndefOr[Recipe]
-    var MLModelId: js.UndefOr[EntityId]
+    var RecipeUri: js.UndefOr[S3Url]
   }
 
   object CreateMLModelInput {
     def apply(
-      TrainingDataSourceId: js.UndefOr[EntityId] = js.undefined,
-      RecipeUri: js.UndefOr[S3Url] = js.undefined,
-      Parameters: js.UndefOr[TrainingParameters] = js.undefined,
+      MLModelId: EntityId,
+      MLModelType: MLModelType,
+      TrainingDataSourceId: EntityId,
       MLModelName: js.UndefOr[EntityName] = js.undefined,
-      MLModelType: js.UndefOr[MLModelType] = js.undefined,
+      Parameters: js.UndefOr[TrainingParameters] = js.undefined,
       Recipe: js.UndefOr[Recipe] = js.undefined,
-      MLModelId: js.UndefOr[EntityId] = js.undefined): CreateMLModelInput = {
+      RecipeUri: js.UndefOr[S3Url] = js.undefined): CreateMLModelInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "TrainingDataSourceId" -> TrainingDataSourceId.map { x => x.asInstanceOf[js.Any] },
-        "RecipeUri" -> RecipeUri.map { x => x.asInstanceOf[js.Any] },
-        "Parameters" -> Parameters.map { x => x.asInstanceOf[js.Any] },
+        "MLModelId" -> MLModelId.asInstanceOf[js.Any],
+        "MLModelType" -> MLModelType.asInstanceOf[js.Any],
+        "TrainingDataSourceId" -> TrainingDataSourceId.asInstanceOf[js.Any],
         "MLModelName" -> MLModelName.map { x => x.asInstanceOf[js.Any] },
-        "MLModelType" -> MLModelType.map { x => x.asInstanceOf[js.Any] },
+        "Parameters" -> Parameters.map { x => x.asInstanceOf[js.Any] },
         "Recipe" -> Recipe.map { x => x.asInstanceOf[js.Any] },
-        "MLModelId" -> MLModelId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "RecipeUri" -> RecipeUri.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateMLModelInput]
     }
@@ -516,14 +516,14 @@ package machinelearning {
 
   @js.native
   trait CreateRealtimeEndpointInput extends js.Object {
-    var MLModelId: js.UndefOr[EntityId]
+    var MLModelId: EntityId
   }
 
   object CreateRealtimeEndpointInput {
     def apply(
-      MLModelId: js.UndefOr[EntityId] = js.undefined): CreateRealtimeEndpointInput = {
+      MLModelId: EntityId): CreateRealtimeEndpointInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "MLModelId" -> MLModelId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "MLModelId" -> MLModelId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateRealtimeEndpointInput]
     }
@@ -555,64 +555,64 @@ package machinelearning {
    */
   @js.native
   trait DataSource extends js.Object {
-    var RedshiftMetadata: js.UndefOr[RedshiftMetadata]
-    var LastUpdatedAt: js.UndefOr[EpochTime]
-    var Name: js.UndefOr[EntityName]
-    var RDSMetadata: js.UndefOr[RDSMetadata]
-    var ComputeTime: js.UndefOr[LongType]
     var ComputeStatistics: js.UndefOr[ComputeStatistics]
-    var StartedAt: js.UndefOr[EpochTime]
-    var DataSizeInBytes: js.UndefOr[LongType]
-    var NumberOfFiles: js.UndefOr[LongType]
-    var CreatedByIamUser: js.UndefOr[AwsUserArn]
-    var RoleARN: js.UndefOr[RoleARN]
-    var DataRearrangement: js.UndefOr[DataRearrangement]
-    var Message: js.UndefOr[Message]
+    var ComputeTime: js.UndefOr[LongType]
     var CreatedAt: js.UndefOr[EpochTime]
+    var CreatedByIamUser: js.UndefOr[AwsUserArn]
+    var DataLocationS3: js.UndefOr[S3Url]
+    var DataRearrangement: js.UndefOr[DataRearrangement]
+    var DataSizeInBytes: js.UndefOr[LongType]
     var DataSourceId: js.UndefOr[EntityId]
     var FinishedAt: js.UndefOr[EpochTime]
-    var DataLocationS3: js.UndefOr[S3Url]
+    var LastUpdatedAt: js.UndefOr[EpochTime]
+    var Message: js.UndefOr[Message]
+    var Name: js.UndefOr[EntityName]
+    var NumberOfFiles: js.UndefOr[LongType]
+    var RDSMetadata: js.UndefOr[RDSMetadata]
+    var RedshiftMetadata: js.UndefOr[RedshiftMetadata]
+    var RoleARN: js.UndefOr[RoleARN]
+    var StartedAt: js.UndefOr[EpochTime]
     var Status: js.UndefOr[EntityStatus]
   }
 
   object DataSource {
     def apply(
-      RedshiftMetadata: js.UndefOr[RedshiftMetadata] = js.undefined,
-      LastUpdatedAt: js.UndefOr[EpochTime] = js.undefined,
-      Name: js.UndefOr[EntityName] = js.undefined,
-      RDSMetadata: js.UndefOr[RDSMetadata] = js.undefined,
-      ComputeTime: js.UndefOr[LongType] = js.undefined,
       ComputeStatistics: js.UndefOr[ComputeStatistics] = js.undefined,
-      StartedAt: js.UndefOr[EpochTime] = js.undefined,
-      DataSizeInBytes: js.UndefOr[LongType] = js.undefined,
-      NumberOfFiles: js.UndefOr[LongType] = js.undefined,
-      CreatedByIamUser: js.UndefOr[AwsUserArn] = js.undefined,
-      RoleARN: js.UndefOr[RoleARN] = js.undefined,
-      DataRearrangement: js.UndefOr[DataRearrangement] = js.undefined,
-      Message: js.UndefOr[Message] = js.undefined,
+      ComputeTime: js.UndefOr[LongType] = js.undefined,
       CreatedAt: js.UndefOr[EpochTime] = js.undefined,
+      CreatedByIamUser: js.UndefOr[AwsUserArn] = js.undefined,
+      DataLocationS3: js.UndefOr[S3Url] = js.undefined,
+      DataRearrangement: js.UndefOr[DataRearrangement] = js.undefined,
+      DataSizeInBytes: js.UndefOr[LongType] = js.undefined,
       DataSourceId: js.UndefOr[EntityId] = js.undefined,
       FinishedAt: js.UndefOr[EpochTime] = js.undefined,
-      DataLocationS3: js.UndefOr[S3Url] = js.undefined,
+      LastUpdatedAt: js.UndefOr[EpochTime] = js.undefined,
+      Message: js.UndefOr[Message] = js.undefined,
+      Name: js.UndefOr[EntityName] = js.undefined,
+      NumberOfFiles: js.UndefOr[LongType] = js.undefined,
+      RDSMetadata: js.UndefOr[RDSMetadata] = js.undefined,
+      RedshiftMetadata: js.UndefOr[RedshiftMetadata] = js.undefined,
+      RoleARN: js.UndefOr[RoleARN] = js.undefined,
+      StartedAt: js.UndefOr[EpochTime] = js.undefined,
       Status: js.UndefOr[EntityStatus] = js.undefined): DataSource = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "RedshiftMetadata" -> RedshiftMetadata.map { x => x.asInstanceOf[js.Any] },
-        "LastUpdatedAt" -> LastUpdatedAt.map { x => x.asInstanceOf[js.Any] },
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
-        "RDSMetadata" -> RDSMetadata.map { x => x.asInstanceOf[js.Any] },
-        "ComputeTime" -> ComputeTime.map { x => x.asInstanceOf[js.Any] },
         "ComputeStatistics" -> ComputeStatistics.map { x => x.asInstanceOf[js.Any] },
-        "StartedAt" -> StartedAt.map { x => x.asInstanceOf[js.Any] },
-        "DataSizeInBytes" -> DataSizeInBytes.map { x => x.asInstanceOf[js.Any] },
-        "NumberOfFiles" -> NumberOfFiles.map { x => x.asInstanceOf[js.Any] },
-        "CreatedByIamUser" -> CreatedByIamUser.map { x => x.asInstanceOf[js.Any] },
-        "RoleARN" -> RoleARN.map { x => x.asInstanceOf[js.Any] },
-        "DataRearrangement" -> DataRearrangement.map { x => x.asInstanceOf[js.Any] },
-        "Message" -> Message.map { x => x.asInstanceOf[js.Any] },
+        "ComputeTime" -> ComputeTime.map { x => x.asInstanceOf[js.Any] },
         "CreatedAt" -> CreatedAt.map { x => x.asInstanceOf[js.Any] },
+        "CreatedByIamUser" -> CreatedByIamUser.map { x => x.asInstanceOf[js.Any] },
+        "DataLocationS3" -> DataLocationS3.map { x => x.asInstanceOf[js.Any] },
+        "DataRearrangement" -> DataRearrangement.map { x => x.asInstanceOf[js.Any] },
+        "DataSizeInBytes" -> DataSizeInBytes.map { x => x.asInstanceOf[js.Any] },
         "DataSourceId" -> DataSourceId.map { x => x.asInstanceOf[js.Any] },
         "FinishedAt" -> FinishedAt.map { x => x.asInstanceOf[js.Any] },
-        "DataLocationS3" -> DataLocationS3.map { x => x.asInstanceOf[js.Any] },
+        "LastUpdatedAt" -> LastUpdatedAt.map { x => x.asInstanceOf[js.Any] },
+        "Message" -> Message.map { x => x.asInstanceOf[js.Any] },
+        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
+        "NumberOfFiles" -> NumberOfFiles.map { x => x.asInstanceOf[js.Any] },
+        "RDSMetadata" -> RDSMetadata.map { x => x.asInstanceOf[js.Any] },
+        "RedshiftMetadata" -> RedshiftMetadata.map { x => x.asInstanceOf[js.Any] },
+        "RoleARN" -> RoleARN.map { x => x.asInstanceOf[js.Any] },
+        "StartedAt" -> StartedAt.map { x => x.asInstanceOf[js.Any] },
         "Status" -> Status.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DataSource]
@@ -635,14 +635,14 @@ package machinelearning {
 
   @js.native
   trait DeleteBatchPredictionInput extends js.Object {
-    var BatchPredictionId: js.UndefOr[EntityId]
+    var BatchPredictionId: EntityId
   }
 
   object DeleteBatchPredictionInput {
     def apply(
-      BatchPredictionId: js.UndefOr[EntityId] = js.undefined): DeleteBatchPredictionInput = {
+      BatchPredictionId: EntityId): DeleteBatchPredictionInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "BatchPredictionId" -> BatchPredictionId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "BatchPredictionId" -> BatchPredictionId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteBatchPredictionInput]
     }
@@ -668,14 +668,14 @@ package machinelearning {
 
   @js.native
   trait DeleteDataSourceInput extends js.Object {
-    var DataSourceId: js.UndefOr[EntityId]
+    var DataSourceId: EntityId
   }
 
   object DeleteDataSourceInput {
     def apply(
-      DataSourceId: js.UndefOr[EntityId] = js.undefined): DeleteDataSourceInput = {
+      DataSourceId: EntityId): DeleteDataSourceInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "DataSourceId" -> DataSourceId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "DataSourceId" -> DataSourceId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteDataSourceInput]
     }
@@ -701,14 +701,14 @@ package machinelearning {
 
   @js.native
   trait DeleteEvaluationInput extends js.Object {
-    var EvaluationId: js.UndefOr[EntityId]
+    var EvaluationId: EntityId
   }
 
   object DeleteEvaluationInput {
     def apply(
-      EvaluationId: js.UndefOr[EntityId] = js.undefined): DeleteEvaluationInput = {
+      EvaluationId: EntityId): DeleteEvaluationInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "EvaluationId" -> EvaluationId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "EvaluationId" -> EvaluationId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteEvaluationInput]
     }
@@ -734,14 +734,14 @@ package machinelearning {
 
   @js.native
   trait DeleteMLModelInput extends js.Object {
-    var MLModelId: js.UndefOr[EntityId]
+    var MLModelId: EntityId
   }
 
   object DeleteMLModelInput {
     def apply(
-      MLModelId: js.UndefOr[EntityId] = js.undefined): DeleteMLModelInput = {
+      MLModelId: EntityId): DeleteMLModelInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "MLModelId" -> MLModelId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "MLModelId" -> MLModelId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteMLModelInput]
     }
@@ -767,14 +767,14 @@ package machinelearning {
 
   @js.native
   trait DeleteRealtimeEndpointInput extends js.Object {
-    var MLModelId: js.UndefOr[EntityId]
+    var MLModelId: EntityId
   }
 
   object DeleteRealtimeEndpointInput {
     def apply(
-      MLModelId: js.UndefOr[EntityId] = js.undefined): DeleteRealtimeEndpointInput = {
+      MLModelId: EntityId): DeleteRealtimeEndpointInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "MLModelId" -> MLModelId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "MLModelId" -> MLModelId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteRealtimeEndpointInput]
     }
@@ -803,20 +803,20 @@ package machinelearning {
 
   @js.native
   trait DeleteTagsInput extends js.Object {
-    var TagKeys: js.UndefOr[TagKeyList]
-    var ResourceId: js.UndefOr[EntityId]
-    var ResourceType: js.UndefOr[TaggableResourceType]
+    var ResourceId: EntityId
+    var ResourceType: TaggableResourceType
+    var TagKeys: TagKeyList
   }
 
   object DeleteTagsInput {
     def apply(
-      TagKeys: js.UndefOr[TagKeyList] = js.undefined,
-      ResourceId: js.UndefOr[EntityId] = js.undefined,
-      ResourceType: js.UndefOr[TaggableResourceType] = js.undefined): DeleteTagsInput = {
+      ResourceId: EntityId,
+      ResourceType: TaggableResourceType,
+      TagKeys: TagKeyList): DeleteTagsInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "TagKeys" -> TagKeys.map { x => x.asInstanceOf[js.Any] },
-        "ResourceId" -> ResourceId.map { x => x.asInstanceOf[js.Any] },
-        "ResourceType" -> ResourceType.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ResourceId" -> ResourceId.asInstanceOf[js.Any],
+        "ResourceType" -> ResourceType.asInstanceOf[js.Any],
+        "TagKeys" -> TagKeys.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteTagsInput]
     }
@@ -845,44 +845,44 @@ package machinelearning {
 
   @js.native
   trait DescribeBatchPredictionsInput extends js.Object {
-    var FilterVariable: js.UndefOr[BatchPredictionFilterVariable]
-    var Limit: js.UndefOr[PageLimit]
-    var GT: js.UndefOr[ComparatorValue]
-    var NE: js.UndefOr[ComparatorValue]
-    var LT: js.UndefOr[ComparatorValue]
-    var SortOrder: js.UndefOr[SortOrder]
     var EQ: js.UndefOr[ComparatorValue]
-    var LE: js.UndefOr[ComparatorValue]
-    var Prefix: js.UndefOr[ComparatorValue]
-    var NextToken: js.UndefOr[StringType]
+    var FilterVariable: js.UndefOr[BatchPredictionFilterVariable]
     var GE: js.UndefOr[ComparatorValue]
+    var GT: js.UndefOr[ComparatorValue]
+    var LE: js.UndefOr[ComparatorValue]
+    var LT: js.UndefOr[ComparatorValue]
+    var Limit: js.UndefOr[PageLimit]
+    var NE: js.UndefOr[ComparatorValue]
+    var NextToken: js.UndefOr[StringType]
+    var Prefix: js.UndefOr[ComparatorValue]
+    var SortOrder: js.UndefOr[SortOrder]
   }
 
   object DescribeBatchPredictionsInput {
     def apply(
-      FilterVariable: js.UndefOr[BatchPredictionFilterVariable] = js.undefined,
-      Limit: js.UndefOr[PageLimit] = js.undefined,
-      GT: js.UndefOr[ComparatorValue] = js.undefined,
-      NE: js.UndefOr[ComparatorValue] = js.undefined,
-      LT: js.UndefOr[ComparatorValue] = js.undefined,
-      SortOrder: js.UndefOr[SortOrder] = js.undefined,
       EQ: js.UndefOr[ComparatorValue] = js.undefined,
+      FilterVariable: js.UndefOr[BatchPredictionFilterVariable] = js.undefined,
+      GE: js.UndefOr[ComparatorValue] = js.undefined,
+      GT: js.UndefOr[ComparatorValue] = js.undefined,
       LE: js.UndefOr[ComparatorValue] = js.undefined,
-      Prefix: js.UndefOr[ComparatorValue] = js.undefined,
+      LT: js.UndefOr[ComparatorValue] = js.undefined,
+      Limit: js.UndefOr[PageLimit] = js.undefined,
+      NE: js.UndefOr[ComparatorValue] = js.undefined,
       NextToken: js.UndefOr[StringType] = js.undefined,
-      GE: js.UndefOr[ComparatorValue] = js.undefined): DescribeBatchPredictionsInput = {
+      Prefix: js.UndefOr[ComparatorValue] = js.undefined,
+      SortOrder: js.UndefOr[SortOrder] = js.undefined): DescribeBatchPredictionsInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "FilterVariable" -> FilterVariable.map { x => x.asInstanceOf[js.Any] },
-        "Limit" -> Limit.map { x => x.asInstanceOf[js.Any] },
-        "GT" -> GT.map { x => x.asInstanceOf[js.Any] },
-        "NE" -> NE.map { x => x.asInstanceOf[js.Any] },
-        "LT" -> LT.map { x => x.asInstanceOf[js.Any] },
-        "SortOrder" -> SortOrder.map { x => x.asInstanceOf[js.Any] },
         "EQ" -> EQ.map { x => x.asInstanceOf[js.Any] },
+        "FilterVariable" -> FilterVariable.map { x => x.asInstanceOf[js.Any] },
+        "GE" -> GE.map { x => x.asInstanceOf[js.Any] },
+        "GT" -> GT.map { x => x.asInstanceOf[js.Any] },
         "LE" -> LE.map { x => x.asInstanceOf[js.Any] },
-        "Prefix" -> Prefix.map { x => x.asInstanceOf[js.Any] },
+        "LT" -> LT.map { x => x.asInstanceOf[js.Any] },
+        "Limit" -> Limit.map { x => x.asInstanceOf[js.Any] },
+        "NE" -> NE.map { x => x.asInstanceOf[js.Any] },
         "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
-        "GE" -> GE.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Prefix" -> Prefix.map { x => x.asInstanceOf[js.Any] },
+        "SortOrder" -> SortOrder.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeBatchPredictionsInput]
     }
@@ -893,17 +893,17 @@ package machinelearning {
    */
   @js.native
   trait DescribeBatchPredictionsOutput extends js.Object {
-    var Results: js.UndefOr[BatchPredictions]
     var NextToken: js.UndefOr[StringType]
+    var Results: js.UndefOr[BatchPredictions]
   }
 
   object DescribeBatchPredictionsOutput {
     def apply(
-      Results: js.UndefOr[BatchPredictions] = js.undefined,
-      NextToken: js.UndefOr[StringType] = js.undefined): DescribeBatchPredictionsOutput = {
+      NextToken: js.UndefOr[StringType] = js.undefined,
+      Results: js.UndefOr[BatchPredictions] = js.undefined): DescribeBatchPredictionsOutput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Results" -> Results.map { x => x.asInstanceOf[js.Any] },
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
+        "Results" -> Results.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeBatchPredictionsOutput]
     }
@@ -911,44 +911,44 @@ package machinelearning {
 
   @js.native
   trait DescribeDataSourcesInput extends js.Object {
-    var FilterVariable: js.UndefOr[DataSourceFilterVariable]
-    var Limit: js.UndefOr[PageLimit]
-    var GT: js.UndefOr[ComparatorValue]
-    var NE: js.UndefOr[ComparatorValue]
-    var LT: js.UndefOr[ComparatorValue]
-    var SortOrder: js.UndefOr[SortOrder]
     var EQ: js.UndefOr[ComparatorValue]
-    var LE: js.UndefOr[ComparatorValue]
-    var Prefix: js.UndefOr[ComparatorValue]
-    var NextToken: js.UndefOr[StringType]
+    var FilterVariable: js.UndefOr[DataSourceFilterVariable]
     var GE: js.UndefOr[ComparatorValue]
+    var GT: js.UndefOr[ComparatorValue]
+    var LE: js.UndefOr[ComparatorValue]
+    var LT: js.UndefOr[ComparatorValue]
+    var Limit: js.UndefOr[PageLimit]
+    var NE: js.UndefOr[ComparatorValue]
+    var NextToken: js.UndefOr[StringType]
+    var Prefix: js.UndefOr[ComparatorValue]
+    var SortOrder: js.UndefOr[SortOrder]
   }
 
   object DescribeDataSourcesInput {
     def apply(
-      FilterVariable: js.UndefOr[DataSourceFilterVariable] = js.undefined,
-      Limit: js.UndefOr[PageLimit] = js.undefined,
-      GT: js.UndefOr[ComparatorValue] = js.undefined,
-      NE: js.UndefOr[ComparatorValue] = js.undefined,
-      LT: js.UndefOr[ComparatorValue] = js.undefined,
-      SortOrder: js.UndefOr[SortOrder] = js.undefined,
       EQ: js.UndefOr[ComparatorValue] = js.undefined,
+      FilterVariable: js.UndefOr[DataSourceFilterVariable] = js.undefined,
+      GE: js.UndefOr[ComparatorValue] = js.undefined,
+      GT: js.UndefOr[ComparatorValue] = js.undefined,
       LE: js.UndefOr[ComparatorValue] = js.undefined,
-      Prefix: js.UndefOr[ComparatorValue] = js.undefined,
+      LT: js.UndefOr[ComparatorValue] = js.undefined,
+      Limit: js.UndefOr[PageLimit] = js.undefined,
+      NE: js.UndefOr[ComparatorValue] = js.undefined,
       NextToken: js.UndefOr[StringType] = js.undefined,
-      GE: js.UndefOr[ComparatorValue] = js.undefined): DescribeDataSourcesInput = {
+      Prefix: js.UndefOr[ComparatorValue] = js.undefined,
+      SortOrder: js.UndefOr[SortOrder] = js.undefined): DescribeDataSourcesInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "FilterVariable" -> FilterVariable.map { x => x.asInstanceOf[js.Any] },
-        "Limit" -> Limit.map { x => x.asInstanceOf[js.Any] },
-        "GT" -> GT.map { x => x.asInstanceOf[js.Any] },
-        "NE" -> NE.map { x => x.asInstanceOf[js.Any] },
-        "LT" -> LT.map { x => x.asInstanceOf[js.Any] },
-        "SortOrder" -> SortOrder.map { x => x.asInstanceOf[js.Any] },
         "EQ" -> EQ.map { x => x.asInstanceOf[js.Any] },
+        "FilterVariable" -> FilterVariable.map { x => x.asInstanceOf[js.Any] },
+        "GE" -> GE.map { x => x.asInstanceOf[js.Any] },
+        "GT" -> GT.map { x => x.asInstanceOf[js.Any] },
         "LE" -> LE.map { x => x.asInstanceOf[js.Any] },
-        "Prefix" -> Prefix.map { x => x.asInstanceOf[js.Any] },
+        "LT" -> LT.map { x => x.asInstanceOf[js.Any] },
+        "Limit" -> Limit.map { x => x.asInstanceOf[js.Any] },
+        "NE" -> NE.map { x => x.asInstanceOf[js.Any] },
         "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
-        "GE" -> GE.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Prefix" -> Prefix.map { x => x.asInstanceOf[js.Any] },
+        "SortOrder" -> SortOrder.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeDataSourcesInput]
     }
@@ -959,17 +959,17 @@ package machinelearning {
    */
   @js.native
   trait DescribeDataSourcesOutput extends js.Object {
-    var Results: js.UndefOr[DataSources]
     var NextToken: js.UndefOr[StringType]
+    var Results: js.UndefOr[DataSources]
   }
 
   object DescribeDataSourcesOutput {
     def apply(
-      Results: js.UndefOr[DataSources] = js.undefined,
-      NextToken: js.UndefOr[StringType] = js.undefined): DescribeDataSourcesOutput = {
+      NextToken: js.UndefOr[StringType] = js.undefined,
+      Results: js.UndefOr[DataSources] = js.undefined): DescribeDataSourcesOutput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Results" -> Results.map { x => x.asInstanceOf[js.Any] },
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
+        "Results" -> Results.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeDataSourcesOutput]
     }
@@ -977,44 +977,44 @@ package machinelearning {
 
   @js.native
   trait DescribeEvaluationsInput extends js.Object {
-    var FilterVariable: js.UndefOr[EvaluationFilterVariable]
-    var Limit: js.UndefOr[PageLimit]
-    var GT: js.UndefOr[ComparatorValue]
-    var NE: js.UndefOr[ComparatorValue]
-    var LT: js.UndefOr[ComparatorValue]
-    var SortOrder: js.UndefOr[SortOrder]
     var EQ: js.UndefOr[ComparatorValue]
-    var LE: js.UndefOr[ComparatorValue]
-    var Prefix: js.UndefOr[ComparatorValue]
-    var NextToken: js.UndefOr[StringType]
+    var FilterVariable: js.UndefOr[EvaluationFilterVariable]
     var GE: js.UndefOr[ComparatorValue]
+    var GT: js.UndefOr[ComparatorValue]
+    var LE: js.UndefOr[ComparatorValue]
+    var LT: js.UndefOr[ComparatorValue]
+    var Limit: js.UndefOr[PageLimit]
+    var NE: js.UndefOr[ComparatorValue]
+    var NextToken: js.UndefOr[StringType]
+    var Prefix: js.UndefOr[ComparatorValue]
+    var SortOrder: js.UndefOr[SortOrder]
   }
 
   object DescribeEvaluationsInput {
     def apply(
-      FilterVariable: js.UndefOr[EvaluationFilterVariable] = js.undefined,
-      Limit: js.UndefOr[PageLimit] = js.undefined,
-      GT: js.UndefOr[ComparatorValue] = js.undefined,
-      NE: js.UndefOr[ComparatorValue] = js.undefined,
-      LT: js.UndefOr[ComparatorValue] = js.undefined,
-      SortOrder: js.UndefOr[SortOrder] = js.undefined,
       EQ: js.UndefOr[ComparatorValue] = js.undefined,
+      FilterVariable: js.UndefOr[EvaluationFilterVariable] = js.undefined,
+      GE: js.UndefOr[ComparatorValue] = js.undefined,
+      GT: js.UndefOr[ComparatorValue] = js.undefined,
       LE: js.UndefOr[ComparatorValue] = js.undefined,
-      Prefix: js.UndefOr[ComparatorValue] = js.undefined,
+      LT: js.UndefOr[ComparatorValue] = js.undefined,
+      Limit: js.UndefOr[PageLimit] = js.undefined,
+      NE: js.UndefOr[ComparatorValue] = js.undefined,
       NextToken: js.UndefOr[StringType] = js.undefined,
-      GE: js.UndefOr[ComparatorValue] = js.undefined): DescribeEvaluationsInput = {
+      Prefix: js.UndefOr[ComparatorValue] = js.undefined,
+      SortOrder: js.UndefOr[SortOrder] = js.undefined): DescribeEvaluationsInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "FilterVariable" -> FilterVariable.map { x => x.asInstanceOf[js.Any] },
-        "Limit" -> Limit.map { x => x.asInstanceOf[js.Any] },
-        "GT" -> GT.map { x => x.asInstanceOf[js.Any] },
-        "NE" -> NE.map { x => x.asInstanceOf[js.Any] },
-        "LT" -> LT.map { x => x.asInstanceOf[js.Any] },
-        "SortOrder" -> SortOrder.map { x => x.asInstanceOf[js.Any] },
         "EQ" -> EQ.map { x => x.asInstanceOf[js.Any] },
+        "FilterVariable" -> FilterVariable.map { x => x.asInstanceOf[js.Any] },
+        "GE" -> GE.map { x => x.asInstanceOf[js.Any] },
+        "GT" -> GT.map { x => x.asInstanceOf[js.Any] },
         "LE" -> LE.map { x => x.asInstanceOf[js.Any] },
-        "Prefix" -> Prefix.map { x => x.asInstanceOf[js.Any] },
+        "LT" -> LT.map { x => x.asInstanceOf[js.Any] },
+        "Limit" -> Limit.map { x => x.asInstanceOf[js.Any] },
+        "NE" -> NE.map { x => x.asInstanceOf[js.Any] },
         "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
-        "GE" -> GE.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Prefix" -> Prefix.map { x => x.asInstanceOf[js.Any] },
+        "SortOrder" -> SortOrder.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeEvaluationsInput]
     }
@@ -1025,17 +1025,17 @@ package machinelearning {
    */
   @js.native
   trait DescribeEvaluationsOutput extends js.Object {
-    var Results: js.UndefOr[Evaluations]
     var NextToken: js.UndefOr[StringType]
+    var Results: js.UndefOr[Evaluations]
   }
 
   object DescribeEvaluationsOutput {
     def apply(
-      Results: js.UndefOr[Evaluations] = js.undefined,
-      NextToken: js.UndefOr[StringType] = js.undefined): DescribeEvaluationsOutput = {
+      NextToken: js.UndefOr[StringType] = js.undefined,
+      Results: js.UndefOr[Evaluations] = js.undefined): DescribeEvaluationsOutput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Results" -> Results.map { x => x.asInstanceOf[js.Any] },
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
+        "Results" -> Results.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeEvaluationsOutput]
     }
@@ -1043,44 +1043,44 @@ package machinelearning {
 
   @js.native
   trait DescribeMLModelsInput extends js.Object {
-    var FilterVariable: js.UndefOr[MLModelFilterVariable]
-    var Limit: js.UndefOr[PageLimit]
-    var GT: js.UndefOr[ComparatorValue]
-    var NE: js.UndefOr[ComparatorValue]
-    var LT: js.UndefOr[ComparatorValue]
-    var SortOrder: js.UndefOr[SortOrder]
     var EQ: js.UndefOr[ComparatorValue]
-    var LE: js.UndefOr[ComparatorValue]
-    var Prefix: js.UndefOr[ComparatorValue]
-    var NextToken: js.UndefOr[StringType]
+    var FilterVariable: js.UndefOr[MLModelFilterVariable]
     var GE: js.UndefOr[ComparatorValue]
+    var GT: js.UndefOr[ComparatorValue]
+    var LE: js.UndefOr[ComparatorValue]
+    var LT: js.UndefOr[ComparatorValue]
+    var Limit: js.UndefOr[PageLimit]
+    var NE: js.UndefOr[ComparatorValue]
+    var NextToken: js.UndefOr[StringType]
+    var Prefix: js.UndefOr[ComparatorValue]
+    var SortOrder: js.UndefOr[SortOrder]
   }
 
   object DescribeMLModelsInput {
     def apply(
-      FilterVariable: js.UndefOr[MLModelFilterVariable] = js.undefined,
-      Limit: js.UndefOr[PageLimit] = js.undefined,
-      GT: js.UndefOr[ComparatorValue] = js.undefined,
-      NE: js.UndefOr[ComparatorValue] = js.undefined,
-      LT: js.UndefOr[ComparatorValue] = js.undefined,
-      SortOrder: js.UndefOr[SortOrder] = js.undefined,
       EQ: js.UndefOr[ComparatorValue] = js.undefined,
+      FilterVariable: js.UndefOr[MLModelFilterVariable] = js.undefined,
+      GE: js.UndefOr[ComparatorValue] = js.undefined,
+      GT: js.UndefOr[ComparatorValue] = js.undefined,
       LE: js.UndefOr[ComparatorValue] = js.undefined,
-      Prefix: js.UndefOr[ComparatorValue] = js.undefined,
+      LT: js.UndefOr[ComparatorValue] = js.undefined,
+      Limit: js.UndefOr[PageLimit] = js.undefined,
+      NE: js.UndefOr[ComparatorValue] = js.undefined,
       NextToken: js.UndefOr[StringType] = js.undefined,
-      GE: js.UndefOr[ComparatorValue] = js.undefined): DescribeMLModelsInput = {
+      Prefix: js.UndefOr[ComparatorValue] = js.undefined,
+      SortOrder: js.UndefOr[SortOrder] = js.undefined): DescribeMLModelsInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "FilterVariable" -> FilterVariable.map { x => x.asInstanceOf[js.Any] },
-        "Limit" -> Limit.map { x => x.asInstanceOf[js.Any] },
-        "GT" -> GT.map { x => x.asInstanceOf[js.Any] },
-        "NE" -> NE.map { x => x.asInstanceOf[js.Any] },
-        "LT" -> LT.map { x => x.asInstanceOf[js.Any] },
-        "SortOrder" -> SortOrder.map { x => x.asInstanceOf[js.Any] },
         "EQ" -> EQ.map { x => x.asInstanceOf[js.Any] },
+        "FilterVariable" -> FilterVariable.map { x => x.asInstanceOf[js.Any] },
+        "GE" -> GE.map { x => x.asInstanceOf[js.Any] },
+        "GT" -> GT.map { x => x.asInstanceOf[js.Any] },
         "LE" -> LE.map { x => x.asInstanceOf[js.Any] },
-        "Prefix" -> Prefix.map { x => x.asInstanceOf[js.Any] },
+        "LT" -> LT.map { x => x.asInstanceOf[js.Any] },
+        "Limit" -> Limit.map { x => x.asInstanceOf[js.Any] },
+        "NE" -> NE.map { x => x.asInstanceOf[js.Any] },
         "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
-        "GE" -> GE.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Prefix" -> Prefix.map { x => x.asInstanceOf[js.Any] },
+        "SortOrder" -> SortOrder.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeMLModelsInput]
     }
@@ -1091,17 +1091,17 @@ package machinelearning {
    */
   @js.native
   trait DescribeMLModelsOutput extends js.Object {
-    var Results: js.UndefOr[MLModels]
     var NextToken: js.UndefOr[StringType]
+    var Results: js.UndefOr[MLModels]
   }
 
   object DescribeMLModelsOutput {
     def apply(
-      Results: js.UndefOr[MLModels] = js.undefined,
-      NextToken: js.UndefOr[StringType] = js.undefined): DescribeMLModelsOutput = {
+      NextToken: js.UndefOr[StringType] = js.undefined,
+      Results: js.UndefOr[MLModels] = js.undefined): DescribeMLModelsOutput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Results" -> Results.map { x => x.asInstanceOf[js.Any] },
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
+        "Results" -> Results.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeMLModelsOutput]
     }
@@ -1109,17 +1109,17 @@ package machinelearning {
 
   @js.native
   trait DescribeTagsInput extends js.Object {
-    var ResourceId: js.UndefOr[EntityId]
-    var ResourceType: js.UndefOr[TaggableResourceType]
+    var ResourceId: EntityId
+    var ResourceType: TaggableResourceType
   }
 
   object DescribeTagsInput {
     def apply(
-      ResourceId: js.UndefOr[EntityId] = js.undefined,
-      ResourceType: js.UndefOr[TaggableResourceType] = js.undefined): DescribeTagsInput = {
+      ResourceId: EntityId,
+      ResourceType: TaggableResourceType): DescribeTagsInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ResourceId" -> ResourceId.map { x => x.asInstanceOf[js.Any] },
-        "ResourceType" -> ResourceType.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ResourceId" -> ResourceId.asInstanceOf[js.Any],
+        "ResourceType" -> ResourceType.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeTagsInput]
     }
@@ -1177,52 +1177,52 @@ package machinelearning {
    */
   @js.native
   trait Evaluation extends js.Object {
+    var ComputeTime: js.UndefOr[LongType]
+    var CreatedAt: js.UndefOr[EpochTime]
+    var CreatedByIamUser: js.UndefOr[AwsUserArn]
+    var EvaluationDataSourceId: js.UndefOr[EntityId]
+    var EvaluationId: js.UndefOr[EntityId]
+    var FinishedAt: js.UndefOr[EpochTime]
+    var InputDataLocationS3: js.UndefOr[S3Url]
     var LastUpdatedAt: js.UndefOr[EpochTime]
+    var MLModelId: js.UndefOr[EntityId]
+    var Message: js.UndefOr[Message]
     var Name: js.UndefOr[EntityName]
     var PerformanceMetrics: js.UndefOr[PerformanceMetrics]
-    var ComputeTime: js.UndefOr[LongType]
     var StartedAt: js.UndefOr[EpochTime]
-    var CreatedByIamUser: js.UndefOr[AwsUserArn]
-    var EvaluationId: js.UndefOr[EntityId]
-    var InputDataLocationS3: js.UndefOr[S3Url]
-    var Message: js.UndefOr[Message]
-    var CreatedAt: js.UndefOr[EpochTime]
-    var FinishedAt: js.UndefOr[EpochTime]
-    var MLModelId: js.UndefOr[EntityId]
-    var EvaluationDataSourceId: js.UndefOr[EntityId]
     var Status: js.UndefOr[EntityStatus]
   }
 
   object Evaluation {
     def apply(
+      ComputeTime: js.UndefOr[LongType] = js.undefined,
+      CreatedAt: js.UndefOr[EpochTime] = js.undefined,
+      CreatedByIamUser: js.UndefOr[AwsUserArn] = js.undefined,
+      EvaluationDataSourceId: js.UndefOr[EntityId] = js.undefined,
+      EvaluationId: js.UndefOr[EntityId] = js.undefined,
+      FinishedAt: js.UndefOr[EpochTime] = js.undefined,
+      InputDataLocationS3: js.UndefOr[S3Url] = js.undefined,
       LastUpdatedAt: js.UndefOr[EpochTime] = js.undefined,
+      MLModelId: js.UndefOr[EntityId] = js.undefined,
+      Message: js.UndefOr[Message] = js.undefined,
       Name: js.UndefOr[EntityName] = js.undefined,
       PerformanceMetrics: js.UndefOr[PerformanceMetrics] = js.undefined,
-      ComputeTime: js.UndefOr[LongType] = js.undefined,
       StartedAt: js.UndefOr[EpochTime] = js.undefined,
-      CreatedByIamUser: js.UndefOr[AwsUserArn] = js.undefined,
-      EvaluationId: js.UndefOr[EntityId] = js.undefined,
-      InputDataLocationS3: js.UndefOr[S3Url] = js.undefined,
-      Message: js.UndefOr[Message] = js.undefined,
-      CreatedAt: js.UndefOr[EpochTime] = js.undefined,
-      FinishedAt: js.UndefOr[EpochTime] = js.undefined,
-      MLModelId: js.UndefOr[EntityId] = js.undefined,
-      EvaluationDataSourceId: js.UndefOr[EntityId] = js.undefined,
       Status: js.UndefOr[EntityStatus] = js.undefined): Evaluation = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "ComputeTime" -> ComputeTime.map { x => x.asInstanceOf[js.Any] },
+        "CreatedAt" -> CreatedAt.map { x => x.asInstanceOf[js.Any] },
+        "CreatedByIamUser" -> CreatedByIamUser.map { x => x.asInstanceOf[js.Any] },
+        "EvaluationDataSourceId" -> EvaluationDataSourceId.map { x => x.asInstanceOf[js.Any] },
+        "EvaluationId" -> EvaluationId.map { x => x.asInstanceOf[js.Any] },
+        "FinishedAt" -> FinishedAt.map { x => x.asInstanceOf[js.Any] },
+        "InputDataLocationS3" -> InputDataLocationS3.map { x => x.asInstanceOf[js.Any] },
         "LastUpdatedAt" -> LastUpdatedAt.map { x => x.asInstanceOf[js.Any] },
+        "MLModelId" -> MLModelId.map { x => x.asInstanceOf[js.Any] },
+        "Message" -> Message.map { x => x.asInstanceOf[js.Any] },
         "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
         "PerformanceMetrics" -> PerformanceMetrics.map { x => x.asInstanceOf[js.Any] },
-        "ComputeTime" -> ComputeTime.map { x => x.asInstanceOf[js.Any] },
         "StartedAt" -> StartedAt.map { x => x.asInstanceOf[js.Any] },
-        "CreatedByIamUser" -> CreatedByIamUser.map { x => x.asInstanceOf[js.Any] },
-        "EvaluationId" -> EvaluationId.map { x => x.asInstanceOf[js.Any] },
-        "InputDataLocationS3" -> InputDataLocationS3.map { x => x.asInstanceOf[js.Any] },
-        "Message" -> Message.map { x => x.asInstanceOf[js.Any] },
-        "CreatedAt" -> CreatedAt.map { x => x.asInstanceOf[js.Any] },
-        "FinishedAt" -> FinishedAt.map { x => x.asInstanceOf[js.Any] },
-        "MLModelId" -> MLModelId.map { x => x.asInstanceOf[js.Any] },
-        "EvaluationDataSourceId" -> EvaluationDataSourceId.map { x => x.asInstanceOf[js.Any] },
         "Status" -> Status.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Evaluation]
@@ -1247,14 +1247,14 @@ package machinelearning {
 
   @js.native
   trait GetBatchPredictionInput extends js.Object {
-    var BatchPredictionId: js.UndefOr[EntityId]
+    var BatchPredictionId: EntityId
   }
 
   object GetBatchPredictionInput {
     def apply(
-      BatchPredictionId: js.UndefOr[EntityId] = js.undefined): GetBatchPredictionInput = {
+      BatchPredictionId: EntityId): GetBatchPredictionInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "BatchPredictionId" -> BatchPredictionId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "BatchPredictionId" -> BatchPredictionId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetBatchPredictionInput]
     }
@@ -1265,62 +1265,62 @@ package machinelearning {
    */
   @js.native
   trait GetBatchPredictionOutput extends js.Object {
-    var LogUri: js.UndefOr[PresignedS3Url]
-    var LastUpdatedAt: js.UndefOr[EpochTime]
-    var Name: js.UndefOr[EntityName]
-    var ComputeTime: js.UndefOr[LongType]
-    var StartedAt: js.UndefOr[EpochTime]
     var BatchPredictionDataSourceId: js.UndefOr[EntityId]
     var BatchPredictionId: js.UndefOr[EntityId]
-    var TotalRecordCount: js.UndefOr[LongType]
-    var CreatedByIamUser: js.UndefOr[AwsUserArn]
-    var InvalidRecordCount: js.UndefOr[LongType]
-    var InputDataLocationS3: js.UndefOr[S3Url]
-    var OutputUri: js.UndefOr[S3Url]
-    var Message: js.UndefOr[Message]
+    var ComputeTime: js.UndefOr[LongType]
     var CreatedAt: js.UndefOr[EpochTime]
+    var CreatedByIamUser: js.UndefOr[AwsUserArn]
     var FinishedAt: js.UndefOr[EpochTime]
+    var InputDataLocationS3: js.UndefOr[S3Url]
+    var InvalidRecordCount: js.UndefOr[LongType]
+    var LastUpdatedAt: js.UndefOr[EpochTime]
+    var LogUri: js.UndefOr[PresignedS3Url]
     var MLModelId: js.UndefOr[EntityId]
+    var Message: js.UndefOr[Message]
+    var Name: js.UndefOr[EntityName]
+    var OutputUri: js.UndefOr[S3Url]
+    var StartedAt: js.UndefOr[EpochTime]
     var Status: js.UndefOr[EntityStatus]
+    var TotalRecordCount: js.UndefOr[LongType]
   }
 
   object GetBatchPredictionOutput {
     def apply(
-      LogUri: js.UndefOr[PresignedS3Url] = js.undefined,
-      LastUpdatedAt: js.UndefOr[EpochTime] = js.undefined,
-      Name: js.UndefOr[EntityName] = js.undefined,
-      ComputeTime: js.UndefOr[LongType] = js.undefined,
-      StartedAt: js.UndefOr[EpochTime] = js.undefined,
       BatchPredictionDataSourceId: js.UndefOr[EntityId] = js.undefined,
       BatchPredictionId: js.UndefOr[EntityId] = js.undefined,
-      TotalRecordCount: js.UndefOr[LongType] = js.undefined,
-      CreatedByIamUser: js.UndefOr[AwsUserArn] = js.undefined,
-      InvalidRecordCount: js.UndefOr[LongType] = js.undefined,
-      InputDataLocationS3: js.UndefOr[S3Url] = js.undefined,
-      OutputUri: js.UndefOr[S3Url] = js.undefined,
-      Message: js.UndefOr[Message] = js.undefined,
+      ComputeTime: js.UndefOr[LongType] = js.undefined,
       CreatedAt: js.UndefOr[EpochTime] = js.undefined,
+      CreatedByIamUser: js.UndefOr[AwsUserArn] = js.undefined,
       FinishedAt: js.UndefOr[EpochTime] = js.undefined,
+      InputDataLocationS3: js.UndefOr[S3Url] = js.undefined,
+      InvalidRecordCount: js.UndefOr[LongType] = js.undefined,
+      LastUpdatedAt: js.UndefOr[EpochTime] = js.undefined,
+      LogUri: js.UndefOr[PresignedS3Url] = js.undefined,
       MLModelId: js.UndefOr[EntityId] = js.undefined,
-      Status: js.UndefOr[EntityStatus] = js.undefined): GetBatchPredictionOutput = {
+      Message: js.UndefOr[Message] = js.undefined,
+      Name: js.UndefOr[EntityName] = js.undefined,
+      OutputUri: js.UndefOr[S3Url] = js.undefined,
+      StartedAt: js.UndefOr[EpochTime] = js.undefined,
+      Status: js.UndefOr[EntityStatus] = js.undefined,
+      TotalRecordCount: js.UndefOr[LongType] = js.undefined): GetBatchPredictionOutput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "LogUri" -> LogUri.map { x => x.asInstanceOf[js.Any] },
-        "LastUpdatedAt" -> LastUpdatedAt.map { x => x.asInstanceOf[js.Any] },
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
-        "ComputeTime" -> ComputeTime.map { x => x.asInstanceOf[js.Any] },
-        "StartedAt" -> StartedAt.map { x => x.asInstanceOf[js.Any] },
         "BatchPredictionDataSourceId" -> BatchPredictionDataSourceId.map { x => x.asInstanceOf[js.Any] },
         "BatchPredictionId" -> BatchPredictionId.map { x => x.asInstanceOf[js.Any] },
-        "TotalRecordCount" -> TotalRecordCount.map { x => x.asInstanceOf[js.Any] },
-        "CreatedByIamUser" -> CreatedByIamUser.map { x => x.asInstanceOf[js.Any] },
-        "InvalidRecordCount" -> InvalidRecordCount.map { x => x.asInstanceOf[js.Any] },
-        "InputDataLocationS3" -> InputDataLocationS3.map { x => x.asInstanceOf[js.Any] },
-        "OutputUri" -> OutputUri.map { x => x.asInstanceOf[js.Any] },
-        "Message" -> Message.map { x => x.asInstanceOf[js.Any] },
+        "ComputeTime" -> ComputeTime.map { x => x.asInstanceOf[js.Any] },
         "CreatedAt" -> CreatedAt.map { x => x.asInstanceOf[js.Any] },
+        "CreatedByIamUser" -> CreatedByIamUser.map { x => x.asInstanceOf[js.Any] },
         "FinishedAt" -> FinishedAt.map { x => x.asInstanceOf[js.Any] },
+        "InputDataLocationS3" -> InputDataLocationS3.map { x => x.asInstanceOf[js.Any] },
+        "InvalidRecordCount" -> InvalidRecordCount.map { x => x.asInstanceOf[js.Any] },
+        "LastUpdatedAt" -> LastUpdatedAt.map { x => x.asInstanceOf[js.Any] },
+        "LogUri" -> LogUri.map { x => x.asInstanceOf[js.Any] },
         "MLModelId" -> MLModelId.map { x => x.asInstanceOf[js.Any] },
-        "Status" -> Status.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Message" -> Message.map { x => x.asInstanceOf[js.Any] },
+        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
+        "OutputUri" -> OutputUri.map { x => x.asInstanceOf[js.Any] },
+        "StartedAt" -> StartedAt.map { x => x.asInstanceOf[js.Any] },
+        "Status" -> Status.map { x => x.asInstanceOf[js.Any] },
+        "TotalRecordCount" -> TotalRecordCount.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetBatchPredictionOutput]
     }
@@ -1328,16 +1328,16 @@ package machinelearning {
 
   @js.native
   trait GetDataSourceInput extends js.Object {
-    var DataSourceId: js.UndefOr[EntityId]
+    var DataSourceId: EntityId
     var Verbose: js.UndefOr[Verbose]
   }
 
   object GetDataSourceInput {
     def apply(
-      DataSourceId: js.UndefOr[EntityId] = js.undefined,
+      DataSourceId: EntityId,
       Verbose: js.UndefOr[Verbose] = js.undefined): GetDataSourceInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "DataSourceId" -> DataSourceId.map { x => x.asInstanceOf[js.Any] },
+        "DataSourceId" -> DataSourceId.asInstanceOf[js.Any],
         "Verbose" -> Verbose.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetDataSourceInput]
@@ -1349,70 +1349,70 @@ package machinelearning {
    */
   @js.native
   trait GetDataSourceOutput extends js.Object {
-    var LogUri: js.UndefOr[PresignedS3Url]
-    var RedshiftMetadata: js.UndefOr[RedshiftMetadata]
-    var LastUpdatedAt: js.UndefOr[EpochTime]
-    var Name: js.UndefOr[EntityName]
-    var RDSMetadata: js.UndefOr[RDSMetadata]
-    var ComputeTime: js.UndefOr[LongType]
     var ComputeStatistics: js.UndefOr[ComputeStatistics]
-    var StartedAt: js.UndefOr[EpochTime]
-    var DataSizeInBytes: js.UndefOr[LongType]
-    var NumberOfFiles: js.UndefOr[LongType]
-    var CreatedByIamUser: js.UndefOr[AwsUserArn]
-    var RoleARN: js.UndefOr[RoleARN]
-    var DataRearrangement: js.UndefOr[DataRearrangement]
-    var Message: js.UndefOr[Message]
+    var ComputeTime: js.UndefOr[LongType]
     var CreatedAt: js.UndefOr[EpochTime]
+    var CreatedByIamUser: js.UndefOr[AwsUserArn]
+    var DataLocationS3: js.UndefOr[S3Url]
+    var DataRearrangement: js.UndefOr[DataRearrangement]
+    var DataSizeInBytes: js.UndefOr[LongType]
     var DataSourceId: js.UndefOr[EntityId]
     var DataSourceSchema: js.UndefOr[DataSchema]
     var FinishedAt: js.UndefOr[EpochTime]
-    var DataLocationS3: js.UndefOr[S3Url]
+    var LastUpdatedAt: js.UndefOr[EpochTime]
+    var LogUri: js.UndefOr[PresignedS3Url]
+    var Message: js.UndefOr[Message]
+    var Name: js.UndefOr[EntityName]
+    var NumberOfFiles: js.UndefOr[LongType]
+    var RDSMetadata: js.UndefOr[RDSMetadata]
+    var RedshiftMetadata: js.UndefOr[RedshiftMetadata]
+    var RoleARN: js.UndefOr[RoleARN]
+    var StartedAt: js.UndefOr[EpochTime]
     var Status: js.UndefOr[EntityStatus]
   }
 
   object GetDataSourceOutput {
     def apply(
-      LogUri: js.UndefOr[PresignedS3Url] = js.undefined,
-      RedshiftMetadata: js.UndefOr[RedshiftMetadata] = js.undefined,
-      LastUpdatedAt: js.UndefOr[EpochTime] = js.undefined,
-      Name: js.UndefOr[EntityName] = js.undefined,
-      RDSMetadata: js.UndefOr[RDSMetadata] = js.undefined,
-      ComputeTime: js.UndefOr[LongType] = js.undefined,
       ComputeStatistics: js.UndefOr[ComputeStatistics] = js.undefined,
-      StartedAt: js.UndefOr[EpochTime] = js.undefined,
-      DataSizeInBytes: js.UndefOr[LongType] = js.undefined,
-      NumberOfFiles: js.UndefOr[LongType] = js.undefined,
-      CreatedByIamUser: js.UndefOr[AwsUserArn] = js.undefined,
-      RoleARN: js.UndefOr[RoleARN] = js.undefined,
-      DataRearrangement: js.UndefOr[DataRearrangement] = js.undefined,
-      Message: js.UndefOr[Message] = js.undefined,
+      ComputeTime: js.UndefOr[LongType] = js.undefined,
       CreatedAt: js.UndefOr[EpochTime] = js.undefined,
+      CreatedByIamUser: js.UndefOr[AwsUserArn] = js.undefined,
+      DataLocationS3: js.UndefOr[S3Url] = js.undefined,
+      DataRearrangement: js.UndefOr[DataRearrangement] = js.undefined,
+      DataSizeInBytes: js.UndefOr[LongType] = js.undefined,
       DataSourceId: js.UndefOr[EntityId] = js.undefined,
       DataSourceSchema: js.UndefOr[DataSchema] = js.undefined,
       FinishedAt: js.UndefOr[EpochTime] = js.undefined,
-      DataLocationS3: js.UndefOr[S3Url] = js.undefined,
+      LastUpdatedAt: js.UndefOr[EpochTime] = js.undefined,
+      LogUri: js.UndefOr[PresignedS3Url] = js.undefined,
+      Message: js.UndefOr[Message] = js.undefined,
+      Name: js.UndefOr[EntityName] = js.undefined,
+      NumberOfFiles: js.UndefOr[LongType] = js.undefined,
+      RDSMetadata: js.UndefOr[RDSMetadata] = js.undefined,
+      RedshiftMetadata: js.UndefOr[RedshiftMetadata] = js.undefined,
+      RoleARN: js.UndefOr[RoleARN] = js.undefined,
+      StartedAt: js.UndefOr[EpochTime] = js.undefined,
       Status: js.UndefOr[EntityStatus] = js.undefined): GetDataSourceOutput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "LogUri" -> LogUri.map { x => x.asInstanceOf[js.Any] },
-        "RedshiftMetadata" -> RedshiftMetadata.map { x => x.asInstanceOf[js.Any] },
-        "LastUpdatedAt" -> LastUpdatedAt.map { x => x.asInstanceOf[js.Any] },
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
-        "RDSMetadata" -> RDSMetadata.map { x => x.asInstanceOf[js.Any] },
-        "ComputeTime" -> ComputeTime.map { x => x.asInstanceOf[js.Any] },
         "ComputeStatistics" -> ComputeStatistics.map { x => x.asInstanceOf[js.Any] },
-        "StartedAt" -> StartedAt.map { x => x.asInstanceOf[js.Any] },
-        "DataSizeInBytes" -> DataSizeInBytes.map { x => x.asInstanceOf[js.Any] },
-        "NumberOfFiles" -> NumberOfFiles.map { x => x.asInstanceOf[js.Any] },
-        "CreatedByIamUser" -> CreatedByIamUser.map { x => x.asInstanceOf[js.Any] },
-        "RoleARN" -> RoleARN.map { x => x.asInstanceOf[js.Any] },
-        "DataRearrangement" -> DataRearrangement.map { x => x.asInstanceOf[js.Any] },
-        "Message" -> Message.map { x => x.asInstanceOf[js.Any] },
+        "ComputeTime" -> ComputeTime.map { x => x.asInstanceOf[js.Any] },
         "CreatedAt" -> CreatedAt.map { x => x.asInstanceOf[js.Any] },
+        "CreatedByIamUser" -> CreatedByIamUser.map { x => x.asInstanceOf[js.Any] },
+        "DataLocationS3" -> DataLocationS3.map { x => x.asInstanceOf[js.Any] },
+        "DataRearrangement" -> DataRearrangement.map { x => x.asInstanceOf[js.Any] },
+        "DataSizeInBytes" -> DataSizeInBytes.map { x => x.asInstanceOf[js.Any] },
         "DataSourceId" -> DataSourceId.map { x => x.asInstanceOf[js.Any] },
         "DataSourceSchema" -> DataSourceSchema.map { x => x.asInstanceOf[js.Any] },
         "FinishedAt" -> FinishedAt.map { x => x.asInstanceOf[js.Any] },
-        "DataLocationS3" -> DataLocationS3.map { x => x.asInstanceOf[js.Any] },
+        "LastUpdatedAt" -> LastUpdatedAt.map { x => x.asInstanceOf[js.Any] },
+        "LogUri" -> LogUri.map { x => x.asInstanceOf[js.Any] },
+        "Message" -> Message.map { x => x.asInstanceOf[js.Any] },
+        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
+        "NumberOfFiles" -> NumberOfFiles.map { x => x.asInstanceOf[js.Any] },
+        "RDSMetadata" -> RDSMetadata.map { x => x.asInstanceOf[js.Any] },
+        "RedshiftMetadata" -> RedshiftMetadata.map { x => x.asInstanceOf[js.Any] },
+        "RoleARN" -> RoleARN.map { x => x.asInstanceOf[js.Any] },
+        "StartedAt" -> StartedAt.map { x => x.asInstanceOf[js.Any] },
         "Status" -> Status.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetDataSourceOutput]
@@ -1421,14 +1421,14 @@ package machinelearning {
 
   @js.native
   trait GetEvaluationInput extends js.Object {
-    var EvaluationId: js.UndefOr[EntityId]
+    var EvaluationId: EntityId
   }
 
   object GetEvaluationInput {
     def apply(
-      EvaluationId: js.UndefOr[EntityId] = js.undefined): GetEvaluationInput = {
+      EvaluationId: EntityId): GetEvaluationInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "EvaluationId" -> EvaluationId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "EvaluationId" -> EvaluationId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetEvaluationInput]
     }
@@ -1439,55 +1439,55 @@ package machinelearning {
    */
   @js.native
   trait GetEvaluationOutput extends js.Object {
-    var LogUri: js.UndefOr[PresignedS3Url]
+    var ComputeTime: js.UndefOr[LongType]
+    var CreatedAt: js.UndefOr[EpochTime]
+    var CreatedByIamUser: js.UndefOr[AwsUserArn]
+    var EvaluationDataSourceId: js.UndefOr[EntityId]
+    var EvaluationId: js.UndefOr[EntityId]
+    var FinishedAt: js.UndefOr[EpochTime]
+    var InputDataLocationS3: js.UndefOr[S3Url]
     var LastUpdatedAt: js.UndefOr[EpochTime]
+    var LogUri: js.UndefOr[PresignedS3Url]
+    var MLModelId: js.UndefOr[EntityId]
+    var Message: js.UndefOr[Message]
     var Name: js.UndefOr[EntityName]
     var PerformanceMetrics: js.UndefOr[PerformanceMetrics]
-    var ComputeTime: js.UndefOr[LongType]
     var StartedAt: js.UndefOr[EpochTime]
-    var CreatedByIamUser: js.UndefOr[AwsUserArn]
-    var EvaluationId: js.UndefOr[EntityId]
-    var InputDataLocationS3: js.UndefOr[S3Url]
-    var Message: js.UndefOr[Message]
-    var CreatedAt: js.UndefOr[EpochTime]
-    var FinishedAt: js.UndefOr[EpochTime]
-    var MLModelId: js.UndefOr[EntityId]
-    var EvaluationDataSourceId: js.UndefOr[EntityId]
     var Status: js.UndefOr[EntityStatus]
   }
 
   object GetEvaluationOutput {
     def apply(
-      LogUri: js.UndefOr[PresignedS3Url] = js.undefined,
+      ComputeTime: js.UndefOr[LongType] = js.undefined,
+      CreatedAt: js.UndefOr[EpochTime] = js.undefined,
+      CreatedByIamUser: js.UndefOr[AwsUserArn] = js.undefined,
+      EvaluationDataSourceId: js.UndefOr[EntityId] = js.undefined,
+      EvaluationId: js.UndefOr[EntityId] = js.undefined,
+      FinishedAt: js.UndefOr[EpochTime] = js.undefined,
+      InputDataLocationS3: js.UndefOr[S3Url] = js.undefined,
       LastUpdatedAt: js.UndefOr[EpochTime] = js.undefined,
+      LogUri: js.UndefOr[PresignedS3Url] = js.undefined,
+      MLModelId: js.UndefOr[EntityId] = js.undefined,
+      Message: js.UndefOr[Message] = js.undefined,
       Name: js.UndefOr[EntityName] = js.undefined,
       PerformanceMetrics: js.UndefOr[PerformanceMetrics] = js.undefined,
-      ComputeTime: js.UndefOr[LongType] = js.undefined,
       StartedAt: js.UndefOr[EpochTime] = js.undefined,
-      CreatedByIamUser: js.UndefOr[AwsUserArn] = js.undefined,
-      EvaluationId: js.UndefOr[EntityId] = js.undefined,
-      InputDataLocationS3: js.UndefOr[S3Url] = js.undefined,
-      Message: js.UndefOr[Message] = js.undefined,
-      CreatedAt: js.UndefOr[EpochTime] = js.undefined,
-      FinishedAt: js.UndefOr[EpochTime] = js.undefined,
-      MLModelId: js.UndefOr[EntityId] = js.undefined,
-      EvaluationDataSourceId: js.UndefOr[EntityId] = js.undefined,
       Status: js.UndefOr[EntityStatus] = js.undefined): GetEvaluationOutput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "LogUri" -> LogUri.map { x => x.asInstanceOf[js.Any] },
+        "ComputeTime" -> ComputeTime.map { x => x.asInstanceOf[js.Any] },
+        "CreatedAt" -> CreatedAt.map { x => x.asInstanceOf[js.Any] },
+        "CreatedByIamUser" -> CreatedByIamUser.map { x => x.asInstanceOf[js.Any] },
+        "EvaluationDataSourceId" -> EvaluationDataSourceId.map { x => x.asInstanceOf[js.Any] },
+        "EvaluationId" -> EvaluationId.map { x => x.asInstanceOf[js.Any] },
+        "FinishedAt" -> FinishedAt.map { x => x.asInstanceOf[js.Any] },
+        "InputDataLocationS3" -> InputDataLocationS3.map { x => x.asInstanceOf[js.Any] },
         "LastUpdatedAt" -> LastUpdatedAt.map { x => x.asInstanceOf[js.Any] },
+        "LogUri" -> LogUri.map { x => x.asInstanceOf[js.Any] },
+        "MLModelId" -> MLModelId.map { x => x.asInstanceOf[js.Any] },
+        "Message" -> Message.map { x => x.asInstanceOf[js.Any] },
         "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
         "PerformanceMetrics" -> PerformanceMetrics.map { x => x.asInstanceOf[js.Any] },
-        "ComputeTime" -> ComputeTime.map { x => x.asInstanceOf[js.Any] },
         "StartedAt" -> StartedAt.map { x => x.asInstanceOf[js.Any] },
-        "CreatedByIamUser" -> CreatedByIamUser.map { x => x.asInstanceOf[js.Any] },
-        "EvaluationId" -> EvaluationId.map { x => x.asInstanceOf[js.Any] },
-        "InputDataLocationS3" -> InputDataLocationS3.map { x => x.asInstanceOf[js.Any] },
-        "Message" -> Message.map { x => x.asInstanceOf[js.Any] },
-        "CreatedAt" -> CreatedAt.map { x => x.asInstanceOf[js.Any] },
-        "FinishedAt" -> FinishedAt.map { x => x.asInstanceOf[js.Any] },
-        "MLModelId" -> MLModelId.map { x => x.asInstanceOf[js.Any] },
-        "EvaluationDataSourceId" -> EvaluationDataSourceId.map { x => x.asInstanceOf[js.Any] },
         "Status" -> Status.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetEvaluationOutput]
@@ -1496,16 +1496,16 @@ package machinelearning {
 
   @js.native
   trait GetMLModelInput extends js.Object {
-    var MLModelId: js.UndefOr[EntityId]
+    var MLModelId: EntityId
     var Verbose: js.UndefOr[Verbose]
   }
 
   object GetMLModelInput {
     def apply(
-      MLModelId: js.UndefOr[EntityId] = js.undefined,
+      MLModelId: EntityId,
       Verbose: js.UndefOr[Verbose] = js.undefined): GetMLModelInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "MLModelId" -> MLModelId.map { x => x.asInstanceOf[js.Any] },
+        "MLModelId" -> MLModelId.asInstanceOf[js.Any],
         "Verbose" -> Verbose.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetMLModelInput]
@@ -1517,74 +1517,74 @@ package machinelearning {
    */
   @js.native
   trait GetMLModelOutput extends js.Object {
-    var LogUri: js.UndefOr[PresignedS3Url]
-    var LastUpdatedAt: js.UndefOr[EpochTime]
-    var EndpointInfo: js.UndefOr[RealtimeEndpointInfo]
-    var Name: js.UndefOr[MLModelName]
-    var TrainingDataSourceId: js.UndefOr[EntityId]
     var ComputeTime: js.UndefOr[LongType]
-    var StartedAt: js.UndefOr[EpochTime]
-    var TrainingParameters: js.UndefOr[TrainingParameters]
-    var CreatedByIamUser: js.UndefOr[AwsUserArn]
-    var InputDataLocationS3: js.UndefOr[S3Url]
-    var SizeInBytes: js.UndefOr[LongType]
-    var MLModelType: js.UndefOr[MLModelType]
-    var ScoreThreshold: js.UndefOr[ScoreThreshold]
-    var Recipe: js.UndefOr[Recipe]
-    var Message: js.UndefOr[Message]
     var CreatedAt: js.UndefOr[EpochTime]
-    var Schema: js.UndefOr[DataSchema]
-    var ScoreThresholdLastUpdatedAt: js.UndefOr[EpochTime]
+    var CreatedByIamUser: js.UndefOr[AwsUserArn]
+    var EndpointInfo: js.UndefOr[RealtimeEndpointInfo]
     var FinishedAt: js.UndefOr[EpochTime]
+    var InputDataLocationS3: js.UndefOr[S3Url]
+    var LastUpdatedAt: js.UndefOr[EpochTime]
+    var LogUri: js.UndefOr[PresignedS3Url]
     var MLModelId: js.UndefOr[EntityId]
+    var MLModelType: js.UndefOr[MLModelType]
+    var Message: js.UndefOr[Message]
+    var Name: js.UndefOr[MLModelName]
+    var Recipe: js.UndefOr[Recipe]
+    var Schema: js.UndefOr[DataSchema]
+    var ScoreThreshold: js.UndefOr[ScoreThreshold]
+    var ScoreThresholdLastUpdatedAt: js.UndefOr[EpochTime]
+    var SizeInBytes: js.UndefOr[LongType]
+    var StartedAt: js.UndefOr[EpochTime]
     var Status: js.UndefOr[EntityStatus]
+    var TrainingDataSourceId: js.UndefOr[EntityId]
+    var TrainingParameters: js.UndefOr[TrainingParameters]
   }
 
   object GetMLModelOutput {
     def apply(
-      LogUri: js.UndefOr[PresignedS3Url] = js.undefined,
-      LastUpdatedAt: js.UndefOr[EpochTime] = js.undefined,
-      EndpointInfo: js.UndefOr[RealtimeEndpointInfo] = js.undefined,
-      Name: js.UndefOr[MLModelName] = js.undefined,
-      TrainingDataSourceId: js.UndefOr[EntityId] = js.undefined,
       ComputeTime: js.UndefOr[LongType] = js.undefined,
-      StartedAt: js.UndefOr[EpochTime] = js.undefined,
-      TrainingParameters: js.UndefOr[TrainingParameters] = js.undefined,
-      CreatedByIamUser: js.UndefOr[AwsUserArn] = js.undefined,
-      InputDataLocationS3: js.UndefOr[S3Url] = js.undefined,
-      SizeInBytes: js.UndefOr[LongType] = js.undefined,
-      MLModelType: js.UndefOr[MLModelType] = js.undefined,
-      ScoreThreshold: js.UndefOr[ScoreThreshold] = js.undefined,
-      Recipe: js.UndefOr[Recipe] = js.undefined,
-      Message: js.UndefOr[Message] = js.undefined,
       CreatedAt: js.UndefOr[EpochTime] = js.undefined,
-      Schema: js.UndefOr[DataSchema] = js.undefined,
-      ScoreThresholdLastUpdatedAt: js.UndefOr[EpochTime] = js.undefined,
+      CreatedByIamUser: js.UndefOr[AwsUserArn] = js.undefined,
+      EndpointInfo: js.UndefOr[RealtimeEndpointInfo] = js.undefined,
       FinishedAt: js.UndefOr[EpochTime] = js.undefined,
+      InputDataLocationS3: js.UndefOr[S3Url] = js.undefined,
+      LastUpdatedAt: js.UndefOr[EpochTime] = js.undefined,
+      LogUri: js.UndefOr[PresignedS3Url] = js.undefined,
       MLModelId: js.UndefOr[EntityId] = js.undefined,
-      Status: js.UndefOr[EntityStatus] = js.undefined): GetMLModelOutput = {
+      MLModelType: js.UndefOr[MLModelType] = js.undefined,
+      Message: js.UndefOr[Message] = js.undefined,
+      Name: js.UndefOr[MLModelName] = js.undefined,
+      Recipe: js.UndefOr[Recipe] = js.undefined,
+      Schema: js.UndefOr[DataSchema] = js.undefined,
+      ScoreThreshold: js.UndefOr[ScoreThreshold] = js.undefined,
+      ScoreThresholdLastUpdatedAt: js.UndefOr[EpochTime] = js.undefined,
+      SizeInBytes: js.UndefOr[LongType] = js.undefined,
+      StartedAt: js.UndefOr[EpochTime] = js.undefined,
+      Status: js.UndefOr[EntityStatus] = js.undefined,
+      TrainingDataSourceId: js.UndefOr[EntityId] = js.undefined,
+      TrainingParameters: js.UndefOr[TrainingParameters] = js.undefined): GetMLModelOutput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "LogUri" -> LogUri.map { x => x.asInstanceOf[js.Any] },
-        "LastUpdatedAt" -> LastUpdatedAt.map { x => x.asInstanceOf[js.Any] },
-        "EndpointInfo" -> EndpointInfo.map { x => x.asInstanceOf[js.Any] },
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
-        "TrainingDataSourceId" -> TrainingDataSourceId.map { x => x.asInstanceOf[js.Any] },
         "ComputeTime" -> ComputeTime.map { x => x.asInstanceOf[js.Any] },
-        "StartedAt" -> StartedAt.map { x => x.asInstanceOf[js.Any] },
-        "TrainingParameters" -> TrainingParameters.map { x => x.asInstanceOf[js.Any] },
-        "CreatedByIamUser" -> CreatedByIamUser.map { x => x.asInstanceOf[js.Any] },
-        "InputDataLocationS3" -> InputDataLocationS3.map { x => x.asInstanceOf[js.Any] },
-        "SizeInBytes" -> SizeInBytes.map { x => x.asInstanceOf[js.Any] },
-        "MLModelType" -> MLModelType.map { x => x.asInstanceOf[js.Any] },
-        "ScoreThreshold" -> ScoreThreshold.map { x => x.asInstanceOf[js.Any] },
-        "Recipe" -> Recipe.map { x => x.asInstanceOf[js.Any] },
-        "Message" -> Message.map { x => x.asInstanceOf[js.Any] },
         "CreatedAt" -> CreatedAt.map { x => x.asInstanceOf[js.Any] },
-        "Schema" -> Schema.map { x => x.asInstanceOf[js.Any] },
-        "ScoreThresholdLastUpdatedAt" -> ScoreThresholdLastUpdatedAt.map { x => x.asInstanceOf[js.Any] },
+        "CreatedByIamUser" -> CreatedByIamUser.map { x => x.asInstanceOf[js.Any] },
+        "EndpointInfo" -> EndpointInfo.map { x => x.asInstanceOf[js.Any] },
         "FinishedAt" -> FinishedAt.map { x => x.asInstanceOf[js.Any] },
+        "InputDataLocationS3" -> InputDataLocationS3.map { x => x.asInstanceOf[js.Any] },
+        "LastUpdatedAt" -> LastUpdatedAt.map { x => x.asInstanceOf[js.Any] },
+        "LogUri" -> LogUri.map { x => x.asInstanceOf[js.Any] },
         "MLModelId" -> MLModelId.map { x => x.asInstanceOf[js.Any] },
-        "Status" -> Status.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "MLModelType" -> MLModelType.map { x => x.asInstanceOf[js.Any] },
+        "Message" -> Message.map { x => x.asInstanceOf[js.Any] },
+        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
+        "Recipe" -> Recipe.map { x => x.asInstanceOf[js.Any] },
+        "Schema" -> Schema.map { x => x.asInstanceOf[js.Any] },
+        "ScoreThreshold" -> ScoreThreshold.map { x => x.asInstanceOf[js.Any] },
+        "ScoreThresholdLastUpdatedAt" -> ScoreThresholdLastUpdatedAt.map { x => x.asInstanceOf[js.Any] },
+        "SizeInBytes" -> SizeInBytes.map { x => x.asInstanceOf[js.Any] },
+        "StartedAt" -> StartedAt.map { x => x.asInstanceOf[js.Any] },
+        "Status" -> Status.map { x => x.asInstanceOf[js.Any] },
+        "TrainingDataSourceId" -> TrainingDataSourceId.map { x => x.asInstanceOf[js.Any] },
+        "TrainingParameters" -> TrainingParameters.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetMLModelOutput]
     }
@@ -1636,68 +1636,68 @@ package machinelearning {
    */
   @js.native
   trait MLModel extends js.Object {
-    var LastUpdatedAt: js.UndefOr[EpochTime]
-    var EndpointInfo: js.UndefOr[RealtimeEndpointInfo]
-    var Name: js.UndefOr[MLModelName]
-    var TrainingDataSourceId: js.UndefOr[EntityId]
-    var ComputeTime: js.UndefOr[LongType]
-    var StartedAt: js.UndefOr[EpochTime]
-    var TrainingParameters: js.UndefOr[TrainingParameters]
-    var CreatedByIamUser: js.UndefOr[AwsUserArn]
-    var InputDataLocationS3: js.UndefOr[S3Url]
-    var SizeInBytes: js.UndefOr[LongType]
-    var MLModelType: js.UndefOr[MLModelType]
-    var ScoreThreshold: js.UndefOr[ScoreThreshold]
-    var Message: js.UndefOr[Message]
-    var CreatedAt: js.UndefOr[EpochTime]
     var Algorithm: js.UndefOr[Algorithm]
-    var ScoreThresholdLastUpdatedAt: js.UndefOr[EpochTime]
+    var ComputeTime: js.UndefOr[LongType]
+    var CreatedAt: js.UndefOr[EpochTime]
+    var CreatedByIamUser: js.UndefOr[AwsUserArn]
+    var EndpointInfo: js.UndefOr[RealtimeEndpointInfo]
     var FinishedAt: js.UndefOr[EpochTime]
+    var InputDataLocationS3: js.UndefOr[S3Url]
+    var LastUpdatedAt: js.UndefOr[EpochTime]
     var MLModelId: js.UndefOr[EntityId]
+    var MLModelType: js.UndefOr[MLModelType]
+    var Message: js.UndefOr[Message]
+    var Name: js.UndefOr[MLModelName]
+    var ScoreThreshold: js.UndefOr[ScoreThreshold]
+    var ScoreThresholdLastUpdatedAt: js.UndefOr[EpochTime]
+    var SizeInBytes: js.UndefOr[LongType]
+    var StartedAt: js.UndefOr[EpochTime]
     var Status: js.UndefOr[EntityStatus]
+    var TrainingDataSourceId: js.UndefOr[EntityId]
+    var TrainingParameters: js.UndefOr[TrainingParameters]
   }
 
   object MLModel {
     def apply(
-      LastUpdatedAt: js.UndefOr[EpochTime] = js.undefined,
-      EndpointInfo: js.UndefOr[RealtimeEndpointInfo] = js.undefined,
-      Name: js.UndefOr[MLModelName] = js.undefined,
-      TrainingDataSourceId: js.UndefOr[EntityId] = js.undefined,
-      ComputeTime: js.UndefOr[LongType] = js.undefined,
-      StartedAt: js.UndefOr[EpochTime] = js.undefined,
-      TrainingParameters: js.UndefOr[TrainingParameters] = js.undefined,
-      CreatedByIamUser: js.UndefOr[AwsUserArn] = js.undefined,
-      InputDataLocationS3: js.UndefOr[S3Url] = js.undefined,
-      SizeInBytes: js.UndefOr[LongType] = js.undefined,
-      MLModelType: js.UndefOr[MLModelType] = js.undefined,
-      ScoreThreshold: js.UndefOr[ScoreThreshold] = js.undefined,
-      Message: js.UndefOr[Message] = js.undefined,
-      CreatedAt: js.UndefOr[EpochTime] = js.undefined,
       Algorithm: js.UndefOr[Algorithm] = js.undefined,
-      ScoreThresholdLastUpdatedAt: js.UndefOr[EpochTime] = js.undefined,
+      ComputeTime: js.UndefOr[LongType] = js.undefined,
+      CreatedAt: js.UndefOr[EpochTime] = js.undefined,
+      CreatedByIamUser: js.UndefOr[AwsUserArn] = js.undefined,
+      EndpointInfo: js.UndefOr[RealtimeEndpointInfo] = js.undefined,
       FinishedAt: js.UndefOr[EpochTime] = js.undefined,
+      InputDataLocationS3: js.UndefOr[S3Url] = js.undefined,
+      LastUpdatedAt: js.UndefOr[EpochTime] = js.undefined,
       MLModelId: js.UndefOr[EntityId] = js.undefined,
-      Status: js.UndefOr[EntityStatus] = js.undefined): MLModel = {
+      MLModelType: js.UndefOr[MLModelType] = js.undefined,
+      Message: js.UndefOr[Message] = js.undefined,
+      Name: js.UndefOr[MLModelName] = js.undefined,
+      ScoreThreshold: js.UndefOr[ScoreThreshold] = js.undefined,
+      ScoreThresholdLastUpdatedAt: js.UndefOr[EpochTime] = js.undefined,
+      SizeInBytes: js.UndefOr[LongType] = js.undefined,
+      StartedAt: js.UndefOr[EpochTime] = js.undefined,
+      Status: js.UndefOr[EntityStatus] = js.undefined,
+      TrainingDataSourceId: js.UndefOr[EntityId] = js.undefined,
+      TrainingParameters: js.UndefOr[TrainingParameters] = js.undefined): MLModel = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "LastUpdatedAt" -> LastUpdatedAt.map { x => x.asInstanceOf[js.Any] },
-        "EndpointInfo" -> EndpointInfo.map { x => x.asInstanceOf[js.Any] },
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
-        "TrainingDataSourceId" -> TrainingDataSourceId.map { x => x.asInstanceOf[js.Any] },
-        "ComputeTime" -> ComputeTime.map { x => x.asInstanceOf[js.Any] },
-        "StartedAt" -> StartedAt.map { x => x.asInstanceOf[js.Any] },
-        "TrainingParameters" -> TrainingParameters.map { x => x.asInstanceOf[js.Any] },
-        "CreatedByIamUser" -> CreatedByIamUser.map { x => x.asInstanceOf[js.Any] },
-        "InputDataLocationS3" -> InputDataLocationS3.map { x => x.asInstanceOf[js.Any] },
-        "SizeInBytes" -> SizeInBytes.map { x => x.asInstanceOf[js.Any] },
-        "MLModelType" -> MLModelType.map { x => x.asInstanceOf[js.Any] },
-        "ScoreThreshold" -> ScoreThreshold.map { x => x.asInstanceOf[js.Any] },
-        "Message" -> Message.map { x => x.asInstanceOf[js.Any] },
-        "CreatedAt" -> CreatedAt.map { x => x.asInstanceOf[js.Any] },
         "Algorithm" -> Algorithm.map { x => x.asInstanceOf[js.Any] },
-        "ScoreThresholdLastUpdatedAt" -> ScoreThresholdLastUpdatedAt.map { x => x.asInstanceOf[js.Any] },
+        "ComputeTime" -> ComputeTime.map { x => x.asInstanceOf[js.Any] },
+        "CreatedAt" -> CreatedAt.map { x => x.asInstanceOf[js.Any] },
+        "CreatedByIamUser" -> CreatedByIamUser.map { x => x.asInstanceOf[js.Any] },
+        "EndpointInfo" -> EndpointInfo.map { x => x.asInstanceOf[js.Any] },
         "FinishedAt" -> FinishedAt.map { x => x.asInstanceOf[js.Any] },
+        "InputDataLocationS3" -> InputDataLocationS3.map { x => x.asInstanceOf[js.Any] },
+        "LastUpdatedAt" -> LastUpdatedAt.map { x => x.asInstanceOf[js.Any] },
         "MLModelId" -> MLModelId.map { x => x.asInstanceOf[js.Any] },
-        "Status" -> Status.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "MLModelType" -> MLModelType.map { x => x.asInstanceOf[js.Any] },
+        "Message" -> Message.map { x => x.asInstanceOf[js.Any] },
+        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
+        "ScoreThreshold" -> ScoreThreshold.map { x => x.asInstanceOf[js.Any] },
+        "ScoreThresholdLastUpdatedAt" -> ScoreThresholdLastUpdatedAt.map { x => x.asInstanceOf[js.Any] },
+        "SizeInBytes" -> SizeInBytes.map { x => x.asInstanceOf[js.Any] },
+        "StartedAt" -> StartedAt.map { x => x.asInstanceOf[js.Any] },
+        "Status" -> Status.map { x => x.asInstanceOf[js.Any] },
+        "TrainingDataSourceId" -> TrainingDataSourceId.map { x => x.asInstanceOf[js.Any] },
+        "TrainingParameters" -> TrainingParameters.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[MLModel]
     }
@@ -1746,20 +1746,20 @@ package machinelearning {
 
   @js.native
   trait PredictInput extends js.Object {
-    var MLModelId: js.UndefOr[EntityId]
-    var Record: js.UndefOr[Record]
-    var PredictEndpoint: js.UndefOr[VipURL]
+    var MLModelId: EntityId
+    var PredictEndpoint: VipURL
+    var Record: Record
   }
 
   object PredictInput {
     def apply(
-      MLModelId: js.UndefOr[EntityId] = js.undefined,
-      Record: js.UndefOr[Record] = js.undefined,
-      PredictEndpoint: js.UndefOr[VipURL] = js.undefined): PredictInput = {
+      MLModelId: EntityId,
+      PredictEndpoint: VipURL,
+      Record: Record): PredictInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "MLModelId" -> MLModelId.map { x => x.asInstanceOf[js.Any] },
-        "Record" -> Record.map { x => x.asInstanceOf[js.Any] },
-        "PredictEndpoint" -> PredictEndpoint.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "MLModelId" -> MLModelId.asInstanceOf[js.Any],
+        "PredictEndpoint" -> PredictEndpoint.asInstanceOf[js.Any],
+        "Record" -> Record.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PredictInput]
     }
@@ -1785,23 +1785,23 @@ package machinelearning {
    */
   @js.native
   trait Prediction extends js.Object {
-    var predictedLabel: js.UndefOr[Label]
-    var predictedValue: js.UndefOr[floatLabel]
-    var predictedScores: js.UndefOr[ScoreValuePerLabelMap]
     var details: js.UndefOr[DetailsMap]
+    var predictedLabel: js.UndefOr[Label]
+    var predictedScores: js.UndefOr[ScoreValuePerLabelMap]
+    var predictedValue: js.UndefOr[floatLabel]
   }
 
   object Prediction {
     def apply(
+      details: js.UndefOr[DetailsMap] = js.undefined,
       predictedLabel: js.UndefOr[Label] = js.undefined,
-      predictedValue: js.UndefOr[floatLabel] = js.undefined,
       predictedScores: js.UndefOr[ScoreValuePerLabelMap] = js.undefined,
-      details: js.UndefOr[DetailsMap] = js.undefined): Prediction = {
+      predictedValue: js.UndefOr[floatLabel] = js.undefined): Prediction = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "details" -> details.map { x => x.asInstanceOf[js.Any] },
         "predictedLabel" -> predictedLabel.map { x => x.asInstanceOf[js.Any] },
-        "predictedValue" -> predictedValue.map { x => x.asInstanceOf[js.Any] },
         "predictedScores" -> predictedScores.map { x => x.asInstanceOf[js.Any] },
-        "details" -> details.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "predictedValue" -> predictedValue.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Prediction]
     }
@@ -1820,44 +1820,44 @@ package machinelearning {
    */
   @js.native
   trait RDSDataSpec extends js.Object {
-    var DatabaseCredentials: js.UndefOr[RDSDatabaseCredentials]
-    var ResourceRole: js.UndefOr[EDPResourceRole]
-    var ServiceRole: js.UndefOr[EDPServiceRole]
-    var DataSchemaUri: js.UndefOr[S3Url]
-    var SelectSqlQuery: js.UndefOr[RDSSelectSqlQuery]
-    var SecurityGroupIds: js.UndefOr[EDPSecurityGroupIds]
-    var DatabaseInformation: js.UndefOr[RDSDatabase]
-    var S3StagingLocation: js.UndefOr[S3Url]
+    var DatabaseCredentials: RDSDatabaseCredentials
+    var DatabaseInformation: RDSDatabase
+    var ResourceRole: EDPResourceRole
+    var S3StagingLocation: S3Url
+    var SecurityGroupIds: EDPSecurityGroupIds
+    var SelectSqlQuery: RDSSelectSqlQuery
+    var ServiceRole: EDPServiceRole
+    var SubnetId: EDPSubnetId
     var DataRearrangement: js.UndefOr[DataRearrangement]
     var DataSchema: js.UndefOr[DataSchema]
-    var SubnetId: js.UndefOr[EDPSubnetId]
+    var DataSchemaUri: js.UndefOr[S3Url]
   }
 
   object RDSDataSpec {
     def apply(
-      DatabaseCredentials: js.UndefOr[RDSDatabaseCredentials] = js.undefined,
-      ResourceRole: js.UndefOr[EDPResourceRole] = js.undefined,
-      ServiceRole: js.UndefOr[EDPServiceRole] = js.undefined,
-      DataSchemaUri: js.UndefOr[S3Url] = js.undefined,
-      SelectSqlQuery: js.UndefOr[RDSSelectSqlQuery] = js.undefined,
-      SecurityGroupIds: js.UndefOr[EDPSecurityGroupIds] = js.undefined,
-      DatabaseInformation: js.UndefOr[RDSDatabase] = js.undefined,
-      S3StagingLocation: js.UndefOr[S3Url] = js.undefined,
+      DatabaseCredentials: RDSDatabaseCredentials,
+      DatabaseInformation: RDSDatabase,
+      ResourceRole: EDPResourceRole,
+      S3StagingLocation: S3Url,
+      SecurityGroupIds: EDPSecurityGroupIds,
+      SelectSqlQuery: RDSSelectSqlQuery,
+      ServiceRole: EDPServiceRole,
+      SubnetId: EDPSubnetId,
       DataRearrangement: js.UndefOr[DataRearrangement] = js.undefined,
       DataSchema: js.UndefOr[DataSchema] = js.undefined,
-      SubnetId: js.UndefOr[EDPSubnetId] = js.undefined): RDSDataSpec = {
+      DataSchemaUri: js.UndefOr[S3Url] = js.undefined): RDSDataSpec = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "DatabaseCredentials" -> DatabaseCredentials.map { x => x.asInstanceOf[js.Any] },
-        "ResourceRole" -> ResourceRole.map { x => x.asInstanceOf[js.Any] },
-        "ServiceRole" -> ServiceRole.map { x => x.asInstanceOf[js.Any] },
-        "DataSchemaUri" -> DataSchemaUri.map { x => x.asInstanceOf[js.Any] },
-        "SelectSqlQuery" -> SelectSqlQuery.map { x => x.asInstanceOf[js.Any] },
-        "SecurityGroupIds" -> SecurityGroupIds.map { x => x.asInstanceOf[js.Any] },
-        "DatabaseInformation" -> DatabaseInformation.map { x => x.asInstanceOf[js.Any] },
-        "S3StagingLocation" -> S3StagingLocation.map { x => x.asInstanceOf[js.Any] },
+        "DatabaseCredentials" -> DatabaseCredentials.asInstanceOf[js.Any],
+        "DatabaseInformation" -> DatabaseInformation.asInstanceOf[js.Any],
+        "ResourceRole" -> ResourceRole.asInstanceOf[js.Any],
+        "S3StagingLocation" -> S3StagingLocation.asInstanceOf[js.Any],
+        "SecurityGroupIds" -> SecurityGroupIds.asInstanceOf[js.Any],
+        "SelectSqlQuery" -> SelectSqlQuery.asInstanceOf[js.Any],
+        "ServiceRole" -> ServiceRole.asInstanceOf[js.Any],
+        "SubnetId" -> SubnetId.asInstanceOf[js.Any],
         "DataRearrangement" -> DataRearrangement.map { x => x.asInstanceOf[js.Any] },
         "DataSchema" -> DataSchema.map { x => x.asInstanceOf[js.Any] },
-        "SubnetId" -> SubnetId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "DataSchemaUri" -> DataSchemaUri.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RDSDataSpec]
     }
@@ -1868,17 +1868,17 @@ package machinelearning {
    */
   @js.native
   trait RDSDatabase extends js.Object {
-    var InstanceIdentifier: js.UndefOr[RDSInstanceIdentifier]
-    var DatabaseName: js.UndefOr[RDSDatabaseName]
+    var DatabaseName: RDSDatabaseName
+    var InstanceIdentifier: RDSInstanceIdentifier
   }
 
   object RDSDatabase {
     def apply(
-      InstanceIdentifier: js.UndefOr[RDSInstanceIdentifier] = js.undefined,
-      DatabaseName: js.UndefOr[RDSDatabaseName] = js.undefined): RDSDatabase = {
+      DatabaseName: RDSDatabaseName,
+      InstanceIdentifier: RDSInstanceIdentifier): RDSDatabase = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "InstanceIdentifier" -> InstanceIdentifier.map { x => x.asInstanceOf[js.Any] },
-        "DatabaseName" -> DatabaseName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "DatabaseName" -> DatabaseName.asInstanceOf[js.Any],
+        "InstanceIdentifier" -> InstanceIdentifier.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RDSDatabase]
     }
@@ -1889,17 +1889,17 @@ package machinelearning {
    */
   @js.native
   trait RDSDatabaseCredentials extends js.Object {
-    var Username: js.UndefOr[RDSDatabaseUsername]
-    var Password: js.UndefOr[RDSDatabasePassword]
+    var Password: RDSDatabasePassword
+    var Username: RDSDatabaseUsername
   }
 
   object RDSDatabaseCredentials {
     def apply(
-      Username: js.UndefOr[RDSDatabaseUsername] = js.undefined,
-      Password: js.UndefOr[RDSDatabasePassword] = js.undefined): RDSDatabaseCredentials = {
+      Password: RDSDatabasePassword,
+      Username: RDSDatabaseUsername): RDSDatabaseCredentials = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Username" -> Username.map { x => x.asInstanceOf[js.Any] },
-        "Password" -> Password.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Password" -> Password.asInstanceOf[js.Any],
+        "Username" -> Username.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RDSDatabaseCredentials]
     }
@@ -1910,29 +1910,29 @@ package machinelearning {
    */
   @js.native
   trait RDSMetadata extends js.Object {
+    var DataPipelineId: js.UndefOr[EDPPipelineId]
+    var Database: js.UndefOr[RDSDatabase]
     var DatabaseUserName: js.UndefOr[RDSDatabaseUsername]
     var ResourceRole: js.UndefOr[EDPResourceRole]
-    var ServiceRole: js.UndefOr[EDPServiceRole]
-    var Database: js.UndefOr[RDSDatabase]
     var SelectSqlQuery: js.UndefOr[RDSSelectSqlQuery]
-    var DataPipelineId: js.UndefOr[EDPPipelineId]
+    var ServiceRole: js.UndefOr[EDPServiceRole]
   }
 
   object RDSMetadata {
     def apply(
+      DataPipelineId: js.UndefOr[EDPPipelineId] = js.undefined,
+      Database: js.UndefOr[RDSDatabase] = js.undefined,
       DatabaseUserName: js.UndefOr[RDSDatabaseUsername] = js.undefined,
       ResourceRole: js.UndefOr[EDPResourceRole] = js.undefined,
-      ServiceRole: js.UndefOr[EDPServiceRole] = js.undefined,
-      Database: js.UndefOr[RDSDatabase] = js.undefined,
       SelectSqlQuery: js.UndefOr[RDSSelectSqlQuery] = js.undefined,
-      DataPipelineId: js.UndefOr[EDPPipelineId] = js.undefined): RDSMetadata = {
+      ServiceRole: js.UndefOr[EDPServiceRole] = js.undefined): RDSMetadata = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "DataPipelineId" -> DataPipelineId.map { x => x.asInstanceOf[js.Any] },
+        "Database" -> Database.map { x => x.asInstanceOf[js.Any] },
         "DatabaseUserName" -> DatabaseUserName.map { x => x.asInstanceOf[js.Any] },
         "ResourceRole" -> ResourceRole.map { x => x.asInstanceOf[js.Any] },
-        "ServiceRole" -> ServiceRole.map { x => x.asInstanceOf[js.Any] },
-        "Database" -> Database.map { x => x.asInstanceOf[js.Any] },
         "SelectSqlQuery" -> SelectSqlQuery.map { x => x.asInstanceOf[js.Any] },
-        "DataPipelineId" -> DataPipelineId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ServiceRole" -> ServiceRole.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RDSMetadata]
     }
@@ -1943,23 +1943,23 @@ package machinelearning {
    */
   @js.native
   trait RealtimeEndpointInfo extends js.Object {
-    var PeakRequestsPerSecond: js.UndefOr[IntegerType]
     var CreatedAt: js.UndefOr[EpochTime]
-    var EndpointUrl: js.UndefOr[VipURL]
     var EndpointStatus: js.UndefOr[RealtimeEndpointStatus]
+    var EndpointUrl: js.UndefOr[VipURL]
+    var PeakRequestsPerSecond: js.UndefOr[IntegerType]
   }
 
   object RealtimeEndpointInfo {
     def apply(
-      PeakRequestsPerSecond: js.UndefOr[IntegerType] = js.undefined,
       CreatedAt: js.UndefOr[EpochTime] = js.undefined,
+      EndpointStatus: js.UndefOr[RealtimeEndpointStatus] = js.undefined,
       EndpointUrl: js.UndefOr[VipURL] = js.undefined,
-      EndpointStatus: js.UndefOr[RealtimeEndpointStatus] = js.undefined): RealtimeEndpointInfo = {
+      PeakRequestsPerSecond: js.UndefOr[IntegerType] = js.undefined): RealtimeEndpointInfo = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "PeakRequestsPerSecond" -> PeakRequestsPerSecond.map { x => x.asInstanceOf[js.Any] },
         "CreatedAt" -> CreatedAt.map { x => x.asInstanceOf[js.Any] },
+        "EndpointStatus" -> EndpointStatus.map { x => x.asInstanceOf[js.Any] },
         "EndpointUrl" -> EndpointUrl.map { x => x.asInstanceOf[js.Any] },
-        "EndpointStatus" -> EndpointStatus.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "PeakRequestsPerSecond" -> PeakRequestsPerSecond.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RealtimeEndpointInfo]
     }
@@ -1979,32 +1979,32 @@ package machinelearning {
    */
   @js.native
   trait RedshiftDataSpec extends js.Object {
-    var DatabaseCredentials: js.UndefOr[RedshiftDatabaseCredentials]
-    var DataSchemaUri: js.UndefOr[S3Url]
-    var SelectSqlQuery: js.UndefOr[RedshiftSelectSqlQuery]
-    var DatabaseInformation: js.UndefOr[RedshiftDatabase]
-    var S3StagingLocation: js.UndefOr[S3Url]
+    var DatabaseCredentials: RedshiftDatabaseCredentials
+    var DatabaseInformation: RedshiftDatabase
+    var S3StagingLocation: S3Url
+    var SelectSqlQuery: RedshiftSelectSqlQuery
     var DataRearrangement: js.UndefOr[DataRearrangement]
     var DataSchema: js.UndefOr[DataSchema]
+    var DataSchemaUri: js.UndefOr[S3Url]
   }
 
   object RedshiftDataSpec {
     def apply(
-      DatabaseCredentials: js.UndefOr[RedshiftDatabaseCredentials] = js.undefined,
-      DataSchemaUri: js.UndefOr[S3Url] = js.undefined,
-      SelectSqlQuery: js.UndefOr[RedshiftSelectSqlQuery] = js.undefined,
-      DatabaseInformation: js.UndefOr[RedshiftDatabase] = js.undefined,
-      S3StagingLocation: js.UndefOr[S3Url] = js.undefined,
+      DatabaseCredentials: RedshiftDatabaseCredentials,
+      DatabaseInformation: RedshiftDatabase,
+      S3StagingLocation: S3Url,
+      SelectSqlQuery: RedshiftSelectSqlQuery,
       DataRearrangement: js.UndefOr[DataRearrangement] = js.undefined,
-      DataSchema: js.UndefOr[DataSchema] = js.undefined): RedshiftDataSpec = {
+      DataSchema: js.UndefOr[DataSchema] = js.undefined,
+      DataSchemaUri: js.UndefOr[S3Url] = js.undefined): RedshiftDataSpec = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "DatabaseCredentials" -> DatabaseCredentials.map { x => x.asInstanceOf[js.Any] },
-        "DataSchemaUri" -> DataSchemaUri.map { x => x.asInstanceOf[js.Any] },
-        "SelectSqlQuery" -> SelectSqlQuery.map { x => x.asInstanceOf[js.Any] },
-        "DatabaseInformation" -> DatabaseInformation.map { x => x.asInstanceOf[js.Any] },
-        "S3StagingLocation" -> S3StagingLocation.map { x => x.asInstanceOf[js.Any] },
+        "DatabaseCredentials" -> DatabaseCredentials.asInstanceOf[js.Any],
+        "DatabaseInformation" -> DatabaseInformation.asInstanceOf[js.Any],
+        "S3StagingLocation" -> S3StagingLocation.asInstanceOf[js.Any],
+        "SelectSqlQuery" -> SelectSqlQuery.asInstanceOf[js.Any],
         "DataRearrangement" -> DataRearrangement.map { x => x.asInstanceOf[js.Any] },
-        "DataSchema" -> DataSchema.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "DataSchema" -> DataSchema.map { x => x.asInstanceOf[js.Any] },
+        "DataSchemaUri" -> DataSchemaUri.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RedshiftDataSpec]
     }
@@ -2015,17 +2015,17 @@ package machinelearning {
    */
   @js.native
   trait RedshiftDatabase extends js.Object {
-    var DatabaseName: js.UndefOr[RedshiftDatabaseName]
-    var ClusterIdentifier: js.UndefOr[RedshiftClusterIdentifier]
+    var ClusterIdentifier: RedshiftClusterIdentifier
+    var DatabaseName: RedshiftDatabaseName
   }
 
   object RedshiftDatabase {
     def apply(
-      DatabaseName: js.UndefOr[RedshiftDatabaseName] = js.undefined,
-      ClusterIdentifier: js.UndefOr[RedshiftClusterIdentifier] = js.undefined): RedshiftDatabase = {
+      ClusterIdentifier: RedshiftClusterIdentifier,
+      DatabaseName: RedshiftDatabaseName): RedshiftDatabase = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "DatabaseName" -> DatabaseName.map { x => x.asInstanceOf[js.Any] },
-        "ClusterIdentifier" -> ClusterIdentifier.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ClusterIdentifier" -> ClusterIdentifier.asInstanceOf[js.Any],
+        "DatabaseName" -> DatabaseName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RedshiftDatabase]
     }
@@ -2036,17 +2036,17 @@ package machinelearning {
    */
   @js.native
   trait RedshiftDatabaseCredentials extends js.Object {
-    var Username: js.UndefOr[RedshiftDatabaseUsername]
-    var Password: js.UndefOr[RedshiftDatabasePassword]
+    var Password: RedshiftDatabasePassword
+    var Username: RedshiftDatabaseUsername
   }
 
   object RedshiftDatabaseCredentials {
     def apply(
-      Username: js.UndefOr[RedshiftDatabaseUsername] = js.undefined,
-      Password: js.UndefOr[RedshiftDatabasePassword] = js.undefined): RedshiftDatabaseCredentials = {
+      Password: RedshiftDatabasePassword,
+      Username: RedshiftDatabaseUsername): RedshiftDatabaseCredentials = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Username" -> Username.map { x => x.asInstanceOf[js.Any] },
-        "Password" -> Password.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Password" -> Password.asInstanceOf[js.Any],
+        "Username" -> Username.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RedshiftDatabaseCredentials]
     }
@@ -2057,19 +2057,19 @@ package machinelearning {
    */
   @js.native
   trait RedshiftMetadata extends js.Object {
-    var RedshiftDatabase: js.UndefOr[RedshiftDatabase]
     var DatabaseUserName: js.UndefOr[RedshiftDatabaseUsername]
+    var RedshiftDatabase: js.UndefOr[RedshiftDatabase]
     var SelectSqlQuery: js.UndefOr[RedshiftSelectSqlQuery]
   }
 
   object RedshiftMetadata {
     def apply(
-      RedshiftDatabase: js.UndefOr[RedshiftDatabase] = js.undefined,
       DatabaseUserName: js.UndefOr[RedshiftDatabaseUsername] = js.undefined,
+      RedshiftDatabase: js.UndefOr[RedshiftDatabase] = js.undefined,
       SelectSqlQuery: js.UndefOr[RedshiftSelectSqlQuery] = js.undefined): RedshiftMetadata = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "RedshiftDatabase" -> RedshiftDatabase.map { x => x.asInstanceOf[js.Any] },
         "DatabaseUserName" -> DatabaseUserName.map { x => x.asInstanceOf[js.Any] },
+        "RedshiftDatabase" -> RedshiftDatabase.map { x => x.asInstanceOf[js.Any] },
         "SelectSqlQuery" -> SelectSqlQuery.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RedshiftMetadata]
@@ -2090,7 +2090,7 @@ package machinelearning {
    */
   @js.native
   trait S3DataSpec extends js.Object {
-    var DataLocationS3: js.UndefOr[S3Url]
+    var DataLocationS3: S3Url
     var DataRearrangement: js.UndefOr[DataRearrangement]
     var DataSchema: js.UndefOr[DataSchema]
     var DataSchemaLocationS3: js.UndefOr[S3Url]
@@ -2098,12 +2098,12 @@ package machinelearning {
 
   object S3DataSpec {
     def apply(
-      DataLocationS3: js.UndefOr[S3Url] = js.undefined,
+      DataLocationS3: S3Url,
       DataRearrangement: js.UndefOr[DataRearrangement] = js.undefined,
       DataSchema: js.UndefOr[DataSchema] = js.undefined,
       DataSchemaLocationS3: js.UndefOr[S3Url] = js.undefined): S3DataSpec = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "DataLocationS3" -> DataLocationS3.map { x => x.asInstanceOf[js.Any] },
+        "DataLocationS3" -> DataLocationS3.asInstanceOf[js.Any],
         "DataRearrangement" -> DataRearrangement.map { x => x.asInstanceOf[js.Any] },
         "DataSchema" -> DataSchema.map { x => x.asInstanceOf[js.Any] },
         "DataSchemaLocationS3" -> DataSchemaLocationS3.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
@@ -2159,17 +2159,17 @@ package machinelearning {
 
   @js.native
   trait UpdateBatchPredictionInput extends js.Object {
-    var BatchPredictionId: js.UndefOr[EntityId]
-    var BatchPredictionName: js.UndefOr[EntityName]
+    var BatchPredictionId: EntityId
+    var BatchPredictionName: EntityName
   }
 
   object UpdateBatchPredictionInput {
     def apply(
-      BatchPredictionId: js.UndefOr[EntityId] = js.undefined,
-      BatchPredictionName: js.UndefOr[EntityName] = js.undefined): UpdateBatchPredictionInput = {
+      BatchPredictionId: EntityId,
+      BatchPredictionName: EntityName): UpdateBatchPredictionInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "BatchPredictionId" -> BatchPredictionId.map { x => x.asInstanceOf[js.Any] },
-        "BatchPredictionName" -> BatchPredictionName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "BatchPredictionId" -> BatchPredictionId.asInstanceOf[js.Any],
+        "BatchPredictionName" -> BatchPredictionName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateBatchPredictionInput]
     }
@@ -2195,17 +2195,17 @@ package machinelearning {
 
   @js.native
   trait UpdateDataSourceInput extends js.Object {
-    var DataSourceId: js.UndefOr[EntityId]
-    var DataSourceName: js.UndefOr[EntityName]
+    var DataSourceId: EntityId
+    var DataSourceName: EntityName
   }
 
   object UpdateDataSourceInput {
     def apply(
-      DataSourceId: js.UndefOr[EntityId] = js.undefined,
-      DataSourceName: js.UndefOr[EntityName] = js.undefined): UpdateDataSourceInput = {
+      DataSourceId: EntityId,
+      DataSourceName: EntityName): UpdateDataSourceInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "DataSourceId" -> DataSourceId.map { x => x.asInstanceOf[js.Any] },
-        "DataSourceName" -> DataSourceName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "DataSourceId" -> DataSourceId.asInstanceOf[js.Any],
+        "DataSourceName" -> DataSourceName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateDataSourceInput]
     }
@@ -2231,17 +2231,17 @@ package machinelearning {
 
   @js.native
   trait UpdateEvaluationInput extends js.Object {
-    var EvaluationId: js.UndefOr[EntityId]
-    var EvaluationName: js.UndefOr[EntityName]
+    var EvaluationId: EntityId
+    var EvaluationName: EntityName
   }
 
   object UpdateEvaluationInput {
     def apply(
-      EvaluationId: js.UndefOr[EntityId] = js.undefined,
-      EvaluationName: js.UndefOr[EntityName] = js.undefined): UpdateEvaluationInput = {
+      EvaluationId: EntityId,
+      EvaluationName: EntityName): UpdateEvaluationInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "EvaluationId" -> EvaluationId.map { x => x.asInstanceOf[js.Any] },
-        "EvaluationName" -> EvaluationName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "EvaluationId" -> EvaluationId.asInstanceOf[js.Any],
+        "EvaluationName" -> EvaluationName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateEvaluationInput]
     }
@@ -2267,18 +2267,18 @@ package machinelearning {
 
   @js.native
   trait UpdateMLModelInput extends js.Object {
-    var MLModelId: js.UndefOr[EntityId]
+    var MLModelId: EntityId
     var MLModelName: js.UndefOr[EntityName]
     var ScoreThreshold: js.UndefOr[ScoreThreshold]
   }
 
   object UpdateMLModelInput {
     def apply(
-      MLModelId: js.UndefOr[EntityId] = js.undefined,
+      MLModelId: EntityId,
       MLModelName: js.UndefOr[EntityName] = js.undefined,
       ScoreThreshold: js.UndefOr[ScoreThreshold] = js.undefined): UpdateMLModelInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "MLModelId" -> MLModelId.map { x => x.asInstanceOf[js.Any] },
+        "MLModelId" -> MLModelId.asInstanceOf[js.Any],
         "MLModelName" -> MLModelName.map { x => x.asInstanceOf[js.Any] },
         "ScoreThreshold" -> ScoreThreshold.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 

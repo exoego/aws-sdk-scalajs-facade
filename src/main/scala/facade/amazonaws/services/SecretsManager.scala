@@ -77,14 +77,14 @@ package secretsmanager {
 
   @js.native
   trait CancelRotateSecretRequest extends js.Object {
-    var SecretId: js.UndefOr[SecretIdType]
+    var SecretId: SecretIdType
   }
 
   object CancelRotateSecretRequest {
     def apply(
-      SecretId: js.UndefOr[SecretIdType] = js.undefined): CancelRotateSecretRequest = {
+      SecretId: SecretIdType): CancelRotateSecretRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "SecretId" -> SecretId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "SecretId" -> SecretId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CancelRotateSecretRequest]
     }
@@ -113,31 +113,31 @@ package secretsmanager {
 
   @js.native
   trait CreateSecretRequest extends js.Object {
-    var Name: js.UndefOr[NameType]
+    var Name: NameType
+    var ClientRequestToken: js.UndefOr[ClientRequestTokenType]
     var Description: js.UndefOr[DescriptionType]
     var KmsKeyId: js.UndefOr[KmsKeyIdType]
     var SecretBinary: js.UndefOr[SecretBinaryType]
     var SecretString: js.UndefOr[SecretStringType]
-    var ClientRequestToken: js.UndefOr[ClientRequestTokenType]
     var Tags: js.UndefOr[TagListType]
   }
 
   object CreateSecretRequest {
     def apply(
-      Name: js.UndefOr[NameType] = js.undefined,
+      Name: NameType,
+      ClientRequestToken: js.UndefOr[ClientRequestTokenType] = js.undefined,
       Description: js.UndefOr[DescriptionType] = js.undefined,
       KmsKeyId: js.UndefOr[KmsKeyIdType] = js.undefined,
       SecretBinary: js.UndefOr[SecretBinaryType] = js.undefined,
       SecretString: js.UndefOr[SecretStringType] = js.undefined,
-      ClientRequestToken: js.UndefOr[ClientRequestTokenType] = js.undefined,
       Tags: js.UndefOr[TagListType] = js.undefined): CreateSecretRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
+        "Name" -> Name.asInstanceOf[js.Any],
+        "ClientRequestToken" -> ClientRequestToken.map { x => x.asInstanceOf[js.Any] },
         "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
         "KmsKeyId" -> KmsKeyId.map { x => x.asInstanceOf[js.Any] },
         "SecretBinary" -> SecretBinary.map { x => x.asInstanceOf[js.Any] },
         "SecretString" -> SecretString.map { x => x.asInstanceOf[js.Any] },
-        "ClientRequestToken" -> ClientRequestToken.map { x => x.asInstanceOf[js.Any] },
         "Tags" -> Tags.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateSecretRequest]
@@ -167,14 +167,14 @@ package secretsmanager {
 
   @js.native
   trait DeleteResourcePolicyRequest extends js.Object {
-    var SecretId: js.UndefOr[SecretIdType]
+    var SecretId: SecretIdType
   }
 
   object DeleteResourcePolicyRequest {
     def apply(
-      SecretId: js.UndefOr[SecretIdType] = js.undefined): DeleteResourcePolicyRequest = {
+      SecretId: SecretIdType): DeleteResourcePolicyRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "SecretId" -> SecretId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "SecretId" -> SecretId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteResourcePolicyRequest]
     }
@@ -200,20 +200,20 @@ package secretsmanager {
 
   @js.native
   trait DeleteSecretRequest extends js.Object {
-    var SecretId: js.UndefOr[SecretIdType]
-    var RecoveryWindowInDays: js.UndefOr[RecoveryWindowInDaysType]
+    var SecretId: SecretIdType
     var ForceDeleteWithoutRecovery: js.UndefOr[BooleanType]
+    var RecoveryWindowInDays: js.UndefOr[RecoveryWindowInDaysType]
   }
 
   object DeleteSecretRequest {
     def apply(
-      SecretId: js.UndefOr[SecretIdType] = js.undefined,
-      RecoveryWindowInDays: js.UndefOr[RecoveryWindowInDaysType] = js.undefined,
-      ForceDeleteWithoutRecovery: js.UndefOr[BooleanType] = js.undefined): DeleteSecretRequest = {
+      SecretId: SecretIdType,
+      ForceDeleteWithoutRecovery: js.UndefOr[BooleanType] = js.undefined,
+      RecoveryWindowInDays: js.UndefOr[RecoveryWindowInDaysType] = js.undefined): DeleteSecretRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "SecretId" -> SecretId.map { x => x.asInstanceOf[js.Any] },
-        "RecoveryWindowInDays" -> RecoveryWindowInDays.map { x => x.asInstanceOf[js.Any] },
-        "ForceDeleteWithoutRecovery" -> ForceDeleteWithoutRecovery.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "SecretId" -> SecretId.asInstanceOf[js.Any],
+        "ForceDeleteWithoutRecovery" -> ForceDeleteWithoutRecovery.map { x => x.asInstanceOf[js.Any] },
+        "RecoveryWindowInDays" -> RecoveryWindowInDays.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteSecretRequest]
     }
@@ -222,19 +222,19 @@ package secretsmanager {
   @js.native
   trait DeleteSecretResponse extends js.Object {
     var ARN: js.UndefOr[SecretARNType]
-    var Name: js.UndefOr[SecretNameType]
     var DeletionDate: js.UndefOr[DeletionDateType]
+    var Name: js.UndefOr[SecretNameType]
   }
 
   object DeleteSecretResponse {
     def apply(
       ARN: js.UndefOr[SecretARNType] = js.undefined,
-      Name: js.UndefOr[SecretNameType] = js.undefined,
-      DeletionDate: js.UndefOr[DeletionDateType] = js.undefined): DeleteSecretResponse = {
+      DeletionDate: js.UndefOr[DeletionDateType] = js.undefined,
+      Name: js.UndefOr[SecretNameType] = js.undefined): DeleteSecretResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ARN" -> ARN.map { x => x.asInstanceOf[js.Any] },
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
-        "DeletionDate" -> DeletionDate.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "DeletionDate" -> DeletionDate.map { x => x.asInstanceOf[js.Any] },
+        "Name" -> Name.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteSecretResponse]
     }
@@ -242,14 +242,14 @@ package secretsmanager {
 
   @js.native
   trait DescribeSecretRequest extends js.Object {
-    var SecretId: js.UndefOr[SecretIdType]
+    var SecretId: SecretIdType
   }
 
   object DescribeSecretRequest {
     def apply(
-      SecretId: js.UndefOr[SecretIdType] = js.undefined): DescribeSecretRequest = {
+      SecretId: SecretIdType): DescribeSecretRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "SecretId" -> SecretId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "SecretId" -> SecretId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeSecretRequest]
     }
@@ -258,49 +258,49 @@ package secretsmanager {
   @js.native
   trait DescribeSecretResponse extends js.Object {
     var ARN: js.UndefOr[SecretARNType]
-    var Name: js.UndefOr[SecretNameType]
-    var LastChangedDate: js.UndefOr[LastChangedDateType]
+    var DeletedDate: js.UndefOr[DeletedDateType]
     var Description: js.UndefOr[DescriptionType]
     var KmsKeyId: js.UndefOr[KmsKeyIdType]
-    var RotationLambdaARN: js.UndefOr[RotationLambdaARNType]
-    var VersionIdsToStages: js.UndefOr[SecretVersionsToStagesMapType]
-    var RotationRules: js.UndefOr[RotationRulesType]
-    var LastRotatedDate: js.UndefOr[LastRotatedDateType]
-    var Tags: js.UndefOr[TagListType]
-    var DeletedDate: js.UndefOr[DeletedDateType]
     var LastAccessedDate: js.UndefOr[LastAccessedDateType]
+    var LastChangedDate: js.UndefOr[LastChangedDateType]
+    var LastRotatedDate: js.UndefOr[LastRotatedDateType]
+    var Name: js.UndefOr[SecretNameType]
     var RotationEnabled: js.UndefOr[RotationEnabledType]
+    var RotationLambdaARN: js.UndefOr[RotationLambdaARNType]
+    var RotationRules: js.UndefOr[RotationRulesType]
+    var Tags: js.UndefOr[TagListType]
+    var VersionIdsToStages: js.UndefOr[SecretVersionsToStagesMapType]
   }
 
   object DescribeSecretResponse {
     def apply(
       ARN: js.UndefOr[SecretARNType] = js.undefined,
-      Name: js.UndefOr[SecretNameType] = js.undefined,
-      LastChangedDate: js.UndefOr[LastChangedDateType] = js.undefined,
+      DeletedDate: js.UndefOr[DeletedDateType] = js.undefined,
       Description: js.UndefOr[DescriptionType] = js.undefined,
       KmsKeyId: js.UndefOr[KmsKeyIdType] = js.undefined,
-      RotationLambdaARN: js.UndefOr[RotationLambdaARNType] = js.undefined,
-      VersionIdsToStages: js.UndefOr[SecretVersionsToStagesMapType] = js.undefined,
-      RotationRules: js.UndefOr[RotationRulesType] = js.undefined,
-      LastRotatedDate: js.UndefOr[LastRotatedDateType] = js.undefined,
-      Tags: js.UndefOr[TagListType] = js.undefined,
-      DeletedDate: js.UndefOr[DeletedDateType] = js.undefined,
       LastAccessedDate: js.UndefOr[LastAccessedDateType] = js.undefined,
-      RotationEnabled: js.UndefOr[RotationEnabledType] = js.undefined): DescribeSecretResponse = {
+      LastChangedDate: js.UndefOr[LastChangedDateType] = js.undefined,
+      LastRotatedDate: js.UndefOr[LastRotatedDateType] = js.undefined,
+      Name: js.UndefOr[SecretNameType] = js.undefined,
+      RotationEnabled: js.UndefOr[RotationEnabledType] = js.undefined,
+      RotationLambdaARN: js.UndefOr[RotationLambdaARNType] = js.undefined,
+      RotationRules: js.UndefOr[RotationRulesType] = js.undefined,
+      Tags: js.UndefOr[TagListType] = js.undefined,
+      VersionIdsToStages: js.UndefOr[SecretVersionsToStagesMapType] = js.undefined): DescribeSecretResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ARN" -> ARN.map { x => x.asInstanceOf[js.Any] },
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
-        "LastChangedDate" -> LastChangedDate.map { x => x.asInstanceOf[js.Any] },
+        "DeletedDate" -> DeletedDate.map { x => x.asInstanceOf[js.Any] },
         "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
         "KmsKeyId" -> KmsKeyId.map { x => x.asInstanceOf[js.Any] },
-        "RotationLambdaARN" -> RotationLambdaARN.map { x => x.asInstanceOf[js.Any] },
-        "VersionIdsToStages" -> VersionIdsToStages.map { x => x.asInstanceOf[js.Any] },
-        "RotationRules" -> RotationRules.map { x => x.asInstanceOf[js.Any] },
-        "LastRotatedDate" -> LastRotatedDate.map { x => x.asInstanceOf[js.Any] },
-        "Tags" -> Tags.map { x => x.asInstanceOf[js.Any] },
-        "DeletedDate" -> DeletedDate.map { x => x.asInstanceOf[js.Any] },
         "LastAccessedDate" -> LastAccessedDate.map { x => x.asInstanceOf[js.Any] },
-        "RotationEnabled" -> RotationEnabled.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "LastChangedDate" -> LastChangedDate.map { x => x.asInstanceOf[js.Any] },
+        "LastRotatedDate" -> LastRotatedDate.map { x => x.asInstanceOf[js.Any] },
+        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
+        "RotationEnabled" -> RotationEnabled.map { x => x.asInstanceOf[js.Any] },
+        "RotationLambdaARN" -> RotationLambdaARN.map { x => x.asInstanceOf[js.Any] },
+        "RotationRules" -> RotationRules.map { x => x.asInstanceOf[js.Any] },
+        "Tags" -> Tags.map { x => x.asInstanceOf[js.Any] },
+        "VersionIdsToStages" -> VersionIdsToStages.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeSecretResponse]
     }
@@ -308,34 +308,34 @@ package secretsmanager {
 
   @js.native
   trait GetRandomPasswordRequest extends js.Object {
-    var IncludeSpace: js.UndefOr[IncludeSpaceType]
-    var ExcludeNumbers: js.UndefOr[ExcludeNumbersType]
-    var PasswordLength: js.UndefOr[PasswordLengthType]
-    var ExcludeLowercase: js.UndefOr[ExcludeLowercaseType]
-    var ExcludeUppercase: js.UndefOr[ExcludeUppercaseType]
-    var ExcludePunctuation: js.UndefOr[ExcludePunctuationType]
     var ExcludeCharacters: js.UndefOr[ExcludeCharactersType]
+    var ExcludeLowercase: js.UndefOr[ExcludeLowercaseType]
+    var ExcludeNumbers: js.UndefOr[ExcludeNumbersType]
+    var ExcludePunctuation: js.UndefOr[ExcludePunctuationType]
+    var ExcludeUppercase: js.UndefOr[ExcludeUppercaseType]
+    var IncludeSpace: js.UndefOr[IncludeSpaceType]
+    var PasswordLength: js.UndefOr[PasswordLengthType]
     var RequireEachIncludedType: js.UndefOr[RequireEachIncludedTypeType]
   }
 
   object GetRandomPasswordRequest {
     def apply(
-      IncludeSpace: js.UndefOr[IncludeSpaceType] = js.undefined,
-      ExcludeNumbers: js.UndefOr[ExcludeNumbersType] = js.undefined,
-      PasswordLength: js.UndefOr[PasswordLengthType] = js.undefined,
-      ExcludeLowercase: js.UndefOr[ExcludeLowercaseType] = js.undefined,
-      ExcludeUppercase: js.UndefOr[ExcludeUppercaseType] = js.undefined,
-      ExcludePunctuation: js.UndefOr[ExcludePunctuationType] = js.undefined,
       ExcludeCharacters: js.UndefOr[ExcludeCharactersType] = js.undefined,
+      ExcludeLowercase: js.UndefOr[ExcludeLowercaseType] = js.undefined,
+      ExcludeNumbers: js.UndefOr[ExcludeNumbersType] = js.undefined,
+      ExcludePunctuation: js.UndefOr[ExcludePunctuationType] = js.undefined,
+      ExcludeUppercase: js.UndefOr[ExcludeUppercaseType] = js.undefined,
+      IncludeSpace: js.UndefOr[IncludeSpaceType] = js.undefined,
+      PasswordLength: js.UndefOr[PasswordLengthType] = js.undefined,
       RequireEachIncludedType: js.UndefOr[RequireEachIncludedTypeType] = js.undefined): GetRandomPasswordRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "IncludeSpace" -> IncludeSpace.map { x => x.asInstanceOf[js.Any] },
-        "ExcludeNumbers" -> ExcludeNumbers.map { x => x.asInstanceOf[js.Any] },
-        "PasswordLength" -> PasswordLength.map { x => x.asInstanceOf[js.Any] },
-        "ExcludeLowercase" -> ExcludeLowercase.map { x => x.asInstanceOf[js.Any] },
-        "ExcludeUppercase" -> ExcludeUppercase.map { x => x.asInstanceOf[js.Any] },
-        "ExcludePunctuation" -> ExcludePunctuation.map { x => x.asInstanceOf[js.Any] },
         "ExcludeCharacters" -> ExcludeCharacters.map { x => x.asInstanceOf[js.Any] },
+        "ExcludeLowercase" -> ExcludeLowercase.map { x => x.asInstanceOf[js.Any] },
+        "ExcludeNumbers" -> ExcludeNumbers.map { x => x.asInstanceOf[js.Any] },
+        "ExcludePunctuation" -> ExcludePunctuation.map { x => x.asInstanceOf[js.Any] },
+        "ExcludeUppercase" -> ExcludeUppercase.map { x => x.asInstanceOf[js.Any] },
+        "IncludeSpace" -> IncludeSpace.map { x => x.asInstanceOf[js.Any] },
+        "PasswordLength" -> PasswordLength.map { x => x.asInstanceOf[js.Any] },
         "RequireEachIncludedType" -> RequireEachIncludedType.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetRandomPasswordRequest]
@@ -359,14 +359,14 @@ package secretsmanager {
 
   @js.native
   trait GetResourcePolicyRequest extends js.Object {
-    var SecretId: js.UndefOr[SecretIdType]
+    var SecretId: SecretIdType
   }
 
   object GetResourcePolicyRequest {
     def apply(
-      SecretId: js.UndefOr[SecretIdType] = js.undefined): GetResourcePolicyRequest = {
+      SecretId: SecretIdType): GetResourcePolicyRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "SecretId" -> SecretId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "SecretId" -> SecretId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetResourcePolicyRequest]
     }
@@ -395,18 +395,18 @@ package secretsmanager {
 
   @js.native
   trait GetSecretValueRequest extends js.Object {
-    var SecretId: js.UndefOr[SecretIdType]
+    var SecretId: SecretIdType
     var VersionId: js.UndefOr[SecretVersionIdType]
     var VersionStage: js.UndefOr[SecretVersionStageType]
   }
 
   object GetSecretValueRequest {
     def apply(
-      SecretId: js.UndefOr[SecretIdType] = js.undefined,
+      SecretId: SecretIdType,
       VersionId: js.UndefOr[SecretVersionIdType] = js.undefined,
       VersionStage: js.UndefOr[SecretVersionStageType] = js.undefined): GetSecretValueRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "SecretId" -> SecretId.map { x => x.asInstanceOf[js.Any] },
+        "SecretId" -> SecretId.asInstanceOf[js.Any],
         "VersionId" -> VersionId.map { x => x.asInstanceOf[js.Any] },
         "VersionStage" -> VersionStage.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
@@ -416,32 +416,32 @@ package secretsmanager {
 
   @js.native
   trait GetSecretValueResponse extends js.Object {
-    var VersionStages: js.UndefOr[SecretVersionStagesType]
     var ARN: js.UndefOr[SecretARNType]
-    var Name: js.UndefOr[SecretNameType]
     var CreatedDate: js.UndefOr[CreatedDateType]
+    var Name: js.UndefOr[SecretNameType]
     var SecretBinary: js.UndefOr[SecretBinaryType]
     var SecretString: js.UndefOr[SecretStringType]
     var VersionId: js.UndefOr[SecretVersionIdType]
+    var VersionStages: js.UndefOr[SecretVersionStagesType]
   }
 
   object GetSecretValueResponse {
     def apply(
-      VersionStages: js.UndefOr[SecretVersionStagesType] = js.undefined,
       ARN: js.UndefOr[SecretARNType] = js.undefined,
-      Name: js.UndefOr[SecretNameType] = js.undefined,
       CreatedDate: js.UndefOr[CreatedDateType] = js.undefined,
+      Name: js.UndefOr[SecretNameType] = js.undefined,
       SecretBinary: js.UndefOr[SecretBinaryType] = js.undefined,
       SecretString: js.UndefOr[SecretStringType] = js.undefined,
-      VersionId: js.UndefOr[SecretVersionIdType] = js.undefined): GetSecretValueResponse = {
+      VersionId: js.UndefOr[SecretVersionIdType] = js.undefined,
+      VersionStages: js.UndefOr[SecretVersionStagesType] = js.undefined): GetSecretValueResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "VersionStages" -> VersionStages.map { x => x.asInstanceOf[js.Any] },
         "ARN" -> ARN.map { x => x.asInstanceOf[js.Any] },
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
         "CreatedDate" -> CreatedDate.map { x => x.asInstanceOf[js.Any] },
+        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
         "SecretBinary" -> SecretBinary.map { x => x.asInstanceOf[js.Any] },
         "SecretString" -> SecretString.map { x => x.asInstanceOf[js.Any] },
-        "VersionId" -> VersionId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "VersionId" -> VersionId.map { x => x.asInstanceOf[js.Any] },
+        "VersionStages" -> VersionStages.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetSecretValueResponse]
     }
@@ -449,23 +449,23 @@ package secretsmanager {
 
   @js.native
   trait ListSecretVersionIdsRequest extends js.Object {
-    var SecretId: js.UndefOr[SecretIdType]
+    var SecretId: SecretIdType
+    var IncludeDeprecated: js.UndefOr[BooleanType]
     var MaxResults: js.UndefOr[MaxResultsType]
     var NextToken: js.UndefOr[NextTokenType]
-    var IncludeDeprecated: js.UndefOr[BooleanType]
   }
 
   object ListSecretVersionIdsRequest {
     def apply(
-      SecretId: js.UndefOr[SecretIdType] = js.undefined,
+      SecretId: SecretIdType,
+      IncludeDeprecated: js.UndefOr[BooleanType] = js.undefined,
       MaxResults: js.UndefOr[MaxResultsType] = js.undefined,
-      NextToken: js.UndefOr[NextTokenType] = js.undefined,
-      IncludeDeprecated: js.UndefOr[BooleanType] = js.undefined): ListSecretVersionIdsRequest = {
+      NextToken: js.UndefOr[NextTokenType] = js.undefined): ListSecretVersionIdsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "SecretId" -> SecretId.map { x => x.asInstanceOf[js.Any] },
+        "SecretId" -> SecretId.asInstanceOf[js.Any],
+        "IncludeDeprecated" -> IncludeDeprecated.map { x => x.asInstanceOf[js.Any] },
         "MaxResults" -> MaxResults.map { x => x.asInstanceOf[js.Any] },
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
-        "IncludeDeprecated" -> IncludeDeprecated.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListSecretVersionIdsRequest]
     }
@@ -473,23 +473,23 @@ package secretsmanager {
 
   @js.native
   trait ListSecretVersionIdsResponse extends js.Object {
-    var Versions: js.UndefOr[SecretVersionsListType]
-    var NextToken: js.UndefOr[NextTokenType]
     var ARN: js.UndefOr[SecretARNType]
     var Name: js.UndefOr[SecretNameType]
+    var NextToken: js.UndefOr[NextTokenType]
+    var Versions: js.UndefOr[SecretVersionsListType]
   }
 
   object ListSecretVersionIdsResponse {
     def apply(
-      Versions: js.UndefOr[SecretVersionsListType] = js.undefined,
-      NextToken: js.UndefOr[NextTokenType] = js.undefined,
       ARN: js.UndefOr[SecretARNType] = js.undefined,
-      Name: js.UndefOr[SecretNameType] = js.undefined): ListSecretVersionIdsResponse = {
+      Name: js.UndefOr[SecretNameType] = js.undefined,
+      NextToken: js.UndefOr[NextTokenType] = js.undefined,
+      Versions: js.UndefOr[SecretVersionsListType] = js.undefined): ListSecretVersionIdsResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Versions" -> Versions.map { x => x.asInstanceOf[js.Any] },
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
         "ARN" -> ARN.map { x => x.asInstanceOf[js.Any] },
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
+        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
+        "Versions" -> Versions.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListSecretVersionIdsResponse]
     }
@@ -515,17 +515,17 @@ package secretsmanager {
 
   @js.native
   trait ListSecretsResponse extends js.Object {
-    var SecretList: js.UndefOr[SecretListType]
     var NextToken: js.UndefOr[NextTokenType]
+    var SecretList: js.UndefOr[SecretListType]
   }
 
   object ListSecretsResponse {
     def apply(
-      SecretList: js.UndefOr[SecretListType] = js.undefined,
-      NextToken: js.UndefOr[NextTokenType] = js.undefined): ListSecretsResponse = {
+      NextToken: js.UndefOr[NextTokenType] = js.undefined,
+      SecretList: js.UndefOr[SecretListType] = js.undefined): ListSecretsResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "SecretList" -> SecretList.map { x => x.asInstanceOf[js.Any] },
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
+        "SecretList" -> SecretList.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListSecretsResponse]
     }
@@ -533,17 +533,17 @@ package secretsmanager {
 
   @js.native
   trait PutResourcePolicyRequest extends js.Object {
-    var SecretId: js.UndefOr[SecretIdType]
-    var ResourcePolicy: js.UndefOr[NonEmptyResourcePolicyType]
+    var ResourcePolicy: NonEmptyResourcePolicyType
+    var SecretId: SecretIdType
   }
 
   object PutResourcePolicyRequest {
     def apply(
-      SecretId: js.UndefOr[SecretIdType] = js.undefined,
-      ResourcePolicy: js.UndefOr[NonEmptyResourcePolicyType] = js.undefined): PutResourcePolicyRequest = {
+      ResourcePolicy: NonEmptyResourcePolicyType,
+      SecretId: SecretIdType): PutResourcePolicyRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "SecretId" -> SecretId.map { x => x.asInstanceOf[js.Any] },
-        "ResourcePolicy" -> ResourcePolicy.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ResourcePolicy" -> ResourcePolicy.asInstanceOf[js.Any],
+        "SecretId" -> SecretId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutResourcePolicyRequest]
     }
@@ -569,26 +569,26 @@ package secretsmanager {
 
   @js.native
   trait PutSecretValueRequest extends js.Object {
-    var VersionStages: js.UndefOr[SecretVersionStagesType]
+    var SecretId: SecretIdType
+    var ClientRequestToken: js.UndefOr[ClientRequestTokenType]
     var SecretBinary: js.UndefOr[SecretBinaryType]
     var SecretString: js.UndefOr[SecretStringType]
-    var ClientRequestToken: js.UndefOr[ClientRequestTokenType]
-    var SecretId: js.UndefOr[SecretIdType]
+    var VersionStages: js.UndefOr[SecretVersionStagesType]
   }
 
   object PutSecretValueRequest {
     def apply(
-      VersionStages: js.UndefOr[SecretVersionStagesType] = js.undefined,
+      SecretId: SecretIdType,
+      ClientRequestToken: js.UndefOr[ClientRequestTokenType] = js.undefined,
       SecretBinary: js.UndefOr[SecretBinaryType] = js.undefined,
       SecretString: js.UndefOr[SecretStringType] = js.undefined,
-      ClientRequestToken: js.UndefOr[ClientRequestTokenType] = js.undefined,
-      SecretId: js.UndefOr[SecretIdType] = js.undefined): PutSecretValueRequest = {
+      VersionStages: js.UndefOr[SecretVersionStagesType] = js.undefined): PutSecretValueRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "VersionStages" -> VersionStages.map { x => x.asInstanceOf[js.Any] },
+        "SecretId" -> SecretId.asInstanceOf[js.Any],
+        "ClientRequestToken" -> ClientRequestToken.map { x => x.asInstanceOf[js.Any] },
         "SecretBinary" -> SecretBinary.map { x => x.asInstanceOf[js.Any] },
         "SecretString" -> SecretString.map { x => x.asInstanceOf[js.Any] },
-        "ClientRequestToken" -> ClientRequestToken.map { x => x.asInstanceOf[js.Any] },
-        "SecretId" -> SecretId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "VersionStages" -> VersionStages.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutSecretValueRequest]
     }
@@ -620,14 +620,14 @@ package secretsmanager {
 
   @js.native
   trait RestoreSecretRequest extends js.Object {
-    var SecretId: js.UndefOr[SecretIdType]
+    var SecretId: SecretIdType
   }
 
   object RestoreSecretRequest {
     def apply(
-      SecretId: js.UndefOr[SecretIdType] = js.undefined): RestoreSecretRequest = {
+      SecretId: SecretIdType): RestoreSecretRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "SecretId" -> SecretId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "SecretId" -> SecretId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RestoreSecretRequest]
     }
@@ -653,7 +653,7 @@ package secretsmanager {
 
   @js.native
   trait RotateSecretRequest extends js.Object {
-    var SecretId: js.UndefOr[SecretIdType]
+    var SecretId: SecretIdType
     var ClientRequestToken: js.UndefOr[ClientRequestTokenType]
     var RotationLambdaARN: js.UndefOr[RotationLambdaARNType]
     var RotationRules: js.UndefOr[RotationRulesType]
@@ -661,12 +661,12 @@ package secretsmanager {
 
   object RotateSecretRequest {
     def apply(
-      SecretId: js.UndefOr[SecretIdType] = js.undefined,
+      SecretId: SecretIdType,
       ClientRequestToken: js.UndefOr[ClientRequestTokenType] = js.undefined,
       RotationLambdaARN: js.UndefOr[RotationLambdaARNType] = js.undefined,
       RotationRules: js.UndefOr[RotationRulesType] = js.undefined): RotateSecretRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "SecretId" -> SecretId.map { x => x.asInstanceOf[js.Any] },
+        "SecretId" -> SecretId.asInstanceOf[js.Any],
         "ClientRequestToken" -> ClientRequestToken.map { x => x.asInstanceOf[js.Any] },
         "RotationLambdaARN" -> RotationLambdaARN.map { x => x.asInstanceOf[js.Any] },
         "RotationRules" -> RotationRules.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
@@ -720,49 +720,49 @@ package secretsmanager {
   @js.native
   trait SecretListEntry extends js.Object {
     var ARN: js.UndefOr[SecretARNType]
-    var Name: js.UndefOr[SecretNameType]
-    var SecretVersionsToStages: js.UndefOr[SecretVersionsToStagesMapType]
-    var LastChangedDate: js.UndefOr[LastChangedDateType]
+    var DeletedDate: js.UndefOr[DeletedDateType]
     var Description: js.UndefOr[DescriptionType]
     var KmsKeyId: js.UndefOr[KmsKeyIdType]
+    var LastAccessedDate: js.UndefOr[LastAccessedDateType]
+    var LastChangedDate: js.UndefOr[LastChangedDateType]
+    var LastRotatedDate: js.UndefOr[LastRotatedDateType]
+    var Name: js.UndefOr[SecretNameType]
+    var RotationEnabled: js.UndefOr[RotationEnabledType]
     var RotationLambdaARN: js.UndefOr[RotationLambdaARNType]
     var RotationRules: js.UndefOr[RotationRulesType]
-    var LastRotatedDate: js.UndefOr[LastRotatedDateType]
+    var SecretVersionsToStages: js.UndefOr[SecretVersionsToStagesMapType]
     var Tags: js.UndefOr[TagListType]
-    var DeletedDate: js.UndefOr[DeletedDateType]
-    var LastAccessedDate: js.UndefOr[LastAccessedDateType]
-    var RotationEnabled: js.UndefOr[RotationEnabledType]
   }
 
   object SecretListEntry {
     def apply(
       ARN: js.UndefOr[SecretARNType] = js.undefined,
-      Name: js.UndefOr[SecretNameType] = js.undefined,
-      SecretVersionsToStages: js.UndefOr[SecretVersionsToStagesMapType] = js.undefined,
-      LastChangedDate: js.UndefOr[LastChangedDateType] = js.undefined,
+      DeletedDate: js.UndefOr[DeletedDateType] = js.undefined,
       Description: js.UndefOr[DescriptionType] = js.undefined,
       KmsKeyId: js.UndefOr[KmsKeyIdType] = js.undefined,
+      LastAccessedDate: js.UndefOr[LastAccessedDateType] = js.undefined,
+      LastChangedDate: js.UndefOr[LastChangedDateType] = js.undefined,
+      LastRotatedDate: js.UndefOr[LastRotatedDateType] = js.undefined,
+      Name: js.UndefOr[SecretNameType] = js.undefined,
+      RotationEnabled: js.UndefOr[RotationEnabledType] = js.undefined,
       RotationLambdaARN: js.UndefOr[RotationLambdaARNType] = js.undefined,
       RotationRules: js.UndefOr[RotationRulesType] = js.undefined,
-      LastRotatedDate: js.UndefOr[LastRotatedDateType] = js.undefined,
-      Tags: js.UndefOr[TagListType] = js.undefined,
-      DeletedDate: js.UndefOr[DeletedDateType] = js.undefined,
-      LastAccessedDate: js.UndefOr[LastAccessedDateType] = js.undefined,
-      RotationEnabled: js.UndefOr[RotationEnabledType] = js.undefined): SecretListEntry = {
+      SecretVersionsToStages: js.UndefOr[SecretVersionsToStagesMapType] = js.undefined,
+      Tags: js.UndefOr[TagListType] = js.undefined): SecretListEntry = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ARN" -> ARN.map { x => x.asInstanceOf[js.Any] },
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
-        "SecretVersionsToStages" -> SecretVersionsToStages.map { x => x.asInstanceOf[js.Any] },
-        "LastChangedDate" -> LastChangedDate.map { x => x.asInstanceOf[js.Any] },
+        "DeletedDate" -> DeletedDate.map { x => x.asInstanceOf[js.Any] },
         "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
         "KmsKeyId" -> KmsKeyId.map { x => x.asInstanceOf[js.Any] },
+        "LastAccessedDate" -> LastAccessedDate.map { x => x.asInstanceOf[js.Any] },
+        "LastChangedDate" -> LastChangedDate.map { x => x.asInstanceOf[js.Any] },
+        "LastRotatedDate" -> LastRotatedDate.map { x => x.asInstanceOf[js.Any] },
+        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
+        "RotationEnabled" -> RotationEnabled.map { x => x.asInstanceOf[js.Any] },
         "RotationLambdaARN" -> RotationLambdaARN.map { x => x.asInstanceOf[js.Any] },
         "RotationRules" -> RotationRules.map { x => x.asInstanceOf[js.Any] },
-        "LastRotatedDate" -> LastRotatedDate.map { x => x.asInstanceOf[js.Any] },
-        "Tags" -> Tags.map { x => x.asInstanceOf[js.Any] },
-        "DeletedDate" -> DeletedDate.map { x => x.asInstanceOf[js.Any] },
-        "LastAccessedDate" -> LastAccessedDate.map { x => x.asInstanceOf[js.Any] },
-        "RotationEnabled" -> RotationEnabled.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "SecretVersionsToStages" -> SecretVersionsToStages.map { x => x.asInstanceOf[js.Any] },
+        "Tags" -> Tags.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SecretListEntry]
     }
@@ -773,23 +773,23 @@ package secretsmanager {
    */
   @js.native
   trait SecretVersionsListEntry extends js.Object {
+    var CreatedDate: js.UndefOr[CreatedDateType]
+    var LastAccessedDate: js.UndefOr[LastAccessedDateType]
     var VersionId: js.UndefOr[SecretVersionIdType]
     var VersionStages: js.UndefOr[SecretVersionStagesType]
-    var LastAccessedDate: js.UndefOr[LastAccessedDateType]
-    var CreatedDate: js.UndefOr[CreatedDateType]
   }
 
   object SecretVersionsListEntry {
     def apply(
-      VersionId: js.UndefOr[SecretVersionIdType] = js.undefined,
-      VersionStages: js.UndefOr[SecretVersionStagesType] = js.undefined,
+      CreatedDate: js.UndefOr[CreatedDateType] = js.undefined,
       LastAccessedDate: js.UndefOr[LastAccessedDateType] = js.undefined,
-      CreatedDate: js.UndefOr[CreatedDateType] = js.undefined): SecretVersionsListEntry = {
+      VersionId: js.UndefOr[SecretVersionIdType] = js.undefined,
+      VersionStages: js.UndefOr[SecretVersionStagesType] = js.undefined): SecretVersionsListEntry = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "VersionId" -> VersionId.map { x => x.asInstanceOf[js.Any] },
-        "VersionStages" -> VersionStages.map { x => x.asInstanceOf[js.Any] },
+        "CreatedDate" -> CreatedDate.map { x => x.asInstanceOf[js.Any] },
         "LastAccessedDate" -> LastAccessedDate.map { x => x.asInstanceOf[js.Any] },
-        "CreatedDate" -> CreatedDate.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "VersionId" -> VersionId.map { x => x.asInstanceOf[js.Any] },
+        "VersionStages" -> VersionStages.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SecretVersionsListEntry]
     }
@@ -818,17 +818,17 @@ package secretsmanager {
 
   @js.native
   trait TagResourceRequest extends js.Object {
-    var SecretId: js.UndefOr[SecretIdType]
-    var Tags: js.UndefOr[TagListType]
+    var SecretId: SecretIdType
+    var Tags: TagListType
   }
 
   object TagResourceRequest {
     def apply(
-      SecretId: js.UndefOr[SecretIdType] = js.undefined,
-      Tags: js.UndefOr[TagListType] = js.undefined): TagResourceRequest = {
+      SecretId: SecretIdType,
+      Tags: TagListType): TagResourceRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "SecretId" -> SecretId.map { x => x.asInstanceOf[js.Any] },
-        "Tags" -> Tags.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "SecretId" -> SecretId.asInstanceOf[js.Any],
+        "Tags" -> Tags.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TagResourceRequest]
     }
@@ -836,17 +836,17 @@ package secretsmanager {
 
   @js.native
   trait UntagResourceRequest extends js.Object {
-    var SecretId: js.UndefOr[SecretIdType]
-    var TagKeys: js.UndefOr[TagKeyListType]
+    var SecretId: SecretIdType
+    var TagKeys: TagKeyListType
   }
 
   object UntagResourceRequest {
     def apply(
-      SecretId: js.UndefOr[SecretIdType] = js.undefined,
-      TagKeys: js.UndefOr[TagKeyListType] = js.undefined): UntagResourceRequest = {
+      SecretId: SecretIdType,
+      TagKeys: TagKeyListType): UntagResourceRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "SecretId" -> SecretId.map { x => x.asInstanceOf[js.Any] },
-        "TagKeys" -> TagKeys.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "SecretId" -> SecretId.asInstanceOf[js.Any],
+        "TagKeys" -> TagKeys.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UntagResourceRequest]
     }
@@ -854,29 +854,29 @@ package secretsmanager {
 
   @js.native
   trait UpdateSecretRequest extends js.Object {
+    var SecretId: SecretIdType
+    var ClientRequestToken: js.UndefOr[ClientRequestTokenType]
     var Description: js.UndefOr[DescriptionType]
     var KmsKeyId: js.UndefOr[KmsKeyIdType]
     var SecretBinary: js.UndefOr[SecretBinaryType]
     var SecretString: js.UndefOr[SecretStringType]
-    var ClientRequestToken: js.UndefOr[ClientRequestTokenType]
-    var SecretId: js.UndefOr[SecretIdType]
   }
 
   object UpdateSecretRequest {
     def apply(
+      SecretId: SecretIdType,
+      ClientRequestToken: js.UndefOr[ClientRequestTokenType] = js.undefined,
       Description: js.UndefOr[DescriptionType] = js.undefined,
       KmsKeyId: js.UndefOr[KmsKeyIdType] = js.undefined,
       SecretBinary: js.UndefOr[SecretBinaryType] = js.undefined,
-      SecretString: js.UndefOr[SecretStringType] = js.undefined,
-      ClientRequestToken: js.UndefOr[ClientRequestTokenType] = js.undefined,
-      SecretId: js.UndefOr[SecretIdType] = js.undefined): UpdateSecretRequest = {
+      SecretString: js.UndefOr[SecretStringType] = js.undefined): UpdateSecretRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "SecretId" -> SecretId.asInstanceOf[js.Any],
+        "ClientRequestToken" -> ClientRequestToken.map { x => x.asInstanceOf[js.Any] },
         "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
         "KmsKeyId" -> KmsKeyId.map { x => x.asInstanceOf[js.Any] },
         "SecretBinary" -> SecretBinary.map { x => x.asInstanceOf[js.Any] },
-        "SecretString" -> SecretString.map { x => x.asInstanceOf[js.Any] },
-        "ClientRequestToken" -> ClientRequestToken.map { x => x.asInstanceOf[js.Any] },
-        "SecretId" -> SecretId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "SecretString" -> SecretString.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateSecretRequest]
     }
@@ -905,23 +905,23 @@ package secretsmanager {
 
   @js.native
   trait UpdateSecretVersionStageRequest extends js.Object {
-    var SecretId: js.UndefOr[SecretIdType]
-    var VersionStage: js.UndefOr[SecretVersionStageType]
-    var RemoveFromVersionId: js.UndefOr[SecretVersionIdType]
+    var SecretId: SecretIdType
+    var VersionStage: SecretVersionStageType
     var MoveToVersionId: js.UndefOr[SecretVersionIdType]
+    var RemoveFromVersionId: js.UndefOr[SecretVersionIdType]
   }
 
   object UpdateSecretVersionStageRequest {
     def apply(
-      SecretId: js.UndefOr[SecretIdType] = js.undefined,
-      VersionStage: js.UndefOr[SecretVersionStageType] = js.undefined,
-      RemoveFromVersionId: js.UndefOr[SecretVersionIdType] = js.undefined,
-      MoveToVersionId: js.UndefOr[SecretVersionIdType] = js.undefined): UpdateSecretVersionStageRequest = {
+      SecretId: SecretIdType,
+      VersionStage: SecretVersionStageType,
+      MoveToVersionId: js.UndefOr[SecretVersionIdType] = js.undefined,
+      RemoveFromVersionId: js.UndefOr[SecretVersionIdType] = js.undefined): UpdateSecretVersionStageRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "SecretId" -> SecretId.map { x => x.asInstanceOf[js.Any] },
-        "VersionStage" -> VersionStage.map { x => x.asInstanceOf[js.Any] },
-        "RemoveFromVersionId" -> RemoveFromVersionId.map { x => x.asInstanceOf[js.Any] },
-        "MoveToVersionId" -> MoveToVersionId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "SecretId" -> SecretId.asInstanceOf[js.Any],
+        "VersionStage" -> VersionStage.asInstanceOf[js.Any],
+        "MoveToVersionId" -> MoveToVersionId.map { x => x.asInstanceOf[js.Any] },
+        "RemoveFromVersionId" -> RemoveFromVersionId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateSecretVersionStageRequest]
     }

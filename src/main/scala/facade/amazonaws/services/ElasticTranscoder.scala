@@ -135,32 +135,32 @@ package elastictranscoder {
    */
   @js.native
   trait Artwork extends js.Object {
-    var InputKey: js.UndefOr[WatermarkKey]
-    var SizingPolicy: js.UndefOr[SizingPolicy]
-    var MaxHeight: js.UndefOr[DigitsOrAuto]
-    var PaddingPolicy: js.UndefOr[PaddingPolicy]
     var AlbumArtFormat: js.UndefOr[JpgOrPng]
-    var MaxWidth: js.UndefOr[DigitsOrAuto]
     var Encryption: js.UndefOr[Encryption]
+    var InputKey: js.UndefOr[WatermarkKey]
+    var MaxHeight: js.UndefOr[DigitsOrAuto]
+    var MaxWidth: js.UndefOr[DigitsOrAuto]
+    var PaddingPolicy: js.UndefOr[PaddingPolicy]
+    var SizingPolicy: js.UndefOr[SizingPolicy]
   }
 
   object Artwork {
     def apply(
-      InputKey: js.UndefOr[WatermarkKey] = js.undefined,
-      SizingPolicy: js.UndefOr[SizingPolicy] = js.undefined,
-      MaxHeight: js.UndefOr[DigitsOrAuto] = js.undefined,
-      PaddingPolicy: js.UndefOr[PaddingPolicy] = js.undefined,
       AlbumArtFormat: js.UndefOr[JpgOrPng] = js.undefined,
+      Encryption: js.UndefOr[Encryption] = js.undefined,
+      InputKey: js.UndefOr[WatermarkKey] = js.undefined,
+      MaxHeight: js.UndefOr[DigitsOrAuto] = js.undefined,
       MaxWidth: js.UndefOr[DigitsOrAuto] = js.undefined,
-      Encryption: js.UndefOr[Encryption] = js.undefined): Artwork = {
+      PaddingPolicy: js.UndefOr[PaddingPolicy] = js.undefined,
+      SizingPolicy: js.UndefOr[SizingPolicy] = js.undefined): Artwork = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "InputKey" -> InputKey.map { x => x.asInstanceOf[js.Any] },
-        "SizingPolicy" -> SizingPolicy.map { x => x.asInstanceOf[js.Any] },
-        "MaxHeight" -> MaxHeight.map { x => x.asInstanceOf[js.Any] },
-        "PaddingPolicy" -> PaddingPolicy.map { x => x.asInstanceOf[js.Any] },
         "AlbumArtFormat" -> AlbumArtFormat.map { x => x.asInstanceOf[js.Any] },
+        "Encryption" -> Encryption.map { x => x.asInstanceOf[js.Any] },
+        "InputKey" -> InputKey.map { x => x.asInstanceOf[js.Any] },
+        "MaxHeight" -> MaxHeight.map { x => x.asInstanceOf[js.Any] },
         "MaxWidth" -> MaxWidth.map { x => x.asInstanceOf[js.Any] },
-        "Encryption" -> Encryption.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "PaddingPolicy" -> PaddingPolicy.map { x => x.asInstanceOf[js.Any] },
+        "SizingPolicy" -> SizingPolicy.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Artwork]
     }
@@ -171,22 +171,22 @@ package elastictranscoder {
    */
   @js.native
   trait AudioCodecOptions extends js.Object {
-    var Profile: js.UndefOr[AudioCodecProfile]
     var BitDepth: js.UndefOr[AudioBitDepth]
     var BitOrder: js.UndefOr[AudioBitOrder]
+    var Profile: js.UndefOr[AudioCodecProfile]
     var Signed: js.UndefOr[AudioSigned]
   }
 
   object AudioCodecOptions {
     def apply(
-      Profile: js.UndefOr[AudioCodecProfile] = js.undefined,
       BitDepth: js.UndefOr[AudioBitDepth] = js.undefined,
       BitOrder: js.UndefOr[AudioBitOrder] = js.undefined,
+      Profile: js.UndefOr[AudioCodecProfile] = js.undefined,
       Signed: js.UndefOr[AudioSigned] = js.undefined): AudioCodecOptions = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Profile" -> Profile.map { x => x.asInstanceOf[js.Any] },
         "BitDepth" -> BitDepth.map { x => x.asInstanceOf[js.Any] },
         "BitOrder" -> BitOrder.map { x => x.asInstanceOf[js.Any] },
+        "Profile" -> Profile.map { x => x.asInstanceOf[js.Any] },
         "Signed" -> Signed.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AudioCodecOptions]
@@ -198,29 +198,29 @@ package elastictranscoder {
    */
   @js.native
   trait AudioParameters extends js.Object {
+    var AudioPackingMode: js.UndefOr[AudioPackingMode]
     var BitRate: js.UndefOr[AudioBitRate]
-    var CodecOptions: js.UndefOr[AudioCodecOptions]
     var Channels: js.UndefOr[AudioChannels]
     var Codec: js.UndefOr[AudioCodec]
+    var CodecOptions: js.UndefOr[AudioCodecOptions]
     var SampleRate: js.UndefOr[AudioSampleRate]
-    var AudioPackingMode: js.UndefOr[AudioPackingMode]
   }
 
   object AudioParameters {
     def apply(
+      AudioPackingMode: js.UndefOr[AudioPackingMode] = js.undefined,
       BitRate: js.UndefOr[AudioBitRate] = js.undefined,
-      CodecOptions: js.UndefOr[AudioCodecOptions] = js.undefined,
       Channels: js.UndefOr[AudioChannels] = js.undefined,
       Codec: js.UndefOr[AudioCodec] = js.undefined,
-      SampleRate: js.UndefOr[AudioSampleRate] = js.undefined,
-      AudioPackingMode: js.UndefOr[AudioPackingMode] = js.undefined): AudioParameters = {
+      CodecOptions: js.UndefOr[AudioCodecOptions] = js.undefined,
+      SampleRate: js.UndefOr[AudioSampleRate] = js.undefined): AudioParameters = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "AudioPackingMode" -> AudioPackingMode.map { x => x.asInstanceOf[js.Any] },
         "BitRate" -> BitRate.map { x => x.asInstanceOf[js.Any] },
-        "CodecOptions" -> CodecOptions.map { x => x.asInstanceOf[js.Any] },
         "Channels" -> Channels.map { x => x.asInstanceOf[js.Any] },
         "Codec" -> Codec.map { x => x.asInstanceOf[js.Any] },
-        "SampleRate" -> SampleRate.map { x => x.asInstanceOf[js.Any] },
-        "AudioPackingMode" -> AudioPackingMode.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "CodecOptions" -> CodecOptions.map { x => x.asInstanceOf[js.Any] },
+        "SampleRate" -> SampleRate.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AudioParameters]
     }
@@ -231,14 +231,14 @@ package elastictranscoder {
    */
   @js.native
   trait CancelJobRequest extends js.Object {
-    var Id: js.UndefOr[Id]
+    var Id: Id
   }
 
   object CancelJobRequest {
     def apply(
-      Id: js.UndefOr[Id] = js.undefined): CancelJobRequest = {
+      Id: Id): CancelJobRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Id" -> Id.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Id" -> Id.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CancelJobRequest]
     }
@@ -265,20 +265,20 @@ package elastictranscoder {
    */
   @js.native
   trait CaptionFormat extends js.Object {
+    var Encryption: js.UndefOr[Encryption]
     var Format: js.UndefOr[CaptionFormatFormat]
     var Pattern: js.UndefOr[CaptionFormatPattern]
-    var Encryption: js.UndefOr[Encryption]
   }
 
   object CaptionFormat {
     def apply(
+      Encryption: js.UndefOr[Encryption] = js.undefined,
       Format: js.UndefOr[CaptionFormatFormat] = js.undefined,
-      Pattern: js.UndefOr[CaptionFormatPattern] = js.undefined,
-      Encryption: js.UndefOr[Encryption] = js.undefined): CaptionFormat = {
+      Pattern: js.UndefOr[CaptionFormatPattern] = js.undefined): CaptionFormat = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "Encryption" -> Encryption.map { x => x.asInstanceOf[js.Any] },
         "Format" -> Format.map { x => x.asInstanceOf[js.Any] },
-        "Pattern" -> Pattern.map { x => x.asInstanceOf[js.Any] },
-        "Encryption" -> Encryption.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Pattern" -> Pattern.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CaptionFormat]
     }
@@ -289,26 +289,26 @@ package elastictranscoder {
    */
   @js.native
   trait CaptionSource extends js.Object {
-    var TimeOffset: js.UndefOr[TimeOffset]
-    var Language: js.UndefOr[Key]
-    var Label: js.UndefOr[Name]
     var Encryption: js.UndefOr[Encryption]
     var Key: js.UndefOr[LongKey]
+    var Label: js.UndefOr[Name]
+    var Language: js.UndefOr[Key]
+    var TimeOffset: js.UndefOr[TimeOffset]
   }
 
   object CaptionSource {
     def apply(
-      TimeOffset: js.UndefOr[TimeOffset] = js.undefined,
-      Language: js.UndefOr[Key] = js.undefined,
-      Label: js.UndefOr[Name] = js.undefined,
       Encryption: js.UndefOr[Encryption] = js.undefined,
-      Key: js.UndefOr[LongKey] = js.undefined): CaptionSource = {
+      Key: js.UndefOr[LongKey] = js.undefined,
+      Label: js.UndefOr[Name] = js.undefined,
+      Language: js.UndefOr[Key] = js.undefined,
+      TimeOffset: js.UndefOr[TimeOffset] = js.undefined): CaptionSource = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "TimeOffset" -> TimeOffset.map { x => x.asInstanceOf[js.Any] },
-        "Language" -> Language.map { x => x.asInstanceOf[js.Any] },
-        "Label" -> Label.map { x => x.asInstanceOf[js.Any] },
         "Encryption" -> Encryption.map { x => x.asInstanceOf[js.Any] },
-        "Key" -> Key.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Key" -> Key.map { x => x.asInstanceOf[js.Any] },
+        "Label" -> Label.map { x => x.asInstanceOf[js.Any] },
+        "Language" -> Language.map { x => x.asInstanceOf[js.Any] },
+        "TimeOffset" -> TimeOffset.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CaptionSource]
     }
@@ -319,20 +319,20 @@ package elastictranscoder {
    */
   @js.native
   trait Captions extends js.Object {
-    var MergePolicy: js.UndefOr[CaptionMergePolicy]
-    var CaptionSources: js.UndefOr[CaptionSources]
     var CaptionFormats: js.UndefOr[CaptionFormats]
+    var CaptionSources: js.UndefOr[CaptionSources]
+    var MergePolicy: js.UndefOr[CaptionMergePolicy]
   }
 
   object Captions {
     def apply(
-      MergePolicy: js.UndefOr[CaptionMergePolicy] = js.undefined,
+      CaptionFormats: js.UndefOr[CaptionFormats] = js.undefined,
       CaptionSources: js.UndefOr[CaptionSources] = js.undefined,
-      CaptionFormats: js.UndefOr[CaptionFormats] = js.undefined): Captions = {
+      MergePolicy: js.UndefOr[CaptionMergePolicy] = js.undefined): Captions = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "MergePolicy" -> MergePolicy.map { x => x.asInstanceOf[js.Any] },
+        "CaptionFormats" -> CaptionFormats.map { x => x.asInstanceOf[js.Any] },
         "CaptionSources" -> CaptionSources.map { x => x.asInstanceOf[js.Any] },
-        "CaptionFormats" -> CaptionFormats.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "MergePolicy" -> MergePolicy.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Captions]
     }
@@ -362,44 +362,44 @@ package elastictranscoder {
    */
   @js.native
   trait CreateJobOutput extends js.Object {
-    var Watermarks: js.UndefOr[JobWatermarks]
-    var ThumbnailPattern: js.UndefOr[ThumbnailPattern]
     var AlbumArt: js.UndefOr[JobAlbumArt]
+    var Captions: js.UndefOr[Captions]
     var Composition: js.UndefOr[Composition]
+    var Encryption: js.UndefOr[Encryption]
+    var Key: js.UndefOr[Key]
+    var PresetId: js.UndefOr[Id]
     var Rotate: js.UndefOr[Rotate]
     var SegmentDuration: js.UndefOr[FloatString]
     var ThumbnailEncryption: js.UndefOr[Encryption]
-    var Captions: js.UndefOr[Captions]
-    var Encryption: js.UndefOr[Encryption]
-    var PresetId: js.UndefOr[Id]
-    var Key: js.UndefOr[Key]
+    var ThumbnailPattern: js.UndefOr[ThumbnailPattern]
+    var Watermarks: js.UndefOr[JobWatermarks]
   }
 
   object CreateJobOutput {
     def apply(
-      Watermarks: js.UndefOr[JobWatermarks] = js.undefined,
-      ThumbnailPattern: js.UndefOr[ThumbnailPattern] = js.undefined,
       AlbumArt: js.UndefOr[JobAlbumArt] = js.undefined,
+      Captions: js.UndefOr[Captions] = js.undefined,
       Composition: js.UndefOr[Composition] = js.undefined,
+      Encryption: js.UndefOr[Encryption] = js.undefined,
+      Key: js.UndefOr[Key] = js.undefined,
+      PresetId: js.UndefOr[Id] = js.undefined,
       Rotate: js.UndefOr[Rotate] = js.undefined,
       SegmentDuration: js.UndefOr[FloatString] = js.undefined,
       ThumbnailEncryption: js.UndefOr[Encryption] = js.undefined,
-      Captions: js.UndefOr[Captions] = js.undefined,
-      Encryption: js.UndefOr[Encryption] = js.undefined,
-      PresetId: js.UndefOr[Id] = js.undefined,
-      Key: js.UndefOr[Key] = js.undefined): CreateJobOutput = {
+      ThumbnailPattern: js.UndefOr[ThumbnailPattern] = js.undefined,
+      Watermarks: js.UndefOr[JobWatermarks] = js.undefined): CreateJobOutput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Watermarks" -> Watermarks.map { x => x.asInstanceOf[js.Any] },
-        "ThumbnailPattern" -> ThumbnailPattern.map { x => x.asInstanceOf[js.Any] },
         "AlbumArt" -> AlbumArt.map { x => x.asInstanceOf[js.Any] },
+        "Captions" -> Captions.map { x => x.asInstanceOf[js.Any] },
         "Composition" -> Composition.map { x => x.asInstanceOf[js.Any] },
+        "Encryption" -> Encryption.map { x => x.asInstanceOf[js.Any] },
+        "Key" -> Key.map { x => x.asInstanceOf[js.Any] },
+        "PresetId" -> PresetId.map { x => x.asInstanceOf[js.Any] },
         "Rotate" -> Rotate.map { x => x.asInstanceOf[js.Any] },
         "SegmentDuration" -> SegmentDuration.map { x => x.asInstanceOf[js.Any] },
         "ThumbnailEncryption" -> ThumbnailEncryption.map { x => x.asInstanceOf[js.Any] },
-        "Captions" -> Captions.map { x => x.asInstanceOf[js.Any] },
-        "Encryption" -> Encryption.map { x => x.asInstanceOf[js.Any] },
-        "PresetId" -> PresetId.map { x => x.asInstanceOf[js.Any] },
-        "Key" -> Key.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ThumbnailPattern" -> ThumbnailPattern.map { x => x.asInstanceOf[js.Any] },
+        "Watermarks" -> Watermarks.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateJobOutput]
     }
@@ -411,25 +411,25 @@ package elastictranscoder {
   @js.native
   trait CreateJobPlaylist extends js.Object {
     var Format: js.UndefOr[PlaylistFormat]
-    var Name: js.UndefOr[Filename]
     var HlsContentProtection: js.UndefOr[HlsContentProtection]
-    var PlayReadyDrm: js.UndefOr[PlayReadyDrm]
+    var Name: js.UndefOr[Filename]
     var OutputKeys: js.UndefOr[OutputKeys]
+    var PlayReadyDrm: js.UndefOr[PlayReadyDrm]
   }
 
   object CreateJobPlaylist {
     def apply(
       Format: js.UndefOr[PlaylistFormat] = js.undefined,
-      Name: js.UndefOr[Filename] = js.undefined,
       HlsContentProtection: js.UndefOr[HlsContentProtection] = js.undefined,
-      PlayReadyDrm: js.UndefOr[PlayReadyDrm] = js.undefined,
-      OutputKeys: js.UndefOr[OutputKeys] = js.undefined): CreateJobPlaylist = {
+      Name: js.UndefOr[Filename] = js.undefined,
+      OutputKeys: js.UndefOr[OutputKeys] = js.undefined,
+      PlayReadyDrm: js.UndefOr[PlayReadyDrm] = js.undefined): CreateJobPlaylist = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Format" -> Format.map { x => x.asInstanceOf[js.Any] },
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
         "HlsContentProtection" -> HlsContentProtection.map { x => x.asInstanceOf[js.Any] },
-        "PlayReadyDrm" -> PlayReadyDrm.map { x => x.asInstanceOf[js.Any] },
-        "OutputKeys" -> OutputKeys.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
+        "OutputKeys" -> OutputKeys.map { x => x.asInstanceOf[js.Any] },
+        "PlayReadyDrm" -> PlayReadyDrm.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateJobPlaylist]
     }
@@ -440,35 +440,35 @@ package elastictranscoder {
    */
   @js.native
   trait CreateJobRequest extends js.Object {
-    var Playlists: js.UndefOr[CreateJobPlaylists]
-    var PipelineId: js.UndefOr[Id]
-    var UserMetadata: js.UndefOr[UserMetadata]
-    var Inputs: js.UndefOr[JobInputs]
-    var OutputKeyPrefix: js.UndefOr[Key]
+    var PipelineId: Id
     var Input: js.UndefOr[JobInput]
+    var Inputs: js.UndefOr[JobInputs]
     var Output: js.UndefOr[CreateJobOutput]
+    var OutputKeyPrefix: js.UndefOr[Key]
     var Outputs: js.UndefOr[CreateJobOutputs]
+    var Playlists: js.UndefOr[CreateJobPlaylists]
+    var UserMetadata: js.UndefOr[UserMetadata]
   }
 
   object CreateJobRequest {
     def apply(
-      Playlists: js.UndefOr[CreateJobPlaylists] = js.undefined,
-      PipelineId: js.UndefOr[Id] = js.undefined,
-      UserMetadata: js.UndefOr[UserMetadata] = js.undefined,
-      Inputs: js.UndefOr[JobInputs] = js.undefined,
-      OutputKeyPrefix: js.UndefOr[Key] = js.undefined,
+      PipelineId: Id,
       Input: js.UndefOr[JobInput] = js.undefined,
+      Inputs: js.UndefOr[JobInputs] = js.undefined,
       Output: js.UndefOr[CreateJobOutput] = js.undefined,
-      Outputs: js.UndefOr[CreateJobOutputs] = js.undefined): CreateJobRequest = {
+      OutputKeyPrefix: js.UndefOr[Key] = js.undefined,
+      Outputs: js.UndefOr[CreateJobOutputs] = js.undefined,
+      Playlists: js.UndefOr[CreateJobPlaylists] = js.undefined,
+      UserMetadata: js.UndefOr[UserMetadata] = js.undefined): CreateJobRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Playlists" -> Playlists.map { x => x.asInstanceOf[js.Any] },
-        "PipelineId" -> PipelineId.map { x => x.asInstanceOf[js.Any] },
-        "UserMetadata" -> UserMetadata.map { x => x.asInstanceOf[js.Any] },
-        "Inputs" -> Inputs.map { x => x.asInstanceOf[js.Any] },
-        "OutputKeyPrefix" -> OutputKeyPrefix.map { x => x.asInstanceOf[js.Any] },
+        "PipelineId" -> PipelineId.asInstanceOf[js.Any],
         "Input" -> Input.map { x => x.asInstanceOf[js.Any] },
+        "Inputs" -> Inputs.map { x => x.asInstanceOf[js.Any] },
         "Output" -> Output.map { x => x.asInstanceOf[js.Any] },
-        "Outputs" -> Outputs.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "OutputKeyPrefix" -> OutputKeyPrefix.map { x => x.asInstanceOf[js.Any] },
+        "Outputs" -> Outputs.map { x => x.asInstanceOf[js.Any] },
+        "Playlists" -> Playlists.map { x => x.asInstanceOf[js.Any] },
+        "UserMetadata" -> UserMetadata.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateJobRequest]
     }
@@ -497,35 +497,35 @@ package elastictranscoder {
    */
   @js.native
   trait CreatePipelineRequest extends js.Object {
-    var Role: js.UndefOr[Role]
-    var Name: js.UndefOr[Name]
-    var ThumbnailConfig: js.UndefOr[PipelineOutputConfig]
-    var OutputBucket: js.UndefOr[BucketName]
-    var InputBucket: js.UndefOr[BucketName]
+    var InputBucket: BucketName
+    var Name: Name
+    var Role: Role
     var AwsKmsKeyArn: js.UndefOr[KeyArn]
-    var Notifications: js.UndefOr[Notifications]
     var ContentConfig: js.UndefOr[PipelineOutputConfig]
+    var Notifications: js.UndefOr[Notifications]
+    var OutputBucket: js.UndefOr[BucketName]
+    var ThumbnailConfig: js.UndefOr[PipelineOutputConfig]
   }
 
   object CreatePipelineRequest {
     def apply(
-      Role: js.UndefOr[Role] = js.undefined,
-      Name: js.UndefOr[Name] = js.undefined,
-      ThumbnailConfig: js.UndefOr[PipelineOutputConfig] = js.undefined,
-      OutputBucket: js.UndefOr[BucketName] = js.undefined,
-      InputBucket: js.UndefOr[BucketName] = js.undefined,
+      InputBucket: BucketName,
+      Name: Name,
+      Role: Role,
       AwsKmsKeyArn: js.UndefOr[KeyArn] = js.undefined,
+      ContentConfig: js.UndefOr[PipelineOutputConfig] = js.undefined,
       Notifications: js.UndefOr[Notifications] = js.undefined,
-      ContentConfig: js.UndefOr[PipelineOutputConfig] = js.undefined): CreatePipelineRequest = {
+      OutputBucket: js.UndefOr[BucketName] = js.undefined,
+      ThumbnailConfig: js.UndefOr[PipelineOutputConfig] = js.undefined): CreatePipelineRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Role" -> Role.map { x => x.asInstanceOf[js.Any] },
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
-        "ThumbnailConfig" -> ThumbnailConfig.map { x => x.asInstanceOf[js.Any] },
-        "OutputBucket" -> OutputBucket.map { x => x.asInstanceOf[js.Any] },
-        "InputBucket" -> InputBucket.map { x => x.asInstanceOf[js.Any] },
+        "InputBucket" -> InputBucket.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
+        "Role" -> Role.asInstanceOf[js.Any],
         "AwsKmsKeyArn" -> AwsKmsKeyArn.map { x => x.asInstanceOf[js.Any] },
+        "ContentConfig" -> ContentConfig.map { x => x.asInstanceOf[js.Any] },
         "Notifications" -> Notifications.map { x => x.asInstanceOf[js.Any] },
-        "ContentConfig" -> ContentConfig.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "OutputBucket" -> OutputBucket.map { x => x.asInstanceOf[js.Any] },
+        "ThumbnailConfig" -> ThumbnailConfig.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreatePipelineRequest]
     }
@@ -557,28 +557,28 @@ package elastictranscoder {
    */
   @js.native
   trait CreatePresetRequest extends js.Object {
-    var Name: js.UndefOr[Name]
+    var Container: PresetContainer
+    var Name: Name
+    var Audio: js.UndefOr[AudioParameters]
     var Description: js.UndefOr[Description]
     var Thumbnails: js.UndefOr[Thumbnails]
-    var Container: js.UndefOr[PresetContainer]
-    var Audio: js.UndefOr[AudioParameters]
     var Video: js.UndefOr[VideoParameters]
   }
 
   object CreatePresetRequest {
     def apply(
-      Name: js.UndefOr[Name] = js.undefined,
+      Container: PresetContainer,
+      Name: Name,
+      Audio: js.UndefOr[AudioParameters] = js.undefined,
       Description: js.UndefOr[Description] = js.undefined,
       Thumbnails: js.UndefOr[Thumbnails] = js.undefined,
-      Container: js.UndefOr[PresetContainer] = js.undefined,
-      Audio: js.UndefOr[AudioParameters] = js.undefined,
       Video: js.UndefOr[VideoParameters] = js.undefined): CreatePresetRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
+        "Container" -> Container.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
+        "Audio" -> Audio.map { x => x.asInstanceOf[js.Any] },
         "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
         "Thumbnails" -> Thumbnails.map { x => x.asInstanceOf[js.Any] },
-        "Container" -> Container.map { x => x.asInstanceOf[js.Any] },
-        "Audio" -> Audio.map { x => x.asInstanceOf[js.Any] },
         "Video" -> Video.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreatePresetRequest]
@@ -611,14 +611,14 @@ package elastictranscoder {
    */
   @js.native
   trait DeletePipelineRequest extends js.Object {
-    var Id: js.UndefOr[Id]
+    var Id: Id
   }
 
   object DeletePipelineRequest {
     def apply(
-      Id: js.UndefOr[Id] = js.undefined): DeletePipelineRequest = {
+      Id: Id): DeletePipelineRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Id" -> Id.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Id" -> Id.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeletePipelineRequest]
     }
@@ -645,14 +645,14 @@ package elastictranscoder {
    */
   @js.native
   trait DeletePresetRequest extends js.Object {
-    var Id: js.UndefOr[Id]
+    var Id: Id
   }
 
   object DeletePresetRequest {
     def apply(
-      Id: js.UndefOr[Id] = js.undefined): DeletePresetRequest = {
+      Id: Id): DeletePresetRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Id" -> Id.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Id" -> Id.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeletePresetRequest]
     }
@@ -679,26 +679,26 @@ package elastictranscoder {
    */
   @js.native
   trait DetectedProperties extends js.Object {
-    var FileSize: js.UndefOr[NullableLong]
-    var Width: js.UndefOr[NullableInteger]
     var DurationMillis: js.UndefOr[NullableLong]
-    var Height: js.UndefOr[NullableInteger]
+    var FileSize: js.UndefOr[NullableLong]
     var FrameRate: js.UndefOr[FloatString]
+    var Height: js.UndefOr[NullableInteger]
+    var Width: js.UndefOr[NullableInteger]
   }
 
   object DetectedProperties {
     def apply(
-      FileSize: js.UndefOr[NullableLong] = js.undefined,
-      Width: js.UndefOr[NullableInteger] = js.undefined,
       DurationMillis: js.UndefOr[NullableLong] = js.undefined,
+      FileSize: js.UndefOr[NullableLong] = js.undefined,
+      FrameRate: js.UndefOr[FloatString] = js.undefined,
       Height: js.UndefOr[NullableInteger] = js.undefined,
-      FrameRate: js.UndefOr[FloatString] = js.undefined): DetectedProperties = {
+      Width: js.UndefOr[NullableInteger] = js.undefined): DetectedProperties = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "FileSize" -> FileSize.map { x => x.asInstanceOf[js.Any] },
-        "Width" -> Width.map { x => x.asInstanceOf[js.Any] },
         "DurationMillis" -> DurationMillis.map { x => x.asInstanceOf[js.Any] },
+        "FileSize" -> FileSize.map { x => x.asInstanceOf[js.Any] },
+        "FrameRate" -> FrameRate.map { x => x.asInstanceOf[js.Any] },
         "Height" -> Height.map { x => x.asInstanceOf[js.Any] },
-        "FrameRate" -> FrameRate.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Width" -> Width.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DetectedProperties]
     }
@@ -709,23 +709,23 @@ package elastictranscoder {
    */
   @js.native
   trait Encryption extends js.Object {
-    var Mode: js.UndefOr[EncryptionMode]
+    var InitializationVector: js.UndefOr[ZeroTo255String]
     var Key: js.UndefOr[Base64EncodedString]
     var KeyMd5: js.UndefOr[Base64EncodedString]
-    var InitializationVector: js.UndefOr[ZeroTo255String]
+    var Mode: js.UndefOr[EncryptionMode]
   }
 
   object Encryption {
     def apply(
-      Mode: js.UndefOr[EncryptionMode] = js.undefined,
+      InitializationVector: js.UndefOr[ZeroTo255String] = js.undefined,
       Key: js.UndefOr[Base64EncodedString] = js.undefined,
       KeyMd5: js.UndefOr[Base64EncodedString] = js.undefined,
-      InitializationVector: js.UndefOr[ZeroTo255String] = js.undefined): Encryption = {
+      Mode: js.UndefOr[EncryptionMode] = js.undefined): Encryption = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Mode" -> Mode.map { x => x.asInstanceOf[js.Any] },
+        "InitializationVector" -> InitializationVector.map { x => x.asInstanceOf[js.Any] },
         "Key" -> Key.map { x => x.asInstanceOf[js.Any] },
         "KeyMd5" -> KeyMd5.map { x => x.asInstanceOf[js.Any] },
-        "InitializationVector" -> InitializationVector.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Mode" -> Mode.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Encryption]
     }
@@ -736,29 +736,29 @@ package elastictranscoder {
    */
   @js.native
   trait HlsContentProtection extends js.Object {
-    var KeyMd5: js.UndefOr[Base64EncodedString]
-    var LicenseAcquisitionUrl: js.UndefOr[ZeroTo512String]
     var InitializationVector: js.UndefOr[ZeroTo255String]
-    var Method: js.UndefOr[HlsContentProtectionMethod]
-    var KeyStoragePolicy: js.UndefOr[KeyStoragePolicy]
     var Key: js.UndefOr[Base64EncodedString]
+    var KeyMd5: js.UndefOr[Base64EncodedString]
+    var KeyStoragePolicy: js.UndefOr[KeyStoragePolicy]
+    var LicenseAcquisitionUrl: js.UndefOr[ZeroTo512String]
+    var Method: js.UndefOr[HlsContentProtectionMethod]
   }
 
   object HlsContentProtection {
     def apply(
-      KeyMd5: js.UndefOr[Base64EncodedString] = js.undefined,
-      LicenseAcquisitionUrl: js.UndefOr[ZeroTo512String] = js.undefined,
       InitializationVector: js.UndefOr[ZeroTo255String] = js.undefined,
-      Method: js.UndefOr[HlsContentProtectionMethod] = js.undefined,
+      Key: js.UndefOr[Base64EncodedString] = js.undefined,
+      KeyMd5: js.UndefOr[Base64EncodedString] = js.undefined,
       KeyStoragePolicy: js.UndefOr[KeyStoragePolicy] = js.undefined,
-      Key: js.UndefOr[Base64EncodedString] = js.undefined): HlsContentProtection = {
+      LicenseAcquisitionUrl: js.UndefOr[ZeroTo512String] = js.undefined,
+      Method: js.UndefOr[HlsContentProtectionMethod] = js.undefined): HlsContentProtection = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "KeyMd5" -> KeyMd5.map { x => x.asInstanceOf[js.Any] },
-        "LicenseAcquisitionUrl" -> LicenseAcquisitionUrl.map { x => x.asInstanceOf[js.Any] },
         "InitializationVector" -> InitializationVector.map { x => x.asInstanceOf[js.Any] },
-        "Method" -> Method.map { x => x.asInstanceOf[js.Any] },
+        "Key" -> Key.map { x => x.asInstanceOf[js.Any] },
+        "KeyMd5" -> KeyMd5.map { x => x.asInstanceOf[js.Any] },
         "KeyStoragePolicy" -> KeyStoragePolicy.map { x => x.asInstanceOf[js.Any] },
-        "Key" -> Key.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "LicenseAcquisitionUrl" -> LicenseAcquisitionUrl.map { x => x.asInstanceOf[js.Any] },
+        "Method" -> Method.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[HlsContentProtection]
     }
@@ -769,17 +769,17 @@ package elastictranscoder {
    */
   @js.native
   trait InputCaptions extends js.Object {
-    var MergePolicy: js.UndefOr[CaptionMergePolicy]
     var CaptionSources: js.UndefOr[CaptionSources]
+    var MergePolicy: js.UndefOr[CaptionMergePolicy]
   }
 
   object InputCaptions {
     def apply(
-      MergePolicy: js.UndefOr[CaptionMergePolicy] = js.undefined,
-      CaptionSources: js.UndefOr[CaptionSources] = js.undefined): InputCaptions = {
+      CaptionSources: js.UndefOr[CaptionSources] = js.undefined,
+      MergePolicy: js.UndefOr[CaptionMergePolicy] = js.undefined): InputCaptions = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "MergePolicy" -> MergePolicy.map { x => x.asInstanceOf[js.Any] },
-        "CaptionSources" -> CaptionSources.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "CaptionSources" -> CaptionSources.map { x => x.asInstanceOf[js.Any] },
+        "MergePolicy" -> MergePolicy.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[InputCaptions]
     }
@@ -790,47 +790,47 @@ package elastictranscoder {
    */
   @js.native
   trait Job extends js.Object {
-    var Id: js.UndefOr[Id]
-    var Playlists: js.UndefOr[Playlists]
-    var PipelineId: js.UndefOr[Id]
-    var UserMetadata: js.UndefOr[UserMetadata]
-    var Inputs: js.UndefOr[JobInputs]
-    var OutputKeyPrefix: js.UndefOr[Key]
     var Arn: js.UndefOr[String]
+    var Id: js.UndefOr[Id]
     var Input: js.UndefOr[JobInput]
+    var Inputs: js.UndefOr[JobInputs]
     var Output: js.UndefOr[JobOutput]
-    var Timing: js.UndefOr[Timing]
-    var Status: js.UndefOr[JobStatus]
+    var OutputKeyPrefix: js.UndefOr[Key]
     var Outputs: js.UndefOr[JobOutputs]
+    var PipelineId: js.UndefOr[Id]
+    var Playlists: js.UndefOr[Playlists]
+    var Status: js.UndefOr[JobStatus]
+    var Timing: js.UndefOr[Timing]
+    var UserMetadata: js.UndefOr[UserMetadata]
   }
 
   object Job {
     def apply(
-      Id: js.UndefOr[Id] = js.undefined,
-      Playlists: js.UndefOr[Playlists] = js.undefined,
-      PipelineId: js.UndefOr[Id] = js.undefined,
-      UserMetadata: js.UndefOr[UserMetadata] = js.undefined,
-      Inputs: js.UndefOr[JobInputs] = js.undefined,
-      OutputKeyPrefix: js.UndefOr[Key] = js.undefined,
       Arn: js.UndefOr[String] = js.undefined,
+      Id: js.UndefOr[Id] = js.undefined,
       Input: js.UndefOr[JobInput] = js.undefined,
+      Inputs: js.UndefOr[JobInputs] = js.undefined,
       Output: js.UndefOr[JobOutput] = js.undefined,
-      Timing: js.UndefOr[Timing] = js.undefined,
+      OutputKeyPrefix: js.UndefOr[Key] = js.undefined,
+      Outputs: js.UndefOr[JobOutputs] = js.undefined,
+      PipelineId: js.UndefOr[Id] = js.undefined,
+      Playlists: js.UndefOr[Playlists] = js.undefined,
       Status: js.UndefOr[JobStatus] = js.undefined,
-      Outputs: js.UndefOr[JobOutputs] = js.undefined): Job = {
+      Timing: js.UndefOr[Timing] = js.undefined,
+      UserMetadata: js.UndefOr[UserMetadata] = js.undefined): Job = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Id" -> Id.map { x => x.asInstanceOf[js.Any] },
-        "Playlists" -> Playlists.map { x => x.asInstanceOf[js.Any] },
-        "PipelineId" -> PipelineId.map { x => x.asInstanceOf[js.Any] },
-        "UserMetadata" -> UserMetadata.map { x => x.asInstanceOf[js.Any] },
-        "Inputs" -> Inputs.map { x => x.asInstanceOf[js.Any] },
-        "OutputKeyPrefix" -> OutputKeyPrefix.map { x => x.asInstanceOf[js.Any] },
         "Arn" -> Arn.map { x => x.asInstanceOf[js.Any] },
+        "Id" -> Id.map { x => x.asInstanceOf[js.Any] },
         "Input" -> Input.map { x => x.asInstanceOf[js.Any] },
+        "Inputs" -> Inputs.map { x => x.asInstanceOf[js.Any] },
         "Output" -> Output.map { x => x.asInstanceOf[js.Any] },
-        "Timing" -> Timing.map { x => x.asInstanceOf[js.Any] },
+        "OutputKeyPrefix" -> OutputKeyPrefix.map { x => x.asInstanceOf[js.Any] },
+        "Outputs" -> Outputs.map { x => x.asInstanceOf[js.Any] },
+        "PipelineId" -> PipelineId.map { x => x.asInstanceOf[js.Any] },
+        "Playlists" -> Playlists.map { x => x.asInstanceOf[js.Any] },
         "Status" -> Status.map { x => x.asInstanceOf[js.Any] },
-        "Outputs" -> Outputs.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Timing" -> Timing.map { x => x.asInstanceOf[js.Any] },
+        "UserMetadata" -> UserMetadata.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Job]
     }
@@ -841,17 +841,17 @@ package elastictranscoder {
    */
   @js.native
   trait JobAlbumArt extends js.Object {
-    var MergePolicy: js.UndefOr[MergePolicy]
     var Artwork: js.UndefOr[Artworks]
+    var MergePolicy: js.UndefOr[MergePolicy]
   }
 
   object JobAlbumArt {
     def apply(
-      MergePolicy: js.UndefOr[MergePolicy] = js.undefined,
-      Artwork: js.UndefOr[Artworks] = js.undefined): JobAlbumArt = {
+      Artwork: js.UndefOr[Artworks] = js.undefined,
+      MergePolicy: js.UndefOr[MergePolicy] = js.undefined): JobAlbumArt = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "MergePolicy" -> MergePolicy.map { x => x.asInstanceOf[js.Any] },
-        "Artwork" -> Artwork.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Artwork" -> Artwork.map { x => x.asInstanceOf[js.Any] },
+        "MergePolicy" -> MergePolicy.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[JobAlbumArt]
     }
@@ -862,41 +862,41 @@ package elastictranscoder {
    */
   @js.native
   trait JobInput extends js.Object {
-    var Resolution: js.UndefOr[Resolution]
-    var Interlaced: js.UndefOr[Interlaced]
-    var Container: js.UndefOr[JobContainer]
     var AspectRatio: js.UndefOr[AspectRatio]
-    var TimeSpan: js.UndefOr[TimeSpan]
+    var Container: js.UndefOr[JobContainer]
     var DetectedProperties: js.UndefOr[DetectedProperties]
-    var InputCaptions: js.UndefOr[InputCaptions]
     var Encryption: js.UndefOr[Encryption]
     var FrameRate: js.UndefOr[FrameRate]
+    var InputCaptions: js.UndefOr[InputCaptions]
+    var Interlaced: js.UndefOr[Interlaced]
     var Key: js.UndefOr[LongKey]
+    var Resolution: js.UndefOr[Resolution]
+    var TimeSpan: js.UndefOr[TimeSpan]
   }
 
   object JobInput {
     def apply(
-      Resolution: js.UndefOr[Resolution] = js.undefined,
-      Interlaced: js.UndefOr[Interlaced] = js.undefined,
-      Container: js.UndefOr[JobContainer] = js.undefined,
       AspectRatio: js.UndefOr[AspectRatio] = js.undefined,
-      TimeSpan: js.UndefOr[TimeSpan] = js.undefined,
+      Container: js.UndefOr[JobContainer] = js.undefined,
       DetectedProperties: js.UndefOr[DetectedProperties] = js.undefined,
-      InputCaptions: js.UndefOr[InputCaptions] = js.undefined,
       Encryption: js.UndefOr[Encryption] = js.undefined,
       FrameRate: js.UndefOr[FrameRate] = js.undefined,
-      Key: js.UndefOr[LongKey] = js.undefined): JobInput = {
+      InputCaptions: js.UndefOr[InputCaptions] = js.undefined,
+      Interlaced: js.UndefOr[Interlaced] = js.undefined,
+      Key: js.UndefOr[LongKey] = js.undefined,
+      Resolution: js.UndefOr[Resolution] = js.undefined,
+      TimeSpan: js.UndefOr[TimeSpan] = js.undefined): JobInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Resolution" -> Resolution.map { x => x.asInstanceOf[js.Any] },
-        "Interlaced" -> Interlaced.map { x => x.asInstanceOf[js.Any] },
-        "Container" -> Container.map { x => x.asInstanceOf[js.Any] },
         "AspectRatio" -> AspectRatio.map { x => x.asInstanceOf[js.Any] },
-        "TimeSpan" -> TimeSpan.map { x => x.asInstanceOf[js.Any] },
+        "Container" -> Container.map { x => x.asInstanceOf[js.Any] },
         "DetectedProperties" -> DetectedProperties.map { x => x.asInstanceOf[js.Any] },
-        "InputCaptions" -> InputCaptions.map { x => x.asInstanceOf[js.Any] },
         "Encryption" -> Encryption.map { x => x.asInstanceOf[js.Any] },
         "FrameRate" -> FrameRate.map { x => x.asInstanceOf[js.Any] },
-        "Key" -> Key.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "InputCaptions" -> InputCaptions.map { x => x.asInstanceOf[js.Any] },
+        "Interlaced" -> Interlaced.map { x => x.asInstanceOf[js.Any] },
+        "Key" -> Key.map { x => x.asInstanceOf[js.Any] },
+        "Resolution" -> Resolution.map { x => x.asInstanceOf[js.Any] },
+        "TimeSpan" -> TimeSpan.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[JobInput]
     }
@@ -907,74 +907,74 @@ package elastictranscoder {
    */
   @js.native
   trait JobOutput extends js.Object {
-    var FileSize: js.UndefOr[NullableLong]
-    var Id: js.UndefOr[String]
-    var StatusDetail: js.UndefOr[Description]
-    var Duration: js.UndefOr[NullableLong]
-    var Watermarks: js.UndefOr[JobWatermarks]
-    var ThumbnailPattern: js.UndefOr[ThumbnailPattern]
-    var Width: js.UndefOr[NullableInteger]
     var AlbumArt: js.UndefOr[JobAlbumArt]
-    var Composition: js.UndefOr[Composition]
     var AppliedColorSpaceConversion: js.UndefOr[String]
+    var Captions: js.UndefOr[Captions]
+    var Composition: js.UndefOr[Composition]
+    var Duration: js.UndefOr[NullableLong]
     var DurationMillis: js.UndefOr[NullableLong]
+    var Encryption: js.UndefOr[Encryption]
+    var FileSize: js.UndefOr[NullableLong]
+    var FrameRate: js.UndefOr[FloatString]
+    var Height: js.UndefOr[NullableInteger]
+    var Id: js.UndefOr[String]
+    var Key: js.UndefOr[Key]
+    var PresetId: js.UndefOr[Id]
     var Rotate: js.UndefOr[Rotate]
     var SegmentDuration: js.UndefOr[FloatString]
-    var ThumbnailEncryption: js.UndefOr[Encryption]
-    var Height: js.UndefOr[NullableInteger]
-    var Captions: js.UndefOr[Captions]
-    var Encryption: js.UndefOr[Encryption]
-    var FrameRate: js.UndefOr[FloatString]
-    var PresetId: js.UndefOr[Id]
     var Status: js.UndefOr[JobStatus]
-    var Key: js.UndefOr[Key]
+    var StatusDetail: js.UndefOr[Description]
+    var ThumbnailEncryption: js.UndefOr[Encryption]
+    var ThumbnailPattern: js.UndefOr[ThumbnailPattern]
+    var Watermarks: js.UndefOr[JobWatermarks]
+    var Width: js.UndefOr[NullableInteger]
   }
 
   object JobOutput {
     def apply(
-      FileSize: js.UndefOr[NullableLong] = js.undefined,
-      Id: js.UndefOr[String] = js.undefined,
-      StatusDetail: js.UndefOr[Description] = js.undefined,
-      Duration: js.UndefOr[NullableLong] = js.undefined,
-      Watermarks: js.UndefOr[JobWatermarks] = js.undefined,
-      ThumbnailPattern: js.UndefOr[ThumbnailPattern] = js.undefined,
-      Width: js.UndefOr[NullableInteger] = js.undefined,
       AlbumArt: js.UndefOr[JobAlbumArt] = js.undefined,
-      Composition: js.UndefOr[Composition] = js.undefined,
       AppliedColorSpaceConversion: js.UndefOr[String] = js.undefined,
+      Captions: js.UndefOr[Captions] = js.undefined,
+      Composition: js.UndefOr[Composition] = js.undefined,
+      Duration: js.UndefOr[NullableLong] = js.undefined,
       DurationMillis: js.UndefOr[NullableLong] = js.undefined,
+      Encryption: js.UndefOr[Encryption] = js.undefined,
+      FileSize: js.UndefOr[NullableLong] = js.undefined,
+      FrameRate: js.UndefOr[FloatString] = js.undefined,
+      Height: js.UndefOr[NullableInteger] = js.undefined,
+      Id: js.UndefOr[String] = js.undefined,
+      Key: js.UndefOr[Key] = js.undefined,
+      PresetId: js.UndefOr[Id] = js.undefined,
       Rotate: js.UndefOr[Rotate] = js.undefined,
       SegmentDuration: js.UndefOr[FloatString] = js.undefined,
-      ThumbnailEncryption: js.UndefOr[Encryption] = js.undefined,
-      Height: js.UndefOr[NullableInteger] = js.undefined,
-      Captions: js.UndefOr[Captions] = js.undefined,
-      Encryption: js.UndefOr[Encryption] = js.undefined,
-      FrameRate: js.UndefOr[FloatString] = js.undefined,
-      PresetId: js.UndefOr[Id] = js.undefined,
       Status: js.UndefOr[JobStatus] = js.undefined,
-      Key: js.UndefOr[Key] = js.undefined): JobOutput = {
+      StatusDetail: js.UndefOr[Description] = js.undefined,
+      ThumbnailEncryption: js.UndefOr[Encryption] = js.undefined,
+      ThumbnailPattern: js.UndefOr[ThumbnailPattern] = js.undefined,
+      Watermarks: js.UndefOr[JobWatermarks] = js.undefined,
+      Width: js.UndefOr[NullableInteger] = js.undefined): JobOutput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "FileSize" -> FileSize.map { x => x.asInstanceOf[js.Any] },
-        "Id" -> Id.map { x => x.asInstanceOf[js.Any] },
-        "StatusDetail" -> StatusDetail.map { x => x.asInstanceOf[js.Any] },
-        "Duration" -> Duration.map { x => x.asInstanceOf[js.Any] },
-        "Watermarks" -> Watermarks.map { x => x.asInstanceOf[js.Any] },
-        "ThumbnailPattern" -> ThumbnailPattern.map { x => x.asInstanceOf[js.Any] },
-        "Width" -> Width.map { x => x.asInstanceOf[js.Any] },
         "AlbumArt" -> AlbumArt.map { x => x.asInstanceOf[js.Any] },
-        "Composition" -> Composition.map { x => x.asInstanceOf[js.Any] },
         "AppliedColorSpaceConversion" -> AppliedColorSpaceConversion.map { x => x.asInstanceOf[js.Any] },
+        "Captions" -> Captions.map { x => x.asInstanceOf[js.Any] },
+        "Composition" -> Composition.map { x => x.asInstanceOf[js.Any] },
+        "Duration" -> Duration.map { x => x.asInstanceOf[js.Any] },
         "DurationMillis" -> DurationMillis.map { x => x.asInstanceOf[js.Any] },
+        "Encryption" -> Encryption.map { x => x.asInstanceOf[js.Any] },
+        "FileSize" -> FileSize.map { x => x.asInstanceOf[js.Any] },
+        "FrameRate" -> FrameRate.map { x => x.asInstanceOf[js.Any] },
+        "Height" -> Height.map { x => x.asInstanceOf[js.Any] },
+        "Id" -> Id.map { x => x.asInstanceOf[js.Any] },
+        "Key" -> Key.map { x => x.asInstanceOf[js.Any] },
+        "PresetId" -> PresetId.map { x => x.asInstanceOf[js.Any] },
         "Rotate" -> Rotate.map { x => x.asInstanceOf[js.Any] },
         "SegmentDuration" -> SegmentDuration.map { x => x.asInstanceOf[js.Any] },
-        "ThumbnailEncryption" -> ThumbnailEncryption.map { x => x.asInstanceOf[js.Any] },
-        "Height" -> Height.map { x => x.asInstanceOf[js.Any] },
-        "Captions" -> Captions.map { x => x.asInstanceOf[js.Any] },
-        "Encryption" -> Encryption.map { x => x.asInstanceOf[js.Any] },
-        "FrameRate" -> FrameRate.map { x => x.asInstanceOf[js.Any] },
-        "PresetId" -> PresetId.map { x => x.asInstanceOf[js.Any] },
         "Status" -> Status.map { x => x.asInstanceOf[js.Any] },
-        "Key" -> Key.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "StatusDetail" -> StatusDetail.map { x => x.asInstanceOf[js.Any] },
+        "ThumbnailEncryption" -> ThumbnailEncryption.map { x => x.asInstanceOf[js.Any] },
+        "ThumbnailPattern" -> ThumbnailPattern.map { x => x.asInstanceOf[js.Any] },
+        "Watermarks" -> Watermarks.map { x => x.asInstanceOf[js.Any] },
+        "Width" -> Width.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[JobOutput]
     }
@@ -985,20 +985,20 @@ package elastictranscoder {
    */
   @js.native
   trait JobWatermark extends js.Object {
-    var PresetWatermarkId: js.UndefOr[PresetWatermarkId]
-    var InputKey: js.UndefOr[WatermarkKey]
     var Encryption: js.UndefOr[Encryption]
+    var InputKey: js.UndefOr[WatermarkKey]
+    var PresetWatermarkId: js.UndefOr[PresetWatermarkId]
   }
 
   object JobWatermark {
     def apply(
-      PresetWatermarkId: js.UndefOr[PresetWatermarkId] = js.undefined,
+      Encryption: js.UndefOr[Encryption] = js.undefined,
       InputKey: js.UndefOr[WatermarkKey] = js.undefined,
-      Encryption: js.UndefOr[Encryption] = js.undefined): JobWatermark = {
+      PresetWatermarkId: js.UndefOr[PresetWatermarkId] = js.undefined): JobWatermark = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "PresetWatermarkId" -> PresetWatermarkId.map { x => x.asInstanceOf[js.Any] },
+        "Encryption" -> Encryption.map { x => x.asInstanceOf[js.Any] },
         "InputKey" -> InputKey.map { x => x.asInstanceOf[js.Any] },
-        "Encryption" -> Encryption.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "PresetWatermarkId" -> PresetWatermarkId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[JobWatermark]
     }
@@ -1009,18 +1009,18 @@ package elastictranscoder {
    */
   @js.native
   trait ListJobsByPipelineRequest extends js.Object {
-    var PipelineId: js.UndefOr[Id]
+    var PipelineId: Id
     var Ascending: js.UndefOr[Ascending]
     var PageToken: js.UndefOr[Id]
   }
 
   object ListJobsByPipelineRequest {
     def apply(
-      PipelineId: js.UndefOr[Id] = js.undefined,
+      PipelineId: Id,
       Ascending: js.UndefOr[Ascending] = js.undefined,
       PageToken: js.UndefOr[Id] = js.undefined): ListJobsByPipelineRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "PipelineId" -> PipelineId.map { x => x.asInstanceOf[js.Any] },
+        "PipelineId" -> PipelineId.asInstanceOf[js.Any],
         "Ascending" -> Ascending.map { x => x.asInstanceOf[js.Any] },
         "PageToken" -> PageToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
@@ -1054,18 +1054,18 @@ package elastictranscoder {
    */
   @js.native
   trait ListJobsByStatusRequest extends js.Object {
-    var Status: js.UndefOr[JobStatus]
+    var Status: JobStatus
     var Ascending: js.UndefOr[Ascending]
     var PageToken: js.UndefOr[Id]
   }
 
   object ListJobsByStatusRequest {
     def apply(
-      Status: js.UndefOr[JobStatus] = js.undefined,
+      Status: JobStatus,
       Ascending: js.UndefOr[Ascending] = js.undefined,
       PageToken: js.UndefOr[Id] = js.undefined): ListJobsByStatusRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Status" -> Status.map { x => x.asInstanceOf[js.Any] },
+        "Status" -> Status.asInstanceOf[js.Any],
         "Ascending" -> Ascending.map { x => x.asInstanceOf[js.Any] },
         "PageToken" -> PageToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
@@ -1120,17 +1120,17 @@ package elastictranscoder {
    */
   @js.native
   trait ListPipelinesResponse extends js.Object {
-    var Pipelines: js.UndefOr[Pipelines]
     var NextPageToken: js.UndefOr[Id]
+    var Pipelines: js.UndefOr[Pipelines]
   }
 
   object ListPipelinesResponse {
     def apply(
-      Pipelines: js.UndefOr[Pipelines] = js.undefined,
-      NextPageToken: js.UndefOr[Id] = js.undefined): ListPipelinesResponse = {
+      NextPageToken: js.UndefOr[Id] = js.undefined,
+      Pipelines: js.UndefOr[Pipelines] = js.undefined): ListPipelinesResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Pipelines" -> Pipelines.map { x => x.asInstanceOf[js.Any] },
-        "NextPageToken" -> NextPageToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "NextPageToken" -> NextPageToken.map { x => x.asInstanceOf[js.Any] },
+        "Pipelines" -> Pipelines.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListPipelinesResponse]
     }
@@ -1162,17 +1162,17 @@ package elastictranscoder {
    */
   @js.native
   trait ListPresetsResponse extends js.Object {
-    var Presets: js.UndefOr[Presets]
     var NextPageToken: js.UndefOr[Id]
+    var Presets: js.UndefOr[Presets]
   }
 
   object ListPresetsResponse {
     def apply(
-      Presets: js.UndefOr[Presets] = js.undefined,
-      NextPageToken: js.UndefOr[Id] = js.undefined): ListPresetsResponse = {
+      NextPageToken: js.UndefOr[Id] = js.undefined,
+      Presets: js.UndefOr[Presets] = js.undefined): ListPresetsResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Presets" -> Presets.map { x => x.asInstanceOf[js.Any] },
-        "NextPageToken" -> NextPageToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "NextPageToken" -> NextPageToken.map { x => x.asInstanceOf[js.Any] },
+        "Presets" -> Presets.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListPresetsResponse]
     }
@@ -1183,23 +1183,23 @@ package elastictranscoder {
    */
   @js.native
   trait Notifications extends js.Object {
-    var Progressing: js.UndefOr[SnsTopic]
     var Completed: js.UndefOr[SnsTopic]
-    var Warning: js.UndefOr[SnsTopic]
     var Error: js.UndefOr[SnsTopic]
+    var Progressing: js.UndefOr[SnsTopic]
+    var Warning: js.UndefOr[SnsTopic]
   }
 
   object Notifications {
     def apply(
-      Progressing: js.UndefOr[SnsTopic] = js.undefined,
       Completed: js.UndefOr[SnsTopic] = js.undefined,
-      Warning: js.UndefOr[SnsTopic] = js.undefined,
-      Error: js.UndefOr[SnsTopic] = js.undefined): Notifications = {
+      Error: js.UndefOr[SnsTopic] = js.undefined,
+      Progressing: js.UndefOr[SnsTopic] = js.undefined,
+      Warning: js.UndefOr[SnsTopic] = js.undefined): Notifications = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Progressing" -> Progressing.map { x => x.asInstanceOf[js.Any] },
         "Completed" -> Completed.map { x => x.asInstanceOf[js.Any] },
-        "Warning" -> Warning.map { x => x.asInstanceOf[js.Any] },
-        "Error" -> Error.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Error" -> Error.map { x => x.asInstanceOf[js.Any] },
+        "Progressing" -> Progressing.map { x => x.asInstanceOf[js.Any] },
+        "Warning" -> Warning.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Notifications]
     }
@@ -1210,20 +1210,20 @@ package elastictranscoder {
    */
   @js.native
   trait Permission extends js.Object {
-    var GranteeType: js.UndefOr[GranteeType]
-    var Grantee: js.UndefOr[Grantee]
     var Access: js.UndefOr[AccessControls]
+    var Grantee: js.UndefOr[Grantee]
+    var GranteeType: js.UndefOr[GranteeType]
   }
 
   object Permission {
     def apply(
-      GranteeType: js.UndefOr[GranteeType] = js.undefined,
+      Access: js.UndefOr[AccessControls] = js.undefined,
       Grantee: js.UndefOr[Grantee] = js.undefined,
-      Access: js.UndefOr[AccessControls] = js.undefined): Permission = {
+      GranteeType: js.UndefOr[GranteeType] = js.undefined): Permission = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "GranteeType" -> GranteeType.map { x => x.asInstanceOf[js.Any] },
+        "Access" -> Access.map { x => x.asInstanceOf[js.Any] },
         "Grantee" -> Grantee.map { x => x.asInstanceOf[js.Any] },
-        "Access" -> Access.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "GranteeType" -> GranteeType.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Permission]
     }
@@ -1234,44 +1234,44 @@ package elastictranscoder {
    */
   @js.native
   trait Pipeline extends js.Object {
-    var Id: js.UndefOr[Id]
-    var Role: js.UndefOr[Role]
-    var Name: js.UndefOr[Name]
-    var ThumbnailConfig: js.UndefOr[PipelineOutputConfig]
-    var OutputBucket: js.UndefOr[BucketName]
     var Arn: js.UndefOr[String]
-    var InputBucket: js.UndefOr[BucketName]
     var AwsKmsKeyArn: js.UndefOr[KeyArn]
-    var Notifications: js.UndefOr[Notifications]
     var ContentConfig: js.UndefOr[PipelineOutputConfig]
+    var Id: js.UndefOr[Id]
+    var InputBucket: js.UndefOr[BucketName]
+    var Name: js.UndefOr[Name]
+    var Notifications: js.UndefOr[Notifications]
+    var OutputBucket: js.UndefOr[BucketName]
+    var Role: js.UndefOr[Role]
     var Status: js.UndefOr[PipelineStatus]
+    var ThumbnailConfig: js.UndefOr[PipelineOutputConfig]
   }
 
   object Pipeline {
     def apply(
-      Id: js.UndefOr[Id] = js.undefined,
-      Role: js.UndefOr[Role] = js.undefined,
-      Name: js.UndefOr[Name] = js.undefined,
-      ThumbnailConfig: js.UndefOr[PipelineOutputConfig] = js.undefined,
-      OutputBucket: js.UndefOr[BucketName] = js.undefined,
       Arn: js.UndefOr[String] = js.undefined,
-      InputBucket: js.UndefOr[BucketName] = js.undefined,
       AwsKmsKeyArn: js.UndefOr[KeyArn] = js.undefined,
-      Notifications: js.UndefOr[Notifications] = js.undefined,
       ContentConfig: js.UndefOr[PipelineOutputConfig] = js.undefined,
-      Status: js.UndefOr[PipelineStatus] = js.undefined): Pipeline = {
+      Id: js.UndefOr[Id] = js.undefined,
+      InputBucket: js.UndefOr[BucketName] = js.undefined,
+      Name: js.UndefOr[Name] = js.undefined,
+      Notifications: js.UndefOr[Notifications] = js.undefined,
+      OutputBucket: js.UndefOr[BucketName] = js.undefined,
+      Role: js.UndefOr[Role] = js.undefined,
+      Status: js.UndefOr[PipelineStatus] = js.undefined,
+      ThumbnailConfig: js.UndefOr[PipelineOutputConfig] = js.undefined): Pipeline = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Id" -> Id.map { x => x.asInstanceOf[js.Any] },
-        "Role" -> Role.map { x => x.asInstanceOf[js.Any] },
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
-        "ThumbnailConfig" -> ThumbnailConfig.map { x => x.asInstanceOf[js.Any] },
-        "OutputBucket" -> OutputBucket.map { x => x.asInstanceOf[js.Any] },
         "Arn" -> Arn.map { x => x.asInstanceOf[js.Any] },
-        "InputBucket" -> InputBucket.map { x => x.asInstanceOf[js.Any] },
         "AwsKmsKeyArn" -> AwsKmsKeyArn.map { x => x.asInstanceOf[js.Any] },
-        "Notifications" -> Notifications.map { x => x.asInstanceOf[js.Any] },
         "ContentConfig" -> ContentConfig.map { x => x.asInstanceOf[js.Any] },
-        "Status" -> Status.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Id" -> Id.map { x => x.asInstanceOf[js.Any] },
+        "InputBucket" -> InputBucket.map { x => x.asInstanceOf[js.Any] },
+        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
+        "Notifications" -> Notifications.map { x => x.asInstanceOf[js.Any] },
+        "OutputBucket" -> OutputBucket.map { x => x.asInstanceOf[js.Any] },
+        "Role" -> Role.map { x => x.asInstanceOf[js.Any] },
+        "Status" -> Status.map { x => x.asInstanceOf[js.Any] },
+        "ThumbnailConfig" -> ThumbnailConfig.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Pipeline]
     }
@@ -1283,19 +1283,19 @@ package elastictranscoder {
   @js.native
   trait PipelineOutputConfig extends js.Object {
     var Bucket: js.UndefOr[BucketName]
-    var StorageClass: js.UndefOr[StorageClass]
     var Permissions: js.UndefOr[Permissions]
+    var StorageClass: js.UndefOr[StorageClass]
   }
 
   object PipelineOutputConfig {
     def apply(
       Bucket: js.UndefOr[BucketName] = js.undefined,
-      StorageClass: js.UndefOr[StorageClass] = js.undefined,
-      Permissions: js.UndefOr[Permissions] = js.undefined): PipelineOutputConfig = {
+      Permissions: js.UndefOr[Permissions] = js.undefined,
+      StorageClass: js.UndefOr[StorageClass] = js.undefined): PipelineOutputConfig = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Bucket" -> Bucket.map { x => x.asInstanceOf[js.Any] },
-        "StorageClass" -> StorageClass.map { x => x.asInstanceOf[js.Any] },
-        "Permissions" -> Permissions.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Permissions" -> Permissions.map { x => x.asInstanceOf[js.Any] },
+        "StorageClass" -> StorageClass.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PipelineOutputConfig]
     }
@@ -1307,28 +1307,28 @@ package elastictranscoder {
   @js.native
   trait PlayReadyDrm extends js.Object {
     var Format: js.UndefOr[PlayReadyDrmFormatString]
+    var InitializationVector: js.UndefOr[ZeroTo255String]
+    var Key: js.UndefOr[NonEmptyBase64EncodedString]
+    var KeyId: js.UndefOr[KeyIdGuid]
     var KeyMd5: js.UndefOr[NonEmptyBase64EncodedString]
     var LicenseAcquisitionUrl: js.UndefOr[OneTo512String]
-    var InitializationVector: js.UndefOr[ZeroTo255String]
-    var KeyId: js.UndefOr[KeyIdGuid]
-    var Key: js.UndefOr[NonEmptyBase64EncodedString]
   }
 
   object PlayReadyDrm {
     def apply(
       Format: js.UndefOr[PlayReadyDrmFormatString] = js.undefined,
-      KeyMd5: js.UndefOr[NonEmptyBase64EncodedString] = js.undefined,
-      LicenseAcquisitionUrl: js.UndefOr[OneTo512String] = js.undefined,
       InitializationVector: js.UndefOr[ZeroTo255String] = js.undefined,
+      Key: js.UndefOr[NonEmptyBase64EncodedString] = js.undefined,
       KeyId: js.UndefOr[KeyIdGuid] = js.undefined,
-      Key: js.UndefOr[NonEmptyBase64EncodedString] = js.undefined): PlayReadyDrm = {
+      KeyMd5: js.UndefOr[NonEmptyBase64EncodedString] = js.undefined,
+      LicenseAcquisitionUrl: js.UndefOr[OneTo512String] = js.undefined): PlayReadyDrm = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Format" -> Format.map { x => x.asInstanceOf[js.Any] },
-        "KeyMd5" -> KeyMd5.map { x => x.asInstanceOf[js.Any] },
-        "LicenseAcquisitionUrl" -> LicenseAcquisitionUrl.map { x => x.asInstanceOf[js.Any] },
         "InitializationVector" -> InitializationVector.map { x => x.asInstanceOf[js.Any] },
+        "Key" -> Key.map { x => x.asInstanceOf[js.Any] },
         "KeyId" -> KeyId.map { x => x.asInstanceOf[js.Any] },
-        "Key" -> Key.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "KeyMd5" -> KeyMd5.map { x => x.asInstanceOf[js.Any] },
+        "LicenseAcquisitionUrl" -> LicenseAcquisitionUrl.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PlayReadyDrm]
     }
@@ -1340,31 +1340,31 @@ package elastictranscoder {
   @js.native
   trait Playlist extends js.Object {
     var Format: js.UndefOr[PlaylistFormat]
-    var Name: js.UndefOr[Filename]
-    var StatusDetail: js.UndefOr[Description]
     var HlsContentProtection: js.UndefOr[HlsContentProtection]
-    var PlayReadyDrm: js.UndefOr[PlayReadyDrm]
+    var Name: js.UndefOr[Filename]
     var OutputKeys: js.UndefOr[OutputKeys]
+    var PlayReadyDrm: js.UndefOr[PlayReadyDrm]
     var Status: js.UndefOr[JobStatus]
+    var StatusDetail: js.UndefOr[Description]
   }
 
   object Playlist {
     def apply(
       Format: js.UndefOr[PlaylistFormat] = js.undefined,
-      Name: js.UndefOr[Filename] = js.undefined,
-      StatusDetail: js.UndefOr[Description] = js.undefined,
       HlsContentProtection: js.UndefOr[HlsContentProtection] = js.undefined,
-      PlayReadyDrm: js.UndefOr[PlayReadyDrm] = js.undefined,
+      Name: js.UndefOr[Filename] = js.undefined,
       OutputKeys: js.UndefOr[OutputKeys] = js.undefined,
-      Status: js.UndefOr[JobStatus] = js.undefined): Playlist = {
+      PlayReadyDrm: js.UndefOr[PlayReadyDrm] = js.undefined,
+      Status: js.UndefOr[JobStatus] = js.undefined,
+      StatusDetail: js.UndefOr[Description] = js.undefined): Playlist = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Format" -> Format.map { x => x.asInstanceOf[js.Any] },
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
-        "StatusDetail" -> StatusDetail.map { x => x.asInstanceOf[js.Any] },
         "HlsContentProtection" -> HlsContentProtection.map { x => x.asInstanceOf[js.Any] },
-        "PlayReadyDrm" -> PlayReadyDrm.map { x => x.asInstanceOf[js.Any] },
+        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
         "OutputKeys" -> OutputKeys.map { x => x.asInstanceOf[js.Any] },
-        "Status" -> Status.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "PlayReadyDrm" -> PlayReadyDrm.map { x => x.asInstanceOf[js.Any] },
+        "Status" -> Status.map { x => x.asInstanceOf[js.Any] },
+        "StatusDetail" -> StatusDetail.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Playlist]
     }
@@ -1375,38 +1375,38 @@ package elastictranscoder {
    */
   @js.native
   trait Preset extends js.Object {
-    var Id: js.UndefOr[Id]
-    var Name: js.UndefOr[Name]
-    var Description: js.UndefOr[Description]
-    var Thumbnails: js.UndefOr[Thumbnails]
-    var Container: js.UndefOr[PresetContainer]
     var Arn: js.UndefOr[String]
     var Audio: js.UndefOr[AudioParameters]
-    var Video: js.UndefOr[VideoParameters]
+    var Container: js.UndefOr[PresetContainer]
+    var Description: js.UndefOr[Description]
+    var Id: js.UndefOr[Id]
+    var Name: js.UndefOr[Name]
+    var Thumbnails: js.UndefOr[Thumbnails]
     var Type: js.UndefOr[PresetType]
+    var Video: js.UndefOr[VideoParameters]
   }
 
   object Preset {
     def apply(
-      Id: js.UndefOr[Id] = js.undefined,
-      Name: js.UndefOr[Name] = js.undefined,
-      Description: js.UndefOr[Description] = js.undefined,
-      Thumbnails: js.UndefOr[Thumbnails] = js.undefined,
-      Container: js.UndefOr[PresetContainer] = js.undefined,
       Arn: js.UndefOr[String] = js.undefined,
       Audio: js.UndefOr[AudioParameters] = js.undefined,
-      Video: js.UndefOr[VideoParameters] = js.undefined,
-      Type: js.UndefOr[PresetType] = js.undefined): Preset = {
+      Container: js.UndefOr[PresetContainer] = js.undefined,
+      Description: js.UndefOr[Description] = js.undefined,
+      Id: js.UndefOr[Id] = js.undefined,
+      Name: js.UndefOr[Name] = js.undefined,
+      Thumbnails: js.UndefOr[Thumbnails] = js.undefined,
+      Type: js.UndefOr[PresetType] = js.undefined,
+      Video: js.UndefOr[VideoParameters] = js.undefined): Preset = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Id" -> Id.map { x => x.asInstanceOf[js.Any] },
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
-        "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
-        "Thumbnails" -> Thumbnails.map { x => x.asInstanceOf[js.Any] },
-        "Container" -> Container.map { x => x.asInstanceOf[js.Any] },
         "Arn" -> Arn.map { x => x.asInstanceOf[js.Any] },
         "Audio" -> Audio.map { x => x.asInstanceOf[js.Any] },
-        "Video" -> Video.map { x => x.asInstanceOf[js.Any] },
-        "Type" -> Type.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Container" -> Container.map { x => x.asInstanceOf[js.Any] },
+        "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
+        "Id" -> Id.map { x => x.asInstanceOf[js.Any] },
+        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
+        "Thumbnails" -> Thumbnails.map { x => x.asInstanceOf[js.Any] },
+        "Type" -> Type.map { x => x.asInstanceOf[js.Any] },
+        "Video" -> Video.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Preset]
     }
@@ -1417,41 +1417,41 @@ package elastictranscoder {
    */
   @js.native
   trait PresetWatermark extends js.Object {
-    var Id: js.UndefOr[PresetWatermarkId]
     var HorizontalAlign: js.UndefOr[HorizontalAlign]
-    var Target: js.UndefOr[Target]
-    var SizingPolicy: js.UndefOr[WatermarkSizingPolicy]
-    var MaxHeight: js.UndefOr[PixelsOrPercent]
-    var VerticalOffset: js.UndefOr[PixelsOrPercent]
     var HorizontalOffset: js.UndefOr[PixelsOrPercent]
-    var Opacity: js.UndefOr[Opacity]
+    var Id: js.UndefOr[PresetWatermarkId]
+    var MaxHeight: js.UndefOr[PixelsOrPercent]
     var MaxWidth: js.UndefOr[PixelsOrPercent]
+    var Opacity: js.UndefOr[Opacity]
+    var SizingPolicy: js.UndefOr[WatermarkSizingPolicy]
+    var Target: js.UndefOr[Target]
     var VerticalAlign: js.UndefOr[VerticalAlign]
+    var VerticalOffset: js.UndefOr[PixelsOrPercent]
   }
 
   object PresetWatermark {
     def apply(
-      Id: js.UndefOr[PresetWatermarkId] = js.undefined,
       HorizontalAlign: js.UndefOr[HorizontalAlign] = js.undefined,
-      Target: js.UndefOr[Target] = js.undefined,
-      SizingPolicy: js.UndefOr[WatermarkSizingPolicy] = js.undefined,
-      MaxHeight: js.UndefOr[PixelsOrPercent] = js.undefined,
-      VerticalOffset: js.UndefOr[PixelsOrPercent] = js.undefined,
       HorizontalOffset: js.UndefOr[PixelsOrPercent] = js.undefined,
-      Opacity: js.UndefOr[Opacity] = js.undefined,
+      Id: js.UndefOr[PresetWatermarkId] = js.undefined,
+      MaxHeight: js.UndefOr[PixelsOrPercent] = js.undefined,
       MaxWidth: js.UndefOr[PixelsOrPercent] = js.undefined,
-      VerticalAlign: js.UndefOr[VerticalAlign] = js.undefined): PresetWatermark = {
+      Opacity: js.UndefOr[Opacity] = js.undefined,
+      SizingPolicy: js.UndefOr[WatermarkSizingPolicy] = js.undefined,
+      Target: js.UndefOr[Target] = js.undefined,
+      VerticalAlign: js.UndefOr[VerticalAlign] = js.undefined,
+      VerticalOffset: js.UndefOr[PixelsOrPercent] = js.undefined): PresetWatermark = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Id" -> Id.map { x => x.asInstanceOf[js.Any] },
         "HorizontalAlign" -> HorizontalAlign.map { x => x.asInstanceOf[js.Any] },
-        "Target" -> Target.map { x => x.asInstanceOf[js.Any] },
-        "SizingPolicy" -> SizingPolicy.map { x => x.asInstanceOf[js.Any] },
-        "MaxHeight" -> MaxHeight.map { x => x.asInstanceOf[js.Any] },
-        "VerticalOffset" -> VerticalOffset.map { x => x.asInstanceOf[js.Any] },
         "HorizontalOffset" -> HorizontalOffset.map { x => x.asInstanceOf[js.Any] },
-        "Opacity" -> Opacity.map { x => x.asInstanceOf[js.Any] },
+        "Id" -> Id.map { x => x.asInstanceOf[js.Any] },
+        "MaxHeight" -> MaxHeight.map { x => x.asInstanceOf[js.Any] },
         "MaxWidth" -> MaxWidth.map { x => x.asInstanceOf[js.Any] },
-        "VerticalAlign" -> VerticalAlign.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Opacity" -> Opacity.map { x => x.asInstanceOf[js.Any] },
+        "SizingPolicy" -> SizingPolicy.map { x => x.asInstanceOf[js.Any] },
+        "Target" -> Target.map { x => x.asInstanceOf[js.Any] },
+        "VerticalAlign" -> VerticalAlign.map { x => x.asInstanceOf[js.Any] },
+        "VerticalOffset" -> VerticalOffset.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PresetWatermark]
     }
@@ -1462,14 +1462,14 @@ package elastictranscoder {
    */
   @js.native
   trait ReadJobRequest extends js.Object {
-    var Id: js.UndefOr[Id]
+    var Id: Id
   }
 
   object ReadJobRequest {
     def apply(
-      Id: js.UndefOr[Id] = js.undefined): ReadJobRequest = {
+      Id: Id): ReadJobRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Id" -> Id.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Id" -> Id.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ReadJobRequest]
     }
@@ -1498,14 +1498,14 @@ package elastictranscoder {
    */
   @js.native
   trait ReadPipelineRequest extends js.Object {
-    var Id: js.UndefOr[Id]
+    var Id: Id
   }
 
   object ReadPipelineRequest {
     def apply(
-      Id: js.UndefOr[Id] = js.undefined): ReadPipelineRequest = {
+      Id: Id): ReadPipelineRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Id" -> Id.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Id" -> Id.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ReadPipelineRequest]
     }
@@ -1537,14 +1537,14 @@ package elastictranscoder {
    */
   @js.native
   trait ReadPresetRequest extends js.Object {
-    var Id: js.UndefOr[Id]
+    var Id: Id
   }
 
   object ReadPresetRequest {
     def apply(
-      Id: js.UndefOr[Id] = js.undefined): ReadPresetRequest = {
+      Id: Id): ReadPresetRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Id" -> Id.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Id" -> Id.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ReadPresetRequest]
     }
@@ -1574,23 +1574,23 @@ package elastictranscoder {
   @deprecated
   @js.native
   trait TestRoleRequest extends js.Object {
-    var Role: js.UndefOr[Role]
-    var InputBucket: js.UndefOr[BucketName]
-    var OutputBucket: js.UndefOr[BucketName]
-    var Topics: js.UndefOr[SnsTopics]
+    var InputBucket: BucketName
+    var OutputBucket: BucketName
+    var Role: Role
+    var Topics: SnsTopics
   }
 
   object TestRoleRequest {
     def apply(
-      Role: js.UndefOr[Role] = js.undefined,
-      InputBucket: js.UndefOr[BucketName] = js.undefined,
-      OutputBucket: js.UndefOr[BucketName] = js.undefined,
-      Topics: js.UndefOr[SnsTopics] = js.undefined): TestRoleRequest = {
+      InputBucket: BucketName,
+      OutputBucket: BucketName,
+      Role: Role,
+      Topics: SnsTopics): TestRoleRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Role" -> Role.map { x => x.asInstanceOf[js.Any] },
-        "InputBucket" -> InputBucket.map { x => x.asInstanceOf[js.Any] },
-        "OutputBucket" -> OutputBucket.map { x => x.asInstanceOf[js.Any] },
-        "Topics" -> Topics.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "InputBucket" -> InputBucket.asInstanceOf[js.Any],
+        "OutputBucket" -> OutputBucket.asInstanceOf[js.Any],
+        "Role" -> Role.asInstanceOf[js.Any],
+        "Topics" -> Topics.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TestRoleRequest]
     }
@@ -1602,17 +1602,17 @@ package elastictranscoder {
   @deprecated
   @js.native
   trait TestRoleResponse extends js.Object {
-    var Success: js.UndefOr[Success]
     var Messages: js.UndefOr[ExceptionMessages]
+    var Success: js.UndefOr[Success]
   }
 
   object TestRoleResponse {
     def apply(
-      Success: js.UndefOr[Success] = js.undefined,
-      Messages: js.UndefOr[ExceptionMessages] = js.undefined): TestRoleResponse = {
+      Messages: js.UndefOr[ExceptionMessages] = js.undefined,
+      Success: js.UndefOr[Success] = js.undefined): TestRoleResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Success" -> Success.map { x => x.asInstanceOf[js.Any] },
-        "Messages" -> Messages.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Messages" -> Messages.map { x => x.asInstanceOf[js.Any] },
+        "Success" -> Success.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TestRoleResponse]
     }
@@ -1623,35 +1623,35 @@ package elastictranscoder {
    */
   @js.native
   trait Thumbnails extends js.Object {
+    var AspectRatio: js.UndefOr[AspectRatio]
     var Format: js.UndefOr[JpgOrPng]
+    var Interval: js.UndefOr[Digits]
+    var MaxHeight: js.UndefOr[DigitsOrAuto]
+    var MaxWidth: js.UndefOr[DigitsOrAuto]
+    var PaddingPolicy: js.UndefOr[PaddingPolicy]
     var Resolution: js.UndefOr[ThumbnailResolution]
     var SizingPolicy: js.UndefOr[SizingPolicy]
-    var MaxHeight: js.UndefOr[DigitsOrAuto]
-    var PaddingPolicy: js.UndefOr[PaddingPolicy]
-    var Interval: js.UndefOr[Digits]
-    var AspectRatio: js.UndefOr[AspectRatio]
-    var MaxWidth: js.UndefOr[DigitsOrAuto]
   }
 
   object Thumbnails {
     def apply(
-      Format: js.UndefOr[JpgOrPng] = js.undefined,
-      Resolution: js.UndefOr[ThumbnailResolution] = js.undefined,
-      SizingPolicy: js.UndefOr[SizingPolicy] = js.undefined,
-      MaxHeight: js.UndefOr[DigitsOrAuto] = js.undefined,
-      PaddingPolicy: js.UndefOr[PaddingPolicy] = js.undefined,
-      Interval: js.UndefOr[Digits] = js.undefined,
       AspectRatio: js.UndefOr[AspectRatio] = js.undefined,
-      MaxWidth: js.UndefOr[DigitsOrAuto] = js.undefined): Thumbnails = {
+      Format: js.UndefOr[JpgOrPng] = js.undefined,
+      Interval: js.UndefOr[Digits] = js.undefined,
+      MaxHeight: js.UndefOr[DigitsOrAuto] = js.undefined,
+      MaxWidth: js.UndefOr[DigitsOrAuto] = js.undefined,
+      PaddingPolicy: js.UndefOr[PaddingPolicy] = js.undefined,
+      Resolution: js.UndefOr[ThumbnailResolution] = js.undefined,
+      SizingPolicy: js.UndefOr[SizingPolicy] = js.undefined): Thumbnails = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Format" -> Format.map { x => x.asInstanceOf[js.Any] },
-        "Resolution" -> Resolution.map { x => x.asInstanceOf[js.Any] },
-        "SizingPolicy" -> SizingPolicy.map { x => x.asInstanceOf[js.Any] },
-        "MaxHeight" -> MaxHeight.map { x => x.asInstanceOf[js.Any] },
-        "PaddingPolicy" -> PaddingPolicy.map { x => x.asInstanceOf[js.Any] },
-        "Interval" -> Interval.map { x => x.asInstanceOf[js.Any] },
         "AspectRatio" -> AspectRatio.map { x => x.asInstanceOf[js.Any] },
-        "MaxWidth" -> MaxWidth.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Format" -> Format.map { x => x.asInstanceOf[js.Any] },
+        "Interval" -> Interval.map { x => x.asInstanceOf[js.Any] },
+        "MaxHeight" -> MaxHeight.map { x => x.asInstanceOf[js.Any] },
+        "MaxWidth" -> MaxWidth.map { x => x.asInstanceOf[js.Any] },
+        "PaddingPolicy" -> PaddingPolicy.map { x => x.asInstanceOf[js.Any] },
+        "Resolution" -> Resolution.map { x => x.asInstanceOf[js.Any] },
+        "SizingPolicy" -> SizingPolicy.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Thumbnails]
     }
@@ -1662,17 +1662,17 @@ package elastictranscoder {
    */
   @js.native
   trait TimeSpan extends js.Object {
-    var StartTime: js.UndefOr[Time]
     var Duration: js.UndefOr[Time]
+    var StartTime: js.UndefOr[Time]
   }
 
   object TimeSpan {
     def apply(
-      StartTime: js.UndefOr[Time] = js.undefined,
-      Duration: js.UndefOr[Time] = js.undefined): TimeSpan = {
+      Duration: js.UndefOr[Time] = js.undefined,
+      StartTime: js.UndefOr[Time] = js.undefined): TimeSpan = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "StartTime" -> StartTime.map { x => x.asInstanceOf[js.Any] },
-        "Duration" -> Duration.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Duration" -> Duration.map { x => x.asInstanceOf[js.Any] },
+        "StartTime" -> StartTime.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TimeSpan]
     }
@@ -1683,20 +1683,20 @@ package elastictranscoder {
    */
   @js.native
   trait Timing extends js.Object {
-    var SubmitTimeMillis: js.UndefOr[NullableLong]
-    var StartTimeMillis: js.UndefOr[NullableLong]
     var FinishTimeMillis: js.UndefOr[NullableLong]
+    var StartTimeMillis: js.UndefOr[NullableLong]
+    var SubmitTimeMillis: js.UndefOr[NullableLong]
   }
 
   object Timing {
     def apply(
-      SubmitTimeMillis: js.UndefOr[NullableLong] = js.undefined,
+      FinishTimeMillis: js.UndefOr[NullableLong] = js.undefined,
       StartTimeMillis: js.UndefOr[NullableLong] = js.undefined,
-      FinishTimeMillis: js.UndefOr[NullableLong] = js.undefined): Timing = {
+      SubmitTimeMillis: js.UndefOr[NullableLong] = js.undefined): Timing = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "SubmitTimeMillis" -> SubmitTimeMillis.map { x => x.asInstanceOf[js.Any] },
+        "FinishTimeMillis" -> FinishTimeMillis.map { x => x.asInstanceOf[js.Any] },
         "StartTimeMillis" -> StartTimeMillis.map { x => x.asInstanceOf[js.Any] },
-        "FinishTimeMillis" -> FinishTimeMillis.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "SubmitTimeMillis" -> SubmitTimeMillis.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Timing]
     }
@@ -1707,17 +1707,17 @@ package elastictranscoder {
    */
   @js.native
   trait UpdatePipelineNotificationsRequest extends js.Object {
-    var Id: js.UndefOr[Id]
-    var Notifications: js.UndefOr[Notifications]
+    var Id: Id
+    var Notifications: Notifications
   }
 
   object UpdatePipelineNotificationsRequest {
     def apply(
-      Id: js.UndefOr[Id] = js.undefined,
-      Notifications: js.UndefOr[Notifications] = js.undefined): UpdatePipelineNotificationsRequest = {
+      Id: Id,
+      Notifications: Notifications): UpdatePipelineNotificationsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Id" -> Id.map { x => x.asInstanceOf[js.Any] },
-        "Notifications" -> Notifications.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Id" -> Id.asInstanceOf[js.Any],
+        "Notifications" -> Notifications.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdatePipelineNotificationsRequest]
     }
@@ -1746,35 +1746,35 @@ package elastictranscoder {
    */
   @js.native
   trait UpdatePipelineRequest extends js.Object {
-    var Id: js.UndefOr[Id]
-    var Role: js.UndefOr[Role]
-    var Name: js.UndefOr[Name]
-    var ThumbnailConfig: js.UndefOr[PipelineOutputConfig]
-    var InputBucket: js.UndefOr[BucketName]
+    var Id: Id
     var AwsKmsKeyArn: js.UndefOr[KeyArn]
-    var Notifications: js.UndefOr[Notifications]
     var ContentConfig: js.UndefOr[PipelineOutputConfig]
+    var InputBucket: js.UndefOr[BucketName]
+    var Name: js.UndefOr[Name]
+    var Notifications: js.UndefOr[Notifications]
+    var Role: js.UndefOr[Role]
+    var ThumbnailConfig: js.UndefOr[PipelineOutputConfig]
   }
 
   object UpdatePipelineRequest {
     def apply(
-      Id: js.UndefOr[Id] = js.undefined,
-      Role: js.UndefOr[Role] = js.undefined,
-      Name: js.UndefOr[Name] = js.undefined,
-      ThumbnailConfig: js.UndefOr[PipelineOutputConfig] = js.undefined,
-      InputBucket: js.UndefOr[BucketName] = js.undefined,
+      Id: Id,
       AwsKmsKeyArn: js.UndefOr[KeyArn] = js.undefined,
+      ContentConfig: js.UndefOr[PipelineOutputConfig] = js.undefined,
+      InputBucket: js.UndefOr[BucketName] = js.undefined,
+      Name: js.UndefOr[Name] = js.undefined,
       Notifications: js.UndefOr[Notifications] = js.undefined,
-      ContentConfig: js.UndefOr[PipelineOutputConfig] = js.undefined): UpdatePipelineRequest = {
+      Role: js.UndefOr[Role] = js.undefined,
+      ThumbnailConfig: js.UndefOr[PipelineOutputConfig] = js.undefined): UpdatePipelineRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Id" -> Id.map { x => x.asInstanceOf[js.Any] },
-        "Role" -> Role.map { x => x.asInstanceOf[js.Any] },
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
-        "ThumbnailConfig" -> ThumbnailConfig.map { x => x.asInstanceOf[js.Any] },
-        "InputBucket" -> InputBucket.map { x => x.asInstanceOf[js.Any] },
+        "Id" -> Id.asInstanceOf[js.Any],
         "AwsKmsKeyArn" -> AwsKmsKeyArn.map { x => x.asInstanceOf[js.Any] },
+        "ContentConfig" -> ContentConfig.map { x => x.asInstanceOf[js.Any] },
+        "InputBucket" -> InputBucket.map { x => x.asInstanceOf[js.Any] },
+        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
         "Notifications" -> Notifications.map { x => x.asInstanceOf[js.Any] },
-        "ContentConfig" -> ContentConfig.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Role" -> Role.map { x => x.asInstanceOf[js.Any] },
+        "ThumbnailConfig" -> ThumbnailConfig.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdatePipelineRequest]
     }
@@ -1806,17 +1806,17 @@ package elastictranscoder {
    */
   @js.native
   trait UpdatePipelineStatusRequest extends js.Object {
-    var Id: js.UndefOr[Id]
-    var Status: js.UndefOr[PipelineStatus]
+    var Id: Id
+    var Status: PipelineStatus
   }
 
   object UpdatePipelineStatusRequest {
     def apply(
-      Id: js.UndefOr[Id] = js.undefined,
-      Status: js.UndefOr[PipelineStatus] = js.undefined): UpdatePipelineStatusRequest = {
+      Id: Id,
+      Status: PipelineStatus): UpdatePipelineStatusRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Id" -> Id.map { x => x.asInstanceOf[js.Any] },
-        "Status" -> Status.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Id" -> Id.asInstanceOf[js.Any],
+        "Status" -> Status.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdatePipelineStatusRequest]
     }
@@ -1845,56 +1845,56 @@ package elastictranscoder {
    */
   @js.native
   trait VideoParameters extends js.Object {
+    var AspectRatio: js.UndefOr[AspectRatio]
     var BitRate: js.UndefOr[VideoBitRate]
+    var Codec: js.UndefOr[VideoCodec]
+    var CodecOptions: js.UndefOr[CodecOptions]
+    var DisplayAspectRatio: js.UndefOr[AspectRatio]
+    var FixedGOP: js.UndefOr[FixedGOP]
+    var FrameRate: js.UndefOr[FrameRate]
+    var KeyframesMaxDist: js.UndefOr[KeyframesMaxDist]
+    var MaxFrameRate: js.UndefOr[MaxFrameRate]
+    var MaxHeight: js.UndefOr[DigitsOrAuto]
+    var MaxWidth: js.UndefOr[DigitsOrAuto]
+    var PaddingPolicy: js.UndefOr[PaddingPolicy]
     var Resolution: js.UndefOr[Resolution]
     var SizingPolicy: js.UndefOr[SizingPolicy]
-    var MaxHeight: js.UndefOr[DigitsOrAuto]
-    var DisplayAspectRatio: js.UndefOr[AspectRatio]
     var Watermarks: js.UndefOr[PresetWatermarks]
-    var PaddingPolicy: js.UndefOr[PaddingPolicy]
-    var CodecOptions: js.UndefOr[CodecOptions]
-    var AspectRatio: js.UndefOr[AspectRatio]
-    var KeyframesMaxDist: js.UndefOr[KeyframesMaxDist]
-    var FixedGOP: js.UndefOr[FixedGOP]
-    var MaxWidth: js.UndefOr[DigitsOrAuto]
-    var MaxFrameRate: js.UndefOr[MaxFrameRate]
-    var Codec: js.UndefOr[VideoCodec]
-    var FrameRate: js.UndefOr[FrameRate]
   }
 
   object VideoParameters {
     def apply(
+      AspectRatio: js.UndefOr[AspectRatio] = js.undefined,
       BitRate: js.UndefOr[VideoBitRate] = js.undefined,
+      Codec: js.UndefOr[VideoCodec] = js.undefined,
+      CodecOptions: js.UndefOr[CodecOptions] = js.undefined,
+      DisplayAspectRatio: js.UndefOr[AspectRatio] = js.undefined,
+      FixedGOP: js.UndefOr[FixedGOP] = js.undefined,
+      FrameRate: js.UndefOr[FrameRate] = js.undefined,
+      KeyframesMaxDist: js.UndefOr[KeyframesMaxDist] = js.undefined,
+      MaxFrameRate: js.UndefOr[MaxFrameRate] = js.undefined,
+      MaxHeight: js.UndefOr[DigitsOrAuto] = js.undefined,
+      MaxWidth: js.UndefOr[DigitsOrAuto] = js.undefined,
+      PaddingPolicy: js.UndefOr[PaddingPolicy] = js.undefined,
       Resolution: js.UndefOr[Resolution] = js.undefined,
       SizingPolicy: js.UndefOr[SizingPolicy] = js.undefined,
-      MaxHeight: js.UndefOr[DigitsOrAuto] = js.undefined,
-      DisplayAspectRatio: js.UndefOr[AspectRatio] = js.undefined,
-      Watermarks: js.UndefOr[PresetWatermarks] = js.undefined,
-      PaddingPolicy: js.UndefOr[PaddingPolicy] = js.undefined,
-      CodecOptions: js.UndefOr[CodecOptions] = js.undefined,
-      AspectRatio: js.UndefOr[AspectRatio] = js.undefined,
-      KeyframesMaxDist: js.UndefOr[KeyframesMaxDist] = js.undefined,
-      FixedGOP: js.UndefOr[FixedGOP] = js.undefined,
-      MaxWidth: js.UndefOr[DigitsOrAuto] = js.undefined,
-      MaxFrameRate: js.UndefOr[MaxFrameRate] = js.undefined,
-      Codec: js.UndefOr[VideoCodec] = js.undefined,
-      FrameRate: js.UndefOr[FrameRate] = js.undefined): VideoParameters = {
+      Watermarks: js.UndefOr[PresetWatermarks] = js.undefined): VideoParameters = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "AspectRatio" -> AspectRatio.map { x => x.asInstanceOf[js.Any] },
         "BitRate" -> BitRate.map { x => x.asInstanceOf[js.Any] },
+        "Codec" -> Codec.map { x => x.asInstanceOf[js.Any] },
+        "CodecOptions" -> CodecOptions.map { x => x.asInstanceOf[js.Any] },
+        "DisplayAspectRatio" -> DisplayAspectRatio.map { x => x.asInstanceOf[js.Any] },
+        "FixedGOP" -> FixedGOP.map { x => x.asInstanceOf[js.Any] },
+        "FrameRate" -> FrameRate.map { x => x.asInstanceOf[js.Any] },
+        "KeyframesMaxDist" -> KeyframesMaxDist.map { x => x.asInstanceOf[js.Any] },
+        "MaxFrameRate" -> MaxFrameRate.map { x => x.asInstanceOf[js.Any] },
+        "MaxHeight" -> MaxHeight.map { x => x.asInstanceOf[js.Any] },
+        "MaxWidth" -> MaxWidth.map { x => x.asInstanceOf[js.Any] },
+        "PaddingPolicy" -> PaddingPolicy.map { x => x.asInstanceOf[js.Any] },
         "Resolution" -> Resolution.map { x => x.asInstanceOf[js.Any] },
         "SizingPolicy" -> SizingPolicy.map { x => x.asInstanceOf[js.Any] },
-        "MaxHeight" -> MaxHeight.map { x => x.asInstanceOf[js.Any] },
-        "DisplayAspectRatio" -> DisplayAspectRatio.map { x => x.asInstanceOf[js.Any] },
-        "Watermarks" -> Watermarks.map { x => x.asInstanceOf[js.Any] },
-        "PaddingPolicy" -> PaddingPolicy.map { x => x.asInstanceOf[js.Any] },
-        "CodecOptions" -> CodecOptions.map { x => x.asInstanceOf[js.Any] },
-        "AspectRatio" -> AspectRatio.map { x => x.asInstanceOf[js.Any] },
-        "KeyframesMaxDist" -> KeyframesMaxDist.map { x => x.asInstanceOf[js.Any] },
-        "FixedGOP" -> FixedGOP.map { x => x.asInstanceOf[js.Any] },
-        "MaxWidth" -> MaxWidth.map { x => x.asInstanceOf[js.Any] },
-        "MaxFrameRate" -> MaxFrameRate.map { x => x.asInstanceOf[js.Any] },
-        "Codec" -> Codec.map { x => x.asInstanceOf[js.Any] },
-        "FrameRate" -> FrameRate.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Watermarks" -> Watermarks.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[VideoParameters]
     }

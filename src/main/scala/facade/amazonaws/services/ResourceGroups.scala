@@ -56,22 +56,22 @@ package resourcegroups {
 
   @js.native
   trait CreateGroupInput extends js.Object {
-    var Name: js.UndefOr[GroupName]
+    var Name: GroupName
+    var ResourceQuery: ResourceQuery
     var Description: js.UndefOr[GroupDescription]
-    var ResourceQuery: js.UndefOr[ResourceQuery]
     var Tags: js.UndefOr[Tags]
   }
 
   object CreateGroupInput {
     def apply(
-      Name: js.UndefOr[GroupName] = js.undefined,
+      Name: GroupName,
+      ResourceQuery: ResourceQuery,
       Description: js.UndefOr[GroupDescription] = js.undefined,
-      ResourceQuery: js.UndefOr[ResourceQuery] = js.undefined,
       Tags: js.UndefOr[Tags] = js.undefined): CreateGroupInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
+        "Name" -> Name.asInstanceOf[js.Any],
+        "ResourceQuery" -> ResourceQuery.asInstanceOf[js.Any],
         "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
-        "ResourceQuery" -> ResourceQuery.map { x => x.asInstanceOf[js.Any] },
         "Tags" -> Tags.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateGroupInput]
@@ -101,14 +101,14 @@ package resourcegroups {
 
   @js.native
   trait DeleteGroupInput extends js.Object {
-    var GroupName: js.UndefOr[GroupName]
+    var GroupName: GroupName
   }
 
   object DeleteGroupInput {
     def apply(
-      GroupName: js.UndefOr[GroupName] = js.undefined): DeleteGroupInput = {
+      GroupName: GroupName): DeleteGroupInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "GroupName" -> GroupName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "GroupName" -> GroupName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteGroupInput]
     }
@@ -131,14 +131,14 @@ package resourcegroups {
 
   @js.native
   trait GetGroupInput extends js.Object {
-    var GroupName: js.UndefOr[GroupName]
+    var GroupName: GroupName
   }
 
   object GetGroupInput {
     def apply(
-      GroupName: js.UndefOr[GroupName] = js.undefined): GetGroupInput = {
+      GroupName: GroupName): GetGroupInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "GroupName" -> GroupName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "GroupName" -> GroupName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetGroupInput]
     }
@@ -161,14 +161,14 @@ package resourcegroups {
 
   @js.native
   trait GetGroupQueryInput extends js.Object {
-    var GroupName: js.UndefOr[GroupName]
+    var GroupName: GroupName
   }
 
   object GetGroupQueryInput {
     def apply(
-      GroupName: js.UndefOr[GroupName] = js.undefined): GetGroupQueryInput = {
+      GroupName: GroupName): GetGroupQueryInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "GroupName" -> GroupName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "GroupName" -> GroupName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetGroupQueryInput]
     }
@@ -191,14 +191,14 @@ package resourcegroups {
 
   @js.native
   trait GetTagsInput extends js.Object {
-    var Arn: js.UndefOr[GroupArn]
+    var Arn: GroupArn
   }
 
   object GetTagsInput {
     def apply(
-      Arn: js.UndefOr[GroupArn] = js.undefined): GetTagsInput = {
+      Arn: GroupArn): GetTagsInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Arn" -> Arn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Arn" -> Arn.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetTagsInput]
     }
@@ -227,19 +227,19 @@ package resourcegroups {
    */
   @js.native
   trait Group extends js.Object {
-    var GroupArn: js.UndefOr[GroupArn]
-    var Name: js.UndefOr[GroupName]
+    var GroupArn: GroupArn
+    var Name: GroupName
     var Description: js.UndefOr[GroupDescription]
   }
 
   object Group {
     def apply(
-      GroupArn: js.UndefOr[GroupArn] = js.undefined,
-      Name: js.UndefOr[GroupName] = js.undefined,
+      GroupArn: GroupArn,
+      Name: GroupName,
       Description: js.UndefOr[GroupDescription] = js.undefined): Group = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "GroupArn" -> GroupArn.map { x => x.asInstanceOf[js.Any] },
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
+        "GroupArn" -> GroupArn.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
         "Description" -> Description.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Group]
@@ -251,17 +251,17 @@ package resourcegroups {
    */
   @js.native
   trait GroupFilter extends js.Object {
-    var Name: js.UndefOr[GroupFilterName]
-    var Values: js.UndefOr[GroupFilterValues]
+    var Name: GroupFilterName
+    var Values: GroupFilterValues
   }
 
   object GroupFilter {
     def apply(
-      Name: js.UndefOr[GroupFilterName] = js.undefined,
-      Values: js.UndefOr[GroupFilterValues] = js.undefined): GroupFilter = {
+      Name: GroupFilterName,
+      Values: GroupFilterValues): GroupFilter = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
-        "Values" -> Values.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Name" -> Name.asInstanceOf[js.Any],
+        "Values" -> Values.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GroupFilter]
     }
@@ -278,17 +278,17 @@ package resourcegroups {
    */
   @js.native
   trait GroupIdentifier extends js.Object {
-    var GroupName: js.UndefOr[GroupName]
     var GroupArn: js.UndefOr[GroupArn]
+    var GroupName: js.UndefOr[GroupName]
   }
 
   object GroupIdentifier {
     def apply(
-      GroupName: js.UndefOr[GroupName] = js.undefined,
-      GroupArn: js.UndefOr[GroupArn] = js.undefined): GroupIdentifier = {
+      GroupArn: js.UndefOr[GroupArn] = js.undefined,
+      GroupName: js.UndefOr[GroupName] = js.undefined): GroupIdentifier = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "GroupName" -> GroupName.map { x => x.asInstanceOf[js.Any] },
-        "GroupArn" -> GroupArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "GroupArn" -> GroupArn.map { x => x.asInstanceOf[js.Any] },
+        "GroupName" -> GroupName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GroupIdentifier]
     }
@@ -299,17 +299,17 @@ package resourcegroups {
    */
   @js.native
   trait GroupQuery extends js.Object {
-    var GroupName: js.UndefOr[GroupName]
-    var ResourceQuery: js.UndefOr[ResourceQuery]
+    var GroupName: GroupName
+    var ResourceQuery: ResourceQuery
   }
 
   object GroupQuery {
     def apply(
-      GroupName: js.UndefOr[GroupName] = js.undefined,
-      ResourceQuery: js.UndefOr[ResourceQuery] = js.undefined): GroupQuery = {
+      GroupName: GroupName,
+      ResourceQuery: ResourceQuery): GroupQuery = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "GroupName" -> GroupName.map { x => x.asInstanceOf[js.Any] },
-        "ResourceQuery" -> ResourceQuery.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "GroupName" -> GroupName.asInstanceOf[js.Any],
+        "ResourceQuery" -> ResourceQuery.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GroupQuery]
     }
@@ -317,7 +317,7 @@ package resourcegroups {
 
   @js.native
   trait ListGroupResourcesInput extends js.Object {
-    var GroupName: js.UndefOr[GroupName]
+    var GroupName: GroupName
     var Filters: js.UndefOr[ResourceFilterList]
     var MaxResults: js.UndefOr[MaxResults]
     var NextToken: js.UndefOr[NextToken]
@@ -325,12 +325,12 @@ package resourcegroups {
 
   object ListGroupResourcesInput {
     def apply(
-      GroupName: js.UndefOr[GroupName] = js.undefined,
+      GroupName: GroupName,
       Filters: js.UndefOr[ResourceFilterList] = js.undefined,
       MaxResults: js.UndefOr[MaxResults] = js.undefined,
       NextToken: js.UndefOr[NextToken] = js.undefined): ListGroupResourcesInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "GroupName" -> GroupName.map { x => x.asInstanceOf[js.Any] },
+        "GroupName" -> GroupName.asInstanceOf[js.Any],
         "Filters" -> Filters.map { x => x.asInstanceOf[js.Any] },
         "MaxResults" -> MaxResults.map { x => x.asInstanceOf[js.Any] },
         "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
@@ -341,20 +341,20 @@ package resourcegroups {
 
   @js.native
   trait ListGroupResourcesOutput extends js.Object {
-    var ResourceIdentifiers: js.UndefOr[ResourceIdentifierList]
     var NextToken: js.UndefOr[NextToken]
     var QueryErrors: js.UndefOr[QueryErrorList]
+    var ResourceIdentifiers: js.UndefOr[ResourceIdentifierList]
   }
 
   object ListGroupResourcesOutput {
     def apply(
-      ResourceIdentifiers: js.UndefOr[ResourceIdentifierList] = js.undefined,
       NextToken: js.UndefOr[NextToken] = js.undefined,
-      QueryErrors: js.UndefOr[QueryErrorList] = js.undefined): ListGroupResourcesOutput = {
+      QueryErrors: js.UndefOr[QueryErrorList] = js.undefined,
+      ResourceIdentifiers: js.UndefOr[ResourceIdentifierList] = js.undefined): ListGroupResourcesOutput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ResourceIdentifiers" -> ResourceIdentifiers.map { x => x.asInstanceOf[js.Any] },
         "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
-        "QueryErrors" -> QueryErrors.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "QueryErrors" -> QueryErrors.map { x => x.asInstanceOf[js.Any] },
+        "ResourceIdentifiers" -> ResourceIdentifiers.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListGroupResourcesOutput]
     }
@@ -442,17 +442,17 @@ package resourcegroups {
    */
   @js.native
   trait ResourceFilter extends js.Object {
-    var Name: js.UndefOr[ResourceFilterName]
-    var Values: js.UndefOr[ResourceFilterValues]
+    var Name: ResourceFilterName
+    var Values: ResourceFilterValues
   }
 
   object ResourceFilter {
     def apply(
-      Name: js.UndefOr[ResourceFilterName] = js.undefined,
-      Values: js.UndefOr[ResourceFilterValues] = js.undefined): ResourceFilter = {
+      Name: ResourceFilterName,
+      Values: ResourceFilterValues): ResourceFilter = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
-        "Values" -> Values.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Name" -> Name.asInstanceOf[js.Any],
+        "Values" -> Values.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ResourceFilter]
     }
@@ -490,17 +490,17 @@ package resourcegroups {
    */
   @js.native
   trait ResourceQuery extends js.Object {
-    var Type: js.UndefOr[QueryType]
-    var Query: js.UndefOr[Query]
+    var Query: Query
+    var Type: QueryType
   }
 
   object ResourceQuery {
     def apply(
-      Type: js.UndefOr[QueryType] = js.undefined,
-      Query: js.UndefOr[Query] = js.undefined): ResourceQuery = {
+      Query: Query,
+      Type: QueryType): ResourceQuery = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Type" -> Type.map { x => x.asInstanceOf[js.Any] },
-        "Query" -> Query.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Query" -> Query.asInstanceOf[js.Any],
+        "Type" -> Type.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ResourceQuery]
     }
@@ -508,18 +508,18 @@ package resourcegroups {
 
   @js.native
   trait SearchResourcesInput extends js.Object {
-    var ResourceQuery: js.UndefOr[ResourceQuery]
+    var ResourceQuery: ResourceQuery
     var MaxResults: js.UndefOr[MaxResults]
     var NextToken: js.UndefOr[NextToken]
   }
 
   object SearchResourcesInput {
     def apply(
-      ResourceQuery: js.UndefOr[ResourceQuery] = js.undefined,
+      ResourceQuery: ResourceQuery,
       MaxResults: js.UndefOr[MaxResults] = js.undefined,
       NextToken: js.UndefOr[NextToken] = js.undefined): SearchResourcesInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ResourceQuery" -> ResourceQuery.map { x => x.asInstanceOf[js.Any] },
+        "ResourceQuery" -> ResourceQuery.asInstanceOf[js.Any],
         "MaxResults" -> MaxResults.map { x => x.asInstanceOf[js.Any] },
         "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
@@ -529,20 +529,20 @@ package resourcegroups {
 
   @js.native
   trait SearchResourcesOutput extends js.Object {
-    var ResourceIdentifiers: js.UndefOr[ResourceIdentifierList]
     var NextToken: js.UndefOr[NextToken]
     var QueryErrors: js.UndefOr[QueryErrorList]
+    var ResourceIdentifiers: js.UndefOr[ResourceIdentifierList]
   }
 
   object SearchResourcesOutput {
     def apply(
-      ResourceIdentifiers: js.UndefOr[ResourceIdentifierList] = js.undefined,
       NextToken: js.UndefOr[NextToken] = js.undefined,
-      QueryErrors: js.UndefOr[QueryErrorList] = js.undefined): SearchResourcesOutput = {
+      QueryErrors: js.UndefOr[QueryErrorList] = js.undefined,
+      ResourceIdentifiers: js.UndefOr[ResourceIdentifierList] = js.undefined): SearchResourcesOutput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ResourceIdentifiers" -> ResourceIdentifiers.map { x => x.asInstanceOf[js.Any] },
         "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
-        "QueryErrors" -> QueryErrors.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "QueryErrors" -> QueryErrors.map { x => x.asInstanceOf[js.Any] },
+        "ResourceIdentifiers" -> ResourceIdentifiers.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SearchResourcesOutput]
     }
@@ -550,17 +550,17 @@ package resourcegroups {
 
   @js.native
   trait TagInput extends js.Object {
-    var Arn: js.UndefOr[GroupArn]
-    var Tags: js.UndefOr[Tags]
+    var Arn: GroupArn
+    var Tags: Tags
   }
 
   object TagInput {
     def apply(
-      Arn: js.UndefOr[GroupArn] = js.undefined,
-      Tags: js.UndefOr[Tags] = js.undefined): TagInput = {
+      Arn: GroupArn,
+      Tags: Tags): TagInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Arn" -> Arn.map { x => x.asInstanceOf[js.Any] },
-        "Tags" -> Tags.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Arn" -> Arn.asInstanceOf[js.Any],
+        "Tags" -> Tags.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TagInput]
     }
@@ -586,17 +586,17 @@ package resourcegroups {
 
   @js.native
   trait UntagInput extends js.Object {
-    var Arn: js.UndefOr[GroupArn]
-    var Keys: js.UndefOr[TagKeyList]
+    var Arn: GroupArn
+    var Keys: TagKeyList
   }
 
   object UntagInput {
     def apply(
-      Arn: js.UndefOr[GroupArn] = js.undefined,
-      Keys: js.UndefOr[TagKeyList] = js.undefined): UntagInput = {
+      Arn: GroupArn,
+      Keys: TagKeyList): UntagInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Arn" -> Arn.map { x => x.asInstanceOf[js.Any] },
-        "Keys" -> Keys.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Arn" -> Arn.asInstanceOf[js.Any],
+        "Keys" -> Keys.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UntagInput]
     }
@@ -622,16 +622,16 @@ package resourcegroups {
 
   @js.native
   trait UpdateGroupInput extends js.Object {
-    var GroupName: js.UndefOr[GroupName]
+    var GroupName: GroupName
     var Description: js.UndefOr[GroupDescription]
   }
 
   object UpdateGroupInput {
     def apply(
-      GroupName: js.UndefOr[GroupName] = js.undefined,
+      GroupName: GroupName,
       Description: js.UndefOr[GroupDescription] = js.undefined): UpdateGroupInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "GroupName" -> GroupName.map { x => x.asInstanceOf[js.Any] },
+        "GroupName" -> GroupName.asInstanceOf[js.Any],
         "Description" -> Description.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateGroupInput]
@@ -655,17 +655,17 @@ package resourcegroups {
 
   @js.native
   trait UpdateGroupQueryInput extends js.Object {
-    var GroupName: js.UndefOr[GroupName]
-    var ResourceQuery: js.UndefOr[ResourceQuery]
+    var GroupName: GroupName
+    var ResourceQuery: ResourceQuery
   }
 
   object UpdateGroupQueryInput {
     def apply(
-      GroupName: js.UndefOr[GroupName] = js.undefined,
-      ResourceQuery: js.UndefOr[ResourceQuery] = js.undefined): UpdateGroupQueryInput = {
+      GroupName: GroupName,
+      ResourceQuery: ResourceQuery): UpdateGroupQueryInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "GroupName" -> GroupName.map { x => x.asInstanceOf[js.Any] },
-        "ResourceQuery" -> ResourceQuery.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "GroupName" -> GroupName.asInstanceOf[js.Any],
+        "ResourceQuery" -> ResourceQuery.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateGroupQueryInput]
     }

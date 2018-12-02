@@ -36,29 +36,29 @@ package mobileanalytics {
    */
   @js.native
   trait Event extends js.Object {
-    var eventType: js.UndefOr[String50Chars]
-    var timestamp: js.UndefOr[ISO8601Timestamp]
+    var eventType: String50Chars
+    var timestamp: ISO8601Timestamp
     var attributes: js.UndefOr[MapOfStringToString]
-    var version: js.UndefOr[String10Chars]
-    var session: js.UndefOr[Session]
     var metrics: js.UndefOr[MapOfStringToNumber]
+    var session: js.UndefOr[Session]
+    var version: js.UndefOr[String10Chars]
   }
 
   object Event {
     def apply(
-      eventType: js.UndefOr[String50Chars] = js.undefined,
-      timestamp: js.UndefOr[ISO8601Timestamp] = js.undefined,
+      eventType: String50Chars,
+      timestamp: ISO8601Timestamp,
       attributes: js.UndefOr[MapOfStringToString] = js.undefined,
-      version: js.UndefOr[String10Chars] = js.undefined,
+      metrics: js.UndefOr[MapOfStringToNumber] = js.undefined,
       session: js.UndefOr[Session] = js.undefined,
-      metrics: js.UndefOr[MapOfStringToNumber] = js.undefined): Event = {
+      version: js.UndefOr[String10Chars] = js.undefined): Event = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "eventType" -> eventType.map { x => x.asInstanceOf[js.Any] },
-        "timestamp" -> timestamp.map { x => x.asInstanceOf[js.Any] },
+        "eventType" -> eventType.asInstanceOf[js.Any],
+        "timestamp" -> timestamp.asInstanceOf[js.Any],
         "attributes" -> attributes.map { x => x.asInstanceOf[js.Any] },
-        "version" -> version.map { x => x.asInstanceOf[js.Any] },
+        "metrics" -> metrics.map { x => x.asInstanceOf[js.Any] },
         "session" -> session.map { x => x.asInstanceOf[js.Any] },
-        "metrics" -> metrics.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "version" -> version.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Event]
     }
@@ -69,19 +69,19 @@ package mobileanalytics {
    */
   @js.native
   trait PutEventsInput extends js.Object {
-    var events: js.UndefOr[EventListDefinition]
-    var clientContext: js.UndefOr[String]
+    var clientContext: String
+    var events: EventListDefinition
     var clientContextEncoding: js.UndefOr[String]
   }
 
   object PutEventsInput {
     def apply(
-      events: js.UndefOr[EventListDefinition] = js.undefined,
-      clientContext: js.UndefOr[String] = js.undefined,
+      clientContext: String,
+      events: EventListDefinition,
       clientContextEncoding: js.UndefOr[String] = js.undefined): PutEventsInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "events" -> events.map { x => x.asInstanceOf[js.Any] },
-        "clientContext" -> clientContext.map { x => x.asInstanceOf[js.Any] },
+        "clientContext" -> clientContext.asInstanceOf[js.Any],
+        "events" -> events.asInstanceOf[js.Any],
         "clientContextEncoding" -> clientContextEncoding.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutEventsInput]
@@ -93,21 +93,21 @@ package mobileanalytics {
    */
   @js.native
   trait Session extends js.Object {
-    var id: js.UndefOr[String50Chars]
     var duration: js.UndefOr[Double]
+    var id: js.UndefOr[String50Chars]
     var startTimestamp: js.UndefOr[ISO8601Timestamp]
     var stopTimestamp: js.UndefOr[ISO8601Timestamp]
   }
 
   object Session {
     def apply(
-      id: js.UndefOr[String50Chars] = js.undefined,
       duration: js.UndefOr[Double] = js.undefined,
+      id: js.UndefOr[String50Chars] = js.undefined,
       startTimestamp: js.UndefOr[ISO8601Timestamp] = js.undefined,
       stopTimestamp: js.UndefOr[ISO8601Timestamp] = js.undefined): Session = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "id" -> id.map { x => x.asInstanceOf[js.Any] },
         "duration" -> duration.map { x => x.asInstanceOf[js.Any] },
+        "id" -> id.map { x => x.asInstanceOf[js.Any] },
         "startTimestamp" -> startTimestamp.map { x => x.asInstanceOf[js.Any] },
         "stopTimestamp" -> stopTimestamp.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 

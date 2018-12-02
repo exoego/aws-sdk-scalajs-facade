@@ -49,17 +49,17 @@ package serverlessapplicationrepository {
    */
   @js.native
   trait ApplicationDependencySummary extends js.Object {
-    var ApplicationId: js.UndefOr[__string]
-    var SemanticVersion: js.UndefOr[__string]
+    var ApplicationId: __string
+    var SemanticVersion: __string
   }
 
   object ApplicationDependencySummary {
     def apply(
-      ApplicationId: js.UndefOr[__string] = js.undefined,
-      SemanticVersion: js.UndefOr[__string] = js.undefined): ApplicationDependencySummary = {
+      ApplicationId: __string,
+      SemanticVersion: __string): ApplicationDependencySummary = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ApplicationId" -> ApplicationId.map { x => x.asInstanceOf[js.Any] },
-        "SemanticVersion" -> SemanticVersion.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ApplicationId" -> ApplicationId.asInstanceOf[js.Any],
+        "SemanticVersion" -> SemanticVersion.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ApplicationDependencySummary]
     }
@@ -70,19 +70,19 @@ package serverlessapplicationrepository {
    */
   @js.native
   trait ApplicationPolicyStatement extends js.Object {
-    var Actions: js.UndefOr[__listOf__string]
-    var Principals: js.UndefOr[__listOf__string]
+    var Actions: __listOf__string
+    var Principals: __listOf__string
     var StatementId: js.UndefOr[__string]
   }
 
   object ApplicationPolicyStatement {
     def apply(
-      Actions: js.UndefOr[__listOf__string] = js.undefined,
-      Principals: js.UndefOr[__listOf__string] = js.undefined,
+      Actions: __listOf__string,
+      Principals: __listOf__string,
       StatementId: js.UndefOr[__string] = js.undefined): ApplicationPolicyStatement = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Actions" -> Actions.map { x => x.asInstanceOf[js.Any] },
-        "Principals" -> Principals.map { x => x.asInstanceOf[js.Any] },
+        "Actions" -> Actions.asInstanceOf[js.Any],
+        "Principals" -> Principals.asInstanceOf[js.Any],
         "StatementId" -> StatementId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ApplicationPolicyStatement]
@@ -94,34 +94,34 @@ package serverlessapplicationrepository {
    */
   @js.native
   trait ApplicationSummary extends js.Object {
-    var ApplicationId: js.UndefOr[__string]
-    var Name: js.UndefOr[__string]
-    var Description: js.UndefOr[__string]
-    var Author: js.UndefOr[__string]
+    var ApplicationId: __string
+    var Author: __string
+    var Description: __string
+    var Name: __string
+    var CreationTime: js.UndefOr[__string]
     var HomePageUrl: js.UndefOr[__string]
     var Labels: js.UndefOr[__listOf__string]
-    var CreationTime: js.UndefOr[__string]
     var SpdxLicenseId: js.UndefOr[__string]
   }
 
   object ApplicationSummary {
     def apply(
-      ApplicationId: js.UndefOr[__string] = js.undefined,
-      Name: js.UndefOr[__string] = js.undefined,
-      Description: js.UndefOr[__string] = js.undefined,
-      Author: js.UndefOr[__string] = js.undefined,
+      ApplicationId: __string,
+      Author: __string,
+      Description: __string,
+      Name: __string,
+      CreationTime: js.UndefOr[__string] = js.undefined,
       HomePageUrl: js.UndefOr[__string] = js.undefined,
       Labels: js.UndefOr[__listOf__string] = js.undefined,
-      CreationTime: js.UndefOr[__string] = js.undefined,
       SpdxLicenseId: js.UndefOr[__string] = js.undefined): ApplicationSummary = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ApplicationId" -> ApplicationId.map { x => x.asInstanceOf[js.Any] },
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
-        "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
-        "Author" -> Author.map { x => x.asInstanceOf[js.Any] },
+        "ApplicationId" -> ApplicationId.asInstanceOf[js.Any],
+        "Author" -> Author.asInstanceOf[js.Any],
+        "Description" -> Description.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
+        "CreationTime" -> CreationTime.map { x => x.asInstanceOf[js.Any] },
         "HomePageUrl" -> HomePageUrl.map { x => x.asInstanceOf[js.Any] },
         "Labels" -> Labels.map { x => x.asInstanceOf[js.Any] },
-        "CreationTime" -> CreationTime.map { x => x.asInstanceOf[js.Any] },
         "SpdxLicenseId" -> SpdxLicenseId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ApplicationSummary]
@@ -142,53 +142,53 @@ package serverlessapplicationrepository {
 
   @js.native
   trait CreateApplicationRequest extends js.Object {
-    var Name: js.UndefOr[__string]
-    var SemanticVersion: js.UndefOr[__string]
-    var TemplateBody: js.UndefOr[__string]
-    var ReadmeBody: js.UndefOr[__string]
-    var Description: js.UndefOr[__string]
-    var LicenseUrl: js.UndefOr[__string]
-    var TemplateUrl: js.UndefOr[__string]
-    var SourceCodeUrl: js.UndefOr[__string]
-    var Author: js.UndefOr[__string]
-    var ReadmeUrl: js.UndefOr[__string]
+    var Author: __string
+    var Description: __string
+    var Name: __string
     var HomePageUrl: js.UndefOr[__string]
-    var LicenseBody: js.UndefOr[__string]
     var Labels: js.UndefOr[__listOf__string]
+    var LicenseBody: js.UndefOr[__string]
+    var LicenseUrl: js.UndefOr[__string]
+    var ReadmeBody: js.UndefOr[__string]
+    var ReadmeUrl: js.UndefOr[__string]
+    var SemanticVersion: js.UndefOr[__string]
+    var SourceCodeUrl: js.UndefOr[__string]
     var SpdxLicenseId: js.UndefOr[__string]
+    var TemplateBody: js.UndefOr[__string]
+    var TemplateUrl: js.UndefOr[__string]
   }
 
   object CreateApplicationRequest {
     def apply(
-      Name: js.UndefOr[__string] = js.undefined,
-      SemanticVersion: js.UndefOr[__string] = js.undefined,
-      TemplateBody: js.UndefOr[__string] = js.undefined,
-      ReadmeBody: js.UndefOr[__string] = js.undefined,
-      Description: js.UndefOr[__string] = js.undefined,
-      LicenseUrl: js.UndefOr[__string] = js.undefined,
-      TemplateUrl: js.UndefOr[__string] = js.undefined,
-      SourceCodeUrl: js.UndefOr[__string] = js.undefined,
-      Author: js.UndefOr[__string] = js.undefined,
-      ReadmeUrl: js.UndefOr[__string] = js.undefined,
+      Author: __string,
+      Description: __string,
+      Name: __string,
       HomePageUrl: js.UndefOr[__string] = js.undefined,
-      LicenseBody: js.UndefOr[__string] = js.undefined,
       Labels: js.UndefOr[__listOf__string] = js.undefined,
-      SpdxLicenseId: js.UndefOr[__string] = js.undefined): CreateApplicationRequest = {
+      LicenseBody: js.UndefOr[__string] = js.undefined,
+      LicenseUrl: js.UndefOr[__string] = js.undefined,
+      ReadmeBody: js.UndefOr[__string] = js.undefined,
+      ReadmeUrl: js.UndefOr[__string] = js.undefined,
+      SemanticVersion: js.UndefOr[__string] = js.undefined,
+      SourceCodeUrl: js.UndefOr[__string] = js.undefined,
+      SpdxLicenseId: js.UndefOr[__string] = js.undefined,
+      TemplateBody: js.UndefOr[__string] = js.undefined,
+      TemplateUrl: js.UndefOr[__string] = js.undefined): CreateApplicationRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
-        "SemanticVersion" -> SemanticVersion.map { x => x.asInstanceOf[js.Any] },
-        "TemplateBody" -> TemplateBody.map { x => x.asInstanceOf[js.Any] },
-        "ReadmeBody" -> ReadmeBody.map { x => x.asInstanceOf[js.Any] },
-        "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
-        "LicenseUrl" -> LicenseUrl.map { x => x.asInstanceOf[js.Any] },
-        "TemplateUrl" -> TemplateUrl.map { x => x.asInstanceOf[js.Any] },
-        "SourceCodeUrl" -> SourceCodeUrl.map { x => x.asInstanceOf[js.Any] },
-        "Author" -> Author.map { x => x.asInstanceOf[js.Any] },
-        "ReadmeUrl" -> ReadmeUrl.map { x => x.asInstanceOf[js.Any] },
+        "Author" -> Author.asInstanceOf[js.Any],
+        "Description" -> Description.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
         "HomePageUrl" -> HomePageUrl.map { x => x.asInstanceOf[js.Any] },
-        "LicenseBody" -> LicenseBody.map { x => x.asInstanceOf[js.Any] },
         "Labels" -> Labels.map { x => x.asInstanceOf[js.Any] },
-        "SpdxLicenseId" -> SpdxLicenseId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "LicenseBody" -> LicenseBody.map { x => x.asInstanceOf[js.Any] },
+        "LicenseUrl" -> LicenseUrl.map { x => x.asInstanceOf[js.Any] },
+        "ReadmeBody" -> ReadmeBody.map { x => x.asInstanceOf[js.Any] },
+        "ReadmeUrl" -> ReadmeUrl.map { x => x.asInstanceOf[js.Any] },
+        "SemanticVersion" -> SemanticVersion.map { x => x.asInstanceOf[js.Any] },
+        "SourceCodeUrl" -> SourceCodeUrl.map { x => x.asInstanceOf[js.Any] },
+        "SpdxLicenseId" -> SpdxLicenseId.map { x => x.asInstanceOf[js.Any] },
+        "TemplateBody" -> TemplateBody.map { x => x.asInstanceOf[js.Any] },
+        "TemplateUrl" -> TemplateUrl.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateApplicationRequest]
     }
@@ -197,43 +197,43 @@ package serverlessapplicationrepository {
   @js.native
   trait CreateApplicationResponse extends js.Object {
     var ApplicationId: js.UndefOr[__string]
-    var Name: js.UndefOr[__string]
-    var Version: js.UndefOr[Version]
-    var Description: js.UndefOr[__string]
-    var LicenseUrl: js.UndefOr[__string]
     var Author: js.UndefOr[__string]
-    var ReadmeUrl: js.UndefOr[__string]
+    var CreationTime: js.UndefOr[__string]
+    var Description: js.UndefOr[__string]
     var HomePageUrl: js.UndefOr[__string]
     var Labels: js.UndefOr[__listOf__string]
-    var CreationTime: js.UndefOr[__string]
+    var LicenseUrl: js.UndefOr[__string]
+    var Name: js.UndefOr[__string]
+    var ReadmeUrl: js.UndefOr[__string]
     var SpdxLicenseId: js.UndefOr[__string]
+    var Version: js.UndefOr[Version]
   }
 
   object CreateApplicationResponse {
     def apply(
       ApplicationId: js.UndefOr[__string] = js.undefined,
-      Name: js.UndefOr[__string] = js.undefined,
-      Version: js.UndefOr[Version] = js.undefined,
-      Description: js.UndefOr[__string] = js.undefined,
-      LicenseUrl: js.UndefOr[__string] = js.undefined,
       Author: js.UndefOr[__string] = js.undefined,
-      ReadmeUrl: js.UndefOr[__string] = js.undefined,
+      CreationTime: js.UndefOr[__string] = js.undefined,
+      Description: js.UndefOr[__string] = js.undefined,
       HomePageUrl: js.UndefOr[__string] = js.undefined,
       Labels: js.UndefOr[__listOf__string] = js.undefined,
-      CreationTime: js.UndefOr[__string] = js.undefined,
-      SpdxLicenseId: js.UndefOr[__string] = js.undefined): CreateApplicationResponse = {
+      LicenseUrl: js.UndefOr[__string] = js.undefined,
+      Name: js.UndefOr[__string] = js.undefined,
+      ReadmeUrl: js.UndefOr[__string] = js.undefined,
+      SpdxLicenseId: js.UndefOr[__string] = js.undefined,
+      Version: js.UndefOr[Version] = js.undefined): CreateApplicationResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ApplicationId" -> ApplicationId.map { x => x.asInstanceOf[js.Any] },
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
-        "Version" -> Version.map { x => x.asInstanceOf[js.Any] },
-        "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
-        "LicenseUrl" -> LicenseUrl.map { x => x.asInstanceOf[js.Any] },
         "Author" -> Author.map { x => x.asInstanceOf[js.Any] },
-        "ReadmeUrl" -> ReadmeUrl.map { x => x.asInstanceOf[js.Any] },
+        "CreationTime" -> CreationTime.map { x => x.asInstanceOf[js.Any] },
+        "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
         "HomePageUrl" -> HomePageUrl.map { x => x.asInstanceOf[js.Any] },
         "Labels" -> Labels.map { x => x.asInstanceOf[js.Any] },
-        "CreationTime" -> CreationTime.map { x => x.asInstanceOf[js.Any] },
-        "SpdxLicenseId" -> SpdxLicenseId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "LicenseUrl" -> LicenseUrl.map { x => x.asInstanceOf[js.Any] },
+        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
+        "ReadmeUrl" -> ReadmeUrl.map { x => x.asInstanceOf[js.Any] },
+        "SpdxLicenseId" -> SpdxLicenseId.map { x => x.asInstanceOf[js.Any] },
+        "Version" -> Version.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateApplicationResponse]
     }
@@ -241,26 +241,26 @@ package serverlessapplicationrepository {
 
   @js.native
   trait CreateApplicationVersionRequest extends js.Object {
-    var ApplicationId: js.UndefOr[__string]
-    var SemanticVersion: js.UndefOr[__string]
+    var ApplicationId: __string
+    var SemanticVersion: __string
+    var SourceCodeUrl: js.UndefOr[__string]
     var TemplateBody: js.UndefOr[__string]
     var TemplateUrl: js.UndefOr[__string]
-    var SourceCodeUrl: js.UndefOr[__string]
   }
 
   object CreateApplicationVersionRequest {
     def apply(
-      ApplicationId: js.UndefOr[__string] = js.undefined,
-      SemanticVersion: js.UndefOr[__string] = js.undefined,
+      ApplicationId: __string,
+      SemanticVersion: __string,
+      SourceCodeUrl: js.UndefOr[__string] = js.undefined,
       TemplateBody: js.UndefOr[__string] = js.undefined,
-      TemplateUrl: js.UndefOr[__string] = js.undefined,
-      SourceCodeUrl: js.UndefOr[__string] = js.undefined): CreateApplicationVersionRequest = {
+      TemplateUrl: js.UndefOr[__string] = js.undefined): CreateApplicationVersionRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ApplicationId" -> ApplicationId.map { x => x.asInstanceOf[js.Any] },
-        "SemanticVersion" -> SemanticVersion.map { x => x.asInstanceOf[js.Any] },
+        "ApplicationId" -> ApplicationId.asInstanceOf[js.Any],
+        "SemanticVersion" -> SemanticVersion.asInstanceOf[js.Any],
+        "SourceCodeUrl" -> SourceCodeUrl.map { x => x.asInstanceOf[js.Any] },
         "TemplateBody" -> TemplateBody.map { x => x.asInstanceOf[js.Any] },
-        "TemplateUrl" -> TemplateUrl.map { x => x.asInstanceOf[js.Any] },
-        "SourceCodeUrl" -> SourceCodeUrl.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "TemplateUrl" -> TemplateUrl.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateApplicationVersionRequest]
     }
@@ -269,34 +269,34 @@ package serverlessapplicationrepository {
   @js.native
   trait CreateApplicationVersionResponse extends js.Object {
     var ApplicationId: js.UndefOr[__string]
-    var SemanticVersion: js.UndefOr[__string]
+    var CreationTime: js.UndefOr[__string]
     var ParameterDefinitions: js.UndefOr[__listOfParameterDefinition]
-    var TemplateUrl: js.UndefOr[__string]
-    var SourceCodeUrl: js.UndefOr[__string]
     var RequiredCapabilities: js.UndefOr[__listOfCapability]
     var ResourcesSupported: js.UndefOr[__boolean]
-    var CreationTime: js.UndefOr[__string]
+    var SemanticVersion: js.UndefOr[__string]
+    var SourceCodeUrl: js.UndefOr[__string]
+    var TemplateUrl: js.UndefOr[__string]
   }
 
   object CreateApplicationVersionResponse {
     def apply(
       ApplicationId: js.UndefOr[__string] = js.undefined,
-      SemanticVersion: js.UndefOr[__string] = js.undefined,
+      CreationTime: js.UndefOr[__string] = js.undefined,
       ParameterDefinitions: js.UndefOr[__listOfParameterDefinition] = js.undefined,
-      TemplateUrl: js.UndefOr[__string] = js.undefined,
-      SourceCodeUrl: js.UndefOr[__string] = js.undefined,
       RequiredCapabilities: js.UndefOr[__listOfCapability] = js.undefined,
       ResourcesSupported: js.UndefOr[__boolean] = js.undefined,
-      CreationTime: js.UndefOr[__string] = js.undefined): CreateApplicationVersionResponse = {
+      SemanticVersion: js.UndefOr[__string] = js.undefined,
+      SourceCodeUrl: js.UndefOr[__string] = js.undefined,
+      TemplateUrl: js.UndefOr[__string] = js.undefined): CreateApplicationVersionResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ApplicationId" -> ApplicationId.map { x => x.asInstanceOf[js.Any] },
-        "SemanticVersion" -> SemanticVersion.map { x => x.asInstanceOf[js.Any] },
+        "CreationTime" -> CreationTime.map { x => x.asInstanceOf[js.Any] },
         "ParameterDefinitions" -> ParameterDefinitions.map { x => x.asInstanceOf[js.Any] },
-        "TemplateUrl" -> TemplateUrl.map { x => x.asInstanceOf[js.Any] },
-        "SourceCodeUrl" -> SourceCodeUrl.map { x => x.asInstanceOf[js.Any] },
         "RequiredCapabilities" -> RequiredCapabilities.map { x => x.asInstanceOf[js.Any] },
         "ResourcesSupported" -> ResourcesSupported.map { x => x.asInstanceOf[js.Any] },
-        "CreationTime" -> CreationTime.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "SemanticVersion" -> SemanticVersion.map { x => x.asInstanceOf[js.Any] },
+        "SourceCodeUrl" -> SourceCodeUrl.map { x => x.asInstanceOf[js.Any] },
+        "TemplateUrl" -> TemplateUrl.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateApplicationVersionResponse]
     }
@@ -304,50 +304,50 @@ package serverlessapplicationrepository {
 
   @js.native
   trait CreateCloudFormationChangeSetRequest extends js.Object {
-    var RollbackConfiguration: js.UndefOr[RollbackConfiguration]
-    var TemplateId: js.UndefOr[__string]
-    var ApplicationId: js.UndefOr[__string]
-    var SemanticVersion: js.UndefOr[__string]
-    var NotificationArns: js.UndefOr[__listOf__string]
+    var ApplicationId: __string
+    var StackName: __string
+    var Capabilities: js.UndefOr[__listOf__string]
+    var ChangeSetName: js.UndefOr[__string]
     var ClientToken: js.UndefOr[__string]
     var Description: js.UndefOr[__string]
-    var ResourceTypes: js.UndefOr[__listOf__string]
-    var StackName: js.UndefOr[__string]
-    var Tags: js.UndefOr[__listOfTag]
+    var NotificationArns: js.UndefOr[__listOf__string]
     var ParameterOverrides: js.UndefOr[__listOfParameterValue]
-    var ChangeSetName: js.UndefOr[__string]
-    var Capabilities: js.UndefOr[__listOf__string]
+    var ResourceTypes: js.UndefOr[__listOf__string]
+    var RollbackConfiguration: js.UndefOr[RollbackConfiguration]
+    var SemanticVersion: js.UndefOr[__string]
+    var Tags: js.UndefOr[__listOfTag]
+    var TemplateId: js.UndefOr[__string]
   }
 
   object CreateCloudFormationChangeSetRequest {
     def apply(
-      RollbackConfiguration: js.UndefOr[RollbackConfiguration] = js.undefined,
-      TemplateId: js.UndefOr[__string] = js.undefined,
-      ApplicationId: js.UndefOr[__string] = js.undefined,
-      SemanticVersion: js.UndefOr[__string] = js.undefined,
-      NotificationArns: js.UndefOr[__listOf__string] = js.undefined,
+      ApplicationId: __string,
+      StackName: __string,
+      Capabilities: js.UndefOr[__listOf__string] = js.undefined,
+      ChangeSetName: js.UndefOr[__string] = js.undefined,
       ClientToken: js.UndefOr[__string] = js.undefined,
       Description: js.UndefOr[__string] = js.undefined,
-      ResourceTypes: js.UndefOr[__listOf__string] = js.undefined,
-      StackName: js.UndefOr[__string] = js.undefined,
-      Tags: js.UndefOr[__listOfTag] = js.undefined,
+      NotificationArns: js.UndefOr[__listOf__string] = js.undefined,
       ParameterOverrides: js.UndefOr[__listOfParameterValue] = js.undefined,
-      ChangeSetName: js.UndefOr[__string] = js.undefined,
-      Capabilities: js.UndefOr[__listOf__string] = js.undefined): CreateCloudFormationChangeSetRequest = {
+      ResourceTypes: js.UndefOr[__listOf__string] = js.undefined,
+      RollbackConfiguration: js.UndefOr[RollbackConfiguration] = js.undefined,
+      SemanticVersion: js.UndefOr[__string] = js.undefined,
+      Tags: js.UndefOr[__listOfTag] = js.undefined,
+      TemplateId: js.UndefOr[__string] = js.undefined): CreateCloudFormationChangeSetRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "RollbackConfiguration" -> RollbackConfiguration.map { x => x.asInstanceOf[js.Any] },
-        "TemplateId" -> TemplateId.map { x => x.asInstanceOf[js.Any] },
-        "ApplicationId" -> ApplicationId.map { x => x.asInstanceOf[js.Any] },
-        "SemanticVersion" -> SemanticVersion.map { x => x.asInstanceOf[js.Any] },
-        "NotificationArns" -> NotificationArns.map { x => x.asInstanceOf[js.Any] },
+        "ApplicationId" -> ApplicationId.asInstanceOf[js.Any],
+        "StackName" -> StackName.asInstanceOf[js.Any],
+        "Capabilities" -> Capabilities.map { x => x.asInstanceOf[js.Any] },
+        "ChangeSetName" -> ChangeSetName.map { x => x.asInstanceOf[js.Any] },
         "ClientToken" -> ClientToken.map { x => x.asInstanceOf[js.Any] },
         "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
-        "ResourceTypes" -> ResourceTypes.map { x => x.asInstanceOf[js.Any] },
-        "StackName" -> StackName.map { x => x.asInstanceOf[js.Any] },
-        "Tags" -> Tags.map { x => x.asInstanceOf[js.Any] },
+        "NotificationArns" -> NotificationArns.map { x => x.asInstanceOf[js.Any] },
         "ParameterOverrides" -> ParameterOverrides.map { x => x.asInstanceOf[js.Any] },
-        "ChangeSetName" -> ChangeSetName.map { x => x.asInstanceOf[js.Any] },
-        "Capabilities" -> Capabilities.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ResourceTypes" -> ResourceTypes.map { x => x.asInstanceOf[js.Any] },
+        "RollbackConfiguration" -> RollbackConfiguration.map { x => x.asInstanceOf[js.Any] },
+        "SemanticVersion" -> SemanticVersion.map { x => x.asInstanceOf[js.Any] },
+        "Tags" -> Tags.map { x => x.asInstanceOf[js.Any] },
+        "TemplateId" -> TemplateId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateCloudFormationChangeSetRequest]
     }
@@ -379,16 +379,16 @@ package serverlessapplicationrepository {
 
   @js.native
   trait CreateCloudFormationTemplateRequest extends js.Object {
-    var ApplicationId: js.UndefOr[__string]
+    var ApplicationId: __string
     var SemanticVersion: js.UndefOr[__string]
   }
 
   object CreateCloudFormationTemplateRequest {
     def apply(
-      ApplicationId: js.UndefOr[__string] = js.undefined,
+      ApplicationId: __string,
       SemanticVersion: js.UndefOr[__string] = js.undefined): CreateCloudFormationTemplateRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ApplicationId" -> ApplicationId.map { x => x.asInstanceOf[js.Any] },
+        "ApplicationId" -> ApplicationId.asInstanceOf[js.Any],
         "SemanticVersion" -> SemanticVersion.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateCloudFormationTemplateRequest]
@@ -397,32 +397,32 @@ package serverlessapplicationrepository {
 
   @js.native
   trait CreateCloudFormationTemplateResponse extends js.Object {
-    var TemplateId: js.UndefOr[__string]
     var ApplicationId: js.UndefOr[__string]
-    var SemanticVersion: js.UndefOr[__string]
-    var TemplateUrl: js.UndefOr[__string]
-    var ExpirationTime: js.UndefOr[__string]
-    var Status: js.UndefOr[Status]
     var CreationTime: js.UndefOr[__string]
+    var ExpirationTime: js.UndefOr[__string]
+    var SemanticVersion: js.UndefOr[__string]
+    var Status: js.UndefOr[Status]
+    var TemplateId: js.UndefOr[__string]
+    var TemplateUrl: js.UndefOr[__string]
   }
 
   object CreateCloudFormationTemplateResponse {
     def apply(
-      TemplateId: js.UndefOr[__string] = js.undefined,
       ApplicationId: js.UndefOr[__string] = js.undefined,
-      SemanticVersion: js.UndefOr[__string] = js.undefined,
-      TemplateUrl: js.UndefOr[__string] = js.undefined,
+      CreationTime: js.UndefOr[__string] = js.undefined,
       ExpirationTime: js.UndefOr[__string] = js.undefined,
+      SemanticVersion: js.UndefOr[__string] = js.undefined,
       Status: js.UndefOr[Status] = js.undefined,
-      CreationTime: js.UndefOr[__string] = js.undefined): CreateCloudFormationTemplateResponse = {
+      TemplateId: js.UndefOr[__string] = js.undefined,
+      TemplateUrl: js.UndefOr[__string] = js.undefined): CreateCloudFormationTemplateResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "TemplateId" -> TemplateId.map { x => x.asInstanceOf[js.Any] },
         "ApplicationId" -> ApplicationId.map { x => x.asInstanceOf[js.Any] },
-        "SemanticVersion" -> SemanticVersion.map { x => x.asInstanceOf[js.Any] },
-        "TemplateUrl" -> TemplateUrl.map { x => x.asInstanceOf[js.Any] },
+        "CreationTime" -> CreationTime.map { x => x.asInstanceOf[js.Any] },
         "ExpirationTime" -> ExpirationTime.map { x => x.asInstanceOf[js.Any] },
+        "SemanticVersion" -> SemanticVersion.map { x => x.asInstanceOf[js.Any] },
         "Status" -> Status.map { x => x.asInstanceOf[js.Any] },
-        "CreationTime" -> CreationTime.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "TemplateId" -> TemplateId.map { x => x.asInstanceOf[js.Any] },
+        "TemplateUrl" -> TemplateUrl.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateCloudFormationTemplateResponse]
     }
@@ -430,14 +430,14 @@ package serverlessapplicationrepository {
 
   @js.native
   trait DeleteApplicationRequest extends js.Object {
-    var ApplicationId: js.UndefOr[__string]
+    var ApplicationId: __string
   }
 
   object DeleteApplicationRequest {
     def apply(
-      ApplicationId: js.UndefOr[__string] = js.undefined): DeleteApplicationRequest = {
+      ApplicationId: __string): DeleteApplicationRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ApplicationId" -> ApplicationId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ApplicationId" -> ApplicationId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteApplicationRequest]
     }
@@ -445,14 +445,14 @@ package serverlessapplicationrepository {
 
   @js.native
   trait GetApplicationPolicyRequest extends js.Object {
-    var ApplicationId: js.UndefOr[__string]
+    var ApplicationId: __string
   }
 
   object GetApplicationPolicyRequest {
     def apply(
-      ApplicationId: js.UndefOr[__string] = js.undefined): GetApplicationPolicyRequest = {
+      ApplicationId: __string): GetApplicationPolicyRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ApplicationId" -> ApplicationId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ApplicationId" -> ApplicationId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetApplicationPolicyRequest]
     }
@@ -475,16 +475,16 @@ package serverlessapplicationrepository {
 
   @js.native
   trait GetApplicationRequest extends js.Object {
-    var ApplicationId: js.UndefOr[__string]
+    var ApplicationId: __string
     var SemanticVersion: js.UndefOr[__string]
   }
 
   object GetApplicationRequest {
     def apply(
-      ApplicationId: js.UndefOr[__string] = js.undefined,
+      ApplicationId: __string,
       SemanticVersion: js.UndefOr[__string] = js.undefined): GetApplicationRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ApplicationId" -> ApplicationId.map { x => x.asInstanceOf[js.Any] },
+        "ApplicationId" -> ApplicationId.asInstanceOf[js.Any],
         "SemanticVersion" -> SemanticVersion.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetApplicationRequest]
@@ -494,43 +494,43 @@ package serverlessapplicationrepository {
   @js.native
   trait GetApplicationResponse extends js.Object {
     var ApplicationId: js.UndefOr[__string]
-    var Name: js.UndefOr[__string]
-    var Version: js.UndefOr[Version]
-    var Description: js.UndefOr[__string]
-    var LicenseUrl: js.UndefOr[__string]
     var Author: js.UndefOr[__string]
-    var ReadmeUrl: js.UndefOr[__string]
+    var CreationTime: js.UndefOr[__string]
+    var Description: js.UndefOr[__string]
     var HomePageUrl: js.UndefOr[__string]
     var Labels: js.UndefOr[__listOf__string]
-    var CreationTime: js.UndefOr[__string]
+    var LicenseUrl: js.UndefOr[__string]
+    var Name: js.UndefOr[__string]
+    var ReadmeUrl: js.UndefOr[__string]
     var SpdxLicenseId: js.UndefOr[__string]
+    var Version: js.UndefOr[Version]
   }
 
   object GetApplicationResponse {
     def apply(
       ApplicationId: js.UndefOr[__string] = js.undefined,
-      Name: js.UndefOr[__string] = js.undefined,
-      Version: js.UndefOr[Version] = js.undefined,
-      Description: js.UndefOr[__string] = js.undefined,
-      LicenseUrl: js.UndefOr[__string] = js.undefined,
       Author: js.UndefOr[__string] = js.undefined,
-      ReadmeUrl: js.UndefOr[__string] = js.undefined,
+      CreationTime: js.UndefOr[__string] = js.undefined,
+      Description: js.UndefOr[__string] = js.undefined,
       HomePageUrl: js.UndefOr[__string] = js.undefined,
       Labels: js.UndefOr[__listOf__string] = js.undefined,
-      CreationTime: js.UndefOr[__string] = js.undefined,
-      SpdxLicenseId: js.UndefOr[__string] = js.undefined): GetApplicationResponse = {
+      LicenseUrl: js.UndefOr[__string] = js.undefined,
+      Name: js.UndefOr[__string] = js.undefined,
+      ReadmeUrl: js.UndefOr[__string] = js.undefined,
+      SpdxLicenseId: js.UndefOr[__string] = js.undefined,
+      Version: js.UndefOr[Version] = js.undefined): GetApplicationResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ApplicationId" -> ApplicationId.map { x => x.asInstanceOf[js.Any] },
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
-        "Version" -> Version.map { x => x.asInstanceOf[js.Any] },
-        "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
-        "LicenseUrl" -> LicenseUrl.map { x => x.asInstanceOf[js.Any] },
         "Author" -> Author.map { x => x.asInstanceOf[js.Any] },
-        "ReadmeUrl" -> ReadmeUrl.map { x => x.asInstanceOf[js.Any] },
+        "CreationTime" -> CreationTime.map { x => x.asInstanceOf[js.Any] },
+        "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
         "HomePageUrl" -> HomePageUrl.map { x => x.asInstanceOf[js.Any] },
         "Labels" -> Labels.map { x => x.asInstanceOf[js.Any] },
-        "CreationTime" -> CreationTime.map { x => x.asInstanceOf[js.Any] },
-        "SpdxLicenseId" -> SpdxLicenseId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "LicenseUrl" -> LicenseUrl.map { x => x.asInstanceOf[js.Any] },
+        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
+        "ReadmeUrl" -> ReadmeUrl.map { x => x.asInstanceOf[js.Any] },
+        "SpdxLicenseId" -> SpdxLicenseId.map { x => x.asInstanceOf[js.Any] },
+        "Version" -> Version.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetApplicationResponse]
     }
@@ -538,17 +538,17 @@ package serverlessapplicationrepository {
 
   @js.native
   trait GetCloudFormationTemplateRequest extends js.Object {
-    var ApplicationId: js.UndefOr[__string]
-    var TemplateId: js.UndefOr[__string]
+    var ApplicationId: __string
+    var TemplateId: __string
   }
 
   object GetCloudFormationTemplateRequest {
     def apply(
-      ApplicationId: js.UndefOr[__string] = js.undefined,
-      TemplateId: js.UndefOr[__string] = js.undefined): GetCloudFormationTemplateRequest = {
+      ApplicationId: __string,
+      TemplateId: __string): GetCloudFormationTemplateRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ApplicationId" -> ApplicationId.map { x => x.asInstanceOf[js.Any] },
-        "TemplateId" -> TemplateId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ApplicationId" -> ApplicationId.asInstanceOf[js.Any],
+        "TemplateId" -> TemplateId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetCloudFormationTemplateRequest]
     }
@@ -556,32 +556,32 @@ package serverlessapplicationrepository {
 
   @js.native
   trait GetCloudFormationTemplateResponse extends js.Object {
-    var TemplateId: js.UndefOr[__string]
     var ApplicationId: js.UndefOr[__string]
-    var SemanticVersion: js.UndefOr[__string]
-    var TemplateUrl: js.UndefOr[__string]
-    var ExpirationTime: js.UndefOr[__string]
-    var Status: js.UndefOr[Status]
     var CreationTime: js.UndefOr[__string]
+    var ExpirationTime: js.UndefOr[__string]
+    var SemanticVersion: js.UndefOr[__string]
+    var Status: js.UndefOr[Status]
+    var TemplateId: js.UndefOr[__string]
+    var TemplateUrl: js.UndefOr[__string]
   }
 
   object GetCloudFormationTemplateResponse {
     def apply(
-      TemplateId: js.UndefOr[__string] = js.undefined,
       ApplicationId: js.UndefOr[__string] = js.undefined,
-      SemanticVersion: js.UndefOr[__string] = js.undefined,
-      TemplateUrl: js.UndefOr[__string] = js.undefined,
+      CreationTime: js.UndefOr[__string] = js.undefined,
       ExpirationTime: js.UndefOr[__string] = js.undefined,
+      SemanticVersion: js.UndefOr[__string] = js.undefined,
       Status: js.UndefOr[Status] = js.undefined,
-      CreationTime: js.UndefOr[__string] = js.undefined): GetCloudFormationTemplateResponse = {
+      TemplateId: js.UndefOr[__string] = js.undefined,
+      TemplateUrl: js.UndefOr[__string] = js.undefined): GetCloudFormationTemplateResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "TemplateId" -> TemplateId.map { x => x.asInstanceOf[js.Any] },
         "ApplicationId" -> ApplicationId.map { x => x.asInstanceOf[js.Any] },
-        "SemanticVersion" -> SemanticVersion.map { x => x.asInstanceOf[js.Any] },
-        "TemplateUrl" -> TemplateUrl.map { x => x.asInstanceOf[js.Any] },
+        "CreationTime" -> CreationTime.map { x => x.asInstanceOf[js.Any] },
         "ExpirationTime" -> ExpirationTime.map { x => x.asInstanceOf[js.Any] },
+        "SemanticVersion" -> SemanticVersion.map { x => x.asInstanceOf[js.Any] },
         "Status" -> Status.map { x => x.asInstanceOf[js.Any] },
-        "CreationTime" -> CreationTime.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "TemplateId" -> TemplateId.map { x => x.asInstanceOf[js.Any] },
+        "TemplateUrl" -> TemplateUrl.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetCloudFormationTemplateResponse]
     }
@@ -589,7 +589,7 @@ package serverlessapplicationrepository {
 
   @js.native
   trait ListApplicationDependenciesRequest extends js.Object {
-    var ApplicationId: js.UndefOr[__string]
+    var ApplicationId: __string
     var MaxItems: js.UndefOr[MaxItems]
     var NextToken: js.UndefOr[__string]
     var SemanticVersion: js.UndefOr[__string]
@@ -597,12 +597,12 @@ package serverlessapplicationrepository {
 
   object ListApplicationDependenciesRequest {
     def apply(
-      ApplicationId: js.UndefOr[__string] = js.undefined,
+      ApplicationId: __string,
       MaxItems: js.UndefOr[MaxItems] = js.undefined,
       NextToken: js.UndefOr[__string] = js.undefined,
       SemanticVersion: js.UndefOr[__string] = js.undefined): ListApplicationDependenciesRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ApplicationId" -> ApplicationId.map { x => x.asInstanceOf[js.Any] },
+        "ApplicationId" -> ApplicationId.asInstanceOf[js.Any],
         "MaxItems" -> MaxItems.map { x => x.asInstanceOf[js.Any] },
         "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
         "SemanticVersion" -> SemanticVersion.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
@@ -631,18 +631,18 @@ package serverlessapplicationrepository {
 
   @js.native
   trait ListApplicationVersionsRequest extends js.Object {
-    var ApplicationId: js.UndefOr[__string]
+    var ApplicationId: __string
     var MaxItems: js.UndefOr[MaxItems]
     var NextToken: js.UndefOr[__string]
   }
 
   object ListApplicationVersionsRequest {
     def apply(
-      ApplicationId: js.UndefOr[__string] = js.undefined,
+      ApplicationId: __string,
       MaxItems: js.UndefOr[MaxItems] = js.undefined,
       NextToken: js.UndefOr[__string] = js.undefined): ListApplicationVersionsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ApplicationId" -> ApplicationId.map { x => x.asInstanceOf[js.Any] },
+        "ApplicationId" -> ApplicationId.asInstanceOf[js.Any],
         "MaxItems" -> MaxItems.map { x => x.asInstanceOf[js.Any] },
         "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
@@ -709,49 +709,49 @@ package serverlessapplicationrepository {
    */
   @js.native
   trait ParameterDefinition extends js.Object {
-    var Name: js.UndefOr[__string]
-    var MinLength: js.UndefOr[__integer]
-    var ReferencedByResources: js.UndefOr[__listOf__string]
-    var Description: js.UndefOr[__string]
-    var ConstraintDescription: js.UndefOr[__string]
+    var Name: __string
+    var ReferencedByResources: __listOf__string
     var AllowedPattern: js.UndefOr[__string]
-    var NoEcho: js.UndefOr[__boolean]
     var AllowedValues: js.UndefOr[__listOf__string]
+    var ConstraintDescription: js.UndefOr[__string]
     var DefaultValue: js.UndefOr[__string]
+    var Description: js.UndefOr[__string]
     var MaxLength: js.UndefOr[__integer]
-    var MinValue: js.UndefOr[__integer]
     var MaxValue: js.UndefOr[__integer]
+    var MinLength: js.UndefOr[__integer]
+    var MinValue: js.UndefOr[__integer]
+    var NoEcho: js.UndefOr[__boolean]
     var Type: js.UndefOr[__string]
   }
 
   object ParameterDefinition {
     def apply(
-      Name: js.UndefOr[__string] = js.undefined,
-      MinLength: js.UndefOr[__integer] = js.undefined,
-      ReferencedByResources: js.UndefOr[__listOf__string] = js.undefined,
-      Description: js.UndefOr[__string] = js.undefined,
-      ConstraintDescription: js.UndefOr[__string] = js.undefined,
+      Name: __string,
+      ReferencedByResources: __listOf__string,
       AllowedPattern: js.UndefOr[__string] = js.undefined,
-      NoEcho: js.UndefOr[__boolean] = js.undefined,
       AllowedValues: js.UndefOr[__listOf__string] = js.undefined,
+      ConstraintDescription: js.UndefOr[__string] = js.undefined,
       DefaultValue: js.UndefOr[__string] = js.undefined,
+      Description: js.UndefOr[__string] = js.undefined,
       MaxLength: js.UndefOr[__integer] = js.undefined,
-      MinValue: js.UndefOr[__integer] = js.undefined,
       MaxValue: js.UndefOr[__integer] = js.undefined,
+      MinLength: js.UndefOr[__integer] = js.undefined,
+      MinValue: js.UndefOr[__integer] = js.undefined,
+      NoEcho: js.UndefOr[__boolean] = js.undefined,
       Type: js.UndefOr[__string] = js.undefined): ParameterDefinition = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
-        "MinLength" -> MinLength.map { x => x.asInstanceOf[js.Any] },
-        "ReferencedByResources" -> ReferencedByResources.map { x => x.asInstanceOf[js.Any] },
-        "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
-        "ConstraintDescription" -> ConstraintDescription.map { x => x.asInstanceOf[js.Any] },
+        "Name" -> Name.asInstanceOf[js.Any],
+        "ReferencedByResources" -> ReferencedByResources.asInstanceOf[js.Any],
         "AllowedPattern" -> AllowedPattern.map { x => x.asInstanceOf[js.Any] },
-        "NoEcho" -> NoEcho.map { x => x.asInstanceOf[js.Any] },
         "AllowedValues" -> AllowedValues.map { x => x.asInstanceOf[js.Any] },
+        "ConstraintDescription" -> ConstraintDescription.map { x => x.asInstanceOf[js.Any] },
         "DefaultValue" -> DefaultValue.map { x => x.asInstanceOf[js.Any] },
+        "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
         "MaxLength" -> MaxLength.map { x => x.asInstanceOf[js.Any] },
-        "MinValue" -> MinValue.map { x => x.asInstanceOf[js.Any] },
         "MaxValue" -> MaxValue.map { x => x.asInstanceOf[js.Any] },
+        "MinLength" -> MinLength.map { x => x.asInstanceOf[js.Any] },
+        "MinValue" -> MinValue.map { x => x.asInstanceOf[js.Any] },
+        "NoEcho" -> NoEcho.map { x => x.asInstanceOf[js.Any] },
         "Type" -> Type.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ParameterDefinition]
@@ -763,17 +763,17 @@ package serverlessapplicationrepository {
    */
   @js.native
   trait ParameterValue extends js.Object {
-    var Name: js.UndefOr[__string]
-    var Value: js.UndefOr[__string]
+    var Name: __string
+    var Value: __string
   }
 
   object ParameterValue {
     def apply(
-      Name: js.UndefOr[__string] = js.undefined,
-      Value: js.UndefOr[__string] = js.undefined): ParameterValue = {
+      Name: __string,
+      Value: __string): ParameterValue = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
-        "Value" -> Value.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Name" -> Name.asInstanceOf[js.Any],
+        "Value" -> Value.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ParameterValue]
     }
@@ -781,17 +781,17 @@ package serverlessapplicationrepository {
 
   @js.native
   trait PutApplicationPolicyRequest extends js.Object {
-    var ApplicationId: js.UndefOr[__string]
-    var Statements: js.UndefOr[__listOfApplicationPolicyStatement]
+    var ApplicationId: __string
+    var Statements: __listOfApplicationPolicyStatement
   }
 
   object PutApplicationPolicyRequest {
     def apply(
-      ApplicationId: js.UndefOr[__string] = js.undefined,
-      Statements: js.UndefOr[__listOfApplicationPolicyStatement] = js.undefined): PutApplicationPolicyRequest = {
+      ApplicationId: __string,
+      Statements: __listOfApplicationPolicyStatement): PutApplicationPolicyRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ApplicationId" -> ApplicationId.map { x => x.asInstanceOf[js.Any] },
-        "Statements" -> Statements.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ApplicationId" -> ApplicationId.asInstanceOf[js.Any],
+        "Statements" -> Statements.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutApplicationPolicyRequest]
     }
@@ -838,17 +838,17 @@ package serverlessapplicationrepository {
    */
   @js.native
   trait RollbackTrigger extends js.Object {
-    var Arn: js.UndefOr[__string]
-    var Type: js.UndefOr[__string]
+    var Arn: __string
+    var Type: __string
   }
 
   object RollbackTrigger {
     def apply(
-      Arn: js.UndefOr[__string] = js.undefined,
-      Type: js.UndefOr[__string] = js.undefined): RollbackTrigger = {
+      Arn: __string,
+      Type: __string): RollbackTrigger = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Arn" -> Arn.map { x => x.asInstanceOf[js.Any] },
-        "Type" -> Type.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Arn" -> Arn.asInstanceOf[js.Any],
+        "Type" -> Type.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RollbackTrigger]
     }
@@ -867,17 +867,17 @@ package serverlessapplicationrepository {
    */
   @js.native
   trait Tag extends js.Object {
-    var Key: js.UndefOr[__string]
-    var Value: js.UndefOr[__string]
+    var Key: __string
+    var Value: __string
   }
 
   object Tag {
     def apply(
-      Key: js.UndefOr[__string] = js.undefined,
-      Value: js.UndefOr[__string] = js.undefined): Tag = {
+      Key: __string,
+      Value: __string): Tag = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Key" -> Key.map { x => x.asInstanceOf[js.Any] },
-        "Value" -> Value.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Key" -> Key.asInstanceOf[js.Any],
+        "Value" -> Value.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Tag]
     }
@@ -885,32 +885,32 @@ package serverlessapplicationrepository {
 
   @js.native
   trait UpdateApplicationRequest extends js.Object {
-    var ApplicationId: js.UndefOr[__string]
-    var ReadmeBody: js.UndefOr[__string]
-    var Description: js.UndefOr[__string]
+    var ApplicationId: __string
     var Author: js.UndefOr[__string]
-    var ReadmeUrl: js.UndefOr[__string]
+    var Description: js.UndefOr[__string]
     var HomePageUrl: js.UndefOr[__string]
     var Labels: js.UndefOr[__listOf__string]
+    var ReadmeBody: js.UndefOr[__string]
+    var ReadmeUrl: js.UndefOr[__string]
   }
 
   object UpdateApplicationRequest {
     def apply(
-      ApplicationId: js.UndefOr[__string] = js.undefined,
-      ReadmeBody: js.UndefOr[__string] = js.undefined,
-      Description: js.UndefOr[__string] = js.undefined,
+      ApplicationId: __string,
       Author: js.UndefOr[__string] = js.undefined,
-      ReadmeUrl: js.UndefOr[__string] = js.undefined,
+      Description: js.UndefOr[__string] = js.undefined,
       HomePageUrl: js.UndefOr[__string] = js.undefined,
-      Labels: js.UndefOr[__listOf__string] = js.undefined): UpdateApplicationRequest = {
+      Labels: js.UndefOr[__listOf__string] = js.undefined,
+      ReadmeBody: js.UndefOr[__string] = js.undefined,
+      ReadmeUrl: js.UndefOr[__string] = js.undefined): UpdateApplicationRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ApplicationId" -> ApplicationId.map { x => x.asInstanceOf[js.Any] },
-        "ReadmeBody" -> ReadmeBody.map { x => x.asInstanceOf[js.Any] },
-        "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
+        "ApplicationId" -> ApplicationId.asInstanceOf[js.Any],
         "Author" -> Author.map { x => x.asInstanceOf[js.Any] },
-        "ReadmeUrl" -> ReadmeUrl.map { x => x.asInstanceOf[js.Any] },
+        "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
         "HomePageUrl" -> HomePageUrl.map { x => x.asInstanceOf[js.Any] },
-        "Labels" -> Labels.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Labels" -> Labels.map { x => x.asInstanceOf[js.Any] },
+        "ReadmeBody" -> ReadmeBody.map { x => x.asInstanceOf[js.Any] },
+        "ReadmeUrl" -> ReadmeUrl.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateApplicationRequest]
     }
@@ -919,43 +919,43 @@ package serverlessapplicationrepository {
   @js.native
   trait UpdateApplicationResponse extends js.Object {
     var ApplicationId: js.UndefOr[__string]
-    var Name: js.UndefOr[__string]
-    var Version: js.UndefOr[Version]
-    var Description: js.UndefOr[__string]
-    var LicenseUrl: js.UndefOr[__string]
     var Author: js.UndefOr[__string]
-    var ReadmeUrl: js.UndefOr[__string]
+    var CreationTime: js.UndefOr[__string]
+    var Description: js.UndefOr[__string]
     var HomePageUrl: js.UndefOr[__string]
     var Labels: js.UndefOr[__listOf__string]
-    var CreationTime: js.UndefOr[__string]
+    var LicenseUrl: js.UndefOr[__string]
+    var Name: js.UndefOr[__string]
+    var ReadmeUrl: js.UndefOr[__string]
     var SpdxLicenseId: js.UndefOr[__string]
+    var Version: js.UndefOr[Version]
   }
 
   object UpdateApplicationResponse {
     def apply(
       ApplicationId: js.UndefOr[__string] = js.undefined,
-      Name: js.UndefOr[__string] = js.undefined,
-      Version: js.UndefOr[Version] = js.undefined,
-      Description: js.UndefOr[__string] = js.undefined,
-      LicenseUrl: js.UndefOr[__string] = js.undefined,
       Author: js.UndefOr[__string] = js.undefined,
-      ReadmeUrl: js.UndefOr[__string] = js.undefined,
+      CreationTime: js.UndefOr[__string] = js.undefined,
+      Description: js.UndefOr[__string] = js.undefined,
       HomePageUrl: js.UndefOr[__string] = js.undefined,
       Labels: js.UndefOr[__listOf__string] = js.undefined,
-      CreationTime: js.UndefOr[__string] = js.undefined,
-      SpdxLicenseId: js.UndefOr[__string] = js.undefined): UpdateApplicationResponse = {
+      LicenseUrl: js.UndefOr[__string] = js.undefined,
+      Name: js.UndefOr[__string] = js.undefined,
+      ReadmeUrl: js.UndefOr[__string] = js.undefined,
+      SpdxLicenseId: js.UndefOr[__string] = js.undefined,
+      Version: js.UndefOr[Version] = js.undefined): UpdateApplicationResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ApplicationId" -> ApplicationId.map { x => x.asInstanceOf[js.Any] },
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
-        "Version" -> Version.map { x => x.asInstanceOf[js.Any] },
-        "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
-        "LicenseUrl" -> LicenseUrl.map { x => x.asInstanceOf[js.Any] },
         "Author" -> Author.map { x => x.asInstanceOf[js.Any] },
-        "ReadmeUrl" -> ReadmeUrl.map { x => x.asInstanceOf[js.Any] },
+        "CreationTime" -> CreationTime.map { x => x.asInstanceOf[js.Any] },
+        "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
         "HomePageUrl" -> HomePageUrl.map { x => x.asInstanceOf[js.Any] },
         "Labels" -> Labels.map { x => x.asInstanceOf[js.Any] },
-        "CreationTime" -> CreationTime.map { x => x.asInstanceOf[js.Any] },
-        "SpdxLicenseId" -> SpdxLicenseId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "LicenseUrl" -> LicenseUrl.map { x => x.asInstanceOf[js.Any] },
+        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
+        "ReadmeUrl" -> ReadmeUrl.map { x => x.asInstanceOf[js.Any] },
+        "SpdxLicenseId" -> SpdxLicenseId.map { x => x.asInstanceOf[js.Any] },
+        "Version" -> Version.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateApplicationResponse]
     }
@@ -966,35 +966,35 @@ package serverlessapplicationrepository {
    */
   @js.native
   trait Version extends js.Object {
-    var ApplicationId: js.UndefOr[__string]
-    var SemanticVersion: js.UndefOr[__string]
-    var ParameterDefinitions: js.UndefOr[__listOfParameterDefinition]
-    var TemplateUrl: js.UndefOr[__string]
+    var ApplicationId: __string
+    var CreationTime: __string
+    var ParameterDefinitions: __listOfParameterDefinition
+    var RequiredCapabilities: __listOfCapability
+    var ResourcesSupported: __boolean
+    var SemanticVersion: __string
+    var TemplateUrl: __string
     var SourceCodeUrl: js.UndefOr[__string]
-    var RequiredCapabilities: js.UndefOr[__listOfCapability]
-    var ResourcesSupported: js.UndefOr[__boolean]
-    var CreationTime: js.UndefOr[__string]
   }
 
   object Version {
     def apply(
-      ApplicationId: js.UndefOr[__string] = js.undefined,
-      SemanticVersion: js.UndefOr[__string] = js.undefined,
-      ParameterDefinitions: js.UndefOr[__listOfParameterDefinition] = js.undefined,
-      TemplateUrl: js.UndefOr[__string] = js.undefined,
-      SourceCodeUrl: js.UndefOr[__string] = js.undefined,
-      RequiredCapabilities: js.UndefOr[__listOfCapability] = js.undefined,
-      ResourcesSupported: js.UndefOr[__boolean] = js.undefined,
-      CreationTime: js.UndefOr[__string] = js.undefined): Version = {
+      ApplicationId: __string,
+      CreationTime: __string,
+      ParameterDefinitions: __listOfParameterDefinition,
+      RequiredCapabilities: __listOfCapability,
+      ResourcesSupported: __boolean,
+      SemanticVersion: __string,
+      TemplateUrl: __string,
+      SourceCodeUrl: js.UndefOr[__string] = js.undefined): Version = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ApplicationId" -> ApplicationId.map { x => x.asInstanceOf[js.Any] },
-        "SemanticVersion" -> SemanticVersion.map { x => x.asInstanceOf[js.Any] },
-        "ParameterDefinitions" -> ParameterDefinitions.map { x => x.asInstanceOf[js.Any] },
-        "TemplateUrl" -> TemplateUrl.map { x => x.asInstanceOf[js.Any] },
-        "SourceCodeUrl" -> SourceCodeUrl.map { x => x.asInstanceOf[js.Any] },
-        "RequiredCapabilities" -> RequiredCapabilities.map { x => x.asInstanceOf[js.Any] },
-        "ResourcesSupported" -> ResourcesSupported.map { x => x.asInstanceOf[js.Any] },
-        "CreationTime" -> CreationTime.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ApplicationId" -> ApplicationId.asInstanceOf[js.Any],
+        "CreationTime" -> CreationTime.asInstanceOf[js.Any],
+        "ParameterDefinitions" -> ParameterDefinitions.asInstanceOf[js.Any],
+        "RequiredCapabilities" -> RequiredCapabilities.asInstanceOf[js.Any],
+        "ResourcesSupported" -> ResourcesSupported.asInstanceOf[js.Any],
+        "SemanticVersion" -> SemanticVersion.asInstanceOf[js.Any],
+        "TemplateUrl" -> TemplateUrl.asInstanceOf[js.Any],
+        "SourceCodeUrl" -> SourceCodeUrl.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Version]
     }
@@ -1005,22 +1005,22 @@ package serverlessapplicationrepository {
    */
   @js.native
   trait VersionSummary extends js.Object {
-    var ApplicationId: js.UndefOr[__string]
-    var CreationTime: js.UndefOr[__string]
-    var SemanticVersion: js.UndefOr[__string]
+    var ApplicationId: __string
+    var CreationTime: __string
+    var SemanticVersion: __string
     var SourceCodeUrl: js.UndefOr[__string]
   }
 
   object VersionSummary {
     def apply(
-      ApplicationId: js.UndefOr[__string] = js.undefined,
-      CreationTime: js.UndefOr[__string] = js.undefined,
-      SemanticVersion: js.UndefOr[__string] = js.undefined,
+      ApplicationId: __string,
+      CreationTime: __string,
+      SemanticVersion: __string,
       SourceCodeUrl: js.UndefOr[__string] = js.undefined): VersionSummary = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ApplicationId" -> ApplicationId.map { x => x.asInstanceOf[js.Any] },
-        "CreationTime" -> CreationTime.map { x => x.asInstanceOf[js.Any] },
-        "SemanticVersion" -> SemanticVersion.map { x => x.asInstanceOf[js.Any] },
+        "ApplicationId" -> ApplicationId.asInstanceOf[js.Any],
+        "CreationTime" -> CreationTime.asInstanceOf[js.Any],
+        "SemanticVersion" -> SemanticVersion.asInstanceOf[js.Any],
         "SourceCodeUrl" -> SourceCodeUrl.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[VersionSummary]

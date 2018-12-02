@@ -127,14 +127,14 @@ package datasync {
    */
   @js.native
   trait CancelTaskExecutionRequest extends js.Object {
-    var TaskExecutionArn: js.UndefOr[TaskExecutionArn]
+    var TaskExecutionArn: TaskExecutionArn
   }
 
   object CancelTaskExecutionRequest {
     def apply(
-      TaskExecutionArn: js.UndefOr[TaskExecutionArn] = js.undefined): CancelTaskExecutionRequest = {
+      TaskExecutionArn: TaskExecutionArn): CancelTaskExecutionRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "TaskExecutionArn" -> TaskExecutionArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "TaskExecutionArn" -> TaskExecutionArn.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CancelTaskExecutionRequest]
     }
@@ -158,18 +158,18 @@ package datasync {
    */
   @js.native
   trait CreateAgentRequest extends js.Object {
-    var ActivationKey: js.UndefOr[ActivationKey]
+    var ActivationKey: ActivationKey
     var AgentName: js.UndefOr[TagValue]
     var Tags: js.UndefOr[TagList]
   }
 
   object CreateAgentRequest {
     def apply(
-      ActivationKey: js.UndefOr[ActivationKey] = js.undefined,
+      ActivationKey: ActivationKey,
       AgentName: js.UndefOr[TagValue] = js.undefined,
       Tags: js.UndefOr[TagList] = js.undefined): CreateAgentRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ActivationKey" -> ActivationKey.map { x => x.asInstanceOf[js.Any] },
+        "ActivationKey" -> ActivationKey.asInstanceOf[js.Any],
         "AgentName" -> AgentName.map { x => x.asInstanceOf[js.Any] },
         "Tags" -> Tags.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
@@ -200,22 +200,22 @@ package datasync {
    */
   @js.native
   trait CreateLocationEfsRequest extends js.Object {
-    var Subdirectory: js.UndefOr[Subdirectory]
-    var EfsFilesystemArn: js.UndefOr[EfsFilesystemArn]
-    var Ec2Config: js.UndefOr[Ec2Config]
+    var Ec2Config: Ec2Config
+    var EfsFilesystemArn: EfsFilesystemArn
+    var Subdirectory: Subdirectory
     var Tags: js.UndefOr[TagList]
   }
 
   object CreateLocationEfsRequest {
     def apply(
-      Subdirectory: js.UndefOr[Subdirectory] = js.undefined,
-      EfsFilesystemArn: js.UndefOr[EfsFilesystemArn] = js.undefined,
-      Ec2Config: js.UndefOr[Ec2Config] = js.undefined,
+      Ec2Config: Ec2Config,
+      EfsFilesystemArn: EfsFilesystemArn,
+      Subdirectory: Subdirectory,
       Tags: js.UndefOr[TagList] = js.undefined): CreateLocationEfsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Subdirectory" -> Subdirectory.map { x => x.asInstanceOf[js.Any] },
-        "EfsFilesystemArn" -> EfsFilesystemArn.map { x => x.asInstanceOf[js.Any] },
-        "Ec2Config" -> Ec2Config.map { x => x.asInstanceOf[js.Any] },
+        "Ec2Config" -> Ec2Config.asInstanceOf[js.Any],
+        "EfsFilesystemArn" -> EfsFilesystemArn.asInstanceOf[js.Any],
+        "Subdirectory" -> Subdirectory.asInstanceOf[js.Any],
         "Tags" -> Tags.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateLocationEfsRequest]
@@ -245,22 +245,22 @@ package datasync {
    */
   @js.native
   trait CreateLocationNfsRequest extends js.Object {
-    var Subdirectory: js.UndefOr[Subdirectory]
-    var ServerHostname: js.UndefOr[ServerHostname]
-    var OnPremConfig: js.UndefOr[OnPremConfig]
+    var OnPremConfig: OnPremConfig
+    var ServerHostname: ServerHostname
+    var Subdirectory: Subdirectory
     var Tags: js.UndefOr[TagList]
   }
 
   object CreateLocationNfsRequest {
     def apply(
-      Subdirectory: js.UndefOr[Subdirectory] = js.undefined,
-      ServerHostname: js.UndefOr[ServerHostname] = js.undefined,
-      OnPremConfig: js.UndefOr[OnPremConfig] = js.undefined,
+      OnPremConfig: OnPremConfig,
+      ServerHostname: ServerHostname,
+      Subdirectory: Subdirectory,
       Tags: js.UndefOr[TagList] = js.undefined): CreateLocationNfsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Subdirectory" -> Subdirectory.map { x => x.asInstanceOf[js.Any] },
-        "ServerHostname" -> ServerHostname.map { x => x.asInstanceOf[js.Any] },
-        "OnPremConfig" -> OnPremConfig.map { x => x.asInstanceOf[js.Any] },
+        "OnPremConfig" -> OnPremConfig.asInstanceOf[js.Any],
+        "ServerHostname" -> ServerHostname.asInstanceOf[js.Any],
+        "Subdirectory" -> Subdirectory.asInstanceOf[js.Any],
         "Tags" -> Tags.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateLocationNfsRequest]
@@ -290,22 +290,22 @@ package datasync {
    */
   @js.native
   trait CreateLocationS3Request extends js.Object {
-    var Subdirectory: js.UndefOr[Subdirectory]
-    var S3BucketArn: js.UndefOr[S3BucketArn]
-    var S3Config: js.UndefOr[S3Config]
+    var S3BucketArn: S3BucketArn
+    var S3Config: S3Config
+    var Subdirectory: Subdirectory
     var Tags: js.UndefOr[TagList]
   }
 
   object CreateLocationS3Request {
     def apply(
-      Subdirectory: js.UndefOr[Subdirectory] = js.undefined,
-      S3BucketArn: js.UndefOr[S3BucketArn] = js.undefined,
-      S3Config: js.UndefOr[S3Config] = js.undefined,
+      S3BucketArn: S3BucketArn,
+      S3Config: S3Config,
+      Subdirectory: Subdirectory,
       Tags: js.UndefOr[TagList] = js.undefined): CreateLocationS3Request = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Subdirectory" -> Subdirectory.map { x => x.asInstanceOf[js.Any] },
-        "S3BucketArn" -> S3BucketArn.map { x => x.asInstanceOf[js.Any] },
-        "S3Config" -> S3Config.map { x => x.asInstanceOf[js.Any] },
+        "S3BucketArn" -> S3BucketArn.asInstanceOf[js.Any],
+        "S3Config" -> S3Config.asInstanceOf[js.Any],
+        "Subdirectory" -> Subdirectory.asInstanceOf[js.Any],
         "Tags" -> Tags.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateLocationS3Request]
@@ -335,29 +335,29 @@ package datasync {
    */
   @js.native
   trait CreateTaskRequest extends js.Object {
-    var Name: js.UndefOr[TagValue]
-    var DestinationLocationArn: js.UndefOr[LocationArn]
-    var Tags: js.UndefOr[TagList]
-    var Options: js.UndefOr[Options]
-    var SourceLocationArn: js.UndefOr[LocationArn]
+    var DestinationLocationArn: LocationArn
+    var SourceLocationArn: LocationArn
     var CloudWatchLogGroupArn: js.UndefOr[LogGroupArn]
+    var Name: js.UndefOr[TagValue]
+    var Options: js.UndefOr[Options]
+    var Tags: js.UndefOr[TagList]
   }
 
   object CreateTaskRequest {
     def apply(
+      DestinationLocationArn: LocationArn,
+      SourceLocationArn: LocationArn,
+      CloudWatchLogGroupArn: js.UndefOr[LogGroupArn] = js.undefined,
       Name: js.UndefOr[TagValue] = js.undefined,
-      DestinationLocationArn: js.UndefOr[LocationArn] = js.undefined,
-      Tags: js.UndefOr[TagList] = js.undefined,
       Options: js.UndefOr[Options] = js.undefined,
-      SourceLocationArn: js.UndefOr[LocationArn] = js.undefined,
-      CloudWatchLogGroupArn: js.UndefOr[LogGroupArn] = js.undefined): CreateTaskRequest = {
+      Tags: js.UndefOr[TagList] = js.undefined): CreateTaskRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "DestinationLocationArn" -> DestinationLocationArn.asInstanceOf[js.Any],
+        "SourceLocationArn" -> SourceLocationArn.asInstanceOf[js.Any],
+        "CloudWatchLogGroupArn" -> CloudWatchLogGroupArn.map { x => x.asInstanceOf[js.Any] },
         "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
-        "DestinationLocationArn" -> DestinationLocationArn.map { x => x.asInstanceOf[js.Any] },
-        "Tags" -> Tags.map { x => x.asInstanceOf[js.Any] },
         "Options" -> Options.map { x => x.asInstanceOf[js.Any] },
-        "SourceLocationArn" -> SourceLocationArn.map { x => x.asInstanceOf[js.Any] },
-        "CloudWatchLogGroupArn" -> CloudWatchLogGroupArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Tags" -> Tags.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateTaskRequest]
     }
@@ -386,14 +386,14 @@ package datasync {
    */
   @js.native
   trait DeleteAgentRequest extends js.Object {
-    var AgentArn: js.UndefOr[AgentArn]
+    var AgentArn: AgentArn
   }
 
   object DeleteAgentRequest {
     def apply(
-      AgentArn: js.UndefOr[AgentArn] = js.undefined): DeleteAgentRequest = {
+      AgentArn: AgentArn): DeleteAgentRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "AgentArn" -> AgentArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "AgentArn" -> AgentArn.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteAgentRequest]
     }
@@ -417,14 +417,14 @@ package datasync {
    */
   @js.native
   trait DeleteLocationRequest extends js.Object {
-    var LocationArn: js.UndefOr[LocationArn]
+    var LocationArn: LocationArn
   }
 
   object DeleteLocationRequest {
     def apply(
-      LocationArn: js.UndefOr[LocationArn] = js.undefined): DeleteLocationRequest = {
+      LocationArn: LocationArn): DeleteLocationRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "LocationArn" -> LocationArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "LocationArn" -> LocationArn.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteLocationRequest]
     }
@@ -448,14 +448,14 @@ package datasync {
    */
   @js.native
   trait DeleteTaskRequest extends js.Object {
-    var TaskArn: js.UndefOr[TaskArn]
+    var TaskArn: TaskArn
   }
 
   object DeleteTaskRequest {
     def apply(
-      TaskArn: js.UndefOr[TaskArn] = js.undefined): DeleteTaskRequest = {
+      TaskArn: TaskArn): DeleteTaskRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "TaskArn" -> TaskArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "TaskArn" -> TaskArn.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteTaskRequest]
     }
@@ -479,14 +479,14 @@ package datasync {
    */
   @js.native
   trait DescribeAgentRequest extends js.Object {
-    var AgentArn: js.UndefOr[AgentArn]
+    var AgentArn: AgentArn
   }
 
   object DescribeAgentRequest {
     def apply(
-      AgentArn: js.UndefOr[AgentArn] = js.undefined): DescribeAgentRequest = {
+      AgentArn: AgentArn): DescribeAgentRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "AgentArn" -> AgentArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "AgentArn" -> AgentArn.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeAgentRequest]
     }
@@ -498,25 +498,25 @@ package datasync {
   @js.native
   trait DescribeAgentResponse extends js.Object {
     var AgentArn: js.UndefOr[AgentArn]
-    var Name: js.UndefOr[TagValue]
-    var LastConnectionTime: js.UndefOr[Time]
-    var Status: js.UndefOr[AgentStatus]
     var CreationTime: js.UndefOr[Time]
+    var LastConnectionTime: js.UndefOr[Time]
+    var Name: js.UndefOr[TagValue]
+    var Status: js.UndefOr[AgentStatus]
   }
 
   object DescribeAgentResponse {
     def apply(
       AgentArn: js.UndefOr[AgentArn] = js.undefined,
-      Name: js.UndefOr[TagValue] = js.undefined,
+      CreationTime: js.UndefOr[Time] = js.undefined,
       LastConnectionTime: js.UndefOr[Time] = js.undefined,
-      Status: js.UndefOr[AgentStatus] = js.undefined,
-      CreationTime: js.UndefOr[Time] = js.undefined): DescribeAgentResponse = {
+      Name: js.UndefOr[TagValue] = js.undefined,
+      Status: js.UndefOr[AgentStatus] = js.undefined): DescribeAgentResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AgentArn" -> AgentArn.map { x => x.asInstanceOf[js.Any] },
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
+        "CreationTime" -> CreationTime.map { x => x.asInstanceOf[js.Any] },
         "LastConnectionTime" -> LastConnectionTime.map { x => x.asInstanceOf[js.Any] },
-        "Status" -> Status.map { x => x.asInstanceOf[js.Any] },
-        "CreationTime" -> CreationTime.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
+        "Status" -> Status.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeAgentResponse]
     }
@@ -527,14 +527,14 @@ package datasync {
    */
   @js.native
   trait DescribeLocationEfsRequest extends js.Object {
-    var LocationArn: js.UndefOr[LocationArn]
+    var LocationArn: LocationArn
   }
 
   object DescribeLocationEfsRequest {
     def apply(
-      LocationArn: js.UndefOr[LocationArn] = js.undefined): DescribeLocationEfsRequest = {
+      LocationArn: LocationArn): DescribeLocationEfsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "LocationArn" -> LocationArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "LocationArn" -> LocationArn.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeLocationEfsRequest]
     }
@@ -545,23 +545,23 @@ package datasync {
    */
   @js.native
   trait DescribeLocationEfsResponse extends js.Object {
+    var CreationTime: js.UndefOr[Time]
+    var Ec2Config: js.UndefOr[Ec2Config]
     var LocationArn: js.UndefOr[LocationArn]
     var LocationUri: js.UndefOr[LocationUri]
-    var Ec2Config: js.UndefOr[Ec2Config]
-    var CreationTime: js.UndefOr[Time]
   }
 
   object DescribeLocationEfsResponse {
     def apply(
-      LocationArn: js.UndefOr[LocationArn] = js.undefined,
-      LocationUri: js.UndefOr[LocationUri] = js.undefined,
+      CreationTime: js.UndefOr[Time] = js.undefined,
       Ec2Config: js.UndefOr[Ec2Config] = js.undefined,
-      CreationTime: js.UndefOr[Time] = js.undefined): DescribeLocationEfsResponse = {
+      LocationArn: js.UndefOr[LocationArn] = js.undefined,
+      LocationUri: js.UndefOr[LocationUri] = js.undefined): DescribeLocationEfsResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "LocationArn" -> LocationArn.map { x => x.asInstanceOf[js.Any] },
-        "LocationUri" -> LocationUri.map { x => x.asInstanceOf[js.Any] },
+        "CreationTime" -> CreationTime.map { x => x.asInstanceOf[js.Any] },
         "Ec2Config" -> Ec2Config.map { x => x.asInstanceOf[js.Any] },
-        "CreationTime" -> CreationTime.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "LocationArn" -> LocationArn.map { x => x.asInstanceOf[js.Any] },
+        "LocationUri" -> LocationUri.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeLocationEfsResponse]
     }
@@ -572,14 +572,14 @@ package datasync {
    */
   @js.native
   trait DescribeLocationNfsRequest extends js.Object {
-    var LocationArn: js.UndefOr[LocationArn]
+    var LocationArn: LocationArn
   }
 
   object DescribeLocationNfsRequest {
     def apply(
-      LocationArn: js.UndefOr[LocationArn] = js.undefined): DescribeLocationNfsRequest = {
+      LocationArn: LocationArn): DescribeLocationNfsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "LocationArn" -> LocationArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "LocationArn" -> LocationArn.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeLocationNfsRequest]
     }
@@ -590,23 +590,23 @@ package datasync {
    */
   @js.native
   trait DescribeLocationNfsResponse extends js.Object {
+    var CreationTime: js.UndefOr[Time]
     var LocationArn: js.UndefOr[LocationArn]
     var LocationUri: js.UndefOr[LocationUri]
     var OnPremConfig: js.UndefOr[OnPremConfig]
-    var CreationTime: js.UndefOr[Time]
   }
 
   object DescribeLocationNfsResponse {
     def apply(
+      CreationTime: js.UndefOr[Time] = js.undefined,
       LocationArn: js.UndefOr[LocationArn] = js.undefined,
       LocationUri: js.UndefOr[LocationUri] = js.undefined,
-      OnPremConfig: js.UndefOr[OnPremConfig] = js.undefined,
-      CreationTime: js.UndefOr[Time] = js.undefined): DescribeLocationNfsResponse = {
+      OnPremConfig: js.UndefOr[OnPremConfig] = js.undefined): DescribeLocationNfsResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "CreationTime" -> CreationTime.map { x => x.asInstanceOf[js.Any] },
         "LocationArn" -> LocationArn.map { x => x.asInstanceOf[js.Any] },
         "LocationUri" -> LocationUri.map { x => x.asInstanceOf[js.Any] },
-        "OnPremConfig" -> OnPremConfig.map { x => x.asInstanceOf[js.Any] },
-        "CreationTime" -> CreationTime.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "OnPremConfig" -> OnPremConfig.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeLocationNfsResponse]
     }
@@ -617,14 +617,14 @@ package datasync {
    */
   @js.native
   trait DescribeLocationS3Request extends js.Object {
-    var LocationArn: js.UndefOr[LocationArn]
+    var LocationArn: LocationArn
   }
 
   object DescribeLocationS3Request {
     def apply(
-      LocationArn: js.UndefOr[LocationArn] = js.undefined): DescribeLocationS3Request = {
+      LocationArn: LocationArn): DescribeLocationS3Request = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "LocationArn" -> LocationArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "LocationArn" -> LocationArn.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeLocationS3Request]
     }
@@ -635,23 +635,23 @@ package datasync {
    */
   @js.native
   trait DescribeLocationS3Response extends js.Object {
+    var CreationTime: js.UndefOr[Time]
     var LocationArn: js.UndefOr[LocationArn]
     var LocationUri: js.UndefOr[LocationUri]
     var S3Config: js.UndefOr[S3Config]
-    var CreationTime: js.UndefOr[Time]
   }
 
   object DescribeLocationS3Response {
     def apply(
+      CreationTime: js.UndefOr[Time] = js.undefined,
       LocationArn: js.UndefOr[LocationArn] = js.undefined,
       LocationUri: js.UndefOr[LocationUri] = js.undefined,
-      S3Config: js.UndefOr[S3Config] = js.undefined,
-      CreationTime: js.UndefOr[Time] = js.undefined): DescribeLocationS3Response = {
+      S3Config: js.UndefOr[S3Config] = js.undefined): DescribeLocationS3Response = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "CreationTime" -> CreationTime.map { x => x.asInstanceOf[js.Any] },
         "LocationArn" -> LocationArn.map { x => x.asInstanceOf[js.Any] },
         "LocationUri" -> LocationUri.map { x => x.asInstanceOf[js.Any] },
-        "S3Config" -> S3Config.map { x => x.asInstanceOf[js.Any] },
-        "CreationTime" -> CreationTime.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "S3Config" -> S3Config.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeLocationS3Response]
     }
@@ -662,14 +662,14 @@ package datasync {
    */
   @js.native
   trait DescribeTaskExecutionRequest extends js.Object {
-    var TaskExecutionArn: js.UndefOr[TaskExecutionArn]
+    var TaskExecutionArn: TaskExecutionArn
   }
 
   object DescribeTaskExecutionRequest {
     def apply(
-      TaskExecutionArn: js.UndefOr[TaskExecutionArn] = js.undefined): DescribeTaskExecutionRequest = {
+      TaskExecutionArn: TaskExecutionArn): DescribeTaskExecutionRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "TaskExecutionArn" -> TaskExecutionArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "TaskExecutionArn" -> TaskExecutionArn.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeTaskExecutionRequest]
     }
@@ -681,40 +681,40 @@ package datasync {
   @js.native
   trait DescribeTaskExecutionResponse extends js.Object {
     var BytesTransferred: js.UndefOr[long]
-    var FilesTransferred: js.UndefOr[long]
     var BytesWritten: js.UndefOr[long]
-    var StartTime: js.UndefOr[Time]
     var EstimatedBytesToTransfer: js.UndefOr[long]
-    var Options: js.UndefOr[Options]
-    var TaskExecutionArn: js.UndefOr[TaskExecutionArn]
-    var Result: js.UndefOr[TaskExecutionResultDetail]
     var EstimatedFilesToTransfer: js.UndefOr[long]
+    var FilesTransferred: js.UndefOr[long]
+    var Options: js.UndefOr[Options]
+    var Result: js.UndefOr[TaskExecutionResultDetail]
+    var StartTime: js.UndefOr[Time]
     var Status: js.UndefOr[TaskExecutionStatus]
+    var TaskExecutionArn: js.UndefOr[TaskExecutionArn]
   }
 
   object DescribeTaskExecutionResponse {
     def apply(
       BytesTransferred: js.UndefOr[long] = js.undefined,
-      FilesTransferred: js.UndefOr[long] = js.undefined,
       BytesWritten: js.UndefOr[long] = js.undefined,
-      StartTime: js.UndefOr[Time] = js.undefined,
       EstimatedBytesToTransfer: js.UndefOr[long] = js.undefined,
-      Options: js.UndefOr[Options] = js.undefined,
-      TaskExecutionArn: js.UndefOr[TaskExecutionArn] = js.undefined,
-      Result: js.UndefOr[TaskExecutionResultDetail] = js.undefined,
       EstimatedFilesToTransfer: js.UndefOr[long] = js.undefined,
-      Status: js.UndefOr[TaskExecutionStatus] = js.undefined): DescribeTaskExecutionResponse = {
+      FilesTransferred: js.UndefOr[long] = js.undefined,
+      Options: js.UndefOr[Options] = js.undefined,
+      Result: js.UndefOr[TaskExecutionResultDetail] = js.undefined,
+      StartTime: js.UndefOr[Time] = js.undefined,
+      Status: js.UndefOr[TaskExecutionStatus] = js.undefined,
+      TaskExecutionArn: js.UndefOr[TaskExecutionArn] = js.undefined): DescribeTaskExecutionResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
         "BytesTransferred" -> BytesTransferred.map { x => x.asInstanceOf[js.Any] },
-        "FilesTransferred" -> FilesTransferred.map { x => x.asInstanceOf[js.Any] },
         "BytesWritten" -> BytesWritten.map { x => x.asInstanceOf[js.Any] },
-        "StartTime" -> StartTime.map { x => x.asInstanceOf[js.Any] },
         "EstimatedBytesToTransfer" -> EstimatedBytesToTransfer.map { x => x.asInstanceOf[js.Any] },
-        "Options" -> Options.map { x => x.asInstanceOf[js.Any] },
-        "TaskExecutionArn" -> TaskExecutionArn.map { x => x.asInstanceOf[js.Any] },
-        "Result" -> Result.map { x => x.asInstanceOf[js.Any] },
         "EstimatedFilesToTransfer" -> EstimatedFilesToTransfer.map { x => x.asInstanceOf[js.Any] },
-        "Status" -> Status.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "FilesTransferred" -> FilesTransferred.map { x => x.asInstanceOf[js.Any] },
+        "Options" -> Options.map { x => x.asInstanceOf[js.Any] },
+        "Result" -> Result.map { x => x.asInstanceOf[js.Any] },
+        "StartTime" -> StartTime.map { x => x.asInstanceOf[js.Any] },
+        "Status" -> Status.map { x => x.asInstanceOf[js.Any] },
+        "TaskExecutionArn" -> TaskExecutionArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeTaskExecutionResponse]
     }
@@ -725,14 +725,14 @@ package datasync {
    */
   @js.native
   trait DescribeTaskRequest extends js.Object {
-    var TaskArn: js.UndefOr[TaskArn]
+    var TaskArn: TaskArn
   }
 
   object DescribeTaskRequest {
     def apply(
-      TaskArn: js.UndefOr[TaskArn] = js.undefined): DescribeTaskRequest = {
+      TaskArn: TaskArn): DescribeTaskRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "TaskArn" -> TaskArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "TaskArn" -> TaskArn.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeTaskRequest]
     }
@@ -743,44 +743,44 @@ package datasync {
    */
   @js.native
   trait DescribeTaskResponse extends js.Object {
-    var Name: js.UndefOr[TagValue]
+    var CloudWatchLogGroupArn: js.UndefOr[LogGroupArn]
+    var CreationTime: js.UndefOr[Time]
     var CurrentTaskExecutionArn: js.UndefOr[TaskExecutionArn]
     var DestinationLocationArn: js.UndefOr[LocationArn]
     var ErrorCode: js.UndefOr[string]
-    var TaskArn: js.UndefOr[TaskArn]
     var ErrorDetail: js.UndefOr[string]
+    var Name: js.UndefOr[TagValue]
     var Options: js.UndefOr[Options]
     var SourceLocationArn: js.UndefOr[LocationArn]
-    var CloudWatchLogGroupArn: js.UndefOr[LogGroupArn]
     var Status: js.UndefOr[TaskStatus]
-    var CreationTime: js.UndefOr[Time]
+    var TaskArn: js.UndefOr[TaskArn]
   }
 
   object DescribeTaskResponse {
     def apply(
-      Name: js.UndefOr[TagValue] = js.undefined,
+      CloudWatchLogGroupArn: js.UndefOr[LogGroupArn] = js.undefined,
+      CreationTime: js.UndefOr[Time] = js.undefined,
       CurrentTaskExecutionArn: js.UndefOr[TaskExecutionArn] = js.undefined,
       DestinationLocationArn: js.UndefOr[LocationArn] = js.undefined,
       ErrorCode: js.UndefOr[string] = js.undefined,
-      TaskArn: js.UndefOr[TaskArn] = js.undefined,
       ErrorDetail: js.UndefOr[string] = js.undefined,
+      Name: js.UndefOr[TagValue] = js.undefined,
       Options: js.UndefOr[Options] = js.undefined,
       SourceLocationArn: js.UndefOr[LocationArn] = js.undefined,
-      CloudWatchLogGroupArn: js.UndefOr[LogGroupArn] = js.undefined,
       Status: js.UndefOr[TaskStatus] = js.undefined,
-      CreationTime: js.UndefOr[Time] = js.undefined): DescribeTaskResponse = {
+      TaskArn: js.UndefOr[TaskArn] = js.undefined): DescribeTaskResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
+        "CloudWatchLogGroupArn" -> CloudWatchLogGroupArn.map { x => x.asInstanceOf[js.Any] },
+        "CreationTime" -> CreationTime.map { x => x.asInstanceOf[js.Any] },
         "CurrentTaskExecutionArn" -> CurrentTaskExecutionArn.map { x => x.asInstanceOf[js.Any] },
         "DestinationLocationArn" -> DestinationLocationArn.map { x => x.asInstanceOf[js.Any] },
         "ErrorCode" -> ErrorCode.map { x => x.asInstanceOf[js.Any] },
-        "TaskArn" -> TaskArn.map { x => x.asInstanceOf[js.Any] },
         "ErrorDetail" -> ErrorDetail.map { x => x.asInstanceOf[js.Any] },
+        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
         "Options" -> Options.map { x => x.asInstanceOf[js.Any] },
         "SourceLocationArn" -> SourceLocationArn.map { x => x.asInstanceOf[js.Any] },
-        "CloudWatchLogGroupArn" -> CloudWatchLogGroupArn.map { x => x.asInstanceOf[js.Any] },
         "Status" -> Status.map { x => x.asInstanceOf[js.Any] },
-        "CreationTime" -> CreationTime.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "TaskArn" -> TaskArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeTaskResponse]
     }
@@ -791,17 +791,17 @@ package datasync {
    */
   @js.native
   trait Ec2Config extends js.Object {
-    var SubnetArn: js.UndefOr[Ec2SubnetArn]
-    var SecurityGroupArns: js.UndefOr[Ec2SecurityGroupArnList]
+    var SecurityGroupArns: Ec2SecurityGroupArnList
+    var SubnetArn: Ec2SubnetArn
   }
 
   object Ec2Config {
     def apply(
-      SubnetArn: js.UndefOr[Ec2SubnetArn] = js.undefined,
-      SecurityGroupArns: js.UndefOr[Ec2SecurityGroupArnList] = js.undefined): Ec2Config = {
+      SecurityGroupArns: Ec2SecurityGroupArnList,
+      SubnetArn: Ec2SubnetArn): Ec2Config = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "SubnetArn" -> SubnetArn.map { x => x.asInstanceOf[js.Any] },
-        "SecurityGroupArns" -> SecurityGroupArns.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "SecurityGroupArns" -> SecurityGroupArns.asInstanceOf[js.Any],
+        "SubnetArn" -> SubnetArn.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Ec2Config]
     }
@@ -905,18 +905,18 @@ package datasync {
    */
   @js.native
   trait ListTagsForResourceRequest extends js.Object {
-    var ResourceArn: js.UndefOr[TaggableResourceArn]
+    var ResourceArn: TaggableResourceArn
     var MaxResults: js.UndefOr[MaxResults]
     var NextToken: js.UndefOr[NextToken]
   }
 
   object ListTagsForResourceRequest {
     def apply(
-      ResourceArn: js.UndefOr[TaggableResourceArn] = js.undefined,
+      ResourceArn: TaggableResourceArn,
       MaxResults: js.UndefOr[MaxResults] = js.undefined,
       NextToken: js.UndefOr[NextToken] = js.undefined): ListTagsForResourceRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ResourceArn" -> ResourceArn.map { x => x.asInstanceOf[js.Any] },
+        "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
         "MaxResults" -> MaxResults.map { x => x.asInstanceOf[js.Any] },
         "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
@@ -929,17 +929,17 @@ package datasync {
    */
   @js.native
   trait ListTagsForResourceResponse extends js.Object {
-    var Tags: js.UndefOr[TagList]
     var NextToken: js.UndefOr[NextToken]
+    var Tags: js.UndefOr[TagList]
   }
 
   object ListTagsForResourceResponse {
     def apply(
-      Tags: js.UndefOr[TagList] = js.undefined,
-      NextToken: js.UndefOr[NextToken] = js.undefined): ListTagsForResourceResponse = {
+      NextToken: js.UndefOr[NextToken] = js.undefined,
+      Tags: js.UndefOr[TagList] = js.undefined): ListTagsForResourceResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Tags" -> Tags.map { x => x.asInstanceOf[js.Any] },
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
+        "Tags" -> Tags.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListTagsForResourceResponse]
     }
@@ -950,20 +950,20 @@ package datasync {
    */
   @js.native
   trait ListTaskExecutionsRequest extends js.Object {
-    var TaskArn: js.UndefOr[TaskArn]
     var MaxResults: js.UndefOr[MaxResults]
     var NextToken: js.UndefOr[NextToken]
+    var TaskArn: js.UndefOr[TaskArn]
   }
 
   object ListTaskExecutionsRequest {
     def apply(
-      TaskArn: js.UndefOr[TaskArn] = js.undefined,
       MaxResults: js.UndefOr[MaxResults] = js.undefined,
-      NextToken: js.UndefOr[NextToken] = js.undefined): ListTaskExecutionsRequest = {
+      NextToken: js.UndefOr[NextToken] = js.undefined,
+      TaskArn: js.UndefOr[TaskArn] = js.undefined): ListTaskExecutionsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "TaskArn" -> TaskArn.map { x => x.asInstanceOf[js.Any] },
         "MaxResults" -> MaxResults.map { x => x.asInstanceOf[js.Any] },
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
+        "TaskArn" -> TaskArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListTaskExecutionsRequest]
     }
@@ -974,17 +974,17 @@ package datasync {
    */
   @js.native
   trait ListTaskExecutionsResponse extends js.Object {
-    var TaskExecutions: js.UndefOr[TaskExecutionList]
     var NextToken: js.UndefOr[NextToken]
+    var TaskExecutions: js.UndefOr[TaskExecutionList]
   }
 
   object ListTaskExecutionsResponse {
     def apply(
-      TaskExecutions: js.UndefOr[TaskExecutionList] = js.undefined,
-      NextToken: js.UndefOr[NextToken] = js.undefined): ListTaskExecutionsResponse = {
+      NextToken: js.UndefOr[NextToken] = js.undefined,
+      TaskExecutions: js.UndefOr[TaskExecutionList] = js.undefined): ListTaskExecutionsResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "TaskExecutions" -> TaskExecutions.map { x => x.asInstanceOf[js.Any] },
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
+        "TaskExecutions" -> TaskExecutions.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListTaskExecutionsResponse]
     }
@@ -1016,17 +1016,17 @@ package datasync {
    */
   @js.native
   trait ListTasksResponse extends js.Object {
-    var Tasks: js.UndefOr[TaskList]
     var NextToken: js.UndefOr[NextToken]
+    var Tasks: js.UndefOr[TaskList]
   }
 
   object ListTasksResponse {
     def apply(
-      Tasks: js.UndefOr[TaskList] = js.undefined,
-      NextToken: js.UndefOr[NextToken] = js.undefined): ListTasksResponse = {
+      NextToken: js.UndefOr[NextToken] = js.undefined,
+      Tasks: js.UndefOr[TaskList] = js.undefined): ListTasksResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Tasks" -> Tasks.map { x => x.asInstanceOf[js.Any] },
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
+        "Tasks" -> Tasks.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListTasksResponse]
     }
@@ -1065,14 +1065,14 @@ package datasync {
    */
   @js.native
   trait OnPremConfig extends js.Object {
-    var AgentArns: js.UndefOr[AgentArnList]
+    var AgentArns: AgentArnList
   }
 
   object OnPremConfig {
     def apply(
-      AgentArns: js.UndefOr[AgentArnList] = js.undefined): OnPremConfig = {
+      AgentArns: AgentArnList): OnPremConfig = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "AgentArns" -> AgentArns.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "AgentArns" -> AgentArns.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[OnPremConfig]
     }
@@ -1083,38 +1083,38 @@ package datasync {
    */
   @js.native
   trait Options extends js.Object {
-    var Uid: js.UndefOr[Uid]
     var Atime: js.UndefOr[Atime]
     var BytesPerSecond: js.UndefOr[BytesPerSecond]
-    var Mtime: js.UndefOr[Mtime]
-    var VerifyMode: js.UndefOr[VerifyMode]
-    var PreserveDeletedFiles: js.UndefOr[PreserveDeletedFiles]
     var Gid: js.UndefOr[Gid]
-    var PreserveDevices: js.UndefOr[PreserveDevices]
+    var Mtime: js.UndefOr[Mtime]
     var PosixPermissions: js.UndefOr[PosixPermissions]
+    var PreserveDeletedFiles: js.UndefOr[PreserveDeletedFiles]
+    var PreserveDevices: js.UndefOr[PreserveDevices]
+    var Uid: js.UndefOr[Uid]
+    var VerifyMode: js.UndefOr[VerifyMode]
   }
 
   object Options {
     def apply(
-      Uid: js.UndefOr[Uid] = js.undefined,
       Atime: js.UndefOr[Atime] = js.undefined,
       BytesPerSecond: js.UndefOr[BytesPerSecond] = js.undefined,
-      Mtime: js.UndefOr[Mtime] = js.undefined,
-      VerifyMode: js.UndefOr[VerifyMode] = js.undefined,
-      PreserveDeletedFiles: js.UndefOr[PreserveDeletedFiles] = js.undefined,
       Gid: js.UndefOr[Gid] = js.undefined,
+      Mtime: js.UndefOr[Mtime] = js.undefined,
+      PosixPermissions: js.UndefOr[PosixPermissions] = js.undefined,
+      PreserveDeletedFiles: js.UndefOr[PreserveDeletedFiles] = js.undefined,
       PreserveDevices: js.UndefOr[PreserveDevices] = js.undefined,
-      PosixPermissions: js.UndefOr[PosixPermissions] = js.undefined): Options = {
+      Uid: js.UndefOr[Uid] = js.undefined,
+      VerifyMode: js.UndefOr[VerifyMode] = js.undefined): Options = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Uid" -> Uid.map { x => x.asInstanceOf[js.Any] },
         "Atime" -> Atime.map { x => x.asInstanceOf[js.Any] },
         "BytesPerSecond" -> BytesPerSecond.map { x => x.asInstanceOf[js.Any] },
-        "Mtime" -> Mtime.map { x => x.asInstanceOf[js.Any] },
-        "VerifyMode" -> VerifyMode.map { x => x.asInstanceOf[js.Any] },
-        "PreserveDeletedFiles" -> PreserveDeletedFiles.map { x => x.asInstanceOf[js.Any] },
         "Gid" -> Gid.map { x => x.asInstanceOf[js.Any] },
+        "Mtime" -> Mtime.map { x => x.asInstanceOf[js.Any] },
+        "PosixPermissions" -> PosixPermissions.map { x => x.asInstanceOf[js.Any] },
+        "PreserveDeletedFiles" -> PreserveDeletedFiles.map { x => x.asInstanceOf[js.Any] },
         "PreserveDevices" -> PreserveDevices.map { x => x.asInstanceOf[js.Any] },
-        "PosixPermissions" -> PosixPermissions.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Uid" -> Uid.map { x => x.asInstanceOf[js.Any] },
+        "VerifyMode" -> VerifyMode.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Options]
     }
@@ -1155,14 +1155,14 @@ package datasync {
    */
   @js.native
   trait S3Config extends js.Object {
-    var BucketAccessRoleArn: js.UndefOr[IamRoleArn]
+    var BucketAccessRoleArn: IamRoleArn
   }
 
   object S3Config {
     def apply(
-      BucketAccessRoleArn: js.UndefOr[IamRoleArn] = js.undefined): S3Config = {
+      BucketAccessRoleArn: IamRoleArn): S3Config = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "BucketAccessRoleArn" -> BucketAccessRoleArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "BucketAccessRoleArn" -> BucketAccessRoleArn.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[S3Config]
     }
@@ -1173,16 +1173,16 @@ package datasync {
    */
   @js.native
   trait StartTaskExecutionRequest extends js.Object {
-    var TaskArn: js.UndefOr[TaskArn]
+    var TaskArn: TaskArn
     var OverrideOptions: js.UndefOr[Options]
   }
 
   object StartTaskExecutionRequest {
     def apply(
-      TaskArn: js.UndefOr[TaskArn] = js.undefined,
+      TaskArn: TaskArn,
       OverrideOptions: js.UndefOr[Options] = js.undefined): StartTaskExecutionRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "TaskArn" -> TaskArn.map { x => x.asInstanceOf[js.Any] },
+        "TaskArn" -> TaskArn.asInstanceOf[js.Any],
         "OverrideOptions" -> OverrideOptions.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StartTaskExecutionRequest]
@@ -1233,17 +1233,17 @@ package datasync {
    */
   @js.native
   trait TagResourceRequest extends js.Object {
-    var ResourceArn: js.UndefOr[TaggableResourceArn]
-    var Tags: js.UndefOr[TagList]
+    var ResourceArn: TaggableResourceArn
+    var Tags: TagList
   }
 
   object TagResourceRequest {
     def apply(
-      ResourceArn: js.UndefOr[TaggableResourceArn] = js.undefined,
-      Tags: js.UndefOr[TagList] = js.undefined): TagResourceRequest = {
+      ResourceArn: TaggableResourceArn,
+      Tags: TagList): TagResourceRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ResourceArn" -> ResourceArn.map { x => x.asInstanceOf[js.Any] },
-        "Tags" -> Tags.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
+        "Tags" -> Tags.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TagResourceRequest]
     }
@@ -1267,17 +1267,17 @@ package datasync {
    */
   @js.native
   trait TaskExecutionListEntry extends js.Object {
-    var TaskExecutionArn: js.UndefOr[TaskExecutionArn]
     var Status: js.UndefOr[TaskExecutionStatus]
+    var TaskExecutionArn: js.UndefOr[TaskExecutionArn]
   }
 
   object TaskExecutionListEntry {
     def apply(
-      TaskExecutionArn: js.UndefOr[TaskExecutionArn] = js.undefined,
-      Status: js.UndefOr[TaskExecutionStatus] = js.undefined): TaskExecutionListEntry = {
+      Status: js.UndefOr[TaskExecutionStatus] = js.undefined,
+      TaskExecutionArn: js.UndefOr[TaskExecutionArn] = js.undefined): TaskExecutionListEntry = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "TaskExecutionArn" -> TaskExecutionArn.map { x => x.asInstanceOf[js.Any] },
-        "Status" -> Status.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Status" -> Status.map { x => x.asInstanceOf[js.Any] },
+        "TaskExecutionArn" -> TaskExecutionArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TaskExecutionListEntry]
     }
@@ -1288,35 +1288,35 @@ package datasync {
    */
   @js.native
   trait TaskExecutionResultDetail extends js.Object {
-    var TransferStatus: js.UndefOr[PhaseStatus]
-    var VerifyDuration: js.UndefOr[Duration]
     var ErrorCode: js.UndefOr[string]
-    var VerifyStatus: js.UndefOr[PhaseStatus]
-    var PrepareStatus: js.UndefOr[PhaseStatus]
     var ErrorDetail: js.UndefOr[string]
     var PrepareDuration: js.UndefOr[Duration]
+    var PrepareStatus: js.UndefOr[PhaseStatus]
     var TransferDuration: js.UndefOr[Duration]
+    var TransferStatus: js.UndefOr[PhaseStatus]
+    var VerifyDuration: js.UndefOr[Duration]
+    var VerifyStatus: js.UndefOr[PhaseStatus]
   }
 
   object TaskExecutionResultDetail {
     def apply(
-      TransferStatus: js.UndefOr[PhaseStatus] = js.undefined,
-      VerifyDuration: js.UndefOr[Duration] = js.undefined,
       ErrorCode: js.UndefOr[string] = js.undefined,
-      VerifyStatus: js.UndefOr[PhaseStatus] = js.undefined,
-      PrepareStatus: js.UndefOr[PhaseStatus] = js.undefined,
       ErrorDetail: js.UndefOr[string] = js.undefined,
       PrepareDuration: js.UndefOr[Duration] = js.undefined,
-      TransferDuration: js.UndefOr[Duration] = js.undefined): TaskExecutionResultDetail = {
+      PrepareStatus: js.UndefOr[PhaseStatus] = js.undefined,
+      TransferDuration: js.UndefOr[Duration] = js.undefined,
+      TransferStatus: js.UndefOr[PhaseStatus] = js.undefined,
+      VerifyDuration: js.UndefOr[Duration] = js.undefined,
+      VerifyStatus: js.UndefOr[PhaseStatus] = js.undefined): TaskExecutionResultDetail = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "TransferStatus" -> TransferStatus.map { x => x.asInstanceOf[js.Any] },
-        "VerifyDuration" -> VerifyDuration.map { x => x.asInstanceOf[js.Any] },
         "ErrorCode" -> ErrorCode.map { x => x.asInstanceOf[js.Any] },
-        "VerifyStatus" -> VerifyStatus.map { x => x.asInstanceOf[js.Any] },
-        "PrepareStatus" -> PrepareStatus.map { x => x.asInstanceOf[js.Any] },
         "ErrorDetail" -> ErrorDetail.map { x => x.asInstanceOf[js.Any] },
         "PrepareDuration" -> PrepareDuration.map { x => x.asInstanceOf[js.Any] },
-        "TransferDuration" -> TransferDuration.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "PrepareStatus" -> PrepareStatus.map { x => x.asInstanceOf[js.Any] },
+        "TransferDuration" -> TransferDuration.map { x => x.asInstanceOf[js.Any] },
+        "TransferStatus" -> TransferStatus.map { x => x.asInstanceOf[js.Any] },
+        "VerifyDuration" -> VerifyDuration.map { x => x.asInstanceOf[js.Any] },
+        "VerifyStatus" -> VerifyStatus.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TaskExecutionResultDetail]
     }
@@ -1338,20 +1338,20 @@ package datasync {
    */
   @js.native
   trait TaskListEntry extends js.Object {
-    var TaskArn: js.UndefOr[TaskArn]
-    var Status: js.UndefOr[TaskStatus]
     var Name: js.UndefOr[TagValue]
+    var Status: js.UndefOr[TaskStatus]
+    var TaskArn: js.UndefOr[TaskArn]
   }
 
   object TaskListEntry {
     def apply(
-      TaskArn: js.UndefOr[TaskArn] = js.undefined,
+      Name: js.UndefOr[TagValue] = js.undefined,
       Status: js.UndefOr[TaskStatus] = js.undefined,
-      Name: js.UndefOr[TagValue] = js.undefined): TaskListEntry = {
+      TaskArn: js.UndefOr[TaskArn] = js.undefined): TaskListEntry = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "TaskArn" -> TaskArn.map { x => x.asInstanceOf[js.Any] },
+        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
         "Status" -> Status.map { x => x.asInstanceOf[js.Any] },
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "TaskArn" -> TaskArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TaskListEntry]
     }
@@ -1380,17 +1380,17 @@ package datasync {
    */
   @js.native
   trait UntagResourceRequest extends js.Object {
-    var ResourceArn: js.UndefOr[TaggableResourceArn]
-    var Keys: js.UndefOr[TagKeyList]
+    var Keys: TagKeyList
+    var ResourceArn: TaggableResourceArn
   }
 
   object UntagResourceRequest {
     def apply(
-      ResourceArn: js.UndefOr[TaggableResourceArn] = js.undefined,
-      Keys: js.UndefOr[TagKeyList] = js.undefined): UntagResourceRequest = {
+      Keys: TagKeyList,
+      ResourceArn: TaggableResourceArn): UntagResourceRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ResourceArn" -> ResourceArn.map { x => x.asInstanceOf[js.Any] },
-        "Keys" -> Keys.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Keys" -> Keys.asInstanceOf[js.Any],
+        "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UntagResourceRequest]
     }
@@ -1414,16 +1414,16 @@ package datasync {
    */
   @js.native
   trait UpdateAgentRequest extends js.Object {
-    var AgentArn: js.UndefOr[AgentArn]
+    var AgentArn: AgentArn
     var Name: js.UndefOr[TagValue]
   }
 
   object UpdateAgentRequest {
     def apply(
-      AgentArn: js.UndefOr[AgentArn] = js.undefined,
+      AgentArn: AgentArn,
       Name: js.UndefOr[TagValue] = js.undefined): UpdateAgentRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "AgentArn" -> AgentArn.map { x => x.asInstanceOf[js.Any] },
+        "AgentArn" -> AgentArn.asInstanceOf[js.Any],
         "Name" -> Name.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateAgentRequest]
@@ -1448,20 +1448,20 @@ package datasync {
    */
   @js.native
   trait UpdateTaskRequest extends js.Object {
-    var TaskArn: js.UndefOr[TaskArn]
-    var Options: js.UndefOr[Options]
+    var TaskArn: TaskArn
     var Name: js.UndefOr[TagValue]
+    var Options: js.UndefOr[Options]
   }
 
   object UpdateTaskRequest {
     def apply(
-      TaskArn: js.UndefOr[TaskArn] = js.undefined,
-      Options: js.UndefOr[Options] = js.undefined,
-      Name: js.UndefOr[TagValue] = js.undefined): UpdateTaskRequest = {
+      TaskArn: TaskArn,
+      Name: js.UndefOr[TagValue] = js.undefined,
+      Options: js.UndefOr[Options] = js.undefined): UpdateTaskRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "TaskArn" -> TaskArn.map { x => x.asInstanceOf[js.Any] },
-        "Options" -> Options.map { x => x.asInstanceOf[js.Any] },
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "TaskArn" -> TaskArn.asInstanceOf[js.Any],
+        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
+        "Options" -> Options.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateTaskRequest]
     }

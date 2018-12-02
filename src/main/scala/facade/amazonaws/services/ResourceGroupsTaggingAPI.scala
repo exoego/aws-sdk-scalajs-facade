@@ -54,20 +54,20 @@ package resourcegroupstaggingapi {
    */
   @js.native
   trait FailureInfo extends js.Object {
-    var StatusCode: js.UndefOr[StatusCode]
     var ErrorCode: js.UndefOr[ErrorCode]
     var ErrorMessage: js.UndefOr[ErrorMessage]
+    var StatusCode: js.UndefOr[StatusCode]
   }
 
   object FailureInfo {
     def apply(
-      StatusCode: js.UndefOr[StatusCode] = js.undefined,
       ErrorCode: js.UndefOr[ErrorCode] = js.undefined,
-      ErrorMessage: js.UndefOr[ErrorMessage] = js.undefined): FailureInfo = {
+      ErrorMessage: js.UndefOr[ErrorMessage] = js.undefined,
+      StatusCode: js.UndefOr[StatusCode] = js.undefined): FailureInfo = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "StatusCode" -> StatusCode.map { x => x.asInstanceOf[js.Any] },
         "ErrorCode" -> ErrorCode.map { x => x.asInstanceOf[js.Any] },
-        "ErrorMessage" -> ErrorMessage.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ErrorMessage" -> ErrorMessage.map { x => x.asInstanceOf[js.Any] },
+        "StatusCode" -> StatusCode.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[FailureInfo]
     }
@@ -75,25 +75,25 @@ package resourcegroupstaggingapi {
 
   @js.native
   trait GetResourcesInput extends js.Object {
-    var TagFilters: js.UndefOr[TagFilterList]
     var PaginationToken: js.UndefOr[PaginationToken]
     var ResourceTypeFilters: js.UndefOr[ResourceTypeFilterList]
     var ResourcesPerPage: js.UndefOr[ResourcesPerPage]
+    var TagFilters: js.UndefOr[TagFilterList]
     var TagsPerPage: js.UndefOr[TagsPerPage]
   }
 
   object GetResourcesInput {
     def apply(
-      TagFilters: js.UndefOr[TagFilterList] = js.undefined,
       PaginationToken: js.UndefOr[PaginationToken] = js.undefined,
       ResourceTypeFilters: js.UndefOr[ResourceTypeFilterList] = js.undefined,
       ResourcesPerPage: js.UndefOr[ResourcesPerPage] = js.undefined,
+      TagFilters: js.UndefOr[TagFilterList] = js.undefined,
       TagsPerPage: js.UndefOr[TagsPerPage] = js.undefined): GetResourcesInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "TagFilters" -> TagFilters.map { x => x.asInstanceOf[js.Any] },
         "PaginationToken" -> PaginationToken.map { x => x.asInstanceOf[js.Any] },
         "ResourceTypeFilters" -> ResourceTypeFilters.map { x => x.asInstanceOf[js.Any] },
         "ResourcesPerPage" -> ResourcesPerPage.map { x => x.asInstanceOf[js.Any] },
+        "TagFilters" -> TagFilters.map { x => x.asInstanceOf[js.Any] },
         "TagsPerPage" -> TagsPerPage.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetResourcesInput]
@@ -153,17 +153,17 @@ package resourcegroupstaggingapi {
 
   @js.native
   trait GetTagValuesInput extends js.Object {
+    var Key: TagKey
     var PaginationToken: js.UndefOr[PaginationToken]
-    var Key: js.UndefOr[TagKey]
   }
 
   object GetTagValuesInput {
     def apply(
-      PaginationToken: js.UndefOr[PaginationToken] = js.undefined,
-      Key: js.UndefOr[TagKey] = js.undefined): GetTagValuesInput = {
+      Key: TagKey,
+      PaginationToken: js.UndefOr[PaginationToken] = js.undefined): GetTagValuesInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "PaginationToken" -> PaginationToken.map { x => x.asInstanceOf[js.Any] },
-        "Key" -> Key.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Key" -> Key.asInstanceOf[js.Any],
+        "PaginationToken" -> PaginationToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetTagValuesInput]
     }
@@ -237,17 +237,17 @@ package resourcegroupstaggingapi {
    */
   @js.native
   trait Tag extends js.Object {
-    var Key: js.UndefOr[TagKey]
-    var Value: js.UndefOr[TagValue]
+    var Key: TagKey
+    var Value: TagValue
   }
 
   object Tag {
     def apply(
-      Key: js.UndefOr[TagKey] = js.undefined,
-      Value: js.UndefOr[TagValue] = js.undefined): Tag = {
+      Key: TagKey,
+      Value: TagValue): Tag = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Key" -> Key.map { x => x.asInstanceOf[js.Any] },
-        "Value" -> Value.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Key" -> Key.asInstanceOf[js.Any],
+        "Value" -> Value.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Tag]
     }
@@ -276,17 +276,17 @@ package resourcegroupstaggingapi {
 
   @js.native
   trait TagResourcesInput extends js.Object {
-    var ResourceARNList: js.UndefOr[ResourceARNList]
-    var Tags: js.UndefOr[TagMap]
+    var ResourceARNList: ResourceARNList
+    var Tags: TagMap
   }
 
   object TagResourcesInput {
     def apply(
-      ResourceARNList: js.UndefOr[ResourceARNList] = js.undefined,
-      Tags: js.UndefOr[TagMap] = js.undefined): TagResourcesInput = {
+      ResourceARNList: ResourceARNList,
+      Tags: TagMap): TagResourcesInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ResourceARNList" -> ResourceARNList.map { x => x.asInstanceOf[js.Any] },
-        "Tags" -> Tags.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ResourceARNList" -> ResourceARNList.asInstanceOf[js.Any],
+        "Tags" -> Tags.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TagResourcesInput]
     }
@@ -317,17 +317,17 @@ package resourcegroupstaggingapi {
 
   @js.native
   trait UntagResourcesInput extends js.Object {
-    var ResourceARNList: js.UndefOr[ResourceARNList]
-    var TagKeys: js.UndefOr[TagKeyListForUntag]
+    var ResourceARNList: ResourceARNList
+    var TagKeys: TagKeyListForUntag
   }
 
   object UntagResourcesInput {
     def apply(
-      ResourceARNList: js.UndefOr[ResourceARNList] = js.undefined,
-      TagKeys: js.UndefOr[TagKeyListForUntag] = js.undefined): UntagResourcesInput = {
+      ResourceARNList: ResourceARNList,
+      TagKeys: TagKeyListForUntag): UntagResourcesInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ResourceARNList" -> ResourceARNList.map { x => x.asInstanceOf[js.Any] },
-        "TagKeys" -> TagKeys.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ResourceARNList" -> ResourceARNList.asInstanceOf[js.Any],
+        "TagKeys" -> TagKeys.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UntagResourcesInput]
     }

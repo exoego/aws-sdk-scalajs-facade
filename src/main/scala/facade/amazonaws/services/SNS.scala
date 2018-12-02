@@ -81,23 +81,23 @@ package sns {
 
   @js.native
   trait AddPermissionInput extends js.Object {
-    var TopicArn: js.UndefOr[topicARN]
-    var Label: js.UndefOr[label]
-    var AWSAccountId: js.UndefOr[DelegatesList]
-    var ActionName: js.UndefOr[ActionsList]
+    var AWSAccountId: DelegatesList
+    var ActionName: ActionsList
+    var Label: label
+    var TopicArn: topicARN
   }
 
   object AddPermissionInput {
     def apply(
-      TopicArn: js.UndefOr[topicARN] = js.undefined,
-      Label: js.UndefOr[label] = js.undefined,
-      AWSAccountId: js.UndefOr[DelegatesList] = js.undefined,
-      ActionName: js.UndefOr[ActionsList] = js.undefined): AddPermissionInput = {
+      AWSAccountId: DelegatesList,
+      ActionName: ActionsList,
+      Label: label,
+      TopicArn: topicARN): AddPermissionInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "TopicArn" -> TopicArn.map { x => x.asInstanceOf[js.Any] },
-        "Label" -> Label.map { x => x.asInstanceOf[js.Any] },
-        "AWSAccountId" -> AWSAccountId.map { x => x.asInstanceOf[js.Any] },
-        "ActionName" -> ActionName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "AWSAccountId" -> AWSAccountId.asInstanceOf[js.Any],
+        "ActionName" -> ActionName.asInstanceOf[js.Any],
+        "Label" -> Label.asInstanceOf[js.Any],
+        "TopicArn" -> TopicArn.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AddPermissionInput]
     }
@@ -108,14 +108,14 @@ package sns {
    */
   @js.native
   trait CheckIfPhoneNumberIsOptedOutInput extends js.Object {
-    var phoneNumber: js.UndefOr[PhoneNumber]
+    var phoneNumber: PhoneNumber
   }
 
   object CheckIfPhoneNumberIsOptedOutInput {
     def apply(
-      phoneNumber: js.UndefOr[PhoneNumber] = js.undefined): CheckIfPhoneNumberIsOptedOutInput = {
+      phoneNumber: PhoneNumber): CheckIfPhoneNumberIsOptedOutInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "phoneNumber" -> phoneNumber.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "phoneNumber" -> phoneNumber.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CheckIfPhoneNumberIsOptedOutInput]
     }
@@ -144,19 +144,19 @@ package sns {
    */
   @js.native
   trait ConfirmSubscriptionInput extends js.Object {
-    var TopicArn: js.UndefOr[topicARN]
-    var Token: js.UndefOr[token]
+    var Token: token
+    var TopicArn: topicARN
     var AuthenticateOnUnsubscribe: js.UndefOr[authenticateOnUnsubscribe]
   }
 
   object ConfirmSubscriptionInput {
     def apply(
-      TopicArn: js.UndefOr[topicARN] = js.undefined,
-      Token: js.UndefOr[token] = js.undefined,
+      Token: token,
+      TopicArn: topicARN,
       AuthenticateOnUnsubscribe: js.UndefOr[authenticateOnUnsubscribe] = js.undefined): ConfirmSubscriptionInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "TopicArn" -> TopicArn.map { x => x.asInstanceOf[js.Any] },
-        "Token" -> Token.map { x => x.asInstanceOf[js.Any] },
+        "Token" -> Token.asInstanceOf[js.Any],
+        "TopicArn" -> TopicArn.asInstanceOf[js.Any],
         "AuthenticateOnUnsubscribe" -> AuthenticateOnUnsubscribe.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ConfirmSubscriptionInput]
@@ -204,20 +204,20 @@ package sns {
    */
   @js.native
   trait CreatePlatformApplicationInput extends js.Object {
-    var Name: js.UndefOr[String]
-    var Platform: js.UndefOr[String]
-    var Attributes: js.UndefOr[MapStringToString]
+    var Attributes: MapStringToString
+    var Name: String
+    var Platform: String
   }
 
   object CreatePlatformApplicationInput {
     def apply(
-      Name: js.UndefOr[String] = js.undefined,
-      Platform: js.UndefOr[String] = js.undefined,
-      Attributes: js.UndefOr[MapStringToString] = js.undefined): CreatePlatformApplicationInput = {
+      Attributes: MapStringToString,
+      Name: String,
+      Platform: String): CreatePlatformApplicationInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
-        "Platform" -> Platform.map { x => x.asInstanceOf[js.Any] },
-        "Attributes" -> Attributes.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Attributes" -> Attributes.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
+        "Platform" -> Platform.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreatePlatformApplicationInput]
     }
@@ -246,23 +246,23 @@ package sns {
    */
   @js.native
   trait CreatePlatformEndpointInput extends js.Object {
-    var PlatformApplicationArn: js.UndefOr[String]
-    var Token: js.UndefOr[String]
-    var CustomUserData: js.UndefOr[String]
+    var PlatformApplicationArn: String
+    var Token: String
     var Attributes: js.UndefOr[MapStringToString]
+    var CustomUserData: js.UndefOr[String]
   }
 
   object CreatePlatformEndpointInput {
     def apply(
-      PlatformApplicationArn: js.UndefOr[String] = js.undefined,
-      Token: js.UndefOr[String] = js.undefined,
-      CustomUserData: js.UndefOr[String] = js.undefined,
-      Attributes: js.UndefOr[MapStringToString] = js.undefined): CreatePlatformEndpointInput = {
+      PlatformApplicationArn: String,
+      Token: String,
+      Attributes: js.UndefOr[MapStringToString] = js.undefined,
+      CustomUserData: js.UndefOr[String] = js.undefined): CreatePlatformEndpointInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "PlatformApplicationArn" -> PlatformApplicationArn.map { x => x.asInstanceOf[js.Any] },
-        "Token" -> Token.map { x => x.asInstanceOf[js.Any] },
-        "CustomUserData" -> CustomUserData.map { x => x.asInstanceOf[js.Any] },
-        "Attributes" -> Attributes.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "PlatformApplicationArn" -> PlatformApplicationArn.asInstanceOf[js.Any],
+        "Token" -> Token.asInstanceOf[js.Any],
+        "Attributes" -> Attributes.map { x => x.asInstanceOf[js.Any] },
+        "CustomUserData" -> CustomUserData.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreatePlatformEndpointInput]
     }
@@ -273,16 +273,16 @@ package sns {
    */
   @js.native
   trait CreateTopicInput extends js.Object {
-    var Name: js.UndefOr[topicName]
+    var Name: topicName
     var Attributes: js.UndefOr[TopicAttributesMap]
   }
 
   object CreateTopicInput {
     def apply(
-      Name: js.UndefOr[topicName] = js.undefined,
+      Name: topicName,
       Attributes: js.UndefOr[TopicAttributesMap] = js.undefined): CreateTopicInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
+        "Name" -> Name.asInstanceOf[js.Any],
         "Attributes" -> Attributes.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateTopicInput]
@@ -312,14 +312,14 @@ package sns {
    */
   @js.native
   trait DeleteEndpointInput extends js.Object {
-    var EndpointArn: js.UndefOr[String]
+    var EndpointArn: String
   }
 
   object DeleteEndpointInput {
     def apply(
-      EndpointArn: js.UndefOr[String] = js.undefined): DeleteEndpointInput = {
+      EndpointArn: String): DeleteEndpointInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "EndpointArn" -> EndpointArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "EndpointArn" -> EndpointArn.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteEndpointInput]
     }
@@ -330,14 +330,14 @@ package sns {
    */
   @js.native
   trait DeletePlatformApplicationInput extends js.Object {
-    var PlatformApplicationArn: js.UndefOr[String]
+    var PlatformApplicationArn: String
   }
 
   object DeletePlatformApplicationInput {
     def apply(
-      PlatformApplicationArn: js.UndefOr[String] = js.undefined): DeletePlatformApplicationInput = {
+      PlatformApplicationArn: String): DeletePlatformApplicationInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "PlatformApplicationArn" -> PlatformApplicationArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "PlatformApplicationArn" -> PlatformApplicationArn.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeletePlatformApplicationInput]
     }
@@ -345,14 +345,14 @@ package sns {
 
   @js.native
   trait DeleteTopicInput extends js.Object {
-    var TopicArn: js.UndefOr[topicARN]
+    var TopicArn: topicARN
   }
 
   object DeleteTopicInput {
     def apply(
-      TopicArn: js.UndefOr[topicARN] = js.undefined): DeleteTopicInput = {
+      TopicArn: topicARN): DeleteTopicInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "TopicArn" -> TopicArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "TopicArn" -> TopicArn.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteTopicInput]
     }
@@ -363,17 +363,17 @@ package sns {
    */
   @js.native
   trait Endpoint extends js.Object {
-    var EndpointArn: js.UndefOr[String]
     var Attributes: js.UndefOr[MapStringToString]
+    var EndpointArn: js.UndefOr[String]
   }
 
   object Endpoint {
     def apply(
-      EndpointArn: js.UndefOr[String] = js.undefined,
-      Attributes: js.UndefOr[MapStringToString] = js.undefined): Endpoint = {
+      Attributes: js.UndefOr[MapStringToString] = js.undefined,
+      EndpointArn: js.UndefOr[String] = js.undefined): Endpoint = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "EndpointArn" -> EndpointArn.map { x => x.asInstanceOf[js.Any] },
-        "Attributes" -> Attributes.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Attributes" -> Attributes.map { x => x.asInstanceOf[js.Any] },
+        "EndpointArn" -> EndpointArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Endpoint]
     }
@@ -384,14 +384,14 @@ package sns {
    */
   @js.native
   trait GetEndpointAttributesInput extends js.Object {
-    var EndpointArn: js.UndefOr[String]
+    var EndpointArn: String
   }
 
   object GetEndpointAttributesInput {
     def apply(
-      EndpointArn: js.UndefOr[String] = js.undefined): GetEndpointAttributesInput = {
+      EndpointArn: String): GetEndpointAttributesInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "EndpointArn" -> EndpointArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "EndpointArn" -> EndpointArn.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetEndpointAttributesInput]
     }
@@ -420,14 +420,14 @@ package sns {
    */
   @js.native
   trait GetPlatformApplicationAttributesInput extends js.Object {
-    var PlatformApplicationArn: js.UndefOr[String]
+    var PlatformApplicationArn: String
   }
 
   object GetPlatformApplicationAttributesInput {
     def apply(
-      PlatformApplicationArn: js.UndefOr[String] = js.undefined): GetPlatformApplicationAttributesInput = {
+      PlatformApplicationArn: String): GetPlatformApplicationAttributesInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "PlatformApplicationArn" -> PlatformApplicationArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "PlatformApplicationArn" -> PlatformApplicationArn.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetPlatformApplicationAttributesInput]
     }
@@ -492,14 +492,14 @@ package sns {
    */
   @js.native
   trait GetSubscriptionAttributesInput extends js.Object {
-    var SubscriptionArn: js.UndefOr[subscriptionARN]
+    var SubscriptionArn: subscriptionARN
   }
 
   object GetSubscriptionAttributesInput {
     def apply(
-      SubscriptionArn: js.UndefOr[subscriptionARN] = js.undefined): GetSubscriptionAttributesInput = {
+      SubscriptionArn: subscriptionARN): GetSubscriptionAttributesInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "SubscriptionArn" -> SubscriptionArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "SubscriptionArn" -> SubscriptionArn.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetSubscriptionAttributesInput]
     }
@@ -528,14 +528,14 @@ package sns {
    */
   @js.native
   trait GetTopicAttributesInput extends js.Object {
-    var TopicArn: js.UndefOr[topicARN]
+    var TopicArn: topicARN
   }
 
   object GetTopicAttributesInput {
     def apply(
-      TopicArn: js.UndefOr[topicARN] = js.undefined): GetTopicAttributesInput = {
+      TopicArn: topicARN): GetTopicAttributesInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "TopicArn" -> TopicArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "TopicArn" -> TopicArn.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetTopicAttributesInput]
     }
@@ -564,16 +564,16 @@ package sns {
    */
   @js.native
   trait ListEndpointsByPlatformApplicationInput extends js.Object {
-    var PlatformApplicationArn: js.UndefOr[String]
+    var PlatformApplicationArn: String
     var NextToken: js.UndefOr[String]
   }
 
   object ListEndpointsByPlatformApplicationInput {
     def apply(
-      PlatformApplicationArn: js.UndefOr[String] = js.undefined,
+      PlatformApplicationArn: String,
       NextToken: js.UndefOr[String] = js.undefined): ListEndpointsByPlatformApplicationInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "PlatformApplicationArn" -> PlatformApplicationArn.map { x => x.asInstanceOf[js.Any] },
+        "PlatformApplicationArn" -> PlatformApplicationArn.asInstanceOf[js.Any],
         "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListEndpointsByPlatformApplicationInput]
@@ -624,17 +624,17 @@ package sns {
    */
   @js.native
   trait ListPhoneNumbersOptedOutResponse extends js.Object {
-    var phoneNumbers: js.UndefOr[PhoneNumberList]
     var nextToken: js.UndefOr[string]
+    var phoneNumbers: js.UndefOr[PhoneNumberList]
   }
 
   object ListPhoneNumbersOptedOutResponse {
     def apply(
-      phoneNumbers: js.UndefOr[PhoneNumberList] = js.undefined,
-      nextToken: js.UndefOr[string] = js.undefined): ListPhoneNumbersOptedOutResponse = {
+      nextToken: js.UndefOr[string] = js.undefined,
+      phoneNumbers: js.UndefOr[PhoneNumberList] = js.undefined): ListPhoneNumbersOptedOutResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "phoneNumbers" -> phoneNumbers.map { x => x.asInstanceOf[js.Any] },
-        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] },
+        "phoneNumbers" -> phoneNumbers.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListPhoneNumbersOptedOutResponse]
     }
@@ -663,17 +663,17 @@ package sns {
    */
   @js.native
   trait ListPlatformApplicationsResponse extends js.Object {
-    var PlatformApplications: js.UndefOr[ListOfPlatformApplications]
     var NextToken: js.UndefOr[String]
+    var PlatformApplications: js.UndefOr[ListOfPlatformApplications]
   }
 
   object ListPlatformApplicationsResponse {
     def apply(
-      PlatformApplications: js.UndefOr[ListOfPlatformApplications] = js.undefined,
-      NextToken: js.UndefOr[String] = js.undefined): ListPlatformApplicationsResponse = {
+      NextToken: js.UndefOr[String] = js.undefined,
+      PlatformApplications: js.UndefOr[ListOfPlatformApplications] = js.undefined): ListPlatformApplicationsResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "PlatformApplications" -> PlatformApplications.map { x => x.asInstanceOf[js.Any] },
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
+        "PlatformApplications" -> PlatformApplications.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListPlatformApplicationsResponse]
     }
@@ -684,16 +684,16 @@ package sns {
    */
   @js.native
   trait ListSubscriptionsByTopicInput extends js.Object {
-    var TopicArn: js.UndefOr[topicARN]
+    var TopicArn: topicARN
     var NextToken: js.UndefOr[nextToken]
   }
 
   object ListSubscriptionsByTopicInput {
     def apply(
-      TopicArn: js.UndefOr[topicARN] = js.undefined,
+      TopicArn: topicARN,
       NextToken: js.UndefOr[nextToken] = js.undefined): ListSubscriptionsByTopicInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "TopicArn" -> TopicArn.map { x => x.asInstanceOf[js.Any] },
+        "TopicArn" -> TopicArn.asInstanceOf[js.Any],
         "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListSubscriptionsByTopicInput]
@@ -705,17 +705,17 @@ package sns {
    */
   @js.native
   trait ListSubscriptionsByTopicResponse extends js.Object {
-    var Subscriptions: js.UndefOr[SubscriptionsList]
     var NextToken: js.UndefOr[nextToken]
+    var Subscriptions: js.UndefOr[SubscriptionsList]
   }
 
   object ListSubscriptionsByTopicResponse {
     def apply(
-      Subscriptions: js.UndefOr[SubscriptionsList] = js.undefined,
-      NextToken: js.UndefOr[nextToken] = js.undefined): ListSubscriptionsByTopicResponse = {
+      NextToken: js.UndefOr[nextToken] = js.undefined,
+      Subscriptions: js.UndefOr[SubscriptionsList] = js.undefined): ListSubscriptionsByTopicResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Subscriptions" -> Subscriptions.map { x => x.asInstanceOf[js.Any] },
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
+        "Subscriptions" -> Subscriptions.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListSubscriptionsByTopicResponse]
     }
@@ -744,17 +744,17 @@ package sns {
    */
   @js.native
   trait ListSubscriptionsResponse extends js.Object {
-    var Subscriptions: js.UndefOr[SubscriptionsList]
     var NextToken: js.UndefOr[nextToken]
+    var Subscriptions: js.UndefOr[SubscriptionsList]
   }
 
   object ListSubscriptionsResponse {
     def apply(
-      Subscriptions: js.UndefOr[SubscriptionsList] = js.undefined,
-      NextToken: js.UndefOr[nextToken] = js.undefined): ListSubscriptionsResponse = {
+      NextToken: js.UndefOr[nextToken] = js.undefined,
+      Subscriptions: js.UndefOr[SubscriptionsList] = js.undefined): ListSubscriptionsResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Subscriptions" -> Subscriptions.map { x => x.asInstanceOf[js.Any] },
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
+        "Subscriptions" -> Subscriptions.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListSubscriptionsResponse]
     }
@@ -780,17 +780,17 @@ package sns {
    */
   @js.native
   trait ListTopicsResponse extends js.Object {
-    var Topics: js.UndefOr[TopicsList]
     var NextToken: js.UndefOr[nextToken]
+    var Topics: js.UndefOr[TopicsList]
   }
 
   object ListTopicsResponse {
     def apply(
-      Topics: js.UndefOr[TopicsList] = js.undefined,
-      NextToken: js.UndefOr[nextToken] = js.undefined): ListTopicsResponse = {
+      NextToken: js.UndefOr[nextToken] = js.undefined,
+      Topics: js.UndefOr[TopicsList] = js.undefined): ListTopicsResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Topics" -> Topics.map { x => x.asInstanceOf[js.Any] },
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
+        "Topics" -> Topics.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListTopicsResponse]
     }
@@ -801,20 +801,20 @@ package sns {
    */
   @js.native
   trait MessageAttributeValue extends js.Object {
-    var DataType: js.UndefOr[String]
-    var StringValue: js.UndefOr[String]
+    var DataType: String
     var BinaryValue: js.UndefOr[Binary]
+    var StringValue: js.UndefOr[String]
   }
 
   object MessageAttributeValue {
     def apply(
-      DataType: js.UndefOr[String] = js.undefined,
-      StringValue: js.UndefOr[String] = js.undefined,
-      BinaryValue: js.UndefOr[Binary] = js.undefined): MessageAttributeValue = {
+      DataType: String,
+      BinaryValue: js.UndefOr[Binary] = js.undefined,
+      StringValue: js.UndefOr[String] = js.undefined): MessageAttributeValue = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "DataType" -> DataType.map { x => x.asInstanceOf[js.Any] },
-        "StringValue" -> StringValue.map { x => x.asInstanceOf[js.Any] },
-        "BinaryValue" -> BinaryValue.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "DataType" -> DataType.asInstanceOf[js.Any],
+        "BinaryValue" -> BinaryValue.map { x => x.asInstanceOf[js.Any] },
+        "StringValue" -> StringValue.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[MessageAttributeValue]
     }
@@ -825,14 +825,14 @@ package sns {
    */
   @js.native
   trait OptInPhoneNumberInput extends js.Object {
-    var phoneNumber: js.UndefOr[PhoneNumber]
+    var phoneNumber: PhoneNumber
   }
 
   object OptInPhoneNumberInput {
     def apply(
-      phoneNumber: js.UndefOr[PhoneNumber] = js.undefined): OptInPhoneNumberInput = {
+      phoneNumber: PhoneNumber): OptInPhoneNumberInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "phoneNumber" -> phoneNumber.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "phoneNumber" -> phoneNumber.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[OptInPhoneNumberInput]
     }
@@ -859,17 +859,17 @@ package sns {
    */
   @js.native
   trait PlatformApplication extends js.Object {
-    var PlatformApplicationArn: js.UndefOr[String]
     var Attributes: js.UndefOr[MapStringToString]
+    var PlatformApplicationArn: js.UndefOr[String]
   }
 
   object PlatformApplication {
     def apply(
-      PlatformApplicationArn: js.UndefOr[String] = js.undefined,
-      Attributes: js.UndefOr[MapStringToString] = js.undefined): PlatformApplication = {
+      Attributes: js.UndefOr[MapStringToString] = js.undefined,
+      PlatformApplicationArn: js.UndefOr[String] = js.undefined): PlatformApplication = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "PlatformApplicationArn" -> PlatformApplicationArn.map { x => x.asInstanceOf[js.Any] },
-        "Attributes" -> Attributes.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Attributes" -> Attributes.map { x => x.asInstanceOf[js.Any] },
+        "PlatformApplicationArn" -> PlatformApplicationArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PlatformApplication]
     }
@@ -880,30 +880,30 @@ package sns {
    */
   @js.native
   trait PublishInput extends js.Object {
-    var Subject: js.UndefOr[subject]
+    var Message: message
+    var MessageAttributes: js.UndefOr[MessageAttributeMap]
     var MessageStructure: js.UndefOr[messageStructure]
     var PhoneNumber: js.UndefOr[String]
-    var MessageAttributes: js.UndefOr[MessageAttributeMap]
-    var Message: js.UndefOr[message]
+    var Subject: js.UndefOr[subject]
     var TargetArn: js.UndefOr[String]
     var TopicArn: js.UndefOr[topicARN]
   }
 
   object PublishInput {
     def apply(
-      Subject: js.UndefOr[subject] = js.undefined,
+      Message: message,
+      MessageAttributes: js.UndefOr[MessageAttributeMap] = js.undefined,
       MessageStructure: js.UndefOr[messageStructure] = js.undefined,
       PhoneNumber: js.UndefOr[String] = js.undefined,
-      MessageAttributes: js.UndefOr[MessageAttributeMap] = js.undefined,
-      Message: js.UndefOr[message] = js.undefined,
+      Subject: js.UndefOr[subject] = js.undefined,
       TargetArn: js.UndefOr[String] = js.undefined,
       TopicArn: js.UndefOr[topicARN] = js.undefined): PublishInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Subject" -> Subject.map { x => x.asInstanceOf[js.Any] },
+        "Message" -> Message.asInstanceOf[js.Any],
+        "MessageAttributes" -> MessageAttributes.map { x => x.asInstanceOf[js.Any] },
         "MessageStructure" -> MessageStructure.map { x => x.asInstanceOf[js.Any] },
         "PhoneNumber" -> PhoneNumber.map { x => x.asInstanceOf[js.Any] },
-        "MessageAttributes" -> MessageAttributes.map { x => x.asInstanceOf[js.Any] },
-        "Message" -> Message.map { x => x.asInstanceOf[js.Any] },
+        "Subject" -> Subject.map { x => x.asInstanceOf[js.Any] },
         "TargetArn" -> TargetArn.map { x => x.asInstanceOf[js.Any] },
         "TopicArn" -> TopicArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
@@ -934,17 +934,17 @@ package sns {
    */
   @js.native
   trait RemovePermissionInput extends js.Object {
-    var TopicArn: js.UndefOr[topicARN]
-    var Label: js.UndefOr[label]
+    var Label: label
+    var TopicArn: topicARN
   }
 
   object RemovePermissionInput {
     def apply(
-      TopicArn: js.UndefOr[topicARN] = js.undefined,
-      Label: js.UndefOr[label] = js.undefined): RemovePermissionInput = {
+      Label: label,
+      TopicArn: topicARN): RemovePermissionInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "TopicArn" -> TopicArn.map { x => x.asInstanceOf[js.Any] },
-        "Label" -> Label.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Label" -> Label.asInstanceOf[js.Any],
+        "TopicArn" -> TopicArn.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RemovePermissionInput]
     }
@@ -955,17 +955,17 @@ package sns {
    */
   @js.native
   trait SetEndpointAttributesInput extends js.Object {
-    var EndpointArn: js.UndefOr[String]
-    var Attributes: js.UndefOr[MapStringToString]
+    var Attributes: MapStringToString
+    var EndpointArn: String
   }
 
   object SetEndpointAttributesInput {
     def apply(
-      EndpointArn: js.UndefOr[String] = js.undefined,
-      Attributes: js.UndefOr[MapStringToString] = js.undefined): SetEndpointAttributesInput = {
+      Attributes: MapStringToString,
+      EndpointArn: String): SetEndpointAttributesInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "EndpointArn" -> EndpointArn.map { x => x.asInstanceOf[js.Any] },
-        "Attributes" -> Attributes.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Attributes" -> Attributes.asInstanceOf[js.Any],
+        "EndpointArn" -> EndpointArn.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SetEndpointAttributesInput]
     }
@@ -976,17 +976,17 @@ package sns {
    */
   @js.native
   trait SetPlatformApplicationAttributesInput extends js.Object {
-    var PlatformApplicationArn: js.UndefOr[String]
-    var Attributes: js.UndefOr[MapStringToString]
+    var Attributes: MapStringToString
+    var PlatformApplicationArn: String
   }
 
   object SetPlatformApplicationAttributesInput {
     def apply(
-      PlatformApplicationArn: js.UndefOr[String] = js.undefined,
-      Attributes: js.UndefOr[MapStringToString] = js.undefined): SetPlatformApplicationAttributesInput = {
+      Attributes: MapStringToString,
+      PlatformApplicationArn: String): SetPlatformApplicationAttributesInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "PlatformApplicationArn" -> PlatformApplicationArn.map { x => x.asInstanceOf[js.Any] },
-        "Attributes" -> Attributes.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Attributes" -> Attributes.asInstanceOf[js.Any],
+        "PlatformApplicationArn" -> PlatformApplicationArn.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SetPlatformApplicationAttributesInput]
     }
@@ -997,14 +997,14 @@ package sns {
    */
   @js.native
   trait SetSMSAttributesInput extends js.Object {
-    var attributes: js.UndefOr[MapStringToString]
+    var attributes: MapStringToString
   }
 
   object SetSMSAttributesInput {
     def apply(
-      attributes: js.UndefOr[MapStringToString] = js.undefined): SetSMSAttributesInput = {
+      attributes: MapStringToString): SetSMSAttributesInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "attributes" -> attributes.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "attributes" -> attributes.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SetSMSAttributesInput]
     }
@@ -1031,19 +1031,19 @@ package sns {
    */
   @js.native
   trait SetSubscriptionAttributesInput extends js.Object {
-    var SubscriptionArn: js.UndefOr[subscriptionARN]
-    var AttributeName: js.UndefOr[attributeName]
+    var AttributeName: attributeName
+    var SubscriptionArn: subscriptionARN
     var AttributeValue: js.UndefOr[attributeValue]
   }
 
   object SetSubscriptionAttributesInput {
     def apply(
-      SubscriptionArn: js.UndefOr[subscriptionARN] = js.undefined,
-      AttributeName: js.UndefOr[attributeName] = js.undefined,
+      AttributeName: attributeName,
+      SubscriptionArn: subscriptionARN,
       AttributeValue: js.UndefOr[attributeValue] = js.undefined): SetSubscriptionAttributesInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "SubscriptionArn" -> SubscriptionArn.map { x => x.asInstanceOf[js.Any] },
-        "AttributeName" -> AttributeName.map { x => x.asInstanceOf[js.Any] },
+        "AttributeName" -> AttributeName.asInstanceOf[js.Any],
+        "SubscriptionArn" -> SubscriptionArn.asInstanceOf[js.Any],
         "AttributeValue" -> AttributeValue.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SetSubscriptionAttributesInput]
@@ -1055,19 +1055,19 @@ package sns {
    */
   @js.native
   trait SetTopicAttributesInput extends js.Object {
-    var TopicArn: js.UndefOr[topicARN]
-    var AttributeName: js.UndefOr[attributeName]
+    var AttributeName: attributeName
+    var TopicArn: topicARN
     var AttributeValue: js.UndefOr[attributeValue]
   }
 
   object SetTopicAttributesInput {
     def apply(
-      TopicArn: js.UndefOr[topicARN] = js.undefined,
-      AttributeName: js.UndefOr[attributeName] = js.undefined,
+      AttributeName: attributeName,
+      TopicArn: topicARN,
       AttributeValue: js.UndefOr[attributeValue] = js.undefined): SetTopicAttributesInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "TopicArn" -> TopicArn.map { x => x.asInstanceOf[js.Any] },
-        "AttributeName" -> AttributeName.map { x => x.asInstanceOf[js.Any] },
+        "AttributeName" -> AttributeName.asInstanceOf[js.Any],
+        "TopicArn" -> TopicArn.asInstanceOf[js.Any],
         "AttributeValue" -> AttributeValue.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SetTopicAttributesInput]
@@ -1079,26 +1079,26 @@ package sns {
    */
   @js.native
   trait SubscribeInput extends js.Object {
-    var Endpoint: js.UndefOr[endpoint]
+    var Protocol: protocol
+    var TopicArn: topicARN
     var Attributes: js.UndefOr[SubscriptionAttributesMap]
-    var Protocol: js.UndefOr[protocol]
+    var Endpoint: js.UndefOr[endpoint]
     var ReturnSubscriptionArn: js.UndefOr[boolean]
-    var TopicArn: js.UndefOr[topicARN]
   }
 
   object SubscribeInput {
     def apply(
-      Endpoint: js.UndefOr[endpoint] = js.undefined,
+      Protocol: protocol,
+      TopicArn: topicARN,
       Attributes: js.UndefOr[SubscriptionAttributesMap] = js.undefined,
-      Protocol: js.UndefOr[protocol] = js.undefined,
-      ReturnSubscriptionArn: js.UndefOr[boolean] = js.undefined,
-      TopicArn: js.UndefOr[topicARN] = js.undefined): SubscribeInput = {
+      Endpoint: js.UndefOr[endpoint] = js.undefined,
+      ReturnSubscriptionArn: js.UndefOr[boolean] = js.undefined): SubscribeInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Endpoint" -> Endpoint.map { x => x.asInstanceOf[js.Any] },
+        "Protocol" -> Protocol.asInstanceOf[js.Any],
+        "TopicArn" -> TopicArn.asInstanceOf[js.Any],
         "Attributes" -> Attributes.map { x => x.asInstanceOf[js.Any] },
-        "Protocol" -> Protocol.map { x => x.asInstanceOf[js.Any] },
-        "ReturnSubscriptionArn" -> ReturnSubscriptionArn.map { x => x.asInstanceOf[js.Any] },
-        "TopicArn" -> TopicArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Endpoint" -> Endpoint.map { x => x.asInstanceOf[js.Any] },
+        "ReturnSubscriptionArn" -> ReturnSubscriptionArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SubscribeInput]
     }
@@ -1127,25 +1127,25 @@ package sns {
    */
   @js.native
   trait Subscription extends js.Object {
-    var SubscriptionArn: js.UndefOr[subscriptionARN]
     var Endpoint: js.UndefOr[endpoint]
-    var Protocol: js.UndefOr[protocol]
     var Owner: js.UndefOr[account]
+    var Protocol: js.UndefOr[protocol]
+    var SubscriptionArn: js.UndefOr[subscriptionARN]
     var TopicArn: js.UndefOr[topicARN]
   }
 
   object Subscription {
     def apply(
-      SubscriptionArn: js.UndefOr[subscriptionARN] = js.undefined,
       Endpoint: js.UndefOr[endpoint] = js.undefined,
-      Protocol: js.UndefOr[protocol] = js.undefined,
       Owner: js.UndefOr[account] = js.undefined,
+      Protocol: js.UndefOr[protocol] = js.undefined,
+      SubscriptionArn: js.UndefOr[subscriptionARN] = js.undefined,
       TopicArn: js.UndefOr[topicARN] = js.undefined): Subscription = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "SubscriptionArn" -> SubscriptionArn.map { x => x.asInstanceOf[js.Any] },
         "Endpoint" -> Endpoint.map { x => x.asInstanceOf[js.Any] },
-        "Protocol" -> Protocol.map { x => x.asInstanceOf[js.Any] },
         "Owner" -> Owner.map { x => x.asInstanceOf[js.Any] },
+        "Protocol" -> Protocol.map { x => x.asInstanceOf[js.Any] },
+        "SubscriptionArn" -> SubscriptionArn.map { x => x.asInstanceOf[js.Any] },
         "TopicArn" -> TopicArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Subscription]
@@ -1175,14 +1175,14 @@ package sns {
    */
   @js.native
   trait UnsubscribeInput extends js.Object {
-    var SubscriptionArn: js.UndefOr[subscriptionARN]
+    var SubscriptionArn: subscriptionARN
   }
 
   object UnsubscribeInput {
     def apply(
-      SubscriptionArn: js.UndefOr[subscriptionARN] = js.undefined): UnsubscribeInput = {
+      SubscriptionArn: subscriptionARN): UnsubscribeInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "SubscriptionArn" -> SubscriptionArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "SubscriptionArn" -> SubscriptionArn.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UnsubscribeInput]
     }

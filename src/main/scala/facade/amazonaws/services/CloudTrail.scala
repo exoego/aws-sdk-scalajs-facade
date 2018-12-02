@@ -52,16 +52,16 @@ package cloudtrail {
    */
   @js.native
   trait AddTagsRequest extends js.Object {
-    var ResourceId: js.UndefOr[String]
+    var ResourceId: String
     var TagsList: js.UndefOr[TagsList]
   }
 
   object AddTagsRequest {
     def apply(
-      ResourceId: js.UndefOr[String] = js.undefined,
+      ResourceId: String,
       TagsList: js.UndefOr[TagsList] = js.undefined): AddTagsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ResourceId" -> ResourceId.map { x => x.asInstanceOf[js.Any] },
+        "ResourceId" -> ResourceId.asInstanceOf[js.Any],
         "TagsList" -> TagsList.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AddTagsRequest]
@@ -89,44 +89,44 @@ package cloudtrail {
    */
   @js.native
   trait CreateTrailRequest extends js.Object {
-    var CloudWatchLogsRoleArn: js.UndefOr[String]
+    var Name: String
+    var S3BucketName: String
     var CloudWatchLogsLogGroupArn: js.UndefOr[String]
-    var Name: js.UndefOr[String]
-    var KmsKeyId: js.UndefOr[String]
-    var IsMultiRegionTrail: js.UndefOr[Boolean]
-    var IsOrganizationTrail: js.UndefOr[Boolean]
-    var S3BucketName: js.UndefOr[String]
-    var SnsTopicName: js.UndefOr[String]
-    var S3KeyPrefix: js.UndefOr[String]
+    var CloudWatchLogsRoleArn: js.UndefOr[String]
     var EnableLogFileValidation: js.UndefOr[Boolean]
     var IncludeGlobalServiceEvents: js.UndefOr[Boolean]
+    var IsMultiRegionTrail: js.UndefOr[Boolean]
+    var IsOrganizationTrail: js.UndefOr[Boolean]
+    var KmsKeyId: js.UndefOr[String]
+    var S3KeyPrefix: js.UndefOr[String]
+    var SnsTopicName: js.UndefOr[String]
   }
 
   object CreateTrailRequest {
     def apply(
-      CloudWatchLogsRoleArn: js.UndefOr[String] = js.undefined,
+      Name: String,
+      S3BucketName: String,
       CloudWatchLogsLogGroupArn: js.UndefOr[String] = js.undefined,
-      Name: js.UndefOr[String] = js.undefined,
-      KmsKeyId: js.UndefOr[String] = js.undefined,
+      CloudWatchLogsRoleArn: js.UndefOr[String] = js.undefined,
+      EnableLogFileValidation: js.UndefOr[Boolean] = js.undefined,
+      IncludeGlobalServiceEvents: js.UndefOr[Boolean] = js.undefined,
       IsMultiRegionTrail: js.UndefOr[Boolean] = js.undefined,
       IsOrganizationTrail: js.UndefOr[Boolean] = js.undefined,
-      S3BucketName: js.UndefOr[String] = js.undefined,
-      SnsTopicName: js.UndefOr[String] = js.undefined,
+      KmsKeyId: js.UndefOr[String] = js.undefined,
       S3KeyPrefix: js.UndefOr[String] = js.undefined,
-      EnableLogFileValidation: js.UndefOr[Boolean] = js.undefined,
-      IncludeGlobalServiceEvents: js.UndefOr[Boolean] = js.undefined): CreateTrailRequest = {
+      SnsTopicName: js.UndefOr[String] = js.undefined): CreateTrailRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "CloudWatchLogsRoleArn" -> CloudWatchLogsRoleArn.map { x => x.asInstanceOf[js.Any] },
+        "Name" -> Name.asInstanceOf[js.Any],
+        "S3BucketName" -> S3BucketName.asInstanceOf[js.Any],
         "CloudWatchLogsLogGroupArn" -> CloudWatchLogsLogGroupArn.map { x => x.asInstanceOf[js.Any] },
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
-        "KmsKeyId" -> KmsKeyId.map { x => x.asInstanceOf[js.Any] },
+        "CloudWatchLogsRoleArn" -> CloudWatchLogsRoleArn.map { x => x.asInstanceOf[js.Any] },
+        "EnableLogFileValidation" -> EnableLogFileValidation.map { x => x.asInstanceOf[js.Any] },
+        "IncludeGlobalServiceEvents" -> IncludeGlobalServiceEvents.map { x => x.asInstanceOf[js.Any] },
         "IsMultiRegionTrail" -> IsMultiRegionTrail.map { x => x.asInstanceOf[js.Any] },
         "IsOrganizationTrail" -> IsOrganizationTrail.map { x => x.asInstanceOf[js.Any] },
-        "S3BucketName" -> S3BucketName.map { x => x.asInstanceOf[js.Any] },
-        "SnsTopicName" -> SnsTopicName.map { x => x.asInstanceOf[js.Any] },
+        "KmsKeyId" -> KmsKeyId.map { x => x.asInstanceOf[js.Any] },
         "S3KeyPrefix" -> S3KeyPrefix.map { x => x.asInstanceOf[js.Any] },
-        "EnableLogFileValidation" -> EnableLogFileValidation.map { x => x.asInstanceOf[js.Any] },
-        "IncludeGlobalServiceEvents" -> IncludeGlobalServiceEvents.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "SnsTopicName" -> SnsTopicName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateTrailRequest]
     }
@@ -137,49 +137,49 @@ package cloudtrail {
    */
   @js.native
   trait CreateTrailResponse extends js.Object {
-    var CloudWatchLogsRoleArn: js.UndefOr[String]
     var CloudWatchLogsLogGroupArn: js.UndefOr[String]
-    var Name: js.UndefOr[String]
-    var SnsTopicARN: js.UndefOr[String]
-    var KmsKeyId: js.UndefOr[String]
+    var CloudWatchLogsRoleArn: js.UndefOr[String]
+    var IncludeGlobalServiceEvents: js.UndefOr[Boolean]
     var IsMultiRegionTrail: js.UndefOr[Boolean]
     var IsOrganizationTrail: js.UndefOr[Boolean]
-    var S3BucketName: js.UndefOr[String]
-    var SnsTopicName: js.UndefOr[String]
+    var KmsKeyId: js.UndefOr[String]
     var LogFileValidationEnabled: js.UndefOr[Boolean]
+    var Name: js.UndefOr[String]
+    var S3BucketName: js.UndefOr[String]
     var S3KeyPrefix: js.UndefOr[String]
-    var IncludeGlobalServiceEvents: js.UndefOr[Boolean]
+    var SnsTopicARN: js.UndefOr[String]
+    var SnsTopicName: js.UndefOr[String]
     var TrailARN: js.UndefOr[String]
   }
 
   object CreateTrailResponse {
     def apply(
-      CloudWatchLogsRoleArn: js.UndefOr[String] = js.undefined,
       CloudWatchLogsLogGroupArn: js.UndefOr[String] = js.undefined,
-      Name: js.UndefOr[String] = js.undefined,
-      SnsTopicARN: js.UndefOr[String] = js.undefined,
-      KmsKeyId: js.UndefOr[String] = js.undefined,
+      CloudWatchLogsRoleArn: js.UndefOr[String] = js.undefined,
+      IncludeGlobalServiceEvents: js.UndefOr[Boolean] = js.undefined,
       IsMultiRegionTrail: js.UndefOr[Boolean] = js.undefined,
       IsOrganizationTrail: js.UndefOr[Boolean] = js.undefined,
-      S3BucketName: js.UndefOr[String] = js.undefined,
-      SnsTopicName: js.UndefOr[String] = js.undefined,
+      KmsKeyId: js.UndefOr[String] = js.undefined,
       LogFileValidationEnabled: js.UndefOr[Boolean] = js.undefined,
+      Name: js.UndefOr[String] = js.undefined,
+      S3BucketName: js.UndefOr[String] = js.undefined,
       S3KeyPrefix: js.UndefOr[String] = js.undefined,
-      IncludeGlobalServiceEvents: js.UndefOr[Boolean] = js.undefined,
+      SnsTopicARN: js.UndefOr[String] = js.undefined,
+      SnsTopicName: js.UndefOr[String] = js.undefined,
       TrailARN: js.UndefOr[String] = js.undefined): CreateTrailResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "CloudWatchLogsRoleArn" -> CloudWatchLogsRoleArn.map { x => x.asInstanceOf[js.Any] },
         "CloudWatchLogsLogGroupArn" -> CloudWatchLogsLogGroupArn.map { x => x.asInstanceOf[js.Any] },
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
-        "SnsTopicARN" -> SnsTopicARN.map { x => x.asInstanceOf[js.Any] },
-        "KmsKeyId" -> KmsKeyId.map { x => x.asInstanceOf[js.Any] },
+        "CloudWatchLogsRoleArn" -> CloudWatchLogsRoleArn.map { x => x.asInstanceOf[js.Any] },
+        "IncludeGlobalServiceEvents" -> IncludeGlobalServiceEvents.map { x => x.asInstanceOf[js.Any] },
         "IsMultiRegionTrail" -> IsMultiRegionTrail.map { x => x.asInstanceOf[js.Any] },
         "IsOrganizationTrail" -> IsOrganizationTrail.map { x => x.asInstanceOf[js.Any] },
-        "S3BucketName" -> S3BucketName.map { x => x.asInstanceOf[js.Any] },
-        "SnsTopicName" -> SnsTopicName.map { x => x.asInstanceOf[js.Any] },
+        "KmsKeyId" -> KmsKeyId.map { x => x.asInstanceOf[js.Any] },
         "LogFileValidationEnabled" -> LogFileValidationEnabled.map { x => x.asInstanceOf[js.Any] },
+        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
+        "S3BucketName" -> S3BucketName.map { x => x.asInstanceOf[js.Any] },
         "S3KeyPrefix" -> S3KeyPrefix.map { x => x.asInstanceOf[js.Any] },
-        "IncludeGlobalServiceEvents" -> IncludeGlobalServiceEvents.map { x => x.asInstanceOf[js.Any] },
+        "SnsTopicARN" -> SnsTopicARN.map { x => x.asInstanceOf[js.Any] },
+        "SnsTopicName" -> SnsTopicName.map { x => x.asInstanceOf[js.Any] },
         "TrailARN" -> TrailARN.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateTrailResponse]
@@ -212,14 +212,14 @@ package cloudtrail {
    */
   @js.native
   trait DeleteTrailRequest extends js.Object {
-    var Name: js.UndefOr[String]
+    var Name: String
   }
 
   object DeleteTrailRequest {
     def apply(
-      Name: js.UndefOr[String] = js.undefined): DeleteTrailRequest = {
+      Name: String): DeleteTrailRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Name" -> Name.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteTrailRequest]
     }
@@ -246,17 +246,17 @@ package cloudtrail {
    */
   @js.native
   trait DescribeTrailsRequest extends js.Object {
-    var trailNameList: js.UndefOr[TrailNameList]
     var includeShadowTrails: js.UndefOr[Boolean]
+    var trailNameList: js.UndefOr[TrailNameList]
   }
 
   object DescribeTrailsRequest {
     def apply(
-      trailNameList: js.UndefOr[TrailNameList] = js.undefined,
-      includeShadowTrails: js.UndefOr[Boolean] = js.undefined): DescribeTrailsRequest = {
+      includeShadowTrails: js.UndefOr[Boolean] = js.undefined,
+      trailNameList: js.UndefOr[TrailNameList] = js.undefined): DescribeTrailsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "trailNameList" -> trailNameList.map { x => x.asInstanceOf[js.Any] },
-        "includeShadowTrails" -> includeShadowTrails.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "includeShadowTrails" -> includeShadowTrails.map { x => x.asInstanceOf[js.Any] },
+        "trailNameList" -> trailNameList.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeTrailsRequest]
     }
@@ -285,38 +285,38 @@ package cloudtrail {
    */
   @js.native
   trait Event extends js.Object {
-    var Username: js.UndefOr[String]
-    var Resources: js.UndefOr[ResourceList]
-    var EventSource: js.UndefOr[String]
+    var AccessKeyId: js.UndefOr[String]
     var CloudTrailEvent: js.UndefOr[String]
     var EventId: js.UndefOr[String]
-    var AccessKeyId: js.UndefOr[String]
-    var ReadOnly: js.UndefOr[String]
-    var EventTime: js.UndefOr[Date]
     var EventName: js.UndefOr[String]
+    var EventSource: js.UndefOr[String]
+    var EventTime: js.UndefOr[Date]
+    var ReadOnly: js.UndefOr[String]
+    var Resources: js.UndefOr[ResourceList]
+    var Username: js.UndefOr[String]
   }
 
   object Event {
     def apply(
-      Username: js.UndefOr[String] = js.undefined,
-      Resources: js.UndefOr[ResourceList] = js.undefined,
-      EventSource: js.UndefOr[String] = js.undefined,
+      AccessKeyId: js.UndefOr[String] = js.undefined,
       CloudTrailEvent: js.UndefOr[String] = js.undefined,
       EventId: js.UndefOr[String] = js.undefined,
-      AccessKeyId: js.UndefOr[String] = js.undefined,
-      ReadOnly: js.UndefOr[String] = js.undefined,
+      EventName: js.UndefOr[String] = js.undefined,
+      EventSource: js.UndefOr[String] = js.undefined,
       EventTime: js.UndefOr[Date] = js.undefined,
-      EventName: js.UndefOr[String] = js.undefined): Event = {
+      ReadOnly: js.UndefOr[String] = js.undefined,
+      Resources: js.UndefOr[ResourceList] = js.undefined,
+      Username: js.UndefOr[String] = js.undefined): Event = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Username" -> Username.map { x => x.asInstanceOf[js.Any] },
-        "Resources" -> Resources.map { x => x.asInstanceOf[js.Any] },
-        "EventSource" -> EventSource.map { x => x.asInstanceOf[js.Any] },
+        "AccessKeyId" -> AccessKeyId.map { x => x.asInstanceOf[js.Any] },
         "CloudTrailEvent" -> CloudTrailEvent.map { x => x.asInstanceOf[js.Any] },
         "EventId" -> EventId.map { x => x.asInstanceOf[js.Any] },
-        "AccessKeyId" -> AccessKeyId.map { x => x.asInstanceOf[js.Any] },
-        "ReadOnly" -> ReadOnly.map { x => x.asInstanceOf[js.Any] },
+        "EventName" -> EventName.map { x => x.asInstanceOf[js.Any] },
+        "EventSource" -> EventSource.map { x => x.asInstanceOf[js.Any] },
         "EventTime" -> EventTime.map { x => x.asInstanceOf[js.Any] },
-        "EventName" -> EventName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ReadOnly" -> ReadOnly.map { x => x.asInstanceOf[js.Any] },
+        "Resources" -> Resources.map { x => x.asInstanceOf[js.Any] },
+        "Username" -> Username.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Event]
     }
@@ -327,20 +327,20 @@ package cloudtrail {
    */
   @js.native
   trait EventSelector extends js.Object {
-    var ReadWriteType: js.UndefOr[ReadWriteType]
-    var IncludeManagementEvents: js.UndefOr[Boolean]
     var DataResources: js.UndefOr[DataResources]
+    var IncludeManagementEvents: js.UndefOr[Boolean]
+    var ReadWriteType: js.UndefOr[ReadWriteType]
   }
 
   object EventSelector {
     def apply(
-      ReadWriteType: js.UndefOr[ReadWriteType] = js.undefined,
+      DataResources: js.UndefOr[DataResources] = js.undefined,
       IncludeManagementEvents: js.UndefOr[Boolean] = js.undefined,
-      DataResources: js.UndefOr[DataResources] = js.undefined): EventSelector = {
+      ReadWriteType: js.UndefOr[ReadWriteType] = js.undefined): EventSelector = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ReadWriteType" -> ReadWriteType.map { x => x.asInstanceOf[js.Any] },
+        "DataResources" -> DataResources.map { x => x.asInstanceOf[js.Any] },
         "IncludeManagementEvents" -> IncludeManagementEvents.map { x => x.asInstanceOf[js.Any] },
-        "DataResources" -> DataResources.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ReadWriteType" -> ReadWriteType.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EventSelector]
     }
@@ -348,14 +348,14 @@ package cloudtrail {
 
   @js.native
   trait GetEventSelectorsRequest extends js.Object {
-    var TrailName: js.UndefOr[String]
+    var TrailName: String
   }
 
   object GetEventSelectorsRequest {
     def apply(
-      TrailName: js.UndefOr[String] = js.undefined): GetEventSelectorsRequest = {
+      TrailName: String): GetEventSelectorsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "TrailName" -> TrailName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "TrailName" -> TrailName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetEventSelectorsRequest]
     }
@@ -363,17 +363,17 @@ package cloudtrail {
 
   @js.native
   trait GetEventSelectorsResponse extends js.Object {
-    var TrailARN: js.UndefOr[String]
     var EventSelectors: js.UndefOr[EventSelectors]
+    var TrailARN: js.UndefOr[String]
   }
 
   object GetEventSelectorsResponse {
     def apply(
-      TrailARN: js.UndefOr[String] = js.undefined,
-      EventSelectors: js.UndefOr[EventSelectors] = js.undefined): GetEventSelectorsResponse = {
+      EventSelectors: js.UndefOr[EventSelectors] = js.undefined,
+      TrailARN: js.UndefOr[String] = js.undefined): GetEventSelectorsResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "TrailARN" -> TrailARN.map { x => x.asInstanceOf[js.Any] },
-        "EventSelectors" -> EventSelectors.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "EventSelectors" -> EventSelectors.map { x => x.asInstanceOf[js.Any] },
+        "TrailARN" -> TrailARN.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetEventSelectorsResponse]
     }
@@ -384,14 +384,14 @@ package cloudtrail {
    */
   @js.native
   trait GetTrailStatusRequest extends js.Object {
-    var Name: js.UndefOr[String]
+    var Name: String
   }
 
   object GetTrailStatusRequest {
     def apply(
-      Name: js.UndefOr[String] = js.undefined): GetTrailStatusRequest = {
+      Name: String): GetTrailStatusRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Name" -> Name.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetTrailStatusRequest]
     }
@@ -402,62 +402,62 @@ package cloudtrail {
    */
   @js.native
   trait GetTrailStatusResponse extends js.Object {
-    var LatestDeliveryAttemptTime: js.UndefOr[String]
-    var LatestNotificationTime: js.UndefOr[Date]
-    var LatestNotificationAttemptTime: js.UndefOr[String]
-    var TimeLoggingStopped: js.UndefOr[String]
     var IsLogging: js.UndefOr[Boolean]
-    var StopLoggingTime: js.UndefOr[Date]
-    var LatestNotificationError: js.UndefOr[String]
-    var LatestCloudWatchLogsDeliveryTime: js.UndefOr[Date]
-    var LatestDigestDeliveryTime: js.UndefOr[Date]
-    var LatestDeliveryAttemptSucceeded: js.UndefOr[String]
     var LatestCloudWatchLogsDeliveryError: js.UndefOr[String]
-    var LatestDigestDeliveryError: js.UndefOr[String]
-    var LatestDeliveryTime: js.UndefOr[Date]
-    var StartLoggingTime: js.UndefOr[Date]
-    var TimeLoggingStarted: js.UndefOr[String]
+    var LatestCloudWatchLogsDeliveryTime: js.UndefOr[Date]
+    var LatestDeliveryAttemptSucceeded: js.UndefOr[String]
+    var LatestDeliveryAttemptTime: js.UndefOr[String]
     var LatestDeliveryError: js.UndefOr[String]
+    var LatestDeliveryTime: js.UndefOr[Date]
+    var LatestDigestDeliveryError: js.UndefOr[String]
+    var LatestDigestDeliveryTime: js.UndefOr[Date]
     var LatestNotificationAttemptSucceeded: js.UndefOr[String]
+    var LatestNotificationAttemptTime: js.UndefOr[String]
+    var LatestNotificationError: js.UndefOr[String]
+    var LatestNotificationTime: js.UndefOr[Date]
+    var StartLoggingTime: js.UndefOr[Date]
+    var StopLoggingTime: js.UndefOr[Date]
+    var TimeLoggingStarted: js.UndefOr[String]
+    var TimeLoggingStopped: js.UndefOr[String]
   }
 
   object GetTrailStatusResponse {
     def apply(
-      LatestDeliveryAttemptTime: js.UndefOr[String] = js.undefined,
-      LatestNotificationTime: js.UndefOr[Date] = js.undefined,
-      LatestNotificationAttemptTime: js.UndefOr[String] = js.undefined,
-      TimeLoggingStopped: js.UndefOr[String] = js.undefined,
       IsLogging: js.UndefOr[Boolean] = js.undefined,
-      StopLoggingTime: js.UndefOr[Date] = js.undefined,
-      LatestNotificationError: js.UndefOr[String] = js.undefined,
-      LatestCloudWatchLogsDeliveryTime: js.UndefOr[Date] = js.undefined,
-      LatestDigestDeliveryTime: js.UndefOr[Date] = js.undefined,
-      LatestDeliveryAttemptSucceeded: js.UndefOr[String] = js.undefined,
       LatestCloudWatchLogsDeliveryError: js.UndefOr[String] = js.undefined,
-      LatestDigestDeliveryError: js.UndefOr[String] = js.undefined,
-      LatestDeliveryTime: js.UndefOr[Date] = js.undefined,
-      StartLoggingTime: js.UndefOr[Date] = js.undefined,
-      TimeLoggingStarted: js.UndefOr[String] = js.undefined,
+      LatestCloudWatchLogsDeliveryTime: js.UndefOr[Date] = js.undefined,
+      LatestDeliveryAttemptSucceeded: js.UndefOr[String] = js.undefined,
+      LatestDeliveryAttemptTime: js.UndefOr[String] = js.undefined,
       LatestDeliveryError: js.UndefOr[String] = js.undefined,
-      LatestNotificationAttemptSucceeded: js.UndefOr[String] = js.undefined): GetTrailStatusResponse = {
+      LatestDeliveryTime: js.UndefOr[Date] = js.undefined,
+      LatestDigestDeliveryError: js.UndefOr[String] = js.undefined,
+      LatestDigestDeliveryTime: js.UndefOr[Date] = js.undefined,
+      LatestNotificationAttemptSucceeded: js.UndefOr[String] = js.undefined,
+      LatestNotificationAttemptTime: js.UndefOr[String] = js.undefined,
+      LatestNotificationError: js.UndefOr[String] = js.undefined,
+      LatestNotificationTime: js.UndefOr[Date] = js.undefined,
+      StartLoggingTime: js.UndefOr[Date] = js.undefined,
+      StopLoggingTime: js.UndefOr[Date] = js.undefined,
+      TimeLoggingStarted: js.UndefOr[String] = js.undefined,
+      TimeLoggingStopped: js.UndefOr[String] = js.undefined): GetTrailStatusResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "LatestDeliveryAttemptTime" -> LatestDeliveryAttemptTime.map { x => x.asInstanceOf[js.Any] },
-        "LatestNotificationTime" -> LatestNotificationTime.map { x => x.asInstanceOf[js.Any] },
-        "LatestNotificationAttemptTime" -> LatestNotificationAttemptTime.map { x => x.asInstanceOf[js.Any] },
-        "TimeLoggingStopped" -> TimeLoggingStopped.map { x => x.asInstanceOf[js.Any] },
         "IsLogging" -> IsLogging.map { x => x.asInstanceOf[js.Any] },
-        "StopLoggingTime" -> StopLoggingTime.map { x => x.asInstanceOf[js.Any] },
-        "LatestNotificationError" -> LatestNotificationError.map { x => x.asInstanceOf[js.Any] },
-        "LatestCloudWatchLogsDeliveryTime" -> LatestCloudWatchLogsDeliveryTime.map { x => x.asInstanceOf[js.Any] },
-        "LatestDigestDeliveryTime" -> LatestDigestDeliveryTime.map { x => x.asInstanceOf[js.Any] },
-        "LatestDeliveryAttemptSucceeded" -> LatestDeliveryAttemptSucceeded.map { x => x.asInstanceOf[js.Any] },
         "LatestCloudWatchLogsDeliveryError" -> LatestCloudWatchLogsDeliveryError.map { x => x.asInstanceOf[js.Any] },
-        "LatestDigestDeliveryError" -> LatestDigestDeliveryError.map { x => x.asInstanceOf[js.Any] },
-        "LatestDeliveryTime" -> LatestDeliveryTime.map { x => x.asInstanceOf[js.Any] },
-        "StartLoggingTime" -> StartLoggingTime.map { x => x.asInstanceOf[js.Any] },
-        "TimeLoggingStarted" -> TimeLoggingStarted.map { x => x.asInstanceOf[js.Any] },
+        "LatestCloudWatchLogsDeliveryTime" -> LatestCloudWatchLogsDeliveryTime.map { x => x.asInstanceOf[js.Any] },
+        "LatestDeliveryAttemptSucceeded" -> LatestDeliveryAttemptSucceeded.map { x => x.asInstanceOf[js.Any] },
+        "LatestDeliveryAttemptTime" -> LatestDeliveryAttemptTime.map { x => x.asInstanceOf[js.Any] },
         "LatestDeliveryError" -> LatestDeliveryError.map { x => x.asInstanceOf[js.Any] },
-        "LatestNotificationAttemptSucceeded" -> LatestNotificationAttemptSucceeded.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "LatestDeliveryTime" -> LatestDeliveryTime.map { x => x.asInstanceOf[js.Any] },
+        "LatestDigestDeliveryError" -> LatestDigestDeliveryError.map { x => x.asInstanceOf[js.Any] },
+        "LatestDigestDeliveryTime" -> LatestDigestDeliveryTime.map { x => x.asInstanceOf[js.Any] },
+        "LatestNotificationAttemptSucceeded" -> LatestNotificationAttemptSucceeded.map { x => x.asInstanceOf[js.Any] },
+        "LatestNotificationAttemptTime" -> LatestNotificationAttemptTime.map { x => x.asInstanceOf[js.Any] },
+        "LatestNotificationError" -> LatestNotificationError.map { x => x.asInstanceOf[js.Any] },
+        "LatestNotificationTime" -> LatestNotificationTime.map { x => x.asInstanceOf[js.Any] },
+        "StartLoggingTime" -> StartLoggingTime.map { x => x.asInstanceOf[js.Any] },
+        "StopLoggingTime" -> StopLoggingTime.map { x => x.asInstanceOf[js.Any] },
+        "TimeLoggingStarted" -> TimeLoggingStarted.map { x => x.asInstanceOf[js.Any] },
+        "TimeLoggingStopped" -> TimeLoggingStopped.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetTrailStatusResponse]
     }
@@ -468,20 +468,20 @@ package cloudtrail {
    */
   @js.native
   trait ListPublicKeysRequest extends js.Object {
-    var StartTime: js.UndefOr[Date]
     var EndTime: js.UndefOr[Date]
     var NextToken: js.UndefOr[String]
+    var StartTime: js.UndefOr[Date]
   }
 
   object ListPublicKeysRequest {
     def apply(
-      StartTime: js.UndefOr[Date] = js.undefined,
       EndTime: js.UndefOr[Date] = js.undefined,
-      NextToken: js.UndefOr[String] = js.undefined): ListPublicKeysRequest = {
+      NextToken: js.UndefOr[String] = js.undefined,
+      StartTime: js.UndefOr[Date] = js.undefined): ListPublicKeysRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "StartTime" -> StartTime.map { x => x.asInstanceOf[js.Any] },
         "EndTime" -> EndTime.map { x => x.asInstanceOf[js.Any] },
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
+        "StartTime" -> StartTime.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListPublicKeysRequest]
     }
@@ -492,17 +492,17 @@ package cloudtrail {
    */
   @js.native
   trait ListPublicKeysResponse extends js.Object {
-    var PublicKeyList: js.UndefOr[PublicKeyList]
     var NextToken: js.UndefOr[String]
+    var PublicKeyList: js.UndefOr[PublicKeyList]
   }
 
   object ListPublicKeysResponse {
     def apply(
-      PublicKeyList: js.UndefOr[PublicKeyList] = js.undefined,
-      NextToken: js.UndefOr[String] = js.undefined): ListPublicKeysResponse = {
+      NextToken: js.UndefOr[String] = js.undefined,
+      PublicKeyList: js.UndefOr[PublicKeyList] = js.undefined): ListPublicKeysResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "PublicKeyList" -> PublicKeyList.map { x => x.asInstanceOf[js.Any] },
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
+        "PublicKeyList" -> PublicKeyList.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListPublicKeysResponse]
     }
@@ -513,16 +513,16 @@ package cloudtrail {
    */
   @js.native
   trait ListTagsRequest extends js.Object {
-    var ResourceIdList: js.UndefOr[ResourceIdList]
+    var ResourceIdList: ResourceIdList
     var NextToken: js.UndefOr[String]
   }
 
   object ListTagsRequest {
     def apply(
-      ResourceIdList: js.UndefOr[ResourceIdList] = js.undefined,
+      ResourceIdList: ResourceIdList,
       NextToken: js.UndefOr[String] = js.undefined): ListTagsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ResourceIdList" -> ResourceIdList.map { x => x.asInstanceOf[js.Any] },
+        "ResourceIdList" -> ResourceIdList.asInstanceOf[js.Any],
         "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListTagsRequest]
@@ -534,17 +534,17 @@ package cloudtrail {
    */
   @js.native
   trait ListTagsResponse extends js.Object {
-    var ResourceTagList: js.UndefOr[ResourceTagList]
     var NextToken: js.UndefOr[String]
+    var ResourceTagList: js.UndefOr[ResourceTagList]
   }
 
   object ListTagsResponse {
     def apply(
-      ResourceTagList: js.UndefOr[ResourceTagList] = js.undefined,
-      NextToken: js.UndefOr[String] = js.undefined): ListTagsResponse = {
+      NextToken: js.UndefOr[String] = js.undefined,
+      ResourceTagList: js.UndefOr[ResourceTagList] = js.undefined): ListTagsResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ResourceTagList" -> ResourceTagList.map { x => x.asInstanceOf[js.Any] },
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
+        "ResourceTagList" -> ResourceTagList.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListTagsResponse]
     }
@@ -555,17 +555,17 @@ package cloudtrail {
    */
   @js.native
   trait LookupAttribute extends js.Object {
-    var AttributeKey: js.UndefOr[LookupAttributeKey]
-    var AttributeValue: js.UndefOr[String]
+    var AttributeKey: LookupAttributeKey
+    var AttributeValue: String
   }
 
   object LookupAttribute {
     def apply(
-      AttributeKey: js.UndefOr[LookupAttributeKey] = js.undefined,
-      AttributeValue: js.UndefOr[String] = js.undefined): LookupAttribute = {
+      AttributeKey: LookupAttributeKey,
+      AttributeValue: String): LookupAttribute = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "AttributeKey" -> AttributeKey.map { x => x.asInstanceOf[js.Any] },
-        "AttributeValue" -> AttributeValue.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "AttributeKey" -> AttributeKey.asInstanceOf[js.Any],
+        "AttributeValue" -> AttributeValue.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[LookupAttribute]
     }
@@ -589,26 +589,26 @@ package cloudtrail {
    */
   @js.native
   trait LookupEventsRequest extends js.Object {
-    var MaxResults: js.UndefOr[MaxResults]
-    var StartTime: js.UndefOr[Date]
     var EndTime: js.UndefOr[Date]
     var LookupAttributes: js.UndefOr[LookupAttributesList]
+    var MaxResults: js.UndefOr[MaxResults]
     var NextToken: js.UndefOr[NextToken]
+    var StartTime: js.UndefOr[Date]
   }
 
   object LookupEventsRequest {
     def apply(
-      MaxResults: js.UndefOr[MaxResults] = js.undefined,
-      StartTime: js.UndefOr[Date] = js.undefined,
       EndTime: js.UndefOr[Date] = js.undefined,
       LookupAttributes: js.UndefOr[LookupAttributesList] = js.undefined,
-      NextToken: js.UndefOr[NextToken] = js.undefined): LookupEventsRequest = {
+      MaxResults: js.UndefOr[MaxResults] = js.undefined,
+      NextToken: js.UndefOr[NextToken] = js.undefined,
+      StartTime: js.UndefOr[Date] = js.undefined): LookupEventsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "MaxResults" -> MaxResults.map { x => x.asInstanceOf[js.Any] },
-        "StartTime" -> StartTime.map { x => x.asInstanceOf[js.Any] },
         "EndTime" -> EndTime.map { x => x.asInstanceOf[js.Any] },
         "LookupAttributes" -> LookupAttributes.map { x => x.asInstanceOf[js.Any] },
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "MaxResults" -> MaxResults.map { x => x.asInstanceOf[js.Any] },
+        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
+        "StartTime" -> StartTime.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[LookupEventsRequest]
     }
@@ -640,23 +640,23 @@ package cloudtrail {
    */
   @js.native
   trait PublicKey extends js.Object {
-    var Value: js.UndefOr[ByteBuffer]
-    var ValidityStartTime: js.UndefOr[Date]
-    var ValidityEndTime: js.UndefOr[Date]
     var Fingerprint: js.UndefOr[String]
+    var ValidityEndTime: js.UndefOr[Date]
+    var ValidityStartTime: js.UndefOr[Date]
+    var Value: js.UndefOr[ByteBuffer]
   }
 
   object PublicKey {
     def apply(
-      Value: js.UndefOr[ByteBuffer] = js.undefined,
-      ValidityStartTime: js.UndefOr[Date] = js.undefined,
+      Fingerprint: js.UndefOr[String] = js.undefined,
       ValidityEndTime: js.UndefOr[Date] = js.undefined,
-      Fingerprint: js.UndefOr[String] = js.undefined): PublicKey = {
+      ValidityStartTime: js.UndefOr[Date] = js.undefined,
+      Value: js.UndefOr[ByteBuffer] = js.undefined): PublicKey = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Value" -> Value.map { x => x.asInstanceOf[js.Any] },
-        "ValidityStartTime" -> ValidityStartTime.map { x => x.asInstanceOf[js.Any] },
+        "Fingerprint" -> Fingerprint.map { x => x.asInstanceOf[js.Any] },
         "ValidityEndTime" -> ValidityEndTime.map { x => x.asInstanceOf[js.Any] },
-        "Fingerprint" -> Fingerprint.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ValidityStartTime" -> ValidityStartTime.map { x => x.asInstanceOf[js.Any] },
+        "Value" -> Value.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PublicKey]
     }
@@ -664,17 +664,17 @@ package cloudtrail {
 
   @js.native
   trait PutEventSelectorsRequest extends js.Object {
-    var TrailName: js.UndefOr[String]
-    var EventSelectors: js.UndefOr[EventSelectors]
+    var EventSelectors: EventSelectors
+    var TrailName: String
   }
 
   object PutEventSelectorsRequest {
     def apply(
-      TrailName: js.UndefOr[String] = js.undefined,
-      EventSelectors: js.UndefOr[EventSelectors] = js.undefined): PutEventSelectorsRequest = {
+      EventSelectors: EventSelectors,
+      TrailName: String): PutEventSelectorsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "TrailName" -> TrailName.map { x => x.asInstanceOf[js.Any] },
-        "EventSelectors" -> EventSelectors.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "EventSelectors" -> EventSelectors.asInstanceOf[js.Any],
+        "TrailName" -> TrailName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutEventSelectorsRequest]
     }
@@ -682,17 +682,17 @@ package cloudtrail {
 
   @js.native
   trait PutEventSelectorsResponse extends js.Object {
-    var TrailARN: js.UndefOr[String]
     var EventSelectors: js.UndefOr[EventSelectors]
+    var TrailARN: js.UndefOr[String]
   }
 
   object PutEventSelectorsResponse {
     def apply(
-      TrailARN: js.UndefOr[String] = js.undefined,
-      EventSelectors: js.UndefOr[EventSelectors] = js.undefined): PutEventSelectorsResponse = {
+      EventSelectors: js.UndefOr[EventSelectors] = js.undefined,
+      TrailARN: js.UndefOr[String] = js.undefined): PutEventSelectorsResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "TrailARN" -> TrailARN.map { x => x.asInstanceOf[js.Any] },
-        "EventSelectors" -> EventSelectors.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "EventSelectors" -> EventSelectors.map { x => x.asInstanceOf[js.Any] },
+        "TrailARN" -> TrailARN.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutEventSelectorsResponse]
     }
@@ -711,16 +711,16 @@ package cloudtrail {
    */
   @js.native
   trait RemoveTagsRequest extends js.Object {
-    var ResourceId: js.UndefOr[String]
+    var ResourceId: String
     var TagsList: js.UndefOr[TagsList]
   }
 
   object RemoveTagsRequest {
     def apply(
-      ResourceId: js.UndefOr[String] = js.undefined,
+      ResourceId: String,
       TagsList: js.UndefOr[TagsList] = js.undefined): RemoveTagsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ResourceId" -> ResourceId.map { x => x.asInstanceOf[js.Any] },
+        "ResourceId" -> ResourceId.asInstanceOf[js.Any],
         "TagsList" -> TagsList.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RemoveTagsRequest]
@@ -748,17 +748,17 @@ package cloudtrail {
    */
   @js.native
   trait Resource extends js.Object {
-    var ResourceType: js.UndefOr[String]
     var ResourceName: js.UndefOr[String]
+    var ResourceType: js.UndefOr[String]
   }
 
   object Resource {
     def apply(
-      ResourceType: js.UndefOr[String] = js.undefined,
-      ResourceName: js.UndefOr[String] = js.undefined): Resource = {
+      ResourceName: js.UndefOr[String] = js.undefined,
+      ResourceType: js.UndefOr[String] = js.undefined): Resource = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ResourceType" -> ResourceType.map { x => x.asInstanceOf[js.Any] },
-        "ResourceName" -> ResourceName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ResourceName" -> ResourceName.map { x => x.asInstanceOf[js.Any] },
+        "ResourceType" -> ResourceType.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Resource]
     }
@@ -790,14 +790,14 @@ package cloudtrail {
    */
   @js.native
   trait StartLoggingRequest extends js.Object {
-    var Name: js.UndefOr[String]
+    var Name: String
   }
 
   object StartLoggingRequest {
     def apply(
-      Name: js.UndefOr[String] = js.undefined): StartLoggingRequest = {
+      Name: String): StartLoggingRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Name" -> Name.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StartLoggingRequest]
     }
@@ -824,14 +824,14 @@ package cloudtrail {
    */
   @js.native
   trait StopLoggingRequest extends js.Object {
-    var Name: js.UndefOr[String]
+    var Name: String
   }
 
   object StopLoggingRequest {
     def apply(
-      Name: js.UndefOr[String] = js.undefined): StopLoggingRequest = {
+      Name: String): StopLoggingRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Name" -> Name.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StopLoggingRequest]
     }
@@ -858,16 +858,16 @@ package cloudtrail {
    */
   @js.native
   trait Tag extends js.Object {
-    var Key: js.UndefOr[String]
+    var Key: String
     var Value: js.UndefOr[String]
   }
 
   object Tag {
     def apply(
-      Key: js.UndefOr[String] = js.undefined,
+      Key: String,
       Value: js.UndefOr[String] = js.undefined): Tag = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Key" -> Key.map { x => x.asInstanceOf[js.Any] },
+        "Key" -> Key.asInstanceOf[js.Any],
         "Value" -> Value.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Tag]
@@ -879,55 +879,55 @@ package cloudtrail {
    */
   @js.native
   trait Trail extends js.Object {
-    var CloudWatchLogsRoleArn: js.UndefOr[String]
     var CloudWatchLogsLogGroupArn: js.UndefOr[String]
+    var CloudWatchLogsRoleArn: js.UndefOr[String]
     var HasCustomEventSelectors: js.UndefOr[Boolean]
-    var Name: js.UndefOr[String]
-    var SnsTopicARN: js.UndefOr[String]
-    var KmsKeyId: js.UndefOr[String]
-    var IsMultiRegionTrail: js.UndefOr[Boolean]
-    var IsOrganizationTrail: js.UndefOr[Boolean]
-    var S3BucketName: js.UndefOr[String]
-    var SnsTopicName: js.UndefOr[String]
-    var LogFileValidationEnabled: js.UndefOr[Boolean]
-    var S3KeyPrefix: js.UndefOr[String]
     var HomeRegion: js.UndefOr[String]
     var IncludeGlobalServiceEvents: js.UndefOr[Boolean]
+    var IsMultiRegionTrail: js.UndefOr[Boolean]
+    var IsOrganizationTrail: js.UndefOr[Boolean]
+    var KmsKeyId: js.UndefOr[String]
+    var LogFileValidationEnabled: js.UndefOr[Boolean]
+    var Name: js.UndefOr[String]
+    var S3BucketName: js.UndefOr[String]
+    var S3KeyPrefix: js.UndefOr[String]
+    var SnsTopicARN: js.UndefOr[String]
+    var SnsTopicName: js.UndefOr[String]
     var TrailARN: js.UndefOr[String]
   }
 
   object Trail {
     def apply(
-      CloudWatchLogsRoleArn: js.UndefOr[String] = js.undefined,
       CloudWatchLogsLogGroupArn: js.UndefOr[String] = js.undefined,
+      CloudWatchLogsRoleArn: js.UndefOr[String] = js.undefined,
       HasCustomEventSelectors: js.UndefOr[Boolean] = js.undefined,
-      Name: js.UndefOr[String] = js.undefined,
-      SnsTopicARN: js.UndefOr[String] = js.undefined,
-      KmsKeyId: js.UndefOr[String] = js.undefined,
-      IsMultiRegionTrail: js.UndefOr[Boolean] = js.undefined,
-      IsOrganizationTrail: js.UndefOr[Boolean] = js.undefined,
-      S3BucketName: js.UndefOr[String] = js.undefined,
-      SnsTopicName: js.UndefOr[String] = js.undefined,
-      LogFileValidationEnabled: js.UndefOr[Boolean] = js.undefined,
-      S3KeyPrefix: js.UndefOr[String] = js.undefined,
       HomeRegion: js.UndefOr[String] = js.undefined,
       IncludeGlobalServiceEvents: js.UndefOr[Boolean] = js.undefined,
+      IsMultiRegionTrail: js.UndefOr[Boolean] = js.undefined,
+      IsOrganizationTrail: js.UndefOr[Boolean] = js.undefined,
+      KmsKeyId: js.UndefOr[String] = js.undefined,
+      LogFileValidationEnabled: js.UndefOr[Boolean] = js.undefined,
+      Name: js.UndefOr[String] = js.undefined,
+      S3BucketName: js.UndefOr[String] = js.undefined,
+      S3KeyPrefix: js.UndefOr[String] = js.undefined,
+      SnsTopicARN: js.UndefOr[String] = js.undefined,
+      SnsTopicName: js.UndefOr[String] = js.undefined,
       TrailARN: js.UndefOr[String] = js.undefined): Trail = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "CloudWatchLogsRoleArn" -> CloudWatchLogsRoleArn.map { x => x.asInstanceOf[js.Any] },
         "CloudWatchLogsLogGroupArn" -> CloudWatchLogsLogGroupArn.map { x => x.asInstanceOf[js.Any] },
+        "CloudWatchLogsRoleArn" -> CloudWatchLogsRoleArn.map { x => x.asInstanceOf[js.Any] },
         "HasCustomEventSelectors" -> HasCustomEventSelectors.map { x => x.asInstanceOf[js.Any] },
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
-        "SnsTopicARN" -> SnsTopicARN.map { x => x.asInstanceOf[js.Any] },
-        "KmsKeyId" -> KmsKeyId.map { x => x.asInstanceOf[js.Any] },
-        "IsMultiRegionTrail" -> IsMultiRegionTrail.map { x => x.asInstanceOf[js.Any] },
-        "IsOrganizationTrail" -> IsOrganizationTrail.map { x => x.asInstanceOf[js.Any] },
-        "S3BucketName" -> S3BucketName.map { x => x.asInstanceOf[js.Any] },
-        "SnsTopicName" -> SnsTopicName.map { x => x.asInstanceOf[js.Any] },
-        "LogFileValidationEnabled" -> LogFileValidationEnabled.map { x => x.asInstanceOf[js.Any] },
-        "S3KeyPrefix" -> S3KeyPrefix.map { x => x.asInstanceOf[js.Any] },
         "HomeRegion" -> HomeRegion.map { x => x.asInstanceOf[js.Any] },
         "IncludeGlobalServiceEvents" -> IncludeGlobalServiceEvents.map { x => x.asInstanceOf[js.Any] },
+        "IsMultiRegionTrail" -> IsMultiRegionTrail.map { x => x.asInstanceOf[js.Any] },
+        "IsOrganizationTrail" -> IsOrganizationTrail.map { x => x.asInstanceOf[js.Any] },
+        "KmsKeyId" -> KmsKeyId.map { x => x.asInstanceOf[js.Any] },
+        "LogFileValidationEnabled" -> LogFileValidationEnabled.map { x => x.asInstanceOf[js.Any] },
+        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
+        "S3BucketName" -> S3BucketName.map { x => x.asInstanceOf[js.Any] },
+        "S3KeyPrefix" -> S3KeyPrefix.map { x => x.asInstanceOf[js.Any] },
+        "SnsTopicARN" -> SnsTopicARN.map { x => x.asInstanceOf[js.Any] },
+        "SnsTopicName" -> SnsTopicName.map { x => x.asInstanceOf[js.Any] },
         "TrailARN" -> TrailARN.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Trail]
@@ -939,44 +939,44 @@ package cloudtrail {
    */
   @js.native
   trait UpdateTrailRequest extends js.Object {
-    var CloudWatchLogsRoleArn: js.UndefOr[String]
+    var Name: String
     var CloudWatchLogsLogGroupArn: js.UndefOr[String]
-    var Name: js.UndefOr[String]
-    var KmsKeyId: js.UndefOr[String]
-    var IsMultiRegionTrail: js.UndefOr[Boolean]
-    var IsOrganizationTrail: js.UndefOr[Boolean]
-    var S3BucketName: js.UndefOr[String]
-    var SnsTopicName: js.UndefOr[String]
-    var S3KeyPrefix: js.UndefOr[String]
+    var CloudWatchLogsRoleArn: js.UndefOr[String]
     var EnableLogFileValidation: js.UndefOr[Boolean]
     var IncludeGlobalServiceEvents: js.UndefOr[Boolean]
+    var IsMultiRegionTrail: js.UndefOr[Boolean]
+    var IsOrganizationTrail: js.UndefOr[Boolean]
+    var KmsKeyId: js.UndefOr[String]
+    var S3BucketName: js.UndefOr[String]
+    var S3KeyPrefix: js.UndefOr[String]
+    var SnsTopicName: js.UndefOr[String]
   }
 
   object UpdateTrailRequest {
     def apply(
-      CloudWatchLogsRoleArn: js.UndefOr[String] = js.undefined,
+      Name: String,
       CloudWatchLogsLogGroupArn: js.UndefOr[String] = js.undefined,
-      Name: js.UndefOr[String] = js.undefined,
-      KmsKeyId: js.UndefOr[String] = js.undefined,
+      CloudWatchLogsRoleArn: js.UndefOr[String] = js.undefined,
+      EnableLogFileValidation: js.UndefOr[Boolean] = js.undefined,
+      IncludeGlobalServiceEvents: js.UndefOr[Boolean] = js.undefined,
       IsMultiRegionTrail: js.UndefOr[Boolean] = js.undefined,
       IsOrganizationTrail: js.UndefOr[Boolean] = js.undefined,
+      KmsKeyId: js.UndefOr[String] = js.undefined,
       S3BucketName: js.UndefOr[String] = js.undefined,
-      SnsTopicName: js.UndefOr[String] = js.undefined,
       S3KeyPrefix: js.UndefOr[String] = js.undefined,
-      EnableLogFileValidation: js.UndefOr[Boolean] = js.undefined,
-      IncludeGlobalServiceEvents: js.UndefOr[Boolean] = js.undefined): UpdateTrailRequest = {
+      SnsTopicName: js.UndefOr[String] = js.undefined): UpdateTrailRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "CloudWatchLogsRoleArn" -> CloudWatchLogsRoleArn.map { x => x.asInstanceOf[js.Any] },
+        "Name" -> Name.asInstanceOf[js.Any],
         "CloudWatchLogsLogGroupArn" -> CloudWatchLogsLogGroupArn.map { x => x.asInstanceOf[js.Any] },
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
-        "KmsKeyId" -> KmsKeyId.map { x => x.asInstanceOf[js.Any] },
+        "CloudWatchLogsRoleArn" -> CloudWatchLogsRoleArn.map { x => x.asInstanceOf[js.Any] },
+        "EnableLogFileValidation" -> EnableLogFileValidation.map { x => x.asInstanceOf[js.Any] },
+        "IncludeGlobalServiceEvents" -> IncludeGlobalServiceEvents.map { x => x.asInstanceOf[js.Any] },
         "IsMultiRegionTrail" -> IsMultiRegionTrail.map { x => x.asInstanceOf[js.Any] },
         "IsOrganizationTrail" -> IsOrganizationTrail.map { x => x.asInstanceOf[js.Any] },
+        "KmsKeyId" -> KmsKeyId.map { x => x.asInstanceOf[js.Any] },
         "S3BucketName" -> S3BucketName.map { x => x.asInstanceOf[js.Any] },
-        "SnsTopicName" -> SnsTopicName.map { x => x.asInstanceOf[js.Any] },
         "S3KeyPrefix" -> S3KeyPrefix.map { x => x.asInstanceOf[js.Any] },
-        "EnableLogFileValidation" -> EnableLogFileValidation.map { x => x.asInstanceOf[js.Any] },
-        "IncludeGlobalServiceEvents" -> IncludeGlobalServiceEvents.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "SnsTopicName" -> SnsTopicName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateTrailRequest]
     }
@@ -987,49 +987,49 @@ package cloudtrail {
    */
   @js.native
   trait UpdateTrailResponse extends js.Object {
-    var CloudWatchLogsRoleArn: js.UndefOr[String]
     var CloudWatchLogsLogGroupArn: js.UndefOr[String]
-    var Name: js.UndefOr[String]
-    var SnsTopicARN: js.UndefOr[String]
-    var KmsKeyId: js.UndefOr[String]
+    var CloudWatchLogsRoleArn: js.UndefOr[String]
+    var IncludeGlobalServiceEvents: js.UndefOr[Boolean]
     var IsMultiRegionTrail: js.UndefOr[Boolean]
     var IsOrganizationTrail: js.UndefOr[Boolean]
-    var S3BucketName: js.UndefOr[String]
-    var SnsTopicName: js.UndefOr[String]
+    var KmsKeyId: js.UndefOr[String]
     var LogFileValidationEnabled: js.UndefOr[Boolean]
+    var Name: js.UndefOr[String]
+    var S3BucketName: js.UndefOr[String]
     var S3KeyPrefix: js.UndefOr[String]
-    var IncludeGlobalServiceEvents: js.UndefOr[Boolean]
+    var SnsTopicARN: js.UndefOr[String]
+    var SnsTopicName: js.UndefOr[String]
     var TrailARN: js.UndefOr[String]
   }
 
   object UpdateTrailResponse {
     def apply(
-      CloudWatchLogsRoleArn: js.UndefOr[String] = js.undefined,
       CloudWatchLogsLogGroupArn: js.UndefOr[String] = js.undefined,
-      Name: js.UndefOr[String] = js.undefined,
-      SnsTopicARN: js.UndefOr[String] = js.undefined,
-      KmsKeyId: js.UndefOr[String] = js.undefined,
+      CloudWatchLogsRoleArn: js.UndefOr[String] = js.undefined,
+      IncludeGlobalServiceEvents: js.UndefOr[Boolean] = js.undefined,
       IsMultiRegionTrail: js.UndefOr[Boolean] = js.undefined,
       IsOrganizationTrail: js.UndefOr[Boolean] = js.undefined,
-      S3BucketName: js.UndefOr[String] = js.undefined,
-      SnsTopicName: js.UndefOr[String] = js.undefined,
+      KmsKeyId: js.UndefOr[String] = js.undefined,
       LogFileValidationEnabled: js.UndefOr[Boolean] = js.undefined,
+      Name: js.UndefOr[String] = js.undefined,
+      S3BucketName: js.UndefOr[String] = js.undefined,
       S3KeyPrefix: js.UndefOr[String] = js.undefined,
-      IncludeGlobalServiceEvents: js.UndefOr[Boolean] = js.undefined,
+      SnsTopicARN: js.UndefOr[String] = js.undefined,
+      SnsTopicName: js.UndefOr[String] = js.undefined,
       TrailARN: js.UndefOr[String] = js.undefined): UpdateTrailResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "CloudWatchLogsRoleArn" -> CloudWatchLogsRoleArn.map { x => x.asInstanceOf[js.Any] },
         "CloudWatchLogsLogGroupArn" -> CloudWatchLogsLogGroupArn.map { x => x.asInstanceOf[js.Any] },
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
-        "SnsTopicARN" -> SnsTopicARN.map { x => x.asInstanceOf[js.Any] },
-        "KmsKeyId" -> KmsKeyId.map { x => x.asInstanceOf[js.Any] },
+        "CloudWatchLogsRoleArn" -> CloudWatchLogsRoleArn.map { x => x.asInstanceOf[js.Any] },
+        "IncludeGlobalServiceEvents" -> IncludeGlobalServiceEvents.map { x => x.asInstanceOf[js.Any] },
         "IsMultiRegionTrail" -> IsMultiRegionTrail.map { x => x.asInstanceOf[js.Any] },
         "IsOrganizationTrail" -> IsOrganizationTrail.map { x => x.asInstanceOf[js.Any] },
-        "S3BucketName" -> S3BucketName.map { x => x.asInstanceOf[js.Any] },
-        "SnsTopicName" -> SnsTopicName.map { x => x.asInstanceOf[js.Any] },
+        "KmsKeyId" -> KmsKeyId.map { x => x.asInstanceOf[js.Any] },
         "LogFileValidationEnabled" -> LogFileValidationEnabled.map { x => x.asInstanceOf[js.Any] },
+        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
+        "S3BucketName" -> S3BucketName.map { x => x.asInstanceOf[js.Any] },
         "S3KeyPrefix" -> S3KeyPrefix.map { x => x.asInstanceOf[js.Any] },
-        "IncludeGlobalServiceEvents" -> IncludeGlobalServiceEvents.map { x => x.asInstanceOf[js.Any] },
+        "SnsTopicARN" -> SnsTopicARN.map { x => x.asInstanceOf[js.Any] },
+        "SnsTopicName" -> SnsTopicName.map { x => x.asInstanceOf[js.Any] },
         "TrailARN" -> TrailARN.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateTrailResponse]

@@ -459,38 +459,38 @@ package mediaconvert {
    */
   @js.native
   trait AacSettings extends js.Object {
-    var VbrQuality: js.UndefOr[AacVbrQuality]
+    var AudioDescriptionBroadcasterMix: js.UndefOr[AacAudioDescriptionBroadcasterMix]
+    var Bitrate: js.UndefOr[__integerMin6000Max1024000]
+    var CodecProfile: js.UndefOr[AacCodecProfile]
     var CodingMode: js.UndefOr[AacCodingMode]
     var RateControlMode: js.UndefOr[AacRateControlMode]
-    var CodecProfile: js.UndefOr[AacCodecProfile]
-    var Bitrate: js.UndefOr[__integerMin6000Max1024000]
-    var SampleRate: js.UndefOr[__integerMin8000Max96000]
-    var AudioDescriptionBroadcasterMix: js.UndefOr[AacAudioDescriptionBroadcasterMix]
-    var Specification: js.UndefOr[AacSpecification]
     var RawFormat: js.UndefOr[AacRawFormat]
+    var SampleRate: js.UndefOr[__integerMin8000Max96000]
+    var Specification: js.UndefOr[AacSpecification]
+    var VbrQuality: js.UndefOr[AacVbrQuality]
   }
 
   object AacSettings {
     def apply(
-      VbrQuality: js.UndefOr[AacVbrQuality] = js.undefined,
+      AudioDescriptionBroadcasterMix: js.UndefOr[AacAudioDescriptionBroadcasterMix] = js.undefined,
+      Bitrate: js.UndefOr[__integerMin6000Max1024000] = js.undefined,
+      CodecProfile: js.UndefOr[AacCodecProfile] = js.undefined,
       CodingMode: js.UndefOr[AacCodingMode] = js.undefined,
       RateControlMode: js.UndefOr[AacRateControlMode] = js.undefined,
-      CodecProfile: js.UndefOr[AacCodecProfile] = js.undefined,
-      Bitrate: js.UndefOr[__integerMin6000Max1024000] = js.undefined,
+      RawFormat: js.UndefOr[AacRawFormat] = js.undefined,
       SampleRate: js.UndefOr[__integerMin8000Max96000] = js.undefined,
-      AudioDescriptionBroadcasterMix: js.UndefOr[AacAudioDescriptionBroadcasterMix] = js.undefined,
       Specification: js.UndefOr[AacSpecification] = js.undefined,
-      RawFormat: js.UndefOr[AacRawFormat] = js.undefined): AacSettings = {
+      VbrQuality: js.UndefOr[AacVbrQuality] = js.undefined): AacSettings = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "VbrQuality" -> VbrQuality.map { x => x.asInstanceOf[js.Any] },
+        "AudioDescriptionBroadcasterMix" -> AudioDescriptionBroadcasterMix.map { x => x.asInstanceOf[js.Any] },
+        "Bitrate" -> Bitrate.map { x => x.asInstanceOf[js.Any] },
+        "CodecProfile" -> CodecProfile.map { x => x.asInstanceOf[js.Any] },
         "CodingMode" -> CodingMode.map { x => x.asInstanceOf[js.Any] },
         "RateControlMode" -> RateControlMode.map { x => x.asInstanceOf[js.Any] },
-        "CodecProfile" -> CodecProfile.map { x => x.asInstanceOf[js.Any] },
-        "Bitrate" -> Bitrate.map { x => x.asInstanceOf[js.Any] },
+        "RawFormat" -> RawFormat.map { x => x.asInstanceOf[js.Any] },
         "SampleRate" -> SampleRate.map { x => x.asInstanceOf[js.Any] },
-        "AudioDescriptionBroadcasterMix" -> AudioDescriptionBroadcasterMix.map { x => x.asInstanceOf[js.Any] },
         "Specification" -> Specification.map { x => x.asInstanceOf[js.Any] },
-        "RawFormat" -> RawFormat.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "VbrQuality" -> VbrQuality.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AacSettings]
     }
@@ -581,34 +581,34 @@ package mediaconvert {
    */
   @js.native
   trait Ac3Settings extends js.Object {
+    var Bitrate: js.UndefOr[__integerMin64000Max640000]
+    var BitstreamMode: js.UndefOr[Ac3BitstreamMode]
     var CodingMode: js.UndefOr[Ac3CodingMode]
+    var Dialnorm: js.UndefOr[__integerMin1Max31]
     var DynamicRangeCompressionProfile: js.UndefOr[Ac3DynamicRangeCompressionProfile]
     var LfeFilter: js.UndefOr[Ac3LfeFilter]
     var MetadataControl: js.UndefOr[Ac3MetadataControl]
-    var Dialnorm: js.UndefOr[__integerMin1Max31]
-    var Bitrate: js.UndefOr[__integerMin64000Max640000]
-    var BitstreamMode: js.UndefOr[Ac3BitstreamMode]
     var SampleRate: js.UndefOr[__integerMin48000Max48000]
   }
 
   object Ac3Settings {
     def apply(
+      Bitrate: js.UndefOr[__integerMin64000Max640000] = js.undefined,
+      BitstreamMode: js.UndefOr[Ac3BitstreamMode] = js.undefined,
       CodingMode: js.UndefOr[Ac3CodingMode] = js.undefined,
+      Dialnorm: js.UndefOr[__integerMin1Max31] = js.undefined,
       DynamicRangeCompressionProfile: js.UndefOr[Ac3DynamicRangeCompressionProfile] = js.undefined,
       LfeFilter: js.UndefOr[Ac3LfeFilter] = js.undefined,
       MetadataControl: js.UndefOr[Ac3MetadataControl] = js.undefined,
-      Dialnorm: js.UndefOr[__integerMin1Max31] = js.undefined,
-      Bitrate: js.UndefOr[__integerMin64000Max640000] = js.undefined,
-      BitstreamMode: js.UndefOr[Ac3BitstreamMode] = js.undefined,
       SampleRate: js.UndefOr[__integerMin48000Max48000] = js.undefined): Ac3Settings = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "Bitrate" -> Bitrate.map { x => x.asInstanceOf[js.Any] },
+        "BitstreamMode" -> BitstreamMode.map { x => x.asInstanceOf[js.Any] },
         "CodingMode" -> CodingMode.map { x => x.asInstanceOf[js.Any] },
+        "Dialnorm" -> Dialnorm.map { x => x.asInstanceOf[js.Any] },
         "DynamicRangeCompressionProfile" -> DynamicRangeCompressionProfile.map { x => x.asInstanceOf[js.Any] },
         "LfeFilter" -> LfeFilter.map { x => x.asInstanceOf[js.Any] },
         "MetadataControl" -> MetadataControl.map { x => x.asInstanceOf[js.Any] },
-        "Dialnorm" -> Dialnorm.map { x => x.asInstanceOf[js.Any] },
-        "Bitrate" -> Bitrate.map { x => x.asInstanceOf[js.Any] },
-        "BitstreamMode" -> BitstreamMode.map { x => x.asInstanceOf[js.Any] },
         "SampleRate" -> SampleRate.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Ac3Settings]
@@ -680,14 +680,14 @@ package mediaconvert {
 
   @js.native
   trait AssociateCertificateRequest extends js.Object {
-    var Arn: js.UndefOr[__string]
+    var Arn: __string
   }
 
   object AssociateCertificateRequest {
     def apply(
-      Arn: js.UndefOr[__string] = js.undefined): AssociateCertificateRequest = {
+      Arn: __string): AssociateCertificateRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Arn" -> Arn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Arn" -> Arn.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AssociateCertificateRequest]
     }
@@ -727,31 +727,31 @@ package mediaconvert {
   @js.native
   trait AudioCodecSettings extends js.Object {
     var AacSettings: js.UndefOr[AacSettings]
-    var Eac3Settings: js.UndefOr[Eac3Settings]
-    var AiffSettings: js.UndefOr[AiffSettings]
     var Ac3Settings: js.UndefOr[Ac3Settings]
-    var WavSettings: js.UndefOr[WavSettings]
+    var AiffSettings: js.UndefOr[AiffSettings]
     var Codec: js.UndefOr[AudioCodec]
+    var Eac3Settings: js.UndefOr[Eac3Settings]
     var Mp2Settings: js.UndefOr[Mp2Settings]
+    var WavSettings: js.UndefOr[WavSettings]
   }
 
   object AudioCodecSettings {
     def apply(
       AacSettings: js.UndefOr[AacSettings] = js.undefined,
-      Eac3Settings: js.UndefOr[Eac3Settings] = js.undefined,
-      AiffSettings: js.UndefOr[AiffSettings] = js.undefined,
       Ac3Settings: js.UndefOr[Ac3Settings] = js.undefined,
-      WavSettings: js.UndefOr[WavSettings] = js.undefined,
+      AiffSettings: js.UndefOr[AiffSettings] = js.undefined,
       Codec: js.UndefOr[AudioCodec] = js.undefined,
-      Mp2Settings: js.UndefOr[Mp2Settings] = js.undefined): AudioCodecSettings = {
+      Eac3Settings: js.UndefOr[Eac3Settings] = js.undefined,
+      Mp2Settings: js.UndefOr[Mp2Settings] = js.undefined,
+      WavSettings: js.UndefOr[WavSettings] = js.undefined): AudioCodecSettings = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AacSettings" -> AacSettings.map { x => x.asInstanceOf[js.Any] },
-        "Eac3Settings" -> Eac3Settings.map { x => x.asInstanceOf[js.Any] },
-        "AiffSettings" -> AiffSettings.map { x => x.asInstanceOf[js.Any] },
         "Ac3Settings" -> Ac3Settings.map { x => x.asInstanceOf[js.Any] },
-        "WavSettings" -> WavSettings.map { x => x.asInstanceOf[js.Any] },
+        "AiffSettings" -> AiffSettings.map { x => x.asInstanceOf[js.Any] },
         "Codec" -> Codec.map { x => x.asInstanceOf[js.Any] },
-        "Mp2Settings" -> Mp2Settings.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Eac3Settings" -> Eac3Settings.map { x => x.asInstanceOf[js.Any] },
+        "Mp2Settings" -> Mp2Settings.map { x => x.asInstanceOf[js.Any] },
+        "WavSettings" -> WavSettings.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AudioCodecSettings]
     }
@@ -772,41 +772,41 @@ package mediaconvert {
    */
   @js.native
   trait AudioDescription extends js.Object {
-    var CustomLanguageCode: js.UndefOr[__stringMin3Max3PatternAZaZ3]
-    var AudioSourceName: js.UndefOr[__string]
-    var LanguageCodeControl: js.UndefOr[AudioLanguageCodeControl]
     var AudioNormalizationSettings: js.UndefOr[AudioNormalizationSettings]
+    var AudioSourceName: js.UndefOr[__string]
     var AudioType: js.UndefOr[__integerMin0Max255]
-    var RemixSettings: js.UndefOr[RemixSettings]
     var AudioTypeControl: js.UndefOr[AudioTypeControl]
-    var LanguageCode: js.UndefOr[LanguageCode]
-    var StreamName: js.UndefOr[__stringPatternWS]
     var CodecSettings: js.UndefOr[AudioCodecSettings]
+    var CustomLanguageCode: js.UndefOr[__stringMin3Max3PatternAZaZ3]
+    var LanguageCode: js.UndefOr[LanguageCode]
+    var LanguageCodeControl: js.UndefOr[AudioLanguageCodeControl]
+    var RemixSettings: js.UndefOr[RemixSettings]
+    var StreamName: js.UndefOr[__stringPatternWS]
   }
 
   object AudioDescription {
     def apply(
-      CustomLanguageCode: js.UndefOr[__stringMin3Max3PatternAZaZ3] = js.undefined,
-      AudioSourceName: js.UndefOr[__string] = js.undefined,
-      LanguageCodeControl: js.UndefOr[AudioLanguageCodeControl] = js.undefined,
       AudioNormalizationSettings: js.UndefOr[AudioNormalizationSettings] = js.undefined,
+      AudioSourceName: js.UndefOr[__string] = js.undefined,
       AudioType: js.UndefOr[__integerMin0Max255] = js.undefined,
-      RemixSettings: js.UndefOr[RemixSettings] = js.undefined,
       AudioTypeControl: js.UndefOr[AudioTypeControl] = js.undefined,
+      CodecSettings: js.UndefOr[AudioCodecSettings] = js.undefined,
+      CustomLanguageCode: js.UndefOr[__stringMin3Max3PatternAZaZ3] = js.undefined,
       LanguageCode: js.UndefOr[LanguageCode] = js.undefined,
-      StreamName: js.UndefOr[__stringPatternWS] = js.undefined,
-      CodecSettings: js.UndefOr[AudioCodecSettings] = js.undefined): AudioDescription = {
+      LanguageCodeControl: js.UndefOr[AudioLanguageCodeControl] = js.undefined,
+      RemixSettings: js.UndefOr[RemixSettings] = js.undefined,
+      StreamName: js.UndefOr[__stringPatternWS] = js.undefined): AudioDescription = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "CustomLanguageCode" -> CustomLanguageCode.map { x => x.asInstanceOf[js.Any] },
-        "AudioSourceName" -> AudioSourceName.map { x => x.asInstanceOf[js.Any] },
-        "LanguageCodeControl" -> LanguageCodeControl.map { x => x.asInstanceOf[js.Any] },
         "AudioNormalizationSettings" -> AudioNormalizationSettings.map { x => x.asInstanceOf[js.Any] },
+        "AudioSourceName" -> AudioSourceName.map { x => x.asInstanceOf[js.Any] },
         "AudioType" -> AudioType.map { x => x.asInstanceOf[js.Any] },
-        "RemixSettings" -> RemixSettings.map { x => x.asInstanceOf[js.Any] },
         "AudioTypeControl" -> AudioTypeControl.map { x => x.asInstanceOf[js.Any] },
+        "CodecSettings" -> CodecSettings.map { x => x.asInstanceOf[js.Any] },
+        "CustomLanguageCode" -> CustomLanguageCode.map { x => x.asInstanceOf[js.Any] },
         "LanguageCode" -> LanguageCode.map { x => x.asInstanceOf[js.Any] },
-        "StreamName" -> StreamName.map { x => x.asInstanceOf[js.Any] },
-        "CodecSettings" -> CodecSettings.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "LanguageCodeControl" -> LanguageCodeControl.map { x => x.asInstanceOf[js.Any] },
+        "RemixSettings" -> RemixSettings.map { x => x.asInstanceOf[js.Any] },
+        "StreamName" -> StreamName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AudioDescription]
     }
@@ -867,29 +867,29 @@ package mediaconvert {
    */
   @js.native
   trait AudioNormalizationSettings extends js.Object {
-    var AlgorithmControl: js.UndefOr[AudioNormalizationAlgorithmControl]
-    var PeakCalculation: js.UndefOr[AudioNormalizationPeakCalculation]
-    var CorrectionGateLevel: js.UndefOr[__integerMinNegative70Max0]
-    var TargetLkfs: js.UndefOr[__doubleMinNegative59Max0]
-    var LoudnessLogging: js.UndefOr[AudioNormalizationLoudnessLogging]
     var Algorithm: js.UndefOr[AudioNormalizationAlgorithm]
+    var AlgorithmControl: js.UndefOr[AudioNormalizationAlgorithmControl]
+    var CorrectionGateLevel: js.UndefOr[__integerMinNegative70Max0]
+    var LoudnessLogging: js.UndefOr[AudioNormalizationLoudnessLogging]
+    var PeakCalculation: js.UndefOr[AudioNormalizationPeakCalculation]
+    var TargetLkfs: js.UndefOr[__doubleMinNegative59Max0]
   }
 
   object AudioNormalizationSettings {
     def apply(
+      Algorithm: js.UndefOr[AudioNormalizationAlgorithm] = js.undefined,
       AlgorithmControl: js.UndefOr[AudioNormalizationAlgorithmControl] = js.undefined,
-      PeakCalculation: js.UndefOr[AudioNormalizationPeakCalculation] = js.undefined,
       CorrectionGateLevel: js.UndefOr[__integerMinNegative70Max0] = js.undefined,
-      TargetLkfs: js.UndefOr[__doubleMinNegative59Max0] = js.undefined,
       LoudnessLogging: js.UndefOr[AudioNormalizationLoudnessLogging] = js.undefined,
-      Algorithm: js.UndefOr[AudioNormalizationAlgorithm] = js.undefined): AudioNormalizationSettings = {
+      PeakCalculation: js.UndefOr[AudioNormalizationPeakCalculation] = js.undefined,
+      TargetLkfs: js.UndefOr[__doubleMinNegative59Max0] = js.undefined): AudioNormalizationSettings = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "Algorithm" -> Algorithm.map { x => x.asInstanceOf[js.Any] },
         "AlgorithmControl" -> AlgorithmControl.map { x => x.asInstanceOf[js.Any] },
-        "PeakCalculation" -> PeakCalculation.map { x => x.asInstanceOf[js.Any] },
         "CorrectionGateLevel" -> CorrectionGateLevel.map { x => x.asInstanceOf[js.Any] },
-        "TargetLkfs" -> TargetLkfs.map { x => x.asInstanceOf[js.Any] },
         "LoudnessLogging" -> LoudnessLogging.map { x => x.asInstanceOf[js.Any] },
-        "Algorithm" -> Algorithm.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "PeakCalculation" -> PeakCalculation.map { x => x.asInstanceOf[js.Any] },
+        "TargetLkfs" -> TargetLkfs.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AudioNormalizationSettings]
     }
@@ -900,41 +900,41 @@ package mediaconvert {
    */
   @js.native
   trait AudioSelector extends js.Object {
-    var ExternalAudioFileInput: js.UndefOr[__stringPatternS3MM2VVMMPPEEGGAAVVIIMMPP4FFLLVVMMPPTTMMPPGGMM4VVTTRRPPFF4VVMM2TTSSTTSS264HH264MMKKVVMMOOVVMMTTSSMM2TTWWMMVVAASSFFVVOOBB3GGPP3GGPPPPMMXXFFDDIIVVXXXXVVIIDDRRAAWWDDVVGGXXFFMM1VV3GG2VVMMFFMM3UU8LLCCHHGGXXFFMMPPEEGG2MMXXFFMMPPEEGG2MMXXFFHHDDWWAAVVYY4MMAAAACCAAIIFFFFMMPP2AACC3EECC3DDTTSSEE]
     var CustomLanguageCode: js.UndefOr[__stringMin3Max3PatternAZaZ3]
-    var SelectorType: js.UndefOr[AudioSelectorType]
-    var Pids: js.UndefOr[__listOf__integerMin1Max2147483647]
     var DefaultSelection: js.UndefOr[AudioDefaultSelection]
-    var Tracks: js.UndefOr[__listOf__integerMin1Max2147483647]
-    var RemixSettings: js.UndefOr[RemixSettings]
-    var Offset: js.UndefOr[__integerMinNegative2147483648Max2147483647]
+    var ExternalAudioFileInput: js.UndefOr[__stringPatternS3MM2VVMMPPEEGGAAVVIIMMPP4FFLLVVMMPPTTMMPPGGMM4VVTTRRPPFF4VVMM2TTSSTTSS264HH264MMKKVVMMOOVVMMTTSSMM2TTWWMMVVAASSFFVVOOBB3GGPP3GGPPPPMMXXFFDDIIVVXXXXVVIIDDRRAAWWDDVVGGXXFFMM1VV3GG2VVMMFFMM3UU8LLCCHHGGXXFFMMPPEEGG2MMXXFFMMPPEEGG2MMXXFFHHDDWWAAVVYY4MMAAAACCAAIIFFFFMMPP2AACC3EECC3DDTTSSEE]
     var LanguageCode: js.UndefOr[LanguageCode]
+    var Offset: js.UndefOr[__integerMinNegative2147483648Max2147483647]
+    var Pids: js.UndefOr[__listOf__integerMin1Max2147483647]
     var ProgramSelection: js.UndefOr[__integerMin0Max8]
+    var RemixSettings: js.UndefOr[RemixSettings]
+    var SelectorType: js.UndefOr[AudioSelectorType]
+    var Tracks: js.UndefOr[__listOf__integerMin1Max2147483647]
   }
 
   object AudioSelector {
     def apply(
-      ExternalAudioFileInput: js.UndefOr[__stringPatternS3MM2VVMMPPEEGGAAVVIIMMPP4FFLLVVMMPPTTMMPPGGMM4VVTTRRPPFF4VVMM2TTSSTTSS264HH264MMKKVVMMOOVVMMTTSSMM2TTWWMMVVAASSFFVVOOBB3GGPP3GGPPPPMMXXFFDDIIVVXXXXVVIIDDRRAAWWDDVVGGXXFFMM1VV3GG2VVMMFFMM3UU8LLCCHHGGXXFFMMPPEEGG2MMXXFFMMPPEEGG2MMXXFFHHDDWWAAVVYY4MMAAAACCAAIIFFFFMMPP2AACC3EECC3DDTTSSEE] = js.undefined,
       CustomLanguageCode: js.UndefOr[__stringMin3Max3PatternAZaZ3] = js.undefined,
-      SelectorType: js.UndefOr[AudioSelectorType] = js.undefined,
-      Pids: js.UndefOr[__listOf__integerMin1Max2147483647] = js.undefined,
       DefaultSelection: js.UndefOr[AudioDefaultSelection] = js.undefined,
-      Tracks: js.UndefOr[__listOf__integerMin1Max2147483647] = js.undefined,
-      RemixSettings: js.UndefOr[RemixSettings] = js.undefined,
-      Offset: js.UndefOr[__integerMinNegative2147483648Max2147483647] = js.undefined,
+      ExternalAudioFileInput: js.UndefOr[__stringPatternS3MM2VVMMPPEEGGAAVVIIMMPP4FFLLVVMMPPTTMMPPGGMM4VVTTRRPPFF4VVMM2TTSSTTSS264HH264MMKKVVMMOOVVMMTTSSMM2TTWWMMVVAASSFFVVOOBB3GGPP3GGPPPPMMXXFFDDIIVVXXXXVVIIDDRRAAWWDDVVGGXXFFMM1VV3GG2VVMMFFMM3UU8LLCCHHGGXXFFMMPPEEGG2MMXXFFMMPPEEGG2MMXXFFHHDDWWAAVVYY4MMAAAACCAAIIFFFFMMPP2AACC3EECC3DDTTSSEE] = js.undefined,
       LanguageCode: js.UndefOr[LanguageCode] = js.undefined,
-      ProgramSelection: js.UndefOr[__integerMin0Max8] = js.undefined): AudioSelector = {
+      Offset: js.UndefOr[__integerMinNegative2147483648Max2147483647] = js.undefined,
+      Pids: js.UndefOr[__listOf__integerMin1Max2147483647] = js.undefined,
+      ProgramSelection: js.UndefOr[__integerMin0Max8] = js.undefined,
+      RemixSettings: js.UndefOr[RemixSettings] = js.undefined,
+      SelectorType: js.UndefOr[AudioSelectorType] = js.undefined,
+      Tracks: js.UndefOr[__listOf__integerMin1Max2147483647] = js.undefined): AudioSelector = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ExternalAudioFileInput" -> ExternalAudioFileInput.map { x => x.asInstanceOf[js.Any] },
         "CustomLanguageCode" -> CustomLanguageCode.map { x => x.asInstanceOf[js.Any] },
-        "SelectorType" -> SelectorType.map { x => x.asInstanceOf[js.Any] },
-        "Pids" -> Pids.map { x => x.asInstanceOf[js.Any] },
         "DefaultSelection" -> DefaultSelection.map { x => x.asInstanceOf[js.Any] },
-        "Tracks" -> Tracks.map { x => x.asInstanceOf[js.Any] },
-        "RemixSettings" -> RemixSettings.map { x => x.asInstanceOf[js.Any] },
-        "Offset" -> Offset.map { x => x.asInstanceOf[js.Any] },
+        "ExternalAudioFileInput" -> ExternalAudioFileInput.map { x => x.asInstanceOf[js.Any] },
         "LanguageCode" -> LanguageCode.map { x => x.asInstanceOf[js.Any] },
-        "ProgramSelection" -> ProgramSelection.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Offset" -> Offset.map { x => x.asInstanceOf[js.Any] },
+        "Pids" -> Pids.map { x => x.asInstanceOf[js.Any] },
+        "ProgramSelection" -> ProgramSelection.map { x => x.asInstanceOf[js.Any] },
+        "RemixSettings" -> RemixSettings.map { x => x.asInstanceOf[js.Any] },
+        "SelectorType" -> SelectorType.map { x => x.asInstanceOf[js.Any] },
+        "Tracks" -> Tracks.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AudioSelector]
     }
@@ -1013,59 +1013,59 @@ package mediaconvert {
    */
   @js.native
   trait BurninDestinationSettings extends js.Object {
-    var FontSize: js.UndefOr[__integerMin0Max96]
-    var XPosition: js.UndefOr[__integerMin0Max2147483647]
-    var ShadowOpacity: js.UndefOr[__integerMin0Max255]
-    var OutlineColor: js.UndefOr[BurninSubtitleOutlineColor]
-    var BackgroundOpacity: js.UndefOr[__integerMin0Max255]
-    var TeletextSpacing: js.UndefOr[BurninSubtitleTeletextSpacing]
-    var BackgroundColor: js.UndefOr[BurninSubtitleBackgroundColor]
-    var ShadowYOffset: js.UndefOr[__integerMinNegative2147483648Max2147483647]
-    var FontColor: js.UndefOr[BurninSubtitleFontColor]
-    var ShadowXOffset: js.UndefOr[__integerMinNegative2147483648Max2147483647]
-    var YPosition: js.UndefOr[__integerMin0Max2147483647]
     var Alignment: js.UndefOr[BurninSubtitleAlignment]
-    var OutlineSize: js.UndefOr[__integerMin0Max10]
-    var FontResolution: js.UndefOr[__integerMin96Max600]
+    var BackgroundColor: js.UndefOr[BurninSubtitleBackgroundColor]
+    var BackgroundOpacity: js.UndefOr[__integerMin0Max255]
+    var FontColor: js.UndefOr[BurninSubtitleFontColor]
     var FontOpacity: js.UndefOr[__integerMin0Max255]
+    var FontResolution: js.UndefOr[__integerMin96Max600]
+    var FontSize: js.UndefOr[__integerMin0Max96]
+    var OutlineColor: js.UndefOr[BurninSubtitleOutlineColor]
+    var OutlineSize: js.UndefOr[__integerMin0Max10]
     var ShadowColor: js.UndefOr[BurninSubtitleShadowColor]
+    var ShadowOpacity: js.UndefOr[__integerMin0Max255]
+    var ShadowXOffset: js.UndefOr[__integerMinNegative2147483648Max2147483647]
+    var ShadowYOffset: js.UndefOr[__integerMinNegative2147483648Max2147483647]
+    var TeletextSpacing: js.UndefOr[BurninSubtitleTeletextSpacing]
+    var XPosition: js.UndefOr[__integerMin0Max2147483647]
+    var YPosition: js.UndefOr[__integerMin0Max2147483647]
   }
 
   object BurninDestinationSettings {
     def apply(
-      FontSize: js.UndefOr[__integerMin0Max96] = js.undefined,
-      XPosition: js.UndefOr[__integerMin0Max2147483647] = js.undefined,
-      ShadowOpacity: js.UndefOr[__integerMin0Max255] = js.undefined,
-      OutlineColor: js.UndefOr[BurninSubtitleOutlineColor] = js.undefined,
-      BackgroundOpacity: js.UndefOr[__integerMin0Max255] = js.undefined,
-      TeletextSpacing: js.UndefOr[BurninSubtitleTeletextSpacing] = js.undefined,
-      BackgroundColor: js.UndefOr[BurninSubtitleBackgroundColor] = js.undefined,
-      ShadowYOffset: js.UndefOr[__integerMinNegative2147483648Max2147483647] = js.undefined,
-      FontColor: js.UndefOr[BurninSubtitleFontColor] = js.undefined,
-      ShadowXOffset: js.UndefOr[__integerMinNegative2147483648Max2147483647] = js.undefined,
-      YPosition: js.UndefOr[__integerMin0Max2147483647] = js.undefined,
       Alignment: js.UndefOr[BurninSubtitleAlignment] = js.undefined,
-      OutlineSize: js.UndefOr[__integerMin0Max10] = js.undefined,
-      FontResolution: js.UndefOr[__integerMin96Max600] = js.undefined,
+      BackgroundColor: js.UndefOr[BurninSubtitleBackgroundColor] = js.undefined,
+      BackgroundOpacity: js.UndefOr[__integerMin0Max255] = js.undefined,
+      FontColor: js.UndefOr[BurninSubtitleFontColor] = js.undefined,
       FontOpacity: js.UndefOr[__integerMin0Max255] = js.undefined,
-      ShadowColor: js.UndefOr[BurninSubtitleShadowColor] = js.undefined): BurninDestinationSettings = {
+      FontResolution: js.UndefOr[__integerMin96Max600] = js.undefined,
+      FontSize: js.UndefOr[__integerMin0Max96] = js.undefined,
+      OutlineColor: js.UndefOr[BurninSubtitleOutlineColor] = js.undefined,
+      OutlineSize: js.UndefOr[__integerMin0Max10] = js.undefined,
+      ShadowColor: js.UndefOr[BurninSubtitleShadowColor] = js.undefined,
+      ShadowOpacity: js.UndefOr[__integerMin0Max255] = js.undefined,
+      ShadowXOffset: js.UndefOr[__integerMinNegative2147483648Max2147483647] = js.undefined,
+      ShadowYOffset: js.UndefOr[__integerMinNegative2147483648Max2147483647] = js.undefined,
+      TeletextSpacing: js.UndefOr[BurninSubtitleTeletextSpacing] = js.undefined,
+      XPosition: js.UndefOr[__integerMin0Max2147483647] = js.undefined,
+      YPosition: js.UndefOr[__integerMin0Max2147483647] = js.undefined): BurninDestinationSettings = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "FontSize" -> FontSize.map { x => x.asInstanceOf[js.Any] },
-        "XPosition" -> XPosition.map { x => x.asInstanceOf[js.Any] },
-        "ShadowOpacity" -> ShadowOpacity.map { x => x.asInstanceOf[js.Any] },
-        "OutlineColor" -> OutlineColor.map { x => x.asInstanceOf[js.Any] },
-        "BackgroundOpacity" -> BackgroundOpacity.map { x => x.asInstanceOf[js.Any] },
-        "TeletextSpacing" -> TeletextSpacing.map { x => x.asInstanceOf[js.Any] },
-        "BackgroundColor" -> BackgroundColor.map { x => x.asInstanceOf[js.Any] },
-        "ShadowYOffset" -> ShadowYOffset.map { x => x.asInstanceOf[js.Any] },
-        "FontColor" -> FontColor.map { x => x.asInstanceOf[js.Any] },
-        "ShadowXOffset" -> ShadowXOffset.map { x => x.asInstanceOf[js.Any] },
-        "YPosition" -> YPosition.map { x => x.asInstanceOf[js.Any] },
         "Alignment" -> Alignment.map { x => x.asInstanceOf[js.Any] },
-        "OutlineSize" -> OutlineSize.map { x => x.asInstanceOf[js.Any] },
-        "FontResolution" -> FontResolution.map { x => x.asInstanceOf[js.Any] },
+        "BackgroundColor" -> BackgroundColor.map { x => x.asInstanceOf[js.Any] },
+        "BackgroundOpacity" -> BackgroundOpacity.map { x => x.asInstanceOf[js.Any] },
+        "FontColor" -> FontColor.map { x => x.asInstanceOf[js.Any] },
         "FontOpacity" -> FontOpacity.map { x => x.asInstanceOf[js.Any] },
-        "ShadowColor" -> ShadowColor.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "FontResolution" -> FontResolution.map { x => x.asInstanceOf[js.Any] },
+        "FontSize" -> FontSize.map { x => x.asInstanceOf[js.Any] },
+        "OutlineColor" -> OutlineColor.map { x => x.asInstanceOf[js.Any] },
+        "OutlineSize" -> OutlineSize.map { x => x.asInstanceOf[js.Any] },
+        "ShadowColor" -> ShadowColor.map { x => x.asInstanceOf[js.Any] },
+        "ShadowOpacity" -> ShadowOpacity.map { x => x.asInstanceOf[js.Any] },
+        "ShadowXOffset" -> ShadowXOffset.map { x => x.asInstanceOf[js.Any] },
+        "ShadowYOffset" -> ShadowYOffset.map { x => x.asInstanceOf[js.Any] },
+        "TeletextSpacing" -> TeletextSpacing.map { x => x.asInstanceOf[js.Any] },
+        "XPosition" -> XPosition.map { x => x.asInstanceOf[js.Any] },
+        "YPosition" -> YPosition.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BurninDestinationSettings]
     }
@@ -1145,14 +1145,14 @@ package mediaconvert {
 
   @js.native
   trait CancelJobRequest extends js.Object {
-    var Id: js.UndefOr[__string]
+    var Id: __string
   }
 
   object CancelJobRequest {
     def apply(
-      Id: js.UndefOr[__string] = js.undefined): CancelJobRequest = {
+      Id: __string): CancelJobRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Id" -> Id.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Id" -> Id.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CancelJobRequest]
     }
@@ -1176,26 +1176,26 @@ package mediaconvert {
    */
   @js.native
   trait CaptionDescription extends js.Object {
+    var CaptionSelectorName: js.UndefOr[__stringMin1]
     var CustomLanguageCode: js.UndefOr[__stringMin3Max3PatternAZaZ3]
     var DestinationSettings: js.UndefOr[CaptionDestinationSettings]
     var LanguageCode: js.UndefOr[LanguageCode]
     var LanguageDescription: js.UndefOr[__string]
-    var CaptionSelectorName: js.UndefOr[__stringMin1]
   }
 
   object CaptionDescription {
     def apply(
+      CaptionSelectorName: js.UndefOr[__stringMin1] = js.undefined,
       CustomLanguageCode: js.UndefOr[__stringMin3Max3PatternAZaZ3] = js.undefined,
       DestinationSettings: js.UndefOr[CaptionDestinationSettings] = js.undefined,
       LanguageCode: js.UndefOr[LanguageCode] = js.undefined,
-      LanguageDescription: js.UndefOr[__string] = js.undefined,
-      CaptionSelectorName: js.UndefOr[__stringMin1] = js.undefined): CaptionDescription = {
+      LanguageDescription: js.UndefOr[__string] = js.undefined): CaptionDescription = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "CaptionSelectorName" -> CaptionSelectorName.map { x => x.asInstanceOf[js.Any] },
         "CustomLanguageCode" -> CustomLanguageCode.map { x => x.asInstanceOf[js.Any] },
         "DestinationSettings" -> DestinationSettings.map { x => x.asInstanceOf[js.Any] },
         "LanguageCode" -> LanguageCode.map { x => x.asInstanceOf[js.Any] },
-        "LanguageDescription" -> LanguageDescription.map { x => x.asInstanceOf[js.Any] },
-        "CaptionSelectorName" -> CaptionSelectorName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "LanguageDescription" -> LanguageDescription.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CaptionDescription]
     }
@@ -1233,29 +1233,29 @@ package mediaconvert {
    */
   @js.native
   trait CaptionDestinationSettings extends js.Object {
-    var TtmlDestinationSettings: js.UndefOr[TtmlDestinationSettings]
     var BurninDestinationSettings: js.UndefOr[BurninDestinationSettings]
-    var TeletextDestinationSettings: js.UndefOr[TeletextDestinationSettings]
-    var SccDestinationSettings: js.UndefOr[SccDestinationSettings]
-    var DvbSubDestinationSettings: js.UndefOr[DvbSubDestinationSettings]
     var DestinationType: js.UndefOr[CaptionDestinationType]
+    var DvbSubDestinationSettings: js.UndefOr[DvbSubDestinationSettings]
+    var SccDestinationSettings: js.UndefOr[SccDestinationSettings]
+    var TeletextDestinationSettings: js.UndefOr[TeletextDestinationSettings]
+    var TtmlDestinationSettings: js.UndefOr[TtmlDestinationSettings]
   }
 
   object CaptionDestinationSettings {
     def apply(
-      TtmlDestinationSettings: js.UndefOr[TtmlDestinationSettings] = js.undefined,
       BurninDestinationSettings: js.UndefOr[BurninDestinationSettings] = js.undefined,
-      TeletextDestinationSettings: js.UndefOr[TeletextDestinationSettings] = js.undefined,
-      SccDestinationSettings: js.UndefOr[SccDestinationSettings] = js.undefined,
+      DestinationType: js.UndefOr[CaptionDestinationType] = js.undefined,
       DvbSubDestinationSettings: js.UndefOr[DvbSubDestinationSettings] = js.undefined,
-      DestinationType: js.UndefOr[CaptionDestinationType] = js.undefined): CaptionDestinationSettings = {
+      SccDestinationSettings: js.UndefOr[SccDestinationSettings] = js.undefined,
+      TeletextDestinationSettings: js.UndefOr[TeletextDestinationSettings] = js.undefined,
+      TtmlDestinationSettings: js.UndefOr[TtmlDestinationSettings] = js.undefined): CaptionDestinationSettings = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "TtmlDestinationSettings" -> TtmlDestinationSettings.map { x => x.asInstanceOf[js.Any] },
         "BurninDestinationSettings" -> BurninDestinationSettings.map { x => x.asInstanceOf[js.Any] },
-        "TeletextDestinationSettings" -> TeletextDestinationSettings.map { x => x.asInstanceOf[js.Any] },
-        "SccDestinationSettings" -> SccDestinationSettings.map { x => x.asInstanceOf[js.Any] },
+        "DestinationType" -> DestinationType.map { x => x.asInstanceOf[js.Any] },
         "DvbSubDestinationSettings" -> DvbSubDestinationSettings.map { x => x.asInstanceOf[js.Any] },
-        "DestinationType" -> DestinationType.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "SccDestinationSettings" -> SccDestinationSettings.map { x => x.asInstanceOf[js.Any] },
+        "TeletextDestinationSettings" -> TeletextDestinationSettings.map { x => x.asInstanceOf[js.Any] },
+        "TtmlDestinationSettings" -> TtmlDestinationSettings.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CaptionDestinationSettings]
     }
@@ -1309,28 +1309,28 @@ package mediaconvert {
    */
   @js.native
   trait CaptionSourceSettings extends js.Object {
-    var FileSourceSettings: js.UndefOr[FileSourceSettings]
-    var SourceType: js.UndefOr[CaptionSourceType]
-    var EmbeddedSourceSettings: js.UndefOr[EmbeddedSourceSettings]
     var AncillarySourceSettings: js.UndefOr[AncillarySourceSettings]
     var DvbSubSourceSettings: js.UndefOr[DvbSubSourceSettings]
+    var EmbeddedSourceSettings: js.UndefOr[EmbeddedSourceSettings]
+    var FileSourceSettings: js.UndefOr[FileSourceSettings]
+    var SourceType: js.UndefOr[CaptionSourceType]
     var TeletextSourceSettings: js.UndefOr[TeletextSourceSettings]
   }
 
   object CaptionSourceSettings {
     def apply(
-      FileSourceSettings: js.UndefOr[FileSourceSettings] = js.undefined,
-      SourceType: js.UndefOr[CaptionSourceType] = js.undefined,
-      EmbeddedSourceSettings: js.UndefOr[EmbeddedSourceSettings] = js.undefined,
       AncillarySourceSettings: js.UndefOr[AncillarySourceSettings] = js.undefined,
       DvbSubSourceSettings: js.UndefOr[DvbSubSourceSettings] = js.undefined,
+      EmbeddedSourceSettings: js.UndefOr[EmbeddedSourceSettings] = js.undefined,
+      FileSourceSettings: js.UndefOr[FileSourceSettings] = js.undefined,
+      SourceType: js.UndefOr[CaptionSourceType] = js.undefined,
       TeletextSourceSettings: js.UndefOr[TeletextSourceSettings] = js.undefined): CaptionSourceSettings = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "FileSourceSettings" -> FileSourceSettings.map { x => x.asInstanceOf[js.Any] },
-        "SourceType" -> SourceType.map { x => x.asInstanceOf[js.Any] },
-        "EmbeddedSourceSettings" -> EmbeddedSourceSettings.map { x => x.asInstanceOf[js.Any] },
         "AncillarySourceSettings" -> AncillarySourceSettings.map { x => x.asInstanceOf[js.Any] },
         "DvbSubSourceSettings" -> DvbSubSourceSettings.map { x => x.asInstanceOf[js.Any] },
+        "EmbeddedSourceSettings" -> EmbeddedSourceSettings.map { x => x.asInstanceOf[js.Any] },
+        "FileSourceSettings" -> FileSourceSettings.map { x => x.asInstanceOf[js.Any] },
+        "SourceType" -> SourceType.map { x => x.asInstanceOf[js.Any] },
         "TeletextSourceSettings" -> TeletextSourceSettings.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CaptionSourceSettings]
@@ -1399,25 +1399,25 @@ package mediaconvert {
    */
   @js.native
   trait CmafEncryptionSettings extends js.Object {
-    var StaticKeyProvider: js.UndefOr[StaticKeyProvider]
+    var ConstantInitializationVector: js.UndefOr[__stringMin32Max32Pattern09aFAF32]
     var EncryptionMethod: js.UndefOr[CmafEncryptionType]
     var InitializationVectorInManifest: js.UndefOr[CmafInitializationVectorInManifest]
-    var ConstantInitializationVector: js.UndefOr[__stringMin32Max32Pattern09aFAF32]
+    var StaticKeyProvider: js.UndefOr[StaticKeyProvider]
     var Type: js.UndefOr[CmafKeyProviderType]
   }
 
   object CmafEncryptionSettings {
     def apply(
-      StaticKeyProvider: js.UndefOr[StaticKeyProvider] = js.undefined,
+      ConstantInitializationVector: js.UndefOr[__stringMin32Max32Pattern09aFAF32] = js.undefined,
       EncryptionMethod: js.UndefOr[CmafEncryptionType] = js.undefined,
       InitializationVectorInManifest: js.UndefOr[CmafInitializationVectorInManifest] = js.undefined,
-      ConstantInitializationVector: js.UndefOr[__stringMin32Max32Pattern09aFAF32] = js.undefined,
+      StaticKeyProvider: js.UndefOr[StaticKeyProvider] = js.undefined,
       Type: js.UndefOr[CmafKeyProviderType] = js.undefined): CmafEncryptionSettings = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "StaticKeyProvider" -> StaticKeyProvider.map { x => x.asInstanceOf[js.Any] },
+        "ConstantInitializationVector" -> ConstantInitializationVector.map { x => x.asInstanceOf[js.Any] },
         "EncryptionMethod" -> EncryptionMethod.map { x => x.asInstanceOf[js.Any] },
         "InitializationVectorInManifest" -> InitializationVectorInManifest.map { x => x.asInstanceOf[js.Any] },
-        "ConstantInitializationVector" -> ConstantInitializationVector.map { x => x.asInstanceOf[js.Any] },
+        "StaticKeyProvider" -> StaticKeyProvider.map { x => x.asInstanceOf[js.Any] },
         "Type" -> Type.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CmafEncryptionSettings]
@@ -1438,55 +1438,55 @@ package mediaconvert {
    */
   @js.native
   trait CmafGroupSettings extends js.Object {
-    var WriteDashManifest: js.UndefOr[CmafWriteDASHManifest]
-    var CodecSpecification: js.UndefOr[CmafCodecSpecification]
-    var MinFinalSegmentLength: js.UndefOr[__doubleMin0Max2147483647]
-    var SegmentLength: js.UndefOr[__integerMin1Max2147483647]
-    var MinBufferTime: js.UndefOr[__integerMin0Max2147483647]
     var BaseUrl: js.UndefOr[__string]
-    var ManifestCompression: js.UndefOr[CmafManifestCompression]
     var ClientCache: js.UndefOr[CmafClientCache]
-    var SegmentControl: js.UndefOr[CmafSegmentControl]
-    var ManifestDurationFormat: js.UndefOr[CmafManifestDurationFormat]
+    var CodecSpecification: js.UndefOr[CmafCodecSpecification]
     var Destination: js.UndefOr[__stringPatternS3]
     var Encryption: js.UndefOr[CmafEncryptionSettings]
-    var StreamInfResolution: js.UndefOr[CmafStreamInfResolution]
     var FragmentLength: js.UndefOr[__integerMin1Max2147483647]
+    var ManifestCompression: js.UndefOr[CmafManifestCompression]
+    var ManifestDurationFormat: js.UndefOr[CmafManifestDurationFormat]
+    var MinBufferTime: js.UndefOr[__integerMin0Max2147483647]
+    var MinFinalSegmentLength: js.UndefOr[__doubleMin0Max2147483647]
+    var SegmentControl: js.UndefOr[CmafSegmentControl]
+    var SegmentLength: js.UndefOr[__integerMin1Max2147483647]
+    var StreamInfResolution: js.UndefOr[CmafStreamInfResolution]
+    var WriteDashManifest: js.UndefOr[CmafWriteDASHManifest]
     var WriteHlsManifest: js.UndefOr[CmafWriteHLSManifest]
   }
 
   object CmafGroupSettings {
     def apply(
-      WriteDashManifest: js.UndefOr[CmafWriteDASHManifest] = js.undefined,
-      CodecSpecification: js.UndefOr[CmafCodecSpecification] = js.undefined,
-      MinFinalSegmentLength: js.UndefOr[__doubleMin0Max2147483647] = js.undefined,
-      SegmentLength: js.UndefOr[__integerMin1Max2147483647] = js.undefined,
-      MinBufferTime: js.UndefOr[__integerMin0Max2147483647] = js.undefined,
       BaseUrl: js.UndefOr[__string] = js.undefined,
-      ManifestCompression: js.UndefOr[CmafManifestCompression] = js.undefined,
       ClientCache: js.UndefOr[CmafClientCache] = js.undefined,
-      SegmentControl: js.UndefOr[CmafSegmentControl] = js.undefined,
-      ManifestDurationFormat: js.UndefOr[CmafManifestDurationFormat] = js.undefined,
+      CodecSpecification: js.UndefOr[CmafCodecSpecification] = js.undefined,
       Destination: js.UndefOr[__stringPatternS3] = js.undefined,
       Encryption: js.UndefOr[CmafEncryptionSettings] = js.undefined,
-      StreamInfResolution: js.UndefOr[CmafStreamInfResolution] = js.undefined,
       FragmentLength: js.UndefOr[__integerMin1Max2147483647] = js.undefined,
+      ManifestCompression: js.UndefOr[CmafManifestCompression] = js.undefined,
+      ManifestDurationFormat: js.UndefOr[CmafManifestDurationFormat] = js.undefined,
+      MinBufferTime: js.UndefOr[__integerMin0Max2147483647] = js.undefined,
+      MinFinalSegmentLength: js.UndefOr[__doubleMin0Max2147483647] = js.undefined,
+      SegmentControl: js.UndefOr[CmafSegmentControl] = js.undefined,
+      SegmentLength: js.UndefOr[__integerMin1Max2147483647] = js.undefined,
+      StreamInfResolution: js.UndefOr[CmafStreamInfResolution] = js.undefined,
+      WriteDashManifest: js.UndefOr[CmafWriteDASHManifest] = js.undefined,
       WriteHlsManifest: js.UndefOr[CmafWriteHLSManifest] = js.undefined): CmafGroupSettings = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "WriteDashManifest" -> WriteDashManifest.map { x => x.asInstanceOf[js.Any] },
-        "CodecSpecification" -> CodecSpecification.map { x => x.asInstanceOf[js.Any] },
-        "MinFinalSegmentLength" -> MinFinalSegmentLength.map { x => x.asInstanceOf[js.Any] },
-        "SegmentLength" -> SegmentLength.map { x => x.asInstanceOf[js.Any] },
-        "MinBufferTime" -> MinBufferTime.map { x => x.asInstanceOf[js.Any] },
         "BaseUrl" -> BaseUrl.map { x => x.asInstanceOf[js.Any] },
-        "ManifestCompression" -> ManifestCompression.map { x => x.asInstanceOf[js.Any] },
         "ClientCache" -> ClientCache.map { x => x.asInstanceOf[js.Any] },
-        "SegmentControl" -> SegmentControl.map { x => x.asInstanceOf[js.Any] },
-        "ManifestDurationFormat" -> ManifestDurationFormat.map { x => x.asInstanceOf[js.Any] },
+        "CodecSpecification" -> CodecSpecification.map { x => x.asInstanceOf[js.Any] },
         "Destination" -> Destination.map { x => x.asInstanceOf[js.Any] },
         "Encryption" -> Encryption.map { x => x.asInstanceOf[js.Any] },
-        "StreamInfResolution" -> StreamInfResolution.map { x => x.asInstanceOf[js.Any] },
         "FragmentLength" -> FragmentLength.map { x => x.asInstanceOf[js.Any] },
+        "ManifestCompression" -> ManifestCompression.map { x => x.asInstanceOf[js.Any] },
+        "ManifestDurationFormat" -> ManifestDurationFormat.map { x => x.asInstanceOf[js.Any] },
+        "MinBufferTime" -> MinBufferTime.map { x => x.asInstanceOf[js.Any] },
+        "MinFinalSegmentLength" -> MinFinalSegmentLength.map { x => x.asInstanceOf[js.Any] },
+        "SegmentControl" -> SegmentControl.map { x => x.asInstanceOf[js.Any] },
+        "SegmentLength" -> SegmentLength.map { x => x.asInstanceOf[js.Any] },
+        "StreamInfResolution" -> StreamInfResolution.map { x => x.asInstanceOf[js.Any] },
+        "WriteDashManifest" -> WriteDashManifest.map { x => x.asInstanceOf[js.Any] },
         "WriteHlsManifest" -> WriteHlsManifest.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CmafGroupSettings]
@@ -1577,8 +1577,8 @@ package mediaconvert {
    */
   @js.native
   trait ColorCorrector extends js.Object {
-    var ColorSpaceConversion: js.UndefOr[ColorSpaceConversion]
     var Brightness: js.UndefOr[__integerMin1Max100]
+    var ColorSpaceConversion: js.UndefOr[ColorSpaceConversion]
     var Contrast: js.UndefOr[__integerMin1Max100]
     var Hdr10Metadata: js.UndefOr[Hdr10Metadata]
     var Hue: js.UndefOr[__integerMinNegative180Max180]
@@ -1587,15 +1587,15 @@ package mediaconvert {
 
   object ColorCorrector {
     def apply(
-      ColorSpaceConversion: js.UndefOr[ColorSpaceConversion] = js.undefined,
       Brightness: js.UndefOr[__integerMin1Max100] = js.undefined,
+      ColorSpaceConversion: js.UndefOr[ColorSpaceConversion] = js.undefined,
       Contrast: js.UndefOr[__integerMin1Max100] = js.undefined,
       Hdr10Metadata: js.UndefOr[Hdr10Metadata] = js.undefined,
       Hue: js.UndefOr[__integerMinNegative180Max180] = js.undefined,
       Saturation: js.UndefOr[__integerMin1Max100] = js.undefined): ColorCorrector = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ColorSpaceConversion" -> ColorSpaceConversion.map { x => x.asInstanceOf[js.Any] },
         "Brightness" -> Brightness.map { x => x.asInstanceOf[js.Any] },
+        "ColorSpaceConversion" -> ColorSpaceConversion.map { x => x.asInstanceOf[js.Any] },
         "Contrast" -> Contrast.map { x => x.asInstanceOf[js.Any] },
         "Hdr10Metadata" -> Hdr10Metadata.map { x => x.asInstanceOf[js.Any] },
         "Hue" -> Hue.map { x => x.asInstanceOf[js.Any] },
@@ -1665,29 +1665,29 @@ package mediaconvert {
    */
   @js.native
   trait ContainerSettings extends js.Object {
-    var MovSettings: js.UndefOr[MovSettings]
-    var F4vSettings: js.UndefOr[F4vSettings]
-    var Mp4Settings: js.UndefOr[Mp4Settings]
-    var M3u8Settings: js.UndefOr[M3u8Settings]
     var Container: js.UndefOr[ContainerType]
+    var F4vSettings: js.UndefOr[F4vSettings]
     var M2tsSettings: js.UndefOr[M2tsSettings]
+    var M3u8Settings: js.UndefOr[M3u8Settings]
+    var MovSettings: js.UndefOr[MovSettings]
+    var Mp4Settings: js.UndefOr[Mp4Settings]
   }
 
   object ContainerSettings {
     def apply(
-      MovSettings: js.UndefOr[MovSettings] = js.undefined,
-      F4vSettings: js.UndefOr[F4vSettings] = js.undefined,
-      Mp4Settings: js.UndefOr[Mp4Settings] = js.undefined,
-      M3u8Settings: js.UndefOr[M3u8Settings] = js.undefined,
       Container: js.UndefOr[ContainerType] = js.undefined,
-      M2tsSettings: js.UndefOr[M2tsSettings] = js.undefined): ContainerSettings = {
+      F4vSettings: js.UndefOr[F4vSettings] = js.undefined,
+      M2tsSettings: js.UndefOr[M2tsSettings] = js.undefined,
+      M3u8Settings: js.UndefOr[M3u8Settings] = js.undefined,
+      MovSettings: js.UndefOr[MovSettings] = js.undefined,
+      Mp4Settings: js.UndefOr[Mp4Settings] = js.undefined): ContainerSettings = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "MovSettings" -> MovSettings.map { x => x.asInstanceOf[js.Any] },
-        "F4vSettings" -> F4vSettings.map { x => x.asInstanceOf[js.Any] },
-        "Mp4Settings" -> Mp4Settings.map { x => x.asInstanceOf[js.Any] },
-        "M3u8Settings" -> M3u8Settings.map { x => x.asInstanceOf[js.Any] },
         "Container" -> Container.map { x => x.asInstanceOf[js.Any] },
-        "M2tsSettings" -> M2tsSettings.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "F4vSettings" -> F4vSettings.map { x => x.asInstanceOf[js.Any] },
+        "M2tsSettings" -> M2tsSettings.map { x => x.asInstanceOf[js.Any] },
+        "M3u8Settings" -> M3u8Settings.map { x => x.asInstanceOf[js.Any] },
+        "MovSettings" -> MovSettings.map { x => x.asInstanceOf[js.Any] },
+        "Mp4Settings" -> Mp4Settings.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ContainerSettings]
     }
@@ -1713,32 +1713,32 @@ package mediaconvert {
 
   @js.native
   trait CreateJobRequest extends js.Object {
-    var Settings: js.UndefOr[JobSettings]
-    var Role: js.UndefOr[__string]
-    var UserMetadata: js.UndefOr[__mapOf__string]
-    var ClientRequestToken: js.UndefOr[__string]
-    var Queue: js.UndefOr[__string]
+    var Role: __string
+    var Settings: JobSettings
     var BillingTagsSource: js.UndefOr[BillingTagsSource]
+    var ClientRequestToken: js.UndefOr[__string]
     var JobTemplate: js.UndefOr[__string]
+    var Queue: js.UndefOr[__string]
+    var UserMetadata: js.UndefOr[__mapOf__string]
   }
 
   object CreateJobRequest {
     def apply(
-      Settings: js.UndefOr[JobSettings] = js.undefined,
-      Role: js.UndefOr[__string] = js.undefined,
-      UserMetadata: js.UndefOr[__mapOf__string] = js.undefined,
-      ClientRequestToken: js.UndefOr[__string] = js.undefined,
-      Queue: js.UndefOr[__string] = js.undefined,
+      Role: __string,
+      Settings: JobSettings,
       BillingTagsSource: js.UndefOr[BillingTagsSource] = js.undefined,
-      JobTemplate: js.UndefOr[__string] = js.undefined): CreateJobRequest = {
+      ClientRequestToken: js.UndefOr[__string] = js.undefined,
+      JobTemplate: js.UndefOr[__string] = js.undefined,
+      Queue: js.UndefOr[__string] = js.undefined,
+      UserMetadata: js.UndefOr[__mapOf__string] = js.undefined): CreateJobRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Settings" -> Settings.map { x => x.asInstanceOf[js.Any] },
-        "Role" -> Role.map { x => x.asInstanceOf[js.Any] },
-        "UserMetadata" -> UserMetadata.map { x => x.asInstanceOf[js.Any] },
-        "ClientRequestToken" -> ClientRequestToken.map { x => x.asInstanceOf[js.Any] },
-        "Queue" -> Queue.map { x => x.asInstanceOf[js.Any] },
+        "Role" -> Role.asInstanceOf[js.Any],
+        "Settings" -> Settings.asInstanceOf[js.Any],
         "BillingTagsSource" -> BillingTagsSource.map { x => x.asInstanceOf[js.Any] },
-        "JobTemplate" -> JobTemplate.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ClientRequestToken" -> ClientRequestToken.map { x => x.asInstanceOf[js.Any] },
+        "JobTemplate" -> JobTemplate.map { x => x.asInstanceOf[js.Any] },
+        "Queue" -> Queue.map { x => x.asInstanceOf[js.Any] },
+        "UserMetadata" -> UserMetadata.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateJobRequest]
     }
@@ -1761,8 +1761,8 @@ package mediaconvert {
 
   @js.native
   trait CreateJobTemplateRequest extends js.Object {
-    var Settings: js.UndefOr[JobTemplateSettings]
-    var Name: js.UndefOr[__string]
+    var Name: __string
+    var Settings: JobTemplateSettings
     var Category: js.UndefOr[__string]
     var Description: js.UndefOr[__string]
     var Queue: js.UndefOr[__string]
@@ -1771,15 +1771,15 @@ package mediaconvert {
 
   object CreateJobTemplateRequest {
     def apply(
-      Settings: js.UndefOr[JobTemplateSettings] = js.undefined,
-      Name: js.UndefOr[__string] = js.undefined,
+      Name: __string,
+      Settings: JobTemplateSettings,
       Category: js.UndefOr[__string] = js.undefined,
       Description: js.UndefOr[__string] = js.undefined,
       Queue: js.UndefOr[__string] = js.undefined,
       Tags: js.UndefOr[__mapOf__string] = js.undefined): CreateJobTemplateRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Settings" -> Settings.map { x => x.asInstanceOf[js.Any] },
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
+        "Name" -> Name.asInstanceOf[js.Any],
+        "Settings" -> Settings.asInstanceOf[js.Any],
         "Category" -> Category.map { x => x.asInstanceOf[js.Any] },
         "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
         "Queue" -> Queue.map { x => x.asInstanceOf[js.Any] },
@@ -1806,8 +1806,8 @@ package mediaconvert {
 
   @js.native
   trait CreatePresetRequest extends js.Object {
-    var Settings: js.UndefOr[PresetSettings]
-    var Name: js.UndefOr[__string]
+    var Name: __string
+    var Settings: PresetSettings
     var Category: js.UndefOr[__string]
     var Description: js.UndefOr[__string]
     var Tags: js.UndefOr[__mapOf__string]
@@ -1815,14 +1815,14 @@ package mediaconvert {
 
   object CreatePresetRequest {
     def apply(
-      Settings: js.UndefOr[PresetSettings] = js.undefined,
-      Name: js.UndefOr[__string] = js.undefined,
+      Name: __string,
+      Settings: PresetSettings,
       Category: js.UndefOr[__string] = js.undefined,
       Description: js.UndefOr[__string] = js.undefined,
       Tags: js.UndefOr[__mapOf__string] = js.undefined): CreatePresetRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Settings" -> Settings.map { x => x.asInstanceOf[js.Any] },
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
+        "Name" -> Name.asInstanceOf[js.Any],
+        "Settings" -> Settings.asInstanceOf[js.Any],
         "Category" -> Category.map { x => x.asInstanceOf[js.Any] },
         "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
         "Tags" -> Tags.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
@@ -1848,26 +1848,26 @@ package mediaconvert {
 
   @js.native
   trait CreateQueueRequest extends js.Object {
-    var ReservationPlanSettings: js.UndefOr[ReservationPlanSettings]
-    var Name: js.UndefOr[__string]
+    var Name: __string
     var Description: js.UndefOr[__string]
-    var Tags: js.UndefOr[__mapOf__string]
     var PricingPlan: js.UndefOr[PricingPlan]
+    var ReservationPlanSettings: js.UndefOr[ReservationPlanSettings]
+    var Tags: js.UndefOr[__mapOf__string]
   }
 
   object CreateQueueRequest {
     def apply(
-      ReservationPlanSettings: js.UndefOr[ReservationPlanSettings] = js.undefined,
-      Name: js.UndefOr[__string] = js.undefined,
+      Name: __string,
       Description: js.UndefOr[__string] = js.undefined,
-      Tags: js.UndefOr[__mapOf__string] = js.undefined,
-      PricingPlan: js.UndefOr[PricingPlan] = js.undefined): CreateQueueRequest = {
+      PricingPlan: js.UndefOr[PricingPlan] = js.undefined,
+      ReservationPlanSettings: js.UndefOr[ReservationPlanSettings] = js.undefined,
+      Tags: js.UndefOr[__mapOf__string] = js.undefined): CreateQueueRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ReservationPlanSettings" -> ReservationPlanSettings.map { x => x.asInstanceOf[js.Any] },
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
+        "Name" -> Name.asInstanceOf[js.Any],
         "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
-        "Tags" -> Tags.map { x => x.asInstanceOf[js.Any] },
-        "PricingPlan" -> PricingPlan.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "PricingPlan" -> PricingPlan.map { x => x.asInstanceOf[js.Any] },
+        "ReservationPlanSettings" -> ReservationPlanSettings.map { x => x.asInstanceOf[js.Any] },
+        "Tags" -> Tags.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateQueueRequest]
     }
@@ -1911,38 +1911,38 @@ package mediaconvert {
    */
   @js.native
   trait DashIsoGroupSettings extends js.Object {
-    var WriteSegmentTimelineInRepresentation: js.UndefOr[DashIsoWriteSegmentTimelineInRepresentation]
-    var HbbtvCompliance: js.UndefOr[DashIsoHbbtvCompliance]
-    var SegmentLength: js.UndefOr[__integerMin1Max2147483647]
-    var MinBufferTime: js.UndefOr[__integerMin0Max2147483647]
     var BaseUrl: js.UndefOr[__string]
-    var SegmentControl: js.UndefOr[DashIsoSegmentControl]
     var Destination: js.UndefOr[__stringPatternS3]
     var Encryption: js.UndefOr[DashIsoEncryptionSettings]
     var FragmentLength: js.UndefOr[__integerMin1Max2147483647]
+    var HbbtvCompliance: js.UndefOr[DashIsoHbbtvCompliance]
+    var MinBufferTime: js.UndefOr[__integerMin0Max2147483647]
+    var SegmentControl: js.UndefOr[DashIsoSegmentControl]
+    var SegmentLength: js.UndefOr[__integerMin1Max2147483647]
+    var WriteSegmentTimelineInRepresentation: js.UndefOr[DashIsoWriteSegmentTimelineInRepresentation]
   }
 
   object DashIsoGroupSettings {
     def apply(
-      WriteSegmentTimelineInRepresentation: js.UndefOr[DashIsoWriteSegmentTimelineInRepresentation] = js.undefined,
-      HbbtvCompliance: js.UndefOr[DashIsoHbbtvCompliance] = js.undefined,
-      SegmentLength: js.UndefOr[__integerMin1Max2147483647] = js.undefined,
-      MinBufferTime: js.UndefOr[__integerMin0Max2147483647] = js.undefined,
       BaseUrl: js.UndefOr[__string] = js.undefined,
-      SegmentControl: js.UndefOr[DashIsoSegmentControl] = js.undefined,
       Destination: js.UndefOr[__stringPatternS3] = js.undefined,
       Encryption: js.UndefOr[DashIsoEncryptionSettings] = js.undefined,
-      FragmentLength: js.UndefOr[__integerMin1Max2147483647] = js.undefined): DashIsoGroupSettings = {
+      FragmentLength: js.UndefOr[__integerMin1Max2147483647] = js.undefined,
+      HbbtvCompliance: js.UndefOr[DashIsoHbbtvCompliance] = js.undefined,
+      MinBufferTime: js.UndefOr[__integerMin0Max2147483647] = js.undefined,
+      SegmentControl: js.UndefOr[DashIsoSegmentControl] = js.undefined,
+      SegmentLength: js.UndefOr[__integerMin1Max2147483647] = js.undefined,
+      WriteSegmentTimelineInRepresentation: js.UndefOr[DashIsoWriteSegmentTimelineInRepresentation] = js.undefined): DashIsoGroupSettings = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "WriteSegmentTimelineInRepresentation" -> WriteSegmentTimelineInRepresentation.map { x => x.asInstanceOf[js.Any] },
-        "HbbtvCompliance" -> HbbtvCompliance.map { x => x.asInstanceOf[js.Any] },
-        "SegmentLength" -> SegmentLength.map { x => x.asInstanceOf[js.Any] },
-        "MinBufferTime" -> MinBufferTime.map { x => x.asInstanceOf[js.Any] },
         "BaseUrl" -> BaseUrl.map { x => x.asInstanceOf[js.Any] },
-        "SegmentControl" -> SegmentControl.map { x => x.asInstanceOf[js.Any] },
         "Destination" -> Destination.map { x => x.asInstanceOf[js.Any] },
         "Encryption" -> Encryption.map { x => x.asInstanceOf[js.Any] },
-        "FragmentLength" -> FragmentLength.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "FragmentLength" -> FragmentLength.map { x => x.asInstanceOf[js.Any] },
+        "HbbtvCompliance" -> HbbtvCompliance.map { x => x.asInstanceOf[js.Any] },
+        "MinBufferTime" -> MinBufferTime.map { x => x.asInstanceOf[js.Any] },
+        "SegmentControl" -> SegmentControl.map { x => x.asInstanceOf[js.Any] },
+        "SegmentLength" -> SegmentLength.map { x => x.asInstanceOf[js.Any] },
+        "WriteSegmentTimelineInRepresentation" -> WriteSegmentTimelineInRepresentation.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DashIsoGroupSettings]
     }
@@ -2048,14 +2048,14 @@ package mediaconvert {
 
   @js.native
   trait DeleteJobTemplateRequest extends js.Object {
-    var Name: js.UndefOr[__string]
+    var Name: __string
   }
 
   object DeleteJobTemplateRequest {
     def apply(
-      Name: js.UndefOr[__string] = js.undefined): DeleteJobTemplateRequest = {
+      Name: __string): DeleteJobTemplateRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Name" -> Name.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteJobTemplateRequest]
     }
@@ -2076,14 +2076,14 @@ package mediaconvert {
 
   @js.native
   trait DeletePresetRequest extends js.Object {
-    var Name: js.UndefOr[__string]
+    var Name: __string
   }
 
   object DeletePresetRequest {
     def apply(
-      Name: js.UndefOr[__string] = js.undefined): DeletePresetRequest = {
+      Name: __string): DeletePresetRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Name" -> Name.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeletePresetRequest]
     }
@@ -2104,14 +2104,14 @@ package mediaconvert {
 
   @js.native
   trait DeleteQueueRequest extends js.Object {
-    var Name: js.UndefOr[__string]
+    var Name: __string
   }
 
   object DeleteQueueRequest {
     def apply(
-      Name: js.UndefOr[__string] = js.undefined): DeleteQueueRequest = {
+      Name: __string): DeleteQueueRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Name" -> Name.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteQueueRequest]
     }
@@ -2184,14 +2184,14 @@ package mediaconvert {
 
   @js.native
   trait DisassociateCertificateRequest extends js.Object {
-    var Arn: js.UndefOr[__string]
+    var Arn: __string
   }
 
   object DisassociateCertificateRequest {
     def apply(
-      Arn: js.UndefOr[__string] = js.undefined): DisassociateCertificateRequest = {
+      Arn: __string): DisassociateCertificateRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Arn" -> Arn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Arn" -> Arn.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DisassociateCertificateRequest]
     }
@@ -2276,59 +2276,59 @@ package mediaconvert {
    */
   @js.native
   trait DvbSubDestinationSettings extends js.Object {
-    var FontSize: js.UndefOr[__integerMin0Max96]
-    var XPosition: js.UndefOr[__integerMin0Max2147483647]
-    var ShadowOpacity: js.UndefOr[__integerMin0Max255]
-    var OutlineColor: js.UndefOr[DvbSubtitleOutlineColor]
-    var BackgroundOpacity: js.UndefOr[__integerMin0Max255]
-    var TeletextSpacing: js.UndefOr[DvbSubtitleTeletextSpacing]
-    var BackgroundColor: js.UndefOr[DvbSubtitleBackgroundColor]
-    var ShadowYOffset: js.UndefOr[__integerMinNegative2147483648Max2147483647]
-    var FontColor: js.UndefOr[DvbSubtitleFontColor]
-    var ShadowXOffset: js.UndefOr[__integerMinNegative2147483648Max2147483647]
-    var YPosition: js.UndefOr[__integerMin0Max2147483647]
     var Alignment: js.UndefOr[DvbSubtitleAlignment]
-    var OutlineSize: js.UndefOr[__integerMin0Max10]
-    var FontResolution: js.UndefOr[__integerMin96Max600]
+    var BackgroundColor: js.UndefOr[DvbSubtitleBackgroundColor]
+    var BackgroundOpacity: js.UndefOr[__integerMin0Max255]
+    var FontColor: js.UndefOr[DvbSubtitleFontColor]
     var FontOpacity: js.UndefOr[__integerMin0Max255]
+    var FontResolution: js.UndefOr[__integerMin96Max600]
+    var FontSize: js.UndefOr[__integerMin0Max96]
+    var OutlineColor: js.UndefOr[DvbSubtitleOutlineColor]
+    var OutlineSize: js.UndefOr[__integerMin0Max10]
     var ShadowColor: js.UndefOr[DvbSubtitleShadowColor]
+    var ShadowOpacity: js.UndefOr[__integerMin0Max255]
+    var ShadowXOffset: js.UndefOr[__integerMinNegative2147483648Max2147483647]
+    var ShadowYOffset: js.UndefOr[__integerMinNegative2147483648Max2147483647]
+    var TeletextSpacing: js.UndefOr[DvbSubtitleTeletextSpacing]
+    var XPosition: js.UndefOr[__integerMin0Max2147483647]
+    var YPosition: js.UndefOr[__integerMin0Max2147483647]
   }
 
   object DvbSubDestinationSettings {
     def apply(
-      FontSize: js.UndefOr[__integerMin0Max96] = js.undefined,
-      XPosition: js.UndefOr[__integerMin0Max2147483647] = js.undefined,
-      ShadowOpacity: js.UndefOr[__integerMin0Max255] = js.undefined,
-      OutlineColor: js.UndefOr[DvbSubtitleOutlineColor] = js.undefined,
-      BackgroundOpacity: js.UndefOr[__integerMin0Max255] = js.undefined,
-      TeletextSpacing: js.UndefOr[DvbSubtitleTeletextSpacing] = js.undefined,
-      BackgroundColor: js.UndefOr[DvbSubtitleBackgroundColor] = js.undefined,
-      ShadowYOffset: js.UndefOr[__integerMinNegative2147483648Max2147483647] = js.undefined,
-      FontColor: js.UndefOr[DvbSubtitleFontColor] = js.undefined,
-      ShadowXOffset: js.UndefOr[__integerMinNegative2147483648Max2147483647] = js.undefined,
-      YPosition: js.UndefOr[__integerMin0Max2147483647] = js.undefined,
       Alignment: js.UndefOr[DvbSubtitleAlignment] = js.undefined,
-      OutlineSize: js.UndefOr[__integerMin0Max10] = js.undefined,
-      FontResolution: js.UndefOr[__integerMin96Max600] = js.undefined,
+      BackgroundColor: js.UndefOr[DvbSubtitleBackgroundColor] = js.undefined,
+      BackgroundOpacity: js.UndefOr[__integerMin0Max255] = js.undefined,
+      FontColor: js.UndefOr[DvbSubtitleFontColor] = js.undefined,
       FontOpacity: js.UndefOr[__integerMin0Max255] = js.undefined,
-      ShadowColor: js.UndefOr[DvbSubtitleShadowColor] = js.undefined): DvbSubDestinationSettings = {
+      FontResolution: js.UndefOr[__integerMin96Max600] = js.undefined,
+      FontSize: js.UndefOr[__integerMin0Max96] = js.undefined,
+      OutlineColor: js.UndefOr[DvbSubtitleOutlineColor] = js.undefined,
+      OutlineSize: js.UndefOr[__integerMin0Max10] = js.undefined,
+      ShadowColor: js.UndefOr[DvbSubtitleShadowColor] = js.undefined,
+      ShadowOpacity: js.UndefOr[__integerMin0Max255] = js.undefined,
+      ShadowXOffset: js.UndefOr[__integerMinNegative2147483648Max2147483647] = js.undefined,
+      ShadowYOffset: js.UndefOr[__integerMinNegative2147483648Max2147483647] = js.undefined,
+      TeletextSpacing: js.UndefOr[DvbSubtitleTeletextSpacing] = js.undefined,
+      XPosition: js.UndefOr[__integerMin0Max2147483647] = js.undefined,
+      YPosition: js.UndefOr[__integerMin0Max2147483647] = js.undefined): DvbSubDestinationSettings = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "FontSize" -> FontSize.map { x => x.asInstanceOf[js.Any] },
-        "XPosition" -> XPosition.map { x => x.asInstanceOf[js.Any] },
-        "ShadowOpacity" -> ShadowOpacity.map { x => x.asInstanceOf[js.Any] },
-        "OutlineColor" -> OutlineColor.map { x => x.asInstanceOf[js.Any] },
-        "BackgroundOpacity" -> BackgroundOpacity.map { x => x.asInstanceOf[js.Any] },
-        "TeletextSpacing" -> TeletextSpacing.map { x => x.asInstanceOf[js.Any] },
-        "BackgroundColor" -> BackgroundColor.map { x => x.asInstanceOf[js.Any] },
-        "ShadowYOffset" -> ShadowYOffset.map { x => x.asInstanceOf[js.Any] },
-        "FontColor" -> FontColor.map { x => x.asInstanceOf[js.Any] },
-        "ShadowXOffset" -> ShadowXOffset.map { x => x.asInstanceOf[js.Any] },
-        "YPosition" -> YPosition.map { x => x.asInstanceOf[js.Any] },
         "Alignment" -> Alignment.map { x => x.asInstanceOf[js.Any] },
-        "OutlineSize" -> OutlineSize.map { x => x.asInstanceOf[js.Any] },
-        "FontResolution" -> FontResolution.map { x => x.asInstanceOf[js.Any] },
+        "BackgroundColor" -> BackgroundColor.map { x => x.asInstanceOf[js.Any] },
+        "BackgroundOpacity" -> BackgroundOpacity.map { x => x.asInstanceOf[js.Any] },
+        "FontColor" -> FontColor.map { x => x.asInstanceOf[js.Any] },
         "FontOpacity" -> FontOpacity.map { x => x.asInstanceOf[js.Any] },
-        "ShadowColor" -> ShadowColor.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "FontResolution" -> FontResolution.map { x => x.asInstanceOf[js.Any] },
+        "FontSize" -> FontSize.map { x => x.asInstanceOf[js.Any] },
+        "OutlineColor" -> OutlineColor.map { x => x.asInstanceOf[js.Any] },
+        "OutlineSize" -> OutlineSize.map { x => x.asInstanceOf[js.Any] },
+        "ShadowColor" -> ShadowColor.map { x => x.asInstanceOf[js.Any] },
+        "ShadowOpacity" -> ShadowOpacity.map { x => x.asInstanceOf[js.Any] },
+        "ShadowXOffset" -> ShadowXOffset.map { x => x.asInstanceOf[js.Any] },
+        "ShadowYOffset" -> ShadowYOffset.map { x => x.asInstanceOf[js.Any] },
+        "TeletextSpacing" -> TeletextSpacing.map { x => x.asInstanceOf[js.Any] },
+        "XPosition" -> XPosition.map { x => x.asInstanceOf[js.Any] },
+        "YPosition" -> YPosition.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DvbSubDestinationSettings]
     }
@@ -2569,74 +2569,74 @@ package mediaconvert {
    */
   @js.native
   trait Eac3Settings extends js.Object {
-    var PassthroughControl: js.UndefOr[Eac3PassthroughControl]
-    var SurroundMode: js.UndefOr[Eac3SurroundMode]
-    var CodingMode: js.UndefOr[Eac3CodingMode]
-    var LoRoCenterMixLevel: js.UndefOr[__doubleMinNegative60Max3]
-    var DynamicRangeCompressionLine: js.UndefOr[Eac3DynamicRangeCompressionLine]
-    var LfeFilter: js.UndefOr[Eac3LfeFilter]
-    var DcFilter: js.UndefOr[Eac3DcFilter]
-    var MetadataControl: js.UndefOr[Eac3MetadataControl]
-    var Dialnorm: js.UndefOr[__integerMin1Max31]
-    var LtRtCenterMixLevel: js.UndefOr[__doubleMinNegative60Max3]
-    var PhaseControl: js.UndefOr[Eac3PhaseControl]
     var AttenuationControl: js.UndefOr[Eac3AttenuationControl]
-    var LtRtSurroundMixLevel: js.UndefOr[__doubleMinNegative60MaxNegative1]
-    var DynamicRangeCompressionRf: js.UndefOr[Eac3DynamicRangeCompressionRf]
     var Bitrate: js.UndefOr[__integerMin64000Max640000]
-    var LoRoSurroundMixLevel: js.UndefOr[__doubleMinNegative60MaxNegative1]
     var BitstreamMode: js.UndefOr[Eac3BitstreamMode]
+    var CodingMode: js.UndefOr[Eac3CodingMode]
+    var DcFilter: js.UndefOr[Eac3DcFilter]
+    var Dialnorm: js.UndefOr[__integerMin1Max31]
+    var DynamicRangeCompressionLine: js.UndefOr[Eac3DynamicRangeCompressionLine]
+    var DynamicRangeCompressionRf: js.UndefOr[Eac3DynamicRangeCompressionRf]
+    var LfeControl: js.UndefOr[Eac3LfeControl]
+    var LfeFilter: js.UndefOr[Eac3LfeFilter]
+    var LoRoCenterMixLevel: js.UndefOr[__doubleMinNegative60Max3]
+    var LoRoSurroundMixLevel: js.UndefOr[__doubleMinNegative60MaxNegative1]
+    var LtRtCenterMixLevel: js.UndefOr[__doubleMinNegative60Max3]
+    var LtRtSurroundMixLevel: js.UndefOr[__doubleMinNegative60MaxNegative1]
+    var MetadataControl: js.UndefOr[Eac3MetadataControl]
+    var PassthroughControl: js.UndefOr[Eac3PassthroughControl]
+    var PhaseControl: js.UndefOr[Eac3PhaseControl]
+    var SampleRate: js.UndefOr[__integerMin48000Max48000]
     var StereoDownmix: js.UndefOr[Eac3StereoDownmix]
     var SurroundExMode: js.UndefOr[Eac3SurroundExMode]
-    var SampleRate: js.UndefOr[__integerMin48000Max48000]
-    var LfeControl: js.UndefOr[Eac3LfeControl]
+    var SurroundMode: js.UndefOr[Eac3SurroundMode]
   }
 
   object Eac3Settings {
     def apply(
-      PassthroughControl: js.UndefOr[Eac3PassthroughControl] = js.undefined,
-      SurroundMode: js.UndefOr[Eac3SurroundMode] = js.undefined,
-      CodingMode: js.UndefOr[Eac3CodingMode] = js.undefined,
-      LoRoCenterMixLevel: js.UndefOr[__doubleMinNegative60Max3] = js.undefined,
-      DynamicRangeCompressionLine: js.UndefOr[Eac3DynamicRangeCompressionLine] = js.undefined,
-      LfeFilter: js.UndefOr[Eac3LfeFilter] = js.undefined,
-      DcFilter: js.UndefOr[Eac3DcFilter] = js.undefined,
-      MetadataControl: js.UndefOr[Eac3MetadataControl] = js.undefined,
-      Dialnorm: js.UndefOr[__integerMin1Max31] = js.undefined,
-      LtRtCenterMixLevel: js.UndefOr[__doubleMinNegative60Max3] = js.undefined,
-      PhaseControl: js.UndefOr[Eac3PhaseControl] = js.undefined,
       AttenuationControl: js.UndefOr[Eac3AttenuationControl] = js.undefined,
-      LtRtSurroundMixLevel: js.UndefOr[__doubleMinNegative60MaxNegative1] = js.undefined,
-      DynamicRangeCompressionRf: js.UndefOr[Eac3DynamicRangeCompressionRf] = js.undefined,
       Bitrate: js.UndefOr[__integerMin64000Max640000] = js.undefined,
-      LoRoSurroundMixLevel: js.UndefOr[__doubleMinNegative60MaxNegative1] = js.undefined,
       BitstreamMode: js.UndefOr[Eac3BitstreamMode] = js.undefined,
+      CodingMode: js.UndefOr[Eac3CodingMode] = js.undefined,
+      DcFilter: js.UndefOr[Eac3DcFilter] = js.undefined,
+      Dialnorm: js.UndefOr[__integerMin1Max31] = js.undefined,
+      DynamicRangeCompressionLine: js.UndefOr[Eac3DynamicRangeCompressionLine] = js.undefined,
+      DynamicRangeCompressionRf: js.UndefOr[Eac3DynamicRangeCompressionRf] = js.undefined,
+      LfeControl: js.UndefOr[Eac3LfeControl] = js.undefined,
+      LfeFilter: js.UndefOr[Eac3LfeFilter] = js.undefined,
+      LoRoCenterMixLevel: js.UndefOr[__doubleMinNegative60Max3] = js.undefined,
+      LoRoSurroundMixLevel: js.UndefOr[__doubleMinNegative60MaxNegative1] = js.undefined,
+      LtRtCenterMixLevel: js.UndefOr[__doubleMinNegative60Max3] = js.undefined,
+      LtRtSurroundMixLevel: js.UndefOr[__doubleMinNegative60MaxNegative1] = js.undefined,
+      MetadataControl: js.UndefOr[Eac3MetadataControl] = js.undefined,
+      PassthroughControl: js.UndefOr[Eac3PassthroughControl] = js.undefined,
+      PhaseControl: js.UndefOr[Eac3PhaseControl] = js.undefined,
+      SampleRate: js.UndefOr[__integerMin48000Max48000] = js.undefined,
       StereoDownmix: js.UndefOr[Eac3StereoDownmix] = js.undefined,
       SurroundExMode: js.UndefOr[Eac3SurroundExMode] = js.undefined,
-      SampleRate: js.UndefOr[__integerMin48000Max48000] = js.undefined,
-      LfeControl: js.UndefOr[Eac3LfeControl] = js.undefined): Eac3Settings = {
+      SurroundMode: js.UndefOr[Eac3SurroundMode] = js.undefined): Eac3Settings = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "PassthroughControl" -> PassthroughControl.map { x => x.asInstanceOf[js.Any] },
-        "SurroundMode" -> SurroundMode.map { x => x.asInstanceOf[js.Any] },
-        "CodingMode" -> CodingMode.map { x => x.asInstanceOf[js.Any] },
-        "LoRoCenterMixLevel" -> LoRoCenterMixLevel.map { x => x.asInstanceOf[js.Any] },
-        "DynamicRangeCompressionLine" -> DynamicRangeCompressionLine.map { x => x.asInstanceOf[js.Any] },
-        "LfeFilter" -> LfeFilter.map { x => x.asInstanceOf[js.Any] },
-        "DcFilter" -> DcFilter.map { x => x.asInstanceOf[js.Any] },
-        "MetadataControl" -> MetadataControl.map { x => x.asInstanceOf[js.Any] },
-        "Dialnorm" -> Dialnorm.map { x => x.asInstanceOf[js.Any] },
-        "LtRtCenterMixLevel" -> LtRtCenterMixLevel.map { x => x.asInstanceOf[js.Any] },
-        "PhaseControl" -> PhaseControl.map { x => x.asInstanceOf[js.Any] },
         "AttenuationControl" -> AttenuationControl.map { x => x.asInstanceOf[js.Any] },
-        "LtRtSurroundMixLevel" -> LtRtSurroundMixLevel.map { x => x.asInstanceOf[js.Any] },
-        "DynamicRangeCompressionRf" -> DynamicRangeCompressionRf.map { x => x.asInstanceOf[js.Any] },
         "Bitrate" -> Bitrate.map { x => x.asInstanceOf[js.Any] },
-        "LoRoSurroundMixLevel" -> LoRoSurroundMixLevel.map { x => x.asInstanceOf[js.Any] },
         "BitstreamMode" -> BitstreamMode.map { x => x.asInstanceOf[js.Any] },
+        "CodingMode" -> CodingMode.map { x => x.asInstanceOf[js.Any] },
+        "DcFilter" -> DcFilter.map { x => x.asInstanceOf[js.Any] },
+        "Dialnorm" -> Dialnorm.map { x => x.asInstanceOf[js.Any] },
+        "DynamicRangeCompressionLine" -> DynamicRangeCompressionLine.map { x => x.asInstanceOf[js.Any] },
+        "DynamicRangeCompressionRf" -> DynamicRangeCompressionRf.map { x => x.asInstanceOf[js.Any] },
+        "LfeControl" -> LfeControl.map { x => x.asInstanceOf[js.Any] },
+        "LfeFilter" -> LfeFilter.map { x => x.asInstanceOf[js.Any] },
+        "LoRoCenterMixLevel" -> LoRoCenterMixLevel.map { x => x.asInstanceOf[js.Any] },
+        "LoRoSurroundMixLevel" -> LoRoSurroundMixLevel.map { x => x.asInstanceOf[js.Any] },
+        "LtRtCenterMixLevel" -> LtRtCenterMixLevel.map { x => x.asInstanceOf[js.Any] },
+        "LtRtSurroundMixLevel" -> LtRtSurroundMixLevel.map { x => x.asInstanceOf[js.Any] },
+        "MetadataControl" -> MetadataControl.map { x => x.asInstanceOf[js.Any] },
+        "PassthroughControl" -> PassthroughControl.map { x => x.asInstanceOf[js.Any] },
+        "PhaseControl" -> PhaseControl.map { x => x.asInstanceOf[js.Any] },
+        "SampleRate" -> SampleRate.map { x => x.asInstanceOf[js.Any] },
         "StereoDownmix" -> StereoDownmix.map { x => x.asInstanceOf[js.Any] },
         "SurroundExMode" -> SurroundExMode.map { x => x.asInstanceOf[js.Any] },
-        "SampleRate" -> SampleRate.map { x => x.asInstanceOf[js.Any] },
-        "LfeControl" -> LfeControl.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "SurroundMode" -> SurroundMode.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Eac3Settings]
     }
@@ -2837,14 +2837,14 @@ package mediaconvert {
 
   @js.native
   trait GetJobRequest extends js.Object {
-    var Id: js.UndefOr[__string]
+    var Id: __string
   }
 
   object GetJobRequest {
     def apply(
-      Id: js.UndefOr[__string] = js.undefined): GetJobRequest = {
+      Id: __string): GetJobRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Id" -> Id.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Id" -> Id.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetJobRequest]
     }
@@ -2867,14 +2867,14 @@ package mediaconvert {
 
   @js.native
   trait GetJobTemplateRequest extends js.Object {
-    var Name: js.UndefOr[__string]
+    var Name: __string
   }
 
   object GetJobTemplateRequest {
     def apply(
-      Name: js.UndefOr[__string] = js.undefined): GetJobTemplateRequest = {
+      Name: __string): GetJobTemplateRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Name" -> Name.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetJobTemplateRequest]
     }
@@ -2897,14 +2897,14 @@ package mediaconvert {
 
   @js.native
   trait GetPresetRequest extends js.Object {
-    var Name: js.UndefOr[__string]
+    var Name: __string
   }
 
   object GetPresetRequest {
     def apply(
-      Name: js.UndefOr[__string] = js.undefined): GetPresetRequest = {
+      Name: __string): GetPresetRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Name" -> Name.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetPresetRequest]
     }
@@ -2927,14 +2927,14 @@ package mediaconvert {
 
   @js.native
   trait GetQueueRequest extends js.Object {
-    var Name: js.UndefOr[__string]
+    var Name: __string
   }
 
   object GetQueueRequest {
     def apply(
-      Name: js.UndefOr[__string] = js.undefined): GetQueueRequest = {
+      Name: __string): GetQueueRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Name" -> Name.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetQueueRequest]
     }
@@ -3181,128 +3181,128 @@ package mediaconvert {
    */
   @js.native
   trait H264Settings extends js.Object {
-    var FramerateConversionAlgorithm: js.UndefOr[H264FramerateConversionAlgorithm]
-    var GopSizeUnits: js.UndefOr[H264GopSizeUnits]
-    var FramerateDenominator: js.UndefOr[__integerMin1Max2147483647]
-    var Syntax: js.UndefOr[H264Syntax]
-    var SceneChangeDetect: js.UndefOr[H264SceneChangeDetect]
-    var MaxBitrate: js.UndefOr[__integerMin1000Max1152000000]
-    var Telecine: js.UndefOr[H264Telecine]
-    var RateControlMode: js.UndefOr[H264RateControlMode]
-    var EntropyEncoding: js.UndefOr[H264EntropyEncoding]
-    var GopBReference: js.UndefOr[H264GopBReference]
-    var CodecProfile: js.UndefOr[H264CodecProfile]
-    var TemporalAdaptiveQuantization: js.UndefOr[H264TemporalAdaptiveQuantization]
-    var SpatialAdaptiveQuantization: js.UndefOr[H264SpatialAdaptiveQuantization]
-    var QvbrSettings: js.UndefOr[H264QvbrSettings]
-    var Softness: js.UndefOr[__integerMin0Max128]
-    var QualityTuningLevel: js.UndefOr[H264QualityTuningLevel]
-    var FieldEncoding: js.UndefOr[H264FieldEncoding]
-    var SlowPal: js.UndefOr[H264SlowPal]
-    var MinIInterval: js.UndefOr[__integerMin0Max30]
-    var FramerateControl: js.UndefOr[H264FramerateControl]
-    var CodecLevel: js.UndefOr[H264CodecLevel]
-    var HrdBufferInitialFillPercentage: js.UndefOr[__integerMin0Max100]
-    var Slices: js.UndefOr[__integerMin1Max32]
-    var GopSize: js.UndefOr[__doubleMin0]
-    var ParDenominator: js.UndefOr[__integerMin1Max2147483647]
-    var Bitrate: js.UndefOr[__integerMin1000Max1152000000]
-    var NumberReferenceFrames: js.UndefOr[__integerMin1Max6]
-    var ParNumerator: js.UndefOr[__integerMin1Max2147483647]
-    var InterlaceMode: js.UndefOr[H264InterlaceMode]
-    var HrdBufferSize: js.UndefOr[__integerMin0Max1152000000]
-    var GopClosedCadence: js.UndefOr[__integerMin0Max2147483647]
-    var ParControl: js.UndefOr[H264ParControl]
-    var UnregisteredSeiTimecode: js.UndefOr[H264UnregisteredSeiTimecode]
-    var FlickerAdaptiveQuantization: js.UndefOr[H264FlickerAdaptiveQuantization]
     var AdaptiveQuantization: js.UndefOr[H264AdaptiveQuantization]
-    var NumberBFramesBetweenReferenceFrames: js.UndefOr[__integerMin0Max7]
-    var FramerateNumerator: js.UndefOr[__integerMin1Max2147483647]
-    var RepeatPps: js.UndefOr[H264RepeatPps]
+    var Bitrate: js.UndefOr[__integerMin1000Max1152000000]
+    var CodecLevel: js.UndefOr[H264CodecLevel]
+    var CodecProfile: js.UndefOr[H264CodecProfile]
     var DynamicSubGop: js.UndefOr[H264DynamicSubGop]
+    var EntropyEncoding: js.UndefOr[H264EntropyEncoding]
+    var FieldEncoding: js.UndefOr[H264FieldEncoding]
+    var FlickerAdaptiveQuantization: js.UndefOr[H264FlickerAdaptiveQuantization]
+    var FramerateControl: js.UndefOr[H264FramerateControl]
+    var FramerateConversionAlgorithm: js.UndefOr[H264FramerateConversionAlgorithm]
+    var FramerateDenominator: js.UndefOr[__integerMin1Max2147483647]
+    var FramerateNumerator: js.UndefOr[__integerMin1Max2147483647]
+    var GopBReference: js.UndefOr[H264GopBReference]
+    var GopClosedCadence: js.UndefOr[__integerMin0Max2147483647]
+    var GopSize: js.UndefOr[__doubleMin0]
+    var GopSizeUnits: js.UndefOr[H264GopSizeUnits]
+    var HrdBufferInitialFillPercentage: js.UndefOr[__integerMin0Max100]
+    var HrdBufferSize: js.UndefOr[__integerMin0Max1152000000]
+    var InterlaceMode: js.UndefOr[H264InterlaceMode]
+    var MaxBitrate: js.UndefOr[__integerMin1000Max1152000000]
+    var MinIInterval: js.UndefOr[__integerMin0Max30]
+    var NumberBFramesBetweenReferenceFrames: js.UndefOr[__integerMin0Max7]
+    var NumberReferenceFrames: js.UndefOr[__integerMin1Max6]
+    var ParControl: js.UndefOr[H264ParControl]
+    var ParDenominator: js.UndefOr[__integerMin1Max2147483647]
+    var ParNumerator: js.UndefOr[__integerMin1Max2147483647]
+    var QualityTuningLevel: js.UndefOr[H264QualityTuningLevel]
+    var QvbrSettings: js.UndefOr[H264QvbrSettings]
+    var RateControlMode: js.UndefOr[H264RateControlMode]
+    var RepeatPps: js.UndefOr[H264RepeatPps]
+    var SceneChangeDetect: js.UndefOr[H264SceneChangeDetect]
+    var Slices: js.UndefOr[__integerMin1Max32]
+    var SlowPal: js.UndefOr[H264SlowPal]
+    var Softness: js.UndefOr[__integerMin0Max128]
+    var SpatialAdaptiveQuantization: js.UndefOr[H264SpatialAdaptiveQuantization]
+    var Syntax: js.UndefOr[H264Syntax]
+    var Telecine: js.UndefOr[H264Telecine]
+    var TemporalAdaptiveQuantization: js.UndefOr[H264TemporalAdaptiveQuantization]
+    var UnregisteredSeiTimecode: js.UndefOr[H264UnregisteredSeiTimecode]
   }
 
   object H264Settings {
     def apply(
-      FramerateConversionAlgorithm: js.UndefOr[H264FramerateConversionAlgorithm] = js.undefined,
-      GopSizeUnits: js.UndefOr[H264GopSizeUnits] = js.undefined,
-      FramerateDenominator: js.UndefOr[__integerMin1Max2147483647] = js.undefined,
-      Syntax: js.UndefOr[H264Syntax] = js.undefined,
-      SceneChangeDetect: js.UndefOr[H264SceneChangeDetect] = js.undefined,
-      MaxBitrate: js.UndefOr[__integerMin1000Max1152000000] = js.undefined,
-      Telecine: js.UndefOr[H264Telecine] = js.undefined,
-      RateControlMode: js.UndefOr[H264RateControlMode] = js.undefined,
-      EntropyEncoding: js.UndefOr[H264EntropyEncoding] = js.undefined,
-      GopBReference: js.UndefOr[H264GopBReference] = js.undefined,
-      CodecProfile: js.UndefOr[H264CodecProfile] = js.undefined,
-      TemporalAdaptiveQuantization: js.UndefOr[H264TemporalAdaptiveQuantization] = js.undefined,
-      SpatialAdaptiveQuantization: js.UndefOr[H264SpatialAdaptiveQuantization] = js.undefined,
-      QvbrSettings: js.UndefOr[H264QvbrSettings] = js.undefined,
-      Softness: js.UndefOr[__integerMin0Max128] = js.undefined,
-      QualityTuningLevel: js.UndefOr[H264QualityTuningLevel] = js.undefined,
-      FieldEncoding: js.UndefOr[H264FieldEncoding] = js.undefined,
-      SlowPal: js.UndefOr[H264SlowPal] = js.undefined,
-      MinIInterval: js.UndefOr[__integerMin0Max30] = js.undefined,
-      FramerateControl: js.UndefOr[H264FramerateControl] = js.undefined,
-      CodecLevel: js.UndefOr[H264CodecLevel] = js.undefined,
-      HrdBufferInitialFillPercentage: js.UndefOr[__integerMin0Max100] = js.undefined,
-      Slices: js.UndefOr[__integerMin1Max32] = js.undefined,
-      GopSize: js.UndefOr[__doubleMin0] = js.undefined,
-      ParDenominator: js.UndefOr[__integerMin1Max2147483647] = js.undefined,
-      Bitrate: js.UndefOr[__integerMin1000Max1152000000] = js.undefined,
-      NumberReferenceFrames: js.UndefOr[__integerMin1Max6] = js.undefined,
-      ParNumerator: js.UndefOr[__integerMin1Max2147483647] = js.undefined,
-      InterlaceMode: js.UndefOr[H264InterlaceMode] = js.undefined,
-      HrdBufferSize: js.UndefOr[__integerMin0Max1152000000] = js.undefined,
-      GopClosedCadence: js.UndefOr[__integerMin0Max2147483647] = js.undefined,
-      ParControl: js.UndefOr[H264ParControl] = js.undefined,
-      UnregisteredSeiTimecode: js.UndefOr[H264UnregisteredSeiTimecode] = js.undefined,
-      FlickerAdaptiveQuantization: js.UndefOr[H264FlickerAdaptiveQuantization] = js.undefined,
       AdaptiveQuantization: js.UndefOr[H264AdaptiveQuantization] = js.undefined,
-      NumberBFramesBetweenReferenceFrames: js.UndefOr[__integerMin0Max7] = js.undefined,
+      Bitrate: js.UndefOr[__integerMin1000Max1152000000] = js.undefined,
+      CodecLevel: js.UndefOr[H264CodecLevel] = js.undefined,
+      CodecProfile: js.UndefOr[H264CodecProfile] = js.undefined,
+      DynamicSubGop: js.UndefOr[H264DynamicSubGop] = js.undefined,
+      EntropyEncoding: js.UndefOr[H264EntropyEncoding] = js.undefined,
+      FieldEncoding: js.UndefOr[H264FieldEncoding] = js.undefined,
+      FlickerAdaptiveQuantization: js.UndefOr[H264FlickerAdaptiveQuantization] = js.undefined,
+      FramerateControl: js.UndefOr[H264FramerateControl] = js.undefined,
+      FramerateConversionAlgorithm: js.UndefOr[H264FramerateConversionAlgorithm] = js.undefined,
+      FramerateDenominator: js.UndefOr[__integerMin1Max2147483647] = js.undefined,
       FramerateNumerator: js.UndefOr[__integerMin1Max2147483647] = js.undefined,
+      GopBReference: js.UndefOr[H264GopBReference] = js.undefined,
+      GopClosedCadence: js.UndefOr[__integerMin0Max2147483647] = js.undefined,
+      GopSize: js.UndefOr[__doubleMin0] = js.undefined,
+      GopSizeUnits: js.UndefOr[H264GopSizeUnits] = js.undefined,
+      HrdBufferInitialFillPercentage: js.UndefOr[__integerMin0Max100] = js.undefined,
+      HrdBufferSize: js.UndefOr[__integerMin0Max1152000000] = js.undefined,
+      InterlaceMode: js.UndefOr[H264InterlaceMode] = js.undefined,
+      MaxBitrate: js.UndefOr[__integerMin1000Max1152000000] = js.undefined,
+      MinIInterval: js.UndefOr[__integerMin0Max30] = js.undefined,
+      NumberBFramesBetweenReferenceFrames: js.UndefOr[__integerMin0Max7] = js.undefined,
+      NumberReferenceFrames: js.UndefOr[__integerMin1Max6] = js.undefined,
+      ParControl: js.UndefOr[H264ParControl] = js.undefined,
+      ParDenominator: js.UndefOr[__integerMin1Max2147483647] = js.undefined,
+      ParNumerator: js.UndefOr[__integerMin1Max2147483647] = js.undefined,
+      QualityTuningLevel: js.UndefOr[H264QualityTuningLevel] = js.undefined,
+      QvbrSettings: js.UndefOr[H264QvbrSettings] = js.undefined,
+      RateControlMode: js.UndefOr[H264RateControlMode] = js.undefined,
       RepeatPps: js.UndefOr[H264RepeatPps] = js.undefined,
-      DynamicSubGop: js.UndefOr[H264DynamicSubGop] = js.undefined): H264Settings = {
+      SceneChangeDetect: js.UndefOr[H264SceneChangeDetect] = js.undefined,
+      Slices: js.UndefOr[__integerMin1Max32] = js.undefined,
+      SlowPal: js.UndefOr[H264SlowPal] = js.undefined,
+      Softness: js.UndefOr[__integerMin0Max128] = js.undefined,
+      SpatialAdaptiveQuantization: js.UndefOr[H264SpatialAdaptiveQuantization] = js.undefined,
+      Syntax: js.UndefOr[H264Syntax] = js.undefined,
+      Telecine: js.UndefOr[H264Telecine] = js.undefined,
+      TemporalAdaptiveQuantization: js.UndefOr[H264TemporalAdaptiveQuantization] = js.undefined,
+      UnregisteredSeiTimecode: js.UndefOr[H264UnregisteredSeiTimecode] = js.undefined): H264Settings = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "FramerateConversionAlgorithm" -> FramerateConversionAlgorithm.map { x => x.asInstanceOf[js.Any] },
-        "GopSizeUnits" -> GopSizeUnits.map { x => x.asInstanceOf[js.Any] },
-        "FramerateDenominator" -> FramerateDenominator.map { x => x.asInstanceOf[js.Any] },
-        "Syntax" -> Syntax.map { x => x.asInstanceOf[js.Any] },
-        "SceneChangeDetect" -> SceneChangeDetect.map { x => x.asInstanceOf[js.Any] },
-        "MaxBitrate" -> MaxBitrate.map { x => x.asInstanceOf[js.Any] },
-        "Telecine" -> Telecine.map { x => x.asInstanceOf[js.Any] },
-        "RateControlMode" -> RateControlMode.map { x => x.asInstanceOf[js.Any] },
-        "EntropyEncoding" -> EntropyEncoding.map { x => x.asInstanceOf[js.Any] },
-        "GopBReference" -> GopBReference.map { x => x.asInstanceOf[js.Any] },
-        "CodecProfile" -> CodecProfile.map { x => x.asInstanceOf[js.Any] },
-        "TemporalAdaptiveQuantization" -> TemporalAdaptiveQuantization.map { x => x.asInstanceOf[js.Any] },
-        "SpatialAdaptiveQuantization" -> SpatialAdaptiveQuantization.map { x => x.asInstanceOf[js.Any] },
-        "QvbrSettings" -> QvbrSettings.map { x => x.asInstanceOf[js.Any] },
-        "Softness" -> Softness.map { x => x.asInstanceOf[js.Any] },
-        "QualityTuningLevel" -> QualityTuningLevel.map { x => x.asInstanceOf[js.Any] },
-        "FieldEncoding" -> FieldEncoding.map { x => x.asInstanceOf[js.Any] },
-        "SlowPal" -> SlowPal.map { x => x.asInstanceOf[js.Any] },
-        "MinIInterval" -> MinIInterval.map { x => x.asInstanceOf[js.Any] },
-        "FramerateControl" -> FramerateControl.map { x => x.asInstanceOf[js.Any] },
-        "CodecLevel" -> CodecLevel.map { x => x.asInstanceOf[js.Any] },
-        "HrdBufferInitialFillPercentage" -> HrdBufferInitialFillPercentage.map { x => x.asInstanceOf[js.Any] },
-        "Slices" -> Slices.map { x => x.asInstanceOf[js.Any] },
-        "GopSize" -> GopSize.map { x => x.asInstanceOf[js.Any] },
-        "ParDenominator" -> ParDenominator.map { x => x.asInstanceOf[js.Any] },
-        "Bitrate" -> Bitrate.map { x => x.asInstanceOf[js.Any] },
-        "NumberReferenceFrames" -> NumberReferenceFrames.map { x => x.asInstanceOf[js.Any] },
-        "ParNumerator" -> ParNumerator.map { x => x.asInstanceOf[js.Any] },
-        "InterlaceMode" -> InterlaceMode.map { x => x.asInstanceOf[js.Any] },
-        "HrdBufferSize" -> HrdBufferSize.map { x => x.asInstanceOf[js.Any] },
-        "GopClosedCadence" -> GopClosedCadence.map { x => x.asInstanceOf[js.Any] },
-        "ParControl" -> ParControl.map { x => x.asInstanceOf[js.Any] },
-        "UnregisteredSeiTimecode" -> UnregisteredSeiTimecode.map { x => x.asInstanceOf[js.Any] },
-        "FlickerAdaptiveQuantization" -> FlickerAdaptiveQuantization.map { x => x.asInstanceOf[js.Any] },
         "AdaptiveQuantization" -> AdaptiveQuantization.map { x => x.asInstanceOf[js.Any] },
-        "NumberBFramesBetweenReferenceFrames" -> NumberBFramesBetweenReferenceFrames.map { x => x.asInstanceOf[js.Any] },
+        "Bitrate" -> Bitrate.map { x => x.asInstanceOf[js.Any] },
+        "CodecLevel" -> CodecLevel.map { x => x.asInstanceOf[js.Any] },
+        "CodecProfile" -> CodecProfile.map { x => x.asInstanceOf[js.Any] },
+        "DynamicSubGop" -> DynamicSubGop.map { x => x.asInstanceOf[js.Any] },
+        "EntropyEncoding" -> EntropyEncoding.map { x => x.asInstanceOf[js.Any] },
+        "FieldEncoding" -> FieldEncoding.map { x => x.asInstanceOf[js.Any] },
+        "FlickerAdaptiveQuantization" -> FlickerAdaptiveQuantization.map { x => x.asInstanceOf[js.Any] },
+        "FramerateControl" -> FramerateControl.map { x => x.asInstanceOf[js.Any] },
+        "FramerateConversionAlgorithm" -> FramerateConversionAlgorithm.map { x => x.asInstanceOf[js.Any] },
+        "FramerateDenominator" -> FramerateDenominator.map { x => x.asInstanceOf[js.Any] },
         "FramerateNumerator" -> FramerateNumerator.map { x => x.asInstanceOf[js.Any] },
+        "GopBReference" -> GopBReference.map { x => x.asInstanceOf[js.Any] },
+        "GopClosedCadence" -> GopClosedCadence.map { x => x.asInstanceOf[js.Any] },
+        "GopSize" -> GopSize.map { x => x.asInstanceOf[js.Any] },
+        "GopSizeUnits" -> GopSizeUnits.map { x => x.asInstanceOf[js.Any] },
+        "HrdBufferInitialFillPercentage" -> HrdBufferInitialFillPercentage.map { x => x.asInstanceOf[js.Any] },
+        "HrdBufferSize" -> HrdBufferSize.map { x => x.asInstanceOf[js.Any] },
+        "InterlaceMode" -> InterlaceMode.map { x => x.asInstanceOf[js.Any] },
+        "MaxBitrate" -> MaxBitrate.map { x => x.asInstanceOf[js.Any] },
+        "MinIInterval" -> MinIInterval.map { x => x.asInstanceOf[js.Any] },
+        "NumberBFramesBetweenReferenceFrames" -> NumberBFramesBetweenReferenceFrames.map { x => x.asInstanceOf[js.Any] },
+        "NumberReferenceFrames" -> NumberReferenceFrames.map { x => x.asInstanceOf[js.Any] },
+        "ParControl" -> ParControl.map { x => x.asInstanceOf[js.Any] },
+        "ParDenominator" -> ParDenominator.map { x => x.asInstanceOf[js.Any] },
+        "ParNumerator" -> ParNumerator.map { x => x.asInstanceOf[js.Any] },
+        "QualityTuningLevel" -> QualityTuningLevel.map { x => x.asInstanceOf[js.Any] },
+        "QvbrSettings" -> QvbrSettings.map { x => x.asInstanceOf[js.Any] },
+        "RateControlMode" -> RateControlMode.map { x => x.asInstanceOf[js.Any] },
         "RepeatPps" -> RepeatPps.map { x => x.asInstanceOf[js.Any] },
-        "DynamicSubGop" -> DynamicSubGop.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "SceneChangeDetect" -> SceneChangeDetect.map { x => x.asInstanceOf[js.Any] },
+        "Slices" -> Slices.map { x => x.asInstanceOf[js.Any] },
+        "SlowPal" -> SlowPal.map { x => x.asInstanceOf[js.Any] },
+        "Softness" -> Softness.map { x => x.asInstanceOf[js.Any] },
+        "SpatialAdaptiveQuantization" -> SpatialAdaptiveQuantization.map { x => x.asInstanceOf[js.Any] },
+        "Syntax" -> Syntax.map { x => x.asInstanceOf[js.Any] },
+        "Telecine" -> Telecine.map { x => x.asInstanceOf[js.Any] },
+        "TemporalAdaptiveQuantization" -> TemporalAdaptiveQuantization.map { x => x.asInstanceOf[js.Any] },
+        "UnregisteredSeiTimecode" -> UnregisteredSeiTimecode.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[H264Settings]
     }
@@ -3585,128 +3585,128 @@ package mediaconvert {
    */
   @js.native
   trait H265Settings extends js.Object {
-    var FramerateConversionAlgorithm: js.UndefOr[H265FramerateConversionAlgorithm]
-    var GopSizeUnits: js.UndefOr[H265GopSizeUnits]
-    var FramerateDenominator: js.UndefOr[__integerMin1Max2147483647]
-    var SceneChangeDetect: js.UndefOr[H265SceneChangeDetect]
-    var SampleAdaptiveOffsetFilterMode: js.UndefOr[H265SampleAdaptiveOffsetFilterMode]
-    var MaxBitrate: js.UndefOr[__integerMin1000Max1466400000]
-    var Telecine: js.UndefOr[H265Telecine]
-    var RateControlMode: js.UndefOr[H265RateControlMode]
-    var GopBReference: js.UndefOr[H265GopBReference]
-    var CodecProfile: js.UndefOr[H265CodecProfile]
-    var TemporalAdaptiveQuantization: js.UndefOr[H265TemporalAdaptiveQuantization]
-    var SpatialAdaptiveQuantization: js.UndefOr[H265SpatialAdaptiveQuantization]
-    var QvbrSettings: js.UndefOr[H265QvbrSettings]
-    var QualityTuningLevel: js.UndefOr[H265QualityTuningLevel]
-    var TemporalIds: js.UndefOr[H265TemporalIds]
-    var SlowPal: js.UndefOr[H265SlowPal]
-    var AlternateTransferFunctionSei: js.UndefOr[H265AlternateTransferFunctionSei]
-    var MinIInterval: js.UndefOr[__integerMin0Max30]
-    var FramerateControl: js.UndefOr[H265FramerateControl]
-    var WriteMp4PackagingType: js.UndefOr[H265WriteMp4PackagingType]
-    var CodecLevel: js.UndefOr[H265CodecLevel]
-    var HrdBufferInitialFillPercentage: js.UndefOr[__integerMin0Max100]
-    var Slices: js.UndefOr[__integerMin1Max32]
-    var GopSize: js.UndefOr[__doubleMin0]
-    var ParDenominator: js.UndefOr[__integerMin1Max2147483647]
-    var Bitrate: js.UndefOr[__integerMin1000Max1466400000]
-    var NumberReferenceFrames: js.UndefOr[__integerMin1Max6]
-    var ParNumerator: js.UndefOr[__integerMin1Max2147483647]
-    var InterlaceMode: js.UndefOr[H265InterlaceMode]
-    var HrdBufferSize: js.UndefOr[__integerMin0Max1466400000]
-    var GopClosedCadence: js.UndefOr[__integerMin0Max2147483647]
-    var ParControl: js.UndefOr[H265ParControl]
-    var UnregisteredSeiTimecode: js.UndefOr[H265UnregisteredSeiTimecode]
-    var FlickerAdaptiveQuantization: js.UndefOr[H265FlickerAdaptiveQuantization]
     var AdaptiveQuantization: js.UndefOr[H265AdaptiveQuantization]
-    var NumberBFramesBetweenReferenceFrames: js.UndefOr[__integerMin0Max7]
-    var FramerateNumerator: js.UndefOr[__integerMin1Max2147483647]
-    var Tiles: js.UndefOr[H265Tiles]
+    var AlternateTransferFunctionSei: js.UndefOr[H265AlternateTransferFunctionSei]
+    var Bitrate: js.UndefOr[__integerMin1000Max1466400000]
+    var CodecLevel: js.UndefOr[H265CodecLevel]
+    var CodecProfile: js.UndefOr[H265CodecProfile]
     var DynamicSubGop: js.UndefOr[H265DynamicSubGop]
+    var FlickerAdaptiveQuantization: js.UndefOr[H265FlickerAdaptiveQuantization]
+    var FramerateControl: js.UndefOr[H265FramerateControl]
+    var FramerateConversionAlgorithm: js.UndefOr[H265FramerateConversionAlgorithm]
+    var FramerateDenominator: js.UndefOr[__integerMin1Max2147483647]
+    var FramerateNumerator: js.UndefOr[__integerMin1Max2147483647]
+    var GopBReference: js.UndefOr[H265GopBReference]
+    var GopClosedCadence: js.UndefOr[__integerMin0Max2147483647]
+    var GopSize: js.UndefOr[__doubleMin0]
+    var GopSizeUnits: js.UndefOr[H265GopSizeUnits]
+    var HrdBufferInitialFillPercentage: js.UndefOr[__integerMin0Max100]
+    var HrdBufferSize: js.UndefOr[__integerMin0Max1466400000]
+    var InterlaceMode: js.UndefOr[H265InterlaceMode]
+    var MaxBitrate: js.UndefOr[__integerMin1000Max1466400000]
+    var MinIInterval: js.UndefOr[__integerMin0Max30]
+    var NumberBFramesBetweenReferenceFrames: js.UndefOr[__integerMin0Max7]
+    var NumberReferenceFrames: js.UndefOr[__integerMin1Max6]
+    var ParControl: js.UndefOr[H265ParControl]
+    var ParDenominator: js.UndefOr[__integerMin1Max2147483647]
+    var ParNumerator: js.UndefOr[__integerMin1Max2147483647]
+    var QualityTuningLevel: js.UndefOr[H265QualityTuningLevel]
+    var QvbrSettings: js.UndefOr[H265QvbrSettings]
+    var RateControlMode: js.UndefOr[H265RateControlMode]
+    var SampleAdaptiveOffsetFilterMode: js.UndefOr[H265SampleAdaptiveOffsetFilterMode]
+    var SceneChangeDetect: js.UndefOr[H265SceneChangeDetect]
+    var Slices: js.UndefOr[__integerMin1Max32]
+    var SlowPal: js.UndefOr[H265SlowPal]
+    var SpatialAdaptiveQuantization: js.UndefOr[H265SpatialAdaptiveQuantization]
+    var Telecine: js.UndefOr[H265Telecine]
+    var TemporalAdaptiveQuantization: js.UndefOr[H265TemporalAdaptiveQuantization]
+    var TemporalIds: js.UndefOr[H265TemporalIds]
+    var Tiles: js.UndefOr[H265Tiles]
+    var UnregisteredSeiTimecode: js.UndefOr[H265UnregisteredSeiTimecode]
+    var WriteMp4PackagingType: js.UndefOr[H265WriteMp4PackagingType]
   }
 
   object H265Settings {
     def apply(
-      FramerateConversionAlgorithm: js.UndefOr[H265FramerateConversionAlgorithm] = js.undefined,
-      GopSizeUnits: js.UndefOr[H265GopSizeUnits] = js.undefined,
-      FramerateDenominator: js.UndefOr[__integerMin1Max2147483647] = js.undefined,
-      SceneChangeDetect: js.UndefOr[H265SceneChangeDetect] = js.undefined,
-      SampleAdaptiveOffsetFilterMode: js.UndefOr[H265SampleAdaptiveOffsetFilterMode] = js.undefined,
-      MaxBitrate: js.UndefOr[__integerMin1000Max1466400000] = js.undefined,
-      Telecine: js.UndefOr[H265Telecine] = js.undefined,
-      RateControlMode: js.UndefOr[H265RateControlMode] = js.undefined,
-      GopBReference: js.UndefOr[H265GopBReference] = js.undefined,
-      CodecProfile: js.UndefOr[H265CodecProfile] = js.undefined,
-      TemporalAdaptiveQuantization: js.UndefOr[H265TemporalAdaptiveQuantization] = js.undefined,
-      SpatialAdaptiveQuantization: js.UndefOr[H265SpatialAdaptiveQuantization] = js.undefined,
-      QvbrSettings: js.UndefOr[H265QvbrSettings] = js.undefined,
-      QualityTuningLevel: js.UndefOr[H265QualityTuningLevel] = js.undefined,
-      TemporalIds: js.UndefOr[H265TemporalIds] = js.undefined,
-      SlowPal: js.UndefOr[H265SlowPal] = js.undefined,
-      AlternateTransferFunctionSei: js.UndefOr[H265AlternateTransferFunctionSei] = js.undefined,
-      MinIInterval: js.UndefOr[__integerMin0Max30] = js.undefined,
-      FramerateControl: js.UndefOr[H265FramerateControl] = js.undefined,
-      WriteMp4PackagingType: js.UndefOr[H265WriteMp4PackagingType] = js.undefined,
-      CodecLevel: js.UndefOr[H265CodecLevel] = js.undefined,
-      HrdBufferInitialFillPercentage: js.UndefOr[__integerMin0Max100] = js.undefined,
-      Slices: js.UndefOr[__integerMin1Max32] = js.undefined,
-      GopSize: js.UndefOr[__doubleMin0] = js.undefined,
-      ParDenominator: js.UndefOr[__integerMin1Max2147483647] = js.undefined,
-      Bitrate: js.UndefOr[__integerMin1000Max1466400000] = js.undefined,
-      NumberReferenceFrames: js.UndefOr[__integerMin1Max6] = js.undefined,
-      ParNumerator: js.UndefOr[__integerMin1Max2147483647] = js.undefined,
-      InterlaceMode: js.UndefOr[H265InterlaceMode] = js.undefined,
-      HrdBufferSize: js.UndefOr[__integerMin0Max1466400000] = js.undefined,
-      GopClosedCadence: js.UndefOr[__integerMin0Max2147483647] = js.undefined,
-      ParControl: js.UndefOr[H265ParControl] = js.undefined,
-      UnregisteredSeiTimecode: js.UndefOr[H265UnregisteredSeiTimecode] = js.undefined,
-      FlickerAdaptiveQuantization: js.UndefOr[H265FlickerAdaptiveQuantization] = js.undefined,
       AdaptiveQuantization: js.UndefOr[H265AdaptiveQuantization] = js.undefined,
-      NumberBFramesBetweenReferenceFrames: js.UndefOr[__integerMin0Max7] = js.undefined,
+      AlternateTransferFunctionSei: js.UndefOr[H265AlternateTransferFunctionSei] = js.undefined,
+      Bitrate: js.UndefOr[__integerMin1000Max1466400000] = js.undefined,
+      CodecLevel: js.UndefOr[H265CodecLevel] = js.undefined,
+      CodecProfile: js.UndefOr[H265CodecProfile] = js.undefined,
+      DynamicSubGop: js.UndefOr[H265DynamicSubGop] = js.undefined,
+      FlickerAdaptiveQuantization: js.UndefOr[H265FlickerAdaptiveQuantization] = js.undefined,
+      FramerateControl: js.UndefOr[H265FramerateControl] = js.undefined,
+      FramerateConversionAlgorithm: js.UndefOr[H265FramerateConversionAlgorithm] = js.undefined,
+      FramerateDenominator: js.UndefOr[__integerMin1Max2147483647] = js.undefined,
       FramerateNumerator: js.UndefOr[__integerMin1Max2147483647] = js.undefined,
+      GopBReference: js.UndefOr[H265GopBReference] = js.undefined,
+      GopClosedCadence: js.UndefOr[__integerMin0Max2147483647] = js.undefined,
+      GopSize: js.UndefOr[__doubleMin0] = js.undefined,
+      GopSizeUnits: js.UndefOr[H265GopSizeUnits] = js.undefined,
+      HrdBufferInitialFillPercentage: js.UndefOr[__integerMin0Max100] = js.undefined,
+      HrdBufferSize: js.UndefOr[__integerMin0Max1466400000] = js.undefined,
+      InterlaceMode: js.UndefOr[H265InterlaceMode] = js.undefined,
+      MaxBitrate: js.UndefOr[__integerMin1000Max1466400000] = js.undefined,
+      MinIInterval: js.UndefOr[__integerMin0Max30] = js.undefined,
+      NumberBFramesBetweenReferenceFrames: js.UndefOr[__integerMin0Max7] = js.undefined,
+      NumberReferenceFrames: js.UndefOr[__integerMin1Max6] = js.undefined,
+      ParControl: js.UndefOr[H265ParControl] = js.undefined,
+      ParDenominator: js.UndefOr[__integerMin1Max2147483647] = js.undefined,
+      ParNumerator: js.UndefOr[__integerMin1Max2147483647] = js.undefined,
+      QualityTuningLevel: js.UndefOr[H265QualityTuningLevel] = js.undefined,
+      QvbrSettings: js.UndefOr[H265QvbrSettings] = js.undefined,
+      RateControlMode: js.UndefOr[H265RateControlMode] = js.undefined,
+      SampleAdaptiveOffsetFilterMode: js.UndefOr[H265SampleAdaptiveOffsetFilterMode] = js.undefined,
+      SceneChangeDetect: js.UndefOr[H265SceneChangeDetect] = js.undefined,
+      Slices: js.UndefOr[__integerMin1Max32] = js.undefined,
+      SlowPal: js.UndefOr[H265SlowPal] = js.undefined,
+      SpatialAdaptiveQuantization: js.UndefOr[H265SpatialAdaptiveQuantization] = js.undefined,
+      Telecine: js.UndefOr[H265Telecine] = js.undefined,
+      TemporalAdaptiveQuantization: js.UndefOr[H265TemporalAdaptiveQuantization] = js.undefined,
+      TemporalIds: js.UndefOr[H265TemporalIds] = js.undefined,
       Tiles: js.UndefOr[H265Tiles] = js.undefined,
-      DynamicSubGop: js.UndefOr[H265DynamicSubGop] = js.undefined): H265Settings = {
+      UnregisteredSeiTimecode: js.UndefOr[H265UnregisteredSeiTimecode] = js.undefined,
+      WriteMp4PackagingType: js.UndefOr[H265WriteMp4PackagingType] = js.undefined): H265Settings = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "FramerateConversionAlgorithm" -> FramerateConversionAlgorithm.map { x => x.asInstanceOf[js.Any] },
-        "GopSizeUnits" -> GopSizeUnits.map { x => x.asInstanceOf[js.Any] },
-        "FramerateDenominator" -> FramerateDenominator.map { x => x.asInstanceOf[js.Any] },
-        "SceneChangeDetect" -> SceneChangeDetect.map { x => x.asInstanceOf[js.Any] },
-        "SampleAdaptiveOffsetFilterMode" -> SampleAdaptiveOffsetFilterMode.map { x => x.asInstanceOf[js.Any] },
-        "MaxBitrate" -> MaxBitrate.map { x => x.asInstanceOf[js.Any] },
-        "Telecine" -> Telecine.map { x => x.asInstanceOf[js.Any] },
-        "RateControlMode" -> RateControlMode.map { x => x.asInstanceOf[js.Any] },
-        "GopBReference" -> GopBReference.map { x => x.asInstanceOf[js.Any] },
-        "CodecProfile" -> CodecProfile.map { x => x.asInstanceOf[js.Any] },
-        "TemporalAdaptiveQuantization" -> TemporalAdaptiveQuantization.map { x => x.asInstanceOf[js.Any] },
-        "SpatialAdaptiveQuantization" -> SpatialAdaptiveQuantization.map { x => x.asInstanceOf[js.Any] },
-        "QvbrSettings" -> QvbrSettings.map { x => x.asInstanceOf[js.Any] },
-        "QualityTuningLevel" -> QualityTuningLevel.map { x => x.asInstanceOf[js.Any] },
-        "TemporalIds" -> TemporalIds.map { x => x.asInstanceOf[js.Any] },
-        "SlowPal" -> SlowPal.map { x => x.asInstanceOf[js.Any] },
-        "AlternateTransferFunctionSei" -> AlternateTransferFunctionSei.map { x => x.asInstanceOf[js.Any] },
-        "MinIInterval" -> MinIInterval.map { x => x.asInstanceOf[js.Any] },
-        "FramerateControl" -> FramerateControl.map { x => x.asInstanceOf[js.Any] },
-        "WriteMp4PackagingType" -> WriteMp4PackagingType.map { x => x.asInstanceOf[js.Any] },
-        "CodecLevel" -> CodecLevel.map { x => x.asInstanceOf[js.Any] },
-        "HrdBufferInitialFillPercentage" -> HrdBufferInitialFillPercentage.map { x => x.asInstanceOf[js.Any] },
-        "Slices" -> Slices.map { x => x.asInstanceOf[js.Any] },
-        "GopSize" -> GopSize.map { x => x.asInstanceOf[js.Any] },
-        "ParDenominator" -> ParDenominator.map { x => x.asInstanceOf[js.Any] },
-        "Bitrate" -> Bitrate.map { x => x.asInstanceOf[js.Any] },
-        "NumberReferenceFrames" -> NumberReferenceFrames.map { x => x.asInstanceOf[js.Any] },
-        "ParNumerator" -> ParNumerator.map { x => x.asInstanceOf[js.Any] },
-        "InterlaceMode" -> InterlaceMode.map { x => x.asInstanceOf[js.Any] },
-        "HrdBufferSize" -> HrdBufferSize.map { x => x.asInstanceOf[js.Any] },
-        "GopClosedCadence" -> GopClosedCadence.map { x => x.asInstanceOf[js.Any] },
-        "ParControl" -> ParControl.map { x => x.asInstanceOf[js.Any] },
-        "UnregisteredSeiTimecode" -> UnregisteredSeiTimecode.map { x => x.asInstanceOf[js.Any] },
-        "FlickerAdaptiveQuantization" -> FlickerAdaptiveQuantization.map { x => x.asInstanceOf[js.Any] },
         "AdaptiveQuantization" -> AdaptiveQuantization.map { x => x.asInstanceOf[js.Any] },
-        "NumberBFramesBetweenReferenceFrames" -> NumberBFramesBetweenReferenceFrames.map { x => x.asInstanceOf[js.Any] },
+        "AlternateTransferFunctionSei" -> AlternateTransferFunctionSei.map { x => x.asInstanceOf[js.Any] },
+        "Bitrate" -> Bitrate.map { x => x.asInstanceOf[js.Any] },
+        "CodecLevel" -> CodecLevel.map { x => x.asInstanceOf[js.Any] },
+        "CodecProfile" -> CodecProfile.map { x => x.asInstanceOf[js.Any] },
+        "DynamicSubGop" -> DynamicSubGop.map { x => x.asInstanceOf[js.Any] },
+        "FlickerAdaptiveQuantization" -> FlickerAdaptiveQuantization.map { x => x.asInstanceOf[js.Any] },
+        "FramerateControl" -> FramerateControl.map { x => x.asInstanceOf[js.Any] },
+        "FramerateConversionAlgorithm" -> FramerateConversionAlgorithm.map { x => x.asInstanceOf[js.Any] },
+        "FramerateDenominator" -> FramerateDenominator.map { x => x.asInstanceOf[js.Any] },
         "FramerateNumerator" -> FramerateNumerator.map { x => x.asInstanceOf[js.Any] },
+        "GopBReference" -> GopBReference.map { x => x.asInstanceOf[js.Any] },
+        "GopClosedCadence" -> GopClosedCadence.map { x => x.asInstanceOf[js.Any] },
+        "GopSize" -> GopSize.map { x => x.asInstanceOf[js.Any] },
+        "GopSizeUnits" -> GopSizeUnits.map { x => x.asInstanceOf[js.Any] },
+        "HrdBufferInitialFillPercentage" -> HrdBufferInitialFillPercentage.map { x => x.asInstanceOf[js.Any] },
+        "HrdBufferSize" -> HrdBufferSize.map { x => x.asInstanceOf[js.Any] },
+        "InterlaceMode" -> InterlaceMode.map { x => x.asInstanceOf[js.Any] },
+        "MaxBitrate" -> MaxBitrate.map { x => x.asInstanceOf[js.Any] },
+        "MinIInterval" -> MinIInterval.map { x => x.asInstanceOf[js.Any] },
+        "NumberBFramesBetweenReferenceFrames" -> NumberBFramesBetweenReferenceFrames.map { x => x.asInstanceOf[js.Any] },
+        "NumberReferenceFrames" -> NumberReferenceFrames.map { x => x.asInstanceOf[js.Any] },
+        "ParControl" -> ParControl.map { x => x.asInstanceOf[js.Any] },
+        "ParDenominator" -> ParDenominator.map { x => x.asInstanceOf[js.Any] },
+        "ParNumerator" -> ParNumerator.map { x => x.asInstanceOf[js.Any] },
+        "QualityTuningLevel" -> QualityTuningLevel.map { x => x.asInstanceOf[js.Any] },
+        "QvbrSettings" -> QvbrSettings.map { x => x.asInstanceOf[js.Any] },
+        "RateControlMode" -> RateControlMode.map { x => x.asInstanceOf[js.Any] },
+        "SampleAdaptiveOffsetFilterMode" -> SampleAdaptiveOffsetFilterMode.map { x => x.asInstanceOf[js.Any] },
+        "SceneChangeDetect" -> SceneChangeDetect.map { x => x.asInstanceOf[js.Any] },
+        "Slices" -> Slices.map { x => x.asInstanceOf[js.Any] },
+        "SlowPal" -> SlowPal.map { x => x.asInstanceOf[js.Any] },
+        "SpatialAdaptiveQuantization" -> SpatialAdaptiveQuantization.map { x => x.asInstanceOf[js.Any] },
+        "Telecine" -> Telecine.map { x => x.asInstanceOf[js.Any] },
+        "TemporalAdaptiveQuantization" -> TemporalAdaptiveQuantization.map { x => x.asInstanceOf[js.Any] },
+        "TemporalIds" -> TemporalIds.map { x => x.asInstanceOf[js.Any] },
         "Tiles" -> Tiles.map { x => x.asInstanceOf[js.Any] },
-        "DynamicSubGop" -> DynamicSubGop.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "UnregisteredSeiTimecode" -> UnregisteredSeiTimecode.map { x => x.asInstanceOf[js.Any] },
+        "WriteMp4PackagingType" -> WriteMp4PackagingType.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[H265Settings]
     }
@@ -3798,47 +3798,47 @@ package mediaconvert {
    */
   @js.native
   trait Hdr10Metadata extends js.Object {
-    var MaxLuminance: js.UndefOr[__integerMin0Max2147483647]
-    var MinLuminance: js.UndefOr[__integerMin0Max2147483647]
-    var MaxFrameAverageLightLevel: js.UndefOr[__integerMin0Max65535]
-    var WhitePointX: js.UndefOr[__integerMin0Max50000]
-    var WhitePointY: js.UndefOr[__integerMin0Max50000]
-    var GreenPrimaryY: js.UndefOr[__integerMin0Max50000]
-    var RedPrimaryY: js.UndefOr[__integerMin0Max50000]
     var BluePrimaryX: js.UndefOr[__integerMin0Max50000]
     var BluePrimaryY: js.UndefOr[__integerMin0Max50000]
-    var RedPrimaryX: js.UndefOr[__integerMin0Max50000]
     var GreenPrimaryX: js.UndefOr[__integerMin0Max50000]
+    var GreenPrimaryY: js.UndefOr[__integerMin0Max50000]
     var MaxContentLightLevel: js.UndefOr[__integerMin0Max65535]
+    var MaxFrameAverageLightLevel: js.UndefOr[__integerMin0Max65535]
+    var MaxLuminance: js.UndefOr[__integerMin0Max2147483647]
+    var MinLuminance: js.UndefOr[__integerMin0Max2147483647]
+    var RedPrimaryX: js.UndefOr[__integerMin0Max50000]
+    var RedPrimaryY: js.UndefOr[__integerMin0Max50000]
+    var WhitePointX: js.UndefOr[__integerMin0Max50000]
+    var WhitePointY: js.UndefOr[__integerMin0Max50000]
   }
 
   object Hdr10Metadata {
     def apply(
-      MaxLuminance: js.UndefOr[__integerMin0Max2147483647] = js.undefined,
-      MinLuminance: js.UndefOr[__integerMin0Max2147483647] = js.undefined,
-      MaxFrameAverageLightLevel: js.UndefOr[__integerMin0Max65535] = js.undefined,
-      WhitePointX: js.UndefOr[__integerMin0Max50000] = js.undefined,
-      WhitePointY: js.UndefOr[__integerMin0Max50000] = js.undefined,
-      GreenPrimaryY: js.UndefOr[__integerMin0Max50000] = js.undefined,
-      RedPrimaryY: js.UndefOr[__integerMin0Max50000] = js.undefined,
       BluePrimaryX: js.UndefOr[__integerMin0Max50000] = js.undefined,
       BluePrimaryY: js.UndefOr[__integerMin0Max50000] = js.undefined,
-      RedPrimaryX: js.UndefOr[__integerMin0Max50000] = js.undefined,
       GreenPrimaryX: js.UndefOr[__integerMin0Max50000] = js.undefined,
-      MaxContentLightLevel: js.UndefOr[__integerMin0Max65535] = js.undefined): Hdr10Metadata = {
+      GreenPrimaryY: js.UndefOr[__integerMin0Max50000] = js.undefined,
+      MaxContentLightLevel: js.UndefOr[__integerMin0Max65535] = js.undefined,
+      MaxFrameAverageLightLevel: js.UndefOr[__integerMin0Max65535] = js.undefined,
+      MaxLuminance: js.UndefOr[__integerMin0Max2147483647] = js.undefined,
+      MinLuminance: js.UndefOr[__integerMin0Max2147483647] = js.undefined,
+      RedPrimaryX: js.UndefOr[__integerMin0Max50000] = js.undefined,
+      RedPrimaryY: js.UndefOr[__integerMin0Max50000] = js.undefined,
+      WhitePointX: js.UndefOr[__integerMin0Max50000] = js.undefined,
+      WhitePointY: js.UndefOr[__integerMin0Max50000] = js.undefined): Hdr10Metadata = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "MaxLuminance" -> MaxLuminance.map { x => x.asInstanceOf[js.Any] },
-        "MinLuminance" -> MinLuminance.map { x => x.asInstanceOf[js.Any] },
-        "MaxFrameAverageLightLevel" -> MaxFrameAverageLightLevel.map { x => x.asInstanceOf[js.Any] },
-        "WhitePointX" -> WhitePointX.map { x => x.asInstanceOf[js.Any] },
-        "WhitePointY" -> WhitePointY.map { x => x.asInstanceOf[js.Any] },
-        "GreenPrimaryY" -> GreenPrimaryY.map { x => x.asInstanceOf[js.Any] },
-        "RedPrimaryY" -> RedPrimaryY.map { x => x.asInstanceOf[js.Any] },
         "BluePrimaryX" -> BluePrimaryX.map { x => x.asInstanceOf[js.Any] },
         "BluePrimaryY" -> BluePrimaryY.map { x => x.asInstanceOf[js.Any] },
-        "RedPrimaryX" -> RedPrimaryX.map { x => x.asInstanceOf[js.Any] },
         "GreenPrimaryX" -> GreenPrimaryX.map { x => x.asInstanceOf[js.Any] },
-        "MaxContentLightLevel" -> MaxContentLightLevel.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "GreenPrimaryY" -> GreenPrimaryY.map { x => x.asInstanceOf[js.Any] },
+        "MaxContentLightLevel" -> MaxContentLightLevel.map { x => x.asInstanceOf[js.Any] },
+        "MaxFrameAverageLightLevel" -> MaxFrameAverageLightLevel.map { x => x.asInstanceOf[js.Any] },
+        "MaxLuminance" -> MaxLuminance.map { x => x.asInstanceOf[js.Any] },
+        "MinLuminance" -> MinLuminance.map { x => x.asInstanceOf[js.Any] },
+        "RedPrimaryX" -> RedPrimaryX.map { x => x.asInstanceOf[js.Any] },
+        "RedPrimaryY" -> RedPrimaryY.map { x => x.asInstanceOf[js.Any] },
+        "WhitePointX" -> WhitePointX.map { x => x.asInstanceOf[js.Any] },
+        "WhitePointY" -> WhitePointY.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Hdr10Metadata]
     }
@@ -3936,28 +3936,28 @@ package mediaconvert {
    */
   @js.native
   trait HlsEncryptionSettings extends js.Object {
-    var StaticKeyProvider: js.UndefOr[StaticKeyProvider]
+    var ConstantInitializationVector: js.UndefOr[__stringMin32Max32Pattern09aFAF32]
     var EncryptionMethod: js.UndefOr[HlsEncryptionType]
     var InitializationVectorInManifest: js.UndefOr[HlsInitializationVectorInManifest]
-    var ConstantInitializationVector: js.UndefOr[__stringMin32Max32Pattern09aFAF32]
     var SpekeKeyProvider: js.UndefOr[SpekeKeyProvider]
+    var StaticKeyProvider: js.UndefOr[StaticKeyProvider]
     var Type: js.UndefOr[HlsKeyProviderType]
   }
 
   object HlsEncryptionSettings {
     def apply(
-      StaticKeyProvider: js.UndefOr[StaticKeyProvider] = js.undefined,
+      ConstantInitializationVector: js.UndefOr[__stringMin32Max32Pattern09aFAF32] = js.undefined,
       EncryptionMethod: js.UndefOr[HlsEncryptionType] = js.undefined,
       InitializationVectorInManifest: js.UndefOr[HlsInitializationVectorInManifest] = js.undefined,
-      ConstantInitializationVector: js.UndefOr[__stringMin32Max32Pattern09aFAF32] = js.undefined,
       SpekeKeyProvider: js.UndefOr[SpekeKeyProvider] = js.undefined,
+      StaticKeyProvider: js.UndefOr[StaticKeyProvider] = js.undefined,
       Type: js.UndefOr[HlsKeyProviderType] = js.undefined): HlsEncryptionSettings = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "StaticKeyProvider" -> StaticKeyProvider.map { x => x.asInstanceOf[js.Any] },
+        "ConstantInitializationVector" -> ConstantInitializationVector.map { x => x.asInstanceOf[js.Any] },
         "EncryptionMethod" -> EncryptionMethod.map { x => x.asInstanceOf[js.Any] },
         "InitializationVectorInManifest" -> InitializationVectorInManifest.map { x => x.asInstanceOf[js.Any] },
-        "ConstantInitializationVector" -> ConstantInitializationVector.map { x => x.asInstanceOf[js.Any] },
         "SpekeKeyProvider" -> SpekeKeyProvider.map { x => x.asInstanceOf[js.Any] },
+        "StaticKeyProvider" -> StaticKeyProvider.map { x => x.asInstanceOf[js.Any] },
         "Type" -> Type.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[HlsEncryptionSettings]
@@ -3979,80 +3979,80 @@ package mediaconvert {
    */
   @js.native
   trait HlsGroupSettings extends js.Object {
-    var ProgramDateTimePeriod: js.UndefOr[__integerMin0Max3600]
-    var DirectoryStructure: js.UndefOr[HlsDirectoryStructure]
-    var CodecSpecification: js.UndefOr[HlsCodecSpecification]
-    var MinFinalSegmentLength: js.UndefOr[__doubleMin0Max2147483647]
-    var SegmentLength: js.UndefOr[__integerMin1Max2147483647]
-    var CaptionLanguageMappings: js.UndefOr[__listOfHlsCaptionLanguageMapping]
-    var TimestampDeltaMilliseconds: js.UndefOr[__integerMinNegative2147483648Max2147483647]
-    var ProgramDateTime: js.UndefOr[HlsProgramDateTime]
-    var CaptionLanguageSetting: js.UndefOr[HlsCaptionLanguageSetting]
-    var BaseUrl: js.UndefOr[__string]
-    var ManifestCompression: js.UndefOr[HlsManifestCompression]
-    var SegmentsPerSubdirectory: js.UndefOr[__integerMin1Max2147483647]
-    var ClientCache: js.UndefOr[HlsClientCache]
-    var SegmentControl: js.UndefOr[HlsSegmentControl]
-    var ManifestDurationFormat: js.UndefOr[HlsManifestDurationFormat]
-    var Destination: js.UndefOr[__stringPatternS3]
-    var TimedMetadataId3Period: js.UndefOr[__integerMinNegative2147483648Max2147483647]
-    var Encryption: js.UndefOr[HlsEncryptionSettings]
-    var StreamInfResolution: js.UndefOr[HlsStreamInfResolution]
     var AdMarkers: js.UndefOr[__listOfHlsAdMarkers]
-    var OutputSelection: js.UndefOr[HlsOutputSelection]
-    var TimedMetadataId3Frame: js.UndefOr[HlsTimedMetadataId3Frame]
+    var BaseUrl: js.UndefOr[__string]
+    var CaptionLanguageMappings: js.UndefOr[__listOfHlsCaptionLanguageMapping]
+    var CaptionLanguageSetting: js.UndefOr[HlsCaptionLanguageSetting]
+    var ClientCache: js.UndefOr[HlsClientCache]
+    var CodecSpecification: js.UndefOr[HlsCodecSpecification]
+    var Destination: js.UndefOr[__stringPatternS3]
+    var DirectoryStructure: js.UndefOr[HlsDirectoryStructure]
+    var Encryption: js.UndefOr[HlsEncryptionSettings]
+    var ManifestCompression: js.UndefOr[HlsManifestCompression]
+    var ManifestDurationFormat: js.UndefOr[HlsManifestDurationFormat]
+    var MinFinalSegmentLength: js.UndefOr[__doubleMin0Max2147483647]
     var MinSegmentLength: js.UndefOr[__integerMin0Max2147483647]
+    var OutputSelection: js.UndefOr[HlsOutputSelection]
+    var ProgramDateTime: js.UndefOr[HlsProgramDateTime]
+    var ProgramDateTimePeriod: js.UndefOr[__integerMin0Max3600]
+    var SegmentControl: js.UndefOr[HlsSegmentControl]
+    var SegmentLength: js.UndefOr[__integerMin1Max2147483647]
+    var SegmentsPerSubdirectory: js.UndefOr[__integerMin1Max2147483647]
+    var StreamInfResolution: js.UndefOr[HlsStreamInfResolution]
+    var TimedMetadataId3Frame: js.UndefOr[HlsTimedMetadataId3Frame]
+    var TimedMetadataId3Period: js.UndefOr[__integerMinNegative2147483648Max2147483647]
+    var TimestampDeltaMilliseconds: js.UndefOr[__integerMinNegative2147483648Max2147483647]
   }
 
   object HlsGroupSettings {
     def apply(
-      ProgramDateTimePeriod: js.UndefOr[__integerMin0Max3600] = js.undefined,
-      DirectoryStructure: js.UndefOr[HlsDirectoryStructure] = js.undefined,
-      CodecSpecification: js.UndefOr[HlsCodecSpecification] = js.undefined,
-      MinFinalSegmentLength: js.UndefOr[__doubleMin0Max2147483647] = js.undefined,
-      SegmentLength: js.UndefOr[__integerMin1Max2147483647] = js.undefined,
-      CaptionLanguageMappings: js.UndefOr[__listOfHlsCaptionLanguageMapping] = js.undefined,
-      TimestampDeltaMilliseconds: js.UndefOr[__integerMinNegative2147483648Max2147483647] = js.undefined,
-      ProgramDateTime: js.UndefOr[HlsProgramDateTime] = js.undefined,
-      CaptionLanguageSetting: js.UndefOr[HlsCaptionLanguageSetting] = js.undefined,
-      BaseUrl: js.UndefOr[__string] = js.undefined,
-      ManifestCompression: js.UndefOr[HlsManifestCompression] = js.undefined,
-      SegmentsPerSubdirectory: js.UndefOr[__integerMin1Max2147483647] = js.undefined,
-      ClientCache: js.UndefOr[HlsClientCache] = js.undefined,
-      SegmentControl: js.UndefOr[HlsSegmentControl] = js.undefined,
-      ManifestDurationFormat: js.UndefOr[HlsManifestDurationFormat] = js.undefined,
-      Destination: js.UndefOr[__stringPatternS3] = js.undefined,
-      TimedMetadataId3Period: js.UndefOr[__integerMinNegative2147483648Max2147483647] = js.undefined,
-      Encryption: js.UndefOr[HlsEncryptionSettings] = js.undefined,
-      StreamInfResolution: js.UndefOr[HlsStreamInfResolution] = js.undefined,
       AdMarkers: js.UndefOr[__listOfHlsAdMarkers] = js.undefined,
+      BaseUrl: js.UndefOr[__string] = js.undefined,
+      CaptionLanguageMappings: js.UndefOr[__listOfHlsCaptionLanguageMapping] = js.undefined,
+      CaptionLanguageSetting: js.UndefOr[HlsCaptionLanguageSetting] = js.undefined,
+      ClientCache: js.UndefOr[HlsClientCache] = js.undefined,
+      CodecSpecification: js.UndefOr[HlsCodecSpecification] = js.undefined,
+      Destination: js.UndefOr[__stringPatternS3] = js.undefined,
+      DirectoryStructure: js.UndefOr[HlsDirectoryStructure] = js.undefined,
+      Encryption: js.UndefOr[HlsEncryptionSettings] = js.undefined,
+      ManifestCompression: js.UndefOr[HlsManifestCompression] = js.undefined,
+      ManifestDurationFormat: js.UndefOr[HlsManifestDurationFormat] = js.undefined,
+      MinFinalSegmentLength: js.UndefOr[__doubleMin0Max2147483647] = js.undefined,
+      MinSegmentLength: js.UndefOr[__integerMin0Max2147483647] = js.undefined,
       OutputSelection: js.UndefOr[HlsOutputSelection] = js.undefined,
+      ProgramDateTime: js.UndefOr[HlsProgramDateTime] = js.undefined,
+      ProgramDateTimePeriod: js.UndefOr[__integerMin0Max3600] = js.undefined,
+      SegmentControl: js.UndefOr[HlsSegmentControl] = js.undefined,
+      SegmentLength: js.UndefOr[__integerMin1Max2147483647] = js.undefined,
+      SegmentsPerSubdirectory: js.UndefOr[__integerMin1Max2147483647] = js.undefined,
+      StreamInfResolution: js.UndefOr[HlsStreamInfResolution] = js.undefined,
       TimedMetadataId3Frame: js.UndefOr[HlsTimedMetadataId3Frame] = js.undefined,
-      MinSegmentLength: js.UndefOr[__integerMin0Max2147483647] = js.undefined): HlsGroupSettings = {
+      TimedMetadataId3Period: js.UndefOr[__integerMinNegative2147483648Max2147483647] = js.undefined,
+      TimestampDeltaMilliseconds: js.UndefOr[__integerMinNegative2147483648Max2147483647] = js.undefined): HlsGroupSettings = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ProgramDateTimePeriod" -> ProgramDateTimePeriod.map { x => x.asInstanceOf[js.Any] },
-        "DirectoryStructure" -> DirectoryStructure.map { x => x.asInstanceOf[js.Any] },
-        "CodecSpecification" -> CodecSpecification.map { x => x.asInstanceOf[js.Any] },
-        "MinFinalSegmentLength" -> MinFinalSegmentLength.map { x => x.asInstanceOf[js.Any] },
-        "SegmentLength" -> SegmentLength.map { x => x.asInstanceOf[js.Any] },
-        "CaptionLanguageMappings" -> CaptionLanguageMappings.map { x => x.asInstanceOf[js.Any] },
-        "TimestampDeltaMilliseconds" -> TimestampDeltaMilliseconds.map { x => x.asInstanceOf[js.Any] },
-        "ProgramDateTime" -> ProgramDateTime.map { x => x.asInstanceOf[js.Any] },
-        "CaptionLanguageSetting" -> CaptionLanguageSetting.map { x => x.asInstanceOf[js.Any] },
-        "BaseUrl" -> BaseUrl.map { x => x.asInstanceOf[js.Any] },
-        "ManifestCompression" -> ManifestCompression.map { x => x.asInstanceOf[js.Any] },
-        "SegmentsPerSubdirectory" -> SegmentsPerSubdirectory.map { x => x.asInstanceOf[js.Any] },
-        "ClientCache" -> ClientCache.map { x => x.asInstanceOf[js.Any] },
-        "SegmentControl" -> SegmentControl.map { x => x.asInstanceOf[js.Any] },
-        "ManifestDurationFormat" -> ManifestDurationFormat.map { x => x.asInstanceOf[js.Any] },
-        "Destination" -> Destination.map { x => x.asInstanceOf[js.Any] },
-        "TimedMetadataId3Period" -> TimedMetadataId3Period.map { x => x.asInstanceOf[js.Any] },
-        "Encryption" -> Encryption.map { x => x.asInstanceOf[js.Any] },
-        "StreamInfResolution" -> StreamInfResolution.map { x => x.asInstanceOf[js.Any] },
         "AdMarkers" -> AdMarkers.map { x => x.asInstanceOf[js.Any] },
+        "BaseUrl" -> BaseUrl.map { x => x.asInstanceOf[js.Any] },
+        "CaptionLanguageMappings" -> CaptionLanguageMappings.map { x => x.asInstanceOf[js.Any] },
+        "CaptionLanguageSetting" -> CaptionLanguageSetting.map { x => x.asInstanceOf[js.Any] },
+        "ClientCache" -> ClientCache.map { x => x.asInstanceOf[js.Any] },
+        "CodecSpecification" -> CodecSpecification.map { x => x.asInstanceOf[js.Any] },
+        "Destination" -> Destination.map { x => x.asInstanceOf[js.Any] },
+        "DirectoryStructure" -> DirectoryStructure.map { x => x.asInstanceOf[js.Any] },
+        "Encryption" -> Encryption.map { x => x.asInstanceOf[js.Any] },
+        "ManifestCompression" -> ManifestCompression.map { x => x.asInstanceOf[js.Any] },
+        "ManifestDurationFormat" -> ManifestDurationFormat.map { x => x.asInstanceOf[js.Any] },
+        "MinFinalSegmentLength" -> MinFinalSegmentLength.map { x => x.asInstanceOf[js.Any] },
+        "MinSegmentLength" -> MinSegmentLength.map { x => x.asInstanceOf[js.Any] },
         "OutputSelection" -> OutputSelection.map { x => x.asInstanceOf[js.Any] },
+        "ProgramDateTime" -> ProgramDateTime.map { x => x.asInstanceOf[js.Any] },
+        "ProgramDateTimePeriod" -> ProgramDateTimePeriod.map { x => x.asInstanceOf[js.Any] },
+        "SegmentControl" -> SegmentControl.map { x => x.asInstanceOf[js.Any] },
+        "SegmentLength" -> SegmentLength.map { x => x.asInstanceOf[js.Any] },
+        "SegmentsPerSubdirectory" -> SegmentsPerSubdirectory.map { x => x.asInstanceOf[js.Any] },
+        "StreamInfResolution" -> StreamInfResolution.map { x => x.asInstanceOf[js.Any] },
         "TimedMetadataId3Frame" -> TimedMetadataId3Frame.map { x => x.asInstanceOf[js.Any] },
-        "MinSegmentLength" -> MinSegmentLength.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "TimedMetadataId3Period" -> TimedMetadataId3Period.map { x => x.asInstanceOf[js.Any] },
+        "TimestampDeltaMilliseconds" -> TimestampDeltaMilliseconds.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[HlsGroupSettings]
     }
@@ -4143,26 +4143,26 @@ package mediaconvert {
    */
   @js.native
   trait HlsSettings extends js.Object {
-    var AudioRenditionSets: js.UndefOr[__string]
-    var IFrameOnlyManifest: js.UndefOr[HlsIFrameOnlyManifest]
     var AudioGroupId: js.UndefOr[__string]
-    var SegmentModifier: js.UndefOr[__string]
+    var AudioRenditionSets: js.UndefOr[__string]
     var AudioTrackType: js.UndefOr[HlsAudioTrackType]
+    var IFrameOnlyManifest: js.UndefOr[HlsIFrameOnlyManifest]
+    var SegmentModifier: js.UndefOr[__string]
   }
 
   object HlsSettings {
     def apply(
-      AudioRenditionSets: js.UndefOr[__string] = js.undefined,
-      IFrameOnlyManifest: js.UndefOr[HlsIFrameOnlyManifest] = js.undefined,
       AudioGroupId: js.UndefOr[__string] = js.undefined,
-      SegmentModifier: js.UndefOr[__string] = js.undefined,
-      AudioTrackType: js.UndefOr[HlsAudioTrackType] = js.undefined): HlsSettings = {
+      AudioRenditionSets: js.UndefOr[__string] = js.undefined,
+      AudioTrackType: js.UndefOr[HlsAudioTrackType] = js.undefined,
+      IFrameOnlyManifest: js.UndefOr[HlsIFrameOnlyManifest] = js.undefined,
+      SegmentModifier: js.UndefOr[__string] = js.undefined): HlsSettings = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "AudioRenditionSets" -> AudioRenditionSets.map { x => x.asInstanceOf[js.Any] },
-        "IFrameOnlyManifest" -> IFrameOnlyManifest.map { x => x.asInstanceOf[js.Any] },
         "AudioGroupId" -> AudioGroupId.map { x => x.asInstanceOf[js.Any] },
-        "SegmentModifier" -> SegmentModifier.map { x => x.asInstanceOf[js.Any] },
-        "AudioTrackType" -> AudioTrackType.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "AudioRenditionSets" -> AudioRenditionSets.map { x => x.asInstanceOf[js.Any] },
+        "AudioTrackType" -> AudioTrackType.map { x => x.asInstanceOf[js.Any] },
+        "IFrameOnlyManifest" -> IFrameOnlyManifest.map { x => x.asInstanceOf[js.Any] },
+        "SegmentModifier" -> SegmentModifier.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[HlsSettings]
     }
@@ -4233,56 +4233,56 @@ package mediaconvert {
    */
   @js.native
   trait Input extends js.Object {
-    var InputClippings: js.UndefOr[__listOfInputClipping]
-    var TimecodeSource: js.UndefOr[InputTimecodeSource]
-    var ImageInserter: js.UndefOr[ImageInserter]
-    var FilterStrength: js.UndefOr[__integerMinNegative5Max5]
+    var AudioSelectorGroups: js.UndefOr[__mapOfAudioSelectorGroup]
+    var AudioSelectors: js.UndefOr[__mapOfAudioSelector]
+    var CaptionSelectors: js.UndefOr[__mapOfCaptionSelector]
+    var DeblockFilter: js.UndefOr[InputDeblockFilter]
     var DecryptionSettings: js.UndefOr[InputDecryptionSettings]
-    var PsiControl: js.UndefOr[InputPsiControl]
+    var DenoiseFilter: js.UndefOr[InputDenoiseFilter]
     var FileInput: js.UndefOr[__stringPatternS3MM2VVMMPPEEGGAAVVIIMMPP4FFLLVVMMPPTTMMPPGGMM4VVTTRRPPFF4VVMM2TTSSTTSS264HH264MMKKVVMMOOVVMMTTSSMM2TTWWMMVVAASSFFVVOOBB3GGPP3GGPPPPMMXXFFDDIIVVXXXXVVIIDDRRAAWWDDVVGGXXFFMM1VV3GG2VVMMFFMM3UU8LLCCHHGGXXFFMMPPEEGG2MMXXFFMMPPEEGG2MMXXFFHHDDWWAAVVYY4MM]
     var FilterEnable: js.UndefOr[InputFilterEnable]
-    var DeblockFilter: js.UndefOr[InputDeblockFilter]
-    var CaptionSelectors: js.UndefOr[__mapOfCaptionSelector]
-    var AudioSelectors: js.UndefOr[__mapOfAudioSelector]
+    var FilterStrength: js.UndefOr[__integerMinNegative5Max5]
+    var ImageInserter: js.UndefOr[ImageInserter]
+    var InputClippings: js.UndefOr[__listOfInputClipping]
     var ProgramNumber: js.UndefOr[__integerMin1Max2147483647]
+    var PsiControl: js.UndefOr[InputPsiControl]
+    var TimecodeSource: js.UndefOr[InputTimecodeSource]
     var VideoSelector: js.UndefOr[VideoSelector]
-    var DenoiseFilter: js.UndefOr[InputDenoiseFilter]
-    var AudioSelectorGroups: js.UndefOr[__mapOfAudioSelectorGroup]
   }
 
   object Input {
     def apply(
-      InputClippings: js.UndefOr[__listOfInputClipping] = js.undefined,
-      TimecodeSource: js.UndefOr[InputTimecodeSource] = js.undefined,
-      ImageInserter: js.UndefOr[ImageInserter] = js.undefined,
-      FilterStrength: js.UndefOr[__integerMinNegative5Max5] = js.undefined,
+      AudioSelectorGroups: js.UndefOr[__mapOfAudioSelectorGroup] = js.undefined,
+      AudioSelectors: js.UndefOr[__mapOfAudioSelector] = js.undefined,
+      CaptionSelectors: js.UndefOr[__mapOfCaptionSelector] = js.undefined,
+      DeblockFilter: js.UndefOr[InputDeblockFilter] = js.undefined,
       DecryptionSettings: js.UndefOr[InputDecryptionSettings] = js.undefined,
-      PsiControl: js.UndefOr[InputPsiControl] = js.undefined,
+      DenoiseFilter: js.UndefOr[InputDenoiseFilter] = js.undefined,
       FileInput: js.UndefOr[__stringPatternS3MM2VVMMPPEEGGAAVVIIMMPP4FFLLVVMMPPTTMMPPGGMM4VVTTRRPPFF4VVMM2TTSSTTSS264HH264MMKKVVMMOOVVMMTTSSMM2TTWWMMVVAASSFFVVOOBB3GGPP3GGPPPPMMXXFFDDIIVVXXXXVVIIDDRRAAWWDDVVGGXXFFMM1VV3GG2VVMMFFMM3UU8LLCCHHGGXXFFMMPPEEGG2MMXXFFMMPPEEGG2MMXXFFHHDDWWAAVVYY4MM] = js.undefined,
       FilterEnable: js.UndefOr[InputFilterEnable] = js.undefined,
-      DeblockFilter: js.UndefOr[InputDeblockFilter] = js.undefined,
-      CaptionSelectors: js.UndefOr[__mapOfCaptionSelector] = js.undefined,
-      AudioSelectors: js.UndefOr[__mapOfAudioSelector] = js.undefined,
+      FilterStrength: js.UndefOr[__integerMinNegative5Max5] = js.undefined,
+      ImageInserter: js.UndefOr[ImageInserter] = js.undefined,
+      InputClippings: js.UndefOr[__listOfInputClipping] = js.undefined,
       ProgramNumber: js.UndefOr[__integerMin1Max2147483647] = js.undefined,
-      VideoSelector: js.UndefOr[VideoSelector] = js.undefined,
-      DenoiseFilter: js.UndefOr[InputDenoiseFilter] = js.undefined,
-      AudioSelectorGroups: js.UndefOr[__mapOfAudioSelectorGroup] = js.undefined): Input = {
+      PsiControl: js.UndefOr[InputPsiControl] = js.undefined,
+      TimecodeSource: js.UndefOr[InputTimecodeSource] = js.undefined,
+      VideoSelector: js.UndefOr[VideoSelector] = js.undefined): Input = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "InputClippings" -> InputClippings.map { x => x.asInstanceOf[js.Any] },
-        "TimecodeSource" -> TimecodeSource.map { x => x.asInstanceOf[js.Any] },
-        "ImageInserter" -> ImageInserter.map { x => x.asInstanceOf[js.Any] },
-        "FilterStrength" -> FilterStrength.map { x => x.asInstanceOf[js.Any] },
+        "AudioSelectorGroups" -> AudioSelectorGroups.map { x => x.asInstanceOf[js.Any] },
+        "AudioSelectors" -> AudioSelectors.map { x => x.asInstanceOf[js.Any] },
+        "CaptionSelectors" -> CaptionSelectors.map { x => x.asInstanceOf[js.Any] },
+        "DeblockFilter" -> DeblockFilter.map { x => x.asInstanceOf[js.Any] },
         "DecryptionSettings" -> DecryptionSettings.map { x => x.asInstanceOf[js.Any] },
-        "PsiControl" -> PsiControl.map { x => x.asInstanceOf[js.Any] },
+        "DenoiseFilter" -> DenoiseFilter.map { x => x.asInstanceOf[js.Any] },
         "FileInput" -> FileInput.map { x => x.asInstanceOf[js.Any] },
         "FilterEnable" -> FilterEnable.map { x => x.asInstanceOf[js.Any] },
-        "DeblockFilter" -> DeblockFilter.map { x => x.asInstanceOf[js.Any] },
-        "CaptionSelectors" -> CaptionSelectors.map { x => x.asInstanceOf[js.Any] },
-        "AudioSelectors" -> AudioSelectors.map { x => x.asInstanceOf[js.Any] },
+        "FilterStrength" -> FilterStrength.map { x => x.asInstanceOf[js.Any] },
+        "ImageInserter" -> ImageInserter.map { x => x.asInstanceOf[js.Any] },
+        "InputClippings" -> InputClippings.map { x => x.asInstanceOf[js.Any] },
         "ProgramNumber" -> ProgramNumber.map { x => x.asInstanceOf[js.Any] },
-        "VideoSelector" -> VideoSelector.map { x => x.asInstanceOf[js.Any] },
-        "DenoiseFilter" -> DenoiseFilter.map { x => x.asInstanceOf[js.Any] },
-        "AudioSelectorGroups" -> AudioSelectorGroups.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "PsiControl" -> PsiControl.map { x => x.asInstanceOf[js.Any] },
+        "TimecodeSource" -> TimecodeSource.map { x => x.asInstanceOf[js.Any] },
+        "VideoSelector" -> VideoSelector.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Input]
     }
@@ -4382,50 +4382,50 @@ package mediaconvert {
    */
   @js.native
   trait InputTemplate extends js.Object {
-    var InputClippings: js.UndefOr[__listOfInputClipping]
-    var TimecodeSource: js.UndefOr[InputTimecodeSource]
-    var ImageInserter: js.UndefOr[ImageInserter]
-    var FilterStrength: js.UndefOr[__integerMinNegative5Max5]
-    var PsiControl: js.UndefOr[InputPsiControl]
-    var FilterEnable: js.UndefOr[InputFilterEnable]
-    var DeblockFilter: js.UndefOr[InputDeblockFilter]
-    var CaptionSelectors: js.UndefOr[__mapOfCaptionSelector]
-    var AudioSelectors: js.UndefOr[__mapOfAudioSelector]
-    var ProgramNumber: js.UndefOr[__integerMin1Max2147483647]
-    var VideoSelector: js.UndefOr[VideoSelector]
-    var DenoiseFilter: js.UndefOr[InputDenoiseFilter]
     var AudioSelectorGroups: js.UndefOr[__mapOfAudioSelectorGroup]
+    var AudioSelectors: js.UndefOr[__mapOfAudioSelector]
+    var CaptionSelectors: js.UndefOr[__mapOfCaptionSelector]
+    var DeblockFilter: js.UndefOr[InputDeblockFilter]
+    var DenoiseFilter: js.UndefOr[InputDenoiseFilter]
+    var FilterEnable: js.UndefOr[InputFilterEnable]
+    var FilterStrength: js.UndefOr[__integerMinNegative5Max5]
+    var ImageInserter: js.UndefOr[ImageInserter]
+    var InputClippings: js.UndefOr[__listOfInputClipping]
+    var ProgramNumber: js.UndefOr[__integerMin1Max2147483647]
+    var PsiControl: js.UndefOr[InputPsiControl]
+    var TimecodeSource: js.UndefOr[InputTimecodeSource]
+    var VideoSelector: js.UndefOr[VideoSelector]
   }
 
   object InputTemplate {
     def apply(
-      InputClippings: js.UndefOr[__listOfInputClipping] = js.undefined,
-      TimecodeSource: js.UndefOr[InputTimecodeSource] = js.undefined,
-      ImageInserter: js.UndefOr[ImageInserter] = js.undefined,
-      FilterStrength: js.UndefOr[__integerMinNegative5Max5] = js.undefined,
-      PsiControl: js.UndefOr[InputPsiControl] = js.undefined,
-      FilterEnable: js.UndefOr[InputFilterEnable] = js.undefined,
-      DeblockFilter: js.UndefOr[InputDeblockFilter] = js.undefined,
-      CaptionSelectors: js.UndefOr[__mapOfCaptionSelector] = js.undefined,
+      AudioSelectorGroups: js.UndefOr[__mapOfAudioSelectorGroup] = js.undefined,
       AudioSelectors: js.UndefOr[__mapOfAudioSelector] = js.undefined,
-      ProgramNumber: js.UndefOr[__integerMin1Max2147483647] = js.undefined,
-      VideoSelector: js.UndefOr[VideoSelector] = js.undefined,
+      CaptionSelectors: js.UndefOr[__mapOfCaptionSelector] = js.undefined,
+      DeblockFilter: js.UndefOr[InputDeblockFilter] = js.undefined,
       DenoiseFilter: js.UndefOr[InputDenoiseFilter] = js.undefined,
-      AudioSelectorGroups: js.UndefOr[__mapOfAudioSelectorGroup] = js.undefined): InputTemplate = {
+      FilterEnable: js.UndefOr[InputFilterEnable] = js.undefined,
+      FilterStrength: js.UndefOr[__integerMinNegative5Max5] = js.undefined,
+      ImageInserter: js.UndefOr[ImageInserter] = js.undefined,
+      InputClippings: js.UndefOr[__listOfInputClipping] = js.undefined,
+      ProgramNumber: js.UndefOr[__integerMin1Max2147483647] = js.undefined,
+      PsiControl: js.UndefOr[InputPsiControl] = js.undefined,
+      TimecodeSource: js.UndefOr[InputTimecodeSource] = js.undefined,
+      VideoSelector: js.UndefOr[VideoSelector] = js.undefined): InputTemplate = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "InputClippings" -> InputClippings.map { x => x.asInstanceOf[js.Any] },
-        "TimecodeSource" -> TimecodeSource.map { x => x.asInstanceOf[js.Any] },
-        "ImageInserter" -> ImageInserter.map { x => x.asInstanceOf[js.Any] },
-        "FilterStrength" -> FilterStrength.map { x => x.asInstanceOf[js.Any] },
-        "PsiControl" -> PsiControl.map { x => x.asInstanceOf[js.Any] },
-        "FilterEnable" -> FilterEnable.map { x => x.asInstanceOf[js.Any] },
-        "DeblockFilter" -> DeblockFilter.map { x => x.asInstanceOf[js.Any] },
-        "CaptionSelectors" -> CaptionSelectors.map { x => x.asInstanceOf[js.Any] },
+        "AudioSelectorGroups" -> AudioSelectorGroups.map { x => x.asInstanceOf[js.Any] },
         "AudioSelectors" -> AudioSelectors.map { x => x.asInstanceOf[js.Any] },
-        "ProgramNumber" -> ProgramNumber.map { x => x.asInstanceOf[js.Any] },
-        "VideoSelector" -> VideoSelector.map { x => x.asInstanceOf[js.Any] },
+        "CaptionSelectors" -> CaptionSelectors.map { x => x.asInstanceOf[js.Any] },
+        "DeblockFilter" -> DeblockFilter.map { x => x.asInstanceOf[js.Any] },
         "DenoiseFilter" -> DenoiseFilter.map { x => x.asInstanceOf[js.Any] },
-        "AudioSelectorGroups" -> AudioSelectorGroups.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "FilterEnable" -> FilterEnable.map { x => x.asInstanceOf[js.Any] },
+        "FilterStrength" -> FilterStrength.map { x => x.asInstanceOf[js.Any] },
+        "ImageInserter" -> ImageInserter.map { x => x.asInstanceOf[js.Any] },
+        "InputClippings" -> InputClippings.map { x => x.asInstanceOf[js.Any] },
+        "ProgramNumber" -> ProgramNumber.map { x => x.asInstanceOf[js.Any] },
+        "PsiControl" -> PsiControl.map { x => x.asInstanceOf[js.Any] },
+        "TimecodeSource" -> TimecodeSource.map { x => x.asInstanceOf[js.Any] },
+        "VideoSelector" -> VideoSelector.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[InputTemplate]
     }
@@ -4447,44 +4447,44 @@ package mediaconvert {
    */
   @js.native
   trait InsertableImage extends js.Object {
-    var ImageY: js.UndefOr[__integerMin0Max2147483647]
     var Duration: js.UndefOr[__integerMin0Max2147483647]
-    var Width: js.UndefOr[__integerMin0Max2147483647]
-    var Layer: js.UndefOr[__integerMin0Max99]
-    var ImageX: js.UndefOr[__integerMin0Max2147483647]
-    var StartTime: js.UndefOr[__stringPattern01D20305D205D]
-    var Opacity: js.UndefOr[__integerMin0Max100]
     var FadeIn: js.UndefOr[__integerMin0Max2147483647]
     var FadeOut: js.UndefOr[__integerMin0Max2147483647]
     var Height: js.UndefOr[__integerMin0Max2147483647]
     var ImageInserterInput: js.UndefOr[__stringMin14PatternS3BmpBMPPngPNGTgaTGA]
+    var ImageX: js.UndefOr[__integerMin0Max2147483647]
+    var ImageY: js.UndefOr[__integerMin0Max2147483647]
+    var Layer: js.UndefOr[__integerMin0Max99]
+    var Opacity: js.UndefOr[__integerMin0Max100]
+    var StartTime: js.UndefOr[__stringPattern01D20305D205D]
+    var Width: js.UndefOr[__integerMin0Max2147483647]
   }
 
   object InsertableImage {
     def apply(
-      ImageY: js.UndefOr[__integerMin0Max2147483647] = js.undefined,
       Duration: js.UndefOr[__integerMin0Max2147483647] = js.undefined,
-      Width: js.UndefOr[__integerMin0Max2147483647] = js.undefined,
-      Layer: js.UndefOr[__integerMin0Max99] = js.undefined,
-      ImageX: js.UndefOr[__integerMin0Max2147483647] = js.undefined,
-      StartTime: js.UndefOr[__stringPattern01D20305D205D] = js.undefined,
-      Opacity: js.UndefOr[__integerMin0Max100] = js.undefined,
       FadeIn: js.UndefOr[__integerMin0Max2147483647] = js.undefined,
       FadeOut: js.UndefOr[__integerMin0Max2147483647] = js.undefined,
       Height: js.UndefOr[__integerMin0Max2147483647] = js.undefined,
-      ImageInserterInput: js.UndefOr[__stringMin14PatternS3BmpBMPPngPNGTgaTGA] = js.undefined): InsertableImage = {
+      ImageInserterInput: js.UndefOr[__stringMin14PatternS3BmpBMPPngPNGTgaTGA] = js.undefined,
+      ImageX: js.UndefOr[__integerMin0Max2147483647] = js.undefined,
+      ImageY: js.UndefOr[__integerMin0Max2147483647] = js.undefined,
+      Layer: js.UndefOr[__integerMin0Max99] = js.undefined,
+      Opacity: js.UndefOr[__integerMin0Max100] = js.undefined,
+      StartTime: js.UndefOr[__stringPattern01D20305D205D] = js.undefined,
+      Width: js.UndefOr[__integerMin0Max2147483647] = js.undefined): InsertableImage = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ImageY" -> ImageY.map { x => x.asInstanceOf[js.Any] },
         "Duration" -> Duration.map { x => x.asInstanceOf[js.Any] },
-        "Width" -> Width.map { x => x.asInstanceOf[js.Any] },
-        "Layer" -> Layer.map { x => x.asInstanceOf[js.Any] },
-        "ImageX" -> ImageX.map { x => x.asInstanceOf[js.Any] },
-        "StartTime" -> StartTime.map { x => x.asInstanceOf[js.Any] },
-        "Opacity" -> Opacity.map { x => x.asInstanceOf[js.Any] },
         "FadeIn" -> FadeIn.map { x => x.asInstanceOf[js.Any] },
         "FadeOut" -> FadeOut.map { x => x.asInstanceOf[js.Any] },
         "Height" -> Height.map { x => x.asInstanceOf[js.Any] },
-        "ImageInserterInput" -> ImageInserterInput.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ImageInserterInput" -> ImageInserterInput.map { x => x.asInstanceOf[js.Any] },
+        "ImageX" -> ImageX.map { x => x.asInstanceOf[js.Any] },
+        "ImageY" -> ImageY.map { x => x.asInstanceOf[js.Any] },
+        "Layer" -> Layer.map { x => x.asInstanceOf[js.Any] },
+        "Opacity" -> Opacity.map { x => x.asInstanceOf[js.Any] },
+        "StartTime" -> StartTime.map { x => x.asInstanceOf[js.Any] },
+        "Width" -> Width.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[InsertableImage]
     }
@@ -4495,53 +4495,53 @@ package mediaconvert {
    */
   @js.native
   trait Job extends js.Object {
-    var Id: js.UndefOr[__string]
-    var Settings: js.UndefOr[JobSettings]
-    var Role: js.UndefOr[__string]
-    var UserMetadata: js.UndefOr[__mapOf__string]
-    var ErrorCode: js.UndefOr[__integer]
-    var OutputGroupDetails: js.UndefOr[__listOfOutputGroupDetail]
+    var Role: __string
+    var Settings: JobSettings
     var Arn: js.UndefOr[__string]
-    var Queue: js.UndefOr[__string]
-    var Timing: js.UndefOr[Timing]
-    var CreatedAt: js.UndefOr[__timestampUnix]
     var BillingTagsSource: js.UndefOr[BillingTagsSource]
+    var CreatedAt: js.UndefOr[__timestampUnix]
+    var ErrorCode: js.UndefOr[__integer]
     var ErrorMessage: js.UndefOr[__string]
+    var Id: js.UndefOr[__string]
     var JobTemplate: js.UndefOr[__string]
+    var OutputGroupDetails: js.UndefOr[__listOfOutputGroupDetail]
+    var Queue: js.UndefOr[__string]
     var Status: js.UndefOr[JobStatus]
+    var Timing: js.UndefOr[Timing]
+    var UserMetadata: js.UndefOr[__mapOf__string]
   }
 
   object Job {
     def apply(
-      Id: js.UndefOr[__string] = js.undefined,
-      Settings: js.UndefOr[JobSettings] = js.undefined,
-      Role: js.UndefOr[__string] = js.undefined,
-      UserMetadata: js.UndefOr[__mapOf__string] = js.undefined,
-      ErrorCode: js.UndefOr[__integer] = js.undefined,
-      OutputGroupDetails: js.UndefOr[__listOfOutputGroupDetail] = js.undefined,
+      Role: __string,
+      Settings: JobSettings,
       Arn: js.UndefOr[__string] = js.undefined,
-      Queue: js.UndefOr[__string] = js.undefined,
-      Timing: js.UndefOr[Timing] = js.undefined,
-      CreatedAt: js.UndefOr[__timestampUnix] = js.undefined,
       BillingTagsSource: js.UndefOr[BillingTagsSource] = js.undefined,
+      CreatedAt: js.UndefOr[__timestampUnix] = js.undefined,
+      ErrorCode: js.UndefOr[__integer] = js.undefined,
       ErrorMessage: js.UndefOr[__string] = js.undefined,
+      Id: js.UndefOr[__string] = js.undefined,
       JobTemplate: js.UndefOr[__string] = js.undefined,
-      Status: js.UndefOr[JobStatus] = js.undefined): Job = {
+      OutputGroupDetails: js.UndefOr[__listOfOutputGroupDetail] = js.undefined,
+      Queue: js.UndefOr[__string] = js.undefined,
+      Status: js.UndefOr[JobStatus] = js.undefined,
+      Timing: js.UndefOr[Timing] = js.undefined,
+      UserMetadata: js.UndefOr[__mapOf__string] = js.undefined): Job = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Id" -> Id.map { x => x.asInstanceOf[js.Any] },
-        "Settings" -> Settings.map { x => x.asInstanceOf[js.Any] },
-        "Role" -> Role.map { x => x.asInstanceOf[js.Any] },
-        "UserMetadata" -> UserMetadata.map { x => x.asInstanceOf[js.Any] },
-        "ErrorCode" -> ErrorCode.map { x => x.asInstanceOf[js.Any] },
-        "OutputGroupDetails" -> OutputGroupDetails.map { x => x.asInstanceOf[js.Any] },
+        "Role" -> Role.asInstanceOf[js.Any],
+        "Settings" -> Settings.asInstanceOf[js.Any],
         "Arn" -> Arn.map { x => x.asInstanceOf[js.Any] },
-        "Queue" -> Queue.map { x => x.asInstanceOf[js.Any] },
-        "Timing" -> Timing.map { x => x.asInstanceOf[js.Any] },
-        "CreatedAt" -> CreatedAt.map { x => x.asInstanceOf[js.Any] },
         "BillingTagsSource" -> BillingTagsSource.map { x => x.asInstanceOf[js.Any] },
+        "CreatedAt" -> CreatedAt.map { x => x.asInstanceOf[js.Any] },
+        "ErrorCode" -> ErrorCode.map { x => x.asInstanceOf[js.Any] },
         "ErrorMessage" -> ErrorMessage.map { x => x.asInstanceOf[js.Any] },
+        "Id" -> Id.map { x => x.asInstanceOf[js.Any] },
         "JobTemplate" -> JobTemplate.map { x => x.asInstanceOf[js.Any] },
-        "Status" -> Status.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "OutputGroupDetails" -> OutputGroupDetails.map { x => x.asInstanceOf[js.Any] },
+        "Queue" -> Queue.map { x => x.asInstanceOf[js.Any] },
+        "Status" -> Status.map { x => x.asInstanceOf[js.Any] },
+        "Timing" -> Timing.map { x => x.asInstanceOf[js.Any] },
+        "UserMetadata" -> UserMetadata.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Job]
     }
@@ -4552,35 +4552,35 @@ package mediaconvert {
    */
   @js.native
   trait JobSettings extends js.Object {
+    var AdAvailOffset: js.UndefOr[__integerMinNegative1000Max1000]
     var AvailBlanking: js.UndefOr[AvailBlanking]
-    var NielsenConfiguration: js.UndefOr[NielsenConfiguration]
-    var TimedMetadataInsertion: js.UndefOr[TimedMetadataInsertion]
     var Inputs: js.UndefOr[__listOfInput]
     var MotionImageInserter: js.UndefOr[MotionImageInserter]
-    var TimecodeConfig: js.UndefOr[TimecodeConfig]
-    var AdAvailOffset: js.UndefOr[__integerMinNegative1000Max1000]
+    var NielsenConfiguration: js.UndefOr[NielsenConfiguration]
     var OutputGroups: js.UndefOr[__listOfOutputGroup]
+    var TimecodeConfig: js.UndefOr[TimecodeConfig]
+    var TimedMetadataInsertion: js.UndefOr[TimedMetadataInsertion]
   }
 
   object JobSettings {
     def apply(
+      AdAvailOffset: js.UndefOr[__integerMinNegative1000Max1000] = js.undefined,
       AvailBlanking: js.UndefOr[AvailBlanking] = js.undefined,
-      NielsenConfiguration: js.UndefOr[NielsenConfiguration] = js.undefined,
-      TimedMetadataInsertion: js.UndefOr[TimedMetadataInsertion] = js.undefined,
       Inputs: js.UndefOr[__listOfInput] = js.undefined,
       MotionImageInserter: js.UndefOr[MotionImageInserter] = js.undefined,
+      NielsenConfiguration: js.UndefOr[NielsenConfiguration] = js.undefined,
+      OutputGroups: js.UndefOr[__listOfOutputGroup] = js.undefined,
       TimecodeConfig: js.UndefOr[TimecodeConfig] = js.undefined,
-      AdAvailOffset: js.UndefOr[__integerMinNegative1000Max1000] = js.undefined,
-      OutputGroups: js.UndefOr[__listOfOutputGroup] = js.undefined): JobSettings = {
+      TimedMetadataInsertion: js.UndefOr[TimedMetadataInsertion] = js.undefined): JobSettings = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "AdAvailOffset" -> AdAvailOffset.map { x => x.asInstanceOf[js.Any] },
         "AvailBlanking" -> AvailBlanking.map { x => x.asInstanceOf[js.Any] },
-        "NielsenConfiguration" -> NielsenConfiguration.map { x => x.asInstanceOf[js.Any] },
-        "TimedMetadataInsertion" -> TimedMetadataInsertion.map { x => x.asInstanceOf[js.Any] },
         "Inputs" -> Inputs.map { x => x.asInstanceOf[js.Any] },
         "MotionImageInserter" -> MotionImageInserter.map { x => x.asInstanceOf[js.Any] },
+        "NielsenConfiguration" -> NielsenConfiguration.map { x => x.asInstanceOf[js.Any] },
+        "OutputGroups" -> OutputGroups.map { x => x.asInstanceOf[js.Any] },
         "TimecodeConfig" -> TimecodeConfig.map { x => x.asInstanceOf[js.Any] },
-        "AdAvailOffset" -> AdAvailOffset.map { x => x.asInstanceOf[js.Any] },
-        "OutputGroups" -> OutputGroups.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "TimedMetadataInsertion" -> TimedMetadataInsertion.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[JobSettings]
     }
@@ -4604,37 +4604,37 @@ package mediaconvert {
    */
   @js.native
   trait JobTemplate extends js.Object {
-    var Settings: js.UndefOr[JobTemplateSettings]
-    var Name: js.UndefOr[__string]
-    var Category: js.UndefOr[__string]
-    var LastUpdated: js.UndefOr[__timestampUnix]
-    var Description: js.UndefOr[__string]
+    var Name: __string
+    var Settings: JobTemplateSettings
     var Arn: js.UndefOr[__string]
-    var Queue: js.UndefOr[__string]
+    var Category: js.UndefOr[__string]
     var CreatedAt: js.UndefOr[__timestampUnix]
+    var Description: js.UndefOr[__string]
+    var LastUpdated: js.UndefOr[__timestampUnix]
+    var Queue: js.UndefOr[__string]
     var Type: js.UndefOr[Type]
   }
 
   object JobTemplate {
     def apply(
-      Settings: js.UndefOr[JobTemplateSettings] = js.undefined,
-      Name: js.UndefOr[__string] = js.undefined,
-      Category: js.UndefOr[__string] = js.undefined,
-      LastUpdated: js.UndefOr[__timestampUnix] = js.undefined,
-      Description: js.UndefOr[__string] = js.undefined,
+      Name: __string,
+      Settings: JobTemplateSettings,
       Arn: js.UndefOr[__string] = js.undefined,
-      Queue: js.UndefOr[__string] = js.undefined,
+      Category: js.UndefOr[__string] = js.undefined,
       CreatedAt: js.UndefOr[__timestampUnix] = js.undefined,
+      Description: js.UndefOr[__string] = js.undefined,
+      LastUpdated: js.UndefOr[__timestampUnix] = js.undefined,
+      Queue: js.UndefOr[__string] = js.undefined,
       Type: js.UndefOr[Type] = js.undefined): JobTemplate = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Settings" -> Settings.map { x => x.asInstanceOf[js.Any] },
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
-        "Category" -> Category.map { x => x.asInstanceOf[js.Any] },
-        "LastUpdated" -> LastUpdated.map { x => x.asInstanceOf[js.Any] },
-        "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
+        "Name" -> Name.asInstanceOf[js.Any],
+        "Settings" -> Settings.asInstanceOf[js.Any],
         "Arn" -> Arn.map { x => x.asInstanceOf[js.Any] },
-        "Queue" -> Queue.map { x => x.asInstanceOf[js.Any] },
+        "Category" -> Category.map { x => x.asInstanceOf[js.Any] },
         "CreatedAt" -> CreatedAt.map { x => x.asInstanceOf[js.Any] },
+        "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
+        "LastUpdated" -> LastUpdated.map { x => x.asInstanceOf[js.Any] },
+        "Queue" -> Queue.map { x => x.asInstanceOf[js.Any] },
         "Type" -> Type.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[JobTemplate]
@@ -4657,35 +4657,35 @@ package mediaconvert {
    */
   @js.native
   trait JobTemplateSettings extends js.Object {
+    var AdAvailOffset: js.UndefOr[__integerMinNegative1000Max1000]
     var AvailBlanking: js.UndefOr[AvailBlanking]
-    var NielsenConfiguration: js.UndefOr[NielsenConfiguration]
-    var TimedMetadataInsertion: js.UndefOr[TimedMetadataInsertion]
     var Inputs: js.UndefOr[__listOfInputTemplate]
     var MotionImageInserter: js.UndefOr[MotionImageInserter]
-    var TimecodeConfig: js.UndefOr[TimecodeConfig]
-    var AdAvailOffset: js.UndefOr[__integerMinNegative1000Max1000]
+    var NielsenConfiguration: js.UndefOr[NielsenConfiguration]
     var OutputGroups: js.UndefOr[__listOfOutputGroup]
+    var TimecodeConfig: js.UndefOr[TimecodeConfig]
+    var TimedMetadataInsertion: js.UndefOr[TimedMetadataInsertion]
   }
 
   object JobTemplateSettings {
     def apply(
+      AdAvailOffset: js.UndefOr[__integerMinNegative1000Max1000] = js.undefined,
       AvailBlanking: js.UndefOr[AvailBlanking] = js.undefined,
-      NielsenConfiguration: js.UndefOr[NielsenConfiguration] = js.undefined,
-      TimedMetadataInsertion: js.UndefOr[TimedMetadataInsertion] = js.undefined,
       Inputs: js.UndefOr[__listOfInputTemplate] = js.undefined,
       MotionImageInserter: js.UndefOr[MotionImageInserter] = js.undefined,
+      NielsenConfiguration: js.UndefOr[NielsenConfiguration] = js.undefined,
+      OutputGroups: js.UndefOr[__listOfOutputGroup] = js.undefined,
       TimecodeConfig: js.UndefOr[TimecodeConfig] = js.undefined,
-      AdAvailOffset: js.UndefOr[__integerMinNegative1000Max1000] = js.undefined,
-      OutputGroups: js.UndefOr[__listOfOutputGroup] = js.undefined): JobTemplateSettings = {
+      TimedMetadataInsertion: js.UndefOr[TimedMetadataInsertion] = js.undefined): JobTemplateSettings = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "AdAvailOffset" -> AdAvailOffset.map { x => x.asInstanceOf[js.Any] },
         "AvailBlanking" -> AvailBlanking.map { x => x.asInstanceOf[js.Any] },
-        "NielsenConfiguration" -> NielsenConfiguration.map { x => x.asInstanceOf[js.Any] },
-        "TimedMetadataInsertion" -> TimedMetadataInsertion.map { x => x.asInstanceOf[js.Any] },
         "Inputs" -> Inputs.map { x => x.asInstanceOf[js.Any] },
         "MotionImageInserter" -> MotionImageInserter.map { x => x.asInstanceOf[js.Any] },
+        "NielsenConfiguration" -> NielsenConfiguration.map { x => x.asInstanceOf[js.Any] },
+        "OutputGroups" -> OutputGroups.map { x => x.asInstanceOf[js.Any] },
         "TimecodeConfig" -> TimecodeConfig.map { x => x.asInstanceOf[js.Any] },
-        "AdAvailOffset" -> AdAvailOffset.map { x => x.asInstanceOf[js.Any] },
-        "OutputGroups" -> OutputGroups.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "TimedMetadataInsertion" -> TimedMetadataInsertion.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[JobTemplateSettings]
     }
@@ -4892,26 +4892,26 @@ package mediaconvert {
 
   @js.native
   trait ListJobTemplatesRequest extends js.Object {
-    var ListBy: js.UndefOr[JobTemplateListBy]
     var Category: js.UndefOr[__string]
+    var ListBy: js.UndefOr[JobTemplateListBy]
     var MaxResults: js.UndefOr[__integerMin1Max20]
-    var Order: js.UndefOr[Order]
     var NextToken: js.UndefOr[__string]
+    var Order: js.UndefOr[Order]
   }
 
   object ListJobTemplatesRequest {
     def apply(
-      ListBy: js.UndefOr[JobTemplateListBy] = js.undefined,
       Category: js.UndefOr[__string] = js.undefined,
+      ListBy: js.UndefOr[JobTemplateListBy] = js.undefined,
       MaxResults: js.UndefOr[__integerMin1Max20] = js.undefined,
-      Order: js.UndefOr[Order] = js.undefined,
-      NextToken: js.UndefOr[__string] = js.undefined): ListJobTemplatesRequest = {
+      NextToken: js.UndefOr[__string] = js.undefined,
+      Order: js.UndefOr[Order] = js.undefined): ListJobTemplatesRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ListBy" -> ListBy.map { x => x.asInstanceOf[js.Any] },
         "Category" -> Category.map { x => x.asInstanceOf[js.Any] },
+        "ListBy" -> ListBy.map { x => x.asInstanceOf[js.Any] },
         "MaxResults" -> MaxResults.map { x => x.asInstanceOf[js.Any] },
-        "Order" -> Order.map { x => x.asInstanceOf[js.Any] },
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
+        "Order" -> Order.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListJobTemplatesRequest]
     }
@@ -4938,24 +4938,24 @@ package mediaconvert {
   @js.native
   trait ListJobsRequest extends js.Object {
     var MaxResults: js.UndefOr[__integerMin1Max20]
-    var Queue: js.UndefOr[__string]
-    var Order: js.UndefOr[Order]
     var NextToken: js.UndefOr[__string]
+    var Order: js.UndefOr[Order]
+    var Queue: js.UndefOr[__string]
     var Status: js.UndefOr[JobStatus]
   }
 
   object ListJobsRequest {
     def apply(
       MaxResults: js.UndefOr[__integerMin1Max20] = js.undefined,
-      Queue: js.UndefOr[__string] = js.undefined,
-      Order: js.UndefOr[Order] = js.undefined,
       NextToken: js.UndefOr[__string] = js.undefined,
+      Order: js.UndefOr[Order] = js.undefined,
+      Queue: js.UndefOr[__string] = js.undefined,
       Status: js.UndefOr[JobStatus] = js.undefined): ListJobsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "MaxResults" -> MaxResults.map { x => x.asInstanceOf[js.Any] },
-        "Queue" -> Queue.map { x => x.asInstanceOf[js.Any] },
-        "Order" -> Order.map { x => x.asInstanceOf[js.Any] },
         "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
+        "Order" -> Order.map { x => x.asInstanceOf[js.Any] },
+        "Queue" -> Queue.map { x => x.asInstanceOf[js.Any] },
         "Status" -> Status.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListJobsRequest]
@@ -4982,26 +4982,26 @@ package mediaconvert {
 
   @js.native
   trait ListPresetsRequest extends js.Object {
-    var ListBy: js.UndefOr[PresetListBy]
     var Category: js.UndefOr[__string]
+    var ListBy: js.UndefOr[PresetListBy]
     var MaxResults: js.UndefOr[__integerMin1Max20]
-    var Order: js.UndefOr[Order]
     var NextToken: js.UndefOr[__string]
+    var Order: js.UndefOr[Order]
   }
 
   object ListPresetsRequest {
     def apply(
-      ListBy: js.UndefOr[PresetListBy] = js.undefined,
       Category: js.UndefOr[__string] = js.undefined,
+      ListBy: js.UndefOr[PresetListBy] = js.undefined,
       MaxResults: js.UndefOr[__integerMin1Max20] = js.undefined,
-      Order: js.UndefOr[Order] = js.undefined,
-      NextToken: js.UndefOr[__string] = js.undefined): ListPresetsRequest = {
+      NextToken: js.UndefOr[__string] = js.undefined,
+      Order: js.UndefOr[Order] = js.undefined): ListPresetsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ListBy" -> ListBy.map { x => x.asInstanceOf[js.Any] },
         "Category" -> Category.map { x => x.asInstanceOf[js.Any] },
+        "ListBy" -> ListBy.map { x => x.asInstanceOf[js.Any] },
         "MaxResults" -> MaxResults.map { x => x.asInstanceOf[js.Any] },
-        "Order" -> Order.map { x => x.asInstanceOf[js.Any] },
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
+        "Order" -> Order.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListPresetsRequest]
     }
@@ -5069,14 +5069,14 @@ package mediaconvert {
 
   @js.native
   trait ListTagsForResourceRequest extends js.Object {
-    var Arn: js.UndefOr[__string]
+    var Arn: __string
   }
 
   object ListTagsForResourceRequest {
     def apply(
-      Arn: js.UndefOr[__string] = js.undefined): ListTagsForResourceRequest = {
+      Arn: __string): ListTagsForResourceRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Arn" -> Arn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Arn" -> Arn.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListTagsForResourceRequest]
     }
@@ -5216,113 +5216,113 @@ package mediaconvert {
    */
   @js.native
   trait M2tsSettings extends js.Object {
-    var PcrControl: js.UndefOr[M2tsPcrControl]
     var AudioBufferModel: js.UndefOr[M2tsAudioBufferModel]
-    var BufferModel: js.UndefOr[M2tsBufferModel]
-    var PmtInterval: js.UndefOr[__integerMin0Max1000]
-    var NullPacketBitrate: js.UndefOr[__doubleMin0]
-    var EbpPlacement: js.UndefOr[M2tsEbpPlacement]
-    var DvbSubPids: js.UndefOr[__listOf__integerMin32Max8182]
-    var SegmentationTime: js.UndefOr[__doubleMin0]
-    var PcrPid: js.UndefOr[__integerMin32Max8182]
-    var SegmentationMarkers: js.UndefOr[M2tsSegmentationMarkers]
-    var Scte35Source: js.UndefOr[M2tsScte35Source]
     var AudioFramesPerPes: js.UndefOr[__integerMin0Max2147483647]
-    var SegmentationStyle: js.UndefOr[M2tsSegmentationStyle]
-    var NielsenId3: js.UndefOr[M2tsNielsenId3]
-    var PatInterval: js.UndefOr[__integerMin0Max1000]
-    var DvbTeletextPid: js.UndefOr[__integerMin32Max8182]
-    var VideoPid: js.UndefOr[__integerMin32Max8182]
-    var DvbNitSettings: js.UndefOr[DvbNitSettings]
-    var PrivateMetadataPid: js.UndefOr[__integerMin32Max8182]
-    var TimedMetadataPid: js.UndefOr[__integerMin32Max8182]
-    var Bitrate: js.UndefOr[__integerMin0Max2147483647]
-    var EsRateInPes: js.UndefOr[M2tsEsRateInPes]
-    var Scte35Pid: js.UndefOr[__integerMin32Max8182]
-    var EbpAudioInterval: js.UndefOr[M2tsEbpAudioInterval]
-    var PmtPid: js.UndefOr[__integerMin32Max8182]
-    var FragmentTime: js.UndefOr[__doubleMin0]
-    var MinEbpInterval: js.UndefOr[__integerMin0Max10000]
-    var MaxPcrInterval: js.UndefOr[__integerMin0Max500]
-    var RateMode: js.UndefOr[M2tsRateMode]
     var AudioPids: js.UndefOr[__listOf__integerMin32Max8182]
-    var DvbTdtSettings: js.UndefOr[DvbTdtSettings]
-    var ProgramNumber: js.UndefOr[__integerMin0Max65535]
+    var Bitrate: js.UndefOr[__integerMin0Max2147483647]
+    var BufferModel: js.UndefOr[M2tsBufferModel]
+    var DvbNitSettings: js.UndefOr[DvbNitSettings]
     var DvbSdtSettings: js.UndefOr[DvbSdtSettings]
+    var DvbSubPids: js.UndefOr[__listOf__integerMin32Max8182]
+    var DvbTdtSettings: js.UndefOr[DvbTdtSettings]
+    var DvbTeletextPid: js.UndefOr[__integerMin32Max8182]
+    var EbpAudioInterval: js.UndefOr[M2tsEbpAudioInterval]
+    var EbpPlacement: js.UndefOr[M2tsEbpPlacement]
+    var EsRateInPes: js.UndefOr[M2tsEsRateInPes]
+    var FragmentTime: js.UndefOr[__doubleMin0]
+    var MaxPcrInterval: js.UndefOr[__integerMin0Max500]
+    var MinEbpInterval: js.UndefOr[__integerMin0Max10000]
+    var NielsenId3: js.UndefOr[M2tsNielsenId3]
+    var NullPacketBitrate: js.UndefOr[__doubleMin0]
+    var PatInterval: js.UndefOr[__integerMin0Max1000]
+    var PcrControl: js.UndefOr[M2tsPcrControl]
+    var PcrPid: js.UndefOr[__integerMin32Max8182]
+    var PmtInterval: js.UndefOr[__integerMin0Max1000]
+    var PmtPid: js.UndefOr[__integerMin32Max8182]
+    var PrivateMetadataPid: js.UndefOr[__integerMin32Max8182]
+    var ProgramNumber: js.UndefOr[__integerMin0Max65535]
+    var RateMode: js.UndefOr[M2tsRateMode]
+    var Scte35Pid: js.UndefOr[__integerMin32Max8182]
+    var Scte35Source: js.UndefOr[M2tsScte35Source]
+    var SegmentationMarkers: js.UndefOr[M2tsSegmentationMarkers]
+    var SegmentationStyle: js.UndefOr[M2tsSegmentationStyle]
+    var SegmentationTime: js.UndefOr[__doubleMin0]
+    var TimedMetadataPid: js.UndefOr[__integerMin32Max8182]
     var TransportStreamId: js.UndefOr[__integerMin0Max65535]
+    var VideoPid: js.UndefOr[__integerMin32Max8182]
   }
 
   object M2tsSettings {
     def apply(
-      PcrControl: js.UndefOr[M2tsPcrControl] = js.undefined,
       AudioBufferModel: js.UndefOr[M2tsAudioBufferModel] = js.undefined,
-      BufferModel: js.UndefOr[M2tsBufferModel] = js.undefined,
-      PmtInterval: js.UndefOr[__integerMin0Max1000] = js.undefined,
-      NullPacketBitrate: js.UndefOr[__doubleMin0] = js.undefined,
-      EbpPlacement: js.UndefOr[M2tsEbpPlacement] = js.undefined,
-      DvbSubPids: js.UndefOr[__listOf__integerMin32Max8182] = js.undefined,
-      SegmentationTime: js.UndefOr[__doubleMin0] = js.undefined,
-      PcrPid: js.UndefOr[__integerMin32Max8182] = js.undefined,
-      SegmentationMarkers: js.UndefOr[M2tsSegmentationMarkers] = js.undefined,
-      Scte35Source: js.UndefOr[M2tsScte35Source] = js.undefined,
       AudioFramesPerPes: js.UndefOr[__integerMin0Max2147483647] = js.undefined,
-      SegmentationStyle: js.UndefOr[M2tsSegmentationStyle] = js.undefined,
-      NielsenId3: js.UndefOr[M2tsNielsenId3] = js.undefined,
-      PatInterval: js.UndefOr[__integerMin0Max1000] = js.undefined,
-      DvbTeletextPid: js.UndefOr[__integerMin32Max8182] = js.undefined,
-      VideoPid: js.UndefOr[__integerMin32Max8182] = js.undefined,
-      DvbNitSettings: js.UndefOr[DvbNitSettings] = js.undefined,
-      PrivateMetadataPid: js.UndefOr[__integerMin32Max8182] = js.undefined,
-      TimedMetadataPid: js.UndefOr[__integerMin32Max8182] = js.undefined,
-      Bitrate: js.UndefOr[__integerMin0Max2147483647] = js.undefined,
-      EsRateInPes: js.UndefOr[M2tsEsRateInPes] = js.undefined,
-      Scte35Pid: js.UndefOr[__integerMin32Max8182] = js.undefined,
-      EbpAudioInterval: js.UndefOr[M2tsEbpAudioInterval] = js.undefined,
-      PmtPid: js.UndefOr[__integerMin32Max8182] = js.undefined,
-      FragmentTime: js.UndefOr[__doubleMin0] = js.undefined,
-      MinEbpInterval: js.UndefOr[__integerMin0Max10000] = js.undefined,
-      MaxPcrInterval: js.UndefOr[__integerMin0Max500] = js.undefined,
-      RateMode: js.UndefOr[M2tsRateMode] = js.undefined,
       AudioPids: js.UndefOr[__listOf__integerMin32Max8182] = js.undefined,
-      DvbTdtSettings: js.UndefOr[DvbTdtSettings] = js.undefined,
-      ProgramNumber: js.UndefOr[__integerMin0Max65535] = js.undefined,
+      Bitrate: js.UndefOr[__integerMin0Max2147483647] = js.undefined,
+      BufferModel: js.UndefOr[M2tsBufferModel] = js.undefined,
+      DvbNitSettings: js.UndefOr[DvbNitSettings] = js.undefined,
       DvbSdtSettings: js.UndefOr[DvbSdtSettings] = js.undefined,
-      TransportStreamId: js.UndefOr[__integerMin0Max65535] = js.undefined): M2tsSettings = {
+      DvbSubPids: js.UndefOr[__listOf__integerMin32Max8182] = js.undefined,
+      DvbTdtSettings: js.UndefOr[DvbTdtSettings] = js.undefined,
+      DvbTeletextPid: js.UndefOr[__integerMin32Max8182] = js.undefined,
+      EbpAudioInterval: js.UndefOr[M2tsEbpAudioInterval] = js.undefined,
+      EbpPlacement: js.UndefOr[M2tsEbpPlacement] = js.undefined,
+      EsRateInPes: js.UndefOr[M2tsEsRateInPes] = js.undefined,
+      FragmentTime: js.UndefOr[__doubleMin0] = js.undefined,
+      MaxPcrInterval: js.UndefOr[__integerMin0Max500] = js.undefined,
+      MinEbpInterval: js.UndefOr[__integerMin0Max10000] = js.undefined,
+      NielsenId3: js.UndefOr[M2tsNielsenId3] = js.undefined,
+      NullPacketBitrate: js.UndefOr[__doubleMin0] = js.undefined,
+      PatInterval: js.UndefOr[__integerMin0Max1000] = js.undefined,
+      PcrControl: js.UndefOr[M2tsPcrControl] = js.undefined,
+      PcrPid: js.UndefOr[__integerMin32Max8182] = js.undefined,
+      PmtInterval: js.UndefOr[__integerMin0Max1000] = js.undefined,
+      PmtPid: js.UndefOr[__integerMin32Max8182] = js.undefined,
+      PrivateMetadataPid: js.UndefOr[__integerMin32Max8182] = js.undefined,
+      ProgramNumber: js.UndefOr[__integerMin0Max65535] = js.undefined,
+      RateMode: js.UndefOr[M2tsRateMode] = js.undefined,
+      Scte35Pid: js.UndefOr[__integerMin32Max8182] = js.undefined,
+      Scte35Source: js.UndefOr[M2tsScte35Source] = js.undefined,
+      SegmentationMarkers: js.UndefOr[M2tsSegmentationMarkers] = js.undefined,
+      SegmentationStyle: js.UndefOr[M2tsSegmentationStyle] = js.undefined,
+      SegmentationTime: js.UndefOr[__doubleMin0] = js.undefined,
+      TimedMetadataPid: js.UndefOr[__integerMin32Max8182] = js.undefined,
+      TransportStreamId: js.UndefOr[__integerMin0Max65535] = js.undefined,
+      VideoPid: js.UndefOr[__integerMin32Max8182] = js.undefined): M2tsSettings = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "PcrControl" -> PcrControl.map { x => x.asInstanceOf[js.Any] },
         "AudioBufferModel" -> AudioBufferModel.map { x => x.asInstanceOf[js.Any] },
-        "BufferModel" -> BufferModel.map { x => x.asInstanceOf[js.Any] },
-        "PmtInterval" -> PmtInterval.map { x => x.asInstanceOf[js.Any] },
-        "NullPacketBitrate" -> NullPacketBitrate.map { x => x.asInstanceOf[js.Any] },
-        "EbpPlacement" -> EbpPlacement.map { x => x.asInstanceOf[js.Any] },
-        "DvbSubPids" -> DvbSubPids.map { x => x.asInstanceOf[js.Any] },
-        "SegmentationTime" -> SegmentationTime.map { x => x.asInstanceOf[js.Any] },
-        "PcrPid" -> PcrPid.map { x => x.asInstanceOf[js.Any] },
-        "SegmentationMarkers" -> SegmentationMarkers.map { x => x.asInstanceOf[js.Any] },
-        "Scte35Source" -> Scte35Source.map { x => x.asInstanceOf[js.Any] },
         "AudioFramesPerPes" -> AudioFramesPerPes.map { x => x.asInstanceOf[js.Any] },
-        "SegmentationStyle" -> SegmentationStyle.map { x => x.asInstanceOf[js.Any] },
-        "NielsenId3" -> NielsenId3.map { x => x.asInstanceOf[js.Any] },
-        "PatInterval" -> PatInterval.map { x => x.asInstanceOf[js.Any] },
-        "DvbTeletextPid" -> DvbTeletextPid.map { x => x.asInstanceOf[js.Any] },
-        "VideoPid" -> VideoPid.map { x => x.asInstanceOf[js.Any] },
-        "DvbNitSettings" -> DvbNitSettings.map { x => x.asInstanceOf[js.Any] },
-        "PrivateMetadataPid" -> PrivateMetadataPid.map { x => x.asInstanceOf[js.Any] },
-        "TimedMetadataPid" -> TimedMetadataPid.map { x => x.asInstanceOf[js.Any] },
-        "Bitrate" -> Bitrate.map { x => x.asInstanceOf[js.Any] },
-        "EsRateInPes" -> EsRateInPes.map { x => x.asInstanceOf[js.Any] },
-        "Scte35Pid" -> Scte35Pid.map { x => x.asInstanceOf[js.Any] },
-        "EbpAudioInterval" -> EbpAudioInterval.map { x => x.asInstanceOf[js.Any] },
-        "PmtPid" -> PmtPid.map { x => x.asInstanceOf[js.Any] },
-        "FragmentTime" -> FragmentTime.map { x => x.asInstanceOf[js.Any] },
-        "MinEbpInterval" -> MinEbpInterval.map { x => x.asInstanceOf[js.Any] },
-        "MaxPcrInterval" -> MaxPcrInterval.map { x => x.asInstanceOf[js.Any] },
-        "RateMode" -> RateMode.map { x => x.asInstanceOf[js.Any] },
         "AudioPids" -> AudioPids.map { x => x.asInstanceOf[js.Any] },
-        "DvbTdtSettings" -> DvbTdtSettings.map { x => x.asInstanceOf[js.Any] },
-        "ProgramNumber" -> ProgramNumber.map { x => x.asInstanceOf[js.Any] },
+        "Bitrate" -> Bitrate.map { x => x.asInstanceOf[js.Any] },
+        "BufferModel" -> BufferModel.map { x => x.asInstanceOf[js.Any] },
+        "DvbNitSettings" -> DvbNitSettings.map { x => x.asInstanceOf[js.Any] },
         "DvbSdtSettings" -> DvbSdtSettings.map { x => x.asInstanceOf[js.Any] },
-        "TransportStreamId" -> TransportStreamId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "DvbSubPids" -> DvbSubPids.map { x => x.asInstanceOf[js.Any] },
+        "DvbTdtSettings" -> DvbTdtSettings.map { x => x.asInstanceOf[js.Any] },
+        "DvbTeletextPid" -> DvbTeletextPid.map { x => x.asInstanceOf[js.Any] },
+        "EbpAudioInterval" -> EbpAudioInterval.map { x => x.asInstanceOf[js.Any] },
+        "EbpPlacement" -> EbpPlacement.map { x => x.asInstanceOf[js.Any] },
+        "EsRateInPes" -> EsRateInPes.map { x => x.asInstanceOf[js.Any] },
+        "FragmentTime" -> FragmentTime.map { x => x.asInstanceOf[js.Any] },
+        "MaxPcrInterval" -> MaxPcrInterval.map { x => x.asInstanceOf[js.Any] },
+        "MinEbpInterval" -> MinEbpInterval.map { x => x.asInstanceOf[js.Any] },
+        "NielsenId3" -> NielsenId3.map { x => x.asInstanceOf[js.Any] },
+        "NullPacketBitrate" -> NullPacketBitrate.map { x => x.asInstanceOf[js.Any] },
+        "PatInterval" -> PatInterval.map { x => x.asInstanceOf[js.Any] },
+        "PcrControl" -> PcrControl.map { x => x.asInstanceOf[js.Any] },
+        "PcrPid" -> PcrPid.map { x => x.asInstanceOf[js.Any] },
+        "PmtInterval" -> PmtInterval.map { x => x.asInstanceOf[js.Any] },
+        "PmtPid" -> PmtPid.map { x => x.asInstanceOf[js.Any] },
+        "PrivateMetadataPid" -> PrivateMetadataPid.map { x => x.asInstanceOf[js.Any] },
+        "ProgramNumber" -> ProgramNumber.map { x => x.asInstanceOf[js.Any] },
+        "RateMode" -> RateMode.map { x => x.asInstanceOf[js.Any] },
+        "Scte35Pid" -> Scte35Pid.map { x => x.asInstanceOf[js.Any] },
+        "Scte35Source" -> Scte35Source.map { x => x.asInstanceOf[js.Any] },
+        "SegmentationMarkers" -> SegmentationMarkers.map { x => x.asInstanceOf[js.Any] },
+        "SegmentationStyle" -> SegmentationStyle.map { x => x.asInstanceOf[js.Any] },
+        "SegmentationTime" -> SegmentationTime.map { x => x.asInstanceOf[js.Any] },
+        "TimedMetadataPid" -> TimedMetadataPid.map { x => x.asInstanceOf[js.Any] },
+        "TransportStreamId" -> TransportStreamId.map { x => x.asInstanceOf[js.Any] },
+        "VideoPid" -> VideoPid.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[M2tsSettings]
     }
@@ -5363,59 +5363,59 @@ package mediaconvert {
    */
   @js.native
   trait M3u8Settings extends js.Object {
-    var PcrControl: js.UndefOr[M3u8PcrControl]
-    var PmtInterval: js.UndefOr[__integerMin0Max1000]
-    var PcrPid: js.UndefOr[__integerMin32Max8182]
-    var Scte35Source: js.UndefOr[M3u8Scte35Source]
     var AudioFramesPerPes: js.UndefOr[__integerMin0Max2147483647]
-    var TimedMetadata: js.UndefOr[TimedMetadata]
+    var AudioPids: js.UndefOr[__listOf__integerMin32Max8182]
     var NielsenId3: js.UndefOr[M3u8NielsenId3]
     var PatInterval: js.UndefOr[__integerMin0Max1000]
-    var VideoPid: js.UndefOr[__integerMin32Max8182]
-    var PrivateMetadataPid: js.UndefOr[__integerMin32Max8182]
-    var TimedMetadataPid: js.UndefOr[__integerMin32Max8182]
-    var Scte35Pid: js.UndefOr[__integerMin32Max8182]
+    var PcrControl: js.UndefOr[M3u8PcrControl]
+    var PcrPid: js.UndefOr[__integerMin32Max8182]
+    var PmtInterval: js.UndefOr[__integerMin0Max1000]
     var PmtPid: js.UndefOr[__integerMin32Max8182]
-    var AudioPids: js.UndefOr[__listOf__integerMin32Max8182]
+    var PrivateMetadataPid: js.UndefOr[__integerMin32Max8182]
     var ProgramNumber: js.UndefOr[__integerMin0Max65535]
+    var Scte35Pid: js.UndefOr[__integerMin32Max8182]
+    var Scte35Source: js.UndefOr[M3u8Scte35Source]
+    var TimedMetadata: js.UndefOr[TimedMetadata]
+    var TimedMetadataPid: js.UndefOr[__integerMin32Max8182]
     var TransportStreamId: js.UndefOr[__integerMin0Max65535]
+    var VideoPid: js.UndefOr[__integerMin32Max8182]
   }
 
   object M3u8Settings {
     def apply(
-      PcrControl: js.UndefOr[M3u8PcrControl] = js.undefined,
-      PmtInterval: js.UndefOr[__integerMin0Max1000] = js.undefined,
-      PcrPid: js.UndefOr[__integerMin32Max8182] = js.undefined,
-      Scte35Source: js.UndefOr[M3u8Scte35Source] = js.undefined,
       AudioFramesPerPes: js.UndefOr[__integerMin0Max2147483647] = js.undefined,
-      TimedMetadata: js.UndefOr[TimedMetadata] = js.undefined,
+      AudioPids: js.UndefOr[__listOf__integerMin32Max8182] = js.undefined,
       NielsenId3: js.UndefOr[M3u8NielsenId3] = js.undefined,
       PatInterval: js.UndefOr[__integerMin0Max1000] = js.undefined,
-      VideoPid: js.UndefOr[__integerMin32Max8182] = js.undefined,
-      PrivateMetadataPid: js.UndefOr[__integerMin32Max8182] = js.undefined,
-      TimedMetadataPid: js.UndefOr[__integerMin32Max8182] = js.undefined,
-      Scte35Pid: js.UndefOr[__integerMin32Max8182] = js.undefined,
+      PcrControl: js.UndefOr[M3u8PcrControl] = js.undefined,
+      PcrPid: js.UndefOr[__integerMin32Max8182] = js.undefined,
+      PmtInterval: js.UndefOr[__integerMin0Max1000] = js.undefined,
       PmtPid: js.UndefOr[__integerMin32Max8182] = js.undefined,
-      AudioPids: js.UndefOr[__listOf__integerMin32Max8182] = js.undefined,
+      PrivateMetadataPid: js.UndefOr[__integerMin32Max8182] = js.undefined,
       ProgramNumber: js.UndefOr[__integerMin0Max65535] = js.undefined,
-      TransportStreamId: js.UndefOr[__integerMin0Max65535] = js.undefined): M3u8Settings = {
+      Scte35Pid: js.UndefOr[__integerMin32Max8182] = js.undefined,
+      Scte35Source: js.UndefOr[M3u8Scte35Source] = js.undefined,
+      TimedMetadata: js.UndefOr[TimedMetadata] = js.undefined,
+      TimedMetadataPid: js.UndefOr[__integerMin32Max8182] = js.undefined,
+      TransportStreamId: js.UndefOr[__integerMin0Max65535] = js.undefined,
+      VideoPid: js.UndefOr[__integerMin32Max8182] = js.undefined): M3u8Settings = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "PcrControl" -> PcrControl.map { x => x.asInstanceOf[js.Any] },
-        "PmtInterval" -> PmtInterval.map { x => x.asInstanceOf[js.Any] },
-        "PcrPid" -> PcrPid.map { x => x.asInstanceOf[js.Any] },
-        "Scte35Source" -> Scte35Source.map { x => x.asInstanceOf[js.Any] },
         "AudioFramesPerPes" -> AudioFramesPerPes.map { x => x.asInstanceOf[js.Any] },
-        "TimedMetadata" -> TimedMetadata.map { x => x.asInstanceOf[js.Any] },
+        "AudioPids" -> AudioPids.map { x => x.asInstanceOf[js.Any] },
         "NielsenId3" -> NielsenId3.map { x => x.asInstanceOf[js.Any] },
         "PatInterval" -> PatInterval.map { x => x.asInstanceOf[js.Any] },
-        "VideoPid" -> VideoPid.map { x => x.asInstanceOf[js.Any] },
-        "PrivateMetadataPid" -> PrivateMetadataPid.map { x => x.asInstanceOf[js.Any] },
-        "TimedMetadataPid" -> TimedMetadataPid.map { x => x.asInstanceOf[js.Any] },
-        "Scte35Pid" -> Scte35Pid.map { x => x.asInstanceOf[js.Any] },
+        "PcrControl" -> PcrControl.map { x => x.asInstanceOf[js.Any] },
+        "PcrPid" -> PcrPid.map { x => x.asInstanceOf[js.Any] },
+        "PmtInterval" -> PmtInterval.map { x => x.asInstanceOf[js.Any] },
         "PmtPid" -> PmtPid.map { x => x.asInstanceOf[js.Any] },
-        "AudioPids" -> AudioPids.map { x => x.asInstanceOf[js.Any] },
+        "PrivateMetadataPid" -> PrivateMetadataPid.map { x => x.asInstanceOf[js.Any] },
         "ProgramNumber" -> ProgramNumber.map { x => x.asInstanceOf[js.Any] },
-        "TransportStreamId" -> TransportStreamId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Scte35Pid" -> Scte35Pid.map { x => x.asInstanceOf[js.Any] },
+        "Scte35Source" -> Scte35Source.map { x => x.asInstanceOf[js.Any] },
+        "TimedMetadata" -> TimedMetadata.map { x => x.asInstanceOf[js.Any] },
+        "TimedMetadataPid" -> TimedMetadataPid.map { x => x.asInstanceOf[js.Any] },
+        "TransportStreamId" -> TransportStreamId.map { x => x.asInstanceOf[js.Any] },
+        "VideoPid" -> VideoPid.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[M3u8Settings]
     }
@@ -5426,29 +5426,29 @@ package mediaconvert {
    */
   @js.native
   trait MotionImageInserter extends js.Object {
-    var Playback: js.UndefOr[MotionImagePlayback]
-    var StartTime: js.UndefOr[__stringMin11Max11Pattern01D20305D205D]
+    var Framerate: js.UndefOr[MotionImageInsertionFramerate]
     var Input: js.UndefOr[__stringMin14Max1285PatternS3Mov09Png]
     var InsertionMode: js.UndefOr[MotionImageInsertionMode]
     var Offset: js.UndefOr[MotionImageInsertionOffset]
-    var Framerate: js.UndefOr[MotionImageInsertionFramerate]
+    var Playback: js.UndefOr[MotionImagePlayback]
+    var StartTime: js.UndefOr[__stringMin11Max11Pattern01D20305D205D]
   }
 
   object MotionImageInserter {
     def apply(
-      Playback: js.UndefOr[MotionImagePlayback] = js.undefined,
-      StartTime: js.UndefOr[__stringMin11Max11Pattern01D20305D205D] = js.undefined,
+      Framerate: js.UndefOr[MotionImageInsertionFramerate] = js.undefined,
       Input: js.UndefOr[__stringMin14Max1285PatternS3Mov09Png] = js.undefined,
       InsertionMode: js.UndefOr[MotionImageInsertionMode] = js.undefined,
       Offset: js.UndefOr[MotionImageInsertionOffset] = js.undefined,
-      Framerate: js.UndefOr[MotionImageInsertionFramerate] = js.undefined): MotionImageInserter = {
+      Playback: js.UndefOr[MotionImagePlayback] = js.undefined,
+      StartTime: js.UndefOr[__stringMin11Max11Pattern01D20305D205D] = js.undefined): MotionImageInserter = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Playback" -> Playback.map { x => x.asInstanceOf[js.Any] },
-        "StartTime" -> StartTime.map { x => x.asInstanceOf[js.Any] },
+        "Framerate" -> Framerate.map { x => x.asInstanceOf[js.Any] },
         "Input" -> Input.map { x => x.asInstanceOf[js.Any] },
         "InsertionMode" -> InsertionMode.map { x => x.asInstanceOf[js.Any] },
         "Offset" -> Offset.map { x => x.asInstanceOf[js.Any] },
-        "Framerate" -> Framerate.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Playback" -> Playback.map { x => x.asInstanceOf[js.Any] },
+        "StartTime" -> StartTime.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[MotionImageInserter]
     }
@@ -5571,26 +5571,26 @@ package mediaconvert {
    */
   @js.native
   trait MovSettings extends js.Object {
-    var PaddingControl: js.UndefOr[MovPaddingControl]
-    var CslgAtom: js.UndefOr[MovCslgAtom]
-    var Reference: js.UndefOr[MovReference]
-    var Mpeg2FourCCControl: js.UndefOr[MovMpeg2FourCCControl]
     var ClapAtom: js.UndefOr[MovClapAtom]
+    var CslgAtom: js.UndefOr[MovCslgAtom]
+    var Mpeg2FourCCControl: js.UndefOr[MovMpeg2FourCCControl]
+    var PaddingControl: js.UndefOr[MovPaddingControl]
+    var Reference: js.UndefOr[MovReference]
   }
 
   object MovSettings {
     def apply(
-      PaddingControl: js.UndefOr[MovPaddingControl] = js.undefined,
+      ClapAtom: js.UndefOr[MovClapAtom] = js.undefined,
       CslgAtom: js.UndefOr[MovCslgAtom] = js.undefined,
-      Reference: js.UndefOr[MovReference] = js.undefined,
       Mpeg2FourCCControl: js.UndefOr[MovMpeg2FourCCControl] = js.undefined,
-      ClapAtom: js.UndefOr[MovClapAtom] = js.undefined): MovSettings = {
+      PaddingControl: js.UndefOr[MovPaddingControl] = js.undefined,
+      Reference: js.UndefOr[MovReference] = js.undefined): MovSettings = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "PaddingControl" -> PaddingControl.map { x => x.asInstanceOf[js.Any] },
+        "ClapAtom" -> ClapAtom.map { x => x.asInstanceOf[js.Any] },
         "CslgAtom" -> CslgAtom.map { x => x.asInstanceOf[js.Any] },
-        "Reference" -> Reference.map { x => x.asInstanceOf[js.Any] },
         "Mpeg2FourCCControl" -> Mpeg2FourCCControl.map { x => x.asInstanceOf[js.Any] },
-        "ClapAtom" -> ClapAtom.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "PaddingControl" -> PaddingControl.map { x => x.asInstanceOf[js.Any] },
+        "Reference" -> Reference.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[MovSettings]
     }
@@ -5825,104 +5825,104 @@ package mediaconvert {
    */
   @js.native
   trait Mpeg2Settings extends js.Object {
-    var FramerateConversionAlgorithm: js.UndefOr[Mpeg2FramerateConversionAlgorithm]
-    var GopSizeUnits: js.UndefOr[Mpeg2GopSizeUnits]
-    var FramerateDenominator: js.UndefOr[__integerMin1Max1001]
-    var Syntax: js.UndefOr[Mpeg2Syntax]
-    var SceneChangeDetect: js.UndefOr[Mpeg2SceneChangeDetect]
-    var MaxBitrate: js.UndefOr[__integerMin1000Max300000000]
-    var Telecine: js.UndefOr[Mpeg2Telecine]
-    var RateControlMode: js.UndefOr[Mpeg2RateControlMode]
-    var CodecProfile: js.UndefOr[Mpeg2CodecProfile]
-    var TemporalAdaptiveQuantization: js.UndefOr[Mpeg2TemporalAdaptiveQuantization]
-    var SpatialAdaptiveQuantization: js.UndefOr[Mpeg2SpatialAdaptiveQuantization]
-    var Softness: js.UndefOr[__integerMin0Max128]
-    var QualityTuningLevel: js.UndefOr[Mpeg2QualityTuningLevel]
-    var SlowPal: js.UndefOr[Mpeg2SlowPal]
-    var MinIInterval: js.UndefOr[__integerMin0Max30]
-    var FramerateControl: js.UndefOr[Mpeg2FramerateControl]
-    var CodecLevel: js.UndefOr[Mpeg2CodecLevel]
-    var HrdBufferInitialFillPercentage: js.UndefOr[__integerMin0Max100]
-    var GopSize: js.UndefOr[__doubleMin0]
-    var IntraDcPrecision: js.UndefOr[Mpeg2IntraDcPrecision]
-    var ParDenominator: js.UndefOr[__integerMin1Max2147483647]
-    var Bitrate: js.UndefOr[__integerMin1000Max288000000]
-    var ParNumerator: js.UndefOr[__integerMin1Max2147483647]
-    var InterlaceMode: js.UndefOr[Mpeg2InterlaceMode]
-    var HrdBufferSize: js.UndefOr[__integerMin0Max47185920]
-    var GopClosedCadence: js.UndefOr[__integerMin0Max2147483647]
-    var ParControl: js.UndefOr[Mpeg2ParControl]
     var AdaptiveQuantization: js.UndefOr[Mpeg2AdaptiveQuantization]
-    var NumberBFramesBetweenReferenceFrames: js.UndefOr[__integerMin0Max7]
-    var FramerateNumerator: js.UndefOr[__integerMin24Max60000]
+    var Bitrate: js.UndefOr[__integerMin1000Max288000000]
+    var CodecLevel: js.UndefOr[Mpeg2CodecLevel]
+    var CodecProfile: js.UndefOr[Mpeg2CodecProfile]
     var DynamicSubGop: js.UndefOr[Mpeg2DynamicSubGop]
+    var FramerateControl: js.UndefOr[Mpeg2FramerateControl]
+    var FramerateConversionAlgorithm: js.UndefOr[Mpeg2FramerateConversionAlgorithm]
+    var FramerateDenominator: js.UndefOr[__integerMin1Max1001]
+    var FramerateNumerator: js.UndefOr[__integerMin24Max60000]
+    var GopClosedCadence: js.UndefOr[__integerMin0Max2147483647]
+    var GopSize: js.UndefOr[__doubleMin0]
+    var GopSizeUnits: js.UndefOr[Mpeg2GopSizeUnits]
+    var HrdBufferInitialFillPercentage: js.UndefOr[__integerMin0Max100]
+    var HrdBufferSize: js.UndefOr[__integerMin0Max47185920]
+    var InterlaceMode: js.UndefOr[Mpeg2InterlaceMode]
+    var IntraDcPrecision: js.UndefOr[Mpeg2IntraDcPrecision]
+    var MaxBitrate: js.UndefOr[__integerMin1000Max300000000]
+    var MinIInterval: js.UndefOr[__integerMin0Max30]
+    var NumberBFramesBetweenReferenceFrames: js.UndefOr[__integerMin0Max7]
+    var ParControl: js.UndefOr[Mpeg2ParControl]
+    var ParDenominator: js.UndefOr[__integerMin1Max2147483647]
+    var ParNumerator: js.UndefOr[__integerMin1Max2147483647]
+    var QualityTuningLevel: js.UndefOr[Mpeg2QualityTuningLevel]
+    var RateControlMode: js.UndefOr[Mpeg2RateControlMode]
+    var SceneChangeDetect: js.UndefOr[Mpeg2SceneChangeDetect]
+    var SlowPal: js.UndefOr[Mpeg2SlowPal]
+    var Softness: js.UndefOr[__integerMin0Max128]
+    var SpatialAdaptiveQuantization: js.UndefOr[Mpeg2SpatialAdaptiveQuantization]
+    var Syntax: js.UndefOr[Mpeg2Syntax]
+    var Telecine: js.UndefOr[Mpeg2Telecine]
+    var TemporalAdaptiveQuantization: js.UndefOr[Mpeg2TemporalAdaptiveQuantization]
   }
 
   object Mpeg2Settings {
     def apply(
-      FramerateConversionAlgorithm: js.UndefOr[Mpeg2FramerateConversionAlgorithm] = js.undefined,
-      GopSizeUnits: js.UndefOr[Mpeg2GopSizeUnits] = js.undefined,
-      FramerateDenominator: js.UndefOr[__integerMin1Max1001] = js.undefined,
-      Syntax: js.UndefOr[Mpeg2Syntax] = js.undefined,
-      SceneChangeDetect: js.UndefOr[Mpeg2SceneChangeDetect] = js.undefined,
-      MaxBitrate: js.UndefOr[__integerMin1000Max300000000] = js.undefined,
-      Telecine: js.UndefOr[Mpeg2Telecine] = js.undefined,
-      RateControlMode: js.UndefOr[Mpeg2RateControlMode] = js.undefined,
-      CodecProfile: js.UndefOr[Mpeg2CodecProfile] = js.undefined,
-      TemporalAdaptiveQuantization: js.UndefOr[Mpeg2TemporalAdaptiveQuantization] = js.undefined,
-      SpatialAdaptiveQuantization: js.UndefOr[Mpeg2SpatialAdaptiveQuantization] = js.undefined,
-      Softness: js.UndefOr[__integerMin0Max128] = js.undefined,
-      QualityTuningLevel: js.UndefOr[Mpeg2QualityTuningLevel] = js.undefined,
-      SlowPal: js.UndefOr[Mpeg2SlowPal] = js.undefined,
-      MinIInterval: js.UndefOr[__integerMin0Max30] = js.undefined,
-      FramerateControl: js.UndefOr[Mpeg2FramerateControl] = js.undefined,
-      CodecLevel: js.UndefOr[Mpeg2CodecLevel] = js.undefined,
-      HrdBufferInitialFillPercentage: js.UndefOr[__integerMin0Max100] = js.undefined,
-      GopSize: js.UndefOr[__doubleMin0] = js.undefined,
-      IntraDcPrecision: js.UndefOr[Mpeg2IntraDcPrecision] = js.undefined,
-      ParDenominator: js.UndefOr[__integerMin1Max2147483647] = js.undefined,
-      Bitrate: js.UndefOr[__integerMin1000Max288000000] = js.undefined,
-      ParNumerator: js.UndefOr[__integerMin1Max2147483647] = js.undefined,
-      InterlaceMode: js.UndefOr[Mpeg2InterlaceMode] = js.undefined,
-      HrdBufferSize: js.UndefOr[__integerMin0Max47185920] = js.undefined,
-      GopClosedCadence: js.UndefOr[__integerMin0Max2147483647] = js.undefined,
-      ParControl: js.UndefOr[Mpeg2ParControl] = js.undefined,
       AdaptiveQuantization: js.UndefOr[Mpeg2AdaptiveQuantization] = js.undefined,
-      NumberBFramesBetweenReferenceFrames: js.UndefOr[__integerMin0Max7] = js.undefined,
+      Bitrate: js.UndefOr[__integerMin1000Max288000000] = js.undefined,
+      CodecLevel: js.UndefOr[Mpeg2CodecLevel] = js.undefined,
+      CodecProfile: js.UndefOr[Mpeg2CodecProfile] = js.undefined,
+      DynamicSubGop: js.UndefOr[Mpeg2DynamicSubGop] = js.undefined,
+      FramerateControl: js.UndefOr[Mpeg2FramerateControl] = js.undefined,
+      FramerateConversionAlgorithm: js.UndefOr[Mpeg2FramerateConversionAlgorithm] = js.undefined,
+      FramerateDenominator: js.UndefOr[__integerMin1Max1001] = js.undefined,
       FramerateNumerator: js.UndefOr[__integerMin24Max60000] = js.undefined,
-      DynamicSubGop: js.UndefOr[Mpeg2DynamicSubGop] = js.undefined): Mpeg2Settings = {
+      GopClosedCadence: js.UndefOr[__integerMin0Max2147483647] = js.undefined,
+      GopSize: js.UndefOr[__doubleMin0] = js.undefined,
+      GopSizeUnits: js.UndefOr[Mpeg2GopSizeUnits] = js.undefined,
+      HrdBufferInitialFillPercentage: js.UndefOr[__integerMin0Max100] = js.undefined,
+      HrdBufferSize: js.UndefOr[__integerMin0Max47185920] = js.undefined,
+      InterlaceMode: js.UndefOr[Mpeg2InterlaceMode] = js.undefined,
+      IntraDcPrecision: js.UndefOr[Mpeg2IntraDcPrecision] = js.undefined,
+      MaxBitrate: js.UndefOr[__integerMin1000Max300000000] = js.undefined,
+      MinIInterval: js.UndefOr[__integerMin0Max30] = js.undefined,
+      NumberBFramesBetweenReferenceFrames: js.UndefOr[__integerMin0Max7] = js.undefined,
+      ParControl: js.UndefOr[Mpeg2ParControl] = js.undefined,
+      ParDenominator: js.UndefOr[__integerMin1Max2147483647] = js.undefined,
+      ParNumerator: js.UndefOr[__integerMin1Max2147483647] = js.undefined,
+      QualityTuningLevel: js.UndefOr[Mpeg2QualityTuningLevel] = js.undefined,
+      RateControlMode: js.UndefOr[Mpeg2RateControlMode] = js.undefined,
+      SceneChangeDetect: js.UndefOr[Mpeg2SceneChangeDetect] = js.undefined,
+      SlowPal: js.UndefOr[Mpeg2SlowPal] = js.undefined,
+      Softness: js.UndefOr[__integerMin0Max128] = js.undefined,
+      SpatialAdaptiveQuantization: js.UndefOr[Mpeg2SpatialAdaptiveQuantization] = js.undefined,
+      Syntax: js.UndefOr[Mpeg2Syntax] = js.undefined,
+      Telecine: js.UndefOr[Mpeg2Telecine] = js.undefined,
+      TemporalAdaptiveQuantization: js.UndefOr[Mpeg2TemporalAdaptiveQuantization] = js.undefined): Mpeg2Settings = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "FramerateConversionAlgorithm" -> FramerateConversionAlgorithm.map { x => x.asInstanceOf[js.Any] },
-        "GopSizeUnits" -> GopSizeUnits.map { x => x.asInstanceOf[js.Any] },
-        "FramerateDenominator" -> FramerateDenominator.map { x => x.asInstanceOf[js.Any] },
-        "Syntax" -> Syntax.map { x => x.asInstanceOf[js.Any] },
-        "SceneChangeDetect" -> SceneChangeDetect.map { x => x.asInstanceOf[js.Any] },
-        "MaxBitrate" -> MaxBitrate.map { x => x.asInstanceOf[js.Any] },
-        "Telecine" -> Telecine.map { x => x.asInstanceOf[js.Any] },
-        "RateControlMode" -> RateControlMode.map { x => x.asInstanceOf[js.Any] },
-        "CodecProfile" -> CodecProfile.map { x => x.asInstanceOf[js.Any] },
-        "TemporalAdaptiveQuantization" -> TemporalAdaptiveQuantization.map { x => x.asInstanceOf[js.Any] },
-        "SpatialAdaptiveQuantization" -> SpatialAdaptiveQuantization.map { x => x.asInstanceOf[js.Any] },
-        "Softness" -> Softness.map { x => x.asInstanceOf[js.Any] },
-        "QualityTuningLevel" -> QualityTuningLevel.map { x => x.asInstanceOf[js.Any] },
-        "SlowPal" -> SlowPal.map { x => x.asInstanceOf[js.Any] },
-        "MinIInterval" -> MinIInterval.map { x => x.asInstanceOf[js.Any] },
-        "FramerateControl" -> FramerateControl.map { x => x.asInstanceOf[js.Any] },
-        "CodecLevel" -> CodecLevel.map { x => x.asInstanceOf[js.Any] },
-        "HrdBufferInitialFillPercentage" -> HrdBufferInitialFillPercentage.map { x => x.asInstanceOf[js.Any] },
-        "GopSize" -> GopSize.map { x => x.asInstanceOf[js.Any] },
-        "IntraDcPrecision" -> IntraDcPrecision.map { x => x.asInstanceOf[js.Any] },
-        "ParDenominator" -> ParDenominator.map { x => x.asInstanceOf[js.Any] },
-        "Bitrate" -> Bitrate.map { x => x.asInstanceOf[js.Any] },
-        "ParNumerator" -> ParNumerator.map { x => x.asInstanceOf[js.Any] },
-        "InterlaceMode" -> InterlaceMode.map { x => x.asInstanceOf[js.Any] },
-        "HrdBufferSize" -> HrdBufferSize.map { x => x.asInstanceOf[js.Any] },
-        "GopClosedCadence" -> GopClosedCadence.map { x => x.asInstanceOf[js.Any] },
-        "ParControl" -> ParControl.map { x => x.asInstanceOf[js.Any] },
         "AdaptiveQuantization" -> AdaptiveQuantization.map { x => x.asInstanceOf[js.Any] },
-        "NumberBFramesBetweenReferenceFrames" -> NumberBFramesBetweenReferenceFrames.map { x => x.asInstanceOf[js.Any] },
+        "Bitrate" -> Bitrate.map { x => x.asInstanceOf[js.Any] },
+        "CodecLevel" -> CodecLevel.map { x => x.asInstanceOf[js.Any] },
+        "CodecProfile" -> CodecProfile.map { x => x.asInstanceOf[js.Any] },
+        "DynamicSubGop" -> DynamicSubGop.map { x => x.asInstanceOf[js.Any] },
+        "FramerateControl" -> FramerateControl.map { x => x.asInstanceOf[js.Any] },
+        "FramerateConversionAlgorithm" -> FramerateConversionAlgorithm.map { x => x.asInstanceOf[js.Any] },
+        "FramerateDenominator" -> FramerateDenominator.map { x => x.asInstanceOf[js.Any] },
         "FramerateNumerator" -> FramerateNumerator.map { x => x.asInstanceOf[js.Any] },
-        "DynamicSubGop" -> DynamicSubGop.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "GopClosedCadence" -> GopClosedCadence.map { x => x.asInstanceOf[js.Any] },
+        "GopSize" -> GopSize.map { x => x.asInstanceOf[js.Any] },
+        "GopSizeUnits" -> GopSizeUnits.map { x => x.asInstanceOf[js.Any] },
+        "HrdBufferInitialFillPercentage" -> HrdBufferInitialFillPercentage.map { x => x.asInstanceOf[js.Any] },
+        "HrdBufferSize" -> HrdBufferSize.map { x => x.asInstanceOf[js.Any] },
+        "InterlaceMode" -> InterlaceMode.map { x => x.asInstanceOf[js.Any] },
+        "IntraDcPrecision" -> IntraDcPrecision.map { x => x.asInstanceOf[js.Any] },
+        "MaxBitrate" -> MaxBitrate.map { x => x.asInstanceOf[js.Any] },
+        "MinIInterval" -> MinIInterval.map { x => x.asInstanceOf[js.Any] },
+        "NumberBFramesBetweenReferenceFrames" -> NumberBFramesBetweenReferenceFrames.map { x => x.asInstanceOf[js.Any] },
+        "ParControl" -> ParControl.map { x => x.asInstanceOf[js.Any] },
+        "ParDenominator" -> ParDenominator.map { x => x.asInstanceOf[js.Any] },
+        "ParNumerator" -> ParNumerator.map { x => x.asInstanceOf[js.Any] },
+        "QualityTuningLevel" -> QualityTuningLevel.map { x => x.asInstanceOf[js.Any] },
+        "RateControlMode" -> RateControlMode.map { x => x.asInstanceOf[js.Any] },
+        "SceneChangeDetect" -> SceneChangeDetect.map { x => x.asInstanceOf[js.Any] },
+        "SlowPal" -> SlowPal.map { x => x.asInstanceOf[js.Any] },
+        "Softness" -> Softness.map { x => x.asInstanceOf[js.Any] },
+        "SpatialAdaptiveQuantization" -> SpatialAdaptiveQuantization.map { x => x.asInstanceOf[js.Any] },
+        "Syntax" -> Syntax.map { x => x.asInstanceOf[js.Any] },
+        "Telecine" -> Telecine.map { x => x.asInstanceOf[js.Any] },
+        "TemporalAdaptiveQuantization" -> TemporalAdaptiveQuantization.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Mpeg2Settings]
     }
@@ -6164,35 +6164,35 @@ package mediaconvert {
    */
   @js.native
   trait Output extends js.Object {
+    var AudioDescriptions: js.UndefOr[__listOfAudioDescription]
+    var CaptionDescriptions: js.UndefOr[__listOfCaptionDescription]
+    var ContainerSettings: js.UndefOr[ContainerSettings]
+    var Extension: js.UndefOr[__string]
+    var NameModifier: js.UndefOr[__stringMin1]
     var OutputSettings: js.UndefOr[OutputSettings]
     var Preset: js.UndefOr[__stringMin0]
-    var ContainerSettings: js.UndefOr[ContainerSettings]
-    var CaptionDescriptions: js.UndefOr[__listOfCaptionDescription]
-    var AudioDescriptions: js.UndefOr[__listOfAudioDescription]
     var VideoDescription: js.UndefOr[VideoDescription]
-    var NameModifier: js.UndefOr[__stringMin1]
-    var Extension: js.UndefOr[__string]
   }
 
   object Output {
     def apply(
+      AudioDescriptions: js.UndefOr[__listOfAudioDescription] = js.undefined,
+      CaptionDescriptions: js.UndefOr[__listOfCaptionDescription] = js.undefined,
+      ContainerSettings: js.UndefOr[ContainerSettings] = js.undefined,
+      Extension: js.UndefOr[__string] = js.undefined,
+      NameModifier: js.UndefOr[__stringMin1] = js.undefined,
       OutputSettings: js.UndefOr[OutputSettings] = js.undefined,
       Preset: js.UndefOr[__stringMin0] = js.undefined,
-      ContainerSettings: js.UndefOr[ContainerSettings] = js.undefined,
-      CaptionDescriptions: js.UndefOr[__listOfCaptionDescription] = js.undefined,
-      AudioDescriptions: js.UndefOr[__listOfAudioDescription] = js.undefined,
-      VideoDescription: js.UndefOr[VideoDescription] = js.undefined,
-      NameModifier: js.UndefOr[__stringMin1] = js.undefined,
-      Extension: js.UndefOr[__string] = js.undefined): Output = {
+      VideoDescription: js.UndefOr[VideoDescription] = js.undefined): Output = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "AudioDescriptions" -> AudioDescriptions.map { x => x.asInstanceOf[js.Any] },
+        "CaptionDescriptions" -> CaptionDescriptions.map { x => x.asInstanceOf[js.Any] },
+        "ContainerSettings" -> ContainerSettings.map { x => x.asInstanceOf[js.Any] },
+        "Extension" -> Extension.map { x => x.asInstanceOf[js.Any] },
+        "NameModifier" -> NameModifier.map { x => x.asInstanceOf[js.Any] },
         "OutputSettings" -> OutputSettings.map { x => x.asInstanceOf[js.Any] },
         "Preset" -> Preset.map { x => x.asInstanceOf[js.Any] },
-        "ContainerSettings" -> ContainerSettings.map { x => x.asInstanceOf[js.Any] },
-        "CaptionDescriptions" -> CaptionDescriptions.map { x => x.asInstanceOf[js.Any] },
-        "AudioDescriptions" -> AudioDescriptions.map { x => x.asInstanceOf[js.Any] },
-        "VideoDescription" -> VideoDescription.map { x => x.asInstanceOf[js.Any] },
-        "NameModifier" -> NameModifier.map { x => x.asInstanceOf[js.Any] },
-        "Extension" -> Extension.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "VideoDescription" -> VideoDescription.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Output]
     }
@@ -6287,27 +6287,27 @@ package mediaconvert {
    */
   @js.native
   trait OutputGroupSettings extends js.Object {
-    var HlsGroupSettings: js.UndefOr[HlsGroupSettings]
     var CmafGroupSettings: js.UndefOr[CmafGroupSettings]
     var DashIsoGroupSettings: js.UndefOr[DashIsoGroupSettings]
     var FileGroupSettings: js.UndefOr[FileGroupSettings]
+    var HlsGroupSettings: js.UndefOr[HlsGroupSettings]
     var MsSmoothGroupSettings: js.UndefOr[MsSmoothGroupSettings]
     var Type: js.UndefOr[OutputGroupType]
   }
 
   object OutputGroupSettings {
     def apply(
-      HlsGroupSettings: js.UndefOr[HlsGroupSettings] = js.undefined,
       CmafGroupSettings: js.UndefOr[CmafGroupSettings] = js.undefined,
       DashIsoGroupSettings: js.UndefOr[DashIsoGroupSettings] = js.undefined,
       FileGroupSettings: js.UndefOr[FileGroupSettings] = js.undefined,
+      HlsGroupSettings: js.UndefOr[HlsGroupSettings] = js.undefined,
       MsSmoothGroupSettings: js.UndefOr[MsSmoothGroupSettings] = js.undefined,
       Type: js.UndefOr[OutputGroupType] = js.undefined): OutputGroupSettings = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "HlsGroupSettings" -> HlsGroupSettings.map { x => x.asInstanceOf[js.Any] },
         "CmafGroupSettings" -> CmafGroupSettings.map { x => x.asInstanceOf[js.Any] },
         "DashIsoGroupSettings" -> DashIsoGroupSettings.map { x => x.asInstanceOf[js.Any] },
         "FileGroupSettings" -> FileGroupSettings.map { x => x.asInstanceOf[js.Any] },
+        "HlsGroupSettings" -> HlsGroupSettings.map { x => x.asInstanceOf[js.Any] },
         "MsSmoothGroupSettings" -> MsSmoothGroupSettings.map { x => x.asInstanceOf[js.Any] },
         "Type" -> Type.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
@@ -6363,34 +6363,34 @@ package mediaconvert {
    */
   @js.native
   trait Preset extends js.Object {
-    var Settings: js.UndefOr[PresetSettings]
-    var Name: js.UndefOr[__string]
-    var Category: js.UndefOr[__string]
-    var LastUpdated: js.UndefOr[__timestampUnix]
-    var Description: js.UndefOr[__string]
+    var Name: __string
+    var Settings: PresetSettings
     var Arn: js.UndefOr[__string]
+    var Category: js.UndefOr[__string]
     var CreatedAt: js.UndefOr[__timestampUnix]
+    var Description: js.UndefOr[__string]
+    var LastUpdated: js.UndefOr[__timestampUnix]
     var Type: js.UndefOr[Type]
   }
 
   object Preset {
     def apply(
-      Settings: js.UndefOr[PresetSettings] = js.undefined,
-      Name: js.UndefOr[__string] = js.undefined,
-      Category: js.UndefOr[__string] = js.undefined,
-      LastUpdated: js.UndefOr[__timestampUnix] = js.undefined,
-      Description: js.UndefOr[__string] = js.undefined,
+      Name: __string,
+      Settings: PresetSettings,
       Arn: js.UndefOr[__string] = js.undefined,
+      Category: js.UndefOr[__string] = js.undefined,
       CreatedAt: js.UndefOr[__timestampUnix] = js.undefined,
+      Description: js.UndefOr[__string] = js.undefined,
+      LastUpdated: js.UndefOr[__timestampUnix] = js.undefined,
       Type: js.UndefOr[Type] = js.undefined): Preset = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Settings" -> Settings.map { x => x.asInstanceOf[js.Any] },
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
-        "Category" -> Category.map { x => x.asInstanceOf[js.Any] },
-        "LastUpdated" -> LastUpdated.map { x => x.asInstanceOf[js.Any] },
-        "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
+        "Name" -> Name.asInstanceOf[js.Any],
+        "Settings" -> Settings.asInstanceOf[js.Any],
         "Arn" -> Arn.map { x => x.asInstanceOf[js.Any] },
+        "Category" -> Category.map { x => x.asInstanceOf[js.Any] },
         "CreatedAt" -> CreatedAt.map { x => x.asInstanceOf[js.Any] },
+        "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
+        "LastUpdated" -> LastUpdated.map { x => x.asInstanceOf[js.Any] },
         "Type" -> Type.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Preset]
@@ -6507,44 +6507,44 @@ package mediaconvert {
    */
   @js.native
   trait ProresSettings extends js.Object {
+    var CodecProfile: js.UndefOr[ProresCodecProfile]
+    var FramerateControl: js.UndefOr[ProresFramerateControl]
     var FramerateConversionAlgorithm: js.UndefOr[ProresFramerateConversionAlgorithm]
     var FramerateDenominator: js.UndefOr[__integerMin1Max2147483647]
-    var Telecine: js.UndefOr[ProresTelecine]
-    var CodecProfile: js.UndefOr[ProresCodecProfile]
-    var SlowPal: js.UndefOr[ProresSlowPal]
-    var FramerateControl: js.UndefOr[ProresFramerateControl]
-    var ParDenominator: js.UndefOr[__integerMin1Max2147483647]
-    var ParNumerator: js.UndefOr[__integerMin1Max2147483647]
+    var FramerateNumerator: js.UndefOr[__integerMin1Max2147483647]
     var InterlaceMode: js.UndefOr[ProresInterlaceMode]
     var ParControl: js.UndefOr[ProresParControl]
-    var FramerateNumerator: js.UndefOr[__integerMin1Max2147483647]
+    var ParDenominator: js.UndefOr[__integerMin1Max2147483647]
+    var ParNumerator: js.UndefOr[__integerMin1Max2147483647]
+    var SlowPal: js.UndefOr[ProresSlowPal]
+    var Telecine: js.UndefOr[ProresTelecine]
   }
 
   object ProresSettings {
     def apply(
+      CodecProfile: js.UndefOr[ProresCodecProfile] = js.undefined,
+      FramerateControl: js.UndefOr[ProresFramerateControl] = js.undefined,
       FramerateConversionAlgorithm: js.UndefOr[ProresFramerateConversionAlgorithm] = js.undefined,
       FramerateDenominator: js.UndefOr[__integerMin1Max2147483647] = js.undefined,
-      Telecine: js.UndefOr[ProresTelecine] = js.undefined,
-      CodecProfile: js.UndefOr[ProresCodecProfile] = js.undefined,
-      SlowPal: js.UndefOr[ProresSlowPal] = js.undefined,
-      FramerateControl: js.UndefOr[ProresFramerateControl] = js.undefined,
-      ParDenominator: js.UndefOr[__integerMin1Max2147483647] = js.undefined,
-      ParNumerator: js.UndefOr[__integerMin1Max2147483647] = js.undefined,
+      FramerateNumerator: js.UndefOr[__integerMin1Max2147483647] = js.undefined,
       InterlaceMode: js.UndefOr[ProresInterlaceMode] = js.undefined,
       ParControl: js.UndefOr[ProresParControl] = js.undefined,
-      FramerateNumerator: js.UndefOr[__integerMin1Max2147483647] = js.undefined): ProresSettings = {
+      ParDenominator: js.UndefOr[__integerMin1Max2147483647] = js.undefined,
+      ParNumerator: js.UndefOr[__integerMin1Max2147483647] = js.undefined,
+      SlowPal: js.UndefOr[ProresSlowPal] = js.undefined,
+      Telecine: js.UndefOr[ProresTelecine] = js.undefined): ProresSettings = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "CodecProfile" -> CodecProfile.map { x => x.asInstanceOf[js.Any] },
+        "FramerateControl" -> FramerateControl.map { x => x.asInstanceOf[js.Any] },
         "FramerateConversionAlgorithm" -> FramerateConversionAlgorithm.map { x => x.asInstanceOf[js.Any] },
         "FramerateDenominator" -> FramerateDenominator.map { x => x.asInstanceOf[js.Any] },
-        "Telecine" -> Telecine.map { x => x.asInstanceOf[js.Any] },
-        "CodecProfile" -> CodecProfile.map { x => x.asInstanceOf[js.Any] },
-        "SlowPal" -> SlowPal.map { x => x.asInstanceOf[js.Any] },
-        "FramerateControl" -> FramerateControl.map { x => x.asInstanceOf[js.Any] },
-        "ParDenominator" -> ParDenominator.map { x => x.asInstanceOf[js.Any] },
-        "ParNumerator" -> ParNumerator.map { x => x.asInstanceOf[js.Any] },
+        "FramerateNumerator" -> FramerateNumerator.map { x => x.asInstanceOf[js.Any] },
         "InterlaceMode" -> InterlaceMode.map { x => x.asInstanceOf[js.Any] },
         "ParControl" -> ParControl.map { x => x.asInstanceOf[js.Any] },
-        "FramerateNumerator" -> FramerateNumerator.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ParDenominator" -> ParDenominator.map { x => x.asInstanceOf[js.Any] },
+        "ParNumerator" -> ParNumerator.map { x => x.asInstanceOf[js.Any] },
+        "SlowPal" -> SlowPal.map { x => x.asInstanceOf[js.Any] },
+        "Telecine" -> Telecine.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ProresSettings]
     }
@@ -6575,43 +6575,43 @@ package mediaconvert {
    */
   @js.native
   trait Queue extends js.Object {
-    var Name: js.UndefOr[__string]
-    var LastUpdated: js.UndefOr[__timestampUnix]
-    var Description: js.UndefOr[__string]
+    var Name: __string
     var Arn: js.UndefOr[__string]
     var CreatedAt: js.UndefOr[__timestampUnix]
-    var ProgressingJobsCount: js.UndefOr[__integer]
+    var Description: js.UndefOr[__string]
+    var LastUpdated: js.UndefOr[__timestampUnix]
     var PricingPlan: js.UndefOr[PricingPlan]
-    var SubmittedJobsCount: js.UndefOr[__integer]
+    var ProgressingJobsCount: js.UndefOr[__integer]
     var ReservationPlan: js.UndefOr[ReservationPlan]
     var Status: js.UndefOr[QueueStatus]
+    var SubmittedJobsCount: js.UndefOr[__integer]
     var Type: js.UndefOr[Type]
   }
 
   object Queue {
     def apply(
-      Name: js.UndefOr[__string] = js.undefined,
-      LastUpdated: js.UndefOr[__timestampUnix] = js.undefined,
-      Description: js.UndefOr[__string] = js.undefined,
+      Name: __string,
       Arn: js.UndefOr[__string] = js.undefined,
       CreatedAt: js.UndefOr[__timestampUnix] = js.undefined,
-      ProgressingJobsCount: js.UndefOr[__integer] = js.undefined,
+      Description: js.UndefOr[__string] = js.undefined,
+      LastUpdated: js.UndefOr[__timestampUnix] = js.undefined,
       PricingPlan: js.UndefOr[PricingPlan] = js.undefined,
-      SubmittedJobsCount: js.UndefOr[__integer] = js.undefined,
+      ProgressingJobsCount: js.UndefOr[__integer] = js.undefined,
       ReservationPlan: js.UndefOr[ReservationPlan] = js.undefined,
       Status: js.UndefOr[QueueStatus] = js.undefined,
+      SubmittedJobsCount: js.UndefOr[__integer] = js.undefined,
       Type: js.UndefOr[Type] = js.undefined): Queue = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
-        "LastUpdated" -> LastUpdated.map { x => x.asInstanceOf[js.Any] },
-        "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
+        "Name" -> Name.asInstanceOf[js.Any],
         "Arn" -> Arn.map { x => x.asInstanceOf[js.Any] },
         "CreatedAt" -> CreatedAt.map { x => x.asInstanceOf[js.Any] },
-        "ProgressingJobsCount" -> ProgressingJobsCount.map { x => x.asInstanceOf[js.Any] },
+        "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
+        "LastUpdated" -> LastUpdated.map { x => x.asInstanceOf[js.Any] },
         "PricingPlan" -> PricingPlan.map { x => x.asInstanceOf[js.Any] },
-        "SubmittedJobsCount" -> SubmittedJobsCount.map { x => x.asInstanceOf[js.Any] },
+        "ProgressingJobsCount" -> ProgressingJobsCount.map { x => x.asInstanceOf[js.Any] },
         "ReservationPlan" -> ReservationPlan.map { x => x.asInstanceOf[js.Any] },
         "Status" -> Status.map { x => x.asInstanceOf[js.Any] },
+        "SubmittedJobsCount" -> SubmittedJobsCount.map { x => x.asInstanceOf[js.Any] },
         "Type" -> Type.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Queue]
@@ -6704,27 +6704,27 @@ package mediaconvert {
    */
   @js.native
   trait ReservationPlan extends js.Object {
-    var PurchasedAt: js.UndefOr[__timestampUnix]
-    var ExpiresAt: js.UndefOr[__timestampUnix]
-    var RenewalType: js.UndefOr[RenewalType]
     var Commitment: js.UndefOr[Commitment]
+    var ExpiresAt: js.UndefOr[__timestampUnix]
+    var PurchasedAt: js.UndefOr[__timestampUnix]
+    var RenewalType: js.UndefOr[RenewalType]
     var ReservedSlots: js.UndefOr[__integer]
     var Status: js.UndefOr[ReservationPlanStatus]
   }
 
   object ReservationPlan {
     def apply(
-      PurchasedAt: js.UndefOr[__timestampUnix] = js.undefined,
-      ExpiresAt: js.UndefOr[__timestampUnix] = js.undefined,
-      RenewalType: js.UndefOr[RenewalType] = js.undefined,
       Commitment: js.UndefOr[Commitment] = js.undefined,
+      ExpiresAt: js.UndefOr[__timestampUnix] = js.undefined,
+      PurchasedAt: js.UndefOr[__timestampUnix] = js.undefined,
+      RenewalType: js.UndefOr[RenewalType] = js.undefined,
       ReservedSlots: js.UndefOr[__integer] = js.undefined,
       Status: js.UndefOr[ReservationPlanStatus] = js.undefined): ReservationPlan = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "PurchasedAt" -> PurchasedAt.map { x => x.asInstanceOf[js.Any] },
-        "ExpiresAt" -> ExpiresAt.map { x => x.asInstanceOf[js.Any] },
-        "RenewalType" -> RenewalType.map { x => x.asInstanceOf[js.Any] },
         "Commitment" -> Commitment.map { x => x.asInstanceOf[js.Any] },
+        "ExpiresAt" -> ExpiresAt.map { x => x.asInstanceOf[js.Any] },
+        "PurchasedAt" -> PurchasedAt.map { x => x.asInstanceOf[js.Any] },
+        "RenewalType" -> RenewalType.map { x => x.asInstanceOf[js.Any] },
         "ReservedSlots" -> ReservedSlots.map { x => x.asInstanceOf[js.Any] },
         "Status" -> Status.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
@@ -6737,20 +6737,20 @@ package mediaconvert {
    */
   @js.native
   trait ReservationPlanSettings extends js.Object {
-    var Commitment: js.UndefOr[Commitment]
-    var RenewalType: js.UndefOr[RenewalType]
-    var ReservedSlots: js.UndefOr[__integer]
+    var Commitment: Commitment
+    var RenewalType: RenewalType
+    var ReservedSlots: __integer
   }
 
   object ReservationPlanSettings {
     def apply(
-      Commitment: js.UndefOr[Commitment] = js.undefined,
-      RenewalType: js.UndefOr[RenewalType] = js.undefined,
-      ReservedSlots: js.UndefOr[__integer] = js.undefined): ReservationPlanSettings = {
+      Commitment: Commitment,
+      RenewalType: RenewalType,
+      ReservedSlots: __integer): ReservationPlanSettings = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Commitment" -> Commitment.map { x => x.asInstanceOf[js.Any] },
-        "RenewalType" -> RenewalType.map { x => x.asInstanceOf[js.Any] },
-        "ReservedSlots" -> ReservedSlots.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Commitment" -> Commitment.asInstanceOf[js.Any],
+        "RenewalType" -> RenewalType.asInstanceOf[js.Any],
+        "ReservedSlots" -> ReservedSlots.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ReservationPlanSettings]
     }
@@ -6894,17 +6894,17 @@ package mediaconvert {
 
   @js.native
   trait TagResourceRequest extends js.Object {
-    var Arn: js.UndefOr[__string]
-    var Tags: js.UndefOr[__mapOf__string]
+    var Arn: __string
+    var Tags: __mapOf__string
   }
 
   object TagResourceRequest {
     def apply(
-      Arn: js.UndefOr[__string] = js.undefined,
-      Tags: js.UndefOr[__mapOf__string] = js.undefined): TagResourceRequest = {
+      Arn: __string,
+      Tags: __mapOf__string): TagResourceRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Arn" -> Arn.map { x => x.asInstanceOf[js.Any] },
-        "Tags" -> Tags.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Arn" -> Arn.asInstanceOf[js.Any],
+        "Tags" -> Tags.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TagResourceRequest]
     }
@@ -7127,16 +7127,16 @@ package mediaconvert {
 
   @js.native
   trait UntagResourceRequest extends js.Object {
-    var Arn: js.UndefOr[__string]
+    var Arn: __string
     var TagKeys: js.UndefOr[__listOf__string]
   }
 
   object UntagResourceRequest {
     def apply(
-      Arn: js.UndefOr[__string] = js.undefined,
+      Arn: __string,
       TagKeys: js.UndefOr[__listOf__string] = js.undefined): UntagResourceRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Arn" -> Arn.map { x => x.asInstanceOf[js.Any] },
+        "Arn" -> Arn.asInstanceOf[js.Any],
         "TagKeys" -> TagKeys.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UntagResourceRequest]
@@ -7158,26 +7158,26 @@ package mediaconvert {
 
   @js.native
   trait UpdateJobTemplateRequest extends js.Object {
-    var Settings: js.UndefOr[JobTemplateSettings]
-    var Name: js.UndefOr[__string]
+    var Name: __string
     var Category: js.UndefOr[__string]
     var Description: js.UndefOr[__string]
     var Queue: js.UndefOr[__string]
+    var Settings: js.UndefOr[JobTemplateSettings]
   }
 
   object UpdateJobTemplateRequest {
     def apply(
-      Settings: js.UndefOr[JobTemplateSettings] = js.undefined,
-      Name: js.UndefOr[__string] = js.undefined,
+      Name: __string,
       Category: js.UndefOr[__string] = js.undefined,
       Description: js.UndefOr[__string] = js.undefined,
-      Queue: js.UndefOr[__string] = js.undefined): UpdateJobTemplateRequest = {
+      Queue: js.UndefOr[__string] = js.undefined,
+      Settings: js.UndefOr[JobTemplateSettings] = js.undefined): UpdateJobTemplateRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Settings" -> Settings.map { x => x.asInstanceOf[js.Any] },
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
+        "Name" -> Name.asInstanceOf[js.Any],
         "Category" -> Category.map { x => x.asInstanceOf[js.Any] },
         "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
-        "Queue" -> Queue.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Queue" -> Queue.map { x => x.asInstanceOf[js.Any] },
+        "Settings" -> Settings.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateJobTemplateRequest]
     }
@@ -7200,22 +7200,22 @@ package mediaconvert {
 
   @js.native
   trait UpdatePresetRequest extends js.Object {
+    var Name: __string
     var Category: js.UndefOr[__string]
     var Description: js.UndefOr[__string]
-    var Name: js.UndefOr[__string]
     var Settings: js.UndefOr[PresetSettings]
   }
 
   object UpdatePresetRequest {
     def apply(
+      Name: __string,
       Category: js.UndefOr[__string] = js.undefined,
       Description: js.UndefOr[__string] = js.undefined,
-      Name: js.UndefOr[__string] = js.undefined,
       Settings: js.UndefOr[PresetSettings] = js.undefined): UpdatePresetRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "Name" -> Name.asInstanceOf[js.Any],
         "Category" -> Category.map { x => x.asInstanceOf[js.Any] },
         "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
         "Settings" -> Settings.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdatePresetRequest]
@@ -7239,21 +7239,21 @@ package mediaconvert {
 
   @js.native
   trait UpdateQueueRequest extends js.Object {
+    var Name: __string
     var Description: js.UndefOr[__string]
-    var Name: js.UndefOr[__string]
     var ReservationPlanSettings: js.UndefOr[ReservationPlanSettings]
     var Status: js.UndefOr[QueueStatus]
   }
 
   object UpdateQueueRequest {
     def apply(
+      Name: __string,
       Description: js.UndefOr[__string] = js.undefined,
-      Name: js.UndefOr[__string] = js.undefined,
       ReservationPlanSettings: js.UndefOr[ReservationPlanSettings] = js.undefined,
       Status: js.UndefOr[QueueStatus] = js.undefined): UpdateQueueRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "Name" -> Name.asInstanceOf[js.Any],
         "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
         "ReservationPlanSettings" -> ReservationPlanSettings.map { x => x.asInstanceOf[js.Any] },
         "Status" -> Status.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
@@ -7294,29 +7294,29 @@ package mediaconvert {
    */
   @js.native
   trait VideoCodecSettings extends js.Object {
-    var H264Settings: js.UndefOr[H264Settings]
-    var Mpeg2Settings: js.UndefOr[Mpeg2Settings]
-    var FrameCaptureSettings: js.UndefOr[FrameCaptureSettings]
-    var ProresSettings: js.UndefOr[ProresSettings]
     var Codec: js.UndefOr[VideoCodec]
+    var FrameCaptureSettings: js.UndefOr[FrameCaptureSettings]
+    var H264Settings: js.UndefOr[H264Settings]
     var H265Settings: js.UndefOr[H265Settings]
+    var Mpeg2Settings: js.UndefOr[Mpeg2Settings]
+    var ProresSettings: js.UndefOr[ProresSettings]
   }
 
   object VideoCodecSettings {
     def apply(
-      H264Settings: js.UndefOr[H264Settings] = js.undefined,
-      Mpeg2Settings: js.UndefOr[Mpeg2Settings] = js.undefined,
-      FrameCaptureSettings: js.UndefOr[FrameCaptureSettings] = js.undefined,
-      ProresSettings: js.UndefOr[ProresSettings] = js.undefined,
       Codec: js.UndefOr[VideoCodec] = js.undefined,
-      H265Settings: js.UndefOr[H265Settings] = js.undefined): VideoCodecSettings = {
+      FrameCaptureSettings: js.UndefOr[FrameCaptureSettings] = js.undefined,
+      H264Settings: js.UndefOr[H264Settings] = js.undefined,
+      H265Settings: js.UndefOr[H265Settings] = js.undefined,
+      Mpeg2Settings: js.UndefOr[Mpeg2Settings] = js.undefined,
+      ProresSettings: js.UndefOr[ProresSettings] = js.undefined): VideoCodecSettings = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "H264Settings" -> H264Settings.map { x => x.asInstanceOf[js.Any] },
-        "Mpeg2Settings" -> Mpeg2Settings.map { x => x.asInstanceOf[js.Any] },
-        "FrameCaptureSettings" -> FrameCaptureSettings.map { x => x.asInstanceOf[js.Any] },
-        "ProresSettings" -> ProresSettings.map { x => x.asInstanceOf[js.Any] },
         "Codec" -> Codec.map { x => x.asInstanceOf[js.Any] },
-        "H265Settings" -> H265Settings.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "FrameCaptureSettings" -> FrameCaptureSettings.map { x => x.asInstanceOf[js.Any] },
+        "H264Settings" -> H264Settings.map { x => x.asInstanceOf[js.Any] },
+        "H265Settings" -> H265Settings.map { x => x.asInstanceOf[js.Any] },
+        "Mpeg2Settings" -> Mpeg2Settings.map { x => x.asInstanceOf[js.Any] },
+        "ProresSettings" -> ProresSettings.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[VideoCodecSettings]
     }
@@ -7327,56 +7327,56 @@ package mediaconvert {
    */
   @js.native
   trait VideoDescription extends js.Object {
-    var TimecodeInsertion: js.UndefOr[VideoTimecodeInsertion]
-    var RespondToAfd: js.UndefOr[RespondToAfd]
-    var Position: js.UndefOr[Rectangle]
-    var FixedAfd: js.UndefOr[__integerMin0Max15]
-    var Width: js.UndefOr[__integerMin32Max4096]
-    var Sharpness: js.UndefOr[__integerMin0Max100]
-    var DropFrameTimecode: js.UndefOr[DropFrameTimecode]
-    var VideoPreprocessors: js.UndefOr[VideoPreprocessor]
-    var Crop: js.UndefOr[Rectangle]
-    var ScalingBehavior: js.UndefOr[ScalingBehavior]
-    var Height: js.UndefOr[__integerMin32Max2160]
     var AfdSignaling: js.UndefOr[AfdSignaling]
     var AntiAlias: js.UndefOr[AntiAlias]
     var CodecSettings: js.UndefOr[VideoCodecSettings]
     var ColorMetadata: js.UndefOr[ColorMetadata]
+    var Crop: js.UndefOr[Rectangle]
+    var DropFrameTimecode: js.UndefOr[DropFrameTimecode]
+    var FixedAfd: js.UndefOr[__integerMin0Max15]
+    var Height: js.UndefOr[__integerMin32Max2160]
+    var Position: js.UndefOr[Rectangle]
+    var RespondToAfd: js.UndefOr[RespondToAfd]
+    var ScalingBehavior: js.UndefOr[ScalingBehavior]
+    var Sharpness: js.UndefOr[__integerMin0Max100]
+    var TimecodeInsertion: js.UndefOr[VideoTimecodeInsertion]
+    var VideoPreprocessors: js.UndefOr[VideoPreprocessor]
+    var Width: js.UndefOr[__integerMin32Max4096]
   }
 
   object VideoDescription {
     def apply(
-      TimecodeInsertion: js.UndefOr[VideoTimecodeInsertion] = js.undefined,
-      RespondToAfd: js.UndefOr[RespondToAfd] = js.undefined,
-      Position: js.UndefOr[Rectangle] = js.undefined,
-      FixedAfd: js.UndefOr[__integerMin0Max15] = js.undefined,
-      Width: js.UndefOr[__integerMin32Max4096] = js.undefined,
-      Sharpness: js.UndefOr[__integerMin0Max100] = js.undefined,
-      DropFrameTimecode: js.UndefOr[DropFrameTimecode] = js.undefined,
-      VideoPreprocessors: js.UndefOr[VideoPreprocessor] = js.undefined,
-      Crop: js.UndefOr[Rectangle] = js.undefined,
-      ScalingBehavior: js.UndefOr[ScalingBehavior] = js.undefined,
-      Height: js.UndefOr[__integerMin32Max2160] = js.undefined,
       AfdSignaling: js.UndefOr[AfdSignaling] = js.undefined,
       AntiAlias: js.UndefOr[AntiAlias] = js.undefined,
       CodecSettings: js.UndefOr[VideoCodecSettings] = js.undefined,
-      ColorMetadata: js.UndefOr[ColorMetadata] = js.undefined): VideoDescription = {
+      ColorMetadata: js.UndefOr[ColorMetadata] = js.undefined,
+      Crop: js.UndefOr[Rectangle] = js.undefined,
+      DropFrameTimecode: js.UndefOr[DropFrameTimecode] = js.undefined,
+      FixedAfd: js.UndefOr[__integerMin0Max15] = js.undefined,
+      Height: js.UndefOr[__integerMin32Max2160] = js.undefined,
+      Position: js.UndefOr[Rectangle] = js.undefined,
+      RespondToAfd: js.UndefOr[RespondToAfd] = js.undefined,
+      ScalingBehavior: js.UndefOr[ScalingBehavior] = js.undefined,
+      Sharpness: js.UndefOr[__integerMin0Max100] = js.undefined,
+      TimecodeInsertion: js.UndefOr[VideoTimecodeInsertion] = js.undefined,
+      VideoPreprocessors: js.UndefOr[VideoPreprocessor] = js.undefined,
+      Width: js.UndefOr[__integerMin32Max4096] = js.undefined): VideoDescription = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "TimecodeInsertion" -> TimecodeInsertion.map { x => x.asInstanceOf[js.Any] },
-        "RespondToAfd" -> RespondToAfd.map { x => x.asInstanceOf[js.Any] },
-        "Position" -> Position.map { x => x.asInstanceOf[js.Any] },
-        "FixedAfd" -> FixedAfd.map { x => x.asInstanceOf[js.Any] },
-        "Width" -> Width.map { x => x.asInstanceOf[js.Any] },
-        "Sharpness" -> Sharpness.map { x => x.asInstanceOf[js.Any] },
-        "DropFrameTimecode" -> DropFrameTimecode.map { x => x.asInstanceOf[js.Any] },
-        "VideoPreprocessors" -> VideoPreprocessors.map { x => x.asInstanceOf[js.Any] },
-        "Crop" -> Crop.map { x => x.asInstanceOf[js.Any] },
-        "ScalingBehavior" -> ScalingBehavior.map { x => x.asInstanceOf[js.Any] },
-        "Height" -> Height.map { x => x.asInstanceOf[js.Any] },
         "AfdSignaling" -> AfdSignaling.map { x => x.asInstanceOf[js.Any] },
         "AntiAlias" -> AntiAlias.map { x => x.asInstanceOf[js.Any] },
         "CodecSettings" -> CodecSettings.map { x => x.asInstanceOf[js.Any] },
-        "ColorMetadata" -> ColorMetadata.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ColorMetadata" -> ColorMetadata.map { x => x.asInstanceOf[js.Any] },
+        "Crop" -> Crop.map { x => x.asInstanceOf[js.Any] },
+        "DropFrameTimecode" -> DropFrameTimecode.map { x => x.asInstanceOf[js.Any] },
+        "FixedAfd" -> FixedAfd.map { x => x.asInstanceOf[js.Any] },
+        "Height" -> Height.map { x => x.asInstanceOf[js.Any] },
+        "Position" -> Position.map { x => x.asInstanceOf[js.Any] },
+        "RespondToAfd" -> RespondToAfd.map { x => x.asInstanceOf[js.Any] },
+        "ScalingBehavior" -> ScalingBehavior.map { x => x.asInstanceOf[js.Any] },
+        "Sharpness" -> Sharpness.map { x => x.asInstanceOf[js.Any] },
+        "TimecodeInsertion" -> TimecodeInsertion.map { x => x.asInstanceOf[js.Any] },
+        "VideoPreprocessors" -> VideoPreprocessors.map { x => x.asInstanceOf[js.Any] },
+        "Width" -> Width.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[VideoDescription]
     }
@@ -7408,26 +7408,26 @@ package mediaconvert {
    */
   @js.native
   trait VideoPreprocessor extends js.Object {
-    var ImageInserter: js.UndefOr[ImageInserter]
     var ColorCorrector: js.UndefOr[ColorCorrector]
     var Deinterlacer: js.UndefOr[Deinterlacer]
-    var TimecodeBurnin: js.UndefOr[TimecodeBurnin]
+    var ImageInserter: js.UndefOr[ImageInserter]
     var NoiseReducer: js.UndefOr[NoiseReducer]
+    var TimecodeBurnin: js.UndefOr[TimecodeBurnin]
   }
 
   object VideoPreprocessor {
     def apply(
-      ImageInserter: js.UndefOr[ImageInserter] = js.undefined,
       ColorCorrector: js.UndefOr[ColorCorrector] = js.undefined,
       Deinterlacer: js.UndefOr[Deinterlacer] = js.undefined,
-      TimecodeBurnin: js.UndefOr[TimecodeBurnin] = js.undefined,
-      NoiseReducer: js.UndefOr[NoiseReducer] = js.undefined): VideoPreprocessor = {
+      ImageInserter: js.UndefOr[ImageInserter] = js.undefined,
+      NoiseReducer: js.UndefOr[NoiseReducer] = js.undefined,
+      TimecodeBurnin: js.UndefOr[TimecodeBurnin] = js.undefined): VideoPreprocessor = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ImageInserter" -> ImageInserter.map { x => x.asInstanceOf[js.Any] },
         "ColorCorrector" -> ColorCorrector.map { x => x.asInstanceOf[js.Any] },
         "Deinterlacer" -> Deinterlacer.map { x => x.asInstanceOf[js.Any] },
-        "TimecodeBurnin" -> TimecodeBurnin.map { x => x.asInstanceOf[js.Any] },
-        "NoiseReducer" -> NoiseReducer.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ImageInserter" -> ImageInserter.map { x => x.asInstanceOf[js.Any] },
+        "NoiseReducer" -> NoiseReducer.map { x => x.asInstanceOf[js.Any] },
+        "TimecodeBurnin" -> TimecodeBurnin.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[VideoPreprocessor]
     }
@@ -7440,8 +7440,8 @@ package mediaconvert {
   trait VideoSelector extends js.Object {
     var ColorSpace: js.UndefOr[ColorSpace]
     var ColorSpaceUsage: js.UndefOr[ColorSpaceUsage]
-    var Pid: js.UndefOr[__integerMin1Max2147483647]
     var Hdr10Metadata: js.UndefOr[Hdr10Metadata]
+    var Pid: js.UndefOr[__integerMin1Max2147483647]
     var ProgramNumber: js.UndefOr[__integerMinNegative2147483648Max2147483647]
   }
 
@@ -7449,14 +7449,14 @@ package mediaconvert {
     def apply(
       ColorSpace: js.UndefOr[ColorSpace] = js.undefined,
       ColorSpaceUsage: js.UndefOr[ColorSpaceUsage] = js.undefined,
-      Pid: js.UndefOr[__integerMin1Max2147483647] = js.undefined,
       Hdr10Metadata: js.UndefOr[Hdr10Metadata] = js.undefined,
+      Pid: js.UndefOr[__integerMin1Max2147483647] = js.undefined,
       ProgramNumber: js.UndefOr[__integerMinNegative2147483648Max2147483647] = js.undefined): VideoSelector = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ColorSpace" -> ColorSpace.map { x => x.asInstanceOf[js.Any] },
         "ColorSpaceUsage" -> ColorSpaceUsage.map { x => x.asInstanceOf[js.Any] },
-        "Pid" -> Pid.map { x => x.asInstanceOf[js.Any] },
         "Hdr10Metadata" -> Hdr10Metadata.map { x => x.asInstanceOf[js.Any] },
+        "Pid" -> Pid.map { x => x.asInstanceOf[js.Any] },
         "ProgramNumber" -> ProgramNumber.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[VideoSelector]

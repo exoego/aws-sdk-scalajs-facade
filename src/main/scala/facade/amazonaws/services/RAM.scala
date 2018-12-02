@@ -58,16 +58,16 @@ package ram {
 
   @js.native
   trait AcceptResourceShareInvitationRequest extends js.Object {
-    var resourceShareInvitationArn: js.UndefOr[String]
+    var resourceShareInvitationArn: String
     var clientToken: js.UndefOr[String]
   }
 
   object AcceptResourceShareInvitationRequest {
     def apply(
-      resourceShareInvitationArn: js.UndefOr[String] = js.undefined,
+      resourceShareInvitationArn: String,
       clientToken: js.UndefOr[String] = js.undefined): AcceptResourceShareInvitationRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "resourceShareInvitationArn" -> resourceShareInvitationArn.map { x => x.asInstanceOf[js.Any] },
+        "resourceShareInvitationArn" -> resourceShareInvitationArn.asInstanceOf[js.Any],
         "clientToken" -> clientToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AcceptResourceShareInvitationRequest]
@@ -76,17 +76,17 @@ package ram {
 
   @js.native
   trait AcceptResourceShareInvitationResponse extends js.Object {
-    var resourceShareInvitation: js.UndefOr[ResourceShareInvitation]
     var clientToken: js.UndefOr[String]
+    var resourceShareInvitation: js.UndefOr[ResourceShareInvitation]
   }
 
   object AcceptResourceShareInvitationResponse {
     def apply(
-      resourceShareInvitation: js.UndefOr[ResourceShareInvitation] = js.undefined,
-      clientToken: js.UndefOr[String] = js.undefined): AcceptResourceShareInvitationResponse = {
+      clientToken: js.UndefOr[String] = js.undefined,
+      resourceShareInvitation: js.UndefOr[ResourceShareInvitation] = js.undefined): AcceptResourceShareInvitationResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "resourceShareInvitation" -> resourceShareInvitation.map { x => x.asInstanceOf[js.Any] },
-        "clientToken" -> clientToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "clientToken" -> clientToken.map { x => x.asInstanceOf[js.Any] },
+        "resourceShareInvitation" -> resourceShareInvitation.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AcceptResourceShareInvitationResponse]
     }
@@ -94,23 +94,23 @@ package ram {
 
   @js.native
   trait AssociateResourceShareRequest extends js.Object {
-    var resourceShareArn: js.UndefOr[String]
-    var resourceArns: js.UndefOr[ResourceArnList]
-    var principals: js.UndefOr[PrincipalArnOrIdList]
+    var resourceShareArn: String
     var clientToken: js.UndefOr[String]
+    var principals: js.UndefOr[PrincipalArnOrIdList]
+    var resourceArns: js.UndefOr[ResourceArnList]
   }
 
   object AssociateResourceShareRequest {
     def apply(
-      resourceShareArn: js.UndefOr[String] = js.undefined,
-      resourceArns: js.UndefOr[ResourceArnList] = js.undefined,
+      resourceShareArn: String,
+      clientToken: js.UndefOr[String] = js.undefined,
       principals: js.UndefOr[PrincipalArnOrIdList] = js.undefined,
-      clientToken: js.UndefOr[String] = js.undefined): AssociateResourceShareRequest = {
+      resourceArns: js.UndefOr[ResourceArnList] = js.undefined): AssociateResourceShareRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "resourceShareArn" -> resourceShareArn.map { x => x.asInstanceOf[js.Any] },
-        "resourceArns" -> resourceArns.map { x => x.asInstanceOf[js.Any] },
+        "resourceShareArn" -> resourceShareArn.asInstanceOf[js.Any],
+        "clientToken" -> clientToken.map { x => x.asInstanceOf[js.Any] },
         "principals" -> principals.map { x => x.asInstanceOf[js.Any] },
-        "clientToken" -> clientToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "resourceArns" -> resourceArns.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AssociateResourceShareRequest]
     }
@@ -118,17 +118,17 @@ package ram {
 
   @js.native
   trait AssociateResourceShareResponse extends js.Object {
-    var resourceShareAssociations: js.UndefOr[ResourceShareAssociationList]
     var clientToken: js.UndefOr[String]
+    var resourceShareAssociations: js.UndefOr[ResourceShareAssociationList]
   }
 
   object AssociateResourceShareResponse {
     def apply(
-      resourceShareAssociations: js.UndefOr[ResourceShareAssociationList] = js.undefined,
-      clientToken: js.UndefOr[String] = js.undefined): AssociateResourceShareResponse = {
+      clientToken: js.UndefOr[String] = js.undefined,
+      resourceShareAssociations: js.UndefOr[ResourceShareAssociationList] = js.undefined): AssociateResourceShareResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "resourceShareAssociations" -> resourceShareAssociations.map { x => x.asInstanceOf[js.Any] },
-        "clientToken" -> clientToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "clientToken" -> clientToken.map { x => x.asInstanceOf[js.Any] },
+        "resourceShareAssociations" -> resourceShareAssociations.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AssociateResourceShareResponse]
     }
@@ -136,29 +136,29 @@ package ram {
 
   @js.native
   trait CreateResourceShareRequest extends js.Object {
-    var name: js.UndefOr[String]
-    var principals: js.UndefOr[PrincipalArnOrIdList]
+    var name: String
     var allowExternalPrincipals: js.UndefOr[Boolean]
-    var tags: js.UndefOr[TagList]
     var clientToken: js.UndefOr[String]
+    var principals: js.UndefOr[PrincipalArnOrIdList]
     var resourceArns: js.UndefOr[ResourceArnList]
+    var tags: js.UndefOr[TagList]
   }
 
   object CreateResourceShareRequest {
     def apply(
-      name: js.UndefOr[String] = js.undefined,
-      principals: js.UndefOr[PrincipalArnOrIdList] = js.undefined,
+      name: String,
       allowExternalPrincipals: js.UndefOr[Boolean] = js.undefined,
-      tags: js.UndefOr[TagList] = js.undefined,
       clientToken: js.UndefOr[String] = js.undefined,
-      resourceArns: js.UndefOr[ResourceArnList] = js.undefined): CreateResourceShareRequest = {
+      principals: js.UndefOr[PrincipalArnOrIdList] = js.undefined,
+      resourceArns: js.UndefOr[ResourceArnList] = js.undefined,
+      tags: js.UndefOr[TagList] = js.undefined): CreateResourceShareRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "name" -> name.map { x => x.asInstanceOf[js.Any] },
-        "principals" -> principals.map { x => x.asInstanceOf[js.Any] },
+        "name" -> name.asInstanceOf[js.Any],
         "allowExternalPrincipals" -> allowExternalPrincipals.map { x => x.asInstanceOf[js.Any] },
-        "tags" -> tags.map { x => x.asInstanceOf[js.Any] },
         "clientToken" -> clientToken.map { x => x.asInstanceOf[js.Any] },
-        "resourceArns" -> resourceArns.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "principals" -> principals.map { x => x.asInstanceOf[js.Any] },
+        "resourceArns" -> resourceArns.map { x => x.asInstanceOf[js.Any] },
+        "tags" -> tags.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateResourceShareRequest]
     }
@@ -166,17 +166,17 @@ package ram {
 
   @js.native
   trait CreateResourceShareResponse extends js.Object {
-    var resourceShare: js.UndefOr[ResourceShare]
     var clientToken: js.UndefOr[String]
+    var resourceShare: js.UndefOr[ResourceShare]
   }
 
   object CreateResourceShareResponse {
     def apply(
-      resourceShare: js.UndefOr[ResourceShare] = js.undefined,
-      clientToken: js.UndefOr[String] = js.undefined): CreateResourceShareResponse = {
+      clientToken: js.UndefOr[String] = js.undefined,
+      resourceShare: js.UndefOr[ResourceShare] = js.undefined): CreateResourceShareResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "resourceShare" -> resourceShare.map { x => x.asInstanceOf[js.Any] },
-        "clientToken" -> clientToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "clientToken" -> clientToken.map { x => x.asInstanceOf[js.Any] },
+        "resourceShare" -> resourceShare.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateResourceShareResponse]
     }
@@ -184,16 +184,16 @@ package ram {
 
   @js.native
   trait DeleteResourceShareRequest extends js.Object {
-    var resourceShareArn: js.UndefOr[String]
+    var resourceShareArn: String
     var clientToken: js.UndefOr[String]
   }
 
   object DeleteResourceShareRequest {
     def apply(
-      resourceShareArn: js.UndefOr[String] = js.undefined,
+      resourceShareArn: String,
       clientToken: js.UndefOr[String] = js.undefined): DeleteResourceShareRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "resourceShareArn" -> resourceShareArn.map { x => x.asInstanceOf[js.Any] },
+        "resourceShareArn" -> resourceShareArn.asInstanceOf[js.Any],
         "clientToken" -> clientToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteResourceShareRequest]
@@ -202,17 +202,17 @@ package ram {
 
   @js.native
   trait DeleteResourceShareResponse extends js.Object {
-    var returnValue: js.UndefOr[Boolean]
     var clientToken: js.UndefOr[String]
+    var returnValue: js.UndefOr[Boolean]
   }
 
   object DeleteResourceShareResponse {
     def apply(
-      returnValue: js.UndefOr[Boolean] = js.undefined,
-      clientToken: js.UndefOr[String] = js.undefined): DeleteResourceShareResponse = {
+      clientToken: js.UndefOr[String] = js.undefined,
+      returnValue: js.UndefOr[Boolean] = js.undefined): DeleteResourceShareResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "returnValue" -> returnValue.map { x => x.asInstanceOf[js.Any] },
-        "clientToken" -> clientToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "clientToken" -> clientToken.map { x => x.asInstanceOf[js.Any] },
+        "returnValue" -> returnValue.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteResourceShareResponse]
     }
@@ -220,23 +220,23 @@ package ram {
 
   @js.native
   trait DisassociateResourceShareRequest extends js.Object {
-    var resourceShareArn: js.UndefOr[String]
-    var resourceArns: js.UndefOr[ResourceArnList]
-    var principals: js.UndefOr[PrincipalArnOrIdList]
+    var resourceShareArn: String
     var clientToken: js.UndefOr[String]
+    var principals: js.UndefOr[PrincipalArnOrIdList]
+    var resourceArns: js.UndefOr[ResourceArnList]
   }
 
   object DisassociateResourceShareRequest {
     def apply(
-      resourceShareArn: js.UndefOr[String] = js.undefined,
-      resourceArns: js.UndefOr[ResourceArnList] = js.undefined,
+      resourceShareArn: String,
+      clientToken: js.UndefOr[String] = js.undefined,
       principals: js.UndefOr[PrincipalArnOrIdList] = js.undefined,
-      clientToken: js.UndefOr[String] = js.undefined): DisassociateResourceShareRequest = {
+      resourceArns: js.UndefOr[ResourceArnList] = js.undefined): DisassociateResourceShareRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "resourceShareArn" -> resourceShareArn.map { x => x.asInstanceOf[js.Any] },
-        "resourceArns" -> resourceArns.map { x => x.asInstanceOf[js.Any] },
+        "resourceShareArn" -> resourceShareArn.asInstanceOf[js.Any],
+        "clientToken" -> clientToken.map { x => x.asInstanceOf[js.Any] },
         "principals" -> principals.map { x => x.asInstanceOf[js.Any] },
-        "clientToken" -> clientToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "resourceArns" -> resourceArns.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DisassociateResourceShareRequest]
     }
@@ -244,17 +244,17 @@ package ram {
 
   @js.native
   trait DisassociateResourceShareResponse extends js.Object {
-    var resourceShareAssociations: js.UndefOr[ResourceShareAssociationList]
     var clientToken: js.UndefOr[String]
+    var resourceShareAssociations: js.UndefOr[ResourceShareAssociationList]
   }
 
   object DisassociateResourceShareResponse {
     def apply(
-      resourceShareAssociations: js.UndefOr[ResourceShareAssociationList] = js.undefined,
-      clientToken: js.UndefOr[String] = js.undefined): DisassociateResourceShareResponse = {
+      clientToken: js.UndefOr[String] = js.undefined,
+      resourceShareAssociations: js.UndefOr[ResourceShareAssociationList] = js.undefined): DisassociateResourceShareResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "resourceShareAssociations" -> resourceShareAssociations.map { x => x.asInstanceOf[js.Any] },
-        "clientToken" -> clientToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "clientToken" -> clientToken.map { x => x.asInstanceOf[js.Any] },
+        "resourceShareAssociations" -> resourceShareAssociations.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DisassociateResourceShareResponse]
     }
@@ -290,23 +290,23 @@ package ram {
 
   @js.native
   trait GetResourcePoliciesRequest extends js.Object {
-    var resourceArns: js.UndefOr[ResourceArnList]
-    var principal: js.UndefOr[String]
-    var nextToken: js.UndefOr[String]
+    var resourceArns: ResourceArnList
     var maxResults: js.UndefOr[MaxResults]
+    var nextToken: js.UndefOr[String]
+    var principal: js.UndefOr[String]
   }
 
   object GetResourcePoliciesRequest {
     def apply(
-      resourceArns: js.UndefOr[ResourceArnList] = js.undefined,
-      principal: js.UndefOr[String] = js.undefined,
+      resourceArns: ResourceArnList,
+      maxResults: js.UndefOr[MaxResults] = js.undefined,
       nextToken: js.UndefOr[String] = js.undefined,
-      maxResults: js.UndefOr[MaxResults] = js.undefined): GetResourcePoliciesRequest = {
+      principal: js.UndefOr[String] = js.undefined): GetResourcePoliciesRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "resourceArns" -> resourceArns.map { x => x.asInstanceOf[js.Any] },
-        "principal" -> principal.map { x => x.asInstanceOf[js.Any] },
+        "resourceArns" -> resourceArns.asInstanceOf[js.Any],
+        "maxResults" -> maxResults.map { x => x.asInstanceOf[js.Any] },
         "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] },
-        "maxResults" -> maxResults.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "principal" -> principal.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetResourcePoliciesRequest]
     }
@@ -314,17 +314,17 @@ package ram {
 
   @js.native
   trait GetResourcePoliciesResponse extends js.Object {
-    var policies: js.UndefOr[PolicyList]
     var nextToken: js.UndefOr[String]
+    var policies: js.UndefOr[PolicyList]
   }
 
   object GetResourcePoliciesResponse {
     def apply(
-      policies: js.UndefOr[PolicyList] = js.undefined,
-      nextToken: js.UndefOr[String] = js.undefined): GetResourcePoliciesResponse = {
+      nextToken: js.UndefOr[String] = js.undefined,
+      policies: js.UndefOr[PolicyList] = js.undefined): GetResourcePoliciesResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "policies" -> policies.map { x => x.asInstanceOf[js.Any] },
-        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] },
+        "policies" -> policies.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetResourcePoliciesResponse]
     }
@@ -332,32 +332,32 @@ package ram {
 
   @js.native
   trait GetResourceShareAssociationsRequest extends js.Object {
-    var resourceArn: js.UndefOr[String]
-    var maxResults: js.UndefOr[MaxResults]
-    var associationType: js.UndefOr[ResourceShareAssociationType]
-    var nextToken: js.UndefOr[String]
-    var resourceShareArns: js.UndefOr[ResourceShareArnList]
+    var associationType: ResourceShareAssociationType
     var associationStatus: js.UndefOr[ResourceShareAssociationStatus]
+    var maxResults: js.UndefOr[MaxResults]
+    var nextToken: js.UndefOr[String]
     var principal: js.UndefOr[String]
+    var resourceArn: js.UndefOr[String]
+    var resourceShareArns: js.UndefOr[ResourceShareArnList]
   }
 
   object GetResourceShareAssociationsRequest {
     def apply(
-      resourceArn: js.UndefOr[String] = js.undefined,
-      maxResults: js.UndefOr[MaxResults] = js.undefined,
-      associationType: js.UndefOr[ResourceShareAssociationType] = js.undefined,
-      nextToken: js.UndefOr[String] = js.undefined,
-      resourceShareArns: js.UndefOr[ResourceShareArnList] = js.undefined,
+      associationType: ResourceShareAssociationType,
       associationStatus: js.UndefOr[ResourceShareAssociationStatus] = js.undefined,
-      principal: js.UndefOr[String] = js.undefined): GetResourceShareAssociationsRequest = {
+      maxResults: js.UndefOr[MaxResults] = js.undefined,
+      nextToken: js.UndefOr[String] = js.undefined,
+      principal: js.UndefOr[String] = js.undefined,
+      resourceArn: js.UndefOr[String] = js.undefined,
+      resourceShareArns: js.UndefOr[ResourceShareArnList] = js.undefined): GetResourceShareAssociationsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "resourceArn" -> resourceArn.map { x => x.asInstanceOf[js.Any] },
-        "maxResults" -> maxResults.map { x => x.asInstanceOf[js.Any] },
-        "associationType" -> associationType.map { x => x.asInstanceOf[js.Any] },
-        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] },
-        "resourceShareArns" -> resourceShareArns.map { x => x.asInstanceOf[js.Any] },
+        "associationType" -> associationType.asInstanceOf[js.Any],
         "associationStatus" -> associationStatus.map { x => x.asInstanceOf[js.Any] },
-        "principal" -> principal.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "maxResults" -> maxResults.map { x => x.asInstanceOf[js.Any] },
+        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] },
+        "principal" -> principal.map { x => x.asInstanceOf[js.Any] },
+        "resourceArn" -> resourceArn.map { x => x.asInstanceOf[js.Any] },
+        "resourceShareArns" -> resourceShareArns.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetResourceShareAssociationsRequest]
     }
@@ -365,17 +365,17 @@ package ram {
 
   @js.native
   trait GetResourceShareAssociationsResponse extends js.Object {
-    var resourceShareAssociations: js.UndefOr[ResourceShareAssociationList]
     var nextToken: js.UndefOr[String]
+    var resourceShareAssociations: js.UndefOr[ResourceShareAssociationList]
   }
 
   object GetResourceShareAssociationsResponse {
     def apply(
-      resourceShareAssociations: js.UndefOr[ResourceShareAssociationList] = js.undefined,
-      nextToken: js.UndefOr[String] = js.undefined): GetResourceShareAssociationsResponse = {
+      nextToken: js.UndefOr[String] = js.undefined,
+      resourceShareAssociations: js.UndefOr[ResourceShareAssociationList] = js.undefined): GetResourceShareAssociationsResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "resourceShareAssociations" -> resourceShareAssociations.map { x => x.asInstanceOf[js.Any] },
-        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] },
+        "resourceShareAssociations" -> resourceShareAssociations.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetResourceShareAssociationsResponse]
     }
@@ -383,23 +383,23 @@ package ram {
 
   @js.native
   trait GetResourceShareInvitationsRequest extends js.Object {
-    var resourceShareInvitationArns: js.UndefOr[ResourceShareInvitationArnList]
-    var resourceShareArns: js.UndefOr[ResourceShareArnList]
-    var nextToken: js.UndefOr[String]
     var maxResults: js.UndefOr[MaxResults]
+    var nextToken: js.UndefOr[String]
+    var resourceShareArns: js.UndefOr[ResourceShareArnList]
+    var resourceShareInvitationArns: js.UndefOr[ResourceShareInvitationArnList]
   }
 
   object GetResourceShareInvitationsRequest {
     def apply(
-      resourceShareInvitationArns: js.UndefOr[ResourceShareInvitationArnList] = js.undefined,
-      resourceShareArns: js.UndefOr[ResourceShareArnList] = js.undefined,
+      maxResults: js.UndefOr[MaxResults] = js.undefined,
       nextToken: js.UndefOr[String] = js.undefined,
-      maxResults: js.UndefOr[MaxResults] = js.undefined): GetResourceShareInvitationsRequest = {
+      resourceShareArns: js.UndefOr[ResourceShareArnList] = js.undefined,
+      resourceShareInvitationArns: js.UndefOr[ResourceShareInvitationArnList] = js.undefined): GetResourceShareInvitationsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "resourceShareInvitationArns" -> resourceShareInvitationArns.map { x => x.asInstanceOf[js.Any] },
-        "resourceShareArns" -> resourceShareArns.map { x => x.asInstanceOf[js.Any] },
+        "maxResults" -> maxResults.map { x => x.asInstanceOf[js.Any] },
         "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] },
-        "maxResults" -> maxResults.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "resourceShareArns" -> resourceShareArns.map { x => x.asInstanceOf[js.Any] },
+        "resourceShareInvitationArns" -> resourceShareInvitationArns.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetResourceShareInvitationsRequest]
     }
@@ -407,17 +407,17 @@ package ram {
 
   @js.native
   trait GetResourceShareInvitationsResponse extends js.Object {
-    var resourceShareInvitations: js.UndefOr[ResourceShareInvitationList]
     var nextToken: js.UndefOr[String]
+    var resourceShareInvitations: js.UndefOr[ResourceShareInvitationList]
   }
 
   object GetResourceShareInvitationsResponse {
     def apply(
-      resourceShareInvitations: js.UndefOr[ResourceShareInvitationList] = js.undefined,
-      nextToken: js.UndefOr[String] = js.undefined): GetResourceShareInvitationsResponse = {
+      nextToken: js.UndefOr[String] = js.undefined,
+      resourceShareInvitations: js.UndefOr[ResourceShareInvitationList] = js.undefined): GetResourceShareInvitationsResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "resourceShareInvitations" -> resourceShareInvitations.map { x => x.asInstanceOf[js.Any] },
-        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] },
+        "resourceShareInvitations" -> resourceShareInvitations.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetResourceShareInvitationsResponse]
     }
@@ -425,32 +425,32 @@ package ram {
 
   @js.native
   trait GetResourceSharesRequest extends js.Object {
-    var tagFilters: js.UndefOr[TagFilters]
-    var name: js.UndefOr[String]
+    var resourceOwner: ResourceOwner
     var maxResults: js.UndefOr[MaxResults]
-    var resourceShareStatus: js.UndefOr[ResourceShareStatus]
+    var name: js.UndefOr[String]
     var nextToken: js.UndefOr[String]
     var resourceShareArns: js.UndefOr[ResourceShareArnList]
-    var resourceOwner: js.UndefOr[ResourceOwner]
+    var resourceShareStatus: js.UndefOr[ResourceShareStatus]
+    var tagFilters: js.UndefOr[TagFilters]
   }
 
   object GetResourceSharesRequest {
     def apply(
-      tagFilters: js.UndefOr[TagFilters] = js.undefined,
-      name: js.UndefOr[String] = js.undefined,
+      resourceOwner: ResourceOwner,
       maxResults: js.UndefOr[MaxResults] = js.undefined,
-      resourceShareStatus: js.UndefOr[ResourceShareStatus] = js.undefined,
+      name: js.UndefOr[String] = js.undefined,
       nextToken: js.UndefOr[String] = js.undefined,
       resourceShareArns: js.UndefOr[ResourceShareArnList] = js.undefined,
-      resourceOwner: js.UndefOr[ResourceOwner] = js.undefined): GetResourceSharesRequest = {
+      resourceShareStatus: js.UndefOr[ResourceShareStatus] = js.undefined,
+      tagFilters: js.UndefOr[TagFilters] = js.undefined): GetResourceSharesRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "tagFilters" -> tagFilters.map { x => x.asInstanceOf[js.Any] },
-        "name" -> name.map { x => x.asInstanceOf[js.Any] },
+        "resourceOwner" -> resourceOwner.asInstanceOf[js.Any],
         "maxResults" -> maxResults.map { x => x.asInstanceOf[js.Any] },
-        "resourceShareStatus" -> resourceShareStatus.map { x => x.asInstanceOf[js.Any] },
+        "name" -> name.map { x => x.asInstanceOf[js.Any] },
         "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] },
         "resourceShareArns" -> resourceShareArns.map { x => x.asInstanceOf[js.Any] },
-        "resourceOwner" -> resourceOwner.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "resourceShareStatus" -> resourceShareStatus.map { x => x.asInstanceOf[js.Any] },
+        "tagFilters" -> tagFilters.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetResourceSharesRequest]
     }
@@ -458,17 +458,17 @@ package ram {
 
   @js.native
   trait GetResourceSharesResponse extends js.Object {
-    var resourceShares: js.UndefOr[ResourceShareList]
     var nextToken: js.UndefOr[String]
+    var resourceShares: js.UndefOr[ResourceShareList]
   }
 
   object GetResourceSharesResponse {
     def apply(
-      resourceShares: js.UndefOr[ResourceShareList] = js.undefined,
-      nextToken: js.UndefOr[String] = js.undefined): GetResourceSharesResponse = {
+      nextToken: js.UndefOr[String] = js.undefined,
+      resourceShares: js.UndefOr[ResourceShareList] = js.undefined): GetResourceSharesResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "resourceShares" -> resourceShares.map { x => x.asInstanceOf[js.Any] },
-        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] },
+        "resourceShares" -> resourceShares.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetResourceSharesResponse]
     }
@@ -476,32 +476,32 @@ package ram {
 
   @js.native
   trait ListPrincipalsRequest extends js.Object {
+    var resourceOwner: ResourceOwner
+    var maxResults: js.UndefOr[MaxResults]
+    var nextToken: js.UndefOr[String]
     var principals: js.UndefOr[PrincipalArnOrIdList]
     var resourceArn: js.UndefOr[String]
-    var maxResults: js.UndefOr[MaxResults]
-    var resourceType: js.UndefOr[String]
-    var nextToken: js.UndefOr[String]
     var resourceShareArns: js.UndefOr[ResourceShareArnList]
-    var resourceOwner: js.UndefOr[ResourceOwner]
+    var resourceType: js.UndefOr[String]
   }
 
   object ListPrincipalsRequest {
     def apply(
+      resourceOwner: ResourceOwner,
+      maxResults: js.UndefOr[MaxResults] = js.undefined,
+      nextToken: js.UndefOr[String] = js.undefined,
       principals: js.UndefOr[PrincipalArnOrIdList] = js.undefined,
       resourceArn: js.UndefOr[String] = js.undefined,
-      maxResults: js.UndefOr[MaxResults] = js.undefined,
-      resourceType: js.UndefOr[String] = js.undefined,
-      nextToken: js.UndefOr[String] = js.undefined,
       resourceShareArns: js.UndefOr[ResourceShareArnList] = js.undefined,
-      resourceOwner: js.UndefOr[ResourceOwner] = js.undefined): ListPrincipalsRequest = {
+      resourceType: js.UndefOr[String] = js.undefined): ListPrincipalsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "resourceOwner" -> resourceOwner.asInstanceOf[js.Any],
+        "maxResults" -> maxResults.map { x => x.asInstanceOf[js.Any] },
+        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] },
         "principals" -> principals.map { x => x.asInstanceOf[js.Any] },
         "resourceArn" -> resourceArn.map { x => x.asInstanceOf[js.Any] },
-        "maxResults" -> maxResults.map { x => x.asInstanceOf[js.Any] },
-        "resourceType" -> resourceType.map { x => x.asInstanceOf[js.Any] },
-        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] },
         "resourceShareArns" -> resourceShareArns.map { x => x.asInstanceOf[js.Any] },
-        "resourceOwner" -> resourceOwner.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "resourceType" -> resourceType.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListPrincipalsRequest]
     }
@@ -509,17 +509,17 @@ package ram {
 
   @js.native
   trait ListPrincipalsResponse extends js.Object {
-    var principals: js.UndefOr[PrincipalList]
     var nextToken: js.UndefOr[String]
+    var principals: js.UndefOr[PrincipalList]
   }
 
   object ListPrincipalsResponse {
     def apply(
-      principals: js.UndefOr[PrincipalList] = js.undefined,
-      nextToken: js.UndefOr[String] = js.undefined): ListPrincipalsResponse = {
+      nextToken: js.UndefOr[String] = js.undefined,
+      principals: js.UndefOr[PrincipalList] = js.undefined): ListPrincipalsResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "principals" -> principals.map { x => x.asInstanceOf[js.Any] },
-        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] },
+        "principals" -> principals.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListPrincipalsResponse]
     }
@@ -527,32 +527,32 @@ package ram {
 
   @js.native
   trait ListResourcesRequest extends js.Object {
+    var resourceOwner: ResourceOwner
     var maxResults: js.UndefOr[MaxResults]
-    var resourceType: js.UndefOr[String]
-    var resourceArns: js.UndefOr[ResourceArnList]
     var nextToken: js.UndefOr[String]
-    var resourceShareArns: js.UndefOr[ResourceShareArnList]
-    var resourceOwner: js.UndefOr[ResourceOwner]
     var principal: js.UndefOr[String]
+    var resourceArns: js.UndefOr[ResourceArnList]
+    var resourceShareArns: js.UndefOr[ResourceShareArnList]
+    var resourceType: js.UndefOr[String]
   }
 
   object ListResourcesRequest {
     def apply(
+      resourceOwner: ResourceOwner,
       maxResults: js.UndefOr[MaxResults] = js.undefined,
-      resourceType: js.UndefOr[String] = js.undefined,
-      resourceArns: js.UndefOr[ResourceArnList] = js.undefined,
       nextToken: js.UndefOr[String] = js.undefined,
+      principal: js.UndefOr[String] = js.undefined,
+      resourceArns: js.UndefOr[ResourceArnList] = js.undefined,
       resourceShareArns: js.UndefOr[ResourceShareArnList] = js.undefined,
-      resourceOwner: js.UndefOr[ResourceOwner] = js.undefined,
-      principal: js.UndefOr[String] = js.undefined): ListResourcesRequest = {
+      resourceType: js.UndefOr[String] = js.undefined): ListResourcesRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "resourceOwner" -> resourceOwner.asInstanceOf[js.Any],
         "maxResults" -> maxResults.map { x => x.asInstanceOf[js.Any] },
-        "resourceType" -> resourceType.map { x => x.asInstanceOf[js.Any] },
-        "resourceArns" -> resourceArns.map { x => x.asInstanceOf[js.Any] },
         "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] },
+        "principal" -> principal.map { x => x.asInstanceOf[js.Any] },
+        "resourceArns" -> resourceArns.map { x => x.asInstanceOf[js.Any] },
         "resourceShareArns" -> resourceShareArns.map { x => x.asInstanceOf[js.Any] },
-        "resourceOwner" -> resourceOwner.map { x => x.asInstanceOf[js.Any] },
-        "principal" -> principal.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "resourceType" -> resourceType.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListResourcesRequest]
     }
@@ -560,17 +560,17 @@ package ram {
 
   @js.native
   trait ListResourcesResponse extends js.Object {
-    var resources: js.UndefOr[ResourceList]
     var nextToken: js.UndefOr[String]
+    var resources: js.UndefOr[ResourceList]
   }
 
   object ListResourcesResponse {
     def apply(
-      resources: js.UndefOr[ResourceList] = js.undefined,
-      nextToken: js.UndefOr[String] = js.undefined): ListResourcesResponse = {
+      nextToken: js.UndefOr[String] = js.undefined,
+      resources: js.UndefOr[ResourceList] = js.undefined): ListResourcesResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "resources" -> resources.map { x => x.asInstanceOf[js.Any] },
-        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] },
+        "resources" -> resources.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListResourcesResponse]
     }
@@ -581,26 +581,26 @@ package ram {
    */
   @js.native
   trait Principal extends js.Object {
+    var creationTime: js.UndefOr[DateTime]
+    var external: js.UndefOr[Boolean]
+    var id: js.UndefOr[String]
     var lastUpdatedTime: js.UndefOr[DateTime]
     var resourceShareArn: js.UndefOr[String]
-    var id: js.UndefOr[String]
-    var external: js.UndefOr[Boolean]
-    var creationTime: js.UndefOr[DateTime]
   }
 
   object Principal {
     def apply(
-      lastUpdatedTime: js.UndefOr[DateTime] = js.undefined,
-      resourceShareArn: js.UndefOr[String] = js.undefined,
-      id: js.UndefOr[String] = js.undefined,
+      creationTime: js.UndefOr[DateTime] = js.undefined,
       external: js.UndefOr[Boolean] = js.undefined,
-      creationTime: js.UndefOr[DateTime] = js.undefined): Principal = {
+      id: js.UndefOr[String] = js.undefined,
+      lastUpdatedTime: js.UndefOr[DateTime] = js.undefined,
+      resourceShareArn: js.UndefOr[String] = js.undefined): Principal = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "lastUpdatedTime" -> lastUpdatedTime.map { x => x.asInstanceOf[js.Any] },
-        "resourceShareArn" -> resourceShareArn.map { x => x.asInstanceOf[js.Any] },
-        "id" -> id.map { x => x.asInstanceOf[js.Any] },
+        "creationTime" -> creationTime.map { x => x.asInstanceOf[js.Any] },
         "external" -> external.map { x => x.asInstanceOf[js.Any] },
-        "creationTime" -> creationTime.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "id" -> id.map { x => x.asInstanceOf[js.Any] },
+        "lastUpdatedTime" -> lastUpdatedTime.map { x => x.asInstanceOf[js.Any] },
+        "resourceShareArn" -> resourceShareArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Principal]
     }
@@ -608,16 +608,16 @@ package ram {
 
   @js.native
   trait RejectResourceShareInvitationRequest extends js.Object {
-    var resourceShareInvitationArn: js.UndefOr[String]
+    var resourceShareInvitationArn: String
     var clientToken: js.UndefOr[String]
   }
 
   object RejectResourceShareInvitationRequest {
     def apply(
-      resourceShareInvitationArn: js.UndefOr[String] = js.undefined,
+      resourceShareInvitationArn: String,
       clientToken: js.UndefOr[String] = js.undefined): RejectResourceShareInvitationRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "resourceShareInvitationArn" -> resourceShareInvitationArn.map { x => x.asInstanceOf[js.Any] },
+        "resourceShareInvitationArn" -> resourceShareInvitationArn.asInstanceOf[js.Any],
         "clientToken" -> clientToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RejectResourceShareInvitationRequest]
@@ -626,17 +626,17 @@ package ram {
 
   @js.native
   trait RejectResourceShareInvitationResponse extends js.Object {
-    var resourceShareInvitation: js.UndefOr[ResourceShareInvitation]
     var clientToken: js.UndefOr[String]
+    var resourceShareInvitation: js.UndefOr[ResourceShareInvitation]
   }
 
   object RejectResourceShareInvitationResponse {
     def apply(
-      resourceShareInvitation: js.UndefOr[ResourceShareInvitation] = js.undefined,
-      clientToken: js.UndefOr[String] = js.undefined): RejectResourceShareInvitationResponse = {
+      clientToken: js.UndefOr[String] = js.undefined,
+      resourceShareInvitation: js.UndefOr[ResourceShareInvitation] = js.undefined): RejectResourceShareInvitationResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "resourceShareInvitation" -> resourceShareInvitation.map { x => x.asInstanceOf[js.Any] },
-        "clientToken" -> clientToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "clientToken" -> clientToken.map { x => x.asInstanceOf[js.Any] },
+        "resourceShareInvitation" -> resourceShareInvitation.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RejectResourceShareInvitationResponse]
     }
@@ -648,31 +648,31 @@ package ram {
   @js.native
   trait Resource extends js.Object {
     var arn: js.UndefOr[String]
+    var creationTime: js.UndefOr[DateTime]
     var lastUpdatedTime: js.UndefOr[DateTime]
     var resourceShareArn: js.UndefOr[String]
     var status: js.UndefOr[ResourceStatus]
-    var `type`: js.UndefOr[String]
     var statusMessage: js.UndefOr[String]
-    var creationTime: js.UndefOr[DateTime]
+    var `type`: js.UndefOr[String]
   }
 
   object Resource {
     def apply(
       arn: js.UndefOr[String] = js.undefined,
+      creationTime: js.UndefOr[DateTime] = js.undefined,
       lastUpdatedTime: js.UndefOr[DateTime] = js.undefined,
       resourceShareArn: js.UndefOr[String] = js.undefined,
       status: js.UndefOr[ResourceStatus] = js.undefined,
-      `type`: js.UndefOr[String] = js.undefined,
       statusMessage: js.UndefOr[String] = js.undefined,
-      creationTime: js.UndefOr[DateTime] = js.undefined): Resource = {
+      `type`: js.UndefOr[String] = js.undefined): Resource = {
       val _fields = IndexedSeq[(String, js.Any)](
         "arn" -> arn.map { x => x.asInstanceOf[js.Any] },
+        "creationTime" -> creationTime.map { x => x.asInstanceOf[js.Any] },
         "lastUpdatedTime" -> lastUpdatedTime.map { x => x.asInstanceOf[js.Any] },
         "resourceShareArn" -> resourceShareArn.map { x => x.asInstanceOf[js.Any] },
         "status" -> status.map { x => x.asInstanceOf[js.Any] },
-        "`type`" -> `type`.map { x => x.asInstanceOf[js.Any] },
         "statusMessage" -> statusMessage.map { x => x.asInstanceOf[js.Any] },
-        "creationTime" -> creationTime.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "`type`" -> `type`.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Resource]
     }
@@ -690,38 +690,38 @@ package ram {
    */
   @js.native
   trait ResourceShare extends js.Object {
-    var name: js.UndefOr[String]
+    var allowExternalPrincipals: js.UndefOr[Boolean]
+    var creationTime: js.UndefOr[DateTime]
     var lastUpdatedTime: js.UndefOr[DateTime]
+    var name: js.UndefOr[String]
     var owningAccountId: js.UndefOr[String]
     var resourceShareArn: js.UndefOr[String]
-    var allowExternalPrincipals: js.UndefOr[Boolean]
-    var tags: js.UndefOr[TagList]
     var status: js.UndefOr[ResourceShareStatus]
     var statusMessage: js.UndefOr[String]
-    var creationTime: js.UndefOr[DateTime]
+    var tags: js.UndefOr[TagList]
   }
 
   object ResourceShare {
     def apply(
-      name: js.UndefOr[String] = js.undefined,
+      allowExternalPrincipals: js.UndefOr[Boolean] = js.undefined,
+      creationTime: js.UndefOr[DateTime] = js.undefined,
       lastUpdatedTime: js.UndefOr[DateTime] = js.undefined,
+      name: js.UndefOr[String] = js.undefined,
       owningAccountId: js.UndefOr[String] = js.undefined,
       resourceShareArn: js.UndefOr[String] = js.undefined,
-      allowExternalPrincipals: js.UndefOr[Boolean] = js.undefined,
-      tags: js.UndefOr[TagList] = js.undefined,
       status: js.UndefOr[ResourceShareStatus] = js.undefined,
       statusMessage: js.UndefOr[String] = js.undefined,
-      creationTime: js.UndefOr[DateTime] = js.undefined): ResourceShare = {
+      tags: js.UndefOr[TagList] = js.undefined): ResourceShare = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "name" -> name.map { x => x.asInstanceOf[js.Any] },
+        "allowExternalPrincipals" -> allowExternalPrincipals.map { x => x.asInstanceOf[js.Any] },
+        "creationTime" -> creationTime.map { x => x.asInstanceOf[js.Any] },
         "lastUpdatedTime" -> lastUpdatedTime.map { x => x.asInstanceOf[js.Any] },
+        "name" -> name.map { x => x.asInstanceOf[js.Any] },
         "owningAccountId" -> owningAccountId.map { x => x.asInstanceOf[js.Any] },
         "resourceShareArn" -> resourceShareArn.map { x => x.asInstanceOf[js.Any] },
-        "allowExternalPrincipals" -> allowExternalPrincipals.map { x => x.asInstanceOf[js.Any] },
-        "tags" -> tags.map { x => x.asInstanceOf[js.Any] },
         "status" -> status.map { x => x.asInstanceOf[js.Any] },
         "statusMessage" -> statusMessage.map { x => x.asInstanceOf[js.Any] },
-        "creationTime" -> creationTime.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "tags" -> tags.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ResourceShare]
     }
@@ -732,35 +732,35 @@ package ram {
    */
   @js.native
   trait ResourceShareAssociation extends js.Object {
+    var associatedEntity: js.UndefOr[String]
+    var associationType: js.UndefOr[ResourceShareAssociationType]
+    var creationTime: js.UndefOr[DateTime]
+    var external: js.UndefOr[Boolean]
     var lastUpdatedTime: js.UndefOr[DateTime]
     var resourceShareArn: js.UndefOr[String]
-    var associationType: js.UndefOr[ResourceShareAssociationType]
-    var associatedEntity: js.UndefOr[String]
-    var external: js.UndefOr[Boolean]
     var status: js.UndefOr[ResourceShareAssociationStatus]
     var statusMessage: js.UndefOr[String]
-    var creationTime: js.UndefOr[DateTime]
   }
 
   object ResourceShareAssociation {
     def apply(
+      associatedEntity: js.UndefOr[String] = js.undefined,
+      associationType: js.UndefOr[ResourceShareAssociationType] = js.undefined,
+      creationTime: js.UndefOr[DateTime] = js.undefined,
+      external: js.UndefOr[Boolean] = js.undefined,
       lastUpdatedTime: js.UndefOr[DateTime] = js.undefined,
       resourceShareArn: js.UndefOr[String] = js.undefined,
-      associationType: js.UndefOr[ResourceShareAssociationType] = js.undefined,
-      associatedEntity: js.UndefOr[String] = js.undefined,
-      external: js.UndefOr[Boolean] = js.undefined,
       status: js.UndefOr[ResourceShareAssociationStatus] = js.undefined,
-      statusMessage: js.UndefOr[String] = js.undefined,
-      creationTime: js.UndefOr[DateTime] = js.undefined): ResourceShareAssociation = {
+      statusMessage: js.UndefOr[String] = js.undefined): ResourceShareAssociation = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "associatedEntity" -> associatedEntity.map { x => x.asInstanceOf[js.Any] },
+        "associationType" -> associationType.map { x => x.asInstanceOf[js.Any] },
+        "creationTime" -> creationTime.map { x => x.asInstanceOf[js.Any] },
+        "external" -> external.map { x => x.asInstanceOf[js.Any] },
         "lastUpdatedTime" -> lastUpdatedTime.map { x => x.asInstanceOf[js.Any] },
         "resourceShareArn" -> resourceShareArn.map { x => x.asInstanceOf[js.Any] },
-        "associationType" -> associationType.map { x => x.asInstanceOf[js.Any] },
-        "associatedEntity" -> associatedEntity.map { x => x.asInstanceOf[js.Any] },
-        "external" -> external.map { x => x.asInstanceOf[js.Any] },
         "status" -> status.map { x => x.asInstanceOf[js.Any] },
-        "statusMessage" -> statusMessage.map { x => x.asInstanceOf[js.Any] },
-        "creationTime" -> creationTime.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "statusMessage" -> statusMessage.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ResourceShareAssociation]
     }
@@ -788,35 +788,35 @@ package ram {
    */
   @js.native
   trait ResourceShareInvitation extends js.Object {
-    var resourceShareInvitationArn: js.UndefOr[String]
+    var invitationTimestamp: js.UndefOr[DateTime]
     var receiverAccountId: js.UndefOr[String]
     var resourceShareArn: js.UndefOr[String]
+    var resourceShareAssociations: js.UndefOr[ResourceShareAssociationList]
+    var resourceShareInvitationArn: js.UndefOr[String]
     var resourceShareName: js.UndefOr[String]
     var senderAccountId: js.UndefOr[String]
-    var resourceShareAssociations: js.UndefOr[ResourceShareAssociationList]
     var status: js.UndefOr[ResourceShareInvitationStatus]
-    var invitationTimestamp: js.UndefOr[DateTime]
   }
 
   object ResourceShareInvitation {
     def apply(
-      resourceShareInvitationArn: js.UndefOr[String] = js.undefined,
+      invitationTimestamp: js.UndefOr[DateTime] = js.undefined,
       receiverAccountId: js.UndefOr[String] = js.undefined,
       resourceShareArn: js.UndefOr[String] = js.undefined,
+      resourceShareAssociations: js.UndefOr[ResourceShareAssociationList] = js.undefined,
+      resourceShareInvitationArn: js.UndefOr[String] = js.undefined,
       resourceShareName: js.UndefOr[String] = js.undefined,
       senderAccountId: js.UndefOr[String] = js.undefined,
-      resourceShareAssociations: js.UndefOr[ResourceShareAssociationList] = js.undefined,
-      status: js.UndefOr[ResourceShareInvitationStatus] = js.undefined,
-      invitationTimestamp: js.UndefOr[DateTime] = js.undefined): ResourceShareInvitation = {
+      status: js.UndefOr[ResourceShareInvitationStatus] = js.undefined): ResourceShareInvitation = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "resourceShareInvitationArn" -> resourceShareInvitationArn.map { x => x.asInstanceOf[js.Any] },
+        "invitationTimestamp" -> invitationTimestamp.map { x => x.asInstanceOf[js.Any] },
         "receiverAccountId" -> receiverAccountId.map { x => x.asInstanceOf[js.Any] },
         "resourceShareArn" -> resourceShareArn.map { x => x.asInstanceOf[js.Any] },
+        "resourceShareAssociations" -> resourceShareAssociations.map { x => x.asInstanceOf[js.Any] },
+        "resourceShareInvitationArn" -> resourceShareInvitationArn.map { x => x.asInstanceOf[js.Any] },
         "resourceShareName" -> resourceShareName.map { x => x.asInstanceOf[js.Any] },
         "senderAccountId" -> senderAccountId.map { x => x.asInstanceOf[js.Any] },
-        "resourceShareAssociations" -> resourceShareAssociations.map { x => x.asInstanceOf[js.Any] },
-        "status" -> status.map { x => x.asInstanceOf[js.Any] },
-        "invitationTimestamp" -> invitationTimestamp.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "status" -> status.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ResourceShareInvitation]
     }
@@ -894,17 +894,17 @@ package ram {
 
   @js.native
   trait TagResourceRequest extends js.Object {
-    var resourceShareArn: js.UndefOr[String]
-    var tags: js.UndefOr[TagList]
+    var resourceShareArn: String
+    var tags: TagList
   }
 
   object TagResourceRequest {
     def apply(
-      resourceShareArn: js.UndefOr[String] = js.undefined,
-      tags: js.UndefOr[TagList] = js.undefined): TagResourceRequest = {
+      resourceShareArn: String,
+      tags: TagList): TagResourceRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "resourceShareArn" -> resourceShareArn.map { x => x.asInstanceOf[js.Any] },
-        "tags" -> tags.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "resourceShareArn" -> resourceShareArn.asInstanceOf[js.Any],
+        "tags" -> tags.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TagResourceRequest]
     }
@@ -925,17 +925,17 @@ package ram {
 
   @js.native
   trait UntagResourceRequest extends js.Object {
-    var resourceShareArn: js.UndefOr[String]
-    var tagKeys: js.UndefOr[TagKeyList]
+    var resourceShareArn: String
+    var tagKeys: TagKeyList
   }
 
   object UntagResourceRequest {
     def apply(
-      resourceShareArn: js.UndefOr[String] = js.undefined,
-      tagKeys: js.UndefOr[TagKeyList] = js.undefined): UntagResourceRequest = {
+      resourceShareArn: String,
+      tagKeys: TagKeyList): UntagResourceRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "resourceShareArn" -> resourceShareArn.map { x => x.asInstanceOf[js.Any] },
-        "tagKeys" -> tagKeys.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "resourceShareArn" -> resourceShareArn.asInstanceOf[js.Any],
+        "tagKeys" -> tagKeys.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UntagResourceRequest]
     }
@@ -956,23 +956,23 @@ package ram {
 
   @js.native
   trait UpdateResourceShareRequest extends js.Object {
-    var resourceShareArn: js.UndefOr[String]
-    var name: js.UndefOr[String]
+    var resourceShareArn: String
     var allowExternalPrincipals: js.UndefOr[Boolean]
     var clientToken: js.UndefOr[String]
+    var name: js.UndefOr[String]
   }
 
   object UpdateResourceShareRequest {
     def apply(
-      resourceShareArn: js.UndefOr[String] = js.undefined,
-      name: js.UndefOr[String] = js.undefined,
+      resourceShareArn: String,
       allowExternalPrincipals: js.UndefOr[Boolean] = js.undefined,
-      clientToken: js.UndefOr[String] = js.undefined): UpdateResourceShareRequest = {
+      clientToken: js.UndefOr[String] = js.undefined,
+      name: js.UndefOr[String] = js.undefined): UpdateResourceShareRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "resourceShareArn" -> resourceShareArn.map { x => x.asInstanceOf[js.Any] },
-        "name" -> name.map { x => x.asInstanceOf[js.Any] },
+        "resourceShareArn" -> resourceShareArn.asInstanceOf[js.Any],
         "allowExternalPrincipals" -> allowExternalPrincipals.map { x => x.asInstanceOf[js.Any] },
-        "clientToken" -> clientToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "clientToken" -> clientToken.map { x => x.asInstanceOf[js.Any] },
+        "name" -> name.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateResourceShareRequest]
     }
@@ -980,17 +980,17 @@ package ram {
 
   @js.native
   trait UpdateResourceShareResponse extends js.Object {
-    var resourceShare: js.UndefOr[ResourceShare]
     var clientToken: js.UndefOr[String]
+    var resourceShare: js.UndefOr[ResourceShare]
   }
 
   object UpdateResourceShareResponse {
     def apply(
-      resourceShare: js.UndefOr[ResourceShare] = js.undefined,
-      clientToken: js.UndefOr[String] = js.undefined): UpdateResourceShareResponse = {
+      clientToken: js.UndefOr[String] = js.undefined,
+      resourceShare: js.UndefOr[ResourceShare] = js.undefined): UpdateResourceShareResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "resourceShare" -> resourceShare.map { x => x.asInstanceOf[js.Any] },
-        "clientToken" -> clientToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "clientToken" -> clientToken.map { x => x.asInstanceOf[js.Any] },
+        "resourceShare" -> resourceShare.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateResourceShareResponse]
     }

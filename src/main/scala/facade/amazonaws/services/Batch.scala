@@ -89,20 +89,20 @@ package batch {
    */
   @js.native
   trait ArrayPropertiesDetail extends js.Object {
-    var statusSummary: js.UndefOr[ArrayJobStatusSummary]
-    var size: js.UndefOr[Int]
     var index: js.UndefOr[Int]
+    var size: js.UndefOr[Int]
+    var statusSummary: js.UndefOr[ArrayJobStatusSummary]
   }
 
   object ArrayPropertiesDetail {
     def apply(
-      statusSummary: js.UndefOr[ArrayJobStatusSummary] = js.undefined,
+      index: js.UndefOr[Int] = js.undefined,
       size: js.UndefOr[Int] = js.undefined,
-      index: js.UndefOr[Int] = js.undefined): ArrayPropertiesDetail = {
+      statusSummary: js.UndefOr[ArrayJobStatusSummary] = js.undefined): ArrayPropertiesDetail = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "statusSummary" -> statusSummary.map { x => x.asInstanceOf[js.Any] },
+        "index" -> index.map { x => x.asInstanceOf[js.Any] },
         "size" -> size.map { x => x.asInstanceOf[js.Any] },
-        "index" -> index.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "statusSummary" -> statusSummary.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ArrayPropertiesDetail]
     }
@@ -113,17 +113,17 @@ package batch {
    */
   @js.native
   trait ArrayPropertiesSummary extends js.Object {
-    var size: js.UndefOr[Int]
     var index: js.UndefOr[Int]
+    var size: js.UndefOr[Int]
   }
 
   object ArrayPropertiesSummary {
     def apply(
-      size: js.UndefOr[Int] = js.undefined,
-      index: js.UndefOr[Int] = js.undefined): ArrayPropertiesSummary = {
+      index: js.UndefOr[Int] = js.undefined,
+      size: js.UndefOr[Int] = js.undefined): ArrayPropertiesSummary = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "size" -> size.map { x => x.asInstanceOf[js.Any] },
-        "index" -> index.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "index" -> index.map { x => x.asInstanceOf[js.Any] },
+        "size" -> size.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ArrayPropertiesSummary]
     }
@@ -134,29 +134,29 @@ package batch {
    */
   @js.native
   trait AttemptContainerDetail extends js.Object {
-    var networkInterfaces: js.UndefOr[NetworkInterfaceList]
-    var exitCode: js.UndefOr[Int]
-    var reason: js.UndefOr[String]
-    var logStreamName: js.UndefOr[String]
-    var taskArn: js.UndefOr[String]
     var containerInstanceArn: js.UndefOr[String]
+    var exitCode: js.UndefOr[Int]
+    var logStreamName: js.UndefOr[String]
+    var networkInterfaces: js.UndefOr[NetworkInterfaceList]
+    var reason: js.UndefOr[String]
+    var taskArn: js.UndefOr[String]
   }
 
   object AttemptContainerDetail {
     def apply(
-      networkInterfaces: js.UndefOr[NetworkInterfaceList] = js.undefined,
+      containerInstanceArn: js.UndefOr[String] = js.undefined,
       exitCode: js.UndefOr[Int] = js.undefined,
-      reason: js.UndefOr[String] = js.undefined,
       logStreamName: js.UndefOr[String] = js.undefined,
-      taskArn: js.UndefOr[String] = js.undefined,
-      containerInstanceArn: js.UndefOr[String] = js.undefined): AttemptContainerDetail = {
+      networkInterfaces: js.UndefOr[NetworkInterfaceList] = js.undefined,
+      reason: js.UndefOr[String] = js.undefined,
+      taskArn: js.UndefOr[String] = js.undefined): AttemptContainerDetail = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "networkInterfaces" -> networkInterfaces.map { x => x.asInstanceOf[js.Any] },
+        "containerInstanceArn" -> containerInstanceArn.map { x => x.asInstanceOf[js.Any] },
         "exitCode" -> exitCode.map { x => x.asInstanceOf[js.Any] },
-        "reason" -> reason.map { x => x.asInstanceOf[js.Any] },
         "logStreamName" -> logStreamName.map { x => x.asInstanceOf[js.Any] },
-        "taskArn" -> taskArn.map { x => x.asInstanceOf[js.Any] },
-        "containerInstanceArn" -> containerInstanceArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "networkInterfaces" -> networkInterfaces.map { x => x.asInstanceOf[js.Any] },
+        "reason" -> reason.map { x => x.asInstanceOf[js.Any] },
+        "taskArn" -> taskArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AttemptContainerDetail]
     }
@@ -169,21 +169,21 @@ package batch {
   trait AttemptDetail extends js.Object {
     var container: js.UndefOr[AttemptContainerDetail]
     var startedAt: js.UndefOr[Double]
-    var stoppedAt: js.UndefOr[Double]
     var statusReason: js.UndefOr[String]
+    var stoppedAt: js.UndefOr[Double]
   }
 
   object AttemptDetail {
     def apply(
       container: js.UndefOr[AttemptContainerDetail] = js.undefined,
       startedAt: js.UndefOr[Double] = js.undefined,
-      stoppedAt: js.UndefOr[Double] = js.undefined,
-      statusReason: js.UndefOr[String] = js.undefined): AttemptDetail = {
+      statusReason: js.UndefOr[String] = js.undefined,
+      stoppedAt: js.UndefOr[Double] = js.undefined): AttemptDetail = {
       val _fields = IndexedSeq[(String, js.Any)](
         "container" -> container.map { x => x.asInstanceOf[js.Any] },
         "startedAt" -> startedAt.map { x => x.asInstanceOf[js.Any] },
-        "stoppedAt" -> stoppedAt.map { x => x.asInstanceOf[js.Any] },
-        "statusReason" -> statusReason.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "statusReason" -> statusReason.map { x => x.asInstanceOf[js.Any] },
+        "stoppedAt" -> stoppedAt.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AttemptDetail]
     }
@@ -223,17 +223,17 @@ package batch {
 
   @js.native
   trait CancelJobRequest extends js.Object {
-    var jobId: js.UndefOr[String]
-    var reason: js.UndefOr[String]
+    var jobId: String
+    var reason: String
   }
 
   object CancelJobRequest {
     def apply(
-      jobId: js.UndefOr[String] = js.undefined,
-      reason: js.UndefOr[String] = js.undefined): CancelJobRequest = {
+      jobId: String,
+      reason: String): CancelJobRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "jobId" -> jobId.map { x => x.asInstanceOf[js.Any] },
-        "reason" -> reason.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "jobId" -> jobId.asInstanceOf[js.Any],
+        "reason" -> reason.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CancelJobRequest]
     }
@@ -257,38 +257,38 @@ package batch {
    */
   @js.native
   trait ComputeEnvironmentDetail extends js.Object {
-    var statusReason: js.UndefOr[String]
-    var state: js.UndefOr[CEState]
-    var serviceRole: js.UndefOr[String]
-    var computeEnvironmentName: js.UndefOr[String]
+    var computeEnvironmentArn: String
+    var computeEnvironmentName: String
+    var ecsClusterArn: String
     var computeResources: js.UndefOr[ComputeResource]
-    var computeEnvironmentArn: js.UndefOr[String]
+    var serviceRole: js.UndefOr[String]
+    var state: js.UndefOr[CEState]
     var status: js.UndefOr[CEStatus]
+    var statusReason: js.UndefOr[String]
     var `type`: js.UndefOr[CEType]
-    var ecsClusterArn: js.UndefOr[String]
   }
 
   object ComputeEnvironmentDetail {
     def apply(
-      statusReason: js.UndefOr[String] = js.undefined,
-      state: js.UndefOr[CEState] = js.undefined,
-      serviceRole: js.UndefOr[String] = js.undefined,
-      computeEnvironmentName: js.UndefOr[String] = js.undefined,
+      computeEnvironmentArn: String,
+      computeEnvironmentName: String,
+      ecsClusterArn: String,
       computeResources: js.UndefOr[ComputeResource] = js.undefined,
-      computeEnvironmentArn: js.UndefOr[String] = js.undefined,
+      serviceRole: js.UndefOr[String] = js.undefined,
+      state: js.UndefOr[CEState] = js.undefined,
       status: js.UndefOr[CEStatus] = js.undefined,
-      `type`: js.UndefOr[CEType] = js.undefined,
-      ecsClusterArn: js.UndefOr[String] = js.undefined): ComputeEnvironmentDetail = {
+      statusReason: js.UndefOr[String] = js.undefined,
+      `type`: js.UndefOr[CEType] = js.undefined): ComputeEnvironmentDetail = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "statusReason" -> statusReason.map { x => x.asInstanceOf[js.Any] },
-        "state" -> state.map { x => x.asInstanceOf[js.Any] },
-        "serviceRole" -> serviceRole.map { x => x.asInstanceOf[js.Any] },
-        "computeEnvironmentName" -> computeEnvironmentName.map { x => x.asInstanceOf[js.Any] },
+        "computeEnvironmentArn" -> computeEnvironmentArn.asInstanceOf[js.Any],
+        "computeEnvironmentName" -> computeEnvironmentName.asInstanceOf[js.Any],
+        "ecsClusterArn" -> ecsClusterArn.asInstanceOf[js.Any],
         "computeResources" -> computeResources.map { x => x.asInstanceOf[js.Any] },
-        "computeEnvironmentArn" -> computeEnvironmentArn.map { x => x.asInstanceOf[js.Any] },
+        "serviceRole" -> serviceRole.map { x => x.asInstanceOf[js.Any] },
+        "state" -> state.map { x => x.asInstanceOf[js.Any] },
         "status" -> status.map { x => x.asInstanceOf[js.Any] },
-        "`type`" -> `type`.map { x => x.asInstanceOf[js.Any] },
-        "ecsClusterArn" -> ecsClusterArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "statusReason" -> statusReason.map { x => x.asInstanceOf[js.Any] },
+        "`type`" -> `type`.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ComputeEnvironmentDetail]
     }
@@ -299,17 +299,17 @@ package batch {
    */
   @js.native
   trait ComputeEnvironmentOrder extends js.Object {
-    var order: js.UndefOr[Int]
-    var computeEnvironment: js.UndefOr[String]
+    var computeEnvironment: String
+    var order: Int
   }
 
   object ComputeEnvironmentOrder {
     def apply(
-      order: js.UndefOr[Int] = js.undefined,
-      computeEnvironment: js.UndefOr[String] = js.undefined): ComputeEnvironmentOrder = {
+      computeEnvironment: String,
+      order: Int): ComputeEnvironmentOrder = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "order" -> order.map { x => x.asInstanceOf[js.Any] },
-        "computeEnvironment" -> computeEnvironment.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "computeEnvironment" -> computeEnvironment.asInstanceOf[js.Any],
+        "order" -> order.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ComputeEnvironmentOrder]
     }
@@ -320,56 +320,56 @@ package batch {
    */
   @js.native
   trait ComputeResource extends js.Object {
-    var subnets: js.UndefOr[StringList]
-    var spotIamFleetRole: js.UndefOr[String]
-    var instanceRole: js.UndefOr[String]
-    var tags: js.UndefOr[TagsMap]
+    var instanceRole: String
+    var instanceTypes: StringList
+    var maxvCpus: Int
+    var minvCpus: Int
+    var subnets: StringList
+    var `type`: CRType
+    var bidPercentage: js.UndefOr[Int]
     var desiredvCpus: js.UndefOr[Int]
     var ec2KeyPair: js.UndefOr[String]
+    var imageId: js.UndefOr[String]
+    var launchTemplate: js.UndefOr[LaunchTemplateSpecification]
     var placementGroup: js.UndefOr[String]
     var securityGroupIds: js.UndefOr[StringList]
-    var launchTemplate: js.UndefOr[LaunchTemplateSpecification]
-    var instanceTypes: js.UndefOr[StringList]
-    var bidPercentage: js.UndefOr[Int]
-    var minvCpus: js.UndefOr[Int]
-    var imageId: js.UndefOr[String]
-    var maxvCpus: js.UndefOr[Int]
-    var `type`: js.UndefOr[CRType]
+    var spotIamFleetRole: js.UndefOr[String]
+    var tags: js.UndefOr[TagsMap]
   }
 
   object ComputeResource {
     def apply(
-      subnets: js.UndefOr[StringList] = js.undefined,
-      spotIamFleetRole: js.UndefOr[String] = js.undefined,
-      instanceRole: js.UndefOr[String] = js.undefined,
-      tags: js.UndefOr[TagsMap] = js.undefined,
+      instanceRole: String,
+      instanceTypes: StringList,
+      maxvCpus: Int,
+      minvCpus: Int,
+      subnets: StringList,
+      `type`: CRType,
+      bidPercentage: js.UndefOr[Int] = js.undefined,
       desiredvCpus: js.UndefOr[Int] = js.undefined,
       ec2KeyPair: js.UndefOr[String] = js.undefined,
+      imageId: js.UndefOr[String] = js.undefined,
+      launchTemplate: js.UndefOr[LaunchTemplateSpecification] = js.undefined,
       placementGroup: js.UndefOr[String] = js.undefined,
       securityGroupIds: js.UndefOr[StringList] = js.undefined,
-      launchTemplate: js.UndefOr[LaunchTemplateSpecification] = js.undefined,
-      instanceTypes: js.UndefOr[StringList] = js.undefined,
-      bidPercentage: js.UndefOr[Int] = js.undefined,
-      minvCpus: js.UndefOr[Int] = js.undefined,
-      imageId: js.UndefOr[String] = js.undefined,
-      maxvCpus: js.UndefOr[Int] = js.undefined,
-      `type`: js.UndefOr[CRType] = js.undefined): ComputeResource = {
+      spotIamFleetRole: js.UndefOr[String] = js.undefined,
+      tags: js.UndefOr[TagsMap] = js.undefined): ComputeResource = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "subnets" -> subnets.map { x => x.asInstanceOf[js.Any] },
-        "spotIamFleetRole" -> spotIamFleetRole.map { x => x.asInstanceOf[js.Any] },
-        "instanceRole" -> instanceRole.map { x => x.asInstanceOf[js.Any] },
-        "tags" -> tags.map { x => x.asInstanceOf[js.Any] },
+        "instanceRole" -> instanceRole.asInstanceOf[js.Any],
+        "instanceTypes" -> instanceTypes.asInstanceOf[js.Any],
+        "maxvCpus" -> maxvCpus.asInstanceOf[js.Any],
+        "minvCpus" -> minvCpus.asInstanceOf[js.Any],
+        "subnets" -> subnets.asInstanceOf[js.Any],
+        "`type`" -> `type`.asInstanceOf[js.Any],
+        "bidPercentage" -> bidPercentage.map { x => x.asInstanceOf[js.Any] },
         "desiredvCpus" -> desiredvCpus.map { x => x.asInstanceOf[js.Any] },
         "ec2KeyPair" -> ec2KeyPair.map { x => x.asInstanceOf[js.Any] },
+        "imageId" -> imageId.map { x => x.asInstanceOf[js.Any] },
+        "launchTemplate" -> launchTemplate.map { x => x.asInstanceOf[js.Any] },
         "placementGroup" -> placementGroup.map { x => x.asInstanceOf[js.Any] },
         "securityGroupIds" -> securityGroupIds.map { x => x.asInstanceOf[js.Any] },
-        "launchTemplate" -> launchTemplate.map { x => x.asInstanceOf[js.Any] },
-        "instanceTypes" -> instanceTypes.map { x => x.asInstanceOf[js.Any] },
-        "bidPercentage" -> bidPercentage.map { x => x.asInstanceOf[js.Any] },
-        "minvCpus" -> minvCpus.map { x => x.asInstanceOf[js.Any] },
-        "imageId" -> imageId.map { x => x.asInstanceOf[js.Any] },
-        "maxvCpus" -> maxvCpus.map { x => x.asInstanceOf[js.Any] },
-        "`type`" -> `type`.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "spotIamFleetRole" -> spotIamFleetRole.map { x => x.asInstanceOf[js.Any] },
+        "tags" -> tags.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ComputeResource]
     }
@@ -380,20 +380,20 @@ package batch {
    */
   @js.native
   trait ComputeResourceUpdate extends js.Object {
-    var minvCpus: js.UndefOr[Int]
-    var maxvCpus: js.UndefOr[Int]
     var desiredvCpus: js.UndefOr[Int]
+    var maxvCpus: js.UndefOr[Int]
+    var minvCpus: js.UndefOr[Int]
   }
 
   object ComputeResourceUpdate {
     def apply(
-      minvCpus: js.UndefOr[Int] = js.undefined,
+      desiredvCpus: js.UndefOr[Int] = js.undefined,
       maxvCpus: js.UndefOr[Int] = js.undefined,
-      desiredvCpus: js.UndefOr[Int] = js.undefined): ComputeResourceUpdate = {
+      minvCpus: js.UndefOr[Int] = js.undefined): ComputeResourceUpdate = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "minvCpus" -> minvCpus.map { x => x.asInstanceOf[js.Any] },
+        "desiredvCpus" -> desiredvCpus.map { x => x.asInstanceOf[js.Any] },
         "maxvCpus" -> maxvCpus.map { x => x.asInstanceOf[js.Any] },
-        "desiredvCpus" -> desiredvCpus.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "minvCpus" -> minvCpus.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ComputeResourceUpdate]
     }
@@ -404,68 +404,68 @@ package batch {
    */
   @js.native
   trait ContainerDetail extends js.Object {
-    var ulimits: js.UndefOr[Ulimits]
-    var mountPoints: js.UndefOr[MountPoints]
-    var vcpus: js.UndefOr[Int]
-    var networkInterfaces: js.UndefOr[NetworkInterfaceList]
-    var readonlyRootFilesystem: js.UndefOr[Boolean]
-    var image: js.UndefOr[String]
-    var exitCode: js.UndefOr[Int]
     var command: js.UndefOr[StringList]
-    var reason: js.UndefOr[String]
-    var instanceType: js.UndefOr[String]
-    var volumes: js.UndefOr[Volumes]
-    var logStreamName: js.UndefOr[String]
-    var environment: js.UndefOr[EnvironmentVariables]
-    var taskArn: js.UndefOr[String]
     var containerInstanceArn: js.UndefOr[String]
-    var privileged: js.UndefOr[Boolean]
+    var environment: js.UndefOr[EnvironmentVariables]
+    var exitCode: js.UndefOr[Int]
+    var image: js.UndefOr[String]
+    var instanceType: js.UndefOr[String]
     var jobRoleArn: js.UndefOr[String]
-    var user: js.UndefOr[String]
+    var logStreamName: js.UndefOr[String]
     var memory: js.UndefOr[Int]
+    var mountPoints: js.UndefOr[MountPoints]
+    var networkInterfaces: js.UndefOr[NetworkInterfaceList]
+    var privileged: js.UndefOr[Boolean]
+    var readonlyRootFilesystem: js.UndefOr[Boolean]
+    var reason: js.UndefOr[String]
+    var taskArn: js.UndefOr[String]
+    var ulimits: js.UndefOr[Ulimits]
+    var user: js.UndefOr[String]
+    var vcpus: js.UndefOr[Int]
+    var volumes: js.UndefOr[Volumes]
   }
 
   object ContainerDetail {
     def apply(
-      ulimits: js.UndefOr[Ulimits] = js.undefined,
-      mountPoints: js.UndefOr[MountPoints] = js.undefined,
-      vcpus: js.UndefOr[Int] = js.undefined,
-      networkInterfaces: js.UndefOr[NetworkInterfaceList] = js.undefined,
-      readonlyRootFilesystem: js.UndefOr[Boolean] = js.undefined,
-      image: js.UndefOr[String] = js.undefined,
-      exitCode: js.UndefOr[Int] = js.undefined,
       command: js.UndefOr[StringList] = js.undefined,
-      reason: js.UndefOr[String] = js.undefined,
-      instanceType: js.UndefOr[String] = js.undefined,
-      volumes: js.UndefOr[Volumes] = js.undefined,
-      logStreamName: js.UndefOr[String] = js.undefined,
-      environment: js.UndefOr[EnvironmentVariables] = js.undefined,
-      taskArn: js.UndefOr[String] = js.undefined,
       containerInstanceArn: js.UndefOr[String] = js.undefined,
-      privileged: js.UndefOr[Boolean] = js.undefined,
+      environment: js.UndefOr[EnvironmentVariables] = js.undefined,
+      exitCode: js.UndefOr[Int] = js.undefined,
+      image: js.UndefOr[String] = js.undefined,
+      instanceType: js.UndefOr[String] = js.undefined,
       jobRoleArn: js.UndefOr[String] = js.undefined,
+      logStreamName: js.UndefOr[String] = js.undefined,
+      memory: js.UndefOr[Int] = js.undefined,
+      mountPoints: js.UndefOr[MountPoints] = js.undefined,
+      networkInterfaces: js.UndefOr[NetworkInterfaceList] = js.undefined,
+      privileged: js.UndefOr[Boolean] = js.undefined,
+      readonlyRootFilesystem: js.UndefOr[Boolean] = js.undefined,
+      reason: js.UndefOr[String] = js.undefined,
+      taskArn: js.UndefOr[String] = js.undefined,
+      ulimits: js.UndefOr[Ulimits] = js.undefined,
       user: js.UndefOr[String] = js.undefined,
-      memory: js.UndefOr[Int] = js.undefined): ContainerDetail = {
+      vcpus: js.UndefOr[Int] = js.undefined,
+      volumes: js.UndefOr[Volumes] = js.undefined): ContainerDetail = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ulimits" -> ulimits.map { x => x.asInstanceOf[js.Any] },
-        "mountPoints" -> mountPoints.map { x => x.asInstanceOf[js.Any] },
-        "vcpus" -> vcpus.map { x => x.asInstanceOf[js.Any] },
-        "networkInterfaces" -> networkInterfaces.map { x => x.asInstanceOf[js.Any] },
-        "readonlyRootFilesystem" -> readonlyRootFilesystem.map { x => x.asInstanceOf[js.Any] },
-        "image" -> image.map { x => x.asInstanceOf[js.Any] },
-        "exitCode" -> exitCode.map { x => x.asInstanceOf[js.Any] },
         "command" -> command.map { x => x.asInstanceOf[js.Any] },
-        "reason" -> reason.map { x => x.asInstanceOf[js.Any] },
-        "instanceType" -> instanceType.map { x => x.asInstanceOf[js.Any] },
-        "volumes" -> volumes.map { x => x.asInstanceOf[js.Any] },
-        "logStreamName" -> logStreamName.map { x => x.asInstanceOf[js.Any] },
-        "environment" -> environment.map { x => x.asInstanceOf[js.Any] },
-        "taskArn" -> taskArn.map { x => x.asInstanceOf[js.Any] },
         "containerInstanceArn" -> containerInstanceArn.map { x => x.asInstanceOf[js.Any] },
-        "privileged" -> privileged.map { x => x.asInstanceOf[js.Any] },
+        "environment" -> environment.map { x => x.asInstanceOf[js.Any] },
+        "exitCode" -> exitCode.map { x => x.asInstanceOf[js.Any] },
+        "image" -> image.map { x => x.asInstanceOf[js.Any] },
+        "instanceType" -> instanceType.map { x => x.asInstanceOf[js.Any] },
         "jobRoleArn" -> jobRoleArn.map { x => x.asInstanceOf[js.Any] },
+        "logStreamName" -> logStreamName.map { x => x.asInstanceOf[js.Any] },
+        "memory" -> memory.map { x => x.asInstanceOf[js.Any] },
+        "mountPoints" -> mountPoints.map { x => x.asInstanceOf[js.Any] },
+        "networkInterfaces" -> networkInterfaces.map { x => x.asInstanceOf[js.Any] },
+        "privileged" -> privileged.map { x => x.asInstanceOf[js.Any] },
+        "readonlyRootFilesystem" -> readonlyRootFilesystem.map { x => x.asInstanceOf[js.Any] },
+        "reason" -> reason.map { x => x.asInstanceOf[js.Any] },
+        "taskArn" -> taskArn.map { x => x.asInstanceOf[js.Any] },
+        "ulimits" -> ulimits.map { x => x.asInstanceOf[js.Any] },
         "user" -> user.map { x => x.asInstanceOf[js.Any] },
-        "memory" -> memory.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "vcpus" -> vcpus.map { x => x.asInstanceOf[js.Any] },
+        "volumes" -> volumes.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ContainerDetail]
     }
@@ -476,26 +476,26 @@ package batch {
    */
   @js.native
   trait ContainerOverrides extends js.Object {
-    var vcpus: js.UndefOr[Int]
     var command: js.UndefOr[StringList]
-    var instanceType: js.UndefOr[String]
     var environment: js.UndefOr[EnvironmentVariables]
+    var instanceType: js.UndefOr[String]
     var memory: js.UndefOr[Int]
+    var vcpus: js.UndefOr[Int]
   }
 
   object ContainerOverrides {
     def apply(
-      vcpus: js.UndefOr[Int] = js.undefined,
       command: js.UndefOr[StringList] = js.undefined,
-      instanceType: js.UndefOr[String] = js.undefined,
       environment: js.UndefOr[EnvironmentVariables] = js.undefined,
-      memory: js.UndefOr[Int] = js.undefined): ContainerOverrides = {
+      instanceType: js.UndefOr[String] = js.undefined,
+      memory: js.UndefOr[Int] = js.undefined,
+      vcpus: js.UndefOr[Int] = js.undefined): ContainerOverrides = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "vcpus" -> vcpus.map { x => x.asInstanceOf[js.Any] },
         "command" -> command.map { x => x.asInstanceOf[js.Any] },
-        "instanceType" -> instanceType.map { x => x.asInstanceOf[js.Any] },
         "environment" -> environment.map { x => x.asInstanceOf[js.Any] },
-        "memory" -> memory.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "instanceType" -> instanceType.map { x => x.asInstanceOf[js.Any] },
+        "memory" -> memory.map { x => x.asInstanceOf[js.Any] },
+        "vcpus" -> vcpus.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ContainerOverrides]
     }
@@ -506,50 +506,50 @@ package batch {
    */
   @js.native
   trait ContainerProperties extends js.Object {
-    var ulimits: js.UndefOr[Ulimits]
-    var mountPoints: js.UndefOr[MountPoints]
-    var vcpus: js.UndefOr[Int]
-    var readonlyRootFilesystem: js.UndefOr[Boolean]
-    var image: js.UndefOr[String]
     var command: js.UndefOr[StringList]
-    var instanceType: js.UndefOr[String]
-    var volumes: js.UndefOr[Volumes]
     var environment: js.UndefOr[EnvironmentVariables]
-    var privileged: js.UndefOr[Boolean]
+    var image: js.UndefOr[String]
+    var instanceType: js.UndefOr[String]
     var jobRoleArn: js.UndefOr[String]
-    var user: js.UndefOr[String]
     var memory: js.UndefOr[Int]
+    var mountPoints: js.UndefOr[MountPoints]
+    var privileged: js.UndefOr[Boolean]
+    var readonlyRootFilesystem: js.UndefOr[Boolean]
+    var ulimits: js.UndefOr[Ulimits]
+    var user: js.UndefOr[String]
+    var vcpus: js.UndefOr[Int]
+    var volumes: js.UndefOr[Volumes]
   }
 
   object ContainerProperties {
     def apply(
-      ulimits: js.UndefOr[Ulimits] = js.undefined,
-      mountPoints: js.UndefOr[MountPoints] = js.undefined,
-      vcpus: js.UndefOr[Int] = js.undefined,
-      readonlyRootFilesystem: js.UndefOr[Boolean] = js.undefined,
-      image: js.UndefOr[String] = js.undefined,
       command: js.UndefOr[StringList] = js.undefined,
-      instanceType: js.UndefOr[String] = js.undefined,
-      volumes: js.UndefOr[Volumes] = js.undefined,
       environment: js.UndefOr[EnvironmentVariables] = js.undefined,
-      privileged: js.UndefOr[Boolean] = js.undefined,
+      image: js.UndefOr[String] = js.undefined,
+      instanceType: js.UndefOr[String] = js.undefined,
       jobRoleArn: js.UndefOr[String] = js.undefined,
+      memory: js.UndefOr[Int] = js.undefined,
+      mountPoints: js.UndefOr[MountPoints] = js.undefined,
+      privileged: js.UndefOr[Boolean] = js.undefined,
+      readonlyRootFilesystem: js.UndefOr[Boolean] = js.undefined,
+      ulimits: js.UndefOr[Ulimits] = js.undefined,
       user: js.UndefOr[String] = js.undefined,
-      memory: js.UndefOr[Int] = js.undefined): ContainerProperties = {
+      vcpus: js.UndefOr[Int] = js.undefined,
+      volumes: js.UndefOr[Volumes] = js.undefined): ContainerProperties = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ulimits" -> ulimits.map { x => x.asInstanceOf[js.Any] },
-        "mountPoints" -> mountPoints.map { x => x.asInstanceOf[js.Any] },
-        "vcpus" -> vcpus.map { x => x.asInstanceOf[js.Any] },
-        "readonlyRootFilesystem" -> readonlyRootFilesystem.map { x => x.asInstanceOf[js.Any] },
-        "image" -> image.map { x => x.asInstanceOf[js.Any] },
         "command" -> command.map { x => x.asInstanceOf[js.Any] },
-        "instanceType" -> instanceType.map { x => x.asInstanceOf[js.Any] },
-        "volumes" -> volumes.map { x => x.asInstanceOf[js.Any] },
         "environment" -> environment.map { x => x.asInstanceOf[js.Any] },
-        "privileged" -> privileged.map { x => x.asInstanceOf[js.Any] },
+        "image" -> image.map { x => x.asInstanceOf[js.Any] },
+        "instanceType" -> instanceType.map { x => x.asInstanceOf[js.Any] },
         "jobRoleArn" -> jobRoleArn.map { x => x.asInstanceOf[js.Any] },
+        "memory" -> memory.map { x => x.asInstanceOf[js.Any] },
+        "mountPoints" -> mountPoints.map { x => x.asInstanceOf[js.Any] },
+        "privileged" -> privileged.map { x => x.asInstanceOf[js.Any] },
+        "readonlyRootFilesystem" -> readonlyRootFilesystem.map { x => x.asInstanceOf[js.Any] },
+        "ulimits" -> ulimits.map { x => x.asInstanceOf[js.Any] },
         "user" -> user.map { x => x.asInstanceOf[js.Any] },
-        "memory" -> memory.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "vcpus" -> vcpus.map { x => x.asInstanceOf[js.Any] },
+        "volumes" -> volumes.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ContainerProperties]
     }
@@ -578,26 +578,26 @@ package batch {
 
   @js.native
   trait CreateComputeEnvironmentRequest extends js.Object {
-    var state: js.UndefOr[CEState]
-    var serviceRole: js.UndefOr[String]
-    var computeEnvironmentName: js.UndefOr[String]
+    var computeEnvironmentName: String
+    var serviceRole: String
+    var `type`: CEType
     var computeResources: js.UndefOr[ComputeResource]
-    var `type`: js.UndefOr[CEType]
+    var state: js.UndefOr[CEState]
   }
 
   object CreateComputeEnvironmentRequest {
     def apply(
-      state: js.UndefOr[CEState] = js.undefined,
-      serviceRole: js.UndefOr[String] = js.undefined,
-      computeEnvironmentName: js.UndefOr[String] = js.undefined,
+      computeEnvironmentName: String,
+      serviceRole: String,
+      `type`: CEType,
       computeResources: js.UndefOr[ComputeResource] = js.undefined,
-      `type`: js.UndefOr[CEType] = js.undefined): CreateComputeEnvironmentRequest = {
+      state: js.UndefOr[CEState] = js.undefined): CreateComputeEnvironmentRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "state" -> state.map { x => x.asInstanceOf[js.Any] },
-        "serviceRole" -> serviceRole.map { x => x.asInstanceOf[js.Any] },
-        "computeEnvironmentName" -> computeEnvironmentName.map { x => x.asInstanceOf[js.Any] },
+        "computeEnvironmentName" -> computeEnvironmentName.asInstanceOf[js.Any],
+        "serviceRole" -> serviceRole.asInstanceOf[js.Any],
+        "`type`" -> `type`.asInstanceOf[js.Any],
         "computeResources" -> computeResources.map { x => x.asInstanceOf[js.Any] },
-        "`type`" -> `type`.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "state" -> state.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateComputeEnvironmentRequest]
     }
@@ -605,17 +605,17 @@ package batch {
 
   @js.native
   trait CreateComputeEnvironmentResponse extends js.Object {
-    var computeEnvironmentName: js.UndefOr[String]
     var computeEnvironmentArn: js.UndefOr[String]
+    var computeEnvironmentName: js.UndefOr[String]
   }
 
   object CreateComputeEnvironmentResponse {
     def apply(
-      computeEnvironmentName: js.UndefOr[String] = js.undefined,
-      computeEnvironmentArn: js.UndefOr[String] = js.undefined): CreateComputeEnvironmentResponse = {
+      computeEnvironmentArn: js.UndefOr[String] = js.undefined,
+      computeEnvironmentName: js.UndefOr[String] = js.undefined): CreateComputeEnvironmentResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "computeEnvironmentName" -> computeEnvironmentName.map { x => x.asInstanceOf[js.Any] },
-        "computeEnvironmentArn" -> computeEnvironmentArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "computeEnvironmentArn" -> computeEnvironmentArn.map { x => x.asInstanceOf[js.Any] },
+        "computeEnvironmentName" -> computeEnvironmentName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateComputeEnvironmentResponse]
     }
@@ -623,23 +623,23 @@ package batch {
 
   @js.native
   trait CreateJobQueueRequest extends js.Object {
-    var jobQueueName: js.UndefOr[String]
+    var computeEnvironmentOrder: ComputeEnvironmentOrders
+    var jobQueueName: String
+    var priority: Int
     var state: js.UndefOr[JQState]
-    var priority: js.UndefOr[Int]
-    var computeEnvironmentOrder: js.UndefOr[ComputeEnvironmentOrders]
   }
 
   object CreateJobQueueRequest {
     def apply(
-      jobQueueName: js.UndefOr[String] = js.undefined,
-      state: js.UndefOr[JQState] = js.undefined,
-      priority: js.UndefOr[Int] = js.undefined,
-      computeEnvironmentOrder: js.UndefOr[ComputeEnvironmentOrders] = js.undefined): CreateJobQueueRequest = {
+      computeEnvironmentOrder: ComputeEnvironmentOrders,
+      jobQueueName: String,
+      priority: Int,
+      state: js.UndefOr[JQState] = js.undefined): CreateJobQueueRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "jobQueueName" -> jobQueueName.map { x => x.asInstanceOf[js.Any] },
-        "state" -> state.map { x => x.asInstanceOf[js.Any] },
-        "priority" -> priority.map { x => x.asInstanceOf[js.Any] },
-        "computeEnvironmentOrder" -> computeEnvironmentOrder.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "computeEnvironmentOrder" -> computeEnvironmentOrder.asInstanceOf[js.Any],
+        "jobQueueName" -> jobQueueName.asInstanceOf[js.Any],
+        "priority" -> priority.asInstanceOf[js.Any],
+        "state" -> state.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateJobQueueRequest]
     }
@@ -647,17 +647,17 @@ package batch {
 
   @js.native
   trait CreateJobQueueResponse extends js.Object {
-    var jobQueueName: js.UndefOr[String]
-    var jobQueueArn: js.UndefOr[String]
+    var jobQueueArn: String
+    var jobQueueName: String
   }
 
   object CreateJobQueueResponse {
     def apply(
-      jobQueueName: js.UndefOr[String] = js.undefined,
-      jobQueueArn: js.UndefOr[String] = js.undefined): CreateJobQueueResponse = {
+      jobQueueArn: String,
+      jobQueueName: String): CreateJobQueueResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "jobQueueName" -> jobQueueName.map { x => x.asInstanceOf[js.Any] },
-        "jobQueueArn" -> jobQueueArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "jobQueueArn" -> jobQueueArn.asInstanceOf[js.Any],
+        "jobQueueName" -> jobQueueName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateJobQueueResponse]
     }
@@ -665,14 +665,14 @@ package batch {
 
   @js.native
   trait DeleteComputeEnvironmentRequest extends js.Object {
-    var computeEnvironment: js.UndefOr[String]
+    var computeEnvironment: String
   }
 
   object DeleteComputeEnvironmentRequest {
     def apply(
-      computeEnvironment: js.UndefOr[String] = js.undefined): DeleteComputeEnvironmentRequest = {
+      computeEnvironment: String): DeleteComputeEnvironmentRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "computeEnvironment" -> computeEnvironment.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "computeEnvironment" -> computeEnvironment.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteComputeEnvironmentRequest]
     }
@@ -693,14 +693,14 @@ package batch {
 
   @js.native
   trait DeleteJobQueueRequest extends js.Object {
-    var jobQueue: js.UndefOr[String]
+    var jobQueue: String
   }
 
   object DeleteJobQueueRequest {
     def apply(
-      jobQueue: js.UndefOr[String] = js.undefined): DeleteJobQueueRequest = {
+      jobQueue: String): DeleteJobQueueRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "jobQueue" -> jobQueue.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "jobQueue" -> jobQueue.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteJobQueueRequest]
     }
@@ -721,14 +721,14 @@ package batch {
 
   @js.native
   trait DeregisterJobDefinitionRequest extends js.Object {
-    var jobDefinition: js.UndefOr[String]
+    var jobDefinition: String
   }
 
   object DeregisterJobDefinitionRequest {
     def apply(
-      jobDefinition: js.UndefOr[String] = js.undefined): DeregisterJobDefinitionRequest = {
+      jobDefinition: String): DeregisterJobDefinitionRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "jobDefinition" -> jobDefinition.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "jobDefinition" -> jobDefinition.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeregisterJobDefinitionRequest]
     }
@@ -788,26 +788,26 @@ package batch {
 
   @js.native
   trait DescribeJobDefinitionsRequest extends js.Object {
-    var maxResults: js.UndefOr[Int]
+    var jobDefinitionName: js.UndefOr[String]
     var jobDefinitions: js.UndefOr[StringList]
+    var maxResults: js.UndefOr[Int]
     var nextToken: js.UndefOr[String]
     var status: js.UndefOr[String]
-    var jobDefinitionName: js.UndefOr[String]
   }
 
   object DescribeJobDefinitionsRequest {
     def apply(
-      maxResults: js.UndefOr[Int] = js.undefined,
+      jobDefinitionName: js.UndefOr[String] = js.undefined,
       jobDefinitions: js.UndefOr[StringList] = js.undefined,
+      maxResults: js.UndefOr[Int] = js.undefined,
       nextToken: js.UndefOr[String] = js.undefined,
-      status: js.UndefOr[String] = js.undefined,
-      jobDefinitionName: js.UndefOr[String] = js.undefined): DescribeJobDefinitionsRequest = {
+      status: js.UndefOr[String] = js.undefined): DescribeJobDefinitionsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "maxResults" -> maxResults.map { x => x.asInstanceOf[js.Any] },
+        "jobDefinitionName" -> jobDefinitionName.map { x => x.asInstanceOf[js.Any] },
         "jobDefinitions" -> jobDefinitions.map { x => x.asInstanceOf[js.Any] },
+        "maxResults" -> maxResults.map { x => x.asInstanceOf[js.Any] },
         "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] },
-        "status" -> status.map { x => x.asInstanceOf[js.Any] },
-        "jobDefinitionName" -> jobDefinitionName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "status" -> status.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeJobDefinitionsRequest]
     }
@@ -872,14 +872,14 @@ package batch {
 
   @js.native
   trait DescribeJobsRequest extends js.Object {
-    var jobs: js.UndefOr[StringList]
+    var jobs: StringList
   }
 
   object DescribeJobsRequest {
     def apply(
-      jobs: js.UndefOr[StringList] = js.undefined): DescribeJobsRequest = {
+      jobs: StringList): DescribeJobsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "jobs" -> jobs.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "jobs" -> jobs.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeJobsRequest]
     }
@@ -941,41 +941,41 @@ package batch {
    */
   @js.native
   trait JobDefinition extends js.Object {
-    var retryStrategy: js.UndefOr[RetryStrategy]
+    var jobDefinitionArn: String
+    var jobDefinitionName: String
+    var revision: Int
+    var `type`: String
     var containerProperties: js.UndefOr[ContainerProperties]
-    var revision: js.UndefOr[Int]
     var nodeProperties: js.UndefOr[NodeProperties]
-    var status: js.UndefOr[String]
-    var jobDefinitionArn: js.UndefOr[String]
-    var `type`: js.UndefOr[String]
-    var timeout: js.UndefOr[JobTimeout]
     var parameters: js.UndefOr[ParametersMap]
-    var jobDefinitionName: js.UndefOr[String]
+    var retryStrategy: js.UndefOr[RetryStrategy]
+    var status: js.UndefOr[String]
+    var timeout: js.UndefOr[JobTimeout]
   }
 
   object JobDefinition {
     def apply(
-      retryStrategy: js.UndefOr[RetryStrategy] = js.undefined,
+      jobDefinitionArn: String,
+      jobDefinitionName: String,
+      revision: Int,
+      `type`: String,
       containerProperties: js.UndefOr[ContainerProperties] = js.undefined,
-      revision: js.UndefOr[Int] = js.undefined,
       nodeProperties: js.UndefOr[NodeProperties] = js.undefined,
-      status: js.UndefOr[String] = js.undefined,
-      jobDefinitionArn: js.UndefOr[String] = js.undefined,
-      `type`: js.UndefOr[String] = js.undefined,
-      timeout: js.UndefOr[JobTimeout] = js.undefined,
       parameters: js.UndefOr[ParametersMap] = js.undefined,
-      jobDefinitionName: js.UndefOr[String] = js.undefined): JobDefinition = {
+      retryStrategy: js.UndefOr[RetryStrategy] = js.undefined,
+      status: js.UndefOr[String] = js.undefined,
+      timeout: js.UndefOr[JobTimeout] = js.undefined): JobDefinition = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "retryStrategy" -> retryStrategy.map { x => x.asInstanceOf[js.Any] },
+        "jobDefinitionArn" -> jobDefinitionArn.asInstanceOf[js.Any],
+        "jobDefinitionName" -> jobDefinitionName.asInstanceOf[js.Any],
+        "revision" -> revision.asInstanceOf[js.Any],
+        "`type`" -> `type`.asInstanceOf[js.Any],
         "containerProperties" -> containerProperties.map { x => x.asInstanceOf[js.Any] },
-        "revision" -> revision.map { x => x.asInstanceOf[js.Any] },
         "nodeProperties" -> nodeProperties.map { x => x.asInstanceOf[js.Any] },
-        "status" -> status.map { x => x.asInstanceOf[js.Any] },
-        "jobDefinitionArn" -> jobDefinitionArn.map { x => x.asInstanceOf[js.Any] },
-        "`type`" -> `type`.map { x => x.asInstanceOf[js.Any] },
-        "timeout" -> timeout.map { x => x.asInstanceOf[js.Any] },
         "parameters" -> parameters.map { x => x.asInstanceOf[js.Any] },
-        "jobDefinitionName" -> jobDefinitionName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "retryStrategy" -> retryStrategy.map { x => x.asInstanceOf[js.Any] },
+        "status" -> status.map { x => x.asInstanceOf[js.Any] },
+        "timeout" -> timeout.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[JobDefinition]
     }
@@ -1014,65 +1014,65 @@ package batch {
    */
   @js.native
   trait JobDetail extends js.Object {
-    var jobDefinition: js.UndefOr[String]
-    var jobName: js.UndefOr[String]
-    var retryStrategy: js.UndefOr[RetryStrategy]
-    var statusReason: js.UndefOr[String]
+    var jobDefinition: String
+    var jobId: String
+    var jobName: String
+    var jobQueue: String
+    var startedAt: Double
+    var status: JobStatus
+    var arrayProperties: js.UndefOr[ArrayPropertiesDetail]
     var attempts: js.UndefOr[AttemptDetails]
-    var jobQueue: js.UndefOr[String]
-    var stoppedAt: js.UndefOr[Double]
     var container: js.UndefOr[ContainerDetail]
+    var createdAt: js.UndefOr[Double]
+    var dependsOn: js.UndefOr[JobDependencyList]
     var nodeDetails: js.UndefOr[NodeDetails]
     var nodeProperties: js.UndefOr[NodeProperties]
-    var dependsOn: js.UndefOr[JobDependencyList]
-    var status: js.UndefOr[JobStatus]
-    var jobId: js.UndefOr[String]
-    var createdAt: js.UndefOr[Double]
-    var startedAt: js.UndefOr[Double]
-    var timeout: js.UndefOr[JobTimeout]
     var parameters: js.UndefOr[ParametersMap]
-    var arrayProperties: js.UndefOr[ArrayPropertiesDetail]
+    var retryStrategy: js.UndefOr[RetryStrategy]
+    var statusReason: js.UndefOr[String]
+    var stoppedAt: js.UndefOr[Double]
+    var timeout: js.UndefOr[JobTimeout]
   }
 
   object JobDetail {
     def apply(
-      jobDefinition: js.UndefOr[String] = js.undefined,
-      jobName: js.UndefOr[String] = js.undefined,
-      retryStrategy: js.UndefOr[RetryStrategy] = js.undefined,
-      statusReason: js.UndefOr[String] = js.undefined,
+      jobDefinition: String,
+      jobId: String,
+      jobName: String,
+      jobQueue: String,
+      startedAt: Double,
+      status: JobStatus,
+      arrayProperties: js.UndefOr[ArrayPropertiesDetail] = js.undefined,
       attempts: js.UndefOr[AttemptDetails] = js.undefined,
-      jobQueue: js.UndefOr[String] = js.undefined,
-      stoppedAt: js.UndefOr[Double] = js.undefined,
       container: js.UndefOr[ContainerDetail] = js.undefined,
+      createdAt: js.UndefOr[Double] = js.undefined,
+      dependsOn: js.UndefOr[JobDependencyList] = js.undefined,
       nodeDetails: js.UndefOr[NodeDetails] = js.undefined,
       nodeProperties: js.UndefOr[NodeProperties] = js.undefined,
-      dependsOn: js.UndefOr[JobDependencyList] = js.undefined,
-      status: js.UndefOr[JobStatus] = js.undefined,
-      jobId: js.UndefOr[String] = js.undefined,
-      createdAt: js.UndefOr[Double] = js.undefined,
-      startedAt: js.UndefOr[Double] = js.undefined,
-      timeout: js.UndefOr[JobTimeout] = js.undefined,
       parameters: js.UndefOr[ParametersMap] = js.undefined,
-      arrayProperties: js.UndefOr[ArrayPropertiesDetail] = js.undefined): JobDetail = {
+      retryStrategy: js.UndefOr[RetryStrategy] = js.undefined,
+      statusReason: js.UndefOr[String] = js.undefined,
+      stoppedAt: js.UndefOr[Double] = js.undefined,
+      timeout: js.UndefOr[JobTimeout] = js.undefined): JobDetail = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "jobDefinition" -> jobDefinition.map { x => x.asInstanceOf[js.Any] },
-        "jobName" -> jobName.map { x => x.asInstanceOf[js.Any] },
-        "retryStrategy" -> retryStrategy.map { x => x.asInstanceOf[js.Any] },
-        "statusReason" -> statusReason.map { x => x.asInstanceOf[js.Any] },
+        "jobDefinition" -> jobDefinition.asInstanceOf[js.Any],
+        "jobId" -> jobId.asInstanceOf[js.Any],
+        "jobName" -> jobName.asInstanceOf[js.Any],
+        "jobQueue" -> jobQueue.asInstanceOf[js.Any],
+        "startedAt" -> startedAt.asInstanceOf[js.Any],
+        "status" -> status.asInstanceOf[js.Any],
+        "arrayProperties" -> arrayProperties.map { x => x.asInstanceOf[js.Any] },
         "attempts" -> attempts.map { x => x.asInstanceOf[js.Any] },
-        "jobQueue" -> jobQueue.map { x => x.asInstanceOf[js.Any] },
-        "stoppedAt" -> stoppedAt.map { x => x.asInstanceOf[js.Any] },
         "container" -> container.map { x => x.asInstanceOf[js.Any] },
+        "createdAt" -> createdAt.map { x => x.asInstanceOf[js.Any] },
+        "dependsOn" -> dependsOn.map { x => x.asInstanceOf[js.Any] },
         "nodeDetails" -> nodeDetails.map { x => x.asInstanceOf[js.Any] },
         "nodeProperties" -> nodeProperties.map { x => x.asInstanceOf[js.Any] },
-        "dependsOn" -> dependsOn.map { x => x.asInstanceOf[js.Any] },
-        "status" -> status.map { x => x.asInstanceOf[js.Any] },
-        "jobId" -> jobId.map { x => x.asInstanceOf[js.Any] },
-        "createdAt" -> createdAt.map { x => x.asInstanceOf[js.Any] },
-        "startedAt" -> startedAt.map { x => x.asInstanceOf[js.Any] },
-        "timeout" -> timeout.map { x => x.asInstanceOf[js.Any] },
         "parameters" -> parameters.map { x => x.asInstanceOf[js.Any] },
-        "arrayProperties" -> arrayProperties.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "retryStrategy" -> retryStrategy.map { x => x.asInstanceOf[js.Any] },
+        "statusReason" -> statusReason.map { x => x.asInstanceOf[js.Any] },
+        "stoppedAt" -> stoppedAt.map { x => x.asInstanceOf[js.Any] },
+        "timeout" -> timeout.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[JobDetail]
     }
@@ -1083,32 +1083,32 @@ package batch {
    */
   @js.native
   trait JobQueueDetail extends js.Object {
-    var jobQueueName: js.UndefOr[String]
-    var priority: js.UndefOr[Int]
-    var statusReason: js.UndefOr[String]
-    var state: js.UndefOr[JQState]
-    var jobQueueArn: js.UndefOr[String]
-    var computeEnvironmentOrder: js.UndefOr[ComputeEnvironmentOrders]
+    var computeEnvironmentOrder: ComputeEnvironmentOrders
+    var jobQueueArn: String
+    var jobQueueName: String
+    var priority: Int
+    var state: JQState
     var status: js.UndefOr[JQStatus]
+    var statusReason: js.UndefOr[String]
   }
 
   object JobQueueDetail {
     def apply(
-      jobQueueName: js.UndefOr[String] = js.undefined,
-      priority: js.UndefOr[Int] = js.undefined,
-      statusReason: js.UndefOr[String] = js.undefined,
-      state: js.UndefOr[JQState] = js.undefined,
-      jobQueueArn: js.UndefOr[String] = js.undefined,
-      computeEnvironmentOrder: js.UndefOr[ComputeEnvironmentOrders] = js.undefined,
-      status: js.UndefOr[JQStatus] = js.undefined): JobQueueDetail = {
+      computeEnvironmentOrder: ComputeEnvironmentOrders,
+      jobQueueArn: String,
+      jobQueueName: String,
+      priority: Int,
+      state: JQState,
+      status: js.UndefOr[JQStatus] = js.undefined,
+      statusReason: js.UndefOr[String] = js.undefined): JobQueueDetail = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "jobQueueName" -> jobQueueName.map { x => x.asInstanceOf[js.Any] },
-        "priority" -> priority.map { x => x.asInstanceOf[js.Any] },
-        "statusReason" -> statusReason.map { x => x.asInstanceOf[js.Any] },
-        "state" -> state.map { x => x.asInstanceOf[js.Any] },
-        "jobQueueArn" -> jobQueueArn.map { x => x.asInstanceOf[js.Any] },
-        "computeEnvironmentOrder" -> computeEnvironmentOrder.map { x => x.asInstanceOf[js.Any] },
-        "status" -> status.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "computeEnvironmentOrder" -> computeEnvironmentOrder.asInstanceOf[js.Any],
+        "jobQueueArn" -> jobQueueArn.asInstanceOf[js.Any],
+        "jobQueueName" -> jobQueueName.asInstanceOf[js.Any],
+        "priority" -> priority.asInstanceOf[js.Any],
+        "state" -> state.asInstanceOf[js.Any],
+        "status" -> status.map { x => x.asInstanceOf[js.Any] },
+        "statusReason" -> statusReason.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[JobQueueDetail]
     }
@@ -1131,41 +1131,41 @@ package batch {
    */
   @js.native
   trait JobSummary extends js.Object {
-    var jobName: js.UndefOr[String]
+    var jobId: String
+    var jobName: String
+    var arrayProperties: js.UndefOr[ArrayPropertiesSummary]
+    var container: js.UndefOr[ContainerSummary]
+    var createdAt: js.UndefOr[Double]
+    var nodeProperties: js.UndefOr[NodePropertiesSummary]
+    var startedAt: js.UndefOr[Double]
+    var status: js.UndefOr[JobStatus]
     var statusReason: js.UndefOr[String]
     var stoppedAt: js.UndefOr[Double]
-    var container: js.UndefOr[ContainerSummary]
-    var nodeProperties: js.UndefOr[NodePropertiesSummary]
-    var status: js.UndefOr[JobStatus]
-    var jobId: js.UndefOr[String]
-    var createdAt: js.UndefOr[Double]
-    var startedAt: js.UndefOr[Double]
-    var arrayProperties: js.UndefOr[ArrayPropertiesSummary]
   }
 
   object JobSummary {
     def apply(
-      jobName: js.UndefOr[String] = js.undefined,
-      statusReason: js.UndefOr[String] = js.undefined,
-      stoppedAt: js.UndefOr[Double] = js.undefined,
+      jobId: String,
+      jobName: String,
+      arrayProperties: js.UndefOr[ArrayPropertiesSummary] = js.undefined,
       container: js.UndefOr[ContainerSummary] = js.undefined,
-      nodeProperties: js.UndefOr[NodePropertiesSummary] = js.undefined,
-      status: js.UndefOr[JobStatus] = js.undefined,
-      jobId: js.UndefOr[String] = js.undefined,
       createdAt: js.UndefOr[Double] = js.undefined,
+      nodeProperties: js.UndefOr[NodePropertiesSummary] = js.undefined,
       startedAt: js.UndefOr[Double] = js.undefined,
-      arrayProperties: js.UndefOr[ArrayPropertiesSummary] = js.undefined): JobSummary = {
+      status: js.UndefOr[JobStatus] = js.undefined,
+      statusReason: js.UndefOr[String] = js.undefined,
+      stoppedAt: js.UndefOr[Double] = js.undefined): JobSummary = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "jobName" -> jobName.map { x => x.asInstanceOf[js.Any] },
-        "statusReason" -> statusReason.map { x => x.asInstanceOf[js.Any] },
-        "stoppedAt" -> stoppedAt.map { x => x.asInstanceOf[js.Any] },
+        "jobId" -> jobId.asInstanceOf[js.Any],
+        "jobName" -> jobName.asInstanceOf[js.Any],
+        "arrayProperties" -> arrayProperties.map { x => x.asInstanceOf[js.Any] },
         "container" -> container.map { x => x.asInstanceOf[js.Any] },
-        "nodeProperties" -> nodeProperties.map { x => x.asInstanceOf[js.Any] },
-        "status" -> status.map { x => x.asInstanceOf[js.Any] },
-        "jobId" -> jobId.map { x => x.asInstanceOf[js.Any] },
         "createdAt" -> createdAt.map { x => x.asInstanceOf[js.Any] },
+        "nodeProperties" -> nodeProperties.map { x => x.asInstanceOf[js.Any] },
         "startedAt" -> startedAt.map { x => x.asInstanceOf[js.Any] },
-        "arrayProperties" -> arrayProperties.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "status" -> status.map { x => x.asInstanceOf[js.Any] },
+        "statusReason" -> statusReason.map { x => x.asInstanceOf[js.Any] },
+        "stoppedAt" -> stoppedAt.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[JobSummary]
     }
@@ -1236,29 +1236,29 @@ package batch {
 
   @js.native
   trait ListJobsRequest extends js.Object {
+    var arrayJobId: js.UndefOr[String]
     var jobQueue: js.UndefOr[String]
+    var jobStatus: js.UndefOr[JobStatus]
     var maxResults: js.UndefOr[Int]
     var multiNodeJobId: js.UndefOr[String]
-    var jobStatus: js.UndefOr[JobStatus]
     var nextToken: js.UndefOr[String]
-    var arrayJobId: js.UndefOr[String]
   }
 
   object ListJobsRequest {
     def apply(
+      arrayJobId: js.UndefOr[String] = js.undefined,
       jobQueue: js.UndefOr[String] = js.undefined,
+      jobStatus: js.UndefOr[JobStatus] = js.undefined,
       maxResults: js.UndefOr[Int] = js.undefined,
       multiNodeJobId: js.UndefOr[String] = js.undefined,
-      jobStatus: js.UndefOr[JobStatus] = js.undefined,
-      nextToken: js.UndefOr[String] = js.undefined,
-      arrayJobId: js.UndefOr[String] = js.undefined): ListJobsRequest = {
+      nextToken: js.UndefOr[String] = js.undefined): ListJobsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "arrayJobId" -> arrayJobId.map { x => x.asInstanceOf[js.Any] },
         "jobQueue" -> jobQueue.map { x => x.asInstanceOf[js.Any] },
+        "jobStatus" -> jobStatus.map { x => x.asInstanceOf[js.Any] },
         "maxResults" -> maxResults.map { x => x.asInstanceOf[js.Any] },
         "multiNodeJobId" -> multiNodeJobId.map { x => x.asInstanceOf[js.Any] },
-        "jobStatus" -> jobStatus.map { x => x.asInstanceOf[js.Any] },
-        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] },
-        "arrayJobId" -> arrayJobId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListJobsRequest]
     }
@@ -1266,16 +1266,16 @@ package batch {
 
   @js.native
   trait ListJobsResponse extends js.Object {
-    var jobSummaryList: js.UndefOr[JobSummaryList]
+    var jobSummaryList: JobSummaryList
     var nextToken: js.UndefOr[String]
   }
 
   object ListJobsResponse {
     def apply(
-      jobSummaryList: js.UndefOr[JobSummaryList] = js.undefined,
+      jobSummaryList: JobSummaryList,
       nextToken: js.UndefOr[String] = js.undefined): ListJobsResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "jobSummaryList" -> jobSummaryList.map { x => x.asInstanceOf[js.Any] },
+        "jobSummaryList" -> jobSummaryList.asInstanceOf[js.Any],
         "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListJobsResponse]
@@ -1335,17 +1335,17 @@ package batch {
    */
   @js.native
   trait NodeDetails extends js.Object {
-    var nodeIndex: js.UndefOr[Int]
     var isMainNode: js.UndefOr[Boolean]
+    var nodeIndex: js.UndefOr[Int]
   }
 
   object NodeDetails {
     def apply(
-      nodeIndex: js.UndefOr[Int] = js.undefined,
-      isMainNode: js.UndefOr[Boolean] = js.undefined): NodeDetails = {
+      isMainNode: js.UndefOr[Boolean] = js.undefined,
+      nodeIndex: js.UndefOr[Int] = js.undefined): NodeDetails = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "nodeIndex" -> nodeIndex.map { x => x.asInstanceOf[js.Any] },
-        "isMainNode" -> isMainNode.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "isMainNode" -> isMainNode.map { x => x.asInstanceOf[js.Any] },
+        "nodeIndex" -> nodeIndex.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[NodeDetails]
     }
@@ -1374,20 +1374,20 @@ package batch {
    */
   @js.native
   trait NodeProperties extends js.Object {
-    var numNodes: js.UndefOr[Int]
-    var mainNode: js.UndefOr[Int]
-    var nodeRangeProperties: js.UndefOr[NodeRangeProperties]
+    var mainNode: Int
+    var nodeRangeProperties: NodeRangeProperties
+    var numNodes: Int
   }
 
   object NodeProperties {
     def apply(
-      numNodes: js.UndefOr[Int] = js.undefined,
-      mainNode: js.UndefOr[Int] = js.undefined,
-      nodeRangeProperties: js.UndefOr[NodeRangeProperties] = js.undefined): NodeProperties = {
+      mainNode: Int,
+      nodeRangeProperties: NodeRangeProperties,
+      numNodes: Int): NodeProperties = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "numNodes" -> numNodes.map { x => x.asInstanceOf[js.Any] },
-        "mainNode" -> mainNode.map { x => x.asInstanceOf[js.Any] },
-        "nodeRangeProperties" -> nodeRangeProperties.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "mainNode" -> mainNode.asInstanceOf[js.Any],
+        "nodeRangeProperties" -> nodeRangeProperties.asInstanceOf[js.Any],
+        "numNodes" -> numNodes.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[NodeProperties]
     }
@@ -1399,19 +1399,19 @@ package batch {
   @js.native
   trait NodePropertiesSummary extends js.Object {
     var isMainNode: js.UndefOr[Boolean]
-    var numNodes: js.UndefOr[Int]
     var nodeIndex: js.UndefOr[Int]
+    var numNodes: js.UndefOr[Int]
   }
 
   object NodePropertiesSummary {
     def apply(
       isMainNode: js.UndefOr[Boolean] = js.undefined,
-      numNodes: js.UndefOr[Int] = js.undefined,
-      nodeIndex: js.UndefOr[Int] = js.undefined): NodePropertiesSummary = {
+      nodeIndex: js.UndefOr[Int] = js.undefined,
+      numNodes: js.UndefOr[Int] = js.undefined): NodePropertiesSummary = {
       val _fields = IndexedSeq[(String, js.Any)](
         "isMainNode" -> isMainNode.map { x => x.asInstanceOf[js.Any] },
-        "numNodes" -> numNodes.map { x => x.asInstanceOf[js.Any] },
-        "nodeIndex" -> nodeIndex.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "nodeIndex" -> nodeIndex.map { x => x.asInstanceOf[js.Any] },
+        "numNodes" -> numNodes.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[NodePropertiesSummary]
     }
@@ -1422,16 +1422,16 @@ package batch {
    */
   @js.native
   trait NodePropertyOverride extends js.Object {
-    var targetNodes: js.UndefOr[String]
+    var targetNodes: String
     var containerOverrides: js.UndefOr[ContainerOverrides]
   }
 
   object NodePropertyOverride {
     def apply(
-      targetNodes: js.UndefOr[String] = js.undefined,
+      targetNodes: String,
       containerOverrides: js.UndefOr[ContainerOverrides] = js.undefined): NodePropertyOverride = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "targetNodes" -> targetNodes.map { x => x.asInstanceOf[js.Any] },
+        "targetNodes" -> targetNodes.asInstanceOf[js.Any],
         "containerOverrides" -> containerOverrides.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[NodePropertyOverride]
@@ -1443,16 +1443,16 @@ package batch {
    */
   @js.native
   trait NodeRangeProperty extends js.Object {
-    var targetNodes: js.UndefOr[String]
+    var targetNodes: String
     var container: js.UndefOr[ContainerProperties]
   }
 
   object NodeRangeProperty {
     def apply(
-      targetNodes: js.UndefOr[String] = js.undefined,
+      targetNodes: String,
       container: js.UndefOr[ContainerProperties] = js.undefined): NodeRangeProperty = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "targetNodes" -> targetNodes.map { x => x.asInstanceOf[js.Any] },
+        "targetNodes" -> targetNodes.asInstanceOf[js.Any],
         "container" -> container.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[NodeRangeProperty]
@@ -1461,32 +1461,32 @@ package batch {
 
   @js.native
   trait RegisterJobDefinitionRequest extends js.Object {
-    var retryStrategy: js.UndefOr[RetryStrategy]
+    var jobDefinitionName: String
+    var `type`: JobDefinitionType
     var containerProperties: js.UndefOr[ContainerProperties]
     var nodeProperties: js.UndefOr[NodeProperties]
-    var `type`: js.UndefOr[JobDefinitionType]
-    var timeout: js.UndefOr[JobTimeout]
     var parameters: js.UndefOr[ParametersMap]
-    var jobDefinitionName: js.UndefOr[String]
+    var retryStrategy: js.UndefOr[RetryStrategy]
+    var timeout: js.UndefOr[JobTimeout]
   }
 
   object RegisterJobDefinitionRequest {
     def apply(
-      retryStrategy: js.UndefOr[RetryStrategy] = js.undefined,
+      jobDefinitionName: String,
+      `type`: JobDefinitionType,
       containerProperties: js.UndefOr[ContainerProperties] = js.undefined,
       nodeProperties: js.UndefOr[NodeProperties] = js.undefined,
-      `type`: js.UndefOr[JobDefinitionType] = js.undefined,
-      timeout: js.UndefOr[JobTimeout] = js.undefined,
       parameters: js.UndefOr[ParametersMap] = js.undefined,
-      jobDefinitionName: js.UndefOr[String] = js.undefined): RegisterJobDefinitionRequest = {
+      retryStrategy: js.UndefOr[RetryStrategy] = js.undefined,
+      timeout: js.UndefOr[JobTimeout] = js.undefined): RegisterJobDefinitionRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "retryStrategy" -> retryStrategy.map { x => x.asInstanceOf[js.Any] },
+        "jobDefinitionName" -> jobDefinitionName.asInstanceOf[js.Any],
+        "`type`" -> `type`.asInstanceOf[js.Any],
         "containerProperties" -> containerProperties.map { x => x.asInstanceOf[js.Any] },
         "nodeProperties" -> nodeProperties.map { x => x.asInstanceOf[js.Any] },
-        "`type`" -> `type`.map { x => x.asInstanceOf[js.Any] },
-        "timeout" -> timeout.map { x => x.asInstanceOf[js.Any] },
         "parameters" -> parameters.map { x => x.asInstanceOf[js.Any] },
-        "jobDefinitionName" -> jobDefinitionName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "retryStrategy" -> retryStrategy.map { x => x.asInstanceOf[js.Any] },
+        "timeout" -> timeout.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RegisterJobDefinitionRequest]
     }
@@ -1494,20 +1494,20 @@ package batch {
 
   @js.native
   trait RegisterJobDefinitionResponse extends js.Object {
-    var jobDefinitionName: js.UndefOr[String]
-    var jobDefinitionArn: js.UndefOr[String]
-    var revision: js.UndefOr[Int]
+    var jobDefinitionArn: String
+    var jobDefinitionName: String
+    var revision: Int
   }
 
   object RegisterJobDefinitionResponse {
     def apply(
-      jobDefinitionName: js.UndefOr[String] = js.undefined,
-      jobDefinitionArn: js.UndefOr[String] = js.undefined,
-      revision: js.UndefOr[Int] = js.undefined): RegisterJobDefinitionResponse = {
+      jobDefinitionArn: String,
+      jobDefinitionName: String,
+      revision: Int): RegisterJobDefinitionResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "jobDefinitionName" -> jobDefinitionName.map { x => x.asInstanceOf[js.Any] },
-        "jobDefinitionArn" -> jobDefinitionArn.map { x => x.asInstanceOf[js.Any] },
-        "revision" -> revision.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "jobDefinitionArn" -> jobDefinitionArn.asInstanceOf[js.Any],
+        "jobDefinitionName" -> jobDefinitionName.asInstanceOf[js.Any],
+        "revision" -> revision.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RegisterJobDefinitionResponse]
     }
@@ -1533,41 +1533,41 @@ package batch {
 
   @js.native
   trait SubmitJobRequest extends js.Object {
-    var jobDefinition: js.UndefOr[String]
-    var jobName: js.UndefOr[String]
-    var retryStrategy: js.UndefOr[RetryStrategy]
-    var nodeOverrides: js.UndefOr[NodeOverrides]
-    var containerOverrides: js.UndefOr[ContainerOverrides]
-    var jobQueue: js.UndefOr[String]
-    var dependsOn: js.UndefOr[JobDependencyList]
-    var timeout: js.UndefOr[JobTimeout]
-    var parameters: js.UndefOr[ParametersMap]
+    var jobDefinition: String
+    var jobName: String
+    var jobQueue: String
     var arrayProperties: js.UndefOr[ArrayProperties]
+    var containerOverrides: js.UndefOr[ContainerOverrides]
+    var dependsOn: js.UndefOr[JobDependencyList]
+    var nodeOverrides: js.UndefOr[NodeOverrides]
+    var parameters: js.UndefOr[ParametersMap]
+    var retryStrategy: js.UndefOr[RetryStrategy]
+    var timeout: js.UndefOr[JobTimeout]
   }
 
   object SubmitJobRequest {
     def apply(
-      jobDefinition: js.UndefOr[String] = js.undefined,
-      jobName: js.UndefOr[String] = js.undefined,
-      retryStrategy: js.UndefOr[RetryStrategy] = js.undefined,
-      nodeOverrides: js.UndefOr[NodeOverrides] = js.undefined,
+      jobDefinition: String,
+      jobName: String,
+      jobQueue: String,
+      arrayProperties: js.UndefOr[ArrayProperties] = js.undefined,
       containerOverrides: js.UndefOr[ContainerOverrides] = js.undefined,
-      jobQueue: js.UndefOr[String] = js.undefined,
       dependsOn: js.UndefOr[JobDependencyList] = js.undefined,
-      timeout: js.UndefOr[JobTimeout] = js.undefined,
+      nodeOverrides: js.UndefOr[NodeOverrides] = js.undefined,
       parameters: js.UndefOr[ParametersMap] = js.undefined,
-      arrayProperties: js.UndefOr[ArrayProperties] = js.undefined): SubmitJobRequest = {
+      retryStrategy: js.UndefOr[RetryStrategy] = js.undefined,
+      timeout: js.UndefOr[JobTimeout] = js.undefined): SubmitJobRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "jobDefinition" -> jobDefinition.map { x => x.asInstanceOf[js.Any] },
-        "jobName" -> jobName.map { x => x.asInstanceOf[js.Any] },
-        "retryStrategy" -> retryStrategy.map { x => x.asInstanceOf[js.Any] },
-        "nodeOverrides" -> nodeOverrides.map { x => x.asInstanceOf[js.Any] },
+        "jobDefinition" -> jobDefinition.asInstanceOf[js.Any],
+        "jobName" -> jobName.asInstanceOf[js.Any],
+        "jobQueue" -> jobQueue.asInstanceOf[js.Any],
+        "arrayProperties" -> arrayProperties.map { x => x.asInstanceOf[js.Any] },
         "containerOverrides" -> containerOverrides.map { x => x.asInstanceOf[js.Any] },
-        "jobQueue" -> jobQueue.map { x => x.asInstanceOf[js.Any] },
         "dependsOn" -> dependsOn.map { x => x.asInstanceOf[js.Any] },
-        "timeout" -> timeout.map { x => x.asInstanceOf[js.Any] },
+        "nodeOverrides" -> nodeOverrides.map { x => x.asInstanceOf[js.Any] },
         "parameters" -> parameters.map { x => x.asInstanceOf[js.Any] },
-        "arrayProperties" -> arrayProperties.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "retryStrategy" -> retryStrategy.map { x => x.asInstanceOf[js.Any] },
+        "timeout" -> timeout.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SubmitJobRequest]
     }
@@ -1575,17 +1575,17 @@ package batch {
 
   @js.native
   trait SubmitJobResponse extends js.Object {
-    var jobName: js.UndefOr[String]
-    var jobId: js.UndefOr[String]
+    var jobId: String
+    var jobName: String
   }
 
   object SubmitJobResponse {
     def apply(
-      jobName: js.UndefOr[String] = js.undefined,
-      jobId: js.UndefOr[String] = js.undefined): SubmitJobResponse = {
+      jobId: String,
+      jobName: String): SubmitJobResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "jobName" -> jobName.map { x => x.asInstanceOf[js.Any] },
-        "jobId" -> jobId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "jobId" -> jobId.asInstanceOf[js.Any],
+        "jobName" -> jobName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SubmitJobResponse]
     }
@@ -1593,17 +1593,17 @@ package batch {
 
   @js.native
   trait TerminateJobRequest extends js.Object {
-    var jobId: js.UndefOr[String]
-    var reason: js.UndefOr[String]
+    var jobId: String
+    var reason: String
   }
 
   object TerminateJobRequest {
     def apply(
-      jobId: js.UndefOr[String] = js.undefined,
-      reason: js.UndefOr[String] = js.undefined): TerminateJobRequest = {
+      jobId: String,
+      reason: String): TerminateJobRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "jobId" -> jobId.map { x => x.asInstanceOf[js.Any] },
-        "reason" -> reason.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "jobId" -> jobId.asInstanceOf[js.Any],
+        "reason" -> reason.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TerminateJobRequest]
     }
@@ -1627,20 +1627,20 @@ package batch {
    */
   @js.native
   trait Ulimit extends js.Object {
-    var hardLimit: js.UndefOr[Int]
-    var name: js.UndefOr[String]
-    var softLimit: js.UndefOr[Int]
+    var hardLimit: Int
+    var name: String
+    var softLimit: Int
   }
 
   object Ulimit {
     def apply(
-      hardLimit: js.UndefOr[Int] = js.undefined,
-      name: js.UndefOr[String] = js.undefined,
-      softLimit: js.UndefOr[Int] = js.undefined): Ulimit = {
+      hardLimit: Int,
+      name: String,
+      softLimit: Int): Ulimit = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "hardLimit" -> hardLimit.map { x => x.asInstanceOf[js.Any] },
-        "name" -> name.map { x => x.asInstanceOf[js.Any] },
-        "softLimit" -> softLimit.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "hardLimit" -> hardLimit.asInstanceOf[js.Any],
+        "name" -> name.asInstanceOf[js.Any],
+        "softLimit" -> softLimit.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Ulimit]
     }
@@ -1648,23 +1648,23 @@ package batch {
 
   @js.native
   trait UpdateComputeEnvironmentRequest extends js.Object {
-    var computeEnvironment: js.UndefOr[String]
-    var state: js.UndefOr[CEState]
+    var computeEnvironment: String
     var computeResources: js.UndefOr[ComputeResourceUpdate]
     var serviceRole: js.UndefOr[String]
+    var state: js.UndefOr[CEState]
   }
 
   object UpdateComputeEnvironmentRequest {
     def apply(
-      computeEnvironment: js.UndefOr[String] = js.undefined,
-      state: js.UndefOr[CEState] = js.undefined,
+      computeEnvironment: String,
       computeResources: js.UndefOr[ComputeResourceUpdate] = js.undefined,
-      serviceRole: js.UndefOr[String] = js.undefined): UpdateComputeEnvironmentRequest = {
+      serviceRole: js.UndefOr[String] = js.undefined,
+      state: js.UndefOr[CEState] = js.undefined): UpdateComputeEnvironmentRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "computeEnvironment" -> computeEnvironment.map { x => x.asInstanceOf[js.Any] },
-        "state" -> state.map { x => x.asInstanceOf[js.Any] },
+        "computeEnvironment" -> computeEnvironment.asInstanceOf[js.Any],
         "computeResources" -> computeResources.map { x => x.asInstanceOf[js.Any] },
-        "serviceRole" -> serviceRole.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "serviceRole" -> serviceRole.map { x => x.asInstanceOf[js.Any] },
+        "state" -> state.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateComputeEnvironmentRequest]
     }
@@ -1672,17 +1672,17 @@ package batch {
 
   @js.native
   trait UpdateComputeEnvironmentResponse extends js.Object {
-    var computeEnvironmentName: js.UndefOr[String]
     var computeEnvironmentArn: js.UndefOr[String]
+    var computeEnvironmentName: js.UndefOr[String]
   }
 
   object UpdateComputeEnvironmentResponse {
     def apply(
-      computeEnvironmentName: js.UndefOr[String] = js.undefined,
-      computeEnvironmentArn: js.UndefOr[String] = js.undefined): UpdateComputeEnvironmentResponse = {
+      computeEnvironmentArn: js.UndefOr[String] = js.undefined,
+      computeEnvironmentName: js.UndefOr[String] = js.undefined): UpdateComputeEnvironmentResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "computeEnvironmentName" -> computeEnvironmentName.map { x => x.asInstanceOf[js.Any] },
-        "computeEnvironmentArn" -> computeEnvironmentArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "computeEnvironmentArn" -> computeEnvironmentArn.map { x => x.asInstanceOf[js.Any] },
+        "computeEnvironmentName" -> computeEnvironmentName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateComputeEnvironmentResponse]
     }
@@ -1690,23 +1690,23 @@ package batch {
 
   @js.native
   trait UpdateJobQueueRequest extends js.Object {
-    var jobQueue: js.UndefOr[String]
-    var state: js.UndefOr[JQState]
-    var priority: js.UndefOr[Int]
+    var jobQueue: String
     var computeEnvironmentOrder: js.UndefOr[ComputeEnvironmentOrders]
+    var priority: js.UndefOr[Int]
+    var state: js.UndefOr[JQState]
   }
 
   object UpdateJobQueueRequest {
     def apply(
-      jobQueue: js.UndefOr[String] = js.undefined,
-      state: js.UndefOr[JQState] = js.undefined,
+      jobQueue: String,
+      computeEnvironmentOrder: js.UndefOr[ComputeEnvironmentOrders] = js.undefined,
       priority: js.UndefOr[Int] = js.undefined,
-      computeEnvironmentOrder: js.UndefOr[ComputeEnvironmentOrders] = js.undefined): UpdateJobQueueRequest = {
+      state: js.UndefOr[JQState] = js.undefined): UpdateJobQueueRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "jobQueue" -> jobQueue.map { x => x.asInstanceOf[js.Any] },
-        "state" -> state.map { x => x.asInstanceOf[js.Any] },
+        "jobQueue" -> jobQueue.asInstanceOf[js.Any],
+        "computeEnvironmentOrder" -> computeEnvironmentOrder.map { x => x.asInstanceOf[js.Any] },
         "priority" -> priority.map { x => x.asInstanceOf[js.Any] },
-        "computeEnvironmentOrder" -> computeEnvironmentOrder.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "state" -> state.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateJobQueueRequest]
     }
@@ -1714,17 +1714,17 @@ package batch {
 
   @js.native
   trait UpdateJobQueueResponse extends js.Object {
-    var jobQueueName: js.UndefOr[String]
     var jobQueueArn: js.UndefOr[String]
+    var jobQueueName: js.UndefOr[String]
   }
 
   object UpdateJobQueueResponse {
     def apply(
-      jobQueueName: js.UndefOr[String] = js.undefined,
-      jobQueueArn: js.UndefOr[String] = js.undefined): UpdateJobQueueResponse = {
+      jobQueueArn: js.UndefOr[String] = js.undefined,
+      jobQueueName: js.UndefOr[String] = js.undefined): UpdateJobQueueResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "jobQueueName" -> jobQueueName.map { x => x.asInstanceOf[js.Any] },
-        "jobQueueArn" -> jobQueueArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "jobQueueArn" -> jobQueueArn.map { x => x.asInstanceOf[js.Any] },
+        "jobQueueName" -> jobQueueName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateJobQueueResponse]
     }

@@ -258,24 +258,24 @@ package glue {
    */
   @js.native
   trait Action extends js.Object {
+    var Arguments: js.UndefOr[GenericMap]
     var JobName: js.UndefOr[NameString]
     var NotificationProperty: js.UndefOr[NotificationProperty]
-    var Arguments: js.UndefOr[GenericMap]
     var SecurityConfiguration: js.UndefOr[NameString]
     var Timeout: js.UndefOr[Timeout]
   }
 
   object Action {
     def apply(
+      Arguments: js.UndefOr[GenericMap] = js.undefined,
       JobName: js.UndefOr[NameString] = js.undefined,
       NotificationProperty: js.UndefOr[NotificationProperty] = js.undefined,
-      Arguments: js.UndefOr[GenericMap] = js.undefined,
       SecurityConfiguration: js.UndefOr[NameString] = js.undefined,
       Timeout: js.UndefOr[Timeout] = js.undefined): Action = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "Arguments" -> Arguments.map { x => x.asInstanceOf[js.Any] },
         "JobName" -> JobName.map { x => x.asInstanceOf[js.Any] },
         "NotificationProperty" -> NotificationProperty.map { x => x.asInstanceOf[js.Any] },
-        "Arguments" -> Arguments.map { x => x.asInstanceOf[js.Any] },
         "SecurityConfiguration" -> SecurityConfiguration.map { x => x.asInstanceOf[js.Any] },
         "Timeout" -> Timeout.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
@@ -285,23 +285,23 @@ package glue {
 
   @js.native
   trait BatchCreatePartitionRequest extends js.Object {
+    var DatabaseName: NameString
+    var PartitionInputList: PartitionInputList
+    var TableName: NameString
     var CatalogId: js.UndefOr[CatalogIdString]
-    var DatabaseName: js.UndefOr[NameString]
-    var TableName: js.UndefOr[NameString]
-    var PartitionInputList: js.UndefOr[PartitionInputList]
   }
 
   object BatchCreatePartitionRequest {
     def apply(
-      CatalogId: js.UndefOr[CatalogIdString] = js.undefined,
-      DatabaseName: js.UndefOr[NameString] = js.undefined,
-      TableName: js.UndefOr[NameString] = js.undefined,
-      PartitionInputList: js.UndefOr[PartitionInputList] = js.undefined): BatchCreatePartitionRequest = {
+      DatabaseName: NameString,
+      PartitionInputList: PartitionInputList,
+      TableName: NameString,
+      CatalogId: js.UndefOr[CatalogIdString] = js.undefined): BatchCreatePartitionRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "CatalogId" -> CatalogId.map { x => x.asInstanceOf[js.Any] },
-        "DatabaseName" -> DatabaseName.map { x => x.asInstanceOf[js.Any] },
-        "TableName" -> TableName.map { x => x.asInstanceOf[js.Any] },
-        "PartitionInputList" -> PartitionInputList.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "DatabaseName" -> DatabaseName.asInstanceOf[js.Any],
+        "PartitionInputList" -> PartitionInputList.asInstanceOf[js.Any],
+        "TableName" -> TableName.asInstanceOf[js.Any],
+        "CatalogId" -> CatalogId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BatchCreatePartitionRequest]
     }
@@ -324,17 +324,17 @@ package glue {
 
   @js.native
   trait BatchDeleteConnectionRequest extends js.Object {
+    var ConnectionNameList: DeleteConnectionNameList
     var CatalogId: js.UndefOr[CatalogIdString]
-    var ConnectionNameList: js.UndefOr[DeleteConnectionNameList]
   }
 
   object BatchDeleteConnectionRequest {
     def apply(
-      CatalogId: js.UndefOr[CatalogIdString] = js.undefined,
-      ConnectionNameList: js.UndefOr[DeleteConnectionNameList] = js.undefined): BatchDeleteConnectionRequest = {
+      ConnectionNameList: DeleteConnectionNameList,
+      CatalogId: js.UndefOr[CatalogIdString] = js.undefined): BatchDeleteConnectionRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "CatalogId" -> CatalogId.map { x => x.asInstanceOf[js.Any] },
-        "ConnectionNameList" -> ConnectionNameList.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ConnectionNameList" -> ConnectionNameList.asInstanceOf[js.Any],
+        "CatalogId" -> CatalogId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BatchDeleteConnectionRequest]
     }
@@ -342,17 +342,17 @@ package glue {
 
   @js.native
   trait BatchDeleteConnectionResponse extends js.Object {
-    var Succeeded: js.UndefOr[NameStringList]
     var Errors: js.UndefOr[ErrorByName]
+    var Succeeded: js.UndefOr[NameStringList]
   }
 
   object BatchDeleteConnectionResponse {
     def apply(
-      Succeeded: js.UndefOr[NameStringList] = js.undefined,
-      Errors: js.UndefOr[ErrorByName] = js.undefined): BatchDeleteConnectionResponse = {
+      Errors: js.UndefOr[ErrorByName] = js.undefined,
+      Succeeded: js.UndefOr[NameStringList] = js.undefined): BatchDeleteConnectionResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Succeeded" -> Succeeded.map { x => x.asInstanceOf[js.Any] },
-        "Errors" -> Errors.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Errors" -> Errors.map { x => x.asInstanceOf[js.Any] },
+        "Succeeded" -> Succeeded.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BatchDeleteConnectionResponse]
     }
@@ -360,23 +360,23 @@ package glue {
 
   @js.native
   trait BatchDeletePartitionRequest extends js.Object {
+    var DatabaseName: NameString
+    var PartitionsToDelete: BatchDeletePartitionValueList
+    var TableName: NameString
     var CatalogId: js.UndefOr[CatalogIdString]
-    var DatabaseName: js.UndefOr[NameString]
-    var TableName: js.UndefOr[NameString]
-    var PartitionsToDelete: js.UndefOr[BatchDeletePartitionValueList]
   }
 
   object BatchDeletePartitionRequest {
     def apply(
-      CatalogId: js.UndefOr[CatalogIdString] = js.undefined,
-      DatabaseName: js.UndefOr[NameString] = js.undefined,
-      TableName: js.UndefOr[NameString] = js.undefined,
-      PartitionsToDelete: js.UndefOr[BatchDeletePartitionValueList] = js.undefined): BatchDeletePartitionRequest = {
+      DatabaseName: NameString,
+      PartitionsToDelete: BatchDeletePartitionValueList,
+      TableName: NameString,
+      CatalogId: js.UndefOr[CatalogIdString] = js.undefined): BatchDeletePartitionRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "CatalogId" -> CatalogId.map { x => x.asInstanceOf[js.Any] },
-        "DatabaseName" -> DatabaseName.map { x => x.asInstanceOf[js.Any] },
-        "TableName" -> TableName.map { x => x.asInstanceOf[js.Any] },
-        "PartitionsToDelete" -> PartitionsToDelete.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "DatabaseName" -> DatabaseName.asInstanceOf[js.Any],
+        "PartitionsToDelete" -> PartitionsToDelete.asInstanceOf[js.Any],
+        "TableName" -> TableName.asInstanceOf[js.Any],
+        "CatalogId" -> CatalogId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BatchDeletePartitionRequest]
     }
@@ -399,20 +399,20 @@ package glue {
 
   @js.native
   trait BatchDeleteTableRequest extends js.Object {
+    var DatabaseName: NameString
+    var TablesToDelete: BatchDeleteTableNameList
     var CatalogId: js.UndefOr[CatalogIdString]
-    var DatabaseName: js.UndefOr[NameString]
-    var TablesToDelete: js.UndefOr[BatchDeleteTableNameList]
   }
 
   object BatchDeleteTableRequest {
     def apply(
-      CatalogId: js.UndefOr[CatalogIdString] = js.undefined,
-      DatabaseName: js.UndefOr[NameString] = js.undefined,
-      TablesToDelete: js.UndefOr[BatchDeleteTableNameList] = js.undefined): BatchDeleteTableRequest = {
+      DatabaseName: NameString,
+      TablesToDelete: BatchDeleteTableNameList,
+      CatalogId: js.UndefOr[CatalogIdString] = js.undefined): BatchDeleteTableRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "CatalogId" -> CatalogId.map { x => x.asInstanceOf[js.Any] },
-        "DatabaseName" -> DatabaseName.map { x => x.asInstanceOf[js.Any] },
-        "TablesToDelete" -> TablesToDelete.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "DatabaseName" -> DatabaseName.asInstanceOf[js.Any],
+        "TablesToDelete" -> TablesToDelete.asInstanceOf[js.Any],
+        "CatalogId" -> CatalogId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BatchDeleteTableRequest]
     }
@@ -435,23 +435,23 @@ package glue {
 
   @js.native
   trait BatchDeleteTableVersionRequest extends js.Object {
+    var DatabaseName: NameString
+    var TableName: NameString
+    var VersionIds: BatchDeleteTableVersionList
     var CatalogId: js.UndefOr[CatalogIdString]
-    var DatabaseName: js.UndefOr[NameString]
-    var TableName: js.UndefOr[NameString]
-    var VersionIds: js.UndefOr[BatchDeleteTableVersionList]
   }
 
   object BatchDeleteTableVersionRequest {
     def apply(
-      CatalogId: js.UndefOr[CatalogIdString] = js.undefined,
-      DatabaseName: js.UndefOr[NameString] = js.undefined,
-      TableName: js.UndefOr[NameString] = js.undefined,
-      VersionIds: js.UndefOr[BatchDeleteTableVersionList] = js.undefined): BatchDeleteTableVersionRequest = {
+      DatabaseName: NameString,
+      TableName: NameString,
+      VersionIds: BatchDeleteTableVersionList,
+      CatalogId: js.UndefOr[CatalogIdString] = js.undefined): BatchDeleteTableVersionRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "CatalogId" -> CatalogId.map { x => x.asInstanceOf[js.Any] },
-        "DatabaseName" -> DatabaseName.map { x => x.asInstanceOf[js.Any] },
-        "TableName" -> TableName.map { x => x.asInstanceOf[js.Any] },
-        "VersionIds" -> VersionIds.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "DatabaseName" -> DatabaseName.asInstanceOf[js.Any],
+        "TableName" -> TableName.asInstanceOf[js.Any],
+        "VersionIds" -> VersionIds.asInstanceOf[js.Any],
+        "CatalogId" -> CatalogId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BatchDeleteTableVersionRequest]
     }
@@ -474,23 +474,23 @@ package glue {
 
   @js.native
   trait BatchGetPartitionRequest extends js.Object {
+    var DatabaseName: NameString
+    var PartitionsToGet: BatchGetPartitionValueList
+    var TableName: NameString
     var CatalogId: js.UndefOr[CatalogIdString]
-    var DatabaseName: js.UndefOr[NameString]
-    var TableName: js.UndefOr[NameString]
-    var PartitionsToGet: js.UndefOr[BatchGetPartitionValueList]
   }
 
   object BatchGetPartitionRequest {
     def apply(
-      CatalogId: js.UndefOr[CatalogIdString] = js.undefined,
-      DatabaseName: js.UndefOr[NameString] = js.undefined,
-      TableName: js.UndefOr[NameString] = js.undefined,
-      PartitionsToGet: js.UndefOr[BatchGetPartitionValueList] = js.undefined): BatchGetPartitionRequest = {
+      DatabaseName: NameString,
+      PartitionsToGet: BatchGetPartitionValueList,
+      TableName: NameString,
+      CatalogId: js.UndefOr[CatalogIdString] = js.undefined): BatchGetPartitionRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "CatalogId" -> CatalogId.map { x => x.asInstanceOf[js.Any] },
-        "DatabaseName" -> DatabaseName.map { x => x.asInstanceOf[js.Any] },
-        "TableName" -> TableName.map { x => x.asInstanceOf[js.Any] },
-        "PartitionsToGet" -> PartitionsToGet.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "DatabaseName" -> DatabaseName.asInstanceOf[js.Any],
+        "PartitionsToGet" -> PartitionsToGet.asInstanceOf[js.Any],
+        "TableName" -> TableName.asInstanceOf[js.Any],
+        "CatalogId" -> CatalogId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BatchGetPartitionRequest]
     }
@@ -519,20 +519,20 @@ package glue {
    */
   @js.native
   trait BatchStopJobRunError extends js.Object {
+    var ErrorDetail: js.UndefOr[ErrorDetail]
     var JobName: js.UndefOr[NameString]
     var JobRunId: js.UndefOr[IdString]
-    var ErrorDetail: js.UndefOr[ErrorDetail]
   }
 
   object BatchStopJobRunError {
     def apply(
+      ErrorDetail: js.UndefOr[ErrorDetail] = js.undefined,
       JobName: js.UndefOr[NameString] = js.undefined,
-      JobRunId: js.UndefOr[IdString] = js.undefined,
-      ErrorDetail: js.UndefOr[ErrorDetail] = js.undefined): BatchStopJobRunError = {
+      JobRunId: js.UndefOr[IdString] = js.undefined): BatchStopJobRunError = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "ErrorDetail" -> ErrorDetail.map { x => x.asInstanceOf[js.Any] },
         "JobName" -> JobName.map { x => x.asInstanceOf[js.Any] },
-        "JobRunId" -> JobRunId.map { x => x.asInstanceOf[js.Any] },
-        "ErrorDetail" -> ErrorDetail.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "JobRunId" -> JobRunId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BatchStopJobRunError]
     }
@@ -540,17 +540,17 @@ package glue {
 
   @js.native
   trait BatchStopJobRunRequest extends js.Object {
-    var JobName: js.UndefOr[NameString]
-    var JobRunIds: js.UndefOr[BatchStopJobRunJobRunIdList]
+    var JobName: NameString
+    var JobRunIds: BatchStopJobRunJobRunIdList
   }
 
   object BatchStopJobRunRequest {
     def apply(
-      JobName: js.UndefOr[NameString] = js.undefined,
-      JobRunIds: js.UndefOr[BatchStopJobRunJobRunIdList] = js.undefined): BatchStopJobRunRequest = {
+      JobName: NameString,
+      JobRunIds: BatchStopJobRunJobRunIdList): BatchStopJobRunRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "JobName" -> JobName.map { x => x.asInstanceOf[js.Any] },
-        "JobRunIds" -> JobRunIds.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "JobName" -> JobName.asInstanceOf[js.Any],
+        "JobRunIds" -> JobRunIds.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BatchStopJobRunRequest]
     }
@@ -558,17 +558,17 @@ package glue {
 
   @js.native
   trait BatchStopJobRunResponse extends js.Object {
-    var SuccessfulSubmissions: js.UndefOr[BatchStopJobRunSuccessfulSubmissionList]
     var Errors: js.UndefOr[BatchStopJobRunErrorList]
+    var SuccessfulSubmissions: js.UndefOr[BatchStopJobRunSuccessfulSubmissionList]
   }
 
   object BatchStopJobRunResponse {
     def apply(
-      SuccessfulSubmissions: js.UndefOr[BatchStopJobRunSuccessfulSubmissionList] = js.undefined,
-      Errors: js.UndefOr[BatchStopJobRunErrorList] = js.undefined): BatchStopJobRunResponse = {
+      Errors: js.UndefOr[BatchStopJobRunErrorList] = js.undefined,
+      SuccessfulSubmissions: js.UndefOr[BatchStopJobRunSuccessfulSubmissionList] = js.undefined): BatchStopJobRunResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "SuccessfulSubmissions" -> SuccessfulSubmissions.map { x => x.asInstanceOf[js.Any] },
-        "Errors" -> Errors.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Errors" -> Errors.map { x => x.asInstanceOf[js.Any] },
+        "SuccessfulSubmissions" -> SuccessfulSubmissions.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BatchStopJobRunResponse]
     }
@@ -607,17 +607,17 @@ package glue {
    */
   @js.native
   trait CatalogEntry extends js.Object {
-    var DatabaseName: js.UndefOr[NameString]
-    var TableName: js.UndefOr[NameString]
+    var DatabaseName: NameString
+    var TableName: NameString
   }
 
   object CatalogEntry {
     def apply(
-      DatabaseName: js.UndefOr[NameString] = js.undefined,
-      TableName: js.UndefOr[NameString] = js.undefined): CatalogEntry = {
+      DatabaseName: NameString,
+      TableName: NameString): CatalogEntry = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "DatabaseName" -> DatabaseName.map { x => x.asInstanceOf[js.Any] },
-        "TableName" -> TableName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "DatabaseName" -> DatabaseName.asInstanceOf[js.Any],
+        "TableName" -> TableName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CatalogEntry]
     }
@@ -653,19 +653,19 @@ package glue {
   @js.native
   trait Classifier extends js.Object {
     var GrokClassifier: js.UndefOr[GrokClassifier]
-    var XMLClassifier: js.UndefOr[XMLClassifier]
     var JsonClassifier: js.UndefOr[JsonClassifier]
+    var XMLClassifier: js.UndefOr[XMLClassifier]
   }
 
   object Classifier {
     def apply(
       GrokClassifier: js.UndefOr[GrokClassifier] = js.undefined,
-      XMLClassifier: js.UndefOr[XMLClassifier] = js.undefined,
-      JsonClassifier: js.UndefOr[JsonClassifier] = js.undefined): Classifier = {
+      JsonClassifier: js.UndefOr[JsonClassifier] = js.undefined,
+      XMLClassifier: js.UndefOr[XMLClassifier] = js.undefined): Classifier = {
       val _fields = IndexedSeq[(String, js.Any)](
         "GrokClassifier" -> GrokClassifier.map { x => x.asInstanceOf[js.Any] },
-        "XMLClassifier" -> XMLClassifier.map { x => x.asInstanceOf[js.Any] },
-        "JsonClassifier" -> JsonClassifier.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "JsonClassifier" -> JsonClassifier.map { x => x.asInstanceOf[js.Any] },
+        "XMLClassifier" -> XMLClassifier.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Classifier]
     }
@@ -704,19 +704,19 @@ package glue {
    */
   @js.native
   trait CodeGenEdge extends js.Object {
-    var Source: js.UndefOr[CodeGenIdentifier]
-    var Target: js.UndefOr[CodeGenIdentifier]
+    var Source: CodeGenIdentifier
+    var Target: CodeGenIdentifier
     var TargetParameter: js.UndefOr[CodeGenArgName]
   }
 
   object CodeGenEdge {
     def apply(
-      Source: js.UndefOr[CodeGenIdentifier] = js.undefined,
-      Target: js.UndefOr[CodeGenIdentifier] = js.undefined,
+      Source: CodeGenIdentifier,
+      Target: CodeGenIdentifier,
       TargetParameter: js.UndefOr[CodeGenArgName] = js.undefined): CodeGenEdge = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Source" -> Source.map { x => x.asInstanceOf[js.Any] },
-        "Target" -> Target.map { x => x.asInstanceOf[js.Any] },
+        "Source" -> Source.asInstanceOf[js.Any],
+        "Target" -> Target.asInstanceOf[js.Any],
         "TargetParameter" -> TargetParameter.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CodeGenEdge]
@@ -728,22 +728,22 @@ package glue {
    */
   @js.native
   trait CodeGenNode extends js.Object {
-    var Id: js.UndefOr[CodeGenIdentifier]
-    var NodeType: js.UndefOr[CodeGenNodeType]
-    var Args: js.UndefOr[CodeGenNodeArgs]
+    var Args: CodeGenNodeArgs
+    var Id: CodeGenIdentifier
+    var NodeType: CodeGenNodeType
     var LineNumber: js.UndefOr[Int]
   }
 
   object CodeGenNode {
     def apply(
-      Id: js.UndefOr[CodeGenIdentifier] = js.undefined,
-      NodeType: js.UndefOr[CodeGenNodeType] = js.undefined,
-      Args: js.UndefOr[CodeGenNodeArgs] = js.undefined,
+      Args: CodeGenNodeArgs,
+      Id: CodeGenIdentifier,
+      NodeType: CodeGenNodeType,
       LineNumber: js.UndefOr[Int] = js.undefined): CodeGenNode = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Id" -> Id.map { x => x.asInstanceOf[js.Any] },
-        "NodeType" -> NodeType.map { x => x.asInstanceOf[js.Any] },
-        "Args" -> Args.map { x => x.asInstanceOf[js.Any] },
+        "Args" -> Args.asInstanceOf[js.Any],
+        "Id" -> Id.asInstanceOf[js.Any],
+        "NodeType" -> NodeType.asInstanceOf[js.Any],
         "LineNumber" -> LineNumber.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CodeGenNode]
@@ -755,19 +755,19 @@ package glue {
    */
   @js.native
   trait CodeGenNodeArg extends js.Object {
-    var Name: js.UndefOr[CodeGenArgName]
-    var Value: js.UndefOr[CodeGenArgValue]
+    var Name: CodeGenArgName
+    var Value: CodeGenArgValue
     var Param: js.UndefOr[Boolean]
   }
 
   object CodeGenNodeArg {
     def apply(
-      Name: js.UndefOr[CodeGenArgName] = js.undefined,
-      Value: js.UndefOr[CodeGenArgValue] = js.undefined,
+      Name: CodeGenArgName,
+      Value: CodeGenArgValue,
       Param: js.UndefOr[Boolean] = js.undefined): CodeGenNodeArg = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
-        "Value" -> Value.map { x => x.asInstanceOf[js.Any] },
+        "Name" -> Name.asInstanceOf[js.Any],
+        "Value" -> Value.asInstanceOf[js.Any],
         "Param" -> Param.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CodeGenNodeArg]
@@ -779,20 +779,20 @@ package glue {
    */
   @js.native
   trait Column extends js.Object {
-    var Name: js.UndefOr[NameString]
-    var Type: js.UndefOr[ColumnTypeString]
+    var Name: NameString
     var Comment: js.UndefOr[CommentString]
+    var Type: js.UndefOr[ColumnTypeString]
   }
 
   object Column {
     def apply(
-      Name: js.UndefOr[NameString] = js.undefined,
-      Type: js.UndefOr[ColumnTypeString] = js.undefined,
-      Comment: js.UndefOr[CommentString] = js.undefined): Column = {
+      Name: NameString,
+      Comment: js.UndefOr[CommentString] = js.undefined,
+      Type: js.UndefOr[ColumnTypeString] = js.undefined): Column = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
-        "Type" -> Type.map { x => x.asInstanceOf[js.Any] },
-        "Comment" -> Comment.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Name" -> Name.asInstanceOf[js.Any],
+        "Comment" -> Comment.map { x => x.asInstanceOf[js.Any] },
+        "Type" -> Type.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Column]
     }
@@ -803,19 +803,19 @@ package glue {
    */
   @js.native
   trait Condition extends js.Object {
-    var LogicalOperator: js.UndefOr[LogicalOperator]
     var JobName: js.UndefOr[NameString]
+    var LogicalOperator: js.UndefOr[LogicalOperator]
     var State: js.UndefOr[JobRunState]
   }
 
   object Condition {
     def apply(
-      LogicalOperator: js.UndefOr[LogicalOperator] = js.undefined,
       JobName: js.UndefOr[NameString] = js.undefined,
+      LogicalOperator: js.UndefOr[LogicalOperator] = js.undefined,
       State: js.UndefOr[JobRunState] = js.undefined): Condition = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "LogicalOperator" -> LogicalOperator.map { x => x.asInstanceOf[js.Any] },
         "JobName" -> JobName.map { x => x.asInstanceOf[js.Any] },
+        "LogicalOperator" -> LogicalOperator.map { x => x.asInstanceOf[js.Any] },
         "State" -> State.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Condition]
@@ -827,38 +827,38 @@ package glue {
    */
   @js.native
   trait Connection extends js.Object {
-    var Name: js.UndefOr[NameString]
     var ConnectionProperties: js.UndefOr[ConnectionProperties]
-    var LastUpdatedTime: js.UndefOr[Timestamp]
+    var ConnectionType: js.UndefOr[ConnectionType]
+    var CreationTime: js.UndefOr[Timestamp]
     var Description: js.UndefOr[DescriptionString]
     var LastUpdatedBy: js.UndefOr[NameString]
-    var PhysicalConnectionRequirements: js.UndefOr[PhysicalConnectionRequirements]
-    var ConnectionType: js.UndefOr[ConnectionType]
+    var LastUpdatedTime: js.UndefOr[Timestamp]
     var MatchCriteria: js.UndefOr[MatchCriteria]
-    var CreationTime: js.UndefOr[Timestamp]
+    var Name: js.UndefOr[NameString]
+    var PhysicalConnectionRequirements: js.UndefOr[PhysicalConnectionRequirements]
   }
 
   object Connection {
     def apply(
-      Name: js.UndefOr[NameString] = js.undefined,
       ConnectionProperties: js.UndefOr[ConnectionProperties] = js.undefined,
-      LastUpdatedTime: js.UndefOr[Timestamp] = js.undefined,
+      ConnectionType: js.UndefOr[ConnectionType] = js.undefined,
+      CreationTime: js.UndefOr[Timestamp] = js.undefined,
       Description: js.UndefOr[DescriptionString] = js.undefined,
       LastUpdatedBy: js.UndefOr[NameString] = js.undefined,
-      PhysicalConnectionRequirements: js.UndefOr[PhysicalConnectionRequirements] = js.undefined,
-      ConnectionType: js.UndefOr[ConnectionType] = js.undefined,
+      LastUpdatedTime: js.UndefOr[Timestamp] = js.undefined,
       MatchCriteria: js.UndefOr[MatchCriteria] = js.undefined,
-      CreationTime: js.UndefOr[Timestamp] = js.undefined): Connection = {
+      Name: js.UndefOr[NameString] = js.undefined,
+      PhysicalConnectionRequirements: js.UndefOr[PhysicalConnectionRequirements] = js.undefined): Connection = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
         "ConnectionProperties" -> ConnectionProperties.map { x => x.asInstanceOf[js.Any] },
-        "LastUpdatedTime" -> LastUpdatedTime.map { x => x.asInstanceOf[js.Any] },
+        "ConnectionType" -> ConnectionType.map { x => x.asInstanceOf[js.Any] },
+        "CreationTime" -> CreationTime.map { x => x.asInstanceOf[js.Any] },
         "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
         "LastUpdatedBy" -> LastUpdatedBy.map { x => x.asInstanceOf[js.Any] },
-        "PhysicalConnectionRequirements" -> PhysicalConnectionRequirements.map { x => x.asInstanceOf[js.Any] },
-        "ConnectionType" -> ConnectionType.map { x => x.asInstanceOf[js.Any] },
+        "LastUpdatedTime" -> LastUpdatedTime.map { x => x.asInstanceOf[js.Any] },
         "MatchCriteria" -> MatchCriteria.map { x => x.asInstanceOf[js.Any] },
-        "CreationTime" -> CreationTime.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
+        "PhysicalConnectionRequirements" -> PhysicalConnectionRequirements.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Connection]
     }
@@ -869,29 +869,29 @@ package glue {
    */
   @js.native
   trait ConnectionInput extends js.Object {
-    var Name: js.UndefOr[NameString]
-    var ConnectionProperties: js.UndefOr[ConnectionProperties]
+    var ConnectionProperties: ConnectionProperties
+    var ConnectionType: ConnectionType
+    var Name: NameString
     var Description: js.UndefOr[DescriptionString]
-    var PhysicalConnectionRequirements: js.UndefOr[PhysicalConnectionRequirements]
-    var ConnectionType: js.UndefOr[ConnectionType]
     var MatchCriteria: js.UndefOr[MatchCriteria]
+    var PhysicalConnectionRequirements: js.UndefOr[PhysicalConnectionRequirements]
   }
 
   object ConnectionInput {
     def apply(
-      Name: js.UndefOr[NameString] = js.undefined,
-      ConnectionProperties: js.UndefOr[ConnectionProperties] = js.undefined,
+      ConnectionProperties: ConnectionProperties,
+      ConnectionType: ConnectionType,
+      Name: NameString,
       Description: js.UndefOr[DescriptionString] = js.undefined,
-      PhysicalConnectionRequirements: js.UndefOr[PhysicalConnectionRequirements] = js.undefined,
-      ConnectionType: js.UndefOr[ConnectionType] = js.undefined,
-      MatchCriteria: js.UndefOr[MatchCriteria] = js.undefined): ConnectionInput = {
+      MatchCriteria: js.UndefOr[MatchCriteria] = js.undefined,
+      PhysicalConnectionRequirements: js.UndefOr[PhysicalConnectionRequirements] = js.undefined): ConnectionInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
-        "ConnectionProperties" -> ConnectionProperties.map { x => x.asInstanceOf[js.Any] },
+        "ConnectionProperties" -> ConnectionProperties.asInstanceOf[js.Any],
+        "ConnectionType" -> ConnectionType.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
         "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
-        "PhysicalConnectionRequirements" -> PhysicalConnectionRequirements.map { x => x.asInstanceOf[js.Any] },
-        "ConnectionType" -> ConnectionType.map { x => x.asInstanceOf[js.Any] },
-        "MatchCriteria" -> MatchCriteria.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "MatchCriteria" -> MatchCriteria.map { x => x.asInstanceOf[js.Any] },
+        "PhysicalConnectionRequirements" -> PhysicalConnectionRequirements.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ConnectionInput]
     }
@@ -944,62 +944,62 @@ package glue {
    */
   @js.native
   trait Crawler extends js.Object {
-    var Role: js.UndefOr[Role]
-    var Name: js.UndefOr[NameString]
     var Classifiers: js.UndefOr[ClassifierNameList]
-    var SchemaChangePolicy: js.UndefOr[SchemaChangePolicy]
     var Configuration: js.UndefOr[CrawlerConfiguration]
-    var DatabaseName: js.UndefOr[DatabaseName]
-    var LastUpdated: js.UndefOr[Timestamp]
-    var Version: js.UndefOr[VersionId]
-    var Description: js.UndefOr[DescriptionString]
+    var CrawlElapsedTime: js.UndefOr[MillisecondsCount]
     var CrawlerSecurityConfiguration: js.UndefOr[CrawlerSecurityConfiguration]
+    var CreationTime: js.UndefOr[Timestamp]
+    var DatabaseName: js.UndefOr[DatabaseName]
+    var Description: js.UndefOr[DescriptionString]
+    var LastCrawl: js.UndefOr[LastCrawlInfo]
+    var LastUpdated: js.UndefOr[Timestamp]
+    var Name: js.UndefOr[NameString]
+    var Role: js.UndefOr[Role]
+    var Schedule: js.UndefOr[Schedule]
+    var SchemaChangePolicy: js.UndefOr[SchemaChangePolicy]
+    var State: js.UndefOr[CrawlerState]
     var TablePrefix: js.UndefOr[TablePrefix]
     var Targets: js.UndefOr[CrawlerTargets]
-    var Schedule: js.UndefOr[Schedule]
-    var State: js.UndefOr[CrawlerState]
-    var CrawlElapsedTime: js.UndefOr[MillisecondsCount]
-    var LastCrawl: js.UndefOr[LastCrawlInfo]
-    var CreationTime: js.UndefOr[Timestamp]
+    var Version: js.UndefOr[VersionId]
   }
 
   object Crawler {
     def apply(
-      Role: js.UndefOr[Role] = js.undefined,
-      Name: js.UndefOr[NameString] = js.undefined,
       Classifiers: js.UndefOr[ClassifierNameList] = js.undefined,
-      SchemaChangePolicy: js.UndefOr[SchemaChangePolicy] = js.undefined,
       Configuration: js.UndefOr[CrawlerConfiguration] = js.undefined,
-      DatabaseName: js.UndefOr[DatabaseName] = js.undefined,
-      LastUpdated: js.UndefOr[Timestamp] = js.undefined,
-      Version: js.UndefOr[VersionId] = js.undefined,
-      Description: js.UndefOr[DescriptionString] = js.undefined,
+      CrawlElapsedTime: js.UndefOr[MillisecondsCount] = js.undefined,
       CrawlerSecurityConfiguration: js.UndefOr[CrawlerSecurityConfiguration] = js.undefined,
+      CreationTime: js.UndefOr[Timestamp] = js.undefined,
+      DatabaseName: js.UndefOr[DatabaseName] = js.undefined,
+      Description: js.UndefOr[DescriptionString] = js.undefined,
+      LastCrawl: js.UndefOr[LastCrawlInfo] = js.undefined,
+      LastUpdated: js.UndefOr[Timestamp] = js.undefined,
+      Name: js.UndefOr[NameString] = js.undefined,
+      Role: js.UndefOr[Role] = js.undefined,
+      Schedule: js.UndefOr[Schedule] = js.undefined,
+      SchemaChangePolicy: js.UndefOr[SchemaChangePolicy] = js.undefined,
+      State: js.UndefOr[CrawlerState] = js.undefined,
       TablePrefix: js.UndefOr[TablePrefix] = js.undefined,
       Targets: js.UndefOr[CrawlerTargets] = js.undefined,
-      Schedule: js.UndefOr[Schedule] = js.undefined,
-      State: js.UndefOr[CrawlerState] = js.undefined,
-      CrawlElapsedTime: js.UndefOr[MillisecondsCount] = js.undefined,
-      LastCrawl: js.UndefOr[LastCrawlInfo] = js.undefined,
-      CreationTime: js.UndefOr[Timestamp] = js.undefined): Crawler = {
+      Version: js.UndefOr[VersionId] = js.undefined): Crawler = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Role" -> Role.map { x => x.asInstanceOf[js.Any] },
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
         "Classifiers" -> Classifiers.map { x => x.asInstanceOf[js.Any] },
-        "SchemaChangePolicy" -> SchemaChangePolicy.map { x => x.asInstanceOf[js.Any] },
         "Configuration" -> Configuration.map { x => x.asInstanceOf[js.Any] },
-        "DatabaseName" -> DatabaseName.map { x => x.asInstanceOf[js.Any] },
-        "LastUpdated" -> LastUpdated.map { x => x.asInstanceOf[js.Any] },
-        "Version" -> Version.map { x => x.asInstanceOf[js.Any] },
-        "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
+        "CrawlElapsedTime" -> CrawlElapsedTime.map { x => x.asInstanceOf[js.Any] },
         "CrawlerSecurityConfiguration" -> CrawlerSecurityConfiguration.map { x => x.asInstanceOf[js.Any] },
+        "CreationTime" -> CreationTime.map { x => x.asInstanceOf[js.Any] },
+        "DatabaseName" -> DatabaseName.map { x => x.asInstanceOf[js.Any] },
+        "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
+        "LastCrawl" -> LastCrawl.map { x => x.asInstanceOf[js.Any] },
+        "LastUpdated" -> LastUpdated.map { x => x.asInstanceOf[js.Any] },
+        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
+        "Role" -> Role.map { x => x.asInstanceOf[js.Any] },
+        "Schedule" -> Schedule.map { x => x.asInstanceOf[js.Any] },
+        "SchemaChangePolicy" -> SchemaChangePolicy.map { x => x.asInstanceOf[js.Any] },
+        "State" -> State.map { x => x.asInstanceOf[js.Any] },
         "TablePrefix" -> TablePrefix.map { x => x.asInstanceOf[js.Any] },
         "Targets" -> Targets.map { x => x.asInstanceOf[js.Any] },
-        "Schedule" -> Schedule.map { x => x.asInstanceOf[js.Any] },
-        "State" -> State.map { x => x.asInstanceOf[js.Any] },
-        "CrawlElapsedTime" -> CrawlElapsedTime.map { x => x.asInstanceOf[js.Any] },
-        "LastCrawl" -> LastCrawl.map { x => x.asInstanceOf[js.Any] },
-        "CreationTime" -> CreationTime.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Version" -> Version.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Crawler]
     }
@@ -1010,35 +1010,35 @@ package glue {
    */
   @js.native
   trait CrawlerMetrics extends js.Object {
+    var CrawlerName: js.UndefOr[NameString]
     var LastRuntimeSeconds: js.UndefOr[NonNegativeDouble]
     var MedianRuntimeSeconds: js.UndefOr[NonNegativeDouble]
+    var StillEstimating: js.UndefOr[Boolean]
+    var TablesCreated: js.UndefOr[NonNegativeInteger]
     var TablesDeleted: js.UndefOr[NonNegativeInteger]
     var TablesUpdated: js.UndefOr[NonNegativeInteger]
-    var CrawlerName: js.UndefOr[NameString]
     var TimeLeftSeconds: js.UndefOr[NonNegativeDouble]
-    var TablesCreated: js.UndefOr[NonNegativeInteger]
-    var StillEstimating: js.UndefOr[Boolean]
   }
 
   object CrawlerMetrics {
     def apply(
+      CrawlerName: js.UndefOr[NameString] = js.undefined,
       LastRuntimeSeconds: js.UndefOr[NonNegativeDouble] = js.undefined,
       MedianRuntimeSeconds: js.UndefOr[NonNegativeDouble] = js.undefined,
+      StillEstimating: js.UndefOr[Boolean] = js.undefined,
+      TablesCreated: js.UndefOr[NonNegativeInteger] = js.undefined,
       TablesDeleted: js.UndefOr[NonNegativeInteger] = js.undefined,
       TablesUpdated: js.UndefOr[NonNegativeInteger] = js.undefined,
-      CrawlerName: js.UndefOr[NameString] = js.undefined,
-      TimeLeftSeconds: js.UndefOr[NonNegativeDouble] = js.undefined,
-      TablesCreated: js.UndefOr[NonNegativeInteger] = js.undefined,
-      StillEstimating: js.UndefOr[Boolean] = js.undefined): CrawlerMetrics = {
+      TimeLeftSeconds: js.UndefOr[NonNegativeDouble] = js.undefined): CrawlerMetrics = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "CrawlerName" -> CrawlerName.map { x => x.asInstanceOf[js.Any] },
         "LastRuntimeSeconds" -> LastRuntimeSeconds.map { x => x.asInstanceOf[js.Any] },
         "MedianRuntimeSeconds" -> MedianRuntimeSeconds.map { x => x.asInstanceOf[js.Any] },
+        "StillEstimating" -> StillEstimating.map { x => x.asInstanceOf[js.Any] },
+        "TablesCreated" -> TablesCreated.map { x => x.asInstanceOf[js.Any] },
         "TablesDeleted" -> TablesDeleted.map { x => x.asInstanceOf[js.Any] },
         "TablesUpdated" -> TablesUpdated.map { x => x.asInstanceOf[js.Any] },
-        "CrawlerName" -> CrawlerName.map { x => x.asInstanceOf[js.Any] },
-        "TimeLeftSeconds" -> TimeLeftSeconds.map { x => x.asInstanceOf[js.Any] },
-        "TablesCreated" -> TablesCreated.map { x => x.asInstanceOf[js.Any] },
-        "StillEstimating" -> StillEstimating.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "TimeLeftSeconds" -> TimeLeftSeconds.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CrawlerMetrics]
     }
@@ -1057,20 +1057,20 @@ package glue {
    */
   @js.native
   trait CrawlerTargets extends js.Object {
-    var S3Targets: js.UndefOr[S3TargetList]
-    var JdbcTargets: js.UndefOr[JdbcTargetList]
     var DynamoDBTargets: js.UndefOr[DynamoDBTargetList]
+    var JdbcTargets: js.UndefOr[JdbcTargetList]
+    var S3Targets: js.UndefOr[S3TargetList]
   }
 
   object CrawlerTargets {
     def apply(
-      S3Targets: js.UndefOr[S3TargetList] = js.undefined,
+      DynamoDBTargets: js.UndefOr[DynamoDBTargetList] = js.undefined,
       JdbcTargets: js.UndefOr[JdbcTargetList] = js.undefined,
-      DynamoDBTargets: js.UndefOr[DynamoDBTargetList] = js.undefined): CrawlerTargets = {
+      S3Targets: js.UndefOr[S3TargetList] = js.undefined): CrawlerTargets = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "S3Targets" -> S3Targets.map { x => x.asInstanceOf[js.Any] },
+        "DynamoDBTargets" -> DynamoDBTargets.map { x => x.asInstanceOf[js.Any] },
         "JdbcTargets" -> JdbcTargets.map { x => x.asInstanceOf[js.Any] },
-        "DynamoDBTargets" -> DynamoDBTargets.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "S3Targets" -> S3Targets.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CrawlerTargets]
     }
@@ -1079,19 +1079,19 @@ package glue {
   @js.native
   trait CreateClassifierRequest extends js.Object {
     var GrokClassifier: js.UndefOr[CreateGrokClassifierRequest]
-    var XMLClassifier: js.UndefOr[CreateXMLClassifierRequest]
     var JsonClassifier: js.UndefOr[CreateJsonClassifierRequest]
+    var XMLClassifier: js.UndefOr[CreateXMLClassifierRequest]
   }
 
   object CreateClassifierRequest {
     def apply(
       GrokClassifier: js.UndefOr[CreateGrokClassifierRequest] = js.undefined,
-      XMLClassifier: js.UndefOr[CreateXMLClassifierRequest] = js.undefined,
-      JsonClassifier: js.UndefOr[CreateJsonClassifierRequest] = js.undefined): CreateClassifierRequest = {
+      JsonClassifier: js.UndefOr[CreateJsonClassifierRequest] = js.undefined,
+      XMLClassifier: js.UndefOr[CreateXMLClassifierRequest] = js.undefined): CreateClassifierRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "GrokClassifier" -> GrokClassifier.map { x => x.asInstanceOf[js.Any] },
-        "XMLClassifier" -> XMLClassifier.map { x => x.asInstanceOf[js.Any] },
-        "JsonClassifier" -> JsonClassifier.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "JsonClassifier" -> JsonClassifier.map { x => x.asInstanceOf[js.Any] },
+        "XMLClassifier" -> XMLClassifier.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateClassifierRequest]
     }
@@ -1112,17 +1112,17 @@ package glue {
 
   @js.native
   trait CreateConnectionRequest extends js.Object {
+    var ConnectionInput: ConnectionInput
     var CatalogId: js.UndefOr[CatalogIdString]
-    var ConnectionInput: js.UndefOr[ConnectionInput]
   }
 
   object CreateConnectionRequest {
     def apply(
-      CatalogId: js.UndefOr[CatalogIdString] = js.undefined,
-      ConnectionInput: js.UndefOr[ConnectionInput] = js.undefined): CreateConnectionRequest = {
+      ConnectionInput: ConnectionInput,
+      CatalogId: js.UndefOr[CatalogIdString] = js.undefined): CreateConnectionRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "CatalogId" -> CatalogId.map { x => x.asInstanceOf[js.Any] },
-        "ConnectionInput" -> ConnectionInput.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ConnectionInput" -> ConnectionInput.asInstanceOf[js.Any],
+        "CatalogId" -> CatalogId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateConnectionRequest]
     }
@@ -1143,44 +1143,44 @@ package glue {
 
   @js.native
   trait CreateCrawlerRequest extends js.Object {
-    var Role: js.UndefOr[Role]
-    var Name: js.UndefOr[NameString]
+    var DatabaseName: DatabaseName
+    var Name: NameString
+    var Role: Role
+    var Targets: CrawlerTargets
     var Classifiers: js.UndefOr[ClassifierNameList]
-    var SchemaChangePolicy: js.UndefOr[SchemaChangePolicy]
     var Configuration: js.UndefOr[CrawlerConfiguration]
-    var DatabaseName: js.UndefOr[DatabaseName]
-    var Description: js.UndefOr[DescriptionString]
     var CrawlerSecurityConfiguration: js.UndefOr[CrawlerSecurityConfiguration]
-    var TablePrefix: js.UndefOr[TablePrefix]
-    var Targets: js.UndefOr[CrawlerTargets]
+    var Description: js.UndefOr[DescriptionString]
     var Schedule: js.UndefOr[CronExpression]
+    var SchemaChangePolicy: js.UndefOr[SchemaChangePolicy]
+    var TablePrefix: js.UndefOr[TablePrefix]
   }
 
   object CreateCrawlerRequest {
     def apply(
-      Role: js.UndefOr[Role] = js.undefined,
-      Name: js.UndefOr[NameString] = js.undefined,
+      DatabaseName: DatabaseName,
+      Name: NameString,
+      Role: Role,
+      Targets: CrawlerTargets,
       Classifiers: js.UndefOr[ClassifierNameList] = js.undefined,
-      SchemaChangePolicy: js.UndefOr[SchemaChangePolicy] = js.undefined,
       Configuration: js.UndefOr[CrawlerConfiguration] = js.undefined,
-      DatabaseName: js.UndefOr[DatabaseName] = js.undefined,
-      Description: js.UndefOr[DescriptionString] = js.undefined,
       CrawlerSecurityConfiguration: js.UndefOr[CrawlerSecurityConfiguration] = js.undefined,
-      TablePrefix: js.UndefOr[TablePrefix] = js.undefined,
-      Targets: js.UndefOr[CrawlerTargets] = js.undefined,
-      Schedule: js.UndefOr[CronExpression] = js.undefined): CreateCrawlerRequest = {
+      Description: js.UndefOr[DescriptionString] = js.undefined,
+      Schedule: js.UndefOr[CronExpression] = js.undefined,
+      SchemaChangePolicy: js.UndefOr[SchemaChangePolicy] = js.undefined,
+      TablePrefix: js.UndefOr[TablePrefix] = js.undefined): CreateCrawlerRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Role" -> Role.map { x => x.asInstanceOf[js.Any] },
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
+        "DatabaseName" -> DatabaseName.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
+        "Role" -> Role.asInstanceOf[js.Any],
+        "Targets" -> Targets.asInstanceOf[js.Any],
         "Classifiers" -> Classifiers.map { x => x.asInstanceOf[js.Any] },
-        "SchemaChangePolicy" -> SchemaChangePolicy.map { x => x.asInstanceOf[js.Any] },
         "Configuration" -> Configuration.map { x => x.asInstanceOf[js.Any] },
-        "DatabaseName" -> DatabaseName.map { x => x.asInstanceOf[js.Any] },
-        "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
         "CrawlerSecurityConfiguration" -> CrawlerSecurityConfiguration.map { x => x.asInstanceOf[js.Any] },
-        "TablePrefix" -> TablePrefix.map { x => x.asInstanceOf[js.Any] },
-        "Targets" -> Targets.map { x => x.asInstanceOf[js.Any] },
-        "Schedule" -> Schedule.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
+        "Schedule" -> Schedule.map { x => x.asInstanceOf[js.Any] },
+        "SchemaChangePolicy" -> SchemaChangePolicy.map { x => x.asInstanceOf[js.Any] },
+        "TablePrefix" -> TablePrefix.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateCrawlerRequest]
     }
@@ -1201,17 +1201,17 @@ package glue {
 
   @js.native
   trait CreateDatabaseRequest extends js.Object {
+    var DatabaseInput: DatabaseInput
     var CatalogId: js.UndefOr[CatalogIdString]
-    var DatabaseInput: js.UndefOr[DatabaseInput]
   }
 
   object CreateDatabaseRequest {
     def apply(
-      CatalogId: js.UndefOr[CatalogIdString] = js.undefined,
-      DatabaseInput: js.UndefOr[DatabaseInput] = js.undefined): CreateDatabaseRequest = {
+      DatabaseInput: DatabaseInput,
+      CatalogId: js.UndefOr[CatalogIdString] = js.undefined): CreateDatabaseRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "CatalogId" -> CatalogId.map { x => x.asInstanceOf[js.Any] },
-        "DatabaseInput" -> DatabaseInput.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "DatabaseInput" -> DatabaseInput.asInstanceOf[js.Any],
+        "CatalogId" -> CatalogId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateDatabaseRequest]
     }
@@ -1232,40 +1232,40 @@ package glue {
 
   @js.native
   trait CreateDevEndpointRequest extends js.Object {
-    var SecurityGroupIds: js.UndefOr[StringList]
-    var NumberOfNodes: js.UndefOr[IntegerValue]
-    var ExtraPythonLibsS3Path: js.UndefOr[GenericString]
-    var PublicKey: js.UndefOr[GenericString]
+    var EndpointName: GenericString
+    var RoleArn: RoleArn
     var ExtraJarsS3Path: js.UndefOr[GenericString]
-    var EndpointName: js.UndefOr[GenericString]
-    var RoleArn: js.UndefOr[RoleArn]
-    var SecurityConfiguration: js.UndefOr[NameString]
+    var ExtraPythonLibsS3Path: js.UndefOr[GenericString]
+    var NumberOfNodes: js.UndefOr[IntegerValue]
+    var PublicKey: js.UndefOr[GenericString]
     var PublicKeys: js.UndefOr[PublicKeysList]
+    var SecurityConfiguration: js.UndefOr[NameString]
+    var SecurityGroupIds: js.UndefOr[StringList]
     var SubnetId: js.UndefOr[GenericString]
   }
 
   object CreateDevEndpointRequest {
     def apply(
-      SecurityGroupIds: js.UndefOr[StringList] = js.undefined,
-      NumberOfNodes: js.UndefOr[IntegerValue] = js.undefined,
-      ExtraPythonLibsS3Path: js.UndefOr[GenericString] = js.undefined,
-      PublicKey: js.UndefOr[GenericString] = js.undefined,
+      EndpointName: GenericString,
+      RoleArn: RoleArn,
       ExtraJarsS3Path: js.UndefOr[GenericString] = js.undefined,
-      EndpointName: js.UndefOr[GenericString] = js.undefined,
-      RoleArn: js.UndefOr[RoleArn] = js.undefined,
-      SecurityConfiguration: js.UndefOr[NameString] = js.undefined,
+      ExtraPythonLibsS3Path: js.UndefOr[GenericString] = js.undefined,
+      NumberOfNodes: js.UndefOr[IntegerValue] = js.undefined,
+      PublicKey: js.UndefOr[GenericString] = js.undefined,
       PublicKeys: js.UndefOr[PublicKeysList] = js.undefined,
+      SecurityConfiguration: js.UndefOr[NameString] = js.undefined,
+      SecurityGroupIds: js.UndefOr[StringList] = js.undefined,
       SubnetId: js.UndefOr[GenericString] = js.undefined): CreateDevEndpointRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "SecurityGroupIds" -> SecurityGroupIds.map { x => x.asInstanceOf[js.Any] },
-        "NumberOfNodes" -> NumberOfNodes.map { x => x.asInstanceOf[js.Any] },
-        "ExtraPythonLibsS3Path" -> ExtraPythonLibsS3Path.map { x => x.asInstanceOf[js.Any] },
-        "PublicKey" -> PublicKey.map { x => x.asInstanceOf[js.Any] },
+        "EndpointName" -> EndpointName.asInstanceOf[js.Any],
+        "RoleArn" -> RoleArn.asInstanceOf[js.Any],
         "ExtraJarsS3Path" -> ExtraJarsS3Path.map { x => x.asInstanceOf[js.Any] },
-        "EndpointName" -> EndpointName.map { x => x.asInstanceOf[js.Any] },
-        "RoleArn" -> RoleArn.map { x => x.asInstanceOf[js.Any] },
-        "SecurityConfiguration" -> SecurityConfiguration.map { x => x.asInstanceOf[js.Any] },
+        "ExtraPythonLibsS3Path" -> ExtraPythonLibsS3Path.map { x => x.asInstanceOf[js.Any] },
+        "NumberOfNodes" -> NumberOfNodes.map { x => x.asInstanceOf[js.Any] },
+        "PublicKey" -> PublicKey.map { x => x.asInstanceOf[js.Any] },
         "PublicKeys" -> PublicKeys.map { x => x.asInstanceOf[js.Any] },
+        "SecurityConfiguration" -> SecurityConfiguration.map { x => x.asInstanceOf[js.Any] },
+        "SecurityGroupIds" -> SecurityGroupIds.map { x => x.asInstanceOf[js.Any] },
         "SubnetId" -> SubnetId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateDevEndpointRequest]
@@ -1274,56 +1274,56 @@ package glue {
 
   @js.native
   trait CreateDevEndpointResponse extends js.Object {
-    var YarnEndpointAddress: js.UndefOr[GenericString]
-    var ZeppelinRemoteSparkInterpreterPort: js.UndefOr[IntegerValue]
     var AvailabilityZone: js.UndefOr[GenericString]
-    var SecurityGroupIds: js.UndefOr[StringList]
-    var NumberOfNodes: js.UndefOr[IntegerValue]
     var CreatedTimestamp: js.UndefOr[TimestampValue]
-    var FailureReason: js.UndefOr[GenericString]
-    var ExtraPythonLibsS3Path: js.UndefOr[GenericString]
-    var ExtraJarsS3Path: js.UndefOr[GenericString]
     var EndpointName: js.UndefOr[GenericString]
+    var ExtraJarsS3Path: js.UndefOr[GenericString]
+    var ExtraPythonLibsS3Path: js.UndefOr[GenericString]
+    var FailureReason: js.UndefOr[GenericString]
+    var NumberOfNodes: js.UndefOr[IntegerValue]
     var RoleArn: js.UndefOr[RoleArn]
     var SecurityConfiguration: js.UndefOr[NameString]
+    var SecurityGroupIds: js.UndefOr[StringList]
     var Status: js.UndefOr[GenericString]
-    var VpcId: js.UndefOr[GenericString]
     var SubnetId: js.UndefOr[GenericString]
+    var VpcId: js.UndefOr[GenericString]
+    var YarnEndpointAddress: js.UndefOr[GenericString]
+    var ZeppelinRemoteSparkInterpreterPort: js.UndefOr[IntegerValue]
   }
 
   object CreateDevEndpointResponse {
     def apply(
-      YarnEndpointAddress: js.UndefOr[GenericString] = js.undefined,
-      ZeppelinRemoteSparkInterpreterPort: js.UndefOr[IntegerValue] = js.undefined,
       AvailabilityZone: js.UndefOr[GenericString] = js.undefined,
-      SecurityGroupIds: js.UndefOr[StringList] = js.undefined,
-      NumberOfNodes: js.UndefOr[IntegerValue] = js.undefined,
       CreatedTimestamp: js.UndefOr[TimestampValue] = js.undefined,
-      FailureReason: js.UndefOr[GenericString] = js.undefined,
-      ExtraPythonLibsS3Path: js.UndefOr[GenericString] = js.undefined,
-      ExtraJarsS3Path: js.UndefOr[GenericString] = js.undefined,
       EndpointName: js.UndefOr[GenericString] = js.undefined,
+      ExtraJarsS3Path: js.UndefOr[GenericString] = js.undefined,
+      ExtraPythonLibsS3Path: js.UndefOr[GenericString] = js.undefined,
+      FailureReason: js.UndefOr[GenericString] = js.undefined,
+      NumberOfNodes: js.UndefOr[IntegerValue] = js.undefined,
       RoleArn: js.UndefOr[RoleArn] = js.undefined,
       SecurityConfiguration: js.UndefOr[NameString] = js.undefined,
+      SecurityGroupIds: js.UndefOr[StringList] = js.undefined,
       Status: js.UndefOr[GenericString] = js.undefined,
+      SubnetId: js.UndefOr[GenericString] = js.undefined,
       VpcId: js.UndefOr[GenericString] = js.undefined,
-      SubnetId: js.UndefOr[GenericString] = js.undefined): CreateDevEndpointResponse = {
+      YarnEndpointAddress: js.UndefOr[GenericString] = js.undefined,
+      ZeppelinRemoteSparkInterpreterPort: js.UndefOr[IntegerValue] = js.undefined): CreateDevEndpointResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "YarnEndpointAddress" -> YarnEndpointAddress.map { x => x.asInstanceOf[js.Any] },
-        "ZeppelinRemoteSparkInterpreterPort" -> ZeppelinRemoteSparkInterpreterPort.map { x => x.asInstanceOf[js.Any] },
         "AvailabilityZone" -> AvailabilityZone.map { x => x.asInstanceOf[js.Any] },
-        "SecurityGroupIds" -> SecurityGroupIds.map { x => x.asInstanceOf[js.Any] },
-        "NumberOfNodes" -> NumberOfNodes.map { x => x.asInstanceOf[js.Any] },
         "CreatedTimestamp" -> CreatedTimestamp.map { x => x.asInstanceOf[js.Any] },
-        "FailureReason" -> FailureReason.map { x => x.asInstanceOf[js.Any] },
-        "ExtraPythonLibsS3Path" -> ExtraPythonLibsS3Path.map { x => x.asInstanceOf[js.Any] },
-        "ExtraJarsS3Path" -> ExtraJarsS3Path.map { x => x.asInstanceOf[js.Any] },
         "EndpointName" -> EndpointName.map { x => x.asInstanceOf[js.Any] },
+        "ExtraJarsS3Path" -> ExtraJarsS3Path.map { x => x.asInstanceOf[js.Any] },
+        "ExtraPythonLibsS3Path" -> ExtraPythonLibsS3Path.map { x => x.asInstanceOf[js.Any] },
+        "FailureReason" -> FailureReason.map { x => x.asInstanceOf[js.Any] },
+        "NumberOfNodes" -> NumberOfNodes.map { x => x.asInstanceOf[js.Any] },
         "RoleArn" -> RoleArn.map { x => x.asInstanceOf[js.Any] },
         "SecurityConfiguration" -> SecurityConfiguration.map { x => x.asInstanceOf[js.Any] },
+        "SecurityGroupIds" -> SecurityGroupIds.map { x => x.asInstanceOf[js.Any] },
         "Status" -> Status.map { x => x.asInstanceOf[js.Any] },
+        "SubnetId" -> SubnetId.map { x => x.asInstanceOf[js.Any] },
         "VpcId" -> VpcId.map { x => x.asInstanceOf[js.Any] },
-        "SubnetId" -> SubnetId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "YarnEndpointAddress" -> YarnEndpointAddress.map { x => x.asInstanceOf[js.Any] },
+        "ZeppelinRemoteSparkInterpreterPort" -> ZeppelinRemoteSparkInterpreterPort.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateDevEndpointResponse]
     }
@@ -1334,22 +1334,22 @@ package glue {
    */
   @js.native
   trait CreateGrokClassifierRequest extends js.Object {
-    var Classification: js.UndefOr[Classification]
-    var Name: js.UndefOr[NameString]
-    var GrokPattern: js.UndefOr[GrokPattern]
+    var Classification: Classification
+    var GrokPattern: GrokPattern
+    var Name: NameString
     var CustomPatterns: js.UndefOr[CustomPatterns]
   }
 
   object CreateGrokClassifierRequest {
     def apply(
-      Classification: js.UndefOr[Classification] = js.undefined,
-      Name: js.UndefOr[NameString] = js.undefined,
-      GrokPattern: js.UndefOr[GrokPattern] = js.undefined,
+      Classification: Classification,
+      GrokPattern: GrokPattern,
+      Name: NameString,
       CustomPatterns: js.UndefOr[CustomPatterns] = js.undefined): CreateGrokClassifierRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Classification" -> Classification.map { x => x.asInstanceOf[js.Any] },
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
-        "GrokPattern" -> GrokPattern.map { x => x.asInstanceOf[js.Any] },
+        "Classification" -> Classification.asInstanceOf[js.Any],
+        "GrokPattern" -> GrokPattern.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
         "CustomPatterns" -> CustomPatterns.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateGrokClassifierRequest]
@@ -1358,49 +1358,49 @@ package glue {
 
   @js.native
   trait CreateJobRequest extends js.Object {
-    var LogUri: js.UndefOr[UriString]
-    var Role: js.UndefOr[RoleString]
-    var Name: js.UndefOr[NameString]
-    var MaxRetries: js.UndefOr[MaxRetries]
-    var Command: js.UndefOr[JobCommand]
+    var Command: JobCommand
+    var Name: NameString
+    var Role: RoleString
     var AllocatedCapacity: js.UndefOr[IntegerValue]
-    var Description: js.UndefOr[DescriptionString]
     var Connections: js.UndefOr[ConnectionsList]
-    var NotificationProperty: js.UndefOr[NotificationProperty]
-    var ExecutionProperty: js.UndefOr[ExecutionProperty]
-    var SecurityConfiguration: js.UndefOr[NameString]
     var DefaultArguments: js.UndefOr[GenericMap]
+    var Description: js.UndefOr[DescriptionString]
+    var ExecutionProperty: js.UndefOr[ExecutionProperty]
+    var LogUri: js.UndefOr[UriString]
+    var MaxRetries: js.UndefOr[MaxRetries]
+    var NotificationProperty: js.UndefOr[NotificationProperty]
+    var SecurityConfiguration: js.UndefOr[NameString]
     var Timeout: js.UndefOr[Timeout]
   }
 
   object CreateJobRequest {
     def apply(
-      LogUri: js.UndefOr[UriString] = js.undefined,
-      Role: js.UndefOr[RoleString] = js.undefined,
-      Name: js.UndefOr[NameString] = js.undefined,
-      MaxRetries: js.UndefOr[MaxRetries] = js.undefined,
-      Command: js.UndefOr[JobCommand] = js.undefined,
+      Command: JobCommand,
+      Name: NameString,
+      Role: RoleString,
       AllocatedCapacity: js.UndefOr[IntegerValue] = js.undefined,
-      Description: js.UndefOr[DescriptionString] = js.undefined,
       Connections: js.UndefOr[ConnectionsList] = js.undefined,
-      NotificationProperty: js.UndefOr[NotificationProperty] = js.undefined,
-      ExecutionProperty: js.UndefOr[ExecutionProperty] = js.undefined,
-      SecurityConfiguration: js.UndefOr[NameString] = js.undefined,
       DefaultArguments: js.UndefOr[GenericMap] = js.undefined,
+      Description: js.UndefOr[DescriptionString] = js.undefined,
+      ExecutionProperty: js.UndefOr[ExecutionProperty] = js.undefined,
+      LogUri: js.UndefOr[UriString] = js.undefined,
+      MaxRetries: js.UndefOr[MaxRetries] = js.undefined,
+      NotificationProperty: js.UndefOr[NotificationProperty] = js.undefined,
+      SecurityConfiguration: js.UndefOr[NameString] = js.undefined,
       Timeout: js.UndefOr[Timeout] = js.undefined): CreateJobRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "LogUri" -> LogUri.map { x => x.asInstanceOf[js.Any] },
-        "Role" -> Role.map { x => x.asInstanceOf[js.Any] },
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
-        "MaxRetries" -> MaxRetries.map { x => x.asInstanceOf[js.Any] },
-        "Command" -> Command.map { x => x.asInstanceOf[js.Any] },
+        "Command" -> Command.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
+        "Role" -> Role.asInstanceOf[js.Any],
         "AllocatedCapacity" -> AllocatedCapacity.map { x => x.asInstanceOf[js.Any] },
-        "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
         "Connections" -> Connections.map { x => x.asInstanceOf[js.Any] },
-        "NotificationProperty" -> NotificationProperty.map { x => x.asInstanceOf[js.Any] },
-        "ExecutionProperty" -> ExecutionProperty.map { x => x.asInstanceOf[js.Any] },
-        "SecurityConfiguration" -> SecurityConfiguration.map { x => x.asInstanceOf[js.Any] },
         "DefaultArguments" -> DefaultArguments.map { x => x.asInstanceOf[js.Any] },
+        "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
+        "ExecutionProperty" -> ExecutionProperty.map { x => x.asInstanceOf[js.Any] },
+        "LogUri" -> LogUri.map { x => x.asInstanceOf[js.Any] },
+        "MaxRetries" -> MaxRetries.map { x => x.asInstanceOf[js.Any] },
+        "NotificationProperty" -> NotificationProperty.map { x => x.asInstanceOf[js.Any] },
+        "SecurityConfiguration" -> SecurityConfiguration.map { x => x.asInstanceOf[js.Any] },
         "Timeout" -> Timeout.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateJobRequest]
@@ -1427,17 +1427,17 @@ package glue {
    */
   @js.native
   trait CreateJsonClassifierRequest extends js.Object {
-    var Name: js.UndefOr[NameString]
-    var JsonPath: js.UndefOr[JsonPath]
+    var JsonPath: JsonPath
+    var Name: NameString
   }
 
   object CreateJsonClassifierRequest {
     def apply(
-      Name: js.UndefOr[NameString] = js.undefined,
-      JsonPath: js.UndefOr[JsonPath] = js.undefined): CreateJsonClassifierRequest = {
+      JsonPath: JsonPath,
+      Name: NameString): CreateJsonClassifierRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
-        "JsonPath" -> JsonPath.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "JsonPath" -> JsonPath.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateJsonClassifierRequest]
     }
@@ -1445,23 +1445,23 @@ package glue {
 
   @js.native
   trait CreatePartitionRequest extends js.Object {
+    var DatabaseName: NameString
+    var PartitionInput: PartitionInput
+    var TableName: NameString
     var CatalogId: js.UndefOr[CatalogIdString]
-    var DatabaseName: js.UndefOr[NameString]
-    var TableName: js.UndefOr[NameString]
-    var PartitionInput: js.UndefOr[PartitionInput]
   }
 
   object CreatePartitionRequest {
     def apply(
-      CatalogId: js.UndefOr[CatalogIdString] = js.undefined,
-      DatabaseName: js.UndefOr[NameString] = js.undefined,
-      TableName: js.UndefOr[NameString] = js.undefined,
-      PartitionInput: js.UndefOr[PartitionInput] = js.undefined): CreatePartitionRequest = {
+      DatabaseName: NameString,
+      PartitionInput: PartitionInput,
+      TableName: NameString,
+      CatalogId: js.UndefOr[CatalogIdString] = js.undefined): CreatePartitionRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "CatalogId" -> CatalogId.map { x => x.asInstanceOf[js.Any] },
-        "DatabaseName" -> DatabaseName.map { x => x.asInstanceOf[js.Any] },
-        "TableName" -> TableName.map { x => x.asInstanceOf[js.Any] },
-        "PartitionInput" -> PartitionInput.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "DatabaseName" -> DatabaseName.asInstanceOf[js.Any],
+        "PartitionInput" -> PartitionInput.asInstanceOf[js.Any],
+        "TableName" -> TableName.asInstanceOf[js.Any],
+        "CatalogId" -> CatalogId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreatePartitionRequest]
     }
@@ -1482,19 +1482,19 @@ package glue {
 
   @js.native
   trait CreateScriptRequest extends js.Object {
-    var DagNodes: js.UndefOr[DagNodes]
     var DagEdges: js.UndefOr[DagEdges]
+    var DagNodes: js.UndefOr[DagNodes]
     var Language: js.UndefOr[Language]
   }
 
   object CreateScriptRequest {
     def apply(
-      DagNodes: js.UndefOr[DagNodes] = js.undefined,
       DagEdges: js.UndefOr[DagEdges] = js.undefined,
+      DagNodes: js.UndefOr[DagNodes] = js.undefined,
       Language: js.UndefOr[Language] = js.undefined): CreateScriptRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "DagNodes" -> DagNodes.map { x => x.asInstanceOf[js.Any] },
         "DagEdges" -> DagEdges.map { x => x.asInstanceOf[js.Any] },
+        "DagNodes" -> DagNodes.map { x => x.asInstanceOf[js.Any] },
         "Language" -> Language.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateScriptRequest]
@@ -1521,17 +1521,17 @@ package glue {
 
   @js.native
   trait CreateSecurityConfigurationRequest extends js.Object {
-    var Name: js.UndefOr[NameString]
-    var EncryptionConfiguration: js.UndefOr[EncryptionConfiguration]
+    var EncryptionConfiguration: EncryptionConfiguration
+    var Name: NameString
   }
 
   object CreateSecurityConfigurationRequest {
     def apply(
-      Name: js.UndefOr[NameString] = js.undefined,
-      EncryptionConfiguration: js.UndefOr[EncryptionConfiguration] = js.undefined): CreateSecurityConfigurationRequest = {
+      EncryptionConfiguration: EncryptionConfiguration,
+      Name: NameString): CreateSecurityConfigurationRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
-        "EncryptionConfiguration" -> EncryptionConfiguration.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "EncryptionConfiguration" -> EncryptionConfiguration.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateSecurityConfigurationRequest]
     }
@@ -1539,17 +1539,17 @@ package glue {
 
   @js.native
   trait CreateSecurityConfigurationResponse extends js.Object {
-    var Name: js.UndefOr[NameString]
     var CreatedTimestamp: js.UndefOr[TimestampValue]
+    var Name: js.UndefOr[NameString]
   }
 
   object CreateSecurityConfigurationResponse {
     def apply(
-      Name: js.UndefOr[NameString] = js.undefined,
-      CreatedTimestamp: js.UndefOr[TimestampValue] = js.undefined): CreateSecurityConfigurationResponse = {
+      CreatedTimestamp: js.UndefOr[TimestampValue] = js.undefined,
+      Name: js.UndefOr[NameString] = js.undefined): CreateSecurityConfigurationResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
-        "CreatedTimestamp" -> CreatedTimestamp.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "CreatedTimestamp" -> CreatedTimestamp.map { x => x.asInstanceOf[js.Any] },
+        "Name" -> Name.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateSecurityConfigurationResponse]
     }
@@ -1557,20 +1557,20 @@ package glue {
 
   @js.native
   trait CreateTableRequest extends js.Object {
+    var DatabaseName: NameString
+    var TableInput: TableInput
     var CatalogId: js.UndefOr[CatalogIdString]
-    var DatabaseName: js.UndefOr[NameString]
-    var TableInput: js.UndefOr[TableInput]
   }
 
   object CreateTableRequest {
     def apply(
-      CatalogId: js.UndefOr[CatalogIdString] = js.undefined,
-      DatabaseName: js.UndefOr[NameString] = js.undefined,
-      TableInput: js.UndefOr[TableInput] = js.undefined): CreateTableRequest = {
+      DatabaseName: NameString,
+      TableInput: TableInput,
+      CatalogId: js.UndefOr[CatalogIdString] = js.undefined): CreateTableRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "CatalogId" -> CatalogId.map { x => x.asInstanceOf[js.Any] },
-        "DatabaseName" -> DatabaseName.map { x => x.asInstanceOf[js.Any] },
-        "TableInput" -> TableInput.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "DatabaseName" -> DatabaseName.asInstanceOf[js.Any],
+        "TableInput" -> TableInput.asInstanceOf[js.Any],
+        "CatalogId" -> CatalogId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateTableRequest]
     }
@@ -1591,32 +1591,32 @@ package glue {
 
   @js.native
   trait CreateTriggerRequest extends js.Object {
-    var Name: js.UndefOr[NameString]
-    var Predicate: js.UndefOr[Predicate]
+    var Actions: ActionList
+    var Name: NameString
+    var Type: TriggerType
     var Description: js.UndefOr[DescriptionString]
+    var Predicate: js.UndefOr[Predicate]
     var Schedule: js.UndefOr[GenericString]
     var StartOnCreation: js.UndefOr[BooleanValue]
-    var Actions: js.UndefOr[ActionList]
-    var Type: js.UndefOr[TriggerType]
   }
 
   object CreateTriggerRequest {
     def apply(
-      Name: js.UndefOr[NameString] = js.undefined,
-      Predicate: js.UndefOr[Predicate] = js.undefined,
+      Actions: ActionList,
+      Name: NameString,
+      Type: TriggerType,
       Description: js.UndefOr[DescriptionString] = js.undefined,
+      Predicate: js.UndefOr[Predicate] = js.undefined,
       Schedule: js.UndefOr[GenericString] = js.undefined,
-      StartOnCreation: js.UndefOr[BooleanValue] = js.undefined,
-      Actions: js.UndefOr[ActionList] = js.undefined,
-      Type: js.UndefOr[TriggerType] = js.undefined): CreateTriggerRequest = {
+      StartOnCreation: js.UndefOr[BooleanValue] = js.undefined): CreateTriggerRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
-        "Predicate" -> Predicate.map { x => x.asInstanceOf[js.Any] },
+        "Actions" -> Actions.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
+        "Type" -> Type.asInstanceOf[js.Any],
         "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
+        "Predicate" -> Predicate.map { x => x.asInstanceOf[js.Any] },
         "Schedule" -> Schedule.map { x => x.asInstanceOf[js.Any] },
-        "StartOnCreation" -> StartOnCreation.map { x => x.asInstanceOf[js.Any] },
-        "Actions" -> Actions.map { x => x.asInstanceOf[js.Any] },
-        "Type" -> Type.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "StartOnCreation" -> StartOnCreation.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateTriggerRequest]
     }
@@ -1639,20 +1639,20 @@ package glue {
 
   @js.native
   trait CreateUserDefinedFunctionRequest extends js.Object {
+    var DatabaseName: NameString
+    var FunctionInput: UserDefinedFunctionInput
     var CatalogId: js.UndefOr[CatalogIdString]
-    var DatabaseName: js.UndefOr[NameString]
-    var FunctionInput: js.UndefOr[UserDefinedFunctionInput]
   }
 
   object CreateUserDefinedFunctionRequest {
     def apply(
-      CatalogId: js.UndefOr[CatalogIdString] = js.undefined,
-      DatabaseName: js.UndefOr[NameString] = js.undefined,
-      FunctionInput: js.UndefOr[UserDefinedFunctionInput] = js.undefined): CreateUserDefinedFunctionRequest = {
+      DatabaseName: NameString,
+      FunctionInput: UserDefinedFunctionInput,
+      CatalogId: js.UndefOr[CatalogIdString] = js.undefined): CreateUserDefinedFunctionRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "CatalogId" -> CatalogId.map { x => x.asInstanceOf[js.Any] },
-        "DatabaseName" -> DatabaseName.map { x => x.asInstanceOf[js.Any] },
-        "FunctionInput" -> FunctionInput.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "DatabaseName" -> DatabaseName.asInstanceOf[js.Any],
+        "FunctionInput" -> FunctionInput.asInstanceOf[js.Any],
+        "CatalogId" -> CatalogId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateUserDefinedFunctionRequest]
     }
@@ -1676,19 +1676,19 @@ package glue {
    */
   @js.native
   trait CreateXMLClassifierRequest extends js.Object {
-    var Classification: js.UndefOr[Classification]
-    var Name: js.UndefOr[NameString]
+    var Classification: Classification
+    var Name: NameString
     var RowTag: js.UndefOr[RowTag]
   }
 
   object CreateXMLClassifierRequest {
     def apply(
-      Classification: js.UndefOr[Classification] = js.undefined,
-      Name: js.UndefOr[NameString] = js.undefined,
+      Classification: Classification,
+      Name: NameString,
       RowTag: js.UndefOr[RowTag] = js.undefined): CreateXMLClassifierRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Classification" -> Classification.map { x => x.asInstanceOf[js.Any] },
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
+        "Classification" -> Classification.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
         "RowTag" -> RowTag.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateXMLClassifierRequest]
@@ -1718,26 +1718,26 @@ package glue {
    */
   @js.native
   trait Database extends js.Object {
-    var Name: js.UndefOr[NameString]
-    var LocationUri: js.UndefOr[URI]
-    var Description: js.UndefOr[DescriptionString]
-    var Parameters: js.UndefOr[ParametersMap]
+    var Name: NameString
     var CreateTime: js.UndefOr[Timestamp]
+    var Description: js.UndefOr[DescriptionString]
+    var LocationUri: js.UndefOr[URI]
+    var Parameters: js.UndefOr[ParametersMap]
   }
 
   object Database {
     def apply(
-      Name: js.UndefOr[NameString] = js.undefined,
-      LocationUri: js.UndefOr[URI] = js.undefined,
+      Name: NameString,
+      CreateTime: js.UndefOr[Timestamp] = js.undefined,
       Description: js.UndefOr[DescriptionString] = js.undefined,
-      Parameters: js.UndefOr[ParametersMap] = js.undefined,
-      CreateTime: js.UndefOr[Timestamp] = js.undefined): Database = {
+      LocationUri: js.UndefOr[URI] = js.undefined,
+      Parameters: js.UndefOr[ParametersMap] = js.undefined): Database = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
-        "LocationUri" -> LocationUri.map { x => x.asInstanceOf[js.Any] },
+        "Name" -> Name.asInstanceOf[js.Any],
+        "CreateTime" -> CreateTime.map { x => x.asInstanceOf[js.Any] },
         "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
-        "Parameters" -> Parameters.map { x => x.asInstanceOf[js.Any] },
-        "CreateTime" -> CreateTime.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "LocationUri" -> LocationUri.map { x => x.asInstanceOf[js.Any] },
+        "Parameters" -> Parameters.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Database]
     }
@@ -1748,7 +1748,7 @@ package glue {
    */
   @js.native
   trait DatabaseInput extends js.Object {
-    var Name: js.UndefOr[NameString]
+    var Name: NameString
     var Description: js.UndefOr[DescriptionString]
     var LocationUri: js.UndefOr[URI]
     var Parameters: js.UndefOr[ParametersMap]
@@ -1756,12 +1756,12 @@ package glue {
 
   object DatabaseInput {
     def apply(
-      Name: js.UndefOr[NameString] = js.undefined,
+      Name: NameString,
       Description: js.UndefOr[DescriptionString] = js.undefined,
       LocationUri: js.UndefOr[URI] = js.undefined,
       Parameters: js.UndefOr[ParametersMap] = js.undefined): DatabaseInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
+        "Name" -> Name.asInstanceOf[js.Any],
         "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
         "LocationUri" -> LocationUri.map { x => x.asInstanceOf[js.Any] },
         "Parameters" -> Parameters.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
@@ -1780,14 +1780,14 @@ package glue {
 
   @js.native
   trait DeleteClassifierRequest extends js.Object {
-    var Name: js.UndefOr[NameString]
+    var Name: NameString
   }
 
   object DeleteClassifierRequest {
     def apply(
-      Name: js.UndefOr[NameString] = js.undefined): DeleteClassifierRequest = {
+      Name: NameString): DeleteClassifierRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Name" -> Name.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteClassifierRequest]
     }
@@ -1808,17 +1808,17 @@ package glue {
 
   @js.native
   trait DeleteConnectionRequest extends js.Object {
+    var ConnectionName: NameString
     var CatalogId: js.UndefOr[CatalogIdString]
-    var ConnectionName: js.UndefOr[NameString]
   }
 
   object DeleteConnectionRequest {
     def apply(
-      CatalogId: js.UndefOr[CatalogIdString] = js.undefined,
-      ConnectionName: js.UndefOr[NameString] = js.undefined): DeleteConnectionRequest = {
+      ConnectionName: NameString,
+      CatalogId: js.UndefOr[CatalogIdString] = js.undefined): DeleteConnectionRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "CatalogId" -> CatalogId.map { x => x.asInstanceOf[js.Any] },
-        "ConnectionName" -> ConnectionName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ConnectionName" -> ConnectionName.asInstanceOf[js.Any],
+        "CatalogId" -> CatalogId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteConnectionRequest]
     }
@@ -1839,14 +1839,14 @@ package glue {
 
   @js.native
   trait DeleteCrawlerRequest extends js.Object {
-    var Name: js.UndefOr[NameString]
+    var Name: NameString
   }
 
   object DeleteCrawlerRequest {
     def apply(
-      Name: js.UndefOr[NameString] = js.undefined): DeleteCrawlerRequest = {
+      Name: NameString): DeleteCrawlerRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Name" -> Name.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteCrawlerRequest]
     }
@@ -1867,17 +1867,17 @@ package glue {
 
   @js.native
   trait DeleteDatabaseRequest extends js.Object {
+    var Name: NameString
     var CatalogId: js.UndefOr[CatalogIdString]
-    var Name: js.UndefOr[NameString]
   }
 
   object DeleteDatabaseRequest {
     def apply(
-      CatalogId: js.UndefOr[CatalogIdString] = js.undefined,
-      Name: js.UndefOr[NameString] = js.undefined): DeleteDatabaseRequest = {
+      Name: NameString,
+      CatalogId: js.UndefOr[CatalogIdString] = js.undefined): DeleteDatabaseRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "CatalogId" -> CatalogId.map { x => x.asInstanceOf[js.Any] },
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Name" -> Name.asInstanceOf[js.Any],
+        "CatalogId" -> CatalogId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteDatabaseRequest]
     }
@@ -1898,14 +1898,14 @@ package glue {
 
   @js.native
   trait DeleteDevEndpointRequest extends js.Object {
-    var EndpointName: js.UndefOr[GenericString]
+    var EndpointName: GenericString
   }
 
   object DeleteDevEndpointRequest {
     def apply(
-      EndpointName: js.UndefOr[GenericString] = js.undefined): DeleteDevEndpointRequest = {
+      EndpointName: GenericString): DeleteDevEndpointRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "EndpointName" -> EndpointName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "EndpointName" -> EndpointName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteDevEndpointRequest]
     }
@@ -1926,14 +1926,14 @@ package glue {
 
   @js.native
   trait DeleteJobRequest extends js.Object {
-    var JobName: js.UndefOr[NameString]
+    var JobName: NameString
   }
 
   object DeleteJobRequest {
     def apply(
-      JobName: js.UndefOr[NameString] = js.undefined): DeleteJobRequest = {
+      JobName: NameString): DeleteJobRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "JobName" -> JobName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "JobName" -> JobName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteJobRequest]
     }
@@ -1956,23 +1956,23 @@ package glue {
 
   @js.native
   trait DeletePartitionRequest extends js.Object {
+    var DatabaseName: NameString
+    var PartitionValues: ValueStringList
+    var TableName: NameString
     var CatalogId: js.UndefOr[CatalogIdString]
-    var DatabaseName: js.UndefOr[NameString]
-    var TableName: js.UndefOr[NameString]
-    var PartitionValues: js.UndefOr[ValueStringList]
   }
 
   object DeletePartitionRequest {
     def apply(
-      CatalogId: js.UndefOr[CatalogIdString] = js.undefined,
-      DatabaseName: js.UndefOr[NameString] = js.undefined,
-      TableName: js.UndefOr[NameString] = js.undefined,
-      PartitionValues: js.UndefOr[ValueStringList] = js.undefined): DeletePartitionRequest = {
+      DatabaseName: NameString,
+      PartitionValues: ValueStringList,
+      TableName: NameString,
+      CatalogId: js.UndefOr[CatalogIdString] = js.undefined): DeletePartitionRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "CatalogId" -> CatalogId.map { x => x.asInstanceOf[js.Any] },
-        "DatabaseName" -> DatabaseName.map { x => x.asInstanceOf[js.Any] },
-        "TableName" -> TableName.map { x => x.asInstanceOf[js.Any] },
-        "PartitionValues" -> PartitionValues.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "DatabaseName" -> DatabaseName.asInstanceOf[js.Any],
+        "PartitionValues" -> PartitionValues.asInstanceOf[js.Any],
+        "TableName" -> TableName.asInstanceOf[js.Any],
+        "CatalogId" -> CatalogId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeletePartitionRequest]
     }
@@ -2021,14 +2021,14 @@ package glue {
 
   @js.native
   trait DeleteSecurityConfigurationRequest extends js.Object {
-    var Name: js.UndefOr[NameString]
+    var Name: NameString
   }
 
   object DeleteSecurityConfigurationRequest {
     def apply(
-      Name: js.UndefOr[NameString] = js.undefined): DeleteSecurityConfigurationRequest = {
+      Name: NameString): DeleteSecurityConfigurationRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Name" -> Name.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteSecurityConfigurationRequest]
     }
@@ -2049,20 +2049,20 @@ package glue {
 
   @js.native
   trait DeleteTableRequest extends js.Object {
+    var DatabaseName: NameString
+    var Name: NameString
     var CatalogId: js.UndefOr[CatalogIdString]
-    var DatabaseName: js.UndefOr[NameString]
-    var Name: js.UndefOr[NameString]
   }
 
   object DeleteTableRequest {
     def apply(
-      CatalogId: js.UndefOr[CatalogIdString] = js.undefined,
-      DatabaseName: js.UndefOr[NameString] = js.undefined,
-      Name: js.UndefOr[NameString] = js.undefined): DeleteTableRequest = {
+      DatabaseName: NameString,
+      Name: NameString,
+      CatalogId: js.UndefOr[CatalogIdString] = js.undefined): DeleteTableRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "CatalogId" -> CatalogId.map { x => x.asInstanceOf[js.Any] },
-        "DatabaseName" -> DatabaseName.map { x => x.asInstanceOf[js.Any] },
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "DatabaseName" -> DatabaseName.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
+        "CatalogId" -> CatalogId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteTableRequest]
     }
@@ -2083,23 +2083,23 @@ package glue {
 
   @js.native
   trait DeleteTableVersionRequest extends js.Object {
+    var DatabaseName: NameString
+    var TableName: NameString
+    var VersionId: VersionString
     var CatalogId: js.UndefOr[CatalogIdString]
-    var DatabaseName: js.UndefOr[NameString]
-    var TableName: js.UndefOr[NameString]
-    var VersionId: js.UndefOr[VersionString]
   }
 
   object DeleteTableVersionRequest {
     def apply(
-      CatalogId: js.UndefOr[CatalogIdString] = js.undefined,
-      DatabaseName: js.UndefOr[NameString] = js.undefined,
-      TableName: js.UndefOr[NameString] = js.undefined,
-      VersionId: js.UndefOr[VersionString] = js.undefined): DeleteTableVersionRequest = {
+      DatabaseName: NameString,
+      TableName: NameString,
+      VersionId: VersionString,
+      CatalogId: js.UndefOr[CatalogIdString] = js.undefined): DeleteTableVersionRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "CatalogId" -> CatalogId.map { x => x.asInstanceOf[js.Any] },
-        "DatabaseName" -> DatabaseName.map { x => x.asInstanceOf[js.Any] },
-        "TableName" -> TableName.map { x => x.asInstanceOf[js.Any] },
-        "VersionId" -> VersionId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "DatabaseName" -> DatabaseName.asInstanceOf[js.Any],
+        "TableName" -> TableName.asInstanceOf[js.Any],
+        "VersionId" -> VersionId.asInstanceOf[js.Any],
+        "CatalogId" -> CatalogId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteTableVersionRequest]
     }
@@ -2120,14 +2120,14 @@ package glue {
 
   @js.native
   trait DeleteTriggerRequest extends js.Object {
-    var Name: js.UndefOr[NameString]
+    var Name: NameString
   }
 
   object DeleteTriggerRequest {
     def apply(
-      Name: js.UndefOr[NameString] = js.undefined): DeleteTriggerRequest = {
+      Name: NameString): DeleteTriggerRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Name" -> Name.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteTriggerRequest]
     }
@@ -2150,20 +2150,20 @@ package glue {
 
   @js.native
   trait DeleteUserDefinedFunctionRequest extends js.Object {
+    var DatabaseName: NameString
+    var FunctionName: NameString
     var CatalogId: js.UndefOr[CatalogIdString]
-    var DatabaseName: js.UndefOr[NameString]
-    var FunctionName: js.UndefOr[NameString]
   }
 
   object DeleteUserDefinedFunctionRequest {
     def apply(
-      CatalogId: js.UndefOr[CatalogIdString] = js.undefined,
-      DatabaseName: js.UndefOr[NameString] = js.undefined,
-      FunctionName: js.UndefOr[NameString] = js.undefined): DeleteUserDefinedFunctionRequest = {
+      DatabaseName: NameString,
+      FunctionName: NameString,
+      CatalogId: js.UndefOr[CatalogIdString] = js.undefined): DeleteUserDefinedFunctionRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "CatalogId" -> CatalogId.map { x => x.asInstanceOf[js.Any] },
-        "DatabaseName" -> DatabaseName.map { x => x.asInstanceOf[js.Any] },
-        "FunctionName" -> FunctionName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "DatabaseName" -> DatabaseName.asInstanceOf[js.Any],
+        "FunctionName" -> FunctionName.asInstanceOf[js.Any],
+        "CatalogId" -> CatalogId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteUserDefinedFunctionRequest]
     }
@@ -2187,74 +2187,74 @@ package glue {
    */
   @js.native
   trait DevEndpoint extends js.Object {
-    var YarnEndpointAddress: js.UndefOr[GenericString]
-    var PublicAddress: js.UndefOr[GenericString]
+    var AvailabilityZone: js.UndefOr[GenericString]
+    var CreatedTimestamp: js.UndefOr[TimestampValue]
+    var EndpointName: js.UndefOr[GenericString]
+    var ExtraJarsS3Path: js.UndefOr[GenericString]
+    var ExtraPythonLibsS3Path: js.UndefOr[GenericString]
+    var FailureReason: js.UndefOr[GenericString]
     var LastModifiedTimestamp: js.UndefOr[TimestampValue]
     var LastUpdateStatus: js.UndefOr[GenericString]
-    var PrivateAddress: js.UndefOr[GenericString]
-    var ZeppelinRemoteSparkInterpreterPort: js.UndefOr[IntegerValue]
-    var AvailabilityZone: js.UndefOr[GenericString]
-    var SecurityGroupIds: js.UndefOr[StringList]
     var NumberOfNodes: js.UndefOr[IntegerValue]
-    var CreatedTimestamp: js.UndefOr[TimestampValue]
-    var FailureReason: js.UndefOr[GenericString]
-    var ExtraPythonLibsS3Path: js.UndefOr[GenericString]
+    var PrivateAddress: js.UndefOr[GenericString]
+    var PublicAddress: js.UndefOr[GenericString]
     var PublicKey: js.UndefOr[GenericString]
-    var ExtraJarsS3Path: js.UndefOr[GenericString]
-    var EndpointName: js.UndefOr[GenericString]
+    var PublicKeys: js.UndefOr[PublicKeysList]
     var RoleArn: js.UndefOr[RoleArn]
     var SecurityConfiguration: js.UndefOr[NameString]
-    var PublicKeys: js.UndefOr[PublicKeysList]
+    var SecurityGroupIds: js.UndefOr[StringList]
     var Status: js.UndefOr[GenericString]
-    var VpcId: js.UndefOr[GenericString]
     var SubnetId: js.UndefOr[GenericString]
+    var VpcId: js.UndefOr[GenericString]
+    var YarnEndpointAddress: js.UndefOr[GenericString]
+    var ZeppelinRemoteSparkInterpreterPort: js.UndefOr[IntegerValue]
   }
 
   object DevEndpoint {
     def apply(
-      YarnEndpointAddress: js.UndefOr[GenericString] = js.undefined,
-      PublicAddress: js.UndefOr[GenericString] = js.undefined,
+      AvailabilityZone: js.UndefOr[GenericString] = js.undefined,
+      CreatedTimestamp: js.UndefOr[TimestampValue] = js.undefined,
+      EndpointName: js.UndefOr[GenericString] = js.undefined,
+      ExtraJarsS3Path: js.UndefOr[GenericString] = js.undefined,
+      ExtraPythonLibsS3Path: js.UndefOr[GenericString] = js.undefined,
+      FailureReason: js.UndefOr[GenericString] = js.undefined,
       LastModifiedTimestamp: js.UndefOr[TimestampValue] = js.undefined,
       LastUpdateStatus: js.UndefOr[GenericString] = js.undefined,
-      PrivateAddress: js.UndefOr[GenericString] = js.undefined,
-      ZeppelinRemoteSparkInterpreterPort: js.UndefOr[IntegerValue] = js.undefined,
-      AvailabilityZone: js.UndefOr[GenericString] = js.undefined,
-      SecurityGroupIds: js.UndefOr[StringList] = js.undefined,
       NumberOfNodes: js.UndefOr[IntegerValue] = js.undefined,
-      CreatedTimestamp: js.UndefOr[TimestampValue] = js.undefined,
-      FailureReason: js.UndefOr[GenericString] = js.undefined,
-      ExtraPythonLibsS3Path: js.UndefOr[GenericString] = js.undefined,
+      PrivateAddress: js.UndefOr[GenericString] = js.undefined,
+      PublicAddress: js.UndefOr[GenericString] = js.undefined,
       PublicKey: js.UndefOr[GenericString] = js.undefined,
-      ExtraJarsS3Path: js.UndefOr[GenericString] = js.undefined,
-      EndpointName: js.UndefOr[GenericString] = js.undefined,
+      PublicKeys: js.UndefOr[PublicKeysList] = js.undefined,
       RoleArn: js.UndefOr[RoleArn] = js.undefined,
       SecurityConfiguration: js.UndefOr[NameString] = js.undefined,
-      PublicKeys: js.UndefOr[PublicKeysList] = js.undefined,
+      SecurityGroupIds: js.UndefOr[StringList] = js.undefined,
       Status: js.UndefOr[GenericString] = js.undefined,
+      SubnetId: js.UndefOr[GenericString] = js.undefined,
       VpcId: js.UndefOr[GenericString] = js.undefined,
-      SubnetId: js.UndefOr[GenericString] = js.undefined): DevEndpoint = {
+      YarnEndpointAddress: js.UndefOr[GenericString] = js.undefined,
+      ZeppelinRemoteSparkInterpreterPort: js.UndefOr[IntegerValue] = js.undefined): DevEndpoint = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "YarnEndpointAddress" -> YarnEndpointAddress.map { x => x.asInstanceOf[js.Any] },
-        "PublicAddress" -> PublicAddress.map { x => x.asInstanceOf[js.Any] },
+        "AvailabilityZone" -> AvailabilityZone.map { x => x.asInstanceOf[js.Any] },
+        "CreatedTimestamp" -> CreatedTimestamp.map { x => x.asInstanceOf[js.Any] },
+        "EndpointName" -> EndpointName.map { x => x.asInstanceOf[js.Any] },
+        "ExtraJarsS3Path" -> ExtraJarsS3Path.map { x => x.asInstanceOf[js.Any] },
+        "ExtraPythonLibsS3Path" -> ExtraPythonLibsS3Path.map { x => x.asInstanceOf[js.Any] },
+        "FailureReason" -> FailureReason.map { x => x.asInstanceOf[js.Any] },
         "LastModifiedTimestamp" -> LastModifiedTimestamp.map { x => x.asInstanceOf[js.Any] },
         "LastUpdateStatus" -> LastUpdateStatus.map { x => x.asInstanceOf[js.Any] },
-        "PrivateAddress" -> PrivateAddress.map { x => x.asInstanceOf[js.Any] },
-        "ZeppelinRemoteSparkInterpreterPort" -> ZeppelinRemoteSparkInterpreterPort.map { x => x.asInstanceOf[js.Any] },
-        "AvailabilityZone" -> AvailabilityZone.map { x => x.asInstanceOf[js.Any] },
-        "SecurityGroupIds" -> SecurityGroupIds.map { x => x.asInstanceOf[js.Any] },
         "NumberOfNodes" -> NumberOfNodes.map { x => x.asInstanceOf[js.Any] },
-        "CreatedTimestamp" -> CreatedTimestamp.map { x => x.asInstanceOf[js.Any] },
-        "FailureReason" -> FailureReason.map { x => x.asInstanceOf[js.Any] },
-        "ExtraPythonLibsS3Path" -> ExtraPythonLibsS3Path.map { x => x.asInstanceOf[js.Any] },
+        "PrivateAddress" -> PrivateAddress.map { x => x.asInstanceOf[js.Any] },
+        "PublicAddress" -> PublicAddress.map { x => x.asInstanceOf[js.Any] },
         "PublicKey" -> PublicKey.map { x => x.asInstanceOf[js.Any] },
-        "ExtraJarsS3Path" -> ExtraJarsS3Path.map { x => x.asInstanceOf[js.Any] },
-        "EndpointName" -> EndpointName.map { x => x.asInstanceOf[js.Any] },
+        "PublicKeys" -> PublicKeys.map { x => x.asInstanceOf[js.Any] },
         "RoleArn" -> RoleArn.map { x => x.asInstanceOf[js.Any] },
         "SecurityConfiguration" -> SecurityConfiguration.map { x => x.asInstanceOf[js.Any] },
-        "PublicKeys" -> PublicKeys.map { x => x.asInstanceOf[js.Any] },
+        "SecurityGroupIds" -> SecurityGroupIds.map { x => x.asInstanceOf[js.Any] },
         "Status" -> Status.map { x => x.asInstanceOf[js.Any] },
+        "SubnetId" -> SubnetId.map { x => x.asInstanceOf[js.Any] },
         "VpcId" -> VpcId.map { x => x.asInstanceOf[js.Any] },
-        "SubnetId" -> SubnetId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "YarnEndpointAddress" -> YarnEndpointAddress.map { x => x.asInstanceOf[js.Any] },
+        "ZeppelinRemoteSparkInterpreterPort" -> ZeppelinRemoteSparkInterpreterPort.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DevEndpoint]
     }
@@ -2265,17 +2265,17 @@ package glue {
    */
   @js.native
   trait DevEndpointCustomLibraries extends js.Object {
-    var ExtraPythonLibsS3Path: js.UndefOr[GenericString]
     var ExtraJarsS3Path: js.UndefOr[GenericString]
+    var ExtraPythonLibsS3Path: js.UndefOr[GenericString]
   }
 
   object DevEndpointCustomLibraries {
     def apply(
-      ExtraPythonLibsS3Path: js.UndefOr[GenericString] = js.undefined,
-      ExtraJarsS3Path: js.UndefOr[GenericString] = js.undefined): DevEndpointCustomLibraries = {
+      ExtraJarsS3Path: js.UndefOr[GenericString] = js.undefined,
+      ExtraPythonLibsS3Path: js.UndefOr[GenericString] = js.undefined): DevEndpointCustomLibraries = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ExtraPythonLibsS3Path" -> ExtraPythonLibsS3Path.map { x => x.asInstanceOf[js.Any] },
-        "ExtraJarsS3Path" -> ExtraJarsS3Path.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ExtraJarsS3Path" -> ExtraJarsS3Path.map { x => x.asInstanceOf[js.Any] },
+        "ExtraPythonLibsS3Path" -> ExtraPythonLibsS3Path.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DevEndpointCustomLibraries]
     }
@@ -2304,16 +2304,16 @@ package glue {
    */
   @js.native
   trait EncryptionAtRest extends js.Object {
-    var CatalogEncryptionMode: js.UndefOr[CatalogEncryptionMode]
+    var CatalogEncryptionMode: CatalogEncryptionMode
     var SseAwsKmsKeyId: js.UndefOr[NameString]
   }
 
   object EncryptionAtRest {
     def apply(
-      CatalogEncryptionMode: js.UndefOr[CatalogEncryptionMode] = js.undefined,
+      CatalogEncryptionMode: CatalogEncryptionMode,
       SseAwsKmsKeyId: js.UndefOr[NameString] = js.undefined): EncryptionAtRest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "CatalogEncryptionMode" -> CatalogEncryptionMode.map { x => x.asInstanceOf[js.Any] },
+        "CatalogEncryptionMode" -> CatalogEncryptionMode.asInstanceOf[js.Any],
         "SseAwsKmsKeyId" -> SseAwsKmsKeyId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EncryptionAtRest]
@@ -2325,20 +2325,20 @@ package glue {
    */
   @js.native
   trait EncryptionConfiguration extends js.Object {
-    var S3Encryption: js.UndefOr[S3EncryptionList]
     var CloudWatchEncryption: js.UndefOr[CloudWatchEncryption]
     var JobBookmarksEncryption: js.UndefOr[JobBookmarksEncryption]
+    var S3Encryption: js.UndefOr[S3EncryptionList]
   }
 
   object EncryptionConfiguration {
     def apply(
-      S3Encryption: js.UndefOr[S3EncryptionList] = js.undefined,
       CloudWatchEncryption: js.UndefOr[CloudWatchEncryption] = js.undefined,
-      JobBookmarksEncryption: js.UndefOr[JobBookmarksEncryption] = js.undefined): EncryptionConfiguration = {
+      JobBookmarksEncryption: js.UndefOr[JobBookmarksEncryption] = js.undefined,
+      S3Encryption: js.UndefOr[S3EncryptionList] = js.undefined): EncryptionConfiguration = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "S3Encryption" -> S3Encryption.map { x => x.asInstanceOf[js.Any] },
         "CloudWatchEncryption" -> CloudWatchEncryption.map { x => x.asInstanceOf[js.Any] },
-        "JobBookmarksEncryption" -> JobBookmarksEncryption.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "JobBookmarksEncryption" -> JobBookmarksEncryption.map { x => x.asInstanceOf[js.Any] },
+        "S3Encryption" -> S3Encryption.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EncryptionConfiguration]
     }
@@ -2423,14 +2423,14 @@ package glue {
 
   @js.native
   trait GetClassifierRequest extends js.Object {
-    var Name: js.UndefOr[NameString]
+    var Name: NameString
   }
 
   object GetClassifierRequest {
     def apply(
-      Name: js.UndefOr[NameString] = js.undefined): GetClassifierRequest = {
+      Name: NameString): GetClassifierRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Name" -> Name.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetClassifierRequest]
     }
@@ -2489,17 +2489,17 @@ package glue {
 
   @js.native
   trait GetConnectionRequest extends js.Object {
+    var Name: NameString
     var CatalogId: js.UndefOr[CatalogIdString]
-    var Name: js.UndefOr[NameString]
   }
 
   object GetConnectionRequest {
     def apply(
-      CatalogId: js.UndefOr[CatalogIdString] = js.undefined,
-      Name: js.UndefOr[NameString] = js.undefined): GetConnectionRequest = {
+      Name: NameString,
+      CatalogId: js.UndefOr[CatalogIdString] = js.undefined): GetConnectionRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "CatalogId" -> CatalogId.map { x => x.asInstanceOf[js.Any] },
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Name" -> Name.asInstanceOf[js.Any],
+        "CatalogId" -> CatalogId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetConnectionRequest]
     }
@@ -2525,17 +2525,17 @@ package glue {
    */
   @js.native
   trait GetConnectionsFilter extends js.Object {
-    var MatchCriteria: js.UndefOr[MatchCriteria]
     var ConnectionType: js.UndefOr[ConnectionType]
+    var MatchCriteria: js.UndefOr[MatchCriteria]
   }
 
   object GetConnectionsFilter {
     def apply(
-      MatchCriteria: js.UndefOr[MatchCriteria] = js.undefined,
-      ConnectionType: js.UndefOr[ConnectionType] = js.undefined): GetConnectionsFilter = {
+      ConnectionType: js.UndefOr[ConnectionType] = js.undefined,
+      MatchCriteria: js.UndefOr[MatchCriteria] = js.undefined): GetConnectionsFilter = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "MatchCriteria" -> MatchCriteria.map { x => x.asInstanceOf[js.Any] },
-        "ConnectionType" -> ConnectionType.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ConnectionType" -> ConnectionType.map { x => x.asInstanceOf[js.Any] },
+        "MatchCriteria" -> MatchCriteria.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetConnectionsFilter]
     }
@@ -2545,21 +2545,21 @@ package glue {
   trait GetConnectionsRequest extends js.Object {
     var CatalogId: js.UndefOr[CatalogIdString]
     var Filter: js.UndefOr[GetConnectionsFilter]
-    var NextToken: js.UndefOr[Token]
     var MaxResults: js.UndefOr[PageSize]
+    var NextToken: js.UndefOr[Token]
   }
 
   object GetConnectionsRequest {
     def apply(
       CatalogId: js.UndefOr[CatalogIdString] = js.undefined,
       Filter: js.UndefOr[GetConnectionsFilter] = js.undefined,
-      NextToken: js.UndefOr[Token] = js.undefined,
-      MaxResults: js.UndefOr[PageSize] = js.undefined): GetConnectionsRequest = {
+      MaxResults: js.UndefOr[PageSize] = js.undefined,
+      NextToken: js.UndefOr[Token] = js.undefined): GetConnectionsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "CatalogId" -> CatalogId.map { x => x.asInstanceOf[js.Any] },
         "Filter" -> Filter.map { x => x.asInstanceOf[js.Any] },
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
-        "MaxResults" -> MaxResults.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "MaxResults" -> MaxResults.map { x => x.asInstanceOf[js.Any] },
+        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetConnectionsRequest]
     }
@@ -2624,14 +2624,14 @@ package glue {
 
   @js.native
   trait GetCrawlerRequest extends js.Object {
-    var Name: js.UndefOr[NameString]
+    var Name: NameString
   }
 
   object GetCrawlerRequest {
     def apply(
-      Name: js.UndefOr[NameString] = js.undefined): GetCrawlerRequest = {
+      Name: NameString): GetCrawlerRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Name" -> Name.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetCrawlerRequest]
     }
@@ -2720,17 +2720,17 @@ package glue {
 
   @js.native
   trait GetDatabaseRequest extends js.Object {
+    var Name: NameString
     var CatalogId: js.UndefOr[CatalogIdString]
-    var Name: js.UndefOr[NameString]
   }
 
   object GetDatabaseRequest {
     def apply(
-      CatalogId: js.UndefOr[CatalogIdString] = js.undefined,
-      Name: js.UndefOr[NameString] = js.undefined): GetDatabaseRequest = {
+      Name: NameString,
+      CatalogId: js.UndefOr[CatalogIdString] = js.undefined): GetDatabaseRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "CatalogId" -> CatalogId.map { x => x.asInstanceOf[js.Any] },
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Name" -> Name.asInstanceOf[js.Any],
+        "CatalogId" -> CatalogId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetDatabaseRequest]
     }
@@ -2754,19 +2754,19 @@ package glue {
   @js.native
   trait GetDatabasesRequest extends js.Object {
     var CatalogId: js.UndefOr[CatalogIdString]
-    var NextToken: js.UndefOr[Token]
     var MaxResults: js.UndefOr[PageSize]
+    var NextToken: js.UndefOr[Token]
   }
 
   object GetDatabasesRequest {
     def apply(
       CatalogId: js.UndefOr[CatalogIdString] = js.undefined,
-      NextToken: js.UndefOr[Token] = js.undefined,
-      MaxResults: js.UndefOr[PageSize] = js.undefined): GetDatabasesRequest = {
+      MaxResults: js.UndefOr[PageSize] = js.undefined,
+      NextToken: js.UndefOr[Token] = js.undefined): GetDatabasesRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "CatalogId" -> CatalogId.map { x => x.asInstanceOf[js.Any] },
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
-        "MaxResults" -> MaxResults.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "MaxResults" -> MaxResults.map { x => x.asInstanceOf[js.Any] },
+        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetDatabasesRequest]
     }
@@ -2774,16 +2774,16 @@ package glue {
 
   @js.native
   trait GetDatabasesResponse extends js.Object {
-    var DatabaseList: js.UndefOr[DatabaseList]
+    var DatabaseList: DatabaseList
     var NextToken: js.UndefOr[Token]
   }
 
   object GetDatabasesResponse {
     def apply(
-      DatabaseList: js.UndefOr[DatabaseList] = js.undefined,
+      DatabaseList: DatabaseList,
       NextToken: js.UndefOr[Token] = js.undefined): GetDatabasesResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "DatabaseList" -> DatabaseList.map { x => x.asInstanceOf[js.Any] },
+        "DatabaseList" -> DatabaseList.asInstanceOf[js.Any],
         "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetDatabasesResponse]
@@ -2807,17 +2807,17 @@ package glue {
 
   @js.native
   trait GetDataflowGraphResponse extends js.Object {
-    var DagNodes: js.UndefOr[DagNodes]
     var DagEdges: js.UndefOr[DagEdges]
+    var DagNodes: js.UndefOr[DagNodes]
   }
 
   object GetDataflowGraphResponse {
     def apply(
-      DagNodes: js.UndefOr[DagNodes] = js.undefined,
-      DagEdges: js.UndefOr[DagEdges] = js.undefined): GetDataflowGraphResponse = {
+      DagEdges: js.UndefOr[DagEdges] = js.undefined,
+      DagNodes: js.UndefOr[DagNodes] = js.undefined): GetDataflowGraphResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "DagNodes" -> DagNodes.map { x => x.asInstanceOf[js.Any] },
-        "DagEdges" -> DagEdges.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "DagEdges" -> DagEdges.map { x => x.asInstanceOf[js.Any] },
+        "DagNodes" -> DagNodes.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetDataflowGraphResponse]
     }
@@ -2825,14 +2825,14 @@ package glue {
 
   @js.native
   trait GetDevEndpointRequest extends js.Object {
-    var EndpointName: js.UndefOr[GenericString]
+    var EndpointName: GenericString
   }
 
   object GetDevEndpointRequest {
     def apply(
-      EndpointName: js.UndefOr[GenericString] = js.undefined): GetDevEndpointRequest = {
+      EndpointName: GenericString): GetDevEndpointRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "EndpointName" -> EndpointName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "EndpointName" -> EndpointName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetDevEndpointRequest]
     }
@@ -2891,14 +2891,14 @@ package glue {
 
   @js.native
   trait GetJobRequest extends js.Object {
-    var JobName: js.UndefOr[NameString]
+    var JobName: NameString
   }
 
   object GetJobRequest {
     def apply(
-      JobName: js.UndefOr[NameString] = js.undefined): GetJobRequest = {
+      JobName: NameString): GetJobRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "JobName" -> JobName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "JobName" -> JobName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetJobRequest]
     }
@@ -2921,19 +2921,19 @@ package glue {
 
   @js.native
   trait GetJobRunRequest extends js.Object {
-    var JobName: js.UndefOr[NameString]
-    var RunId: js.UndefOr[IdString]
+    var JobName: NameString
+    var RunId: IdString
     var PredecessorsIncluded: js.UndefOr[BooleanValue]
   }
 
   object GetJobRunRequest {
     def apply(
-      JobName: js.UndefOr[NameString] = js.undefined,
-      RunId: js.UndefOr[IdString] = js.undefined,
+      JobName: NameString,
+      RunId: IdString,
       PredecessorsIncluded: js.UndefOr[BooleanValue] = js.undefined): GetJobRunRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "JobName" -> JobName.map { x => x.asInstanceOf[js.Any] },
-        "RunId" -> RunId.map { x => x.asInstanceOf[js.Any] },
+        "JobName" -> JobName.asInstanceOf[js.Any],
+        "RunId" -> RunId.asInstanceOf[js.Any],
         "PredecessorsIncluded" -> PredecessorsIncluded.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetJobRunRequest]
@@ -2957,20 +2957,20 @@ package glue {
 
   @js.native
   trait GetJobRunsRequest extends js.Object {
-    var JobName: js.UndefOr[NameString]
-    var NextToken: js.UndefOr[GenericString]
+    var JobName: NameString
     var MaxResults: js.UndefOr[PageSize]
+    var NextToken: js.UndefOr[GenericString]
   }
 
   object GetJobRunsRequest {
     def apply(
-      JobName: js.UndefOr[NameString] = js.undefined,
-      NextToken: js.UndefOr[GenericString] = js.undefined,
-      MaxResults: js.UndefOr[PageSize] = js.undefined): GetJobRunsRequest = {
+      JobName: NameString,
+      MaxResults: js.UndefOr[PageSize] = js.undefined,
+      NextToken: js.UndefOr[GenericString] = js.undefined): GetJobRunsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "JobName" -> JobName.map { x => x.asInstanceOf[js.Any] },
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
-        "MaxResults" -> MaxResults.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "JobName" -> JobName.asInstanceOf[js.Any],
+        "MaxResults" -> MaxResults.map { x => x.asInstanceOf[js.Any] },
+        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetJobRunsRequest]
     }
@@ -2996,17 +2996,17 @@ package glue {
 
   @js.native
   trait GetJobsRequest extends js.Object {
-    var NextToken: js.UndefOr[GenericString]
     var MaxResults: js.UndefOr[PageSize]
+    var NextToken: js.UndefOr[GenericString]
   }
 
   object GetJobsRequest {
     def apply(
-      NextToken: js.UndefOr[GenericString] = js.undefined,
-      MaxResults: js.UndefOr[PageSize] = js.undefined): GetJobsRequest = {
+      MaxResults: js.UndefOr[PageSize] = js.undefined,
+      NextToken: js.UndefOr[GenericString] = js.undefined): GetJobsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
-        "MaxResults" -> MaxResults.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "MaxResults" -> MaxResults.map { x => x.asInstanceOf[js.Any] },
+        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetJobsRequest]
     }
@@ -3032,20 +3032,20 @@ package glue {
 
   @js.native
   trait GetMappingRequest extends js.Object {
-    var Source: js.UndefOr[CatalogEntry]
-    var Sinks: js.UndefOr[CatalogEntries]
+    var Source: CatalogEntry
     var Location: js.UndefOr[Location]
+    var Sinks: js.UndefOr[CatalogEntries]
   }
 
   object GetMappingRequest {
     def apply(
-      Source: js.UndefOr[CatalogEntry] = js.undefined,
-      Sinks: js.UndefOr[CatalogEntries] = js.undefined,
-      Location: js.UndefOr[Location] = js.undefined): GetMappingRequest = {
+      Source: CatalogEntry,
+      Location: js.UndefOr[Location] = js.undefined,
+      Sinks: js.UndefOr[CatalogEntries] = js.undefined): GetMappingRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Source" -> Source.map { x => x.asInstanceOf[js.Any] },
-        "Sinks" -> Sinks.map { x => x.asInstanceOf[js.Any] },
-        "Location" -> Location.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Source" -> Source.asInstanceOf[js.Any],
+        "Location" -> Location.map { x => x.asInstanceOf[js.Any] },
+        "Sinks" -> Sinks.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetMappingRequest]
     }
@@ -3053,14 +3053,14 @@ package glue {
 
   @js.native
   trait GetMappingResponse extends js.Object {
-    var Mapping: js.UndefOr[MappingList]
+    var Mapping: MappingList
   }
 
   object GetMappingResponse {
     def apply(
-      Mapping: js.UndefOr[MappingList] = js.undefined): GetMappingResponse = {
+      Mapping: MappingList): GetMappingResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Mapping" -> Mapping.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Mapping" -> Mapping.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetMappingResponse]
     }
@@ -3068,23 +3068,23 @@ package glue {
 
   @js.native
   trait GetPartitionRequest extends js.Object {
+    var DatabaseName: NameString
+    var PartitionValues: ValueStringList
+    var TableName: NameString
     var CatalogId: js.UndefOr[CatalogIdString]
-    var DatabaseName: js.UndefOr[NameString]
-    var TableName: js.UndefOr[NameString]
-    var PartitionValues: js.UndefOr[ValueStringList]
   }
 
   object GetPartitionRequest {
     def apply(
-      CatalogId: js.UndefOr[CatalogIdString] = js.undefined,
-      DatabaseName: js.UndefOr[NameString] = js.undefined,
-      TableName: js.UndefOr[NameString] = js.undefined,
-      PartitionValues: js.UndefOr[ValueStringList] = js.undefined): GetPartitionRequest = {
+      DatabaseName: NameString,
+      PartitionValues: ValueStringList,
+      TableName: NameString,
+      CatalogId: js.UndefOr[CatalogIdString] = js.undefined): GetPartitionRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "CatalogId" -> CatalogId.map { x => x.asInstanceOf[js.Any] },
-        "DatabaseName" -> DatabaseName.map { x => x.asInstanceOf[js.Any] },
-        "TableName" -> TableName.map { x => x.asInstanceOf[js.Any] },
-        "PartitionValues" -> PartitionValues.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "DatabaseName" -> DatabaseName.asInstanceOf[js.Any],
+        "PartitionValues" -> PartitionValues.asInstanceOf[js.Any],
+        "TableName" -> TableName.asInstanceOf[js.Any],
+        "CatalogId" -> CatalogId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetPartitionRequest]
     }
@@ -3107,32 +3107,32 @@ package glue {
 
   @js.native
   trait GetPartitionsRequest extends js.Object {
-    var DatabaseName: js.UndefOr[NameString]
-    var MaxResults: js.UndefOr[PageSize]
-    var Expression: js.UndefOr[PredicateString]
-    var Segment: js.UndefOr[Segment]
-    var NextToken: js.UndefOr[Token]
-    var TableName: js.UndefOr[NameString]
+    var DatabaseName: NameString
+    var TableName: NameString
     var CatalogId: js.UndefOr[CatalogIdString]
+    var Expression: js.UndefOr[PredicateString]
+    var MaxResults: js.UndefOr[PageSize]
+    var NextToken: js.UndefOr[Token]
+    var Segment: js.UndefOr[Segment]
   }
 
   object GetPartitionsRequest {
     def apply(
-      DatabaseName: js.UndefOr[NameString] = js.undefined,
-      MaxResults: js.UndefOr[PageSize] = js.undefined,
+      DatabaseName: NameString,
+      TableName: NameString,
+      CatalogId: js.UndefOr[CatalogIdString] = js.undefined,
       Expression: js.UndefOr[PredicateString] = js.undefined,
-      Segment: js.UndefOr[Segment] = js.undefined,
+      MaxResults: js.UndefOr[PageSize] = js.undefined,
       NextToken: js.UndefOr[Token] = js.undefined,
-      TableName: js.UndefOr[NameString] = js.undefined,
-      CatalogId: js.UndefOr[CatalogIdString] = js.undefined): GetPartitionsRequest = {
+      Segment: js.UndefOr[Segment] = js.undefined): GetPartitionsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "DatabaseName" -> DatabaseName.map { x => x.asInstanceOf[js.Any] },
-        "MaxResults" -> MaxResults.map { x => x.asInstanceOf[js.Any] },
+        "DatabaseName" -> DatabaseName.asInstanceOf[js.Any],
+        "TableName" -> TableName.asInstanceOf[js.Any],
+        "CatalogId" -> CatalogId.map { x => x.asInstanceOf[js.Any] },
         "Expression" -> Expression.map { x => x.asInstanceOf[js.Any] },
-        "Segment" -> Segment.map { x => x.asInstanceOf[js.Any] },
+        "MaxResults" -> MaxResults.map { x => x.asInstanceOf[js.Any] },
         "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
-        "TableName" -> TableName.map { x => x.asInstanceOf[js.Any] },
-        "CatalogId" -> CatalogId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Segment" -> Segment.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetPartitionsRequest]
     }
@@ -3140,17 +3140,17 @@ package glue {
 
   @js.native
   trait GetPartitionsResponse extends js.Object {
-    var Partitions: js.UndefOr[PartitionList]
     var NextToken: js.UndefOr[Token]
+    var Partitions: js.UndefOr[PartitionList]
   }
 
   object GetPartitionsResponse {
     def apply(
-      Partitions: js.UndefOr[PartitionList] = js.undefined,
-      NextToken: js.UndefOr[Token] = js.undefined): GetPartitionsResponse = {
+      NextToken: js.UndefOr[Token] = js.undefined,
+      Partitions: js.UndefOr[PartitionList] = js.undefined): GetPartitionsResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Partitions" -> Partitions.map { x => x.asInstanceOf[js.Any] },
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
+        "Partitions" -> Partitions.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetPartitionsResponse]
     }
@@ -3158,25 +3158,25 @@ package glue {
 
   @js.native
   trait GetPlanRequest extends js.Object {
-    var Location: js.UndefOr[Location]
-    var Mapping: js.UndefOr[MappingList]
+    var Mapping: MappingList
+    var Source: CatalogEntry
     var Language: js.UndefOr[Language]
-    var Source: js.UndefOr[CatalogEntry]
+    var Location: js.UndefOr[Location]
     var Sinks: js.UndefOr[CatalogEntries]
   }
 
   object GetPlanRequest {
     def apply(
-      Location: js.UndefOr[Location] = js.undefined,
-      Mapping: js.UndefOr[MappingList] = js.undefined,
+      Mapping: MappingList,
+      Source: CatalogEntry,
       Language: js.UndefOr[Language] = js.undefined,
-      Source: js.UndefOr[CatalogEntry] = js.undefined,
+      Location: js.UndefOr[Location] = js.undefined,
       Sinks: js.UndefOr[CatalogEntries] = js.undefined): GetPlanRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Location" -> Location.map { x => x.asInstanceOf[js.Any] },
-        "Mapping" -> Mapping.map { x => x.asInstanceOf[js.Any] },
+        "Mapping" -> Mapping.asInstanceOf[js.Any],
+        "Source" -> Source.asInstanceOf[js.Any],
         "Language" -> Language.map { x => x.asInstanceOf[js.Any] },
-        "Source" -> Source.map { x => x.asInstanceOf[js.Any] },
+        "Location" -> Location.map { x => x.asInstanceOf[js.Any] },
         "Sinks" -> Sinks.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetPlanRequest]
@@ -3216,22 +3216,22 @@ package glue {
 
   @js.native
   trait GetResourcePolicyResponse extends js.Object {
-    var PolicyInJson: js.UndefOr[PolicyJsonString]
-    var PolicyHash: js.UndefOr[HashString]
     var CreateTime: js.UndefOr[Timestamp]
+    var PolicyHash: js.UndefOr[HashString]
+    var PolicyInJson: js.UndefOr[PolicyJsonString]
     var UpdateTime: js.UndefOr[Timestamp]
   }
 
   object GetResourcePolicyResponse {
     def apply(
-      PolicyInJson: js.UndefOr[PolicyJsonString] = js.undefined,
-      PolicyHash: js.UndefOr[HashString] = js.undefined,
       CreateTime: js.UndefOr[Timestamp] = js.undefined,
+      PolicyHash: js.UndefOr[HashString] = js.undefined,
+      PolicyInJson: js.UndefOr[PolicyJsonString] = js.undefined,
       UpdateTime: js.UndefOr[Timestamp] = js.undefined): GetResourcePolicyResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "PolicyInJson" -> PolicyInJson.map { x => x.asInstanceOf[js.Any] },
-        "PolicyHash" -> PolicyHash.map { x => x.asInstanceOf[js.Any] },
         "CreateTime" -> CreateTime.map { x => x.asInstanceOf[js.Any] },
+        "PolicyHash" -> PolicyHash.map { x => x.asInstanceOf[js.Any] },
+        "PolicyInJson" -> PolicyInJson.map { x => x.asInstanceOf[js.Any] },
         "UpdateTime" -> UpdateTime.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetResourcePolicyResponse]
@@ -3240,14 +3240,14 @@ package glue {
 
   @js.native
   trait GetSecurityConfigurationRequest extends js.Object {
-    var Name: js.UndefOr[NameString]
+    var Name: NameString
   }
 
   object GetSecurityConfigurationRequest {
     def apply(
-      Name: js.UndefOr[NameString] = js.undefined): GetSecurityConfigurationRequest = {
+      Name: NameString): GetSecurityConfigurationRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Name" -> Name.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetSecurityConfigurationRequest]
     }
@@ -3288,17 +3288,17 @@ package glue {
 
   @js.native
   trait GetSecurityConfigurationsResponse extends js.Object {
-    var SecurityConfigurations: js.UndefOr[SecurityConfigurationList]
     var NextToken: js.UndefOr[GenericString]
+    var SecurityConfigurations: js.UndefOr[SecurityConfigurationList]
   }
 
   object GetSecurityConfigurationsResponse {
     def apply(
-      SecurityConfigurations: js.UndefOr[SecurityConfigurationList] = js.undefined,
-      NextToken: js.UndefOr[GenericString] = js.undefined): GetSecurityConfigurationsResponse = {
+      NextToken: js.UndefOr[GenericString] = js.undefined,
+      SecurityConfigurations: js.UndefOr[SecurityConfigurationList] = js.undefined): GetSecurityConfigurationsResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "SecurityConfigurations" -> SecurityConfigurations.map { x => x.asInstanceOf[js.Any] },
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
+        "SecurityConfigurations" -> SecurityConfigurations.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetSecurityConfigurationsResponse]
     }
@@ -3306,20 +3306,20 @@ package glue {
 
   @js.native
   trait GetTableRequest extends js.Object {
+    var DatabaseName: NameString
+    var Name: NameString
     var CatalogId: js.UndefOr[CatalogIdString]
-    var DatabaseName: js.UndefOr[NameString]
-    var Name: js.UndefOr[NameString]
   }
 
   object GetTableRequest {
     def apply(
-      CatalogId: js.UndefOr[CatalogIdString] = js.undefined,
-      DatabaseName: js.UndefOr[NameString] = js.undefined,
-      Name: js.UndefOr[NameString] = js.undefined): GetTableRequest = {
+      DatabaseName: NameString,
+      Name: NameString,
+      CatalogId: js.UndefOr[CatalogIdString] = js.undefined): GetTableRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "CatalogId" -> CatalogId.map { x => x.asInstanceOf[js.Any] },
-        "DatabaseName" -> DatabaseName.map { x => x.asInstanceOf[js.Any] },
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "DatabaseName" -> DatabaseName.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
+        "CatalogId" -> CatalogId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetTableRequest]
     }
@@ -3342,22 +3342,22 @@ package glue {
 
   @js.native
   trait GetTableVersionRequest extends js.Object {
+    var DatabaseName: NameString
+    var TableName: NameString
     var CatalogId: js.UndefOr[CatalogIdString]
-    var DatabaseName: js.UndefOr[NameString]
-    var TableName: js.UndefOr[NameString]
     var VersionId: js.UndefOr[VersionString]
   }
 
   object GetTableVersionRequest {
     def apply(
+      DatabaseName: NameString,
+      TableName: NameString,
       CatalogId: js.UndefOr[CatalogIdString] = js.undefined,
-      DatabaseName: js.UndefOr[NameString] = js.undefined,
-      TableName: js.UndefOr[NameString] = js.undefined,
       VersionId: js.UndefOr[VersionString] = js.undefined): GetTableVersionRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "DatabaseName" -> DatabaseName.asInstanceOf[js.Any],
+        "TableName" -> TableName.asInstanceOf[js.Any],
         "CatalogId" -> CatalogId.map { x => x.asInstanceOf[js.Any] },
-        "DatabaseName" -> DatabaseName.map { x => x.asInstanceOf[js.Any] },
-        "TableName" -> TableName.map { x => x.asInstanceOf[js.Any] },
         "VersionId" -> VersionId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetTableVersionRequest]
@@ -3381,26 +3381,26 @@ package glue {
 
   @js.native
   trait GetTableVersionsRequest extends js.Object {
-    var DatabaseName: js.UndefOr[NameString]
+    var DatabaseName: NameString
+    var TableName: NameString
+    var CatalogId: js.UndefOr[CatalogIdString]
     var MaxResults: js.UndefOr[PageSize]
     var NextToken: js.UndefOr[Token]
-    var TableName: js.UndefOr[NameString]
-    var CatalogId: js.UndefOr[CatalogIdString]
   }
 
   object GetTableVersionsRequest {
     def apply(
-      DatabaseName: js.UndefOr[NameString] = js.undefined,
+      DatabaseName: NameString,
+      TableName: NameString,
+      CatalogId: js.UndefOr[CatalogIdString] = js.undefined,
       MaxResults: js.UndefOr[PageSize] = js.undefined,
-      NextToken: js.UndefOr[Token] = js.undefined,
-      TableName: js.UndefOr[NameString] = js.undefined,
-      CatalogId: js.UndefOr[CatalogIdString] = js.undefined): GetTableVersionsRequest = {
+      NextToken: js.UndefOr[Token] = js.undefined): GetTableVersionsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "DatabaseName" -> DatabaseName.map { x => x.asInstanceOf[js.Any] },
+        "DatabaseName" -> DatabaseName.asInstanceOf[js.Any],
+        "TableName" -> TableName.asInstanceOf[js.Any],
+        "CatalogId" -> CatalogId.map { x => x.asInstanceOf[js.Any] },
         "MaxResults" -> MaxResults.map { x => x.asInstanceOf[js.Any] },
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
-        "TableName" -> TableName.map { x => x.asInstanceOf[js.Any] },
-        "CatalogId" -> CatalogId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetTableVersionsRequest]
     }
@@ -3408,17 +3408,17 @@ package glue {
 
   @js.native
   trait GetTableVersionsResponse extends js.Object {
-    var TableVersions: js.UndefOr[GetTableVersionsList]
     var NextToken: js.UndefOr[Token]
+    var TableVersions: js.UndefOr[GetTableVersionsList]
   }
 
   object GetTableVersionsResponse {
     def apply(
-      TableVersions: js.UndefOr[GetTableVersionsList] = js.undefined,
-      NextToken: js.UndefOr[Token] = js.undefined): GetTableVersionsResponse = {
+      NextToken: js.UndefOr[Token] = js.undefined,
+      TableVersions: js.UndefOr[GetTableVersionsList] = js.undefined): GetTableVersionsResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "TableVersions" -> TableVersions.map { x => x.asInstanceOf[js.Any] },
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
+        "TableVersions" -> TableVersions.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetTableVersionsResponse]
     }
@@ -3426,26 +3426,26 @@ package glue {
 
   @js.native
   trait GetTablesRequest extends js.Object {
-    var DatabaseName: js.UndefOr[NameString]
-    var MaxResults: js.UndefOr[PageSize]
-    var Expression: js.UndefOr[FilterString]
-    var NextToken: js.UndefOr[Token]
+    var DatabaseName: NameString
     var CatalogId: js.UndefOr[CatalogIdString]
+    var Expression: js.UndefOr[FilterString]
+    var MaxResults: js.UndefOr[PageSize]
+    var NextToken: js.UndefOr[Token]
   }
 
   object GetTablesRequest {
     def apply(
-      DatabaseName: js.UndefOr[NameString] = js.undefined,
-      MaxResults: js.UndefOr[PageSize] = js.undefined,
+      DatabaseName: NameString,
+      CatalogId: js.UndefOr[CatalogIdString] = js.undefined,
       Expression: js.UndefOr[FilterString] = js.undefined,
-      NextToken: js.UndefOr[Token] = js.undefined,
-      CatalogId: js.UndefOr[CatalogIdString] = js.undefined): GetTablesRequest = {
+      MaxResults: js.UndefOr[PageSize] = js.undefined,
+      NextToken: js.UndefOr[Token] = js.undefined): GetTablesRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "DatabaseName" -> DatabaseName.map { x => x.asInstanceOf[js.Any] },
-        "MaxResults" -> MaxResults.map { x => x.asInstanceOf[js.Any] },
+        "DatabaseName" -> DatabaseName.asInstanceOf[js.Any],
+        "CatalogId" -> CatalogId.map { x => x.asInstanceOf[js.Any] },
         "Expression" -> Expression.map { x => x.asInstanceOf[js.Any] },
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
-        "CatalogId" -> CatalogId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "MaxResults" -> MaxResults.map { x => x.asInstanceOf[js.Any] },
+        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetTablesRequest]
     }
@@ -3453,17 +3453,17 @@ package glue {
 
   @js.native
   trait GetTablesResponse extends js.Object {
-    var TableList: js.UndefOr[TableList]
     var NextToken: js.UndefOr[Token]
+    var TableList: js.UndefOr[TableList]
   }
 
   object GetTablesResponse {
     def apply(
-      TableList: js.UndefOr[TableList] = js.undefined,
-      NextToken: js.UndefOr[Token] = js.undefined): GetTablesResponse = {
+      NextToken: js.UndefOr[Token] = js.undefined,
+      TableList: js.UndefOr[TableList] = js.undefined): GetTablesResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "TableList" -> TableList.map { x => x.asInstanceOf[js.Any] },
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
+        "TableList" -> TableList.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetTablesResponse]
     }
@@ -3471,14 +3471,14 @@ package glue {
 
   @js.native
   trait GetTriggerRequest extends js.Object {
-    var Name: js.UndefOr[NameString]
+    var Name: NameString
   }
 
   object GetTriggerRequest {
     def apply(
-      Name: js.UndefOr[NameString] = js.undefined): GetTriggerRequest = {
+      Name: NameString): GetTriggerRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Name" -> Name.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetTriggerRequest]
     }
@@ -3501,20 +3501,20 @@ package glue {
 
   @js.native
   trait GetTriggersRequest extends js.Object {
-    var NextToken: js.UndefOr[GenericString]
     var DependentJobName: js.UndefOr[NameString]
     var MaxResults: js.UndefOr[PageSize]
+    var NextToken: js.UndefOr[GenericString]
   }
 
   object GetTriggersRequest {
     def apply(
-      NextToken: js.UndefOr[GenericString] = js.undefined,
       DependentJobName: js.UndefOr[NameString] = js.undefined,
-      MaxResults: js.UndefOr[PageSize] = js.undefined): GetTriggersRequest = {
+      MaxResults: js.UndefOr[PageSize] = js.undefined,
+      NextToken: js.UndefOr[GenericString] = js.undefined): GetTriggersRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
         "DependentJobName" -> DependentJobName.map { x => x.asInstanceOf[js.Any] },
-        "MaxResults" -> MaxResults.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "MaxResults" -> MaxResults.map { x => x.asInstanceOf[js.Any] },
+        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetTriggersRequest]
     }
@@ -3522,17 +3522,17 @@ package glue {
 
   @js.native
   trait GetTriggersResponse extends js.Object {
-    var Triggers: js.UndefOr[TriggerList]
     var NextToken: js.UndefOr[GenericString]
+    var Triggers: js.UndefOr[TriggerList]
   }
 
   object GetTriggersResponse {
     def apply(
-      Triggers: js.UndefOr[TriggerList] = js.undefined,
-      NextToken: js.UndefOr[GenericString] = js.undefined): GetTriggersResponse = {
+      NextToken: js.UndefOr[GenericString] = js.undefined,
+      Triggers: js.UndefOr[TriggerList] = js.undefined): GetTriggersResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Triggers" -> Triggers.map { x => x.asInstanceOf[js.Any] },
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
+        "Triggers" -> Triggers.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetTriggersResponse]
     }
@@ -3540,20 +3540,20 @@ package glue {
 
   @js.native
   trait GetUserDefinedFunctionRequest extends js.Object {
+    var DatabaseName: NameString
+    var FunctionName: NameString
     var CatalogId: js.UndefOr[CatalogIdString]
-    var DatabaseName: js.UndefOr[NameString]
-    var FunctionName: js.UndefOr[NameString]
   }
 
   object GetUserDefinedFunctionRequest {
     def apply(
-      CatalogId: js.UndefOr[CatalogIdString] = js.undefined,
-      DatabaseName: js.UndefOr[NameString] = js.undefined,
-      FunctionName: js.UndefOr[NameString] = js.undefined): GetUserDefinedFunctionRequest = {
+      DatabaseName: NameString,
+      FunctionName: NameString,
+      CatalogId: js.UndefOr[CatalogIdString] = js.undefined): GetUserDefinedFunctionRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "CatalogId" -> CatalogId.map { x => x.asInstanceOf[js.Any] },
-        "DatabaseName" -> DatabaseName.map { x => x.asInstanceOf[js.Any] },
-        "FunctionName" -> FunctionName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "DatabaseName" -> DatabaseName.asInstanceOf[js.Any],
+        "FunctionName" -> FunctionName.asInstanceOf[js.Any],
+        "CatalogId" -> CatalogId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetUserDefinedFunctionRequest]
     }
@@ -3576,26 +3576,26 @@ package glue {
 
   @js.native
   trait GetUserDefinedFunctionsRequest extends js.Object {
-    var Pattern: js.UndefOr[NameString]
-    var DatabaseName: js.UndefOr[NameString]
+    var DatabaseName: NameString
+    var Pattern: NameString
+    var CatalogId: js.UndefOr[CatalogIdString]
     var MaxResults: js.UndefOr[PageSize]
     var NextToken: js.UndefOr[Token]
-    var CatalogId: js.UndefOr[CatalogIdString]
   }
 
   object GetUserDefinedFunctionsRequest {
     def apply(
-      Pattern: js.UndefOr[NameString] = js.undefined,
-      DatabaseName: js.UndefOr[NameString] = js.undefined,
+      DatabaseName: NameString,
+      Pattern: NameString,
+      CatalogId: js.UndefOr[CatalogIdString] = js.undefined,
       MaxResults: js.UndefOr[PageSize] = js.undefined,
-      NextToken: js.UndefOr[Token] = js.undefined,
-      CatalogId: js.UndefOr[CatalogIdString] = js.undefined): GetUserDefinedFunctionsRequest = {
+      NextToken: js.UndefOr[Token] = js.undefined): GetUserDefinedFunctionsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Pattern" -> Pattern.map { x => x.asInstanceOf[js.Any] },
-        "DatabaseName" -> DatabaseName.map { x => x.asInstanceOf[js.Any] },
+        "DatabaseName" -> DatabaseName.asInstanceOf[js.Any],
+        "Pattern" -> Pattern.asInstanceOf[js.Any],
+        "CatalogId" -> CatalogId.map { x => x.asInstanceOf[js.Any] },
         "MaxResults" -> MaxResults.map { x => x.asInstanceOf[js.Any] },
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
-        "CatalogId" -> CatalogId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetUserDefinedFunctionsRequest]
     }
@@ -3603,17 +3603,17 @@ package glue {
 
   @js.native
   trait GetUserDefinedFunctionsResponse extends js.Object {
-    var UserDefinedFunctions: js.UndefOr[UserDefinedFunctionList]
     var NextToken: js.UndefOr[Token]
+    var UserDefinedFunctions: js.UndefOr[UserDefinedFunctionList]
   }
 
   object GetUserDefinedFunctionsResponse {
     def apply(
-      UserDefinedFunctions: js.UndefOr[UserDefinedFunctionList] = js.undefined,
-      NextToken: js.UndefOr[Token] = js.undefined): GetUserDefinedFunctionsResponse = {
+      NextToken: js.UndefOr[Token] = js.undefined,
+      UserDefinedFunctions: js.UndefOr[UserDefinedFunctionList] = js.undefined): GetUserDefinedFunctionsResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "UserDefinedFunctions" -> UserDefinedFunctions.map { x => x.asInstanceOf[js.Any] },
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
+        "UserDefinedFunctions" -> UserDefinedFunctions.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetUserDefinedFunctionsResponse]
     }
@@ -3624,32 +3624,32 @@ package glue {
    */
   @js.native
   trait GrokClassifier extends js.Object {
-    var Classification: js.UndefOr[Classification]
-    var Name: js.UndefOr[NameString]
+    var Classification: Classification
+    var GrokPattern: GrokPattern
+    var Name: NameString
+    var CreationTime: js.UndefOr[Timestamp]
+    var CustomPatterns: js.UndefOr[CustomPatterns]
     var LastUpdated: js.UndefOr[Timestamp]
     var Version: js.UndefOr[VersionId]
-    var CustomPatterns: js.UndefOr[CustomPatterns]
-    var GrokPattern: js.UndefOr[GrokPattern]
-    var CreationTime: js.UndefOr[Timestamp]
   }
 
   object GrokClassifier {
     def apply(
-      Classification: js.UndefOr[Classification] = js.undefined,
-      Name: js.UndefOr[NameString] = js.undefined,
-      LastUpdated: js.UndefOr[Timestamp] = js.undefined,
-      Version: js.UndefOr[VersionId] = js.undefined,
+      Classification: Classification,
+      GrokPattern: GrokPattern,
+      Name: NameString,
+      CreationTime: js.UndefOr[Timestamp] = js.undefined,
       CustomPatterns: js.UndefOr[CustomPatterns] = js.undefined,
-      GrokPattern: js.UndefOr[GrokPattern] = js.undefined,
-      CreationTime: js.UndefOr[Timestamp] = js.undefined): GrokClassifier = {
+      LastUpdated: js.UndefOr[Timestamp] = js.undefined,
+      Version: js.UndefOr[VersionId] = js.undefined): GrokClassifier = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Classification" -> Classification.map { x => x.asInstanceOf[js.Any] },
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
-        "LastUpdated" -> LastUpdated.map { x => x.asInstanceOf[js.Any] },
-        "Version" -> Version.map { x => x.asInstanceOf[js.Any] },
+        "Classification" -> Classification.asInstanceOf[js.Any],
+        "GrokPattern" -> GrokPattern.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
+        "CreationTime" -> CreationTime.map { x => x.asInstanceOf[js.Any] },
         "CustomPatterns" -> CustomPatterns.map { x => x.asInstanceOf[js.Any] },
-        "GrokPattern" -> GrokPattern.map { x => x.asInstanceOf[js.Any] },
-        "CreationTime" -> CreationTime.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "LastUpdated" -> LastUpdated.map { x => x.asInstanceOf[js.Any] },
+        "Version" -> Version.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GrokClassifier]
     }
@@ -3689,19 +3689,19 @@ package glue {
   @js.native
   trait JdbcTarget extends js.Object {
     var ConnectionName: js.UndefOr[ConnectionName]
-    var Path: js.UndefOr[Path]
     var Exclusions: js.UndefOr[PathList]
+    var Path: js.UndefOr[Path]
   }
 
   object JdbcTarget {
     def apply(
       ConnectionName: js.UndefOr[ConnectionName] = js.undefined,
-      Path: js.UndefOr[Path] = js.undefined,
-      Exclusions: js.UndefOr[PathList] = js.undefined): JdbcTarget = {
+      Exclusions: js.UndefOr[PathList] = js.undefined,
+      Path: js.UndefOr[Path] = js.undefined): JdbcTarget = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ConnectionName" -> ConnectionName.map { x => x.asInstanceOf[js.Any] },
-        "Path" -> Path.map { x => x.asInstanceOf[js.Any] },
-        "Exclusions" -> Exclusions.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Exclusions" -> Exclusions.map { x => x.asInstanceOf[js.Any] },
+        "Path" -> Path.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[JdbcTarget]
     }
@@ -3712,55 +3712,55 @@ package glue {
    */
   @js.native
   trait Job extends js.Object {
-    var LogUri: js.UndefOr[UriString]
-    var Role: js.UndefOr[RoleString]
-    var Name: js.UndefOr[NameString]
-    var MaxRetries: js.UndefOr[MaxRetries]
-    var CreatedOn: js.UndefOr[TimestampValue]
-    var Command: js.UndefOr[JobCommand]
     var AllocatedCapacity: js.UndefOr[IntegerValue]
-    var Description: js.UndefOr[DescriptionString]
+    var Command: js.UndefOr[JobCommand]
     var Connections: js.UndefOr[ConnectionsList]
-    var NotificationProperty: js.UndefOr[NotificationProperty]
-    var LastModifiedOn: js.UndefOr[TimestampValue]
-    var ExecutionProperty: js.UndefOr[ExecutionProperty]
-    var SecurityConfiguration: js.UndefOr[NameString]
+    var CreatedOn: js.UndefOr[TimestampValue]
     var DefaultArguments: js.UndefOr[GenericMap]
+    var Description: js.UndefOr[DescriptionString]
+    var ExecutionProperty: js.UndefOr[ExecutionProperty]
+    var LastModifiedOn: js.UndefOr[TimestampValue]
+    var LogUri: js.UndefOr[UriString]
+    var MaxRetries: js.UndefOr[MaxRetries]
+    var Name: js.UndefOr[NameString]
+    var NotificationProperty: js.UndefOr[NotificationProperty]
+    var Role: js.UndefOr[RoleString]
+    var SecurityConfiguration: js.UndefOr[NameString]
     var Timeout: js.UndefOr[Timeout]
   }
 
   object Job {
     def apply(
-      LogUri: js.UndefOr[UriString] = js.undefined,
-      Role: js.UndefOr[RoleString] = js.undefined,
-      Name: js.UndefOr[NameString] = js.undefined,
-      MaxRetries: js.UndefOr[MaxRetries] = js.undefined,
-      CreatedOn: js.UndefOr[TimestampValue] = js.undefined,
-      Command: js.UndefOr[JobCommand] = js.undefined,
       AllocatedCapacity: js.UndefOr[IntegerValue] = js.undefined,
-      Description: js.UndefOr[DescriptionString] = js.undefined,
+      Command: js.UndefOr[JobCommand] = js.undefined,
       Connections: js.UndefOr[ConnectionsList] = js.undefined,
-      NotificationProperty: js.UndefOr[NotificationProperty] = js.undefined,
-      LastModifiedOn: js.UndefOr[TimestampValue] = js.undefined,
-      ExecutionProperty: js.UndefOr[ExecutionProperty] = js.undefined,
-      SecurityConfiguration: js.UndefOr[NameString] = js.undefined,
+      CreatedOn: js.UndefOr[TimestampValue] = js.undefined,
       DefaultArguments: js.UndefOr[GenericMap] = js.undefined,
+      Description: js.UndefOr[DescriptionString] = js.undefined,
+      ExecutionProperty: js.UndefOr[ExecutionProperty] = js.undefined,
+      LastModifiedOn: js.UndefOr[TimestampValue] = js.undefined,
+      LogUri: js.UndefOr[UriString] = js.undefined,
+      MaxRetries: js.UndefOr[MaxRetries] = js.undefined,
+      Name: js.UndefOr[NameString] = js.undefined,
+      NotificationProperty: js.UndefOr[NotificationProperty] = js.undefined,
+      Role: js.UndefOr[RoleString] = js.undefined,
+      SecurityConfiguration: js.UndefOr[NameString] = js.undefined,
       Timeout: js.UndefOr[Timeout] = js.undefined): Job = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "LogUri" -> LogUri.map { x => x.asInstanceOf[js.Any] },
-        "Role" -> Role.map { x => x.asInstanceOf[js.Any] },
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
-        "MaxRetries" -> MaxRetries.map { x => x.asInstanceOf[js.Any] },
-        "CreatedOn" -> CreatedOn.map { x => x.asInstanceOf[js.Any] },
-        "Command" -> Command.map { x => x.asInstanceOf[js.Any] },
         "AllocatedCapacity" -> AllocatedCapacity.map { x => x.asInstanceOf[js.Any] },
-        "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
+        "Command" -> Command.map { x => x.asInstanceOf[js.Any] },
         "Connections" -> Connections.map { x => x.asInstanceOf[js.Any] },
-        "NotificationProperty" -> NotificationProperty.map { x => x.asInstanceOf[js.Any] },
-        "LastModifiedOn" -> LastModifiedOn.map { x => x.asInstanceOf[js.Any] },
-        "ExecutionProperty" -> ExecutionProperty.map { x => x.asInstanceOf[js.Any] },
-        "SecurityConfiguration" -> SecurityConfiguration.map { x => x.asInstanceOf[js.Any] },
+        "CreatedOn" -> CreatedOn.map { x => x.asInstanceOf[js.Any] },
         "DefaultArguments" -> DefaultArguments.map { x => x.asInstanceOf[js.Any] },
+        "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
+        "ExecutionProperty" -> ExecutionProperty.map { x => x.asInstanceOf[js.Any] },
+        "LastModifiedOn" -> LastModifiedOn.map { x => x.asInstanceOf[js.Any] },
+        "LogUri" -> LogUri.map { x => x.asInstanceOf[js.Any] },
+        "MaxRetries" -> MaxRetries.map { x => x.asInstanceOf[js.Any] },
+        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
+        "NotificationProperty" -> NotificationProperty.map { x => x.asInstanceOf[js.Any] },
+        "Role" -> Role.map { x => x.asInstanceOf[js.Any] },
+        "SecurityConfiguration" -> SecurityConfiguration.map { x => x.asInstanceOf[js.Any] },
         "Timeout" -> Timeout.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Job]
@@ -3772,26 +3772,26 @@ package glue {
    */
   @js.native
   trait JobBookmarkEntry extends js.Object {
+    var Attempt: js.UndefOr[IntegerValue]
+    var JobBookmark: js.UndefOr[JsonValue]
+    var JobName: js.UndefOr[JobName]
     var Run: js.UndefOr[IntegerValue]
     var Version: js.UndefOr[IntegerValue]
-    var JobName: js.UndefOr[JobName]
-    var JobBookmark: js.UndefOr[JsonValue]
-    var Attempt: js.UndefOr[IntegerValue]
   }
 
   object JobBookmarkEntry {
     def apply(
-      Run: js.UndefOr[IntegerValue] = js.undefined,
-      Version: js.UndefOr[IntegerValue] = js.undefined,
-      JobName: js.UndefOr[JobName] = js.undefined,
+      Attempt: js.UndefOr[IntegerValue] = js.undefined,
       JobBookmark: js.UndefOr[JsonValue] = js.undefined,
-      Attempt: js.UndefOr[IntegerValue] = js.undefined): JobBookmarkEntry = {
+      JobName: js.UndefOr[JobName] = js.undefined,
+      Run: js.UndefOr[IntegerValue] = js.undefined,
+      Version: js.UndefOr[IntegerValue] = js.undefined): JobBookmarkEntry = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Run" -> Run.map { x => x.asInstanceOf[js.Any] },
-        "Version" -> Version.map { x => x.asInstanceOf[js.Any] },
-        "JobName" -> JobName.map { x => x.asInstanceOf[js.Any] },
+        "Attempt" -> Attempt.map { x => x.asInstanceOf[js.Any] },
         "JobBookmark" -> JobBookmark.map { x => x.asInstanceOf[js.Any] },
-        "Attempt" -> Attempt.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "JobName" -> JobName.map { x => x.asInstanceOf[js.Any] },
+        "Run" -> Run.map { x => x.asInstanceOf[js.Any] },
+        "Version" -> Version.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[JobBookmarkEntry]
     }
@@ -3851,65 +3851,65 @@ package glue {
    */
   @js.native
   trait JobRun extends js.Object {
-    var Id: js.UndefOr[IdString]
-    var StartedOn: js.UndefOr[TimestampValue]
-    var PreviousRunId: js.UndefOr[IdString]
     var AllocatedCapacity: js.UndefOr[IntegerValue]
-    var LogGroupName: js.UndefOr[GenericString]
-    var JobName: js.UndefOr[NameString]
-    var NotificationProperty: js.UndefOr[NotificationProperty]
-    var Attempt: js.UndefOr[AttemptCount]
     var Arguments: js.UndefOr[GenericMap]
-    var LastModifiedOn: js.UndefOr[TimestampValue]
-    var ExecutionTime: js.UndefOr[ExecutionTime]
+    var Attempt: js.UndefOr[AttemptCount]
     var CompletedOn: js.UndefOr[TimestampValue]
-    var JobRunState: js.UndefOr[JobRunState]
-    var TriggerName: js.UndefOr[NameString]
-    var PredecessorRuns: js.UndefOr[PredecessorList]
     var ErrorMessage: js.UndefOr[ErrorString]
+    var ExecutionTime: js.UndefOr[ExecutionTime]
+    var Id: js.UndefOr[IdString]
+    var JobName: js.UndefOr[NameString]
+    var JobRunState: js.UndefOr[JobRunState]
+    var LastModifiedOn: js.UndefOr[TimestampValue]
+    var LogGroupName: js.UndefOr[GenericString]
+    var NotificationProperty: js.UndefOr[NotificationProperty]
+    var PredecessorRuns: js.UndefOr[PredecessorList]
+    var PreviousRunId: js.UndefOr[IdString]
     var SecurityConfiguration: js.UndefOr[NameString]
+    var StartedOn: js.UndefOr[TimestampValue]
     var Timeout: js.UndefOr[Timeout]
+    var TriggerName: js.UndefOr[NameString]
   }
 
   object JobRun {
     def apply(
-      Id: js.UndefOr[IdString] = js.undefined,
-      StartedOn: js.UndefOr[TimestampValue] = js.undefined,
-      PreviousRunId: js.UndefOr[IdString] = js.undefined,
       AllocatedCapacity: js.UndefOr[IntegerValue] = js.undefined,
-      LogGroupName: js.UndefOr[GenericString] = js.undefined,
-      JobName: js.UndefOr[NameString] = js.undefined,
-      NotificationProperty: js.UndefOr[NotificationProperty] = js.undefined,
-      Attempt: js.UndefOr[AttemptCount] = js.undefined,
       Arguments: js.UndefOr[GenericMap] = js.undefined,
-      LastModifiedOn: js.UndefOr[TimestampValue] = js.undefined,
-      ExecutionTime: js.UndefOr[ExecutionTime] = js.undefined,
+      Attempt: js.UndefOr[AttemptCount] = js.undefined,
       CompletedOn: js.UndefOr[TimestampValue] = js.undefined,
-      JobRunState: js.UndefOr[JobRunState] = js.undefined,
-      TriggerName: js.UndefOr[NameString] = js.undefined,
-      PredecessorRuns: js.UndefOr[PredecessorList] = js.undefined,
       ErrorMessage: js.UndefOr[ErrorString] = js.undefined,
+      ExecutionTime: js.UndefOr[ExecutionTime] = js.undefined,
+      Id: js.UndefOr[IdString] = js.undefined,
+      JobName: js.UndefOr[NameString] = js.undefined,
+      JobRunState: js.UndefOr[JobRunState] = js.undefined,
+      LastModifiedOn: js.UndefOr[TimestampValue] = js.undefined,
+      LogGroupName: js.UndefOr[GenericString] = js.undefined,
+      NotificationProperty: js.UndefOr[NotificationProperty] = js.undefined,
+      PredecessorRuns: js.UndefOr[PredecessorList] = js.undefined,
+      PreviousRunId: js.UndefOr[IdString] = js.undefined,
       SecurityConfiguration: js.UndefOr[NameString] = js.undefined,
-      Timeout: js.UndefOr[Timeout] = js.undefined): JobRun = {
+      StartedOn: js.UndefOr[TimestampValue] = js.undefined,
+      Timeout: js.UndefOr[Timeout] = js.undefined,
+      TriggerName: js.UndefOr[NameString] = js.undefined): JobRun = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Id" -> Id.map { x => x.asInstanceOf[js.Any] },
-        "StartedOn" -> StartedOn.map { x => x.asInstanceOf[js.Any] },
-        "PreviousRunId" -> PreviousRunId.map { x => x.asInstanceOf[js.Any] },
         "AllocatedCapacity" -> AllocatedCapacity.map { x => x.asInstanceOf[js.Any] },
-        "LogGroupName" -> LogGroupName.map { x => x.asInstanceOf[js.Any] },
-        "JobName" -> JobName.map { x => x.asInstanceOf[js.Any] },
-        "NotificationProperty" -> NotificationProperty.map { x => x.asInstanceOf[js.Any] },
-        "Attempt" -> Attempt.map { x => x.asInstanceOf[js.Any] },
         "Arguments" -> Arguments.map { x => x.asInstanceOf[js.Any] },
-        "LastModifiedOn" -> LastModifiedOn.map { x => x.asInstanceOf[js.Any] },
-        "ExecutionTime" -> ExecutionTime.map { x => x.asInstanceOf[js.Any] },
+        "Attempt" -> Attempt.map { x => x.asInstanceOf[js.Any] },
         "CompletedOn" -> CompletedOn.map { x => x.asInstanceOf[js.Any] },
-        "JobRunState" -> JobRunState.map { x => x.asInstanceOf[js.Any] },
-        "TriggerName" -> TriggerName.map { x => x.asInstanceOf[js.Any] },
-        "PredecessorRuns" -> PredecessorRuns.map { x => x.asInstanceOf[js.Any] },
         "ErrorMessage" -> ErrorMessage.map { x => x.asInstanceOf[js.Any] },
+        "ExecutionTime" -> ExecutionTime.map { x => x.asInstanceOf[js.Any] },
+        "Id" -> Id.map { x => x.asInstanceOf[js.Any] },
+        "JobName" -> JobName.map { x => x.asInstanceOf[js.Any] },
+        "JobRunState" -> JobRunState.map { x => x.asInstanceOf[js.Any] },
+        "LastModifiedOn" -> LastModifiedOn.map { x => x.asInstanceOf[js.Any] },
+        "LogGroupName" -> LogGroupName.map { x => x.asInstanceOf[js.Any] },
+        "NotificationProperty" -> NotificationProperty.map { x => x.asInstanceOf[js.Any] },
+        "PredecessorRuns" -> PredecessorRuns.map { x => x.asInstanceOf[js.Any] },
+        "PreviousRunId" -> PreviousRunId.map { x => x.asInstanceOf[js.Any] },
         "SecurityConfiguration" -> SecurityConfiguration.map { x => x.asInstanceOf[js.Any] },
-        "Timeout" -> Timeout.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "StartedOn" -> StartedOn.map { x => x.asInstanceOf[js.Any] },
+        "Timeout" -> Timeout.map { x => x.asInstanceOf[js.Any] },
+        "TriggerName" -> TriggerName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[JobRun]
     }
@@ -3932,46 +3932,46 @@ package glue {
    */
   @js.native
   trait JobUpdate extends js.Object {
-    var LogUri: js.UndefOr[UriString]
-    var Role: js.UndefOr[RoleString]
-    var MaxRetries: js.UndefOr[MaxRetries]
-    var Command: js.UndefOr[JobCommand]
     var AllocatedCapacity: js.UndefOr[IntegerValue]
-    var Description: js.UndefOr[DescriptionString]
+    var Command: js.UndefOr[JobCommand]
     var Connections: js.UndefOr[ConnectionsList]
-    var NotificationProperty: js.UndefOr[NotificationProperty]
-    var ExecutionProperty: js.UndefOr[ExecutionProperty]
-    var SecurityConfiguration: js.UndefOr[NameString]
     var DefaultArguments: js.UndefOr[GenericMap]
+    var Description: js.UndefOr[DescriptionString]
+    var ExecutionProperty: js.UndefOr[ExecutionProperty]
+    var LogUri: js.UndefOr[UriString]
+    var MaxRetries: js.UndefOr[MaxRetries]
+    var NotificationProperty: js.UndefOr[NotificationProperty]
+    var Role: js.UndefOr[RoleString]
+    var SecurityConfiguration: js.UndefOr[NameString]
     var Timeout: js.UndefOr[Timeout]
   }
 
   object JobUpdate {
     def apply(
-      LogUri: js.UndefOr[UriString] = js.undefined,
-      Role: js.UndefOr[RoleString] = js.undefined,
-      MaxRetries: js.UndefOr[MaxRetries] = js.undefined,
-      Command: js.UndefOr[JobCommand] = js.undefined,
       AllocatedCapacity: js.UndefOr[IntegerValue] = js.undefined,
-      Description: js.UndefOr[DescriptionString] = js.undefined,
+      Command: js.UndefOr[JobCommand] = js.undefined,
       Connections: js.UndefOr[ConnectionsList] = js.undefined,
-      NotificationProperty: js.UndefOr[NotificationProperty] = js.undefined,
-      ExecutionProperty: js.UndefOr[ExecutionProperty] = js.undefined,
-      SecurityConfiguration: js.UndefOr[NameString] = js.undefined,
       DefaultArguments: js.UndefOr[GenericMap] = js.undefined,
+      Description: js.UndefOr[DescriptionString] = js.undefined,
+      ExecutionProperty: js.UndefOr[ExecutionProperty] = js.undefined,
+      LogUri: js.UndefOr[UriString] = js.undefined,
+      MaxRetries: js.UndefOr[MaxRetries] = js.undefined,
+      NotificationProperty: js.UndefOr[NotificationProperty] = js.undefined,
+      Role: js.UndefOr[RoleString] = js.undefined,
+      SecurityConfiguration: js.UndefOr[NameString] = js.undefined,
       Timeout: js.UndefOr[Timeout] = js.undefined): JobUpdate = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "LogUri" -> LogUri.map { x => x.asInstanceOf[js.Any] },
-        "Role" -> Role.map { x => x.asInstanceOf[js.Any] },
-        "MaxRetries" -> MaxRetries.map { x => x.asInstanceOf[js.Any] },
-        "Command" -> Command.map { x => x.asInstanceOf[js.Any] },
         "AllocatedCapacity" -> AllocatedCapacity.map { x => x.asInstanceOf[js.Any] },
-        "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
+        "Command" -> Command.map { x => x.asInstanceOf[js.Any] },
         "Connections" -> Connections.map { x => x.asInstanceOf[js.Any] },
-        "NotificationProperty" -> NotificationProperty.map { x => x.asInstanceOf[js.Any] },
-        "ExecutionProperty" -> ExecutionProperty.map { x => x.asInstanceOf[js.Any] },
-        "SecurityConfiguration" -> SecurityConfiguration.map { x => x.asInstanceOf[js.Any] },
         "DefaultArguments" -> DefaultArguments.map { x => x.asInstanceOf[js.Any] },
+        "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
+        "ExecutionProperty" -> ExecutionProperty.map { x => x.asInstanceOf[js.Any] },
+        "LogUri" -> LogUri.map { x => x.asInstanceOf[js.Any] },
+        "MaxRetries" -> MaxRetries.map { x => x.asInstanceOf[js.Any] },
+        "NotificationProperty" -> NotificationProperty.map { x => x.asInstanceOf[js.Any] },
+        "Role" -> Role.map { x => x.asInstanceOf[js.Any] },
+        "SecurityConfiguration" -> SecurityConfiguration.map { x => x.asInstanceOf[js.Any] },
         "Timeout" -> Timeout.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[JobUpdate]
@@ -3983,26 +3983,26 @@ package glue {
    */
   @js.native
   trait JsonClassifier extends js.Object {
-    var Name: js.UndefOr[NameString]
+    var JsonPath: JsonPath
+    var Name: NameString
+    var CreationTime: js.UndefOr[Timestamp]
     var LastUpdated: js.UndefOr[Timestamp]
     var Version: js.UndefOr[VersionId]
-    var JsonPath: js.UndefOr[JsonPath]
-    var CreationTime: js.UndefOr[Timestamp]
   }
 
   object JsonClassifier {
     def apply(
-      Name: js.UndefOr[NameString] = js.undefined,
+      JsonPath: JsonPath,
+      Name: NameString,
+      CreationTime: js.UndefOr[Timestamp] = js.undefined,
       LastUpdated: js.UndefOr[Timestamp] = js.undefined,
-      Version: js.UndefOr[VersionId] = js.undefined,
-      JsonPath: js.UndefOr[JsonPath] = js.undefined,
-      CreationTime: js.UndefOr[Timestamp] = js.undefined): JsonClassifier = {
+      Version: js.UndefOr[VersionId] = js.undefined): JsonClassifier = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
+        "JsonPath" -> JsonPath.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
+        "CreationTime" -> CreationTime.map { x => x.asInstanceOf[js.Any] },
         "LastUpdated" -> LastUpdated.map { x => x.asInstanceOf[js.Any] },
-        "Version" -> Version.map { x => x.asInstanceOf[js.Any] },
-        "JsonPath" -> JsonPath.map { x => x.asInstanceOf[js.Any] },
-        "CreationTime" -> CreationTime.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Version" -> Version.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[JsonClassifier]
     }
@@ -4020,28 +4020,28 @@ package glue {
    */
   @js.native
   trait LastCrawlInfo extends js.Object {
-    var MessagePrefix: js.UndefOr[MessagePrefix]
-    var LogGroup: js.UndefOr[LogGroup]
-    var StartTime: js.UndefOr[Timestamp]
-    var LogStream: js.UndefOr[LogStream]
     var ErrorMessage: js.UndefOr[DescriptionString]
+    var LogGroup: js.UndefOr[LogGroup]
+    var LogStream: js.UndefOr[LogStream]
+    var MessagePrefix: js.UndefOr[MessagePrefix]
+    var StartTime: js.UndefOr[Timestamp]
     var Status: js.UndefOr[LastCrawlStatus]
   }
 
   object LastCrawlInfo {
     def apply(
-      MessagePrefix: js.UndefOr[MessagePrefix] = js.undefined,
-      LogGroup: js.UndefOr[LogGroup] = js.undefined,
-      StartTime: js.UndefOr[Timestamp] = js.undefined,
-      LogStream: js.UndefOr[LogStream] = js.undefined,
       ErrorMessage: js.UndefOr[DescriptionString] = js.undefined,
+      LogGroup: js.UndefOr[LogGroup] = js.undefined,
+      LogStream: js.UndefOr[LogStream] = js.undefined,
+      MessagePrefix: js.UndefOr[MessagePrefix] = js.undefined,
+      StartTime: js.UndefOr[Timestamp] = js.undefined,
       Status: js.UndefOr[LastCrawlStatus] = js.undefined): LastCrawlInfo = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "MessagePrefix" -> MessagePrefix.map { x => x.asInstanceOf[js.Any] },
-        "LogGroup" -> LogGroup.map { x => x.asInstanceOf[js.Any] },
-        "StartTime" -> StartTime.map { x => x.asInstanceOf[js.Any] },
-        "LogStream" -> LogStream.map { x => x.asInstanceOf[js.Any] },
         "ErrorMessage" -> ErrorMessage.map { x => x.asInstanceOf[js.Any] },
+        "LogGroup" -> LogGroup.map { x => x.asInstanceOf[js.Any] },
+        "LogStream" -> LogStream.map { x => x.asInstanceOf[js.Any] },
+        "MessagePrefix" -> MessagePrefix.map { x => x.asInstanceOf[js.Any] },
+        "StartTime" -> StartTime.map { x => x.asInstanceOf[js.Any] },
         "Status" -> Status.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[LastCrawlInfo]
@@ -4061,20 +4061,20 @@ package glue {
    */
   @js.native
   trait Location extends js.Object {
+    var DynamoDB: js.UndefOr[CodeGenNodeArgs]
     var Jdbc: js.UndefOr[CodeGenNodeArgs]
     var S3: js.UndefOr[CodeGenNodeArgs]
-    var DynamoDB: js.UndefOr[CodeGenNodeArgs]
   }
 
   object Location {
     def apply(
+      DynamoDB: js.UndefOr[CodeGenNodeArgs] = js.undefined,
       Jdbc: js.UndefOr[CodeGenNodeArgs] = js.undefined,
-      S3: js.UndefOr[CodeGenNodeArgs] = js.undefined,
-      DynamoDB: js.UndefOr[CodeGenNodeArgs] = js.undefined): Location = {
+      S3: js.UndefOr[CodeGenNodeArgs] = js.undefined): Location = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "DynamoDB" -> DynamoDB.map { x => x.asInstanceOf[js.Any] },
         "Jdbc" -> Jdbc.map { x => x.asInstanceOf[js.Any] },
-        "S3" -> S3.map { x => x.asInstanceOf[js.Any] },
-        "DynamoDB" -> DynamoDB.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "S3" -> S3.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Location]
     }
@@ -4098,29 +4098,29 @@ package glue {
    */
   @js.native
   trait MappingEntry extends js.Object {
-    var TargetType: js.UndefOr[FieldType]
     var SourcePath: js.UndefOr[SchemaPathString]
     var SourceTable: js.UndefOr[TableName]
-    var TargetTable: js.UndefOr[TableName]
-    var TargetPath: js.UndefOr[SchemaPathString]
     var SourceType: js.UndefOr[FieldType]
+    var TargetPath: js.UndefOr[SchemaPathString]
+    var TargetTable: js.UndefOr[TableName]
+    var TargetType: js.UndefOr[FieldType]
   }
 
   object MappingEntry {
     def apply(
-      TargetType: js.UndefOr[FieldType] = js.undefined,
       SourcePath: js.UndefOr[SchemaPathString] = js.undefined,
       SourceTable: js.UndefOr[TableName] = js.undefined,
-      TargetTable: js.UndefOr[TableName] = js.undefined,
+      SourceType: js.UndefOr[FieldType] = js.undefined,
       TargetPath: js.UndefOr[SchemaPathString] = js.undefined,
-      SourceType: js.UndefOr[FieldType] = js.undefined): MappingEntry = {
+      TargetTable: js.UndefOr[TableName] = js.undefined,
+      TargetType: js.UndefOr[FieldType] = js.undefined): MappingEntry = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "TargetType" -> TargetType.map { x => x.asInstanceOf[js.Any] },
         "SourcePath" -> SourcePath.map { x => x.asInstanceOf[js.Any] },
         "SourceTable" -> SourceTable.map { x => x.asInstanceOf[js.Any] },
-        "TargetTable" -> TargetTable.map { x => x.asInstanceOf[js.Any] },
+        "SourceType" -> SourceType.map { x => x.asInstanceOf[js.Any] },
         "TargetPath" -> TargetPath.map { x => x.asInstanceOf[js.Any] },
-        "SourceType" -> SourceType.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "TargetTable" -> TargetTable.map { x => x.asInstanceOf[js.Any] },
+        "TargetType" -> TargetType.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[MappingEntry]
     }
@@ -4149,17 +4149,17 @@ package glue {
    */
   @js.native
   trait Order extends js.Object {
-    var Column: js.UndefOr[NameString]
-    var SortOrder: js.UndefOr[IntegerFlag]
+    var Column: NameString
+    var SortOrder: IntegerFlag
   }
 
   object Order {
     def apply(
-      Column: js.UndefOr[NameString] = js.undefined,
-      SortOrder: js.UndefOr[IntegerFlag] = js.undefined): Order = {
+      Column: NameString,
+      SortOrder: IntegerFlag): Order = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Column" -> Column.map { x => x.asInstanceOf[js.Any] },
-        "SortOrder" -> SortOrder.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Column" -> Column.asInstanceOf[js.Any],
+        "SortOrder" -> SortOrder.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Order]
     }
@@ -4170,35 +4170,35 @@ package glue {
    */
   @js.native
   trait Partition extends js.Object {
-    var LastAnalyzedTime: js.UndefOr[Timestamp]
-    var DatabaseName: js.UndefOr[NameString]
-    var StorageDescriptor: js.UndefOr[StorageDescriptor]
-    var Parameters: js.UndefOr[ParametersMap]
-    var LastAccessTime: js.UndefOr[Timestamp]
-    var Values: js.UndefOr[ValueStringList]
-    var TableName: js.UndefOr[NameString]
     var CreationTime: js.UndefOr[Timestamp]
+    var DatabaseName: js.UndefOr[NameString]
+    var LastAccessTime: js.UndefOr[Timestamp]
+    var LastAnalyzedTime: js.UndefOr[Timestamp]
+    var Parameters: js.UndefOr[ParametersMap]
+    var StorageDescriptor: js.UndefOr[StorageDescriptor]
+    var TableName: js.UndefOr[NameString]
+    var Values: js.UndefOr[ValueStringList]
   }
 
   object Partition {
     def apply(
-      LastAnalyzedTime: js.UndefOr[Timestamp] = js.undefined,
+      CreationTime: js.UndefOr[Timestamp] = js.undefined,
       DatabaseName: js.UndefOr[NameString] = js.undefined,
-      StorageDescriptor: js.UndefOr[StorageDescriptor] = js.undefined,
-      Parameters: js.UndefOr[ParametersMap] = js.undefined,
       LastAccessTime: js.UndefOr[Timestamp] = js.undefined,
-      Values: js.UndefOr[ValueStringList] = js.undefined,
+      LastAnalyzedTime: js.UndefOr[Timestamp] = js.undefined,
+      Parameters: js.UndefOr[ParametersMap] = js.undefined,
+      StorageDescriptor: js.UndefOr[StorageDescriptor] = js.undefined,
       TableName: js.UndefOr[NameString] = js.undefined,
-      CreationTime: js.UndefOr[Timestamp] = js.undefined): Partition = {
+      Values: js.UndefOr[ValueStringList] = js.undefined): Partition = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "LastAnalyzedTime" -> LastAnalyzedTime.map { x => x.asInstanceOf[js.Any] },
+        "CreationTime" -> CreationTime.map { x => x.asInstanceOf[js.Any] },
         "DatabaseName" -> DatabaseName.map { x => x.asInstanceOf[js.Any] },
-        "StorageDescriptor" -> StorageDescriptor.map { x => x.asInstanceOf[js.Any] },
-        "Parameters" -> Parameters.map { x => x.asInstanceOf[js.Any] },
         "LastAccessTime" -> LastAccessTime.map { x => x.asInstanceOf[js.Any] },
-        "Values" -> Values.map { x => x.asInstanceOf[js.Any] },
+        "LastAnalyzedTime" -> LastAnalyzedTime.map { x => x.asInstanceOf[js.Any] },
+        "Parameters" -> Parameters.map { x => x.asInstanceOf[js.Any] },
+        "StorageDescriptor" -> StorageDescriptor.map { x => x.asInstanceOf[js.Any] },
         "TableName" -> TableName.map { x => x.asInstanceOf[js.Any] },
-        "CreationTime" -> CreationTime.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Values" -> Values.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Partition]
     }
@@ -4209,17 +4209,17 @@ package glue {
    */
   @js.native
   trait PartitionError extends js.Object {
-    var PartitionValues: js.UndefOr[ValueStringList]
     var ErrorDetail: js.UndefOr[ErrorDetail]
+    var PartitionValues: js.UndefOr[ValueStringList]
   }
 
   object PartitionError {
     def apply(
-      PartitionValues: js.UndefOr[ValueStringList] = js.undefined,
-      ErrorDetail: js.UndefOr[ErrorDetail] = js.undefined): PartitionError = {
+      ErrorDetail: js.UndefOr[ErrorDetail] = js.undefined,
+      PartitionValues: js.UndefOr[ValueStringList] = js.undefined): PartitionError = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "PartitionValues" -> PartitionValues.map { x => x.asInstanceOf[js.Any] },
-        "ErrorDetail" -> ErrorDetail.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ErrorDetail" -> ErrorDetail.map { x => x.asInstanceOf[js.Any] },
+        "PartitionValues" -> PartitionValues.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PartitionError]
     }
@@ -4230,25 +4230,25 @@ package glue {
    */
   @js.native
   trait PartitionInput extends js.Object {
-    var LastAnalyzedTime: js.UndefOr[Timestamp]
-    var StorageDescriptor: js.UndefOr[StorageDescriptor]
-    var Parameters: js.UndefOr[ParametersMap]
     var LastAccessTime: js.UndefOr[Timestamp]
+    var LastAnalyzedTime: js.UndefOr[Timestamp]
+    var Parameters: js.UndefOr[ParametersMap]
+    var StorageDescriptor: js.UndefOr[StorageDescriptor]
     var Values: js.UndefOr[ValueStringList]
   }
 
   object PartitionInput {
     def apply(
-      LastAnalyzedTime: js.UndefOr[Timestamp] = js.undefined,
-      StorageDescriptor: js.UndefOr[StorageDescriptor] = js.undefined,
-      Parameters: js.UndefOr[ParametersMap] = js.undefined,
       LastAccessTime: js.UndefOr[Timestamp] = js.undefined,
+      LastAnalyzedTime: js.UndefOr[Timestamp] = js.undefined,
+      Parameters: js.UndefOr[ParametersMap] = js.undefined,
+      StorageDescriptor: js.UndefOr[StorageDescriptor] = js.undefined,
       Values: js.UndefOr[ValueStringList] = js.undefined): PartitionInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "LastAnalyzedTime" -> LastAnalyzedTime.map { x => x.asInstanceOf[js.Any] },
-        "StorageDescriptor" -> StorageDescriptor.map { x => x.asInstanceOf[js.Any] },
-        "Parameters" -> Parameters.map { x => x.asInstanceOf[js.Any] },
         "LastAccessTime" -> LastAccessTime.map { x => x.asInstanceOf[js.Any] },
+        "LastAnalyzedTime" -> LastAnalyzedTime.map { x => x.asInstanceOf[js.Any] },
+        "Parameters" -> Parameters.map { x => x.asInstanceOf[js.Any] },
+        "StorageDescriptor" -> StorageDescriptor.map { x => x.asInstanceOf[js.Any] },
         "Values" -> Values.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PartitionInput]
@@ -4260,14 +4260,14 @@ package glue {
    */
   @js.native
   trait PartitionValueList extends js.Object {
-    var Values: js.UndefOr[ValueStringList]
+    var Values: ValueStringList
   }
 
   object PartitionValueList {
     def apply(
-      Values: js.UndefOr[ValueStringList] = js.undefined): PartitionValueList = {
+      Values: ValueStringList): PartitionValueList = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Values" -> Values.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Values" -> Values.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PartitionValueList]
     }
@@ -4278,20 +4278,20 @@ package glue {
    */
   @js.native
   trait PhysicalConnectionRequirements extends js.Object {
-    var SubnetId: js.UndefOr[NameString]
-    var SecurityGroupIdList: js.UndefOr[SecurityGroupIdList]
     var AvailabilityZone: js.UndefOr[NameString]
+    var SecurityGroupIdList: js.UndefOr[SecurityGroupIdList]
+    var SubnetId: js.UndefOr[NameString]
   }
 
   object PhysicalConnectionRequirements {
     def apply(
-      SubnetId: js.UndefOr[NameString] = js.undefined,
+      AvailabilityZone: js.UndefOr[NameString] = js.undefined,
       SecurityGroupIdList: js.UndefOr[SecurityGroupIdList] = js.undefined,
-      AvailabilityZone: js.UndefOr[NameString] = js.undefined): PhysicalConnectionRequirements = {
+      SubnetId: js.UndefOr[NameString] = js.undefined): PhysicalConnectionRequirements = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "SubnetId" -> SubnetId.map { x => x.asInstanceOf[js.Any] },
+        "AvailabilityZone" -> AvailabilityZone.map { x => x.asInstanceOf[js.Any] },
         "SecurityGroupIdList" -> SecurityGroupIdList.map { x => x.asInstanceOf[js.Any] },
-        "AvailabilityZone" -> AvailabilityZone.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "SubnetId" -> SubnetId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PhysicalConnectionRequirements]
     }
@@ -4323,17 +4323,17 @@ package glue {
    */
   @js.native
   trait Predicate extends js.Object {
-    var Logical: js.UndefOr[Logical]
     var Conditions: js.UndefOr[ConditionList]
+    var Logical: js.UndefOr[Logical]
   }
 
   object Predicate {
     def apply(
-      Logical: js.UndefOr[Logical] = js.undefined,
-      Conditions: js.UndefOr[ConditionList] = js.undefined): Predicate = {
+      Conditions: js.UndefOr[ConditionList] = js.undefined,
+      Logical: js.UndefOr[Logical] = js.undefined): Predicate = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Logical" -> Logical.map { x => x.asInstanceOf[js.Any] },
-        "Conditions" -> Conditions.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Conditions" -> Conditions.map { x => x.asInstanceOf[js.Any] },
+        "Logical" -> Logical.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Predicate]
     }
@@ -4349,17 +4349,17 @@ package glue {
 
   @js.native
   trait PutDataCatalogEncryptionSettingsRequest extends js.Object {
+    var DataCatalogEncryptionSettings: DataCatalogEncryptionSettings
     var CatalogId: js.UndefOr[CatalogIdString]
-    var DataCatalogEncryptionSettings: js.UndefOr[DataCatalogEncryptionSettings]
   }
 
   object PutDataCatalogEncryptionSettingsRequest {
     def apply(
-      CatalogId: js.UndefOr[CatalogIdString] = js.undefined,
-      DataCatalogEncryptionSettings: js.UndefOr[DataCatalogEncryptionSettings] = js.undefined): PutDataCatalogEncryptionSettingsRequest = {
+      DataCatalogEncryptionSettings: DataCatalogEncryptionSettings,
+      CatalogId: js.UndefOr[CatalogIdString] = js.undefined): PutDataCatalogEncryptionSettingsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "CatalogId" -> CatalogId.map { x => x.asInstanceOf[js.Any] },
-        "DataCatalogEncryptionSettings" -> DataCatalogEncryptionSettings.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "DataCatalogEncryptionSettings" -> DataCatalogEncryptionSettings.asInstanceOf[js.Any],
+        "CatalogId" -> CatalogId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutDataCatalogEncryptionSettingsRequest]
     }
@@ -4380,20 +4380,20 @@ package glue {
 
   @js.native
   trait PutResourcePolicyRequest extends js.Object {
-    var PolicyInJson: js.UndefOr[PolicyJsonString]
-    var PolicyHashCondition: js.UndefOr[HashString]
+    var PolicyInJson: PolicyJsonString
     var PolicyExistsCondition: js.UndefOr[ExistCondition]
+    var PolicyHashCondition: js.UndefOr[HashString]
   }
 
   object PutResourcePolicyRequest {
     def apply(
-      PolicyInJson: js.UndefOr[PolicyJsonString] = js.undefined,
-      PolicyHashCondition: js.UndefOr[HashString] = js.undefined,
-      PolicyExistsCondition: js.UndefOr[ExistCondition] = js.undefined): PutResourcePolicyRequest = {
+      PolicyInJson: PolicyJsonString,
+      PolicyExistsCondition: js.UndefOr[ExistCondition] = js.undefined,
+      PolicyHashCondition: js.UndefOr[HashString] = js.undefined): PutResourcePolicyRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "PolicyInJson" -> PolicyInJson.map { x => x.asInstanceOf[js.Any] },
-        "PolicyHashCondition" -> PolicyHashCondition.map { x => x.asInstanceOf[js.Any] },
-        "PolicyExistsCondition" -> PolicyExistsCondition.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "PolicyInJson" -> PolicyInJson.asInstanceOf[js.Any],
+        "PolicyExistsCondition" -> PolicyExistsCondition.map { x => x.asInstanceOf[js.Any] },
+        "PolicyHashCondition" -> PolicyHashCondition.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutResourcePolicyRequest]
     }
@@ -4416,14 +4416,14 @@ package glue {
 
   @js.native
   trait ResetJobBookmarkRequest extends js.Object {
-    var JobName: js.UndefOr[JobName]
+    var JobName: JobName
   }
 
   object ResetJobBookmarkRequest {
     def apply(
-      JobName: js.UndefOr[JobName] = js.undefined): ResetJobBookmarkRequest = {
+      JobName: JobName): ResetJobBookmarkRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "JobName" -> JobName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "JobName" -> JobName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ResetJobBookmarkRequest]
     }
@@ -4478,17 +4478,17 @@ package glue {
    */
   @js.native
   trait S3Encryption extends js.Object {
-    var S3EncryptionMode: js.UndefOr[S3EncryptionMode]
     var KmsKeyArn: js.UndefOr[KmsKeyArn]
+    var S3EncryptionMode: js.UndefOr[S3EncryptionMode]
   }
 
   object S3Encryption {
     def apply(
-      S3EncryptionMode: js.UndefOr[S3EncryptionMode] = js.undefined,
-      KmsKeyArn: js.UndefOr[KmsKeyArn] = js.undefined): S3Encryption = {
+      KmsKeyArn: js.UndefOr[KmsKeyArn] = js.undefined,
+      S3EncryptionMode: js.UndefOr[S3EncryptionMode] = js.undefined): S3Encryption = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "S3EncryptionMode" -> S3EncryptionMode.map { x => x.asInstanceOf[js.Any] },
-        "KmsKeyArn" -> KmsKeyArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "KmsKeyArn" -> KmsKeyArn.map { x => x.asInstanceOf[js.Any] },
+        "S3EncryptionMode" -> S3EncryptionMode.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[S3Encryption]
     }
@@ -4507,17 +4507,17 @@ package glue {
    */
   @js.native
   trait S3Target extends js.Object {
-    var Path: js.UndefOr[Path]
     var Exclusions: js.UndefOr[PathList]
+    var Path: js.UndefOr[Path]
   }
 
   object S3Target {
     def apply(
-      Path: js.UndefOr[Path] = js.undefined,
-      Exclusions: js.UndefOr[PathList] = js.undefined): S3Target = {
+      Exclusions: js.UndefOr[PathList] = js.undefined,
+      Path: js.UndefOr[Path] = js.undefined): S3Target = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Path" -> Path.map { x => x.asInstanceOf[js.Any] },
-        "Exclusions" -> Exclusions.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Exclusions" -> Exclusions.map { x => x.asInstanceOf[js.Any] },
+        "Path" -> Path.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[S3Target]
     }
@@ -4557,17 +4557,17 @@ package glue {
    */
   @js.native
   trait SchemaChangePolicy extends js.Object {
-    var UpdateBehavior: js.UndefOr[UpdateBehavior]
     var DeleteBehavior: js.UndefOr[DeleteBehavior]
+    var UpdateBehavior: js.UndefOr[UpdateBehavior]
   }
 
   object SchemaChangePolicy {
     def apply(
-      UpdateBehavior: js.UndefOr[UpdateBehavior] = js.undefined,
-      DeleteBehavior: js.UndefOr[DeleteBehavior] = js.undefined): SchemaChangePolicy = {
+      DeleteBehavior: js.UndefOr[DeleteBehavior] = js.undefined,
+      UpdateBehavior: js.UndefOr[UpdateBehavior] = js.undefined): SchemaChangePolicy = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "UpdateBehavior" -> UpdateBehavior.map { x => x.asInstanceOf[js.Any] },
-        "DeleteBehavior" -> DeleteBehavior.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "DeleteBehavior" -> DeleteBehavior.map { x => x.asInstanceOf[js.Any] },
+        "UpdateBehavior" -> UpdateBehavior.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SchemaChangePolicy]
     }
@@ -4578,20 +4578,20 @@ package glue {
    */
   @js.native
   trait SecurityConfiguration extends js.Object {
-    var Name: js.UndefOr[NameString]
     var CreatedTimeStamp: js.UndefOr[TimestampValue]
     var EncryptionConfiguration: js.UndefOr[EncryptionConfiguration]
+    var Name: js.UndefOr[NameString]
   }
 
   object SecurityConfiguration {
     def apply(
-      Name: js.UndefOr[NameString] = js.undefined,
       CreatedTimeStamp: js.UndefOr[TimestampValue] = js.undefined,
-      EncryptionConfiguration: js.UndefOr[EncryptionConfiguration] = js.undefined): SecurityConfiguration = {
+      EncryptionConfiguration: js.UndefOr[EncryptionConfiguration] = js.undefined,
+      Name: js.UndefOr[NameString] = js.undefined): SecurityConfiguration = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
         "CreatedTimeStamp" -> CreatedTimeStamp.map { x => x.asInstanceOf[js.Any] },
-        "EncryptionConfiguration" -> EncryptionConfiguration.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "EncryptionConfiguration" -> EncryptionConfiguration.map { x => x.asInstanceOf[js.Any] },
+        "Name" -> Name.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SecurityConfiguration]
     }
@@ -4602,17 +4602,17 @@ package glue {
    */
   @js.native
   trait Segment extends js.Object {
-    var SegmentNumber: js.UndefOr[NonNegativeInteger]
-    var TotalSegments: js.UndefOr[TotalSegmentsInteger]
+    var SegmentNumber: NonNegativeInteger
+    var TotalSegments: TotalSegmentsInteger
   }
 
   object Segment {
     def apply(
-      SegmentNumber: js.UndefOr[NonNegativeInteger] = js.undefined,
-      TotalSegments: js.UndefOr[TotalSegmentsInteger] = js.undefined): Segment = {
+      SegmentNumber: NonNegativeInteger,
+      TotalSegments: TotalSegmentsInteger): Segment = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "SegmentNumber" -> SegmentNumber.map { x => x.asInstanceOf[js.Any] },
-        "TotalSegments" -> TotalSegments.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "SegmentNumber" -> SegmentNumber.asInstanceOf[js.Any],
+        "TotalSegments" -> TotalSegments.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Segment]
     }
@@ -4624,19 +4624,19 @@ package glue {
   @js.native
   trait SerDeInfo extends js.Object {
     var Name: js.UndefOr[NameString]
-    var SerializationLibrary: js.UndefOr[NameString]
     var Parameters: js.UndefOr[ParametersMap]
+    var SerializationLibrary: js.UndefOr[NameString]
   }
 
   object SerDeInfo {
     def apply(
       Name: js.UndefOr[NameString] = js.undefined,
-      SerializationLibrary: js.UndefOr[NameString] = js.undefined,
-      Parameters: js.UndefOr[ParametersMap] = js.undefined): SerDeInfo = {
+      Parameters: js.UndefOr[ParametersMap] = js.undefined,
+      SerializationLibrary: js.UndefOr[NameString] = js.undefined): SerDeInfo = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
-        "SerializationLibrary" -> SerializationLibrary.map { x => x.asInstanceOf[js.Any] },
-        "Parameters" -> Parameters.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Parameters" -> Parameters.map { x => x.asInstanceOf[js.Any] },
+        "SerializationLibrary" -> SerializationLibrary.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SerDeInfo]
     }
@@ -4648,19 +4648,19 @@ package glue {
   @js.native
   trait SkewedInfo extends js.Object {
     var SkewedColumnNames: js.UndefOr[NameStringList]
-    var SkewedColumnValues: js.UndefOr[ColumnValueStringList]
     var SkewedColumnValueLocationMaps: js.UndefOr[LocationMap]
+    var SkewedColumnValues: js.UndefOr[ColumnValueStringList]
   }
 
   object SkewedInfo {
     def apply(
       SkewedColumnNames: js.UndefOr[NameStringList] = js.undefined,
-      SkewedColumnValues: js.UndefOr[ColumnValueStringList] = js.undefined,
-      SkewedColumnValueLocationMaps: js.UndefOr[LocationMap] = js.undefined): SkewedInfo = {
+      SkewedColumnValueLocationMaps: js.UndefOr[LocationMap] = js.undefined,
+      SkewedColumnValues: js.UndefOr[ColumnValueStringList] = js.undefined): SkewedInfo = {
       val _fields = IndexedSeq[(String, js.Any)](
         "SkewedColumnNames" -> SkewedColumnNames.map { x => x.asInstanceOf[js.Any] },
-        "SkewedColumnValues" -> SkewedColumnValues.map { x => x.asInstanceOf[js.Any] },
-        "SkewedColumnValueLocationMaps" -> SkewedColumnValueLocationMaps.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "SkewedColumnValueLocationMaps" -> SkewedColumnValueLocationMaps.map { x => x.asInstanceOf[js.Any] },
+        "SkewedColumnValues" -> SkewedColumnValues.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SkewedInfo]
     }
@@ -4668,14 +4668,14 @@ package glue {
 
   @js.native
   trait StartCrawlerRequest extends js.Object {
-    var Name: js.UndefOr[NameString]
+    var Name: NameString
   }
 
   object StartCrawlerRequest {
     def apply(
-      Name: js.UndefOr[NameString] = js.undefined): StartCrawlerRequest = {
+      Name: NameString): StartCrawlerRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Name" -> Name.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StartCrawlerRequest]
     }
@@ -4696,14 +4696,14 @@ package glue {
 
   @js.native
   trait StartCrawlerScheduleRequest extends js.Object {
-    var CrawlerName: js.UndefOr[NameString]
+    var CrawlerName: NameString
   }
 
   object StartCrawlerScheduleRequest {
     def apply(
-      CrawlerName: js.UndefOr[NameString] = js.undefined): StartCrawlerScheduleRequest = {
+      CrawlerName: NameString): StartCrawlerScheduleRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "CrawlerName" -> CrawlerName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "CrawlerName" -> CrawlerName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StartCrawlerScheduleRequest]
     }
@@ -4724,30 +4724,30 @@ package glue {
 
   @js.native
   trait StartJobRunRequest extends js.Object {
+    var JobName: NameString
     var AllocatedCapacity: js.UndefOr[IntegerValue]
-    var JobName: js.UndefOr[NameString]
-    var NotificationProperty: js.UndefOr[NotificationProperty]
     var Arguments: js.UndefOr[GenericMap]
     var JobRunId: js.UndefOr[IdString]
+    var NotificationProperty: js.UndefOr[NotificationProperty]
     var SecurityConfiguration: js.UndefOr[NameString]
     var Timeout: js.UndefOr[Timeout]
   }
 
   object StartJobRunRequest {
     def apply(
+      JobName: NameString,
       AllocatedCapacity: js.UndefOr[IntegerValue] = js.undefined,
-      JobName: js.UndefOr[NameString] = js.undefined,
-      NotificationProperty: js.UndefOr[NotificationProperty] = js.undefined,
       Arguments: js.UndefOr[GenericMap] = js.undefined,
       JobRunId: js.UndefOr[IdString] = js.undefined,
+      NotificationProperty: js.UndefOr[NotificationProperty] = js.undefined,
       SecurityConfiguration: js.UndefOr[NameString] = js.undefined,
       Timeout: js.UndefOr[Timeout] = js.undefined): StartJobRunRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "JobName" -> JobName.asInstanceOf[js.Any],
         "AllocatedCapacity" -> AllocatedCapacity.map { x => x.asInstanceOf[js.Any] },
-        "JobName" -> JobName.map { x => x.asInstanceOf[js.Any] },
-        "NotificationProperty" -> NotificationProperty.map { x => x.asInstanceOf[js.Any] },
         "Arguments" -> Arguments.map { x => x.asInstanceOf[js.Any] },
         "JobRunId" -> JobRunId.map { x => x.asInstanceOf[js.Any] },
+        "NotificationProperty" -> NotificationProperty.map { x => x.asInstanceOf[js.Any] },
         "SecurityConfiguration" -> SecurityConfiguration.map { x => x.asInstanceOf[js.Any] },
         "Timeout" -> Timeout.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
@@ -4772,14 +4772,14 @@ package glue {
 
   @js.native
   trait StartTriggerRequest extends js.Object {
-    var Name: js.UndefOr[NameString]
+    var Name: NameString
   }
 
   object StartTriggerRequest {
     def apply(
-      Name: js.UndefOr[NameString] = js.undefined): StartTriggerRequest = {
+      Name: NameString): StartTriggerRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Name" -> Name.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StartTriggerRequest]
     }
@@ -4802,14 +4802,14 @@ package glue {
 
   @js.native
   trait StopCrawlerRequest extends js.Object {
-    var Name: js.UndefOr[NameString]
+    var Name: NameString
   }
 
   object StopCrawlerRequest {
     def apply(
-      Name: js.UndefOr[NameString] = js.undefined): StopCrawlerRequest = {
+      Name: NameString): StopCrawlerRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Name" -> Name.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StopCrawlerRequest]
     }
@@ -4830,14 +4830,14 @@ package glue {
 
   @js.native
   trait StopCrawlerScheduleRequest extends js.Object {
-    var CrawlerName: js.UndefOr[NameString]
+    var CrawlerName: NameString
   }
 
   object StopCrawlerScheduleRequest {
     def apply(
-      CrawlerName: js.UndefOr[NameString] = js.undefined): StopCrawlerScheduleRequest = {
+      CrawlerName: NameString): StopCrawlerScheduleRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "CrawlerName" -> CrawlerName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "CrawlerName" -> CrawlerName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StopCrawlerScheduleRequest]
     }
@@ -4858,14 +4858,14 @@ package glue {
 
   @js.native
   trait StopTriggerRequest extends js.Object {
-    var Name: js.UndefOr[NameString]
+    var Name: NameString
   }
 
   object StopTriggerRequest {
     def apply(
-      Name: js.UndefOr[NameString] = js.undefined): StopTriggerRequest = {
+      Name: NameString): StopTriggerRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Name" -> Name.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StopTriggerRequest]
     }
@@ -4891,46 +4891,46 @@ package glue {
    */
   @js.native
   trait StorageDescriptor extends js.Object {
-    var InputFormat: js.UndefOr[FormatString]
-    var SortColumns: js.UndefOr[OrderList]
-    var Location: js.UndefOr[LocationString]
     var BucketColumns: js.UndefOr[NameStringList]
-    var OutputFormat: js.UndefOr[FormatString]
-    var SerdeInfo: js.UndefOr[SerDeInfo]
-    var NumberOfBuckets: js.UndefOr[Int]
-    var Parameters: js.UndefOr[ParametersMap]
     var Columns: js.UndefOr[ColumnList]
     var Compressed: js.UndefOr[Boolean]
+    var InputFormat: js.UndefOr[FormatString]
+    var Location: js.UndefOr[LocationString]
+    var NumberOfBuckets: js.UndefOr[Int]
+    var OutputFormat: js.UndefOr[FormatString]
+    var Parameters: js.UndefOr[ParametersMap]
+    var SerdeInfo: js.UndefOr[SerDeInfo]
     var SkewedInfo: js.UndefOr[SkewedInfo]
+    var SortColumns: js.UndefOr[OrderList]
     var StoredAsSubDirectories: js.UndefOr[Boolean]
   }
 
   object StorageDescriptor {
     def apply(
-      InputFormat: js.UndefOr[FormatString] = js.undefined,
-      SortColumns: js.UndefOr[OrderList] = js.undefined,
-      Location: js.UndefOr[LocationString] = js.undefined,
       BucketColumns: js.UndefOr[NameStringList] = js.undefined,
-      OutputFormat: js.UndefOr[FormatString] = js.undefined,
-      SerdeInfo: js.UndefOr[SerDeInfo] = js.undefined,
-      NumberOfBuckets: js.UndefOr[Int] = js.undefined,
-      Parameters: js.UndefOr[ParametersMap] = js.undefined,
       Columns: js.UndefOr[ColumnList] = js.undefined,
       Compressed: js.UndefOr[Boolean] = js.undefined,
+      InputFormat: js.UndefOr[FormatString] = js.undefined,
+      Location: js.UndefOr[LocationString] = js.undefined,
+      NumberOfBuckets: js.UndefOr[Int] = js.undefined,
+      OutputFormat: js.UndefOr[FormatString] = js.undefined,
+      Parameters: js.UndefOr[ParametersMap] = js.undefined,
+      SerdeInfo: js.UndefOr[SerDeInfo] = js.undefined,
       SkewedInfo: js.UndefOr[SkewedInfo] = js.undefined,
+      SortColumns: js.UndefOr[OrderList] = js.undefined,
       StoredAsSubDirectories: js.UndefOr[Boolean] = js.undefined): StorageDescriptor = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "InputFormat" -> InputFormat.map { x => x.asInstanceOf[js.Any] },
-        "SortColumns" -> SortColumns.map { x => x.asInstanceOf[js.Any] },
-        "Location" -> Location.map { x => x.asInstanceOf[js.Any] },
         "BucketColumns" -> BucketColumns.map { x => x.asInstanceOf[js.Any] },
-        "OutputFormat" -> OutputFormat.map { x => x.asInstanceOf[js.Any] },
-        "SerdeInfo" -> SerdeInfo.map { x => x.asInstanceOf[js.Any] },
-        "NumberOfBuckets" -> NumberOfBuckets.map { x => x.asInstanceOf[js.Any] },
-        "Parameters" -> Parameters.map { x => x.asInstanceOf[js.Any] },
         "Columns" -> Columns.map { x => x.asInstanceOf[js.Any] },
         "Compressed" -> Compressed.map { x => x.asInstanceOf[js.Any] },
+        "InputFormat" -> InputFormat.map { x => x.asInstanceOf[js.Any] },
+        "Location" -> Location.map { x => x.asInstanceOf[js.Any] },
+        "NumberOfBuckets" -> NumberOfBuckets.map { x => x.asInstanceOf[js.Any] },
+        "OutputFormat" -> OutputFormat.map { x => x.asInstanceOf[js.Any] },
+        "Parameters" -> Parameters.map { x => x.asInstanceOf[js.Any] },
+        "SerdeInfo" -> SerdeInfo.map { x => x.asInstanceOf[js.Any] },
         "SkewedInfo" -> SkewedInfo.map { x => x.asInstanceOf[js.Any] },
+        "SortColumns" -> SortColumns.map { x => x.asInstanceOf[js.Any] },
         "StoredAsSubDirectories" -> StoredAsSubDirectories.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StorageDescriptor]
@@ -4942,59 +4942,59 @@ package glue {
    */
   @js.native
   trait Table extends js.Object {
-    var PartitionKeys: js.UndefOr[ColumnList]
-    var Name: js.UndefOr[NameString]
-    var TableType: js.UndefOr[TableTypeString]
-    var LastAnalyzedTime: js.UndefOr[Timestamp]
-    var Retention: js.UndefOr[NonNegativeInteger]
+    var Name: NameString
+    var CreateTime: js.UndefOr[Timestamp]
     var CreatedBy: js.UndefOr[NameString]
     var DatabaseName: js.UndefOr[NameString]
-    var StorageDescriptor: js.UndefOr[StorageDescriptor]
     var Description: js.UndefOr[DescriptionString]
-    var ViewExpandedText: js.UndefOr[ViewTextString]
-    var Parameters: js.UndefOr[ParametersMap]
     var LastAccessTime: js.UndefOr[Timestamp]
-    var ViewOriginalText: js.UndefOr[ViewTextString]
-    var CreateTime: js.UndefOr[Timestamp]
+    var LastAnalyzedTime: js.UndefOr[Timestamp]
     var Owner: js.UndefOr[NameString]
+    var Parameters: js.UndefOr[ParametersMap]
+    var PartitionKeys: js.UndefOr[ColumnList]
+    var Retention: js.UndefOr[NonNegativeInteger]
+    var StorageDescriptor: js.UndefOr[StorageDescriptor]
+    var TableType: js.UndefOr[TableTypeString]
     var UpdateTime: js.UndefOr[Timestamp]
+    var ViewExpandedText: js.UndefOr[ViewTextString]
+    var ViewOriginalText: js.UndefOr[ViewTextString]
   }
 
   object Table {
     def apply(
-      PartitionKeys: js.UndefOr[ColumnList] = js.undefined,
-      Name: js.UndefOr[NameString] = js.undefined,
-      TableType: js.UndefOr[TableTypeString] = js.undefined,
-      LastAnalyzedTime: js.UndefOr[Timestamp] = js.undefined,
-      Retention: js.UndefOr[NonNegativeInteger] = js.undefined,
+      Name: NameString,
+      CreateTime: js.UndefOr[Timestamp] = js.undefined,
       CreatedBy: js.UndefOr[NameString] = js.undefined,
       DatabaseName: js.UndefOr[NameString] = js.undefined,
-      StorageDescriptor: js.UndefOr[StorageDescriptor] = js.undefined,
       Description: js.UndefOr[DescriptionString] = js.undefined,
-      ViewExpandedText: js.UndefOr[ViewTextString] = js.undefined,
-      Parameters: js.UndefOr[ParametersMap] = js.undefined,
       LastAccessTime: js.UndefOr[Timestamp] = js.undefined,
-      ViewOriginalText: js.UndefOr[ViewTextString] = js.undefined,
-      CreateTime: js.UndefOr[Timestamp] = js.undefined,
+      LastAnalyzedTime: js.UndefOr[Timestamp] = js.undefined,
       Owner: js.UndefOr[NameString] = js.undefined,
-      UpdateTime: js.UndefOr[Timestamp] = js.undefined): Table = {
+      Parameters: js.UndefOr[ParametersMap] = js.undefined,
+      PartitionKeys: js.UndefOr[ColumnList] = js.undefined,
+      Retention: js.UndefOr[NonNegativeInteger] = js.undefined,
+      StorageDescriptor: js.UndefOr[StorageDescriptor] = js.undefined,
+      TableType: js.UndefOr[TableTypeString] = js.undefined,
+      UpdateTime: js.UndefOr[Timestamp] = js.undefined,
+      ViewExpandedText: js.UndefOr[ViewTextString] = js.undefined,
+      ViewOriginalText: js.UndefOr[ViewTextString] = js.undefined): Table = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "PartitionKeys" -> PartitionKeys.map { x => x.asInstanceOf[js.Any] },
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
-        "TableType" -> TableType.map { x => x.asInstanceOf[js.Any] },
-        "LastAnalyzedTime" -> LastAnalyzedTime.map { x => x.asInstanceOf[js.Any] },
-        "Retention" -> Retention.map { x => x.asInstanceOf[js.Any] },
+        "Name" -> Name.asInstanceOf[js.Any],
+        "CreateTime" -> CreateTime.map { x => x.asInstanceOf[js.Any] },
         "CreatedBy" -> CreatedBy.map { x => x.asInstanceOf[js.Any] },
         "DatabaseName" -> DatabaseName.map { x => x.asInstanceOf[js.Any] },
-        "StorageDescriptor" -> StorageDescriptor.map { x => x.asInstanceOf[js.Any] },
         "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
-        "ViewExpandedText" -> ViewExpandedText.map { x => x.asInstanceOf[js.Any] },
-        "Parameters" -> Parameters.map { x => x.asInstanceOf[js.Any] },
         "LastAccessTime" -> LastAccessTime.map { x => x.asInstanceOf[js.Any] },
-        "ViewOriginalText" -> ViewOriginalText.map { x => x.asInstanceOf[js.Any] },
-        "CreateTime" -> CreateTime.map { x => x.asInstanceOf[js.Any] },
+        "LastAnalyzedTime" -> LastAnalyzedTime.map { x => x.asInstanceOf[js.Any] },
         "Owner" -> Owner.map { x => x.asInstanceOf[js.Any] },
-        "UpdateTime" -> UpdateTime.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Parameters" -> Parameters.map { x => x.asInstanceOf[js.Any] },
+        "PartitionKeys" -> PartitionKeys.map { x => x.asInstanceOf[js.Any] },
+        "Retention" -> Retention.map { x => x.asInstanceOf[js.Any] },
+        "StorageDescriptor" -> StorageDescriptor.map { x => x.asInstanceOf[js.Any] },
+        "TableType" -> TableType.map { x => x.asInstanceOf[js.Any] },
+        "UpdateTime" -> UpdateTime.map { x => x.asInstanceOf[js.Any] },
+        "ViewExpandedText" -> ViewExpandedText.map { x => x.asInstanceOf[js.Any] },
+        "ViewOriginalText" -> ViewOriginalText.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Table]
     }
@@ -5005,17 +5005,17 @@ package glue {
    */
   @js.native
   trait TableError extends js.Object {
-    var TableName: js.UndefOr[NameString]
     var ErrorDetail: js.UndefOr[ErrorDetail]
+    var TableName: js.UndefOr[NameString]
   }
 
   object TableError {
     def apply(
-      TableName: js.UndefOr[NameString] = js.undefined,
-      ErrorDetail: js.UndefOr[ErrorDetail] = js.undefined): TableError = {
+      ErrorDetail: js.UndefOr[ErrorDetail] = js.undefined,
+      TableName: js.UndefOr[NameString] = js.undefined): TableError = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "TableName" -> TableName.map { x => x.asInstanceOf[js.Any] },
-        "ErrorDetail" -> ErrorDetail.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ErrorDetail" -> ErrorDetail.map { x => x.asInstanceOf[js.Any] },
+        "TableName" -> TableName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TableError]
     }
@@ -5026,47 +5026,47 @@ package glue {
    */
   @js.native
   trait TableInput extends js.Object {
-    var PartitionKeys: js.UndefOr[ColumnList]
-    var Name: js.UndefOr[NameString]
-    var TableType: js.UndefOr[TableTypeString]
+    var Name: NameString
+    var Description: js.UndefOr[DescriptionString]
+    var LastAccessTime: js.UndefOr[Timestamp]
     var LastAnalyzedTime: js.UndefOr[Timestamp]
+    var Owner: js.UndefOr[NameString]
+    var Parameters: js.UndefOr[ParametersMap]
+    var PartitionKeys: js.UndefOr[ColumnList]
     var Retention: js.UndefOr[NonNegativeInteger]
     var StorageDescriptor: js.UndefOr[StorageDescriptor]
-    var Description: js.UndefOr[DescriptionString]
+    var TableType: js.UndefOr[TableTypeString]
     var ViewExpandedText: js.UndefOr[ViewTextString]
-    var Parameters: js.UndefOr[ParametersMap]
-    var LastAccessTime: js.UndefOr[Timestamp]
     var ViewOriginalText: js.UndefOr[ViewTextString]
-    var Owner: js.UndefOr[NameString]
   }
 
   object TableInput {
     def apply(
-      PartitionKeys: js.UndefOr[ColumnList] = js.undefined,
-      Name: js.UndefOr[NameString] = js.undefined,
-      TableType: js.UndefOr[TableTypeString] = js.undefined,
+      Name: NameString,
+      Description: js.UndefOr[DescriptionString] = js.undefined,
+      LastAccessTime: js.UndefOr[Timestamp] = js.undefined,
       LastAnalyzedTime: js.UndefOr[Timestamp] = js.undefined,
+      Owner: js.UndefOr[NameString] = js.undefined,
+      Parameters: js.UndefOr[ParametersMap] = js.undefined,
+      PartitionKeys: js.UndefOr[ColumnList] = js.undefined,
       Retention: js.UndefOr[NonNegativeInteger] = js.undefined,
       StorageDescriptor: js.UndefOr[StorageDescriptor] = js.undefined,
-      Description: js.UndefOr[DescriptionString] = js.undefined,
+      TableType: js.UndefOr[TableTypeString] = js.undefined,
       ViewExpandedText: js.UndefOr[ViewTextString] = js.undefined,
-      Parameters: js.UndefOr[ParametersMap] = js.undefined,
-      LastAccessTime: js.UndefOr[Timestamp] = js.undefined,
-      ViewOriginalText: js.UndefOr[ViewTextString] = js.undefined,
-      Owner: js.UndefOr[NameString] = js.undefined): TableInput = {
+      ViewOriginalText: js.UndefOr[ViewTextString] = js.undefined): TableInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "PartitionKeys" -> PartitionKeys.map { x => x.asInstanceOf[js.Any] },
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
-        "TableType" -> TableType.map { x => x.asInstanceOf[js.Any] },
+        "Name" -> Name.asInstanceOf[js.Any],
+        "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
+        "LastAccessTime" -> LastAccessTime.map { x => x.asInstanceOf[js.Any] },
         "LastAnalyzedTime" -> LastAnalyzedTime.map { x => x.asInstanceOf[js.Any] },
+        "Owner" -> Owner.map { x => x.asInstanceOf[js.Any] },
+        "Parameters" -> Parameters.map { x => x.asInstanceOf[js.Any] },
+        "PartitionKeys" -> PartitionKeys.map { x => x.asInstanceOf[js.Any] },
         "Retention" -> Retention.map { x => x.asInstanceOf[js.Any] },
         "StorageDescriptor" -> StorageDescriptor.map { x => x.asInstanceOf[js.Any] },
-        "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
+        "TableType" -> TableType.map { x => x.asInstanceOf[js.Any] },
         "ViewExpandedText" -> ViewExpandedText.map { x => x.asInstanceOf[js.Any] },
-        "Parameters" -> Parameters.map { x => x.asInstanceOf[js.Any] },
-        "LastAccessTime" -> LastAccessTime.map { x => x.asInstanceOf[js.Any] },
-        "ViewOriginalText" -> ViewOriginalText.map { x => x.asInstanceOf[js.Any] },
-        "Owner" -> Owner.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ViewOriginalText" -> ViewOriginalText.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TableInput]
     }
@@ -5098,20 +5098,20 @@ package glue {
    */
   @js.native
   trait TableVersionError extends js.Object {
+    var ErrorDetail: js.UndefOr[ErrorDetail]
     var TableName: js.UndefOr[NameString]
     var VersionId: js.UndefOr[VersionString]
-    var ErrorDetail: js.UndefOr[ErrorDetail]
   }
 
   object TableVersionError {
     def apply(
+      ErrorDetail: js.UndefOr[ErrorDetail] = js.undefined,
       TableName: js.UndefOr[NameString] = js.undefined,
-      VersionId: js.UndefOr[VersionString] = js.undefined,
-      ErrorDetail: js.UndefOr[ErrorDetail] = js.undefined): TableVersionError = {
+      VersionId: js.UndefOr[VersionString] = js.undefined): TableVersionError = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "ErrorDetail" -> ErrorDetail.map { x => x.asInstanceOf[js.Any] },
         "TableName" -> TableName.map { x => x.asInstanceOf[js.Any] },
-        "VersionId" -> VersionId.map { x => x.asInstanceOf[js.Any] },
-        "ErrorDetail" -> ErrorDetail.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "VersionId" -> VersionId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TableVersionError]
     }
@@ -5122,34 +5122,34 @@ package glue {
    */
   @js.native
   trait Trigger extends js.Object {
+    var Actions: js.UndefOr[ActionList]
+    var Description: js.UndefOr[DescriptionString]
     var Id: js.UndefOr[IdString]
     var Name: js.UndefOr[NameString]
     var Predicate: js.UndefOr[Predicate]
-    var Description: js.UndefOr[DescriptionString]
     var Schedule: js.UndefOr[GenericString]
     var State: js.UndefOr[TriggerState]
-    var Actions: js.UndefOr[ActionList]
     var Type: js.UndefOr[TriggerType]
   }
 
   object Trigger {
     def apply(
+      Actions: js.UndefOr[ActionList] = js.undefined,
+      Description: js.UndefOr[DescriptionString] = js.undefined,
       Id: js.UndefOr[IdString] = js.undefined,
       Name: js.UndefOr[NameString] = js.undefined,
       Predicate: js.UndefOr[Predicate] = js.undefined,
-      Description: js.UndefOr[DescriptionString] = js.undefined,
       Schedule: js.UndefOr[GenericString] = js.undefined,
       State: js.UndefOr[TriggerState] = js.undefined,
-      Actions: js.UndefOr[ActionList] = js.undefined,
       Type: js.UndefOr[TriggerType] = js.undefined): Trigger = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "Actions" -> Actions.map { x => x.asInstanceOf[js.Any] },
+        "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
         "Id" -> Id.map { x => x.asInstanceOf[js.Any] },
         "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
         "Predicate" -> Predicate.map { x => x.asInstanceOf[js.Any] },
-        "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
         "Schedule" -> Schedule.map { x => x.asInstanceOf[js.Any] },
         "State" -> State.map { x => x.asInstanceOf[js.Any] },
-        "Actions" -> Actions.map { x => x.asInstanceOf[js.Any] },
         "Type" -> Type.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Trigger]
@@ -5182,26 +5182,26 @@ package glue {
    */
   @js.native
   trait TriggerUpdate extends js.Object {
+    var Actions: js.UndefOr[ActionList]
+    var Description: js.UndefOr[DescriptionString]
     var Name: js.UndefOr[NameString]
     var Predicate: js.UndefOr[Predicate]
-    var Description: js.UndefOr[DescriptionString]
     var Schedule: js.UndefOr[GenericString]
-    var Actions: js.UndefOr[ActionList]
   }
 
   object TriggerUpdate {
     def apply(
+      Actions: js.UndefOr[ActionList] = js.undefined,
+      Description: js.UndefOr[DescriptionString] = js.undefined,
       Name: js.UndefOr[NameString] = js.undefined,
       Predicate: js.UndefOr[Predicate] = js.undefined,
-      Description: js.UndefOr[DescriptionString] = js.undefined,
-      Schedule: js.UndefOr[GenericString] = js.undefined,
-      Actions: js.UndefOr[ActionList] = js.undefined): TriggerUpdate = {
+      Schedule: js.UndefOr[GenericString] = js.undefined): TriggerUpdate = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "Actions" -> Actions.map { x => x.asInstanceOf[js.Any] },
+        "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
         "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
         "Predicate" -> Predicate.map { x => x.asInstanceOf[js.Any] },
-        "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
-        "Schedule" -> Schedule.map { x => x.asInstanceOf[js.Any] },
-        "Actions" -> Actions.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Schedule" -> Schedule.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TriggerUpdate]
     }
@@ -5217,19 +5217,19 @@ package glue {
   @js.native
   trait UpdateClassifierRequest extends js.Object {
     var GrokClassifier: js.UndefOr[UpdateGrokClassifierRequest]
-    var XMLClassifier: js.UndefOr[UpdateXMLClassifierRequest]
     var JsonClassifier: js.UndefOr[UpdateJsonClassifierRequest]
+    var XMLClassifier: js.UndefOr[UpdateXMLClassifierRequest]
   }
 
   object UpdateClassifierRequest {
     def apply(
       GrokClassifier: js.UndefOr[UpdateGrokClassifierRequest] = js.undefined,
-      XMLClassifier: js.UndefOr[UpdateXMLClassifierRequest] = js.undefined,
-      JsonClassifier: js.UndefOr[UpdateJsonClassifierRequest] = js.undefined): UpdateClassifierRequest = {
+      JsonClassifier: js.UndefOr[UpdateJsonClassifierRequest] = js.undefined,
+      XMLClassifier: js.UndefOr[UpdateXMLClassifierRequest] = js.undefined): UpdateClassifierRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "GrokClassifier" -> GrokClassifier.map { x => x.asInstanceOf[js.Any] },
-        "XMLClassifier" -> XMLClassifier.map { x => x.asInstanceOf[js.Any] },
-        "JsonClassifier" -> JsonClassifier.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "JsonClassifier" -> JsonClassifier.map { x => x.asInstanceOf[js.Any] },
+        "XMLClassifier" -> XMLClassifier.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateClassifierRequest]
     }
@@ -5250,20 +5250,20 @@ package glue {
 
   @js.native
   trait UpdateConnectionRequest extends js.Object {
+    var ConnectionInput: ConnectionInput
+    var Name: NameString
     var CatalogId: js.UndefOr[CatalogIdString]
-    var Name: js.UndefOr[NameString]
-    var ConnectionInput: js.UndefOr[ConnectionInput]
   }
 
   object UpdateConnectionRequest {
     def apply(
-      CatalogId: js.UndefOr[CatalogIdString] = js.undefined,
-      Name: js.UndefOr[NameString] = js.undefined,
-      ConnectionInput: js.UndefOr[ConnectionInput] = js.undefined): UpdateConnectionRequest = {
+      ConnectionInput: ConnectionInput,
+      Name: NameString,
+      CatalogId: js.UndefOr[CatalogIdString] = js.undefined): UpdateConnectionRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "CatalogId" -> CatalogId.map { x => x.asInstanceOf[js.Any] },
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
-        "ConnectionInput" -> ConnectionInput.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ConnectionInput" -> ConnectionInput.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
+        "CatalogId" -> CatalogId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateConnectionRequest]
     }
@@ -5284,44 +5284,44 @@ package glue {
 
   @js.native
   trait UpdateCrawlerRequest extends js.Object {
-    var Role: js.UndefOr[Role]
-    var Name: js.UndefOr[NameString]
+    var Name: NameString
     var Classifiers: js.UndefOr[ClassifierNameList]
-    var SchemaChangePolicy: js.UndefOr[SchemaChangePolicy]
     var Configuration: js.UndefOr[CrawlerConfiguration]
+    var CrawlerSecurityConfiguration: js.UndefOr[CrawlerSecurityConfiguration]
     var DatabaseName: js.UndefOr[DatabaseName]
     var Description: js.UndefOr[DescriptionStringRemovable]
-    var CrawlerSecurityConfiguration: js.UndefOr[CrawlerSecurityConfiguration]
+    var Role: js.UndefOr[Role]
+    var Schedule: js.UndefOr[CronExpression]
+    var SchemaChangePolicy: js.UndefOr[SchemaChangePolicy]
     var TablePrefix: js.UndefOr[TablePrefix]
     var Targets: js.UndefOr[CrawlerTargets]
-    var Schedule: js.UndefOr[CronExpression]
   }
 
   object UpdateCrawlerRequest {
     def apply(
-      Role: js.UndefOr[Role] = js.undefined,
-      Name: js.UndefOr[NameString] = js.undefined,
+      Name: NameString,
       Classifiers: js.UndefOr[ClassifierNameList] = js.undefined,
-      SchemaChangePolicy: js.UndefOr[SchemaChangePolicy] = js.undefined,
       Configuration: js.UndefOr[CrawlerConfiguration] = js.undefined,
+      CrawlerSecurityConfiguration: js.UndefOr[CrawlerSecurityConfiguration] = js.undefined,
       DatabaseName: js.UndefOr[DatabaseName] = js.undefined,
       Description: js.UndefOr[DescriptionStringRemovable] = js.undefined,
-      CrawlerSecurityConfiguration: js.UndefOr[CrawlerSecurityConfiguration] = js.undefined,
+      Role: js.UndefOr[Role] = js.undefined,
+      Schedule: js.UndefOr[CronExpression] = js.undefined,
+      SchemaChangePolicy: js.UndefOr[SchemaChangePolicy] = js.undefined,
       TablePrefix: js.UndefOr[TablePrefix] = js.undefined,
-      Targets: js.UndefOr[CrawlerTargets] = js.undefined,
-      Schedule: js.UndefOr[CronExpression] = js.undefined): UpdateCrawlerRequest = {
+      Targets: js.UndefOr[CrawlerTargets] = js.undefined): UpdateCrawlerRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Role" -> Role.map { x => x.asInstanceOf[js.Any] },
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
+        "Name" -> Name.asInstanceOf[js.Any],
         "Classifiers" -> Classifiers.map { x => x.asInstanceOf[js.Any] },
-        "SchemaChangePolicy" -> SchemaChangePolicy.map { x => x.asInstanceOf[js.Any] },
         "Configuration" -> Configuration.map { x => x.asInstanceOf[js.Any] },
+        "CrawlerSecurityConfiguration" -> CrawlerSecurityConfiguration.map { x => x.asInstanceOf[js.Any] },
         "DatabaseName" -> DatabaseName.map { x => x.asInstanceOf[js.Any] },
         "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
-        "CrawlerSecurityConfiguration" -> CrawlerSecurityConfiguration.map { x => x.asInstanceOf[js.Any] },
+        "Role" -> Role.map { x => x.asInstanceOf[js.Any] },
+        "Schedule" -> Schedule.map { x => x.asInstanceOf[js.Any] },
+        "SchemaChangePolicy" -> SchemaChangePolicy.map { x => x.asInstanceOf[js.Any] },
         "TablePrefix" -> TablePrefix.map { x => x.asInstanceOf[js.Any] },
-        "Targets" -> Targets.map { x => x.asInstanceOf[js.Any] },
-        "Schedule" -> Schedule.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Targets" -> Targets.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateCrawlerRequest]
     }
@@ -5342,16 +5342,16 @@ package glue {
 
   @js.native
   trait UpdateCrawlerScheduleRequest extends js.Object {
-    var CrawlerName: js.UndefOr[NameString]
+    var CrawlerName: NameString
     var Schedule: js.UndefOr[CronExpression]
   }
 
   object UpdateCrawlerScheduleRequest {
     def apply(
-      CrawlerName: js.UndefOr[NameString] = js.undefined,
+      CrawlerName: NameString,
       Schedule: js.UndefOr[CronExpression] = js.undefined): UpdateCrawlerScheduleRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "CrawlerName" -> CrawlerName.map { x => x.asInstanceOf[js.Any] },
+        "CrawlerName" -> CrawlerName.asInstanceOf[js.Any],
         "Schedule" -> Schedule.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateCrawlerScheduleRequest]
@@ -5373,20 +5373,20 @@ package glue {
 
   @js.native
   trait UpdateDatabaseRequest extends js.Object {
+    var DatabaseInput: DatabaseInput
+    var Name: NameString
     var CatalogId: js.UndefOr[CatalogIdString]
-    var Name: js.UndefOr[NameString]
-    var DatabaseInput: js.UndefOr[DatabaseInput]
   }
 
   object UpdateDatabaseRequest {
     def apply(
-      CatalogId: js.UndefOr[CatalogIdString] = js.undefined,
-      Name: js.UndefOr[NameString] = js.undefined,
-      DatabaseInput: js.UndefOr[DatabaseInput] = js.undefined): UpdateDatabaseRequest = {
+      DatabaseInput: DatabaseInput,
+      Name: NameString,
+      CatalogId: js.UndefOr[CatalogIdString] = js.undefined): UpdateDatabaseRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "CatalogId" -> CatalogId.map { x => x.asInstanceOf[js.Any] },
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
-        "DatabaseInput" -> DatabaseInput.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "DatabaseInput" -> DatabaseInput.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
+        "CatalogId" -> CatalogId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateDatabaseRequest]
     }
@@ -5407,29 +5407,29 @@ package glue {
 
   @js.native
   trait UpdateDevEndpointRequest extends js.Object {
-    var DeletePublicKeys: js.UndefOr[PublicKeysList]
-    var UpdateEtlLibraries: js.UndefOr[BooleanValue]
+    var EndpointName: GenericString
     var AddPublicKeys: js.UndefOr[PublicKeysList]
     var CustomLibraries: js.UndefOr[DevEndpointCustomLibraries]
+    var DeletePublicKeys: js.UndefOr[PublicKeysList]
     var PublicKey: js.UndefOr[GenericString]
-    var EndpointName: js.UndefOr[GenericString]
+    var UpdateEtlLibraries: js.UndefOr[BooleanValue]
   }
 
   object UpdateDevEndpointRequest {
     def apply(
-      DeletePublicKeys: js.UndefOr[PublicKeysList] = js.undefined,
-      UpdateEtlLibraries: js.UndefOr[BooleanValue] = js.undefined,
+      EndpointName: GenericString,
       AddPublicKeys: js.UndefOr[PublicKeysList] = js.undefined,
       CustomLibraries: js.UndefOr[DevEndpointCustomLibraries] = js.undefined,
+      DeletePublicKeys: js.UndefOr[PublicKeysList] = js.undefined,
       PublicKey: js.UndefOr[GenericString] = js.undefined,
-      EndpointName: js.UndefOr[GenericString] = js.undefined): UpdateDevEndpointRequest = {
+      UpdateEtlLibraries: js.UndefOr[BooleanValue] = js.undefined): UpdateDevEndpointRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "DeletePublicKeys" -> DeletePublicKeys.map { x => x.asInstanceOf[js.Any] },
-        "UpdateEtlLibraries" -> UpdateEtlLibraries.map { x => x.asInstanceOf[js.Any] },
+        "EndpointName" -> EndpointName.asInstanceOf[js.Any],
         "AddPublicKeys" -> AddPublicKeys.map { x => x.asInstanceOf[js.Any] },
         "CustomLibraries" -> CustomLibraries.map { x => x.asInstanceOf[js.Any] },
+        "DeletePublicKeys" -> DeletePublicKeys.map { x => x.asInstanceOf[js.Any] },
         "PublicKey" -> PublicKey.map { x => x.asInstanceOf[js.Any] },
-        "EndpointName" -> EndpointName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "UpdateEtlLibraries" -> UpdateEtlLibraries.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateDevEndpointRequest]
     }
@@ -5453,23 +5453,23 @@ package glue {
    */
   @js.native
   trait UpdateGrokClassifierRequest extends js.Object {
-    var Name: js.UndefOr[NameString]
+    var Name: NameString
     var Classification: js.UndefOr[Classification]
-    var GrokPattern: js.UndefOr[GrokPattern]
     var CustomPatterns: js.UndefOr[CustomPatterns]
+    var GrokPattern: js.UndefOr[GrokPattern]
   }
 
   object UpdateGrokClassifierRequest {
     def apply(
-      Name: js.UndefOr[NameString] = js.undefined,
+      Name: NameString,
       Classification: js.UndefOr[Classification] = js.undefined,
-      GrokPattern: js.UndefOr[GrokPattern] = js.undefined,
-      CustomPatterns: js.UndefOr[CustomPatterns] = js.undefined): UpdateGrokClassifierRequest = {
+      CustomPatterns: js.UndefOr[CustomPatterns] = js.undefined,
+      GrokPattern: js.UndefOr[GrokPattern] = js.undefined): UpdateGrokClassifierRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
+        "Name" -> Name.asInstanceOf[js.Any],
         "Classification" -> Classification.map { x => x.asInstanceOf[js.Any] },
-        "GrokPattern" -> GrokPattern.map { x => x.asInstanceOf[js.Any] },
-        "CustomPatterns" -> CustomPatterns.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "CustomPatterns" -> CustomPatterns.map { x => x.asInstanceOf[js.Any] },
+        "GrokPattern" -> GrokPattern.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateGrokClassifierRequest]
     }
@@ -5477,17 +5477,17 @@ package glue {
 
   @js.native
   trait UpdateJobRequest extends js.Object {
-    var JobName: js.UndefOr[NameString]
-    var JobUpdate: js.UndefOr[JobUpdate]
+    var JobName: NameString
+    var JobUpdate: JobUpdate
   }
 
   object UpdateJobRequest {
     def apply(
-      JobName: js.UndefOr[NameString] = js.undefined,
-      JobUpdate: js.UndefOr[JobUpdate] = js.undefined): UpdateJobRequest = {
+      JobName: NameString,
+      JobUpdate: JobUpdate): UpdateJobRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "JobName" -> JobName.map { x => x.asInstanceOf[js.Any] },
-        "JobUpdate" -> JobUpdate.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "JobName" -> JobName.asInstanceOf[js.Any],
+        "JobUpdate" -> JobUpdate.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateJobRequest]
     }
@@ -5513,16 +5513,16 @@ package glue {
    */
   @js.native
   trait UpdateJsonClassifierRequest extends js.Object {
-    var Name: js.UndefOr[NameString]
+    var Name: NameString
     var JsonPath: js.UndefOr[JsonPath]
   }
 
   object UpdateJsonClassifierRequest {
     def apply(
-      Name: js.UndefOr[NameString] = js.undefined,
+      Name: NameString,
       JsonPath: js.UndefOr[JsonPath] = js.undefined): UpdateJsonClassifierRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
+        "Name" -> Name.asInstanceOf[js.Any],
         "JsonPath" -> JsonPath.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateJsonClassifierRequest]
@@ -5531,25 +5531,25 @@ package glue {
 
   @js.native
   trait UpdatePartitionRequest extends js.Object {
-    var PartitionValueList: js.UndefOr[BoundedPartitionValueList]
-    var PartitionInput: js.UndefOr[PartitionInput]
-    var DatabaseName: js.UndefOr[NameString]
-    var TableName: js.UndefOr[NameString]
+    var DatabaseName: NameString
+    var PartitionInput: PartitionInput
+    var PartitionValueList: BoundedPartitionValueList
+    var TableName: NameString
     var CatalogId: js.UndefOr[CatalogIdString]
   }
 
   object UpdatePartitionRequest {
     def apply(
-      PartitionValueList: js.UndefOr[BoundedPartitionValueList] = js.undefined,
-      PartitionInput: js.UndefOr[PartitionInput] = js.undefined,
-      DatabaseName: js.UndefOr[NameString] = js.undefined,
-      TableName: js.UndefOr[NameString] = js.undefined,
+      DatabaseName: NameString,
+      PartitionInput: PartitionInput,
+      PartitionValueList: BoundedPartitionValueList,
+      TableName: NameString,
       CatalogId: js.UndefOr[CatalogIdString] = js.undefined): UpdatePartitionRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "PartitionValueList" -> PartitionValueList.map { x => x.asInstanceOf[js.Any] },
-        "PartitionInput" -> PartitionInput.map { x => x.asInstanceOf[js.Any] },
-        "DatabaseName" -> DatabaseName.map { x => x.asInstanceOf[js.Any] },
-        "TableName" -> TableName.map { x => x.asInstanceOf[js.Any] },
+        "DatabaseName" -> DatabaseName.asInstanceOf[js.Any],
+        "PartitionInput" -> PartitionInput.asInstanceOf[js.Any],
+        "PartitionValueList" -> PartitionValueList.asInstanceOf[js.Any],
+        "TableName" -> TableName.asInstanceOf[js.Any],
         "CatalogId" -> CatalogId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdatePartitionRequest]
@@ -5571,22 +5571,22 @@ package glue {
 
   @js.native
   trait UpdateTableRequest extends js.Object {
+    var DatabaseName: NameString
+    var TableInput: TableInput
     var CatalogId: js.UndefOr[CatalogIdString]
-    var DatabaseName: js.UndefOr[NameString]
-    var TableInput: js.UndefOr[TableInput]
     var SkipArchive: js.UndefOr[BooleanNullable]
   }
 
   object UpdateTableRequest {
     def apply(
+      DatabaseName: NameString,
+      TableInput: TableInput,
       CatalogId: js.UndefOr[CatalogIdString] = js.undefined,
-      DatabaseName: js.UndefOr[NameString] = js.undefined,
-      TableInput: js.UndefOr[TableInput] = js.undefined,
       SkipArchive: js.UndefOr[BooleanNullable] = js.undefined): UpdateTableRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "DatabaseName" -> DatabaseName.asInstanceOf[js.Any],
+        "TableInput" -> TableInput.asInstanceOf[js.Any],
         "CatalogId" -> CatalogId.map { x => x.asInstanceOf[js.Any] },
-        "DatabaseName" -> DatabaseName.map { x => x.asInstanceOf[js.Any] },
-        "TableInput" -> TableInput.map { x => x.asInstanceOf[js.Any] },
         "SkipArchive" -> SkipArchive.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateTableRequest]
@@ -5608,17 +5608,17 @@ package glue {
 
   @js.native
   trait UpdateTriggerRequest extends js.Object {
-    var Name: js.UndefOr[NameString]
-    var TriggerUpdate: js.UndefOr[TriggerUpdate]
+    var Name: NameString
+    var TriggerUpdate: TriggerUpdate
   }
 
   object UpdateTriggerRequest {
     def apply(
-      Name: js.UndefOr[NameString] = js.undefined,
-      TriggerUpdate: js.UndefOr[TriggerUpdate] = js.undefined): UpdateTriggerRequest = {
+      Name: NameString,
+      TriggerUpdate: TriggerUpdate): UpdateTriggerRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
-        "TriggerUpdate" -> TriggerUpdate.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Name" -> Name.asInstanceOf[js.Any],
+        "TriggerUpdate" -> TriggerUpdate.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateTriggerRequest]
     }
@@ -5641,23 +5641,23 @@ package glue {
 
   @js.native
   trait UpdateUserDefinedFunctionRequest extends js.Object {
+    var DatabaseName: NameString
+    var FunctionInput: UserDefinedFunctionInput
+    var FunctionName: NameString
     var CatalogId: js.UndefOr[CatalogIdString]
-    var DatabaseName: js.UndefOr[NameString]
-    var FunctionName: js.UndefOr[NameString]
-    var FunctionInput: js.UndefOr[UserDefinedFunctionInput]
   }
 
   object UpdateUserDefinedFunctionRequest {
     def apply(
-      CatalogId: js.UndefOr[CatalogIdString] = js.undefined,
-      DatabaseName: js.UndefOr[NameString] = js.undefined,
-      FunctionName: js.UndefOr[NameString] = js.undefined,
-      FunctionInput: js.UndefOr[UserDefinedFunctionInput] = js.undefined): UpdateUserDefinedFunctionRequest = {
+      DatabaseName: NameString,
+      FunctionInput: UserDefinedFunctionInput,
+      FunctionName: NameString,
+      CatalogId: js.UndefOr[CatalogIdString] = js.undefined): UpdateUserDefinedFunctionRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "CatalogId" -> CatalogId.map { x => x.asInstanceOf[js.Any] },
-        "DatabaseName" -> DatabaseName.map { x => x.asInstanceOf[js.Any] },
-        "FunctionName" -> FunctionName.map { x => x.asInstanceOf[js.Any] },
-        "FunctionInput" -> FunctionInput.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "DatabaseName" -> DatabaseName.asInstanceOf[js.Any],
+        "FunctionInput" -> FunctionInput.asInstanceOf[js.Any],
+        "FunctionName" -> FunctionName.asInstanceOf[js.Any],
+        "CatalogId" -> CatalogId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateUserDefinedFunctionRequest]
     }
@@ -5681,18 +5681,18 @@ package glue {
    */
   @js.native
   trait UpdateXMLClassifierRequest extends js.Object {
-    var Name: js.UndefOr[NameString]
+    var Name: NameString
     var Classification: js.UndefOr[Classification]
     var RowTag: js.UndefOr[RowTag]
   }
 
   object UpdateXMLClassifierRequest {
     def apply(
-      Name: js.UndefOr[NameString] = js.undefined,
+      Name: NameString,
       Classification: js.UndefOr[Classification] = js.undefined,
       RowTag: js.UndefOr[RowTag] = js.undefined): UpdateXMLClassifierRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
+        "Name" -> Name.asInstanceOf[js.Any],
         "Classification" -> Classification.map { x => x.asInstanceOf[js.Any] },
         "RowTag" -> RowTag.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
@@ -5706,28 +5706,28 @@ package glue {
   @js.native
   trait UserDefinedFunction extends js.Object {
     var ClassName: js.UndefOr[NameString]
-    var OwnerType: js.UndefOr[PrincipalType]
-    var ResourceUris: js.UndefOr[ResourceUriList]
+    var CreateTime: js.UndefOr[Timestamp]
     var FunctionName: js.UndefOr[NameString]
     var OwnerName: js.UndefOr[NameString]
-    var CreateTime: js.UndefOr[Timestamp]
+    var OwnerType: js.UndefOr[PrincipalType]
+    var ResourceUris: js.UndefOr[ResourceUriList]
   }
 
   object UserDefinedFunction {
     def apply(
       ClassName: js.UndefOr[NameString] = js.undefined,
-      OwnerType: js.UndefOr[PrincipalType] = js.undefined,
-      ResourceUris: js.UndefOr[ResourceUriList] = js.undefined,
+      CreateTime: js.UndefOr[Timestamp] = js.undefined,
       FunctionName: js.UndefOr[NameString] = js.undefined,
       OwnerName: js.UndefOr[NameString] = js.undefined,
-      CreateTime: js.UndefOr[Timestamp] = js.undefined): UserDefinedFunction = {
+      OwnerType: js.UndefOr[PrincipalType] = js.undefined,
+      ResourceUris: js.UndefOr[ResourceUriList] = js.undefined): UserDefinedFunction = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ClassName" -> ClassName.map { x => x.asInstanceOf[js.Any] },
-        "OwnerType" -> OwnerType.map { x => x.asInstanceOf[js.Any] },
-        "ResourceUris" -> ResourceUris.map { x => x.asInstanceOf[js.Any] },
+        "CreateTime" -> CreateTime.map { x => x.asInstanceOf[js.Any] },
         "FunctionName" -> FunctionName.map { x => x.asInstanceOf[js.Any] },
         "OwnerName" -> OwnerName.map { x => x.asInstanceOf[js.Any] },
-        "CreateTime" -> CreateTime.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "OwnerType" -> OwnerType.map { x => x.asInstanceOf[js.Any] },
+        "ResourceUris" -> ResourceUris.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UserDefinedFunction]
     }
@@ -5739,25 +5739,25 @@ package glue {
   @js.native
   trait UserDefinedFunctionInput extends js.Object {
     var ClassName: js.UndefOr[NameString]
-    var OwnerType: js.UndefOr[PrincipalType]
-    var ResourceUris: js.UndefOr[ResourceUriList]
     var FunctionName: js.UndefOr[NameString]
     var OwnerName: js.UndefOr[NameString]
+    var OwnerType: js.UndefOr[PrincipalType]
+    var ResourceUris: js.UndefOr[ResourceUriList]
   }
 
   object UserDefinedFunctionInput {
     def apply(
       ClassName: js.UndefOr[NameString] = js.undefined,
-      OwnerType: js.UndefOr[PrincipalType] = js.undefined,
-      ResourceUris: js.UndefOr[ResourceUriList] = js.undefined,
       FunctionName: js.UndefOr[NameString] = js.undefined,
-      OwnerName: js.UndefOr[NameString] = js.undefined): UserDefinedFunctionInput = {
+      OwnerName: js.UndefOr[NameString] = js.undefined,
+      OwnerType: js.UndefOr[PrincipalType] = js.undefined,
+      ResourceUris: js.UndefOr[ResourceUriList] = js.undefined): UserDefinedFunctionInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ClassName" -> ClassName.map { x => x.asInstanceOf[js.Any] },
-        "OwnerType" -> OwnerType.map { x => x.asInstanceOf[js.Any] },
-        "ResourceUris" -> ResourceUris.map { x => x.asInstanceOf[js.Any] },
         "FunctionName" -> FunctionName.map { x => x.asInstanceOf[js.Any] },
-        "OwnerName" -> OwnerName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "OwnerName" -> OwnerName.map { x => x.asInstanceOf[js.Any] },
+        "OwnerType" -> OwnerType.map { x => x.asInstanceOf[js.Any] },
+        "ResourceUris" -> ResourceUris.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UserDefinedFunctionInput]
     }
@@ -5768,29 +5768,29 @@ package glue {
    */
   @js.native
   trait XMLClassifier extends js.Object {
-    var Classification: js.UndefOr[Classification]
-    var Name: js.UndefOr[NameString]
-    var LastUpdated: js.UndefOr[Timestamp]
-    var Version: js.UndefOr[VersionId]
-    var RowTag: js.UndefOr[RowTag]
+    var Classification: Classification
+    var Name: NameString
     var CreationTime: js.UndefOr[Timestamp]
+    var LastUpdated: js.UndefOr[Timestamp]
+    var RowTag: js.UndefOr[RowTag]
+    var Version: js.UndefOr[VersionId]
   }
 
   object XMLClassifier {
     def apply(
-      Classification: js.UndefOr[Classification] = js.undefined,
-      Name: js.UndefOr[NameString] = js.undefined,
+      Classification: Classification,
+      Name: NameString,
+      CreationTime: js.UndefOr[Timestamp] = js.undefined,
       LastUpdated: js.UndefOr[Timestamp] = js.undefined,
-      Version: js.UndefOr[VersionId] = js.undefined,
       RowTag: js.UndefOr[RowTag] = js.undefined,
-      CreationTime: js.UndefOr[Timestamp] = js.undefined): XMLClassifier = {
+      Version: js.UndefOr[VersionId] = js.undefined): XMLClassifier = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Classification" -> Classification.map { x => x.asInstanceOf[js.Any] },
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
+        "Classification" -> Classification.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
+        "CreationTime" -> CreationTime.map { x => x.asInstanceOf[js.Any] },
         "LastUpdated" -> LastUpdated.map { x => x.asInstanceOf[js.Any] },
-        "Version" -> Version.map { x => x.asInstanceOf[js.Any] },
         "RowTag" -> RowTag.map { x => x.asInstanceOf[js.Any] },
-        "CreationTime" -> CreationTime.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Version" -> Version.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[XMLClassifier]
     }

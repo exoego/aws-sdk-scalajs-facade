@@ -30,34 +30,34 @@ package comprehendmedical {
    */
   @js.native
   trait Attribute extends js.Object {
-    var Id: js.UndefOr[Int]
-    var Traits: js.UndefOr[TraitList]
     var BeginOffset: js.UndefOr[Int]
     var EndOffset: js.UndefOr[Int]
-    var Text: js.UndefOr[String]
-    var Score: js.UndefOr[Float]
+    var Id: js.UndefOr[Int]
     var RelationshipScore: js.UndefOr[Float]
+    var Score: js.UndefOr[Float]
+    var Text: js.UndefOr[String]
+    var Traits: js.UndefOr[TraitList]
     var Type: js.UndefOr[EntitySubType]
   }
 
   object Attribute {
     def apply(
-      Id: js.UndefOr[Int] = js.undefined,
-      Traits: js.UndefOr[TraitList] = js.undefined,
       BeginOffset: js.UndefOr[Int] = js.undefined,
       EndOffset: js.UndefOr[Int] = js.undefined,
-      Text: js.UndefOr[String] = js.undefined,
-      Score: js.UndefOr[Float] = js.undefined,
+      Id: js.UndefOr[Int] = js.undefined,
       RelationshipScore: js.UndefOr[Float] = js.undefined,
+      Score: js.UndefOr[Float] = js.undefined,
+      Text: js.UndefOr[String] = js.undefined,
+      Traits: js.UndefOr[TraitList] = js.undefined,
       Type: js.UndefOr[EntitySubType] = js.undefined): Attribute = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Id" -> Id.map { x => x.asInstanceOf[js.Any] },
-        "Traits" -> Traits.map { x => x.asInstanceOf[js.Any] },
         "BeginOffset" -> BeginOffset.map { x => x.asInstanceOf[js.Any] },
         "EndOffset" -> EndOffset.map { x => x.asInstanceOf[js.Any] },
-        "Text" -> Text.map { x => x.asInstanceOf[js.Any] },
-        "Score" -> Score.map { x => x.asInstanceOf[js.Any] },
+        "Id" -> Id.map { x => x.asInstanceOf[js.Any] },
         "RelationshipScore" -> RelationshipScore.map { x => x.asInstanceOf[js.Any] },
+        "Score" -> Score.map { x => x.asInstanceOf[js.Any] },
+        "Text" -> Text.map { x => x.asInstanceOf[js.Any] },
+        "Traits" -> Traits.map { x => x.asInstanceOf[js.Any] },
         "Type" -> Type.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Attribute]
@@ -75,14 +75,14 @@ package comprehendmedical {
 
   @js.native
   trait DetectEntitiesRequest extends js.Object {
-    var Text: js.UndefOr[BoundedLengthString]
+    var Text: BoundedLengthString
   }
 
   object DetectEntitiesRequest {
     def apply(
-      Text: js.UndefOr[BoundedLengthString] = js.undefined): DetectEntitiesRequest = {
+      Text: BoundedLengthString): DetectEntitiesRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Text" -> Text.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Text" -> Text.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DetectEntitiesRequest]
     }
@@ -90,20 +90,20 @@ package comprehendmedical {
 
   @js.native
   trait DetectEntitiesResponse extends js.Object {
-    var Entities: js.UndefOr[EntityList]
-    var UnmappedAttributes: js.UndefOr[UnmappedAttributeList]
+    var Entities: EntityList
     var PaginationToken: js.UndefOr[String]
+    var UnmappedAttributes: js.UndefOr[UnmappedAttributeList]
   }
 
   object DetectEntitiesResponse {
     def apply(
-      Entities: js.UndefOr[EntityList] = js.undefined,
-      UnmappedAttributes: js.UndefOr[UnmappedAttributeList] = js.undefined,
-      PaginationToken: js.UndefOr[String] = js.undefined): DetectEntitiesResponse = {
+      Entities: EntityList,
+      PaginationToken: js.UndefOr[String] = js.undefined,
+      UnmappedAttributes: js.UndefOr[UnmappedAttributeList] = js.undefined): DetectEntitiesResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Entities" -> Entities.map { x => x.asInstanceOf[js.Any] },
-        "UnmappedAttributes" -> UnmappedAttributes.map { x => x.asInstanceOf[js.Any] },
-        "PaginationToken" -> PaginationToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Entities" -> Entities.asInstanceOf[js.Any],
+        "PaginationToken" -> PaginationToken.map { x => x.asInstanceOf[js.Any] },
+        "UnmappedAttributes" -> UnmappedAttributes.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DetectEntitiesResponse]
     }
@@ -111,14 +111,14 @@ package comprehendmedical {
 
   @js.native
   trait DetectPHIRequest extends js.Object {
-    var Text: js.UndefOr[BoundedLengthString]
+    var Text: BoundedLengthString
   }
 
   object DetectPHIRequest {
     def apply(
-      Text: js.UndefOr[BoundedLengthString] = js.undefined): DetectPHIRequest = {
+      Text: BoundedLengthString): DetectPHIRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Text" -> Text.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Text" -> Text.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DetectPHIRequest]
     }
@@ -126,16 +126,16 @@ package comprehendmedical {
 
   @js.native
   trait DetectPHIResponse extends js.Object {
-    var Entities: js.UndefOr[EntityList]
+    var Entities: EntityList
     var PaginationToken: js.UndefOr[String]
   }
 
   object DetectPHIResponse {
     def apply(
-      Entities: js.UndefOr[EntityList] = js.undefined,
+      Entities: EntityList,
       PaginationToken: js.UndefOr[String] = js.undefined): DetectPHIResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Entities" -> Entities.map { x => x.asInstanceOf[js.Any] },
+        "Entities" -> Entities.asInstanceOf[js.Any],
         "PaginationToken" -> PaginationToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DetectPHIResponse]
@@ -147,37 +147,37 @@ package comprehendmedical {
    */
   @js.native
   trait Entity extends js.Object {
-    var Id: js.UndefOr[Int]
-    var Traits: js.UndefOr[TraitList]
-    var Category: js.UndefOr[EntityType]
     var Attributes: js.UndefOr[AttributeList]
     var BeginOffset: js.UndefOr[Int]
+    var Category: js.UndefOr[EntityType]
     var EndOffset: js.UndefOr[Int]
-    var Text: js.UndefOr[String]
+    var Id: js.UndefOr[Int]
     var Score: js.UndefOr[Float]
+    var Text: js.UndefOr[String]
+    var Traits: js.UndefOr[TraitList]
     var Type: js.UndefOr[EntitySubType]
   }
 
   object Entity {
     def apply(
-      Id: js.UndefOr[Int] = js.undefined,
-      Traits: js.UndefOr[TraitList] = js.undefined,
-      Category: js.UndefOr[EntityType] = js.undefined,
       Attributes: js.UndefOr[AttributeList] = js.undefined,
       BeginOffset: js.UndefOr[Int] = js.undefined,
+      Category: js.UndefOr[EntityType] = js.undefined,
       EndOffset: js.UndefOr[Int] = js.undefined,
-      Text: js.UndefOr[String] = js.undefined,
+      Id: js.UndefOr[Int] = js.undefined,
       Score: js.UndefOr[Float] = js.undefined,
+      Text: js.UndefOr[String] = js.undefined,
+      Traits: js.UndefOr[TraitList] = js.undefined,
       Type: js.UndefOr[EntitySubType] = js.undefined): Entity = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Id" -> Id.map { x => x.asInstanceOf[js.Any] },
-        "Traits" -> Traits.map { x => x.asInstanceOf[js.Any] },
-        "Category" -> Category.map { x => x.asInstanceOf[js.Any] },
         "Attributes" -> Attributes.map { x => x.asInstanceOf[js.Any] },
         "BeginOffset" -> BeginOffset.map { x => x.asInstanceOf[js.Any] },
+        "Category" -> Category.map { x => x.asInstanceOf[js.Any] },
         "EndOffset" -> EndOffset.map { x => x.asInstanceOf[js.Any] },
-        "Text" -> Text.map { x => x.asInstanceOf[js.Any] },
+        "Id" -> Id.map { x => x.asInstanceOf[js.Any] },
         "Score" -> Score.map { x => x.asInstanceOf[js.Any] },
+        "Text" -> Text.map { x => x.asInstanceOf[js.Any] },
+        "Traits" -> Traits.map { x => x.asInstanceOf[js.Any] },
         "Type" -> Type.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Entity]
@@ -253,17 +253,17 @@ package comprehendmedical {
    */
   @js.native
   trait UnmappedAttribute extends js.Object {
-    var Type: js.UndefOr[EntityType]
     var Attribute: js.UndefOr[Attribute]
+    var Type: js.UndefOr[EntityType]
   }
 
   object UnmappedAttribute {
     def apply(
-      Type: js.UndefOr[EntityType] = js.undefined,
-      Attribute: js.UndefOr[Attribute] = js.undefined): UnmappedAttribute = {
+      Attribute: js.UndefOr[Attribute] = js.undefined,
+      Type: js.UndefOr[EntityType] = js.undefined): UnmappedAttribute = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Type" -> Type.map { x => x.asInstanceOf[js.Any] },
-        "Attribute" -> Attribute.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Attribute" -> Attribute.map { x => x.asInstanceOf[js.Any] },
+        "Type" -> Type.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UnmappedAttribute]
     }

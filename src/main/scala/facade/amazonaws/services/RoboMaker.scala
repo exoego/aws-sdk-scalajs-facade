@@ -112,14 +112,14 @@ package robomaker {
 
   @js.native
   trait BatchDescribeSimulationJobRequest extends js.Object {
-    var jobs: js.UndefOr[Arns]
+    var jobs: Arns
   }
 
   object BatchDescribeSimulationJobRequest {
     def apply(
-      jobs: js.UndefOr[Arns] = js.undefined): BatchDescribeSimulationJobRequest = {
+      jobs: Arns): BatchDescribeSimulationJobRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "jobs" -> jobs.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "jobs" -> jobs.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BatchDescribeSimulationJobRequest]
     }
@@ -145,14 +145,14 @@ package robomaker {
 
   @js.native
   trait CancelSimulationJobRequest extends js.Object {
-    var job: js.UndefOr[Arn]
+    var job: Arn
   }
 
   object CancelSimulationJobRequest {
     def apply(
-      job: js.UndefOr[Arn] = js.undefined): CancelSimulationJobRequest = {
+      job: Arn): CancelSimulationJobRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "job" -> job.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "job" -> job.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CancelSimulationJobRequest]
     }
@@ -173,23 +173,23 @@ package robomaker {
 
   @js.native
   trait CreateDeploymentJobRequest extends js.Object {
+    var clientRequestToken: ClientRequestToken
+    var deploymentApplicationConfigs: DeploymentApplicationConfigs
+    var fleet: Arn
     var deploymentConfig: js.UndefOr[DeploymentConfig]
-    var clientRequestToken: js.UndefOr[ClientRequestToken]
-    var fleet: js.UndefOr[Arn]
-    var deploymentApplicationConfigs: js.UndefOr[DeploymentApplicationConfigs]
   }
 
   object CreateDeploymentJobRequest {
     def apply(
-      deploymentConfig: js.UndefOr[DeploymentConfig] = js.undefined,
-      clientRequestToken: js.UndefOr[ClientRequestToken] = js.undefined,
-      fleet: js.UndefOr[Arn] = js.undefined,
-      deploymentApplicationConfigs: js.UndefOr[DeploymentApplicationConfigs] = js.undefined): CreateDeploymentJobRequest = {
+      clientRequestToken: ClientRequestToken,
+      deploymentApplicationConfigs: DeploymentApplicationConfigs,
+      fleet: Arn,
+      deploymentConfig: js.UndefOr[DeploymentConfig] = js.undefined): CreateDeploymentJobRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "deploymentConfig" -> deploymentConfig.map { x => x.asInstanceOf[js.Any] },
-        "clientRequestToken" -> clientRequestToken.map { x => x.asInstanceOf[js.Any] },
-        "fleet" -> fleet.map { x => x.asInstanceOf[js.Any] },
-        "deploymentApplicationConfigs" -> deploymentApplicationConfigs.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "clientRequestToken" -> clientRequestToken.asInstanceOf[js.Any],
+        "deploymentApplicationConfigs" -> deploymentApplicationConfigs.asInstanceOf[js.Any],
+        "fleet" -> fleet.asInstanceOf[js.Any],
+        "deploymentConfig" -> deploymentConfig.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateDeploymentJobRequest]
     }
@@ -198,34 +198,34 @@ package robomaker {
   @js.native
   trait CreateDeploymentJobResponse extends js.Object {
     var arn: js.UndefOr[Arn]
+    var createdAt: js.UndefOr[CreatedAt]
     var deploymentApplicationConfigs: js.UndefOr[DeploymentApplicationConfigs]
     var deploymentConfig: js.UndefOr[DeploymentConfig]
+    var failureCode: js.UndefOr[DeploymentJobErrorCode]
     var failureReason: js.UndefOr[GenericString]
     var fleet: js.UndefOr[Arn]
-    var failureCode: js.UndefOr[DeploymentJobErrorCode]
     var status: js.UndefOr[DeploymentStatus]
-    var createdAt: js.UndefOr[CreatedAt]
   }
 
   object CreateDeploymentJobResponse {
     def apply(
       arn: js.UndefOr[Arn] = js.undefined,
+      createdAt: js.UndefOr[CreatedAt] = js.undefined,
       deploymentApplicationConfigs: js.UndefOr[DeploymentApplicationConfigs] = js.undefined,
       deploymentConfig: js.UndefOr[DeploymentConfig] = js.undefined,
+      failureCode: js.UndefOr[DeploymentJobErrorCode] = js.undefined,
       failureReason: js.UndefOr[GenericString] = js.undefined,
       fleet: js.UndefOr[Arn] = js.undefined,
-      failureCode: js.UndefOr[DeploymentJobErrorCode] = js.undefined,
-      status: js.UndefOr[DeploymentStatus] = js.undefined,
-      createdAt: js.UndefOr[CreatedAt] = js.undefined): CreateDeploymentJobResponse = {
+      status: js.UndefOr[DeploymentStatus] = js.undefined): CreateDeploymentJobResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
         "arn" -> arn.map { x => x.asInstanceOf[js.Any] },
+        "createdAt" -> createdAt.map { x => x.asInstanceOf[js.Any] },
         "deploymentApplicationConfigs" -> deploymentApplicationConfigs.map { x => x.asInstanceOf[js.Any] },
         "deploymentConfig" -> deploymentConfig.map { x => x.asInstanceOf[js.Any] },
+        "failureCode" -> failureCode.map { x => x.asInstanceOf[js.Any] },
         "failureReason" -> failureReason.map { x => x.asInstanceOf[js.Any] },
         "fleet" -> fleet.map { x => x.asInstanceOf[js.Any] },
-        "failureCode" -> failureCode.map { x => x.asInstanceOf[js.Any] },
-        "status" -> status.map { x => x.asInstanceOf[js.Any] },
-        "createdAt" -> createdAt.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "status" -> status.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateDeploymentJobResponse]
     }
@@ -233,14 +233,14 @@ package robomaker {
 
   @js.native
   trait CreateFleetRequest extends js.Object {
-    var name: js.UndefOr[Name]
+    var name: Name
   }
 
   object CreateFleetRequest {
     def apply(
-      name: js.UndefOr[Name] = js.undefined): CreateFleetRequest = {
+      name: Name): CreateFleetRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "name" -> name.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "name" -> name.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateFleetRequest]
     }
@@ -249,19 +249,19 @@ package robomaker {
   @js.native
   trait CreateFleetResponse extends js.Object {
     var arn: js.UndefOr[Arn]
-    var name: js.UndefOr[Name]
     var createdAt: js.UndefOr[CreatedAt]
+    var name: js.UndefOr[Name]
   }
 
   object CreateFleetResponse {
     def apply(
       arn: js.UndefOr[Arn] = js.undefined,
-      name: js.UndefOr[Name] = js.undefined,
-      createdAt: js.UndefOr[CreatedAt] = js.undefined): CreateFleetResponse = {
+      createdAt: js.UndefOr[CreatedAt] = js.undefined,
+      name: js.UndefOr[Name] = js.undefined): CreateFleetResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
         "arn" -> arn.map { x => x.asInstanceOf[js.Any] },
-        "name" -> name.map { x => x.asInstanceOf[js.Any] },
-        "createdAt" -> createdAt.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "createdAt" -> createdAt.map { x => x.asInstanceOf[js.Any] },
+        "name" -> name.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateFleetResponse]
     }
@@ -269,20 +269,20 @@ package robomaker {
 
   @js.native
   trait CreateRobotApplicationRequest extends js.Object {
-    var name: js.UndefOr[Name]
-    var sources: js.UndefOr[SourceConfigs]
-    var robotSoftwareSuite: js.UndefOr[RobotSoftwareSuite]
+    var name: Name
+    var robotSoftwareSuite: RobotSoftwareSuite
+    var sources: SourceConfigs
   }
 
   object CreateRobotApplicationRequest {
     def apply(
-      name: js.UndefOr[Name] = js.undefined,
-      sources: js.UndefOr[SourceConfigs] = js.undefined,
-      robotSoftwareSuite: js.UndefOr[RobotSoftwareSuite] = js.undefined): CreateRobotApplicationRequest = {
+      name: Name,
+      robotSoftwareSuite: RobotSoftwareSuite,
+      sources: SourceConfigs): CreateRobotApplicationRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "name" -> name.map { x => x.asInstanceOf[js.Any] },
-        "sources" -> sources.map { x => x.asInstanceOf[js.Any] },
-        "robotSoftwareSuite" -> robotSoftwareSuite.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "name" -> name.asInstanceOf[js.Any],
+        "robotSoftwareSuite" -> robotSoftwareSuite.asInstanceOf[js.Any],
+        "sources" -> sources.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateRobotApplicationRequest]
     }
@@ -290,32 +290,32 @@ package robomaker {
 
   @js.native
   trait CreateRobotApplicationResponse extends js.Object {
-    var robotSoftwareSuite: js.UndefOr[RobotSoftwareSuite]
     var arn: js.UndefOr[Arn]
+    var lastUpdatedAt: js.UndefOr[LastUpdatedAt]
     var name: js.UndefOr[Name]
     var revisionId: js.UndefOr[RevisionId]
-    var version: js.UndefOr[Version]
+    var robotSoftwareSuite: js.UndefOr[RobotSoftwareSuite]
     var sources: js.UndefOr[Sources]
-    var lastUpdatedAt: js.UndefOr[LastUpdatedAt]
+    var version: js.UndefOr[Version]
   }
 
   object CreateRobotApplicationResponse {
     def apply(
-      robotSoftwareSuite: js.UndefOr[RobotSoftwareSuite] = js.undefined,
       arn: js.UndefOr[Arn] = js.undefined,
+      lastUpdatedAt: js.UndefOr[LastUpdatedAt] = js.undefined,
       name: js.UndefOr[Name] = js.undefined,
       revisionId: js.UndefOr[RevisionId] = js.undefined,
-      version: js.UndefOr[Version] = js.undefined,
+      robotSoftwareSuite: js.UndefOr[RobotSoftwareSuite] = js.undefined,
       sources: js.UndefOr[Sources] = js.undefined,
-      lastUpdatedAt: js.UndefOr[LastUpdatedAt] = js.undefined): CreateRobotApplicationResponse = {
+      version: js.UndefOr[Version] = js.undefined): CreateRobotApplicationResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "robotSoftwareSuite" -> robotSoftwareSuite.map { x => x.asInstanceOf[js.Any] },
         "arn" -> arn.map { x => x.asInstanceOf[js.Any] },
+        "lastUpdatedAt" -> lastUpdatedAt.map { x => x.asInstanceOf[js.Any] },
         "name" -> name.map { x => x.asInstanceOf[js.Any] },
         "revisionId" -> revisionId.map { x => x.asInstanceOf[js.Any] },
-        "version" -> version.map { x => x.asInstanceOf[js.Any] },
+        "robotSoftwareSuite" -> robotSoftwareSuite.map { x => x.asInstanceOf[js.Any] },
         "sources" -> sources.map { x => x.asInstanceOf[js.Any] },
-        "lastUpdatedAt" -> lastUpdatedAt.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "version" -> version.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateRobotApplicationResponse]
     }
@@ -323,16 +323,16 @@ package robomaker {
 
   @js.native
   trait CreateRobotApplicationVersionRequest extends js.Object {
-    var application: js.UndefOr[Arn]
+    var application: Arn
     var currentRevisionId: js.UndefOr[RevisionId]
   }
 
   object CreateRobotApplicationVersionRequest {
     def apply(
-      application: js.UndefOr[Arn] = js.undefined,
+      application: Arn,
       currentRevisionId: js.UndefOr[RevisionId] = js.undefined): CreateRobotApplicationVersionRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "application" -> application.map { x => x.asInstanceOf[js.Any] },
+        "application" -> application.asInstanceOf[js.Any],
         "currentRevisionId" -> currentRevisionId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateRobotApplicationVersionRequest]
@@ -341,32 +341,32 @@ package robomaker {
 
   @js.native
   trait CreateRobotApplicationVersionResponse extends js.Object {
-    var robotSoftwareSuite: js.UndefOr[RobotSoftwareSuite]
     var arn: js.UndefOr[Arn]
+    var lastUpdatedAt: js.UndefOr[LastUpdatedAt]
     var name: js.UndefOr[Name]
     var revisionId: js.UndefOr[RevisionId]
-    var version: js.UndefOr[Version]
+    var robotSoftwareSuite: js.UndefOr[RobotSoftwareSuite]
     var sources: js.UndefOr[Sources]
-    var lastUpdatedAt: js.UndefOr[LastUpdatedAt]
+    var version: js.UndefOr[Version]
   }
 
   object CreateRobotApplicationVersionResponse {
     def apply(
-      robotSoftwareSuite: js.UndefOr[RobotSoftwareSuite] = js.undefined,
       arn: js.UndefOr[Arn] = js.undefined,
+      lastUpdatedAt: js.UndefOr[LastUpdatedAt] = js.undefined,
       name: js.UndefOr[Name] = js.undefined,
       revisionId: js.UndefOr[RevisionId] = js.undefined,
-      version: js.UndefOr[Version] = js.undefined,
+      robotSoftwareSuite: js.UndefOr[RobotSoftwareSuite] = js.undefined,
       sources: js.UndefOr[Sources] = js.undefined,
-      lastUpdatedAt: js.UndefOr[LastUpdatedAt] = js.undefined): CreateRobotApplicationVersionResponse = {
+      version: js.UndefOr[Version] = js.undefined): CreateRobotApplicationVersionResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "robotSoftwareSuite" -> robotSoftwareSuite.map { x => x.asInstanceOf[js.Any] },
         "arn" -> arn.map { x => x.asInstanceOf[js.Any] },
+        "lastUpdatedAt" -> lastUpdatedAt.map { x => x.asInstanceOf[js.Any] },
         "name" -> name.map { x => x.asInstanceOf[js.Any] },
         "revisionId" -> revisionId.map { x => x.asInstanceOf[js.Any] },
-        "version" -> version.map { x => x.asInstanceOf[js.Any] },
+        "robotSoftwareSuite" -> robotSoftwareSuite.map { x => x.asInstanceOf[js.Any] },
         "sources" -> sources.map { x => x.asInstanceOf[js.Any] },
-        "lastUpdatedAt" -> lastUpdatedAt.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "version" -> version.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateRobotApplicationVersionResponse]
     }
@@ -374,20 +374,20 @@ package robomaker {
 
   @js.native
   trait CreateRobotRequest extends js.Object {
-    var name: js.UndefOr[Name]
-    var architecture: js.UndefOr[Architecture]
-    var greengrassGroupId: js.UndefOr[Id]
+    var architecture: Architecture
+    var greengrassGroupId: Id
+    var name: Name
   }
 
   object CreateRobotRequest {
     def apply(
-      name: js.UndefOr[Name] = js.undefined,
-      architecture: js.UndefOr[Architecture] = js.undefined,
-      greengrassGroupId: js.UndefOr[Id] = js.undefined): CreateRobotRequest = {
+      architecture: Architecture,
+      greengrassGroupId: Id,
+      name: Name): CreateRobotRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "name" -> name.map { x => x.asInstanceOf[js.Any] },
-        "architecture" -> architecture.map { x => x.asInstanceOf[js.Any] },
-        "greengrassGroupId" -> greengrassGroupId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "architecture" -> architecture.asInstanceOf[js.Any],
+        "greengrassGroupId" -> greengrassGroupId.asInstanceOf[js.Any],
+        "name" -> name.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateRobotRequest]
     }
@@ -395,26 +395,26 @@ package robomaker {
 
   @js.native
   trait CreateRobotResponse extends js.Object {
-    var arn: js.UndefOr[Arn]
-    var name: js.UndefOr[Name]
-    var greengrassGroupId: js.UndefOr[Id]
     var architecture: js.UndefOr[Architecture]
+    var arn: js.UndefOr[Arn]
     var createdAt: js.UndefOr[CreatedAt]
+    var greengrassGroupId: js.UndefOr[Id]
+    var name: js.UndefOr[Name]
   }
 
   object CreateRobotResponse {
     def apply(
-      arn: js.UndefOr[Arn] = js.undefined,
-      name: js.UndefOr[Name] = js.undefined,
-      greengrassGroupId: js.UndefOr[Id] = js.undefined,
       architecture: js.UndefOr[Architecture] = js.undefined,
-      createdAt: js.UndefOr[CreatedAt] = js.undefined): CreateRobotResponse = {
+      arn: js.UndefOr[Arn] = js.undefined,
+      createdAt: js.UndefOr[CreatedAt] = js.undefined,
+      greengrassGroupId: js.UndefOr[Id] = js.undefined,
+      name: js.UndefOr[Name] = js.undefined): CreateRobotResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "arn" -> arn.map { x => x.asInstanceOf[js.Any] },
-        "name" -> name.map { x => x.asInstanceOf[js.Any] },
-        "greengrassGroupId" -> greengrassGroupId.map { x => x.asInstanceOf[js.Any] },
         "architecture" -> architecture.map { x => x.asInstanceOf[js.Any] },
-        "createdAt" -> createdAt.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "arn" -> arn.map { x => x.asInstanceOf[js.Any] },
+        "createdAt" -> createdAt.map { x => x.asInstanceOf[js.Any] },
+        "greengrassGroupId" -> greengrassGroupId.map { x => x.asInstanceOf[js.Any] },
+        "name" -> name.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateRobotResponse]
     }
@@ -422,26 +422,26 @@ package robomaker {
 
   @js.native
   trait CreateSimulationApplicationRequest extends js.Object {
-    var robotSoftwareSuite: js.UndefOr[RobotSoftwareSuite]
-    var name: js.UndefOr[Name]
-    var simulationSoftwareSuite: js.UndefOr[SimulationSoftwareSuite]
-    var renderingEngine: js.UndefOr[RenderingEngine]
-    var sources: js.UndefOr[SourceConfigs]
+    var name: Name
+    var renderingEngine: RenderingEngine
+    var robotSoftwareSuite: RobotSoftwareSuite
+    var simulationSoftwareSuite: SimulationSoftwareSuite
+    var sources: SourceConfigs
   }
 
   object CreateSimulationApplicationRequest {
     def apply(
-      robotSoftwareSuite: js.UndefOr[RobotSoftwareSuite] = js.undefined,
-      name: js.UndefOr[Name] = js.undefined,
-      simulationSoftwareSuite: js.UndefOr[SimulationSoftwareSuite] = js.undefined,
-      renderingEngine: js.UndefOr[RenderingEngine] = js.undefined,
-      sources: js.UndefOr[SourceConfigs] = js.undefined): CreateSimulationApplicationRequest = {
+      name: Name,
+      renderingEngine: RenderingEngine,
+      robotSoftwareSuite: RobotSoftwareSuite,
+      simulationSoftwareSuite: SimulationSoftwareSuite,
+      sources: SourceConfigs): CreateSimulationApplicationRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "robotSoftwareSuite" -> robotSoftwareSuite.map { x => x.asInstanceOf[js.Any] },
-        "name" -> name.map { x => x.asInstanceOf[js.Any] },
-        "simulationSoftwareSuite" -> simulationSoftwareSuite.map { x => x.asInstanceOf[js.Any] },
-        "renderingEngine" -> renderingEngine.map { x => x.asInstanceOf[js.Any] },
-        "sources" -> sources.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "name" -> name.asInstanceOf[js.Any],
+        "renderingEngine" -> renderingEngine.asInstanceOf[js.Any],
+        "robotSoftwareSuite" -> robotSoftwareSuite.asInstanceOf[js.Any],
+        "simulationSoftwareSuite" -> simulationSoftwareSuite.asInstanceOf[js.Any],
+        "sources" -> sources.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateSimulationApplicationRequest]
     }
@@ -449,38 +449,38 @@ package robomaker {
 
   @js.native
   trait CreateSimulationApplicationResponse extends js.Object {
-    var robotSoftwareSuite: js.UndefOr[RobotSoftwareSuite]
     var arn: js.UndefOr[Arn]
-    var name: js.UndefOr[Name]
-    var simulationSoftwareSuite: js.UndefOr[SimulationSoftwareSuite]
-    var revisionId: js.UndefOr[RevisionId]
-    var version: js.UndefOr[Version]
-    var renderingEngine: js.UndefOr[RenderingEngine]
-    var sources: js.UndefOr[Sources]
     var lastUpdatedAt: js.UndefOr[LastUpdatedAt]
+    var name: js.UndefOr[Name]
+    var renderingEngine: js.UndefOr[RenderingEngine]
+    var revisionId: js.UndefOr[RevisionId]
+    var robotSoftwareSuite: js.UndefOr[RobotSoftwareSuite]
+    var simulationSoftwareSuite: js.UndefOr[SimulationSoftwareSuite]
+    var sources: js.UndefOr[Sources]
+    var version: js.UndefOr[Version]
   }
 
   object CreateSimulationApplicationResponse {
     def apply(
-      robotSoftwareSuite: js.UndefOr[RobotSoftwareSuite] = js.undefined,
       arn: js.UndefOr[Arn] = js.undefined,
+      lastUpdatedAt: js.UndefOr[LastUpdatedAt] = js.undefined,
       name: js.UndefOr[Name] = js.undefined,
-      simulationSoftwareSuite: js.UndefOr[SimulationSoftwareSuite] = js.undefined,
-      revisionId: js.UndefOr[RevisionId] = js.undefined,
-      version: js.UndefOr[Version] = js.undefined,
       renderingEngine: js.UndefOr[RenderingEngine] = js.undefined,
+      revisionId: js.UndefOr[RevisionId] = js.undefined,
+      robotSoftwareSuite: js.UndefOr[RobotSoftwareSuite] = js.undefined,
+      simulationSoftwareSuite: js.UndefOr[SimulationSoftwareSuite] = js.undefined,
       sources: js.UndefOr[Sources] = js.undefined,
-      lastUpdatedAt: js.UndefOr[LastUpdatedAt] = js.undefined): CreateSimulationApplicationResponse = {
+      version: js.UndefOr[Version] = js.undefined): CreateSimulationApplicationResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "robotSoftwareSuite" -> robotSoftwareSuite.map { x => x.asInstanceOf[js.Any] },
         "arn" -> arn.map { x => x.asInstanceOf[js.Any] },
+        "lastUpdatedAt" -> lastUpdatedAt.map { x => x.asInstanceOf[js.Any] },
         "name" -> name.map { x => x.asInstanceOf[js.Any] },
-        "simulationSoftwareSuite" -> simulationSoftwareSuite.map { x => x.asInstanceOf[js.Any] },
-        "revisionId" -> revisionId.map { x => x.asInstanceOf[js.Any] },
-        "version" -> version.map { x => x.asInstanceOf[js.Any] },
         "renderingEngine" -> renderingEngine.map { x => x.asInstanceOf[js.Any] },
+        "revisionId" -> revisionId.map { x => x.asInstanceOf[js.Any] },
+        "robotSoftwareSuite" -> robotSoftwareSuite.map { x => x.asInstanceOf[js.Any] },
+        "simulationSoftwareSuite" -> simulationSoftwareSuite.map { x => x.asInstanceOf[js.Any] },
         "sources" -> sources.map { x => x.asInstanceOf[js.Any] },
-        "lastUpdatedAt" -> lastUpdatedAt.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "version" -> version.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateSimulationApplicationResponse]
     }
@@ -488,16 +488,16 @@ package robomaker {
 
   @js.native
   trait CreateSimulationApplicationVersionRequest extends js.Object {
-    var application: js.UndefOr[Arn]
+    var application: Arn
     var currentRevisionId: js.UndefOr[RevisionId]
   }
 
   object CreateSimulationApplicationVersionRequest {
     def apply(
-      application: js.UndefOr[Arn] = js.undefined,
+      application: Arn,
       currentRevisionId: js.UndefOr[RevisionId] = js.undefined): CreateSimulationApplicationVersionRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "application" -> application.map { x => x.asInstanceOf[js.Any] },
+        "application" -> application.asInstanceOf[js.Any],
         "currentRevisionId" -> currentRevisionId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateSimulationApplicationVersionRequest]
@@ -506,38 +506,38 @@ package robomaker {
 
   @js.native
   trait CreateSimulationApplicationVersionResponse extends js.Object {
-    var robotSoftwareSuite: js.UndefOr[RobotSoftwareSuite]
     var arn: js.UndefOr[Arn]
-    var name: js.UndefOr[Name]
-    var simulationSoftwareSuite: js.UndefOr[SimulationSoftwareSuite]
-    var revisionId: js.UndefOr[RevisionId]
-    var version: js.UndefOr[Version]
-    var renderingEngine: js.UndefOr[RenderingEngine]
-    var sources: js.UndefOr[Sources]
     var lastUpdatedAt: js.UndefOr[LastUpdatedAt]
+    var name: js.UndefOr[Name]
+    var renderingEngine: js.UndefOr[RenderingEngine]
+    var revisionId: js.UndefOr[RevisionId]
+    var robotSoftwareSuite: js.UndefOr[RobotSoftwareSuite]
+    var simulationSoftwareSuite: js.UndefOr[SimulationSoftwareSuite]
+    var sources: js.UndefOr[Sources]
+    var version: js.UndefOr[Version]
   }
 
   object CreateSimulationApplicationVersionResponse {
     def apply(
-      robotSoftwareSuite: js.UndefOr[RobotSoftwareSuite] = js.undefined,
       arn: js.UndefOr[Arn] = js.undefined,
+      lastUpdatedAt: js.UndefOr[LastUpdatedAt] = js.undefined,
       name: js.UndefOr[Name] = js.undefined,
-      simulationSoftwareSuite: js.UndefOr[SimulationSoftwareSuite] = js.undefined,
-      revisionId: js.UndefOr[RevisionId] = js.undefined,
-      version: js.UndefOr[Version] = js.undefined,
       renderingEngine: js.UndefOr[RenderingEngine] = js.undefined,
+      revisionId: js.UndefOr[RevisionId] = js.undefined,
+      robotSoftwareSuite: js.UndefOr[RobotSoftwareSuite] = js.undefined,
+      simulationSoftwareSuite: js.UndefOr[SimulationSoftwareSuite] = js.undefined,
       sources: js.UndefOr[Sources] = js.undefined,
-      lastUpdatedAt: js.UndefOr[LastUpdatedAt] = js.undefined): CreateSimulationApplicationVersionResponse = {
+      version: js.UndefOr[Version] = js.undefined): CreateSimulationApplicationVersionResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "robotSoftwareSuite" -> robotSoftwareSuite.map { x => x.asInstanceOf[js.Any] },
         "arn" -> arn.map { x => x.asInstanceOf[js.Any] },
+        "lastUpdatedAt" -> lastUpdatedAt.map { x => x.asInstanceOf[js.Any] },
         "name" -> name.map { x => x.asInstanceOf[js.Any] },
-        "simulationSoftwareSuite" -> simulationSoftwareSuite.map { x => x.asInstanceOf[js.Any] },
-        "revisionId" -> revisionId.map { x => x.asInstanceOf[js.Any] },
-        "version" -> version.map { x => x.asInstanceOf[js.Any] },
         "renderingEngine" -> renderingEngine.map { x => x.asInstanceOf[js.Any] },
+        "revisionId" -> revisionId.map { x => x.asInstanceOf[js.Any] },
+        "robotSoftwareSuite" -> robotSoftwareSuite.map { x => x.asInstanceOf[js.Any] },
+        "simulationSoftwareSuite" -> simulationSoftwareSuite.map { x => x.asInstanceOf[js.Any] },
         "sources" -> sources.map { x => x.asInstanceOf[js.Any] },
-        "lastUpdatedAt" -> lastUpdatedAt.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "version" -> version.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateSimulationApplicationVersionResponse]
     }
@@ -545,35 +545,35 @@ package robomaker {
 
   @js.native
   trait CreateSimulationJobRequest extends js.Object {
-    var iamRole: js.UndefOr[IamRole]
-    var vpcConfig: js.UndefOr[VPCConfig]
-    var simulationApplications: js.UndefOr[SimulationApplicationConfigs]
-    var robotApplications: js.UndefOr[RobotApplicationConfigs]
+    var iamRole: IamRole
+    var maxJobDurationInSeconds: JobDuration
     var clientRequestToken: js.UndefOr[ClientRequestToken]
-    var maxJobDurationInSeconds: js.UndefOr[JobDuration]
-    var outputLocation: js.UndefOr[OutputLocation]
     var failureBehavior: js.UndefOr[FailureBehavior]
+    var outputLocation: js.UndefOr[OutputLocation]
+    var robotApplications: js.UndefOr[RobotApplicationConfigs]
+    var simulationApplications: js.UndefOr[SimulationApplicationConfigs]
+    var vpcConfig: js.UndefOr[VPCConfig]
   }
 
   object CreateSimulationJobRequest {
     def apply(
-      iamRole: js.UndefOr[IamRole] = js.undefined,
-      vpcConfig: js.UndefOr[VPCConfig] = js.undefined,
-      simulationApplications: js.UndefOr[SimulationApplicationConfigs] = js.undefined,
-      robotApplications: js.UndefOr[RobotApplicationConfigs] = js.undefined,
+      iamRole: IamRole,
+      maxJobDurationInSeconds: JobDuration,
       clientRequestToken: js.UndefOr[ClientRequestToken] = js.undefined,
-      maxJobDurationInSeconds: js.UndefOr[JobDuration] = js.undefined,
+      failureBehavior: js.UndefOr[FailureBehavior] = js.undefined,
       outputLocation: js.UndefOr[OutputLocation] = js.undefined,
-      failureBehavior: js.UndefOr[FailureBehavior] = js.undefined): CreateSimulationJobRequest = {
+      robotApplications: js.UndefOr[RobotApplicationConfigs] = js.undefined,
+      simulationApplications: js.UndefOr[SimulationApplicationConfigs] = js.undefined,
+      vpcConfig: js.UndefOr[VPCConfig] = js.undefined): CreateSimulationJobRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "iamRole" -> iamRole.map { x => x.asInstanceOf[js.Any] },
-        "vpcConfig" -> vpcConfig.map { x => x.asInstanceOf[js.Any] },
-        "simulationApplications" -> simulationApplications.map { x => x.asInstanceOf[js.Any] },
-        "robotApplications" -> robotApplications.map { x => x.asInstanceOf[js.Any] },
+        "iamRole" -> iamRole.asInstanceOf[js.Any],
+        "maxJobDurationInSeconds" -> maxJobDurationInSeconds.asInstanceOf[js.Any],
         "clientRequestToken" -> clientRequestToken.map { x => x.asInstanceOf[js.Any] },
-        "maxJobDurationInSeconds" -> maxJobDurationInSeconds.map { x => x.asInstanceOf[js.Any] },
+        "failureBehavior" -> failureBehavior.map { x => x.asInstanceOf[js.Any] },
         "outputLocation" -> outputLocation.map { x => x.asInstanceOf[js.Any] },
-        "failureBehavior" -> failureBehavior.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "robotApplications" -> robotApplications.map { x => x.asInstanceOf[js.Any] },
+        "simulationApplications" -> simulationApplications.map { x => x.asInstanceOf[js.Any] },
+        "vpcConfig" -> vpcConfig.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateSimulationJobRequest]
     }
@@ -582,49 +582,49 @@ package robomaker {
   @js.native
   trait CreateSimulationJobResponse extends js.Object {
     var arn: js.UndefOr[Arn]
-    var iamRole: js.UndefOr[IamRole]
-    var vpcConfig: js.UndefOr[VPCConfigResponse]
-    var simulationTimeMillis: js.UndefOr[SimulationTimeMillis]
-    var simulationApplications: js.UndefOr[SimulationApplicationConfigs]
-    var robotApplications: js.UndefOr[RobotApplicationConfigs]
-    var failureCode: js.UndefOr[SimulationJobErrorCode]
     var clientRequestToken: js.UndefOr[ClientRequestToken]
-    var status: js.UndefOr[SimulationJobStatus]
+    var failureBehavior: js.UndefOr[FailureBehavior]
+    var failureCode: js.UndefOr[SimulationJobErrorCode]
+    var iamRole: js.UndefOr[IamRole]
+    var lastUpdatedAt: js.UndefOr[LastUpdatedAt]
     var maxJobDurationInSeconds: js.UndefOr[JobDuration]
     var outputLocation: js.UndefOr[OutputLocation]
-    var lastUpdatedAt: js.UndefOr[LastUpdatedAt]
-    var failureBehavior: js.UndefOr[FailureBehavior]
+    var robotApplications: js.UndefOr[RobotApplicationConfigs]
+    var simulationApplications: js.UndefOr[SimulationApplicationConfigs]
+    var simulationTimeMillis: js.UndefOr[SimulationTimeMillis]
+    var status: js.UndefOr[SimulationJobStatus]
+    var vpcConfig: js.UndefOr[VPCConfigResponse]
   }
 
   object CreateSimulationJobResponse {
     def apply(
       arn: js.UndefOr[Arn] = js.undefined,
-      iamRole: js.UndefOr[IamRole] = js.undefined,
-      vpcConfig: js.UndefOr[VPCConfigResponse] = js.undefined,
-      simulationTimeMillis: js.UndefOr[SimulationTimeMillis] = js.undefined,
-      simulationApplications: js.UndefOr[SimulationApplicationConfigs] = js.undefined,
-      robotApplications: js.UndefOr[RobotApplicationConfigs] = js.undefined,
-      failureCode: js.UndefOr[SimulationJobErrorCode] = js.undefined,
       clientRequestToken: js.UndefOr[ClientRequestToken] = js.undefined,
-      status: js.UndefOr[SimulationJobStatus] = js.undefined,
+      failureBehavior: js.UndefOr[FailureBehavior] = js.undefined,
+      failureCode: js.UndefOr[SimulationJobErrorCode] = js.undefined,
+      iamRole: js.UndefOr[IamRole] = js.undefined,
+      lastUpdatedAt: js.UndefOr[LastUpdatedAt] = js.undefined,
       maxJobDurationInSeconds: js.UndefOr[JobDuration] = js.undefined,
       outputLocation: js.UndefOr[OutputLocation] = js.undefined,
-      lastUpdatedAt: js.UndefOr[LastUpdatedAt] = js.undefined,
-      failureBehavior: js.UndefOr[FailureBehavior] = js.undefined): CreateSimulationJobResponse = {
+      robotApplications: js.UndefOr[RobotApplicationConfigs] = js.undefined,
+      simulationApplications: js.UndefOr[SimulationApplicationConfigs] = js.undefined,
+      simulationTimeMillis: js.UndefOr[SimulationTimeMillis] = js.undefined,
+      status: js.UndefOr[SimulationJobStatus] = js.undefined,
+      vpcConfig: js.UndefOr[VPCConfigResponse] = js.undefined): CreateSimulationJobResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
         "arn" -> arn.map { x => x.asInstanceOf[js.Any] },
-        "iamRole" -> iamRole.map { x => x.asInstanceOf[js.Any] },
-        "vpcConfig" -> vpcConfig.map { x => x.asInstanceOf[js.Any] },
-        "simulationTimeMillis" -> simulationTimeMillis.map { x => x.asInstanceOf[js.Any] },
-        "simulationApplications" -> simulationApplications.map { x => x.asInstanceOf[js.Any] },
-        "robotApplications" -> robotApplications.map { x => x.asInstanceOf[js.Any] },
-        "failureCode" -> failureCode.map { x => x.asInstanceOf[js.Any] },
         "clientRequestToken" -> clientRequestToken.map { x => x.asInstanceOf[js.Any] },
-        "status" -> status.map { x => x.asInstanceOf[js.Any] },
+        "failureBehavior" -> failureBehavior.map { x => x.asInstanceOf[js.Any] },
+        "failureCode" -> failureCode.map { x => x.asInstanceOf[js.Any] },
+        "iamRole" -> iamRole.map { x => x.asInstanceOf[js.Any] },
+        "lastUpdatedAt" -> lastUpdatedAt.map { x => x.asInstanceOf[js.Any] },
         "maxJobDurationInSeconds" -> maxJobDurationInSeconds.map { x => x.asInstanceOf[js.Any] },
         "outputLocation" -> outputLocation.map { x => x.asInstanceOf[js.Any] },
-        "lastUpdatedAt" -> lastUpdatedAt.map { x => x.asInstanceOf[js.Any] },
-        "failureBehavior" -> failureBehavior.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "robotApplications" -> robotApplications.map { x => x.asInstanceOf[js.Any] },
+        "simulationApplications" -> simulationApplications.map { x => x.asInstanceOf[js.Any] },
+        "simulationTimeMillis" -> simulationTimeMillis.map { x => x.asInstanceOf[js.Any] },
+        "status" -> status.map { x => x.asInstanceOf[js.Any] },
+        "vpcConfig" -> vpcConfig.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateSimulationJobResponse]
     }
@@ -632,14 +632,14 @@ package robomaker {
 
   @js.native
   trait DeleteFleetRequest extends js.Object {
-    var fleet: js.UndefOr[Arn]
+    var fleet: Arn
   }
 
   object DeleteFleetRequest {
     def apply(
-      fleet: js.UndefOr[Arn] = js.undefined): DeleteFleetRequest = {
+      fleet: Arn): DeleteFleetRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "fleet" -> fleet.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "fleet" -> fleet.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteFleetRequest]
     }
@@ -660,16 +660,16 @@ package robomaker {
 
   @js.native
   trait DeleteRobotApplicationRequest extends js.Object {
-    var application: js.UndefOr[Arn]
+    var application: Arn
     var applicationVersion: js.UndefOr[Version]
   }
 
   object DeleteRobotApplicationRequest {
     def apply(
-      application: js.UndefOr[Arn] = js.undefined,
+      application: Arn,
       applicationVersion: js.UndefOr[Version] = js.undefined): DeleteRobotApplicationRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "application" -> application.map { x => x.asInstanceOf[js.Any] },
+        "application" -> application.asInstanceOf[js.Any],
         "applicationVersion" -> applicationVersion.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteRobotApplicationRequest]
@@ -691,14 +691,14 @@ package robomaker {
 
   @js.native
   trait DeleteRobotRequest extends js.Object {
-    var robot: js.UndefOr[Arn]
+    var robot: Arn
   }
 
   object DeleteRobotRequest {
     def apply(
-      robot: js.UndefOr[Arn] = js.undefined): DeleteRobotRequest = {
+      robot: Arn): DeleteRobotRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "robot" -> robot.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "robot" -> robot.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteRobotRequest]
     }
@@ -719,16 +719,16 @@ package robomaker {
 
   @js.native
   trait DeleteSimulationApplicationRequest extends js.Object {
-    var application: js.UndefOr[Arn]
+    var application: Arn
     var applicationVersion: js.UndefOr[Version]
   }
 
   object DeleteSimulationApplicationRequest {
     def apply(
-      application: js.UndefOr[Arn] = js.undefined,
+      application: Arn,
       applicationVersion: js.UndefOr[Version] = js.undefined): DeleteSimulationApplicationRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "application" -> application.map { x => x.asInstanceOf[js.Any] },
+        "application" -> application.asInstanceOf[js.Any],
         "applicationVersion" -> applicationVersion.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteSimulationApplicationRequest]
@@ -753,20 +753,20 @@ package robomaker {
    */
   @js.native
   trait DeploymentApplicationConfig extends js.Object {
-    var application: js.UndefOr[Arn]
-    var applicationVersion: js.UndefOr[Version]
-    var launchConfig: js.UndefOr[DeploymentLaunchConfig]
+    var application: Arn
+    var applicationVersion: Version
+    var launchConfig: DeploymentLaunchConfig
   }
 
   object DeploymentApplicationConfig {
     def apply(
-      application: js.UndefOr[Arn] = js.undefined,
-      applicationVersion: js.UndefOr[Version] = js.undefined,
-      launchConfig: js.UndefOr[DeploymentLaunchConfig] = js.undefined): DeploymentApplicationConfig = {
+      application: Arn,
+      applicationVersion: Version,
+      launchConfig: DeploymentLaunchConfig): DeploymentApplicationConfig = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "application" -> application.map { x => x.asInstanceOf[js.Any] },
-        "applicationVersion" -> applicationVersion.map { x => x.asInstanceOf[js.Any] },
-        "launchConfig" -> launchConfig.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "application" -> application.asInstanceOf[js.Any],
+        "applicationVersion" -> applicationVersion.asInstanceOf[js.Any],
+        "launchConfig" -> launchConfig.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeploymentApplicationConfig]
     }
@@ -799,34 +799,34 @@ package robomaker {
   @js.native
   trait DeploymentJob extends js.Object {
     var arn: js.UndefOr[Arn]
+    var createdAt: js.UndefOr[CreatedAt]
     var deploymentApplicationConfigs: js.UndefOr[DeploymentApplicationConfigs]
     var deploymentConfig: js.UndefOr[DeploymentConfig]
+    var failureCode: js.UndefOr[DeploymentJobErrorCode]
     var failureReason: js.UndefOr[GenericString]
     var fleet: js.UndefOr[Arn]
-    var failureCode: js.UndefOr[DeploymentJobErrorCode]
     var status: js.UndefOr[DeploymentStatus]
-    var createdAt: js.UndefOr[CreatedAt]
   }
 
   object DeploymentJob {
     def apply(
       arn: js.UndefOr[Arn] = js.undefined,
+      createdAt: js.UndefOr[CreatedAt] = js.undefined,
       deploymentApplicationConfigs: js.UndefOr[DeploymentApplicationConfigs] = js.undefined,
       deploymentConfig: js.UndefOr[DeploymentConfig] = js.undefined,
+      failureCode: js.UndefOr[DeploymentJobErrorCode] = js.undefined,
       failureReason: js.UndefOr[GenericString] = js.undefined,
       fleet: js.UndefOr[Arn] = js.undefined,
-      failureCode: js.UndefOr[DeploymentJobErrorCode] = js.undefined,
-      status: js.UndefOr[DeploymentStatus] = js.undefined,
-      createdAt: js.UndefOr[CreatedAt] = js.undefined): DeploymentJob = {
+      status: js.UndefOr[DeploymentStatus] = js.undefined): DeploymentJob = {
       val _fields = IndexedSeq[(String, js.Any)](
         "arn" -> arn.map { x => x.asInstanceOf[js.Any] },
+        "createdAt" -> createdAt.map { x => x.asInstanceOf[js.Any] },
         "deploymentApplicationConfigs" -> deploymentApplicationConfigs.map { x => x.asInstanceOf[js.Any] },
         "deploymentConfig" -> deploymentConfig.map { x => x.asInstanceOf[js.Any] },
+        "failureCode" -> failureCode.map { x => x.asInstanceOf[js.Any] },
         "failureReason" -> failureReason.map { x => x.asInstanceOf[js.Any] },
         "fleet" -> fleet.map { x => x.asInstanceOf[js.Any] },
-        "failureCode" -> failureCode.map { x => x.asInstanceOf[js.Any] },
-        "status" -> status.map { x => x.asInstanceOf[js.Any] },
-        "createdAt" -> createdAt.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "status" -> status.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeploymentJob]
     }
@@ -855,26 +855,26 @@ package robomaker {
    */
   @js.native
   trait DeploymentLaunchConfig extends js.Object {
+    var launchFile: GenericString
+    var packageName: GenericString
     var environmentVariables: js.UndefOr[EnvironmentVariableMap]
-    var packageName: js.UndefOr[GenericString]
     var postLaunchFile: js.UndefOr[GenericString]
     var preLaunchFile: js.UndefOr[GenericString]
-    var launchFile: js.UndefOr[GenericString]
   }
 
   object DeploymentLaunchConfig {
     def apply(
+      launchFile: GenericString,
+      packageName: GenericString,
       environmentVariables: js.UndefOr[EnvironmentVariableMap] = js.undefined,
-      packageName: js.UndefOr[GenericString] = js.undefined,
       postLaunchFile: js.UndefOr[GenericString] = js.undefined,
-      preLaunchFile: js.UndefOr[GenericString] = js.undefined,
-      launchFile: js.UndefOr[GenericString] = js.undefined): DeploymentLaunchConfig = {
+      preLaunchFile: js.UndefOr[GenericString] = js.undefined): DeploymentLaunchConfig = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "launchFile" -> launchFile.asInstanceOf[js.Any],
+        "packageName" -> packageName.asInstanceOf[js.Any],
         "environmentVariables" -> environmentVariables.map { x => x.asInstanceOf[js.Any] },
-        "packageName" -> packageName.map { x => x.asInstanceOf[js.Any] },
         "postLaunchFile" -> postLaunchFile.map { x => x.asInstanceOf[js.Any] },
-        "preLaunchFile" -> preLaunchFile.map { x => x.asInstanceOf[js.Any] },
-        "launchFile" -> launchFile.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "preLaunchFile" -> preLaunchFile.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeploymentLaunchConfig]
     }
@@ -892,17 +892,17 @@ package robomaker {
 
   @js.native
   trait DeregisterRobotRequest extends js.Object {
-    var fleet: js.UndefOr[Arn]
-    var robot: js.UndefOr[Arn]
+    var fleet: Arn
+    var robot: Arn
   }
 
   object DeregisterRobotRequest {
     def apply(
-      fleet: js.UndefOr[Arn] = js.undefined,
-      robot: js.UndefOr[Arn] = js.undefined): DeregisterRobotRequest = {
+      fleet: Arn,
+      robot: Arn): DeregisterRobotRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "fleet" -> fleet.map { x => x.asInstanceOf[js.Any] },
-        "robot" -> robot.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "fleet" -> fleet.asInstanceOf[js.Any],
+        "robot" -> robot.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeregisterRobotRequest]
     }
@@ -928,14 +928,14 @@ package robomaker {
 
   @js.native
   trait DescribeDeploymentJobRequest extends js.Object {
-    var job: js.UndefOr[Arn]
+    var job: Arn
   }
 
   object DescribeDeploymentJobRequest {
     def apply(
-      job: js.UndefOr[Arn] = js.undefined): DescribeDeploymentJobRequest = {
+      job: Arn): DescribeDeploymentJobRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "job" -> job.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "job" -> job.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeDeploymentJobRequest]
     }
@@ -944,37 +944,37 @@ package robomaker {
   @js.native
   trait DescribeDeploymentJobResponse extends js.Object {
     var arn: js.UndefOr[Arn]
+    var createdAt: js.UndefOr[CreatedAt]
     var deploymentApplicationConfigs: js.UndefOr[DeploymentApplicationConfigs]
     var deploymentConfig: js.UndefOr[DeploymentConfig]
-    var robotDeploymentSummary: js.UndefOr[RobotDeploymentSummary]
+    var failureCode: js.UndefOr[DeploymentJobErrorCode]
     var failureReason: js.UndefOr[GenericString]
     var fleet: js.UndefOr[Arn]
-    var failureCode: js.UndefOr[DeploymentJobErrorCode]
+    var robotDeploymentSummary: js.UndefOr[RobotDeploymentSummary]
     var status: js.UndefOr[DeploymentStatus]
-    var createdAt: js.UndefOr[CreatedAt]
   }
 
   object DescribeDeploymentJobResponse {
     def apply(
       arn: js.UndefOr[Arn] = js.undefined,
+      createdAt: js.UndefOr[CreatedAt] = js.undefined,
       deploymentApplicationConfigs: js.UndefOr[DeploymentApplicationConfigs] = js.undefined,
       deploymentConfig: js.UndefOr[DeploymentConfig] = js.undefined,
-      robotDeploymentSummary: js.UndefOr[RobotDeploymentSummary] = js.undefined,
+      failureCode: js.UndefOr[DeploymentJobErrorCode] = js.undefined,
       failureReason: js.UndefOr[GenericString] = js.undefined,
       fleet: js.UndefOr[Arn] = js.undefined,
-      failureCode: js.UndefOr[DeploymentJobErrorCode] = js.undefined,
-      status: js.UndefOr[DeploymentStatus] = js.undefined,
-      createdAt: js.UndefOr[CreatedAt] = js.undefined): DescribeDeploymentJobResponse = {
+      robotDeploymentSummary: js.UndefOr[RobotDeploymentSummary] = js.undefined,
+      status: js.UndefOr[DeploymentStatus] = js.undefined): DescribeDeploymentJobResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
         "arn" -> arn.map { x => x.asInstanceOf[js.Any] },
+        "createdAt" -> createdAt.map { x => x.asInstanceOf[js.Any] },
         "deploymentApplicationConfigs" -> deploymentApplicationConfigs.map { x => x.asInstanceOf[js.Any] },
         "deploymentConfig" -> deploymentConfig.map { x => x.asInstanceOf[js.Any] },
-        "robotDeploymentSummary" -> robotDeploymentSummary.map { x => x.asInstanceOf[js.Any] },
+        "failureCode" -> failureCode.map { x => x.asInstanceOf[js.Any] },
         "failureReason" -> failureReason.map { x => x.asInstanceOf[js.Any] },
         "fleet" -> fleet.map { x => x.asInstanceOf[js.Any] },
-        "failureCode" -> failureCode.map { x => x.asInstanceOf[js.Any] },
-        "status" -> status.map { x => x.asInstanceOf[js.Any] },
-        "createdAt" -> createdAt.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "robotDeploymentSummary" -> robotDeploymentSummary.map { x => x.asInstanceOf[js.Any] },
+        "status" -> status.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeDeploymentJobResponse]
     }
@@ -982,14 +982,14 @@ package robomaker {
 
   @js.native
   trait DescribeFleetRequest extends js.Object {
-    var fleet: js.UndefOr[Arn]
+    var fleet: Arn
   }
 
   object DescribeFleetRequest {
     def apply(
-      fleet: js.UndefOr[Arn] = js.undefined): DescribeFleetRequest = {
+      fleet: Arn): DescribeFleetRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "fleet" -> fleet.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "fleet" -> fleet.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeFleetRequest]
     }
@@ -998,31 +998,31 @@ package robomaker {
   @js.native
   trait DescribeFleetResponse extends js.Object {
     var arn: js.UndefOr[Arn]
-    var name: js.UndefOr[Name]
-    var lastDeploymentTime: js.UndefOr[CreatedAt]
-    var robots: js.UndefOr[Robots]
-    var lastDeploymentStatus: js.UndefOr[DeploymentStatus]
     var createdAt: js.UndefOr[CreatedAt]
     var lastDeploymentJob: js.UndefOr[Arn]
+    var lastDeploymentStatus: js.UndefOr[DeploymentStatus]
+    var lastDeploymentTime: js.UndefOr[CreatedAt]
+    var name: js.UndefOr[Name]
+    var robots: js.UndefOr[Robots]
   }
 
   object DescribeFleetResponse {
     def apply(
       arn: js.UndefOr[Arn] = js.undefined,
-      name: js.UndefOr[Name] = js.undefined,
-      lastDeploymentTime: js.UndefOr[CreatedAt] = js.undefined,
-      robots: js.UndefOr[Robots] = js.undefined,
-      lastDeploymentStatus: js.UndefOr[DeploymentStatus] = js.undefined,
       createdAt: js.UndefOr[CreatedAt] = js.undefined,
-      lastDeploymentJob: js.UndefOr[Arn] = js.undefined): DescribeFleetResponse = {
+      lastDeploymentJob: js.UndefOr[Arn] = js.undefined,
+      lastDeploymentStatus: js.UndefOr[DeploymentStatus] = js.undefined,
+      lastDeploymentTime: js.UndefOr[CreatedAt] = js.undefined,
+      name: js.UndefOr[Name] = js.undefined,
+      robots: js.UndefOr[Robots] = js.undefined): DescribeFleetResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
         "arn" -> arn.map { x => x.asInstanceOf[js.Any] },
-        "name" -> name.map { x => x.asInstanceOf[js.Any] },
-        "lastDeploymentTime" -> lastDeploymentTime.map { x => x.asInstanceOf[js.Any] },
-        "robots" -> robots.map { x => x.asInstanceOf[js.Any] },
-        "lastDeploymentStatus" -> lastDeploymentStatus.map { x => x.asInstanceOf[js.Any] },
         "createdAt" -> createdAt.map { x => x.asInstanceOf[js.Any] },
-        "lastDeploymentJob" -> lastDeploymentJob.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "lastDeploymentJob" -> lastDeploymentJob.map { x => x.asInstanceOf[js.Any] },
+        "lastDeploymentStatus" -> lastDeploymentStatus.map { x => x.asInstanceOf[js.Any] },
+        "lastDeploymentTime" -> lastDeploymentTime.map { x => x.asInstanceOf[js.Any] },
+        "name" -> name.map { x => x.asInstanceOf[js.Any] },
+        "robots" -> robots.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeFleetResponse]
     }
@@ -1030,16 +1030,16 @@ package robomaker {
 
   @js.native
   trait DescribeRobotApplicationRequest extends js.Object {
-    var application: js.UndefOr[Arn]
+    var application: Arn
     var applicationVersion: js.UndefOr[Version]
   }
 
   object DescribeRobotApplicationRequest {
     def apply(
-      application: js.UndefOr[Arn] = js.undefined,
+      application: Arn,
       applicationVersion: js.UndefOr[Version] = js.undefined): DescribeRobotApplicationRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "application" -> application.map { x => x.asInstanceOf[js.Any] },
+        "application" -> application.asInstanceOf[js.Any],
         "applicationVersion" -> applicationVersion.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeRobotApplicationRequest]
@@ -1048,32 +1048,32 @@ package robomaker {
 
   @js.native
   trait DescribeRobotApplicationResponse extends js.Object {
-    var robotSoftwareSuite: js.UndefOr[RobotSoftwareSuite]
     var arn: js.UndefOr[Arn]
+    var lastUpdatedAt: js.UndefOr[LastUpdatedAt]
     var name: js.UndefOr[Name]
     var revisionId: js.UndefOr[RevisionId]
-    var version: js.UndefOr[Version]
+    var robotSoftwareSuite: js.UndefOr[RobotSoftwareSuite]
     var sources: js.UndefOr[Sources]
-    var lastUpdatedAt: js.UndefOr[LastUpdatedAt]
+    var version: js.UndefOr[Version]
   }
 
   object DescribeRobotApplicationResponse {
     def apply(
-      robotSoftwareSuite: js.UndefOr[RobotSoftwareSuite] = js.undefined,
       arn: js.UndefOr[Arn] = js.undefined,
+      lastUpdatedAt: js.UndefOr[LastUpdatedAt] = js.undefined,
       name: js.UndefOr[Name] = js.undefined,
       revisionId: js.UndefOr[RevisionId] = js.undefined,
-      version: js.UndefOr[Version] = js.undefined,
+      robotSoftwareSuite: js.UndefOr[RobotSoftwareSuite] = js.undefined,
       sources: js.UndefOr[Sources] = js.undefined,
-      lastUpdatedAt: js.UndefOr[LastUpdatedAt] = js.undefined): DescribeRobotApplicationResponse = {
+      version: js.UndefOr[Version] = js.undefined): DescribeRobotApplicationResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "robotSoftwareSuite" -> robotSoftwareSuite.map { x => x.asInstanceOf[js.Any] },
         "arn" -> arn.map { x => x.asInstanceOf[js.Any] },
+        "lastUpdatedAt" -> lastUpdatedAt.map { x => x.asInstanceOf[js.Any] },
         "name" -> name.map { x => x.asInstanceOf[js.Any] },
         "revisionId" -> revisionId.map { x => x.asInstanceOf[js.Any] },
-        "version" -> version.map { x => x.asInstanceOf[js.Any] },
+        "robotSoftwareSuite" -> robotSoftwareSuite.map { x => x.asInstanceOf[js.Any] },
         "sources" -> sources.map { x => x.asInstanceOf[js.Any] },
-        "lastUpdatedAt" -> lastUpdatedAt.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "version" -> version.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeRobotApplicationResponse]
     }
@@ -1081,14 +1081,14 @@ package robomaker {
 
   @js.native
   trait DescribeRobotRequest extends js.Object {
-    var robot: js.UndefOr[Arn]
+    var robot: Arn
   }
 
   object DescribeRobotRequest {
     def apply(
-      robot: js.UndefOr[Arn] = js.undefined): DescribeRobotRequest = {
+      robot: Arn): DescribeRobotRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "robot" -> robot.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "robot" -> robot.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeRobotRequest]
     }
@@ -1096,38 +1096,38 @@ package robomaker {
 
   @js.native
   trait DescribeRobotResponse extends js.Object {
-    var arn: js.UndefOr[Arn]
-    var name: js.UndefOr[Name]
-    var greengrassGroupId: js.UndefOr[Id]
-    var lastDeploymentTime: js.UndefOr[CreatedAt]
     var architecture: js.UndefOr[Architecture]
-    var fleetArn: js.UndefOr[Arn]
-    var status: js.UndefOr[RobotStatus]
+    var arn: js.UndefOr[Arn]
     var createdAt: js.UndefOr[CreatedAt]
+    var fleetArn: js.UndefOr[Arn]
+    var greengrassGroupId: js.UndefOr[Id]
     var lastDeploymentJob: js.UndefOr[Arn]
+    var lastDeploymentTime: js.UndefOr[CreatedAt]
+    var name: js.UndefOr[Name]
+    var status: js.UndefOr[RobotStatus]
   }
 
   object DescribeRobotResponse {
     def apply(
-      arn: js.UndefOr[Arn] = js.undefined,
-      name: js.UndefOr[Name] = js.undefined,
-      greengrassGroupId: js.UndefOr[Id] = js.undefined,
-      lastDeploymentTime: js.UndefOr[CreatedAt] = js.undefined,
       architecture: js.UndefOr[Architecture] = js.undefined,
-      fleetArn: js.UndefOr[Arn] = js.undefined,
-      status: js.UndefOr[RobotStatus] = js.undefined,
+      arn: js.UndefOr[Arn] = js.undefined,
       createdAt: js.UndefOr[CreatedAt] = js.undefined,
-      lastDeploymentJob: js.UndefOr[Arn] = js.undefined): DescribeRobotResponse = {
+      fleetArn: js.UndefOr[Arn] = js.undefined,
+      greengrassGroupId: js.UndefOr[Id] = js.undefined,
+      lastDeploymentJob: js.UndefOr[Arn] = js.undefined,
+      lastDeploymentTime: js.UndefOr[CreatedAt] = js.undefined,
+      name: js.UndefOr[Name] = js.undefined,
+      status: js.UndefOr[RobotStatus] = js.undefined): DescribeRobotResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "arn" -> arn.map { x => x.asInstanceOf[js.Any] },
-        "name" -> name.map { x => x.asInstanceOf[js.Any] },
-        "greengrassGroupId" -> greengrassGroupId.map { x => x.asInstanceOf[js.Any] },
-        "lastDeploymentTime" -> lastDeploymentTime.map { x => x.asInstanceOf[js.Any] },
         "architecture" -> architecture.map { x => x.asInstanceOf[js.Any] },
-        "fleetArn" -> fleetArn.map { x => x.asInstanceOf[js.Any] },
-        "status" -> status.map { x => x.asInstanceOf[js.Any] },
+        "arn" -> arn.map { x => x.asInstanceOf[js.Any] },
         "createdAt" -> createdAt.map { x => x.asInstanceOf[js.Any] },
-        "lastDeploymentJob" -> lastDeploymentJob.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "fleetArn" -> fleetArn.map { x => x.asInstanceOf[js.Any] },
+        "greengrassGroupId" -> greengrassGroupId.map { x => x.asInstanceOf[js.Any] },
+        "lastDeploymentJob" -> lastDeploymentJob.map { x => x.asInstanceOf[js.Any] },
+        "lastDeploymentTime" -> lastDeploymentTime.map { x => x.asInstanceOf[js.Any] },
+        "name" -> name.map { x => x.asInstanceOf[js.Any] },
+        "status" -> status.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeRobotResponse]
     }
@@ -1135,16 +1135,16 @@ package robomaker {
 
   @js.native
   trait DescribeSimulationApplicationRequest extends js.Object {
-    var application: js.UndefOr[Arn]
+    var application: Arn
     var applicationVersion: js.UndefOr[Version]
   }
 
   object DescribeSimulationApplicationRequest {
     def apply(
-      application: js.UndefOr[Arn] = js.undefined,
+      application: Arn,
       applicationVersion: js.UndefOr[Version] = js.undefined): DescribeSimulationApplicationRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "application" -> application.map { x => x.asInstanceOf[js.Any] },
+        "application" -> application.asInstanceOf[js.Any],
         "applicationVersion" -> applicationVersion.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeSimulationApplicationRequest]
@@ -1153,38 +1153,38 @@ package robomaker {
 
   @js.native
   trait DescribeSimulationApplicationResponse extends js.Object {
-    var robotSoftwareSuite: js.UndefOr[RobotSoftwareSuite]
     var arn: js.UndefOr[Arn]
-    var name: js.UndefOr[Name]
-    var simulationSoftwareSuite: js.UndefOr[SimulationSoftwareSuite]
-    var revisionId: js.UndefOr[RevisionId]
-    var version: js.UndefOr[Version]
-    var renderingEngine: js.UndefOr[RenderingEngine]
-    var sources: js.UndefOr[Sources]
     var lastUpdatedAt: js.UndefOr[LastUpdatedAt]
+    var name: js.UndefOr[Name]
+    var renderingEngine: js.UndefOr[RenderingEngine]
+    var revisionId: js.UndefOr[RevisionId]
+    var robotSoftwareSuite: js.UndefOr[RobotSoftwareSuite]
+    var simulationSoftwareSuite: js.UndefOr[SimulationSoftwareSuite]
+    var sources: js.UndefOr[Sources]
+    var version: js.UndefOr[Version]
   }
 
   object DescribeSimulationApplicationResponse {
     def apply(
-      robotSoftwareSuite: js.UndefOr[RobotSoftwareSuite] = js.undefined,
       arn: js.UndefOr[Arn] = js.undefined,
+      lastUpdatedAt: js.UndefOr[LastUpdatedAt] = js.undefined,
       name: js.UndefOr[Name] = js.undefined,
-      simulationSoftwareSuite: js.UndefOr[SimulationSoftwareSuite] = js.undefined,
-      revisionId: js.UndefOr[RevisionId] = js.undefined,
-      version: js.UndefOr[Version] = js.undefined,
       renderingEngine: js.UndefOr[RenderingEngine] = js.undefined,
+      revisionId: js.UndefOr[RevisionId] = js.undefined,
+      robotSoftwareSuite: js.UndefOr[RobotSoftwareSuite] = js.undefined,
+      simulationSoftwareSuite: js.UndefOr[SimulationSoftwareSuite] = js.undefined,
       sources: js.UndefOr[Sources] = js.undefined,
-      lastUpdatedAt: js.UndefOr[LastUpdatedAt] = js.undefined): DescribeSimulationApplicationResponse = {
+      version: js.UndefOr[Version] = js.undefined): DescribeSimulationApplicationResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "robotSoftwareSuite" -> robotSoftwareSuite.map { x => x.asInstanceOf[js.Any] },
         "arn" -> arn.map { x => x.asInstanceOf[js.Any] },
+        "lastUpdatedAt" -> lastUpdatedAt.map { x => x.asInstanceOf[js.Any] },
         "name" -> name.map { x => x.asInstanceOf[js.Any] },
-        "simulationSoftwareSuite" -> simulationSoftwareSuite.map { x => x.asInstanceOf[js.Any] },
-        "revisionId" -> revisionId.map { x => x.asInstanceOf[js.Any] },
-        "version" -> version.map { x => x.asInstanceOf[js.Any] },
         "renderingEngine" -> renderingEngine.map { x => x.asInstanceOf[js.Any] },
+        "revisionId" -> revisionId.map { x => x.asInstanceOf[js.Any] },
+        "robotSoftwareSuite" -> robotSoftwareSuite.map { x => x.asInstanceOf[js.Any] },
+        "simulationSoftwareSuite" -> simulationSoftwareSuite.map { x => x.asInstanceOf[js.Any] },
         "sources" -> sources.map { x => x.asInstanceOf[js.Any] },
-        "lastUpdatedAt" -> lastUpdatedAt.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "version" -> version.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeSimulationApplicationResponse]
     }
@@ -1192,14 +1192,14 @@ package robomaker {
 
   @js.native
   trait DescribeSimulationJobRequest extends js.Object {
-    var job: js.UndefOr[Arn]
+    var job: Arn
   }
 
   object DescribeSimulationJobRequest {
     def apply(
-      job: js.UndefOr[Arn] = js.undefined): DescribeSimulationJobRequest = {
+      job: Arn): DescribeSimulationJobRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "job" -> job.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "job" -> job.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeSimulationJobRequest]
     }
@@ -1208,52 +1208,52 @@ package robomaker {
   @js.native
   trait DescribeSimulationJobResponse extends js.Object {
     var arn: js.UndefOr[Arn]
-    var name: js.UndefOr[Name]
-    var iamRole: js.UndefOr[IamRole]
-    var vpcConfig: js.UndefOr[VPCConfigResponse]
-    var simulationTimeMillis: js.UndefOr[SimulationTimeMillis]
-    var simulationApplications: js.UndefOr[SimulationApplicationConfigs]
-    var robotApplications: js.UndefOr[RobotApplicationConfigs]
-    var failureCode: js.UndefOr[SimulationJobErrorCode]
     var clientRequestToken: js.UndefOr[ClientRequestToken]
-    var status: js.UndefOr[SimulationJobStatus]
-    var maxJobDurationInSeconds: js.UndefOr[JobDuration]
-    var outputLocation: js.UndefOr[OutputLocation]
-    var lastUpdatedAt: js.UndefOr[LastUpdatedAt]
     var failureBehavior: js.UndefOr[FailureBehavior]
+    var failureCode: js.UndefOr[SimulationJobErrorCode]
+    var iamRole: js.UndefOr[IamRole]
+    var lastUpdatedAt: js.UndefOr[LastUpdatedAt]
+    var maxJobDurationInSeconds: js.UndefOr[JobDuration]
+    var name: js.UndefOr[Name]
+    var outputLocation: js.UndefOr[OutputLocation]
+    var robotApplications: js.UndefOr[RobotApplicationConfigs]
+    var simulationApplications: js.UndefOr[SimulationApplicationConfigs]
+    var simulationTimeMillis: js.UndefOr[SimulationTimeMillis]
+    var status: js.UndefOr[SimulationJobStatus]
+    var vpcConfig: js.UndefOr[VPCConfigResponse]
   }
 
   object DescribeSimulationJobResponse {
     def apply(
       arn: js.UndefOr[Arn] = js.undefined,
-      name: js.UndefOr[Name] = js.undefined,
-      iamRole: js.UndefOr[IamRole] = js.undefined,
-      vpcConfig: js.UndefOr[VPCConfigResponse] = js.undefined,
-      simulationTimeMillis: js.UndefOr[SimulationTimeMillis] = js.undefined,
-      simulationApplications: js.UndefOr[SimulationApplicationConfigs] = js.undefined,
-      robotApplications: js.UndefOr[RobotApplicationConfigs] = js.undefined,
-      failureCode: js.UndefOr[SimulationJobErrorCode] = js.undefined,
       clientRequestToken: js.UndefOr[ClientRequestToken] = js.undefined,
-      status: js.UndefOr[SimulationJobStatus] = js.undefined,
-      maxJobDurationInSeconds: js.UndefOr[JobDuration] = js.undefined,
-      outputLocation: js.UndefOr[OutputLocation] = js.undefined,
+      failureBehavior: js.UndefOr[FailureBehavior] = js.undefined,
+      failureCode: js.UndefOr[SimulationJobErrorCode] = js.undefined,
+      iamRole: js.UndefOr[IamRole] = js.undefined,
       lastUpdatedAt: js.UndefOr[LastUpdatedAt] = js.undefined,
-      failureBehavior: js.UndefOr[FailureBehavior] = js.undefined): DescribeSimulationJobResponse = {
+      maxJobDurationInSeconds: js.UndefOr[JobDuration] = js.undefined,
+      name: js.UndefOr[Name] = js.undefined,
+      outputLocation: js.UndefOr[OutputLocation] = js.undefined,
+      robotApplications: js.UndefOr[RobotApplicationConfigs] = js.undefined,
+      simulationApplications: js.UndefOr[SimulationApplicationConfigs] = js.undefined,
+      simulationTimeMillis: js.UndefOr[SimulationTimeMillis] = js.undefined,
+      status: js.UndefOr[SimulationJobStatus] = js.undefined,
+      vpcConfig: js.UndefOr[VPCConfigResponse] = js.undefined): DescribeSimulationJobResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
         "arn" -> arn.map { x => x.asInstanceOf[js.Any] },
-        "name" -> name.map { x => x.asInstanceOf[js.Any] },
-        "iamRole" -> iamRole.map { x => x.asInstanceOf[js.Any] },
-        "vpcConfig" -> vpcConfig.map { x => x.asInstanceOf[js.Any] },
-        "simulationTimeMillis" -> simulationTimeMillis.map { x => x.asInstanceOf[js.Any] },
-        "simulationApplications" -> simulationApplications.map { x => x.asInstanceOf[js.Any] },
-        "robotApplications" -> robotApplications.map { x => x.asInstanceOf[js.Any] },
-        "failureCode" -> failureCode.map { x => x.asInstanceOf[js.Any] },
         "clientRequestToken" -> clientRequestToken.map { x => x.asInstanceOf[js.Any] },
-        "status" -> status.map { x => x.asInstanceOf[js.Any] },
-        "maxJobDurationInSeconds" -> maxJobDurationInSeconds.map { x => x.asInstanceOf[js.Any] },
-        "outputLocation" -> outputLocation.map { x => x.asInstanceOf[js.Any] },
+        "failureBehavior" -> failureBehavior.map { x => x.asInstanceOf[js.Any] },
+        "failureCode" -> failureCode.map { x => x.asInstanceOf[js.Any] },
+        "iamRole" -> iamRole.map { x => x.asInstanceOf[js.Any] },
         "lastUpdatedAt" -> lastUpdatedAt.map { x => x.asInstanceOf[js.Any] },
-        "failureBehavior" -> failureBehavior.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "maxJobDurationInSeconds" -> maxJobDurationInSeconds.map { x => x.asInstanceOf[js.Any] },
+        "name" -> name.map { x => x.asInstanceOf[js.Any] },
+        "outputLocation" -> outputLocation.map { x => x.asInstanceOf[js.Any] },
+        "robotApplications" -> robotApplications.map { x => x.asInstanceOf[js.Any] },
+        "simulationApplications" -> simulationApplications.map { x => x.asInstanceOf[js.Any] },
+        "simulationTimeMillis" -> simulationTimeMillis.map { x => x.asInstanceOf[js.Any] },
+        "status" -> status.map { x => x.asInstanceOf[js.Any] },
+        "vpcConfig" -> vpcConfig.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeSimulationJobResponse]
     }
@@ -1293,28 +1293,28 @@ package robomaker {
   @js.native
   trait Fleet extends js.Object {
     var arn: js.UndefOr[Arn]
-    var name: js.UndefOr[Name]
-    var lastDeploymentTime: js.UndefOr[CreatedAt]
-    var lastDeploymentStatus: js.UndefOr[DeploymentStatus]
     var createdAt: js.UndefOr[CreatedAt]
     var lastDeploymentJob: js.UndefOr[Arn]
+    var lastDeploymentStatus: js.UndefOr[DeploymentStatus]
+    var lastDeploymentTime: js.UndefOr[CreatedAt]
+    var name: js.UndefOr[Name]
   }
 
   object Fleet {
     def apply(
       arn: js.UndefOr[Arn] = js.undefined,
-      name: js.UndefOr[Name] = js.undefined,
-      lastDeploymentTime: js.UndefOr[CreatedAt] = js.undefined,
-      lastDeploymentStatus: js.UndefOr[DeploymentStatus] = js.undefined,
       createdAt: js.UndefOr[CreatedAt] = js.undefined,
-      lastDeploymentJob: js.UndefOr[Arn] = js.undefined): Fleet = {
+      lastDeploymentJob: js.UndefOr[Arn] = js.undefined,
+      lastDeploymentStatus: js.UndefOr[DeploymentStatus] = js.undefined,
+      lastDeploymentTime: js.UndefOr[CreatedAt] = js.undefined,
+      name: js.UndefOr[Name] = js.undefined): Fleet = {
       val _fields = IndexedSeq[(String, js.Any)](
         "arn" -> arn.map { x => x.asInstanceOf[js.Any] },
-        "name" -> name.map { x => x.asInstanceOf[js.Any] },
-        "lastDeploymentTime" -> lastDeploymentTime.map { x => x.asInstanceOf[js.Any] },
-        "lastDeploymentStatus" -> lastDeploymentStatus.map { x => x.asInstanceOf[js.Any] },
         "createdAt" -> createdAt.map { x => x.asInstanceOf[js.Any] },
-        "lastDeploymentJob" -> lastDeploymentJob.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "lastDeploymentJob" -> lastDeploymentJob.map { x => x.asInstanceOf[js.Any] },
+        "lastDeploymentStatus" -> lastDeploymentStatus.map { x => x.asInstanceOf[js.Any] },
+        "lastDeploymentTime" -> lastDeploymentTime.map { x => x.asInstanceOf[js.Any] },
+        "name" -> name.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Fleet]
     }
@@ -1325,19 +1325,19 @@ package robomaker {
    */
   @js.native
   trait LaunchConfig extends js.Object {
-    var packageName: js.UndefOr[GenericString]
-    var launchFile: js.UndefOr[GenericString]
+    var launchFile: GenericString
+    var packageName: GenericString
     var environmentVariables: js.UndefOr[EnvironmentVariableMap]
   }
 
   object LaunchConfig {
     def apply(
-      packageName: js.UndefOr[GenericString] = js.undefined,
-      launchFile: js.UndefOr[GenericString] = js.undefined,
+      launchFile: GenericString,
+      packageName: GenericString,
       environmentVariables: js.UndefOr[EnvironmentVariableMap] = js.undefined): LaunchConfig = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "packageName" -> packageName.map { x => x.asInstanceOf[js.Any] },
-        "launchFile" -> launchFile.map { x => x.asInstanceOf[js.Any] },
+        "launchFile" -> launchFile.asInstanceOf[js.Any],
+        "packageName" -> packageName.asInstanceOf[js.Any],
         "environmentVariables" -> environmentVariables.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[LaunchConfig]
@@ -1347,19 +1347,19 @@ package robomaker {
   @js.native
   trait ListDeploymentJobsRequest extends js.Object {
     var filters: js.UndefOr[Filters]
-    var nextToken: js.UndefOr[PaginationToken]
     var maxResults: js.UndefOr[MaxResults]
+    var nextToken: js.UndefOr[PaginationToken]
   }
 
   object ListDeploymentJobsRequest {
     def apply(
       filters: js.UndefOr[Filters] = js.undefined,
-      nextToken: js.UndefOr[PaginationToken] = js.undefined,
-      maxResults: js.UndefOr[MaxResults] = js.undefined): ListDeploymentJobsRequest = {
+      maxResults: js.UndefOr[MaxResults] = js.undefined,
+      nextToken: js.UndefOr[PaginationToken] = js.undefined): ListDeploymentJobsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "filters" -> filters.map { x => x.asInstanceOf[js.Any] },
-        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] },
-        "maxResults" -> maxResults.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "maxResults" -> maxResults.map { x => x.asInstanceOf[js.Any] },
+        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListDeploymentJobsRequest]
     }
@@ -1385,20 +1385,20 @@ package robomaker {
 
   @js.native
   trait ListFleetsRequest extends js.Object {
-    var nextToken: js.UndefOr[PaginationToken]
-    var maxResults: js.UndefOr[MaxResults]
     var filters: js.UndefOr[Filters]
+    var maxResults: js.UndefOr[MaxResults]
+    var nextToken: js.UndefOr[PaginationToken]
   }
 
   object ListFleetsRequest {
     def apply(
-      nextToken: js.UndefOr[PaginationToken] = js.undefined,
+      filters: js.UndefOr[Filters] = js.undefined,
       maxResults: js.UndefOr[MaxResults] = js.undefined,
-      filters: js.UndefOr[Filters] = js.undefined): ListFleetsRequest = {
+      nextToken: js.UndefOr[PaginationToken] = js.undefined): ListFleetsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] },
+        "filters" -> filters.map { x => x.asInstanceOf[js.Any] },
         "maxResults" -> maxResults.map { x => x.asInstanceOf[js.Any] },
-        "filters" -> filters.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListFleetsRequest]
     }
@@ -1424,23 +1424,23 @@ package robomaker {
 
   @js.native
   trait ListRobotApplicationsRequest extends js.Object {
-    var versionQualifier: js.UndefOr[VersionQualifier]
-    var nextToken: js.UndefOr[PaginationToken]
-    var maxResults: js.UndefOr[MaxResults]
     var filters: js.UndefOr[Filters]
+    var maxResults: js.UndefOr[MaxResults]
+    var nextToken: js.UndefOr[PaginationToken]
+    var versionQualifier: js.UndefOr[VersionQualifier]
   }
 
   object ListRobotApplicationsRequest {
     def apply(
-      versionQualifier: js.UndefOr[VersionQualifier] = js.undefined,
-      nextToken: js.UndefOr[PaginationToken] = js.undefined,
+      filters: js.UndefOr[Filters] = js.undefined,
       maxResults: js.UndefOr[MaxResults] = js.undefined,
-      filters: js.UndefOr[Filters] = js.undefined): ListRobotApplicationsRequest = {
+      nextToken: js.UndefOr[PaginationToken] = js.undefined,
+      versionQualifier: js.UndefOr[VersionQualifier] = js.undefined): ListRobotApplicationsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "versionQualifier" -> versionQualifier.map { x => x.asInstanceOf[js.Any] },
-        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] },
+        "filters" -> filters.map { x => x.asInstanceOf[js.Any] },
         "maxResults" -> maxResults.map { x => x.asInstanceOf[js.Any] },
-        "filters" -> filters.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] },
+        "versionQualifier" -> versionQualifier.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListRobotApplicationsRequest]
     }
@@ -1448,17 +1448,17 @@ package robomaker {
 
   @js.native
   trait ListRobotApplicationsResponse extends js.Object {
-    var robotApplicationSummaries: js.UndefOr[RobotApplicationSummaries]
     var nextToken: js.UndefOr[PaginationToken]
+    var robotApplicationSummaries: js.UndefOr[RobotApplicationSummaries]
   }
 
   object ListRobotApplicationsResponse {
     def apply(
-      robotApplicationSummaries: js.UndefOr[RobotApplicationSummaries] = js.undefined,
-      nextToken: js.UndefOr[PaginationToken] = js.undefined): ListRobotApplicationsResponse = {
+      nextToken: js.UndefOr[PaginationToken] = js.undefined,
+      robotApplicationSummaries: js.UndefOr[RobotApplicationSummaries] = js.undefined): ListRobotApplicationsResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "robotApplicationSummaries" -> robotApplicationSummaries.map { x => x.asInstanceOf[js.Any] },
-        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] },
+        "robotApplicationSummaries" -> robotApplicationSummaries.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListRobotApplicationsResponse]
     }
@@ -1466,20 +1466,20 @@ package robomaker {
 
   @js.native
   trait ListRobotsRequest extends js.Object {
-    var nextToken: js.UndefOr[PaginationToken]
-    var maxResults: js.UndefOr[MaxResults]
     var filters: js.UndefOr[Filters]
+    var maxResults: js.UndefOr[MaxResults]
+    var nextToken: js.UndefOr[PaginationToken]
   }
 
   object ListRobotsRequest {
     def apply(
-      nextToken: js.UndefOr[PaginationToken] = js.undefined,
+      filters: js.UndefOr[Filters] = js.undefined,
       maxResults: js.UndefOr[MaxResults] = js.undefined,
-      filters: js.UndefOr[Filters] = js.undefined): ListRobotsRequest = {
+      nextToken: js.UndefOr[PaginationToken] = js.undefined): ListRobotsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] },
+        "filters" -> filters.map { x => x.asInstanceOf[js.Any] },
         "maxResults" -> maxResults.map { x => x.asInstanceOf[js.Any] },
-        "filters" -> filters.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListRobotsRequest]
     }
@@ -1487,17 +1487,17 @@ package robomaker {
 
   @js.native
   trait ListRobotsResponse extends js.Object {
-    var robots: js.UndefOr[Robots]
     var nextToken: js.UndefOr[PaginationToken]
+    var robots: js.UndefOr[Robots]
   }
 
   object ListRobotsResponse {
     def apply(
-      robots: js.UndefOr[Robots] = js.undefined,
-      nextToken: js.UndefOr[PaginationToken] = js.undefined): ListRobotsResponse = {
+      nextToken: js.UndefOr[PaginationToken] = js.undefined,
+      robots: js.UndefOr[Robots] = js.undefined): ListRobotsResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "robots" -> robots.map { x => x.asInstanceOf[js.Any] },
-        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] },
+        "robots" -> robots.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListRobotsResponse]
     }
@@ -1505,23 +1505,23 @@ package robomaker {
 
   @js.native
   trait ListSimulationApplicationsRequest extends js.Object {
-    var versionQualifier: js.UndefOr[VersionQualifier]
-    var nextToken: js.UndefOr[PaginationToken]
-    var maxResults: js.UndefOr[MaxResults]
     var filters: js.UndefOr[Filters]
+    var maxResults: js.UndefOr[MaxResults]
+    var nextToken: js.UndefOr[PaginationToken]
+    var versionQualifier: js.UndefOr[VersionQualifier]
   }
 
   object ListSimulationApplicationsRequest {
     def apply(
-      versionQualifier: js.UndefOr[VersionQualifier] = js.undefined,
-      nextToken: js.UndefOr[PaginationToken] = js.undefined,
+      filters: js.UndefOr[Filters] = js.undefined,
       maxResults: js.UndefOr[MaxResults] = js.undefined,
-      filters: js.UndefOr[Filters] = js.undefined): ListSimulationApplicationsRequest = {
+      nextToken: js.UndefOr[PaginationToken] = js.undefined,
+      versionQualifier: js.UndefOr[VersionQualifier] = js.undefined): ListSimulationApplicationsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "versionQualifier" -> versionQualifier.map { x => x.asInstanceOf[js.Any] },
-        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] },
+        "filters" -> filters.map { x => x.asInstanceOf[js.Any] },
         "maxResults" -> maxResults.map { x => x.asInstanceOf[js.Any] },
-        "filters" -> filters.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] },
+        "versionQualifier" -> versionQualifier.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListSimulationApplicationsRequest]
     }
@@ -1529,17 +1529,17 @@ package robomaker {
 
   @js.native
   trait ListSimulationApplicationsResponse extends js.Object {
-    var simulationApplicationSummaries: js.UndefOr[SimulationApplicationSummaries]
     var nextToken: js.UndefOr[PaginationToken]
+    var simulationApplicationSummaries: js.UndefOr[SimulationApplicationSummaries]
   }
 
   object ListSimulationApplicationsResponse {
     def apply(
-      simulationApplicationSummaries: js.UndefOr[SimulationApplicationSummaries] = js.undefined,
-      nextToken: js.UndefOr[PaginationToken] = js.undefined): ListSimulationApplicationsResponse = {
+      nextToken: js.UndefOr[PaginationToken] = js.undefined,
+      simulationApplicationSummaries: js.UndefOr[SimulationApplicationSummaries] = js.undefined): ListSimulationApplicationsResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "simulationApplicationSummaries" -> simulationApplicationSummaries.map { x => x.asInstanceOf[js.Any] },
-        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] },
+        "simulationApplicationSummaries" -> simulationApplicationSummaries.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListSimulationApplicationsResponse]
     }
@@ -1547,20 +1547,20 @@ package robomaker {
 
   @js.native
   trait ListSimulationJobsRequest extends js.Object {
-    var nextToken: js.UndefOr[PaginationToken]
-    var maxResults: js.UndefOr[MaxResults]
     var filters: js.UndefOr[Filters]
+    var maxResults: js.UndefOr[MaxResults]
+    var nextToken: js.UndefOr[PaginationToken]
   }
 
   object ListSimulationJobsRequest {
     def apply(
-      nextToken: js.UndefOr[PaginationToken] = js.undefined,
+      filters: js.UndefOr[Filters] = js.undefined,
       maxResults: js.UndefOr[MaxResults] = js.undefined,
-      filters: js.UndefOr[Filters] = js.undefined): ListSimulationJobsRequest = {
+      nextToken: js.UndefOr[PaginationToken] = js.undefined): ListSimulationJobsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] },
+        "filters" -> filters.map { x => x.asInstanceOf[js.Any] },
         "maxResults" -> maxResults.map { x => x.asInstanceOf[js.Any] },
-        "filters" -> filters.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListSimulationJobsRequest]
     }
@@ -1568,16 +1568,16 @@ package robomaker {
 
   @js.native
   trait ListSimulationJobsResponse extends js.Object {
-    var simulationJobSummaries: js.UndefOr[SimulationJobSummaries]
+    var simulationJobSummaries: SimulationJobSummaries
     var nextToken: js.UndefOr[PaginationToken]
   }
 
   object ListSimulationJobsResponse {
     def apply(
-      simulationJobSummaries: js.UndefOr[SimulationJobSummaries] = js.undefined,
+      simulationJobSummaries: SimulationJobSummaries,
       nextToken: js.UndefOr[PaginationToken] = js.undefined): ListSimulationJobsResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "simulationJobSummaries" -> simulationJobSummaries.map { x => x.asInstanceOf[js.Any] },
+        "simulationJobSummaries" -> simulationJobSummaries.asInstanceOf[js.Any],
         "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListSimulationJobsResponse]
@@ -1628,17 +1628,17 @@ package robomaker {
 
   @js.native
   trait RegisterRobotRequest extends js.Object {
-    var fleet: js.UndefOr[Arn]
-    var robot: js.UndefOr[Arn]
+    var fleet: Arn
+    var robot: Arn
   }
 
   object RegisterRobotRequest {
     def apply(
-      fleet: js.UndefOr[Arn] = js.undefined,
-      robot: js.UndefOr[Arn] = js.undefined): RegisterRobotRequest = {
+      fleet: Arn,
+      robot: Arn): RegisterRobotRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "fleet" -> fleet.map { x => x.asInstanceOf[js.Any] },
-        "robot" -> robot.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "fleet" -> fleet.asInstanceOf[js.Any],
+        "robot" -> robot.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RegisterRobotRequest]
     }
@@ -1691,14 +1691,14 @@ package robomaker {
 
   @js.native
   trait RestartSimulationJobRequest extends js.Object {
-    var job: js.UndefOr[Arn]
+    var job: Arn
   }
 
   object RestartSimulationJobRequest {
     def apply(
-      job: js.UndefOr[Arn] = js.undefined): RestartSimulationJobRequest = {
+      job: Arn): RestartSimulationJobRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "job" -> job.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "job" -> job.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RestartSimulationJobRequest]
     }
@@ -1722,38 +1722,38 @@ package robomaker {
    */
   @js.native
   trait Robot extends js.Object {
-    var arn: js.UndefOr[Arn]
-    var name: js.UndefOr[Name]
-    var lastDeploymentTime: js.UndefOr[CreatedAt]
     var architecture: js.UndefOr[Architecture]
+    var arn: js.UndefOr[Arn]
+    var createdAt: js.UndefOr[CreatedAt]
     var fleetArn: js.UndefOr[Arn]
     var greenGrassGroupId: js.UndefOr[Id]
-    var status: js.UndefOr[RobotStatus]
-    var createdAt: js.UndefOr[CreatedAt]
     var lastDeploymentJob: js.UndefOr[Arn]
+    var lastDeploymentTime: js.UndefOr[CreatedAt]
+    var name: js.UndefOr[Name]
+    var status: js.UndefOr[RobotStatus]
   }
 
   object Robot {
     def apply(
-      arn: js.UndefOr[Arn] = js.undefined,
-      name: js.UndefOr[Name] = js.undefined,
-      lastDeploymentTime: js.UndefOr[CreatedAt] = js.undefined,
       architecture: js.UndefOr[Architecture] = js.undefined,
+      arn: js.UndefOr[Arn] = js.undefined,
+      createdAt: js.UndefOr[CreatedAt] = js.undefined,
       fleetArn: js.UndefOr[Arn] = js.undefined,
       greenGrassGroupId: js.UndefOr[Id] = js.undefined,
-      status: js.UndefOr[RobotStatus] = js.undefined,
-      createdAt: js.UndefOr[CreatedAt] = js.undefined,
-      lastDeploymentJob: js.UndefOr[Arn] = js.undefined): Robot = {
+      lastDeploymentJob: js.UndefOr[Arn] = js.undefined,
+      lastDeploymentTime: js.UndefOr[CreatedAt] = js.undefined,
+      name: js.UndefOr[Name] = js.undefined,
+      status: js.UndefOr[RobotStatus] = js.undefined): Robot = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "arn" -> arn.map { x => x.asInstanceOf[js.Any] },
-        "name" -> name.map { x => x.asInstanceOf[js.Any] },
-        "lastDeploymentTime" -> lastDeploymentTime.map { x => x.asInstanceOf[js.Any] },
         "architecture" -> architecture.map { x => x.asInstanceOf[js.Any] },
+        "arn" -> arn.map { x => x.asInstanceOf[js.Any] },
+        "createdAt" -> createdAt.map { x => x.asInstanceOf[js.Any] },
         "fleetArn" -> fleetArn.map { x => x.asInstanceOf[js.Any] },
         "greenGrassGroupId" -> greenGrassGroupId.map { x => x.asInstanceOf[js.Any] },
-        "status" -> status.map { x => x.asInstanceOf[js.Any] },
-        "createdAt" -> createdAt.map { x => x.asInstanceOf[js.Any] },
-        "lastDeploymentJob" -> lastDeploymentJob.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "lastDeploymentJob" -> lastDeploymentJob.map { x => x.asInstanceOf[js.Any] },
+        "lastDeploymentTime" -> lastDeploymentTime.map { x => x.asInstanceOf[js.Any] },
+        "name" -> name.map { x => x.asInstanceOf[js.Any] },
+        "status" -> status.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Robot]
     }
@@ -1764,20 +1764,20 @@ package robomaker {
    */
   @js.native
   trait RobotApplicationConfig extends js.Object {
-    var application: js.UndefOr[Arn]
+    var application: Arn
+    var launchConfig: LaunchConfig
     var applicationVersion: js.UndefOr[Version]
-    var launchConfig: js.UndefOr[LaunchConfig]
   }
 
   object RobotApplicationConfig {
     def apply(
-      application: js.UndefOr[Arn] = js.undefined,
-      applicationVersion: js.UndefOr[Version] = js.undefined,
-      launchConfig: js.UndefOr[LaunchConfig] = js.undefined): RobotApplicationConfig = {
+      application: Arn,
+      launchConfig: LaunchConfig,
+      applicationVersion: js.UndefOr[Version] = js.undefined): RobotApplicationConfig = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "application" -> application.map { x => x.asInstanceOf[js.Any] },
-        "applicationVersion" -> applicationVersion.map { x => x.asInstanceOf[js.Any] },
-        "launchConfig" -> launchConfig.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "application" -> application.asInstanceOf[js.Any],
+        "launchConfig" -> launchConfig.asInstanceOf[js.Any],
+        "applicationVersion" -> applicationVersion.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RobotApplicationConfig]
     }
@@ -1788,23 +1788,23 @@ package robomaker {
    */
   @js.native
   trait RobotApplicationSummary extends js.Object {
-    var name: js.UndefOr[Name]
     var arn: js.UndefOr[Arn]
-    var version: js.UndefOr[Version]
     var lastUpdatedAt: js.UndefOr[LastUpdatedAt]
+    var name: js.UndefOr[Name]
+    var version: js.UndefOr[Version]
   }
 
   object RobotApplicationSummary {
     def apply(
-      name: js.UndefOr[Name] = js.undefined,
       arn: js.UndefOr[Arn] = js.undefined,
-      version: js.UndefOr[Version] = js.undefined,
-      lastUpdatedAt: js.UndefOr[LastUpdatedAt] = js.undefined): RobotApplicationSummary = {
+      lastUpdatedAt: js.UndefOr[LastUpdatedAt] = js.undefined,
+      name: js.UndefOr[Name] = js.undefined,
+      version: js.UndefOr[Version] = js.undefined): RobotApplicationSummary = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "name" -> name.map { x => x.asInstanceOf[js.Any] },
         "arn" -> arn.map { x => x.asInstanceOf[js.Any] },
-        "version" -> version.map { x => x.asInstanceOf[js.Any] },
-        "lastUpdatedAt" -> lastUpdatedAt.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "lastUpdatedAt" -> lastUpdatedAt.map { x => x.asInstanceOf[js.Any] },
+        "name" -> name.map { x => x.asInstanceOf[js.Any] },
+        "version" -> version.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RobotApplicationSummary]
     }
@@ -1816,31 +1816,31 @@ package robomaker {
   @js.native
   trait RobotDeployment extends js.Object {
     var arn: js.UndefOr[Arn]
-    var failureReason: js.UndefOr[GenericString]
     var deploymentFinishTime: js.UndefOr[CreatedAt]
-    var progressDetail: js.UndefOr[ProgressDetail]
-    var failureCode: js.UndefOr[DeploymentJobErrorCode]
-    var status: js.UndefOr[RobotStatus]
     var deploymentStartTime: js.UndefOr[CreatedAt]
+    var failureCode: js.UndefOr[DeploymentJobErrorCode]
+    var failureReason: js.UndefOr[GenericString]
+    var progressDetail: js.UndefOr[ProgressDetail]
+    var status: js.UndefOr[RobotStatus]
   }
 
   object RobotDeployment {
     def apply(
       arn: js.UndefOr[Arn] = js.undefined,
-      failureReason: js.UndefOr[GenericString] = js.undefined,
       deploymentFinishTime: js.UndefOr[CreatedAt] = js.undefined,
-      progressDetail: js.UndefOr[ProgressDetail] = js.undefined,
+      deploymentStartTime: js.UndefOr[CreatedAt] = js.undefined,
       failureCode: js.UndefOr[DeploymentJobErrorCode] = js.undefined,
-      status: js.UndefOr[RobotStatus] = js.undefined,
-      deploymentStartTime: js.UndefOr[CreatedAt] = js.undefined): RobotDeployment = {
+      failureReason: js.UndefOr[GenericString] = js.undefined,
+      progressDetail: js.UndefOr[ProgressDetail] = js.undefined,
+      status: js.UndefOr[RobotStatus] = js.undefined): RobotDeployment = {
       val _fields = IndexedSeq[(String, js.Any)](
         "arn" -> arn.map { x => x.asInstanceOf[js.Any] },
-        "failureReason" -> failureReason.map { x => x.asInstanceOf[js.Any] },
         "deploymentFinishTime" -> deploymentFinishTime.map { x => x.asInstanceOf[js.Any] },
-        "progressDetail" -> progressDetail.map { x => x.asInstanceOf[js.Any] },
+        "deploymentStartTime" -> deploymentStartTime.map { x => x.asInstanceOf[js.Any] },
         "failureCode" -> failureCode.map { x => x.asInstanceOf[js.Any] },
-        "status" -> status.map { x => x.asInstanceOf[js.Any] },
-        "deploymentStartTime" -> deploymentStartTime.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "failureReason" -> failureReason.map { x => x.asInstanceOf[js.Any] },
+        "progressDetail" -> progressDetail.map { x => x.asInstanceOf[js.Any] },
+        "status" -> status.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RobotDeployment]
     }
@@ -1896,20 +1896,20 @@ package robomaker {
    */
   @js.native
   trait SimulationApplicationConfig extends js.Object {
-    var application: js.UndefOr[Arn]
+    var application: Arn
+    var launchConfig: LaunchConfig
     var applicationVersion: js.UndefOr[Version]
-    var launchConfig: js.UndefOr[LaunchConfig]
   }
 
   object SimulationApplicationConfig {
     def apply(
-      application: js.UndefOr[Arn] = js.undefined,
-      applicationVersion: js.UndefOr[Version] = js.undefined,
-      launchConfig: js.UndefOr[LaunchConfig] = js.undefined): SimulationApplicationConfig = {
+      application: Arn,
+      launchConfig: LaunchConfig,
+      applicationVersion: js.UndefOr[Version] = js.undefined): SimulationApplicationConfig = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "application" -> application.map { x => x.asInstanceOf[js.Any] },
-        "applicationVersion" -> applicationVersion.map { x => x.asInstanceOf[js.Any] },
-        "launchConfig" -> launchConfig.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "application" -> application.asInstanceOf[js.Any],
+        "launchConfig" -> launchConfig.asInstanceOf[js.Any],
+        "applicationVersion" -> applicationVersion.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SimulationApplicationConfig]
     }
@@ -1920,23 +1920,23 @@ package robomaker {
    */
   @js.native
   trait SimulationApplicationSummary extends js.Object {
-    var name: js.UndefOr[Name]
     var arn: js.UndefOr[Arn]
-    var version: js.UndefOr[Version]
     var lastUpdatedAt: js.UndefOr[LastUpdatedAt]
+    var name: js.UndefOr[Name]
+    var version: js.UndefOr[Version]
   }
 
   object SimulationApplicationSummary {
     def apply(
-      name: js.UndefOr[Name] = js.undefined,
       arn: js.UndefOr[Arn] = js.undefined,
-      version: js.UndefOr[Version] = js.undefined,
-      lastUpdatedAt: js.UndefOr[LastUpdatedAt] = js.undefined): SimulationApplicationSummary = {
+      lastUpdatedAt: js.UndefOr[LastUpdatedAt] = js.undefined,
+      name: js.UndefOr[Name] = js.undefined,
+      version: js.UndefOr[Version] = js.undefined): SimulationApplicationSummary = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "name" -> name.map { x => x.asInstanceOf[js.Any] },
         "arn" -> arn.map { x => x.asInstanceOf[js.Any] },
-        "version" -> version.map { x => x.asInstanceOf[js.Any] },
-        "lastUpdatedAt" -> lastUpdatedAt.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "lastUpdatedAt" -> lastUpdatedAt.map { x => x.asInstanceOf[js.Any] },
+        "name" -> name.map { x => x.asInstanceOf[js.Any] },
+        "version" -> version.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SimulationApplicationSummary]
     }
@@ -1948,52 +1948,52 @@ package robomaker {
   @js.native
   trait SimulationJob extends js.Object {
     var arn: js.UndefOr[Arn]
-    var name: js.UndefOr[Name]
-    var iamRole: js.UndefOr[IamRole]
-    var vpcConfig: js.UndefOr[VPCConfigResponse]
-    var simulationTimeMillis: js.UndefOr[SimulationTimeMillis]
-    var simulationApplications: js.UndefOr[SimulationApplicationConfigs]
-    var robotApplications: js.UndefOr[RobotApplicationConfigs]
-    var failureCode: js.UndefOr[SimulationJobErrorCode]
     var clientRequestToken: js.UndefOr[ClientRequestToken]
-    var status: js.UndefOr[SimulationJobStatus]
-    var maxJobDurationInSeconds: js.UndefOr[JobDuration]
-    var outputLocation: js.UndefOr[OutputLocation]
-    var lastUpdatedAt: js.UndefOr[LastUpdatedAt]
     var failureBehavior: js.UndefOr[FailureBehavior]
+    var failureCode: js.UndefOr[SimulationJobErrorCode]
+    var iamRole: js.UndefOr[IamRole]
+    var lastUpdatedAt: js.UndefOr[LastUpdatedAt]
+    var maxJobDurationInSeconds: js.UndefOr[JobDuration]
+    var name: js.UndefOr[Name]
+    var outputLocation: js.UndefOr[OutputLocation]
+    var robotApplications: js.UndefOr[RobotApplicationConfigs]
+    var simulationApplications: js.UndefOr[SimulationApplicationConfigs]
+    var simulationTimeMillis: js.UndefOr[SimulationTimeMillis]
+    var status: js.UndefOr[SimulationJobStatus]
+    var vpcConfig: js.UndefOr[VPCConfigResponse]
   }
 
   object SimulationJob {
     def apply(
       arn: js.UndefOr[Arn] = js.undefined,
-      name: js.UndefOr[Name] = js.undefined,
-      iamRole: js.UndefOr[IamRole] = js.undefined,
-      vpcConfig: js.UndefOr[VPCConfigResponse] = js.undefined,
-      simulationTimeMillis: js.UndefOr[SimulationTimeMillis] = js.undefined,
-      simulationApplications: js.UndefOr[SimulationApplicationConfigs] = js.undefined,
-      robotApplications: js.UndefOr[RobotApplicationConfigs] = js.undefined,
-      failureCode: js.UndefOr[SimulationJobErrorCode] = js.undefined,
       clientRequestToken: js.UndefOr[ClientRequestToken] = js.undefined,
-      status: js.UndefOr[SimulationJobStatus] = js.undefined,
-      maxJobDurationInSeconds: js.UndefOr[JobDuration] = js.undefined,
-      outputLocation: js.UndefOr[OutputLocation] = js.undefined,
+      failureBehavior: js.UndefOr[FailureBehavior] = js.undefined,
+      failureCode: js.UndefOr[SimulationJobErrorCode] = js.undefined,
+      iamRole: js.UndefOr[IamRole] = js.undefined,
       lastUpdatedAt: js.UndefOr[LastUpdatedAt] = js.undefined,
-      failureBehavior: js.UndefOr[FailureBehavior] = js.undefined): SimulationJob = {
+      maxJobDurationInSeconds: js.UndefOr[JobDuration] = js.undefined,
+      name: js.UndefOr[Name] = js.undefined,
+      outputLocation: js.UndefOr[OutputLocation] = js.undefined,
+      robotApplications: js.UndefOr[RobotApplicationConfigs] = js.undefined,
+      simulationApplications: js.UndefOr[SimulationApplicationConfigs] = js.undefined,
+      simulationTimeMillis: js.UndefOr[SimulationTimeMillis] = js.undefined,
+      status: js.UndefOr[SimulationJobStatus] = js.undefined,
+      vpcConfig: js.UndefOr[VPCConfigResponse] = js.undefined): SimulationJob = {
       val _fields = IndexedSeq[(String, js.Any)](
         "arn" -> arn.map { x => x.asInstanceOf[js.Any] },
-        "name" -> name.map { x => x.asInstanceOf[js.Any] },
-        "iamRole" -> iamRole.map { x => x.asInstanceOf[js.Any] },
-        "vpcConfig" -> vpcConfig.map { x => x.asInstanceOf[js.Any] },
-        "simulationTimeMillis" -> simulationTimeMillis.map { x => x.asInstanceOf[js.Any] },
-        "simulationApplications" -> simulationApplications.map { x => x.asInstanceOf[js.Any] },
-        "robotApplications" -> robotApplications.map { x => x.asInstanceOf[js.Any] },
-        "failureCode" -> failureCode.map { x => x.asInstanceOf[js.Any] },
         "clientRequestToken" -> clientRequestToken.map { x => x.asInstanceOf[js.Any] },
-        "status" -> status.map { x => x.asInstanceOf[js.Any] },
-        "maxJobDurationInSeconds" -> maxJobDurationInSeconds.map { x => x.asInstanceOf[js.Any] },
-        "outputLocation" -> outputLocation.map { x => x.asInstanceOf[js.Any] },
+        "failureBehavior" -> failureBehavior.map { x => x.asInstanceOf[js.Any] },
+        "failureCode" -> failureCode.map { x => x.asInstanceOf[js.Any] },
+        "iamRole" -> iamRole.map { x => x.asInstanceOf[js.Any] },
         "lastUpdatedAt" -> lastUpdatedAt.map { x => x.asInstanceOf[js.Any] },
-        "failureBehavior" -> failureBehavior.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "maxJobDurationInSeconds" -> maxJobDurationInSeconds.map { x => x.asInstanceOf[js.Any] },
+        "name" -> name.map { x => x.asInstanceOf[js.Any] },
+        "outputLocation" -> outputLocation.map { x => x.asInstanceOf[js.Any] },
+        "robotApplications" -> robotApplications.map { x => x.asInstanceOf[js.Any] },
+        "simulationApplications" -> simulationApplications.map { x => x.asInstanceOf[js.Any] },
+        "simulationTimeMillis" -> simulationTimeMillis.map { x => x.asInstanceOf[js.Any] },
+        "status" -> status.map { x => x.asInstanceOf[js.Any] },
+        "vpcConfig" -> vpcConfig.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SimulationJob]
     }
@@ -2039,28 +2039,28 @@ package robomaker {
   @js.native
   trait SimulationJobSummary extends js.Object {
     var arn: js.UndefOr[Arn]
-    var name: js.UndefOr[Name]
-    var status: js.UndefOr[SimulationJobStatus]
-    var simulationApplicationNames: js.UndefOr[SimulationApplicationNames]
-    var robotApplicationNames: js.UndefOr[RobotApplicationNames]
     var lastUpdatedAt: js.UndefOr[LastUpdatedAt]
+    var name: js.UndefOr[Name]
+    var robotApplicationNames: js.UndefOr[RobotApplicationNames]
+    var simulationApplicationNames: js.UndefOr[SimulationApplicationNames]
+    var status: js.UndefOr[SimulationJobStatus]
   }
 
   object SimulationJobSummary {
     def apply(
       arn: js.UndefOr[Arn] = js.undefined,
+      lastUpdatedAt: js.UndefOr[LastUpdatedAt] = js.undefined,
       name: js.UndefOr[Name] = js.undefined,
-      status: js.UndefOr[SimulationJobStatus] = js.undefined,
-      simulationApplicationNames: js.UndefOr[SimulationApplicationNames] = js.undefined,
       robotApplicationNames: js.UndefOr[RobotApplicationNames] = js.undefined,
-      lastUpdatedAt: js.UndefOr[LastUpdatedAt] = js.undefined): SimulationJobSummary = {
+      simulationApplicationNames: js.UndefOr[SimulationApplicationNames] = js.undefined,
+      status: js.UndefOr[SimulationJobStatus] = js.undefined): SimulationJobSummary = {
       val _fields = IndexedSeq[(String, js.Any)](
         "arn" -> arn.map { x => x.asInstanceOf[js.Any] },
+        "lastUpdatedAt" -> lastUpdatedAt.map { x => x.asInstanceOf[js.Any] },
         "name" -> name.map { x => x.asInstanceOf[js.Any] },
-        "status" -> status.map { x => x.asInstanceOf[js.Any] },
-        "simulationApplicationNames" -> simulationApplicationNames.map { x => x.asInstanceOf[js.Any] },
         "robotApplicationNames" -> robotApplicationNames.map { x => x.asInstanceOf[js.Any] },
-        "lastUpdatedAt" -> lastUpdatedAt.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "simulationApplicationNames" -> simulationApplicationNames.map { x => x.asInstanceOf[js.Any] },
+        "status" -> status.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SimulationJobSummary]
     }
@@ -2098,23 +2098,23 @@ package robomaker {
    */
   @js.native
   trait Source extends js.Object {
+    var architecture: js.UndefOr[Architecture]
+    var etag: js.UndefOr[S3Etag]
     var s3Bucket: js.UndefOr[S3Bucket]
     var s3Key: js.UndefOr[S3Key]
-    var etag: js.UndefOr[S3Etag]
-    var architecture: js.UndefOr[Architecture]
   }
 
   object Source {
     def apply(
-      s3Bucket: js.UndefOr[S3Bucket] = js.undefined,
-      s3Key: js.UndefOr[S3Key] = js.undefined,
+      architecture: js.UndefOr[Architecture] = js.undefined,
       etag: js.UndefOr[S3Etag] = js.undefined,
-      architecture: js.UndefOr[Architecture] = js.undefined): Source = {
+      s3Bucket: js.UndefOr[S3Bucket] = js.undefined,
+      s3Key: js.UndefOr[S3Key] = js.undefined): Source = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "s3Bucket" -> s3Bucket.map { x => x.asInstanceOf[js.Any] },
-        "s3Key" -> s3Key.map { x => x.asInstanceOf[js.Any] },
+        "architecture" -> architecture.map { x => x.asInstanceOf[js.Any] },
         "etag" -> etag.map { x => x.asInstanceOf[js.Any] },
-        "architecture" -> architecture.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "s3Bucket" -> s3Bucket.map { x => x.asInstanceOf[js.Any] },
+        "s3Key" -> s3Key.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Source]
     }
@@ -2125,20 +2125,20 @@ package robomaker {
    */
   @js.native
   trait SourceConfig extends js.Object {
+    var architecture: js.UndefOr[Architecture]
     var s3Bucket: js.UndefOr[S3Bucket]
     var s3Key: js.UndefOr[S3Key]
-    var architecture: js.UndefOr[Architecture]
   }
 
   object SourceConfig {
     def apply(
+      architecture: js.UndefOr[Architecture] = js.undefined,
       s3Bucket: js.UndefOr[S3Bucket] = js.undefined,
-      s3Key: js.UndefOr[S3Key] = js.undefined,
-      architecture: js.UndefOr[Architecture] = js.undefined): SourceConfig = {
+      s3Key: js.UndefOr[S3Key] = js.undefined): SourceConfig = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "architecture" -> architecture.map { x => x.asInstanceOf[js.Any] },
         "s3Bucket" -> s3Bucket.map { x => x.asInstanceOf[js.Any] },
-        "s3Key" -> s3Key.map { x => x.asInstanceOf[js.Any] },
-        "architecture" -> architecture.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "s3Key" -> s3Key.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SourceConfig]
     }
@@ -2146,17 +2146,17 @@ package robomaker {
 
   @js.native
   trait SyncDeploymentJobRequest extends js.Object {
-    var clientRequestToken: js.UndefOr[ClientRequestToken]
-    var fleet: js.UndefOr[Arn]
+    var clientRequestToken: ClientRequestToken
+    var fleet: Arn
   }
 
   object SyncDeploymentJobRequest {
     def apply(
-      clientRequestToken: js.UndefOr[ClientRequestToken] = js.undefined,
-      fleet: js.UndefOr[Arn] = js.undefined): SyncDeploymentJobRequest = {
+      clientRequestToken: ClientRequestToken,
+      fleet: Arn): SyncDeploymentJobRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "clientRequestToken" -> clientRequestToken.map { x => x.asInstanceOf[js.Any] },
-        "fleet" -> fleet.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "clientRequestToken" -> clientRequestToken.asInstanceOf[js.Any],
+        "fleet" -> fleet.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SyncDeploymentJobRequest]
     }
@@ -2165,34 +2165,34 @@ package robomaker {
   @js.native
   trait SyncDeploymentJobResponse extends js.Object {
     var arn: js.UndefOr[Arn]
+    var createdAt: js.UndefOr[CreatedAt]
     var deploymentApplicationConfigs: js.UndefOr[DeploymentApplicationConfigs]
     var deploymentConfig: js.UndefOr[DeploymentConfig]
+    var failureCode: js.UndefOr[DeploymentJobErrorCode]
     var failureReason: js.UndefOr[GenericString]
     var fleet: js.UndefOr[Arn]
-    var failureCode: js.UndefOr[DeploymentJobErrorCode]
     var status: js.UndefOr[DeploymentStatus]
-    var createdAt: js.UndefOr[CreatedAt]
   }
 
   object SyncDeploymentJobResponse {
     def apply(
       arn: js.UndefOr[Arn] = js.undefined,
+      createdAt: js.UndefOr[CreatedAt] = js.undefined,
       deploymentApplicationConfigs: js.UndefOr[DeploymentApplicationConfigs] = js.undefined,
       deploymentConfig: js.UndefOr[DeploymentConfig] = js.undefined,
+      failureCode: js.UndefOr[DeploymentJobErrorCode] = js.undefined,
       failureReason: js.UndefOr[GenericString] = js.undefined,
       fleet: js.UndefOr[Arn] = js.undefined,
-      failureCode: js.UndefOr[DeploymentJobErrorCode] = js.undefined,
-      status: js.UndefOr[DeploymentStatus] = js.undefined,
-      createdAt: js.UndefOr[CreatedAt] = js.undefined): SyncDeploymentJobResponse = {
+      status: js.UndefOr[DeploymentStatus] = js.undefined): SyncDeploymentJobResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
         "arn" -> arn.map { x => x.asInstanceOf[js.Any] },
+        "createdAt" -> createdAt.map { x => x.asInstanceOf[js.Any] },
         "deploymentApplicationConfigs" -> deploymentApplicationConfigs.map { x => x.asInstanceOf[js.Any] },
         "deploymentConfig" -> deploymentConfig.map { x => x.asInstanceOf[js.Any] },
+        "failureCode" -> failureCode.map { x => x.asInstanceOf[js.Any] },
         "failureReason" -> failureReason.map { x => x.asInstanceOf[js.Any] },
         "fleet" -> fleet.map { x => x.asInstanceOf[js.Any] },
-        "failureCode" -> failureCode.map { x => x.asInstanceOf[js.Any] },
-        "status" -> status.map { x => x.asInstanceOf[js.Any] },
-        "createdAt" -> createdAt.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "status" -> status.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SyncDeploymentJobResponse]
     }
@@ -2200,22 +2200,22 @@ package robomaker {
 
   @js.native
   trait UpdateRobotApplicationRequest extends js.Object {
-    var application: js.UndefOr[Arn]
-    var sources: js.UndefOr[SourceConfigs]
-    var robotSoftwareSuite: js.UndefOr[RobotSoftwareSuite]
+    var application: Arn
+    var robotSoftwareSuite: RobotSoftwareSuite
+    var sources: SourceConfigs
     var currentRevisionId: js.UndefOr[RevisionId]
   }
 
   object UpdateRobotApplicationRequest {
     def apply(
-      application: js.UndefOr[Arn] = js.undefined,
-      sources: js.UndefOr[SourceConfigs] = js.undefined,
-      robotSoftwareSuite: js.UndefOr[RobotSoftwareSuite] = js.undefined,
+      application: Arn,
+      robotSoftwareSuite: RobotSoftwareSuite,
+      sources: SourceConfigs,
       currentRevisionId: js.UndefOr[RevisionId] = js.undefined): UpdateRobotApplicationRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "application" -> application.map { x => x.asInstanceOf[js.Any] },
-        "sources" -> sources.map { x => x.asInstanceOf[js.Any] },
-        "robotSoftwareSuite" -> robotSoftwareSuite.map { x => x.asInstanceOf[js.Any] },
+        "application" -> application.asInstanceOf[js.Any],
+        "robotSoftwareSuite" -> robotSoftwareSuite.asInstanceOf[js.Any],
+        "sources" -> sources.asInstanceOf[js.Any],
         "currentRevisionId" -> currentRevisionId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateRobotApplicationRequest]
@@ -2224,32 +2224,32 @@ package robomaker {
 
   @js.native
   trait UpdateRobotApplicationResponse extends js.Object {
-    var robotSoftwareSuite: js.UndefOr[RobotSoftwareSuite]
     var arn: js.UndefOr[Arn]
+    var lastUpdatedAt: js.UndefOr[LastUpdatedAt]
     var name: js.UndefOr[Name]
     var revisionId: js.UndefOr[RevisionId]
-    var version: js.UndefOr[Version]
+    var robotSoftwareSuite: js.UndefOr[RobotSoftwareSuite]
     var sources: js.UndefOr[Sources]
-    var lastUpdatedAt: js.UndefOr[LastUpdatedAt]
+    var version: js.UndefOr[Version]
   }
 
   object UpdateRobotApplicationResponse {
     def apply(
-      robotSoftwareSuite: js.UndefOr[RobotSoftwareSuite] = js.undefined,
       arn: js.UndefOr[Arn] = js.undefined,
+      lastUpdatedAt: js.UndefOr[LastUpdatedAt] = js.undefined,
       name: js.UndefOr[Name] = js.undefined,
       revisionId: js.UndefOr[RevisionId] = js.undefined,
-      version: js.UndefOr[Version] = js.undefined,
+      robotSoftwareSuite: js.UndefOr[RobotSoftwareSuite] = js.undefined,
       sources: js.UndefOr[Sources] = js.undefined,
-      lastUpdatedAt: js.UndefOr[LastUpdatedAt] = js.undefined): UpdateRobotApplicationResponse = {
+      version: js.UndefOr[Version] = js.undefined): UpdateRobotApplicationResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "robotSoftwareSuite" -> robotSoftwareSuite.map { x => x.asInstanceOf[js.Any] },
         "arn" -> arn.map { x => x.asInstanceOf[js.Any] },
+        "lastUpdatedAt" -> lastUpdatedAt.map { x => x.asInstanceOf[js.Any] },
         "name" -> name.map { x => x.asInstanceOf[js.Any] },
         "revisionId" -> revisionId.map { x => x.asInstanceOf[js.Any] },
-        "version" -> version.map { x => x.asInstanceOf[js.Any] },
+        "robotSoftwareSuite" -> robotSoftwareSuite.map { x => x.asInstanceOf[js.Any] },
         "sources" -> sources.map { x => x.asInstanceOf[js.Any] },
-        "lastUpdatedAt" -> lastUpdatedAt.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "version" -> version.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateRobotApplicationResponse]
     }
@@ -2257,29 +2257,29 @@ package robomaker {
 
   @js.native
   trait UpdateSimulationApplicationRequest extends js.Object {
-    var robotSoftwareSuite: js.UndefOr[RobotSoftwareSuite]
-    var application: js.UndefOr[Arn]
-    var simulationSoftwareSuite: js.UndefOr[SimulationSoftwareSuite]
+    var application: Arn
+    var renderingEngine: RenderingEngine
+    var robotSoftwareSuite: RobotSoftwareSuite
+    var simulationSoftwareSuite: SimulationSoftwareSuite
+    var sources: SourceConfigs
     var currentRevisionId: js.UndefOr[RevisionId]
-    var renderingEngine: js.UndefOr[RenderingEngine]
-    var sources: js.UndefOr[SourceConfigs]
   }
 
   object UpdateSimulationApplicationRequest {
     def apply(
-      robotSoftwareSuite: js.UndefOr[RobotSoftwareSuite] = js.undefined,
-      application: js.UndefOr[Arn] = js.undefined,
-      simulationSoftwareSuite: js.UndefOr[SimulationSoftwareSuite] = js.undefined,
-      currentRevisionId: js.UndefOr[RevisionId] = js.undefined,
-      renderingEngine: js.UndefOr[RenderingEngine] = js.undefined,
-      sources: js.UndefOr[SourceConfigs] = js.undefined): UpdateSimulationApplicationRequest = {
+      application: Arn,
+      renderingEngine: RenderingEngine,
+      robotSoftwareSuite: RobotSoftwareSuite,
+      simulationSoftwareSuite: SimulationSoftwareSuite,
+      sources: SourceConfigs,
+      currentRevisionId: js.UndefOr[RevisionId] = js.undefined): UpdateSimulationApplicationRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "robotSoftwareSuite" -> robotSoftwareSuite.map { x => x.asInstanceOf[js.Any] },
-        "application" -> application.map { x => x.asInstanceOf[js.Any] },
-        "simulationSoftwareSuite" -> simulationSoftwareSuite.map { x => x.asInstanceOf[js.Any] },
-        "currentRevisionId" -> currentRevisionId.map { x => x.asInstanceOf[js.Any] },
-        "renderingEngine" -> renderingEngine.map { x => x.asInstanceOf[js.Any] },
-        "sources" -> sources.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "application" -> application.asInstanceOf[js.Any],
+        "renderingEngine" -> renderingEngine.asInstanceOf[js.Any],
+        "robotSoftwareSuite" -> robotSoftwareSuite.asInstanceOf[js.Any],
+        "simulationSoftwareSuite" -> simulationSoftwareSuite.asInstanceOf[js.Any],
+        "sources" -> sources.asInstanceOf[js.Any],
+        "currentRevisionId" -> currentRevisionId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateSimulationApplicationRequest]
     }
@@ -2287,38 +2287,38 @@ package robomaker {
 
   @js.native
   trait UpdateSimulationApplicationResponse extends js.Object {
-    var robotSoftwareSuite: js.UndefOr[RobotSoftwareSuite]
     var arn: js.UndefOr[Arn]
-    var name: js.UndefOr[Name]
-    var simulationSoftwareSuite: js.UndefOr[SimulationSoftwareSuite]
-    var revisionId: js.UndefOr[RevisionId]
-    var version: js.UndefOr[Version]
-    var renderingEngine: js.UndefOr[RenderingEngine]
-    var sources: js.UndefOr[Sources]
     var lastUpdatedAt: js.UndefOr[LastUpdatedAt]
+    var name: js.UndefOr[Name]
+    var renderingEngine: js.UndefOr[RenderingEngine]
+    var revisionId: js.UndefOr[RevisionId]
+    var robotSoftwareSuite: js.UndefOr[RobotSoftwareSuite]
+    var simulationSoftwareSuite: js.UndefOr[SimulationSoftwareSuite]
+    var sources: js.UndefOr[Sources]
+    var version: js.UndefOr[Version]
   }
 
   object UpdateSimulationApplicationResponse {
     def apply(
-      robotSoftwareSuite: js.UndefOr[RobotSoftwareSuite] = js.undefined,
       arn: js.UndefOr[Arn] = js.undefined,
+      lastUpdatedAt: js.UndefOr[LastUpdatedAt] = js.undefined,
       name: js.UndefOr[Name] = js.undefined,
-      simulationSoftwareSuite: js.UndefOr[SimulationSoftwareSuite] = js.undefined,
-      revisionId: js.UndefOr[RevisionId] = js.undefined,
-      version: js.UndefOr[Version] = js.undefined,
       renderingEngine: js.UndefOr[RenderingEngine] = js.undefined,
+      revisionId: js.UndefOr[RevisionId] = js.undefined,
+      robotSoftwareSuite: js.UndefOr[RobotSoftwareSuite] = js.undefined,
+      simulationSoftwareSuite: js.UndefOr[SimulationSoftwareSuite] = js.undefined,
       sources: js.UndefOr[Sources] = js.undefined,
-      lastUpdatedAt: js.UndefOr[LastUpdatedAt] = js.undefined): UpdateSimulationApplicationResponse = {
+      version: js.UndefOr[Version] = js.undefined): UpdateSimulationApplicationResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "robotSoftwareSuite" -> robotSoftwareSuite.map { x => x.asInstanceOf[js.Any] },
         "arn" -> arn.map { x => x.asInstanceOf[js.Any] },
+        "lastUpdatedAt" -> lastUpdatedAt.map { x => x.asInstanceOf[js.Any] },
         "name" -> name.map { x => x.asInstanceOf[js.Any] },
-        "simulationSoftwareSuite" -> simulationSoftwareSuite.map { x => x.asInstanceOf[js.Any] },
-        "revisionId" -> revisionId.map { x => x.asInstanceOf[js.Any] },
-        "version" -> version.map { x => x.asInstanceOf[js.Any] },
         "renderingEngine" -> renderingEngine.map { x => x.asInstanceOf[js.Any] },
+        "revisionId" -> revisionId.map { x => x.asInstanceOf[js.Any] },
+        "robotSoftwareSuite" -> robotSoftwareSuite.map { x => x.asInstanceOf[js.Any] },
+        "simulationSoftwareSuite" -> simulationSoftwareSuite.map { x => x.asInstanceOf[js.Any] },
         "sources" -> sources.map { x => x.asInstanceOf[js.Any] },
-        "lastUpdatedAt" -> lastUpdatedAt.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "version" -> version.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateSimulationApplicationResponse]
     }
@@ -2329,20 +2329,20 @@ package robomaker {
    */
   @js.native
   trait VPCConfig extends js.Object {
-    var subnets: js.UndefOr[Subnets]
-    var securityGroups: js.UndefOr[SecurityGroups]
+    var subnets: Subnets
     var assignPublicIp: js.UndefOr[Boolean]
+    var securityGroups: js.UndefOr[SecurityGroups]
   }
 
   object VPCConfig {
     def apply(
-      subnets: js.UndefOr[Subnets] = js.undefined,
-      securityGroups: js.UndefOr[SecurityGroups] = js.undefined,
-      assignPublicIp: js.UndefOr[Boolean] = js.undefined): VPCConfig = {
+      subnets: Subnets,
+      assignPublicIp: js.UndefOr[Boolean] = js.undefined,
+      securityGroups: js.UndefOr[SecurityGroups] = js.undefined): VPCConfig = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "subnets" -> subnets.map { x => x.asInstanceOf[js.Any] },
-        "securityGroups" -> securityGroups.map { x => x.asInstanceOf[js.Any] },
-        "assignPublicIp" -> assignPublicIp.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "subnets" -> subnets.asInstanceOf[js.Any],
+        "assignPublicIp" -> assignPublicIp.map { x => x.asInstanceOf[js.Any] },
+        "securityGroups" -> securityGroups.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[VPCConfig]
     }
@@ -2353,23 +2353,23 @@ package robomaker {
    */
   @js.native
   trait VPCConfigResponse extends js.Object {
-    var subnets: js.UndefOr[Subnets]
-    var securityGroups: js.UndefOr[SecurityGroups]
-    var vpcId: js.UndefOr[GenericString]
     var assignPublicIp: js.UndefOr[Boolean]
+    var securityGroups: js.UndefOr[SecurityGroups]
+    var subnets: js.UndefOr[Subnets]
+    var vpcId: js.UndefOr[GenericString]
   }
 
   object VPCConfigResponse {
     def apply(
-      subnets: js.UndefOr[Subnets] = js.undefined,
+      assignPublicIp: js.UndefOr[Boolean] = js.undefined,
       securityGroups: js.UndefOr[SecurityGroups] = js.undefined,
-      vpcId: js.UndefOr[GenericString] = js.undefined,
-      assignPublicIp: js.UndefOr[Boolean] = js.undefined): VPCConfigResponse = {
+      subnets: js.UndefOr[Subnets] = js.undefined,
+      vpcId: js.UndefOr[GenericString] = js.undefined): VPCConfigResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "subnets" -> subnets.map { x => x.asInstanceOf[js.Any] },
+        "assignPublicIp" -> assignPublicIp.map { x => x.asInstanceOf[js.Any] },
         "securityGroups" -> securityGroups.map { x => x.asInstanceOf[js.Any] },
-        "vpcId" -> vpcId.map { x => x.asInstanceOf[js.Any] },
-        "assignPublicIp" -> assignPublicIp.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "subnets" -> subnets.map { x => x.asInstanceOf[js.Any] },
+        "vpcId" -> vpcId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[VPCConfigResponse]
     }

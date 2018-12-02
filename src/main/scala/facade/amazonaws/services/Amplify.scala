@@ -113,65 +113,65 @@ package amplify {
    */
   @js.native
   trait App extends js.Object {
-    var name: js.UndefOr[Name]
-    var repository: js.UndefOr[Repository]
-    var createTime: js.UndefOr[CreateTime]
-    var description: js.UndefOr[Description]
-    var tags: js.UndefOr[Tags]
-    var productionBranch: js.UndefOr[ProductionBranch]
-    var environmentVariables: js.UndefOr[EnvironmentVariables]
-    var buildSpec: js.UndefOr[BuildSpec]
-    var enableBasicAuth: js.UndefOr[EnableBasicAuth]
+    var appArn: AppArn
+    var appId: AppId
+    var createTime: CreateTime
+    var defaultDomain: DefaultDomain
+    var description: Description
+    var enableBasicAuth: EnableBasicAuth
+    var enableBranchAutoBuild: EnableBranchAutoBuild
+    var environmentVariables: EnvironmentVariables
+    var name: Name
+    var platform: Platform
+    var repository: Repository
+    var updateTime: UpdateTime
     var basicAuthCredentials: js.UndefOr[BasicAuthCredentials]
-    var iamServiceRoleArn: js.UndefOr[ServiceRoleArn]
+    var buildSpec: js.UndefOr[BuildSpec]
     var customRules: js.UndefOr[CustomRules]
-    var appArn: js.UndefOr[AppArn]
-    var appId: js.UndefOr[AppId]
-    var enableBranchAutoBuild: js.UndefOr[EnableBranchAutoBuild]
-    var platform: js.UndefOr[Platform]
-    var updateTime: js.UndefOr[UpdateTime]
-    var defaultDomain: js.UndefOr[DefaultDomain]
+    var iamServiceRoleArn: js.UndefOr[ServiceRoleArn]
+    var productionBranch: js.UndefOr[ProductionBranch]
+    var tags: js.UndefOr[Tags]
   }
 
   object App {
     def apply(
-      name: js.UndefOr[Name] = js.undefined,
-      repository: js.UndefOr[Repository] = js.undefined,
-      createTime: js.UndefOr[CreateTime] = js.undefined,
-      description: js.UndefOr[Description] = js.undefined,
-      tags: js.UndefOr[Tags] = js.undefined,
-      productionBranch: js.UndefOr[ProductionBranch] = js.undefined,
-      environmentVariables: js.UndefOr[EnvironmentVariables] = js.undefined,
-      buildSpec: js.UndefOr[BuildSpec] = js.undefined,
-      enableBasicAuth: js.UndefOr[EnableBasicAuth] = js.undefined,
+      appArn: AppArn,
+      appId: AppId,
+      createTime: CreateTime,
+      defaultDomain: DefaultDomain,
+      description: Description,
+      enableBasicAuth: EnableBasicAuth,
+      enableBranchAutoBuild: EnableBranchAutoBuild,
+      environmentVariables: EnvironmentVariables,
+      name: Name,
+      platform: Platform,
+      repository: Repository,
+      updateTime: UpdateTime,
       basicAuthCredentials: js.UndefOr[BasicAuthCredentials] = js.undefined,
-      iamServiceRoleArn: js.UndefOr[ServiceRoleArn] = js.undefined,
+      buildSpec: js.UndefOr[BuildSpec] = js.undefined,
       customRules: js.UndefOr[CustomRules] = js.undefined,
-      appArn: js.UndefOr[AppArn] = js.undefined,
-      appId: js.UndefOr[AppId] = js.undefined,
-      enableBranchAutoBuild: js.UndefOr[EnableBranchAutoBuild] = js.undefined,
-      platform: js.UndefOr[Platform] = js.undefined,
-      updateTime: js.UndefOr[UpdateTime] = js.undefined,
-      defaultDomain: js.UndefOr[DefaultDomain] = js.undefined): App = {
+      iamServiceRoleArn: js.UndefOr[ServiceRoleArn] = js.undefined,
+      productionBranch: js.UndefOr[ProductionBranch] = js.undefined,
+      tags: js.UndefOr[Tags] = js.undefined): App = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "name" -> name.map { x => x.asInstanceOf[js.Any] },
-        "repository" -> repository.map { x => x.asInstanceOf[js.Any] },
-        "createTime" -> createTime.map { x => x.asInstanceOf[js.Any] },
-        "description" -> description.map { x => x.asInstanceOf[js.Any] },
-        "tags" -> tags.map { x => x.asInstanceOf[js.Any] },
-        "productionBranch" -> productionBranch.map { x => x.asInstanceOf[js.Any] },
-        "environmentVariables" -> environmentVariables.map { x => x.asInstanceOf[js.Any] },
-        "buildSpec" -> buildSpec.map { x => x.asInstanceOf[js.Any] },
-        "enableBasicAuth" -> enableBasicAuth.map { x => x.asInstanceOf[js.Any] },
+        "appArn" -> appArn.asInstanceOf[js.Any],
+        "appId" -> appId.asInstanceOf[js.Any],
+        "createTime" -> createTime.asInstanceOf[js.Any],
+        "defaultDomain" -> defaultDomain.asInstanceOf[js.Any],
+        "description" -> description.asInstanceOf[js.Any],
+        "enableBasicAuth" -> enableBasicAuth.asInstanceOf[js.Any],
+        "enableBranchAutoBuild" -> enableBranchAutoBuild.asInstanceOf[js.Any],
+        "environmentVariables" -> environmentVariables.asInstanceOf[js.Any],
+        "name" -> name.asInstanceOf[js.Any],
+        "platform" -> platform.asInstanceOf[js.Any],
+        "repository" -> repository.asInstanceOf[js.Any],
+        "updateTime" -> updateTime.asInstanceOf[js.Any],
         "basicAuthCredentials" -> basicAuthCredentials.map { x => x.asInstanceOf[js.Any] },
-        "iamServiceRoleArn" -> iamServiceRoleArn.map { x => x.asInstanceOf[js.Any] },
+        "buildSpec" -> buildSpec.map { x => x.asInstanceOf[js.Any] },
         "customRules" -> customRules.map { x => x.asInstanceOf[js.Any] },
-        "appArn" -> appArn.map { x => x.asInstanceOf[js.Any] },
-        "appId" -> appId.map { x => x.asInstanceOf[js.Any] },
-        "enableBranchAutoBuild" -> enableBranchAutoBuild.map { x => x.asInstanceOf[js.Any] },
-        "platform" -> platform.map { x => x.asInstanceOf[js.Any] },
-        "updateTime" -> updateTime.map { x => x.asInstanceOf[js.Any] },
-        "defaultDomain" -> defaultDomain.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "iamServiceRoleArn" -> iamServiceRoleArn.map { x => x.asInstanceOf[js.Any] },
+        "productionBranch" -> productionBranch.map { x => x.asInstanceOf[js.Any] },
+        "tags" -> tags.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[App]
     }
@@ -182,71 +182,71 @@ package amplify {
    */
   @js.native
   trait Branch extends js.Object {
-    var displayName: js.UndefOr[DisplayName]
-    var stage: js.UndefOr[Stage]
-    var createTime: js.UndefOr[CreateTime]
-    var description: js.UndefOr[Description]
-    var tags: js.UndefOr[Tags]
-    var environmentVariables: js.UndefOr[EnvironmentVariables]
-    var buildSpec: js.UndefOr[BuildSpec]
-    var enableBasicAuth: js.UndefOr[EnableBasicAuth]
-    var activeJobId: js.UndefOr[ActiveJobId]
-    var framework: js.UndefOr[Framework]
+    var activeJobId: ActiveJobId
+    var branchArn: BranchArn
+    var branchName: BranchName
+    var createTime: CreateTime
+    var customDomains: CustomDomains
+    var description: Description
+    var enableAutoBuild: EnableAutoBuild
+    var enableBasicAuth: EnableBasicAuth
+    var enableNotification: EnableNotification
+    var environmentVariables: EnvironmentVariables
+    var framework: Framework
+    var stage: Stage
+    var totalNumberOfJobs: TotalNumberOfJobs
+    var ttl: TTL
+    var updateTime: UpdateTime
     var basicAuthCredentials: js.UndefOr[BasicAuthCredentials]
-    var enableAutoBuild: js.UndefOr[EnableAutoBuild]
-    var customDomains: js.UndefOr[CustomDomains]
-    var branchArn: js.UndefOr[BranchArn]
-    var ttl: js.UndefOr[TTL]
-    var branchName: js.UndefOr[BranchName]
-    var updateTime: js.UndefOr[UpdateTime]
-    var totalNumberOfJobs: js.UndefOr[TotalNumberOfJobs]
+    var buildSpec: js.UndefOr[BuildSpec]
+    var displayName: js.UndefOr[DisplayName]
+    var tags: js.UndefOr[Tags]
     var thumbnailUrl: js.UndefOr[ThumbnailUrl]
-    var enableNotification: js.UndefOr[EnableNotification]
   }
 
   object Branch {
     def apply(
-      displayName: js.UndefOr[DisplayName] = js.undefined,
-      stage: js.UndefOr[Stage] = js.undefined,
-      createTime: js.UndefOr[CreateTime] = js.undefined,
-      description: js.UndefOr[Description] = js.undefined,
-      tags: js.UndefOr[Tags] = js.undefined,
-      environmentVariables: js.UndefOr[EnvironmentVariables] = js.undefined,
-      buildSpec: js.UndefOr[BuildSpec] = js.undefined,
-      enableBasicAuth: js.UndefOr[EnableBasicAuth] = js.undefined,
-      activeJobId: js.UndefOr[ActiveJobId] = js.undefined,
-      framework: js.UndefOr[Framework] = js.undefined,
+      activeJobId: ActiveJobId,
+      branchArn: BranchArn,
+      branchName: BranchName,
+      createTime: CreateTime,
+      customDomains: CustomDomains,
+      description: Description,
+      enableAutoBuild: EnableAutoBuild,
+      enableBasicAuth: EnableBasicAuth,
+      enableNotification: EnableNotification,
+      environmentVariables: EnvironmentVariables,
+      framework: Framework,
+      stage: Stage,
+      totalNumberOfJobs: TotalNumberOfJobs,
+      ttl: TTL,
+      updateTime: UpdateTime,
       basicAuthCredentials: js.UndefOr[BasicAuthCredentials] = js.undefined,
-      enableAutoBuild: js.UndefOr[EnableAutoBuild] = js.undefined,
-      customDomains: js.UndefOr[CustomDomains] = js.undefined,
-      branchArn: js.UndefOr[BranchArn] = js.undefined,
-      ttl: js.UndefOr[TTL] = js.undefined,
-      branchName: js.UndefOr[BranchName] = js.undefined,
-      updateTime: js.UndefOr[UpdateTime] = js.undefined,
-      totalNumberOfJobs: js.UndefOr[TotalNumberOfJobs] = js.undefined,
-      thumbnailUrl: js.UndefOr[ThumbnailUrl] = js.undefined,
-      enableNotification: js.UndefOr[EnableNotification] = js.undefined): Branch = {
+      buildSpec: js.UndefOr[BuildSpec] = js.undefined,
+      displayName: js.UndefOr[DisplayName] = js.undefined,
+      tags: js.UndefOr[Tags] = js.undefined,
+      thumbnailUrl: js.UndefOr[ThumbnailUrl] = js.undefined): Branch = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "displayName" -> displayName.map { x => x.asInstanceOf[js.Any] },
-        "stage" -> stage.map { x => x.asInstanceOf[js.Any] },
-        "createTime" -> createTime.map { x => x.asInstanceOf[js.Any] },
-        "description" -> description.map { x => x.asInstanceOf[js.Any] },
-        "tags" -> tags.map { x => x.asInstanceOf[js.Any] },
-        "environmentVariables" -> environmentVariables.map { x => x.asInstanceOf[js.Any] },
-        "buildSpec" -> buildSpec.map { x => x.asInstanceOf[js.Any] },
-        "enableBasicAuth" -> enableBasicAuth.map { x => x.asInstanceOf[js.Any] },
-        "activeJobId" -> activeJobId.map { x => x.asInstanceOf[js.Any] },
-        "framework" -> framework.map { x => x.asInstanceOf[js.Any] },
+        "activeJobId" -> activeJobId.asInstanceOf[js.Any],
+        "branchArn" -> branchArn.asInstanceOf[js.Any],
+        "branchName" -> branchName.asInstanceOf[js.Any],
+        "createTime" -> createTime.asInstanceOf[js.Any],
+        "customDomains" -> customDomains.asInstanceOf[js.Any],
+        "description" -> description.asInstanceOf[js.Any],
+        "enableAutoBuild" -> enableAutoBuild.asInstanceOf[js.Any],
+        "enableBasicAuth" -> enableBasicAuth.asInstanceOf[js.Any],
+        "enableNotification" -> enableNotification.asInstanceOf[js.Any],
+        "environmentVariables" -> environmentVariables.asInstanceOf[js.Any],
+        "framework" -> framework.asInstanceOf[js.Any],
+        "stage" -> stage.asInstanceOf[js.Any],
+        "totalNumberOfJobs" -> totalNumberOfJobs.asInstanceOf[js.Any],
+        "ttl" -> ttl.asInstanceOf[js.Any],
+        "updateTime" -> updateTime.asInstanceOf[js.Any],
         "basicAuthCredentials" -> basicAuthCredentials.map { x => x.asInstanceOf[js.Any] },
-        "enableAutoBuild" -> enableAutoBuild.map { x => x.asInstanceOf[js.Any] },
-        "customDomains" -> customDomains.map { x => x.asInstanceOf[js.Any] },
-        "branchArn" -> branchArn.map { x => x.asInstanceOf[js.Any] },
-        "ttl" -> ttl.map { x => x.asInstanceOf[js.Any] },
-        "branchName" -> branchName.map { x => x.asInstanceOf[js.Any] },
-        "updateTime" -> updateTime.map { x => x.asInstanceOf[js.Any] },
-        "totalNumberOfJobs" -> totalNumberOfJobs.map { x => x.asInstanceOf[js.Any] },
-        "thumbnailUrl" -> thumbnailUrl.map { x => x.asInstanceOf[js.Any] },
-        "enableNotification" -> enableNotification.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "buildSpec" -> buildSpec.map { x => x.asInstanceOf[js.Any] },
+        "displayName" -> displayName.map { x => x.asInstanceOf[js.Any] },
+        "tags" -> tags.map { x => x.asInstanceOf[js.Any] },
+        "thumbnailUrl" -> thumbnailUrl.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Branch]
     }
@@ -257,50 +257,50 @@ package amplify {
    */
   @js.native
   trait CreateAppRequest extends js.Object {
-    var name: js.UndefOr[Name]
-    var repository: js.UndefOr[Repository]
-    var description: js.UndefOr[Description]
-    var tags: js.UndefOr[Tags]
-    var environmentVariables: js.UndefOr[EnvironmentVariables]
-    var buildSpec: js.UndefOr[BuildSpec]
-    var enableBasicAuth: js.UndefOr[EnableBasicAuth]
-    var oauthToken: js.UndefOr[OauthToken]
+    var name: Name
+    var oauthToken: OauthToken
+    var platform: Platform
+    var repository: Repository
     var basicAuthCredentials: js.UndefOr[BasicAuthCredentials]
-    var iamServiceRoleArn: js.UndefOr[ServiceRoleArn]
+    var buildSpec: js.UndefOr[BuildSpec]
     var customRules: js.UndefOr[CustomRules]
+    var description: js.UndefOr[Description]
+    var enableBasicAuth: js.UndefOr[EnableBasicAuth]
     var enableBranchAutoBuild: js.UndefOr[EnableBranchAutoBuild]
-    var platform: js.UndefOr[Platform]
+    var environmentVariables: js.UndefOr[EnvironmentVariables]
+    var iamServiceRoleArn: js.UndefOr[ServiceRoleArn]
+    var tags: js.UndefOr[Tags]
   }
 
   object CreateAppRequest {
     def apply(
-      name: js.UndefOr[Name] = js.undefined,
-      repository: js.UndefOr[Repository] = js.undefined,
-      description: js.UndefOr[Description] = js.undefined,
-      tags: js.UndefOr[Tags] = js.undefined,
-      environmentVariables: js.UndefOr[EnvironmentVariables] = js.undefined,
-      buildSpec: js.UndefOr[BuildSpec] = js.undefined,
-      enableBasicAuth: js.UndefOr[EnableBasicAuth] = js.undefined,
-      oauthToken: js.UndefOr[OauthToken] = js.undefined,
+      name: Name,
+      oauthToken: OauthToken,
+      platform: Platform,
+      repository: Repository,
       basicAuthCredentials: js.UndefOr[BasicAuthCredentials] = js.undefined,
-      iamServiceRoleArn: js.UndefOr[ServiceRoleArn] = js.undefined,
+      buildSpec: js.UndefOr[BuildSpec] = js.undefined,
       customRules: js.UndefOr[CustomRules] = js.undefined,
+      description: js.UndefOr[Description] = js.undefined,
+      enableBasicAuth: js.UndefOr[EnableBasicAuth] = js.undefined,
       enableBranchAutoBuild: js.UndefOr[EnableBranchAutoBuild] = js.undefined,
-      platform: js.UndefOr[Platform] = js.undefined): CreateAppRequest = {
+      environmentVariables: js.UndefOr[EnvironmentVariables] = js.undefined,
+      iamServiceRoleArn: js.UndefOr[ServiceRoleArn] = js.undefined,
+      tags: js.UndefOr[Tags] = js.undefined): CreateAppRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "name" -> name.map { x => x.asInstanceOf[js.Any] },
-        "repository" -> repository.map { x => x.asInstanceOf[js.Any] },
-        "description" -> description.map { x => x.asInstanceOf[js.Any] },
-        "tags" -> tags.map { x => x.asInstanceOf[js.Any] },
-        "environmentVariables" -> environmentVariables.map { x => x.asInstanceOf[js.Any] },
-        "buildSpec" -> buildSpec.map { x => x.asInstanceOf[js.Any] },
-        "enableBasicAuth" -> enableBasicAuth.map { x => x.asInstanceOf[js.Any] },
-        "oauthToken" -> oauthToken.map { x => x.asInstanceOf[js.Any] },
+        "name" -> name.asInstanceOf[js.Any],
+        "oauthToken" -> oauthToken.asInstanceOf[js.Any],
+        "platform" -> platform.asInstanceOf[js.Any],
+        "repository" -> repository.asInstanceOf[js.Any],
         "basicAuthCredentials" -> basicAuthCredentials.map { x => x.asInstanceOf[js.Any] },
-        "iamServiceRoleArn" -> iamServiceRoleArn.map { x => x.asInstanceOf[js.Any] },
+        "buildSpec" -> buildSpec.map { x => x.asInstanceOf[js.Any] },
         "customRules" -> customRules.map { x => x.asInstanceOf[js.Any] },
+        "description" -> description.map { x => x.asInstanceOf[js.Any] },
+        "enableBasicAuth" -> enableBasicAuth.map { x => x.asInstanceOf[js.Any] },
         "enableBranchAutoBuild" -> enableBranchAutoBuild.map { x => x.asInstanceOf[js.Any] },
-        "platform" -> platform.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "environmentVariables" -> environmentVariables.map { x => x.asInstanceOf[js.Any] },
+        "iamServiceRoleArn" -> iamServiceRoleArn.map { x => x.asInstanceOf[js.Any] },
+        "tags" -> tags.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateAppRequest]
     }
@@ -308,14 +308,14 @@ package amplify {
 
   @js.native
   trait CreateAppResult extends js.Object {
-    var app: js.UndefOr[App]
+    var app: App
   }
 
   object CreateAppResult {
     def apply(
-      app: js.UndefOr[App] = js.undefined): CreateAppResult = {
+      app: App): CreateAppResult = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "app" -> app.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "app" -> app.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateAppResult]
     }
@@ -326,50 +326,50 @@ package amplify {
    */
   @js.native
   trait CreateBranchRequest extends js.Object {
-    var stage: js.UndefOr[Stage]
-    var description: js.UndefOr[Description]
-    var tags: js.UndefOr[Tags]
-    var environmentVariables: js.UndefOr[EnvironmentVariables]
-    var buildSpec: js.UndefOr[BuildSpec]
-    var enableBasicAuth: js.UndefOr[EnableBasicAuth]
-    var framework: js.UndefOr[Framework]
+    var appId: AppId
+    var branchName: BranchName
     var basicAuthCredentials: js.UndefOr[BasicAuthCredentials]
+    var buildSpec: js.UndefOr[BuildSpec]
+    var description: js.UndefOr[Description]
     var enableAutoBuild: js.UndefOr[EnableAutoBuild]
-    var ttl: js.UndefOr[TTL]
-    var appId: js.UndefOr[AppId]
-    var branchName: js.UndefOr[BranchName]
+    var enableBasicAuth: js.UndefOr[EnableBasicAuth]
     var enableNotification: js.UndefOr[EnableNotification]
+    var environmentVariables: js.UndefOr[EnvironmentVariables]
+    var framework: js.UndefOr[Framework]
+    var stage: js.UndefOr[Stage]
+    var tags: js.UndefOr[Tags]
+    var ttl: js.UndefOr[TTL]
   }
 
   object CreateBranchRequest {
     def apply(
-      stage: js.UndefOr[Stage] = js.undefined,
-      description: js.UndefOr[Description] = js.undefined,
-      tags: js.UndefOr[Tags] = js.undefined,
-      environmentVariables: js.UndefOr[EnvironmentVariables] = js.undefined,
-      buildSpec: js.UndefOr[BuildSpec] = js.undefined,
-      enableBasicAuth: js.UndefOr[EnableBasicAuth] = js.undefined,
-      framework: js.UndefOr[Framework] = js.undefined,
+      appId: AppId,
+      branchName: BranchName,
       basicAuthCredentials: js.UndefOr[BasicAuthCredentials] = js.undefined,
+      buildSpec: js.UndefOr[BuildSpec] = js.undefined,
+      description: js.UndefOr[Description] = js.undefined,
       enableAutoBuild: js.UndefOr[EnableAutoBuild] = js.undefined,
-      ttl: js.UndefOr[TTL] = js.undefined,
-      appId: js.UndefOr[AppId] = js.undefined,
-      branchName: js.UndefOr[BranchName] = js.undefined,
-      enableNotification: js.UndefOr[EnableNotification] = js.undefined): CreateBranchRequest = {
+      enableBasicAuth: js.UndefOr[EnableBasicAuth] = js.undefined,
+      enableNotification: js.UndefOr[EnableNotification] = js.undefined,
+      environmentVariables: js.UndefOr[EnvironmentVariables] = js.undefined,
+      framework: js.UndefOr[Framework] = js.undefined,
+      stage: js.UndefOr[Stage] = js.undefined,
+      tags: js.UndefOr[Tags] = js.undefined,
+      ttl: js.UndefOr[TTL] = js.undefined): CreateBranchRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "stage" -> stage.map { x => x.asInstanceOf[js.Any] },
-        "description" -> description.map { x => x.asInstanceOf[js.Any] },
-        "tags" -> tags.map { x => x.asInstanceOf[js.Any] },
-        "environmentVariables" -> environmentVariables.map { x => x.asInstanceOf[js.Any] },
-        "buildSpec" -> buildSpec.map { x => x.asInstanceOf[js.Any] },
-        "enableBasicAuth" -> enableBasicAuth.map { x => x.asInstanceOf[js.Any] },
-        "framework" -> framework.map { x => x.asInstanceOf[js.Any] },
+        "appId" -> appId.asInstanceOf[js.Any],
+        "branchName" -> branchName.asInstanceOf[js.Any],
         "basicAuthCredentials" -> basicAuthCredentials.map { x => x.asInstanceOf[js.Any] },
+        "buildSpec" -> buildSpec.map { x => x.asInstanceOf[js.Any] },
+        "description" -> description.map { x => x.asInstanceOf[js.Any] },
         "enableAutoBuild" -> enableAutoBuild.map { x => x.asInstanceOf[js.Any] },
-        "ttl" -> ttl.map { x => x.asInstanceOf[js.Any] },
-        "appId" -> appId.map { x => x.asInstanceOf[js.Any] },
-        "branchName" -> branchName.map { x => x.asInstanceOf[js.Any] },
-        "enableNotification" -> enableNotification.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "enableBasicAuth" -> enableBasicAuth.map { x => x.asInstanceOf[js.Any] },
+        "enableNotification" -> enableNotification.map { x => x.asInstanceOf[js.Any] },
+        "environmentVariables" -> environmentVariables.map { x => x.asInstanceOf[js.Any] },
+        "framework" -> framework.map { x => x.asInstanceOf[js.Any] },
+        "stage" -> stage.map { x => x.asInstanceOf[js.Any] },
+        "tags" -> tags.map { x => x.asInstanceOf[js.Any] },
+        "ttl" -> ttl.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateBranchRequest]
     }
@@ -380,14 +380,14 @@ package amplify {
    */
   @js.native
   trait CreateBranchResult extends js.Object {
-    var branch: js.UndefOr[Branch]
+    var branch: Branch
   }
 
   object CreateBranchResult {
     def apply(
-      branch: js.UndefOr[Branch] = js.undefined): CreateBranchResult = {
+      branch: Branch): CreateBranchResult = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "branch" -> branch.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "branch" -> branch.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateBranchResult]
     }
@@ -398,23 +398,23 @@ package amplify {
    */
   @js.native
   trait CreateDomainAssociationRequest extends js.Object {
-    var appId: js.UndefOr[AppId]
-    var domainName: js.UndefOr[DomainName]
+    var appId: AppId
+    var domainName: DomainName
+    var subDomainSettings: SubDomainSettings
     var enableAutoSubDomain: js.UndefOr[EnableAutoSubDomain]
-    var subDomainSettings: js.UndefOr[SubDomainSettings]
   }
 
   object CreateDomainAssociationRequest {
     def apply(
-      appId: js.UndefOr[AppId] = js.undefined,
-      domainName: js.UndefOr[DomainName] = js.undefined,
-      enableAutoSubDomain: js.UndefOr[EnableAutoSubDomain] = js.undefined,
-      subDomainSettings: js.UndefOr[SubDomainSettings] = js.undefined): CreateDomainAssociationRequest = {
+      appId: AppId,
+      domainName: DomainName,
+      subDomainSettings: SubDomainSettings,
+      enableAutoSubDomain: js.UndefOr[EnableAutoSubDomain] = js.undefined): CreateDomainAssociationRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "appId" -> appId.map { x => x.asInstanceOf[js.Any] },
-        "domainName" -> domainName.map { x => x.asInstanceOf[js.Any] },
-        "enableAutoSubDomain" -> enableAutoSubDomain.map { x => x.asInstanceOf[js.Any] },
-        "subDomainSettings" -> subDomainSettings.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "appId" -> appId.asInstanceOf[js.Any],
+        "domainName" -> domainName.asInstanceOf[js.Any],
+        "subDomainSettings" -> subDomainSettings.asInstanceOf[js.Any],
+        "enableAutoSubDomain" -> enableAutoSubDomain.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateDomainAssociationRequest]
     }
@@ -425,14 +425,14 @@ package amplify {
    */
   @js.native
   trait CreateDomainAssociationResult extends js.Object {
-    var domainAssociation: js.UndefOr[DomainAssociation]
+    var domainAssociation: DomainAssociation
   }
 
   object CreateDomainAssociationResult {
     def apply(
-      domainAssociation: js.UndefOr[DomainAssociation] = js.undefined): CreateDomainAssociationResult = {
+      domainAssociation: DomainAssociation): CreateDomainAssociationResult = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "domainAssociation" -> domainAssociation.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "domainAssociation" -> domainAssociation.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateDomainAssociationResult]
     }
@@ -443,23 +443,23 @@ package amplify {
    */
   @js.native
   trait CustomRule extends js.Object {
-    var source: js.UndefOr[Source]
-    var target: js.UndefOr[Target]
-    var status: js.UndefOr[Status]
+    var source: Source
+    var target: Target
     var condition: js.UndefOr[Condition]
+    var status: js.UndefOr[Status]
   }
 
   object CustomRule {
     def apply(
-      source: js.UndefOr[Source] = js.undefined,
-      target: js.UndefOr[Target] = js.undefined,
-      status: js.UndefOr[Status] = js.undefined,
-      condition: js.UndefOr[Condition] = js.undefined): CustomRule = {
+      source: Source,
+      target: Target,
+      condition: js.UndefOr[Condition] = js.undefined,
+      status: js.UndefOr[Status] = js.undefined): CustomRule = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "source" -> source.map { x => x.asInstanceOf[js.Any] },
-        "target" -> target.map { x => x.asInstanceOf[js.Any] },
-        "status" -> status.map { x => x.asInstanceOf[js.Any] },
-        "condition" -> condition.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "source" -> source.asInstanceOf[js.Any],
+        "target" -> target.asInstanceOf[js.Any],
+        "condition" -> condition.map { x => x.asInstanceOf[js.Any] },
+        "status" -> status.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CustomRule]
     }
@@ -470,14 +470,14 @@ package amplify {
    */
   @js.native
   trait DeleteAppRequest extends js.Object {
-    var appId: js.UndefOr[AppId]
+    var appId: AppId
   }
 
   object DeleteAppRequest {
     def apply(
-      appId: js.UndefOr[AppId] = js.undefined): DeleteAppRequest = {
+      appId: AppId): DeleteAppRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "appId" -> appId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "appId" -> appId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteAppRequest]
     }
@@ -488,14 +488,14 @@ package amplify {
    */
   @js.native
   trait DeleteAppResult extends js.Object {
-    var app: js.UndefOr[App]
+    var app: App
   }
 
   object DeleteAppResult {
     def apply(
-      app: js.UndefOr[App] = js.undefined): DeleteAppResult = {
+      app: App): DeleteAppResult = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "app" -> app.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "app" -> app.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteAppResult]
     }
@@ -506,17 +506,17 @@ package amplify {
    */
   @js.native
   trait DeleteBranchRequest extends js.Object {
-    var appId: js.UndefOr[AppId]
-    var branchName: js.UndefOr[BranchName]
+    var appId: AppId
+    var branchName: BranchName
   }
 
   object DeleteBranchRequest {
     def apply(
-      appId: js.UndefOr[AppId] = js.undefined,
-      branchName: js.UndefOr[BranchName] = js.undefined): DeleteBranchRequest = {
+      appId: AppId,
+      branchName: BranchName): DeleteBranchRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "appId" -> appId.map { x => x.asInstanceOf[js.Any] },
-        "branchName" -> branchName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "appId" -> appId.asInstanceOf[js.Any],
+        "branchName" -> branchName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteBranchRequest]
     }
@@ -527,14 +527,14 @@ package amplify {
    */
   @js.native
   trait DeleteBranchResult extends js.Object {
-    var branch: js.UndefOr[Branch]
+    var branch: Branch
   }
 
   object DeleteBranchResult {
     def apply(
-      branch: js.UndefOr[Branch] = js.undefined): DeleteBranchResult = {
+      branch: Branch): DeleteBranchResult = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "branch" -> branch.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "branch" -> branch.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteBranchResult]
     }
@@ -545,17 +545,17 @@ package amplify {
    */
   @js.native
   trait DeleteDomainAssociationRequest extends js.Object {
-    var appId: js.UndefOr[AppId]
-    var domainName: js.UndefOr[DomainName]
+    var appId: AppId
+    var domainName: DomainName
   }
 
   object DeleteDomainAssociationRequest {
     def apply(
-      appId: js.UndefOr[AppId] = js.undefined,
-      domainName: js.UndefOr[DomainName] = js.undefined): DeleteDomainAssociationRequest = {
+      appId: AppId,
+      domainName: DomainName): DeleteDomainAssociationRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "appId" -> appId.map { x => x.asInstanceOf[js.Any] },
-        "domainName" -> domainName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "appId" -> appId.asInstanceOf[js.Any],
+        "domainName" -> domainName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteDomainAssociationRequest]
     }
@@ -563,14 +563,14 @@ package amplify {
 
   @js.native
   trait DeleteDomainAssociationResult extends js.Object {
-    var domainAssociation: js.UndefOr[DomainAssociation]
+    var domainAssociation: DomainAssociation
   }
 
   object DeleteDomainAssociationResult {
     def apply(
-      domainAssociation: js.UndefOr[DomainAssociation] = js.undefined): DeleteDomainAssociationResult = {
+      domainAssociation: DomainAssociation): DeleteDomainAssociationResult = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "domainAssociation" -> domainAssociation.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "domainAssociation" -> domainAssociation.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteDomainAssociationResult]
     }
@@ -581,20 +581,20 @@ package amplify {
    */
   @js.native
   trait DeleteJobRequest extends js.Object {
-    var appId: js.UndefOr[AppId]
-    var branchName: js.UndefOr[BranchName]
-    var jobId: js.UndefOr[JobId]
+    var appId: AppId
+    var branchName: BranchName
+    var jobId: JobId
   }
 
   object DeleteJobRequest {
     def apply(
-      appId: js.UndefOr[AppId] = js.undefined,
-      branchName: js.UndefOr[BranchName] = js.undefined,
-      jobId: js.UndefOr[JobId] = js.undefined): DeleteJobRequest = {
+      appId: AppId,
+      branchName: BranchName,
+      jobId: JobId): DeleteJobRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "appId" -> appId.map { x => x.asInstanceOf[js.Any] },
-        "branchName" -> branchName.map { x => x.asInstanceOf[js.Any] },
-        "jobId" -> jobId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "appId" -> appId.asInstanceOf[js.Any],
+        "branchName" -> branchName.asInstanceOf[js.Any],
+        "jobId" -> jobId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteJobRequest]
     }
@@ -605,14 +605,14 @@ package amplify {
    */
   @js.native
   trait DeleteJobResult extends js.Object {
-    var jobSummary: js.UndefOr[JobSummary]
+    var jobSummary: JobSummary
   }
 
   object DeleteJobResult {
     def apply(
-      jobSummary: js.UndefOr[JobSummary] = js.undefined): DeleteJobResult = {
+      jobSummary: JobSummary): DeleteJobResult = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "jobSummary" -> jobSummary.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "jobSummary" -> jobSummary.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteJobResult]
     }
@@ -623,32 +623,32 @@ package amplify {
    */
   @js.native
   trait DomainAssociation extends js.Object {
-    var statusReason: js.UndefOr[StatusReason]
-    var domainAssociationArn: js.UndefOr[DomainAssociationArn]
-    var enableAutoSubDomain: js.UndefOr[EnableAutoSubDomain]
-    var domainName: js.UndefOr[DomainName]
-    var certificateVerificationDNSRecord: js.UndefOr[CertificateVerificationDNSRecord]
-    var domainStatus: js.UndefOr[DomainStatus]
-    var subDomains: js.UndefOr[SubDomains]
+    var certificateVerificationDNSRecord: CertificateVerificationDNSRecord
+    var domainAssociationArn: DomainAssociationArn
+    var domainName: DomainName
+    var domainStatus: DomainStatus
+    var enableAutoSubDomain: EnableAutoSubDomain
+    var statusReason: StatusReason
+    var subDomains: SubDomains
   }
 
   object DomainAssociation {
     def apply(
-      statusReason: js.UndefOr[StatusReason] = js.undefined,
-      domainAssociationArn: js.UndefOr[DomainAssociationArn] = js.undefined,
-      enableAutoSubDomain: js.UndefOr[EnableAutoSubDomain] = js.undefined,
-      domainName: js.UndefOr[DomainName] = js.undefined,
-      certificateVerificationDNSRecord: js.UndefOr[CertificateVerificationDNSRecord] = js.undefined,
-      domainStatus: js.UndefOr[DomainStatus] = js.undefined,
-      subDomains: js.UndefOr[SubDomains] = js.undefined): DomainAssociation = {
+      certificateVerificationDNSRecord: CertificateVerificationDNSRecord,
+      domainAssociationArn: DomainAssociationArn,
+      domainName: DomainName,
+      domainStatus: DomainStatus,
+      enableAutoSubDomain: EnableAutoSubDomain,
+      statusReason: StatusReason,
+      subDomains: SubDomains): DomainAssociation = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "statusReason" -> statusReason.map { x => x.asInstanceOf[js.Any] },
-        "domainAssociationArn" -> domainAssociationArn.map { x => x.asInstanceOf[js.Any] },
-        "enableAutoSubDomain" -> enableAutoSubDomain.map { x => x.asInstanceOf[js.Any] },
-        "domainName" -> domainName.map { x => x.asInstanceOf[js.Any] },
-        "certificateVerificationDNSRecord" -> certificateVerificationDNSRecord.map { x => x.asInstanceOf[js.Any] },
-        "domainStatus" -> domainStatus.map { x => x.asInstanceOf[js.Any] },
-        "subDomains" -> subDomains.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "certificateVerificationDNSRecord" -> certificateVerificationDNSRecord.asInstanceOf[js.Any],
+        "domainAssociationArn" -> domainAssociationArn.asInstanceOf[js.Any],
+        "domainName" -> domainName.asInstanceOf[js.Any],
+        "domainStatus" -> domainStatus.asInstanceOf[js.Any],
+        "enableAutoSubDomain" -> enableAutoSubDomain.asInstanceOf[js.Any],
+        "statusReason" -> statusReason.asInstanceOf[js.Any],
+        "subDomains" -> subDomains.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DomainAssociation]
     }
@@ -669,14 +669,14 @@ package amplify {
    */
   @js.native
   trait GetAppRequest extends js.Object {
-    var appId: js.UndefOr[AppId]
+    var appId: AppId
   }
 
   object GetAppRequest {
     def apply(
-      appId: js.UndefOr[AppId] = js.undefined): GetAppRequest = {
+      appId: AppId): GetAppRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "appId" -> appId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "appId" -> appId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetAppRequest]
     }
@@ -684,14 +684,14 @@ package amplify {
 
   @js.native
   trait GetAppResult extends js.Object {
-    var app: js.UndefOr[App]
+    var app: App
   }
 
   object GetAppResult {
     def apply(
-      app: js.UndefOr[App] = js.undefined): GetAppResult = {
+      app: App): GetAppResult = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "app" -> app.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "app" -> app.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetAppResult]
     }
@@ -702,17 +702,17 @@ package amplify {
    */
   @js.native
   trait GetBranchRequest extends js.Object {
-    var appId: js.UndefOr[AppId]
-    var branchName: js.UndefOr[BranchName]
+    var appId: AppId
+    var branchName: BranchName
   }
 
   object GetBranchRequest {
     def apply(
-      appId: js.UndefOr[AppId] = js.undefined,
-      branchName: js.UndefOr[BranchName] = js.undefined): GetBranchRequest = {
+      appId: AppId,
+      branchName: BranchName): GetBranchRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "appId" -> appId.map { x => x.asInstanceOf[js.Any] },
-        "branchName" -> branchName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "appId" -> appId.asInstanceOf[js.Any],
+        "branchName" -> branchName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetBranchRequest]
     }
@@ -720,14 +720,14 @@ package amplify {
 
   @js.native
   trait GetBranchResult extends js.Object {
-    var branch: js.UndefOr[Branch]
+    var branch: Branch
   }
 
   object GetBranchResult {
     def apply(
-      branch: js.UndefOr[Branch] = js.undefined): GetBranchResult = {
+      branch: Branch): GetBranchResult = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "branch" -> branch.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "branch" -> branch.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetBranchResult]
     }
@@ -738,17 +738,17 @@ package amplify {
    */
   @js.native
   trait GetDomainAssociationRequest extends js.Object {
-    var appId: js.UndefOr[AppId]
-    var domainName: js.UndefOr[DomainName]
+    var appId: AppId
+    var domainName: DomainName
   }
 
   object GetDomainAssociationRequest {
     def apply(
-      appId: js.UndefOr[AppId] = js.undefined,
-      domainName: js.UndefOr[DomainName] = js.undefined): GetDomainAssociationRequest = {
+      appId: AppId,
+      domainName: DomainName): GetDomainAssociationRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "appId" -> appId.map { x => x.asInstanceOf[js.Any] },
-        "domainName" -> domainName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "appId" -> appId.asInstanceOf[js.Any],
+        "domainName" -> domainName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetDomainAssociationRequest]
     }
@@ -759,14 +759,14 @@ package amplify {
    */
   @js.native
   trait GetDomainAssociationResult extends js.Object {
-    var domainAssociation: js.UndefOr[DomainAssociation]
+    var domainAssociation: DomainAssociation
   }
 
   object GetDomainAssociationResult {
     def apply(
-      domainAssociation: js.UndefOr[DomainAssociation] = js.undefined): GetDomainAssociationResult = {
+      domainAssociation: DomainAssociation): GetDomainAssociationResult = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "domainAssociation" -> domainAssociation.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "domainAssociation" -> domainAssociation.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetDomainAssociationResult]
     }
@@ -777,20 +777,20 @@ package amplify {
    */
   @js.native
   trait GetJobRequest extends js.Object {
-    var appId: js.UndefOr[AppId]
-    var branchName: js.UndefOr[BranchName]
-    var jobId: js.UndefOr[JobId]
+    var appId: AppId
+    var branchName: BranchName
+    var jobId: JobId
   }
 
   object GetJobRequest {
     def apply(
-      appId: js.UndefOr[AppId] = js.undefined,
-      branchName: js.UndefOr[BranchName] = js.undefined,
-      jobId: js.UndefOr[JobId] = js.undefined): GetJobRequest = {
+      appId: AppId,
+      branchName: BranchName,
+      jobId: JobId): GetJobRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "appId" -> appId.map { x => x.asInstanceOf[js.Any] },
-        "branchName" -> branchName.map { x => x.asInstanceOf[js.Any] },
-        "jobId" -> jobId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "appId" -> appId.asInstanceOf[js.Any],
+        "branchName" -> branchName.asInstanceOf[js.Any],
+        "jobId" -> jobId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetJobRequest]
     }
@@ -798,14 +798,14 @@ package amplify {
 
   @js.native
   trait GetJobResult extends js.Object {
-    var job: js.UndefOr[Job]
+    var job: Job
   }
 
   object GetJobResult {
     def apply(
-      job: js.UndefOr[Job] = js.undefined): GetJobResult = {
+      job: Job): GetJobResult = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "job" -> job.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "job" -> job.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetJobResult]
     }
@@ -816,17 +816,17 @@ package amplify {
    */
   @js.native
   trait Job extends js.Object {
-    var summary: js.UndefOr[JobSummary]
-    var steps: js.UndefOr[Steps]
+    var steps: Steps
+    var summary: JobSummary
   }
 
   object Job {
     def apply(
-      summary: js.UndefOr[JobSummary] = js.undefined,
-      steps: js.UndefOr[Steps] = js.undefined): Job = {
+      steps: Steps,
+      summary: JobSummary): Job = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "summary" -> summary.map { x => x.asInstanceOf[js.Any] },
-        "steps" -> steps.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "steps" -> steps.asInstanceOf[js.Any],
+        "summary" -> summary.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Job]
     }
@@ -849,38 +849,38 @@ package amplify {
    */
   @js.native
   trait JobSummary extends js.Object {
-    var startTime: js.UndefOr[StartTime]
-    var jobArn: js.UndefOr[JobArn]
-    var commitId: js.UndefOr[CommitId]
-    var jobType: js.UndefOr[JobType]
-    var commitTime: js.UndefOr[CommitTime]
+    var commitId: CommitId
+    var commitMessage: CommitMessage
+    var commitTime: CommitTime
+    var jobArn: JobArn
+    var jobId: JobId
+    var jobType: JobType
+    var startTime: StartTime
+    var status: JobStatus
     var endTime: js.UndefOr[EndTime]
-    var status: js.UndefOr[JobStatus]
-    var jobId: js.UndefOr[JobId]
-    var commitMessage: js.UndefOr[CommitMessage]
   }
 
   object JobSummary {
     def apply(
-      startTime: js.UndefOr[StartTime] = js.undefined,
-      jobArn: js.UndefOr[JobArn] = js.undefined,
-      commitId: js.UndefOr[CommitId] = js.undefined,
-      jobType: js.UndefOr[JobType] = js.undefined,
-      commitTime: js.UndefOr[CommitTime] = js.undefined,
-      endTime: js.UndefOr[EndTime] = js.undefined,
-      status: js.UndefOr[JobStatus] = js.undefined,
-      jobId: js.UndefOr[JobId] = js.undefined,
-      commitMessage: js.UndefOr[CommitMessage] = js.undefined): JobSummary = {
+      commitId: CommitId,
+      commitMessage: CommitMessage,
+      commitTime: CommitTime,
+      jobArn: JobArn,
+      jobId: JobId,
+      jobType: JobType,
+      startTime: StartTime,
+      status: JobStatus,
+      endTime: js.UndefOr[EndTime] = js.undefined): JobSummary = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "startTime" -> startTime.map { x => x.asInstanceOf[js.Any] },
-        "jobArn" -> jobArn.map { x => x.asInstanceOf[js.Any] },
-        "commitId" -> commitId.map { x => x.asInstanceOf[js.Any] },
-        "jobType" -> jobType.map { x => x.asInstanceOf[js.Any] },
-        "commitTime" -> commitTime.map { x => x.asInstanceOf[js.Any] },
-        "endTime" -> endTime.map { x => x.asInstanceOf[js.Any] },
-        "status" -> status.map { x => x.asInstanceOf[js.Any] },
-        "jobId" -> jobId.map { x => x.asInstanceOf[js.Any] },
-        "commitMessage" -> commitMessage.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "commitId" -> commitId.asInstanceOf[js.Any],
+        "commitMessage" -> commitMessage.asInstanceOf[js.Any],
+        "commitTime" -> commitTime.asInstanceOf[js.Any],
+        "jobArn" -> jobArn.asInstanceOf[js.Any],
+        "jobId" -> jobId.asInstanceOf[js.Any],
+        "jobType" -> jobType.asInstanceOf[js.Any],
+        "startTime" -> startTime.asInstanceOf[js.Any],
+        "status" -> status.asInstanceOf[js.Any],
+        "endTime" -> endTime.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[JobSummary]
     }
@@ -899,17 +899,17 @@ package amplify {
    */
   @js.native
   trait ListAppsRequest extends js.Object {
-    var nextToken: js.UndefOr[NextToken]
     var maxResults: js.UndefOr[MaxResults]
+    var nextToken: js.UndefOr[NextToken]
   }
 
   object ListAppsRequest {
     def apply(
-      nextToken: js.UndefOr[NextToken] = js.undefined,
-      maxResults: js.UndefOr[MaxResults] = js.undefined): ListAppsRequest = {
+      maxResults: js.UndefOr[MaxResults] = js.undefined,
+      nextToken: js.UndefOr[NextToken] = js.undefined): ListAppsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] },
-        "maxResults" -> maxResults.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "maxResults" -> maxResults.map { x => x.asInstanceOf[js.Any] },
+        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListAppsRequest]
     }
@@ -920,16 +920,16 @@ package amplify {
    */
   @js.native
   trait ListAppsResult extends js.Object {
-    var apps: js.UndefOr[Apps]
+    var apps: Apps
     var nextToken: js.UndefOr[NextToken]
   }
 
   object ListAppsResult {
     def apply(
-      apps: js.UndefOr[Apps] = js.undefined,
+      apps: Apps,
       nextToken: js.UndefOr[NextToken] = js.undefined): ListAppsResult = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "apps" -> apps.map { x => x.asInstanceOf[js.Any] },
+        "apps" -> apps.asInstanceOf[js.Any],
         "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListAppsResult]
@@ -941,20 +941,20 @@ package amplify {
    */
   @js.native
   trait ListBranchesRequest extends js.Object {
-    var appId: js.UndefOr[AppId]
-    var nextToken: js.UndefOr[NextToken]
+    var appId: AppId
     var maxResults: js.UndefOr[MaxResults]
+    var nextToken: js.UndefOr[NextToken]
   }
 
   object ListBranchesRequest {
     def apply(
-      appId: js.UndefOr[AppId] = js.undefined,
-      nextToken: js.UndefOr[NextToken] = js.undefined,
-      maxResults: js.UndefOr[MaxResults] = js.undefined): ListBranchesRequest = {
+      appId: AppId,
+      maxResults: js.UndefOr[MaxResults] = js.undefined,
+      nextToken: js.UndefOr[NextToken] = js.undefined): ListBranchesRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "appId" -> appId.map { x => x.asInstanceOf[js.Any] },
-        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] },
-        "maxResults" -> maxResults.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "appId" -> appId.asInstanceOf[js.Any],
+        "maxResults" -> maxResults.map { x => x.asInstanceOf[js.Any] },
+        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListBranchesRequest]
     }
@@ -965,16 +965,16 @@ package amplify {
    */
   @js.native
   trait ListBranchesResult extends js.Object {
-    var branches: js.UndefOr[Branches]
+    var branches: Branches
     var nextToken: js.UndefOr[NextToken]
   }
 
   object ListBranchesResult {
     def apply(
-      branches: js.UndefOr[Branches] = js.undefined,
+      branches: Branches,
       nextToken: js.UndefOr[NextToken] = js.undefined): ListBranchesResult = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "branches" -> branches.map { x => x.asInstanceOf[js.Any] },
+        "branches" -> branches.asInstanceOf[js.Any],
         "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListBranchesResult]
@@ -986,20 +986,20 @@ package amplify {
    */
   @js.native
   trait ListDomainAssociationsRequest extends js.Object {
-    var appId: js.UndefOr[AppId]
-    var nextToken: js.UndefOr[NextToken]
+    var appId: AppId
     var maxResults: js.UndefOr[MaxResults]
+    var nextToken: js.UndefOr[NextToken]
   }
 
   object ListDomainAssociationsRequest {
     def apply(
-      appId: js.UndefOr[AppId] = js.undefined,
-      nextToken: js.UndefOr[NextToken] = js.undefined,
-      maxResults: js.UndefOr[MaxResults] = js.undefined): ListDomainAssociationsRequest = {
+      appId: AppId,
+      maxResults: js.UndefOr[MaxResults] = js.undefined,
+      nextToken: js.UndefOr[NextToken] = js.undefined): ListDomainAssociationsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "appId" -> appId.map { x => x.asInstanceOf[js.Any] },
-        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] },
-        "maxResults" -> maxResults.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "appId" -> appId.asInstanceOf[js.Any],
+        "maxResults" -> maxResults.map { x => x.asInstanceOf[js.Any] },
+        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListDomainAssociationsRequest]
     }
@@ -1010,16 +1010,16 @@ package amplify {
    */
   @js.native
   trait ListDomainAssociationsResult extends js.Object {
-    var domainAssociations: js.UndefOr[DomainAssociations]
+    var domainAssociations: DomainAssociations
     var nextToken: js.UndefOr[NextToken]
   }
 
   object ListDomainAssociationsResult {
     def apply(
-      domainAssociations: js.UndefOr[DomainAssociations] = js.undefined,
+      domainAssociations: DomainAssociations,
       nextToken: js.UndefOr[NextToken] = js.undefined): ListDomainAssociationsResult = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "domainAssociations" -> domainAssociations.map { x => x.asInstanceOf[js.Any] },
+        "domainAssociations" -> domainAssociations.asInstanceOf[js.Any],
         "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListDomainAssociationsResult]
@@ -1031,23 +1031,23 @@ package amplify {
    */
   @js.native
   trait ListJobsRequest extends js.Object {
-    var appId: js.UndefOr[AppId]
-    var branchName: js.UndefOr[BranchName]
-    var nextToken: js.UndefOr[NextToken]
+    var appId: AppId
+    var branchName: BranchName
     var maxResults: js.UndefOr[MaxResults]
+    var nextToken: js.UndefOr[NextToken]
   }
 
   object ListJobsRequest {
     def apply(
-      appId: js.UndefOr[AppId] = js.undefined,
-      branchName: js.UndefOr[BranchName] = js.undefined,
-      nextToken: js.UndefOr[NextToken] = js.undefined,
-      maxResults: js.UndefOr[MaxResults] = js.undefined): ListJobsRequest = {
+      appId: AppId,
+      branchName: BranchName,
+      maxResults: js.UndefOr[MaxResults] = js.undefined,
+      nextToken: js.UndefOr[NextToken] = js.undefined): ListJobsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "appId" -> appId.map { x => x.asInstanceOf[js.Any] },
-        "branchName" -> branchName.map { x => x.asInstanceOf[js.Any] },
-        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] },
-        "maxResults" -> maxResults.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "appId" -> appId.asInstanceOf[js.Any],
+        "branchName" -> branchName.asInstanceOf[js.Any],
+        "maxResults" -> maxResults.map { x => x.asInstanceOf[js.Any] },
+        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListJobsRequest]
     }
@@ -1058,16 +1058,16 @@ package amplify {
    */
   @js.native
   trait ListJobsResult extends js.Object {
-    var jobSummaries: js.UndefOr[JobSummaries]
+    var jobSummaries: JobSummaries
     var nextToken: js.UndefOr[NextToken]
   }
 
   object ListJobsResult {
     def apply(
-      jobSummaries: js.UndefOr[JobSummaries] = js.undefined,
+      jobSummaries: JobSummaries,
       nextToken: js.UndefOr[NextToken] = js.undefined): ListJobsResult = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "jobSummaries" -> jobSummaries.map { x => x.asInstanceOf[js.Any] },
+        "jobSummaries" -> jobSummaries.asInstanceOf[js.Any],
         "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListJobsResult]
@@ -1088,23 +1088,23 @@ package amplify {
    */
   @js.native
   trait ProductionBranch extends js.Object {
+    var branchName: js.UndefOr[BranchName]
     var lastDeployTime: js.UndefOr[LastDeployTime]
     var status: js.UndefOr[Status]
     var thumbnailUrl: js.UndefOr[ThumbnailUrl]
-    var branchName: js.UndefOr[BranchName]
   }
 
   object ProductionBranch {
     def apply(
+      branchName: js.UndefOr[BranchName] = js.undefined,
       lastDeployTime: js.UndefOr[LastDeployTime] = js.undefined,
       status: js.UndefOr[Status] = js.undefined,
-      thumbnailUrl: js.UndefOr[ThumbnailUrl] = js.undefined,
-      branchName: js.UndefOr[BranchName] = js.undefined): ProductionBranch = {
+      thumbnailUrl: js.UndefOr[ThumbnailUrl] = js.undefined): ProductionBranch = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "branchName" -> branchName.map { x => x.asInstanceOf[js.Any] },
         "lastDeployTime" -> lastDeployTime.map { x => x.asInstanceOf[js.Any] },
         "status" -> status.map { x => x.asInstanceOf[js.Any] },
-        "thumbnailUrl" -> thumbnailUrl.map { x => x.asInstanceOf[js.Any] },
-        "branchName" -> branchName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "thumbnailUrl" -> thumbnailUrl.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ProductionBranch]
     }
@@ -1124,35 +1124,35 @@ package amplify {
    */
   @js.native
   trait StartJobRequest extends js.Object {
-    var jobReason: js.UndefOr[JobReason]
+    var appId: AppId
+    var branchName: BranchName
+    var jobType: JobType
     var commitId: js.UndefOr[CommitId]
-    var jobType: js.UndefOr[JobType]
+    var commitMessage: js.UndefOr[CommitMessage]
     var commitTime: js.UndefOr[CommitTime]
     var jobId: js.UndefOr[JobId]
-    var appId: js.UndefOr[AppId]
-    var branchName: js.UndefOr[BranchName]
-    var commitMessage: js.UndefOr[CommitMessage]
+    var jobReason: js.UndefOr[JobReason]
   }
 
   object StartJobRequest {
     def apply(
-      jobReason: js.UndefOr[JobReason] = js.undefined,
+      appId: AppId,
+      branchName: BranchName,
+      jobType: JobType,
       commitId: js.UndefOr[CommitId] = js.undefined,
-      jobType: js.UndefOr[JobType] = js.undefined,
+      commitMessage: js.UndefOr[CommitMessage] = js.undefined,
       commitTime: js.UndefOr[CommitTime] = js.undefined,
       jobId: js.UndefOr[JobId] = js.undefined,
-      appId: js.UndefOr[AppId] = js.undefined,
-      branchName: js.UndefOr[BranchName] = js.undefined,
-      commitMessage: js.UndefOr[CommitMessage] = js.undefined): StartJobRequest = {
+      jobReason: js.UndefOr[JobReason] = js.undefined): StartJobRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "jobReason" -> jobReason.map { x => x.asInstanceOf[js.Any] },
+        "appId" -> appId.asInstanceOf[js.Any],
+        "branchName" -> branchName.asInstanceOf[js.Any],
+        "jobType" -> jobType.asInstanceOf[js.Any],
         "commitId" -> commitId.map { x => x.asInstanceOf[js.Any] },
-        "jobType" -> jobType.map { x => x.asInstanceOf[js.Any] },
+        "commitMessage" -> commitMessage.map { x => x.asInstanceOf[js.Any] },
         "commitTime" -> commitTime.map { x => x.asInstanceOf[js.Any] },
         "jobId" -> jobId.map { x => x.asInstanceOf[js.Any] },
-        "appId" -> appId.map { x => x.asInstanceOf[js.Any] },
-        "branchName" -> branchName.map { x => x.asInstanceOf[js.Any] },
-        "commitMessage" -> commitMessage.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "jobReason" -> jobReason.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StartJobRequest]
     }
@@ -1163,14 +1163,14 @@ package amplify {
    */
   @js.native
   trait StartJobResult extends js.Object {
-    var jobSummary: js.UndefOr[JobSummary]
+    var jobSummary: JobSummary
   }
 
   object StartJobResult {
     def apply(
-      jobSummary: js.UndefOr[JobSummary] = js.undefined): StartJobResult = {
+      jobSummary: JobSummary): StartJobResult = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "jobSummary" -> jobSummary.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "jobSummary" -> jobSummary.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StartJobResult]
     }
@@ -1181,32 +1181,32 @@ package amplify {
    */
   @js.native
   trait Step extends js.Object {
-    var startTime: js.UndefOr[StartTime]
-    var logUrl: js.UndefOr[LogUrl]
+    var endTime: EndTime
+    var startTime: StartTime
+    var status: JobStatus
+    var stepName: StepName
     var artifactsUrl: js.UndefOr[ArtifactsUrl]
+    var logUrl: js.UndefOr[LogUrl]
     var screenshots: js.UndefOr[Screenshots]
-    var endTime: js.UndefOr[EndTime]
-    var stepName: js.UndefOr[StepName]
-    var status: js.UndefOr[JobStatus]
   }
 
   object Step {
     def apply(
-      startTime: js.UndefOr[StartTime] = js.undefined,
-      logUrl: js.UndefOr[LogUrl] = js.undefined,
+      endTime: EndTime,
+      startTime: StartTime,
+      status: JobStatus,
+      stepName: StepName,
       artifactsUrl: js.UndefOr[ArtifactsUrl] = js.undefined,
-      screenshots: js.UndefOr[Screenshots] = js.undefined,
-      endTime: js.UndefOr[EndTime] = js.undefined,
-      stepName: js.UndefOr[StepName] = js.undefined,
-      status: js.UndefOr[JobStatus] = js.undefined): Step = {
+      logUrl: js.UndefOr[LogUrl] = js.undefined,
+      screenshots: js.UndefOr[Screenshots] = js.undefined): Step = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "startTime" -> startTime.map { x => x.asInstanceOf[js.Any] },
-        "logUrl" -> logUrl.map { x => x.asInstanceOf[js.Any] },
+        "endTime" -> endTime.asInstanceOf[js.Any],
+        "startTime" -> startTime.asInstanceOf[js.Any],
+        "status" -> status.asInstanceOf[js.Any],
+        "stepName" -> stepName.asInstanceOf[js.Any],
         "artifactsUrl" -> artifactsUrl.map { x => x.asInstanceOf[js.Any] },
-        "screenshots" -> screenshots.map { x => x.asInstanceOf[js.Any] },
-        "endTime" -> endTime.map { x => x.asInstanceOf[js.Any] },
-        "stepName" -> stepName.map { x => x.asInstanceOf[js.Any] },
-        "status" -> status.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "logUrl" -> logUrl.map { x => x.asInstanceOf[js.Any] },
+        "screenshots" -> screenshots.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Step]
     }
@@ -1217,20 +1217,20 @@ package amplify {
    */
   @js.native
   trait StopJobRequest extends js.Object {
-    var appId: js.UndefOr[AppId]
-    var branchName: js.UndefOr[BranchName]
-    var jobId: js.UndefOr[JobId]
+    var appId: AppId
+    var branchName: BranchName
+    var jobId: JobId
   }
 
   object StopJobRequest {
     def apply(
-      appId: js.UndefOr[AppId] = js.undefined,
-      branchName: js.UndefOr[BranchName] = js.undefined,
-      jobId: js.UndefOr[JobId] = js.undefined): StopJobRequest = {
+      appId: AppId,
+      branchName: BranchName,
+      jobId: JobId): StopJobRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "appId" -> appId.map { x => x.asInstanceOf[js.Any] },
-        "branchName" -> branchName.map { x => x.asInstanceOf[js.Any] },
-        "jobId" -> jobId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "appId" -> appId.asInstanceOf[js.Any],
+        "branchName" -> branchName.asInstanceOf[js.Any],
+        "jobId" -> jobId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StopJobRequest]
     }
@@ -1241,14 +1241,14 @@ package amplify {
    */
   @js.native
   trait StopJobResult extends js.Object {
-    var jobSummary: js.UndefOr[JobSummary]
+    var jobSummary: JobSummary
   }
 
   object StopJobResult {
     def apply(
-      jobSummary: js.UndefOr[JobSummary] = js.undefined): StopJobResult = {
+      jobSummary: JobSummary): StopJobResult = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "jobSummary" -> jobSummary.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "jobSummary" -> jobSummary.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StopJobResult]
     }
@@ -1259,20 +1259,20 @@ package amplify {
    */
   @js.native
   trait SubDomain extends js.Object {
-    var subDomainSetting: js.UndefOr[SubDomainSetting]
-    var verified: js.UndefOr[Verified]
-    var dnsRecord: js.UndefOr[DNSRecord]
+    var dnsRecord: DNSRecord
+    var subDomainSetting: SubDomainSetting
+    var verified: Verified
   }
 
   object SubDomain {
     def apply(
-      subDomainSetting: js.UndefOr[SubDomainSetting] = js.undefined,
-      verified: js.UndefOr[Verified] = js.undefined,
-      dnsRecord: js.UndefOr[DNSRecord] = js.undefined): SubDomain = {
+      dnsRecord: DNSRecord,
+      subDomainSetting: SubDomainSetting,
+      verified: Verified): SubDomain = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "subDomainSetting" -> subDomainSetting.map { x => x.asInstanceOf[js.Any] },
-        "verified" -> verified.map { x => x.asInstanceOf[js.Any] },
-        "dnsRecord" -> dnsRecord.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "dnsRecord" -> dnsRecord.asInstanceOf[js.Any],
+        "subDomainSetting" -> subDomainSetting.asInstanceOf[js.Any],
+        "verified" -> verified.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SubDomain]
     }
@@ -1283,17 +1283,17 @@ package amplify {
    */
   @js.native
   trait SubDomainSetting extends js.Object {
-    var prefix: js.UndefOr[DomainPrefix]
-    var branchName: js.UndefOr[BranchName]
+    var branchName: BranchName
+    var prefix: DomainPrefix
   }
 
   object SubDomainSetting {
     def apply(
-      prefix: js.UndefOr[DomainPrefix] = js.undefined,
-      branchName: js.UndefOr[BranchName] = js.undefined): SubDomainSetting = {
+      branchName: BranchName,
+      prefix: DomainPrefix): SubDomainSetting = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "prefix" -> prefix.map { x => x.asInstanceOf[js.Any] },
-        "branchName" -> branchName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "branchName" -> branchName.asInstanceOf[js.Any],
+        "prefix" -> prefix.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SubDomainSetting]
     }
@@ -1304,43 +1304,43 @@ package amplify {
    */
   @js.native
   trait UpdateAppRequest extends js.Object {
-    var name: js.UndefOr[Name]
-    var description: js.UndefOr[Description]
-    var environmentVariables: js.UndefOr[EnvironmentVariables]
-    var buildSpec: js.UndefOr[BuildSpec]
-    var enableBasicAuth: js.UndefOr[EnableBasicAuth]
+    var appId: AppId
     var basicAuthCredentials: js.UndefOr[BasicAuthCredentials]
-    var iamServiceRoleArn: js.UndefOr[ServiceRoleArn]
+    var buildSpec: js.UndefOr[BuildSpec]
     var customRules: js.UndefOr[CustomRules]
-    var appId: js.UndefOr[AppId]
+    var description: js.UndefOr[Description]
+    var enableBasicAuth: js.UndefOr[EnableBasicAuth]
     var enableBranchAutoBuild: js.UndefOr[EnableAutoBuild]
+    var environmentVariables: js.UndefOr[EnvironmentVariables]
+    var iamServiceRoleArn: js.UndefOr[ServiceRoleArn]
+    var name: js.UndefOr[Name]
     var platform: js.UndefOr[Platform]
   }
 
   object UpdateAppRequest {
     def apply(
-      name: js.UndefOr[Name] = js.undefined,
-      description: js.UndefOr[Description] = js.undefined,
-      environmentVariables: js.UndefOr[EnvironmentVariables] = js.undefined,
-      buildSpec: js.UndefOr[BuildSpec] = js.undefined,
-      enableBasicAuth: js.UndefOr[EnableBasicAuth] = js.undefined,
+      appId: AppId,
       basicAuthCredentials: js.UndefOr[BasicAuthCredentials] = js.undefined,
-      iamServiceRoleArn: js.UndefOr[ServiceRoleArn] = js.undefined,
+      buildSpec: js.UndefOr[BuildSpec] = js.undefined,
       customRules: js.UndefOr[CustomRules] = js.undefined,
-      appId: js.UndefOr[AppId] = js.undefined,
+      description: js.UndefOr[Description] = js.undefined,
+      enableBasicAuth: js.UndefOr[EnableBasicAuth] = js.undefined,
       enableBranchAutoBuild: js.UndefOr[EnableAutoBuild] = js.undefined,
+      environmentVariables: js.UndefOr[EnvironmentVariables] = js.undefined,
+      iamServiceRoleArn: js.UndefOr[ServiceRoleArn] = js.undefined,
+      name: js.UndefOr[Name] = js.undefined,
       platform: js.UndefOr[Platform] = js.undefined): UpdateAppRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "name" -> name.map { x => x.asInstanceOf[js.Any] },
-        "description" -> description.map { x => x.asInstanceOf[js.Any] },
-        "environmentVariables" -> environmentVariables.map { x => x.asInstanceOf[js.Any] },
-        "buildSpec" -> buildSpec.map { x => x.asInstanceOf[js.Any] },
-        "enableBasicAuth" -> enableBasicAuth.map { x => x.asInstanceOf[js.Any] },
+        "appId" -> appId.asInstanceOf[js.Any],
         "basicAuthCredentials" -> basicAuthCredentials.map { x => x.asInstanceOf[js.Any] },
-        "iamServiceRoleArn" -> iamServiceRoleArn.map { x => x.asInstanceOf[js.Any] },
+        "buildSpec" -> buildSpec.map { x => x.asInstanceOf[js.Any] },
         "customRules" -> customRules.map { x => x.asInstanceOf[js.Any] },
-        "appId" -> appId.map { x => x.asInstanceOf[js.Any] },
+        "description" -> description.map { x => x.asInstanceOf[js.Any] },
+        "enableBasicAuth" -> enableBasicAuth.map { x => x.asInstanceOf[js.Any] },
         "enableBranchAutoBuild" -> enableBranchAutoBuild.map { x => x.asInstanceOf[js.Any] },
+        "environmentVariables" -> environmentVariables.map { x => x.asInstanceOf[js.Any] },
+        "iamServiceRoleArn" -> iamServiceRoleArn.map { x => x.asInstanceOf[js.Any] },
+        "name" -> name.map { x => x.asInstanceOf[js.Any] },
         "platform" -> platform.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateAppRequest]
@@ -1352,14 +1352,14 @@ package amplify {
    */
   @js.native
   trait UpdateAppResult extends js.Object {
-    var app: js.UndefOr[App]
+    var app: App
   }
 
   object UpdateAppResult {
     def apply(
-      app: js.UndefOr[App] = js.undefined): UpdateAppResult = {
+      app: App): UpdateAppResult = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "app" -> app.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "app" -> app.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateAppResult]
     }
@@ -1370,47 +1370,47 @@ package amplify {
    */
   @js.native
   trait UpdateBranchRequest extends js.Object {
-    var stage: js.UndefOr[Stage]
-    var description: js.UndefOr[Description]
-    var environmentVariables: js.UndefOr[EnvironmentVariables]
-    var buildSpec: js.UndefOr[BuildSpec]
-    var enableBasicAuth: js.UndefOr[EnableBasicAuth]
-    var framework: js.UndefOr[Framework]
+    var appId: AppId
+    var branchName: BranchName
     var basicAuthCredentials: js.UndefOr[BasicAuthCredentials]
+    var buildSpec: js.UndefOr[BuildSpec]
+    var description: js.UndefOr[Description]
     var enableAutoBuild: js.UndefOr[EnableAutoBuild]
-    var ttl: js.UndefOr[TTL]
-    var appId: js.UndefOr[AppId]
-    var branchName: js.UndefOr[BranchName]
+    var enableBasicAuth: js.UndefOr[EnableBasicAuth]
     var enableNotification: js.UndefOr[EnableNotification]
+    var environmentVariables: js.UndefOr[EnvironmentVariables]
+    var framework: js.UndefOr[Framework]
+    var stage: js.UndefOr[Stage]
+    var ttl: js.UndefOr[TTL]
   }
 
   object UpdateBranchRequest {
     def apply(
-      stage: js.UndefOr[Stage] = js.undefined,
-      description: js.UndefOr[Description] = js.undefined,
-      environmentVariables: js.UndefOr[EnvironmentVariables] = js.undefined,
-      buildSpec: js.UndefOr[BuildSpec] = js.undefined,
-      enableBasicAuth: js.UndefOr[EnableBasicAuth] = js.undefined,
-      framework: js.UndefOr[Framework] = js.undefined,
+      appId: AppId,
+      branchName: BranchName,
       basicAuthCredentials: js.UndefOr[BasicAuthCredentials] = js.undefined,
+      buildSpec: js.UndefOr[BuildSpec] = js.undefined,
+      description: js.UndefOr[Description] = js.undefined,
       enableAutoBuild: js.UndefOr[EnableAutoBuild] = js.undefined,
-      ttl: js.UndefOr[TTL] = js.undefined,
-      appId: js.UndefOr[AppId] = js.undefined,
-      branchName: js.UndefOr[BranchName] = js.undefined,
-      enableNotification: js.UndefOr[EnableNotification] = js.undefined): UpdateBranchRequest = {
+      enableBasicAuth: js.UndefOr[EnableBasicAuth] = js.undefined,
+      enableNotification: js.UndefOr[EnableNotification] = js.undefined,
+      environmentVariables: js.UndefOr[EnvironmentVariables] = js.undefined,
+      framework: js.UndefOr[Framework] = js.undefined,
+      stage: js.UndefOr[Stage] = js.undefined,
+      ttl: js.UndefOr[TTL] = js.undefined): UpdateBranchRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "stage" -> stage.map { x => x.asInstanceOf[js.Any] },
-        "description" -> description.map { x => x.asInstanceOf[js.Any] },
-        "environmentVariables" -> environmentVariables.map { x => x.asInstanceOf[js.Any] },
-        "buildSpec" -> buildSpec.map { x => x.asInstanceOf[js.Any] },
-        "enableBasicAuth" -> enableBasicAuth.map { x => x.asInstanceOf[js.Any] },
-        "framework" -> framework.map { x => x.asInstanceOf[js.Any] },
+        "appId" -> appId.asInstanceOf[js.Any],
+        "branchName" -> branchName.asInstanceOf[js.Any],
         "basicAuthCredentials" -> basicAuthCredentials.map { x => x.asInstanceOf[js.Any] },
+        "buildSpec" -> buildSpec.map { x => x.asInstanceOf[js.Any] },
+        "description" -> description.map { x => x.asInstanceOf[js.Any] },
         "enableAutoBuild" -> enableAutoBuild.map { x => x.asInstanceOf[js.Any] },
-        "ttl" -> ttl.map { x => x.asInstanceOf[js.Any] },
-        "appId" -> appId.map { x => x.asInstanceOf[js.Any] },
-        "branchName" -> branchName.map { x => x.asInstanceOf[js.Any] },
-        "enableNotification" -> enableNotification.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "enableBasicAuth" -> enableBasicAuth.map { x => x.asInstanceOf[js.Any] },
+        "enableNotification" -> enableNotification.map { x => x.asInstanceOf[js.Any] },
+        "environmentVariables" -> environmentVariables.map { x => x.asInstanceOf[js.Any] },
+        "framework" -> framework.map { x => x.asInstanceOf[js.Any] },
+        "stage" -> stage.map { x => x.asInstanceOf[js.Any] },
+        "ttl" -> ttl.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateBranchRequest]
     }
@@ -1421,14 +1421,14 @@ package amplify {
    */
   @js.native
   trait UpdateBranchResult extends js.Object {
-    var branch: js.UndefOr[Branch]
+    var branch: Branch
   }
 
   object UpdateBranchResult {
     def apply(
-      branch: js.UndefOr[Branch] = js.undefined): UpdateBranchResult = {
+      branch: Branch): UpdateBranchResult = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "branch" -> branch.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "branch" -> branch.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateBranchResult]
     }
@@ -1439,23 +1439,23 @@ package amplify {
    */
   @js.native
   trait UpdateDomainAssociationRequest extends js.Object {
-    var appId: js.UndefOr[AppId]
-    var domainName: js.UndefOr[DomainName]
+    var appId: AppId
+    var domainName: DomainName
+    var subDomainSettings: SubDomainSettings
     var enableAutoSubDomain: js.UndefOr[EnableAutoSubDomain]
-    var subDomainSettings: js.UndefOr[SubDomainSettings]
   }
 
   object UpdateDomainAssociationRequest {
     def apply(
-      appId: js.UndefOr[AppId] = js.undefined,
-      domainName: js.UndefOr[DomainName] = js.undefined,
-      enableAutoSubDomain: js.UndefOr[EnableAutoSubDomain] = js.undefined,
-      subDomainSettings: js.UndefOr[SubDomainSettings] = js.undefined): UpdateDomainAssociationRequest = {
+      appId: AppId,
+      domainName: DomainName,
+      subDomainSettings: SubDomainSettings,
+      enableAutoSubDomain: js.UndefOr[EnableAutoSubDomain] = js.undefined): UpdateDomainAssociationRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "appId" -> appId.map { x => x.asInstanceOf[js.Any] },
-        "domainName" -> domainName.map { x => x.asInstanceOf[js.Any] },
-        "enableAutoSubDomain" -> enableAutoSubDomain.map { x => x.asInstanceOf[js.Any] },
-        "subDomainSettings" -> subDomainSettings.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "appId" -> appId.asInstanceOf[js.Any],
+        "domainName" -> domainName.asInstanceOf[js.Any],
+        "subDomainSettings" -> subDomainSettings.asInstanceOf[js.Any],
+        "enableAutoSubDomain" -> enableAutoSubDomain.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateDomainAssociationRequest]
     }
@@ -1466,14 +1466,14 @@ package amplify {
    */
   @js.native
   trait UpdateDomainAssociationResult extends js.Object {
-    var domainAssociation: js.UndefOr[DomainAssociation]
+    var domainAssociation: DomainAssociation
   }
 
   object UpdateDomainAssociationResult {
     def apply(
-      domainAssociation: js.UndefOr[DomainAssociation] = js.undefined): UpdateDomainAssociationResult = {
+      domainAssociation: DomainAssociation): UpdateDomainAssociationResult = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "domainAssociation" -> domainAssociation.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "domainAssociation" -> domainAssociation.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateDomainAssociationResult]
     }

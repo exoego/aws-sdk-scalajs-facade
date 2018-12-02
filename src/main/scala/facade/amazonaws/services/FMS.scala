@@ -71,14 +71,14 @@ package fms {
 
   @js.native
   trait AssociateAdminAccountRequest extends js.Object {
-    var AdminAccount: js.UndefOr[AWSAccountId]
+    var AdminAccount: AWSAccountId
   }
 
   object AssociateAdminAccountRequest {
     def apply(
-      AdminAccount: js.UndefOr[AWSAccountId] = js.undefined): AssociateAdminAccountRequest = {
+      AdminAccount: AWSAccountId): AssociateAdminAccountRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "AdminAccount" -> AdminAccount.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "AdminAccount" -> AdminAccount.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AssociateAdminAccountRequest]
     }
@@ -90,19 +90,19 @@ package fms {
   @js.native
   trait ComplianceViolator extends js.Object {
     var ResourceId: js.UndefOr[ResourceId]
-    var ViolationReason: js.UndefOr[ViolationReason]
     var ResourceType: js.UndefOr[ResourceType]
+    var ViolationReason: js.UndefOr[ViolationReason]
   }
 
   object ComplianceViolator {
     def apply(
       ResourceId: js.UndefOr[ResourceId] = js.undefined,
-      ViolationReason: js.UndefOr[ViolationReason] = js.undefined,
-      ResourceType: js.UndefOr[ResourceType] = js.undefined): ComplianceViolator = {
+      ResourceType: js.UndefOr[ResourceType] = js.undefined,
+      ViolationReason: js.UndefOr[ViolationReason] = js.undefined): ComplianceViolator = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ResourceId" -> ResourceId.map { x => x.asInstanceOf[js.Any] },
-        "ViolationReason" -> ViolationReason.map { x => x.asInstanceOf[js.Any] },
-        "ResourceType" -> ResourceType.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ResourceType" -> ResourceType.map { x => x.asInstanceOf[js.Any] },
+        "ViolationReason" -> ViolationReason.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ComplianceViolator]
     }
@@ -129,14 +129,14 @@ package fms {
 
   @js.native
   trait DeletePolicyRequest extends js.Object {
-    var PolicyId: js.UndefOr[PolicyId]
+    var PolicyId: PolicyId
   }
 
   object DeletePolicyRequest {
     def apply(
-      PolicyId: js.UndefOr[PolicyId] = js.undefined): DeletePolicyRequest = {
+      PolicyId: PolicyId): DeletePolicyRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "PolicyId" -> PolicyId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "PolicyId" -> PolicyId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeletePolicyRequest]
     }
@@ -168,19 +168,19 @@ package fms {
   @js.native
   trait EvaluationResult extends js.Object {
     var ComplianceStatus: js.UndefOr[PolicyComplianceStatusType]
-    var ViolatorCount: js.UndefOr[ResourceCount]
     var EvaluationLimitExceeded: js.UndefOr[Boolean]
+    var ViolatorCount: js.UndefOr[ResourceCount]
   }
 
   object EvaluationResult {
     def apply(
       ComplianceStatus: js.UndefOr[PolicyComplianceStatusType] = js.undefined,
-      ViolatorCount: js.UndefOr[ResourceCount] = js.undefined,
-      EvaluationLimitExceeded: js.UndefOr[Boolean] = js.undefined): EvaluationResult = {
+      EvaluationLimitExceeded: js.UndefOr[Boolean] = js.undefined,
+      ViolatorCount: js.UndefOr[ResourceCount] = js.undefined): EvaluationResult = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ComplianceStatus" -> ComplianceStatus.map { x => x.asInstanceOf[js.Any] },
-        "ViolatorCount" -> ViolatorCount.map { x => x.asInstanceOf[js.Any] },
-        "EvaluationLimitExceeded" -> EvaluationLimitExceeded.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "EvaluationLimitExceeded" -> EvaluationLimitExceeded.map { x => x.asInstanceOf[js.Any] },
+        "ViolatorCount" -> ViolatorCount.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EvaluationResult]
     }
@@ -219,17 +219,17 @@ package fms {
 
   @js.native
   trait GetComplianceDetailRequest extends js.Object {
-    var PolicyId: js.UndefOr[PolicyId]
-    var MemberAccount: js.UndefOr[AWSAccountId]
+    var MemberAccount: AWSAccountId
+    var PolicyId: PolicyId
   }
 
   object GetComplianceDetailRequest {
     def apply(
-      PolicyId: js.UndefOr[PolicyId] = js.undefined,
-      MemberAccount: js.UndefOr[AWSAccountId] = js.undefined): GetComplianceDetailRequest = {
+      MemberAccount: AWSAccountId,
+      PolicyId: PolicyId): GetComplianceDetailRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "PolicyId" -> PolicyId.map { x => x.asInstanceOf[js.Any] },
-        "MemberAccount" -> MemberAccount.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "MemberAccount" -> MemberAccount.asInstanceOf[js.Any],
+        "PolicyId" -> PolicyId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetComplianceDetailRequest]
     }
@@ -265,17 +265,17 @@ package fms {
 
   @js.native
   trait GetNotificationChannelResponse extends js.Object {
-    var SnsTopicArn: js.UndefOr[ResourceArn]
     var SnsRoleName: js.UndefOr[ResourceArn]
+    var SnsTopicArn: js.UndefOr[ResourceArn]
   }
 
   object GetNotificationChannelResponse {
     def apply(
-      SnsTopicArn: js.UndefOr[ResourceArn] = js.undefined,
-      SnsRoleName: js.UndefOr[ResourceArn] = js.undefined): GetNotificationChannelResponse = {
+      SnsRoleName: js.UndefOr[ResourceArn] = js.undefined,
+      SnsTopicArn: js.UndefOr[ResourceArn] = js.undefined): GetNotificationChannelResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "SnsTopicArn" -> SnsTopicArn.map { x => x.asInstanceOf[js.Any] },
-        "SnsRoleName" -> SnsRoleName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "SnsRoleName" -> SnsRoleName.map { x => x.asInstanceOf[js.Any] },
+        "SnsTopicArn" -> SnsTopicArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetNotificationChannelResponse]
     }
@@ -283,14 +283,14 @@ package fms {
 
   @js.native
   trait GetPolicyRequest extends js.Object {
-    var PolicyId: js.UndefOr[PolicyId]
+    var PolicyId: PolicyId
   }
 
   object GetPolicyRequest {
     def apply(
-      PolicyId: js.UndefOr[PolicyId] = js.undefined): GetPolicyRequest = {
+      PolicyId: PolicyId): GetPolicyRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "PolicyId" -> PolicyId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "PolicyId" -> PolicyId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetPolicyRequest]
     }
@@ -316,20 +316,20 @@ package fms {
 
   @js.native
   trait ListComplianceStatusRequest extends js.Object {
-    var PolicyId: js.UndefOr[PolicyId]
-    var NextToken: js.UndefOr[PaginationToken]
+    var PolicyId: PolicyId
     var MaxResults: js.UndefOr[PaginationMaxResults]
+    var NextToken: js.UndefOr[PaginationToken]
   }
 
   object ListComplianceStatusRequest {
     def apply(
-      PolicyId: js.UndefOr[PolicyId] = js.undefined,
-      NextToken: js.UndefOr[PaginationToken] = js.undefined,
-      MaxResults: js.UndefOr[PaginationMaxResults] = js.undefined): ListComplianceStatusRequest = {
+      PolicyId: PolicyId,
+      MaxResults: js.UndefOr[PaginationMaxResults] = js.undefined,
+      NextToken: js.UndefOr[PaginationToken] = js.undefined): ListComplianceStatusRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "PolicyId" -> PolicyId.map { x => x.asInstanceOf[js.Any] },
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
-        "MaxResults" -> MaxResults.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "PolicyId" -> PolicyId.asInstanceOf[js.Any],
+        "MaxResults" -> MaxResults.map { x => x.asInstanceOf[js.Any] },
+        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListComplianceStatusRequest]
     }
@@ -337,17 +337,17 @@ package fms {
 
   @js.native
   trait ListComplianceStatusResponse extends js.Object {
-    var PolicyComplianceStatusList: js.UndefOr[PolicyComplianceStatusList]
     var NextToken: js.UndefOr[PaginationToken]
+    var PolicyComplianceStatusList: js.UndefOr[PolicyComplianceStatusList]
   }
 
   object ListComplianceStatusResponse {
     def apply(
-      PolicyComplianceStatusList: js.UndefOr[PolicyComplianceStatusList] = js.undefined,
-      NextToken: js.UndefOr[PaginationToken] = js.undefined): ListComplianceStatusResponse = {
+      NextToken: js.UndefOr[PaginationToken] = js.undefined,
+      PolicyComplianceStatusList: js.UndefOr[PolicyComplianceStatusList] = js.undefined): ListComplianceStatusResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "PolicyComplianceStatusList" -> PolicyComplianceStatusList.map { x => x.asInstanceOf[js.Any] },
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
+        "PolicyComplianceStatusList" -> PolicyComplianceStatusList.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListComplianceStatusResponse]
     }
@@ -355,17 +355,17 @@ package fms {
 
   @js.native
   trait ListMemberAccountsRequest extends js.Object {
-    var NextToken: js.UndefOr[PaginationToken]
     var MaxResults: js.UndefOr[PaginationMaxResults]
+    var NextToken: js.UndefOr[PaginationToken]
   }
 
   object ListMemberAccountsRequest {
     def apply(
-      NextToken: js.UndefOr[PaginationToken] = js.undefined,
-      MaxResults: js.UndefOr[PaginationMaxResults] = js.undefined): ListMemberAccountsRequest = {
+      MaxResults: js.UndefOr[PaginationMaxResults] = js.undefined,
+      NextToken: js.UndefOr[PaginationToken] = js.undefined): ListMemberAccountsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
-        "MaxResults" -> MaxResults.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "MaxResults" -> MaxResults.map { x => x.asInstanceOf[js.Any] },
+        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListMemberAccountsRequest]
     }
@@ -391,17 +391,17 @@ package fms {
 
   @js.native
   trait ListPoliciesRequest extends js.Object {
-    var NextToken: js.UndefOr[PaginationToken]
     var MaxResults: js.UndefOr[PaginationMaxResults]
+    var NextToken: js.UndefOr[PaginationToken]
   }
 
   object ListPoliciesRequest {
     def apply(
-      NextToken: js.UndefOr[PaginationToken] = js.undefined,
-      MaxResults: js.UndefOr[PaginationMaxResults] = js.undefined): ListPoliciesRequest = {
+      MaxResults: js.UndefOr[PaginationMaxResults] = js.undefined,
+      NextToken: js.UndefOr[PaginationToken] = js.undefined): ListPoliciesRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
-        "MaxResults" -> MaxResults.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "MaxResults" -> MaxResults.map { x => x.asInstanceOf[js.Any] },
+        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListPoliciesRequest]
     }
@@ -409,17 +409,17 @@ package fms {
 
   @js.native
   trait ListPoliciesResponse extends js.Object {
-    var PolicyList: js.UndefOr[PolicySummaryList]
     var NextToken: js.UndefOr[PaginationToken]
+    var PolicyList: js.UndefOr[PolicySummaryList]
   }
 
   object ListPoliciesResponse {
     def apply(
-      PolicyList: js.UndefOr[PolicySummaryList] = js.undefined,
-      NextToken: js.UndefOr[PaginationToken] = js.undefined): ListPoliciesResponse = {
+      NextToken: js.UndefOr[PaginationToken] = js.undefined,
+      PolicyList: js.UndefOr[PolicySummaryList] = js.undefined): ListPoliciesResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "PolicyList" -> PolicyList.map { x => x.asInstanceOf[js.Any] },
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
+        "PolicyList" -> PolicyList.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListPoliciesResponse]
     }
@@ -430,41 +430,41 @@ package fms {
    */
   @js.native
   trait Policy extends js.Object {
-    var RemediationEnabled: js.UndefOr[Boolean]
-    var PolicyId: js.UndefOr[PolicyId]
-    var SecurityServicePolicyData: js.UndefOr[SecurityServicePolicyData]
-    var PolicyUpdateToken: js.UndefOr[PolicyUpdateToken]
-    var ResourceType: js.UndefOr[ResourceType]
-    var ExcludeResourceTags: js.UndefOr[Boolean]
-    var PolicyName: js.UndefOr[ResourceName]
-    var IncludeMap: js.UndefOr[CustomerPolicyScopeMap]
-    var ResourceTags: js.UndefOr[ResourceTags]
+    var ExcludeResourceTags: Boolean
+    var PolicyName: ResourceName
+    var RemediationEnabled: Boolean
+    var ResourceType: ResourceType
+    var SecurityServicePolicyData: SecurityServicePolicyData
     var ExcludeMap: js.UndefOr[CustomerPolicyScopeMap]
+    var IncludeMap: js.UndefOr[CustomerPolicyScopeMap]
+    var PolicyId: js.UndefOr[PolicyId]
+    var PolicyUpdateToken: js.UndefOr[PolicyUpdateToken]
+    var ResourceTags: js.UndefOr[ResourceTags]
   }
 
   object Policy {
     def apply(
-      RemediationEnabled: js.UndefOr[Boolean] = js.undefined,
-      PolicyId: js.UndefOr[PolicyId] = js.undefined,
-      SecurityServicePolicyData: js.UndefOr[SecurityServicePolicyData] = js.undefined,
-      PolicyUpdateToken: js.UndefOr[PolicyUpdateToken] = js.undefined,
-      ResourceType: js.UndefOr[ResourceType] = js.undefined,
-      ExcludeResourceTags: js.UndefOr[Boolean] = js.undefined,
-      PolicyName: js.UndefOr[ResourceName] = js.undefined,
+      ExcludeResourceTags: Boolean,
+      PolicyName: ResourceName,
+      RemediationEnabled: Boolean,
+      ResourceType: ResourceType,
+      SecurityServicePolicyData: SecurityServicePolicyData,
+      ExcludeMap: js.UndefOr[CustomerPolicyScopeMap] = js.undefined,
       IncludeMap: js.UndefOr[CustomerPolicyScopeMap] = js.undefined,
-      ResourceTags: js.UndefOr[ResourceTags] = js.undefined,
-      ExcludeMap: js.UndefOr[CustomerPolicyScopeMap] = js.undefined): Policy = {
+      PolicyId: js.UndefOr[PolicyId] = js.undefined,
+      PolicyUpdateToken: js.UndefOr[PolicyUpdateToken] = js.undefined,
+      ResourceTags: js.UndefOr[ResourceTags] = js.undefined): Policy = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "RemediationEnabled" -> RemediationEnabled.map { x => x.asInstanceOf[js.Any] },
-        "PolicyId" -> PolicyId.map { x => x.asInstanceOf[js.Any] },
-        "SecurityServicePolicyData" -> SecurityServicePolicyData.map { x => x.asInstanceOf[js.Any] },
-        "PolicyUpdateToken" -> PolicyUpdateToken.map { x => x.asInstanceOf[js.Any] },
-        "ResourceType" -> ResourceType.map { x => x.asInstanceOf[js.Any] },
-        "ExcludeResourceTags" -> ExcludeResourceTags.map { x => x.asInstanceOf[js.Any] },
-        "PolicyName" -> PolicyName.map { x => x.asInstanceOf[js.Any] },
+        "ExcludeResourceTags" -> ExcludeResourceTags.asInstanceOf[js.Any],
+        "PolicyName" -> PolicyName.asInstanceOf[js.Any],
+        "RemediationEnabled" -> RemediationEnabled.asInstanceOf[js.Any],
+        "ResourceType" -> ResourceType.asInstanceOf[js.Any],
+        "SecurityServicePolicyData" -> SecurityServicePolicyData.asInstanceOf[js.Any],
+        "ExcludeMap" -> ExcludeMap.map { x => x.asInstanceOf[js.Any] },
         "IncludeMap" -> IncludeMap.map { x => x.asInstanceOf[js.Any] },
-        "ResourceTags" -> ResourceTags.map { x => x.asInstanceOf[js.Any] },
-        "ExcludeMap" -> ExcludeMap.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "PolicyId" -> PolicyId.map { x => x.asInstanceOf[js.Any] },
+        "PolicyUpdateToken" -> PolicyUpdateToken.map { x => x.asInstanceOf[js.Any] },
+        "ResourceTags" -> ResourceTags.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Policy]
     }
@@ -475,32 +475,32 @@ package fms {
    */
   @js.native
   trait PolicyComplianceDetail extends js.Object {
-    var PolicyId: js.UndefOr[PolicyId]
+    var EvaluationLimitExceeded: js.UndefOr[Boolean]
     var ExpiredAt: js.UndefOr[TimeStamp]
     var IssueInfoMap: js.UndefOr[IssueInfoMap]
-    var EvaluationLimitExceeded: js.UndefOr[Boolean]
-    var Violators: js.UndefOr[ComplianceViolators]
     var MemberAccount: js.UndefOr[AWSAccountId]
+    var PolicyId: js.UndefOr[PolicyId]
     var PolicyOwner: js.UndefOr[AWSAccountId]
+    var Violators: js.UndefOr[ComplianceViolators]
   }
 
   object PolicyComplianceDetail {
     def apply(
-      PolicyId: js.UndefOr[PolicyId] = js.undefined,
+      EvaluationLimitExceeded: js.UndefOr[Boolean] = js.undefined,
       ExpiredAt: js.UndefOr[TimeStamp] = js.undefined,
       IssueInfoMap: js.UndefOr[IssueInfoMap] = js.undefined,
-      EvaluationLimitExceeded: js.UndefOr[Boolean] = js.undefined,
-      Violators: js.UndefOr[ComplianceViolators] = js.undefined,
       MemberAccount: js.UndefOr[AWSAccountId] = js.undefined,
-      PolicyOwner: js.UndefOr[AWSAccountId] = js.undefined): PolicyComplianceDetail = {
+      PolicyId: js.UndefOr[PolicyId] = js.undefined,
+      PolicyOwner: js.UndefOr[AWSAccountId] = js.undefined,
+      Violators: js.UndefOr[ComplianceViolators] = js.undefined): PolicyComplianceDetail = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "PolicyId" -> PolicyId.map { x => x.asInstanceOf[js.Any] },
+        "EvaluationLimitExceeded" -> EvaluationLimitExceeded.map { x => x.asInstanceOf[js.Any] },
         "ExpiredAt" -> ExpiredAt.map { x => x.asInstanceOf[js.Any] },
         "IssueInfoMap" -> IssueInfoMap.map { x => x.asInstanceOf[js.Any] },
-        "EvaluationLimitExceeded" -> EvaluationLimitExceeded.map { x => x.asInstanceOf[js.Any] },
-        "Violators" -> Violators.map { x => x.asInstanceOf[js.Any] },
         "MemberAccount" -> MemberAccount.map { x => x.asInstanceOf[js.Any] },
-        "PolicyOwner" -> PolicyOwner.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "PolicyId" -> PolicyId.map { x => x.asInstanceOf[js.Any] },
+        "PolicyOwner" -> PolicyOwner.map { x => x.asInstanceOf[js.Any] },
+        "Violators" -> Violators.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PolicyComplianceDetail]
     }
@@ -511,31 +511,31 @@ package fms {
    */
   @js.native
   trait PolicyComplianceStatus extends js.Object {
-    var PolicyId: js.UndefOr[PolicyId]
     var EvaluationResults: js.UndefOr[EvaluationResults]
-    var LastUpdated: js.UndefOr[TimeStamp]
     var IssueInfoMap: js.UndefOr[IssueInfoMap]
-    var PolicyName: js.UndefOr[ResourceName]
+    var LastUpdated: js.UndefOr[TimeStamp]
     var MemberAccount: js.UndefOr[AWSAccountId]
+    var PolicyId: js.UndefOr[PolicyId]
+    var PolicyName: js.UndefOr[ResourceName]
     var PolicyOwner: js.UndefOr[AWSAccountId]
   }
 
   object PolicyComplianceStatus {
     def apply(
-      PolicyId: js.UndefOr[PolicyId] = js.undefined,
       EvaluationResults: js.UndefOr[EvaluationResults] = js.undefined,
-      LastUpdated: js.UndefOr[TimeStamp] = js.undefined,
       IssueInfoMap: js.UndefOr[IssueInfoMap] = js.undefined,
-      PolicyName: js.UndefOr[ResourceName] = js.undefined,
+      LastUpdated: js.UndefOr[TimeStamp] = js.undefined,
       MemberAccount: js.UndefOr[AWSAccountId] = js.undefined,
+      PolicyId: js.UndefOr[PolicyId] = js.undefined,
+      PolicyName: js.UndefOr[ResourceName] = js.undefined,
       PolicyOwner: js.UndefOr[AWSAccountId] = js.undefined): PolicyComplianceStatus = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "PolicyId" -> PolicyId.map { x => x.asInstanceOf[js.Any] },
         "EvaluationResults" -> EvaluationResults.map { x => x.asInstanceOf[js.Any] },
-        "LastUpdated" -> LastUpdated.map { x => x.asInstanceOf[js.Any] },
         "IssueInfoMap" -> IssueInfoMap.map { x => x.asInstanceOf[js.Any] },
-        "PolicyName" -> PolicyName.map { x => x.asInstanceOf[js.Any] },
+        "LastUpdated" -> LastUpdated.map { x => x.asInstanceOf[js.Any] },
         "MemberAccount" -> MemberAccount.map { x => x.asInstanceOf[js.Any] },
+        "PolicyId" -> PolicyId.map { x => x.asInstanceOf[js.Any] },
+        "PolicyName" -> PolicyName.map { x => x.asInstanceOf[js.Any] },
         "PolicyOwner" -> PolicyOwner.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PolicyComplianceStatus]
@@ -554,29 +554,29 @@ package fms {
    */
   @js.native
   trait PolicySummary extends js.Object {
-    var RemediationEnabled: js.UndefOr[Boolean]
-    var PolicyId: js.UndefOr[PolicyId]
-    var SecurityServiceType: js.UndefOr[SecurityServiceType]
-    var ResourceType: js.UndefOr[ResourceType]
-    var PolicyName: js.UndefOr[ResourceName]
     var PolicyArn: js.UndefOr[ResourceArn]
+    var PolicyId: js.UndefOr[PolicyId]
+    var PolicyName: js.UndefOr[ResourceName]
+    var RemediationEnabled: js.UndefOr[Boolean]
+    var ResourceType: js.UndefOr[ResourceType]
+    var SecurityServiceType: js.UndefOr[SecurityServiceType]
   }
 
   object PolicySummary {
     def apply(
-      RemediationEnabled: js.UndefOr[Boolean] = js.undefined,
+      PolicyArn: js.UndefOr[ResourceArn] = js.undefined,
       PolicyId: js.UndefOr[PolicyId] = js.undefined,
-      SecurityServiceType: js.UndefOr[SecurityServiceType] = js.undefined,
-      ResourceType: js.UndefOr[ResourceType] = js.undefined,
       PolicyName: js.UndefOr[ResourceName] = js.undefined,
-      PolicyArn: js.UndefOr[ResourceArn] = js.undefined): PolicySummary = {
+      RemediationEnabled: js.UndefOr[Boolean] = js.undefined,
+      ResourceType: js.UndefOr[ResourceType] = js.undefined,
+      SecurityServiceType: js.UndefOr[SecurityServiceType] = js.undefined): PolicySummary = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "RemediationEnabled" -> RemediationEnabled.map { x => x.asInstanceOf[js.Any] },
+        "PolicyArn" -> PolicyArn.map { x => x.asInstanceOf[js.Any] },
         "PolicyId" -> PolicyId.map { x => x.asInstanceOf[js.Any] },
-        "SecurityServiceType" -> SecurityServiceType.map { x => x.asInstanceOf[js.Any] },
-        "ResourceType" -> ResourceType.map { x => x.asInstanceOf[js.Any] },
         "PolicyName" -> PolicyName.map { x => x.asInstanceOf[js.Any] },
-        "PolicyArn" -> PolicyArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "RemediationEnabled" -> RemediationEnabled.map { x => x.asInstanceOf[js.Any] },
+        "ResourceType" -> ResourceType.map { x => x.asInstanceOf[js.Any] },
+        "SecurityServiceType" -> SecurityServiceType.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PolicySummary]
     }
@@ -584,17 +584,17 @@ package fms {
 
   @js.native
   trait PutNotificationChannelRequest extends js.Object {
-    var SnsTopicArn: js.UndefOr[ResourceArn]
-    var SnsRoleName: js.UndefOr[ResourceArn]
+    var SnsRoleName: ResourceArn
+    var SnsTopicArn: ResourceArn
   }
 
   object PutNotificationChannelRequest {
     def apply(
-      SnsTopicArn: js.UndefOr[ResourceArn] = js.undefined,
-      SnsRoleName: js.UndefOr[ResourceArn] = js.undefined): PutNotificationChannelRequest = {
+      SnsRoleName: ResourceArn,
+      SnsTopicArn: ResourceArn): PutNotificationChannelRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "SnsTopicArn" -> SnsTopicArn.map { x => x.asInstanceOf[js.Any] },
-        "SnsRoleName" -> SnsRoleName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "SnsRoleName" -> SnsRoleName.asInstanceOf[js.Any],
+        "SnsTopicArn" -> SnsTopicArn.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutNotificationChannelRequest]
     }
@@ -602,14 +602,14 @@ package fms {
 
   @js.native
   trait PutPolicyRequest extends js.Object {
-    var Policy: js.UndefOr[Policy]
+    var Policy: Policy
   }
 
   object PutPolicyRequest {
     def apply(
-      Policy: js.UndefOr[Policy] = js.undefined): PutPolicyRequest = {
+      Policy: Policy): PutPolicyRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Policy" -> Policy.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Policy" -> Policy.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutPolicyRequest]
     }
@@ -638,16 +638,16 @@ package fms {
    */
   @js.native
   trait ResourceTag extends js.Object {
-    var Key: js.UndefOr[TagKey]
+    var Key: TagKey
     var Value: js.UndefOr[TagValue]
   }
 
   object ResourceTag {
     def apply(
-      Key: js.UndefOr[TagKey] = js.undefined,
+      Key: TagKey,
       Value: js.UndefOr[TagValue] = js.undefined): ResourceTag = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Key" -> Key.map { x => x.asInstanceOf[js.Any] },
+        "Key" -> Key.asInstanceOf[js.Any],
         "Value" -> Value.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ResourceTag]
@@ -659,16 +659,16 @@ package fms {
    */
   @js.native
   trait SecurityServicePolicyData extends js.Object {
-    var Type: js.UndefOr[SecurityServiceType]
+    var Type: SecurityServiceType
     var ManagedServiceData: js.UndefOr[ManagedServiceData]
   }
 
   object SecurityServicePolicyData {
     def apply(
-      Type: js.UndefOr[SecurityServiceType] = js.undefined,
+      Type: SecurityServiceType,
       ManagedServiceData: js.UndefOr[ManagedServiceData] = js.undefined): SecurityServicePolicyData = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Type" -> Type.map { x => x.asInstanceOf[js.Any] },
+        "Type" -> Type.asInstanceOf[js.Any],
         "ManagedServiceData" -> ManagedServiceData.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SecurityServicePolicyData]

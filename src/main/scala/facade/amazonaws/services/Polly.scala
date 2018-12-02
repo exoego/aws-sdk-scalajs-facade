@@ -63,14 +63,14 @@ package polly {
 
   @js.native
   trait DeleteLexiconInput extends js.Object {
-    var Name: js.UndefOr[LexiconName]
+    var Name: LexiconName
   }
 
   object DeleteLexiconInput {
     def apply(
-      Name: js.UndefOr[LexiconName] = js.undefined): DeleteLexiconInput = {
+      Name: LexiconName): DeleteLexiconInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Name" -> Name.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteLexiconInput]
     }
@@ -91,19 +91,19 @@ package polly {
 
   @js.native
   trait DescribeVoicesInput extends js.Object {
-    var LanguageCode: js.UndefOr[LanguageCode]
     var IncludeAdditionalLanguageCodes: js.UndefOr[IncludeAdditionalLanguageCodes]
+    var LanguageCode: js.UndefOr[LanguageCode]
     var NextToken: js.UndefOr[NextToken]
   }
 
   object DescribeVoicesInput {
     def apply(
-      LanguageCode: js.UndefOr[LanguageCode] = js.undefined,
       IncludeAdditionalLanguageCodes: js.UndefOr[IncludeAdditionalLanguageCodes] = js.undefined,
+      LanguageCode: js.UndefOr[LanguageCode] = js.undefined,
       NextToken: js.UndefOr[NextToken] = js.undefined): DescribeVoicesInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "LanguageCode" -> LanguageCode.map { x => x.asInstanceOf[js.Any] },
         "IncludeAdditionalLanguageCodes" -> IncludeAdditionalLanguageCodes.map { x => x.asInstanceOf[js.Any] },
+        "LanguageCode" -> LanguageCode.map { x => x.asInstanceOf[js.Any] },
         "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeVoicesInput]
@@ -112,17 +112,17 @@ package polly {
 
   @js.native
   trait DescribeVoicesOutput extends js.Object {
-    var Voices: js.UndefOr[VoiceList]
     var NextToken: js.UndefOr[NextToken]
+    var Voices: js.UndefOr[VoiceList]
   }
 
   object DescribeVoicesOutput {
     def apply(
-      Voices: js.UndefOr[VoiceList] = js.undefined,
-      NextToken: js.UndefOr[NextToken] = js.undefined): DescribeVoicesOutput = {
+      NextToken: js.UndefOr[NextToken] = js.undefined,
+      Voices: js.UndefOr[VoiceList] = js.undefined): DescribeVoicesOutput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Voices" -> Voices.map { x => x.asInstanceOf[js.Any] },
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
+        "Voices" -> Voices.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeVoicesOutput]
     }
@@ -137,14 +137,14 @@ package polly {
 
   @js.native
   trait GetLexiconInput extends js.Object {
-    var Name: js.UndefOr[LexiconName]
+    var Name: LexiconName
   }
 
   object GetLexiconInput {
     def apply(
-      Name: js.UndefOr[LexiconName] = js.undefined): GetLexiconInput = {
+      Name: LexiconName): GetLexiconInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Name" -> Name.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetLexiconInput]
     }
@@ -170,14 +170,14 @@ package polly {
 
   @js.native
   trait GetSpeechSynthesisTaskInput extends js.Object {
-    var TaskId: js.UndefOr[TaskId]
+    var TaskId: TaskId
   }
 
   object GetSpeechSynthesisTaskInput {
     def apply(
-      TaskId: js.UndefOr[TaskId] = js.undefined): GetSpeechSynthesisTaskInput = {
+      TaskId: TaskId): GetSpeechSynthesisTaskInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "TaskId" -> TaskId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "TaskId" -> TaskId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetSpeechSynthesisTaskInput]
     }
@@ -257,29 +257,29 @@ package polly {
    */
   @js.native
   trait LexiconAttributes extends js.Object {
-    var Size: js.UndefOr[Size]
-    var LexiconArn: js.UndefOr[LexiconArn]
-    var LexemesCount: js.UndefOr[LexemesCount]
-    var LastModified: js.UndefOr[LastModified]
-    var LanguageCode: js.UndefOr[LanguageCode]
     var Alphabet: js.UndefOr[Alphabet]
+    var LanguageCode: js.UndefOr[LanguageCode]
+    var LastModified: js.UndefOr[LastModified]
+    var LexemesCount: js.UndefOr[LexemesCount]
+    var LexiconArn: js.UndefOr[LexiconArn]
+    var Size: js.UndefOr[Size]
   }
 
   object LexiconAttributes {
     def apply(
-      Size: js.UndefOr[Size] = js.undefined,
-      LexiconArn: js.UndefOr[LexiconArn] = js.undefined,
-      LexemesCount: js.UndefOr[LexemesCount] = js.undefined,
-      LastModified: js.UndefOr[LastModified] = js.undefined,
+      Alphabet: js.UndefOr[Alphabet] = js.undefined,
       LanguageCode: js.UndefOr[LanguageCode] = js.undefined,
-      Alphabet: js.UndefOr[Alphabet] = js.undefined): LexiconAttributes = {
+      LastModified: js.UndefOr[LastModified] = js.undefined,
+      LexemesCount: js.UndefOr[LexemesCount] = js.undefined,
+      LexiconArn: js.UndefOr[LexiconArn] = js.undefined,
+      Size: js.UndefOr[Size] = js.undefined): LexiconAttributes = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Size" -> Size.map { x => x.asInstanceOf[js.Any] },
-        "LexiconArn" -> LexiconArn.map { x => x.asInstanceOf[js.Any] },
-        "LexemesCount" -> LexemesCount.map { x => x.asInstanceOf[js.Any] },
-        "LastModified" -> LastModified.map { x => x.asInstanceOf[js.Any] },
+        "Alphabet" -> Alphabet.map { x => x.asInstanceOf[js.Any] },
         "LanguageCode" -> LanguageCode.map { x => x.asInstanceOf[js.Any] },
-        "Alphabet" -> Alphabet.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "LastModified" -> LastModified.map { x => x.asInstanceOf[js.Any] },
+        "LexemesCount" -> LexemesCount.map { x => x.asInstanceOf[js.Any] },
+        "LexiconArn" -> LexiconArn.map { x => x.asInstanceOf[js.Any] },
+        "Size" -> Size.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[LexiconAttributes]
     }
@@ -290,17 +290,17 @@ package polly {
    */
   @js.native
   trait LexiconDescription extends js.Object {
-    var Name: js.UndefOr[LexiconName]
     var Attributes: js.UndefOr[LexiconAttributes]
+    var Name: js.UndefOr[LexiconName]
   }
 
   object LexiconDescription {
     def apply(
-      Name: js.UndefOr[LexiconName] = js.undefined,
-      Attributes: js.UndefOr[LexiconAttributes] = js.undefined): LexiconDescription = {
+      Attributes: js.UndefOr[LexiconAttributes] = js.undefined,
+      Name: js.UndefOr[LexiconName] = js.undefined): LexiconDescription = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
-        "Attributes" -> Attributes.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Attributes" -> Attributes.map { x => x.asInstanceOf[js.Any] },
+        "Name" -> Name.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[LexiconDescription]
     }
@@ -389,17 +389,17 @@ package polly {
 
   @js.native
   trait PutLexiconInput extends js.Object {
-    var Name: js.UndefOr[LexiconName]
-    var Content: js.UndefOr[LexiconContent]
+    var Content: LexiconContent
+    var Name: LexiconName
   }
 
   object PutLexiconInput {
     def apply(
-      Name: js.UndefOr[LexiconName] = js.undefined,
-      Content: js.UndefOr[LexiconContent] = js.undefined): PutLexiconInput = {
+      Content: LexiconContent,
+      Name: LexiconName): PutLexiconInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
-        "Content" -> Content.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Content" -> Content.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutLexiconInput]
     }
@@ -429,44 +429,44 @@ package polly {
 
   @js.native
   trait StartSpeechSynthesisTaskInput extends js.Object {
-    var OutputS3BucketName: js.UndefOr[OutputS3BucketName]
-    var OutputFormat: js.UndefOr[OutputFormat]
-    var SpeechMarkTypes: js.UndefOr[SpeechMarkTypeList]
-    var VoiceId: js.UndefOr[VoiceId]
-    var LexiconNames: js.UndefOr[LexiconNameList]
-    var SnsTopicArn: js.UndefOr[SnsTopicArn]
-    var Text: js.UndefOr[Text]
+    var OutputFormat: OutputFormat
+    var OutputS3BucketName: OutputS3BucketName
+    var Text: Text
+    var VoiceId: VoiceId
     var LanguageCode: js.UndefOr[LanguageCode]
+    var LexiconNames: js.UndefOr[LexiconNameList]
     var OutputS3KeyPrefix: js.UndefOr[OutputS3KeyPrefix]
-    var TextType: js.UndefOr[TextType]
     var SampleRate: js.UndefOr[SampleRate]
+    var SnsTopicArn: js.UndefOr[SnsTopicArn]
+    var SpeechMarkTypes: js.UndefOr[SpeechMarkTypeList]
+    var TextType: js.UndefOr[TextType]
   }
 
   object StartSpeechSynthesisTaskInput {
     def apply(
-      OutputS3BucketName: js.UndefOr[OutputS3BucketName] = js.undefined,
-      OutputFormat: js.UndefOr[OutputFormat] = js.undefined,
-      SpeechMarkTypes: js.UndefOr[SpeechMarkTypeList] = js.undefined,
-      VoiceId: js.UndefOr[VoiceId] = js.undefined,
-      LexiconNames: js.UndefOr[LexiconNameList] = js.undefined,
-      SnsTopicArn: js.UndefOr[SnsTopicArn] = js.undefined,
-      Text: js.UndefOr[Text] = js.undefined,
+      OutputFormat: OutputFormat,
+      OutputS3BucketName: OutputS3BucketName,
+      Text: Text,
+      VoiceId: VoiceId,
       LanguageCode: js.UndefOr[LanguageCode] = js.undefined,
+      LexiconNames: js.UndefOr[LexiconNameList] = js.undefined,
       OutputS3KeyPrefix: js.UndefOr[OutputS3KeyPrefix] = js.undefined,
-      TextType: js.UndefOr[TextType] = js.undefined,
-      SampleRate: js.UndefOr[SampleRate] = js.undefined): StartSpeechSynthesisTaskInput = {
+      SampleRate: js.UndefOr[SampleRate] = js.undefined,
+      SnsTopicArn: js.UndefOr[SnsTopicArn] = js.undefined,
+      SpeechMarkTypes: js.UndefOr[SpeechMarkTypeList] = js.undefined,
+      TextType: js.UndefOr[TextType] = js.undefined): StartSpeechSynthesisTaskInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "OutputS3BucketName" -> OutputS3BucketName.map { x => x.asInstanceOf[js.Any] },
-        "OutputFormat" -> OutputFormat.map { x => x.asInstanceOf[js.Any] },
-        "SpeechMarkTypes" -> SpeechMarkTypes.map { x => x.asInstanceOf[js.Any] },
-        "VoiceId" -> VoiceId.map { x => x.asInstanceOf[js.Any] },
-        "LexiconNames" -> LexiconNames.map { x => x.asInstanceOf[js.Any] },
-        "SnsTopicArn" -> SnsTopicArn.map { x => x.asInstanceOf[js.Any] },
-        "Text" -> Text.map { x => x.asInstanceOf[js.Any] },
+        "OutputFormat" -> OutputFormat.asInstanceOf[js.Any],
+        "OutputS3BucketName" -> OutputS3BucketName.asInstanceOf[js.Any],
+        "Text" -> Text.asInstanceOf[js.Any],
+        "VoiceId" -> VoiceId.asInstanceOf[js.Any],
         "LanguageCode" -> LanguageCode.map { x => x.asInstanceOf[js.Any] },
+        "LexiconNames" -> LexiconNames.map { x => x.asInstanceOf[js.Any] },
         "OutputS3KeyPrefix" -> OutputS3KeyPrefix.map { x => x.asInstanceOf[js.Any] },
-        "TextType" -> TextType.map { x => x.asInstanceOf[js.Any] },
-        "SampleRate" -> SampleRate.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "SampleRate" -> SampleRate.map { x => x.asInstanceOf[js.Any] },
+        "SnsTopicArn" -> SnsTopicArn.map { x => x.asInstanceOf[js.Any] },
+        "SpeechMarkTypes" -> SpeechMarkTypes.map { x => x.asInstanceOf[js.Any] },
+        "TextType" -> TextType.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StartSpeechSynthesisTaskInput]
     }
@@ -492,53 +492,53 @@ package polly {
    */
   @js.native
   trait SynthesisTask extends js.Object {
-    var TaskId: js.UndefOr[TaskId]
+    var CreationTime: js.UndefOr[DateTime]
+    var LanguageCode: js.UndefOr[LanguageCode]
+    var LexiconNames: js.UndefOr[LexiconNameList]
     var OutputFormat: js.UndefOr[OutputFormat]
-    var SpeechMarkTypes: js.UndefOr[SpeechMarkTypeList]
-    var VoiceId: js.UndefOr[VoiceId]
+    var OutputUri: js.UndefOr[OutputUri]
     var RequestCharacters: js.UndefOr[RequestCharacters]
+    var SampleRate: js.UndefOr[SampleRate]
+    var SnsTopicArn: js.UndefOr[SnsTopicArn]
+    var SpeechMarkTypes: js.UndefOr[SpeechMarkTypeList]
+    var TaskId: js.UndefOr[TaskId]
     var TaskStatus: js.UndefOr[TaskStatus]
     var TaskStatusReason: js.UndefOr[TaskStatusReason]
-    var LexiconNames: js.UndefOr[LexiconNameList]
-    var SnsTopicArn: js.UndefOr[SnsTopicArn]
-    var OutputUri: js.UndefOr[OutputUri]
-    var LanguageCode: js.UndefOr[LanguageCode]
     var TextType: js.UndefOr[TextType]
-    var SampleRate: js.UndefOr[SampleRate]
-    var CreationTime: js.UndefOr[DateTime]
+    var VoiceId: js.UndefOr[VoiceId]
   }
 
   object SynthesisTask {
     def apply(
-      TaskId: js.UndefOr[TaskId] = js.undefined,
+      CreationTime: js.UndefOr[DateTime] = js.undefined,
+      LanguageCode: js.UndefOr[LanguageCode] = js.undefined,
+      LexiconNames: js.UndefOr[LexiconNameList] = js.undefined,
       OutputFormat: js.UndefOr[OutputFormat] = js.undefined,
-      SpeechMarkTypes: js.UndefOr[SpeechMarkTypeList] = js.undefined,
-      VoiceId: js.UndefOr[VoiceId] = js.undefined,
+      OutputUri: js.UndefOr[OutputUri] = js.undefined,
       RequestCharacters: js.UndefOr[RequestCharacters] = js.undefined,
+      SampleRate: js.UndefOr[SampleRate] = js.undefined,
+      SnsTopicArn: js.UndefOr[SnsTopicArn] = js.undefined,
+      SpeechMarkTypes: js.UndefOr[SpeechMarkTypeList] = js.undefined,
+      TaskId: js.UndefOr[TaskId] = js.undefined,
       TaskStatus: js.UndefOr[TaskStatus] = js.undefined,
       TaskStatusReason: js.UndefOr[TaskStatusReason] = js.undefined,
-      LexiconNames: js.UndefOr[LexiconNameList] = js.undefined,
-      SnsTopicArn: js.UndefOr[SnsTopicArn] = js.undefined,
-      OutputUri: js.UndefOr[OutputUri] = js.undefined,
-      LanguageCode: js.UndefOr[LanguageCode] = js.undefined,
       TextType: js.UndefOr[TextType] = js.undefined,
-      SampleRate: js.UndefOr[SampleRate] = js.undefined,
-      CreationTime: js.UndefOr[DateTime] = js.undefined): SynthesisTask = {
+      VoiceId: js.UndefOr[VoiceId] = js.undefined): SynthesisTask = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "TaskId" -> TaskId.map { x => x.asInstanceOf[js.Any] },
+        "CreationTime" -> CreationTime.map { x => x.asInstanceOf[js.Any] },
+        "LanguageCode" -> LanguageCode.map { x => x.asInstanceOf[js.Any] },
+        "LexiconNames" -> LexiconNames.map { x => x.asInstanceOf[js.Any] },
         "OutputFormat" -> OutputFormat.map { x => x.asInstanceOf[js.Any] },
-        "SpeechMarkTypes" -> SpeechMarkTypes.map { x => x.asInstanceOf[js.Any] },
-        "VoiceId" -> VoiceId.map { x => x.asInstanceOf[js.Any] },
+        "OutputUri" -> OutputUri.map { x => x.asInstanceOf[js.Any] },
         "RequestCharacters" -> RequestCharacters.map { x => x.asInstanceOf[js.Any] },
+        "SampleRate" -> SampleRate.map { x => x.asInstanceOf[js.Any] },
+        "SnsTopicArn" -> SnsTopicArn.map { x => x.asInstanceOf[js.Any] },
+        "SpeechMarkTypes" -> SpeechMarkTypes.map { x => x.asInstanceOf[js.Any] },
+        "TaskId" -> TaskId.map { x => x.asInstanceOf[js.Any] },
         "TaskStatus" -> TaskStatus.map { x => x.asInstanceOf[js.Any] },
         "TaskStatusReason" -> TaskStatusReason.map { x => x.asInstanceOf[js.Any] },
-        "LexiconNames" -> LexiconNames.map { x => x.asInstanceOf[js.Any] },
-        "SnsTopicArn" -> SnsTopicArn.map { x => x.asInstanceOf[js.Any] },
-        "OutputUri" -> OutputUri.map { x => x.asInstanceOf[js.Any] },
-        "LanguageCode" -> LanguageCode.map { x => x.asInstanceOf[js.Any] },
         "TextType" -> TextType.map { x => x.asInstanceOf[js.Any] },
-        "SampleRate" -> SampleRate.map { x => x.asInstanceOf[js.Any] },
-        "CreationTime" -> CreationTime.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "VoiceId" -> VoiceId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SynthesisTask]
     }
@@ -546,35 +546,35 @@ package polly {
 
   @js.native
   trait SynthesizeSpeechInput extends js.Object {
-    var OutputFormat: js.UndefOr[OutputFormat]
-    var SpeechMarkTypes: js.UndefOr[SpeechMarkTypeList]
-    var VoiceId: js.UndefOr[VoiceId]
-    var LexiconNames: js.UndefOr[LexiconNameList]
-    var Text: js.UndefOr[Text]
+    var OutputFormat: OutputFormat
+    var Text: Text
+    var VoiceId: VoiceId
     var LanguageCode: js.UndefOr[LanguageCode]
-    var TextType: js.UndefOr[TextType]
+    var LexiconNames: js.UndefOr[LexiconNameList]
     var SampleRate: js.UndefOr[SampleRate]
+    var SpeechMarkTypes: js.UndefOr[SpeechMarkTypeList]
+    var TextType: js.UndefOr[TextType]
   }
 
   object SynthesizeSpeechInput {
     def apply(
-      OutputFormat: js.UndefOr[OutputFormat] = js.undefined,
-      SpeechMarkTypes: js.UndefOr[SpeechMarkTypeList] = js.undefined,
-      VoiceId: js.UndefOr[VoiceId] = js.undefined,
-      LexiconNames: js.UndefOr[LexiconNameList] = js.undefined,
-      Text: js.UndefOr[Text] = js.undefined,
+      OutputFormat: OutputFormat,
+      Text: Text,
+      VoiceId: VoiceId,
       LanguageCode: js.UndefOr[LanguageCode] = js.undefined,
-      TextType: js.UndefOr[TextType] = js.undefined,
-      SampleRate: js.UndefOr[SampleRate] = js.undefined): SynthesizeSpeechInput = {
+      LexiconNames: js.UndefOr[LexiconNameList] = js.undefined,
+      SampleRate: js.UndefOr[SampleRate] = js.undefined,
+      SpeechMarkTypes: js.UndefOr[SpeechMarkTypeList] = js.undefined,
+      TextType: js.UndefOr[TextType] = js.undefined): SynthesizeSpeechInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "OutputFormat" -> OutputFormat.map { x => x.asInstanceOf[js.Any] },
-        "SpeechMarkTypes" -> SpeechMarkTypes.map { x => x.asInstanceOf[js.Any] },
-        "VoiceId" -> VoiceId.map { x => x.asInstanceOf[js.Any] },
-        "LexiconNames" -> LexiconNames.map { x => x.asInstanceOf[js.Any] },
-        "Text" -> Text.map { x => x.asInstanceOf[js.Any] },
+        "OutputFormat" -> OutputFormat.asInstanceOf[js.Any],
+        "Text" -> Text.asInstanceOf[js.Any],
+        "VoiceId" -> VoiceId.asInstanceOf[js.Any],
         "LanguageCode" -> LanguageCode.map { x => x.asInstanceOf[js.Any] },
-        "TextType" -> TextType.map { x => x.asInstanceOf[js.Any] },
-        "SampleRate" -> SampleRate.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "LexiconNames" -> LexiconNames.map { x => x.asInstanceOf[js.Any] },
+        "SampleRate" -> SampleRate.map { x => x.asInstanceOf[js.Any] },
+        "SpeechMarkTypes" -> SpeechMarkTypes.map { x => x.asInstanceOf[js.Any] },
+        "TextType" -> TextType.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SynthesizeSpeechInput]
     }
@@ -622,29 +622,29 @@ package polly {
    */
   @js.native
   trait Voice extends js.Object {
-    var Id: js.UndefOr[VoiceId]
-    var Name: js.UndefOr[VoiceName]
     var AdditionalLanguageCodes: js.UndefOr[LanguageCodeList]
-    var LanguageCode: js.UndefOr[LanguageCode]
     var Gender: js.UndefOr[Gender]
+    var Id: js.UndefOr[VoiceId]
+    var LanguageCode: js.UndefOr[LanguageCode]
     var LanguageName: js.UndefOr[LanguageName]
+    var Name: js.UndefOr[VoiceName]
   }
 
   object Voice {
     def apply(
-      Id: js.UndefOr[VoiceId] = js.undefined,
-      Name: js.UndefOr[VoiceName] = js.undefined,
       AdditionalLanguageCodes: js.UndefOr[LanguageCodeList] = js.undefined,
-      LanguageCode: js.UndefOr[LanguageCode] = js.undefined,
       Gender: js.UndefOr[Gender] = js.undefined,
-      LanguageName: js.UndefOr[LanguageName] = js.undefined): Voice = {
+      Id: js.UndefOr[VoiceId] = js.undefined,
+      LanguageCode: js.UndefOr[LanguageCode] = js.undefined,
+      LanguageName: js.UndefOr[LanguageName] = js.undefined,
+      Name: js.UndefOr[VoiceName] = js.undefined): Voice = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Id" -> Id.map { x => x.asInstanceOf[js.Any] },
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
         "AdditionalLanguageCodes" -> AdditionalLanguageCodes.map { x => x.asInstanceOf[js.Any] },
-        "LanguageCode" -> LanguageCode.map { x => x.asInstanceOf[js.Any] },
         "Gender" -> Gender.map { x => x.asInstanceOf[js.Any] },
-        "LanguageName" -> LanguageName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Id" -> Id.map { x => x.asInstanceOf[js.Any] },
+        "LanguageCode" -> LanguageCode.map { x => x.asInstanceOf[js.Any] },
+        "LanguageName" -> LanguageName.map { x => x.asInstanceOf[js.Any] },
+        "Name" -> Name.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Voice]
     }

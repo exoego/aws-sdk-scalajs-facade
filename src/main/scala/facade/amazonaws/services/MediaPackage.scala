@@ -84,17 +84,17 @@ package mediapackage {
    */
   @js.native
   trait CmafEncryption extends js.Object {
+    var SpekeKeyProvider: SpekeKeyProvider
     var KeyRotationIntervalSeconds: js.UndefOr[__integer]
-    var SpekeKeyProvider: js.UndefOr[SpekeKeyProvider]
   }
 
   object CmafEncryption {
     def apply(
-      KeyRotationIntervalSeconds: js.UndefOr[__integer] = js.undefined,
-      SpekeKeyProvider: js.UndefOr[SpekeKeyProvider] = js.undefined): CmafEncryption = {
+      SpekeKeyProvider: SpekeKeyProvider,
+      KeyRotationIntervalSeconds: js.UndefOr[__integer] = js.undefined): CmafEncryption = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "KeyRotationIntervalSeconds" -> KeyRotationIntervalSeconds.map { x => x.asInstanceOf[js.Any] },
-        "SpekeKeyProvider" -> SpekeKeyProvider.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "SpekeKeyProvider" -> SpekeKeyProvider.asInstanceOf[js.Any],
+        "KeyRotationIntervalSeconds" -> KeyRotationIntervalSeconds.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CmafEncryption]
     }
@@ -105,26 +105,26 @@ package mediapackage {
    */
   @js.native
   trait CmafPackage extends js.Object {
-    var SegmentPrefix: js.UndefOr[__string]
-    var StreamSelection: js.UndefOr[StreamSelection]
-    var SegmentDurationSeconds: js.UndefOr[__integer]
     var Encryption: js.UndefOr[CmafEncryption]
     var HlsManifests: js.UndefOr[__listOfHlsManifest]
+    var SegmentDurationSeconds: js.UndefOr[__integer]
+    var SegmentPrefix: js.UndefOr[__string]
+    var StreamSelection: js.UndefOr[StreamSelection]
   }
 
   object CmafPackage {
     def apply(
-      SegmentPrefix: js.UndefOr[__string] = js.undefined,
-      StreamSelection: js.UndefOr[StreamSelection] = js.undefined,
-      SegmentDurationSeconds: js.UndefOr[__integer] = js.undefined,
       Encryption: js.UndefOr[CmafEncryption] = js.undefined,
-      HlsManifests: js.UndefOr[__listOfHlsManifest] = js.undefined): CmafPackage = {
+      HlsManifests: js.UndefOr[__listOfHlsManifest] = js.undefined,
+      SegmentDurationSeconds: js.UndefOr[__integer] = js.undefined,
+      SegmentPrefix: js.UndefOr[__string] = js.undefined,
+      StreamSelection: js.UndefOr[StreamSelection] = js.undefined): CmafPackage = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "SegmentPrefix" -> SegmentPrefix.map { x => x.asInstanceOf[js.Any] },
-        "StreamSelection" -> StreamSelection.map { x => x.asInstanceOf[js.Any] },
-        "SegmentDurationSeconds" -> SegmentDurationSeconds.map { x => x.asInstanceOf[js.Any] },
         "Encryption" -> Encryption.map { x => x.asInstanceOf[js.Any] },
-        "HlsManifests" -> HlsManifests.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "HlsManifests" -> HlsManifests.map { x => x.asInstanceOf[js.Any] },
+        "SegmentDurationSeconds" -> SegmentDurationSeconds.map { x => x.asInstanceOf[js.Any] },
+        "SegmentPrefix" -> SegmentPrefix.map { x => x.asInstanceOf[js.Any] },
+        "StreamSelection" -> StreamSelection.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CmafPackage]
     }
@@ -135,26 +135,26 @@ package mediapackage {
    */
   @js.native
   trait CmafPackageCreateOrUpdateParameters extends js.Object {
-    var SegmentPrefix: js.UndefOr[__string]
-    var StreamSelection: js.UndefOr[StreamSelection]
-    var SegmentDurationSeconds: js.UndefOr[__integer]
     var Encryption: js.UndefOr[CmafEncryption]
     var HlsManifests: js.UndefOr[__listOfHlsManifestCreateOrUpdateParameters]
+    var SegmentDurationSeconds: js.UndefOr[__integer]
+    var SegmentPrefix: js.UndefOr[__string]
+    var StreamSelection: js.UndefOr[StreamSelection]
   }
 
   object CmafPackageCreateOrUpdateParameters {
     def apply(
-      SegmentPrefix: js.UndefOr[__string] = js.undefined,
-      StreamSelection: js.UndefOr[StreamSelection] = js.undefined,
-      SegmentDurationSeconds: js.UndefOr[__integer] = js.undefined,
       Encryption: js.UndefOr[CmafEncryption] = js.undefined,
-      HlsManifests: js.UndefOr[__listOfHlsManifestCreateOrUpdateParameters] = js.undefined): CmafPackageCreateOrUpdateParameters = {
+      HlsManifests: js.UndefOr[__listOfHlsManifestCreateOrUpdateParameters] = js.undefined,
+      SegmentDurationSeconds: js.UndefOr[__integer] = js.undefined,
+      SegmentPrefix: js.UndefOr[__string] = js.undefined,
+      StreamSelection: js.UndefOr[StreamSelection] = js.undefined): CmafPackageCreateOrUpdateParameters = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "SegmentPrefix" -> SegmentPrefix.map { x => x.asInstanceOf[js.Any] },
-        "StreamSelection" -> StreamSelection.map { x => x.asInstanceOf[js.Any] },
-        "SegmentDurationSeconds" -> SegmentDurationSeconds.map { x => x.asInstanceOf[js.Any] },
         "Encryption" -> Encryption.map { x => x.asInstanceOf[js.Any] },
-        "HlsManifests" -> HlsManifests.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "HlsManifests" -> HlsManifests.map { x => x.asInstanceOf[js.Any] },
+        "SegmentDurationSeconds" -> SegmentDurationSeconds.map { x => x.asInstanceOf[js.Any] },
+        "SegmentPrefix" -> SegmentPrefix.map { x => x.asInstanceOf[js.Any] },
+        "StreamSelection" -> StreamSelection.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CmafPackageCreateOrUpdateParameters]
     }
@@ -165,17 +165,17 @@ package mediapackage {
    */
   @js.native
   trait CreateChannelRequest extends js.Object {
+    var Id: __string
     var Description: js.UndefOr[__string]
-    var Id: js.UndefOr[__string]
   }
 
   object CreateChannelRequest {
     def apply(
-      Description: js.UndefOr[__string] = js.undefined,
-      Id: js.UndefOr[__string] = js.undefined): CreateChannelRequest = {
+      Id: __string,
+      Description: js.UndefOr[__string] = js.undefined): CreateChannelRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
-        "Id" -> Id.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Id" -> Id.asInstanceOf[js.Any],
+        "Description" -> Description.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateChannelRequest]
     }
@@ -210,44 +210,44 @@ package mediapackage {
    */
   @js.native
   trait CreateOriginEndpointRequest extends js.Object {
-    var Id: js.UndefOr[__string]
+    var ChannelId: __string
+    var Id: __string
     var CmafPackage: js.UndefOr[CmafPackageCreateOrUpdateParameters]
-    var ManifestName: js.UndefOr[__string]
-    var ChannelId: js.UndefOr[__string]
-    var MssPackage: js.UndefOr[MssPackage]
-    var Description: js.UndefOr[__string]
-    var StartoverWindowSeconds: js.UndefOr[__integer]
-    var HlsPackage: js.UndefOr[HlsPackage]
     var DashPackage: js.UndefOr[DashPackage]
-    var Whitelist: js.UndefOr[__listOf__string]
+    var Description: js.UndefOr[__string]
+    var HlsPackage: js.UndefOr[HlsPackage]
+    var ManifestName: js.UndefOr[__string]
+    var MssPackage: js.UndefOr[MssPackage]
+    var StartoverWindowSeconds: js.UndefOr[__integer]
     var TimeDelaySeconds: js.UndefOr[__integer]
+    var Whitelist: js.UndefOr[__listOf__string]
   }
 
   object CreateOriginEndpointRequest {
     def apply(
-      Id: js.UndefOr[__string] = js.undefined,
+      ChannelId: __string,
+      Id: __string,
       CmafPackage: js.UndefOr[CmafPackageCreateOrUpdateParameters] = js.undefined,
-      ManifestName: js.UndefOr[__string] = js.undefined,
-      ChannelId: js.UndefOr[__string] = js.undefined,
-      MssPackage: js.UndefOr[MssPackage] = js.undefined,
-      Description: js.UndefOr[__string] = js.undefined,
-      StartoverWindowSeconds: js.UndefOr[__integer] = js.undefined,
-      HlsPackage: js.UndefOr[HlsPackage] = js.undefined,
       DashPackage: js.UndefOr[DashPackage] = js.undefined,
-      Whitelist: js.UndefOr[__listOf__string] = js.undefined,
-      TimeDelaySeconds: js.UndefOr[__integer] = js.undefined): CreateOriginEndpointRequest = {
+      Description: js.UndefOr[__string] = js.undefined,
+      HlsPackage: js.UndefOr[HlsPackage] = js.undefined,
+      ManifestName: js.UndefOr[__string] = js.undefined,
+      MssPackage: js.UndefOr[MssPackage] = js.undefined,
+      StartoverWindowSeconds: js.UndefOr[__integer] = js.undefined,
+      TimeDelaySeconds: js.UndefOr[__integer] = js.undefined,
+      Whitelist: js.UndefOr[__listOf__string] = js.undefined): CreateOriginEndpointRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Id" -> Id.map { x => x.asInstanceOf[js.Any] },
+        "ChannelId" -> ChannelId.asInstanceOf[js.Any],
+        "Id" -> Id.asInstanceOf[js.Any],
         "CmafPackage" -> CmafPackage.map { x => x.asInstanceOf[js.Any] },
-        "ManifestName" -> ManifestName.map { x => x.asInstanceOf[js.Any] },
-        "ChannelId" -> ChannelId.map { x => x.asInstanceOf[js.Any] },
-        "MssPackage" -> MssPackage.map { x => x.asInstanceOf[js.Any] },
-        "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
-        "StartoverWindowSeconds" -> StartoverWindowSeconds.map { x => x.asInstanceOf[js.Any] },
-        "HlsPackage" -> HlsPackage.map { x => x.asInstanceOf[js.Any] },
         "DashPackage" -> DashPackage.map { x => x.asInstanceOf[js.Any] },
-        "Whitelist" -> Whitelist.map { x => x.asInstanceOf[js.Any] },
-        "TimeDelaySeconds" -> TimeDelaySeconds.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
+        "HlsPackage" -> HlsPackage.map { x => x.asInstanceOf[js.Any] },
+        "ManifestName" -> ManifestName.map { x => x.asInstanceOf[js.Any] },
+        "MssPackage" -> MssPackage.map { x => x.asInstanceOf[js.Any] },
+        "StartoverWindowSeconds" -> StartoverWindowSeconds.map { x => x.asInstanceOf[js.Any] },
+        "TimeDelaySeconds" -> TimeDelaySeconds.map { x => x.asInstanceOf[js.Any] },
+        "Whitelist" -> Whitelist.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateOriginEndpointRequest]
     }
@@ -255,50 +255,50 @@ package mediapackage {
 
   @js.native
   trait CreateOriginEndpointResponse extends js.Object {
-    var Id: js.UndefOr[__string]
-    var CmafPackage: js.UndefOr[CmafPackage]
-    var ManifestName: js.UndefOr[__string]
-    var ChannelId: js.UndefOr[__string]
-    var MssPackage: js.UndefOr[MssPackage]
-    var Description: js.UndefOr[__string]
-    var StartoverWindowSeconds: js.UndefOr[__integer]
     var Arn: js.UndefOr[__string]
-    var HlsPackage: js.UndefOr[HlsPackage]
+    var ChannelId: js.UndefOr[__string]
+    var CmafPackage: js.UndefOr[CmafPackage]
     var DashPackage: js.UndefOr[DashPackage]
+    var Description: js.UndefOr[__string]
+    var HlsPackage: js.UndefOr[HlsPackage]
+    var Id: js.UndefOr[__string]
+    var ManifestName: js.UndefOr[__string]
+    var MssPackage: js.UndefOr[MssPackage]
+    var StartoverWindowSeconds: js.UndefOr[__integer]
+    var TimeDelaySeconds: js.UndefOr[__integer]
     var Url: js.UndefOr[__string]
     var Whitelist: js.UndefOr[__listOf__string]
-    var TimeDelaySeconds: js.UndefOr[__integer]
   }
 
   object CreateOriginEndpointResponse {
     def apply(
-      Id: js.UndefOr[__string] = js.undefined,
-      CmafPackage: js.UndefOr[CmafPackage] = js.undefined,
-      ManifestName: js.UndefOr[__string] = js.undefined,
-      ChannelId: js.UndefOr[__string] = js.undefined,
-      MssPackage: js.UndefOr[MssPackage] = js.undefined,
-      Description: js.UndefOr[__string] = js.undefined,
-      StartoverWindowSeconds: js.UndefOr[__integer] = js.undefined,
       Arn: js.UndefOr[__string] = js.undefined,
-      HlsPackage: js.UndefOr[HlsPackage] = js.undefined,
+      ChannelId: js.UndefOr[__string] = js.undefined,
+      CmafPackage: js.UndefOr[CmafPackage] = js.undefined,
       DashPackage: js.UndefOr[DashPackage] = js.undefined,
+      Description: js.UndefOr[__string] = js.undefined,
+      HlsPackage: js.UndefOr[HlsPackage] = js.undefined,
+      Id: js.UndefOr[__string] = js.undefined,
+      ManifestName: js.UndefOr[__string] = js.undefined,
+      MssPackage: js.UndefOr[MssPackage] = js.undefined,
+      StartoverWindowSeconds: js.UndefOr[__integer] = js.undefined,
+      TimeDelaySeconds: js.UndefOr[__integer] = js.undefined,
       Url: js.UndefOr[__string] = js.undefined,
-      Whitelist: js.UndefOr[__listOf__string] = js.undefined,
-      TimeDelaySeconds: js.UndefOr[__integer] = js.undefined): CreateOriginEndpointResponse = {
+      Whitelist: js.UndefOr[__listOf__string] = js.undefined): CreateOriginEndpointResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Id" -> Id.map { x => x.asInstanceOf[js.Any] },
-        "CmafPackage" -> CmafPackage.map { x => x.asInstanceOf[js.Any] },
-        "ManifestName" -> ManifestName.map { x => x.asInstanceOf[js.Any] },
-        "ChannelId" -> ChannelId.map { x => x.asInstanceOf[js.Any] },
-        "MssPackage" -> MssPackage.map { x => x.asInstanceOf[js.Any] },
-        "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
-        "StartoverWindowSeconds" -> StartoverWindowSeconds.map { x => x.asInstanceOf[js.Any] },
         "Arn" -> Arn.map { x => x.asInstanceOf[js.Any] },
-        "HlsPackage" -> HlsPackage.map { x => x.asInstanceOf[js.Any] },
+        "ChannelId" -> ChannelId.map { x => x.asInstanceOf[js.Any] },
+        "CmafPackage" -> CmafPackage.map { x => x.asInstanceOf[js.Any] },
         "DashPackage" -> DashPackage.map { x => x.asInstanceOf[js.Any] },
+        "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
+        "HlsPackage" -> HlsPackage.map { x => x.asInstanceOf[js.Any] },
+        "Id" -> Id.map { x => x.asInstanceOf[js.Any] },
+        "ManifestName" -> ManifestName.map { x => x.asInstanceOf[js.Any] },
+        "MssPackage" -> MssPackage.map { x => x.asInstanceOf[js.Any] },
+        "StartoverWindowSeconds" -> StartoverWindowSeconds.map { x => x.asInstanceOf[js.Any] },
+        "TimeDelaySeconds" -> TimeDelaySeconds.map { x => x.asInstanceOf[js.Any] },
         "Url" -> Url.map { x => x.asInstanceOf[js.Any] },
-        "Whitelist" -> Whitelist.map { x => x.asInstanceOf[js.Any] },
-        "TimeDelaySeconds" -> TimeDelaySeconds.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Whitelist" -> Whitelist.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateOriginEndpointResponse]
     }
@@ -309,17 +309,17 @@ package mediapackage {
    */
   @js.native
   trait DashEncryption extends js.Object {
+    var SpekeKeyProvider: SpekeKeyProvider
     var KeyRotationIntervalSeconds: js.UndefOr[__integer]
-    var SpekeKeyProvider: js.UndefOr[SpekeKeyProvider]
   }
 
   object DashEncryption {
     def apply(
-      KeyRotationIntervalSeconds: js.UndefOr[__integer] = js.undefined,
-      SpekeKeyProvider: js.UndefOr[SpekeKeyProvider] = js.undefined): DashEncryption = {
+      SpekeKeyProvider: SpekeKeyProvider,
+      KeyRotationIntervalSeconds: js.UndefOr[__integer] = js.undefined): DashEncryption = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "KeyRotationIntervalSeconds" -> KeyRotationIntervalSeconds.map { x => x.asInstanceOf[js.Any] },
-        "SpekeKeyProvider" -> SpekeKeyProvider.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "SpekeKeyProvider" -> SpekeKeyProvider.asInstanceOf[js.Any],
+        "KeyRotationIntervalSeconds" -> KeyRotationIntervalSeconds.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DashEncryption]
     }
@@ -330,38 +330,38 @@ package mediapackage {
    */
   @js.native
   trait DashPackage extends js.Object {
-    var ManifestWindowSeconds: js.UndefOr[__integer]
-    var MinUpdatePeriodSeconds: js.UndefOr[__integer]
-    var StreamSelection: js.UndefOr[StreamSelection]
-    var MinBufferTimeSeconds: js.UndefOr[__integer]
-    var Profile: js.UndefOr[Profile]
-    var PeriodTriggers: js.UndefOr[__listOf__PeriodTriggersElement]
-    var SuggestedPresentationDelaySeconds: js.UndefOr[__integer]
-    var SegmentDurationSeconds: js.UndefOr[__integer]
     var Encryption: js.UndefOr[DashEncryption]
+    var ManifestWindowSeconds: js.UndefOr[__integer]
+    var MinBufferTimeSeconds: js.UndefOr[__integer]
+    var MinUpdatePeriodSeconds: js.UndefOr[__integer]
+    var PeriodTriggers: js.UndefOr[__listOf__PeriodTriggersElement]
+    var Profile: js.UndefOr[Profile]
+    var SegmentDurationSeconds: js.UndefOr[__integer]
+    var StreamSelection: js.UndefOr[StreamSelection]
+    var SuggestedPresentationDelaySeconds: js.UndefOr[__integer]
   }
 
   object DashPackage {
     def apply(
+      Encryption: js.UndefOr[DashEncryption] = js.undefined,
       ManifestWindowSeconds: js.UndefOr[__integer] = js.undefined,
-      MinUpdatePeriodSeconds: js.UndefOr[__integer] = js.undefined,
-      StreamSelection: js.UndefOr[StreamSelection] = js.undefined,
       MinBufferTimeSeconds: js.UndefOr[__integer] = js.undefined,
-      Profile: js.UndefOr[Profile] = js.undefined,
+      MinUpdatePeriodSeconds: js.UndefOr[__integer] = js.undefined,
       PeriodTriggers: js.UndefOr[__listOf__PeriodTriggersElement] = js.undefined,
-      SuggestedPresentationDelaySeconds: js.UndefOr[__integer] = js.undefined,
+      Profile: js.UndefOr[Profile] = js.undefined,
       SegmentDurationSeconds: js.UndefOr[__integer] = js.undefined,
-      Encryption: js.UndefOr[DashEncryption] = js.undefined): DashPackage = {
+      StreamSelection: js.UndefOr[StreamSelection] = js.undefined,
+      SuggestedPresentationDelaySeconds: js.UndefOr[__integer] = js.undefined): DashPackage = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "Encryption" -> Encryption.map { x => x.asInstanceOf[js.Any] },
         "ManifestWindowSeconds" -> ManifestWindowSeconds.map { x => x.asInstanceOf[js.Any] },
-        "MinUpdatePeriodSeconds" -> MinUpdatePeriodSeconds.map { x => x.asInstanceOf[js.Any] },
-        "StreamSelection" -> StreamSelection.map { x => x.asInstanceOf[js.Any] },
         "MinBufferTimeSeconds" -> MinBufferTimeSeconds.map { x => x.asInstanceOf[js.Any] },
-        "Profile" -> Profile.map { x => x.asInstanceOf[js.Any] },
+        "MinUpdatePeriodSeconds" -> MinUpdatePeriodSeconds.map { x => x.asInstanceOf[js.Any] },
         "PeriodTriggers" -> PeriodTriggers.map { x => x.asInstanceOf[js.Any] },
-        "SuggestedPresentationDelaySeconds" -> SuggestedPresentationDelaySeconds.map { x => x.asInstanceOf[js.Any] },
+        "Profile" -> Profile.map { x => x.asInstanceOf[js.Any] },
         "SegmentDurationSeconds" -> SegmentDurationSeconds.map { x => x.asInstanceOf[js.Any] },
-        "Encryption" -> Encryption.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "StreamSelection" -> StreamSelection.map { x => x.asInstanceOf[js.Any] },
+        "SuggestedPresentationDelaySeconds" -> SuggestedPresentationDelaySeconds.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DashPackage]
     }
@@ -369,14 +369,14 @@ package mediapackage {
 
   @js.native
   trait DeleteChannelRequest extends js.Object {
-    var Id: js.UndefOr[__string]
+    var Id: __string
   }
 
   object DeleteChannelRequest {
     def apply(
-      Id: js.UndefOr[__string] = js.undefined): DeleteChannelRequest = {
+      Id: __string): DeleteChannelRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Id" -> Id.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Id" -> Id.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteChannelRequest]
     }
@@ -397,14 +397,14 @@ package mediapackage {
 
   @js.native
   trait DeleteOriginEndpointRequest extends js.Object {
-    var Id: js.UndefOr[__string]
+    var Id: __string
   }
 
   object DeleteOriginEndpointRequest {
     def apply(
-      Id: js.UndefOr[__string] = js.undefined): DeleteOriginEndpointRequest = {
+      Id: __string): DeleteOriginEndpointRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Id" -> Id.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Id" -> Id.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteOriginEndpointRequest]
     }
@@ -425,14 +425,14 @@ package mediapackage {
 
   @js.native
   trait DescribeChannelRequest extends js.Object {
-    var Id: js.UndefOr[__string]
+    var Id: __string
   }
 
   object DescribeChannelRequest {
     def apply(
-      Id: js.UndefOr[__string] = js.undefined): DescribeChannelRequest = {
+      Id: __string): DescribeChannelRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Id" -> Id.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Id" -> Id.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeChannelRequest]
     }
@@ -464,14 +464,14 @@ package mediapackage {
 
   @js.native
   trait DescribeOriginEndpointRequest extends js.Object {
-    var Id: js.UndefOr[__string]
+    var Id: __string
   }
 
   object DescribeOriginEndpointRequest {
     def apply(
-      Id: js.UndefOr[__string] = js.undefined): DescribeOriginEndpointRequest = {
+      Id: __string): DescribeOriginEndpointRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Id" -> Id.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Id" -> Id.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeOriginEndpointRequest]
     }
@@ -479,50 +479,50 @@ package mediapackage {
 
   @js.native
   trait DescribeOriginEndpointResponse extends js.Object {
-    var Id: js.UndefOr[__string]
-    var CmafPackage: js.UndefOr[CmafPackage]
-    var ManifestName: js.UndefOr[__string]
-    var ChannelId: js.UndefOr[__string]
-    var MssPackage: js.UndefOr[MssPackage]
-    var Description: js.UndefOr[__string]
-    var StartoverWindowSeconds: js.UndefOr[__integer]
     var Arn: js.UndefOr[__string]
-    var HlsPackage: js.UndefOr[HlsPackage]
+    var ChannelId: js.UndefOr[__string]
+    var CmafPackage: js.UndefOr[CmafPackage]
     var DashPackage: js.UndefOr[DashPackage]
+    var Description: js.UndefOr[__string]
+    var HlsPackage: js.UndefOr[HlsPackage]
+    var Id: js.UndefOr[__string]
+    var ManifestName: js.UndefOr[__string]
+    var MssPackage: js.UndefOr[MssPackage]
+    var StartoverWindowSeconds: js.UndefOr[__integer]
+    var TimeDelaySeconds: js.UndefOr[__integer]
     var Url: js.UndefOr[__string]
     var Whitelist: js.UndefOr[__listOf__string]
-    var TimeDelaySeconds: js.UndefOr[__integer]
   }
 
   object DescribeOriginEndpointResponse {
     def apply(
-      Id: js.UndefOr[__string] = js.undefined,
-      CmafPackage: js.UndefOr[CmafPackage] = js.undefined,
-      ManifestName: js.UndefOr[__string] = js.undefined,
-      ChannelId: js.UndefOr[__string] = js.undefined,
-      MssPackage: js.UndefOr[MssPackage] = js.undefined,
-      Description: js.UndefOr[__string] = js.undefined,
-      StartoverWindowSeconds: js.UndefOr[__integer] = js.undefined,
       Arn: js.UndefOr[__string] = js.undefined,
-      HlsPackage: js.UndefOr[HlsPackage] = js.undefined,
+      ChannelId: js.UndefOr[__string] = js.undefined,
+      CmafPackage: js.UndefOr[CmafPackage] = js.undefined,
       DashPackage: js.UndefOr[DashPackage] = js.undefined,
+      Description: js.UndefOr[__string] = js.undefined,
+      HlsPackage: js.UndefOr[HlsPackage] = js.undefined,
+      Id: js.UndefOr[__string] = js.undefined,
+      ManifestName: js.UndefOr[__string] = js.undefined,
+      MssPackage: js.UndefOr[MssPackage] = js.undefined,
+      StartoverWindowSeconds: js.UndefOr[__integer] = js.undefined,
+      TimeDelaySeconds: js.UndefOr[__integer] = js.undefined,
       Url: js.UndefOr[__string] = js.undefined,
-      Whitelist: js.UndefOr[__listOf__string] = js.undefined,
-      TimeDelaySeconds: js.UndefOr[__integer] = js.undefined): DescribeOriginEndpointResponse = {
+      Whitelist: js.UndefOr[__listOf__string] = js.undefined): DescribeOriginEndpointResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Id" -> Id.map { x => x.asInstanceOf[js.Any] },
-        "CmafPackage" -> CmafPackage.map { x => x.asInstanceOf[js.Any] },
-        "ManifestName" -> ManifestName.map { x => x.asInstanceOf[js.Any] },
-        "ChannelId" -> ChannelId.map { x => x.asInstanceOf[js.Any] },
-        "MssPackage" -> MssPackage.map { x => x.asInstanceOf[js.Any] },
-        "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
-        "StartoverWindowSeconds" -> StartoverWindowSeconds.map { x => x.asInstanceOf[js.Any] },
         "Arn" -> Arn.map { x => x.asInstanceOf[js.Any] },
-        "HlsPackage" -> HlsPackage.map { x => x.asInstanceOf[js.Any] },
+        "ChannelId" -> ChannelId.map { x => x.asInstanceOf[js.Any] },
+        "CmafPackage" -> CmafPackage.map { x => x.asInstanceOf[js.Any] },
         "DashPackage" -> DashPackage.map { x => x.asInstanceOf[js.Any] },
+        "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
+        "HlsPackage" -> HlsPackage.map { x => x.asInstanceOf[js.Any] },
+        "Id" -> Id.map { x => x.asInstanceOf[js.Any] },
+        "ManifestName" -> ManifestName.map { x => x.asInstanceOf[js.Any] },
+        "MssPackage" -> MssPackage.map { x => x.asInstanceOf[js.Any] },
+        "StartoverWindowSeconds" -> StartoverWindowSeconds.map { x => x.asInstanceOf[js.Any] },
+        "TimeDelaySeconds" -> TimeDelaySeconds.map { x => x.asInstanceOf[js.Any] },
         "Url" -> Url.map { x => x.asInstanceOf[js.Any] },
-        "Whitelist" -> Whitelist.map { x => x.asInstanceOf[js.Any] },
-        "TimeDelaySeconds" -> TimeDelaySeconds.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Whitelist" -> Whitelist.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeOriginEndpointResponse]
     }
@@ -540,26 +540,26 @@ package mediapackage {
    */
   @js.native
   trait HlsEncryption extends js.Object {
-    var EncryptionMethod: js.UndefOr[EncryptionMethod]
-    var RepeatExtXKey: js.UndefOr[__boolean]
-    var KeyRotationIntervalSeconds: js.UndefOr[__integer]
+    var SpekeKeyProvider: SpekeKeyProvider
     var ConstantInitializationVector: js.UndefOr[__string]
-    var SpekeKeyProvider: js.UndefOr[SpekeKeyProvider]
+    var EncryptionMethod: js.UndefOr[EncryptionMethod]
+    var KeyRotationIntervalSeconds: js.UndefOr[__integer]
+    var RepeatExtXKey: js.UndefOr[__boolean]
   }
 
   object HlsEncryption {
     def apply(
-      EncryptionMethod: js.UndefOr[EncryptionMethod] = js.undefined,
-      RepeatExtXKey: js.UndefOr[__boolean] = js.undefined,
-      KeyRotationIntervalSeconds: js.UndefOr[__integer] = js.undefined,
+      SpekeKeyProvider: SpekeKeyProvider,
       ConstantInitializationVector: js.UndefOr[__string] = js.undefined,
-      SpekeKeyProvider: js.UndefOr[SpekeKeyProvider] = js.undefined): HlsEncryption = {
+      EncryptionMethod: js.UndefOr[EncryptionMethod] = js.undefined,
+      KeyRotationIntervalSeconds: js.UndefOr[__integer] = js.undefined,
+      RepeatExtXKey: js.UndefOr[__boolean] = js.undefined): HlsEncryption = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "EncryptionMethod" -> EncryptionMethod.map { x => x.asInstanceOf[js.Any] },
-        "RepeatExtXKey" -> RepeatExtXKey.map { x => x.asInstanceOf[js.Any] },
-        "KeyRotationIntervalSeconds" -> KeyRotationIntervalSeconds.map { x => x.asInstanceOf[js.Any] },
+        "SpekeKeyProvider" -> SpekeKeyProvider.asInstanceOf[js.Any],
         "ConstantInitializationVector" -> ConstantInitializationVector.map { x => x.asInstanceOf[js.Any] },
-        "SpekeKeyProvider" -> SpekeKeyProvider.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "EncryptionMethod" -> EncryptionMethod.map { x => x.asInstanceOf[js.Any] },
+        "KeyRotationIntervalSeconds" -> KeyRotationIntervalSeconds.map { x => x.asInstanceOf[js.Any] },
+        "RepeatExtXKey" -> RepeatExtXKey.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[HlsEncryption]
     }
@@ -588,35 +588,35 @@ package mediapackage {
    */
   @js.native
   trait HlsManifest extends js.Object {
-    var Id: js.UndefOr[__string]
-    var ProgramDateTimeIntervalSeconds: js.UndefOr[__integer]
+    var Id: __string
+    var AdMarkers: js.UndefOr[AdMarkers]
+    var IncludeIframeOnlyStream: js.UndefOr[__boolean]
     var ManifestName: js.UndefOr[__string]
     var PlaylistType: js.UndefOr[PlaylistType]
-    var Url: js.UndefOr[__string]
     var PlaylistWindowSeconds: js.UndefOr[__integer]
-    var IncludeIframeOnlyStream: js.UndefOr[__boolean]
-    var AdMarkers: js.UndefOr[AdMarkers]
+    var ProgramDateTimeIntervalSeconds: js.UndefOr[__integer]
+    var Url: js.UndefOr[__string]
   }
 
   object HlsManifest {
     def apply(
-      Id: js.UndefOr[__string] = js.undefined,
-      ProgramDateTimeIntervalSeconds: js.UndefOr[__integer] = js.undefined,
+      Id: __string,
+      AdMarkers: js.UndefOr[AdMarkers] = js.undefined,
+      IncludeIframeOnlyStream: js.UndefOr[__boolean] = js.undefined,
       ManifestName: js.UndefOr[__string] = js.undefined,
       PlaylistType: js.UndefOr[PlaylistType] = js.undefined,
-      Url: js.UndefOr[__string] = js.undefined,
       PlaylistWindowSeconds: js.UndefOr[__integer] = js.undefined,
-      IncludeIframeOnlyStream: js.UndefOr[__boolean] = js.undefined,
-      AdMarkers: js.UndefOr[AdMarkers] = js.undefined): HlsManifest = {
+      ProgramDateTimeIntervalSeconds: js.UndefOr[__integer] = js.undefined,
+      Url: js.UndefOr[__string] = js.undefined): HlsManifest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Id" -> Id.map { x => x.asInstanceOf[js.Any] },
-        "ProgramDateTimeIntervalSeconds" -> ProgramDateTimeIntervalSeconds.map { x => x.asInstanceOf[js.Any] },
+        "Id" -> Id.asInstanceOf[js.Any],
+        "AdMarkers" -> AdMarkers.map { x => x.asInstanceOf[js.Any] },
+        "IncludeIframeOnlyStream" -> IncludeIframeOnlyStream.map { x => x.asInstanceOf[js.Any] },
         "ManifestName" -> ManifestName.map { x => x.asInstanceOf[js.Any] },
         "PlaylistType" -> PlaylistType.map { x => x.asInstanceOf[js.Any] },
-        "Url" -> Url.map { x => x.asInstanceOf[js.Any] },
         "PlaylistWindowSeconds" -> PlaylistWindowSeconds.map { x => x.asInstanceOf[js.Any] },
-        "IncludeIframeOnlyStream" -> IncludeIframeOnlyStream.map { x => x.asInstanceOf[js.Any] },
-        "AdMarkers" -> AdMarkers.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ProgramDateTimeIntervalSeconds" -> ProgramDateTimeIntervalSeconds.map { x => x.asInstanceOf[js.Any] },
+        "Url" -> Url.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[HlsManifest]
     }
@@ -627,32 +627,32 @@ package mediapackage {
    */
   @js.native
   trait HlsManifestCreateOrUpdateParameters extends js.Object {
-    var Id: js.UndefOr[__string]
-    var ProgramDateTimeIntervalSeconds: js.UndefOr[__integer]
+    var Id: __string
+    var AdMarkers: js.UndefOr[AdMarkers]
+    var IncludeIframeOnlyStream: js.UndefOr[__boolean]
     var ManifestName: js.UndefOr[__string]
     var PlaylistType: js.UndefOr[PlaylistType]
     var PlaylistWindowSeconds: js.UndefOr[__integer]
-    var IncludeIframeOnlyStream: js.UndefOr[__boolean]
-    var AdMarkers: js.UndefOr[AdMarkers]
+    var ProgramDateTimeIntervalSeconds: js.UndefOr[__integer]
   }
 
   object HlsManifestCreateOrUpdateParameters {
     def apply(
-      Id: js.UndefOr[__string] = js.undefined,
-      ProgramDateTimeIntervalSeconds: js.UndefOr[__integer] = js.undefined,
+      Id: __string,
+      AdMarkers: js.UndefOr[AdMarkers] = js.undefined,
+      IncludeIframeOnlyStream: js.UndefOr[__boolean] = js.undefined,
       ManifestName: js.UndefOr[__string] = js.undefined,
       PlaylistType: js.UndefOr[PlaylistType] = js.undefined,
       PlaylistWindowSeconds: js.UndefOr[__integer] = js.undefined,
-      IncludeIframeOnlyStream: js.UndefOr[__boolean] = js.undefined,
-      AdMarkers: js.UndefOr[AdMarkers] = js.undefined): HlsManifestCreateOrUpdateParameters = {
+      ProgramDateTimeIntervalSeconds: js.UndefOr[__integer] = js.undefined): HlsManifestCreateOrUpdateParameters = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Id" -> Id.map { x => x.asInstanceOf[js.Any] },
-        "ProgramDateTimeIntervalSeconds" -> ProgramDateTimeIntervalSeconds.map { x => x.asInstanceOf[js.Any] },
+        "Id" -> Id.asInstanceOf[js.Any],
+        "AdMarkers" -> AdMarkers.map { x => x.asInstanceOf[js.Any] },
+        "IncludeIframeOnlyStream" -> IncludeIframeOnlyStream.map { x => x.asInstanceOf[js.Any] },
         "ManifestName" -> ManifestName.map { x => x.asInstanceOf[js.Any] },
         "PlaylistType" -> PlaylistType.map { x => x.asInstanceOf[js.Any] },
         "PlaylistWindowSeconds" -> PlaylistWindowSeconds.map { x => x.asInstanceOf[js.Any] },
-        "IncludeIframeOnlyStream" -> IncludeIframeOnlyStream.map { x => x.asInstanceOf[js.Any] },
-        "AdMarkers" -> AdMarkers.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ProgramDateTimeIntervalSeconds" -> ProgramDateTimeIntervalSeconds.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[HlsManifestCreateOrUpdateParameters]
     }
@@ -663,38 +663,38 @@ package mediapackage {
    */
   @js.native
   trait HlsPackage extends js.Object {
-    var ProgramDateTimeIntervalSeconds: js.UndefOr[__integer]
-    var PlaylistType: js.UndefOr[PlaylistType]
-    var StreamSelection: js.UndefOr[StreamSelection]
-    var SegmentDurationSeconds: js.UndefOr[__integer]
-    var UseAudioRenditionGroup: js.UndefOr[__boolean]
-    var PlaylistWindowSeconds: js.UndefOr[__integer]
-    var IncludeIframeOnlyStream: js.UndefOr[__boolean]
-    var Encryption: js.UndefOr[HlsEncryption]
     var AdMarkers: js.UndefOr[AdMarkers]
+    var Encryption: js.UndefOr[HlsEncryption]
+    var IncludeIframeOnlyStream: js.UndefOr[__boolean]
+    var PlaylistType: js.UndefOr[PlaylistType]
+    var PlaylistWindowSeconds: js.UndefOr[__integer]
+    var ProgramDateTimeIntervalSeconds: js.UndefOr[__integer]
+    var SegmentDurationSeconds: js.UndefOr[__integer]
+    var StreamSelection: js.UndefOr[StreamSelection]
+    var UseAudioRenditionGroup: js.UndefOr[__boolean]
   }
 
   object HlsPackage {
     def apply(
-      ProgramDateTimeIntervalSeconds: js.UndefOr[__integer] = js.undefined,
-      PlaylistType: js.UndefOr[PlaylistType] = js.undefined,
-      StreamSelection: js.UndefOr[StreamSelection] = js.undefined,
-      SegmentDurationSeconds: js.UndefOr[__integer] = js.undefined,
-      UseAudioRenditionGroup: js.UndefOr[__boolean] = js.undefined,
-      PlaylistWindowSeconds: js.UndefOr[__integer] = js.undefined,
-      IncludeIframeOnlyStream: js.UndefOr[__boolean] = js.undefined,
+      AdMarkers: js.UndefOr[AdMarkers] = js.undefined,
       Encryption: js.UndefOr[HlsEncryption] = js.undefined,
-      AdMarkers: js.UndefOr[AdMarkers] = js.undefined): HlsPackage = {
+      IncludeIframeOnlyStream: js.UndefOr[__boolean] = js.undefined,
+      PlaylistType: js.UndefOr[PlaylistType] = js.undefined,
+      PlaylistWindowSeconds: js.UndefOr[__integer] = js.undefined,
+      ProgramDateTimeIntervalSeconds: js.UndefOr[__integer] = js.undefined,
+      SegmentDurationSeconds: js.UndefOr[__integer] = js.undefined,
+      StreamSelection: js.UndefOr[StreamSelection] = js.undefined,
+      UseAudioRenditionGroup: js.UndefOr[__boolean] = js.undefined): HlsPackage = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ProgramDateTimeIntervalSeconds" -> ProgramDateTimeIntervalSeconds.map { x => x.asInstanceOf[js.Any] },
-        "PlaylistType" -> PlaylistType.map { x => x.asInstanceOf[js.Any] },
-        "StreamSelection" -> StreamSelection.map { x => x.asInstanceOf[js.Any] },
-        "SegmentDurationSeconds" -> SegmentDurationSeconds.map { x => x.asInstanceOf[js.Any] },
-        "UseAudioRenditionGroup" -> UseAudioRenditionGroup.map { x => x.asInstanceOf[js.Any] },
-        "PlaylistWindowSeconds" -> PlaylistWindowSeconds.map { x => x.asInstanceOf[js.Any] },
-        "IncludeIframeOnlyStream" -> IncludeIframeOnlyStream.map { x => x.asInstanceOf[js.Any] },
+        "AdMarkers" -> AdMarkers.map { x => x.asInstanceOf[js.Any] },
         "Encryption" -> Encryption.map { x => x.asInstanceOf[js.Any] },
-        "AdMarkers" -> AdMarkers.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "IncludeIframeOnlyStream" -> IncludeIframeOnlyStream.map { x => x.asInstanceOf[js.Any] },
+        "PlaylistType" -> PlaylistType.map { x => x.asInstanceOf[js.Any] },
+        "PlaylistWindowSeconds" -> PlaylistWindowSeconds.map { x => x.asInstanceOf[js.Any] },
+        "ProgramDateTimeIntervalSeconds" -> ProgramDateTimeIntervalSeconds.map { x => x.asInstanceOf[js.Any] },
+        "SegmentDurationSeconds" -> SegmentDurationSeconds.map { x => x.asInstanceOf[js.Any] },
+        "StreamSelection" -> StreamSelection.map { x => x.asInstanceOf[js.Any] },
+        "UseAudioRenditionGroup" -> UseAudioRenditionGroup.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[HlsPackage]
     }
@@ -807,14 +807,14 @@ package mediapackage {
    */
   @js.native
   trait MssEncryption extends js.Object {
-    var SpekeKeyProvider: js.UndefOr[SpekeKeyProvider]
+    var SpekeKeyProvider: SpekeKeyProvider
   }
 
   object MssEncryption {
     def apply(
-      SpekeKeyProvider: js.UndefOr[SpekeKeyProvider] = js.undefined): MssEncryption = {
+      SpekeKeyProvider: SpekeKeyProvider): MssEncryption = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "SpekeKeyProvider" -> SpekeKeyProvider.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "SpekeKeyProvider" -> SpekeKeyProvider.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[MssEncryption]
     }
@@ -852,50 +852,50 @@ package mediapackage {
    */
   @js.native
   trait OriginEndpoint extends js.Object {
-    var Id: js.UndefOr[__string]
-    var CmafPackage: js.UndefOr[CmafPackage]
-    var ManifestName: js.UndefOr[__string]
-    var ChannelId: js.UndefOr[__string]
-    var MssPackage: js.UndefOr[MssPackage]
-    var Description: js.UndefOr[__string]
-    var StartoverWindowSeconds: js.UndefOr[__integer]
     var Arn: js.UndefOr[__string]
-    var HlsPackage: js.UndefOr[HlsPackage]
+    var ChannelId: js.UndefOr[__string]
+    var CmafPackage: js.UndefOr[CmafPackage]
     var DashPackage: js.UndefOr[DashPackage]
+    var Description: js.UndefOr[__string]
+    var HlsPackage: js.UndefOr[HlsPackage]
+    var Id: js.UndefOr[__string]
+    var ManifestName: js.UndefOr[__string]
+    var MssPackage: js.UndefOr[MssPackage]
+    var StartoverWindowSeconds: js.UndefOr[__integer]
+    var TimeDelaySeconds: js.UndefOr[__integer]
     var Url: js.UndefOr[__string]
     var Whitelist: js.UndefOr[__listOf__string]
-    var TimeDelaySeconds: js.UndefOr[__integer]
   }
 
   object OriginEndpoint {
     def apply(
-      Id: js.UndefOr[__string] = js.undefined,
-      CmafPackage: js.UndefOr[CmafPackage] = js.undefined,
-      ManifestName: js.UndefOr[__string] = js.undefined,
-      ChannelId: js.UndefOr[__string] = js.undefined,
-      MssPackage: js.UndefOr[MssPackage] = js.undefined,
-      Description: js.UndefOr[__string] = js.undefined,
-      StartoverWindowSeconds: js.UndefOr[__integer] = js.undefined,
       Arn: js.UndefOr[__string] = js.undefined,
-      HlsPackage: js.UndefOr[HlsPackage] = js.undefined,
+      ChannelId: js.UndefOr[__string] = js.undefined,
+      CmafPackage: js.UndefOr[CmafPackage] = js.undefined,
       DashPackage: js.UndefOr[DashPackage] = js.undefined,
+      Description: js.UndefOr[__string] = js.undefined,
+      HlsPackage: js.UndefOr[HlsPackage] = js.undefined,
+      Id: js.UndefOr[__string] = js.undefined,
+      ManifestName: js.UndefOr[__string] = js.undefined,
+      MssPackage: js.UndefOr[MssPackage] = js.undefined,
+      StartoverWindowSeconds: js.UndefOr[__integer] = js.undefined,
+      TimeDelaySeconds: js.UndefOr[__integer] = js.undefined,
       Url: js.UndefOr[__string] = js.undefined,
-      Whitelist: js.UndefOr[__listOf__string] = js.undefined,
-      TimeDelaySeconds: js.UndefOr[__integer] = js.undefined): OriginEndpoint = {
+      Whitelist: js.UndefOr[__listOf__string] = js.undefined): OriginEndpoint = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Id" -> Id.map { x => x.asInstanceOf[js.Any] },
-        "CmafPackage" -> CmafPackage.map { x => x.asInstanceOf[js.Any] },
-        "ManifestName" -> ManifestName.map { x => x.asInstanceOf[js.Any] },
-        "ChannelId" -> ChannelId.map { x => x.asInstanceOf[js.Any] },
-        "MssPackage" -> MssPackage.map { x => x.asInstanceOf[js.Any] },
-        "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
-        "StartoverWindowSeconds" -> StartoverWindowSeconds.map { x => x.asInstanceOf[js.Any] },
         "Arn" -> Arn.map { x => x.asInstanceOf[js.Any] },
-        "HlsPackage" -> HlsPackage.map { x => x.asInstanceOf[js.Any] },
+        "ChannelId" -> ChannelId.map { x => x.asInstanceOf[js.Any] },
+        "CmafPackage" -> CmafPackage.map { x => x.asInstanceOf[js.Any] },
         "DashPackage" -> DashPackage.map { x => x.asInstanceOf[js.Any] },
+        "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
+        "HlsPackage" -> HlsPackage.map { x => x.asInstanceOf[js.Any] },
+        "Id" -> Id.map { x => x.asInstanceOf[js.Any] },
+        "ManifestName" -> ManifestName.map { x => x.asInstanceOf[js.Any] },
+        "MssPackage" -> MssPackage.map { x => x.asInstanceOf[js.Any] },
+        "StartoverWindowSeconds" -> StartoverWindowSeconds.map { x => x.asInstanceOf[js.Any] },
+        "TimeDelaySeconds" -> TimeDelaySeconds.map { x => x.asInstanceOf[js.Any] },
         "Url" -> Url.map { x => x.asInstanceOf[js.Any] },
-        "Whitelist" -> Whitelist.map { x => x.asInstanceOf[js.Any] },
-        "TimeDelaySeconds" -> TimeDelaySeconds.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Whitelist" -> Whitelist.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[OriginEndpoint]
     }
@@ -919,14 +919,14 @@ package mediapackage {
   @deprecated
   @js.native
   trait RotateChannelCredentialsRequest extends js.Object {
-    var Id: js.UndefOr[__string]
+    var Id: __string
   }
 
   object RotateChannelCredentialsRequest {
     def apply(
-      Id: js.UndefOr[__string] = js.undefined): RotateChannelCredentialsRequest = {
+      Id: __string): RotateChannelCredentialsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Id" -> Id.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Id" -> Id.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RotateChannelCredentialsRequest]
     }
@@ -959,17 +959,17 @@ package mediapackage {
 
   @js.native
   trait RotateIngestEndpointCredentialsRequest extends js.Object {
-    var Id: js.UndefOr[__string]
-    var IngestEndpointId: js.UndefOr[__string]
+    var Id: __string
+    var IngestEndpointId: __string
   }
 
   object RotateIngestEndpointCredentialsRequest {
     def apply(
-      Id: js.UndefOr[__string] = js.undefined,
-      IngestEndpointId: js.UndefOr[__string] = js.undefined): RotateIngestEndpointCredentialsRequest = {
+      Id: __string,
+      IngestEndpointId: __string): RotateIngestEndpointCredentialsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Id" -> Id.map { x => x.asInstanceOf[js.Any] },
-        "IngestEndpointId" -> IngestEndpointId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Id" -> Id.asInstanceOf[js.Any],
+        "IngestEndpointId" -> IngestEndpointId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RotateIngestEndpointCredentialsRequest]
     }
@@ -1004,26 +1004,26 @@ package mediapackage {
    */
   @js.native
   trait SpekeKeyProvider extends js.Object {
-    var ResourceId: js.UndefOr[__string]
+    var ResourceId: __string
+    var RoleArn: __string
+    var SystemIds: __listOf__string
+    var Url: __string
     var CertificateArn: js.UndefOr[__string]
-    var SystemIds: js.UndefOr[__listOf__string]
-    var Url: js.UndefOr[__string]
-    var RoleArn: js.UndefOr[__string]
   }
 
   object SpekeKeyProvider {
     def apply(
-      ResourceId: js.UndefOr[__string] = js.undefined,
-      CertificateArn: js.UndefOr[__string] = js.undefined,
-      SystemIds: js.UndefOr[__listOf__string] = js.undefined,
-      Url: js.UndefOr[__string] = js.undefined,
-      RoleArn: js.UndefOr[__string] = js.undefined): SpekeKeyProvider = {
+      ResourceId: __string,
+      RoleArn: __string,
+      SystemIds: __listOf__string,
+      Url: __string,
+      CertificateArn: js.UndefOr[__string] = js.undefined): SpekeKeyProvider = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ResourceId" -> ResourceId.map { x => x.asInstanceOf[js.Any] },
-        "CertificateArn" -> CertificateArn.map { x => x.asInstanceOf[js.Any] },
-        "SystemIds" -> SystemIds.map { x => x.asInstanceOf[js.Any] },
-        "Url" -> Url.map { x => x.asInstanceOf[js.Any] },
-        "RoleArn" -> RoleArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ResourceId" -> ResourceId.asInstanceOf[js.Any],
+        "RoleArn" -> RoleArn.asInstanceOf[js.Any],
+        "SystemIds" -> SystemIds.asInstanceOf[js.Any],
+        "Url" -> Url.asInstanceOf[js.Any],
+        "CertificateArn" -> CertificateArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SpekeKeyProvider]
     }
@@ -1066,17 +1066,17 @@ package mediapackage {
    */
   @js.native
   trait UpdateChannelRequest extends js.Object {
+    var Id: __string
     var Description: js.UndefOr[__string]
-    var Id: js.UndefOr[__string]
   }
 
   object UpdateChannelRequest {
     def apply(
-      Description: js.UndefOr[__string] = js.undefined,
-      Id: js.UndefOr[__string] = js.undefined): UpdateChannelRequest = {
+      Id: __string,
+      Description: js.UndefOr[__string] = js.undefined): UpdateChannelRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
-        "Id" -> Id.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Id" -> Id.asInstanceOf[js.Any],
+        "Description" -> Description.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateChannelRequest]
     }
@@ -1111,41 +1111,41 @@ package mediapackage {
    */
   @js.native
   trait UpdateOriginEndpointRequest extends js.Object {
-    var Id: js.UndefOr[__string]
+    var Id: __string
     var CmafPackage: js.UndefOr[CmafPackageCreateOrUpdateParameters]
+    var DashPackage: js.UndefOr[DashPackage]
+    var Description: js.UndefOr[__string]
+    var HlsPackage: js.UndefOr[HlsPackage]
     var ManifestName: js.UndefOr[__string]
     var MssPackage: js.UndefOr[MssPackage]
-    var Description: js.UndefOr[__string]
     var StartoverWindowSeconds: js.UndefOr[__integer]
-    var HlsPackage: js.UndefOr[HlsPackage]
-    var DashPackage: js.UndefOr[DashPackage]
-    var Whitelist: js.UndefOr[__listOf__string]
     var TimeDelaySeconds: js.UndefOr[__integer]
+    var Whitelist: js.UndefOr[__listOf__string]
   }
 
   object UpdateOriginEndpointRequest {
     def apply(
-      Id: js.UndefOr[__string] = js.undefined,
+      Id: __string,
       CmafPackage: js.UndefOr[CmafPackageCreateOrUpdateParameters] = js.undefined,
+      DashPackage: js.UndefOr[DashPackage] = js.undefined,
+      Description: js.UndefOr[__string] = js.undefined,
+      HlsPackage: js.UndefOr[HlsPackage] = js.undefined,
       ManifestName: js.UndefOr[__string] = js.undefined,
       MssPackage: js.UndefOr[MssPackage] = js.undefined,
-      Description: js.UndefOr[__string] = js.undefined,
       StartoverWindowSeconds: js.UndefOr[__integer] = js.undefined,
-      HlsPackage: js.UndefOr[HlsPackage] = js.undefined,
-      DashPackage: js.UndefOr[DashPackage] = js.undefined,
-      Whitelist: js.UndefOr[__listOf__string] = js.undefined,
-      TimeDelaySeconds: js.UndefOr[__integer] = js.undefined): UpdateOriginEndpointRequest = {
+      TimeDelaySeconds: js.UndefOr[__integer] = js.undefined,
+      Whitelist: js.UndefOr[__listOf__string] = js.undefined): UpdateOriginEndpointRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Id" -> Id.map { x => x.asInstanceOf[js.Any] },
+        "Id" -> Id.asInstanceOf[js.Any],
         "CmafPackage" -> CmafPackage.map { x => x.asInstanceOf[js.Any] },
+        "DashPackage" -> DashPackage.map { x => x.asInstanceOf[js.Any] },
+        "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
+        "HlsPackage" -> HlsPackage.map { x => x.asInstanceOf[js.Any] },
         "ManifestName" -> ManifestName.map { x => x.asInstanceOf[js.Any] },
         "MssPackage" -> MssPackage.map { x => x.asInstanceOf[js.Any] },
-        "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
         "StartoverWindowSeconds" -> StartoverWindowSeconds.map { x => x.asInstanceOf[js.Any] },
-        "HlsPackage" -> HlsPackage.map { x => x.asInstanceOf[js.Any] },
-        "DashPackage" -> DashPackage.map { x => x.asInstanceOf[js.Any] },
-        "Whitelist" -> Whitelist.map { x => x.asInstanceOf[js.Any] },
-        "TimeDelaySeconds" -> TimeDelaySeconds.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "TimeDelaySeconds" -> TimeDelaySeconds.map { x => x.asInstanceOf[js.Any] },
+        "Whitelist" -> Whitelist.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateOriginEndpointRequest]
     }
@@ -1153,50 +1153,50 @@ package mediapackage {
 
   @js.native
   trait UpdateOriginEndpointResponse extends js.Object {
-    var Id: js.UndefOr[__string]
-    var CmafPackage: js.UndefOr[CmafPackage]
-    var ManifestName: js.UndefOr[__string]
-    var ChannelId: js.UndefOr[__string]
-    var MssPackage: js.UndefOr[MssPackage]
-    var Description: js.UndefOr[__string]
-    var StartoverWindowSeconds: js.UndefOr[__integer]
     var Arn: js.UndefOr[__string]
-    var HlsPackage: js.UndefOr[HlsPackage]
+    var ChannelId: js.UndefOr[__string]
+    var CmafPackage: js.UndefOr[CmafPackage]
     var DashPackage: js.UndefOr[DashPackage]
+    var Description: js.UndefOr[__string]
+    var HlsPackage: js.UndefOr[HlsPackage]
+    var Id: js.UndefOr[__string]
+    var ManifestName: js.UndefOr[__string]
+    var MssPackage: js.UndefOr[MssPackage]
+    var StartoverWindowSeconds: js.UndefOr[__integer]
+    var TimeDelaySeconds: js.UndefOr[__integer]
     var Url: js.UndefOr[__string]
     var Whitelist: js.UndefOr[__listOf__string]
-    var TimeDelaySeconds: js.UndefOr[__integer]
   }
 
   object UpdateOriginEndpointResponse {
     def apply(
-      Id: js.UndefOr[__string] = js.undefined,
-      CmafPackage: js.UndefOr[CmafPackage] = js.undefined,
-      ManifestName: js.UndefOr[__string] = js.undefined,
-      ChannelId: js.UndefOr[__string] = js.undefined,
-      MssPackage: js.UndefOr[MssPackage] = js.undefined,
-      Description: js.UndefOr[__string] = js.undefined,
-      StartoverWindowSeconds: js.UndefOr[__integer] = js.undefined,
       Arn: js.UndefOr[__string] = js.undefined,
-      HlsPackage: js.UndefOr[HlsPackage] = js.undefined,
+      ChannelId: js.UndefOr[__string] = js.undefined,
+      CmafPackage: js.UndefOr[CmafPackage] = js.undefined,
       DashPackage: js.UndefOr[DashPackage] = js.undefined,
+      Description: js.UndefOr[__string] = js.undefined,
+      HlsPackage: js.UndefOr[HlsPackage] = js.undefined,
+      Id: js.UndefOr[__string] = js.undefined,
+      ManifestName: js.UndefOr[__string] = js.undefined,
+      MssPackage: js.UndefOr[MssPackage] = js.undefined,
+      StartoverWindowSeconds: js.UndefOr[__integer] = js.undefined,
+      TimeDelaySeconds: js.UndefOr[__integer] = js.undefined,
       Url: js.UndefOr[__string] = js.undefined,
-      Whitelist: js.UndefOr[__listOf__string] = js.undefined,
-      TimeDelaySeconds: js.UndefOr[__integer] = js.undefined): UpdateOriginEndpointResponse = {
+      Whitelist: js.UndefOr[__listOf__string] = js.undefined): UpdateOriginEndpointResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Id" -> Id.map { x => x.asInstanceOf[js.Any] },
-        "CmafPackage" -> CmafPackage.map { x => x.asInstanceOf[js.Any] },
-        "ManifestName" -> ManifestName.map { x => x.asInstanceOf[js.Any] },
-        "ChannelId" -> ChannelId.map { x => x.asInstanceOf[js.Any] },
-        "MssPackage" -> MssPackage.map { x => x.asInstanceOf[js.Any] },
-        "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
-        "StartoverWindowSeconds" -> StartoverWindowSeconds.map { x => x.asInstanceOf[js.Any] },
         "Arn" -> Arn.map { x => x.asInstanceOf[js.Any] },
-        "HlsPackage" -> HlsPackage.map { x => x.asInstanceOf[js.Any] },
+        "ChannelId" -> ChannelId.map { x => x.asInstanceOf[js.Any] },
+        "CmafPackage" -> CmafPackage.map { x => x.asInstanceOf[js.Any] },
         "DashPackage" -> DashPackage.map { x => x.asInstanceOf[js.Any] },
+        "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
+        "HlsPackage" -> HlsPackage.map { x => x.asInstanceOf[js.Any] },
+        "Id" -> Id.map { x => x.asInstanceOf[js.Any] },
+        "ManifestName" -> ManifestName.map { x => x.asInstanceOf[js.Any] },
+        "MssPackage" -> MssPackage.map { x => x.asInstanceOf[js.Any] },
+        "StartoverWindowSeconds" -> StartoverWindowSeconds.map { x => x.asInstanceOf[js.Any] },
+        "TimeDelaySeconds" -> TimeDelaySeconds.map { x => x.asInstanceOf[js.Any] },
         "Url" -> Url.map { x => x.asInstanceOf[js.Any] },
-        "Whitelist" -> Whitelist.map { x => x.asInstanceOf[js.Any] },
-        "TimeDelaySeconds" -> TimeDelaySeconds.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Whitelist" -> Whitelist.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateOriginEndpointResponse]
     }

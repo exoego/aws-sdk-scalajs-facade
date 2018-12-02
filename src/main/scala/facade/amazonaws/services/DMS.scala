@@ -111,19 +111,19 @@ package dms {
   @js.native
   trait AccountQuota extends js.Object {
     var AccountQuotaName: js.UndefOr[String]
-    var Used: js.UndefOr[Double]
     var Max: js.UndefOr[Double]
+    var Used: js.UndefOr[Double]
   }
 
   object AccountQuota {
     def apply(
       AccountQuotaName: js.UndefOr[String] = js.undefined,
-      Used: js.UndefOr[Double] = js.undefined,
-      Max: js.UndefOr[Double] = js.undefined): AccountQuota = {
+      Max: js.UndefOr[Double] = js.undefined,
+      Used: js.UndefOr[Double] = js.undefined): AccountQuota = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AccountQuotaName" -> AccountQuotaName.map { x => x.asInstanceOf[js.Any] },
-        "Used" -> Used.map { x => x.asInstanceOf[js.Any] },
-        "Max" -> Max.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Max" -> Max.map { x => x.asInstanceOf[js.Any] },
+        "Used" -> Used.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AccountQuota]
     }
@@ -134,17 +134,17 @@ package dms {
    */
   @js.native
   trait AddTagsToResourceMessage extends js.Object {
-    var ResourceArn: js.UndefOr[String]
-    var Tags: js.UndefOr[TagList]
+    var ResourceArn: String
+    var Tags: TagList
   }
 
   object AddTagsToResourceMessage {
     def apply(
-      ResourceArn: js.UndefOr[String] = js.undefined,
-      Tags: js.UndefOr[TagList] = js.undefined): AddTagsToResourceMessage = {
+      ResourceArn: String,
+      Tags: TagList): AddTagsToResourceMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ResourceArn" -> ResourceArn.map { x => x.asInstanceOf[js.Any] },
-        "Tags" -> Tags.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
+        "Tags" -> Tags.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AddTagsToResourceMessage]
     }
@@ -204,41 +204,41 @@ package dms {
    */
   @js.native
   trait Certificate extends js.Object {
-    var CertificateOwner: js.UndefOr[String]
-    var SigningAlgorithm: js.UndefOr[String]
-    var ValidToDate: js.UndefOr[TStamp]
-    var CertificatePem: js.UndefOr[String]
     var CertificateArn: js.UndefOr[String]
-    var KeyLength: js.UndefOr[IntegerOptional]
     var CertificateCreationDate: js.UndefOr[TStamp]
     var CertificateIdentifier: js.UndefOr[String]
-    var ValidFromDate: js.UndefOr[TStamp]
+    var CertificateOwner: js.UndefOr[String]
+    var CertificatePem: js.UndefOr[String]
     var CertificateWallet: js.UndefOr[CertificateWallet]
+    var KeyLength: js.UndefOr[IntegerOptional]
+    var SigningAlgorithm: js.UndefOr[String]
+    var ValidFromDate: js.UndefOr[TStamp]
+    var ValidToDate: js.UndefOr[TStamp]
   }
 
   object Certificate {
     def apply(
-      CertificateOwner: js.UndefOr[String] = js.undefined,
-      SigningAlgorithm: js.UndefOr[String] = js.undefined,
-      ValidToDate: js.UndefOr[TStamp] = js.undefined,
-      CertificatePem: js.UndefOr[String] = js.undefined,
       CertificateArn: js.UndefOr[String] = js.undefined,
-      KeyLength: js.UndefOr[IntegerOptional] = js.undefined,
       CertificateCreationDate: js.UndefOr[TStamp] = js.undefined,
       CertificateIdentifier: js.UndefOr[String] = js.undefined,
+      CertificateOwner: js.UndefOr[String] = js.undefined,
+      CertificatePem: js.UndefOr[String] = js.undefined,
+      CertificateWallet: js.UndefOr[CertificateWallet] = js.undefined,
+      KeyLength: js.UndefOr[IntegerOptional] = js.undefined,
+      SigningAlgorithm: js.UndefOr[String] = js.undefined,
       ValidFromDate: js.UndefOr[TStamp] = js.undefined,
-      CertificateWallet: js.UndefOr[CertificateWallet] = js.undefined): Certificate = {
+      ValidToDate: js.UndefOr[TStamp] = js.undefined): Certificate = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "CertificateOwner" -> CertificateOwner.map { x => x.asInstanceOf[js.Any] },
-        "SigningAlgorithm" -> SigningAlgorithm.map { x => x.asInstanceOf[js.Any] },
-        "ValidToDate" -> ValidToDate.map { x => x.asInstanceOf[js.Any] },
-        "CertificatePem" -> CertificatePem.map { x => x.asInstanceOf[js.Any] },
         "CertificateArn" -> CertificateArn.map { x => x.asInstanceOf[js.Any] },
-        "KeyLength" -> KeyLength.map { x => x.asInstanceOf[js.Any] },
         "CertificateCreationDate" -> CertificateCreationDate.map { x => x.asInstanceOf[js.Any] },
         "CertificateIdentifier" -> CertificateIdentifier.map { x => x.asInstanceOf[js.Any] },
+        "CertificateOwner" -> CertificateOwner.map { x => x.asInstanceOf[js.Any] },
+        "CertificatePem" -> CertificatePem.map { x => x.asInstanceOf[js.Any] },
+        "CertificateWallet" -> CertificateWallet.map { x => x.asInstanceOf[js.Any] },
+        "KeyLength" -> KeyLength.map { x => x.asInstanceOf[js.Any] },
+        "SigningAlgorithm" -> SigningAlgorithm.map { x => x.asInstanceOf[js.Any] },
         "ValidFromDate" -> ValidFromDate.map { x => x.asInstanceOf[js.Any] },
-        "CertificateWallet" -> CertificateWallet.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ValidToDate" -> ValidToDate.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Certificate]
     }
@@ -256,28 +256,28 @@ package dms {
    */
   @js.native
   trait Connection extends js.Object {
-    var LastFailureMessage: js.UndefOr[String]
-    var EndpointIdentifier: js.UndefOr[String]
     var EndpointArn: js.UndefOr[String]
-    var ReplicationInstanceIdentifier: js.UndefOr[String]
+    var EndpointIdentifier: js.UndefOr[String]
+    var LastFailureMessage: js.UndefOr[String]
     var ReplicationInstanceArn: js.UndefOr[String]
+    var ReplicationInstanceIdentifier: js.UndefOr[String]
     var Status: js.UndefOr[String]
   }
 
   object Connection {
     def apply(
-      LastFailureMessage: js.UndefOr[String] = js.undefined,
-      EndpointIdentifier: js.UndefOr[String] = js.undefined,
       EndpointArn: js.UndefOr[String] = js.undefined,
-      ReplicationInstanceIdentifier: js.UndefOr[String] = js.undefined,
+      EndpointIdentifier: js.UndefOr[String] = js.undefined,
+      LastFailureMessage: js.UndefOr[String] = js.undefined,
       ReplicationInstanceArn: js.UndefOr[String] = js.undefined,
+      ReplicationInstanceIdentifier: js.UndefOr[String] = js.undefined,
       Status: js.UndefOr[String] = js.undefined): Connection = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "LastFailureMessage" -> LastFailureMessage.map { x => x.asInstanceOf[js.Any] },
-        "EndpointIdentifier" -> EndpointIdentifier.map { x => x.asInstanceOf[js.Any] },
         "EndpointArn" -> EndpointArn.map { x => x.asInstanceOf[js.Any] },
-        "ReplicationInstanceIdentifier" -> ReplicationInstanceIdentifier.map { x => x.asInstanceOf[js.Any] },
+        "EndpointIdentifier" -> EndpointIdentifier.map { x => x.asInstanceOf[js.Any] },
+        "LastFailureMessage" -> LastFailureMessage.map { x => x.asInstanceOf[js.Any] },
         "ReplicationInstanceArn" -> ReplicationInstanceArn.map { x => x.asInstanceOf[js.Any] },
+        "ReplicationInstanceIdentifier" -> ReplicationInstanceIdentifier.map { x => x.asInstanceOf[js.Any] },
         "Status" -> Status.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Connection]
@@ -289,74 +289,74 @@ package dms {
    */
   @js.native
   trait CreateEndpointMessage extends js.Object {
-    var MongoDbSettings: js.UndefOr[MongoDbSettings]
-    var Username: js.UndefOr[String]
-    var ExtraConnectionAttributes: js.UndefOr[String]
-    var DatabaseName: js.UndefOr[String]
-    var DynamoDbSettings: js.UndefOr[DynamoDbSettings]
-    var S3Settings: js.UndefOr[S3Settings]
-    var ElasticsearchSettings: js.UndefOr[ElasticsearchSettings]
-    var EndpointIdentifier: js.UndefOr[String]
-    var KmsKeyId: js.UndefOr[String]
-    var KinesisSettings: js.UndefOr[KinesisSettings]
+    var EndpointIdentifier: String
+    var EndpointType: ReplicationEndpointTypeValue
+    var EngineName: String
     var CertificateArn: js.UndefOr[String]
-    var ServerName: js.UndefOr[String]
-    var Password: js.UndefOr[SecretString]
-    var EngineName: js.UndefOr[String]
-    var ExternalTableDefinition: js.UndefOr[String]
-    var EndpointType: js.UndefOr[ReplicationEndpointTypeValue]
-    var Port: js.UndefOr[IntegerOptional]
-    var ServiceAccessRoleArn: js.UndefOr[String]
-    var Tags: js.UndefOr[TagList]
+    var DatabaseName: js.UndefOr[String]
     var DmsTransferSettings: js.UndefOr[DmsTransferSettings]
+    var DynamoDbSettings: js.UndefOr[DynamoDbSettings]
+    var ElasticsearchSettings: js.UndefOr[ElasticsearchSettings]
+    var ExternalTableDefinition: js.UndefOr[String]
+    var ExtraConnectionAttributes: js.UndefOr[String]
+    var KinesisSettings: js.UndefOr[KinesisSettings]
+    var KmsKeyId: js.UndefOr[String]
+    var MongoDbSettings: js.UndefOr[MongoDbSettings]
+    var Password: js.UndefOr[SecretString]
+    var Port: js.UndefOr[IntegerOptional]
+    var S3Settings: js.UndefOr[S3Settings]
+    var ServerName: js.UndefOr[String]
+    var ServiceAccessRoleArn: js.UndefOr[String]
     var SslMode: js.UndefOr[DmsSslModeValue]
+    var Tags: js.UndefOr[TagList]
+    var Username: js.UndefOr[String]
   }
 
   object CreateEndpointMessage {
     def apply(
-      MongoDbSettings: js.UndefOr[MongoDbSettings] = js.undefined,
-      Username: js.UndefOr[String] = js.undefined,
-      ExtraConnectionAttributes: js.UndefOr[String] = js.undefined,
-      DatabaseName: js.UndefOr[String] = js.undefined,
-      DynamoDbSettings: js.UndefOr[DynamoDbSettings] = js.undefined,
-      S3Settings: js.UndefOr[S3Settings] = js.undefined,
-      ElasticsearchSettings: js.UndefOr[ElasticsearchSettings] = js.undefined,
-      EndpointIdentifier: js.UndefOr[String] = js.undefined,
-      KmsKeyId: js.UndefOr[String] = js.undefined,
-      KinesisSettings: js.UndefOr[KinesisSettings] = js.undefined,
+      EndpointIdentifier: String,
+      EndpointType: ReplicationEndpointTypeValue,
+      EngineName: String,
       CertificateArn: js.UndefOr[String] = js.undefined,
-      ServerName: js.UndefOr[String] = js.undefined,
-      Password: js.UndefOr[SecretString] = js.undefined,
-      EngineName: js.UndefOr[String] = js.undefined,
-      ExternalTableDefinition: js.UndefOr[String] = js.undefined,
-      EndpointType: js.UndefOr[ReplicationEndpointTypeValue] = js.undefined,
-      Port: js.UndefOr[IntegerOptional] = js.undefined,
-      ServiceAccessRoleArn: js.UndefOr[String] = js.undefined,
-      Tags: js.UndefOr[TagList] = js.undefined,
+      DatabaseName: js.UndefOr[String] = js.undefined,
       DmsTransferSettings: js.UndefOr[DmsTransferSettings] = js.undefined,
-      SslMode: js.UndefOr[DmsSslModeValue] = js.undefined): CreateEndpointMessage = {
+      DynamoDbSettings: js.UndefOr[DynamoDbSettings] = js.undefined,
+      ElasticsearchSettings: js.UndefOr[ElasticsearchSettings] = js.undefined,
+      ExternalTableDefinition: js.UndefOr[String] = js.undefined,
+      ExtraConnectionAttributes: js.UndefOr[String] = js.undefined,
+      KinesisSettings: js.UndefOr[KinesisSettings] = js.undefined,
+      KmsKeyId: js.UndefOr[String] = js.undefined,
+      MongoDbSettings: js.UndefOr[MongoDbSettings] = js.undefined,
+      Password: js.UndefOr[SecretString] = js.undefined,
+      Port: js.UndefOr[IntegerOptional] = js.undefined,
+      S3Settings: js.UndefOr[S3Settings] = js.undefined,
+      ServerName: js.UndefOr[String] = js.undefined,
+      ServiceAccessRoleArn: js.UndefOr[String] = js.undefined,
+      SslMode: js.UndefOr[DmsSslModeValue] = js.undefined,
+      Tags: js.UndefOr[TagList] = js.undefined,
+      Username: js.UndefOr[String] = js.undefined): CreateEndpointMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "MongoDbSettings" -> MongoDbSettings.map { x => x.asInstanceOf[js.Any] },
-        "Username" -> Username.map { x => x.asInstanceOf[js.Any] },
-        "ExtraConnectionAttributes" -> ExtraConnectionAttributes.map { x => x.asInstanceOf[js.Any] },
-        "DatabaseName" -> DatabaseName.map { x => x.asInstanceOf[js.Any] },
-        "DynamoDbSettings" -> DynamoDbSettings.map { x => x.asInstanceOf[js.Any] },
-        "S3Settings" -> S3Settings.map { x => x.asInstanceOf[js.Any] },
-        "ElasticsearchSettings" -> ElasticsearchSettings.map { x => x.asInstanceOf[js.Any] },
-        "EndpointIdentifier" -> EndpointIdentifier.map { x => x.asInstanceOf[js.Any] },
-        "KmsKeyId" -> KmsKeyId.map { x => x.asInstanceOf[js.Any] },
-        "KinesisSettings" -> KinesisSettings.map { x => x.asInstanceOf[js.Any] },
+        "EndpointIdentifier" -> EndpointIdentifier.asInstanceOf[js.Any],
+        "EndpointType" -> EndpointType.asInstanceOf[js.Any],
+        "EngineName" -> EngineName.asInstanceOf[js.Any],
         "CertificateArn" -> CertificateArn.map { x => x.asInstanceOf[js.Any] },
-        "ServerName" -> ServerName.map { x => x.asInstanceOf[js.Any] },
-        "Password" -> Password.map { x => x.asInstanceOf[js.Any] },
-        "EngineName" -> EngineName.map { x => x.asInstanceOf[js.Any] },
-        "ExternalTableDefinition" -> ExternalTableDefinition.map { x => x.asInstanceOf[js.Any] },
-        "EndpointType" -> EndpointType.map { x => x.asInstanceOf[js.Any] },
-        "Port" -> Port.map { x => x.asInstanceOf[js.Any] },
-        "ServiceAccessRoleArn" -> ServiceAccessRoleArn.map { x => x.asInstanceOf[js.Any] },
-        "Tags" -> Tags.map { x => x.asInstanceOf[js.Any] },
+        "DatabaseName" -> DatabaseName.map { x => x.asInstanceOf[js.Any] },
         "DmsTransferSettings" -> DmsTransferSettings.map { x => x.asInstanceOf[js.Any] },
-        "SslMode" -> SslMode.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "DynamoDbSettings" -> DynamoDbSettings.map { x => x.asInstanceOf[js.Any] },
+        "ElasticsearchSettings" -> ElasticsearchSettings.map { x => x.asInstanceOf[js.Any] },
+        "ExternalTableDefinition" -> ExternalTableDefinition.map { x => x.asInstanceOf[js.Any] },
+        "ExtraConnectionAttributes" -> ExtraConnectionAttributes.map { x => x.asInstanceOf[js.Any] },
+        "KinesisSettings" -> KinesisSettings.map { x => x.asInstanceOf[js.Any] },
+        "KmsKeyId" -> KmsKeyId.map { x => x.asInstanceOf[js.Any] },
+        "MongoDbSettings" -> MongoDbSettings.map { x => x.asInstanceOf[js.Any] },
+        "Password" -> Password.map { x => x.asInstanceOf[js.Any] },
+        "Port" -> Port.map { x => x.asInstanceOf[js.Any] },
+        "S3Settings" -> S3Settings.map { x => x.asInstanceOf[js.Any] },
+        "ServerName" -> ServerName.map { x => x.asInstanceOf[js.Any] },
+        "ServiceAccessRoleArn" -> ServiceAccessRoleArn.map { x => x.asInstanceOf[js.Any] },
+        "SslMode" -> SslMode.map { x => x.asInstanceOf[js.Any] },
+        "Tags" -> Tags.map { x => x.asInstanceOf[js.Any] },
+        "Username" -> Username.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateEndpointMessage]
     }
@@ -385,32 +385,32 @@ package dms {
    */
   @js.native
   trait CreateEventSubscriptionMessage extends js.Object {
+    var SnsTopicArn: String
+    var SubscriptionName: String
     var Enabled: js.UndefOr[BooleanOptional]
-    var SourceIds: js.UndefOr[SourceIdsList]
-    var SubscriptionName: js.UndefOr[String]
-    var SnsTopicArn: js.UndefOr[String]
     var EventCategories: js.UndefOr[EventCategoriesList]
-    var Tags: js.UndefOr[TagList]
+    var SourceIds: js.UndefOr[SourceIdsList]
     var SourceType: js.UndefOr[String]
+    var Tags: js.UndefOr[TagList]
   }
 
   object CreateEventSubscriptionMessage {
     def apply(
+      SnsTopicArn: String,
+      SubscriptionName: String,
       Enabled: js.UndefOr[BooleanOptional] = js.undefined,
-      SourceIds: js.UndefOr[SourceIdsList] = js.undefined,
-      SubscriptionName: js.UndefOr[String] = js.undefined,
-      SnsTopicArn: js.UndefOr[String] = js.undefined,
       EventCategories: js.UndefOr[EventCategoriesList] = js.undefined,
-      Tags: js.UndefOr[TagList] = js.undefined,
-      SourceType: js.UndefOr[String] = js.undefined): CreateEventSubscriptionMessage = {
+      SourceIds: js.UndefOr[SourceIdsList] = js.undefined,
+      SourceType: js.UndefOr[String] = js.undefined,
+      Tags: js.UndefOr[TagList] = js.undefined): CreateEventSubscriptionMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "SnsTopicArn" -> SnsTopicArn.asInstanceOf[js.Any],
+        "SubscriptionName" -> SubscriptionName.asInstanceOf[js.Any],
         "Enabled" -> Enabled.map { x => x.asInstanceOf[js.Any] },
-        "SourceIds" -> SourceIds.map { x => x.asInstanceOf[js.Any] },
-        "SubscriptionName" -> SubscriptionName.map { x => x.asInstanceOf[js.Any] },
-        "SnsTopicArn" -> SnsTopicArn.map { x => x.asInstanceOf[js.Any] },
         "EventCategories" -> EventCategories.map { x => x.asInstanceOf[js.Any] },
-        "Tags" -> Tags.map { x => x.asInstanceOf[js.Any] },
-        "SourceType" -> SourceType.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "SourceIds" -> SourceIds.map { x => x.asInstanceOf[js.Any] },
+        "SourceType" -> SourceType.map { x => x.asInstanceOf[js.Any] },
+        "Tags" -> Tags.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateEventSubscriptionMessage]
     }
@@ -439,53 +439,53 @@ package dms {
    */
   @js.native
   trait CreateReplicationInstanceMessage extends js.Object {
-    var PreferredMaintenanceWindow: js.UndefOr[String]
-    var MultiAZ: js.UndefOr[BooleanOptional]
-    var KmsKeyId: js.UndefOr[String]
-    var ReplicationSubnetGroupIdentifier: js.UndefOr[String]
+    var ReplicationInstanceClass: String
+    var ReplicationInstanceIdentifier: String
     var AllocatedStorage: js.UndefOr[IntegerOptional]
-    var ReplicationInstanceIdentifier: js.UndefOr[String]
-    var AvailabilityZone: js.UndefOr[String]
     var AutoMinorVersionUpgrade: js.UndefOr[BooleanOptional]
-    var VpcSecurityGroupIds: js.UndefOr[VpcSecurityGroupIdList]
-    var EngineVersion: js.UndefOr[String]
-    var Tags: js.UndefOr[TagList]
-    var PubliclyAccessible: js.UndefOr[BooleanOptional]
+    var AvailabilityZone: js.UndefOr[String]
     var DnsNameServers: js.UndefOr[String]
-    var ReplicationInstanceClass: js.UndefOr[String]
+    var EngineVersion: js.UndefOr[String]
+    var KmsKeyId: js.UndefOr[String]
+    var MultiAZ: js.UndefOr[BooleanOptional]
+    var PreferredMaintenanceWindow: js.UndefOr[String]
+    var PubliclyAccessible: js.UndefOr[BooleanOptional]
+    var ReplicationSubnetGroupIdentifier: js.UndefOr[String]
+    var Tags: js.UndefOr[TagList]
+    var VpcSecurityGroupIds: js.UndefOr[VpcSecurityGroupIdList]
   }
 
   object CreateReplicationInstanceMessage {
     def apply(
-      PreferredMaintenanceWindow: js.UndefOr[String] = js.undefined,
-      MultiAZ: js.UndefOr[BooleanOptional] = js.undefined,
-      KmsKeyId: js.UndefOr[String] = js.undefined,
-      ReplicationSubnetGroupIdentifier: js.UndefOr[String] = js.undefined,
+      ReplicationInstanceClass: String,
+      ReplicationInstanceIdentifier: String,
       AllocatedStorage: js.UndefOr[IntegerOptional] = js.undefined,
-      ReplicationInstanceIdentifier: js.UndefOr[String] = js.undefined,
-      AvailabilityZone: js.UndefOr[String] = js.undefined,
       AutoMinorVersionUpgrade: js.UndefOr[BooleanOptional] = js.undefined,
-      VpcSecurityGroupIds: js.UndefOr[VpcSecurityGroupIdList] = js.undefined,
-      EngineVersion: js.UndefOr[String] = js.undefined,
-      Tags: js.UndefOr[TagList] = js.undefined,
-      PubliclyAccessible: js.UndefOr[BooleanOptional] = js.undefined,
+      AvailabilityZone: js.UndefOr[String] = js.undefined,
       DnsNameServers: js.UndefOr[String] = js.undefined,
-      ReplicationInstanceClass: js.UndefOr[String] = js.undefined): CreateReplicationInstanceMessage = {
+      EngineVersion: js.UndefOr[String] = js.undefined,
+      KmsKeyId: js.UndefOr[String] = js.undefined,
+      MultiAZ: js.UndefOr[BooleanOptional] = js.undefined,
+      PreferredMaintenanceWindow: js.UndefOr[String] = js.undefined,
+      PubliclyAccessible: js.UndefOr[BooleanOptional] = js.undefined,
+      ReplicationSubnetGroupIdentifier: js.UndefOr[String] = js.undefined,
+      Tags: js.UndefOr[TagList] = js.undefined,
+      VpcSecurityGroupIds: js.UndefOr[VpcSecurityGroupIdList] = js.undefined): CreateReplicationInstanceMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "PreferredMaintenanceWindow" -> PreferredMaintenanceWindow.map { x => x.asInstanceOf[js.Any] },
-        "MultiAZ" -> MultiAZ.map { x => x.asInstanceOf[js.Any] },
-        "KmsKeyId" -> KmsKeyId.map { x => x.asInstanceOf[js.Any] },
-        "ReplicationSubnetGroupIdentifier" -> ReplicationSubnetGroupIdentifier.map { x => x.asInstanceOf[js.Any] },
+        "ReplicationInstanceClass" -> ReplicationInstanceClass.asInstanceOf[js.Any],
+        "ReplicationInstanceIdentifier" -> ReplicationInstanceIdentifier.asInstanceOf[js.Any],
         "AllocatedStorage" -> AllocatedStorage.map { x => x.asInstanceOf[js.Any] },
-        "ReplicationInstanceIdentifier" -> ReplicationInstanceIdentifier.map { x => x.asInstanceOf[js.Any] },
-        "AvailabilityZone" -> AvailabilityZone.map { x => x.asInstanceOf[js.Any] },
         "AutoMinorVersionUpgrade" -> AutoMinorVersionUpgrade.map { x => x.asInstanceOf[js.Any] },
-        "VpcSecurityGroupIds" -> VpcSecurityGroupIds.map { x => x.asInstanceOf[js.Any] },
-        "EngineVersion" -> EngineVersion.map { x => x.asInstanceOf[js.Any] },
-        "Tags" -> Tags.map { x => x.asInstanceOf[js.Any] },
-        "PubliclyAccessible" -> PubliclyAccessible.map { x => x.asInstanceOf[js.Any] },
+        "AvailabilityZone" -> AvailabilityZone.map { x => x.asInstanceOf[js.Any] },
         "DnsNameServers" -> DnsNameServers.map { x => x.asInstanceOf[js.Any] },
-        "ReplicationInstanceClass" -> ReplicationInstanceClass.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "EngineVersion" -> EngineVersion.map { x => x.asInstanceOf[js.Any] },
+        "KmsKeyId" -> KmsKeyId.map { x => x.asInstanceOf[js.Any] },
+        "MultiAZ" -> MultiAZ.map { x => x.asInstanceOf[js.Any] },
+        "PreferredMaintenanceWindow" -> PreferredMaintenanceWindow.map { x => x.asInstanceOf[js.Any] },
+        "PubliclyAccessible" -> PubliclyAccessible.map { x => x.asInstanceOf[js.Any] },
+        "ReplicationSubnetGroupIdentifier" -> ReplicationSubnetGroupIdentifier.map { x => x.asInstanceOf[js.Any] },
+        "Tags" -> Tags.map { x => x.asInstanceOf[js.Any] },
+        "VpcSecurityGroupIds" -> VpcSecurityGroupIds.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateReplicationInstanceMessage]
     }
@@ -514,22 +514,22 @@ package dms {
    */
   @js.native
   trait CreateReplicationSubnetGroupMessage extends js.Object {
-    var ReplicationSubnetGroupIdentifier: js.UndefOr[String]
-    var ReplicationSubnetGroupDescription: js.UndefOr[String]
-    var SubnetIds: js.UndefOr[SubnetIdentifierList]
+    var ReplicationSubnetGroupDescription: String
+    var ReplicationSubnetGroupIdentifier: String
+    var SubnetIds: SubnetIdentifierList
     var Tags: js.UndefOr[TagList]
   }
 
   object CreateReplicationSubnetGroupMessage {
     def apply(
-      ReplicationSubnetGroupIdentifier: js.UndefOr[String] = js.undefined,
-      ReplicationSubnetGroupDescription: js.UndefOr[String] = js.undefined,
-      SubnetIds: js.UndefOr[SubnetIdentifierList] = js.undefined,
+      ReplicationSubnetGroupDescription: String,
+      ReplicationSubnetGroupIdentifier: String,
+      SubnetIds: SubnetIdentifierList,
       Tags: js.UndefOr[TagList] = js.undefined): CreateReplicationSubnetGroupMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ReplicationSubnetGroupIdentifier" -> ReplicationSubnetGroupIdentifier.map { x => x.asInstanceOf[js.Any] },
-        "ReplicationSubnetGroupDescription" -> ReplicationSubnetGroupDescription.map { x => x.asInstanceOf[js.Any] },
-        "SubnetIds" -> SubnetIds.map { x => x.asInstanceOf[js.Any] },
+        "ReplicationSubnetGroupDescription" -> ReplicationSubnetGroupDescription.asInstanceOf[js.Any],
+        "ReplicationSubnetGroupIdentifier" -> ReplicationSubnetGroupIdentifier.asInstanceOf[js.Any],
+        "SubnetIds" -> SubnetIds.asInstanceOf[js.Any],
         "Tags" -> Tags.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateReplicationSubnetGroupMessage]
@@ -559,44 +559,44 @@ package dms {
    */
   @js.native
   trait CreateReplicationTaskMessage extends js.Object {
-    var ReplicationTaskSettings: js.UndefOr[String]
-    var CdcStopPosition: js.UndefOr[String]
-    var MigrationType: js.UndefOr[MigrationTypeValue]
-    var SourceEndpointArn: js.UndefOr[String]
-    var ReplicationTaskIdentifier: js.UndefOr[String]
+    var MigrationType: MigrationTypeValue
+    var ReplicationInstanceArn: String
+    var ReplicationTaskIdentifier: String
+    var SourceEndpointArn: String
+    var TableMappings: String
+    var TargetEndpointArn: String
     var CdcStartPosition: js.UndefOr[String]
-    var Tags: js.UndefOr[TagList]
-    var TableMappings: js.UndefOr[String]
-    var ReplicationInstanceArn: js.UndefOr[String]
-    var TargetEndpointArn: js.UndefOr[String]
     var CdcStartTime: js.UndefOr[TStamp]
+    var CdcStopPosition: js.UndefOr[String]
+    var ReplicationTaskSettings: js.UndefOr[String]
+    var Tags: js.UndefOr[TagList]
   }
 
   object CreateReplicationTaskMessage {
     def apply(
-      ReplicationTaskSettings: js.UndefOr[String] = js.undefined,
-      CdcStopPosition: js.UndefOr[String] = js.undefined,
-      MigrationType: js.UndefOr[MigrationTypeValue] = js.undefined,
-      SourceEndpointArn: js.UndefOr[String] = js.undefined,
-      ReplicationTaskIdentifier: js.UndefOr[String] = js.undefined,
+      MigrationType: MigrationTypeValue,
+      ReplicationInstanceArn: String,
+      ReplicationTaskIdentifier: String,
+      SourceEndpointArn: String,
+      TableMappings: String,
+      TargetEndpointArn: String,
       CdcStartPosition: js.UndefOr[String] = js.undefined,
-      Tags: js.UndefOr[TagList] = js.undefined,
-      TableMappings: js.UndefOr[String] = js.undefined,
-      ReplicationInstanceArn: js.UndefOr[String] = js.undefined,
-      TargetEndpointArn: js.UndefOr[String] = js.undefined,
-      CdcStartTime: js.UndefOr[TStamp] = js.undefined): CreateReplicationTaskMessage = {
+      CdcStartTime: js.UndefOr[TStamp] = js.undefined,
+      CdcStopPosition: js.UndefOr[String] = js.undefined,
+      ReplicationTaskSettings: js.UndefOr[String] = js.undefined,
+      Tags: js.UndefOr[TagList] = js.undefined): CreateReplicationTaskMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ReplicationTaskSettings" -> ReplicationTaskSettings.map { x => x.asInstanceOf[js.Any] },
-        "CdcStopPosition" -> CdcStopPosition.map { x => x.asInstanceOf[js.Any] },
-        "MigrationType" -> MigrationType.map { x => x.asInstanceOf[js.Any] },
-        "SourceEndpointArn" -> SourceEndpointArn.map { x => x.asInstanceOf[js.Any] },
-        "ReplicationTaskIdentifier" -> ReplicationTaskIdentifier.map { x => x.asInstanceOf[js.Any] },
+        "MigrationType" -> MigrationType.asInstanceOf[js.Any],
+        "ReplicationInstanceArn" -> ReplicationInstanceArn.asInstanceOf[js.Any],
+        "ReplicationTaskIdentifier" -> ReplicationTaskIdentifier.asInstanceOf[js.Any],
+        "SourceEndpointArn" -> SourceEndpointArn.asInstanceOf[js.Any],
+        "TableMappings" -> TableMappings.asInstanceOf[js.Any],
+        "TargetEndpointArn" -> TargetEndpointArn.asInstanceOf[js.Any],
         "CdcStartPosition" -> CdcStartPosition.map { x => x.asInstanceOf[js.Any] },
-        "Tags" -> Tags.map { x => x.asInstanceOf[js.Any] },
-        "TableMappings" -> TableMappings.map { x => x.asInstanceOf[js.Any] },
-        "ReplicationInstanceArn" -> ReplicationInstanceArn.map { x => x.asInstanceOf[js.Any] },
-        "TargetEndpointArn" -> TargetEndpointArn.map { x => x.asInstanceOf[js.Any] },
-        "CdcStartTime" -> CdcStartTime.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "CdcStartTime" -> CdcStartTime.map { x => x.asInstanceOf[js.Any] },
+        "CdcStopPosition" -> CdcStopPosition.map { x => x.asInstanceOf[js.Any] },
+        "ReplicationTaskSettings" -> ReplicationTaskSettings.map { x => x.asInstanceOf[js.Any] },
+        "Tags" -> Tags.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateReplicationTaskMessage]
     }
@@ -622,14 +622,14 @@ package dms {
 
   @js.native
   trait DeleteCertificateMessage extends js.Object {
-    var CertificateArn: js.UndefOr[String]
+    var CertificateArn: String
   }
 
   object DeleteCertificateMessage {
     def apply(
-      CertificateArn: js.UndefOr[String] = js.undefined): DeleteCertificateMessage = {
+      CertificateArn: String): DeleteCertificateMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "CertificateArn" -> CertificateArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "CertificateArn" -> CertificateArn.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteCertificateMessage]
     }
@@ -655,14 +655,14 @@ package dms {
    */
   @js.native
   trait DeleteEndpointMessage extends js.Object {
-    var EndpointArn: js.UndefOr[String]
+    var EndpointArn: String
   }
 
   object DeleteEndpointMessage {
     def apply(
-      EndpointArn: js.UndefOr[String] = js.undefined): DeleteEndpointMessage = {
+      EndpointArn: String): DeleteEndpointMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "EndpointArn" -> EndpointArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "EndpointArn" -> EndpointArn.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteEndpointMessage]
     }
@@ -691,14 +691,14 @@ package dms {
    */
   @js.native
   trait DeleteEventSubscriptionMessage extends js.Object {
-    var SubscriptionName: js.UndefOr[String]
+    var SubscriptionName: String
   }
 
   object DeleteEventSubscriptionMessage {
     def apply(
-      SubscriptionName: js.UndefOr[String] = js.undefined): DeleteEventSubscriptionMessage = {
+      SubscriptionName: String): DeleteEventSubscriptionMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "SubscriptionName" -> SubscriptionName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "SubscriptionName" -> SubscriptionName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteEventSubscriptionMessage]
     }
@@ -727,14 +727,14 @@ package dms {
    */
   @js.native
   trait DeleteReplicationInstanceMessage extends js.Object {
-    var ReplicationInstanceArn: js.UndefOr[String]
+    var ReplicationInstanceArn: String
   }
 
   object DeleteReplicationInstanceMessage {
     def apply(
-      ReplicationInstanceArn: js.UndefOr[String] = js.undefined): DeleteReplicationInstanceMessage = {
+      ReplicationInstanceArn: String): DeleteReplicationInstanceMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ReplicationInstanceArn" -> ReplicationInstanceArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ReplicationInstanceArn" -> ReplicationInstanceArn.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteReplicationInstanceMessage]
     }
@@ -763,14 +763,14 @@ package dms {
    */
   @js.native
   trait DeleteReplicationSubnetGroupMessage extends js.Object {
-    var ReplicationSubnetGroupIdentifier: js.UndefOr[String]
+    var ReplicationSubnetGroupIdentifier: String
   }
 
   object DeleteReplicationSubnetGroupMessage {
     def apply(
-      ReplicationSubnetGroupIdentifier: js.UndefOr[String] = js.undefined): DeleteReplicationSubnetGroupMessage = {
+      ReplicationSubnetGroupIdentifier: String): DeleteReplicationSubnetGroupMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ReplicationSubnetGroupIdentifier" -> ReplicationSubnetGroupIdentifier.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ReplicationSubnetGroupIdentifier" -> ReplicationSubnetGroupIdentifier.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteReplicationSubnetGroupMessage]
     }
@@ -797,14 +797,14 @@ package dms {
    */
   @js.native
   trait DeleteReplicationTaskMessage extends js.Object {
-    var ReplicationTaskArn: js.UndefOr[String]
+    var ReplicationTaskArn: String
   }
 
   object DeleteReplicationTaskMessage {
     def apply(
-      ReplicationTaskArn: js.UndefOr[String] = js.undefined): DeleteReplicationTaskMessage = {
+      ReplicationTaskArn: String): DeleteReplicationTaskMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ReplicationTaskArn" -> ReplicationTaskArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ReplicationTaskArn" -> ReplicationTaskArn.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteReplicationTaskMessage]
     }
@@ -865,19 +865,19 @@ package dms {
   @js.native
   trait DescribeCertificatesMessage extends js.Object {
     var Filters: js.UndefOr[FilterList]
-    var MaxRecords: js.UndefOr[IntegerOptional]
     var Marker: js.UndefOr[String]
+    var MaxRecords: js.UndefOr[IntegerOptional]
   }
 
   object DescribeCertificatesMessage {
     def apply(
       Filters: js.UndefOr[FilterList] = js.undefined,
-      MaxRecords: js.UndefOr[IntegerOptional] = js.undefined,
-      Marker: js.UndefOr[String] = js.undefined): DescribeCertificatesMessage = {
+      Marker: js.UndefOr[String] = js.undefined,
+      MaxRecords: js.UndefOr[IntegerOptional] = js.undefined): DescribeCertificatesMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Filters" -> Filters.map { x => x.asInstanceOf[js.Any] },
-        "MaxRecords" -> MaxRecords.map { x => x.asInstanceOf[js.Any] },
-        "Marker" -> Marker.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Marker" -> Marker.map { x => x.asInstanceOf[js.Any] },
+        "MaxRecords" -> MaxRecords.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeCertificatesMessage]
     }
@@ -885,17 +885,17 @@ package dms {
 
   @js.native
   trait DescribeCertificatesResponse extends js.Object {
-    var Marker: js.UndefOr[String]
     var Certificates: js.UndefOr[CertificateList]
+    var Marker: js.UndefOr[String]
   }
 
   object DescribeCertificatesResponse {
     def apply(
-      Marker: js.UndefOr[String] = js.undefined,
-      Certificates: js.UndefOr[CertificateList] = js.undefined): DescribeCertificatesResponse = {
+      Certificates: js.UndefOr[CertificateList] = js.undefined,
+      Marker: js.UndefOr[String] = js.undefined): DescribeCertificatesResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Marker" -> Marker.map { x => x.asInstanceOf[js.Any] },
-        "Certificates" -> Certificates.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Certificates" -> Certificates.map { x => x.asInstanceOf[js.Any] },
+        "Marker" -> Marker.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeCertificatesResponse]
     }
@@ -907,19 +907,19 @@ package dms {
   @js.native
   trait DescribeConnectionsMessage extends js.Object {
     var Filters: js.UndefOr[FilterList]
-    var MaxRecords: js.UndefOr[IntegerOptional]
     var Marker: js.UndefOr[String]
+    var MaxRecords: js.UndefOr[IntegerOptional]
   }
 
   object DescribeConnectionsMessage {
     def apply(
       Filters: js.UndefOr[FilterList] = js.undefined,
-      MaxRecords: js.UndefOr[IntegerOptional] = js.undefined,
-      Marker: js.UndefOr[String] = js.undefined): DescribeConnectionsMessage = {
+      Marker: js.UndefOr[String] = js.undefined,
+      MaxRecords: js.UndefOr[IntegerOptional] = js.undefined): DescribeConnectionsMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Filters" -> Filters.map { x => x.asInstanceOf[js.Any] },
-        "MaxRecords" -> MaxRecords.map { x => x.asInstanceOf[js.Any] },
-        "Marker" -> Marker.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Marker" -> Marker.map { x => x.asInstanceOf[js.Any] },
+        "MaxRecords" -> MaxRecords.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeConnectionsMessage]
     }
@@ -930,17 +930,17 @@ package dms {
    */
   @js.native
   trait DescribeConnectionsResponse extends js.Object {
-    var Marker: js.UndefOr[String]
     var Connections: js.UndefOr[ConnectionList]
+    var Marker: js.UndefOr[String]
   }
 
   object DescribeConnectionsResponse {
     def apply(
-      Marker: js.UndefOr[String] = js.undefined,
-      Connections: js.UndefOr[ConnectionList] = js.undefined): DescribeConnectionsResponse = {
+      Connections: js.UndefOr[ConnectionList] = js.undefined,
+      Marker: js.UndefOr[String] = js.undefined): DescribeConnectionsResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Marker" -> Marker.map { x => x.asInstanceOf[js.Any] },
-        "Connections" -> Connections.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Connections" -> Connections.map { x => x.asInstanceOf[js.Any] },
+        "Marker" -> Marker.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeConnectionsResponse]
     }
@@ -952,19 +952,19 @@ package dms {
   @js.native
   trait DescribeEndpointTypesMessage extends js.Object {
     var Filters: js.UndefOr[FilterList]
-    var MaxRecords: js.UndefOr[IntegerOptional]
     var Marker: js.UndefOr[String]
+    var MaxRecords: js.UndefOr[IntegerOptional]
   }
 
   object DescribeEndpointTypesMessage {
     def apply(
       Filters: js.UndefOr[FilterList] = js.undefined,
-      MaxRecords: js.UndefOr[IntegerOptional] = js.undefined,
-      Marker: js.UndefOr[String] = js.undefined): DescribeEndpointTypesMessage = {
+      Marker: js.UndefOr[String] = js.undefined,
+      MaxRecords: js.UndefOr[IntegerOptional] = js.undefined): DescribeEndpointTypesMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Filters" -> Filters.map { x => x.asInstanceOf[js.Any] },
-        "MaxRecords" -> MaxRecords.map { x => x.asInstanceOf[js.Any] },
-        "Marker" -> Marker.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Marker" -> Marker.map { x => x.asInstanceOf[js.Any] },
+        "MaxRecords" -> MaxRecords.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeEndpointTypesMessage]
     }
@@ -997,19 +997,19 @@ package dms {
   @js.native
   trait DescribeEndpointsMessage extends js.Object {
     var Filters: js.UndefOr[FilterList]
-    var MaxRecords: js.UndefOr[IntegerOptional]
     var Marker: js.UndefOr[String]
+    var MaxRecords: js.UndefOr[IntegerOptional]
   }
 
   object DescribeEndpointsMessage {
     def apply(
       Filters: js.UndefOr[FilterList] = js.undefined,
-      MaxRecords: js.UndefOr[IntegerOptional] = js.undefined,
-      Marker: js.UndefOr[String] = js.undefined): DescribeEndpointsMessage = {
+      Marker: js.UndefOr[String] = js.undefined,
+      MaxRecords: js.UndefOr[IntegerOptional] = js.undefined): DescribeEndpointsMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Filters" -> Filters.map { x => x.asInstanceOf[js.Any] },
-        "MaxRecords" -> MaxRecords.map { x => x.asInstanceOf[js.Any] },
-        "Marker" -> Marker.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Marker" -> Marker.map { x => x.asInstanceOf[js.Any] },
+        "MaxRecords" -> MaxRecords.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeEndpointsMessage]
     }
@@ -1020,17 +1020,17 @@ package dms {
    */
   @js.native
   trait DescribeEndpointsResponse extends js.Object {
-    var Marker: js.UndefOr[String]
     var Endpoints: js.UndefOr[EndpointList]
+    var Marker: js.UndefOr[String]
   }
 
   object DescribeEndpointsResponse {
     def apply(
-      Marker: js.UndefOr[String] = js.undefined,
-      Endpoints: js.UndefOr[EndpointList] = js.undefined): DescribeEndpointsResponse = {
+      Endpoints: js.UndefOr[EndpointList] = js.undefined,
+      Marker: js.UndefOr[String] = js.undefined): DescribeEndpointsResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Marker" -> Marker.map { x => x.asInstanceOf[js.Any] },
-        "Endpoints" -> Endpoints.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Endpoints" -> Endpoints.map { x => x.asInstanceOf[js.Any] },
+        "Marker" -> Marker.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeEndpointsResponse]
     }
@@ -1041,17 +1041,17 @@ package dms {
    */
   @js.native
   trait DescribeEventCategoriesMessage extends js.Object {
-    var SourceType: js.UndefOr[String]
     var Filters: js.UndefOr[FilterList]
+    var SourceType: js.UndefOr[String]
   }
 
   object DescribeEventCategoriesMessage {
     def apply(
-      SourceType: js.UndefOr[String] = js.undefined,
-      Filters: js.UndefOr[FilterList] = js.undefined): DescribeEventCategoriesMessage = {
+      Filters: js.UndefOr[FilterList] = js.undefined,
+      SourceType: js.UndefOr[String] = js.undefined): DescribeEventCategoriesMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "SourceType" -> SourceType.map { x => x.asInstanceOf[js.Any] },
-        "Filters" -> Filters.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Filters" -> Filters.map { x => x.asInstanceOf[js.Any] },
+        "SourceType" -> SourceType.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeEventCategoriesMessage]
     }
@@ -1080,23 +1080,23 @@ package dms {
    */
   @js.native
   trait DescribeEventSubscriptionsMessage extends js.Object {
-    var SubscriptionName: js.UndefOr[String]
     var Filters: js.UndefOr[FilterList]
-    var MaxRecords: js.UndefOr[IntegerOptional]
     var Marker: js.UndefOr[String]
+    var MaxRecords: js.UndefOr[IntegerOptional]
+    var SubscriptionName: js.UndefOr[String]
   }
 
   object DescribeEventSubscriptionsMessage {
     def apply(
-      SubscriptionName: js.UndefOr[String] = js.undefined,
       Filters: js.UndefOr[FilterList] = js.undefined,
+      Marker: js.UndefOr[String] = js.undefined,
       MaxRecords: js.UndefOr[IntegerOptional] = js.undefined,
-      Marker: js.UndefOr[String] = js.undefined): DescribeEventSubscriptionsMessage = {
+      SubscriptionName: js.UndefOr[String] = js.undefined): DescribeEventSubscriptionsMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "SubscriptionName" -> SubscriptionName.map { x => x.asInstanceOf[js.Any] },
         "Filters" -> Filters.map { x => x.asInstanceOf[js.Any] },
+        "Marker" -> Marker.map { x => x.asInstanceOf[js.Any] },
         "MaxRecords" -> MaxRecords.map { x => x.asInstanceOf[js.Any] },
-        "Marker" -> Marker.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "SubscriptionName" -> SubscriptionName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeEventSubscriptionsMessage]
     }
@@ -1107,17 +1107,17 @@ package dms {
    */
   @js.native
   trait DescribeEventSubscriptionsResponse extends js.Object {
-    var Marker: js.UndefOr[String]
     var EventSubscriptionsList: js.UndefOr[EventSubscriptionsList]
+    var Marker: js.UndefOr[String]
   }
 
   object DescribeEventSubscriptionsResponse {
     def apply(
-      Marker: js.UndefOr[String] = js.undefined,
-      EventSubscriptionsList: js.UndefOr[EventSubscriptionsList] = js.undefined): DescribeEventSubscriptionsResponse = {
+      EventSubscriptionsList: js.UndefOr[EventSubscriptionsList] = js.undefined,
+      Marker: js.UndefOr[String] = js.undefined): DescribeEventSubscriptionsResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Marker" -> Marker.map { x => x.asInstanceOf[js.Any] },
-        "EventSubscriptionsList" -> EventSubscriptionsList.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "EventSubscriptionsList" -> EventSubscriptionsList.map { x => x.asInstanceOf[js.Any] },
+        "Marker" -> Marker.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeEventSubscriptionsResponse]
     }
@@ -1129,37 +1129,37 @@ package dms {
   @js.native
   trait DescribeEventsMessage extends js.Object {
     var Duration: js.UndefOr[IntegerOptional]
-    var SourceIdentifier: js.UndefOr[String]
-    var StartTime: js.UndefOr[TStamp]
     var EndTime: js.UndefOr[TStamp]
-    var MaxRecords: js.UndefOr[IntegerOptional]
     var EventCategories: js.UndefOr[EventCategoriesList]
-    var SourceType: js.UndefOr[SourceType]
     var Filters: js.UndefOr[FilterList]
     var Marker: js.UndefOr[String]
+    var MaxRecords: js.UndefOr[IntegerOptional]
+    var SourceIdentifier: js.UndefOr[String]
+    var SourceType: js.UndefOr[SourceType]
+    var StartTime: js.UndefOr[TStamp]
   }
 
   object DescribeEventsMessage {
     def apply(
       Duration: js.UndefOr[IntegerOptional] = js.undefined,
-      SourceIdentifier: js.UndefOr[String] = js.undefined,
-      StartTime: js.UndefOr[TStamp] = js.undefined,
       EndTime: js.UndefOr[TStamp] = js.undefined,
-      MaxRecords: js.UndefOr[IntegerOptional] = js.undefined,
       EventCategories: js.UndefOr[EventCategoriesList] = js.undefined,
-      SourceType: js.UndefOr[SourceType] = js.undefined,
       Filters: js.UndefOr[FilterList] = js.undefined,
-      Marker: js.UndefOr[String] = js.undefined): DescribeEventsMessage = {
+      Marker: js.UndefOr[String] = js.undefined,
+      MaxRecords: js.UndefOr[IntegerOptional] = js.undefined,
+      SourceIdentifier: js.UndefOr[String] = js.undefined,
+      SourceType: js.UndefOr[SourceType] = js.undefined,
+      StartTime: js.UndefOr[TStamp] = js.undefined): DescribeEventsMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Duration" -> Duration.map { x => x.asInstanceOf[js.Any] },
-        "SourceIdentifier" -> SourceIdentifier.map { x => x.asInstanceOf[js.Any] },
-        "StartTime" -> StartTime.map { x => x.asInstanceOf[js.Any] },
         "EndTime" -> EndTime.map { x => x.asInstanceOf[js.Any] },
-        "MaxRecords" -> MaxRecords.map { x => x.asInstanceOf[js.Any] },
         "EventCategories" -> EventCategories.map { x => x.asInstanceOf[js.Any] },
-        "SourceType" -> SourceType.map { x => x.asInstanceOf[js.Any] },
         "Filters" -> Filters.map { x => x.asInstanceOf[js.Any] },
-        "Marker" -> Marker.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Marker" -> Marker.map { x => x.asInstanceOf[js.Any] },
+        "MaxRecords" -> MaxRecords.map { x => x.asInstanceOf[js.Any] },
+        "SourceIdentifier" -> SourceIdentifier.map { x => x.asInstanceOf[js.Any] },
+        "SourceType" -> SourceType.map { x => x.asInstanceOf[js.Any] },
+        "StartTime" -> StartTime.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeEventsMessage]
     }
@@ -1170,17 +1170,17 @@ package dms {
    */
   @js.native
   trait DescribeEventsResponse extends js.Object {
-    var Marker: js.UndefOr[String]
     var Events: js.UndefOr[EventList]
+    var Marker: js.UndefOr[String]
   }
 
   object DescribeEventsResponse {
     def apply(
-      Marker: js.UndefOr[String] = js.undefined,
-      Events: js.UndefOr[EventList] = js.undefined): DescribeEventsResponse = {
+      Events: js.UndefOr[EventList] = js.undefined,
+      Marker: js.UndefOr[String] = js.undefined): DescribeEventsResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Marker" -> Marker.map { x => x.asInstanceOf[js.Any] },
-        "Events" -> Events.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Events" -> Events.map { x => x.asInstanceOf[js.Any] },
+        "Marker" -> Marker.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeEventsResponse]
     }
@@ -1191,17 +1191,17 @@ package dms {
    */
   @js.native
   trait DescribeOrderableReplicationInstancesMessage extends js.Object {
-    var MaxRecords: js.UndefOr[IntegerOptional]
     var Marker: js.UndefOr[String]
+    var MaxRecords: js.UndefOr[IntegerOptional]
   }
 
   object DescribeOrderableReplicationInstancesMessage {
     def apply(
-      MaxRecords: js.UndefOr[IntegerOptional] = js.undefined,
-      Marker: js.UndefOr[String] = js.undefined): DescribeOrderableReplicationInstancesMessage = {
+      Marker: js.UndefOr[String] = js.undefined,
+      MaxRecords: js.UndefOr[IntegerOptional] = js.undefined): DescribeOrderableReplicationInstancesMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "MaxRecords" -> MaxRecords.map { x => x.asInstanceOf[js.Any] },
-        "Marker" -> Marker.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Marker" -> Marker.map { x => x.asInstanceOf[js.Any] },
+        "MaxRecords" -> MaxRecords.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeOrderableReplicationInstancesMessage]
     }
@@ -1212,17 +1212,17 @@ package dms {
    */
   @js.native
   trait DescribeOrderableReplicationInstancesResponse extends js.Object {
-    var OrderableReplicationInstances: js.UndefOr[OrderableReplicationInstanceList]
     var Marker: js.UndefOr[String]
+    var OrderableReplicationInstances: js.UndefOr[OrderableReplicationInstanceList]
   }
 
   object DescribeOrderableReplicationInstancesResponse {
     def apply(
-      OrderableReplicationInstances: js.UndefOr[OrderableReplicationInstanceList] = js.undefined,
-      Marker: js.UndefOr[String] = js.undefined): DescribeOrderableReplicationInstancesResponse = {
+      Marker: js.UndefOr[String] = js.undefined,
+      OrderableReplicationInstances: js.UndefOr[OrderableReplicationInstanceList] = js.undefined): DescribeOrderableReplicationInstancesResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "OrderableReplicationInstances" -> OrderableReplicationInstances.map { x => x.asInstanceOf[js.Any] },
-        "Marker" -> Marker.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Marker" -> Marker.map { x => x.asInstanceOf[js.Any] },
+        "OrderableReplicationInstances" -> OrderableReplicationInstances.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeOrderableReplicationInstancesResponse]
     }
@@ -1233,14 +1233,14 @@ package dms {
    */
   @js.native
   trait DescribeRefreshSchemasStatusMessage extends js.Object {
-    var EndpointArn: js.UndefOr[String]
+    var EndpointArn: String
   }
 
   object DescribeRefreshSchemasStatusMessage {
     def apply(
-      EndpointArn: js.UndefOr[String] = js.undefined): DescribeRefreshSchemasStatusMessage = {
+      EndpointArn: String): DescribeRefreshSchemasStatusMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "EndpointArn" -> EndpointArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "EndpointArn" -> EndpointArn.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeRefreshSchemasStatusMessage]
     }
@@ -1266,20 +1266,20 @@ package dms {
 
   @js.native
   trait DescribeReplicationInstanceTaskLogsMessage extends js.Object {
-    var ReplicationInstanceArn: js.UndefOr[String]
-    var MaxRecords: js.UndefOr[IntegerOptional]
+    var ReplicationInstanceArn: String
     var Marker: js.UndefOr[String]
+    var MaxRecords: js.UndefOr[IntegerOptional]
   }
 
   object DescribeReplicationInstanceTaskLogsMessage {
     def apply(
-      ReplicationInstanceArn: js.UndefOr[String] = js.undefined,
-      MaxRecords: js.UndefOr[IntegerOptional] = js.undefined,
-      Marker: js.UndefOr[String] = js.undefined): DescribeReplicationInstanceTaskLogsMessage = {
+      ReplicationInstanceArn: String,
+      Marker: js.UndefOr[String] = js.undefined,
+      MaxRecords: js.UndefOr[IntegerOptional] = js.undefined): DescribeReplicationInstanceTaskLogsMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ReplicationInstanceArn" -> ReplicationInstanceArn.map { x => x.asInstanceOf[js.Any] },
-        "MaxRecords" -> MaxRecords.map { x => x.asInstanceOf[js.Any] },
-        "Marker" -> Marker.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ReplicationInstanceArn" -> ReplicationInstanceArn.asInstanceOf[js.Any],
+        "Marker" -> Marker.map { x => x.asInstanceOf[js.Any] },
+        "MaxRecords" -> MaxRecords.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeReplicationInstanceTaskLogsMessage]
     }
@@ -1287,20 +1287,20 @@ package dms {
 
   @js.native
   trait DescribeReplicationInstanceTaskLogsResponse extends js.Object {
+    var Marker: js.UndefOr[String]
     var ReplicationInstanceArn: js.UndefOr[String]
     var ReplicationInstanceTaskLogs: js.UndefOr[ReplicationInstanceTaskLogsList]
-    var Marker: js.UndefOr[String]
   }
 
   object DescribeReplicationInstanceTaskLogsResponse {
     def apply(
+      Marker: js.UndefOr[String] = js.undefined,
       ReplicationInstanceArn: js.UndefOr[String] = js.undefined,
-      ReplicationInstanceTaskLogs: js.UndefOr[ReplicationInstanceTaskLogsList] = js.undefined,
-      Marker: js.UndefOr[String] = js.undefined): DescribeReplicationInstanceTaskLogsResponse = {
+      ReplicationInstanceTaskLogs: js.UndefOr[ReplicationInstanceTaskLogsList] = js.undefined): DescribeReplicationInstanceTaskLogsResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "Marker" -> Marker.map { x => x.asInstanceOf[js.Any] },
         "ReplicationInstanceArn" -> ReplicationInstanceArn.map { x => x.asInstanceOf[js.Any] },
-        "ReplicationInstanceTaskLogs" -> ReplicationInstanceTaskLogs.map { x => x.asInstanceOf[js.Any] },
-        "Marker" -> Marker.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ReplicationInstanceTaskLogs" -> ReplicationInstanceTaskLogs.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeReplicationInstanceTaskLogsResponse]
     }
@@ -1312,19 +1312,19 @@ package dms {
   @js.native
   trait DescribeReplicationInstancesMessage extends js.Object {
     var Filters: js.UndefOr[FilterList]
-    var MaxRecords: js.UndefOr[IntegerOptional]
     var Marker: js.UndefOr[String]
+    var MaxRecords: js.UndefOr[IntegerOptional]
   }
 
   object DescribeReplicationInstancesMessage {
     def apply(
       Filters: js.UndefOr[FilterList] = js.undefined,
-      MaxRecords: js.UndefOr[IntegerOptional] = js.undefined,
-      Marker: js.UndefOr[String] = js.undefined): DescribeReplicationInstancesMessage = {
+      Marker: js.UndefOr[String] = js.undefined,
+      MaxRecords: js.UndefOr[IntegerOptional] = js.undefined): DescribeReplicationInstancesMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Filters" -> Filters.map { x => x.asInstanceOf[js.Any] },
-        "MaxRecords" -> MaxRecords.map { x => x.asInstanceOf[js.Any] },
-        "Marker" -> Marker.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Marker" -> Marker.map { x => x.asInstanceOf[js.Any] },
+        "MaxRecords" -> MaxRecords.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeReplicationInstancesMessage]
     }
@@ -1357,19 +1357,19 @@ package dms {
   @js.native
   trait DescribeReplicationSubnetGroupsMessage extends js.Object {
     var Filters: js.UndefOr[FilterList]
-    var MaxRecords: js.UndefOr[IntegerOptional]
     var Marker: js.UndefOr[String]
+    var MaxRecords: js.UndefOr[IntegerOptional]
   }
 
   object DescribeReplicationSubnetGroupsMessage {
     def apply(
       Filters: js.UndefOr[FilterList] = js.undefined,
-      MaxRecords: js.UndefOr[IntegerOptional] = js.undefined,
-      Marker: js.UndefOr[String] = js.undefined): DescribeReplicationSubnetGroupsMessage = {
+      Marker: js.UndefOr[String] = js.undefined,
+      MaxRecords: js.UndefOr[IntegerOptional] = js.undefined): DescribeReplicationSubnetGroupsMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Filters" -> Filters.map { x => x.asInstanceOf[js.Any] },
-        "MaxRecords" -> MaxRecords.map { x => x.asInstanceOf[js.Any] },
-        "Marker" -> Marker.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Marker" -> Marker.map { x => x.asInstanceOf[js.Any] },
+        "MaxRecords" -> MaxRecords.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeReplicationSubnetGroupsMessage]
     }
@@ -1401,20 +1401,20 @@ package dms {
    */
   @js.native
   trait DescribeReplicationTaskAssessmentResultsMessage extends js.Object {
-    var ReplicationTaskArn: js.UndefOr[String]
-    var MaxRecords: js.UndefOr[IntegerOptional]
     var Marker: js.UndefOr[String]
+    var MaxRecords: js.UndefOr[IntegerOptional]
+    var ReplicationTaskArn: js.UndefOr[String]
   }
 
   object DescribeReplicationTaskAssessmentResultsMessage {
     def apply(
-      ReplicationTaskArn: js.UndefOr[String] = js.undefined,
+      Marker: js.UndefOr[String] = js.undefined,
       MaxRecords: js.UndefOr[IntegerOptional] = js.undefined,
-      Marker: js.UndefOr[String] = js.undefined): DescribeReplicationTaskAssessmentResultsMessage = {
+      ReplicationTaskArn: js.UndefOr[String] = js.undefined): DescribeReplicationTaskAssessmentResultsMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ReplicationTaskArn" -> ReplicationTaskArn.map { x => x.asInstanceOf[js.Any] },
+        "Marker" -> Marker.map { x => x.asInstanceOf[js.Any] },
         "MaxRecords" -> MaxRecords.map { x => x.asInstanceOf[js.Any] },
-        "Marker" -> Marker.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ReplicationTaskArn" -> ReplicationTaskArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeReplicationTaskAssessmentResultsMessage]
     }
@@ -1425,19 +1425,19 @@ package dms {
    */
   @js.native
   trait DescribeReplicationTaskAssessmentResultsResponse extends js.Object {
-    var Marker: js.UndefOr[String]
     var BucketName: js.UndefOr[String]
+    var Marker: js.UndefOr[String]
     var ReplicationTaskAssessmentResults: js.UndefOr[ReplicationTaskAssessmentResultList]
   }
 
   object DescribeReplicationTaskAssessmentResultsResponse {
     def apply(
-      Marker: js.UndefOr[String] = js.undefined,
       BucketName: js.UndefOr[String] = js.undefined,
+      Marker: js.UndefOr[String] = js.undefined,
       ReplicationTaskAssessmentResults: js.UndefOr[ReplicationTaskAssessmentResultList] = js.undefined): DescribeReplicationTaskAssessmentResultsResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Marker" -> Marker.map { x => x.asInstanceOf[js.Any] },
         "BucketName" -> BucketName.map { x => x.asInstanceOf[js.Any] },
+        "Marker" -> Marker.map { x => x.asInstanceOf[js.Any] },
         "ReplicationTaskAssessmentResults" -> ReplicationTaskAssessmentResults.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeReplicationTaskAssessmentResultsResponse]
@@ -1450,19 +1450,19 @@ package dms {
   @js.native
   trait DescribeReplicationTasksMessage extends js.Object {
     var Filters: js.UndefOr[FilterList]
-    var MaxRecords: js.UndefOr[IntegerOptional]
     var Marker: js.UndefOr[String]
+    var MaxRecords: js.UndefOr[IntegerOptional]
   }
 
   object DescribeReplicationTasksMessage {
     def apply(
       Filters: js.UndefOr[FilterList] = js.undefined,
-      MaxRecords: js.UndefOr[IntegerOptional] = js.undefined,
-      Marker: js.UndefOr[String] = js.undefined): DescribeReplicationTasksMessage = {
+      Marker: js.UndefOr[String] = js.undefined,
+      MaxRecords: js.UndefOr[IntegerOptional] = js.undefined): DescribeReplicationTasksMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Filters" -> Filters.map { x => x.asInstanceOf[js.Any] },
-        "MaxRecords" -> MaxRecords.map { x => x.asInstanceOf[js.Any] },
-        "Marker" -> Marker.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Marker" -> Marker.map { x => x.asInstanceOf[js.Any] },
+        "MaxRecords" -> MaxRecords.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeReplicationTasksMessage]
     }
@@ -1494,20 +1494,20 @@ package dms {
    */
   @js.native
   trait DescribeSchemasMessage extends js.Object {
-    var EndpointArn: js.UndefOr[String]
-    var MaxRecords: js.UndefOr[IntegerOptional]
+    var EndpointArn: String
     var Marker: js.UndefOr[String]
+    var MaxRecords: js.UndefOr[IntegerOptional]
   }
 
   object DescribeSchemasMessage {
     def apply(
-      EndpointArn: js.UndefOr[String] = js.undefined,
-      MaxRecords: js.UndefOr[IntegerOptional] = js.undefined,
-      Marker: js.UndefOr[String] = js.undefined): DescribeSchemasMessage = {
+      EndpointArn: String,
+      Marker: js.UndefOr[String] = js.undefined,
+      MaxRecords: js.UndefOr[IntegerOptional] = js.undefined): DescribeSchemasMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "EndpointArn" -> EndpointArn.map { x => x.asInstanceOf[js.Any] },
-        "MaxRecords" -> MaxRecords.map { x => x.asInstanceOf[js.Any] },
-        "Marker" -> Marker.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "EndpointArn" -> EndpointArn.asInstanceOf[js.Any],
+        "Marker" -> Marker.map { x => x.asInstanceOf[js.Any] },
+        "MaxRecords" -> MaxRecords.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeSchemasMessage]
     }
@@ -1539,23 +1539,23 @@ package dms {
    */
   @js.native
   trait DescribeTableStatisticsMessage extends js.Object {
-    var ReplicationTaskArn: js.UndefOr[String]
-    var MaxRecords: js.UndefOr[IntegerOptional]
-    var Marker: js.UndefOr[String]
+    var ReplicationTaskArn: String
     var Filters: js.UndefOr[FilterList]
+    var Marker: js.UndefOr[String]
+    var MaxRecords: js.UndefOr[IntegerOptional]
   }
 
   object DescribeTableStatisticsMessage {
     def apply(
-      ReplicationTaskArn: js.UndefOr[String] = js.undefined,
-      MaxRecords: js.UndefOr[IntegerOptional] = js.undefined,
+      ReplicationTaskArn: String,
+      Filters: js.UndefOr[FilterList] = js.undefined,
       Marker: js.UndefOr[String] = js.undefined,
-      Filters: js.UndefOr[FilterList] = js.undefined): DescribeTableStatisticsMessage = {
+      MaxRecords: js.UndefOr[IntegerOptional] = js.undefined): DescribeTableStatisticsMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ReplicationTaskArn" -> ReplicationTaskArn.map { x => x.asInstanceOf[js.Any] },
-        "MaxRecords" -> MaxRecords.map { x => x.asInstanceOf[js.Any] },
+        "ReplicationTaskArn" -> ReplicationTaskArn.asInstanceOf[js.Any],
+        "Filters" -> Filters.map { x => x.asInstanceOf[js.Any] },
         "Marker" -> Marker.map { x => x.asInstanceOf[js.Any] },
-        "Filters" -> Filters.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "MaxRecords" -> MaxRecords.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeTableStatisticsMessage]
     }
@@ -1566,20 +1566,20 @@ package dms {
    */
   @js.native
   trait DescribeTableStatisticsResponse extends js.Object {
+    var Marker: js.UndefOr[String]
     var ReplicationTaskArn: js.UndefOr[String]
     var TableStatistics: js.UndefOr[TableStatisticsList]
-    var Marker: js.UndefOr[String]
   }
 
   object DescribeTableStatisticsResponse {
     def apply(
+      Marker: js.UndefOr[String] = js.undefined,
       ReplicationTaskArn: js.UndefOr[String] = js.undefined,
-      TableStatistics: js.UndefOr[TableStatisticsList] = js.undefined,
-      Marker: js.UndefOr[String] = js.undefined): DescribeTableStatisticsResponse = {
+      TableStatistics: js.UndefOr[TableStatisticsList] = js.undefined): DescribeTableStatisticsResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "Marker" -> Marker.map { x => x.asInstanceOf[js.Any] },
         "ReplicationTaskArn" -> ReplicationTaskArn.map { x => x.asInstanceOf[js.Any] },
-        "TableStatistics" -> TableStatistics.map { x => x.asInstanceOf[js.Any] },
-        "Marker" -> Marker.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "TableStatistics" -> TableStatistics.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeTableStatisticsResponse]
     }
@@ -1599,17 +1599,17 @@ package dms {
    */
   @js.native
   trait DmsTransferSettings extends js.Object {
-    var ServiceAccessRoleArn: js.UndefOr[String]
     var BucketName: js.UndefOr[String]
+    var ServiceAccessRoleArn: js.UndefOr[String]
   }
 
   object DmsTransferSettings {
     def apply(
-      ServiceAccessRoleArn: js.UndefOr[String] = js.undefined,
-      BucketName: js.UndefOr[String] = js.undefined): DmsTransferSettings = {
+      BucketName: js.UndefOr[String] = js.undefined,
+      ServiceAccessRoleArn: js.UndefOr[String] = js.undefined): DmsTransferSettings = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ServiceAccessRoleArn" -> ServiceAccessRoleArn.map { x => x.asInstanceOf[js.Any] },
-        "BucketName" -> BucketName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "BucketName" -> BucketName.map { x => x.asInstanceOf[js.Any] },
+        "ServiceAccessRoleArn" -> ServiceAccessRoleArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DmsTransferSettings]
     }
@@ -1620,14 +1620,14 @@ package dms {
    */
   @js.native
   trait DynamoDbSettings extends js.Object {
-    var ServiceAccessRoleArn: js.UndefOr[String]
+    var ServiceAccessRoleArn: String
   }
 
   object DynamoDbSettings {
     def apply(
-      ServiceAccessRoleArn: js.UndefOr[String] = js.undefined): DynamoDbSettings = {
+      ServiceAccessRoleArn: String): DynamoDbSettings = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ServiceAccessRoleArn" -> ServiceAccessRoleArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ServiceAccessRoleArn" -> ServiceAccessRoleArn.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DynamoDbSettings]
     }
@@ -1638,23 +1638,23 @@ package dms {
    */
   @js.native
   trait ElasticsearchSettings extends js.Object {
-    var ServiceAccessRoleArn: js.UndefOr[String]
-    var EndpointUri: js.UndefOr[String]
-    var FullLoadErrorPercentage: js.UndefOr[IntegerOptional]
+    var EndpointUri: String
+    var ServiceAccessRoleArn: String
     var ErrorRetryDuration: js.UndefOr[IntegerOptional]
+    var FullLoadErrorPercentage: js.UndefOr[IntegerOptional]
   }
 
   object ElasticsearchSettings {
     def apply(
-      ServiceAccessRoleArn: js.UndefOr[String] = js.undefined,
-      EndpointUri: js.UndefOr[String] = js.undefined,
-      FullLoadErrorPercentage: js.UndefOr[IntegerOptional] = js.undefined,
-      ErrorRetryDuration: js.UndefOr[IntegerOptional] = js.undefined): ElasticsearchSettings = {
+      EndpointUri: String,
+      ServiceAccessRoleArn: String,
+      ErrorRetryDuration: js.UndefOr[IntegerOptional] = js.undefined,
+      FullLoadErrorPercentage: js.UndefOr[IntegerOptional] = js.undefined): ElasticsearchSettings = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ServiceAccessRoleArn" -> ServiceAccessRoleArn.map { x => x.asInstanceOf[js.Any] },
-        "EndpointUri" -> EndpointUri.map { x => x.asInstanceOf[js.Any] },
-        "FullLoadErrorPercentage" -> FullLoadErrorPercentage.map { x => x.asInstanceOf[js.Any] },
-        "ErrorRetryDuration" -> ErrorRetryDuration.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "EndpointUri" -> EndpointUri.asInstanceOf[js.Any],
+        "ServiceAccessRoleArn" -> ServiceAccessRoleArn.asInstanceOf[js.Any],
+        "ErrorRetryDuration" -> ErrorRetryDuration.map { x => x.asInstanceOf[js.Any] },
+        "FullLoadErrorPercentage" -> FullLoadErrorPercentage.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ElasticsearchSettings]
     }
@@ -1665,80 +1665,80 @@ package dms {
    */
   @js.native
   trait Endpoint extends js.Object {
-    var MongoDbSettings: js.UndefOr[MongoDbSettings]
-    var Username: js.UndefOr[String]
-    var ExternalId: js.UndefOr[String]
-    var ExtraConnectionAttributes: js.UndefOr[String]
-    var DatabaseName: js.UndefOr[String]
-    var DynamoDbSettings: js.UndefOr[DynamoDbSettings]
-    var S3Settings: js.UndefOr[S3Settings]
-    var ElasticsearchSettings: js.UndefOr[ElasticsearchSettings]
-    var EndpointIdentifier: js.UndefOr[String]
-    var KmsKeyId: js.UndefOr[String]
-    var KinesisSettings: js.UndefOr[KinesisSettings]
     var CertificateArn: js.UndefOr[String]
-    var ServerName: js.UndefOr[String]
-    var EndpointArn: js.UndefOr[String]
-    var EngineName: js.UndefOr[String]
-    var ExternalTableDefinition: js.UndefOr[String]
-    var EndpointType: js.UndefOr[ReplicationEndpointTypeValue]
-    var Port: js.UndefOr[IntegerOptional]
-    var ServiceAccessRoleArn: js.UndefOr[String]
-    var EngineDisplayName: js.UndefOr[String]
+    var DatabaseName: js.UndefOr[String]
     var DmsTransferSettings: js.UndefOr[DmsTransferSettings]
+    var DynamoDbSettings: js.UndefOr[DynamoDbSettings]
+    var ElasticsearchSettings: js.UndefOr[ElasticsearchSettings]
+    var EndpointArn: js.UndefOr[String]
+    var EndpointIdentifier: js.UndefOr[String]
+    var EndpointType: js.UndefOr[ReplicationEndpointTypeValue]
+    var EngineDisplayName: js.UndefOr[String]
+    var EngineName: js.UndefOr[String]
+    var ExternalId: js.UndefOr[String]
+    var ExternalTableDefinition: js.UndefOr[String]
+    var ExtraConnectionAttributes: js.UndefOr[String]
+    var KinesisSettings: js.UndefOr[KinesisSettings]
+    var KmsKeyId: js.UndefOr[String]
+    var MongoDbSettings: js.UndefOr[MongoDbSettings]
+    var Port: js.UndefOr[IntegerOptional]
+    var S3Settings: js.UndefOr[S3Settings]
+    var ServerName: js.UndefOr[String]
+    var ServiceAccessRoleArn: js.UndefOr[String]
     var SslMode: js.UndefOr[DmsSslModeValue]
     var Status: js.UndefOr[String]
+    var Username: js.UndefOr[String]
   }
 
   object Endpoint {
     def apply(
-      MongoDbSettings: js.UndefOr[MongoDbSettings] = js.undefined,
-      Username: js.UndefOr[String] = js.undefined,
-      ExternalId: js.UndefOr[String] = js.undefined,
-      ExtraConnectionAttributes: js.UndefOr[String] = js.undefined,
-      DatabaseName: js.UndefOr[String] = js.undefined,
-      DynamoDbSettings: js.UndefOr[DynamoDbSettings] = js.undefined,
-      S3Settings: js.UndefOr[S3Settings] = js.undefined,
-      ElasticsearchSettings: js.UndefOr[ElasticsearchSettings] = js.undefined,
-      EndpointIdentifier: js.UndefOr[String] = js.undefined,
-      KmsKeyId: js.UndefOr[String] = js.undefined,
-      KinesisSettings: js.UndefOr[KinesisSettings] = js.undefined,
       CertificateArn: js.UndefOr[String] = js.undefined,
-      ServerName: js.UndefOr[String] = js.undefined,
-      EndpointArn: js.UndefOr[String] = js.undefined,
-      EngineName: js.UndefOr[String] = js.undefined,
-      ExternalTableDefinition: js.UndefOr[String] = js.undefined,
-      EndpointType: js.UndefOr[ReplicationEndpointTypeValue] = js.undefined,
-      Port: js.UndefOr[IntegerOptional] = js.undefined,
-      ServiceAccessRoleArn: js.UndefOr[String] = js.undefined,
-      EngineDisplayName: js.UndefOr[String] = js.undefined,
+      DatabaseName: js.UndefOr[String] = js.undefined,
       DmsTransferSettings: js.UndefOr[DmsTransferSettings] = js.undefined,
+      DynamoDbSettings: js.UndefOr[DynamoDbSettings] = js.undefined,
+      ElasticsearchSettings: js.UndefOr[ElasticsearchSettings] = js.undefined,
+      EndpointArn: js.UndefOr[String] = js.undefined,
+      EndpointIdentifier: js.UndefOr[String] = js.undefined,
+      EndpointType: js.UndefOr[ReplicationEndpointTypeValue] = js.undefined,
+      EngineDisplayName: js.UndefOr[String] = js.undefined,
+      EngineName: js.UndefOr[String] = js.undefined,
+      ExternalId: js.UndefOr[String] = js.undefined,
+      ExternalTableDefinition: js.UndefOr[String] = js.undefined,
+      ExtraConnectionAttributes: js.UndefOr[String] = js.undefined,
+      KinesisSettings: js.UndefOr[KinesisSettings] = js.undefined,
+      KmsKeyId: js.UndefOr[String] = js.undefined,
+      MongoDbSettings: js.UndefOr[MongoDbSettings] = js.undefined,
+      Port: js.UndefOr[IntegerOptional] = js.undefined,
+      S3Settings: js.UndefOr[S3Settings] = js.undefined,
+      ServerName: js.UndefOr[String] = js.undefined,
+      ServiceAccessRoleArn: js.UndefOr[String] = js.undefined,
       SslMode: js.UndefOr[DmsSslModeValue] = js.undefined,
-      Status: js.UndefOr[String] = js.undefined): Endpoint = {
+      Status: js.UndefOr[String] = js.undefined,
+      Username: js.UndefOr[String] = js.undefined): Endpoint = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "MongoDbSettings" -> MongoDbSettings.map { x => x.asInstanceOf[js.Any] },
-        "Username" -> Username.map { x => x.asInstanceOf[js.Any] },
-        "ExternalId" -> ExternalId.map { x => x.asInstanceOf[js.Any] },
-        "ExtraConnectionAttributes" -> ExtraConnectionAttributes.map { x => x.asInstanceOf[js.Any] },
-        "DatabaseName" -> DatabaseName.map { x => x.asInstanceOf[js.Any] },
-        "DynamoDbSettings" -> DynamoDbSettings.map { x => x.asInstanceOf[js.Any] },
-        "S3Settings" -> S3Settings.map { x => x.asInstanceOf[js.Any] },
-        "ElasticsearchSettings" -> ElasticsearchSettings.map { x => x.asInstanceOf[js.Any] },
-        "EndpointIdentifier" -> EndpointIdentifier.map { x => x.asInstanceOf[js.Any] },
-        "KmsKeyId" -> KmsKeyId.map { x => x.asInstanceOf[js.Any] },
-        "KinesisSettings" -> KinesisSettings.map { x => x.asInstanceOf[js.Any] },
         "CertificateArn" -> CertificateArn.map { x => x.asInstanceOf[js.Any] },
-        "ServerName" -> ServerName.map { x => x.asInstanceOf[js.Any] },
-        "EndpointArn" -> EndpointArn.map { x => x.asInstanceOf[js.Any] },
-        "EngineName" -> EngineName.map { x => x.asInstanceOf[js.Any] },
-        "ExternalTableDefinition" -> ExternalTableDefinition.map { x => x.asInstanceOf[js.Any] },
-        "EndpointType" -> EndpointType.map { x => x.asInstanceOf[js.Any] },
-        "Port" -> Port.map { x => x.asInstanceOf[js.Any] },
-        "ServiceAccessRoleArn" -> ServiceAccessRoleArn.map { x => x.asInstanceOf[js.Any] },
-        "EngineDisplayName" -> EngineDisplayName.map { x => x.asInstanceOf[js.Any] },
+        "DatabaseName" -> DatabaseName.map { x => x.asInstanceOf[js.Any] },
         "DmsTransferSettings" -> DmsTransferSettings.map { x => x.asInstanceOf[js.Any] },
+        "DynamoDbSettings" -> DynamoDbSettings.map { x => x.asInstanceOf[js.Any] },
+        "ElasticsearchSettings" -> ElasticsearchSettings.map { x => x.asInstanceOf[js.Any] },
+        "EndpointArn" -> EndpointArn.map { x => x.asInstanceOf[js.Any] },
+        "EndpointIdentifier" -> EndpointIdentifier.map { x => x.asInstanceOf[js.Any] },
+        "EndpointType" -> EndpointType.map { x => x.asInstanceOf[js.Any] },
+        "EngineDisplayName" -> EngineDisplayName.map { x => x.asInstanceOf[js.Any] },
+        "EngineName" -> EngineName.map { x => x.asInstanceOf[js.Any] },
+        "ExternalId" -> ExternalId.map { x => x.asInstanceOf[js.Any] },
+        "ExternalTableDefinition" -> ExternalTableDefinition.map { x => x.asInstanceOf[js.Any] },
+        "ExtraConnectionAttributes" -> ExtraConnectionAttributes.map { x => x.asInstanceOf[js.Any] },
+        "KinesisSettings" -> KinesisSettings.map { x => x.asInstanceOf[js.Any] },
+        "KmsKeyId" -> KmsKeyId.map { x => x.asInstanceOf[js.Any] },
+        "MongoDbSettings" -> MongoDbSettings.map { x => x.asInstanceOf[js.Any] },
+        "Port" -> Port.map { x => x.asInstanceOf[js.Any] },
+        "S3Settings" -> S3Settings.map { x => x.asInstanceOf[js.Any] },
+        "ServerName" -> ServerName.map { x => x.asInstanceOf[js.Any] },
+        "ServiceAccessRoleArn" -> ServiceAccessRoleArn.map { x => x.asInstanceOf[js.Any] },
         "SslMode" -> SslMode.map { x => x.asInstanceOf[js.Any] },
-        "Status" -> Status.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Status" -> Status.map { x => x.asInstanceOf[js.Any] },
+        "Username" -> Username.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Endpoint]
     }
@@ -1749,26 +1749,26 @@ package dms {
    */
   @js.native
   trait Event extends js.Object {
-    var SourceIdentifier: js.UndefOr[String]
+    var Date: js.UndefOr[TStamp]
     var EventCategories: js.UndefOr[EventCategoriesList]
     var Message: js.UndefOr[String]
+    var SourceIdentifier: js.UndefOr[String]
     var SourceType: js.UndefOr[SourceType]
-    var Date: js.UndefOr[TStamp]
   }
 
   object Event {
     def apply(
-      SourceIdentifier: js.UndefOr[String] = js.undefined,
+      Date: js.UndefOr[TStamp] = js.undefined,
       EventCategories: js.UndefOr[EventCategoriesList] = js.undefined,
       Message: js.UndefOr[String] = js.undefined,
-      SourceType: js.UndefOr[SourceType] = js.undefined,
-      Date: js.UndefOr[TStamp] = js.undefined): Event = {
+      SourceIdentifier: js.UndefOr[String] = js.undefined,
+      SourceType: js.UndefOr[SourceType] = js.undefined): Event = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "SourceIdentifier" -> SourceIdentifier.map { x => x.asInstanceOf[js.Any] },
+        "Date" -> Date.map { x => x.asInstanceOf[js.Any] },
         "EventCategories" -> EventCategories.map { x => x.asInstanceOf[js.Any] },
         "Message" -> Message.map { x => x.asInstanceOf[js.Any] },
-        "SourceType" -> SourceType.map { x => x.asInstanceOf[js.Any] },
-        "Date" -> Date.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "SourceIdentifier" -> SourceIdentifier.map { x => x.asInstanceOf[js.Any] },
+        "SourceType" -> SourceType.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Event]
     }
@@ -1779,17 +1779,17 @@ package dms {
    */
   @js.native
   trait EventCategoryGroup extends js.Object {
-    var SourceType: js.UndefOr[String]
     var EventCategories: js.UndefOr[EventCategoriesList]
+    var SourceType: js.UndefOr[String]
   }
 
   object EventCategoryGroup {
     def apply(
-      SourceType: js.UndefOr[String] = js.undefined,
-      EventCategories: js.UndefOr[EventCategoriesList] = js.undefined): EventCategoryGroup = {
+      EventCategories: js.UndefOr[EventCategoriesList] = js.undefined,
+      SourceType: js.UndefOr[String] = js.undefined): EventCategoryGroup = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "SourceType" -> SourceType.map { x => x.asInstanceOf[js.Any] },
-        "EventCategories" -> EventCategories.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "EventCategories" -> EventCategories.map { x => x.asInstanceOf[js.Any] },
+        "SourceType" -> SourceType.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EventCategoryGroup]
     }
@@ -1800,38 +1800,38 @@ package dms {
    */
   @js.native
   trait EventSubscription extends js.Object {
+    var CustSubscriptionId: js.UndefOr[String]
     var CustomerAwsId: js.UndefOr[String]
     var Enabled: js.UndefOr[Boolean]
-    var CustSubscriptionId: js.UndefOr[String]
-    var SnsTopicArn: js.UndefOr[String]
-    var SourceType: js.UndefOr[String]
     var EventCategoriesList: js.UndefOr[EventCategoriesList]
+    var SnsTopicArn: js.UndefOr[String]
     var SourceIdsList: js.UndefOr[SourceIdsList]
-    var SubscriptionCreationTime: js.UndefOr[String]
+    var SourceType: js.UndefOr[String]
     var Status: js.UndefOr[String]
+    var SubscriptionCreationTime: js.UndefOr[String]
   }
 
   object EventSubscription {
     def apply(
+      CustSubscriptionId: js.UndefOr[String] = js.undefined,
       CustomerAwsId: js.UndefOr[String] = js.undefined,
       Enabled: js.UndefOr[Boolean] = js.undefined,
-      CustSubscriptionId: js.UndefOr[String] = js.undefined,
-      SnsTopicArn: js.UndefOr[String] = js.undefined,
-      SourceType: js.UndefOr[String] = js.undefined,
       EventCategoriesList: js.UndefOr[EventCategoriesList] = js.undefined,
+      SnsTopicArn: js.UndefOr[String] = js.undefined,
       SourceIdsList: js.UndefOr[SourceIdsList] = js.undefined,
-      SubscriptionCreationTime: js.UndefOr[String] = js.undefined,
-      Status: js.UndefOr[String] = js.undefined): EventSubscription = {
+      SourceType: js.UndefOr[String] = js.undefined,
+      Status: js.UndefOr[String] = js.undefined,
+      SubscriptionCreationTime: js.UndefOr[String] = js.undefined): EventSubscription = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "CustSubscriptionId" -> CustSubscriptionId.map { x => x.asInstanceOf[js.Any] },
         "CustomerAwsId" -> CustomerAwsId.map { x => x.asInstanceOf[js.Any] },
         "Enabled" -> Enabled.map { x => x.asInstanceOf[js.Any] },
-        "CustSubscriptionId" -> CustSubscriptionId.map { x => x.asInstanceOf[js.Any] },
-        "SnsTopicArn" -> SnsTopicArn.map { x => x.asInstanceOf[js.Any] },
-        "SourceType" -> SourceType.map { x => x.asInstanceOf[js.Any] },
         "EventCategoriesList" -> EventCategoriesList.map { x => x.asInstanceOf[js.Any] },
+        "SnsTopicArn" -> SnsTopicArn.map { x => x.asInstanceOf[js.Any] },
         "SourceIdsList" -> SourceIdsList.map { x => x.asInstanceOf[js.Any] },
-        "SubscriptionCreationTime" -> SubscriptionCreationTime.map { x => x.asInstanceOf[js.Any] },
-        "Status" -> Status.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "SourceType" -> SourceType.map { x => x.asInstanceOf[js.Any] },
+        "Status" -> Status.map { x => x.asInstanceOf[js.Any] },
+        "SubscriptionCreationTime" -> SubscriptionCreationTime.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EventSubscription]
     }
@@ -1842,17 +1842,17 @@ package dms {
    */
   @js.native
   trait Filter extends js.Object {
-    var Name: js.UndefOr[String]
-    var Values: js.UndefOr[FilterValueList]
+    var Name: String
+    var Values: FilterValueList
   }
 
   object Filter {
     def apply(
-      Name: js.UndefOr[String] = js.undefined,
-      Values: js.UndefOr[FilterValueList] = js.undefined): Filter = {
+      Name: String,
+      Values: FilterValueList): Filter = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
-        "Values" -> Values.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Name" -> Name.asInstanceOf[js.Any],
+        "Values" -> Values.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Filter]
     }
@@ -1860,7 +1860,7 @@ package dms {
 
   @js.native
   trait ImportCertificateMessage extends js.Object {
-    var CertificateIdentifier: js.UndefOr[String]
+    var CertificateIdentifier: String
     var CertificatePem: js.UndefOr[String]
     var CertificateWallet: js.UndefOr[CertificateWallet]
     var Tags: js.UndefOr[TagList]
@@ -1868,12 +1868,12 @@ package dms {
 
   object ImportCertificateMessage {
     def apply(
-      CertificateIdentifier: js.UndefOr[String] = js.undefined,
+      CertificateIdentifier: String,
       CertificatePem: js.UndefOr[String] = js.undefined,
       CertificateWallet: js.UndefOr[CertificateWallet] = js.undefined,
       Tags: js.UndefOr[TagList] = js.undefined): ImportCertificateMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "CertificateIdentifier" -> CertificateIdentifier.map { x => x.asInstanceOf[js.Any] },
+        "CertificateIdentifier" -> CertificateIdentifier.asInstanceOf[js.Any],
         "CertificatePem" -> CertificatePem.map { x => x.asInstanceOf[js.Any] },
         "CertificateWallet" -> CertificateWallet.map { x => x.asInstanceOf[js.Any] },
         "Tags" -> Tags.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
@@ -1902,20 +1902,20 @@ package dms {
    */
   @js.native
   trait KinesisSettings extends js.Object {
-    var StreamArn: js.UndefOr[String]
     var MessageFormat: js.UndefOr[MessageFormatValue]
     var ServiceAccessRoleArn: js.UndefOr[String]
+    var StreamArn: js.UndefOr[String]
   }
 
   object KinesisSettings {
     def apply(
-      StreamArn: js.UndefOr[String] = js.undefined,
       MessageFormat: js.UndefOr[MessageFormatValue] = js.undefined,
-      ServiceAccessRoleArn: js.UndefOr[String] = js.undefined): KinesisSettings = {
+      ServiceAccessRoleArn: js.UndefOr[String] = js.undefined,
+      StreamArn: js.UndefOr[String] = js.undefined): KinesisSettings = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "StreamArn" -> StreamArn.map { x => x.asInstanceOf[js.Any] },
         "MessageFormat" -> MessageFormat.map { x => x.asInstanceOf[js.Any] },
-        "ServiceAccessRoleArn" -> ServiceAccessRoleArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ServiceAccessRoleArn" -> ServiceAccessRoleArn.map { x => x.asInstanceOf[js.Any] },
+        "StreamArn" -> StreamArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[KinesisSettings]
     }
@@ -1926,14 +1926,14 @@ package dms {
    */
   @js.native
   trait ListTagsForResourceMessage extends js.Object {
-    var ResourceArn: js.UndefOr[String]
+    var ResourceArn: String
   }
 
   object ListTagsForResourceMessage {
     def apply(
-      ResourceArn: js.UndefOr[String] = js.undefined): ListTagsForResourceMessage = {
+      ResourceArn: String): ListTagsForResourceMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ResourceArn" -> ResourceArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListTagsForResourceMessage]
     }
@@ -1976,71 +1976,71 @@ package dms {
    */
   @js.native
   trait ModifyEndpointMessage extends js.Object {
-    var MongoDbSettings: js.UndefOr[MongoDbSettings]
-    var Username: js.UndefOr[String]
-    var ExtraConnectionAttributes: js.UndefOr[String]
+    var EndpointArn: String
+    var CertificateArn: js.UndefOr[String]
     var DatabaseName: js.UndefOr[String]
+    var DmsTransferSettings: js.UndefOr[DmsTransferSettings]
     var DynamoDbSettings: js.UndefOr[DynamoDbSettings]
-    var S3Settings: js.UndefOr[S3Settings]
     var ElasticsearchSettings: js.UndefOr[ElasticsearchSettings]
     var EndpointIdentifier: js.UndefOr[String]
-    var KinesisSettings: js.UndefOr[KinesisSettings]
-    var CertificateArn: js.UndefOr[String]
-    var ServerName: js.UndefOr[String]
-    var Password: js.UndefOr[SecretString]
-    var EndpointArn: js.UndefOr[String]
+    var EndpointType: js.UndefOr[ReplicationEndpointTypeValue]
     var EngineName: js.UndefOr[String]
     var ExternalTableDefinition: js.UndefOr[String]
-    var EndpointType: js.UndefOr[ReplicationEndpointTypeValue]
+    var ExtraConnectionAttributes: js.UndefOr[String]
+    var KinesisSettings: js.UndefOr[KinesisSettings]
+    var MongoDbSettings: js.UndefOr[MongoDbSettings]
+    var Password: js.UndefOr[SecretString]
     var Port: js.UndefOr[IntegerOptional]
+    var S3Settings: js.UndefOr[S3Settings]
+    var ServerName: js.UndefOr[String]
     var ServiceAccessRoleArn: js.UndefOr[String]
-    var DmsTransferSettings: js.UndefOr[DmsTransferSettings]
     var SslMode: js.UndefOr[DmsSslModeValue]
+    var Username: js.UndefOr[String]
   }
 
   object ModifyEndpointMessage {
     def apply(
-      MongoDbSettings: js.UndefOr[MongoDbSettings] = js.undefined,
-      Username: js.UndefOr[String] = js.undefined,
-      ExtraConnectionAttributes: js.UndefOr[String] = js.undefined,
+      EndpointArn: String,
+      CertificateArn: js.UndefOr[String] = js.undefined,
       DatabaseName: js.UndefOr[String] = js.undefined,
+      DmsTransferSettings: js.UndefOr[DmsTransferSettings] = js.undefined,
       DynamoDbSettings: js.UndefOr[DynamoDbSettings] = js.undefined,
-      S3Settings: js.UndefOr[S3Settings] = js.undefined,
       ElasticsearchSettings: js.UndefOr[ElasticsearchSettings] = js.undefined,
       EndpointIdentifier: js.UndefOr[String] = js.undefined,
-      KinesisSettings: js.UndefOr[KinesisSettings] = js.undefined,
-      CertificateArn: js.UndefOr[String] = js.undefined,
-      ServerName: js.UndefOr[String] = js.undefined,
-      Password: js.UndefOr[SecretString] = js.undefined,
-      EndpointArn: js.UndefOr[String] = js.undefined,
+      EndpointType: js.UndefOr[ReplicationEndpointTypeValue] = js.undefined,
       EngineName: js.UndefOr[String] = js.undefined,
       ExternalTableDefinition: js.UndefOr[String] = js.undefined,
-      EndpointType: js.UndefOr[ReplicationEndpointTypeValue] = js.undefined,
+      ExtraConnectionAttributes: js.UndefOr[String] = js.undefined,
+      KinesisSettings: js.UndefOr[KinesisSettings] = js.undefined,
+      MongoDbSettings: js.UndefOr[MongoDbSettings] = js.undefined,
+      Password: js.UndefOr[SecretString] = js.undefined,
       Port: js.UndefOr[IntegerOptional] = js.undefined,
+      S3Settings: js.UndefOr[S3Settings] = js.undefined,
+      ServerName: js.UndefOr[String] = js.undefined,
       ServiceAccessRoleArn: js.UndefOr[String] = js.undefined,
-      DmsTransferSettings: js.UndefOr[DmsTransferSettings] = js.undefined,
-      SslMode: js.UndefOr[DmsSslModeValue] = js.undefined): ModifyEndpointMessage = {
+      SslMode: js.UndefOr[DmsSslModeValue] = js.undefined,
+      Username: js.UndefOr[String] = js.undefined): ModifyEndpointMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "MongoDbSettings" -> MongoDbSettings.map { x => x.asInstanceOf[js.Any] },
-        "Username" -> Username.map { x => x.asInstanceOf[js.Any] },
-        "ExtraConnectionAttributes" -> ExtraConnectionAttributes.map { x => x.asInstanceOf[js.Any] },
+        "EndpointArn" -> EndpointArn.asInstanceOf[js.Any],
+        "CertificateArn" -> CertificateArn.map { x => x.asInstanceOf[js.Any] },
         "DatabaseName" -> DatabaseName.map { x => x.asInstanceOf[js.Any] },
+        "DmsTransferSettings" -> DmsTransferSettings.map { x => x.asInstanceOf[js.Any] },
         "DynamoDbSettings" -> DynamoDbSettings.map { x => x.asInstanceOf[js.Any] },
-        "S3Settings" -> S3Settings.map { x => x.asInstanceOf[js.Any] },
         "ElasticsearchSettings" -> ElasticsearchSettings.map { x => x.asInstanceOf[js.Any] },
         "EndpointIdentifier" -> EndpointIdentifier.map { x => x.asInstanceOf[js.Any] },
-        "KinesisSettings" -> KinesisSettings.map { x => x.asInstanceOf[js.Any] },
-        "CertificateArn" -> CertificateArn.map { x => x.asInstanceOf[js.Any] },
-        "ServerName" -> ServerName.map { x => x.asInstanceOf[js.Any] },
-        "Password" -> Password.map { x => x.asInstanceOf[js.Any] },
-        "EndpointArn" -> EndpointArn.map { x => x.asInstanceOf[js.Any] },
+        "EndpointType" -> EndpointType.map { x => x.asInstanceOf[js.Any] },
         "EngineName" -> EngineName.map { x => x.asInstanceOf[js.Any] },
         "ExternalTableDefinition" -> ExternalTableDefinition.map { x => x.asInstanceOf[js.Any] },
-        "EndpointType" -> EndpointType.map { x => x.asInstanceOf[js.Any] },
+        "ExtraConnectionAttributes" -> ExtraConnectionAttributes.map { x => x.asInstanceOf[js.Any] },
+        "KinesisSettings" -> KinesisSettings.map { x => x.asInstanceOf[js.Any] },
+        "MongoDbSettings" -> MongoDbSettings.map { x => x.asInstanceOf[js.Any] },
+        "Password" -> Password.map { x => x.asInstanceOf[js.Any] },
         "Port" -> Port.map { x => x.asInstanceOf[js.Any] },
+        "S3Settings" -> S3Settings.map { x => x.asInstanceOf[js.Any] },
+        "ServerName" -> ServerName.map { x => x.asInstanceOf[js.Any] },
         "ServiceAccessRoleArn" -> ServiceAccessRoleArn.map { x => x.asInstanceOf[js.Any] },
-        "DmsTransferSettings" -> DmsTransferSettings.map { x => x.asInstanceOf[js.Any] },
-        "SslMode" -> SslMode.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "SslMode" -> SslMode.map { x => x.asInstanceOf[js.Any] },
+        "Username" -> Username.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ModifyEndpointMessage]
     }
@@ -2069,25 +2069,25 @@ package dms {
    */
   @js.native
   trait ModifyEventSubscriptionMessage extends js.Object {
+    var SubscriptionName: String
     var Enabled: js.UndefOr[BooleanOptional]
-    var SubscriptionName: js.UndefOr[String]
-    var SnsTopicArn: js.UndefOr[String]
     var EventCategories: js.UndefOr[EventCategoriesList]
+    var SnsTopicArn: js.UndefOr[String]
     var SourceType: js.UndefOr[String]
   }
 
   object ModifyEventSubscriptionMessage {
     def apply(
+      SubscriptionName: String,
       Enabled: js.UndefOr[BooleanOptional] = js.undefined,
-      SubscriptionName: js.UndefOr[String] = js.undefined,
-      SnsTopicArn: js.UndefOr[String] = js.undefined,
       EventCategories: js.UndefOr[EventCategoriesList] = js.undefined,
+      SnsTopicArn: js.UndefOr[String] = js.undefined,
       SourceType: js.UndefOr[String] = js.undefined): ModifyEventSubscriptionMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "SubscriptionName" -> SubscriptionName.asInstanceOf[js.Any],
         "Enabled" -> Enabled.map { x => x.asInstanceOf[js.Any] },
-        "SubscriptionName" -> SubscriptionName.map { x => x.asInstanceOf[js.Any] },
-        "SnsTopicArn" -> SnsTopicArn.map { x => x.asInstanceOf[js.Any] },
         "EventCategories" -> EventCategories.map { x => x.asInstanceOf[js.Any] },
+        "SnsTopicArn" -> SnsTopicArn.map { x => x.asInstanceOf[js.Any] },
         "SourceType" -> SourceType.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ModifyEventSubscriptionMessage]
@@ -2117,44 +2117,44 @@ package dms {
    */
   @js.native
   trait ModifyReplicationInstanceMessage extends js.Object {
-    var PreferredMaintenanceWindow: js.UndefOr[String]
-    var AllowMajorVersionUpgrade: js.UndefOr[Boolean]
-    var MultiAZ: js.UndefOr[BooleanOptional]
+    var ReplicationInstanceArn: String
     var AllocatedStorage: js.UndefOr[IntegerOptional]
-    var ReplicationInstanceIdentifier: js.UndefOr[String]
-    var AutoMinorVersionUpgrade: js.UndefOr[BooleanOptional]
-    var VpcSecurityGroupIds: js.UndefOr[VpcSecurityGroupIdList]
-    var EngineVersion: js.UndefOr[String]
+    var AllowMajorVersionUpgrade: js.UndefOr[Boolean]
     var ApplyImmediately: js.UndefOr[Boolean]
-    var ReplicationInstanceArn: js.UndefOr[String]
+    var AutoMinorVersionUpgrade: js.UndefOr[BooleanOptional]
+    var EngineVersion: js.UndefOr[String]
+    var MultiAZ: js.UndefOr[BooleanOptional]
+    var PreferredMaintenanceWindow: js.UndefOr[String]
     var ReplicationInstanceClass: js.UndefOr[String]
+    var ReplicationInstanceIdentifier: js.UndefOr[String]
+    var VpcSecurityGroupIds: js.UndefOr[VpcSecurityGroupIdList]
   }
 
   object ModifyReplicationInstanceMessage {
     def apply(
-      PreferredMaintenanceWindow: js.UndefOr[String] = js.undefined,
-      AllowMajorVersionUpgrade: js.UndefOr[Boolean] = js.undefined,
-      MultiAZ: js.UndefOr[BooleanOptional] = js.undefined,
+      ReplicationInstanceArn: String,
       AllocatedStorage: js.UndefOr[IntegerOptional] = js.undefined,
-      ReplicationInstanceIdentifier: js.UndefOr[String] = js.undefined,
-      AutoMinorVersionUpgrade: js.UndefOr[BooleanOptional] = js.undefined,
-      VpcSecurityGroupIds: js.UndefOr[VpcSecurityGroupIdList] = js.undefined,
-      EngineVersion: js.UndefOr[String] = js.undefined,
+      AllowMajorVersionUpgrade: js.UndefOr[Boolean] = js.undefined,
       ApplyImmediately: js.UndefOr[Boolean] = js.undefined,
-      ReplicationInstanceArn: js.UndefOr[String] = js.undefined,
-      ReplicationInstanceClass: js.UndefOr[String] = js.undefined): ModifyReplicationInstanceMessage = {
+      AutoMinorVersionUpgrade: js.UndefOr[BooleanOptional] = js.undefined,
+      EngineVersion: js.UndefOr[String] = js.undefined,
+      MultiAZ: js.UndefOr[BooleanOptional] = js.undefined,
+      PreferredMaintenanceWindow: js.UndefOr[String] = js.undefined,
+      ReplicationInstanceClass: js.UndefOr[String] = js.undefined,
+      ReplicationInstanceIdentifier: js.UndefOr[String] = js.undefined,
+      VpcSecurityGroupIds: js.UndefOr[VpcSecurityGroupIdList] = js.undefined): ModifyReplicationInstanceMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "PreferredMaintenanceWindow" -> PreferredMaintenanceWindow.map { x => x.asInstanceOf[js.Any] },
-        "AllowMajorVersionUpgrade" -> AllowMajorVersionUpgrade.map { x => x.asInstanceOf[js.Any] },
-        "MultiAZ" -> MultiAZ.map { x => x.asInstanceOf[js.Any] },
+        "ReplicationInstanceArn" -> ReplicationInstanceArn.asInstanceOf[js.Any],
         "AllocatedStorage" -> AllocatedStorage.map { x => x.asInstanceOf[js.Any] },
-        "ReplicationInstanceIdentifier" -> ReplicationInstanceIdentifier.map { x => x.asInstanceOf[js.Any] },
-        "AutoMinorVersionUpgrade" -> AutoMinorVersionUpgrade.map { x => x.asInstanceOf[js.Any] },
-        "VpcSecurityGroupIds" -> VpcSecurityGroupIds.map { x => x.asInstanceOf[js.Any] },
-        "EngineVersion" -> EngineVersion.map { x => x.asInstanceOf[js.Any] },
+        "AllowMajorVersionUpgrade" -> AllowMajorVersionUpgrade.map { x => x.asInstanceOf[js.Any] },
         "ApplyImmediately" -> ApplyImmediately.map { x => x.asInstanceOf[js.Any] },
-        "ReplicationInstanceArn" -> ReplicationInstanceArn.map { x => x.asInstanceOf[js.Any] },
-        "ReplicationInstanceClass" -> ReplicationInstanceClass.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "AutoMinorVersionUpgrade" -> AutoMinorVersionUpgrade.map { x => x.asInstanceOf[js.Any] },
+        "EngineVersion" -> EngineVersion.map { x => x.asInstanceOf[js.Any] },
+        "MultiAZ" -> MultiAZ.map { x => x.asInstanceOf[js.Any] },
+        "PreferredMaintenanceWindow" -> PreferredMaintenanceWindow.map { x => x.asInstanceOf[js.Any] },
+        "ReplicationInstanceClass" -> ReplicationInstanceClass.map { x => x.asInstanceOf[js.Any] },
+        "ReplicationInstanceIdentifier" -> ReplicationInstanceIdentifier.map { x => x.asInstanceOf[js.Any] },
+        "VpcSecurityGroupIds" -> VpcSecurityGroupIds.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ModifyReplicationInstanceMessage]
     }
@@ -2183,20 +2183,20 @@ package dms {
    */
   @js.native
   trait ModifyReplicationSubnetGroupMessage extends js.Object {
-    var ReplicationSubnetGroupIdentifier: js.UndefOr[String]
+    var ReplicationSubnetGroupIdentifier: String
+    var SubnetIds: SubnetIdentifierList
     var ReplicationSubnetGroupDescription: js.UndefOr[String]
-    var SubnetIds: js.UndefOr[SubnetIdentifierList]
   }
 
   object ModifyReplicationSubnetGroupMessage {
     def apply(
-      ReplicationSubnetGroupIdentifier: js.UndefOr[String] = js.undefined,
-      ReplicationSubnetGroupDescription: js.UndefOr[String] = js.undefined,
-      SubnetIds: js.UndefOr[SubnetIdentifierList] = js.undefined): ModifyReplicationSubnetGroupMessage = {
+      ReplicationSubnetGroupIdentifier: String,
+      SubnetIds: SubnetIdentifierList,
+      ReplicationSubnetGroupDescription: js.UndefOr[String] = js.undefined): ModifyReplicationSubnetGroupMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ReplicationSubnetGroupIdentifier" -> ReplicationSubnetGroupIdentifier.map { x => x.asInstanceOf[js.Any] },
-        "ReplicationSubnetGroupDescription" -> ReplicationSubnetGroupDescription.map { x => x.asInstanceOf[js.Any] },
-        "SubnetIds" -> SubnetIds.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ReplicationSubnetGroupIdentifier" -> ReplicationSubnetGroupIdentifier.asInstanceOf[js.Any],
+        "SubnetIds" -> SubnetIds.asInstanceOf[js.Any],
+        "ReplicationSubnetGroupDescription" -> ReplicationSubnetGroupDescription.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ModifyReplicationSubnetGroupMessage]
     }
@@ -2225,35 +2225,35 @@ package dms {
    */
   @js.native
   trait ModifyReplicationTaskMessage extends js.Object {
-    var ReplicationTaskSettings: js.UndefOr[String]
+    var ReplicationTaskArn: String
+    var CdcStartPosition: js.UndefOr[String]
+    var CdcStartTime: js.UndefOr[TStamp]
     var CdcStopPosition: js.UndefOr[String]
     var MigrationType: js.UndefOr[MigrationTypeValue]
     var ReplicationTaskIdentifier: js.UndefOr[String]
-    var CdcStartPosition: js.UndefOr[String]
+    var ReplicationTaskSettings: js.UndefOr[String]
     var TableMappings: js.UndefOr[String]
-    var ReplicationTaskArn: js.UndefOr[String]
-    var CdcStartTime: js.UndefOr[TStamp]
   }
 
   object ModifyReplicationTaskMessage {
     def apply(
-      ReplicationTaskSettings: js.UndefOr[String] = js.undefined,
+      ReplicationTaskArn: String,
+      CdcStartPosition: js.UndefOr[String] = js.undefined,
+      CdcStartTime: js.UndefOr[TStamp] = js.undefined,
       CdcStopPosition: js.UndefOr[String] = js.undefined,
       MigrationType: js.UndefOr[MigrationTypeValue] = js.undefined,
       ReplicationTaskIdentifier: js.UndefOr[String] = js.undefined,
-      CdcStartPosition: js.UndefOr[String] = js.undefined,
-      TableMappings: js.UndefOr[String] = js.undefined,
-      ReplicationTaskArn: js.UndefOr[String] = js.undefined,
-      CdcStartTime: js.UndefOr[TStamp] = js.undefined): ModifyReplicationTaskMessage = {
+      ReplicationTaskSettings: js.UndefOr[String] = js.undefined,
+      TableMappings: js.UndefOr[String] = js.undefined): ModifyReplicationTaskMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ReplicationTaskSettings" -> ReplicationTaskSettings.map { x => x.asInstanceOf[js.Any] },
+        "ReplicationTaskArn" -> ReplicationTaskArn.asInstanceOf[js.Any],
+        "CdcStartPosition" -> CdcStartPosition.map { x => x.asInstanceOf[js.Any] },
+        "CdcStartTime" -> CdcStartTime.map { x => x.asInstanceOf[js.Any] },
         "CdcStopPosition" -> CdcStopPosition.map { x => x.asInstanceOf[js.Any] },
         "MigrationType" -> MigrationType.map { x => x.asInstanceOf[js.Any] },
         "ReplicationTaskIdentifier" -> ReplicationTaskIdentifier.map { x => x.asInstanceOf[js.Any] },
-        "CdcStartPosition" -> CdcStartPosition.map { x => x.asInstanceOf[js.Any] },
-        "TableMappings" -> TableMappings.map { x => x.asInstanceOf[js.Any] },
-        "ReplicationTaskArn" -> ReplicationTaskArn.map { x => x.asInstanceOf[js.Any] },
-        "CdcStartTime" -> CdcStartTime.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ReplicationTaskSettings" -> ReplicationTaskSettings.map { x => x.asInstanceOf[js.Any] },
+        "TableMappings" -> TableMappings.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ModifyReplicationTaskMessage]
     }
@@ -2282,47 +2282,47 @@ package dms {
    */
   @js.native
   trait MongoDbSettings extends js.Object {
-    var Username: js.UndefOr[String]
+    var AuthMechanism: js.UndefOr[AuthMechanismValue]
+    var AuthSource: js.UndefOr[String]
+    var AuthType: js.UndefOr[AuthTypeValue]
     var DatabaseName: js.UndefOr[String]
     var DocsToInvestigate: js.UndefOr[String]
-    var KmsKeyId: js.UndefOr[String]
-    var AuthType: js.UndefOr[AuthTypeValue]
-    var ServerName: js.UndefOr[String]
-    var Password: js.UndefOr[SecretString]
-    var NestingLevel: js.UndefOr[NestingLevelValue]
-    var AuthMechanism: js.UndefOr[AuthMechanismValue]
-    var Port: js.UndefOr[IntegerOptional]
     var ExtractDocId: js.UndefOr[String]
-    var AuthSource: js.UndefOr[String]
+    var KmsKeyId: js.UndefOr[String]
+    var NestingLevel: js.UndefOr[NestingLevelValue]
+    var Password: js.UndefOr[SecretString]
+    var Port: js.UndefOr[IntegerOptional]
+    var ServerName: js.UndefOr[String]
+    var Username: js.UndefOr[String]
   }
 
   object MongoDbSettings {
     def apply(
-      Username: js.UndefOr[String] = js.undefined,
+      AuthMechanism: js.UndefOr[AuthMechanismValue] = js.undefined,
+      AuthSource: js.UndefOr[String] = js.undefined,
+      AuthType: js.UndefOr[AuthTypeValue] = js.undefined,
       DatabaseName: js.UndefOr[String] = js.undefined,
       DocsToInvestigate: js.UndefOr[String] = js.undefined,
-      KmsKeyId: js.UndefOr[String] = js.undefined,
-      AuthType: js.UndefOr[AuthTypeValue] = js.undefined,
-      ServerName: js.UndefOr[String] = js.undefined,
-      Password: js.UndefOr[SecretString] = js.undefined,
-      NestingLevel: js.UndefOr[NestingLevelValue] = js.undefined,
-      AuthMechanism: js.UndefOr[AuthMechanismValue] = js.undefined,
-      Port: js.UndefOr[IntegerOptional] = js.undefined,
       ExtractDocId: js.UndefOr[String] = js.undefined,
-      AuthSource: js.UndefOr[String] = js.undefined): MongoDbSettings = {
+      KmsKeyId: js.UndefOr[String] = js.undefined,
+      NestingLevel: js.UndefOr[NestingLevelValue] = js.undefined,
+      Password: js.UndefOr[SecretString] = js.undefined,
+      Port: js.UndefOr[IntegerOptional] = js.undefined,
+      ServerName: js.UndefOr[String] = js.undefined,
+      Username: js.UndefOr[String] = js.undefined): MongoDbSettings = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Username" -> Username.map { x => x.asInstanceOf[js.Any] },
+        "AuthMechanism" -> AuthMechanism.map { x => x.asInstanceOf[js.Any] },
+        "AuthSource" -> AuthSource.map { x => x.asInstanceOf[js.Any] },
+        "AuthType" -> AuthType.map { x => x.asInstanceOf[js.Any] },
         "DatabaseName" -> DatabaseName.map { x => x.asInstanceOf[js.Any] },
         "DocsToInvestigate" -> DocsToInvestigate.map { x => x.asInstanceOf[js.Any] },
-        "KmsKeyId" -> KmsKeyId.map { x => x.asInstanceOf[js.Any] },
-        "AuthType" -> AuthType.map { x => x.asInstanceOf[js.Any] },
-        "ServerName" -> ServerName.map { x => x.asInstanceOf[js.Any] },
-        "Password" -> Password.map { x => x.asInstanceOf[js.Any] },
-        "NestingLevel" -> NestingLevel.map { x => x.asInstanceOf[js.Any] },
-        "AuthMechanism" -> AuthMechanism.map { x => x.asInstanceOf[js.Any] },
-        "Port" -> Port.map { x => x.asInstanceOf[js.Any] },
         "ExtractDocId" -> ExtractDocId.map { x => x.asInstanceOf[js.Any] },
-        "AuthSource" -> AuthSource.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "KmsKeyId" -> KmsKeyId.map { x => x.asInstanceOf[js.Any] },
+        "NestingLevel" -> NestingLevel.map { x => x.asInstanceOf[js.Any] },
+        "Password" -> Password.map { x => x.asInstanceOf[js.Any] },
+        "Port" -> Port.map { x => x.asInstanceOf[js.Any] },
+        "ServerName" -> ServerName.map { x => x.asInstanceOf[js.Any] },
+        "Username" -> Username.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[MongoDbSettings]
     }
@@ -2341,31 +2341,31 @@ package dms {
   @js.native
   trait OrderableReplicationInstance extends js.Object {
     var DefaultAllocatedStorage: js.UndefOr[Int]
-    var MinAllocatedStorage: js.UndefOr[Int]
     var EngineVersion: js.UndefOr[String]
     var IncludedAllocatedStorage: js.UndefOr[Int]
     var MaxAllocatedStorage: js.UndefOr[Int]
-    var StorageType: js.UndefOr[String]
+    var MinAllocatedStorage: js.UndefOr[Int]
     var ReplicationInstanceClass: js.UndefOr[String]
+    var StorageType: js.UndefOr[String]
   }
 
   object OrderableReplicationInstance {
     def apply(
       DefaultAllocatedStorage: js.UndefOr[Int] = js.undefined,
-      MinAllocatedStorage: js.UndefOr[Int] = js.undefined,
       EngineVersion: js.UndefOr[String] = js.undefined,
       IncludedAllocatedStorage: js.UndefOr[Int] = js.undefined,
       MaxAllocatedStorage: js.UndefOr[Int] = js.undefined,
-      StorageType: js.UndefOr[String] = js.undefined,
-      ReplicationInstanceClass: js.UndefOr[String] = js.undefined): OrderableReplicationInstance = {
+      MinAllocatedStorage: js.UndefOr[Int] = js.undefined,
+      ReplicationInstanceClass: js.UndefOr[String] = js.undefined,
+      StorageType: js.UndefOr[String] = js.undefined): OrderableReplicationInstance = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DefaultAllocatedStorage" -> DefaultAllocatedStorage.map { x => x.asInstanceOf[js.Any] },
-        "MinAllocatedStorage" -> MinAllocatedStorage.map { x => x.asInstanceOf[js.Any] },
         "EngineVersion" -> EngineVersion.map { x => x.asInstanceOf[js.Any] },
         "IncludedAllocatedStorage" -> IncludedAllocatedStorage.map { x => x.asInstanceOf[js.Any] },
         "MaxAllocatedStorage" -> MaxAllocatedStorage.map { x => x.asInstanceOf[js.Any] },
-        "StorageType" -> StorageType.map { x => x.asInstanceOf[js.Any] },
-        "ReplicationInstanceClass" -> ReplicationInstanceClass.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "MinAllocatedStorage" -> MinAllocatedStorage.map { x => x.asInstanceOf[js.Any] },
+        "ReplicationInstanceClass" -> ReplicationInstanceClass.map { x => x.asInstanceOf[js.Any] },
+        "StorageType" -> StorageType.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[OrderableReplicationInstance]
     }
@@ -2373,16 +2373,16 @@ package dms {
 
   @js.native
   trait RebootReplicationInstanceMessage extends js.Object {
-    var ReplicationInstanceArn: js.UndefOr[String]
+    var ReplicationInstanceArn: String
     var ForceFailover: js.UndefOr[BooleanOptional]
   }
 
   object RebootReplicationInstanceMessage {
     def apply(
-      ReplicationInstanceArn: js.UndefOr[String] = js.undefined,
+      ReplicationInstanceArn: String,
       ForceFailover: js.UndefOr[BooleanOptional] = js.undefined): RebootReplicationInstanceMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ReplicationInstanceArn" -> ReplicationInstanceArn.map { x => x.asInstanceOf[js.Any] },
+        "ReplicationInstanceArn" -> ReplicationInstanceArn.asInstanceOf[js.Any],
         "ForceFailover" -> ForceFailover.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RebootReplicationInstanceMessage]
@@ -2409,17 +2409,17 @@ package dms {
    */
   @js.native
   trait RefreshSchemasMessage extends js.Object {
-    var EndpointArn: js.UndefOr[String]
-    var ReplicationInstanceArn: js.UndefOr[String]
+    var EndpointArn: String
+    var ReplicationInstanceArn: String
   }
 
   object RefreshSchemasMessage {
     def apply(
-      EndpointArn: js.UndefOr[String] = js.undefined,
-      ReplicationInstanceArn: js.UndefOr[String] = js.undefined): RefreshSchemasMessage = {
+      EndpointArn: String,
+      ReplicationInstanceArn: String): RefreshSchemasMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "EndpointArn" -> EndpointArn.map { x => x.asInstanceOf[js.Any] },
-        "ReplicationInstanceArn" -> ReplicationInstanceArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "EndpointArn" -> EndpointArn.asInstanceOf[js.Any],
+        "ReplicationInstanceArn" -> ReplicationInstanceArn.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RefreshSchemasMessage]
     }
@@ -2448,25 +2448,25 @@ package dms {
    */
   @js.native
   trait RefreshSchemasStatus extends js.Object {
-    var LastFailureMessage: js.UndefOr[String]
     var EndpointArn: js.UndefOr[String]
-    var ReplicationInstanceArn: js.UndefOr[String]
+    var LastFailureMessage: js.UndefOr[String]
     var LastRefreshDate: js.UndefOr[TStamp]
+    var ReplicationInstanceArn: js.UndefOr[String]
     var Status: js.UndefOr[RefreshSchemasStatusTypeValue]
   }
 
   object RefreshSchemasStatus {
     def apply(
-      LastFailureMessage: js.UndefOr[String] = js.undefined,
       EndpointArn: js.UndefOr[String] = js.undefined,
-      ReplicationInstanceArn: js.UndefOr[String] = js.undefined,
+      LastFailureMessage: js.UndefOr[String] = js.undefined,
       LastRefreshDate: js.UndefOr[TStamp] = js.undefined,
+      ReplicationInstanceArn: js.UndefOr[String] = js.undefined,
       Status: js.UndefOr[RefreshSchemasStatusTypeValue] = js.undefined): RefreshSchemasStatus = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "LastFailureMessage" -> LastFailureMessage.map { x => x.asInstanceOf[js.Any] },
         "EndpointArn" -> EndpointArn.map { x => x.asInstanceOf[js.Any] },
-        "ReplicationInstanceArn" -> ReplicationInstanceArn.map { x => x.asInstanceOf[js.Any] },
+        "LastFailureMessage" -> LastFailureMessage.map { x => x.asInstanceOf[js.Any] },
         "LastRefreshDate" -> LastRefreshDate.map { x => x.asInstanceOf[js.Any] },
+        "ReplicationInstanceArn" -> ReplicationInstanceArn.map { x => x.asInstanceOf[js.Any] },
         "Status" -> Status.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RefreshSchemasStatus]
@@ -2490,19 +2490,19 @@ package dms {
 
   @js.native
   trait ReloadTablesMessage extends js.Object {
-    var ReplicationTaskArn: js.UndefOr[String]
-    var TablesToReload: js.UndefOr[TableListToReload]
+    var ReplicationTaskArn: String
+    var TablesToReload: TableListToReload
     var ReloadOption: js.UndefOr[ReloadOptionValue]
   }
 
   object ReloadTablesMessage {
     def apply(
-      ReplicationTaskArn: js.UndefOr[String] = js.undefined,
-      TablesToReload: js.UndefOr[TableListToReload] = js.undefined,
+      ReplicationTaskArn: String,
+      TablesToReload: TableListToReload,
       ReloadOption: js.UndefOr[ReloadOptionValue] = js.undefined): ReloadTablesMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ReplicationTaskArn" -> ReplicationTaskArn.map { x => x.asInstanceOf[js.Any] },
-        "TablesToReload" -> TablesToReload.map { x => x.asInstanceOf[js.Any] },
+        "ReplicationTaskArn" -> ReplicationTaskArn.asInstanceOf[js.Any],
+        "TablesToReload" -> TablesToReload.asInstanceOf[js.Any],
         "ReloadOption" -> ReloadOption.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ReloadTablesMessage]
@@ -2529,17 +2529,17 @@ package dms {
    */
   @js.native
   trait RemoveTagsFromResourceMessage extends js.Object {
-    var ResourceArn: js.UndefOr[String]
-    var TagKeys: js.UndefOr[KeyList]
+    var ResourceArn: String
+    var TagKeys: KeyList
   }
 
   object RemoveTagsFromResourceMessage {
     def apply(
-      ResourceArn: js.UndefOr[String] = js.undefined,
-      TagKeys: js.UndefOr[KeyList] = js.undefined): RemoveTagsFromResourceMessage = {
+      ResourceArn: String,
+      TagKeys: KeyList): RemoveTagsFromResourceMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ResourceArn" -> ResourceArn.map { x => x.asInstanceOf[js.Any] },
-        "TagKeys" -> TagKeys.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
+        "TagKeys" -> TagKeys.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RemoveTagsFromResourceMessage]
     }
@@ -2573,80 +2573,80 @@ package dms {
    */
   @js.native
   trait ReplicationInstance extends js.Object {
-    var PreferredMaintenanceWindow: js.UndefOr[String]
-    var ReplicationInstanceStatus: js.UndefOr[String]
-    var MultiAZ: js.UndefOr[Boolean]
-    var KmsKeyId: js.UndefOr[String]
     var AllocatedStorage: js.UndefOr[Int]
-    var PendingModifiedValues: js.UndefOr[ReplicationPendingModifiedValues]
-    var ReplicationInstancePublicIpAddress: js.UndefOr[String]
-    var ReplicationInstanceIdentifier: js.UndefOr[String]
-    var FreeUntil: js.UndefOr[TStamp]
-    var AvailabilityZone: js.UndefOr[String]
-    var VpcSecurityGroups: js.UndefOr[VpcSecurityGroupMembershipList]
     var AutoMinorVersionUpgrade: js.UndefOr[Boolean]
-    var EngineVersion: js.UndefOr[String]
-    var InstanceCreateTime: js.UndefOr[TStamp]
-    var ReplicationInstancePublicIpAddresses: js.UndefOr[ReplicationInstancePublicIpAddressList]
-    var ReplicationInstancePrivateIpAddresses: js.UndefOr[ReplicationInstancePrivateIpAddressList]
-    var ReplicationSubnetGroup: js.UndefOr[ReplicationSubnetGroup]
-    var ReplicationInstancePrivateIpAddress: js.UndefOr[String]
-    var PubliclyAccessible: js.UndefOr[Boolean]
-    var SecondaryAvailabilityZone: js.UndefOr[String]
+    var AvailabilityZone: js.UndefOr[String]
     var DnsNameServers: js.UndefOr[String]
+    var EngineVersion: js.UndefOr[String]
+    var FreeUntil: js.UndefOr[TStamp]
+    var InstanceCreateTime: js.UndefOr[TStamp]
+    var KmsKeyId: js.UndefOr[String]
+    var MultiAZ: js.UndefOr[Boolean]
+    var PendingModifiedValues: js.UndefOr[ReplicationPendingModifiedValues]
+    var PreferredMaintenanceWindow: js.UndefOr[String]
+    var PubliclyAccessible: js.UndefOr[Boolean]
     var ReplicationInstanceArn: js.UndefOr[String]
     var ReplicationInstanceClass: js.UndefOr[String]
+    var ReplicationInstanceIdentifier: js.UndefOr[String]
+    var ReplicationInstancePrivateIpAddress: js.UndefOr[String]
+    var ReplicationInstancePrivateIpAddresses: js.UndefOr[ReplicationInstancePrivateIpAddressList]
+    var ReplicationInstancePublicIpAddress: js.UndefOr[String]
+    var ReplicationInstancePublicIpAddresses: js.UndefOr[ReplicationInstancePublicIpAddressList]
+    var ReplicationInstanceStatus: js.UndefOr[String]
+    var ReplicationSubnetGroup: js.UndefOr[ReplicationSubnetGroup]
+    var SecondaryAvailabilityZone: js.UndefOr[String]
+    var VpcSecurityGroups: js.UndefOr[VpcSecurityGroupMembershipList]
   }
 
   object ReplicationInstance {
     def apply(
-      PreferredMaintenanceWindow: js.UndefOr[String] = js.undefined,
-      ReplicationInstanceStatus: js.UndefOr[String] = js.undefined,
-      MultiAZ: js.UndefOr[Boolean] = js.undefined,
-      KmsKeyId: js.UndefOr[String] = js.undefined,
       AllocatedStorage: js.UndefOr[Int] = js.undefined,
-      PendingModifiedValues: js.UndefOr[ReplicationPendingModifiedValues] = js.undefined,
-      ReplicationInstancePublicIpAddress: js.UndefOr[String] = js.undefined,
-      ReplicationInstanceIdentifier: js.UndefOr[String] = js.undefined,
-      FreeUntil: js.UndefOr[TStamp] = js.undefined,
-      AvailabilityZone: js.UndefOr[String] = js.undefined,
-      VpcSecurityGroups: js.UndefOr[VpcSecurityGroupMembershipList] = js.undefined,
       AutoMinorVersionUpgrade: js.UndefOr[Boolean] = js.undefined,
-      EngineVersion: js.UndefOr[String] = js.undefined,
-      InstanceCreateTime: js.UndefOr[TStamp] = js.undefined,
-      ReplicationInstancePublicIpAddresses: js.UndefOr[ReplicationInstancePublicIpAddressList] = js.undefined,
-      ReplicationInstancePrivateIpAddresses: js.UndefOr[ReplicationInstancePrivateIpAddressList] = js.undefined,
-      ReplicationSubnetGroup: js.UndefOr[ReplicationSubnetGroup] = js.undefined,
-      ReplicationInstancePrivateIpAddress: js.UndefOr[String] = js.undefined,
-      PubliclyAccessible: js.UndefOr[Boolean] = js.undefined,
-      SecondaryAvailabilityZone: js.UndefOr[String] = js.undefined,
+      AvailabilityZone: js.UndefOr[String] = js.undefined,
       DnsNameServers: js.UndefOr[String] = js.undefined,
+      EngineVersion: js.UndefOr[String] = js.undefined,
+      FreeUntil: js.UndefOr[TStamp] = js.undefined,
+      InstanceCreateTime: js.UndefOr[TStamp] = js.undefined,
+      KmsKeyId: js.UndefOr[String] = js.undefined,
+      MultiAZ: js.UndefOr[Boolean] = js.undefined,
+      PendingModifiedValues: js.UndefOr[ReplicationPendingModifiedValues] = js.undefined,
+      PreferredMaintenanceWindow: js.UndefOr[String] = js.undefined,
+      PubliclyAccessible: js.UndefOr[Boolean] = js.undefined,
       ReplicationInstanceArn: js.UndefOr[String] = js.undefined,
-      ReplicationInstanceClass: js.UndefOr[String] = js.undefined): ReplicationInstance = {
+      ReplicationInstanceClass: js.UndefOr[String] = js.undefined,
+      ReplicationInstanceIdentifier: js.UndefOr[String] = js.undefined,
+      ReplicationInstancePrivateIpAddress: js.UndefOr[String] = js.undefined,
+      ReplicationInstancePrivateIpAddresses: js.UndefOr[ReplicationInstancePrivateIpAddressList] = js.undefined,
+      ReplicationInstancePublicIpAddress: js.UndefOr[String] = js.undefined,
+      ReplicationInstancePublicIpAddresses: js.UndefOr[ReplicationInstancePublicIpAddressList] = js.undefined,
+      ReplicationInstanceStatus: js.UndefOr[String] = js.undefined,
+      ReplicationSubnetGroup: js.UndefOr[ReplicationSubnetGroup] = js.undefined,
+      SecondaryAvailabilityZone: js.UndefOr[String] = js.undefined,
+      VpcSecurityGroups: js.UndefOr[VpcSecurityGroupMembershipList] = js.undefined): ReplicationInstance = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "PreferredMaintenanceWindow" -> PreferredMaintenanceWindow.map { x => x.asInstanceOf[js.Any] },
-        "ReplicationInstanceStatus" -> ReplicationInstanceStatus.map { x => x.asInstanceOf[js.Any] },
-        "MultiAZ" -> MultiAZ.map { x => x.asInstanceOf[js.Any] },
-        "KmsKeyId" -> KmsKeyId.map { x => x.asInstanceOf[js.Any] },
         "AllocatedStorage" -> AllocatedStorage.map { x => x.asInstanceOf[js.Any] },
-        "PendingModifiedValues" -> PendingModifiedValues.map { x => x.asInstanceOf[js.Any] },
-        "ReplicationInstancePublicIpAddress" -> ReplicationInstancePublicIpAddress.map { x => x.asInstanceOf[js.Any] },
-        "ReplicationInstanceIdentifier" -> ReplicationInstanceIdentifier.map { x => x.asInstanceOf[js.Any] },
-        "FreeUntil" -> FreeUntil.map { x => x.asInstanceOf[js.Any] },
-        "AvailabilityZone" -> AvailabilityZone.map { x => x.asInstanceOf[js.Any] },
-        "VpcSecurityGroups" -> VpcSecurityGroups.map { x => x.asInstanceOf[js.Any] },
         "AutoMinorVersionUpgrade" -> AutoMinorVersionUpgrade.map { x => x.asInstanceOf[js.Any] },
-        "EngineVersion" -> EngineVersion.map { x => x.asInstanceOf[js.Any] },
-        "InstanceCreateTime" -> InstanceCreateTime.map { x => x.asInstanceOf[js.Any] },
-        "ReplicationInstancePublicIpAddresses" -> ReplicationInstancePublicIpAddresses.map { x => x.asInstanceOf[js.Any] },
-        "ReplicationInstancePrivateIpAddresses" -> ReplicationInstancePrivateIpAddresses.map { x => x.asInstanceOf[js.Any] },
-        "ReplicationSubnetGroup" -> ReplicationSubnetGroup.map { x => x.asInstanceOf[js.Any] },
-        "ReplicationInstancePrivateIpAddress" -> ReplicationInstancePrivateIpAddress.map { x => x.asInstanceOf[js.Any] },
-        "PubliclyAccessible" -> PubliclyAccessible.map { x => x.asInstanceOf[js.Any] },
-        "SecondaryAvailabilityZone" -> SecondaryAvailabilityZone.map { x => x.asInstanceOf[js.Any] },
+        "AvailabilityZone" -> AvailabilityZone.map { x => x.asInstanceOf[js.Any] },
         "DnsNameServers" -> DnsNameServers.map { x => x.asInstanceOf[js.Any] },
+        "EngineVersion" -> EngineVersion.map { x => x.asInstanceOf[js.Any] },
+        "FreeUntil" -> FreeUntil.map { x => x.asInstanceOf[js.Any] },
+        "InstanceCreateTime" -> InstanceCreateTime.map { x => x.asInstanceOf[js.Any] },
+        "KmsKeyId" -> KmsKeyId.map { x => x.asInstanceOf[js.Any] },
+        "MultiAZ" -> MultiAZ.map { x => x.asInstanceOf[js.Any] },
+        "PendingModifiedValues" -> PendingModifiedValues.map { x => x.asInstanceOf[js.Any] },
+        "PreferredMaintenanceWindow" -> PreferredMaintenanceWindow.map { x => x.asInstanceOf[js.Any] },
+        "PubliclyAccessible" -> PubliclyAccessible.map { x => x.asInstanceOf[js.Any] },
         "ReplicationInstanceArn" -> ReplicationInstanceArn.map { x => x.asInstanceOf[js.Any] },
-        "ReplicationInstanceClass" -> ReplicationInstanceClass.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ReplicationInstanceClass" -> ReplicationInstanceClass.map { x => x.asInstanceOf[js.Any] },
+        "ReplicationInstanceIdentifier" -> ReplicationInstanceIdentifier.map { x => x.asInstanceOf[js.Any] },
+        "ReplicationInstancePrivateIpAddress" -> ReplicationInstancePrivateIpAddress.map { x => x.asInstanceOf[js.Any] },
+        "ReplicationInstancePrivateIpAddresses" -> ReplicationInstancePrivateIpAddresses.map { x => x.asInstanceOf[js.Any] },
+        "ReplicationInstancePublicIpAddress" -> ReplicationInstancePublicIpAddress.map { x => x.asInstanceOf[js.Any] },
+        "ReplicationInstancePublicIpAddresses" -> ReplicationInstancePublicIpAddresses.map { x => x.asInstanceOf[js.Any] },
+        "ReplicationInstanceStatus" -> ReplicationInstanceStatus.map { x => x.asInstanceOf[js.Any] },
+        "ReplicationSubnetGroup" -> ReplicationSubnetGroup.map { x => x.asInstanceOf[js.Any] },
+        "SecondaryAvailabilityZone" -> SecondaryAvailabilityZone.map { x => x.asInstanceOf[js.Any] },
+        "VpcSecurityGroups" -> VpcSecurityGroups.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ReplicationInstance]
     }
@@ -2657,20 +2657,20 @@ package dms {
    */
   @js.native
   trait ReplicationInstanceTaskLog extends js.Object {
-    var ReplicationTaskName: js.UndefOr[String]
-    var ReplicationTaskArn: js.UndefOr[String]
     var ReplicationInstanceTaskLogSize: js.UndefOr[Double]
+    var ReplicationTaskArn: js.UndefOr[String]
+    var ReplicationTaskName: js.UndefOr[String]
   }
 
   object ReplicationInstanceTaskLog {
     def apply(
-      ReplicationTaskName: js.UndefOr[String] = js.undefined,
+      ReplicationInstanceTaskLogSize: js.UndefOr[Double] = js.undefined,
       ReplicationTaskArn: js.UndefOr[String] = js.undefined,
-      ReplicationInstanceTaskLogSize: js.UndefOr[Double] = js.undefined): ReplicationInstanceTaskLog = {
+      ReplicationTaskName: js.UndefOr[String] = js.undefined): ReplicationInstanceTaskLog = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ReplicationTaskName" -> ReplicationTaskName.map { x => x.asInstanceOf[js.Any] },
+        "ReplicationInstanceTaskLogSize" -> ReplicationInstanceTaskLogSize.map { x => x.asInstanceOf[js.Any] },
         "ReplicationTaskArn" -> ReplicationTaskArn.map { x => x.asInstanceOf[js.Any] },
-        "ReplicationInstanceTaskLogSize" -> ReplicationInstanceTaskLogSize.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ReplicationTaskName" -> ReplicationTaskName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ReplicationInstanceTaskLog]
     }
@@ -2681,23 +2681,23 @@ package dms {
    */
   @js.native
   trait ReplicationPendingModifiedValues extends js.Object {
-    var ReplicationInstanceClass: js.UndefOr[String]
     var AllocatedStorage: js.UndefOr[IntegerOptional]
-    var MultiAZ: js.UndefOr[BooleanOptional]
     var EngineVersion: js.UndefOr[String]
+    var MultiAZ: js.UndefOr[BooleanOptional]
+    var ReplicationInstanceClass: js.UndefOr[String]
   }
 
   object ReplicationPendingModifiedValues {
     def apply(
-      ReplicationInstanceClass: js.UndefOr[String] = js.undefined,
       AllocatedStorage: js.UndefOr[IntegerOptional] = js.undefined,
+      EngineVersion: js.UndefOr[String] = js.undefined,
       MultiAZ: js.UndefOr[BooleanOptional] = js.undefined,
-      EngineVersion: js.UndefOr[String] = js.undefined): ReplicationPendingModifiedValues = {
+      ReplicationInstanceClass: js.UndefOr[String] = js.undefined): ReplicationPendingModifiedValues = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ReplicationInstanceClass" -> ReplicationInstanceClass.map { x => x.asInstanceOf[js.Any] },
         "AllocatedStorage" -> AllocatedStorage.map { x => x.asInstanceOf[js.Any] },
+        "EngineVersion" -> EngineVersion.map { x => x.asInstanceOf[js.Any] },
         "MultiAZ" -> MultiAZ.map { x => x.asInstanceOf[js.Any] },
-        "EngineVersion" -> EngineVersion.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ReplicationInstanceClass" -> ReplicationInstanceClass.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ReplicationPendingModifiedValues]
     }
@@ -2708,25 +2708,25 @@ package dms {
    */
   @js.native
   trait ReplicationSubnetGroup extends js.Object {
+    var ReplicationSubnetGroupDescription: js.UndefOr[String]
+    var ReplicationSubnetGroupIdentifier: js.UndefOr[String]
     var SubnetGroupStatus: js.UndefOr[String]
     var Subnets: js.UndefOr[SubnetList]
-    var ReplicationSubnetGroupIdentifier: js.UndefOr[String]
-    var ReplicationSubnetGroupDescription: js.UndefOr[String]
     var VpcId: js.UndefOr[String]
   }
 
   object ReplicationSubnetGroup {
     def apply(
+      ReplicationSubnetGroupDescription: js.UndefOr[String] = js.undefined,
+      ReplicationSubnetGroupIdentifier: js.UndefOr[String] = js.undefined,
       SubnetGroupStatus: js.UndefOr[String] = js.undefined,
       Subnets: js.UndefOr[SubnetList] = js.undefined,
-      ReplicationSubnetGroupIdentifier: js.UndefOr[String] = js.undefined,
-      ReplicationSubnetGroupDescription: js.UndefOr[String] = js.undefined,
       VpcId: js.UndefOr[String] = js.undefined): ReplicationSubnetGroup = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "ReplicationSubnetGroupDescription" -> ReplicationSubnetGroupDescription.map { x => x.asInstanceOf[js.Any] },
+        "ReplicationSubnetGroupIdentifier" -> ReplicationSubnetGroupIdentifier.map { x => x.asInstanceOf[js.Any] },
         "SubnetGroupStatus" -> SubnetGroupStatus.map { x => x.asInstanceOf[js.Any] },
         "Subnets" -> Subnets.map { x => x.asInstanceOf[js.Any] },
-        "ReplicationSubnetGroupIdentifier" -> ReplicationSubnetGroupIdentifier.map { x => x.asInstanceOf[js.Any] },
-        "ReplicationSubnetGroupDescription" -> ReplicationSubnetGroupDescription.map { x => x.asInstanceOf[js.Any] },
         "VpcId" -> VpcId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ReplicationSubnetGroup]
@@ -2738,62 +2738,62 @@ package dms {
    */
   @js.native
   trait ReplicationTask extends js.Object {
-    var LastFailureMessage: js.UndefOr[String]
-    var ReplicationTaskSettings: js.UndefOr[String]
-    var CdcStopPosition: js.UndefOr[String]
-    var StopReason: js.UndefOr[String]
-    var RecoveryCheckpoint: js.UndefOr[String]
-    var MigrationType: js.UndefOr[MigrationTypeValue]
-    var ReplicationTaskStats: js.UndefOr[ReplicationTaskStats]
-    var ReplicationTaskStartDate: js.UndefOr[TStamp]
-    var SourceEndpointArn: js.UndefOr[String]
-    var ReplicationTaskIdentifier: js.UndefOr[String]
     var CdcStartPosition: js.UndefOr[String]
-    var TableMappings: js.UndefOr[String]
-    var ReplicationTaskCreationDate: js.UndefOr[TStamp]
+    var CdcStopPosition: js.UndefOr[String]
+    var LastFailureMessage: js.UndefOr[String]
+    var MigrationType: js.UndefOr[MigrationTypeValue]
+    var RecoveryCheckpoint: js.UndefOr[String]
     var ReplicationInstanceArn: js.UndefOr[String]
-    var TargetEndpointArn: js.UndefOr[String]
     var ReplicationTaskArn: js.UndefOr[String]
+    var ReplicationTaskCreationDate: js.UndefOr[TStamp]
+    var ReplicationTaskIdentifier: js.UndefOr[String]
+    var ReplicationTaskSettings: js.UndefOr[String]
+    var ReplicationTaskStartDate: js.UndefOr[TStamp]
+    var ReplicationTaskStats: js.UndefOr[ReplicationTaskStats]
+    var SourceEndpointArn: js.UndefOr[String]
     var Status: js.UndefOr[String]
+    var StopReason: js.UndefOr[String]
+    var TableMappings: js.UndefOr[String]
+    var TargetEndpointArn: js.UndefOr[String]
   }
 
   object ReplicationTask {
     def apply(
-      LastFailureMessage: js.UndefOr[String] = js.undefined,
-      ReplicationTaskSettings: js.UndefOr[String] = js.undefined,
-      CdcStopPosition: js.UndefOr[String] = js.undefined,
-      StopReason: js.UndefOr[String] = js.undefined,
-      RecoveryCheckpoint: js.UndefOr[String] = js.undefined,
-      MigrationType: js.UndefOr[MigrationTypeValue] = js.undefined,
-      ReplicationTaskStats: js.UndefOr[ReplicationTaskStats] = js.undefined,
-      ReplicationTaskStartDate: js.UndefOr[TStamp] = js.undefined,
-      SourceEndpointArn: js.UndefOr[String] = js.undefined,
-      ReplicationTaskIdentifier: js.UndefOr[String] = js.undefined,
       CdcStartPosition: js.UndefOr[String] = js.undefined,
-      TableMappings: js.UndefOr[String] = js.undefined,
-      ReplicationTaskCreationDate: js.UndefOr[TStamp] = js.undefined,
+      CdcStopPosition: js.UndefOr[String] = js.undefined,
+      LastFailureMessage: js.UndefOr[String] = js.undefined,
+      MigrationType: js.UndefOr[MigrationTypeValue] = js.undefined,
+      RecoveryCheckpoint: js.UndefOr[String] = js.undefined,
       ReplicationInstanceArn: js.UndefOr[String] = js.undefined,
-      TargetEndpointArn: js.UndefOr[String] = js.undefined,
       ReplicationTaskArn: js.UndefOr[String] = js.undefined,
-      Status: js.UndefOr[String] = js.undefined): ReplicationTask = {
+      ReplicationTaskCreationDate: js.UndefOr[TStamp] = js.undefined,
+      ReplicationTaskIdentifier: js.UndefOr[String] = js.undefined,
+      ReplicationTaskSettings: js.UndefOr[String] = js.undefined,
+      ReplicationTaskStartDate: js.UndefOr[TStamp] = js.undefined,
+      ReplicationTaskStats: js.UndefOr[ReplicationTaskStats] = js.undefined,
+      SourceEndpointArn: js.UndefOr[String] = js.undefined,
+      Status: js.UndefOr[String] = js.undefined,
+      StopReason: js.UndefOr[String] = js.undefined,
+      TableMappings: js.UndefOr[String] = js.undefined,
+      TargetEndpointArn: js.UndefOr[String] = js.undefined): ReplicationTask = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "LastFailureMessage" -> LastFailureMessage.map { x => x.asInstanceOf[js.Any] },
-        "ReplicationTaskSettings" -> ReplicationTaskSettings.map { x => x.asInstanceOf[js.Any] },
-        "CdcStopPosition" -> CdcStopPosition.map { x => x.asInstanceOf[js.Any] },
-        "StopReason" -> StopReason.map { x => x.asInstanceOf[js.Any] },
-        "RecoveryCheckpoint" -> RecoveryCheckpoint.map { x => x.asInstanceOf[js.Any] },
-        "MigrationType" -> MigrationType.map { x => x.asInstanceOf[js.Any] },
-        "ReplicationTaskStats" -> ReplicationTaskStats.map { x => x.asInstanceOf[js.Any] },
-        "ReplicationTaskStartDate" -> ReplicationTaskStartDate.map { x => x.asInstanceOf[js.Any] },
-        "SourceEndpointArn" -> SourceEndpointArn.map { x => x.asInstanceOf[js.Any] },
-        "ReplicationTaskIdentifier" -> ReplicationTaskIdentifier.map { x => x.asInstanceOf[js.Any] },
         "CdcStartPosition" -> CdcStartPosition.map { x => x.asInstanceOf[js.Any] },
-        "TableMappings" -> TableMappings.map { x => x.asInstanceOf[js.Any] },
-        "ReplicationTaskCreationDate" -> ReplicationTaskCreationDate.map { x => x.asInstanceOf[js.Any] },
+        "CdcStopPosition" -> CdcStopPosition.map { x => x.asInstanceOf[js.Any] },
+        "LastFailureMessage" -> LastFailureMessage.map { x => x.asInstanceOf[js.Any] },
+        "MigrationType" -> MigrationType.map { x => x.asInstanceOf[js.Any] },
+        "RecoveryCheckpoint" -> RecoveryCheckpoint.map { x => x.asInstanceOf[js.Any] },
         "ReplicationInstanceArn" -> ReplicationInstanceArn.map { x => x.asInstanceOf[js.Any] },
-        "TargetEndpointArn" -> TargetEndpointArn.map { x => x.asInstanceOf[js.Any] },
         "ReplicationTaskArn" -> ReplicationTaskArn.map { x => x.asInstanceOf[js.Any] },
-        "Status" -> Status.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ReplicationTaskCreationDate" -> ReplicationTaskCreationDate.map { x => x.asInstanceOf[js.Any] },
+        "ReplicationTaskIdentifier" -> ReplicationTaskIdentifier.map { x => x.asInstanceOf[js.Any] },
+        "ReplicationTaskSettings" -> ReplicationTaskSettings.map { x => x.asInstanceOf[js.Any] },
+        "ReplicationTaskStartDate" -> ReplicationTaskStartDate.map { x => x.asInstanceOf[js.Any] },
+        "ReplicationTaskStats" -> ReplicationTaskStats.map { x => x.asInstanceOf[js.Any] },
+        "SourceEndpointArn" -> SourceEndpointArn.map { x => x.asInstanceOf[js.Any] },
+        "Status" -> Status.map { x => x.asInstanceOf[js.Any] },
+        "StopReason" -> StopReason.map { x => x.asInstanceOf[js.Any] },
+        "TableMappings" -> TableMappings.map { x => x.asInstanceOf[js.Any] },
+        "TargetEndpointArn" -> TargetEndpointArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ReplicationTask]
     }
@@ -2804,32 +2804,32 @@ package dms {
    */
   @js.native
   trait ReplicationTaskAssessmentResult extends js.Object {
-    var S3ObjectUrl: js.UndefOr[String]
-    var AssessmentResultsFile: js.UndefOr[String]
-    var ReplicationTaskLastAssessmentDate: js.UndefOr[TStamp]
     var AssessmentResults: js.UndefOr[String]
-    var ReplicationTaskIdentifier: js.UndefOr[String]
+    var AssessmentResultsFile: js.UndefOr[String]
     var AssessmentStatus: js.UndefOr[String]
     var ReplicationTaskArn: js.UndefOr[String]
+    var ReplicationTaskIdentifier: js.UndefOr[String]
+    var ReplicationTaskLastAssessmentDate: js.UndefOr[TStamp]
+    var S3ObjectUrl: js.UndefOr[String]
   }
 
   object ReplicationTaskAssessmentResult {
     def apply(
-      S3ObjectUrl: js.UndefOr[String] = js.undefined,
-      AssessmentResultsFile: js.UndefOr[String] = js.undefined,
-      ReplicationTaskLastAssessmentDate: js.UndefOr[TStamp] = js.undefined,
       AssessmentResults: js.UndefOr[String] = js.undefined,
-      ReplicationTaskIdentifier: js.UndefOr[String] = js.undefined,
+      AssessmentResultsFile: js.UndefOr[String] = js.undefined,
       AssessmentStatus: js.UndefOr[String] = js.undefined,
-      ReplicationTaskArn: js.UndefOr[String] = js.undefined): ReplicationTaskAssessmentResult = {
+      ReplicationTaskArn: js.UndefOr[String] = js.undefined,
+      ReplicationTaskIdentifier: js.UndefOr[String] = js.undefined,
+      ReplicationTaskLastAssessmentDate: js.UndefOr[TStamp] = js.undefined,
+      S3ObjectUrl: js.UndefOr[String] = js.undefined): ReplicationTaskAssessmentResult = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "S3ObjectUrl" -> S3ObjectUrl.map { x => x.asInstanceOf[js.Any] },
-        "AssessmentResultsFile" -> AssessmentResultsFile.map { x => x.asInstanceOf[js.Any] },
-        "ReplicationTaskLastAssessmentDate" -> ReplicationTaskLastAssessmentDate.map { x => x.asInstanceOf[js.Any] },
         "AssessmentResults" -> AssessmentResults.map { x => x.asInstanceOf[js.Any] },
-        "ReplicationTaskIdentifier" -> ReplicationTaskIdentifier.map { x => x.asInstanceOf[js.Any] },
+        "AssessmentResultsFile" -> AssessmentResultsFile.map { x => x.asInstanceOf[js.Any] },
         "AssessmentStatus" -> AssessmentStatus.map { x => x.asInstanceOf[js.Any] },
-        "ReplicationTaskArn" -> ReplicationTaskArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ReplicationTaskArn" -> ReplicationTaskArn.map { x => x.asInstanceOf[js.Any] },
+        "ReplicationTaskIdentifier" -> ReplicationTaskIdentifier.map { x => x.asInstanceOf[js.Any] },
+        "ReplicationTaskLastAssessmentDate" -> ReplicationTaskLastAssessmentDate.map { x => x.asInstanceOf[js.Any] },
+        "S3ObjectUrl" -> S3ObjectUrl.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ReplicationTaskAssessmentResult]
     }
@@ -2840,29 +2840,29 @@ package dms {
    */
   @js.native
   trait ReplicationTaskStats extends js.Object {
-    var TablesQueued: js.UndefOr[Int]
+    var ElapsedTimeMillis: js.UndefOr[Double]
+    var FullLoadProgressPercent: js.UndefOr[Int]
     var TablesErrored: js.UndefOr[Int]
     var TablesLoaded: js.UndefOr[Int]
     var TablesLoading: js.UndefOr[Int]
-    var ElapsedTimeMillis: js.UndefOr[Double]
-    var FullLoadProgressPercent: js.UndefOr[Int]
+    var TablesQueued: js.UndefOr[Int]
   }
 
   object ReplicationTaskStats {
     def apply(
-      TablesQueued: js.UndefOr[Int] = js.undefined,
+      ElapsedTimeMillis: js.UndefOr[Double] = js.undefined,
+      FullLoadProgressPercent: js.UndefOr[Int] = js.undefined,
       TablesErrored: js.UndefOr[Int] = js.undefined,
       TablesLoaded: js.UndefOr[Int] = js.undefined,
       TablesLoading: js.UndefOr[Int] = js.undefined,
-      ElapsedTimeMillis: js.UndefOr[Double] = js.undefined,
-      FullLoadProgressPercent: js.UndefOr[Int] = js.undefined): ReplicationTaskStats = {
+      TablesQueued: js.UndefOr[Int] = js.undefined): ReplicationTaskStats = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "TablesQueued" -> TablesQueued.map { x => x.asInstanceOf[js.Any] },
+        "ElapsedTimeMillis" -> ElapsedTimeMillis.map { x => x.asInstanceOf[js.Any] },
+        "FullLoadProgressPercent" -> FullLoadProgressPercent.map { x => x.asInstanceOf[js.Any] },
         "TablesErrored" -> TablesErrored.map { x => x.asInstanceOf[js.Any] },
         "TablesLoaded" -> TablesLoaded.map { x => x.asInstanceOf[js.Any] },
         "TablesLoading" -> TablesLoading.map { x => x.asInstanceOf[js.Any] },
-        "ElapsedTimeMillis" -> ElapsedTimeMillis.map { x => x.asInstanceOf[js.Any] },
-        "FullLoadProgressPercent" -> FullLoadProgressPercent.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "TablesQueued" -> TablesQueued.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ReplicationTaskStats]
     }
@@ -2873,32 +2873,32 @@ package dms {
    */
   @js.native
   trait S3Settings extends js.Object {
-    var CsvDelimiter: js.UndefOr[String]
+    var BucketFolder: js.UndefOr[String]
     var BucketName: js.UndefOr[String]
     var CompressionType: js.UndefOr[CompressionTypeValue]
-    var ExternalTableDefinition: js.UndefOr[String]
+    var CsvDelimiter: js.UndefOr[String]
     var CsvRowDelimiter: js.UndefOr[String]
+    var ExternalTableDefinition: js.UndefOr[String]
     var ServiceAccessRoleArn: js.UndefOr[String]
-    var BucketFolder: js.UndefOr[String]
   }
 
   object S3Settings {
     def apply(
-      CsvDelimiter: js.UndefOr[String] = js.undefined,
+      BucketFolder: js.UndefOr[String] = js.undefined,
       BucketName: js.UndefOr[String] = js.undefined,
       CompressionType: js.UndefOr[CompressionTypeValue] = js.undefined,
-      ExternalTableDefinition: js.UndefOr[String] = js.undefined,
+      CsvDelimiter: js.UndefOr[String] = js.undefined,
       CsvRowDelimiter: js.UndefOr[String] = js.undefined,
-      ServiceAccessRoleArn: js.UndefOr[String] = js.undefined,
-      BucketFolder: js.UndefOr[String] = js.undefined): S3Settings = {
+      ExternalTableDefinition: js.UndefOr[String] = js.undefined,
+      ServiceAccessRoleArn: js.UndefOr[String] = js.undefined): S3Settings = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "CsvDelimiter" -> CsvDelimiter.map { x => x.asInstanceOf[js.Any] },
+        "BucketFolder" -> BucketFolder.map { x => x.asInstanceOf[js.Any] },
         "BucketName" -> BucketName.map { x => x.asInstanceOf[js.Any] },
         "CompressionType" -> CompressionType.map { x => x.asInstanceOf[js.Any] },
-        "ExternalTableDefinition" -> ExternalTableDefinition.map { x => x.asInstanceOf[js.Any] },
+        "CsvDelimiter" -> CsvDelimiter.map { x => x.asInstanceOf[js.Any] },
         "CsvRowDelimiter" -> CsvRowDelimiter.map { x => x.asInstanceOf[js.Any] },
-        "ServiceAccessRoleArn" -> ServiceAccessRoleArn.map { x => x.asInstanceOf[js.Any] },
-        "BucketFolder" -> BucketFolder.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ExternalTableDefinition" -> ExternalTableDefinition.map { x => x.asInstanceOf[js.Any] },
+        "ServiceAccessRoleArn" -> ServiceAccessRoleArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[S3Settings]
     }
@@ -2915,14 +2915,14 @@ package dms {
    */
   @js.native
   trait StartReplicationTaskAssessmentMessage extends js.Object {
-    var ReplicationTaskArn: js.UndefOr[String]
+    var ReplicationTaskArn: String
   }
 
   object StartReplicationTaskAssessmentMessage {
     def apply(
-      ReplicationTaskArn: js.UndefOr[String] = js.undefined): StartReplicationTaskAssessmentMessage = {
+      ReplicationTaskArn: String): StartReplicationTaskAssessmentMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ReplicationTaskArn" -> ReplicationTaskArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ReplicationTaskArn" -> ReplicationTaskArn.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StartReplicationTaskAssessmentMessage]
     }
@@ -2951,26 +2951,26 @@ package dms {
    */
   @js.native
   trait StartReplicationTaskMessage extends js.Object {
-    var CdcStopPosition: js.UndefOr[String]
-    var StartReplicationTaskType: js.UndefOr[StartReplicationTaskTypeValue]
+    var ReplicationTaskArn: String
+    var StartReplicationTaskType: StartReplicationTaskTypeValue
     var CdcStartPosition: js.UndefOr[String]
-    var ReplicationTaskArn: js.UndefOr[String]
     var CdcStartTime: js.UndefOr[TStamp]
+    var CdcStopPosition: js.UndefOr[String]
   }
 
   object StartReplicationTaskMessage {
     def apply(
-      CdcStopPosition: js.UndefOr[String] = js.undefined,
-      StartReplicationTaskType: js.UndefOr[StartReplicationTaskTypeValue] = js.undefined,
+      ReplicationTaskArn: String,
+      StartReplicationTaskType: StartReplicationTaskTypeValue,
       CdcStartPosition: js.UndefOr[String] = js.undefined,
-      ReplicationTaskArn: js.UndefOr[String] = js.undefined,
-      CdcStartTime: js.UndefOr[TStamp] = js.undefined): StartReplicationTaskMessage = {
+      CdcStartTime: js.UndefOr[TStamp] = js.undefined,
+      CdcStopPosition: js.UndefOr[String] = js.undefined): StartReplicationTaskMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "CdcStopPosition" -> CdcStopPosition.map { x => x.asInstanceOf[js.Any] },
-        "StartReplicationTaskType" -> StartReplicationTaskType.map { x => x.asInstanceOf[js.Any] },
+        "ReplicationTaskArn" -> ReplicationTaskArn.asInstanceOf[js.Any],
+        "StartReplicationTaskType" -> StartReplicationTaskType.asInstanceOf[js.Any],
         "CdcStartPosition" -> CdcStartPosition.map { x => x.asInstanceOf[js.Any] },
-        "ReplicationTaskArn" -> ReplicationTaskArn.map { x => x.asInstanceOf[js.Any] },
-        "CdcStartTime" -> CdcStartTime.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "CdcStartTime" -> CdcStartTime.map { x => x.asInstanceOf[js.Any] },
+        "CdcStopPosition" -> CdcStopPosition.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StartReplicationTaskMessage]
     }
@@ -3007,14 +3007,14 @@ package dms {
    */
   @js.native
   trait StopReplicationTaskMessage extends js.Object {
-    var ReplicationTaskArn: js.UndefOr[String]
+    var ReplicationTaskArn: String
   }
 
   object StopReplicationTaskMessage {
     def apply(
-      ReplicationTaskArn: js.UndefOr[String] = js.undefined): StopReplicationTaskMessage = {
+      ReplicationTaskArn: String): StopReplicationTaskMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ReplicationTaskArn" -> ReplicationTaskArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ReplicationTaskArn" -> ReplicationTaskArn.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StopReplicationTaskMessage]
     }
@@ -3043,19 +3043,19 @@ package dms {
    */
   @js.native
   trait Subnet extends js.Object {
-    var SubnetIdentifier: js.UndefOr[String]
     var SubnetAvailabilityZone: js.UndefOr[AvailabilityZone]
+    var SubnetIdentifier: js.UndefOr[String]
     var SubnetStatus: js.UndefOr[String]
   }
 
   object Subnet {
     def apply(
-      SubnetIdentifier: js.UndefOr[String] = js.undefined,
       SubnetAvailabilityZone: js.UndefOr[AvailabilityZone] = js.undefined,
+      SubnetIdentifier: js.UndefOr[String] = js.undefined,
       SubnetStatus: js.UndefOr[String] = js.undefined): Subnet = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "SubnetIdentifier" -> SubnetIdentifier.map { x => x.asInstanceOf[js.Any] },
         "SubnetAvailabilityZone" -> SubnetAvailabilityZone.map { x => x.asInstanceOf[js.Any] },
+        "SubnetIdentifier" -> SubnetIdentifier.map { x => x.asInstanceOf[js.Any] },
         "SubnetStatus" -> SubnetStatus.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Subnet]
@@ -3067,23 +3067,23 @@ package dms {
    */
   @js.native
   trait SupportedEndpointType extends js.Object {
-    var EngineName: js.UndefOr[String]
-    var SupportsCDC: js.UndefOr[Boolean]
     var EndpointType: js.UndefOr[ReplicationEndpointTypeValue]
     var EngineDisplayName: js.UndefOr[String]
+    var EngineName: js.UndefOr[String]
+    var SupportsCDC: js.UndefOr[Boolean]
   }
 
   object SupportedEndpointType {
     def apply(
-      EngineName: js.UndefOr[String] = js.undefined,
-      SupportsCDC: js.UndefOr[Boolean] = js.undefined,
       EndpointType: js.UndefOr[ReplicationEndpointTypeValue] = js.undefined,
-      EngineDisplayName: js.UndefOr[String] = js.undefined): SupportedEndpointType = {
+      EngineDisplayName: js.UndefOr[String] = js.undefined,
+      EngineName: js.UndefOr[String] = js.undefined,
+      SupportsCDC: js.UndefOr[Boolean] = js.undefined): SupportedEndpointType = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "EngineName" -> EngineName.map { x => x.asInstanceOf[js.Any] },
-        "SupportsCDC" -> SupportsCDC.map { x => x.asInstanceOf[js.Any] },
         "EndpointType" -> EndpointType.map { x => x.asInstanceOf[js.Any] },
-        "EngineDisplayName" -> EngineDisplayName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "EngineDisplayName" -> EngineDisplayName.map { x => x.asInstanceOf[js.Any] },
+        "EngineName" -> EngineName.map { x => x.asInstanceOf[js.Any] },
+        "SupportsCDC" -> SupportsCDC.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SupportedEndpointType]
     }
@@ -3094,59 +3094,59 @@ package dms {
    */
   @js.native
   trait TableStatistics extends js.Object {
-    var LastUpdateTime: js.UndefOr[TStamp]
-    var FullLoadErrorRows: js.UndefOr[Double]
-    var Inserts: js.UndefOr[Double]
+    var Ddls: js.UndefOr[Double]
     var Deletes: js.UndefOr[Double]
-    var ValidationState: js.UndefOr[String]
-    var ValidationSuspendedRecords: js.UndefOr[Double]
+    var FullLoadCondtnlChkFailedRows: js.UndefOr[Double]
+    var FullLoadErrorRows: js.UndefOr[Double]
+    var FullLoadRows: js.UndefOr[Double]
+    var Inserts: js.UndefOr[Double]
+    var LastUpdateTime: js.UndefOr[TStamp]
+    var SchemaName: js.UndefOr[String]
+    var TableName: js.UndefOr[String]
+    var TableState: js.UndefOr[String]
     var Updates: js.UndefOr[Double]
     var ValidationFailedRecords: js.UndefOr[Double]
-    var TableState: js.UndefOr[String]
-    var SchemaName: js.UndefOr[String]
     var ValidationPendingRecords: js.UndefOr[Double]
+    var ValidationState: js.UndefOr[String]
     var ValidationStateDetails: js.UndefOr[String]
-    var Ddls: js.UndefOr[Double]
-    var FullLoadCondtnlChkFailedRows: js.UndefOr[Double]
-    var FullLoadRows: js.UndefOr[Double]
-    var TableName: js.UndefOr[String]
+    var ValidationSuspendedRecords: js.UndefOr[Double]
   }
 
   object TableStatistics {
     def apply(
-      LastUpdateTime: js.UndefOr[TStamp] = js.undefined,
-      FullLoadErrorRows: js.UndefOr[Double] = js.undefined,
-      Inserts: js.UndefOr[Double] = js.undefined,
+      Ddls: js.UndefOr[Double] = js.undefined,
       Deletes: js.UndefOr[Double] = js.undefined,
-      ValidationState: js.UndefOr[String] = js.undefined,
-      ValidationSuspendedRecords: js.UndefOr[Double] = js.undefined,
+      FullLoadCondtnlChkFailedRows: js.UndefOr[Double] = js.undefined,
+      FullLoadErrorRows: js.UndefOr[Double] = js.undefined,
+      FullLoadRows: js.UndefOr[Double] = js.undefined,
+      Inserts: js.UndefOr[Double] = js.undefined,
+      LastUpdateTime: js.UndefOr[TStamp] = js.undefined,
+      SchemaName: js.UndefOr[String] = js.undefined,
+      TableName: js.UndefOr[String] = js.undefined,
+      TableState: js.UndefOr[String] = js.undefined,
       Updates: js.UndefOr[Double] = js.undefined,
       ValidationFailedRecords: js.UndefOr[Double] = js.undefined,
-      TableState: js.UndefOr[String] = js.undefined,
-      SchemaName: js.UndefOr[String] = js.undefined,
       ValidationPendingRecords: js.UndefOr[Double] = js.undefined,
+      ValidationState: js.UndefOr[String] = js.undefined,
       ValidationStateDetails: js.UndefOr[String] = js.undefined,
-      Ddls: js.UndefOr[Double] = js.undefined,
-      FullLoadCondtnlChkFailedRows: js.UndefOr[Double] = js.undefined,
-      FullLoadRows: js.UndefOr[Double] = js.undefined,
-      TableName: js.UndefOr[String] = js.undefined): TableStatistics = {
+      ValidationSuspendedRecords: js.UndefOr[Double] = js.undefined): TableStatistics = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "LastUpdateTime" -> LastUpdateTime.map { x => x.asInstanceOf[js.Any] },
-        "FullLoadErrorRows" -> FullLoadErrorRows.map { x => x.asInstanceOf[js.Any] },
-        "Inserts" -> Inserts.map { x => x.asInstanceOf[js.Any] },
+        "Ddls" -> Ddls.map { x => x.asInstanceOf[js.Any] },
         "Deletes" -> Deletes.map { x => x.asInstanceOf[js.Any] },
-        "ValidationState" -> ValidationState.map { x => x.asInstanceOf[js.Any] },
-        "ValidationSuspendedRecords" -> ValidationSuspendedRecords.map { x => x.asInstanceOf[js.Any] },
+        "FullLoadCondtnlChkFailedRows" -> FullLoadCondtnlChkFailedRows.map { x => x.asInstanceOf[js.Any] },
+        "FullLoadErrorRows" -> FullLoadErrorRows.map { x => x.asInstanceOf[js.Any] },
+        "FullLoadRows" -> FullLoadRows.map { x => x.asInstanceOf[js.Any] },
+        "Inserts" -> Inserts.map { x => x.asInstanceOf[js.Any] },
+        "LastUpdateTime" -> LastUpdateTime.map { x => x.asInstanceOf[js.Any] },
+        "SchemaName" -> SchemaName.map { x => x.asInstanceOf[js.Any] },
+        "TableName" -> TableName.map { x => x.asInstanceOf[js.Any] },
+        "TableState" -> TableState.map { x => x.asInstanceOf[js.Any] },
         "Updates" -> Updates.map { x => x.asInstanceOf[js.Any] },
         "ValidationFailedRecords" -> ValidationFailedRecords.map { x => x.asInstanceOf[js.Any] },
-        "TableState" -> TableState.map { x => x.asInstanceOf[js.Any] },
-        "SchemaName" -> SchemaName.map { x => x.asInstanceOf[js.Any] },
         "ValidationPendingRecords" -> ValidationPendingRecords.map { x => x.asInstanceOf[js.Any] },
+        "ValidationState" -> ValidationState.map { x => x.asInstanceOf[js.Any] },
         "ValidationStateDetails" -> ValidationStateDetails.map { x => x.asInstanceOf[js.Any] },
-        "Ddls" -> Ddls.map { x => x.asInstanceOf[js.Any] },
-        "FullLoadCondtnlChkFailedRows" -> FullLoadCondtnlChkFailedRows.map { x => x.asInstanceOf[js.Any] },
-        "FullLoadRows" -> FullLoadRows.map { x => x.asInstanceOf[js.Any] },
-        "TableName" -> TableName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ValidationSuspendedRecords" -> ValidationSuspendedRecords.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TableStatistics]
     }
@@ -3199,17 +3199,17 @@ package dms {
    */
   @js.native
   trait TestConnectionMessage extends js.Object {
-    var ReplicationInstanceArn: js.UndefOr[String]
-    var EndpointArn: js.UndefOr[String]
+    var EndpointArn: String
+    var ReplicationInstanceArn: String
   }
 
   object TestConnectionMessage {
     def apply(
-      ReplicationInstanceArn: js.UndefOr[String] = js.undefined,
-      EndpointArn: js.UndefOr[String] = js.undefined): TestConnectionMessage = {
+      EndpointArn: String,
+      ReplicationInstanceArn: String): TestConnectionMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ReplicationInstanceArn" -> ReplicationInstanceArn.map { x => x.asInstanceOf[js.Any] },
-        "EndpointArn" -> EndpointArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "EndpointArn" -> EndpointArn.asInstanceOf[js.Any],
+        "ReplicationInstanceArn" -> ReplicationInstanceArn.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TestConnectionMessage]
     }
@@ -3238,17 +3238,17 @@ package dms {
    */
   @js.native
   trait VpcSecurityGroupMembership extends js.Object {
-    var VpcSecurityGroupId: js.UndefOr[String]
     var Status: js.UndefOr[String]
+    var VpcSecurityGroupId: js.UndefOr[String]
   }
 
   object VpcSecurityGroupMembership {
     def apply(
-      VpcSecurityGroupId: js.UndefOr[String] = js.undefined,
-      Status: js.UndefOr[String] = js.undefined): VpcSecurityGroupMembership = {
+      Status: js.UndefOr[String] = js.undefined,
+      VpcSecurityGroupId: js.UndefOr[String] = js.undefined): VpcSecurityGroupMembership = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "VpcSecurityGroupId" -> VpcSecurityGroupId.map { x => x.asInstanceOf[js.Any] },
-        "Status" -> Status.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Status" -> Status.map { x => x.asInstanceOf[js.Any] },
+        "VpcSecurityGroupId" -> VpcSecurityGroupId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[VpcSecurityGroupMembership]
     }

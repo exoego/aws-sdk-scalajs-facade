@@ -112,17 +112,17 @@ package firehose {
    */
   @js.native
   trait BufferingHints extends js.Object {
-    var SizeInMBs: js.UndefOr[SizeInMBs]
     var IntervalInSeconds: js.UndefOr[IntervalInSeconds]
+    var SizeInMBs: js.UndefOr[SizeInMBs]
   }
 
   object BufferingHints {
     def apply(
-      SizeInMBs: js.UndefOr[SizeInMBs] = js.undefined,
-      IntervalInSeconds: js.UndefOr[IntervalInSeconds] = js.undefined): BufferingHints = {
+      IntervalInSeconds: js.UndefOr[IntervalInSeconds] = js.undefined,
+      SizeInMBs: js.UndefOr[SizeInMBs] = js.undefined): BufferingHints = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "SizeInMBs" -> SizeInMBs.map { x => x.asInstanceOf[js.Any] },
-        "IntervalInSeconds" -> IntervalInSeconds.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "IntervalInSeconds" -> IntervalInSeconds.map { x => x.asInstanceOf[js.Any] },
+        "SizeInMBs" -> SizeInMBs.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BufferingHints]
     }
@@ -166,20 +166,20 @@ package firehose {
    */
   @js.native
   trait CopyCommand extends js.Object {
-    var DataTableName: js.UndefOr[DataTableName]
-    var DataTableColumns: js.UndefOr[DataTableColumns]
+    var DataTableName: DataTableName
     var CopyOptions: js.UndefOr[CopyOptions]
+    var DataTableColumns: js.UndefOr[DataTableColumns]
   }
 
   object CopyCommand {
     def apply(
-      DataTableName: js.UndefOr[DataTableName] = js.undefined,
-      DataTableColumns: js.UndefOr[DataTableColumns] = js.undefined,
-      CopyOptions: js.UndefOr[CopyOptions] = js.undefined): CopyCommand = {
+      DataTableName: DataTableName,
+      CopyOptions: js.UndefOr[CopyOptions] = js.undefined,
+      DataTableColumns: js.UndefOr[DataTableColumns] = js.undefined): CopyCommand = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "DataTableName" -> DataTableName.map { x => x.asInstanceOf[js.Any] },
-        "DataTableColumns" -> DataTableColumns.map { x => x.asInstanceOf[js.Any] },
-        "CopyOptions" -> CopyOptions.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "DataTableName" -> DataTableName.asInstanceOf[js.Any],
+        "CopyOptions" -> CopyOptions.map { x => x.asInstanceOf[js.Any] },
+        "DataTableColumns" -> DataTableColumns.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CopyCommand]
     }
@@ -187,38 +187,38 @@ package firehose {
 
   @js.native
   trait CreateDeliveryStreamInput extends js.Object {
-    var KinesisStreamSourceConfiguration: js.UndefOr[KinesisStreamSourceConfiguration]
-    var SplunkDestinationConfiguration: js.UndefOr[SplunkDestinationConfiguration]
+    var DeliveryStreamName: DeliveryStreamName
     var DeliveryStreamType: js.UndefOr[DeliveryStreamType]
-    var S3DestinationConfiguration: js.UndefOr[S3DestinationConfiguration]
     var ElasticsearchDestinationConfiguration: js.UndefOr[ElasticsearchDestinationConfiguration]
-    var RedshiftDestinationConfiguration: js.UndefOr[RedshiftDestinationConfiguration]
-    var Tags: js.UndefOr[TagDeliveryStreamInputTagList]
     var ExtendedS3DestinationConfiguration: js.UndefOr[ExtendedS3DestinationConfiguration]
-    var DeliveryStreamName: js.UndefOr[DeliveryStreamName]
+    var KinesisStreamSourceConfiguration: js.UndefOr[KinesisStreamSourceConfiguration]
+    var RedshiftDestinationConfiguration: js.UndefOr[RedshiftDestinationConfiguration]
+    var S3DestinationConfiguration: js.UndefOr[S3DestinationConfiguration]
+    var SplunkDestinationConfiguration: js.UndefOr[SplunkDestinationConfiguration]
+    var Tags: js.UndefOr[TagDeliveryStreamInputTagList]
   }
 
   object CreateDeliveryStreamInput {
     def apply(
-      KinesisStreamSourceConfiguration: js.UndefOr[KinesisStreamSourceConfiguration] = js.undefined,
-      SplunkDestinationConfiguration: js.UndefOr[SplunkDestinationConfiguration] = js.undefined,
+      DeliveryStreamName: DeliveryStreamName,
       DeliveryStreamType: js.UndefOr[DeliveryStreamType] = js.undefined,
-      S3DestinationConfiguration: js.UndefOr[S3DestinationConfiguration] = js.undefined,
       ElasticsearchDestinationConfiguration: js.UndefOr[ElasticsearchDestinationConfiguration] = js.undefined,
-      RedshiftDestinationConfiguration: js.UndefOr[RedshiftDestinationConfiguration] = js.undefined,
-      Tags: js.UndefOr[TagDeliveryStreamInputTagList] = js.undefined,
       ExtendedS3DestinationConfiguration: js.UndefOr[ExtendedS3DestinationConfiguration] = js.undefined,
-      DeliveryStreamName: js.UndefOr[DeliveryStreamName] = js.undefined): CreateDeliveryStreamInput = {
+      KinesisStreamSourceConfiguration: js.UndefOr[KinesisStreamSourceConfiguration] = js.undefined,
+      RedshiftDestinationConfiguration: js.UndefOr[RedshiftDestinationConfiguration] = js.undefined,
+      S3DestinationConfiguration: js.UndefOr[S3DestinationConfiguration] = js.undefined,
+      SplunkDestinationConfiguration: js.UndefOr[SplunkDestinationConfiguration] = js.undefined,
+      Tags: js.UndefOr[TagDeliveryStreamInputTagList] = js.undefined): CreateDeliveryStreamInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "KinesisStreamSourceConfiguration" -> KinesisStreamSourceConfiguration.map { x => x.asInstanceOf[js.Any] },
-        "SplunkDestinationConfiguration" -> SplunkDestinationConfiguration.map { x => x.asInstanceOf[js.Any] },
+        "DeliveryStreamName" -> DeliveryStreamName.asInstanceOf[js.Any],
         "DeliveryStreamType" -> DeliveryStreamType.map { x => x.asInstanceOf[js.Any] },
-        "S3DestinationConfiguration" -> S3DestinationConfiguration.map { x => x.asInstanceOf[js.Any] },
         "ElasticsearchDestinationConfiguration" -> ElasticsearchDestinationConfiguration.map { x => x.asInstanceOf[js.Any] },
-        "RedshiftDestinationConfiguration" -> RedshiftDestinationConfiguration.map { x => x.asInstanceOf[js.Any] },
-        "Tags" -> Tags.map { x => x.asInstanceOf[js.Any] },
         "ExtendedS3DestinationConfiguration" -> ExtendedS3DestinationConfiguration.map { x => x.asInstanceOf[js.Any] },
-        "DeliveryStreamName" -> DeliveryStreamName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "KinesisStreamSourceConfiguration" -> KinesisStreamSourceConfiguration.map { x => x.asInstanceOf[js.Any] },
+        "RedshiftDestinationConfiguration" -> RedshiftDestinationConfiguration.map { x => x.asInstanceOf[js.Any] },
+        "S3DestinationConfiguration" -> S3DestinationConfiguration.map { x => x.asInstanceOf[js.Any] },
+        "SplunkDestinationConfiguration" -> SplunkDestinationConfiguration.map { x => x.asInstanceOf[js.Any] },
+        "Tags" -> Tags.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateDeliveryStreamInput]
     }
@@ -244,23 +244,23 @@ package firehose {
    */
   @js.native
   trait DataFormatConversionConfiguration extends js.Object {
-    var SchemaConfiguration: js.UndefOr[SchemaConfiguration]
+    var Enabled: js.UndefOr[BooleanObject]
     var InputFormatConfiguration: js.UndefOr[InputFormatConfiguration]
     var OutputFormatConfiguration: js.UndefOr[OutputFormatConfiguration]
-    var Enabled: js.UndefOr[BooleanObject]
+    var SchemaConfiguration: js.UndefOr[SchemaConfiguration]
   }
 
   object DataFormatConversionConfiguration {
     def apply(
-      SchemaConfiguration: js.UndefOr[SchemaConfiguration] = js.undefined,
+      Enabled: js.UndefOr[BooleanObject] = js.undefined,
       InputFormatConfiguration: js.UndefOr[InputFormatConfiguration] = js.undefined,
       OutputFormatConfiguration: js.UndefOr[OutputFormatConfiguration] = js.undefined,
-      Enabled: js.UndefOr[BooleanObject] = js.undefined): DataFormatConversionConfiguration = {
+      SchemaConfiguration: js.UndefOr[SchemaConfiguration] = js.undefined): DataFormatConversionConfiguration = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "SchemaConfiguration" -> SchemaConfiguration.map { x => x.asInstanceOf[js.Any] },
+        "Enabled" -> Enabled.map { x => x.asInstanceOf[js.Any] },
         "InputFormatConfiguration" -> InputFormatConfiguration.map { x => x.asInstanceOf[js.Any] },
         "OutputFormatConfiguration" -> OutputFormatConfiguration.map { x => x.asInstanceOf[js.Any] },
-        "Enabled" -> Enabled.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "SchemaConfiguration" -> SchemaConfiguration.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DataFormatConversionConfiguration]
     }
@@ -268,14 +268,14 @@ package firehose {
 
   @js.native
   trait DeleteDeliveryStreamInput extends js.Object {
-    var DeliveryStreamName: js.UndefOr[DeliveryStreamName]
+    var DeliveryStreamName: DeliveryStreamName
   }
 
   object DeleteDeliveryStreamInput {
     def apply(
-      DeliveryStreamName: js.UndefOr[DeliveryStreamName] = js.undefined): DeleteDeliveryStreamInput = {
+      DeliveryStreamName: DeliveryStreamName): DeleteDeliveryStreamInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "DeliveryStreamName" -> DeliveryStreamName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "DeliveryStreamName" -> DeliveryStreamName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteDeliveryStreamInput]
     }
@@ -299,44 +299,44 @@ package firehose {
    */
   @js.native
   trait DeliveryStreamDescription extends js.Object {
+    var DeliveryStreamARN: DeliveryStreamARN
+    var DeliveryStreamName: DeliveryStreamName
+    var DeliveryStreamStatus: DeliveryStreamStatus
+    var DeliveryStreamType: DeliveryStreamType
+    var Destinations: DestinationDescriptionList
+    var HasMoreDestinations: BooleanObject
+    var VersionId: DeliveryStreamVersionId
     var CreateTimestamp: js.UndefOr[Timestamp]
-    var LastUpdateTimestamp: js.UndefOr[Timestamp]
-    var HasMoreDestinations: js.UndefOr[BooleanObject]
-    var DeliveryStreamType: js.UndefOr[DeliveryStreamType]
-    var Destinations: js.UndefOr[DestinationDescriptionList]
-    var DeliveryStreamARN: js.UndefOr[DeliveryStreamARN]
-    var DeliveryStreamStatus: js.UndefOr[DeliveryStreamStatus]
     var DeliveryStreamEncryptionConfiguration: js.UndefOr[DeliveryStreamEncryptionConfiguration]
+    var LastUpdateTimestamp: js.UndefOr[Timestamp]
     var Source: js.UndefOr[SourceDescription]
-    var VersionId: js.UndefOr[DeliveryStreamVersionId]
-    var DeliveryStreamName: js.UndefOr[DeliveryStreamName]
   }
 
   object DeliveryStreamDescription {
     def apply(
+      DeliveryStreamARN: DeliveryStreamARN,
+      DeliveryStreamName: DeliveryStreamName,
+      DeliveryStreamStatus: DeliveryStreamStatus,
+      DeliveryStreamType: DeliveryStreamType,
+      Destinations: DestinationDescriptionList,
+      HasMoreDestinations: BooleanObject,
+      VersionId: DeliveryStreamVersionId,
       CreateTimestamp: js.UndefOr[Timestamp] = js.undefined,
-      LastUpdateTimestamp: js.UndefOr[Timestamp] = js.undefined,
-      HasMoreDestinations: js.UndefOr[BooleanObject] = js.undefined,
-      DeliveryStreamType: js.UndefOr[DeliveryStreamType] = js.undefined,
-      Destinations: js.UndefOr[DestinationDescriptionList] = js.undefined,
-      DeliveryStreamARN: js.UndefOr[DeliveryStreamARN] = js.undefined,
-      DeliveryStreamStatus: js.UndefOr[DeliveryStreamStatus] = js.undefined,
       DeliveryStreamEncryptionConfiguration: js.UndefOr[DeliveryStreamEncryptionConfiguration] = js.undefined,
-      Source: js.UndefOr[SourceDescription] = js.undefined,
-      VersionId: js.UndefOr[DeliveryStreamVersionId] = js.undefined,
-      DeliveryStreamName: js.UndefOr[DeliveryStreamName] = js.undefined): DeliveryStreamDescription = {
+      LastUpdateTimestamp: js.UndefOr[Timestamp] = js.undefined,
+      Source: js.UndefOr[SourceDescription] = js.undefined): DeliveryStreamDescription = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "DeliveryStreamARN" -> DeliveryStreamARN.asInstanceOf[js.Any],
+        "DeliveryStreamName" -> DeliveryStreamName.asInstanceOf[js.Any],
+        "DeliveryStreamStatus" -> DeliveryStreamStatus.asInstanceOf[js.Any],
+        "DeliveryStreamType" -> DeliveryStreamType.asInstanceOf[js.Any],
+        "Destinations" -> Destinations.asInstanceOf[js.Any],
+        "HasMoreDestinations" -> HasMoreDestinations.asInstanceOf[js.Any],
+        "VersionId" -> VersionId.asInstanceOf[js.Any],
         "CreateTimestamp" -> CreateTimestamp.map { x => x.asInstanceOf[js.Any] },
-        "LastUpdateTimestamp" -> LastUpdateTimestamp.map { x => x.asInstanceOf[js.Any] },
-        "HasMoreDestinations" -> HasMoreDestinations.map { x => x.asInstanceOf[js.Any] },
-        "DeliveryStreamType" -> DeliveryStreamType.map { x => x.asInstanceOf[js.Any] },
-        "Destinations" -> Destinations.map { x => x.asInstanceOf[js.Any] },
-        "DeliveryStreamARN" -> DeliveryStreamARN.map { x => x.asInstanceOf[js.Any] },
-        "DeliveryStreamStatus" -> DeliveryStreamStatus.map { x => x.asInstanceOf[js.Any] },
         "DeliveryStreamEncryptionConfiguration" -> DeliveryStreamEncryptionConfiguration.map { x => x.asInstanceOf[js.Any] },
-        "Source" -> Source.map { x => x.asInstanceOf[js.Any] },
-        "VersionId" -> VersionId.map { x => x.asInstanceOf[js.Any] },
-        "DeliveryStreamName" -> DeliveryStreamName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "LastUpdateTimestamp" -> LastUpdateTimestamp.map { x => x.asInstanceOf[js.Any] },
+        "Source" -> Source.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeliveryStreamDescription]
     }
@@ -386,20 +386,20 @@ package firehose {
 
   @js.native
   trait DescribeDeliveryStreamInput extends js.Object {
-    var DeliveryStreamName: js.UndefOr[DeliveryStreamName]
-    var Limit: js.UndefOr[DescribeDeliveryStreamInputLimit]
+    var DeliveryStreamName: DeliveryStreamName
     var ExclusiveStartDestinationId: js.UndefOr[DestinationId]
+    var Limit: js.UndefOr[DescribeDeliveryStreamInputLimit]
   }
 
   object DescribeDeliveryStreamInput {
     def apply(
-      DeliveryStreamName: js.UndefOr[DeliveryStreamName] = js.undefined,
-      Limit: js.UndefOr[DescribeDeliveryStreamInputLimit] = js.undefined,
-      ExclusiveStartDestinationId: js.UndefOr[DestinationId] = js.undefined): DescribeDeliveryStreamInput = {
+      DeliveryStreamName: DeliveryStreamName,
+      ExclusiveStartDestinationId: js.UndefOr[DestinationId] = js.undefined,
+      Limit: js.UndefOr[DescribeDeliveryStreamInputLimit] = js.undefined): DescribeDeliveryStreamInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "DeliveryStreamName" -> DeliveryStreamName.map { x => x.asInstanceOf[js.Any] },
-        "Limit" -> Limit.map { x => x.asInstanceOf[js.Any] },
-        "ExclusiveStartDestinationId" -> ExclusiveStartDestinationId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "DeliveryStreamName" -> DeliveryStreamName.asInstanceOf[js.Any],
+        "ExclusiveStartDestinationId" -> ExclusiveStartDestinationId.map { x => x.asInstanceOf[js.Any] },
+        "Limit" -> Limit.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeDeliveryStreamInput]
     }
@@ -407,14 +407,14 @@ package firehose {
 
   @js.native
   trait DescribeDeliveryStreamOutput extends js.Object {
-    var DeliveryStreamDescription: js.UndefOr[DeliveryStreamDescription]
+    var DeliveryStreamDescription: DeliveryStreamDescription
   }
 
   object DescribeDeliveryStreamOutput {
     def apply(
-      DeliveryStreamDescription: js.UndefOr[DeliveryStreamDescription] = js.undefined): DescribeDeliveryStreamOutput = {
+      DeliveryStreamDescription: DeliveryStreamDescription): DescribeDeliveryStreamOutput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "DeliveryStreamDescription" -> DeliveryStreamDescription.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "DeliveryStreamDescription" -> DeliveryStreamDescription.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeDeliveryStreamOutput]
     }
@@ -425,17 +425,17 @@ package firehose {
    */
   @js.native
   trait Deserializer extends js.Object {
-    var OpenXJsonSerDe: js.UndefOr[OpenXJsonSerDe]
     var HiveJsonSerDe: js.UndefOr[HiveJsonSerDe]
+    var OpenXJsonSerDe: js.UndefOr[OpenXJsonSerDe]
   }
 
   object Deserializer {
     def apply(
-      OpenXJsonSerDe: js.UndefOr[OpenXJsonSerDe] = js.undefined,
-      HiveJsonSerDe: js.UndefOr[HiveJsonSerDe] = js.undefined): Deserializer = {
+      HiveJsonSerDe: js.UndefOr[HiveJsonSerDe] = js.undefined,
+      OpenXJsonSerDe: js.UndefOr[OpenXJsonSerDe] = js.undefined): Deserializer = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "OpenXJsonSerDe" -> OpenXJsonSerDe.map { x => x.asInstanceOf[js.Any] },
-        "HiveJsonSerDe" -> HiveJsonSerDe.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "HiveJsonSerDe" -> HiveJsonSerDe.map { x => x.asInstanceOf[js.Any] },
+        "OpenXJsonSerDe" -> OpenXJsonSerDe.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Deserializer]
     }
@@ -446,29 +446,29 @@ package firehose {
    */
   @js.native
   trait DestinationDescription extends js.Object {
-    var SplunkDestinationDescription: js.UndefOr[SplunkDestinationDescription]
-    var S3DestinationDescription: js.UndefOr[S3DestinationDescription]
-    var RedshiftDestinationDescription: js.UndefOr[RedshiftDestinationDescription]
+    var DestinationId: DestinationId
     var ElasticsearchDestinationDescription: js.UndefOr[ElasticsearchDestinationDescription]
-    var DestinationId: js.UndefOr[DestinationId]
     var ExtendedS3DestinationDescription: js.UndefOr[ExtendedS3DestinationDescription]
+    var RedshiftDestinationDescription: js.UndefOr[RedshiftDestinationDescription]
+    var S3DestinationDescription: js.UndefOr[S3DestinationDescription]
+    var SplunkDestinationDescription: js.UndefOr[SplunkDestinationDescription]
   }
 
   object DestinationDescription {
     def apply(
-      SplunkDestinationDescription: js.UndefOr[SplunkDestinationDescription] = js.undefined,
-      S3DestinationDescription: js.UndefOr[S3DestinationDescription] = js.undefined,
-      RedshiftDestinationDescription: js.UndefOr[RedshiftDestinationDescription] = js.undefined,
+      DestinationId: DestinationId,
       ElasticsearchDestinationDescription: js.UndefOr[ElasticsearchDestinationDescription] = js.undefined,
-      DestinationId: js.UndefOr[DestinationId] = js.undefined,
-      ExtendedS3DestinationDescription: js.UndefOr[ExtendedS3DestinationDescription] = js.undefined): DestinationDescription = {
+      ExtendedS3DestinationDescription: js.UndefOr[ExtendedS3DestinationDescription] = js.undefined,
+      RedshiftDestinationDescription: js.UndefOr[RedshiftDestinationDescription] = js.undefined,
+      S3DestinationDescription: js.UndefOr[S3DestinationDescription] = js.undefined,
+      SplunkDestinationDescription: js.UndefOr[SplunkDestinationDescription] = js.undefined): DestinationDescription = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "SplunkDestinationDescription" -> SplunkDestinationDescription.map { x => x.asInstanceOf[js.Any] },
-        "S3DestinationDescription" -> S3DestinationDescription.map { x => x.asInstanceOf[js.Any] },
-        "RedshiftDestinationDescription" -> RedshiftDestinationDescription.map { x => x.asInstanceOf[js.Any] },
+        "DestinationId" -> DestinationId.asInstanceOf[js.Any],
         "ElasticsearchDestinationDescription" -> ElasticsearchDestinationDescription.map { x => x.asInstanceOf[js.Any] },
-        "DestinationId" -> DestinationId.map { x => x.asInstanceOf[js.Any] },
-        "ExtendedS3DestinationDescription" -> ExtendedS3DestinationDescription.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ExtendedS3DestinationDescription" -> ExtendedS3DestinationDescription.map { x => x.asInstanceOf[js.Any] },
+        "RedshiftDestinationDescription" -> RedshiftDestinationDescription.map { x => x.asInstanceOf[js.Any] },
+        "S3DestinationDescription" -> S3DestinationDescription.map { x => x.asInstanceOf[js.Any] },
+        "SplunkDestinationDescription" -> SplunkDestinationDescription.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DestinationDescription]
     }
@@ -500,44 +500,44 @@ package firehose {
    */
   @js.native
   trait ElasticsearchDestinationConfiguration extends js.Object {
-    var ProcessingConfiguration: js.UndefOr[ProcessingConfiguration]
-    var IndexRotationPeriod: js.UndefOr[ElasticsearchIndexRotationPeriod]
-    var RetryOptions: js.UndefOr[ElasticsearchRetryOptions]
+    var DomainARN: ElasticsearchDomainARN
+    var IndexName: ElasticsearchIndexName
+    var RoleARN: RoleARN
+    var S3Configuration: S3DestinationConfiguration
+    var TypeName: ElasticsearchTypeName
     var BufferingHints: js.UndefOr[ElasticsearchBufferingHints]
-    var TypeName: js.UndefOr[ElasticsearchTypeName]
     var CloudWatchLoggingOptions: js.UndefOr[CloudWatchLoggingOptions]
-    var RoleARN: js.UndefOr[RoleARN]
+    var IndexRotationPeriod: js.UndefOr[ElasticsearchIndexRotationPeriod]
+    var ProcessingConfiguration: js.UndefOr[ProcessingConfiguration]
+    var RetryOptions: js.UndefOr[ElasticsearchRetryOptions]
     var S3BackupMode: js.UndefOr[ElasticsearchS3BackupMode]
-    var S3Configuration: js.UndefOr[S3DestinationConfiguration]
-    var DomainARN: js.UndefOr[ElasticsearchDomainARN]
-    var IndexName: js.UndefOr[ElasticsearchIndexName]
   }
 
   object ElasticsearchDestinationConfiguration {
     def apply(
-      ProcessingConfiguration: js.UndefOr[ProcessingConfiguration] = js.undefined,
-      IndexRotationPeriod: js.UndefOr[ElasticsearchIndexRotationPeriod] = js.undefined,
-      RetryOptions: js.UndefOr[ElasticsearchRetryOptions] = js.undefined,
+      DomainARN: ElasticsearchDomainARN,
+      IndexName: ElasticsearchIndexName,
+      RoleARN: RoleARN,
+      S3Configuration: S3DestinationConfiguration,
+      TypeName: ElasticsearchTypeName,
       BufferingHints: js.UndefOr[ElasticsearchBufferingHints] = js.undefined,
-      TypeName: js.UndefOr[ElasticsearchTypeName] = js.undefined,
       CloudWatchLoggingOptions: js.UndefOr[CloudWatchLoggingOptions] = js.undefined,
-      RoleARN: js.UndefOr[RoleARN] = js.undefined,
-      S3BackupMode: js.UndefOr[ElasticsearchS3BackupMode] = js.undefined,
-      S3Configuration: js.UndefOr[S3DestinationConfiguration] = js.undefined,
-      DomainARN: js.UndefOr[ElasticsearchDomainARN] = js.undefined,
-      IndexName: js.UndefOr[ElasticsearchIndexName] = js.undefined): ElasticsearchDestinationConfiguration = {
+      IndexRotationPeriod: js.UndefOr[ElasticsearchIndexRotationPeriod] = js.undefined,
+      ProcessingConfiguration: js.UndefOr[ProcessingConfiguration] = js.undefined,
+      RetryOptions: js.UndefOr[ElasticsearchRetryOptions] = js.undefined,
+      S3BackupMode: js.UndefOr[ElasticsearchS3BackupMode] = js.undefined): ElasticsearchDestinationConfiguration = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ProcessingConfiguration" -> ProcessingConfiguration.map { x => x.asInstanceOf[js.Any] },
-        "IndexRotationPeriod" -> IndexRotationPeriod.map { x => x.asInstanceOf[js.Any] },
-        "RetryOptions" -> RetryOptions.map { x => x.asInstanceOf[js.Any] },
+        "DomainARN" -> DomainARN.asInstanceOf[js.Any],
+        "IndexName" -> IndexName.asInstanceOf[js.Any],
+        "RoleARN" -> RoleARN.asInstanceOf[js.Any],
+        "S3Configuration" -> S3Configuration.asInstanceOf[js.Any],
+        "TypeName" -> TypeName.asInstanceOf[js.Any],
         "BufferingHints" -> BufferingHints.map { x => x.asInstanceOf[js.Any] },
-        "TypeName" -> TypeName.map { x => x.asInstanceOf[js.Any] },
         "CloudWatchLoggingOptions" -> CloudWatchLoggingOptions.map { x => x.asInstanceOf[js.Any] },
-        "RoleARN" -> RoleARN.map { x => x.asInstanceOf[js.Any] },
-        "S3BackupMode" -> S3BackupMode.map { x => x.asInstanceOf[js.Any] },
-        "S3Configuration" -> S3Configuration.map { x => x.asInstanceOf[js.Any] },
-        "DomainARN" -> DomainARN.map { x => x.asInstanceOf[js.Any] },
-        "IndexName" -> IndexName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "IndexRotationPeriod" -> IndexRotationPeriod.map { x => x.asInstanceOf[js.Any] },
+        "ProcessingConfiguration" -> ProcessingConfiguration.map { x => x.asInstanceOf[js.Any] },
+        "RetryOptions" -> RetryOptions.map { x => x.asInstanceOf[js.Any] },
+        "S3BackupMode" -> S3BackupMode.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ElasticsearchDestinationConfiguration]
     }
@@ -548,44 +548,44 @@ package firehose {
    */
   @js.native
   trait ElasticsearchDestinationDescription extends js.Object {
-    var ProcessingConfiguration: js.UndefOr[ProcessingConfiguration]
-    var IndexRotationPeriod: js.UndefOr[ElasticsearchIndexRotationPeriod]
-    var RetryOptions: js.UndefOr[ElasticsearchRetryOptions]
     var BufferingHints: js.UndefOr[ElasticsearchBufferingHints]
-    var TypeName: js.UndefOr[ElasticsearchTypeName]
     var CloudWatchLoggingOptions: js.UndefOr[CloudWatchLoggingOptions]
-    var RoleARN: js.UndefOr[RoleARN]
-    var S3DestinationDescription: js.UndefOr[S3DestinationDescription]
-    var S3BackupMode: js.UndefOr[ElasticsearchS3BackupMode]
     var DomainARN: js.UndefOr[ElasticsearchDomainARN]
     var IndexName: js.UndefOr[ElasticsearchIndexName]
+    var IndexRotationPeriod: js.UndefOr[ElasticsearchIndexRotationPeriod]
+    var ProcessingConfiguration: js.UndefOr[ProcessingConfiguration]
+    var RetryOptions: js.UndefOr[ElasticsearchRetryOptions]
+    var RoleARN: js.UndefOr[RoleARN]
+    var S3BackupMode: js.UndefOr[ElasticsearchS3BackupMode]
+    var S3DestinationDescription: js.UndefOr[S3DestinationDescription]
+    var TypeName: js.UndefOr[ElasticsearchTypeName]
   }
 
   object ElasticsearchDestinationDescription {
     def apply(
-      ProcessingConfiguration: js.UndefOr[ProcessingConfiguration] = js.undefined,
-      IndexRotationPeriod: js.UndefOr[ElasticsearchIndexRotationPeriod] = js.undefined,
-      RetryOptions: js.UndefOr[ElasticsearchRetryOptions] = js.undefined,
       BufferingHints: js.UndefOr[ElasticsearchBufferingHints] = js.undefined,
-      TypeName: js.UndefOr[ElasticsearchTypeName] = js.undefined,
       CloudWatchLoggingOptions: js.UndefOr[CloudWatchLoggingOptions] = js.undefined,
-      RoleARN: js.UndefOr[RoleARN] = js.undefined,
-      S3DestinationDescription: js.UndefOr[S3DestinationDescription] = js.undefined,
-      S3BackupMode: js.UndefOr[ElasticsearchS3BackupMode] = js.undefined,
       DomainARN: js.UndefOr[ElasticsearchDomainARN] = js.undefined,
-      IndexName: js.UndefOr[ElasticsearchIndexName] = js.undefined): ElasticsearchDestinationDescription = {
+      IndexName: js.UndefOr[ElasticsearchIndexName] = js.undefined,
+      IndexRotationPeriod: js.UndefOr[ElasticsearchIndexRotationPeriod] = js.undefined,
+      ProcessingConfiguration: js.UndefOr[ProcessingConfiguration] = js.undefined,
+      RetryOptions: js.UndefOr[ElasticsearchRetryOptions] = js.undefined,
+      RoleARN: js.UndefOr[RoleARN] = js.undefined,
+      S3BackupMode: js.UndefOr[ElasticsearchS3BackupMode] = js.undefined,
+      S3DestinationDescription: js.UndefOr[S3DestinationDescription] = js.undefined,
+      TypeName: js.UndefOr[ElasticsearchTypeName] = js.undefined): ElasticsearchDestinationDescription = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ProcessingConfiguration" -> ProcessingConfiguration.map { x => x.asInstanceOf[js.Any] },
-        "IndexRotationPeriod" -> IndexRotationPeriod.map { x => x.asInstanceOf[js.Any] },
-        "RetryOptions" -> RetryOptions.map { x => x.asInstanceOf[js.Any] },
         "BufferingHints" -> BufferingHints.map { x => x.asInstanceOf[js.Any] },
-        "TypeName" -> TypeName.map { x => x.asInstanceOf[js.Any] },
         "CloudWatchLoggingOptions" -> CloudWatchLoggingOptions.map { x => x.asInstanceOf[js.Any] },
-        "RoleARN" -> RoleARN.map { x => x.asInstanceOf[js.Any] },
-        "S3DestinationDescription" -> S3DestinationDescription.map { x => x.asInstanceOf[js.Any] },
-        "S3BackupMode" -> S3BackupMode.map { x => x.asInstanceOf[js.Any] },
         "DomainARN" -> DomainARN.map { x => x.asInstanceOf[js.Any] },
-        "IndexName" -> IndexName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "IndexName" -> IndexName.map { x => x.asInstanceOf[js.Any] },
+        "IndexRotationPeriod" -> IndexRotationPeriod.map { x => x.asInstanceOf[js.Any] },
+        "ProcessingConfiguration" -> ProcessingConfiguration.map { x => x.asInstanceOf[js.Any] },
+        "RetryOptions" -> RetryOptions.map { x => x.asInstanceOf[js.Any] },
+        "RoleARN" -> RoleARN.map { x => x.asInstanceOf[js.Any] },
+        "S3BackupMode" -> S3BackupMode.map { x => x.asInstanceOf[js.Any] },
+        "S3DestinationDescription" -> S3DestinationDescription.map { x => x.asInstanceOf[js.Any] },
+        "TypeName" -> TypeName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ElasticsearchDestinationDescription]
     }
@@ -596,41 +596,41 @@ package firehose {
    */
   @js.native
   trait ElasticsearchDestinationUpdate extends js.Object {
-    var ProcessingConfiguration: js.UndefOr[ProcessingConfiguration]
-    var IndexRotationPeriod: js.UndefOr[ElasticsearchIndexRotationPeriod]
-    var RetryOptions: js.UndefOr[ElasticsearchRetryOptions]
     var BufferingHints: js.UndefOr[ElasticsearchBufferingHints]
-    var TypeName: js.UndefOr[ElasticsearchTypeName]
     var CloudWatchLoggingOptions: js.UndefOr[CloudWatchLoggingOptions]
-    var RoleARN: js.UndefOr[RoleARN]
-    var S3Update: js.UndefOr[S3DestinationUpdate]
     var DomainARN: js.UndefOr[ElasticsearchDomainARN]
     var IndexName: js.UndefOr[ElasticsearchIndexName]
+    var IndexRotationPeriod: js.UndefOr[ElasticsearchIndexRotationPeriod]
+    var ProcessingConfiguration: js.UndefOr[ProcessingConfiguration]
+    var RetryOptions: js.UndefOr[ElasticsearchRetryOptions]
+    var RoleARN: js.UndefOr[RoleARN]
+    var S3Update: js.UndefOr[S3DestinationUpdate]
+    var TypeName: js.UndefOr[ElasticsearchTypeName]
   }
 
   object ElasticsearchDestinationUpdate {
     def apply(
-      ProcessingConfiguration: js.UndefOr[ProcessingConfiguration] = js.undefined,
-      IndexRotationPeriod: js.UndefOr[ElasticsearchIndexRotationPeriod] = js.undefined,
-      RetryOptions: js.UndefOr[ElasticsearchRetryOptions] = js.undefined,
       BufferingHints: js.UndefOr[ElasticsearchBufferingHints] = js.undefined,
-      TypeName: js.UndefOr[ElasticsearchTypeName] = js.undefined,
       CloudWatchLoggingOptions: js.UndefOr[CloudWatchLoggingOptions] = js.undefined,
+      DomainARN: js.UndefOr[ElasticsearchDomainARN] = js.undefined,
+      IndexName: js.UndefOr[ElasticsearchIndexName] = js.undefined,
+      IndexRotationPeriod: js.UndefOr[ElasticsearchIndexRotationPeriod] = js.undefined,
+      ProcessingConfiguration: js.UndefOr[ProcessingConfiguration] = js.undefined,
+      RetryOptions: js.UndefOr[ElasticsearchRetryOptions] = js.undefined,
       RoleARN: js.UndefOr[RoleARN] = js.undefined,
       S3Update: js.UndefOr[S3DestinationUpdate] = js.undefined,
-      DomainARN: js.UndefOr[ElasticsearchDomainARN] = js.undefined,
-      IndexName: js.UndefOr[ElasticsearchIndexName] = js.undefined): ElasticsearchDestinationUpdate = {
+      TypeName: js.UndefOr[ElasticsearchTypeName] = js.undefined): ElasticsearchDestinationUpdate = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ProcessingConfiguration" -> ProcessingConfiguration.map { x => x.asInstanceOf[js.Any] },
-        "IndexRotationPeriod" -> IndexRotationPeriod.map { x => x.asInstanceOf[js.Any] },
-        "RetryOptions" -> RetryOptions.map { x => x.asInstanceOf[js.Any] },
         "BufferingHints" -> BufferingHints.map { x => x.asInstanceOf[js.Any] },
-        "TypeName" -> TypeName.map { x => x.asInstanceOf[js.Any] },
         "CloudWatchLoggingOptions" -> CloudWatchLoggingOptions.map { x => x.asInstanceOf[js.Any] },
+        "DomainARN" -> DomainARN.map { x => x.asInstanceOf[js.Any] },
+        "IndexName" -> IndexName.map { x => x.asInstanceOf[js.Any] },
+        "IndexRotationPeriod" -> IndexRotationPeriod.map { x => x.asInstanceOf[js.Any] },
+        "ProcessingConfiguration" -> ProcessingConfiguration.map { x => x.asInstanceOf[js.Any] },
+        "RetryOptions" -> RetryOptions.map { x => x.asInstanceOf[js.Any] },
         "RoleARN" -> RoleARN.map { x => x.asInstanceOf[js.Any] },
         "S3Update" -> S3Update.map { x => x.asInstanceOf[js.Any] },
-        "DomainARN" -> DomainARN.map { x => x.asInstanceOf[js.Any] },
-        "IndexName" -> IndexName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "TypeName" -> TypeName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ElasticsearchDestinationUpdate]
     }
@@ -676,17 +676,17 @@ package firehose {
    */
   @js.native
   trait EncryptionConfiguration extends js.Object {
-    var NoEncryptionConfig: js.UndefOr[NoEncryptionConfig]
     var KMSEncryptionConfig: js.UndefOr[KMSEncryptionConfig]
+    var NoEncryptionConfig: js.UndefOr[NoEncryptionConfig]
   }
 
   object EncryptionConfiguration {
     def apply(
-      NoEncryptionConfig: js.UndefOr[NoEncryptionConfig] = js.undefined,
-      KMSEncryptionConfig: js.UndefOr[KMSEncryptionConfig] = js.undefined): EncryptionConfiguration = {
+      KMSEncryptionConfig: js.UndefOr[KMSEncryptionConfig] = js.undefined,
+      NoEncryptionConfig: js.UndefOr[NoEncryptionConfig] = js.undefined): EncryptionConfiguration = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "NoEncryptionConfig" -> NoEncryptionConfig.map { x => x.asInstanceOf[js.Any] },
-        "KMSEncryptionConfig" -> KMSEncryptionConfig.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "KMSEncryptionConfig" -> KMSEncryptionConfig.map { x => x.asInstanceOf[js.Any] },
+        "NoEncryptionConfig" -> NoEncryptionConfig.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EncryptionConfiguration]
     }
@@ -697,44 +697,44 @@ package firehose {
    */
   @js.native
   trait ExtendedS3DestinationConfiguration extends js.Object {
-    var ProcessingConfiguration: js.UndefOr[ProcessingConfiguration]
-    var DataFormatConversionConfiguration: js.UndefOr[DataFormatConversionConfiguration]
-    var CompressionFormat: js.UndefOr[CompressionFormat]
+    var BucketARN: BucketARN
+    var RoleARN: RoleARN
     var BufferingHints: js.UndefOr[BufferingHints]
-    var EncryptionConfiguration: js.UndefOr[EncryptionConfiguration]
     var CloudWatchLoggingOptions: js.UndefOr[CloudWatchLoggingOptions]
-    var RoleARN: js.UndefOr[RoleARN]
-    var S3BackupMode: js.UndefOr[S3BackupMode]
+    var CompressionFormat: js.UndefOr[CompressionFormat]
+    var DataFormatConversionConfiguration: js.UndefOr[DataFormatConversionConfiguration]
+    var EncryptionConfiguration: js.UndefOr[EncryptionConfiguration]
     var Prefix: js.UndefOr[Prefix]
-    var BucketARN: js.UndefOr[BucketARN]
+    var ProcessingConfiguration: js.UndefOr[ProcessingConfiguration]
     var S3BackupConfiguration: js.UndefOr[S3DestinationConfiguration]
+    var S3BackupMode: js.UndefOr[S3BackupMode]
   }
 
   object ExtendedS3DestinationConfiguration {
     def apply(
-      ProcessingConfiguration: js.UndefOr[ProcessingConfiguration] = js.undefined,
-      DataFormatConversionConfiguration: js.UndefOr[DataFormatConversionConfiguration] = js.undefined,
-      CompressionFormat: js.UndefOr[CompressionFormat] = js.undefined,
+      BucketARN: BucketARN,
+      RoleARN: RoleARN,
       BufferingHints: js.UndefOr[BufferingHints] = js.undefined,
-      EncryptionConfiguration: js.UndefOr[EncryptionConfiguration] = js.undefined,
       CloudWatchLoggingOptions: js.UndefOr[CloudWatchLoggingOptions] = js.undefined,
-      RoleARN: js.UndefOr[RoleARN] = js.undefined,
-      S3BackupMode: js.UndefOr[S3BackupMode] = js.undefined,
+      CompressionFormat: js.UndefOr[CompressionFormat] = js.undefined,
+      DataFormatConversionConfiguration: js.UndefOr[DataFormatConversionConfiguration] = js.undefined,
+      EncryptionConfiguration: js.UndefOr[EncryptionConfiguration] = js.undefined,
       Prefix: js.UndefOr[Prefix] = js.undefined,
-      BucketARN: js.UndefOr[BucketARN] = js.undefined,
-      S3BackupConfiguration: js.UndefOr[S3DestinationConfiguration] = js.undefined): ExtendedS3DestinationConfiguration = {
+      ProcessingConfiguration: js.UndefOr[ProcessingConfiguration] = js.undefined,
+      S3BackupConfiguration: js.UndefOr[S3DestinationConfiguration] = js.undefined,
+      S3BackupMode: js.UndefOr[S3BackupMode] = js.undefined): ExtendedS3DestinationConfiguration = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ProcessingConfiguration" -> ProcessingConfiguration.map { x => x.asInstanceOf[js.Any] },
-        "DataFormatConversionConfiguration" -> DataFormatConversionConfiguration.map { x => x.asInstanceOf[js.Any] },
-        "CompressionFormat" -> CompressionFormat.map { x => x.asInstanceOf[js.Any] },
+        "BucketARN" -> BucketARN.asInstanceOf[js.Any],
+        "RoleARN" -> RoleARN.asInstanceOf[js.Any],
         "BufferingHints" -> BufferingHints.map { x => x.asInstanceOf[js.Any] },
-        "EncryptionConfiguration" -> EncryptionConfiguration.map { x => x.asInstanceOf[js.Any] },
         "CloudWatchLoggingOptions" -> CloudWatchLoggingOptions.map { x => x.asInstanceOf[js.Any] },
-        "RoleARN" -> RoleARN.map { x => x.asInstanceOf[js.Any] },
-        "S3BackupMode" -> S3BackupMode.map { x => x.asInstanceOf[js.Any] },
+        "CompressionFormat" -> CompressionFormat.map { x => x.asInstanceOf[js.Any] },
+        "DataFormatConversionConfiguration" -> DataFormatConversionConfiguration.map { x => x.asInstanceOf[js.Any] },
+        "EncryptionConfiguration" -> EncryptionConfiguration.map { x => x.asInstanceOf[js.Any] },
         "Prefix" -> Prefix.map { x => x.asInstanceOf[js.Any] },
-        "BucketARN" -> BucketARN.map { x => x.asInstanceOf[js.Any] },
-        "S3BackupConfiguration" -> S3BackupConfiguration.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ProcessingConfiguration" -> ProcessingConfiguration.map { x => x.asInstanceOf[js.Any] },
+        "S3BackupConfiguration" -> S3BackupConfiguration.map { x => x.asInstanceOf[js.Any] },
+        "S3BackupMode" -> S3BackupMode.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ExtendedS3DestinationConfiguration]
     }
@@ -745,44 +745,44 @@ package firehose {
    */
   @js.native
   trait ExtendedS3DestinationDescription extends js.Object {
-    var S3BackupDescription: js.UndefOr[S3DestinationDescription]
-    var ProcessingConfiguration: js.UndefOr[ProcessingConfiguration]
-    var DataFormatConversionConfiguration: js.UndefOr[DataFormatConversionConfiguration]
-    var CompressionFormat: js.UndefOr[CompressionFormat]
-    var BufferingHints: js.UndefOr[BufferingHints]
-    var EncryptionConfiguration: js.UndefOr[EncryptionConfiguration]
+    var BucketARN: BucketARN
+    var BufferingHints: BufferingHints
+    var CompressionFormat: CompressionFormat
+    var EncryptionConfiguration: EncryptionConfiguration
+    var RoleARN: RoleARN
     var CloudWatchLoggingOptions: js.UndefOr[CloudWatchLoggingOptions]
-    var RoleARN: js.UndefOr[RoleARN]
-    var S3BackupMode: js.UndefOr[S3BackupMode]
+    var DataFormatConversionConfiguration: js.UndefOr[DataFormatConversionConfiguration]
     var Prefix: js.UndefOr[Prefix]
-    var BucketARN: js.UndefOr[BucketARN]
+    var ProcessingConfiguration: js.UndefOr[ProcessingConfiguration]
+    var S3BackupDescription: js.UndefOr[S3DestinationDescription]
+    var S3BackupMode: js.UndefOr[S3BackupMode]
   }
 
   object ExtendedS3DestinationDescription {
     def apply(
-      S3BackupDescription: js.UndefOr[S3DestinationDescription] = js.undefined,
-      ProcessingConfiguration: js.UndefOr[ProcessingConfiguration] = js.undefined,
-      DataFormatConversionConfiguration: js.UndefOr[DataFormatConversionConfiguration] = js.undefined,
-      CompressionFormat: js.UndefOr[CompressionFormat] = js.undefined,
-      BufferingHints: js.UndefOr[BufferingHints] = js.undefined,
-      EncryptionConfiguration: js.UndefOr[EncryptionConfiguration] = js.undefined,
+      BucketARN: BucketARN,
+      BufferingHints: BufferingHints,
+      CompressionFormat: CompressionFormat,
+      EncryptionConfiguration: EncryptionConfiguration,
+      RoleARN: RoleARN,
       CloudWatchLoggingOptions: js.UndefOr[CloudWatchLoggingOptions] = js.undefined,
-      RoleARN: js.UndefOr[RoleARN] = js.undefined,
-      S3BackupMode: js.UndefOr[S3BackupMode] = js.undefined,
+      DataFormatConversionConfiguration: js.UndefOr[DataFormatConversionConfiguration] = js.undefined,
       Prefix: js.UndefOr[Prefix] = js.undefined,
-      BucketARN: js.UndefOr[BucketARN] = js.undefined): ExtendedS3DestinationDescription = {
+      ProcessingConfiguration: js.UndefOr[ProcessingConfiguration] = js.undefined,
+      S3BackupDescription: js.UndefOr[S3DestinationDescription] = js.undefined,
+      S3BackupMode: js.UndefOr[S3BackupMode] = js.undefined): ExtendedS3DestinationDescription = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "S3BackupDescription" -> S3BackupDescription.map { x => x.asInstanceOf[js.Any] },
-        "ProcessingConfiguration" -> ProcessingConfiguration.map { x => x.asInstanceOf[js.Any] },
-        "DataFormatConversionConfiguration" -> DataFormatConversionConfiguration.map { x => x.asInstanceOf[js.Any] },
-        "CompressionFormat" -> CompressionFormat.map { x => x.asInstanceOf[js.Any] },
-        "BufferingHints" -> BufferingHints.map { x => x.asInstanceOf[js.Any] },
-        "EncryptionConfiguration" -> EncryptionConfiguration.map { x => x.asInstanceOf[js.Any] },
+        "BucketARN" -> BucketARN.asInstanceOf[js.Any],
+        "BufferingHints" -> BufferingHints.asInstanceOf[js.Any],
+        "CompressionFormat" -> CompressionFormat.asInstanceOf[js.Any],
+        "EncryptionConfiguration" -> EncryptionConfiguration.asInstanceOf[js.Any],
+        "RoleARN" -> RoleARN.asInstanceOf[js.Any],
         "CloudWatchLoggingOptions" -> CloudWatchLoggingOptions.map { x => x.asInstanceOf[js.Any] },
-        "RoleARN" -> RoleARN.map { x => x.asInstanceOf[js.Any] },
-        "S3BackupMode" -> S3BackupMode.map { x => x.asInstanceOf[js.Any] },
+        "DataFormatConversionConfiguration" -> DataFormatConversionConfiguration.map { x => x.asInstanceOf[js.Any] },
         "Prefix" -> Prefix.map { x => x.asInstanceOf[js.Any] },
-        "BucketARN" -> BucketARN.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ProcessingConfiguration" -> ProcessingConfiguration.map { x => x.asInstanceOf[js.Any] },
+        "S3BackupDescription" -> S3BackupDescription.map { x => x.asInstanceOf[js.Any] },
+        "S3BackupMode" -> S3BackupMode.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ExtendedS3DestinationDescription]
     }
@@ -793,43 +793,43 @@ package firehose {
    */
   @js.native
   trait ExtendedS3DestinationUpdate extends js.Object {
-    var ProcessingConfiguration: js.UndefOr[ProcessingConfiguration]
-    var DataFormatConversionConfiguration: js.UndefOr[DataFormatConversionConfiguration]
-    var CompressionFormat: js.UndefOr[CompressionFormat]
+    var BucketARN: js.UndefOr[BucketARN]
     var BufferingHints: js.UndefOr[BufferingHints]
-    var EncryptionConfiguration: js.UndefOr[EncryptionConfiguration]
     var CloudWatchLoggingOptions: js.UndefOr[CloudWatchLoggingOptions]
+    var CompressionFormat: js.UndefOr[CompressionFormat]
+    var DataFormatConversionConfiguration: js.UndefOr[DataFormatConversionConfiguration]
+    var EncryptionConfiguration: js.UndefOr[EncryptionConfiguration]
+    var Prefix: js.UndefOr[Prefix]
+    var ProcessingConfiguration: js.UndefOr[ProcessingConfiguration]
     var RoleARN: js.UndefOr[RoleARN]
     var S3BackupMode: js.UndefOr[S3BackupMode]
-    var Prefix: js.UndefOr[Prefix]
-    var BucketARN: js.UndefOr[BucketARN]
     var S3BackupUpdate: js.UndefOr[S3DestinationUpdate]
   }
 
   object ExtendedS3DestinationUpdate {
     def apply(
-      ProcessingConfiguration: js.UndefOr[ProcessingConfiguration] = js.undefined,
-      DataFormatConversionConfiguration: js.UndefOr[DataFormatConversionConfiguration] = js.undefined,
-      CompressionFormat: js.UndefOr[CompressionFormat] = js.undefined,
+      BucketARN: js.UndefOr[BucketARN] = js.undefined,
       BufferingHints: js.UndefOr[BufferingHints] = js.undefined,
-      EncryptionConfiguration: js.UndefOr[EncryptionConfiguration] = js.undefined,
       CloudWatchLoggingOptions: js.UndefOr[CloudWatchLoggingOptions] = js.undefined,
+      CompressionFormat: js.UndefOr[CompressionFormat] = js.undefined,
+      DataFormatConversionConfiguration: js.UndefOr[DataFormatConversionConfiguration] = js.undefined,
+      EncryptionConfiguration: js.UndefOr[EncryptionConfiguration] = js.undefined,
+      Prefix: js.UndefOr[Prefix] = js.undefined,
+      ProcessingConfiguration: js.UndefOr[ProcessingConfiguration] = js.undefined,
       RoleARN: js.UndefOr[RoleARN] = js.undefined,
       S3BackupMode: js.UndefOr[S3BackupMode] = js.undefined,
-      Prefix: js.UndefOr[Prefix] = js.undefined,
-      BucketARN: js.UndefOr[BucketARN] = js.undefined,
       S3BackupUpdate: js.UndefOr[S3DestinationUpdate] = js.undefined): ExtendedS3DestinationUpdate = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ProcessingConfiguration" -> ProcessingConfiguration.map { x => x.asInstanceOf[js.Any] },
-        "DataFormatConversionConfiguration" -> DataFormatConversionConfiguration.map { x => x.asInstanceOf[js.Any] },
-        "CompressionFormat" -> CompressionFormat.map { x => x.asInstanceOf[js.Any] },
+        "BucketARN" -> BucketARN.map { x => x.asInstanceOf[js.Any] },
         "BufferingHints" -> BufferingHints.map { x => x.asInstanceOf[js.Any] },
-        "EncryptionConfiguration" -> EncryptionConfiguration.map { x => x.asInstanceOf[js.Any] },
         "CloudWatchLoggingOptions" -> CloudWatchLoggingOptions.map { x => x.asInstanceOf[js.Any] },
+        "CompressionFormat" -> CompressionFormat.map { x => x.asInstanceOf[js.Any] },
+        "DataFormatConversionConfiguration" -> DataFormatConversionConfiguration.map { x => x.asInstanceOf[js.Any] },
+        "EncryptionConfiguration" -> EncryptionConfiguration.map { x => x.asInstanceOf[js.Any] },
+        "Prefix" -> Prefix.map { x => x.asInstanceOf[js.Any] },
+        "ProcessingConfiguration" -> ProcessingConfiguration.map { x => x.asInstanceOf[js.Any] },
         "RoleARN" -> RoleARN.map { x => x.asInstanceOf[js.Any] },
         "S3BackupMode" -> S3BackupMode.map { x => x.asInstanceOf[js.Any] },
-        "Prefix" -> Prefix.map { x => x.asInstanceOf[js.Any] },
-        "BucketARN" -> BucketARN.map { x => x.asInstanceOf[js.Any] },
         "S3BackupUpdate" -> S3BackupUpdate.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ExtendedS3DestinationUpdate]
@@ -884,14 +884,14 @@ package firehose {
    */
   @js.native
   trait KMSEncryptionConfig extends js.Object {
-    var AWSKMSKeyARN: js.UndefOr[AWSKMSKeyARN]
+    var AWSKMSKeyARN: AWSKMSKeyARN
   }
 
   object KMSEncryptionConfig {
     def apply(
-      AWSKMSKeyARN: js.UndefOr[AWSKMSKeyARN] = js.undefined): KMSEncryptionConfig = {
+      AWSKMSKeyARN: AWSKMSKeyARN): KMSEncryptionConfig = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "AWSKMSKeyARN" -> AWSKMSKeyARN.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "AWSKMSKeyARN" -> AWSKMSKeyARN.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[KMSEncryptionConfig]
     }
@@ -902,17 +902,17 @@ package firehose {
    */
   @js.native
   trait KinesisStreamSourceConfiguration extends js.Object {
-    var KinesisStreamARN: js.UndefOr[KinesisStreamARN]
-    var RoleARN: js.UndefOr[RoleARN]
+    var KinesisStreamARN: KinesisStreamARN
+    var RoleARN: RoleARN
   }
 
   object KinesisStreamSourceConfiguration {
     def apply(
-      KinesisStreamARN: js.UndefOr[KinesisStreamARN] = js.undefined,
-      RoleARN: js.UndefOr[RoleARN] = js.undefined): KinesisStreamSourceConfiguration = {
+      KinesisStreamARN: KinesisStreamARN,
+      RoleARN: RoleARN): KinesisStreamSourceConfiguration = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "KinesisStreamARN" -> KinesisStreamARN.map { x => x.asInstanceOf[js.Any] },
-        "RoleARN" -> RoleARN.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "KinesisStreamARN" -> KinesisStreamARN.asInstanceOf[js.Any],
+        "RoleARN" -> RoleARN.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[KinesisStreamSourceConfiguration]
     }
@@ -923,20 +923,20 @@ package firehose {
    */
   @js.native
   trait KinesisStreamSourceDescription extends js.Object {
+    var DeliveryStartTimestamp: js.UndefOr[DeliveryStartTimestamp]
     var KinesisStreamARN: js.UndefOr[KinesisStreamARN]
     var RoleARN: js.UndefOr[RoleARN]
-    var DeliveryStartTimestamp: js.UndefOr[DeliveryStartTimestamp]
   }
 
   object KinesisStreamSourceDescription {
     def apply(
+      DeliveryStartTimestamp: js.UndefOr[DeliveryStartTimestamp] = js.undefined,
       KinesisStreamARN: js.UndefOr[KinesisStreamARN] = js.undefined,
-      RoleARN: js.UndefOr[RoleARN] = js.undefined,
-      DeliveryStartTimestamp: js.UndefOr[DeliveryStartTimestamp] = js.undefined): KinesisStreamSourceDescription = {
+      RoleARN: js.UndefOr[RoleARN] = js.undefined): KinesisStreamSourceDescription = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "DeliveryStartTimestamp" -> DeliveryStartTimestamp.map { x => x.asInstanceOf[js.Any] },
         "KinesisStreamARN" -> KinesisStreamARN.map { x => x.asInstanceOf[js.Any] },
-        "RoleARN" -> RoleARN.map { x => x.asInstanceOf[js.Any] },
-        "DeliveryStartTimestamp" -> DeliveryStartTimestamp.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "RoleARN" -> RoleARN.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[KinesisStreamSourceDescription]
     }
@@ -944,20 +944,20 @@ package firehose {
 
   @js.native
   trait ListDeliveryStreamsInput extends js.Object {
-    var Limit: js.UndefOr[ListDeliveryStreamsInputLimit]
     var DeliveryStreamType: js.UndefOr[DeliveryStreamType]
     var ExclusiveStartDeliveryStreamName: js.UndefOr[DeliveryStreamName]
+    var Limit: js.UndefOr[ListDeliveryStreamsInputLimit]
   }
 
   object ListDeliveryStreamsInput {
     def apply(
-      Limit: js.UndefOr[ListDeliveryStreamsInputLimit] = js.undefined,
       DeliveryStreamType: js.UndefOr[DeliveryStreamType] = js.undefined,
-      ExclusiveStartDeliveryStreamName: js.UndefOr[DeliveryStreamName] = js.undefined): ListDeliveryStreamsInput = {
+      ExclusiveStartDeliveryStreamName: js.UndefOr[DeliveryStreamName] = js.undefined,
+      Limit: js.UndefOr[ListDeliveryStreamsInputLimit] = js.undefined): ListDeliveryStreamsInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Limit" -> Limit.map { x => x.asInstanceOf[js.Any] },
         "DeliveryStreamType" -> DeliveryStreamType.map { x => x.asInstanceOf[js.Any] },
-        "ExclusiveStartDeliveryStreamName" -> ExclusiveStartDeliveryStreamName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ExclusiveStartDeliveryStreamName" -> ExclusiveStartDeliveryStreamName.map { x => x.asInstanceOf[js.Any] },
+        "Limit" -> Limit.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListDeliveryStreamsInput]
     }
@@ -965,17 +965,17 @@ package firehose {
 
   @js.native
   trait ListDeliveryStreamsOutput extends js.Object {
-    var DeliveryStreamNames: js.UndefOr[DeliveryStreamNameList]
-    var HasMoreDeliveryStreams: js.UndefOr[BooleanObject]
+    var DeliveryStreamNames: DeliveryStreamNameList
+    var HasMoreDeliveryStreams: BooleanObject
   }
 
   object ListDeliveryStreamsOutput {
     def apply(
-      DeliveryStreamNames: js.UndefOr[DeliveryStreamNameList] = js.undefined,
-      HasMoreDeliveryStreams: js.UndefOr[BooleanObject] = js.undefined): ListDeliveryStreamsOutput = {
+      DeliveryStreamNames: DeliveryStreamNameList,
+      HasMoreDeliveryStreams: BooleanObject): ListDeliveryStreamsOutput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "DeliveryStreamNames" -> DeliveryStreamNames.map { x => x.asInstanceOf[js.Any] },
-        "HasMoreDeliveryStreams" -> HasMoreDeliveryStreams.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "DeliveryStreamNames" -> DeliveryStreamNames.asInstanceOf[js.Any],
+        "HasMoreDeliveryStreams" -> HasMoreDeliveryStreams.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListDeliveryStreamsOutput]
     }
@@ -983,18 +983,18 @@ package firehose {
 
   @js.native
   trait ListTagsForDeliveryStreamInput extends js.Object {
-    var DeliveryStreamName: js.UndefOr[DeliveryStreamName]
+    var DeliveryStreamName: DeliveryStreamName
     var ExclusiveStartTagKey: js.UndefOr[TagKey]
     var Limit: js.UndefOr[ListTagsForDeliveryStreamInputLimit]
   }
 
   object ListTagsForDeliveryStreamInput {
     def apply(
-      DeliveryStreamName: js.UndefOr[DeliveryStreamName] = js.undefined,
+      DeliveryStreamName: DeliveryStreamName,
       ExclusiveStartTagKey: js.UndefOr[TagKey] = js.undefined,
       Limit: js.UndefOr[ListTagsForDeliveryStreamInputLimit] = js.undefined): ListTagsForDeliveryStreamInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "DeliveryStreamName" -> DeliveryStreamName.map { x => x.asInstanceOf[js.Any] },
+        "DeliveryStreamName" -> DeliveryStreamName.asInstanceOf[js.Any],
         "ExclusiveStartTagKey" -> ExclusiveStartTagKey.map { x => x.asInstanceOf[js.Any] },
         "Limit" -> Limit.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
@@ -1004,17 +1004,17 @@ package firehose {
 
   @js.native
   trait ListTagsForDeliveryStreamOutput extends js.Object {
-    var Tags: js.UndefOr[ListTagsForDeliveryStreamOutputTagList]
-    var HasMoreTags: js.UndefOr[BooleanObject]
+    var HasMoreTags: BooleanObject
+    var Tags: ListTagsForDeliveryStreamOutputTagList
   }
 
   object ListTagsForDeliveryStreamOutput {
     def apply(
-      Tags: js.UndefOr[ListTagsForDeliveryStreamOutputTagList] = js.undefined,
-      HasMoreTags: js.UndefOr[BooleanObject] = js.undefined): ListTagsForDeliveryStreamOutput = {
+      HasMoreTags: BooleanObject,
+      Tags: ListTagsForDeliveryStreamOutputTagList): ListTagsForDeliveryStreamOutput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Tags" -> Tags.map { x => x.asInstanceOf[js.Any] },
-        "HasMoreTags" -> HasMoreTags.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "HasMoreTags" -> HasMoreTags.asInstanceOf[js.Any],
+        "Tags" -> Tags.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListTagsForDeliveryStreamOutput]
     }
@@ -1031,20 +1031,20 @@ package firehose {
    */
   @js.native
   trait OpenXJsonSerDe extends js.Object {
-    var ConvertDotsInJsonKeysToUnderscores: js.UndefOr[BooleanObject]
     var CaseInsensitive: js.UndefOr[BooleanObject]
     var ColumnToJsonKeyMappings: js.UndefOr[ColumnToJsonKeyMappings]
+    var ConvertDotsInJsonKeysToUnderscores: js.UndefOr[BooleanObject]
   }
 
   object OpenXJsonSerDe {
     def apply(
-      ConvertDotsInJsonKeysToUnderscores: js.UndefOr[BooleanObject] = js.undefined,
       CaseInsensitive: js.UndefOr[BooleanObject] = js.undefined,
-      ColumnToJsonKeyMappings: js.UndefOr[ColumnToJsonKeyMappings] = js.undefined): OpenXJsonSerDe = {
+      ColumnToJsonKeyMappings: js.UndefOr[ColumnToJsonKeyMappings] = js.undefined,
+      ConvertDotsInJsonKeysToUnderscores: js.UndefOr[BooleanObject] = js.undefined): OpenXJsonSerDe = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ConvertDotsInJsonKeysToUnderscores" -> ConvertDotsInJsonKeysToUnderscores.map { x => x.asInstanceOf[js.Any] },
         "CaseInsensitive" -> CaseInsensitive.map { x => x.asInstanceOf[js.Any] },
-        "ColumnToJsonKeyMappings" -> ColumnToJsonKeyMappings.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ColumnToJsonKeyMappings" -> ColumnToJsonKeyMappings.map { x => x.asInstanceOf[js.Any] },
+        "ConvertDotsInJsonKeysToUnderscores" -> ConvertDotsInJsonKeysToUnderscores.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[OpenXJsonSerDe]
     }
@@ -1070,41 +1070,41 @@ package firehose {
    */
   @js.native
   trait OrcSerDe extends js.Object {
-    var DictionaryKeyThreshold: js.UndefOr[Proportion]
-    var RowIndexStride: js.UndefOr[OrcRowIndexStride]
-    var FormatVersion: js.UndefOr[OrcFormatVersion]
+    var BlockSizeBytes: js.UndefOr[BlockSizeBytes]
+    var BloomFilterColumns: js.UndefOr[ListOfNonEmptyStringsWithoutWhitespace]
     var BloomFilterFalsePositiveProbability: js.UndefOr[Proportion]
     var Compression: js.UndefOr[OrcCompression]
+    var DictionaryKeyThreshold: js.UndefOr[Proportion]
     var EnablePadding: js.UndefOr[BooleanObject]
+    var FormatVersion: js.UndefOr[OrcFormatVersion]
     var PaddingTolerance: js.UndefOr[Proportion]
-    var BlockSizeBytes: js.UndefOr[BlockSizeBytes]
+    var RowIndexStride: js.UndefOr[OrcRowIndexStride]
     var StripeSizeBytes: js.UndefOr[OrcStripeSizeBytes]
-    var BloomFilterColumns: js.UndefOr[ListOfNonEmptyStringsWithoutWhitespace]
   }
 
   object OrcSerDe {
     def apply(
-      DictionaryKeyThreshold: js.UndefOr[Proportion] = js.undefined,
-      RowIndexStride: js.UndefOr[OrcRowIndexStride] = js.undefined,
-      FormatVersion: js.UndefOr[OrcFormatVersion] = js.undefined,
+      BlockSizeBytes: js.UndefOr[BlockSizeBytes] = js.undefined,
+      BloomFilterColumns: js.UndefOr[ListOfNonEmptyStringsWithoutWhitespace] = js.undefined,
       BloomFilterFalsePositiveProbability: js.UndefOr[Proportion] = js.undefined,
       Compression: js.UndefOr[OrcCompression] = js.undefined,
+      DictionaryKeyThreshold: js.UndefOr[Proportion] = js.undefined,
       EnablePadding: js.UndefOr[BooleanObject] = js.undefined,
+      FormatVersion: js.UndefOr[OrcFormatVersion] = js.undefined,
       PaddingTolerance: js.UndefOr[Proportion] = js.undefined,
-      BlockSizeBytes: js.UndefOr[BlockSizeBytes] = js.undefined,
-      StripeSizeBytes: js.UndefOr[OrcStripeSizeBytes] = js.undefined,
-      BloomFilterColumns: js.UndefOr[ListOfNonEmptyStringsWithoutWhitespace] = js.undefined): OrcSerDe = {
+      RowIndexStride: js.UndefOr[OrcRowIndexStride] = js.undefined,
+      StripeSizeBytes: js.UndefOr[OrcStripeSizeBytes] = js.undefined): OrcSerDe = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "DictionaryKeyThreshold" -> DictionaryKeyThreshold.map { x => x.asInstanceOf[js.Any] },
-        "RowIndexStride" -> RowIndexStride.map { x => x.asInstanceOf[js.Any] },
-        "FormatVersion" -> FormatVersion.map { x => x.asInstanceOf[js.Any] },
+        "BlockSizeBytes" -> BlockSizeBytes.map { x => x.asInstanceOf[js.Any] },
+        "BloomFilterColumns" -> BloomFilterColumns.map { x => x.asInstanceOf[js.Any] },
         "BloomFilterFalsePositiveProbability" -> BloomFilterFalsePositiveProbability.map { x => x.asInstanceOf[js.Any] },
         "Compression" -> Compression.map { x => x.asInstanceOf[js.Any] },
+        "DictionaryKeyThreshold" -> DictionaryKeyThreshold.map { x => x.asInstanceOf[js.Any] },
         "EnablePadding" -> EnablePadding.map { x => x.asInstanceOf[js.Any] },
+        "FormatVersion" -> FormatVersion.map { x => x.asInstanceOf[js.Any] },
         "PaddingTolerance" -> PaddingTolerance.map { x => x.asInstanceOf[js.Any] },
-        "BlockSizeBytes" -> BlockSizeBytes.map { x => x.asInstanceOf[js.Any] },
-        "StripeSizeBytes" -> StripeSizeBytes.map { x => x.asInstanceOf[js.Any] },
-        "BloomFilterColumns" -> BloomFilterColumns.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "RowIndexStride" -> RowIndexStride.map { x => x.asInstanceOf[js.Any] },
+        "StripeSizeBytes" -> StripeSizeBytes.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[OrcSerDe]
     }
@@ -1141,29 +1141,29 @@ package firehose {
    */
   @js.native
   trait ParquetSerDe extends js.Object {
-    var WriterVersion: js.UndefOr[ParquetWriterVersion]
-    var EnableDictionaryCompression: js.UndefOr[BooleanObject]
-    var Compression: js.UndefOr[ParquetCompression]
     var BlockSizeBytes: js.UndefOr[BlockSizeBytes]
+    var Compression: js.UndefOr[ParquetCompression]
+    var EnableDictionaryCompression: js.UndefOr[BooleanObject]
     var MaxPaddingBytes: js.UndefOr[NonNegativeIntegerObject]
     var PageSizeBytes: js.UndefOr[ParquetPageSizeBytes]
+    var WriterVersion: js.UndefOr[ParquetWriterVersion]
   }
 
   object ParquetSerDe {
     def apply(
-      WriterVersion: js.UndefOr[ParquetWriterVersion] = js.undefined,
-      EnableDictionaryCompression: js.UndefOr[BooleanObject] = js.undefined,
-      Compression: js.UndefOr[ParquetCompression] = js.undefined,
       BlockSizeBytes: js.UndefOr[BlockSizeBytes] = js.undefined,
+      Compression: js.UndefOr[ParquetCompression] = js.undefined,
+      EnableDictionaryCompression: js.UndefOr[BooleanObject] = js.undefined,
       MaxPaddingBytes: js.UndefOr[NonNegativeIntegerObject] = js.undefined,
-      PageSizeBytes: js.UndefOr[ParquetPageSizeBytes] = js.undefined): ParquetSerDe = {
+      PageSizeBytes: js.UndefOr[ParquetPageSizeBytes] = js.undefined,
+      WriterVersion: js.UndefOr[ParquetWriterVersion] = js.undefined): ParquetSerDe = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "WriterVersion" -> WriterVersion.map { x => x.asInstanceOf[js.Any] },
-        "EnableDictionaryCompression" -> EnableDictionaryCompression.map { x => x.asInstanceOf[js.Any] },
-        "Compression" -> Compression.map { x => x.asInstanceOf[js.Any] },
         "BlockSizeBytes" -> BlockSizeBytes.map { x => x.asInstanceOf[js.Any] },
+        "Compression" -> Compression.map { x => x.asInstanceOf[js.Any] },
+        "EnableDictionaryCompression" -> EnableDictionaryCompression.map { x => x.asInstanceOf[js.Any] },
         "MaxPaddingBytes" -> MaxPaddingBytes.map { x => x.asInstanceOf[js.Any] },
-        "PageSizeBytes" -> PageSizeBytes.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "PageSizeBytes" -> PageSizeBytes.map { x => x.asInstanceOf[js.Any] },
+        "WriterVersion" -> WriterVersion.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ParquetSerDe]
     }
@@ -1202,16 +1202,16 @@ package firehose {
    */
   @js.native
   trait Processor extends js.Object {
-    var Type: js.UndefOr[ProcessorType]
+    var Type: ProcessorType
     var Parameters: js.UndefOr[ProcessorParameterList]
   }
 
   object Processor {
     def apply(
-      Type: js.UndefOr[ProcessorType] = js.undefined,
+      Type: ProcessorType,
       Parameters: js.UndefOr[ProcessorParameterList] = js.undefined): Processor = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Type" -> Type.map { x => x.asInstanceOf[js.Any] },
+        "Type" -> Type.asInstanceOf[js.Any],
         "Parameters" -> Parameters.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Processor]
@@ -1223,17 +1223,17 @@ package firehose {
    */
   @js.native
   trait ProcessorParameter extends js.Object {
-    var ParameterName: js.UndefOr[ProcessorParameterName]
-    var ParameterValue: js.UndefOr[ProcessorParameterValue]
+    var ParameterName: ProcessorParameterName
+    var ParameterValue: ProcessorParameterValue
   }
 
   object ProcessorParameter {
     def apply(
-      ParameterName: js.UndefOr[ProcessorParameterName] = js.undefined,
-      ParameterValue: js.UndefOr[ProcessorParameterValue] = js.undefined): ProcessorParameter = {
+      ParameterName: ProcessorParameterName,
+      ParameterValue: ProcessorParameterValue): ProcessorParameter = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ParameterName" -> ParameterName.map { x => x.asInstanceOf[js.Any] },
-        "ParameterValue" -> ParameterValue.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ParameterName" -> ParameterName.asInstanceOf[js.Any],
+        "ParameterValue" -> ParameterValue.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ProcessorParameter]
     }
@@ -1257,17 +1257,17 @@ package firehose {
 
   @js.native
   trait PutRecordBatchInput extends js.Object {
-    var DeliveryStreamName: js.UndefOr[DeliveryStreamName]
-    var Records: js.UndefOr[PutRecordBatchRequestEntryList]
+    var DeliveryStreamName: DeliveryStreamName
+    var Records: PutRecordBatchRequestEntryList
   }
 
   object PutRecordBatchInput {
     def apply(
-      DeliveryStreamName: js.UndefOr[DeliveryStreamName] = js.undefined,
-      Records: js.UndefOr[PutRecordBatchRequestEntryList] = js.undefined): PutRecordBatchInput = {
+      DeliveryStreamName: DeliveryStreamName,
+      Records: PutRecordBatchRequestEntryList): PutRecordBatchInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "DeliveryStreamName" -> DeliveryStreamName.map { x => x.asInstanceOf[js.Any] },
-        "Records" -> Records.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "DeliveryStreamName" -> DeliveryStreamName.asInstanceOf[js.Any],
+        "Records" -> Records.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutRecordBatchInput]
     }
@@ -1275,20 +1275,20 @@ package firehose {
 
   @js.native
   trait PutRecordBatchOutput extends js.Object {
-    var FailedPutCount: js.UndefOr[NonNegativeIntegerObject]
+    var FailedPutCount: NonNegativeIntegerObject
+    var RequestResponses: PutRecordBatchResponseEntryList
     var Encrypted: js.UndefOr[BooleanObject]
-    var RequestResponses: js.UndefOr[PutRecordBatchResponseEntryList]
   }
 
   object PutRecordBatchOutput {
     def apply(
-      FailedPutCount: js.UndefOr[NonNegativeIntegerObject] = js.undefined,
-      Encrypted: js.UndefOr[BooleanObject] = js.undefined,
-      RequestResponses: js.UndefOr[PutRecordBatchResponseEntryList] = js.undefined): PutRecordBatchOutput = {
+      FailedPutCount: NonNegativeIntegerObject,
+      RequestResponses: PutRecordBatchResponseEntryList,
+      Encrypted: js.UndefOr[BooleanObject] = js.undefined): PutRecordBatchOutput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "FailedPutCount" -> FailedPutCount.map { x => x.asInstanceOf[js.Any] },
-        "Encrypted" -> Encrypted.map { x => x.asInstanceOf[js.Any] },
-        "RequestResponses" -> RequestResponses.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "FailedPutCount" -> FailedPutCount.asInstanceOf[js.Any],
+        "RequestResponses" -> RequestResponses.asInstanceOf[js.Any],
+        "Encrypted" -> Encrypted.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutRecordBatchOutput]
     }
@@ -1299,20 +1299,20 @@ package firehose {
    */
   @js.native
   trait PutRecordBatchResponseEntry extends js.Object {
-    var RecordId: js.UndefOr[PutResponseRecordId]
     var ErrorCode: js.UndefOr[ErrorCode]
     var ErrorMessage: js.UndefOr[ErrorMessage]
+    var RecordId: js.UndefOr[PutResponseRecordId]
   }
 
   object PutRecordBatchResponseEntry {
     def apply(
-      RecordId: js.UndefOr[PutResponseRecordId] = js.undefined,
       ErrorCode: js.UndefOr[ErrorCode] = js.undefined,
-      ErrorMessage: js.UndefOr[ErrorMessage] = js.undefined): PutRecordBatchResponseEntry = {
+      ErrorMessage: js.UndefOr[ErrorMessage] = js.undefined,
+      RecordId: js.UndefOr[PutResponseRecordId] = js.undefined): PutRecordBatchResponseEntry = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "RecordId" -> RecordId.map { x => x.asInstanceOf[js.Any] },
         "ErrorCode" -> ErrorCode.map { x => x.asInstanceOf[js.Any] },
-        "ErrorMessage" -> ErrorMessage.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ErrorMessage" -> ErrorMessage.map { x => x.asInstanceOf[js.Any] },
+        "RecordId" -> RecordId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutRecordBatchResponseEntry]
     }
@@ -1320,17 +1320,17 @@ package firehose {
 
   @js.native
   trait PutRecordInput extends js.Object {
-    var DeliveryStreamName: js.UndefOr[DeliveryStreamName]
-    var Record: js.UndefOr[Record]
+    var DeliveryStreamName: DeliveryStreamName
+    var Record: Record
   }
 
   object PutRecordInput {
     def apply(
-      DeliveryStreamName: js.UndefOr[DeliveryStreamName] = js.undefined,
-      Record: js.UndefOr[Record] = js.undefined): PutRecordInput = {
+      DeliveryStreamName: DeliveryStreamName,
+      Record: Record): PutRecordInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "DeliveryStreamName" -> DeliveryStreamName.map { x => x.asInstanceOf[js.Any] },
-        "Record" -> Record.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "DeliveryStreamName" -> DeliveryStreamName.asInstanceOf[js.Any],
+        "Record" -> Record.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutRecordInput]
     }
@@ -1338,16 +1338,16 @@ package firehose {
 
   @js.native
   trait PutRecordOutput extends js.Object {
-    var RecordId: js.UndefOr[PutResponseRecordId]
+    var RecordId: PutResponseRecordId
     var Encrypted: js.UndefOr[BooleanObject]
   }
 
   object PutRecordOutput {
     def apply(
-      RecordId: js.UndefOr[PutResponseRecordId] = js.undefined,
+      RecordId: PutResponseRecordId,
       Encrypted: js.UndefOr[BooleanObject] = js.undefined): PutRecordOutput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "RecordId" -> RecordId.map { x => x.asInstanceOf[js.Any] },
+        "RecordId" -> RecordId.asInstanceOf[js.Any],
         "Encrypted" -> Encrypted.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutRecordOutput]
@@ -1359,14 +1359,14 @@ package firehose {
    */
   @js.native
   trait Record extends js.Object {
-    var Data: js.UndefOr[Data]
+    var Data: Data
   }
 
   object Record {
     def apply(
-      Data: js.UndefOr[Data] = js.undefined): Record = {
+      Data: Data): Record = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Data" -> Data.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Data" -> Data.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Record]
     }
@@ -1377,44 +1377,44 @@ package firehose {
    */
   @js.native
   trait RedshiftDestinationConfiguration extends js.Object {
-    var ProcessingConfiguration: js.UndefOr[ProcessingConfiguration]
-    var Username: js.UndefOr[Username]
-    var RetryOptions: js.UndefOr[RedshiftRetryOptions]
-    var ClusterJDBCURL: js.UndefOr[ClusterJDBCURL]
+    var ClusterJDBCURL: ClusterJDBCURL
+    var CopyCommand: CopyCommand
+    var Password: Password
+    var RoleARN: RoleARN
+    var S3Configuration: S3DestinationConfiguration
+    var Username: Username
     var CloudWatchLoggingOptions: js.UndefOr[CloudWatchLoggingOptions]
-    var RoleARN: js.UndefOr[RoleARN]
-    var Password: js.UndefOr[Password]
-    var CopyCommand: js.UndefOr[CopyCommand]
-    var S3BackupMode: js.UndefOr[RedshiftS3BackupMode]
-    var S3Configuration: js.UndefOr[S3DestinationConfiguration]
+    var ProcessingConfiguration: js.UndefOr[ProcessingConfiguration]
+    var RetryOptions: js.UndefOr[RedshiftRetryOptions]
     var S3BackupConfiguration: js.UndefOr[S3DestinationConfiguration]
+    var S3BackupMode: js.UndefOr[RedshiftS3BackupMode]
   }
 
   object RedshiftDestinationConfiguration {
     def apply(
-      ProcessingConfiguration: js.UndefOr[ProcessingConfiguration] = js.undefined,
-      Username: js.UndefOr[Username] = js.undefined,
-      RetryOptions: js.UndefOr[RedshiftRetryOptions] = js.undefined,
-      ClusterJDBCURL: js.UndefOr[ClusterJDBCURL] = js.undefined,
+      ClusterJDBCURL: ClusterJDBCURL,
+      CopyCommand: CopyCommand,
+      Password: Password,
+      RoleARN: RoleARN,
+      S3Configuration: S3DestinationConfiguration,
+      Username: Username,
       CloudWatchLoggingOptions: js.UndefOr[CloudWatchLoggingOptions] = js.undefined,
-      RoleARN: js.UndefOr[RoleARN] = js.undefined,
-      Password: js.UndefOr[Password] = js.undefined,
-      CopyCommand: js.UndefOr[CopyCommand] = js.undefined,
-      S3BackupMode: js.UndefOr[RedshiftS3BackupMode] = js.undefined,
-      S3Configuration: js.UndefOr[S3DestinationConfiguration] = js.undefined,
-      S3BackupConfiguration: js.UndefOr[S3DestinationConfiguration] = js.undefined): RedshiftDestinationConfiguration = {
+      ProcessingConfiguration: js.UndefOr[ProcessingConfiguration] = js.undefined,
+      RetryOptions: js.UndefOr[RedshiftRetryOptions] = js.undefined,
+      S3BackupConfiguration: js.UndefOr[S3DestinationConfiguration] = js.undefined,
+      S3BackupMode: js.UndefOr[RedshiftS3BackupMode] = js.undefined): RedshiftDestinationConfiguration = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ProcessingConfiguration" -> ProcessingConfiguration.map { x => x.asInstanceOf[js.Any] },
-        "Username" -> Username.map { x => x.asInstanceOf[js.Any] },
-        "RetryOptions" -> RetryOptions.map { x => x.asInstanceOf[js.Any] },
-        "ClusterJDBCURL" -> ClusterJDBCURL.map { x => x.asInstanceOf[js.Any] },
+        "ClusterJDBCURL" -> ClusterJDBCURL.asInstanceOf[js.Any],
+        "CopyCommand" -> CopyCommand.asInstanceOf[js.Any],
+        "Password" -> Password.asInstanceOf[js.Any],
+        "RoleARN" -> RoleARN.asInstanceOf[js.Any],
+        "S3Configuration" -> S3Configuration.asInstanceOf[js.Any],
+        "Username" -> Username.asInstanceOf[js.Any],
         "CloudWatchLoggingOptions" -> CloudWatchLoggingOptions.map { x => x.asInstanceOf[js.Any] },
-        "RoleARN" -> RoleARN.map { x => x.asInstanceOf[js.Any] },
-        "Password" -> Password.map { x => x.asInstanceOf[js.Any] },
-        "CopyCommand" -> CopyCommand.map { x => x.asInstanceOf[js.Any] },
-        "S3BackupMode" -> S3BackupMode.map { x => x.asInstanceOf[js.Any] },
-        "S3Configuration" -> S3Configuration.map { x => x.asInstanceOf[js.Any] },
-        "S3BackupConfiguration" -> S3BackupConfiguration.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ProcessingConfiguration" -> ProcessingConfiguration.map { x => x.asInstanceOf[js.Any] },
+        "RetryOptions" -> RetryOptions.map { x => x.asInstanceOf[js.Any] },
+        "S3BackupConfiguration" -> S3BackupConfiguration.map { x => x.asInstanceOf[js.Any] },
+        "S3BackupMode" -> S3BackupMode.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RedshiftDestinationConfiguration]
     }
@@ -1425,40 +1425,40 @@ package firehose {
    */
   @js.native
   trait RedshiftDestinationDescription extends js.Object {
-    var S3BackupDescription: js.UndefOr[S3DestinationDescription]
-    var ProcessingConfiguration: js.UndefOr[ProcessingConfiguration]
-    var Username: js.UndefOr[Username]
-    var RetryOptions: js.UndefOr[RedshiftRetryOptions]
-    var ClusterJDBCURL: js.UndefOr[ClusterJDBCURL]
+    var ClusterJDBCURL: ClusterJDBCURL
+    var CopyCommand: CopyCommand
+    var RoleARN: RoleARN
+    var S3DestinationDescription: S3DestinationDescription
+    var Username: Username
     var CloudWatchLoggingOptions: js.UndefOr[CloudWatchLoggingOptions]
-    var RoleARN: js.UndefOr[RoleARN]
-    var S3DestinationDescription: js.UndefOr[S3DestinationDescription]
-    var CopyCommand: js.UndefOr[CopyCommand]
+    var ProcessingConfiguration: js.UndefOr[ProcessingConfiguration]
+    var RetryOptions: js.UndefOr[RedshiftRetryOptions]
+    var S3BackupDescription: js.UndefOr[S3DestinationDescription]
     var S3BackupMode: js.UndefOr[RedshiftS3BackupMode]
   }
 
   object RedshiftDestinationDescription {
     def apply(
-      S3BackupDescription: js.UndefOr[S3DestinationDescription] = js.undefined,
-      ProcessingConfiguration: js.UndefOr[ProcessingConfiguration] = js.undefined,
-      Username: js.UndefOr[Username] = js.undefined,
-      RetryOptions: js.UndefOr[RedshiftRetryOptions] = js.undefined,
-      ClusterJDBCURL: js.UndefOr[ClusterJDBCURL] = js.undefined,
+      ClusterJDBCURL: ClusterJDBCURL,
+      CopyCommand: CopyCommand,
+      RoleARN: RoleARN,
+      S3DestinationDescription: S3DestinationDescription,
+      Username: Username,
       CloudWatchLoggingOptions: js.UndefOr[CloudWatchLoggingOptions] = js.undefined,
-      RoleARN: js.UndefOr[RoleARN] = js.undefined,
-      S3DestinationDescription: js.UndefOr[S3DestinationDescription] = js.undefined,
-      CopyCommand: js.UndefOr[CopyCommand] = js.undefined,
+      ProcessingConfiguration: js.UndefOr[ProcessingConfiguration] = js.undefined,
+      RetryOptions: js.UndefOr[RedshiftRetryOptions] = js.undefined,
+      S3BackupDescription: js.UndefOr[S3DestinationDescription] = js.undefined,
       S3BackupMode: js.UndefOr[RedshiftS3BackupMode] = js.undefined): RedshiftDestinationDescription = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "S3BackupDescription" -> S3BackupDescription.map { x => x.asInstanceOf[js.Any] },
-        "ProcessingConfiguration" -> ProcessingConfiguration.map { x => x.asInstanceOf[js.Any] },
-        "Username" -> Username.map { x => x.asInstanceOf[js.Any] },
-        "RetryOptions" -> RetryOptions.map { x => x.asInstanceOf[js.Any] },
-        "ClusterJDBCURL" -> ClusterJDBCURL.map { x => x.asInstanceOf[js.Any] },
+        "ClusterJDBCURL" -> ClusterJDBCURL.asInstanceOf[js.Any],
+        "CopyCommand" -> CopyCommand.asInstanceOf[js.Any],
+        "RoleARN" -> RoleARN.asInstanceOf[js.Any],
+        "S3DestinationDescription" -> S3DestinationDescription.asInstanceOf[js.Any],
+        "Username" -> Username.asInstanceOf[js.Any],
         "CloudWatchLoggingOptions" -> CloudWatchLoggingOptions.map { x => x.asInstanceOf[js.Any] },
-        "RoleARN" -> RoleARN.map { x => x.asInstanceOf[js.Any] },
-        "S3DestinationDescription" -> S3DestinationDescription.map { x => x.asInstanceOf[js.Any] },
-        "CopyCommand" -> CopyCommand.map { x => x.asInstanceOf[js.Any] },
+        "ProcessingConfiguration" -> ProcessingConfiguration.map { x => x.asInstanceOf[js.Any] },
+        "RetryOptions" -> RetryOptions.map { x => x.asInstanceOf[js.Any] },
+        "S3BackupDescription" -> S3BackupDescription.map { x => x.asInstanceOf[js.Any] },
         "S3BackupMode" -> S3BackupMode.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RedshiftDestinationDescription]
@@ -1470,44 +1470,44 @@ package firehose {
    */
   @js.native
   trait RedshiftDestinationUpdate extends js.Object {
-    var ProcessingConfiguration: js.UndefOr[ProcessingConfiguration]
-    var Username: js.UndefOr[Username]
-    var RetryOptions: js.UndefOr[RedshiftRetryOptions]
-    var ClusterJDBCURL: js.UndefOr[ClusterJDBCURL]
     var CloudWatchLoggingOptions: js.UndefOr[CloudWatchLoggingOptions]
-    var RoleARN: js.UndefOr[RoleARN]
-    var S3Update: js.UndefOr[S3DestinationUpdate]
-    var Password: js.UndefOr[Password]
+    var ClusterJDBCURL: js.UndefOr[ClusterJDBCURL]
     var CopyCommand: js.UndefOr[CopyCommand]
+    var Password: js.UndefOr[Password]
+    var ProcessingConfiguration: js.UndefOr[ProcessingConfiguration]
+    var RetryOptions: js.UndefOr[RedshiftRetryOptions]
+    var RoleARN: js.UndefOr[RoleARN]
     var S3BackupMode: js.UndefOr[RedshiftS3BackupMode]
     var S3BackupUpdate: js.UndefOr[S3DestinationUpdate]
+    var S3Update: js.UndefOr[S3DestinationUpdate]
+    var Username: js.UndefOr[Username]
   }
 
   object RedshiftDestinationUpdate {
     def apply(
-      ProcessingConfiguration: js.UndefOr[ProcessingConfiguration] = js.undefined,
-      Username: js.UndefOr[Username] = js.undefined,
-      RetryOptions: js.UndefOr[RedshiftRetryOptions] = js.undefined,
-      ClusterJDBCURL: js.UndefOr[ClusterJDBCURL] = js.undefined,
       CloudWatchLoggingOptions: js.UndefOr[CloudWatchLoggingOptions] = js.undefined,
-      RoleARN: js.UndefOr[RoleARN] = js.undefined,
-      S3Update: js.UndefOr[S3DestinationUpdate] = js.undefined,
-      Password: js.UndefOr[Password] = js.undefined,
+      ClusterJDBCURL: js.UndefOr[ClusterJDBCURL] = js.undefined,
       CopyCommand: js.UndefOr[CopyCommand] = js.undefined,
+      Password: js.UndefOr[Password] = js.undefined,
+      ProcessingConfiguration: js.UndefOr[ProcessingConfiguration] = js.undefined,
+      RetryOptions: js.UndefOr[RedshiftRetryOptions] = js.undefined,
+      RoleARN: js.UndefOr[RoleARN] = js.undefined,
       S3BackupMode: js.UndefOr[RedshiftS3BackupMode] = js.undefined,
-      S3BackupUpdate: js.UndefOr[S3DestinationUpdate] = js.undefined): RedshiftDestinationUpdate = {
+      S3BackupUpdate: js.UndefOr[S3DestinationUpdate] = js.undefined,
+      S3Update: js.UndefOr[S3DestinationUpdate] = js.undefined,
+      Username: js.UndefOr[Username] = js.undefined): RedshiftDestinationUpdate = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ProcessingConfiguration" -> ProcessingConfiguration.map { x => x.asInstanceOf[js.Any] },
-        "Username" -> Username.map { x => x.asInstanceOf[js.Any] },
-        "RetryOptions" -> RetryOptions.map { x => x.asInstanceOf[js.Any] },
-        "ClusterJDBCURL" -> ClusterJDBCURL.map { x => x.asInstanceOf[js.Any] },
         "CloudWatchLoggingOptions" -> CloudWatchLoggingOptions.map { x => x.asInstanceOf[js.Any] },
-        "RoleARN" -> RoleARN.map { x => x.asInstanceOf[js.Any] },
-        "S3Update" -> S3Update.map { x => x.asInstanceOf[js.Any] },
-        "Password" -> Password.map { x => x.asInstanceOf[js.Any] },
+        "ClusterJDBCURL" -> ClusterJDBCURL.map { x => x.asInstanceOf[js.Any] },
         "CopyCommand" -> CopyCommand.map { x => x.asInstanceOf[js.Any] },
+        "Password" -> Password.map { x => x.asInstanceOf[js.Any] },
+        "ProcessingConfiguration" -> ProcessingConfiguration.map { x => x.asInstanceOf[js.Any] },
+        "RetryOptions" -> RetryOptions.map { x => x.asInstanceOf[js.Any] },
+        "RoleARN" -> RoleARN.map { x => x.asInstanceOf[js.Any] },
         "S3BackupMode" -> S3BackupMode.map { x => x.asInstanceOf[js.Any] },
-        "S3BackupUpdate" -> S3BackupUpdate.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "S3BackupUpdate" -> S3BackupUpdate.map { x => x.asInstanceOf[js.Any] },
+        "S3Update" -> S3Update.map { x => x.asInstanceOf[js.Any] },
+        "Username" -> Username.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RedshiftDestinationUpdate]
     }
@@ -1550,32 +1550,32 @@ package firehose {
    */
   @js.native
   trait S3DestinationConfiguration extends js.Object {
-    var CompressionFormat: js.UndefOr[CompressionFormat]
+    var BucketARN: BucketARN
+    var RoleARN: RoleARN
     var BufferingHints: js.UndefOr[BufferingHints]
-    var EncryptionConfiguration: js.UndefOr[EncryptionConfiguration]
     var CloudWatchLoggingOptions: js.UndefOr[CloudWatchLoggingOptions]
-    var RoleARN: js.UndefOr[RoleARN]
+    var CompressionFormat: js.UndefOr[CompressionFormat]
+    var EncryptionConfiguration: js.UndefOr[EncryptionConfiguration]
     var Prefix: js.UndefOr[Prefix]
-    var BucketARN: js.UndefOr[BucketARN]
   }
 
   object S3DestinationConfiguration {
     def apply(
-      CompressionFormat: js.UndefOr[CompressionFormat] = js.undefined,
+      BucketARN: BucketARN,
+      RoleARN: RoleARN,
       BufferingHints: js.UndefOr[BufferingHints] = js.undefined,
-      EncryptionConfiguration: js.UndefOr[EncryptionConfiguration] = js.undefined,
       CloudWatchLoggingOptions: js.UndefOr[CloudWatchLoggingOptions] = js.undefined,
-      RoleARN: js.UndefOr[RoleARN] = js.undefined,
-      Prefix: js.UndefOr[Prefix] = js.undefined,
-      BucketARN: js.UndefOr[BucketARN] = js.undefined): S3DestinationConfiguration = {
+      CompressionFormat: js.UndefOr[CompressionFormat] = js.undefined,
+      EncryptionConfiguration: js.UndefOr[EncryptionConfiguration] = js.undefined,
+      Prefix: js.UndefOr[Prefix] = js.undefined): S3DestinationConfiguration = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "CompressionFormat" -> CompressionFormat.map { x => x.asInstanceOf[js.Any] },
+        "BucketARN" -> BucketARN.asInstanceOf[js.Any],
+        "RoleARN" -> RoleARN.asInstanceOf[js.Any],
         "BufferingHints" -> BufferingHints.map { x => x.asInstanceOf[js.Any] },
-        "EncryptionConfiguration" -> EncryptionConfiguration.map { x => x.asInstanceOf[js.Any] },
         "CloudWatchLoggingOptions" -> CloudWatchLoggingOptions.map { x => x.asInstanceOf[js.Any] },
-        "RoleARN" -> RoleARN.map { x => x.asInstanceOf[js.Any] },
-        "Prefix" -> Prefix.map { x => x.asInstanceOf[js.Any] },
-        "BucketARN" -> BucketARN.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "CompressionFormat" -> CompressionFormat.map { x => x.asInstanceOf[js.Any] },
+        "EncryptionConfiguration" -> EncryptionConfiguration.map { x => x.asInstanceOf[js.Any] },
+        "Prefix" -> Prefix.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[S3DestinationConfiguration]
     }
@@ -1586,32 +1586,32 @@ package firehose {
    */
   @js.native
   trait S3DestinationDescription extends js.Object {
-    var CompressionFormat: js.UndefOr[CompressionFormat]
-    var BufferingHints: js.UndefOr[BufferingHints]
-    var EncryptionConfiguration: js.UndefOr[EncryptionConfiguration]
+    var BucketARN: BucketARN
+    var BufferingHints: BufferingHints
+    var CompressionFormat: CompressionFormat
+    var EncryptionConfiguration: EncryptionConfiguration
+    var RoleARN: RoleARN
     var CloudWatchLoggingOptions: js.UndefOr[CloudWatchLoggingOptions]
-    var RoleARN: js.UndefOr[RoleARN]
     var Prefix: js.UndefOr[Prefix]
-    var BucketARN: js.UndefOr[BucketARN]
   }
 
   object S3DestinationDescription {
     def apply(
-      CompressionFormat: js.UndefOr[CompressionFormat] = js.undefined,
-      BufferingHints: js.UndefOr[BufferingHints] = js.undefined,
-      EncryptionConfiguration: js.UndefOr[EncryptionConfiguration] = js.undefined,
+      BucketARN: BucketARN,
+      BufferingHints: BufferingHints,
+      CompressionFormat: CompressionFormat,
+      EncryptionConfiguration: EncryptionConfiguration,
+      RoleARN: RoleARN,
       CloudWatchLoggingOptions: js.UndefOr[CloudWatchLoggingOptions] = js.undefined,
-      RoleARN: js.UndefOr[RoleARN] = js.undefined,
-      Prefix: js.UndefOr[Prefix] = js.undefined,
-      BucketARN: js.UndefOr[BucketARN] = js.undefined): S3DestinationDescription = {
+      Prefix: js.UndefOr[Prefix] = js.undefined): S3DestinationDescription = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "CompressionFormat" -> CompressionFormat.map { x => x.asInstanceOf[js.Any] },
-        "BufferingHints" -> BufferingHints.map { x => x.asInstanceOf[js.Any] },
-        "EncryptionConfiguration" -> EncryptionConfiguration.map { x => x.asInstanceOf[js.Any] },
+        "BucketARN" -> BucketARN.asInstanceOf[js.Any],
+        "BufferingHints" -> BufferingHints.asInstanceOf[js.Any],
+        "CompressionFormat" -> CompressionFormat.asInstanceOf[js.Any],
+        "EncryptionConfiguration" -> EncryptionConfiguration.asInstanceOf[js.Any],
+        "RoleARN" -> RoleARN.asInstanceOf[js.Any],
         "CloudWatchLoggingOptions" -> CloudWatchLoggingOptions.map { x => x.asInstanceOf[js.Any] },
-        "RoleARN" -> RoleARN.map { x => x.asInstanceOf[js.Any] },
-        "Prefix" -> Prefix.map { x => x.asInstanceOf[js.Any] },
-        "BucketARN" -> BucketARN.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Prefix" -> Prefix.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[S3DestinationDescription]
     }
@@ -1622,32 +1622,32 @@ package firehose {
    */
   @js.native
   trait S3DestinationUpdate extends js.Object {
-    var CompressionFormat: js.UndefOr[CompressionFormat]
-    var BufferingHints: js.UndefOr[BufferingHints]
-    var EncryptionConfiguration: js.UndefOr[EncryptionConfiguration]
-    var CloudWatchLoggingOptions: js.UndefOr[CloudWatchLoggingOptions]
-    var RoleARN: js.UndefOr[RoleARN]
-    var Prefix: js.UndefOr[Prefix]
     var BucketARN: js.UndefOr[BucketARN]
+    var BufferingHints: js.UndefOr[BufferingHints]
+    var CloudWatchLoggingOptions: js.UndefOr[CloudWatchLoggingOptions]
+    var CompressionFormat: js.UndefOr[CompressionFormat]
+    var EncryptionConfiguration: js.UndefOr[EncryptionConfiguration]
+    var Prefix: js.UndefOr[Prefix]
+    var RoleARN: js.UndefOr[RoleARN]
   }
 
   object S3DestinationUpdate {
     def apply(
-      CompressionFormat: js.UndefOr[CompressionFormat] = js.undefined,
+      BucketARN: js.UndefOr[BucketARN] = js.undefined,
       BufferingHints: js.UndefOr[BufferingHints] = js.undefined,
-      EncryptionConfiguration: js.UndefOr[EncryptionConfiguration] = js.undefined,
       CloudWatchLoggingOptions: js.UndefOr[CloudWatchLoggingOptions] = js.undefined,
-      RoleARN: js.UndefOr[RoleARN] = js.undefined,
+      CompressionFormat: js.UndefOr[CompressionFormat] = js.undefined,
+      EncryptionConfiguration: js.UndefOr[EncryptionConfiguration] = js.undefined,
       Prefix: js.UndefOr[Prefix] = js.undefined,
-      BucketARN: js.UndefOr[BucketARN] = js.undefined): S3DestinationUpdate = {
+      RoleARN: js.UndefOr[RoleARN] = js.undefined): S3DestinationUpdate = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "CompressionFormat" -> CompressionFormat.map { x => x.asInstanceOf[js.Any] },
+        "BucketARN" -> BucketARN.map { x => x.asInstanceOf[js.Any] },
         "BufferingHints" -> BufferingHints.map { x => x.asInstanceOf[js.Any] },
-        "EncryptionConfiguration" -> EncryptionConfiguration.map { x => x.asInstanceOf[js.Any] },
         "CloudWatchLoggingOptions" -> CloudWatchLoggingOptions.map { x => x.asInstanceOf[js.Any] },
-        "RoleARN" -> RoleARN.map { x => x.asInstanceOf[js.Any] },
+        "CompressionFormat" -> CompressionFormat.map { x => x.asInstanceOf[js.Any] },
+        "EncryptionConfiguration" -> EncryptionConfiguration.map { x => x.asInstanceOf[js.Any] },
         "Prefix" -> Prefix.map { x => x.asInstanceOf[js.Any] },
-        "BucketARN" -> BucketARN.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "RoleARN" -> RoleARN.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[S3DestinationUpdate]
     }
@@ -1658,29 +1658,29 @@ package firehose {
    */
   @js.native
   trait SchemaConfiguration extends js.Object {
+    var CatalogId: js.UndefOr[NonEmptyStringWithoutWhitespace]
     var DatabaseName: js.UndefOr[NonEmptyStringWithoutWhitespace]
     var Region: js.UndefOr[NonEmptyStringWithoutWhitespace]
     var RoleARN: js.UndefOr[NonEmptyStringWithoutWhitespace]
-    var VersionId: js.UndefOr[NonEmptyStringWithoutWhitespace]
     var TableName: js.UndefOr[NonEmptyStringWithoutWhitespace]
-    var CatalogId: js.UndefOr[NonEmptyStringWithoutWhitespace]
+    var VersionId: js.UndefOr[NonEmptyStringWithoutWhitespace]
   }
 
   object SchemaConfiguration {
     def apply(
+      CatalogId: js.UndefOr[NonEmptyStringWithoutWhitespace] = js.undefined,
       DatabaseName: js.UndefOr[NonEmptyStringWithoutWhitespace] = js.undefined,
       Region: js.UndefOr[NonEmptyStringWithoutWhitespace] = js.undefined,
       RoleARN: js.UndefOr[NonEmptyStringWithoutWhitespace] = js.undefined,
-      VersionId: js.UndefOr[NonEmptyStringWithoutWhitespace] = js.undefined,
       TableName: js.UndefOr[NonEmptyStringWithoutWhitespace] = js.undefined,
-      CatalogId: js.UndefOr[NonEmptyStringWithoutWhitespace] = js.undefined): SchemaConfiguration = {
+      VersionId: js.UndefOr[NonEmptyStringWithoutWhitespace] = js.undefined): SchemaConfiguration = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "CatalogId" -> CatalogId.map { x => x.asInstanceOf[js.Any] },
         "DatabaseName" -> DatabaseName.map { x => x.asInstanceOf[js.Any] },
         "Region" -> Region.map { x => x.asInstanceOf[js.Any] },
         "RoleARN" -> RoleARN.map { x => x.asInstanceOf[js.Any] },
-        "VersionId" -> VersionId.map { x => x.asInstanceOf[js.Any] },
         "TableName" -> TableName.map { x => x.asInstanceOf[js.Any] },
-        "CatalogId" -> CatalogId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "VersionId" -> VersionId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SchemaConfiguration]
     }
@@ -1691,17 +1691,17 @@ package firehose {
    */
   @js.native
   trait Serializer extends js.Object {
-    var ParquetSerDe: js.UndefOr[ParquetSerDe]
     var OrcSerDe: js.UndefOr[OrcSerDe]
+    var ParquetSerDe: js.UndefOr[ParquetSerDe]
   }
 
   object Serializer {
     def apply(
-      ParquetSerDe: js.UndefOr[ParquetSerDe] = js.undefined,
-      OrcSerDe: js.UndefOr[OrcSerDe] = js.undefined): Serializer = {
+      OrcSerDe: js.UndefOr[OrcSerDe] = js.undefined,
+      ParquetSerDe: js.UndefOr[ParquetSerDe] = js.undefined): Serializer = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ParquetSerDe" -> ParquetSerDe.map { x => x.asInstanceOf[js.Any] },
-        "OrcSerDe" -> OrcSerDe.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "OrcSerDe" -> OrcSerDe.map { x => x.asInstanceOf[js.Any] },
+        "ParquetSerDe" -> ParquetSerDe.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Serializer]
     }
@@ -1730,38 +1730,38 @@ package firehose {
    */
   @js.native
   trait SplunkDestinationConfiguration extends js.Object {
-    var ProcessingConfiguration: js.UndefOr[ProcessingConfiguration]
-    var HECToken: js.UndefOr[HECToken]
-    var RetryOptions: js.UndefOr[SplunkRetryOptions]
+    var HECEndpoint: HECEndpoint
+    var HECEndpointType: HECEndpointType
+    var HECToken: HECToken
+    var S3Configuration: S3DestinationConfiguration
     var CloudWatchLoggingOptions: js.UndefOr[CloudWatchLoggingOptions]
-    var S3BackupMode: js.UndefOr[SplunkS3BackupMode]
     var HECAcknowledgmentTimeoutInSeconds: js.UndefOr[HECAcknowledgmentTimeoutInSeconds]
-    var S3Configuration: js.UndefOr[S3DestinationConfiguration]
-    var HECEndpointType: js.UndefOr[HECEndpointType]
-    var HECEndpoint: js.UndefOr[HECEndpoint]
+    var ProcessingConfiguration: js.UndefOr[ProcessingConfiguration]
+    var RetryOptions: js.UndefOr[SplunkRetryOptions]
+    var S3BackupMode: js.UndefOr[SplunkS3BackupMode]
   }
 
   object SplunkDestinationConfiguration {
     def apply(
-      ProcessingConfiguration: js.UndefOr[ProcessingConfiguration] = js.undefined,
-      HECToken: js.UndefOr[HECToken] = js.undefined,
-      RetryOptions: js.UndefOr[SplunkRetryOptions] = js.undefined,
+      HECEndpoint: HECEndpoint,
+      HECEndpointType: HECEndpointType,
+      HECToken: HECToken,
+      S3Configuration: S3DestinationConfiguration,
       CloudWatchLoggingOptions: js.UndefOr[CloudWatchLoggingOptions] = js.undefined,
-      S3BackupMode: js.UndefOr[SplunkS3BackupMode] = js.undefined,
       HECAcknowledgmentTimeoutInSeconds: js.UndefOr[HECAcknowledgmentTimeoutInSeconds] = js.undefined,
-      S3Configuration: js.UndefOr[S3DestinationConfiguration] = js.undefined,
-      HECEndpointType: js.UndefOr[HECEndpointType] = js.undefined,
-      HECEndpoint: js.UndefOr[HECEndpoint] = js.undefined): SplunkDestinationConfiguration = {
+      ProcessingConfiguration: js.UndefOr[ProcessingConfiguration] = js.undefined,
+      RetryOptions: js.UndefOr[SplunkRetryOptions] = js.undefined,
+      S3BackupMode: js.UndefOr[SplunkS3BackupMode] = js.undefined): SplunkDestinationConfiguration = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ProcessingConfiguration" -> ProcessingConfiguration.map { x => x.asInstanceOf[js.Any] },
-        "HECToken" -> HECToken.map { x => x.asInstanceOf[js.Any] },
-        "RetryOptions" -> RetryOptions.map { x => x.asInstanceOf[js.Any] },
+        "HECEndpoint" -> HECEndpoint.asInstanceOf[js.Any],
+        "HECEndpointType" -> HECEndpointType.asInstanceOf[js.Any],
+        "HECToken" -> HECToken.asInstanceOf[js.Any],
+        "S3Configuration" -> S3Configuration.asInstanceOf[js.Any],
         "CloudWatchLoggingOptions" -> CloudWatchLoggingOptions.map { x => x.asInstanceOf[js.Any] },
-        "S3BackupMode" -> S3BackupMode.map { x => x.asInstanceOf[js.Any] },
         "HECAcknowledgmentTimeoutInSeconds" -> HECAcknowledgmentTimeoutInSeconds.map { x => x.asInstanceOf[js.Any] },
-        "S3Configuration" -> S3Configuration.map { x => x.asInstanceOf[js.Any] },
-        "HECEndpointType" -> HECEndpointType.map { x => x.asInstanceOf[js.Any] },
-        "HECEndpoint" -> HECEndpoint.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ProcessingConfiguration" -> ProcessingConfiguration.map { x => x.asInstanceOf[js.Any] },
+        "RetryOptions" -> RetryOptions.map { x => x.asInstanceOf[js.Any] },
+        "S3BackupMode" -> S3BackupMode.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SplunkDestinationConfiguration]
     }
@@ -1772,38 +1772,38 @@ package firehose {
    */
   @js.native
   trait SplunkDestinationDescription extends js.Object {
-    var ProcessingConfiguration: js.UndefOr[ProcessingConfiguration]
-    var HECToken: js.UndefOr[HECToken]
-    var RetryOptions: js.UndefOr[SplunkRetryOptions]
     var CloudWatchLoggingOptions: js.UndefOr[CloudWatchLoggingOptions]
-    var S3DestinationDescription: js.UndefOr[S3DestinationDescription]
-    var S3BackupMode: js.UndefOr[SplunkS3BackupMode]
     var HECAcknowledgmentTimeoutInSeconds: js.UndefOr[HECAcknowledgmentTimeoutInSeconds]
-    var HECEndpointType: js.UndefOr[HECEndpointType]
     var HECEndpoint: js.UndefOr[HECEndpoint]
+    var HECEndpointType: js.UndefOr[HECEndpointType]
+    var HECToken: js.UndefOr[HECToken]
+    var ProcessingConfiguration: js.UndefOr[ProcessingConfiguration]
+    var RetryOptions: js.UndefOr[SplunkRetryOptions]
+    var S3BackupMode: js.UndefOr[SplunkS3BackupMode]
+    var S3DestinationDescription: js.UndefOr[S3DestinationDescription]
   }
 
   object SplunkDestinationDescription {
     def apply(
-      ProcessingConfiguration: js.UndefOr[ProcessingConfiguration] = js.undefined,
-      HECToken: js.UndefOr[HECToken] = js.undefined,
-      RetryOptions: js.UndefOr[SplunkRetryOptions] = js.undefined,
       CloudWatchLoggingOptions: js.UndefOr[CloudWatchLoggingOptions] = js.undefined,
-      S3DestinationDescription: js.UndefOr[S3DestinationDescription] = js.undefined,
-      S3BackupMode: js.UndefOr[SplunkS3BackupMode] = js.undefined,
       HECAcknowledgmentTimeoutInSeconds: js.UndefOr[HECAcknowledgmentTimeoutInSeconds] = js.undefined,
+      HECEndpoint: js.UndefOr[HECEndpoint] = js.undefined,
       HECEndpointType: js.UndefOr[HECEndpointType] = js.undefined,
-      HECEndpoint: js.UndefOr[HECEndpoint] = js.undefined): SplunkDestinationDescription = {
+      HECToken: js.UndefOr[HECToken] = js.undefined,
+      ProcessingConfiguration: js.UndefOr[ProcessingConfiguration] = js.undefined,
+      RetryOptions: js.UndefOr[SplunkRetryOptions] = js.undefined,
+      S3BackupMode: js.UndefOr[SplunkS3BackupMode] = js.undefined,
+      S3DestinationDescription: js.UndefOr[S3DestinationDescription] = js.undefined): SplunkDestinationDescription = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ProcessingConfiguration" -> ProcessingConfiguration.map { x => x.asInstanceOf[js.Any] },
-        "HECToken" -> HECToken.map { x => x.asInstanceOf[js.Any] },
-        "RetryOptions" -> RetryOptions.map { x => x.asInstanceOf[js.Any] },
         "CloudWatchLoggingOptions" -> CloudWatchLoggingOptions.map { x => x.asInstanceOf[js.Any] },
-        "S3DestinationDescription" -> S3DestinationDescription.map { x => x.asInstanceOf[js.Any] },
-        "S3BackupMode" -> S3BackupMode.map { x => x.asInstanceOf[js.Any] },
         "HECAcknowledgmentTimeoutInSeconds" -> HECAcknowledgmentTimeoutInSeconds.map { x => x.asInstanceOf[js.Any] },
+        "HECEndpoint" -> HECEndpoint.map { x => x.asInstanceOf[js.Any] },
         "HECEndpointType" -> HECEndpointType.map { x => x.asInstanceOf[js.Any] },
-        "HECEndpoint" -> HECEndpoint.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "HECToken" -> HECToken.map { x => x.asInstanceOf[js.Any] },
+        "ProcessingConfiguration" -> ProcessingConfiguration.map { x => x.asInstanceOf[js.Any] },
+        "RetryOptions" -> RetryOptions.map { x => x.asInstanceOf[js.Any] },
+        "S3BackupMode" -> S3BackupMode.map { x => x.asInstanceOf[js.Any] },
+        "S3DestinationDescription" -> S3DestinationDescription.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SplunkDestinationDescription]
     }
@@ -1814,38 +1814,38 @@ package firehose {
    */
   @js.native
   trait SplunkDestinationUpdate extends js.Object {
-    var ProcessingConfiguration: js.UndefOr[ProcessingConfiguration]
-    var HECToken: js.UndefOr[HECToken]
-    var RetryOptions: js.UndefOr[SplunkRetryOptions]
     var CloudWatchLoggingOptions: js.UndefOr[CloudWatchLoggingOptions]
-    var S3Update: js.UndefOr[S3DestinationUpdate]
-    var S3BackupMode: js.UndefOr[SplunkS3BackupMode]
     var HECAcknowledgmentTimeoutInSeconds: js.UndefOr[HECAcknowledgmentTimeoutInSeconds]
-    var HECEndpointType: js.UndefOr[HECEndpointType]
     var HECEndpoint: js.UndefOr[HECEndpoint]
+    var HECEndpointType: js.UndefOr[HECEndpointType]
+    var HECToken: js.UndefOr[HECToken]
+    var ProcessingConfiguration: js.UndefOr[ProcessingConfiguration]
+    var RetryOptions: js.UndefOr[SplunkRetryOptions]
+    var S3BackupMode: js.UndefOr[SplunkS3BackupMode]
+    var S3Update: js.UndefOr[S3DestinationUpdate]
   }
 
   object SplunkDestinationUpdate {
     def apply(
-      ProcessingConfiguration: js.UndefOr[ProcessingConfiguration] = js.undefined,
-      HECToken: js.UndefOr[HECToken] = js.undefined,
-      RetryOptions: js.UndefOr[SplunkRetryOptions] = js.undefined,
       CloudWatchLoggingOptions: js.UndefOr[CloudWatchLoggingOptions] = js.undefined,
-      S3Update: js.UndefOr[S3DestinationUpdate] = js.undefined,
-      S3BackupMode: js.UndefOr[SplunkS3BackupMode] = js.undefined,
       HECAcknowledgmentTimeoutInSeconds: js.UndefOr[HECAcknowledgmentTimeoutInSeconds] = js.undefined,
+      HECEndpoint: js.UndefOr[HECEndpoint] = js.undefined,
       HECEndpointType: js.UndefOr[HECEndpointType] = js.undefined,
-      HECEndpoint: js.UndefOr[HECEndpoint] = js.undefined): SplunkDestinationUpdate = {
+      HECToken: js.UndefOr[HECToken] = js.undefined,
+      ProcessingConfiguration: js.UndefOr[ProcessingConfiguration] = js.undefined,
+      RetryOptions: js.UndefOr[SplunkRetryOptions] = js.undefined,
+      S3BackupMode: js.UndefOr[SplunkS3BackupMode] = js.undefined,
+      S3Update: js.UndefOr[S3DestinationUpdate] = js.undefined): SplunkDestinationUpdate = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ProcessingConfiguration" -> ProcessingConfiguration.map { x => x.asInstanceOf[js.Any] },
-        "HECToken" -> HECToken.map { x => x.asInstanceOf[js.Any] },
-        "RetryOptions" -> RetryOptions.map { x => x.asInstanceOf[js.Any] },
         "CloudWatchLoggingOptions" -> CloudWatchLoggingOptions.map { x => x.asInstanceOf[js.Any] },
-        "S3Update" -> S3Update.map { x => x.asInstanceOf[js.Any] },
-        "S3BackupMode" -> S3BackupMode.map { x => x.asInstanceOf[js.Any] },
         "HECAcknowledgmentTimeoutInSeconds" -> HECAcknowledgmentTimeoutInSeconds.map { x => x.asInstanceOf[js.Any] },
+        "HECEndpoint" -> HECEndpoint.map { x => x.asInstanceOf[js.Any] },
         "HECEndpointType" -> HECEndpointType.map { x => x.asInstanceOf[js.Any] },
-        "HECEndpoint" -> HECEndpoint.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "HECToken" -> HECToken.map { x => x.asInstanceOf[js.Any] },
+        "ProcessingConfiguration" -> ProcessingConfiguration.map { x => x.asInstanceOf[js.Any] },
+        "RetryOptions" -> RetryOptions.map { x => x.asInstanceOf[js.Any] },
+        "S3BackupMode" -> S3BackupMode.map { x => x.asInstanceOf[js.Any] },
+        "S3Update" -> S3Update.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SplunkDestinationUpdate]
     }
@@ -1878,14 +1878,14 @@ package firehose {
 
   @js.native
   trait StartDeliveryStreamEncryptionInput extends js.Object {
-    var DeliveryStreamName: js.UndefOr[DeliveryStreamName]
+    var DeliveryStreamName: DeliveryStreamName
   }
 
   object StartDeliveryStreamEncryptionInput {
     def apply(
-      DeliveryStreamName: js.UndefOr[DeliveryStreamName] = js.undefined): StartDeliveryStreamEncryptionInput = {
+      DeliveryStreamName: DeliveryStreamName): StartDeliveryStreamEncryptionInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "DeliveryStreamName" -> DeliveryStreamName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "DeliveryStreamName" -> DeliveryStreamName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StartDeliveryStreamEncryptionInput]
     }
@@ -1906,14 +1906,14 @@ package firehose {
 
   @js.native
   trait StopDeliveryStreamEncryptionInput extends js.Object {
-    var DeliveryStreamName: js.UndefOr[DeliveryStreamName]
+    var DeliveryStreamName: DeliveryStreamName
   }
 
   object StopDeliveryStreamEncryptionInput {
     def apply(
-      DeliveryStreamName: js.UndefOr[DeliveryStreamName] = js.undefined): StopDeliveryStreamEncryptionInput = {
+      DeliveryStreamName: DeliveryStreamName): StopDeliveryStreamEncryptionInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "DeliveryStreamName" -> DeliveryStreamName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "DeliveryStreamName" -> DeliveryStreamName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StopDeliveryStreamEncryptionInput]
     }
@@ -1937,16 +1937,16 @@ package firehose {
    */
   @js.native
   trait Tag extends js.Object {
-    var Key: js.UndefOr[TagKey]
+    var Key: TagKey
     var Value: js.UndefOr[TagValue]
   }
 
   object Tag {
     def apply(
-      Key: js.UndefOr[TagKey] = js.undefined,
+      Key: TagKey,
       Value: js.UndefOr[TagValue] = js.undefined): Tag = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Key" -> Key.map { x => x.asInstanceOf[js.Any] },
+        "Key" -> Key.asInstanceOf[js.Any],
         "Value" -> Value.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Tag]
@@ -1955,17 +1955,17 @@ package firehose {
 
   @js.native
   trait TagDeliveryStreamInput extends js.Object {
-    var DeliveryStreamName: js.UndefOr[DeliveryStreamName]
-    var Tags: js.UndefOr[TagDeliveryStreamInputTagList]
+    var DeliveryStreamName: DeliveryStreamName
+    var Tags: TagDeliveryStreamInputTagList
   }
 
   object TagDeliveryStreamInput {
     def apply(
-      DeliveryStreamName: js.UndefOr[DeliveryStreamName] = js.undefined,
-      Tags: js.UndefOr[TagDeliveryStreamInputTagList] = js.undefined): TagDeliveryStreamInput = {
+      DeliveryStreamName: DeliveryStreamName,
+      Tags: TagDeliveryStreamInputTagList): TagDeliveryStreamInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "DeliveryStreamName" -> DeliveryStreamName.map { x => x.asInstanceOf[js.Any] },
-        "Tags" -> Tags.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "DeliveryStreamName" -> DeliveryStreamName.asInstanceOf[js.Any],
+        "Tags" -> Tags.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TagDeliveryStreamInput]
     }
@@ -1986,17 +1986,17 @@ package firehose {
 
   @js.native
   trait UntagDeliveryStreamInput extends js.Object {
-    var DeliveryStreamName: js.UndefOr[DeliveryStreamName]
-    var TagKeys: js.UndefOr[TagKeyList]
+    var DeliveryStreamName: DeliveryStreamName
+    var TagKeys: TagKeyList
   }
 
   object UntagDeliveryStreamInput {
     def apply(
-      DeliveryStreamName: js.UndefOr[DeliveryStreamName] = js.undefined,
-      TagKeys: js.UndefOr[TagKeyList] = js.undefined): UntagDeliveryStreamInput = {
+      DeliveryStreamName: DeliveryStreamName,
+      TagKeys: TagKeyList): UntagDeliveryStreamInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "DeliveryStreamName" -> DeliveryStreamName.map { x => x.asInstanceOf[js.Any] },
-        "TagKeys" -> TagKeys.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "DeliveryStreamName" -> DeliveryStreamName.asInstanceOf[js.Any],
+        "TagKeys" -> TagKeys.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UntagDeliveryStreamInput]
     }
@@ -2017,35 +2017,35 @@ package firehose {
 
   @js.native
   trait UpdateDestinationInput extends js.Object {
+    var CurrentDeliveryStreamVersionId: DeliveryStreamVersionId
+    var DeliveryStreamName: DeliveryStreamName
+    var DestinationId: DestinationId
     var ElasticsearchDestinationUpdate: js.UndefOr[ElasticsearchDestinationUpdate]
-    var RedshiftDestinationUpdate: js.UndefOr[RedshiftDestinationUpdate]
     var ExtendedS3DestinationUpdate: js.UndefOr[ExtendedS3DestinationUpdate]
+    var RedshiftDestinationUpdate: js.UndefOr[RedshiftDestinationUpdate]
     var S3DestinationUpdate: js.UndefOr[S3DestinationUpdate]
-    var DestinationId: js.UndefOr[DestinationId]
     var SplunkDestinationUpdate: js.UndefOr[SplunkDestinationUpdate]
-    var CurrentDeliveryStreamVersionId: js.UndefOr[DeliveryStreamVersionId]
-    var DeliveryStreamName: js.UndefOr[DeliveryStreamName]
   }
 
   object UpdateDestinationInput {
     def apply(
+      CurrentDeliveryStreamVersionId: DeliveryStreamVersionId,
+      DeliveryStreamName: DeliveryStreamName,
+      DestinationId: DestinationId,
       ElasticsearchDestinationUpdate: js.UndefOr[ElasticsearchDestinationUpdate] = js.undefined,
-      RedshiftDestinationUpdate: js.UndefOr[RedshiftDestinationUpdate] = js.undefined,
       ExtendedS3DestinationUpdate: js.UndefOr[ExtendedS3DestinationUpdate] = js.undefined,
+      RedshiftDestinationUpdate: js.UndefOr[RedshiftDestinationUpdate] = js.undefined,
       S3DestinationUpdate: js.UndefOr[S3DestinationUpdate] = js.undefined,
-      DestinationId: js.UndefOr[DestinationId] = js.undefined,
-      SplunkDestinationUpdate: js.UndefOr[SplunkDestinationUpdate] = js.undefined,
-      CurrentDeliveryStreamVersionId: js.UndefOr[DeliveryStreamVersionId] = js.undefined,
-      DeliveryStreamName: js.UndefOr[DeliveryStreamName] = js.undefined): UpdateDestinationInput = {
+      SplunkDestinationUpdate: js.UndefOr[SplunkDestinationUpdate] = js.undefined): UpdateDestinationInput = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "CurrentDeliveryStreamVersionId" -> CurrentDeliveryStreamVersionId.asInstanceOf[js.Any],
+        "DeliveryStreamName" -> DeliveryStreamName.asInstanceOf[js.Any],
+        "DestinationId" -> DestinationId.asInstanceOf[js.Any],
         "ElasticsearchDestinationUpdate" -> ElasticsearchDestinationUpdate.map { x => x.asInstanceOf[js.Any] },
-        "RedshiftDestinationUpdate" -> RedshiftDestinationUpdate.map { x => x.asInstanceOf[js.Any] },
         "ExtendedS3DestinationUpdate" -> ExtendedS3DestinationUpdate.map { x => x.asInstanceOf[js.Any] },
+        "RedshiftDestinationUpdate" -> RedshiftDestinationUpdate.map { x => x.asInstanceOf[js.Any] },
         "S3DestinationUpdate" -> S3DestinationUpdate.map { x => x.asInstanceOf[js.Any] },
-        "DestinationId" -> DestinationId.map { x => x.asInstanceOf[js.Any] },
-        "SplunkDestinationUpdate" -> SplunkDestinationUpdate.map { x => x.asInstanceOf[js.Any] },
-        "CurrentDeliveryStreamVersionId" -> CurrentDeliveryStreamVersionId.map { x => x.asInstanceOf[js.Any] },
-        "DeliveryStreamName" -> DeliveryStreamName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "SplunkDestinationUpdate" -> SplunkDestinationUpdate.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateDestinationInput]
     }

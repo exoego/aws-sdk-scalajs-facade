@@ -122,28 +122,28 @@ package swf {
    */
   @js.native
   trait ActivityTask extends js.Object {
-    var workflowExecution: js.UndefOr[WorkflowExecution]
-    var activityId: js.UndefOr[ActivityId]
-    var taskToken: js.UndefOr[TaskToken]
-    var startedEventId: js.UndefOr[EventId]
-    var activityType: js.UndefOr[ActivityType]
+    var activityId: ActivityId
+    var activityType: ActivityType
+    var startedEventId: EventId
+    var taskToken: TaskToken
+    var workflowExecution: WorkflowExecution
     var input: js.UndefOr[Data]
   }
 
   object ActivityTask {
     def apply(
-      workflowExecution: js.UndefOr[WorkflowExecution] = js.undefined,
-      activityId: js.UndefOr[ActivityId] = js.undefined,
-      taskToken: js.UndefOr[TaskToken] = js.undefined,
-      startedEventId: js.UndefOr[EventId] = js.undefined,
-      activityType: js.UndefOr[ActivityType] = js.undefined,
+      activityId: ActivityId,
+      activityType: ActivityType,
+      startedEventId: EventId,
+      taskToken: TaskToken,
+      workflowExecution: WorkflowExecution,
       input: js.UndefOr[Data] = js.undefined): ActivityTask = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "workflowExecution" -> workflowExecution.map { x => x.asInstanceOf[js.Any] },
-        "activityId" -> activityId.map { x => x.asInstanceOf[js.Any] },
-        "taskToken" -> taskToken.map { x => x.asInstanceOf[js.Any] },
-        "startedEventId" -> startedEventId.map { x => x.asInstanceOf[js.Any] },
-        "activityType" -> activityType.map { x => x.asInstanceOf[js.Any] },
+        "activityId" -> activityId.asInstanceOf[js.Any],
+        "activityType" -> activityType.asInstanceOf[js.Any],
+        "startedEventId" -> startedEventId.asInstanceOf[js.Any],
+        "taskToken" -> taskToken.asInstanceOf[js.Any],
+        "workflowExecution" -> workflowExecution.asInstanceOf[js.Any],
         "input" -> input.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ActivityTask]
@@ -155,17 +155,17 @@ package swf {
    */
   @js.native
   trait ActivityTaskCancelRequestedEventAttributes extends js.Object {
-    var decisionTaskCompletedEventId: js.UndefOr[EventId]
-    var activityId: js.UndefOr[ActivityId]
+    var activityId: ActivityId
+    var decisionTaskCompletedEventId: EventId
   }
 
   object ActivityTaskCancelRequestedEventAttributes {
     def apply(
-      decisionTaskCompletedEventId: js.UndefOr[EventId] = js.undefined,
-      activityId: js.UndefOr[ActivityId] = js.undefined): ActivityTaskCancelRequestedEventAttributes = {
+      activityId: ActivityId,
+      decisionTaskCompletedEventId: EventId): ActivityTaskCancelRequestedEventAttributes = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "decisionTaskCompletedEventId" -> decisionTaskCompletedEventId.map { x => x.asInstanceOf[js.Any] },
-        "activityId" -> activityId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "activityId" -> activityId.asInstanceOf[js.Any],
+        "decisionTaskCompletedEventId" -> decisionTaskCompletedEventId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ActivityTaskCancelRequestedEventAttributes]
     }
@@ -176,22 +176,22 @@ package swf {
    */
   @js.native
   trait ActivityTaskCanceledEventAttributes extends js.Object {
+    var scheduledEventId: EventId
+    var startedEventId: EventId
     var details: js.UndefOr[Data]
-    var scheduledEventId: js.UndefOr[EventId]
-    var startedEventId: js.UndefOr[EventId]
     var latestCancelRequestedEventId: js.UndefOr[EventId]
   }
 
   object ActivityTaskCanceledEventAttributes {
     def apply(
+      scheduledEventId: EventId,
+      startedEventId: EventId,
       details: js.UndefOr[Data] = js.undefined,
-      scheduledEventId: js.UndefOr[EventId] = js.undefined,
-      startedEventId: js.UndefOr[EventId] = js.undefined,
       latestCancelRequestedEventId: js.UndefOr[EventId] = js.undefined): ActivityTaskCanceledEventAttributes = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "scheduledEventId" -> scheduledEventId.asInstanceOf[js.Any],
+        "startedEventId" -> startedEventId.asInstanceOf[js.Any],
         "details" -> details.map { x => x.asInstanceOf[js.Any] },
-        "scheduledEventId" -> scheduledEventId.map { x => x.asInstanceOf[js.Any] },
-        "startedEventId" -> startedEventId.map { x => x.asInstanceOf[js.Any] },
         "latestCancelRequestedEventId" -> latestCancelRequestedEventId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ActivityTaskCanceledEventAttributes]
@@ -203,20 +203,20 @@ package swf {
    */
   @js.native
   trait ActivityTaskCompletedEventAttributes extends js.Object {
+    var scheduledEventId: EventId
+    var startedEventId: EventId
     var result: js.UndefOr[Data]
-    var scheduledEventId: js.UndefOr[EventId]
-    var startedEventId: js.UndefOr[EventId]
   }
 
   object ActivityTaskCompletedEventAttributes {
     def apply(
-      result: js.UndefOr[Data] = js.undefined,
-      scheduledEventId: js.UndefOr[EventId] = js.undefined,
-      startedEventId: js.UndefOr[EventId] = js.undefined): ActivityTaskCompletedEventAttributes = {
+      scheduledEventId: EventId,
+      startedEventId: EventId,
+      result: js.UndefOr[Data] = js.undefined): ActivityTaskCompletedEventAttributes = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "result" -> result.map { x => x.asInstanceOf[js.Any] },
-        "scheduledEventId" -> scheduledEventId.map { x => x.asInstanceOf[js.Any] },
-        "startedEventId" -> startedEventId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "scheduledEventId" -> scheduledEventId.asInstanceOf[js.Any],
+        "startedEventId" -> startedEventId.asInstanceOf[js.Any],
+        "result" -> result.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ActivityTaskCompletedEventAttributes]
     }
@@ -227,23 +227,23 @@ package swf {
    */
   @js.native
   trait ActivityTaskFailedEventAttributes extends js.Object {
-    var reason: js.UndefOr[FailureReason]
+    var scheduledEventId: EventId
+    var startedEventId: EventId
     var details: js.UndefOr[Data]
-    var scheduledEventId: js.UndefOr[EventId]
-    var startedEventId: js.UndefOr[EventId]
+    var reason: js.UndefOr[FailureReason]
   }
 
   object ActivityTaskFailedEventAttributes {
     def apply(
-      reason: js.UndefOr[FailureReason] = js.undefined,
+      scheduledEventId: EventId,
+      startedEventId: EventId,
       details: js.UndefOr[Data] = js.undefined,
-      scheduledEventId: js.UndefOr[EventId] = js.undefined,
-      startedEventId: js.UndefOr[EventId] = js.undefined): ActivityTaskFailedEventAttributes = {
+      reason: js.UndefOr[FailureReason] = js.undefined): ActivityTaskFailedEventAttributes = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "reason" -> reason.map { x => x.asInstanceOf[js.Any] },
+        "scheduledEventId" -> scheduledEventId.asInstanceOf[js.Any],
+        "startedEventId" -> startedEventId.asInstanceOf[js.Any],
         "details" -> details.map { x => x.asInstanceOf[js.Any] },
-        "scheduledEventId" -> scheduledEventId.map { x => x.asInstanceOf[js.Any] },
-        "startedEventId" -> startedEventId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "reason" -> reason.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ActivityTaskFailedEventAttributes]
     }
@@ -254,44 +254,44 @@ package swf {
    */
   @js.native
   trait ActivityTaskScheduledEventAttributes extends js.Object {
-    var scheduleToStartTimeout: js.UndefOr[DurationInSecondsOptional]
-    var heartbeatTimeout: js.UndefOr[DurationInSecondsOptional]
-    var startToCloseTimeout: js.UndefOr[DurationInSecondsOptional]
-    var taskList: js.UndefOr[TaskList]
-    var activityId: js.UndefOr[ActivityId]
-    var decisionTaskCompletedEventId: js.UndefOr[EventId]
-    var activityType: js.UndefOr[ActivityType]
-    var taskPriority: js.UndefOr[TaskPriority]
+    var activityId: ActivityId
+    var activityType: ActivityType
+    var decisionTaskCompletedEventId: EventId
+    var taskList: TaskList
     var control: js.UndefOr[Data]
-    var scheduleToCloseTimeout: js.UndefOr[DurationInSecondsOptional]
+    var heartbeatTimeout: js.UndefOr[DurationInSecondsOptional]
     var input: js.UndefOr[Data]
+    var scheduleToCloseTimeout: js.UndefOr[DurationInSecondsOptional]
+    var scheduleToStartTimeout: js.UndefOr[DurationInSecondsOptional]
+    var startToCloseTimeout: js.UndefOr[DurationInSecondsOptional]
+    var taskPriority: js.UndefOr[TaskPriority]
   }
 
   object ActivityTaskScheduledEventAttributes {
     def apply(
-      scheduleToStartTimeout: js.UndefOr[DurationInSecondsOptional] = js.undefined,
-      heartbeatTimeout: js.UndefOr[DurationInSecondsOptional] = js.undefined,
-      startToCloseTimeout: js.UndefOr[DurationInSecondsOptional] = js.undefined,
-      taskList: js.UndefOr[TaskList] = js.undefined,
-      activityId: js.UndefOr[ActivityId] = js.undefined,
-      decisionTaskCompletedEventId: js.UndefOr[EventId] = js.undefined,
-      activityType: js.UndefOr[ActivityType] = js.undefined,
-      taskPriority: js.UndefOr[TaskPriority] = js.undefined,
+      activityId: ActivityId,
+      activityType: ActivityType,
+      decisionTaskCompletedEventId: EventId,
+      taskList: TaskList,
       control: js.UndefOr[Data] = js.undefined,
+      heartbeatTimeout: js.UndefOr[DurationInSecondsOptional] = js.undefined,
+      input: js.UndefOr[Data] = js.undefined,
       scheduleToCloseTimeout: js.UndefOr[DurationInSecondsOptional] = js.undefined,
-      input: js.UndefOr[Data] = js.undefined): ActivityTaskScheduledEventAttributes = {
+      scheduleToStartTimeout: js.UndefOr[DurationInSecondsOptional] = js.undefined,
+      startToCloseTimeout: js.UndefOr[DurationInSecondsOptional] = js.undefined,
+      taskPriority: js.UndefOr[TaskPriority] = js.undefined): ActivityTaskScheduledEventAttributes = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "scheduleToStartTimeout" -> scheduleToStartTimeout.map { x => x.asInstanceOf[js.Any] },
-        "heartbeatTimeout" -> heartbeatTimeout.map { x => x.asInstanceOf[js.Any] },
-        "startToCloseTimeout" -> startToCloseTimeout.map { x => x.asInstanceOf[js.Any] },
-        "taskList" -> taskList.map { x => x.asInstanceOf[js.Any] },
-        "activityId" -> activityId.map { x => x.asInstanceOf[js.Any] },
-        "decisionTaskCompletedEventId" -> decisionTaskCompletedEventId.map { x => x.asInstanceOf[js.Any] },
-        "activityType" -> activityType.map { x => x.asInstanceOf[js.Any] },
-        "taskPriority" -> taskPriority.map { x => x.asInstanceOf[js.Any] },
+        "activityId" -> activityId.asInstanceOf[js.Any],
+        "activityType" -> activityType.asInstanceOf[js.Any],
+        "decisionTaskCompletedEventId" -> decisionTaskCompletedEventId.asInstanceOf[js.Any],
+        "taskList" -> taskList.asInstanceOf[js.Any],
         "control" -> control.map { x => x.asInstanceOf[js.Any] },
+        "heartbeatTimeout" -> heartbeatTimeout.map { x => x.asInstanceOf[js.Any] },
+        "input" -> input.map { x => x.asInstanceOf[js.Any] },
         "scheduleToCloseTimeout" -> scheduleToCloseTimeout.map { x => x.asInstanceOf[js.Any] },
-        "input" -> input.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "scheduleToStartTimeout" -> scheduleToStartTimeout.map { x => x.asInstanceOf[js.Any] },
+        "startToCloseTimeout" -> startToCloseTimeout.map { x => x.asInstanceOf[js.Any] },
+        "taskPriority" -> taskPriority.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ActivityTaskScheduledEventAttributes]
     }
@@ -302,17 +302,17 @@ package swf {
    */
   @js.native
   trait ActivityTaskStartedEventAttributes extends js.Object {
+    var scheduledEventId: EventId
     var identity: js.UndefOr[Identity]
-    var scheduledEventId: js.UndefOr[EventId]
   }
 
   object ActivityTaskStartedEventAttributes {
     def apply(
-      identity: js.UndefOr[Identity] = js.undefined,
-      scheduledEventId: js.UndefOr[EventId] = js.undefined): ActivityTaskStartedEventAttributes = {
+      scheduledEventId: EventId,
+      identity: js.UndefOr[Identity] = js.undefined): ActivityTaskStartedEventAttributes = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "identity" -> identity.map { x => x.asInstanceOf[js.Any] },
-        "scheduledEventId" -> scheduledEventId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "scheduledEventId" -> scheduledEventId.asInstanceOf[js.Any],
+        "identity" -> identity.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ActivityTaskStartedEventAttributes]
     }
@@ -323,14 +323,14 @@ package swf {
    */
   @js.native
   trait ActivityTaskStatus extends js.Object {
-    var cancelRequested: js.UndefOr[Canceled]
+    var cancelRequested: Canceled
   }
 
   object ActivityTaskStatus {
     def apply(
-      cancelRequested: js.UndefOr[Canceled] = js.undefined): ActivityTaskStatus = {
+      cancelRequested: Canceled): ActivityTaskStatus = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "cancelRequested" -> cancelRequested.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "cancelRequested" -> cancelRequested.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ActivityTaskStatus]
     }
@@ -341,22 +341,22 @@ package swf {
    */
   @js.native
   trait ActivityTaskTimedOutEventAttributes extends js.Object {
-    var timeoutType: js.UndefOr[ActivityTaskTimeoutType]
-    var scheduledEventId: js.UndefOr[EventId]
-    var startedEventId: js.UndefOr[EventId]
+    var scheduledEventId: EventId
+    var startedEventId: EventId
+    var timeoutType: ActivityTaskTimeoutType
     var details: js.UndefOr[LimitedData]
   }
 
   object ActivityTaskTimedOutEventAttributes {
     def apply(
-      timeoutType: js.UndefOr[ActivityTaskTimeoutType] = js.undefined,
-      scheduledEventId: js.UndefOr[EventId] = js.undefined,
-      startedEventId: js.UndefOr[EventId] = js.undefined,
+      scheduledEventId: EventId,
+      startedEventId: EventId,
+      timeoutType: ActivityTaskTimeoutType,
       details: js.UndefOr[LimitedData] = js.undefined): ActivityTaskTimedOutEventAttributes = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "timeoutType" -> timeoutType.map { x => x.asInstanceOf[js.Any] },
-        "scheduledEventId" -> scheduledEventId.map { x => x.asInstanceOf[js.Any] },
-        "startedEventId" -> startedEventId.map { x => x.asInstanceOf[js.Any] },
+        "scheduledEventId" -> scheduledEventId.asInstanceOf[js.Any],
+        "startedEventId" -> startedEventId.asInstanceOf[js.Any],
+        "timeoutType" -> timeoutType.asInstanceOf[js.Any],
         "details" -> details.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ActivityTaskTimedOutEventAttributes]
@@ -377,17 +377,17 @@ package swf {
    */
   @js.native
   trait ActivityType extends js.Object {
-    var name: js.UndefOr[Name]
-    var version: js.UndefOr[Version]
+    var name: Name
+    var version: Version
   }
 
   object ActivityType {
     def apply(
-      name: js.UndefOr[Name] = js.undefined,
-      version: js.UndefOr[Version] = js.undefined): ActivityType = {
+      name: Name,
+      version: Version): ActivityType = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "name" -> name.map { x => x.asInstanceOf[js.Any] },
-        "version" -> version.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "name" -> name.asInstanceOf[js.Any],
+        "version" -> version.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ActivityType]
     }
@@ -398,29 +398,29 @@ package swf {
    */
   @js.native
   trait ActivityTypeConfiguration extends js.Object {
-    var defaultTaskStartToCloseTimeout: js.UndefOr[DurationInSecondsOptional]
-    var defaultTaskScheduleToStartTimeout: js.UndefOr[DurationInSecondsOptional]
-    var defaultTaskList: js.UndefOr[TaskList]
-    var defaultTaskScheduleToCloseTimeout: js.UndefOr[DurationInSecondsOptional]
     var defaultTaskHeartbeatTimeout: js.UndefOr[DurationInSecondsOptional]
+    var defaultTaskList: js.UndefOr[TaskList]
     var defaultTaskPriority: js.UndefOr[TaskPriority]
+    var defaultTaskScheduleToCloseTimeout: js.UndefOr[DurationInSecondsOptional]
+    var defaultTaskScheduleToStartTimeout: js.UndefOr[DurationInSecondsOptional]
+    var defaultTaskStartToCloseTimeout: js.UndefOr[DurationInSecondsOptional]
   }
 
   object ActivityTypeConfiguration {
     def apply(
-      defaultTaskStartToCloseTimeout: js.UndefOr[DurationInSecondsOptional] = js.undefined,
-      defaultTaskScheduleToStartTimeout: js.UndefOr[DurationInSecondsOptional] = js.undefined,
-      defaultTaskList: js.UndefOr[TaskList] = js.undefined,
-      defaultTaskScheduleToCloseTimeout: js.UndefOr[DurationInSecondsOptional] = js.undefined,
       defaultTaskHeartbeatTimeout: js.UndefOr[DurationInSecondsOptional] = js.undefined,
-      defaultTaskPriority: js.UndefOr[TaskPriority] = js.undefined): ActivityTypeConfiguration = {
+      defaultTaskList: js.UndefOr[TaskList] = js.undefined,
+      defaultTaskPriority: js.UndefOr[TaskPriority] = js.undefined,
+      defaultTaskScheduleToCloseTimeout: js.UndefOr[DurationInSecondsOptional] = js.undefined,
+      defaultTaskScheduleToStartTimeout: js.UndefOr[DurationInSecondsOptional] = js.undefined,
+      defaultTaskStartToCloseTimeout: js.UndefOr[DurationInSecondsOptional] = js.undefined): ActivityTypeConfiguration = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "defaultTaskStartToCloseTimeout" -> defaultTaskStartToCloseTimeout.map { x => x.asInstanceOf[js.Any] },
-        "defaultTaskScheduleToStartTimeout" -> defaultTaskScheduleToStartTimeout.map { x => x.asInstanceOf[js.Any] },
-        "defaultTaskList" -> defaultTaskList.map { x => x.asInstanceOf[js.Any] },
-        "defaultTaskScheduleToCloseTimeout" -> defaultTaskScheduleToCloseTimeout.map { x => x.asInstanceOf[js.Any] },
         "defaultTaskHeartbeatTimeout" -> defaultTaskHeartbeatTimeout.map { x => x.asInstanceOf[js.Any] },
-        "defaultTaskPriority" -> defaultTaskPriority.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "defaultTaskList" -> defaultTaskList.map { x => x.asInstanceOf[js.Any] },
+        "defaultTaskPriority" -> defaultTaskPriority.map { x => x.asInstanceOf[js.Any] },
+        "defaultTaskScheduleToCloseTimeout" -> defaultTaskScheduleToCloseTimeout.map { x => x.asInstanceOf[js.Any] },
+        "defaultTaskScheduleToStartTimeout" -> defaultTaskScheduleToStartTimeout.map { x => x.asInstanceOf[js.Any] },
+        "defaultTaskStartToCloseTimeout" -> defaultTaskStartToCloseTimeout.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ActivityTypeConfiguration]
     }
@@ -431,17 +431,17 @@ package swf {
    */
   @js.native
   trait ActivityTypeDetail extends js.Object {
-    var typeInfo: js.UndefOr[ActivityTypeInfo]
-    var configuration: js.UndefOr[ActivityTypeConfiguration]
+    var configuration: ActivityTypeConfiguration
+    var typeInfo: ActivityTypeInfo
   }
 
   object ActivityTypeDetail {
     def apply(
-      typeInfo: js.UndefOr[ActivityTypeInfo] = js.undefined,
-      configuration: js.UndefOr[ActivityTypeConfiguration] = js.undefined): ActivityTypeDetail = {
+      configuration: ActivityTypeConfiguration,
+      typeInfo: ActivityTypeInfo): ActivityTypeDetail = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "typeInfo" -> typeInfo.map { x => x.asInstanceOf[js.Any] },
-        "configuration" -> configuration.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "configuration" -> configuration.asInstanceOf[js.Any],
+        "typeInfo" -> typeInfo.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ActivityTypeDetail]
     }
@@ -452,26 +452,26 @@ package swf {
    */
   @js.native
   trait ActivityTypeInfo extends js.Object {
-    var description: js.UndefOr[Description]
-    var activityType: js.UndefOr[ActivityType]
-    var status: js.UndefOr[RegistrationStatus]
+    var activityType: ActivityType
+    var creationDate: Timestamp
+    var status: RegistrationStatus
     var deprecationDate: js.UndefOr[Timestamp]
-    var creationDate: js.UndefOr[Timestamp]
+    var description: js.UndefOr[Description]
   }
 
   object ActivityTypeInfo {
     def apply(
-      description: js.UndefOr[Description] = js.undefined,
-      activityType: js.UndefOr[ActivityType] = js.undefined,
-      status: js.UndefOr[RegistrationStatus] = js.undefined,
+      activityType: ActivityType,
+      creationDate: Timestamp,
+      status: RegistrationStatus,
       deprecationDate: js.UndefOr[Timestamp] = js.undefined,
-      creationDate: js.UndefOr[Timestamp] = js.undefined): ActivityTypeInfo = {
+      description: js.UndefOr[Description] = js.undefined): ActivityTypeInfo = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "description" -> description.map { x => x.asInstanceOf[js.Any] },
-        "activityType" -> activityType.map { x => x.asInstanceOf[js.Any] },
-        "status" -> status.map { x => x.asInstanceOf[js.Any] },
+        "activityType" -> activityType.asInstanceOf[js.Any],
+        "creationDate" -> creationDate.asInstanceOf[js.Any],
+        "status" -> status.asInstanceOf[js.Any],
         "deprecationDate" -> deprecationDate.map { x => x.asInstanceOf[js.Any] },
-        "creationDate" -> creationDate.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "description" -> description.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ActivityTypeInfo]
     }
@@ -482,16 +482,16 @@ package swf {
    */
   @js.native
   trait ActivityTypeInfos extends js.Object {
-    var typeInfos: js.UndefOr[ActivityTypeInfoList]
+    var typeInfos: ActivityTypeInfoList
     var nextPageToken: js.UndefOr[PageToken]
   }
 
   object ActivityTypeInfos {
     def apply(
-      typeInfos: js.UndefOr[ActivityTypeInfoList] = js.undefined,
+      typeInfos: ActivityTypeInfoList,
       nextPageToken: js.UndefOr[PageToken] = js.undefined): ActivityTypeInfos = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "typeInfos" -> typeInfos.map { x => x.asInstanceOf[js.Any] },
+        "typeInfos" -> typeInfos.asInstanceOf[js.Any],
         "nextPageToken" -> nextPageToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ActivityTypeInfos]
@@ -503,14 +503,14 @@ package swf {
    */
   @js.native
   trait CancelTimerDecisionAttributes extends js.Object {
-    var timerId: js.UndefOr[TimerId]
+    var timerId: TimerId
   }
 
   object CancelTimerDecisionAttributes {
     def apply(
-      timerId: js.UndefOr[TimerId] = js.undefined): CancelTimerDecisionAttributes = {
+      timerId: TimerId): CancelTimerDecisionAttributes = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "timerId" -> timerId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "timerId" -> timerId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CancelTimerDecisionAttributes]
     }
@@ -528,20 +528,20 @@ package swf {
    */
   @js.native
   trait CancelTimerFailedEventAttributes extends js.Object {
-    var timerId: js.UndefOr[TimerId]
-    var cause: js.UndefOr[CancelTimerFailedCause]
-    var decisionTaskCompletedEventId: js.UndefOr[EventId]
+    var cause: CancelTimerFailedCause
+    var decisionTaskCompletedEventId: EventId
+    var timerId: TimerId
   }
 
   object CancelTimerFailedEventAttributes {
     def apply(
-      timerId: js.UndefOr[TimerId] = js.undefined,
-      cause: js.UndefOr[CancelTimerFailedCause] = js.undefined,
-      decisionTaskCompletedEventId: js.UndefOr[EventId] = js.undefined): CancelTimerFailedEventAttributes = {
+      cause: CancelTimerFailedCause,
+      decisionTaskCompletedEventId: EventId,
+      timerId: TimerId): CancelTimerFailedEventAttributes = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "timerId" -> timerId.map { x => x.asInstanceOf[js.Any] },
-        "cause" -> cause.map { x => x.asInstanceOf[js.Any] },
-        "decisionTaskCompletedEventId" -> decisionTaskCompletedEventId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "cause" -> cause.asInstanceOf[js.Any],
+        "decisionTaskCompletedEventId" -> decisionTaskCompletedEventId.asInstanceOf[js.Any],
+        "timerId" -> timerId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CancelTimerFailedEventAttributes]
     }
@@ -577,17 +577,17 @@ package swf {
    */
   @js.native
   trait CancelWorkflowExecutionFailedEventAttributes extends js.Object {
-    var cause: js.UndefOr[CancelWorkflowExecutionFailedCause]
-    var decisionTaskCompletedEventId: js.UndefOr[EventId]
+    var cause: CancelWorkflowExecutionFailedCause
+    var decisionTaskCompletedEventId: EventId
   }
 
   object CancelWorkflowExecutionFailedEventAttributes {
     def apply(
-      cause: js.UndefOr[CancelWorkflowExecutionFailedCause] = js.undefined,
-      decisionTaskCompletedEventId: js.UndefOr[EventId] = js.undefined): CancelWorkflowExecutionFailedEventAttributes = {
+      cause: CancelWorkflowExecutionFailedCause,
+      decisionTaskCompletedEventId: EventId): CancelWorkflowExecutionFailedEventAttributes = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "cause" -> cause.map { x => x.asInstanceOf[js.Any] },
-        "decisionTaskCompletedEventId" -> decisionTaskCompletedEventId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "cause" -> cause.asInstanceOf[js.Any],
+        "decisionTaskCompletedEventId" -> decisionTaskCompletedEventId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CancelWorkflowExecutionFailedEventAttributes]
     }
@@ -606,25 +606,25 @@ package swf {
    */
   @js.native
   trait ChildWorkflowExecutionCanceledEventAttributes extends js.Object {
-    var workflowType: js.UndefOr[WorkflowType]
-    var initiatedEventId: js.UndefOr[EventId]
-    var workflowExecution: js.UndefOr[WorkflowExecution]
-    var startedEventId: js.UndefOr[EventId]
+    var initiatedEventId: EventId
+    var startedEventId: EventId
+    var workflowExecution: WorkflowExecution
+    var workflowType: WorkflowType
     var details: js.UndefOr[Data]
   }
 
   object ChildWorkflowExecutionCanceledEventAttributes {
     def apply(
-      workflowType: js.UndefOr[WorkflowType] = js.undefined,
-      initiatedEventId: js.UndefOr[EventId] = js.undefined,
-      workflowExecution: js.UndefOr[WorkflowExecution] = js.undefined,
-      startedEventId: js.UndefOr[EventId] = js.undefined,
+      initiatedEventId: EventId,
+      startedEventId: EventId,
+      workflowExecution: WorkflowExecution,
+      workflowType: WorkflowType,
       details: js.UndefOr[Data] = js.undefined): ChildWorkflowExecutionCanceledEventAttributes = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "workflowType" -> workflowType.map { x => x.asInstanceOf[js.Any] },
-        "initiatedEventId" -> initiatedEventId.map { x => x.asInstanceOf[js.Any] },
-        "workflowExecution" -> workflowExecution.map { x => x.asInstanceOf[js.Any] },
-        "startedEventId" -> startedEventId.map { x => x.asInstanceOf[js.Any] },
+        "initiatedEventId" -> initiatedEventId.asInstanceOf[js.Any],
+        "startedEventId" -> startedEventId.asInstanceOf[js.Any],
+        "workflowExecution" -> workflowExecution.asInstanceOf[js.Any],
+        "workflowType" -> workflowType.asInstanceOf[js.Any],
         "details" -> details.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ChildWorkflowExecutionCanceledEventAttributes]
@@ -636,26 +636,26 @@ package swf {
    */
   @js.native
   trait ChildWorkflowExecutionCompletedEventAttributes extends js.Object {
-    var workflowType: js.UndefOr[WorkflowType]
-    var initiatedEventId: js.UndefOr[EventId]
+    var initiatedEventId: EventId
+    var startedEventId: EventId
+    var workflowExecution: WorkflowExecution
+    var workflowType: WorkflowType
     var result: js.UndefOr[Data]
-    var workflowExecution: js.UndefOr[WorkflowExecution]
-    var startedEventId: js.UndefOr[EventId]
   }
 
   object ChildWorkflowExecutionCompletedEventAttributes {
     def apply(
-      workflowType: js.UndefOr[WorkflowType] = js.undefined,
-      initiatedEventId: js.UndefOr[EventId] = js.undefined,
-      result: js.UndefOr[Data] = js.undefined,
-      workflowExecution: js.UndefOr[WorkflowExecution] = js.undefined,
-      startedEventId: js.UndefOr[EventId] = js.undefined): ChildWorkflowExecutionCompletedEventAttributes = {
+      initiatedEventId: EventId,
+      startedEventId: EventId,
+      workflowExecution: WorkflowExecution,
+      workflowType: WorkflowType,
+      result: js.UndefOr[Data] = js.undefined): ChildWorkflowExecutionCompletedEventAttributes = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "workflowType" -> workflowType.map { x => x.asInstanceOf[js.Any] },
-        "initiatedEventId" -> initiatedEventId.map { x => x.asInstanceOf[js.Any] },
-        "result" -> result.map { x => x.asInstanceOf[js.Any] },
-        "workflowExecution" -> workflowExecution.map { x => x.asInstanceOf[js.Any] },
-        "startedEventId" -> startedEventId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "initiatedEventId" -> initiatedEventId.asInstanceOf[js.Any],
+        "startedEventId" -> startedEventId.asInstanceOf[js.Any],
+        "workflowExecution" -> workflowExecution.asInstanceOf[js.Any],
+        "workflowType" -> workflowType.asInstanceOf[js.Any],
+        "result" -> result.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ChildWorkflowExecutionCompletedEventAttributes]
     }
@@ -666,29 +666,29 @@ package swf {
    */
   @js.native
   trait ChildWorkflowExecutionFailedEventAttributes extends js.Object {
-    var workflowType: js.UndefOr[WorkflowType]
-    var initiatedEventId: js.UndefOr[EventId]
-    var workflowExecution: js.UndefOr[WorkflowExecution]
-    var reason: js.UndefOr[FailureReason]
-    var startedEventId: js.UndefOr[EventId]
+    var initiatedEventId: EventId
+    var startedEventId: EventId
+    var workflowExecution: WorkflowExecution
+    var workflowType: WorkflowType
     var details: js.UndefOr[Data]
+    var reason: js.UndefOr[FailureReason]
   }
 
   object ChildWorkflowExecutionFailedEventAttributes {
     def apply(
-      workflowType: js.UndefOr[WorkflowType] = js.undefined,
-      initiatedEventId: js.UndefOr[EventId] = js.undefined,
-      workflowExecution: js.UndefOr[WorkflowExecution] = js.undefined,
-      reason: js.UndefOr[FailureReason] = js.undefined,
-      startedEventId: js.UndefOr[EventId] = js.undefined,
-      details: js.UndefOr[Data] = js.undefined): ChildWorkflowExecutionFailedEventAttributes = {
+      initiatedEventId: EventId,
+      startedEventId: EventId,
+      workflowExecution: WorkflowExecution,
+      workflowType: WorkflowType,
+      details: js.UndefOr[Data] = js.undefined,
+      reason: js.UndefOr[FailureReason] = js.undefined): ChildWorkflowExecutionFailedEventAttributes = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "workflowType" -> workflowType.map { x => x.asInstanceOf[js.Any] },
-        "initiatedEventId" -> initiatedEventId.map { x => x.asInstanceOf[js.Any] },
-        "workflowExecution" -> workflowExecution.map { x => x.asInstanceOf[js.Any] },
-        "reason" -> reason.map { x => x.asInstanceOf[js.Any] },
-        "startedEventId" -> startedEventId.map { x => x.asInstanceOf[js.Any] },
-        "details" -> details.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "initiatedEventId" -> initiatedEventId.asInstanceOf[js.Any],
+        "startedEventId" -> startedEventId.asInstanceOf[js.Any],
+        "workflowExecution" -> workflowExecution.asInstanceOf[js.Any],
+        "workflowType" -> workflowType.asInstanceOf[js.Any],
+        "details" -> details.map { x => x.asInstanceOf[js.Any] },
+        "reason" -> reason.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ChildWorkflowExecutionFailedEventAttributes]
     }
@@ -699,20 +699,20 @@ package swf {
    */
   @js.native
   trait ChildWorkflowExecutionStartedEventAttributes extends js.Object {
-    var workflowExecution: js.UndefOr[WorkflowExecution]
-    var workflowType: js.UndefOr[WorkflowType]
-    var initiatedEventId: js.UndefOr[EventId]
+    var initiatedEventId: EventId
+    var workflowExecution: WorkflowExecution
+    var workflowType: WorkflowType
   }
 
   object ChildWorkflowExecutionStartedEventAttributes {
     def apply(
-      workflowExecution: js.UndefOr[WorkflowExecution] = js.undefined,
-      workflowType: js.UndefOr[WorkflowType] = js.undefined,
-      initiatedEventId: js.UndefOr[EventId] = js.undefined): ChildWorkflowExecutionStartedEventAttributes = {
+      initiatedEventId: EventId,
+      workflowExecution: WorkflowExecution,
+      workflowType: WorkflowType): ChildWorkflowExecutionStartedEventAttributes = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "workflowExecution" -> workflowExecution.map { x => x.asInstanceOf[js.Any] },
-        "workflowType" -> workflowType.map { x => x.asInstanceOf[js.Any] },
-        "initiatedEventId" -> initiatedEventId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "initiatedEventId" -> initiatedEventId.asInstanceOf[js.Any],
+        "workflowExecution" -> workflowExecution.asInstanceOf[js.Any],
+        "workflowType" -> workflowType.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ChildWorkflowExecutionStartedEventAttributes]
     }
@@ -723,23 +723,23 @@ package swf {
    */
   @js.native
   trait ChildWorkflowExecutionTerminatedEventAttributes extends js.Object {
-    var workflowExecution: js.UndefOr[WorkflowExecution]
-    var workflowType: js.UndefOr[WorkflowType]
-    var initiatedEventId: js.UndefOr[EventId]
-    var startedEventId: js.UndefOr[EventId]
+    var initiatedEventId: EventId
+    var startedEventId: EventId
+    var workflowExecution: WorkflowExecution
+    var workflowType: WorkflowType
   }
 
   object ChildWorkflowExecutionTerminatedEventAttributes {
     def apply(
-      workflowExecution: js.UndefOr[WorkflowExecution] = js.undefined,
-      workflowType: js.UndefOr[WorkflowType] = js.undefined,
-      initiatedEventId: js.UndefOr[EventId] = js.undefined,
-      startedEventId: js.UndefOr[EventId] = js.undefined): ChildWorkflowExecutionTerminatedEventAttributes = {
+      initiatedEventId: EventId,
+      startedEventId: EventId,
+      workflowExecution: WorkflowExecution,
+      workflowType: WorkflowType): ChildWorkflowExecutionTerminatedEventAttributes = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "workflowExecution" -> workflowExecution.map { x => x.asInstanceOf[js.Any] },
-        "workflowType" -> workflowType.map { x => x.asInstanceOf[js.Any] },
-        "initiatedEventId" -> initiatedEventId.map { x => x.asInstanceOf[js.Any] },
-        "startedEventId" -> startedEventId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "initiatedEventId" -> initiatedEventId.asInstanceOf[js.Any],
+        "startedEventId" -> startedEventId.asInstanceOf[js.Any],
+        "workflowExecution" -> workflowExecution.asInstanceOf[js.Any],
+        "workflowType" -> workflowType.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ChildWorkflowExecutionTerminatedEventAttributes]
     }
@@ -750,26 +750,26 @@ package swf {
    */
   @js.native
   trait ChildWorkflowExecutionTimedOutEventAttributes extends js.Object {
-    var workflowType: js.UndefOr[WorkflowType]
-    var initiatedEventId: js.UndefOr[EventId]
-    var timeoutType: js.UndefOr[WorkflowExecutionTimeoutType]
-    var workflowExecution: js.UndefOr[WorkflowExecution]
-    var startedEventId: js.UndefOr[EventId]
+    var initiatedEventId: EventId
+    var startedEventId: EventId
+    var timeoutType: WorkflowExecutionTimeoutType
+    var workflowExecution: WorkflowExecution
+    var workflowType: WorkflowType
   }
 
   object ChildWorkflowExecutionTimedOutEventAttributes {
     def apply(
-      workflowType: js.UndefOr[WorkflowType] = js.undefined,
-      initiatedEventId: js.UndefOr[EventId] = js.undefined,
-      timeoutType: js.UndefOr[WorkflowExecutionTimeoutType] = js.undefined,
-      workflowExecution: js.UndefOr[WorkflowExecution] = js.undefined,
-      startedEventId: js.UndefOr[EventId] = js.undefined): ChildWorkflowExecutionTimedOutEventAttributes = {
+      initiatedEventId: EventId,
+      startedEventId: EventId,
+      timeoutType: WorkflowExecutionTimeoutType,
+      workflowExecution: WorkflowExecution,
+      workflowType: WorkflowType): ChildWorkflowExecutionTimedOutEventAttributes = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "workflowType" -> workflowType.map { x => x.asInstanceOf[js.Any] },
-        "initiatedEventId" -> initiatedEventId.map { x => x.asInstanceOf[js.Any] },
-        "timeoutType" -> timeoutType.map { x => x.asInstanceOf[js.Any] },
-        "workflowExecution" -> workflowExecution.map { x => x.asInstanceOf[js.Any] },
-        "startedEventId" -> startedEventId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "initiatedEventId" -> initiatedEventId.asInstanceOf[js.Any],
+        "startedEventId" -> startedEventId.asInstanceOf[js.Any],
+        "timeoutType" -> timeoutType.asInstanceOf[js.Any],
+        "workflowExecution" -> workflowExecution.asInstanceOf[js.Any],
+        "workflowType" -> workflowType.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ChildWorkflowExecutionTimedOutEventAttributes]
     }
@@ -791,14 +791,14 @@ package swf {
    */
   @js.native
   trait CloseStatusFilter extends js.Object {
-    var status: js.UndefOr[CloseStatus]
+    var status: CloseStatus
   }
 
   object CloseStatusFilter {
     def apply(
-      status: js.UndefOr[CloseStatus] = js.undefined): CloseStatusFilter = {
+      status: CloseStatus): CloseStatusFilter = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "status" -> status.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "status" -> status.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CloseStatusFilter]
     }
@@ -834,59 +834,59 @@ package swf {
    */
   @js.native
   trait CompleteWorkflowExecutionFailedEventAttributes extends js.Object {
-    var cause: js.UndefOr[CompleteWorkflowExecutionFailedCause]
-    var decisionTaskCompletedEventId: js.UndefOr[EventId]
+    var cause: CompleteWorkflowExecutionFailedCause
+    var decisionTaskCompletedEventId: EventId
   }
 
   object CompleteWorkflowExecutionFailedEventAttributes {
     def apply(
-      cause: js.UndefOr[CompleteWorkflowExecutionFailedCause] = js.undefined,
-      decisionTaskCompletedEventId: js.UndefOr[EventId] = js.undefined): CompleteWorkflowExecutionFailedEventAttributes = {
+      cause: CompleteWorkflowExecutionFailedCause,
+      decisionTaskCompletedEventId: EventId): CompleteWorkflowExecutionFailedEventAttributes = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "cause" -> cause.map { x => x.asInstanceOf[js.Any] },
-        "decisionTaskCompletedEventId" -> decisionTaskCompletedEventId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "cause" -> cause.asInstanceOf[js.Any],
+        "decisionTaskCompletedEventId" -> decisionTaskCompletedEventId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CompleteWorkflowExecutionFailedEventAttributes]
     }
   }
 
   /**
-   * <p>Provides the details of the <code>ContinueAsNewWorkflowExecution</code> decision.</p> <p> <b>Access Control</b> </p> <p>You can use IAM policies to control this decision's access to Amazon SWF resources as follows:</p> <ul> <li> <p>Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.</p> </li> <li> <p>Use an <code>Action</code> element to allow or deny permission to call this action.</p> </li> <li> <p>Constrain the following parameters by using a <code>Condition</code> element with the appropriate keys.</p> <ul> <li> <p> <code>tag</code> – A tag used to identify the workflow execution</p> </li> <li> <p> <code>taskList</code> – String constraint. The key is <code>swf:taskList.name</code>.</p> </li> <li> <p> <code>workflowType.version</code> – String constraint. The key is <code>swf:workflowType.version</code>.</p> </li> </ul> </li> </ul> <p>If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p>
+   * <p>Provides the details of the <code>ContinueAsNewWorkflowExecution</code> decision.</p> <p> <b>Access Control</b> </p> <p>You can use IAM policies to control this decision's access to Amazon SWF resources as follows:</p> <ul> <li> <p>Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.</p> </li> <li> <p>Use an <code>Action</code> element to allow or deny permission to call this action.</p> </li> <li> <p>Constrain the following parameters by using a <code>Condition</code> element with the appropriate keys.</p> <ul> <li> <p> <code>tag</code> ? A tag used to identify the workflow execution</p> </li> <li> <p> <code>taskList</code> ? String constraint. The key is <code>swf:taskList.name</code>.</p> </li> <li> <p> <code>workflowType.version</code> ? String constraint. The key is <code>swf:workflowType.version</code>.</p> </li> </ul> </li> </ul> <p>If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p>
    */
   @js.native
   trait ContinueAsNewWorkflowExecutionDecisionAttributes extends js.Object {
-    var lambdaRole: js.UndefOr[Arn]
-    var taskList: js.UndefOr[TaskList]
-    var tagList: js.UndefOr[TagList]
-    var workflowTypeVersion: js.UndefOr[Version]
-    var taskPriority: js.UndefOr[TaskPriority]
-    var taskStartToCloseTimeout: js.UndefOr[DurationInSecondsOptional]
     var childPolicy: js.UndefOr[ChildPolicy]
     var executionStartToCloseTimeout: js.UndefOr[DurationInSecondsOptional]
     var input: js.UndefOr[Data]
+    var lambdaRole: js.UndefOr[Arn]
+    var tagList: js.UndefOr[TagList]
+    var taskList: js.UndefOr[TaskList]
+    var taskPriority: js.UndefOr[TaskPriority]
+    var taskStartToCloseTimeout: js.UndefOr[DurationInSecondsOptional]
+    var workflowTypeVersion: js.UndefOr[Version]
   }
 
   object ContinueAsNewWorkflowExecutionDecisionAttributes {
     def apply(
-      lambdaRole: js.UndefOr[Arn] = js.undefined,
-      taskList: js.UndefOr[TaskList] = js.undefined,
-      tagList: js.UndefOr[TagList] = js.undefined,
-      workflowTypeVersion: js.UndefOr[Version] = js.undefined,
-      taskPriority: js.UndefOr[TaskPriority] = js.undefined,
-      taskStartToCloseTimeout: js.UndefOr[DurationInSecondsOptional] = js.undefined,
       childPolicy: js.UndefOr[ChildPolicy] = js.undefined,
       executionStartToCloseTimeout: js.UndefOr[DurationInSecondsOptional] = js.undefined,
-      input: js.UndefOr[Data] = js.undefined): ContinueAsNewWorkflowExecutionDecisionAttributes = {
+      input: js.UndefOr[Data] = js.undefined,
+      lambdaRole: js.UndefOr[Arn] = js.undefined,
+      tagList: js.UndefOr[TagList] = js.undefined,
+      taskList: js.UndefOr[TaskList] = js.undefined,
+      taskPriority: js.UndefOr[TaskPriority] = js.undefined,
+      taskStartToCloseTimeout: js.UndefOr[DurationInSecondsOptional] = js.undefined,
+      workflowTypeVersion: js.UndefOr[Version] = js.undefined): ContinueAsNewWorkflowExecutionDecisionAttributes = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "lambdaRole" -> lambdaRole.map { x => x.asInstanceOf[js.Any] },
-        "taskList" -> taskList.map { x => x.asInstanceOf[js.Any] },
-        "tagList" -> tagList.map { x => x.asInstanceOf[js.Any] },
-        "workflowTypeVersion" -> workflowTypeVersion.map { x => x.asInstanceOf[js.Any] },
-        "taskPriority" -> taskPriority.map { x => x.asInstanceOf[js.Any] },
-        "taskStartToCloseTimeout" -> taskStartToCloseTimeout.map { x => x.asInstanceOf[js.Any] },
         "childPolicy" -> childPolicy.map { x => x.asInstanceOf[js.Any] },
         "executionStartToCloseTimeout" -> executionStartToCloseTimeout.map { x => x.asInstanceOf[js.Any] },
-        "input" -> input.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "input" -> input.map { x => x.asInstanceOf[js.Any] },
+        "lambdaRole" -> lambdaRole.map { x => x.asInstanceOf[js.Any] },
+        "tagList" -> tagList.map { x => x.asInstanceOf[js.Any] },
+        "taskList" -> taskList.map { x => x.asInstanceOf[js.Any] },
+        "taskPriority" -> taskPriority.map { x => x.asInstanceOf[js.Any] },
+        "taskStartToCloseTimeout" -> taskStartToCloseTimeout.map { x => x.asInstanceOf[js.Any] },
+        "workflowTypeVersion" -> workflowTypeVersion.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ContinueAsNewWorkflowExecutionDecisionAttributes]
     }
@@ -911,17 +911,17 @@ package swf {
    */
   @js.native
   trait ContinueAsNewWorkflowExecutionFailedEventAttributes extends js.Object {
-    var cause: js.UndefOr[ContinueAsNewWorkflowExecutionFailedCause]
-    var decisionTaskCompletedEventId: js.UndefOr[EventId]
+    var cause: ContinueAsNewWorkflowExecutionFailedCause
+    var decisionTaskCompletedEventId: EventId
   }
 
   object ContinueAsNewWorkflowExecutionFailedEventAttributes {
     def apply(
-      cause: js.UndefOr[ContinueAsNewWorkflowExecutionFailedCause] = js.undefined,
-      decisionTaskCompletedEventId: js.UndefOr[EventId] = js.undefined): ContinueAsNewWorkflowExecutionFailedEventAttributes = {
+      cause: ContinueAsNewWorkflowExecutionFailedCause,
+      decisionTaskCompletedEventId: EventId): ContinueAsNewWorkflowExecutionFailedEventAttributes = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "cause" -> cause.map { x => x.asInstanceOf[js.Any] },
-        "decisionTaskCompletedEventId" -> decisionTaskCompletedEventId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "cause" -> cause.asInstanceOf[js.Any],
+        "decisionTaskCompletedEventId" -> decisionTaskCompletedEventId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ContinueAsNewWorkflowExecutionFailedEventAttributes]
     }
@@ -929,32 +929,32 @@ package swf {
 
   @js.native
   trait CountClosedWorkflowExecutionsInput extends js.Object {
-    var executionFilter: js.UndefOr[WorkflowExecutionFilter]
-    var startTimeFilter: js.UndefOr[ExecutionTimeFilter]
-    var domain: js.UndefOr[DomainName]
+    var domain: DomainName
     var closeStatusFilter: js.UndefOr[CloseStatusFilter]
     var closeTimeFilter: js.UndefOr[ExecutionTimeFilter]
-    var typeFilter: js.UndefOr[WorkflowTypeFilter]
+    var executionFilter: js.UndefOr[WorkflowExecutionFilter]
+    var startTimeFilter: js.UndefOr[ExecutionTimeFilter]
     var tagFilter: js.UndefOr[TagFilter]
+    var typeFilter: js.UndefOr[WorkflowTypeFilter]
   }
 
   object CountClosedWorkflowExecutionsInput {
     def apply(
-      executionFilter: js.UndefOr[WorkflowExecutionFilter] = js.undefined,
-      startTimeFilter: js.UndefOr[ExecutionTimeFilter] = js.undefined,
-      domain: js.UndefOr[DomainName] = js.undefined,
+      domain: DomainName,
       closeStatusFilter: js.UndefOr[CloseStatusFilter] = js.undefined,
       closeTimeFilter: js.UndefOr[ExecutionTimeFilter] = js.undefined,
-      typeFilter: js.UndefOr[WorkflowTypeFilter] = js.undefined,
-      tagFilter: js.UndefOr[TagFilter] = js.undefined): CountClosedWorkflowExecutionsInput = {
+      executionFilter: js.UndefOr[WorkflowExecutionFilter] = js.undefined,
+      startTimeFilter: js.UndefOr[ExecutionTimeFilter] = js.undefined,
+      tagFilter: js.UndefOr[TagFilter] = js.undefined,
+      typeFilter: js.UndefOr[WorkflowTypeFilter] = js.undefined): CountClosedWorkflowExecutionsInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "executionFilter" -> executionFilter.map { x => x.asInstanceOf[js.Any] },
-        "startTimeFilter" -> startTimeFilter.map { x => x.asInstanceOf[js.Any] },
-        "domain" -> domain.map { x => x.asInstanceOf[js.Any] },
+        "domain" -> domain.asInstanceOf[js.Any],
         "closeStatusFilter" -> closeStatusFilter.map { x => x.asInstanceOf[js.Any] },
         "closeTimeFilter" -> closeTimeFilter.map { x => x.asInstanceOf[js.Any] },
-        "typeFilter" -> typeFilter.map { x => x.asInstanceOf[js.Any] },
-        "tagFilter" -> tagFilter.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "executionFilter" -> executionFilter.map { x => x.asInstanceOf[js.Any] },
+        "startTimeFilter" -> startTimeFilter.map { x => x.asInstanceOf[js.Any] },
+        "tagFilter" -> tagFilter.map { x => x.asInstanceOf[js.Any] },
+        "typeFilter" -> typeFilter.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CountClosedWorkflowExecutionsInput]
     }
@@ -962,26 +962,26 @@ package swf {
 
   @js.native
   trait CountOpenWorkflowExecutionsInput extends js.Object {
+    var domain: DomainName
+    var startTimeFilter: ExecutionTimeFilter
     var executionFilter: js.UndefOr[WorkflowExecutionFilter]
-    var startTimeFilter: js.UndefOr[ExecutionTimeFilter]
-    var domain: js.UndefOr[DomainName]
-    var typeFilter: js.UndefOr[WorkflowTypeFilter]
     var tagFilter: js.UndefOr[TagFilter]
+    var typeFilter: js.UndefOr[WorkflowTypeFilter]
   }
 
   object CountOpenWorkflowExecutionsInput {
     def apply(
+      domain: DomainName,
+      startTimeFilter: ExecutionTimeFilter,
       executionFilter: js.UndefOr[WorkflowExecutionFilter] = js.undefined,
-      startTimeFilter: js.UndefOr[ExecutionTimeFilter] = js.undefined,
-      domain: js.UndefOr[DomainName] = js.undefined,
-      typeFilter: js.UndefOr[WorkflowTypeFilter] = js.undefined,
-      tagFilter: js.UndefOr[TagFilter] = js.undefined): CountOpenWorkflowExecutionsInput = {
+      tagFilter: js.UndefOr[TagFilter] = js.undefined,
+      typeFilter: js.UndefOr[WorkflowTypeFilter] = js.undefined): CountOpenWorkflowExecutionsInput = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "domain" -> domain.asInstanceOf[js.Any],
+        "startTimeFilter" -> startTimeFilter.asInstanceOf[js.Any],
         "executionFilter" -> executionFilter.map { x => x.asInstanceOf[js.Any] },
-        "startTimeFilter" -> startTimeFilter.map { x => x.asInstanceOf[js.Any] },
-        "domain" -> domain.map { x => x.asInstanceOf[js.Any] },
-        "typeFilter" -> typeFilter.map { x => x.asInstanceOf[js.Any] },
-        "tagFilter" -> tagFilter.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "tagFilter" -> tagFilter.map { x => x.asInstanceOf[js.Any] },
+        "typeFilter" -> typeFilter.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CountOpenWorkflowExecutionsInput]
     }
@@ -989,17 +989,17 @@ package swf {
 
   @js.native
   trait CountPendingActivityTasksInput extends js.Object {
-    var domain: js.UndefOr[DomainName]
-    var taskList: js.UndefOr[TaskList]
+    var domain: DomainName
+    var taskList: TaskList
   }
 
   object CountPendingActivityTasksInput {
     def apply(
-      domain: js.UndefOr[DomainName] = js.undefined,
-      taskList: js.UndefOr[TaskList] = js.undefined): CountPendingActivityTasksInput = {
+      domain: DomainName,
+      taskList: TaskList): CountPendingActivityTasksInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "domain" -> domain.map { x => x.asInstanceOf[js.Any] },
-        "taskList" -> taskList.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "domain" -> domain.asInstanceOf[js.Any],
+        "taskList" -> taskList.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CountPendingActivityTasksInput]
     }
@@ -1007,74 +1007,74 @@ package swf {
 
   @js.native
   trait CountPendingDecisionTasksInput extends js.Object {
-    var domain: js.UndefOr[DomainName]
-    var taskList: js.UndefOr[TaskList]
+    var domain: DomainName
+    var taskList: TaskList
   }
 
   object CountPendingDecisionTasksInput {
     def apply(
-      domain: js.UndefOr[DomainName] = js.undefined,
-      taskList: js.UndefOr[TaskList] = js.undefined): CountPendingDecisionTasksInput = {
+      domain: DomainName,
+      taskList: TaskList): CountPendingDecisionTasksInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "domain" -> domain.map { x => x.asInstanceOf[js.Any] },
-        "taskList" -> taskList.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "domain" -> domain.asInstanceOf[js.Any],
+        "taskList" -> taskList.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CountPendingDecisionTasksInput]
     }
   }
 
   /**
-   * <p>Specifies a decision made by the decider. A decision can be one of these types:</p> <ul> <li> <p> <code>CancelTimer</code> – Cancels a previously started timer and records a <code>TimerCanceled</code> event in the history.</p> </li> <li> <p> <code>CancelWorkflowExecution</code> – Closes the workflow execution and records a <code>WorkflowExecutionCanceled</code> event in the history.</p> </li> <li> <p> <code>CompleteWorkflowExecution</code> – Closes the workflow execution and records a <code>WorkflowExecutionCompleted</code> event in the history .</p> </li> <li> <p> <code>ContinueAsNewWorkflowExecution</code> – Closes the workflow execution and starts a new workflow execution of the same type using the same workflow ID and a unique run Id. A <code>WorkflowExecutionContinuedAsNew</code> event is recorded in the history.</p> </li> <li> <p> <code>FailWorkflowExecution</code> – Closes the workflow execution and records a <code>WorkflowExecutionFailed</code> event in the history.</p> </li> <li> <p> <code>RecordMarker</code> – Records a <code>MarkerRecorded</code> event in the history. Markers can be used for adding custom information in the history for instance to let deciders know that they don't need to look at the history beyond the marker event.</p> </li> <li> <p> <code>RequestCancelActivityTask</code> – Attempts to cancel a previously scheduled activity task. If the activity task was scheduled but has not been assigned to a worker, then it is canceled. If the activity task was already assigned to a worker, then the worker is informed that cancellation has been requested in the response to <a>RecordActivityTaskHeartbeat</a>.</p> </li> <li> <p> <code>RequestCancelExternalWorkflowExecution</code> – Requests that a request be made to cancel the specified external workflow execution and records a <code>RequestCancelExternalWorkflowExecutionInitiated</code> event in the history.</p> </li> <li> <p> <code>ScheduleActivityTask</code> – Schedules an activity task.</p> </li> <li> <p> <code>SignalExternalWorkflowExecution</code> – Requests a signal to be delivered to the specified external workflow execution and records a <code>SignalExternalWorkflowExecutionInitiated</code> event in the history.</p> </li> <li> <p> <code>StartChildWorkflowExecution</code> – Requests that a child workflow execution be started and records a <code>StartChildWorkflowExecutionInitiated</code> event in the history. The child workflow execution is a separate workflow execution with its own history.</p> </li> <li> <p> <code>StartTimer</code> – Starts a timer for this workflow execution and records a <code>TimerStarted</code> event in the history. This timer fires after the specified delay and record a <code>TimerFired</code> event.</p> </li> </ul> <p> <b>Access Control</b> </p> <p>If you grant permission to use <code>RespondDecisionTaskCompleted</code>, you can use IAM policies to express permissions for the list of decisions returned by this action as if they were members of the API. Treating decisions as a pseudo API maintains a uniform conceptual model and helps keep policies readable. For details and example IAM policies, see <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p> <p> <b>Decision Failure</b> </p> <p>Decisions can fail for several reasons</p> <ul> <li> <p>The ordering of decisions should follow a logical flow. Some decisions might not make sense in the current context of the workflow execution and therefore fails.</p> </li> <li> <p>A limit on your account was reached.</p> </li> <li> <p>The decision lacks sufficient permissions.</p> </li> </ul> <p>One of the following events might be added to the history to indicate an error. The event attribute's <code>cause</code> parameter indicates the cause. If <code>cause</code> is set to <code>OPERATION_NOT_PERMITTED</code>, the decision failed because it lacked sufficient permissions. For details and example IAM policies, see <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p> <ul> <li> <p> <code>ScheduleActivityTaskFailed</code> – A <code>ScheduleActivityTask</code> decision failed. This could happen if the activity type specified in the decision isn't registered, is in a deprecated state, or the decision isn't properly configured.</p> </li> <li> <p> <code>RequestCancelActivityTaskFailed</code> – A <code>RequestCancelActivityTask</code> decision failed. This could happen if there is no open activity task with the specified activityId.</p> </li> <li> <p> <code>StartTimerFailed</code> – A <code>StartTimer</code> decision failed. This could happen if there is another open timer with the same timerId.</p> </li> <li> <p> <code>CancelTimerFailed</code> – A <code>CancelTimer</code> decision failed. This could happen if there is no open timer with the specified timerId.</p> </li> <li> <p> <code>StartChildWorkflowExecutionFailed</code> – A <code>StartChildWorkflowExecution</code> decision failed. This could happen if the workflow type specified isn't registered, is deprecated, or the decision isn't properly configured.</p> </li> <li> <p> <code>SignalExternalWorkflowExecutionFailed</code> – A <code>SignalExternalWorkflowExecution</code> decision failed. This could happen if the <code>workflowID</code> specified in the decision was incorrect.</p> </li> <li> <p> <code>RequestCancelExternalWorkflowExecutionFailed</code> – A <code>RequestCancelExternalWorkflowExecution</code> decision failed. This could happen if the <code>workflowID</code> specified in the decision was incorrect.</p> </li> <li> <p> <code>CancelWorkflowExecutionFailed</code> – A <code>CancelWorkflowExecution</code> decision failed. This could happen if there is an unhandled decision task pending in the workflow execution.</p> </li> <li> <p> <code>CompleteWorkflowExecutionFailed</code> – A <code>CompleteWorkflowExecution</code> decision failed. This could happen if there is an unhandled decision task pending in the workflow execution.</p> </li> <li> <p> <code>ContinueAsNewWorkflowExecutionFailed</code> – A <code>ContinueAsNewWorkflowExecution</code> decision failed. This could happen if there is an unhandled decision task pending in the workflow execution or the ContinueAsNewWorkflowExecution decision was not configured correctly.</p> </li> <li> <p> <code>FailWorkflowExecutionFailed</code> – A <code>FailWorkflowExecution</code> decision failed. This could happen if there is an unhandled decision task pending in the workflow execution.</p> </li> </ul> <p>The preceding error events might occur due to an error in the decider logic, which might put the workflow execution in an unstable state The cause field in the event structure for the error event indicates the cause of the error.</p> <note> <p>A workflow execution may be closed by the decider by returning one of the following decisions when completing a decision task: <code>CompleteWorkflowExecution</code>, <code>FailWorkflowExecution</code>, <code>CancelWorkflowExecution</code> and <code>ContinueAsNewWorkflowExecution</code>. An <code>UnhandledDecision</code> fault is returned if a workflow closing decision is specified and a signal or activity event had been added to the history while the decision task was being performed by the decider. Unlike the above situations which are logic issues, this fault is always possible because of race conditions in a distributed system. The right action here is to call <a>RespondDecisionTaskCompleted</a> without any decisions. This would result in another decision task with these new events included in the history. The decider should handle the new events and may decide to close the workflow execution.</p> </note> <p> <b>How to Code a Decision</b> </p> <p>You code a decision by first setting the decision type field to one of the above decision values, and then set the corresponding attributes field shown below:</p> <ul> <li> <p> <code> <a>ScheduleActivityTaskDecisionAttributes</a> </code> </p> </li> <li> <p> <code> <a>RequestCancelActivityTaskDecisionAttributes</a> </code> </p> </li> <li> <p> <code> <a>CompleteWorkflowExecutionDecisionAttributes</a> </code> </p> </li> <li> <p> <code> <a>FailWorkflowExecutionDecisionAttributes</a> </code> </p> </li> <li> <p> <code> <a>CancelWorkflowExecutionDecisionAttributes</a> </code> </p> </li> <li> <p> <code> <a>ContinueAsNewWorkflowExecutionDecisionAttributes</a> </code> </p> </li> <li> <p> <code> <a>RecordMarkerDecisionAttributes</a> </code> </p> </li> <li> <p> <code> <a>StartTimerDecisionAttributes</a> </code> </p> </li> <li> <p> <code> <a>CancelTimerDecisionAttributes</a> </code> </p> </li> <li> <p> <code> <a>SignalExternalWorkflowExecutionDecisionAttributes</a> </code> </p> </li> <li> <p> <code> <a>RequestCancelExternalWorkflowExecutionDecisionAttributes</a> </code> </p> </li> <li> <p> <code> <a>StartChildWorkflowExecutionDecisionAttributes</a> </code> </p> </li> </ul>
+   * <p>Specifies a decision made by the decider. A decision can be one of these types:</p> <ul> <li> <p> <code>CancelTimer</code> ? Cancels a previously started timer and records a <code>TimerCanceled</code> event in the history.</p> </li> <li> <p> <code>CancelWorkflowExecution</code> ? Closes the workflow execution and records a <code>WorkflowExecutionCanceled</code> event in the history.</p> </li> <li> <p> <code>CompleteWorkflowExecution</code> ? Closes the workflow execution and records a <code>WorkflowExecutionCompleted</code> event in the history .</p> </li> <li> <p> <code>ContinueAsNewWorkflowExecution</code> ? Closes the workflow execution and starts a new workflow execution of the same type using the same workflow ID and a unique run Id. A <code>WorkflowExecutionContinuedAsNew</code> event is recorded in the history.</p> </li> <li> <p> <code>FailWorkflowExecution</code> ? Closes the workflow execution and records a <code>WorkflowExecutionFailed</code> event in the history.</p> </li> <li> <p> <code>RecordMarker</code> ? Records a <code>MarkerRecorded</code> event in the history. Markers can be used for adding custom information in the history for instance to let deciders know that they don't need to look at the history beyond the marker event.</p> </li> <li> <p> <code>RequestCancelActivityTask</code> ? Attempts to cancel a previously scheduled activity task. If the activity task was scheduled but has not been assigned to a worker, then it is canceled. If the activity task was already assigned to a worker, then the worker is informed that cancellation has been requested in the response to <a>RecordActivityTaskHeartbeat</a>.</p> </li> <li> <p> <code>RequestCancelExternalWorkflowExecution</code> ? Requests that a request be made to cancel the specified external workflow execution and records a <code>RequestCancelExternalWorkflowExecutionInitiated</code> event in the history.</p> </li> <li> <p> <code>ScheduleActivityTask</code> ? Schedules an activity task.</p> </li> <li> <p> <code>SignalExternalWorkflowExecution</code> ? Requests a signal to be delivered to the specified external workflow execution and records a <code>SignalExternalWorkflowExecutionInitiated</code> event in the history.</p> </li> <li> <p> <code>StartChildWorkflowExecution</code> ? Requests that a child workflow execution be started and records a <code>StartChildWorkflowExecutionInitiated</code> event in the history. The child workflow execution is a separate workflow execution with its own history.</p> </li> <li> <p> <code>StartTimer</code> ? Starts a timer for this workflow execution and records a <code>TimerStarted</code> event in the history. This timer fires after the specified delay and record a <code>TimerFired</code> event.</p> </li> </ul> <p> <b>Access Control</b> </p> <p>If you grant permission to use <code>RespondDecisionTaskCompleted</code>, you can use IAM policies to express permissions for the list of decisions returned by this action as if they were members of the API. Treating decisions as a pseudo API maintains a uniform conceptual model and helps keep policies readable. For details and example IAM policies, see <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p> <p> <b>Decision Failure</b> </p> <p>Decisions can fail for several reasons</p> <ul> <li> <p>The ordering of decisions should follow a logical flow. Some decisions might not make sense in the current context of the workflow execution and therefore fails.</p> </li> <li> <p>A limit on your account was reached.</p> </li> <li> <p>The decision lacks sufficient permissions.</p> </li> </ul> <p>One of the following events might be added to the history to indicate an error. The event attribute's <code>cause</code> parameter indicates the cause. If <code>cause</code> is set to <code>OPERATION_NOT_PERMITTED</code>, the decision failed because it lacked sufficient permissions. For details and example IAM policies, see <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p> <ul> <li> <p> <code>ScheduleActivityTaskFailed</code> ? A <code>ScheduleActivityTask</code> decision failed. This could happen if the activity type specified in the decision isn't registered, is in a deprecated state, or the decision isn't properly configured.</p> </li> <li> <p> <code>RequestCancelActivityTaskFailed</code> ? A <code>RequestCancelActivityTask</code> decision failed. This could happen if there is no open activity task with the specified activityId.</p> </li> <li> <p> <code>StartTimerFailed</code> ? A <code>StartTimer</code> decision failed. This could happen if there is another open timer with the same timerId.</p> </li> <li> <p> <code>CancelTimerFailed</code> ? A <code>CancelTimer</code> decision failed. This could happen if there is no open timer with the specified timerId.</p> </li> <li> <p> <code>StartChildWorkflowExecutionFailed</code> ? A <code>StartChildWorkflowExecution</code> decision failed. This could happen if the workflow type specified isn't registered, is deprecated, or the decision isn't properly configured.</p> </li> <li> <p> <code>SignalExternalWorkflowExecutionFailed</code> ? A <code>SignalExternalWorkflowExecution</code> decision failed. This could happen if the <code>workflowID</code> specified in the decision was incorrect.</p> </li> <li> <p> <code>RequestCancelExternalWorkflowExecutionFailed</code> ? A <code>RequestCancelExternalWorkflowExecution</code> decision failed. This could happen if the <code>workflowID</code> specified in the decision was incorrect.</p> </li> <li> <p> <code>CancelWorkflowExecutionFailed</code> ? A <code>CancelWorkflowExecution</code> decision failed. This could happen if there is an unhandled decision task pending in the workflow execution.</p> </li> <li> <p> <code>CompleteWorkflowExecutionFailed</code> ? A <code>CompleteWorkflowExecution</code> decision failed. This could happen if there is an unhandled decision task pending in the workflow execution.</p> </li> <li> <p> <code>ContinueAsNewWorkflowExecutionFailed</code> ? A <code>ContinueAsNewWorkflowExecution</code> decision failed. This could happen if there is an unhandled decision task pending in the workflow execution or the ContinueAsNewWorkflowExecution decision was not configured correctly.</p> </li> <li> <p> <code>FailWorkflowExecutionFailed</code> ? A <code>FailWorkflowExecution</code> decision failed. This could happen if there is an unhandled decision task pending in the workflow execution.</p> </li> </ul> <p>The preceding error events might occur due to an error in the decider logic, which might put the workflow execution in an unstable state The cause field in the event structure for the error event indicates the cause of the error.</p> <note> <p>A workflow execution may be closed by the decider by returning one of the following decisions when completing a decision task: <code>CompleteWorkflowExecution</code>, <code>FailWorkflowExecution</code>, <code>CancelWorkflowExecution</code> and <code>ContinueAsNewWorkflowExecution</code>. An <code>UnhandledDecision</code> fault is returned if a workflow closing decision is specified and a signal or activity event had been added to the history while the decision task was being performed by the decider. Unlike the above situations which are logic issues, this fault is always possible because of race conditions in a distributed system. The right action here is to call <a>RespondDecisionTaskCompleted</a> without any decisions. This would result in another decision task with these new events included in the history. The decider should handle the new events and may decide to close the workflow execution.</p> </note> <p> <b>How to Code a Decision</b> </p> <p>You code a decision by first setting the decision type field to one of the above decision values, and then set the corresponding attributes field shown below:</p> <ul> <li> <p> <code> <a>ScheduleActivityTaskDecisionAttributes</a> </code> </p> </li> <li> <p> <code> <a>RequestCancelActivityTaskDecisionAttributes</a> </code> </p> </li> <li> <p> <code> <a>CompleteWorkflowExecutionDecisionAttributes</a> </code> </p> </li> <li> <p> <code> <a>FailWorkflowExecutionDecisionAttributes</a> </code> </p> </li> <li> <p> <code> <a>CancelWorkflowExecutionDecisionAttributes</a> </code> </p> </li> <li> <p> <code> <a>ContinueAsNewWorkflowExecutionDecisionAttributes</a> </code> </p> </li> <li> <p> <code> <a>RecordMarkerDecisionAttributes</a> </code> </p> </li> <li> <p> <code> <a>StartTimerDecisionAttributes</a> </code> </p> </li> <li> <p> <code> <a>CancelTimerDecisionAttributes</a> </code> </p> </li> <li> <p> <code> <a>SignalExternalWorkflowExecutionDecisionAttributes</a> </code> </p> </li> <li> <p> <code> <a>RequestCancelExternalWorkflowExecutionDecisionAttributes</a> </code> </p> </li> <li> <p> <code> <a>StartChildWorkflowExecutionDecisionAttributes</a> </code> </p> </li> </ul>
    */
   @js.native
   trait Decision extends js.Object {
-    var startTimerDecisionAttributes: js.UndefOr[StartTimerDecisionAttributes]
-    var decisionType: js.UndefOr[DecisionType]
-    var requestCancelActivityTaskDecisionAttributes: js.UndefOr[RequestCancelActivityTaskDecisionAttributes]
-    var signalExternalWorkflowExecutionDecisionAttributes: js.UndefOr[SignalExternalWorkflowExecutionDecisionAttributes]
-    var completeWorkflowExecutionDecisionAttributes: js.UndefOr[CompleteWorkflowExecutionDecisionAttributes]
-    var recordMarkerDecisionAttributes: js.UndefOr[RecordMarkerDecisionAttributes]
-    var startChildWorkflowExecutionDecisionAttributes: js.UndefOr[StartChildWorkflowExecutionDecisionAttributes]
-    var scheduleActivityTaskDecisionAttributes: js.UndefOr[ScheduleActivityTaskDecisionAttributes]
-    var requestCancelExternalWorkflowExecutionDecisionAttributes: js.UndefOr[RequestCancelExternalWorkflowExecutionDecisionAttributes]
-    var cancelWorkflowExecutionDecisionAttributes: js.UndefOr[CancelWorkflowExecutionDecisionAttributes]
+    var decisionType: DecisionType
     var cancelTimerDecisionAttributes: js.UndefOr[CancelTimerDecisionAttributes]
-    var failWorkflowExecutionDecisionAttributes: js.UndefOr[FailWorkflowExecutionDecisionAttributes]
-    var scheduleLambdaFunctionDecisionAttributes: js.UndefOr[ScheduleLambdaFunctionDecisionAttributes]
+    var cancelWorkflowExecutionDecisionAttributes: js.UndefOr[CancelWorkflowExecutionDecisionAttributes]
+    var completeWorkflowExecutionDecisionAttributes: js.UndefOr[CompleteWorkflowExecutionDecisionAttributes]
     var continueAsNewWorkflowExecutionDecisionAttributes: js.UndefOr[ContinueAsNewWorkflowExecutionDecisionAttributes]
+    var failWorkflowExecutionDecisionAttributes: js.UndefOr[FailWorkflowExecutionDecisionAttributes]
+    var recordMarkerDecisionAttributes: js.UndefOr[RecordMarkerDecisionAttributes]
+    var requestCancelActivityTaskDecisionAttributes: js.UndefOr[RequestCancelActivityTaskDecisionAttributes]
+    var requestCancelExternalWorkflowExecutionDecisionAttributes: js.UndefOr[RequestCancelExternalWorkflowExecutionDecisionAttributes]
+    var scheduleActivityTaskDecisionAttributes: js.UndefOr[ScheduleActivityTaskDecisionAttributes]
+    var scheduleLambdaFunctionDecisionAttributes: js.UndefOr[ScheduleLambdaFunctionDecisionAttributes]
+    var signalExternalWorkflowExecutionDecisionAttributes: js.UndefOr[SignalExternalWorkflowExecutionDecisionAttributes]
+    var startChildWorkflowExecutionDecisionAttributes: js.UndefOr[StartChildWorkflowExecutionDecisionAttributes]
+    var startTimerDecisionAttributes: js.UndefOr[StartTimerDecisionAttributes]
   }
 
   object Decision {
     def apply(
-      startTimerDecisionAttributes: js.UndefOr[StartTimerDecisionAttributes] = js.undefined,
-      decisionType: js.UndefOr[DecisionType] = js.undefined,
-      requestCancelActivityTaskDecisionAttributes: js.UndefOr[RequestCancelActivityTaskDecisionAttributes] = js.undefined,
-      signalExternalWorkflowExecutionDecisionAttributes: js.UndefOr[SignalExternalWorkflowExecutionDecisionAttributes] = js.undefined,
-      completeWorkflowExecutionDecisionAttributes: js.UndefOr[CompleteWorkflowExecutionDecisionAttributes] = js.undefined,
-      recordMarkerDecisionAttributes: js.UndefOr[RecordMarkerDecisionAttributes] = js.undefined,
-      startChildWorkflowExecutionDecisionAttributes: js.UndefOr[StartChildWorkflowExecutionDecisionAttributes] = js.undefined,
-      scheduleActivityTaskDecisionAttributes: js.UndefOr[ScheduleActivityTaskDecisionAttributes] = js.undefined,
-      requestCancelExternalWorkflowExecutionDecisionAttributes: js.UndefOr[RequestCancelExternalWorkflowExecutionDecisionAttributes] = js.undefined,
-      cancelWorkflowExecutionDecisionAttributes: js.UndefOr[CancelWorkflowExecutionDecisionAttributes] = js.undefined,
+      decisionType: DecisionType,
       cancelTimerDecisionAttributes: js.UndefOr[CancelTimerDecisionAttributes] = js.undefined,
+      cancelWorkflowExecutionDecisionAttributes: js.UndefOr[CancelWorkflowExecutionDecisionAttributes] = js.undefined,
+      completeWorkflowExecutionDecisionAttributes: js.UndefOr[CompleteWorkflowExecutionDecisionAttributes] = js.undefined,
+      continueAsNewWorkflowExecutionDecisionAttributes: js.UndefOr[ContinueAsNewWorkflowExecutionDecisionAttributes] = js.undefined,
       failWorkflowExecutionDecisionAttributes: js.UndefOr[FailWorkflowExecutionDecisionAttributes] = js.undefined,
+      recordMarkerDecisionAttributes: js.UndefOr[RecordMarkerDecisionAttributes] = js.undefined,
+      requestCancelActivityTaskDecisionAttributes: js.UndefOr[RequestCancelActivityTaskDecisionAttributes] = js.undefined,
+      requestCancelExternalWorkflowExecutionDecisionAttributes: js.UndefOr[RequestCancelExternalWorkflowExecutionDecisionAttributes] = js.undefined,
+      scheduleActivityTaskDecisionAttributes: js.UndefOr[ScheduleActivityTaskDecisionAttributes] = js.undefined,
       scheduleLambdaFunctionDecisionAttributes: js.UndefOr[ScheduleLambdaFunctionDecisionAttributes] = js.undefined,
-      continueAsNewWorkflowExecutionDecisionAttributes: js.UndefOr[ContinueAsNewWorkflowExecutionDecisionAttributes] = js.undefined): Decision = {
+      signalExternalWorkflowExecutionDecisionAttributes: js.UndefOr[SignalExternalWorkflowExecutionDecisionAttributes] = js.undefined,
+      startChildWorkflowExecutionDecisionAttributes: js.UndefOr[StartChildWorkflowExecutionDecisionAttributes] = js.undefined,
+      startTimerDecisionAttributes: js.UndefOr[StartTimerDecisionAttributes] = js.undefined): Decision = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "startTimerDecisionAttributes" -> startTimerDecisionAttributes.map { x => x.asInstanceOf[js.Any] },
-        "decisionType" -> decisionType.map { x => x.asInstanceOf[js.Any] },
-        "requestCancelActivityTaskDecisionAttributes" -> requestCancelActivityTaskDecisionAttributes.map { x => x.asInstanceOf[js.Any] },
-        "signalExternalWorkflowExecutionDecisionAttributes" -> signalExternalWorkflowExecutionDecisionAttributes.map { x => x.asInstanceOf[js.Any] },
-        "completeWorkflowExecutionDecisionAttributes" -> completeWorkflowExecutionDecisionAttributes.map { x => x.asInstanceOf[js.Any] },
-        "recordMarkerDecisionAttributes" -> recordMarkerDecisionAttributes.map { x => x.asInstanceOf[js.Any] },
-        "startChildWorkflowExecutionDecisionAttributes" -> startChildWorkflowExecutionDecisionAttributes.map { x => x.asInstanceOf[js.Any] },
-        "scheduleActivityTaskDecisionAttributes" -> scheduleActivityTaskDecisionAttributes.map { x => x.asInstanceOf[js.Any] },
-        "requestCancelExternalWorkflowExecutionDecisionAttributes" -> requestCancelExternalWorkflowExecutionDecisionAttributes.map { x => x.asInstanceOf[js.Any] },
-        "cancelWorkflowExecutionDecisionAttributes" -> cancelWorkflowExecutionDecisionAttributes.map { x => x.asInstanceOf[js.Any] },
+        "decisionType" -> decisionType.asInstanceOf[js.Any],
         "cancelTimerDecisionAttributes" -> cancelTimerDecisionAttributes.map { x => x.asInstanceOf[js.Any] },
+        "cancelWorkflowExecutionDecisionAttributes" -> cancelWorkflowExecutionDecisionAttributes.map { x => x.asInstanceOf[js.Any] },
+        "completeWorkflowExecutionDecisionAttributes" -> completeWorkflowExecutionDecisionAttributes.map { x => x.asInstanceOf[js.Any] },
+        "continueAsNewWorkflowExecutionDecisionAttributes" -> continueAsNewWorkflowExecutionDecisionAttributes.map { x => x.asInstanceOf[js.Any] },
         "failWorkflowExecutionDecisionAttributes" -> failWorkflowExecutionDecisionAttributes.map { x => x.asInstanceOf[js.Any] },
+        "recordMarkerDecisionAttributes" -> recordMarkerDecisionAttributes.map { x => x.asInstanceOf[js.Any] },
+        "requestCancelActivityTaskDecisionAttributes" -> requestCancelActivityTaskDecisionAttributes.map { x => x.asInstanceOf[js.Any] },
+        "requestCancelExternalWorkflowExecutionDecisionAttributes" -> requestCancelExternalWorkflowExecutionDecisionAttributes.map { x => x.asInstanceOf[js.Any] },
+        "scheduleActivityTaskDecisionAttributes" -> scheduleActivityTaskDecisionAttributes.map { x => x.asInstanceOf[js.Any] },
         "scheduleLambdaFunctionDecisionAttributes" -> scheduleLambdaFunctionDecisionAttributes.map { x => x.asInstanceOf[js.Any] },
-        "continueAsNewWorkflowExecutionDecisionAttributes" -> continueAsNewWorkflowExecutionDecisionAttributes.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "signalExternalWorkflowExecutionDecisionAttributes" -> signalExternalWorkflowExecutionDecisionAttributes.map { x => x.asInstanceOf[js.Any] },
+        "startChildWorkflowExecutionDecisionAttributes" -> startChildWorkflowExecutionDecisionAttributes.map { x => x.asInstanceOf[js.Any] },
+        "startTimerDecisionAttributes" -> startTimerDecisionAttributes.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Decision]
     }
@@ -1085,32 +1085,32 @@ package swf {
    */
   @js.native
   trait DecisionTask extends js.Object {
-    var previousStartedEventId: js.UndefOr[EventId]
-    var workflowType: js.UndefOr[WorkflowType]
+    var events: HistoryEventList
+    var startedEventId: EventId
+    var taskToken: TaskToken
+    var workflowExecution: WorkflowExecution
+    var workflowType: WorkflowType
     var nextPageToken: js.UndefOr[PageToken]
-    var workflowExecution: js.UndefOr[WorkflowExecution]
-    var taskToken: js.UndefOr[TaskToken]
-    var startedEventId: js.UndefOr[EventId]
-    var events: js.UndefOr[HistoryEventList]
+    var previousStartedEventId: js.UndefOr[EventId]
   }
 
   object DecisionTask {
     def apply(
-      previousStartedEventId: js.UndefOr[EventId] = js.undefined,
-      workflowType: js.UndefOr[WorkflowType] = js.undefined,
+      events: HistoryEventList,
+      startedEventId: EventId,
+      taskToken: TaskToken,
+      workflowExecution: WorkflowExecution,
+      workflowType: WorkflowType,
       nextPageToken: js.UndefOr[PageToken] = js.undefined,
-      workflowExecution: js.UndefOr[WorkflowExecution] = js.undefined,
-      taskToken: js.UndefOr[TaskToken] = js.undefined,
-      startedEventId: js.UndefOr[EventId] = js.undefined,
-      events: js.UndefOr[HistoryEventList] = js.undefined): DecisionTask = {
+      previousStartedEventId: js.UndefOr[EventId] = js.undefined): DecisionTask = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "previousStartedEventId" -> previousStartedEventId.map { x => x.asInstanceOf[js.Any] },
-        "workflowType" -> workflowType.map { x => x.asInstanceOf[js.Any] },
+        "events" -> events.asInstanceOf[js.Any],
+        "startedEventId" -> startedEventId.asInstanceOf[js.Any],
+        "taskToken" -> taskToken.asInstanceOf[js.Any],
+        "workflowExecution" -> workflowExecution.asInstanceOf[js.Any],
+        "workflowType" -> workflowType.asInstanceOf[js.Any],
         "nextPageToken" -> nextPageToken.map { x => x.asInstanceOf[js.Any] },
-        "workflowExecution" -> workflowExecution.map { x => x.asInstanceOf[js.Any] },
-        "taskToken" -> taskToken.map { x => x.asInstanceOf[js.Any] },
-        "startedEventId" -> startedEventId.map { x => x.asInstanceOf[js.Any] },
-        "events" -> events.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "previousStartedEventId" -> previousStartedEventId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DecisionTask]
     }
@@ -1121,20 +1121,20 @@ package swf {
    */
   @js.native
   trait DecisionTaskCompletedEventAttributes extends js.Object {
+    var scheduledEventId: EventId
+    var startedEventId: EventId
     var executionContext: js.UndefOr[Data]
-    var scheduledEventId: js.UndefOr[EventId]
-    var startedEventId: js.UndefOr[EventId]
   }
 
   object DecisionTaskCompletedEventAttributes {
     def apply(
-      executionContext: js.UndefOr[Data] = js.undefined,
-      scheduledEventId: js.UndefOr[EventId] = js.undefined,
-      startedEventId: js.UndefOr[EventId] = js.undefined): DecisionTaskCompletedEventAttributes = {
+      scheduledEventId: EventId,
+      startedEventId: EventId,
+      executionContext: js.UndefOr[Data] = js.undefined): DecisionTaskCompletedEventAttributes = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "executionContext" -> executionContext.map { x => x.asInstanceOf[js.Any] },
-        "scheduledEventId" -> scheduledEventId.map { x => x.asInstanceOf[js.Any] },
-        "startedEventId" -> startedEventId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "scheduledEventId" -> scheduledEventId.asInstanceOf[js.Any],
+        "startedEventId" -> startedEventId.asInstanceOf[js.Any],
+        "executionContext" -> executionContext.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DecisionTaskCompletedEventAttributes]
     }
@@ -1145,20 +1145,20 @@ package swf {
    */
   @js.native
   trait DecisionTaskScheduledEventAttributes extends js.Object {
-    var taskList: js.UndefOr[TaskList]
-    var taskPriority: js.UndefOr[TaskPriority]
+    var taskList: TaskList
     var startToCloseTimeout: js.UndefOr[DurationInSecondsOptional]
+    var taskPriority: js.UndefOr[TaskPriority]
   }
 
   object DecisionTaskScheduledEventAttributes {
     def apply(
-      taskList: js.UndefOr[TaskList] = js.undefined,
-      taskPriority: js.UndefOr[TaskPriority] = js.undefined,
-      startToCloseTimeout: js.UndefOr[DurationInSecondsOptional] = js.undefined): DecisionTaskScheduledEventAttributes = {
+      taskList: TaskList,
+      startToCloseTimeout: js.UndefOr[DurationInSecondsOptional] = js.undefined,
+      taskPriority: js.UndefOr[TaskPriority] = js.undefined): DecisionTaskScheduledEventAttributes = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "taskList" -> taskList.map { x => x.asInstanceOf[js.Any] },
-        "taskPriority" -> taskPriority.map { x => x.asInstanceOf[js.Any] },
-        "startToCloseTimeout" -> startToCloseTimeout.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "taskList" -> taskList.asInstanceOf[js.Any],
+        "startToCloseTimeout" -> startToCloseTimeout.map { x => x.asInstanceOf[js.Any] },
+        "taskPriority" -> taskPriority.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DecisionTaskScheduledEventAttributes]
     }
@@ -1169,17 +1169,17 @@ package swf {
    */
   @js.native
   trait DecisionTaskStartedEventAttributes extends js.Object {
+    var scheduledEventId: EventId
     var identity: js.UndefOr[Identity]
-    var scheduledEventId: js.UndefOr[EventId]
   }
 
   object DecisionTaskStartedEventAttributes {
     def apply(
-      identity: js.UndefOr[Identity] = js.undefined,
-      scheduledEventId: js.UndefOr[EventId] = js.undefined): DecisionTaskStartedEventAttributes = {
+      scheduledEventId: EventId,
+      identity: js.UndefOr[Identity] = js.undefined): DecisionTaskStartedEventAttributes = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "identity" -> identity.map { x => x.asInstanceOf[js.Any] },
-        "scheduledEventId" -> scheduledEventId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "scheduledEventId" -> scheduledEventId.asInstanceOf[js.Any],
+        "identity" -> identity.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DecisionTaskStartedEventAttributes]
     }
@@ -1190,20 +1190,20 @@ package swf {
    */
   @js.native
   trait DecisionTaskTimedOutEventAttributes extends js.Object {
-    var timeoutType: js.UndefOr[DecisionTaskTimeoutType]
-    var scheduledEventId: js.UndefOr[EventId]
-    var startedEventId: js.UndefOr[EventId]
+    var scheduledEventId: EventId
+    var startedEventId: EventId
+    var timeoutType: DecisionTaskTimeoutType
   }
 
   object DecisionTaskTimedOutEventAttributes {
     def apply(
-      timeoutType: js.UndefOr[DecisionTaskTimeoutType] = js.undefined,
-      scheduledEventId: js.UndefOr[EventId] = js.undefined,
-      startedEventId: js.UndefOr[EventId] = js.undefined): DecisionTaskTimedOutEventAttributes = {
+      scheduledEventId: EventId,
+      startedEventId: EventId,
+      timeoutType: DecisionTaskTimeoutType): DecisionTaskTimedOutEventAttributes = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "timeoutType" -> timeoutType.map { x => x.asInstanceOf[js.Any] },
-        "scheduledEventId" -> scheduledEventId.map { x => x.asInstanceOf[js.Any] },
-        "startedEventId" -> startedEventId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "scheduledEventId" -> scheduledEventId.asInstanceOf[js.Any],
+        "startedEventId" -> startedEventId.asInstanceOf[js.Any],
+        "timeoutType" -> timeoutType.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DecisionTaskTimedOutEventAttributes]
     }
@@ -1243,17 +1243,17 @@ package swf {
 
   @js.native
   trait DeprecateActivityTypeInput extends js.Object {
-    var domain: js.UndefOr[DomainName]
-    var activityType: js.UndefOr[ActivityType]
+    var activityType: ActivityType
+    var domain: DomainName
   }
 
   object DeprecateActivityTypeInput {
     def apply(
-      domain: js.UndefOr[DomainName] = js.undefined,
-      activityType: js.UndefOr[ActivityType] = js.undefined): DeprecateActivityTypeInput = {
+      activityType: ActivityType,
+      domain: DomainName): DeprecateActivityTypeInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "domain" -> domain.map { x => x.asInstanceOf[js.Any] },
-        "activityType" -> activityType.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "activityType" -> activityType.asInstanceOf[js.Any],
+        "domain" -> domain.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeprecateActivityTypeInput]
     }
@@ -1261,14 +1261,14 @@ package swf {
 
   @js.native
   trait DeprecateDomainInput extends js.Object {
-    var name: js.UndefOr[DomainName]
+    var name: DomainName
   }
 
   object DeprecateDomainInput {
     def apply(
-      name: js.UndefOr[DomainName] = js.undefined): DeprecateDomainInput = {
+      name: DomainName): DeprecateDomainInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "name" -> name.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "name" -> name.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeprecateDomainInput]
     }
@@ -1276,17 +1276,17 @@ package swf {
 
   @js.native
   trait DeprecateWorkflowTypeInput extends js.Object {
-    var domain: js.UndefOr[DomainName]
-    var workflowType: js.UndefOr[WorkflowType]
+    var domain: DomainName
+    var workflowType: WorkflowType
   }
 
   object DeprecateWorkflowTypeInput {
     def apply(
-      domain: js.UndefOr[DomainName] = js.undefined,
-      workflowType: js.UndefOr[WorkflowType] = js.undefined): DeprecateWorkflowTypeInput = {
+      domain: DomainName,
+      workflowType: WorkflowType): DeprecateWorkflowTypeInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "domain" -> domain.map { x => x.asInstanceOf[js.Any] },
-        "workflowType" -> workflowType.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "domain" -> domain.asInstanceOf[js.Any],
+        "workflowType" -> workflowType.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeprecateWorkflowTypeInput]
     }
@@ -1294,17 +1294,17 @@ package swf {
 
   @js.native
   trait DescribeActivityTypeInput extends js.Object {
-    var domain: js.UndefOr[DomainName]
-    var activityType: js.UndefOr[ActivityType]
+    var activityType: ActivityType
+    var domain: DomainName
   }
 
   object DescribeActivityTypeInput {
     def apply(
-      domain: js.UndefOr[DomainName] = js.undefined,
-      activityType: js.UndefOr[ActivityType] = js.undefined): DescribeActivityTypeInput = {
+      activityType: ActivityType,
+      domain: DomainName): DescribeActivityTypeInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "domain" -> domain.map { x => x.asInstanceOf[js.Any] },
-        "activityType" -> activityType.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "activityType" -> activityType.asInstanceOf[js.Any],
+        "domain" -> domain.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeActivityTypeInput]
     }
@@ -1312,14 +1312,14 @@ package swf {
 
   @js.native
   trait DescribeDomainInput extends js.Object {
-    var name: js.UndefOr[DomainName]
+    var name: DomainName
   }
 
   object DescribeDomainInput {
     def apply(
-      name: js.UndefOr[DomainName] = js.undefined): DescribeDomainInput = {
+      name: DomainName): DescribeDomainInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "name" -> name.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "name" -> name.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeDomainInput]
     }
@@ -1327,17 +1327,17 @@ package swf {
 
   @js.native
   trait DescribeWorkflowExecutionInput extends js.Object {
-    var domain: js.UndefOr[DomainName]
-    var execution: js.UndefOr[WorkflowExecution]
+    var domain: DomainName
+    var execution: WorkflowExecution
   }
 
   object DescribeWorkflowExecutionInput {
     def apply(
-      domain: js.UndefOr[DomainName] = js.undefined,
-      execution: js.UndefOr[WorkflowExecution] = js.undefined): DescribeWorkflowExecutionInput = {
+      domain: DomainName,
+      execution: WorkflowExecution): DescribeWorkflowExecutionInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "domain" -> domain.map { x => x.asInstanceOf[js.Any] },
-        "execution" -> execution.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "domain" -> domain.asInstanceOf[js.Any],
+        "execution" -> execution.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeWorkflowExecutionInput]
     }
@@ -1345,17 +1345,17 @@ package swf {
 
   @js.native
   trait DescribeWorkflowTypeInput extends js.Object {
-    var domain: js.UndefOr[DomainName]
-    var workflowType: js.UndefOr[WorkflowType]
+    var domain: DomainName
+    var workflowType: WorkflowType
   }
 
   object DescribeWorkflowTypeInput {
     def apply(
-      domain: js.UndefOr[DomainName] = js.undefined,
-      workflowType: js.UndefOr[WorkflowType] = js.undefined): DescribeWorkflowTypeInput = {
+      domain: DomainName,
+      workflowType: WorkflowType): DescribeWorkflowTypeInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "domain" -> domain.map { x => x.asInstanceOf[js.Any] },
-        "workflowType" -> workflowType.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "domain" -> domain.asInstanceOf[js.Any],
+        "workflowType" -> workflowType.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeWorkflowTypeInput]
     }
@@ -1374,14 +1374,14 @@ package swf {
    */
   @js.native
   trait DomainConfiguration extends js.Object {
-    var workflowExecutionRetentionPeriodInDays: js.UndefOr[DurationInDays]
+    var workflowExecutionRetentionPeriodInDays: DurationInDays
   }
 
   object DomainConfiguration {
     def apply(
-      workflowExecutionRetentionPeriodInDays: js.UndefOr[DurationInDays] = js.undefined): DomainConfiguration = {
+      workflowExecutionRetentionPeriodInDays: DurationInDays): DomainConfiguration = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "workflowExecutionRetentionPeriodInDays" -> workflowExecutionRetentionPeriodInDays.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "workflowExecutionRetentionPeriodInDays" -> workflowExecutionRetentionPeriodInDays.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DomainConfiguration]
     }
@@ -1400,17 +1400,17 @@ package swf {
    */
   @js.native
   trait DomainDetail extends js.Object {
-    var domainInfo: js.UndefOr[DomainInfo]
-    var configuration: js.UndefOr[DomainConfiguration]
+    var configuration: DomainConfiguration
+    var domainInfo: DomainInfo
   }
 
   object DomainDetail {
     def apply(
-      domainInfo: js.UndefOr[DomainInfo] = js.undefined,
-      configuration: js.UndefOr[DomainConfiguration] = js.undefined): DomainDetail = {
+      configuration: DomainConfiguration,
+      domainInfo: DomainInfo): DomainDetail = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "domainInfo" -> domainInfo.map { x => x.asInstanceOf[js.Any] },
-        "configuration" -> configuration.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "configuration" -> configuration.asInstanceOf[js.Any],
+        "domainInfo" -> domainInfo.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DomainDetail]
     }
@@ -1421,19 +1421,19 @@ package swf {
    */
   @js.native
   trait DomainInfo extends js.Object {
-    var name: js.UndefOr[DomainName]
-    var status: js.UndefOr[RegistrationStatus]
+    var name: DomainName
+    var status: RegistrationStatus
     var description: js.UndefOr[Description]
   }
 
   object DomainInfo {
     def apply(
-      name: js.UndefOr[DomainName] = js.undefined,
-      status: js.UndefOr[RegistrationStatus] = js.undefined,
+      name: DomainName,
+      status: RegistrationStatus,
       description: js.UndefOr[Description] = js.undefined): DomainInfo = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "name" -> name.map { x => x.asInstanceOf[js.Any] },
-        "status" -> status.map { x => x.asInstanceOf[js.Any] },
+        "name" -> name.asInstanceOf[js.Any],
+        "status" -> status.asInstanceOf[js.Any],
         "description" -> description.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DomainInfo]
@@ -1445,16 +1445,16 @@ package swf {
    */
   @js.native
   trait DomainInfos extends js.Object {
-    var domainInfos: js.UndefOr[DomainInfoList]
+    var domainInfos: DomainInfoList
     var nextPageToken: js.UndefOr[PageToken]
   }
 
   object DomainInfos {
     def apply(
-      domainInfos: js.UndefOr[DomainInfoList] = js.undefined,
+      domainInfos: DomainInfoList,
       nextPageToken: js.UndefOr[PageToken] = js.undefined): DomainInfos = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "domainInfos" -> domainInfos.map { x => x.asInstanceOf[js.Any] },
+        "domainInfos" -> domainInfos.asInstanceOf[js.Any],
         "nextPageToken" -> nextPageToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DomainInfos]
@@ -1532,16 +1532,16 @@ package swf {
    */
   @js.native
   trait ExecutionTimeFilter extends js.Object {
-    var oldestDate: js.UndefOr[Timestamp]
+    var oldestDate: Timestamp
     var latestDate: js.UndefOr[Timestamp]
   }
 
   object ExecutionTimeFilter {
     def apply(
-      oldestDate: js.UndefOr[Timestamp] = js.undefined,
+      oldestDate: Timestamp,
       latestDate: js.UndefOr[Timestamp] = js.undefined): ExecutionTimeFilter = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "oldestDate" -> oldestDate.map { x => x.asInstanceOf[js.Any] },
+        "oldestDate" -> oldestDate.asInstanceOf[js.Any],
         "latestDate" -> latestDate.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ExecutionTimeFilter]
@@ -1553,17 +1553,17 @@ package swf {
    */
   @js.native
   trait ExternalWorkflowExecutionCancelRequestedEventAttributes extends js.Object {
-    var workflowExecution: js.UndefOr[WorkflowExecution]
-    var initiatedEventId: js.UndefOr[EventId]
+    var initiatedEventId: EventId
+    var workflowExecution: WorkflowExecution
   }
 
   object ExternalWorkflowExecutionCancelRequestedEventAttributes {
     def apply(
-      workflowExecution: js.UndefOr[WorkflowExecution] = js.undefined,
-      initiatedEventId: js.UndefOr[EventId] = js.undefined): ExternalWorkflowExecutionCancelRequestedEventAttributes = {
+      initiatedEventId: EventId,
+      workflowExecution: WorkflowExecution): ExternalWorkflowExecutionCancelRequestedEventAttributes = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "workflowExecution" -> workflowExecution.map { x => x.asInstanceOf[js.Any] },
-        "initiatedEventId" -> initiatedEventId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "initiatedEventId" -> initiatedEventId.asInstanceOf[js.Any],
+        "workflowExecution" -> workflowExecution.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ExternalWorkflowExecutionCancelRequestedEventAttributes]
     }
@@ -1574,17 +1574,17 @@ package swf {
    */
   @js.native
   trait ExternalWorkflowExecutionSignaledEventAttributes extends js.Object {
-    var workflowExecution: js.UndefOr[WorkflowExecution]
-    var initiatedEventId: js.UndefOr[EventId]
+    var initiatedEventId: EventId
+    var workflowExecution: WorkflowExecution
   }
 
   object ExternalWorkflowExecutionSignaledEventAttributes {
     def apply(
-      workflowExecution: js.UndefOr[WorkflowExecution] = js.undefined,
-      initiatedEventId: js.UndefOr[EventId] = js.undefined): ExternalWorkflowExecutionSignaledEventAttributes = {
+      initiatedEventId: EventId,
+      workflowExecution: WorkflowExecution): ExternalWorkflowExecutionSignaledEventAttributes = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "workflowExecution" -> workflowExecution.map { x => x.asInstanceOf[js.Any] },
-        "initiatedEventId" -> initiatedEventId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "initiatedEventId" -> initiatedEventId.asInstanceOf[js.Any],
+        "workflowExecution" -> workflowExecution.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ExternalWorkflowExecutionSignaledEventAttributes]
     }
@@ -1595,17 +1595,17 @@ package swf {
    */
   @js.native
   trait FailWorkflowExecutionDecisionAttributes extends js.Object {
-    var reason: js.UndefOr[FailureReason]
     var details: js.UndefOr[Data]
+    var reason: js.UndefOr[FailureReason]
   }
 
   object FailWorkflowExecutionDecisionAttributes {
     def apply(
-      reason: js.UndefOr[FailureReason] = js.undefined,
-      details: js.UndefOr[Data] = js.undefined): FailWorkflowExecutionDecisionAttributes = {
+      details: js.UndefOr[Data] = js.undefined,
+      reason: js.UndefOr[FailureReason] = js.undefined): FailWorkflowExecutionDecisionAttributes = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "reason" -> reason.map { x => x.asInstanceOf[js.Any] },
-        "details" -> details.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "details" -> details.map { x => x.asInstanceOf[js.Any] },
+        "reason" -> reason.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[FailWorkflowExecutionDecisionAttributes]
     }
@@ -1623,17 +1623,17 @@ package swf {
    */
   @js.native
   trait FailWorkflowExecutionFailedEventAttributes extends js.Object {
-    var cause: js.UndefOr[FailWorkflowExecutionFailedCause]
-    var decisionTaskCompletedEventId: js.UndefOr[EventId]
+    var cause: FailWorkflowExecutionFailedCause
+    var decisionTaskCompletedEventId: EventId
   }
 
   object FailWorkflowExecutionFailedEventAttributes {
     def apply(
-      cause: js.UndefOr[FailWorkflowExecutionFailedCause] = js.undefined,
-      decisionTaskCompletedEventId: js.UndefOr[EventId] = js.undefined): FailWorkflowExecutionFailedEventAttributes = {
+      cause: FailWorkflowExecutionFailedCause,
+      decisionTaskCompletedEventId: EventId): FailWorkflowExecutionFailedEventAttributes = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "cause" -> cause.map { x => x.asInstanceOf[js.Any] },
-        "decisionTaskCompletedEventId" -> decisionTaskCompletedEventId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "cause" -> cause.asInstanceOf[js.Any],
+        "decisionTaskCompletedEventId" -> decisionTaskCompletedEventId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[FailWorkflowExecutionFailedEventAttributes]
     }
@@ -1641,26 +1641,26 @@ package swf {
 
   @js.native
   trait GetWorkflowExecutionHistoryInput extends js.Object {
-    var execution: js.UndefOr[WorkflowExecution]
-    var reverseOrder: js.UndefOr[ReverseOrder]
-    var nextPageToken: js.UndefOr[PageToken]
-    var domain: js.UndefOr[DomainName]
+    var domain: DomainName
+    var execution: WorkflowExecution
     var maximumPageSize: js.UndefOr[PageSize]
+    var nextPageToken: js.UndefOr[PageToken]
+    var reverseOrder: js.UndefOr[ReverseOrder]
   }
 
   object GetWorkflowExecutionHistoryInput {
     def apply(
-      execution: js.UndefOr[WorkflowExecution] = js.undefined,
-      reverseOrder: js.UndefOr[ReverseOrder] = js.undefined,
+      domain: DomainName,
+      execution: WorkflowExecution,
+      maximumPageSize: js.UndefOr[PageSize] = js.undefined,
       nextPageToken: js.UndefOr[PageToken] = js.undefined,
-      domain: js.UndefOr[DomainName] = js.undefined,
-      maximumPageSize: js.UndefOr[PageSize] = js.undefined): GetWorkflowExecutionHistoryInput = {
+      reverseOrder: js.UndefOr[ReverseOrder] = js.undefined): GetWorkflowExecutionHistoryInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "execution" -> execution.map { x => x.asInstanceOf[js.Any] },
-        "reverseOrder" -> reverseOrder.map { x => x.asInstanceOf[js.Any] },
+        "domain" -> domain.asInstanceOf[js.Any],
+        "execution" -> execution.asInstanceOf[js.Any],
+        "maximumPageSize" -> maximumPageSize.map { x => x.asInstanceOf[js.Any] },
         "nextPageToken" -> nextPageToken.map { x => x.asInstanceOf[js.Any] },
-        "domain" -> domain.map { x => x.asInstanceOf[js.Any] },
-        "maximumPageSize" -> maximumPageSize.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "reverseOrder" -> reverseOrder.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetWorkflowExecutionHistoryInput]
     }
@@ -1671,16 +1671,16 @@ package swf {
    */
   @js.native
   trait History extends js.Object {
-    var events: js.UndefOr[HistoryEventList]
+    var events: HistoryEventList
     var nextPageToken: js.UndefOr[PageToken]
   }
 
   object History {
     def apply(
-      events: js.UndefOr[HistoryEventList] = js.undefined,
+      events: HistoryEventList,
       nextPageToken: js.UndefOr[PageToken] = js.undefined): History = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "events" -> events.map { x => x.asInstanceOf[js.Any] },
+        "events" -> events.asInstanceOf[js.Any],
         "nextPageToken" -> nextPageToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[History]
@@ -1688,186 +1688,186 @@ package swf {
   }
 
   /**
-   * <p>Event within a workflow execution. A history event can be one of these types:</p> <ul> <li> <p> <code>ActivityTaskCancelRequested</code> – A <code>RequestCancelActivityTask</code> decision was received by the system.</p> </li> <li> <p> <code>ActivityTaskCanceled</code> – The activity task was successfully canceled.</p> </li> <li> <p> <code>ActivityTaskCompleted</code> – An activity worker successfully completed an activity task by calling <a>RespondActivityTaskCompleted</a>.</p> </li> <li> <p> <code>ActivityTaskFailed</code> – An activity worker failed an activity task by calling <a>RespondActivityTaskFailed</a>.</p> </li> <li> <p> <code>ActivityTaskScheduled</code> – An activity task was scheduled for execution.</p> </li> <li> <p> <code>ActivityTaskStarted</code> – The scheduled activity task was dispatched to a worker.</p> </li> <li> <p> <code>ActivityTaskTimedOut</code> – The activity task timed out.</p> </li> <li> <p> <code>CancelTimerFailed</code> – Failed to process CancelTimer decision. This happens when the decision isn't configured properly, for example no timer exists with the specified timer Id.</p> </li> <li> <p> <code>CancelWorkflowExecutionFailed</code> – A request to cancel a workflow execution failed.</p> </li> <li> <p> <code>ChildWorkflowExecutionCanceled</code> – A child workflow execution, started by this workflow execution, was canceled and closed.</p> </li> <li> <p> <code>ChildWorkflowExecutionCompleted</code> – A child workflow execution, started by this workflow execution, completed successfully and was closed.</p> </li> <li> <p> <code>ChildWorkflowExecutionFailed</code> – A child workflow execution, started by this workflow execution, failed to complete successfully and was closed.</p> </li> <li> <p> <code>ChildWorkflowExecutionStarted</code> – A child workflow execution was successfully started.</p> </li> <li> <p> <code>ChildWorkflowExecutionTerminated</code> – A child workflow execution, started by this workflow execution, was terminated.</p> </li> <li> <p> <code>ChildWorkflowExecutionTimedOut</code> – A child workflow execution, started by this workflow execution, timed out and was closed.</p> </li> <li> <p> <code>CompleteWorkflowExecutionFailed</code> – The workflow execution failed to complete.</p> </li> <li> <p> <code>ContinueAsNewWorkflowExecutionFailed</code> – The workflow execution failed to complete after being continued as a new workflow execution.</p> </li> <li> <p> <code>DecisionTaskCompleted</code> – The decider successfully completed a decision task by calling <a>RespondDecisionTaskCompleted</a>.</p> </li> <li> <p> <code>DecisionTaskScheduled</code> – A decision task was scheduled for the workflow execution.</p> </li> <li> <p> <code>DecisionTaskStarted</code> – The decision task was dispatched to a decider.</p> </li> <li> <p> <code>DecisionTaskTimedOut</code> – The decision task timed out.</p> </li> <li> <p> <code>ExternalWorkflowExecutionCancelRequested</code> – Request to cancel an external workflow execution was successfully delivered to the target execution.</p> </li> <li> <p> <code>ExternalWorkflowExecutionSignaled</code> – A signal, requested by this workflow execution, was successfully delivered to the target external workflow execution.</p> </li> <li> <p> <code>FailWorkflowExecutionFailed</code> – A request to mark a workflow execution as failed, itself failed.</p> </li> <li> <p> <code>MarkerRecorded</code> – A marker was recorded in the workflow history as the result of a <code>RecordMarker</code> decision.</p> </li> <li> <p> <code>RecordMarkerFailed</code> – A <code>RecordMarker</code> decision was returned as failed.</p> </li> <li> <p> <code>RequestCancelActivityTaskFailed</code> – Failed to process RequestCancelActivityTask decision. This happens when the decision isn't configured properly.</p> </li> <li> <p> <code>RequestCancelExternalWorkflowExecutionFailed</code> – Request to cancel an external workflow execution failed.</p> </li> <li> <p> <code>RequestCancelExternalWorkflowExecutionInitiated</code> – A request was made to request the cancellation of an external workflow execution.</p> </li> <li> <p> <code>ScheduleActivityTaskFailed</code> – Failed to process ScheduleActivityTask decision. This happens when the decision isn't configured properly, for example the activity type specified isn't registered.</p> </li> <li> <p> <code>SignalExternalWorkflowExecutionFailed</code> – The request to signal an external workflow execution failed.</p> </li> <li> <p> <code>SignalExternalWorkflowExecutionInitiated</code> – A request to signal an external workflow was made.</p> </li> <li> <p> <code>StartActivityTaskFailed</code> – A scheduled activity task failed to start.</p> </li> <li> <p> <code>StartChildWorkflowExecutionFailed</code> – Failed to process StartChildWorkflowExecution decision. This happens when the decision isn't configured properly, for example the workflow type specified isn't registered.</p> </li> <li> <p> <code>StartChildWorkflowExecutionInitiated</code> – A request was made to start a child workflow execution.</p> </li> <li> <p> <code>StartTimerFailed</code> – Failed to process StartTimer decision. This happens when the decision isn't configured properly, for example a timer already exists with the specified timer Id.</p> </li> <li> <p> <code>TimerCanceled</code> – A timer, previously started for this workflow execution, was successfully canceled.</p> </li> <li> <p> <code>TimerFired</code> – A timer, previously started for this workflow execution, fired.</p> </li> <li> <p> <code>TimerStarted</code> – A timer was started for the workflow execution due to a <code>StartTimer</code> decision.</p> </li> <li> <p> <code>WorkflowExecutionCancelRequested</code> – A request to cancel this workflow execution was made.</p> </li> <li> <p> <code>WorkflowExecutionCanceled</code> – The workflow execution was successfully canceled and closed.</p> </li> <li> <p> <code>WorkflowExecutionCompleted</code> – The workflow execution was closed due to successful completion.</p> </li> <li> <p> <code>WorkflowExecutionContinuedAsNew</code> – The workflow execution was closed and a new execution of the same type was created with the same workflowId.</p> </li> <li> <p> <code>WorkflowExecutionFailed</code> – The workflow execution closed due to a failure.</p> </li> <li> <p> <code>WorkflowExecutionSignaled</code> – An external signal was received for the workflow execution.</p> </li> <li> <p> <code>WorkflowExecutionStarted</code> – The workflow execution was started.</p> </li> <li> <p> <code>WorkflowExecutionTerminated</code> – The workflow execution was terminated.</p> </li> <li> <p> <code>WorkflowExecutionTimedOut</code> – The workflow execution was closed because a time out was exceeded.</p> </li> </ul>
+   * <p>Event within a workflow execution. A history event can be one of these types:</p> <ul> <li> <p> <code>ActivityTaskCancelRequested</code> ? A <code>RequestCancelActivityTask</code> decision was received by the system.</p> </li> <li> <p> <code>ActivityTaskCanceled</code> ? The activity task was successfully canceled.</p> </li> <li> <p> <code>ActivityTaskCompleted</code> ? An activity worker successfully completed an activity task by calling <a>RespondActivityTaskCompleted</a>.</p> </li> <li> <p> <code>ActivityTaskFailed</code> ? An activity worker failed an activity task by calling <a>RespondActivityTaskFailed</a>.</p> </li> <li> <p> <code>ActivityTaskScheduled</code> ? An activity task was scheduled for execution.</p> </li> <li> <p> <code>ActivityTaskStarted</code> ? The scheduled activity task was dispatched to a worker.</p> </li> <li> <p> <code>ActivityTaskTimedOut</code> ? The activity task timed out.</p> </li> <li> <p> <code>CancelTimerFailed</code> ? Failed to process CancelTimer decision. This happens when the decision isn't configured properly, for example no timer exists with the specified timer Id.</p> </li> <li> <p> <code>CancelWorkflowExecutionFailed</code> ? A request to cancel a workflow execution failed.</p> </li> <li> <p> <code>ChildWorkflowExecutionCanceled</code> ? A child workflow execution, started by this workflow execution, was canceled and closed.</p> </li> <li> <p> <code>ChildWorkflowExecutionCompleted</code> ? A child workflow execution, started by this workflow execution, completed successfully and was closed.</p> </li> <li> <p> <code>ChildWorkflowExecutionFailed</code> ? A child workflow execution, started by this workflow execution, failed to complete successfully and was closed.</p> </li> <li> <p> <code>ChildWorkflowExecutionStarted</code> ? A child workflow execution was successfully started.</p> </li> <li> <p> <code>ChildWorkflowExecutionTerminated</code> ? A child workflow execution, started by this workflow execution, was terminated.</p> </li> <li> <p> <code>ChildWorkflowExecutionTimedOut</code> ? A child workflow execution, started by this workflow execution, timed out and was closed.</p> </li> <li> <p> <code>CompleteWorkflowExecutionFailed</code> ? The workflow execution failed to complete.</p> </li> <li> <p> <code>ContinueAsNewWorkflowExecutionFailed</code> ? The workflow execution failed to complete after being continued as a new workflow execution.</p> </li> <li> <p> <code>DecisionTaskCompleted</code> ? The decider successfully completed a decision task by calling <a>RespondDecisionTaskCompleted</a>.</p> </li> <li> <p> <code>DecisionTaskScheduled</code> ? A decision task was scheduled for the workflow execution.</p> </li> <li> <p> <code>DecisionTaskStarted</code> ? The decision task was dispatched to a decider.</p> </li> <li> <p> <code>DecisionTaskTimedOut</code> ? The decision task timed out.</p> </li> <li> <p> <code>ExternalWorkflowExecutionCancelRequested</code> ? Request to cancel an external workflow execution was successfully delivered to the target execution.</p> </li> <li> <p> <code>ExternalWorkflowExecutionSignaled</code> ? A signal, requested by this workflow execution, was successfully delivered to the target external workflow execution.</p> </li> <li> <p> <code>FailWorkflowExecutionFailed</code> ? A request to mark a workflow execution as failed, itself failed.</p> </li> <li> <p> <code>MarkerRecorded</code> ? A marker was recorded in the workflow history as the result of a <code>RecordMarker</code> decision.</p> </li> <li> <p> <code>RecordMarkerFailed</code> ? A <code>RecordMarker</code> decision was returned as failed.</p> </li> <li> <p> <code>RequestCancelActivityTaskFailed</code> ? Failed to process RequestCancelActivityTask decision. This happens when the decision isn't configured properly.</p> </li> <li> <p> <code>RequestCancelExternalWorkflowExecutionFailed</code> ? Request to cancel an external workflow execution failed.</p> </li> <li> <p> <code>RequestCancelExternalWorkflowExecutionInitiated</code> ? A request was made to request the cancellation of an external workflow execution.</p> </li> <li> <p> <code>ScheduleActivityTaskFailed</code> ? Failed to process ScheduleActivityTask decision. This happens when the decision isn't configured properly, for example the activity type specified isn't registered.</p> </li> <li> <p> <code>SignalExternalWorkflowExecutionFailed</code> ? The request to signal an external workflow execution failed.</p> </li> <li> <p> <code>SignalExternalWorkflowExecutionInitiated</code> ? A request to signal an external workflow was made.</p> </li> <li> <p> <code>StartActivityTaskFailed</code> ? A scheduled activity task failed to start.</p> </li> <li> <p> <code>StartChildWorkflowExecutionFailed</code> ? Failed to process StartChildWorkflowExecution decision. This happens when the decision isn't configured properly, for example the workflow type specified isn't registered.</p> </li> <li> <p> <code>StartChildWorkflowExecutionInitiated</code> ? A request was made to start a child workflow execution.</p> </li> <li> <p> <code>StartTimerFailed</code> ? Failed to process StartTimer decision. This happens when the decision isn't configured properly, for example a timer already exists with the specified timer Id.</p> </li> <li> <p> <code>TimerCanceled</code> ? A timer, previously started for this workflow execution, was successfully canceled.</p> </li> <li> <p> <code>TimerFired</code> ? A timer, previously started for this workflow execution, fired.</p> </li> <li> <p> <code>TimerStarted</code> ? A timer was started for the workflow execution due to a <code>StartTimer</code> decision.</p> </li> <li> <p> <code>WorkflowExecutionCancelRequested</code> ? A request to cancel this workflow execution was made.</p> </li> <li> <p> <code>WorkflowExecutionCanceled</code> ? The workflow execution was successfully canceled and closed.</p> </li> <li> <p> <code>WorkflowExecutionCompleted</code> ? The workflow execution was closed due to successful completion.</p> </li> <li> <p> <code>WorkflowExecutionContinuedAsNew</code> ? The workflow execution was closed and a new execution of the same type was created with the same workflowId.</p> </li> <li> <p> <code>WorkflowExecutionFailed</code> ? The workflow execution closed due to a failure.</p> </li> <li> <p> <code>WorkflowExecutionSignaled</code> ? An external signal was received for the workflow execution.</p> </li> <li> <p> <code>WorkflowExecutionStarted</code> ? The workflow execution was started.</p> </li> <li> <p> <code>WorkflowExecutionTerminated</code> ? The workflow execution was terminated.</p> </li> <li> <p> <code>WorkflowExecutionTimedOut</code> ? The workflow execution was closed because a time out was exceeded.</p> </li> </ul>
    */
   @js.native
   trait HistoryEvent extends js.Object {
-    var workflowExecutionFailedEventAttributes: js.UndefOr[WorkflowExecutionFailedEventAttributes]
-    var decisionTaskCompletedEventAttributes: js.UndefOr[DecisionTaskCompletedEventAttributes]
-    var scheduleActivityTaskFailedEventAttributes: js.UndefOr[ScheduleActivityTaskFailedEventAttributes]
-    var eventType: js.UndefOr[EventType]
-    var requestCancelActivityTaskFailedEventAttributes: js.UndefOr[RequestCancelActivityTaskFailedEventAttributes]
-    var workflowExecutionSignaledEventAttributes: js.UndefOr[WorkflowExecutionSignaledEventAttributes]
-    var startLambdaFunctionFailedEventAttributes: js.UndefOr[StartLambdaFunctionFailedEventAttributes]
-    var activityTaskScheduledEventAttributes: js.UndefOr[ActivityTaskScheduledEventAttributes]
-    var workflowExecutionContinuedAsNewEventAttributes: js.UndefOr[WorkflowExecutionContinuedAsNewEventAttributes]
-    var timerStartedEventAttributes: js.UndefOr[TimerStartedEventAttributes]
-    var workflowExecutionCompletedEventAttributes: js.UndefOr[WorkflowExecutionCompletedEventAttributes]
-    var decisionTaskScheduledEventAttributes: js.UndefOr[DecisionTaskScheduledEventAttributes]
-    var scheduleLambdaFunctionFailedEventAttributes: js.UndefOr[ScheduleLambdaFunctionFailedEventAttributes]
-    var lambdaFunctionStartedEventAttributes: js.UndefOr[LambdaFunctionStartedEventAttributes]
-    var timerCanceledEventAttributes: js.UndefOr[TimerCanceledEventAttributes]
-    var requestCancelExternalWorkflowExecutionInitiatedEventAttributes: js.UndefOr[RequestCancelExternalWorkflowExecutionInitiatedEventAttributes]
-    var childWorkflowExecutionTimedOutEventAttributes: js.UndefOr[ChildWorkflowExecutionTimedOutEventAttributes]
-    var startChildWorkflowExecutionInitiatedEventAttributes: js.UndefOr[StartChildWorkflowExecutionInitiatedEventAttributes]
-    var workflowExecutionTimedOutEventAttributes: js.UndefOr[WorkflowExecutionTimedOutEventAttributes]
-    var childWorkflowExecutionFailedEventAttributes: js.UndefOr[ChildWorkflowExecutionFailedEventAttributes]
-    var externalWorkflowExecutionSignaledEventAttributes: js.UndefOr[ExternalWorkflowExecutionSignaledEventAttributes]
-    var decisionTaskTimedOutEventAttributes: js.UndefOr[DecisionTaskTimedOutEventAttributes]
-    var lambdaFunctionScheduledEventAttributes: js.UndefOr[LambdaFunctionScheduledEventAttributes]
-    var signalExternalWorkflowExecutionFailedEventAttributes: js.UndefOr[SignalExternalWorkflowExecutionFailedEventAttributes]
-    var requestCancelExternalWorkflowExecutionFailedEventAttributes: js.UndefOr[RequestCancelExternalWorkflowExecutionFailedEventAttributes]
-    var lambdaFunctionTimedOutEventAttributes: js.UndefOr[LambdaFunctionTimedOutEventAttributes]
-    var activityTaskCompletedEventAttributes: js.UndefOr[ActivityTaskCompletedEventAttributes]
-    var workflowExecutionTerminatedEventAttributes: js.UndefOr[WorkflowExecutionTerminatedEventAttributes]
-    var eventId: js.UndefOr[EventId]
-    var cancelTimerFailedEventAttributes: js.UndefOr[CancelTimerFailedEventAttributes]
-    var workflowExecutionStartedEventAttributes: js.UndefOr[WorkflowExecutionStartedEventAttributes]
-    var childWorkflowExecutionCanceledEventAttributes: js.UndefOr[ChildWorkflowExecutionCanceledEventAttributes]
-    var timerFiredEventAttributes: js.UndefOr[TimerFiredEventAttributes]
-    var workflowExecutionCanceledEventAttributes: js.UndefOr[WorkflowExecutionCanceledEventAttributes]
-    var cancelWorkflowExecutionFailedEventAttributes: js.UndefOr[CancelWorkflowExecutionFailedEventAttributes]
-    var markerRecordedEventAttributes: js.UndefOr[MarkerRecordedEventAttributes]
-    var activityTaskTimedOutEventAttributes: js.UndefOr[ActivityTaskTimedOutEventAttributes]
-    var childWorkflowExecutionStartedEventAttributes: js.UndefOr[ChildWorkflowExecutionStartedEventAttributes]
-    var continueAsNewWorkflowExecutionFailedEventAttributes: js.UndefOr[ContinueAsNewWorkflowExecutionFailedEventAttributes]
-    var eventTimestamp: js.UndefOr[Timestamp]
-    var signalExternalWorkflowExecutionInitiatedEventAttributes: js.UndefOr[SignalExternalWorkflowExecutionInitiatedEventAttributes]
-    var activityTaskFailedEventAttributes: js.UndefOr[ActivityTaskFailedEventAttributes]
-    var activityTaskCanceledEventAttributes: js.UndefOr[ActivityTaskCanceledEventAttributes]
-    var childWorkflowExecutionTerminatedEventAttributes: js.UndefOr[ChildWorkflowExecutionTerminatedEventAttributes]
-    var activityTaskStartedEventAttributes: js.UndefOr[ActivityTaskStartedEventAttributes]
-    var decisionTaskStartedEventAttributes: js.UndefOr[DecisionTaskStartedEventAttributes]
-    var lambdaFunctionFailedEventAttributes: js.UndefOr[LambdaFunctionFailedEventAttributes]
-    var lambdaFunctionCompletedEventAttributes: js.UndefOr[LambdaFunctionCompletedEventAttributes]
-    var startChildWorkflowExecutionFailedEventAttributes: js.UndefOr[StartChildWorkflowExecutionFailedEventAttributes]
-    var failWorkflowExecutionFailedEventAttributes: js.UndefOr[FailWorkflowExecutionFailedEventAttributes]
-    var childWorkflowExecutionCompletedEventAttributes: js.UndefOr[ChildWorkflowExecutionCompletedEventAttributes]
-    var startTimerFailedEventAttributes: js.UndefOr[StartTimerFailedEventAttributes]
+    var eventId: EventId
+    var eventTimestamp: Timestamp
+    var eventType: EventType
     var activityTaskCancelRequestedEventAttributes: js.UndefOr[ActivityTaskCancelRequestedEventAttributes]
+    var activityTaskCanceledEventAttributes: js.UndefOr[ActivityTaskCanceledEventAttributes]
+    var activityTaskCompletedEventAttributes: js.UndefOr[ActivityTaskCompletedEventAttributes]
+    var activityTaskFailedEventAttributes: js.UndefOr[ActivityTaskFailedEventAttributes]
+    var activityTaskScheduledEventAttributes: js.UndefOr[ActivityTaskScheduledEventAttributes]
+    var activityTaskStartedEventAttributes: js.UndefOr[ActivityTaskStartedEventAttributes]
+    var activityTaskTimedOutEventAttributes: js.UndefOr[ActivityTaskTimedOutEventAttributes]
+    var cancelTimerFailedEventAttributes: js.UndefOr[CancelTimerFailedEventAttributes]
+    var cancelWorkflowExecutionFailedEventAttributes: js.UndefOr[CancelWorkflowExecutionFailedEventAttributes]
+    var childWorkflowExecutionCanceledEventAttributes: js.UndefOr[ChildWorkflowExecutionCanceledEventAttributes]
+    var childWorkflowExecutionCompletedEventAttributes: js.UndefOr[ChildWorkflowExecutionCompletedEventAttributes]
+    var childWorkflowExecutionFailedEventAttributes: js.UndefOr[ChildWorkflowExecutionFailedEventAttributes]
+    var childWorkflowExecutionStartedEventAttributes: js.UndefOr[ChildWorkflowExecutionStartedEventAttributes]
+    var childWorkflowExecutionTerminatedEventAttributes: js.UndefOr[ChildWorkflowExecutionTerminatedEventAttributes]
+    var childWorkflowExecutionTimedOutEventAttributes: js.UndefOr[ChildWorkflowExecutionTimedOutEventAttributes]
     var completeWorkflowExecutionFailedEventAttributes: js.UndefOr[CompleteWorkflowExecutionFailedEventAttributes]
-    var workflowExecutionCancelRequestedEventAttributes: js.UndefOr[WorkflowExecutionCancelRequestedEventAttributes]
+    var continueAsNewWorkflowExecutionFailedEventAttributes: js.UndefOr[ContinueAsNewWorkflowExecutionFailedEventAttributes]
+    var decisionTaskCompletedEventAttributes: js.UndefOr[DecisionTaskCompletedEventAttributes]
+    var decisionTaskScheduledEventAttributes: js.UndefOr[DecisionTaskScheduledEventAttributes]
+    var decisionTaskStartedEventAttributes: js.UndefOr[DecisionTaskStartedEventAttributes]
+    var decisionTaskTimedOutEventAttributes: js.UndefOr[DecisionTaskTimedOutEventAttributes]
     var externalWorkflowExecutionCancelRequestedEventAttributes: js.UndefOr[ExternalWorkflowExecutionCancelRequestedEventAttributes]
+    var externalWorkflowExecutionSignaledEventAttributes: js.UndefOr[ExternalWorkflowExecutionSignaledEventAttributes]
+    var failWorkflowExecutionFailedEventAttributes: js.UndefOr[FailWorkflowExecutionFailedEventAttributes]
+    var lambdaFunctionCompletedEventAttributes: js.UndefOr[LambdaFunctionCompletedEventAttributes]
+    var lambdaFunctionFailedEventAttributes: js.UndefOr[LambdaFunctionFailedEventAttributes]
+    var lambdaFunctionScheduledEventAttributes: js.UndefOr[LambdaFunctionScheduledEventAttributes]
+    var lambdaFunctionStartedEventAttributes: js.UndefOr[LambdaFunctionStartedEventAttributes]
+    var lambdaFunctionTimedOutEventAttributes: js.UndefOr[LambdaFunctionTimedOutEventAttributes]
+    var markerRecordedEventAttributes: js.UndefOr[MarkerRecordedEventAttributes]
     var recordMarkerFailedEventAttributes: js.UndefOr[RecordMarkerFailedEventAttributes]
+    var requestCancelActivityTaskFailedEventAttributes: js.UndefOr[RequestCancelActivityTaskFailedEventAttributes]
+    var requestCancelExternalWorkflowExecutionFailedEventAttributes: js.UndefOr[RequestCancelExternalWorkflowExecutionFailedEventAttributes]
+    var requestCancelExternalWorkflowExecutionInitiatedEventAttributes: js.UndefOr[RequestCancelExternalWorkflowExecutionInitiatedEventAttributes]
+    var scheduleActivityTaskFailedEventAttributes: js.UndefOr[ScheduleActivityTaskFailedEventAttributes]
+    var scheduleLambdaFunctionFailedEventAttributes: js.UndefOr[ScheduleLambdaFunctionFailedEventAttributes]
+    var signalExternalWorkflowExecutionFailedEventAttributes: js.UndefOr[SignalExternalWorkflowExecutionFailedEventAttributes]
+    var signalExternalWorkflowExecutionInitiatedEventAttributes: js.UndefOr[SignalExternalWorkflowExecutionInitiatedEventAttributes]
+    var startChildWorkflowExecutionFailedEventAttributes: js.UndefOr[StartChildWorkflowExecutionFailedEventAttributes]
+    var startChildWorkflowExecutionInitiatedEventAttributes: js.UndefOr[StartChildWorkflowExecutionInitiatedEventAttributes]
+    var startLambdaFunctionFailedEventAttributes: js.UndefOr[StartLambdaFunctionFailedEventAttributes]
+    var startTimerFailedEventAttributes: js.UndefOr[StartTimerFailedEventAttributes]
+    var timerCanceledEventAttributes: js.UndefOr[TimerCanceledEventAttributes]
+    var timerFiredEventAttributes: js.UndefOr[TimerFiredEventAttributes]
+    var timerStartedEventAttributes: js.UndefOr[TimerStartedEventAttributes]
+    var workflowExecutionCancelRequestedEventAttributes: js.UndefOr[WorkflowExecutionCancelRequestedEventAttributes]
+    var workflowExecutionCanceledEventAttributes: js.UndefOr[WorkflowExecutionCanceledEventAttributes]
+    var workflowExecutionCompletedEventAttributes: js.UndefOr[WorkflowExecutionCompletedEventAttributes]
+    var workflowExecutionContinuedAsNewEventAttributes: js.UndefOr[WorkflowExecutionContinuedAsNewEventAttributes]
+    var workflowExecutionFailedEventAttributes: js.UndefOr[WorkflowExecutionFailedEventAttributes]
+    var workflowExecutionSignaledEventAttributes: js.UndefOr[WorkflowExecutionSignaledEventAttributes]
+    var workflowExecutionStartedEventAttributes: js.UndefOr[WorkflowExecutionStartedEventAttributes]
+    var workflowExecutionTerminatedEventAttributes: js.UndefOr[WorkflowExecutionTerminatedEventAttributes]
+    var workflowExecutionTimedOutEventAttributes: js.UndefOr[WorkflowExecutionTimedOutEventAttributes]
   }
 
   object HistoryEvent {
     def apply(
-      workflowExecutionFailedEventAttributes: js.UndefOr[WorkflowExecutionFailedEventAttributes] = js.undefined,
-      decisionTaskCompletedEventAttributes: js.UndefOr[DecisionTaskCompletedEventAttributes] = js.undefined,
-      scheduleActivityTaskFailedEventAttributes: js.UndefOr[ScheduleActivityTaskFailedEventAttributes] = js.undefined,
-      eventType: js.UndefOr[EventType] = js.undefined,
-      requestCancelActivityTaskFailedEventAttributes: js.UndefOr[RequestCancelActivityTaskFailedEventAttributes] = js.undefined,
-      workflowExecutionSignaledEventAttributes: js.UndefOr[WorkflowExecutionSignaledEventAttributes] = js.undefined,
-      startLambdaFunctionFailedEventAttributes: js.UndefOr[StartLambdaFunctionFailedEventAttributes] = js.undefined,
-      activityTaskScheduledEventAttributes: js.UndefOr[ActivityTaskScheduledEventAttributes] = js.undefined,
-      workflowExecutionContinuedAsNewEventAttributes: js.UndefOr[WorkflowExecutionContinuedAsNewEventAttributes] = js.undefined,
-      timerStartedEventAttributes: js.UndefOr[TimerStartedEventAttributes] = js.undefined,
-      workflowExecutionCompletedEventAttributes: js.UndefOr[WorkflowExecutionCompletedEventAttributes] = js.undefined,
-      decisionTaskScheduledEventAttributes: js.UndefOr[DecisionTaskScheduledEventAttributes] = js.undefined,
-      scheduleLambdaFunctionFailedEventAttributes: js.UndefOr[ScheduleLambdaFunctionFailedEventAttributes] = js.undefined,
-      lambdaFunctionStartedEventAttributes: js.UndefOr[LambdaFunctionStartedEventAttributes] = js.undefined,
-      timerCanceledEventAttributes: js.UndefOr[TimerCanceledEventAttributes] = js.undefined,
-      requestCancelExternalWorkflowExecutionInitiatedEventAttributes: js.UndefOr[RequestCancelExternalWorkflowExecutionInitiatedEventAttributes] = js.undefined,
-      childWorkflowExecutionTimedOutEventAttributes: js.UndefOr[ChildWorkflowExecutionTimedOutEventAttributes] = js.undefined,
-      startChildWorkflowExecutionInitiatedEventAttributes: js.UndefOr[StartChildWorkflowExecutionInitiatedEventAttributes] = js.undefined,
-      workflowExecutionTimedOutEventAttributes: js.UndefOr[WorkflowExecutionTimedOutEventAttributes] = js.undefined,
-      childWorkflowExecutionFailedEventAttributes: js.UndefOr[ChildWorkflowExecutionFailedEventAttributes] = js.undefined,
-      externalWorkflowExecutionSignaledEventAttributes: js.UndefOr[ExternalWorkflowExecutionSignaledEventAttributes] = js.undefined,
-      decisionTaskTimedOutEventAttributes: js.UndefOr[DecisionTaskTimedOutEventAttributes] = js.undefined,
-      lambdaFunctionScheduledEventAttributes: js.UndefOr[LambdaFunctionScheduledEventAttributes] = js.undefined,
-      signalExternalWorkflowExecutionFailedEventAttributes: js.UndefOr[SignalExternalWorkflowExecutionFailedEventAttributes] = js.undefined,
-      requestCancelExternalWorkflowExecutionFailedEventAttributes: js.UndefOr[RequestCancelExternalWorkflowExecutionFailedEventAttributes] = js.undefined,
-      lambdaFunctionTimedOutEventAttributes: js.UndefOr[LambdaFunctionTimedOutEventAttributes] = js.undefined,
-      activityTaskCompletedEventAttributes: js.UndefOr[ActivityTaskCompletedEventAttributes] = js.undefined,
-      workflowExecutionTerminatedEventAttributes: js.UndefOr[WorkflowExecutionTerminatedEventAttributes] = js.undefined,
-      eventId: js.UndefOr[EventId] = js.undefined,
-      cancelTimerFailedEventAttributes: js.UndefOr[CancelTimerFailedEventAttributes] = js.undefined,
-      workflowExecutionStartedEventAttributes: js.UndefOr[WorkflowExecutionStartedEventAttributes] = js.undefined,
-      childWorkflowExecutionCanceledEventAttributes: js.UndefOr[ChildWorkflowExecutionCanceledEventAttributes] = js.undefined,
-      timerFiredEventAttributes: js.UndefOr[TimerFiredEventAttributes] = js.undefined,
-      workflowExecutionCanceledEventAttributes: js.UndefOr[WorkflowExecutionCanceledEventAttributes] = js.undefined,
-      cancelWorkflowExecutionFailedEventAttributes: js.UndefOr[CancelWorkflowExecutionFailedEventAttributes] = js.undefined,
-      markerRecordedEventAttributes: js.UndefOr[MarkerRecordedEventAttributes] = js.undefined,
-      activityTaskTimedOutEventAttributes: js.UndefOr[ActivityTaskTimedOutEventAttributes] = js.undefined,
-      childWorkflowExecutionStartedEventAttributes: js.UndefOr[ChildWorkflowExecutionStartedEventAttributes] = js.undefined,
-      continueAsNewWorkflowExecutionFailedEventAttributes: js.UndefOr[ContinueAsNewWorkflowExecutionFailedEventAttributes] = js.undefined,
-      eventTimestamp: js.UndefOr[Timestamp] = js.undefined,
-      signalExternalWorkflowExecutionInitiatedEventAttributes: js.UndefOr[SignalExternalWorkflowExecutionInitiatedEventAttributes] = js.undefined,
-      activityTaskFailedEventAttributes: js.UndefOr[ActivityTaskFailedEventAttributes] = js.undefined,
-      activityTaskCanceledEventAttributes: js.UndefOr[ActivityTaskCanceledEventAttributes] = js.undefined,
-      childWorkflowExecutionTerminatedEventAttributes: js.UndefOr[ChildWorkflowExecutionTerminatedEventAttributes] = js.undefined,
-      activityTaskStartedEventAttributes: js.UndefOr[ActivityTaskStartedEventAttributes] = js.undefined,
-      decisionTaskStartedEventAttributes: js.UndefOr[DecisionTaskStartedEventAttributes] = js.undefined,
-      lambdaFunctionFailedEventAttributes: js.UndefOr[LambdaFunctionFailedEventAttributes] = js.undefined,
-      lambdaFunctionCompletedEventAttributes: js.UndefOr[LambdaFunctionCompletedEventAttributes] = js.undefined,
-      startChildWorkflowExecutionFailedEventAttributes: js.UndefOr[StartChildWorkflowExecutionFailedEventAttributes] = js.undefined,
-      failWorkflowExecutionFailedEventAttributes: js.UndefOr[FailWorkflowExecutionFailedEventAttributes] = js.undefined,
-      childWorkflowExecutionCompletedEventAttributes: js.UndefOr[ChildWorkflowExecutionCompletedEventAttributes] = js.undefined,
-      startTimerFailedEventAttributes: js.UndefOr[StartTimerFailedEventAttributes] = js.undefined,
+      eventId: EventId,
+      eventTimestamp: Timestamp,
+      eventType: EventType,
       activityTaskCancelRequestedEventAttributes: js.UndefOr[ActivityTaskCancelRequestedEventAttributes] = js.undefined,
+      activityTaskCanceledEventAttributes: js.UndefOr[ActivityTaskCanceledEventAttributes] = js.undefined,
+      activityTaskCompletedEventAttributes: js.UndefOr[ActivityTaskCompletedEventAttributes] = js.undefined,
+      activityTaskFailedEventAttributes: js.UndefOr[ActivityTaskFailedEventAttributes] = js.undefined,
+      activityTaskScheduledEventAttributes: js.UndefOr[ActivityTaskScheduledEventAttributes] = js.undefined,
+      activityTaskStartedEventAttributes: js.UndefOr[ActivityTaskStartedEventAttributes] = js.undefined,
+      activityTaskTimedOutEventAttributes: js.UndefOr[ActivityTaskTimedOutEventAttributes] = js.undefined,
+      cancelTimerFailedEventAttributes: js.UndefOr[CancelTimerFailedEventAttributes] = js.undefined,
+      cancelWorkflowExecutionFailedEventAttributes: js.UndefOr[CancelWorkflowExecutionFailedEventAttributes] = js.undefined,
+      childWorkflowExecutionCanceledEventAttributes: js.UndefOr[ChildWorkflowExecutionCanceledEventAttributes] = js.undefined,
+      childWorkflowExecutionCompletedEventAttributes: js.UndefOr[ChildWorkflowExecutionCompletedEventAttributes] = js.undefined,
+      childWorkflowExecutionFailedEventAttributes: js.UndefOr[ChildWorkflowExecutionFailedEventAttributes] = js.undefined,
+      childWorkflowExecutionStartedEventAttributes: js.UndefOr[ChildWorkflowExecutionStartedEventAttributes] = js.undefined,
+      childWorkflowExecutionTerminatedEventAttributes: js.UndefOr[ChildWorkflowExecutionTerminatedEventAttributes] = js.undefined,
+      childWorkflowExecutionTimedOutEventAttributes: js.UndefOr[ChildWorkflowExecutionTimedOutEventAttributes] = js.undefined,
       completeWorkflowExecutionFailedEventAttributes: js.UndefOr[CompleteWorkflowExecutionFailedEventAttributes] = js.undefined,
-      workflowExecutionCancelRequestedEventAttributes: js.UndefOr[WorkflowExecutionCancelRequestedEventAttributes] = js.undefined,
+      continueAsNewWorkflowExecutionFailedEventAttributes: js.UndefOr[ContinueAsNewWorkflowExecutionFailedEventAttributes] = js.undefined,
+      decisionTaskCompletedEventAttributes: js.UndefOr[DecisionTaskCompletedEventAttributes] = js.undefined,
+      decisionTaskScheduledEventAttributes: js.UndefOr[DecisionTaskScheduledEventAttributes] = js.undefined,
+      decisionTaskStartedEventAttributes: js.UndefOr[DecisionTaskStartedEventAttributes] = js.undefined,
+      decisionTaskTimedOutEventAttributes: js.UndefOr[DecisionTaskTimedOutEventAttributes] = js.undefined,
       externalWorkflowExecutionCancelRequestedEventAttributes: js.UndefOr[ExternalWorkflowExecutionCancelRequestedEventAttributes] = js.undefined,
-      recordMarkerFailedEventAttributes: js.UndefOr[RecordMarkerFailedEventAttributes] = js.undefined): HistoryEvent = {
+      externalWorkflowExecutionSignaledEventAttributes: js.UndefOr[ExternalWorkflowExecutionSignaledEventAttributes] = js.undefined,
+      failWorkflowExecutionFailedEventAttributes: js.UndefOr[FailWorkflowExecutionFailedEventAttributes] = js.undefined,
+      lambdaFunctionCompletedEventAttributes: js.UndefOr[LambdaFunctionCompletedEventAttributes] = js.undefined,
+      lambdaFunctionFailedEventAttributes: js.UndefOr[LambdaFunctionFailedEventAttributes] = js.undefined,
+      lambdaFunctionScheduledEventAttributes: js.UndefOr[LambdaFunctionScheduledEventAttributes] = js.undefined,
+      lambdaFunctionStartedEventAttributes: js.UndefOr[LambdaFunctionStartedEventAttributes] = js.undefined,
+      lambdaFunctionTimedOutEventAttributes: js.UndefOr[LambdaFunctionTimedOutEventAttributes] = js.undefined,
+      markerRecordedEventAttributes: js.UndefOr[MarkerRecordedEventAttributes] = js.undefined,
+      recordMarkerFailedEventAttributes: js.UndefOr[RecordMarkerFailedEventAttributes] = js.undefined,
+      requestCancelActivityTaskFailedEventAttributes: js.UndefOr[RequestCancelActivityTaskFailedEventAttributes] = js.undefined,
+      requestCancelExternalWorkflowExecutionFailedEventAttributes: js.UndefOr[RequestCancelExternalWorkflowExecutionFailedEventAttributes] = js.undefined,
+      requestCancelExternalWorkflowExecutionInitiatedEventAttributes: js.UndefOr[RequestCancelExternalWorkflowExecutionInitiatedEventAttributes] = js.undefined,
+      scheduleActivityTaskFailedEventAttributes: js.UndefOr[ScheduleActivityTaskFailedEventAttributes] = js.undefined,
+      scheduleLambdaFunctionFailedEventAttributes: js.UndefOr[ScheduleLambdaFunctionFailedEventAttributes] = js.undefined,
+      signalExternalWorkflowExecutionFailedEventAttributes: js.UndefOr[SignalExternalWorkflowExecutionFailedEventAttributes] = js.undefined,
+      signalExternalWorkflowExecutionInitiatedEventAttributes: js.UndefOr[SignalExternalWorkflowExecutionInitiatedEventAttributes] = js.undefined,
+      startChildWorkflowExecutionFailedEventAttributes: js.UndefOr[StartChildWorkflowExecutionFailedEventAttributes] = js.undefined,
+      startChildWorkflowExecutionInitiatedEventAttributes: js.UndefOr[StartChildWorkflowExecutionInitiatedEventAttributes] = js.undefined,
+      startLambdaFunctionFailedEventAttributes: js.UndefOr[StartLambdaFunctionFailedEventAttributes] = js.undefined,
+      startTimerFailedEventAttributes: js.UndefOr[StartTimerFailedEventAttributes] = js.undefined,
+      timerCanceledEventAttributes: js.UndefOr[TimerCanceledEventAttributes] = js.undefined,
+      timerFiredEventAttributes: js.UndefOr[TimerFiredEventAttributes] = js.undefined,
+      timerStartedEventAttributes: js.UndefOr[TimerStartedEventAttributes] = js.undefined,
+      workflowExecutionCancelRequestedEventAttributes: js.UndefOr[WorkflowExecutionCancelRequestedEventAttributes] = js.undefined,
+      workflowExecutionCanceledEventAttributes: js.UndefOr[WorkflowExecutionCanceledEventAttributes] = js.undefined,
+      workflowExecutionCompletedEventAttributes: js.UndefOr[WorkflowExecutionCompletedEventAttributes] = js.undefined,
+      workflowExecutionContinuedAsNewEventAttributes: js.UndefOr[WorkflowExecutionContinuedAsNewEventAttributes] = js.undefined,
+      workflowExecutionFailedEventAttributes: js.UndefOr[WorkflowExecutionFailedEventAttributes] = js.undefined,
+      workflowExecutionSignaledEventAttributes: js.UndefOr[WorkflowExecutionSignaledEventAttributes] = js.undefined,
+      workflowExecutionStartedEventAttributes: js.UndefOr[WorkflowExecutionStartedEventAttributes] = js.undefined,
+      workflowExecutionTerminatedEventAttributes: js.UndefOr[WorkflowExecutionTerminatedEventAttributes] = js.undefined,
+      workflowExecutionTimedOutEventAttributes: js.UndefOr[WorkflowExecutionTimedOutEventAttributes] = js.undefined): HistoryEvent = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "workflowExecutionFailedEventAttributes" -> workflowExecutionFailedEventAttributes.map { x => x.asInstanceOf[js.Any] },
-        "decisionTaskCompletedEventAttributes" -> decisionTaskCompletedEventAttributes.map { x => x.asInstanceOf[js.Any] },
-        "scheduleActivityTaskFailedEventAttributes" -> scheduleActivityTaskFailedEventAttributes.map { x => x.asInstanceOf[js.Any] },
-        "eventType" -> eventType.map { x => x.asInstanceOf[js.Any] },
-        "requestCancelActivityTaskFailedEventAttributes" -> requestCancelActivityTaskFailedEventAttributes.map { x => x.asInstanceOf[js.Any] },
-        "workflowExecutionSignaledEventAttributes" -> workflowExecutionSignaledEventAttributes.map { x => x.asInstanceOf[js.Any] },
-        "startLambdaFunctionFailedEventAttributes" -> startLambdaFunctionFailedEventAttributes.map { x => x.asInstanceOf[js.Any] },
-        "activityTaskScheduledEventAttributes" -> activityTaskScheduledEventAttributes.map { x => x.asInstanceOf[js.Any] },
-        "workflowExecutionContinuedAsNewEventAttributes" -> workflowExecutionContinuedAsNewEventAttributes.map { x => x.asInstanceOf[js.Any] },
-        "timerStartedEventAttributes" -> timerStartedEventAttributes.map { x => x.asInstanceOf[js.Any] },
-        "workflowExecutionCompletedEventAttributes" -> workflowExecutionCompletedEventAttributes.map { x => x.asInstanceOf[js.Any] },
-        "decisionTaskScheduledEventAttributes" -> decisionTaskScheduledEventAttributes.map { x => x.asInstanceOf[js.Any] },
-        "scheduleLambdaFunctionFailedEventAttributes" -> scheduleLambdaFunctionFailedEventAttributes.map { x => x.asInstanceOf[js.Any] },
-        "lambdaFunctionStartedEventAttributes" -> lambdaFunctionStartedEventAttributes.map { x => x.asInstanceOf[js.Any] },
-        "timerCanceledEventAttributes" -> timerCanceledEventAttributes.map { x => x.asInstanceOf[js.Any] },
-        "requestCancelExternalWorkflowExecutionInitiatedEventAttributes" -> requestCancelExternalWorkflowExecutionInitiatedEventAttributes.map { x => x.asInstanceOf[js.Any] },
-        "childWorkflowExecutionTimedOutEventAttributes" -> childWorkflowExecutionTimedOutEventAttributes.map { x => x.asInstanceOf[js.Any] },
-        "startChildWorkflowExecutionInitiatedEventAttributes" -> startChildWorkflowExecutionInitiatedEventAttributes.map { x => x.asInstanceOf[js.Any] },
-        "workflowExecutionTimedOutEventAttributes" -> workflowExecutionTimedOutEventAttributes.map { x => x.asInstanceOf[js.Any] },
-        "childWorkflowExecutionFailedEventAttributes" -> childWorkflowExecutionFailedEventAttributes.map { x => x.asInstanceOf[js.Any] },
-        "externalWorkflowExecutionSignaledEventAttributes" -> externalWorkflowExecutionSignaledEventAttributes.map { x => x.asInstanceOf[js.Any] },
-        "decisionTaskTimedOutEventAttributes" -> decisionTaskTimedOutEventAttributes.map { x => x.asInstanceOf[js.Any] },
-        "lambdaFunctionScheduledEventAttributes" -> lambdaFunctionScheduledEventAttributes.map { x => x.asInstanceOf[js.Any] },
-        "signalExternalWorkflowExecutionFailedEventAttributes" -> signalExternalWorkflowExecutionFailedEventAttributes.map { x => x.asInstanceOf[js.Any] },
-        "requestCancelExternalWorkflowExecutionFailedEventAttributes" -> requestCancelExternalWorkflowExecutionFailedEventAttributes.map { x => x.asInstanceOf[js.Any] },
-        "lambdaFunctionTimedOutEventAttributes" -> lambdaFunctionTimedOutEventAttributes.map { x => x.asInstanceOf[js.Any] },
-        "activityTaskCompletedEventAttributes" -> activityTaskCompletedEventAttributes.map { x => x.asInstanceOf[js.Any] },
-        "workflowExecutionTerminatedEventAttributes" -> workflowExecutionTerminatedEventAttributes.map { x => x.asInstanceOf[js.Any] },
-        "eventId" -> eventId.map { x => x.asInstanceOf[js.Any] },
-        "cancelTimerFailedEventAttributes" -> cancelTimerFailedEventAttributes.map { x => x.asInstanceOf[js.Any] },
-        "workflowExecutionStartedEventAttributes" -> workflowExecutionStartedEventAttributes.map { x => x.asInstanceOf[js.Any] },
-        "childWorkflowExecutionCanceledEventAttributes" -> childWorkflowExecutionCanceledEventAttributes.map { x => x.asInstanceOf[js.Any] },
-        "timerFiredEventAttributes" -> timerFiredEventAttributes.map { x => x.asInstanceOf[js.Any] },
-        "workflowExecutionCanceledEventAttributes" -> workflowExecutionCanceledEventAttributes.map { x => x.asInstanceOf[js.Any] },
-        "cancelWorkflowExecutionFailedEventAttributes" -> cancelWorkflowExecutionFailedEventAttributes.map { x => x.asInstanceOf[js.Any] },
-        "markerRecordedEventAttributes" -> markerRecordedEventAttributes.map { x => x.asInstanceOf[js.Any] },
-        "activityTaskTimedOutEventAttributes" -> activityTaskTimedOutEventAttributes.map { x => x.asInstanceOf[js.Any] },
-        "childWorkflowExecutionStartedEventAttributes" -> childWorkflowExecutionStartedEventAttributes.map { x => x.asInstanceOf[js.Any] },
-        "continueAsNewWorkflowExecutionFailedEventAttributes" -> continueAsNewWorkflowExecutionFailedEventAttributes.map { x => x.asInstanceOf[js.Any] },
-        "eventTimestamp" -> eventTimestamp.map { x => x.asInstanceOf[js.Any] },
-        "signalExternalWorkflowExecutionInitiatedEventAttributes" -> signalExternalWorkflowExecutionInitiatedEventAttributes.map { x => x.asInstanceOf[js.Any] },
-        "activityTaskFailedEventAttributes" -> activityTaskFailedEventAttributes.map { x => x.asInstanceOf[js.Any] },
-        "activityTaskCanceledEventAttributes" -> activityTaskCanceledEventAttributes.map { x => x.asInstanceOf[js.Any] },
-        "childWorkflowExecutionTerminatedEventAttributes" -> childWorkflowExecutionTerminatedEventAttributes.map { x => x.asInstanceOf[js.Any] },
-        "activityTaskStartedEventAttributes" -> activityTaskStartedEventAttributes.map { x => x.asInstanceOf[js.Any] },
-        "decisionTaskStartedEventAttributes" -> decisionTaskStartedEventAttributes.map { x => x.asInstanceOf[js.Any] },
-        "lambdaFunctionFailedEventAttributes" -> lambdaFunctionFailedEventAttributes.map { x => x.asInstanceOf[js.Any] },
-        "lambdaFunctionCompletedEventAttributes" -> lambdaFunctionCompletedEventAttributes.map { x => x.asInstanceOf[js.Any] },
-        "startChildWorkflowExecutionFailedEventAttributes" -> startChildWorkflowExecutionFailedEventAttributes.map { x => x.asInstanceOf[js.Any] },
-        "failWorkflowExecutionFailedEventAttributes" -> failWorkflowExecutionFailedEventAttributes.map { x => x.asInstanceOf[js.Any] },
-        "childWorkflowExecutionCompletedEventAttributes" -> childWorkflowExecutionCompletedEventAttributes.map { x => x.asInstanceOf[js.Any] },
-        "startTimerFailedEventAttributes" -> startTimerFailedEventAttributes.map { x => x.asInstanceOf[js.Any] },
+        "eventId" -> eventId.asInstanceOf[js.Any],
+        "eventTimestamp" -> eventTimestamp.asInstanceOf[js.Any],
+        "eventType" -> eventType.asInstanceOf[js.Any],
         "activityTaskCancelRequestedEventAttributes" -> activityTaskCancelRequestedEventAttributes.map { x => x.asInstanceOf[js.Any] },
+        "activityTaskCanceledEventAttributes" -> activityTaskCanceledEventAttributes.map { x => x.asInstanceOf[js.Any] },
+        "activityTaskCompletedEventAttributes" -> activityTaskCompletedEventAttributes.map { x => x.asInstanceOf[js.Any] },
+        "activityTaskFailedEventAttributes" -> activityTaskFailedEventAttributes.map { x => x.asInstanceOf[js.Any] },
+        "activityTaskScheduledEventAttributes" -> activityTaskScheduledEventAttributes.map { x => x.asInstanceOf[js.Any] },
+        "activityTaskStartedEventAttributes" -> activityTaskStartedEventAttributes.map { x => x.asInstanceOf[js.Any] },
+        "activityTaskTimedOutEventAttributes" -> activityTaskTimedOutEventAttributes.map { x => x.asInstanceOf[js.Any] },
+        "cancelTimerFailedEventAttributes" -> cancelTimerFailedEventAttributes.map { x => x.asInstanceOf[js.Any] },
+        "cancelWorkflowExecutionFailedEventAttributes" -> cancelWorkflowExecutionFailedEventAttributes.map { x => x.asInstanceOf[js.Any] },
+        "childWorkflowExecutionCanceledEventAttributes" -> childWorkflowExecutionCanceledEventAttributes.map { x => x.asInstanceOf[js.Any] },
+        "childWorkflowExecutionCompletedEventAttributes" -> childWorkflowExecutionCompletedEventAttributes.map { x => x.asInstanceOf[js.Any] },
+        "childWorkflowExecutionFailedEventAttributes" -> childWorkflowExecutionFailedEventAttributes.map { x => x.asInstanceOf[js.Any] },
+        "childWorkflowExecutionStartedEventAttributes" -> childWorkflowExecutionStartedEventAttributes.map { x => x.asInstanceOf[js.Any] },
+        "childWorkflowExecutionTerminatedEventAttributes" -> childWorkflowExecutionTerminatedEventAttributes.map { x => x.asInstanceOf[js.Any] },
+        "childWorkflowExecutionTimedOutEventAttributes" -> childWorkflowExecutionTimedOutEventAttributes.map { x => x.asInstanceOf[js.Any] },
         "completeWorkflowExecutionFailedEventAttributes" -> completeWorkflowExecutionFailedEventAttributes.map { x => x.asInstanceOf[js.Any] },
-        "workflowExecutionCancelRequestedEventAttributes" -> workflowExecutionCancelRequestedEventAttributes.map { x => x.asInstanceOf[js.Any] },
+        "continueAsNewWorkflowExecutionFailedEventAttributes" -> continueAsNewWorkflowExecutionFailedEventAttributes.map { x => x.asInstanceOf[js.Any] },
+        "decisionTaskCompletedEventAttributes" -> decisionTaskCompletedEventAttributes.map { x => x.asInstanceOf[js.Any] },
+        "decisionTaskScheduledEventAttributes" -> decisionTaskScheduledEventAttributes.map { x => x.asInstanceOf[js.Any] },
+        "decisionTaskStartedEventAttributes" -> decisionTaskStartedEventAttributes.map { x => x.asInstanceOf[js.Any] },
+        "decisionTaskTimedOutEventAttributes" -> decisionTaskTimedOutEventAttributes.map { x => x.asInstanceOf[js.Any] },
         "externalWorkflowExecutionCancelRequestedEventAttributes" -> externalWorkflowExecutionCancelRequestedEventAttributes.map { x => x.asInstanceOf[js.Any] },
-        "recordMarkerFailedEventAttributes" -> recordMarkerFailedEventAttributes.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "externalWorkflowExecutionSignaledEventAttributes" -> externalWorkflowExecutionSignaledEventAttributes.map { x => x.asInstanceOf[js.Any] },
+        "failWorkflowExecutionFailedEventAttributes" -> failWorkflowExecutionFailedEventAttributes.map { x => x.asInstanceOf[js.Any] },
+        "lambdaFunctionCompletedEventAttributes" -> lambdaFunctionCompletedEventAttributes.map { x => x.asInstanceOf[js.Any] },
+        "lambdaFunctionFailedEventAttributes" -> lambdaFunctionFailedEventAttributes.map { x => x.asInstanceOf[js.Any] },
+        "lambdaFunctionScheduledEventAttributes" -> lambdaFunctionScheduledEventAttributes.map { x => x.asInstanceOf[js.Any] },
+        "lambdaFunctionStartedEventAttributes" -> lambdaFunctionStartedEventAttributes.map { x => x.asInstanceOf[js.Any] },
+        "lambdaFunctionTimedOutEventAttributes" -> lambdaFunctionTimedOutEventAttributes.map { x => x.asInstanceOf[js.Any] },
+        "markerRecordedEventAttributes" -> markerRecordedEventAttributes.map { x => x.asInstanceOf[js.Any] },
+        "recordMarkerFailedEventAttributes" -> recordMarkerFailedEventAttributes.map { x => x.asInstanceOf[js.Any] },
+        "requestCancelActivityTaskFailedEventAttributes" -> requestCancelActivityTaskFailedEventAttributes.map { x => x.asInstanceOf[js.Any] },
+        "requestCancelExternalWorkflowExecutionFailedEventAttributes" -> requestCancelExternalWorkflowExecutionFailedEventAttributes.map { x => x.asInstanceOf[js.Any] },
+        "requestCancelExternalWorkflowExecutionInitiatedEventAttributes" -> requestCancelExternalWorkflowExecutionInitiatedEventAttributes.map { x => x.asInstanceOf[js.Any] },
+        "scheduleActivityTaskFailedEventAttributes" -> scheduleActivityTaskFailedEventAttributes.map { x => x.asInstanceOf[js.Any] },
+        "scheduleLambdaFunctionFailedEventAttributes" -> scheduleLambdaFunctionFailedEventAttributes.map { x => x.asInstanceOf[js.Any] },
+        "signalExternalWorkflowExecutionFailedEventAttributes" -> signalExternalWorkflowExecutionFailedEventAttributes.map { x => x.asInstanceOf[js.Any] },
+        "signalExternalWorkflowExecutionInitiatedEventAttributes" -> signalExternalWorkflowExecutionInitiatedEventAttributes.map { x => x.asInstanceOf[js.Any] },
+        "startChildWorkflowExecutionFailedEventAttributes" -> startChildWorkflowExecutionFailedEventAttributes.map { x => x.asInstanceOf[js.Any] },
+        "startChildWorkflowExecutionInitiatedEventAttributes" -> startChildWorkflowExecutionInitiatedEventAttributes.map { x => x.asInstanceOf[js.Any] },
+        "startLambdaFunctionFailedEventAttributes" -> startLambdaFunctionFailedEventAttributes.map { x => x.asInstanceOf[js.Any] },
+        "startTimerFailedEventAttributes" -> startTimerFailedEventAttributes.map { x => x.asInstanceOf[js.Any] },
+        "timerCanceledEventAttributes" -> timerCanceledEventAttributes.map { x => x.asInstanceOf[js.Any] },
+        "timerFiredEventAttributes" -> timerFiredEventAttributes.map { x => x.asInstanceOf[js.Any] },
+        "timerStartedEventAttributes" -> timerStartedEventAttributes.map { x => x.asInstanceOf[js.Any] },
+        "workflowExecutionCancelRequestedEventAttributes" -> workflowExecutionCancelRequestedEventAttributes.map { x => x.asInstanceOf[js.Any] },
+        "workflowExecutionCanceledEventAttributes" -> workflowExecutionCanceledEventAttributes.map { x => x.asInstanceOf[js.Any] },
+        "workflowExecutionCompletedEventAttributes" -> workflowExecutionCompletedEventAttributes.map { x => x.asInstanceOf[js.Any] },
+        "workflowExecutionContinuedAsNewEventAttributes" -> workflowExecutionContinuedAsNewEventAttributes.map { x => x.asInstanceOf[js.Any] },
+        "workflowExecutionFailedEventAttributes" -> workflowExecutionFailedEventAttributes.map { x => x.asInstanceOf[js.Any] },
+        "workflowExecutionSignaledEventAttributes" -> workflowExecutionSignaledEventAttributes.map { x => x.asInstanceOf[js.Any] },
+        "workflowExecutionStartedEventAttributes" -> workflowExecutionStartedEventAttributes.map { x => x.asInstanceOf[js.Any] },
+        "workflowExecutionTerminatedEventAttributes" -> workflowExecutionTerminatedEventAttributes.map { x => x.asInstanceOf[js.Any] },
+        "workflowExecutionTimedOutEventAttributes" -> workflowExecutionTimedOutEventAttributes.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[HistoryEvent]
     }
@@ -1878,19 +1878,19 @@ package swf {
    */
   @js.native
   trait LambdaFunctionCompletedEventAttributes extends js.Object {
-    var scheduledEventId: js.UndefOr[EventId]
-    var startedEventId: js.UndefOr[EventId]
+    var scheduledEventId: EventId
+    var startedEventId: EventId
     var result: js.UndefOr[Data]
   }
 
   object LambdaFunctionCompletedEventAttributes {
     def apply(
-      scheduledEventId: js.UndefOr[EventId] = js.undefined,
-      startedEventId: js.UndefOr[EventId] = js.undefined,
+      scheduledEventId: EventId,
+      startedEventId: EventId,
       result: js.UndefOr[Data] = js.undefined): LambdaFunctionCompletedEventAttributes = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "scheduledEventId" -> scheduledEventId.map { x => x.asInstanceOf[js.Any] },
-        "startedEventId" -> startedEventId.map { x => x.asInstanceOf[js.Any] },
+        "scheduledEventId" -> scheduledEventId.asInstanceOf[js.Any],
+        "startedEventId" -> startedEventId.asInstanceOf[js.Any],
         "result" -> result.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[LambdaFunctionCompletedEventAttributes]
@@ -1902,23 +1902,23 @@ package swf {
    */
   @js.native
   trait LambdaFunctionFailedEventAttributes extends js.Object {
-    var scheduledEventId: js.UndefOr[EventId]
-    var startedEventId: js.UndefOr[EventId]
-    var reason: js.UndefOr[FailureReason]
+    var scheduledEventId: EventId
+    var startedEventId: EventId
     var details: js.UndefOr[Data]
+    var reason: js.UndefOr[FailureReason]
   }
 
   object LambdaFunctionFailedEventAttributes {
     def apply(
-      scheduledEventId: js.UndefOr[EventId] = js.undefined,
-      startedEventId: js.UndefOr[EventId] = js.undefined,
-      reason: js.UndefOr[FailureReason] = js.undefined,
-      details: js.UndefOr[Data] = js.undefined): LambdaFunctionFailedEventAttributes = {
+      scheduledEventId: EventId,
+      startedEventId: EventId,
+      details: js.UndefOr[Data] = js.undefined,
+      reason: js.UndefOr[FailureReason] = js.undefined): LambdaFunctionFailedEventAttributes = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "scheduledEventId" -> scheduledEventId.map { x => x.asInstanceOf[js.Any] },
-        "startedEventId" -> startedEventId.map { x => x.asInstanceOf[js.Any] },
-        "reason" -> reason.map { x => x.asInstanceOf[js.Any] },
-        "details" -> details.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "scheduledEventId" -> scheduledEventId.asInstanceOf[js.Any],
+        "startedEventId" -> startedEventId.asInstanceOf[js.Any],
+        "details" -> details.map { x => x.asInstanceOf[js.Any] },
+        "reason" -> reason.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[LambdaFunctionFailedEventAttributes]
     }
@@ -1929,29 +1929,29 @@ package swf {
    */
   @js.native
   trait LambdaFunctionScheduledEventAttributes extends js.Object {
-    var name: js.UndefOr[FunctionName]
-    var startToCloseTimeout: js.UndefOr[DurationInSecondsOptional]
-    var decisionTaskCompletedEventId: js.UndefOr[EventId]
-    var id: js.UndefOr[FunctionId]
+    var decisionTaskCompletedEventId: EventId
+    var id: FunctionId
+    var name: FunctionName
     var control: js.UndefOr[Data]
     var input: js.UndefOr[FunctionInput]
+    var startToCloseTimeout: js.UndefOr[DurationInSecondsOptional]
   }
 
   object LambdaFunctionScheduledEventAttributes {
     def apply(
-      name: js.UndefOr[FunctionName] = js.undefined,
-      startToCloseTimeout: js.UndefOr[DurationInSecondsOptional] = js.undefined,
-      decisionTaskCompletedEventId: js.UndefOr[EventId] = js.undefined,
-      id: js.UndefOr[FunctionId] = js.undefined,
+      decisionTaskCompletedEventId: EventId,
+      id: FunctionId,
+      name: FunctionName,
       control: js.UndefOr[Data] = js.undefined,
-      input: js.UndefOr[FunctionInput] = js.undefined): LambdaFunctionScheduledEventAttributes = {
+      input: js.UndefOr[FunctionInput] = js.undefined,
+      startToCloseTimeout: js.UndefOr[DurationInSecondsOptional] = js.undefined): LambdaFunctionScheduledEventAttributes = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "name" -> name.map { x => x.asInstanceOf[js.Any] },
-        "startToCloseTimeout" -> startToCloseTimeout.map { x => x.asInstanceOf[js.Any] },
-        "decisionTaskCompletedEventId" -> decisionTaskCompletedEventId.map { x => x.asInstanceOf[js.Any] },
-        "id" -> id.map { x => x.asInstanceOf[js.Any] },
+        "decisionTaskCompletedEventId" -> decisionTaskCompletedEventId.asInstanceOf[js.Any],
+        "id" -> id.asInstanceOf[js.Any],
+        "name" -> name.asInstanceOf[js.Any],
         "control" -> control.map { x => x.asInstanceOf[js.Any] },
-        "input" -> input.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "input" -> input.map { x => x.asInstanceOf[js.Any] },
+        "startToCloseTimeout" -> startToCloseTimeout.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[LambdaFunctionScheduledEventAttributes]
     }
@@ -1962,14 +1962,14 @@ package swf {
    */
   @js.native
   trait LambdaFunctionStartedEventAttributes extends js.Object {
-    var scheduledEventId: js.UndefOr[EventId]
+    var scheduledEventId: EventId
   }
 
   object LambdaFunctionStartedEventAttributes {
     def apply(
-      scheduledEventId: js.UndefOr[EventId] = js.undefined): LambdaFunctionStartedEventAttributes = {
+      scheduledEventId: EventId): LambdaFunctionStartedEventAttributes = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "scheduledEventId" -> scheduledEventId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "scheduledEventId" -> scheduledEventId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[LambdaFunctionStartedEventAttributes]
     }
@@ -1980,19 +1980,19 @@ package swf {
    */
   @js.native
   trait LambdaFunctionTimedOutEventAttributes extends js.Object {
-    var scheduledEventId: js.UndefOr[EventId]
-    var startedEventId: js.UndefOr[EventId]
+    var scheduledEventId: EventId
+    var startedEventId: EventId
     var timeoutType: js.UndefOr[LambdaFunctionTimeoutType]
   }
 
   object LambdaFunctionTimedOutEventAttributes {
     def apply(
-      scheduledEventId: js.UndefOr[EventId] = js.undefined,
-      startedEventId: js.UndefOr[EventId] = js.undefined,
+      scheduledEventId: EventId,
+      startedEventId: EventId,
       timeoutType: js.UndefOr[LambdaFunctionTimeoutType] = js.undefined): LambdaFunctionTimedOutEventAttributes = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "scheduledEventId" -> scheduledEventId.map { x => x.asInstanceOf[js.Any] },
-        "startedEventId" -> startedEventId.map { x => x.asInstanceOf[js.Any] },
+        "scheduledEventId" -> scheduledEventId.asInstanceOf[js.Any],
+        "startedEventId" -> startedEventId.asInstanceOf[js.Any],
         "timeoutType" -> timeoutType.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[LambdaFunctionTimedOutEventAttributes]
@@ -2015,29 +2015,29 @@ package swf {
 
   @js.native
   trait ListActivityTypesInput extends js.Object {
-    var name: js.UndefOr[Name]
-    var reverseOrder: js.UndefOr[ReverseOrder]
-    var nextPageToken: js.UndefOr[PageToken]
-    var domain: js.UndefOr[DomainName]
-    var registrationStatus: js.UndefOr[RegistrationStatus]
+    var domain: DomainName
+    var registrationStatus: RegistrationStatus
     var maximumPageSize: js.UndefOr[PageSize]
+    var name: js.UndefOr[Name]
+    var nextPageToken: js.UndefOr[PageToken]
+    var reverseOrder: js.UndefOr[ReverseOrder]
   }
 
   object ListActivityTypesInput {
     def apply(
+      domain: DomainName,
+      registrationStatus: RegistrationStatus,
+      maximumPageSize: js.UndefOr[PageSize] = js.undefined,
       name: js.UndefOr[Name] = js.undefined,
-      reverseOrder: js.UndefOr[ReverseOrder] = js.undefined,
       nextPageToken: js.UndefOr[PageToken] = js.undefined,
-      domain: js.UndefOr[DomainName] = js.undefined,
-      registrationStatus: js.UndefOr[RegistrationStatus] = js.undefined,
-      maximumPageSize: js.UndefOr[PageSize] = js.undefined): ListActivityTypesInput = {
+      reverseOrder: js.UndefOr[ReverseOrder] = js.undefined): ListActivityTypesInput = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "domain" -> domain.asInstanceOf[js.Any],
+        "registrationStatus" -> registrationStatus.asInstanceOf[js.Any],
+        "maximumPageSize" -> maximumPageSize.map { x => x.asInstanceOf[js.Any] },
         "name" -> name.map { x => x.asInstanceOf[js.Any] },
-        "reverseOrder" -> reverseOrder.map { x => x.asInstanceOf[js.Any] },
         "nextPageToken" -> nextPageToken.map { x => x.asInstanceOf[js.Any] },
-        "domain" -> domain.map { x => x.asInstanceOf[js.Any] },
-        "registrationStatus" -> registrationStatus.map { x => x.asInstanceOf[js.Any] },
-        "maximumPageSize" -> maximumPageSize.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "reverseOrder" -> reverseOrder.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListActivityTypesInput]
     }
@@ -2045,41 +2045,41 @@ package swf {
 
   @js.native
   trait ListClosedWorkflowExecutionsInput extends js.Object {
-    var executionFilter: js.UndefOr[WorkflowExecutionFilter]
-    var startTimeFilter: js.UndefOr[ExecutionTimeFilter]
-    var reverseOrder: js.UndefOr[ReverseOrder]
-    var nextPageToken: js.UndefOr[PageToken]
-    var domain: js.UndefOr[DomainName]
+    var domain: DomainName
     var closeStatusFilter: js.UndefOr[CloseStatusFilter]
     var closeTimeFilter: js.UndefOr[ExecutionTimeFilter]
-    var typeFilter: js.UndefOr[WorkflowTypeFilter]
-    var tagFilter: js.UndefOr[TagFilter]
+    var executionFilter: js.UndefOr[WorkflowExecutionFilter]
     var maximumPageSize: js.UndefOr[PageSize]
+    var nextPageToken: js.UndefOr[PageToken]
+    var reverseOrder: js.UndefOr[ReverseOrder]
+    var startTimeFilter: js.UndefOr[ExecutionTimeFilter]
+    var tagFilter: js.UndefOr[TagFilter]
+    var typeFilter: js.UndefOr[WorkflowTypeFilter]
   }
 
   object ListClosedWorkflowExecutionsInput {
     def apply(
-      executionFilter: js.UndefOr[WorkflowExecutionFilter] = js.undefined,
-      startTimeFilter: js.UndefOr[ExecutionTimeFilter] = js.undefined,
-      reverseOrder: js.UndefOr[ReverseOrder] = js.undefined,
-      nextPageToken: js.UndefOr[PageToken] = js.undefined,
-      domain: js.UndefOr[DomainName] = js.undefined,
+      domain: DomainName,
       closeStatusFilter: js.UndefOr[CloseStatusFilter] = js.undefined,
       closeTimeFilter: js.UndefOr[ExecutionTimeFilter] = js.undefined,
-      typeFilter: js.UndefOr[WorkflowTypeFilter] = js.undefined,
+      executionFilter: js.UndefOr[WorkflowExecutionFilter] = js.undefined,
+      maximumPageSize: js.UndefOr[PageSize] = js.undefined,
+      nextPageToken: js.UndefOr[PageToken] = js.undefined,
+      reverseOrder: js.UndefOr[ReverseOrder] = js.undefined,
+      startTimeFilter: js.UndefOr[ExecutionTimeFilter] = js.undefined,
       tagFilter: js.UndefOr[TagFilter] = js.undefined,
-      maximumPageSize: js.UndefOr[PageSize] = js.undefined): ListClosedWorkflowExecutionsInput = {
+      typeFilter: js.UndefOr[WorkflowTypeFilter] = js.undefined): ListClosedWorkflowExecutionsInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "executionFilter" -> executionFilter.map { x => x.asInstanceOf[js.Any] },
-        "startTimeFilter" -> startTimeFilter.map { x => x.asInstanceOf[js.Any] },
-        "reverseOrder" -> reverseOrder.map { x => x.asInstanceOf[js.Any] },
-        "nextPageToken" -> nextPageToken.map { x => x.asInstanceOf[js.Any] },
-        "domain" -> domain.map { x => x.asInstanceOf[js.Any] },
+        "domain" -> domain.asInstanceOf[js.Any],
         "closeStatusFilter" -> closeStatusFilter.map { x => x.asInstanceOf[js.Any] },
         "closeTimeFilter" -> closeTimeFilter.map { x => x.asInstanceOf[js.Any] },
-        "typeFilter" -> typeFilter.map { x => x.asInstanceOf[js.Any] },
+        "executionFilter" -> executionFilter.map { x => x.asInstanceOf[js.Any] },
+        "maximumPageSize" -> maximumPageSize.map { x => x.asInstanceOf[js.Any] },
+        "nextPageToken" -> nextPageToken.map { x => x.asInstanceOf[js.Any] },
+        "reverseOrder" -> reverseOrder.map { x => x.asInstanceOf[js.Any] },
+        "startTimeFilter" -> startTimeFilter.map { x => x.asInstanceOf[js.Any] },
         "tagFilter" -> tagFilter.map { x => x.asInstanceOf[js.Any] },
-        "maximumPageSize" -> maximumPageSize.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "typeFilter" -> typeFilter.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListClosedWorkflowExecutionsInput]
     }
@@ -2087,22 +2087,22 @@ package swf {
 
   @js.native
   trait ListDomainsInput extends js.Object {
-    var nextPageToken: js.UndefOr[PageToken]
-    var registrationStatus: js.UndefOr[RegistrationStatus]
+    var registrationStatus: RegistrationStatus
     var maximumPageSize: js.UndefOr[PageSize]
+    var nextPageToken: js.UndefOr[PageToken]
     var reverseOrder: js.UndefOr[ReverseOrder]
   }
 
   object ListDomainsInput {
     def apply(
-      nextPageToken: js.UndefOr[PageToken] = js.undefined,
-      registrationStatus: js.UndefOr[RegistrationStatus] = js.undefined,
+      registrationStatus: RegistrationStatus,
       maximumPageSize: js.UndefOr[PageSize] = js.undefined,
+      nextPageToken: js.UndefOr[PageToken] = js.undefined,
       reverseOrder: js.UndefOr[ReverseOrder] = js.undefined): ListDomainsInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "nextPageToken" -> nextPageToken.map { x => x.asInstanceOf[js.Any] },
-        "registrationStatus" -> registrationStatus.map { x => x.asInstanceOf[js.Any] },
+        "registrationStatus" -> registrationStatus.asInstanceOf[js.Any],
         "maximumPageSize" -> maximumPageSize.map { x => x.asInstanceOf[js.Any] },
+        "nextPageToken" -> nextPageToken.map { x => x.asInstanceOf[js.Any] },
         "reverseOrder" -> reverseOrder.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListDomainsInput]
@@ -2111,35 +2111,35 @@ package swf {
 
   @js.native
   trait ListOpenWorkflowExecutionsInput extends js.Object {
+    var domain: DomainName
+    var startTimeFilter: ExecutionTimeFilter
     var executionFilter: js.UndefOr[WorkflowExecutionFilter]
-    var startTimeFilter: js.UndefOr[ExecutionTimeFilter]
-    var reverseOrder: js.UndefOr[ReverseOrder]
-    var nextPageToken: js.UndefOr[PageToken]
-    var domain: js.UndefOr[DomainName]
-    var typeFilter: js.UndefOr[WorkflowTypeFilter]
-    var tagFilter: js.UndefOr[TagFilter]
     var maximumPageSize: js.UndefOr[PageSize]
+    var nextPageToken: js.UndefOr[PageToken]
+    var reverseOrder: js.UndefOr[ReverseOrder]
+    var tagFilter: js.UndefOr[TagFilter]
+    var typeFilter: js.UndefOr[WorkflowTypeFilter]
   }
 
   object ListOpenWorkflowExecutionsInput {
     def apply(
+      domain: DomainName,
+      startTimeFilter: ExecutionTimeFilter,
       executionFilter: js.UndefOr[WorkflowExecutionFilter] = js.undefined,
-      startTimeFilter: js.UndefOr[ExecutionTimeFilter] = js.undefined,
-      reverseOrder: js.UndefOr[ReverseOrder] = js.undefined,
+      maximumPageSize: js.UndefOr[PageSize] = js.undefined,
       nextPageToken: js.UndefOr[PageToken] = js.undefined,
-      domain: js.UndefOr[DomainName] = js.undefined,
-      typeFilter: js.UndefOr[WorkflowTypeFilter] = js.undefined,
+      reverseOrder: js.UndefOr[ReverseOrder] = js.undefined,
       tagFilter: js.UndefOr[TagFilter] = js.undefined,
-      maximumPageSize: js.UndefOr[PageSize] = js.undefined): ListOpenWorkflowExecutionsInput = {
+      typeFilter: js.UndefOr[WorkflowTypeFilter] = js.undefined): ListOpenWorkflowExecutionsInput = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "domain" -> domain.asInstanceOf[js.Any],
+        "startTimeFilter" -> startTimeFilter.asInstanceOf[js.Any],
         "executionFilter" -> executionFilter.map { x => x.asInstanceOf[js.Any] },
-        "startTimeFilter" -> startTimeFilter.map { x => x.asInstanceOf[js.Any] },
-        "reverseOrder" -> reverseOrder.map { x => x.asInstanceOf[js.Any] },
+        "maximumPageSize" -> maximumPageSize.map { x => x.asInstanceOf[js.Any] },
         "nextPageToken" -> nextPageToken.map { x => x.asInstanceOf[js.Any] },
-        "domain" -> domain.map { x => x.asInstanceOf[js.Any] },
-        "typeFilter" -> typeFilter.map { x => x.asInstanceOf[js.Any] },
+        "reverseOrder" -> reverseOrder.map { x => x.asInstanceOf[js.Any] },
         "tagFilter" -> tagFilter.map { x => x.asInstanceOf[js.Any] },
-        "maximumPageSize" -> maximumPageSize.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "typeFilter" -> typeFilter.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListOpenWorkflowExecutionsInput]
     }
@@ -2147,29 +2147,29 @@ package swf {
 
   @js.native
   trait ListWorkflowTypesInput extends js.Object {
-    var name: js.UndefOr[Name]
-    var reverseOrder: js.UndefOr[ReverseOrder]
-    var nextPageToken: js.UndefOr[PageToken]
-    var domain: js.UndefOr[DomainName]
-    var registrationStatus: js.UndefOr[RegistrationStatus]
+    var domain: DomainName
+    var registrationStatus: RegistrationStatus
     var maximumPageSize: js.UndefOr[PageSize]
+    var name: js.UndefOr[Name]
+    var nextPageToken: js.UndefOr[PageToken]
+    var reverseOrder: js.UndefOr[ReverseOrder]
   }
 
   object ListWorkflowTypesInput {
     def apply(
+      domain: DomainName,
+      registrationStatus: RegistrationStatus,
+      maximumPageSize: js.UndefOr[PageSize] = js.undefined,
       name: js.UndefOr[Name] = js.undefined,
-      reverseOrder: js.UndefOr[ReverseOrder] = js.undefined,
       nextPageToken: js.UndefOr[PageToken] = js.undefined,
-      domain: js.UndefOr[DomainName] = js.undefined,
-      registrationStatus: js.UndefOr[RegistrationStatus] = js.undefined,
-      maximumPageSize: js.UndefOr[PageSize] = js.undefined): ListWorkflowTypesInput = {
+      reverseOrder: js.UndefOr[ReverseOrder] = js.undefined): ListWorkflowTypesInput = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "domain" -> domain.asInstanceOf[js.Any],
+        "registrationStatus" -> registrationStatus.asInstanceOf[js.Any],
+        "maximumPageSize" -> maximumPageSize.map { x => x.asInstanceOf[js.Any] },
         "name" -> name.map { x => x.asInstanceOf[js.Any] },
-        "reverseOrder" -> reverseOrder.map { x => x.asInstanceOf[js.Any] },
         "nextPageToken" -> nextPageToken.map { x => x.asInstanceOf[js.Any] },
-        "domain" -> domain.map { x => x.asInstanceOf[js.Any] },
-        "registrationStatus" -> registrationStatus.map { x => x.asInstanceOf[js.Any] },
-        "maximumPageSize" -> maximumPageSize.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "reverseOrder" -> reverseOrder.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListWorkflowTypesInput]
     }
@@ -2180,20 +2180,20 @@ package swf {
    */
   @js.native
   trait MarkerRecordedEventAttributes extends js.Object {
-    var markerName: js.UndefOr[MarkerName]
+    var decisionTaskCompletedEventId: EventId
+    var markerName: MarkerName
     var details: js.UndefOr[Data]
-    var decisionTaskCompletedEventId: js.UndefOr[EventId]
   }
 
   object MarkerRecordedEventAttributes {
     def apply(
-      markerName: js.UndefOr[MarkerName] = js.undefined,
-      details: js.UndefOr[Data] = js.undefined,
-      decisionTaskCompletedEventId: js.UndefOr[EventId] = js.undefined): MarkerRecordedEventAttributes = {
+      decisionTaskCompletedEventId: EventId,
+      markerName: MarkerName,
+      details: js.UndefOr[Data] = js.undefined): MarkerRecordedEventAttributes = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "markerName" -> markerName.map { x => x.asInstanceOf[js.Any] },
-        "details" -> details.map { x => x.asInstanceOf[js.Any] },
-        "decisionTaskCompletedEventId" -> decisionTaskCompletedEventId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "decisionTaskCompletedEventId" -> decisionTaskCompletedEventId.asInstanceOf[js.Any],
+        "markerName" -> markerName.asInstanceOf[js.Any],
+        "details" -> details.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[MarkerRecordedEventAttributes]
     }
@@ -2212,16 +2212,16 @@ package swf {
    */
   @js.native
   trait PendingTaskCount extends js.Object {
-    var count: js.UndefOr[Count]
+    var count: Count
     var truncated: js.UndefOr[Truncated]
   }
 
   object PendingTaskCount {
     def apply(
-      count: js.UndefOr[Count] = js.undefined,
+      count: Count,
       truncated: js.UndefOr[Truncated] = js.undefined): PendingTaskCount = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "count" -> count.map { x => x.asInstanceOf[js.Any] },
+        "count" -> count.asInstanceOf[js.Any],
         "truncated" -> truncated.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PendingTaskCount]
@@ -2230,19 +2230,19 @@ package swf {
 
   @js.native
   trait PollForActivityTaskInput extends js.Object {
-    var domain: js.UndefOr[DomainName]
-    var taskList: js.UndefOr[TaskList]
+    var domain: DomainName
+    var taskList: TaskList
     var identity: js.UndefOr[Identity]
   }
 
   object PollForActivityTaskInput {
     def apply(
-      domain: js.UndefOr[DomainName] = js.undefined,
-      taskList: js.UndefOr[TaskList] = js.undefined,
+      domain: DomainName,
+      taskList: TaskList,
       identity: js.UndefOr[Identity] = js.undefined): PollForActivityTaskInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "domain" -> domain.map { x => x.asInstanceOf[js.Any] },
-        "taskList" -> taskList.map { x => x.asInstanceOf[js.Any] },
+        "domain" -> domain.asInstanceOf[js.Any],
+        "taskList" -> taskList.asInstanceOf[js.Any],
         "identity" -> identity.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PollForActivityTaskInput]
@@ -2251,29 +2251,29 @@ package swf {
 
   @js.native
   trait PollForDecisionTaskInput extends js.Object {
-    var reverseOrder: js.UndefOr[ReverseOrder]
-    var nextPageToken: js.UndefOr[PageToken]
-    var domain: js.UndefOr[DomainName]
-    var taskList: js.UndefOr[TaskList]
+    var domain: DomainName
+    var taskList: TaskList
     var identity: js.UndefOr[Identity]
     var maximumPageSize: js.UndefOr[PageSize]
+    var nextPageToken: js.UndefOr[PageToken]
+    var reverseOrder: js.UndefOr[ReverseOrder]
   }
 
   object PollForDecisionTaskInput {
     def apply(
-      reverseOrder: js.UndefOr[ReverseOrder] = js.undefined,
-      nextPageToken: js.UndefOr[PageToken] = js.undefined,
-      domain: js.UndefOr[DomainName] = js.undefined,
-      taskList: js.UndefOr[TaskList] = js.undefined,
+      domain: DomainName,
+      taskList: TaskList,
       identity: js.UndefOr[Identity] = js.undefined,
-      maximumPageSize: js.UndefOr[PageSize] = js.undefined): PollForDecisionTaskInput = {
+      maximumPageSize: js.UndefOr[PageSize] = js.undefined,
+      nextPageToken: js.UndefOr[PageToken] = js.undefined,
+      reverseOrder: js.UndefOr[ReverseOrder] = js.undefined): PollForDecisionTaskInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "reverseOrder" -> reverseOrder.map { x => x.asInstanceOf[js.Any] },
-        "nextPageToken" -> nextPageToken.map { x => x.asInstanceOf[js.Any] },
-        "domain" -> domain.map { x => x.asInstanceOf[js.Any] },
-        "taskList" -> taskList.map { x => x.asInstanceOf[js.Any] },
+        "domain" -> domain.asInstanceOf[js.Any],
+        "taskList" -> taskList.asInstanceOf[js.Any],
         "identity" -> identity.map { x => x.asInstanceOf[js.Any] },
-        "maximumPageSize" -> maximumPageSize.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "maximumPageSize" -> maximumPageSize.map { x => x.asInstanceOf[js.Any] },
+        "nextPageToken" -> nextPageToken.map { x => x.asInstanceOf[js.Any] },
+        "reverseOrder" -> reverseOrder.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PollForDecisionTaskInput]
     }
@@ -2281,16 +2281,16 @@ package swf {
 
   @js.native
   trait RecordActivityTaskHeartbeatInput extends js.Object {
-    var taskToken: js.UndefOr[TaskToken]
+    var taskToken: TaskToken
     var details: js.UndefOr[LimitedData]
   }
 
   object RecordActivityTaskHeartbeatInput {
     def apply(
-      taskToken: js.UndefOr[TaskToken] = js.undefined,
+      taskToken: TaskToken,
       details: js.UndefOr[LimitedData] = js.undefined): RecordActivityTaskHeartbeatInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "taskToken" -> taskToken.map { x => x.asInstanceOf[js.Any] },
+        "taskToken" -> taskToken.asInstanceOf[js.Any],
         "details" -> details.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RecordActivityTaskHeartbeatInput]
@@ -2302,16 +2302,16 @@ package swf {
    */
   @js.native
   trait RecordMarkerDecisionAttributes extends js.Object {
-    var markerName: js.UndefOr[MarkerName]
+    var markerName: MarkerName
     var details: js.UndefOr[Data]
   }
 
   object RecordMarkerDecisionAttributes {
     def apply(
-      markerName: js.UndefOr[MarkerName] = js.undefined,
+      markerName: MarkerName,
       details: js.UndefOr[Data] = js.undefined): RecordMarkerDecisionAttributes = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "markerName" -> markerName.map { x => x.asInstanceOf[js.Any] },
+        "markerName" -> markerName.asInstanceOf[js.Any],
         "details" -> details.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RecordMarkerDecisionAttributes]
@@ -2329,20 +2329,20 @@ package swf {
    */
   @js.native
   trait RecordMarkerFailedEventAttributes extends js.Object {
-    var markerName: js.UndefOr[MarkerName]
-    var cause: js.UndefOr[RecordMarkerFailedCause]
-    var decisionTaskCompletedEventId: js.UndefOr[EventId]
+    var cause: RecordMarkerFailedCause
+    var decisionTaskCompletedEventId: EventId
+    var markerName: MarkerName
   }
 
   object RecordMarkerFailedEventAttributes {
     def apply(
-      markerName: js.UndefOr[MarkerName] = js.undefined,
-      cause: js.UndefOr[RecordMarkerFailedCause] = js.undefined,
-      decisionTaskCompletedEventId: js.UndefOr[EventId] = js.undefined): RecordMarkerFailedEventAttributes = {
+      cause: RecordMarkerFailedCause,
+      decisionTaskCompletedEventId: EventId,
+      markerName: MarkerName): RecordMarkerFailedEventAttributes = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "markerName" -> markerName.map { x => x.asInstanceOf[js.Any] },
-        "cause" -> cause.map { x => x.asInstanceOf[js.Any] },
-        "decisionTaskCompletedEventId" -> decisionTaskCompletedEventId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "cause" -> cause.asInstanceOf[js.Any],
+        "decisionTaskCompletedEventId" -> decisionTaskCompletedEventId.asInstanceOf[js.Any],
+        "markerName" -> markerName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RecordMarkerFailedEventAttributes]
     }
@@ -2350,41 +2350,41 @@ package swf {
 
   @js.native
   trait RegisterActivityTypeInput extends js.Object {
-    var defaultTaskStartToCloseTimeout: js.UndefOr[DurationInSecondsOptional]
-    var name: js.UndefOr[Name]
-    var defaultTaskScheduleToStartTimeout: js.UndefOr[DurationInSecondsOptional]
-    var defaultTaskList: js.UndefOr[TaskList]
-    var description: js.UndefOr[Description]
-    var domain: js.UndefOr[DomainName]
-    var defaultTaskScheduleToCloseTimeout: js.UndefOr[DurationInSecondsOptional]
+    var domain: DomainName
+    var name: Name
+    var version: Version
     var defaultTaskHeartbeatTimeout: js.UndefOr[DurationInSecondsOptional]
-    var version: js.UndefOr[Version]
+    var defaultTaskList: js.UndefOr[TaskList]
     var defaultTaskPriority: js.UndefOr[TaskPriority]
+    var defaultTaskScheduleToCloseTimeout: js.UndefOr[DurationInSecondsOptional]
+    var defaultTaskScheduleToStartTimeout: js.UndefOr[DurationInSecondsOptional]
+    var defaultTaskStartToCloseTimeout: js.UndefOr[DurationInSecondsOptional]
+    var description: js.UndefOr[Description]
   }
 
   object RegisterActivityTypeInput {
     def apply(
-      defaultTaskStartToCloseTimeout: js.UndefOr[DurationInSecondsOptional] = js.undefined,
-      name: js.UndefOr[Name] = js.undefined,
-      defaultTaskScheduleToStartTimeout: js.UndefOr[DurationInSecondsOptional] = js.undefined,
-      defaultTaskList: js.UndefOr[TaskList] = js.undefined,
-      description: js.UndefOr[Description] = js.undefined,
-      domain: js.UndefOr[DomainName] = js.undefined,
-      defaultTaskScheduleToCloseTimeout: js.UndefOr[DurationInSecondsOptional] = js.undefined,
+      domain: DomainName,
+      name: Name,
+      version: Version,
       defaultTaskHeartbeatTimeout: js.UndefOr[DurationInSecondsOptional] = js.undefined,
-      version: js.UndefOr[Version] = js.undefined,
-      defaultTaskPriority: js.UndefOr[TaskPriority] = js.undefined): RegisterActivityTypeInput = {
+      defaultTaskList: js.UndefOr[TaskList] = js.undefined,
+      defaultTaskPriority: js.UndefOr[TaskPriority] = js.undefined,
+      defaultTaskScheduleToCloseTimeout: js.UndefOr[DurationInSecondsOptional] = js.undefined,
+      defaultTaskScheduleToStartTimeout: js.UndefOr[DurationInSecondsOptional] = js.undefined,
+      defaultTaskStartToCloseTimeout: js.UndefOr[DurationInSecondsOptional] = js.undefined,
+      description: js.UndefOr[Description] = js.undefined): RegisterActivityTypeInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "defaultTaskStartToCloseTimeout" -> defaultTaskStartToCloseTimeout.map { x => x.asInstanceOf[js.Any] },
-        "name" -> name.map { x => x.asInstanceOf[js.Any] },
-        "defaultTaskScheduleToStartTimeout" -> defaultTaskScheduleToStartTimeout.map { x => x.asInstanceOf[js.Any] },
-        "defaultTaskList" -> defaultTaskList.map { x => x.asInstanceOf[js.Any] },
-        "description" -> description.map { x => x.asInstanceOf[js.Any] },
-        "domain" -> domain.map { x => x.asInstanceOf[js.Any] },
-        "defaultTaskScheduleToCloseTimeout" -> defaultTaskScheduleToCloseTimeout.map { x => x.asInstanceOf[js.Any] },
+        "domain" -> domain.asInstanceOf[js.Any],
+        "name" -> name.asInstanceOf[js.Any],
+        "version" -> version.asInstanceOf[js.Any],
         "defaultTaskHeartbeatTimeout" -> defaultTaskHeartbeatTimeout.map { x => x.asInstanceOf[js.Any] },
-        "version" -> version.map { x => x.asInstanceOf[js.Any] },
-        "defaultTaskPriority" -> defaultTaskPriority.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "defaultTaskList" -> defaultTaskList.map { x => x.asInstanceOf[js.Any] },
+        "defaultTaskPriority" -> defaultTaskPriority.map { x => x.asInstanceOf[js.Any] },
+        "defaultTaskScheduleToCloseTimeout" -> defaultTaskScheduleToCloseTimeout.map { x => x.asInstanceOf[js.Any] },
+        "defaultTaskScheduleToStartTimeout" -> defaultTaskScheduleToStartTimeout.map { x => x.asInstanceOf[js.Any] },
+        "defaultTaskStartToCloseTimeout" -> defaultTaskStartToCloseTimeout.map { x => x.asInstanceOf[js.Any] },
+        "description" -> description.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RegisterActivityTypeInput]
     }
@@ -2392,20 +2392,20 @@ package swf {
 
   @js.native
   trait RegisterDomainInput extends js.Object {
-    var name: js.UndefOr[DomainName]
+    var name: DomainName
+    var workflowExecutionRetentionPeriodInDays: DurationInDays
     var description: js.UndefOr[Description]
-    var workflowExecutionRetentionPeriodInDays: js.UndefOr[DurationInDays]
   }
 
   object RegisterDomainInput {
     def apply(
-      name: js.UndefOr[DomainName] = js.undefined,
-      description: js.UndefOr[Description] = js.undefined,
-      workflowExecutionRetentionPeriodInDays: js.UndefOr[DurationInDays] = js.undefined): RegisterDomainInput = {
+      name: DomainName,
+      workflowExecutionRetentionPeriodInDays: DurationInDays,
+      description: js.UndefOr[Description] = js.undefined): RegisterDomainInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "name" -> name.map { x => x.asInstanceOf[js.Any] },
-        "description" -> description.map { x => x.asInstanceOf[js.Any] },
-        "workflowExecutionRetentionPeriodInDays" -> workflowExecutionRetentionPeriodInDays.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "name" -> name.asInstanceOf[js.Any],
+        "workflowExecutionRetentionPeriodInDays" -> workflowExecutionRetentionPeriodInDays.asInstanceOf[js.Any],
+        "description" -> description.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RegisterDomainInput]
     }
@@ -2413,41 +2413,41 @@ package swf {
 
   @js.native
   trait RegisterWorkflowTypeInput extends js.Object {
-    var defaultTaskStartToCloseTimeout: js.UndefOr[DurationInSecondsOptional]
-    var name: js.UndefOr[Name]
-    var defaultTaskList: js.UndefOr[TaskList]
-    var description: js.UndefOr[Description]
-    var domain: js.UndefOr[DomainName]
-    var defaultLambdaRole: js.UndefOr[Arn]
-    var version: js.UndefOr[Version]
+    var domain: DomainName
+    var name: Name
+    var version: Version
     var defaultChildPolicy: js.UndefOr[ChildPolicy]
-    var defaultTaskPriority: js.UndefOr[TaskPriority]
     var defaultExecutionStartToCloseTimeout: js.UndefOr[DurationInSecondsOptional]
+    var defaultLambdaRole: js.UndefOr[Arn]
+    var defaultTaskList: js.UndefOr[TaskList]
+    var defaultTaskPriority: js.UndefOr[TaskPriority]
+    var defaultTaskStartToCloseTimeout: js.UndefOr[DurationInSecondsOptional]
+    var description: js.UndefOr[Description]
   }
 
   object RegisterWorkflowTypeInput {
     def apply(
-      defaultTaskStartToCloseTimeout: js.UndefOr[DurationInSecondsOptional] = js.undefined,
-      name: js.UndefOr[Name] = js.undefined,
-      defaultTaskList: js.UndefOr[TaskList] = js.undefined,
-      description: js.UndefOr[Description] = js.undefined,
-      domain: js.UndefOr[DomainName] = js.undefined,
-      defaultLambdaRole: js.UndefOr[Arn] = js.undefined,
-      version: js.UndefOr[Version] = js.undefined,
+      domain: DomainName,
+      name: Name,
+      version: Version,
       defaultChildPolicy: js.UndefOr[ChildPolicy] = js.undefined,
+      defaultExecutionStartToCloseTimeout: js.UndefOr[DurationInSecondsOptional] = js.undefined,
+      defaultLambdaRole: js.UndefOr[Arn] = js.undefined,
+      defaultTaskList: js.UndefOr[TaskList] = js.undefined,
       defaultTaskPriority: js.UndefOr[TaskPriority] = js.undefined,
-      defaultExecutionStartToCloseTimeout: js.UndefOr[DurationInSecondsOptional] = js.undefined): RegisterWorkflowTypeInput = {
+      defaultTaskStartToCloseTimeout: js.UndefOr[DurationInSecondsOptional] = js.undefined,
+      description: js.UndefOr[Description] = js.undefined): RegisterWorkflowTypeInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "defaultTaskStartToCloseTimeout" -> defaultTaskStartToCloseTimeout.map { x => x.asInstanceOf[js.Any] },
-        "name" -> name.map { x => x.asInstanceOf[js.Any] },
-        "defaultTaskList" -> defaultTaskList.map { x => x.asInstanceOf[js.Any] },
-        "description" -> description.map { x => x.asInstanceOf[js.Any] },
-        "domain" -> domain.map { x => x.asInstanceOf[js.Any] },
-        "defaultLambdaRole" -> defaultLambdaRole.map { x => x.asInstanceOf[js.Any] },
-        "version" -> version.map { x => x.asInstanceOf[js.Any] },
+        "domain" -> domain.asInstanceOf[js.Any],
+        "name" -> name.asInstanceOf[js.Any],
+        "version" -> version.asInstanceOf[js.Any],
         "defaultChildPolicy" -> defaultChildPolicy.map { x => x.asInstanceOf[js.Any] },
+        "defaultExecutionStartToCloseTimeout" -> defaultExecutionStartToCloseTimeout.map { x => x.asInstanceOf[js.Any] },
+        "defaultLambdaRole" -> defaultLambdaRole.map { x => x.asInstanceOf[js.Any] },
+        "defaultTaskList" -> defaultTaskList.map { x => x.asInstanceOf[js.Any] },
         "defaultTaskPriority" -> defaultTaskPriority.map { x => x.asInstanceOf[js.Any] },
-        "defaultExecutionStartToCloseTimeout" -> defaultExecutionStartToCloseTimeout.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "defaultTaskStartToCloseTimeout" -> defaultTaskStartToCloseTimeout.map { x => x.asInstanceOf[js.Any] },
+        "description" -> description.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RegisterWorkflowTypeInput]
     }
@@ -2465,14 +2465,14 @@ package swf {
    */
   @js.native
   trait RequestCancelActivityTaskDecisionAttributes extends js.Object {
-    var activityId: js.UndefOr[ActivityId]
+    var activityId: ActivityId
   }
 
   object RequestCancelActivityTaskDecisionAttributes {
     def apply(
-      activityId: js.UndefOr[ActivityId] = js.undefined): RequestCancelActivityTaskDecisionAttributes = {
+      activityId: ActivityId): RequestCancelActivityTaskDecisionAttributes = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "activityId" -> activityId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "activityId" -> activityId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RequestCancelActivityTaskDecisionAttributes]
     }
@@ -2490,20 +2490,20 @@ package swf {
    */
   @js.native
   trait RequestCancelActivityTaskFailedEventAttributes extends js.Object {
-    var activityId: js.UndefOr[ActivityId]
-    var cause: js.UndefOr[RequestCancelActivityTaskFailedCause]
-    var decisionTaskCompletedEventId: js.UndefOr[EventId]
+    var activityId: ActivityId
+    var cause: RequestCancelActivityTaskFailedCause
+    var decisionTaskCompletedEventId: EventId
   }
 
   object RequestCancelActivityTaskFailedEventAttributes {
     def apply(
-      activityId: js.UndefOr[ActivityId] = js.undefined,
-      cause: js.UndefOr[RequestCancelActivityTaskFailedCause] = js.undefined,
-      decisionTaskCompletedEventId: js.UndefOr[EventId] = js.undefined): RequestCancelActivityTaskFailedEventAttributes = {
+      activityId: ActivityId,
+      cause: RequestCancelActivityTaskFailedCause,
+      decisionTaskCompletedEventId: EventId): RequestCancelActivityTaskFailedEventAttributes = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "activityId" -> activityId.map { x => x.asInstanceOf[js.Any] },
-        "cause" -> cause.map { x => x.asInstanceOf[js.Any] },
-        "decisionTaskCompletedEventId" -> decisionTaskCompletedEventId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "activityId" -> activityId.asInstanceOf[js.Any],
+        "cause" -> cause.asInstanceOf[js.Any],
+        "decisionTaskCompletedEventId" -> decisionTaskCompletedEventId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RequestCancelActivityTaskFailedEventAttributes]
     }
@@ -2514,20 +2514,20 @@ package swf {
    */
   @js.native
   trait RequestCancelExternalWorkflowExecutionDecisionAttributes extends js.Object {
-    var workflowId: js.UndefOr[WorkflowId]
-    var runId: js.UndefOr[WorkflowRunIdOptional]
+    var workflowId: WorkflowId
     var control: js.UndefOr[Data]
+    var runId: js.UndefOr[WorkflowRunIdOptional]
   }
 
   object RequestCancelExternalWorkflowExecutionDecisionAttributes {
     def apply(
-      workflowId: js.UndefOr[WorkflowId] = js.undefined,
-      runId: js.UndefOr[WorkflowRunIdOptional] = js.undefined,
-      control: js.UndefOr[Data] = js.undefined): RequestCancelExternalWorkflowExecutionDecisionAttributes = {
+      workflowId: WorkflowId,
+      control: js.UndefOr[Data] = js.undefined,
+      runId: js.UndefOr[WorkflowRunIdOptional] = js.undefined): RequestCancelExternalWorkflowExecutionDecisionAttributes = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "workflowId" -> workflowId.map { x => x.asInstanceOf[js.Any] },
-        "runId" -> runId.map { x => x.asInstanceOf[js.Any] },
-        "control" -> control.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "workflowId" -> workflowId.asInstanceOf[js.Any],
+        "control" -> control.map { x => x.asInstanceOf[js.Any] },
+        "runId" -> runId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RequestCancelExternalWorkflowExecutionDecisionAttributes]
     }
@@ -2546,29 +2546,29 @@ package swf {
    */
   @js.native
   trait RequestCancelExternalWorkflowExecutionFailedEventAttributes extends js.Object {
-    var initiatedEventId: js.UndefOr[EventId]
-    var decisionTaskCompletedEventId: js.UndefOr[EventId]
-    var cause: js.UndefOr[RequestCancelExternalWorkflowExecutionFailedCause]
+    var cause: RequestCancelExternalWorkflowExecutionFailedCause
+    var decisionTaskCompletedEventId: EventId
+    var initiatedEventId: EventId
+    var workflowId: WorkflowId
     var control: js.UndefOr[Data]
     var runId: js.UndefOr[WorkflowRunIdOptional]
-    var workflowId: js.UndefOr[WorkflowId]
   }
 
   object RequestCancelExternalWorkflowExecutionFailedEventAttributes {
     def apply(
-      initiatedEventId: js.UndefOr[EventId] = js.undefined,
-      decisionTaskCompletedEventId: js.UndefOr[EventId] = js.undefined,
-      cause: js.UndefOr[RequestCancelExternalWorkflowExecutionFailedCause] = js.undefined,
+      cause: RequestCancelExternalWorkflowExecutionFailedCause,
+      decisionTaskCompletedEventId: EventId,
+      initiatedEventId: EventId,
+      workflowId: WorkflowId,
       control: js.UndefOr[Data] = js.undefined,
-      runId: js.UndefOr[WorkflowRunIdOptional] = js.undefined,
-      workflowId: js.UndefOr[WorkflowId] = js.undefined): RequestCancelExternalWorkflowExecutionFailedEventAttributes = {
+      runId: js.UndefOr[WorkflowRunIdOptional] = js.undefined): RequestCancelExternalWorkflowExecutionFailedEventAttributes = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "initiatedEventId" -> initiatedEventId.map { x => x.asInstanceOf[js.Any] },
-        "decisionTaskCompletedEventId" -> decisionTaskCompletedEventId.map { x => x.asInstanceOf[js.Any] },
-        "cause" -> cause.map { x => x.asInstanceOf[js.Any] },
+        "cause" -> cause.asInstanceOf[js.Any],
+        "decisionTaskCompletedEventId" -> decisionTaskCompletedEventId.asInstanceOf[js.Any],
+        "initiatedEventId" -> initiatedEventId.asInstanceOf[js.Any],
+        "workflowId" -> workflowId.asInstanceOf[js.Any],
         "control" -> control.map { x => x.asInstanceOf[js.Any] },
-        "runId" -> runId.map { x => x.asInstanceOf[js.Any] },
-        "workflowId" -> workflowId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "runId" -> runId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RequestCancelExternalWorkflowExecutionFailedEventAttributes]
     }
@@ -2579,23 +2579,23 @@ package swf {
    */
   @js.native
   trait RequestCancelExternalWorkflowExecutionInitiatedEventAttributes extends js.Object {
-    var workflowId: js.UndefOr[WorkflowId]
-    var runId: js.UndefOr[WorkflowRunIdOptional]
-    var decisionTaskCompletedEventId: js.UndefOr[EventId]
+    var decisionTaskCompletedEventId: EventId
+    var workflowId: WorkflowId
     var control: js.UndefOr[Data]
+    var runId: js.UndefOr[WorkflowRunIdOptional]
   }
 
   object RequestCancelExternalWorkflowExecutionInitiatedEventAttributes {
     def apply(
-      workflowId: js.UndefOr[WorkflowId] = js.undefined,
-      runId: js.UndefOr[WorkflowRunIdOptional] = js.undefined,
-      decisionTaskCompletedEventId: js.UndefOr[EventId] = js.undefined,
-      control: js.UndefOr[Data] = js.undefined): RequestCancelExternalWorkflowExecutionInitiatedEventAttributes = {
+      decisionTaskCompletedEventId: EventId,
+      workflowId: WorkflowId,
+      control: js.UndefOr[Data] = js.undefined,
+      runId: js.UndefOr[WorkflowRunIdOptional] = js.undefined): RequestCancelExternalWorkflowExecutionInitiatedEventAttributes = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "workflowId" -> workflowId.map { x => x.asInstanceOf[js.Any] },
-        "runId" -> runId.map { x => x.asInstanceOf[js.Any] },
-        "decisionTaskCompletedEventId" -> decisionTaskCompletedEventId.map { x => x.asInstanceOf[js.Any] },
-        "control" -> control.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "decisionTaskCompletedEventId" -> decisionTaskCompletedEventId.asInstanceOf[js.Any],
+        "workflowId" -> workflowId.asInstanceOf[js.Any],
+        "control" -> control.map { x => x.asInstanceOf[js.Any] },
+        "runId" -> runId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RequestCancelExternalWorkflowExecutionInitiatedEventAttributes]
     }
@@ -2603,19 +2603,19 @@ package swf {
 
   @js.native
   trait RequestCancelWorkflowExecutionInput extends js.Object {
-    var domain: js.UndefOr[DomainName]
-    var workflowId: js.UndefOr[WorkflowId]
+    var domain: DomainName
+    var workflowId: WorkflowId
     var runId: js.UndefOr[WorkflowRunIdOptional]
   }
 
   object RequestCancelWorkflowExecutionInput {
     def apply(
-      domain: js.UndefOr[DomainName] = js.undefined,
-      workflowId: js.UndefOr[WorkflowId] = js.undefined,
+      domain: DomainName,
+      workflowId: WorkflowId,
       runId: js.UndefOr[WorkflowRunIdOptional] = js.undefined): RequestCancelWorkflowExecutionInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "domain" -> domain.map { x => x.asInstanceOf[js.Any] },
-        "workflowId" -> workflowId.map { x => x.asInstanceOf[js.Any] },
+        "domain" -> domain.asInstanceOf[js.Any],
+        "workflowId" -> workflowId.asInstanceOf[js.Any],
         "runId" -> runId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RequestCancelWorkflowExecutionInput]
@@ -2624,16 +2624,16 @@ package swf {
 
   @js.native
   trait RespondActivityTaskCanceledInput extends js.Object {
-    var taskToken: js.UndefOr[TaskToken]
+    var taskToken: TaskToken
     var details: js.UndefOr[Data]
   }
 
   object RespondActivityTaskCanceledInput {
     def apply(
-      taskToken: js.UndefOr[TaskToken] = js.undefined,
+      taskToken: TaskToken,
       details: js.UndefOr[Data] = js.undefined): RespondActivityTaskCanceledInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "taskToken" -> taskToken.map { x => x.asInstanceOf[js.Any] },
+        "taskToken" -> taskToken.asInstanceOf[js.Any],
         "details" -> details.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RespondActivityTaskCanceledInput]
@@ -2642,16 +2642,16 @@ package swf {
 
   @js.native
   trait RespondActivityTaskCompletedInput extends js.Object {
-    var taskToken: js.UndefOr[TaskToken]
+    var taskToken: TaskToken
     var result: js.UndefOr[Data]
   }
 
   object RespondActivityTaskCompletedInput {
     def apply(
-      taskToken: js.UndefOr[TaskToken] = js.undefined,
+      taskToken: TaskToken,
       result: js.UndefOr[Data] = js.undefined): RespondActivityTaskCompletedInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "taskToken" -> taskToken.map { x => x.asInstanceOf[js.Any] },
+        "taskToken" -> taskToken.asInstanceOf[js.Any],
         "result" -> result.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RespondActivityTaskCompletedInput]
@@ -2660,20 +2660,20 @@ package swf {
 
   @js.native
   trait RespondActivityTaskFailedInput extends js.Object {
-    var taskToken: js.UndefOr[TaskToken]
-    var reason: js.UndefOr[FailureReason]
+    var taskToken: TaskToken
     var details: js.UndefOr[Data]
+    var reason: js.UndefOr[FailureReason]
   }
 
   object RespondActivityTaskFailedInput {
     def apply(
-      taskToken: js.UndefOr[TaskToken] = js.undefined,
-      reason: js.UndefOr[FailureReason] = js.undefined,
-      details: js.UndefOr[Data] = js.undefined): RespondActivityTaskFailedInput = {
+      taskToken: TaskToken,
+      details: js.UndefOr[Data] = js.undefined,
+      reason: js.UndefOr[FailureReason] = js.undefined): RespondActivityTaskFailedInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "taskToken" -> taskToken.map { x => x.asInstanceOf[js.Any] },
-        "reason" -> reason.map { x => x.asInstanceOf[js.Any] },
-        "details" -> details.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "taskToken" -> taskToken.asInstanceOf[js.Any],
+        "details" -> details.map { x => x.asInstanceOf[js.Any] },
+        "reason" -> reason.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RespondActivityTaskFailedInput]
     }
@@ -2684,18 +2684,18 @@ package swf {
    */
   @js.native
   trait RespondDecisionTaskCompletedInput extends js.Object {
-    var taskToken: js.UndefOr[TaskToken]
+    var taskToken: TaskToken
     var decisions: js.UndefOr[DecisionList]
     var executionContext: js.UndefOr[Data]
   }
 
   object RespondDecisionTaskCompletedInput {
     def apply(
-      taskToken: js.UndefOr[TaskToken] = js.undefined,
+      taskToken: TaskToken,
       decisions: js.UndefOr[DecisionList] = js.undefined,
       executionContext: js.UndefOr[Data] = js.undefined): RespondDecisionTaskCompletedInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "taskToken" -> taskToken.map { x => x.asInstanceOf[js.Any] },
+        "taskToken" -> taskToken.asInstanceOf[js.Any],
         "decisions" -> decisions.map { x => x.asInstanceOf[js.Any] },
         "executionContext" -> executionContext.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
@@ -2722,45 +2722,45 @@ package swf {
   }
 
   /**
-   * <p>Provides the details of the <code>ScheduleActivityTask</code> decision.</p> <p> <b>Access Control</b> </p> <p>You can use IAM policies to control this decision's access to Amazon SWF resources as follows:</p> <ul> <li> <p>Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.</p> </li> <li> <p>Use an <code>Action</code> element to allow or deny permission to call this action.</p> </li> <li> <p>Constrain the following parameters by using a <code>Condition</code> element with the appropriate keys.</p> <ul> <li> <p> <code>activityType.name</code> – String constraint. The key is <code>swf:activityType.name</code>.</p> </li> <li> <p> <code>activityType.version</code> – String constraint. The key is <code>swf:activityType.version</code>.</p> </li> <li> <p> <code>taskList</code> – String constraint. The key is <code>swf:taskList.name</code>.</p> </li> </ul> </li> </ul> <p>If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p>
+   * <p>Provides the details of the <code>ScheduleActivityTask</code> decision.</p> <p> <b>Access Control</b> </p> <p>You can use IAM policies to control this decision's access to Amazon SWF resources as follows:</p> <ul> <li> <p>Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.</p> </li> <li> <p>Use an <code>Action</code> element to allow or deny permission to call this action.</p> </li> <li> <p>Constrain the following parameters by using a <code>Condition</code> element with the appropriate keys.</p> <ul> <li> <p> <code>activityType.name</code> ? String constraint. The key is <code>swf:activityType.name</code>.</p> </li> <li> <p> <code>activityType.version</code> ? String constraint. The key is <code>swf:activityType.version</code>.</p> </li> <li> <p> <code>taskList</code> ? String constraint. The key is <code>swf:taskList.name</code>.</p> </li> </ul> </li> </ul> <p>If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p>
    */
   @js.native
   trait ScheduleActivityTaskDecisionAttributes extends js.Object {
-    var scheduleToStartTimeout: js.UndefOr[DurationInSecondsOptional]
+    var activityId: ActivityId
+    var activityType: ActivityType
+    var control: js.UndefOr[Data]
     var heartbeatTimeout: js.UndefOr[DurationInSecondsOptional]
+    var input: js.UndefOr[Data]
+    var scheduleToCloseTimeout: js.UndefOr[DurationInSecondsOptional]
+    var scheduleToStartTimeout: js.UndefOr[DurationInSecondsOptional]
     var startToCloseTimeout: js.UndefOr[DurationInSecondsOptional]
     var taskList: js.UndefOr[TaskList]
-    var activityId: js.UndefOr[ActivityId]
-    var activityType: js.UndefOr[ActivityType]
     var taskPriority: js.UndefOr[TaskPriority]
-    var control: js.UndefOr[Data]
-    var scheduleToCloseTimeout: js.UndefOr[DurationInSecondsOptional]
-    var input: js.UndefOr[Data]
   }
 
   object ScheduleActivityTaskDecisionAttributes {
     def apply(
-      scheduleToStartTimeout: js.UndefOr[DurationInSecondsOptional] = js.undefined,
+      activityId: ActivityId,
+      activityType: ActivityType,
+      control: js.UndefOr[Data] = js.undefined,
       heartbeatTimeout: js.UndefOr[DurationInSecondsOptional] = js.undefined,
+      input: js.UndefOr[Data] = js.undefined,
+      scheduleToCloseTimeout: js.UndefOr[DurationInSecondsOptional] = js.undefined,
+      scheduleToStartTimeout: js.UndefOr[DurationInSecondsOptional] = js.undefined,
       startToCloseTimeout: js.UndefOr[DurationInSecondsOptional] = js.undefined,
       taskList: js.UndefOr[TaskList] = js.undefined,
-      activityId: js.UndefOr[ActivityId] = js.undefined,
-      activityType: js.UndefOr[ActivityType] = js.undefined,
-      taskPriority: js.UndefOr[TaskPriority] = js.undefined,
-      control: js.UndefOr[Data] = js.undefined,
-      scheduleToCloseTimeout: js.UndefOr[DurationInSecondsOptional] = js.undefined,
-      input: js.UndefOr[Data] = js.undefined): ScheduleActivityTaskDecisionAttributes = {
+      taskPriority: js.UndefOr[TaskPriority] = js.undefined): ScheduleActivityTaskDecisionAttributes = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "scheduleToStartTimeout" -> scheduleToStartTimeout.map { x => x.asInstanceOf[js.Any] },
+        "activityId" -> activityId.asInstanceOf[js.Any],
+        "activityType" -> activityType.asInstanceOf[js.Any],
+        "control" -> control.map { x => x.asInstanceOf[js.Any] },
         "heartbeatTimeout" -> heartbeatTimeout.map { x => x.asInstanceOf[js.Any] },
+        "input" -> input.map { x => x.asInstanceOf[js.Any] },
+        "scheduleToCloseTimeout" -> scheduleToCloseTimeout.map { x => x.asInstanceOf[js.Any] },
+        "scheduleToStartTimeout" -> scheduleToStartTimeout.map { x => x.asInstanceOf[js.Any] },
         "startToCloseTimeout" -> startToCloseTimeout.map { x => x.asInstanceOf[js.Any] },
         "taskList" -> taskList.map { x => x.asInstanceOf[js.Any] },
-        "activityId" -> activityId.map { x => x.asInstanceOf[js.Any] },
-        "activityType" -> activityType.map { x => x.asInstanceOf[js.Any] },
-        "taskPriority" -> taskPriority.map { x => x.asInstanceOf[js.Any] },
-        "control" -> control.map { x => x.asInstanceOf[js.Any] },
-        "scheduleToCloseTimeout" -> scheduleToCloseTimeout.map { x => x.asInstanceOf[js.Any] },
-        "input" -> input.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "taskPriority" -> taskPriority.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ScheduleActivityTaskDecisionAttributes]
     }
@@ -2787,23 +2787,23 @@ package swf {
    */
   @js.native
   trait ScheduleActivityTaskFailedEventAttributes extends js.Object {
-    var activityType: js.UndefOr[ActivityType]
-    var activityId: js.UndefOr[ActivityId]
-    var cause: js.UndefOr[ScheduleActivityTaskFailedCause]
-    var decisionTaskCompletedEventId: js.UndefOr[EventId]
+    var activityId: ActivityId
+    var activityType: ActivityType
+    var cause: ScheduleActivityTaskFailedCause
+    var decisionTaskCompletedEventId: EventId
   }
 
   object ScheduleActivityTaskFailedEventAttributes {
     def apply(
-      activityType: js.UndefOr[ActivityType] = js.undefined,
-      activityId: js.UndefOr[ActivityId] = js.undefined,
-      cause: js.UndefOr[ScheduleActivityTaskFailedCause] = js.undefined,
-      decisionTaskCompletedEventId: js.UndefOr[EventId] = js.undefined): ScheduleActivityTaskFailedEventAttributes = {
+      activityId: ActivityId,
+      activityType: ActivityType,
+      cause: ScheduleActivityTaskFailedCause,
+      decisionTaskCompletedEventId: EventId): ScheduleActivityTaskFailedEventAttributes = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "activityType" -> activityType.map { x => x.asInstanceOf[js.Any] },
-        "activityId" -> activityId.map { x => x.asInstanceOf[js.Any] },
-        "cause" -> cause.map { x => x.asInstanceOf[js.Any] },
-        "decisionTaskCompletedEventId" -> decisionTaskCompletedEventId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "activityId" -> activityId.asInstanceOf[js.Any],
+        "activityType" -> activityType.asInstanceOf[js.Any],
+        "cause" -> cause.asInstanceOf[js.Any],
+        "decisionTaskCompletedEventId" -> decisionTaskCompletedEventId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ScheduleActivityTaskFailedEventAttributes]
     }
@@ -2814,26 +2814,26 @@ package swf {
    */
   @js.native
   trait ScheduleLambdaFunctionDecisionAttributes extends js.Object {
-    var name: js.UndefOr[FunctionName]
-    var startToCloseTimeout: js.UndefOr[DurationInSecondsOptional]
-    var id: js.UndefOr[FunctionId]
+    var id: FunctionId
+    var name: FunctionName
     var control: js.UndefOr[Data]
     var input: js.UndefOr[FunctionInput]
+    var startToCloseTimeout: js.UndefOr[DurationInSecondsOptional]
   }
 
   object ScheduleLambdaFunctionDecisionAttributes {
     def apply(
-      name: js.UndefOr[FunctionName] = js.undefined,
-      startToCloseTimeout: js.UndefOr[DurationInSecondsOptional] = js.undefined,
-      id: js.UndefOr[FunctionId] = js.undefined,
+      id: FunctionId,
+      name: FunctionName,
       control: js.UndefOr[Data] = js.undefined,
-      input: js.UndefOr[FunctionInput] = js.undefined): ScheduleLambdaFunctionDecisionAttributes = {
+      input: js.UndefOr[FunctionInput] = js.undefined,
+      startToCloseTimeout: js.UndefOr[DurationInSecondsOptional] = js.undefined): ScheduleLambdaFunctionDecisionAttributes = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "name" -> name.map { x => x.asInstanceOf[js.Any] },
-        "startToCloseTimeout" -> startToCloseTimeout.map { x => x.asInstanceOf[js.Any] },
-        "id" -> id.map { x => x.asInstanceOf[js.Any] },
+        "id" -> id.asInstanceOf[js.Any],
+        "name" -> name.asInstanceOf[js.Any],
         "control" -> control.map { x => x.asInstanceOf[js.Any] },
-        "input" -> input.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "input" -> input.map { x => x.asInstanceOf[js.Any] },
+        "startToCloseTimeout" -> startToCloseTimeout.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ScheduleLambdaFunctionDecisionAttributes]
     }
@@ -2853,23 +2853,23 @@ package swf {
    */
   @js.native
   trait ScheduleLambdaFunctionFailedEventAttributes extends js.Object {
-    var id: js.UndefOr[FunctionId]
-    var name: js.UndefOr[FunctionName]
-    var cause: js.UndefOr[ScheduleLambdaFunctionFailedCause]
-    var decisionTaskCompletedEventId: js.UndefOr[EventId]
+    var cause: ScheduleLambdaFunctionFailedCause
+    var decisionTaskCompletedEventId: EventId
+    var id: FunctionId
+    var name: FunctionName
   }
 
   object ScheduleLambdaFunctionFailedEventAttributes {
     def apply(
-      id: js.UndefOr[FunctionId] = js.undefined,
-      name: js.UndefOr[FunctionName] = js.undefined,
-      cause: js.UndefOr[ScheduleLambdaFunctionFailedCause] = js.undefined,
-      decisionTaskCompletedEventId: js.UndefOr[EventId] = js.undefined): ScheduleLambdaFunctionFailedEventAttributes = {
+      cause: ScheduleLambdaFunctionFailedCause,
+      decisionTaskCompletedEventId: EventId,
+      id: FunctionId,
+      name: FunctionName): ScheduleLambdaFunctionFailedEventAttributes = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "id" -> id.map { x => x.asInstanceOf[js.Any] },
-        "name" -> name.map { x => x.asInstanceOf[js.Any] },
-        "cause" -> cause.map { x => x.asInstanceOf[js.Any] },
-        "decisionTaskCompletedEventId" -> decisionTaskCompletedEventId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "cause" -> cause.asInstanceOf[js.Any],
+        "decisionTaskCompletedEventId" -> decisionTaskCompletedEventId.asInstanceOf[js.Any],
+        "id" -> id.asInstanceOf[js.Any],
+        "name" -> name.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ScheduleLambdaFunctionFailedEventAttributes]
     }
@@ -2880,26 +2880,26 @@ package swf {
    */
   @js.native
   trait SignalExternalWorkflowExecutionDecisionAttributes extends js.Object {
+    var signalName: SignalName
+    var workflowId: WorkflowId
     var control: js.UndefOr[Data]
-    var signalName: js.UndefOr[SignalName]
-    var runId: js.UndefOr[WorkflowRunIdOptional]
-    var workflowId: js.UndefOr[WorkflowId]
     var input: js.UndefOr[Data]
+    var runId: js.UndefOr[WorkflowRunIdOptional]
   }
 
   object SignalExternalWorkflowExecutionDecisionAttributes {
     def apply(
+      signalName: SignalName,
+      workflowId: WorkflowId,
       control: js.UndefOr[Data] = js.undefined,
-      signalName: js.UndefOr[SignalName] = js.undefined,
-      runId: js.UndefOr[WorkflowRunIdOptional] = js.undefined,
-      workflowId: js.UndefOr[WorkflowId] = js.undefined,
-      input: js.UndefOr[Data] = js.undefined): SignalExternalWorkflowExecutionDecisionAttributes = {
+      input: js.UndefOr[Data] = js.undefined,
+      runId: js.UndefOr[WorkflowRunIdOptional] = js.undefined): SignalExternalWorkflowExecutionDecisionAttributes = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "signalName" -> signalName.asInstanceOf[js.Any],
+        "workflowId" -> workflowId.asInstanceOf[js.Any],
         "control" -> control.map { x => x.asInstanceOf[js.Any] },
-        "signalName" -> signalName.map { x => x.asInstanceOf[js.Any] },
-        "runId" -> runId.map { x => x.asInstanceOf[js.Any] },
-        "workflowId" -> workflowId.map { x => x.asInstanceOf[js.Any] },
-        "input" -> input.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "input" -> input.map { x => x.asInstanceOf[js.Any] },
+        "runId" -> runId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SignalExternalWorkflowExecutionDecisionAttributes]
     }
@@ -2918,29 +2918,29 @@ package swf {
    */
   @js.native
   trait SignalExternalWorkflowExecutionFailedEventAttributes extends js.Object {
-    var initiatedEventId: js.UndefOr[EventId]
-    var decisionTaskCompletedEventId: js.UndefOr[EventId]
-    var cause: js.UndefOr[SignalExternalWorkflowExecutionFailedCause]
+    var cause: SignalExternalWorkflowExecutionFailedCause
+    var decisionTaskCompletedEventId: EventId
+    var initiatedEventId: EventId
+    var workflowId: WorkflowId
     var control: js.UndefOr[Data]
     var runId: js.UndefOr[WorkflowRunIdOptional]
-    var workflowId: js.UndefOr[WorkflowId]
   }
 
   object SignalExternalWorkflowExecutionFailedEventAttributes {
     def apply(
-      initiatedEventId: js.UndefOr[EventId] = js.undefined,
-      decisionTaskCompletedEventId: js.UndefOr[EventId] = js.undefined,
-      cause: js.UndefOr[SignalExternalWorkflowExecutionFailedCause] = js.undefined,
+      cause: SignalExternalWorkflowExecutionFailedCause,
+      decisionTaskCompletedEventId: EventId,
+      initiatedEventId: EventId,
+      workflowId: WorkflowId,
       control: js.UndefOr[Data] = js.undefined,
-      runId: js.UndefOr[WorkflowRunIdOptional] = js.undefined,
-      workflowId: js.UndefOr[WorkflowId] = js.undefined): SignalExternalWorkflowExecutionFailedEventAttributes = {
+      runId: js.UndefOr[WorkflowRunIdOptional] = js.undefined): SignalExternalWorkflowExecutionFailedEventAttributes = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "initiatedEventId" -> initiatedEventId.map { x => x.asInstanceOf[js.Any] },
-        "decisionTaskCompletedEventId" -> decisionTaskCompletedEventId.map { x => x.asInstanceOf[js.Any] },
-        "cause" -> cause.map { x => x.asInstanceOf[js.Any] },
+        "cause" -> cause.asInstanceOf[js.Any],
+        "decisionTaskCompletedEventId" -> decisionTaskCompletedEventId.asInstanceOf[js.Any],
+        "initiatedEventId" -> initiatedEventId.asInstanceOf[js.Any],
+        "workflowId" -> workflowId.asInstanceOf[js.Any],
         "control" -> control.map { x => x.asInstanceOf[js.Any] },
-        "runId" -> runId.map { x => x.asInstanceOf[js.Any] },
-        "workflowId" -> workflowId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "runId" -> runId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SignalExternalWorkflowExecutionFailedEventAttributes]
     }
@@ -2951,29 +2951,29 @@ package swf {
    */
   @js.native
   trait SignalExternalWorkflowExecutionInitiatedEventAttributes extends js.Object {
-    var decisionTaskCompletedEventId: js.UndefOr[EventId]
+    var decisionTaskCompletedEventId: EventId
+    var signalName: SignalName
+    var workflowId: WorkflowId
     var control: js.UndefOr[Data]
-    var signalName: js.UndefOr[SignalName]
-    var runId: js.UndefOr[WorkflowRunIdOptional]
-    var workflowId: js.UndefOr[WorkflowId]
     var input: js.UndefOr[Data]
+    var runId: js.UndefOr[WorkflowRunIdOptional]
   }
 
   object SignalExternalWorkflowExecutionInitiatedEventAttributes {
     def apply(
-      decisionTaskCompletedEventId: js.UndefOr[EventId] = js.undefined,
+      decisionTaskCompletedEventId: EventId,
+      signalName: SignalName,
+      workflowId: WorkflowId,
       control: js.UndefOr[Data] = js.undefined,
-      signalName: js.UndefOr[SignalName] = js.undefined,
-      runId: js.UndefOr[WorkflowRunIdOptional] = js.undefined,
-      workflowId: js.UndefOr[WorkflowId] = js.undefined,
-      input: js.UndefOr[Data] = js.undefined): SignalExternalWorkflowExecutionInitiatedEventAttributes = {
+      input: js.UndefOr[Data] = js.undefined,
+      runId: js.UndefOr[WorkflowRunIdOptional] = js.undefined): SignalExternalWorkflowExecutionInitiatedEventAttributes = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "decisionTaskCompletedEventId" -> decisionTaskCompletedEventId.map { x => x.asInstanceOf[js.Any] },
+        "decisionTaskCompletedEventId" -> decisionTaskCompletedEventId.asInstanceOf[js.Any],
+        "signalName" -> signalName.asInstanceOf[js.Any],
+        "workflowId" -> workflowId.asInstanceOf[js.Any],
         "control" -> control.map { x => x.asInstanceOf[js.Any] },
-        "signalName" -> signalName.map { x => x.asInstanceOf[js.Any] },
-        "runId" -> runId.map { x => x.asInstanceOf[js.Any] },
-        "workflowId" -> workflowId.map { x => x.asInstanceOf[js.Any] },
-        "input" -> input.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "input" -> input.map { x => x.asInstanceOf[js.Any] },
+        "runId" -> runId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SignalExternalWorkflowExecutionInitiatedEventAttributes]
     }
@@ -2981,74 +2981,74 @@ package swf {
 
   @js.native
   trait SignalWorkflowExecutionInput extends js.Object {
-    var domain: js.UndefOr[DomainName]
-    var signalName: js.UndefOr[SignalName]
-    var runId: js.UndefOr[WorkflowRunIdOptional]
-    var workflowId: js.UndefOr[WorkflowId]
+    var domain: DomainName
+    var signalName: SignalName
+    var workflowId: WorkflowId
     var input: js.UndefOr[Data]
+    var runId: js.UndefOr[WorkflowRunIdOptional]
   }
 
   object SignalWorkflowExecutionInput {
     def apply(
-      domain: js.UndefOr[DomainName] = js.undefined,
-      signalName: js.UndefOr[SignalName] = js.undefined,
-      runId: js.UndefOr[WorkflowRunIdOptional] = js.undefined,
-      workflowId: js.UndefOr[WorkflowId] = js.undefined,
-      input: js.UndefOr[Data] = js.undefined): SignalWorkflowExecutionInput = {
+      domain: DomainName,
+      signalName: SignalName,
+      workflowId: WorkflowId,
+      input: js.UndefOr[Data] = js.undefined,
+      runId: js.UndefOr[WorkflowRunIdOptional] = js.undefined): SignalWorkflowExecutionInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "domain" -> domain.map { x => x.asInstanceOf[js.Any] },
-        "signalName" -> signalName.map { x => x.asInstanceOf[js.Any] },
-        "runId" -> runId.map { x => x.asInstanceOf[js.Any] },
-        "workflowId" -> workflowId.map { x => x.asInstanceOf[js.Any] },
-        "input" -> input.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "domain" -> domain.asInstanceOf[js.Any],
+        "signalName" -> signalName.asInstanceOf[js.Any],
+        "workflowId" -> workflowId.asInstanceOf[js.Any],
+        "input" -> input.map { x => x.asInstanceOf[js.Any] },
+        "runId" -> runId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SignalWorkflowExecutionInput]
     }
   }
 
   /**
-   * <p>Provides the details of the <code>StartChildWorkflowExecution</code> decision.</p> <p> <b>Access Control</b> </p> <p>You can use IAM policies to control this decision's access to Amazon SWF resources as follows:</p> <ul> <li> <p>Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.</p> </li> <li> <p>Use an <code>Action</code> element to allow or deny permission to call this action.</p> </li> <li> <p>Constrain the following parameters by using a <code>Condition</code> element with the appropriate keys.</p> <ul> <li> <p> <code>tagList.member.N</code> – The key is "swf:tagList.N" where N is the tag number from 0 to 4, inclusive.</p> </li> <li> <p> <code>taskList</code> – String constraint. The key is <code>swf:taskList.name</code>.</p> </li> <li> <p> <code>workflowType.name</code> – String constraint. The key is <code>swf:workflowType.name</code>.</p> </li> <li> <p> <code>workflowType.version</code> – String constraint. The key is <code>swf:workflowType.version</code>.</p> </li> </ul> </li> </ul> <p>If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p>
+   * <p>Provides the details of the <code>StartChildWorkflowExecution</code> decision.</p> <p> <b>Access Control</b> </p> <p>You can use IAM policies to control this decision's access to Amazon SWF resources as follows:</p> <ul> <li> <p>Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.</p> </li> <li> <p>Use an <code>Action</code> element to allow or deny permission to call this action.</p> </li> <li> <p>Constrain the following parameters by using a <code>Condition</code> element with the appropriate keys.</p> <ul> <li> <p> <code>tagList.member.N</code> ? The key is "swf:tagList.N" where N is the tag number from 0 to 4, inclusive.</p> </li> <li> <p> <code>taskList</code> ? String constraint. The key is <code>swf:taskList.name</code>.</p> </li> <li> <p> <code>workflowType.name</code> ? String constraint. The key is <code>swf:workflowType.name</code>.</p> </li> <li> <p> <code>workflowType.version</code> ? String constraint. The key is <code>swf:workflowType.version</code>.</p> </li> </ul> </li> </ul> <p>If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p>
    */
   @js.native
   trait StartChildWorkflowExecutionDecisionAttributes extends js.Object {
-    var workflowType: js.UndefOr[WorkflowType]
+    var workflowId: WorkflowId
+    var workflowType: WorkflowType
+    var childPolicy: js.UndefOr[ChildPolicy]
+    var control: js.UndefOr[Data]
+    var executionStartToCloseTimeout: js.UndefOr[DurationInSecondsOptional]
+    var input: js.UndefOr[Data]
     var lambdaRole: js.UndefOr[Arn]
-    var taskList: js.UndefOr[TaskList]
     var tagList: js.UndefOr[TagList]
+    var taskList: js.UndefOr[TaskList]
     var taskPriority: js.UndefOr[TaskPriority]
     var taskStartToCloseTimeout: js.UndefOr[DurationInSecondsOptional]
-    var control: js.UndefOr[Data]
-    var childPolicy: js.UndefOr[ChildPolicy]
-    var executionStartToCloseTimeout: js.UndefOr[DurationInSecondsOptional]
-    var workflowId: js.UndefOr[WorkflowId]
-    var input: js.UndefOr[Data]
   }
 
   object StartChildWorkflowExecutionDecisionAttributes {
     def apply(
-      workflowType: js.UndefOr[WorkflowType] = js.undefined,
-      lambdaRole: js.UndefOr[Arn] = js.undefined,
-      taskList: js.UndefOr[TaskList] = js.undefined,
-      tagList: js.UndefOr[TagList] = js.undefined,
-      taskPriority: js.UndefOr[TaskPriority] = js.undefined,
-      taskStartToCloseTimeout: js.UndefOr[DurationInSecondsOptional] = js.undefined,
-      control: js.UndefOr[Data] = js.undefined,
+      workflowId: WorkflowId,
+      workflowType: WorkflowType,
       childPolicy: js.UndefOr[ChildPolicy] = js.undefined,
+      control: js.UndefOr[Data] = js.undefined,
       executionStartToCloseTimeout: js.UndefOr[DurationInSecondsOptional] = js.undefined,
-      workflowId: js.UndefOr[WorkflowId] = js.undefined,
-      input: js.UndefOr[Data] = js.undefined): StartChildWorkflowExecutionDecisionAttributes = {
+      input: js.UndefOr[Data] = js.undefined,
+      lambdaRole: js.UndefOr[Arn] = js.undefined,
+      tagList: js.UndefOr[TagList] = js.undefined,
+      taskList: js.UndefOr[TaskList] = js.undefined,
+      taskPriority: js.UndefOr[TaskPriority] = js.undefined,
+      taskStartToCloseTimeout: js.UndefOr[DurationInSecondsOptional] = js.undefined): StartChildWorkflowExecutionDecisionAttributes = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "workflowType" -> workflowType.map { x => x.asInstanceOf[js.Any] },
-        "lambdaRole" -> lambdaRole.map { x => x.asInstanceOf[js.Any] },
-        "taskList" -> taskList.map { x => x.asInstanceOf[js.Any] },
-        "tagList" -> tagList.map { x => x.asInstanceOf[js.Any] },
-        "taskPriority" -> taskPriority.map { x => x.asInstanceOf[js.Any] },
-        "taskStartToCloseTimeout" -> taskStartToCloseTimeout.map { x => x.asInstanceOf[js.Any] },
-        "control" -> control.map { x => x.asInstanceOf[js.Any] },
+        "workflowId" -> workflowId.asInstanceOf[js.Any],
+        "workflowType" -> workflowType.asInstanceOf[js.Any],
         "childPolicy" -> childPolicy.map { x => x.asInstanceOf[js.Any] },
+        "control" -> control.map { x => x.asInstanceOf[js.Any] },
         "executionStartToCloseTimeout" -> executionStartToCloseTimeout.map { x => x.asInstanceOf[js.Any] },
-        "workflowId" -> workflowId.map { x => x.asInstanceOf[js.Any] },
-        "input" -> input.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "input" -> input.map { x => x.asInstanceOf[js.Any] },
+        "lambdaRole" -> lambdaRole.map { x => x.asInstanceOf[js.Any] },
+        "tagList" -> tagList.map { x => x.asInstanceOf[js.Any] },
+        "taskList" -> taskList.map { x => x.asInstanceOf[js.Any] },
+        "taskPriority" -> taskPriority.map { x => x.asInstanceOf[js.Any] },
+        "taskStartToCloseTimeout" -> taskStartToCloseTimeout.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StartChildWorkflowExecutionDecisionAttributes]
     }
@@ -3075,29 +3075,29 @@ package swf {
    */
   @js.native
   trait StartChildWorkflowExecutionFailedEventAttributes extends js.Object {
-    var workflowType: js.UndefOr[WorkflowType]
-    var initiatedEventId: js.UndefOr[EventId]
-    var decisionTaskCompletedEventId: js.UndefOr[EventId]
-    var cause: js.UndefOr[StartChildWorkflowExecutionFailedCause]
+    var cause: StartChildWorkflowExecutionFailedCause
+    var decisionTaskCompletedEventId: EventId
+    var initiatedEventId: EventId
+    var workflowId: WorkflowId
+    var workflowType: WorkflowType
     var control: js.UndefOr[Data]
-    var workflowId: js.UndefOr[WorkflowId]
   }
 
   object StartChildWorkflowExecutionFailedEventAttributes {
     def apply(
-      workflowType: js.UndefOr[WorkflowType] = js.undefined,
-      initiatedEventId: js.UndefOr[EventId] = js.undefined,
-      decisionTaskCompletedEventId: js.UndefOr[EventId] = js.undefined,
-      cause: js.UndefOr[StartChildWorkflowExecutionFailedCause] = js.undefined,
-      control: js.UndefOr[Data] = js.undefined,
-      workflowId: js.UndefOr[WorkflowId] = js.undefined): StartChildWorkflowExecutionFailedEventAttributes = {
+      cause: StartChildWorkflowExecutionFailedCause,
+      decisionTaskCompletedEventId: EventId,
+      initiatedEventId: EventId,
+      workflowId: WorkflowId,
+      workflowType: WorkflowType,
+      control: js.UndefOr[Data] = js.undefined): StartChildWorkflowExecutionFailedEventAttributes = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "workflowType" -> workflowType.map { x => x.asInstanceOf[js.Any] },
-        "initiatedEventId" -> initiatedEventId.map { x => x.asInstanceOf[js.Any] },
-        "decisionTaskCompletedEventId" -> decisionTaskCompletedEventId.map { x => x.asInstanceOf[js.Any] },
-        "cause" -> cause.map { x => x.asInstanceOf[js.Any] },
-        "control" -> control.map { x => x.asInstanceOf[js.Any] },
-        "workflowId" -> workflowId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "cause" -> cause.asInstanceOf[js.Any],
+        "decisionTaskCompletedEventId" -> decisionTaskCompletedEventId.asInstanceOf[js.Any],
+        "initiatedEventId" -> initiatedEventId.asInstanceOf[js.Any],
+        "workflowId" -> workflowId.asInstanceOf[js.Any],
+        "workflowType" -> workflowType.asInstanceOf[js.Any],
+        "control" -> control.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StartChildWorkflowExecutionFailedEventAttributes]
     }
@@ -3108,47 +3108,47 @@ package swf {
    */
   @js.native
   trait StartChildWorkflowExecutionInitiatedEventAttributes extends js.Object {
-    var workflowType: js.UndefOr[WorkflowType]
+    var childPolicy: ChildPolicy
+    var decisionTaskCompletedEventId: EventId
+    var taskList: TaskList
+    var workflowId: WorkflowId
+    var workflowType: WorkflowType
+    var control: js.UndefOr[Data]
+    var executionStartToCloseTimeout: js.UndefOr[DurationInSecondsOptional]
+    var input: js.UndefOr[Data]
     var lambdaRole: js.UndefOr[Arn]
-    var taskList: js.UndefOr[TaskList]
     var tagList: js.UndefOr[TagList]
-    var decisionTaskCompletedEventId: js.UndefOr[EventId]
     var taskPriority: js.UndefOr[TaskPriority]
     var taskStartToCloseTimeout: js.UndefOr[DurationInSecondsOptional]
-    var control: js.UndefOr[Data]
-    var childPolicy: js.UndefOr[ChildPolicy]
-    var executionStartToCloseTimeout: js.UndefOr[DurationInSecondsOptional]
-    var workflowId: js.UndefOr[WorkflowId]
-    var input: js.UndefOr[Data]
   }
 
   object StartChildWorkflowExecutionInitiatedEventAttributes {
     def apply(
-      workflowType: js.UndefOr[WorkflowType] = js.undefined,
-      lambdaRole: js.UndefOr[Arn] = js.undefined,
-      taskList: js.UndefOr[TaskList] = js.undefined,
-      tagList: js.UndefOr[TagList] = js.undefined,
-      decisionTaskCompletedEventId: js.UndefOr[EventId] = js.undefined,
-      taskPriority: js.UndefOr[TaskPriority] = js.undefined,
-      taskStartToCloseTimeout: js.UndefOr[DurationInSecondsOptional] = js.undefined,
+      childPolicy: ChildPolicy,
+      decisionTaskCompletedEventId: EventId,
+      taskList: TaskList,
+      workflowId: WorkflowId,
+      workflowType: WorkflowType,
       control: js.UndefOr[Data] = js.undefined,
-      childPolicy: js.UndefOr[ChildPolicy] = js.undefined,
       executionStartToCloseTimeout: js.UndefOr[DurationInSecondsOptional] = js.undefined,
-      workflowId: js.UndefOr[WorkflowId] = js.undefined,
-      input: js.UndefOr[Data] = js.undefined): StartChildWorkflowExecutionInitiatedEventAttributes = {
+      input: js.UndefOr[Data] = js.undefined,
+      lambdaRole: js.UndefOr[Arn] = js.undefined,
+      tagList: js.UndefOr[TagList] = js.undefined,
+      taskPriority: js.UndefOr[TaskPriority] = js.undefined,
+      taskStartToCloseTimeout: js.UndefOr[DurationInSecondsOptional] = js.undefined): StartChildWorkflowExecutionInitiatedEventAttributes = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "workflowType" -> workflowType.map { x => x.asInstanceOf[js.Any] },
-        "lambdaRole" -> lambdaRole.map { x => x.asInstanceOf[js.Any] },
-        "taskList" -> taskList.map { x => x.asInstanceOf[js.Any] },
-        "tagList" -> tagList.map { x => x.asInstanceOf[js.Any] },
-        "decisionTaskCompletedEventId" -> decisionTaskCompletedEventId.map { x => x.asInstanceOf[js.Any] },
-        "taskPriority" -> taskPriority.map { x => x.asInstanceOf[js.Any] },
-        "taskStartToCloseTimeout" -> taskStartToCloseTimeout.map { x => x.asInstanceOf[js.Any] },
+        "childPolicy" -> childPolicy.asInstanceOf[js.Any],
+        "decisionTaskCompletedEventId" -> decisionTaskCompletedEventId.asInstanceOf[js.Any],
+        "taskList" -> taskList.asInstanceOf[js.Any],
+        "workflowId" -> workflowId.asInstanceOf[js.Any],
+        "workflowType" -> workflowType.asInstanceOf[js.Any],
         "control" -> control.map { x => x.asInstanceOf[js.Any] },
-        "childPolicy" -> childPolicy.map { x => x.asInstanceOf[js.Any] },
         "executionStartToCloseTimeout" -> executionStartToCloseTimeout.map { x => x.asInstanceOf[js.Any] },
-        "workflowId" -> workflowId.map { x => x.asInstanceOf[js.Any] },
-        "input" -> input.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "input" -> input.map { x => x.asInstanceOf[js.Any] },
+        "lambdaRole" -> lambdaRole.map { x => x.asInstanceOf[js.Any] },
+        "tagList" -> tagList.map { x => x.asInstanceOf[js.Any] },
+        "taskPriority" -> taskPriority.map { x => x.asInstanceOf[js.Any] },
+        "taskStartToCloseTimeout" -> taskStartToCloseTimeout.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StartChildWorkflowExecutionInitiatedEventAttributes]
     }
@@ -3165,20 +3165,20 @@ package swf {
    */
   @js.native
   trait StartLambdaFunctionFailedEventAttributes extends js.Object {
-    var scheduledEventId: js.UndefOr[EventId]
     var cause: js.UndefOr[StartLambdaFunctionFailedCause]
     var message: js.UndefOr[CauseMessage]
+    var scheduledEventId: js.UndefOr[EventId]
   }
 
   object StartLambdaFunctionFailedEventAttributes {
     def apply(
-      scheduledEventId: js.UndefOr[EventId] = js.undefined,
       cause: js.UndefOr[StartLambdaFunctionFailedCause] = js.undefined,
-      message: js.UndefOr[CauseMessage] = js.undefined): StartLambdaFunctionFailedEventAttributes = {
+      message: js.UndefOr[CauseMessage] = js.undefined,
+      scheduledEventId: js.UndefOr[EventId] = js.undefined): StartLambdaFunctionFailedEventAttributes = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "scheduledEventId" -> scheduledEventId.map { x => x.asInstanceOf[js.Any] },
         "cause" -> cause.map { x => x.asInstanceOf[js.Any] },
-        "message" -> message.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "message" -> message.map { x => x.asInstanceOf[js.Any] },
+        "scheduledEventId" -> scheduledEventId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StartLambdaFunctionFailedEventAttributes]
     }
@@ -3189,20 +3189,20 @@ package swf {
    */
   @js.native
   trait StartTimerDecisionAttributes extends js.Object {
-    var timerId: js.UndefOr[TimerId]
+    var startToFireTimeout: DurationInSeconds
+    var timerId: TimerId
     var control: js.UndefOr[Data]
-    var startToFireTimeout: js.UndefOr[DurationInSeconds]
   }
 
   object StartTimerDecisionAttributes {
     def apply(
-      timerId: js.UndefOr[TimerId] = js.undefined,
-      control: js.UndefOr[Data] = js.undefined,
-      startToFireTimeout: js.UndefOr[DurationInSeconds] = js.undefined): StartTimerDecisionAttributes = {
+      startToFireTimeout: DurationInSeconds,
+      timerId: TimerId,
+      control: js.UndefOr[Data] = js.undefined): StartTimerDecisionAttributes = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "timerId" -> timerId.map { x => x.asInstanceOf[js.Any] },
-        "control" -> control.map { x => x.asInstanceOf[js.Any] },
-        "startToFireTimeout" -> startToFireTimeout.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "startToFireTimeout" -> startToFireTimeout.asInstanceOf[js.Any],
+        "timerId" -> timerId.asInstanceOf[js.Any],
+        "control" -> control.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StartTimerDecisionAttributes]
     }
@@ -3222,20 +3222,20 @@ package swf {
    */
   @js.native
   trait StartTimerFailedEventAttributes extends js.Object {
-    var timerId: js.UndefOr[TimerId]
-    var cause: js.UndefOr[StartTimerFailedCause]
-    var decisionTaskCompletedEventId: js.UndefOr[EventId]
+    var cause: StartTimerFailedCause
+    var decisionTaskCompletedEventId: EventId
+    var timerId: TimerId
   }
 
   object StartTimerFailedEventAttributes {
     def apply(
-      timerId: js.UndefOr[TimerId] = js.undefined,
-      cause: js.UndefOr[StartTimerFailedCause] = js.undefined,
-      decisionTaskCompletedEventId: js.UndefOr[EventId] = js.undefined): StartTimerFailedEventAttributes = {
+      cause: StartTimerFailedCause,
+      decisionTaskCompletedEventId: EventId,
+      timerId: TimerId): StartTimerFailedEventAttributes = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "timerId" -> timerId.map { x => x.asInstanceOf[js.Any] },
-        "cause" -> cause.map { x => x.asInstanceOf[js.Any] },
-        "decisionTaskCompletedEventId" -> decisionTaskCompletedEventId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "cause" -> cause.asInstanceOf[js.Any],
+        "decisionTaskCompletedEventId" -> decisionTaskCompletedEventId.asInstanceOf[js.Any],
+        "timerId" -> timerId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StartTimerFailedEventAttributes]
     }
@@ -3243,44 +3243,44 @@ package swf {
 
   @js.native
   trait StartWorkflowExecutionInput extends js.Object {
-    var workflowType: js.UndefOr[WorkflowType]
-    var domain: js.UndefOr[DomainName]
-    var lambdaRole: js.UndefOr[Arn]
-    var taskList: js.UndefOr[TaskList]
-    var tagList: js.UndefOr[TagList]
-    var taskPriority: js.UndefOr[TaskPriority]
-    var taskStartToCloseTimeout: js.UndefOr[DurationInSecondsOptional]
+    var domain: DomainName
+    var workflowId: WorkflowId
+    var workflowType: WorkflowType
     var childPolicy: js.UndefOr[ChildPolicy]
     var executionStartToCloseTimeout: js.UndefOr[DurationInSecondsOptional]
-    var workflowId: js.UndefOr[WorkflowId]
     var input: js.UndefOr[Data]
+    var lambdaRole: js.UndefOr[Arn]
+    var tagList: js.UndefOr[TagList]
+    var taskList: js.UndefOr[TaskList]
+    var taskPriority: js.UndefOr[TaskPriority]
+    var taskStartToCloseTimeout: js.UndefOr[DurationInSecondsOptional]
   }
 
   object StartWorkflowExecutionInput {
     def apply(
-      workflowType: js.UndefOr[WorkflowType] = js.undefined,
-      domain: js.UndefOr[DomainName] = js.undefined,
-      lambdaRole: js.UndefOr[Arn] = js.undefined,
-      taskList: js.UndefOr[TaskList] = js.undefined,
-      tagList: js.UndefOr[TagList] = js.undefined,
-      taskPriority: js.UndefOr[TaskPriority] = js.undefined,
-      taskStartToCloseTimeout: js.UndefOr[DurationInSecondsOptional] = js.undefined,
+      domain: DomainName,
+      workflowId: WorkflowId,
+      workflowType: WorkflowType,
       childPolicy: js.UndefOr[ChildPolicy] = js.undefined,
       executionStartToCloseTimeout: js.UndefOr[DurationInSecondsOptional] = js.undefined,
-      workflowId: js.UndefOr[WorkflowId] = js.undefined,
-      input: js.UndefOr[Data] = js.undefined): StartWorkflowExecutionInput = {
+      input: js.UndefOr[Data] = js.undefined,
+      lambdaRole: js.UndefOr[Arn] = js.undefined,
+      tagList: js.UndefOr[TagList] = js.undefined,
+      taskList: js.UndefOr[TaskList] = js.undefined,
+      taskPriority: js.UndefOr[TaskPriority] = js.undefined,
+      taskStartToCloseTimeout: js.UndefOr[DurationInSecondsOptional] = js.undefined): StartWorkflowExecutionInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "workflowType" -> workflowType.map { x => x.asInstanceOf[js.Any] },
-        "domain" -> domain.map { x => x.asInstanceOf[js.Any] },
-        "lambdaRole" -> lambdaRole.map { x => x.asInstanceOf[js.Any] },
-        "taskList" -> taskList.map { x => x.asInstanceOf[js.Any] },
-        "tagList" -> tagList.map { x => x.asInstanceOf[js.Any] },
-        "taskPriority" -> taskPriority.map { x => x.asInstanceOf[js.Any] },
-        "taskStartToCloseTimeout" -> taskStartToCloseTimeout.map { x => x.asInstanceOf[js.Any] },
+        "domain" -> domain.asInstanceOf[js.Any],
+        "workflowId" -> workflowId.asInstanceOf[js.Any],
+        "workflowType" -> workflowType.asInstanceOf[js.Any],
         "childPolicy" -> childPolicy.map { x => x.asInstanceOf[js.Any] },
         "executionStartToCloseTimeout" -> executionStartToCloseTimeout.map { x => x.asInstanceOf[js.Any] },
-        "workflowId" -> workflowId.map { x => x.asInstanceOf[js.Any] },
-        "input" -> input.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "input" -> input.map { x => x.asInstanceOf[js.Any] },
+        "lambdaRole" -> lambdaRole.map { x => x.asInstanceOf[js.Any] },
+        "tagList" -> tagList.map { x => x.asInstanceOf[js.Any] },
+        "taskList" -> taskList.map { x => x.asInstanceOf[js.Any] },
+        "taskPriority" -> taskPriority.map { x => x.asInstanceOf[js.Any] },
+        "taskStartToCloseTimeout" -> taskStartToCloseTimeout.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StartWorkflowExecutionInput]
     }
@@ -3291,14 +3291,14 @@ package swf {
    */
   @js.native
   trait TagFilter extends js.Object {
-    var tag: js.UndefOr[Tag]
+    var tag: Tag
   }
 
   object TagFilter {
     def apply(
-      tag: js.UndefOr[Tag] = js.undefined): TagFilter = {
+      tag: Tag): TagFilter = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "tag" -> tag.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "tag" -> tag.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TagFilter]
     }
@@ -3309,14 +3309,14 @@ package swf {
    */
   @js.native
   trait TaskList extends js.Object {
-    var name: js.UndefOr[Name]
+    var name: Name
   }
 
   object TaskList {
     def apply(
-      name: js.UndefOr[Name] = js.undefined): TaskList = {
+      name: Name): TaskList = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "name" -> name.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "name" -> name.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TaskList]
     }
@@ -3324,29 +3324,29 @@ package swf {
 
   @js.native
   trait TerminateWorkflowExecutionInput extends js.Object {
-    var domain: js.UndefOr[DomainName]
-    var reason: js.UndefOr[TerminateReason]
-    var details: js.UndefOr[Data]
+    var domain: DomainName
+    var workflowId: WorkflowId
     var childPolicy: js.UndefOr[ChildPolicy]
+    var details: js.UndefOr[Data]
+    var reason: js.UndefOr[TerminateReason]
     var runId: js.UndefOr[WorkflowRunIdOptional]
-    var workflowId: js.UndefOr[WorkflowId]
   }
 
   object TerminateWorkflowExecutionInput {
     def apply(
-      domain: js.UndefOr[DomainName] = js.undefined,
-      reason: js.UndefOr[TerminateReason] = js.undefined,
-      details: js.UndefOr[Data] = js.undefined,
+      domain: DomainName,
+      workflowId: WorkflowId,
       childPolicy: js.UndefOr[ChildPolicy] = js.undefined,
-      runId: js.UndefOr[WorkflowRunIdOptional] = js.undefined,
-      workflowId: js.UndefOr[WorkflowId] = js.undefined): TerminateWorkflowExecutionInput = {
+      details: js.UndefOr[Data] = js.undefined,
+      reason: js.UndefOr[TerminateReason] = js.undefined,
+      runId: js.UndefOr[WorkflowRunIdOptional] = js.undefined): TerminateWorkflowExecutionInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "domain" -> domain.map { x => x.asInstanceOf[js.Any] },
-        "reason" -> reason.map { x => x.asInstanceOf[js.Any] },
-        "details" -> details.map { x => x.asInstanceOf[js.Any] },
+        "domain" -> domain.asInstanceOf[js.Any],
+        "workflowId" -> workflowId.asInstanceOf[js.Any],
         "childPolicy" -> childPolicy.map { x => x.asInstanceOf[js.Any] },
-        "runId" -> runId.map { x => x.asInstanceOf[js.Any] },
-        "workflowId" -> workflowId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "details" -> details.map { x => x.asInstanceOf[js.Any] },
+        "reason" -> reason.map { x => x.asInstanceOf[js.Any] },
+        "runId" -> runId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TerminateWorkflowExecutionInput]
     }
@@ -3357,20 +3357,20 @@ package swf {
    */
   @js.native
   trait TimerCanceledEventAttributes extends js.Object {
-    var timerId: js.UndefOr[TimerId]
-    var startedEventId: js.UndefOr[EventId]
-    var decisionTaskCompletedEventId: js.UndefOr[EventId]
+    var decisionTaskCompletedEventId: EventId
+    var startedEventId: EventId
+    var timerId: TimerId
   }
 
   object TimerCanceledEventAttributes {
     def apply(
-      timerId: js.UndefOr[TimerId] = js.undefined,
-      startedEventId: js.UndefOr[EventId] = js.undefined,
-      decisionTaskCompletedEventId: js.UndefOr[EventId] = js.undefined): TimerCanceledEventAttributes = {
+      decisionTaskCompletedEventId: EventId,
+      startedEventId: EventId,
+      timerId: TimerId): TimerCanceledEventAttributes = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "timerId" -> timerId.map { x => x.asInstanceOf[js.Any] },
-        "startedEventId" -> startedEventId.map { x => x.asInstanceOf[js.Any] },
-        "decisionTaskCompletedEventId" -> decisionTaskCompletedEventId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "decisionTaskCompletedEventId" -> decisionTaskCompletedEventId.asInstanceOf[js.Any],
+        "startedEventId" -> startedEventId.asInstanceOf[js.Any],
+        "timerId" -> timerId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TimerCanceledEventAttributes]
     }
@@ -3381,17 +3381,17 @@ package swf {
    */
   @js.native
   trait TimerFiredEventAttributes extends js.Object {
-    var timerId: js.UndefOr[TimerId]
-    var startedEventId: js.UndefOr[EventId]
+    var startedEventId: EventId
+    var timerId: TimerId
   }
 
   object TimerFiredEventAttributes {
     def apply(
-      timerId: js.UndefOr[TimerId] = js.undefined,
-      startedEventId: js.UndefOr[EventId] = js.undefined): TimerFiredEventAttributes = {
+      startedEventId: EventId,
+      timerId: TimerId): TimerFiredEventAttributes = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "timerId" -> timerId.map { x => x.asInstanceOf[js.Any] },
-        "startedEventId" -> startedEventId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "startedEventId" -> startedEventId.asInstanceOf[js.Any],
+        "timerId" -> timerId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TimerFiredEventAttributes]
     }
@@ -3402,23 +3402,23 @@ package swf {
    */
   @js.native
   trait TimerStartedEventAttributes extends js.Object {
-    var timerId: js.UndefOr[TimerId]
+    var decisionTaskCompletedEventId: EventId
+    var startToFireTimeout: DurationInSeconds
+    var timerId: TimerId
     var control: js.UndefOr[Data]
-    var startToFireTimeout: js.UndefOr[DurationInSeconds]
-    var decisionTaskCompletedEventId: js.UndefOr[EventId]
   }
 
   object TimerStartedEventAttributes {
     def apply(
-      timerId: js.UndefOr[TimerId] = js.undefined,
-      control: js.UndefOr[Data] = js.undefined,
-      startToFireTimeout: js.UndefOr[DurationInSeconds] = js.undefined,
-      decisionTaskCompletedEventId: js.UndefOr[EventId] = js.undefined): TimerStartedEventAttributes = {
+      decisionTaskCompletedEventId: EventId,
+      startToFireTimeout: DurationInSeconds,
+      timerId: TimerId,
+      control: js.UndefOr[Data] = js.undefined): TimerStartedEventAttributes = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "timerId" -> timerId.map { x => x.asInstanceOf[js.Any] },
-        "control" -> control.map { x => x.asInstanceOf[js.Any] },
-        "startToFireTimeout" -> startToFireTimeout.map { x => x.asInstanceOf[js.Any] },
-        "decisionTaskCompletedEventId" -> decisionTaskCompletedEventId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "decisionTaskCompletedEventId" -> decisionTaskCompletedEventId.asInstanceOf[js.Any],
+        "startToFireTimeout" -> startToFireTimeout.asInstanceOf[js.Any],
+        "timerId" -> timerId.asInstanceOf[js.Any],
+        "control" -> control.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TimerStartedEventAttributes]
     }
@@ -3453,17 +3453,17 @@ package swf {
    */
   @js.native
   trait WorkflowExecution extends js.Object {
-    var workflowId: js.UndefOr[WorkflowId]
-    var runId: js.UndefOr[WorkflowRunId]
+    var runId: WorkflowRunId
+    var workflowId: WorkflowId
   }
 
   object WorkflowExecution {
     def apply(
-      workflowId: js.UndefOr[WorkflowId] = js.undefined,
-      runId: js.UndefOr[WorkflowRunId] = js.undefined): WorkflowExecution = {
+      runId: WorkflowRunId,
+      workflowId: WorkflowId): WorkflowExecution = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "workflowId" -> workflowId.map { x => x.asInstanceOf[js.Any] },
-        "runId" -> runId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "runId" -> runId.asInstanceOf[js.Any],
+        "workflowId" -> workflowId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[WorkflowExecution]
     }
@@ -3488,20 +3488,20 @@ package swf {
    */
   @js.native
   trait WorkflowExecutionCancelRequestedEventAttributes extends js.Object {
-    var externalWorkflowExecution: js.UndefOr[WorkflowExecution]
-    var externalInitiatedEventId: js.UndefOr[EventId]
     var cause: js.UndefOr[WorkflowExecutionCancelRequestedCause]
+    var externalInitiatedEventId: js.UndefOr[EventId]
+    var externalWorkflowExecution: js.UndefOr[WorkflowExecution]
   }
 
   object WorkflowExecutionCancelRequestedEventAttributes {
     def apply(
-      externalWorkflowExecution: js.UndefOr[WorkflowExecution] = js.undefined,
+      cause: js.UndefOr[WorkflowExecutionCancelRequestedCause] = js.undefined,
       externalInitiatedEventId: js.UndefOr[EventId] = js.undefined,
-      cause: js.UndefOr[WorkflowExecutionCancelRequestedCause] = js.undefined): WorkflowExecutionCancelRequestedEventAttributes = {
+      externalWorkflowExecution: js.UndefOr[WorkflowExecution] = js.undefined): WorkflowExecutionCancelRequestedEventAttributes = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "externalWorkflowExecution" -> externalWorkflowExecution.map { x => x.asInstanceOf[js.Any] },
+        "cause" -> cause.map { x => x.asInstanceOf[js.Any] },
         "externalInitiatedEventId" -> externalInitiatedEventId.map { x => x.asInstanceOf[js.Any] },
-        "cause" -> cause.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "externalWorkflowExecution" -> externalWorkflowExecution.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[WorkflowExecutionCancelRequestedEventAttributes]
     }
@@ -3512,17 +3512,17 @@ package swf {
    */
   @js.native
   trait WorkflowExecutionCanceledEventAttributes extends js.Object {
+    var decisionTaskCompletedEventId: EventId
     var details: js.UndefOr[Data]
-    var decisionTaskCompletedEventId: js.UndefOr[EventId]
   }
 
   object WorkflowExecutionCanceledEventAttributes {
     def apply(
-      details: js.UndefOr[Data] = js.undefined,
-      decisionTaskCompletedEventId: js.UndefOr[EventId] = js.undefined): WorkflowExecutionCanceledEventAttributes = {
+      decisionTaskCompletedEventId: EventId,
+      details: js.UndefOr[Data] = js.undefined): WorkflowExecutionCanceledEventAttributes = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "details" -> details.map { x => x.asInstanceOf[js.Any] },
-        "decisionTaskCompletedEventId" -> decisionTaskCompletedEventId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "decisionTaskCompletedEventId" -> decisionTaskCompletedEventId.asInstanceOf[js.Any],
+        "details" -> details.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[WorkflowExecutionCanceledEventAttributes]
     }
@@ -3533,17 +3533,17 @@ package swf {
    */
   @js.native
   trait WorkflowExecutionCompletedEventAttributes extends js.Object {
+    var decisionTaskCompletedEventId: EventId
     var result: js.UndefOr[Data]
-    var decisionTaskCompletedEventId: js.UndefOr[EventId]
   }
 
   object WorkflowExecutionCompletedEventAttributes {
     def apply(
-      result: js.UndefOr[Data] = js.undefined,
-      decisionTaskCompletedEventId: js.UndefOr[EventId] = js.undefined): WorkflowExecutionCompletedEventAttributes = {
+      decisionTaskCompletedEventId: EventId,
+      result: js.UndefOr[Data] = js.undefined): WorkflowExecutionCompletedEventAttributes = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "result" -> result.map { x => x.asInstanceOf[js.Any] },
-        "decisionTaskCompletedEventId" -> decisionTaskCompletedEventId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "decisionTaskCompletedEventId" -> decisionTaskCompletedEventId.asInstanceOf[js.Any],
+        "result" -> result.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[WorkflowExecutionCompletedEventAttributes]
     }
@@ -3554,29 +3554,29 @@ package swf {
    */
   @js.native
   trait WorkflowExecutionConfiguration extends js.Object {
+    var childPolicy: ChildPolicy
+    var executionStartToCloseTimeout: DurationInSeconds
+    var taskList: TaskList
+    var taskStartToCloseTimeout: DurationInSeconds
     var lambdaRole: js.UndefOr[Arn]
-    var taskList: js.UndefOr[TaskList]
     var taskPriority: js.UndefOr[TaskPriority]
-    var taskStartToCloseTimeout: js.UndefOr[DurationInSeconds]
-    var childPolicy: js.UndefOr[ChildPolicy]
-    var executionStartToCloseTimeout: js.UndefOr[DurationInSeconds]
   }
 
   object WorkflowExecutionConfiguration {
     def apply(
+      childPolicy: ChildPolicy,
+      executionStartToCloseTimeout: DurationInSeconds,
+      taskList: TaskList,
+      taskStartToCloseTimeout: DurationInSeconds,
       lambdaRole: js.UndefOr[Arn] = js.undefined,
-      taskList: js.UndefOr[TaskList] = js.undefined,
-      taskPriority: js.UndefOr[TaskPriority] = js.undefined,
-      taskStartToCloseTimeout: js.UndefOr[DurationInSeconds] = js.undefined,
-      childPolicy: js.UndefOr[ChildPolicy] = js.undefined,
-      executionStartToCloseTimeout: js.UndefOr[DurationInSeconds] = js.undefined): WorkflowExecutionConfiguration = {
+      taskPriority: js.UndefOr[TaskPriority] = js.undefined): WorkflowExecutionConfiguration = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "childPolicy" -> childPolicy.asInstanceOf[js.Any],
+        "executionStartToCloseTimeout" -> executionStartToCloseTimeout.asInstanceOf[js.Any],
+        "taskList" -> taskList.asInstanceOf[js.Any],
+        "taskStartToCloseTimeout" -> taskStartToCloseTimeout.asInstanceOf[js.Any],
         "lambdaRole" -> lambdaRole.map { x => x.asInstanceOf[js.Any] },
-        "taskList" -> taskList.map { x => x.asInstanceOf[js.Any] },
-        "taskPriority" -> taskPriority.map { x => x.asInstanceOf[js.Any] },
-        "taskStartToCloseTimeout" -> taskStartToCloseTimeout.map { x => x.asInstanceOf[js.Any] },
-        "childPolicy" -> childPolicy.map { x => x.asInstanceOf[js.Any] },
-        "executionStartToCloseTimeout" -> executionStartToCloseTimeout.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "taskPriority" -> taskPriority.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[WorkflowExecutionConfiguration]
     }
@@ -3587,44 +3587,44 @@ package swf {
    */
   @js.native
   trait WorkflowExecutionContinuedAsNewEventAttributes extends js.Object {
-    var workflowType: js.UndefOr[WorkflowType]
-    var lambdaRole: js.UndefOr[Arn]
-    var taskList: js.UndefOr[TaskList]
-    var tagList: js.UndefOr[TagList]
-    var newExecutionRunId: js.UndefOr[WorkflowRunId]
-    var decisionTaskCompletedEventId: js.UndefOr[EventId]
-    var taskPriority: js.UndefOr[TaskPriority]
-    var taskStartToCloseTimeout: js.UndefOr[DurationInSecondsOptional]
-    var childPolicy: js.UndefOr[ChildPolicy]
+    var childPolicy: ChildPolicy
+    var decisionTaskCompletedEventId: EventId
+    var newExecutionRunId: WorkflowRunId
+    var taskList: TaskList
+    var workflowType: WorkflowType
     var executionStartToCloseTimeout: js.UndefOr[DurationInSecondsOptional]
     var input: js.UndefOr[Data]
+    var lambdaRole: js.UndefOr[Arn]
+    var tagList: js.UndefOr[TagList]
+    var taskPriority: js.UndefOr[TaskPriority]
+    var taskStartToCloseTimeout: js.UndefOr[DurationInSecondsOptional]
   }
 
   object WorkflowExecutionContinuedAsNewEventAttributes {
     def apply(
-      workflowType: js.UndefOr[WorkflowType] = js.undefined,
-      lambdaRole: js.UndefOr[Arn] = js.undefined,
-      taskList: js.UndefOr[TaskList] = js.undefined,
-      tagList: js.UndefOr[TagList] = js.undefined,
-      newExecutionRunId: js.UndefOr[WorkflowRunId] = js.undefined,
-      decisionTaskCompletedEventId: js.UndefOr[EventId] = js.undefined,
-      taskPriority: js.UndefOr[TaskPriority] = js.undefined,
-      taskStartToCloseTimeout: js.UndefOr[DurationInSecondsOptional] = js.undefined,
-      childPolicy: js.UndefOr[ChildPolicy] = js.undefined,
+      childPolicy: ChildPolicy,
+      decisionTaskCompletedEventId: EventId,
+      newExecutionRunId: WorkflowRunId,
+      taskList: TaskList,
+      workflowType: WorkflowType,
       executionStartToCloseTimeout: js.UndefOr[DurationInSecondsOptional] = js.undefined,
-      input: js.UndefOr[Data] = js.undefined): WorkflowExecutionContinuedAsNewEventAttributes = {
+      input: js.UndefOr[Data] = js.undefined,
+      lambdaRole: js.UndefOr[Arn] = js.undefined,
+      tagList: js.UndefOr[TagList] = js.undefined,
+      taskPriority: js.UndefOr[TaskPriority] = js.undefined,
+      taskStartToCloseTimeout: js.UndefOr[DurationInSecondsOptional] = js.undefined): WorkflowExecutionContinuedAsNewEventAttributes = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "workflowType" -> workflowType.map { x => x.asInstanceOf[js.Any] },
-        "lambdaRole" -> lambdaRole.map { x => x.asInstanceOf[js.Any] },
-        "taskList" -> taskList.map { x => x.asInstanceOf[js.Any] },
-        "tagList" -> tagList.map { x => x.asInstanceOf[js.Any] },
-        "newExecutionRunId" -> newExecutionRunId.map { x => x.asInstanceOf[js.Any] },
-        "decisionTaskCompletedEventId" -> decisionTaskCompletedEventId.map { x => x.asInstanceOf[js.Any] },
-        "taskPriority" -> taskPriority.map { x => x.asInstanceOf[js.Any] },
-        "taskStartToCloseTimeout" -> taskStartToCloseTimeout.map { x => x.asInstanceOf[js.Any] },
-        "childPolicy" -> childPolicy.map { x => x.asInstanceOf[js.Any] },
+        "childPolicy" -> childPolicy.asInstanceOf[js.Any],
+        "decisionTaskCompletedEventId" -> decisionTaskCompletedEventId.asInstanceOf[js.Any],
+        "newExecutionRunId" -> newExecutionRunId.asInstanceOf[js.Any],
+        "taskList" -> taskList.asInstanceOf[js.Any],
+        "workflowType" -> workflowType.asInstanceOf[js.Any],
         "executionStartToCloseTimeout" -> executionStartToCloseTimeout.map { x => x.asInstanceOf[js.Any] },
-        "input" -> input.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "input" -> input.map { x => x.asInstanceOf[js.Any] },
+        "lambdaRole" -> lambdaRole.map { x => x.asInstanceOf[js.Any] },
+        "tagList" -> tagList.map { x => x.asInstanceOf[js.Any] },
+        "taskPriority" -> taskPriority.map { x => x.asInstanceOf[js.Any] },
+        "taskStartToCloseTimeout" -> taskStartToCloseTimeout.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[WorkflowExecutionContinuedAsNewEventAttributes]
     }
@@ -3635,16 +3635,16 @@ package swf {
    */
   @js.native
   trait WorkflowExecutionCount extends js.Object {
-    var count: js.UndefOr[Count]
+    var count: Count
     var truncated: js.UndefOr[Truncated]
   }
 
   object WorkflowExecutionCount {
     def apply(
-      count: js.UndefOr[Count] = js.undefined,
+      count: Count,
       truncated: js.UndefOr[Truncated] = js.undefined): WorkflowExecutionCount = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "count" -> count.map { x => x.asInstanceOf[js.Any] },
+        "count" -> count.asInstanceOf[js.Any],
         "truncated" -> truncated.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[WorkflowExecutionCount]
@@ -3656,26 +3656,26 @@ package swf {
    */
   @js.native
   trait WorkflowExecutionDetail extends js.Object {
-    var openCounts: js.UndefOr[WorkflowExecutionOpenCounts]
+    var executionConfiguration: WorkflowExecutionConfiguration
+    var executionInfo: WorkflowExecutionInfo
+    var openCounts: WorkflowExecutionOpenCounts
     var latestActivityTaskTimestamp: js.UndefOr[Timestamp]
     var latestExecutionContext: js.UndefOr[Data]
-    var executionInfo: js.UndefOr[WorkflowExecutionInfo]
-    var executionConfiguration: js.UndefOr[WorkflowExecutionConfiguration]
   }
 
   object WorkflowExecutionDetail {
     def apply(
-      openCounts: js.UndefOr[WorkflowExecutionOpenCounts] = js.undefined,
+      executionConfiguration: WorkflowExecutionConfiguration,
+      executionInfo: WorkflowExecutionInfo,
+      openCounts: WorkflowExecutionOpenCounts,
       latestActivityTaskTimestamp: js.UndefOr[Timestamp] = js.undefined,
-      latestExecutionContext: js.UndefOr[Data] = js.undefined,
-      executionInfo: js.UndefOr[WorkflowExecutionInfo] = js.undefined,
-      executionConfiguration: js.UndefOr[WorkflowExecutionConfiguration] = js.undefined): WorkflowExecutionDetail = {
+      latestExecutionContext: js.UndefOr[Data] = js.undefined): WorkflowExecutionDetail = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "openCounts" -> openCounts.map { x => x.asInstanceOf[js.Any] },
+        "executionConfiguration" -> executionConfiguration.asInstanceOf[js.Any],
+        "executionInfo" -> executionInfo.asInstanceOf[js.Any],
+        "openCounts" -> openCounts.asInstanceOf[js.Any],
         "latestActivityTaskTimestamp" -> latestActivityTaskTimestamp.map { x => x.asInstanceOf[js.Any] },
-        "latestExecutionContext" -> latestExecutionContext.map { x => x.asInstanceOf[js.Any] },
-        "executionInfo" -> executionInfo.map { x => x.asInstanceOf[js.Any] },
-        "executionConfiguration" -> executionConfiguration.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "latestExecutionContext" -> latestExecutionContext.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[WorkflowExecutionDetail]
     }
@@ -3686,20 +3686,20 @@ package swf {
    */
   @js.native
   trait WorkflowExecutionFailedEventAttributes extends js.Object {
-    var reason: js.UndefOr[FailureReason]
+    var decisionTaskCompletedEventId: EventId
     var details: js.UndefOr[Data]
-    var decisionTaskCompletedEventId: js.UndefOr[EventId]
+    var reason: js.UndefOr[FailureReason]
   }
 
   object WorkflowExecutionFailedEventAttributes {
     def apply(
-      reason: js.UndefOr[FailureReason] = js.undefined,
+      decisionTaskCompletedEventId: EventId,
       details: js.UndefOr[Data] = js.undefined,
-      decisionTaskCompletedEventId: js.UndefOr[EventId] = js.undefined): WorkflowExecutionFailedEventAttributes = {
+      reason: js.UndefOr[FailureReason] = js.undefined): WorkflowExecutionFailedEventAttributes = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "reason" -> reason.map { x => x.asInstanceOf[js.Any] },
+        "decisionTaskCompletedEventId" -> decisionTaskCompletedEventId.asInstanceOf[js.Any],
         "details" -> details.map { x => x.asInstanceOf[js.Any] },
-        "decisionTaskCompletedEventId" -> decisionTaskCompletedEventId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "reason" -> reason.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[WorkflowExecutionFailedEventAttributes]
     }
@@ -3710,14 +3710,14 @@ package swf {
    */
   @js.native
   trait WorkflowExecutionFilter extends js.Object {
-    var workflowId: js.UndefOr[WorkflowId]
+    var workflowId: WorkflowId
   }
 
   object WorkflowExecutionFilter {
     def apply(
-      workflowId: js.UndefOr[WorkflowId] = js.undefined): WorkflowExecutionFilter = {
+      workflowId: WorkflowId): WorkflowExecutionFilter = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "workflowId" -> workflowId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "workflowId" -> workflowId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[WorkflowExecutionFilter]
     }
@@ -3728,38 +3728,38 @@ package swf {
    */
   @js.native
   trait WorkflowExecutionInfo extends js.Object {
-    var execution: js.UndefOr[WorkflowExecution]
-    var parent: js.UndefOr[WorkflowExecution]
-    var closeTimestamp: js.UndefOr[Timestamp]
-    var executionStatus: js.UndefOr[ExecutionStatus]
-    var workflowType: js.UndefOr[WorkflowType]
-    var closeStatus: js.UndefOr[CloseStatus]
-    var tagList: js.UndefOr[TagList]
-    var startTimestamp: js.UndefOr[Timestamp]
+    var execution: WorkflowExecution
+    var executionStatus: ExecutionStatus
+    var startTimestamp: Timestamp
+    var workflowType: WorkflowType
     var cancelRequested: js.UndefOr[Canceled]
+    var closeStatus: js.UndefOr[CloseStatus]
+    var closeTimestamp: js.UndefOr[Timestamp]
+    var parent: js.UndefOr[WorkflowExecution]
+    var tagList: js.UndefOr[TagList]
   }
 
   object WorkflowExecutionInfo {
     def apply(
-      execution: js.UndefOr[WorkflowExecution] = js.undefined,
-      parent: js.UndefOr[WorkflowExecution] = js.undefined,
-      closeTimestamp: js.UndefOr[Timestamp] = js.undefined,
-      executionStatus: js.UndefOr[ExecutionStatus] = js.undefined,
-      workflowType: js.UndefOr[WorkflowType] = js.undefined,
+      execution: WorkflowExecution,
+      executionStatus: ExecutionStatus,
+      startTimestamp: Timestamp,
+      workflowType: WorkflowType,
+      cancelRequested: js.UndefOr[Canceled] = js.undefined,
       closeStatus: js.UndefOr[CloseStatus] = js.undefined,
-      tagList: js.UndefOr[TagList] = js.undefined,
-      startTimestamp: js.UndefOr[Timestamp] = js.undefined,
-      cancelRequested: js.UndefOr[Canceled] = js.undefined): WorkflowExecutionInfo = {
+      closeTimestamp: js.UndefOr[Timestamp] = js.undefined,
+      parent: js.UndefOr[WorkflowExecution] = js.undefined,
+      tagList: js.UndefOr[TagList] = js.undefined): WorkflowExecutionInfo = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "execution" -> execution.map { x => x.asInstanceOf[js.Any] },
-        "parent" -> parent.map { x => x.asInstanceOf[js.Any] },
-        "closeTimestamp" -> closeTimestamp.map { x => x.asInstanceOf[js.Any] },
-        "executionStatus" -> executionStatus.map { x => x.asInstanceOf[js.Any] },
-        "workflowType" -> workflowType.map { x => x.asInstanceOf[js.Any] },
+        "execution" -> execution.asInstanceOf[js.Any],
+        "executionStatus" -> executionStatus.asInstanceOf[js.Any],
+        "startTimestamp" -> startTimestamp.asInstanceOf[js.Any],
+        "workflowType" -> workflowType.asInstanceOf[js.Any],
+        "cancelRequested" -> cancelRequested.map { x => x.asInstanceOf[js.Any] },
         "closeStatus" -> closeStatus.map { x => x.asInstanceOf[js.Any] },
-        "tagList" -> tagList.map { x => x.asInstanceOf[js.Any] },
-        "startTimestamp" -> startTimestamp.map { x => x.asInstanceOf[js.Any] },
-        "cancelRequested" -> cancelRequested.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "closeTimestamp" -> closeTimestamp.map { x => x.asInstanceOf[js.Any] },
+        "parent" -> parent.map { x => x.asInstanceOf[js.Any] },
+        "tagList" -> tagList.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[WorkflowExecutionInfo]
     }
@@ -3770,16 +3770,16 @@ package swf {
    */
   @js.native
   trait WorkflowExecutionInfos extends js.Object {
-    var executionInfos: js.UndefOr[WorkflowExecutionInfoList]
+    var executionInfos: WorkflowExecutionInfoList
     var nextPageToken: js.UndefOr[PageToken]
   }
 
   object WorkflowExecutionInfos {
     def apply(
-      executionInfos: js.UndefOr[WorkflowExecutionInfoList] = js.undefined,
+      executionInfos: WorkflowExecutionInfoList,
       nextPageToken: js.UndefOr[PageToken] = js.undefined): WorkflowExecutionInfos = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "executionInfos" -> executionInfos.map { x => x.asInstanceOf[js.Any] },
+        "executionInfos" -> executionInfos.asInstanceOf[js.Any],
         "nextPageToken" -> nextPageToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[WorkflowExecutionInfos]
@@ -3791,26 +3791,26 @@ package swf {
    */
   @js.native
   trait WorkflowExecutionOpenCounts extends js.Object {
-    var openChildWorkflowExecutions: js.UndefOr[Count]
-    var openActivityTasks: js.UndefOr[Count]
+    var openActivityTasks: Count
+    var openChildWorkflowExecutions: Count
+    var openDecisionTasks: OpenDecisionTasksCount
+    var openTimers: Count
     var openLambdaFunctions: js.UndefOr[Count]
-    var openTimers: js.UndefOr[Count]
-    var openDecisionTasks: js.UndefOr[OpenDecisionTasksCount]
   }
 
   object WorkflowExecutionOpenCounts {
     def apply(
-      openChildWorkflowExecutions: js.UndefOr[Count] = js.undefined,
-      openActivityTasks: js.UndefOr[Count] = js.undefined,
-      openLambdaFunctions: js.UndefOr[Count] = js.undefined,
-      openTimers: js.UndefOr[Count] = js.undefined,
-      openDecisionTasks: js.UndefOr[OpenDecisionTasksCount] = js.undefined): WorkflowExecutionOpenCounts = {
+      openActivityTasks: Count,
+      openChildWorkflowExecutions: Count,
+      openDecisionTasks: OpenDecisionTasksCount,
+      openTimers: Count,
+      openLambdaFunctions: js.UndefOr[Count] = js.undefined): WorkflowExecutionOpenCounts = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "openChildWorkflowExecutions" -> openChildWorkflowExecutions.map { x => x.asInstanceOf[js.Any] },
-        "openActivityTasks" -> openActivityTasks.map { x => x.asInstanceOf[js.Any] },
-        "openLambdaFunctions" -> openLambdaFunctions.map { x => x.asInstanceOf[js.Any] },
-        "openTimers" -> openTimers.map { x => x.asInstanceOf[js.Any] },
-        "openDecisionTasks" -> openDecisionTasks.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "openActivityTasks" -> openActivityTasks.asInstanceOf[js.Any],
+        "openChildWorkflowExecutions" -> openChildWorkflowExecutions.asInstanceOf[js.Any],
+        "openDecisionTasks" -> openDecisionTasks.asInstanceOf[js.Any],
+        "openTimers" -> openTimers.asInstanceOf[js.Any],
+        "openLambdaFunctions" -> openLambdaFunctions.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[WorkflowExecutionOpenCounts]
     }
@@ -3821,23 +3821,23 @@ package swf {
    */
   @js.native
   trait WorkflowExecutionSignaledEventAttributes extends js.Object {
-    var signalName: js.UndefOr[SignalName]
-    var input: js.UndefOr[Data]
-    var externalWorkflowExecution: js.UndefOr[WorkflowExecution]
+    var signalName: SignalName
     var externalInitiatedEventId: js.UndefOr[EventId]
+    var externalWorkflowExecution: js.UndefOr[WorkflowExecution]
+    var input: js.UndefOr[Data]
   }
 
   object WorkflowExecutionSignaledEventAttributes {
     def apply(
-      signalName: js.UndefOr[SignalName] = js.undefined,
-      input: js.UndefOr[Data] = js.undefined,
+      signalName: SignalName,
+      externalInitiatedEventId: js.UndefOr[EventId] = js.undefined,
       externalWorkflowExecution: js.UndefOr[WorkflowExecution] = js.undefined,
-      externalInitiatedEventId: js.UndefOr[EventId] = js.undefined): WorkflowExecutionSignaledEventAttributes = {
+      input: js.UndefOr[Data] = js.undefined): WorkflowExecutionSignaledEventAttributes = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "signalName" -> signalName.map { x => x.asInstanceOf[js.Any] },
-        "input" -> input.map { x => x.asInstanceOf[js.Any] },
+        "signalName" -> signalName.asInstanceOf[js.Any],
+        "externalInitiatedEventId" -> externalInitiatedEventId.map { x => x.asInstanceOf[js.Any] },
         "externalWorkflowExecution" -> externalWorkflowExecution.map { x => x.asInstanceOf[js.Any] },
-        "externalInitiatedEventId" -> externalInitiatedEventId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "input" -> input.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[WorkflowExecutionSignaledEventAttributes]
     }
@@ -3848,47 +3848,47 @@ package swf {
    */
   @js.native
   trait WorkflowExecutionStartedEventAttributes extends js.Object {
-    var parentInitiatedEventId: js.UndefOr[EventId]
-    var workflowType: js.UndefOr[WorkflowType]
-    var lambdaRole: js.UndefOr[Arn]
-    var taskList: js.UndefOr[TaskList]
-    var tagList: js.UndefOr[TagList]
-    var parentWorkflowExecution: js.UndefOr[WorkflowExecution]
-    var taskPriority: js.UndefOr[TaskPriority]
-    var taskStartToCloseTimeout: js.UndefOr[DurationInSecondsOptional]
+    var childPolicy: ChildPolicy
+    var taskList: TaskList
+    var workflowType: WorkflowType
     var continuedExecutionRunId: js.UndefOr[WorkflowRunIdOptional]
-    var childPolicy: js.UndefOr[ChildPolicy]
     var executionStartToCloseTimeout: js.UndefOr[DurationInSecondsOptional]
     var input: js.UndefOr[Data]
+    var lambdaRole: js.UndefOr[Arn]
+    var parentInitiatedEventId: js.UndefOr[EventId]
+    var parentWorkflowExecution: js.UndefOr[WorkflowExecution]
+    var tagList: js.UndefOr[TagList]
+    var taskPriority: js.UndefOr[TaskPriority]
+    var taskStartToCloseTimeout: js.UndefOr[DurationInSecondsOptional]
   }
 
   object WorkflowExecutionStartedEventAttributes {
     def apply(
-      parentInitiatedEventId: js.UndefOr[EventId] = js.undefined,
-      workflowType: js.UndefOr[WorkflowType] = js.undefined,
-      lambdaRole: js.UndefOr[Arn] = js.undefined,
-      taskList: js.UndefOr[TaskList] = js.undefined,
-      tagList: js.UndefOr[TagList] = js.undefined,
-      parentWorkflowExecution: js.UndefOr[WorkflowExecution] = js.undefined,
-      taskPriority: js.UndefOr[TaskPriority] = js.undefined,
-      taskStartToCloseTimeout: js.UndefOr[DurationInSecondsOptional] = js.undefined,
+      childPolicy: ChildPolicy,
+      taskList: TaskList,
+      workflowType: WorkflowType,
       continuedExecutionRunId: js.UndefOr[WorkflowRunIdOptional] = js.undefined,
-      childPolicy: js.UndefOr[ChildPolicy] = js.undefined,
       executionStartToCloseTimeout: js.UndefOr[DurationInSecondsOptional] = js.undefined,
-      input: js.UndefOr[Data] = js.undefined): WorkflowExecutionStartedEventAttributes = {
+      input: js.UndefOr[Data] = js.undefined,
+      lambdaRole: js.UndefOr[Arn] = js.undefined,
+      parentInitiatedEventId: js.UndefOr[EventId] = js.undefined,
+      parentWorkflowExecution: js.UndefOr[WorkflowExecution] = js.undefined,
+      tagList: js.UndefOr[TagList] = js.undefined,
+      taskPriority: js.UndefOr[TaskPriority] = js.undefined,
+      taskStartToCloseTimeout: js.UndefOr[DurationInSecondsOptional] = js.undefined): WorkflowExecutionStartedEventAttributes = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "parentInitiatedEventId" -> parentInitiatedEventId.map { x => x.asInstanceOf[js.Any] },
-        "workflowType" -> workflowType.map { x => x.asInstanceOf[js.Any] },
-        "lambdaRole" -> lambdaRole.map { x => x.asInstanceOf[js.Any] },
-        "taskList" -> taskList.map { x => x.asInstanceOf[js.Any] },
-        "tagList" -> tagList.map { x => x.asInstanceOf[js.Any] },
-        "parentWorkflowExecution" -> parentWorkflowExecution.map { x => x.asInstanceOf[js.Any] },
-        "taskPriority" -> taskPriority.map { x => x.asInstanceOf[js.Any] },
-        "taskStartToCloseTimeout" -> taskStartToCloseTimeout.map { x => x.asInstanceOf[js.Any] },
+        "childPolicy" -> childPolicy.asInstanceOf[js.Any],
+        "taskList" -> taskList.asInstanceOf[js.Any],
+        "workflowType" -> workflowType.asInstanceOf[js.Any],
         "continuedExecutionRunId" -> continuedExecutionRunId.map { x => x.asInstanceOf[js.Any] },
-        "childPolicy" -> childPolicy.map { x => x.asInstanceOf[js.Any] },
         "executionStartToCloseTimeout" -> executionStartToCloseTimeout.map { x => x.asInstanceOf[js.Any] },
-        "input" -> input.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "input" -> input.map { x => x.asInstanceOf[js.Any] },
+        "lambdaRole" -> lambdaRole.map { x => x.asInstanceOf[js.Any] },
+        "parentInitiatedEventId" -> parentInitiatedEventId.map { x => x.asInstanceOf[js.Any] },
+        "parentWorkflowExecution" -> parentWorkflowExecution.map { x => x.asInstanceOf[js.Any] },
+        "tagList" -> tagList.map { x => x.asInstanceOf[js.Any] },
+        "taskPriority" -> taskPriority.map { x => x.asInstanceOf[js.Any] },
+        "taskStartToCloseTimeout" -> taskStartToCloseTimeout.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[WorkflowExecutionStartedEventAttributes]
     }
@@ -3907,23 +3907,23 @@ package swf {
    */
   @js.native
   trait WorkflowExecutionTerminatedEventAttributes extends js.Object {
-    var reason: js.UndefOr[TerminateReason]
-    var details: js.UndefOr[Data]
-    var childPolicy: js.UndefOr[ChildPolicy]
+    var childPolicy: ChildPolicy
     var cause: js.UndefOr[WorkflowExecutionTerminatedCause]
+    var details: js.UndefOr[Data]
+    var reason: js.UndefOr[TerminateReason]
   }
 
   object WorkflowExecutionTerminatedEventAttributes {
     def apply(
-      reason: js.UndefOr[TerminateReason] = js.undefined,
+      childPolicy: ChildPolicy,
+      cause: js.UndefOr[WorkflowExecutionTerminatedCause] = js.undefined,
       details: js.UndefOr[Data] = js.undefined,
-      childPolicy: js.UndefOr[ChildPolicy] = js.undefined,
-      cause: js.UndefOr[WorkflowExecutionTerminatedCause] = js.undefined): WorkflowExecutionTerminatedEventAttributes = {
+      reason: js.UndefOr[TerminateReason] = js.undefined): WorkflowExecutionTerminatedEventAttributes = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "reason" -> reason.map { x => x.asInstanceOf[js.Any] },
+        "childPolicy" -> childPolicy.asInstanceOf[js.Any],
+        "cause" -> cause.map { x => x.asInstanceOf[js.Any] },
         "details" -> details.map { x => x.asInstanceOf[js.Any] },
-        "childPolicy" -> childPolicy.map { x => x.asInstanceOf[js.Any] },
-        "cause" -> cause.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "reason" -> reason.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[WorkflowExecutionTerminatedEventAttributes]
     }
@@ -3934,17 +3934,17 @@ package swf {
    */
   @js.native
   trait WorkflowExecutionTimedOutEventAttributes extends js.Object {
-    var timeoutType: js.UndefOr[WorkflowExecutionTimeoutType]
-    var childPolicy: js.UndefOr[ChildPolicy]
+    var childPolicy: ChildPolicy
+    var timeoutType: WorkflowExecutionTimeoutType
   }
 
   object WorkflowExecutionTimedOutEventAttributes {
     def apply(
-      timeoutType: js.UndefOr[WorkflowExecutionTimeoutType] = js.undefined,
-      childPolicy: js.UndefOr[ChildPolicy] = js.undefined): WorkflowExecutionTimedOutEventAttributes = {
+      childPolicy: ChildPolicy,
+      timeoutType: WorkflowExecutionTimeoutType): WorkflowExecutionTimedOutEventAttributes = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "timeoutType" -> timeoutType.map { x => x.asInstanceOf[js.Any] },
-        "childPolicy" -> childPolicy.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "childPolicy" -> childPolicy.asInstanceOf[js.Any],
+        "timeoutType" -> timeoutType.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[WorkflowExecutionTimedOutEventAttributes]
     }
@@ -3961,17 +3961,17 @@ package swf {
    */
   @js.native
   trait WorkflowType extends js.Object {
-    var name: js.UndefOr[Name]
-    var version: js.UndefOr[Version]
+    var name: Name
+    var version: Version
   }
 
   object WorkflowType {
     def apply(
-      name: js.UndefOr[Name] = js.undefined,
-      version: js.UndefOr[Version] = js.undefined): WorkflowType = {
+      name: Name,
+      version: Version): WorkflowType = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "name" -> name.map { x => x.asInstanceOf[js.Any] },
-        "version" -> version.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "name" -> name.asInstanceOf[js.Any],
+        "version" -> version.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[WorkflowType]
     }
@@ -3982,29 +3982,29 @@ package swf {
    */
   @js.native
   trait WorkflowTypeConfiguration extends js.Object {
-    var defaultTaskStartToCloseTimeout: js.UndefOr[DurationInSecondsOptional]
-    var defaultTaskList: js.UndefOr[TaskList]
-    var defaultLambdaRole: js.UndefOr[Arn]
     var defaultChildPolicy: js.UndefOr[ChildPolicy]
-    var defaultTaskPriority: js.UndefOr[TaskPriority]
     var defaultExecutionStartToCloseTimeout: js.UndefOr[DurationInSecondsOptional]
+    var defaultLambdaRole: js.UndefOr[Arn]
+    var defaultTaskList: js.UndefOr[TaskList]
+    var defaultTaskPriority: js.UndefOr[TaskPriority]
+    var defaultTaskStartToCloseTimeout: js.UndefOr[DurationInSecondsOptional]
   }
 
   object WorkflowTypeConfiguration {
     def apply(
-      defaultTaskStartToCloseTimeout: js.UndefOr[DurationInSecondsOptional] = js.undefined,
-      defaultTaskList: js.UndefOr[TaskList] = js.undefined,
-      defaultLambdaRole: js.UndefOr[Arn] = js.undefined,
       defaultChildPolicy: js.UndefOr[ChildPolicy] = js.undefined,
+      defaultExecutionStartToCloseTimeout: js.UndefOr[DurationInSecondsOptional] = js.undefined,
+      defaultLambdaRole: js.UndefOr[Arn] = js.undefined,
+      defaultTaskList: js.UndefOr[TaskList] = js.undefined,
       defaultTaskPriority: js.UndefOr[TaskPriority] = js.undefined,
-      defaultExecutionStartToCloseTimeout: js.UndefOr[DurationInSecondsOptional] = js.undefined): WorkflowTypeConfiguration = {
+      defaultTaskStartToCloseTimeout: js.UndefOr[DurationInSecondsOptional] = js.undefined): WorkflowTypeConfiguration = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "defaultTaskStartToCloseTimeout" -> defaultTaskStartToCloseTimeout.map { x => x.asInstanceOf[js.Any] },
-        "defaultTaskList" -> defaultTaskList.map { x => x.asInstanceOf[js.Any] },
-        "defaultLambdaRole" -> defaultLambdaRole.map { x => x.asInstanceOf[js.Any] },
         "defaultChildPolicy" -> defaultChildPolicy.map { x => x.asInstanceOf[js.Any] },
+        "defaultExecutionStartToCloseTimeout" -> defaultExecutionStartToCloseTimeout.map { x => x.asInstanceOf[js.Any] },
+        "defaultLambdaRole" -> defaultLambdaRole.map { x => x.asInstanceOf[js.Any] },
+        "defaultTaskList" -> defaultTaskList.map { x => x.asInstanceOf[js.Any] },
         "defaultTaskPriority" -> defaultTaskPriority.map { x => x.asInstanceOf[js.Any] },
-        "defaultExecutionStartToCloseTimeout" -> defaultExecutionStartToCloseTimeout.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "defaultTaskStartToCloseTimeout" -> defaultTaskStartToCloseTimeout.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[WorkflowTypeConfiguration]
     }
@@ -4015,17 +4015,17 @@ package swf {
    */
   @js.native
   trait WorkflowTypeDetail extends js.Object {
-    var typeInfo: js.UndefOr[WorkflowTypeInfo]
-    var configuration: js.UndefOr[WorkflowTypeConfiguration]
+    var configuration: WorkflowTypeConfiguration
+    var typeInfo: WorkflowTypeInfo
   }
 
   object WorkflowTypeDetail {
     def apply(
-      typeInfo: js.UndefOr[WorkflowTypeInfo] = js.undefined,
-      configuration: js.UndefOr[WorkflowTypeConfiguration] = js.undefined): WorkflowTypeDetail = {
+      configuration: WorkflowTypeConfiguration,
+      typeInfo: WorkflowTypeInfo): WorkflowTypeDetail = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "typeInfo" -> typeInfo.map { x => x.asInstanceOf[js.Any] },
-        "configuration" -> configuration.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "configuration" -> configuration.asInstanceOf[js.Any],
+        "typeInfo" -> typeInfo.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[WorkflowTypeDetail]
     }
@@ -4036,16 +4036,16 @@ package swf {
    */
   @js.native
   trait WorkflowTypeFilter extends js.Object {
-    var name: js.UndefOr[Name]
+    var name: Name
     var version: js.UndefOr[VersionOptional]
   }
 
   object WorkflowTypeFilter {
     def apply(
-      name: js.UndefOr[Name] = js.undefined,
+      name: Name,
       version: js.UndefOr[VersionOptional] = js.undefined): WorkflowTypeFilter = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "name" -> name.map { x => x.asInstanceOf[js.Any] },
+        "name" -> name.asInstanceOf[js.Any],
         "version" -> version.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[WorkflowTypeFilter]
@@ -4057,26 +4057,26 @@ package swf {
    */
   @js.native
   trait WorkflowTypeInfo extends js.Object {
-    var workflowType: js.UndefOr[WorkflowType]
-    var description: js.UndefOr[Description]
-    var status: js.UndefOr[RegistrationStatus]
+    var creationDate: Timestamp
+    var status: RegistrationStatus
+    var workflowType: WorkflowType
     var deprecationDate: js.UndefOr[Timestamp]
-    var creationDate: js.UndefOr[Timestamp]
+    var description: js.UndefOr[Description]
   }
 
   object WorkflowTypeInfo {
     def apply(
-      workflowType: js.UndefOr[WorkflowType] = js.undefined,
-      description: js.UndefOr[Description] = js.undefined,
-      status: js.UndefOr[RegistrationStatus] = js.undefined,
+      creationDate: Timestamp,
+      status: RegistrationStatus,
+      workflowType: WorkflowType,
       deprecationDate: js.UndefOr[Timestamp] = js.undefined,
-      creationDate: js.UndefOr[Timestamp] = js.undefined): WorkflowTypeInfo = {
+      description: js.UndefOr[Description] = js.undefined): WorkflowTypeInfo = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "workflowType" -> workflowType.map { x => x.asInstanceOf[js.Any] },
-        "description" -> description.map { x => x.asInstanceOf[js.Any] },
-        "status" -> status.map { x => x.asInstanceOf[js.Any] },
+        "creationDate" -> creationDate.asInstanceOf[js.Any],
+        "status" -> status.asInstanceOf[js.Any],
+        "workflowType" -> workflowType.asInstanceOf[js.Any],
         "deprecationDate" -> deprecationDate.map { x => x.asInstanceOf[js.Any] },
-        "creationDate" -> creationDate.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "description" -> description.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[WorkflowTypeInfo]
     }
@@ -4087,16 +4087,16 @@ package swf {
    */
   @js.native
   trait WorkflowTypeInfos extends js.Object {
-    var typeInfos: js.UndefOr[WorkflowTypeInfoList]
+    var typeInfos: WorkflowTypeInfoList
     var nextPageToken: js.UndefOr[PageToken]
   }
 
   object WorkflowTypeInfos {
     def apply(
-      typeInfos: js.UndefOr[WorkflowTypeInfoList] = js.undefined,
+      typeInfos: WorkflowTypeInfoList,
       nextPageToken: js.UndefOr[PageToken] = js.undefined): WorkflowTypeInfos = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "typeInfos" -> typeInfos.map { x => x.asInstanceOf[js.Any] },
+        "typeInfos" -> typeInfos.asInstanceOf[js.Any],
         "nextPageToken" -> nextPageToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[WorkflowTypeInfos]

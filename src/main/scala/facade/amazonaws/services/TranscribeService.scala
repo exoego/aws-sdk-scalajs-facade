@@ -45,20 +45,20 @@ package transcribeservice {
 
   @js.native
   trait CreateVocabularyRequest extends js.Object {
-    var VocabularyName: js.UndefOr[VocabularyName]
-    var LanguageCode: js.UndefOr[LanguageCode]
-    var Phrases: js.UndefOr[Phrases]
+    var LanguageCode: LanguageCode
+    var Phrases: Phrases
+    var VocabularyName: VocabularyName
   }
 
   object CreateVocabularyRequest {
     def apply(
-      VocabularyName: js.UndefOr[VocabularyName] = js.undefined,
-      LanguageCode: js.UndefOr[LanguageCode] = js.undefined,
-      Phrases: js.UndefOr[Phrases] = js.undefined): CreateVocabularyRequest = {
+      LanguageCode: LanguageCode,
+      Phrases: Phrases,
+      VocabularyName: VocabularyName): CreateVocabularyRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "VocabularyName" -> VocabularyName.map { x => x.asInstanceOf[js.Any] },
-        "LanguageCode" -> LanguageCode.map { x => x.asInstanceOf[js.Any] },
-        "Phrases" -> Phrases.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "LanguageCode" -> LanguageCode.asInstanceOf[js.Any],
+        "Phrases" -> Phrases.asInstanceOf[js.Any],
+        "VocabularyName" -> VocabularyName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateVocabularyRequest]
     }
@@ -66,26 +66,26 @@ package transcribeservice {
 
   @js.native
   trait CreateVocabularyResponse extends js.Object {
-    var VocabularyName: js.UndefOr[VocabularyName]
-    var VocabularyState: js.UndefOr[VocabularyState]
-    var LastModifiedTime: js.UndefOr[DateTime]
     var FailureReason: js.UndefOr[FailureReason]
     var LanguageCode: js.UndefOr[LanguageCode]
+    var LastModifiedTime: js.UndefOr[DateTime]
+    var VocabularyName: js.UndefOr[VocabularyName]
+    var VocabularyState: js.UndefOr[VocabularyState]
   }
 
   object CreateVocabularyResponse {
     def apply(
-      VocabularyName: js.UndefOr[VocabularyName] = js.undefined,
-      VocabularyState: js.UndefOr[VocabularyState] = js.undefined,
-      LastModifiedTime: js.UndefOr[DateTime] = js.undefined,
       FailureReason: js.UndefOr[FailureReason] = js.undefined,
-      LanguageCode: js.UndefOr[LanguageCode] = js.undefined): CreateVocabularyResponse = {
+      LanguageCode: js.UndefOr[LanguageCode] = js.undefined,
+      LastModifiedTime: js.UndefOr[DateTime] = js.undefined,
+      VocabularyName: js.UndefOr[VocabularyName] = js.undefined,
+      VocabularyState: js.UndefOr[VocabularyState] = js.undefined): CreateVocabularyResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "VocabularyName" -> VocabularyName.map { x => x.asInstanceOf[js.Any] },
-        "VocabularyState" -> VocabularyState.map { x => x.asInstanceOf[js.Any] },
-        "LastModifiedTime" -> LastModifiedTime.map { x => x.asInstanceOf[js.Any] },
         "FailureReason" -> FailureReason.map { x => x.asInstanceOf[js.Any] },
-        "LanguageCode" -> LanguageCode.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "LanguageCode" -> LanguageCode.map { x => x.asInstanceOf[js.Any] },
+        "LastModifiedTime" -> LastModifiedTime.map { x => x.asInstanceOf[js.Any] },
+        "VocabularyName" -> VocabularyName.map { x => x.asInstanceOf[js.Any] },
+        "VocabularyState" -> VocabularyState.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateVocabularyResponse]
     }
@@ -93,14 +93,14 @@ package transcribeservice {
 
   @js.native
   trait DeleteTranscriptionJobRequest extends js.Object {
-    var TranscriptionJobName: js.UndefOr[TranscriptionJobName]
+    var TranscriptionJobName: TranscriptionJobName
   }
 
   object DeleteTranscriptionJobRequest {
     def apply(
-      TranscriptionJobName: js.UndefOr[TranscriptionJobName] = js.undefined): DeleteTranscriptionJobRequest = {
+      TranscriptionJobName: TranscriptionJobName): DeleteTranscriptionJobRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "TranscriptionJobName" -> TranscriptionJobName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "TranscriptionJobName" -> TranscriptionJobName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteTranscriptionJobRequest]
     }
@@ -108,14 +108,14 @@ package transcribeservice {
 
   @js.native
   trait DeleteVocabularyRequest extends js.Object {
-    var VocabularyName: js.UndefOr[VocabularyName]
+    var VocabularyName: VocabularyName
   }
 
   object DeleteVocabularyRequest {
     def apply(
-      VocabularyName: js.UndefOr[VocabularyName] = js.undefined): DeleteVocabularyRequest = {
+      VocabularyName: VocabularyName): DeleteVocabularyRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "VocabularyName" -> VocabularyName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "VocabularyName" -> VocabularyName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteVocabularyRequest]
     }
@@ -123,14 +123,14 @@ package transcribeservice {
 
   @js.native
   trait GetTranscriptionJobRequest extends js.Object {
-    var TranscriptionJobName: js.UndefOr[TranscriptionJobName]
+    var TranscriptionJobName: TranscriptionJobName
   }
 
   object GetTranscriptionJobRequest {
     def apply(
-      TranscriptionJobName: js.UndefOr[TranscriptionJobName] = js.undefined): GetTranscriptionJobRequest = {
+      TranscriptionJobName: TranscriptionJobName): GetTranscriptionJobRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "TranscriptionJobName" -> TranscriptionJobName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "TranscriptionJobName" -> TranscriptionJobName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetTranscriptionJobRequest]
     }
@@ -153,14 +153,14 @@ package transcribeservice {
 
   @js.native
   trait GetVocabularyRequest extends js.Object {
-    var VocabularyName: js.UndefOr[VocabularyName]
+    var VocabularyName: VocabularyName
   }
 
   object GetVocabularyRequest {
     def apply(
-      VocabularyName: js.UndefOr[VocabularyName] = js.undefined): GetVocabularyRequest = {
+      VocabularyName: VocabularyName): GetVocabularyRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "VocabularyName" -> VocabularyName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "VocabularyName" -> VocabularyName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetVocabularyRequest]
     }
@@ -169,28 +169,28 @@ package transcribeservice {
   @js.native
   trait GetVocabularyResponse extends js.Object {
     var DownloadUri: js.UndefOr[Uri]
-    var VocabularyName: js.UndefOr[VocabularyName]
-    var VocabularyState: js.UndefOr[VocabularyState]
-    var LastModifiedTime: js.UndefOr[DateTime]
     var FailureReason: js.UndefOr[FailureReason]
     var LanguageCode: js.UndefOr[LanguageCode]
+    var LastModifiedTime: js.UndefOr[DateTime]
+    var VocabularyName: js.UndefOr[VocabularyName]
+    var VocabularyState: js.UndefOr[VocabularyState]
   }
 
   object GetVocabularyResponse {
     def apply(
       DownloadUri: js.UndefOr[Uri] = js.undefined,
-      VocabularyName: js.UndefOr[VocabularyName] = js.undefined,
-      VocabularyState: js.UndefOr[VocabularyState] = js.undefined,
-      LastModifiedTime: js.UndefOr[DateTime] = js.undefined,
       FailureReason: js.UndefOr[FailureReason] = js.undefined,
-      LanguageCode: js.UndefOr[LanguageCode] = js.undefined): GetVocabularyResponse = {
+      LanguageCode: js.UndefOr[LanguageCode] = js.undefined,
+      LastModifiedTime: js.UndefOr[DateTime] = js.undefined,
+      VocabularyName: js.UndefOr[VocabularyName] = js.undefined,
+      VocabularyState: js.UndefOr[VocabularyState] = js.undefined): GetVocabularyResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DownloadUri" -> DownloadUri.map { x => x.asInstanceOf[js.Any] },
-        "VocabularyName" -> VocabularyName.map { x => x.asInstanceOf[js.Any] },
-        "VocabularyState" -> VocabularyState.map { x => x.asInstanceOf[js.Any] },
-        "LastModifiedTime" -> LastModifiedTime.map { x => x.asInstanceOf[js.Any] },
         "FailureReason" -> FailureReason.map { x => x.asInstanceOf[js.Any] },
-        "LanguageCode" -> LanguageCode.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "LanguageCode" -> LanguageCode.map { x => x.asInstanceOf[js.Any] },
+        "LastModifiedTime" -> LastModifiedTime.map { x => x.asInstanceOf[js.Any] },
+        "VocabularyName" -> VocabularyName.map { x => x.asInstanceOf[js.Any] },
+        "VocabularyState" -> VocabularyState.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetVocabularyResponse]
     }
@@ -211,23 +211,23 @@ package transcribeservice {
 
   @js.native
   trait ListTranscriptionJobsRequest extends js.Object {
-    var Status: js.UndefOr[TranscriptionJobStatus]
     var JobNameContains: js.UndefOr[TranscriptionJobName]
-    var NextToken: js.UndefOr[NextToken]
     var MaxResults: js.UndefOr[MaxResults]
+    var NextToken: js.UndefOr[NextToken]
+    var Status: js.UndefOr[TranscriptionJobStatus]
   }
 
   object ListTranscriptionJobsRequest {
     def apply(
-      Status: js.UndefOr[TranscriptionJobStatus] = js.undefined,
       JobNameContains: js.UndefOr[TranscriptionJobName] = js.undefined,
+      MaxResults: js.UndefOr[MaxResults] = js.undefined,
       NextToken: js.UndefOr[NextToken] = js.undefined,
-      MaxResults: js.UndefOr[MaxResults] = js.undefined): ListTranscriptionJobsRequest = {
+      Status: js.UndefOr[TranscriptionJobStatus] = js.undefined): ListTranscriptionJobsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Status" -> Status.map { x => x.asInstanceOf[js.Any] },
         "JobNameContains" -> JobNameContains.map { x => x.asInstanceOf[js.Any] },
+        "MaxResults" -> MaxResults.map { x => x.asInstanceOf[js.Any] },
         "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
-        "MaxResults" -> MaxResults.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Status" -> Status.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListTranscriptionJobsRequest]
     }
@@ -235,19 +235,19 @@ package transcribeservice {
 
   @js.native
   trait ListTranscriptionJobsResponse extends js.Object {
-    var Status: js.UndefOr[TranscriptionJobStatus]
     var NextToken: js.UndefOr[NextToken]
+    var Status: js.UndefOr[TranscriptionJobStatus]
     var TranscriptionJobSummaries: js.UndefOr[TranscriptionJobSummaries]
   }
 
   object ListTranscriptionJobsResponse {
     def apply(
-      Status: js.UndefOr[TranscriptionJobStatus] = js.undefined,
       NextToken: js.UndefOr[NextToken] = js.undefined,
+      Status: js.UndefOr[TranscriptionJobStatus] = js.undefined,
       TranscriptionJobSummaries: js.UndefOr[TranscriptionJobSummaries] = js.undefined): ListTranscriptionJobsResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Status" -> Status.map { x => x.asInstanceOf[js.Any] },
         "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
+        "Status" -> Status.map { x => x.asInstanceOf[js.Any] },
         "TranscriptionJobSummaries" -> TranscriptionJobSummaries.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListTranscriptionJobsResponse]
@@ -256,23 +256,23 @@ package transcribeservice {
 
   @js.native
   trait ListVocabulariesRequest extends js.Object {
-    var NextToken: js.UndefOr[NextToken]
     var MaxResults: js.UndefOr[MaxResults]
-    var StateEquals: js.UndefOr[VocabularyState]
     var NameContains: js.UndefOr[VocabularyName]
+    var NextToken: js.UndefOr[NextToken]
+    var StateEquals: js.UndefOr[VocabularyState]
   }
 
   object ListVocabulariesRequest {
     def apply(
-      NextToken: js.UndefOr[NextToken] = js.undefined,
       MaxResults: js.UndefOr[MaxResults] = js.undefined,
-      StateEquals: js.UndefOr[VocabularyState] = js.undefined,
-      NameContains: js.UndefOr[VocabularyName] = js.undefined): ListVocabulariesRequest = {
+      NameContains: js.UndefOr[VocabularyName] = js.undefined,
+      NextToken: js.UndefOr[NextToken] = js.undefined,
+      StateEquals: js.UndefOr[VocabularyState] = js.undefined): ListVocabulariesRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
         "MaxResults" -> MaxResults.map { x => x.asInstanceOf[js.Any] },
-        "StateEquals" -> StateEquals.map { x => x.asInstanceOf[js.Any] },
-        "NameContains" -> NameContains.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "NameContains" -> NameContains.map { x => x.asInstanceOf[js.Any] },
+        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
+        "StateEquals" -> StateEquals.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListVocabulariesRequest]
     }
@@ -280,19 +280,19 @@ package transcribeservice {
 
   @js.native
   trait ListVocabulariesResponse extends js.Object {
-    var Status: js.UndefOr[TranscriptionJobStatus]
     var NextToken: js.UndefOr[NextToken]
+    var Status: js.UndefOr[TranscriptionJobStatus]
     var Vocabularies: js.UndefOr[Vocabularies]
   }
 
   object ListVocabulariesResponse {
     def apply(
-      Status: js.UndefOr[TranscriptionJobStatus] = js.undefined,
       NextToken: js.UndefOr[NextToken] = js.undefined,
+      Status: js.UndefOr[TranscriptionJobStatus] = js.undefined,
       Vocabularies: js.UndefOr[Vocabularies] = js.undefined): ListVocabulariesResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Status" -> Status.map { x => x.asInstanceOf[js.Any] },
         "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
+        "Status" -> Status.map { x => x.asInstanceOf[js.Any] },
         "Vocabularies" -> Vocabularies.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListVocabulariesResponse]
@@ -338,23 +338,23 @@ package transcribeservice {
    */
   @js.native
   trait Settings extends js.Object {
-    var VocabularyName: js.UndefOr[VocabularyName]
-    var ShowSpeakerLabels: js.UndefOr[Boolean]
-    var MaxSpeakerLabels: js.UndefOr[MaxSpeakers]
     var ChannelIdentification: js.UndefOr[Boolean]
+    var MaxSpeakerLabels: js.UndefOr[MaxSpeakers]
+    var ShowSpeakerLabels: js.UndefOr[Boolean]
+    var VocabularyName: js.UndefOr[VocabularyName]
   }
 
   object Settings {
     def apply(
-      VocabularyName: js.UndefOr[VocabularyName] = js.undefined,
-      ShowSpeakerLabels: js.UndefOr[Boolean] = js.undefined,
+      ChannelIdentification: js.UndefOr[Boolean] = js.undefined,
       MaxSpeakerLabels: js.UndefOr[MaxSpeakers] = js.undefined,
-      ChannelIdentification: js.UndefOr[Boolean] = js.undefined): Settings = {
+      ShowSpeakerLabels: js.UndefOr[Boolean] = js.undefined,
+      VocabularyName: js.UndefOr[VocabularyName] = js.undefined): Settings = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "VocabularyName" -> VocabularyName.map { x => x.asInstanceOf[js.Any] },
-        "ShowSpeakerLabels" -> ShowSpeakerLabels.map { x => x.asInstanceOf[js.Any] },
+        "ChannelIdentification" -> ChannelIdentification.map { x => x.asInstanceOf[js.Any] },
         "MaxSpeakerLabels" -> MaxSpeakerLabels.map { x => x.asInstanceOf[js.Any] },
-        "ChannelIdentification" -> ChannelIdentification.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ShowSpeakerLabels" -> ShowSpeakerLabels.map { x => x.asInstanceOf[js.Any] },
+        "VocabularyName" -> VocabularyName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Settings]
     }
@@ -362,32 +362,32 @@ package transcribeservice {
 
   @js.native
   trait StartTranscriptionJobRequest extends js.Object {
-    var TranscriptionJobName: js.UndefOr[TranscriptionJobName]
-    var Settings: js.UndefOr[Settings]
-    var MediaFormat: js.UndefOr[MediaFormat]
-    var Media: js.UndefOr[Media]
+    var LanguageCode: LanguageCode
+    var Media: Media
+    var MediaFormat: MediaFormat
+    var TranscriptionJobName: TranscriptionJobName
     var MediaSampleRateHertz: js.UndefOr[MediaSampleRateHertz]
-    var LanguageCode: js.UndefOr[LanguageCode]
     var OutputBucketName: js.UndefOr[OutputBucketName]
+    var Settings: js.UndefOr[Settings]
   }
 
   object StartTranscriptionJobRequest {
     def apply(
-      TranscriptionJobName: js.UndefOr[TranscriptionJobName] = js.undefined,
-      Settings: js.UndefOr[Settings] = js.undefined,
-      MediaFormat: js.UndefOr[MediaFormat] = js.undefined,
-      Media: js.UndefOr[Media] = js.undefined,
+      LanguageCode: LanguageCode,
+      Media: Media,
+      MediaFormat: MediaFormat,
+      TranscriptionJobName: TranscriptionJobName,
       MediaSampleRateHertz: js.UndefOr[MediaSampleRateHertz] = js.undefined,
-      LanguageCode: js.UndefOr[LanguageCode] = js.undefined,
-      OutputBucketName: js.UndefOr[OutputBucketName] = js.undefined): StartTranscriptionJobRequest = {
+      OutputBucketName: js.UndefOr[OutputBucketName] = js.undefined,
+      Settings: js.UndefOr[Settings] = js.undefined): StartTranscriptionJobRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "TranscriptionJobName" -> TranscriptionJobName.map { x => x.asInstanceOf[js.Any] },
-        "Settings" -> Settings.map { x => x.asInstanceOf[js.Any] },
-        "MediaFormat" -> MediaFormat.map { x => x.asInstanceOf[js.Any] },
-        "Media" -> Media.map { x => x.asInstanceOf[js.Any] },
+        "LanguageCode" -> LanguageCode.asInstanceOf[js.Any],
+        "Media" -> Media.asInstanceOf[js.Any],
+        "MediaFormat" -> MediaFormat.asInstanceOf[js.Any],
+        "TranscriptionJobName" -> TranscriptionJobName.asInstanceOf[js.Any],
         "MediaSampleRateHertz" -> MediaSampleRateHertz.map { x => x.asInstanceOf[js.Any] },
-        "LanguageCode" -> LanguageCode.map { x => x.asInstanceOf[js.Any] },
-        "OutputBucketName" -> OutputBucketName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "OutputBucketName" -> OutputBucketName.map { x => x.asInstanceOf[js.Any] },
+        "Settings" -> Settings.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StartTranscriptionJobRequest]
     }
@@ -431,44 +431,44 @@ package transcribeservice {
    */
   @js.native
   trait TranscriptionJob extends js.Object {
-    var TranscriptionJobName: js.UndefOr[TranscriptionJobName]
-    var Settings: js.UndefOr[Settings]
-    var MediaFormat: js.UndefOr[MediaFormat]
-    var TranscriptionJobStatus: js.UndefOr[TranscriptionJobStatus]
-    var Transcript: js.UndefOr[Transcript]
-    var Media: js.UndefOr[Media]
     var CompletionTime: js.UndefOr[DateTime]
-    var MediaSampleRateHertz: js.UndefOr[MediaSampleRateHertz]
+    var CreationTime: js.UndefOr[DateTime]
     var FailureReason: js.UndefOr[FailureReason]
     var LanguageCode: js.UndefOr[LanguageCode]
-    var CreationTime: js.UndefOr[DateTime]
+    var Media: js.UndefOr[Media]
+    var MediaFormat: js.UndefOr[MediaFormat]
+    var MediaSampleRateHertz: js.UndefOr[MediaSampleRateHertz]
+    var Settings: js.UndefOr[Settings]
+    var Transcript: js.UndefOr[Transcript]
+    var TranscriptionJobName: js.UndefOr[TranscriptionJobName]
+    var TranscriptionJobStatus: js.UndefOr[TranscriptionJobStatus]
   }
 
   object TranscriptionJob {
     def apply(
-      TranscriptionJobName: js.UndefOr[TranscriptionJobName] = js.undefined,
-      Settings: js.UndefOr[Settings] = js.undefined,
-      MediaFormat: js.UndefOr[MediaFormat] = js.undefined,
-      TranscriptionJobStatus: js.UndefOr[TranscriptionJobStatus] = js.undefined,
-      Transcript: js.UndefOr[Transcript] = js.undefined,
-      Media: js.UndefOr[Media] = js.undefined,
       CompletionTime: js.UndefOr[DateTime] = js.undefined,
-      MediaSampleRateHertz: js.UndefOr[MediaSampleRateHertz] = js.undefined,
+      CreationTime: js.UndefOr[DateTime] = js.undefined,
       FailureReason: js.UndefOr[FailureReason] = js.undefined,
       LanguageCode: js.UndefOr[LanguageCode] = js.undefined,
-      CreationTime: js.UndefOr[DateTime] = js.undefined): TranscriptionJob = {
+      Media: js.UndefOr[Media] = js.undefined,
+      MediaFormat: js.UndefOr[MediaFormat] = js.undefined,
+      MediaSampleRateHertz: js.UndefOr[MediaSampleRateHertz] = js.undefined,
+      Settings: js.UndefOr[Settings] = js.undefined,
+      Transcript: js.UndefOr[Transcript] = js.undefined,
+      TranscriptionJobName: js.UndefOr[TranscriptionJobName] = js.undefined,
+      TranscriptionJobStatus: js.UndefOr[TranscriptionJobStatus] = js.undefined): TranscriptionJob = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "TranscriptionJobName" -> TranscriptionJobName.map { x => x.asInstanceOf[js.Any] },
-        "Settings" -> Settings.map { x => x.asInstanceOf[js.Any] },
-        "MediaFormat" -> MediaFormat.map { x => x.asInstanceOf[js.Any] },
-        "TranscriptionJobStatus" -> TranscriptionJobStatus.map { x => x.asInstanceOf[js.Any] },
-        "Transcript" -> Transcript.map { x => x.asInstanceOf[js.Any] },
-        "Media" -> Media.map { x => x.asInstanceOf[js.Any] },
         "CompletionTime" -> CompletionTime.map { x => x.asInstanceOf[js.Any] },
-        "MediaSampleRateHertz" -> MediaSampleRateHertz.map { x => x.asInstanceOf[js.Any] },
+        "CreationTime" -> CreationTime.map { x => x.asInstanceOf[js.Any] },
         "FailureReason" -> FailureReason.map { x => x.asInstanceOf[js.Any] },
         "LanguageCode" -> LanguageCode.map { x => x.asInstanceOf[js.Any] },
-        "CreationTime" -> CreationTime.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Media" -> Media.map { x => x.asInstanceOf[js.Any] },
+        "MediaFormat" -> MediaFormat.map { x => x.asInstanceOf[js.Any] },
+        "MediaSampleRateHertz" -> MediaSampleRateHertz.map { x => x.asInstanceOf[js.Any] },
+        "Settings" -> Settings.map { x => x.asInstanceOf[js.Any] },
+        "Transcript" -> Transcript.map { x => x.asInstanceOf[js.Any] },
+        "TranscriptionJobName" -> TranscriptionJobName.map { x => x.asInstanceOf[js.Any] },
+        "TranscriptionJobStatus" -> TranscriptionJobStatus.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TranscriptionJob]
     }
@@ -487,32 +487,32 @@ package transcribeservice {
    */
   @js.native
   trait TranscriptionJobSummary extends js.Object {
-    var TranscriptionJobName: js.UndefOr[TranscriptionJobName]
-    var TranscriptionJobStatus: js.UndefOr[TranscriptionJobStatus]
     var CompletionTime: js.UndefOr[DateTime]
-    var OutputLocationType: js.UndefOr[OutputLocationType]
+    var CreationTime: js.UndefOr[DateTime]
     var FailureReason: js.UndefOr[FailureReason]
     var LanguageCode: js.UndefOr[LanguageCode]
-    var CreationTime: js.UndefOr[DateTime]
+    var OutputLocationType: js.UndefOr[OutputLocationType]
+    var TranscriptionJobName: js.UndefOr[TranscriptionJobName]
+    var TranscriptionJobStatus: js.UndefOr[TranscriptionJobStatus]
   }
 
   object TranscriptionJobSummary {
     def apply(
-      TranscriptionJobName: js.UndefOr[TranscriptionJobName] = js.undefined,
-      TranscriptionJobStatus: js.UndefOr[TranscriptionJobStatus] = js.undefined,
       CompletionTime: js.UndefOr[DateTime] = js.undefined,
-      OutputLocationType: js.UndefOr[OutputLocationType] = js.undefined,
+      CreationTime: js.UndefOr[DateTime] = js.undefined,
       FailureReason: js.UndefOr[FailureReason] = js.undefined,
       LanguageCode: js.UndefOr[LanguageCode] = js.undefined,
-      CreationTime: js.UndefOr[DateTime] = js.undefined): TranscriptionJobSummary = {
+      OutputLocationType: js.UndefOr[OutputLocationType] = js.undefined,
+      TranscriptionJobName: js.UndefOr[TranscriptionJobName] = js.undefined,
+      TranscriptionJobStatus: js.UndefOr[TranscriptionJobStatus] = js.undefined): TranscriptionJobSummary = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "TranscriptionJobName" -> TranscriptionJobName.map { x => x.asInstanceOf[js.Any] },
-        "TranscriptionJobStatus" -> TranscriptionJobStatus.map { x => x.asInstanceOf[js.Any] },
         "CompletionTime" -> CompletionTime.map { x => x.asInstanceOf[js.Any] },
-        "OutputLocationType" -> OutputLocationType.map { x => x.asInstanceOf[js.Any] },
+        "CreationTime" -> CreationTime.map { x => x.asInstanceOf[js.Any] },
         "FailureReason" -> FailureReason.map { x => x.asInstanceOf[js.Any] },
         "LanguageCode" -> LanguageCode.map { x => x.asInstanceOf[js.Any] },
-        "CreationTime" -> CreationTime.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "OutputLocationType" -> OutputLocationType.map { x => x.asInstanceOf[js.Any] },
+        "TranscriptionJobName" -> TranscriptionJobName.map { x => x.asInstanceOf[js.Any] },
+        "TranscriptionJobStatus" -> TranscriptionJobStatus.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TranscriptionJobSummary]
     }
@@ -520,20 +520,20 @@ package transcribeservice {
 
   @js.native
   trait UpdateVocabularyRequest extends js.Object {
-    var VocabularyName: js.UndefOr[VocabularyName]
-    var LanguageCode: js.UndefOr[LanguageCode]
-    var Phrases: js.UndefOr[Phrases]
+    var LanguageCode: LanguageCode
+    var Phrases: Phrases
+    var VocabularyName: VocabularyName
   }
 
   object UpdateVocabularyRequest {
     def apply(
-      VocabularyName: js.UndefOr[VocabularyName] = js.undefined,
-      LanguageCode: js.UndefOr[LanguageCode] = js.undefined,
-      Phrases: js.UndefOr[Phrases] = js.undefined): UpdateVocabularyRequest = {
+      LanguageCode: LanguageCode,
+      Phrases: Phrases,
+      VocabularyName: VocabularyName): UpdateVocabularyRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "VocabularyName" -> VocabularyName.map { x => x.asInstanceOf[js.Any] },
-        "LanguageCode" -> LanguageCode.map { x => x.asInstanceOf[js.Any] },
-        "Phrases" -> Phrases.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "LanguageCode" -> LanguageCode.asInstanceOf[js.Any],
+        "Phrases" -> Phrases.asInstanceOf[js.Any],
+        "VocabularyName" -> VocabularyName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateVocabularyRequest]
     }
@@ -541,22 +541,22 @@ package transcribeservice {
 
   @js.native
   trait UpdateVocabularyResponse extends js.Object {
-    var VocabularyName: js.UndefOr[VocabularyName]
     var LanguageCode: js.UndefOr[LanguageCode]
     var LastModifiedTime: js.UndefOr[DateTime]
+    var VocabularyName: js.UndefOr[VocabularyName]
     var VocabularyState: js.UndefOr[VocabularyState]
   }
 
   object UpdateVocabularyResponse {
     def apply(
-      VocabularyName: js.UndefOr[VocabularyName] = js.undefined,
       LanguageCode: js.UndefOr[LanguageCode] = js.undefined,
       LastModifiedTime: js.UndefOr[DateTime] = js.undefined,
+      VocabularyName: js.UndefOr[VocabularyName] = js.undefined,
       VocabularyState: js.UndefOr[VocabularyState] = js.undefined): UpdateVocabularyResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "VocabularyName" -> VocabularyName.map { x => x.asInstanceOf[js.Any] },
         "LanguageCode" -> LanguageCode.map { x => x.asInstanceOf[js.Any] },
         "LastModifiedTime" -> LastModifiedTime.map { x => x.asInstanceOf[js.Any] },
+        "VocabularyName" -> VocabularyName.map { x => x.asInstanceOf[js.Any] },
         "VocabularyState" -> VocabularyState.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateVocabularyResponse]
@@ -568,22 +568,22 @@ package transcribeservice {
    */
   @js.native
   trait VocabularyInfo extends js.Object {
-    var VocabularyName: js.UndefOr[VocabularyName]
     var LanguageCode: js.UndefOr[LanguageCode]
     var LastModifiedTime: js.UndefOr[DateTime]
+    var VocabularyName: js.UndefOr[VocabularyName]
     var VocabularyState: js.UndefOr[VocabularyState]
   }
 
   object VocabularyInfo {
     def apply(
-      VocabularyName: js.UndefOr[VocabularyName] = js.undefined,
       LanguageCode: js.UndefOr[LanguageCode] = js.undefined,
       LastModifiedTime: js.UndefOr[DateTime] = js.undefined,
+      VocabularyName: js.UndefOr[VocabularyName] = js.undefined,
       VocabularyState: js.UndefOr[VocabularyState] = js.undefined): VocabularyInfo = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "VocabularyName" -> VocabularyName.map { x => x.asInstanceOf[js.Any] },
         "LanguageCode" -> LanguageCode.map { x => x.asInstanceOf[js.Any] },
         "LastModifiedTime" -> LastModifiedTime.map { x => x.asInstanceOf[js.Any] },
+        "VocabularyName" -> VocabularyName.map { x => x.asInstanceOf[js.Any] },
         "VocabularyState" -> VocabularyState.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[VocabularyInfo]

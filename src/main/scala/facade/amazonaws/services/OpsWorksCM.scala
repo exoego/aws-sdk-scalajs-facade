@@ -63,19 +63,19 @@ package opsworkscm {
    */
   @js.native
   trait AccountAttribute extends js.Object {
-    var Name: js.UndefOr[String]
     var Maximum: js.UndefOr[Int]
+    var Name: js.UndefOr[String]
     var Used: js.UndefOr[Int]
   }
 
   object AccountAttribute {
     def apply(
-      Name: js.UndefOr[String] = js.undefined,
       Maximum: js.UndefOr[Int] = js.undefined,
+      Name: js.UndefOr[String] = js.undefined,
       Used: js.UndefOr[Int] = js.undefined): AccountAttribute = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
         "Maximum" -> Maximum.map { x => x.asInstanceOf[js.Any] },
+        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
         "Used" -> Used.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AccountAttribute]
@@ -84,20 +84,20 @@ package opsworkscm {
 
   @js.native
   trait AssociateNodeRequest extends js.Object {
-    var ServerName: js.UndefOr[ServerName]
-    var NodeName: js.UndefOr[NodeName]
-    var EngineAttributes: js.UndefOr[EngineAttributes]
+    var EngineAttributes: EngineAttributes
+    var NodeName: NodeName
+    var ServerName: ServerName
   }
 
   object AssociateNodeRequest {
     def apply(
-      ServerName: js.UndefOr[ServerName] = js.undefined,
-      NodeName: js.UndefOr[NodeName] = js.undefined,
-      EngineAttributes: js.UndefOr[EngineAttributes] = js.undefined): AssociateNodeRequest = {
+      EngineAttributes: EngineAttributes,
+      NodeName: NodeName,
+      ServerName: ServerName): AssociateNodeRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ServerName" -> ServerName.map { x => x.asInstanceOf[js.Any] },
-        "NodeName" -> NodeName.map { x => x.asInstanceOf[js.Any] },
-        "EngineAttributes" -> EngineAttributes.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "EngineAttributes" -> EngineAttributes.asInstanceOf[js.Any],
+        "NodeName" -> NodeName.asInstanceOf[js.Any],
+        "ServerName" -> ServerName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AssociateNodeRequest]
     }
@@ -123,83 +123,83 @@ package opsworkscm {
    */
   @js.native
   trait Backup extends js.Object {
-    var PreferredMaintenanceWindow: js.UndefOr[TimeWindowDefinition]
-    var S3DataUrl: js.UndefOr[String]
-    var Engine: js.UndefOr[String]
-    var KeyPair: js.UndefOr[String]
-    var InstanceProfileArn: js.UndefOr[String]
-    var S3LogUrl: js.UndefOr[String]
-    var Description: js.UndefOr[String]
-    var ServerName: js.UndefOr[ServerName]
-    var S3DataSize: js.UndefOr[Int]
-    var ServiceRoleArn: js.UndefOr[String]
-    var BackupId: js.UndefOr[BackupId]
-    var SecurityGroupIds: js.UndefOr[Strings]
-    var EngineVersion: js.UndefOr[String]
-    var PreferredBackupWindow: js.UndefOr[TimeWindowDefinition]
-    var InstanceType: js.UndefOr[String]
-    var StatusDescription: js.UndefOr[String]
-    var CreatedAt: js.UndefOr[Timestamp]
-    var SubnetIds: js.UndefOr[Strings]
-    var BackupType: js.UndefOr[BackupType]
     var BackupArn: js.UndefOr[String]
-    var ToolsVersion: js.UndefOr[String]
+    var BackupId: js.UndefOr[BackupId]
+    var BackupType: js.UndefOr[BackupType]
+    var CreatedAt: js.UndefOr[Timestamp]
+    var Description: js.UndefOr[String]
+    var Engine: js.UndefOr[String]
     var EngineModel: js.UndefOr[String]
-    var UserArn: js.UndefOr[String]
+    var EngineVersion: js.UndefOr[String]
+    var InstanceProfileArn: js.UndefOr[String]
+    var InstanceType: js.UndefOr[String]
+    var KeyPair: js.UndefOr[String]
+    var PreferredBackupWindow: js.UndefOr[TimeWindowDefinition]
+    var PreferredMaintenanceWindow: js.UndefOr[TimeWindowDefinition]
+    var S3DataSize: js.UndefOr[Int]
+    var S3DataUrl: js.UndefOr[String]
+    var S3LogUrl: js.UndefOr[String]
+    var SecurityGroupIds: js.UndefOr[Strings]
+    var ServerName: js.UndefOr[ServerName]
+    var ServiceRoleArn: js.UndefOr[String]
     var Status: js.UndefOr[BackupStatus]
+    var StatusDescription: js.UndefOr[String]
+    var SubnetIds: js.UndefOr[Strings]
+    var ToolsVersion: js.UndefOr[String]
+    var UserArn: js.UndefOr[String]
   }
 
   object Backup {
     def apply(
-      PreferredMaintenanceWindow: js.UndefOr[TimeWindowDefinition] = js.undefined,
-      S3DataUrl: js.UndefOr[String] = js.undefined,
-      Engine: js.UndefOr[String] = js.undefined,
-      KeyPair: js.UndefOr[String] = js.undefined,
-      InstanceProfileArn: js.UndefOr[String] = js.undefined,
-      S3LogUrl: js.UndefOr[String] = js.undefined,
-      Description: js.UndefOr[String] = js.undefined,
-      ServerName: js.UndefOr[ServerName] = js.undefined,
-      S3DataSize: js.UndefOr[Int] = js.undefined,
-      ServiceRoleArn: js.UndefOr[String] = js.undefined,
-      BackupId: js.UndefOr[BackupId] = js.undefined,
-      SecurityGroupIds: js.UndefOr[Strings] = js.undefined,
-      EngineVersion: js.UndefOr[String] = js.undefined,
-      PreferredBackupWindow: js.UndefOr[TimeWindowDefinition] = js.undefined,
-      InstanceType: js.UndefOr[String] = js.undefined,
-      StatusDescription: js.UndefOr[String] = js.undefined,
-      CreatedAt: js.UndefOr[Timestamp] = js.undefined,
-      SubnetIds: js.UndefOr[Strings] = js.undefined,
-      BackupType: js.UndefOr[BackupType] = js.undefined,
       BackupArn: js.UndefOr[String] = js.undefined,
-      ToolsVersion: js.UndefOr[String] = js.undefined,
+      BackupId: js.UndefOr[BackupId] = js.undefined,
+      BackupType: js.UndefOr[BackupType] = js.undefined,
+      CreatedAt: js.UndefOr[Timestamp] = js.undefined,
+      Description: js.UndefOr[String] = js.undefined,
+      Engine: js.UndefOr[String] = js.undefined,
       EngineModel: js.UndefOr[String] = js.undefined,
-      UserArn: js.UndefOr[String] = js.undefined,
-      Status: js.UndefOr[BackupStatus] = js.undefined): Backup = {
+      EngineVersion: js.UndefOr[String] = js.undefined,
+      InstanceProfileArn: js.UndefOr[String] = js.undefined,
+      InstanceType: js.UndefOr[String] = js.undefined,
+      KeyPair: js.UndefOr[String] = js.undefined,
+      PreferredBackupWindow: js.UndefOr[TimeWindowDefinition] = js.undefined,
+      PreferredMaintenanceWindow: js.UndefOr[TimeWindowDefinition] = js.undefined,
+      S3DataSize: js.UndefOr[Int] = js.undefined,
+      S3DataUrl: js.UndefOr[String] = js.undefined,
+      S3LogUrl: js.UndefOr[String] = js.undefined,
+      SecurityGroupIds: js.UndefOr[Strings] = js.undefined,
+      ServerName: js.UndefOr[ServerName] = js.undefined,
+      ServiceRoleArn: js.UndefOr[String] = js.undefined,
+      Status: js.UndefOr[BackupStatus] = js.undefined,
+      StatusDescription: js.UndefOr[String] = js.undefined,
+      SubnetIds: js.UndefOr[Strings] = js.undefined,
+      ToolsVersion: js.UndefOr[String] = js.undefined,
+      UserArn: js.UndefOr[String] = js.undefined): Backup = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "PreferredMaintenanceWindow" -> PreferredMaintenanceWindow.map { x => x.asInstanceOf[js.Any] },
-        "S3DataUrl" -> S3DataUrl.map { x => x.asInstanceOf[js.Any] },
-        "Engine" -> Engine.map { x => x.asInstanceOf[js.Any] },
-        "KeyPair" -> KeyPair.map { x => x.asInstanceOf[js.Any] },
-        "InstanceProfileArn" -> InstanceProfileArn.map { x => x.asInstanceOf[js.Any] },
-        "S3LogUrl" -> S3LogUrl.map { x => x.asInstanceOf[js.Any] },
-        "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
-        "ServerName" -> ServerName.map { x => x.asInstanceOf[js.Any] },
-        "S3DataSize" -> S3DataSize.map { x => x.asInstanceOf[js.Any] },
-        "ServiceRoleArn" -> ServiceRoleArn.map { x => x.asInstanceOf[js.Any] },
-        "BackupId" -> BackupId.map { x => x.asInstanceOf[js.Any] },
-        "SecurityGroupIds" -> SecurityGroupIds.map { x => x.asInstanceOf[js.Any] },
-        "EngineVersion" -> EngineVersion.map { x => x.asInstanceOf[js.Any] },
-        "PreferredBackupWindow" -> PreferredBackupWindow.map { x => x.asInstanceOf[js.Any] },
-        "InstanceType" -> InstanceType.map { x => x.asInstanceOf[js.Any] },
-        "StatusDescription" -> StatusDescription.map { x => x.asInstanceOf[js.Any] },
-        "CreatedAt" -> CreatedAt.map { x => x.asInstanceOf[js.Any] },
-        "SubnetIds" -> SubnetIds.map { x => x.asInstanceOf[js.Any] },
-        "BackupType" -> BackupType.map { x => x.asInstanceOf[js.Any] },
         "BackupArn" -> BackupArn.map { x => x.asInstanceOf[js.Any] },
-        "ToolsVersion" -> ToolsVersion.map { x => x.asInstanceOf[js.Any] },
+        "BackupId" -> BackupId.map { x => x.asInstanceOf[js.Any] },
+        "BackupType" -> BackupType.map { x => x.asInstanceOf[js.Any] },
+        "CreatedAt" -> CreatedAt.map { x => x.asInstanceOf[js.Any] },
+        "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
+        "Engine" -> Engine.map { x => x.asInstanceOf[js.Any] },
         "EngineModel" -> EngineModel.map { x => x.asInstanceOf[js.Any] },
-        "UserArn" -> UserArn.map { x => x.asInstanceOf[js.Any] },
-        "Status" -> Status.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "EngineVersion" -> EngineVersion.map { x => x.asInstanceOf[js.Any] },
+        "InstanceProfileArn" -> InstanceProfileArn.map { x => x.asInstanceOf[js.Any] },
+        "InstanceType" -> InstanceType.map { x => x.asInstanceOf[js.Any] },
+        "KeyPair" -> KeyPair.map { x => x.asInstanceOf[js.Any] },
+        "PreferredBackupWindow" -> PreferredBackupWindow.map { x => x.asInstanceOf[js.Any] },
+        "PreferredMaintenanceWindow" -> PreferredMaintenanceWindow.map { x => x.asInstanceOf[js.Any] },
+        "S3DataSize" -> S3DataSize.map { x => x.asInstanceOf[js.Any] },
+        "S3DataUrl" -> S3DataUrl.map { x => x.asInstanceOf[js.Any] },
+        "S3LogUrl" -> S3LogUrl.map { x => x.asInstanceOf[js.Any] },
+        "SecurityGroupIds" -> SecurityGroupIds.map { x => x.asInstanceOf[js.Any] },
+        "ServerName" -> ServerName.map { x => x.asInstanceOf[js.Any] },
+        "ServiceRoleArn" -> ServiceRoleArn.map { x => x.asInstanceOf[js.Any] },
+        "Status" -> Status.map { x => x.asInstanceOf[js.Any] },
+        "StatusDescription" -> StatusDescription.map { x => x.asInstanceOf[js.Any] },
+        "SubnetIds" -> SubnetIds.map { x => x.asInstanceOf[js.Any] },
+        "ToolsVersion" -> ToolsVersion.map { x => x.asInstanceOf[js.Any] },
+        "UserArn" -> UserArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Backup]
     }
@@ -223,16 +223,16 @@ package opsworkscm {
 
   @js.native
   trait CreateBackupRequest extends js.Object {
-    var ServerName: js.UndefOr[ServerName]
+    var ServerName: ServerName
     var Description: js.UndefOr[String]
   }
 
   object CreateBackupRequest {
     def apply(
-      ServerName: js.UndefOr[ServerName] = js.undefined,
+      ServerName: ServerName,
       Description: js.UndefOr[String] = js.undefined): CreateBackupRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ServerName" -> ServerName.map { x => x.asInstanceOf[js.Any] },
+        "ServerName" -> ServerName.asInstanceOf[js.Any],
         "Description" -> Description.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateBackupRequest]
@@ -256,62 +256,62 @@ package opsworkscm {
 
   @js.native
   trait CreateServerRequest extends js.Object {
-    var PreferredMaintenanceWindow: js.UndefOr[TimeWindowDefinition]
-    var Engine: js.UndefOr[String]
-    var KeyPair: js.UndefOr[KeyPair]
-    var InstanceProfileArn: js.UndefOr[InstanceProfileArn]
-    var EngineAttributes: js.UndefOr[EngineAttributes]
-    var ServerName: js.UndefOr[ServerName]
-    var ServiceRoleArn: js.UndefOr[ServiceRoleArn]
-    var BackupId: js.UndefOr[BackupId]
-    var SecurityGroupIds: js.UndefOr[Strings]
-    var EngineVersion: js.UndefOr[String]
-    var DisableAutomatedBackup: js.UndefOr[Boolean]
-    var PreferredBackupWindow: js.UndefOr[TimeWindowDefinition]
-    var InstanceType: js.UndefOr[String]
+    var InstanceProfileArn: InstanceProfileArn
+    var InstanceType: String
+    var ServerName: ServerName
+    var ServiceRoleArn: ServiceRoleArn
     var AssociatePublicIpAddress: js.UndefOr[Boolean]
+    var BackupId: js.UndefOr[BackupId]
     var BackupRetentionCount: js.UndefOr[BackupRetentionCountDefinition]
-    var SubnetIds: js.UndefOr[Strings]
+    var DisableAutomatedBackup: js.UndefOr[Boolean]
+    var Engine: js.UndefOr[String]
+    var EngineAttributes: js.UndefOr[EngineAttributes]
     var EngineModel: js.UndefOr[String]
+    var EngineVersion: js.UndefOr[String]
+    var KeyPair: js.UndefOr[KeyPair]
+    var PreferredBackupWindow: js.UndefOr[TimeWindowDefinition]
+    var PreferredMaintenanceWindow: js.UndefOr[TimeWindowDefinition]
+    var SecurityGroupIds: js.UndefOr[Strings]
+    var SubnetIds: js.UndefOr[Strings]
   }
 
   object CreateServerRequest {
     def apply(
-      PreferredMaintenanceWindow: js.UndefOr[TimeWindowDefinition] = js.undefined,
-      Engine: js.UndefOr[String] = js.undefined,
-      KeyPair: js.UndefOr[KeyPair] = js.undefined,
-      InstanceProfileArn: js.UndefOr[InstanceProfileArn] = js.undefined,
-      EngineAttributes: js.UndefOr[EngineAttributes] = js.undefined,
-      ServerName: js.UndefOr[ServerName] = js.undefined,
-      ServiceRoleArn: js.UndefOr[ServiceRoleArn] = js.undefined,
-      BackupId: js.UndefOr[BackupId] = js.undefined,
-      SecurityGroupIds: js.UndefOr[Strings] = js.undefined,
-      EngineVersion: js.UndefOr[String] = js.undefined,
-      DisableAutomatedBackup: js.UndefOr[Boolean] = js.undefined,
-      PreferredBackupWindow: js.UndefOr[TimeWindowDefinition] = js.undefined,
-      InstanceType: js.UndefOr[String] = js.undefined,
+      InstanceProfileArn: InstanceProfileArn,
+      InstanceType: String,
+      ServerName: ServerName,
+      ServiceRoleArn: ServiceRoleArn,
       AssociatePublicIpAddress: js.UndefOr[Boolean] = js.undefined,
+      BackupId: js.UndefOr[BackupId] = js.undefined,
       BackupRetentionCount: js.UndefOr[BackupRetentionCountDefinition] = js.undefined,
-      SubnetIds: js.UndefOr[Strings] = js.undefined,
-      EngineModel: js.UndefOr[String] = js.undefined): CreateServerRequest = {
+      DisableAutomatedBackup: js.UndefOr[Boolean] = js.undefined,
+      Engine: js.UndefOr[String] = js.undefined,
+      EngineAttributes: js.UndefOr[EngineAttributes] = js.undefined,
+      EngineModel: js.UndefOr[String] = js.undefined,
+      EngineVersion: js.UndefOr[String] = js.undefined,
+      KeyPair: js.UndefOr[KeyPair] = js.undefined,
+      PreferredBackupWindow: js.UndefOr[TimeWindowDefinition] = js.undefined,
+      PreferredMaintenanceWindow: js.UndefOr[TimeWindowDefinition] = js.undefined,
+      SecurityGroupIds: js.UndefOr[Strings] = js.undefined,
+      SubnetIds: js.UndefOr[Strings] = js.undefined): CreateServerRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "PreferredMaintenanceWindow" -> PreferredMaintenanceWindow.map { x => x.asInstanceOf[js.Any] },
-        "Engine" -> Engine.map { x => x.asInstanceOf[js.Any] },
-        "KeyPair" -> KeyPair.map { x => x.asInstanceOf[js.Any] },
-        "InstanceProfileArn" -> InstanceProfileArn.map { x => x.asInstanceOf[js.Any] },
-        "EngineAttributes" -> EngineAttributes.map { x => x.asInstanceOf[js.Any] },
-        "ServerName" -> ServerName.map { x => x.asInstanceOf[js.Any] },
-        "ServiceRoleArn" -> ServiceRoleArn.map { x => x.asInstanceOf[js.Any] },
-        "BackupId" -> BackupId.map { x => x.asInstanceOf[js.Any] },
-        "SecurityGroupIds" -> SecurityGroupIds.map { x => x.asInstanceOf[js.Any] },
-        "EngineVersion" -> EngineVersion.map { x => x.asInstanceOf[js.Any] },
-        "DisableAutomatedBackup" -> DisableAutomatedBackup.map { x => x.asInstanceOf[js.Any] },
-        "PreferredBackupWindow" -> PreferredBackupWindow.map { x => x.asInstanceOf[js.Any] },
-        "InstanceType" -> InstanceType.map { x => x.asInstanceOf[js.Any] },
+        "InstanceProfileArn" -> InstanceProfileArn.asInstanceOf[js.Any],
+        "InstanceType" -> InstanceType.asInstanceOf[js.Any],
+        "ServerName" -> ServerName.asInstanceOf[js.Any],
+        "ServiceRoleArn" -> ServiceRoleArn.asInstanceOf[js.Any],
         "AssociatePublicIpAddress" -> AssociatePublicIpAddress.map { x => x.asInstanceOf[js.Any] },
+        "BackupId" -> BackupId.map { x => x.asInstanceOf[js.Any] },
         "BackupRetentionCount" -> BackupRetentionCount.map { x => x.asInstanceOf[js.Any] },
-        "SubnetIds" -> SubnetIds.map { x => x.asInstanceOf[js.Any] },
-        "EngineModel" -> EngineModel.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "DisableAutomatedBackup" -> DisableAutomatedBackup.map { x => x.asInstanceOf[js.Any] },
+        "Engine" -> Engine.map { x => x.asInstanceOf[js.Any] },
+        "EngineAttributes" -> EngineAttributes.map { x => x.asInstanceOf[js.Any] },
+        "EngineModel" -> EngineModel.map { x => x.asInstanceOf[js.Any] },
+        "EngineVersion" -> EngineVersion.map { x => x.asInstanceOf[js.Any] },
+        "KeyPair" -> KeyPair.map { x => x.asInstanceOf[js.Any] },
+        "PreferredBackupWindow" -> PreferredBackupWindow.map { x => x.asInstanceOf[js.Any] },
+        "PreferredMaintenanceWindow" -> PreferredMaintenanceWindow.map { x => x.asInstanceOf[js.Any] },
+        "SecurityGroupIds" -> SecurityGroupIds.map { x => x.asInstanceOf[js.Any] },
+        "SubnetIds" -> SubnetIds.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateServerRequest]
     }
@@ -334,14 +334,14 @@ package opsworkscm {
 
   @js.native
   trait DeleteBackupRequest extends js.Object {
-    var BackupId: js.UndefOr[BackupId]
+    var BackupId: BackupId
   }
 
   object DeleteBackupRequest {
     def apply(
-      BackupId: js.UndefOr[BackupId] = js.undefined): DeleteBackupRequest = {
+      BackupId: BackupId): DeleteBackupRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "BackupId" -> BackupId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "BackupId" -> BackupId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteBackupRequest]
     }
@@ -362,14 +362,14 @@ package opsworkscm {
 
   @js.native
   trait DeleteServerRequest extends js.Object {
-    var ServerName: js.UndefOr[ServerName]
+    var ServerName: ServerName
   }
 
   object DeleteServerRequest {
     def apply(
-      ServerName: js.UndefOr[ServerName] = js.undefined): DeleteServerRequest = {
+      ServerName: ServerName): DeleteServerRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ServerName" -> ServerName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ServerName" -> ServerName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteServerRequest]
     }
@@ -419,22 +419,22 @@ package opsworkscm {
   @js.native
   trait DescribeBackupsRequest extends js.Object {
     var BackupId: js.UndefOr[BackupId]
-    var ServerName: js.UndefOr[ServerName]
-    var NextToken: js.UndefOr[NextToken]
     var MaxResults: js.UndefOr[MaxResults]
+    var NextToken: js.UndefOr[NextToken]
+    var ServerName: js.UndefOr[ServerName]
   }
 
   object DescribeBackupsRequest {
     def apply(
       BackupId: js.UndefOr[BackupId] = js.undefined,
-      ServerName: js.UndefOr[ServerName] = js.undefined,
+      MaxResults: js.UndefOr[MaxResults] = js.undefined,
       NextToken: js.UndefOr[NextToken] = js.undefined,
-      MaxResults: js.UndefOr[MaxResults] = js.undefined): DescribeBackupsRequest = {
+      ServerName: js.UndefOr[ServerName] = js.undefined): DescribeBackupsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "BackupId" -> BackupId.map { x => x.asInstanceOf[js.Any] },
-        "ServerName" -> ServerName.map { x => x.asInstanceOf[js.Any] },
+        "MaxResults" -> MaxResults.map { x => x.asInstanceOf[js.Any] },
         "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
-        "MaxResults" -> MaxResults.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ServerName" -> ServerName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeBackupsRequest]
     }
@@ -460,20 +460,20 @@ package opsworkscm {
 
   @js.native
   trait DescribeEventsRequest extends js.Object {
-    var ServerName: js.UndefOr[ServerName]
-    var NextToken: js.UndefOr[NextToken]
+    var ServerName: ServerName
     var MaxResults: js.UndefOr[MaxResults]
+    var NextToken: js.UndefOr[NextToken]
   }
 
   object DescribeEventsRequest {
     def apply(
-      ServerName: js.UndefOr[ServerName] = js.undefined,
-      NextToken: js.UndefOr[NextToken] = js.undefined,
-      MaxResults: js.UndefOr[MaxResults] = js.undefined): DescribeEventsRequest = {
+      ServerName: ServerName,
+      MaxResults: js.UndefOr[MaxResults] = js.undefined,
+      NextToken: js.UndefOr[NextToken] = js.undefined): DescribeEventsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ServerName" -> ServerName.map { x => x.asInstanceOf[js.Any] },
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
-        "MaxResults" -> MaxResults.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ServerName" -> ServerName.asInstanceOf[js.Any],
+        "MaxResults" -> MaxResults.map { x => x.asInstanceOf[js.Any] },
+        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeEventsRequest]
     }
@@ -481,17 +481,17 @@ package opsworkscm {
 
   @js.native
   trait DescribeEventsResponse extends js.Object {
-    var ServerEvents: js.UndefOr[ServerEvents]
     var NextToken: js.UndefOr[String]
+    var ServerEvents: js.UndefOr[ServerEvents]
   }
 
   object DescribeEventsResponse {
     def apply(
-      ServerEvents: js.UndefOr[ServerEvents] = js.undefined,
-      NextToken: js.UndefOr[String] = js.undefined): DescribeEventsResponse = {
+      NextToken: js.UndefOr[String] = js.undefined,
+      ServerEvents: js.UndefOr[ServerEvents] = js.undefined): DescribeEventsResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ServerEvents" -> ServerEvents.map { x => x.asInstanceOf[js.Any] },
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
+        "ServerEvents" -> ServerEvents.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeEventsResponse]
     }
@@ -499,17 +499,17 @@ package opsworkscm {
 
   @js.native
   trait DescribeNodeAssociationStatusRequest extends js.Object {
-    var NodeAssociationStatusToken: js.UndefOr[NodeAssociationStatusToken]
-    var ServerName: js.UndefOr[ServerName]
+    var NodeAssociationStatusToken: NodeAssociationStatusToken
+    var ServerName: ServerName
   }
 
   object DescribeNodeAssociationStatusRequest {
     def apply(
-      NodeAssociationStatusToken: js.UndefOr[NodeAssociationStatusToken] = js.undefined,
-      ServerName: js.UndefOr[ServerName] = js.undefined): DescribeNodeAssociationStatusRequest = {
+      NodeAssociationStatusToken: NodeAssociationStatusToken,
+      ServerName: ServerName): DescribeNodeAssociationStatusRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "NodeAssociationStatusToken" -> NodeAssociationStatusToken.map { x => x.asInstanceOf[js.Any] },
-        "ServerName" -> ServerName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "NodeAssociationStatusToken" -> NodeAssociationStatusToken.asInstanceOf[js.Any],
+        "ServerName" -> ServerName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeNodeAssociationStatusRequest]
     }
@@ -517,17 +517,17 @@ package opsworkscm {
 
   @js.native
   trait DescribeNodeAssociationStatusResponse extends js.Object {
-    var NodeAssociationStatus: js.UndefOr[NodeAssociationStatus]
     var EngineAttributes: js.UndefOr[EngineAttributes]
+    var NodeAssociationStatus: js.UndefOr[NodeAssociationStatus]
   }
 
   object DescribeNodeAssociationStatusResponse {
     def apply(
-      NodeAssociationStatus: js.UndefOr[NodeAssociationStatus] = js.undefined,
-      EngineAttributes: js.UndefOr[EngineAttributes] = js.undefined): DescribeNodeAssociationStatusResponse = {
+      EngineAttributes: js.UndefOr[EngineAttributes] = js.undefined,
+      NodeAssociationStatus: js.UndefOr[NodeAssociationStatus] = js.undefined): DescribeNodeAssociationStatusResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "NodeAssociationStatus" -> NodeAssociationStatus.map { x => x.asInstanceOf[js.Any] },
-        "EngineAttributes" -> EngineAttributes.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "EngineAttributes" -> EngineAttributes.map { x => x.asInstanceOf[js.Any] },
+        "NodeAssociationStatus" -> NodeAssociationStatus.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeNodeAssociationStatusResponse]
     }
@@ -535,20 +535,20 @@ package opsworkscm {
 
   @js.native
   trait DescribeServersRequest extends js.Object {
-    var ServerName: js.UndefOr[ServerName]
-    var NextToken: js.UndefOr[NextToken]
     var MaxResults: js.UndefOr[MaxResults]
+    var NextToken: js.UndefOr[NextToken]
+    var ServerName: js.UndefOr[ServerName]
   }
 
   object DescribeServersRequest {
     def apply(
-      ServerName: js.UndefOr[ServerName] = js.undefined,
+      MaxResults: js.UndefOr[MaxResults] = js.undefined,
       NextToken: js.UndefOr[NextToken] = js.undefined,
-      MaxResults: js.UndefOr[MaxResults] = js.undefined): DescribeServersRequest = {
+      ServerName: js.UndefOr[ServerName] = js.undefined): DescribeServersRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ServerName" -> ServerName.map { x => x.asInstanceOf[js.Any] },
+        "MaxResults" -> MaxResults.map { x => x.asInstanceOf[js.Any] },
         "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
-        "MaxResults" -> MaxResults.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ServerName" -> ServerName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeServersRequest]
     }
@@ -556,17 +556,17 @@ package opsworkscm {
 
   @js.native
   trait DescribeServersResponse extends js.Object {
-    var Servers: js.UndefOr[Servers]
     var NextToken: js.UndefOr[String]
+    var Servers: js.UndefOr[Servers]
   }
 
   object DescribeServersResponse {
     def apply(
-      Servers: js.UndefOr[Servers] = js.undefined,
-      NextToken: js.UndefOr[String] = js.undefined): DescribeServersResponse = {
+      NextToken: js.UndefOr[String] = js.undefined,
+      Servers: js.UndefOr[Servers] = js.undefined): DescribeServersResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Servers" -> Servers.map { x => x.asInstanceOf[js.Any] },
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
+        "Servers" -> Servers.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeServersResponse]
     }
@@ -574,19 +574,19 @@ package opsworkscm {
 
   @js.native
   trait DisassociateNodeRequest extends js.Object {
-    var ServerName: js.UndefOr[ServerName]
-    var NodeName: js.UndefOr[NodeName]
+    var NodeName: NodeName
+    var ServerName: ServerName
     var EngineAttributes: js.UndefOr[EngineAttributes]
   }
 
   object DisassociateNodeRequest {
     def apply(
-      ServerName: js.UndefOr[ServerName] = js.undefined,
-      NodeName: js.UndefOr[NodeName] = js.undefined,
+      NodeName: NodeName,
+      ServerName: ServerName,
       EngineAttributes: js.UndefOr[EngineAttributes] = js.undefined): DisassociateNodeRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ServerName" -> ServerName.map { x => x.asInstanceOf[js.Any] },
-        "NodeName" -> NodeName.map { x => x.asInstanceOf[js.Any] },
+        "NodeName" -> NodeName.asInstanceOf[js.Any],
+        "ServerName" -> ServerName.asInstanceOf[js.Any],
         "EngineAttributes" -> EngineAttributes.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DisassociateNodeRequest]
@@ -631,19 +631,19 @@ package opsworkscm {
 
   @js.native
   trait ExportServerEngineAttributeRequest extends js.Object {
-    var ExportAttributeName: js.UndefOr[String]
-    var ServerName: js.UndefOr[ServerName]
+    var ExportAttributeName: String
+    var ServerName: ServerName
     var InputAttributes: js.UndefOr[EngineAttributes]
   }
 
   object ExportServerEngineAttributeRequest {
     def apply(
-      ExportAttributeName: js.UndefOr[String] = js.undefined,
-      ServerName: js.UndefOr[ServerName] = js.undefined,
+      ExportAttributeName: String,
+      ServerName: ServerName,
       InputAttributes: js.UndefOr[EngineAttributes] = js.undefined): ExportServerEngineAttributeRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ExportAttributeName" -> ExportAttributeName.map { x => x.asInstanceOf[js.Any] },
-        "ServerName" -> ServerName.map { x => x.asInstanceOf[js.Any] },
+        "ExportAttributeName" -> ExportAttributeName.asInstanceOf[js.Any],
+        "ServerName" -> ServerName.asInstanceOf[js.Any],
         "InputAttributes" -> InputAttributes.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ExportServerEngineAttributeRequest]
@@ -688,21 +688,21 @@ package opsworkscm {
 
   @js.native
   trait RestoreServerRequest extends js.Object {
-    var BackupId: js.UndefOr[BackupId]
-    var ServerName: js.UndefOr[ServerName]
+    var BackupId: BackupId
+    var ServerName: ServerName
     var InstanceType: js.UndefOr[String]
     var KeyPair: js.UndefOr[KeyPair]
   }
 
   object RestoreServerRequest {
     def apply(
-      BackupId: js.UndefOr[BackupId] = js.undefined,
-      ServerName: js.UndefOr[ServerName] = js.undefined,
+      BackupId: BackupId,
+      ServerName: ServerName,
       InstanceType: js.UndefOr[String] = js.undefined,
       KeyPair: js.UndefOr[KeyPair] = js.undefined): RestoreServerRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "BackupId" -> BackupId.map { x => x.asInstanceOf[js.Any] },
-        "ServerName" -> ServerName.map { x => x.asInstanceOf[js.Any] },
+        "BackupId" -> BackupId.asInstanceOf[js.Any],
+        "ServerName" -> ServerName.asInstanceOf[js.Any],
         "InstanceType" -> InstanceType.map { x => x.asInstanceOf[js.Any] },
         "KeyPair" -> KeyPair.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
@@ -728,80 +728,80 @@ package opsworkscm {
    */
   @js.native
   trait Server extends js.Object {
-    var PreferredMaintenanceWindow: js.UndefOr[TimeWindowDefinition]
-    var Engine: js.UndefOr[String]
-    var KeyPair: js.UndefOr[String]
-    var Endpoint: js.UndefOr[String]
-    var InstanceProfileArn: js.UndefOr[String]
-    var EngineAttributes: js.UndefOr[EngineAttributes]
+    var AssociatePublicIpAddress: js.UndefOr[Boolean]
+    var BackupRetentionCount: js.UndefOr[Int]
     var CloudFormationStackArn: js.UndefOr[String]
+    var CreatedAt: js.UndefOr[Timestamp]
+    var DisableAutomatedBackup: js.UndefOr[Boolean]
+    var Endpoint: js.UndefOr[String]
+    var Engine: js.UndefOr[String]
+    var EngineAttributes: js.UndefOr[EngineAttributes]
+    var EngineModel: js.UndefOr[String]
+    var EngineVersion: js.UndefOr[String]
+    var InstanceProfileArn: js.UndefOr[String]
+    var InstanceType: js.UndefOr[String]
+    var KeyPair: js.UndefOr[String]
     var MaintenanceStatus: js.UndefOr[MaintenanceStatus]
+    var PreferredBackupWindow: js.UndefOr[TimeWindowDefinition]
+    var PreferredMaintenanceWindow: js.UndefOr[TimeWindowDefinition]
+    var SecurityGroupIds: js.UndefOr[Strings]
+    var ServerArn: js.UndefOr[String]
     var ServerName: js.UndefOr[String]
     var ServiceRoleArn: js.UndefOr[String]
-    var SecurityGroupIds: js.UndefOr[Strings]
-    var EngineVersion: js.UndefOr[String]
-    var DisableAutomatedBackup: js.UndefOr[Boolean]
-    var PreferredBackupWindow: js.UndefOr[TimeWindowDefinition]
-    var InstanceType: js.UndefOr[String]
-    var AssociatePublicIpAddress: js.UndefOr[Boolean]
-    var ServerArn: js.UndefOr[String]
-    var CreatedAt: js.UndefOr[Timestamp]
-    var BackupRetentionCount: js.UndefOr[Int]
+    var Status: js.UndefOr[ServerStatus]
     var StatusReason: js.UndefOr[String]
     var SubnetIds: js.UndefOr[Strings]
-    var EngineModel: js.UndefOr[String]
-    var Status: js.UndefOr[ServerStatus]
   }
 
   object Server {
     def apply(
-      PreferredMaintenanceWindow: js.UndefOr[TimeWindowDefinition] = js.undefined,
-      Engine: js.UndefOr[String] = js.undefined,
-      KeyPair: js.UndefOr[String] = js.undefined,
-      Endpoint: js.UndefOr[String] = js.undefined,
-      InstanceProfileArn: js.UndefOr[String] = js.undefined,
-      EngineAttributes: js.UndefOr[EngineAttributes] = js.undefined,
+      AssociatePublicIpAddress: js.UndefOr[Boolean] = js.undefined,
+      BackupRetentionCount: js.UndefOr[Int] = js.undefined,
       CloudFormationStackArn: js.UndefOr[String] = js.undefined,
+      CreatedAt: js.UndefOr[Timestamp] = js.undefined,
+      DisableAutomatedBackup: js.UndefOr[Boolean] = js.undefined,
+      Endpoint: js.UndefOr[String] = js.undefined,
+      Engine: js.UndefOr[String] = js.undefined,
+      EngineAttributes: js.UndefOr[EngineAttributes] = js.undefined,
+      EngineModel: js.UndefOr[String] = js.undefined,
+      EngineVersion: js.UndefOr[String] = js.undefined,
+      InstanceProfileArn: js.UndefOr[String] = js.undefined,
+      InstanceType: js.UndefOr[String] = js.undefined,
+      KeyPair: js.UndefOr[String] = js.undefined,
       MaintenanceStatus: js.UndefOr[MaintenanceStatus] = js.undefined,
+      PreferredBackupWindow: js.UndefOr[TimeWindowDefinition] = js.undefined,
+      PreferredMaintenanceWindow: js.UndefOr[TimeWindowDefinition] = js.undefined,
+      SecurityGroupIds: js.UndefOr[Strings] = js.undefined,
+      ServerArn: js.UndefOr[String] = js.undefined,
       ServerName: js.UndefOr[String] = js.undefined,
       ServiceRoleArn: js.UndefOr[String] = js.undefined,
-      SecurityGroupIds: js.UndefOr[Strings] = js.undefined,
-      EngineVersion: js.UndefOr[String] = js.undefined,
-      DisableAutomatedBackup: js.UndefOr[Boolean] = js.undefined,
-      PreferredBackupWindow: js.UndefOr[TimeWindowDefinition] = js.undefined,
-      InstanceType: js.UndefOr[String] = js.undefined,
-      AssociatePublicIpAddress: js.UndefOr[Boolean] = js.undefined,
-      ServerArn: js.UndefOr[String] = js.undefined,
-      CreatedAt: js.UndefOr[Timestamp] = js.undefined,
-      BackupRetentionCount: js.UndefOr[Int] = js.undefined,
+      Status: js.UndefOr[ServerStatus] = js.undefined,
       StatusReason: js.UndefOr[String] = js.undefined,
-      SubnetIds: js.UndefOr[Strings] = js.undefined,
-      EngineModel: js.UndefOr[String] = js.undefined,
-      Status: js.UndefOr[ServerStatus] = js.undefined): Server = {
+      SubnetIds: js.UndefOr[Strings] = js.undefined): Server = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "PreferredMaintenanceWindow" -> PreferredMaintenanceWindow.map { x => x.asInstanceOf[js.Any] },
-        "Engine" -> Engine.map { x => x.asInstanceOf[js.Any] },
-        "KeyPair" -> KeyPair.map { x => x.asInstanceOf[js.Any] },
-        "Endpoint" -> Endpoint.map { x => x.asInstanceOf[js.Any] },
-        "InstanceProfileArn" -> InstanceProfileArn.map { x => x.asInstanceOf[js.Any] },
-        "EngineAttributes" -> EngineAttributes.map { x => x.asInstanceOf[js.Any] },
+        "AssociatePublicIpAddress" -> AssociatePublicIpAddress.map { x => x.asInstanceOf[js.Any] },
+        "BackupRetentionCount" -> BackupRetentionCount.map { x => x.asInstanceOf[js.Any] },
         "CloudFormationStackArn" -> CloudFormationStackArn.map { x => x.asInstanceOf[js.Any] },
+        "CreatedAt" -> CreatedAt.map { x => x.asInstanceOf[js.Any] },
+        "DisableAutomatedBackup" -> DisableAutomatedBackup.map { x => x.asInstanceOf[js.Any] },
+        "Endpoint" -> Endpoint.map { x => x.asInstanceOf[js.Any] },
+        "Engine" -> Engine.map { x => x.asInstanceOf[js.Any] },
+        "EngineAttributes" -> EngineAttributes.map { x => x.asInstanceOf[js.Any] },
+        "EngineModel" -> EngineModel.map { x => x.asInstanceOf[js.Any] },
+        "EngineVersion" -> EngineVersion.map { x => x.asInstanceOf[js.Any] },
+        "InstanceProfileArn" -> InstanceProfileArn.map { x => x.asInstanceOf[js.Any] },
+        "InstanceType" -> InstanceType.map { x => x.asInstanceOf[js.Any] },
+        "KeyPair" -> KeyPair.map { x => x.asInstanceOf[js.Any] },
         "MaintenanceStatus" -> MaintenanceStatus.map { x => x.asInstanceOf[js.Any] },
+        "PreferredBackupWindow" -> PreferredBackupWindow.map { x => x.asInstanceOf[js.Any] },
+        "PreferredMaintenanceWindow" -> PreferredMaintenanceWindow.map { x => x.asInstanceOf[js.Any] },
+        "SecurityGroupIds" -> SecurityGroupIds.map { x => x.asInstanceOf[js.Any] },
+        "ServerArn" -> ServerArn.map { x => x.asInstanceOf[js.Any] },
         "ServerName" -> ServerName.map { x => x.asInstanceOf[js.Any] },
         "ServiceRoleArn" -> ServiceRoleArn.map { x => x.asInstanceOf[js.Any] },
-        "SecurityGroupIds" -> SecurityGroupIds.map { x => x.asInstanceOf[js.Any] },
-        "EngineVersion" -> EngineVersion.map { x => x.asInstanceOf[js.Any] },
-        "DisableAutomatedBackup" -> DisableAutomatedBackup.map { x => x.asInstanceOf[js.Any] },
-        "PreferredBackupWindow" -> PreferredBackupWindow.map { x => x.asInstanceOf[js.Any] },
-        "InstanceType" -> InstanceType.map { x => x.asInstanceOf[js.Any] },
-        "AssociatePublicIpAddress" -> AssociatePublicIpAddress.map { x => x.asInstanceOf[js.Any] },
-        "ServerArn" -> ServerArn.map { x => x.asInstanceOf[js.Any] },
-        "CreatedAt" -> CreatedAt.map { x => x.asInstanceOf[js.Any] },
-        "BackupRetentionCount" -> BackupRetentionCount.map { x => x.asInstanceOf[js.Any] },
+        "Status" -> Status.map { x => x.asInstanceOf[js.Any] },
         "StatusReason" -> StatusReason.map { x => x.asInstanceOf[js.Any] },
-        "SubnetIds" -> SubnetIds.map { x => x.asInstanceOf[js.Any] },
-        "EngineModel" -> EngineModel.map { x => x.asInstanceOf[js.Any] },
-        "Status" -> Status.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "SubnetIds" -> SubnetIds.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Server]
     }
@@ -813,22 +813,22 @@ package opsworkscm {
   @js.native
   trait ServerEvent extends js.Object {
     var CreatedAt: js.UndefOr[Timestamp]
-    var ServerName: js.UndefOr[String]
-    var Message: js.UndefOr[String]
     var LogUrl: js.UndefOr[String]
+    var Message: js.UndefOr[String]
+    var ServerName: js.UndefOr[String]
   }
 
   object ServerEvent {
     def apply(
       CreatedAt: js.UndefOr[Timestamp] = js.undefined,
-      ServerName: js.UndefOr[String] = js.undefined,
+      LogUrl: js.UndefOr[String] = js.undefined,
       Message: js.UndefOr[String] = js.undefined,
-      LogUrl: js.UndefOr[String] = js.undefined): ServerEvent = {
+      ServerName: js.UndefOr[String] = js.undefined): ServerEvent = {
       val _fields = IndexedSeq[(String, js.Any)](
         "CreatedAt" -> CreatedAt.map { x => x.asInstanceOf[js.Any] },
-        "ServerName" -> ServerName.map { x => x.asInstanceOf[js.Any] },
+        "LogUrl" -> LogUrl.map { x => x.asInstanceOf[js.Any] },
         "Message" -> Message.map { x => x.asInstanceOf[js.Any] },
-        "LogUrl" -> LogUrl.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ServerName" -> ServerName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ServerEvent]
     }
@@ -854,16 +854,16 @@ package opsworkscm {
 
   @js.native
   trait StartMaintenanceRequest extends js.Object {
-    var ServerName: js.UndefOr[ServerName]
+    var ServerName: ServerName
     var EngineAttributes: js.UndefOr[EngineAttributes]
   }
 
   object StartMaintenanceRequest {
     def apply(
-      ServerName: js.UndefOr[ServerName] = js.undefined,
+      ServerName: ServerName,
       EngineAttributes: js.UndefOr[EngineAttributes] = js.undefined): StartMaintenanceRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ServerName" -> ServerName.map { x => x.asInstanceOf[js.Any] },
+        "ServerName" -> ServerName.asInstanceOf[js.Any],
         "EngineAttributes" -> EngineAttributes.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StartMaintenanceRequest]
@@ -887,19 +887,19 @@ package opsworkscm {
 
   @js.native
   trait UpdateServerEngineAttributesRequest extends js.Object {
-    var ServerName: js.UndefOr[ServerName]
-    var AttributeName: js.UndefOr[AttributeName]
+    var AttributeName: AttributeName
+    var ServerName: ServerName
     var AttributeValue: js.UndefOr[AttributeValue]
   }
 
   object UpdateServerEngineAttributesRequest {
     def apply(
-      ServerName: js.UndefOr[ServerName] = js.undefined,
-      AttributeName: js.UndefOr[AttributeName] = js.undefined,
+      AttributeName: AttributeName,
+      ServerName: ServerName,
       AttributeValue: js.UndefOr[AttributeValue] = js.undefined): UpdateServerEngineAttributesRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ServerName" -> ServerName.map { x => x.asInstanceOf[js.Any] },
-        "AttributeName" -> AttributeName.map { x => x.asInstanceOf[js.Any] },
+        "AttributeName" -> AttributeName.asInstanceOf[js.Any],
+        "ServerName" -> ServerName.asInstanceOf[js.Any],
         "AttributeValue" -> AttributeValue.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateServerEngineAttributesRequest]
@@ -923,26 +923,26 @@ package opsworkscm {
 
   @js.native
   trait UpdateServerRequest extends js.Object {
-    var PreferredMaintenanceWindow: js.UndefOr[TimeWindowDefinition]
-    var ServerName: js.UndefOr[ServerName]
+    var ServerName: ServerName
+    var BackupRetentionCount: js.UndefOr[Int]
     var DisableAutomatedBackup: js.UndefOr[Boolean]
     var PreferredBackupWindow: js.UndefOr[TimeWindowDefinition]
-    var BackupRetentionCount: js.UndefOr[Int]
+    var PreferredMaintenanceWindow: js.UndefOr[TimeWindowDefinition]
   }
 
   object UpdateServerRequest {
     def apply(
-      PreferredMaintenanceWindow: js.UndefOr[TimeWindowDefinition] = js.undefined,
-      ServerName: js.UndefOr[ServerName] = js.undefined,
+      ServerName: ServerName,
+      BackupRetentionCount: js.UndefOr[Int] = js.undefined,
       DisableAutomatedBackup: js.UndefOr[Boolean] = js.undefined,
       PreferredBackupWindow: js.UndefOr[TimeWindowDefinition] = js.undefined,
-      BackupRetentionCount: js.UndefOr[Int] = js.undefined): UpdateServerRequest = {
+      PreferredMaintenanceWindow: js.UndefOr[TimeWindowDefinition] = js.undefined): UpdateServerRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "PreferredMaintenanceWindow" -> PreferredMaintenanceWindow.map { x => x.asInstanceOf[js.Any] },
-        "ServerName" -> ServerName.map { x => x.asInstanceOf[js.Any] },
+        "ServerName" -> ServerName.asInstanceOf[js.Any],
+        "BackupRetentionCount" -> BackupRetentionCount.map { x => x.asInstanceOf[js.Any] },
         "DisableAutomatedBackup" -> DisableAutomatedBackup.map { x => x.asInstanceOf[js.Any] },
         "PreferredBackupWindow" -> PreferredBackupWindow.map { x => x.asInstanceOf[js.Any] },
-        "BackupRetentionCount" -> BackupRetentionCount.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "PreferredMaintenanceWindow" -> PreferredMaintenanceWindow.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateServerRequest]
     }

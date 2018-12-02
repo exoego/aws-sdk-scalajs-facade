@@ -154,17 +154,17 @@ package inspector {
 
   @js.native
   trait AddAttributesToFindingsRequest extends js.Object {
-    var findingArns: js.UndefOr[AddRemoveAttributesFindingArnList]
-    var attributes: js.UndefOr[UserAttributeList]
+    var attributes: UserAttributeList
+    var findingArns: AddRemoveAttributesFindingArnList
   }
 
   object AddAttributesToFindingsRequest {
     def apply(
-      findingArns: js.UndefOr[AddRemoveAttributesFindingArnList] = js.undefined,
-      attributes: js.UndefOr[UserAttributeList] = js.undefined): AddAttributesToFindingsRequest = {
+      attributes: UserAttributeList,
+      findingArns: AddRemoveAttributesFindingArnList): AddAttributesToFindingsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "findingArns" -> findingArns.map { x => x.asInstanceOf[js.Any] },
-        "attributes" -> attributes.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "attributes" -> attributes.asInstanceOf[js.Any],
+        "findingArns" -> findingArns.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AddAttributesToFindingsRequest]
     }
@@ -172,14 +172,14 @@ package inspector {
 
   @js.native
   trait AddAttributesToFindingsResponse extends js.Object {
-    var failedItems: js.UndefOr[FailedItems]
+    var failedItems: FailedItems
   }
 
   object AddAttributesToFindingsResponse {
     def apply(
-      failedItems: js.UndefOr[FailedItems] = js.undefined): AddAttributesToFindingsResponse = {
+      failedItems: FailedItems): AddAttributesToFindingsResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "failedItems" -> failedItems.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "failedItems" -> failedItems.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AddAttributesToFindingsResponse]
     }
@@ -190,17 +190,17 @@ package inspector {
    */
   @js.native
   trait AgentFilter extends js.Object {
-    var agentHealths: js.UndefOr[AgentHealthList]
-    var agentHealthCodes: js.UndefOr[AgentHealthCodeList]
+    var agentHealthCodes: AgentHealthCodeList
+    var agentHealths: AgentHealthList
   }
 
   object AgentFilter {
     def apply(
-      agentHealths: js.UndefOr[AgentHealthList] = js.undefined,
-      agentHealthCodes: js.UndefOr[AgentHealthCodeList] = js.undefined): AgentFilter = {
+      agentHealthCodes: AgentHealthCodeList,
+      agentHealths: AgentHealthList): AgentFilter = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "agentHealths" -> agentHealths.map { x => x.asInstanceOf[js.Any] },
-        "agentHealthCodes" -> agentHealthCodes.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "agentHealthCodes" -> agentHealthCodes.asInstanceOf[js.Any],
+        "agentHealths" -> agentHealths.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AgentFilter]
     }
@@ -230,35 +230,35 @@ package inspector {
    */
   @js.native
   trait AgentPreview extends js.Object {
-    var agentId: js.UndefOr[AgentId]
-    var hostname: js.UndefOr[Hostname]
-    var autoScalingGroup: js.UndefOr[AutoScalingGroup]
-    var operatingSystem: js.UndefOr[OperatingSystem]
+    var agentId: AgentId
+    var agentHealth: js.UndefOr[AgentHealth]
     var agentVersion: js.UndefOr[AgentVersion]
+    var autoScalingGroup: js.UndefOr[AutoScalingGroup]
+    var hostname: js.UndefOr[Hostname]
     var ipv4Address: js.UndefOr[Ipv4Address]
     var kernelVersion: js.UndefOr[KernelVersion]
-    var agentHealth: js.UndefOr[AgentHealth]
+    var operatingSystem: js.UndefOr[OperatingSystem]
   }
 
   object AgentPreview {
     def apply(
-      agentId: js.UndefOr[AgentId] = js.undefined,
-      hostname: js.UndefOr[Hostname] = js.undefined,
-      autoScalingGroup: js.UndefOr[AutoScalingGroup] = js.undefined,
-      operatingSystem: js.UndefOr[OperatingSystem] = js.undefined,
+      agentId: AgentId,
+      agentHealth: js.UndefOr[AgentHealth] = js.undefined,
       agentVersion: js.UndefOr[AgentVersion] = js.undefined,
+      autoScalingGroup: js.UndefOr[AutoScalingGroup] = js.undefined,
+      hostname: js.UndefOr[Hostname] = js.undefined,
       ipv4Address: js.UndefOr[Ipv4Address] = js.undefined,
       kernelVersion: js.UndefOr[KernelVersion] = js.undefined,
-      agentHealth: js.UndefOr[AgentHealth] = js.undefined): AgentPreview = {
+      operatingSystem: js.UndefOr[OperatingSystem] = js.undefined): AgentPreview = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "agentId" -> agentId.map { x => x.asInstanceOf[js.Any] },
-        "hostname" -> hostname.map { x => x.asInstanceOf[js.Any] },
-        "autoScalingGroup" -> autoScalingGroup.map { x => x.asInstanceOf[js.Any] },
-        "operatingSystem" -> operatingSystem.map { x => x.asInstanceOf[js.Any] },
+        "agentId" -> agentId.asInstanceOf[js.Any],
+        "agentHealth" -> agentHealth.map { x => x.asInstanceOf[js.Any] },
         "agentVersion" -> agentVersion.map { x => x.asInstanceOf[js.Any] },
+        "autoScalingGroup" -> autoScalingGroup.map { x => x.asInstanceOf[js.Any] },
+        "hostname" -> hostname.map { x => x.asInstanceOf[js.Any] },
         "ipv4Address" -> ipv4Address.map { x => x.asInstanceOf[js.Any] },
         "kernelVersion" -> kernelVersion.map { x => x.asInstanceOf[js.Any] },
-        "agentHealth" -> agentHealth.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "operatingSystem" -> operatingSystem.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AgentPreview]
     }
@@ -269,56 +269,56 @@ package inspector {
    */
   @js.native
   trait AssessmentRun extends js.Object {
-    var arn: js.UndefOr[Arn]
-    var name: js.UndefOr[AssessmentRunName]
-    var dataCollected: js.UndefOr[Bool]
-    var findingCounts: js.UndefOr[AssessmentRunFindingCounts]
-    var stateChangedAt: js.UndefOr[Timestamp]
-    var state: js.UndefOr[AssessmentRunState]
+    var arn: Arn
+    var assessmentTemplateArn: Arn
+    var createdAt: Timestamp
+    var dataCollected: Bool
+    var durationInSeconds: AssessmentRunDuration
+    var findingCounts: AssessmentRunFindingCounts
+    var name: AssessmentRunName
+    var notifications: AssessmentRunNotificationList
+    var rulesPackageArns: AssessmentRulesPackageArnList
+    var state: AssessmentRunState
+    var stateChangedAt: Timestamp
+    var stateChanges: AssessmentRunStateChangeList
+    var userAttributesForFindings: UserAttributeList
     var completedAt: js.UndefOr[Timestamp]
-    var assessmentTemplateArn: js.UndefOr[Arn]
-    var durationInSeconds: js.UndefOr[AssessmentRunDuration]
-    var rulesPackageArns: js.UndefOr[AssessmentRulesPackageArnList]
-    var createdAt: js.UndefOr[Timestamp]
     var startedAt: js.UndefOr[Timestamp]
-    var userAttributesForFindings: js.UndefOr[UserAttributeList]
-    var notifications: js.UndefOr[AssessmentRunNotificationList]
-    var stateChanges: js.UndefOr[AssessmentRunStateChangeList]
   }
 
   object AssessmentRun {
     def apply(
-      arn: js.UndefOr[Arn] = js.undefined,
-      name: js.UndefOr[AssessmentRunName] = js.undefined,
-      dataCollected: js.UndefOr[Bool] = js.undefined,
-      findingCounts: js.UndefOr[AssessmentRunFindingCounts] = js.undefined,
-      stateChangedAt: js.UndefOr[Timestamp] = js.undefined,
-      state: js.UndefOr[AssessmentRunState] = js.undefined,
+      arn: Arn,
+      assessmentTemplateArn: Arn,
+      createdAt: Timestamp,
+      dataCollected: Bool,
+      durationInSeconds: AssessmentRunDuration,
+      findingCounts: AssessmentRunFindingCounts,
+      name: AssessmentRunName,
+      notifications: AssessmentRunNotificationList,
+      rulesPackageArns: AssessmentRulesPackageArnList,
+      state: AssessmentRunState,
+      stateChangedAt: Timestamp,
+      stateChanges: AssessmentRunStateChangeList,
+      userAttributesForFindings: UserAttributeList,
       completedAt: js.UndefOr[Timestamp] = js.undefined,
-      assessmentTemplateArn: js.UndefOr[Arn] = js.undefined,
-      durationInSeconds: js.UndefOr[AssessmentRunDuration] = js.undefined,
-      rulesPackageArns: js.UndefOr[AssessmentRulesPackageArnList] = js.undefined,
-      createdAt: js.UndefOr[Timestamp] = js.undefined,
-      startedAt: js.UndefOr[Timestamp] = js.undefined,
-      userAttributesForFindings: js.UndefOr[UserAttributeList] = js.undefined,
-      notifications: js.UndefOr[AssessmentRunNotificationList] = js.undefined,
-      stateChanges: js.UndefOr[AssessmentRunStateChangeList] = js.undefined): AssessmentRun = {
+      startedAt: js.UndefOr[Timestamp] = js.undefined): AssessmentRun = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "arn" -> arn.map { x => x.asInstanceOf[js.Any] },
-        "name" -> name.map { x => x.asInstanceOf[js.Any] },
-        "dataCollected" -> dataCollected.map { x => x.asInstanceOf[js.Any] },
-        "findingCounts" -> findingCounts.map { x => x.asInstanceOf[js.Any] },
-        "stateChangedAt" -> stateChangedAt.map { x => x.asInstanceOf[js.Any] },
-        "state" -> state.map { x => x.asInstanceOf[js.Any] },
+        "arn" -> arn.asInstanceOf[js.Any],
+        "assessmentTemplateArn" -> assessmentTemplateArn.asInstanceOf[js.Any],
+        "createdAt" -> createdAt.asInstanceOf[js.Any],
+        "dataCollected" -> dataCollected.asInstanceOf[js.Any],
+        "durationInSeconds" -> durationInSeconds.asInstanceOf[js.Any],
+        "findingCounts" -> findingCounts.asInstanceOf[js.Any],
+        "name" -> name.asInstanceOf[js.Any],
+        "notifications" -> notifications.asInstanceOf[js.Any],
+        "rulesPackageArns" -> rulesPackageArns.asInstanceOf[js.Any],
+        "state" -> state.asInstanceOf[js.Any],
+        "stateChangedAt" -> stateChangedAt.asInstanceOf[js.Any],
+        "stateChanges" -> stateChanges.asInstanceOf[js.Any],
+        "userAttributesForFindings" -> userAttributesForFindings.asInstanceOf[js.Any],
         "completedAt" -> completedAt.map { x => x.asInstanceOf[js.Any] },
-        "assessmentTemplateArn" -> assessmentTemplateArn.map { x => x.asInstanceOf[js.Any] },
-        "durationInSeconds" -> durationInSeconds.map { x => x.asInstanceOf[js.Any] },
-        "rulesPackageArns" -> rulesPackageArns.map { x => x.asInstanceOf[js.Any] },
-        "createdAt" -> createdAt.map { x => x.asInstanceOf[js.Any] },
-        "startedAt" -> startedAt.map { x => x.asInstanceOf[js.Any] },
-        "userAttributesForFindings" -> userAttributesForFindings.map { x => x.asInstanceOf[js.Any] },
-        "notifications" -> notifications.map { x => x.asInstanceOf[js.Any] },
-        "stateChanges" -> stateChanges.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "startedAt" -> startedAt.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AssessmentRun]
     }
@@ -329,32 +329,32 @@ package inspector {
    */
   @js.native
   trait AssessmentRunAgent extends js.Object {
-    var agentId: js.UndefOr[AgentId]
-    var autoScalingGroup: js.UndefOr[AutoScalingGroup]
+    var agentHealth: AgentHealth
+    var agentHealthCode: AgentHealthCode
+    var agentId: AgentId
+    var assessmentRunArn: Arn
+    var telemetryMetadata: TelemetryMetadataList
     var agentHealthDetails: js.UndefOr[Message]
-    var assessmentRunArn: js.UndefOr[Arn]
-    var telemetryMetadata: js.UndefOr[TelemetryMetadataList]
-    var agentHealth: js.UndefOr[AgentHealth]
-    var agentHealthCode: js.UndefOr[AgentHealthCode]
+    var autoScalingGroup: js.UndefOr[AutoScalingGroup]
   }
 
   object AssessmentRunAgent {
     def apply(
-      agentId: js.UndefOr[AgentId] = js.undefined,
-      autoScalingGroup: js.UndefOr[AutoScalingGroup] = js.undefined,
+      agentHealth: AgentHealth,
+      agentHealthCode: AgentHealthCode,
+      agentId: AgentId,
+      assessmentRunArn: Arn,
+      telemetryMetadata: TelemetryMetadataList,
       agentHealthDetails: js.UndefOr[Message] = js.undefined,
-      assessmentRunArn: js.UndefOr[Arn] = js.undefined,
-      telemetryMetadata: js.UndefOr[TelemetryMetadataList] = js.undefined,
-      agentHealth: js.UndefOr[AgentHealth] = js.undefined,
-      agentHealthCode: js.UndefOr[AgentHealthCode] = js.undefined): AssessmentRunAgent = {
+      autoScalingGroup: js.UndefOr[AutoScalingGroup] = js.undefined): AssessmentRunAgent = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "agentId" -> agentId.map { x => x.asInstanceOf[js.Any] },
-        "autoScalingGroup" -> autoScalingGroup.map { x => x.asInstanceOf[js.Any] },
+        "agentHealth" -> agentHealth.asInstanceOf[js.Any],
+        "agentHealthCode" -> agentHealthCode.asInstanceOf[js.Any],
+        "agentId" -> agentId.asInstanceOf[js.Any],
+        "assessmentRunArn" -> assessmentRunArn.asInstanceOf[js.Any],
+        "telemetryMetadata" -> telemetryMetadata.asInstanceOf[js.Any],
         "agentHealthDetails" -> agentHealthDetails.map { x => x.asInstanceOf[js.Any] },
-        "assessmentRunArn" -> assessmentRunArn.map { x => x.asInstanceOf[js.Any] },
-        "telemetryMetadata" -> telemetryMetadata.map { x => x.asInstanceOf[js.Any] },
-        "agentHealth" -> agentHealth.map { x => x.asInstanceOf[js.Any] },
-        "agentHealthCode" -> agentHealthCode.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "autoScalingGroup" -> autoScalingGroup.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AssessmentRunAgent]
     }
@@ -365,10 +365,10 @@ package inspector {
    */
   @js.native
   trait AssessmentRunFilter extends js.Object {
-    var namePattern: js.UndefOr[NamePattern]
     var completionTimeRange: js.UndefOr[TimestampRange]
-    var rulesPackageArns: js.UndefOr[FilterRulesPackageArnList]
     var durationRange: js.UndefOr[DurationRange]
+    var namePattern: js.UndefOr[NamePattern]
+    var rulesPackageArns: js.UndefOr[FilterRulesPackageArnList]
     var startTimeRange: js.UndefOr[TimestampRange]
     var stateChangeTimeRange: js.UndefOr[TimestampRange]
     var states: js.UndefOr[AssessmentRunStateList]
@@ -376,18 +376,18 @@ package inspector {
 
   object AssessmentRunFilter {
     def apply(
-      namePattern: js.UndefOr[NamePattern] = js.undefined,
       completionTimeRange: js.UndefOr[TimestampRange] = js.undefined,
-      rulesPackageArns: js.UndefOr[FilterRulesPackageArnList] = js.undefined,
       durationRange: js.UndefOr[DurationRange] = js.undefined,
+      namePattern: js.UndefOr[NamePattern] = js.undefined,
+      rulesPackageArns: js.UndefOr[FilterRulesPackageArnList] = js.undefined,
       startTimeRange: js.UndefOr[TimestampRange] = js.undefined,
       stateChangeTimeRange: js.UndefOr[TimestampRange] = js.undefined,
       states: js.UndefOr[AssessmentRunStateList] = js.undefined): AssessmentRunFilter = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "namePattern" -> namePattern.map { x => x.asInstanceOf[js.Any] },
         "completionTimeRange" -> completionTimeRange.map { x => x.asInstanceOf[js.Any] },
-        "rulesPackageArns" -> rulesPackageArns.map { x => x.asInstanceOf[js.Any] },
         "durationRange" -> durationRange.map { x => x.asInstanceOf[js.Any] },
+        "namePattern" -> namePattern.map { x => x.asInstanceOf[js.Any] },
+        "rulesPackageArns" -> rulesPackageArns.map { x => x.asInstanceOf[js.Any] },
         "startTimeRange" -> startTimeRange.map { x => x.asInstanceOf[js.Any] },
         "stateChangeTimeRange" -> stateChangeTimeRange.map { x => x.asInstanceOf[js.Any] },
         "states" -> states.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
@@ -401,28 +401,28 @@ package inspector {
    */
   @js.native
   trait AssessmentRunNotification extends js.Object {
-    var event: js.UndefOr[InspectorEvent]
-    var error: js.UndefOr[Bool]
-    var date: js.UndefOr[Timestamp]
-    var snsPublishStatusCode: js.UndefOr[AssessmentRunNotificationSnsStatusCode]
+    var date: Timestamp
+    var error: Bool
+    var event: InspectorEvent
     var message: js.UndefOr[Message]
+    var snsPublishStatusCode: js.UndefOr[AssessmentRunNotificationSnsStatusCode]
     var snsTopicArn: js.UndefOr[Arn]
   }
 
   object AssessmentRunNotification {
     def apply(
-      event: js.UndefOr[InspectorEvent] = js.undefined,
-      error: js.UndefOr[Bool] = js.undefined,
-      date: js.UndefOr[Timestamp] = js.undefined,
-      snsPublishStatusCode: js.UndefOr[AssessmentRunNotificationSnsStatusCode] = js.undefined,
+      date: Timestamp,
+      error: Bool,
+      event: InspectorEvent,
       message: js.UndefOr[Message] = js.undefined,
+      snsPublishStatusCode: js.UndefOr[AssessmentRunNotificationSnsStatusCode] = js.undefined,
       snsTopicArn: js.UndefOr[Arn] = js.undefined): AssessmentRunNotification = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "event" -> event.map { x => x.asInstanceOf[js.Any] },
-        "error" -> error.map { x => x.asInstanceOf[js.Any] },
-        "date" -> date.map { x => x.asInstanceOf[js.Any] },
-        "snsPublishStatusCode" -> snsPublishStatusCode.map { x => x.asInstanceOf[js.Any] },
+        "date" -> date.asInstanceOf[js.Any],
+        "error" -> error.asInstanceOf[js.Any],
+        "event" -> event.asInstanceOf[js.Any],
         "message" -> message.map { x => x.asInstanceOf[js.Any] },
+        "snsPublishStatusCode" -> snsPublishStatusCode.map { x => x.asInstanceOf[js.Any] },
         "snsTopicArn" -> snsTopicArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AssessmentRunNotification]
@@ -461,17 +461,17 @@ package inspector {
    */
   @js.native
   trait AssessmentRunStateChange extends js.Object {
-    var stateChangedAt: js.UndefOr[Timestamp]
-    var state: js.UndefOr[AssessmentRunState]
+    var state: AssessmentRunState
+    var stateChangedAt: Timestamp
   }
 
   object AssessmentRunStateChange {
     def apply(
-      stateChangedAt: js.UndefOr[Timestamp] = js.undefined,
-      state: js.UndefOr[AssessmentRunState] = js.undefined): AssessmentRunStateChange = {
+      state: AssessmentRunState,
+      stateChangedAt: Timestamp): AssessmentRunStateChange = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "stateChangedAt" -> stateChangedAt.map { x => x.asInstanceOf[js.Any] },
-        "state" -> state.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "state" -> state.asInstanceOf[js.Any],
+        "stateChangedAt" -> stateChangedAt.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AssessmentRunStateChange]
     }
@@ -482,26 +482,26 @@ package inspector {
    */
   @js.native
   trait AssessmentTarget extends js.Object {
-    var arn: js.UndefOr[Arn]
-    var name: js.UndefOr[AssessmentTargetName]
-    var updatedAt: js.UndefOr[Timestamp]
+    var arn: Arn
+    var createdAt: Timestamp
+    var name: AssessmentTargetName
+    var updatedAt: Timestamp
     var resourceGroupArn: js.UndefOr[Arn]
-    var createdAt: js.UndefOr[Timestamp]
   }
 
   object AssessmentTarget {
     def apply(
-      arn: js.UndefOr[Arn] = js.undefined,
-      name: js.UndefOr[AssessmentTargetName] = js.undefined,
-      updatedAt: js.UndefOr[Timestamp] = js.undefined,
-      resourceGroupArn: js.UndefOr[Arn] = js.undefined,
-      createdAt: js.UndefOr[Timestamp] = js.undefined): AssessmentTarget = {
+      arn: Arn,
+      createdAt: Timestamp,
+      name: AssessmentTargetName,
+      updatedAt: Timestamp,
+      resourceGroupArn: js.UndefOr[Arn] = js.undefined): AssessmentTarget = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "arn" -> arn.map { x => x.asInstanceOf[js.Any] },
-        "name" -> name.map { x => x.asInstanceOf[js.Any] },
-        "updatedAt" -> updatedAt.map { x => x.asInstanceOf[js.Any] },
-        "resourceGroupArn" -> resourceGroupArn.map { x => x.asInstanceOf[js.Any] },
-        "createdAt" -> createdAt.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "arn" -> arn.asInstanceOf[js.Any],
+        "createdAt" -> createdAt.asInstanceOf[js.Any],
+        "name" -> name.asInstanceOf[js.Any],
+        "updatedAt" -> updatedAt.asInstanceOf[js.Any],
+        "resourceGroupArn" -> resourceGroupArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AssessmentTarget]
     }
@@ -530,38 +530,38 @@ package inspector {
    */
   @js.native
   trait AssessmentTemplate extends js.Object {
-    var arn: js.UndefOr[Arn]
-    var name: js.UndefOr[AssessmentTemplateName]
+    var arn: Arn
+    var assessmentRunCount: ArnCount
+    var assessmentTargetArn: Arn
+    var createdAt: Timestamp
+    var durationInSeconds: AssessmentRunDuration
+    var name: AssessmentTemplateName
+    var rulesPackageArns: AssessmentTemplateRulesPackageArnList
+    var userAttributesForFindings: UserAttributeList
     var lastAssessmentRunArn: js.UndefOr[Arn]
-    var durationInSeconds: js.UndefOr[AssessmentRunDuration]
-    var assessmentTargetArn: js.UndefOr[Arn]
-    var assessmentRunCount: js.UndefOr[ArnCount]
-    var rulesPackageArns: js.UndefOr[AssessmentTemplateRulesPackageArnList]
-    var createdAt: js.UndefOr[Timestamp]
-    var userAttributesForFindings: js.UndefOr[UserAttributeList]
   }
 
   object AssessmentTemplate {
     def apply(
-      arn: js.UndefOr[Arn] = js.undefined,
-      name: js.UndefOr[AssessmentTemplateName] = js.undefined,
-      lastAssessmentRunArn: js.UndefOr[Arn] = js.undefined,
-      durationInSeconds: js.UndefOr[AssessmentRunDuration] = js.undefined,
-      assessmentTargetArn: js.UndefOr[Arn] = js.undefined,
-      assessmentRunCount: js.UndefOr[ArnCount] = js.undefined,
-      rulesPackageArns: js.UndefOr[AssessmentTemplateRulesPackageArnList] = js.undefined,
-      createdAt: js.UndefOr[Timestamp] = js.undefined,
-      userAttributesForFindings: js.UndefOr[UserAttributeList] = js.undefined): AssessmentTemplate = {
+      arn: Arn,
+      assessmentRunCount: ArnCount,
+      assessmentTargetArn: Arn,
+      createdAt: Timestamp,
+      durationInSeconds: AssessmentRunDuration,
+      name: AssessmentTemplateName,
+      rulesPackageArns: AssessmentTemplateRulesPackageArnList,
+      userAttributesForFindings: UserAttributeList,
+      lastAssessmentRunArn: js.UndefOr[Arn] = js.undefined): AssessmentTemplate = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "arn" -> arn.map { x => x.asInstanceOf[js.Any] },
-        "name" -> name.map { x => x.asInstanceOf[js.Any] },
-        "lastAssessmentRunArn" -> lastAssessmentRunArn.map { x => x.asInstanceOf[js.Any] },
-        "durationInSeconds" -> durationInSeconds.map { x => x.asInstanceOf[js.Any] },
-        "assessmentTargetArn" -> assessmentTargetArn.map { x => x.asInstanceOf[js.Any] },
-        "assessmentRunCount" -> assessmentRunCount.map { x => x.asInstanceOf[js.Any] },
-        "rulesPackageArns" -> rulesPackageArns.map { x => x.asInstanceOf[js.Any] },
-        "createdAt" -> createdAt.map { x => x.asInstanceOf[js.Any] },
-        "userAttributesForFindings" -> userAttributesForFindings.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "arn" -> arn.asInstanceOf[js.Any],
+        "assessmentRunCount" -> assessmentRunCount.asInstanceOf[js.Any],
+        "assessmentTargetArn" -> assessmentTargetArn.asInstanceOf[js.Any],
+        "createdAt" -> createdAt.asInstanceOf[js.Any],
+        "durationInSeconds" -> durationInSeconds.asInstanceOf[js.Any],
+        "name" -> name.asInstanceOf[js.Any],
+        "rulesPackageArns" -> rulesPackageArns.asInstanceOf[js.Any],
+        "userAttributesForFindings" -> userAttributesForFindings.asInstanceOf[js.Any],
+        "lastAssessmentRunArn" -> lastAssessmentRunArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AssessmentTemplate]
     }
@@ -572,19 +572,19 @@ package inspector {
    */
   @js.native
   trait AssessmentTemplateFilter extends js.Object {
-    var namePattern: js.UndefOr[NamePattern]
     var durationRange: js.UndefOr[DurationRange]
+    var namePattern: js.UndefOr[NamePattern]
     var rulesPackageArns: js.UndefOr[FilterRulesPackageArnList]
   }
 
   object AssessmentTemplateFilter {
     def apply(
-      namePattern: js.UndefOr[NamePattern] = js.undefined,
       durationRange: js.UndefOr[DurationRange] = js.undefined,
+      namePattern: js.UndefOr[NamePattern] = js.undefined,
       rulesPackageArns: js.UndefOr[FilterRulesPackageArnList] = js.undefined): AssessmentTemplateFilter = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "namePattern" -> namePattern.map { x => x.asInstanceOf[js.Any] },
         "durationRange" -> durationRange.map { x => x.asInstanceOf[js.Any] },
+        "namePattern" -> namePattern.map { x => x.asInstanceOf[js.Any] },
         "rulesPackageArns" -> rulesPackageArns.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AssessmentTemplateFilter]
@@ -596,35 +596,35 @@ package inspector {
    */
   @js.native
   trait AssetAttributes extends js.Object {
+    var schemaVersion: NumericVersion
     var agentId: js.UndefOr[AgentId]
-    var ipv4Addresses: js.UndefOr[Ipv4AddressList]
+    var amiId: js.UndefOr[AmiId]
+    var autoScalingGroup: js.UndefOr[AutoScalingGroup]
     var hostname: js.UndefOr[Hostname]
+    var ipv4Addresses: js.UndefOr[Ipv4AddressList]
     var networkInterfaces: js.UndefOr[NetworkInterfaces]
     var tags: js.UndefOr[Tags]
-    var autoScalingGroup: js.UndefOr[AutoScalingGroup]
-    var amiId: js.UndefOr[AmiId]
-    var schemaVersion: js.UndefOr[NumericVersion]
   }
 
   object AssetAttributes {
     def apply(
+      schemaVersion: NumericVersion,
       agentId: js.UndefOr[AgentId] = js.undefined,
-      ipv4Addresses: js.UndefOr[Ipv4AddressList] = js.undefined,
-      hostname: js.UndefOr[Hostname] = js.undefined,
-      networkInterfaces: js.UndefOr[NetworkInterfaces] = js.undefined,
-      tags: js.UndefOr[Tags] = js.undefined,
-      autoScalingGroup: js.UndefOr[AutoScalingGroup] = js.undefined,
       amiId: js.UndefOr[AmiId] = js.undefined,
-      schemaVersion: js.UndefOr[NumericVersion] = js.undefined): AssetAttributes = {
+      autoScalingGroup: js.UndefOr[AutoScalingGroup] = js.undefined,
+      hostname: js.UndefOr[Hostname] = js.undefined,
+      ipv4Addresses: js.UndefOr[Ipv4AddressList] = js.undefined,
+      networkInterfaces: js.UndefOr[NetworkInterfaces] = js.undefined,
+      tags: js.UndefOr[Tags] = js.undefined): AssetAttributes = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "schemaVersion" -> schemaVersion.asInstanceOf[js.Any],
         "agentId" -> agentId.map { x => x.asInstanceOf[js.Any] },
-        "ipv4Addresses" -> ipv4Addresses.map { x => x.asInstanceOf[js.Any] },
-        "hostname" -> hostname.map { x => x.asInstanceOf[js.Any] },
-        "networkInterfaces" -> networkInterfaces.map { x => x.asInstanceOf[js.Any] },
-        "tags" -> tags.map { x => x.asInstanceOf[js.Any] },
-        "autoScalingGroup" -> autoScalingGroup.map { x => x.asInstanceOf[js.Any] },
         "amiId" -> amiId.map { x => x.asInstanceOf[js.Any] },
-        "schemaVersion" -> schemaVersion.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "autoScalingGroup" -> autoScalingGroup.map { x => x.asInstanceOf[js.Any] },
+        "hostname" -> hostname.map { x => x.asInstanceOf[js.Any] },
+        "ipv4Addresses" -> ipv4Addresses.map { x => x.asInstanceOf[js.Any] },
+        "networkInterfaces" -> networkInterfaces.map { x => x.asInstanceOf[js.Any] },
+        "tags" -> tags.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AssetAttributes]
     }
@@ -641,16 +641,16 @@ package inspector {
    */
   @js.native
   trait Attribute extends js.Object {
-    var key: js.UndefOr[AttributeKey]
+    var key: AttributeKey
     var value: js.UndefOr[AttributeValue]
   }
 
   object Attribute {
     def apply(
-      key: js.UndefOr[AttributeKey] = js.undefined,
+      key: AttributeKey,
       value: js.UndefOr[AttributeValue] = js.undefined): Attribute = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "key" -> key.map { x => x.asInstanceOf[js.Any] },
+        "key" -> key.asInstanceOf[js.Any],
         "value" -> value.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Attribute]
@@ -659,16 +659,16 @@ package inspector {
 
   @js.native
   trait CreateAssessmentTargetRequest extends js.Object {
-    var assessmentTargetName: js.UndefOr[AssessmentTargetName]
+    var assessmentTargetName: AssessmentTargetName
     var resourceGroupArn: js.UndefOr[Arn]
   }
 
   object CreateAssessmentTargetRequest {
     def apply(
-      assessmentTargetName: js.UndefOr[AssessmentTargetName] = js.undefined,
+      assessmentTargetName: AssessmentTargetName,
       resourceGroupArn: js.UndefOr[Arn] = js.undefined): CreateAssessmentTargetRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "assessmentTargetName" -> assessmentTargetName.map { x => x.asInstanceOf[js.Any] },
+        "assessmentTargetName" -> assessmentTargetName.asInstanceOf[js.Any],
         "resourceGroupArn" -> resourceGroupArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateAssessmentTargetRequest]
@@ -677,14 +677,14 @@ package inspector {
 
   @js.native
   trait CreateAssessmentTargetResponse extends js.Object {
-    var assessmentTargetArn: js.UndefOr[Arn]
+    var assessmentTargetArn: Arn
   }
 
   object CreateAssessmentTargetResponse {
     def apply(
-      assessmentTargetArn: js.UndefOr[Arn] = js.undefined): CreateAssessmentTargetResponse = {
+      assessmentTargetArn: Arn): CreateAssessmentTargetResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "assessmentTargetArn" -> assessmentTargetArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "assessmentTargetArn" -> assessmentTargetArn.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateAssessmentTargetResponse]
     }
@@ -692,25 +692,25 @@ package inspector {
 
   @js.native
   trait CreateAssessmentTemplateRequest extends js.Object {
-    var assessmentTemplateName: js.UndefOr[AssessmentTemplateName]
-    var durationInSeconds: js.UndefOr[AssessmentRunDuration]
-    var assessmentTargetArn: js.UndefOr[Arn]
-    var rulesPackageArns: js.UndefOr[AssessmentTemplateRulesPackageArnList]
+    var assessmentTargetArn: Arn
+    var assessmentTemplateName: AssessmentTemplateName
+    var durationInSeconds: AssessmentRunDuration
+    var rulesPackageArns: AssessmentTemplateRulesPackageArnList
     var userAttributesForFindings: js.UndefOr[UserAttributeList]
   }
 
   object CreateAssessmentTemplateRequest {
     def apply(
-      assessmentTemplateName: js.UndefOr[AssessmentTemplateName] = js.undefined,
-      durationInSeconds: js.UndefOr[AssessmentRunDuration] = js.undefined,
-      assessmentTargetArn: js.UndefOr[Arn] = js.undefined,
-      rulesPackageArns: js.UndefOr[AssessmentTemplateRulesPackageArnList] = js.undefined,
+      assessmentTargetArn: Arn,
+      assessmentTemplateName: AssessmentTemplateName,
+      durationInSeconds: AssessmentRunDuration,
+      rulesPackageArns: AssessmentTemplateRulesPackageArnList,
       userAttributesForFindings: js.UndefOr[UserAttributeList] = js.undefined): CreateAssessmentTemplateRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "assessmentTemplateName" -> assessmentTemplateName.map { x => x.asInstanceOf[js.Any] },
-        "durationInSeconds" -> durationInSeconds.map { x => x.asInstanceOf[js.Any] },
-        "assessmentTargetArn" -> assessmentTargetArn.map { x => x.asInstanceOf[js.Any] },
-        "rulesPackageArns" -> rulesPackageArns.map { x => x.asInstanceOf[js.Any] },
+        "assessmentTargetArn" -> assessmentTargetArn.asInstanceOf[js.Any],
+        "assessmentTemplateName" -> assessmentTemplateName.asInstanceOf[js.Any],
+        "durationInSeconds" -> durationInSeconds.asInstanceOf[js.Any],
+        "rulesPackageArns" -> rulesPackageArns.asInstanceOf[js.Any],
         "userAttributesForFindings" -> userAttributesForFindings.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateAssessmentTemplateRequest]
@@ -719,14 +719,14 @@ package inspector {
 
   @js.native
   trait CreateAssessmentTemplateResponse extends js.Object {
-    var assessmentTemplateArn: js.UndefOr[Arn]
+    var assessmentTemplateArn: Arn
   }
 
   object CreateAssessmentTemplateResponse {
     def apply(
-      assessmentTemplateArn: js.UndefOr[Arn] = js.undefined): CreateAssessmentTemplateResponse = {
+      assessmentTemplateArn: Arn): CreateAssessmentTemplateResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "assessmentTemplateArn" -> assessmentTemplateArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "assessmentTemplateArn" -> assessmentTemplateArn.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateAssessmentTemplateResponse]
     }
@@ -734,14 +734,14 @@ package inspector {
 
   @js.native
   trait CreateExclusionsPreviewRequest extends js.Object {
-    var assessmentTemplateArn: js.UndefOr[Arn]
+    var assessmentTemplateArn: Arn
   }
 
   object CreateExclusionsPreviewRequest {
     def apply(
-      assessmentTemplateArn: js.UndefOr[Arn] = js.undefined): CreateExclusionsPreviewRequest = {
+      assessmentTemplateArn: Arn): CreateExclusionsPreviewRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "assessmentTemplateArn" -> assessmentTemplateArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "assessmentTemplateArn" -> assessmentTemplateArn.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateExclusionsPreviewRequest]
     }
@@ -749,14 +749,14 @@ package inspector {
 
   @js.native
   trait CreateExclusionsPreviewResponse extends js.Object {
-    var previewToken: js.UndefOr[UUID]
+    var previewToken: UUID
   }
 
   object CreateExclusionsPreviewResponse {
     def apply(
-      previewToken: js.UndefOr[UUID] = js.undefined): CreateExclusionsPreviewResponse = {
+      previewToken: UUID): CreateExclusionsPreviewResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "previewToken" -> previewToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "previewToken" -> previewToken.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateExclusionsPreviewResponse]
     }
@@ -764,14 +764,14 @@ package inspector {
 
   @js.native
   trait CreateResourceGroupRequest extends js.Object {
-    var resourceGroupTags: js.UndefOr[ResourceGroupTags]
+    var resourceGroupTags: ResourceGroupTags
   }
 
   object CreateResourceGroupRequest {
     def apply(
-      resourceGroupTags: js.UndefOr[ResourceGroupTags] = js.undefined): CreateResourceGroupRequest = {
+      resourceGroupTags: ResourceGroupTags): CreateResourceGroupRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "resourceGroupTags" -> resourceGroupTags.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "resourceGroupTags" -> resourceGroupTags.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateResourceGroupRequest]
     }
@@ -779,14 +779,14 @@ package inspector {
 
   @js.native
   trait CreateResourceGroupResponse extends js.Object {
-    var resourceGroupArn: js.UndefOr[Arn]
+    var resourceGroupArn: Arn
   }
 
   object CreateResourceGroupResponse {
     def apply(
-      resourceGroupArn: js.UndefOr[Arn] = js.undefined): CreateResourceGroupResponse = {
+      resourceGroupArn: Arn): CreateResourceGroupResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "resourceGroupArn" -> resourceGroupArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "resourceGroupArn" -> resourceGroupArn.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateResourceGroupResponse]
     }
@@ -794,14 +794,14 @@ package inspector {
 
   @js.native
   trait DeleteAssessmentRunRequest extends js.Object {
-    var assessmentRunArn: js.UndefOr[Arn]
+    var assessmentRunArn: Arn
   }
 
   object DeleteAssessmentRunRequest {
     def apply(
-      assessmentRunArn: js.UndefOr[Arn] = js.undefined): DeleteAssessmentRunRequest = {
+      assessmentRunArn: Arn): DeleteAssessmentRunRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "assessmentRunArn" -> assessmentRunArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "assessmentRunArn" -> assessmentRunArn.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteAssessmentRunRequest]
     }
@@ -809,14 +809,14 @@ package inspector {
 
   @js.native
   trait DeleteAssessmentTargetRequest extends js.Object {
-    var assessmentTargetArn: js.UndefOr[Arn]
+    var assessmentTargetArn: Arn
   }
 
   object DeleteAssessmentTargetRequest {
     def apply(
-      assessmentTargetArn: js.UndefOr[Arn] = js.undefined): DeleteAssessmentTargetRequest = {
+      assessmentTargetArn: Arn): DeleteAssessmentTargetRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "assessmentTargetArn" -> assessmentTargetArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "assessmentTargetArn" -> assessmentTargetArn.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteAssessmentTargetRequest]
     }
@@ -824,14 +824,14 @@ package inspector {
 
   @js.native
   trait DeleteAssessmentTemplateRequest extends js.Object {
-    var assessmentTemplateArn: js.UndefOr[Arn]
+    var assessmentTemplateArn: Arn
   }
 
   object DeleteAssessmentTemplateRequest {
     def apply(
-      assessmentTemplateArn: js.UndefOr[Arn] = js.undefined): DeleteAssessmentTemplateRequest = {
+      assessmentTemplateArn: Arn): DeleteAssessmentTemplateRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "assessmentTemplateArn" -> assessmentTemplateArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "assessmentTemplateArn" -> assessmentTemplateArn.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteAssessmentTemplateRequest]
     }
@@ -839,14 +839,14 @@ package inspector {
 
   @js.native
   trait DescribeAssessmentRunsRequest extends js.Object {
-    var assessmentRunArns: js.UndefOr[BatchDescribeArnList]
+    var assessmentRunArns: BatchDescribeArnList
   }
 
   object DescribeAssessmentRunsRequest {
     def apply(
-      assessmentRunArns: js.UndefOr[BatchDescribeArnList] = js.undefined): DescribeAssessmentRunsRequest = {
+      assessmentRunArns: BatchDescribeArnList): DescribeAssessmentRunsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "assessmentRunArns" -> assessmentRunArns.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "assessmentRunArns" -> assessmentRunArns.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeAssessmentRunsRequest]
     }
@@ -854,17 +854,17 @@ package inspector {
 
   @js.native
   trait DescribeAssessmentRunsResponse extends js.Object {
-    var assessmentRuns: js.UndefOr[AssessmentRunList]
-    var failedItems: js.UndefOr[FailedItems]
+    var assessmentRuns: AssessmentRunList
+    var failedItems: FailedItems
   }
 
   object DescribeAssessmentRunsResponse {
     def apply(
-      assessmentRuns: js.UndefOr[AssessmentRunList] = js.undefined,
-      failedItems: js.UndefOr[FailedItems] = js.undefined): DescribeAssessmentRunsResponse = {
+      assessmentRuns: AssessmentRunList,
+      failedItems: FailedItems): DescribeAssessmentRunsResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "assessmentRuns" -> assessmentRuns.map { x => x.asInstanceOf[js.Any] },
-        "failedItems" -> failedItems.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "assessmentRuns" -> assessmentRuns.asInstanceOf[js.Any],
+        "failedItems" -> failedItems.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeAssessmentRunsResponse]
     }
@@ -872,14 +872,14 @@ package inspector {
 
   @js.native
   trait DescribeAssessmentTargetsRequest extends js.Object {
-    var assessmentTargetArns: js.UndefOr[BatchDescribeArnList]
+    var assessmentTargetArns: BatchDescribeArnList
   }
 
   object DescribeAssessmentTargetsRequest {
     def apply(
-      assessmentTargetArns: js.UndefOr[BatchDescribeArnList] = js.undefined): DescribeAssessmentTargetsRequest = {
+      assessmentTargetArns: BatchDescribeArnList): DescribeAssessmentTargetsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "assessmentTargetArns" -> assessmentTargetArns.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "assessmentTargetArns" -> assessmentTargetArns.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeAssessmentTargetsRequest]
     }
@@ -887,17 +887,17 @@ package inspector {
 
   @js.native
   trait DescribeAssessmentTargetsResponse extends js.Object {
-    var assessmentTargets: js.UndefOr[AssessmentTargetList]
-    var failedItems: js.UndefOr[FailedItems]
+    var assessmentTargets: AssessmentTargetList
+    var failedItems: FailedItems
   }
 
   object DescribeAssessmentTargetsResponse {
     def apply(
-      assessmentTargets: js.UndefOr[AssessmentTargetList] = js.undefined,
-      failedItems: js.UndefOr[FailedItems] = js.undefined): DescribeAssessmentTargetsResponse = {
+      assessmentTargets: AssessmentTargetList,
+      failedItems: FailedItems): DescribeAssessmentTargetsResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "assessmentTargets" -> assessmentTargets.map { x => x.asInstanceOf[js.Any] },
-        "failedItems" -> failedItems.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "assessmentTargets" -> assessmentTargets.asInstanceOf[js.Any],
+        "failedItems" -> failedItems.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeAssessmentTargetsResponse]
     }
@@ -905,14 +905,14 @@ package inspector {
 
   @js.native
   trait DescribeAssessmentTemplatesRequest extends js.Object {
-    var assessmentTemplateArns: js.UndefOr[BatchDescribeArnList]
+    var assessmentTemplateArns: BatchDescribeArnList
   }
 
   object DescribeAssessmentTemplatesRequest {
     def apply(
-      assessmentTemplateArns: js.UndefOr[BatchDescribeArnList] = js.undefined): DescribeAssessmentTemplatesRequest = {
+      assessmentTemplateArns: BatchDescribeArnList): DescribeAssessmentTemplatesRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "assessmentTemplateArns" -> assessmentTemplateArns.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "assessmentTemplateArns" -> assessmentTemplateArns.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeAssessmentTemplatesRequest]
     }
@@ -920,17 +920,17 @@ package inspector {
 
   @js.native
   trait DescribeAssessmentTemplatesResponse extends js.Object {
-    var assessmentTemplates: js.UndefOr[AssessmentTemplateList]
-    var failedItems: js.UndefOr[FailedItems]
+    var assessmentTemplates: AssessmentTemplateList
+    var failedItems: FailedItems
   }
 
   object DescribeAssessmentTemplatesResponse {
     def apply(
-      assessmentTemplates: js.UndefOr[AssessmentTemplateList] = js.undefined,
-      failedItems: js.UndefOr[FailedItems] = js.undefined): DescribeAssessmentTemplatesResponse = {
+      assessmentTemplates: AssessmentTemplateList,
+      failedItems: FailedItems): DescribeAssessmentTemplatesResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "assessmentTemplates" -> assessmentTemplates.map { x => x.asInstanceOf[js.Any] },
-        "failedItems" -> failedItems.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "assessmentTemplates" -> assessmentTemplates.asInstanceOf[js.Any],
+        "failedItems" -> failedItems.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeAssessmentTemplatesResponse]
     }
@@ -938,20 +938,20 @@ package inspector {
 
   @js.native
   trait DescribeCrossAccountAccessRoleResponse extends js.Object {
-    var roleArn: js.UndefOr[Arn]
-    var valid: js.UndefOr[Bool]
-    var registeredAt: js.UndefOr[Timestamp]
+    var registeredAt: Timestamp
+    var roleArn: Arn
+    var valid: Bool
   }
 
   object DescribeCrossAccountAccessRoleResponse {
     def apply(
-      roleArn: js.UndefOr[Arn] = js.undefined,
-      valid: js.UndefOr[Bool] = js.undefined,
-      registeredAt: js.UndefOr[Timestamp] = js.undefined): DescribeCrossAccountAccessRoleResponse = {
+      registeredAt: Timestamp,
+      roleArn: Arn,
+      valid: Bool): DescribeCrossAccountAccessRoleResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "roleArn" -> roleArn.map { x => x.asInstanceOf[js.Any] },
-        "valid" -> valid.map { x => x.asInstanceOf[js.Any] },
-        "registeredAt" -> registeredAt.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "registeredAt" -> registeredAt.asInstanceOf[js.Any],
+        "roleArn" -> roleArn.asInstanceOf[js.Any],
+        "valid" -> valid.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeCrossAccountAccessRoleResponse]
     }
@@ -959,16 +959,16 @@ package inspector {
 
   @js.native
   trait DescribeExclusionsRequest extends js.Object {
-    var exclusionArns: js.UndefOr[BatchDescribeExclusionsArnList]
+    var exclusionArns: BatchDescribeExclusionsArnList
     var locale: js.UndefOr[Locale]
   }
 
   object DescribeExclusionsRequest {
     def apply(
-      exclusionArns: js.UndefOr[BatchDescribeExclusionsArnList] = js.undefined,
+      exclusionArns: BatchDescribeExclusionsArnList,
       locale: js.UndefOr[Locale] = js.undefined): DescribeExclusionsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "exclusionArns" -> exclusionArns.map { x => x.asInstanceOf[js.Any] },
+        "exclusionArns" -> exclusionArns.asInstanceOf[js.Any],
         "locale" -> locale.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeExclusionsRequest]
@@ -977,17 +977,17 @@ package inspector {
 
   @js.native
   trait DescribeExclusionsResponse extends js.Object {
-    var exclusions: js.UndefOr[ExclusionMap]
-    var failedItems: js.UndefOr[FailedItems]
+    var exclusions: ExclusionMap
+    var failedItems: FailedItems
   }
 
   object DescribeExclusionsResponse {
     def apply(
-      exclusions: js.UndefOr[ExclusionMap] = js.undefined,
-      failedItems: js.UndefOr[FailedItems] = js.undefined): DescribeExclusionsResponse = {
+      exclusions: ExclusionMap,
+      failedItems: FailedItems): DescribeExclusionsResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "exclusions" -> exclusions.map { x => x.asInstanceOf[js.Any] },
-        "failedItems" -> failedItems.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "exclusions" -> exclusions.asInstanceOf[js.Any],
+        "failedItems" -> failedItems.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeExclusionsResponse]
     }
@@ -995,16 +995,16 @@ package inspector {
 
   @js.native
   trait DescribeFindingsRequest extends js.Object {
-    var findingArns: js.UndefOr[BatchDescribeArnList]
+    var findingArns: BatchDescribeArnList
     var locale: js.UndefOr[Locale]
   }
 
   object DescribeFindingsRequest {
     def apply(
-      findingArns: js.UndefOr[BatchDescribeArnList] = js.undefined,
+      findingArns: BatchDescribeArnList,
       locale: js.UndefOr[Locale] = js.undefined): DescribeFindingsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "findingArns" -> findingArns.map { x => x.asInstanceOf[js.Any] },
+        "findingArns" -> findingArns.asInstanceOf[js.Any],
         "locale" -> locale.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeFindingsRequest]
@@ -1013,17 +1013,17 @@ package inspector {
 
   @js.native
   trait DescribeFindingsResponse extends js.Object {
-    var findings: js.UndefOr[FindingList]
-    var failedItems: js.UndefOr[FailedItems]
+    var failedItems: FailedItems
+    var findings: FindingList
   }
 
   object DescribeFindingsResponse {
     def apply(
-      findings: js.UndefOr[FindingList] = js.undefined,
-      failedItems: js.UndefOr[FailedItems] = js.undefined): DescribeFindingsResponse = {
+      failedItems: FailedItems,
+      findings: FindingList): DescribeFindingsResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "findings" -> findings.map { x => x.asInstanceOf[js.Any] },
-        "failedItems" -> failedItems.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "failedItems" -> failedItems.asInstanceOf[js.Any],
+        "findings" -> findings.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeFindingsResponse]
     }
@@ -1031,14 +1031,14 @@ package inspector {
 
   @js.native
   trait DescribeResourceGroupsRequest extends js.Object {
-    var resourceGroupArns: js.UndefOr[BatchDescribeArnList]
+    var resourceGroupArns: BatchDescribeArnList
   }
 
   object DescribeResourceGroupsRequest {
     def apply(
-      resourceGroupArns: js.UndefOr[BatchDescribeArnList] = js.undefined): DescribeResourceGroupsRequest = {
+      resourceGroupArns: BatchDescribeArnList): DescribeResourceGroupsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "resourceGroupArns" -> resourceGroupArns.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "resourceGroupArns" -> resourceGroupArns.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeResourceGroupsRequest]
     }
@@ -1046,17 +1046,17 @@ package inspector {
 
   @js.native
   trait DescribeResourceGroupsResponse extends js.Object {
-    var resourceGroups: js.UndefOr[ResourceGroupList]
-    var failedItems: js.UndefOr[FailedItems]
+    var failedItems: FailedItems
+    var resourceGroups: ResourceGroupList
   }
 
   object DescribeResourceGroupsResponse {
     def apply(
-      resourceGroups: js.UndefOr[ResourceGroupList] = js.undefined,
-      failedItems: js.UndefOr[FailedItems] = js.undefined): DescribeResourceGroupsResponse = {
+      failedItems: FailedItems,
+      resourceGroups: ResourceGroupList): DescribeResourceGroupsResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "resourceGroups" -> resourceGroups.map { x => x.asInstanceOf[js.Any] },
-        "failedItems" -> failedItems.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "failedItems" -> failedItems.asInstanceOf[js.Any],
+        "resourceGroups" -> resourceGroups.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeResourceGroupsResponse]
     }
@@ -1064,16 +1064,16 @@ package inspector {
 
   @js.native
   trait DescribeRulesPackagesRequest extends js.Object {
-    var rulesPackageArns: js.UndefOr[BatchDescribeArnList]
+    var rulesPackageArns: BatchDescribeArnList
     var locale: js.UndefOr[Locale]
   }
 
   object DescribeRulesPackagesRequest {
     def apply(
-      rulesPackageArns: js.UndefOr[BatchDescribeArnList] = js.undefined,
+      rulesPackageArns: BatchDescribeArnList,
       locale: js.UndefOr[Locale] = js.undefined): DescribeRulesPackagesRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "rulesPackageArns" -> rulesPackageArns.map { x => x.asInstanceOf[js.Any] },
+        "rulesPackageArns" -> rulesPackageArns.asInstanceOf[js.Any],
         "locale" -> locale.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeRulesPackagesRequest]
@@ -1082,17 +1082,17 @@ package inspector {
 
   @js.native
   trait DescribeRulesPackagesResponse extends js.Object {
-    var rulesPackages: js.UndefOr[RulesPackageList]
-    var failedItems: js.UndefOr[FailedItems]
+    var failedItems: FailedItems
+    var rulesPackages: RulesPackageList
   }
 
   object DescribeRulesPackagesResponse {
     def apply(
-      rulesPackages: js.UndefOr[RulesPackageList] = js.undefined,
-      failedItems: js.UndefOr[FailedItems] = js.undefined): DescribeRulesPackagesResponse = {
+      failedItems: FailedItems,
+      rulesPackages: RulesPackageList): DescribeRulesPackagesResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "rulesPackages" -> rulesPackages.map { x => x.asInstanceOf[js.Any] },
-        "failedItems" -> failedItems.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "failedItems" -> failedItems.asInstanceOf[js.Any],
+        "rulesPackages" -> rulesPackages.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeRulesPackagesResponse]
     }
@@ -1103,17 +1103,17 @@ package inspector {
    */
   @js.native
   trait DurationRange extends js.Object {
-    var minSeconds: js.UndefOr[AssessmentRunDuration]
     var maxSeconds: js.UndefOr[AssessmentRunDuration]
+    var minSeconds: js.UndefOr[AssessmentRunDuration]
   }
 
   object DurationRange {
     def apply(
-      minSeconds: js.UndefOr[AssessmentRunDuration] = js.undefined,
-      maxSeconds: js.UndefOr[AssessmentRunDuration] = js.undefined): DurationRange = {
+      maxSeconds: js.UndefOr[AssessmentRunDuration] = js.undefined,
+      minSeconds: js.UndefOr[AssessmentRunDuration] = js.undefined): DurationRange = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "minSeconds" -> minSeconds.map { x => x.asInstanceOf[js.Any] },
-        "maxSeconds" -> maxSeconds.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "maxSeconds" -> maxSeconds.map { x => x.asInstanceOf[js.Any] },
+        "minSeconds" -> minSeconds.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DurationRange]
     }
@@ -1124,17 +1124,17 @@ package inspector {
    */
   @js.native
   trait EventSubscription extends js.Object {
-    var event: js.UndefOr[InspectorEvent]
-    var subscribedAt: js.UndefOr[Timestamp]
+    var event: InspectorEvent
+    var subscribedAt: Timestamp
   }
 
   object EventSubscription {
     def apply(
-      event: js.UndefOr[InspectorEvent] = js.undefined,
-      subscribedAt: js.UndefOr[Timestamp] = js.undefined): EventSubscription = {
+      event: InspectorEvent,
+      subscribedAt: Timestamp): EventSubscription = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "event" -> event.map { x => x.asInstanceOf[js.Any] },
-        "subscribedAt" -> subscribedAt.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "event" -> event.asInstanceOf[js.Any],
+        "subscribedAt" -> subscribedAt.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EventSubscription]
     }
@@ -1145,29 +1145,29 @@ package inspector {
    */
   @js.native
   trait Exclusion extends js.Object {
-    var arn: js.UndefOr[Arn]
-    var description: js.UndefOr[Text]
-    var scopes: js.UndefOr[ScopeList]
-    var recommendation: js.UndefOr[Text]
+    var arn: Arn
+    var description: Text
+    var recommendation: Text
+    var scopes: ScopeList
+    var title: Text
     var attributes: js.UndefOr[AttributeList]
-    var title: js.UndefOr[Text]
   }
 
   object Exclusion {
     def apply(
-      arn: js.UndefOr[Arn] = js.undefined,
-      description: js.UndefOr[Text] = js.undefined,
-      scopes: js.UndefOr[ScopeList] = js.undefined,
-      recommendation: js.UndefOr[Text] = js.undefined,
-      attributes: js.UndefOr[AttributeList] = js.undefined,
-      title: js.UndefOr[Text] = js.undefined): Exclusion = {
+      arn: Arn,
+      description: Text,
+      recommendation: Text,
+      scopes: ScopeList,
+      title: Text,
+      attributes: js.UndefOr[AttributeList] = js.undefined): Exclusion = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "arn" -> arn.map { x => x.asInstanceOf[js.Any] },
-        "description" -> description.map { x => x.asInstanceOf[js.Any] },
-        "scopes" -> scopes.map { x => x.asInstanceOf[js.Any] },
-        "recommendation" -> recommendation.map { x => x.asInstanceOf[js.Any] },
-        "attributes" -> attributes.map { x => x.asInstanceOf[js.Any] },
-        "title" -> title.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "arn" -> arn.asInstanceOf[js.Any],
+        "description" -> description.asInstanceOf[js.Any],
+        "recommendation" -> recommendation.asInstanceOf[js.Any],
+        "scopes" -> scopes.asInstanceOf[js.Any],
+        "title" -> title.asInstanceOf[js.Any],
+        "attributes" -> attributes.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Exclusion]
     }
@@ -1178,26 +1178,26 @@ package inspector {
    */
   @js.native
   trait ExclusionPreview extends js.Object {
-    var description: js.UndefOr[Text]
-    var scopes: js.UndefOr[ScopeList]
-    var recommendation: js.UndefOr[Text]
+    var description: Text
+    var recommendation: Text
+    var scopes: ScopeList
+    var title: Text
     var attributes: js.UndefOr[AttributeList]
-    var title: js.UndefOr[Text]
   }
 
   object ExclusionPreview {
     def apply(
-      description: js.UndefOr[Text] = js.undefined,
-      scopes: js.UndefOr[ScopeList] = js.undefined,
-      recommendation: js.UndefOr[Text] = js.undefined,
-      attributes: js.UndefOr[AttributeList] = js.undefined,
-      title: js.UndefOr[Text] = js.undefined): ExclusionPreview = {
+      description: Text,
+      recommendation: Text,
+      scopes: ScopeList,
+      title: Text,
+      attributes: js.UndefOr[AttributeList] = js.undefined): ExclusionPreview = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "description" -> description.map { x => x.asInstanceOf[js.Any] },
-        "scopes" -> scopes.map { x => x.asInstanceOf[js.Any] },
-        "recommendation" -> recommendation.map { x => x.asInstanceOf[js.Any] },
-        "attributes" -> attributes.map { x => x.asInstanceOf[js.Any] },
-        "title" -> title.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "description" -> description.asInstanceOf[js.Any],
+        "recommendation" -> recommendation.asInstanceOf[js.Any],
+        "scopes" -> scopes.asInstanceOf[js.Any],
+        "title" -> title.asInstanceOf[js.Any],
+        "attributes" -> attributes.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ExclusionPreview]
     }
@@ -1208,17 +1208,17 @@ package inspector {
    */
   @js.native
   trait FailedItemDetails extends js.Object {
-    var failureCode: js.UndefOr[FailedItemErrorCode]
-    var retryable: js.UndefOr[Bool]
+    var failureCode: FailedItemErrorCode
+    var retryable: Bool
   }
 
   object FailedItemDetails {
     def apply(
-      failureCode: js.UndefOr[FailedItemErrorCode] = js.undefined,
-      retryable: js.UndefOr[Bool] = js.undefined): FailedItemDetails = {
+      failureCode: FailedItemErrorCode,
+      retryable: Bool): FailedItemDetails = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "failureCode" -> failureCode.map { x => x.asInstanceOf[js.Any] },
-        "retryable" -> retryable.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "failureCode" -> failureCode.asInstanceOf[js.Any],
+        "retryable" -> retryable.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[FailedItemDetails]
     }
@@ -1240,65 +1240,65 @@ package inspector {
    */
   @js.native
   trait Finding extends js.Object {
-    var serviceAttributes: js.UndefOr[InspectorServiceAttributes]
-    var arn: js.UndefOr[Arn]
-    var indicatorOfCompromise: js.UndefOr[Bool]
-    var updatedAt: js.UndefOr[Timestamp]
+    var arn: Arn
+    var attributes: AttributeList
+    var createdAt: Timestamp
+    var updatedAt: Timestamp
+    var userAttributes: UserAttributeList
+    var assetAttributes: js.UndefOr[AssetAttributes]
     var assetType: js.UndefOr[AssetType]
-    var description: js.UndefOr[Text]
-    var recommendation: js.UndefOr[Text]
     var confidence: js.UndefOr[IocConfidence]
-    var service: js.UndefOr[ServiceName]
-    var attributes: js.UndefOr[AttributeList]
-    var numericSeverity: js.UndefOr[NumericSeverity]
-    var userAttributes: js.UndefOr[UserAttributeList]
+    var description: js.UndefOr[Text]
     var id: js.UndefOr[FindingId]
-    var createdAt: js.UndefOr[Timestamp]
+    var indicatorOfCompromise: js.UndefOr[Bool]
+    var numericSeverity: js.UndefOr[NumericSeverity]
+    var recommendation: js.UndefOr[Text]
+    var schemaVersion: js.UndefOr[NumericVersion]
+    var service: js.UndefOr[ServiceName]
+    var serviceAttributes: js.UndefOr[InspectorServiceAttributes]
     var severity: js.UndefOr[Severity]
     var title: js.UndefOr[Text]
-    var schemaVersion: js.UndefOr[NumericVersion]
-    var assetAttributes: js.UndefOr[AssetAttributes]
   }
 
   object Finding {
     def apply(
-      serviceAttributes: js.UndefOr[InspectorServiceAttributes] = js.undefined,
-      arn: js.UndefOr[Arn] = js.undefined,
-      indicatorOfCompromise: js.UndefOr[Bool] = js.undefined,
-      updatedAt: js.UndefOr[Timestamp] = js.undefined,
+      arn: Arn,
+      attributes: AttributeList,
+      createdAt: Timestamp,
+      updatedAt: Timestamp,
+      userAttributes: UserAttributeList,
+      assetAttributes: js.UndefOr[AssetAttributes] = js.undefined,
       assetType: js.UndefOr[AssetType] = js.undefined,
-      description: js.UndefOr[Text] = js.undefined,
-      recommendation: js.UndefOr[Text] = js.undefined,
       confidence: js.UndefOr[IocConfidence] = js.undefined,
-      service: js.UndefOr[ServiceName] = js.undefined,
-      attributes: js.UndefOr[AttributeList] = js.undefined,
-      numericSeverity: js.UndefOr[NumericSeverity] = js.undefined,
-      userAttributes: js.UndefOr[UserAttributeList] = js.undefined,
+      description: js.UndefOr[Text] = js.undefined,
       id: js.UndefOr[FindingId] = js.undefined,
-      createdAt: js.UndefOr[Timestamp] = js.undefined,
-      severity: js.UndefOr[Severity] = js.undefined,
-      title: js.UndefOr[Text] = js.undefined,
+      indicatorOfCompromise: js.UndefOr[Bool] = js.undefined,
+      numericSeverity: js.UndefOr[NumericSeverity] = js.undefined,
+      recommendation: js.UndefOr[Text] = js.undefined,
       schemaVersion: js.UndefOr[NumericVersion] = js.undefined,
-      assetAttributes: js.UndefOr[AssetAttributes] = js.undefined): Finding = {
+      service: js.UndefOr[ServiceName] = js.undefined,
+      serviceAttributes: js.UndefOr[InspectorServiceAttributes] = js.undefined,
+      severity: js.UndefOr[Severity] = js.undefined,
+      title: js.UndefOr[Text] = js.undefined): Finding = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "serviceAttributes" -> serviceAttributes.map { x => x.asInstanceOf[js.Any] },
-        "arn" -> arn.map { x => x.asInstanceOf[js.Any] },
-        "indicatorOfCompromise" -> indicatorOfCompromise.map { x => x.asInstanceOf[js.Any] },
-        "updatedAt" -> updatedAt.map { x => x.asInstanceOf[js.Any] },
+        "arn" -> arn.asInstanceOf[js.Any],
+        "attributes" -> attributes.asInstanceOf[js.Any],
+        "createdAt" -> createdAt.asInstanceOf[js.Any],
+        "updatedAt" -> updatedAt.asInstanceOf[js.Any],
+        "userAttributes" -> userAttributes.asInstanceOf[js.Any],
+        "assetAttributes" -> assetAttributes.map { x => x.asInstanceOf[js.Any] },
         "assetType" -> assetType.map { x => x.asInstanceOf[js.Any] },
-        "description" -> description.map { x => x.asInstanceOf[js.Any] },
-        "recommendation" -> recommendation.map { x => x.asInstanceOf[js.Any] },
         "confidence" -> confidence.map { x => x.asInstanceOf[js.Any] },
-        "service" -> service.map { x => x.asInstanceOf[js.Any] },
-        "attributes" -> attributes.map { x => x.asInstanceOf[js.Any] },
-        "numericSeverity" -> numericSeverity.map { x => x.asInstanceOf[js.Any] },
-        "userAttributes" -> userAttributes.map { x => x.asInstanceOf[js.Any] },
+        "description" -> description.map { x => x.asInstanceOf[js.Any] },
         "id" -> id.map { x => x.asInstanceOf[js.Any] },
-        "createdAt" -> createdAt.map { x => x.asInstanceOf[js.Any] },
-        "severity" -> severity.map { x => x.asInstanceOf[js.Any] },
-        "title" -> title.map { x => x.asInstanceOf[js.Any] },
+        "indicatorOfCompromise" -> indicatorOfCompromise.map { x => x.asInstanceOf[js.Any] },
+        "numericSeverity" -> numericSeverity.map { x => x.asInstanceOf[js.Any] },
+        "recommendation" -> recommendation.map { x => x.asInstanceOf[js.Any] },
         "schemaVersion" -> schemaVersion.map { x => x.asInstanceOf[js.Any] },
-        "assetAttributes" -> assetAttributes.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "service" -> service.map { x => x.asInstanceOf[js.Any] },
+        "serviceAttributes" -> serviceAttributes.map { x => x.asInstanceOf[js.Any] },
+        "severity" -> severity.map { x => x.asInstanceOf[js.Any] },
+        "title" -> title.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Finding]
     }
@@ -1309,35 +1309,35 @@ package inspector {
    */
   @js.native
   trait FindingFilter extends js.Object {
-    var autoScalingGroups: js.UndefOr[AutoScalingGroupList]
-    var severities: js.UndefOr[SeverityList]
-    var attributes: js.UndefOr[AttributeList]
-    var userAttributes: js.UndefOr[AttributeList]
-    var rulesPackageArns: js.UndefOr[FilterRulesPackageArnList]
-    var ruleNames: js.UndefOr[RuleNameList]
-    var creationTimeRange: js.UndefOr[TimestampRange]
     var agentIds: js.UndefOr[AgentIdList]
+    var attributes: js.UndefOr[AttributeList]
+    var autoScalingGroups: js.UndefOr[AutoScalingGroupList]
+    var creationTimeRange: js.UndefOr[TimestampRange]
+    var ruleNames: js.UndefOr[RuleNameList]
+    var rulesPackageArns: js.UndefOr[FilterRulesPackageArnList]
+    var severities: js.UndefOr[SeverityList]
+    var userAttributes: js.UndefOr[AttributeList]
   }
 
   object FindingFilter {
     def apply(
-      autoScalingGroups: js.UndefOr[AutoScalingGroupList] = js.undefined,
-      severities: js.UndefOr[SeverityList] = js.undefined,
+      agentIds: js.UndefOr[AgentIdList] = js.undefined,
       attributes: js.UndefOr[AttributeList] = js.undefined,
-      userAttributes: js.UndefOr[AttributeList] = js.undefined,
-      rulesPackageArns: js.UndefOr[FilterRulesPackageArnList] = js.undefined,
-      ruleNames: js.UndefOr[RuleNameList] = js.undefined,
+      autoScalingGroups: js.UndefOr[AutoScalingGroupList] = js.undefined,
       creationTimeRange: js.UndefOr[TimestampRange] = js.undefined,
-      agentIds: js.UndefOr[AgentIdList] = js.undefined): FindingFilter = {
+      ruleNames: js.UndefOr[RuleNameList] = js.undefined,
+      rulesPackageArns: js.UndefOr[FilterRulesPackageArnList] = js.undefined,
+      severities: js.UndefOr[SeverityList] = js.undefined,
+      userAttributes: js.UndefOr[AttributeList] = js.undefined): FindingFilter = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "autoScalingGroups" -> autoScalingGroups.map { x => x.asInstanceOf[js.Any] },
-        "severities" -> severities.map { x => x.asInstanceOf[js.Any] },
+        "agentIds" -> agentIds.map { x => x.asInstanceOf[js.Any] },
         "attributes" -> attributes.map { x => x.asInstanceOf[js.Any] },
-        "userAttributes" -> userAttributes.map { x => x.asInstanceOf[js.Any] },
-        "rulesPackageArns" -> rulesPackageArns.map { x => x.asInstanceOf[js.Any] },
-        "ruleNames" -> ruleNames.map { x => x.asInstanceOf[js.Any] },
+        "autoScalingGroups" -> autoScalingGroups.map { x => x.asInstanceOf[js.Any] },
         "creationTimeRange" -> creationTimeRange.map { x => x.asInstanceOf[js.Any] },
-        "agentIds" -> agentIds.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ruleNames" -> ruleNames.map { x => x.asInstanceOf[js.Any] },
+        "rulesPackageArns" -> rulesPackageArns.map { x => x.asInstanceOf[js.Any] },
+        "severities" -> severities.map { x => x.asInstanceOf[js.Any] },
+        "userAttributes" -> userAttributes.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[FindingFilter]
     }
@@ -1345,20 +1345,20 @@ package inspector {
 
   @js.native
   trait GetAssessmentReportRequest extends js.Object {
-    var assessmentRunArn: js.UndefOr[Arn]
-    var reportFileFormat: js.UndefOr[ReportFileFormat]
-    var reportType: js.UndefOr[ReportType]
+    var assessmentRunArn: Arn
+    var reportFileFormat: ReportFileFormat
+    var reportType: ReportType
   }
 
   object GetAssessmentReportRequest {
     def apply(
-      assessmentRunArn: js.UndefOr[Arn] = js.undefined,
-      reportFileFormat: js.UndefOr[ReportFileFormat] = js.undefined,
-      reportType: js.UndefOr[ReportType] = js.undefined): GetAssessmentReportRequest = {
+      assessmentRunArn: Arn,
+      reportFileFormat: ReportFileFormat,
+      reportType: ReportType): GetAssessmentReportRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "assessmentRunArn" -> assessmentRunArn.map { x => x.asInstanceOf[js.Any] },
-        "reportFileFormat" -> reportFileFormat.map { x => x.asInstanceOf[js.Any] },
-        "reportType" -> reportType.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "assessmentRunArn" -> assessmentRunArn.asInstanceOf[js.Any],
+        "reportFileFormat" -> reportFileFormat.asInstanceOf[js.Any],
+        "reportType" -> reportType.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetAssessmentReportRequest]
     }
@@ -1366,16 +1366,16 @@ package inspector {
 
   @js.native
   trait GetAssessmentReportResponse extends js.Object {
-    var status: js.UndefOr[ReportStatus]
+    var status: ReportStatus
     var url: js.UndefOr[Url]
   }
 
   object GetAssessmentReportResponse {
     def apply(
-      status: js.UndefOr[ReportStatus] = js.undefined,
+      status: ReportStatus,
       url: js.UndefOr[Url] = js.undefined): GetAssessmentReportResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "status" -> status.map { x => x.asInstanceOf[js.Any] },
+        "status" -> status.asInstanceOf[js.Any],
         "url" -> url.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetAssessmentReportResponse]
@@ -1384,26 +1384,26 @@ package inspector {
 
   @js.native
   trait GetExclusionsPreviewRequest extends js.Object {
-    var maxResults: js.UndefOr[ListMaxResults]
-    var previewToken: js.UndefOr[UUID]
-    var assessmentTemplateArn: js.UndefOr[Arn]
-    var nextToken: js.UndefOr[PaginationToken]
+    var assessmentTemplateArn: Arn
+    var previewToken: UUID
     var locale: js.UndefOr[Locale]
+    var maxResults: js.UndefOr[ListMaxResults]
+    var nextToken: js.UndefOr[PaginationToken]
   }
 
   object GetExclusionsPreviewRequest {
     def apply(
+      assessmentTemplateArn: Arn,
+      previewToken: UUID,
+      locale: js.UndefOr[Locale] = js.undefined,
       maxResults: js.UndefOr[ListMaxResults] = js.undefined,
-      previewToken: js.UndefOr[UUID] = js.undefined,
-      assessmentTemplateArn: js.UndefOr[Arn] = js.undefined,
-      nextToken: js.UndefOr[PaginationToken] = js.undefined,
-      locale: js.UndefOr[Locale] = js.undefined): GetExclusionsPreviewRequest = {
+      nextToken: js.UndefOr[PaginationToken] = js.undefined): GetExclusionsPreviewRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "assessmentTemplateArn" -> assessmentTemplateArn.asInstanceOf[js.Any],
+        "previewToken" -> previewToken.asInstanceOf[js.Any],
+        "locale" -> locale.map { x => x.asInstanceOf[js.Any] },
         "maxResults" -> maxResults.map { x => x.asInstanceOf[js.Any] },
-        "previewToken" -> previewToken.map { x => x.asInstanceOf[js.Any] },
-        "assessmentTemplateArn" -> assessmentTemplateArn.map { x => x.asInstanceOf[js.Any] },
-        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] },
-        "locale" -> locale.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetExclusionsPreviewRequest]
     }
@@ -1411,18 +1411,18 @@ package inspector {
 
   @js.native
   trait GetExclusionsPreviewResponse extends js.Object {
-    var previewStatus: js.UndefOr[PreviewStatus]
+    var previewStatus: PreviewStatus
     var exclusionPreviews: js.UndefOr[ExclusionPreviewList]
     var nextToken: js.UndefOr[PaginationToken]
   }
 
   object GetExclusionsPreviewResponse {
     def apply(
-      previewStatus: js.UndefOr[PreviewStatus] = js.undefined,
+      previewStatus: PreviewStatus,
       exclusionPreviews: js.UndefOr[ExclusionPreviewList] = js.undefined,
       nextToken: js.UndefOr[PaginationToken] = js.undefined): GetExclusionsPreviewResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "previewStatus" -> previewStatus.map { x => x.asInstanceOf[js.Any] },
+        "previewStatus" -> previewStatus.asInstanceOf[js.Any],
         "exclusionPreviews" -> exclusionPreviews.map { x => x.asInstanceOf[js.Any] },
         "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
@@ -1432,14 +1432,14 @@ package inspector {
 
   @js.native
   trait GetTelemetryMetadataRequest extends js.Object {
-    var assessmentRunArn: js.UndefOr[Arn]
+    var assessmentRunArn: Arn
   }
 
   object GetTelemetryMetadataRequest {
     def apply(
-      assessmentRunArn: js.UndefOr[Arn] = js.undefined): GetTelemetryMetadataRequest = {
+      assessmentRunArn: Arn): GetTelemetryMetadataRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "assessmentRunArn" -> assessmentRunArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "assessmentRunArn" -> assessmentRunArn.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetTelemetryMetadataRequest]
     }
@@ -1447,14 +1447,14 @@ package inspector {
 
   @js.native
   trait GetTelemetryMetadataResponse extends js.Object {
-    var telemetryMetadata: js.UndefOr[TelemetryMetadataList]
+    var telemetryMetadata: TelemetryMetadataList
   }
 
   object GetTelemetryMetadataResponse {
     def apply(
-      telemetryMetadata: js.UndefOr[TelemetryMetadataList] = js.undefined): GetTelemetryMetadataResponse = {
+      telemetryMetadata: TelemetryMetadataList): GetTelemetryMetadataResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "telemetryMetadata" -> telemetryMetadata.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "telemetryMetadata" -> telemetryMetadata.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetTelemetryMetadataResponse]
     }
@@ -1475,18 +1475,18 @@ package inspector {
    */
   @js.native
   trait InspectorServiceAttributes extends js.Object {
-    var schemaVersion: js.UndefOr[NumericVersion]
+    var schemaVersion: NumericVersion
     var assessmentRunArn: js.UndefOr[Arn]
     var rulesPackageArn: js.UndefOr[Arn]
   }
 
   object InspectorServiceAttributes {
     def apply(
-      schemaVersion: js.UndefOr[NumericVersion] = js.undefined,
+      schemaVersion: NumericVersion,
       assessmentRunArn: js.UndefOr[Arn] = js.undefined,
       rulesPackageArn: js.UndefOr[Arn] = js.undefined): InspectorServiceAttributes = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "schemaVersion" -> schemaVersion.map { x => x.asInstanceOf[js.Any] },
+        "schemaVersion" -> schemaVersion.asInstanceOf[js.Any],
         "assessmentRunArn" -> assessmentRunArn.map { x => x.asInstanceOf[js.Any] },
         "rulesPackageArn" -> rulesPackageArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
@@ -1496,23 +1496,23 @@ package inspector {
 
   @js.native
   trait ListAssessmentRunAgentsRequest extends js.Object {
-    var assessmentRunArn: js.UndefOr[Arn]
+    var assessmentRunArn: Arn
     var filter: js.UndefOr[AgentFilter]
-    var nextToken: js.UndefOr[PaginationToken]
     var maxResults: js.UndefOr[ListMaxResults]
+    var nextToken: js.UndefOr[PaginationToken]
   }
 
   object ListAssessmentRunAgentsRequest {
     def apply(
-      assessmentRunArn: js.UndefOr[Arn] = js.undefined,
+      assessmentRunArn: Arn,
       filter: js.UndefOr[AgentFilter] = js.undefined,
-      nextToken: js.UndefOr[PaginationToken] = js.undefined,
-      maxResults: js.UndefOr[ListMaxResults] = js.undefined): ListAssessmentRunAgentsRequest = {
+      maxResults: js.UndefOr[ListMaxResults] = js.undefined,
+      nextToken: js.UndefOr[PaginationToken] = js.undefined): ListAssessmentRunAgentsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "assessmentRunArn" -> assessmentRunArn.map { x => x.asInstanceOf[js.Any] },
+        "assessmentRunArn" -> assessmentRunArn.asInstanceOf[js.Any],
         "filter" -> filter.map { x => x.asInstanceOf[js.Any] },
-        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] },
-        "maxResults" -> maxResults.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "maxResults" -> maxResults.map { x => x.asInstanceOf[js.Any] },
+        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListAssessmentRunAgentsRequest]
     }
@@ -1520,16 +1520,16 @@ package inspector {
 
   @js.native
   trait ListAssessmentRunAgentsResponse extends js.Object {
-    var assessmentRunAgents: js.UndefOr[AssessmentRunAgentList]
+    var assessmentRunAgents: AssessmentRunAgentList
     var nextToken: js.UndefOr[PaginationToken]
   }
 
   object ListAssessmentRunAgentsResponse {
     def apply(
-      assessmentRunAgents: js.UndefOr[AssessmentRunAgentList] = js.undefined,
+      assessmentRunAgents: AssessmentRunAgentList,
       nextToken: js.UndefOr[PaginationToken] = js.undefined): ListAssessmentRunAgentsResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "assessmentRunAgents" -> assessmentRunAgents.map { x => x.asInstanceOf[js.Any] },
+        "assessmentRunAgents" -> assessmentRunAgents.asInstanceOf[js.Any],
         "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListAssessmentRunAgentsResponse]
@@ -1540,21 +1540,21 @@ package inspector {
   trait ListAssessmentRunsRequest extends js.Object {
     var assessmentTemplateArns: js.UndefOr[ListParentArnList]
     var filter: js.UndefOr[AssessmentRunFilter]
-    var nextToken: js.UndefOr[PaginationToken]
     var maxResults: js.UndefOr[ListMaxResults]
+    var nextToken: js.UndefOr[PaginationToken]
   }
 
   object ListAssessmentRunsRequest {
     def apply(
       assessmentTemplateArns: js.UndefOr[ListParentArnList] = js.undefined,
       filter: js.UndefOr[AssessmentRunFilter] = js.undefined,
-      nextToken: js.UndefOr[PaginationToken] = js.undefined,
-      maxResults: js.UndefOr[ListMaxResults] = js.undefined): ListAssessmentRunsRequest = {
+      maxResults: js.UndefOr[ListMaxResults] = js.undefined,
+      nextToken: js.UndefOr[PaginationToken] = js.undefined): ListAssessmentRunsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "assessmentTemplateArns" -> assessmentTemplateArns.map { x => x.asInstanceOf[js.Any] },
         "filter" -> filter.map { x => x.asInstanceOf[js.Any] },
-        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] },
-        "maxResults" -> maxResults.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "maxResults" -> maxResults.map { x => x.asInstanceOf[js.Any] },
+        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListAssessmentRunsRequest]
     }
@@ -1562,16 +1562,16 @@ package inspector {
 
   @js.native
   trait ListAssessmentRunsResponse extends js.Object {
-    var assessmentRunArns: js.UndefOr[ListReturnedArnList]
+    var assessmentRunArns: ListReturnedArnList
     var nextToken: js.UndefOr[PaginationToken]
   }
 
   object ListAssessmentRunsResponse {
     def apply(
-      assessmentRunArns: js.UndefOr[ListReturnedArnList] = js.undefined,
+      assessmentRunArns: ListReturnedArnList,
       nextToken: js.UndefOr[PaginationToken] = js.undefined): ListAssessmentRunsResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "assessmentRunArns" -> assessmentRunArns.map { x => x.asInstanceOf[js.Any] },
+        "assessmentRunArns" -> assessmentRunArns.asInstanceOf[js.Any],
         "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListAssessmentRunsResponse]
@@ -1581,19 +1581,19 @@ package inspector {
   @js.native
   trait ListAssessmentTargetsRequest extends js.Object {
     var filter: js.UndefOr[AssessmentTargetFilter]
-    var nextToken: js.UndefOr[PaginationToken]
     var maxResults: js.UndefOr[ListMaxResults]
+    var nextToken: js.UndefOr[PaginationToken]
   }
 
   object ListAssessmentTargetsRequest {
     def apply(
       filter: js.UndefOr[AssessmentTargetFilter] = js.undefined,
-      nextToken: js.UndefOr[PaginationToken] = js.undefined,
-      maxResults: js.UndefOr[ListMaxResults] = js.undefined): ListAssessmentTargetsRequest = {
+      maxResults: js.UndefOr[ListMaxResults] = js.undefined,
+      nextToken: js.UndefOr[PaginationToken] = js.undefined): ListAssessmentTargetsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "filter" -> filter.map { x => x.asInstanceOf[js.Any] },
-        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] },
-        "maxResults" -> maxResults.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "maxResults" -> maxResults.map { x => x.asInstanceOf[js.Any] },
+        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListAssessmentTargetsRequest]
     }
@@ -1601,16 +1601,16 @@ package inspector {
 
   @js.native
   trait ListAssessmentTargetsResponse extends js.Object {
-    var assessmentTargetArns: js.UndefOr[ListReturnedArnList]
+    var assessmentTargetArns: ListReturnedArnList
     var nextToken: js.UndefOr[PaginationToken]
   }
 
   object ListAssessmentTargetsResponse {
     def apply(
-      assessmentTargetArns: js.UndefOr[ListReturnedArnList] = js.undefined,
+      assessmentTargetArns: ListReturnedArnList,
       nextToken: js.UndefOr[PaginationToken] = js.undefined): ListAssessmentTargetsResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "assessmentTargetArns" -> assessmentTargetArns.map { x => x.asInstanceOf[js.Any] },
+        "assessmentTargetArns" -> assessmentTargetArns.asInstanceOf[js.Any],
         "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListAssessmentTargetsResponse]
@@ -1621,21 +1621,21 @@ package inspector {
   trait ListAssessmentTemplatesRequest extends js.Object {
     var assessmentTargetArns: js.UndefOr[ListParentArnList]
     var filter: js.UndefOr[AssessmentTemplateFilter]
-    var nextToken: js.UndefOr[PaginationToken]
     var maxResults: js.UndefOr[ListMaxResults]
+    var nextToken: js.UndefOr[PaginationToken]
   }
 
   object ListAssessmentTemplatesRequest {
     def apply(
       assessmentTargetArns: js.UndefOr[ListParentArnList] = js.undefined,
       filter: js.UndefOr[AssessmentTemplateFilter] = js.undefined,
-      nextToken: js.UndefOr[PaginationToken] = js.undefined,
-      maxResults: js.UndefOr[ListMaxResults] = js.undefined): ListAssessmentTemplatesRequest = {
+      maxResults: js.UndefOr[ListMaxResults] = js.undefined,
+      nextToken: js.UndefOr[PaginationToken] = js.undefined): ListAssessmentTemplatesRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "assessmentTargetArns" -> assessmentTargetArns.map { x => x.asInstanceOf[js.Any] },
         "filter" -> filter.map { x => x.asInstanceOf[js.Any] },
-        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] },
-        "maxResults" -> maxResults.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "maxResults" -> maxResults.map { x => x.asInstanceOf[js.Any] },
+        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListAssessmentTemplatesRequest]
     }
@@ -1643,16 +1643,16 @@ package inspector {
 
   @js.native
   trait ListAssessmentTemplatesResponse extends js.Object {
-    var assessmentTemplateArns: js.UndefOr[ListReturnedArnList]
+    var assessmentTemplateArns: ListReturnedArnList
     var nextToken: js.UndefOr[PaginationToken]
   }
 
   object ListAssessmentTemplatesResponse {
     def apply(
-      assessmentTemplateArns: js.UndefOr[ListReturnedArnList] = js.undefined,
+      assessmentTemplateArns: ListReturnedArnList,
       nextToken: js.UndefOr[PaginationToken] = js.undefined): ListAssessmentTemplatesResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "assessmentTemplateArns" -> assessmentTemplateArns.map { x => x.asInstanceOf[js.Any] },
+        "assessmentTemplateArns" -> assessmentTemplateArns.asInstanceOf[js.Any],
         "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListAssessmentTemplatesResponse]
@@ -1661,20 +1661,20 @@ package inspector {
 
   @js.native
   trait ListEventSubscriptionsRequest extends js.Object {
-    var resourceArn: js.UndefOr[Arn]
-    var nextToken: js.UndefOr[PaginationToken]
     var maxResults: js.UndefOr[ListEventSubscriptionsMaxResults]
+    var nextToken: js.UndefOr[PaginationToken]
+    var resourceArn: js.UndefOr[Arn]
   }
 
   object ListEventSubscriptionsRequest {
     def apply(
-      resourceArn: js.UndefOr[Arn] = js.undefined,
+      maxResults: js.UndefOr[ListEventSubscriptionsMaxResults] = js.undefined,
       nextToken: js.UndefOr[PaginationToken] = js.undefined,
-      maxResults: js.UndefOr[ListEventSubscriptionsMaxResults] = js.undefined): ListEventSubscriptionsRequest = {
+      resourceArn: js.UndefOr[Arn] = js.undefined): ListEventSubscriptionsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "resourceArn" -> resourceArn.map { x => x.asInstanceOf[js.Any] },
+        "maxResults" -> maxResults.map { x => x.asInstanceOf[js.Any] },
         "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] },
-        "maxResults" -> maxResults.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "resourceArn" -> resourceArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListEventSubscriptionsRequest]
     }
@@ -1682,16 +1682,16 @@ package inspector {
 
   @js.native
   trait ListEventSubscriptionsResponse extends js.Object {
-    var subscriptions: js.UndefOr[SubscriptionList]
+    var subscriptions: SubscriptionList
     var nextToken: js.UndefOr[PaginationToken]
   }
 
   object ListEventSubscriptionsResponse {
     def apply(
-      subscriptions: js.UndefOr[SubscriptionList] = js.undefined,
+      subscriptions: SubscriptionList,
       nextToken: js.UndefOr[PaginationToken] = js.undefined): ListEventSubscriptionsResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "subscriptions" -> subscriptions.map { x => x.asInstanceOf[js.Any] },
+        "subscriptions" -> subscriptions.asInstanceOf[js.Any],
         "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListEventSubscriptionsResponse]
@@ -1700,20 +1700,20 @@ package inspector {
 
   @js.native
   trait ListExclusionsRequest extends js.Object {
-    var assessmentRunArn: js.UndefOr[Arn]
-    var nextToken: js.UndefOr[PaginationToken]
+    var assessmentRunArn: Arn
     var maxResults: js.UndefOr[ListMaxResults]
+    var nextToken: js.UndefOr[PaginationToken]
   }
 
   object ListExclusionsRequest {
     def apply(
-      assessmentRunArn: js.UndefOr[Arn] = js.undefined,
-      nextToken: js.UndefOr[PaginationToken] = js.undefined,
-      maxResults: js.UndefOr[ListMaxResults] = js.undefined): ListExclusionsRequest = {
+      assessmentRunArn: Arn,
+      maxResults: js.UndefOr[ListMaxResults] = js.undefined,
+      nextToken: js.UndefOr[PaginationToken] = js.undefined): ListExclusionsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "assessmentRunArn" -> assessmentRunArn.map { x => x.asInstanceOf[js.Any] },
-        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] },
-        "maxResults" -> maxResults.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "assessmentRunArn" -> assessmentRunArn.asInstanceOf[js.Any],
+        "maxResults" -> maxResults.map { x => x.asInstanceOf[js.Any] },
+        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListExclusionsRequest]
     }
@@ -1721,16 +1721,16 @@ package inspector {
 
   @js.native
   trait ListExclusionsResponse extends js.Object {
-    var exclusionArns: js.UndefOr[ListReturnedArnList]
+    var exclusionArns: ListReturnedArnList
     var nextToken: js.UndefOr[PaginationToken]
   }
 
   object ListExclusionsResponse {
     def apply(
-      exclusionArns: js.UndefOr[ListReturnedArnList] = js.undefined,
+      exclusionArns: ListReturnedArnList,
       nextToken: js.UndefOr[PaginationToken] = js.undefined): ListExclusionsResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "exclusionArns" -> exclusionArns.map { x => x.asInstanceOf[js.Any] },
+        "exclusionArns" -> exclusionArns.asInstanceOf[js.Any],
         "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListExclusionsResponse]
@@ -1741,21 +1741,21 @@ package inspector {
   trait ListFindingsRequest extends js.Object {
     var assessmentRunArns: js.UndefOr[ListParentArnList]
     var filter: js.UndefOr[FindingFilter]
-    var nextToken: js.UndefOr[PaginationToken]
     var maxResults: js.UndefOr[ListMaxResults]
+    var nextToken: js.UndefOr[PaginationToken]
   }
 
   object ListFindingsRequest {
     def apply(
       assessmentRunArns: js.UndefOr[ListParentArnList] = js.undefined,
       filter: js.UndefOr[FindingFilter] = js.undefined,
-      nextToken: js.UndefOr[PaginationToken] = js.undefined,
-      maxResults: js.UndefOr[ListMaxResults] = js.undefined): ListFindingsRequest = {
+      maxResults: js.UndefOr[ListMaxResults] = js.undefined,
+      nextToken: js.UndefOr[PaginationToken] = js.undefined): ListFindingsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "assessmentRunArns" -> assessmentRunArns.map { x => x.asInstanceOf[js.Any] },
         "filter" -> filter.map { x => x.asInstanceOf[js.Any] },
-        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] },
-        "maxResults" -> maxResults.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "maxResults" -> maxResults.map { x => x.asInstanceOf[js.Any] },
+        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListFindingsRequest]
     }
@@ -1763,16 +1763,16 @@ package inspector {
 
   @js.native
   trait ListFindingsResponse extends js.Object {
-    var findingArns: js.UndefOr[ListReturnedArnList]
+    var findingArns: ListReturnedArnList
     var nextToken: js.UndefOr[PaginationToken]
   }
 
   object ListFindingsResponse {
     def apply(
-      findingArns: js.UndefOr[ListReturnedArnList] = js.undefined,
+      findingArns: ListReturnedArnList,
       nextToken: js.UndefOr[PaginationToken] = js.undefined): ListFindingsResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "findingArns" -> findingArns.map { x => x.asInstanceOf[js.Any] },
+        "findingArns" -> findingArns.asInstanceOf[js.Any],
         "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListFindingsResponse]
@@ -1781,17 +1781,17 @@ package inspector {
 
   @js.native
   trait ListRulesPackagesRequest extends js.Object {
-    var nextToken: js.UndefOr[PaginationToken]
     var maxResults: js.UndefOr[ListMaxResults]
+    var nextToken: js.UndefOr[PaginationToken]
   }
 
   object ListRulesPackagesRequest {
     def apply(
-      nextToken: js.UndefOr[PaginationToken] = js.undefined,
-      maxResults: js.UndefOr[ListMaxResults] = js.undefined): ListRulesPackagesRequest = {
+      maxResults: js.UndefOr[ListMaxResults] = js.undefined,
+      nextToken: js.UndefOr[PaginationToken] = js.undefined): ListRulesPackagesRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] },
-        "maxResults" -> maxResults.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "maxResults" -> maxResults.map { x => x.asInstanceOf[js.Any] },
+        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListRulesPackagesRequest]
     }
@@ -1799,16 +1799,16 @@ package inspector {
 
   @js.native
   trait ListRulesPackagesResponse extends js.Object {
-    var rulesPackageArns: js.UndefOr[ListReturnedArnList]
+    var rulesPackageArns: ListReturnedArnList
     var nextToken: js.UndefOr[PaginationToken]
   }
 
   object ListRulesPackagesResponse {
     def apply(
-      rulesPackageArns: js.UndefOr[ListReturnedArnList] = js.undefined,
+      rulesPackageArns: ListReturnedArnList,
       nextToken: js.UndefOr[PaginationToken] = js.undefined): ListRulesPackagesResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "rulesPackageArns" -> rulesPackageArns.map { x => x.asInstanceOf[js.Any] },
+        "rulesPackageArns" -> rulesPackageArns.asInstanceOf[js.Any],
         "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListRulesPackagesResponse]
@@ -1817,14 +1817,14 @@ package inspector {
 
   @js.native
   trait ListTagsForResourceRequest extends js.Object {
-    var resourceArn: js.UndefOr[Arn]
+    var resourceArn: Arn
   }
 
   object ListTagsForResourceRequest {
     def apply(
-      resourceArn: js.UndefOr[Arn] = js.undefined): ListTagsForResourceRequest = {
+      resourceArn: Arn): ListTagsForResourceRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "resourceArn" -> resourceArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "resourceArn" -> resourceArn.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListTagsForResourceRequest]
     }
@@ -1832,14 +1832,14 @@ package inspector {
 
   @js.native
   trait ListTagsForResourceResponse extends js.Object {
-    var tags: js.UndefOr[TagList]
+    var tags: TagList
   }
 
   object ListTagsForResourceResponse {
     def apply(
-      tags: js.UndefOr[TagList] = js.undefined): ListTagsForResourceResponse = {
+      tags: TagList): ListTagsForResourceResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "tags" -> tags.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "tags" -> tags.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListTagsForResourceResponse]
     }
@@ -1856,41 +1856,41 @@ package inspector {
    */
   @js.native
   trait NetworkInterface extends js.Object {
-    var publicDnsName: js.UndefOr[Text]
-    var vpcId: js.UndefOr[Text]
-    var publicIp: js.UndefOr[Text]
-    var subnetId: js.UndefOr[Text]
-    var privateIpAddresses: js.UndefOr[PrivateIpAddresses]
-    var privateDnsName: js.UndefOr[Text]
     var ipv6Addresses: js.UndefOr[Ipv6Addresses]
-    var securityGroups: js.UndefOr[SecurityGroups]
-    var privateIpAddress: js.UndefOr[Text]
     var networkInterfaceId: js.UndefOr[Text]
+    var privateDnsName: js.UndefOr[Text]
+    var privateIpAddress: js.UndefOr[Text]
+    var privateIpAddresses: js.UndefOr[PrivateIpAddresses]
+    var publicDnsName: js.UndefOr[Text]
+    var publicIp: js.UndefOr[Text]
+    var securityGroups: js.UndefOr[SecurityGroups]
+    var subnetId: js.UndefOr[Text]
+    var vpcId: js.UndefOr[Text]
   }
 
   object NetworkInterface {
     def apply(
-      publicDnsName: js.UndefOr[Text] = js.undefined,
-      vpcId: js.UndefOr[Text] = js.undefined,
-      publicIp: js.UndefOr[Text] = js.undefined,
-      subnetId: js.UndefOr[Text] = js.undefined,
-      privateIpAddresses: js.UndefOr[PrivateIpAddresses] = js.undefined,
-      privateDnsName: js.UndefOr[Text] = js.undefined,
       ipv6Addresses: js.UndefOr[Ipv6Addresses] = js.undefined,
-      securityGroups: js.UndefOr[SecurityGroups] = js.undefined,
+      networkInterfaceId: js.UndefOr[Text] = js.undefined,
+      privateDnsName: js.UndefOr[Text] = js.undefined,
       privateIpAddress: js.UndefOr[Text] = js.undefined,
-      networkInterfaceId: js.UndefOr[Text] = js.undefined): NetworkInterface = {
+      privateIpAddresses: js.UndefOr[PrivateIpAddresses] = js.undefined,
+      publicDnsName: js.UndefOr[Text] = js.undefined,
+      publicIp: js.UndefOr[Text] = js.undefined,
+      securityGroups: js.UndefOr[SecurityGroups] = js.undefined,
+      subnetId: js.UndefOr[Text] = js.undefined,
+      vpcId: js.UndefOr[Text] = js.undefined): NetworkInterface = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "publicDnsName" -> publicDnsName.map { x => x.asInstanceOf[js.Any] },
-        "vpcId" -> vpcId.map { x => x.asInstanceOf[js.Any] },
-        "publicIp" -> publicIp.map { x => x.asInstanceOf[js.Any] },
-        "subnetId" -> subnetId.map { x => x.asInstanceOf[js.Any] },
-        "privateIpAddresses" -> privateIpAddresses.map { x => x.asInstanceOf[js.Any] },
-        "privateDnsName" -> privateDnsName.map { x => x.asInstanceOf[js.Any] },
         "ipv6Addresses" -> ipv6Addresses.map { x => x.asInstanceOf[js.Any] },
-        "securityGroups" -> securityGroups.map { x => x.asInstanceOf[js.Any] },
+        "networkInterfaceId" -> networkInterfaceId.map { x => x.asInstanceOf[js.Any] },
+        "privateDnsName" -> privateDnsName.map { x => x.asInstanceOf[js.Any] },
         "privateIpAddress" -> privateIpAddress.map { x => x.asInstanceOf[js.Any] },
-        "networkInterfaceId" -> networkInterfaceId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "privateIpAddresses" -> privateIpAddresses.map { x => x.asInstanceOf[js.Any] },
+        "publicDnsName" -> publicDnsName.map { x => x.asInstanceOf[js.Any] },
+        "publicIp" -> publicIp.map { x => x.asInstanceOf[js.Any] },
+        "securityGroups" -> securityGroups.map { x => x.asInstanceOf[js.Any] },
+        "subnetId" -> subnetId.map { x => x.asInstanceOf[js.Any] },
+        "vpcId" -> vpcId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[NetworkInterface]
     }
@@ -1898,20 +1898,20 @@ package inspector {
 
   @js.native
   trait PreviewAgentsRequest extends js.Object {
-    var previewAgentsArn: js.UndefOr[Arn]
-    var nextToken: js.UndefOr[PaginationToken]
+    var previewAgentsArn: Arn
     var maxResults: js.UndefOr[PreviewAgentsMaxResults]
+    var nextToken: js.UndefOr[PaginationToken]
   }
 
   object PreviewAgentsRequest {
     def apply(
-      previewAgentsArn: js.UndefOr[Arn] = js.undefined,
-      nextToken: js.UndefOr[PaginationToken] = js.undefined,
-      maxResults: js.UndefOr[PreviewAgentsMaxResults] = js.undefined): PreviewAgentsRequest = {
+      previewAgentsArn: Arn,
+      maxResults: js.UndefOr[PreviewAgentsMaxResults] = js.undefined,
+      nextToken: js.UndefOr[PaginationToken] = js.undefined): PreviewAgentsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "previewAgentsArn" -> previewAgentsArn.map { x => x.asInstanceOf[js.Any] },
-        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] },
-        "maxResults" -> maxResults.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "previewAgentsArn" -> previewAgentsArn.asInstanceOf[js.Any],
+        "maxResults" -> maxResults.map { x => x.asInstanceOf[js.Any] },
+        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PreviewAgentsRequest]
     }
@@ -1919,16 +1919,16 @@ package inspector {
 
   @js.native
   trait PreviewAgentsResponse extends js.Object {
-    var agentPreviews: js.UndefOr[AgentPreviewList]
+    var agentPreviews: AgentPreviewList
     var nextToken: js.UndefOr[PaginationToken]
   }
 
   object PreviewAgentsResponse {
     def apply(
-      agentPreviews: js.UndefOr[AgentPreviewList] = js.undefined,
+      agentPreviews: AgentPreviewList,
       nextToken: js.UndefOr[PaginationToken] = js.undefined): PreviewAgentsResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "agentPreviews" -> agentPreviews.map { x => x.asInstanceOf[js.Any] },
+        "agentPreviews" -> agentPreviews.asInstanceOf[js.Any],
         "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PreviewAgentsResponse]
@@ -1965,14 +1965,14 @@ package inspector {
 
   @js.native
   trait RegisterCrossAccountAccessRoleRequest extends js.Object {
-    var roleArn: js.UndefOr[Arn]
+    var roleArn: Arn
   }
 
   object RegisterCrossAccountAccessRoleRequest {
     def apply(
-      roleArn: js.UndefOr[Arn] = js.undefined): RegisterCrossAccountAccessRoleRequest = {
+      roleArn: Arn): RegisterCrossAccountAccessRoleRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "roleArn" -> roleArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "roleArn" -> roleArn.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RegisterCrossAccountAccessRoleRequest]
     }
@@ -1980,17 +1980,17 @@ package inspector {
 
   @js.native
   trait RemoveAttributesFromFindingsRequest extends js.Object {
-    var findingArns: js.UndefOr[AddRemoveAttributesFindingArnList]
-    var attributeKeys: js.UndefOr[UserAttributeKeyList]
+    var attributeKeys: UserAttributeKeyList
+    var findingArns: AddRemoveAttributesFindingArnList
   }
 
   object RemoveAttributesFromFindingsRequest {
     def apply(
-      findingArns: js.UndefOr[AddRemoveAttributesFindingArnList] = js.undefined,
-      attributeKeys: js.UndefOr[UserAttributeKeyList] = js.undefined): RemoveAttributesFromFindingsRequest = {
+      attributeKeys: UserAttributeKeyList,
+      findingArns: AddRemoveAttributesFindingArnList): RemoveAttributesFromFindingsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "findingArns" -> findingArns.map { x => x.asInstanceOf[js.Any] },
-        "attributeKeys" -> attributeKeys.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "attributeKeys" -> attributeKeys.asInstanceOf[js.Any],
+        "findingArns" -> findingArns.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RemoveAttributesFromFindingsRequest]
     }
@@ -1998,14 +1998,14 @@ package inspector {
 
   @js.native
   trait RemoveAttributesFromFindingsResponse extends js.Object {
-    var failedItems: js.UndefOr[FailedItems]
+    var failedItems: FailedItems
   }
 
   object RemoveAttributesFromFindingsResponse {
     def apply(
-      failedItems: js.UndefOr[FailedItems] = js.undefined): RemoveAttributesFromFindingsResponse = {
+      failedItems: FailedItems): RemoveAttributesFromFindingsResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "failedItems" -> failedItems.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "failedItems" -> failedItems.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RemoveAttributesFromFindingsResponse]
     }
@@ -2038,20 +2038,20 @@ package inspector {
    */
   @js.native
   trait ResourceGroup extends js.Object {
-    var arn: js.UndefOr[Arn]
-    var tags: js.UndefOr[ResourceGroupTags]
-    var createdAt: js.UndefOr[Timestamp]
+    var arn: Arn
+    var createdAt: Timestamp
+    var tags: ResourceGroupTags
   }
 
   object ResourceGroup {
     def apply(
-      arn: js.UndefOr[Arn] = js.undefined,
-      tags: js.UndefOr[ResourceGroupTags] = js.undefined,
-      createdAt: js.UndefOr[Timestamp] = js.undefined): ResourceGroup = {
+      arn: Arn,
+      createdAt: Timestamp,
+      tags: ResourceGroupTags): ResourceGroup = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "arn" -> arn.map { x => x.asInstanceOf[js.Any] },
-        "tags" -> tags.map { x => x.asInstanceOf[js.Any] },
-        "createdAt" -> createdAt.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "arn" -> arn.asInstanceOf[js.Any],
+        "createdAt" -> createdAt.asInstanceOf[js.Any],
+        "tags" -> tags.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ResourceGroup]
     }
@@ -2062,16 +2062,16 @@ package inspector {
    */
   @js.native
   trait ResourceGroupTag extends js.Object {
-    var key: js.UndefOr[TagKey]
+    var key: TagKey
     var value: js.UndefOr[TagValue]
   }
 
   object ResourceGroupTag {
     def apply(
-      key: js.UndefOr[TagKey] = js.undefined,
+      key: TagKey,
       value: js.UndefOr[TagValue] = js.undefined): ResourceGroupTag = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "key" -> key.map { x => x.asInstanceOf[js.Any] },
+        "key" -> key.asInstanceOf[js.Any],
         "value" -> value.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ResourceGroupTag]
@@ -2083,26 +2083,26 @@ package inspector {
    */
   @js.native
   trait RulesPackage extends js.Object {
-    var arn: js.UndefOr[Arn]
-    var name: js.UndefOr[RulesPackageName]
-    var provider: js.UndefOr[ProviderName]
+    var arn: Arn
+    var name: RulesPackageName
+    var provider: ProviderName
+    var version: Version
     var description: js.UndefOr[Text]
-    var version: js.UndefOr[Version]
   }
 
   object RulesPackage {
     def apply(
-      arn: js.UndefOr[Arn] = js.undefined,
-      name: js.UndefOr[RulesPackageName] = js.undefined,
-      provider: js.UndefOr[ProviderName] = js.undefined,
-      description: js.UndefOr[Text] = js.undefined,
-      version: js.UndefOr[Version] = js.undefined): RulesPackage = {
+      arn: Arn,
+      name: RulesPackageName,
+      provider: ProviderName,
+      version: Version,
+      description: js.UndefOr[Text] = js.undefined): RulesPackage = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "arn" -> arn.map { x => x.asInstanceOf[js.Any] },
-        "name" -> name.map { x => x.asInstanceOf[js.Any] },
-        "provider" -> provider.map { x => x.asInstanceOf[js.Any] },
-        "description" -> description.map { x => x.asInstanceOf[js.Any] },
-        "version" -> version.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "arn" -> arn.asInstanceOf[js.Any],
+        "name" -> name.asInstanceOf[js.Any],
+        "provider" -> provider.asInstanceOf[js.Any],
+        "version" -> version.asInstanceOf[js.Any],
+        "description" -> description.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RulesPackage]
     }
@@ -2141,17 +2141,17 @@ package inspector {
    */
   @js.native
   trait SecurityGroup extends js.Object {
-    var groupName: js.UndefOr[Text]
     var groupId: js.UndefOr[Text]
+    var groupName: js.UndefOr[Text]
   }
 
   object SecurityGroup {
     def apply(
-      groupName: js.UndefOr[Text] = js.undefined,
-      groupId: js.UndefOr[Text] = js.undefined): SecurityGroup = {
+      groupId: js.UndefOr[Text] = js.undefined,
+      groupName: js.UndefOr[Text] = js.undefined): SecurityGroup = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "groupName" -> groupName.map { x => x.asInstanceOf[js.Any] },
-        "groupId" -> groupId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "groupId" -> groupId.map { x => x.asInstanceOf[js.Any] },
+        "groupName" -> groupName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SecurityGroup]
     }
@@ -2159,16 +2159,16 @@ package inspector {
 
   @js.native
   trait SetTagsForResourceRequest extends js.Object {
-    var resourceArn: js.UndefOr[Arn]
+    var resourceArn: Arn
     var tags: js.UndefOr[TagList]
   }
 
   object SetTagsForResourceRequest {
     def apply(
-      resourceArn: js.UndefOr[Arn] = js.undefined,
+      resourceArn: Arn,
       tags: js.UndefOr[TagList] = js.undefined): SetTagsForResourceRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "resourceArn" -> resourceArn.map { x => x.asInstanceOf[js.Any] },
+        "resourceArn" -> resourceArn.asInstanceOf[js.Any],
         "tags" -> tags.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SetTagsForResourceRequest]
@@ -2187,16 +2187,16 @@ package inspector {
 
   @js.native
   trait StartAssessmentRunRequest extends js.Object {
-    var assessmentTemplateArn: js.UndefOr[Arn]
+    var assessmentTemplateArn: Arn
     var assessmentRunName: js.UndefOr[AssessmentRunName]
   }
 
   object StartAssessmentRunRequest {
     def apply(
-      assessmentTemplateArn: js.UndefOr[Arn] = js.undefined,
+      assessmentTemplateArn: Arn,
       assessmentRunName: js.UndefOr[AssessmentRunName] = js.undefined): StartAssessmentRunRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "assessmentTemplateArn" -> assessmentTemplateArn.map { x => x.asInstanceOf[js.Any] },
+        "assessmentTemplateArn" -> assessmentTemplateArn.asInstanceOf[js.Any],
         "assessmentRunName" -> assessmentRunName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StartAssessmentRunRequest]
@@ -2205,14 +2205,14 @@ package inspector {
 
   @js.native
   trait StartAssessmentRunResponse extends js.Object {
-    var assessmentRunArn: js.UndefOr[Arn]
+    var assessmentRunArn: Arn
   }
 
   object StartAssessmentRunResponse {
     def apply(
-      assessmentRunArn: js.UndefOr[Arn] = js.undefined): StartAssessmentRunResponse = {
+      assessmentRunArn: Arn): StartAssessmentRunResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "assessmentRunArn" -> assessmentRunArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "assessmentRunArn" -> assessmentRunArn.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StartAssessmentRunResponse]
     }
@@ -2227,16 +2227,16 @@ package inspector {
 
   @js.native
   trait StopAssessmentRunRequest extends js.Object {
-    var assessmentRunArn: js.UndefOr[Arn]
+    var assessmentRunArn: Arn
     var stopAction: js.UndefOr[StopAction]
   }
 
   object StopAssessmentRunRequest {
     def apply(
-      assessmentRunArn: js.UndefOr[Arn] = js.undefined,
+      assessmentRunArn: Arn,
       stopAction: js.UndefOr[StopAction] = js.undefined): StopAssessmentRunRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "assessmentRunArn" -> assessmentRunArn.map { x => x.asInstanceOf[js.Any] },
+        "assessmentRunArn" -> assessmentRunArn.asInstanceOf[js.Any],
         "stopAction" -> stopAction.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StopAssessmentRunRequest]
@@ -2245,20 +2245,20 @@ package inspector {
 
   @js.native
   trait SubscribeToEventRequest extends js.Object {
-    var resourceArn: js.UndefOr[Arn]
-    var event: js.UndefOr[InspectorEvent]
-    var topicArn: js.UndefOr[Arn]
+    var event: InspectorEvent
+    var resourceArn: Arn
+    var topicArn: Arn
   }
 
   object SubscribeToEventRequest {
     def apply(
-      resourceArn: js.UndefOr[Arn] = js.undefined,
-      event: js.UndefOr[InspectorEvent] = js.undefined,
-      topicArn: js.UndefOr[Arn] = js.undefined): SubscribeToEventRequest = {
+      event: InspectorEvent,
+      resourceArn: Arn,
+      topicArn: Arn): SubscribeToEventRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "resourceArn" -> resourceArn.map { x => x.asInstanceOf[js.Any] },
-        "event" -> event.map { x => x.asInstanceOf[js.Any] },
-        "topicArn" -> topicArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "event" -> event.asInstanceOf[js.Any],
+        "resourceArn" -> resourceArn.asInstanceOf[js.Any],
+        "topicArn" -> topicArn.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SubscribeToEventRequest]
     }
@@ -2269,20 +2269,20 @@ package inspector {
    */
   @js.native
   trait Subscription extends js.Object {
-    var resourceArn: js.UndefOr[Arn]
-    var topicArn: js.UndefOr[Arn]
-    var eventSubscriptions: js.UndefOr[EventSubscriptionList]
+    var eventSubscriptions: EventSubscriptionList
+    var resourceArn: Arn
+    var topicArn: Arn
   }
 
   object Subscription {
     def apply(
-      resourceArn: js.UndefOr[Arn] = js.undefined,
-      topicArn: js.UndefOr[Arn] = js.undefined,
-      eventSubscriptions: js.UndefOr[EventSubscriptionList] = js.undefined): Subscription = {
+      eventSubscriptions: EventSubscriptionList,
+      resourceArn: Arn,
+      topicArn: Arn): Subscription = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "resourceArn" -> resourceArn.map { x => x.asInstanceOf[js.Any] },
-        "topicArn" -> topicArn.map { x => x.asInstanceOf[js.Any] },
-        "eventSubscriptions" -> eventSubscriptions.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "eventSubscriptions" -> eventSubscriptions.asInstanceOf[js.Any],
+        "resourceArn" -> resourceArn.asInstanceOf[js.Any],
+        "topicArn" -> topicArn.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Subscription]
     }
@@ -2293,16 +2293,16 @@ package inspector {
    */
   @js.native
   trait Tag extends js.Object {
-    var key: js.UndefOr[TagKey]
+    var key: TagKey
     var value: js.UndefOr[TagValue]
   }
 
   object Tag {
     def apply(
-      key: js.UndefOr[TagKey] = js.undefined,
+      key: TagKey,
       value: js.UndefOr[TagValue] = js.undefined): Tag = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "key" -> key.map { x => x.asInstanceOf[js.Any] },
+        "key" -> key.asInstanceOf[js.Any],
         "value" -> value.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Tag]
@@ -2314,19 +2314,19 @@ package inspector {
    */
   @js.native
   trait TelemetryMetadata extends js.Object {
-    var messageType: js.UndefOr[MessageType]
-    var count: js.UndefOr[Double]
+    var count: Double
+    var messageType: MessageType
     var dataSize: js.UndefOr[Double]
   }
 
   object TelemetryMetadata {
     def apply(
-      messageType: js.UndefOr[MessageType] = js.undefined,
-      count: js.UndefOr[Double] = js.undefined,
+      count: Double,
+      messageType: MessageType,
       dataSize: js.UndefOr[Double] = js.undefined): TelemetryMetadata = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "messageType" -> messageType.map { x => x.asInstanceOf[js.Any] },
-        "count" -> count.map { x => x.asInstanceOf[js.Any] },
+        "count" -> count.asInstanceOf[js.Any],
+        "messageType" -> messageType.asInstanceOf[js.Any],
         "dataSize" -> dataSize.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TelemetryMetadata]
@@ -2356,20 +2356,20 @@ package inspector {
 
   @js.native
   trait UnsubscribeFromEventRequest extends js.Object {
-    var resourceArn: js.UndefOr[Arn]
-    var event: js.UndefOr[InspectorEvent]
-    var topicArn: js.UndefOr[Arn]
+    var event: InspectorEvent
+    var resourceArn: Arn
+    var topicArn: Arn
   }
 
   object UnsubscribeFromEventRequest {
     def apply(
-      resourceArn: js.UndefOr[Arn] = js.undefined,
-      event: js.UndefOr[InspectorEvent] = js.undefined,
-      topicArn: js.UndefOr[Arn] = js.undefined): UnsubscribeFromEventRequest = {
+      event: InspectorEvent,
+      resourceArn: Arn,
+      topicArn: Arn): UnsubscribeFromEventRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "resourceArn" -> resourceArn.map { x => x.asInstanceOf[js.Any] },
-        "event" -> event.map { x => x.asInstanceOf[js.Any] },
-        "topicArn" -> topicArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "event" -> event.asInstanceOf[js.Any],
+        "resourceArn" -> resourceArn.asInstanceOf[js.Any],
+        "topicArn" -> topicArn.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UnsubscribeFromEventRequest]
     }
@@ -2377,19 +2377,19 @@ package inspector {
 
   @js.native
   trait UpdateAssessmentTargetRequest extends js.Object {
-    var assessmentTargetArn: js.UndefOr[Arn]
-    var assessmentTargetName: js.UndefOr[AssessmentTargetName]
+    var assessmentTargetArn: Arn
+    var assessmentTargetName: AssessmentTargetName
     var resourceGroupArn: js.UndefOr[Arn]
   }
 
   object UpdateAssessmentTargetRequest {
     def apply(
-      assessmentTargetArn: js.UndefOr[Arn] = js.undefined,
-      assessmentTargetName: js.UndefOr[AssessmentTargetName] = js.undefined,
+      assessmentTargetArn: Arn,
+      assessmentTargetName: AssessmentTargetName,
       resourceGroupArn: js.UndefOr[Arn] = js.undefined): UpdateAssessmentTargetRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "assessmentTargetArn" -> assessmentTargetArn.map { x => x.asInstanceOf[js.Any] },
-        "assessmentTargetName" -> assessmentTargetName.map { x => x.asInstanceOf[js.Any] },
+        "assessmentTargetArn" -> assessmentTargetArn.asInstanceOf[js.Any],
+        "assessmentTargetName" -> assessmentTargetName.asInstanceOf[js.Any],
         "resourceGroupArn" -> resourceGroupArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateAssessmentTargetRequest]

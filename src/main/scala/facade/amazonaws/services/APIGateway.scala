@@ -202,17 +202,17 @@ package apigateway {
    */
   @js.native
   trait AccessLogSettings extends js.Object {
-    var format: js.UndefOr[String]
     var destinationArn: js.UndefOr[String]
+    var format: js.UndefOr[String]
   }
 
   object AccessLogSettings {
     def apply(
-      format: js.UndefOr[String] = js.undefined,
-      destinationArn: js.UndefOr[String] = js.undefined): AccessLogSettings = {
+      destinationArn: js.UndefOr[String] = js.undefined,
+      format: js.UndefOr[String] = js.undefined): AccessLogSettings = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "format" -> format.map { x => x.asInstanceOf[js.Any] },
-        "destinationArn" -> destinationArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "destinationArn" -> destinationArn.map { x => x.asInstanceOf[js.Any] },
+        "format" -> format.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AccessLogSettings]
     }
@@ -223,23 +223,23 @@ package apigateway {
    */
   @js.native
   trait Account extends js.Object {
-    var cloudwatchRoleArn: js.UndefOr[String]
-    var throttleSettings: js.UndefOr[ThrottleSettings]
-    var features: js.UndefOr[ListOfString]
     var apiKeyVersion: js.UndefOr[String]
+    var cloudwatchRoleArn: js.UndefOr[String]
+    var features: js.UndefOr[ListOfString]
+    var throttleSettings: js.UndefOr[ThrottleSettings]
   }
 
   object Account {
     def apply(
+      apiKeyVersion: js.UndefOr[String] = js.undefined,
       cloudwatchRoleArn: js.UndefOr[String] = js.undefined,
-      throttleSettings: js.UndefOr[ThrottleSettings] = js.undefined,
       features: js.UndefOr[ListOfString] = js.undefined,
-      apiKeyVersion: js.UndefOr[String] = js.undefined): Account = {
+      throttleSettings: js.UndefOr[ThrottleSettings] = js.undefined): Account = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "apiKeyVersion" -> apiKeyVersion.map { x => x.asInstanceOf[js.Any] },
         "cloudwatchRoleArn" -> cloudwatchRoleArn.map { x => x.asInstanceOf[js.Any] },
-        "throttleSettings" -> throttleSettings.map { x => x.asInstanceOf[js.Any] },
         "features" -> features.map { x => x.asInstanceOf[js.Any] },
-        "apiKeyVersion" -> apiKeyVersion.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "throttleSettings" -> throttleSettings.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Account]
     }
@@ -250,38 +250,38 @@ package apigateway {
    */
   @js.native
   trait ApiKey extends js.Object {
-    var name: js.UndefOr[String]
+    var createdDate: js.UndefOr[Timestamp]
+    var customerId: js.UndefOr[String]
     var description: js.UndefOr[String]
     var enabled: js.UndefOr[Boolean]
-    var customerId: js.UndefOr[String]
     var id: js.UndefOr[String]
-    var stageKeys: js.UndefOr[ListOfString]
     var lastUpdatedDate: js.UndefOr[Timestamp]
+    var name: js.UndefOr[String]
+    var stageKeys: js.UndefOr[ListOfString]
     var value: js.UndefOr[String]
-    var createdDate: js.UndefOr[Timestamp]
   }
 
   object ApiKey {
     def apply(
-      name: js.UndefOr[String] = js.undefined,
+      createdDate: js.UndefOr[Timestamp] = js.undefined,
+      customerId: js.UndefOr[String] = js.undefined,
       description: js.UndefOr[String] = js.undefined,
       enabled: js.UndefOr[Boolean] = js.undefined,
-      customerId: js.UndefOr[String] = js.undefined,
       id: js.UndefOr[String] = js.undefined,
-      stageKeys: js.UndefOr[ListOfString] = js.undefined,
       lastUpdatedDate: js.UndefOr[Timestamp] = js.undefined,
-      value: js.UndefOr[String] = js.undefined,
-      createdDate: js.UndefOr[Timestamp] = js.undefined): ApiKey = {
+      name: js.UndefOr[String] = js.undefined,
+      stageKeys: js.UndefOr[ListOfString] = js.undefined,
+      value: js.UndefOr[String] = js.undefined): ApiKey = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "name" -> name.map { x => x.asInstanceOf[js.Any] },
+        "createdDate" -> createdDate.map { x => x.asInstanceOf[js.Any] },
+        "customerId" -> customerId.map { x => x.asInstanceOf[js.Any] },
         "description" -> description.map { x => x.asInstanceOf[js.Any] },
         "enabled" -> enabled.map { x => x.asInstanceOf[js.Any] },
-        "customerId" -> customerId.map { x => x.asInstanceOf[js.Any] },
         "id" -> id.map { x => x.asInstanceOf[js.Any] },
-        "stageKeys" -> stageKeys.map { x => x.asInstanceOf[js.Any] },
         "lastUpdatedDate" -> lastUpdatedDate.map { x => x.asInstanceOf[js.Any] },
-        "value" -> value.map { x => x.asInstanceOf[js.Any] },
-        "createdDate" -> createdDate.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "name" -> name.map { x => x.asInstanceOf[js.Any] },
+        "stageKeys" -> stageKeys.map { x => x.asInstanceOf[js.Any] },
+        "value" -> value.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ApiKey]
     }
@@ -320,20 +320,20 @@ package apigateway {
    */
   @js.native
   trait ApiKeys extends js.Object {
-    var warnings: js.UndefOr[ListOfString]
-    var position: js.UndefOr[String]
     var items: js.UndefOr[ListOfApiKey]
+    var position: js.UndefOr[String]
+    var warnings: js.UndefOr[ListOfString]
   }
 
   object ApiKeys {
     def apply(
-      warnings: js.UndefOr[ListOfString] = js.undefined,
+      items: js.UndefOr[ListOfApiKey] = js.undefined,
       position: js.UndefOr[String] = js.undefined,
-      items: js.UndefOr[ListOfApiKey] = js.undefined): ApiKeys = {
+      warnings: js.UndefOr[ListOfString] = js.undefined): ApiKeys = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "warnings" -> warnings.map { x => x.asInstanceOf[js.Any] },
+        "items" -> items.map { x => x.asInstanceOf[js.Any] },
         "position" -> position.map { x => x.asInstanceOf[js.Any] },
-        "items" -> items.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "warnings" -> warnings.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ApiKeys]
     }
@@ -374,39 +374,39 @@ package apigateway {
    */
   @js.native
   trait Authorizer extends js.Object {
-    var name: js.UndefOr[String]
+    var authType: js.UndefOr[String]
     var authorizerCredentials: js.UndefOr[String]
     var authorizerResultTtlInSeconds: js.UndefOr[NullableInteger]
-    var identitySource: js.UndefOr[String]
-    var authType: js.UndefOr[String]
-    var id: js.UndefOr[String]
-    var identityValidationExpression: js.UndefOr[String]
     var authorizerUri: js.UndefOr[String]
+    var id: js.UndefOr[String]
+    var identitySource: js.UndefOr[String]
+    var identityValidationExpression: js.UndefOr[String]
+    var name: js.UndefOr[String]
     var providerARNs: js.UndefOr[ListOfARNs]
     var `type`: js.UndefOr[AuthorizerType]
   }
 
   object Authorizer {
     def apply(
-      name: js.UndefOr[String] = js.undefined,
+      authType: js.UndefOr[String] = js.undefined,
       authorizerCredentials: js.UndefOr[String] = js.undefined,
       authorizerResultTtlInSeconds: js.UndefOr[NullableInteger] = js.undefined,
-      identitySource: js.UndefOr[String] = js.undefined,
-      authType: js.UndefOr[String] = js.undefined,
-      id: js.UndefOr[String] = js.undefined,
-      identityValidationExpression: js.UndefOr[String] = js.undefined,
       authorizerUri: js.UndefOr[String] = js.undefined,
+      id: js.UndefOr[String] = js.undefined,
+      identitySource: js.UndefOr[String] = js.undefined,
+      identityValidationExpression: js.UndefOr[String] = js.undefined,
+      name: js.UndefOr[String] = js.undefined,
       providerARNs: js.UndefOr[ListOfARNs] = js.undefined,
       `type`: js.UndefOr[AuthorizerType] = js.undefined): Authorizer = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "name" -> name.map { x => x.asInstanceOf[js.Any] },
+        "authType" -> authType.map { x => x.asInstanceOf[js.Any] },
         "authorizerCredentials" -> authorizerCredentials.map { x => x.asInstanceOf[js.Any] },
         "authorizerResultTtlInSeconds" -> authorizerResultTtlInSeconds.map { x => x.asInstanceOf[js.Any] },
-        "identitySource" -> identitySource.map { x => x.asInstanceOf[js.Any] },
-        "authType" -> authType.map { x => x.asInstanceOf[js.Any] },
-        "id" -> id.map { x => x.asInstanceOf[js.Any] },
-        "identityValidationExpression" -> identityValidationExpression.map { x => x.asInstanceOf[js.Any] },
         "authorizerUri" -> authorizerUri.map { x => x.asInstanceOf[js.Any] },
+        "id" -> id.map { x => x.asInstanceOf[js.Any] },
+        "identitySource" -> identitySource.map { x => x.asInstanceOf[js.Any] },
+        "identityValidationExpression" -> identityValidationExpression.map { x => x.asInstanceOf[js.Any] },
+        "name" -> name.map { x => x.asInstanceOf[js.Any] },
         "providerARNs" -> providerARNs.map { x => x.asInstanceOf[js.Any] },
         "`type`" -> `type`.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
@@ -430,17 +430,17 @@ package apigateway {
    */
   @js.native
   trait Authorizers extends js.Object {
-    var position: js.UndefOr[String]
     var items: js.UndefOr[ListOfAuthorizer]
+    var position: js.UndefOr[String]
   }
 
   object Authorizers {
     def apply(
-      position: js.UndefOr[String] = js.undefined,
-      items: js.UndefOr[ListOfAuthorizer] = js.undefined): Authorizers = {
+      items: js.UndefOr[ListOfAuthorizer] = js.undefined,
+      position: js.UndefOr[String] = js.undefined): Authorizers = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "position" -> position.map { x => x.asInstanceOf[js.Any] },
-        "items" -> items.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "items" -> items.map { x => x.asInstanceOf[js.Any] },
+        "position" -> position.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Authorizers]
     }
@@ -475,17 +475,17 @@ package apigateway {
    */
   @js.native
   trait BasePathMappings extends js.Object {
-    var position: js.UndefOr[String]
     var items: js.UndefOr[ListOfBasePathMapping]
+    var position: js.UndefOr[String]
   }
 
   object BasePathMappings {
     def apply(
-      position: js.UndefOr[String] = js.undefined,
-      items: js.UndefOr[ListOfBasePathMapping] = js.undefined): BasePathMappings = {
+      items: js.UndefOr[ListOfBasePathMapping] = js.undefined,
+      position: js.UndefOr[String] = js.undefined): BasePathMappings = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "position" -> position.map { x => x.asInstanceOf[js.Any] },
-        "items" -> items.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "items" -> items.map { x => x.asInstanceOf[js.Any] },
+        "position" -> position.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BasePathMappings]
     }
@@ -525,21 +525,21 @@ package apigateway {
    */
   @js.native
   trait CanarySettings extends js.Object {
-    var percentTraffic: js.UndefOr[Double]
     var deploymentId: js.UndefOr[String]
+    var percentTraffic: js.UndefOr[Double]
     var stageVariableOverrides: js.UndefOr[MapOfStringToString]
     var useStageCache: js.UndefOr[Boolean]
   }
 
   object CanarySettings {
     def apply(
-      percentTraffic: js.UndefOr[Double] = js.undefined,
       deploymentId: js.UndefOr[String] = js.undefined,
+      percentTraffic: js.UndefOr[Double] = js.undefined,
       stageVariableOverrides: js.UndefOr[MapOfStringToString] = js.undefined,
       useStageCache: js.UndefOr[Boolean] = js.undefined): CanarySettings = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "percentTraffic" -> percentTraffic.map { x => x.asInstanceOf[js.Any] },
         "deploymentId" -> deploymentId.map { x => x.asInstanceOf[js.Any] },
+        "percentTraffic" -> percentTraffic.map { x => x.asInstanceOf[js.Any] },
         "stageVariableOverrides" -> stageVariableOverrides.map { x => x.asInstanceOf[js.Any] },
         "useStageCache" -> useStageCache.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
@@ -552,26 +552,26 @@ package apigateway {
    */
   @js.native
   trait ClientCertificate extends js.Object {
+    var clientCertificateId: js.UndefOr[String]
+    var createdDate: js.UndefOr[Timestamp]
+    var description: js.UndefOr[String]
     var expirationDate: js.UndefOr[Timestamp]
     var pemEncodedCertificate: js.UndefOr[String]
-    var clientCertificateId: js.UndefOr[String]
-    var description: js.UndefOr[String]
-    var createdDate: js.UndefOr[Timestamp]
   }
 
   object ClientCertificate {
     def apply(
-      expirationDate: js.UndefOr[Timestamp] = js.undefined,
-      pemEncodedCertificate: js.UndefOr[String] = js.undefined,
       clientCertificateId: js.UndefOr[String] = js.undefined,
+      createdDate: js.UndefOr[Timestamp] = js.undefined,
       description: js.UndefOr[String] = js.undefined,
-      createdDate: js.UndefOr[Timestamp] = js.undefined): ClientCertificate = {
+      expirationDate: js.UndefOr[Timestamp] = js.undefined,
+      pemEncodedCertificate: js.UndefOr[String] = js.undefined): ClientCertificate = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "expirationDate" -> expirationDate.map { x => x.asInstanceOf[js.Any] },
-        "pemEncodedCertificate" -> pemEncodedCertificate.map { x => x.asInstanceOf[js.Any] },
         "clientCertificateId" -> clientCertificateId.map { x => x.asInstanceOf[js.Any] },
+        "createdDate" -> createdDate.map { x => x.asInstanceOf[js.Any] },
         "description" -> description.map { x => x.asInstanceOf[js.Any] },
-        "createdDate" -> createdDate.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "expirationDate" -> expirationDate.map { x => x.asInstanceOf[js.Any] },
+        "pemEncodedCertificate" -> pemEncodedCertificate.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ClientCertificate]
     }
@@ -582,17 +582,17 @@ package apigateway {
    */
   @js.native
   trait ClientCertificates extends js.Object {
-    var position: js.UndefOr[String]
     var items: js.UndefOr[ListOfClientCertificate]
+    var position: js.UndefOr[String]
   }
 
   object ClientCertificates {
     def apply(
-      position: js.UndefOr[String] = js.undefined,
-      items: js.UndefOr[ListOfClientCertificate] = js.undefined): ClientCertificates = {
+      items: js.UndefOr[ListOfClientCertificate] = js.undefined,
+      position: js.UndefOr[String] = js.undefined): ClientCertificates = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "position" -> position.map { x => x.asInstanceOf[js.Any] },
-        "items" -> items.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "items" -> items.map { x => x.asInstanceOf[js.Any] },
+        "position" -> position.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ClientCertificates]
     }
@@ -617,30 +617,30 @@ package apigateway {
    */
   @js.native
   trait CreateApiKeyRequest extends js.Object {
-    var name: js.UndefOr[String]
-    var description: js.UndefOr[String]
-    var generateDistinctId: js.UndefOr[Boolean]
-    var enabled: js.UndefOr[Boolean]
     var customerId: js.UndefOr[String]
+    var description: js.UndefOr[String]
+    var enabled: js.UndefOr[Boolean]
+    var generateDistinctId: js.UndefOr[Boolean]
+    var name: js.UndefOr[String]
     var stageKeys: js.UndefOr[ListOfStageKeys]
     var value: js.UndefOr[String]
   }
 
   object CreateApiKeyRequest {
     def apply(
-      name: js.UndefOr[String] = js.undefined,
-      description: js.UndefOr[String] = js.undefined,
-      generateDistinctId: js.UndefOr[Boolean] = js.undefined,
-      enabled: js.UndefOr[Boolean] = js.undefined,
       customerId: js.UndefOr[String] = js.undefined,
+      description: js.UndefOr[String] = js.undefined,
+      enabled: js.UndefOr[Boolean] = js.undefined,
+      generateDistinctId: js.UndefOr[Boolean] = js.undefined,
+      name: js.UndefOr[String] = js.undefined,
       stageKeys: js.UndefOr[ListOfStageKeys] = js.undefined,
       value: js.UndefOr[String] = js.undefined): CreateApiKeyRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "name" -> name.map { x => x.asInstanceOf[js.Any] },
-        "description" -> description.map { x => x.asInstanceOf[js.Any] },
-        "generateDistinctId" -> generateDistinctId.map { x => x.asInstanceOf[js.Any] },
-        "enabled" -> enabled.map { x => x.asInstanceOf[js.Any] },
         "customerId" -> customerId.map { x => x.asInstanceOf[js.Any] },
+        "description" -> description.map { x => x.asInstanceOf[js.Any] },
+        "enabled" -> enabled.map { x => x.asInstanceOf[js.Any] },
+        "generateDistinctId" -> generateDistinctId.map { x => x.asInstanceOf[js.Any] },
+        "name" -> name.map { x => x.asInstanceOf[js.Any] },
         "stageKeys" -> stageKeys.map { x => x.asInstanceOf[js.Any] },
         "value" -> value.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
@@ -653,41 +653,41 @@ package apigateway {
    */
   @js.native
   trait CreateAuthorizerRequest extends js.Object {
-    var name: js.UndefOr[String]
+    var name: String
+    var restApiId: String
+    var `type`: AuthorizerType
+    var authType: js.UndefOr[String]
     var authorizerCredentials: js.UndefOr[String]
     var authorizerResultTtlInSeconds: js.UndefOr[NullableInteger]
-    var identitySource: js.UndefOr[String]
-    var authType: js.UndefOr[String]
-    var identityValidationExpression: js.UndefOr[String]
     var authorizerUri: js.UndefOr[String]
+    var identitySource: js.UndefOr[String]
+    var identityValidationExpression: js.UndefOr[String]
     var providerARNs: js.UndefOr[ListOfARNs]
-    var `type`: js.UndefOr[AuthorizerType]
-    var restApiId: js.UndefOr[String]
   }
 
   object CreateAuthorizerRequest {
     def apply(
-      name: js.UndefOr[String] = js.undefined,
+      name: String,
+      restApiId: String,
+      `type`: AuthorizerType,
+      authType: js.UndefOr[String] = js.undefined,
       authorizerCredentials: js.UndefOr[String] = js.undefined,
       authorizerResultTtlInSeconds: js.UndefOr[NullableInteger] = js.undefined,
-      identitySource: js.UndefOr[String] = js.undefined,
-      authType: js.UndefOr[String] = js.undefined,
-      identityValidationExpression: js.UndefOr[String] = js.undefined,
       authorizerUri: js.UndefOr[String] = js.undefined,
-      providerARNs: js.UndefOr[ListOfARNs] = js.undefined,
-      `type`: js.UndefOr[AuthorizerType] = js.undefined,
-      restApiId: js.UndefOr[String] = js.undefined): CreateAuthorizerRequest = {
+      identitySource: js.UndefOr[String] = js.undefined,
+      identityValidationExpression: js.UndefOr[String] = js.undefined,
+      providerARNs: js.UndefOr[ListOfARNs] = js.undefined): CreateAuthorizerRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "name" -> name.map { x => x.asInstanceOf[js.Any] },
+        "name" -> name.asInstanceOf[js.Any],
+        "restApiId" -> restApiId.asInstanceOf[js.Any],
+        "`type`" -> `type`.asInstanceOf[js.Any],
+        "authType" -> authType.map { x => x.asInstanceOf[js.Any] },
         "authorizerCredentials" -> authorizerCredentials.map { x => x.asInstanceOf[js.Any] },
         "authorizerResultTtlInSeconds" -> authorizerResultTtlInSeconds.map { x => x.asInstanceOf[js.Any] },
-        "identitySource" -> identitySource.map { x => x.asInstanceOf[js.Any] },
-        "authType" -> authType.map { x => x.asInstanceOf[js.Any] },
-        "identityValidationExpression" -> identityValidationExpression.map { x => x.asInstanceOf[js.Any] },
         "authorizerUri" -> authorizerUri.map { x => x.asInstanceOf[js.Any] },
-        "providerARNs" -> providerARNs.map { x => x.asInstanceOf[js.Any] },
-        "`type`" -> `type`.map { x => x.asInstanceOf[js.Any] },
-        "restApiId" -> restApiId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "identitySource" -> identitySource.map { x => x.asInstanceOf[js.Any] },
+        "identityValidationExpression" -> identityValidationExpression.map { x => x.asInstanceOf[js.Any] },
+        "providerARNs" -> providerARNs.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateAuthorizerRequest]
     }
@@ -698,22 +698,22 @@ package apigateway {
    */
   @js.native
   trait CreateBasePathMappingRequest extends js.Object {
-    var domainName: js.UndefOr[String]
+    var domainName: String
+    var restApiId: String
     var basePath: js.UndefOr[String]
-    var restApiId: js.UndefOr[String]
     var stage: js.UndefOr[String]
   }
 
   object CreateBasePathMappingRequest {
     def apply(
-      domainName: js.UndefOr[String] = js.undefined,
+      domainName: String,
+      restApiId: String,
       basePath: js.UndefOr[String] = js.undefined,
-      restApiId: js.UndefOr[String] = js.undefined,
       stage: js.UndefOr[String] = js.undefined): CreateBasePathMappingRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "domainName" -> domainName.map { x => x.asInstanceOf[js.Any] },
+        "domainName" -> domainName.asInstanceOf[js.Any],
+        "restApiId" -> restApiId.asInstanceOf[js.Any],
         "basePath" -> basePath.map { x => x.asInstanceOf[js.Any] },
-        "restApiId" -> restApiId.map { x => x.asInstanceOf[js.Any] },
         "stage" -> stage.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateBasePathMappingRequest]
@@ -725,38 +725,38 @@ package apigateway {
    */
   @js.native
   trait CreateDeploymentRequest extends js.Object {
+    var restApiId: String
+    var cacheClusterEnabled: js.UndefOr[NullableBoolean]
+    var cacheClusterSize: js.UndefOr[CacheClusterSize]
+    var canarySettings: js.UndefOr[DeploymentCanarySettings]
     var description: js.UndefOr[String]
     var stageDescription: js.UndefOr[String]
+    var stageName: js.UndefOr[String]
     var tracingEnabled: js.UndefOr[NullableBoolean]
     var variables: js.UndefOr[MapOfStringToString]
-    var canarySettings: js.UndefOr[DeploymentCanarySettings]
-    var cacheClusterEnabled: js.UndefOr[NullableBoolean]
-    var stageName: js.UndefOr[String]
-    var cacheClusterSize: js.UndefOr[CacheClusterSize]
-    var restApiId: js.UndefOr[String]
   }
 
   object CreateDeploymentRequest {
     def apply(
+      restApiId: String,
+      cacheClusterEnabled: js.UndefOr[NullableBoolean] = js.undefined,
+      cacheClusterSize: js.UndefOr[CacheClusterSize] = js.undefined,
+      canarySettings: js.UndefOr[DeploymentCanarySettings] = js.undefined,
       description: js.UndefOr[String] = js.undefined,
       stageDescription: js.UndefOr[String] = js.undefined,
-      tracingEnabled: js.UndefOr[NullableBoolean] = js.undefined,
-      variables: js.UndefOr[MapOfStringToString] = js.undefined,
-      canarySettings: js.UndefOr[DeploymentCanarySettings] = js.undefined,
-      cacheClusterEnabled: js.UndefOr[NullableBoolean] = js.undefined,
       stageName: js.UndefOr[String] = js.undefined,
-      cacheClusterSize: js.UndefOr[CacheClusterSize] = js.undefined,
-      restApiId: js.UndefOr[String] = js.undefined): CreateDeploymentRequest = {
+      tracingEnabled: js.UndefOr[NullableBoolean] = js.undefined,
+      variables: js.UndefOr[MapOfStringToString] = js.undefined): CreateDeploymentRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "restApiId" -> restApiId.asInstanceOf[js.Any],
+        "cacheClusterEnabled" -> cacheClusterEnabled.map { x => x.asInstanceOf[js.Any] },
+        "cacheClusterSize" -> cacheClusterSize.map { x => x.asInstanceOf[js.Any] },
+        "canarySettings" -> canarySettings.map { x => x.asInstanceOf[js.Any] },
         "description" -> description.map { x => x.asInstanceOf[js.Any] },
         "stageDescription" -> stageDescription.map { x => x.asInstanceOf[js.Any] },
-        "tracingEnabled" -> tracingEnabled.map { x => x.asInstanceOf[js.Any] },
-        "variables" -> variables.map { x => x.asInstanceOf[js.Any] },
-        "canarySettings" -> canarySettings.map { x => x.asInstanceOf[js.Any] },
-        "cacheClusterEnabled" -> cacheClusterEnabled.map { x => x.asInstanceOf[js.Any] },
         "stageName" -> stageName.map { x => x.asInstanceOf[js.Any] },
-        "cacheClusterSize" -> cacheClusterSize.map { x => x.asInstanceOf[js.Any] },
-        "restApiId" -> restApiId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "tracingEnabled" -> tracingEnabled.map { x => x.asInstanceOf[js.Any] },
+        "variables" -> variables.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateDeploymentRequest]
     }
@@ -767,20 +767,20 @@ package apigateway {
    */
   @js.native
   trait CreateDocumentationPartRequest extends js.Object {
-    var restApiId: js.UndefOr[String]
-    var location: js.UndefOr[DocumentationPartLocation]
-    var properties: js.UndefOr[String]
+    var location: DocumentationPartLocation
+    var properties: String
+    var restApiId: String
   }
 
   object CreateDocumentationPartRequest {
     def apply(
-      restApiId: js.UndefOr[String] = js.undefined,
-      location: js.UndefOr[DocumentationPartLocation] = js.undefined,
-      properties: js.UndefOr[String] = js.undefined): CreateDocumentationPartRequest = {
+      location: DocumentationPartLocation,
+      properties: String,
+      restApiId: String): CreateDocumentationPartRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "restApiId" -> restApiId.map { x => x.asInstanceOf[js.Any] },
-        "location" -> location.map { x => x.asInstanceOf[js.Any] },
-        "properties" -> properties.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "location" -> location.asInstanceOf[js.Any],
+        "properties" -> properties.asInstanceOf[js.Any],
+        "restApiId" -> restApiId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateDocumentationPartRequest]
     }
@@ -791,23 +791,23 @@ package apigateway {
    */
   @js.native
   trait CreateDocumentationVersionRequest extends js.Object {
-    var restApiId: js.UndefOr[String]
-    var documentationVersion: js.UndefOr[String]
-    var stageName: js.UndefOr[String]
+    var documentationVersion: String
+    var restApiId: String
     var description: js.UndefOr[String]
+    var stageName: js.UndefOr[String]
   }
 
   object CreateDocumentationVersionRequest {
     def apply(
-      restApiId: js.UndefOr[String] = js.undefined,
-      documentationVersion: js.UndefOr[String] = js.undefined,
-      stageName: js.UndefOr[String] = js.undefined,
-      description: js.UndefOr[String] = js.undefined): CreateDocumentationVersionRequest = {
+      documentationVersion: String,
+      restApiId: String,
+      description: js.UndefOr[String] = js.undefined,
+      stageName: js.UndefOr[String] = js.undefined): CreateDocumentationVersionRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "restApiId" -> restApiId.map { x => x.asInstanceOf[js.Any] },
-        "documentationVersion" -> documentationVersion.map { x => x.asInstanceOf[js.Any] },
-        "stageName" -> stageName.map { x => x.asInstanceOf[js.Any] },
-        "description" -> description.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "documentationVersion" -> documentationVersion.asInstanceOf[js.Any],
+        "restApiId" -> restApiId.asInstanceOf[js.Any],
+        "description" -> description.map { x => x.asInstanceOf[js.Any] },
+        "stageName" -> stageName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateDocumentationVersionRequest]
     }
@@ -818,38 +818,38 @@ package apigateway {
    */
   @js.native
   trait CreateDomainNameRequest extends js.Object {
-    var regionalCertificateArn: js.UndefOr[String]
-    var certificateName: js.UndefOr[String]
-    var certificateBody: js.UndefOr[String]
-    var domainName: js.UndefOr[String]
+    var domainName: String
     var certificateArn: js.UndefOr[String]
+    var certificateBody: js.UndefOr[String]
+    var certificateChain: js.UndefOr[String]
+    var certificateName: js.UndefOr[String]
     var certificatePrivateKey: js.UndefOr[String]
     var endpointConfiguration: js.UndefOr[EndpointConfiguration]
+    var regionalCertificateArn: js.UndefOr[String]
     var regionalCertificateName: js.UndefOr[String]
-    var certificateChain: js.UndefOr[String]
   }
 
   object CreateDomainNameRequest {
     def apply(
-      regionalCertificateArn: js.UndefOr[String] = js.undefined,
-      certificateName: js.UndefOr[String] = js.undefined,
-      certificateBody: js.UndefOr[String] = js.undefined,
-      domainName: js.UndefOr[String] = js.undefined,
+      domainName: String,
       certificateArn: js.UndefOr[String] = js.undefined,
+      certificateBody: js.UndefOr[String] = js.undefined,
+      certificateChain: js.UndefOr[String] = js.undefined,
+      certificateName: js.UndefOr[String] = js.undefined,
       certificatePrivateKey: js.UndefOr[String] = js.undefined,
       endpointConfiguration: js.UndefOr[EndpointConfiguration] = js.undefined,
-      regionalCertificateName: js.UndefOr[String] = js.undefined,
-      certificateChain: js.UndefOr[String] = js.undefined): CreateDomainNameRequest = {
+      regionalCertificateArn: js.UndefOr[String] = js.undefined,
+      regionalCertificateName: js.UndefOr[String] = js.undefined): CreateDomainNameRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "regionalCertificateArn" -> regionalCertificateArn.map { x => x.asInstanceOf[js.Any] },
-        "certificateName" -> certificateName.map { x => x.asInstanceOf[js.Any] },
-        "certificateBody" -> certificateBody.map { x => x.asInstanceOf[js.Any] },
-        "domainName" -> domainName.map { x => x.asInstanceOf[js.Any] },
+        "domainName" -> domainName.asInstanceOf[js.Any],
         "certificateArn" -> certificateArn.map { x => x.asInstanceOf[js.Any] },
+        "certificateBody" -> certificateBody.map { x => x.asInstanceOf[js.Any] },
+        "certificateChain" -> certificateChain.map { x => x.asInstanceOf[js.Any] },
+        "certificateName" -> certificateName.map { x => x.asInstanceOf[js.Any] },
         "certificatePrivateKey" -> certificatePrivateKey.map { x => x.asInstanceOf[js.Any] },
         "endpointConfiguration" -> endpointConfiguration.map { x => x.asInstanceOf[js.Any] },
-        "regionalCertificateName" -> regionalCertificateName.map { x => x.asInstanceOf[js.Any] },
-        "certificateChain" -> certificateChain.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "regionalCertificateArn" -> regionalCertificateArn.map { x => x.asInstanceOf[js.Any] },
+        "regionalCertificateName" -> regionalCertificateName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateDomainNameRequest]
     }
@@ -860,26 +860,26 @@ package apigateway {
    */
   @js.native
   trait CreateModelRequest extends js.Object {
-    var name: js.UndefOr[String]
+    var contentType: String
+    var name: String
+    var restApiId: String
     var description: js.UndefOr[String]
     var schema: js.UndefOr[String]
-    var contentType: js.UndefOr[String]
-    var restApiId: js.UndefOr[String]
   }
 
   object CreateModelRequest {
     def apply(
-      name: js.UndefOr[String] = js.undefined,
+      contentType: String,
+      name: String,
+      restApiId: String,
       description: js.UndefOr[String] = js.undefined,
-      schema: js.UndefOr[String] = js.undefined,
-      contentType: js.UndefOr[String] = js.undefined,
-      restApiId: js.UndefOr[String] = js.undefined): CreateModelRequest = {
+      schema: js.UndefOr[String] = js.undefined): CreateModelRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "name" -> name.map { x => x.asInstanceOf[js.Any] },
+        "contentType" -> contentType.asInstanceOf[js.Any],
+        "name" -> name.asInstanceOf[js.Any],
+        "restApiId" -> restApiId.asInstanceOf[js.Any],
         "description" -> description.map { x => x.asInstanceOf[js.Any] },
-        "schema" -> schema.map { x => x.asInstanceOf[js.Any] },
-        "contentType" -> contentType.map { x => x.asInstanceOf[js.Any] },
-        "restApiId" -> restApiId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "schema" -> schema.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateModelRequest]
     }
@@ -890,7 +890,7 @@ package apigateway {
    */
   @js.native
   trait CreateRequestValidatorRequest extends js.Object {
-    var restApiId: js.UndefOr[String]
+    var restApiId: String
     var name: js.UndefOr[String]
     var validateRequestBody: js.UndefOr[Boolean]
     var validateRequestParameters: js.UndefOr[Boolean]
@@ -898,12 +898,12 @@ package apigateway {
 
   object CreateRequestValidatorRequest {
     def apply(
-      restApiId: js.UndefOr[String] = js.undefined,
+      restApiId: String,
       name: js.UndefOr[String] = js.undefined,
       validateRequestBody: js.UndefOr[Boolean] = js.undefined,
       validateRequestParameters: js.UndefOr[Boolean] = js.undefined): CreateRequestValidatorRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "restApiId" -> restApiId.map { x => x.asInstanceOf[js.Any] },
+        "restApiId" -> restApiId.asInstanceOf[js.Any],
         "name" -> name.map { x => x.asInstanceOf[js.Any] },
         "validateRequestBody" -> validateRequestBody.map { x => x.asInstanceOf[js.Any] },
         "validateRequestParameters" -> validateRequestParameters.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
@@ -917,20 +917,20 @@ package apigateway {
    */
   @js.native
   trait CreateResourceRequest extends js.Object {
-    var restApiId: js.UndefOr[String]
-    var parentId: js.UndefOr[String]
-    var pathPart: js.UndefOr[String]
+    var parentId: String
+    var pathPart: String
+    var restApiId: String
   }
 
   object CreateResourceRequest {
     def apply(
-      restApiId: js.UndefOr[String] = js.undefined,
-      parentId: js.UndefOr[String] = js.undefined,
-      pathPart: js.UndefOr[String] = js.undefined): CreateResourceRequest = {
+      parentId: String,
+      pathPart: String,
+      restApiId: String): CreateResourceRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "restApiId" -> restApiId.map { x => x.asInstanceOf[js.Any] },
-        "parentId" -> parentId.map { x => x.asInstanceOf[js.Any] },
-        "pathPart" -> pathPart.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "parentId" -> parentId.asInstanceOf[js.Any],
+        "pathPart" -> pathPart.asInstanceOf[js.Any],
+        "restApiId" -> restApiId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateResourceRequest]
     }
@@ -941,38 +941,38 @@ package apigateway {
    */
   @js.native
   trait CreateRestApiRequest extends js.Object {
-    var name: js.UndefOr[String]
+    var name: String
     var apiKeySource: js.UndefOr[ApiKeySourceType]
-    var description: js.UndefOr[String]
     var binaryMediaTypes: js.UndefOr[ListOfString]
     var cloneFrom: js.UndefOr[String]
-    var version: js.UndefOr[String]
+    var description: js.UndefOr[String]
     var endpointConfiguration: js.UndefOr[EndpointConfiguration]
-    var policy: js.UndefOr[String]
     var minimumCompressionSize: js.UndefOr[NullableInteger]
+    var policy: js.UndefOr[String]
+    var version: js.UndefOr[String]
   }
 
   object CreateRestApiRequest {
     def apply(
-      name: js.UndefOr[String] = js.undefined,
+      name: String,
       apiKeySource: js.UndefOr[ApiKeySourceType] = js.undefined,
-      description: js.UndefOr[String] = js.undefined,
       binaryMediaTypes: js.UndefOr[ListOfString] = js.undefined,
       cloneFrom: js.UndefOr[String] = js.undefined,
-      version: js.UndefOr[String] = js.undefined,
+      description: js.UndefOr[String] = js.undefined,
       endpointConfiguration: js.UndefOr[EndpointConfiguration] = js.undefined,
+      minimumCompressionSize: js.UndefOr[NullableInteger] = js.undefined,
       policy: js.UndefOr[String] = js.undefined,
-      minimumCompressionSize: js.UndefOr[NullableInteger] = js.undefined): CreateRestApiRequest = {
+      version: js.UndefOr[String] = js.undefined): CreateRestApiRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "name" -> name.map { x => x.asInstanceOf[js.Any] },
+        "name" -> name.asInstanceOf[js.Any],
         "apiKeySource" -> apiKeySource.map { x => x.asInstanceOf[js.Any] },
-        "description" -> description.map { x => x.asInstanceOf[js.Any] },
         "binaryMediaTypes" -> binaryMediaTypes.map { x => x.asInstanceOf[js.Any] },
         "cloneFrom" -> cloneFrom.map { x => x.asInstanceOf[js.Any] },
-        "version" -> version.map { x => x.asInstanceOf[js.Any] },
+        "description" -> description.map { x => x.asInstanceOf[js.Any] },
         "endpointConfiguration" -> endpointConfiguration.map { x => x.asInstanceOf[js.Any] },
+        "minimumCompressionSize" -> minimumCompressionSize.map { x => x.asInstanceOf[js.Any] },
         "policy" -> policy.map { x => x.asInstanceOf[js.Any] },
-        "minimumCompressionSize" -> minimumCompressionSize.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "version" -> version.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateRestApiRequest]
     }
@@ -983,44 +983,44 @@ package apigateway {
    */
   @js.native
   trait CreateStageRequest extends js.Object {
+    var deploymentId: String
+    var restApiId: String
+    var stageName: String
+    var cacheClusterEnabled: js.UndefOr[Boolean]
+    var cacheClusterSize: js.UndefOr[CacheClusterSize]
+    var canarySettings: js.UndefOr[CanarySettings]
     var description: js.UndefOr[String]
+    var documentationVersion: js.UndefOr[String]
     var tags: js.UndefOr[MapOfStringToString]
     var tracingEnabled: js.UndefOr[Boolean]
-    var deploymentId: js.UndefOr[String]
-    var documentationVersion: js.UndefOr[String]
     var variables: js.UndefOr[MapOfStringToString]
-    var canarySettings: js.UndefOr[CanarySettings]
-    var cacheClusterEnabled: js.UndefOr[Boolean]
-    var stageName: js.UndefOr[String]
-    var cacheClusterSize: js.UndefOr[CacheClusterSize]
-    var restApiId: js.UndefOr[String]
   }
 
   object CreateStageRequest {
     def apply(
+      deploymentId: String,
+      restApiId: String,
+      stageName: String,
+      cacheClusterEnabled: js.UndefOr[Boolean] = js.undefined,
+      cacheClusterSize: js.UndefOr[CacheClusterSize] = js.undefined,
+      canarySettings: js.UndefOr[CanarySettings] = js.undefined,
       description: js.UndefOr[String] = js.undefined,
+      documentationVersion: js.UndefOr[String] = js.undefined,
       tags: js.UndefOr[MapOfStringToString] = js.undefined,
       tracingEnabled: js.UndefOr[Boolean] = js.undefined,
-      deploymentId: js.UndefOr[String] = js.undefined,
-      documentationVersion: js.UndefOr[String] = js.undefined,
-      variables: js.UndefOr[MapOfStringToString] = js.undefined,
-      canarySettings: js.UndefOr[CanarySettings] = js.undefined,
-      cacheClusterEnabled: js.UndefOr[Boolean] = js.undefined,
-      stageName: js.UndefOr[String] = js.undefined,
-      cacheClusterSize: js.UndefOr[CacheClusterSize] = js.undefined,
-      restApiId: js.UndefOr[String] = js.undefined): CreateStageRequest = {
+      variables: js.UndefOr[MapOfStringToString] = js.undefined): CreateStageRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "deploymentId" -> deploymentId.asInstanceOf[js.Any],
+        "restApiId" -> restApiId.asInstanceOf[js.Any],
+        "stageName" -> stageName.asInstanceOf[js.Any],
+        "cacheClusterEnabled" -> cacheClusterEnabled.map { x => x.asInstanceOf[js.Any] },
+        "cacheClusterSize" -> cacheClusterSize.map { x => x.asInstanceOf[js.Any] },
+        "canarySettings" -> canarySettings.map { x => x.asInstanceOf[js.Any] },
         "description" -> description.map { x => x.asInstanceOf[js.Any] },
+        "documentationVersion" -> documentationVersion.map { x => x.asInstanceOf[js.Any] },
         "tags" -> tags.map { x => x.asInstanceOf[js.Any] },
         "tracingEnabled" -> tracingEnabled.map { x => x.asInstanceOf[js.Any] },
-        "deploymentId" -> deploymentId.map { x => x.asInstanceOf[js.Any] },
-        "documentationVersion" -> documentationVersion.map { x => x.asInstanceOf[js.Any] },
-        "variables" -> variables.map { x => x.asInstanceOf[js.Any] },
-        "canarySettings" -> canarySettings.map { x => x.asInstanceOf[js.Any] },
-        "cacheClusterEnabled" -> cacheClusterEnabled.map { x => x.asInstanceOf[js.Any] },
-        "stageName" -> stageName.map { x => x.asInstanceOf[js.Any] },
-        "cacheClusterSize" -> cacheClusterSize.map { x => x.asInstanceOf[js.Any] },
-        "restApiId" -> restApiId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "variables" -> variables.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateStageRequest]
     }
@@ -1031,20 +1031,20 @@ package apigateway {
    */
   @js.native
   trait CreateUsagePlanKeyRequest extends js.Object {
-    var usagePlanId: js.UndefOr[String]
-    var keyId: js.UndefOr[String]
-    var keyType: js.UndefOr[String]
+    var keyId: String
+    var keyType: String
+    var usagePlanId: String
   }
 
   object CreateUsagePlanKeyRequest {
     def apply(
-      usagePlanId: js.UndefOr[String] = js.undefined,
-      keyId: js.UndefOr[String] = js.undefined,
-      keyType: js.UndefOr[String] = js.undefined): CreateUsagePlanKeyRequest = {
+      keyId: String,
+      keyType: String,
+      usagePlanId: String): CreateUsagePlanKeyRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "usagePlanId" -> usagePlanId.map { x => x.asInstanceOf[js.Any] },
-        "keyId" -> keyId.map { x => x.asInstanceOf[js.Any] },
-        "keyType" -> keyType.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "keyId" -> keyId.asInstanceOf[js.Any],
+        "keyType" -> keyType.asInstanceOf[js.Any],
+        "usagePlanId" -> usagePlanId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateUsagePlanKeyRequest]
     }
@@ -1055,25 +1055,25 @@ package apigateway {
    */
   @js.native
   trait CreateUsagePlanRequest extends js.Object {
-    var name: js.UndefOr[String]
-    var quota: js.UndefOr[QuotaSettings]
-    var description: js.UndefOr[String]
+    var name: String
     var apiStages: js.UndefOr[ListOfApiStage]
+    var description: js.UndefOr[String]
+    var quota: js.UndefOr[QuotaSettings]
     var throttle: js.UndefOr[ThrottleSettings]
   }
 
   object CreateUsagePlanRequest {
     def apply(
-      name: js.UndefOr[String] = js.undefined,
-      quota: js.UndefOr[QuotaSettings] = js.undefined,
-      description: js.UndefOr[String] = js.undefined,
+      name: String,
       apiStages: js.UndefOr[ListOfApiStage] = js.undefined,
+      description: js.UndefOr[String] = js.undefined,
+      quota: js.UndefOr[QuotaSettings] = js.undefined,
       throttle: js.UndefOr[ThrottleSettings] = js.undefined): CreateUsagePlanRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "name" -> name.map { x => x.asInstanceOf[js.Any] },
-        "quota" -> quota.map { x => x.asInstanceOf[js.Any] },
-        "description" -> description.map { x => x.asInstanceOf[js.Any] },
+        "name" -> name.asInstanceOf[js.Any],
         "apiStages" -> apiStages.map { x => x.asInstanceOf[js.Any] },
+        "description" -> description.map { x => x.asInstanceOf[js.Any] },
+        "quota" -> quota.map { x => x.asInstanceOf[js.Any] },
         "throttle" -> throttle.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateUsagePlanRequest]
@@ -1085,20 +1085,20 @@ package apigateway {
    */
   @js.native
   trait CreateVpcLinkRequest extends js.Object {
-    var name: js.UndefOr[String]
+    var name: String
+    var targetArns: ListOfString
     var description: js.UndefOr[String]
-    var targetArns: js.UndefOr[ListOfString]
   }
 
   object CreateVpcLinkRequest {
     def apply(
-      name: js.UndefOr[String] = js.undefined,
-      description: js.UndefOr[String] = js.undefined,
-      targetArns: js.UndefOr[ListOfString] = js.undefined): CreateVpcLinkRequest = {
+      name: String,
+      targetArns: ListOfString,
+      description: js.UndefOr[String] = js.undefined): CreateVpcLinkRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "name" -> name.map { x => x.asInstanceOf[js.Any] },
-        "description" -> description.map { x => x.asInstanceOf[js.Any] },
-        "targetArns" -> targetArns.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "name" -> name.asInstanceOf[js.Any],
+        "targetArns" -> targetArns.asInstanceOf[js.Any],
+        "description" -> description.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateVpcLinkRequest]
     }
@@ -1109,14 +1109,14 @@ package apigateway {
    */
   @js.native
   trait DeleteApiKeyRequest extends js.Object {
-    var apiKey: js.UndefOr[String]
+    var apiKey: String
   }
 
   object DeleteApiKeyRequest {
     def apply(
-      apiKey: js.UndefOr[String] = js.undefined): DeleteApiKeyRequest = {
+      apiKey: String): DeleteApiKeyRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "apiKey" -> apiKey.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "apiKey" -> apiKey.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteApiKeyRequest]
     }
@@ -1127,17 +1127,17 @@ package apigateway {
    */
   @js.native
   trait DeleteAuthorizerRequest extends js.Object {
-    var restApiId: js.UndefOr[String]
-    var authorizerId: js.UndefOr[String]
+    var authorizerId: String
+    var restApiId: String
   }
 
   object DeleteAuthorizerRequest {
     def apply(
-      restApiId: js.UndefOr[String] = js.undefined,
-      authorizerId: js.UndefOr[String] = js.undefined): DeleteAuthorizerRequest = {
+      authorizerId: String,
+      restApiId: String): DeleteAuthorizerRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "restApiId" -> restApiId.map { x => x.asInstanceOf[js.Any] },
-        "authorizerId" -> authorizerId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "authorizerId" -> authorizerId.asInstanceOf[js.Any],
+        "restApiId" -> restApiId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteAuthorizerRequest]
     }
@@ -1148,17 +1148,17 @@ package apigateway {
    */
   @js.native
   trait DeleteBasePathMappingRequest extends js.Object {
-    var domainName: js.UndefOr[String]
-    var basePath: js.UndefOr[String]
+    var basePath: String
+    var domainName: String
   }
 
   object DeleteBasePathMappingRequest {
     def apply(
-      domainName: js.UndefOr[String] = js.undefined,
-      basePath: js.UndefOr[String] = js.undefined): DeleteBasePathMappingRequest = {
+      basePath: String,
+      domainName: String): DeleteBasePathMappingRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "domainName" -> domainName.map { x => x.asInstanceOf[js.Any] },
-        "basePath" -> basePath.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "basePath" -> basePath.asInstanceOf[js.Any],
+        "domainName" -> domainName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteBasePathMappingRequest]
     }
@@ -1169,14 +1169,14 @@ package apigateway {
    */
   @js.native
   trait DeleteClientCertificateRequest extends js.Object {
-    var clientCertificateId: js.UndefOr[String]
+    var clientCertificateId: String
   }
 
   object DeleteClientCertificateRequest {
     def apply(
-      clientCertificateId: js.UndefOr[String] = js.undefined): DeleteClientCertificateRequest = {
+      clientCertificateId: String): DeleteClientCertificateRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "clientCertificateId" -> clientCertificateId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "clientCertificateId" -> clientCertificateId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteClientCertificateRequest]
     }
@@ -1187,17 +1187,17 @@ package apigateway {
    */
   @js.native
   trait DeleteDeploymentRequest extends js.Object {
-    var restApiId: js.UndefOr[String]
-    var deploymentId: js.UndefOr[String]
+    var deploymentId: String
+    var restApiId: String
   }
 
   object DeleteDeploymentRequest {
     def apply(
-      restApiId: js.UndefOr[String] = js.undefined,
-      deploymentId: js.UndefOr[String] = js.undefined): DeleteDeploymentRequest = {
+      deploymentId: String,
+      restApiId: String): DeleteDeploymentRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "restApiId" -> restApiId.map { x => x.asInstanceOf[js.Any] },
-        "deploymentId" -> deploymentId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "deploymentId" -> deploymentId.asInstanceOf[js.Any],
+        "restApiId" -> restApiId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteDeploymentRequest]
     }
@@ -1208,17 +1208,17 @@ package apigateway {
    */
   @js.native
   trait DeleteDocumentationPartRequest extends js.Object {
-    var restApiId: js.UndefOr[String]
-    var documentationPartId: js.UndefOr[String]
+    var documentationPartId: String
+    var restApiId: String
   }
 
   object DeleteDocumentationPartRequest {
     def apply(
-      restApiId: js.UndefOr[String] = js.undefined,
-      documentationPartId: js.UndefOr[String] = js.undefined): DeleteDocumentationPartRequest = {
+      documentationPartId: String,
+      restApiId: String): DeleteDocumentationPartRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "restApiId" -> restApiId.map { x => x.asInstanceOf[js.Any] },
-        "documentationPartId" -> documentationPartId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "documentationPartId" -> documentationPartId.asInstanceOf[js.Any],
+        "restApiId" -> restApiId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteDocumentationPartRequest]
     }
@@ -1229,17 +1229,17 @@ package apigateway {
    */
   @js.native
   trait DeleteDocumentationVersionRequest extends js.Object {
-    var restApiId: js.UndefOr[String]
-    var documentationVersion: js.UndefOr[String]
+    var documentationVersion: String
+    var restApiId: String
   }
 
   object DeleteDocumentationVersionRequest {
     def apply(
-      restApiId: js.UndefOr[String] = js.undefined,
-      documentationVersion: js.UndefOr[String] = js.undefined): DeleteDocumentationVersionRequest = {
+      documentationVersion: String,
+      restApiId: String): DeleteDocumentationVersionRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "restApiId" -> restApiId.map { x => x.asInstanceOf[js.Any] },
-        "documentationVersion" -> documentationVersion.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "documentationVersion" -> documentationVersion.asInstanceOf[js.Any],
+        "restApiId" -> restApiId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteDocumentationVersionRequest]
     }
@@ -1250,14 +1250,14 @@ package apigateway {
    */
   @js.native
   trait DeleteDomainNameRequest extends js.Object {
-    var domainName: js.UndefOr[String]
+    var domainName: String
   }
 
   object DeleteDomainNameRequest {
     def apply(
-      domainName: js.UndefOr[String] = js.undefined): DeleteDomainNameRequest = {
+      domainName: String): DeleteDomainNameRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "domainName" -> domainName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "domainName" -> domainName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteDomainNameRequest]
     }
@@ -1268,17 +1268,17 @@ package apigateway {
    */
   @js.native
   trait DeleteGatewayResponseRequest extends js.Object {
-    var restApiId: js.UndefOr[String]
-    var responseType: js.UndefOr[GatewayResponseType]
+    var responseType: GatewayResponseType
+    var restApiId: String
   }
 
   object DeleteGatewayResponseRequest {
     def apply(
-      restApiId: js.UndefOr[String] = js.undefined,
-      responseType: js.UndefOr[GatewayResponseType] = js.undefined): DeleteGatewayResponseRequest = {
+      responseType: GatewayResponseType,
+      restApiId: String): DeleteGatewayResponseRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "restApiId" -> restApiId.map { x => x.asInstanceOf[js.Any] },
-        "responseType" -> responseType.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "responseType" -> responseType.asInstanceOf[js.Any],
+        "restApiId" -> restApiId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteGatewayResponseRequest]
     }
@@ -1289,20 +1289,20 @@ package apigateway {
    */
   @js.native
   trait DeleteIntegrationRequest extends js.Object {
-    var restApiId: js.UndefOr[String]
-    var resourceId: js.UndefOr[String]
-    var httpMethod: js.UndefOr[String]
+    var httpMethod: String
+    var resourceId: String
+    var restApiId: String
   }
 
   object DeleteIntegrationRequest {
     def apply(
-      restApiId: js.UndefOr[String] = js.undefined,
-      resourceId: js.UndefOr[String] = js.undefined,
-      httpMethod: js.UndefOr[String] = js.undefined): DeleteIntegrationRequest = {
+      httpMethod: String,
+      resourceId: String,
+      restApiId: String): DeleteIntegrationRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "restApiId" -> restApiId.map { x => x.asInstanceOf[js.Any] },
-        "resourceId" -> resourceId.map { x => x.asInstanceOf[js.Any] },
-        "httpMethod" -> httpMethod.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "httpMethod" -> httpMethod.asInstanceOf[js.Any],
+        "resourceId" -> resourceId.asInstanceOf[js.Any],
+        "restApiId" -> restApiId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteIntegrationRequest]
     }
@@ -1313,23 +1313,23 @@ package apigateway {
    */
   @js.native
   trait DeleteIntegrationResponseRequest extends js.Object {
-    var restApiId: js.UndefOr[String]
-    var resourceId: js.UndefOr[String]
-    var httpMethod: js.UndefOr[String]
-    var statusCode: js.UndefOr[StatusCode]
+    var httpMethod: String
+    var resourceId: String
+    var restApiId: String
+    var statusCode: StatusCode
   }
 
   object DeleteIntegrationResponseRequest {
     def apply(
-      restApiId: js.UndefOr[String] = js.undefined,
-      resourceId: js.UndefOr[String] = js.undefined,
-      httpMethod: js.UndefOr[String] = js.undefined,
-      statusCode: js.UndefOr[StatusCode] = js.undefined): DeleteIntegrationResponseRequest = {
+      httpMethod: String,
+      resourceId: String,
+      restApiId: String,
+      statusCode: StatusCode): DeleteIntegrationResponseRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "restApiId" -> restApiId.map { x => x.asInstanceOf[js.Any] },
-        "resourceId" -> resourceId.map { x => x.asInstanceOf[js.Any] },
-        "httpMethod" -> httpMethod.map { x => x.asInstanceOf[js.Any] },
-        "statusCode" -> statusCode.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "httpMethod" -> httpMethod.asInstanceOf[js.Any],
+        "resourceId" -> resourceId.asInstanceOf[js.Any],
+        "restApiId" -> restApiId.asInstanceOf[js.Any],
+        "statusCode" -> statusCode.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteIntegrationResponseRequest]
     }
@@ -1340,20 +1340,20 @@ package apigateway {
    */
   @js.native
   trait DeleteMethodRequest extends js.Object {
-    var restApiId: js.UndefOr[String]
-    var resourceId: js.UndefOr[String]
-    var httpMethod: js.UndefOr[String]
+    var httpMethod: String
+    var resourceId: String
+    var restApiId: String
   }
 
   object DeleteMethodRequest {
     def apply(
-      restApiId: js.UndefOr[String] = js.undefined,
-      resourceId: js.UndefOr[String] = js.undefined,
-      httpMethod: js.UndefOr[String] = js.undefined): DeleteMethodRequest = {
+      httpMethod: String,
+      resourceId: String,
+      restApiId: String): DeleteMethodRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "restApiId" -> restApiId.map { x => x.asInstanceOf[js.Any] },
-        "resourceId" -> resourceId.map { x => x.asInstanceOf[js.Any] },
-        "httpMethod" -> httpMethod.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "httpMethod" -> httpMethod.asInstanceOf[js.Any],
+        "resourceId" -> resourceId.asInstanceOf[js.Any],
+        "restApiId" -> restApiId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteMethodRequest]
     }
@@ -1364,23 +1364,23 @@ package apigateway {
    */
   @js.native
   trait DeleteMethodResponseRequest extends js.Object {
-    var restApiId: js.UndefOr[String]
-    var resourceId: js.UndefOr[String]
-    var httpMethod: js.UndefOr[String]
-    var statusCode: js.UndefOr[StatusCode]
+    var httpMethod: String
+    var resourceId: String
+    var restApiId: String
+    var statusCode: StatusCode
   }
 
   object DeleteMethodResponseRequest {
     def apply(
-      restApiId: js.UndefOr[String] = js.undefined,
-      resourceId: js.UndefOr[String] = js.undefined,
-      httpMethod: js.UndefOr[String] = js.undefined,
-      statusCode: js.UndefOr[StatusCode] = js.undefined): DeleteMethodResponseRequest = {
+      httpMethod: String,
+      resourceId: String,
+      restApiId: String,
+      statusCode: StatusCode): DeleteMethodResponseRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "restApiId" -> restApiId.map { x => x.asInstanceOf[js.Any] },
-        "resourceId" -> resourceId.map { x => x.asInstanceOf[js.Any] },
-        "httpMethod" -> httpMethod.map { x => x.asInstanceOf[js.Any] },
-        "statusCode" -> statusCode.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "httpMethod" -> httpMethod.asInstanceOf[js.Any],
+        "resourceId" -> resourceId.asInstanceOf[js.Any],
+        "restApiId" -> restApiId.asInstanceOf[js.Any],
+        "statusCode" -> statusCode.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteMethodResponseRequest]
     }
@@ -1391,17 +1391,17 @@ package apigateway {
    */
   @js.native
   trait DeleteModelRequest extends js.Object {
-    var restApiId: js.UndefOr[String]
-    var modelName: js.UndefOr[String]
+    var modelName: String
+    var restApiId: String
   }
 
   object DeleteModelRequest {
     def apply(
-      restApiId: js.UndefOr[String] = js.undefined,
-      modelName: js.UndefOr[String] = js.undefined): DeleteModelRequest = {
+      modelName: String,
+      restApiId: String): DeleteModelRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "restApiId" -> restApiId.map { x => x.asInstanceOf[js.Any] },
-        "modelName" -> modelName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "modelName" -> modelName.asInstanceOf[js.Any],
+        "restApiId" -> restApiId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteModelRequest]
     }
@@ -1412,17 +1412,17 @@ package apigateway {
    */
   @js.native
   trait DeleteRequestValidatorRequest extends js.Object {
-    var restApiId: js.UndefOr[String]
-    var requestValidatorId: js.UndefOr[String]
+    var requestValidatorId: String
+    var restApiId: String
   }
 
   object DeleteRequestValidatorRequest {
     def apply(
-      restApiId: js.UndefOr[String] = js.undefined,
-      requestValidatorId: js.UndefOr[String] = js.undefined): DeleteRequestValidatorRequest = {
+      requestValidatorId: String,
+      restApiId: String): DeleteRequestValidatorRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "restApiId" -> restApiId.map { x => x.asInstanceOf[js.Any] },
-        "requestValidatorId" -> requestValidatorId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "requestValidatorId" -> requestValidatorId.asInstanceOf[js.Any],
+        "restApiId" -> restApiId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteRequestValidatorRequest]
     }
@@ -1433,17 +1433,17 @@ package apigateway {
    */
   @js.native
   trait DeleteResourceRequest extends js.Object {
-    var restApiId: js.UndefOr[String]
-    var resourceId: js.UndefOr[String]
+    var resourceId: String
+    var restApiId: String
   }
 
   object DeleteResourceRequest {
     def apply(
-      restApiId: js.UndefOr[String] = js.undefined,
-      resourceId: js.UndefOr[String] = js.undefined): DeleteResourceRequest = {
+      resourceId: String,
+      restApiId: String): DeleteResourceRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "restApiId" -> restApiId.map { x => x.asInstanceOf[js.Any] },
-        "resourceId" -> resourceId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "resourceId" -> resourceId.asInstanceOf[js.Any],
+        "restApiId" -> restApiId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteResourceRequest]
     }
@@ -1454,14 +1454,14 @@ package apigateway {
    */
   @js.native
   trait DeleteRestApiRequest extends js.Object {
-    var restApiId: js.UndefOr[String]
+    var restApiId: String
   }
 
   object DeleteRestApiRequest {
     def apply(
-      restApiId: js.UndefOr[String] = js.undefined): DeleteRestApiRequest = {
+      restApiId: String): DeleteRestApiRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "restApiId" -> restApiId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "restApiId" -> restApiId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteRestApiRequest]
     }
@@ -1472,17 +1472,17 @@ package apigateway {
    */
   @js.native
   trait DeleteStageRequest extends js.Object {
-    var restApiId: js.UndefOr[String]
-    var stageName: js.UndefOr[String]
+    var restApiId: String
+    var stageName: String
   }
 
   object DeleteStageRequest {
     def apply(
-      restApiId: js.UndefOr[String] = js.undefined,
-      stageName: js.UndefOr[String] = js.undefined): DeleteStageRequest = {
+      restApiId: String,
+      stageName: String): DeleteStageRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "restApiId" -> restApiId.map { x => x.asInstanceOf[js.Any] },
-        "stageName" -> stageName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "restApiId" -> restApiId.asInstanceOf[js.Any],
+        "stageName" -> stageName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteStageRequest]
     }
@@ -1493,17 +1493,17 @@ package apigateway {
    */
   @js.native
   trait DeleteUsagePlanKeyRequest extends js.Object {
-    var usagePlanId: js.UndefOr[String]
-    var keyId: js.UndefOr[String]
+    var keyId: String
+    var usagePlanId: String
   }
 
   object DeleteUsagePlanKeyRequest {
     def apply(
-      usagePlanId: js.UndefOr[String] = js.undefined,
-      keyId: js.UndefOr[String] = js.undefined): DeleteUsagePlanKeyRequest = {
+      keyId: String,
+      usagePlanId: String): DeleteUsagePlanKeyRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "usagePlanId" -> usagePlanId.map { x => x.asInstanceOf[js.Any] },
-        "keyId" -> keyId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "keyId" -> keyId.asInstanceOf[js.Any],
+        "usagePlanId" -> usagePlanId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteUsagePlanKeyRequest]
     }
@@ -1514,14 +1514,14 @@ package apigateway {
    */
   @js.native
   trait DeleteUsagePlanRequest extends js.Object {
-    var usagePlanId: js.UndefOr[String]
+    var usagePlanId: String
   }
 
   object DeleteUsagePlanRequest {
     def apply(
-      usagePlanId: js.UndefOr[String] = js.undefined): DeleteUsagePlanRequest = {
+      usagePlanId: String): DeleteUsagePlanRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "usagePlanId" -> usagePlanId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "usagePlanId" -> usagePlanId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteUsagePlanRequest]
     }
@@ -1532,14 +1532,14 @@ package apigateway {
    */
   @js.native
   trait DeleteVpcLinkRequest extends js.Object {
-    var vpcLinkId: js.UndefOr[String]
+    var vpcLinkId: String
   }
 
   object DeleteVpcLinkRequest {
     def apply(
-      vpcLinkId: js.UndefOr[String] = js.undefined): DeleteVpcLinkRequest = {
+      vpcLinkId: String): DeleteVpcLinkRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "vpcLinkId" -> vpcLinkId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "vpcLinkId" -> vpcLinkId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteVpcLinkRequest]
     }
@@ -1550,23 +1550,23 @@ package apigateway {
    */
   @js.native
   trait Deployment extends js.Object {
-    var id: js.UndefOr[String]
-    var description: js.UndefOr[String]
-    var createdDate: js.UndefOr[Timestamp]
     var apiSummary: js.UndefOr[PathToMapOfMethodSnapshot]
+    var createdDate: js.UndefOr[Timestamp]
+    var description: js.UndefOr[String]
+    var id: js.UndefOr[String]
   }
 
   object Deployment {
     def apply(
-      id: js.UndefOr[String] = js.undefined,
-      description: js.UndefOr[String] = js.undefined,
+      apiSummary: js.UndefOr[PathToMapOfMethodSnapshot] = js.undefined,
       createdDate: js.UndefOr[Timestamp] = js.undefined,
-      apiSummary: js.UndefOr[PathToMapOfMethodSnapshot] = js.undefined): Deployment = {
+      description: js.UndefOr[String] = js.undefined,
+      id: js.UndefOr[String] = js.undefined): Deployment = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "id" -> id.map { x => x.asInstanceOf[js.Any] },
-        "description" -> description.map { x => x.asInstanceOf[js.Any] },
+        "apiSummary" -> apiSummary.map { x => x.asInstanceOf[js.Any] },
         "createdDate" -> createdDate.map { x => x.asInstanceOf[js.Any] },
-        "apiSummary" -> apiSummary.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "description" -> description.map { x => x.asInstanceOf[js.Any] },
+        "id" -> id.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Deployment]
     }
@@ -1601,17 +1601,17 @@ package apigateway {
    */
   @js.native
   trait Deployments extends js.Object {
-    var position: js.UndefOr[String]
     var items: js.UndefOr[ListOfDeployment]
+    var position: js.UndefOr[String]
   }
 
   object Deployments {
     def apply(
-      position: js.UndefOr[String] = js.undefined,
-      items: js.UndefOr[ListOfDeployment] = js.undefined): Deployments = {
+      items: js.UndefOr[ListOfDeployment] = js.undefined,
+      position: js.UndefOr[String] = js.undefined): Deployments = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "position" -> position.map { x => x.asInstanceOf[js.Any] },
-        "items" -> items.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "items" -> items.map { x => x.asInstanceOf[js.Any] },
+        "position" -> position.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Deployments]
     }
@@ -1667,26 +1667,26 @@ package apigateway {
    */
   @js.native
   trait DocumentationPartLocation extends js.Object {
-    var statusCode: js.UndefOr[DocumentationPartLocationStatusCode]
+    var `type`: DocumentationPartType
     var method: js.UndefOr[String]
     var name: js.UndefOr[String]
     var path: js.UndefOr[String]
-    var `type`: js.UndefOr[DocumentationPartType]
+    var statusCode: js.UndefOr[DocumentationPartLocationStatusCode]
   }
 
   object DocumentationPartLocation {
     def apply(
-      statusCode: js.UndefOr[DocumentationPartLocationStatusCode] = js.undefined,
+      `type`: DocumentationPartType,
       method: js.UndefOr[String] = js.undefined,
       name: js.UndefOr[String] = js.undefined,
       path: js.UndefOr[String] = js.undefined,
-      `type`: js.UndefOr[DocumentationPartType] = js.undefined): DocumentationPartLocation = {
+      statusCode: js.UndefOr[DocumentationPartLocationStatusCode] = js.undefined): DocumentationPartLocation = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "statusCode" -> statusCode.map { x => x.asInstanceOf[js.Any] },
+        "`type`" -> `type`.asInstanceOf[js.Any],
         "method" -> method.map { x => x.asInstanceOf[js.Any] },
         "name" -> name.map { x => x.asInstanceOf[js.Any] },
         "path" -> path.map { x => x.asInstanceOf[js.Any] },
-        "`type`" -> `type`.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "statusCode" -> statusCode.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DocumentationPartLocation]
     }
@@ -1714,17 +1714,17 @@ package apigateway {
    */
   @js.native
   trait DocumentationParts extends js.Object {
-    var position: js.UndefOr[String]
     var items: js.UndefOr[ListOfDocumentationPart]
+    var position: js.UndefOr[String]
   }
 
   object DocumentationParts {
     def apply(
-      position: js.UndefOr[String] = js.undefined,
-      items: js.UndefOr[ListOfDocumentationPart] = js.undefined): DocumentationParts = {
+      items: js.UndefOr[ListOfDocumentationPart] = js.undefined,
+      position: js.UndefOr[String] = js.undefined): DocumentationParts = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "position" -> position.map { x => x.asInstanceOf[js.Any] },
-        "items" -> items.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "items" -> items.map { x => x.asInstanceOf[js.Any] },
+        "position" -> position.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DocumentationParts]
     }
@@ -1735,20 +1735,20 @@ package apigateway {
    */
   @js.native
   trait DocumentationVersion extends js.Object {
-    var version: js.UndefOr[String]
     var createdDate: js.UndefOr[Timestamp]
     var description: js.UndefOr[String]
+    var version: js.UndefOr[String]
   }
 
   object DocumentationVersion {
     def apply(
-      version: js.UndefOr[String] = js.undefined,
       createdDate: js.UndefOr[Timestamp] = js.undefined,
-      description: js.UndefOr[String] = js.undefined): DocumentationVersion = {
+      description: js.UndefOr[String] = js.undefined,
+      version: js.UndefOr[String] = js.undefined): DocumentationVersion = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "version" -> version.map { x => x.asInstanceOf[js.Any] },
         "createdDate" -> createdDate.map { x => x.asInstanceOf[js.Any] },
-        "description" -> description.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "description" -> description.map { x => x.asInstanceOf[js.Any] },
+        "version" -> version.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DocumentationVersion]
     }
@@ -1759,17 +1759,17 @@ package apigateway {
    */
   @js.native
   trait DocumentationVersions extends js.Object {
-    var position: js.UndefOr[String]
     var items: js.UndefOr[ListOfDocumentationVersion]
+    var position: js.UndefOr[String]
   }
 
   object DocumentationVersions {
     def apply(
-      position: js.UndefOr[String] = js.undefined,
-      items: js.UndefOr[ListOfDocumentationVersion] = js.undefined): DocumentationVersions = {
+      items: js.UndefOr[ListOfDocumentationVersion] = js.undefined,
+      position: js.UndefOr[String] = js.undefined): DocumentationVersions = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "position" -> position.map { x => x.asInstanceOf[js.Any] },
-        "items" -> items.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "items" -> items.map { x => x.asInstanceOf[js.Any] },
+        "position" -> position.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DocumentationVersions]
     }
@@ -1780,44 +1780,44 @@ package apigateway {
    */
   @js.native
   trait DomainName extends js.Object {
-    var regionalCertificateArn: js.UndefOr[String]
-    var certificateName: js.UndefOr[String]
-    var distributionHostedZoneId: js.UndefOr[String]
-    var regionalDomainName: js.UndefOr[String]
-    var domainName: js.UndefOr[String]
     var certificateArn: js.UndefOr[String]
-    var endpointConfiguration: js.UndefOr[EndpointConfiguration]
-    var regionalCertificateName: js.UndefOr[String]
+    var certificateName: js.UndefOr[String]
     var certificateUploadDate: js.UndefOr[Timestamp]
-    var regionalHostedZoneId: js.UndefOr[String]
     var distributionDomainName: js.UndefOr[String]
+    var distributionHostedZoneId: js.UndefOr[String]
+    var domainName: js.UndefOr[String]
+    var endpointConfiguration: js.UndefOr[EndpointConfiguration]
+    var regionalCertificateArn: js.UndefOr[String]
+    var regionalCertificateName: js.UndefOr[String]
+    var regionalDomainName: js.UndefOr[String]
+    var regionalHostedZoneId: js.UndefOr[String]
   }
 
   object DomainName {
     def apply(
-      regionalCertificateArn: js.UndefOr[String] = js.undefined,
-      certificateName: js.UndefOr[String] = js.undefined,
-      distributionHostedZoneId: js.UndefOr[String] = js.undefined,
-      regionalDomainName: js.UndefOr[String] = js.undefined,
-      domainName: js.UndefOr[String] = js.undefined,
       certificateArn: js.UndefOr[String] = js.undefined,
-      endpointConfiguration: js.UndefOr[EndpointConfiguration] = js.undefined,
-      regionalCertificateName: js.UndefOr[String] = js.undefined,
+      certificateName: js.UndefOr[String] = js.undefined,
       certificateUploadDate: js.UndefOr[Timestamp] = js.undefined,
-      regionalHostedZoneId: js.UndefOr[String] = js.undefined,
-      distributionDomainName: js.UndefOr[String] = js.undefined): DomainName = {
+      distributionDomainName: js.UndefOr[String] = js.undefined,
+      distributionHostedZoneId: js.UndefOr[String] = js.undefined,
+      domainName: js.UndefOr[String] = js.undefined,
+      endpointConfiguration: js.UndefOr[EndpointConfiguration] = js.undefined,
+      regionalCertificateArn: js.UndefOr[String] = js.undefined,
+      regionalCertificateName: js.UndefOr[String] = js.undefined,
+      regionalDomainName: js.UndefOr[String] = js.undefined,
+      regionalHostedZoneId: js.UndefOr[String] = js.undefined): DomainName = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "regionalCertificateArn" -> regionalCertificateArn.map { x => x.asInstanceOf[js.Any] },
-        "certificateName" -> certificateName.map { x => x.asInstanceOf[js.Any] },
-        "distributionHostedZoneId" -> distributionHostedZoneId.map { x => x.asInstanceOf[js.Any] },
-        "regionalDomainName" -> regionalDomainName.map { x => x.asInstanceOf[js.Any] },
-        "domainName" -> domainName.map { x => x.asInstanceOf[js.Any] },
         "certificateArn" -> certificateArn.map { x => x.asInstanceOf[js.Any] },
-        "endpointConfiguration" -> endpointConfiguration.map { x => x.asInstanceOf[js.Any] },
-        "regionalCertificateName" -> regionalCertificateName.map { x => x.asInstanceOf[js.Any] },
+        "certificateName" -> certificateName.map { x => x.asInstanceOf[js.Any] },
         "certificateUploadDate" -> certificateUploadDate.map { x => x.asInstanceOf[js.Any] },
-        "regionalHostedZoneId" -> regionalHostedZoneId.map { x => x.asInstanceOf[js.Any] },
-        "distributionDomainName" -> distributionDomainName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "distributionDomainName" -> distributionDomainName.map { x => x.asInstanceOf[js.Any] },
+        "distributionHostedZoneId" -> distributionHostedZoneId.map { x => x.asInstanceOf[js.Any] },
+        "domainName" -> domainName.map { x => x.asInstanceOf[js.Any] },
+        "endpointConfiguration" -> endpointConfiguration.map { x => x.asInstanceOf[js.Any] },
+        "regionalCertificateArn" -> regionalCertificateArn.map { x => x.asInstanceOf[js.Any] },
+        "regionalCertificateName" -> regionalCertificateName.map { x => x.asInstanceOf[js.Any] },
+        "regionalDomainName" -> regionalDomainName.map { x => x.asInstanceOf[js.Any] },
+        "regionalHostedZoneId" -> regionalHostedZoneId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DomainName]
     }
@@ -1828,17 +1828,17 @@ package apigateway {
    */
   @js.native
   trait DomainNames extends js.Object {
-    var position: js.UndefOr[String]
     var items: js.UndefOr[ListOfDomainName]
+    var position: js.UndefOr[String]
   }
 
   object DomainNames {
     def apply(
-      position: js.UndefOr[String] = js.undefined,
-      items: js.UndefOr[ListOfDomainName] = js.undefined): DomainNames = {
+      items: js.UndefOr[ListOfDomainName] = js.undefined,
+      position: js.UndefOr[String] = js.undefined): DomainNames = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "position" -> position.map { x => x.asInstanceOf[js.Any] },
-        "items" -> items.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "items" -> items.map { x => x.asInstanceOf[js.Any] },
+        "position" -> position.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DomainNames]
     }
@@ -1878,20 +1878,20 @@ package apigateway {
    */
   @js.native
   trait ExportResponse extends js.Object {
-    var contentType: js.UndefOr[String]
-    var contentDisposition: js.UndefOr[String]
     var body: js.UndefOr[Blob]
+    var contentDisposition: js.UndefOr[String]
+    var contentType: js.UndefOr[String]
   }
 
   object ExportResponse {
     def apply(
-      contentType: js.UndefOr[String] = js.undefined,
+      body: js.UndefOr[Blob] = js.undefined,
       contentDisposition: js.UndefOr[String] = js.undefined,
-      body: js.UndefOr[Blob] = js.undefined): ExportResponse = {
+      contentType: js.UndefOr[String] = js.undefined): ExportResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "contentType" -> contentType.map { x => x.asInstanceOf[js.Any] },
+        "body" -> body.map { x => x.asInstanceOf[js.Any] },
         "contentDisposition" -> contentDisposition.map { x => x.asInstanceOf[js.Any] },
-        "body" -> body.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "contentType" -> contentType.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ExportResponse]
     }
@@ -1902,17 +1902,17 @@ package apigateway {
    */
   @js.native
   trait FlushStageAuthorizersCacheRequest extends js.Object {
-    var restApiId: js.UndefOr[String]
-    var stageName: js.UndefOr[String]
+    var restApiId: String
+    var stageName: String
   }
 
   object FlushStageAuthorizersCacheRequest {
     def apply(
-      restApiId: js.UndefOr[String] = js.undefined,
-      stageName: js.UndefOr[String] = js.undefined): FlushStageAuthorizersCacheRequest = {
+      restApiId: String,
+      stageName: String): FlushStageAuthorizersCacheRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "restApiId" -> restApiId.map { x => x.asInstanceOf[js.Any] },
-        "stageName" -> stageName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "restApiId" -> restApiId.asInstanceOf[js.Any],
+        "stageName" -> stageName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[FlushStageAuthorizersCacheRequest]
     }
@@ -1923,17 +1923,17 @@ package apigateway {
    */
   @js.native
   trait FlushStageCacheRequest extends js.Object {
-    var restApiId: js.UndefOr[String]
-    var stageName: js.UndefOr[String]
+    var restApiId: String
+    var stageName: String
   }
 
   object FlushStageCacheRequest {
     def apply(
-      restApiId: js.UndefOr[String] = js.undefined,
-      stageName: js.UndefOr[String] = js.undefined): FlushStageCacheRequest = {
+      restApiId: String,
+      stageName: String): FlushStageCacheRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "restApiId" -> restApiId.map { x => x.asInstanceOf[js.Any] },
-        "stageName" -> stageName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "restApiId" -> restApiId.asInstanceOf[js.Any],
+        "stageName" -> stageName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[FlushStageCacheRequest]
     }
@@ -1944,26 +1944,26 @@ package apigateway {
    */
   @js.native
   trait GatewayResponse extends js.Object {
-    var statusCode: js.UndefOr[StatusCode]
     var defaultResponse: js.UndefOr[Boolean]
     var responseParameters: js.UndefOr[MapOfStringToString]
-    var responseType: js.UndefOr[GatewayResponseType]
     var responseTemplates: js.UndefOr[MapOfStringToString]
+    var responseType: js.UndefOr[GatewayResponseType]
+    var statusCode: js.UndefOr[StatusCode]
   }
 
   object GatewayResponse {
     def apply(
-      statusCode: js.UndefOr[StatusCode] = js.undefined,
       defaultResponse: js.UndefOr[Boolean] = js.undefined,
       responseParameters: js.UndefOr[MapOfStringToString] = js.undefined,
+      responseTemplates: js.UndefOr[MapOfStringToString] = js.undefined,
       responseType: js.UndefOr[GatewayResponseType] = js.undefined,
-      responseTemplates: js.UndefOr[MapOfStringToString] = js.undefined): GatewayResponse = {
+      statusCode: js.UndefOr[StatusCode] = js.undefined): GatewayResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "statusCode" -> statusCode.map { x => x.asInstanceOf[js.Any] },
         "defaultResponse" -> defaultResponse.map { x => x.asInstanceOf[js.Any] },
         "responseParameters" -> responseParameters.map { x => x.asInstanceOf[js.Any] },
+        "responseTemplates" -> responseTemplates.map { x => x.asInstanceOf[js.Any] },
         "responseType" -> responseType.map { x => x.asInstanceOf[js.Any] },
-        "responseTemplates" -> responseTemplates.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "statusCode" -> statusCode.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GatewayResponse]
     }
@@ -1999,17 +1999,17 @@ package apigateway {
    */
   @js.native
   trait GatewayResponses extends js.Object {
-    var position: js.UndefOr[String]
     var items: js.UndefOr[ListOfGatewayResponse]
+    var position: js.UndefOr[String]
   }
 
   object GatewayResponses {
     def apply(
-      position: js.UndefOr[String] = js.undefined,
-      items: js.UndefOr[ListOfGatewayResponse] = js.undefined): GatewayResponses = {
+      items: js.UndefOr[ListOfGatewayResponse] = js.undefined,
+      position: js.UndefOr[String] = js.undefined): GatewayResponses = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "position" -> position.map { x => x.asInstanceOf[js.Any] },
-        "items" -> items.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "items" -> items.map { x => x.asInstanceOf[js.Any] },
+        "position" -> position.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GatewayResponses]
     }
@@ -2054,16 +2054,16 @@ package apigateway {
    */
   @js.native
   trait GetApiKeyRequest extends js.Object {
-    var apiKey: js.UndefOr[String]
+    var apiKey: String
     var includeValue: js.UndefOr[NullableBoolean]
   }
 
   object GetApiKeyRequest {
     def apply(
-      apiKey: js.UndefOr[String] = js.undefined,
+      apiKey: String,
       includeValue: js.UndefOr[NullableBoolean] = js.undefined): GetApiKeyRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "apiKey" -> apiKey.map { x => x.asInstanceOf[js.Any] },
+        "apiKey" -> apiKey.asInstanceOf[js.Any],
         "includeValue" -> includeValue.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetApiKeyRequest]
@@ -2077,24 +2077,24 @@ package apigateway {
   trait GetApiKeysRequest extends js.Object {
     var customerId: js.UndefOr[String]
     var includeValues: js.UndefOr[NullableBoolean]
-    var position: js.UndefOr[String]
     var limit: js.UndefOr[NullableInteger]
     var nameQuery: js.UndefOr[String]
+    var position: js.UndefOr[String]
   }
 
   object GetApiKeysRequest {
     def apply(
       customerId: js.UndefOr[String] = js.undefined,
       includeValues: js.UndefOr[NullableBoolean] = js.undefined,
-      position: js.UndefOr[String] = js.undefined,
       limit: js.UndefOr[NullableInteger] = js.undefined,
-      nameQuery: js.UndefOr[String] = js.undefined): GetApiKeysRequest = {
+      nameQuery: js.UndefOr[String] = js.undefined,
+      position: js.UndefOr[String] = js.undefined): GetApiKeysRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "customerId" -> customerId.map { x => x.asInstanceOf[js.Any] },
         "includeValues" -> includeValues.map { x => x.asInstanceOf[js.Any] },
-        "position" -> position.map { x => x.asInstanceOf[js.Any] },
         "limit" -> limit.map { x => x.asInstanceOf[js.Any] },
-        "nameQuery" -> nameQuery.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "nameQuery" -> nameQuery.map { x => x.asInstanceOf[js.Any] },
+        "position" -> position.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetApiKeysRequest]
     }
@@ -2105,17 +2105,17 @@ package apigateway {
    */
   @js.native
   trait GetAuthorizerRequest extends js.Object {
-    var restApiId: js.UndefOr[String]
-    var authorizerId: js.UndefOr[String]
+    var authorizerId: String
+    var restApiId: String
   }
 
   object GetAuthorizerRequest {
     def apply(
-      restApiId: js.UndefOr[String] = js.undefined,
-      authorizerId: js.UndefOr[String] = js.undefined): GetAuthorizerRequest = {
+      authorizerId: String,
+      restApiId: String): GetAuthorizerRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "restApiId" -> restApiId.map { x => x.asInstanceOf[js.Any] },
-        "authorizerId" -> authorizerId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "authorizerId" -> authorizerId.asInstanceOf[js.Any],
+        "restApiId" -> restApiId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetAuthorizerRequest]
     }
@@ -2126,20 +2126,20 @@ package apigateway {
    */
   @js.native
   trait GetAuthorizersRequest extends js.Object {
-    var restApiId: js.UndefOr[String]
-    var position: js.UndefOr[String]
+    var restApiId: String
     var limit: js.UndefOr[NullableInteger]
+    var position: js.UndefOr[String]
   }
 
   object GetAuthorizersRequest {
     def apply(
-      restApiId: js.UndefOr[String] = js.undefined,
-      position: js.UndefOr[String] = js.undefined,
-      limit: js.UndefOr[NullableInteger] = js.undefined): GetAuthorizersRequest = {
+      restApiId: String,
+      limit: js.UndefOr[NullableInteger] = js.undefined,
+      position: js.UndefOr[String] = js.undefined): GetAuthorizersRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "restApiId" -> restApiId.map { x => x.asInstanceOf[js.Any] },
-        "position" -> position.map { x => x.asInstanceOf[js.Any] },
-        "limit" -> limit.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "restApiId" -> restApiId.asInstanceOf[js.Any],
+        "limit" -> limit.map { x => x.asInstanceOf[js.Any] },
+        "position" -> position.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetAuthorizersRequest]
     }
@@ -2150,17 +2150,17 @@ package apigateway {
    */
   @js.native
   trait GetBasePathMappingRequest extends js.Object {
-    var domainName: js.UndefOr[String]
-    var basePath: js.UndefOr[String]
+    var basePath: String
+    var domainName: String
   }
 
   object GetBasePathMappingRequest {
     def apply(
-      domainName: js.UndefOr[String] = js.undefined,
-      basePath: js.UndefOr[String] = js.undefined): GetBasePathMappingRequest = {
+      basePath: String,
+      domainName: String): GetBasePathMappingRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "domainName" -> domainName.map { x => x.asInstanceOf[js.Any] },
-        "basePath" -> basePath.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "basePath" -> basePath.asInstanceOf[js.Any],
+        "domainName" -> domainName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetBasePathMappingRequest]
     }
@@ -2171,20 +2171,20 @@ package apigateway {
    */
   @js.native
   trait GetBasePathMappingsRequest extends js.Object {
-    var domainName: js.UndefOr[String]
-    var position: js.UndefOr[String]
+    var domainName: String
     var limit: js.UndefOr[NullableInteger]
+    var position: js.UndefOr[String]
   }
 
   object GetBasePathMappingsRequest {
     def apply(
-      domainName: js.UndefOr[String] = js.undefined,
-      position: js.UndefOr[String] = js.undefined,
-      limit: js.UndefOr[NullableInteger] = js.undefined): GetBasePathMappingsRequest = {
+      domainName: String,
+      limit: js.UndefOr[NullableInteger] = js.undefined,
+      position: js.UndefOr[String] = js.undefined): GetBasePathMappingsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "domainName" -> domainName.map { x => x.asInstanceOf[js.Any] },
-        "position" -> position.map { x => x.asInstanceOf[js.Any] },
-        "limit" -> limit.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "domainName" -> domainName.asInstanceOf[js.Any],
+        "limit" -> limit.map { x => x.asInstanceOf[js.Any] },
+        "position" -> position.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetBasePathMappingsRequest]
     }
@@ -2195,14 +2195,14 @@ package apigateway {
    */
   @js.native
   trait GetClientCertificateRequest extends js.Object {
-    var clientCertificateId: js.UndefOr[String]
+    var clientCertificateId: String
   }
 
   object GetClientCertificateRequest {
     def apply(
-      clientCertificateId: js.UndefOr[String] = js.undefined): GetClientCertificateRequest = {
+      clientCertificateId: String): GetClientCertificateRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "clientCertificateId" -> clientCertificateId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "clientCertificateId" -> clientCertificateId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetClientCertificateRequest]
     }
@@ -2213,17 +2213,17 @@ package apigateway {
    */
   @js.native
   trait GetClientCertificatesRequest extends js.Object {
-    var position: js.UndefOr[String]
     var limit: js.UndefOr[NullableInteger]
+    var position: js.UndefOr[String]
   }
 
   object GetClientCertificatesRequest {
     def apply(
-      position: js.UndefOr[String] = js.undefined,
-      limit: js.UndefOr[NullableInteger] = js.undefined): GetClientCertificatesRequest = {
+      limit: js.UndefOr[NullableInteger] = js.undefined,
+      position: js.UndefOr[String] = js.undefined): GetClientCertificatesRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "position" -> position.map { x => x.asInstanceOf[js.Any] },
-        "limit" -> limit.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "limit" -> limit.map { x => x.asInstanceOf[js.Any] },
+        "position" -> position.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetClientCertificatesRequest]
     }
@@ -2234,19 +2234,19 @@ package apigateway {
    */
   @js.native
   trait GetDeploymentRequest extends js.Object {
-    var restApiId: js.UndefOr[String]
-    var deploymentId: js.UndefOr[String]
+    var deploymentId: String
+    var restApiId: String
     var embed: js.UndefOr[ListOfString]
   }
 
   object GetDeploymentRequest {
     def apply(
-      restApiId: js.UndefOr[String] = js.undefined,
-      deploymentId: js.UndefOr[String] = js.undefined,
+      deploymentId: String,
+      restApiId: String,
       embed: js.UndefOr[ListOfString] = js.undefined): GetDeploymentRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "restApiId" -> restApiId.map { x => x.asInstanceOf[js.Any] },
-        "deploymentId" -> deploymentId.map { x => x.asInstanceOf[js.Any] },
+        "deploymentId" -> deploymentId.asInstanceOf[js.Any],
+        "restApiId" -> restApiId.asInstanceOf[js.Any],
         "embed" -> embed.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetDeploymentRequest]
@@ -2258,20 +2258,20 @@ package apigateway {
    */
   @js.native
   trait GetDeploymentsRequest extends js.Object {
-    var restApiId: js.UndefOr[String]
-    var position: js.UndefOr[String]
+    var restApiId: String
     var limit: js.UndefOr[NullableInteger]
+    var position: js.UndefOr[String]
   }
 
   object GetDeploymentsRequest {
     def apply(
-      restApiId: js.UndefOr[String] = js.undefined,
-      position: js.UndefOr[String] = js.undefined,
-      limit: js.UndefOr[NullableInteger] = js.undefined): GetDeploymentsRequest = {
+      restApiId: String,
+      limit: js.UndefOr[NullableInteger] = js.undefined,
+      position: js.UndefOr[String] = js.undefined): GetDeploymentsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "restApiId" -> restApiId.map { x => x.asInstanceOf[js.Any] },
-        "position" -> position.map { x => x.asInstanceOf[js.Any] },
-        "limit" -> limit.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "restApiId" -> restApiId.asInstanceOf[js.Any],
+        "limit" -> limit.map { x => x.asInstanceOf[js.Any] },
+        "position" -> position.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetDeploymentsRequest]
     }
@@ -2282,17 +2282,17 @@ package apigateway {
    */
   @js.native
   trait GetDocumentationPartRequest extends js.Object {
-    var restApiId: js.UndefOr[String]
-    var documentationPartId: js.UndefOr[String]
+    var documentationPartId: String
+    var restApiId: String
   }
 
   object GetDocumentationPartRequest {
     def apply(
-      restApiId: js.UndefOr[String] = js.undefined,
-      documentationPartId: js.UndefOr[String] = js.undefined): GetDocumentationPartRequest = {
+      documentationPartId: String,
+      restApiId: String): GetDocumentationPartRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "restApiId" -> restApiId.map { x => x.asInstanceOf[js.Any] },
-        "documentationPartId" -> documentationPartId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "documentationPartId" -> documentationPartId.asInstanceOf[js.Any],
+        "restApiId" -> restApiId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetDocumentationPartRequest]
     }
@@ -2303,32 +2303,32 @@ package apigateway {
    */
   @js.native
   trait GetDocumentationPartsRequest extends js.Object {
+    var restApiId: String
+    var limit: js.UndefOr[NullableInteger]
     var locationStatus: js.UndefOr[LocationStatusType]
+    var nameQuery: js.UndefOr[String]
     var path: js.UndefOr[String]
     var position: js.UndefOr[String]
     var `type`: js.UndefOr[DocumentationPartType]
-    var limit: js.UndefOr[NullableInteger]
-    var nameQuery: js.UndefOr[String]
-    var restApiId: js.UndefOr[String]
   }
 
   object GetDocumentationPartsRequest {
     def apply(
+      restApiId: String,
+      limit: js.UndefOr[NullableInteger] = js.undefined,
       locationStatus: js.UndefOr[LocationStatusType] = js.undefined,
+      nameQuery: js.UndefOr[String] = js.undefined,
       path: js.UndefOr[String] = js.undefined,
       position: js.UndefOr[String] = js.undefined,
-      `type`: js.UndefOr[DocumentationPartType] = js.undefined,
-      limit: js.UndefOr[NullableInteger] = js.undefined,
-      nameQuery: js.UndefOr[String] = js.undefined,
-      restApiId: js.UndefOr[String] = js.undefined): GetDocumentationPartsRequest = {
+      `type`: js.UndefOr[DocumentationPartType] = js.undefined): GetDocumentationPartsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "restApiId" -> restApiId.asInstanceOf[js.Any],
+        "limit" -> limit.map { x => x.asInstanceOf[js.Any] },
         "locationStatus" -> locationStatus.map { x => x.asInstanceOf[js.Any] },
+        "nameQuery" -> nameQuery.map { x => x.asInstanceOf[js.Any] },
         "path" -> path.map { x => x.asInstanceOf[js.Any] },
         "position" -> position.map { x => x.asInstanceOf[js.Any] },
-        "`type`" -> `type`.map { x => x.asInstanceOf[js.Any] },
-        "limit" -> limit.map { x => x.asInstanceOf[js.Any] },
-        "nameQuery" -> nameQuery.map { x => x.asInstanceOf[js.Any] },
-        "restApiId" -> restApiId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "`type`" -> `type`.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetDocumentationPartsRequest]
     }
@@ -2339,17 +2339,17 @@ package apigateway {
    */
   @js.native
   trait GetDocumentationVersionRequest extends js.Object {
-    var restApiId: js.UndefOr[String]
-    var documentationVersion: js.UndefOr[String]
+    var documentationVersion: String
+    var restApiId: String
   }
 
   object GetDocumentationVersionRequest {
     def apply(
-      restApiId: js.UndefOr[String] = js.undefined,
-      documentationVersion: js.UndefOr[String] = js.undefined): GetDocumentationVersionRequest = {
+      documentationVersion: String,
+      restApiId: String): GetDocumentationVersionRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "restApiId" -> restApiId.map { x => x.asInstanceOf[js.Any] },
-        "documentationVersion" -> documentationVersion.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "documentationVersion" -> documentationVersion.asInstanceOf[js.Any],
+        "restApiId" -> restApiId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetDocumentationVersionRequest]
     }
@@ -2360,20 +2360,20 @@ package apigateway {
    */
   @js.native
   trait GetDocumentationVersionsRequest extends js.Object {
-    var restApiId: js.UndefOr[String]
-    var position: js.UndefOr[String]
+    var restApiId: String
     var limit: js.UndefOr[NullableInteger]
+    var position: js.UndefOr[String]
   }
 
   object GetDocumentationVersionsRequest {
     def apply(
-      restApiId: js.UndefOr[String] = js.undefined,
-      position: js.UndefOr[String] = js.undefined,
-      limit: js.UndefOr[NullableInteger] = js.undefined): GetDocumentationVersionsRequest = {
+      restApiId: String,
+      limit: js.UndefOr[NullableInteger] = js.undefined,
+      position: js.UndefOr[String] = js.undefined): GetDocumentationVersionsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "restApiId" -> restApiId.map { x => x.asInstanceOf[js.Any] },
-        "position" -> position.map { x => x.asInstanceOf[js.Any] },
-        "limit" -> limit.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "restApiId" -> restApiId.asInstanceOf[js.Any],
+        "limit" -> limit.map { x => x.asInstanceOf[js.Any] },
+        "position" -> position.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetDocumentationVersionsRequest]
     }
@@ -2384,14 +2384,14 @@ package apigateway {
    */
   @js.native
   trait GetDomainNameRequest extends js.Object {
-    var domainName: js.UndefOr[String]
+    var domainName: String
   }
 
   object GetDomainNameRequest {
     def apply(
-      domainName: js.UndefOr[String] = js.undefined): GetDomainNameRequest = {
+      domainName: String): GetDomainNameRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "domainName" -> domainName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "domainName" -> domainName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetDomainNameRequest]
     }
@@ -2402,17 +2402,17 @@ package apigateway {
    */
   @js.native
   trait GetDomainNamesRequest extends js.Object {
-    var position: js.UndefOr[String]
     var limit: js.UndefOr[NullableInteger]
+    var position: js.UndefOr[String]
   }
 
   object GetDomainNamesRequest {
     def apply(
-      position: js.UndefOr[String] = js.undefined,
-      limit: js.UndefOr[NullableInteger] = js.undefined): GetDomainNamesRequest = {
+      limit: js.UndefOr[NullableInteger] = js.undefined,
+      position: js.UndefOr[String] = js.undefined): GetDomainNamesRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "position" -> position.map { x => x.asInstanceOf[js.Any] },
-        "limit" -> limit.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "limit" -> limit.map { x => x.asInstanceOf[js.Any] },
+        "position" -> position.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetDomainNamesRequest]
     }
@@ -2423,26 +2423,26 @@ package apigateway {
    */
   @js.native
   trait GetExportRequest extends js.Object {
-    var exportType: js.UndefOr[String]
-    var stageName: js.UndefOr[String]
+    var exportType: String
+    var restApiId: String
+    var stageName: String
     var accepts: js.UndefOr[String]
     var parameters: js.UndefOr[MapOfStringToString]
-    var restApiId: js.UndefOr[String]
   }
 
   object GetExportRequest {
     def apply(
-      exportType: js.UndefOr[String] = js.undefined,
-      stageName: js.UndefOr[String] = js.undefined,
+      exportType: String,
+      restApiId: String,
+      stageName: String,
       accepts: js.UndefOr[String] = js.undefined,
-      parameters: js.UndefOr[MapOfStringToString] = js.undefined,
-      restApiId: js.UndefOr[String] = js.undefined): GetExportRequest = {
+      parameters: js.UndefOr[MapOfStringToString] = js.undefined): GetExportRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "exportType" -> exportType.map { x => x.asInstanceOf[js.Any] },
-        "stageName" -> stageName.map { x => x.asInstanceOf[js.Any] },
+        "exportType" -> exportType.asInstanceOf[js.Any],
+        "restApiId" -> restApiId.asInstanceOf[js.Any],
+        "stageName" -> stageName.asInstanceOf[js.Any],
         "accepts" -> accepts.map { x => x.asInstanceOf[js.Any] },
-        "parameters" -> parameters.map { x => x.asInstanceOf[js.Any] },
-        "restApiId" -> restApiId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "parameters" -> parameters.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetExportRequest]
     }
@@ -2453,17 +2453,17 @@ package apigateway {
    */
   @js.native
   trait GetGatewayResponseRequest extends js.Object {
-    var restApiId: js.UndefOr[String]
-    var responseType: js.UndefOr[GatewayResponseType]
+    var responseType: GatewayResponseType
+    var restApiId: String
   }
 
   object GetGatewayResponseRequest {
     def apply(
-      restApiId: js.UndefOr[String] = js.undefined,
-      responseType: js.UndefOr[GatewayResponseType] = js.undefined): GetGatewayResponseRequest = {
+      responseType: GatewayResponseType,
+      restApiId: String): GetGatewayResponseRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "restApiId" -> restApiId.map { x => x.asInstanceOf[js.Any] },
-        "responseType" -> responseType.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "responseType" -> responseType.asInstanceOf[js.Any],
+        "restApiId" -> restApiId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetGatewayResponseRequest]
     }
@@ -2474,20 +2474,20 @@ package apigateway {
    */
   @js.native
   trait GetGatewayResponsesRequest extends js.Object {
-    var restApiId: js.UndefOr[String]
-    var position: js.UndefOr[String]
+    var restApiId: String
     var limit: js.UndefOr[NullableInteger]
+    var position: js.UndefOr[String]
   }
 
   object GetGatewayResponsesRequest {
     def apply(
-      restApiId: js.UndefOr[String] = js.undefined,
-      position: js.UndefOr[String] = js.undefined,
-      limit: js.UndefOr[NullableInteger] = js.undefined): GetGatewayResponsesRequest = {
+      restApiId: String,
+      limit: js.UndefOr[NullableInteger] = js.undefined,
+      position: js.UndefOr[String] = js.undefined): GetGatewayResponsesRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "restApiId" -> restApiId.map { x => x.asInstanceOf[js.Any] },
-        "position" -> position.map { x => x.asInstanceOf[js.Any] },
-        "limit" -> limit.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "restApiId" -> restApiId.asInstanceOf[js.Any],
+        "limit" -> limit.map { x => x.asInstanceOf[js.Any] },
+        "position" -> position.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetGatewayResponsesRequest]
     }
@@ -2498,20 +2498,20 @@ package apigateway {
    */
   @js.native
   trait GetIntegrationRequest extends js.Object {
-    var restApiId: js.UndefOr[String]
-    var resourceId: js.UndefOr[String]
-    var httpMethod: js.UndefOr[String]
+    var httpMethod: String
+    var resourceId: String
+    var restApiId: String
   }
 
   object GetIntegrationRequest {
     def apply(
-      restApiId: js.UndefOr[String] = js.undefined,
-      resourceId: js.UndefOr[String] = js.undefined,
-      httpMethod: js.UndefOr[String] = js.undefined): GetIntegrationRequest = {
+      httpMethod: String,
+      resourceId: String,
+      restApiId: String): GetIntegrationRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "restApiId" -> restApiId.map { x => x.asInstanceOf[js.Any] },
-        "resourceId" -> resourceId.map { x => x.asInstanceOf[js.Any] },
-        "httpMethod" -> httpMethod.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "httpMethod" -> httpMethod.asInstanceOf[js.Any],
+        "resourceId" -> resourceId.asInstanceOf[js.Any],
+        "restApiId" -> restApiId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetIntegrationRequest]
     }
@@ -2522,23 +2522,23 @@ package apigateway {
    */
   @js.native
   trait GetIntegrationResponseRequest extends js.Object {
-    var restApiId: js.UndefOr[String]
-    var resourceId: js.UndefOr[String]
-    var httpMethod: js.UndefOr[String]
-    var statusCode: js.UndefOr[StatusCode]
+    var httpMethod: String
+    var resourceId: String
+    var restApiId: String
+    var statusCode: StatusCode
   }
 
   object GetIntegrationResponseRequest {
     def apply(
-      restApiId: js.UndefOr[String] = js.undefined,
-      resourceId: js.UndefOr[String] = js.undefined,
-      httpMethod: js.UndefOr[String] = js.undefined,
-      statusCode: js.UndefOr[StatusCode] = js.undefined): GetIntegrationResponseRequest = {
+      httpMethod: String,
+      resourceId: String,
+      restApiId: String,
+      statusCode: StatusCode): GetIntegrationResponseRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "restApiId" -> restApiId.map { x => x.asInstanceOf[js.Any] },
-        "resourceId" -> resourceId.map { x => x.asInstanceOf[js.Any] },
-        "httpMethod" -> httpMethod.map { x => x.asInstanceOf[js.Any] },
-        "statusCode" -> statusCode.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "httpMethod" -> httpMethod.asInstanceOf[js.Any],
+        "resourceId" -> resourceId.asInstanceOf[js.Any],
+        "restApiId" -> restApiId.asInstanceOf[js.Any],
+        "statusCode" -> statusCode.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetIntegrationResponseRequest]
     }
@@ -2549,20 +2549,20 @@ package apigateway {
    */
   @js.native
   trait GetMethodRequest extends js.Object {
-    var restApiId: js.UndefOr[String]
-    var resourceId: js.UndefOr[String]
-    var httpMethod: js.UndefOr[String]
+    var httpMethod: String
+    var resourceId: String
+    var restApiId: String
   }
 
   object GetMethodRequest {
     def apply(
-      restApiId: js.UndefOr[String] = js.undefined,
-      resourceId: js.UndefOr[String] = js.undefined,
-      httpMethod: js.UndefOr[String] = js.undefined): GetMethodRequest = {
+      httpMethod: String,
+      resourceId: String,
+      restApiId: String): GetMethodRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "restApiId" -> restApiId.map { x => x.asInstanceOf[js.Any] },
-        "resourceId" -> resourceId.map { x => x.asInstanceOf[js.Any] },
-        "httpMethod" -> httpMethod.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "httpMethod" -> httpMethod.asInstanceOf[js.Any],
+        "resourceId" -> resourceId.asInstanceOf[js.Any],
+        "restApiId" -> restApiId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetMethodRequest]
     }
@@ -2573,23 +2573,23 @@ package apigateway {
    */
   @js.native
   trait GetMethodResponseRequest extends js.Object {
-    var restApiId: js.UndefOr[String]
-    var resourceId: js.UndefOr[String]
-    var httpMethod: js.UndefOr[String]
-    var statusCode: js.UndefOr[StatusCode]
+    var httpMethod: String
+    var resourceId: String
+    var restApiId: String
+    var statusCode: StatusCode
   }
 
   object GetMethodResponseRequest {
     def apply(
-      restApiId: js.UndefOr[String] = js.undefined,
-      resourceId: js.UndefOr[String] = js.undefined,
-      httpMethod: js.UndefOr[String] = js.undefined,
-      statusCode: js.UndefOr[StatusCode] = js.undefined): GetMethodResponseRequest = {
+      httpMethod: String,
+      resourceId: String,
+      restApiId: String,
+      statusCode: StatusCode): GetMethodResponseRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "restApiId" -> restApiId.map { x => x.asInstanceOf[js.Any] },
-        "resourceId" -> resourceId.map { x => x.asInstanceOf[js.Any] },
-        "httpMethod" -> httpMethod.map { x => x.asInstanceOf[js.Any] },
-        "statusCode" -> statusCode.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "httpMethod" -> httpMethod.asInstanceOf[js.Any],
+        "resourceId" -> resourceId.asInstanceOf[js.Any],
+        "restApiId" -> restApiId.asInstanceOf[js.Any],
+        "statusCode" -> statusCode.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetMethodResponseRequest]
     }
@@ -2600,19 +2600,19 @@ package apigateway {
    */
   @js.native
   trait GetModelRequest extends js.Object {
-    var restApiId: js.UndefOr[String]
-    var modelName: js.UndefOr[String]
+    var modelName: String
+    var restApiId: String
     var flatten: js.UndefOr[Boolean]
   }
 
   object GetModelRequest {
     def apply(
-      restApiId: js.UndefOr[String] = js.undefined,
-      modelName: js.UndefOr[String] = js.undefined,
+      modelName: String,
+      restApiId: String,
       flatten: js.UndefOr[Boolean] = js.undefined): GetModelRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "restApiId" -> restApiId.map { x => x.asInstanceOf[js.Any] },
-        "modelName" -> modelName.map { x => x.asInstanceOf[js.Any] },
+        "modelName" -> modelName.asInstanceOf[js.Any],
+        "restApiId" -> restApiId.asInstanceOf[js.Any],
         "flatten" -> flatten.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetModelRequest]
@@ -2624,17 +2624,17 @@ package apigateway {
    */
   @js.native
   trait GetModelTemplateRequest extends js.Object {
-    var restApiId: js.UndefOr[String]
-    var modelName: js.UndefOr[String]
+    var modelName: String
+    var restApiId: String
   }
 
   object GetModelTemplateRequest {
     def apply(
-      restApiId: js.UndefOr[String] = js.undefined,
-      modelName: js.UndefOr[String] = js.undefined): GetModelTemplateRequest = {
+      modelName: String,
+      restApiId: String): GetModelTemplateRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "restApiId" -> restApiId.map { x => x.asInstanceOf[js.Any] },
-        "modelName" -> modelName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "modelName" -> modelName.asInstanceOf[js.Any],
+        "restApiId" -> restApiId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetModelTemplateRequest]
     }
@@ -2645,20 +2645,20 @@ package apigateway {
    */
   @js.native
   trait GetModelsRequest extends js.Object {
-    var restApiId: js.UndefOr[String]
-    var position: js.UndefOr[String]
+    var restApiId: String
     var limit: js.UndefOr[NullableInteger]
+    var position: js.UndefOr[String]
   }
 
   object GetModelsRequest {
     def apply(
-      restApiId: js.UndefOr[String] = js.undefined,
-      position: js.UndefOr[String] = js.undefined,
-      limit: js.UndefOr[NullableInteger] = js.undefined): GetModelsRequest = {
+      restApiId: String,
+      limit: js.UndefOr[NullableInteger] = js.undefined,
+      position: js.UndefOr[String] = js.undefined): GetModelsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "restApiId" -> restApiId.map { x => x.asInstanceOf[js.Any] },
-        "position" -> position.map { x => x.asInstanceOf[js.Any] },
-        "limit" -> limit.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "restApiId" -> restApiId.asInstanceOf[js.Any],
+        "limit" -> limit.map { x => x.asInstanceOf[js.Any] },
+        "position" -> position.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetModelsRequest]
     }
@@ -2669,17 +2669,17 @@ package apigateway {
    */
   @js.native
   trait GetRequestValidatorRequest extends js.Object {
-    var restApiId: js.UndefOr[String]
-    var requestValidatorId: js.UndefOr[String]
+    var requestValidatorId: String
+    var restApiId: String
   }
 
   object GetRequestValidatorRequest {
     def apply(
-      restApiId: js.UndefOr[String] = js.undefined,
-      requestValidatorId: js.UndefOr[String] = js.undefined): GetRequestValidatorRequest = {
+      requestValidatorId: String,
+      restApiId: String): GetRequestValidatorRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "restApiId" -> restApiId.map { x => x.asInstanceOf[js.Any] },
-        "requestValidatorId" -> requestValidatorId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "requestValidatorId" -> requestValidatorId.asInstanceOf[js.Any],
+        "restApiId" -> restApiId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetRequestValidatorRequest]
     }
@@ -2690,20 +2690,20 @@ package apigateway {
    */
   @js.native
   trait GetRequestValidatorsRequest extends js.Object {
-    var restApiId: js.UndefOr[String]
-    var position: js.UndefOr[String]
+    var restApiId: String
     var limit: js.UndefOr[NullableInteger]
+    var position: js.UndefOr[String]
   }
 
   object GetRequestValidatorsRequest {
     def apply(
-      restApiId: js.UndefOr[String] = js.undefined,
-      position: js.UndefOr[String] = js.undefined,
-      limit: js.UndefOr[NullableInteger] = js.undefined): GetRequestValidatorsRequest = {
+      restApiId: String,
+      limit: js.UndefOr[NullableInteger] = js.undefined,
+      position: js.UndefOr[String] = js.undefined): GetRequestValidatorsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "restApiId" -> restApiId.map { x => x.asInstanceOf[js.Any] },
-        "position" -> position.map { x => x.asInstanceOf[js.Any] },
-        "limit" -> limit.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "restApiId" -> restApiId.asInstanceOf[js.Any],
+        "limit" -> limit.map { x => x.asInstanceOf[js.Any] },
+        "position" -> position.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetRequestValidatorsRequest]
     }
@@ -2714,19 +2714,19 @@ package apigateway {
    */
   @js.native
   trait GetResourceRequest extends js.Object {
-    var restApiId: js.UndefOr[String]
-    var resourceId: js.UndefOr[String]
+    var resourceId: String
+    var restApiId: String
     var embed: js.UndefOr[ListOfString]
   }
 
   object GetResourceRequest {
     def apply(
-      restApiId: js.UndefOr[String] = js.undefined,
-      resourceId: js.UndefOr[String] = js.undefined,
+      resourceId: String,
+      restApiId: String,
       embed: js.UndefOr[ListOfString] = js.undefined): GetResourceRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "restApiId" -> restApiId.map { x => x.asInstanceOf[js.Any] },
-        "resourceId" -> resourceId.map { x => x.asInstanceOf[js.Any] },
+        "resourceId" -> resourceId.asInstanceOf[js.Any],
+        "restApiId" -> restApiId.asInstanceOf[js.Any],
         "embed" -> embed.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetResourceRequest]
@@ -2738,23 +2738,23 @@ package apigateway {
    */
   @js.native
   trait GetResourcesRequest extends js.Object {
-    var restApiId: js.UndefOr[String]
-    var position: js.UndefOr[String]
-    var limit: js.UndefOr[NullableInteger]
+    var restApiId: String
     var embed: js.UndefOr[ListOfString]
+    var limit: js.UndefOr[NullableInteger]
+    var position: js.UndefOr[String]
   }
 
   object GetResourcesRequest {
     def apply(
-      restApiId: js.UndefOr[String] = js.undefined,
-      position: js.UndefOr[String] = js.undefined,
+      restApiId: String,
+      embed: js.UndefOr[ListOfString] = js.undefined,
       limit: js.UndefOr[NullableInteger] = js.undefined,
-      embed: js.UndefOr[ListOfString] = js.undefined): GetResourcesRequest = {
+      position: js.UndefOr[String] = js.undefined): GetResourcesRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "restApiId" -> restApiId.map { x => x.asInstanceOf[js.Any] },
-        "position" -> position.map { x => x.asInstanceOf[js.Any] },
+        "restApiId" -> restApiId.asInstanceOf[js.Any],
+        "embed" -> embed.map { x => x.asInstanceOf[js.Any] },
         "limit" -> limit.map { x => x.asInstanceOf[js.Any] },
-        "embed" -> embed.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "position" -> position.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetResourcesRequest]
     }
@@ -2765,14 +2765,14 @@ package apigateway {
    */
   @js.native
   trait GetRestApiRequest extends js.Object {
-    var restApiId: js.UndefOr[String]
+    var restApiId: String
   }
 
   object GetRestApiRequest {
     def apply(
-      restApiId: js.UndefOr[String] = js.undefined): GetRestApiRequest = {
+      restApiId: String): GetRestApiRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "restApiId" -> restApiId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "restApiId" -> restApiId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetRestApiRequest]
     }
@@ -2783,17 +2783,17 @@ package apigateway {
    */
   @js.native
   trait GetRestApisRequest extends js.Object {
-    var position: js.UndefOr[String]
     var limit: js.UndefOr[NullableInteger]
+    var position: js.UndefOr[String]
   }
 
   object GetRestApisRequest {
     def apply(
-      position: js.UndefOr[String] = js.undefined,
-      limit: js.UndefOr[NullableInteger] = js.undefined): GetRestApisRequest = {
+      limit: js.UndefOr[NullableInteger] = js.undefined,
+      position: js.UndefOr[String] = js.undefined): GetRestApisRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "position" -> position.map { x => x.asInstanceOf[js.Any] },
-        "limit" -> limit.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "limit" -> limit.map { x => x.asInstanceOf[js.Any] },
+        "position" -> position.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetRestApisRequest]
     }
@@ -2804,22 +2804,22 @@ package apigateway {
    */
   @js.native
   trait GetSdkRequest extends js.Object {
-    var restApiId: js.UndefOr[String]
-    var stageName: js.UndefOr[String]
-    var sdkType: js.UndefOr[String]
+    var restApiId: String
+    var sdkType: String
+    var stageName: String
     var parameters: js.UndefOr[MapOfStringToString]
   }
 
   object GetSdkRequest {
     def apply(
-      restApiId: js.UndefOr[String] = js.undefined,
-      stageName: js.UndefOr[String] = js.undefined,
-      sdkType: js.UndefOr[String] = js.undefined,
+      restApiId: String,
+      sdkType: String,
+      stageName: String,
       parameters: js.UndefOr[MapOfStringToString] = js.undefined): GetSdkRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "restApiId" -> restApiId.map { x => x.asInstanceOf[js.Any] },
-        "stageName" -> stageName.map { x => x.asInstanceOf[js.Any] },
-        "sdkType" -> sdkType.map { x => x.asInstanceOf[js.Any] },
+        "restApiId" -> restApiId.asInstanceOf[js.Any],
+        "sdkType" -> sdkType.asInstanceOf[js.Any],
+        "stageName" -> stageName.asInstanceOf[js.Any],
         "parameters" -> parameters.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetSdkRequest]
@@ -2831,14 +2831,14 @@ package apigateway {
    */
   @js.native
   trait GetSdkTypeRequest extends js.Object {
-    var id: js.UndefOr[String]
+    var id: String
   }
 
   object GetSdkTypeRequest {
     def apply(
-      id: js.UndefOr[String] = js.undefined): GetSdkTypeRequest = {
+      id: String): GetSdkTypeRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "id" -> id.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "id" -> id.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetSdkTypeRequest]
     }
@@ -2849,17 +2849,17 @@ package apigateway {
    */
   @js.native
   trait GetSdkTypesRequest extends js.Object {
-    var position: js.UndefOr[String]
     var limit: js.UndefOr[NullableInteger]
+    var position: js.UndefOr[String]
   }
 
   object GetSdkTypesRequest {
     def apply(
-      position: js.UndefOr[String] = js.undefined,
-      limit: js.UndefOr[NullableInteger] = js.undefined): GetSdkTypesRequest = {
+      limit: js.UndefOr[NullableInteger] = js.undefined,
+      position: js.UndefOr[String] = js.undefined): GetSdkTypesRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "position" -> position.map { x => x.asInstanceOf[js.Any] },
-        "limit" -> limit.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "limit" -> limit.map { x => x.asInstanceOf[js.Any] },
+        "position" -> position.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetSdkTypesRequest]
     }
@@ -2870,17 +2870,17 @@ package apigateway {
    */
   @js.native
   trait GetStageRequest extends js.Object {
-    var restApiId: js.UndefOr[String]
-    var stageName: js.UndefOr[String]
+    var restApiId: String
+    var stageName: String
   }
 
   object GetStageRequest {
     def apply(
-      restApiId: js.UndefOr[String] = js.undefined,
-      stageName: js.UndefOr[String] = js.undefined): GetStageRequest = {
+      restApiId: String,
+      stageName: String): GetStageRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "restApiId" -> restApiId.map { x => x.asInstanceOf[js.Any] },
-        "stageName" -> stageName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "restApiId" -> restApiId.asInstanceOf[js.Any],
+        "stageName" -> stageName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetStageRequest]
     }
@@ -2891,16 +2891,16 @@ package apigateway {
    */
   @js.native
   trait GetStagesRequest extends js.Object {
-    var restApiId: js.UndefOr[String]
+    var restApiId: String
     var deploymentId: js.UndefOr[String]
   }
 
   object GetStagesRequest {
     def apply(
-      restApiId: js.UndefOr[String] = js.undefined,
+      restApiId: String,
       deploymentId: js.UndefOr[String] = js.undefined): GetStagesRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "restApiId" -> restApiId.map { x => x.asInstanceOf[js.Any] },
+        "restApiId" -> restApiId.asInstanceOf[js.Any],
         "deploymentId" -> deploymentId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetStagesRequest]
@@ -2912,20 +2912,20 @@ package apigateway {
    */
   @js.native
   trait GetTagsRequest extends js.Object {
-    var resourceArn: js.UndefOr[String]
-    var position: js.UndefOr[String]
+    var resourceArn: String
     var limit: js.UndefOr[NullableInteger]
+    var position: js.UndefOr[String]
   }
 
   object GetTagsRequest {
     def apply(
-      resourceArn: js.UndefOr[String] = js.undefined,
-      position: js.UndefOr[String] = js.undefined,
-      limit: js.UndefOr[NullableInteger] = js.undefined): GetTagsRequest = {
+      resourceArn: String,
+      limit: js.UndefOr[NullableInteger] = js.undefined,
+      position: js.UndefOr[String] = js.undefined): GetTagsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "resourceArn" -> resourceArn.map { x => x.asInstanceOf[js.Any] },
-        "position" -> position.map { x => x.asInstanceOf[js.Any] },
-        "limit" -> limit.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "resourceArn" -> resourceArn.asInstanceOf[js.Any],
+        "limit" -> limit.map { x => x.asInstanceOf[js.Any] },
+        "position" -> position.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetTagsRequest]
     }
@@ -2936,17 +2936,17 @@ package apigateway {
    */
   @js.native
   trait GetUsagePlanKeyRequest extends js.Object {
-    var usagePlanId: js.UndefOr[String]
-    var keyId: js.UndefOr[String]
+    var keyId: String
+    var usagePlanId: String
   }
 
   object GetUsagePlanKeyRequest {
     def apply(
-      usagePlanId: js.UndefOr[String] = js.undefined,
-      keyId: js.UndefOr[String] = js.undefined): GetUsagePlanKeyRequest = {
+      keyId: String,
+      usagePlanId: String): GetUsagePlanKeyRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "usagePlanId" -> usagePlanId.map { x => x.asInstanceOf[js.Any] },
-        "keyId" -> keyId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "keyId" -> keyId.asInstanceOf[js.Any],
+        "usagePlanId" -> usagePlanId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetUsagePlanKeyRequest]
     }
@@ -2957,23 +2957,23 @@ package apigateway {
    */
   @js.native
   trait GetUsagePlanKeysRequest extends js.Object {
-    var usagePlanId: js.UndefOr[String]
-    var position: js.UndefOr[String]
+    var usagePlanId: String
     var limit: js.UndefOr[NullableInteger]
     var nameQuery: js.UndefOr[String]
+    var position: js.UndefOr[String]
   }
 
   object GetUsagePlanKeysRequest {
     def apply(
-      usagePlanId: js.UndefOr[String] = js.undefined,
-      position: js.UndefOr[String] = js.undefined,
+      usagePlanId: String,
       limit: js.UndefOr[NullableInteger] = js.undefined,
-      nameQuery: js.UndefOr[String] = js.undefined): GetUsagePlanKeysRequest = {
+      nameQuery: js.UndefOr[String] = js.undefined,
+      position: js.UndefOr[String] = js.undefined): GetUsagePlanKeysRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "usagePlanId" -> usagePlanId.map { x => x.asInstanceOf[js.Any] },
-        "position" -> position.map { x => x.asInstanceOf[js.Any] },
+        "usagePlanId" -> usagePlanId.asInstanceOf[js.Any],
         "limit" -> limit.map { x => x.asInstanceOf[js.Any] },
-        "nameQuery" -> nameQuery.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "nameQuery" -> nameQuery.map { x => x.asInstanceOf[js.Any] },
+        "position" -> position.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetUsagePlanKeysRequest]
     }
@@ -2984,14 +2984,14 @@ package apigateway {
    */
   @js.native
   trait GetUsagePlanRequest extends js.Object {
-    var usagePlanId: js.UndefOr[String]
+    var usagePlanId: String
   }
 
   object GetUsagePlanRequest {
     def apply(
-      usagePlanId: js.UndefOr[String] = js.undefined): GetUsagePlanRequest = {
+      usagePlanId: String): GetUsagePlanRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "usagePlanId" -> usagePlanId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "usagePlanId" -> usagePlanId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetUsagePlanRequest]
     }
@@ -3002,20 +3002,20 @@ package apigateway {
    */
   @js.native
   trait GetUsagePlansRequest extends js.Object {
-    var position: js.UndefOr[String]
     var keyId: js.UndefOr[String]
     var limit: js.UndefOr[NullableInteger]
+    var position: js.UndefOr[String]
   }
 
   object GetUsagePlansRequest {
     def apply(
-      position: js.UndefOr[String] = js.undefined,
       keyId: js.UndefOr[String] = js.undefined,
-      limit: js.UndefOr[NullableInteger] = js.undefined): GetUsagePlansRequest = {
+      limit: js.UndefOr[NullableInteger] = js.undefined,
+      position: js.UndefOr[String] = js.undefined): GetUsagePlansRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "position" -> position.map { x => x.asInstanceOf[js.Any] },
         "keyId" -> keyId.map { x => x.asInstanceOf[js.Any] },
-        "limit" -> limit.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "limit" -> limit.map { x => x.asInstanceOf[js.Any] },
+        "position" -> position.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetUsagePlansRequest]
     }
@@ -3026,29 +3026,29 @@ package apigateway {
    */
   @js.native
   trait GetUsageRequest extends js.Object {
-    var endDate: js.UndefOr[String]
+    var endDate: String
+    var startDate: String
+    var usagePlanId: String
     var keyId: js.UndefOr[String]
-    var usagePlanId: js.UndefOr[String]
-    var position: js.UndefOr[String]
     var limit: js.UndefOr[NullableInteger]
-    var startDate: js.UndefOr[String]
+    var position: js.UndefOr[String]
   }
 
   object GetUsageRequest {
     def apply(
-      endDate: js.UndefOr[String] = js.undefined,
+      endDate: String,
+      startDate: String,
+      usagePlanId: String,
       keyId: js.UndefOr[String] = js.undefined,
-      usagePlanId: js.UndefOr[String] = js.undefined,
-      position: js.UndefOr[String] = js.undefined,
       limit: js.UndefOr[NullableInteger] = js.undefined,
-      startDate: js.UndefOr[String] = js.undefined): GetUsageRequest = {
+      position: js.UndefOr[String] = js.undefined): GetUsageRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "endDate" -> endDate.map { x => x.asInstanceOf[js.Any] },
+        "endDate" -> endDate.asInstanceOf[js.Any],
+        "startDate" -> startDate.asInstanceOf[js.Any],
+        "usagePlanId" -> usagePlanId.asInstanceOf[js.Any],
         "keyId" -> keyId.map { x => x.asInstanceOf[js.Any] },
-        "usagePlanId" -> usagePlanId.map { x => x.asInstanceOf[js.Any] },
-        "position" -> position.map { x => x.asInstanceOf[js.Any] },
         "limit" -> limit.map { x => x.asInstanceOf[js.Any] },
-        "startDate" -> startDate.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "position" -> position.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetUsageRequest]
     }
@@ -3059,14 +3059,14 @@ package apigateway {
    */
   @js.native
   trait GetVpcLinkRequest extends js.Object {
-    var vpcLinkId: js.UndefOr[String]
+    var vpcLinkId: String
   }
 
   object GetVpcLinkRequest {
     def apply(
-      vpcLinkId: js.UndefOr[String] = js.undefined): GetVpcLinkRequest = {
+      vpcLinkId: String): GetVpcLinkRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "vpcLinkId" -> vpcLinkId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "vpcLinkId" -> vpcLinkId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetVpcLinkRequest]
     }
@@ -3077,17 +3077,17 @@ package apigateway {
    */
   @js.native
   trait GetVpcLinksRequest extends js.Object {
-    var position: js.UndefOr[String]
     var limit: js.UndefOr[NullableInteger]
+    var position: js.UndefOr[String]
   }
 
   object GetVpcLinksRequest {
     def apply(
-      position: js.UndefOr[String] = js.undefined,
-      limit: js.UndefOr[NullableInteger] = js.undefined): GetVpcLinksRequest = {
+      limit: js.UndefOr[NullableInteger] = js.undefined,
+      position: js.UndefOr[String] = js.undefined): GetVpcLinksRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "position" -> position.map { x => x.asInstanceOf[js.Any] },
-        "limit" -> limit.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "limit" -> limit.map { x => x.asInstanceOf[js.Any] },
+        "position" -> position.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetVpcLinksRequest]
     }
@@ -3098,19 +3098,19 @@ package apigateway {
    */
   @js.native
   trait ImportApiKeysRequest extends js.Object {
-    var body: js.UndefOr[Blob]
-    var format: js.UndefOr[ApiKeysFormat]
+    var body: Blob
+    var format: ApiKeysFormat
     var failOnWarnings: js.UndefOr[Boolean]
   }
 
   object ImportApiKeysRequest {
     def apply(
-      body: js.UndefOr[Blob] = js.undefined,
-      format: js.UndefOr[ApiKeysFormat] = js.undefined,
+      body: Blob,
+      format: ApiKeysFormat,
       failOnWarnings: js.UndefOr[Boolean] = js.undefined): ImportApiKeysRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "body" -> body.map { x => x.asInstanceOf[js.Any] },
-        "format" -> format.map { x => x.asInstanceOf[js.Any] },
+        "body" -> body.asInstanceOf[js.Any],
+        "format" -> format.asInstanceOf[js.Any],
         "failOnWarnings" -> failOnWarnings.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ImportApiKeysRequest]
@@ -3122,23 +3122,23 @@ package apigateway {
    */
   @js.native
   trait ImportDocumentationPartsRequest extends js.Object {
-    var restApiId: js.UndefOr[String]
-    var mode: js.UndefOr[PutMode]
+    var body: Blob
+    var restApiId: String
     var failOnWarnings: js.UndefOr[Boolean]
-    var body: js.UndefOr[Blob]
+    var mode: js.UndefOr[PutMode]
   }
 
   object ImportDocumentationPartsRequest {
     def apply(
-      restApiId: js.UndefOr[String] = js.undefined,
-      mode: js.UndefOr[PutMode] = js.undefined,
+      body: Blob,
+      restApiId: String,
       failOnWarnings: js.UndefOr[Boolean] = js.undefined,
-      body: js.UndefOr[Blob] = js.undefined): ImportDocumentationPartsRequest = {
+      mode: js.UndefOr[PutMode] = js.undefined): ImportDocumentationPartsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "restApiId" -> restApiId.map { x => x.asInstanceOf[js.Any] },
-        "mode" -> mode.map { x => x.asInstanceOf[js.Any] },
+        "body" -> body.asInstanceOf[js.Any],
+        "restApiId" -> restApiId.asInstanceOf[js.Any],
         "failOnWarnings" -> failOnWarnings.map { x => x.asInstanceOf[js.Any] },
-        "body" -> body.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "mode" -> mode.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ImportDocumentationPartsRequest]
     }
@@ -3149,20 +3149,20 @@ package apigateway {
    */
   @js.native
   trait ImportRestApiRequest extends js.Object {
+    var body: Blob
     var failOnWarnings: js.UndefOr[Boolean]
     var parameters: js.UndefOr[MapOfStringToString]
-    var body: js.UndefOr[Blob]
   }
 
   object ImportRestApiRequest {
     def apply(
+      body: Blob,
       failOnWarnings: js.UndefOr[Boolean] = js.undefined,
-      parameters: js.UndefOr[MapOfStringToString] = js.undefined,
-      body: js.UndefOr[Blob] = js.undefined): ImportRestApiRequest = {
+      parameters: js.UndefOr[MapOfStringToString] = js.undefined): ImportRestApiRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "body" -> body.asInstanceOf[js.Any],
         "failOnWarnings" -> failOnWarnings.map { x => x.asInstanceOf[js.Any] },
-        "parameters" -> parameters.map { x => x.asInstanceOf[js.Any] },
-        "body" -> body.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "parameters" -> parameters.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ImportRestApiRequest]
     }
@@ -3173,53 +3173,53 @@ package apigateway {
    */
   @js.native
   trait Integration extends js.Object {
-    var requestParameters: js.UndefOr[MapOfStringToString]
-    var timeoutInMillis: js.UndefOr[Int]
-    var integrationResponses: js.UndefOr[MapOfIntegrationResponse]
-    var uri: js.UndefOr[String]
     var cacheKeyParameters: js.UndefOr[ListOfString]
-    var httpMethod: js.UndefOr[String]
-    var requestTemplates: js.UndefOr[MapOfStringToString]
     var cacheNamespace: js.UndefOr[String]
-    var contentHandling: js.UndefOr[ContentHandlingStrategy]
     var connectionId: js.UndefOr[String]
-    var `type`: js.UndefOr[IntegrationType]
-    var passthroughBehavior: js.UndefOr[String]
-    var credentials: js.UndefOr[String]
     var connectionType: js.UndefOr[ConnectionType]
+    var contentHandling: js.UndefOr[ContentHandlingStrategy]
+    var credentials: js.UndefOr[String]
+    var httpMethod: js.UndefOr[String]
+    var integrationResponses: js.UndefOr[MapOfIntegrationResponse]
+    var passthroughBehavior: js.UndefOr[String]
+    var requestParameters: js.UndefOr[MapOfStringToString]
+    var requestTemplates: js.UndefOr[MapOfStringToString]
+    var timeoutInMillis: js.UndefOr[Int]
+    var `type`: js.UndefOr[IntegrationType]
+    var uri: js.UndefOr[String]
   }
 
   object Integration {
     def apply(
-      requestParameters: js.UndefOr[MapOfStringToString] = js.undefined,
-      timeoutInMillis: js.UndefOr[Int] = js.undefined,
-      integrationResponses: js.UndefOr[MapOfIntegrationResponse] = js.undefined,
-      uri: js.UndefOr[String] = js.undefined,
       cacheKeyParameters: js.UndefOr[ListOfString] = js.undefined,
-      httpMethod: js.UndefOr[String] = js.undefined,
-      requestTemplates: js.UndefOr[MapOfStringToString] = js.undefined,
       cacheNamespace: js.UndefOr[String] = js.undefined,
-      contentHandling: js.UndefOr[ContentHandlingStrategy] = js.undefined,
       connectionId: js.UndefOr[String] = js.undefined,
-      `type`: js.UndefOr[IntegrationType] = js.undefined,
-      passthroughBehavior: js.UndefOr[String] = js.undefined,
+      connectionType: js.UndefOr[ConnectionType] = js.undefined,
+      contentHandling: js.UndefOr[ContentHandlingStrategy] = js.undefined,
       credentials: js.UndefOr[String] = js.undefined,
-      connectionType: js.UndefOr[ConnectionType] = js.undefined): Integration = {
+      httpMethod: js.UndefOr[String] = js.undefined,
+      integrationResponses: js.UndefOr[MapOfIntegrationResponse] = js.undefined,
+      passthroughBehavior: js.UndefOr[String] = js.undefined,
+      requestParameters: js.UndefOr[MapOfStringToString] = js.undefined,
+      requestTemplates: js.UndefOr[MapOfStringToString] = js.undefined,
+      timeoutInMillis: js.UndefOr[Int] = js.undefined,
+      `type`: js.UndefOr[IntegrationType] = js.undefined,
+      uri: js.UndefOr[String] = js.undefined): Integration = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "requestParameters" -> requestParameters.map { x => x.asInstanceOf[js.Any] },
-        "timeoutInMillis" -> timeoutInMillis.map { x => x.asInstanceOf[js.Any] },
-        "integrationResponses" -> integrationResponses.map { x => x.asInstanceOf[js.Any] },
-        "uri" -> uri.map { x => x.asInstanceOf[js.Any] },
         "cacheKeyParameters" -> cacheKeyParameters.map { x => x.asInstanceOf[js.Any] },
-        "httpMethod" -> httpMethod.map { x => x.asInstanceOf[js.Any] },
-        "requestTemplates" -> requestTemplates.map { x => x.asInstanceOf[js.Any] },
         "cacheNamespace" -> cacheNamespace.map { x => x.asInstanceOf[js.Any] },
-        "contentHandling" -> contentHandling.map { x => x.asInstanceOf[js.Any] },
         "connectionId" -> connectionId.map { x => x.asInstanceOf[js.Any] },
-        "`type`" -> `type`.map { x => x.asInstanceOf[js.Any] },
-        "passthroughBehavior" -> passthroughBehavior.map { x => x.asInstanceOf[js.Any] },
+        "connectionType" -> connectionType.map { x => x.asInstanceOf[js.Any] },
+        "contentHandling" -> contentHandling.map { x => x.asInstanceOf[js.Any] },
         "credentials" -> credentials.map { x => x.asInstanceOf[js.Any] },
-        "connectionType" -> connectionType.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "httpMethod" -> httpMethod.map { x => x.asInstanceOf[js.Any] },
+        "integrationResponses" -> integrationResponses.map { x => x.asInstanceOf[js.Any] },
+        "passthroughBehavior" -> passthroughBehavior.map { x => x.asInstanceOf[js.Any] },
+        "requestParameters" -> requestParameters.map { x => x.asInstanceOf[js.Any] },
+        "requestTemplates" -> requestTemplates.map { x => x.asInstanceOf[js.Any] },
+        "timeoutInMillis" -> timeoutInMillis.map { x => x.asInstanceOf[js.Any] },
+        "`type`" -> `type`.map { x => x.asInstanceOf[js.Any] },
+        "uri" -> uri.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Integration]
     }
@@ -3230,26 +3230,26 @@ package apigateway {
    */
   @js.native
   trait IntegrationResponse extends js.Object {
-    var statusCode: js.UndefOr[StatusCode]
-    var selectionPattern: js.UndefOr[String]
-    var responseParameters: js.UndefOr[MapOfStringToString]
     var contentHandling: js.UndefOr[ContentHandlingStrategy]
+    var responseParameters: js.UndefOr[MapOfStringToString]
     var responseTemplates: js.UndefOr[MapOfStringToString]
+    var selectionPattern: js.UndefOr[String]
+    var statusCode: js.UndefOr[StatusCode]
   }
 
   object IntegrationResponse {
     def apply(
-      statusCode: js.UndefOr[StatusCode] = js.undefined,
-      selectionPattern: js.UndefOr[String] = js.undefined,
-      responseParameters: js.UndefOr[MapOfStringToString] = js.undefined,
       contentHandling: js.UndefOr[ContentHandlingStrategy] = js.undefined,
-      responseTemplates: js.UndefOr[MapOfStringToString] = js.undefined): IntegrationResponse = {
+      responseParameters: js.UndefOr[MapOfStringToString] = js.undefined,
+      responseTemplates: js.UndefOr[MapOfStringToString] = js.undefined,
+      selectionPattern: js.UndefOr[String] = js.undefined,
+      statusCode: js.UndefOr[StatusCode] = js.undefined): IntegrationResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "statusCode" -> statusCode.map { x => x.asInstanceOf[js.Any] },
-        "selectionPattern" -> selectionPattern.map { x => x.asInstanceOf[js.Any] },
-        "responseParameters" -> responseParameters.map { x => x.asInstanceOf[js.Any] },
         "contentHandling" -> contentHandling.map { x => x.asInstanceOf[js.Any] },
-        "responseTemplates" -> responseTemplates.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "responseParameters" -> responseParameters.map { x => x.asInstanceOf[js.Any] },
+        "responseTemplates" -> responseTemplates.map { x => x.asInstanceOf[js.Any] },
+        "selectionPattern" -> selectionPattern.map { x => x.asInstanceOf[js.Any] },
+        "statusCode" -> statusCode.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[IntegrationResponse]
     }
@@ -3280,44 +3280,44 @@ package apigateway {
    */
   @js.native
   trait Method extends js.Object {
-    var requestParameters: js.UndefOr[MapOfStringToBoolean]
-    var authorizationScopes: js.UndefOr[ListOfString]
-    var requestValidatorId: js.UndefOr[String]
-    var httpMethod: js.UndefOr[String]
-    var methodResponses: js.UndefOr[MapOfMethodResponse]
-    var authorizerId: js.UndefOr[String]
-    var authorizationType: js.UndefOr[String]
-    var requestModels: js.UndefOr[MapOfStringToString]
-    var operationName: js.UndefOr[String]
-    var methodIntegration: js.UndefOr[Integration]
     var apiKeyRequired: js.UndefOr[NullableBoolean]
+    var authorizationScopes: js.UndefOr[ListOfString]
+    var authorizationType: js.UndefOr[String]
+    var authorizerId: js.UndefOr[String]
+    var httpMethod: js.UndefOr[String]
+    var methodIntegration: js.UndefOr[Integration]
+    var methodResponses: js.UndefOr[MapOfMethodResponse]
+    var operationName: js.UndefOr[String]
+    var requestModels: js.UndefOr[MapOfStringToString]
+    var requestParameters: js.UndefOr[MapOfStringToBoolean]
+    var requestValidatorId: js.UndefOr[String]
   }
 
   object Method {
     def apply(
-      requestParameters: js.UndefOr[MapOfStringToBoolean] = js.undefined,
+      apiKeyRequired: js.UndefOr[NullableBoolean] = js.undefined,
       authorizationScopes: js.UndefOr[ListOfString] = js.undefined,
-      requestValidatorId: js.UndefOr[String] = js.undefined,
-      httpMethod: js.UndefOr[String] = js.undefined,
-      methodResponses: js.UndefOr[MapOfMethodResponse] = js.undefined,
-      authorizerId: js.UndefOr[String] = js.undefined,
       authorizationType: js.UndefOr[String] = js.undefined,
-      requestModels: js.UndefOr[MapOfStringToString] = js.undefined,
-      operationName: js.UndefOr[String] = js.undefined,
+      authorizerId: js.UndefOr[String] = js.undefined,
+      httpMethod: js.UndefOr[String] = js.undefined,
       methodIntegration: js.UndefOr[Integration] = js.undefined,
-      apiKeyRequired: js.UndefOr[NullableBoolean] = js.undefined): Method = {
+      methodResponses: js.UndefOr[MapOfMethodResponse] = js.undefined,
+      operationName: js.UndefOr[String] = js.undefined,
+      requestModels: js.UndefOr[MapOfStringToString] = js.undefined,
+      requestParameters: js.UndefOr[MapOfStringToBoolean] = js.undefined,
+      requestValidatorId: js.UndefOr[String] = js.undefined): Method = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "requestParameters" -> requestParameters.map { x => x.asInstanceOf[js.Any] },
+        "apiKeyRequired" -> apiKeyRequired.map { x => x.asInstanceOf[js.Any] },
         "authorizationScopes" -> authorizationScopes.map { x => x.asInstanceOf[js.Any] },
-        "requestValidatorId" -> requestValidatorId.map { x => x.asInstanceOf[js.Any] },
-        "httpMethod" -> httpMethod.map { x => x.asInstanceOf[js.Any] },
-        "methodResponses" -> methodResponses.map { x => x.asInstanceOf[js.Any] },
-        "authorizerId" -> authorizerId.map { x => x.asInstanceOf[js.Any] },
         "authorizationType" -> authorizationType.map { x => x.asInstanceOf[js.Any] },
-        "requestModels" -> requestModels.map { x => x.asInstanceOf[js.Any] },
-        "operationName" -> operationName.map { x => x.asInstanceOf[js.Any] },
+        "authorizerId" -> authorizerId.map { x => x.asInstanceOf[js.Any] },
+        "httpMethod" -> httpMethod.map { x => x.asInstanceOf[js.Any] },
         "methodIntegration" -> methodIntegration.map { x => x.asInstanceOf[js.Any] },
-        "apiKeyRequired" -> apiKeyRequired.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "methodResponses" -> methodResponses.map { x => x.asInstanceOf[js.Any] },
+        "operationName" -> operationName.map { x => x.asInstanceOf[js.Any] },
+        "requestModels" -> requestModels.map { x => x.asInstanceOf[js.Any] },
+        "requestParameters" -> requestParameters.map { x => x.asInstanceOf[js.Any] },
+        "requestValidatorId" -> requestValidatorId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Method]
     }
@@ -3328,20 +3328,20 @@ package apigateway {
    */
   @js.native
   trait MethodResponse extends js.Object {
-    var statusCode: js.UndefOr[StatusCode]
-    var responseParameters: js.UndefOr[MapOfStringToBoolean]
     var responseModels: js.UndefOr[MapOfStringToString]
+    var responseParameters: js.UndefOr[MapOfStringToBoolean]
+    var statusCode: js.UndefOr[StatusCode]
   }
 
   object MethodResponse {
     def apply(
-      statusCode: js.UndefOr[StatusCode] = js.undefined,
+      responseModels: js.UndefOr[MapOfStringToString] = js.undefined,
       responseParameters: js.UndefOr[MapOfStringToBoolean] = js.undefined,
-      responseModels: js.UndefOr[MapOfStringToString] = js.undefined): MethodResponse = {
+      statusCode: js.UndefOr[StatusCode] = js.undefined): MethodResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "statusCode" -> statusCode.map { x => x.asInstanceOf[js.Any] },
+        "responseModels" -> responseModels.map { x => x.asInstanceOf[js.Any] },
         "responseParameters" -> responseParameters.map { x => x.asInstanceOf[js.Any] },
-        "responseModels" -> responseModels.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "statusCode" -> statusCode.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[MethodResponse]
     }
@@ -3352,41 +3352,41 @@ package apigateway {
    */
   @js.native
   trait MethodSetting extends js.Object {
+    var cacheDataEncrypted: js.UndefOr[Boolean]
     var cacheTtlInSeconds: js.UndefOr[Int]
-    var throttlingBurstLimit: js.UndefOr[Int]
-    var unauthorizedCacheControlHeaderStrategy: js.UndefOr[UnauthorizedCacheControlHeaderStrategy]
+    var cachingEnabled: js.UndefOr[Boolean]
     var dataTraceEnabled: js.UndefOr[Boolean]
     var loggingLevel: js.UndefOr[String]
-    var throttlingRateLimit: js.UndefOr[Double]
-    var requireAuthorizationForCacheControl: js.UndefOr[Boolean]
-    var cacheDataEncrypted: js.UndefOr[Boolean]
-    var cachingEnabled: js.UndefOr[Boolean]
     var metricsEnabled: js.UndefOr[Boolean]
+    var requireAuthorizationForCacheControl: js.UndefOr[Boolean]
+    var throttlingBurstLimit: js.UndefOr[Int]
+    var throttlingRateLimit: js.UndefOr[Double]
+    var unauthorizedCacheControlHeaderStrategy: js.UndefOr[UnauthorizedCacheControlHeaderStrategy]
   }
 
   object MethodSetting {
     def apply(
+      cacheDataEncrypted: js.UndefOr[Boolean] = js.undefined,
       cacheTtlInSeconds: js.UndefOr[Int] = js.undefined,
-      throttlingBurstLimit: js.UndefOr[Int] = js.undefined,
-      unauthorizedCacheControlHeaderStrategy: js.UndefOr[UnauthorizedCacheControlHeaderStrategy] = js.undefined,
+      cachingEnabled: js.UndefOr[Boolean] = js.undefined,
       dataTraceEnabled: js.UndefOr[Boolean] = js.undefined,
       loggingLevel: js.UndefOr[String] = js.undefined,
-      throttlingRateLimit: js.UndefOr[Double] = js.undefined,
+      metricsEnabled: js.UndefOr[Boolean] = js.undefined,
       requireAuthorizationForCacheControl: js.UndefOr[Boolean] = js.undefined,
-      cacheDataEncrypted: js.UndefOr[Boolean] = js.undefined,
-      cachingEnabled: js.UndefOr[Boolean] = js.undefined,
-      metricsEnabled: js.UndefOr[Boolean] = js.undefined): MethodSetting = {
+      throttlingBurstLimit: js.UndefOr[Int] = js.undefined,
+      throttlingRateLimit: js.UndefOr[Double] = js.undefined,
+      unauthorizedCacheControlHeaderStrategy: js.UndefOr[UnauthorizedCacheControlHeaderStrategy] = js.undefined): MethodSetting = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "cacheDataEncrypted" -> cacheDataEncrypted.map { x => x.asInstanceOf[js.Any] },
         "cacheTtlInSeconds" -> cacheTtlInSeconds.map { x => x.asInstanceOf[js.Any] },
-        "throttlingBurstLimit" -> throttlingBurstLimit.map { x => x.asInstanceOf[js.Any] },
-        "unauthorizedCacheControlHeaderStrategy" -> unauthorizedCacheControlHeaderStrategy.map { x => x.asInstanceOf[js.Any] },
+        "cachingEnabled" -> cachingEnabled.map { x => x.asInstanceOf[js.Any] },
         "dataTraceEnabled" -> dataTraceEnabled.map { x => x.asInstanceOf[js.Any] },
         "loggingLevel" -> loggingLevel.map { x => x.asInstanceOf[js.Any] },
-        "throttlingRateLimit" -> throttlingRateLimit.map { x => x.asInstanceOf[js.Any] },
+        "metricsEnabled" -> metricsEnabled.map { x => x.asInstanceOf[js.Any] },
         "requireAuthorizationForCacheControl" -> requireAuthorizationForCacheControl.map { x => x.asInstanceOf[js.Any] },
-        "cacheDataEncrypted" -> cacheDataEncrypted.map { x => x.asInstanceOf[js.Any] },
-        "cachingEnabled" -> cachingEnabled.map { x => x.asInstanceOf[js.Any] },
-        "metricsEnabled" -> metricsEnabled.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "throttlingBurstLimit" -> throttlingBurstLimit.map { x => x.asInstanceOf[js.Any] },
+        "throttlingRateLimit" -> throttlingRateLimit.map { x => x.asInstanceOf[js.Any] },
+        "unauthorizedCacheControlHeaderStrategy" -> unauthorizedCacheControlHeaderStrategy.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[MethodSetting]
     }
@@ -3397,17 +3397,17 @@ package apigateway {
    */
   @js.native
   trait MethodSnapshot extends js.Object {
-    var authorizationType: js.UndefOr[String]
     var apiKeyRequired: js.UndefOr[Boolean]
+    var authorizationType: js.UndefOr[String]
   }
 
   object MethodSnapshot {
     def apply(
-      authorizationType: js.UndefOr[String] = js.undefined,
-      apiKeyRequired: js.UndefOr[Boolean] = js.undefined): MethodSnapshot = {
+      apiKeyRequired: js.UndefOr[Boolean] = js.undefined,
+      authorizationType: js.UndefOr[String] = js.undefined): MethodSnapshot = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "authorizationType" -> authorizationType.map { x => x.asInstanceOf[js.Any] },
-        "apiKeyRequired" -> apiKeyRequired.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "apiKeyRequired" -> apiKeyRequired.map { x => x.asInstanceOf[js.Any] },
+        "authorizationType" -> authorizationType.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[MethodSnapshot]
     }
@@ -3418,26 +3418,26 @@ package apigateway {
    */
   @js.native
   trait Model extends js.Object {
-    var name: js.UndefOr[String]
+    var contentType: js.UndefOr[String]
     var description: js.UndefOr[String]
     var id: js.UndefOr[String]
+    var name: js.UndefOr[String]
     var schema: js.UndefOr[String]
-    var contentType: js.UndefOr[String]
   }
 
   object Model {
     def apply(
-      name: js.UndefOr[String] = js.undefined,
+      contentType: js.UndefOr[String] = js.undefined,
       description: js.UndefOr[String] = js.undefined,
       id: js.UndefOr[String] = js.undefined,
-      schema: js.UndefOr[String] = js.undefined,
-      contentType: js.UndefOr[String] = js.undefined): Model = {
+      name: js.UndefOr[String] = js.undefined,
+      schema: js.UndefOr[String] = js.undefined): Model = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "name" -> name.map { x => x.asInstanceOf[js.Any] },
+        "contentType" -> contentType.map { x => x.asInstanceOf[js.Any] },
         "description" -> description.map { x => x.asInstanceOf[js.Any] },
         "id" -> id.map { x => x.asInstanceOf[js.Any] },
-        "schema" -> schema.map { x => x.asInstanceOf[js.Any] },
-        "contentType" -> contentType.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "name" -> name.map { x => x.asInstanceOf[js.Any] },
+        "schema" -> schema.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Model]
     }
@@ -3448,17 +3448,17 @@ package apigateway {
    */
   @js.native
   trait Models extends js.Object {
-    var position: js.UndefOr[String]
     var items: js.UndefOr[ListOfModel]
+    var position: js.UndefOr[String]
   }
 
   object Models {
     def apply(
-      position: js.UndefOr[String] = js.undefined,
-      items: js.UndefOr[ListOfModel] = js.undefined): Models = {
+      items: js.UndefOr[ListOfModel] = js.undefined,
+      position: js.UndefOr[String] = js.undefined): Models = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "position" -> position.map { x => x.asInstanceOf[js.Any] },
-        "items" -> items.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "items" -> items.map { x => x.asInstanceOf[js.Any] },
+        "position" -> position.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Models]
     }
@@ -3480,23 +3480,23 @@ package apigateway {
    */
   @js.native
   trait PatchOperation extends js.Object {
+    var from: js.UndefOr[String]
     var op: js.UndefOr[Op]
     var path: js.UndefOr[String]
     var value: js.UndefOr[String]
-    var from: js.UndefOr[String]
   }
 
   object PatchOperation {
     def apply(
+      from: js.UndefOr[String] = js.undefined,
       op: js.UndefOr[Op] = js.undefined,
       path: js.UndefOr[String] = js.undefined,
-      value: js.UndefOr[String] = js.undefined,
-      from: js.UndefOr[String] = js.undefined): PatchOperation = {
+      value: js.UndefOr[String] = js.undefined): PatchOperation = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "from" -> from.map { x => x.asInstanceOf[js.Any] },
         "op" -> op.map { x => x.asInstanceOf[js.Any] },
         "path" -> path.map { x => x.asInstanceOf[js.Any] },
-        "value" -> value.map { x => x.asInstanceOf[js.Any] },
-        "from" -> from.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "value" -> value.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PatchOperation]
     }
@@ -3507,26 +3507,26 @@ package apigateway {
    */
   @js.native
   trait PutGatewayResponseRequest extends js.Object {
-    var statusCode: js.UndefOr[StatusCode]
+    var responseType: GatewayResponseType
+    var restApiId: String
     var responseParameters: js.UndefOr[MapOfStringToString]
-    var responseType: js.UndefOr[GatewayResponseType]
-    var restApiId: js.UndefOr[String]
     var responseTemplates: js.UndefOr[MapOfStringToString]
+    var statusCode: js.UndefOr[StatusCode]
   }
 
   object PutGatewayResponseRequest {
     def apply(
-      statusCode: js.UndefOr[StatusCode] = js.undefined,
+      responseType: GatewayResponseType,
+      restApiId: String,
       responseParameters: js.UndefOr[MapOfStringToString] = js.undefined,
-      responseType: js.UndefOr[GatewayResponseType] = js.undefined,
-      restApiId: js.UndefOr[String] = js.undefined,
-      responseTemplates: js.UndefOr[MapOfStringToString] = js.undefined): PutGatewayResponseRequest = {
+      responseTemplates: js.UndefOr[MapOfStringToString] = js.undefined,
+      statusCode: js.UndefOr[StatusCode] = js.undefined): PutGatewayResponseRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "statusCode" -> statusCode.map { x => x.asInstanceOf[js.Any] },
+        "responseType" -> responseType.asInstanceOf[js.Any],
+        "restApiId" -> restApiId.asInstanceOf[js.Any],
         "responseParameters" -> responseParameters.map { x => x.asInstanceOf[js.Any] },
-        "responseType" -> responseType.map { x => x.asInstanceOf[js.Any] },
-        "restApiId" -> restApiId.map { x => x.asInstanceOf[js.Any] },
-        "responseTemplates" -> responseTemplates.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "responseTemplates" -> responseTemplates.map { x => x.asInstanceOf[js.Any] },
+        "statusCode" -> statusCode.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutGatewayResponseRequest]
     }
@@ -3537,59 +3537,59 @@ package apigateway {
    */
   @js.native
   trait PutIntegrationRequest extends js.Object {
+    var httpMethod: String
+    var resourceId: String
+    var restApiId: String
+    var `type`: IntegrationType
+    var cacheKeyParameters: js.UndefOr[ListOfString]
+    var cacheNamespace: js.UndefOr[String]
+    var connectionId: js.UndefOr[String]
+    var connectionType: js.UndefOr[ConnectionType]
+    var contentHandling: js.UndefOr[ContentHandlingStrategy]
+    var credentials: js.UndefOr[String]
     var integrationHttpMethod: js.UndefOr[String]
-    var resourceId: js.UndefOr[String]
+    var passthroughBehavior: js.UndefOr[String]
     var requestParameters: js.UndefOr[MapOfStringToString]
+    var requestTemplates: js.UndefOr[MapOfStringToString]
     var timeoutInMillis: js.UndefOr[NullableInteger]
     var uri: js.UndefOr[String]
-    var cacheKeyParameters: js.UndefOr[ListOfString]
-    var httpMethod: js.UndefOr[String]
-    var requestTemplates: js.UndefOr[MapOfStringToString]
-    var cacheNamespace: js.UndefOr[String]
-    var contentHandling: js.UndefOr[ContentHandlingStrategy]
-    var connectionId: js.UndefOr[String]
-    var `type`: js.UndefOr[IntegrationType]
-    var passthroughBehavior: js.UndefOr[String]
-    var credentials: js.UndefOr[String]
-    var restApiId: js.UndefOr[String]
-    var connectionType: js.UndefOr[ConnectionType]
   }
 
   object PutIntegrationRequest {
     def apply(
-      integrationHttpMethod: js.UndefOr[String] = js.undefined,
-      resourceId: js.UndefOr[String] = js.undefined,
-      requestParameters: js.UndefOr[MapOfStringToString] = js.undefined,
-      timeoutInMillis: js.UndefOr[NullableInteger] = js.undefined,
-      uri: js.UndefOr[String] = js.undefined,
+      httpMethod: String,
+      resourceId: String,
+      restApiId: String,
+      `type`: IntegrationType,
       cacheKeyParameters: js.UndefOr[ListOfString] = js.undefined,
-      httpMethod: js.UndefOr[String] = js.undefined,
-      requestTemplates: js.UndefOr[MapOfStringToString] = js.undefined,
       cacheNamespace: js.UndefOr[String] = js.undefined,
-      contentHandling: js.UndefOr[ContentHandlingStrategy] = js.undefined,
       connectionId: js.UndefOr[String] = js.undefined,
-      `type`: js.UndefOr[IntegrationType] = js.undefined,
-      passthroughBehavior: js.UndefOr[String] = js.undefined,
+      connectionType: js.UndefOr[ConnectionType] = js.undefined,
+      contentHandling: js.UndefOr[ContentHandlingStrategy] = js.undefined,
       credentials: js.UndefOr[String] = js.undefined,
-      restApiId: js.UndefOr[String] = js.undefined,
-      connectionType: js.UndefOr[ConnectionType] = js.undefined): PutIntegrationRequest = {
+      integrationHttpMethod: js.UndefOr[String] = js.undefined,
+      passthroughBehavior: js.UndefOr[String] = js.undefined,
+      requestParameters: js.UndefOr[MapOfStringToString] = js.undefined,
+      requestTemplates: js.UndefOr[MapOfStringToString] = js.undefined,
+      timeoutInMillis: js.UndefOr[NullableInteger] = js.undefined,
+      uri: js.UndefOr[String] = js.undefined): PutIntegrationRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "integrationHttpMethod" -> integrationHttpMethod.map { x => x.asInstanceOf[js.Any] },
-        "resourceId" -> resourceId.map { x => x.asInstanceOf[js.Any] },
-        "requestParameters" -> requestParameters.map { x => x.asInstanceOf[js.Any] },
-        "timeoutInMillis" -> timeoutInMillis.map { x => x.asInstanceOf[js.Any] },
-        "uri" -> uri.map { x => x.asInstanceOf[js.Any] },
+        "httpMethod" -> httpMethod.asInstanceOf[js.Any],
+        "resourceId" -> resourceId.asInstanceOf[js.Any],
+        "restApiId" -> restApiId.asInstanceOf[js.Any],
+        "`type`" -> `type`.asInstanceOf[js.Any],
         "cacheKeyParameters" -> cacheKeyParameters.map { x => x.asInstanceOf[js.Any] },
-        "httpMethod" -> httpMethod.map { x => x.asInstanceOf[js.Any] },
-        "requestTemplates" -> requestTemplates.map { x => x.asInstanceOf[js.Any] },
         "cacheNamespace" -> cacheNamespace.map { x => x.asInstanceOf[js.Any] },
-        "contentHandling" -> contentHandling.map { x => x.asInstanceOf[js.Any] },
         "connectionId" -> connectionId.map { x => x.asInstanceOf[js.Any] },
-        "`type`" -> `type`.map { x => x.asInstanceOf[js.Any] },
-        "passthroughBehavior" -> passthroughBehavior.map { x => x.asInstanceOf[js.Any] },
+        "connectionType" -> connectionType.map { x => x.asInstanceOf[js.Any] },
+        "contentHandling" -> contentHandling.map { x => x.asInstanceOf[js.Any] },
         "credentials" -> credentials.map { x => x.asInstanceOf[js.Any] },
-        "restApiId" -> restApiId.map { x => x.asInstanceOf[js.Any] },
-        "connectionType" -> connectionType.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "integrationHttpMethod" -> integrationHttpMethod.map { x => x.asInstanceOf[js.Any] },
+        "passthroughBehavior" -> passthroughBehavior.map { x => x.asInstanceOf[js.Any] },
+        "requestParameters" -> requestParameters.map { x => x.asInstanceOf[js.Any] },
+        "requestTemplates" -> requestTemplates.map { x => x.asInstanceOf[js.Any] },
+        "timeoutInMillis" -> timeoutInMillis.map { x => x.asInstanceOf[js.Any] },
+        "uri" -> uri.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutIntegrationRequest]
     }
@@ -3600,35 +3600,35 @@ package apigateway {
    */
   @js.native
   trait PutIntegrationResponseRequest extends js.Object {
-    var statusCode: js.UndefOr[StatusCode]
-    var resourceId: js.UndefOr[String]
-    var httpMethod: js.UndefOr[String]
-    var selectionPattern: js.UndefOr[String]
-    var responseParameters: js.UndefOr[MapOfStringToString]
+    var httpMethod: String
+    var resourceId: String
+    var restApiId: String
+    var statusCode: StatusCode
     var contentHandling: js.UndefOr[ContentHandlingStrategy]
-    var restApiId: js.UndefOr[String]
+    var responseParameters: js.UndefOr[MapOfStringToString]
     var responseTemplates: js.UndefOr[MapOfStringToString]
+    var selectionPattern: js.UndefOr[String]
   }
 
   object PutIntegrationResponseRequest {
     def apply(
-      statusCode: js.UndefOr[StatusCode] = js.undefined,
-      resourceId: js.UndefOr[String] = js.undefined,
-      httpMethod: js.UndefOr[String] = js.undefined,
-      selectionPattern: js.UndefOr[String] = js.undefined,
-      responseParameters: js.UndefOr[MapOfStringToString] = js.undefined,
+      httpMethod: String,
+      resourceId: String,
+      restApiId: String,
+      statusCode: StatusCode,
       contentHandling: js.UndefOr[ContentHandlingStrategy] = js.undefined,
-      restApiId: js.UndefOr[String] = js.undefined,
-      responseTemplates: js.UndefOr[MapOfStringToString] = js.undefined): PutIntegrationResponseRequest = {
+      responseParameters: js.UndefOr[MapOfStringToString] = js.undefined,
+      responseTemplates: js.UndefOr[MapOfStringToString] = js.undefined,
+      selectionPattern: js.UndefOr[String] = js.undefined): PutIntegrationResponseRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "statusCode" -> statusCode.map { x => x.asInstanceOf[js.Any] },
-        "resourceId" -> resourceId.map { x => x.asInstanceOf[js.Any] },
-        "httpMethod" -> httpMethod.map { x => x.asInstanceOf[js.Any] },
-        "selectionPattern" -> selectionPattern.map { x => x.asInstanceOf[js.Any] },
-        "responseParameters" -> responseParameters.map { x => x.asInstanceOf[js.Any] },
+        "httpMethod" -> httpMethod.asInstanceOf[js.Any],
+        "resourceId" -> resourceId.asInstanceOf[js.Any],
+        "restApiId" -> restApiId.asInstanceOf[js.Any],
+        "statusCode" -> statusCode.asInstanceOf[js.Any],
         "contentHandling" -> contentHandling.map { x => x.asInstanceOf[js.Any] },
-        "restApiId" -> restApiId.map { x => x.asInstanceOf[js.Any] },
-        "responseTemplates" -> responseTemplates.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "responseParameters" -> responseParameters.map { x => x.asInstanceOf[js.Any] },
+        "responseTemplates" -> responseTemplates.map { x => x.asInstanceOf[js.Any] },
+        "selectionPattern" -> selectionPattern.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutIntegrationResponseRequest]
     }
@@ -3639,44 +3639,44 @@ package apigateway {
    */
   @js.native
   trait PutMethodRequest extends js.Object {
-    var resourceId: js.UndefOr[String]
-    var requestParameters: js.UndefOr[MapOfStringToBoolean]
-    var authorizationScopes: js.UndefOr[ListOfString]
-    var requestValidatorId: js.UndefOr[String]
-    var httpMethod: js.UndefOr[String]
-    var authorizerId: js.UndefOr[String]
-    var authorizationType: js.UndefOr[String]
-    var requestModels: js.UndefOr[MapOfStringToString]
-    var operationName: js.UndefOr[String]
-    var restApiId: js.UndefOr[String]
+    var authorizationType: String
+    var httpMethod: String
+    var resourceId: String
+    var restApiId: String
     var apiKeyRequired: js.UndefOr[Boolean]
+    var authorizationScopes: js.UndefOr[ListOfString]
+    var authorizerId: js.UndefOr[String]
+    var operationName: js.UndefOr[String]
+    var requestModels: js.UndefOr[MapOfStringToString]
+    var requestParameters: js.UndefOr[MapOfStringToBoolean]
+    var requestValidatorId: js.UndefOr[String]
   }
 
   object PutMethodRequest {
     def apply(
-      resourceId: js.UndefOr[String] = js.undefined,
-      requestParameters: js.UndefOr[MapOfStringToBoolean] = js.undefined,
+      authorizationType: String,
+      httpMethod: String,
+      resourceId: String,
+      restApiId: String,
+      apiKeyRequired: js.UndefOr[Boolean] = js.undefined,
       authorizationScopes: js.UndefOr[ListOfString] = js.undefined,
-      requestValidatorId: js.UndefOr[String] = js.undefined,
-      httpMethod: js.UndefOr[String] = js.undefined,
       authorizerId: js.UndefOr[String] = js.undefined,
-      authorizationType: js.UndefOr[String] = js.undefined,
-      requestModels: js.UndefOr[MapOfStringToString] = js.undefined,
       operationName: js.UndefOr[String] = js.undefined,
-      restApiId: js.UndefOr[String] = js.undefined,
-      apiKeyRequired: js.UndefOr[Boolean] = js.undefined): PutMethodRequest = {
+      requestModels: js.UndefOr[MapOfStringToString] = js.undefined,
+      requestParameters: js.UndefOr[MapOfStringToBoolean] = js.undefined,
+      requestValidatorId: js.UndefOr[String] = js.undefined): PutMethodRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "resourceId" -> resourceId.map { x => x.asInstanceOf[js.Any] },
-        "requestParameters" -> requestParameters.map { x => x.asInstanceOf[js.Any] },
+        "authorizationType" -> authorizationType.asInstanceOf[js.Any],
+        "httpMethod" -> httpMethod.asInstanceOf[js.Any],
+        "resourceId" -> resourceId.asInstanceOf[js.Any],
+        "restApiId" -> restApiId.asInstanceOf[js.Any],
+        "apiKeyRequired" -> apiKeyRequired.map { x => x.asInstanceOf[js.Any] },
         "authorizationScopes" -> authorizationScopes.map { x => x.asInstanceOf[js.Any] },
-        "requestValidatorId" -> requestValidatorId.map { x => x.asInstanceOf[js.Any] },
-        "httpMethod" -> httpMethod.map { x => x.asInstanceOf[js.Any] },
         "authorizerId" -> authorizerId.map { x => x.asInstanceOf[js.Any] },
-        "authorizationType" -> authorizationType.map { x => x.asInstanceOf[js.Any] },
-        "requestModels" -> requestModels.map { x => x.asInstanceOf[js.Any] },
         "operationName" -> operationName.map { x => x.asInstanceOf[js.Any] },
-        "restApiId" -> restApiId.map { x => x.asInstanceOf[js.Any] },
-        "apiKeyRequired" -> apiKeyRequired.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "requestModels" -> requestModels.map { x => x.asInstanceOf[js.Any] },
+        "requestParameters" -> requestParameters.map { x => x.asInstanceOf[js.Any] },
+        "requestValidatorId" -> requestValidatorId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutMethodRequest]
     }
@@ -3687,29 +3687,29 @@ package apigateway {
    */
   @js.native
   trait PutMethodResponseRequest extends js.Object {
-    var statusCode: js.UndefOr[StatusCode]
-    var resourceId: js.UndefOr[String]
+    var httpMethod: String
+    var resourceId: String
+    var restApiId: String
+    var statusCode: StatusCode
     var responseModels: js.UndefOr[MapOfStringToString]
-    var httpMethod: js.UndefOr[String]
     var responseParameters: js.UndefOr[MapOfStringToBoolean]
-    var restApiId: js.UndefOr[String]
   }
 
   object PutMethodResponseRequest {
     def apply(
-      statusCode: js.UndefOr[StatusCode] = js.undefined,
-      resourceId: js.UndefOr[String] = js.undefined,
+      httpMethod: String,
+      resourceId: String,
+      restApiId: String,
+      statusCode: StatusCode,
       responseModels: js.UndefOr[MapOfStringToString] = js.undefined,
-      httpMethod: js.UndefOr[String] = js.undefined,
-      responseParameters: js.UndefOr[MapOfStringToBoolean] = js.undefined,
-      restApiId: js.UndefOr[String] = js.undefined): PutMethodResponseRequest = {
+      responseParameters: js.UndefOr[MapOfStringToBoolean] = js.undefined): PutMethodResponseRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "statusCode" -> statusCode.map { x => x.asInstanceOf[js.Any] },
-        "resourceId" -> resourceId.map { x => x.asInstanceOf[js.Any] },
+        "httpMethod" -> httpMethod.asInstanceOf[js.Any],
+        "resourceId" -> resourceId.asInstanceOf[js.Any],
+        "restApiId" -> restApiId.asInstanceOf[js.Any],
+        "statusCode" -> statusCode.asInstanceOf[js.Any],
         "responseModels" -> responseModels.map { x => x.asInstanceOf[js.Any] },
-        "httpMethod" -> httpMethod.map { x => x.asInstanceOf[js.Any] },
-        "responseParameters" -> responseParameters.map { x => x.asInstanceOf[js.Any] },
-        "restApiId" -> restApiId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "responseParameters" -> responseParameters.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutMethodResponseRequest]
     }
@@ -3727,26 +3727,26 @@ package apigateway {
    */
   @js.native
   trait PutRestApiRequest extends js.Object {
-    var body: js.UndefOr[Blob]
+    var body: Blob
+    var restApiId: String
     var failOnWarnings: js.UndefOr[Boolean]
     var mode: js.UndefOr[PutMode]
     var parameters: js.UndefOr[MapOfStringToString]
-    var restApiId: js.UndefOr[String]
   }
 
   object PutRestApiRequest {
     def apply(
-      body: js.UndefOr[Blob] = js.undefined,
+      body: Blob,
+      restApiId: String,
       failOnWarnings: js.UndefOr[Boolean] = js.undefined,
       mode: js.UndefOr[PutMode] = js.undefined,
-      parameters: js.UndefOr[MapOfStringToString] = js.undefined,
-      restApiId: js.UndefOr[String] = js.undefined): PutRestApiRequest = {
+      parameters: js.UndefOr[MapOfStringToString] = js.undefined): PutRestApiRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "body" -> body.map { x => x.asInstanceOf[js.Any] },
+        "body" -> body.asInstanceOf[js.Any],
+        "restApiId" -> restApiId.asInstanceOf[js.Any],
         "failOnWarnings" -> failOnWarnings.map { x => x.asInstanceOf[js.Any] },
         "mode" -> mode.map { x => x.asInstanceOf[js.Any] },
-        "parameters" -> parameters.map { x => x.asInstanceOf[js.Any] },
-        "restApiId" -> restApiId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "parameters" -> parameters.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutRestApiRequest]
     }
@@ -3816,17 +3816,17 @@ package apigateway {
    */
   @js.native
   trait RequestValidators extends js.Object {
-    var position: js.UndefOr[String]
     var items: js.UndefOr[ListOfRequestValidator]
+    var position: js.UndefOr[String]
   }
 
   object RequestValidators {
     def apply(
-      position: js.UndefOr[String] = js.undefined,
-      items: js.UndefOr[ListOfRequestValidator] = js.undefined): RequestValidators = {
+      items: js.UndefOr[ListOfRequestValidator] = js.undefined,
+      position: js.UndefOr[String] = js.undefined): RequestValidators = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "position" -> position.map { x => x.asInstanceOf[js.Any] },
-        "items" -> items.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "items" -> items.map { x => x.asInstanceOf[js.Any] },
+        "position" -> position.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RequestValidators]
     }
@@ -3837,26 +3837,26 @@ package apigateway {
    */
   @js.native
   trait Resource extends js.Object {
-    var path: js.UndefOr[String]
-    var resourceMethods: js.UndefOr[MapOfMethod]
     var id: js.UndefOr[String]
-    var pathPart: js.UndefOr[String]
     var parentId: js.UndefOr[String]
+    var path: js.UndefOr[String]
+    var pathPart: js.UndefOr[String]
+    var resourceMethods: js.UndefOr[MapOfMethod]
   }
 
   object Resource {
     def apply(
-      path: js.UndefOr[String] = js.undefined,
-      resourceMethods: js.UndefOr[MapOfMethod] = js.undefined,
       id: js.UndefOr[String] = js.undefined,
+      parentId: js.UndefOr[String] = js.undefined,
+      path: js.UndefOr[String] = js.undefined,
       pathPart: js.UndefOr[String] = js.undefined,
-      parentId: js.UndefOr[String] = js.undefined): Resource = {
+      resourceMethods: js.UndefOr[MapOfMethod] = js.undefined): Resource = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "path" -> path.map { x => x.asInstanceOf[js.Any] },
-        "resourceMethods" -> resourceMethods.map { x => x.asInstanceOf[js.Any] },
         "id" -> id.map { x => x.asInstanceOf[js.Any] },
+        "parentId" -> parentId.map { x => x.asInstanceOf[js.Any] },
+        "path" -> path.map { x => x.asInstanceOf[js.Any] },
         "pathPart" -> pathPart.map { x => x.asInstanceOf[js.Any] },
-        "parentId" -> parentId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "resourceMethods" -> resourceMethods.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Resource]
     }
@@ -3867,17 +3867,17 @@ package apigateway {
    */
   @js.native
   trait Resources extends js.Object {
-    var position: js.UndefOr[String]
     var items: js.UndefOr[ListOfResource]
+    var position: js.UndefOr[String]
   }
 
   object Resources {
     def apply(
-      position: js.UndefOr[String] = js.undefined,
-      items: js.UndefOr[ListOfResource] = js.undefined): Resources = {
+      items: js.UndefOr[ListOfResource] = js.undefined,
+      position: js.UndefOr[String] = js.undefined): Resources = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "position" -> position.map { x => x.asInstanceOf[js.Any] },
-        "items" -> items.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "items" -> items.map { x => x.asInstanceOf[js.Any] },
+        "position" -> position.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Resources]
     }
@@ -3888,44 +3888,44 @@ package apigateway {
    */
   @js.native
   trait RestApi extends js.Object {
-    var name: js.UndefOr[String]
     var apiKeySource: js.UndefOr[ApiKeySourceType]
-    var description: js.UndefOr[String]
     var binaryMediaTypes: js.UndefOr[ListOfString]
-    var warnings: js.UndefOr[ListOfString]
-    var version: js.UndefOr[String]
-    var id: js.UndefOr[String]
-    var endpointConfiguration: js.UndefOr[EndpointConfiguration]
-    var policy: js.UndefOr[String]
     var createdDate: js.UndefOr[Timestamp]
+    var description: js.UndefOr[String]
+    var endpointConfiguration: js.UndefOr[EndpointConfiguration]
+    var id: js.UndefOr[String]
     var minimumCompressionSize: js.UndefOr[NullableInteger]
+    var name: js.UndefOr[String]
+    var policy: js.UndefOr[String]
+    var version: js.UndefOr[String]
+    var warnings: js.UndefOr[ListOfString]
   }
 
   object RestApi {
     def apply(
-      name: js.UndefOr[String] = js.undefined,
       apiKeySource: js.UndefOr[ApiKeySourceType] = js.undefined,
-      description: js.UndefOr[String] = js.undefined,
       binaryMediaTypes: js.UndefOr[ListOfString] = js.undefined,
-      warnings: js.UndefOr[ListOfString] = js.undefined,
-      version: js.UndefOr[String] = js.undefined,
-      id: js.UndefOr[String] = js.undefined,
-      endpointConfiguration: js.UndefOr[EndpointConfiguration] = js.undefined,
-      policy: js.UndefOr[String] = js.undefined,
       createdDate: js.UndefOr[Timestamp] = js.undefined,
-      minimumCompressionSize: js.UndefOr[NullableInteger] = js.undefined): RestApi = {
+      description: js.UndefOr[String] = js.undefined,
+      endpointConfiguration: js.UndefOr[EndpointConfiguration] = js.undefined,
+      id: js.UndefOr[String] = js.undefined,
+      minimumCompressionSize: js.UndefOr[NullableInteger] = js.undefined,
+      name: js.UndefOr[String] = js.undefined,
+      policy: js.UndefOr[String] = js.undefined,
+      version: js.UndefOr[String] = js.undefined,
+      warnings: js.UndefOr[ListOfString] = js.undefined): RestApi = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "name" -> name.map { x => x.asInstanceOf[js.Any] },
         "apiKeySource" -> apiKeySource.map { x => x.asInstanceOf[js.Any] },
-        "description" -> description.map { x => x.asInstanceOf[js.Any] },
         "binaryMediaTypes" -> binaryMediaTypes.map { x => x.asInstanceOf[js.Any] },
-        "warnings" -> warnings.map { x => x.asInstanceOf[js.Any] },
-        "version" -> version.map { x => x.asInstanceOf[js.Any] },
-        "id" -> id.map { x => x.asInstanceOf[js.Any] },
-        "endpointConfiguration" -> endpointConfiguration.map { x => x.asInstanceOf[js.Any] },
-        "policy" -> policy.map { x => x.asInstanceOf[js.Any] },
         "createdDate" -> createdDate.map { x => x.asInstanceOf[js.Any] },
-        "minimumCompressionSize" -> minimumCompressionSize.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "description" -> description.map { x => x.asInstanceOf[js.Any] },
+        "endpointConfiguration" -> endpointConfiguration.map { x => x.asInstanceOf[js.Any] },
+        "id" -> id.map { x => x.asInstanceOf[js.Any] },
+        "minimumCompressionSize" -> minimumCompressionSize.map { x => x.asInstanceOf[js.Any] },
+        "name" -> name.map { x => x.asInstanceOf[js.Any] },
+        "policy" -> policy.map { x => x.asInstanceOf[js.Any] },
+        "version" -> version.map { x => x.asInstanceOf[js.Any] },
+        "warnings" -> warnings.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RestApi]
     }
@@ -3936,17 +3936,17 @@ package apigateway {
    */
   @js.native
   trait RestApis extends js.Object {
-    var position: js.UndefOr[String]
     var items: js.UndefOr[ListOfRestApi]
+    var position: js.UndefOr[String]
   }
 
   object RestApis {
     def apply(
-      position: js.UndefOr[String] = js.undefined,
-      items: js.UndefOr[ListOfRestApi] = js.undefined): RestApis = {
+      items: js.UndefOr[ListOfRestApi] = js.undefined,
+      position: js.UndefOr[String] = js.undefined): RestApis = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "position" -> position.map { x => x.asInstanceOf[js.Any] },
-        "items" -> items.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "items" -> items.map { x => x.asInstanceOf[js.Any] },
+        "position" -> position.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RestApis]
     }
@@ -3957,26 +3957,26 @@ package apigateway {
    */
   @js.native
   trait SdkConfigurationProperty extends js.Object {
-    var name: js.UndefOr[String]
+    var defaultValue: js.UndefOr[String]
     var description: js.UndefOr[String]
     var friendlyName: js.UndefOr[String]
+    var name: js.UndefOr[String]
     var required: js.UndefOr[Boolean]
-    var defaultValue: js.UndefOr[String]
   }
 
   object SdkConfigurationProperty {
     def apply(
-      name: js.UndefOr[String] = js.undefined,
+      defaultValue: js.UndefOr[String] = js.undefined,
       description: js.UndefOr[String] = js.undefined,
       friendlyName: js.UndefOr[String] = js.undefined,
-      required: js.UndefOr[Boolean] = js.undefined,
-      defaultValue: js.UndefOr[String] = js.undefined): SdkConfigurationProperty = {
+      name: js.UndefOr[String] = js.undefined,
+      required: js.UndefOr[Boolean] = js.undefined): SdkConfigurationProperty = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "name" -> name.map { x => x.asInstanceOf[js.Any] },
+        "defaultValue" -> defaultValue.map { x => x.asInstanceOf[js.Any] },
         "description" -> description.map { x => x.asInstanceOf[js.Any] },
         "friendlyName" -> friendlyName.map { x => x.asInstanceOf[js.Any] },
-        "required" -> required.map { x => x.asInstanceOf[js.Any] },
-        "defaultValue" -> defaultValue.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "name" -> name.map { x => x.asInstanceOf[js.Any] },
+        "required" -> required.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SdkConfigurationProperty]
     }
@@ -3987,20 +3987,20 @@ package apigateway {
    */
   @js.native
   trait SdkResponse extends js.Object {
-    var contentType: js.UndefOr[String]
-    var contentDisposition: js.UndefOr[String]
     var body: js.UndefOr[Blob]
+    var contentDisposition: js.UndefOr[String]
+    var contentType: js.UndefOr[String]
   }
 
   object SdkResponse {
     def apply(
-      contentType: js.UndefOr[String] = js.undefined,
+      body: js.UndefOr[Blob] = js.undefined,
       contentDisposition: js.UndefOr[String] = js.undefined,
-      body: js.UndefOr[Blob] = js.undefined): SdkResponse = {
+      contentType: js.UndefOr[String] = js.undefined): SdkResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "contentType" -> contentType.map { x => x.asInstanceOf[js.Any] },
+        "body" -> body.map { x => x.asInstanceOf[js.Any] },
         "contentDisposition" -> contentDisposition.map { x => x.asInstanceOf[js.Any] },
-        "body" -> body.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "contentType" -> contentType.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SdkResponse]
     }
@@ -4011,23 +4011,23 @@ package apigateway {
    */
   @js.native
   trait SdkType extends js.Object {
-    var id: js.UndefOr[String]
-    var friendlyName: js.UndefOr[String]
-    var description: js.UndefOr[String]
     var configurationProperties: js.UndefOr[ListOfSdkConfigurationProperty]
+    var description: js.UndefOr[String]
+    var friendlyName: js.UndefOr[String]
+    var id: js.UndefOr[String]
   }
 
   object SdkType {
     def apply(
-      id: js.UndefOr[String] = js.undefined,
-      friendlyName: js.UndefOr[String] = js.undefined,
+      configurationProperties: js.UndefOr[ListOfSdkConfigurationProperty] = js.undefined,
       description: js.UndefOr[String] = js.undefined,
-      configurationProperties: js.UndefOr[ListOfSdkConfigurationProperty] = js.undefined): SdkType = {
+      friendlyName: js.UndefOr[String] = js.undefined,
+      id: js.UndefOr[String] = js.undefined): SdkType = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "id" -> id.map { x => x.asInstanceOf[js.Any] },
-        "friendlyName" -> friendlyName.map { x => x.asInstanceOf[js.Any] },
+        "configurationProperties" -> configurationProperties.map { x => x.asInstanceOf[js.Any] },
         "description" -> description.map { x => x.asInstanceOf[js.Any] },
-        "configurationProperties" -> configurationProperties.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "friendlyName" -> friendlyName.map { x => x.asInstanceOf[js.Any] },
+        "id" -> id.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SdkType]
     }
@@ -4038,17 +4038,17 @@ package apigateway {
    */
   @js.native
   trait SdkTypes extends js.Object {
-    var position: js.UndefOr[String]
     var items: js.UndefOr[ListOfSdkType]
+    var position: js.UndefOr[String]
   }
 
   object SdkTypes {
     def apply(
-      position: js.UndefOr[String] = js.undefined,
-      items: js.UndefOr[ListOfSdkType] = js.undefined): SdkTypes = {
+      items: js.UndefOr[ListOfSdkType] = js.undefined,
+      position: js.UndefOr[String] = js.undefined): SdkTypes = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "position" -> position.map { x => x.asInstanceOf[js.Any] },
-        "items" -> items.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "items" -> items.map { x => x.asInstanceOf[js.Any] },
+        "position" -> position.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SdkTypes]
     }
@@ -4059,62 +4059,62 @@ package apigateway {
    */
   @js.native
   trait Stage extends js.Object {
-    var clientCertificateId: js.UndefOr[String]
-    var description: js.UndefOr[String]
-    var cacheClusterStatus: js.UndefOr[CacheClusterStatus]
-    var tags: js.UndefOr[MapOfStringToString]
-    var tracingEnabled: js.UndefOr[Boolean]
-    var deploymentId: js.UndefOr[String]
-    var documentationVersion: js.UndefOr[String]
-    var variables: js.UndefOr[MapOfStringToString]
-    var canarySettings: js.UndefOr[CanarySettings]
-    var cacheClusterEnabled: js.UndefOr[Boolean]
-    var stageName: js.UndefOr[String]
     var accessLogSettings: js.UndefOr[AccessLogSettings]
+    var cacheClusterEnabled: js.UndefOr[Boolean]
+    var cacheClusterSize: js.UndefOr[CacheClusterSize]
+    var cacheClusterStatus: js.UndefOr[CacheClusterStatus]
+    var canarySettings: js.UndefOr[CanarySettings]
+    var clientCertificateId: js.UndefOr[String]
+    var createdDate: js.UndefOr[Timestamp]
+    var deploymentId: js.UndefOr[String]
+    var description: js.UndefOr[String]
+    var documentationVersion: js.UndefOr[String]
     var lastUpdatedDate: js.UndefOr[Timestamp]
     var methodSettings: js.UndefOr[MapOfMethodSettings]
-    var cacheClusterSize: js.UndefOr[CacheClusterSize]
+    var stageName: js.UndefOr[String]
+    var tags: js.UndefOr[MapOfStringToString]
+    var tracingEnabled: js.UndefOr[Boolean]
+    var variables: js.UndefOr[MapOfStringToString]
     var webAclArn: js.UndefOr[String]
-    var createdDate: js.UndefOr[Timestamp]
   }
 
   object Stage {
     def apply(
-      clientCertificateId: js.UndefOr[String] = js.undefined,
-      description: js.UndefOr[String] = js.undefined,
-      cacheClusterStatus: js.UndefOr[CacheClusterStatus] = js.undefined,
-      tags: js.UndefOr[MapOfStringToString] = js.undefined,
-      tracingEnabled: js.UndefOr[Boolean] = js.undefined,
-      deploymentId: js.UndefOr[String] = js.undefined,
-      documentationVersion: js.UndefOr[String] = js.undefined,
-      variables: js.UndefOr[MapOfStringToString] = js.undefined,
-      canarySettings: js.UndefOr[CanarySettings] = js.undefined,
-      cacheClusterEnabled: js.UndefOr[Boolean] = js.undefined,
-      stageName: js.UndefOr[String] = js.undefined,
       accessLogSettings: js.UndefOr[AccessLogSettings] = js.undefined,
+      cacheClusterEnabled: js.UndefOr[Boolean] = js.undefined,
+      cacheClusterSize: js.UndefOr[CacheClusterSize] = js.undefined,
+      cacheClusterStatus: js.UndefOr[CacheClusterStatus] = js.undefined,
+      canarySettings: js.UndefOr[CanarySettings] = js.undefined,
+      clientCertificateId: js.UndefOr[String] = js.undefined,
+      createdDate: js.UndefOr[Timestamp] = js.undefined,
+      deploymentId: js.UndefOr[String] = js.undefined,
+      description: js.UndefOr[String] = js.undefined,
+      documentationVersion: js.UndefOr[String] = js.undefined,
       lastUpdatedDate: js.UndefOr[Timestamp] = js.undefined,
       methodSettings: js.UndefOr[MapOfMethodSettings] = js.undefined,
-      cacheClusterSize: js.UndefOr[CacheClusterSize] = js.undefined,
-      webAclArn: js.UndefOr[String] = js.undefined,
-      createdDate: js.UndefOr[Timestamp] = js.undefined): Stage = {
+      stageName: js.UndefOr[String] = js.undefined,
+      tags: js.UndefOr[MapOfStringToString] = js.undefined,
+      tracingEnabled: js.UndefOr[Boolean] = js.undefined,
+      variables: js.UndefOr[MapOfStringToString] = js.undefined,
+      webAclArn: js.UndefOr[String] = js.undefined): Stage = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "clientCertificateId" -> clientCertificateId.map { x => x.asInstanceOf[js.Any] },
-        "description" -> description.map { x => x.asInstanceOf[js.Any] },
-        "cacheClusterStatus" -> cacheClusterStatus.map { x => x.asInstanceOf[js.Any] },
-        "tags" -> tags.map { x => x.asInstanceOf[js.Any] },
-        "tracingEnabled" -> tracingEnabled.map { x => x.asInstanceOf[js.Any] },
-        "deploymentId" -> deploymentId.map { x => x.asInstanceOf[js.Any] },
-        "documentationVersion" -> documentationVersion.map { x => x.asInstanceOf[js.Any] },
-        "variables" -> variables.map { x => x.asInstanceOf[js.Any] },
-        "canarySettings" -> canarySettings.map { x => x.asInstanceOf[js.Any] },
-        "cacheClusterEnabled" -> cacheClusterEnabled.map { x => x.asInstanceOf[js.Any] },
-        "stageName" -> stageName.map { x => x.asInstanceOf[js.Any] },
         "accessLogSettings" -> accessLogSettings.map { x => x.asInstanceOf[js.Any] },
+        "cacheClusterEnabled" -> cacheClusterEnabled.map { x => x.asInstanceOf[js.Any] },
+        "cacheClusterSize" -> cacheClusterSize.map { x => x.asInstanceOf[js.Any] },
+        "cacheClusterStatus" -> cacheClusterStatus.map { x => x.asInstanceOf[js.Any] },
+        "canarySettings" -> canarySettings.map { x => x.asInstanceOf[js.Any] },
+        "clientCertificateId" -> clientCertificateId.map { x => x.asInstanceOf[js.Any] },
+        "createdDate" -> createdDate.map { x => x.asInstanceOf[js.Any] },
+        "deploymentId" -> deploymentId.map { x => x.asInstanceOf[js.Any] },
+        "description" -> description.map { x => x.asInstanceOf[js.Any] },
+        "documentationVersion" -> documentationVersion.map { x => x.asInstanceOf[js.Any] },
         "lastUpdatedDate" -> lastUpdatedDate.map { x => x.asInstanceOf[js.Any] },
         "methodSettings" -> methodSettings.map { x => x.asInstanceOf[js.Any] },
-        "cacheClusterSize" -> cacheClusterSize.map { x => x.asInstanceOf[js.Any] },
-        "webAclArn" -> webAclArn.map { x => x.asInstanceOf[js.Any] },
-        "createdDate" -> createdDate.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "stageName" -> stageName.map { x => x.asInstanceOf[js.Any] },
+        "tags" -> tags.map { x => x.asInstanceOf[js.Any] },
+        "tracingEnabled" -> tracingEnabled.map { x => x.asInstanceOf[js.Any] },
+        "variables" -> variables.map { x => x.asInstanceOf[js.Any] },
+        "webAclArn" -> webAclArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Stage]
     }
@@ -4164,17 +4164,17 @@ package apigateway {
    */
   @js.native
   trait TagResourceRequest extends js.Object {
-    var resourceArn: js.UndefOr[String]
-    var tags: js.UndefOr[MapOfStringToString]
+    var resourceArn: String
+    var tags: MapOfStringToString
   }
 
   object TagResourceRequest {
     def apply(
-      resourceArn: js.UndefOr[String] = js.undefined,
-      tags: js.UndefOr[MapOfStringToString] = js.undefined): TagResourceRequest = {
+      resourceArn: String,
+      tags: MapOfStringToString): TagResourceRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "resourceArn" -> resourceArn.map { x => x.asInstanceOf[js.Any] },
-        "tags" -> tags.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "resourceArn" -> resourceArn.asInstanceOf[js.Any],
+        "tags" -> tags.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TagResourceRequest]
     }
@@ -4221,35 +4221,35 @@ package apigateway {
    */
   @js.native
   trait TestInvokeAuthorizerRequest extends js.Object {
-    var multiValueHeaders: js.UndefOr[MapOfStringToList]
-    var body: js.UndefOr[String]
-    var pathWithQueryString: js.UndefOr[String]
+    var authorizerId: String
+    var restApiId: String
     var additionalContext: js.UndefOr[MapOfStringToString]
-    var authorizerId: js.UndefOr[String]
-    var stageVariables: js.UndefOr[MapOfStringToString]
+    var body: js.UndefOr[String]
     var headers: js.UndefOr[MapOfStringToString]
-    var restApiId: js.UndefOr[String]
+    var multiValueHeaders: js.UndefOr[MapOfStringToList]
+    var pathWithQueryString: js.UndefOr[String]
+    var stageVariables: js.UndefOr[MapOfStringToString]
   }
 
   object TestInvokeAuthorizerRequest {
     def apply(
-      multiValueHeaders: js.UndefOr[MapOfStringToList] = js.undefined,
-      body: js.UndefOr[String] = js.undefined,
-      pathWithQueryString: js.UndefOr[String] = js.undefined,
+      authorizerId: String,
+      restApiId: String,
       additionalContext: js.UndefOr[MapOfStringToString] = js.undefined,
-      authorizerId: js.UndefOr[String] = js.undefined,
-      stageVariables: js.UndefOr[MapOfStringToString] = js.undefined,
+      body: js.UndefOr[String] = js.undefined,
       headers: js.UndefOr[MapOfStringToString] = js.undefined,
-      restApiId: js.UndefOr[String] = js.undefined): TestInvokeAuthorizerRequest = {
+      multiValueHeaders: js.UndefOr[MapOfStringToList] = js.undefined,
+      pathWithQueryString: js.UndefOr[String] = js.undefined,
+      stageVariables: js.UndefOr[MapOfStringToString] = js.undefined): TestInvokeAuthorizerRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "multiValueHeaders" -> multiValueHeaders.map { x => x.asInstanceOf[js.Any] },
-        "body" -> body.map { x => x.asInstanceOf[js.Any] },
-        "pathWithQueryString" -> pathWithQueryString.map { x => x.asInstanceOf[js.Any] },
+        "authorizerId" -> authorizerId.asInstanceOf[js.Any],
+        "restApiId" -> restApiId.asInstanceOf[js.Any],
         "additionalContext" -> additionalContext.map { x => x.asInstanceOf[js.Any] },
-        "authorizerId" -> authorizerId.map { x => x.asInstanceOf[js.Any] },
-        "stageVariables" -> stageVariables.map { x => x.asInstanceOf[js.Any] },
+        "body" -> body.map { x => x.asInstanceOf[js.Any] },
         "headers" -> headers.map { x => x.asInstanceOf[js.Any] },
-        "restApiId" -> restApiId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "multiValueHeaders" -> multiValueHeaders.map { x => x.asInstanceOf[js.Any] },
+        "pathWithQueryString" -> pathWithQueryString.map { x => x.asInstanceOf[js.Any] },
+        "stageVariables" -> stageVariables.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TestInvokeAuthorizerRequest]
     }
@@ -4260,32 +4260,32 @@ package apigateway {
    */
   @js.native
   trait TestInvokeAuthorizerResponse extends js.Object {
-    var clientStatus: js.UndefOr[Int]
-    var principalId: js.UndefOr[String]
-    var latency: js.UndefOr[Double]
     var authorization: js.UndefOr[MapOfStringToList]
     var claims: js.UndefOr[MapOfStringToString]
-    var policy: js.UndefOr[String]
+    var clientStatus: js.UndefOr[Int]
+    var latency: js.UndefOr[Double]
     var log: js.UndefOr[String]
+    var policy: js.UndefOr[String]
+    var principalId: js.UndefOr[String]
   }
 
   object TestInvokeAuthorizerResponse {
     def apply(
-      clientStatus: js.UndefOr[Int] = js.undefined,
-      principalId: js.UndefOr[String] = js.undefined,
-      latency: js.UndefOr[Double] = js.undefined,
       authorization: js.UndefOr[MapOfStringToList] = js.undefined,
       claims: js.UndefOr[MapOfStringToString] = js.undefined,
+      clientStatus: js.UndefOr[Int] = js.undefined,
+      latency: js.UndefOr[Double] = js.undefined,
+      log: js.UndefOr[String] = js.undefined,
       policy: js.UndefOr[String] = js.undefined,
-      log: js.UndefOr[String] = js.undefined): TestInvokeAuthorizerResponse = {
+      principalId: js.UndefOr[String] = js.undefined): TestInvokeAuthorizerResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "clientStatus" -> clientStatus.map { x => x.asInstanceOf[js.Any] },
-        "principalId" -> principalId.map { x => x.asInstanceOf[js.Any] },
-        "latency" -> latency.map { x => x.asInstanceOf[js.Any] },
         "authorization" -> authorization.map { x => x.asInstanceOf[js.Any] },
         "claims" -> claims.map { x => x.asInstanceOf[js.Any] },
+        "clientStatus" -> clientStatus.map { x => x.asInstanceOf[js.Any] },
+        "latency" -> latency.map { x => x.asInstanceOf[js.Any] },
+        "log" -> log.map { x => x.asInstanceOf[js.Any] },
         "policy" -> policy.map { x => x.asInstanceOf[js.Any] },
-        "log" -> log.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "principalId" -> principalId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TestInvokeAuthorizerResponse]
     }
@@ -4296,38 +4296,38 @@ package apigateway {
    */
   @js.native
   trait TestInvokeMethodRequest extends js.Object {
-    var resourceId: js.UndefOr[String]
-    var multiValueHeaders: js.UndefOr[MapOfStringToList]
+    var httpMethod: String
+    var resourceId: String
+    var restApiId: String
     var body: js.UndefOr[String]
-    var pathWithQueryString: js.UndefOr[String]
     var clientCertificateId: js.UndefOr[String]
-    var httpMethod: js.UndefOr[String]
-    var stageVariables: js.UndefOr[MapOfStringToString]
     var headers: js.UndefOr[MapOfStringToString]
-    var restApiId: js.UndefOr[String]
+    var multiValueHeaders: js.UndefOr[MapOfStringToList]
+    var pathWithQueryString: js.UndefOr[String]
+    var stageVariables: js.UndefOr[MapOfStringToString]
   }
 
   object TestInvokeMethodRequest {
     def apply(
-      resourceId: js.UndefOr[String] = js.undefined,
-      multiValueHeaders: js.UndefOr[MapOfStringToList] = js.undefined,
+      httpMethod: String,
+      resourceId: String,
+      restApiId: String,
       body: js.UndefOr[String] = js.undefined,
-      pathWithQueryString: js.UndefOr[String] = js.undefined,
       clientCertificateId: js.UndefOr[String] = js.undefined,
-      httpMethod: js.UndefOr[String] = js.undefined,
-      stageVariables: js.UndefOr[MapOfStringToString] = js.undefined,
       headers: js.UndefOr[MapOfStringToString] = js.undefined,
-      restApiId: js.UndefOr[String] = js.undefined): TestInvokeMethodRequest = {
+      multiValueHeaders: js.UndefOr[MapOfStringToList] = js.undefined,
+      pathWithQueryString: js.UndefOr[String] = js.undefined,
+      stageVariables: js.UndefOr[MapOfStringToString] = js.undefined): TestInvokeMethodRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "resourceId" -> resourceId.map { x => x.asInstanceOf[js.Any] },
-        "multiValueHeaders" -> multiValueHeaders.map { x => x.asInstanceOf[js.Any] },
+        "httpMethod" -> httpMethod.asInstanceOf[js.Any],
+        "resourceId" -> resourceId.asInstanceOf[js.Any],
+        "restApiId" -> restApiId.asInstanceOf[js.Any],
         "body" -> body.map { x => x.asInstanceOf[js.Any] },
-        "pathWithQueryString" -> pathWithQueryString.map { x => x.asInstanceOf[js.Any] },
         "clientCertificateId" -> clientCertificateId.map { x => x.asInstanceOf[js.Any] },
-        "httpMethod" -> httpMethod.map { x => x.asInstanceOf[js.Any] },
-        "stageVariables" -> stageVariables.map { x => x.asInstanceOf[js.Any] },
         "headers" -> headers.map { x => x.asInstanceOf[js.Any] },
-        "restApiId" -> restApiId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "multiValueHeaders" -> multiValueHeaders.map { x => x.asInstanceOf[js.Any] },
+        "pathWithQueryString" -> pathWithQueryString.map { x => x.asInstanceOf[js.Any] },
+        "stageVariables" -> stageVariables.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TestInvokeMethodRequest]
     }
@@ -4338,29 +4338,29 @@ package apigateway {
    */
   @js.native
   trait TestInvokeMethodResponse extends js.Object {
-    var multiValueHeaders: js.UndefOr[MapOfStringToList]
     var body: js.UndefOr[String]
-    var latency: js.UndefOr[Double]
-    var status: js.UndefOr[Int]
     var headers: js.UndefOr[MapOfStringToString]
+    var latency: js.UndefOr[Double]
     var log: js.UndefOr[String]
+    var multiValueHeaders: js.UndefOr[MapOfStringToList]
+    var status: js.UndefOr[Int]
   }
 
   object TestInvokeMethodResponse {
     def apply(
-      multiValueHeaders: js.UndefOr[MapOfStringToList] = js.undefined,
       body: js.UndefOr[String] = js.undefined,
-      latency: js.UndefOr[Double] = js.undefined,
-      status: js.UndefOr[Int] = js.undefined,
       headers: js.UndefOr[MapOfStringToString] = js.undefined,
-      log: js.UndefOr[String] = js.undefined): TestInvokeMethodResponse = {
+      latency: js.UndefOr[Double] = js.undefined,
+      log: js.UndefOr[String] = js.undefined,
+      multiValueHeaders: js.UndefOr[MapOfStringToList] = js.undefined,
+      status: js.UndefOr[Int] = js.undefined): TestInvokeMethodResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "multiValueHeaders" -> multiValueHeaders.map { x => x.asInstanceOf[js.Any] },
         "body" -> body.map { x => x.asInstanceOf[js.Any] },
-        "latency" -> latency.map { x => x.asInstanceOf[js.Any] },
-        "status" -> status.map { x => x.asInstanceOf[js.Any] },
         "headers" -> headers.map { x => x.asInstanceOf[js.Any] },
-        "log" -> log.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "latency" -> latency.map { x => x.asInstanceOf[js.Any] },
+        "log" -> log.map { x => x.asInstanceOf[js.Any] },
+        "multiValueHeaders" -> multiValueHeaders.map { x => x.asInstanceOf[js.Any] },
+        "status" -> status.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TestInvokeMethodResponse]
     }
@@ -4400,17 +4400,17 @@ package apigateway {
    */
   @js.native
   trait UntagResourceRequest extends js.Object {
-    var resourceArn: js.UndefOr[String]
-    var tagKeys: js.UndefOr[ListOfString]
+    var resourceArn: String
+    var tagKeys: ListOfString
   }
 
   object UntagResourceRequest {
     def apply(
-      resourceArn: js.UndefOr[String] = js.undefined,
-      tagKeys: js.UndefOr[ListOfString] = js.undefined): UntagResourceRequest = {
+      resourceArn: String,
+      tagKeys: ListOfString): UntagResourceRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "resourceArn" -> resourceArn.map { x => x.asInstanceOf[js.Any] },
-        "tagKeys" -> tagKeys.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "resourceArn" -> resourceArn.asInstanceOf[js.Any],
+        "tagKeys" -> tagKeys.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UntagResourceRequest]
     }
@@ -4439,16 +4439,16 @@ package apigateway {
    */
   @js.native
   trait UpdateApiKeyRequest extends js.Object {
-    var apiKey: js.UndefOr[String]
+    var apiKey: String
     var patchOperations: js.UndefOr[ListOfPatchOperation]
   }
 
   object UpdateApiKeyRequest {
     def apply(
-      apiKey: js.UndefOr[String] = js.undefined,
+      apiKey: String,
       patchOperations: js.UndefOr[ListOfPatchOperation] = js.undefined): UpdateApiKeyRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "apiKey" -> apiKey.map { x => x.asInstanceOf[js.Any] },
+        "apiKey" -> apiKey.asInstanceOf[js.Any],
         "patchOperations" -> patchOperations.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateApiKeyRequest]
@@ -4460,19 +4460,19 @@ package apigateway {
    */
   @js.native
   trait UpdateAuthorizerRequest extends js.Object {
-    var restApiId: js.UndefOr[String]
-    var authorizerId: js.UndefOr[String]
+    var authorizerId: String
+    var restApiId: String
     var patchOperations: js.UndefOr[ListOfPatchOperation]
   }
 
   object UpdateAuthorizerRequest {
     def apply(
-      restApiId: js.UndefOr[String] = js.undefined,
-      authorizerId: js.UndefOr[String] = js.undefined,
+      authorizerId: String,
+      restApiId: String,
       patchOperations: js.UndefOr[ListOfPatchOperation] = js.undefined): UpdateAuthorizerRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "restApiId" -> restApiId.map { x => x.asInstanceOf[js.Any] },
-        "authorizerId" -> authorizerId.map { x => x.asInstanceOf[js.Any] },
+        "authorizerId" -> authorizerId.asInstanceOf[js.Any],
+        "restApiId" -> restApiId.asInstanceOf[js.Any],
         "patchOperations" -> patchOperations.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateAuthorizerRequest]
@@ -4484,19 +4484,19 @@ package apigateway {
    */
   @js.native
   trait UpdateBasePathMappingRequest extends js.Object {
-    var domainName: js.UndefOr[String]
-    var basePath: js.UndefOr[String]
+    var basePath: String
+    var domainName: String
     var patchOperations: js.UndefOr[ListOfPatchOperation]
   }
 
   object UpdateBasePathMappingRequest {
     def apply(
-      domainName: js.UndefOr[String] = js.undefined,
-      basePath: js.UndefOr[String] = js.undefined,
+      basePath: String,
+      domainName: String,
       patchOperations: js.UndefOr[ListOfPatchOperation] = js.undefined): UpdateBasePathMappingRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "domainName" -> domainName.map { x => x.asInstanceOf[js.Any] },
-        "basePath" -> basePath.map { x => x.asInstanceOf[js.Any] },
+        "basePath" -> basePath.asInstanceOf[js.Any],
+        "domainName" -> domainName.asInstanceOf[js.Any],
         "patchOperations" -> patchOperations.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateBasePathMappingRequest]
@@ -4508,16 +4508,16 @@ package apigateway {
    */
   @js.native
   trait UpdateClientCertificateRequest extends js.Object {
-    var clientCertificateId: js.UndefOr[String]
+    var clientCertificateId: String
     var patchOperations: js.UndefOr[ListOfPatchOperation]
   }
 
   object UpdateClientCertificateRequest {
     def apply(
-      clientCertificateId: js.UndefOr[String] = js.undefined,
+      clientCertificateId: String,
       patchOperations: js.UndefOr[ListOfPatchOperation] = js.undefined): UpdateClientCertificateRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "clientCertificateId" -> clientCertificateId.map { x => x.asInstanceOf[js.Any] },
+        "clientCertificateId" -> clientCertificateId.asInstanceOf[js.Any],
         "patchOperations" -> patchOperations.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateClientCertificateRequest]
@@ -4529,19 +4529,19 @@ package apigateway {
    */
   @js.native
   trait UpdateDeploymentRequest extends js.Object {
-    var restApiId: js.UndefOr[String]
-    var deploymentId: js.UndefOr[String]
+    var deploymentId: String
+    var restApiId: String
     var patchOperations: js.UndefOr[ListOfPatchOperation]
   }
 
   object UpdateDeploymentRequest {
     def apply(
-      restApiId: js.UndefOr[String] = js.undefined,
-      deploymentId: js.UndefOr[String] = js.undefined,
+      deploymentId: String,
+      restApiId: String,
       patchOperations: js.UndefOr[ListOfPatchOperation] = js.undefined): UpdateDeploymentRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "restApiId" -> restApiId.map { x => x.asInstanceOf[js.Any] },
-        "deploymentId" -> deploymentId.map { x => x.asInstanceOf[js.Any] },
+        "deploymentId" -> deploymentId.asInstanceOf[js.Any],
+        "restApiId" -> restApiId.asInstanceOf[js.Any],
         "patchOperations" -> patchOperations.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateDeploymentRequest]
@@ -4553,19 +4553,19 @@ package apigateway {
    */
   @js.native
   trait UpdateDocumentationPartRequest extends js.Object {
-    var restApiId: js.UndefOr[String]
-    var documentationPartId: js.UndefOr[String]
+    var documentationPartId: String
+    var restApiId: String
     var patchOperations: js.UndefOr[ListOfPatchOperation]
   }
 
   object UpdateDocumentationPartRequest {
     def apply(
-      restApiId: js.UndefOr[String] = js.undefined,
-      documentationPartId: js.UndefOr[String] = js.undefined,
+      documentationPartId: String,
+      restApiId: String,
       patchOperations: js.UndefOr[ListOfPatchOperation] = js.undefined): UpdateDocumentationPartRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "restApiId" -> restApiId.map { x => x.asInstanceOf[js.Any] },
-        "documentationPartId" -> documentationPartId.map { x => x.asInstanceOf[js.Any] },
+        "documentationPartId" -> documentationPartId.asInstanceOf[js.Any],
+        "restApiId" -> restApiId.asInstanceOf[js.Any],
         "patchOperations" -> patchOperations.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateDocumentationPartRequest]
@@ -4577,19 +4577,19 @@ package apigateway {
    */
   @js.native
   trait UpdateDocumentationVersionRequest extends js.Object {
-    var restApiId: js.UndefOr[String]
-    var documentationVersion: js.UndefOr[String]
+    var documentationVersion: String
+    var restApiId: String
     var patchOperations: js.UndefOr[ListOfPatchOperation]
   }
 
   object UpdateDocumentationVersionRequest {
     def apply(
-      restApiId: js.UndefOr[String] = js.undefined,
-      documentationVersion: js.UndefOr[String] = js.undefined,
+      documentationVersion: String,
+      restApiId: String,
       patchOperations: js.UndefOr[ListOfPatchOperation] = js.undefined): UpdateDocumentationVersionRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "restApiId" -> restApiId.map { x => x.asInstanceOf[js.Any] },
-        "documentationVersion" -> documentationVersion.map { x => x.asInstanceOf[js.Any] },
+        "documentationVersion" -> documentationVersion.asInstanceOf[js.Any],
+        "restApiId" -> restApiId.asInstanceOf[js.Any],
         "patchOperations" -> patchOperations.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateDocumentationVersionRequest]
@@ -4601,16 +4601,16 @@ package apigateway {
    */
   @js.native
   trait UpdateDomainNameRequest extends js.Object {
-    var domainName: js.UndefOr[String]
+    var domainName: String
     var patchOperations: js.UndefOr[ListOfPatchOperation]
   }
 
   object UpdateDomainNameRequest {
     def apply(
-      domainName: js.UndefOr[String] = js.undefined,
+      domainName: String,
       patchOperations: js.UndefOr[ListOfPatchOperation] = js.undefined): UpdateDomainNameRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "domainName" -> domainName.map { x => x.asInstanceOf[js.Any] },
+        "domainName" -> domainName.asInstanceOf[js.Any],
         "patchOperations" -> patchOperations.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateDomainNameRequest]
@@ -4622,19 +4622,19 @@ package apigateway {
    */
   @js.native
   trait UpdateGatewayResponseRequest extends js.Object {
-    var restApiId: js.UndefOr[String]
-    var responseType: js.UndefOr[GatewayResponseType]
+    var responseType: GatewayResponseType
+    var restApiId: String
     var patchOperations: js.UndefOr[ListOfPatchOperation]
   }
 
   object UpdateGatewayResponseRequest {
     def apply(
-      restApiId: js.UndefOr[String] = js.undefined,
-      responseType: js.UndefOr[GatewayResponseType] = js.undefined,
+      responseType: GatewayResponseType,
+      restApiId: String,
       patchOperations: js.UndefOr[ListOfPatchOperation] = js.undefined): UpdateGatewayResponseRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "restApiId" -> restApiId.map { x => x.asInstanceOf[js.Any] },
-        "responseType" -> responseType.map { x => x.asInstanceOf[js.Any] },
+        "responseType" -> responseType.asInstanceOf[js.Any],
+        "restApiId" -> restApiId.asInstanceOf[js.Any],
         "patchOperations" -> patchOperations.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateGatewayResponseRequest]
@@ -4646,22 +4646,22 @@ package apigateway {
    */
   @js.native
   trait UpdateIntegrationRequest extends js.Object {
-    var restApiId: js.UndefOr[String]
-    var resourceId: js.UndefOr[String]
-    var httpMethod: js.UndefOr[String]
+    var httpMethod: String
+    var resourceId: String
+    var restApiId: String
     var patchOperations: js.UndefOr[ListOfPatchOperation]
   }
 
   object UpdateIntegrationRequest {
     def apply(
-      restApiId: js.UndefOr[String] = js.undefined,
-      resourceId: js.UndefOr[String] = js.undefined,
-      httpMethod: js.UndefOr[String] = js.undefined,
+      httpMethod: String,
+      resourceId: String,
+      restApiId: String,
       patchOperations: js.UndefOr[ListOfPatchOperation] = js.undefined): UpdateIntegrationRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "restApiId" -> restApiId.map { x => x.asInstanceOf[js.Any] },
-        "resourceId" -> resourceId.map { x => x.asInstanceOf[js.Any] },
-        "httpMethod" -> httpMethod.map { x => x.asInstanceOf[js.Any] },
+        "httpMethod" -> httpMethod.asInstanceOf[js.Any],
+        "resourceId" -> resourceId.asInstanceOf[js.Any],
+        "restApiId" -> restApiId.asInstanceOf[js.Any],
         "patchOperations" -> patchOperations.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateIntegrationRequest]
@@ -4673,26 +4673,26 @@ package apigateway {
    */
   @js.native
   trait UpdateIntegrationResponseRequest extends js.Object {
-    var statusCode: js.UndefOr[StatusCode]
-    var resourceId: js.UndefOr[String]
-    var httpMethod: js.UndefOr[String]
+    var httpMethod: String
+    var resourceId: String
+    var restApiId: String
+    var statusCode: StatusCode
     var patchOperations: js.UndefOr[ListOfPatchOperation]
-    var restApiId: js.UndefOr[String]
   }
 
   object UpdateIntegrationResponseRequest {
     def apply(
-      statusCode: js.UndefOr[StatusCode] = js.undefined,
-      resourceId: js.UndefOr[String] = js.undefined,
-      httpMethod: js.UndefOr[String] = js.undefined,
-      patchOperations: js.UndefOr[ListOfPatchOperation] = js.undefined,
-      restApiId: js.UndefOr[String] = js.undefined): UpdateIntegrationResponseRequest = {
+      httpMethod: String,
+      resourceId: String,
+      restApiId: String,
+      statusCode: StatusCode,
+      patchOperations: js.UndefOr[ListOfPatchOperation] = js.undefined): UpdateIntegrationResponseRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "statusCode" -> statusCode.map { x => x.asInstanceOf[js.Any] },
-        "resourceId" -> resourceId.map { x => x.asInstanceOf[js.Any] },
-        "httpMethod" -> httpMethod.map { x => x.asInstanceOf[js.Any] },
-        "patchOperations" -> patchOperations.map { x => x.asInstanceOf[js.Any] },
-        "restApiId" -> restApiId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "httpMethod" -> httpMethod.asInstanceOf[js.Any],
+        "resourceId" -> resourceId.asInstanceOf[js.Any],
+        "restApiId" -> restApiId.asInstanceOf[js.Any],
+        "statusCode" -> statusCode.asInstanceOf[js.Any],
+        "patchOperations" -> patchOperations.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateIntegrationResponseRequest]
     }
@@ -4703,22 +4703,22 @@ package apigateway {
    */
   @js.native
   trait UpdateMethodRequest extends js.Object {
-    var restApiId: js.UndefOr[String]
-    var resourceId: js.UndefOr[String]
-    var httpMethod: js.UndefOr[String]
+    var httpMethod: String
+    var resourceId: String
+    var restApiId: String
     var patchOperations: js.UndefOr[ListOfPatchOperation]
   }
 
   object UpdateMethodRequest {
     def apply(
-      restApiId: js.UndefOr[String] = js.undefined,
-      resourceId: js.UndefOr[String] = js.undefined,
-      httpMethod: js.UndefOr[String] = js.undefined,
+      httpMethod: String,
+      resourceId: String,
+      restApiId: String,
       patchOperations: js.UndefOr[ListOfPatchOperation] = js.undefined): UpdateMethodRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "restApiId" -> restApiId.map { x => x.asInstanceOf[js.Any] },
-        "resourceId" -> resourceId.map { x => x.asInstanceOf[js.Any] },
-        "httpMethod" -> httpMethod.map { x => x.asInstanceOf[js.Any] },
+        "httpMethod" -> httpMethod.asInstanceOf[js.Any],
+        "resourceId" -> resourceId.asInstanceOf[js.Any],
+        "restApiId" -> restApiId.asInstanceOf[js.Any],
         "patchOperations" -> patchOperations.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateMethodRequest]
@@ -4730,26 +4730,26 @@ package apigateway {
    */
   @js.native
   trait UpdateMethodResponseRequest extends js.Object {
-    var statusCode: js.UndefOr[StatusCode]
-    var resourceId: js.UndefOr[String]
-    var httpMethod: js.UndefOr[String]
+    var httpMethod: String
+    var resourceId: String
+    var restApiId: String
+    var statusCode: StatusCode
     var patchOperations: js.UndefOr[ListOfPatchOperation]
-    var restApiId: js.UndefOr[String]
   }
 
   object UpdateMethodResponseRequest {
     def apply(
-      statusCode: js.UndefOr[StatusCode] = js.undefined,
-      resourceId: js.UndefOr[String] = js.undefined,
-      httpMethod: js.UndefOr[String] = js.undefined,
-      patchOperations: js.UndefOr[ListOfPatchOperation] = js.undefined,
-      restApiId: js.UndefOr[String] = js.undefined): UpdateMethodResponseRequest = {
+      httpMethod: String,
+      resourceId: String,
+      restApiId: String,
+      statusCode: StatusCode,
+      patchOperations: js.UndefOr[ListOfPatchOperation] = js.undefined): UpdateMethodResponseRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "statusCode" -> statusCode.map { x => x.asInstanceOf[js.Any] },
-        "resourceId" -> resourceId.map { x => x.asInstanceOf[js.Any] },
-        "httpMethod" -> httpMethod.map { x => x.asInstanceOf[js.Any] },
-        "patchOperations" -> patchOperations.map { x => x.asInstanceOf[js.Any] },
-        "restApiId" -> restApiId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "httpMethod" -> httpMethod.asInstanceOf[js.Any],
+        "resourceId" -> resourceId.asInstanceOf[js.Any],
+        "restApiId" -> restApiId.asInstanceOf[js.Any],
+        "statusCode" -> statusCode.asInstanceOf[js.Any],
+        "patchOperations" -> patchOperations.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateMethodResponseRequest]
     }
@@ -4760,19 +4760,19 @@ package apigateway {
    */
   @js.native
   trait UpdateModelRequest extends js.Object {
-    var restApiId: js.UndefOr[String]
-    var modelName: js.UndefOr[String]
+    var modelName: String
+    var restApiId: String
     var patchOperations: js.UndefOr[ListOfPatchOperation]
   }
 
   object UpdateModelRequest {
     def apply(
-      restApiId: js.UndefOr[String] = js.undefined,
-      modelName: js.UndefOr[String] = js.undefined,
+      modelName: String,
+      restApiId: String,
       patchOperations: js.UndefOr[ListOfPatchOperation] = js.undefined): UpdateModelRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "restApiId" -> restApiId.map { x => x.asInstanceOf[js.Any] },
-        "modelName" -> modelName.map { x => x.asInstanceOf[js.Any] },
+        "modelName" -> modelName.asInstanceOf[js.Any],
+        "restApiId" -> restApiId.asInstanceOf[js.Any],
         "patchOperations" -> patchOperations.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateModelRequest]
@@ -4784,19 +4784,19 @@ package apigateway {
    */
   @js.native
   trait UpdateRequestValidatorRequest extends js.Object {
-    var restApiId: js.UndefOr[String]
-    var requestValidatorId: js.UndefOr[String]
+    var requestValidatorId: String
+    var restApiId: String
     var patchOperations: js.UndefOr[ListOfPatchOperation]
   }
 
   object UpdateRequestValidatorRequest {
     def apply(
-      restApiId: js.UndefOr[String] = js.undefined,
-      requestValidatorId: js.UndefOr[String] = js.undefined,
+      requestValidatorId: String,
+      restApiId: String,
       patchOperations: js.UndefOr[ListOfPatchOperation] = js.undefined): UpdateRequestValidatorRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "restApiId" -> restApiId.map { x => x.asInstanceOf[js.Any] },
-        "requestValidatorId" -> requestValidatorId.map { x => x.asInstanceOf[js.Any] },
+        "requestValidatorId" -> requestValidatorId.asInstanceOf[js.Any],
+        "restApiId" -> restApiId.asInstanceOf[js.Any],
         "patchOperations" -> patchOperations.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateRequestValidatorRequest]
@@ -4808,19 +4808,19 @@ package apigateway {
    */
   @js.native
   trait UpdateResourceRequest extends js.Object {
-    var restApiId: js.UndefOr[String]
-    var resourceId: js.UndefOr[String]
+    var resourceId: String
+    var restApiId: String
     var patchOperations: js.UndefOr[ListOfPatchOperation]
   }
 
   object UpdateResourceRequest {
     def apply(
-      restApiId: js.UndefOr[String] = js.undefined,
-      resourceId: js.UndefOr[String] = js.undefined,
+      resourceId: String,
+      restApiId: String,
       patchOperations: js.UndefOr[ListOfPatchOperation] = js.undefined): UpdateResourceRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "restApiId" -> restApiId.map { x => x.asInstanceOf[js.Any] },
-        "resourceId" -> resourceId.map { x => x.asInstanceOf[js.Any] },
+        "resourceId" -> resourceId.asInstanceOf[js.Any],
+        "restApiId" -> restApiId.asInstanceOf[js.Any],
         "patchOperations" -> patchOperations.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateResourceRequest]
@@ -4832,16 +4832,16 @@ package apigateway {
    */
   @js.native
   trait UpdateRestApiRequest extends js.Object {
-    var restApiId: js.UndefOr[String]
+    var restApiId: String
     var patchOperations: js.UndefOr[ListOfPatchOperation]
   }
 
   object UpdateRestApiRequest {
     def apply(
-      restApiId: js.UndefOr[String] = js.undefined,
+      restApiId: String,
       patchOperations: js.UndefOr[ListOfPatchOperation] = js.undefined): UpdateRestApiRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "restApiId" -> restApiId.map { x => x.asInstanceOf[js.Any] },
+        "restApiId" -> restApiId.asInstanceOf[js.Any],
         "patchOperations" -> patchOperations.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateRestApiRequest]
@@ -4853,19 +4853,19 @@ package apigateway {
    */
   @js.native
   trait UpdateStageRequest extends js.Object {
-    var restApiId: js.UndefOr[String]
-    var stageName: js.UndefOr[String]
+    var restApiId: String
+    var stageName: String
     var patchOperations: js.UndefOr[ListOfPatchOperation]
   }
 
   object UpdateStageRequest {
     def apply(
-      restApiId: js.UndefOr[String] = js.undefined,
-      stageName: js.UndefOr[String] = js.undefined,
+      restApiId: String,
+      stageName: String,
       patchOperations: js.UndefOr[ListOfPatchOperation] = js.undefined): UpdateStageRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "restApiId" -> restApiId.map { x => x.asInstanceOf[js.Any] },
-        "stageName" -> stageName.map { x => x.asInstanceOf[js.Any] },
+        "restApiId" -> restApiId.asInstanceOf[js.Any],
+        "stageName" -> stageName.asInstanceOf[js.Any],
         "patchOperations" -> patchOperations.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateStageRequest]
@@ -4877,16 +4877,16 @@ package apigateway {
    */
   @js.native
   trait UpdateUsagePlanRequest extends js.Object {
-    var usagePlanId: js.UndefOr[String]
+    var usagePlanId: String
     var patchOperations: js.UndefOr[ListOfPatchOperation]
   }
 
   object UpdateUsagePlanRequest {
     def apply(
-      usagePlanId: js.UndefOr[String] = js.undefined,
+      usagePlanId: String,
       patchOperations: js.UndefOr[ListOfPatchOperation] = js.undefined): UpdateUsagePlanRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "usagePlanId" -> usagePlanId.map { x => x.asInstanceOf[js.Any] },
+        "usagePlanId" -> usagePlanId.asInstanceOf[js.Any],
         "patchOperations" -> patchOperations.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateUsagePlanRequest]
@@ -4898,19 +4898,19 @@ package apigateway {
    */
   @js.native
   trait UpdateUsageRequest extends js.Object {
-    var usagePlanId: js.UndefOr[String]
-    var keyId: js.UndefOr[String]
+    var keyId: String
+    var usagePlanId: String
     var patchOperations: js.UndefOr[ListOfPatchOperation]
   }
 
   object UpdateUsageRequest {
     def apply(
-      usagePlanId: js.UndefOr[String] = js.undefined,
-      keyId: js.UndefOr[String] = js.undefined,
+      keyId: String,
+      usagePlanId: String,
       patchOperations: js.UndefOr[ListOfPatchOperation] = js.undefined): UpdateUsageRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "usagePlanId" -> usagePlanId.map { x => x.asInstanceOf[js.Any] },
-        "keyId" -> keyId.map { x => x.asInstanceOf[js.Any] },
+        "keyId" -> keyId.asInstanceOf[js.Any],
+        "usagePlanId" -> usagePlanId.asInstanceOf[js.Any],
         "patchOperations" -> patchOperations.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateUsageRequest]
@@ -4922,16 +4922,16 @@ package apigateway {
    */
   @js.native
   trait UpdateVpcLinkRequest extends js.Object {
-    var vpcLinkId: js.UndefOr[String]
+    var vpcLinkId: String
     var patchOperations: js.UndefOr[ListOfPatchOperation]
   }
 
   object UpdateVpcLinkRequest {
     def apply(
-      vpcLinkId: js.UndefOr[String] = js.undefined,
+      vpcLinkId: String,
       patchOperations: js.UndefOr[ListOfPatchOperation] = js.undefined): UpdateVpcLinkRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "vpcLinkId" -> vpcLinkId.map { x => x.asInstanceOf[js.Any] },
+        "vpcLinkId" -> vpcLinkId.asInstanceOf[js.Any],
         "patchOperations" -> patchOperations.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateVpcLinkRequest]
@@ -4945,24 +4945,24 @@ package apigateway {
   trait Usage extends js.Object {
     var endDate: js.UndefOr[String]
     var items: js.UndefOr[MapOfKeyUsages]
-    var usagePlanId: js.UndefOr[String]
     var position: js.UndefOr[String]
     var startDate: js.UndefOr[String]
+    var usagePlanId: js.UndefOr[String]
   }
 
   object Usage {
     def apply(
       endDate: js.UndefOr[String] = js.undefined,
       items: js.UndefOr[MapOfKeyUsages] = js.undefined,
-      usagePlanId: js.UndefOr[String] = js.undefined,
       position: js.UndefOr[String] = js.undefined,
-      startDate: js.UndefOr[String] = js.undefined): Usage = {
+      startDate: js.UndefOr[String] = js.undefined,
+      usagePlanId: js.UndefOr[String] = js.undefined): Usage = {
       val _fields = IndexedSeq[(String, js.Any)](
         "endDate" -> endDate.map { x => x.asInstanceOf[js.Any] },
         "items" -> items.map { x => x.asInstanceOf[js.Any] },
-        "usagePlanId" -> usagePlanId.map { x => x.asInstanceOf[js.Any] },
         "position" -> position.map { x => x.asInstanceOf[js.Any] },
-        "startDate" -> startDate.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "startDate" -> startDate.map { x => x.asInstanceOf[js.Any] },
+        "usagePlanId" -> usagePlanId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Usage]
     }
@@ -4973,32 +4973,32 @@ package apigateway {
    */
   @js.native
   trait UsagePlan extends js.Object {
-    var name: js.UndefOr[String]
-    var quota: js.UndefOr[QuotaSettings]
+    var apiStages: js.UndefOr[ListOfApiStage]
     var description: js.UndefOr[String]
     var id: js.UndefOr[String]
-    var apiStages: js.UndefOr[ListOfApiStage]
-    var throttle: js.UndefOr[ThrottleSettings]
+    var name: js.UndefOr[String]
     var productCode: js.UndefOr[String]
+    var quota: js.UndefOr[QuotaSettings]
+    var throttle: js.UndefOr[ThrottleSettings]
   }
 
   object UsagePlan {
     def apply(
-      name: js.UndefOr[String] = js.undefined,
-      quota: js.UndefOr[QuotaSettings] = js.undefined,
+      apiStages: js.UndefOr[ListOfApiStage] = js.undefined,
       description: js.UndefOr[String] = js.undefined,
       id: js.UndefOr[String] = js.undefined,
-      apiStages: js.UndefOr[ListOfApiStage] = js.undefined,
-      throttle: js.UndefOr[ThrottleSettings] = js.undefined,
-      productCode: js.UndefOr[String] = js.undefined): UsagePlan = {
+      name: js.UndefOr[String] = js.undefined,
+      productCode: js.UndefOr[String] = js.undefined,
+      quota: js.UndefOr[QuotaSettings] = js.undefined,
+      throttle: js.UndefOr[ThrottleSettings] = js.undefined): UsagePlan = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "name" -> name.map { x => x.asInstanceOf[js.Any] },
-        "quota" -> quota.map { x => x.asInstanceOf[js.Any] },
+        "apiStages" -> apiStages.map { x => x.asInstanceOf[js.Any] },
         "description" -> description.map { x => x.asInstanceOf[js.Any] },
         "id" -> id.map { x => x.asInstanceOf[js.Any] },
-        "apiStages" -> apiStages.map { x => x.asInstanceOf[js.Any] },
-        "throttle" -> throttle.map { x => x.asInstanceOf[js.Any] },
-        "productCode" -> productCode.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "name" -> name.map { x => x.asInstanceOf[js.Any] },
+        "productCode" -> productCode.map { x => x.asInstanceOf[js.Any] },
+        "quota" -> quota.map { x => x.asInstanceOf[js.Any] },
+        "throttle" -> throttle.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UsagePlan]
     }
@@ -5010,22 +5010,22 @@ package apigateway {
   @js.native
   trait UsagePlanKey extends js.Object {
     var id: js.UndefOr[String]
+    var name: js.UndefOr[String]
     var `type`: js.UndefOr[String]
     var value: js.UndefOr[String]
-    var name: js.UndefOr[String]
   }
 
   object UsagePlanKey {
     def apply(
       id: js.UndefOr[String] = js.undefined,
+      name: js.UndefOr[String] = js.undefined,
       `type`: js.UndefOr[String] = js.undefined,
-      value: js.UndefOr[String] = js.undefined,
-      name: js.UndefOr[String] = js.undefined): UsagePlanKey = {
+      value: js.UndefOr[String] = js.undefined): UsagePlanKey = {
       val _fields = IndexedSeq[(String, js.Any)](
         "id" -> id.map { x => x.asInstanceOf[js.Any] },
+        "name" -> name.map { x => x.asInstanceOf[js.Any] },
         "`type`" -> `type`.map { x => x.asInstanceOf[js.Any] },
-        "value" -> value.map { x => x.asInstanceOf[js.Any] },
-        "name" -> name.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "value" -> value.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UsagePlanKey]
     }
@@ -5036,17 +5036,17 @@ package apigateway {
    */
   @js.native
   trait UsagePlanKeys extends js.Object {
-    var position: js.UndefOr[String]
     var items: js.UndefOr[ListOfUsagePlanKey]
+    var position: js.UndefOr[String]
   }
 
   object UsagePlanKeys {
     def apply(
-      position: js.UndefOr[String] = js.undefined,
-      items: js.UndefOr[ListOfUsagePlanKey] = js.undefined): UsagePlanKeys = {
+      items: js.UndefOr[ListOfUsagePlanKey] = js.undefined,
+      position: js.UndefOr[String] = js.undefined): UsagePlanKeys = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "position" -> position.map { x => x.asInstanceOf[js.Any] },
-        "items" -> items.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "items" -> items.map { x => x.asInstanceOf[js.Any] },
+        "position" -> position.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UsagePlanKeys]
     }
@@ -5057,17 +5057,17 @@ package apigateway {
    */
   @js.native
   trait UsagePlans extends js.Object {
-    var position: js.UndefOr[String]
     var items: js.UndefOr[ListOfUsagePlan]
+    var position: js.UndefOr[String]
   }
 
   object UsagePlans {
     def apply(
-      position: js.UndefOr[String] = js.undefined,
-      items: js.UndefOr[ListOfUsagePlan] = js.undefined): UsagePlans = {
+      items: js.UndefOr[ListOfUsagePlan] = js.undefined,
+      position: js.UndefOr[String] = js.undefined): UsagePlans = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "position" -> position.map { x => x.asInstanceOf[js.Any] },
-        "items" -> items.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "items" -> items.map { x => x.asInstanceOf[js.Any] },
+        "position" -> position.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UsagePlans]
     }
@@ -5078,29 +5078,29 @@ package apigateway {
    */
   @js.native
   trait VpcLink extends js.Object {
-    var name: js.UndefOr[String]
     var description: js.UndefOr[String]
-    var targetArns: js.UndefOr[ListOfString]
     var id: js.UndefOr[String]
+    var name: js.UndefOr[String]
     var status: js.UndefOr[VpcLinkStatus]
     var statusMessage: js.UndefOr[String]
+    var targetArns: js.UndefOr[ListOfString]
   }
 
   object VpcLink {
     def apply(
-      name: js.UndefOr[String] = js.undefined,
       description: js.UndefOr[String] = js.undefined,
-      targetArns: js.UndefOr[ListOfString] = js.undefined,
       id: js.UndefOr[String] = js.undefined,
+      name: js.UndefOr[String] = js.undefined,
       status: js.UndefOr[VpcLinkStatus] = js.undefined,
-      statusMessage: js.UndefOr[String] = js.undefined): VpcLink = {
+      statusMessage: js.UndefOr[String] = js.undefined,
+      targetArns: js.UndefOr[ListOfString] = js.undefined): VpcLink = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "name" -> name.map { x => x.asInstanceOf[js.Any] },
         "description" -> description.map { x => x.asInstanceOf[js.Any] },
-        "targetArns" -> targetArns.map { x => x.asInstanceOf[js.Any] },
         "id" -> id.map { x => x.asInstanceOf[js.Any] },
+        "name" -> name.map { x => x.asInstanceOf[js.Any] },
         "status" -> status.map { x => x.asInstanceOf[js.Any] },
-        "statusMessage" -> statusMessage.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "statusMessage" -> statusMessage.map { x => x.asInstanceOf[js.Any] },
+        "targetArns" -> targetArns.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[VpcLink]
     }
@@ -5120,17 +5120,17 @@ package apigateway {
    */
   @js.native
   trait VpcLinks extends js.Object {
-    var position: js.UndefOr[String]
     var items: js.UndefOr[ListOfVpcLink]
+    var position: js.UndefOr[String]
   }
 
   object VpcLinks {
     def apply(
-      position: js.UndefOr[String] = js.undefined,
-      items: js.UndefOr[ListOfVpcLink] = js.undefined): VpcLinks = {
+      items: js.UndefOr[ListOfVpcLink] = js.undefined,
+      position: js.UndefOr[String] = js.undefined): VpcLinks = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "position" -> position.map { x => x.asInstanceOf[js.Any] },
-        "items" -> items.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "items" -> items.map { x => x.asInstanceOf[js.Any] },
+        "position" -> position.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[VpcLinks]
     }

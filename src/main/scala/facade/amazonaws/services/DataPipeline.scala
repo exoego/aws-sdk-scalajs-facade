@@ -71,18 +71,18 @@ package datapipeline {
    */
   @js.native
   trait ActivatePipelineInput extends js.Object {
-    var pipelineId: js.UndefOr[id]
+    var pipelineId: id
     var parameterValues: js.UndefOr[ParameterValueList]
     var startTimestamp: js.UndefOr[timestamp]
   }
 
   object ActivatePipelineInput {
     def apply(
-      pipelineId: js.UndefOr[id] = js.undefined,
+      pipelineId: id,
       parameterValues: js.UndefOr[ParameterValueList] = js.undefined,
       startTimestamp: js.UndefOr[timestamp] = js.undefined): ActivatePipelineInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "pipelineId" -> pipelineId.map { x => x.asInstanceOf[js.Any] },
+        "pipelineId" -> pipelineId.asInstanceOf[js.Any],
         "parameterValues" -> parameterValues.map { x => x.asInstanceOf[js.Any] },
         "startTimestamp" -> startTimestamp.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
@@ -111,17 +111,17 @@ package datapipeline {
    */
   @js.native
   trait AddTagsInput extends js.Object {
-    var pipelineId: js.UndefOr[id]
-    var tags: js.UndefOr[tagList]
+    var pipelineId: id
+    var tags: tagList
   }
 
   object AddTagsInput {
     def apply(
-      pipelineId: js.UndefOr[id] = js.undefined,
-      tags: js.UndefOr[tagList] = js.undefined): AddTagsInput = {
+      pipelineId: id,
+      tags: tagList): AddTagsInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "pipelineId" -> pipelineId.map { x => x.asInstanceOf[js.Any] },
-        "tags" -> tags.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "pipelineId" -> pipelineId.asInstanceOf[js.Any],
+        "tags" -> tags.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AddTagsInput]
     }
@@ -148,21 +148,21 @@ package datapipeline {
    */
   @js.native
   trait CreatePipelineInput extends js.Object {
-    var name: js.UndefOr[id]
-    var uniqueId: js.UndefOr[id]
+    var name: id
+    var uniqueId: id
     var description: js.UndefOr[string]
     var tags: js.UndefOr[tagList]
   }
 
   object CreatePipelineInput {
     def apply(
-      name: js.UndefOr[id] = js.undefined,
-      uniqueId: js.UndefOr[id] = js.undefined,
+      name: id,
+      uniqueId: id,
       description: js.UndefOr[string] = js.undefined,
       tags: js.UndefOr[tagList] = js.undefined): CreatePipelineInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "name" -> name.map { x => x.asInstanceOf[js.Any] },
-        "uniqueId" -> uniqueId.map { x => x.asInstanceOf[js.Any] },
+        "name" -> name.asInstanceOf[js.Any],
+        "uniqueId" -> uniqueId.asInstanceOf[js.Any],
         "description" -> description.map { x => x.asInstanceOf[js.Any] },
         "tags" -> tags.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
@@ -175,14 +175,14 @@ package datapipeline {
    */
   @js.native
   trait CreatePipelineOutput extends js.Object {
-    var pipelineId: js.UndefOr[id]
+    var pipelineId: id
   }
 
   object CreatePipelineOutput {
     def apply(
-      pipelineId: js.UndefOr[id] = js.undefined): CreatePipelineOutput = {
+      pipelineId: id): CreatePipelineOutput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "pipelineId" -> pipelineId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "pipelineId" -> pipelineId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreatePipelineOutput]
     }
@@ -193,16 +193,16 @@ package datapipeline {
    */
   @js.native
   trait DeactivatePipelineInput extends js.Object {
-    var pipelineId: js.UndefOr[id]
+    var pipelineId: id
     var cancelActive: js.UndefOr[cancelActive]
   }
 
   object DeactivatePipelineInput {
     def apply(
-      pipelineId: js.UndefOr[id] = js.undefined,
+      pipelineId: id,
       cancelActive: js.UndefOr[cancelActive] = js.undefined): DeactivatePipelineInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "pipelineId" -> pipelineId.map { x => x.asInstanceOf[js.Any] },
+        "pipelineId" -> pipelineId.asInstanceOf[js.Any],
         "cancelActive" -> cancelActive.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeactivatePipelineInput]
@@ -230,14 +230,14 @@ package datapipeline {
    */
   @js.native
   trait DeletePipelineInput extends js.Object {
-    var pipelineId: js.UndefOr[id]
+    var pipelineId: id
   }
 
   object DeletePipelineInput {
     def apply(
-      pipelineId: js.UndefOr[id] = js.undefined): DeletePipelineInput = {
+      pipelineId: id): DeletePipelineInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "pipelineId" -> pipelineId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "pipelineId" -> pipelineId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeletePipelineInput]
     }
@@ -248,21 +248,21 @@ package datapipeline {
    */
   @js.native
   trait DescribeObjectsInput extends js.Object {
-    var pipelineId: js.UndefOr[id]
-    var objectIds: js.UndefOr[idList]
+    var objectIds: idList
+    var pipelineId: id
     var evaluateExpressions: js.UndefOr[boolean]
     var marker: js.UndefOr[string]
   }
 
   object DescribeObjectsInput {
     def apply(
-      pipelineId: js.UndefOr[id] = js.undefined,
-      objectIds: js.UndefOr[idList] = js.undefined,
+      objectIds: idList,
+      pipelineId: id,
       evaluateExpressions: js.UndefOr[boolean] = js.undefined,
       marker: js.UndefOr[string] = js.undefined): DescribeObjectsInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "pipelineId" -> pipelineId.map { x => x.asInstanceOf[js.Any] },
-        "objectIds" -> objectIds.map { x => x.asInstanceOf[js.Any] },
+        "objectIds" -> objectIds.asInstanceOf[js.Any],
+        "pipelineId" -> pipelineId.asInstanceOf[js.Any],
         "evaluateExpressions" -> evaluateExpressions.map { x => x.asInstanceOf[js.Any] },
         "marker" -> marker.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
@@ -275,20 +275,20 @@ package datapipeline {
    */
   @js.native
   trait DescribeObjectsOutput extends js.Object {
-    var pipelineObjects: js.UndefOr[PipelineObjectList]
-    var marker: js.UndefOr[string]
+    var pipelineObjects: PipelineObjectList
     var hasMoreResults: js.UndefOr[boolean]
+    var marker: js.UndefOr[string]
   }
 
   object DescribeObjectsOutput {
     def apply(
-      pipelineObjects: js.UndefOr[PipelineObjectList] = js.undefined,
-      marker: js.UndefOr[string] = js.undefined,
-      hasMoreResults: js.UndefOr[boolean] = js.undefined): DescribeObjectsOutput = {
+      pipelineObjects: PipelineObjectList,
+      hasMoreResults: js.UndefOr[boolean] = js.undefined,
+      marker: js.UndefOr[string] = js.undefined): DescribeObjectsOutput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "pipelineObjects" -> pipelineObjects.map { x => x.asInstanceOf[js.Any] },
-        "marker" -> marker.map { x => x.asInstanceOf[js.Any] },
-        "hasMoreResults" -> hasMoreResults.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "pipelineObjects" -> pipelineObjects.asInstanceOf[js.Any],
+        "hasMoreResults" -> hasMoreResults.map { x => x.asInstanceOf[js.Any] },
+        "marker" -> marker.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeObjectsOutput]
     }
@@ -299,14 +299,14 @@ package datapipeline {
    */
   @js.native
   trait DescribePipelinesInput extends js.Object {
-    var pipelineIds: js.UndefOr[idList]
+    var pipelineIds: idList
   }
 
   object DescribePipelinesInput {
     def apply(
-      pipelineIds: js.UndefOr[idList] = js.undefined): DescribePipelinesInput = {
+      pipelineIds: idList): DescribePipelinesInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "pipelineIds" -> pipelineIds.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "pipelineIds" -> pipelineIds.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribePipelinesInput]
     }
@@ -317,14 +317,14 @@ package datapipeline {
    */
   @js.native
   trait DescribePipelinesOutput extends js.Object {
-    var pipelineDescriptionList: js.UndefOr[PipelineDescriptionList]
+    var pipelineDescriptionList: PipelineDescriptionList
   }
 
   object DescribePipelinesOutput {
     def apply(
-      pipelineDescriptionList: js.UndefOr[PipelineDescriptionList] = js.undefined): DescribePipelinesOutput = {
+      pipelineDescriptionList: PipelineDescriptionList): DescribePipelinesOutput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "pipelineDescriptionList" -> pipelineDescriptionList.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "pipelineDescriptionList" -> pipelineDescriptionList.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribePipelinesOutput]
     }
@@ -335,20 +335,20 @@ package datapipeline {
    */
   @js.native
   trait EvaluateExpressionInput extends js.Object {
-    var pipelineId: js.UndefOr[id]
-    var objectId: js.UndefOr[id]
-    var expression: js.UndefOr[longString]
+    var expression: longString
+    var objectId: id
+    var pipelineId: id
   }
 
   object EvaluateExpressionInput {
     def apply(
-      pipelineId: js.UndefOr[id] = js.undefined,
-      objectId: js.UndefOr[id] = js.undefined,
-      expression: js.UndefOr[longString] = js.undefined): EvaluateExpressionInput = {
+      expression: longString,
+      objectId: id,
+      pipelineId: id): EvaluateExpressionInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "pipelineId" -> pipelineId.map { x => x.asInstanceOf[js.Any] },
-        "objectId" -> objectId.map { x => x.asInstanceOf[js.Any] },
-        "expression" -> expression.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "expression" -> expression.asInstanceOf[js.Any],
+        "objectId" -> objectId.asInstanceOf[js.Any],
+        "pipelineId" -> pipelineId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EvaluateExpressionInput]
     }
@@ -359,14 +359,14 @@ package datapipeline {
    */
   @js.native
   trait EvaluateExpressionOutput extends js.Object {
-    var evaluatedExpression: js.UndefOr[longString]
+    var evaluatedExpression: longString
   }
 
   object EvaluateExpressionOutput {
     def apply(
-      evaluatedExpression: js.UndefOr[longString] = js.undefined): EvaluateExpressionOutput = {
+      evaluatedExpression: longString): EvaluateExpressionOutput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "evaluatedExpression" -> evaluatedExpression.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "evaluatedExpression" -> evaluatedExpression.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EvaluateExpressionOutput]
     }
@@ -377,20 +377,20 @@ package datapipeline {
    */
   @js.native
   trait Field extends js.Object {
-    var key: js.UndefOr[fieldNameString]
-    var stringValue: js.UndefOr[fieldStringValue]
+    var key: fieldNameString
     var refValue: js.UndefOr[fieldNameString]
+    var stringValue: js.UndefOr[fieldStringValue]
   }
 
   object Field {
     def apply(
-      key: js.UndefOr[fieldNameString] = js.undefined,
-      stringValue: js.UndefOr[fieldStringValue] = js.undefined,
-      refValue: js.UndefOr[fieldNameString] = js.undefined): Field = {
+      key: fieldNameString,
+      refValue: js.UndefOr[fieldNameString] = js.undefined,
+      stringValue: js.UndefOr[fieldStringValue] = js.undefined): Field = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "key" -> key.map { x => x.asInstanceOf[js.Any] },
-        "stringValue" -> stringValue.map { x => x.asInstanceOf[js.Any] },
-        "refValue" -> refValue.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "key" -> key.asInstanceOf[js.Any],
+        "refValue" -> refValue.map { x => x.asInstanceOf[js.Any] },
+        "stringValue" -> stringValue.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Field]
     }
@@ -401,16 +401,16 @@ package datapipeline {
    */
   @js.native
   trait GetPipelineDefinitionInput extends js.Object {
-    var pipelineId: js.UndefOr[id]
+    var pipelineId: id
     var version: js.UndefOr[string]
   }
 
   object GetPipelineDefinitionInput {
     def apply(
-      pipelineId: js.UndefOr[id] = js.undefined,
+      pipelineId: id,
       version: js.UndefOr[string] = js.undefined): GetPipelineDefinitionInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "pipelineId" -> pipelineId.map { x => x.asInstanceOf[js.Any] },
+        "pipelineId" -> pipelineId.asInstanceOf[js.Any],
         "version" -> version.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetPipelineDefinitionInput]
@@ -422,20 +422,20 @@ package datapipeline {
    */
   @js.native
   trait GetPipelineDefinitionOutput extends js.Object {
-    var pipelineObjects: js.UndefOr[PipelineObjectList]
     var parameterObjects: js.UndefOr[ParameterObjectList]
     var parameterValues: js.UndefOr[ParameterValueList]
+    var pipelineObjects: js.UndefOr[PipelineObjectList]
   }
 
   object GetPipelineDefinitionOutput {
     def apply(
-      pipelineObjects: js.UndefOr[PipelineObjectList] = js.undefined,
       parameterObjects: js.UndefOr[ParameterObjectList] = js.undefined,
-      parameterValues: js.UndefOr[ParameterValueList] = js.undefined): GetPipelineDefinitionOutput = {
+      parameterValues: js.UndefOr[ParameterValueList] = js.undefined,
+      pipelineObjects: js.UndefOr[PipelineObjectList] = js.undefined): GetPipelineDefinitionOutput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "pipelineObjects" -> pipelineObjects.map { x => x.asInstanceOf[js.Any] },
         "parameterObjects" -> parameterObjects.map { x => x.asInstanceOf[js.Any] },
-        "parameterValues" -> parameterValues.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "parameterValues" -> parameterValues.map { x => x.asInstanceOf[js.Any] },
+        "pipelineObjects" -> pipelineObjects.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetPipelineDefinitionOutput]
     }
@@ -501,20 +501,20 @@ package datapipeline {
    */
   @js.native
   trait ListPipelinesOutput extends js.Object {
-    var pipelineIdList: js.UndefOr[pipelineList]
-    var marker: js.UndefOr[string]
+    var pipelineIdList: pipelineList
     var hasMoreResults: js.UndefOr[boolean]
+    var marker: js.UndefOr[string]
   }
 
   object ListPipelinesOutput {
     def apply(
-      pipelineIdList: js.UndefOr[pipelineList] = js.undefined,
-      marker: js.UndefOr[string] = js.undefined,
-      hasMoreResults: js.UndefOr[boolean] = js.undefined): ListPipelinesOutput = {
+      pipelineIdList: pipelineList,
+      hasMoreResults: js.UndefOr[boolean] = js.undefined,
+      marker: js.UndefOr[string] = js.undefined): ListPipelinesOutput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "pipelineIdList" -> pipelineIdList.map { x => x.asInstanceOf[js.Any] },
-        "marker" -> marker.map { x => x.asInstanceOf[js.Any] },
-        "hasMoreResults" -> hasMoreResults.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "pipelineIdList" -> pipelineIdList.asInstanceOf[js.Any],
+        "hasMoreResults" -> hasMoreResults.map { x => x.asInstanceOf[js.Any] },
+        "marker" -> marker.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListPipelinesOutput]
     }
@@ -556,17 +556,17 @@ package datapipeline {
    */
   @js.native
   trait ParameterAttribute extends js.Object {
-    var key: js.UndefOr[attributeNameString]
-    var stringValue: js.UndefOr[attributeValueString]
+    var key: attributeNameString
+    var stringValue: attributeValueString
   }
 
   object ParameterAttribute {
     def apply(
-      key: js.UndefOr[attributeNameString] = js.undefined,
-      stringValue: js.UndefOr[attributeValueString] = js.undefined): ParameterAttribute = {
+      key: attributeNameString,
+      stringValue: attributeValueString): ParameterAttribute = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "key" -> key.map { x => x.asInstanceOf[js.Any] },
-        "stringValue" -> stringValue.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "key" -> key.asInstanceOf[js.Any],
+        "stringValue" -> stringValue.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ParameterAttribute]
     }
@@ -577,17 +577,17 @@ package datapipeline {
    */
   @js.native
   trait ParameterObject extends js.Object {
-    var id: js.UndefOr[fieldNameString]
-    var attributes: js.UndefOr[ParameterAttributeList]
+    var attributes: ParameterAttributeList
+    var id: fieldNameString
   }
 
   object ParameterObject {
     def apply(
-      id: js.UndefOr[fieldNameString] = js.undefined,
-      attributes: js.UndefOr[ParameterAttributeList] = js.undefined): ParameterObject = {
+      attributes: ParameterAttributeList,
+      id: fieldNameString): ParameterObject = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "id" -> id.map { x => x.asInstanceOf[js.Any] },
-        "attributes" -> attributes.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "attributes" -> attributes.asInstanceOf[js.Any],
+        "id" -> id.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ParameterObject]
     }
@@ -598,17 +598,17 @@ package datapipeline {
    */
   @js.native
   trait ParameterValue extends js.Object {
-    var id: js.UndefOr[fieldNameString]
-    var stringValue: js.UndefOr[fieldStringValue]
+    var id: fieldNameString
+    var stringValue: fieldStringValue
   }
 
   object ParameterValue {
     def apply(
-      id: js.UndefOr[fieldNameString] = js.undefined,
-      stringValue: js.UndefOr[fieldStringValue] = js.undefined): ParameterValue = {
+      id: fieldNameString,
+      stringValue: fieldStringValue): ParameterValue = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "id" -> id.map { x => x.asInstanceOf[js.Any] },
-        "stringValue" -> stringValue.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "id" -> id.asInstanceOf[js.Any],
+        "stringValue" -> stringValue.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ParameterValue]
     }
@@ -627,26 +627,26 @@ package datapipeline {
    */
   @js.native
   trait PipelineDescription extends js.Object {
-    var name: js.UndefOr[id]
+    var fields: fieldList
+    var name: id
+    var pipelineId: id
     var description: js.UndefOr[string]
     var tags: js.UndefOr[tagList]
-    var fields: js.UndefOr[fieldList]
-    var pipelineId: js.UndefOr[id]
   }
 
   object PipelineDescription {
     def apply(
-      name: js.UndefOr[id] = js.undefined,
+      fields: fieldList,
+      name: id,
+      pipelineId: id,
       description: js.UndefOr[string] = js.undefined,
-      tags: js.UndefOr[tagList] = js.undefined,
-      fields: js.UndefOr[fieldList] = js.undefined,
-      pipelineId: js.UndefOr[id] = js.undefined): PipelineDescription = {
+      tags: js.UndefOr[tagList] = js.undefined): PipelineDescription = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "name" -> name.map { x => x.asInstanceOf[js.Any] },
+        "fields" -> fields.asInstanceOf[js.Any],
+        "name" -> name.asInstanceOf[js.Any],
+        "pipelineId" -> pipelineId.asInstanceOf[js.Any],
         "description" -> description.map { x => x.asInstanceOf[js.Any] },
-        "tags" -> tags.map { x => x.asInstanceOf[js.Any] },
-        "fields" -> fields.map { x => x.asInstanceOf[js.Any] },
-        "pipelineId" -> pipelineId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "tags" -> tags.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PipelineDescription]
     }
@@ -686,20 +686,20 @@ package datapipeline {
    */
   @js.native
   trait PipelineObject extends js.Object {
-    var id: js.UndefOr[id]
-    var name: js.UndefOr[id]
-    var fields: js.UndefOr[fieldList]
+    var fields: fieldList
+    var id: id
+    var name: id
   }
 
   object PipelineObject {
     def apply(
-      id: js.UndefOr[id] = js.undefined,
-      name: js.UndefOr[id] = js.undefined,
-      fields: js.UndefOr[fieldList] = js.undefined): PipelineObject = {
+      fields: fieldList,
+      id: id,
+      name: id): PipelineObject = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "id" -> id.map { x => x.asInstanceOf[js.Any] },
-        "name" -> name.map { x => x.asInstanceOf[js.Any] },
-        "fields" -> fields.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "fields" -> fields.asInstanceOf[js.Any],
+        "id" -> id.asInstanceOf[js.Any],
+        "name" -> name.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PipelineObject]
     }
@@ -710,18 +710,18 @@ package datapipeline {
    */
   @js.native
   trait PollForTaskInput extends js.Object {
-    var workerGroup: js.UndefOr[string]
+    var workerGroup: string
     var hostname: js.UndefOr[id]
     var instanceIdentity: js.UndefOr[InstanceIdentity]
   }
 
   object PollForTaskInput {
     def apply(
-      workerGroup: js.UndefOr[string] = js.undefined,
+      workerGroup: string,
       hostname: js.UndefOr[id] = js.undefined,
       instanceIdentity: js.UndefOr[InstanceIdentity] = js.undefined): PollForTaskInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "workerGroup" -> workerGroup.map { x => x.asInstanceOf[js.Any] },
+        "workerGroup" -> workerGroup.asInstanceOf[js.Any],
         "hostname" -> hostname.map { x => x.asInstanceOf[js.Any] },
         "instanceIdentity" -> instanceIdentity.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
@@ -752,21 +752,21 @@ package datapipeline {
    */
   @js.native
   trait PutPipelineDefinitionInput extends js.Object {
-    var pipelineId: js.UndefOr[id]
-    var pipelineObjects: js.UndefOr[PipelineObjectList]
+    var pipelineId: id
+    var pipelineObjects: PipelineObjectList
     var parameterObjects: js.UndefOr[ParameterObjectList]
     var parameterValues: js.UndefOr[ParameterValueList]
   }
 
   object PutPipelineDefinitionInput {
     def apply(
-      pipelineId: js.UndefOr[id] = js.undefined,
-      pipelineObjects: js.UndefOr[PipelineObjectList] = js.undefined,
+      pipelineId: id,
+      pipelineObjects: PipelineObjectList,
       parameterObjects: js.UndefOr[ParameterObjectList] = js.undefined,
       parameterValues: js.UndefOr[ParameterValueList] = js.undefined): PutPipelineDefinitionInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "pipelineId" -> pipelineId.map { x => x.asInstanceOf[js.Any] },
-        "pipelineObjects" -> pipelineObjects.map { x => x.asInstanceOf[js.Any] },
+        "pipelineId" -> pipelineId.asInstanceOf[js.Any],
+        "pipelineObjects" -> pipelineObjects.asInstanceOf[js.Any],
         "parameterObjects" -> parameterObjects.map { x => x.asInstanceOf[js.Any] },
         "parameterValues" -> parameterValues.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
@@ -779,20 +779,20 @@ package datapipeline {
    */
   @js.native
   trait PutPipelineDefinitionOutput extends js.Object {
+    var errored: boolean
     var validationErrors: js.UndefOr[ValidationErrors]
     var validationWarnings: js.UndefOr[ValidationWarnings]
-    var errored: js.UndefOr[boolean]
   }
 
   object PutPipelineDefinitionOutput {
     def apply(
+      errored: boolean,
       validationErrors: js.UndefOr[ValidationErrors] = js.undefined,
-      validationWarnings: js.UndefOr[ValidationWarnings] = js.undefined,
-      errored: js.UndefOr[boolean] = js.undefined): PutPipelineDefinitionOutput = {
+      validationWarnings: js.UndefOr[ValidationWarnings] = js.undefined): PutPipelineDefinitionOutput = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "errored" -> errored.asInstanceOf[js.Any],
         "validationErrors" -> validationErrors.map { x => x.asInstanceOf[js.Any] },
-        "validationWarnings" -> validationWarnings.map { x => x.asInstanceOf[js.Any] },
-        "errored" -> errored.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "validationWarnings" -> validationWarnings.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutPipelineDefinitionOutput]
     }
@@ -821,26 +821,26 @@ package datapipeline {
    */
   @js.native
   trait QueryObjectsInput extends js.Object {
-    var sphere: js.UndefOr[string]
-    var query: js.UndefOr[Query]
-    var marker: js.UndefOr[string]
+    var pipelineId: id
+    var sphere: string
     var limit: js.UndefOr[Int]
-    var pipelineId: js.UndefOr[id]
+    var marker: js.UndefOr[string]
+    var query: js.UndefOr[Query]
   }
 
   object QueryObjectsInput {
     def apply(
-      sphere: js.UndefOr[string] = js.undefined,
-      query: js.UndefOr[Query] = js.undefined,
-      marker: js.UndefOr[string] = js.undefined,
+      pipelineId: id,
+      sphere: string,
       limit: js.UndefOr[Int] = js.undefined,
-      pipelineId: js.UndefOr[id] = js.undefined): QueryObjectsInput = {
+      marker: js.UndefOr[string] = js.undefined,
+      query: js.UndefOr[Query] = js.undefined): QueryObjectsInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "sphere" -> sphere.map { x => x.asInstanceOf[js.Any] },
-        "query" -> query.map { x => x.asInstanceOf[js.Any] },
-        "marker" -> marker.map { x => x.asInstanceOf[js.Any] },
+        "pipelineId" -> pipelineId.asInstanceOf[js.Any],
+        "sphere" -> sphere.asInstanceOf[js.Any],
         "limit" -> limit.map { x => x.asInstanceOf[js.Any] },
-        "pipelineId" -> pipelineId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "marker" -> marker.map { x => x.asInstanceOf[js.Any] },
+        "query" -> query.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[QueryObjectsInput]
     }
@@ -851,20 +851,20 @@ package datapipeline {
    */
   @js.native
   trait QueryObjectsOutput extends js.Object {
+    var hasMoreResults: js.UndefOr[boolean]
     var ids: js.UndefOr[idList]
     var marker: js.UndefOr[string]
-    var hasMoreResults: js.UndefOr[boolean]
   }
 
   object QueryObjectsOutput {
     def apply(
+      hasMoreResults: js.UndefOr[boolean] = js.undefined,
       ids: js.UndefOr[idList] = js.undefined,
-      marker: js.UndefOr[string] = js.undefined,
-      hasMoreResults: js.UndefOr[boolean] = js.undefined): QueryObjectsOutput = {
+      marker: js.UndefOr[string] = js.undefined): QueryObjectsOutput = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "hasMoreResults" -> hasMoreResults.map { x => x.asInstanceOf[js.Any] },
         "ids" -> ids.map { x => x.asInstanceOf[js.Any] },
-        "marker" -> marker.map { x => x.asInstanceOf[js.Any] },
-        "hasMoreResults" -> hasMoreResults.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "marker" -> marker.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[QueryObjectsOutput]
     }
@@ -875,17 +875,17 @@ package datapipeline {
    */
   @js.native
   trait RemoveTagsInput extends js.Object {
-    var pipelineId: js.UndefOr[id]
-    var tagKeys: js.UndefOr[stringList]
+    var pipelineId: id
+    var tagKeys: stringList
   }
 
   object RemoveTagsInput {
     def apply(
-      pipelineId: js.UndefOr[id] = js.undefined,
-      tagKeys: js.UndefOr[stringList] = js.undefined): RemoveTagsInput = {
+      pipelineId: id,
+      tagKeys: stringList): RemoveTagsInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "pipelineId" -> pipelineId.map { x => x.asInstanceOf[js.Any] },
-        "tagKeys" -> tagKeys.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "pipelineId" -> pipelineId.asInstanceOf[js.Any],
+        "tagKeys" -> tagKeys.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RemoveTagsInput]
     }
@@ -912,16 +912,16 @@ package datapipeline {
    */
   @js.native
   trait ReportTaskProgressInput extends js.Object {
-    var taskId: js.UndefOr[taskId]
+    var taskId: taskId
     var fields: js.UndefOr[fieldList]
   }
 
   object ReportTaskProgressInput {
     def apply(
-      taskId: js.UndefOr[taskId] = js.undefined,
+      taskId: taskId,
       fields: js.UndefOr[fieldList] = js.undefined): ReportTaskProgressInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "taskId" -> taskId.map { x => x.asInstanceOf[js.Any] },
+        "taskId" -> taskId.asInstanceOf[js.Any],
         "fields" -> fields.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ReportTaskProgressInput]
@@ -933,14 +933,14 @@ package datapipeline {
    */
   @js.native
   trait ReportTaskProgressOutput extends js.Object {
-    var canceled: js.UndefOr[boolean]
+    var canceled: boolean
   }
 
   object ReportTaskProgressOutput {
     def apply(
-      canceled: js.UndefOr[boolean] = js.undefined): ReportTaskProgressOutput = {
+      canceled: boolean): ReportTaskProgressOutput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "canceled" -> canceled.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "canceled" -> canceled.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ReportTaskProgressOutput]
     }
@@ -951,20 +951,20 @@ package datapipeline {
    */
   @js.native
   trait ReportTaskRunnerHeartbeatInput extends js.Object {
-    var taskrunnerId: js.UndefOr[id]
-    var workerGroup: js.UndefOr[string]
+    var taskrunnerId: id
     var hostname: js.UndefOr[id]
+    var workerGroup: js.UndefOr[string]
   }
 
   object ReportTaskRunnerHeartbeatInput {
     def apply(
-      taskrunnerId: js.UndefOr[id] = js.undefined,
-      workerGroup: js.UndefOr[string] = js.undefined,
-      hostname: js.UndefOr[id] = js.undefined): ReportTaskRunnerHeartbeatInput = {
+      taskrunnerId: id,
+      hostname: js.UndefOr[id] = js.undefined,
+      workerGroup: js.UndefOr[string] = js.undefined): ReportTaskRunnerHeartbeatInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "taskrunnerId" -> taskrunnerId.map { x => x.asInstanceOf[js.Any] },
-        "workerGroup" -> workerGroup.map { x => x.asInstanceOf[js.Any] },
-        "hostname" -> hostname.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "taskrunnerId" -> taskrunnerId.asInstanceOf[js.Any],
+        "hostname" -> hostname.map { x => x.asInstanceOf[js.Any] },
+        "workerGroup" -> workerGroup.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ReportTaskRunnerHeartbeatInput]
     }
@@ -975,14 +975,14 @@ package datapipeline {
    */
   @js.native
   trait ReportTaskRunnerHeartbeatOutput extends js.Object {
-    var terminate: js.UndefOr[boolean]
+    var terminate: boolean
   }
 
   object ReportTaskRunnerHeartbeatOutput {
     def apply(
-      terminate: js.UndefOr[boolean] = js.undefined): ReportTaskRunnerHeartbeatOutput = {
+      terminate: boolean): ReportTaskRunnerHeartbeatOutput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "terminate" -> terminate.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "terminate" -> terminate.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ReportTaskRunnerHeartbeatOutput]
     }
@@ -1014,20 +1014,20 @@ package datapipeline {
    */
   @js.native
   trait SetStatusInput extends js.Object {
-    var pipelineId: js.UndefOr[id]
-    var objectIds: js.UndefOr[idList]
-    var status: js.UndefOr[string]
+    var objectIds: idList
+    var pipelineId: id
+    var status: string
   }
 
   object SetStatusInput {
     def apply(
-      pipelineId: js.UndefOr[id] = js.undefined,
-      objectIds: js.UndefOr[idList] = js.undefined,
-      status: js.UndefOr[string] = js.undefined): SetStatusInput = {
+      objectIds: idList,
+      pipelineId: id,
+      status: string): SetStatusInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "pipelineId" -> pipelineId.map { x => x.asInstanceOf[js.Any] },
-        "objectIds" -> objectIds.map { x => x.asInstanceOf[js.Any] },
-        "status" -> status.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "objectIds" -> objectIds.asInstanceOf[js.Any],
+        "pipelineId" -> pipelineId.asInstanceOf[js.Any],
+        "status" -> status.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SetStatusInput]
     }
@@ -1038,26 +1038,26 @@ package datapipeline {
    */
   @js.native
   trait SetTaskStatusInput extends js.Object {
-    var errorMessage: js.UndefOr[errorMessage]
+    var taskId: taskId
+    var taskStatus: TaskStatus
     var errorId: js.UndefOr[string]
-    var taskStatus: js.UndefOr[TaskStatus]
+    var errorMessage: js.UndefOr[errorMessage]
     var errorStackTrace: js.UndefOr[string]
-    var taskId: js.UndefOr[taskId]
   }
 
   object SetTaskStatusInput {
     def apply(
-      errorMessage: js.UndefOr[errorMessage] = js.undefined,
+      taskId: taskId,
+      taskStatus: TaskStatus,
       errorId: js.UndefOr[string] = js.undefined,
-      taskStatus: js.UndefOr[TaskStatus] = js.undefined,
-      errorStackTrace: js.UndefOr[string] = js.undefined,
-      taskId: js.UndefOr[taskId] = js.undefined): SetTaskStatusInput = {
+      errorMessage: js.UndefOr[errorMessage] = js.undefined,
+      errorStackTrace: js.UndefOr[string] = js.undefined): SetTaskStatusInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "errorMessage" -> errorMessage.map { x => x.asInstanceOf[js.Any] },
+        "taskId" -> taskId.asInstanceOf[js.Any],
+        "taskStatus" -> taskStatus.asInstanceOf[js.Any],
         "errorId" -> errorId.map { x => x.asInstanceOf[js.Any] },
-        "taskStatus" -> taskStatus.map { x => x.asInstanceOf[js.Any] },
-        "errorStackTrace" -> errorStackTrace.map { x => x.asInstanceOf[js.Any] },
-        "taskId" -> taskId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "errorMessage" -> errorMessage.map { x => x.asInstanceOf[js.Any] },
+        "errorStackTrace" -> errorStackTrace.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SetTaskStatusInput]
     }
@@ -1084,17 +1084,17 @@ package datapipeline {
    */
   @js.native
   trait Tag extends js.Object {
-    var key: js.UndefOr[tagKey]
-    var value: js.UndefOr[tagValue]
+    var key: tagKey
+    var value: tagValue
   }
 
   object Tag {
     def apply(
-      key: js.UndefOr[tagKey] = js.undefined,
-      value: js.UndefOr[tagValue] = js.undefined): Tag = {
+      key: tagKey,
+      value: tagValue): Tag = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "key" -> key.map { x => x.asInstanceOf[js.Any] },
-        "value" -> value.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "key" -> key.asInstanceOf[js.Any],
+        "value" -> value.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Tag]
     }
@@ -1113,23 +1113,23 @@ package datapipeline {
    */
   @js.native
   trait TaskObject extends js.Object {
-    var taskId: js.UndefOr[taskId]
-    var pipelineId: js.UndefOr[id]
     var attemptId: js.UndefOr[id]
     var objects: js.UndefOr[PipelineObjectMap]
+    var pipelineId: js.UndefOr[id]
+    var taskId: js.UndefOr[taskId]
   }
 
   object TaskObject {
     def apply(
-      taskId: js.UndefOr[taskId] = js.undefined,
-      pipelineId: js.UndefOr[id] = js.undefined,
       attemptId: js.UndefOr[id] = js.undefined,
-      objects: js.UndefOr[PipelineObjectMap] = js.undefined): TaskObject = {
+      objects: js.UndefOr[PipelineObjectMap] = js.undefined,
+      pipelineId: js.UndefOr[id] = js.undefined,
+      taskId: js.UndefOr[taskId] = js.undefined): TaskObject = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "taskId" -> taskId.map { x => x.asInstanceOf[js.Any] },
-        "pipelineId" -> pipelineId.map { x => x.asInstanceOf[js.Any] },
         "attemptId" -> attemptId.map { x => x.asInstanceOf[js.Any] },
-        "objects" -> objects.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "objects" -> objects.map { x => x.asInstanceOf[js.Any] },
+        "pipelineId" -> pipelineId.map { x => x.asInstanceOf[js.Any] },
+        "taskId" -> taskId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TaskObject]
     }
@@ -1148,21 +1148,21 @@ package datapipeline {
    */
   @js.native
   trait ValidatePipelineDefinitionInput extends js.Object {
-    var pipelineId: js.UndefOr[id]
-    var pipelineObjects: js.UndefOr[PipelineObjectList]
+    var pipelineId: id
+    var pipelineObjects: PipelineObjectList
     var parameterObjects: js.UndefOr[ParameterObjectList]
     var parameterValues: js.UndefOr[ParameterValueList]
   }
 
   object ValidatePipelineDefinitionInput {
     def apply(
-      pipelineId: js.UndefOr[id] = js.undefined,
-      pipelineObjects: js.UndefOr[PipelineObjectList] = js.undefined,
+      pipelineId: id,
+      pipelineObjects: PipelineObjectList,
       parameterObjects: js.UndefOr[ParameterObjectList] = js.undefined,
       parameterValues: js.UndefOr[ParameterValueList] = js.undefined): ValidatePipelineDefinitionInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "pipelineId" -> pipelineId.map { x => x.asInstanceOf[js.Any] },
-        "pipelineObjects" -> pipelineObjects.map { x => x.asInstanceOf[js.Any] },
+        "pipelineId" -> pipelineId.asInstanceOf[js.Any],
+        "pipelineObjects" -> pipelineObjects.asInstanceOf[js.Any],
         "parameterObjects" -> parameterObjects.map { x => x.asInstanceOf[js.Any] },
         "parameterValues" -> parameterValues.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
@@ -1175,20 +1175,20 @@ package datapipeline {
    */
   @js.native
   trait ValidatePipelineDefinitionOutput extends js.Object {
+    var errored: boolean
     var validationErrors: js.UndefOr[ValidationErrors]
     var validationWarnings: js.UndefOr[ValidationWarnings]
-    var errored: js.UndefOr[boolean]
   }
 
   object ValidatePipelineDefinitionOutput {
     def apply(
+      errored: boolean,
       validationErrors: js.UndefOr[ValidationErrors] = js.undefined,
-      validationWarnings: js.UndefOr[ValidationWarnings] = js.undefined,
-      errored: js.UndefOr[boolean] = js.undefined): ValidatePipelineDefinitionOutput = {
+      validationWarnings: js.UndefOr[ValidationWarnings] = js.undefined): ValidatePipelineDefinitionOutput = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "errored" -> errored.asInstanceOf[js.Any],
         "validationErrors" -> validationErrors.map { x => x.asInstanceOf[js.Any] },
-        "validationWarnings" -> validationWarnings.map { x => x.asInstanceOf[js.Any] },
-        "errored" -> errored.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "validationWarnings" -> validationWarnings.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ValidatePipelineDefinitionOutput]
     }
@@ -1199,17 +1199,17 @@ package datapipeline {
    */
   @js.native
   trait ValidationError extends js.Object {
-    var id: js.UndefOr[id]
     var errors: js.UndefOr[validationMessages]
+    var id: js.UndefOr[id]
   }
 
   object ValidationError {
     def apply(
-      id: js.UndefOr[id] = js.undefined,
-      errors: js.UndefOr[validationMessages] = js.undefined): ValidationError = {
+      errors: js.UndefOr[validationMessages] = js.undefined,
+      id: js.UndefOr[id] = js.undefined): ValidationError = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "id" -> id.map { x => x.asInstanceOf[js.Any] },
-        "errors" -> errors.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "errors" -> errors.map { x => x.asInstanceOf[js.Any] },
+        "id" -> id.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ValidationError]
     }

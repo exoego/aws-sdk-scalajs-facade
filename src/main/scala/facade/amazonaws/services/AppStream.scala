@@ -148,32 +148,32 @@ package appstream {
    */
   @js.native
   trait Application extends js.Object {
+    var DisplayName: js.UndefOr[String]
+    var Enabled: js.UndefOr[Boolean]
+    var IconURL: js.UndefOr[String]
+    var LaunchParameters: js.UndefOr[String]
+    var LaunchPath: js.UndefOr[String]
     var Metadata: js.UndefOr[Metadata]
     var Name: js.UndefOr[String]
-    var Enabled: js.UndefOr[Boolean]
-    var LaunchPath: js.UndefOr[String]
-    var LaunchParameters: js.UndefOr[String]
-    var IconURL: js.UndefOr[String]
-    var DisplayName: js.UndefOr[String]
   }
 
   object Application {
     def apply(
-      Metadata: js.UndefOr[Metadata] = js.undefined,
-      Name: js.UndefOr[String] = js.undefined,
+      DisplayName: js.UndefOr[String] = js.undefined,
       Enabled: js.UndefOr[Boolean] = js.undefined,
-      LaunchPath: js.UndefOr[String] = js.undefined,
-      LaunchParameters: js.UndefOr[String] = js.undefined,
       IconURL: js.UndefOr[String] = js.undefined,
-      DisplayName: js.UndefOr[String] = js.undefined): Application = {
+      LaunchParameters: js.UndefOr[String] = js.undefined,
+      LaunchPath: js.UndefOr[String] = js.undefined,
+      Metadata: js.UndefOr[Metadata] = js.undefined,
+      Name: js.UndefOr[String] = js.undefined): Application = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Metadata" -> Metadata.map { x => x.asInstanceOf[js.Any] },
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
+        "DisplayName" -> DisplayName.map { x => x.asInstanceOf[js.Any] },
         "Enabled" -> Enabled.map { x => x.asInstanceOf[js.Any] },
-        "LaunchPath" -> LaunchPath.map { x => x.asInstanceOf[js.Any] },
-        "LaunchParameters" -> LaunchParameters.map { x => x.asInstanceOf[js.Any] },
         "IconURL" -> IconURL.map { x => x.asInstanceOf[js.Any] },
-        "DisplayName" -> DisplayName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "LaunchParameters" -> LaunchParameters.map { x => x.asInstanceOf[js.Any] },
+        "LaunchPath" -> LaunchPath.map { x => x.asInstanceOf[js.Any] },
+        "Metadata" -> Metadata.map { x => x.asInstanceOf[js.Any] },
+        "Name" -> Name.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Application]
     }
@@ -184,16 +184,16 @@ package appstream {
    */
   @js.native
   trait ApplicationSettings extends js.Object {
-    var Enabled: js.UndefOr[Boolean]
+    var Enabled: Boolean
     var SettingsGroup: js.UndefOr[SettingsGroup]
   }
 
   object ApplicationSettings {
     def apply(
-      Enabled: js.UndefOr[Boolean] = js.undefined,
+      Enabled: Boolean,
       SettingsGroup: js.UndefOr[SettingsGroup] = js.undefined): ApplicationSettings = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Enabled" -> Enabled.map { x => x.asInstanceOf[js.Any] },
+        "Enabled" -> Enabled.asInstanceOf[js.Any],
         "SettingsGroup" -> SettingsGroup.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ApplicationSettings]
@@ -206,19 +206,19 @@ package appstream {
   @js.native
   trait ApplicationSettingsResponse extends js.Object {
     var Enabled: js.UndefOr[Boolean]
-    var SettingsGroup: js.UndefOr[SettingsGroup]
     var S3BucketName: js.UndefOr[String]
+    var SettingsGroup: js.UndefOr[SettingsGroup]
   }
 
   object ApplicationSettingsResponse {
     def apply(
       Enabled: js.UndefOr[Boolean] = js.undefined,
-      SettingsGroup: js.UndefOr[SettingsGroup] = js.undefined,
-      S3BucketName: js.UndefOr[String] = js.undefined): ApplicationSettingsResponse = {
+      S3BucketName: js.UndefOr[String] = js.undefined,
+      SettingsGroup: js.UndefOr[SettingsGroup] = js.undefined): ApplicationSettingsResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Enabled" -> Enabled.map { x => x.asInstanceOf[js.Any] },
-        "SettingsGroup" -> SettingsGroup.map { x => x.asInstanceOf[js.Any] },
-        "S3BucketName" -> S3BucketName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "S3BucketName" -> S3BucketName.map { x => x.asInstanceOf[js.Any] },
+        "SettingsGroup" -> SettingsGroup.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ApplicationSettingsResponse]
     }
@@ -226,17 +226,17 @@ package appstream {
 
   @js.native
   trait AssociateFleetRequest extends js.Object {
-    var FleetName: js.UndefOr[String]
-    var StackName: js.UndefOr[String]
+    var FleetName: String
+    var StackName: String
   }
 
   object AssociateFleetRequest {
     def apply(
-      FleetName: js.UndefOr[String] = js.undefined,
-      StackName: js.UndefOr[String] = js.undefined): AssociateFleetRequest = {
+      FleetName: String,
+      StackName: String): AssociateFleetRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "FleetName" -> FleetName.map { x => x.asInstanceOf[js.Any] },
-        "StackName" -> StackName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "FleetName" -> FleetName.asInstanceOf[js.Any],
+        "StackName" -> StackName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AssociateFleetRequest]
     }
@@ -265,14 +265,14 @@ package appstream {
 
   @js.native
   trait BatchAssociateUserStackRequest extends js.Object {
-    var UserStackAssociations: js.UndefOr[UserStackAssociationList]
+    var UserStackAssociations: UserStackAssociationList
   }
 
   object BatchAssociateUserStackRequest {
     def apply(
-      UserStackAssociations: js.UndefOr[UserStackAssociationList] = js.undefined): BatchAssociateUserStackRequest = {
+      UserStackAssociations: UserStackAssociationList): BatchAssociateUserStackRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "UserStackAssociations" -> UserStackAssociations.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "UserStackAssociations" -> UserStackAssociations.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BatchAssociateUserStackRequest]
     }
@@ -295,14 +295,14 @@ package appstream {
 
   @js.native
   trait BatchDisassociateUserStackRequest extends js.Object {
-    var UserStackAssociations: js.UndefOr[UserStackAssociationList]
+    var UserStackAssociations: UserStackAssociationList
   }
 
   object BatchDisassociateUserStackRequest {
     def apply(
-      UserStackAssociations: js.UndefOr[UserStackAssociationList] = js.undefined): BatchDisassociateUserStackRequest = {
+      UserStackAssociations: UserStackAssociationList): BatchDisassociateUserStackRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "UserStackAssociations" -> UserStackAssociations.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "UserStackAssociations" -> UserStackAssociations.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BatchDisassociateUserStackRequest]
     }
@@ -328,14 +328,14 @@ package appstream {
    */
   @js.native
   trait ComputeCapacity extends js.Object {
-    var DesiredInstances: js.UndefOr[Int]
+    var DesiredInstances: Int
   }
 
   object ComputeCapacity {
     def apply(
-      DesiredInstances: js.UndefOr[Int] = js.undefined): ComputeCapacity = {
+      DesiredInstances: Int): ComputeCapacity = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "DesiredInstances" -> DesiredInstances.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "DesiredInstances" -> DesiredInstances.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ComputeCapacity]
     }
@@ -346,23 +346,23 @@ package appstream {
    */
   @js.native
   trait ComputeCapacityStatus extends js.Object {
-    var Desired: js.UndefOr[Int]
-    var Running: js.UndefOr[Int]
-    var InUse: js.UndefOr[Int]
+    var Desired: Int
     var Available: js.UndefOr[Int]
+    var InUse: js.UndefOr[Int]
+    var Running: js.UndefOr[Int]
   }
 
   object ComputeCapacityStatus {
     def apply(
-      Desired: js.UndefOr[Int] = js.undefined,
-      Running: js.UndefOr[Int] = js.undefined,
+      Desired: Int,
+      Available: js.UndefOr[Int] = js.undefined,
       InUse: js.UndefOr[Int] = js.undefined,
-      Available: js.UndefOr[Int] = js.undefined): ComputeCapacityStatus = {
+      Running: js.UndefOr[Int] = js.undefined): ComputeCapacityStatus = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Desired" -> Desired.map { x => x.asInstanceOf[js.Any] },
-        "Running" -> Running.map { x => x.asInstanceOf[js.Any] },
+        "Desired" -> Desired.asInstanceOf[js.Any],
+        "Available" -> Available.map { x => x.asInstanceOf[js.Any] },
         "InUse" -> InUse.map { x => x.asInstanceOf[js.Any] },
-        "Available" -> Available.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Running" -> Running.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ComputeCapacityStatus]
     }
@@ -370,22 +370,22 @@ package appstream {
 
   @js.native
   trait CopyImageRequest extends js.Object {
-    var SourceImageName: js.UndefOr[Name]
-    var DestinationImageName: js.UndefOr[Name]
-    var DestinationRegion: js.UndefOr[RegionName]
+    var DestinationImageName: Name
+    var DestinationRegion: RegionName
+    var SourceImageName: Name
     var DestinationImageDescription: js.UndefOr[Description]
   }
 
   object CopyImageRequest {
     def apply(
-      SourceImageName: js.UndefOr[Name] = js.undefined,
-      DestinationImageName: js.UndefOr[Name] = js.undefined,
-      DestinationRegion: js.UndefOr[RegionName] = js.undefined,
+      DestinationImageName: Name,
+      DestinationRegion: RegionName,
+      SourceImageName: Name,
       DestinationImageDescription: js.UndefOr[Description] = js.undefined): CopyImageRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "SourceImageName" -> SourceImageName.map { x => x.asInstanceOf[js.Any] },
-        "DestinationImageName" -> DestinationImageName.map { x => x.asInstanceOf[js.Any] },
-        "DestinationRegion" -> DestinationRegion.map { x => x.asInstanceOf[js.Any] },
+        "DestinationImageName" -> DestinationImageName.asInstanceOf[js.Any],
+        "DestinationRegion" -> DestinationRegion.asInstanceOf[js.Any],
+        "SourceImageName" -> SourceImageName.asInstanceOf[js.Any],
         "DestinationImageDescription" -> DestinationImageDescription.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CopyImageRequest]
@@ -409,20 +409,20 @@ package appstream {
 
   @js.native
   trait CreateDirectoryConfigRequest extends js.Object {
-    var DirectoryName: js.UndefOr[DirectoryName]
-    var OrganizationalUnitDistinguishedNames: js.UndefOr[OrganizationalUnitDistinguishedNamesList]
-    var ServiceAccountCredentials: js.UndefOr[ServiceAccountCredentials]
+    var DirectoryName: DirectoryName
+    var OrganizationalUnitDistinguishedNames: OrganizationalUnitDistinguishedNamesList
+    var ServiceAccountCredentials: ServiceAccountCredentials
   }
 
   object CreateDirectoryConfigRequest {
     def apply(
-      DirectoryName: js.UndefOr[DirectoryName] = js.undefined,
-      OrganizationalUnitDistinguishedNames: js.UndefOr[OrganizationalUnitDistinguishedNamesList] = js.undefined,
-      ServiceAccountCredentials: js.UndefOr[ServiceAccountCredentials] = js.undefined): CreateDirectoryConfigRequest = {
+      DirectoryName: DirectoryName,
+      OrganizationalUnitDistinguishedNames: OrganizationalUnitDistinguishedNamesList,
+      ServiceAccountCredentials: ServiceAccountCredentials): CreateDirectoryConfigRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "DirectoryName" -> DirectoryName.map { x => x.asInstanceOf[js.Any] },
-        "OrganizationalUnitDistinguishedNames" -> OrganizationalUnitDistinguishedNames.map { x => x.asInstanceOf[js.Any] },
-        "ServiceAccountCredentials" -> ServiceAccountCredentials.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "DirectoryName" -> DirectoryName.asInstanceOf[js.Any],
+        "OrganizationalUnitDistinguishedNames" -> OrganizationalUnitDistinguishedNames.asInstanceOf[js.Any],
+        "ServiceAccountCredentials" -> ServiceAccountCredentials.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateDirectoryConfigRequest]
     }
@@ -445,50 +445,50 @@ package appstream {
 
   @js.native
   trait CreateFleetRequest extends js.Object {
-    var FleetType: js.UndefOr[FleetType]
-    var Name: js.UndefOr[Name]
-    var ComputeCapacity: js.UndefOr[ComputeCapacity]
-    var ImageName: js.UndefOr[String]
-    var EnableDefaultInternetAccess: js.UndefOr[BooleanObject]
+    var ComputeCapacity: ComputeCapacity
+    var InstanceType: String
+    var Name: Name
     var Description: js.UndefOr[Description]
     var DisconnectTimeoutInSeconds: js.UndefOr[Int]
-    var DomainJoinInfo: js.UndefOr[DomainJoinInfo]
-    var ImageArn: js.UndefOr[Arn]
-    var InstanceType: js.UndefOr[String]
-    var VpcConfig: js.UndefOr[VpcConfig]
     var DisplayName: js.UndefOr[DisplayName]
+    var DomainJoinInfo: js.UndefOr[DomainJoinInfo]
+    var EnableDefaultInternetAccess: js.UndefOr[BooleanObject]
+    var FleetType: js.UndefOr[FleetType]
+    var ImageArn: js.UndefOr[Arn]
+    var ImageName: js.UndefOr[String]
     var MaxUserDurationInSeconds: js.UndefOr[Int]
+    var VpcConfig: js.UndefOr[VpcConfig]
   }
 
   object CreateFleetRequest {
     def apply(
-      FleetType: js.UndefOr[FleetType] = js.undefined,
-      Name: js.UndefOr[Name] = js.undefined,
-      ComputeCapacity: js.UndefOr[ComputeCapacity] = js.undefined,
-      ImageName: js.UndefOr[String] = js.undefined,
-      EnableDefaultInternetAccess: js.UndefOr[BooleanObject] = js.undefined,
+      ComputeCapacity: ComputeCapacity,
+      InstanceType: String,
+      Name: Name,
       Description: js.UndefOr[Description] = js.undefined,
       DisconnectTimeoutInSeconds: js.UndefOr[Int] = js.undefined,
-      DomainJoinInfo: js.UndefOr[DomainJoinInfo] = js.undefined,
-      ImageArn: js.UndefOr[Arn] = js.undefined,
-      InstanceType: js.UndefOr[String] = js.undefined,
-      VpcConfig: js.UndefOr[VpcConfig] = js.undefined,
       DisplayName: js.UndefOr[DisplayName] = js.undefined,
-      MaxUserDurationInSeconds: js.UndefOr[Int] = js.undefined): CreateFleetRequest = {
+      DomainJoinInfo: js.UndefOr[DomainJoinInfo] = js.undefined,
+      EnableDefaultInternetAccess: js.UndefOr[BooleanObject] = js.undefined,
+      FleetType: js.UndefOr[FleetType] = js.undefined,
+      ImageArn: js.UndefOr[Arn] = js.undefined,
+      ImageName: js.UndefOr[String] = js.undefined,
+      MaxUserDurationInSeconds: js.UndefOr[Int] = js.undefined,
+      VpcConfig: js.UndefOr[VpcConfig] = js.undefined): CreateFleetRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "FleetType" -> FleetType.map { x => x.asInstanceOf[js.Any] },
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
-        "ComputeCapacity" -> ComputeCapacity.map { x => x.asInstanceOf[js.Any] },
-        "ImageName" -> ImageName.map { x => x.asInstanceOf[js.Any] },
-        "EnableDefaultInternetAccess" -> EnableDefaultInternetAccess.map { x => x.asInstanceOf[js.Any] },
+        "ComputeCapacity" -> ComputeCapacity.asInstanceOf[js.Any],
+        "InstanceType" -> InstanceType.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
         "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
         "DisconnectTimeoutInSeconds" -> DisconnectTimeoutInSeconds.map { x => x.asInstanceOf[js.Any] },
-        "DomainJoinInfo" -> DomainJoinInfo.map { x => x.asInstanceOf[js.Any] },
-        "ImageArn" -> ImageArn.map { x => x.asInstanceOf[js.Any] },
-        "InstanceType" -> InstanceType.map { x => x.asInstanceOf[js.Any] },
-        "VpcConfig" -> VpcConfig.map { x => x.asInstanceOf[js.Any] },
         "DisplayName" -> DisplayName.map { x => x.asInstanceOf[js.Any] },
-        "MaxUserDurationInSeconds" -> MaxUserDurationInSeconds.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "DomainJoinInfo" -> DomainJoinInfo.map { x => x.asInstanceOf[js.Any] },
+        "EnableDefaultInternetAccess" -> EnableDefaultInternetAccess.map { x => x.asInstanceOf[js.Any] },
+        "FleetType" -> FleetType.map { x => x.asInstanceOf[js.Any] },
+        "ImageArn" -> ImageArn.map { x => x.asInstanceOf[js.Any] },
+        "ImageName" -> ImageName.map { x => x.asInstanceOf[js.Any] },
+        "MaxUserDurationInSeconds" -> MaxUserDurationInSeconds.map { x => x.asInstanceOf[js.Any] },
+        "VpcConfig" -> VpcConfig.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateFleetRequest]
     }
@@ -511,41 +511,41 @@ package appstream {
 
   @js.native
   trait CreateImageBuilderRequest extends js.Object {
-    var Name: js.UndefOr[Name]
-    var ImageName: js.UndefOr[String]
-    var EnableDefaultInternetAccess: js.UndefOr[BooleanObject]
-    var Description: js.UndefOr[Description]
+    var InstanceType: String
+    var Name: Name
     var AppstreamAgentVersion: js.UndefOr[AppstreamAgentVersion]
-    var DomainJoinInfo: js.UndefOr[DomainJoinInfo]
-    var ImageArn: js.UndefOr[Arn]
-    var InstanceType: js.UndefOr[String]
-    var VpcConfig: js.UndefOr[VpcConfig]
+    var Description: js.UndefOr[Description]
     var DisplayName: js.UndefOr[DisplayName]
+    var DomainJoinInfo: js.UndefOr[DomainJoinInfo]
+    var EnableDefaultInternetAccess: js.UndefOr[BooleanObject]
+    var ImageArn: js.UndefOr[Arn]
+    var ImageName: js.UndefOr[String]
+    var VpcConfig: js.UndefOr[VpcConfig]
   }
 
   object CreateImageBuilderRequest {
     def apply(
-      Name: js.UndefOr[Name] = js.undefined,
-      ImageName: js.UndefOr[String] = js.undefined,
-      EnableDefaultInternetAccess: js.UndefOr[BooleanObject] = js.undefined,
-      Description: js.UndefOr[Description] = js.undefined,
+      InstanceType: String,
+      Name: Name,
       AppstreamAgentVersion: js.UndefOr[AppstreamAgentVersion] = js.undefined,
+      Description: js.UndefOr[Description] = js.undefined,
+      DisplayName: js.UndefOr[DisplayName] = js.undefined,
       DomainJoinInfo: js.UndefOr[DomainJoinInfo] = js.undefined,
+      EnableDefaultInternetAccess: js.UndefOr[BooleanObject] = js.undefined,
       ImageArn: js.UndefOr[Arn] = js.undefined,
-      InstanceType: js.UndefOr[String] = js.undefined,
-      VpcConfig: js.UndefOr[VpcConfig] = js.undefined,
-      DisplayName: js.UndefOr[DisplayName] = js.undefined): CreateImageBuilderRequest = {
+      ImageName: js.UndefOr[String] = js.undefined,
+      VpcConfig: js.UndefOr[VpcConfig] = js.undefined): CreateImageBuilderRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
-        "ImageName" -> ImageName.map { x => x.asInstanceOf[js.Any] },
-        "EnableDefaultInternetAccess" -> EnableDefaultInternetAccess.map { x => x.asInstanceOf[js.Any] },
-        "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
+        "InstanceType" -> InstanceType.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
         "AppstreamAgentVersion" -> AppstreamAgentVersion.map { x => x.asInstanceOf[js.Any] },
+        "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
+        "DisplayName" -> DisplayName.map { x => x.asInstanceOf[js.Any] },
         "DomainJoinInfo" -> DomainJoinInfo.map { x => x.asInstanceOf[js.Any] },
+        "EnableDefaultInternetAccess" -> EnableDefaultInternetAccess.map { x => x.asInstanceOf[js.Any] },
         "ImageArn" -> ImageArn.map { x => x.asInstanceOf[js.Any] },
-        "InstanceType" -> InstanceType.map { x => x.asInstanceOf[js.Any] },
-        "VpcConfig" -> VpcConfig.map { x => x.asInstanceOf[js.Any] },
-        "DisplayName" -> DisplayName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ImageName" -> ImageName.map { x => x.asInstanceOf[js.Any] },
+        "VpcConfig" -> VpcConfig.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateImageBuilderRequest]
     }
@@ -568,16 +568,16 @@ package appstream {
 
   @js.native
   trait CreateImageBuilderStreamingURLRequest extends js.Object {
-    var Name: js.UndefOr[String]
+    var Name: String
     var Validity: js.UndefOr[Double]
   }
 
   object CreateImageBuilderStreamingURLRequest {
     def apply(
-      Name: js.UndefOr[String] = js.undefined,
+      Name: String,
       Validity: js.UndefOr[Double] = js.undefined): CreateImageBuilderStreamingURLRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
+        "Name" -> Name.asInstanceOf[js.Any],
         "Validity" -> Validity.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateImageBuilderStreamingURLRequest]
@@ -586,17 +586,17 @@ package appstream {
 
   @js.native
   trait CreateImageBuilderStreamingURLResult extends js.Object {
-    var StreamingURL: js.UndefOr[String]
     var Expires: js.UndefOr[Timestamp]
+    var StreamingURL: js.UndefOr[String]
   }
 
   object CreateImageBuilderStreamingURLResult {
     def apply(
-      StreamingURL: js.UndefOr[String] = js.undefined,
-      Expires: js.UndefOr[Timestamp] = js.undefined): CreateImageBuilderStreamingURLResult = {
+      Expires: js.UndefOr[Timestamp] = js.undefined,
+      StreamingURL: js.UndefOr[String] = js.undefined): CreateImageBuilderStreamingURLResult = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "StreamingURL" -> StreamingURL.map { x => x.asInstanceOf[js.Any] },
-        "Expires" -> Expires.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Expires" -> Expires.map { x => x.asInstanceOf[js.Any] },
+        "StreamingURL" -> StreamingURL.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateImageBuilderStreamingURLResult]
     }
@@ -604,35 +604,35 @@ package appstream {
 
   @js.native
   trait CreateStackRequest extends js.Object {
-    var FeedbackURL: js.UndefOr[FeedbackURL]
-    var Name: js.UndefOr[Name]
-    var RedirectURL: js.UndefOr[RedirectURL]
-    var Description: js.UndefOr[Description]
-    var StorageConnectors: js.UndefOr[StorageConnectorList]
+    var Name: Name
     var ApplicationSettings: js.UndefOr[ApplicationSettings]
-    var UserSettings: js.UndefOr[UserSettingList]
+    var Description: js.UndefOr[Description]
     var DisplayName: js.UndefOr[DisplayName]
+    var FeedbackURL: js.UndefOr[FeedbackURL]
+    var RedirectURL: js.UndefOr[RedirectURL]
+    var StorageConnectors: js.UndefOr[StorageConnectorList]
+    var UserSettings: js.UndefOr[UserSettingList]
   }
 
   object CreateStackRequest {
     def apply(
-      FeedbackURL: js.UndefOr[FeedbackURL] = js.undefined,
-      Name: js.UndefOr[Name] = js.undefined,
-      RedirectURL: js.UndefOr[RedirectURL] = js.undefined,
-      Description: js.UndefOr[Description] = js.undefined,
-      StorageConnectors: js.UndefOr[StorageConnectorList] = js.undefined,
+      Name: Name,
       ApplicationSettings: js.UndefOr[ApplicationSettings] = js.undefined,
-      UserSettings: js.UndefOr[UserSettingList] = js.undefined,
-      DisplayName: js.UndefOr[DisplayName] = js.undefined): CreateStackRequest = {
+      Description: js.UndefOr[Description] = js.undefined,
+      DisplayName: js.UndefOr[DisplayName] = js.undefined,
+      FeedbackURL: js.UndefOr[FeedbackURL] = js.undefined,
+      RedirectURL: js.UndefOr[RedirectURL] = js.undefined,
+      StorageConnectors: js.UndefOr[StorageConnectorList] = js.undefined,
+      UserSettings: js.UndefOr[UserSettingList] = js.undefined): CreateStackRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "FeedbackURL" -> FeedbackURL.map { x => x.asInstanceOf[js.Any] },
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
-        "RedirectURL" -> RedirectURL.map { x => x.asInstanceOf[js.Any] },
-        "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
-        "StorageConnectors" -> StorageConnectors.map { x => x.asInstanceOf[js.Any] },
+        "Name" -> Name.asInstanceOf[js.Any],
         "ApplicationSettings" -> ApplicationSettings.map { x => x.asInstanceOf[js.Any] },
-        "UserSettings" -> UserSettings.map { x => x.asInstanceOf[js.Any] },
-        "DisplayName" -> DisplayName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
+        "DisplayName" -> DisplayName.map { x => x.asInstanceOf[js.Any] },
+        "FeedbackURL" -> FeedbackURL.map { x => x.asInstanceOf[js.Any] },
+        "RedirectURL" -> RedirectURL.map { x => x.asInstanceOf[js.Any] },
+        "StorageConnectors" -> StorageConnectors.map { x => x.asInstanceOf[js.Any] },
+        "UserSettings" -> UserSettings.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateStackRequest]
     }
@@ -655,27 +655,27 @@ package appstream {
 
   @js.native
   trait CreateStreamingURLRequest extends js.Object {
+    var FleetName: String
+    var StackName: String
+    var UserId: StreamingUrlUserId
     var ApplicationId: js.UndefOr[String]
-    var FleetName: js.UndefOr[String]
-    var StackName: js.UndefOr[String]
-    var UserId: js.UndefOr[StreamingUrlUserId]
     var SessionContext: js.UndefOr[String]
     var Validity: js.UndefOr[Double]
   }
 
   object CreateStreamingURLRequest {
     def apply(
+      FleetName: String,
+      StackName: String,
+      UserId: StreamingUrlUserId,
       ApplicationId: js.UndefOr[String] = js.undefined,
-      FleetName: js.UndefOr[String] = js.undefined,
-      StackName: js.UndefOr[String] = js.undefined,
-      UserId: js.UndefOr[StreamingUrlUserId] = js.undefined,
       SessionContext: js.UndefOr[String] = js.undefined,
       Validity: js.UndefOr[Double] = js.undefined): CreateStreamingURLRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "FleetName" -> FleetName.asInstanceOf[js.Any],
+        "StackName" -> StackName.asInstanceOf[js.Any],
+        "UserId" -> UserId.asInstanceOf[js.Any],
         "ApplicationId" -> ApplicationId.map { x => x.asInstanceOf[js.Any] },
-        "FleetName" -> FleetName.map { x => x.asInstanceOf[js.Any] },
-        "StackName" -> StackName.map { x => x.asInstanceOf[js.Any] },
-        "UserId" -> UserId.map { x => x.asInstanceOf[js.Any] },
         "SessionContext" -> SessionContext.map { x => x.asInstanceOf[js.Any] },
         "Validity" -> Validity.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
@@ -685,17 +685,17 @@ package appstream {
 
   @js.native
   trait CreateStreamingURLResult extends js.Object {
-    var StreamingURL: js.UndefOr[String]
     var Expires: js.UndefOr[Timestamp]
+    var StreamingURL: js.UndefOr[String]
   }
 
   object CreateStreamingURLResult {
     def apply(
-      StreamingURL: js.UndefOr[String] = js.undefined,
-      Expires: js.UndefOr[Timestamp] = js.undefined): CreateStreamingURLResult = {
+      Expires: js.UndefOr[Timestamp] = js.undefined,
+      StreamingURL: js.UndefOr[String] = js.undefined): CreateStreamingURLResult = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "StreamingURL" -> StreamingURL.map { x => x.asInstanceOf[js.Any] },
-        "Expires" -> Expires.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Expires" -> Expires.map { x => x.asInstanceOf[js.Any] },
+        "StreamingURL" -> StreamingURL.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateStreamingURLResult]
     }
@@ -703,25 +703,25 @@ package appstream {
 
   @js.native
   trait CreateUserRequest extends js.Object {
-    var LastName: js.UndefOr[UserAttributeValue]
-    var UserName: js.UndefOr[Username]
+    var AuthenticationType: AuthenticationType
+    var UserName: Username
     var FirstName: js.UndefOr[UserAttributeValue]
-    var AuthenticationType: js.UndefOr[AuthenticationType]
+    var LastName: js.UndefOr[UserAttributeValue]
     var MessageAction: js.UndefOr[MessageAction]
   }
 
   object CreateUserRequest {
     def apply(
-      LastName: js.UndefOr[UserAttributeValue] = js.undefined,
-      UserName: js.UndefOr[Username] = js.undefined,
+      AuthenticationType: AuthenticationType,
+      UserName: Username,
       FirstName: js.UndefOr[UserAttributeValue] = js.undefined,
-      AuthenticationType: js.UndefOr[AuthenticationType] = js.undefined,
+      LastName: js.UndefOr[UserAttributeValue] = js.undefined,
       MessageAction: js.UndefOr[MessageAction] = js.undefined): CreateUserRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "LastName" -> LastName.map { x => x.asInstanceOf[js.Any] },
-        "UserName" -> UserName.map { x => x.asInstanceOf[js.Any] },
+        "AuthenticationType" -> AuthenticationType.asInstanceOf[js.Any],
+        "UserName" -> UserName.asInstanceOf[js.Any],
         "FirstName" -> FirstName.map { x => x.asInstanceOf[js.Any] },
-        "AuthenticationType" -> AuthenticationType.map { x => x.asInstanceOf[js.Any] },
+        "LastName" -> LastName.map { x => x.asInstanceOf[js.Any] },
         "MessageAction" -> MessageAction.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateUserRequest]
@@ -743,14 +743,14 @@ package appstream {
 
   @js.native
   trait DeleteDirectoryConfigRequest extends js.Object {
-    var DirectoryName: js.UndefOr[DirectoryName]
+    var DirectoryName: DirectoryName
   }
 
   object DeleteDirectoryConfigRequest {
     def apply(
-      DirectoryName: js.UndefOr[DirectoryName] = js.undefined): DeleteDirectoryConfigRequest = {
+      DirectoryName: DirectoryName): DeleteDirectoryConfigRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "DirectoryName" -> DirectoryName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "DirectoryName" -> DirectoryName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteDirectoryConfigRequest]
     }
@@ -771,14 +771,14 @@ package appstream {
 
   @js.native
   trait DeleteFleetRequest extends js.Object {
-    var Name: js.UndefOr[String]
+    var Name: String
   }
 
   object DeleteFleetRequest {
     def apply(
-      Name: js.UndefOr[String] = js.undefined): DeleteFleetRequest = {
+      Name: String): DeleteFleetRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Name" -> Name.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteFleetRequest]
     }
@@ -799,14 +799,14 @@ package appstream {
 
   @js.native
   trait DeleteImageBuilderRequest extends js.Object {
-    var Name: js.UndefOr[Name]
+    var Name: Name
   }
 
   object DeleteImageBuilderRequest {
     def apply(
-      Name: js.UndefOr[Name] = js.undefined): DeleteImageBuilderRequest = {
+      Name: Name): DeleteImageBuilderRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Name" -> Name.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteImageBuilderRequest]
     }
@@ -829,17 +829,17 @@ package appstream {
 
   @js.native
   trait DeleteImagePermissionsRequest extends js.Object {
-    var Name: js.UndefOr[Name]
-    var SharedAccountId: js.UndefOr[AwsAccountId]
+    var Name: Name
+    var SharedAccountId: AwsAccountId
   }
 
   object DeleteImagePermissionsRequest {
     def apply(
-      Name: js.UndefOr[Name] = js.undefined,
-      SharedAccountId: js.UndefOr[AwsAccountId] = js.undefined): DeleteImagePermissionsRequest = {
+      Name: Name,
+      SharedAccountId: AwsAccountId): DeleteImagePermissionsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
-        "SharedAccountId" -> SharedAccountId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Name" -> Name.asInstanceOf[js.Any],
+        "SharedAccountId" -> SharedAccountId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteImagePermissionsRequest]
     }
@@ -860,14 +860,14 @@ package appstream {
 
   @js.native
   trait DeleteImageRequest extends js.Object {
-    var Name: js.UndefOr[Name]
+    var Name: Name
   }
 
   object DeleteImageRequest {
     def apply(
-      Name: js.UndefOr[Name] = js.undefined): DeleteImageRequest = {
+      Name: Name): DeleteImageRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Name" -> Name.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteImageRequest]
     }
@@ -890,14 +890,14 @@ package appstream {
 
   @js.native
   trait DeleteStackRequest extends js.Object {
-    var Name: js.UndefOr[String]
+    var Name: String
   }
 
   object DeleteStackRequest {
     def apply(
-      Name: js.UndefOr[String] = js.undefined): DeleteStackRequest = {
+      Name: String): DeleteStackRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Name" -> Name.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteStackRequest]
     }
@@ -918,17 +918,17 @@ package appstream {
 
   @js.native
   trait DeleteUserRequest extends js.Object {
-    var UserName: js.UndefOr[Username]
-    var AuthenticationType: js.UndefOr[AuthenticationType]
+    var AuthenticationType: AuthenticationType
+    var UserName: Username
   }
 
   object DeleteUserRequest {
     def apply(
-      UserName: js.UndefOr[Username] = js.undefined,
-      AuthenticationType: js.UndefOr[AuthenticationType] = js.undefined): DeleteUserRequest = {
+      AuthenticationType: AuthenticationType,
+      UserName: Username): DeleteUserRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "UserName" -> UserName.map { x => x.asInstanceOf[js.Any] },
-        "AuthenticationType" -> AuthenticationType.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "AuthenticationType" -> AuthenticationType.asInstanceOf[js.Any],
+        "UserName" -> UserName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteUserRequest]
     }
@@ -1024,19 +1024,19 @@ package appstream {
 
   @js.native
   trait DescribeImageBuildersRequest extends js.Object {
-    var Names: js.UndefOr[StringList]
     var MaxResults: js.UndefOr[Int]
+    var Names: js.UndefOr[StringList]
     var NextToken: js.UndefOr[String]
   }
 
   object DescribeImageBuildersRequest {
     def apply(
-      Names: js.UndefOr[StringList] = js.undefined,
       MaxResults: js.UndefOr[Int] = js.undefined,
+      Names: js.UndefOr[StringList] = js.undefined,
       NextToken: js.UndefOr[String] = js.undefined): DescribeImageBuildersRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Names" -> Names.map { x => x.asInstanceOf[js.Any] },
         "MaxResults" -> MaxResults.map { x => x.asInstanceOf[js.Any] },
+        "Names" -> Names.map { x => x.asInstanceOf[js.Any] },
         "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeImageBuildersRequest]
@@ -1063,23 +1063,23 @@ package appstream {
 
   @js.native
   trait DescribeImagePermissionsRequest extends js.Object {
-    var Name: js.UndefOr[Name]
+    var Name: Name
     var MaxResults: js.UndefOr[MaxResults]
-    var SharedAwsAccountIds: js.UndefOr[AwsAccountIdList]
     var NextToken: js.UndefOr[String]
+    var SharedAwsAccountIds: js.UndefOr[AwsAccountIdList]
   }
 
   object DescribeImagePermissionsRequest {
     def apply(
-      Name: js.UndefOr[Name] = js.undefined,
+      Name: Name,
       MaxResults: js.UndefOr[MaxResults] = js.undefined,
-      SharedAwsAccountIds: js.UndefOr[AwsAccountIdList] = js.undefined,
-      NextToken: js.UndefOr[String] = js.undefined): DescribeImagePermissionsRequest = {
+      NextToken: js.UndefOr[String] = js.undefined,
+      SharedAwsAccountIds: js.UndefOr[AwsAccountIdList] = js.undefined): DescribeImagePermissionsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
+        "Name" -> Name.asInstanceOf[js.Any],
         "MaxResults" -> MaxResults.map { x => x.asInstanceOf[js.Any] },
-        "SharedAwsAccountIds" -> SharedAwsAccountIds.map { x => x.asInstanceOf[js.Any] },
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
+        "SharedAwsAccountIds" -> SharedAwsAccountIds.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeImagePermissionsRequest]
     }
@@ -1088,19 +1088,19 @@ package appstream {
   @js.native
   trait DescribeImagePermissionsResult extends js.Object {
     var Name: js.UndefOr[Name]
-    var SharedImagePermissionsList: js.UndefOr[SharedImagePermissionsList]
     var NextToken: js.UndefOr[String]
+    var SharedImagePermissionsList: js.UndefOr[SharedImagePermissionsList]
   }
 
   object DescribeImagePermissionsResult {
     def apply(
       Name: js.UndefOr[Name] = js.undefined,
-      SharedImagePermissionsList: js.UndefOr[SharedImagePermissionsList] = js.undefined,
-      NextToken: js.UndefOr[String] = js.undefined): DescribeImagePermissionsResult = {
+      NextToken: js.UndefOr[String] = js.undefined,
+      SharedImagePermissionsList: js.UndefOr[SharedImagePermissionsList] = js.undefined): DescribeImagePermissionsResult = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
-        "SharedImagePermissionsList" -> SharedImagePermissionsList.map { x => x.asInstanceOf[js.Any] },
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
+        "SharedImagePermissionsList" -> SharedImagePermissionsList.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeImagePermissionsResult]
     }
@@ -1108,8 +1108,8 @@ package appstream {
 
   @js.native
   trait DescribeImagesRequest extends js.Object {
-    var MaxResults: js.UndefOr[DescribeImagesMaxResults]
     var Arns: js.UndefOr[ArnList]
+    var MaxResults: js.UndefOr[DescribeImagesMaxResults]
     var Names: js.UndefOr[StringList]
     var NextToken: js.UndefOr[String]
     var Type: js.UndefOr[VisibilityType]
@@ -1117,14 +1117,14 @@ package appstream {
 
   object DescribeImagesRequest {
     def apply(
-      MaxResults: js.UndefOr[DescribeImagesMaxResults] = js.undefined,
       Arns: js.UndefOr[ArnList] = js.undefined,
+      MaxResults: js.UndefOr[DescribeImagesMaxResults] = js.undefined,
       Names: js.UndefOr[StringList] = js.undefined,
       NextToken: js.UndefOr[String] = js.undefined,
       Type: js.UndefOr[VisibilityType] = js.undefined): DescribeImagesRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "MaxResults" -> MaxResults.map { x => x.asInstanceOf[js.Any] },
         "Arns" -> Arns.map { x => x.asInstanceOf[js.Any] },
+        "MaxResults" -> MaxResults.map { x => x.asInstanceOf[js.Any] },
         "Names" -> Names.map { x => x.asInstanceOf[js.Any] },
         "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
         "Type" -> Type.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
@@ -1153,29 +1153,29 @@ package appstream {
 
   @js.native
   trait DescribeSessionsRequest extends js.Object {
-    var Limit: js.UndefOr[Int]
-    var FleetName: js.UndefOr[String]
-    var StackName: js.UndefOr[String]
+    var FleetName: String
+    var StackName: String
     var AuthenticationType: js.UndefOr[AuthenticationType]
-    var UserId: js.UndefOr[UserId]
+    var Limit: js.UndefOr[Int]
     var NextToken: js.UndefOr[String]
+    var UserId: js.UndefOr[UserId]
   }
 
   object DescribeSessionsRequest {
     def apply(
-      Limit: js.UndefOr[Int] = js.undefined,
-      FleetName: js.UndefOr[String] = js.undefined,
-      StackName: js.UndefOr[String] = js.undefined,
+      FleetName: String,
+      StackName: String,
       AuthenticationType: js.UndefOr[AuthenticationType] = js.undefined,
-      UserId: js.UndefOr[UserId] = js.undefined,
-      NextToken: js.UndefOr[String] = js.undefined): DescribeSessionsRequest = {
+      Limit: js.UndefOr[Int] = js.undefined,
+      NextToken: js.UndefOr[String] = js.undefined,
+      UserId: js.UndefOr[UserId] = js.undefined): DescribeSessionsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Limit" -> Limit.map { x => x.asInstanceOf[js.Any] },
-        "FleetName" -> FleetName.map { x => x.asInstanceOf[js.Any] },
-        "StackName" -> StackName.map { x => x.asInstanceOf[js.Any] },
+        "FleetName" -> FleetName.asInstanceOf[js.Any],
+        "StackName" -> StackName.asInstanceOf[js.Any],
         "AuthenticationType" -> AuthenticationType.map { x => x.asInstanceOf[js.Any] },
-        "UserId" -> UserId.map { x => x.asInstanceOf[js.Any] },
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Limit" -> Limit.map { x => x.asInstanceOf[js.Any] },
+        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
+        "UserId" -> UserId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeSessionsRequest]
     }
@@ -1183,17 +1183,17 @@ package appstream {
 
   @js.native
   trait DescribeSessionsResult extends js.Object {
-    var Sessions: js.UndefOr[SessionList]
     var NextToken: js.UndefOr[String]
+    var Sessions: js.UndefOr[SessionList]
   }
 
   object DescribeSessionsResult {
     def apply(
-      Sessions: js.UndefOr[SessionList] = js.undefined,
-      NextToken: js.UndefOr[String] = js.undefined): DescribeSessionsResult = {
+      NextToken: js.UndefOr[String] = js.undefined,
+      Sessions: js.UndefOr[SessionList] = js.undefined): DescribeSessionsResult = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Sessions" -> Sessions.map { x => x.asInstanceOf[js.Any] },
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
+        "Sessions" -> Sessions.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeSessionsResult]
     }
@@ -1219,17 +1219,17 @@ package appstream {
 
   @js.native
   trait DescribeStacksResult extends js.Object {
-    var Stacks: js.UndefOr[StackList]
     var NextToken: js.UndefOr[String]
+    var Stacks: js.UndefOr[StackList]
   }
 
   object DescribeStacksResult {
     def apply(
-      Stacks: js.UndefOr[StackList] = js.undefined,
-      NextToken: js.UndefOr[String] = js.undefined): DescribeStacksResult = {
+      NextToken: js.UndefOr[String] = js.undefined,
+      Stacks: js.UndefOr[StackList] = js.undefined): DescribeStacksResult = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Stacks" -> Stacks.map { x => x.asInstanceOf[js.Any] },
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
+        "Stacks" -> Stacks.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeStacksResult]
     }
@@ -1237,26 +1237,26 @@ package appstream {
 
   @js.native
   trait DescribeUserStackAssociationsRequest extends js.Object {
-    var UserName: js.UndefOr[Username]
-    var MaxResults: js.UndefOr[MaxResults]
-    var StackName: js.UndefOr[String]
     var AuthenticationType: js.UndefOr[AuthenticationType]
+    var MaxResults: js.UndefOr[MaxResults]
     var NextToken: js.UndefOr[String]
+    var StackName: js.UndefOr[String]
+    var UserName: js.UndefOr[Username]
   }
 
   object DescribeUserStackAssociationsRequest {
     def apply(
-      UserName: js.UndefOr[Username] = js.undefined,
-      MaxResults: js.UndefOr[MaxResults] = js.undefined,
-      StackName: js.UndefOr[String] = js.undefined,
       AuthenticationType: js.UndefOr[AuthenticationType] = js.undefined,
-      NextToken: js.UndefOr[String] = js.undefined): DescribeUserStackAssociationsRequest = {
+      MaxResults: js.UndefOr[MaxResults] = js.undefined,
+      NextToken: js.UndefOr[String] = js.undefined,
+      StackName: js.UndefOr[String] = js.undefined,
+      UserName: js.UndefOr[Username] = js.undefined): DescribeUserStackAssociationsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "UserName" -> UserName.map { x => x.asInstanceOf[js.Any] },
-        "MaxResults" -> MaxResults.map { x => x.asInstanceOf[js.Any] },
-        "StackName" -> StackName.map { x => x.asInstanceOf[js.Any] },
         "AuthenticationType" -> AuthenticationType.map { x => x.asInstanceOf[js.Any] },
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "MaxResults" -> MaxResults.map { x => x.asInstanceOf[js.Any] },
+        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
+        "StackName" -> StackName.map { x => x.asInstanceOf[js.Any] },
+        "UserName" -> UserName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeUserStackAssociationsRequest]
     }
@@ -1264,17 +1264,17 @@ package appstream {
 
   @js.native
   trait DescribeUserStackAssociationsResult extends js.Object {
-    var UserStackAssociations: js.UndefOr[UserStackAssociationList]
     var NextToken: js.UndefOr[String]
+    var UserStackAssociations: js.UndefOr[UserStackAssociationList]
   }
 
   object DescribeUserStackAssociationsResult {
     def apply(
-      UserStackAssociations: js.UndefOr[UserStackAssociationList] = js.undefined,
-      NextToken: js.UndefOr[String] = js.undefined): DescribeUserStackAssociationsResult = {
+      NextToken: js.UndefOr[String] = js.undefined,
+      UserStackAssociations: js.UndefOr[UserStackAssociationList] = js.undefined): DescribeUserStackAssociationsResult = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "UserStackAssociations" -> UserStackAssociations.map { x => x.asInstanceOf[js.Any] },
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
+        "UserStackAssociations" -> UserStackAssociations.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeUserStackAssociationsResult]
     }
@@ -1282,18 +1282,18 @@ package appstream {
 
   @js.native
   trait DescribeUsersRequest extends js.Object {
-    var AuthenticationType: js.UndefOr[AuthenticationType]
+    var AuthenticationType: AuthenticationType
     var MaxResults: js.UndefOr[Int]
     var NextToken: js.UndefOr[String]
   }
 
   object DescribeUsersRequest {
     def apply(
-      AuthenticationType: js.UndefOr[AuthenticationType] = js.undefined,
+      AuthenticationType: AuthenticationType,
       MaxResults: js.UndefOr[Int] = js.undefined,
       NextToken: js.UndefOr[String] = js.undefined): DescribeUsersRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "AuthenticationType" -> AuthenticationType.map { x => x.asInstanceOf[js.Any] },
+        "AuthenticationType" -> AuthenticationType.asInstanceOf[js.Any],
         "MaxResults" -> MaxResults.map { x => x.asInstanceOf[js.Any] },
         "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
@@ -1303,17 +1303,17 @@ package appstream {
 
   @js.native
   trait DescribeUsersResult extends js.Object {
-    var Users: js.UndefOr[UserList]
     var NextToken: js.UndefOr[String]
+    var Users: js.UndefOr[UserList]
   }
 
   object DescribeUsersResult {
     def apply(
-      Users: js.UndefOr[UserList] = js.undefined,
-      NextToken: js.UndefOr[String] = js.undefined): DescribeUsersResult = {
+      NextToken: js.UndefOr[String] = js.undefined,
+      Users: js.UndefOr[UserList] = js.undefined): DescribeUsersResult = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Users" -> Users.map { x => x.asInstanceOf[js.Any] },
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
+        "Users" -> Users.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeUsersResult]
     }
@@ -1324,23 +1324,23 @@ package appstream {
    */
   @js.native
   trait DirectoryConfig extends js.Object {
-    var DirectoryName: js.UndefOr[DirectoryName]
+    var DirectoryName: DirectoryName
+    var CreatedTime: js.UndefOr[Timestamp]
     var OrganizationalUnitDistinguishedNames: js.UndefOr[OrganizationalUnitDistinguishedNamesList]
     var ServiceAccountCredentials: js.UndefOr[ServiceAccountCredentials]
-    var CreatedTime: js.UndefOr[Timestamp]
   }
 
   object DirectoryConfig {
     def apply(
-      DirectoryName: js.UndefOr[DirectoryName] = js.undefined,
+      DirectoryName: DirectoryName,
+      CreatedTime: js.UndefOr[Timestamp] = js.undefined,
       OrganizationalUnitDistinguishedNames: js.UndefOr[OrganizationalUnitDistinguishedNamesList] = js.undefined,
-      ServiceAccountCredentials: js.UndefOr[ServiceAccountCredentials] = js.undefined,
-      CreatedTime: js.UndefOr[Timestamp] = js.undefined): DirectoryConfig = {
+      ServiceAccountCredentials: js.UndefOr[ServiceAccountCredentials] = js.undefined): DirectoryConfig = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "DirectoryName" -> DirectoryName.map { x => x.asInstanceOf[js.Any] },
+        "DirectoryName" -> DirectoryName.asInstanceOf[js.Any],
+        "CreatedTime" -> CreatedTime.map { x => x.asInstanceOf[js.Any] },
         "OrganizationalUnitDistinguishedNames" -> OrganizationalUnitDistinguishedNames.map { x => x.asInstanceOf[js.Any] },
-        "ServiceAccountCredentials" -> ServiceAccountCredentials.map { x => x.asInstanceOf[js.Any] },
-        "CreatedTime" -> CreatedTime.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ServiceAccountCredentials" -> ServiceAccountCredentials.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DirectoryConfig]
     }
@@ -1348,17 +1348,17 @@ package appstream {
 
   @js.native
   trait DisableUserRequest extends js.Object {
-    var UserName: js.UndefOr[Username]
-    var AuthenticationType: js.UndefOr[AuthenticationType]
+    var AuthenticationType: AuthenticationType
+    var UserName: Username
   }
 
   object DisableUserRequest {
     def apply(
-      UserName: js.UndefOr[Username] = js.undefined,
-      AuthenticationType: js.UndefOr[AuthenticationType] = js.undefined): DisableUserRequest = {
+      AuthenticationType: AuthenticationType,
+      UserName: Username): DisableUserRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "UserName" -> UserName.map { x => x.asInstanceOf[js.Any] },
-        "AuthenticationType" -> AuthenticationType.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "AuthenticationType" -> AuthenticationType.asInstanceOf[js.Any],
+        "UserName" -> UserName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DisableUserRequest]
     }
@@ -1379,17 +1379,17 @@ package appstream {
 
   @js.native
   trait DisassociateFleetRequest extends js.Object {
-    var FleetName: js.UndefOr[String]
-    var StackName: js.UndefOr[String]
+    var FleetName: String
+    var StackName: String
   }
 
   object DisassociateFleetRequest {
     def apply(
-      FleetName: js.UndefOr[String] = js.undefined,
-      StackName: js.UndefOr[String] = js.undefined): DisassociateFleetRequest = {
+      FleetName: String,
+      StackName: String): DisassociateFleetRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "FleetName" -> FleetName.map { x => x.asInstanceOf[js.Any] },
-        "StackName" -> StackName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "FleetName" -> FleetName.asInstanceOf[js.Any],
+        "StackName" -> StackName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DisassociateFleetRequest]
     }
@@ -1431,17 +1431,17 @@ package appstream {
 
   @js.native
   trait EnableUserRequest extends js.Object {
-    var UserName: js.UndefOr[Username]
-    var AuthenticationType: js.UndefOr[AuthenticationType]
+    var AuthenticationType: AuthenticationType
+    var UserName: Username
   }
 
   object EnableUserRequest {
     def apply(
-      UserName: js.UndefOr[Username] = js.undefined,
-      AuthenticationType: js.UndefOr[AuthenticationType] = js.undefined): EnableUserRequest = {
+      AuthenticationType: AuthenticationType,
+      UserName: Username): EnableUserRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "UserName" -> UserName.map { x => x.asInstanceOf[js.Any] },
-        "AuthenticationType" -> AuthenticationType.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "AuthenticationType" -> AuthenticationType.asInstanceOf[js.Any],
+        "UserName" -> UserName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EnableUserRequest]
     }
@@ -1462,14 +1462,14 @@ package appstream {
 
   @js.native
   trait ExpireSessionRequest extends js.Object {
-    var SessionId: js.UndefOr[String]
+    var SessionId: String
   }
 
   object ExpireSessionRequest {
     def apply(
-      SessionId: js.UndefOr[String] = js.undefined): ExpireSessionRequest = {
+      SessionId: String): ExpireSessionRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "SessionId" -> SessionId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "SessionId" -> SessionId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ExpireSessionRequest]
     }
@@ -1493,62 +1493,62 @@ package appstream {
    */
   @js.native
   trait Fleet extends js.Object {
-    var FleetErrors: js.UndefOr[FleetErrors]
-    var FleetType: js.UndefOr[FleetType]
+    var Arn: Arn
+    var ComputeCapacityStatus: ComputeCapacityStatus
+    var InstanceType: String
+    var Name: String
+    var State: FleetState
     var CreatedTime: js.UndefOr[Timestamp]
-    var Name: js.UndefOr[String]
-    var ImageName: js.UndefOr[String]
-    var EnableDefaultInternetAccess: js.UndefOr[BooleanObject]
     var Description: js.UndefOr[String]
     var DisconnectTimeoutInSeconds: js.UndefOr[Int]
-    var Arn: js.UndefOr[Arn]
-    var DomainJoinInfo: js.UndefOr[DomainJoinInfo]
-    var ImageArn: js.UndefOr[Arn]
-    var InstanceType: js.UndefOr[String]
-    var VpcConfig: js.UndefOr[VpcConfig]
-    var ComputeCapacityStatus: js.UndefOr[ComputeCapacityStatus]
-    var State: js.UndefOr[FleetState]
     var DisplayName: js.UndefOr[String]
+    var DomainJoinInfo: js.UndefOr[DomainJoinInfo]
+    var EnableDefaultInternetAccess: js.UndefOr[BooleanObject]
+    var FleetErrors: js.UndefOr[FleetErrors]
+    var FleetType: js.UndefOr[FleetType]
+    var ImageArn: js.UndefOr[Arn]
+    var ImageName: js.UndefOr[String]
     var MaxUserDurationInSeconds: js.UndefOr[Int]
+    var VpcConfig: js.UndefOr[VpcConfig]
   }
 
   object Fleet {
     def apply(
-      FleetErrors: js.UndefOr[FleetErrors] = js.undefined,
-      FleetType: js.UndefOr[FleetType] = js.undefined,
+      Arn: Arn,
+      ComputeCapacityStatus: ComputeCapacityStatus,
+      InstanceType: String,
+      Name: String,
+      State: FleetState,
       CreatedTime: js.UndefOr[Timestamp] = js.undefined,
-      Name: js.UndefOr[String] = js.undefined,
-      ImageName: js.UndefOr[String] = js.undefined,
-      EnableDefaultInternetAccess: js.UndefOr[BooleanObject] = js.undefined,
       Description: js.UndefOr[String] = js.undefined,
       DisconnectTimeoutInSeconds: js.UndefOr[Int] = js.undefined,
-      Arn: js.UndefOr[Arn] = js.undefined,
-      DomainJoinInfo: js.UndefOr[DomainJoinInfo] = js.undefined,
-      ImageArn: js.UndefOr[Arn] = js.undefined,
-      InstanceType: js.UndefOr[String] = js.undefined,
-      VpcConfig: js.UndefOr[VpcConfig] = js.undefined,
-      ComputeCapacityStatus: js.UndefOr[ComputeCapacityStatus] = js.undefined,
-      State: js.UndefOr[FleetState] = js.undefined,
       DisplayName: js.UndefOr[String] = js.undefined,
-      MaxUserDurationInSeconds: js.UndefOr[Int] = js.undefined): Fleet = {
+      DomainJoinInfo: js.UndefOr[DomainJoinInfo] = js.undefined,
+      EnableDefaultInternetAccess: js.UndefOr[BooleanObject] = js.undefined,
+      FleetErrors: js.UndefOr[FleetErrors] = js.undefined,
+      FleetType: js.UndefOr[FleetType] = js.undefined,
+      ImageArn: js.UndefOr[Arn] = js.undefined,
+      ImageName: js.UndefOr[String] = js.undefined,
+      MaxUserDurationInSeconds: js.UndefOr[Int] = js.undefined,
+      VpcConfig: js.UndefOr[VpcConfig] = js.undefined): Fleet = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "FleetErrors" -> FleetErrors.map { x => x.asInstanceOf[js.Any] },
-        "FleetType" -> FleetType.map { x => x.asInstanceOf[js.Any] },
+        "Arn" -> Arn.asInstanceOf[js.Any],
+        "ComputeCapacityStatus" -> ComputeCapacityStatus.asInstanceOf[js.Any],
+        "InstanceType" -> InstanceType.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
+        "State" -> State.asInstanceOf[js.Any],
         "CreatedTime" -> CreatedTime.map { x => x.asInstanceOf[js.Any] },
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
-        "ImageName" -> ImageName.map { x => x.asInstanceOf[js.Any] },
-        "EnableDefaultInternetAccess" -> EnableDefaultInternetAccess.map { x => x.asInstanceOf[js.Any] },
         "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
         "DisconnectTimeoutInSeconds" -> DisconnectTimeoutInSeconds.map { x => x.asInstanceOf[js.Any] },
-        "Arn" -> Arn.map { x => x.asInstanceOf[js.Any] },
-        "DomainJoinInfo" -> DomainJoinInfo.map { x => x.asInstanceOf[js.Any] },
-        "ImageArn" -> ImageArn.map { x => x.asInstanceOf[js.Any] },
-        "InstanceType" -> InstanceType.map { x => x.asInstanceOf[js.Any] },
-        "VpcConfig" -> VpcConfig.map { x => x.asInstanceOf[js.Any] },
-        "ComputeCapacityStatus" -> ComputeCapacityStatus.map { x => x.asInstanceOf[js.Any] },
-        "State" -> State.map { x => x.asInstanceOf[js.Any] },
         "DisplayName" -> DisplayName.map { x => x.asInstanceOf[js.Any] },
-        "MaxUserDurationInSeconds" -> MaxUserDurationInSeconds.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "DomainJoinInfo" -> DomainJoinInfo.map { x => x.asInstanceOf[js.Any] },
+        "EnableDefaultInternetAccess" -> EnableDefaultInternetAccess.map { x => x.asInstanceOf[js.Any] },
+        "FleetErrors" -> FleetErrors.map { x => x.asInstanceOf[js.Any] },
+        "FleetType" -> FleetType.map { x => x.asInstanceOf[js.Any] },
+        "ImageArn" -> ImageArn.map { x => x.asInstanceOf[js.Any] },
+        "ImageName" -> ImageName.map { x => x.asInstanceOf[js.Any] },
+        "MaxUserDurationInSeconds" -> MaxUserDurationInSeconds.map { x => x.asInstanceOf[js.Any] },
+        "VpcConfig" -> VpcConfig.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Fleet]
     }
@@ -1638,56 +1638,56 @@ package appstream {
    */
   @js.native
   trait Image extends js.Object {
-    var CreatedTime: js.UndefOr[Timestamp]
-    var Name: js.UndefOr[String]
-    var StateChangeReason: js.UndefOr[ImageStateChangeReason]
+    var Name: String
     var Applications: js.UndefOr[Applications]
-    var Platform: js.UndefOr[PlatformType]
-    var ImageBuilderSupported: js.UndefOr[Boolean]
-    var Description: js.UndefOr[String]
-    var ImagePermissions: js.UndefOr[ImagePermissions]
-    var PublicBaseImageReleasedDate: js.UndefOr[Timestamp]
-    var Visibility: js.UndefOr[VisibilityType]
-    var Arn: js.UndefOr[Arn]
     var AppstreamAgentVersion: js.UndefOr[AppstreamAgentVersion]
+    var Arn: js.UndefOr[Arn]
     var BaseImageArn: js.UndefOr[Arn]
-    var State: js.UndefOr[ImageState]
+    var CreatedTime: js.UndefOr[Timestamp]
+    var Description: js.UndefOr[String]
     var DisplayName: js.UndefOr[String]
+    var ImageBuilderSupported: js.UndefOr[Boolean]
+    var ImagePermissions: js.UndefOr[ImagePermissions]
+    var Platform: js.UndefOr[PlatformType]
+    var PublicBaseImageReleasedDate: js.UndefOr[Timestamp]
+    var State: js.UndefOr[ImageState]
+    var StateChangeReason: js.UndefOr[ImageStateChangeReason]
+    var Visibility: js.UndefOr[VisibilityType]
   }
 
   object Image {
     def apply(
-      CreatedTime: js.UndefOr[Timestamp] = js.undefined,
-      Name: js.UndefOr[String] = js.undefined,
-      StateChangeReason: js.UndefOr[ImageStateChangeReason] = js.undefined,
+      Name: String,
       Applications: js.UndefOr[Applications] = js.undefined,
-      Platform: js.UndefOr[PlatformType] = js.undefined,
-      ImageBuilderSupported: js.UndefOr[Boolean] = js.undefined,
-      Description: js.UndefOr[String] = js.undefined,
-      ImagePermissions: js.UndefOr[ImagePermissions] = js.undefined,
-      PublicBaseImageReleasedDate: js.UndefOr[Timestamp] = js.undefined,
-      Visibility: js.UndefOr[VisibilityType] = js.undefined,
-      Arn: js.UndefOr[Arn] = js.undefined,
       AppstreamAgentVersion: js.UndefOr[AppstreamAgentVersion] = js.undefined,
+      Arn: js.UndefOr[Arn] = js.undefined,
       BaseImageArn: js.UndefOr[Arn] = js.undefined,
+      CreatedTime: js.UndefOr[Timestamp] = js.undefined,
+      Description: js.UndefOr[String] = js.undefined,
+      DisplayName: js.UndefOr[String] = js.undefined,
+      ImageBuilderSupported: js.UndefOr[Boolean] = js.undefined,
+      ImagePermissions: js.UndefOr[ImagePermissions] = js.undefined,
+      Platform: js.UndefOr[PlatformType] = js.undefined,
+      PublicBaseImageReleasedDate: js.UndefOr[Timestamp] = js.undefined,
       State: js.UndefOr[ImageState] = js.undefined,
-      DisplayName: js.UndefOr[String] = js.undefined): Image = {
+      StateChangeReason: js.UndefOr[ImageStateChangeReason] = js.undefined,
+      Visibility: js.UndefOr[VisibilityType] = js.undefined): Image = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "CreatedTime" -> CreatedTime.map { x => x.asInstanceOf[js.Any] },
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
-        "StateChangeReason" -> StateChangeReason.map { x => x.asInstanceOf[js.Any] },
+        "Name" -> Name.asInstanceOf[js.Any],
         "Applications" -> Applications.map { x => x.asInstanceOf[js.Any] },
-        "Platform" -> Platform.map { x => x.asInstanceOf[js.Any] },
-        "ImageBuilderSupported" -> ImageBuilderSupported.map { x => x.asInstanceOf[js.Any] },
-        "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
-        "ImagePermissions" -> ImagePermissions.map { x => x.asInstanceOf[js.Any] },
-        "PublicBaseImageReleasedDate" -> PublicBaseImageReleasedDate.map { x => x.asInstanceOf[js.Any] },
-        "Visibility" -> Visibility.map { x => x.asInstanceOf[js.Any] },
-        "Arn" -> Arn.map { x => x.asInstanceOf[js.Any] },
         "AppstreamAgentVersion" -> AppstreamAgentVersion.map { x => x.asInstanceOf[js.Any] },
+        "Arn" -> Arn.map { x => x.asInstanceOf[js.Any] },
         "BaseImageArn" -> BaseImageArn.map { x => x.asInstanceOf[js.Any] },
+        "CreatedTime" -> CreatedTime.map { x => x.asInstanceOf[js.Any] },
+        "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
+        "DisplayName" -> DisplayName.map { x => x.asInstanceOf[js.Any] },
+        "ImageBuilderSupported" -> ImageBuilderSupported.map { x => x.asInstanceOf[js.Any] },
+        "ImagePermissions" -> ImagePermissions.map { x => x.asInstanceOf[js.Any] },
+        "Platform" -> Platform.map { x => x.asInstanceOf[js.Any] },
+        "PublicBaseImageReleasedDate" -> PublicBaseImageReleasedDate.map { x => x.asInstanceOf[js.Any] },
         "State" -> State.map { x => x.asInstanceOf[js.Any] },
-        "DisplayName" -> DisplayName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "StateChangeReason" -> StateChangeReason.map { x => x.asInstanceOf[js.Any] },
+        "Visibility" -> Visibility.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Image]
     }
@@ -1698,56 +1698,56 @@ package appstream {
    */
   @js.native
   trait ImageBuilder extends js.Object {
-    var CreatedTime: js.UndefOr[Timestamp]
-    var Name: js.UndefOr[String]
-    var StateChangeReason: js.UndefOr[ImageBuilderStateChangeReason]
-    var Platform: js.UndefOr[PlatformType]
-    var ImageBuilderErrors: js.UndefOr[ResourceErrors]
-    var EnableDefaultInternetAccess: js.UndefOr[BooleanObject]
-    var Description: js.UndefOr[String]
-    var Arn: js.UndefOr[Arn]
+    var Name: String
     var AppstreamAgentVersion: js.UndefOr[AppstreamAgentVersion]
-    var DomainJoinInfo: js.UndefOr[DomainJoinInfo]
-    var ImageArn: js.UndefOr[Arn]
-    var InstanceType: js.UndefOr[String]
-    var VpcConfig: js.UndefOr[VpcConfig]
-    var State: js.UndefOr[ImageBuilderState]
+    var Arn: js.UndefOr[Arn]
+    var CreatedTime: js.UndefOr[Timestamp]
+    var Description: js.UndefOr[String]
     var DisplayName: js.UndefOr[String]
+    var DomainJoinInfo: js.UndefOr[DomainJoinInfo]
+    var EnableDefaultInternetAccess: js.UndefOr[BooleanObject]
+    var ImageArn: js.UndefOr[Arn]
+    var ImageBuilderErrors: js.UndefOr[ResourceErrors]
+    var InstanceType: js.UndefOr[String]
+    var Platform: js.UndefOr[PlatformType]
+    var State: js.UndefOr[ImageBuilderState]
+    var StateChangeReason: js.UndefOr[ImageBuilderStateChangeReason]
+    var VpcConfig: js.UndefOr[VpcConfig]
   }
 
   object ImageBuilder {
     def apply(
-      CreatedTime: js.UndefOr[Timestamp] = js.undefined,
-      Name: js.UndefOr[String] = js.undefined,
-      StateChangeReason: js.UndefOr[ImageBuilderStateChangeReason] = js.undefined,
-      Platform: js.UndefOr[PlatformType] = js.undefined,
-      ImageBuilderErrors: js.UndefOr[ResourceErrors] = js.undefined,
-      EnableDefaultInternetAccess: js.UndefOr[BooleanObject] = js.undefined,
-      Description: js.UndefOr[String] = js.undefined,
-      Arn: js.UndefOr[Arn] = js.undefined,
+      Name: String,
       AppstreamAgentVersion: js.UndefOr[AppstreamAgentVersion] = js.undefined,
+      Arn: js.UndefOr[Arn] = js.undefined,
+      CreatedTime: js.UndefOr[Timestamp] = js.undefined,
+      Description: js.UndefOr[String] = js.undefined,
+      DisplayName: js.UndefOr[String] = js.undefined,
       DomainJoinInfo: js.UndefOr[DomainJoinInfo] = js.undefined,
+      EnableDefaultInternetAccess: js.UndefOr[BooleanObject] = js.undefined,
       ImageArn: js.UndefOr[Arn] = js.undefined,
+      ImageBuilderErrors: js.UndefOr[ResourceErrors] = js.undefined,
       InstanceType: js.UndefOr[String] = js.undefined,
-      VpcConfig: js.UndefOr[VpcConfig] = js.undefined,
+      Platform: js.UndefOr[PlatformType] = js.undefined,
       State: js.UndefOr[ImageBuilderState] = js.undefined,
-      DisplayName: js.UndefOr[String] = js.undefined): ImageBuilder = {
+      StateChangeReason: js.UndefOr[ImageBuilderStateChangeReason] = js.undefined,
+      VpcConfig: js.UndefOr[VpcConfig] = js.undefined): ImageBuilder = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "CreatedTime" -> CreatedTime.map { x => x.asInstanceOf[js.Any] },
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
-        "StateChangeReason" -> StateChangeReason.map { x => x.asInstanceOf[js.Any] },
-        "Platform" -> Platform.map { x => x.asInstanceOf[js.Any] },
-        "ImageBuilderErrors" -> ImageBuilderErrors.map { x => x.asInstanceOf[js.Any] },
-        "EnableDefaultInternetAccess" -> EnableDefaultInternetAccess.map { x => x.asInstanceOf[js.Any] },
-        "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
-        "Arn" -> Arn.map { x => x.asInstanceOf[js.Any] },
+        "Name" -> Name.asInstanceOf[js.Any],
         "AppstreamAgentVersion" -> AppstreamAgentVersion.map { x => x.asInstanceOf[js.Any] },
+        "Arn" -> Arn.map { x => x.asInstanceOf[js.Any] },
+        "CreatedTime" -> CreatedTime.map { x => x.asInstanceOf[js.Any] },
+        "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
+        "DisplayName" -> DisplayName.map { x => x.asInstanceOf[js.Any] },
         "DomainJoinInfo" -> DomainJoinInfo.map { x => x.asInstanceOf[js.Any] },
+        "EnableDefaultInternetAccess" -> EnableDefaultInternetAccess.map { x => x.asInstanceOf[js.Any] },
         "ImageArn" -> ImageArn.map { x => x.asInstanceOf[js.Any] },
+        "ImageBuilderErrors" -> ImageBuilderErrors.map { x => x.asInstanceOf[js.Any] },
         "InstanceType" -> InstanceType.map { x => x.asInstanceOf[js.Any] },
-        "VpcConfig" -> VpcConfig.map { x => x.asInstanceOf[js.Any] },
+        "Platform" -> Platform.map { x => x.asInstanceOf[js.Any] },
         "State" -> State.map { x => x.asInstanceOf[js.Any] },
-        "DisplayName" -> DisplayName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "StateChangeReason" -> StateChangeReason.map { x => x.asInstanceOf[js.Any] },
+        "VpcConfig" -> VpcConfig.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ImageBuilder]
     }
@@ -1857,16 +1857,16 @@ package appstream {
 
   @js.native
   trait ListAssociatedFleetsRequest extends js.Object {
-    var StackName: js.UndefOr[String]
+    var StackName: String
     var NextToken: js.UndefOr[String]
   }
 
   object ListAssociatedFleetsRequest {
     def apply(
-      StackName: js.UndefOr[String] = js.undefined,
+      StackName: String,
       NextToken: js.UndefOr[String] = js.undefined): ListAssociatedFleetsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "StackName" -> StackName.map { x => x.asInstanceOf[js.Any] },
+        "StackName" -> StackName.asInstanceOf[js.Any],
         "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListAssociatedFleetsRequest]
@@ -1893,16 +1893,16 @@ package appstream {
 
   @js.native
   trait ListAssociatedStacksRequest extends js.Object {
-    var FleetName: js.UndefOr[String]
+    var FleetName: String
     var NextToken: js.UndefOr[String]
   }
 
   object ListAssociatedStacksRequest {
     def apply(
-      FleetName: js.UndefOr[String] = js.undefined,
+      FleetName: String,
       NextToken: js.UndefOr[String] = js.undefined): ListAssociatedStacksRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "FleetName" -> FleetName.map { x => x.asInstanceOf[js.Any] },
+        "FleetName" -> FleetName.asInstanceOf[js.Any],
         "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListAssociatedStacksRequest]
@@ -1929,14 +1929,14 @@ package appstream {
 
   @js.native
   trait ListTagsForResourceRequest extends js.Object {
-    var ResourceArn: js.UndefOr[Arn]
+    var ResourceArn: Arn
   }
 
   object ListTagsForResourceRequest {
     def apply(
-      ResourceArn: js.UndefOr[Arn] = js.undefined): ListTagsForResourceRequest = {
+      ResourceArn: Arn): ListTagsForResourceRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ResourceArn" -> ResourceArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListTagsForResourceRequest]
     }
@@ -1969,17 +1969,17 @@ package appstream {
    */
   @js.native
   trait NetworkAccessConfiguration extends js.Object {
-    var EniPrivateIpAddress: js.UndefOr[String]
     var EniId: js.UndefOr[String]
+    var EniPrivateIpAddress: js.UndefOr[String]
   }
 
   object NetworkAccessConfiguration {
     def apply(
-      EniPrivateIpAddress: js.UndefOr[String] = js.undefined,
-      EniId: js.UndefOr[String] = js.undefined): NetworkAccessConfiguration = {
+      EniId: js.UndefOr[String] = js.undefined,
+      EniPrivateIpAddress: js.UndefOr[String] = js.undefined): NetworkAccessConfiguration = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "EniPrivateIpAddress" -> EniPrivateIpAddress.map { x => x.asInstanceOf[js.Any] },
-        "EniId" -> EniId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "EniId" -> EniId.map { x => x.asInstanceOf[js.Any] },
+        "EniPrivateIpAddress" -> EniPrivateIpAddress.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[NetworkAccessConfiguration]
     }
@@ -2027,17 +2027,17 @@ package appstream {
    */
   @js.native
   trait ServiceAccountCredentials extends js.Object {
-    var AccountName: js.UndefOr[AccountName]
-    var AccountPassword: js.UndefOr[AccountPassword]
+    var AccountName: AccountName
+    var AccountPassword: AccountPassword
   }
 
   object ServiceAccountCredentials {
     def apply(
-      AccountName: js.UndefOr[AccountName] = js.undefined,
-      AccountPassword: js.UndefOr[AccountPassword] = js.undefined): ServiceAccountCredentials = {
+      AccountName: AccountName,
+      AccountPassword: AccountPassword): ServiceAccountCredentials = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "AccountName" -> AccountName.map { x => x.asInstanceOf[js.Any] },
-        "AccountPassword" -> AccountPassword.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "AccountName" -> AccountName.asInstanceOf[js.Any],
+        "AccountPassword" -> AccountPassword.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ServiceAccountCredentials]
     }
@@ -2048,32 +2048,32 @@ package appstream {
    */
   @js.native
   trait Session extends js.Object {
-    var Id: js.UndefOr[String]
-    var NetworkAccessConfiguration: js.UndefOr[NetworkAccessConfiguration]
-    var FleetName: js.UndefOr[String]
-    var StackName: js.UndefOr[String]
+    var FleetName: String
+    var Id: String
+    var StackName: String
+    var State: SessionState
+    var UserId: UserId
     var AuthenticationType: js.UndefOr[AuthenticationType]
-    var UserId: js.UndefOr[UserId]
-    var State: js.UndefOr[SessionState]
+    var NetworkAccessConfiguration: js.UndefOr[NetworkAccessConfiguration]
   }
 
   object Session {
     def apply(
-      Id: js.UndefOr[String] = js.undefined,
-      NetworkAccessConfiguration: js.UndefOr[NetworkAccessConfiguration] = js.undefined,
-      FleetName: js.UndefOr[String] = js.undefined,
-      StackName: js.UndefOr[String] = js.undefined,
+      FleetName: String,
+      Id: String,
+      StackName: String,
+      State: SessionState,
+      UserId: UserId,
       AuthenticationType: js.UndefOr[AuthenticationType] = js.undefined,
-      UserId: js.UndefOr[UserId] = js.undefined,
-      State: js.UndefOr[SessionState] = js.undefined): Session = {
+      NetworkAccessConfiguration: js.UndefOr[NetworkAccessConfiguration] = js.undefined): Session = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Id" -> Id.map { x => x.asInstanceOf[js.Any] },
-        "NetworkAccessConfiguration" -> NetworkAccessConfiguration.map { x => x.asInstanceOf[js.Any] },
-        "FleetName" -> FleetName.map { x => x.asInstanceOf[js.Any] },
-        "StackName" -> StackName.map { x => x.asInstanceOf[js.Any] },
+        "FleetName" -> FleetName.asInstanceOf[js.Any],
+        "Id" -> Id.asInstanceOf[js.Any],
+        "StackName" -> StackName.asInstanceOf[js.Any],
+        "State" -> State.asInstanceOf[js.Any],
+        "UserId" -> UserId.asInstanceOf[js.Any],
         "AuthenticationType" -> AuthenticationType.map { x => x.asInstanceOf[js.Any] },
-        "UserId" -> UserId.map { x => x.asInstanceOf[js.Any] },
-        "State" -> State.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "NetworkAccessConfiguration" -> NetworkAccessConfiguration.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Session]
     }
@@ -2095,17 +2095,17 @@ package appstream {
    */
   @js.native
   trait SharedImagePermissions extends js.Object {
-    var sharedAccountId: js.UndefOr[AwsAccountId]
-    var imagePermissions: js.UndefOr[ImagePermissions]
+    var imagePermissions: ImagePermissions
+    var sharedAccountId: AwsAccountId
   }
 
   object SharedImagePermissions {
     def apply(
-      sharedAccountId: js.UndefOr[AwsAccountId] = js.undefined,
-      imagePermissions: js.UndefOr[ImagePermissions] = js.undefined): SharedImagePermissions = {
+      imagePermissions: ImagePermissions,
+      sharedAccountId: AwsAccountId): SharedImagePermissions = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "sharedAccountId" -> sharedAccountId.map { x => x.asInstanceOf[js.Any] },
-        "imagePermissions" -> imagePermissions.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "imagePermissions" -> imagePermissions.asInstanceOf[js.Any],
+        "sharedAccountId" -> sharedAccountId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SharedImagePermissions]
     }
@@ -2116,44 +2116,44 @@ package appstream {
    */
   @js.native
   trait Stack extends js.Object {
-    var FeedbackURL: js.UndefOr[FeedbackURL]
-    var CreatedTime: js.UndefOr[Timestamp]
-    var Name: js.UndefOr[String]
-    var RedirectURL: js.UndefOr[RedirectURL]
-    var StackErrors: js.UndefOr[StackErrors]
-    var Description: js.UndefOr[String]
-    var StorageConnectors: js.UndefOr[StorageConnectorList]
+    var Name: String
     var ApplicationSettings: js.UndefOr[ApplicationSettingsResponse]
     var Arn: js.UndefOr[Arn]
-    var UserSettings: js.UndefOr[UserSettingList]
+    var CreatedTime: js.UndefOr[Timestamp]
+    var Description: js.UndefOr[String]
     var DisplayName: js.UndefOr[String]
+    var FeedbackURL: js.UndefOr[FeedbackURL]
+    var RedirectURL: js.UndefOr[RedirectURL]
+    var StackErrors: js.UndefOr[StackErrors]
+    var StorageConnectors: js.UndefOr[StorageConnectorList]
+    var UserSettings: js.UndefOr[UserSettingList]
   }
 
   object Stack {
     def apply(
-      FeedbackURL: js.UndefOr[FeedbackURL] = js.undefined,
-      CreatedTime: js.UndefOr[Timestamp] = js.undefined,
-      Name: js.UndefOr[String] = js.undefined,
-      RedirectURL: js.UndefOr[RedirectURL] = js.undefined,
-      StackErrors: js.UndefOr[StackErrors] = js.undefined,
-      Description: js.UndefOr[String] = js.undefined,
-      StorageConnectors: js.UndefOr[StorageConnectorList] = js.undefined,
+      Name: String,
       ApplicationSettings: js.UndefOr[ApplicationSettingsResponse] = js.undefined,
       Arn: js.UndefOr[Arn] = js.undefined,
-      UserSettings: js.UndefOr[UserSettingList] = js.undefined,
-      DisplayName: js.UndefOr[String] = js.undefined): Stack = {
+      CreatedTime: js.UndefOr[Timestamp] = js.undefined,
+      Description: js.UndefOr[String] = js.undefined,
+      DisplayName: js.UndefOr[String] = js.undefined,
+      FeedbackURL: js.UndefOr[FeedbackURL] = js.undefined,
+      RedirectURL: js.UndefOr[RedirectURL] = js.undefined,
+      StackErrors: js.UndefOr[StackErrors] = js.undefined,
+      StorageConnectors: js.UndefOr[StorageConnectorList] = js.undefined,
+      UserSettings: js.UndefOr[UserSettingList] = js.undefined): Stack = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "FeedbackURL" -> FeedbackURL.map { x => x.asInstanceOf[js.Any] },
-        "CreatedTime" -> CreatedTime.map { x => x.asInstanceOf[js.Any] },
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
-        "RedirectURL" -> RedirectURL.map { x => x.asInstanceOf[js.Any] },
-        "StackErrors" -> StackErrors.map { x => x.asInstanceOf[js.Any] },
-        "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
-        "StorageConnectors" -> StorageConnectors.map { x => x.asInstanceOf[js.Any] },
+        "Name" -> Name.asInstanceOf[js.Any],
         "ApplicationSettings" -> ApplicationSettings.map { x => x.asInstanceOf[js.Any] },
         "Arn" -> Arn.map { x => x.asInstanceOf[js.Any] },
-        "UserSettings" -> UserSettings.map { x => x.asInstanceOf[js.Any] },
-        "DisplayName" -> DisplayName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "CreatedTime" -> CreatedTime.map { x => x.asInstanceOf[js.Any] },
+        "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
+        "DisplayName" -> DisplayName.map { x => x.asInstanceOf[js.Any] },
+        "FeedbackURL" -> FeedbackURL.map { x => x.asInstanceOf[js.Any] },
+        "RedirectURL" -> RedirectURL.map { x => x.asInstanceOf[js.Any] },
+        "StackErrors" -> StackErrors.map { x => x.asInstanceOf[js.Any] },
+        "StorageConnectors" -> StorageConnectors.map { x => x.asInstanceOf[js.Any] },
+        "UserSettings" -> UserSettings.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Stack]
     }
@@ -2202,14 +2202,14 @@ package appstream {
 
   @js.native
   trait StartFleetRequest extends js.Object {
-    var Name: js.UndefOr[String]
+    var Name: String
   }
 
   object StartFleetRequest {
     def apply(
-      Name: js.UndefOr[String] = js.undefined): StartFleetRequest = {
+      Name: String): StartFleetRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Name" -> Name.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StartFleetRequest]
     }
@@ -2230,16 +2230,16 @@ package appstream {
 
   @js.native
   trait StartImageBuilderRequest extends js.Object {
-    var Name: js.UndefOr[String]
+    var Name: String
     var AppstreamAgentVersion: js.UndefOr[AppstreamAgentVersion]
   }
 
   object StartImageBuilderRequest {
     def apply(
-      Name: js.UndefOr[String] = js.undefined,
+      Name: String,
       AppstreamAgentVersion: js.UndefOr[AppstreamAgentVersion] = js.undefined): StartImageBuilderRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
+        "Name" -> Name.asInstanceOf[js.Any],
         "AppstreamAgentVersion" -> AppstreamAgentVersion.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StartImageBuilderRequest]
@@ -2263,14 +2263,14 @@ package appstream {
 
   @js.native
   trait StopFleetRequest extends js.Object {
-    var Name: js.UndefOr[String]
+    var Name: String
   }
 
   object StopFleetRequest {
     def apply(
-      Name: js.UndefOr[String] = js.undefined): StopFleetRequest = {
+      Name: String): StopFleetRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Name" -> Name.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StopFleetRequest]
     }
@@ -2291,14 +2291,14 @@ package appstream {
 
   @js.native
   trait StopImageBuilderRequest extends js.Object {
-    var Name: js.UndefOr[String]
+    var Name: String
   }
 
   object StopImageBuilderRequest {
     def apply(
-      Name: js.UndefOr[String] = js.undefined): StopImageBuilderRequest = {
+      Name: String): StopImageBuilderRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Name" -> Name.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StopImageBuilderRequest]
     }
@@ -2324,20 +2324,20 @@ package appstream {
    */
   @js.native
   trait StorageConnector extends js.Object {
-    var ConnectorType: js.UndefOr[StorageConnectorType]
-    var ResourceIdentifier: js.UndefOr[ResourceIdentifier]
+    var ConnectorType: StorageConnectorType
     var Domains: js.UndefOr[DomainList]
+    var ResourceIdentifier: js.UndefOr[ResourceIdentifier]
   }
 
   object StorageConnector {
     def apply(
-      ConnectorType: js.UndefOr[StorageConnectorType] = js.undefined,
-      ResourceIdentifier: js.UndefOr[ResourceIdentifier] = js.undefined,
-      Domains: js.UndefOr[DomainList] = js.undefined): StorageConnector = {
+      ConnectorType: StorageConnectorType,
+      Domains: js.UndefOr[DomainList] = js.undefined,
+      ResourceIdentifier: js.UndefOr[ResourceIdentifier] = js.undefined): StorageConnector = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ConnectorType" -> ConnectorType.map { x => x.asInstanceOf[js.Any] },
-        "ResourceIdentifier" -> ResourceIdentifier.map { x => x.asInstanceOf[js.Any] },
-        "Domains" -> Domains.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ConnectorType" -> ConnectorType.asInstanceOf[js.Any],
+        "Domains" -> Domains.map { x => x.asInstanceOf[js.Any] },
+        "ResourceIdentifier" -> ResourceIdentifier.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StorageConnector]
     }
@@ -2356,17 +2356,17 @@ package appstream {
 
   @js.native
   trait TagResourceRequest extends js.Object {
-    var ResourceArn: js.UndefOr[Arn]
-    var Tags: js.UndefOr[Tags]
+    var ResourceArn: Arn
+    var Tags: Tags
   }
 
   object TagResourceRequest {
     def apply(
-      ResourceArn: js.UndefOr[Arn] = js.undefined,
-      Tags: js.UndefOr[Tags] = js.undefined): TagResourceRequest = {
+      ResourceArn: Arn,
+      Tags: Tags): TagResourceRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ResourceArn" -> ResourceArn.map { x => x.asInstanceOf[js.Any] },
-        "Tags" -> Tags.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
+        "Tags" -> Tags.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TagResourceRequest]
     }
@@ -2387,17 +2387,17 @@ package appstream {
 
   @js.native
   trait UntagResourceRequest extends js.Object {
-    var ResourceArn: js.UndefOr[Arn]
-    var TagKeys: js.UndefOr[TagKeyList]
+    var ResourceArn: Arn
+    var TagKeys: TagKeyList
   }
 
   object UntagResourceRequest {
     def apply(
-      ResourceArn: js.UndefOr[Arn] = js.undefined,
-      TagKeys: js.UndefOr[TagKeyList] = js.undefined): UntagResourceRequest = {
+      ResourceArn: Arn,
+      TagKeys: TagKeyList): UntagResourceRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ResourceArn" -> ResourceArn.map { x => x.asInstanceOf[js.Any] },
-        "TagKeys" -> TagKeys.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
+        "TagKeys" -> TagKeys.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UntagResourceRequest]
     }
@@ -2418,18 +2418,18 @@ package appstream {
 
   @js.native
   trait UpdateDirectoryConfigRequest extends js.Object {
-    var DirectoryName: js.UndefOr[DirectoryName]
+    var DirectoryName: DirectoryName
     var OrganizationalUnitDistinguishedNames: js.UndefOr[OrganizationalUnitDistinguishedNamesList]
     var ServiceAccountCredentials: js.UndefOr[ServiceAccountCredentials]
   }
 
   object UpdateDirectoryConfigRequest {
     def apply(
-      DirectoryName: js.UndefOr[DirectoryName] = js.undefined,
+      DirectoryName: DirectoryName,
       OrganizationalUnitDistinguishedNames: js.UndefOr[OrganizationalUnitDistinguishedNamesList] = js.undefined,
       ServiceAccountCredentials: js.UndefOr[ServiceAccountCredentials] = js.undefined): UpdateDirectoryConfigRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "DirectoryName" -> DirectoryName.map { x => x.asInstanceOf[js.Any] },
+        "DirectoryName" -> DirectoryName.asInstanceOf[js.Any],
         "OrganizationalUnitDistinguishedNames" -> OrganizationalUnitDistinguishedNames.map { x => x.asInstanceOf[js.Any] },
         "ServiceAccountCredentials" -> ServiceAccountCredentials.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
@@ -2454,53 +2454,53 @@ package appstream {
 
   @js.native
   trait UpdateFleetRequest extends js.Object {
-    var Name: js.UndefOr[String]
+    var AttributesToDelete: js.UndefOr[FleetAttributes]
     var ComputeCapacity: js.UndefOr[ComputeCapacity]
-    var ImageName: js.UndefOr[String]
-    var EnableDefaultInternetAccess: js.UndefOr[BooleanObject]
+    var DeleteVpcConfig: js.UndefOr[Boolean]
     var Description: js.UndefOr[Description]
     var DisconnectTimeoutInSeconds: js.UndefOr[Int]
-    var DomainJoinInfo: js.UndefOr[DomainJoinInfo]
-    var ImageArn: js.UndefOr[Arn]
-    var InstanceType: js.UndefOr[String]
-    var AttributesToDelete: js.UndefOr[FleetAttributes]
-    var VpcConfig: js.UndefOr[VpcConfig]
     var DisplayName: js.UndefOr[DisplayName]
-    var DeleteVpcConfig: js.UndefOr[Boolean]
+    var DomainJoinInfo: js.UndefOr[DomainJoinInfo]
+    var EnableDefaultInternetAccess: js.UndefOr[BooleanObject]
+    var ImageArn: js.UndefOr[Arn]
+    var ImageName: js.UndefOr[String]
+    var InstanceType: js.UndefOr[String]
     var MaxUserDurationInSeconds: js.UndefOr[Int]
+    var Name: js.UndefOr[String]
+    var VpcConfig: js.UndefOr[VpcConfig]
   }
 
   object UpdateFleetRequest {
     def apply(
-      Name: js.UndefOr[String] = js.undefined,
+      AttributesToDelete: js.UndefOr[FleetAttributes] = js.undefined,
       ComputeCapacity: js.UndefOr[ComputeCapacity] = js.undefined,
-      ImageName: js.UndefOr[String] = js.undefined,
-      EnableDefaultInternetAccess: js.UndefOr[BooleanObject] = js.undefined,
+      DeleteVpcConfig: js.UndefOr[Boolean] = js.undefined,
       Description: js.UndefOr[Description] = js.undefined,
       DisconnectTimeoutInSeconds: js.UndefOr[Int] = js.undefined,
-      DomainJoinInfo: js.UndefOr[DomainJoinInfo] = js.undefined,
-      ImageArn: js.UndefOr[Arn] = js.undefined,
-      InstanceType: js.UndefOr[String] = js.undefined,
-      AttributesToDelete: js.UndefOr[FleetAttributes] = js.undefined,
-      VpcConfig: js.UndefOr[VpcConfig] = js.undefined,
       DisplayName: js.UndefOr[DisplayName] = js.undefined,
-      DeleteVpcConfig: js.UndefOr[Boolean] = js.undefined,
-      MaxUserDurationInSeconds: js.UndefOr[Int] = js.undefined): UpdateFleetRequest = {
+      DomainJoinInfo: js.UndefOr[DomainJoinInfo] = js.undefined,
+      EnableDefaultInternetAccess: js.UndefOr[BooleanObject] = js.undefined,
+      ImageArn: js.UndefOr[Arn] = js.undefined,
+      ImageName: js.UndefOr[String] = js.undefined,
+      InstanceType: js.UndefOr[String] = js.undefined,
+      MaxUserDurationInSeconds: js.UndefOr[Int] = js.undefined,
+      Name: js.UndefOr[String] = js.undefined,
+      VpcConfig: js.UndefOr[VpcConfig] = js.undefined): UpdateFleetRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
+        "AttributesToDelete" -> AttributesToDelete.map { x => x.asInstanceOf[js.Any] },
         "ComputeCapacity" -> ComputeCapacity.map { x => x.asInstanceOf[js.Any] },
-        "ImageName" -> ImageName.map { x => x.asInstanceOf[js.Any] },
-        "EnableDefaultInternetAccess" -> EnableDefaultInternetAccess.map { x => x.asInstanceOf[js.Any] },
+        "DeleteVpcConfig" -> DeleteVpcConfig.map { x => x.asInstanceOf[js.Any] },
         "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
         "DisconnectTimeoutInSeconds" -> DisconnectTimeoutInSeconds.map { x => x.asInstanceOf[js.Any] },
-        "DomainJoinInfo" -> DomainJoinInfo.map { x => x.asInstanceOf[js.Any] },
-        "ImageArn" -> ImageArn.map { x => x.asInstanceOf[js.Any] },
-        "InstanceType" -> InstanceType.map { x => x.asInstanceOf[js.Any] },
-        "AttributesToDelete" -> AttributesToDelete.map { x => x.asInstanceOf[js.Any] },
-        "VpcConfig" -> VpcConfig.map { x => x.asInstanceOf[js.Any] },
         "DisplayName" -> DisplayName.map { x => x.asInstanceOf[js.Any] },
-        "DeleteVpcConfig" -> DeleteVpcConfig.map { x => x.asInstanceOf[js.Any] },
-        "MaxUserDurationInSeconds" -> MaxUserDurationInSeconds.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "DomainJoinInfo" -> DomainJoinInfo.map { x => x.asInstanceOf[js.Any] },
+        "EnableDefaultInternetAccess" -> EnableDefaultInternetAccess.map { x => x.asInstanceOf[js.Any] },
+        "ImageArn" -> ImageArn.map { x => x.asInstanceOf[js.Any] },
+        "ImageName" -> ImageName.map { x => x.asInstanceOf[js.Any] },
+        "InstanceType" -> InstanceType.map { x => x.asInstanceOf[js.Any] },
+        "MaxUserDurationInSeconds" -> MaxUserDurationInSeconds.map { x => x.asInstanceOf[js.Any] },
+        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
+        "VpcConfig" -> VpcConfig.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateFleetRequest]
     }
@@ -2523,20 +2523,20 @@ package appstream {
 
   @js.native
   trait UpdateImagePermissionsRequest extends js.Object {
-    var Name: js.UndefOr[Name]
-    var SharedAccountId: js.UndefOr[AwsAccountId]
-    var ImagePermissions: js.UndefOr[ImagePermissions]
+    var ImagePermissions: ImagePermissions
+    var Name: Name
+    var SharedAccountId: AwsAccountId
   }
 
   object UpdateImagePermissionsRequest {
     def apply(
-      Name: js.UndefOr[Name] = js.undefined,
-      SharedAccountId: js.UndefOr[AwsAccountId] = js.undefined,
-      ImagePermissions: js.UndefOr[ImagePermissions] = js.undefined): UpdateImagePermissionsRequest = {
+      ImagePermissions: ImagePermissions,
+      Name: Name,
+      SharedAccountId: AwsAccountId): UpdateImagePermissionsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
-        "SharedAccountId" -> SharedAccountId.map { x => x.asInstanceOf[js.Any] },
-        "ImagePermissions" -> ImagePermissions.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ImagePermissions" -> ImagePermissions.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
+        "SharedAccountId" -> SharedAccountId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateImagePermissionsRequest]
     }
@@ -2557,41 +2557,41 @@ package appstream {
 
   @js.native
   trait UpdateStackRequest extends js.Object {
-    var FeedbackURL: js.UndefOr[FeedbackURL]
-    var Name: js.UndefOr[String]
-    var RedirectURL: js.UndefOr[RedirectURL]
-    var Description: js.UndefOr[Description]
-    var StorageConnectors: js.UndefOr[StorageConnectorList]
+    var Name: String
     var ApplicationSettings: js.UndefOr[ApplicationSettings]
-    var DeleteStorageConnectors: js.UndefOr[Boolean]
     var AttributesToDelete: js.UndefOr[StackAttributes]
-    var UserSettings: js.UndefOr[UserSettingList]
+    var DeleteStorageConnectors: js.UndefOr[Boolean]
+    var Description: js.UndefOr[Description]
     var DisplayName: js.UndefOr[DisplayName]
+    var FeedbackURL: js.UndefOr[FeedbackURL]
+    var RedirectURL: js.UndefOr[RedirectURL]
+    var StorageConnectors: js.UndefOr[StorageConnectorList]
+    var UserSettings: js.UndefOr[UserSettingList]
   }
 
   object UpdateStackRequest {
     def apply(
-      FeedbackURL: js.UndefOr[FeedbackURL] = js.undefined,
-      Name: js.UndefOr[String] = js.undefined,
-      RedirectURL: js.UndefOr[RedirectURL] = js.undefined,
-      Description: js.UndefOr[Description] = js.undefined,
-      StorageConnectors: js.UndefOr[StorageConnectorList] = js.undefined,
+      Name: String,
       ApplicationSettings: js.UndefOr[ApplicationSettings] = js.undefined,
-      DeleteStorageConnectors: js.UndefOr[Boolean] = js.undefined,
       AttributesToDelete: js.UndefOr[StackAttributes] = js.undefined,
-      UserSettings: js.UndefOr[UserSettingList] = js.undefined,
-      DisplayName: js.UndefOr[DisplayName] = js.undefined): UpdateStackRequest = {
+      DeleteStorageConnectors: js.UndefOr[Boolean] = js.undefined,
+      Description: js.UndefOr[Description] = js.undefined,
+      DisplayName: js.UndefOr[DisplayName] = js.undefined,
+      FeedbackURL: js.UndefOr[FeedbackURL] = js.undefined,
+      RedirectURL: js.UndefOr[RedirectURL] = js.undefined,
+      StorageConnectors: js.UndefOr[StorageConnectorList] = js.undefined,
+      UserSettings: js.UndefOr[UserSettingList] = js.undefined): UpdateStackRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "FeedbackURL" -> FeedbackURL.map { x => x.asInstanceOf[js.Any] },
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
-        "RedirectURL" -> RedirectURL.map { x => x.asInstanceOf[js.Any] },
-        "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
-        "StorageConnectors" -> StorageConnectors.map { x => x.asInstanceOf[js.Any] },
+        "Name" -> Name.asInstanceOf[js.Any],
         "ApplicationSettings" -> ApplicationSettings.map { x => x.asInstanceOf[js.Any] },
-        "DeleteStorageConnectors" -> DeleteStorageConnectors.map { x => x.asInstanceOf[js.Any] },
         "AttributesToDelete" -> AttributesToDelete.map { x => x.asInstanceOf[js.Any] },
-        "UserSettings" -> UserSettings.map { x => x.asInstanceOf[js.Any] },
-        "DisplayName" -> DisplayName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "DeleteStorageConnectors" -> DeleteStorageConnectors.map { x => x.asInstanceOf[js.Any] },
+        "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
+        "DisplayName" -> DisplayName.map { x => x.asInstanceOf[js.Any] },
+        "FeedbackURL" -> FeedbackURL.map { x => x.asInstanceOf[js.Any] },
+        "RedirectURL" -> RedirectURL.map { x => x.asInstanceOf[js.Any] },
+        "StorageConnectors" -> StorageConnectors.map { x => x.asInstanceOf[js.Any] },
+        "UserSettings" -> UserSettings.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateStackRequest]
     }
@@ -2617,35 +2617,35 @@ package appstream {
    */
   @js.native
   trait User extends js.Object {
-    var LastName: js.UndefOr[UserAttributeValue]
-    var UserName: js.UndefOr[Username]
+    var AuthenticationType: AuthenticationType
+    var Arn: js.UndefOr[Arn]
     var CreatedTime: js.UndefOr[Timestamp]
     var Enabled: js.UndefOr[Boolean]
     var FirstName: js.UndefOr[UserAttributeValue]
-    var Arn: js.UndefOr[Arn]
-    var AuthenticationType: js.UndefOr[AuthenticationType]
+    var LastName: js.UndefOr[UserAttributeValue]
     var Status: js.UndefOr[String]
+    var UserName: js.UndefOr[Username]
   }
 
   object User {
     def apply(
-      LastName: js.UndefOr[UserAttributeValue] = js.undefined,
-      UserName: js.UndefOr[Username] = js.undefined,
+      AuthenticationType: AuthenticationType,
+      Arn: js.UndefOr[Arn] = js.undefined,
       CreatedTime: js.UndefOr[Timestamp] = js.undefined,
       Enabled: js.UndefOr[Boolean] = js.undefined,
       FirstName: js.UndefOr[UserAttributeValue] = js.undefined,
-      Arn: js.UndefOr[Arn] = js.undefined,
-      AuthenticationType: js.UndefOr[AuthenticationType] = js.undefined,
-      Status: js.UndefOr[String] = js.undefined): User = {
+      LastName: js.UndefOr[UserAttributeValue] = js.undefined,
+      Status: js.UndefOr[String] = js.undefined,
+      UserName: js.UndefOr[Username] = js.undefined): User = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "LastName" -> LastName.map { x => x.asInstanceOf[js.Any] },
-        "UserName" -> UserName.map { x => x.asInstanceOf[js.Any] },
+        "AuthenticationType" -> AuthenticationType.asInstanceOf[js.Any],
+        "Arn" -> Arn.map { x => x.asInstanceOf[js.Any] },
         "CreatedTime" -> CreatedTime.map { x => x.asInstanceOf[js.Any] },
         "Enabled" -> Enabled.map { x => x.asInstanceOf[js.Any] },
         "FirstName" -> FirstName.map { x => x.asInstanceOf[js.Any] },
-        "Arn" -> Arn.map { x => x.asInstanceOf[js.Any] },
-        "AuthenticationType" -> AuthenticationType.map { x => x.asInstanceOf[js.Any] },
-        "Status" -> Status.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "LastName" -> LastName.map { x => x.asInstanceOf[js.Any] },
+        "Status" -> Status.map { x => x.asInstanceOf[js.Any] },
+        "UserName" -> UserName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[User]
     }
@@ -2656,17 +2656,17 @@ package appstream {
    */
   @js.native
   trait UserSetting extends js.Object {
-    var Action: js.UndefOr[Action]
-    var Permission: js.UndefOr[Permission]
+    var Action: Action
+    var Permission: Permission
   }
 
   object UserSetting {
     def apply(
-      Action: js.UndefOr[Action] = js.undefined,
-      Permission: js.UndefOr[Permission] = js.undefined): UserSetting = {
+      Action: Action,
+      Permission: Permission): UserSetting = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Action" -> Action.map { x => x.asInstanceOf[js.Any] },
-        "Permission" -> Permission.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Action" -> Action.asInstanceOf[js.Any],
+        "Permission" -> Permission.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UserSetting]
     }
@@ -2677,22 +2677,22 @@ package appstream {
    */
   @js.native
   trait UserStackAssociation extends js.Object {
-    var StackName: js.UndefOr[String]
-    var UserName: js.UndefOr[Username]
-    var AuthenticationType: js.UndefOr[AuthenticationType]
+    var AuthenticationType: AuthenticationType
+    var StackName: String
+    var UserName: Username
     var SendEmailNotification: js.UndefOr[Boolean]
   }
 
   object UserStackAssociation {
     def apply(
-      StackName: js.UndefOr[String] = js.undefined,
-      UserName: js.UndefOr[Username] = js.undefined,
-      AuthenticationType: js.UndefOr[AuthenticationType] = js.undefined,
+      AuthenticationType: AuthenticationType,
+      StackName: String,
+      UserName: Username,
       SendEmailNotification: js.UndefOr[Boolean] = js.undefined): UserStackAssociation = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "StackName" -> StackName.map { x => x.asInstanceOf[js.Any] },
-        "UserName" -> UserName.map { x => x.asInstanceOf[js.Any] },
-        "AuthenticationType" -> AuthenticationType.map { x => x.asInstanceOf[js.Any] },
+        "AuthenticationType" -> AuthenticationType.asInstanceOf[js.Any],
+        "StackName" -> StackName.asInstanceOf[js.Any],
+        "UserName" -> UserName.asInstanceOf[js.Any],
         "SendEmailNotification" -> SendEmailNotification.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UserStackAssociation]
@@ -2700,24 +2700,24 @@ package appstream {
   }
 
   /**
-   * <p>Describes the error that is returned when a user can’t be associated with or disassociated from a stack. </p>
+   * <p>Describes the error that is returned when a user can�ft be associated with or disassociated from a stack. </p>
    */
   @js.native
   trait UserStackAssociationError extends js.Object {
-    var UserStackAssociation: js.UndefOr[UserStackAssociation]
     var ErrorCode: js.UndefOr[UserStackAssociationErrorCode]
     var ErrorMessage: js.UndefOr[String]
+    var UserStackAssociation: js.UndefOr[UserStackAssociation]
   }
 
   object UserStackAssociationError {
     def apply(
-      UserStackAssociation: js.UndefOr[UserStackAssociation] = js.undefined,
       ErrorCode: js.UndefOr[UserStackAssociationErrorCode] = js.undefined,
-      ErrorMessage: js.UndefOr[String] = js.undefined): UserStackAssociationError = {
+      ErrorMessage: js.UndefOr[String] = js.undefined,
+      UserStackAssociation: js.UndefOr[UserStackAssociation] = js.undefined): UserStackAssociationError = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "UserStackAssociation" -> UserStackAssociation.map { x => x.asInstanceOf[js.Any] },
         "ErrorCode" -> ErrorCode.map { x => x.asInstanceOf[js.Any] },
-        "ErrorMessage" -> ErrorMessage.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ErrorMessage" -> ErrorMessage.map { x => x.asInstanceOf[js.Any] },
+        "UserStackAssociation" -> UserStackAssociation.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UserStackAssociationError]
     }
@@ -2744,17 +2744,17 @@ package appstream {
    */
   @js.native
   trait VpcConfig extends js.Object {
-    var SubnetIds: js.UndefOr[SubnetIdList]
     var SecurityGroupIds: js.UndefOr[SecurityGroupIdList]
+    var SubnetIds: js.UndefOr[SubnetIdList]
   }
 
   object VpcConfig {
     def apply(
-      SubnetIds: js.UndefOr[SubnetIdList] = js.undefined,
-      SecurityGroupIds: js.UndefOr[SecurityGroupIdList] = js.undefined): VpcConfig = {
+      SecurityGroupIds: js.UndefOr[SecurityGroupIdList] = js.undefined,
+      SubnetIds: js.UndefOr[SubnetIdList] = js.undefined): VpcConfig = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "SubnetIds" -> SubnetIds.map { x => x.asInstanceOf[js.Any] },
-        "SecurityGroupIds" -> SecurityGroupIds.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "SecurityGroupIds" -> SecurityGroupIds.map { x => x.asInstanceOf[js.Any] },
+        "SubnetIds" -> SubnetIds.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[VpcConfig]
     }

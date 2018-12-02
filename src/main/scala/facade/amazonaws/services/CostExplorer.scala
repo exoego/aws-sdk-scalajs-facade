@@ -122,19 +122,19 @@ package costexplorer {
    */
   @js.native
   trait CoverageByTime extends js.Object {
-    var TimePeriod: js.UndefOr[DateInterval]
     var Groups: js.UndefOr[ReservationCoverageGroups]
+    var TimePeriod: js.UndefOr[DateInterval]
     var Total: js.UndefOr[Coverage]
   }
 
   object CoverageByTime {
     def apply(
-      TimePeriod: js.UndefOr[DateInterval] = js.undefined,
       Groups: js.UndefOr[ReservationCoverageGroups] = js.undefined,
+      TimePeriod: js.UndefOr[DateInterval] = js.undefined,
       Total: js.UndefOr[Coverage] = js.undefined): CoverageByTime = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "TimePeriod" -> TimePeriod.map { x => x.asInstanceOf[js.Any] },
         "Groups" -> Groups.map { x => x.asInstanceOf[js.Any] },
+        "TimePeriod" -> TimePeriod.map { x => x.asInstanceOf[js.Any] },
         "Total" -> Total.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CoverageByTime]
@@ -146,23 +146,23 @@ package costexplorer {
    */
   @js.native
   trait CoverageHours extends js.Object {
+    var CoverageHoursPercentage: js.UndefOr[CoverageHoursPercentage]
     var OnDemandHours: js.UndefOr[OnDemandHours]
     var ReservedHours: js.UndefOr[ReservedHours]
     var TotalRunningHours: js.UndefOr[TotalRunningHours]
-    var CoverageHoursPercentage: js.UndefOr[CoverageHoursPercentage]
   }
 
   object CoverageHours {
     def apply(
+      CoverageHoursPercentage: js.UndefOr[CoverageHoursPercentage] = js.undefined,
       OnDemandHours: js.UndefOr[OnDemandHours] = js.undefined,
       ReservedHours: js.UndefOr[ReservedHours] = js.undefined,
-      TotalRunningHours: js.UndefOr[TotalRunningHours] = js.undefined,
-      CoverageHoursPercentage: js.UndefOr[CoverageHoursPercentage] = js.undefined): CoverageHours = {
+      TotalRunningHours: js.UndefOr[TotalRunningHours] = js.undefined): CoverageHours = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "CoverageHoursPercentage" -> CoverageHoursPercentage.map { x => x.asInstanceOf[js.Any] },
         "OnDemandHours" -> OnDemandHours.map { x => x.asInstanceOf[js.Any] },
         "ReservedHours" -> ReservedHours.map { x => x.asInstanceOf[js.Any] },
-        "TotalRunningHours" -> TotalRunningHours.map { x => x.asInstanceOf[js.Any] },
-        "CoverageHoursPercentage" -> CoverageHoursPercentage.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "TotalRunningHours" -> TotalRunningHours.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CoverageHours]
     }
@@ -173,17 +173,17 @@ package costexplorer {
    */
   @js.native
   trait DateInterval extends js.Object {
-    var Start: js.UndefOr[YearMonthDay]
-    var End: js.UndefOr[YearMonthDay]
+    var End: YearMonthDay
+    var Start: YearMonthDay
   }
 
   object DateInterval {
     def apply(
-      Start: js.UndefOr[YearMonthDay] = js.undefined,
-      End: js.UndefOr[YearMonthDay] = js.undefined): DateInterval = {
+      End: YearMonthDay,
+      Start: YearMonthDay): DateInterval = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Start" -> Start.map { x => x.asInstanceOf[js.Any] },
-        "End" -> End.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "End" -> End.asInstanceOf[js.Any],
+        "Start" -> Start.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DateInterval]
     }
@@ -242,17 +242,17 @@ package costexplorer {
    */
   @js.native
   trait DimensionValuesWithAttributes extends js.Object {
-    var Value: js.UndefOr[Value]
     var Attributes: js.UndefOr[Attributes]
+    var Value: js.UndefOr[Value]
   }
 
   object DimensionValuesWithAttributes {
     def apply(
-      Value: js.UndefOr[Value] = js.undefined,
-      Attributes: js.UndefOr[Attributes] = js.undefined): DimensionValuesWithAttributes = {
+      Attributes: js.UndefOr[Attributes] = js.undefined,
+      Value: js.UndefOr[Value] = js.undefined): DimensionValuesWithAttributes = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Value" -> Value.map { x => x.asInstanceOf[js.Any] },
-        "Attributes" -> Attributes.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Attributes" -> Attributes.map { x => x.asInstanceOf[js.Any] },
+        "Value" -> Value.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DimensionValuesWithAttributes]
     }
@@ -263,35 +263,35 @@ package costexplorer {
    */
   @js.native
   trait EC2InstanceDetails extends js.Object {
+    var AvailabilityZone: js.UndefOr[GenericString]
     var CurrentGeneration: js.UndefOr[GenericBoolean]
+    var Family: js.UndefOr[GenericString]
+    var InstanceType: js.UndefOr[GenericString]
     var Platform: js.UndefOr[GenericString]
     var Region: js.UndefOr[GenericString]
-    var Tenancy: js.UndefOr[GenericString]
     var SizeFlexEligible: js.UndefOr[GenericBoolean]
-    var Family: js.UndefOr[GenericString]
-    var AvailabilityZone: js.UndefOr[GenericString]
-    var InstanceType: js.UndefOr[GenericString]
+    var Tenancy: js.UndefOr[GenericString]
   }
 
   object EC2InstanceDetails {
     def apply(
+      AvailabilityZone: js.UndefOr[GenericString] = js.undefined,
       CurrentGeneration: js.UndefOr[GenericBoolean] = js.undefined,
+      Family: js.UndefOr[GenericString] = js.undefined,
+      InstanceType: js.UndefOr[GenericString] = js.undefined,
       Platform: js.UndefOr[GenericString] = js.undefined,
       Region: js.UndefOr[GenericString] = js.undefined,
-      Tenancy: js.UndefOr[GenericString] = js.undefined,
       SizeFlexEligible: js.UndefOr[GenericBoolean] = js.undefined,
-      Family: js.UndefOr[GenericString] = js.undefined,
-      AvailabilityZone: js.UndefOr[GenericString] = js.undefined,
-      InstanceType: js.UndefOr[GenericString] = js.undefined): EC2InstanceDetails = {
+      Tenancy: js.UndefOr[GenericString] = js.undefined): EC2InstanceDetails = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "AvailabilityZone" -> AvailabilityZone.map { x => x.asInstanceOf[js.Any] },
         "CurrentGeneration" -> CurrentGeneration.map { x => x.asInstanceOf[js.Any] },
+        "Family" -> Family.map { x => x.asInstanceOf[js.Any] },
+        "InstanceType" -> InstanceType.map { x => x.asInstanceOf[js.Any] },
         "Platform" -> Platform.map { x => x.asInstanceOf[js.Any] },
         "Region" -> Region.map { x => x.asInstanceOf[js.Any] },
-        "Tenancy" -> Tenancy.map { x => x.asInstanceOf[js.Any] },
         "SizeFlexEligible" -> SizeFlexEligible.map { x => x.asInstanceOf[js.Any] },
-        "Family" -> Family.map { x => x.asInstanceOf[js.Any] },
-        "AvailabilityZone" -> AvailabilityZone.map { x => x.asInstanceOf[js.Any] },
-        "InstanceType" -> InstanceType.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Tenancy" -> Tenancy.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EC2InstanceDetails]
     }
@@ -321,25 +321,25 @@ package costexplorer {
   @js.native
   trait ESInstanceDetails extends js.Object {
     var CurrentGeneration: js.UndefOr[GenericBoolean]
+    var InstanceClass: js.UndefOr[GenericString]
     var InstanceSize: js.UndefOr[GenericString]
     var Region: js.UndefOr[GenericString]
     var SizeFlexEligible: js.UndefOr[GenericBoolean]
-    var InstanceClass: js.UndefOr[GenericString]
   }
 
   object ESInstanceDetails {
     def apply(
       CurrentGeneration: js.UndefOr[GenericBoolean] = js.undefined,
+      InstanceClass: js.UndefOr[GenericString] = js.undefined,
       InstanceSize: js.UndefOr[GenericString] = js.undefined,
       Region: js.UndefOr[GenericString] = js.undefined,
-      SizeFlexEligible: js.UndefOr[GenericBoolean] = js.undefined,
-      InstanceClass: js.UndefOr[GenericString] = js.undefined): ESInstanceDetails = {
+      SizeFlexEligible: js.UndefOr[GenericBoolean] = js.undefined): ESInstanceDetails = {
       val _fields = IndexedSeq[(String, js.Any)](
         "CurrentGeneration" -> CurrentGeneration.map { x => x.asInstanceOf[js.Any] },
+        "InstanceClass" -> InstanceClass.map { x => x.asInstanceOf[js.Any] },
         "InstanceSize" -> InstanceSize.map { x => x.asInstanceOf[js.Any] },
         "Region" -> Region.map { x => x.asInstanceOf[js.Any] },
-        "SizeFlexEligible" -> SizeFlexEligible.map { x => x.asInstanceOf[js.Any] },
-        "InstanceClass" -> InstanceClass.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "SizeFlexEligible" -> SizeFlexEligible.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ESInstanceDetails]
     }
@@ -351,28 +351,28 @@ package costexplorer {
   @js.native
   trait ElastiCacheInstanceDetails extends js.Object {
     var CurrentGeneration: js.UndefOr[GenericBoolean]
-    var Region: js.UndefOr[GenericString]
-    var NodeType: js.UndefOr[GenericString]
-    var SizeFlexEligible: js.UndefOr[GenericBoolean]
     var Family: js.UndefOr[GenericString]
+    var NodeType: js.UndefOr[GenericString]
     var ProductDescription: js.UndefOr[GenericString]
+    var Region: js.UndefOr[GenericString]
+    var SizeFlexEligible: js.UndefOr[GenericBoolean]
   }
 
   object ElastiCacheInstanceDetails {
     def apply(
       CurrentGeneration: js.UndefOr[GenericBoolean] = js.undefined,
-      Region: js.UndefOr[GenericString] = js.undefined,
-      NodeType: js.UndefOr[GenericString] = js.undefined,
-      SizeFlexEligible: js.UndefOr[GenericBoolean] = js.undefined,
       Family: js.UndefOr[GenericString] = js.undefined,
-      ProductDescription: js.UndefOr[GenericString] = js.undefined): ElastiCacheInstanceDetails = {
+      NodeType: js.UndefOr[GenericString] = js.undefined,
+      ProductDescription: js.UndefOr[GenericString] = js.undefined,
+      Region: js.UndefOr[GenericString] = js.undefined,
+      SizeFlexEligible: js.UndefOr[GenericBoolean] = js.undefined): ElastiCacheInstanceDetails = {
       val _fields = IndexedSeq[(String, js.Any)](
         "CurrentGeneration" -> CurrentGeneration.map { x => x.asInstanceOf[js.Any] },
-        "Region" -> Region.map { x => x.asInstanceOf[js.Any] },
-        "NodeType" -> NodeType.map { x => x.asInstanceOf[js.Any] },
-        "SizeFlexEligible" -> SizeFlexEligible.map { x => x.asInstanceOf[js.Any] },
         "Family" -> Family.map { x => x.asInstanceOf[js.Any] },
-        "ProductDescription" -> ProductDescription.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "NodeType" -> NodeType.map { x => x.asInstanceOf[js.Any] },
+        "ProductDescription" -> ProductDescription.map { x => x.asInstanceOf[js.Any] },
+        "Region" -> Region.map { x => x.asInstanceOf[js.Any] },
+        "SizeFlexEligible" -> SizeFlexEligible.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ElastiCacheInstanceDetails]
     }
@@ -383,26 +383,26 @@ package costexplorer {
    */
   @js.native
   trait Expression extends js.Object {
-    var Dimensions: js.UndefOr[DimensionValues]
     var And: js.UndefOr[Expressions]
-    var Tags: js.UndefOr[TagValues]
+    var Dimensions: js.UndefOr[DimensionValues]
     var Not: js.UndefOr[Expression]
     var Or: js.UndefOr[Expressions]
+    var Tags: js.UndefOr[TagValues]
   }
 
   object Expression {
     def apply(
-      Dimensions: js.UndefOr[DimensionValues] = js.undefined,
       And: js.UndefOr[Expressions] = js.undefined,
-      Tags: js.UndefOr[TagValues] = js.undefined,
+      Dimensions: js.UndefOr[DimensionValues] = js.undefined,
       Not: js.UndefOr[Expression] = js.undefined,
-      Or: js.UndefOr[Expressions] = js.undefined): Expression = {
+      Or: js.UndefOr[Expressions] = js.undefined,
+      Tags: js.UndefOr[TagValues] = js.undefined): Expression = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Dimensions" -> Dimensions.map { x => x.asInstanceOf[js.Any] },
         "And" -> And.map { x => x.asInstanceOf[js.Any] },
-        "Tags" -> Tags.map { x => x.asInstanceOf[js.Any] },
+        "Dimensions" -> Dimensions.map { x => x.asInstanceOf[js.Any] },
         "Not" -> Not.map { x => x.asInstanceOf[js.Any] },
-        "Or" -> Or.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Or" -> Or.map { x => x.asInstanceOf[js.Any] },
+        "Tags" -> Tags.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Expression]
     }
@@ -413,23 +413,23 @@ package costexplorer {
    */
   @js.native
   trait ForecastResult extends js.Object {
-    var TimePeriod: js.UndefOr[DateInterval]
     var MeanValue: js.UndefOr[GenericString]
     var PredictionIntervalLowerBound: js.UndefOr[GenericString]
     var PredictionIntervalUpperBound: js.UndefOr[GenericString]
+    var TimePeriod: js.UndefOr[DateInterval]
   }
 
   object ForecastResult {
     def apply(
-      TimePeriod: js.UndefOr[DateInterval] = js.undefined,
       MeanValue: js.UndefOr[GenericString] = js.undefined,
       PredictionIntervalLowerBound: js.UndefOr[GenericString] = js.undefined,
-      PredictionIntervalUpperBound: js.UndefOr[GenericString] = js.undefined): ForecastResult = {
+      PredictionIntervalUpperBound: js.UndefOr[GenericString] = js.undefined,
+      TimePeriod: js.UndefOr[DateInterval] = js.undefined): ForecastResult = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "TimePeriod" -> TimePeriod.map { x => x.asInstanceOf[js.Any] },
         "MeanValue" -> MeanValue.map { x => x.asInstanceOf[js.Any] },
         "PredictionIntervalLowerBound" -> PredictionIntervalLowerBound.map { x => x.asInstanceOf[js.Any] },
-        "PredictionIntervalUpperBound" -> PredictionIntervalUpperBound.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "PredictionIntervalUpperBound" -> PredictionIntervalUpperBound.map { x => x.asInstanceOf[js.Any] },
+        "TimePeriod" -> TimePeriod.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ForecastResult]
     }
@@ -437,29 +437,29 @@ package costexplorer {
 
   @js.native
   trait GetCostAndUsageRequest extends js.Object {
-    var TimePeriod: js.UndefOr[DateInterval]
-    var GroupBy: js.UndefOr[GroupDefinitions]
+    var Filter: js.UndefOr[Expression]
     var Granularity: js.UndefOr[Granularity]
+    var GroupBy: js.UndefOr[GroupDefinitions]
     var Metrics: js.UndefOr[MetricNames]
     var NextPageToken: js.UndefOr[NextPageToken]
-    var Filter: js.UndefOr[Expression]
+    var TimePeriod: js.UndefOr[DateInterval]
   }
 
   object GetCostAndUsageRequest {
     def apply(
-      TimePeriod: js.UndefOr[DateInterval] = js.undefined,
-      GroupBy: js.UndefOr[GroupDefinitions] = js.undefined,
+      Filter: js.UndefOr[Expression] = js.undefined,
       Granularity: js.UndefOr[Granularity] = js.undefined,
+      GroupBy: js.UndefOr[GroupDefinitions] = js.undefined,
       Metrics: js.UndefOr[MetricNames] = js.undefined,
       NextPageToken: js.UndefOr[NextPageToken] = js.undefined,
-      Filter: js.UndefOr[Expression] = js.undefined): GetCostAndUsageRequest = {
+      TimePeriod: js.UndefOr[DateInterval] = js.undefined): GetCostAndUsageRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "TimePeriod" -> TimePeriod.map { x => x.asInstanceOf[js.Any] },
-        "GroupBy" -> GroupBy.map { x => x.asInstanceOf[js.Any] },
+        "Filter" -> Filter.map { x => x.asInstanceOf[js.Any] },
         "Granularity" -> Granularity.map { x => x.asInstanceOf[js.Any] },
+        "GroupBy" -> GroupBy.map { x => x.asInstanceOf[js.Any] },
         "Metrics" -> Metrics.map { x => x.asInstanceOf[js.Any] },
         "NextPageToken" -> NextPageToken.map { x => x.asInstanceOf[js.Any] },
-        "Filter" -> Filter.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "TimePeriod" -> TimePeriod.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetCostAndUsageRequest]
     }
@@ -467,19 +467,19 @@ package costexplorer {
 
   @js.native
   trait GetCostAndUsageResponse extends js.Object {
-    var NextPageToken: js.UndefOr[NextPageToken]
     var GroupDefinitions: js.UndefOr[GroupDefinitions]
+    var NextPageToken: js.UndefOr[NextPageToken]
     var ResultsByTime: js.UndefOr[ResultsByTime]
   }
 
   object GetCostAndUsageResponse {
     def apply(
-      NextPageToken: js.UndefOr[NextPageToken] = js.undefined,
       GroupDefinitions: js.UndefOr[GroupDefinitions] = js.undefined,
+      NextPageToken: js.UndefOr[NextPageToken] = js.undefined,
       ResultsByTime: js.UndefOr[ResultsByTime] = js.undefined): GetCostAndUsageResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "NextPageToken" -> NextPageToken.map { x => x.asInstanceOf[js.Any] },
         "GroupDefinitions" -> GroupDefinitions.map { x => x.asInstanceOf[js.Any] },
+        "NextPageToken" -> NextPageToken.map { x => x.asInstanceOf[js.Any] },
         "ResultsByTime" -> ResultsByTime.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetCostAndUsageResponse]
@@ -488,26 +488,26 @@ package costexplorer {
 
   @js.native
   trait GetCostForecastRequest extends js.Object {
-    var TimePeriod: js.UndefOr[DateInterval]
-    var Metric: js.UndefOr[Metric]
-    var Granularity: js.UndefOr[Granularity]
-    var PredictionIntervalLevel: js.UndefOr[PredictionIntervalLevel]
+    var Granularity: Granularity
+    var Metric: Metric
+    var TimePeriod: DateInterval
     var Filter: js.UndefOr[Expression]
+    var PredictionIntervalLevel: js.UndefOr[PredictionIntervalLevel]
   }
 
   object GetCostForecastRequest {
     def apply(
-      TimePeriod: js.UndefOr[DateInterval] = js.undefined,
-      Metric: js.UndefOr[Metric] = js.undefined,
-      Granularity: js.UndefOr[Granularity] = js.undefined,
-      PredictionIntervalLevel: js.UndefOr[PredictionIntervalLevel] = js.undefined,
-      Filter: js.UndefOr[Expression] = js.undefined): GetCostForecastRequest = {
+      Granularity: Granularity,
+      Metric: Metric,
+      TimePeriod: DateInterval,
+      Filter: js.UndefOr[Expression] = js.undefined,
+      PredictionIntervalLevel: js.UndefOr[PredictionIntervalLevel] = js.undefined): GetCostForecastRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "TimePeriod" -> TimePeriod.map { x => x.asInstanceOf[js.Any] },
-        "Metric" -> Metric.map { x => x.asInstanceOf[js.Any] },
-        "Granularity" -> Granularity.map { x => x.asInstanceOf[js.Any] },
-        "PredictionIntervalLevel" -> PredictionIntervalLevel.map { x => x.asInstanceOf[js.Any] },
-        "Filter" -> Filter.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Granularity" -> Granularity.asInstanceOf[js.Any],
+        "Metric" -> Metric.asInstanceOf[js.Any],
+        "TimePeriod" -> TimePeriod.asInstanceOf[js.Any],
+        "Filter" -> Filter.map { x => x.asInstanceOf[js.Any] },
+        "PredictionIntervalLevel" -> PredictionIntervalLevel.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetCostForecastRequest]
     }
@@ -515,17 +515,17 @@ package costexplorer {
 
   @js.native
   trait GetCostForecastResponse extends js.Object {
-    var Total: js.UndefOr[MetricValue]
     var ForecastResultsByTime: js.UndefOr[ForecastResultsByTime]
+    var Total: js.UndefOr[MetricValue]
   }
 
   object GetCostForecastResponse {
     def apply(
-      Total: js.UndefOr[MetricValue] = js.undefined,
-      ForecastResultsByTime: js.UndefOr[ForecastResultsByTime] = js.undefined): GetCostForecastResponse = {
+      ForecastResultsByTime: js.UndefOr[ForecastResultsByTime] = js.undefined,
+      Total: js.UndefOr[MetricValue] = js.undefined): GetCostForecastResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Total" -> Total.map { x => x.asInstanceOf[js.Any] },
-        "ForecastResultsByTime" -> ForecastResultsByTime.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ForecastResultsByTime" -> ForecastResultsByTime.map { x => x.asInstanceOf[js.Any] },
+        "Total" -> Total.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetCostForecastResponse]
     }
@@ -533,26 +533,26 @@ package costexplorer {
 
   @js.native
   trait GetDimensionValuesRequest extends js.Object {
-    var TimePeriod: js.UndefOr[DateInterval]
-    var SearchString: js.UndefOr[SearchString]
+    var Dimension: Dimension
+    var TimePeriod: DateInterval
     var Context: js.UndefOr[Context]
-    var Dimension: js.UndefOr[Dimension]
     var NextPageToken: js.UndefOr[NextPageToken]
+    var SearchString: js.UndefOr[SearchString]
   }
 
   object GetDimensionValuesRequest {
     def apply(
-      TimePeriod: js.UndefOr[DateInterval] = js.undefined,
-      SearchString: js.UndefOr[SearchString] = js.undefined,
+      Dimension: Dimension,
+      TimePeriod: DateInterval,
       Context: js.UndefOr[Context] = js.undefined,
-      Dimension: js.UndefOr[Dimension] = js.undefined,
-      NextPageToken: js.UndefOr[NextPageToken] = js.undefined): GetDimensionValuesRequest = {
+      NextPageToken: js.UndefOr[NextPageToken] = js.undefined,
+      SearchString: js.UndefOr[SearchString] = js.undefined): GetDimensionValuesRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "TimePeriod" -> TimePeriod.map { x => x.asInstanceOf[js.Any] },
-        "SearchString" -> SearchString.map { x => x.asInstanceOf[js.Any] },
+        "Dimension" -> Dimension.asInstanceOf[js.Any],
+        "TimePeriod" -> TimePeriod.asInstanceOf[js.Any],
         "Context" -> Context.map { x => x.asInstanceOf[js.Any] },
-        "Dimension" -> Dimension.map { x => x.asInstanceOf[js.Any] },
-        "NextPageToken" -> NextPageToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "NextPageToken" -> NextPageToken.map { x => x.asInstanceOf[js.Any] },
+        "SearchString" -> SearchString.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetDimensionValuesRequest]
     }
@@ -560,22 +560,22 @@ package costexplorer {
 
   @js.native
   trait GetDimensionValuesResponse extends js.Object {
-    var DimensionValues: js.UndefOr[DimensionValuesWithAttributesList]
-    var ReturnSize: js.UndefOr[PageSize]
-    var TotalSize: js.UndefOr[PageSize]
+    var DimensionValues: DimensionValuesWithAttributesList
+    var ReturnSize: PageSize
+    var TotalSize: PageSize
     var NextPageToken: js.UndefOr[NextPageToken]
   }
 
   object GetDimensionValuesResponse {
     def apply(
-      DimensionValues: js.UndefOr[DimensionValuesWithAttributesList] = js.undefined,
-      ReturnSize: js.UndefOr[PageSize] = js.undefined,
-      TotalSize: js.UndefOr[PageSize] = js.undefined,
+      DimensionValues: DimensionValuesWithAttributesList,
+      ReturnSize: PageSize,
+      TotalSize: PageSize,
       NextPageToken: js.UndefOr[NextPageToken] = js.undefined): GetDimensionValuesResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "DimensionValues" -> DimensionValues.map { x => x.asInstanceOf[js.Any] },
-        "ReturnSize" -> ReturnSize.map { x => x.asInstanceOf[js.Any] },
-        "TotalSize" -> TotalSize.map { x => x.asInstanceOf[js.Any] },
+        "DimensionValues" -> DimensionValues.asInstanceOf[js.Any],
+        "ReturnSize" -> ReturnSize.asInstanceOf[js.Any],
+        "TotalSize" -> TotalSize.asInstanceOf[js.Any],
         "NextPageToken" -> NextPageToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetDimensionValuesResponse]
@@ -587,26 +587,26 @@ package costexplorer {
    */
   @js.native
   trait GetReservationCoverageRequest extends js.Object {
-    var TimePeriod: js.UndefOr[DateInterval]
-    var GroupBy: js.UndefOr[GroupDefinitions]
-    var Granularity: js.UndefOr[Granularity]
-    var NextPageToken: js.UndefOr[NextPageToken]
+    var TimePeriod: DateInterval
     var Filter: js.UndefOr[Expression]
+    var Granularity: js.UndefOr[Granularity]
+    var GroupBy: js.UndefOr[GroupDefinitions]
+    var NextPageToken: js.UndefOr[NextPageToken]
   }
 
   object GetReservationCoverageRequest {
     def apply(
-      TimePeriod: js.UndefOr[DateInterval] = js.undefined,
-      GroupBy: js.UndefOr[GroupDefinitions] = js.undefined,
+      TimePeriod: DateInterval,
+      Filter: js.UndefOr[Expression] = js.undefined,
       Granularity: js.UndefOr[Granularity] = js.undefined,
-      NextPageToken: js.UndefOr[NextPageToken] = js.undefined,
-      Filter: js.UndefOr[Expression] = js.undefined): GetReservationCoverageRequest = {
+      GroupBy: js.UndefOr[GroupDefinitions] = js.undefined,
+      NextPageToken: js.UndefOr[NextPageToken] = js.undefined): GetReservationCoverageRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "TimePeriod" -> TimePeriod.map { x => x.asInstanceOf[js.Any] },
-        "GroupBy" -> GroupBy.map { x => x.asInstanceOf[js.Any] },
+        "TimePeriod" -> TimePeriod.asInstanceOf[js.Any],
+        "Filter" -> Filter.map { x => x.asInstanceOf[js.Any] },
         "Granularity" -> Granularity.map { x => x.asInstanceOf[js.Any] },
-        "NextPageToken" -> NextPageToken.map { x => x.asInstanceOf[js.Any] },
-        "Filter" -> Filter.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "GroupBy" -> GroupBy.map { x => x.asInstanceOf[js.Any] },
+        "NextPageToken" -> NextPageToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetReservationCoverageRequest]
     }
@@ -614,20 +614,20 @@ package costexplorer {
 
   @js.native
   trait GetReservationCoverageResponse extends js.Object {
-    var CoveragesByTime: js.UndefOr[CoveragesByTime]
-    var Total: js.UndefOr[Coverage]
+    var CoveragesByTime: CoveragesByTime
     var NextPageToken: js.UndefOr[NextPageToken]
+    var Total: js.UndefOr[Coverage]
   }
 
   object GetReservationCoverageResponse {
     def apply(
-      CoveragesByTime: js.UndefOr[CoveragesByTime] = js.undefined,
-      Total: js.UndefOr[Coverage] = js.undefined,
-      NextPageToken: js.UndefOr[NextPageToken] = js.undefined): GetReservationCoverageResponse = {
+      CoveragesByTime: CoveragesByTime,
+      NextPageToken: js.UndefOr[NextPageToken] = js.undefined,
+      Total: js.UndefOr[Coverage] = js.undefined): GetReservationCoverageResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "CoveragesByTime" -> CoveragesByTime.map { x => x.asInstanceOf[js.Any] },
-        "Total" -> Total.map { x => x.asInstanceOf[js.Any] },
-        "NextPageToken" -> NextPageToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "CoveragesByTime" -> CoveragesByTime.asInstanceOf[js.Any],
+        "NextPageToken" -> NextPageToken.map { x => x.asInstanceOf[js.Any] },
+        "Total" -> Total.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetReservationCoverageResponse]
     }
@@ -635,38 +635,38 @@ package costexplorer {
 
   @js.native
   trait GetReservationPurchaseRecommendationRequest extends js.Object {
+    var Service: GenericString
+    var AccountId: js.UndefOr[GenericString]
+    var AccountScope: js.UndefOr[AccountScope]
+    var LookbackPeriodInDays: js.UndefOr[LookbackPeriodInDays]
+    var NextPageToken: js.UndefOr[NextPageToken]
+    var PageSize: js.UndefOr[NonNegativeInteger]
     var PaymentOption: js.UndefOr[PaymentOption]
     var ServiceSpecification: js.UndefOr[ServiceSpecification]
-    var PageSize: js.UndefOr[NonNegativeInteger]
     var TermInYears: js.UndefOr[TermInYears]
-    var Service: js.UndefOr[GenericString]
-    var LookbackPeriodInDays: js.UndefOr[LookbackPeriodInDays]
-    var AccountScope: js.UndefOr[AccountScope]
-    var AccountId: js.UndefOr[GenericString]
-    var NextPageToken: js.UndefOr[NextPageToken]
   }
 
   object GetReservationPurchaseRecommendationRequest {
     def apply(
+      Service: GenericString,
+      AccountId: js.UndefOr[GenericString] = js.undefined,
+      AccountScope: js.UndefOr[AccountScope] = js.undefined,
+      LookbackPeriodInDays: js.UndefOr[LookbackPeriodInDays] = js.undefined,
+      NextPageToken: js.UndefOr[NextPageToken] = js.undefined,
+      PageSize: js.UndefOr[NonNegativeInteger] = js.undefined,
       PaymentOption: js.UndefOr[PaymentOption] = js.undefined,
       ServiceSpecification: js.UndefOr[ServiceSpecification] = js.undefined,
-      PageSize: js.UndefOr[NonNegativeInteger] = js.undefined,
-      TermInYears: js.UndefOr[TermInYears] = js.undefined,
-      Service: js.UndefOr[GenericString] = js.undefined,
-      LookbackPeriodInDays: js.UndefOr[LookbackPeriodInDays] = js.undefined,
-      AccountScope: js.UndefOr[AccountScope] = js.undefined,
-      AccountId: js.UndefOr[GenericString] = js.undefined,
-      NextPageToken: js.UndefOr[NextPageToken] = js.undefined): GetReservationPurchaseRecommendationRequest = {
+      TermInYears: js.UndefOr[TermInYears] = js.undefined): GetReservationPurchaseRecommendationRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "Service" -> Service.asInstanceOf[js.Any],
+        "AccountId" -> AccountId.map { x => x.asInstanceOf[js.Any] },
+        "AccountScope" -> AccountScope.map { x => x.asInstanceOf[js.Any] },
+        "LookbackPeriodInDays" -> LookbackPeriodInDays.map { x => x.asInstanceOf[js.Any] },
+        "NextPageToken" -> NextPageToken.map { x => x.asInstanceOf[js.Any] },
+        "PageSize" -> PageSize.map { x => x.asInstanceOf[js.Any] },
         "PaymentOption" -> PaymentOption.map { x => x.asInstanceOf[js.Any] },
         "ServiceSpecification" -> ServiceSpecification.map { x => x.asInstanceOf[js.Any] },
-        "PageSize" -> PageSize.map { x => x.asInstanceOf[js.Any] },
-        "TermInYears" -> TermInYears.map { x => x.asInstanceOf[js.Any] },
-        "Service" -> Service.map { x => x.asInstanceOf[js.Any] },
-        "LookbackPeriodInDays" -> LookbackPeriodInDays.map { x => x.asInstanceOf[js.Any] },
-        "AccountScope" -> AccountScope.map { x => x.asInstanceOf[js.Any] },
-        "AccountId" -> AccountId.map { x => x.asInstanceOf[js.Any] },
-        "NextPageToken" -> NextPageToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "TermInYears" -> TermInYears.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetReservationPurchaseRecommendationRequest]
     }
@@ -675,19 +675,19 @@ package costexplorer {
   @js.native
   trait GetReservationPurchaseRecommendationResponse extends js.Object {
     var Metadata: js.UndefOr[ReservationPurchaseRecommendationMetadata]
-    var Recommendations: js.UndefOr[ReservationPurchaseRecommendations]
     var NextPageToken: js.UndefOr[NextPageToken]
+    var Recommendations: js.UndefOr[ReservationPurchaseRecommendations]
   }
 
   object GetReservationPurchaseRecommendationResponse {
     def apply(
       Metadata: js.UndefOr[ReservationPurchaseRecommendationMetadata] = js.undefined,
-      Recommendations: js.UndefOr[ReservationPurchaseRecommendations] = js.undefined,
-      NextPageToken: js.UndefOr[NextPageToken] = js.undefined): GetReservationPurchaseRecommendationResponse = {
+      NextPageToken: js.UndefOr[NextPageToken] = js.undefined,
+      Recommendations: js.UndefOr[ReservationPurchaseRecommendations] = js.undefined): GetReservationPurchaseRecommendationResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Metadata" -> Metadata.map { x => x.asInstanceOf[js.Any] },
-        "Recommendations" -> Recommendations.map { x => x.asInstanceOf[js.Any] },
-        "NextPageToken" -> NextPageToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "NextPageToken" -> NextPageToken.map { x => x.asInstanceOf[js.Any] },
+        "Recommendations" -> Recommendations.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetReservationPurchaseRecommendationResponse]
     }
@@ -695,26 +695,26 @@ package costexplorer {
 
   @js.native
   trait GetReservationUtilizationRequest extends js.Object {
-    var TimePeriod: js.UndefOr[DateInterval]
-    var GroupBy: js.UndefOr[GroupDefinitions]
-    var Granularity: js.UndefOr[Granularity]
-    var NextPageToken: js.UndefOr[NextPageToken]
+    var TimePeriod: DateInterval
     var Filter: js.UndefOr[Expression]
+    var Granularity: js.UndefOr[Granularity]
+    var GroupBy: js.UndefOr[GroupDefinitions]
+    var NextPageToken: js.UndefOr[NextPageToken]
   }
 
   object GetReservationUtilizationRequest {
     def apply(
-      TimePeriod: js.UndefOr[DateInterval] = js.undefined,
-      GroupBy: js.UndefOr[GroupDefinitions] = js.undefined,
+      TimePeriod: DateInterval,
+      Filter: js.UndefOr[Expression] = js.undefined,
       Granularity: js.UndefOr[Granularity] = js.undefined,
-      NextPageToken: js.UndefOr[NextPageToken] = js.undefined,
-      Filter: js.UndefOr[Expression] = js.undefined): GetReservationUtilizationRequest = {
+      GroupBy: js.UndefOr[GroupDefinitions] = js.undefined,
+      NextPageToken: js.UndefOr[NextPageToken] = js.undefined): GetReservationUtilizationRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "TimePeriod" -> TimePeriod.map { x => x.asInstanceOf[js.Any] },
-        "GroupBy" -> GroupBy.map { x => x.asInstanceOf[js.Any] },
+        "TimePeriod" -> TimePeriod.asInstanceOf[js.Any],
+        "Filter" -> Filter.map { x => x.asInstanceOf[js.Any] },
         "Granularity" -> Granularity.map { x => x.asInstanceOf[js.Any] },
-        "NextPageToken" -> NextPageToken.map { x => x.asInstanceOf[js.Any] },
-        "Filter" -> Filter.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "GroupBy" -> GroupBy.map { x => x.asInstanceOf[js.Any] },
+        "NextPageToken" -> NextPageToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetReservationUtilizationRequest]
     }
@@ -722,20 +722,20 @@ package costexplorer {
 
   @js.native
   trait GetReservationUtilizationResponse extends js.Object {
-    var UtilizationsByTime: js.UndefOr[UtilizationsByTime]
-    var Total: js.UndefOr[ReservationAggregates]
+    var UtilizationsByTime: UtilizationsByTime
     var NextPageToken: js.UndefOr[NextPageToken]
+    var Total: js.UndefOr[ReservationAggregates]
   }
 
   object GetReservationUtilizationResponse {
     def apply(
-      UtilizationsByTime: js.UndefOr[UtilizationsByTime] = js.undefined,
-      Total: js.UndefOr[ReservationAggregates] = js.undefined,
-      NextPageToken: js.UndefOr[NextPageToken] = js.undefined): GetReservationUtilizationResponse = {
+      UtilizationsByTime: UtilizationsByTime,
+      NextPageToken: js.UndefOr[NextPageToken] = js.undefined,
+      Total: js.UndefOr[ReservationAggregates] = js.undefined): GetReservationUtilizationResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "UtilizationsByTime" -> UtilizationsByTime.map { x => x.asInstanceOf[js.Any] },
-        "Total" -> Total.map { x => x.asInstanceOf[js.Any] },
-        "NextPageToken" -> NextPageToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "UtilizationsByTime" -> UtilizationsByTime.asInstanceOf[js.Any],
+        "NextPageToken" -> NextPageToken.map { x => x.asInstanceOf[js.Any] },
+        "Total" -> Total.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetReservationUtilizationResponse]
     }
@@ -743,23 +743,23 @@ package costexplorer {
 
   @js.native
   trait GetTagsRequest extends js.Object {
-    var SearchString: js.UndefOr[SearchString]
-    var TimePeriod: js.UndefOr[DateInterval]
-    var TagKey: js.UndefOr[TagKey]
+    var TimePeriod: DateInterval
     var NextPageToken: js.UndefOr[NextPageToken]
+    var SearchString: js.UndefOr[SearchString]
+    var TagKey: js.UndefOr[TagKey]
   }
 
   object GetTagsRequest {
     def apply(
+      TimePeriod: DateInterval,
+      NextPageToken: js.UndefOr[NextPageToken] = js.undefined,
       SearchString: js.UndefOr[SearchString] = js.undefined,
-      TimePeriod: js.UndefOr[DateInterval] = js.undefined,
-      TagKey: js.UndefOr[TagKey] = js.undefined,
-      NextPageToken: js.UndefOr[NextPageToken] = js.undefined): GetTagsRequest = {
+      TagKey: js.UndefOr[TagKey] = js.undefined): GetTagsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "TimePeriod" -> TimePeriod.asInstanceOf[js.Any],
+        "NextPageToken" -> NextPageToken.map { x => x.asInstanceOf[js.Any] },
         "SearchString" -> SearchString.map { x => x.asInstanceOf[js.Any] },
-        "TimePeriod" -> TimePeriod.map { x => x.asInstanceOf[js.Any] },
-        "TagKey" -> TagKey.map { x => x.asInstanceOf[js.Any] },
-        "NextPageToken" -> NextPageToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "TagKey" -> TagKey.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetTagsRequest]
     }
@@ -767,23 +767,23 @@ package costexplorer {
 
   @js.native
   trait GetTagsResponse extends js.Object {
+    var ReturnSize: PageSize
+    var Tags: TagList
+    var TotalSize: PageSize
     var NextPageToken: js.UndefOr[NextPageToken]
-    var Tags: js.UndefOr[TagList]
-    var ReturnSize: js.UndefOr[PageSize]
-    var TotalSize: js.UndefOr[PageSize]
   }
 
   object GetTagsResponse {
     def apply(
-      NextPageToken: js.UndefOr[NextPageToken] = js.undefined,
-      Tags: js.UndefOr[TagList] = js.undefined,
-      ReturnSize: js.UndefOr[PageSize] = js.undefined,
-      TotalSize: js.UndefOr[PageSize] = js.undefined): GetTagsResponse = {
+      ReturnSize: PageSize,
+      Tags: TagList,
+      TotalSize: PageSize,
+      NextPageToken: js.UndefOr[NextPageToken] = js.undefined): GetTagsResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "NextPageToken" -> NextPageToken.map { x => x.asInstanceOf[js.Any] },
-        "Tags" -> Tags.map { x => x.asInstanceOf[js.Any] },
-        "ReturnSize" -> ReturnSize.map { x => x.asInstanceOf[js.Any] },
-        "TotalSize" -> TotalSize.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ReturnSize" -> ReturnSize.asInstanceOf[js.Any],
+        "Tags" -> Tags.asInstanceOf[js.Any],
+        "TotalSize" -> TotalSize.asInstanceOf[js.Any],
+        "NextPageToken" -> NextPageToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetTagsResponse]
     }
@@ -823,17 +823,17 @@ package costexplorer {
    */
   @js.native
   trait GroupDefinition extends js.Object {
-    var Type: js.UndefOr[GroupDefinitionType]
     var Key: js.UndefOr[GroupDefinitionKey]
+    var Type: js.UndefOr[GroupDefinitionType]
   }
 
   object GroupDefinition {
     def apply(
-      Type: js.UndefOr[GroupDefinitionType] = js.undefined,
-      Key: js.UndefOr[GroupDefinitionKey] = js.undefined): GroupDefinition = {
+      Key: js.UndefOr[GroupDefinitionKey] = js.undefined,
+      Type: js.UndefOr[GroupDefinitionType] = js.undefined): GroupDefinition = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Type" -> Type.map { x => x.asInstanceOf[js.Any] },
-        "Key" -> Key.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Key" -> Key.map { x => x.asInstanceOf[js.Any] },
+        "Type" -> Type.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GroupDefinition]
     }
@@ -851,25 +851,25 @@ package costexplorer {
    */
   @js.native
   trait InstanceDetails extends js.Object {
-    var ESInstanceDetails: js.UndefOr[ESInstanceDetails]
     var EC2InstanceDetails: js.UndefOr[EC2InstanceDetails]
-    var RDSInstanceDetails: js.UndefOr[RDSInstanceDetails]
+    var ESInstanceDetails: js.UndefOr[ESInstanceDetails]
     var ElastiCacheInstanceDetails: js.UndefOr[ElastiCacheInstanceDetails]
+    var RDSInstanceDetails: js.UndefOr[RDSInstanceDetails]
     var RedshiftInstanceDetails: js.UndefOr[RedshiftInstanceDetails]
   }
 
   object InstanceDetails {
     def apply(
-      ESInstanceDetails: js.UndefOr[ESInstanceDetails] = js.undefined,
       EC2InstanceDetails: js.UndefOr[EC2InstanceDetails] = js.undefined,
-      RDSInstanceDetails: js.UndefOr[RDSInstanceDetails] = js.undefined,
+      ESInstanceDetails: js.UndefOr[ESInstanceDetails] = js.undefined,
       ElastiCacheInstanceDetails: js.UndefOr[ElastiCacheInstanceDetails] = js.undefined,
+      RDSInstanceDetails: js.UndefOr[RDSInstanceDetails] = js.undefined,
       RedshiftInstanceDetails: js.UndefOr[RedshiftInstanceDetails] = js.undefined): InstanceDetails = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ESInstanceDetails" -> ESInstanceDetails.map { x => x.asInstanceOf[js.Any] },
         "EC2InstanceDetails" -> EC2InstanceDetails.map { x => x.asInstanceOf[js.Any] },
-        "RDSInstanceDetails" -> RDSInstanceDetails.map { x => x.asInstanceOf[js.Any] },
+        "ESInstanceDetails" -> ESInstanceDetails.map { x => x.asInstanceOf[js.Any] },
         "ElastiCacheInstanceDetails" -> ElastiCacheInstanceDetails.map { x => x.asInstanceOf[js.Any] },
+        "RDSInstanceDetails" -> RDSInstanceDetails.map { x => x.asInstanceOf[js.Any] },
         "RedshiftInstanceDetails" -> RedshiftInstanceDetails.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[InstanceDetails]
@@ -941,37 +941,37 @@ package costexplorer {
   @js.native
   trait RDSInstanceDetails extends js.Object {
     var CurrentGeneration: js.UndefOr[GenericBoolean]
+    var DatabaseEdition: js.UndefOr[GenericString]
+    var DatabaseEngine: js.UndefOr[GenericString]
+    var DeploymentOption: js.UndefOr[GenericString]
+    var Family: js.UndefOr[GenericString]
+    var InstanceType: js.UndefOr[GenericString]
+    var LicenseModel: js.UndefOr[GenericString]
     var Region: js.UndefOr[GenericString]
     var SizeFlexEligible: js.UndefOr[GenericBoolean]
-    var Family: js.UndefOr[GenericString]
-    var DatabaseEngine: js.UndefOr[GenericString]
-    var InstanceType: js.UndefOr[GenericString]
-    var DeploymentOption: js.UndefOr[GenericString]
-    var DatabaseEdition: js.UndefOr[GenericString]
-    var LicenseModel: js.UndefOr[GenericString]
   }
 
   object RDSInstanceDetails {
     def apply(
       CurrentGeneration: js.UndefOr[GenericBoolean] = js.undefined,
-      Region: js.UndefOr[GenericString] = js.undefined,
-      SizeFlexEligible: js.UndefOr[GenericBoolean] = js.undefined,
-      Family: js.UndefOr[GenericString] = js.undefined,
-      DatabaseEngine: js.UndefOr[GenericString] = js.undefined,
-      InstanceType: js.UndefOr[GenericString] = js.undefined,
-      DeploymentOption: js.UndefOr[GenericString] = js.undefined,
       DatabaseEdition: js.UndefOr[GenericString] = js.undefined,
-      LicenseModel: js.UndefOr[GenericString] = js.undefined): RDSInstanceDetails = {
+      DatabaseEngine: js.UndefOr[GenericString] = js.undefined,
+      DeploymentOption: js.UndefOr[GenericString] = js.undefined,
+      Family: js.UndefOr[GenericString] = js.undefined,
+      InstanceType: js.UndefOr[GenericString] = js.undefined,
+      LicenseModel: js.UndefOr[GenericString] = js.undefined,
+      Region: js.UndefOr[GenericString] = js.undefined,
+      SizeFlexEligible: js.UndefOr[GenericBoolean] = js.undefined): RDSInstanceDetails = {
       val _fields = IndexedSeq[(String, js.Any)](
         "CurrentGeneration" -> CurrentGeneration.map { x => x.asInstanceOf[js.Any] },
-        "Region" -> Region.map { x => x.asInstanceOf[js.Any] },
-        "SizeFlexEligible" -> SizeFlexEligible.map { x => x.asInstanceOf[js.Any] },
-        "Family" -> Family.map { x => x.asInstanceOf[js.Any] },
-        "DatabaseEngine" -> DatabaseEngine.map { x => x.asInstanceOf[js.Any] },
-        "InstanceType" -> InstanceType.map { x => x.asInstanceOf[js.Any] },
-        "DeploymentOption" -> DeploymentOption.map { x => x.asInstanceOf[js.Any] },
         "DatabaseEdition" -> DatabaseEdition.map { x => x.asInstanceOf[js.Any] },
-        "LicenseModel" -> LicenseModel.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "DatabaseEngine" -> DatabaseEngine.map { x => x.asInstanceOf[js.Any] },
+        "DeploymentOption" -> DeploymentOption.map { x => x.asInstanceOf[js.Any] },
+        "Family" -> Family.map { x => x.asInstanceOf[js.Any] },
+        "InstanceType" -> InstanceType.map { x => x.asInstanceOf[js.Any] },
+        "LicenseModel" -> LicenseModel.map { x => x.asInstanceOf[js.Any] },
+        "Region" -> Region.map { x => x.asInstanceOf[js.Any] },
+        "SizeFlexEligible" -> SizeFlexEligible.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RDSInstanceDetails]
     }
@@ -983,25 +983,25 @@ package costexplorer {
   @js.native
   trait RedshiftInstanceDetails extends js.Object {
     var CurrentGeneration: js.UndefOr[GenericBoolean]
-    var Region: js.UndefOr[GenericString]
-    var NodeType: js.UndefOr[GenericString]
-    var SizeFlexEligible: js.UndefOr[GenericBoolean]
     var Family: js.UndefOr[GenericString]
+    var NodeType: js.UndefOr[GenericString]
+    var Region: js.UndefOr[GenericString]
+    var SizeFlexEligible: js.UndefOr[GenericBoolean]
   }
 
   object RedshiftInstanceDetails {
     def apply(
       CurrentGeneration: js.UndefOr[GenericBoolean] = js.undefined,
-      Region: js.UndefOr[GenericString] = js.undefined,
+      Family: js.UndefOr[GenericString] = js.undefined,
       NodeType: js.UndefOr[GenericString] = js.undefined,
-      SizeFlexEligible: js.UndefOr[GenericBoolean] = js.undefined,
-      Family: js.UndefOr[GenericString] = js.undefined): RedshiftInstanceDetails = {
+      Region: js.UndefOr[GenericString] = js.undefined,
+      SizeFlexEligible: js.UndefOr[GenericBoolean] = js.undefined): RedshiftInstanceDetails = {
       val _fields = IndexedSeq[(String, js.Any)](
         "CurrentGeneration" -> CurrentGeneration.map { x => x.asInstanceOf[js.Any] },
-        "Region" -> Region.map { x => x.asInstanceOf[js.Any] },
+        "Family" -> Family.map { x => x.asInstanceOf[js.Any] },
         "NodeType" -> NodeType.map { x => x.asInstanceOf[js.Any] },
-        "SizeFlexEligible" -> SizeFlexEligible.map { x => x.asInstanceOf[js.Any] },
-        "Family" -> Family.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Region" -> Region.map { x => x.asInstanceOf[js.Any] },
+        "SizeFlexEligible" -> SizeFlexEligible.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RedshiftInstanceDetails]
     }
@@ -1012,40 +1012,40 @@ package costexplorer {
    */
   @js.native
   trait ReservationAggregates extends js.Object {
-    var PurchasedHours: js.UndefOr[PurchasedHours]
-    var OnDemandCostOfRIHoursUsed: js.UndefOr[OnDemandCostOfRIHoursUsed]
+    var AmortizedRecurringFee: js.UndefOr[AmortizedRecurringFee]
     var AmortizedUpfrontFee: js.UndefOr[AmortizedUpfrontFee]
+    var NetRISavings: js.UndefOr[NetRISavings]
+    var OnDemandCostOfRIHoursUsed: js.UndefOr[OnDemandCostOfRIHoursUsed]
+    var PurchasedHours: js.UndefOr[PurchasedHours]
+    var TotalActualHours: js.UndefOr[TotalActualHours]
     var TotalAmortizedFee: js.UndefOr[TotalAmortizedFee]
     var TotalPotentialRISavings: js.UndefOr[TotalPotentialRISavings]
-    var NetRISavings: js.UndefOr[NetRISavings]
     var UnusedHours: js.UndefOr[UnusedHours]
-    var AmortizedRecurringFee: js.UndefOr[AmortizedRecurringFee]
-    var TotalActualHours: js.UndefOr[TotalActualHours]
     var UtilizationPercentage: js.UndefOr[UtilizationPercentage]
   }
 
   object ReservationAggregates {
     def apply(
-      PurchasedHours: js.UndefOr[PurchasedHours] = js.undefined,
-      OnDemandCostOfRIHoursUsed: js.UndefOr[OnDemandCostOfRIHoursUsed] = js.undefined,
+      AmortizedRecurringFee: js.UndefOr[AmortizedRecurringFee] = js.undefined,
       AmortizedUpfrontFee: js.UndefOr[AmortizedUpfrontFee] = js.undefined,
+      NetRISavings: js.UndefOr[NetRISavings] = js.undefined,
+      OnDemandCostOfRIHoursUsed: js.UndefOr[OnDemandCostOfRIHoursUsed] = js.undefined,
+      PurchasedHours: js.UndefOr[PurchasedHours] = js.undefined,
+      TotalActualHours: js.UndefOr[TotalActualHours] = js.undefined,
       TotalAmortizedFee: js.UndefOr[TotalAmortizedFee] = js.undefined,
       TotalPotentialRISavings: js.UndefOr[TotalPotentialRISavings] = js.undefined,
-      NetRISavings: js.UndefOr[NetRISavings] = js.undefined,
       UnusedHours: js.UndefOr[UnusedHours] = js.undefined,
-      AmortizedRecurringFee: js.UndefOr[AmortizedRecurringFee] = js.undefined,
-      TotalActualHours: js.UndefOr[TotalActualHours] = js.undefined,
       UtilizationPercentage: js.UndefOr[UtilizationPercentage] = js.undefined): ReservationAggregates = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "PurchasedHours" -> PurchasedHours.map { x => x.asInstanceOf[js.Any] },
-        "OnDemandCostOfRIHoursUsed" -> OnDemandCostOfRIHoursUsed.map { x => x.asInstanceOf[js.Any] },
+        "AmortizedRecurringFee" -> AmortizedRecurringFee.map { x => x.asInstanceOf[js.Any] },
         "AmortizedUpfrontFee" -> AmortizedUpfrontFee.map { x => x.asInstanceOf[js.Any] },
+        "NetRISavings" -> NetRISavings.map { x => x.asInstanceOf[js.Any] },
+        "OnDemandCostOfRIHoursUsed" -> OnDemandCostOfRIHoursUsed.map { x => x.asInstanceOf[js.Any] },
+        "PurchasedHours" -> PurchasedHours.map { x => x.asInstanceOf[js.Any] },
+        "TotalActualHours" -> TotalActualHours.map { x => x.asInstanceOf[js.Any] },
         "TotalAmortizedFee" -> TotalAmortizedFee.map { x => x.asInstanceOf[js.Any] },
         "TotalPotentialRISavings" -> TotalPotentialRISavings.map { x => x.asInstanceOf[js.Any] },
-        "NetRISavings" -> NetRISavings.map { x => x.asInstanceOf[js.Any] },
         "UnusedHours" -> UnusedHours.map { x => x.asInstanceOf[js.Any] },
-        "AmortizedRecurringFee" -> AmortizedRecurringFee.map { x => x.asInstanceOf[js.Any] },
-        "TotalActualHours" -> TotalActualHours.map { x => x.asInstanceOf[js.Any] },
         "UtilizationPercentage" -> UtilizationPercentage.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ReservationAggregates]
@@ -1078,32 +1078,32 @@ package costexplorer {
    */
   @js.native
   trait ReservationPurchaseRecommendation extends js.Object {
-    var PaymentOption: js.UndefOr[PaymentOption]
-    var ServiceSpecification: js.UndefOr[ServiceSpecification]
-    var RecommendationDetails: js.UndefOr[ReservationPurchaseRecommendationDetails]
-    var TermInYears: js.UndefOr[TermInYears]
-    var LookbackPeriodInDays: js.UndefOr[LookbackPeriodInDays]
     var AccountScope: js.UndefOr[AccountScope]
+    var LookbackPeriodInDays: js.UndefOr[LookbackPeriodInDays]
+    var PaymentOption: js.UndefOr[PaymentOption]
+    var RecommendationDetails: js.UndefOr[ReservationPurchaseRecommendationDetails]
     var RecommendationSummary: js.UndefOr[ReservationPurchaseRecommendationSummary]
+    var ServiceSpecification: js.UndefOr[ServiceSpecification]
+    var TermInYears: js.UndefOr[TermInYears]
   }
 
   object ReservationPurchaseRecommendation {
     def apply(
-      PaymentOption: js.UndefOr[PaymentOption] = js.undefined,
-      ServiceSpecification: js.UndefOr[ServiceSpecification] = js.undefined,
-      RecommendationDetails: js.UndefOr[ReservationPurchaseRecommendationDetails] = js.undefined,
-      TermInYears: js.UndefOr[TermInYears] = js.undefined,
-      LookbackPeriodInDays: js.UndefOr[LookbackPeriodInDays] = js.undefined,
       AccountScope: js.UndefOr[AccountScope] = js.undefined,
-      RecommendationSummary: js.UndefOr[ReservationPurchaseRecommendationSummary] = js.undefined): ReservationPurchaseRecommendation = {
+      LookbackPeriodInDays: js.UndefOr[LookbackPeriodInDays] = js.undefined,
+      PaymentOption: js.UndefOr[PaymentOption] = js.undefined,
+      RecommendationDetails: js.UndefOr[ReservationPurchaseRecommendationDetails] = js.undefined,
+      RecommendationSummary: js.UndefOr[ReservationPurchaseRecommendationSummary] = js.undefined,
+      ServiceSpecification: js.UndefOr[ServiceSpecification] = js.undefined,
+      TermInYears: js.UndefOr[TermInYears] = js.undefined): ReservationPurchaseRecommendation = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "PaymentOption" -> PaymentOption.map { x => x.asInstanceOf[js.Any] },
-        "ServiceSpecification" -> ServiceSpecification.map { x => x.asInstanceOf[js.Any] },
-        "RecommendationDetails" -> RecommendationDetails.map { x => x.asInstanceOf[js.Any] },
-        "TermInYears" -> TermInYears.map { x => x.asInstanceOf[js.Any] },
-        "LookbackPeriodInDays" -> LookbackPeriodInDays.map { x => x.asInstanceOf[js.Any] },
         "AccountScope" -> AccountScope.map { x => x.asInstanceOf[js.Any] },
-        "RecommendationSummary" -> RecommendationSummary.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "LookbackPeriodInDays" -> LookbackPeriodInDays.map { x => x.asInstanceOf[js.Any] },
+        "PaymentOption" -> PaymentOption.map { x => x.asInstanceOf[js.Any] },
+        "RecommendationDetails" -> RecommendationDetails.map { x => x.asInstanceOf[js.Any] },
+        "RecommendationSummary" -> RecommendationSummary.map { x => x.asInstanceOf[js.Any] },
+        "ServiceSpecification" -> ServiceSpecification.map { x => x.asInstanceOf[js.Any] },
+        "TermInYears" -> TermInYears.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ReservationPurchaseRecommendation]
     }
@@ -1114,68 +1114,68 @@ package costexplorer {
    */
   @js.native
   trait ReservationPurchaseRecommendationDetail extends js.Object {
-    var EstimatedMonthlySavingsPercentage: js.UndefOr[GenericString]
-    var AverageNumberOfInstancesUsedPerHour: js.UndefOr[GenericString]
-    var RecurringStandardMonthlyCost: js.UndefOr[GenericString]
-    var CurrencyCode: js.UndefOr[GenericString]
-    var EstimatedMonthlyOnDemandCost: js.UndefOr[GenericString]
-    var RecommendedNumberOfInstancesToPurchase: js.UndefOr[GenericString]
-    var EstimatedMonthlySavingsAmount: js.UndefOr[GenericString]
-    var EstimatedBreakEvenInMonths: js.UndefOr[GenericString]
-    var AverageNormalizedUnitsUsedPerHour: js.UndefOr[GenericString]
-    var MinimumNormalizedUnitsUsedPerHour: js.UndefOr[GenericString]
-    var AverageUtilization: js.UndefOr[GenericString]
-    var MaximumNumberOfInstancesUsedPerHour: js.UndefOr[GenericString]
     var AccountId: js.UndefOr[GenericString]
-    var UpfrontCost: js.UndefOr[GenericString]
-    var MaximumNormalizedUnitsUsedPerHour: js.UndefOr[GenericString]
-    var InstanceDetails: js.UndefOr[InstanceDetails]
-    var RecommendedNormalizedUnitsToPurchase: js.UndefOr[GenericString]
-    var MinimumNumberOfInstancesUsedPerHour: js.UndefOr[GenericString]
+    var AverageNormalizedUnitsUsedPerHour: js.UndefOr[GenericString]
+    var AverageNumberOfInstancesUsedPerHour: js.UndefOr[GenericString]
+    var AverageUtilization: js.UndefOr[GenericString]
+    var CurrencyCode: js.UndefOr[GenericString]
+    var EstimatedBreakEvenInMonths: js.UndefOr[GenericString]
+    var EstimatedMonthlyOnDemandCost: js.UndefOr[GenericString]
+    var EstimatedMonthlySavingsAmount: js.UndefOr[GenericString]
+    var EstimatedMonthlySavingsPercentage: js.UndefOr[GenericString]
     var EstimatedReservationCostForLookbackPeriod: js.UndefOr[GenericString]
+    var InstanceDetails: js.UndefOr[InstanceDetails]
+    var MaximumNormalizedUnitsUsedPerHour: js.UndefOr[GenericString]
+    var MaximumNumberOfInstancesUsedPerHour: js.UndefOr[GenericString]
+    var MinimumNormalizedUnitsUsedPerHour: js.UndefOr[GenericString]
+    var MinimumNumberOfInstancesUsedPerHour: js.UndefOr[GenericString]
+    var RecommendedNormalizedUnitsToPurchase: js.UndefOr[GenericString]
+    var RecommendedNumberOfInstancesToPurchase: js.UndefOr[GenericString]
+    var RecurringStandardMonthlyCost: js.UndefOr[GenericString]
+    var UpfrontCost: js.UndefOr[GenericString]
   }
 
   object ReservationPurchaseRecommendationDetail {
     def apply(
-      EstimatedMonthlySavingsPercentage: js.UndefOr[GenericString] = js.undefined,
-      AverageNumberOfInstancesUsedPerHour: js.UndefOr[GenericString] = js.undefined,
-      RecurringStandardMonthlyCost: js.UndefOr[GenericString] = js.undefined,
-      CurrencyCode: js.UndefOr[GenericString] = js.undefined,
-      EstimatedMonthlyOnDemandCost: js.UndefOr[GenericString] = js.undefined,
-      RecommendedNumberOfInstancesToPurchase: js.UndefOr[GenericString] = js.undefined,
-      EstimatedMonthlySavingsAmount: js.UndefOr[GenericString] = js.undefined,
-      EstimatedBreakEvenInMonths: js.UndefOr[GenericString] = js.undefined,
-      AverageNormalizedUnitsUsedPerHour: js.UndefOr[GenericString] = js.undefined,
-      MinimumNormalizedUnitsUsedPerHour: js.UndefOr[GenericString] = js.undefined,
-      AverageUtilization: js.UndefOr[GenericString] = js.undefined,
-      MaximumNumberOfInstancesUsedPerHour: js.UndefOr[GenericString] = js.undefined,
       AccountId: js.UndefOr[GenericString] = js.undefined,
-      UpfrontCost: js.UndefOr[GenericString] = js.undefined,
-      MaximumNormalizedUnitsUsedPerHour: js.UndefOr[GenericString] = js.undefined,
+      AverageNormalizedUnitsUsedPerHour: js.UndefOr[GenericString] = js.undefined,
+      AverageNumberOfInstancesUsedPerHour: js.UndefOr[GenericString] = js.undefined,
+      AverageUtilization: js.UndefOr[GenericString] = js.undefined,
+      CurrencyCode: js.UndefOr[GenericString] = js.undefined,
+      EstimatedBreakEvenInMonths: js.UndefOr[GenericString] = js.undefined,
+      EstimatedMonthlyOnDemandCost: js.UndefOr[GenericString] = js.undefined,
+      EstimatedMonthlySavingsAmount: js.UndefOr[GenericString] = js.undefined,
+      EstimatedMonthlySavingsPercentage: js.UndefOr[GenericString] = js.undefined,
+      EstimatedReservationCostForLookbackPeriod: js.UndefOr[GenericString] = js.undefined,
       InstanceDetails: js.UndefOr[InstanceDetails] = js.undefined,
-      RecommendedNormalizedUnitsToPurchase: js.UndefOr[GenericString] = js.undefined,
+      MaximumNormalizedUnitsUsedPerHour: js.UndefOr[GenericString] = js.undefined,
+      MaximumNumberOfInstancesUsedPerHour: js.UndefOr[GenericString] = js.undefined,
+      MinimumNormalizedUnitsUsedPerHour: js.UndefOr[GenericString] = js.undefined,
       MinimumNumberOfInstancesUsedPerHour: js.UndefOr[GenericString] = js.undefined,
-      EstimatedReservationCostForLookbackPeriod: js.UndefOr[GenericString] = js.undefined): ReservationPurchaseRecommendationDetail = {
+      RecommendedNormalizedUnitsToPurchase: js.UndefOr[GenericString] = js.undefined,
+      RecommendedNumberOfInstancesToPurchase: js.UndefOr[GenericString] = js.undefined,
+      RecurringStandardMonthlyCost: js.UndefOr[GenericString] = js.undefined,
+      UpfrontCost: js.UndefOr[GenericString] = js.undefined): ReservationPurchaseRecommendationDetail = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "EstimatedMonthlySavingsPercentage" -> EstimatedMonthlySavingsPercentage.map { x => x.asInstanceOf[js.Any] },
-        "AverageNumberOfInstancesUsedPerHour" -> AverageNumberOfInstancesUsedPerHour.map { x => x.asInstanceOf[js.Any] },
-        "RecurringStandardMonthlyCost" -> RecurringStandardMonthlyCost.map { x => x.asInstanceOf[js.Any] },
-        "CurrencyCode" -> CurrencyCode.map { x => x.asInstanceOf[js.Any] },
-        "EstimatedMonthlyOnDemandCost" -> EstimatedMonthlyOnDemandCost.map { x => x.asInstanceOf[js.Any] },
-        "RecommendedNumberOfInstancesToPurchase" -> RecommendedNumberOfInstancesToPurchase.map { x => x.asInstanceOf[js.Any] },
-        "EstimatedMonthlySavingsAmount" -> EstimatedMonthlySavingsAmount.map { x => x.asInstanceOf[js.Any] },
-        "EstimatedBreakEvenInMonths" -> EstimatedBreakEvenInMonths.map { x => x.asInstanceOf[js.Any] },
-        "AverageNormalizedUnitsUsedPerHour" -> AverageNormalizedUnitsUsedPerHour.map { x => x.asInstanceOf[js.Any] },
-        "MinimumNormalizedUnitsUsedPerHour" -> MinimumNormalizedUnitsUsedPerHour.map { x => x.asInstanceOf[js.Any] },
-        "AverageUtilization" -> AverageUtilization.map { x => x.asInstanceOf[js.Any] },
-        "MaximumNumberOfInstancesUsedPerHour" -> MaximumNumberOfInstancesUsedPerHour.map { x => x.asInstanceOf[js.Any] },
         "AccountId" -> AccountId.map { x => x.asInstanceOf[js.Any] },
-        "UpfrontCost" -> UpfrontCost.map { x => x.asInstanceOf[js.Any] },
-        "MaximumNormalizedUnitsUsedPerHour" -> MaximumNormalizedUnitsUsedPerHour.map { x => x.asInstanceOf[js.Any] },
+        "AverageNormalizedUnitsUsedPerHour" -> AverageNormalizedUnitsUsedPerHour.map { x => x.asInstanceOf[js.Any] },
+        "AverageNumberOfInstancesUsedPerHour" -> AverageNumberOfInstancesUsedPerHour.map { x => x.asInstanceOf[js.Any] },
+        "AverageUtilization" -> AverageUtilization.map { x => x.asInstanceOf[js.Any] },
+        "CurrencyCode" -> CurrencyCode.map { x => x.asInstanceOf[js.Any] },
+        "EstimatedBreakEvenInMonths" -> EstimatedBreakEvenInMonths.map { x => x.asInstanceOf[js.Any] },
+        "EstimatedMonthlyOnDemandCost" -> EstimatedMonthlyOnDemandCost.map { x => x.asInstanceOf[js.Any] },
+        "EstimatedMonthlySavingsAmount" -> EstimatedMonthlySavingsAmount.map { x => x.asInstanceOf[js.Any] },
+        "EstimatedMonthlySavingsPercentage" -> EstimatedMonthlySavingsPercentage.map { x => x.asInstanceOf[js.Any] },
+        "EstimatedReservationCostForLookbackPeriod" -> EstimatedReservationCostForLookbackPeriod.map { x => x.asInstanceOf[js.Any] },
         "InstanceDetails" -> InstanceDetails.map { x => x.asInstanceOf[js.Any] },
-        "RecommendedNormalizedUnitsToPurchase" -> RecommendedNormalizedUnitsToPurchase.map { x => x.asInstanceOf[js.Any] },
+        "MaximumNormalizedUnitsUsedPerHour" -> MaximumNormalizedUnitsUsedPerHour.map { x => x.asInstanceOf[js.Any] },
+        "MaximumNumberOfInstancesUsedPerHour" -> MaximumNumberOfInstancesUsedPerHour.map { x => x.asInstanceOf[js.Any] },
+        "MinimumNormalizedUnitsUsedPerHour" -> MinimumNormalizedUnitsUsedPerHour.map { x => x.asInstanceOf[js.Any] },
         "MinimumNumberOfInstancesUsedPerHour" -> MinimumNumberOfInstancesUsedPerHour.map { x => x.asInstanceOf[js.Any] },
-        "EstimatedReservationCostForLookbackPeriod" -> EstimatedReservationCostForLookbackPeriod.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "RecommendedNormalizedUnitsToPurchase" -> RecommendedNormalizedUnitsToPurchase.map { x => x.asInstanceOf[js.Any] },
+        "RecommendedNumberOfInstancesToPurchase" -> RecommendedNumberOfInstancesToPurchase.map { x => x.asInstanceOf[js.Any] },
+        "RecurringStandardMonthlyCost" -> RecurringStandardMonthlyCost.map { x => x.asInstanceOf[js.Any] },
+        "UpfrontCost" -> UpfrontCost.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ReservationPurchaseRecommendationDetail]
     }
@@ -1186,17 +1186,17 @@ package costexplorer {
    */
   @js.native
   trait ReservationPurchaseRecommendationMetadata extends js.Object {
-    var RecommendationId: js.UndefOr[GenericString]
     var GenerationTimestamp: js.UndefOr[GenericString]
+    var RecommendationId: js.UndefOr[GenericString]
   }
 
   object ReservationPurchaseRecommendationMetadata {
     def apply(
-      RecommendationId: js.UndefOr[GenericString] = js.undefined,
-      GenerationTimestamp: js.UndefOr[GenericString] = js.undefined): ReservationPurchaseRecommendationMetadata = {
+      GenerationTimestamp: js.UndefOr[GenericString] = js.undefined,
+      RecommendationId: js.UndefOr[GenericString] = js.undefined): ReservationPurchaseRecommendationMetadata = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "RecommendationId" -> RecommendationId.map { x => x.asInstanceOf[js.Any] },
-        "GenerationTimestamp" -> GenerationTimestamp.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "GenerationTimestamp" -> GenerationTimestamp.map { x => x.asInstanceOf[js.Any] },
+        "RecommendationId" -> RecommendationId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ReservationPurchaseRecommendationMetadata]
     }
@@ -1207,20 +1207,20 @@ package costexplorer {
    */
   @js.native
   trait ReservationPurchaseRecommendationSummary extends js.Object {
+    var CurrencyCode: js.UndefOr[GenericString]
     var TotalEstimatedMonthlySavingsAmount: js.UndefOr[GenericString]
     var TotalEstimatedMonthlySavingsPercentage: js.UndefOr[GenericString]
-    var CurrencyCode: js.UndefOr[GenericString]
   }
 
   object ReservationPurchaseRecommendationSummary {
     def apply(
+      CurrencyCode: js.UndefOr[GenericString] = js.undefined,
       TotalEstimatedMonthlySavingsAmount: js.UndefOr[GenericString] = js.undefined,
-      TotalEstimatedMonthlySavingsPercentage: js.UndefOr[GenericString] = js.undefined,
-      CurrencyCode: js.UndefOr[GenericString] = js.undefined): ReservationPurchaseRecommendationSummary = {
+      TotalEstimatedMonthlySavingsPercentage: js.UndefOr[GenericString] = js.undefined): ReservationPurchaseRecommendationSummary = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "CurrencyCode" -> CurrencyCode.map { x => x.asInstanceOf[js.Any] },
         "TotalEstimatedMonthlySavingsAmount" -> TotalEstimatedMonthlySavingsAmount.map { x => x.asInstanceOf[js.Any] },
-        "TotalEstimatedMonthlySavingsPercentage" -> TotalEstimatedMonthlySavingsPercentage.map { x => x.asInstanceOf[js.Any] },
-        "CurrencyCode" -> CurrencyCode.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "TotalEstimatedMonthlySavingsPercentage" -> TotalEstimatedMonthlySavingsPercentage.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ReservationPurchaseRecommendationSummary]
     }
@@ -1231,23 +1231,23 @@ package costexplorer {
    */
   @js.native
   trait ReservationUtilizationGroup extends js.Object {
-    var Key: js.UndefOr[ReservationGroupKey]
-    var Value: js.UndefOr[ReservationGroupValue]
     var Attributes: js.UndefOr[Attributes]
+    var Key: js.UndefOr[ReservationGroupKey]
     var Utilization: js.UndefOr[ReservationAggregates]
+    var Value: js.UndefOr[ReservationGroupValue]
   }
 
   object ReservationUtilizationGroup {
     def apply(
-      Key: js.UndefOr[ReservationGroupKey] = js.undefined,
-      Value: js.UndefOr[ReservationGroupValue] = js.undefined,
       Attributes: js.UndefOr[Attributes] = js.undefined,
-      Utilization: js.UndefOr[ReservationAggregates] = js.undefined): ReservationUtilizationGroup = {
+      Key: js.UndefOr[ReservationGroupKey] = js.undefined,
+      Utilization: js.UndefOr[ReservationAggregates] = js.undefined,
+      Value: js.UndefOr[ReservationGroupValue] = js.undefined): ReservationUtilizationGroup = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Key" -> Key.map { x => x.asInstanceOf[js.Any] },
-        "Value" -> Value.map { x => x.asInstanceOf[js.Any] },
         "Attributes" -> Attributes.map { x => x.asInstanceOf[js.Any] },
-        "Utilization" -> Utilization.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Key" -> Key.map { x => x.asInstanceOf[js.Any] },
+        "Utilization" -> Utilization.map { x => x.asInstanceOf[js.Any] },
+        "Value" -> Value.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ReservationUtilizationGroup]
     }
@@ -1258,23 +1258,23 @@ package costexplorer {
    */
   @js.native
   trait ResultByTime extends js.Object {
+    var Estimated: js.UndefOr[Estimated]
+    var Groups: js.UndefOr[Groups]
     var TimePeriod: js.UndefOr[DateInterval]
     var Total: js.UndefOr[Metrics]
-    var Groups: js.UndefOr[Groups]
-    var Estimated: js.UndefOr[Estimated]
   }
 
   object ResultByTime {
     def apply(
-      TimePeriod: js.UndefOr[DateInterval] = js.undefined,
-      Total: js.UndefOr[Metrics] = js.undefined,
+      Estimated: js.UndefOr[Estimated] = js.undefined,
       Groups: js.UndefOr[Groups] = js.undefined,
-      Estimated: js.UndefOr[Estimated] = js.undefined): ResultByTime = {
+      TimePeriod: js.UndefOr[DateInterval] = js.undefined,
+      Total: js.UndefOr[Metrics] = js.undefined): ResultByTime = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "TimePeriod" -> TimePeriod.map { x => x.asInstanceOf[js.Any] },
-        "Total" -> Total.map { x => x.asInstanceOf[js.Any] },
+        "Estimated" -> Estimated.map { x => x.asInstanceOf[js.Any] },
         "Groups" -> Groups.map { x => x.asInstanceOf[js.Any] },
-        "Estimated" -> Estimated.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "TimePeriod" -> TimePeriod.map { x => x.asInstanceOf[js.Any] },
+        "Total" -> Total.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ResultByTime]
     }
@@ -1331,19 +1331,19 @@ package costexplorer {
    */
   @js.native
   trait UtilizationByTime extends js.Object {
-    var TimePeriod: js.UndefOr[DateInterval]
     var Groups: js.UndefOr[ReservationUtilizationGroups]
+    var TimePeriod: js.UndefOr[DateInterval]
     var Total: js.UndefOr[ReservationAggregates]
   }
 
   object UtilizationByTime {
     def apply(
-      TimePeriod: js.UndefOr[DateInterval] = js.undefined,
       Groups: js.UndefOr[ReservationUtilizationGroups] = js.undefined,
+      TimePeriod: js.UndefOr[DateInterval] = js.undefined,
       Total: js.UndefOr[ReservationAggregates] = js.undefined): UtilizationByTime = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "TimePeriod" -> TimePeriod.map { x => x.asInstanceOf[js.Any] },
         "Groups" -> Groups.map { x => x.asInstanceOf[js.Any] },
+        "TimePeriod" -> TimePeriod.map { x => x.asInstanceOf[js.Any] },
         "Total" -> Total.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UtilizationByTime]

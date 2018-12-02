@@ -140,16 +140,16 @@ package greengrass {
 
   @js.native
   trait AssociateRoleToGroupRequest extends js.Object {
-    var GroupId: js.UndefOr[__string]
+    var GroupId: __string
     var RoleArn: js.UndefOr[__string]
   }
 
   object AssociateRoleToGroupRequest {
     def apply(
-      GroupId: js.UndefOr[__string] = js.undefined,
+      GroupId: __string,
       RoleArn: js.UndefOr[__string] = js.undefined): AssociateRoleToGroupRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "GroupId" -> GroupId.map { x => x.asInstanceOf[js.Any] },
+        "GroupId" -> GroupId.asInstanceOf[js.Any],
         "RoleArn" -> RoleArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AssociateRoleToGroupRequest]
@@ -254,35 +254,35 @@ package greengrass {
    */
   @js.native
   trait BulkDeploymentResult extends js.Object {
-    var GroupArn: js.UndefOr[__string]
-    var DeploymentType: js.UndefOr[DeploymentType]
-    var ErrorDetails: js.UndefOr[ErrorDetails]
+    var CreatedAt: js.UndefOr[__string]
     var DeploymentArn: js.UndefOr[__string]
     var DeploymentId: js.UndefOr[__string]
     var DeploymentStatus: js.UndefOr[__string]
-    var CreatedAt: js.UndefOr[__string]
+    var DeploymentType: js.UndefOr[DeploymentType]
+    var ErrorDetails: js.UndefOr[ErrorDetails]
     var ErrorMessage: js.UndefOr[__string]
+    var GroupArn: js.UndefOr[__string]
   }
 
   object BulkDeploymentResult {
     def apply(
-      GroupArn: js.UndefOr[__string] = js.undefined,
-      DeploymentType: js.UndefOr[DeploymentType] = js.undefined,
-      ErrorDetails: js.UndefOr[ErrorDetails] = js.undefined,
+      CreatedAt: js.UndefOr[__string] = js.undefined,
       DeploymentArn: js.UndefOr[__string] = js.undefined,
       DeploymentId: js.UndefOr[__string] = js.undefined,
       DeploymentStatus: js.UndefOr[__string] = js.undefined,
-      CreatedAt: js.UndefOr[__string] = js.undefined,
-      ErrorMessage: js.UndefOr[__string] = js.undefined): BulkDeploymentResult = {
+      DeploymentType: js.UndefOr[DeploymentType] = js.undefined,
+      ErrorDetails: js.UndefOr[ErrorDetails] = js.undefined,
+      ErrorMessage: js.UndefOr[__string] = js.undefined,
+      GroupArn: js.UndefOr[__string] = js.undefined): BulkDeploymentResult = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "GroupArn" -> GroupArn.map { x => x.asInstanceOf[js.Any] },
-        "DeploymentType" -> DeploymentType.map { x => x.asInstanceOf[js.Any] },
-        "ErrorDetails" -> ErrorDetails.map { x => x.asInstanceOf[js.Any] },
+        "CreatedAt" -> CreatedAt.map { x => x.asInstanceOf[js.Any] },
         "DeploymentArn" -> DeploymentArn.map { x => x.asInstanceOf[js.Any] },
         "DeploymentId" -> DeploymentId.map { x => x.asInstanceOf[js.Any] },
         "DeploymentStatus" -> DeploymentStatus.map { x => x.asInstanceOf[js.Any] },
-        "CreatedAt" -> CreatedAt.map { x => x.asInstanceOf[js.Any] },
-        "ErrorMessage" -> ErrorMessage.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "DeploymentType" -> DeploymentType.map { x => x.asInstanceOf[js.Any] },
+        "ErrorDetails" -> ErrorDetails.map { x => x.asInstanceOf[js.Any] },
+        "ErrorMessage" -> ErrorMessage.map { x => x.asInstanceOf[js.Any] },
+        "GroupArn" -> GroupArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BulkDeploymentResult]
     }
@@ -439,32 +439,32 @@ package greengrass {
 
   @js.native
   trait CreateConnectorDefinitionResponse extends js.Object {
-    var Id: js.UndefOr[__string]
-    var LatestVersionArn: js.UndefOr[__string]
-    var Name: js.UndefOr[__string]
-    var LastUpdatedTimestamp: js.UndefOr[__string]
     var Arn: js.UndefOr[__string]
     var CreationTimestamp: js.UndefOr[__string]
+    var Id: js.UndefOr[__string]
+    var LastUpdatedTimestamp: js.UndefOr[__string]
     var LatestVersion: js.UndefOr[__string]
+    var LatestVersionArn: js.UndefOr[__string]
+    var Name: js.UndefOr[__string]
   }
 
   object CreateConnectorDefinitionResponse {
     def apply(
-      Id: js.UndefOr[__string] = js.undefined,
-      LatestVersionArn: js.UndefOr[__string] = js.undefined,
-      Name: js.UndefOr[__string] = js.undefined,
-      LastUpdatedTimestamp: js.UndefOr[__string] = js.undefined,
       Arn: js.UndefOr[__string] = js.undefined,
       CreationTimestamp: js.UndefOr[__string] = js.undefined,
-      LatestVersion: js.UndefOr[__string] = js.undefined): CreateConnectorDefinitionResponse = {
+      Id: js.UndefOr[__string] = js.undefined,
+      LastUpdatedTimestamp: js.UndefOr[__string] = js.undefined,
+      LatestVersion: js.UndefOr[__string] = js.undefined,
+      LatestVersionArn: js.UndefOr[__string] = js.undefined,
+      Name: js.UndefOr[__string] = js.undefined): CreateConnectorDefinitionResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Id" -> Id.map { x => x.asInstanceOf[js.Any] },
-        "LatestVersionArn" -> LatestVersionArn.map { x => x.asInstanceOf[js.Any] },
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
-        "LastUpdatedTimestamp" -> LastUpdatedTimestamp.map { x => x.asInstanceOf[js.Any] },
         "Arn" -> Arn.map { x => x.asInstanceOf[js.Any] },
         "CreationTimestamp" -> CreationTimestamp.map { x => x.asInstanceOf[js.Any] },
-        "LatestVersion" -> LatestVersion.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Id" -> Id.map { x => x.asInstanceOf[js.Any] },
+        "LastUpdatedTimestamp" -> LastUpdatedTimestamp.map { x => x.asInstanceOf[js.Any] },
+        "LatestVersion" -> LatestVersion.map { x => x.asInstanceOf[js.Any] },
+        "LatestVersionArn" -> LatestVersionArn.map { x => x.asInstanceOf[js.Any] },
+        "Name" -> Name.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateConnectorDefinitionResponse]
     }
@@ -472,19 +472,19 @@ package greengrass {
 
   @js.native
   trait CreateConnectorDefinitionVersionRequest extends js.Object {
+    var ConnectorDefinitionId: __string
     var AmznClientToken: js.UndefOr[__string]
-    var ConnectorDefinitionId: js.UndefOr[__string]
     var Connectors: js.UndefOr[__listOfConnector]
   }
 
   object CreateConnectorDefinitionVersionRequest {
     def apply(
+      ConnectorDefinitionId: __string,
       AmznClientToken: js.UndefOr[__string] = js.undefined,
-      ConnectorDefinitionId: js.UndefOr[__string] = js.undefined,
       Connectors: js.UndefOr[__listOfConnector] = js.undefined): CreateConnectorDefinitionVersionRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "ConnectorDefinitionId" -> ConnectorDefinitionId.asInstanceOf[js.Any],
         "AmznClientToken" -> AmznClientToken.map { x => x.asInstanceOf[js.Any] },
-        "ConnectorDefinitionId" -> ConnectorDefinitionId.map { x => x.asInstanceOf[js.Any] },
         "Connectors" -> Connectors.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateConnectorDefinitionVersionRequest]
@@ -541,32 +541,32 @@ package greengrass {
 
   @js.native
   trait CreateCoreDefinitionResponse extends js.Object {
-    var Id: js.UndefOr[__string]
-    var LatestVersionArn: js.UndefOr[__string]
-    var Name: js.UndefOr[__string]
-    var LastUpdatedTimestamp: js.UndefOr[__string]
     var Arn: js.UndefOr[__string]
     var CreationTimestamp: js.UndefOr[__string]
+    var Id: js.UndefOr[__string]
+    var LastUpdatedTimestamp: js.UndefOr[__string]
     var LatestVersion: js.UndefOr[__string]
+    var LatestVersionArn: js.UndefOr[__string]
+    var Name: js.UndefOr[__string]
   }
 
   object CreateCoreDefinitionResponse {
     def apply(
-      Id: js.UndefOr[__string] = js.undefined,
-      LatestVersionArn: js.UndefOr[__string] = js.undefined,
-      Name: js.UndefOr[__string] = js.undefined,
-      LastUpdatedTimestamp: js.UndefOr[__string] = js.undefined,
       Arn: js.UndefOr[__string] = js.undefined,
       CreationTimestamp: js.UndefOr[__string] = js.undefined,
-      LatestVersion: js.UndefOr[__string] = js.undefined): CreateCoreDefinitionResponse = {
+      Id: js.UndefOr[__string] = js.undefined,
+      LastUpdatedTimestamp: js.UndefOr[__string] = js.undefined,
+      LatestVersion: js.UndefOr[__string] = js.undefined,
+      LatestVersionArn: js.UndefOr[__string] = js.undefined,
+      Name: js.UndefOr[__string] = js.undefined): CreateCoreDefinitionResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Id" -> Id.map { x => x.asInstanceOf[js.Any] },
-        "LatestVersionArn" -> LatestVersionArn.map { x => x.asInstanceOf[js.Any] },
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
-        "LastUpdatedTimestamp" -> LastUpdatedTimestamp.map { x => x.asInstanceOf[js.Any] },
         "Arn" -> Arn.map { x => x.asInstanceOf[js.Any] },
         "CreationTimestamp" -> CreationTimestamp.map { x => x.asInstanceOf[js.Any] },
-        "LatestVersion" -> LatestVersion.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Id" -> Id.map { x => x.asInstanceOf[js.Any] },
+        "LastUpdatedTimestamp" -> LastUpdatedTimestamp.map { x => x.asInstanceOf[js.Any] },
+        "LatestVersion" -> LatestVersion.map { x => x.asInstanceOf[js.Any] },
+        "LatestVersionArn" -> LatestVersionArn.map { x => x.asInstanceOf[js.Any] },
+        "Name" -> Name.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateCoreDefinitionResponse]
     }
@@ -574,19 +574,19 @@ package greengrass {
 
   @js.native
   trait CreateCoreDefinitionVersionRequest extends js.Object {
+    var CoreDefinitionId: __string
     var AmznClientToken: js.UndefOr[__string]
-    var CoreDefinitionId: js.UndefOr[__string]
     var Cores: js.UndefOr[__listOfCore]
   }
 
   object CreateCoreDefinitionVersionRequest {
     def apply(
+      CoreDefinitionId: __string,
       AmznClientToken: js.UndefOr[__string] = js.undefined,
-      CoreDefinitionId: js.UndefOr[__string] = js.undefined,
       Cores: js.UndefOr[__listOfCore] = js.undefined): CreateCoreDefinitionVersionRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "CoreDefinitionId" -> CoreDefinitionId.asInstanceOf[js.Any],
         "AmznClientToken" -> AmznClientToken.map { x => x.asInstanceOf[js.Any] },
-        "CoreDefinitionId" -> CoreDefinitionId.map { x => x.asInstanceOf[js.Any] },
         "Cores" -> Cores.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateCoreDefinitionVersionRequest]
@@ -619,26 +619,26 @@ package greengrass {
 
   @js.native
   trait CreateDeploymentRequest extends js.Object {
-    var DeploymentType: js.UndefOr[DeploymentType]
-    var GroupId: js.UndefOr[__string]
-    var DeploymentId: js.UndefOr[__string]
-    var GroupVersionId: js.UndefOr[__string]
+    var GroupId: __string
     var AmznClientToken: js.UndefOr[__string]
+    var DeploymentId: js.UndefOr[__string]
+    var DeploymentType: js.UndefOr[DeploymentType]
+    var GroupVersionId: js.UndefOr[__string]
   }
 
   object CreateDeploymentRequest {
     def apply(
-      DeploymentType: js.UndefOr[DeploymentType] = js.undefined,
-      GroupId: js.UndefOr[__string] = js.undefined,
+      GroupId: __string,
+      AmznClientToken: js.UndefOr[__string] = js.undefined,
       DeploymentId: js.UndefOr[__string] = js.undefined,
-      GroupVersionId: js.UndefOr[__string] = js.undefined,
-      AmznClientToken: js.UndefOr[__string] = js.undefined): CreateDeploymentRequest = {
+      DeploymentType: js.UndefOr[DeploymentType] = js.undefined,
+      GroupVersionId: js.UndefOr[__string] = js.undefined): CreateDeploymentRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "DeploymentType" -> DeploymentType.map { x => x.asInstanceOf[js.Any] },
-        "GroupId" -> GroupId.map { x => x.asInstanceOf[js.Any] },
+        "GroupId" -> GroupId.asInstanceOf[js.Any],
+        "AmznClientToken" -> AmznClientToken.map { x => x.asInstanceOf[js.Any] },
         "DeploymentId" -> DeploymentId.map { x => x.asInstanceOf[js.Any] },
-        "GroupVersionId" -> GroupVersionId.map { x => x.asInstanceOf[js.Any] },
-        "AmznClientToken" -> AmznClientToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "DeploymentType" -> DeploymentType.map { x => x.asInstanceOf[js.Any] },
+        "GroupVersionId" -> GroupVersionId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateDeploymentRequest]
     }
@@ -685,32 +685,32 @@ package greengrass {
 
   @js.native
   trait CreateDeviceDefinitionResponse extends js.Object {
-    var Id: js.UndefOr[__string]
-    var LatestVersionArn: js.UndefOr[__string]
-    var Name: js.UndefOr[__string]
-    var LastUpdatedTimestamp: js.UndefOr[__string]
     var Arn: js.UndefOr[__string]
     var CreationTimestamp: js.UndefOr[__string]
+    var Id: js.UndefOr[__string]
+    var LastUpdatedTimestamp: js.UndefOr[__string]
     var LatestVersion: js.UndefOr[__string]
+    var LatestVersionArn: js.UndefOr[__string]
+    var Name: js.UndefOr[__string]
   }
 
   object CreateDeviceDefinitionResponse {
     def apply(
-      Id: js.UndefOr[__string] = js.undefined,
-      LatestVersionArn: js.UndefOr[__string] = js.undefined,
-      Name: js.UndefOr[__string] = js.undefined,
-      LastUpdatedTimestamp: js.UndefOr[__string] = js.undefined,
       Arn: js.UndefOr[__string] = js.undefined,
       CreationTimestamp: js.UndefOr[__string] = js.undefined,
-      LatestVersion: js.UndefOr[__string] = js.undefined): CreateDeviceDefinitionResponse = {
+      Id: js.UndefOr[__string] = js.undefined,
+      LastUpdatedTimestamp: js.UndefOr[__string] = js.undefined,
+      LatestVersion: js.UndefOr[__string] = js.undefined,
+      LatestVersionArn: js.UndefOr[__string] = js.undefined,
+      Name: js.UndefOr[__string] = js.undefined): CreateDeviceDefinitionResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Id" -> Id.map { x => x.asInstanceOf[js.Any] },
-        "LatestVersionArn" -> LatestVersionArn.map { x => x.asInstanceOf[js.Any] },
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
-        "LastUpdatedTimestamp" -> LastUpdatedTimestamp.map { x => x.asInstanceOf[js.Any] },
         "Arn" -> Arn.map { x => x.asInstanceOf[js.Any] },
         "CreationTimestamp" -> CreationTimestamp.map { x => x.asInstanceOf[js.Any] },
-        "LatestVersion" -> LatestVersion.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Id" -> Id.map { x => x.asInstanceOf[js.Any] },
+        "LastUpdatedTimestamp" -> LastUpdatedTimestamp.map { x => x.asInstanceOf[js.Any] },
+        "LatestVersion" -> LatestVersion.map { x => x.asInstanceOf[js.Any] },
+        "LatestVersionArn" -> LatestVersionArn.map { x => x.asInstanceOf[js.Any] },
+        "Name" -> Name.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateDeviceDefinitionResponse]
     }
@@ -718,19 +718,19 @@ package greengrass {
 
   @js.native
   trait CreateDeviceDefinitionVersionRequest extends js.Object {
+    var DeviceDefinitionId: __string
     var AmznClientToken: js.UndefOr[__string]
-    var DeviceDefinitionId: js.UndefOr[__string]
     var Devices: js.UndefOr[__listOfDevice]
   }
 
   object CreateDeviceDefinitionVersionRequest {
     def apply(
+      DeviceDefinitionId: __string,
       AmznClientToken: js.UndefOr[__string] = js.undefined,
-      DeviceDefinitionId: js.UndefOr[__string] = js.undefined,
       Devices: js.UndefOr[__listOfDevice] = js.undefined): CreateDeviceDefinitionVersionRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "DeviceDefinitionId" -> DeviceDefinitionId.asInstanceOf[js.Any],
         "AmznClientToken" -> AmznClientToken.map { x => x.asInstanceOf[js.Any] },
-        "DeviceDefinitionId" -> DeviceDefinitionId.map { x => x.asInstanceOf[js.Any] },
         "Devices" -> Devices.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateDeviceDefinitionVersionRequest]
@@ -784,32 +784,32 @@ package greengrass {
 
   @js.native
   trait CreateFunctionDefinitionResponse extends js.Object {
-    var Id: js.UndefOr[__string]
-    var LatestVersionArn: js.UndefOr[__string]
-    var Name: js.UndefOr[__string]
-    var LastUpdatedTimestamp: js.UndefOr[__string]
     var Arn: js.UndefOr[__string]
     var CreationTimestamp: js.UndefOr[__string]
+    var Id: js.UndefOr[__string]
+    var LastUpdatedTimestamp: js.UndefOr[__string]
     var LatestVersion: js.UndefOr[__string]
+    var LatestVersionArn: js.UndefOr[__string]
+    var Name: js.UndefOr[__string]
   }
 
   object CreateFunctionDefinitionResponse {
     def apply(
-      Id: js.UndefOr[__string] = js.undefined,
-      LatestVersionArn: js.UndefOr[__string] = js.undefined,
-      Name: js.UndefOr[__string] = js.undefined,
-      LastUpdatedTimestamp: js.UndefOr[__string] = js.undefined,
       Arn: js.UndefOr[__string] = js.undefined,
       CreationTimestamp: js.UndefOr[__string] = js.undefined,
-      LatestVersion: js.UndefOr[__string] = js.undefined): CreateFunctionDefinitionResponse = {
+      Id: js.UndefOr[__string] = js.undefined,
+      LastUpdatedTimestamp: js.UndefOr[__string] = js.undefined,
+      LatestVersion: js.UndefOr[__string] = js.undefined,
+      LatestVersionArn: js.UndefOr[__string] = js.undefined,
+      Name: js.UndefOr[__string] = js.undefined): CreateFunctionDefinitionResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Id" -> Id.map { x => x.asInstanceOf[js.Any] },
-        "LatestVersionArn" -> LatestVersionArn.map { x => x.asInstanceOf[js.Any] },
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
-        "LastUpdatedTimestamp" -> LastUpdatedTimestamp.map { x => x.asInstanceOf[js.Any] },
         "Arn" -> Arn.map { x => x.asInstanceOf[js.Any] },
         "CreationTimestamp" -> CreationTimestamp.map { x => x.asInstanceOf[js.Any] },
-        "LatestVersion" -> LatestVersion.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Id" -> Id.map { x => x.asInstanceOf[js.Any] },
+        "LastUpdatedTimestamp" -> LastUpdatedTimestamp.map { x => x.asInstanceOf[js.Any] },
+        "LatestVersion" -> LatestVersion.map { x => x.asInstanceOf[js.Any] },
+        "LatestVersionArn" -> LatestVersionArn.map { x => x.asInstanceOf[js.Any] },
+        "Name" -> Name.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateFunctionDefinitionResponse]
     }
@@ -820,22 +820,22 @@ package greengrass {
    */
   @js.native
   trait CreateFunctionDefinitionVersionRequest extends js.Object {
+    var FunctionDefinitionId: __string
     var AmznClientToken: js.UndefOr[__string]
     var DefaultConfig: js.UndefOr[FunctionDefaultConfig]
-    var FunctionDefinitionId: js.UndefOr[__string]
     var Functions: js.UndefOr[__listOfFunction]
   }
 
   object CreateFunctionDefinitionVersionRequest {
     def apply(
+      FunctionDefinitionId: __string,
       AmznClientToken: js.UndefOr[__string] = js.undefined,
       DefaultConfig: js.UndefOr[FunctionDefaultConfig] = js.undefined,
-      FunctionDefinitionId: js.UndefOr[__string] = js.undefined,
       Functions: js.UndefOr[__listOfFunction] = js.undefined): CreateFunctionDefinitionVersionRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "FunctionDefinitionId" -> FunctionDefinitionId.asInstanceOf[js.Any],
         "AmznClientToken" -> AmznClientToken.map { x => x.asInstanceOf[js.Any] },
         "DefaultConfig" -> DefaultConfig.map { x => x.asInstanceOf[js.Any] },
-        "FunctionDefinitionId" -> FunctionDefinitionId.map { x => x.asInstanceOf[js.Any] },
         "Functions" -> Functions.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateFunctionDefinitionVersionRequest]
@@ -868,17 +868,17 @@ package greengrass {
 
   @js.native
   trait CreateGroupCertificateAuthorityRequest extends js.Object {
+    var GroupId: __string
     var AmznClientToken: js.UndefOr[__string]
-    var GroupId: js.UndefOr[__string]
   }
 
   object CreateGroupCertificateAuthorityRequest {
     def apply(
-      AmznClientToken: js.UndefOr[__string] = js.undefined,
-      GroupId: js.UndefOr[__string] = js.undefined): CreateGroupCertificateAuthorityRequest = {
+      GroupId: __string,
+      AmznClientToken: js.UndefOr[__string] = js.undefined): CreateGroupCertificateAuthorityRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "AmznClientToken" -> AmznClientToken.map { x => x.asInstanceOf[js.Any] },
-        "GroupId" -> GroupId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "GroupId" -> GroupId.asInstanceOf[js.Any],
+        "AmznClientToken" -> AmznClientToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateGroupCertificateAuthorityRequest]
     }
@@ -922,32 +922,32 @@ package greengrass {
 
   @js.native
   trait CreateGroupResponse extends js.Object {
-    var Id: js.UndefOr[__string]
-    var LatestVersionArn: js.UndefOr[__string]
-    var Name: js.UndefOr[__string]
-    var LastUpdatedTimestamp: js.UndefOr[__string]
     var Arn: js.UndefOr[__string]
     var CreationTimestamp: js.UndefOr[__string]
+    var Id: js.UndefOr[__string]
+    var LastUpdatedTimestamp: js.UndefOr[__string]
     var LatestVersion: js.UndefOr[__string]
+    var LatestVersionArn: js.UndefOr[__string]
+    var Name: js.UndefOr[__string]
   }
 
   object CreateGroupResponse {
     def apply(
-      Id: js.UndefOr[__string] = js.undefined,
-      LatestVersionArn: js.UndefOr[__string] = js.undefined,
-      Name: js.UndefOr[__string] = js.undefined,
-      LastUpdatedTimestamp: js.UndefOr[__string] = js.undefined,
       Arn: js.UndefOr[__string] = js.undefined,
       CreationTimestamp: js.UndefOr[__string] = js.undefined,
-      LatestVersion: js.UndefOr[__string] = js.undefined): CreateGroupResponse = {
+      Id: js.UndefOr[__string] = js.undefined,
+      LastUpdatedTimestamp: js.UndefOr[__string] = js.undefined,
+      LatestVersion: js.UndefOr[__string] = js.undefined,
+      LatestVersionArn: js.UndefOr[__string] = js.undefined,
+      Name: js.UndefOr[__string] = js.undefined): CreateGroupResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Id" -> Id.map { x => x.asInstanceOf[js.Any] },
-        "LatestVersionArn" -> LatestVersionArn.map { x => x.asInstanceOf[js.Any] },
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
-        "LastUpdatedTimestamp" -> LastUpdatedTimestamp.map { x => x.asInstanceOf[js.Any] },
         "Arn" -> Arn.map { x => x.asInstanceOf[js.Any] },
         "CreationTimestamp" -> CreationTimestamp.map { x => x.asInstanceOf[js.Any] },
-        "LatestVersion" -> LatestVersion.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Id" -> Id.map { x => x.asInstanceOf[js.Any] },
+        "LastUpdatedTimestamp" -> LastUpdatedTimestamp.map { x => x.asInstanceOf[js.Any] },
+        "LatestVersion" -> LatestVersion.map { x => x.asInstanceOf[js.Any] },
+        "LatestVersionArn" -> LatestVersionArn.map { x => x.asInstanceOf[js.Any] },
+        "Name" -> Name.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateGroupResponse]
     }
@@ -955,38 +955,38 @@ package greengrass {
 
   @js.native
   trait CreateGroupVersionRequest extends js.Object {
-    var FunctionDefinitionVersionArn: js.UndefOr[__string]
-    var SubscriptionDefinitionVersionArn: js.UndefOr[__string]
-    var CoreDefinitionVersionArn: js.UndefOr[__string]
-    var GroupId: js.UndefOr[__string]
-    var ResourceDefinitionVersionArn: js.UndefOr[__string]
-    var ConnectorDefinitionVersionArn: js.UndefOr[__string]
-    var DeviceDefinitionVersionArn: js.UndefOr[__string]
-    var LoggerDefinitionVersionArn: js.UndefOr[__string]
+    var GroupId: __string
     var AmznClientToken: js.UndefOr[__string]
+    var ConnectorDefinitionVersionArn: js.UndefOr[__string]
+    var CoreDefinitionVersionArn: js.UndefOr[__string]
+    var DeviceDefinitionVersionArn: js.UndefOr[__string]
+    var FunctionDefinitionVersionArn: js.UndefOr[__string]
+    var LoggerDefinitionVersionArn: js.UndefOr[__string]
+    var ResourceDefinitionVersionArn: js.UndefOr[__string]
+    var SubscriptionDefinitionVersionArn: js.UndefOr[__string]
   }
 
   object CreateGroupVersionRequest {
     def apply(
-      FunctionDefinitionVersionArn: js.UndefOr[__string] = js.undefined,
-      SubscriptionDefinitionVersionArn: js.UndefOr[__string] = js.undefined,
-      CoreDefinitionVersionArn: js.UndefOr[__string] = js.undefined,
-      GroupId: js.UndefOr[__string] = js.undefined,
-      ResourceDefinitionVersionArn: js.UndefOr[__string] = js.undefined,
+      GroupId: __string,
+      AmznClientToken: js.UndefOr[__string] = js.undefined,
       ConnectorDefinitionVersionArn: js.UndefOr[__string] = js.undefined,
+      CoreDefinitionVersionArn: js.UndefOr[__string] = js.undefined,
       DeviceDefinitionVersionArn: js.UndefOr[__string] = js.undefined,
+      FunctionDefinitionVersionArn: js.UndefOr[__string] = js.undefined,
       LoggerDefinitionVersionArn: js.UndefOr[__string] = js.undefined,
-      AmznClientToken: js.UndefOr[__string] = js.undefined): CreateGroupVersionRequest = {
+      ResourceDefinitionVersionArn: js.UndefOr[__string] = js.undefined,
+      SubscriptionDefinitionVersionArn: js.UndefOr[__string] = js.undefined): CreateGroupVersionRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "FunctionDefinitionVersionArn" -> FunctionDefinitionVersionArn.map { x => x.asInstanceOf[js.Any] },
-        "SubscriptionDefinitionVersionArn" -> SubscriptionDefinitionVersionArn.map { x => x.asInstanceOf[js.Any] },
-        "CoreDefinitionVersionArn" -> CoreDefinitionVersionArn.map { x => x.asInstanceOf[js.Any] },
-        "GroupId" -> GroupId.map { x => x.asInstanceOf[js.Any] },
-        "ResourceDefinitionVersionArn" -> ResourceDefinitionVersionArn.map { x => x.asInstanceOf[js.Any] },
+        "GroupId" -> GroupId.asInstanceOf[js.Any],
+        "AmznClientToken" -> AmznClientToken.map { x => x.asInstanceOf[js.Any] },
         "ConnectorDefinitionVersionArn" -> ConnectorDefinitionVersionArn.map { x => x.asInstanceOf[js.Any] },
+        "CoreDefinitionVersionArn" -> CoreDefinitionVersionArn.map { x => x.asInstanceOf[js.Any] },
         "DeviceDefinitionVersionArn" -> DeviceDefinitionVersionArn.map { x => x.asInstanceOf[js.Any] },
+        "FunctionDefinitionVersionArn" -> FunctionDefinitionVersionArn.map { x => x.asInstanceOf[js.Any] },
         "LoggerDefinitionVersionArn" -> LoggerDefinitionVersionArn.map { x => x.asInstanceOf[js.Any] },
-        "AmznClientToken" -> AmznClientToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ResourceDefinitionVersionArn" -> ResourceDefinitionVersionArn.map { x => x.asInstanceOf[js.Any] },
+        "SubscriptionDefinitionVersionArn" -> SubscriptionDefinitionVersionArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateGroupVersionRequest]
     }
@@ -1039,32 +1039,32 @@ package greengrass {
 
   @js.native
   trait CreateLoggerDefinitionResponse extends js.Object {
-    var Id: js.UndefOr[__string]
-    var LatestVersionArn: js.UndefOr[__string]
-    var Name: js.UndefOr[__string]
-    var LastUpdatedTimestamp: js.UndefOr[__string]
     var Arn: js.UndefOr[__string]
     var CreationTimestamp: js.UndefOr[__string]
+    var Id: js.UndefOr[__string]
+    var LastUpdatedTimestamp: js.UndefOr[__string]
     var LatestVersion: js.UndefOr[__string]
+    var LatestVersionArn: js.UndefOr[__string]
+    var Name: js.UndefOr[__string]
   }
 
   object CreateLoggerDefinitionResponse {
     def apply(
-      Id: js.UndefOr[__string] = js.undefined,
-      LatestVersionArn: js.UndefOr[__string] = js.undefined,
-      Name: js.UndefOr[__string] = js.undefined,
-      LastUpdatedTimestamp: js.UndefOr[__string] = js.undefined,
       Arn: js.UndefOr[__string] = js.undefined,
       CreationTimestamp: js.UndefOr[__string] = js.undefined,
-      LatestVersion: js.UndefOr[__string] = js.undefined): CreateLoggerDefinitionResponse = {
+      Id: js.UndefOr[__string] = js.undefined,
+      LastUpdatedTimestamp: js.UndefOr[__string] = js.undefined,
+      LatestVersion: js.UndefOr[__string] = js.undefined,
+      LatestVersionArn: js.UndefOr[__string] = js.undefined,
+      Name: js.UndefOr[__string] = js.undefined): CreateLoggerDefinitionResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Id" -> Id.map { x => x.asInstanceOf[js.Any] },
-        "LatestVersionArn" -> LatestVersionArn.map { x => x.asInstanceOf[js.Any] },
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
-        "LastUpdatedTimestamp" -> LastUpdatedTimestamp.map { x => x.asInstanceOf[js.Any] },
         "Arn" -> Arn.map { x => x.asInstanceOf[js.Any] },
         "CreationTimestamp" -> CreationTimestamp.map { x => x.asInstanceOf[js.Any] },
-        "LatestVersion" -> LatestVersion.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Id" -> Id.map { x => x.asInstanceOf[js.Any] },
+        "LastUpdatedTimestamp" -> LastUpdatedTimestamp.map { x => x.asInstanceOf[js.Any] },
+        "LatestVersion" -> LatestVersion.map { x => x.asInstanceOf[js.Any] },
+        "LatestVersionArn" -> LatestVersionArn.map { x => x.asInstanceOf[js.Any] },
+        "Name" -> Name.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateLoggerDefinitionResponse]
     }
@@ -1072,19 +1072,19 @@ package greengrass {
 
   @js.native
   trait CreateLoggerDefinitionVersionRequest extends js.Object {
+    var LoggerDefinitionId: __string
     var AmznClientToken: js.UndefOr[__string]
-    var LoggerDefinitionId: js.UndefOr[__string]
     var Loggers: js.UndefOr[__listOfLogger]
   }
 
   object CreateLoggerDefinitionVersionRequest {
     def apply(
+      LoggerDefinitionId: __string,
       AmznClientToken: js.UndefOr[__string] = js.undefined,
-      LoggerDefinitionId: js.UndefOr[__string] = js.undefined,
       Loggers: js.UndefOr[__listOfLogger] = js.undefined): CreateLoggerDefinitionVersionRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "LoggerDefinitionId" -> LoggerDefinitionId.asInstanceOf[js.Any],
         "AmznClientToken" -> AmznClientToken.map { x => x.asInstanceOf[js.Any] },
-        "LoggerDefinitionId" -> LoggerDefinitionId.map { x => x.asInstanceOf[js.Any] },
         "Loggers" -> Loggers.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateLoggerDefinitionVersionRequest]
@@ -1138,32 +1138,32 @@ package greengrass {
 
   @js.native
   trait CreateResourceDefinitionResponse extends js.Object {
-    var Id: js.UndefOr[__string]
-    var LatestVersionArn: js.UndefOr[__string]
-    var Name: js.UndefOr[__string]
-    var LastUpdatedTimestamp: js.UndefOr[__string]
     var Arn: js.UndefOr[__string]
     var CreationTimestamp: js.UndefOr[__string]
+    var Id: js.UndefOr[__string]
+    var LastUpdatedTimestamp: js.UndefOr[__string]
     var LatestVersion: js.UndefOr[__string]
+    var LatestVersionArn: js.UndefOr[__string]
+    var Name: js.UndefOr[__string]
   }
 
   object CreateResourceDefinitionResponse {
     def apply(
-      Id: js.UndefOr[__string] = js.undefined,
-      LatestVersionArn: js.UndefOr[__string] = js.undefined,
-      Name: js.UndefOr[__string] = js.undefined,
-      LastUpdatedTimestamp: js.UndefOr[__string] = js.undefined,
       Arn: js.UndefOr[__string] = js.undefined,
       CreationTimestamp: js.UndefOr[__string] = js.undefined,
-      LatestVersion: js.UndefOr[__string] = js.undefined): CreateResourceDefinitionResponse = {
+      Id: js.UndefOr[__string] = js.undefined,
+      LastUpdatedTimestamp: js.UndefOr[__string] = js.undefined,
+      LatestVersion: js.UndefOr[__string] = js.undefined,
+      LatestVersionArn: js.UndefOr[__string] = js.undefined,
+      Name: js.UndefOr[__string] = js.undefined): CreateResourceDefinitionResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Id" -> Id.map { x => x.asInstanceOf[js.Any] },
-        "LatestVersionArn" -> LatestVersionArn.map { x => x.asInstanceOf[js.Any] },
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
-        "LastUpdatedTimestamp" -> LastUpdatedTimestamp.map { x => x.asInstanceOf[js.Any] },
         "Arn" -> Arn.map { x => x.asInstanceOf[js.Any] },
         "CreationTimestamp" -> CreationTimestamp.map { x => x.asInstanceOf[js.Any] },
-        "LatestVersion" -> LatestVersion.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Id" -> Id.map { x => x.asInstanceOf[js.Any] },
+        "LastUpdatedTimestamp" -> LastUpdatedTimestamp.map { x => x.asInstanceOf[js.Any] },
+        "LatestVersion" -> LatestVersion.map { x => x.asInstanceOf[js.Any] },
+        "LatestVersionArn" -> LatestVersionArn.map { x => x.asInstanceOf[js.Any] },
+        "Name" -> Name.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateResourceDefinitionResponse]
     }
@@ -1171,19 +1171,19 @@ package greengrass {
 
   @js.native
   trait CreateResourceDefinitionVersionRequest extends js.Object {
+    var ResourceDefinitionId: __string
     var AmznClientToken: js.UndefOr[__string]
-    var ResourceDefinitionId: js.UndefOr[__string]
     var Resources: js.UndefOr[__listOfResource]
   }
 
   object CreateResourceDefinitionVersionRequest {
     def apply(
+      ResourceDefinitionId: __string,
       AmznClientToken: js.UndefOr[__string] = js.undefined,
-      ResourceDefinitionId: js.UndefOr[__string] = js.undefined,
       Resources: js.UndefOr[__listOfResource] = js.undefined): CreateResourceDefinitionVersionRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "ResourceDefinitionId" -> ResourceDefinitionId.asInstanceOf[js.Any],
         "AmznClientToken" -> AmznClientToken.map { x => x.asInstanceOf[js.Any] },
-        "ResourceDefinitionId" -> ResourceDefinitionId.map { x => x.asInstanceOf[js.Any] },
         "Resources" -> Resources.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateResourceDefinitionVersionRequest]
@@ -1216,32 +1216,32 @@ package greengrass {
 
   @js.native
   trait CreateSoftwareUpdateJobRequest extends js.Object {
+    var AmznClientToken: js.UndefOr[__string]
+    var S3UrlSignerRole: js.UndefOr[S3UrlSignerRole]
+    var SoftwareToUpdate: js.UndefOr[SoftwareToUpdate]
+    var UpdateAgentLogLevel: js.UndefOr[UpdateAgentLogLevel]
+    var UpdateTargets: js.UndefOr[UpdateTargets]
     var UpdateTargetsArchitecture: js.UndefOr[UpdateTargetsArchitecture]
     var UpdateTargetsOperatingSystem: js.UndefOr[UpdateTargetsOperatingSystem]
-    var S3UrlSignerRole: js.UndefOr[S3UrlSignerRole]
-    var UpdateAgentLogLevel: js.UndefOr[UpdateAgentLogLevel]
-    var AmznClientToken: js.UndefOr[__string]
-    var SoftwareToUpdate: js.UndefOr[SoftwareToUpdate]
-    var UpdateTargets: js.UndefOr[UpdateTargets]
   }
 
   object CreateSoftwareUpdateJobRequest {
     def apply(
-      UpdateTargetsArchitecture: js.UndefOr[UpdateTargetsArchitecture] = js.undefined,
-      UpdateTargetsOperatingSystem: js.UndefOr[UpdateTargetsOperatingSystem] = js.undefined,
-      S3UrlSignerRole: js.UndefOr[S3UrlSignerRole] = js.undefined,
-      UpdateAgentLogLevel: js.UndefOr[UpdateAgentLogLevel] = js.undefined,
       AmznClientToken: js.UndefOr[__string] = js.undefined,
+      S3UrlSignerRole: js.UndefOr[S3UrlSignerRole] = js.undefined,
       SoftwareToUpdate: js.UndefOr[SoftwareToUpdate] = js.undefined,
-      UpdateTargets: js.UndefOr[UpdateTargets] = js.undefined): CreateSoftwareUpdateJobRequest = {
+      UpdateAgentLogLevel: js.UndefOr[UpdateAgentLogLevel] = js.undefined,
+      UpdateTargets: js.UndefOr[UpdateTargets] = js.undefined,
+      UpdateTargetsArchitecture: js.UndefOr[UpdateTargetsArchitecture] = js.undefined,
+      UpdateTargetsOperatingSystem: js.UndefOr[UpdateTargetsOperatingSystem] = js.undefined): CreateSoftwareUpdateJobRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "UpdateTargetsArchitecture" -> UpdateTargetsArchitecture.map { x => x.asInstanceOf[js.Any] },
-        "UpdateTargetsOperatingSystem" -> UpdateTargetsOperatingSystem.map { x => x.asInstanceOf[js.Any] },
-        "S3UrlSignerRole" -> S3UrlSignerRole.map { x => x.asInstanceOf[js.Any] },
-        "UpdateAgentLogLevel" -> UpdateAgentLogLevel.map { x => x.asInstanceOf[js.Any] },
         "AmznClientToken" -> AmznClientToken.map { x => x.asInstanceOf[js.Any] },
+        "S3UrlSignerRole" -> S3UrlSignerRole.map { x => x.asInstanceOf[js.Any] },
         "SoftwareToUpdate" -> SoftwareToUpdate.map { x => x.asInstanceOf[js.Any] },
-        "UpdateTargets" -> UpdateTargets.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "UpdateAgentLogLevel" -> UpdateAgentLogLevel.map { x => x.asInstanceOf[js.Any] },
+        "UpdateTargets" -> UpdateTargets.map { x => x.asInstanceOf[js.Any] },
+        "UpdateTargetsArchitecture" -> UpdateTargetsArchitecture.map { x => x.asInstanceOf[js.Any] },
+        "UpdateTargetsOperatingSystem" -> UpdateTargetsOperatingSystem.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateSoftwareUpdateJobRequest]
     }
@@ -1288,32 +1288,32 @@ package greengrass {
 
   @js.native
   trait CreateSubscriptionDefinitionResponse extends js.Object {
-    var Id: js.UndefOr[__string]
-    var LatestVersionArn: js.UndefOr[__string]
-    var Name: js.UndefOr[__string]
-    var LastUpdatedTimestamp: js.UndefOr[__string]
     var Arn: js.UndefOr[__string]
     var CreationTimestamp: js.UndefOr[__string]
+    var Id: js.UndefOr[__string]
+    var LastUpdatedTimestamp: js.UndefOr[__string]
     var LatestVersion: js.UndefOr[__string]
+    var LatestVersionArn: js.UndefOr[__string]
+    var Name: js.UndefOr[__string]
   }
 
   object CreateSubscriptionDefinitionResponse {
     def apply(
-      Id: js.UndefOr[__string] = js.undefined,
-      LatestVersionArn: js.UndefOr[__string] = js.undefined,
-      Name: js.UndefOr[__string] = js.undefined,
-      LastUpdatedTimestamp: js.UndefOr[__string] = js.undefined,
       Arn: js.UndefOr[__string] = js.undefined,
       CreationTimestamp: js.UndefOr[__string] = js.undefined,
-      LatestVersion: js.UndefOr[__string] = js.undefined): CreateSubscriptionDefinitionResponse = {
+      Id: js.UndefOr[__string] = js.undefined,
+      LastUpdatedTimestamp: js.UndefOr[__string] = js.undefined,
+      LatestVersion: js.UndefOr[__string] = js.undefined,
+      LatestVersionArn: js.UndefOr[__string] = js.undefined,
+      Name: js.UndefOr[__string] = js.undefined): CreateSubscriptionDefinitionResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Id" -> Id.map { x => x.asInstanceOf[js.Any] },
-        "LatestVersionArn" -> LatestVersionArn.map { x => x.asInstanceOf[js.Any] },
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
-        "LastUpdatedTimestamp" -> LastUpdatedTimestamp.map { x => x.asInstanceOf[js.Any] },
         "Arn" -> Arn.map { x => x.asInstanceOf[js.Any] },
         "CreationTimestamp" -> CreationTimestamp.map { x => x.asInstanceOf[js.Any] },
-        "LatestVersion" -> LatestVersion.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Id" -> Id.map { x => x.asInstanceOf[js.Any] },
+        "LastUpdatedTimestamp" -> LastUpdatedTimestamp.map { x => x.asInstanceOf[js.Any] },
+        "LatestVersion" -> LatestVersion.map { x => x.asInstanceOf[js.Any] },
+        "LatestVersionArn" -> LatestVersionArn.map { x => x.asInstanceOf[js.Any] },
+        "Name" -> Name.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateSubscriptionDefinitionResponse]
     }
@@ -1321,19 +1321,19 @@ package greengrass {
 
   @js.native
   trait CreateSubscriptionDefinitionVersionRequest extends js.Object {
+    var SubscriptionDefinitionId: __string
     var AmznClientToken: js.UndefOr[__string]
-    var SubscriptionDefinitionId: js.UndefOr[__string]
     var Subscriptions: js.UndefOr[__listOfSubscription]
   }
 
   object CreateSubscriptionDefinitionVersionRequest {
     def apply(
+      SubscriptionDefinitionId: __string,
       AmznClientToken: js.UndefOr[__string] = js.undefined,
-      SubscriptionDefinitionId: js.UndefOr[__string] = js.undefined,
       Subscriptions: js.UndefOr[__listOfSubscription] = js.undefined): CreateSubscriptionDefinitionVersionRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "SubscriptionDefinitionId" -> SubscriptionDefinitionId.asInstanceOf[js.Any],
         "AmznClientToken" -> AmznClientToken.map { x => x.asInstanceOf[js.Any] },
-        "SubscriptionDefinitionId" -> SubscriptionDefinitionId.map { x => x.asInstanceOf[js.Any] },
         "Subscriptions" -> Subscriptions.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateSubscriptionDefinitionVersionRequest]
@@ -1369,32 +1369,32 @@ package greengrass {
    */
   @js.native
   trait DefinitionInformation extends js.Object {
-    var Id: js.UndefOr[__string]
-    var LatestVersionArn: js.UndefOr[__string]
-    var Name: js.UndefOr[__string]
-    var LastUpdatedTimestamp: js.UndefOr[__string]
     var Arn: js.UndefOr[__string]
     var CreationTimestamp: js.UndefOr[__string]
+    var Id: js.UndefOr[__string]
+    var LastUpdatedTimestamp: js.UndefOr[__string]
     var LatestVersion: js.UndefOr[__string]
+    var LatestVersionArn: js.UndefOr[__string]
+    var Name: js.UndefOr[__string]
   }
 
   object DefinitionInformation {
     def apply(
-      Id: js.UndefOr[__string] = js.undefined,
-      LatestVersionArn: js.UndefOr[__string] = js.undefined,
-      Name: js.UndefOr[__string] = js.undefined,
-      LastUpdatedTimestamp: js.UndefOr[__string] = js.undefined,
       Arn: js.UndefOr[__string] = js.undefined,
       CreationTimestamp: js.UndefOr[__string] = js.undefined,
-      LatestVersion: js.UndefOr[__string] = js.undefined): DefinitionInformation = {
+      Id: js.UndefOr[__string] = js.undefined,
+      LastUpdatedTimestamp: js.UndefOr[__string] = js.undefined,
+      LatestVersion: js.UndefOr[__string] = js.undefined,
+      LatestVersionArn: js.UndefOr[__string] = js.undefined,
+      Name: js.UndefOr[__string] = js.undefined): DefinitionInformation = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Id" -> Id.map { x => x.asInstanceOf[js.Any] },
-        "LatestVersionArn" -> LatestVersionArn.map { x => x.asInstanceOf[js.Any] },
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
-        "LastUpdatedTimestamp" -> LastUpdatedTimestamp.map { x => x.asInstanceOf[js.Any] },
         "Arn" -> Arn.map { x => x.asInstanceOf[js.Any] },
         "CreationTimestamp" -> CreationTimestamp.map { x => x.asInstanceOf[js.Any] },
-        "LatestVersion" -> LatestVersion.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Id" -> Id.map { x => x.asInstanceOf[js.Any] },
+        "LastUpdatedTimestamp" -> LastUpdatedTimestamp.map { x => x.asInstanceOf[js.Any] },
+        "LatestVersion" -> LatestVersion.map { x => x.asInstanceOf[js.Any] },
+        "LatestVersionArn" -> LatestVersionArn.map { x => x.asInstanceOf[js.Any] },
+        "Name" -> Name.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DefinitionInformation]
     }
@@ -1402,14 +1402,14 @@ package greengrass {
 
   @js.native
   trait DeleteConnectorDefinitionRequest extends js.Object {
-    var ConnectorDefinitionId: js.UndefOr[__string]
+    var ConnectorDefinitionId: __string
   }
 
   object DeleteConnectorDefinitionRequest {
     def apply(
-      ConnectorDefinitionId: js.UndefOr[__string] = js.undefined): DeleteConnectorDefinitionRequest = {
+      ConnectorDefinitionId: __string): DeleteConnectorDefinitionRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ConnectorDefinitionId" -> ConnectorDefinitionId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ConnectorDefinitionId" -> ConnectorDefinitionId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteConnectorDefinitionRequest]
     }
@@ -1430,14 +1430,14 @@ package greengrass {
 
   @js.native
   trait DeleteCoreDefinitionRequest extends js.Object {
-    var CoreDefinitionId: js.UndefOr[__string]
+    var CoreDefinitionId: __string
   }
 
   object DeleteCoreDefinitionRequest {
     def apply(
-      CoreDefinitionId: js.UndefOr[__string] = js.undefined): DeleteCoreDefinitionRequest = {
+      CoreDefinitionId: __string): DeleteCoreDefinitionRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "CoreDefinitionId" -> CoreDefinitionId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "CoreDefinitionId" -> CoreDefinitionId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteCoreDefinitionRequest]
     }
@@ -1458,14 +1458,14 @@ package greengrass {
 
   @js.native
   trait DeleteDeviceDefinitionRequest extends js.Object {
-    var DeviceDefinitionId: js.UndefOr[__string]
+    var DeviceDefinitionId: __string
   }
 
   object DeleteDeviceDefinitionRequest {
     def apply(
-      DeviceDefinitionId: js.UndefOr[__string] = js.undefined): DeleteDeviceDefinitionRequest = {
+      DeviceDefinitionId: __string): DeleteDeviceDefinitionRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "DeviceDefinitionId" -> DeviceDefinitionId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "DeviceDefinitionId" -> DeviceDefinitionId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteDeviceDefinitionRequest]
     }
@@ -1486,14 +1486,14 @@ package greengrass {
 
   @js.native
   trait DeleteFunctionDefinitionRequest extends js.Object {
-    var FunctionDefinitionId: js.UndefOr[__string]
+    var FunctionDefinitionId: __string
   }
 
   object DeleteFunctionDefinitionRequest {
     def apply(
-      FunctionDefinitionId: js.UndefOr[__string] = js.undefined): DeleteFunctionDefinitionRequest = {
+      FunctionDefinitionId: __string): DeleteFunctionDefinitionRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "FunctionDefinitionId" -> FunctionDefinitionId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "FunctionDefinitionId" -> FunctionDefinitionId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteFunctionDefinitionRequest]
     }
@@ -1514,14 +1514,14 @@ package greengrass {
 
   @js.native
   trait DeleteGroupRequest extends js.Object {
-    var GroupId: js.UndefOr[__string]
+    var GroupId: __string
   }
 
   object DeleteGroupRequest {
     def apply(
-      GroupId: js.UndefOr[__string] = js.undefined): DeleteGroupRequest = {
+      GroupId: __string): DeleteGroupRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "GroupId" -> GroupId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "GroupId" -> GroupId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteGroupRequest]
     }
@@ -1542,14 +1542,14 @@ package greengrass {
 
   @js.native
   trait DeleteLoggerDefinitionRequest extends js.Object {
-    var LoggerDefinitionId: js.UndefOr[__string]
+    var LoggerDefinitionId: __string
   }
 
   object DeleteLoggerDefinitionRequest {
     def apply(
-      LoggerDefinitionId: js.UndefOr[__string] = js.undefined): DeleteLoggerDefinitionRequest = {
+      LoggerDefinitionId: __string): DeleteLoggerDefinitionRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "LoggerDefinitionId" -> LoggerDefinitionId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "LoggerDefinitionId" -> LoggerDefinitionId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteLoggerDefinitionRequest]
     }
@@ -1570,14 +1570,14 @@ package greengrass {
 
   @js.native
   trait DeleteResourceDefinitionRequest extends js.Object {
-    var ResourceDefinitionId: js.UndefOr[__string]
+    var ResourceDefinitionId: __string
   }
 
   object DeleteResourceDefinitionRequest {
     def apply(
-      ResourceDefinitionId: js.UndefOr[__string] = js.undefined): DeleteResourceDefinitionRequest = {
+      ResourceDefinitionId: __string): DeleteResourceDefinitionRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ResourceDefinitionId" -> ResourceDefinitionId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ResourceDefinitionId" -> ResourceDefinitionId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteResourceDefinitionRequest]
     }
@@ -1598,14 +1598,14 @@ package greengrass {
 
   @js.native
   trait DeleteSubscriptionDefinitionRequest extends js.Object {
-    var SubscriptionDefinitionId: js.UndefOr[__string]
+    var SubscriptionDefinitionId: __string
   }
 
   object DeleteSubscriptionDefinitionRequest {
     def apply(
-      SubscriptionDefinitionId: js.UndefOr[__string] = js.undefined): DeleteSubscriptionDefinitionRequest = {
+      SubscriptionDefinitionId: __string): DeleteSubscriptionDefinitionRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "SubscriptionDefinitionId" -> SubscriptionDefinitionId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "SubscriptionDefinitionId" -> SubscriptionDefinitionId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteSubscriptionDefinitionRequest]
     }
@@ -1629,26 +1629,26 @@ package greengrass {
    */
   @js.native
   trait Deployment extends js.Object {
-    var GroupArn: js.UndefOr[__string]
-    var DeploymentType: js.UndefOr[DeploymentType]
+    var CreatedAt: js.UndefOr[__string]
     var DeploymentArn: js.UndefOr[__string]
     var DeploymentId: js.UndefOr[__string]
-    var CreatedAt: js.UndefOr[__string]
+    var DeploymentType: js.UndefOr[DeploymentType]
+    var GroupArn: js.UndefOr[__string]
   }
 
   object Deployment {
     def apply(
-      GroupArn: js.UndefOr[__string] = js.undefined,
-      DeploymentType: js.UndefOr[DeploymentType] = js.undefined,
+      CreatedAt: js.UndefOr[__string] = js.undefined,
       DeploymentArn: js.UndefOr[__string] = js.undefined,
       DeploymentId: js.UndefOr[__string] = js.undefined,
-      CreatedAt: js.UndefOr[__string] = js.undefined): Deployment = {
+      DeploymentType: js.UndefOr[DeploymentType] = js.undefined,
+      GroupArn: js.UndefOr[__string] = js.undefined): Deployment = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "GroupArn" -> GroupArn.map { x => x.asInstanceOf[js.Any] },
-        "DeploymentType" -> DeploymentType.map { x => x.asInstanceOf[js.Any] },
+        "CreatedAt" -> CreatedAt.map { x => x.asInstanceOf[js.Any] },
         "DeploymentArn" -> DeploymentArn.map { x => x.asInstanceOf[js.Any] },
         "DeploymentId" -> DeploymentId.map { x => x.asInstanceOf[js.Any] },
-        "CreatedAt" -> CreatedAt.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "DeploymentType" -> DeploymentType.map { x => x.asInstanceOf[js.Any] },
+        "GroupArn" -> GroupArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Deployment]
     }
@@ -1713,14 +1713,14 @@ package greengrass {
 
   @js.native
   trait DisassociateRoleFromGroupRequest extends js.Object {
-    var GroupId: js.UndefOr[__string]
+    var GroupId: __string
   }
 
   object DisassociateRoleFromGroupRequest {
     def apply(
-      GroupId: js.UndefOr[__string] = js.undefined): DisassociateRoleFromGroupRequest = {
+      GroupId: __string): DisassociateRoleFromGroupRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "GroupId" -> GroupId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "GroupId" -> GroupId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DisassociateRoleFromGroupRequest]
     }
@@ -1826,31 +1826,31 @@ package greengrass {
    */
   @js.native
   trait FunctionConfiguration extends js.Object {
+    var EncodingType: js.UndefOr[EncodingType]
     var Environment: js.UndefOr[FunctionConfigurationEnvironment]
     var ExecArgs: js.UndefOr[__string]
-    var Pinned: js.UndefOr[__boolean]
-    var MemorySize: js.UndefOr[__integer]
-    var EncodingType: js.UndefOr[EncodingType]
     var Executable: js.UndefOr[__string]
+    var MemorySize: js.UndefOr[__integer]
+    var Pinned: js.UndefOr[__boolean]
     var Timeout: js.UndefOr[__integer]
   }
 
   object FunctionConfiguration {
     def apply(
+      EncodingType: js.UndefOr[EncodingType] = js.undefined,
       Environment: js.UndefOr[FunctionConfigurationEnvironment] = js.undefined,
       ExecArgs: js.UndefOr[__string] = js.undefined,
-      Pinned: js.UndefOr[__boolean] = js.undefined,
-      MemorySize: js.UndefOr[__integer] = js.undefined,
-      EncodingType: js.UndefOr[EncodingType] = js.undefined,
       Executable: js.UndefOr[__string] = js.undefined,
+      MemorySize: js.UndefOr[__integer] = js.undefined,
+      Pinned: js.UndefOr[__boolean] = js.undefined,
       Timeout: js.UndefOr[__integer] = js.undefined): FunctionConfiguration = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "EncodingType" -> EncodingType.map { x => x.asInstanceOf[js.Any] },
         "Environment" -> Environment.map { x => x.asInstanceOf[js.Any] },
         "ExecArgs" -> ExecArgs.map { x => x.asInstanceOf[js.Any] },
-        "Pinned" -> Pinned.map { x => x.asInstanceOf[js.Any] },
-        "MemorySize" -> MemorySize.map { x => x.asInstanceOf[js.Any] },
-        "EncodingType" -> EncodingType.map { x => x.asInstanceOf[js.Any] },
         "Executable" -> Executable.map { x => x.asInstanceOf[js.Any] },
+        "MemorySize" -> MemorySize.map { x => x.asInstanceOf[js.Any] },
+        "Pinned" -> Pinned.map { x => x.asInstanceOf[js.Any] },
         "Timeout" -> Timeout.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[FunctionConfiguration]
@@ -1995,14 +1995,14 @@ package greengrass {
 
   @js.native
   trait GetAssociatedRoleRequest extends js.Object {
-    var GroupId: js.UndefOr[__string]
+    var GroupId: __string
   }
 
   object GetAssociatedRoleRequest {
     def apply(
-      GroupId: js.UndefOr[__string] = js.undefined): GetAssociatedRoleRequest = {
+      GroupId: __string): GetAssociatedRoleRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "GroupId" -> GroupId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "GroupId" -> GroupId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetAssociatedRoleRequest]
     }
@@ -2028,14 +2028,14 @@ package greengrass {
 
   @js.native
   trait GetBulkDeploymentStatusRequest extends js.Object {
-    var BulkDeploymentId: js.UndefOr[__string]
+    var BulkDeploymentId: __string
   }
 
   object GetBulkDeploymentStatusRequest {
     def apply(
-      BulkDeploymentId: js.UndefOr[__string] = js.undefined): GetBulkDeploymentStatusRequest = {
+      BulkDeploymentId: __string): GetBulkDeploymentStatusRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "BulkDeploymentId" -> BulkDeploymentId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "BulkDeploymentId" -> BulkDeploymentId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetBulkDeploymentStatusRequest]
     }
@@ -2043,25 +2043,25 @@ package greengrass {
 
   @js.native
   trait GetBulkDeploymentStatusResponse extends js.Object {
-    var BulkDeploymentStatus: js.UndefOr[BulkDeploymentStatus]
-    var ErrorDetails: js.UndefOr[ErrorDetails]
-    var CreatedAt: js.UndefOr[__string]
     var BulkDeploymentMetrics: js.UndefOr[BulkDeploymentMetrics]
+    var BulkDeploymentStatus: js.UndefOr[BulkDeploymentStatus]
+    var CreatedAt: js.UndefOr[__string]
+    var ErrorDetails: js.UndefOr[ErrorDetails]
     var ErrorMessage: js.UndefOr[__string]
   }
 
   object GetBulkDeploymentStatusResponse {
     def apply(
-      BulkDeploymentStatus: js.UndefOr[BulkDeploymentStatus] = js.undefined,
-      ErrorDetails: js.UndefOr[ErrorDetails] = js.undefined,
-      CreatedAt: js.UndefOr[__string] = js.undefined,
       BulkDeploymentMetrics: js.UndefOr[BulkDeploymentMetrics] = js.undefined,
+      BulkDeploymentStatus: js.UndefOr[BulkDeploymentStatus] = js.undefined,
+      CreatedAt: js.UndefOr[__string] = js.undefined,
+      ErrorDetails: js.UndefOr[ErrorDetails] = js.undefined,
       ErrorMessage: js.UndefOr[__string] = js.undefined): GetBulkDeploymentStatusResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "BulkDeploymentStatus" -> BulkDeploymentStatus.map { x => x.asInstanceOf[js.Any] },
-        "ErrorDetails" -> ErrorDetails.map { x => x.asInstanceOf[js.Any] },
-        "CreatedAt" -> CreatedAt.map { x => x.asInstanceOf[js.Any] },
         "BulkDeploymentMetrics" -> BulkDeploymentMetrics.map { x => x.asInstanceOf[js.Any] },
+        "BulkDeploymentStatus" -> BulkDeploymentStatus.map { x => x.asInstanceOf[js.Any] },
+        "CreatedAt" -> CreatedAt.map { x => x.asInstanceOf[js.Any] },
+        "ErrorDetails" -> ErrorDetails.map { x => x.asInstanceOf[js.Any] },
         "ErrorMessage" -> ErrorMessage.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetBulkDeploymentStatusResponse]
@@ -2070,14 +2070,14 @@ package greengrass {
 
   @js.native
   trait GetConnectivityInfoRequest extends js.Object {
-    var ThingName: js.UndefOr[__string]
+    var ThingName: __string
   }
 
   object GetConnectivityInfoRequest {
     def apply(
-      ThingName: js.UndefOr[__string] = js.undefined): GetConnectivityInfoRequest = {
+      ThingName: __string): GetConnectivityInfoRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ThingName" -> ThingName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ThingName" -> ThingName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetConnectivityInfoRequest]
     }
@@ -2103,14 +2103,14 @@ package greengrass {
 
   @js.native
   trait GetConnectorDefinitionRequest extends js.Object {
-    var ConnectorDefinitionId: js.UndefOr[__string]
+    var ConnectorDefinitionId: __string
   }
 
   object GetConnectorDefinitionRequest {
     def apply(
-      ConnectorDefinitionId: js.UndefOr[__string] = js.undefined): GetConnectorDefinitionRequest = {
+      ConnectorDefinitionId: __string): GetConnectorDefinitionRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ConnectorDefinitionId" -> ConnectorDefinitionId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ConnectorDefinitionId" -> ConnectorDefinitionId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetConnectorDefinitionRequest]
     }
@@ -2118,32 +2118,32 @@ package greengrass {
 
   @js.native
   trait GetConnectorDefinitionResponse extends js.Object {
-    var Id: js.UndefOr[__string]
-    var LatestVersionArn: js.UndefOr[__string]
-    var Name: js.UndefOr[__string]
-    var LastUpdatedTimestamp: js.UndefOr[__string]
     var Arn: js.UndefOr[__string]
     var CreationTimestamp: js.UndefOr[__string]
+    var Id: js.UndefOr[__string]
+    var LastUpdatedTimestamp: js.UndefOr[__string]
     var LatestVersion: js.UndefOr[__string]
+    var LatestVersionArn: js.UndefOr[__string]
+    var Name: js.UndefOr[__string]
   }
 
   object GetConnectorDefinitionResponse {
     def apply(
-      Id: js.UndefOr[__string] = js.undefined,
-      LatestVersionArn: js.UndefOr[__string] = js.undefined,
-      Name: js.UndefOr[__string] = js.undefined,
-      LastUpdatedTimestamp: js.UndefOr[__string] = js.undefined,
       Arn: js.UndefOr[__string] = js.undefined,
       CreationTimestamp: js.UndefOr[__string] = js.undefined,
-      LatestVersion: js.UndefOr[__string] = js.undefined): GetConnectorDefinitionResponse = {
+      Id: js.UndefOr[__string] = js.undefined,
+      LastUpdatedTimestamp: js.UndefOr[__string] = js.undefined,
+      LatestVersion: js.UndefOr[__string] = js.undefined,
+      LatestVersionArn: js.UndefOr[__string] = js.undefined,
+      Name: js.UndefOr[__string] = js.undefined): GetConnectorDefinitionResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Id" -> Id.map { x => x.asInstanceOf[js.Any] },
-        "LatestVersionArn" -> LatestVersionArn.map { x => x.asInstanceOf[js.Any] },
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
-        "LastUpdatedTimestamp" -> LastUpdatedTimestamp.map { x => x.asInstanceOf[js.Any] },
         "Arn" -> Arn.map { x => x.asInstanceOf[js.Any] },
         "CreationTimestamp" -> CreationTimestamp.map { x => x.asInstanceOf[js.Any] },
-        "LatestVersion" -> LatestVersion.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Id" -> Id.map { x => x.asInstanceOf[js.Any] },
+        "LastUpdatedTimestamp" -> LastUpdatedTimestamp.map { x => x.asInstanceOf[js.Any] },
+        "LatestVersion" -> LatestVersion.map { x => x.asInstanceOf[js.Any] },
+        "LatestVersionArn" -> LatestVersionArn.map { x => x.asInstanceOf[js.Any] },
+        "Name" -> Name.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetConnectorDefinitionResponse]
     }
@@ -2151,19 +2151,19 @@ package greengrass {
 
   @js.native
   trait GetConnectorDefinitionVersionRequest extends js.Object {
-    var ConnectorDefinitionId: js.UndefOr[__string]
-    var ConnectorDefinitionVersionId: js.UndefOr[__string]
+    var ConnectorDefinitionId: __string
+    var ConnectorDefinitionVersionId: __string
     var NextToken: js.UndefOr[__string]
   }
 
   object GetConnectorDefinitionVersionRequest {
     def apply(
-      ConnectorDefinitionId: js.UndefOr[__string] = js.undefined,
-      ConnectorDefinitionVersionId: js.UndefOr[__string] = js.undefined,
+      ConnectorDefinitionId: __string,
+      ConnectorDefinitionVersionId: __string,
       NextToken: js.UndefOr[__string] = js.undefined): GetConnectorDefinitionVersionRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ConnectorDefinitionId" -> ConnectorDefinitionId.map { x => x.asInstanceOf[js.Any] },
-        "ConnectorDefinitionVersionId" -> ConnectorDefinitionVersionId.map { x => x.asInstanceOf[js.Any] },
+        "ConnectorDefinitionId" -> ConnectorDefinitionId.asInstanceOf[js.Any],
+        "ConnectorDefinitionVersionId" -> ConnectorDefinitionVersionId.asInstanceOf[js.Any],
         "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetConnectorDefinitionVersionRequest]
@@ -2172,29 +2172,29 @@ package greengrass {
 
   @js.native
   trait GetConnectorDefinitionVersionResponse extends js.Object {
-    var Id: js.UndefOr[__string]
-    var Version: js.UndefOr[__string]
-    var Definition: js.UndefOr[ConnectorDefinitionVersion]
     var Arn: js.UndefOr[__string]
     var CreationTimestamp: js.UndefOr[__string]
+    var Definition: js.UndefOr[ConnectorDefinitionVersion]
+    var Id: js.UndefOr[__string]
     var NextToken: js.UndefOr[__string]
+    var Version: js.UndefOr[__string]
   }
 
   object GetConnectorDefinitionVersionResponse {
     def apply(
-      Id: js.UndefOr[__string] = js.undefined,
-      Version: js.UndefOr[__string] = js.undefined,
-      Definition: js.UndefOr[ConnectorDefinitionVersion] = js.undefined,
       Arn: js.UndefOr[__string] = js.undefined,
       CreationTimestamp: js.UndefOr[__string] = js.undefined,
-      NextToken: js.UndefOr[__string] = js.undefined): GetConnectorDefinitionVersionResponse = {
+      Definition: js.UndefOr[ConnectorDefinitionVersion] = js.undefined,
+      Id: js.UndefOr[__string] = js.undefined,
+      NextToken: js.UndefOr[__string] = js.undefined,
+      Version: js.UndefOr[__string] = js.undefined): GetConnectorDefinitionVersionResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Id" -> Id.map { x => x.asInstanceOf[js.Any] },
-        "Version" -> Version.map { x => x.asInstanceOf[js.Any] },
-        "Definition" -> Definition.map { x => x.asInstanceOf[js.Any] },
         "Arn" -> Arn.map { x => x.asInstanceOf[js.Any] },
         "CreationTimestamp" -> CreationTimestamp.map { x => x.asInstanceOf[js.Any] },
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Definition" -> Definition.map { x => x.asInstanceOf[js.Any] },
+        "Id" -> Id.map { x => x.asInstanceOf[js.Any] },
+        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
+        "Version" -> Version.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetConnectorDefinitionVersionResponse]
     }
@@ -2202,14 +2202,14 @@ package greengrass {
 
   @js.native
   trait GetCoreDefinitionRequest extends js.Object {
-    var CoreDefinitionId: js.UndefOr[__string]
+    var CoreDefinitionId: __string
   }
 
   object GetCoreDefinitionRequest {
     def apply(
-      CoreDefinitionId: js.UndefOr[__string] = js.undefined): GetCoreDefinitionRequest = {
+      CoreDefinitionId: __string): GetCoreDefinitionRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "CoreDefinitionId" -> CoreDefinitionId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "CoreDefinitionId" -> CoreDefinitionId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetCoreDefinitionRequest]
     }
@@ -2217,32 +2217,32 @@ package greengrass {
 
   @js.native
   trait GetCoreDefinitionResponse extends js.Object {
-    var Id: js.UndefOr[__string]
-    var LatestVersionArn: js.UndefOr[__string]
-    var Name: js.UndefOr[__string]
-    var LastUpdatedTimestamp: js.UndefOr[__string]
     var Arn: js.UndefOr[__string]
     var CreationTimestamp: js.UndefOr[__string]
+    var Id: js.UndefOr[__string]
+    var LastUpdatedTimestamp: js.UndefOr[__string]
     var LatestVersion: js.UndefOr[__string]
+    var LatestVersionArn: js.UndefOr[__string]
+    var Name: js.UndefOr[__string]
   }
 
   object GetCoreDefinitionResponse {
     def apply(
-      Id: js.UndefOr[__string] = js.undefined,
-      LatestVersionArn: js.UndefOr[__string] = js.undefined,
-      Name: js.UndefOr[__string] = js.undefined,
-      LastUpdatedTimestamp: js.UndefOr[__string] = js.undefined,
       Arn: js.UndefOr[__string] = js.undefined,
       CreationTimestamp: js.UndefOr[__string] = js.undefined,
-      LatestVersion: js.UndefOr[__string] = js.undefined): GetCoreDefinitionResponse = {
+      Id: js.UndefOr[__string] = js.undefined,
+      LastUpdatedTimestamp: js.UndefOr[__string] = js.undefined,
+      LatestVersion: js.UndefOr[__string] = js.undefined,
+      LatestVersionArn: js.UndefOr[__string] = js.undefined,
+      Name: js.UndefOr[__string] = js.undefined): GetCoreDefinitionResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Id" -> Id.map { x => x.asInstanceOf[js.Any] },
-        "LatestVersionArn" -> LatestVersionArn.map { x => x.asInstanceOf[js.Any] },
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
-        "LastUpdatedTimestamp" -> LastUpdatedTimestamp.map { x => x.asInstanceOf[js.Any] },
         "Arn" -> Arn.map { x => x.asInstanceOf[js.Any] },
         "CreationTimestamp" -> CreationTimestamp.map { x => x.asInstanceOf[js.Any] },
-        "LatestVersion" -> LatestVersion.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Id" -> Id.map { x => x.asInstanceOf[js.Any] },
+        "LastUpdatedTimestamp" -> LastUpdatedTimestamp.map { x => x.asInstanceOf[js.Any] },
+        "LatestVersion" -> LatestVersion.map { x => x.asInstanceOf[js.Any] },
+        "LatestVersionArn" -> LatestVersionArn.map { x => x.asInstanceOf[js.Any] },
+        "Name" -> Name.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetCoreDefinitionResponse]
     }
@@ -2250,17 +2250,17 @@ package greengrass {
 
   @js.native
   trait GetCoreDefinitionVersionRequest extends js.Object {
-    var CoreDefinitionId: js.UndefOr[__string]
-    var CoreDefinitionVersionId: js.UndefOr[__string]
+    var CoreDefinitionId: __string
+    var CoreDefinitionVersionId: __string
   }
 
   object GetCoreDefinitionVersionRequest {
     def apply(
-      CoreDefinitionId: js.UndefOr[__string] = js.undefined,
-      CoreDefinitionVersionId: js.UndefOr[__string] = js.undefined): GetCoreDefinitionVersionRequest = {
+      CoreDefinitionId: __string,
+      CoreDefinitionVersionId: __string): GetCoreDefinitionVersionRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "CoreDefinitionId" -> CoreDefinitionId.map { x => x.asInstanceOf[js.Any] },
-        "CoreDefinitionVersionId" -> CoreDefinitionVersionId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "CoreDefinitionId" -> CoreDefinitionId.asInstanceOf[js.Any],
+        "CoreDefinitionVersionId" -> CoreDefinitionVersionId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetCoreDefinitionVersionRequest]
     }
@@ -2268,29 +2268,29 @@ package greengrass {
 
   @js.native
   trait GetCoreDefinitionVersionResponse extends js.Object {
-    var Id: js.UndefOr[__string]
-    var Version: js.UndefOr[__string]
-    var Definition: js.UndefOr[CoreDefinitionVersion]
     var Arn: js.UndefOr[__string]
     var CreationTimestamp: js.UndefOr[__string]
+    var Definition: js.UndefOr[CoreDefinitionVersion]
+    var Id: js.UndefOr[__string]
     var NextToken: js.UndefOr[__string]
+    var Version: js.UndefOr[__string]
   }
 
   object GetCoreDefinitionVersionResponse {
     def apply(
-      Id: js.UndefOr[__string] = js.undefined,
-      Version: js.UndefOr[__string] = js.undefined,
-      Definition: js.UndefOr[CoreDefinitionVersion] = js.undefined,
       Arn: js.UndefOr[__string] = js.undefined,
       CreationTimestamp: js.UndefOr[__string] = js.undefined,
-      NextToken: js.UndefOr[__string] = js.undefined): GetCoreDefinitionVersionResponse = {
+      Definition: js.UndefOr[CoreDefinitionVersion] = js.undefined,
+      Id: js.UndefOr[__string] = js.undefined,
+      NextToken: js.UndefOr[__string] = js.undefined,
+      Version: js.UndefOr[__string] = js.undefined): GetCoreDefinitionVersionResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Id" -> Id.map { x => x.asInstanceOf[js.Any] },
-        "Version" -> Version.map { x => x.asInstanceOf[js.Any] },
-        "Definition" -> Definition.map { x => x.asInstanceOf[js.Any] },
         "Arn" -> Arn.map { x => x.asInstanceOf[js.Any] },
         "CreationTimestamp" -> CreationTimestamp.map { x => x.asInstanceOf[js.Any] },
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Definition" -> Definition.map { x => x.asInstanceOf[js.Any] },
+        "Id" -> Id.map { x => x.asInstanceOf[js.Any] },
+        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
+        "Version" -> Version.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetCoreDefinitionVersionResponse]
     }
@@ -2298,17 +2298,17 @@ package greengrass {
 
   @js.native
   trait GetDeploymentStatusRequest extends js.Object {
-    var DeploymentId: js.UndefOr[__string]
-    var GroupId: js.UndefOr[__string]
+    var DeploymentId: __string
+    var GroupId: __string
   }
 
   object GetDeploymentStatusRequest {
     def apply(
-      DeploymentId: js.UndefOr[__string] = js.undefined,
-      GroupId: js.UndefOr[__string] = js.undefined): GetDeploymentStatusRequest = {
+      DeploymentId: __string,
+      GroupId: __string): GetDeploymentStatusRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "DeploymentId" -> DeploymentId.map { x => x.asInstanceOf[js.Any] },
-        "GroupId" -> GroupId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "DeploymentId" -> DeploymentId.asInstanceOf[js.Any],
+        "GroupId" -> GroupId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetDeploymentStatusRequest]
     }
@@ -2316,26 +2316,26 @@ package greengrass {
 
   @js.native
   trait GetDeploymentStatusResponse extends js.Object {
-    var UpdatedAt: js.UndefOr[__string]
+    var DeploymentStatus: js.UndefOr[__string]
     var DeploymentType: js.UndefOr[DeploymentType]
     var ErrorDetails: js.UndefOr[ErrorDetails]
-    var DeploymentStatus: js.UndefOr[__string]
     var ErrorMessage: js.UndefOr[__string]
+    var UpdatedAt: js.UndefOr[__string]
   }
 
   object GetDeploymentStatusResponse {
     def apply(
-      UpdatedAt: js.UndefOr[__string] = js.undefined,
+      DeploymentStatus: js.UndefOr[__string] = js.undefined,
       DeploymentType: js.UndefOr[DeploymentType] = js.undefined,
       ErrorDetails: js.UndefOr[ErrorDetails] = js.undefined,
-      DeploymentStatus: js.UndefOr[__string] = js.undefined,
-      ErrorMessage: js.UndefOr[__string] = js.undefined): GetDeploymentStatusResponse = {
+      ErrorMessage: js.UndefOr[__string] = js.undefined,
+      UpdatedAt: js.UndefOr[__string] = js.undefined): GetDeploymentStatusResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "UpdatedAt" -> UpdatedAt.map { x => x.asInstanceOf[js.Any] },
+        "DeploymentStatus" -> DeploymentStatus.map { x => x.asInstanceOf[js.Any] },
         "DeploymentType" -> DeploymentType.map { x => x.asInstanceOf[js.Any] },
         "ErrorDetails" -> ErrorDetails.map { x => x.asInstanceOf[js.Any] },
-        "DeploymentStatus" -> DeploymentStatus.map { x => x.asInstanceOf[js.Any] },
-        "ErrorMessage" -> ErrorMessage.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ErrorMessage" -> ErrorMessage.map { x => x.asInstanceOf[js.Any] },
+        "UpdatedAt" -> UpdatedAt.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetDeploymentStatusResponse]
     }
@@ -2343,14 +2343,14 @@ package greengrass {
 
   @js.native
   trait GetDeviceDefinitionRequest extends js.Object {
-    var DeviceDefinitionId: js.UndefOr[__string]
+    var DeviceDefinitionId: __string
   }
 
   object GetDeviceDefinitionRequest {
     def apply(
-      DeviceDefinitionId: js.UndefOr[__string] = js.undefined): GetDeviceDefinitionRequest = {
+      DeviceDefinitionId: __string): GetDeviceDefinitionRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "DeviceDefinitionId" -> DeviceDefinitionId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "DeviceDefinitionId" -> DeviceDefinitionId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetDeviceDefinitionRequest]
     }
@@ -2358,32 +2358,32 @@ package greengrass {
 
   @js.native
   trait GetDeviceDefinitionResponse extends js.Object {
-    var Id: js.UndefOr[__string]
-    var LatestVersionArn: js.UndefOr[__string]
-    var Name: js.UndefOr[__string]
-    var LastUpdatedTimestamp: js.UndefOr[__string]
     var Arn: js.UndefOr[__string]
     var CreationTimestamp: js.UndefOr[__string]
+    var Id: js.UndefOr[__string]
+    var LastUpdatedTimestamp: js.UndefOr[__string]
     var LatestVersion: js.UndefOr[__string]
+    var LatestVersionArn: js.UndefOr[__string]
+    var Name: js.UndefOr[__string]
   }
 
   object GetDeviceDefinitionResponse {
     def apply(
-      Id: js.UndefOr[__string] = js.undefined,
-      LatestVersionArn: js.UndefOr[__string] = js.undefined,
-      Name: js.UndefOr[__string] = js.undefined,
-      LastUpdatedTimestamp: js.UndefOr[__string] = js.undefined,
       Arn: js.UndefOr[__string] = js.undefined,
       CreationTimestamp: js.UndefOr[__string] = js.undefined,
-      LatestVersion: js.UndefOr[__string] = js.undefined): GetDeviceDefinitionResponse = {
+      Id: js.UndefOr[__string] = js.undefined,
+      LastUpdatedTimestamp: js.UndefOr[__string] = js.undefined,
+      LatestVersion: js.UndefOr[__string] = js.undefined,
+      LatestVersionArn: js.UndefOr[__string] = js.undefined,
+      Name: js.UndefOr[__string] = js.undefined): GetDeviceDefinitionResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Id" -> Id.map { x => x.asInstanceOf[js.Any] },
-        "LatestVersionArn" -> LatestVersionArn.map { x => x.asInstanceOf[js.Any] },
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
-        "LastUpdatedTimestamp" -> LastUpdatedTimestamp.map { x => x.asInstanceOf[js.Any] },
         "Arn" -> Arn.map { x => x.asInstanceOf[js.Any] },
         "CreationTimestamp" -> CreationTimestamp.map { x => x.asInstanceOf[js.Any] },
-        "LatestVersion" -> LatestVersion.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Id" -> Id.map { x => x.asInstanceOf[js.Any] },
+        "LastUpdatedTimestamp" -> LastUpdatedTimestamp.map { x => x.asInstanceOf[js.Any] },
+        "LatestVersion" -> LatestVersion.map { x => x.asInstanceOf[js.Any] },
+        "LatestVersionArn" -> LatestVersionArn.map { x => x.asInstanceOf[js.Any] },
+        "Name" -> Name.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetDeviceDefinitionResponse]
     }
@@ -2391,19 +2391,19 @@ package greengrass {
 
   @js.native
   trait GetDeviceDefinitionVersionRequest extends js.Object {
-    var DeviceDefinitionId: js.UndefOr[__string]
-    var DeviceDefinitionVersionId: js.UndefOr[__string]
+    var DeviceDefinitionId: __string
+    var DeviceDefinitionVersionId: __string
     var NextToken: js.UndefOr[__string]
   }
 
   object GetDeviceDefinitionVersionRequest {
     def apply(
-      DeviceDefinitionId: js.UndefOr[__string] = js.undefined,
-      DeviceDefinitionVersionId: js.UndefOr[__string] = js.undefined,
+      DeviceDefinitionId: __string,
+      DeviceDefinitionVersionId: __string,
       NextToken: js.UndefOr[__string] = js.undefined): GetDeviceDefinitionVersionRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "DeviceDefinitionId" -> DeviceDefinitionId.map { x => x.asInstanceOf[js.Any] },
-        "DeviceDefinitionVersionId" -> DeviceDefinitionVersionId.map { x => x.asInstanceOf[js.Any] },
+        "DeviceDefinitionId" -> DeviceDefinitionId.asInstanceOf[js.Any],
+        "DeviceDefinitionVersionId" -> DeviceDefinitionVersionId.asInstanceOf[js.Any],
         "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetDeviceDefinitionVersionRequest]
@@ -2412,29 +2412,29 @@ package greengrass {
 
   @js.native
   trait GetDeviceDefinitionVersionResponse extends js.Object {
-    var Id: js.UndefOr[__string]
-    var Version: js.UndefOr[__string]
-    var Definition: js.UndefOr[DeviceDefinitionVersion]
     var Arn: js.UndefOr[__string]
     var CreationTimestamp: js.UndefOr[__string]
+    var Definition: js.UndefOr[DeviceDefinitionVersion]
+    var Id: js.UndefOr[__string]
     var NextToken: js.UndefOr[__string]
+    var Version: js.UndefOr[__string]
   }
 
   object GetDeviceDefinitionVersionResponse {
     def apply(
-      Id: js.UndefOr[__string] = js.undefined,
-      Version: js.UndefOr[__string] = js.undefined,
-      Definition: js.UndefOr[DeviceDefinitionVersion] = js.undefined,
       Arn: js.UndefOr[__string] = js.undefined,
       CreationTimestamp: js.UndefOr[__string] = js.undefined,
-      NextToken: js.UndefOr[__string] = js.undefined): GetDeviceDefinitionVersionResponse = {
+      Definition: js.UndefOr[DeviceDefinitionVersion] = js.undefined,
+      Id: js.UndefOr[__string] = js.undefined,
+      NextToken: js.UndefOr[__string] = js.undefined,
+      Version: js.UndefOr[__string] = js.undefined): GetDeviceDefinitionVersionResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Id" -> Id.map { x => x.asInstanceOf[js.Any] },
-        "Version" -> Version.map { x => x.asInstanceOf[js.Any] },
-        "Definition" -> Definition.map { x => x.asInstanceOf[js.Any] },
         "Arn" -> Arn.map { x => x.asInstanceOf[js.Any] },
         "CreationTimestamp" -> CreationTimestamp.map { x => x.asInstanceOf[js.Any] },
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Definition" -> Definition.map { x => x.asInstanceOf[js.Any] },
+        "Id" -> Id.map { x => x.asInstanceOf[js.Any] },
+        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
+        "Version" -> Version.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetDeviceDefinitionVersionResponse]
     }
@@ -2442,14 +2442,14 @@ package greengrass {
 
   @js.native
   trait GetFunctionDefinitionRequest extends js.Object {
-    var FunctionDefinitionId: js.UndefOr[__string]
+    var FunctionDefinitionId: __string
   }
 
   object GetFunctionDefinitionRequest {
     def apply(
-      FunctionDefinitionId: js.UndefOr[__string] = js.undefined): GetFunctionDefinitionRequest = {
+      FunctionDefinitionId: __string): GetFunctionDefinitionRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "FunctionDefinitionId" -> FunctionDefinitionId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "FunctionDefinitionId" -> FunctionDefinitionId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetFunctionDefinitionRequest]
     }
@@ -2457,32 +2457,32 @@ package greengrass {
 
   @js.native
   trait GetFunctionDefinitionResponse extends js.Object {
-    var Id: js.UndefOr[__string]
-    var LatestVersionArn: js.UndefOr[__string]
-    var Name: js.UndefOr[__string]
-    var LastUpdatedTimestamp: js.UndefOr[__string]
     var Arn: js.UndefOr[__string]
     var CreationTimestamp: js.UndefOr[__string]
+    var Id: js.UndefOr[__string]
+    var LastUpdatedTimestamp: js.UndefOr[__string]
     var LatestVersion: js.UndefOr[__string]
+    var LatestVersionArn: js.UndefOr[__string]
+    var Name: js.UndefOr[__string]
   }
 
   object GetFunctionDefinitionResponse {
     def apply(
-      Id: js.UndefOr[__string] = js.undefined,
-      LatestVersionArn: js.UndefOr[__string] = js.undefined,
-      Name: js.UndefOr[__string] = js.undefined,
-      LastUpdatedTimestamp: js.UndefOr[__string] = js.undefined,
       Arn: js.UndefOr[__string] = js.undefined,
       CreationTimestamp: js.UndefOr[__string] = js.undefined,
-      LatestVersion: js.UndefOr[__string] = js.undefined): GetFunctionDefinitionResponse = {
+      Id: js.UndefOr[__string] = js.undefined,
+      LastUpdatedTimestamp: js.UndefOr[__string] = js.undefined,
+      LatestVersion: js.UndefOr[__string] = js.undefined,
+      LatestVersionArn: js.UndefOr[__string] = js.undefined,
+      Name: js.UndefOr[__string] = js.undefined): GetFunctionDefinitionResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Id" -> Id.map { x => x.asInstanceOf[js.Any] },
-        "LatestVersionArn" -> LatestVersionArn.map { x => x.asInstanceOf[js.Any] },
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
-        "LastUpdatedTimestamp" -> LastUpdatedTimestamp.map { x => x.asInstanceOf[js.Any] },
         "Arn" -> Arn.map { x => x.asInstanceOf[js.Any] },
         "CreationTimestamp" -> CreationTimestamp.map { x => x.asInstanceOf[js.Any] },
-        "LatestVersion" -> LatestVersion.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Id" -> Id.map { x => x.asInstanceOf[js.Any] },
+        "LastUpdatedTimestamp" -> LastUpdatedTimestamp.map { x => x.asInstanceOf[js.Any] },
+        "LatestVersion" -> LatestVersion.map { x => x.asInstanceOf[js.Any] },
+        "LatestVersionArn" -> LatestVersionArn.map { x => x.asInstanceOf[js.Any] },
+        "Name" -> Name.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetFunctionDefinitionResponse]
     }
@@ -2490,19 +2490,19 @@ package greengrass {
 
   @js.native
   trait GetFunctionDefinitionVersionRequest extends js.Object {
-    var FunctionDefinitionId: js.UndefOr[__string]
-    var FunctionDefinitionVersionId: js.UndefOr[__string]
+    var FunctionDefinitionId: __string
+    var FunctionDefinitionVersionId: __string
     var NextToken: js.UndefOr[__string]
   }
 
   object GetFunctionDefinitionVersionRequest {
     def apply(
-      FunctionDefinitionId: js.UndefOr[__string] = js.undefined,
-      FunctionDefinitionVersionId: js.UndefOr[__string] = js.undefined,
+      FunctionDefinitionId: __string,
+      FunctionDefinitionVersionId: __string,
       NextToken: js.UndefOr[__string] = js.undefined): GetFunctionDefinitionVersionRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "FunctionDefinitionId" -> FunctionDefinitionId.map { x => x.asInstanceOf[js.Any] },
-        "FunctionDefinitionVersionId" -> FunctionDefinitionVersionId.map { x => x.asInstanceOf[js.Any] },
+        "FunctionDefinitionId" -> FunctionDefinitionId.asInstanceOf[js.Any],
+        "FunctionDefinitionVersionId" -> FunctionDefinitionVersionId.asInstanceOf[js.Any],
         "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetFunctionDefinitionVersionRequest]
@@ -2511,29 +2511,29 @@ package greengrass {
 
   @js.native
   trait GetFunctionDefinitionVersionResponse extends js.Object {
-    var Id: js.UndefOr[__string]
-    var Version: js.UndefOr[__string]
-    var Definition: js.UndefOr[FunctionDefinitionVersion]
     var Arn: js.UndefOr[__string]
     var CreationTimestamp: js.UndefOr[__string]
+    var Definition: js.UndefOr[FunctionDefinitionVersion]
+    var Id: js.UndefOr[__string]
     var NextToken: js.UndefOr[__string]
+    var Version: js.UndefOr[__string]
   }
 
   object GetFunctionDefinitionVersionResponse {
     def apply(
-      Id: js.UndefOr[__string] = js.undefined,
-      Version: js.UndefOr[__string] = js.undefined,
-      Definition: js.UndefOr[FunctionDefinitionVersion] = js.undefined,
       Arn: js.UndefOr[__string] = js.undefined,
       CreationTimestamp: js.UndefOr[__string] = js.undefined,
-      NextToken: js.UndefOr[__string] = js.undefined): GetFunctionDefinitionVersionResponse = {
+      Definition: js.UndefOr[FunctionDefinitionVersion] = js.undefined,
+      Id: js.UndefOr[__string] = js.undefined,
+      NextToken: js.UndefOr[__string] = js.undefined,
+      Version: js.UndefOr[__string] = js.undefined): GetFunctionDefinitionVersionResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Id" -> Id.map { x => x.asInstanceOf[js.Any] },
-        "Version" -> Version.map { x => x.asInstanceOf[js.Any] },
-        "Definition" -> Definition.map { x => x.asInstanceOf[js.Any] },
         "Arn" -> Arn.map { x => x.asInstanceOf[js.Any] },
         "CreationTimestamp" -> CreationTimestamp.map { x => x.asInstanceOf[js.Any] },
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Definition" -> Definition.map { x => x.asInstanceOf[js.Any] },
+        "Id" -> Id.map { x => x.asInstanceOf[js.Any] },
+        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
+        "Version" -> Version.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetFunctionDefinitionVersionResponse]
     }
@@ -2541,17 +2541,17 @@ package greengrass {
 
   @js.native
   trait GetGroupCertificateAuthorityRequest extends js.Object {
-    var CertificateAuthorityId: js.UndefOr[__string]
-    var GroupId: js.UndefOr[__string]
+    var CertificateAuthorityId: __string
+    var GroupId: __string
   }
 
   object GetGroupCertificateAuthorityRequest {
     def apply(
-      CertificateAuthorityId: js.UndefOr[__string] = js.undefined,
-      GroupId: js.UndefOr[__string] = js.undefined): GetGroupCertificateAuthorityRequest = {
+      CertificateAuthorityId: __string,
+      GroupId: __string): GetGroupCertificateAuthorityRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "CertificateAuthorityId" -> CertificateAuthorityId.map { x => x.asInstanceOf[js.Any] },
-        "GroupId" -> GroupId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "CertificateAuthorityId" -> CertificateAuthorityId.asInstanceOf[js.Any],
+        "GroupId" -> GroupId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetGroupCertificateAuthorityRequest]
     }
@@ -2580,14 +2580,14 @@ package greengrass {
 
   @js.native
   trait GetGroupCertificateConfigurationRequest extends js.Object {
-    var GroupId: js.UndefOr[__string]
+    var GroupId: __string
   }
 
   object GetGroupCertificateConfigurationRequest {
     def apply(
-      GroupId: js.UndefOr[__string] = js.undefined): GetGroupCertificateConfigurationRequest = {
+      GroupId: __string): GetGroupCertificateConfigurationRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "GroupId" -> GroupId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "GroupId" -> GroupId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetGroupCertificateConfigurationRequest]
     }
@@ -2616,14 +2616,14 @@ package greengrass {
 
   @js.native
   trait GetGroupRequest extends js.Object {
-    var GroupId: js.UndefOr[__string]
+    var GroupId: __string
   }
 
   object GetGroupRequest {
     def apply(
-      GroupId: js.UndefOr[__string] = js.undefined): GetGroupRequest = {
+      GroupId: __string): GetGroupRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "GroupId" -> GroupId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "GroupId" -> GroupId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetGroupRequest]
     }
@@ -2631,32 +2631,32 @@ package greengrass {
 
   @js.native
   trait GetGroupResponse extends js.Object {
-    var Id: js.UndefOr[__string]
-    var LatestVersionArn: js.UndefOr[__string]
-    var Name: js.UndefOr[__string]
-    var LastUpdatedTimestamp: js.UndefOr[__string]
     var Arn: js.UndefOr[__string]
     var CreationTimestamp: js.UndefOr[__string]
+    var Id: js.UndefOr[__string]
+    var LastUpdatedTimestamp: js.UndefOr[__string]
     var LatestVersion: js.UndefOr[__string]
+    var LatestVersionArn: js.UndefOr[__string]
+    var Name: js.UndefOr[__string]
   }
 
   object GetGroupResponse {
     def apply(
-      Id: js.UndefOr[__string] = js.undefined,
-      LatestVersionArn: js.UndefOr[__string] = js.undefined,
-      Name: js.UndefOr[__string] = js.undefined,
-      LastUpdatedTimestamp: js.UndefOr[__string] = js.undefined,
       Arn: js.UndefOr[__string] = js.undefined,
       CreationTimestamp: js.UndefOr[__string] = js.undefined,
-      LatestVersion: js.UndefOr[__string] = js.undefined): GetGroupResponse = {
+      Id: js.UndefOr[__string] = js.undefined,
+      LastUpdatedTimestamp: js.UndefOr[__string] = js.undefined,
+      LatestVersion: js.UndefOr[__string] = js.undefined,
+      LatestVersionArn: js.UndefOr[__string] = js.undefined,
+      Name: js.UndefOr[__string] = js.undefined): GetGroupResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Id" -> Id.map { x => x.asInstanceOf[js.Any] },
-        "LatestVersionArn" -> LatestVersionArn.map { x => x.asInstanceOf[js.Any] },
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
-        "LastUpdatedTimestamp" -> LastUpdatedTimestamp.map { x => x.asInstanceOf[js.Any] },
         "Arn" -> Arn.map { x => x.asInstanceOf[js.Any] },
         "CreationTimestamp" -> CreationTimestamp.map { x => x.asInstanceOf[js.Any] },
-        "LatestVersion" -> LatestVersion.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Id" -> Id.map { x => x.asInstanceOf[js.Any] },
+        "LastUpdatedTimestamp" -> LastUpdatedTimestamp.map { x => x.asInstanceOf[js.Any] },
+        "LatestVersion" -> LatestVersion.map { x => x.asInstanceOf[js.Any] },
+        "LatestVersionArn" -> LatestVersionArn.map { x => x.asInstanceOf[js.Any] },
+        "Name" -> Name.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetGroupResponse]
     }
@@ -2664,17 +2664,17 @@ package greengrass {
 
   @js.native
   trait GetGroupVersionRequest extends js.Object {
-    var GroupId: js.UndefOr[__string]
-    var GroupVersionId: js.UndefOr[__string]
+    var GroupId: __string
+    var GroupVersionId: __string
   }
 
   object GetGroupVersionRequest {
     def apply(
-      GroupId: js.UndefOr[__string] = js.undefined,
-      GroupVersionId: js.UndefOr[__string] = js.undefined): GetGroupVersionRequest = {
+      GroupId: __string,
+      GroupVersionId: __string): GetGroupVersionRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "GroupId" -> GroupId.map { x => x.asInstanceOf[js.Any] },
-        "GroupVersionId" -> GroupVersionId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "GroupId" -> GroupId.asInstanceOf[js.Any],
+        "GroupVersionId" -> GroupVersionId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetGroupVersionRequest]
     }
@@ -2682,26 +2682,26 @@ package greengrass {
 
   @js.native
   trait GetGroupVersionResponse extends js.Object {
-    var Id: js.UndefOr[__string]
-    var Version: js.UndefOr[__string]
-    var Definition: js.UndefOr[GroupVersion]
     var Arn: js.UndefOr[__string]
     var CreationTimestamp: js.UndefOr[__string]
+    var Definition: js.UndefOr[GroupVersion]
+    var Id: js.UndefOr[__string]
+    var Version: js.UndefOr[__string]
   }
 
   object GetGroupVersionResponse {
     def apply(
-      Id: js.UndefOr[__string] = js.undefined,
-      Version: js.UndefOr[__string] = js.undefined,
-      Definition: js.UndefOr[GroupVersion] = js.undefined,
       Arn: js.UndefOr[__string] = js.undefined,
-      CreationTimestamp: js.UndefOr[__string] = js.undefined): GetGroupVersionResponse = {
+      CreationTimestamp: js.UndefOr[__string] = js.undefined,
+      Definition: js.UndefOr[GroupVersion] = js.undefined,
+      Id: js.UndefOr[__string] = js.undefined,
+      Version: js.UndefOr[__string] = js.undefined): GetGroupVersionResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Id" -> Id.map { x => x.asInstanceOf[js.Any] },
-        "Version" -> Version.map { x => x.asInstanceOf[js.Any] },
-        "Definition" -> Definition.map { x => x.asInstanceOf[js.Any] },
         "Arn" -> Arn.map { x => x.asInstanceOf[js.Any] },
-        "CreationTimestamp" -> CreationTimestamp.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "CreationTimestamp" -> CreationTimestamp.map { x => x.asInstanceOf[js.Any] },
+        "Definition" -> Definition.map { x => x.asInstanceOf[js.Any] },
+        "Id" -> Id.map { x => x.asInstanceOf[js.Any] },
+        "Version" -> Version.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetGroupVersionResponse]
     }
@@ -2709,14 +2709,14 @@ package greengrass {
 
   @js.native
   trait GetLoggerDefinitionRequest extends js.Object {
-    var LoggerDefinitionId: js.UndefOr[__string]
+    var LoggerDefinitionId: __string
   }
 
   object GetLoggerDefinitionRequest {
     def apply(
-      LoggerDefinitionId: js.UndefOr[__string] = js.undefined): GetLoggerDefinitionRequest = {
+      LoggerDefinitionId: __string): GetLoggerDefinitionRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "LoggerDefinitionId" -> LoggerDefinitionId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "LoggerDefinitionId" -> LoggerDefinitionId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetLoggerDefinitionRequest]
     }
@@ -2724,32 +2724,32 @@ package greengrass {
 
   @js.native
   trait GetLoggerDefinitionResponse extends js.Object {
-    var Id: js.UndefOr[__string]
-    var LatestVersionArn: js.UndefOr[__string]
-    var Name: js.UndefOr[__string]
-    var LastUpdatedTimestamp: js.UndefOr[__string]
     var Arn: js.UndefOr[__string]
     var CreationTimestamp: js.UndefOr[__string]
+    var Id: js.UndefOr[__string]
+    var LastUpdatedTimestamp: js.UndefOr[__string]
     var LatestVersion: js.UndefOr[__string]
+    var LatestVersionArn: js.UndefOr[__string]
+    var Name: js.UndefOr[__string]
   }
 
   object GetLoggerDefinitionResponse {
     def apply(
-      Id: js.UndefOr[__string] = js.undefined,
-      LatestVersionArn: js.UndefOr[__string] = js.undefined,
-      Name: js.UndefOr[__string] = js.undefined,
-      LastUpdatedTimestamp: js.UndefOr[__string] = js.undefined,
       Arn: js.UndefOr[__string] = js.undefined,
       CreationTimestamp: js.UndefOr[__string] = js.undefined,
-      LatestVersion: js.UndefOr[__string] = js.undefined): GetLoggerDefinitionResponse = {
+      Id: js.UndefOr[__string] = js.undefined,
+      LastUpdatedTimestamp: js.UndefOr[__string] = js.undefined,
+      LatestVersion: js.UndefOr[__string] = js.undefined,
+      LatestVersionArn: js.UndefOr[__string] = js.undefined,
+      Name: js.UndefOr[__string] = js.undefined): GetLoggerDefinitionResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Id" -> Id.map { x => x.asInstanceOf[js.Any] },
-        "LatestVersionArn" -> LatestVersionArn.map { x => x.asInstanceOf[js.Any] },
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
-        "LastUpdatedTimestamp" -> LastUpdatedTimestamp.map { x => x.asInstanceOf[js.Any] },
         "Arn" -> Arn.map { x => x.asInstanceOf[js.Any] },
         "CreationTimestamp" -> CreationTimestamp.map { x => x.asInstanceOf[js.Any] },
-        "LatestVersion" -> LatestVersion.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Id" -> Id.map { x => x.asInstanceOf[js.Any] },
+        "LastUpdatedTimestamp" -> LastUpdatedTimestamp.map { x => x.asInstanceOf[js.Any] },
+        "LatestVersion" -> LatestVersion.map { x => x.asInstanceOf[js.Any] },
+        "LatestVersionArn" -> LatestVersionArn.map { x => x.asInstanceOf[js.Any] },
+        "Name" -> Name.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetLoggerDefinitionResponse]
     }
@@ -2757,19 +2757,19 @@ package greengrass {
 
   @js.native
   trait GetLoggerDefinitionVersionRequest extends js.Object {
-    var LoggerDefinitionId: js.UndefOr[__string]
-    var LoggerDefinitionVersionId: js.UndefOr[__string]
+    var LoggerDefinitionId: __string
+    var LoggerDefinitionVersionId: __string
     var NextToken: js.UndefOr[__string]
   }
 
   object GetLoggerDefinitionVersionRequest {
     def apply(
-      LoggerDefinitionId: js.UndefOr[__string] = js.undefined,
-      LoggerDefinitionVersionId: js.UndefOr[__string] = js.undefined,
+      LoggerDefinitionId: __string,
+      LoggerDefinitionVersionId: __string,
       NextToken: js.UndefOr[__string] = js.undefined): GetLoggerDefinitionVersionRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "LoggerDefinitionId" -> LoggerDefinitionId.map { x => x.asInstanceOf[js.Any] },
-        "LoggerDefinitionVersionId" -> LoggerDefinitionVersionId.map { x => x.asInstanceOf[js.Any] },
+        "LoggerDefinitionId" -> LoggerDefinitionId.asInstanceOf[js.Any],
+        "LoggerDefinitionVersionId" -> LoggerDefinitionVersionId.asInstanceOf[js.Any],
         "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetLoggerDefinitionVersionRequest]
@@ -2778,26 +2778,26 @@ package greengrass {
 
   @js.native
   trait GetLoggerDefinitionVersionResponse extends js.Object {
-    var Id: js.UndefOr[__string]
-    var Version: js.UndefOr[__string]
-    var Definition: js.UndefOr[LoggerDefinitionVersion]
     var Arn: js.UndefOr[__string]
     var CreationTimestamp: js.UndefOr[__string]
+    var Definition: js.UndefOr[LoggerDefinitionVersion]
+    var Id: js.UndefOr[__string]
+    var Version: js.UndefOr[__string]
   }
 
   object GetLoggerDefinitionVersionResponse {
     def apply(
-      Id: js.UndefOr[__string] = js.undefined,
-      Version: js.UndefOr[__string] = js.undefined,
-      Definition: js.UndefOr[LoggerDefinitionVersion] = js.undefined,
       Arn: js.UndefOr[__string] = js.undefined,
-      CreationTimestamp: js.UndefOr[__string] = js.undefined): GetLoggerDefinitionVersionResponse = {
+      CreationTimestamp: js.UndefOr[__string] = js.undefined,
+      Definition: js.UndefOr[LoggerDefinitionVersion] = js.undefined,
+      Id: js.UndefOr[__string] = js.undefined,
+      Version: js.UndefOr[__string] = js.undefined): GetLoggerDefinitionVersionResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Id" -> Id.map { x => x.asInstanceOf[js.Any] },
-        "Version" -> Version.map { x => x.asInstanceOf[js.Any] },
-        "Definition" -> Definition.map { x => x.asInstanceOf[js.Any] },
         "Arn" -> Arn.map { x => x.asInstanceOf[js.Any] },
-        "CreationTimestamp" -> CreationTimestamp.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "CreationTimestamp" -> CreationTimestamp.map { x => x.asInstanceOf[js.Any] },
+        "Definition" -> Definition.map { x => x.asInstanceOf[js.Any] },
+        "Id" -> Id.map { x => x.asInstanceOf[js.Any] },
+        "Version" -> Version.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetLoggerDefinitionVersionResponse]
     }
@@ -2805,14 +2805,14 @@ package greengrass {
 
   @js.native
   trait GetResourceDefinitionRequest extends js.Object {
-    var ResourceDefinitionId: js.UndefOr[__string]
+    var ResourceDefinitionId: __string
   }
 
   object GetResourceDefinitionRequest {
     def apply(
-      ResourceDefinitionId: js.UndefOr[__string] = js.undefined): GetResourceDefinitionRequest = {
+      ResourceDefinitionId: __string): GetResourceDefinitionRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ResourceDefinitionId" -> ResourceDefinitionId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ResourceDefinitionId" -> ResourceDefinitionId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetResourceDefinitionRequest]
     }
@@ -2820,32 +2820,32 @@ package greengrass {
 
   @js.native
   trait GetResourceDefinitionResponse extends js.Object {
-    var Id: js.UndefOr[__string]
-    var LatestVersionArn: js.UndefOr[__string]
-    var Name: js.UndefOr[__string]
-    var LastUpdatedTimestamp: js.UndefOr[__string]
     var Arn: js.UndefOr[__string]
     var CreationTimestamp: js.UndefOr[__string]
+    var Id: js.UndefOr[__string]
+    var LastUpdatedTimestamp: js.UndefOr[__string]
     var LatestVersion: js.UndefOr[__string]
+    var LatestVersionArn: js.UndefOr[__string]
+    var Name: js.UndefOr[__string]
   }
 
   object GetResourceDefinitionResponse {
     def apply(
-      Id: js.UndefOr[__string] = js.undefined,
-      LatestVersionArn: js.UndefOr[__string] = js.undefined,
-      Name: js.UndefOr[__string] = js.undefined,
-      LastUpdatedTimestamp: js.UndefOr[__string] = js.undefined,
       Arn: js.UndefOr[__string] = js.undefined,
       CreationTimestamp: js.UndefOr[__string] = js.undefined,
-      LatestVersion: js.UndefOr[__string] = js.undefined): GetResourceDefinitionResponse = {
+      Id: js.UndefOr[__string] = js.undefined,
+      LastUpdatedTimestamp: js.UndefOr[__string] = js.undefined,
+      LatestVersion: js.UndefOr[__string] = js.undefined,
+      LatestVersionArn: js.UndefOr[__string] = js.undefined,
+      Name: js.UndefOr[__string] = js.undefined): GetResourceDefinitionResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Id" -> Id.map { x => x.asInstanceOf[js.Any] },
-        "LatestVersionArn" -> LatestVersionArn.map { x => x.asInstanceOf[js.Any] },
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
-        "LastUpdatedTimestamp" -> LastUpdatedTimestamp.map { x => x.asInstanceOf[js.Any] },
         "Arn" -> Arn.map { x => x.asInstanceOf[js.Any] },
         "CreationTimestamp" -> CreationTimestamp.map { x => x.asInstanceOf[js.Any] },
-        "LatestVersion" -> LatestVersion.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Id" -> Id.map { x => x.asInstanceOf[js.Any] },
+        "LastUpdatedTimestamp" -> LastUpdatedTimestamp.map { x => x.asInstanceOf[js.Any] },
+        "LatestVersion" -> LatestVersion.map { x => x.asInstanceOf[js.Any] },
+        "LatestVersionArn" -> LatestVersionArn.map { x => x.asInstanceOf[js.Any] },
+        "Name" -> Name.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetResourceDefinitionResponse]
     }
@@ -2853,17 +2853,17 @@ package greengrass {
 
   @js.native
   trait GetResourceDefinitionVersionRequest extends js.Object {
-    var ResourceDefinitionId: js.UndefOr[__string]
-    var ResourceDefinitionVersionId: js.UndefOr[__string]
+    var ResourceDefinitionId: __string
+    var ResourceDefinitionVersionId: __string
   }
 
   object GetResourceDefinitionVersionRequest {
     def apply(
-      ResourceDefinitionId: js.UndefOr[__string] = js.undefined,
-      ResourceDefinitionVersionId: js.UndefOr[__string] = js.undefined): GetResourceDefinitionVersionRequest = {
+      ResourceDefinitionId: __string,
+      ResourceDefinitionVersionId: __string): GetResourceDefinitionVersionRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ResourceDefinitionId" -> ResourceDefinitionId.map { x => x.asInstanceOf[js.Any] },
-        "ResourceDefinitionVersionId" -> ResourceDefinitionVersionId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ResourceDefinitionId" -> ResourceDefinitionId.asInstanceOf[js.Any],
+        "ResourceDefinitionVersionId" -> ResourceDefinitionVersionId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetResourceDefinitionVersionRequest]
     }
@@ -2871,26 +2871,26 @@ package greengrass {
 
   @js.native
   trait GetResourceDefinitionVersionResponse extends js.Object {
-    var Id: js.UndefOr[__string]
-    var Version: js.UndefOr[__string]
-    var Definition: js.UndefOr[ResourceDefinitionVersion]
     var Arn: js.UndefOr[__string]
     var CreationTimestamp: js.UndefOr[__string]
+    var Definition: js.UndefOr[ResourceDefinitionVersion]
+    var Id: js.UndefOr[__string]
+    var Version: js.UndefOr[__string]
   }
 
   object GetResourceDefinitionVersionResponse {
     def apply(
-      Id: js.UndefOr[__string] = js.undefined,
-      Version: js.UndefOr[__string] = js.undefined,
-      Definition: js.UndefOr[ResourceDefinitionVersion] = js.undefined,
       Arn: js.UndefOr[__string] = js.undefined,
-      CreationTimestamp: js.UndefOr[__string] = js.undefined): GetResourceDefinitionVersionResponse = {
+      CreationTimestamp: js.UndefOr[__string] = js.undefined,
+      Definition: js.UndefOr[ResourceDefinitionVersion] = js.undefined,
+      Id: js.UndefOr[__string] = js.undefined,
+      Version: js.UndefOr[__string] = js.undefined): GetResourceDefinitionVersionResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Id" -> Id.map { x => x.asInstanceOf[js.Any] },
-        "Version" -> Version.map { x => x.asInstanceOf[js.Any] },
-        "Definition" -> Definition.map { x => x.asInstanceOf[js.Any] },
         "Arn" -> Arn.map { x => x.asInstanceOf[js.Any] },
-        "CreationTimestamp" -> CreationTimestamp.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "CreationTimestamp" -> CreationTimestamp.map { x => x.asInstanceOf[js.Any] },
+        "Definition" -> Definition.map { x => x.asInstanceOf[js.Any] },
+        "Id" -> Id.map { x => x.asInstanceOf[js.Any] },
+        "Version" -> Version.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetResourceDefinitionVersionResponse]
     }
@@ -2929,14 +2929,14 @@ package greengrass {
 
   @js.native
   trait GetSubscriptionDefinitionRequest extends js.Object {
-    var SubscriptionDefinitionId: js.UndefOr[__string]
+    var SubscriptionDefinitionId: __string
   }
 
   object GetSubscriptionDefinitionRequest {
     def apply(
-      SubscriptionDefinitionId: js.UndefOr[__string] = js.undefined): GetSubscriptionDefinitionRequest = {
+      SubscriptionDefinitionId: __string): GetSubscriptionDefinitionRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "SubscriptionDefinitionId" -> SubscriptionDefinitionId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "SubscriptionDefinitionId" -> SubscriptionDefinitionId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetSubscriptionDefinitionRequest]
     }
@@ -2944,32 +2944,32 @@ package greengrass {
 
   @js.native
   trait GetSubscriptionDefinitionResponse extends js.Object {
-    var Id: js.UndefOr[__string]
-    var LatestVersionArn: js.UndefOr[__string]
-    var Name: js.UndefOr[__string]
-    var LastUpdatedTimestamp: js.UndefOr[__string]
     var Arn: js.UndefOr[__string]
     var CreationTimestamp: js.UndefOr[__string]
+    var Id: js.UndefOr[__string]
+    var LastUpdatedTimestamp: js.UndefOr[__string]
     var LatestVersion: js.UndefOr[__string]
+    var LatestVersionArn: js.UndefOr[__string]
+    var Name: js.UndefOr[__string]
   }
 
   object GetSubscriptionDefinitionResponse {
     def apply(
-      Id: js.UndefOr[__string] = js.undefined,
-      LatestVersionArn: js.UndefOr[__string] = js.undefined,
-      Name: js.UndefOr[__string] = js.undefined,
-      LastUpdatedTimestamp: js.UndefOr[__string] = js.undefined,
       Arn: js.UndefOr[__string] = js.undefined,
       CreationTimestamp: js.UndefOr[__string] = js.undefined,
-      LatestVersion: js.UndefOr[__string] = js.undefined): GetSubscriptionDefinitionResponse = {
+      Id: js.UndefOr[__string] = js.undefined,
+      LastUpdatedTimestamp: js.UndefOr[__string] = js.undefined,
+      LatestVersion: js.UndefOr[__string] = js.undefined,
+      LatestVersionArn: js.UndefOr[__string] = js.undefined,
+      Name: js.UndefOr[__string] = js.undefined): GetSubscriptionDefinitionResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Id" -> Id.map { x => x.asInstanceOf[js.Any] },
-        "LatestVersionArn" -> LatestVersionArn.map { x => x.asInstanceOf[js.Any] },
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
-        "LastUpdatedTimestamp" -> LastUpdatedTimestamp.map { x => x.asInstanceOf[js.Any] },
         "Arn" -> Arn.map { x => x.asInstanceOf[js.Any] },
         "CreationTimestamp" -> CreationTimestamp.map { x => x.asInstanceOf[js.Any] },
-        "LatestVersion" -> LatestVersion.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Id" -> Id.map { x => x.asInstanceOf[js.Any] },
+        "LastUpdatedTimestamp" -> LastUpdatedTimestamp.map { x => x.asInstanceOf[js.Any] },
+        "LatestVersion" -> LatestVersion.map { x => x.asInstanceOf[js.Any] },
+        "LatestVersionArn" -> LatestVersionArn.map { x => x.asInstanceOf[js.Any] },
+        "Name" -> Name.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetSubscriptionDefinitionResponse]
     }
@@ -2977,20 +2977,20 @@ package greengrass {
 
   @js.native
   trait GetSubscriptionDefinitionVersionRequest extends js.Object {
+    var SubscriptionDefinitionId: __string
+    var SubscriptionDefinitionVersionId: __string
     var NextToken: js.UndefOr[__string]
-    var SubscriptionDefinitionId: js.UndefOr[__string]
-    var SubscriptionDefinitionVersionId: js.UndefOr[__string]
   }
 
   object GetSubscriptionDefinitionVersionRequest {
     def apply(
-      NextToken: js.UndefOr[__string] = js.undefined,
-      SubscriptionDefinitionId: js.UndefOr[__string] = js.undefined,
-      SubscriptionDefinitionVersionId: js.UndefOr[__string] = js.undefined): GetSubscriptionDefinitionVersionRequest = {
+      SubscriptionDefinitionId: __string,
+      SubscriptionDefinitionVersionId: __string,
+      NextToken: js.UndefOr[__string] = js.undefined): GetSubscriptionDefinitionVersionRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
-        "SubscriptionDefinitionId" -> SubscriptionDefinitionId.map { x => x.asInstanceOf[js.Any] },
-        "SubscriptionDefinitionVersionId" -> SubscriptionDefinitionVersionId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "SubscriptionDefinitionId" -> SubscriptionDefinitionId.asInstanceOf[js.Any],
+        "SubscriptionDefinitionVersionId" -> SubscriptionDefinitionVersionId.asInstanceOf[js.Any],
+        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetSubscriptionDefinitionVersionRequest]
     }
@@ -2998,29 +2998,29 @@ package greengrass {
 
   @js.native
   trait GetSubscriptionDefinitionVersionResponse extends js.Object {
-    var Id: js.UndefOr[__string]
-    var Version: js.UndefOr[__string]
-    var Definition: js.UndefOr[SubscriptionDefinitionVersion]
     var Arn: js.UndefOr[__string]
     var CreationTimestamp: js.UndefOr[__string]
+    var Definition: js.UndefOr[SubscriptionDefinitionVersion]
+    var Id: js.UndefOr[__string]
     var NextToken: js.UndefOr[__string]
+    var Version: js.UndefOr[__string]
   }
 
   object GetSubscriptionDefinitionVersionResponse {
     def apply(
-      Id: js.UndefOr[__string] = js.undefined,
-      Version: js.UndefOr[__string] = js.undefined,
-      Definition: js.UndefOr[SubscriptionDefinitionVersion] = js.undefined,
       Arn: js.UndefOr[__string] = js.undefined,
       CreationTimestamp: js.UndefOr[__string] = js.undefined,
-      NextToken: js.UndefOr[__string] = js.undefined): GetSubscriptionDefinitionVersionResponse = {
+      Definition: js.UndefOr[SubscriptionDefinitionVersion] = js.undefined,
+      Id: js.UndefOr[__string] = js.undefined,
+      NextToken: js.UndefOr[__string] = js.undefined,
+      Version: js.UndefOr[__string] = js.undefined): GetSubscriptionDefinitionVersionResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Id" -> Id.map { x => x.asInstanceOf[js.Any] },
-        "Version" -> Version.map { x => x.asInstanceOf[js.Any] },
-        "Definition" -> Definition.map { x => x.asInstanceOf[js.Any] },
         "Arn" -> Arn.map { x => x.asInstanceOf[js.Any] },
         "CreationTimestamp" -> CreationTimestamp.map { x => x.asInstanceOf[js.Any] },
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Definition" -> Definition.map { x => x.asInstanceOf[js.Any] },
+        "Id" -> Id.map { x => x.asInstanceOf[js.Any] },
+        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
+        "Version" -> Version.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetSubscriptionDefinitionVersionResponse]
     }
@@ -3052,32 +3052,32 @@ package greengrass {
    */
   @js.native
   trait GroupInformation extends js.Object {
-    var Id: js.UndefOr[__string]
-    var LatestVersionArn: js.UndefOr[__string]
-    var Name: js.UndefOr[__string]
-    var LastUpdatedTimestamp: js.UndefOr[__string]
     var Arn: js.UndefOr[__string]
     var CreationTimestamp: js.UndefOr[__string]
+    var Id: js.UndefOr[__string]
+    var LastUpdatedTimestamp: js.UndefOr[__string]
     var LatestVersion: js.UndefOr[__string]
+    var LatestVersionArn: js.UndefOr[__string]
+    var Name: js.UndefOr[__string]
   }
 
   object GroupInformation {
     def apply(
-      Id: js.UndefOr[__string] = js.undefined,
-      LatestVersionArn: js.UndefOr[__string] = js.undefined,
-      Name: js.UndefOr[__string] = js.undefined,
-      LastUpdatedTimestamp: js.UndefOr[__string] = js.undefined,
       Arn: js.UndefOr[__string] = js.undefined,
       CreationTimestamp: js.UndefOr[__string] = js.undefined,
-      LatestVersion: js.UndefOr[__string] = js.undefined): GroupInformation = {
+      Id: js.UndefOr[__string] = js.undefined,
+      LastUpdatedTimestamp: js.UndefOr[__string] = js.undefined,
+      LatestVersion: js.UndefOr[__string] = js.undefined,
+      LatestVersionArn: js.UndefOr[__string] = js.undefined,
+      Name: js.UndefOr[__string] = js.undefined): GroupInformation = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Id" -> Id.map { x => x.asInstanceOf[js.Any] },
-        "LatestVersionArn" -> LatestVersionArn.map { x => x.asInstanceOf[js.Any] },
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
-        "LastUpdatedTimestamp" -> LastUpdatedTimestamp.map { x => x.asInstanceOf[js.Any] },
         "Arn" -> Arn.map { x => x.asInstanceOf[js.Any] },
         "CreationTimestamp" -> CreationTimestamp.map { x => x.asInstanceOf[js.Any] },
-        "LatestVersion" -> LatestVersion.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Id" -> Id.map { x => x.asInstanceOf[js.Any] },
+        "LastUpdatedTimestamp" -> LastUpdatedTimestamp.map { x => x.asInstanceOf[js.Any] },
+        "LatestVersion" -> LatestVersion.map { x => x.asInstanceOf[js.Any] },
+        "LatestVersionArn" -> LatestVersionArn.map { x => x.asInstanceOf[js.Any] },
+        "Name" -> Name.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GroupInformation]
     }
@@ -3109,32 +3109,32 @@ package greengrass {
    */
   @js.native
   trait GroupVersion extends js.Object {
-    var FunctionDefinitionVersionArn: js.UndefOr[__string]
-    var SubscriptionDefinitionVersionArn: js.UndefOr[__string]
-    var CoreDefinitionVersionArn: js.UndefOr[__string]
-    var ResourceDefinitionVersionArn: js.UndefOr[__string]
     var ConnectorDefinitionVersionArn: js.UndefOr[__string]
+    var CoreDefinitionVersionArn: js.UndefOr[__string]
     var DeviceDefinitionVersionArn: js.UndefOr[__string]
+    var FunctionDefinitionVersionArn: js.UndefOr[__string]
     var LoggerDefinitionVersionArn: js.UndefOr[__string]
+    var ResourceDefinitionVersionArn: js.UndefOr[__string]
+    var SubscriptionDefinitionVersionArn: js.UndefOr[__string]
   }
 
   object GroupVersion {
     def apply(
-      FunctionDefinitionVersionArn: js.UndefOr[__string] = js.undefined,
-      SubscriptionDefinitionVersionArn: js.UndefOr[__string] = js.undefined,
-      CoreDefinitionVersionArn: js.UndefOr[__string] = js.undefined,
-      ResourceDefinitionVersionArn: js.UndefOr[__string] = js.undefined,
       ConnectorDefinitionVersionArn: js.UndefOr[__string] = js.undefined,
+      CoreDefinitionVersionArn: js.UndefOr[__string] = js.undefined,
       DeviceDefinitionVersionArn: js.UndefOr[__string] = js.undefined,
-      LoggerDefinitionVersionArn: js.UndefOr[__string] = js.undefined): GroupVersion = {
+      FunctionDefinitionVersionArn: js.UndefOr[__string] = js.undefined,
+      LoggerDefinitionVersionArn: js.UndefOr[__string] = js.undefined,
+      ResourceDefinitionVersionArn: js.UndefOr[__string] = js.undefined,
+      SubscriptionDefinitionVersionArn: js.UndefOr[__string] = js.undefined): GroupVersion = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "FunctionDefinitionVersionArn" -> FunctionDefinitionVersionArn.map { x => x.asInstanceOf[js.Any] },
-        "SubscriptionDefinitionVersionArn" -> SubscriptionDefinitionVersionArn.map { x => x.asInstanceOf[js.Any] },
-        "CoreDefinitionVersionArn" -> CoreDefinitionVersionArn.map { x => x.asInstanceOf[js.Any] },
-        "ResourceDefinitionVersionArn" -> ResourceDefinitionVersionArn.map { x => x.asInstanceOf[js.Any] },
         "ConnectorDefinitionVersionArn" -> ConnectorDefinitionVersionArn.map { x => x.asInstanceOf[js.Any] },
+        "CoreDefinitionVersionArn" -> CoreDefinitionVersionArn.map { x => x.asInstanceOf[js.Any] },
         "DeviceDefinitionVersionArn" -> DeviceDefinitionVersionArn.map { x => x.asInstanceOf[js.Any] },
-        "LoggerDefinitionVersionArn" -> LoggerDefinitionVersionArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "FunctionDefinitionVersionArn" -> FunctionDefinitionVersionArn.map { x => x.asInstanceOf[js.Any] },
+        "LoggerDefinitionVersionArn" -> LoggerDefinitionVersionArn.map { x => x.asInstanceOf[js.Any] },
+        "ResourceDefinitionVersionArn" -> ResourceDefinitionVersionArn.map { x => x.asInstanceOf[js.Any] },
+        "SubscriptionDefinitionVersionArn" -> SubscriptionDefinitionVersionArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GroupVersion]
     }
@@ -3142,18 +3142,18 @@ package greengrass {
 
   @js.native
   trait ListBulkDeploymentDetailedReportsRequest extends js.Object {
-    var BulkDeploymentId: js.UndefOr[__string]
+    var BulkDeploymentId: __string
     var MaxResults: js.UndefOr[__string]
     var NextToken: js.UndefOr[__string]
   }
 
   object ListBulkDeploymentDetailedReportsRequest {
     def apply(
-      BulkDeploymentId: js.UndefOr[__string] = js.undefined,
+      BulkDeploymentId: __string,
       MaxResults: js.UndefOr[__string] = js.undefined,
       NextToken: js.UndefOr[__string] = js.undefined): ListBulkDeploymentDetailedReportsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "BulkDeploymentId" -> BulkDeploymentId.map { x => x.asInstanceOf[js.Any] },
+        "BulkDeploymentId" -> BulkDeploymentId.asInstanceOf[js.Any],
         "MaxResults" -> MaxResults.map { x => x.asInstanceOf[js.Any] },
         "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
@@ -3217,18 +3217,18 @@ package greengrass {
 
   @js.native
   trait ListConnectorDefinitionVersionsRequest extends js.Object {
-    var ConnectorDefinitionId: js.UndefOr[__string]
+    var ConnectorDefinitionId: __string
     var MaxResults: js.UndefOr[__string]
     var NextToken: js.UndefOr[__string]
   }
 
   object ListConnectorDefinitionVersionsRequest {
     def apply(
-      ConnectorDefinitionId: js.UndefOr[__string] = js.undefined,
+      ConnectorDefinitionId: __string,
       MaxResults: js.UndefOr[__string] = js.undefined,
       NextToken: js.UndefOr[__string] = js.undefined): ListConnectorDefinitionVersionsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ConnectorDefinitionId" -> ConnectorDefinitionId.map { x => x.asInstanceOf[js.Any] },
+        "ConnectorDefinitionId" -> ConnectorDefinitionId.asInstanceOf[js.Any],
         "MaxResults" -> MaxResults.map { x => x.asInstanceOf[js.Any] },
         "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
@@ -3292,18 +3292,18 @@ package greengrass {
 
   @js.native
   trait ListCoreDefinitionVersionsRequest extends js.Object {
-    var CoreDefinitionId: js.UndefOr[__string]
+    var CoreDefinitionId: __string
     var MaxResults: js.UndefOr[__string]
     var NextToken: js.UndefOr[__string]
   }
 
   object ListCoreDefinitionVersionsRequest {
     def apply(
-      CoreDefinitionId: js.UndefOr[__string] = js.undefined,
+      CoreDefinitionId: __string,
       MaxResults: js.UndefOr[__string] = js.undefined,
       NextToken: js.UndefOr[__string] = js.undefined): ListCoreDefinitionVersionsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "CoreDefinitionId" -> CoreDefinitionId.map { x => x.asInstanceOf[js.Any] },
+        "CoreDefinitionId" -> CoreDefinitionId.asInstanceOf[js.Any],
         "MaxResults" -> MaxResults.map { x => x.asInstanceOf[js.Any] },
         "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
@@ -3367,18 +3367,18 @@ package greengrass {
 
   @js.native
   trait ListDeploymentsRequest extends js.Object {
-    var GroupId: js.UndefOr[__string]
+    var GroupId: __string
     var MaxResults: js.UndefOr[__string]
     var NextToken: js.UndefOr[__string]
   }
 
   object ListDeploymentsRequest {
     def apply(
-      GroupId: js.UndefOr[__string] = js.undefined,
+      GroupId: __string,
       MaxResults: js.UndefOr[__string] = js.undefined,
       NextToken: js.UndefOr[__string] = js.undefined): ListDeploymentsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "GroupId" -> GroupId.map { x => x.asInstanceOf[js.Any] },
+        "GroupId" -> GroupId.asInstanceOf[js.Any],
         "MaxResults" -> MaxResults.map { x => x.asInstanceOf[js.Any] },
         "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
@@ -3406,18 +3406,18 @@ package greengrass {
 
   @js.native
   trait ListDeviceDefinitionVersionsRequest extends js.Object {
-    var DeviceDefinitionId: js.UndefOr[__string]
+    var DeviceDefinitionId: __string
     var MaxResults: js.UndefOr[__string]
     var NextToken: js.UndefOr[__string]
   }
 
   object ListDeviceDefinitionVersionsRequest {
     def apply(
-      DeviceDefinitionId: js.UndefOr[__string] = js.undefined,
+      DeviceDefinitionId: __string,
       MaxResults: js.UndefOr[__string] = js.undefined,
       NextToken: js.UndefOr[__string] = js.undefined): ListDeviceDefinitionVersionsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "DeviceDefinitionId" -> DeviceDefinitionId.map { x => x.asInstanceOf[js.Any] },
+        "DeviceDefinitionId" -> DeviceDefinitionId.asInstanceOf[js.Any],
         "MaxResults" -> MaxResults.map { x => x.asInstanceOf[js.Any] },
         "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
@@ -3481,18 +3481,18 @@ package greengrass {
 
   @js.native
   trait ListFunctionDefinitionVersionsRequest extends js.Object {
-    var FunctionDefinitionId: js.UndefOr[__string]
+    var FunctionDefinitionId: __string
     var MaxResults: js.UndefOr[__string]
     var NextToken: js.UndefOr[__string]
   }
 
   object ListFunctionDefinitionVersionsRequest {
     def apply(
-      FunctionDefinitionId: js.UndefOr[__string] = js.undefined,
+      FunctionDefinitionId: __string,
       MaxResults: js.UndefOr[__string] = js.undefined,
       NextToken: js.UndefOr[__string] = js.undefined): ListFunctionDefinitionVersionsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "FunctionDefinitionId" -> FunctionDefinitionId.map { x => x.asInstanceOf[js.Any] },
+        "FunctionDefinitionId" -> FunctionDefinitionId.asInstanceOf[js.Any],
         "MaxResults" -> MaxResults.map { x => x.asInstanceOf[js.Any] },
         "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
@@ -3556,14 +3556,14 @@ package greengrass {
 
   @js.native
   trait ListGroupCertificateAuthoritiesRequest extends js.Object {
-    var GroupId: js.UndefOr[__string]
+    var GroupId: __string
   }
 
   object ListGroupCertificateAuthoritiesRequest {
     def apply(
-      GroupId: js.UndefOr[__string] = js.undefined): ListGroupCertificateAuthoritiesRequest = {
+      GroupId: __string): ListGroupCertificateAuthoritiesRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "GroupId" -> GroupId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "GroupId" -> GroupId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListGroupCertificateAuthoritiesRequest]
     }
@@ -3586,18 +3586,18 @@ package greengrass {
 
   @js.native
   trait ListGroupVersionsRequest extends js.Object {
-    var GroupId: js.UndefOr[__string]
+    var GroupId: __string
     var MaxResults: js.UndefOr[__string]
     var NextToken: js.UndefOr[__string]
   }
 
   object ListGroupVersionsRequest {
     def apply(
-      GroupId: js.UndefOr[__string] = js.undefined,
+      GroupId: __string,
       MaxResults: js.UndefOr[__string] = js.undefined,
       NextToken: js.UndefOr[__string] = js.undefined): ListGroupVersionsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "GroupId" -> GroupId.map { x => x.asInstanceOf[js.Any] },
+        "GroupId" -> GroupId.asInstanceOf[js.Any],
         "MaxResults" -> MaxResults.map { x => x.asInstanceOf[js.Any] },
         "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
@@ -3661,18 +3661,18 @@ package greengrass {
 
   @js.native
   trait ListLoggerDefinitionVersionsRequest extends js.Object {
-    var LoggerDefinitionId: js.UndefOr[__string]
+    var LoggerDefinitionId: __string
     var MaxResults: js.UndefOr[__string]
     var NextToken: js.UndefOr[__string]
   }
 
   object ListLoggerDefinitionVersionsRequest {
     def apply(
-      LoggerDefinitionId: js.UndefOr[__string] = js.undefined,
+      LoggerDefinitionId: __string,
       MaxResults: js.UndefOr[__string] = js.undefined,
       NextToken: js.UndefOr[__string] = js.undefined): ListLoggerDefinitionVersionsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "LoggerDefinitionId" -> LoggerDefinitionId.map { x => x.asInstanceOf[js.Any] },
+        "LoggerDefinitionId" -> LoggerDefinitionId.asInstanceOf[js.Any],
         "MaxResults" -> MaxResults.map { x => x.asInstanceOf[js.Any] },
         "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
@@ -3736,20 +3736,20 @@ package greengrass {
 
   @js.native
   trait ListResourceDefinitionVersionsRequest extends js.Object {
+    var ResourceDefinitionId: __string
     var MaxResults: js.UndefOr[__string]
     var NextToken: js.UndefOr[__string]
-    var ResourceDefinitionId: js.UndefOr[__string]
   }
 
   object ListResourceDefinitionVersionsRequest {
     def apply(
+      ResourceDefinitionId: __string,
       MaxResults: js.UndefOr[__string] = js.undefined,
-      NextToken: js.UndefOr[__string] = js.undefined,
-      ResourceDefinitionId: js.UndefOr[__string] = js.undefined): ListResourceDefinitionVersionsRequest = {
+      NextToken: js.UndefOr[__string] = js.undefined): ListResourceDefinitionVersionsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "ResourceDefinitionId" -> ResourceDefinitionId.asInstanceOf[js.Any],
         "MaxResults" -> MaxResults.map { x => x.asInstanceOf[js.Any] },
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
-        "ResourceDefinitionId" -> ResourceDefinitionId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListResourceDefinitionVersionsRequest]
     }
@@ -3811,20 +3811,20 @@ package greengrass {
 
   @js.native
   trait ListSubscriptionDefinitionVersionsRequest extends js.Object {
+    var SubscriptionDefinitionId: __string
     var MaxResults: js.UndefOr[__string]
     var NextToken: js.UndefOr[__string]
-    var SubscriptionDefinitionId: js.UndefOr[__string]
   }
 
   object ListSubscriptionDefinitionVersionsRequest {
     def apply(
+      SubscriptionDefinitionId: __string,
       MaxResults: js.UndefOr[__string] = js.undefined,
-      NextToken: js.UndefOr[__string] = js.undefined,
-      SubscriptionDefinitionId: js.UndefOr[__string] = js.undefined): ListSubscriptionDefinitionVersionsRequest = {
+      NextToken: js.UndefOr[__string] = js.undefined): ListSubscriptionDefinitionVersionsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "SubscriptionDefinitionId" -> SubscriptionDefinitionId.asInstanceOf[js.Any],
         "MaxResults" -> MaxResults.map { x => x.asInstanceOf[js.Any] },
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
-        "SubscriptionDefinitionId" -> SubscriptionDefinitionId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListSubscriptionDefinitionVersionsRequest]
     }
@@ -3934,25 +3934,25 @@ package greengrass {
    */
   @js.native
   trait Logger extends js.Object {
+    var Component: js.UndefOr[LoggerComponent]
     var Id: js.UndefOr[__string]
     var Level: js.UndefOr[LoggerLevel]
     var Space: js.UndefOr[__integer]
-    var Component: js.UndefOr[LoggerComponent]
     var Type: js.UndefOr[LoggerType]
   }
 
   object Logger {
     def apply(
+      Component: js.UndefOr[LoggerComponent] = js.undefined,
       Id: js.UndefOr[__string] = js.undefined,
       Level: js.UndefOr[LoggerLevel] = js.undefined,
       Space: js.UndefOr[__integer] = js.undefined,
-      Component: js.UndefOr[LoggerComponent] = js.undefined,
       Type: js.UndefOr[LoggerType] = js.undefined): Logger = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "Component" -> Component.map { x => x.asInstanceOf[js.Any] },
         "Id" -> Id.map { x => x.asInstanceOf[js.Any] },
         "Level" -> Level.map { x => x.asInstanceOf[js.Any] },
         "Space" -> Space.map { x => x.asInstanceOf[js.Any] },
-        "Component" -> Component.map { x => x.asInstanceOf[js.Any] },
         "Type" -> Type.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Logger]
@@ -4016,20 +4016,20 @@ package greengrass {
    */
   @js.native
   trait ResetDeploymentsRequest extends js.Object {
+    var GroupId: __string
     var AmznClientToken: js.UndefOr[__string]
     var Force: js.UndefOr[__boolean]
-    var GroupId: js.UndefOr[__string]
   }
 
   object ResetDeploymentsRequest {
     def apply(
+      GroupId: __string,
       AmznClientToken: js.UndefOr[__string] = js.undefined,
-      Force: js.UndefOr[__boolean] = js.undefined,
-      GroupId: js.UndefOr[__string] = js.undefined): ResetDeploymentsRequest = {
+      Force: js.UndefOr[__boolean] = js.undefined): ResetDeploymentsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "GroupId" -> GroupId.asInstanceOf[js.Any],
         "AmznClientToken" -> AmznClientToken.map { x => x.asInstanceOf[js.Any] },
-        "Force" -> Force.map { x => x.asInstanceOf[js.Any] },
-        "GroupId" -> GroupId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Force" -> Force.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ResetDeploymentsRequest]
     }
@@ -4104,25 +4104,25 @@ package greengrass {
   @js.native
   trait ResourceDataContainer extends js.Object {
     var LocalDeviceResourceData: js.UndefOr[LocalDeviceResourceData]
-    var S3MachineLearningModelResourceData: js.UndefOr[S3MachineLearningModelResourceData]
-    var SecretsManagerSecretResourceData: js.UndefOr[SecretsManagerSecretResourceData]
     var LocalVolumeResourceData: js.UndefOr[LocalVolumeResourceData]
+    var S3MachineLearningModelResourceData: js.UndefOr[S3MachineLearningModelResourceData]
     var SageMakerMachineLearningModelResourceData: js.UndefOr[SageMakerMachineLearningModelResourceData]
+    var SecretsManagerSecretResourceData: js.UndefOr[SecretsManagerSecretResourceData]
   }
 
   object ResourceDataContainer {
     def apply(
       LocalDeviceResourceData: js.UndefOr[LocalDeviceResourceData] = js.undefined,
-      S3MachineLearningModelResourceData: js.UndefOr[S3MachineLearningModelResourceData] = js.undefined,
-      SecretsManagerSecretResourceData: js.UndefOr[SecretsManagerSecretResourceData] = js.undefined,
       LocalVolumeResourceData: js.UndefOr[LocalVolumeResourceData] = js.undefined,
-      SageMakerMachineLearningModelResourceData: js.UndefOr[SageMakerMachineLearningModelResourceData] = js.undefined): ResourceDataContainer = {
+      S3MachineLearningModelResourceData: js.UndefOr[S3MachineLearningModelResourceData] = js.undefined,
+      SageMakerMachineLearningModelResourceData: js.UndefOr[SageMakerMachineLearningModelResourceData] = js.undefined,
+      SecretsManagerSecretResourceData: js.UndefOr[SecretsManagerSecretResourceData] = js.undefined): ResourceDataContainer = {
       val _fields = IndexedSeq[(String, js.Any)](
         "LocalDeviceResourceData" -> LocalDeviceResourceData.map { x => x.asInstanceOf[js.Any] },
-        "S3MachineLearningModelResourceData" -> S3MachineLearningModelResourceData.map { x => x.asInstanceOf[js.Any] },
-        "SecretsManagerSecretResourceData" -> SecretsManagerSecretResourceData.map { x => x.asInstanceOf[js.Any] },
         "LocalVolumeResourceData" -> LocalVolumeResourceData.map { x => x.asInstanceOf[js.Any] },
-        "SageMakerMachineLearningModelResourceData" -> SageMakerMachineLearningModelResourceData.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "S3MachineLearningModelResourceData" -> S3MachineLearningModelResourceData.map { x => x.asInstanceOf[js.Any] },
+        "SageMakerMachineLearningModelResourceData" -> SageMakerMachineLearningModelResourceData.map { x => x.asInstanceOf[js.Any] },
+        "SecretsManagerSecretResourceData" -> SecretsManagerSecretResourceData.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ResourceDataContainer]
     }
@@ -4260,14 +4260,14 @@ package greengrass {
 
   @js.native
   trait StopBulkDeploymentRequest extends js.Object {
-    var BulkDeploymentId: js.UndefOr[__string]
+    var BulkDeploymentId: __string
   }
 
   object StopBulkDeploymentRequest {
     def apply(
-      BulkDeploymentId: js.UndefOr[__string] = js.undefined): StopBulkDeploymentRequest = {
+      BulkDeploymentId: __string): StopBulkDeploymentRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "BulkDeploymentId" -> BulkDeploymentId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "BulkDeploymentId" -> BulkDeploymentId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StopBulkDeploymentRequest]
     }
@@ -4352,17 +4352,17 @@ package greengrass {
    */
   @js.native
   trait UpdateConnectivityInfoRequest extends js.Object {
+    var ThingName: __string
     var ConnectivityInfo: js.UndefOr[__listOfConnectivityInfo]
-    var ThingName: js.UndefOr[__string]
   }
 
   object UpdateConnectivityInfoRequest {
     def apply(
-      ConnectivityInfo: js.UndefOr[__listOfConnectivityInfo] = js.undefined,
-      ThingName: js.UndefOr[__string] = js.undefined): UpdateConnectivityInfoRequest = {
+      ThingName: __string,
+      ConnectivityInfo: js.UndefOr[__listOfConnectivityInfo] = js.undefined): UpdateConnectivityInfoRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ConnectivityInfo" -> ConnectivityInfo.map { x => x.asInstanceOf[js.Any] },
-        "ThingName" -> ThingName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ThingName" -> ThingName.asInstanceOf[js.Any],
+        "ConnectivityInfo" -> ConnectivityInfo.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateConnectivityInfoRequest]
     }
@@ -4388,16 +4388,16 @@ package greengrass {
 
   @js.native
   trait UpdateConnectorDefinitionRequest extends js.Object {
-    var ConnectorDefinitionId: js.UndefOr[__string]
+    var ConnectorDefinitionId: __string
     var Name: js.UndefOr[__string]
   }
 
   object UpdateConnectorDefinitionRequest {
     def apply(
-      ConnectorDefinitionId: js.UndefOr[__string] = js.undefined,
+      ConnectorDefinitionId: __string,
       Name: js.UndefOr[__string] = js.undefined): UpdateConnectorDefinitionRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ConnectorDefinitionId" -> ConnectorDefinitionId.map { x => x.asInstanceOf[js.Any] },
+        "ConnectorDefinitionId" -> ConnectorDefinitionId.asInstanceOf[js.Any],
         "Name" -> Name.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateConnectorDefinitionRequest]
@@ -4419,16 +4419,16 @@ package greengrass {
 
   @js.native
   trait UpdateCoreDefinitionRequest extends js.Object {
-    var CoreDefinitionId: js.UndefOr[__string]
+    var CoreDefinitionId: __string
     var Name: js.UndefOr[__string]
   }
 
   object UpdateCoreDefinitionRequest {
     def apply(
-      CoreDefinitionId: js.UndefOr[__string] = js.undefined,
+      CoreDefinitionId: __string,
       Name: js.UndefOr[__string] = js.undefined): UpdateCoreDefinitionRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "CoreDefinitionId" -> CoreDefinitionId.map { x => x.asInstanceOf[js.Any] },
+        "CoreDefinitionId" -> CoreDefinitionId.asInstanceOf[js.Any],
         "Name" -> Name.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateCoreDefinitionRequest]
@@ -4450,16 +4450,16 @@ package greengrass {
 
   @js.native
   trait UpdateDeviceDefinitionRequest extends js.Object {
-    var DeviceDefinitionId: js.UndefOr[__string]
+    var DeviceDefinitionId: __string
     var Name: js.UndefOr[__string]
   }
 
   object UpdateDeviceDefinitionRequest {
     def apply(
-      DeviceDefinitionId: js.UndefOr[__string] = js.undefined,
+      DeviceDefinitionId: __string,
       Name: js.UndefOr[__string] = js.undefined): UpdateDeviceDefinitionRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "DeviceDefinitionId" -> DeviceDefinitionId.map { x => x.asInstanceOf[js.Any] },
+        "DeviceDefinitionId" -> DeviceDefinitionId.asInstanceOf[js.Any],
         "Name" -> Name.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateDeviceDefinitionRequest]
@@ -4481,16 +4481,16 @@ package greengrass {
 
   @js.native
   trait UpdateFunctionDefinitionRequest extends js.Object {
-    var FunctionDefinitionId: js.UndefOr[__string]
+    var FunctionDefinitionId: __string
     var Name: js.UndefOr[__string]
   }
 
   object UpdateFunctionDefinitionRequest {
     def apply(
-      FunctionDefinitionId: js.UndefOr[__string] = js.undefined,
+      FunctionDefinitionId: __string,
       Name: js.UndefOr[__string] = js.undefined): UpdateFunctionDefinitionRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "FunctionDefinitionId" -> FunctionDefinitionId.map { x => x.asInstanceOf[js.Any] },
+        "FunctionDefinitionId" -> FunctionDefinitionId.asInstanceOf[js.Any],
         "Name" -> Name.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateFunctionDefinitionRequest]
@@ -4512,17 +4512,17 @@ package greengrass {
 
   @js.native
   trait UpdateGroupCertificateConfigurationRequest extends js.Object {
+    var GroupId: __string
     var CertificateExpiryInMilliseconds: js.UndefOr[__string]
-    var GroupId: js.UndefOr[__string]
   }
 
   object UpdateGroupCertificateConfigurationRequest {
     def apply(
-      CertificateExpiryInMilliseconds: js.UndefOr[__string] = js.undefined,
-      GroupId: js.UndefOr[__string] = js.undefined): UpdateGroupCertificateConfigurationRequest = {
+      GroupId: __string,
+      CertificateExpiryInMilliseconds: js.UndefOr[__string] = js.undefined): UpdateGroupCertificateConfigurationRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "CertificateExpiryInMilliseconds" -> CertificateExpiryInMilliseconds.map { x => x.asInstanceOf[js.Any] },
-        "GroupId" -> GroupId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "GroupId" -> GroupId.asInstanceOf[js.Any],
+        "CertificateExpiryInMilliseconds" -> CertificateExpiryInMilliseconds.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateGroupCertificateConfigurationRequest]
     }
@@ -4551,16 +4551,16 @@ package greengrass {
 
   @js.native
   trait UpdateGroupRequest extends js.Object {
-    var GroupId: js.UndefOr[__string]
+    var GroupId: __string
     var Name: js.UndefOr[__string]
   }
 
   object UpdateGroupRequest {
     def apply(
-      GroupId: js.UndefOr[__string] = js.undefined,
+      GroupId: __string,
       Name: js.UndefOr[__string] = js.undefined): UpdateGroupRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "GroupId" -> GroupId.map { x => x.asInstanceOf[js.Any] },
+        "GroupId" -> GroupId.asInstanceOf[js.Any],
         "Name" -> Name.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateGroupRequest]
@@ -4582,16 +4582,16 @@ package greengrass {
 
   @js.native
   trait UpdateLoggerDefinitionRequest extends js.Object {
-    var LoggerDefinitionId: js.UndefOr[__string]
+    var LoggerDefinitionId: __string
     var Name: js.UndefOr[__string]
   }
 
   object UpdateLoggerDefinitionRequest {
     def apply(
-      LoggerDefinitionId: js.UndefOr[__string] = js.undefined,
+      LoggerDefinitionId: __string,
       Name: js.UndefOr[__string] = js.undefined): UpdateLoggerDefinitionRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "LoggerDefinitionId" -> LoggerDefinitionId.map { x => x.asInstanceOf[js.Any] },
+        "LoggerDefinitionId" -> LoggerDefinitionId.asInstanceOf[js.Any],
         "Name" -> Name.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateLoggerDefinitionRequest]
@@ -4613,17 +4613,17 @@ package greengrass {
 
   @js.native
   trait UpdateResourceDefinitionRequest extends js.Object {
+    var ResourceDefinitionId: __string
     var Name: js.UndefOr[__string]
-    var ResourceDefinitionId: js.UndefOr[__string]
   }
 
   object UpdateResourceDefinitionRequest {
     def apply(
-      Name: js.UndefOr[__string] = js.undefined,
-      ResourceDefinitionId: js.UndefOr[__string] = js.undefined): UpdateResourceDefinitionRequest = {
+      ResourceDefinitionId: __string,
+      Name: js.UndefOr[__string] = js.undefined): UpdateResourceDefinitionRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
-        "ResourceDefinitionId" -> ResourceDefinitionId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ResourceDefinitionId" -> ResourceDefinitionId.asInstanceOf[js.Any],
+        "Name" -> Name.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateResourceDefinitionRequest]
     }
@@ -4644,17 +4644,17 @@ package greengrass {
 
   @js.native
   trait UpdateSubscriptionDefinitionRequest extends js.Object {
+    var SubscriptionDefinitionId: __string
     var Name: js.UndefOr[__string]
-    var SubscriptionDefinitionId: js.UndefOr[__string]
   }
 
   object UpdateSubscriptionDefinitionRequest {
     def apply(
-      Name: js.UndefOr[__string] = js.undefined,
-      SubscriptionDefinitionId: js.UndefOr[__string] = js.undefined): UpdateSubscriptionDefinitionRequest = {
+      SubscriptionDefinitionId: __string,
+      Name: js.UndefOr[__string] = js.undefined): UpdateSubscriptionDefinitionRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
-        "SubscriptionDefinitionId" -> SubscriptionDefinitionId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "SubscriptionDefinitionId" -> SubscriptionDefinitionId.asInstanceOf[js.Any],
+        "Name" -> Name.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateSubscriptionDefinitionRequest]
     }

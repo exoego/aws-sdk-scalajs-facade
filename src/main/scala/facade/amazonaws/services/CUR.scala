@@ -132,17 +132,17 @@ package cur {
    */
   @js.native
   trait DescribeReportDefinitionsResponse extends js.Object {
-    var ReportDefinitions: js.UndefOr[ReportDefinitionList]
     var NextToken: js.UndefOr[GenericString]
+    var ReportDefinitions: js.UndefOr[ReportDefinitionList]
   }
 
   object DescribeReportDefinitionsResponse {
     def apply(
-      ReportDefinitions: js.UndefOr[ReportDefinitionList] = js.undefined,
-      NextToken: js.UndefOr[GenericString] = js.undefined): DescribeReportDefinitionsResponse = {
+      NextToken: js.UndefOr[GenericString] = js.undefined,
+      ReportDefinitions: js.UndefOr[ReportDefinitionList] = js.undefined): DescribeReportDefinitionsResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ReportDefinitions" -> ReportDefinitions.map { x => x.asInstanceOf[js.Any] },
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
+        "ReportDefinitions" -> ReportDefinitions.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeReportDefinitionsResponse]
     }
@@ -169,14 +169,14 @@ package cur {
    */
   @js.native
   trait PutReportDefinitionRequest extends js.Object {
-    var ReportDefinition: js.UndefOr[ReportDefinition]
+    var ReportDefinition: ReportDefinition
   }
 
   object PutReportDefinitionRequest {
     def apply(
-      ReportDefinition: js.UndefOr[ReportDefinition] = js.undefined): PutReportDefinitionRequest = {
+      ReportDefinition: ReportDefinition): PutReportDefinitionRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ReportDefinition" -> ReportDefinition.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ReportDefinition" -> ReportDefinition.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutReportDefinitionRequest]
     }
@@ -203,38 +203,38 @@ package cur {
    */
   @js.native
   trait ReportDefinition extends js.Object {
+    var AdditionalSchemaElements: SchemaElementList
+    var Compression: CompressionFormat
+    var Format: ReportFormat
+    var ReportName: ReportName
+    var S3Bucket: S3Bucket
+    var S3Prefix: S3Prefix
+    var S3Region: AWSRegion
+    var TimeUnit: TimeUnit
     var AdditionalArtifacts: js.UndefOr[AdditionalArtifactList]
-    var Format: js.UndefOr[ReportFormat]
-    var S3Bucket: js.UndefOr[S3Bucket]
-    var Compression: js.UndefOr[CompressionFormat]
-    var ReportName: js.UndefOr[ReportName]
-    var S3Prefix: js.UndefOr[S3Prefix]
-    var TimeUnit: js.UndefOr[TimeUnit]
-    var S3Region: js.UndefOr[AWSRegion]
-    var AdditionalSchemaElements: js.UndefOr[SchemaElementList]
   }
 
   object ReportDefinition {
     def apply(
-      AdditionalArtifacts: js.UndefOr[AdditionalArtifactList] = js.undefined,
-      Format: js.UndefOr[ReportFormat] = js.undefined,
-      S3Bucket: js.UndefOr[S3Bucket] = js.undefined,
-      Compression: js.UndefOr[CompressionFormat] = js.undefined,
-      ReportName: js.UndefOr[ReportName] = js.undefined,
-      S3Prefix: js.UndefOr[S3Prefix] = js.undefined,
-      TimeUnit: js.UndefOr[TimeUnit] = js.undefined,
-      S3Region: js.UndefOr[AWSRegion] = js.undefined,
-      AdditionalSchemaElements: js.UndefOr[SchemaElementList] = js.undefined): ReportDefinition = {
+      AdditionalSchemaElements: SchemaElementList,
+      Compression: CompressionFormat,
+      Format: ReportFormat,
+      ReportName: ReportName,
+      S3Bucket: S3Bucket,
+      S3Prefix: S3Prefix,
+      S3Region: AWSRegion,
+      TimeUnit: TimeUnit,
+      AdditionalArtifacts: js.UndefOr[AdditionalArtifactList] = js.undefined): ReportDefinition = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "AdditionalArtifacts" -> AdditionalArtifacts.map { x => x.asInstanceOf[js.Any] },
-        "Format" -> Format.map { x => x.asInstanceOf[js.Any] },
-        "S3Bucket" -> S3Bucket.map { x => x.asInstanceOf[js.Any] },
-        "Compression" -> Compression.map { x => x.asInstanceOf[js.Any] },
-        "ReportName" -> ReportName.map { x => x.asInstanceOf[js.Any] },
-        "S3Prefix" -> S3Prefix.map { x => x.asInstanceOf[js.Any] },
-        "TimeUnit" -> TimeUnit.map { x => x.asInstanceOf[js.Any] },
-        "S3Region" -> S3Region.map { x => x.asInstanceOf[js.Any] },
-        "AdditionalSchemaElements" -> AdditionalSchemaElements.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "AdditionalSchemaElements" -> AdditionalSchemaElements.asInstanceOf[js.Any],
+        "Compression" -> Compression.asInstanceOf[js.Any],
+        "Format" -> Format.asInstanceOf[js.Any],
+        "ReportName" -> ReportName.asInstanceOf[js.Any],
+        "S3Bucket" -> S3Bucket.asInstanceOf[js.Any],
+        "S3Prefix" -> S3Prefix.asInstanceOf[js.Any],
+        "S3Region" -> S3Region.asInstanceOf[js.Any],
+        "TimeUnit" -> TimeUnit.asInstanceOf[js.Any],
+        "AdditionalArtifacts" -> AdditionalArtifacts.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ReportDefinition]
     }

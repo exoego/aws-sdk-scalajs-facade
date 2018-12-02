@@ -56,32 +56,32 @@ package chime {
    */
   @js.native
   trait Account extends js.Object {
-    var AwsAccountId: js.UndefOr[String]
-    var Name: js.UndefOr[String]
-    var DefaultLicense: js.UndefOr[License]
-    var SupportedLicenses: js.UndefOr[LicenseList]
+    var AccountId: String
+    var AwsAccountId: String
+    var Name: String
     var AccountType: js.UndefOr[AccountType]
     var CreatedTimestamp: js.UndefOr[Iso8601Timestamp]
-    var AccountId: js.UndefOr[String]
+    var DefaultLicense: js.UndefOr[License]
+    var SupportedLicenses: js.UndefOr[LicenseList]
   }
 
   object Account {
     def apply(
-      AwsAccountId: js.UndefOr[String] = js.undefined,
-      Name: js.UndefOr[String] = js.undefined,
-      DefaultLicense: js.UndefOr[License] = js.undefined,
-      SupportedLicenses: js.UndefOr[LicenseList] = js.undefined,
+      AccountId: String,
+      AwsAccountId: String,
+      Name: String,
       AccountType: js.UndefOr[AccountType] = js.undefined,
       CreatedTimestamp: js.UndefOr[Iso8601Timestamp] = js.undefined,
-      AccountId: js.UndefOr[String] = js.undefined): Account = {
+      DefaultLicense: js.UndefOr[License] = js.undefined,
+      SupportedLicenses: js.UndefOr[LicenseList] = js.undefined): Account = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "AwsAccountId" -> AwsAccountId.map { x => x.asInstanceOf[js.Any] },
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
-        "DefaultLicense" -> DefaultLicense.map { x => x.asInstanceOf[js.Any] },
-        "SupportedLicenses" -> SupportedLicenses.map { x => x.asInstanceOf[js.Any] },
+        "AccountId" -> AccountId.asInstanceOf[js.Any],
+        "AwsAccountId" -> AwsAccountId.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
         "AccountType" -> AccountType.map { x => x.asInstanceOf[js.Any] },
         "CreatedTimestamp" -> CreatedTimestamp.map { x => x.asInstanceOf[js.Any] },
-        "AccountId" -> AccountId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "DefaultLicense" -> DefaultLicense.map { x => x.asInstanceOf[js.Any] },
+        "SupportedLicenses" -> SupportedLicenses.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Account]
     }
@@ -119,17 +119,17 @@ package chime {
 
   @js.native
   trait BatchSuspendUserRequest extends js.Object {
-    var AccountId: js.UndefOr[NonEmptyString]
-    var UserIdList: js.UndefOr[UserIdList]
+    var AccountId: NonEmptyString
+    var UserIdList: UserIdList
   }
 
   object BatchSuspendUserRequest {
     def apply(
-      AccountId: js.UndefOr[NonEmptyString] = js.undefined,
-      UserIdList: js.UndefOr[UserIdList] = js.undefined): BatchSuspendUserRequest = {
+      AccountId: NonEmptyString,
+      UserIdList: UserIdList): BatchSuspendUserRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "AccountId" -> AccountId.map { x => x.asInstanceOf[js.Any] },
-        "UserIdList" -> UserIdList.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "AccountId" -> AccountId.asInstanceOf[js.Any],
+        "UserIdList" -> UserIdList.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BatchSuspendUserRequest]
     }
@@ -152,17 +152,17 @@ package chime {
 
   @js.native
   trait BatchUnsuspendUserRequest extends js.Object {
-    var AccountId: js.UndefOr[NonEmptyString]
-    var UserIdList: js.UndefOr[UserIdList]
+    var AccountId: NonEmptyString
+    var UserIdList: UserIdList
   }
 
   object BatchUnsuspendUserRequest {
     def apply(
-      AccountId: js.UndefOr[NonEmptyString] = js.undefined,
-      UserIdList: js.UndefOr[UserIdList] = js.undefined): BatchUnsuspendUserRequest = {
+      AccountId: NonEmptyString,
+      UserIdList: UserIdList): BatchUnsuspendUserRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "AccountId" -> AccountId.map { x => x.asInstanceOf[js.Any] },
-        "UserIdList" -> UserIdList.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "AccountId" -> AccountId.asInstanceOf[js.Any],
+        "UserIdList" -> UserIdList.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BatchUnsuspendUserRequest]
     }
@@ -185,17 +185,17 @@ package chime {
 
   @js.native
   trait BatchUpdateUserRequest extends js.Object {
-    var AccountId: js.UndefOr[NonEmptyString]
-    var UpdateUserRequestItems: js.UndefOr[UpdateUserRequestItemList]
+    var AccountId: NonEmptyString
+    var UpdateUserRequestItems: UpdateUserRequestItemList
   }
 
   object BatchUpdateUserRequest {
     def apply(
-      AccountId: js.UndefOr[NonEmptyString] = js.undefined,
-      UpdateUserRequestItems: js.UndefOr[UpdateUserRequestItemList] = js.undefined): BatchUpdateUserRequest = {
+      AccountId: NonEmptyString,
+      UpdateUserRequestItems: UpdateUserRequestItemList): BatchUpdateUserRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "AccountId" -> AccountId.map { x => x.asInstanceOf[js.Any] },
-        "UpdateUserRequestItems" -> UpdateUserRequestItems.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "AccountId" -> AccountId.asInstanceOf[js.Any],
+        "UpdateUserRequestItems" -> UpdateUserRequestItems.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BatchUpdateUserRequest]
     }
@@ -218,14 +218,14 @@ package chime {
 
   @js.native
   trait CreateAccountRequest extends js.Object {
-    var Name: js.UndefOr[AccountName]
+    var Name: AccountName
   }
 
   object CreateAccountRequest {
     def apply(
-      Name: js.UndefOr[AccountName] = js.undefined): CreateAccountRequest = {
+      Name: AccountName): CreateAccountRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Name" -> Name.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateAccountRequest]
     }
@@ -248,14 +248,14 @@ package chime {
 
   @js.native
   trait DeleteAccountRequest extends js.Object {
-    var AccountId: js.UndefOr[NonEmptyString]
+    var AccountId: NonEmptyString
   }
 
   object DeleteAccountRequest {
     def apply(
-      AccountId: js.UndefOr[NonEmptyString] = js.undefined): DeleteAccountRequest = {
+      AccountId: NonEmptyString): DeleteAccountRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "AccountId" -> AccountId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "AccountId" -> AccountId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteAccountRequest]
     }
@@ -299,14 +299,14 @@ package chime {
 
   @js.native
   trait GetAccountRequest extends js.Object {
-    var AccountId: js.UndefOr[NonEmptyString]
+    var AccountId: NonEmptyString
   }
 
   object GetAccountRequest {
     def apply(
-      AccountId: js.UndefOr[NonEmptyString] = js.undefined): GetAccountRequest = {
+      AccountId: NonEmptyString): GetAccountRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "AccountId" -> AccountId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "AccountId" -> AccountId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetAccountRequest]
     }
@@ -329,14 +329,14 @@ package chime {
 
   @js.native
   trait GetAccountSettingsRequest extends js.Object {
-    var AccountId: js.UndefOr[NonEmptyString]
+    var AccountId: NonEmptyString
   }
 
   object GetAccountSettingsRequest {
     def apply(
-      AccountId: js.UndefOr[NonEmptyString] = js.undefined): GetAccountSettingsRequest = {
+      AccountId: NonEmptyString): GetAccountSettingsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "AccountId" -> AccountId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "AccountId" -> AccountId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetAccountSettingsRequest]
     }
@@ -359,17 +359,17 @@ package chime {
 
   @js.native
   trait GetUserRequest extends js.Object {
-    var AccountId: js.UndefOr[NonEmptyString]
-    var UserId: js.UndefOr[NonEmptyString]
+    var AccountId: NonEmptyString
+    var UserId: NonEmptyString
   }
 
   object GetUserRequest {
     def apply(
-      AccountId: js.UndefOr[NonEmptyString] = js.undefined,
-      UserId: js.UndefOr[NonEmptyString] = js.undefined): GetUserRequest = {
+      AccountId: NonEmptyString,
+      UserId: NonEmptyString): GetUserRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "AccountId" -> AccountId.map { x => x.asInstanceOf[js.Any] },
-        "UserId" -> UserId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "AccountId" -> AccountId.asInstanceOf[js.Any],
+        "UserId" -> UserId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetUserRequest]
     }
@@ -395,23 +395,23 @@ package chime {
    */
   @js.native
   trait Invite extends js.Object {
-    var InviteId: js.UndefOr[String]
-    var Status: js.UndefOr[InviteStatus]
     var EmailAddress: js.UndefOr[EmailAddress]
     var EmailStatus: js.UndefOr[EmailStatus]
+    var InviteId: js.UndefOr[String]
+    var Status: js.UndefOr[InviteStatus]
   }
 
   object Invite {
     def apply(
-      InviteId: js.UndefOr[String] = js.undefined,
-      Status: js.UndefOr[InviteStatus] = js.undefined,
       EmailAddress: js.UndefOr[EmailAddress] = js.undefined,
-      EmailStatus: js.UndefOr[EmailStatus] = js.undefined): Invite = {
+      EmailStatus: js.UndefOr[EmailStatus] = js.undefined,
+      InviteId: js.UndefOr[String] = js.undefined,
+      Status: js.UndefOr[InviteStatus] = js.undefined): Invite = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "InviteId" -> InviteId.map { x => x.asInstanceOf[js.Any] },
-        "Status" -> Status.map { x => x.asInstanceOf[js.Any] },
         "EmailAddress" -> EmailAddress.map { x => x.asInstanceOf[js.Any] },
-        "EmailStatus" -> EmailStatus.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "EmailStatus" -> EmailStatus.map { x => x.asInstanceOf[js.Any] },
+        "InviteId" -> InviteId.map { x => x.asInstanceOf[js.Any] },
+        "Status" -> Status.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Invite]
     }
@@ -427,17 +427,17 @@ package chime {
 
   @js.native
   trait InviteUsersRequest extends js.Object {
-    var AccountId: js.UndefOr[NonEmptyString]
-    var UserEmailList: js.UndefOr[UserEmailList]
+    var AccountId: NonEmptyString
+    var UserEmailList: UserEmailList
   }
 
   object InviteUsersRequest {
     def apply(
-      AccountId: js.UndefOr[NonEmptyString] = js.undefined,
-      UserEmailList: js.UndefOr[UserEmailList] = js.undefined): InviteUsersRequest = {
+      AccountId: NonEmptyString,
+      UserEmailList: UserEmailList): InviteUsersRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "AccountId" -> AccountId.map { x => x.asInstanceOf[js.Any] },
-        "UserEmailList" -> UserEmailList.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "AccountId" -> AccountId.asInstanceOf[js.Any],
+        "UserEmailList" -> UserEmailList.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[InviteUsersRequest]
     }
@@ -469,23 +469,23 @@ package chime {
 
   @js.native
   trait ListAccountsRequest extends js.Object {
-    var Name: js.UndefOr[AccountName]
-    var UserEmail: js.UndefOr[EmailAddress]
-    var NextToken: js.UndefOr[String]
     var MaxResults: js.UndefOr[ProfileServiceMaxResults]
+    var Name: js.UndefOr[AccountName]
+    var NextToken: js.UndefOr[String]
+    var UserEmail: js.UndefOr[EmailAddress]
   }
 
   object ListAccountsRequest {
     def apply(
+      MaxResults: js.UndefOr[ProfileServiceMaxResults] = js.undefined,
       Name: js.UndefOr[AccountName] = js.undefined,
-      UserEmail: js.UndefOr[EmailAddress] = js.undefined,
       NextToken: js.UndefOr[String] = js.undefined,
-      MaxResults: js.UndefOr[ProfileServiceMaxResults] = js.undefined): ListAccountsRequest = {
+      UserEmail: js.UndefOr[EmailAddress] = js.undefined): ListAccountsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "MaxResults" -> MaxResults.map { x => x.asInstanceOf[js.Any] },
         "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
-        "UserEmail" -> UserEmail.map { x => x.asInstanceOf[js.Any] },
         "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
-        "MaxResults" -> MaxResults.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "UserEmail" -> UserEmail.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListAccountsRequest]
     }
@@ -511,23 +511,23 @@ package chime {
 
   @js.native
   trait ListUsersRequest extends js.Object {
-    var AccountId: js.UndefOr[NonEmptyString]
-    var UserEmail: js.UndefOr[EmailAddress]
+    var AccountId: NonEmptyString
     var MaxResults: js.UndefOr[ProfileServiceMaxResults]
     var NextToken: js.UndefOr[String]
+    var UserEmail: js.UndefOr[EmailAddress]
   }
 
   object ListUsersRequest {
     def apply(
-      AccountId: js.UndefOr[NonEmptyString] = js.undefined,
-      UserEmail: js.UndefOr[EmailAddress] = js.undefined,
+      AccountId: NonEmptyString,
       MaxResults: js.UndefOr[ProfileServiceMaxResults] = js.undefined,
-      NextToken: js.UndefOr[String] = js.undefined): ListUsersRequest = {
+      NextToken: js.UndefOr[String] = js.undefined,
+      UserEmail: js.UndefOr[EmailAddress] = js.undefined): ListUsersRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "AccountId" -> AccountId.map { x => x.asInstanceOf[js.Any] },
-        "UserEmail" -> UserEmail.map { x => x.asInstanceOf[js.Any] },
+        "AccountId" -> AccountId.asInstanceOf[js.Any],
         "MaxResults" -> MaxResults.map { x => x.asInstanceOf[js.Any] },
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
+        "UserEmail" -> UserEmail.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListUsersRequest]
     }
@@ -535,17 +535,17 @@ package chime {
 
   @js.native
   trait ListUsersResponse extends js.Object {
-    var Users: js.UndefOr[UserList]
     var NextToken: js.UndefOr[String]
+    var Users: js.UndefOr[UserList]
   }
 
   object ListUsersResponse {
     def apply(
-      Users: js.UndefOr[UserList] = js.undefined,
-      NextToken: js.UndefOr[String] = js.undefined): ListUsersResponse = {
+      NextToken: js.UndefOr[String] = js.undefined,
+      Users: js.UndefOr[UserList] = js.undefined): ListUsersResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Users" -> Users.map { x => x.asInstanceOf[js.Any] },
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
+        "Users" -> Users.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListUsersResponse]
     }
@@ -553,17 +553,17 @@ package chime {
 
   @js.native
   trait LogoutUserRequest extends js.Object {
-    var AccountId: js.UndefOr[NonEmptyString]
-    var UserId: js.UndefOr[NonEmptyString]
+    var AccountId: NonEmptyString
+    var UserId: NonEmptyString
   }
 
   object LogoutUserRequest {
     def apply(
-      AccountId: js.UndefOr[NonEmptyString] = js.undefined,
-      UserId: js.UndefOr[NonEmptyString] = js.undefined): LogoutUserRequest = {
+      AccountId: NonEmptyString,
+      UserId: NonEmptyString): LogoutUserRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "AccountId" -> AccountId.map { x => x.asInstanceOf[js.Any] },
-        "UserId" -> UserId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "AccountId" -> AccountId.asInstanceOf[js.Any],
+        "UserId" -> UserId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[LogoutUserRequest]
     }
@@ -592,17 +592,17 @@ package chime {
 
   @js.native
   trait ResetPersonalPINRequest extends js.Object {
-    var AccountId: js.UndefOr[NonEmptyString]
-    var UserId: js.UndefOr[NonEmptyString]
+    var AccountId: NonEmptyString
+    var UserId: NonEmptyString
   }
 
   object ResetPersonalPINRequest {
     def apply(
-      AccountId: js.UndefOr[NonEmptyString] = js.undefined,
-      UserId: js.UndefOr[NonEmptyString] = js.undefined): ResetPersonalPINRequest = {
+      AccountId: NonEmptyString,
+      UserId: NonEmptyString): ResetPersonalPINRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "AccountId" -> AccountId.map { x => x.asInstanceOf[js.Any] },
-        "UserId" -> UserId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "AccountId" -> AccountId.asInstanceOf[js.Any],
+        "UserId" -> UserId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ResetPersonalPINRequest]
     }
@@ -625,16 +625,16 @@ package chime {
 
   @js.native
   trait UpdateAccountRequest extends js.Object {
-    var AccountId: js.UndefOr[NonEmptyString]
+    var AccountId: NonEmptyString
     var Name: js.UndefOr[AccountName]
   }
 
   object UpdateAccountRequest {
     def apply(
-      AccountId: js.UndefOr[NonEmptyString] = js.undefined,
+      AccountId: NonEmptyString,
       Name: js.UndefOr[AccountName] = js.undefined): UpdateAccountRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "AccountId" -> AccountId.map { x => x.asInstanceOf[js.Any] },
+        "AccountId" -> AccountId.asInstanceOf[js.Any],
         "Name" -> Name.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateAccountRequest]
@@ -658,17 +658,17 @@ package chime {
 
   @js.native
   trait UpdateAccountSettingsRequest extends js.Object {
-    var AccountId: js.UndefOr[NonEmptyString]
-    var AccountSettings: js.UndefOr[AccountSettings]
+    var AccountId: NonEmptyString
+    var AccountSettings: AccountSettings
   }
 
   object UpdateAccountSettingsRequest {
     def apply(
-      AccountId: js.UndefOr[NonEmptyString] = js.undefined,
-      AccountSettings: js.UndefOr[AccountSettings] = js.undefined): UpdateAccountSettingsRequest = {
+      AccountId: NonEmptyString,
+      AccountSettings: AccountSettings): UpdateAccountSettingsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "AccountId" -> AccountId.map { x => x.asInstanceOf[js.Any] },
-        "AccountSettings" -> AccountSettings.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "AccountId" -> AccountId.asInstanceOf[js.Any],
+        "AccountSettings" -> AccountSettings.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateAccountSettingsRequest]
     }
@@ -689,19 +689,19 @@ package chime {
 
   @js.native
   trait UpdateUserRequest extends js.Object {
-    var AccountId: js.UndefOr[NonEmptyString]
-    var UserId: js.UndefOr[NonEmptyString]
+    var AccountId: NonEmptyString
+    var UserId: NonEmptyString
     var LicenseType: js.UndefOr[License]
   }
 
   object UpdateUserRequest {
     def apply(
-      AccountId: js.UndefOr[NonEmptyString] = js.undefined,
-      UserId: js.UndefOr[NonEmptyString] = js.undefined,
+      AccountId: NonEmptyString,
+      UserId: NonEmptyString,
       LicenseType: js.UndefOr[License] = js.undefined): UpdateUserRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "AccountId" -> AccountId.map { x => x.asInstanceOf[js.Any] },
-        "UserId" -> UserId.map { x => x.asInstanceOf[js.Any] },
+        "AccountId" -> AccountId.asInstanceOf[js.Any],
+        "UserId" -> UserId.asInstanceOf[js.Any],
         "LicenseType" -> LicenseType.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateUserRequest]
@@ -713,16 +713,16 @@ package chime {
    */
   @js.native
   trait UpdateUserRequestItem extends js.Object {
-    var UserId: js.UndefOr[NonEmptyString]
+    var UserId: NonEmptyString
     var LicenseType: js.UndefOr[License]
   }
 
   object UpdateUserRequestItem {
     def apply(
-      UserId: js.UndefOr[NonEmptyString] = js.undefined,
+      UserId: NonEmptyString,
       LicenseType: js.UndefOr[License] = js.undefined): UpdateUserRequestItem = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "UserId" -> UserId.map { x => x.asInstanceOf[js.Any] },
+        "UserId" -> UserId.asInstanceOf[js.Any],
         "LicenseType" -> LicenseType.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateUserRequestItem]
@@ -749,41 +749,41 @@ package chime {
    */
   @js.native
   trait User extends js.Object {
-    var UserRegistrationStatus: js.UndefOr[RegistrationStatus]
-    var LicenseType: js.UndefOr[License]
-    var RegisteredOn: js.UndefOr[Iso8601Timestamp]
-    var PrimaryEmail: js.UndefOr[EmailAddress]
-    var InvitedOn: js.UndefOr[Iso8601Timestamp]
+    var UserId: String
     var AccountId: js.UndefOr[String]
-    var UserId: js.UndefOr[String]
-    var PersonalPIN: js.UndefOr[String]
     var DisplayName: js.UndefOr[SensitiveString]
+    var InvitedOn: js.UndefOr[Iso8601Timestamp]
+    var LicenseType: js.UndefOr[License]
+    var PersonalPIN: js.UndefOr[String]
+    var PrimaryEmail: js.UndefOr[EmailAddress]
+    var RegisteredOn: js.UndefOr[Iso8601Timestamp]
     var UserInvitationStatus: js.UndefOr[InviteStatus]
+    var UserRegistrationStatus: js.UndefOr[RegistrationStatus]
   }
 
   object User {
     def apply(
-      UserRegistrationStatus: js.UndefOr[RegistrationStatus] = js.undefined,
-      LicenseType: js.UndefOr[License] = js.undefined,
-      RegisteredOn: js.UndefOr[Iso8601Timestamp] = js.undefined,
-      PrimaryEmail: js.UndefOr[EmailAddress] = js.undefined,
-      InvitedOn: js.UndefOr[Iso8601Timestamp] = js.undefined,
+      UserId: String,
       AccountId: js.UndefOr[String] = js.undefined,
-      UserId: js.UndefOr[String] = js.undefined,
-      PersonalPIN: js.UndefOr[String] = js.undefined,
       DisplayName: js.UndefOr[SensitiveString] = js.undefined,
-      UserInvitationStatus: js.UndefOr[InviteStatus] = js.undefined): User = {
+      InvitedOn: js.UndefOr[Iso8601Timestamp] = js.undefined,
+      LicenseType: js.UndefOr[License] = js.undefined,
+      PersonalPIN: js.UndefOr[String] = js.undefined,
+      PrimaryEmail: js.UndefOr[EmailAddress] = js.undefined,
+      RegisteredOn: js.UndefOr[Iso8601Timestamp] = js.undefined,
+      UserInvitationStatus: js.UndefOr[InviteStatus] = js.undefined,
+      UserRegistrationStatus: js.UndefOr[RegistrationStatus] = js.undefined): User = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "UserRegistrationStatus" -> UserRegistrationStatus.map { x => x.asInstanceOf[js.Any] },
-        "LicenseType" -> LicenseType.map { x => x.asInstanceOf[js.Any] },
-        "RegisteredOn" -> RegisteredOn.map { x => x.asInstanceOf[js.Any] },
-        "PrimaryEmail" -> PrimaryEmail.map { x => x.asInstanceOf[js.Any] },
-        "InvitedOn" -> InvitedOn.map { x => x.asInstanceOf[js.Any] },
+        "UserId" -> UserId.asInstanceOf[js.Any],
         "AccountId" -> AccountId.map { x => x.asInstanceOf[js.Any] },
-        "UserId" -> UserId.map { x => x.asInstanceOf[js.Any] },
-        "PersonalPIN" -> PersonalPIN.map { x => x.asInstanceOf[js.Any] },
         "DisplayName" -> DisplayName.map { x => x.asInstanceOf[js.Any] },
-        "UserInvitationStatus" -> UserInvitationStatus.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "InvitedOn" -> InvitedOn.map { x => x.asInstanceOf[js.Any] },
+        "LicenseType" -> LicenseType.map { x => x.asInstanceOf[js.Any] },
+        "PersonalPIN" -> PersonalPIN.map { x => x.asInstanceOf[js.Any] },
+        "PrimaryEmail" -> PrimaryEmail.map { x => x.asInstanceOf[js.Any] },
+        "RegisteredOn" -> RegisteredOn.map { x => x.asInstanceOf[js.Any] },
+        "UserInvitationStatus" -> UserInvitationStatus.map { x => x.asInstanceOf[js.Any] },
+        "UserRegistrationStatus" -> UserRegistrationStatus.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[User]
     }
@@ -794,20 +794,20 @@ package chime {
    */
   @js.native
   trait UserError extends js.Object {
-    var UserId: js.UndefOr[NonEmptyString]
     var ErrorCode: js.UndefOr[ErrorCode]
     var ErrorMessage: js.UndefOr[String]
+    var UserId: js.UndefOr[NonEmptyString]
   }
 
   object UserError {
     def apply(
-      UserId: js.UndefOr[NonEmptyString] = js.undefined,
       ErrorCode: js.UndefOr[ErrorCode] = js.undefined,
-      ErrorMessage: js.UndefOr[String] = js.undefined): UserError = {
+      ErrorMessage: js.UndefOr[String] = js.undefined,
+      UserId: js.UndefOr[NonEmptyString] = js.undefined): UserError = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "UserId" -> UserId.map { x => x.asInstanceOf[js.Any] },
         "ErrorCode" -> ErrorCode.map { x => x.asInstanceOf[js.Any] },
-        "ErrorMessage" -> ErrorMessage.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ErrorMessage" -> ErrorMessage.map { x => x.asInstanceOf[js.Any] },
+        "UserId" -> UserId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UserError]
     }

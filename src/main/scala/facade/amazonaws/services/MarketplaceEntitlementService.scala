@@ -30,26 +30,26 @@ package marketplaceentitlementservice {
    */
   @js.native
   trait Entitlement extends js.Object {
-    var ProductCode: js.UndefOr[ProductCode]
     var CustomerIdentifier: js.UndefOr[NonEmptyString]
-    var Value: js.UndefOr[EntitlementValue]
-    var ExpirationDate: js.UndefOr[Timestamp]
     var Dimension: js.UndefOr[NonEmptyString]
+    var ExpirationDate: js.UndefOr[Timestamp]
+    var ProductCode: js.UndefOr[ProductCode]
+    var Value: js.UndefOr[EntitlementValue]
   }
 
   object Entitlement {
     def apply(
-      ProductCode: js.UndefOr[ProductCode] = js.undefined,
       CustomerIdentifier: js.UndefOr[NonEmptyString] = js.undefined,
-      Value: js.UndefOr[EntitlementValue] = js.undefined,
+      Dimension: js.UndefOr[NonEmptyString] = js.undefined,
       ExpirationDate: js.UndefOr[Timestamp] = js.undefined,
-      Dimension: js.UndefOr[NonEmptyString] = js.undefined): Entitlement = {
+      ProductCode: js.UndefOr[ProductCode] = js.undefined,
+      Value: js.UndefOr[EntitlementValue] = js.undefined): Entitlement = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ProductCode" -> ProductCode.map { x => x.asInstanceOf[js.Any] },
         "CustomerIdentifier" -> CustomerIdentifier.map { x => x.asInstanceOf[js.Any] },
-        "Value" -> Value.map { x => x.asInstanceOf[js.Any] },
+        "Dimension" -> Dimension.map { x => x.asInstanceOf[js.Any] },
         "ExpirationDate" -> ExpirationDate.map { x => x.asInstanceOf[js.Any] },
-        "Dimension" -> Dimension.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ProductCode" -> ProductCode.map { x => x.asInstanceOf[js.Any] },
+        "Value" -> Value.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Entitlement]
     }
@@ -60,22 +60,22 @@ package marketplaceentitlementservice {
    */
   @js.native
   trait EntitlementValue extends js.Object {
-    var IntegerValue: js.UndefOr[Int]
-    var DoubleValue: js.UndefOr[Double]
     var BooleanValue: js.UndefOr[Boolean]
+    var DoubleValue: js.UndefOr[Double]
+    var IntegerValue: js.UndefOr[Int]
     var StringValue: js.UndefOr[String]
   }
 
   object EntitlementValue {
     def apply(
-      IntegerValue: js.UndefOr[Int] = js.undefined,
-      DoubleValue: js.UndefOr[Double] = js.undefined,
       BooleanValue: js.UndefOr[Boolean] = js.undefined,
+      DoubleValue: js.UndefOr[Double] = js.undefined,
+      IntegerValue: js.UndefOr[Int] = js.undefined,
       StringValue: js.UndefOr[String] = js.undefined): EntitlementValue = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "IntegerValue" -> IntegerValue.map { x => x.asInstanceOf[js.Any] },
-        "DoubleValue" -> DoubleValue.map { x => x.asInstanceOf[js.Any] },
         "BooleanValue" -> BooleanValue.map { x => x.asInstanceOf[js.Any] },
+        "DoubleValue" -> DoubleValue.map { x => x.asInstanceOf[js.Any] },
+        "IntegerValue" -> IntegerValue.map { x => x.asInstanceOf[js.Any] },
         "StringValue" -> StringValue.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EntitlementValue]
@@ -94,23 +94,23 @@ package marketplaceentitlementservice {
    */
   @js.native
   trait GetEntitlementsRequest extends js.Object {
-    var ProductCode: js.UndefOr[ProductCode]
+    var ProductCode: ProductCode
     var Filter: js.UndefOr[GetEntitlementFilters]
-    var NextToken: js.UndefOr[NonEmptyString]
     var MaxResults: js.UndefOr[Int]
+    var NextToken: js.UndefOr[NonEmptyString]
   }
 
   object GetEntitlementsRequest {
     def apply(
-      ProductCode: js.UndefOr[ProductCode] = js.undefined,
+      ProductCode: ProductCode,
       Filter: js.UndefOr[GetEntitlementFilters] = js.undefined,
-      NextToken: js.UndefOr[NonEmptyString] = js.undefined,
-      MaxResults: js.UndefOr[Int] = js.undefined): GetEntitlementsRequest = {
+      MaxResults: js.UndefOr[Int] = js.undefined,
+      NextToken: js.UndefOr[NonEmptyString] = js.undefined): GetEntitlementsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ProductCode" -> ProductCode.map { x => x.asInstanceOf[js.Any] },
+        "ProductCode" -> ProductCode.asInstanceOf[js.Any],
         "Filter" -> Filter.map { x => x.asInstanceOf[js.Any] },
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
-        "MaxResults" -> MaxResults.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "MaxResults" -> MaxResults.map { x => x.asInstanceOf[js.Any] },
+        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetEntitlementsRequest]
     }

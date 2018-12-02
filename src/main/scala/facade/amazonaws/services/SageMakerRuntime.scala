@@ -22,26 +22,26 @@ package sagemakerruntime {
 
   @js.native
   trait InvokeEndpointInput extends js.Object {
+    var Body: BodyBlob
+    var EndpointName: EndpointName
     var Accept: js.UndefOr[Header]
-    var Body: js.UndefOr[BodyBlob]
-    var CustomAttributes: js.UndefOr[CustomAttributesHeader]
-    var EndpointName: js.UndefOr[EndpointName]
     var ContentType: js.UndefOr[Header]
+    var CustomAttributes: js.UndefOr[CustomAttributesHeader]
   }
 
   object InvokeEndpointInput {
     def apply(
+      Body: BodyBlob,
+      EndpointName: EndpointName,
       Accept: js.UndefOr[Header] = js.undefined,
-      Body: js.UndefOr[BodyBlob] = js.undefined,
-      CustomAttributes: js.UndefOr[CustomAttributesHeader] = js.undefined,
-      EndpointName: js.UndefOr[EndpointName] = js.undefined,
-      ContentType: js.UndefOr[Header] = js.undefined): InvokeEndpointInput = {
+      ContentType: js.UndefOr[Header] = js.undefined,
+      CustomAttributes: js.UndefOr[CustomAttributesHeader] = js.undefined): InvokeEndpointInput = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "Body" -> Body.asInstanceOf[js.Any],
+        "EndpointName" -> EndpointName.asInstanceOf[js.Any],
         "Accept" -> Accept.map { x => x.asInstanceOf[js.Any] },
-        "Body" -> Body.map { x => x.asInstanceOf[js.Any] },
-        "CustomAttributes" -> CustomAttributes.map { x => x.asInstanceOf[js.Any] },
-        "EndpointName" -> EndpointName.map { x => x.asInstanceOf[js.Any] },
-        "ContentType" -> ContentType.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ContentType" -> ContentType.map { x => x.asInstanceOf[js.Any] },
+        "CustomAttributes" -> CustomAttributes.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[InvokeEndpointInput]
     }
@@ -49,23 +49,23 @@ package sagemakerruntime {
 
   @js.native
   trait InvokeEndpointOutput extends js.Object {
-    var Body: js.UndefOr[BodyBlob]
+    var Body: BodyBlob
     var ContentType: js.UndefOr[Header]
-    var InvokedProductionVariant: js.UndefOr[Header]
     var CustomAttributes: js.UndefOr[CustomAttributesHeader]
+    var InvokedProductionVariant: js.UndefOr[Header]
   }
 
   object InvokeEndpointOutput {
     def apply(
-      Body: js.UndefOr[BodyBlob] = js.undefined,
+      Body: BodyBlob,
       ContentType: js.UndefOr[Header] = js.undefined,
-      InvokedProductionVariant: js.UndefOr[Header] = js.undefined,
-      CustomAttributes: js.UndefOr[CustomAttributesHeader] = js.undefined): InvokeEndpointOutput = {
+      CustomAttributes: js.UndefOr[CustomAttributesHeader] = js.undefined,
+      InvokedProductionVariant: js.UndefOr[Header] = js.undefined): InvokeEndpointOutput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Body" -> Body.map { x => x.asInstanceOf[js.Any] },
+        "Body" -> Body.asInstanceOf[js.Any],
         "ContentType" -> ContentType.map { x => x.asInstanceOf[js.Any] },
-        "InvokedProductionVariant" -> InvokedProductionVariant.map { x => x.asInstanceOf[js.Any] },
-        "CustomAttributes" -> CustomAttributes.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "CustomAttributes" -> CustomAttributes.map { x => x.asInstanceOf[js.Any] },
+        "InvokedProductionVariant" -> InvokedProductionVariant.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[InvokeEndpointOutput]
     }

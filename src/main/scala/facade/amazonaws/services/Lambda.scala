@@ -132,25 +132,25 @@ package lambda {
    */
   @js.native
   trait AccountLimit extends js.Object {
+    var CodeSizeUnzipped: js.UndefOr[Double]
     var CodeSizeZipped: js.UndefOr[Double]
     var ConcurrentExecutions: js.UndefOr[Int]
     var TotalCodeSize: js.UndefOr[Double]
-    var CodeSizeUnzipped: js.UndefOr[Double]
     var UnreservedConcurrentExecutions: js.UndefOr[UnreservedConcurrentExecutions]
   }
 
   object AccountLimit {
     def apply(
+      CodeSizeUnzipped: js.UndefOr[Double] = js.undefined,
       CodeSizeZipped: js.UndefOr[Double] = js.undefined,
       ConcurrentExecutions: js.UndefOr[Int] = js.undefined,
       TotalCodeSize: js.UndefOr[Double] = js.undefined,
-      CodeSizeUnzipped: js.UndefOr[Double] = js.undefined,
       UnreservedConcurrentExecutions: js.UndefOr[UnreservedConcurrentExecutions] = js.undefined): AccountLimit = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "CodeSizeUnzipped" -> CodeSizeUnzipped.map { x => x.asInstanceOf[js.Any] },
         "CodeSizeZipped" -> CodeSizeZipped.map { x => x.asInstanceOf[js.Any] },
         "ConcurrentExecutions" -> ConcurrentExecutions.map { x => x.asInstanceOf[js.Any] },
         "TotalCodeSize" -> TotalCodeSize.map { x => x.asInstanceOf[js.Any] },
-        "CodeSizeUnzipped" -> CodeSizeUnzipped.map { x => x.asInstanceOf[js.Any] },
         "UnreservedConcurrentExecutions" -> UnreservedConcurrentExecutions.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AccountLimit]
@@ -162,17 +162,17 @@ package lambda {
    */
   @js.native
   trait AccountUsage extends js.Object {
-    var TotalCodeSize: js.UndefOr[Double]
     var FunctionCount: js.UndefOr[Double]
+    var TotalCodeSize: js.UndefOr[Double]
   }
 
   object AccountUsage {
     def apply(
-      TotalCodeSize: js.UndefOr[Double] = js.undefined,
-      FunctionCount: js.UndefOr[Double] = js.undefined): AccountUsage = {
+      FunctionCount: js.UndefOr[Double] = js.undefined,
+      TotalCodeSize: js.UndefOr[Double] = js.undefined): AccountUsage = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "TotalCodeSize" -> TotalCodeSize.map { x => x.asInstanceOf[js.Any] },
-        "FunctionCount" -> FunctionCount.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "FunctionCount" -> FunctionCount.map { x => x.asInstanceOf[js.Any] },
+        "TotalCodeSize" -> TotalCodeSize.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AccountUsage]
     }
@@ -180,32 +180,32 @@ package lambda {
 
   @js.native
   trait AddLayerVersionPermissionRequest extends js.Object {
-    var Principal: js.UndefOr[LayerPermissionAllowedPrincipal]
-    var LayerName: js.UndefOr[LayerName]
-    var VersionNumber: js.UndefOr[LayerVersionNumber]
+    var Action: LayerPermissionAllowedAction
+    var LayerName: LayerName
+    var Principal: LayerPermissionAllowedPrincipal
+    var StatementId: StatementId
+    var VersionNumber: LayerVersionNumber
     var OrganizationId: js.UndefOr[OrganizationId]
     var RevisionId: js.UndefOr[String]
-    var StatementId: js.UndefOr[StatementId]
-    var Action: js.UndefOr[LayerPermissionAllowedAction]
   }
 
   object AddLayerVersionPermissionRequest {
     def apply(
-      Principal: js.UndefOr[LayerPermissionAllowedPrincipal] = js.undefined,
-      LayerName: js.UndefOr[LayerName] = js.undefined,
-      VersionNumber: js.UndefOr[LayerVersionNumber] = js.undefined,
+      Action: LayerPermissionAllowedAction,
+      LayerName: LayerName,
+      Principal: LayerPermissionAllowedPrincipal,
+      StatementId: StatementId,
+      VersionNumber: LayerVersionNumber,
       OrganizationId: js.UndefOr[OrganizationId] = js.undefined,
-      RevisionId: js.UndefOr[String] = js.undefined,
-      StatementId: js.UndefOr[StatementId] = js.undefined,
-      Action: js.UndefOr[LayerPermissionAllowedAction] = js.undefined): AddLayerVersionPermissionRequest = {
+      RevisionId: js.UndefOr[String] = js.undefined): AddLayerVersionPermissionRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Principal" -> Principal.map { x => x.asInstanceOf[js.Any] },
-        "LayerName" -> LayerName.map { x => x.asInstanceOf[js.Any] },
-        "VersionNumber" -> VersionNumber.map { x => x.asInstanceOf[js.Any] },
+        "Action" -> Action.asInstanceOf[js.Any],
+        "LayerName" -> LayerName.asInstanceOf[js.Any],
+        "Principal" -> Principal.asInstanceOf[js.Any],
+        "StatementId" -> StatementId.asInstanceOf[js.Any],
+        "VersionNumber" -> VersionNumber.asInstanceOf[js.Any],
         "OrganizationId" -> OrganizationId.map { x => x.asInstanceOf[js.Any] },
-        "RevisionId" -> RevisionId.map { x => x.asInstanceOf[js.Any] },
-        "StatementId" -> StatementId.map { x => x.asInstanceOf[js.Any] },
-        "Action" -> Action.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "RevisionId" -> RevisionId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AddLayerVersionPermissionRequest]
     }
@@ -213,17 +213,17 @@ package lambda {
 
   @js.native
   trait AddLayerVersionPermissionResponse extends js.Object {
-    var Statement: js.UndefOr[String]
     var RevisionId: js.UndefOr[String]
+    var Statement: js.UndefOr[String]
   }
 
   object AddLayerVersionPermissionResponse {
     def apply(
-      Statement: js.UndefOr[String] = js.undefined,
-      RevisionId: js.UndefOr[String] = js.undefined): AddLayerVersionPermissionResponse = {
+      RevisionId: js.UndefOr[String] = js.undefined,
+      Statement: js.UndefOr[String] = js.undefined): AddLayerVersionPermissionResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Statement" -> Statement.map { x => x.asInstanceOf[js.Any] },
-        "RevisionId" -> RevisionId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "RevisionId" -> RevisionId.map { x => x.asInstanceOf[js.Any] },
+        "Statement" -> Statement.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AddLayerVersionPermissionResponse]
     }
@@ -231,38 +231,38 @@ package lambda {
 
   @js.native
   trait AddPermissionRequest extends js.Object {
+    var Action: Action
+    var FunctionName: FunctionName
+    var Principal: Principal
+    var StatementId: StatementId
     var EventSourceToken: js.UndefOr[EventSourceToken]
-    var Principal: js.UndefOr[Principal]
     var Qualifier: js.UndefOr[Qualifier]
-    var FunctionName: js.UndefOr[FunctionName]
     var RevisionId: js.UndefOr[String]
-    var StatementId: js.UndefOr[StatementId]
     var SourceAccount: js.UndefOr[SourceOwner]
     var SourceArn: js.UndefOr[Arn]
-    var Action: js.UndefOr[Action]
   }
 
   object AddPermissionRequest {
     def apply(
+      Action: Action,
+      FunctionName: FunctionName,
+      Principal: Principal,
+      StatementId: StatementId,
       EventSourceToken: js.UndefOr[EventSourceToken] = js.undefined,
-      Principal: js.UndefOr[Principal] = js.undefined,
       Qualifier: js.UndefOr[Qualifier] = js.undefined,
-      FunctionName: js.UndefOr[FunctionName] = js.undefined,
       RevisionId: js.UndefOr[String] = js.undefined,
-      StatementId: js.UndefOr[StatementId] = js.undefined,
       SourceAccount: js.UndefOr[SourceOwner] = js.undefined,
-      SourceArn: js.UndefOr[Arn] = js.undefined,
-      Action: js.UndefOr[Action] = js.undefined): AddPermissionRequest = {
+      SourceArn: js.UndefOr[Arn] = js.undefined): AddPermissionRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "Action" -> Action.asInstanceOf[js.Any],
+        "FunctionName" -> FunctionName.asInstanceOf[js.Any],
+        "Principal" -> Principal.asInstanceOf[js.Any],
+        "StatementId" -> StatementId.asInstanceOf[js.Any],
         "EventSourceToken" -> EventSourceToken.map { x => x.asInstanceOf[js.Any] },
-        "Principal" -> Principal.map { x => x.asInstanceOf[js.Any] },
         "Qualifier" -> Qualifier.map { x => x.asInstanceOf[js.Any] },
-        "FunctionName" -> FunctionName.map { x => x.asInstanceOf[js.Any] },
         "RevisionId" -> RevisionId.map { x => x.asInstanceOf[js.Any] },
-        "StatementId" -> StatementId.map { x => x.asInstanceOf[js.Any] },
         "SourceAccount" -> SourceAccount.map { x => x.asInstanceOf[js.Any] },
-        "SourceArn" -> SourceArn.map { x => x.asInstanceOf[js.Any] },
-        "Action" -> Action.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "SourceArn" -> SourceArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AddPermissionRequest]
     }
@@ -288,29 +288,29 @@ package lambda {
    */
   @js.native
   trait AliasConfiguration extends js.Object {
-    var Name: js.UndefOr[Alias]
-    var Description: js.UndefOr[Description]
-    var RoutingConfig: js.UndefOr[AliasRoutingConfiguration]
-    var RevisionId: js.UndefOr[String]
-    var FunctionVersion: js.UndefOr[Version]
     var AliasArn: js.UndefOr[FunctionArn]
+    var Description: js.UndefOr[Description]
+    var FunctionVersion: js.UndefOr[Version]
+    var Name: js.UndefOr[Alias]
+    var RevisionId: js.UndefOr[String]
+    var RoutingConfig: js.UndefOr[AliasRoutingConfiguration]
   }
 
   object AliasConfiguration {
     def apply(
-      Name: js.UndefOr[Alias] = js.undefined,
+      AliasArn: js.UndefOr[FunctionArn] = js.undefined,
       Description: js.UndefOr[Description] = js.undefined,
-      RoutingConfig: js.UndefOr[AliasRoutingConfiguration] = js.undefined,
-      RevisionId: js.UndefOr[String] = js.undefined,
       FunctionVersion: js.UndefOr[Version] = js.undefined,
-      AliasArn: js.UndefOr[FunctionArn] = js.undefined): AliasConfiguration = {
+      Name: js.UndefOr[Alias] = js.undefined,
+      RevisionId: js.UndefOr[String] = js.undefined,
+      RoutingConfig: js.UndefOr[AliasRoutingConfiguration] = js.undefined): AliasConfiguration = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
+        "AliasArn" -> AliasArn.map { x => x.asInstanceOf[js.Any] },
         "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
-        "RoutingConfig" -> RoutingConfig.map { x => x.asInstanceOf[js.Any] },
-        "RevisionId" -> RevisionId.map { x => x.asInstanceOf[js.Any] },
         "FunctionVersion" -> FunctionVersion.map { x => x.asInstanceOf[js.Any] },
-        "AliasArn" -> AliasArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
+        "RevisionId" -> RevisionId.map { x => x.asInstanceOf[js.Any] },
+        "RoutingConfig" -> RoutingConfig.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AliasConfiguration]
     }
@@ -351,26 +351,26 @@ package lambda {
 
   @js.native
   trait CreateAliasRequest extends js.Object {
-    var Name: js.UndefOr[Alias]
-    var FunctionName: js.UndefOr[FunctionName]
+    var FunctionName: FunctionName
+    var FunctionVersion: Version
+    var Name: Alias
     var Description: js.UndefOr[Description]
     var RoutingConfig: js.UndefOr[AliasRoutingConfiguration]
-    var FunctionVersion: js.UndefOr[Version]
   }
 
   object CreateAliasRequest {
     def apply(
-      Name: js.UndefOr[Alias] = js.undefined,
-      FunctionName: js.UndefOr[FunctionName] = js.undefined,
+      FunctionName: FunctionName,
+      FunctionVersion: Version,
+      Name: Alias,
       Description: js.UndefOr[Description] = js.undefined,
-      RoutingConfig: js.UndefOr[AliasRoutingConfiguration] = js.undefined,
-      FunctionVersion: js.UndefOr[Version] = js.undefined): CreateAliasRequest = {
+      RoutingConfig: js.UndefOr[AliasRoutingConfiguration] = js.undefined): CreateAliasRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
-        "FunctionName" -> FunctionName.map { x => x.asInstanceOf[js.Any] },
+        "FunctionName" -> FunctionName.asInstanceOf[js.Any],
+        "FunctionVersion" -> FunctionVersion.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
         "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
-        "RoutingConfig" -> RoutingConfig.map { x => x.asInstanceOf[js.Any] },
-        "FunctionVersion" -> FunctionVersion.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "RoutingConfig" -> RoutingConfig.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateAliasRequest]
     }
@@ -378,29 +378,29 @@ package lambda {
 
   @js.native
   trait CreateEventSourceMappingRequest extends js.Object {
-    var StartingPositionTimestamp: js.UndefOr[Date]
-    var Enabled: js.UndefOr[Enabled]
-    var FunctionName: js.UndefOr[FunctionName]
-    var StartingPosition: js.UndefOr[EventSourcePosition]
-    var EventSourceArn: js.UndefOr[Arn]
+    var EventSourceArn: Arn
+    var FunctionName: FunctionName
     var BatchSize: js.UndefOr[BatchSize]
+    var Enabled: js.UndefOr[Enabled]
+    var StartingPosition: js.UndefOr[EventSourcePosition]
+    var StartingPositionTimestamp: js.UndefOr[Date]
   }
 
   object CreateEventSourceMappingRequest {
     def apply(
-      StartingPositionTimestamp: js.UndefOr[Date] = js.undefined,
+      EventSourceArn: Arn,
+      FunctionName: FunctionName,
+      BatchSize: js.UndefOr[BatchSize] = js.undefined,
       Enabled: js.UndefOr[Enabled] = js.undefined,
-      FunctionName: js.UndefOr[FunctionName] = js.undefined,
       StartingPosition: js.UndefOr[EventSourcePosition] = js.undefined,
-      EventSourceArn: js.UndefOr[Arn] = js.undefined,
-      BatchSize: js.UndefOr[BatchSize] = js.undefined): CreateEventSourceMappingRequest = {
+      StartingPositionTimestamp: js.UndefOr[Date] = js.undefined): CreateEventSourceMappingRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "StartingPositionTimestamp" -> StartingPositionTimestamp.map { x => x.asInstanceOf[js.Any] },
+        "EventSourceArn" -> EventSourceArn.asInstanceOf[js.Any],
+        "FunctionName" -> FunctionName.asInstanceOf[js.Any],
+        "BatchSize" -> BatchSize.map { x => x.asInstanceOf[js.Any] },
         "Enabled" -> Enabled.map { x => x.asInstanceOf[js.Any] },
-        "FunctionName" -> FunctionName.map { x => x.asInstanceOf[js.Any] },
         "StartingPosition" -> StartingPosition.map { x => x.asInstanceOf[js.Any] },
-        "EventSourceArn" -> EventSourceArn.map { x => x.asInstanceOf[js.Any] },
-        "BatchSize" -> BatchSize.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "StartingPositionTimestamp" -> StartingPositionTimestamp.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateEventSourceMappingRequest]
     }
@@ -408,59 +408,59 @@ package lambda {
 
   @js.native
   trait CreateFunctionRequest extends js.Object {
-    var Environment: js.UndefOr[Environment]
+    var Code: FunctionCode
+    var FunctionName: FunctionName
+    var Handler: Handler
+    var Role: RoleArn
+    var Runtime: Runtime
     var DeadLetterConfig: js.UndefOr[DeadLetterConfig]
-    var Role: js.UndefOr[RoleArn]
-    var Handler: js.UndefOr[Handler]
-    var Code: js.UndefOr[FunctionCode]
-    var FunctionName: js.UndefOr[FunctionName]
     var Description: js.UndefOr[Description]
-    var MemorySize: js.UndefOr[MemorySize]
-    var Layers: js.UndefOr[LayerList]
-    var VpcConfig: js.UndefOr[VpcConfig]
-    var Runtime: js.UndefOr[Runtime]
-    var Tags: js.UndefOr[Tags]
+    var Environment: js.UndefOr[Environment]
     var KMSKeyArn: js.UndefOr[KMSKeyArn]
-    var TracingConfig: js.UndefOr[TracingConfig]
+    var Layers: js.UndefOr[LayerList]
+    var MemorySize: js.UndefOr[MemorySize]
     var Publish: js.UndefOr[Boolean]
+    var Tags: js.UndefOr[Tags]
     var Timeout: js.UndefOr[Timeout]
+    var TracingConfig: js.UndefOr[TracingConfig]
+    var VpcConfig: js.UndefOr[VpcConfig]
   }
 
   object CreateFunctionRequest {
     def apply(
-      Environment: js.UndefOr[Environment] = js.undefined,
+      Code: FunctionCode,
+      FunctionName: FunctionName,
+      Handler: Handler,
+      Role: RoleArn,
+      Runtime: Runtime,
       DeadLetterConfig: js.UndefOr[DeadLetterConfig] = js.undefined,
-      Role: js.UndefOr[RoleArn] = js.undefined,
-      Handler: js.UndefOr[Handler] = js.undefined,
-      Code: js.UndefOr[FunctionCode] = js.undefined,
-      FunctionName: js.UndefOr[FunctionName] = js.undefined,
       Description: js.UndefOr[Description] = js.undefined,
-      MemorySize: js.UndefOr[MemorySize] = js.undefined,
-      Layers: js.UndefOr[LayerList] = js.undefined,
-      VpcConfig: js.UndefOr[VpcConfig] = js.undefined,
-      Runtime: js.UndefOr[Runtime] = js.undefined,
-      Tags: js.UndefOr[Tags] = js.undefined,
+      Environment: js.UndefOr[Environment] = js.undefined,
       KMSKeyArn: js.UndefOr[KMSKeyArn] = js.undefined,
-      TracingConfig: js.UndefOr[TracingConfig] = js.undefined,
+      Layers: js.UndefOr[LayerList] = js.undefined,
+      MemorySize: js.UndefOr[MemorySize] = js.undefined,
       Publish: js.UndefOr[Boolean] = js.undefined,
-      Timeout: js.UndefOr[Timeout] = js.undefined): CreateFunctionRequest = {
+      Tags: js.UndefOr[Tags] = js.undefined,
+      Timeout: js.UndefOr[Timeout] = js.undefined,
+      TracingConfig: js.UndefOr[TracingConfig] = js.undefined,
+      VpcConfig: js.UndefOr[VpcConfig] = js.undefined): CreateFunctionRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Environment" -> Environment.map { x => x.asInstanceOf[js.Any] },
+        "Code" -> Code.asInstanceOf[js.Any],
+        "FunctionName" -> FunctionName.asInstanceOf[js.Any],
+        "Handler" -> Handler.asInstanceOf[js.Any],
+        "Role" -> Role.asInstanceOf[js.Any],
+        "Runtime" -> Runtime.asInstanceOf[js.Any],
         "DeadLetterConfig" -> DeadLetterConfig.map { x => x.asInstanceOf[js.Any] },
-        "Role" -> Role.map { x => x.asInstanceOf[js.Any] },
-        "Handler" -> Handler.map { x => x.asInstanceOf[js.Any] },
-        "Code" -> Code.map { x => x.asInstanceOf[js.Any] },
-        "FunctionName" -> FunctionName.map { x => x.asInstanceOf[js.Any] },
         "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
-        "MemorySize" -> MemorySize.map { x => x.asInstanceOf[js.Any] },
-        "Layers" -> Layers.map { x => x.asInstanceOf[js.Any] },
-        "VpcConfig" -> VpcConfig.map { x => x.asInstanceOf[js.Any] },
-        "Runtime" -> Runtime.map { x => x.asInstanceOf[js.Any] },
-        "Tags" -> Tags.map { x => x.asInstanceOf[js.Any] },
+        "Environment" -> Environment.map { x => x.asInstanceOf[js.Any] },
         "KMSKeyArn" -> KMSKeyArn.map { x => x.asInstanceOf[js.Any] },
-        "TracingConfig" -> TracingConfig.map { x => x.asInstanceOf[js.Any] },
+        "Layers" -> Layers.map { x => x.asInstanceOf[js.Any] },
+        "MemorySize" -> MemorySize.map { x => x.asInstanceOf[js.Any] },
         "Publish" -> Publish.map { x => x.asInstanceOf[js.Any] },
-        "Timeout" -> Timeout.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Tags" -> Tags.map { x => x.asInstanceOf[js.Any] },
+        "Timeout" -> Timeout.map { x => x.asInstanceOf[js.Any] },
+        "TracingConfig" -> TracingConfig.map { x => x.asInstanceOf[js.Any] },
+        "VpcConfig" -> VpcConfig.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateFunctionRequest]
     }
@@ -486,17 +486,17 @@ package lambda {
 
   @js.native
   trait DeleteAliasRequest extends js.Object {
-    var FunctionName: js.UndefOr[FunctionName]
-    var Name: js.UndefOr[Alias]
+    var FunctionName: FunctionName
+    var Name: Alias
   }
 
   object DeleteAliasRequest {
     def apply(
-      FunctionName: js.UndefOr[FunctionName] = js.undefined,
-      Name: js.UndefOr[Alias] = js.undefined): DeleteAliasRequest = {
+      FunctionName: FunctionName,
+      Name: Alias): DeleteAliasRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "FunctionName" -> FunctionName.map { x => x.asInstanceOf[js.Any] },
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "FunctionName" -> FunctionName.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteAliasRequest]
     }
@@ -504,14 +504,14 @@ package lambda {
 
   @js.native
   trait DeleteEventSourceMappingRequest extends js.Object {
-    var UUID: js.UndefOr[String]
+    var UUID: String
   }
 
   object DeleteEventSourceMappingRequest {
     def apply(
-      UUID: js.UndefOr[String] = js.undefined): DeleteEventSourceMappingRequest = {
+      UUID: String): DeleteEventSourceMappingRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "UUID" -> UUID.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "UUID" -> UUID.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteEventSourceMappingRequest]
     }
@@ -519,14 +519,14 @@ package lambda {
 
   @js.native
   trait DeleteFunctionConcurrencyRequest extends js.Object {
-    var FunctionName: js.UndefOr[FunctionName]
+    var FunctionName: FunctionName
   }
 
   object DeleteFunctionConcurrencyRequest {
     def apply(
-      FunctionName: js.UndefOr[FunctionName] = js.undefined): DeleteFunctionConcurrencyRequest = {
+      FunctionName: FunctionName): DeleteFunctionConcurrencyRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "FunctionName" -> FunctionName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "FunctionName" -> FunctionName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteFunctionConcurrencyRequest]
     }
@@ -534,16 +534,16 @@ package lambda {
 
   @js.native
   trait DeleteFunctionRequest extends js.Object {
-    var FunctionName: js.UndefOr[FunctionName]
+    var FunctionName: FunctionName
     var Qualifier: js.UndefOr[Qualifier]
   }
 
   object DeleteFunctionRequest {
     def apply(
-      FunctionName: js.UndefOr[FunctionName] = js.undefined,
+      FunctionName: FunctionName,
       Qualifier: js.UndefOr[Qualifier] = js.undefined): DeleteFunctionRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "FunctionName" -> FunctionName.map { x => x.asInstanceOf[js.Any] },
+        "FunctionName" -> FunctionName.asInstanceOf[js.Any],
         "Qualifier" -> Qualifier.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteFunctionRequest]
@@ -552,17 +552,17 @@ package lambda {
 
   @js.native
   trait DeleteLayerVersionRequest extends js.Object {
-    var LayerName: js.UndefOr[LayerName]
-    var VersionNumber: js.UndefOr[LayerVersionNumber]
+    var LayerName: LayerName
+    var VersionNumber: LayerVersionNumber
   }
 
   object DeleteLayerVersionRequest {
     def apply(
-      LayerName: js.UndefOr[LayerName] = js.undefined,
-      VersionNumber: js.UndefOr[LayerVersionNumber] = js.undefined): DeleteLayerVersionRequest = {
+      LayerName: LayerName,
+      VersionNumber: LayerVersionNumber): DeleteLayerVersionRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "LayerName" -> LayerName.map { x => x.asInstanceOf[js.Any] },
-        "VersionNumber" -> VersionNumber.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "LayerName" -> LayerName.asInstanceOf[js.Any],
+        "VersionNumber" -> VersionNumber.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteLayerVersionRequest]
     }
@@ -612,17 +612,17 @@ package lambda {
    */
   @js.native
   trait EnvironmentResponse extends js.Object {
-    var Variables: js.UndefOr[EnvironmentVariables]
     var Error: js.UndefOr[EnvironmentError]
+    var Variables: js.UndefOr[EnvironmentVariables]
   }
 
   object EnvironmentResponse {
     def apply(
-      Variables: js.UndefOr[EnvironmentVariables] = js.undefined,
-      Error: js.UndefOr[EnvironmentError] = js.undefined): EnvironmentResponse = {
+      Error: js.UndefOr[EnvironmentError] = js.undefined,
+      Variables: js.UndefOr[EnvironmentVariables] = js.undefined): EnvironmentResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Variables" -> Variables.map { x => x.asInstanceOf[js.Any] },
-        "Error" -> Error.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Error" -> Error.map { x => x.asInstanceOf[js.Any] },
+        "Variables" -> Variables.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EnvironmentResponse]
     }
@@ -633,35 +633,35 @@ package lambda {
    */
   @js.native
   trait EventSourceMappingConfiguration extends js.Object {
-    var LastProcessingResult: js.UndefOr[String]
-    var UUID: js.UndefOr[String]
+    var BatchSize: js.UndefOr[BatchSize]
+    var EventSourceArn: js.UndefOr[Arn]
     var FunctionArn: js.UndefOr[FunctionArn]
     var LastModified: js.UndefOr[Date]
-    var EventSourceArn: js.UndefOr[Arn]
-    var StateTransitionReason: js.UndefOr[String]
+    var LastProcessingResult: js.UndefOr[String]
     var State: js.UndefOr[String]
-    var BatchSize: js.UndefOr[BatchSize]
+    var StateTransitionReason: js.UndefOr[String]
+    var UUID: js.UndefOr[String]
   }
 
   object EventSourceMappingConfiguration {
     def apply(
-      LastProcessingResult: js.UndefOr[String] = js.undefined,
-      UUID: js.UndefOr[String] = js.undefined,
+      BatchSize: js.UndefOr[BatchSize] = js.undefined,
+      EventSourceArn: js.UndefOr[Arn] = js.undefined,
       FunctionArn: js.UndefOr[FunctionArn] = js.undefined,
       LastModified: js.UndefOr[Date] = js.undefined,
-      EventSourceArn: js.UndefOr[Arn] = js.undefined,
-      StateTransitionReason: js.UndefOr[String] = js.undefined,
+      LastProcessingResult: js.UndefOr[String] = js.undefined,
       State: js.UndefOr[String] = js.undefined,
-      BatchSize: js.UndefOr[BatchSize] = js.undefined): EventSourceMappingConfiguration = {
+      StateTransitionReason: js.UndefOr[String] = js.undefined,
+      UUID: js.UndefOr[String] = js.undefined): EventSourceMappingConfiguration = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "LastProcessingResult" -> LastProcessingResult.map { x => x.asInstanceOf[js.Any] },
-        "UUID" -> UUID.map { x => x.asInstanceOf[js.Any] },
+        "BatchSize" -> BatchSize.map { x => x.asInstanceOf[js.Any] },
+        "EventSourceArn" -> EventSourceArn.map { x => x.asInstanceOf[js.Any] },
         "FunctionArn" -> FunctionArn.map { x => x.asInstanceOf[js.Any] },
         "LastModified" -> LastModified.map { x => x.asInstanceOf[js.Any] },
-        "EventSourceArn" -> EventSourceArn.map { x => x.asInstanceOf[js.Any] },
-        "StateTransitionReason" -> StateTransitionReason.map { x => x.asInstanceOf[js.Any] },
+        "LastProcessingResult" -> LastProcessingResult.map { x => x.asInstanceOf[js.Any] },
         "State" -> State.map { x => x.asInstanceOf[js.Any] },
-        "BatchSize" -> BatchSize.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "StateTransitionReason" -> StateTransitionReason.map { x => x.asInstanceOf[js.Any] },
+        "UUID" -> UUID.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EventSourceMappingConfiguration]
     }
@@ -680,23 +680,23 @@ package lambda {
    */
   @js.native
   trait FunctionCode extends js.Object {
-    var ZipFile: js.UndefOr[Blob]
     var S3Bucket: js.UndefOr[S3Bucket]
     var S3Key: js.UndefOr[S3Key]
     var S3ObjectVersion: js.UndefOr[S3ObjectVersion]
+    var ZipFile: js.UndefOr[Blob]
   }
 
   object FunctionCode {
     def apply(
-      ZipFile: js.UndefOr[Blob] = js.undefined,
       S3Bucket: js.UndefOr[S3Bucket] = js.undefined,
       S3Key: js.UndefOr[S3Key] = js.undefined,
-      S3ObjectVersion: js.UndefOr[S3ObjectVersion] = js.undefined): FunctionCode = {
+      S3ObjectVersion: js.UndefOr[S3ObjectVersion] = js.undefined,
+      ZipFile: js.UndefOr[Blob] = js.undefined): FunctionCode = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ZipFile" -> ZipFile.map { x => x.asInstanceOf[js.Any] },
         "S3Bucket" -> S3Bucket.map { x => x.asInstanceOf[js.Any] },
         "S3Key" -> S3Key.map { x => x.asInstanceOf[js.Any] },
-        "S3ObjectVersion" -> S3ObjectVersion.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "S3ObjectVersion" -> S3ObjectVersion.map { x => x.asInstanceOf[js.Any] },
+        "ZipFile" -> ZipFile.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[FunctionCode]
     }
@@ -707,17 +707,17 @@ package lambda {
    */
   @js.native
   trait FunctionCodeLocation extends js.Object {
-    var RepositoryType: js.UndefOr[String]
     var Location: js.UndefOr[String]
+    var RepositoryType: js.UndefOr[String]
   }
 
   object FunctionCodeLocation {
     def apply(
-      RepositoryType: js.UndefOr[String] = js.undefined,
-      Location: js.UndefOr[String] = js.undefined): FunctionCodeLocation = {
+      Location: js.UndefOr[String] = js.undefined,
+      RepositoryType: js.UndefOr[String] = js.undefined): FunctionCodeLocation = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "RepositoryType" -> RepositoryType.map { x => x.asInstanceOf[js.Any] },
-        "Location" -> Location.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Location" -> Location.map { x => x.asInstanceOf[js.Any] },
+        "RepositoryType" -> RepositoryType.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[FunctionCodeLocation]
     }
@@ -728,71 +728,71 @@ package lambda {
    */
   @js.native
   trait FunctionConfiguration extends js.Object {
-    var Environment: js.UndefOr[EnvironmentResponse]
+    var CodeSha256: js.UndefOr[String]
+    var CodeSize: js.UndefOr[Double]
     var DeadLetterConfig: js.UndefOr[DeadLetterConfig]
-    var Role: js.UndefOr[RoleArn]
-    var Handler: js.UndefOr[Handler]
+    var Description: js.UndefOr[Description]
+    var Environment: js.UndefOr[EnvironmentResponse]
     var FunctionArn: js.UndefOr[NameSpacedFunctionArn]
     var FunctionName: js.UndefOr[NamespacedFunctionName]
-    var Version: js.UndefOr[Version]
-    var Description: js.UndefOr[Description]
+    var Handler: js.UndefOr[Handler]
+    var KMSKeyArn: js.UndefOr[KMSKeyArn]
     var LastModified: js.UndefOr[Timestamp]
+    var Layers: js.UndefOr[LayersReferenceList]
     var MasterArn: js.UndefOr[FunctionArn]
     var MemorySize: js.UndefOr[MemorySize]
     var RevisionId: js.UndefOr[String]
-    var Layers: js.UndefOr[LayersReferenceList]
-    var CodeSha256: js.UndefOr[String]
-    var VpcConfig: js.UndefOr[VpcConfigResponse]
+    var Role: js.UndefOr[RoleArn]
     var Runtime: js.UndefOr[Runtime]
-    var KMSKeyArn: js.UndefOr[KMSKeyArn]
-    var TracingConfig: js.UndefOr[TracingConfigResponse]
-    var CodeSize: js.UndefOr[Double]
     var Timeout: js.UndefOr[Timeout]
+    var TracingConfig: js.UndefOr[TracingConfigResponse]
+    var Version: js.UndefOr[Version]
+    var VpcConfig: js.UndefOr[VpcConfigResponse]
   }
 
   object FunctionConfiguration {
     def apply(
-      Environment: js.UndefOr[EnvironmentResponse] = js.undefined,
+      CodeSha256: js.UndefOr[String] = js.undefined,
+      CodeSize: js.UndefOr[Double] = js.undefined,
       DeadLetterConfig: js.UndefOr[DeadLetterConfig] = js.undefined,
-      Role: js.UndefOr[RoleArn] = js.undefined,
-      Handler: js.UndefOr[Handler] = js.undefined,
+      Description: js.UndefOr[Description] = js.undefined,
+      Environment: js.UndefOr[EnvironmentResponse] = js.undefined,
       FunctionArn: js.UndefOr[NameSpacedFunctionArn] = js.undefined,
       FunctionName: js.UndefOr[NamespacedFunctionName] = js.undefined,
-      Version: js.UndefOr[Version] = js.undefined,
-      Description: js.UndefOr[Description] = js.undefined,
+      Handler: js.UndefOr[Handler] = js.undefined,
+      KMSKeyArn: js.UndefOr[KMSKeyArn] = js.undefined,
       LastModified: js.UndefOr[Timestamp] = js.undefined,
+      Layers: js.UndefOr[LayersReferenceList] = js.undefined,
       MasterArn: js.UndefOr[FunctionArn] = js.undefined,
       MemorySize: js.UndefOr[MemorySize] = js.undefined,
       RevisionId: js.UndefOr[String] = js.undefined,
-      Layers: js.UndefOr[LayersReferenceList] = js.undefined,
-      CodeSha256: js.UndefOr[String] = js.undefined,
-      VpcConfig: js.UndefOr[VpcConfigResponse] = js.undefined,
+      Role: js.UndefOr[RoleArn] = js.undefined,
       Runtime: js.UndefOr[Runtime] = js.undefined,
-      KMSKeyArn: js.UndefOr[KMSKeyArn] = js.undefined,
+      Timeout: js.UndefOr[Timeout] = js.undefined,
       TracingConfig: js.UndefOr[TracingConfigResponse] = js.undefined,
-      CodeSize: js.UndefOr[Double] = js.undefined,
-      Timeout: js.UndefOr[Timeout] = js.undefined): FunctionConfiguration = {
+      Version: js.UndefOr[Version] = js.undefined,
+      VpcConfig: js.UndefOr[VpcConfigResponse] = js.undefined): FunctionConfiguration = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Environment" -> Environment.map { x => x.asInstanceOf[js.Any] },
+        "CodeSha256" -> CodeSha256.map { x => x.asInstanceOf[js.Any] },
+        "CodeSize" -> CodeSize.map { x => x.asInstanceOf[js.Any] },
         "DeadLetterConfig" -> DeadLetterConfig.map { x => x.asInstanceOf[js.Any] },
-        "Role" -> Role.map { x => x.asInstanceOf[js.Any] },
-        "Handler" -> Handler.map { x => x.asInstanceOf[js.Any] },
+        "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
+        "Environment" -> Environment.map { x => x.asInstanceOf[js.Any] },
         "FunctionArn" -> FunctionArn.map { x => x.asInstanceOf[js.Any] },
         "FunctionName" -> FunctionName.map { x => x.asInstanceOf[js.Any] },
-        "Version" -> Version.map { x => x.asInstanceOf[js.Any] },
-        "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
+        "Handler" -> Handler.map { x => x.asInstanceOf[js.Any] },
+        "KMSKeyArn" -> KMSKeyArn.map { x => x.asInstanceOf[js.Any] },
         "LastModified" -> LastModified.map { x => x.asInstanceOf[js.Any] },
+        "Layers" -> Layers.map { x => x.asInstanceOf[js.Any] },
         "MasterArn" -> MasterArn.map { x => x.asInstanceOf[js.Any] },
         "MemorySize" -> MemorySize.map { x => x.asInstanceOf[js.Any] },
         "RevisionId" -> RevisionId.map { x => x.asInstanceOf[js.Any] },
-        "Layers" -> Layers.map { x => x.asInstanceOf[js.Any] },
-        "CodeSha256" -> CodeSha256.map { x => x.asInstanceOf[js.Any] },
-        "VpcConfig" -> VpcConfig.map { x => x.asInstanceOf[js.Any] },
+        "Role" -> Role.map { x => x.asInstanceOf[js.Any] },
         "Runtime" -> Runtime.map { x => x.asInstanceOf[js.Any] },
-        "KMSKeyArn" -> KMSKeyArn.map { x => x.asInstanceOf[js.Any] },
+        "Timeout" -> Timeout.map { x => x.asInstanceOf[js.Any] },
         "TracingConfig" -> TracingConfig.map { x => x.asInstanceOf[js.Any] },
-        "CodeSize" -> CodeSize.map { x => x.asInstanceOf[js.Any] },
-        "Timeout" -> Timeout.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Version" -> Version.map { x => x.asInstanceOf[js.Any] },
+        "VpcConfig" -> VpcConfig.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[FunctionConfiguration]
     }
@@ -837,17 +837,17 @@ package lambda {
 
   @js.native
   trait GetAliasRequest extends js.Object {
-    var FunctionName: js.UndefOr[FunctionName]
-    var Name: js.UndefOr[Alias]
+    var FunctionName: FunctionName
+    var Name: Alias
   }
 
   object GetAliasRequest {
     def apply(
-      FunctionName: js.UndefOr[FunctionName] = js.undefined,
-      Name: js.UndefOr[Alias] = js.undefined): GetAliasRequest = {
+      FunctionName: FunctionName,
+      Name: Alias): GetAliasRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "FunctionName" -> FunctionName.map { x => x.asInstanceOf[js.Any] },
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "FunctionName" -> FunctionName.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetAliasRequest]
     }
@@ -855,14 +855,14 @@ package lambda {
 
   @js.native
   trait GetEventSourceMappingRequest extends js.Object {
-    var UUID: js.UndefOr[String]
+    var UUID: String
   }
 
   object GetEventSourceMappingRequest {
     def apply(
-      UUID: js.UndefOr[String] = js.undefined): GetEventSourceMappingRequest = {
+      UUID: String): GetEventSourceMappingRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "UUID" -> UUID.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "UUID" -> UUID.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetEventSourceMappingRequest]
     }
@@ -870,16 +870,16 @@ package lambda {
 
   @js.native
   trait GetFunctionConfigurationRequest extends js.Object {
-    var FunctionName: js.UndefOr[NamespacedFunctionName]
+    var FunctionName: NamespacedFunctionName
     var Qualifier: js.UndefOr[Qualifier]
   }
 
   object GetFunctionConfigurationRequest {
     def apply(
-      FunctionName: js.UndefOr[NamespacedFunctionName] = js.undefined,
+      FunctionName: NamespacedFunctionName,
       Qualifier: js.UndefOr[Qualifier] = js.undefined): GetFunctionConfigurationRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "FunctionName" -> FunctionName.map { x => x.asInstanceOf[js.Any] },
+        "FunctionName" -> FunctionName.asInstanceOf[js.Any],
         "Qualifier" -> Qualifier.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetFunctionConfigurationRequest]
@@ -888,16 +888,16 @@ package lambda {
 
   @js.native
   trait GetFunctionRequest extends js.Object {
-    var FunctionName: js.UndefOr[NamespacedFunctionName]
+    var FunctionName: NamespacedFunctionName
     var Qualifier: js.UndefOr[Qualifier]
   }
 
   object GetFunctionRequest {
     def apply(
-      FunctionName: js.UndefOr[NamespacedFunctionName] = js.undefined,
+      FunctionName: NamespacedFunctionName,
       Qualifier: js.UndefOr[Qualifier] = js.undefined): GetFunctionRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "FunctionName" -> FunctionName.map { x => x.asInstanceOf[js.Any] },
+        "FunctionName" -> FunctionName.asInstanceOf[js.Any],
         "Qualifier" -> Qualifier.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetFunctionRequest]
@@ -909,23 +909,23 @@ package lambda {
    */
   @js.native
   trait GetFunctionResponse extends js.Object {
-    var Configuration: js.UndefOr[FunctionConfiguration]
     var Code: js.UndefOr[FunctionCodeLocation]
-    var Tags: js.UndefOr[Tags]
     var Concurrency: js.UndefOr[Concurrency]
+    var Configuration: js.UndefOr[FunctionConfiguration]
+    var Tags: js.UndefOr[Tags]
   }
 
   object GetFunctionResponse {
     def apply(
-      Configuration: js.UndefOr[FunctionConfiguration] = js.undefined,
       Code: js.UndefOr[FunctionCodeLocation] = js.undefined,
-      Tags: js.UndefOr[Tags] = js.undefined,
-      Concurrency: js.UndefOr[Concurrency] = js.undefined): GetFunctionResponse = {
+      Concurrency: js.UndefOr[Concurrency] = js.undefined,
+      Configuration: js.UndefOr[FunctionConfiguration] = js.undefined,
+      Tags: js.UndefOr[Tags] = js.undefined): GetFunctionResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Configuration" -> Configuration.map { x => x.asInstanceOf[js.Any] },
         "Code" -> Code.map { x => x.asInstanceOf[js.Any] },
-        "Tags" -> Tags.map { x => x.asInstanceOf[js.Any] },
-        "Concurrency" -> Concurrency.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Concurrency" -> Concurrency.map { x => x.asInstanceOf[js.Any] },
+        "Configuration" -> Configuration.map { x => x.asInstanceOf[js.Any] },
+        "Tags" -> Tags.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetFunctionResponse]
     }
@@ -933,17 +933,17 @@ package lambda {
 
   @js.native
   trait GetLayerVersionPolicyRequest extends js.Object {
-    var LayerName: js.UndefOr[LayerName]
-    var VersionNumber: js.UndefOr[LayerVersionNumber]
+    var LayerName: LayerName
+    var VersionNumber: LayerVersionNumber
   }
 
   object GetLayerVersionPolicyRequest {
     def apply(
-      LayerName: js.UndefOr[LayerName] = js.undefined,
-      VersionNumber: js.UndefOr[LayerVersionNumber] = js.undefined): GetLayerVersionPolicyRequest = {
+      LayerName: LayerName,
+      VersionNumber: LayerVersionNumber): GetLayerVersionPolicyRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "LayerName" -> LayerName.map { x => x.asInstanceOf[js.Any] },
-        "VersionNumber" -> VersionNumber.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "LayerName" -> LayerName.asInstanceOf[js.Any],
+        "VersionNumber" -> VersionNumber.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetLayerVersionPolicyRequest]
     }
@@ -969,17 +969,17 @@ package lambda {
 
   @js.native
   trait GetLayerVersionRequest extends js.Object {
-    var LayerName: js.UndefOr[LayerName]
-    var VersionNumber: js.UndefOr[LayerVersionNumber]
+    var LayerName: LayerName
+    var VersionNumber: LayerVersionNumber
   }
 
   object GetLayerVersionRequest {
     def apply(
-      LayerName: js.UndefOr[LayerName] = js.undefined,
-      VersionNumber: js.UndefOr[LayerVersionNumber] = js.undefined): GetLayerVersionRequest = {
+      LayerName: LayerName,
+      VersionNumber: LayerVersionNumber): GetLayerVersionRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "LayerName" -> LayerName.map { x => x.asInstanceOf[js.Any] },
-        "VersionNumber" -> VersionNumber.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "LayerName" -> LayerName.asInstanceOf[js.Any],
+        "VersionNumber" -> VersionNumber.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetLayerVersionRequest]
     }
@@ -987,35 +987,35 @@ package lambda {
 
   @js.native
   trait GetLayerVersionResponse extends js.Object {
+    var CompatibleRuntimes: js.UndefOr[CompatibleRuntimes]
     var Content: js.UndefOr[LayerVersionContentOutput]
     var CreatedDate: js.UndefOr[Timestamp]
-    var CompatibleRuntimes: js.UndefOr[CompatibleRuntimes]
-    var Version: js.UndefOr[LayerVersionNumber]
     var Description: js.UndefOr[Description]
+    var LayerArn: js.UndefOr[LayerArn]
     var LayerVersionArn: js.UndefOr[LayerVersionArn]
     var LicenseInfo: js.UndefOr[LicenseInfo]
-    var LayerArn: js.UndefOr[LayerArn]
+    var Version: js.UndefOr[LayerVersionNumber]
   }
 
   object GetLayerVersionResponse {
     def apply(
+      CompatibleRuntimes: js.UndefOr[CompatibleRuntimes] = js.undefined,
       Content: js.UndefOr[LayerVersionContentOutput] = js.undefined,
       CreatedDate: js.UndefOr[Timestamp] = js.undefined,
-      CompatibleRuntimes: js.UndefOr[CompatibleRuntimes] = js.undefined,
-      Version: js.UndefOr[LayerVersionNumber] = js.undefined,
       Description: js.UndefOr[Description] = js.undefined,
+      LayerArn: js.UndefOr[LayerArn] = js.undefined,
       LayerVersionArn: js.UndefOr[LayerVersionArn] = js.undefined,
       LicenseInfo: js.UndefOr[LicenseInfo] = js.undefined,
-      LayerArn: js.UndefOr[LayerArn] = js.undefined): GetLayerVersionResponse = {
+      Version: js.UndefOr[LayerVersionNumber] = js.undefined): GetLayerVersionResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "CompatibleRuntimes" -> CompatibleRuntimes.map { x => x.asInstanceOf[js.Any] },
         "Content" -> Content.map { x => x.asInstanceOf[js.Any] },
         "CreatedDate" -> CreatedDate.map { x => x.asInstanceOf[js.Any] },
-        "CompatibleRuntimes" -> CompatibleRuntimes.map { x => x.asInstanceOf[js.Any] },
-        "Version" -> Version.map { x => x.asInstanceOf[js.Any] },
         "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
+        "LayerArn" -> LayerArn.map { x => x.asInstanceOf[js.Any] },
         "LayerVersionArn" -> LayerVersionArn.map { x => x.asInstanceOf[js.Any] },
         "LicenseInfo" -> LicenseInfo.map { x => x.asInstanceOf[js.Any] },
-        "LayerArn" -> LayerArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Version" -> Version.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetLayerVersionResponse]
     }
@@ -1023,16 +1023,16 @@ package lambda {
 
   @js.native
   trait GetPolicyRequest extends js.Object {
-    var FunctionName: js.UndefOr[NamespacedFunctionName]
+    var FunctionName: NamespacedFunctionName
     var Qualifier: js.UndefOr[Qualifier]
   }
 
   object GetPolicyRequest {
     def apply(
-      FunctionName: js.UndefOr[NamespacedFunctionName] = js.undefined,
+      FunctionName: NamespacedFunctionName,
       Qualifier: js.UndefOr[Qualifier] = js.undefined): GetPolicyRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "FunctionName" -> FunctionName.map { x => x.asInstanceOf[js.Any] },
+        "FunctionName" -> FunctionName.asInstanceOf[js.Any],
         "Qualifier" -> Qualifier.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetPolicyRequest]
@@ -1059,29 +1059,29 @@ package lambda {
 
   @js.native
   trait InvocationRequest extends js.Object {
-    var Qualifier: js.UndefOr[Qualifier]
-    var FunctionName: js.UndefOr[NamespacedFunctionName]
+    var FunctionName: NamespacedFunctionName
     var ClientContext: js.UndefOr[String]
     var InvocationType: js.UndefOr[InvocationType]
-    var Payload: js.UndefOr[Blob]
     var LogType: js.UndefOr[LogType]
+    var Payload: js.UndefOr[Blob]
+    var Qualifier: js.UndefOr[Qualifier]
   }
 
   object InvocationRequest {
     def apply(
-      Qualifier: js.UndefOr[Qualifier] = js.undefined,
-      FunctionName: js.UndefOr[NamespacedFunctionName] = js.undefined,
+      FunctionName: NamespacedFunctionName,
       ClientContext: js.UndefOr[String] = js.undefined,
       InvocationType: js.UndefOr[InvocationType] = js.undefined,
+      LogType: js.UndefOr[LogType] = js.undefined,
       Payload: js.UndefOr[Blob] = js.undefined,
-      LogType: js.UndefOr[LogType] = js.undefined): InvocationRequest = {
+      Qualifier: js.UndefOr[Qualifier] = js.undefined): InvocationRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Qualifier" -> Qualifier.map { x => x.asInstanceOf[js.Any] },
-        "FunctionName" -> FunctionName.map { x => x.asInstanceOf[js.Any] },
+        "FunctionName" -> FunctionName.asInstanceOf[js.Any],
         "ClientContext" -> ClientContext.map { x => x.asInstanceOf[js.Any] },
         "InvocationType" -> InvocationType.map { x => x.asInstanceOf[js.Any] },
+        "LogType" -> LogType.map { x => x.asInstanceOf[js.Any] },
         "Payload" -> Payload.map { x => x.asInstanceOf[js.Any] },
-        "LogType" -> LogType.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Qualifier" -> Qualifier.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[InvocationRequest]
     }
@@ -1092,26 +1092,26 @@ package lambda {
    */
   @js.native
   trait InvocationResponse extends js.Object {
+    var ExecutedVersion: js.UndefOr[Version]
     var FunctionError: js.UndefOr[String]
-    var StatusCode: js.UndefOr[Int]
     var LogResult: js.UndefOr[String]
     var Payload: js.UndefOr[Blob]
-    var ExecutedVersion: js.UndefOr[Version]
+    var StatusCode: js.UndefOr[Int]
   }
 
   object InvocationResponse {
     def apply(
+      ExecutedVersion: js.UndefOr[Version] = js.undefined,
       FunctionError: js.UndefOr[String] = js.undefined,
-      StatusCode: js.UndefOr[Int] = js.undefined,
       LogResult: js.UndefOr[String] = js.undefined,
       Payload: js.UndefOr[Blob] = js.undefined,
-      ExecutedVersion: js.UndefOr[Version] = js.undefined): InvocationResponse = {
+      StatusCode: js.UndefOr[Int] = js.undefined): InvocationResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "ExecutedVersion" -> ExecutedVersion.map { x => x.asInstanceOf[js.Any] },
         "FunctionError" -> FunctionError.map { x => x.asInstanceOf[js.Any] },
-        "StatusCode" -> StatusCode.map { x => x.asInstanceOf[js.Any] },
         "LogResult" -> LogResult.map { x => x.asInstanceOf[js.Any] },
         "Payload" -> Payload.map { x => x.asInstanceOf[js.Any] },
-        "ExecutedVersion" -> ExecutedVersion.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "StatusCode" -> StatusCode.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[InvocationResponse]
     }
@@ -1128,17 +1128,17 @@ package lambda {
   @deprecated
   @js.native
   trait InvokeAsyncRequest extends js.Object {
-    var FunctionName: js.UndefOr[NamespacedFunctionName]
-    var InvokeArgs: js.UndefOr[BlobStream]
+    var FunctionName: NamespacedFunctionName
+    var InvokeArgs: BlobStream
   }
 
   object InvokeAsyncRequest {
     def apply(
-      FunctionName: js.UndefOr[NamespacedFunctionName] = js.undefined,
-      InvokeArgs: js.UndefOr[BlobStream] = js.undefined): InvokeAsyncRequest = {
+      FunctionName: NamespacedFunctionName,
+      InvokeArgs: BlobStream): InvokeAsyncRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "FunctionName" -> FunctionName.map { x => x.asInstanceOf[js.Any] },
-        "InvokeArgs" -> InvokeArgs.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "FunctionName" -> FunctionName.asInstanceOf[js.Any],
+        "InvokeArgs" -> InvokeArgs.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[InvokeAsyncRequest]
     }
@@ -1216,20 +1216,20 @@ package lambda {
    */
   @js.native
   trait LayerVersionContentOutput extends js.Object {
-    var Location: js.UndefOr[String]
     var CodeSha256: js.UndefOr[String]
     var CodeSize: js.UndefOr[Double]
+    var Location: js.UndefOr[String]
   }
 
   object LayerVersionContentOutput {
     def apply(
-      Location: js.UndefOr[String] = js.undefined,
       CodeSha256: js.UndefOr[String] = js.undefined,
-      CodeSize: js.UndefOr[Double] = js.undefined): LayerVersionContentOutput = {
+      CodeSize: js.UndefOr[Double] = js.undefined,
+      Location: js.UndefOr[String] = js.undefined): LayerVersionContentOutput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Location" -> Location.map { x => x.asInstanceOf[js.Any] },
         "CodeSha256" -> CodeSha256.map { x => x.asInstanceOf[js.Any] },
-        "CodeSize" -> CodeSize.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "CodeSize" -> CodeSize.map { x => x.asInstanceOf[js.Any] },
+        "Location" -> Location.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[LayerVersionContentOutput]
     }
@@ -1240,29 +1240,29 @@ package lambda {
    */
   @js.native
   trait LayerVersionsListItem extends js.Object {
-    var CreatedDate: js.UndefOr[Timestamp]
     var CompatibleRuntimes: js.UndefOr[CompatibleRuntimes]
-    var Version: js.UndefOr[LayerVersionNumber]
+    var CreatedDate: js.UndefOr[Timestamp]
     var Description: js.UndefOr[Description]
     var LayerVersionArn: js.UndefOr[LayerVersionArn]
     var LicenseInfo: js.UndefOr[LicenseInfo]
+    var Version: js.UndefOr[LayerVersionNumber]
   }
 
   object LayerVersionsListItem {
     def apply(
-      CreatedDate: js.UndefOr[Timestamp] = js.undefined,
       CompatibleRuntimes: js.UndefOr[CompatibleRuntimes] = js.undefined,
-      Version: js.UndefOr[LayerVersionNumber] = js.undefined,
+      CreatedDate: js.UndefOr[Timestamp] = js.undefined,
       Description: js.UndefOr[Description] = js.undefined,
       LayerVersionArn: js.UndefOr[LayerVersionArn] = js.undefined,
-      LicenseInfo: js.UndefOr[LicenseInfo] = js.undefined): LayerVersionsListItem = {
+      LicenseInfo: js.UndefOr[LicenseInfo] = js.undefined,
+      Version: js.UndefOr[LayerVersionNumber] = js.undefined): LayerVersionsListItem = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "CreatedDate" -> CreatedDate.map { x => x.asInstanceOf[js.Any] },
         "CompatibleRuntimes" -> CompatibleRuntimes.map { x => x.asInstanceOf[js.Any] },
-        "Version" -> Version.map { x => x.asInstanceOf[js.Any] },
+        "CreatedDate" -> CreatedDate.map { x => x.asInstanceOf[js.Any] },
         "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
         "LayerVersionArn" -> LayerVersionArn.map { x => x.asInstanceOf[js.Any] },
-        "LicenseInfo" -> LicenseInfo.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "LicenseInfo" -> LicenseInfo.map { x => x.asInstanceOf[js.Any] },
+        "Version" -> Version.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[LayerVersionsListItem]
     }
@@ -1273,20 +1273,20 @@ package lambda {
    */
   @js.native
   trait LayersListItem extends js.Object {
-    var LayerName: js.UndefOr[LayerName]
-    var LayerArn: js.UndefOr[LayerArn]
     var LatestMatchingVersion: js.UndefOr[LayerVersionsListItem]
+    var LayerArn: js.UndefOr[LayerArn]
+    var LayerName: js.UndefOr[LayerName]
   }
 
   object LayersListItem {
     def apply(
-      LayerName: js.UndefOr[LayerName] = js.undefined,
+      LatestMatchingVersion: js.UndefOr[LayerVersionsListItem] = js.undefined,
       LayerArn: js.UndefOr[LayerArn] = js.undefined,
-      LatestMatchingVersion: js.UndefOr[LayerVersionsListItem] = js.undefined): LayersListItem = {
+      LayerName: js.UndefOr[LayerName] = js.undefined): LayersListItem = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "LayerName" -> LayerName.map { x => x.asInstanceOf[js.Any] },
+        "LatestMatchingVersion" -> LatestMatchingVersion.map { x => x.asInstanceOf[js.Any] },
         "LayerArn" -> LayerArn.map { x => x.asInstanceOf[js.Any] },
-        "LatestMatchingVersion" -> LatestMatchingVersion.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "LayerName" -> LayerName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[LayersListItem]
     }
@@ -1294,7 +1294,7 @@ package lambda {
 
   @js.native
   trait ListAliasesRequest extends js.Object {
-    var FunctionName: js.UndefOr[FunctionName]
+    var FunctionName: FunctionName
     var FunctionVersion: js.UndefOr[Version]
     var Marker: js.UndefOr[String]
     var MaxItems: js.UndefOr[MaxListItems]
@@ -1302,12 +1302,12 @@ package lambda {
 
   object ListAliasesRequest {
     def apply(
-      FunctionName: js.UndefOr[FunctionName] = js.undefined,
+      FunctionName: FunctionName,
       FunctionVersion: js.UndefOr[Version] = js.undefined,
       Marker: js.UndefOr[String] = js.undefined,
       MaxItems: js.UndefOr[MaxListItems] = js.undefined): ListAliasesRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "FunctionName" -> FunctionName.map { x => x.asInstanceOf[js.Any] },
+        "FunctionName" -> FunctionName.asInstanceOf[js.Any],
         "FunctionVersion" -> FunctionVersion.map { x => x.asInstanceOf[js.Any] },
         "Marker" -> Marker.map { x => x.asInstanceOf[js.Any] },
         "MaxItems" -> MaxItems.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
@@ -1318,17 +1318,17 @@ package lambda {
 
   @js.native
   trait ListAliasesResponse extends js.Object {
-    var NextMarker: js.UndefOr[String]
     var Aliases: js.UndefOr[AliasList]
+    var NextMarker: js.UndefOr[String]
   }
 
   object ListAliasesResponse {
     def apply(
-      NextMarker: js.UndefOr[String] = js.undefined,
-      Aliases: js.UndefOr[AliasList] = js.undefined): ListAliasesResponse = {
+      Aliases: js.UndefOr[AliasList] = js.undefined,
+      NextMarker: js.UndefOr[String] = js.undefined): ListAliasesResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "NextMarker" -> NextMarker.map { x => x.asInstanceOf[js.Any] },
-        "Aliases" -> Aliases.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Aliases" -> Aliases.map { x => x.asInstanceOf[js.Any] },
+        "NextMarker" -> NextMarker.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListAliasesResponse]
     }
@@ -1360,17 +1360,17 @@ package lambda {
 
   @js.native
   trait ListEventSourceMappingsResponse extends js.Object {
-    var NextMarker: js.UndefOr[String]
     var EventSourceMappings: js.UndefOr[EventSourceMappingsList]
+    var NextMarker: js.UndefOr[String]
   }
 
   object ListEventSourceMappingsResponse {
     def apply(
-      NextMarker: js.UndefOr[String] = js.undefined,
-      EventSourceMappings: js.UndefOr[EventSourceMappingsList] = js.undefined): ListEventSourceMappingsResponse = {
+      EventSourceMappings: js.UndefOr[EventSourceMappingsList] = js.undefined,
+      NextMarker: js.UndefOr[String] = js.undefined): ListEventSourceMappingsResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "NextMarker" -> NextMarker.map { x => x.asInstanceOf[js.Any] },
-        "EventSourceMappings" -> EventSourceMappings.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "EventSourceMappings" -> EventSourceMappings.map { x => x.asInstanceOf[js.Any] },
+        "NextMarker" -> NextMarker.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListEventSourceMappingsResponse]
     }
@@ -1378,22 +1378,22 @@ package lambda {
 
   @js.native
   trait ListFunctionsRequest extends js.Object {
-    var MasterRegion: js.UndefOr[MasterRegion]
     var FunctionVersion: js.UndefOr[FunctionVersion]
     var Marker: js.UndefOr[String]
+    var MasterRegion: js.UndefOr[MasterRegion]
     var MaxItems: js.UndefOr[MaxListItems]
   }
 
   object ListFunctionsRequest {
     def apply(
-      MasterRegion: js.UndefOr[MasterRegion] = js.undefined,
       FunctionVersion: js.UndefOr[FunctionVersion] = js.undefined,
       Marker: js.UndefOr[String] = js.undefined,
+      MasterRegion: js.UndefOr[MasterRegion] = js.undefined,
       MaxItems: js.UndefOr[MaxListItems] = js.undefined): ListFunctionsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "MasterRegion" -> MasterRegion.map { x => x.asInstanceOf[js.Any] },
         "FunctionVersion" -> FunctionVersion.map { x => x.asInstanceOf[js.Any] },
         "Marker" -> Marker.map { x => x.asInstanceOf[js.Any] },
+        "MasterRegion" -> MasterRegion.map { x => x.asInstanceOf[js.Any] },
         "MaxItems" -> MaxItems.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListFunctionsRequest]
@@ -1405,17 +1405,17 @@ package lambda {
    */
   @js.native
   trait ListFunctionsResponse extends js.Object {
-    var NextMarker: js.UndefOr[String]
     var Functions: js.UndefOr[FunctionList]
+    var NextMarker: js.UndefOr[String]
   }
 
   object ListFunctionsResponse {
     def apply(
-      NextMarker: js.UndefOr[String] = js.undefined,
-      Functions: js.UndefOr[FunctionList] = js.undefined): ListFunctionsResponse = {
+      Functions: js.UndefOr[FunctionList] = js.undefined,
+      NextMarker: js.UndefOr[String] = js.undefined): ListFunctionsResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "NextMarker" -> NextMarker.map { x => x.asInstanceOf[js.Any] },
-        "Functions" -> Functions.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Functions" -> Functions.map { x => x.asInstanceOf[js.Any] },
+        "NextMarker" -> NextMarker.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListFunctionsResponse]
     }
@@ -1423,21 +1423,21 @@ package lambda {
 
   @js.native
   trait ListLayerVersionsRequest extends js.Object {
+    var LayerName: LayerName
     var CompatibleRuntime: js.UndefOr[Runtime]
-    var LayerName: js.UndefOr[LayerName]
     var Marker: js.UndefOr[String]
     var MaxItems: js.UndefOr[MaxLayerListItems]
   }
 
   object ListLayerVersionsRequest {
     def apply(
+      LayerName: LayerName,
       CompatibleRuntime: js.UndefOr[Runtime] = js.undefined,
-      LayerName: js.UndefOr[LayerName] = js.undefined,
       Marker: js.UndefOr[String] = js.undefined,
       MaxItems: js.UndefOr[MaxLayerListItems] = js.undefined): ListLayerVersionsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "LayerName" -> LayerName.asInstanceOf[js.Any],
         "CompatibleRuntime" -> CompatibleRuntime.map { x => x.asInstanceOf[js.Any] },
-        "LayerName" -> LayerName.map { x => x.asInstanceOf[js.Any] },
         "Marker" -> Marker.map { x => x.asInstanceOf[js.Any] },
         "MaxItems" -> MaxItems.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
@@ -1447,17 +1447,17 @@ package lambda {
 
   @js.native
   trait ListLayerVersionsResponse extends js.Object {
-    var NextMarker: js.UndefOr[String]
     var LayerVersions: js.UndefOr[LayerVersionsList]
+    var NextMarker: js.UndefOr[String]
   }
 
   object ListLayerVersionsResponse {
     def apply(
-      NextMarker: js.UndefOr[String] = js.undefined,
-      LayerVersions: js.UndefOr[LayerVersionsList] = js.undefined): ListLayerVersionsResponse = {
+      LayerVersions: js.UndefOr[LayerVersionsList] = js.undefined,
+      NextMarker: js.UndefOr[String] = js.undefined): ListLayerVersionsResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "NextMarker" -> NextMarker.map { x => x.asInstanceOf[js.Any] },
-        "LayerVersions" -> LayerVersions.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "LayerVersions" -> LayerVersions.map { x => x.asInstanceOf[js.Any] },
+        "NextMarker" -> NextMarker.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListLayerVersionsResponse]
     }
@@ -1486,17 +1486,17 @@ package lambda {
 
   @js.native
   trait ListLayersResponse extends js.Object {
-    var NextMarker: js.UndefOr[String]
     var Layers: js.UndefOr[LayersList]
+    var NextMarker: js.UndefOr[String]
   }
 
   object ListLayersResponse {
     def apply(
-      NextMarker: js.UndefOr[String] = js.undefined,
-      Layers: js.UndefOr[LayersList] = js.undefined): ListLayersResponse = {
+      Layers: js.UndefOr[LayersList] = js.undefined,
+      NextMarker: js.UndefOr[String] = js.undefined): ListLayersResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "NextMarker" -> NextMarker.map { x => x.asInstanceOf[js.Any] },
-        "Layers" -> Layers.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Layers" -> Layers.map { x => x.asInstanceOf[js.Any] },
+        "NextMarker" -> NextMarker.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListLayersResponse]
     }
@@ -1504,14 +1504,14 @@ package lambda {
 
   @js.native
   trait ListTagsRequest extends js.Object {
-    var Resource: js.UndefOr[FunctionArn]
+    var Resource: FunctionArn
   }
 
   object ListTagsRequest {
     def apply(
-      Resource: js.UndefOr[FunctionArn] = js.undefined): ListTagsRequest = {
+      Resource: FunctionArn): ListTagsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Resource" -> Resource.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Resource" -> Resource.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListTagsRequest]
     }
@@ -1534,18 +1534,18 @@ package lambda {
 
   @js.native
   trait ListVersionsByFunctionRequest extends js.Object {
-    var FunctionName: js.UndefOr[NamespacedFunctionName]
+    var FunctionName: NamespacedFunctionName
     var Marker: js.UndefOr[String]
     var MaxItems: js.UndefOr[MaxListItems]
   }
 
   object ListVersionsByFunctionRequest {
     def apply(
-      FunctionName: js.UndefOr[NamespacedFunctionName] = js.undefined,
+      FunctionName: NamespacedFunctionName,
       Marker: js.UndefOr[String] = js.undefined,
       MaxItems: js.UndefOr[MaxListItems] = js.undefined): ListVersionsByFunctionRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "FunctionName" -> FunctionName.map { x => x.asInstanceOf[js.Any] },
+        "FunctionName" -> FunctionName.asInstanceOf[js.Any],
         "Marker" -> Marker.map { x => x.asInstanceOf[js.Any] },
         "MaxItems" -> MaxItems.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
@@ -1580,25 +1580,25 @@ package lambda {
 
   @js.native
   trait PublishLayerVersionRequest extends js.Object {
-    var Content: js.UndefOr[LayerVersionContentInput]
+    var Content: LayerVersionContentInput
+    var LayerName: LayerName
     var CompatibleRuntimes: js.UndefOr[CompatibleRuntimes]
     var Description: js.UndefOr[Description]
-    var LayerName: js.UndefOr[LayerName]
     var LicenseInfo: js.UndefOr[LicenseInfo]
   }
 
   object PublishLayerVersionRequest {
     def apply(
-      Content: js.UndefOr[LayerVersionContentInput] = js.undefined,
+      Content: LayerVersionContentInput,
+      LayerName: LayerName,
       CompatibleRuntimes: js.UndefOr[CompatibleRuntimes] = js.undefined,
       Description: js.UndefOr[Description] = js.undefined,
-      LayerName: js.UndefOr[LayerName] = js.undefined,
       LicenseInfo: js.UndefOr[LicenseInfo] = js.undefined): PublishLayerVersionRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Content" -> Content.map { x => x.asInstanceOf[js.Any] },
+        "Content" -> Content.asInstanceOf[js.Any],
+        "LayerName" -> LayerName.asInstanceOf[js.Any],
         "CompatibleRuntimes" -> CompatibleRuntimes.map { x => x.asInstanceOf[js.Any] },
         "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
-        "LayerName" -> LayerName.map { x => x.asInstanceOf[js.Any] },
         "LicenseInfo" -> LicenseInfo.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PublishLayerVersionRequest]
@@ -1607,35 +1607,35 @@ package lambda {
 
   @js.native
   trait PublishLayerVersionResponse extends js.Object {
+    var CompatibleRuntimes: js.UndefOr[CompatibleRuntimes]
     var Content: js.UndefOr[LayerVersionContentOutput]
     var CreatedDate: js.UndefOr[Timestamp]
-    var CompatibleRuntimes: js.UndefOr[CompatibleRuntimes]
-    var Version: js.UndefOr[LayerVersionNumber]
     var Description: js.UndefOr[Description]
+    var LayerArn: js.UndefOr[LayerArn]
     var LayerVersionArn: js.UndefOr[LayerVersionArn]
     var LicenseInfo: js.UndefOr[LicenseInfo]
-    var LayerArn: js.UndefOr[LayerArn]
+    var Version: js.UndefOr[LayerVersionNumber]
   }
 
   object PublishLayerVersionResponse {
     def apply(
+      CompatibleRuntimes: js.UndefOr[CompatibleRuntimes] = js.undefined,
       Content: js.UndefOr[LayerVersionContentOutput] = js.undefined,
       CreatedDate: js.UndefOr[Timestamp] = js.undefined,
-      CompatibleRuntimes: js.UndefOr[CompatibleRuntimes] = js.undefined,
-      Version: js.UndefOr[LayerVersionNumber] = js.undefined,
       Description: js.UndefOr[Description] = js.undefined,
+      LayerArn: js.UndefOr[LayerArn] = js.undefined,
       LayerVersionArn: js.UndefOr[LayerVersionArn] = js.undefined,
       LicenseInfo: js.UndefOr[LicenseInfo] = js.undefined,
-      LayerArn: js.UndefOr[LayerArn] = js.undefined): PublishLayerVersionResponse = {
+      Version: js.UndefOr[LayerVersionNumber] = js.undefined): PublishLayerVersionResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "CompatibleRuntimes" -> CompatibleRuntimes.map { x => x.asInstanceOf[js.Any] },
         "Content" -> Content.map { x => x.asInstanceOf[js.Any] },
         "CreatedDate" -> CreatedDate.map { x => x.asInstanceOf[js.Any] },
-        "CompatibleRuntimes" -> CompatibleRuntimes.map { x => x.asInstanceOf[js.Any] },
-        "Version" -> Version.map { x => x.asInstanceOf[js.Any] },
         "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
+        "LayerArn" -> LayerArn.map { x => x.asInstanceOf[js.Any] },
         "LayerVersionArn" -> LayerVersionArn.map { x => x.asInstanceOf[js.Any] },
         "LicenseInfo" -> LicenseInfo.map { x => x.asInstanceOf[js.Any] },
-        "LayerArn" -> LayerArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Version" -> Version.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PublishLayerVersionResponse]
     }
@@ -1643,7 +1643,7 @@ package lambda {
 
   @js.native
   trait PublishVersionRequest extends js.Object {
-    var FunctionName: js.UndefOr[FunctionName]
+    var FunctionName: FunctionName
     var CodeSha256: js.UndefOr[String]
     var Description: js.UndefOr[Description]
     var RevisionId: js.UndefOr[String]
@@ -1651,12 +1651,12 @@ package lambda {
 
   object PublishVersionRequest {
     def apply(
-      FunctionName: js.UndefOr[FunctionName] = js.undefined,
+      FunctionName: FunctionName,
       CodeSha256: js.UndefOr[String] = js.undefined,
       Description: js.UndefOr[Description] = js.undefined,
       RevisionId: js.UndefOr[String] = js.undefined): PublishVersionRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "FunctionName" -> FunctionName.map { x => x.asInstanceOf[js.Any] },
+        "FunctionName" -> FunctionName.asInstanceOf[js.Any],
         "CodeSha256" -> CodeSha256.map { x => x.asInstanceOf[js.Any] },
         "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
         "RevisionId" -> RevisionId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
@@ -1667,17 +1667,17 @@ package lambda {
 
   @js.native
   trait PutFunctionConcurrencyRequest extends js.Object {
-    var FunctionName: js.UndefOr[FunctionName]
-    var ReservedConcurrentExecutions: js.UndefOr[ReservedConcurrentExecutions]
+    var FunctionName: FunctionName
+    var ReservedConcurrentExecutions: ReservedConcurrentExecutions
   }
 
   object PutFunctionConcurrencyRequest {
     def apply(
-      FunctionName: js.UndefOr[FunctionName] = js.undefined,
-      ReservedConcurrentExecutions: js.UndefOr[ReservedConcurrentExecutions] = js.undefined): PutFunctionConcurrencyRequest = {
+      FunctionName: FunctionName,
+      ReservedConcurrentExecutions: ReservedConcurrentExecutions): PutFunctionConcurrencyRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "FunctionName" -> FunctionName.map { x => x.asInstanceOf[js.Any] },
-        "ReservedConcurrentExecutions" -> ReservedConcurrentExecutions.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "FunctionName" -> FunctionName.asInstanceOf[js.Any],
+        "ReservedConcurrentExecutions" -> ReservedConcurrentExecutions.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutFunctionConcurrencyRequest]
     }
@@ -1685,22 +1685,22 @@ package lambda {
 
   @js.native
   trait RemoveLayerVersionPermissionRequest extends js.Object {
-    var LayerName: js.UndefOr[LayerName]
-    var VersionNumber: js.UndefOr[LayerVersionNumber]
-    var StatementId: js.UndefOr[StatementId]
+    var LayerName: LayerName
+    var StatementId: StatementId
+    var VersionNumber: LayerVersionNumber
     var RevisionId: js.UndefOr[String]
   }
 
   object RemoveLayerVersionPermissionRequest {
     def apply(
-      LayerName: js.UndefOr[LayerName] = js.undefined,
-      VersionNumber: js.UndefOr[LayerVersionNumber] = js.undefined,
-      StatementId: js.UndefOr[StatementId] = js.undefined,
+      LayerName: LayerName,
+      StatementId: StatementId,
+      VersionNumber: LayerVersionNumber,
       RevisionId: js.UndefOr[String] = js.undefined): RemoveLayerVersionPermissionRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "LayerName" -> LayerName.map { x => x.asInstanceOf[js.Any] },
-        "VersionNumber" -> VersionNumber.map { x => x.asInstanceOf[js.Any] },
-        "StatementId" -> StatementId.map { x => x.asInstanceOf[js.Any] },
+        "LayerName" -> LayerName.asInstanceOf[js.Any],
+        "StatementId" -> StatementId.asInstanceOf[js.Any],
+        "VersionNumber" -> VersionNumber.asInstanceOf[js.Any],
         "RevisionId" -> RevisionId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RemoveLayerVersionPermissionRequest]
@@ -1709,21 +1709,21 @@ package lambda {
 
   @js.native
   trait RemovePermissionRequest extends js.Object {
-    var FunctionName: js.UndefOr[FunctionName]
-    var StatementId: js.UndefOr[NamespacedStatementId]
+    var FunctionName: FunctionName
+    var StatementId: NamespacedStatementId
     var Qualifier: js.UndefOr[Qualifier]
     var RevisionId: js.UndefOr[String]
   }
 
   object RemovePermissionRequest {
     def apply(
-      FunctionName: js.UndefOr[FunctionName] = js.undefined,
-      StatementId: js.UndefOr[NamespacedStatementId] = js.undefined,
+      FunctionName: FunctionName,
+      StatementId: NamespacedStatementId,
       Qualifier: js.UndefOr[Qualifier] = js.undefined,
       RevisionId: js.UndefOr[String] = js.undefined): RemovePermissionRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "FunctionName" -> FunctionName.map { x => x.asInstanceOf[js.Any] },
-        "StatementId" -> StatementId.map { x => x.asInstanceOf[js.Any] },
+        "FunctionName" -> FunctionName.asInstanceOf[js.Any],
+        "StatementId" -> StatementId.asInstanceOf[js.Any],
         "Qualifier" -> Qualifier.map { x => x.asInstanceOf[js.Any] },
         "RevisionId" -> RevisionId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
@@ -1753,17 +1753,17 @@ package lambda {
 
   @js.native
   trait TagResourceRequest extends js.Object {
-    var Resource: js.UndefOr[FunctionArn]
-    var Tags: js.UndefOr[Tags]
+    var Resource: FunctionArn
+    var Tags: Tags
   }
 
   object TagResourceRequest {
     def apply(
-      Resource: js.UndefOr[FunctionArn] = js.undefined,
-      Tags: js.UndefOr[Tags] = js.undefined): TagResourceRequest = {
+      Resource: FunctionArn,
+      Tags: Tags): TagResourceRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Resource" -> Resource.map { x => x.asInstanceOf[js.Any] },
-        "Tags" -> Tags.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Resource" -> Resource.asInstanceOf[js.Any],
+        "Tags" -> Tags.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TagResourceRequest]
     }
@@ -1814,17 +1814,17 @@ package lambda {
 
   @js.native
   trait UntagResourceRequest extends js.Object {
-    var Resource: js.UndefOr[FunctionArn]
-    var TagKeys: js.UndefOr[TagKeyList]
+    var Resource: FunctionArn
+    var TagKeys: TagKeyList
   }
 
   object UntagResourceRequest {
     def apply(
-      Resource: js.UndefOr[FunctionArn] = js.undefined,
-      TagKeys: js.UndefOr[TagKeyList] = js.undefined): UntagResourceRequest = {
+      Resource: FunctionArn,
+      TagKeys: TagKeyList): UntagResourceRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Resource" -> Resource.map { x => x.asInstanceOf[js.Any] },
-        "TagKeys" -> TagKeys.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Resource" -> Resource.asInstanceOf[js.Any],
+        "TagKeys" -> TagKeys.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UntagResourceRequest]
     }
@@ -1832,29 +1832,29 @@ package lambda {
 
   @js.native
   trait UpdateAliasRequest extends js.Object {
-    var Name: js.UndefOr[Alias]
-    var FunctionName: js.UndefOr[FunctionName]
+    var FunctionName: FunctionName
+    var Name: Alias
     var Description: js.UndefOr[Description]
-    var RoutingConfig: js.UndefOr[AliasRoutingConfiguration]
-    var RevisionId: js.UndefOr[String]
     var FunctionVersion: js.UndefOr[Version]
+    var RevisionId: js.UndefOr[String]
+    var RoutingConfig: js.UndefOr[AliasRoutingConfiguration]
   }
 
   object UpdateAliasRequest {
     def apply(
-      Name: js.UndefOr[Alias] = js.undefined,
-      FunctionName: js.UndefOr[FunctionName] = js.undefined,
+      FunctionName: FunctionName,
+      Name: Alias,
       Description: js.UndefOr[Description] = js.undefined,
-      RoutingConfig: js.UndefOr[AliasRoutingConfiguration] = js.undefined,
+      FunctionVersion: js.UndefOr[Version] = js.undefined,
       RevisionId: js.UndefOr[String] = js.undefined,
-      FunctionVersion: js.UndefOr[Version] = js.undefined): UpdateAliasRequest = {
+      RoutingConfig: js.UndefOr[AliasRoutingConfiguration] = js.undefined): UpdateAliasRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
-        "FunctionName" -> FunctionName.map { x => x.asInstanceOf[js.Any] },
+        "FunctionName" -> FunctionName.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
         "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
-        "RoutingConfig" -> RoutingConfig.map { x => x.asInstanceOf[js.Any] },
+        "FunctionVersion" -> FunctionVersion.map { x => x.asInstanceOf[js.Any] },
         "RevisionId" -> RevisionId.map { x => x.asInstanceOf[js.Any] },
-        "FunctionVersion" -> FunctionVersion.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "RoutingConfig" -> RoutingConfig.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateAliasRequest]
     }
@@ -1862,23 +1862,23 @@ package lambda {
 
   @js.native
   trait UpdateEventSourceMappingRequest extends js.Object {
-    var UUID: js.UndefOr[String]
-    var FunctionName: js.UndefOr[FunctionName]
-    var Enabled: js.UndefOr[Enabled]
+    var UUID: String
     var BatchSize: js.UndefOr[BatchSize]
+    var Enabled: js.UndefOr[Enabled]
+    var FunctionName: js.UndefOr[FunctionName]
   }
 
   object UpdateEventSourceMappingRequest {
     def apply(
-      UUID: js.UndefOr[String] = js.undefined,
-      FunctionName: js.UndefOr[FunctionName] = js.undefined,
+      UUID: String,
+      BatchSize: js.UndefOr[BatchSize] = js.undefined,
       Enabled: js.UndefOr[Enabled] = js.undefined,
-      BatchSize: js.UndefOr[BatchSize] = js.undefined): UpdateEventSourceMappingRequest = {
+      FunctionName: js.UndefOr[FunctionName] = js.undefined): UpdateEventSourceMappingRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "UUID" -> UUID.map { x => x.asInstanceOf[js.Any] },
-        "FunctionName" -> FunctionName.map { x => x.asInstanceOf[js.Any] },
+        "UUID" -> UUID.asInstanceOf[js.Any],
+        "BatchSize" -> BatchSize.map { x => x.asInstanceOf[js.Any] },
         "Enabled" -> Enabled.map { x => x.asInstanceOf[js.Any] },
-        "BatchSize" -> BatchSize.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "FunctionName" -> FunctionName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateEventSourceMappingRequest]
     }
@@ -1886,35 +1886,35 @@ package lambda {
 
   @js.native
   trait UpdateFunctionCodeRequest extends js.Object {
-    var S3Key: js.UndefOr[S3Key]
-    var ZipFile: js.UndefOr[Blob]
+    var FunctionName: FunctionName
     var DryRun: js.UndefOr[Boolean]
-    var S3Bucket: js.UndefOr[S3Bucket]
-    var FunctionName: js.UndefOr[FunctionName]
-    var S3ObjectVersion: js.UndefOr[S3ObjectVersion]
-    var RevisionId: js.UndefOr[String]
     var Publish: js.UndefOr[Boolean]
+    var RevisionId: js.UndefOr[String]
+    var S3Bucket: js.UndefOr[S3Bucket]
+    var S3Key: js.UndefOr[S3Key]
+    var S3ObjectVersion: js.UndefOr[S3ObjectVersion]
+    var ZipFile: js.UndefOr[Blob]
   }
 
   object UpdateFunctionCodeRequest {
     def apply(
-      S3Key: js.UndefOr[S3Key] = js.undefined,
-      ZipFile: js.UndefOr[Blob] = js.undefined,
+      FunctionName: FunctionName,
       DryRun: js.UndefOr[Boolean] = js.undefined,
-      S3Bucket: js.UndefOr[S3Bucket] = js.undefined,
-      FunctionName: js.UndefOr[FunctionName] = js.undefined,
-      S3ObjectVersion: js.UndefOr[S3ObjectVersion] = js.undefined,
+      Publish: js.UndefOr[Boolean] = js.undefined,
       RevisionId: js.UndefOr[String] = js.undefined,
-      Publish: js.UndefOr[Boolean] = js.undefined): UpdateFunctionCodeRequest = {
+      S3Bucket: js.UndefOr[S3Bucket] = js.undefined,
+      S3Key: js.UndefOr[S3Key] = js.undefined,
+      S3ObjectVersion: js.UndefOr[S3ObjectVersion] = js.undefined,
+      ZipFile: js.UndefOr[Blob] = js.undefined): UpdateFunctionCodeRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "S3Key" -> S3Key.map { x => x.asInstanceOf[js.Any] },
-        "ZipFile" -> ZipFile.map { x => x.asInstanceOf[js.Any] },
+        "FunctionName" -> FunctionName.asInstanceOf[js.Any],
         "DryRun" -> DryRun.map { x => x.asInstanceOf[js.Any] },
-        "S3Bucket" -> S3Bucket.map { x => x.asInstanceOf[js.Any] },
-        "FunctionName" -> FunctionName.map { x => x.asInstanceOf[js.Any] },
-        "S3ObjectVersion" -> S3ObjectVersion.map { x => x.asInstanceOf[js.Any] },
+        "Publish" -> Publish.map { x => x.asInstanceOf[js.Any] },
         "RevisionId" -> RevisionId.map { x => x.asInstanceOf[js.Any] },
-        "Publish" -> Publish.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "S3Bucket" -> S3Bucket.map { x => x.asInstanceOf[js.Any] },
+        "S3Key" -> S3Key.map { x => x.asInstanceOf[js.Any] },
+        "S3ObjectVersion" -> S3ObjectVersion.map { x => x.asInstanceOf[js.Any] },
+        "ZipFile" -> ZipFile.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateFunctionCodeRequest]
     }
@@ -1922,53 +1922,53 @@ package lambda {
 
   @js.native
   trait UpdateFunctionConfigurationRequest extends js.Object {
-    var Environment: js.UndefOr[Environment]
+    var FunctionName: FunctionName
     var DeadLetterConfig: js.UndefOr[DeadLetterConfig]
-    var Role: js.UndefOr[RoleArn]
-    var Handler: js.UndefOr[Handler]
-    var FunctionName: js.UndefOr[FunctionName]
     var Description: js.UndefOr[Description]
+    var Environment: js.UndefOr[Environment]
+    var Handler: js.UndefOr[Handler]
+    var KMSKeyArn: js.UndefOr[KMSKeyArn]
+    var Layers: js.UndefOr[LayerList]
     var MemorySize: js.UndefOr[MemorySize]
     var RevisionId: js.UndefOr[String]
-    var Layers: js.UndefOr[LayerList]
-    var VpcConfig: js.UndefOr[VpcConfig]
+    var Role: js.UndefOr[RoleArn]
     var Runtime: js.UndefOr[Runtime]
-    var KMSKeyArn: js.UndefOr[KMSKeyArn]
-    var TracingConfig: js.UndefOr[TracingConfig]
     var Timeout: js.UndefOr[Timeout]
+    var TracingConfig: js.UndefOr[TracingConfig]
+    var VpcConfig: js.UndefOr[VpcConfig]
   }
 
   object UpdateFunctionConfigurationRequest {
     def apply(
-      Environment: js.UndefOr[Environment] = js.undefined,
+      FunctionName: FunctionName,
       DeadLetterConfig: js.UndefOr[DeadLetterConfig] = js.undefined,
-      Role: js.UndefOr[RoleArn] = js.undefined,
-      Handler: js.UndefOr[Handler] = js.undefined,
-      FunctionName: js.UndefOr[FunctionName] = js.undefined,
       Description: js.UndefOr[Description] = js.undefined,
+      Environment: js.UndefOr[Environment] = js.undefined,
+      Handler: js.UndefOr[Handler] = js.undefined,
+      KMSKeyArn: js.UndefOr[KMSKeyArn] = js.undefined,
+      Layers: js.UndefOr[LayerList] = js.undefined,
       MemorySize: js.UndefOr[MemorySize] = js.undefined,
       RevisionId: js.UndefOr[String] = js.undefined,
-      Layers: js.UndefOr[LayerList] = js.undefined,
-      VpcConfig: js.UndefOr[VpcConfig] = js.undefined,
+      Role: js.UndefOr[RoleArn] = js.undefined,
       Runtime: js.UndefOr[Runtime] = js.undefined,
-      KMSKeyArn: js.UndefOr[KMSKeyArn] = js.undefined,
+      Timeout: js.UndefOr[Timeout] = js.undefined,
       TracingConfig: js.UndefOr[TracingConfig] = js.undefined,
-      Timeout: js.UndefOr[Timeout] = js.undefined): UpdateFunctionConfigurationRequest = {
+      VpcConfig: js.UndefOr[VpcConfig] = js.undefined): UpdateFunctionConfigurationRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Environment" -> Environment.map { x => x.asInstanceOf[js.Any] },
+        "FunctionName" -> FunctionName.asInstanceOf[js.Any],
         "DeadLetterConfig" -> DeadLetterConfig.map { x => x.asInstanceOf[js.Any] },
-        "Role" -> Role.map { x => x.asInstanceOf[js.Any] },
-        "Handler" -> Handler.map { x => x.asInstanceOf[js.Any] },
-        "FunctionName" -> FunctionName.map { x => x.asInstanceOf[js.Any] },
         "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
+        "Environment" -> Environment.map { x => x.asInstanceOf[js.Any] },
+        "Handler" -> Handler.map { x => x.asInstanceOf[js.Any] },
+        "KMSKeyArn" -> KMSKeyArn.map { x => x.asInstanceOf[js.Any] },
+        "Layers" -> Layers.map { x => x.asInstanceOf[js.Any] },
         "MemorySize" -> MemorySize.map { x => x.asInstanceOf[js.Any] },
         "RevisionId" -> RevisionId.map { x => x.asInstanceOf[js.Any] },
-        "Layers" -> Layers.map { x => x.asInstanceOf[js.Any] },
-        "VpcConfig" -> VpcConfig.map { x => x.asInstanceOf[js.Any] },
+        "Role" -> Role.map { x => x.asInstanceOf[js.Any] },
         "Runtime" -> Runtime.map { x => x.asInstanceOf[js.Any] },
-        "KMSKeyArn" -> KMSKeyArn.map { x => x.asInstanceOf[js.Any] },
+        "Timeout" -> Timeout.map { x => x.asInstanceOf[js.Any] },
         "TracingConfig" -> TracingConfig.map { x => x.asInstanceOf[js.Any] },
-        "Timeout" -> Timeout.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "VpcConfig" -> VpcConfig.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateFunctionConfigurationRequest]
     }
@@ -1979,17 +1979,17 @@ package lambda {
    */
   @js.native
   trait VpcConfig extends js.Object {
-    var SubnetIds: js.UndefOr[SubnetIds]
     var SecurityGroupIds: js.UndefOr[SecurityGroupIds]
+    var SubnetIds: js.UndefOr[SubnetIds]
   }
 
   object VpcConfig {
     def apply(
-      SubnetIds: js.UndefOr[SubnetIds] = js.undefined,
-      SecurityGroupIds: js.UndefOr[SecurityGroupIds] = js.undefined): VpcConfig = {
+      SecurityGroupIds: js.UndefOr[SecurityGroupIds] = js.undefined,
+      SubnetIds: js.UndefOr[SubnetIds] = js.undefined): VpcConfig = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "SubnetIds" -> SubnetIds.map { x => x.asInstanceOf[js.Any] },
-        "SecurityGroupIds" -> SecurityGroupIds.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "SecurityGroupIds" -> SecurityGroupIds.map { x => x.asInstanceOf[js.Any] },
+        "SubnetIds" -> SubnetIds.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[VpcConfig]
     }
@@ -2000,19 +2000,19 @@ package lambda {
    */
   @js.native
   trait VpcConfigResponse extends js.Object {
-    var SubnetIds: js.UndefOr[SubnetIds]
     var SecurityGroupIds: js.UndefOr[SecurityGroupIds]
+    var SubnetIds: js.UndefOr[SubnetIds]
     var VpcId: js.UndefOr[VpcId]
   }
 
   object VpcConfigResponse {
     def apply(
-      SubnetIds: js.UndefOr[SubnetIds] = js.undefined,
       SecurityGroupIds: js.UndefOr[SecurityGroupIds] = js.undefined,
+      SubnetIds: js.UndefOr[SubnetIds] = js.undefined,
       VpcId: js.UndefOr[VpcId] = js.undefined): VpcConfigResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "SubnetIds" -> SubnetIds.map { x => x.asInstanceOf[js.Any] },
         "SecurityGroupIds" -> SecurityGroupIds.map { x => x.asInstanceOf[js.Any] },
+        "SubnetIds" -> SubnetIds.map { x => x.asInstanceOf[js.Any] },
         "VpcId" -> VpcId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[VpcConfigResponse]

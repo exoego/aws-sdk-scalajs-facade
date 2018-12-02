@@ -43,20 +43,20 @@ package kinesisvideomedia {
 
   @js.native
   trait GetMediaInput extends js.Object {
-    var StreamName: js.UndefOr[StreamName]
+    var StartSelector: StartSelector
     var StreamARN: js.UndefOr[ResourceARN]
-    var StartSelector: js.UndefOr[StartSelector]
+    var StreamName: js.UndefOr[StreamName]
   }
 
   object GetMediaInput {
     def apply(
-      StreamName: js.UndefOr[StreamName] = js.undefined,
+      StartSelector: StartSelector,
       StreamARN: js.UndefOr[ResourceARN] = js.undefined,
-      StartSelector: js.UndefOr[StartSelector] = js.undefined): GetMediaInput = {
+      StreamName: js.UndefOr[StreamName] = js.undefined): GetMediaInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "StreamName" -> StreamName.map { x => x.asInstanceOf[js.Any] },
+        "StartSelector" -> StartSelector.asInstanceOf[js.Any],
         "StreamARN" -> StreamARN.map { x => x.asInstanceOf[js.Any] },
-        "StartSelector" -> StartSelector.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "StreamName" -> StreamName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetMediaInput]
     }
@@ -117,23 +117,23 @@ package kinesisvideomedia {
    */
   @js.native
   trait StartSelector extends js.Object {
-    var StartSelectorType: js.UndefOr[StartSelectorType]
+    var StartSelectorType: StartSelectorType
     var AfterFragmentNumber: js.UndefOr[FragmentNumberString]
-    var StartTimestamp: js.UndefOr[Timestamp]
     var ContinuationToken: js.UndefOr[ContinuationToken]
+    var StartTimestamp: js.UndefOr[Timestamp]
   }
 
   object StartSelector {
     def apply(
-      StartSelectorType: js.UndefOr[StartSelectorType] = js.undefined,
+      StartSelectorType: StartSelectorType,
       AfterFragmentNumber: js.UndefOr[FragmentNumberString] = js.undefined,
-      StartTimestamp: js.UndefOr[Timestamp] = js.undefined,
-      ContinuationToken: js.UndefOr[ContinuationToken] = js.undefined): StartSelector = {
+      ContinuationToken: js.UndefOr[ContinuationToken] = js.undefined,
+      StartTimestamp: js.UndefOr[Timestamp] = js.undefined): StartSelector = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "StartSelectorType" -> StartSelectorType.map { x => x.asInstanceOf[js.Any] },
+        "StartSelectorType" -> StartSelectorType.asInstanceOf[js.Any],
         "AfterFragmentNumber" -> AfterFragmentNumber.map { x => x.asInstanceOf[js.Any] },
-        "StartTimestamp" -> StartTimestamp.map { x => x.asInstanceOf[js.Any] },
-        "ContinuationToken" -> ContinuationToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ContinuationToken" -> ContinuationToken.map { x => x.asInstanceOf[js.Any] },
+        "StartTimestamp" -> StartTimestamp.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StartSelector]
     }

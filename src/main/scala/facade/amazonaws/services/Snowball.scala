@@ -64,53 +64,53 @@ package snowball {
    */
   @js.native
   trait Address extends js.Object {
-    var StateOrProvince: js.UndefOr[String]
-    var Name: js.UndefOr[String]
-    var Company: js.UndefOr[String]
-    var Street1: js.UndefOr[String]
-    var IsRestricted: js.UndefOr[Boolean]
-    var Country: js.UndefOr[String]
-    var PrefectureOrDistrict: js.UndefOr[String]
-    var Landmark: js.UndefOr[String]
-    var PhoneNumber: js.UndefOr[String]
     var AddressId: js.UndefOr[AddressId]
     var City: js.UndefOr[String]
-    var Street3: js.UndefOr[String]
-    var Street2: js.UndefOr[String]
+    var Company: js.UndefOr[String]
+    var Country: js.UndefOr[String]
+    var IsRestricted: js.UndefOr[Boolean]
+    var Landmark: js.UndefOr[String]
+    var Name: js.UndefOr[String]
+    var PhoneNumber: js.UndefOr[String]
     var PostalCode: js.UndefOr[String]
+    var PrefectureOrDistrict: js.UndefOr[String]
+    var StateOrProvince: js.UndefOr[String]
+    var Street1: js.UndefOr[String]
+    var Street2: js.UndefOr[String]
+    var Street3: js.UndefOr[String]
   }
 
   object Address {
     def apply(
-      StateOrProvince: js.UndefOr[String] = js.undefined,
-      Name: js.UndefOr[String] = js.undefined,
-      Company: js.UndefOr[String] = js.undefined,
-      Street1: js.UndefOr[String] = js.undefined,
-      IsRestricted: js.UndefOr[Boolean] = js.undefined,
-      Country: js.UndefOr[String] = js.undefined,
-      PrefectureOrDistrict: js.UndefOr[String] = js.undefined,
-      Landmark: js.UndefOr[String] = js.undefined,
-      PhoneNumber: js.UndefOr[String] = js.undefined,
       AddressId: js.UndefOr[AddressId] = js.undefined,
       City: js.UndefOr[String] = js.undefined,
-      Street3: js.UndefOr[String] = js.undefined,
+      Company: js.UndefOr[String] = js.undefined,
+      Country: js.UndefOr[String] = js.undefined,
+      IsRestricted: js.UndefOr[Boolean] = js.undefined,
+      Landmark: js.UndefOr[String] = js.undefined,
+      Name: js.UndefOr[String] = js.undefined,
+      PhoneNumber: js.UndefOr[String] = js.undefined,
+      PostalCode: js.UndefOr[String] = js.undefined,
+      PrefectureOrDistrict: js.UndefOr[String] = js.undefined,
+      StateOrProvince: js.UndefOr[String] = js.undefined,
+      Street1: js.UndefOr[String] = js.undefined,
       Street2: js.UndefOr[String] = js.undefined,
-      PostalCode: js.UndefOr[String] = js.undefined): Address = {
+      Street3: js.UndefOr[String] = js.undefined): Address = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "StateOrProvince" -> StateOrProvince.map { x => x.asInstanceOf[js.Any] },
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
-        "Company" -> Company.map { x => x.asInstanceOf[js.Any] },
-        "Street1" -> Street1.map { x => x.asInstanceOf[js.Any] },
-        "IsRestricted" -> IsRestricted.map { x => x.asInstanceOf[js.Any] },
-        "Country" -> Country.map { x => x.asInstanceOf[js.Any] },
-        "PrefectureOrDistrict" -> PrefectureOrDistrict.map { x => x.asInstanceOf[js.Any] },
-        "Landmark" -> Landmark.map { x => x.asInstanceOf[js.Any] },
-        "PhoneNumber" -> PhoneNumber.map { x => x.asInstanceOf[js.Any] },
         "AddressId" -> AddressId.map { x => x.asInstanceOf[js.Any] },
         "City" -> City.map { x => x.asInstanceOf[js.Any] },
-        "Street3" -> Street3.map { x => x.asInstanceOf[js.Any] },
+        "Company" -> Company.map { x => x.asInstanceOf[js.Any] },
+        "Country" -> Country.map { x => x.asInstanceOf[js.Any] },
+        "IsRestricted" -> IsRestricted.map { x => x.asInstanceOf[js.Any] },
+        "Landmark" -> Landmark.map { x => x.asInstanceOf[js.Any] },
+        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
+        "PhoneNumber" -> PhoneNumber.map { x => x.asInstanceOf[js.Any] },
+        "PostalCode" -> PostalCode.map { x => x.asInstanceOf[js.Any] },
+        "PrefectureOrDistrict" -> PrefectureOrDistrict.map { x => x.asInstanceOf[js.Any] },
+        "StateOrProvince" -> StateOrProvince.map { x => x.asInstanceOf[js.Any] },
+        "Street1" -> Street1.map { x => x.asInstanceOf[js.Any] },
         "Street2" -> Street2.map { x => x.asInstanceOf[js.Any] },
-        "PostalCode" -> PostalCode.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Street3" -> Street3.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Address]
     }
@@ -118,14 +118,14 @@ package snowball {
 
   @js.native
   trait CancelClusterRequest extends js.Object {
-    var ClusterId: js.UndefOr[ClusterId]
+    var ClusterId: ClusterId
   }
 
   object CancelClusterRequest {
     def apply(
-      ClusterId: js.UndefOr[ClusterId] = js.undefined): CancelClusterRequest = {
+      ClusterId: ClusterId): CancelClusterRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ClusterId" -> ClusterId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ClusterId" -> ClusterId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CancelClusterRequest]
     }
@@ -146,14 +146,14 @@ package snowball {
 
   @js.native
   trait CancelJobRequest extends js.Object {
-    var JobId: js.UndefOr[JobId]
+    var JobId: JobId
   }
 
   object CancelJobRequest {
     def apply(
-      JobId: js.UndefOr[JobId] = js.undefined): CancelJobRequest = {
+      JobId: JobId): CancelJobRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "JobId" -> JobId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "JobId" -> JobId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CancelJobRequest]
     }
@@ -204,50 +204,50 @@ package snowball {
    */
   @js.native
   trait ClusterMetadata extends js.Object {
-    var CreationDate: js.UndefOr[Timestamp]
+    var AddressId: js.UndefOr[AddressId]
     var ClusterId: js.UndefOr[String]
+    var ClusterState: js.UndefOr[ClusterState]
+    var CreationDate: js.UndefOr[Timestamp]
+    var Description: js.UndefOr[String]
+    var ForwardingAddressId: js.UndefOr[AddressId]
+    var JobType: js.UndefOr[JobType]
+    var KmsKeyARN: js.UndefOr[KmsKeyARN]
     var Notification: js.UndefOr[Notification]
     var Resources: js.UndefOr[JobResource]
-    var ForwardingAddressId: js.UndefOr[AddressId]
-    var Description: js.UndefOr[String]
     var RoleARN: js.UndefOr[RoleARN]
-    var AddressId: js.UndefOr[AddressId]
-    var SnowballType: js.UndefOr[SnowballType]
-    var ClusterState: js.UndefOr[ClusterState]
-    var JobType: js.UndefOr[JobType]
     var ShippingOption: js.UndefOr[ShippingOption]
-    var KmsKeyARN: js.UndefOr[KmsKeyARN]
+    var SnowballType: js.UndefOr[SnowballType]
   }
 
   object ClusterMetadata {
     def apply(
-      CreationDate: js.UndefOr[Timestamp] = js.undefined,
+      AddressId: js.UndefOr[AddressId] = js.undefined,
       ClusterId: js.UndefOr[String] = js.undefined,
+      ClusterState: js.UndefOr[ClusterState] = js.undefined,
+      CreationDate: js.UndefOr[Timestamp] = js.undefined,
+      Description: js.UndefOr[String] = js.undefined,
+      ForwardingAddressId: js.UndefOr[AddressId] = js.undefined,
+      JobType: js.UndefOr[JobType] = js.undefined,
+      KmsKeyARN: js.UndefOr[KmsKeyARN] = js.undefined,
       Notification: js.UndefOr[Notification] = js.undefined,
       Resources: js.UndefOr[JobResource] = js.undefined,
-      ForwardingAddressId: js.UndefOr[AddressId] = js.undefined,
-      Description: js.UndefOr[String] = js.undefined,
       RoleARN: js.UndefOr[RoleARN] = js.undefined,
-      AddressId: js.UndefOr[AddressId] = js.undefined,
-      SnowballType: js.UndefOr[SnowballType] = js.undefined,
-      ClusterState: js.UndefOr[ClusterState] = js.undefined,
-      JobType: js.UndefOr[JobType] = js.undefined,
       ShippingOption: js.UndefOr[ShippingOption] = js.undefined,
-      KmsKeyARN: js.UndefOr[KmsKeyARN] = js.undefined): ClusterMetadata = {
+      SnowballType: js.UndefOr[SnowballType] = js.undefined): ClusterMetadata = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "CreationDate" -> CreationDate.map { x => x.asInstanceOf[js.Any] },
+        "AddressId" -> AddressId.map { x => x.asInstanceOf[js.Any] },
         "ClusterId" -> ClusterId.map { x => x.asInstanceOf[js.Any] },
+        "ClusterState" -> ClusterState.map { x => x.asInstanceOf[js.Any] },
+        "CreationDate" -> CreationDate.map { x => x.asInstanceOf[js.Any] },
+        "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
+        "ForwardingAddressId" -> ForwardingAddressId.map { x => x.asInstanceOf[js.Any] },
+        "JobType" -> JobType.map { x => x.asInstanceOf[js.Any] },
+        "KmsKeyARN" -> KmsKeyARN.map { x => x.asInstanceOf[js.Any] },
         "Notification" -> Notification.map { x => x.asInstanceOf[js.Any] },
         "Resources" -> Resources.map { x => x.asInstanceOf[js.Any] },
-        "ForwardingAddressId" -> ForwardingAddressId.map { x => x.asInstanceOf[js.Any] },
-        "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
         "RoleARN" -> RoleARN.map { x => x.asInstanceOf[js.Any] },
-        "AddressId" -> AddressId.map { x => x.asInstanceOf[js.Any] },
-        "SnowballType" -> SnowballType.map { x => x.asInstanceOf[js.Any] },
-        "ClusterState" -> ClusterState.map { x => x.asInstanceOf[js.Any] },
-        "JobType" -> JobType.map { x => x.asInstanceOf[js.Any] },
         "ShippingOption" -> ShippingOption.map { x => x.asInstanceOf[js.Any] },
-        "KmsKeyARN" -> KmsKeyARN.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "SnowballType" -> SnowballType.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ClusterMetadata]
     }
@@ -286,14 +286,14 @@ package snowball {
 
   @js.native
   trait CreateAddressRequest extends js.Object {
-    var Address: js.UndefOr[Address]
+    var Address: Address
   }
 
   object CreateAddressRequest {
     def apply(
-      Address: js.UndefOr[Address] = js.undefined): CreateAddressRequest = {
+      Address: Address): CreateAddressRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Address" -> Address.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Address" -> Address.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateAddressRequest]
     }
@@ -316,41 +316,41 @@ package snowball {
 
   @js.native
   trait CreateClusterRequest extends js.Object {
-    var Notification: js.UndefOr[Notification]
-    var Resources: js.UndefOr[JobResource]
-    var ForwardingAddressId: js.UndefOr[AddressId]
+    var AddressId: AddressId
+    var JobType: JobType
+    var Resources: JobResource
+    var RoleARN: RoleARN
+    var ShippingOption: ShippingOption
     var Description: js.UndefOr[String]
-    var RoleARN: js.UndefOr[RoleARN]
-    var AddressId: js.UndefOr[AddressId]
-    var SnowballType: js.UndefOr[SnowballType]
-    var JobType: js.UndefOr[JobType]
-    var ShippingOption: js.UndefOr[ShippingOption]
+    var ForwardingAddressId: js.UndefOr[AddressId]
     var KmsKeyARN: js.UndefOr[KmsKeyARN]
+    var Notification: js.UndefOr[Notification]
+    var SnowballType: js.UndefOr[SnowballType]
   }
 
   object CreateClusterRequest {
     def apply(
-      Notification: js.UndefOr[Notification] = js.undefined,
-      Resources: js.UndefOr[JobResource] = js.undefined,
-      ForwardingAddressId: js.UndefOr[AddressId] = js.undefined,
+      AddressId: AddressId,
+      JobType: JobType,
+      Resources: JobResource,
+      RoleARN: RoleARN,
+      ShippingOption: ShippingOption,
       Description: js.UndefOr[String] = js.undefined,
-      RoleARN: js.UndefOr[RoleARN] = js.undefined,
-      AddressId: js.UndefOr[AddressId] = js.undefined,
-      SnowballType: js.UndefOr[SnowballType] = js.undefined,
-      JobType: js.UndefOr[JobType] = js.undefined,
-      ShippingOption: js.UndefOr[ShippingOption] = js.undefined,
-      KmsKeyARN: js.UndefOr[KmsKeyARN] = js.undefined): CreateClusterRequest = {
+      ForwardingAddressId: js.UndefOr[AddressId] = js.undefined,
+      KmsKeyARN: js.UndefOr[KmsKeyARN] = js.undefined,
+      Notification: js.UndefOr[Notification] = js.undefined,
+      SnowballType: js.UndefOr[SnowballType] = js.undefined): CreateClusterRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Notification" -> Notification.map { x => x.asInstanceOf[js.Any] },
-        "Resources" -> Resources.map { x => x.asInstanceOf[js.Any] },
-        "ForwardingAddressId" -> ForwardingAddressId.map { x => x.asInstanceOf[js.Any] },
+        "AddressId" -> AddressId.asInstanceOf[js.Any],
+        "JobType" -> JobType.asInstanceOf[js.Any],
+        "Resources" -> Resources.asInstanceOf[js.Any],
+        "RoleARN" -> RoleARN.asInstanceOf[js.Any],
+        "ShippingOption" -> ShippingOption.asInstanceOf[js.Any],
         "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
-        "RoleARN" -> RoleARN.map { x => x.asInstanceOf[js.Any] },
-        "AddressId" -> AddressId.map { x => x.asInstanceOf[js.Any] },
-        "SnowballType" -> SnowballType.map { x => x.asInstanceOf[js.Any] },
-        "JobType" -> JobType.map { x => x.asInstanceOf[js.Any] },
-        "ShippingOption" -> ShippingOption.map { x => x.asInstanceOf[js.Any] },
-        "KmsKeyARN" -> KmsKeyARN.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ForwardingAddressId" -> ForwardingAddressId.map { x => x.asInstanceOf[js.Any] },
+        "KmsKeyARN" -> KmsKeyARN.map { x => x.asInstanceOf[js.Any] },
+        "Notification" -> Notification.map { x => x.asInstanceOf[js.Any] },
+        "SnowballType" -> SnowballType.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateClusterRequest]
     }
@@ -373,47 +373,47 @@ package snowball {
 
   @js.native
   trait CreateJobRequest extends js.Object {
+    var AddressId: js.UndefOr[AddressId]
     var ClusterId: js.UndefOr[ClusterId]
+    var Description: js.UndefOr[String]
+    var ForwardingAddressId: js.UndefOr[AddressId]
+    var JobType: js.UndefOr[JobType]
+    var KmsKeyARN: js.UndefOr[KmsKeyARN]
     var Notification: js.UndefOr[Notification]
     var Resources: js.UndefOr[JobResource]
-    var ForwardingAddressId: js.UndefOr[AddressId]
-    var Description: js.UndefOr[String]
     var RoleARN: js.UndefOr[RoleARN]
-    var AddressId: js.UndefOr[AddressId]
-    var SnowballType: js.UndefOr[SnowballType]
-    var JobType: js.UndefOr[JobType]
     var ShippingOption: js.UndefOr[ShippingOption]
     var SnowballCapacityPreference: js.UndefOr[SnowballCapacity]
-    var KmsKeyARN: js.UndefOr[KmsKeyARN]
+    var SnowballType: js.UndefOr[SnowballType]
   }
 
   object CreateJobRequest {
     def apply(
+      AddressId: js.UndefOr[AddressId] = js.undefined,
       ClusterId: js.UndefOr[ClusterId] = js.undefined,
+      Description: js.UndefOr[String] = js.undefined,
+      ForwardingAddressId: js.UndefOr[AddressId] = js.undefined,
+      JobType: js.UndefOr[JobType] = js.undefined,
+      KmsKeyARN: js.UndefOr[KmsKeyARN] = js.undefined,
       Notification: js.UndefOr[Notification] = js.undefined,
       Resources: js.UndefOr[JobResource] = js.undefined,
-      ForwardingAddressId: js.UndefOr[AddressId] = js.undefined,
-      Description: js.UndefOr[String] = js.undefined,
       RoleARN: js.UndefOr[RoleARN] = js.undefined,
-      AddressId: js.UndefOr[AddressId] = js.undefined,
-      SnowballType: js.UndefOr[SnowballType] = js.undefined,
-      JobType: js.UndefOr[JobType] = js.undefined,
       ShippingOption: js.UndefOr[ShippingOption] = js.undefined,
       SnowballCapacityPreference: js.UndefOr[SnowballCapacity] = js.undefined,
-      KmsKeyARN: js.UndefOr[KmsKeyARN] = js.undefined): CreateJobRequest = {
+      SnowballType: js.UndefOr[SnowballType] = js.undefined): CreateJobRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "AddressId" -> AddressId.map { x => x.asInstanceOf[js.Any] },
         "ClusterId" -> ClusterId.map { x => x.asInstanceOf[js.Any] },
+        "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
+        "ForwardingAddressId" -> ForwardingAddressId.map { x => x.asInstanceOf[js.Any] },
+        "JobType" -> JobType.map { x => x.asInstanceOf[js.Any] },
+        "KmsKeyARN" -> KmsKeyARN.map { x => x.asInstanceOf[js.Any] },
         "Notification" -> Notification.map { x => x.asInstanceOf[js.Any] },
         "Resources" -> Resources.map { x => x.asInstanceOf[js.Any] },
-        "ForwardingAddressId" -> ForwardingAddressId.map { x => x.asInstanceOf[js.Any] },
-        "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
         "RoleARN" -> RoleARN.map { x => x.asInstanceOf[js.Any] },
-        "AddressId" -> AddressId.map { x => x.asInstanceOf[js.Any] },
-        "SnowballType" -> SnowballType.map { x => x.asInstanceOf[js.Any] },
-        "JobType" -> JobType.map { x => x.asInstanceOf[js.Any] },
         "ShippingOption" -> ShippingOption.map { x => x.asInstanceOf[js.Any] },
         "SnowballCapacityPreference" -> SnowballCapacityPreference.map { x => x.asInstanceOf[js.Any] },
-        "KmsKeyARN" -> KmsKeyARN.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "SnowballType" -> SnowballType.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateJobRequest]
     }
@@ -463,14 +463,14 @@ package snowball {
 
   @js.native
   trait DescribeAddressRequest extends js.Object {
-    var AddressId: js.UndefOr[AddressId]
+    var AddressId: AddressId
   }
 
   object DescribeAddressRequest {
     def apply(
-      AddressId: js.UndefOr[AddressId] = js.undefined): DescribeAddressRequest = {
+      AddressId: AddressId): DescribeAddressRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "AddressId" -> AddressId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "AddressId" -> AddressId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeAddressRequest]
     }
@@ -529,14 +529,14 @@ package snowball {
 
   @js.native
   trait DescribeClusterRequest extends js.Object {
-    var ClusterId: js.UndefOr[ClusterId]
+    var ClusterId: ClusterId
   }
 
   object DescribeClusterRequest {
     def apply(
-      ClusterId: js.UndefOr[ClusterId] = js.undefined): DescribeClusterRequest = {
+      ClusterId: ClusterId): DescribeClusterRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ClusterId" -> ClusterId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ClusterId" -> ClusterId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeClusterRequest]
     }
@@ -559,14 +559,14 @@ package snowball {
 
   @js.native
   trait DescribeJobRequest extends js.Object {
-    var JobId: js.UndefOr[JobId]
+    var JobId: JobId
   }
 
   object DescribeJobRequest {
     def apply(
-      JobId: js.UndefOr[JobId] = js.undefined): DescribeJobRequest = {
+      JobId: JobId): DescribeJobRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "JobId" -> JobId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "JobId" -> JobId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeJobRequest]
     }
@@ -595,16 +595,16 @@ package snowball {
    */
   @js.native
   trait Ec2AmiResource extends js.Object {
-    var AmiId: js.UndefOr[AmiId]
+    var AmiId: AmiId
     var SnowballAmiId: js.UndefOr[String]
   }
 
   object Ec2AmiResource {
     def apply(
-      AmiId: js.UndefOr[AmiId] = js.undefined,
+      AmiId: AmiId,
       SnowballAmiId: js.UndefOr[String] = js.undefined): Ec2AmiResource = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "AmiId" -> AmiId.map { x => x.asInstanceOf[js.Any] },
+        "AmiId" -> AmiId.asInstanceOf[js.Any],
         "SnowballAmiId" -> SnowballAmiId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Ec2AmiResource]
@@ -631,14 +631,14 @@ package snowball {
 
   @js.native
   trait GetJobManifestRequest extends js.Object {
-    var JobId: js.UndefOr[JobId]
+    var JobId: JobId
   }
 
   object GetJobManifestRequest {
     def apply(
-      JobId: js.UndefOr[JobId] = js.undefined): GetJobManifestRequest = {
+      JobId: JobId): GetJobManifestRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "JobId" -> JobId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "JobId" -> JobId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetJobManifestRequest]
     }
@@ -661,14 +661,14 @@ package snowball {
 
   @js.native
   trait GetJobUnlockCodeRequest extends js.Object {
-    var JobId: js.UndefOr[JobId]
+    var JobId: JobId
   }
 
   object GetJobUnlockCodeRequest {
     def apply(
-      JobId: js.UndefOr[JobId] = js.undefined): GetJobUnlockCodeRequest = {
+      JobId: JobId): GetJobUnlockCodeRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "JobId" -> JobId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "JobId" -> JobId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetJobUnlockCodeRequest]
     }
@@ -726,31 +726,31 @@ package snowball {
   @js.native
   trait JobListEntry extends js.Object {
     var CreationDate: js.UndefOr[Timestamp]
+    var Description: js.UndefOr[String]
     var IsMaster: js.UndefOr[Boolean]
     var JobId: js.UndefOr[String]
-    var Description: js.UndefOr[String]
     var JobState: js.UndefOr[JobState]
-    var SnowballType: js.UndefOr[SnowballType]
     var JobType: js.UndefOr[JobType]
+    var SnowballType: js.UndefOr[SnowballType]
   }
 
   object JobListEntry {
     def apply(
       CreationDate: js.UndefOr[Timestamp] = js.undefined,
+      Description: js.UndefOr[String] = js.undefined,
       IsMaster: js.UndefOr[Boolean] = js.undefined,
       JobId: js.UndefOr[String] = js.undefined,
-      Description: js.UndefOr[String] = js.undefined,
       JobState: js.UndefOr[JobState] = js.undefined,
-      SnowballType: js.UndefOr[SnowballType] = js.undefined,
-      JobType: js.UndefOr[JobType] = js.undefined): JobListEntry = {
+      JobType: js.UndefOr[JobType] = js.undefined,
+      SnowballType: js.UndefOr[SnowballType] = js.undefined): JobListEntry = {
       val _fields = IndexedSeq[(String, js.Any)](
         "CreationDate" -> CreationDate.map { x => x.asInstanceOf[js.Any] },
+        "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
         "IsMaster" -> IsMaster.map { x => x.asInstanceOf[js.Any] },
         "JobId" -> JobId.map { x => x.asInstanceOf[js.Any] },
-        "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
         "JobState" -> JobState.map { x => x.asInstanceOf[js.Any] },
-        "SnowballType" -> SnowballType.map { x => x.asInstanceOf[js.Any] },
-        "JobType" -> JobType.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "JobType" -> JobType.map { x => x.asInstanceOf[js.Any] },
+        "SnowballType" -> SnowballType.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[JobListEntry]
     }
@@ -762,19 +762,19 @@ package snowball {
   @js.native
   trait JobLogs extends js.Object {
     var JobCompletionReportURI: js.UndefOr[String]
-    var JobSuccessLogURI: js.UndefOr[String]
     var JobFailureLogURI: js.UndefOr[String]
+    var JobSuccessLogURI: js.UndefOr[String]
   }
 
   object JobLogs {
     def apply(
       JobCompletionReportURI: js.UndefOr[String] = js.undefined,
-      JobSuccessLogURI: js.UndefOr[String] = js.undefined,
-      JobFailureLogURI: js.UndefOr[String] = js.undefined): JobLogs = {
+      JobFailureLogURI: js.UndefOr[String] = js.undefined,
+      JobSuccessLogURI: js.UndefOr[String] = js.undefined): JobLogs = {
       val _fields = IndexedSeq[(String, js.Any)](
         "JobCompletionReportURI" -> JobCompletionReportURI.map { x => x.asInstanceOf[js.Any] },
-        "JobSuccessLogURI" -> JobSuccessLogURI.map { x => x.asInstanceOf[js.Any] },
-        "JobFailureLogURI" -> JobFailureLogURI.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "JobFailureLogURI" -> JobFailureLogURI.map { x => x.asInstanceOf[js.Any] },
+        "JobSuccessLogURI" -> JobSuccessLogURI.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[JobLogs]
     }
@@ -785,62 +785,62 @@ package snowball {
    */
   @js.native
   trait JobMetadata extends js.Object {
-    var CreationDate: js.UndefOr[Timestamp]
+    var AddressId: js.UndefOr[AddressId]
     var ClusterId: js.UndefOr[String]
-    var Notification: js.UndefOr[Notification]
-    var Resources: js.UndefOr[JobResource]
+    var CreationDate: js.UndefOr[Timestamp]
+    var DataTransferProgress: js.UndefOr[DataTransfer]
+    var Description: js.UndefOr[String]
     var ForwardingAddressId: js.UndefOr[AddressId]
     var JobId: js.UndefOr[String]
-    var Description: js.UndefOr[String]
-    var RoleARN: js.UndefOr[RoleARN]
-    var JobState: js.UndefOr[JobState]
-    var AddressId: js.UndefOr[AddressId]
-    var SnowballType: js.UndefOr[SnowballType]
     var JobLogInfo: js.UndefOr[JobLogs]
+    var JobState: js.UndefOr[JobState]
     var JobType: js.UndefOr[JobType]
-    var SnowballCapacityPreference: js.UndefOr[SnowballCapacity]
     var KmsKeyARN: js.UndefOr[KmsKeyARN]
+    var Notification: js.UndefOr[Notification]
+    var Resources: js.UndefOr[JobResource]
+    var RoleARN: js.UndefOr[RoleARN]
     var ShippingDetails: js.UndefOr[ShippingDetails]
-    var DataTransferProgress: js.UndefOr[DataTransfer]
+    var SnowballCapacityPreference: js.UndefOr[SnowballCapacity]
+    var SnowballType: js.UndefOr[SnowballType]
   }
 
   object JobMetadata {
     def apply(
-      CreationDate: js.UndefOr[Timestamp] = js.undefined,
+      AddressId: js.UndefOr[AddressId] = js.undefined,
       ClusterId: js.UndefOr[String] = js.undefined,
-      Notification: js.UndefOr[Notification] = js.undefined,
-      Resources: js.UndefOr[JobResource] = js.undefined,
+      CreationDate: js.UndefOr[Timestamp] = js.undefined,
+      DataTransferProgress: js.UndefOr[DataTransfer] = js.undefined,
+      Description: js.UndefOr[String] = js.undefined,
       ForwardingAddressId: js.UndefOr[AddressId] = js.undefined,
       JobId: js.UndefOr[String] = js.undefined,
-      Description: js.UndefOr[String] = js.undefined,
-      RoleARN: js.UndefOr[RoleARN] = js.undefined,
-      JobState: js.UndefOr[JobState] = js.undefined,
-      AddressId: js.UndefOr[AddressId] = js.undefined,
-      SnowballType: js.UndefOr[SnowballType] = js.undefined,
       JobLogInfo: js.UndefOr[JobLogs] = js.undefined,
+      JobState: js.UndefOr[JobState] = js.undefined,
       JobType: js.UndefOr[JobType] = js.undefined,
-      SnowballCapacityPreference: js.UndefOr[SnowballCapacity] = js.undefined,
       KmsKeyARN: js.UndefOr[KmsKeyARN] = js.undefined,
+      Notification: js.UndefOr[Notification] = js.undefined,
+      Resources: js.UndefOr[JobResource] = js.undefined,
+      RoleARN: js.UndefOr[RoleARN] = js.undefined,
       ShippingDetails: js.UndefOr[ShippingDetails] = js.undefined,
-      DataTransferProgress: js.UndefOr[DataTransfer] = js.undefined): JobMetadata = {
+      SnowballCapacityPreference: js.UndefOr[SnowballCapacity] = js.undefined,
+      SnowballType: js.UndefOr[SnowballType] = js.undefined): JobMetadata = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "CreationDate" -> CreationDate.map { x => x.asInstanceOf[js.Any] },
+        "AddressId" -> AddressId.map { x => x.asInstanceOf[js.Any] },
         "ClusterId" -> ClusterId.map { x => x.asInstanceOf[js.Any] },
-        "Notification" -> Notification.map { x => x.asInstanceOf[js.Any] },
-        "Resources" -> Resources.map { x => x.asInstanceOf[js.Any] },
+        "CreationDate" -> CreationDate.map { x => x.asInstanceOf[js.Any] },
+        "DataTransferProgress" -> DataTransferProgress.map { x => x.asInstanceOf[js.Any] },
+        "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
         "ForwardingAddressId" -> ForwardingAddressId.map { x => x.asInstanceOf[js.Any] },
         "JobId" -> JobId.map { x => x.asInstanceOf[js.Any] },
-        "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
-        "RoleARN" -> RoleARN.map { x => x.asInstanceOf[js.Any] },
-        "JobState" -> JobState.map { x => x.asInstanceOf[js.Any] },
-        "AddressId" -> AddressId.map { x => x.asInstanceOf[js.Any] },
-        "SnowballType" -> SnowballType.map { x => x.asInstanceOf[js.Any] },
         "JobLogInfo" -> JobLogInfo.map { x => x.asInstanceOf[js.Any] },
+        "JobState" -> JobState.map { x => x.asInstanceOf[js.Any] },
         "JobType" -> JobType.map { x => x.asInstanceOf[js.Any] },
-        "SnowballCapacityPreference" -> SnowballCapacityPreference.map { x => x.asInstanceOf[js.Any] },
         "KmsKeyARN" -> KmsKeyARN.map { x => x.asInstanceOf[js.Any] },
+        "Notification" -> Notification.map { x => x.asInstanceOf[js.Any] },
+        "Resources" -> Resources.map { x => x.asInstanceOf[js.Any] },
+        "RoleARN" -> RoleARN.map { x => x.asInstanceOf[js.Any] },
         "ShippingDetails" -> ShippingDetails.map { x => x.asInstanceOf[js.Any] },
-        "DataTransferProgress" -> DataTransferProgress.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "SnowballCapacityPreference" -> SnowballCapacityPreference.map { x => x.asInstanceOf[js.Any] },
+        "SnowballType" -> SnowballType.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[JobMetadata]
     }
@@ -851,20 +851,20 @@ package snowball {
    */
   @js.native
   trait JobResource extends js.Object {
-    var S3Resources: js.UndefOr[S3ResourceList]
-    var LambdaResources: js.UndefOr[LambdaResourceList]
     var Ec2AmiResources: js.UndefOr[Ec2AmiResourceList]
+    var LambdaResources: js.UndefOr[LambdaResourceList]
+    var S3Resources: js.UndefOr[S3ResourceList]
   }
 
   object JobResource {
     def apply(
-      S3Resources: js.UndefOr[S3ResourceList] = js.undefined,
+      Ec2AmiResources: js.UndefOr[Ec2AmiResourceList] = js.undefined,
       LambdaResources: js.UndefOr[LambdaResourceList] = js.undefined,
-      Ec2AmiResources: js.UndefOr[Ec2AmiResourceList] = js.undefined): JobResource = {
+      S3Resources: js.UndefOr[S3ResourceList] = js.undefined): JobResource = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "S3Resources" -> S3Resources.map { x => x.asInstanceOf[js.Any] },
+        "Ec2AmiResources" -> Ec2AmiResources.map { x => x.asInstanceOf[js.Any] },
         "LambdaResources" -> LambdaResources.map { x => x.asInstanceOf[js.Any] },
-        "Ec2AmiResources" -> Ec2AmiResources.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "S3Resources" -> S3Resources.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[JobResource]
     }
@@ -922,17 +922,17 @@ package snowball {
    */
   @js.native
   trait LambdaResource extends js.Object {
-    var LambdaArn: js.UndefOr[ResourceARN]
     var EventTriggers: js.UndefOr[EventTriggerDefinitionList]
+    var LambdaArn: js.UndefOr[ResourceARN]
   }
 
   object LambdaResource {
     def apply(
-      LambdaArn: js.UndefOr[ResourceARN] = js.undefined,
-      EventTriggers: js.UndefOr[EventTriggerDefinitionList] = js.undefined): LambdaResource = {
+      EventTriggers: js.UndefOr[EventTriggerDefinitionList] = js.undefined,
+      LambdaArn: js.UndefOr[ResourceARN] = js.undefined): LambdaResource = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "LambdaArn" -> LambdaArn.map { x => x.asInstanceOf[js.Any] },
-        "EventTriggers" -> EventTriggers.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "EventTriggers" -> EventTriggers.map { x => x.asInstanceOf[js.Any] },
+        "LambdaArn" -> LambdaArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[LambdaResource]
     }
@@ -940,18 +940,18 @@ package snowball {
 
   @js.native
   trait ListClusterJobsRequest extends js.Object {
-    var ClusterId: js.UndefOr[ClusterId]
+    var ClusterId: ClusterId
     var MaxResults: js.UndefOr[ListLimit]
     var NextToken: js.UndefOr[String]
   }
 
   object ListClusterJobsRequest {
     def apply(
-      ClusterId: js.UndefOr[ClusterId] = js.undefined,
+      ClusterId: ClusterId,
       MaxResults: js.UndefOr[ListLimit] = js.undefined,
       NextToken: js.UndefOr[String] = js.undefined): ListClusterJobsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ClusterId" -> ClusterId.map { x => x.asInstanceOf[js.Any] },
+        "ClusterId" -> ClusterId.asInstanceOf[js.Any],
         "MaxResults" -> MaxResults.map { x => x.asInstanceOf[js.Any] },
         "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
@@ -1090,20 +1090,20 @@ package snowball {
    */
   @js.native
   trait Notification extends js.Object {
-    var SnsTopicARN: js.UndefOr[SnsTopicARN]
     var JobStatesToNotify: js.UndefOr[JobStateList]
     var NotifyAll: js.UndefOr[Boolean]
+    var SnsTopicARN: js.UndefOr[SnsTopicARN]
   }
 
   object Notification {
     def apply(
-      SnsTopicARN: js.UndefOr[SnsTopicARN] = js.undefined,
       JobStatesToNotify: js.UndefOr[JobStateList] = js.undefined,
-      NotifyAll: js.UndefOr[Boolean] = js.undefined): Notification = {
+      NotifyAll: js.UndefOr[Boolean] = js.undefined,
+      SnsTopicARN: js.UndefOr[SnsTopicARN] = js.undefined): Notification = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "SnsTopicARN" -> SnsTopicARN.map { x => x.asInstanceOf[js.Any] },
         "JobStatesToNotify" -> JobStatesToNotify.map { x => x.asInstanceOf[js.Any] },
-        "NotifyAll" -> NotifyAll.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "NotifyAll" -> NotifyAll.map { x => x.asInstanceOf[js.Any] },
+        "SnsTopicARN" -> SnsTopicARN.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Notification]
     }
@@ -1156,20 +1156,20 @@ package snowball {
    */
   @js.native
   trait ShippingDetails extends js.Object {
-    var ShippingOption: js.UndefOr[ShippingOption]
     var InboundShipment: js.UndefOr[Shipment]
     var OutboundShipment: js.UndefOr[Shipment]
+    var ShippingOption: js.UndefOr[ShippingOption]
   }
 
   object ShippingDetails {
     def apply(
-      ShippingOption: js.UndefOr[ShippingOption] = js.undefined,
       InboundShipment: js.UndefOr[Shipment] = js.undefined,
-      OutboundShipment: js.UndefOr[Shipment] = js.undefined): ShippingDetails = {
+      OutboundShipment: js.UndefOr[Shipment] = js.undefined,
+      ShippingOption: js.UndefOr[ShippingOption] = js.undefined): ShippingDetails = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ShippingOption" -> ShippingOption.map { x => x.asInstanceOf[js.Any] },
         "InboundShipment" -> InboundShipment.map { x => x.asInstanceOf[js.Any] },
-        "OutboundShipment" -> OutboundShipment.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "OutboundShipment" -> OutboundShipment.map { x => x.asInstanceOf[js.Any] },
+        "ShippingOption" -> ShippingOption.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ShippingDetails]
     }
@@ -1205,34 +1205,34 @@ package snowball {
 
   @js.native
   trait UpdateClusterRequest extends js.Object {
-    var ClusterId: js.UndefOr[ClusterId]
+    var ClusterId: ClusterId
+    var AddressId: js.UndefOr[AddressId]
+    var Description: js.UndefOr[String]
+    var ForwardingAddressId: js.UndefOr[AddressId]
     var Notification: js.UndefOr[Notification]
     var Resources: js.UndefOr[JobResource]
-    var ForwardingAddressId: js.UndefOr[AddressId]
-    var Description: js.UndefOr[String]
     var RoleARN: js.UndefOr[RoleARN]
-    var AddressId: js.UndefOr[AddressId]
     var ShippingOption: js.UndefOr[ShippingOption]
   }
 
   object UpdateClusterRequest {
     def apply(
-      ClusterId: js.UndefOr[ClusterId] = js.undefined,
+      ClusterId: ClusterId,
+      AddressId: js.UndefOr[AddressId] = js.undefined,
+      Description: js.UndefOr[String] = js.undefined,
+      ForwardingAddressId: js.UndefOr[AddressId] = js.undefined,
       Notification: js.UndefOr[Notification] = js.undefined,
       Resources: js.UndefOr[JobResource] = js.undefined,
-      ForwardingAddressId: js.UndefOr[AddressId] = js.undefined,
-      Description: js.UndefOr[String] = js.undefined,
       RoleARN: js.UndefOr[RoleARN] = js.undefined,
-      AddressId: js.UndefOr[AddressId] = js.undefined,
       ShippingOption: js.UndefOr[ShippingOption] = js.undefined): UpdateClusterRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ClusterId" -> ClusterId.map { x => x.asInstanceOf[js.Any] },
+        "ClusterId" -> ClusterId.asInstanceOf[js.Any],
+        "AddressId" -> AddressId.map { x => x.asInstanceOf[js.Any] },
+        "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
+        "ForwardingAddressId" -> ForwardingAddressId.map { x => x.asInstanceOf[js.Any] },
         "Notification" -> Notification.map { x => x.asInstanceOf[js.Any] },
         "Resources" -> Resources.map { x => x.asInstanceOf[js.Any] },
-        "ForwardingAddressId" -> ForwardingAddressId.map { x => x.asInstanceOf[js.Any] },
-        "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
         "RoleARN" -> RoleARN.map { x => x.asInstanceOf[js.Any] },
-        "AddressId" -> AddressId.map { x => x.asInstanceOf[js.Any] },
         "ShippingOption" -> ShippingOption.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateClusterRequest]
@@ -1254,36 +1254,36 @@ package snowball {
 
   @js.native
   trait UpdateJobRequest extends js.Object {
+    var JobId: JobId
+    var AddressId: js.UndefOr[AddressId]
+    var Description: js.UndefOr[String]
+    var ForwardingAddressId: js.UndefOr[AddressId]
     var Notification: js.UndefOr[Notification]
     var Resources: js.UndefOr[JobResource]
-    var ForwardingAddressId: js.UndefOr[AddressId]
-    var JobId: js.UndefOr[JobId]
-    var Description: js.UndefOr[String]
     var RoleARN: js.UndefOr[RoleARN]
-    var AddressId: js.UndefOr[AddressId]
     var ShippingOption: js.UndefOr[ShippingOption]
     var SnowballCapacityPreference: js.UndefOr[SnowballCapacity]
   }
 
   object UpdateJobRequest {
     def apply(
+      JobId: JobId,
+      AddressId: js.UndefOr[AddressId] = js.undefined,
+      Description: js.UndefOr[String] = js.undefined,
+      ForwardingAddressId: js.UndefOr[AddressId] = js.undefined,
       Notification: js.UndefOr[Notification] = js.undefined,
       Resources: js.UndefOr[JobResource] = js.undefined,
-      ForwardingAddressId: js.UndefOr[AddressId] = js.undefined,
-      JobId: js.UndefOr[JobId] = js.undefined,
-      Description: js.UndefOr[String] = js.undefined,
       RoleARN: js.UndefOr[RoleARN] = js.undefined,
-      AddressId: js.UndefOr[AddressId] = js.undefined,
       ShippingOption: js.UndefOr[ShippingOption] = js.undefined,
       SnowballCapacityPreference: js.UndefOr[SnowballCapacity] = js.undefined): UpdateJobRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "JobId" -> JobId.asInstanceOf[js.Any],
+        "AddressId" -> AddressId.map { x => x.asInstanceOf[js.Any] },
+        "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
+        "ForwardingAddressId" -> ForwardingAddressId.map { x => x.asInstanceOf[js.Any] },
         "Notification" -> Notification.map { x => x.asInstanceOf[js.Any] },
         "Resources" -> Resources.map { x => x.asInstanceOf[js.Any] },
-        "ForwardingAddressId" -> ForwardingAddressId.map { x => x.asInstanceOf[js.Any] },
-        "JobId" -> JobId.map { x => x.asInstanceOf[js.Any] },
-        "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
         "RoleARN" -> RoleARN.map { x => x.asInstanceOf[js.Any] },
-        "AddressId" -> AddressId.map { x => x.asInstanceOf[js.Any] },
         "ShippingOption" -> ShippingOption.map { x => x.asInstanceOf[js.Any] },
         "SnowballCapacityPreference" -> SnowballCapacityPreference.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
