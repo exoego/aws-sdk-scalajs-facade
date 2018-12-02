@@ -1,7 +1,7 @@
 import ReleaseTransformations._
 enablePlugins(ScalaJSPlugin)
 
-val Version = "0.19.0"
+val Version = "0.20.0"
 val Organization = "net.exoego"
 
 lazy val root = (project in file(".")).
@@ -37,6 +37,8 @@ lazy val root = (project in file(".")).
       else
         Opts.resolver.sonatypeStaging
     ),
+    publishConfiguration := publishConfiguration.value.withOverwrite(true),
+    publishLocalConfiguration := publishLocalConfiguration.value.withOverwrite(true),
     releaseProcess := Seq[ReleaseStep](
       checkSnapshotDependencies,
       inquireVersions,
@@ -48,8 +50,7 @@ lazy val root = (project in file(".")).
       ReleaseStep(action = Command.process("publishSigned", _)),
       setNextVersion,
       commitNextVersion,
-      ReleaseStep(action = Command.process("sonatypeRelease", _)),
-      pushChanges
+      ReleaseStep(action = Command.process("sonatypeRelease", _))
     ),
     skip in packageJSDependencies := false,
     scalaJSModuleKind := ModuleKind.CommonJSModule,
