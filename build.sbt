@@ -1,7 +1,7 @@
 import ReleaseTransformations._
 enablePlugins(ScalaJSPlugin)
 
-val Version = "0.19.0"
+val Version = "0.20.0"
 val Organization = "net.exoego"
 
 lazy val root = (project in file(".")).
@@ -37,10 +37,12 @@ lazy val root = (project in file(".")).
       else
         Opts.resolver.sonatypeStaging
     ),
+    publishConfiguration := publishConfiguration.value.withOverwrite(true),
+    publishLocalConfiguration := publishLocalConfiguration.value.withOverwrite(true),
     releaseProcess := Seq[ReleaseStep](
       checkSnapshotDependencies,
       inquireVersions,
-      runClean,
+//      runClean,
       runTest,
       setReleaseVersion,
       commitReleaseVersion,
