@@ -106,7 +106,7 @@ package dms {
   }
 
   /**
-   * <p>Describes a quota for an AWS account, for example, the number of replication instances allowed.</p>
+   * Describes a quota for an AWS account, for example, the number of replication instances allowed.
    */
   @js.native
   trait AccountQuota extends js.Object {
@@ -200,7 +200,7 @@ package dms {
   }
 
   /**
-   * <p>The SSL certificate that can be used to encrypt connections between the endpoints and the replication instance.</p>
+   * The SSL certificate that can be used to encrypt connections between the endpoints and the replication instance.
    */
   @js.native
   trait Certificate extends js.Object {
@@ -1595,7 +1595,7 @@ package dms {
   }
 
   /**
-   * <p> The settings in JSON format for the DMS Transfer type source endpoint. </p>
+   * The settings in JSON format for the DMS Transfer type source endpoint.
    */
   @js.native
   trait DmsTransferSettings extends js.Object {
@@ -2653,7 +2653,7 @@ package dms {
   }
 
   /**
-   * <p>Contains metadata for a replication instance task log.</p>
+   * Contains metadata for a replication instance task log.
    */
   @js.native
   trait ReplicationInstanceTaskLog extends js.Object {
@@ -2800,7 +2800,7 @@ package dms {
   }
 
   /**
-   * <p> The task assessment report in JSON format. </p>
+   * The task assessment report in JSON format.
    */
   @js.native
   trait ReplicationTaskAssessmentResult extends js.Object {

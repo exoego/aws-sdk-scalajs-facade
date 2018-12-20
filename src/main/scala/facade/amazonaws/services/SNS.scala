@@ -104,7 +104,7 @@ package sns {
   }
 
   /**
-   * <p>The input for the <code>CheckIfPhoneNumberIsOptedOut</code> action.</p>
+   * The input for the <code>CheckIfPhoneNumberIsOptedOut</code> action.
    */
   @js.native
   trait CheckIfPhoneNumberIsOptedOutInput extends js.Object {
@@ -122,7 +122,7 @@ package sns {
   }
 
   /**
-   * <p>The response from the <code>CheckIfPhoneNumberIsOptedOut</code> action.</p>
+   * The response from the <code>CheckIfPhoneNumberIsOptedOut</code> action.
    */
   @js.native
   trait CheckIfPhoneNumberIsOptedOutResponse extends js.Object {
@@ -140,7 +140,7 @@ package sns {
   }
 
   /**
-   * <p>Input for ConfirmSubscription action.</p>
+   * Input for ConfirmSubscription action.
    */
   @js.native
   trait ConfirmSubscriptionInput extends js.Object {
@@ -164,7 +164,7 @@ package sns {
   }
 
   /**
-   * <p>Response for ConfirmSubscriptions action.</p>
+   * Response for ConfirmSubscriptions action.
    */
   @js.native
   trait ConfirmSubscriptionResponse extends js.Object {
@@ -182,7 +182,7 @@ package sns {
   }
 
   /**
-   * <p>Response from CreateEndpoint action.</p>
+   * Response from CreateEndpoint action.
    */
   @js.native
   trait CreateEndpointResponse extends js.Object {
@@ -200,7 +200,7 @@ package sns {
   }
 
   /**
-   * <p>Input for CreatePlatformApplication action.</p>
+   * Input for CreatePlatformApplication action.
    */
   @js.native
   trait CreatePlatformApplicationInput extends js.Object {
@@ -224,7 +224,7 @@ package sns {
   }
 
   /**
-   * <p>Response from CreatePlatformApplication action.</p>
+   * Response from CreatePlatformApplication action.
    */
   @js.native
   trait CreatePlatformApplicationResponse extends js.Object {
@@ -242,7 +242,7 @@ package sns {
   }
 
   /**
-   * <p>Input for CreatePlatformEndpoint action.</p>
+   * Input for CreatePlatformEndpoint action.
    */
   @js.native
   trait CreatePlatformEndpointInput extends js.Object {
@@ -269,7 +269,7 @@ package sns {
   }
 
   /**
-   * <p>Input for CreateTopic action.</p>
+   * Input for CreateTopic action.
    */
   @js.native
   trait CreateTopicInput extends js.Object {
@@ -290,7 +290,7 @@ package sns {
   }
 
   /**
-   * <p>Response from CreateTopic action.</p>
+   * Response from CreateTopic action.
    */
   @js.native
   trait CreateTopicResponse extends js.Object {
@@ -308,7 +308,7 @@ package sns {
   }
 
   /**
-   * <p>Input for DeleteEndpoint action.</p>
+   * Input for DeleteEndpoint action.
    */
   @js.native
   trait DeleteEndpointInput extends js.Object {
@@ -326,7 +326,7 @@ package sns {
   }
 
   /**
-   * <p>Input for DeletePlatformApplication action.</p>
+   * Input for DeletePlatformApplication action.
    */
   @js.native
   trait DeletePlatformApplicationInput extends js.Object {
@@ -359,7 +359,7 @@ package sns {
   }
 
   /**
-   * <p>Endpoint for mobile app and device.</p>
+   * Endpoint for mobile app and device.
    */
   @js.native
   trait Endpoint extends js.Object {
@@ -380,7 +380,7 @@ package sns {
   }
 
   /**
-   * <p>Input for GetEndpointAttributes action.</p>
+   * Input for GetEndpointAttributes action.
    */
   @js.native
   trait GetEndpointAttributesInput extends js.Object {
@@ -398,7 +398,7 @@ package sns {
   }
 
   /**
-   * <p>Response from GetEndpointAttributes of the EndpointArn.</p>
+   * Response from GetEndpointAttributes of the EndpointArn.
    */
   @js.native
   trait GetEndpointAttributesResponse extends js.Object {
@@ -416,7 +416,7 @@ package sns {
   }
 
   /**
-   * <p>Input for GetPlatformApplicationAttributes action.</p>
+   * Input for GetPlatformApplicationAttributes action.
    */
   @js.native
   trait GetPlatformApplicationAttributesInput extends js.Object {
@@ -434,7 +434,7 @@ package sns {
   }
 
   /**
-   * <p>Response for GetPlatformApplicationAttributes action.</p>
+   * Response for GetPlatformApplicationAttributes action.
    */
   @js.native
   trait GetPlatformApplicationAttributesResponse extends js.Object {
@@ -452,7 +452,7 @@ package sns {
   }
 
   /**
-   * <p>The input for the <code>GetSMSAttributes</code> request.</p>
+   * The input for the <code>GetSMSAttributes</code> request.
    */
   @js.native
   trait GetSMSAttributesInput extends js.Object {
@@ -470,7 +470,7 @@ package sns {
   }
 
   /**
-   * <p>The response from the <code>GetSMSAttributes</code> request.</p>
+   * The response from the <code>GetSMSAttributes</code> request.
    */
   @js.native
   trait GetSMSAttributesResponse extends js.Object {
@@ -488,7 +488,7 @@ package sns {
   }
 
   /**
-   * <p>Input for GetSubscriptionAttributes.</p>
+   * Input for GetSubscriptionAttributes.
    */
   @js.native
   trait GetSubscriptionAttributesInput extends js.Object {
@@ -506,7 +506,7 @@ package sns {
   }
 
   /**
-   * <p>Response for GetSubscriptionAttributes action.</p>
+   * Response for GetSubscriptionAttributes action.
    */
   @js.native
   trait GetSubscriptionAttributesResponse extends js.Object {
@@ -524,7 +524,7 @@ package sns {
   }
 
   /**
-   * <p>Input for GetTopicAttributes action.</p>
+   * Input for GetTopicAttributes action.
    */
   @js.native
   trait GetTopicAttributesInput extends js.Object {
@@ -542,7 +542,7 @@ package sns {
   }
 
   /**
-   * <p>Response for GetTopicAttributes action.</p>
+   * Response for GetTopicAttributes action.
    */
   @js.native
   trait GetTopicAttributesResponse extends js.Object {
@@ -560,7 +560,7 @@ package sns {
   }
 
   /**
-   * <p>Input for ListEndpointsByPlatformApplication action.</p>
+   * Input for ListEndpointsByPlatformApplication action.
    */
   @js.native
   trait ListEndpointsByPlatformApplicationInput extends js.Object {
@@ -581,7 +581,7 @@ package sns {
   }
 
   /**
-   * <p>Response for ListEndpointsByPlatformApplication action.</p>
+   * Response for ListEndpointsByPlatformApplication action.
    */
   @js.native
   trait ListEndpointsByPlatformApplicationResponse extends js.Object {
@@ -602,7 +602,7 @@ package sns {
   }
 
   /**
-   * <p>The input for the <code>ListPhoneNumbersOptedOut</code> action.</p>
+   * The input for the <code>ListPhoneNumbersOptedOut</code> action.
    */
   @js.native
   trait ListPhoneNumbersOptedOutInput extends js.Object {
@@ -620,7 +620,7 @@ package sns {
   }
 
   /**
-   * <p>The response from the <code>ListPhoneNumbersOptedOut</code> action.</p>
+   * The response from the <code>ListPhoneNumbersOptedOut</code> action.
    */
   @js.native
   trait ListPhoneNumbersOptedOutResponse extends js.Object {
@@ -641,7 +641,7 @@ package sns {
   }
 
   /**
-   * <p>Input for ListPlatformApplications action.</p>
+   * Input for ListPlatformApplications action.
    */
   @js.native
   trait ListPlatformApplicationsInput extends js.Object {
@@ -659,7 +659,7 @@ package sns {
   }
 
   /**
-   * <p>Response for ListPlatformApplications action.</p>
+   * Response for ListPlatformApplications action.
    */
   @js.native
   trait ListPlatformApplicationsResponse extends js.Object {
@@ -680,7 +680,7 @@ package sns {
   }
 
   /**
-   * <p>Input for ListSubscriptionsByTopic action.</p>
+   * Input for ListSubscriptionsByTopic action.
    */
   @js.native
   trait ListSubscriptionsByTopicInput extends js.Object {
@@ -701,7 +701,7 @@ package sns {
   }
 
   /**
-   * <p>Response for ListSubscriptionsByTopic action.</p>
+   * Response for ListSubscriptionsByTopic action.
    */
   @js.native
   trait ListSubscriptionsByTopicResponse extends js.Object {
@@ -722,7 +722,7 @@ package sns {
   }
 
   /**
-   * <p>Input for ListSubscriptions action.</p>
+   * Input for ListSubscriptions action.
    */
   @js.native
   trait ListSubscriptionsInput extends js.Object {
@@ -740,7 +740,7 @@ package sns {
   }
 
   /**
-   * <p>Response for ListSubscriptions action</p>
+   * Response for ListSubscriptions action
    */
   @js.native
   trait ListSubscriptionsResponse extends js.Object {
@@ -776,7 +776,7 @@ package sns {
   }
 
   /**
-   * <p>Response for ListTopics action.</p>
+   * Response for ListTopics action.
    */
   @js.native
   trait ListTopicsResponse extends js.Object {
@@ -797,7 +797,8 @@ package sns {
   }
 
   /**
-   * <p>The user-specified message attribute value. For string data types, the value attribute has the same restrictions on the content as the message body. For more information, see <a href="http://docs.aws.amazon.com/sns/latest/api/API_Publish.html">Publish</a>.</p> <p>Name, type, and value must not be empty or null. In addition, the message body should not be empty or null. All parts of the message attribute, including name, type, and value, are included in the message size restriction, which is currently 256 KB (262,144 bytes). For more information, see <a href="http://docs.aws.amazon.com/sns/latest/dg/SNSMessageAttributes.html">Using Amazon SNS Message Attributes</a>.</p>
+   * The user-specified message attribute value. For string data types, the value attribute has the same restrictions on the content as the message body. For more information, see <a href="http://docs.aws.amazon.com/sns/latest/api/API_Publish.html">Publish</a>.
+   *  Name, type, and value must not be empty or null. In addition, the message body should not be empty or null. All parts of the message attribute, including name, type, and value, are included in the message size restriction, which is currently 256 KB (262,144 bytes). For more information, see <a href="http://docs.aws.amazon.com/sns/latest/dg/SNSMessageAttributes.html">Using Amazon SNS Message Attributes</a>.
    */
   @js.native
   trait MessageAttributeValue extends js.Object {
@@ -821,7 +822,7 @@ package sns {
   }
 
   /**
-   * <p>Input for the OptInPhoneNumber action.</p>
+   * Input for the OptInPhoneNumber action.
    */
   @js.native
   trait OptInPhoneNumberInput extends js.Object {
@@ -839,7 +840,7 @@ package sns {
   }
 
   /**
-   * <p>The response for the OptInPhoneNumber action.</p>
+   * The response for the OptInPhoneNumber action.
    */
   @js.native
   trait OptInPhoneNumberResponse extends js.Object {
@@ -855,7 +856,7 @@ package sns {
   }
 
   /**
-   * <p>Platform application object.</p>
+   * Platform application object.
    */
   @js.native
   trait PlatformApplication extends js.Object {
@@ -876,7 +877,7 @@ package sns {
   }
 
   /**
-   * <p>Input for Publish action.</p>
+   * Input for Publish action.
    */
   @js.native
   trait PublishInput extends js.Object {
@@ -912,7 +913,7 @@ package sns {
   }
 
   /**
-   * <p>Response for Publish action.</p>
+   * Response for Publish action.
    */
   @js.native
   trait PublishResponse extends js.Object {
@@ -930,7 +931,7 @@ package sns {
   }
 
   /**
-   * <p>Input for RemovePermission action.</p>
+   * Input for RemovePermission action.
    */
   @js.native
   trait RemovePermissionInput extends js.Object {
@@ -951,7 +952,7 @@ package sns {
   }
 
   /**
-   * <p>Input for SetEndpointAttributes action.</p>
+   * Input for SetEndpointAttributes action.
    */
   @js.native
   trait SetEndpointAttributesInput extends js.Object {
@@ -972,7 +973,7 @@ package sns {
   }
 
   /**
-   * <p>Input for SetPlatformApplicationAttributes action.</p>
+   * Input for SetPlatformApplicationAttributes action.
    */
   @js.native
   trait SetPlatformApplicationAttributesInput extends js.Object {
@@ -993,7 +994,7 @@ package sns {
   }
 
   /**
-   * <p>The input for the SetSMSAttributes action.</p>
+   * The input for the SetSMSAttributes action.
    */
   @js.native
   trait SetSMSAttributesInput extends js.Object {
@@ -1011,7 +1012,7 @@ package sns {
   }
 
   /**
-   * <p>The response for the SetSMSAttributes action.</p>
+   * The response for the SetSMSAttributes action.
    */
   @js.native
   trait SetSMSAttributesResponse extends js.Object {
@@ -1027,7 +1028,7 @@ package sns {
   }
 
   /**
-   * <p>Input for SetSubscriptionAttributes action.</p>
+   * Input for SetSubscriptionAttributes action.
    */
   @js.native
   trait SetSubscriptionAttributesInput extends js.Object {
@@ -1051,7 +1052,7 @@ package sns {
   }
 
   /**
-   * <p>Input for SetTopicAttributes action.</p>
+   * Input for SetTopicAttributes action.
    */
   @js.native
   trait SetTopicAttributesInput extends js.Object {
@@ -1075,7 +1076,7 @@ package sns {
   }
 
   /**
-   * <p>Input for Subscribe action.</p>
+   * Input for Subscribe action.
    */
   @js.native
   trait SubscribeInput extends js.Object {
@@ -1105,7 +1106,7 @@ package sns {
   }
 
   /**
-   * <p>Response for Subscribe action.</p>
+   * Response for Subscribe action.
    */
   @js.native
   trait SubscribeResponse extends js.Object {
@@ -1123,7 +1124,7 @@ package sns {
   }
 
   /**
-   * <p>A wrapper type for the attributes of an Amazon SNS subscription.</p>
+   * A wrapper type for the attributes of an Amazon SNS subscription.
    */
   @js.native
   trait Subscription extends js.Object {
@@ -1153,7 +1154,7 @@ package sns {
   }
 
   /**
-   * <p>A wrapper type for the topic's Amazon Resource Name (ARN). To retrieve a topic's attributes, use <code>GetTopicAttributes</code>.</p>
+   * A wrapper type for the topic's Amazon Resource Name (ARN). To retrieve a topic's attributes, use <code>GetTopicAttributes</code>.
    */
   @js.native
   trait Topic extends js.Object {
@@ -1171,7 +1172,7 @@ package sns {
   }
 
   /**
-   * <p>Input for Unsubscribe action.</p>
+   * Input for Unsubscribe action.
    */
   @js.native
   trait UnsubscribeInput extends js.Object {

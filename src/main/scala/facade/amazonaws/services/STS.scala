@@ -93,7 +93,7 @@ package sts {
   }
 
   /**
-   * <p>Contains the response to a successful <a>AssumeRole</a> request, including temporary AWS credentials that can be used to make AWS requests. </p>
+   * Contains the response to a successful '''AssumeRole''' request, including temporary AWS credentials that can be used to make AWS requests.
    */
   @js.native
   trait AssumeRoleResponse extends js.Object {
@@ -144,7 +144,7 @@ package sts {
   }
 
   /**
-   * <p>Contains the response to a successful <a>AssumeRoleWithSAML</a> request, including temporary AWS credentials that can be used to make AWS requests. </p>
+   * Contains the response to a successful '''AssumeRoleWithSAML''' request, including temporary AWS credentials that can be used to make AWS requests.
    */
   @js.native
   trait AssumeRoleWithSAMLResponse extends js.Object {
@@ -213,7 +213,7 @@ package sts {
   }
 
   /**
-   * <p>Contains the response to a successful <a>AssumeRoleWithWebIdentity</a> request, including temporary AWS credentials that can be used to make AWS requests. </p>
+   * Contains the response to a successful '''AssumeRoleWithWebIdentity''' request, including temporary AWS credentials that can be used to make AWS requests.
    */
   @js.native
   trait AssumeRoleWithWebIdentityResponse extends js.Object {
@@ -246,7 +246,7 @@ package sts {
   }
 
   /**
-   * <p>The identifiers for the temporary security credentials that the operation returns.</p>
+   * The identifiers for the temporary security credentials that the operation returns.
    */
   @js.native
   trait AssumedRoleUser extends js.Object {
@@ -267,7 +267,7 @@ package sts {
   }
 
   /**
-   * <p>AWS credentials for API authentication.</p>
+   * AWS credentials for API authentication.
    */
   @js.native
   trait Credentials extends js.Object {
@@ -309,7 +309,7 @@ package sts {
   }
 
   /**
-   * <p>A document that contains additional information about the authorization status of a request from an encoded message that is returned in response to an AWS request.</p>
+   * A document that contains additional information about the authorization status of a request from an encoded message that is returned in response to an AWS request.
    */
   @js.native
   trait DecodeAuthorizationMessageResponse extends js.Object {
@@ -327,7 +327,7 @@ package sts {
   }
 
   /**
-   * <p>The web identity token that was passed is expired or is not valid. Get a new identity token from the identity provider and then retry the request.</p>
+   * The web identity token that was passed is expired or is not valid. Get a new identity token from the identity provider and then retry the request.
    */
   @js.native
   trait ExpiredTokenExceptionException extends js.Object {
@@ -335,7 +335,7 @@ package sts {
   }
 
   /**
-   * <p>Identifiers for the federated user that is associated with the credentials.</p>
+   * Identifiers for the federated user that is associated with the credentials.
    */
   @js.native
   trait FederatedUser extends js.Object {
@@ -369,7 +369,7 @@ package sts {
   }
 
   /**
-   * <p>Contains the response to a successful <a>GetCallerIdentity</a> request, including information about the entity making the request.</p>
+   * Contains the response to a successful '''GetCallerIdentity''' request, including information about the entity making the request.
    */
   @js.native
   trait GetCallerIdentityResponse extends js.Object {
@@ -414,7 +414,7 @@ package sts {
   }
 
   /**
-   * <p>Contains the response to a successful <a>GetFederationToken</a> request, including temporary AWS credentials that can be used to make AWS requests. </p>
+   * Contains the response to a successful '''GetFederationToken''' request, including temporary AWS credentials that can be used to make AWS requests.
    */
   @js.native
   trait GetFederationTokenResponse extends js.Object {
@@ -459,7 +459,7 @@ package sts {
   }
 
   /**
-   * <p>Contains the response to a successful <a>GetSessionToken</a> request, including temporary AWS credentials that can be used to make AWS requests. </p>
+   * Contains the response to a successful '''GetSessionToken''' request, including temporary AWS credentials that can be used to make AWS requests.
    */
   @js.native
   trait GetSessionTokenResponse extends js.Object {
@@ -477,7 +477,7 @@ package sts {
   }
 
   /**
-   * <p>The request could not be fulfilled because the non-AWS identity provider (IDP) that was asked to verify the incoming identity token could not be reached. This is often a transient error caused by network conditions. Retry the request a limited number of times so that you don't exceed the request rate. If the error persists, the non-AWS identity provider might be down or not responding.</p>
+   * The request could not be fulfilled because the non-AWS identity provider (IDP) that was asked to verify the incoming identity token could not be reached. This is often a transient error caused by network conditions. Retry the request a limited number of times so that you don't exceed the request rate. If the error persists, the non-AWS identity provider might be down or not responding.
    */
   @js.native
   trait IDPCommunicationErrorExceptionException extends js.Object {
@@ -485,7 +485,8 @@ package sts {
   }
 
   /**
-   * <p>The identity provider (IdP) reported that authentication failed. This might be because the claim is invalid.</p> <p>If this error is returned for the <code>AssumeRoleWithWebIdentity</code> operation, it can also mean that the claim has expired or has been explicitly revoked. </p>
+   * The identity provider (IdP) reported that authentication failed. This might be because the claim is invalid.
+   *  If this error is returned for the <code>AssumeRoleWithWebIdentity</code> operation, it can also mean that the claim has expired or has been explicitly revoked.
    */
   @js.native
   trait IDPRejectedClaimExceptionException extends js.Object {
@@ -493,7 +494,7 @@ package sts {
   }
 
   /**
-   * <p>The error returned if the message passed to <code>DecodeAuthorizationMessage</code> was invalid. This can happen if the token contains invalid characters, such as linebreaks. </p>
+   * The error returned if the message passed to <code>DecodeAuthorizationMessage</code> was invalid. This can happen if the token contains invalid characters, such as linebreaks.
    */
   @js.native
   trait InvalidAuthorizationMessageExceptionException extends js.Object {
@@ -501,7 +502,7 @@ package sts {
   }
 
   /**
-   * <p>The web identity token that was passed could not be validated by AWS. Get a new identity token from the identity provider and then retry the request.</p>
+   * The web identity token that was passed could not be validated by AWS. Get a new identity token from the identity provider and then retry the request.
    */
   @js.native
   trait InvalidIdentityTokenExceptionException extends js.Object {
@@ -509,7 +510,7 @@ package sts {
   }
 
   /**
-   * <p>The request was rejected because the policy document was malformed. The error message describes the specific error.</p>
+   * The request was rejected because the policy document was malformed. The error message describes the specific error.
    */
   @js.native
   trait MalformedPolicyDocumentExceptionException extends js.Object {
@@ -517,7 +518,7 @@ package sts {
   }
 
   /**
-   * <p>The request was rejected because the policy document was too large. The error message describes how big the policy document is, in packed form, as a percentage of what the API allows.</p>
+   * The request was rejected because the policy document was too large. The error message describes how big the policy document is, in packed form, as a percentage of what the API allows.
    */
   @js.native
   trait PackedPolicyTooLargeExceptionException extends js.Object {
@@ -525,7 +526,7 @@ package sts {
   }
 
   /**
-   * <p>STS is not activated in the requested region for the account that is being asked to generate credentials. The account administrator must use the IAM console to activate STS in that region. For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating and Deactivating AWS STS in an AWS Region</a> in the <i>IAM User Guide</i>.</p>
+   * STS is not activated in the requested region for the account that is being asked to generate credentials. The account administrator must use the IAM console to activate STS in that region. For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating and Deactivating AWS STS in an AWS Region</a> in the <i>IAM User Guide</i>.
    */
   @js.native
   trait RegionDisabledExceptionException extends js.Object {

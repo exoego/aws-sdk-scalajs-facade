@@ -300,7 +300,7 @@ package transcribeservice {
   }
 
   /**
-   * <p>Describes the input media file in a transcription request.</p>
+   * Describes the input media file in a transcription request.
    */
   @js.native
   trait Media extends js.Object {
@@ -334,7 +334,7 @@ package transcribeservice {
   }
 
   /**
-   * <p>Provides optional settings for the <code>StartTranscriptionJob</code> operation.</p>
+   * Provides optional settings for the <code>StartTranscriptionJob</code> operation.
    */
   @js.native
   trait Settings extends js.Object {
@@ -409,7 +409,7 @@ package transcribeservice {
   }
 
   /**
-   * <p>Identifies the location of a transcription.</p>
+   * Identifies the location of a transcription.
    */
   @js.native
   trait Transcript extends js.Object {
@@ -427,7 +427,7 @@ package transcribeservice {
   }
 
   /**
-   * <p>Describes an asynchronous transcription job that was created with the <code>StartTranscriptionJob</code> operation. Note that en-AU, en-UK, and fr-CA languages are in preview and are only available to whitelisted customers.</p>
+   * Describes an asynchronous transcription job that was created with the <code>StartTranscriptionJob</code> operation. Note that en-AU, en-UK, and fr-CA languages are in preview and are only available to whitelisted customers.
    */
   @js.native
   trait TranscriptionJob extends js.Object {
@@ -483,7 +483,7 @@ package transcribeservice {
   }
 
   /**
-   * <p>Provides a summary of information about a transcription job. Note that en-AU, en-UK, and fr-CA languages are in preview and are only available to whitelisted customers.</p>
+   * Provides a summary of information about a transcription job. Note that en-AU, en-UK, and fr-CA languages are in preview and are only available to whitelisted customers.
    */
   @js.native
   trait TranscriptionJobSummary extends js.Object {
@@ -564,7 +564,7 @@ package transcribeservice {
   }
 
   /**
-   * <p>Provides information about a custom vocabulary. Note that vocabularies for en-AU, en-UK, and fr-CA languages that are in preview are not available. In the console, the vocabulary section will be greyed-out and SDK will return error message.</p>
+   * Provides information about a custom vocabulary. Note that vocabularies for en-AU, en-UK, and fr-CA languages that are in preview are not available. In the console, the vocabulary section will be greyed-out and SDK will return error message.
    */
   @js.native
   trait VocabularyInfo extends js.Object {

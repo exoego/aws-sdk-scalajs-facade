@@ -39,7 +39,7 @@ package kafka {
   }
 
   /**
-   * <p>The distribution of broker nodes across Availability Zones. By default, broker nodes are distributed among three Availability Zones. Currently, the only supported value is DEFAULT. You can either specify this value explicitly or leave it out.</p>
+   * The distribution of broker nodes across Availability Zones. By default, broker nodes are distributed among three Availability Zones. Currently, the only supported value is DEFAULT. You can either specify this value explicitly or leave it out.
    */
   object BrokerAZDistributionEnum {
     val DEFAULT = "DEFAULT"
@@ -48,7 +48,7 @@ package kafka {
   }
 
   /**
-   * <p>Describes the setup to be used for Kafka broker nodes in the cluster.</p>
+   * Describes the setup to be used for Kafka broker nodes in the cluster.
    */
   @js.native
   trait BrokerNodeGroupInfo extends js.Object {
@@ -77,9 +77,6 @@ package kafka {
     }
   }
 
-  /**
-   * <p>BrokerNodeInfo</p>
-   */
   @js.native
   trait BrokerNodeInfo extends js.Object {
     var AttachedENIId: js.UndefOr[__string]
@@ -108,7 +105,7 @@ package kafka {
   }
 
   /**
-   * <p>Information about the current software installed on the cluster.</p>
+   * Information about the current software installed on the cluster.
    */
   @js.native
   trait BrokerSoftwareInfo extends js.Object {
@@ -132,7 +129,7 @@ package kafka {
   }
 
   /**
-   * <p>Returns information about a cluster.</p>
+   * Returns information about a cluster.
    */
   @js.native
   trait ClusterInfo extends js.Object {
@@ -180,7 +177,7 @@ package kafka {
   }
 
   /**
-   * <p>The state of a Kafka cluster.</p>
+   * The state of a Kafka cluster.
    */
   object ClusterStateEnum {
     val ACTIVE = "ACTIVE"
@@ -309,7 +306,7 @@ package kafka {
   }
 
   /**
-   * <p>Contains information about the EBS storage volumes attached to Kafka broker nodes.</p>
+   * Contains information about the EBS storage volumes attached to Kafka broker nodes.
    */
   @js.native
   trait EBSStorageInfo extends js.Object {
@@ -327,7 +324,7 @@ package kafka {
   }
 
   /**
-   * <p>The data volume encryption details.</p>
+   * The data volume encryption details.
    */
   @js.native
   trait EncryptionAtRest extends js.Object {
@@ -345,7 +342,7 @@ package kafka {
   }
 
   /**
-   * <p>Includes encryption-related information, such as the AWS KMS key used for encrypting data at rest.</p>
+   * Includes encryption-related information, such as the AWS KMS key used for encrypting data at rest.
    */
   @js.native
   trait EncryptionInfo extends js.Object {
@@ -363,7 +360,7 @@ package kafka {
   }
 
   /**
-   * <p>Specifies which metrics are gathered for the MSK cluster. This property has three possible values: DEFAULT, PER_BROKER, and PER_TOPIC_PER_BROKER.</p>
+   * Specifies which metrics are gathered for the MSK cluster. This property has three possible values: DEFAULT, PER_BROKER, and PER_TOPIC_PER_BROKER.
    */
   object EnhancedMonitoringEnum {
     val DEFAULT = "DEFAULT"
@@ -482,7 +479,7 @@ package kafka {
   }
 
   /**
-   * <p>The node information object.</p>
+   * The node information object.
    */
   @js.native
   trait NodeInfo extends js.Object {
@@ -515,7 +512,7 @@ package kafka {
   }
 
   /**
-   * <p>The broker or Zookeeper node.</p>
+   * The broker or Zookeeper node.
    */
   object NodeTypeEnum {
     val BROKER = "BROKER"
@@ -524,7 +521,7 @@ package kafka {
   }
 
   /**
-   * <p>Contains information about storage volumes attached to MSK broker nodes.</p>
+   * Contains information about storage volumes attached to MSK broker nodes.
    */
   @js.native
   trait StorageInfo extends js.Object {
@@ -542,7 +539,7 @@ package kafka {
   }
 
   /**
-   * <p>Zookeeper node information.</p>
+   * Zookeeper node information.
    */
   @js.native
   trait ZookeeperNodeInfo extends js.Object {

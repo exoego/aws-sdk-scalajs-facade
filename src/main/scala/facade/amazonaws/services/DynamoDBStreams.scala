@@ -51,7 +51,8 @@ package dynamodbstreams {
   }
 
   /**
-   * <p>Represents the data for an attribute. You can set one, and only one, of the elements.</p> <p>Each attribute in an item is a name-value pair. An attribute can be single-valued or multi-valued set. For example, a book item can have title and authors attributes. Each book has one title but can have many authors. The multi-valued attribute is a set; duplicate values are not allowed.</p>
+   * Represents the data for an attribute. You can set one, and only one, of the elements.
+   *  Each attribute in an item is a name-value pair. An attribute can be single-valued or multi-valued set. For example, a book item can have title and authors attributes. Each book has one title but can have many authors. The multi-valued attribute is a set; duplicate values are not allowed.
    */
   @js.native
   trait AttributeValue extends js.Object {
@@ -96,7 +97,7 @@ package dynamodbstreams {
   }
 
   /**
-   * <p>Represents the input of a <code>DescribeStream</code> operation.</p>
+   * Represents the input of a <code>DescribeStream</code> operation.
    */
   @js.native
   trait DescribeStreamInput extends js.Object {
@@ -120,7 +121,7 @@ package dynamodbstreams {
   }
 
   /**
-   * <p>Represents the output of a <code>DescribeStream</code> operation.</p>
+   * Represents the output of a <code>DescribeStream</code> operation.
    */
   @js.native
   trait DescribeStreamOutput extends js.Object {
@@ -138,7 +139,7 @@ package dynamodbstreams {
   }
 
   /**
-   * <p>The shard iterator has expired and can no longer be used to retrieve stream records. A shard iterator expires 15 minutes after it is retrieved using the <code>GetShardIterator</code> action.</p>
+   * The shard iterator has expired and can no longer be used to retrieve stream records. A shard iterator expires 15 minutes after it is retrieved using the <code>GetShardIterator</code> action.
    */
   @js.native
   trait ExpiredIteratorExceptionException extends js.Object {
@@ -146,7 +147,7 @@ package dynamodbstreams {
   }
 
   /**
-   * <p>Represents the input of a <code>GetRecords</code> operation.</p>
+   * Represents the input of a <code>GetRecords</code> operation.
    */
   @js.native
   trait GetRecordsInput extends js.Object {
@@ -167,7 +168,7 @@ package dynamodbstreams {
   }
 
   /**
-   * <p>Represents the output of a <code>GetRecords</code> operation.</p>
+   * Represents the output of a <code>GetRecords</code> operation.
    */
   @js.native
   trait GetRecordsOutput extends js.Object {
@@ -188,7 +189,7 @@ package dynamodbstreams {
   }
 
   /**
-   * <p>Represents the input of a <code>GetShardIterator</code> operation.</p>
+   * Represents the input of a <code>GetShardIterator</code> operation.
    */
   @js.native
   trait GetShardIteratorInput extends js.Object {
@@ -215,7 +216,7 @@ package dynamodbstreams {
   }
 
   /**
-   * <p>Represents the output of a <code>GetShardIterator</code> operation.</p>
+   * Represents the output of a <code>GetShardIterator</code> operation.
    */
   @js.native
   trait GetShardIteratorOutput extends js.Object {
@@ -233,7 +234,7 @@ package dynamodbstreams {
   }
 
   /**
-   * <p>Contains details about the type of identity that made the request.</p>
+   * Contains details about the type of identity that made the request.
    */
   @js.native
   trait Identity extends js.Object {
@@ -254,7 +255,7 @@ package dynamodbstreams {
   }
 
   /**
-   * <p>An error occurred on the server side.</p>
+   * An error occurred on the server side.
    */
   @js.native
   trait InternalServerErrorException extends js.Object {
@@ -262,7 +263,11 @@ package dynamodbstreams {
   }
 
   /**
-   * <p>Represents <i>a single element</i> of a key schema. A key schema specifies the attributes that make up the primary key of a table, or the key attributes of an index.</p> <p>A <code>KeySchemaElement</code> represents exactly one attribute of the primary key. For example, a simple primary key (partition key) would be represented by one <code>KeySchemaElement</code>. A composite primary key (partition key and sort key) would require one <code>KeySchemaElement</code> for the partition key, and another <code>KeySchemaElement</code> for the sort key.</p> <note> <p>The partition key of an item is also known as its <i>hash attribute</i>. The term "hash attribute" derives from DynamoDB's usage of an internal hash function to evenly distribute data items across partitions, based on their partition key values.</p> <p>The sort key of an item is also known as its <i>range attribute</i>. The term "range attribute" derives from the way DynamoDB stores items with the same partition key physically close together, in sorted order by the sort key value.</p> </note>
+   * Represents <i>a single element</i> of a key schema. A key schema specifies the attributes that make up the primary key of a table, or the key attributes of an index.
+   *  A <code>KeySchemaElement</code> represents exactly one attribute of the primary key. For example, a simple primary key (partition key) would be represented by one <code>KeySchemaElement</code>. A composite primary key (partition key and sort key) would require one <code>KeySchemaElement</code> for the partition key, and another <code>KeySchemaElement</code> for the sort key.
+   *
+   * '''Note:'''The partition key of an item is also known as its <i>hash attribute</i>. The term "hash attribute" derives from DynamoDB's usage of an internal hash function to evenly distribute data items across partitions, based on their partition key values.
+   *  The sort key of an item is also known as its <i>range attribute</i>. The term "range attribute" derives from the way DynamoDB stores items with the same partition key physically close together, in sorted order by the sort key value.
    */
   @js.native
   trait KeySchemaElement extends js.Object {
@@ -290,7 +295,7 @@ package dynamodbstreams {
   }
 
   /**
-   * <p>Your request rate is too high. The AWS SDKs for DynamoDB automatically retry requests that receive this exception. Your request is eventually successful, unless your retry queue is too large to finish. Reduce the frequency of requests and use exponential backoff. For more information, go to <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ErrorHandling.html#APIRetries">Error Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+   * Your request rate is too high. The AWS SDKs for DynamoDB automatically retry requests that receive this exception. Your request is eventually successful, unless your retry queue is too large to finish. Reduce the frequency of requests and use exponential backoff. For more information, go to <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ErrorHandling.html#APIRetries">Error Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.
    */
   @js.native
   trait LimitExceededExceptionException extends js.Object {
@@ -298,7 +303,7 @@ package dynamodbstreams {
   }
 
   /**
-   * <p>Represents the input of a <code>ListStreams</code> operation.</p>
+   * Represents the input of a <code>ListStreams</code> operation.
    */
   @js.native
   trait ListStreamsInput extends js.Object {
@@ -322,7 +327,7 @@ package dynamodbstreams {
   }
 
   /**
-   * <p>Represents the output of a <code>ListStreams</code> operation.</p>
+   * Represents the output of a <code>ListStreams</code> operation.
    */
   @js.native
   trait ListStreamsOutput extends js.Object {
@@ -351,7 +356,7 @@ package dynamodbstreams {
   }
 
   /**
-   * <p>A description of a unique event within a stream.</p>
+   * A description of a unique event within a stream.
    */
   @js.native
   trait Record extends js.Object {
@@ -387,7 +392,7 @@ package dynamodbstreams {
   }
 
   /**
-   * <p>The operation tried to access a nonexistent stream.</p>
+   * The operation tried to access a nonexistent stream.
    */
   @js.native
   trait ResourceNotFoundExceptionException extends js.Object {
@@ -395,7 +400,7 @@ package dynamodbstreams {
   }
 
   /**
-   * <p>The beginning and ending sequence numbers for the stream records contained within a shard.</p>
+   * The beginning and ending sequence numbers for the stream records contained within a shard.
    */
   @js.native
   trait SequenceNumberRange extends js.Object {
@@ -416,7 +421,7 @@ package dynamodbstreams {
   }
 
   /**
-   * <p>A uniquely identified group of stream records within a stream.</p>
+   * A uniquely identified group of stream records within a stream.
    */
   @js.native
   trait Shard extends js.Object {
@@ -449,7 +454,7 @@ package dynamodbstreams {
   }
 
   /**
-   * <p>Represents all of the data describing a particular stream.</p>
+   * Represents all of the data describing a particular stream.
    */
   @js.native
   trait Stream extends js.Object {
@@ -473,7 +478,7 @@ package dynamodbstreams {
   }
 
   /**
-   * <p>Represents all of the data describing a particular stream.</p>
+   * Represents all of the data describing a particular stream.
    */
   @js.native
   trait StreamDescription extends js.Object {
@@ -515,7 +520,7 @@ package dynamodbstreams {
   }
 
   /**
-   * <p>A description of a single data modification that was performed on an item in a DynamoDB table.</p>
+   * A description of a single data modification that was performed on an item in a DynamoDB table.
    */
   @js.native
   trait StreamRecord extends js.Object {
@@ -569,7 +574,10 @@ package dynamodbstreams {
   }
 
   /**
-   * <p>The operation attempted to read past the oldest stream record in a shard.</p> <p>In DynamoDB Streams, there is a 24 hour limit on data retention. Stream records whose age exceeds this limit are subject to removal (trimming) from the stream. You might receive a TrimmedDataAccessException if:</p> <ul> <li><p>You request a shard iterator with a sequence number older than the trim point (24 hours).</p> </li> <li><p>You obtain a shard iterator, but before you use the iterator in a <code>GetRecords</code> request, a stream record in the shard exceeds the 24 hour period and is trimmed. This causes the iterator to access a record that no longer exists.</p> </li> </ul>
+   * The operation attempted to read past the oldest stream record in a shard.
+   *  In DynamoDB Streams, there is a 24 hour limit on data retention. Stream records whose age exceeds this limit are subject to removal (trimming) from the stream. You might receive a TrimmedDataAccessException if:
+   * * You request a shard iterator with a sequence number older than the trim point (24 hours).
+   *  * You obtain a shard iterator, but before you use the iterator in a <code>GetRecords</code> request, a stream record in the shard exceeds the 24 hour period and is trimmed. This causes the iterator to access a record that no longer exists.
    */
   @js.native
   trait TrimmedDataAccessExceptionException extends js.Object {

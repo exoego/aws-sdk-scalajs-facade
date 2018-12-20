@@ -259,7 +259,7 @@ package cognitoidentityprovider {
   }
 
   /**
-   * <p>Account takeover action type.</p>
+   * Account takeover action type.
    */
   @js.native
   trait AccountTakeoverActionType extends js.Object {
@@ -280,7 +280,7 @@ package cognitoidentityprovider {
   }
 
   /**
-   * <p>Account takeover actions type.</p>
+   * Account takeover actions type.
    */
   @js.native
   trait AccountTakeoverActionsType extends js.Object {
@@ -313,7 +313,7 @@ package cognitoidentityprovider {
   }
 
   /**
-   * <p>Configuration for mitigation actions and notification for different levels of risk detected for a potential account takeover.</p>
+   * Configuration for mitigation actions and notification for different levels of risk detected for a potential account takeover.
    */
   @js.native
   trait AccountTakeoverRiskConfigurationType extends js.Object {
@@ -334,7 +334,7 @@ package cognitoidentityprovider {
   }
 
   /**
-   * <p>Represents the request to add custom attributes.</p>
+   * Represents the request to add custom attributes.
    */
   @js.native
   trait AddCustomAttributesRequest extends js.Object {
@@ -355,7 +355,7 @@ package cognitoidentityprovider {
   }
 
   /**
-   * <p>Represents the response from the server for the request to add custom attributes.</p>
+   * Represents the response from the server for the request to add custom attributes.
    */
   @js.native
   trait AddCustomAttributesResponse extends js.Object {
@@ -392,7 +392,7 @@ package cognitoidentityprovider {
   }
 
   /**
-   * <p>Represents the request to confirm user registration.</p>
+   * Represents the request to confirm user registration.
    */
   @js.native
   trait AdminConfirmSignUpRequest extends js.Object {
@@ -413,7 +413,7 @@ package cognitoidentityprovider {
   }
 
   /**
-   * <p>Represents the response from the server for the request to confirm registration.</p>
+   * Represents the response from the server for the request to confirm registration.
    */
   @js.native
   trait AdminConfirmSignUpResponse extends js.Object {
@@ -429,7 +429,7 @@ package cognitoidentityprovider {
   }
 
   /**
-   * <p>The configuration for creating a new user profile.</p>
+   * The configuration for creating a new user profile.
    */
   @js.native
   trait AdminCreateUserConfigType extends js.Object {
@@ -453,7 +453,7 @@ package cognitoidentityprovider {
   }
 
   /**
-   * <p>Represents the request to create a user in the specified user pool.</p>
+   * Represents the request to create a user in the specified user pool.
    */
   @js.native
   trait AdminCreateUserRequest extends js.Object {
@@ -492,7 +492,7 @@ package cognitoidentityprovider {
   }
 
   /**
-   * <p>Represents the response from the server to the request to create the user.</p>
+   * Represents the response from the server to the request to create the user.
    */
   @js.native
   trait AdminCreateUserResponse extends js.Object {
@@ -510,7 +510,7 @@ package cognitoidentityprovider {
   }
 
   /**
-   * <p>Represents the request to delete user attributes as an administrator.</p>
+   * Represents the request to delete user attributes as an administrator.
    */
   @js.native
   trait AdminDeleteUserAttributesRequest extends js.Object {
@@ -534,7 +534,7 @@ package cognitoidentityprovider {
   }
 
   /**
-   * <p>Represents the response received from the server for a request to delete user attributes.</p>
+   * Represents the response received from the server for a request to delete user attributes.
    */
   @js.native
   trait AdminDeleteUserAttributesResponse extends js.Object {
@@ -550,7 +550,7 @@ package cognitoidentityprovider {
   }
 
   /**
-   * <p>Represents the request to delete a user as an administrator.</p>
+   * Represents the request to delete a user as an administrator.
    */
   @js.native
   trait AdminDeleteUserRequest extends js.Object {
@@ -602,7 +602,7 @@ package cognitoidentityprovider {
   }
 
   /**
-   * <p>Represents the request to disable any user as an administrator.</p>
+   * Represents the request to disable any user as an administrator.
    */
   @js.native
   trait AdminDisableUserRequest extends js.Object {
@@ -623,7 +623,7 @@ package cognitoidentityprovider {
   }
 
   /**
-   * <p>Represents the response received from the server to disable the user as an administrator.</p>
+   * Represents the response received from the server to disable the user as an administrator.
    */
   @js.native
   trait AdminDisableUserResponse extends js.Object {
@@ -639,7 +639,7 @@ package cognitoidentityprovider {
   }
 
   /**
-   * <p>Represents the request that enables the user as an administrator.</p>
+   * Represents the request that enables the user as an administrator.
    */
   @js.native
   trait AdminEnableUserRequest extends js.Object {
@@ -660,7 +660,7 @@ package cognitoidentityprovider {
   }
 
   /**
-   * <p>Represents the response from the server for the request to enable a user as an administrator.</p>
+   * Represents the response from the server for the request to enable a user as an administrator.
    */
   @js.native
   trait AdminEnableUserResponse extends js.Object {
@@ -676,7 +676,7 @@ package cognitoidentityprovider {
   }
 
   /**
-   * <p>Sends the forgot device request, as an administrator.</p>
+   * Sends the forgot device request, as an administrator.
    */
   @js.native
   trait AdminForgetDeviceRequest extends js.Object {
@@ -700,7 +700,7 @@ package cognitoidentityprovider {
   }
 
   /**
-   * <p>Represents the request to get the device, as an administrator.</p>
+   * Represents the request to get the device, as an administrator.
    */
   @js.native
   trait AdminGetDeviceRequest extends js.Object {
@@ -724,7 +724,7 @@ package cognitoidentityprovider {
   }
 
   /**
-   * <p>Gets the device response, as an administrator.</p>
+   * Gets the device response, as an administrator.
    */
   @js.native
   trait AdminGetDeviceResponse extends js.Object {
@@ -742,7 +742,7 @@ package cognitoidentityprovider {
   }
 
   /**
-   * <p>Represents the request to get the specified user as an administrator.</p>
+   * Represents the request to get the specified user as an administrator.
    */
   @js.native
   trait AdminGetUserRequest extends js.Object {
@@ -763,7 +763,7 @@ package cognitoidentityprovider {
   }
 
   /**
-   * <p>Represents the response from the server from the request to get the specified user as an administrator.</p>
+   * Represents the response from the server from the request to get the specified user as an administrator.
    */
   @js.native
   trait AdminGetUserResponse extends js.Object {
@@ -805,7 +805,7 @@ package cognitoidentityprovider {
   }
 
   /**
-   * <p>Initiates the authorization request, as an administrator.</p>
+   * Initiates the authorization request, as an administrator.
    */
   @js.native
   trait AdminInitiateAuthRequest extends js.Object {
@@ -841,7 +841,7 @@ package cognitoidentityprovider {
   }
 
   /**
-   * <p>Initiates the authentication response, as an administrator.</p>
+   * Initiates the authentication response, as an administrator.
    */
   @js.native
   trait AdminInitiateAuthResponse extends js.Object {
@@ -902,7 +902,7 @@ package cognitoidentityprovider {
   }
 
   /**
-   * <p>Represents the request to list devices, as an administrator.</p>
+   * Represents the request to list devices, as an administrator.
    */
   @js.native
   trait AdminListDevicesRequest extends js.Object {
@@ -929,7 +929,7 @@ package cognitoidentityprovider {
   }
 
   /**
-   * <p>Lists the device's response, as an administrator.</p>
+   * Lists the device's response, as an administrator.
    */
   @js.native
   trait AdminListDevicesResponse extends js.Object {
@@ -1055,7 +1055,7 @@ package cognitoidentityprovider {
   }
 
   /**
-   * <p>Represents the request to reset a user's password as an administrator.</p>
+   * Represents the request to reset a user's password as an administrator.
    */
   @js.native
   trait AdminResetUserPasswordRequest extends js.Object {
@@ -1076,7 +1076,7 @@ package cognitoidentityprovider {
   }
 
   /**
-   * <p>Represents the response from the server to reset a user password as an administrator.</p>
+   * Represents the response from the server to reset a user password as an administrator.
    */
   @js.native
   trait AdminResetUserPasswordResponse extends js.Object {
@@ -1092,7 +1092,7 @@ package cognitoidentityprovider {
   }
 
   /**
-   * <p>The request to respond to the authentication challenge, as an administrator.</p>
+   * The request to respond to the authentication challenge, as an administrator.
    */
   @js.native
   trait AdminRespondToAuthChallengeRequest extends js.Object {
@@ -1128,7 +1128,7 @@ package cognitoidentityprovider {
   }
 
   /**
-   * <p>Responds to the authentication challenge, as an administrator.</p>
+   * Responds to the authentication challenge, as an administrator.
    */
   @js.native
   trait AdminRespondToAuthChallengeResponse extends js.Object {
@@ -1192,7 +1192,7 @@ package cognitoidentityprovider {
   }
 
   /**
-   * <p>Represents the request to set user settings as an administrator.</p>
+   * Represents the request to set user settings as an administrator.
    */
   @js.native
   trait AdminSetUserSettingsRequest extends js.Object {
@@ -1216,7 +1216,7 @@ package cognitoidentityprovider {
   }
 
   /**
-   * <p>Represents the response from the server to set user settings as an administrator.</p>
+   * Represents the response from the server to set user settings as an administrator.
    */
   @js.native
   trait AdminSetUserSettingsResponse extends js.Object {
@@ -1269,7 +1269,7 @@ package cognitoidentityprovider {
   }
 
   /**
-   * <p>The request to update the device status, as an administrator.</p>
+   * The request to update the device status, as an administrator.
    */
   @js.native
   trait AdminUpdateDeviceStatusRequest extends js.Object {
@@ -1296,7 +1296,7 @@ package cognitoidentityprovider {
   }
 
   /**
-   * <p>The status response from the request to update the device, as an administrator.</p>
+   * The status response from the request to update the device, as an administrator.
    */
   @js.native
   trait AdminUpdateDeviceStatusResponse extends js.Object {
@@ -1312,7 +1312,7 @@ package cognitoidentityprovider {
   }
 
   /**
-   * <p>Represents the request to update the user's attributes as an administrator.</p>
+   * Represents the request to update the user's attributes as an administrator.
    */
   @js.native
   trait AdminUpdateUserAttributesRequest extends js.Object {
@@ -1336,7 +1336,7 @@ package cognitoidentityprovider {
   }
 
   /**
-   * <p>Represents the response from the server for the request to update user attributes as an administrator.</p>
+   * Represents the response from the server for the request to update user attributes as an administrator.
    */
   @js.native
   trait AdminUpdateUserAttributesResponse extends js.Object {
@@ -1352,7 +1352,7 @@ package cognitoidentityprovider {
   }
 
   /**
-   * <p>The request to sign out of all devices, as an administrator.</p>
+   * The request to sign out of all devices, as an administrator.
    */
   @js.native
   trait AdminUserGlobalSignOutRequest extends js.Object {
@@ -1373,7 +1373,7 @@ package cognitoidentityprovider {
   }
 
   /**
-   * <p>The global sign-out response, as an administrator.</p>
+   * The global sign-out response, as an administrator.
    */
   @js.native
   trait AdminUserGlobalSignOutResponse extends js.Object {
@@ -1405,7 +1405,7 @@ package cognitoidentityprovider {
   }
 
   /**
-   * <p>The Amazon Pinpoint analytics configuration for collecting metrics for a user pool.</p>
+   * The Amazon Pinpoint analytics configuration for collecting metrics for a user pool.
    */
   @js.native
   trait AnalyticsConfigurationType extends js.Object {
@@ -1432,7 +1432,8 @@ package cognitoidentityprovider {
   }
 
   /**
-   * <p>An Amazon Pinpoint analytics endpoint.</p> <p>An endpoint uniquely identifies a mobile device, email address, or phone number that can receive messages from Amazon Pinpoint analytics.</p>
+   * An Amazon Pinpoint analytics endpoint.
+   *  An endpoint uniquely identifies a mobile device, email address, or phone number that can receive messages from Amazon Pinpoint analytics.
    */
   @js.native
   trait AnalyticsMetadataType extends js.Object {
@@ -1495,7 +1496,7 @@ package cognitoidentityprovider {
   }
 
   /**
-   * <p>Specifies whether the attribute is standard or custom.</p>
+   * Specifies whether the attribute is standard or custom.
    */
   @js.native
   trait AttributeType extends js.Object {
@@ -1516,7 +1517,7 @@ package cognitoidentityprovider {
   }
 
   /**
-   * <p>The authentication event type.</p>
+   * The authentication event type.
    */
   @js.native
   trait AuthEventType extends js.Object {
@@ -1566,7 +1567,7 @@ package cognitoidentityprovider {
   }
 
   /**
-   * <p>The authentication result.</p>
+   * The authentication result.
    */
   @js.native
   trait AuthenticationResultType extends js.Object {
@@ -1628,7 +1629,7 @@ package cognitoidentityprovider {
   }
 
   /**
-   * <p>The challenge response type.</p>
+   * The challenge response type.
    */
   @js.native
   trait ChallengeResponseType extends js.Object {
@@ -1649,7 +1650,7 @@ package cognitoidentityprovider {
   }
 
   /**
-   * <p>Represents the request to change a user password.</p>
+   * Represents the request to change a user password.
    */
   @js.native
   trait ChangePasswordRequest extends js.Object {
@@ -1673,7 +1674,7 @@ package cognitoidentityprovider {
   }
 
   /**
-   * <p>The response from the server to the change password request.</p>
+   * The response from the server to the change password request.
    */
   @js.native
   trait ChangePasswordResponse extends js.Object {
@@ -1689,7 +1690,7 @@ package cognitoidentityprovider {
   }
 
   /**
-   * <p>The code delivery details being returned from the server.</p>
+   * The code delivery details being returned from the server.
    */
   @js.native
   trait CodeDeliveryDetailsType extends js.Object {
@@ -1713,7 +1714,7 @@ package cognitoidentityprovider {
   }
 
   /**
-   * <p>The compromised credentials actions type</p>
+   * The compromised credentials actions type
    */
   @js.native
   trait CompromisedCredentialsActionsType extends js.Object {
@@ -1738,7 +1739,7 @@ package cognitoidentityprovider {
   }
 
   /**
-   * <p>The compromised credentials risk configuration type.</p>
+   * The compromised credentials risk configuration type.
    */
   @js.native
   trait CompromisedCredentialsRiskConfigurationType extends js.Object {
@@ -1759,7 +1760,7 @@ package cognitoidentityprovider {
   }
 
   /**
-   * <p>Confirms the device request.</p>
+   * Confirms the device request.
    */
   @js.native
   trait ConfirmDeviceRequest extends js.Object {
@@ -1786,7 +1787,7 @@ package cognitoidentityprovider {
   }
 
   /**
-   * <p>Confirms the device response.</p>
+   * Confirms the device response.
    */
   @js.native
   trait ConfirmDeviceResponse extends js.Object {
@@ -1804,7 +1805,7 @@ package cognitoidentityprovider {
   }
 
   /**
-   * <p>The request representing the confirmation for a password reset.</p>
+   * The request representing the confirmation for a password reset.
    */
   @js.native
   trait ConfirmForgotPasswordRequest extends js.Object {
@@ -1840,7 +1841,7 @@ package cognitoidentityprovider {
   }
 
   /**
-   * <p>The response from the server that results from a user's request to retrieve a forgotten password.</p>
+   * The response from the server that results from a user's request to retrieve a forgotten password.
    */
   @js.native
   trait ConfirmForgotPasswordResponse extends js.Object {
@@ -1856,7 +1857,7 @@ package cognitoidentityprovider {
   }
 
   /**
-   * <p>Represents the request to confirm registration of a user.</p>
+   * Represents the request to confirm registration of a user.
    */
   @js.native
   trait ConfirmSignUpRequest extends js.Object {
@@ -1892,7 +1893,7 @@ package cognitoidentityprovider {
   }
 
   /**
-   * <p>Represents the response from the server for the registration confirmation.</p>
+   * Represents the response from the server for the registration confirmation.
    */
   @js.native
   trait ConfirmSignUpResponse extends js.Object {
@@ -1908,7 +1909,7 @@ package cognitoidentityprovider {
   }
 
   /**
-   * <p>Contextual user data type used for evaluating the risk of an unexpected event by Amazon Cognito advanced security.</p>
+   * Contextual user data type used for evaluating the risk of an unexpected event by Amazon Cognito advanced security.
    */
   @js.native
   trait ContextDataType extends js.Object {
@@ -2064,7 +2065,7 @@ package cognitoidentityprovider {
   }
 
   /**
-   * <p>Represents the request to create the user import job.</p>
+   * Represents the request to create the user import job.
    */
   @js.native
   trait CreateUserImportJobRequest extends js.Object {
@@ -2088,7 +2089,7 @@ package cognitoidentityprovider {
   }
 
   /**
-   * <p>Represents the response from the server to the request to create the user import job.</p>
+   * Represents the response from the server to the request to create the user import job.
    */
   @js.native
   trait CreateUserImportJobResponse extends js.Object {
@@ -2106,7 +2107,7 @@ package cognitoidentityprovider {
   }
 
   /**
-   * <p>Represents the request to create a user pool client.</p>
+   * Represents the request to create a user pool client.
    */
   @js.native
   trait CreateUserPoolClientRequest extends js.Object {
@@ -2166,7 +2167,7 @@ package cognitoidentityprovider {
   }
 
   /**
-   * <p>Represents the response from the server to create a user pool client.</p>
+   * Represents the response from the server to create a user pool client.
    */
   @js.native
   trait CreateUserPoolClientResponse extends js.Object {
@@ -2220,7 +2221,7 @@ package cognitoidentityprovider {
   }
 
   /**
-   * <p>Represents the request to create a user pool.</p>
+   * Represents the request to create a user pool.
    */
   @js.native
   trait CreateUserPoolRequest extends js.Object {
@@ -2292,7 +2293,7 @@ package cognitoidentityprovider {
   }
 
   /**
-   * <p>Represents the response from the server for the request to create a user pool.</p>
+   * Represents the response from the server for the request to create a user pool.
    */
   @js.native
   trait CreateUserPoolResponse extends js.Object {
@@ -2310,7 +2311,7 @@ package cognitoidentityprovider {
   }
 
   /**
-   * <p>The configuration for a custom domain that hosts the sign-up and sign-in webpages for your application.</p>
+   * The configuration for a custom domain that hosts the sign-up and sign-in webpages for your application.
    */
   @js.native
   trait CustomDomainConfigType extends js.Object {
@@ -2389,7 +2390,7 @@ package cognitoidentityprovider {
   }
 
   /**
-   * <p>Represents the request to delete user attributes.</p>
+   * Represents the request to delete user attributes.
    */
   @js.native
   trait DeleteUserAttributesRequest extends js.Object {
@@ -2410,7 +2411,7 @@ package cognitoidentityprovider {
   }
 
   /**
-   * <p>Represents the response from the server to delete user attributes.</p>
+   * Represents the response from the server to delete user attributes.
    */
   @js.native
   trait DeleteUserAttributesResponse extends js.Object {
@@ -2426,7 +2427,7 @@ package cognitoidentityprovider {
   }
 
   /**
-   * <p>Represents the request to delete a user pool client.</p>
+   * Represents the request to delete a user pool client.
    */
   @js.native
   trait DeleteUserPoolClientRequest extends js.Object {
@@ -2478,7 +2479,7 @@ package cognitoidentityprovider {
   }
 
   /**
-   * <p>Represents the request to delete a user pool.</p>
+   * Represents the request to delete a user pool.
    */
   @js.native
   trait DeleteUserPoolRequest extends js.Object {
@@ -2496,7 +2497,7 @@ package cognitoidentityprovider {
   }
 
   /**
-   * <p>Represents the request to delete a user.</p>
+   * Represents the request to delete a user.
    */
   @js.native
   trait DeleteUserRequest extends js.Object {
@@ -2620,7 +2621,7 @@ package cognitoidentityprovider {
   }
 
   /**
-   * <p>Represents the request to describe the user import job.</p>
+   * Represents the request to describe the user import job.
    */
   @js.native
   trait DescribeUserImportJobRequest extends js.Object {
@@ -2641,7 +2642,7 @@ package cognitoidentityprovider {
   }
 
   /**
-   * <p>Represents the response from the server to the request to describe the user import job.</p>
+   * Represents the response from the server to the request to describe the user import job.
    */
   @js.native
   trait DescribeUserImportJobResponse extends js.Object {
@@ -2659,7 +2660,7 @@ package cognitoidentityprovider {
   }
 
   /**
-   * <p>Represents the request to describe a user pool client.</p>
+   * Represents the request to describe a user pool client.
    */
   @js.native
   trait DescribeUserPoolClientRequest extends js.Object {
@@ -2680,7 +2681,7 @@ package cognitoidentityprovider {
   }
 
   /**
-   * <p>Represents the response from the server from a request to describe the user pool client.</p>
+   * Represents the response from the server from a request to describe the user pool client.
    */
   @js.native
   trait DescribeUserPoolClientResponse extends js.Object {
@@ -2728,7 +2729,7 @@ package cognitoidentityprovider {
   }
 
   /**
-   * <p>Represents the request to describe the user pool.</p>
+   * Represents the request to describe the user pool.
    */
   @js.native
   trait DescribeUserPoolRequest extends js.Object {
@@ -2746,7 +2747,7 @@ package cognitoidentityprovider {
   }
 
   /**
-   * <p>Represents the response to describe the user pool.</p>
+   * Represents the response to describe the user pool.
    */
   @js.native
   trait DescribeUserPoolResponse extends js.Object {
@@ -2764,7 +2765,7 @@ package cognitoidentityprovider {
   }
 
   /**
-   * <p>The configuration for the user pool's device tracking.</p>
+   * The configuration for the user pool's device tracking.
    */
   @js.native
   trait DeviceConfigurationType extends js.Object {
@@ -2792,7 +2793,7 @@ package cognitoidentityprovider {
   }
 
   /**
-   * <p>The device verifier against which it will be authenticated.</p>
+   * The device verifier against which it will be authenticated.
    */
   @js.native
   trait DeviceSecretVerifierConfigType extends js.Object {
@@ -2813,7 +2814,7 @@ package cognitoidentityprovider {
   }
 
   /**
-   * <p>The device type.</p>
+   * The device type.
    */
   @js.native
   trait DeviceType extends js.Object {
@@ -2843,7 +2844,7 @@ package cognitoidentityprovider {
   }
 
   /**
-   * <p>A container for information about a domain.</p>
+   * A container for information about a domain.
    */
   @js.native
   trait DomainDescriptionType extends js.Object {
@@ -2892,7 +2893,7 @@ package cognitoidentityprovider {
   }
 
   /**
-   * <p>The email configuration type.</p>
+   * The email configuration type.
    */
   @js.native
   trait EmailConfigurationType extends js.Object {
@@ -2913,7 +2914,7 @@ package cognitoidentityprovider {
   }
 
   /**
-   * <p>Specifies the user context data captured at the time of an event request.</p>
+   * Specifies the user context data captured at the time of an event request.
    */
   @js.native
   trait EventContextDataType extends js.Object {
@@ -2943,7 +2944,7 @@ package cognitoidentityprovider {
   }
 
   /**
-   * <p>Specifies the event feedback type.</p>
+   * Specifies the event feedback type.
    */
   @js.native
   trait EventFeedbackType extends js.Object {
@@ -2982,7 +2983,7 @@ package cognitoidentityprovider {
   }
 
   /**
-   * <p>The event risk type.</p>
+   * The event risk type.
    */
   @js.native
   trait EventRiskType extends js.Object {
@@ -3026,7 +3027,7 @@ package cognitoidentityprovider {
   }
 
   /**
-   * <p>Represents the request to forget the device.</p>
+   * Represents the request to forget the device.
    */
   @js.native
   trait ForgetDeviceRequest extends js.Object {
@@ -3047,7 +3048,7 @@ package cognitoidentityprovider {
   }
 
   /**
-   * <p>Represents the request to reset a user's password.</p>
+   * Represents the request to reset a user's password.
    */
   @js.native
   trait ForgotPasswordRequest extends js.Object {
@@ -3077,7 +3078,7 @@ package cognitoidentityprovider {
   }
 
   /**
-   * <p>Respresents the response from the server regarding the request to reset a password.</p>
+   * Respresents the response from the server regarding the request to reset a password.
    */
   @js.native
   trait ForgotPasswordResponse extends js.Object {
@@ -3095,7 +3096,7 @@ package cognitoidentityprovider {
   }
 
   /**
-   * <p>Represents the request to get the header information for the .csv file for the user import job.</p>
+   * Represents the request to get the header information for the .csv file for the user import job.
    */
   @js.native
   trait GetCSVHeaderRequest extends js.Object {
@@ -3113,7 +3114,7 @@ package cognitoidentityprovider {
   }
 
   /**
-   * <p>Represents the response from the server to the request to get the header information for the .csv file for the user import job.</p>
+   * Represents the response from the server to the request to get the header information for the .csv file for the user import job.
    */
   @js.native
   trait GetCSVHeaderResponse extends js.Object {
@@ -3134,7 +3135,7 @@ package cognitoidentityprovider {
   }
 
   /**
-   * <p>Represents the request to get the device.</p>
+   * Represents the request to get the device.
    */
   @js.native
   trait GetDeviceRequest extends js.Object {
@@ -3155,7 +3156,7 @@ package cognitoidentityprovider {
   }
 
   /**
-   * <p>Gets the device response.</p>
+   * Gets the device response.
    */
   @js.native
   trait GetDeviceResponse extends js.Object {
@@ -3239,7 +3240,7 @@ package cognitoidentityprovider {
   }
 
   /**
-   * <p>Request to get a signing certificate from Cognito.</p>
+   * Request to get a signing certificate from Cognito.
    */
   @js.native
   trait GetSigningCertificateRequest extends js.Object {
@@ -3257,7 +3258,7 @@ package cognitoidentityprovider {
   }
 
   /**
-   * <p>Response from Cognito for a signing certificate request.</p>
+   * Response from Cognito for a signing certificate request.
    */
   @js.native
   trait GetSigningCertificateResponse extends js.Object {
@@ -3308,7 +3309,7 @@ package cognitoidentityprovider {
   }
 
   /**
-   * <p>Represents the request to get user attribute verification.</p>
+   * Represents the request to get user attribute verification.
    */
   @js.native
   trait GetUserAttributeVerificationCodeRequest extends js.Object {
@@ -3329,7 +3330,7 @@ package cognitoidentityprovider {
   }
 
   /**
-   * <p>The verification code response returned by the server response to get the user attribute verification code.</p>
+   * The verification code response returned by the server response to get the user attribute verification code.
    */
   @js.native
   trait GetUserAttributeVerificationCodeResponse extends js.Object {
@@ -3383,7 +3384,7 @@ package cognitoidentityprovider {
   }
 
   /**
-   * <p>Represents the request to get information about the user.</p>
+   * Represents the request to get information about the user.
    */
   @js.native
   trait GetUserRequest extends js.Object {
@@ -3401,7 +3402,7 @@ package cognitoidentityprovider {
   }
 
   /**
-   * <p>Represents the response from the server from the request to get information about the user.</p>
+   * Represents the response from the server from the request to get information about the user.
    */
   @js.native
   trait GetUserResponse extends js.Object {
@@ -3431,7 +3432,7 @@ package cognitoidentityprovider {
   }
 
   /**
-   * <p>Represents the request to sign out all devices.</p>
+   * Represents the request to sign out all devices.
    */
   @js.native
   trait GlobalSignOutRequest extends js.Object {
@@ -3449,7 +3450,7 @@ package cognitoidentityprovider {
   }
 
   /**
-   * <p>The response to the request to sign out all devices.</p>
+   * The response to the request to sign out all devices.
    */
   @js.native
   trait GlobalSignOutResponse extends js.Object {
@@ -3465,7 +3466,7 @@ package cognitoidentityprovider {
   }
 
   /**
-   * <p>The group type.</p>
+   * The group type.
    */
   @js.native
   trait GroupType extends js.Object {
@@ -3501,7 +3502,7 @@ package cognitoidentityprovider {
   }
 
   /**
-   * <p>The HTTP header.</p>
+   * The HTTP header.
    */
   @js.native
   trait HttpHeader extends js.Object {
@@ -3522,7 +3523,7 @@ package cognitoidentityprovider {
   }
 
   /**
-   * <p>A container for information about an identity provider.</p>
+   * A container for information about an identity provider.
    */
   @js.native
   trait IdentityProviderType extends js.Object {
@@ -3571,7 +3572,7 @@ package cognitoidentityprovider {
   }
 
   /**
-   * <p>Initiates the authentication request.</p>
+   * Initiates the authentication request.
    */
   @js.native
   trait InitiateAuthRequest extends js.Object {
@@ -3604,7 +3605,7 @@ package cognitoidentityprovider {
   }
 
   /**
-   * <p>Initiates the authentication response.</p>
+   * Initiates the authentication response.
    */
   @js.native
   trait InitiateAuthResponse extends js.Object {
@@ -3631,7 +3632,7 @@ package cognitoidentityprovider {
   }
 
   /**
-   * <p>Specifies the configuration for AWS Lambda triggers.</p>
+   * Specifies the configuration for AWS Lambda triggers.
    */
   @js.native
   trait LambdaConfigType extends js.Object {
@@ -3676,7 +3677,7 @@ package cognitoidentityprovider {
   }
 
   /**
-   * <p>Represents the request to list the devices.</p>
+   * Represents the request to list the devices.
    */
   @js.native
   trait ListDevicesRequest extends js.Object {
@@ -3700,7 +3701,7 @@ package cognitoidentityprovider {
   }
 
   /**
-   * <p>Represents the response to list devices.</p>
+   * Represents the response to list devices.
    */
   @js.native
   trait ListDevicesResponse extends js.Object {
@@ -3838,7 +3839,7 @@ package cognitoidentityprovider {
   }
 
   /**
-   * <p>Represents the request to list the user import jobs.</p>
+   * Represents the request to list the user import jobs.
    */
   @js.native
   trait ListUserImportJobsRequest extends js.Object {
@@ -3862,7 +3863,7 @@ package cognitoidentityprovider {
   }
 
   /**
-   * <p>Represents the response from the server to the request to list the user import jobs.</p>
+   * Represents the response from the server to the request to list the user import jobs.
    */
   @js.native
   trait ListUserImportJobsResponse extends js.Object {
@@ -3883,7 +3884,7 @@ package cognitoidentityprovider {
   }
 
   /**
-   * <p>Represents the request to list the user pool clients.</p>
+   * Represents the request to list the user pool clients.
    */
   @js.native
   trait ListUserPoolClientsRequest extends js.Object {
@@ -3907,7 +3908,7 @@ package cognitoidentityprovider {
   }
 
   /**
-   * <p>Represents the response from the server that lists user pool clients.</p>
+   * Represents the response from the server that lists user pool clients.
    */
   @js.native
   trait ListUserPoolClientsResponse extends js.Object {
@@ -3928,7 +3929,7 @@ package cognitoidentityprovider {
   }
 
   /**
-   * <p>Represents the request to list user pools.</p>
+   * Represents the request to list user pools.
    */
   @js.native
   trait ListUserPoolsRequest extends js.Object {
@@ -3949,7 +3950,7 @@ package cognitoidentityprovider {
   }
 
   /**
-   * <p>Represents the response to list user pools.</p>
+   * Represents the response to list user pools.
    */
   @js.native
   trait ListUserPoolsResponse extends js.Object {
@@ -4012,7 +4013,7 @@ package cognitoidentityprovider {
   }
 
   /**
-   * <p>Represents the request to list users.</p>
+   * Represents the request to list users.
    */
   @js.native
   trait ListUsersRequest extends js.Object {
@@ -4042,7 +4043,7 @@ package cognitoidentityprovider {
   }
 
   /**
-   * <p>The response from the request to list users.</p>
+   * The response from the request to list users.
    */
   @js.native
   trait ListUsersResponse extends js.Object {
@@ -4063,7 +4064,7 @@ package cognitoidentityprovider {
   }
 
   /**
-   * <p>Specifies the different settings for multi-factor authentication (MFA).</p>
+   * Specifies the different settings for multi-factor authentication (MFA).
    */
   @js.native
   trait MFAOptionType extends js.Object {
@@ -4091,7 +4092,7 @@ package cognitoidentityprovider {
   }
 
   /**
-   * <p>The message template structure.</p>
+   * The message template structure.
    */
   @js.native
   trait MessageTemplateType extends js.Object {
@@ -4115,7 +4116,7 @@ package cognitoidentityprovider {
   }
 
   /**
-   * <p>The new device metadata type.</p>
+   * The new device metadata type.
    */
   @js.native
   trait NewDeviceMetadataType extends js.Object {
@@ -4136,7 +4137,7 @@ package cognitoidentityprovider {
   }
 
   /**
-   * <p>The notify configuration type.</p>
+   * The notify configuration type.
    */
   @js.native
   trait NotifyConfigurationType extends js.Object {
@@ -4169,7 +4170,7 @@ package cognitoidentityprovider {
   }
 
   /**
-   * <p>The notify email type.</p>
+   * The notify email type.
    */
   @js.native
   trait NotifyEmailType extends js.Object {
@@ -4193,7 +4194,7 @@ package cognitoidentityprovider {
   }
 
   /**
-   * <p>The minimum and maximum value of an attribute that is of the number data type.</p>
+   * The minimum and maximum value of an attribute that is of the number data type.
    */
   @js.native
   trait NumberAttributeConstraintsType extends js.Object {
@@ -4222,7 +4223,7 @@ package cognitoidentityprovider {
   }
 
   /**
-   * <p>The password policy type.</p>
+   * The password policy type.
    */
   @js.native
   trait PasswordPolicyType extends js.Object {
@@ -4252,7 +4253,7 @@ package cognitoidentityprovider {
   }
 
   /**
-   * <p>A container for identity provider details.</p>
+   * A container for identity provider details.
    */
   @js.native
   trait ProviderDescription extends js.Object {
@@ -4279,7 +4280,7 @@ package cognitoidentityprovider {
   }
 
   /**
-   * <p>A container for information about an identity provider for a user pool.</p>
+   * A container for information about an identity provider for a user pool.
    */
   @js.native
   trait ProviderUserIdentifierType extends js.Object {
@@ -4303,7 +4304,7 @@ package cognitoidentityprovider {
   }
 
   /**
-   * <p>Represents the request to resend the confirmation code.</p>
+   * Represents the request to resend the confirmation code.
    */
   @js.native
   trait ResendConfirmationCodeRequest extends js.Object {
@@ -4333,7 +4334,7 @@ package cognitoidentityprovider {
   }
 
   /**
-   * <p>The response from the server when the Amazon Cognito Your User Pools service makes the request to resend a confirmation code.</p>
+   * The response from the server when the Amazon Cognito Your User Pools service makes the request to resend a confirmation code.
    */
   @js.native
   trait ResendConfirmationCodeResponse extends js.Object {
@@ -4351,7 +4352,7 @@ package cognitoidentityprovider {
   }
 
   /**
-   * <p>A resource server scope.</p>
+   * A resource server scope.
    */
   @js.native
   trait ResourceServerScopeType extends js.Object {
@@ -4372,7 +4373,7 @@ package cognitoidentityprovider {
   }
 
   /**
-   * <p>A container for information about a resource server for a user pool.</p>
+   * A container for information about a resource server for a user pool.
    */
   @js.native
   trait ResourceServerType extends js.Object {
@@ -4399,7 +4400,7 @@ package cognitoidentityprovider {
   }
 
   /**
-   * <p>The request to respond to an authentication challenge.</p>
+   * The request to respond to an authentication challenge.
    */
   @js.native
   trait RespondToAuthChallengeRequest extends js.Object {
@@ -4432,7 +4433,7 @@ package cognitoidentityprovider {
   }
 
   /**
-   * <p>The response to respond to the authentication challenge.</p>
+   * The response to respond to the authentication challenge.
    */
   @js.native
   trait RespondToAuthChallengeResponse extends js.Object {
@@ -4459,7 +4460,7 @@ package cognitoidentityprovider {
   }
 
   /**
-   * <p>The risk configuration type.</p>
+   * The risk configuration type.
    */
   @js.native
   trait RiskConfigurationType extends js.Object {
@@ -4500,7 +4501,7 @@ package cognitoidentityprovider {
   }
 
   /**
-   * <p>The type of the configuration to override the risk decision.</p>
+   * The type of the configuration to override the risk decision.
    */
   @js.native
   trait RiskExceptionConfigurationType extends js.Object {
@@ -4529,7 +4530,7 @@ package cognitoidentityprovider {
   }
 
   /**
-   * <p>The SMS multi-factor authentication (MFA) settings type.</p>
+   * The SMS multi-factor authentication (MFA) settings type.
    */
   @js.native
   trait SMSMfaSettingsType extends js.Object {
@@ -4550,7 +4551,7 @@ package cognitoidentityprovider {
   }
 
   /**
-   * <p>Contains information about the schema attribute.</p>
+   * Contains information about the schema attribute.
    */
   @js.native
   trait SchemaAttributeType extends js.Object {
@@ -4746,7 +4747,7 @@ package cognitoidentityprovider {
   }
 
   /**
-   * <p>Represents the request to set user settings.</p>
+   * Represents the request to set user settings.
    */
   @js.native
   trait SetUserSettingsRequest extends js.Object {
@@ -4767,7 +4768,7 @@ package cognitoidentityprovider {
   }
 
   /**
-   * <p>The response from the server for a set user settings request.</p>
+   * The response from the server for a set user settings request.
    */
   @js.native
   trait SetUserSettingsResponse extends js.Object {
@@ -4783,7 +4784,7 @@ package cognitoidentityprovider {
   }
 
   /**
-   * <p>Represents the request to register a user.</p>
+   * Represents the request to register a user.
    */
   @js.native
   trait SignUpRequest extends js.Object {
@@ -4822,7 +4823,7 @@ package cognitoidentityprovider {
   }
 
   /**
-   * <p>The response from the server for a registration request.</p>
+   * The response from the server for a registration request.
    */
   @js.native
   trait SignUpResponse extends js.Object {
@@ -4846,7 +4847,7 @@ package cognitoidentityprovider {
   }
 
   /**
-   * <p>The SMS configuration type.</p>
+   * The SMS configuration type.
    */
   @js.native
   trait SmsConfigurationType extends js.Object {
@@ -4867,7 +4868,7 @@ package cognitoidentityprovider {
   }
 
   /**
-   * <p>The SMS text message multi-factor authentication (MFA) configuration type.</p>
+   * The SMS text message multi-factor authentication (MFA) configuration type.
    */
   @js.native
   trait SmsMfaConfigType extends js.Object {
@@ -4888,7 +4889,7 @@ package cognitoidentityprovider {
   }
 
   /**
-   * <p>The type used for enabling software token MFA at the user pool level.</p>
+   * The type used for enabling software token MFA at the user pool level.
    */
   @js.native
   trait SoftwareTokenMfaConfigType extends js.Object {
@@ -4906,7 +4907,7 @@ package cognitoidentityprovider {
   }
 
   /**
-   * <p>The type used for enabling software token MFA at the user level.</p>
+   * The type used for enabling software token MFA at the user level.
    */
   @js.native
   trait SoftwareTokenMfaSettingsType extends js.Object {
@@ -4927,7 +4928,7 @@ package cognitoidentityprovider {
   }
 
   /**
-   * <p>Represents the request to start the user import job.</p>
+   * Represents the request to start the user import job.
    */
   @js.native
   trait StartUserImportJobRequest extends js.Object {
@@ -4948,7 +4949,7 @@ package cognitoidentityprovider {
   }
 
   /**
-   * <p>Represents the response from the server to the request to start the user import job.</p>
+   * Represents the response from the server to the request to start the user import job.
    */
   @js.native
   trait StartUserImportJobResponse extends js.Object {
@@ -4973,7 +4974,7 @@ package cognitoidentityprovider {
   }
 
   /**
-   * <p>Represents the request to stop the user import job.</p>
+   * Represents the request to stop the user import job.
    */
   @js.native
   trait StopUserImportJobRequest extends js.Object {
@@ -4994,7 +4995,7 @@ package cognitoidentityprovider {
   }
 
   /**
-   * <p>Represents the response from the server to the request to stop the user import job.</p>
+   * Represents the response from the server to the request to stop the user import job.
    */
   @js.native
   trait StopUserImportJobResponse extends js.Object {
@@ -5012,7 +5013,7 @@ package cognitoidentityprovider {
   }
 
   /**
-   * <p>The constraints associated with a string attribute.</p>
+   * The constraints associated with a string attribute.
    */
   @js.native
   trait StringAttributeConstraintsType extends js.Object {
@@ -5033,7 +5034,7 @@ package cognitoidentityprovider {
   }
 
   /**
-   * <p>A container for the UI customization information for a user pool's built-in app UI.</p>
+   * A container for the UI customization information for a user pool's built-in app UI.
    */
   @js.native
   trait UICustomizationType extends js.Object {
@@ -5109,7 +5110,7 @@ package cognitoidentityprovider {
   }
 
   /**
-   * <p>Represents the request to update the device status.</p>
+   * Represents the request to update the device status.
    */
   @js.native
   trait UpdateDeviceStatusRequest extends js.Object {
@@ -5133,7 +5134,7 @@ package cognitoidentityprovider {
   }
 
   /**
-   * <p>The response to the request to update the device status.</p>
+   * The response to the request to update the device status.
    */
   @js.native
   trait UpdateDeviceStatusResponse extends js.Object {
@@ -5272,7 +5273,7 @@ package cognitoidentityprovider {
   }
 
   /**
-   * <p>Represents the request to update user attributes.</p>
+   * Represents the request to update user attributes.
    */
   @js.native
   trait UpdateUserAttributesRequest extends js.Object {
@@ -5293,7 +5294,7 @@ package cognitoidentityprovider {
   }
 
   /**
-   * <p>Represents the response from the server for the request to update user attributes.</p>
+   * Represents the response from the server for the request to update user attributes.
    */
   @js.native
   trait UpdateUserAttributesResponse extends js.Object {
@@ -5311,7 +5312,7 @@ package cognitoidentityprovider {
   }
 
   /**
-   * <p>Represents the request to update the user pool client.</p>
+   * Represents the request to update the user pool client.
    */
   @js.native
   trait UpdateUserPoolClientRequest extends js.Object {
@@ -5371,7 +5372,7 @@ package cognitoidentityprovider {
   }
 
   /**
-   * <p>Represents the response from the server to the request to update the user pool client.</p>
+   * Represents the response from the server to the request to update the user pool client.
    */
   @js.native
   trait UpdateUserPoolClientResponse extends js.Object {
@@ -5389,7 +5390,7 @@ package cognitoidentityprovider {
   }
 
   /**
-   * <p>Represents the request to update the user pool.</p>
+   * Represents the request to update the user pool.
    */
   @js.native
   trait UpdateUserPoolRequest extends js.Object {
@@ -5452,7 +5453,7 @@ package cognitoidentityprovider {
   }
 
   /**
-   * <p>Represents the response from the server when you make a request to update the user pool.</p>
+   * Represents the response from the server when you make a request to update the user pool.
    */
   @js.native
   trait UpdateUserPoolResponse extends js.Object {
@@ -5468,7 +5469,7 @@ package cognitoidentityprovider {
   }
 
   /**
-   * <p>Contextual data such as the user's device fingerprint, IP address, or location used for evaluating the risk of an unexpected event by Amazon Cognito advanced security.</p>
+   * Contextual data such as the user's device fingerprint, IP address, or location used for evaluating the risk of an unexpected event by Amazon Cognito advanced security.
    */
   @js.native
   trait UserContextDataType extends js.Object {
@@ -5499,7 +5500,7 @@ package cognitoidentityprovider {
   }
 
   /**
-   * <p>The user import job type.</p>
+   * The user import job type.
    */
   @js.native
   trait UserImportJobType extends js.Object {
@@ -5553,7 +5554,7 @@ package cognitoidentityprovider {
   }
 
   /**
-   * <p>The user pool add-ons type.</p>
+   * The user pool add-ons type.
    */
   @js.native
   trait UserPoolAddOnsType extends js.Object {
@@ -5571,7 +5572,7 @@ package cognitoidentityprovider {
   }
 
   /**
-   * <p>The description of the user pool client.</p>
+   * The description of the user pool client.
    */
   @js.native
   trait UserPoolClientDescription extends js.Object {
@@ -5595,7 +5596,7 @@ package cognitoidentityprovider {
   }
 
   /**
-   * <p>Contains information about a user pool client.</p>
+   * Contains information about a user pool client.
    */
   @js.native
   trait UserPoolClientType extends js.Object {
@@ -5664,7 +5665,7 @@ package cognitoidentityprovider {
   }
 
   /**
-   * <p>A user pool description.</p>
+   * A user pool description.
    */
   @js.native
   trait UserPoolDescriptionType extends js.Object {
@@ -5705,7 +5706,7 @@ package cognitoidentityprovider {
   }
 
   /**
-   * <p>The policy associated with a user pool.</p>
+   * The policy associated with a user pool.
    */
   @js.native
   trait UserPoolPolicyType extends js.Object {
@@ -5723,7 +5724,7 @@ package cognitoidentityprovider {
   }
 
   /**
-   * <p>A container for information about the user pool.</p>
+   * A container for information about the user pool.
    */
   @js.native
   trait UserPoolType extends js.Object {
@@ -5837,7 +5838,7 @@ package cognitoidentityprovider {
   }
 
   /**
-   * <p>The user type.</p>
+   * The user type.
    */
   @js.native
   trait UserType extends js.Object {
@@ -5880,7 +5881,7 @@ package cognitoidentityprovider {
   }
 
   /**
-   * <p>The template for verification messages.</p>
+   * The template for verification messages.
    */
   @js.native
   trait VerificationMessageTemplateType extends js.Object {
@@ -5969,7 +5970,7 @@ package cognitoidentityprovider {
   }
 
   /**
-   * <p>Represents the request to verify user attributes.</p>
+   * Represents the request to verify user attributes.
    */
   @js.native
   trait VerifyUserAttributeRequest extends js.Object {
@@ -5993,7 +5994,7 @@ package cognitoidentityprovider {
   }
 
   /**
-   * <p>A container representing the response from the server from the request to verify user attributes.</p>
+   * A container representing the response from the server from the request to verify user attributes.
    */
   @js.native
   trait VerifyUserAttributeResponse extends js.Object {

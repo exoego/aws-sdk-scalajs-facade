@@ -23,7 +23,7 @@ package mediatailor {
   }
 
   /**
-   * <p>The configuration for using a content delivery network (CDN), like Amazon CloudFront, for content and ad segment management. </p>
+   * The configuration for using a content delivery network (CDN), like Amazon CloudFront, for content and ad segment management.
    */
   @js.native
   trait CdnConfiguration extends js.Object {
@@ -44,7 +44,7 @@ package mediatailor {
   }
 
   /**
-   * <p>The configuration object for DASH content. </p>
+   * The configuration object for DASH content.
    */
   @js.native
   trait DashConfiguration extends js.Object {
@@ -147,7 +147,7 @@ package mediatailor {
   }
 
   /**
-   * <p>The configuration for HLS content. </p>
+   * The configuration for HLS content.
    */
   @js.native
   trait HlsConfiguration extends js.Object {
@@ -201,7 +201,7 @@ package mediatailor {
   }
 
   /**
-   * <p>The AWSMediaTailor configuration.</p>
+   * The AWSMediaTailor configuration.
    */
   @js.native
   trait PlaybackConfiguration extends js.Object {

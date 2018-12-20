@@ -131,7 +131,9 @@ package elastictranscoder {
   }
 
   /**
-   * <p>The file to be used as album art. There can be multiple artworks associated with an audio file, to a maximum of 20.</p> <p>To remove artwork or leave the artwork empty, you can either set <code>Artwork</code> to null, or set the <code>Merge Policy</code> to "Replace" and use an empty <code>Artwork</code> array.</p> <p>To pass through existing artwork unchanged, set the <code>Merge Policy</code> to "Prepend", "Append", or "Fallback", and use an empty <code>Artwork</code> array.</p>
+   * The file to be used as album art. There can be multiple artworks associated with an audio file, to a maximum of 20.
+   *  To remove artwork or leave the artwork empty, you can either set <code>Artwork</code> to null, or set the <code>Merge Policy</code> to "Replace" and use an empty <code>Artwork</code> array.
+   *  To pass through existing artwork unchanged, set the <code>Merge Policy</code> to "Prepend", "Append", or "Fallback", and use an empty <code>Artwork</code> array.
    */
   @js.native
   trait Artwork extends js.Object {
@@ -167,7 +169,7 @@ package elastictranscoder {
   }
 
   /**
-   * <p>Options associated with your audio codec.</p>
+   * Options associated with your audio codec.
    */
   @js.native
   trait AudioCodecOptions extends js.Object {
@@ -194,7 +196,7 @@ package elastictranscoder {
   }
 
   /**
-   * <p>Parameters required for transcoding audio.</p>
+   * Parameters required for transcoding audio.
    */
   @js.native
   trait AudioParameters extends js.Object {
@@ -227,7 +229,7 @@ package elastictranscoder {
   }
 
   /**
-   * <p>The <code>CancelJobRequest</code> structure.</p>
+   * The <code>CancelJobRequest</code> structure.
    */
   @js.native
   trait CancelJobRequest extends js.Object {
@@ -245,7 +247,7 @@ package elastictranscoder {
   }
 
   /**
-   * <p>The response body contains a JSON object. If the job is successfully canceled, the value of <code>Success</code> is <code>true</code>.</p>
+   * The response body contains a JSON object. If the job is successfully canceled, the value of <code>Success</code> is <code>true</code>.
    */
   @js.native
   trait CancelJobResponse extends js.Object {
@@ -261,7 +263,7 @@ package elastictranscoder {
   }
 
   /**
-   * <p>The file format of the output captions. If you leave this value blank, Elastic Transcoder returns an error.</p>
+   * The file format of the output captions. If you leave this value blank, Elastic Transcoder returns an error.
    */
   @js.native
   trait CaptionFormat extends js.Object {
@@ -285,7 +287,7 @@ package elastictranscoder {
   }
 
   /**
-   * <p>A source file for the input sidecar captions used during the transcoding process.</p>
+   * A source file for the input sidecar captions used during the transcoding process.
    */
   @js.native
   trait CaptionSource extends js.Object {
@@ -315,7 +317,7 @@ package elastictranscoder {
   }
 
   /**
-   * <p>The captions to be created, if any.</p>
+   * The captions to be created, if any.
    */
   @js.native
   trait Captions extends js.Object {
@@ -339,7 +341,7 @@ package elastictranscoder {
   }
 
   /**
-   * <p>Settings for one clip in a composition. All jobs in a playlist must have the same clip settings.</p>
+   * Settings for one clip in a composition. All jobs in a playlist must have the same clip settings.
    */
   @deprecated
   @js.native
@@ -358,7 +360,7 @@ package elastictranscoder {
   }
 
   /**
-   * <p>The <code>CreateJobOutput</code> structure.</p>
+   * The <code>CreateJobOutput</code> structure.
    */
   @js.native
   trait CreateJobOutput extends js.Object {
@@ -406,7 +408,7 @@ package elastictranscoder {
   }
 
   /**
-   * <p>Information about the master playlist.</p>
+   * Information about the master playlist.
    */
   @js.native
   trait CreateJobPlaylist extends js.Object {
@@ -436,7 +438,7 @@ package elastictranscoder {
   }
 
   /**
-   * <p>The <code>CreateJobRequest</code> structure.</p>
+   * The <code>CreateJobRequest</code> structure.
    */
   @js.native
   trait CreateJobRequest extends js.Object {
@@ -475,7 +477,7 @@ package elastictranscoder {
   }
 
   /**
-   * <p>The CreateJobResponse structure.</p>
+   * The CreateJobResponse structure.
    */
   @js.native
   trait CreateJobResponse extends js.Object {
@@ -493,7 +495,7 @@ package elastictranscoder {
   }
 
   /**
-   * <p>The <code>CreatePipelineRequest</code> structure.</p>
+   * The <code>CreatePipelineRequest</code> structure.
    */
   @js.native
   trait CreatePipelineRequest extends js.Object {
@@ -532,7 +534,7 @@ package elastictranscoder {
   }
 
   /**
-   * <p>When you create a pipeline, Elastic Transcoder returns the values that you specified in the request.</p>
+   * When you create a pipeline, Elastic Transcoder returns the values that you specified in the request.
    */
   @js.native
   trait CreatePipelineResponse extends js.Object {
@@ -553,7 +555,7 @@ package elastictranscoder {
   }
 
   /**
-   * <p>The <code>CreatePresetRequest</code> structure.</p>
+   * The <code>CreatePresetRequest</code> structure.
    */
   @js.native
   trait CreatePresetRequest extends js.Object {
@@ -586,7 +588,7 @@ package elastictranscoder {
   }
 
   /**
-   * <p>The <code>CreatePresetResponse</code> structure.</p>
+   * The <code>CreatePresetResponse</code> structure.
    */
   @js.native
   trait CreatePresetResponse extends js.Object {
@@ -607,7 +609,7 @@ package elastictranscoder {
   }
 
   /**
-   * <p>The <code>DeletePipelineRequest</code> structure.</p>
+   * The <code>DeletePipelineRequest</code> structure.
    */
   @js.native
   trait DeletePipelineRequest extends js.Object {
@@ -625,7 +627,7 @@ package elastictranscoder {
   }
 
   /**
-   * <p>The <code>DeletePipelineResponse</code> structure.</p>
+   * The <code>DeletePipelineResponse</code> structure.
    */
   @js.native
   trait DeletePipelineResponse extends js.Object {
@@ -641,7 +643,7 @@ package elastictranscoder {
   }
 
   /**
-   * <p>The <code>DeletePresetRequest</code> structure.</p>
+   * The <code>DeletePresetRequest</code> structure.
    */
   @js.native
   trait DeletePresetRequest extends js.Object {
@@ -659,7 +661,7 @@ package elastictranscoder {
   }
 
   /**
-   * <p>The <code>DeletePresetResponse</code> structure.</p>
+   * The <code>DeletePresetResponse</code> structure.
    */
   @js.native
   trait DeletePresetResponse extends js.Object {
@@ -675,7 +677,7 @@ package elastictranscoder {
   }
 
   /**
-   * <p>The detected properties of the input file. Elastic Transcoder identifies these values from the input file.</p>
+   * The detected properties of the input file. Elastic Transcoder identifies these values from the input file.
    */
   @js.native
   trait DetectedProperties extends js.Object {
@@ -705,7 +707,7 @@ package elastictranscoder {
   }
 
   /**
-   * <p>The encryption settings, if any, that are used for decrypting your input files or encrypting your output files. If your input file is encrypted, you must specify the mode that Elastic Transcoder uses to decrypt your file, otherwise you must specify the mode you want Elastic Transcoder to use to encrypt your output files.</p>
+   * The encryption settings, if any, that are used for decrypting your input files or encrypting your output files. If your input file is encrypted, you must specify the mode that Elastic Transcoder uses to decrypt your file, otherwise you must specify the mode you want Elastic Transcoder to use to encrypt your output files.
    */
   @js.native
   trait Encryption extends js.Object {
@@ -732,7 +734,7 @@ package elastictranscoder {
   }
 
   /**
-   * <p>The HLS content protection settings, if any, that you want Elastic Transcoder to apply to your output files.</p>
+   * The HLS content protection settings, if any, that you want Elastic Transcoder to apply to your output files.
    */
   @js.native
   trait HlsContentProtection extends js.Object {
@@ -765,7 +767,7 @@ package elastictranscoder {
   }
 
   /**
-   * <p>The captions to be created, if any.</p>
+   * The captions to be created, if any.
    */
   @js.native
   trait InputCaptions extends js.Object {
@@ -786,7 +788,7 @@ package elastictranscoder {
   }
 
   /**
-   * <p>A section of the response body that provides information about the job that is created.</p>
+   * A section of the response body that provides information about the job that is created.
    */
   @js.native
   trait Job extends js.Object {
@@ -837,7 +839,7 @@ package elastictranscoder {
   }
 
   /**
-   * <p>The .jpg or .png file associated with an audio file.</p>
+   * The .jpg or .png file associated with an audio file.
    */
   @js.native
   trait JobAlbumArt extends js.Object {
@@ -858,7 +860,7 @@ package elastictranscoder {
   }
 
   /**
-   * <p>Information about the file that you're transcoding.</p>
+   * Information about the file that you're transcoding.
    */
   @js.native
   trait JobInput extends js.Object {
@@ -903,7 +905,8 @@ package elastictranscoder {
   }
 
   /**
-   * <important> <p>Outputs recommended instead.</p> </important> <p>If you specified one output for a job, information about that output. If you specified multiple outputs for a job, the <code>Output</code> object lists information about the first output. This duplicates the information that is listed for the first output in the <code>Outputs</code> object.</p>
+   * <important> Outputs recommended instead.
+   *  </important> If you specified one output for a job, information about that output. If you specified multiple outputs for a job, the <code>Output</code> object lists information about the first output. This duplicates the information that is listed for the first output in the <code>Outputs</code> object.
    */
   @js.native
   trait JobOutput extends js.Object {
@@ -981,7 +984,7 @@ package elastictranscoder {
   }
 
   /**
-   * <p>Watermarks can be in .png or .jpg format. If you want to display a watermark that is not rectangular, use the .png format, which supports transparency.</p>
+   * Watermarks can be in .png or .jpg format. If you want to display a watermark that is not rectangular, use the .png format, which supports transparency.
    */
   @js.native
   trait JobWatermark extends js.Object {
@@ -1005,7 +1008,7 @@ package elastictranscoder {
   }
 
   /**
-   * <p>The <code>ListJobsByPipelineRequest</code> structure.</p>
+   * The <code>ListJobsByPipelineRequest</code> structure.
    */
   @js.native
   trait ListJobsByPipelineRequest extends js.Object {
@@ -1029,7 +1032,7 @@ package elastictranscoder {
   }
 
   /**
-   * <p>The <code>ListJobsByPipelineResponse</code> structure.</p>
+   * The <code>ListJobsByPipelineResponse</code> structure.
    */
   @js.native
   trait ListJobsByPipelineResponse extends js.Object {
@@ -1050,7 +1053,7 @@ package elastictranscoder {
   }
 
   /**
-   * <p>The <code>ListJobsByStatusRequest</code> structure.</p>
+   * The <code>ListJobsByStatusRequest</code> structure.
    */
   @js.native
   trait ListJobsByStatusRequest extends js.Object {
@@ -1074,7 +1077,7 @@ package elastictranscoder {
   }
 
   /**
-   * <p> The <code>ListJobsByStatusResponse</code> structure. </p>
+   * The <code>ListJobsByStatusResponse</code> structure.
    */
   @js.native
   trait ListJobsByStatusResponse extends js.Object {
@@ -1095,7 +1098,7 @@ package elastictranscoder {
   }
 
   /**
-   * <p>The <code>ListPipelineRequest</code> structure.</p>
+   * The <code>ListPipelineRequest</code> structure.
    */
   @js.native
   trait ListPipelinesRequest extends js.Object {
@@ -1116,7 +1119,7 @@ package elastictranscoder {
   }
 
   /**
-   * <p>A list of the pipelines associated with the current AWS account.</p>
+   * A list of the pipelines associated with the current AWS account.
    */
   @js.native
   trait ListPipelinesResponse extends js.Object {
@@ -1137,7 +1140,7 @@ package elastictranscoder {
   }
 
   /**
-   * <p>The <code>ListPresetsRequest</code> structure.</p>
+   * The <code>ListPresetsRequest</code> structure.
    */
   @js.native
   trait ListPresetsRequest extends js.Object {
@@ -1158,7 +1161,7 @@ package elastictranscoder {
   }
 
   /**
-   * <p>The <code>ListPresetsResponse</code> structure.</p>
+   * The <code>ListPresetsResponse</code> structure.
    */
   @js.native
   trait ListPresetsResponse extends js.Object {
@@ -1179,7 +1182,9 @@ package elastictranscoder {
   }
 
   /**
-   * <p>The Amazon Simple Notification Service (Amazon SNS) topic or topics to notify in order to report job status.</p> <important> <p>To receive notifications, you must also subscribe to the new topic in the Amazon SNS console.</p> </important>
+   * The Amazon Simple Notification Service (Amazon SNS) topic or topics to notify in order to report job status.
+   *  <important> To receive notifications, you must also subscribe to the new topic in the Amazon SNS console.
+   *  </important>
    */
   @js.native
   trait Notifications extends js.Object {
@@ -1206,7 +1211,7 @@ package elastictranscoder {
   }
 
   /**
-   * <p>The <code>Permission</code> structure.</p>
+   * The <code>Permission</code> structure.
    */
   @js.native
   trait Permission extends js.Object {
@@ -1230,7 +1235,7 @@ package elastictranscoder {
   }
 
   /**
-   * <p>The pipeline (queue) that is used to manage jobs.</p>
+   * The pipeline (queue) that is used to manage jobs.
    */
   @js.native
   trait Pipeline extends js.Object {
@@ -1278,7 +1283,7 @@ package elastictranscoder {
   }
 
   /**
-   * <p>The <code>PipelineOutputConfig</code> structure.</p>
+   * The <code>PipelineOutputConfig</code> structure.
    */
   @js.native
   trait PipelineOutputConfig extends js.Object {
@@ -1302,7 +1307,9 @@ package elastictranscoder {
   }
 
   /**
-   * <p>The PlayReady DRM settings, if any, that you want Elastic Transcoder to apply to the output files associated with this playlist.</p> <p>PlayReady DRM encrypts your media files using <code>aes-ctr</code> encryption.</p> <p>If you use DRM for an <code>HLSv3</code> playlist, your outputs must have a master playlist.</p>
+   * The PlayReady DRM settings, if any, that you want Elastic Transcoder to apply to the output files associated with this playlist.
+   *  PlayReady DRM encrypts your media files using <code>aes-ctr</code> encryption.
+   *  If you use DRM for an <code>HLSv3</code> playlist, your outputs must have a master playlist.
    */
   @js.native
   trait PlayReadyDrm extends js.Object {
@@ -1335,7 +1342,7 @@ package elastictranscoder {
   }
 
   /**
-   * <p> Use Only for Fragmented MP4 or MPEG-TS Outputs. If you specify a preset for which the value of Container is <code>fmp4</code> (Fragmented MP4) or <code>ts</code> (MPEG-TS), Playlists contains information about the master playlists that you want Elastic Transcoder to create. We recommend that you create only one master playlist per output format. The maximum number of master playlists in a job is 30. </p>
+   * Use Only for Fragmented MP4 or MPEG-TS Outputs. If you specify a preset for which the value of Container is <code>fmp4</code> (Fragmented MP4) or <code>ts</code> (MPEG-TS), Playlists contains information about the master playlists that you want Elastic Transcoder to create. We recommend that you create only one master playlist per output format. The maximum number of master playlists in a job is 30.
    */
   @js.native
   trait Playlist extends js.Object {
@@ -1371,7 +1378,7 @@ package elastictranscoder {
   }
 
   /**
-   * <p>Presets are templates that contain most of the settings for transcoding media files from one format to another. Elastic Transcoder includes some default presets for common formats, for example, several iPod and iPhone versions. You can also create your own presets for formats that aren't included among the default presets. You specify which preset you want to use when you create a job.</p>
+   * Presets are templates that contain most of the settings for transcoding media files from one format to another. Elastic Transcoder includes some default presets for common formats, for example, several iPod and iPhone versions. You can also create your own presets for formats that aren't included among the default presets. You specify which preset you want to use when you create a job.
    */
   @js.native
   trait Preset extends js.Object {
@@ -1413,7 +1420,9 @@ package elastictranscoder {
   }
 
   /**
-   * <p>Settings for the size, location, and opacity of graphics that you want Elastic Transcoder to overlay over videos that are transcoded using this preset. You can specify settings for up to four watermarks. Watermarks appear in the specified size and location, and with the specified opacity for the duration of the transcoded video.</p> <p>Watermarks can be in .png or .jpg format. If you want to display a watermark that is not rectangular, use the .png format, which supports transparency.</p> <p>When you create a job that uses this preset, you specify the .png or .jpg graphics that you want Elastic Transcoder to include in the transcoded videos. You can specify fewer graphics in the job than you specify watermark settings in the preset, which allows you to use the same preset for up to four watermarks that have different dimensions.</p>
+   * Settings for the size, location, and opacity of graphics that you want Elastic Transcoder to overlay over videos that are transcoded using this preset. You can specify settings for up to four watermarks. Watermarks appear in the specified size and location, and with the specified opacity for the duration of the transcoded video.
+   *  Watermarks can be in .png or .jpg format. If you want to display a watermark that is not rectangular, use the .png format, which supports transparency.
+   *  When you create a job that uses this preset, you specify the .png or .jpg graphics that you want Elastic Transcoder to include in the transcoded videos. You can specify fewer graphics in the job than you specify watermark settings in the preset, which allows you to use the same preset for up to four watermarks that have different dimensions.
    */
   @js.native
   trait PresetWatermark extends js.Object {
@@ -1458,7 +1467,7 @@ package elastictranscoder {
   }
 
   /**
-   * <p>The <code>ReadJobRequest</code> structure.</p>
+   * The <code>ReadJobRequest</code> structure.
    */
   @js.native
   trait ReadJobRequest extends js.Object {
@@ -1476,7 +1485,7 @@ package elastictranscoder {
   }
 
   /**
-   * <p>The <code>ReadJobResponse</code> structure.</p>
+   * The <code>ReadJobResponse</code> structure.
    */
   @js.native
   trait ReadJobResponse extends js.Object {
@@ -1494,7 +1503,7 @@ package elastictranscoder {
   }
 
   /**
-   * <p>The <code>ReadPipelineRequest</code> structure.</p>
+   * The <code>ReadPipelineRequest</code> structure.
    */
   @js.native
   trait ReadPipelineRequest extends js.Object {
@@ -1512,7 +1521,7 @@ package elastictranscoder {
   }
 
   /**
-   * <p>The <code>ReadPipelineResponse</code> structure.</p>
+   * The <code>ReadPipelineResponse</code> structure.
    */
   @js.native
   trait ReadPipelineResponse extends js.Object {
@@ -1533,7 +1542,7 @@ package elastictranscoder {
   }
 
   /**
-   * <p>The <code>ReadPresetRequest</code> structure.</p>
+   * The <code>ReadPresetRequest</code> structure.
    */
   @js.native
   trait ReadPresetRequest extends js.Object {
@@ -1551,7 +1560,7 @@ package elastictranscoder {
   }
 
   /**
-   * <p>The <code>ReadPresetResponse</code> structure.</p>
+   * The <code>ReadPresetResponse</code> structure.
    */
   @js.native
   trait ReadPresetResponse extends js.Object {
@@ -1569,7 +1578,7 @@ package elastictranscoder {
   }
 
   /**
-   * <p> The <code>TestRoleRequest</code> structure. </p>
+   * The <code>TestRoleRequest</code> structure.
    */
   @deprecated
   @js.native
@@ -1597,7 +1606,7 @@ package elastictranscoder {
   }
 
   /**
-   * <p>The <code>TestRoleResponse</code> structure.</p>
+   * The <code>TestRoleResponse</code> structure.
    */
   @deprecated
   @js.native
@@ -1619,7 +1628,7 @@ package elastictranscoder {
   }
 
   /**
-   * <p>Thumbnails for videos.</p>
+   * Thumbnails for videos.
    */
   @js.native
   trait Thumbnails extends js.Object {
@@ -1658,7 +1667,7 @@ package elastictranscoder {
   }
 
   /**
-   * <p>Settings that determine when a clip begins and how long it lasts.</p>
+   * Settings that determine when a clip begins and how long it lasts.
    */
   @js.native
   trait TimeSpan extends js.Object {
@@ -1679,7 +1688,7 @@ package elastictranscoder {
   }
 
   /**
-   * <p>Details about the timing of a job.</p>
+   * Details about the timing of a job.
    */
   @js.native
   trait Timing extends js.Object {
@@ -1703,7 +1712,7 @@ package elastictranscoder {
   }
 
   /**
-   * <p>The <code>UpdatePipelineNotificationsRequest</code> structure.</p>
+   * The <code>UpdatePipelineNotificationsRequest</code> structure.
    */
   @js.native
   trait UpdatePipelineNotificationsRequest extends js.Object {
@@ -1724,7 +1733,7 @@ package elastictranscoder {
   }
 
   /**
-   * <p>The <code>UpdatePipelineNotificationsResponse</code> structure.</p>
+   * The <code>UpdatePipelineNotificationsResponse</code> structure.
    */
   @js.native
   trait UpdatePipelineNotificationsResponse extends js.Object {
@@ -1742,7 +1751,7 @@ package elastictranscoder {
   }
 
   /**
-   * <p>The <code>UpdatePipelineRequest</code> structure.</p>
+   * The <code>UpdatePipelineRequest</code> structure.
    */
   @js.native
   trait UpdatePipelineRequest extends js.Object {
@@ -1781,7 +1790,7 @@ package elastictranscoder {
   }
 
   /**
-   * <p>When you update a pipeline, Elastic Transcoder returns the values that you specified in the request.</p>
+   * When you update a pipeline, Elastic Transcoder returns the values that you specified in the request.
    */
   @js.native
   trait UpdatePipelineResponse extends js.Object {
@@ -1802,7 +1811,7 @@ package elastictranscoder {
   }
 
   /**
-   * <p>The <code>UpdatePipelineStatusRequest</code> structure.</p>
+   * The <code>UpdatePipelineStatusRequest</code> structure.
    */
   @js.native
   trait UpdatePipelineStatusRequest extends js.Object {
@@ -1823,7 +1832,7 @@ package elastictranscoder {
   }
 
   /**
-   * <p>When you update status for a pipeline, Elastic Transcoder returns the values that you specified in the request.</p>
+   * When you update status for a pipeline, Elastic Transcoder returns the values that you specified in the request.
    */
   @js.native
   trait UpdatePipelineStatusResponse extends js.Object {
@@ -1841,7 +1850,7 @@ package elastictranscoder {
   }
 
   /**
-   * <p>The <code>VideoParameters</code> structure.</p>
+   * The <code>VideoParameters</code> structure.
    */
   @js.native
   trait VideoParameters extends js.Object {
@@ -1901,7 +1910,8 @@ package elastictranscoder {
   }
 
   /**
-   * <p>Elastic Transcoder returns a warning if the resources used by your pipeline are not in the same region as the pipeline.</p> <p>Using resources in the same region, such as your Amazon S3 buckets, Amazon SNS notification topics, and AWS KMS key, reduces processing time and prevents cross-regional charges.</p>
+   * Elastic Transcoder returns a warning if the resources used by your pipeline are not in the same region as the pipeline.
+   *  Using resources in the same region, such as your Amazon S3 buckets, Amazon SNS notification topics, and AWS KMS key, reduces processing time and prevents cross-regional charges.
    */
   @js.native
   trait Warning extends js.Object {

@@ -392,7 +392,7 @@ package lightsail {
   }
 
   /**
-   * <p>Describes an Availability Zone.</p>
+   * Describes an Availability Zone.
    */
   @js.native
   trait AvailabilityZone extends js.Object {
@@ -413,7 +413,7 @@ package lightsail {
   }
 
   /**
-   * <p>Describes a blueprint (a virtual private server image).</p>
+   * Describes a blueprint (a virtual private server image).
    */
   @js.native
   trait Blueprint extends js.Object {
@@ -471,7 +471,7 @@ package lightsail {
   }
 
   /**
-   * <p>Describes a bundle, which is a set of specs describing your virtual private server (or <i>instance</i>).</p>
+   * Describes a bundle, which is a set of specs describing your virtual private server (or <i>instance</i>).
    */
   @js.native
   trait Bundle extends js.Object {
@@ -552,7 +552,8 @@ package lightsail {
   }
 
   /**
-   * <p>Describes a CloudFormation stack record created as a result of the <code>create cloud formation stack</code> operation.</p> <p>A CloudFormation stack record provides information about the AWS CloudFormation stack used to create a new Amazon Elastic Compute Cloud instance from an exported Lightsail instance snapshot.</p>
+   * Describes a CloudFormation stack record created as a result of the <code>create cloud formation stack</code> operation.
+   *  A CloudFormation stack record provides information about the AWS CloudFormation stack used to create a new Amazon Elastic Compute Cloud instance from an exported Lightsail instance snapshot.
    */
   @js.native
   trait CloudFormationStackRecord extends js.Object {
@@ -591,7 +592,7 @@ package lightsail {
   }
 
   /**
-   * <p>Describes the source of a CloudFormation stack record (i.e., the export snapshot record).</p>
+   * Describes the source of a CloudFormation stack record (i.e., the export snapshot record).
    */
   @js.native
   trait CloudFormationStackRecordSourceInfo extends js.Object {
@@ -1635,7 +1636,7 @@ package lightsail {
   }
 
   /**
-   * <p>Describes the destination of a record.</p>
+   * Describes the destination of a record.
    */
   @js.native
   trait DestinationInfo extends js.Object {
@@ -1749,7 +1750,7 @@ package lightsail {
   }
 
   /**
-   * <p>Describes a system disk or an block storage disk.</p>
+   * Describes a system disk or an block storage disk.
    */
   @js.native
   trait Disk extends js.Object {
@@ -1812,7 +1813,7 @@ package lightsail {
   }
 
   /**
-   * <p>Describes a disk.</p>
+   * Describes a disk.
    */
   @js.native
   trait DiskInfo extends js.Object {
@@ -1839,7 +1840,7 @@ package lightsail {
   }
 
   /**
-   * <p>Describes a block storage disk mapping.</p>
+   * Describes a block storage disk mapping.
    */
   @js.native
   trait DiskMap extends js.Object {
@@ -1860,7 +1861,7 @@ package lightsail {
   }
 
   /**
-   * <p>Describes a block storage disk snapshot.</p>
+   * Describes a block storage disk snapshot.
    */
   @js.native
   trait DiskSnapshot extends js.Object {
@@ -1911,7 +1912,7 @@ package lightsail {
   }
 
   /**
-   * <p>Describes a disk snapshot.</p>
+   * Describes a disk snapshot.
    */
   @js.native
   trait DiskSnapshotInfo extends js.Object {
@@ -1948,7 +1949,7 @@ package lightsail {
   }
 
   /**
-   * <p>Describes a domain where you are storing recordsets in Lightsail.</p>
+   * Describes a domain where you are storing recordsets in Lightsail.
    */
   @js.native
   trait Domain extends js.Object {
@@ -1987,7 +1988,7 @@ package lightsail {
   }
 
   /**
-   * <p>Describes a domain recordset entry.</p>
+   * Describes a domain recordset entry.
    */
   @js.native
   trait DomainEntry extends js.Object {
@@ -2051,7 +2052,7 @@ package lightsail {
   }
 
   /**
-   * <p>Describes an export snapshot record.</p>
+   * Describes an export snapshot record.
    */
   @js.native
   trait ExportSnapshotRecord extends js.Object {
@@ -2090,7 +2091,7 @@ package lightsail {
   }
 
   /**
-   * <p>Describes the source of an export snapshot record.</p>
+   * Describes the source of an export snapshot record.
    */
   @js.native
   trait ExportSnapshotRecordSourceInfo extends js.Object {
@@ -3669,7 +3670,7 @@ package lightsail {
   }
 
   /**
-   * <p>Describes an instance (a virtual private server).</p>
+   * Describes an instance (a virtual private server).
    */
   @js.native
   trait Instance extends js.Object {
@@ -3741,7 +3742,7 @@ package lightsail {
   }
 
   /**
-   * <p>The parameters for gaining temporary access to one of your Amazon Lightsail instances.</p>
+   * The parameters for gaining temporary access to one of your Amazon Lightsail instances.
    */
   @js.native
   trait InstanceAccessDetails extends js.Object {
@@ -3790,7 +3791,7 @@ package lightsail {
   }
 
   /**
-   * <p>Describes the Amazon Elastic Compute Cloud instance and related resources to be created using the <code>create cloud formation stack</code> operation.</p>
+   * Describes the Amazon Elastic Compute Cloud instance and related resources to be created using the <code>create cloud formation stack</code> operation.
    */
   @js.native
   trait InstanceEntry extends js.Object {
@@ -3820,7 +3821,7 @@ package lightsail {
   }
 
   /**
-   * <p>Describes the hardware for the instance.</p>
+   * Describes the hardware for the instance.
    */
   @js.native
   trait InstanceHardware extends js.Object {
@@ -3871,7 +3872,7 @@ package lightsail {
   }
 
   /**
-   * <p>Describes information about the health of the instance.</p>
+   * Describes information about the health of the instance.
    */
   @js.native
   trait InstanceHealthSummary extends js.Object {
@@ -3906,7 +3907,7 @@ package lightsail {
   }
 
   /**
-   * <p>Describes monthly data transfer rates and port information for an instance.</p>
+   * Describes monthly data transfer rates and port information for an instance.
    */
   @js.native
   trait InstanceNetworking extends js.Object {
@@ -3934,7 +3935,7 @@ package lightsail {
   }
 
   /**
-   * <p>Describes information about the instance ports.</p>
+   * Describes information about the instance ports.
    */
   @js.native
   trait InstancePortInfo extends js.Object {
@@ -3970,7 +3971,7 @@ package lightsail {
   }
 
   /**
-   * <p>Describes the port state.</p>
+   * Describes the port state.
    */
   @js.native
   trait InstancePortState extends js.Object {
@@ -3997,7 +3998,7 @@ package lightsail {
   }
 
   /**
-   * <p>Describes the snapshot of the virtual private server, or <i>instance</i>.</p>
+   * Describes the snapshot of the virtual private server, or <i>instance</i>.
    */
   @js.native
   trait InstanceSnapshot extends js.Object {
@@ -4057,7 +4058,7 @@ package lightsail {
   }
 
   /**
-   * <p>Describes an instance snapshot.</p>
+   * Describes an instance snapshot.
    */
   @js.native
   trait InstanceSnapshotInfo extends js.Object {
@@ -4089,7 +4090,7 @@ package lightsail {
   }
 
   /**
-   * <p>Describes the virtual private server (or <i>instance</i>) status.</p>
+   * Describes the virtual private server (or <i>instance</i>) status.
    */
   @js.native
   trait InstanceState extends js.Object {
@@ -4138,7 +4139,7 @@ package lightsail {
   }
 
   /**
-   * <p>Describes the SSH key pair.</p>
+   * Describes the SSH key pair.
    */
   @js.native
   trait KeyPair extends js.Object {
@@ -4177,7 +4178,7 @@ package lightsail {
   }
 
   /**
-   * <p>Describes the Lightsail load balancer.</p>
+   * Describes the Lightsail load balancer.
    */
   @js.native
   trait LoadBalancer extends js.Object {
@@ -4282,7 +4283,8 @@ package lightsail {
   }
 
   /**
-   * <p>Describes a load balancer SSL/TLS certificate.</p> <p>TLS is just an updated, more secure version of Secure Socket Layer (SSL).</p>
+   * Describes a load balancer SSL/TLS certificate.
+   *  TLS is just an updated, more secure version of Secure Socket Layer (SSL).
    */
   @js.native
   trait LoadBalancerTlsCertificate extends js.Object {
@@ -4380,7 +4382,7 @@ package lightsail {
   }
 
   /**
-   * <p>Contains information about the domain names on an SSL/TLS certificate that you will use to validate domain ownership.</p>
+   * Contains information about the domain names on an SSL/TLS certificate that you will use to validate domain ownership.
    */
   @js.native
   trait LoadBalancerTlsCertificateDomainValidationOption extends js.Object {
@@ -4401,7 +4403,7 @@ package lightsail {
   }
 
   /**
-   * <p>Describes the validation record of each domain name in the SSL/TLS certificate.</p>
+   * Describes the validation record of each domain name in the SSL/TLS certificate.
    */
   @js.native
   trait LoadBalancerTlsCertificateDomainValidationRecord extends js.Object {
@@ -4450,7 +4452,7 @@ package lightsail {
   }
 
   /**
-   * <p>Contains information about the status of Lightsail's managed renewal for the certificate.</p>
+   * Contains information about the status of Lightsail's managed renewal for the certificate.
    */
   @js.native
   trait LoadBalancerTlsCertificateRenewalSummary extends js.Object {
@@ -4499,7 +4501,7 @@ package lightsail {
   }
 
   /**
-   * <p>Provides a summary of SSL/TLS certificate metadata.</p>
+   * Provides a summary of SSL/TLS certificate metadata.
    */
   @js.native
   trait LoadBalancerTlsCertificateSummary extends js.Object {
@@ -4520,7 +4522,7 @@ package lightsail {
   }
 
   /**
-   * <p>Describes a database log event.</p>
+   * Describes a database log event.
    */
   @js.native
   trait LogEvent extends js.Object {
@@ -4541,7 +4543,7 @@ package lightsail {
   }
 
   /**
-   * <p>Describes the metric data point.</p>
+   * Describes the metric data point.
    */
   @js.native
   trait MetricDatapoint extends js.Object {
@@ -4619,7 +4621,7 @@ package lightsail {
   }
 
   /**
-   * <p>Describes the monthly data transfer in and out of your virtual private server (or <i>instance</i>).</p>
+   * Describes the monthly data transfer in and out of your virtual private server (or <i>instance</i>).
    */
   @js.native
   trait MonthlyTransfer extends js.Object {
@@ -4678,7 +4680,7 @@ package lightsail {
   }
 
   /**
-   * <p>Describes the API operation.</p>
+   * Describes the API operation.
    */
   @js.native
   trait Operation extends js.Object {
@@ -4788,7 +4790,7 @@ package lightsail {
   }
 
   /**
-   * <p>The password data for the Windows Server-based instance, including the ciphertext and the key pair name.</p>
+   * The password data for the Windows Server-based instance, including the ciphertext and the key pair name.
    */
   @js.native
   trait PasswordData extends js.Object {
@@ -4837,7 +4839,7 @@ package lightsail {
   }
 
   /**
-   * <p>Describes a pending database maintenance action.</p>
+   * Describes a pending database maintenance action.
    */
   @js.native
   trait PendingMaintenanceAction extends js.Object {
@@ -4861,7 +4863,7 @@ package lightsail {
   }
 
   /**
-   * <p>Describes a pending database value modification.</p>
+   * Describes a pending database value modification.
    */
   @js.native
   trait PendingModifiedRelationalDatabaseValues extends js.Object {
@@ -4892,7 +4894,7 @@ package lightsail {
   }
 
   /**
-   * <p>Describes information about the ports on your virtual private server (or <i>instance</i>).</p>
+   * Describes information about the ports on your virtual private server (or <i>instance</i>).
    */
   @js.native
   trait PortInfo extends js.Object {
@@ -5032,7 +5034,7 @@ package lightsail {
   }
 
   /**
-   * <p>Describes the AWS Region.</p>
+   * Describes the AWS Region.
    */
   @js.native
   trait Region extends js.Object {
@@ -5084,7 +5086,7 @@ package lightsail {
   }
 
   /**
-   * <p>Describes a database.</p>
+   * Describes a database.
    */
   @js.native
   trait RelationalDatabase extends js.Object {
@@ -5174,7 +5176,7 @@ package lightsail {
   }
 
   /**
-   * <p>Describes a database image, or blueprint. A blueprint describes the major engine version of a database.</p>
+   * Describes a database image, or blueprint. A blueprint describes the major engine version of a database.
    */
   @js.native
   trait RelationalDatabaseBlueprint extends js.Object {
@@ -5207,7 +5209,7 @@ package lightsail {
   }
 
   /**
-   * <p>Describes a database bundle. A bundle describes the performance specifications of the database.</p>
+   * Describes a database bundle. A bundle describes the performance specifications of the database.
    */
   @js.native
   trait RelationalDatabaseBundle extends js.Object {
@@ -5249,7 +5251,7 @@ package lightsail {
   }
 
   /**
-   * <p>Describes an endpoint for a database.</p>
+   * Describes an endpoint for a database.
    */
   @js.native
   trait RelationalDatabaseEndpoint extends js.Object {
@@ -5276,7 +5278,7 @@ package lightsail {
   }
 
   /**
-   * <p>Describes an event for a database.</p>
+   * Describes an event for a database.
    */
   @js.native
   trait RelationalDatabaseEvent extends js.Object {
@@ -5303,7 +5305,7 @@ package lightsail {
   }
 
   /**
-   * <p>Describes the hardware of a database.</p>
+   * Describes the hardware of a database.
    */
   @js.native
   trait RelationalDatabaseHardware extends js.Object {
@@ -5338,7 +5340,7 @@ package lightsail {
   }
 
   /**
-   * <p>Describes the parameters of a database.</p>
+   * Describes the parameters of a database.
    */
   @js.native
   trait RelationalDatabaseParameter extends js.Object {
@@ -5385,7 +5387,7 @@ package lightsail {
   }
 
   /**
-   * <p>Describes a database snapshot.</p>
+   * Describes a database snapshot.
    */
   @js.native
   trait RelationalDatabaseSnapshot extends js.Object {
@@ -5475,7 +5477,7 @@ package lightsail {
   }
 
   /**
-   * <p>Describes the resource location.</p>
+   * Describes the resource location.
    */
   @js.native
   trait ResourceLocation extends js.Object {
@@ -5575,7 +5577,7 @@ package lightsail {
   }
 
   /**
-   * <p>Describes the static IP.</p>
+   * Describes the static IP.
    */
   @js.native
   trait StaticIp extends js.Object {
@@ -5683,7 +5685,8 @@ package lightsail {
   }
 
   /**
-   * <p>Describes a tag key and optional value assigned to an Amazon Lightsail resource.</p> <p>For more information about tags in Lightsail, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-tags">Lightsail Dev Guide</a>.</p>
+   * Describes a tag key and optional value assigned to an Amazon Lightsail resource.
+   *  For more information about tags in Lightsail, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-tags">Lightsail Dev Guide</a>.
    */
   @js.native
   trait Tag extends js.Object {

@@ -111,7 +111,7 @@ package iotjobsdataplane {
   }
 
   /**
-   * <p>Contains data about a job execution.</p>
+   * Contains data about a job execution.
    */
   @js.native
   trait JobExecution extends js.Object {
@@ -159,7 +159,7 @@ package iotjobsdataplane {
   }
 
   /**
-   * <p>Contains data about the state of a job execution.</p>
+   * Contains data about the state of a job execution.
    */
   @js.native
   trait JobExecutionState extends js.Object {
@@ -196,7 +196,7 @@ package iotjobsdataplane {
   }
 
   /**
-   * <p>Contains a subset of information about a job execution.</p>
+   * Contains a subset of information about a job execution.
    */
   @js.native
   trait JobExecutionSummary extends js.Object {

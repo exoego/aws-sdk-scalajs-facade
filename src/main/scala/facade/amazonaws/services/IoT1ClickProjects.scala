@@ -279,7 +279,7 @@ package iot1clickprojects {
   }
 
   /**
-   * <p>An object representing a device for a placement template (see <a>PlacementTemplate</a>).</p>
+   * An object representing a device for a placement template (see '''PlacementTemplate''').
    */
   @js.native
   trait DeviceTemplate extends js.Object {
@@ -460,7 +460,7 @@ package iot1clickprojects {
   }
 
   /**
-   * <p>An object describing a project's placement.</p>
+   * An object describing a project's placement.
    */
   @js.native
   trait PlacementDescription extends js.Object {
@@ -490,7 +490,7 @@ package iot1clickprojects {
   }
 
   /**
-   * <p>An object providing summary information for a particular placement.</p>
+   * An object providing summary information for a particular placement.
    */
   @js.native
   trait PlacementSummary extends js.Object {
@@ -517,7 +517,7 @@ package iot1clickprojects {
   }
 
   /**
-   * <p>An object defining the template for a placement.</p>
+   * An object defining the template for a placement.
    */
   @js.native
   trait PlacementTemplate extends js.Object {
@@ -538,7 +538,7 @@ package iot1clickprojects {
   }
 
   /**
-   * <p>An object providing detailed information for a particular project associated with an AWS account and region.</p>
+   * An object providing detailed information for a particular project associated with an AWS account and region.
    */
   @js.native
   trait ProjectDescription extends js.Object {
@@ -568,7 +568,7 @@ package iot1clickprojects {
   }
 
   /**
-   * <p>An object providing summary information for a particular project for an associated AWS account and region.</p>
+   * An object providing summary information for a particular project for an associated AWS account and region.
    */
   @js.native
   trait ProjectSummary extends js.Object {

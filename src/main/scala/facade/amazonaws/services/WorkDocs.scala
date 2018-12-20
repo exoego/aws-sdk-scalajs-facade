@@ -192,7 +192,7 @@ package workdocs {
   }
 
   /**
-   * <p>Describes the activity information.</p>
+   * Describes the activity information.
    */
   @js.native
   trait Activity extends js.Object {
@@ -318,7 +318,7 @@ package workdocs {
   }
 
   /**
-   * <p>Describes a comment.</p>
+   * Describes a comment.
    */
   @js.native
   trait Comment extends js.Object {
@@ -360,7 +360,7 @@ package workdocs {
   }
 
   /**
-   * <p>Describes the metadata of a comment.</p>
+   * Describes the metadata of a comment.
    */
   @js.native
   trait CommentMetadata extends js.Object {
@@ -1306,7 +1306,7 @@ package workdocs {
   }
 
   /**
-   * <p>Describes the document.</p>
+   * Describes the document.
    */
   @js.native
   trait DocumentMetadata extends js.Object {
@@ -1367,7 +1367,7 @@ package workdocs {
   }
 
   /**
-   * <p>Describes a version of a document.</p>
+   * Describes a version of a document.
    */
   @js.native
   trait DocumentVersionMetadata extends js.Object {
@@ -1435,7 +1435,7 @@ package workdocs {
   }
 
   /**
-   * <p>Describes a folder.</p>
+   * Describes a folder.
    */
   @js.native
   trait FolderMetadata extends js.Object {
@@ -1768,7 +1768,7 @@ package workdocs {
   }
 
   /**
-   * <p>Describes the metadata of a user group.</p>
+   * Describes the metadata of a user group.
    */
   @js.native
   trait GroupMetadata extends js.Object {
@@ -1859,7 +1859,7 @@ package workdocs {
   }
 
   /**
-   * <p>Set of options which defines notification preferences of given action.</p>
+   * Set of options which defines notification preferences of given action.
    */
   @js.native
   trait NotificationOptions extends js.Object {
@@ -1887,7 +1887,7 @@ package workdocs {
   }
 
   /**
-   * <p>Describes the users or user groups.</p>
+   * Describes the users or user groups.
    */
   @js.native
   trait Participants extends js.Object {
@@ -1908,7 +1908,7 @@ package workdocs {
   }
 
   /**
-   * <p>Describes the permissions.</p>
+   * Describes the permissions.
    */
   @js.native
   trait PermissionInfo extends js.Object {
@@ -1929,7 +1929,7 @@ package workdocs {
   }
 
   /**
-   * <p>Describes a resource.</p>
+   * Describes a resource.
    */
   @js.native
   trait Principal extends js.Object {
@@ -2011,7 +2011,7 @@ package workdocs {
   }
 
   /**
-   * <p>Describes the metadata of a resource.</p>
+   * Describes the metadata of a resource.
    */
   @js.native
   trait ResourceMetadata extends js.Object {
@@ -2047,7 +2047,7 @@ package workdocs {
   }
 
   /**
-   * <p>Describes the path information of a resource.</p>
+   * Describes the path information of a resource.
    */
   @js.native
   trait ResourcePath extends js.Object {
@@ -2065,7 +2065,7 @@ package workdocs {
   }
 
   /**
-   * <p>Describes the resource path.</p>
+   * Describes the resource path.
    */
   @js.native
   trait ResourcePathComponent extends js.Object {
@@ -2125,7 +2125,7 @@ package workdocs {
   }
 
   /**
-   * <p>Describes the recipient type and ID, if available.</p>
+   * Describes the recipient type and ID, if available.
    */
   @js.native
   trait SharePrincipal extends js.Object {
@@ -2149,7 +2149,7 @@ package workdocs {
   }
 
   /**
-   * <p>Describes the share results of a resource.</p>
+   * Describes the share results of a resource.
    */
   @js.native
   trait ShareResult extends js.Object {
@@ -2189,7 +2189,7 @@ package workdocs {
   }
 
   /**
-   * <p>Describes the storage for a user.</p>
+   * Describes the storage for a user.
    */
   @js.native
   trait StorageRuleType extends js.Object {
@@ -2217,7 +2217,7 @@ package workdocs {
   }
 
   /**
-   * <p>Describes a subscription.</p>
+   * Describes a subscription.
    */
   @js.native
   trait Subscription extends js.Object {
@@ -2385,7 +2385,7 @@ package workdocs {
   }
 
   /**
-   * <p>Describes the upload.</p>
+   * Describes the upload.
    */
   @js.native
   trait UploadMetadata extends js.Object {
@@ -2406,7 +2406,7 @@ package workdocs {
   }
 
   /**
-   * <p>Describes a user.</p>
+   * Describes a user.
    */
   @js.native
   trait User extends js.Object {
@@ -2473,7 +2473,7 @@ package workdocs {
   }
 
   /**
-   * <p>Describes the metadata of the user.</p>
+   * Describes the metadata of the user.
    */
   @js.native
   trait UserMetadata extends js.Object {
@@ -2521,7 +2521,7 @@ package workdocs {
   }
 
   /**
-   * <p>Describes the storage for a user.</p>
+   * Describes the storage for a user.
    */
   @js.native
   trait UserStorageMetadata extends js.Object {

@@ -66,7 +66,20 @@ package s3control {
   }
 
   /**
-   * <p>The container element for all Public Access Block configuration options. You can enable the configuration options in any combination.</p> <p>Amazon S3 considers a bucket policy public unless at least one of the following conditions is true:</p> <ol> <li> <p>The policy limits access to a set of CIDRs using <code>aws:SourceIp</code>. For more information on CIDR, see <a href="http://www.rfc-editor.org/rfc/rfc4632.txt">http://www.rfc-editor.org/rfc/rfc4632.txt</a> </p> </li> <li> <p>The policy grants permissions, not including any "bad actions," to one of the following:</p> <ul> <li> <p>A fixed AWS principal, user, role, or service principal</p> </li> <li> <p>A fixed <code>aws:SourceArn</code> </p> </li> <li> <p>A fixed <code>aws:SourceVpc</code> </p> </li> <li> <p>A fixed <code>aws:SourceVpce</code> </p> </li> <li> <p>A fixed <code>aws:SourceOwner</code> </p> </li> <li> <p>A fixed <code>aws:SourceAccount</code> </p> </li> <li> <p>A fixed value of <code>s3:x-amz-server-side-encryption-aws-kms-key-id</code> </p> </li> <li> <p>A fixed value of <code>aws:userid</code> outside the pattern "<code>AROLEID:*</code>"</p> </li> </ul> </li> </ol> <p>"Bad actions" are those that could expose the data inside a bucket to reads or writes by the public. These actions are <code>s3:Get*</code>, <code>s3:List*</code>, <code>s3:AbortMultipartUpload</code>, <code>s3:Delete*</code>, <code>s3:Put*</code>, and <code>s3:RestoreObject</code>.</p> <p>The star notation for bad actions indicates that all matching operations are considered bad actions. For example, because <code>s3:Get*</code> is a bad action, <code>s3:GetObject</code>, <code>s3:GetObjectVersion</code>, and <code>s3:GetObjectAcl</code> are all bad actions.</p>
+   * The container element for all Public Access Block configuration options. You can enable the configuration options in any combination.
+   *  Amazon S3 considers a bucket policy public unless at least one of the following conditions is true:
+   *  <ol> * The policy limits access to a set of CIDRs using <code>aws:SourceIp</code>. For more information on CIDR, see <a href="http://www.rfc-editor.org/rfc/rfc4632.txt">http://www.rfc-editor.org/rfc/rfc4632.txt</a>
+   *  * The policy grants permissions, not including any "bad actions," to one of the following:
+   * <li> A fixed AWS principal, user, role, or service principal
+   *  * A fixed <code>aws:SourceArn</code>
+   *  * A fixed <code>aws:SourceVpc</code>
+   *  * A fixed <code>aws:SourceVpce</code>
+   *  * A fixed <code>aws:SourceOwner</code>
+   *  * A fixed <code>aws:SourceAccount</code>
+   *  * A fixed value of <code>s3:x-amz-server-side-encryption-aws-kms-key-id</code>
+   *  * A fixed value of <code>aws:userid</code> outside the pattern "<code>AROLEID:*</code>"
+   * </li> </ol> "Bad actions" are those that could expose the data inside a bucket to reads or writes by the public. These actions are <code>s3:Get*</code>, <code>s3:List*</code>, <code>s3:AbortMultipartUpload</code>, <code>s3:Delete*</code>, <code>s3:Put*</code>, and <code>s3:RestoreObject</code>.
+   *  The star notation for bad actions indicates that all matching operations are considered bad actions. For example, because <code>s3:Get*</code> is a bad action, <code>s3:GetObject</code>, <code>s3:GetObjectVersion</code>, and <code>s3:GetObjectAcl</code> are all bad actions.
    */
   @js.native
   trait PublicAccessBlockConfiguration extends js.Object {

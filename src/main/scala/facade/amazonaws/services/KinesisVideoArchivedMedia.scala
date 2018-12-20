@@ -35,7 +35,7 @@ package kinesisvideoarchivedmedia {
   }
 
   /**
-   * <p>Kinesis Video Streams has throttled the request because you have exceeded the limit of allowed client calls. Try making the call later.</p>
+   * Kinesis Video Streams has throttled the request because you have exceeded the limit of allowed client calls. Try making the call later.
    */
   @js.native
   trait ClientLimitExceededExceptionException extends js.Object {
@@ -50,7 +50,7 @@ package kinesisvideoarchivedmedia {
   }
 
   /**
-   * <p>Represents a segment of video or other time-delimited data.</p>
+   * Represents a segment of video or other time-delimited data.
    */
   @js.native
   trait Fragment extends js.Object {
@@ -80,7 +80,7 @@ package kinesisvideoarchivedmedia {
   }
 
   /**
-   * <p>Describes the time stamp range and time stamp origin of a range of fragments.</p>
+   * Describes the time stamp range and time stamp origin of a range of fragments.
    */
   @js.native
   trait FragmentSelector extends js.Object {
@@ -192,7 +192,7 @@ package kinesisvideoarchivedmedia {
   }
 
   /**
-   * <p>Contains the range of time stamps for the requested media, and the source of the time stamps.</p>
+   * Contains the range of time stamps for the requested media, and the source of the time stamps.
    */
   @js.native
   trait HLSFragmentSelector extends js.Object {
@@ -220,7 +220,10 @@ package kinesisvideoarchivedmedia {
   }
 
   /**
-   * <p>The start and end of the time stamp range for the requested media.</p> <p>This value should not be present if <code>PlaybackType</code> is <code>LIVE</code>.</p> <note> <p>The values in the <code>HLSTimestampRange</code> are inclusive. Fragments that begin before the start time but continue past it, or fragments that begin before the end time but continue past it, are included in the session.</p> </note>
+   * The start and end of the time stamp range for the requested media.
+   *  This value should not be present if <code>PlaybackType</code> is <code>LIVE</code>.
+   *
+   * '''Note:'''The values in the <code>HLSTimestampRange</code> are inclusive. Fragments that begin before the start time but continue past it, or fragments that begin before the end time but continue past it, are included in the session.
    */
   @js.native
   trait HLSTimestampRange extends js.Object {
@@ -241,7 +244,7 @@ package kinesisvideoarchivedmedia {
   }
 
   /**
-   * <p>A specified parameter exceeds its restrictions, is not supported, or can't be used.</p>
+   * A specified parameter exceeds its restrictions, is not supported, or can't be used.
    */
   @js.native
   trait InvalidArgumentExceptionException extends js.Object {
@@ -249,7 +252,7 @@ package kinesisvideoarchivedmedia {
   }
 
   /**
-   * <p>The Codec Private Data in the video stream is not valid for this operation.</p>
+   * The Codec Private Data in the video stream is not valid for this operation.
    */
   @js.native
   trait InvalidCodecPrivateDataExceptionException extends js.Object {
@@ -299,7 +302,7 @@ package kinesisvideoarchivedmedia {
   }
 
   /**
-   * <p>No Codec Private Data was found in the video stream.</p>
+   * No Codec Private Data was found in the video stream.
    */
   @js.native
   trait MissingCodecPrivateDataExceptionException extends js.Object {
@@ -307,7 +310,7 @@ package kinesisvideoarchivedmedia {
   }
 
   /**
-   * <p>A <code>PlaybackMode</code> of <code>ON_DEMAND</code> was requested for a stream that does not retain data (that is, has a <code>DataRetentionInHours</code> of 0). </p>
+   * A <code>PlaybackMode</code> of <code>ON_DEMAND</code> was requested for a stream that does not retain data (that is, has a <code>DataRetentionInHours</code> of 0).
    */
   @js.native
   trait NoDataRetentionExceptionException extends js.Object {
@@ -315,7 +318,7 @@ package kinesisvideoarchivedmedia {
   }
 
   /**
-   * <p>Status Code: 403, The caller is not authorized to perform an operation on the given stream, or the token has expired.</p>
+   * Status Code: 403, The caller is not authorized to perform an operation on the given stream, or the token has expired.
    */
   @js.native
   trait NotAuthorizedExceptionException extends js.Object {
@@ -330,7 +333,8 @@ package kinesisvideoarchivedmedia {
   }
 
   /**
-   * <p> <code>GetMedia</code> throws this error when Kinesis Video Streams can't find the stream that you specified.</p> <p> <code>GetHLSStreamingSessionURL</code> throws this error if a session with a <code>PlaybackMode</code> of <code>ON_DEMAND</code> is requested for a stream that has no fragments within the requested time range, or if a session with a <code>PlaybackMode</code> of <code>LIVE</code> is requested for a stream that has no fragments within the last 30 seconds.</p>
+   * <code>GetMedia</code> throws this error when Kinesis Video Streams can't find the stream that you specified.
+   *  <code>GetHLSStreamingSessionURL</code> throws this error if a session with a <code>PlaybackMode</code> of <code>ON_DEMAND</code> is requested for a stream that has no fragments within the requested time range, or if a session with a <code>PlaybackMode</code> of <code>LIVE</code> is requested for a stream that has no fragments within the last 30 seconds.
    */
   @js.native
   trait ResourceNotFoundExceptionException extends js.Object {
@@ -338,7 +342,7 @@ package kinesisvideoarchivedmedia {
   }
 
   /**
-   * <p>The range of time stamps for which to return fragments.</p>
+   * The range of time stamps for which to return fragments.
    */
   @js.native
   trait TimestampRange extends js.Object {
@@ -359,7 +363,7 @@ package kinesisvideoarchivedmedia {
   }
 
   /**
-   * <p>An HLS streaming session was requested for a stream with a media type that is not <code>video/h264</code>.</p>
+   * An HLS streaming session was requested for a stream with a media type that is not <code>video/h264</code>.
    */
   @js.native
   trait UnsupportedStreamMediaTypeExceptionException extends js.Object {

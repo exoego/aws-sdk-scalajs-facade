@@ -114,7 +114,7 @@ package kms {
   }
 
   /**
-   * <p>Contains information about an alias.</p>
+   * Contains information about an alias.
    */
   @js.native
   trait AliasListEntry extends js.Object {
@@ -372,7 +372,7 @@ package kms {
   }
 
   /**
-   * <p>Contains information about each custom key store in the custom key store list.</p>
+   * Contains information about each custom key store in the custom key store list.
    */
   @js.native
   trait CustomKeyStoresListEntry extends js.Object {
@@ -961,7 +961,8 @@ package kms {
   }
 
   /**
-   * <p>A structure that you can use to allow certain operations in the grant only when the desired encryption context is present. For more information about encryption context, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/encryption-context.html">Encryption Context</a> in the <i>AWS Key Management Service Developer Guide</i>.</p> <p>Grant constraints apply only to operations that accept encryption context as input. For example, the <code> <a>DescribeKey</a> </code> operation does not accept encryption context as input. A grant that allows the <code>DescribeKey</code> operation does so regardless of the grant constraints. In constrast, the <code> <a>Encrypt</a> </code> operation accepts encryption context as input. A grant that allows the <code>Encrypt</code> operation does so only when the encryption context of the <code>Encrypt</code> operation satisfies the grant constraints.</p>
+   * A structure that you can use to allow certain operations in the grant only when the desired encryption context is present. For more information about encryption context, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/encryption-context.html">Encryption Context</a> in the <i>AWS Key Management Service Developer Guide</i>.
+   *  Grant constraints apply only to operations that accept encryption context as input. For example, the <code> '''DescribeKey''' </code> operation does not accept encryption context as input. A grant that allows the <code>DescribeKey</code> operation does so regardless of the grant constraints. In constrast, the <code> '''Encrypt''' </code> operation accepts encryption context as input. A grant that allows the <code>Encrypt</code> operation does so only when the encryption context of the <code>Encrypt</code> operation satisfies the grant constraints.
    */
   @js.native
   trait GrantConstraints extends js.Object {
@@ -982,7 +983,7 @@ package kms {
   }
 
   /**
-   * <p>Contains information about an entry in a list of grants.</p>
+   * Contains information about an entry in a list of grants.
    */
   @js.native
   trait GrantListEntry extends js.Object {
@@ -1078,7 +1079,7 @@ package kms {
   }
 
   /**
-   * <p>Contains information about each entry in the key list.</p>
+   * Contains information about each entry in the key list.
    */
   @js.native
   trait KeyListEntry extends js.Object {
@@ -1106,7 +1107,8 @@ package kms {
   }
 
   /**
-   * <p>Contains metadata about a customer master key (CMK).</p> <p>This data type is used as a response element for the <a>CreateKey</a> and <a>DescribeKey</a> operations.</p>
+   * Contains metadata about a customer master key (CMK).
+   *  This data type is used as a response element for the '''CreateKey''' and '''DescribeKey''' operations.
    */
   @js.native
   trait KeyMetadata extends js.Object {
@@ -1565,7 +1567,8 @@ package kms {
   }
 
   /**
-   * <p>A key-value pair. A tag consists of a tag key and a tag value. Tag keys and tag values are both required, but tag values can be empty (null) strings.</p> <p>For information about the rules that apply to tag keys and tag values, see <a href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/allocation-tag-restrictions.html">User-Defined Tag Restrictions</a> in the <i>AWS Billing and Cost Management User Guide</i>.</p>
+   * A key-value pair. A tag consists of a tag key and a tag value. Tag keys and tag values are both required, but tag values can be empty (null) strings.
+   *  For information about the rules that apply to tag keys and tag values, see <a href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/allocation-tag-restrictions.html">User-Defined Tag Restrictions</a> in the <i>AWS Billing and Cost Management User Guide</i>.
    */
   @js.native
   trait Tag extends js.Object {

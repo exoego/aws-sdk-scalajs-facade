@@ -88,7 +88,7 @@ package applicationdiscovery {
   }
 
   /**
-   * <p>Information about agents or connectors that were instructed to start collecting data. Information includes the agent/connector ID, a description of the operation, and whether the agent/connector configuration was updated.</p>
+   * Information about agents or connectors that were instructed to start collecting data. Information includes the agent/connector ID, a description of the operation, and whether the agent/connector configuration was updated.
    */
   @js.native
   trait AgentConfigurationStatus extends js.Object {
@@ -112,7 +112,7 @@ package applicationdiscovery {
   }
 
   /**
-   * <p>Information about agents or connectors associated with the user�fs AWS account. Information includes agent or connector IDs, IP addresses, media access control (MAC) addresses, agent or connector health, hostname where the agent or connector resides, and agent version for each agent.</p>
+   * Information about agents or connectors associated with the user�fs AWS account. Information includes agent or connector IDs, IP addresses, media access control (MAC) addresses, agent or connector health, hostname where the agent or connector resides, and agent version for each agent.
    */
   @js.native
   trait AgentInfo extends js.Object {
@@ -157,7 +157,7 @@ package applicationdiscovery {
   }
 
   /**
-   * <p>Network details about the host where the agent/connector resides.</p>
+   * Network details about the host where the agent/connector resides.
    */
   @js.native
   trait AgentNetworkInfo extends js.Object {
@@ -229,7 +229,7 @@ package applicationdiscovery {
   }
 
   /**
-   * <p>Tags for a configuration item. Tags are metadata that help you categorize IT assets.</p>
+   * Tags for a configuration item. Tags are metadata that help you categorize IT assets.
    */
   @js.native
   trait ConfigurationTag extends js.Object {
@@ -259,7 +259,7 @@ package applicationdiscovery {
   }
 
   /**
-   * <p>A list of continuous export descriptions.</p>
+   * A list of continuous export descriptions.
    */
   @js.native
   trait ContinuousExportDescription extends js.Object {
@@ -374,7 +374,7 @@ package applicationdiscovery {
   }
 
   /**
-   * <p>Inventory data for installed discovery agents.</p>
+   * Inventory data for installed discovery agents.
    */
   @js.native
   trait CustomerAgentInfo extends js.Object {
@@ -410,7 +410,7 @@ package applicationdiscovery {
   }
 
   /**
-   * <p>Inventory data for installed discovery connectors.</p>
+   * Inventory data for installed discovery connectors.
    */
   @js.native
   trait CustomerConnectorInfo extends js.Object {
@@ -795,7 +795,7 @@ package applicationdiscovery {
   }
 
   /**
-   * <p>Used to select which agent's data is to be exported. A single agent ID may be selected for export using the <a href="http://docs.aws.amazon.com/application-discovery/latest/APIReference/API_StartExportTask.html">StartExportTask</a> action.</p>
+   * Used to select which agent's data is to be exported. A single agent ID may be selected for export using the <a href="http://docs.aws.amazon.com/application-discovery/latest/APIReference/API_StartExportTask.html">StartExportTask</a> action.
    */
   @js.native
   trait ExportFilter extends js.Object {
@@ -819,7 +819,7 @@ package applicationdiscovery {
   }
 
   /**
-   * <p>Information regarding the export status of discovered data. The value is an array of objects.</p>
+   * Information regarding the export status of discovered data. The value is an array of objects.
    */
   @js.native
   trait ExportInfo extends js.Object {
@@ -866,7 +866,8 @@ package applicationdiscovery {
   }
 
   /**
-   * <p>A filter that can use conditional operators.</p> <p>For more information about filters, see <a href="http://docs.aws.amazon.com/application-discovery/latest/APIReference/discovery-api-queries.html">Querying Discovered Configuration Items</a>. </p>
+   * A filter that can use conditional operators.
+   *  For more information about filters, see <a href="http://docs.aws.amazon.com/application-discovery/latest/APIReference/discovery-api-queries.html">Querying Discovered Configuration Items</a>.
    */
   @js.native
   trait Filter extends js.Object {
@@ -1026,7 +1027,7 @@ package applicationdiscovery {
   }
 
   /**
-   * <p>Details about neighboring servers.</p>
+   * Details about neighboring servers.
    */
   @js.native
   trait NeighborConnectionDetail extends js.Object {
@@ -1056,7 +1057,7 @@ package applicationdiscovery {
   }
 
   /**
-   * <p>A field and direction for ordered output.</p>
+   * A field and direction for ordered output.
    */
   @js.native
   trait OrderByElement extends js.Object {
@@ -1249,7 +1250,7 @@ package applicationdiscovery {
   }
 
   /**
-   * <p>Metadata that help you categorize IT assets.</p>
+   * Metadata that help you categorize IT assets.
    */
   @js.native
   trait Tag extends js.Object {
@@ -1270,7 +1271,7 @@ package applicationdiscovery {
   }
 
   /**
-   * <p>The tag filter. Valid names are: <code>tagKey</code>, <code>tagValue</code>, <code>configurationId</code>.</p>
+   * The tag filter. Valid names are: <code>tagKey</code>, <code>tagValue</code>, <code>configurationId</code>.
    */
   @js.native
   trait TagFilter extends js.Object {

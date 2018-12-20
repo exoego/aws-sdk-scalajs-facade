@@ -26,7 +26,7 @@ package comprehendmedical {
   }
 
   /**
-   * <p> An extracted segment of the text that is an attribute of an entity, or otherwise related to an entity, such as the dosage of a medication taken. It contains information about the attribute such as id, begin and end offset within the input text, and the segment of the input text. </p>
+   * An extracted segment of the text that is an attribute of an entity, or otherwise related to an entity, such as the dosage of a medication taken. It contains information about the attribute such as id, begin and end offset within the input text, and the segment of the input text.
    */
   @js.native
   trait Attribute extends js.Object {
@@ -143,7 +143,7 @@ package comprehendmedical {
   }
 
   /**
-   * <p> Provides information about an extracted medical entity.</p>
+   * Provides information about an extracted medical entity.
    */
   @js.native
   trait Entity extends js.Object {
@@ -228,7 +228,7 @@ package comprehendmedical {
   }
 
   /**
-   * <p> Provides contextual information about the extracted entity. </p>
+   * Provides contextual information about the extracted entity.
    */
   @js.native
   trait Trait extends js.Object {
@@ -249,7 +249,7 @@ package comprehendmedical {
   }
 
   /**
-   * <p> An attribute that we extracted, but were unable to relate to an entity. </p>
+   * An attribute that we extracted, but were unable to relate to an entity.
    */
   @js.native
   trait UnmappedAttribute extends js.Object {

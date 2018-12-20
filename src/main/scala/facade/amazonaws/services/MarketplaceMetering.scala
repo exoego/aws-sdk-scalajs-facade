@@ -31,7 +31,7 @@ package marketplacemetering {
   }
 
   /**
-   * <p>A BatchMeterUsageRequest contains UsageRecords, which indicate quantities of usage within your application.</p>
+   * A BatchMeterUsageRequest contains UsageRecords, which indicate quantities of usage within your application.
    */
   @js.native
   trait BatchMeterUsageRequest extends js.Object {
@@ -52,7 +52,7 @@ package marketplacemetering {
   }
 
   /**
-   * <p>Contains the UsageRecords processed by BatchMeterUsage and any records that have failed due to transient error.</p>
+   * Contains the UsageRecords processed by BatchMeterUsage and any records that have failed due to transient error.
    */
   @js.native
   trait BatchMeterUsageResult extends js.Object {
@@ -154,7 +154,7 @@ package marketplacemetering {
   }
 
   /**
-   * <p>Contains input to the ResolveCustomer operation.</p>
+   * Contains input to the ResolveCustomer operation.
    */
   @js.native
   trait ResolveCustomerRequest extends js.Object {
@@ -172,7 +172,7 @@ package marketplacemetering {
   }
 
   /**
-   * <p>The result of the ResolveCustomer operation. Contains the CustomerIdentifier and product code.</p>
+   * The result of the ResolveCustomer operation. Contains the CustomerIdentifier and product code.
    */
   @js.native
   trait ResolveCustomerResult extends js.Object {
@@ -193,7 +193,8 @@ package marketplacemetering {
   }
 
   /**
-   * <p>A UsageRecord indicates a quantity of usage for a given product, customer, dimension and time.</p> <p>Multiple requests with the same UsageRecords as input will be deduplicated to prevent double charges.</p>
+   * A UsageRecord indicates a quantity of usage for a given product, customer, dimension and time.
+   *  Multiple requests with the same UsageRecords as input will be deduplicated to prevent double charges.
    */
   @js.native
   trait UsageRecord extends js.Object {
@@ -220,7 +221,7 @@ package marketplacemetering {
   }
 
   /**
-   * <p>A UsageRecordResult indicates the status of a given UsageRecord processed by BatchMeterUsage.</p>
+   * A UsageRecordResult indicates the status of a given UsageRecord processed by BatchMeterUsage.
    */
   @js.native
   trait UsageRecordResult extends js.Object {

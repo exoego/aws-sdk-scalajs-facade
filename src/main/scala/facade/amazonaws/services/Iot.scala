@@ -542,7 +542,7 @@ package iot {
   }
 
   /**
-   * <p>Details of abort criteria to abort the job.</p>
+   * Details of abort criteria to abort the job.
    */
   @js.native
   trait AbortConfig extends js.Object {
@@ -560,7 +560,7 @@ package iot {
   }
 
   /**
-   * <p>Details of abort criteria to define rules to abort the job.</p>
+   * Details of abort criteria to define rules to abort the job.
    */
   @js.native
   trait AbortCriteria extends js.Object {
@@ -587,7 +587,7 @@ package iot {
   }
 
   /**
-   * <p>The input for the AcceptCertificateTransfer operation.</p>
+   * The input for the AcceptCertificateTransfer operation.
    */
   @js.native
   trait AcceptCertificateTransferRequest extends js.Object {
@@ -608,7 +608,7 @@ package iot {
   }
 
   /**
-   * <p>Describes the actions associated with a rule.</p>
+   * Describes the actions associated with a rule.
    */
   @js.native
   trait Action extends js.Object {
@@ -680,7 +680,7 @@ package iot {
   }
 
   /**
-   * <p>Information about an active Device Defender security profile behavior violation.</p>
+   * Information about an active Device Defender security profile behavior violation.
    */
   @js.native
   trait ActiveViolation extends js.Object {
@@ -793,7 +793,7 @@ package iot {
   }
 
   /**
-   * <p>A structure containing the alert target ARN and the role ARN.</p>
+   * A structure containing the alert target ARN and the role ARN.
    */
   @js.native
   trait AlertTarget extends js.Object {
@@ -814,7 +814,7 @@ package iot {
   }
 
   /**
-   * <p>The type of alert target: one of "SNS".</p>
+   * The type of alert target: one of "SNS".
    */
   object AlertTargetTypeEnum {
     val SNS = "SNS"
@@ -823,7 +823,7 @@ package iot {
   }
 
   /**
-   * <p>Contains information that allowed the authorization.</p>
+   * Contains information that allowed the authorization.
    */
   @js.native
   trait Allowed extends js.Object {
@@ -901,7 +901,7 @@ package iot {
   }
 
   /**
-   * <p>The input for the AttachPrincipalPolicy operation.</p>
+   * The input for the AttachPrincipalPolicy operation.
    */
   @js.native
   trait AttachPrincipalPolicyRequest extends js.Object {
@@ -953,7 +953,7 @@ package iot {
   }
 
   /**
-   * <p>The input for the AttachThingPrincipal operation.</p>
+   * The input for the AttachThingPrincipal operation.
    */
   @js.native
   trait AttachThingPrincipalRequest extends js.Object {
@@ -974,7 +974,7 @@ package iot {
   }
 
   /**
-   * <p>The output from the AttachThingPrincipal operation.</p>
+   * The output from the AttachThingPrincipal operation.
    */
   @js.native
   trait AttachThingPrincipalResponse extends js.Object {
@@ -990,7 +990,7 @@ package iot {
   }
 
   /**
-   * <p>The attribute payload.</p>
+   * The attribute payload.
    */
   @js.native
   trait AttributePayload extends js.Object {
@@ -1011,7 +1011,7 @@ package iot {
   }
 
   /**
-   * <p>Which audit checks are enabled and disabled for this account.</p>
+   * Which audit checks are enabled and disabled for this account.
    */
   @js.native
   trait AuditCheckConfiguration extends js.Object {
@@ -1029,7 +1029,7 @@ package iot {
   }
 
   /**
-   * <p>Information about the audit check.</p>
+   * Information about the audit check.
    */
   @js.native
   trait AuditCheckDetails extends js.Object {
@@ -1073,7 +1073,7 @@ package iot {
   }
 
   /**
-   * <p>The findings (results) of the audit.</p>
+   * The findings (results) of the audit.
    */
   @js.native
   trait AuditFinding extends js.Object {
@@ -1133,7 +1133,7 @@ package iot {
   }
 
   /**
-   * <p>Information about the targets to which audit notifications are sent.</p>
+   * Information about the targets to which audit notifications are sent.
    */
   @js.native
   trait AuditNotificationTarget extends js.Object {
@@ -1163,7 +1163,7 @@ package iot {
   }
 
   /**
-   * <p>The audits that were performed.</p>
+   * The audits that were performed.
    */
   @js.native
   trait AuditTaskMetadata extends js.Object {
@@ -1211,7 +1211,7 @@ package iot {
   }
 
   /**
-   * <p>A collection of authorization information.</p>
+   * A collection of authorization information.
    */
   @js.native
   trait AuthInfo extends js.Object {
@@ -1232,7 +1232,7 @@ package iot {
   }
 
   /**
-   * <p>The authorizer result.</p>
+   * The authorizer result.
    */
   @js.native
   trait AuthResult extends js.Object {
@@ -1262,7 +1262,7 @@ package iot {
   }
 
   /**
-   * <p>The authorizer description.</p>
+   * The authorizer description.
    */
   @js.native
   trait AuthorizerDescription extends js.Object {
@@ -1308,7 +1308,7 @@ package iot {
   }
 
   /**
-   * <p>The authorizer summary.</p>
+   * The authorizer summary.
    */
   @js.native
   trait AuthorizerSummary extends js.Object {
@@ -1336,7 +1336,7 @@ package iot {
   }
 
   /**
-   * <p>Configuration for the rollout of OTA updates.</p>
+   * Configuration for the rollout of OTA updates.
    */
   @js.native
   trait AwsJobExecutionsRolloutConfig extends js.Object {
@@ -1354,7 +1354,7 @@ package iot {
   }
 
   /**
-   * <p>A Device Defender security profile behavior.</p>
+   * A Device Defender security profile behavior.
    */
   @js.native
   trait Behavior extends js.Object {
@@ -1378,7 +1378,7 @@ package iot {
   }
 
   /**
-   * <p>The criteria by which the behavior is determined to be normal.</p>
+   * The criteria by which the behavior is determined to be normal.
    */
   @js.native
   trait BehaviorCriteria extends js.Object {
@@ -1402,7 +1402,7 @@ package iot {
   }
 
   /**
-   * <p>Additional information about the billing group.</p>
+   * Additional information about the billing group.
    */
   @js.native
   trait BillingGroupMetadata extends js.Object {
@@ -1420,7 +1420,7 @@ package iot {
   }
 
   /**
-   * <p>The properties of a billing group.</p>
+   * The properties of a billing group.
    */
   @js.native
   trait BillingGroupProperties extends js.Object {
@@ -1438,7 +1438,7 @@ package iot {
   }
 
   /**
-   * <p>A CA certificate.</p>
+   * A CA certificate.
    */
   @js.native
   trait CACertificate extends js.Object {
@@ -1465,7 +1465,7 @@ package iot {
   }
 
   /**
-   * <p>Describes a CA certificate.</p>
+   * Describes a CA certificate.
    */
   @js.native
   trait CACertificateDescription extends js.Object {
@@ -1548,7 +1548,7 @@ package iot {
   }
 
   /**
-   * <p>The input for the CancelCertificateTransfer operation.</p>
+   * The input for the CancelCertificateTransfer operation.
    */
   @js.native
   trait CancelCertificateTransferRequest extends js.Object {
@@ -1651,7 +1651,7 @@ package iot {
   }
 
   /**
-   * <p>Information about a certificate.</p>
+   * Information about a certificate.
    */
   @js.native
   trait Certificate extends js.Object {
@@ -1678,7 +1678,7 @@ package iot {
   }
 
   /**
-   * <p>Describes a certificate.</p>
+   * Describes a certificate.
    */
   @js.native
   trait CertificateDescription extends js.Object {
@@ -1743,7 +1743,7 @@ package iot {
   }
 
   /**
-   * <p>When the certificate is valid.</p>
+   * When the certificate is valid.
    */
   @js.native
   trait CertificateValidity extends js.Object {
@@ -1790,7 +1790,7 @@ package iot {
   }
 
   /**
-   * <p>Describes an action that updates a CloudWatch alarm.</p>
+   * Describes an action that updates a CloudWatch alarm.
    */
   @js.native
   trait CloudwatchAlarmAction extends js.Object {
@@ -1817,7 +1817,7 @@ package iot {
   }
 
   /**
-   * <p>Describes an action that captures a CloudWatch metric.</p>
+   * Describes an action that captures a CloudWatch metric.
    */
   @js.native
   trait CloudwatchMetricAction extends js.Object {
@@ -1850,7 +1850,7 @@ package iot {
   }
 
   /**
-   * <p>Describes the method to use when code signing a file.</p>
+   * Describes the method to use when code signing a file.
    */
   @js.native
   trait CodeSigning extends js.Object {
@@ -1874,7 +1874,7 @@ package iot {
   }
 
   /**
-   * <p>Describes the certificate chain being used when code signing a file.</p>
+   * Describes the certificate chain being used when code signing a file.
    */
   @js.native
   trait CodeSigningCertificateChain extends js.Object {
@@ -1895,7 +1895,7 @@ package iot {
   }
 
   /**
-   * <p>Describes the signature for a file.</p>
+   * Describes the signature for a file.
    */
   @js.native
   trait CodeSigningSignature extends js.Object {
@@ -1926,7 +1926,7 @@ package iot {
   }
 
   /**
-   * <p>Configuration.</p>
+   * Configuration.
    */
   @js.native
   trait Configuration extends js.Object {
@@ -2031,7 +2031,7 @@ package iot {
   }
 
   /**
-   * <p>The input for the CreateCertificateFromCsr operation.</p>
+   * The input for the CreateCertificateFromCsr operation.
    */
   @js.native
   trait CreateCertificateFromCsrRequest extends js.Object {
@@ -2052,7 +2052,7 @@ package iot {
   }
 
   /**
-   * <p>The output from the CreateCertificateFromCsr operation.</p>
+   * The output from the CreateCertificateFromCsr operation.
    */
   @js.native
   trait CreateCertificateFromCsrResponse extends js.Object {
@@ -2202,7 +2202,7 @@ package iot {
   }
 
   /**
-   * <p>The input for the CreateKeysAndCertificate operation.</p>
+   * The input for the CreateKeysAndCertificate operation.
    */
   @js.native
   trait CreateKeysAndCertificateRequest extends js.Object {
@@ -2220,7 +2220,7 @@ package iot {
   }
 
   /**
-   * <p>The output of the CreateKeysAndCertificate operation.</p>
+   * The output of the CreateKeysAndCertificate operation.
    */
   @js.native
   trait CreateKeysAndCertificateResponse extends js.Object {
@@ -2310,7 +2310,7 @@ package iot {
   }
 
   /**
-   * <p>The input for the CreatePolicy operation.</p>
+   * The input for the CreatePolicy operation.
    */
   @js.native
   trait CreatePolicyRequest extends js.Object {
@@ -2331,7 +2331,7 @@ package iot {
   }
 
   /**
-   * <p>The output from the CreatePolicy operation.</p>
+   * The output from the CreatePolicy operation.
    */
   @js.native
   trait CreatePolicyResponse extends js.Object {
@@ -2358,7 +2358,7 @@ package iot {
   }
 
   /**
-   * <p>The input for the CreatePolicyVersion operation.</p>
+   * The input for the CreatePolicyVersion operation.
    */
   @js.native
   trait CreatePolicyVersionRequest extends js.Object {
@@ -2382,7 +2382,7 @@ package iot {
   }
 
   /**
-   * <p>The output of the CreatePolicyVersion operation.</p>
+   * The output of the CreatePolicyVersion operation.
    */
   @js.native
   trait CreatePolicyVersionResponse extends js.Object {
@@ -2628,7 +2628,7 @@ package iot {
   }
 
   /**
-   * <p>The input for the CreateThing operation.</p>
+   * The input for the CreateThing operation.
    */
   @js.native
   trait CreateThingRequest extends js.Object {
@@ -2655,7 +2655,7 @@ package iot {
   }
 
   /**
-   * <p>The output of the CreateThing operation.</p>
+   * The output of the CreateThing operation.
    */
   @js.native
   trait CreateThingResponse extends js.Object {
@@ -2679,7 +2679,7 @@ package iot {
   }
 
   /**
-   * <p>The input for the CreateThingType operation.</p>
+   * The input for the CreateThingType operation.
    */
   @js.native
   trait CreateThingTypeRequest extends js.Object {
@@ -2703,7 +2703,7 @@ package iot {
   }
 
   /**
-   * <p>The output of the CreateThingType operation.</p>
+   * The output of the CreateThingType operation.
    */
   @js.native
   trait CreateThingTypeResponse extends js.Object {
@@ -2727,7 +2727,7 @@ package iot {
   }
 
   /**
-   * <p>The input for the CreateTopicRule operation.</p>
+   * The input for the CreateTopicRule operation.
    */
   @js.native
   trait CreateTopicRuleRequest extends js.Object {
@@ -2748,7 +2748,7 @@ package iot {
   }
 
   /**
-   * <p>Describes a custom method used to code sign a file.</p>
+   * Describes a custom method used to code sign a file.
    */
   @js.native
   trait CustomCodeSigning extends js.Object {
@@ -2874,7 +2874,7 @@ package iot {
   }
 
   /**
-   * <p>Input for the DeleteCACertificate operation.</p>
+   * Input for the DeleteCACertificate operation.
    */
   @js.native
   trait DeleteCACertificateRequest extends js.Object {
@@ -2892,7 +2892,7 @@ package iot {
   }
 
   /**
-   * <p>The output for the DeleteCACertificate operation.</p>
+   * The output for the DeleteCACertificate operation.
    */
   @js.native
   trait DeleteCACertificateResponse extends js.Object {
@@ -2908,7 +2908,7 @@ package iot {
   }
 
   /**
-   * <p>The input for the DeleteCertificate operation.</p>
+   * The input for the DeleteCertificate operation.
    */
   @js.native
   trait DeleteCertificateRequest extends js.Object {
@@ -3036,7 +3036,7 @@ package iot {
   }
 
   /**
-   * <p>The input for the DeletePolicy operation.</p>
+   * The input for the DeletePolicy operation.
    */
   @js.native
   trait DeletePolicyRequest extends js.Object {
@@ -3054,7 +3054,7 @@ package iot {
   }
 
   /**
-   * <p>The input for the DeletePolicyVersion operation.</p>
+   * The input for the DeletePolicyVersion operation.
    */
   @js.native
   trait DeletePolicyVersionRequest extends js.Object {
@@ -3075,7 +3075,7 @@ package iot {
   }
 
   /**
-   * <p>The input for the DeleteRegistrationCode operation.</p>
+   * The input for the DeleteRegistrationCode operation.
    */
   @js.native
   trait DeleteRegistrationCodeRequest extends js.Object {
@@ -3091,7 +3091,7 @@ package iot {
   }
 
   /**
-   * <p>The output for the DeleteRegistrationCode operation.</p>
+   * The output for the DeleteRegistrationCode operation.
    */
   @js.native
   trait DeleteRegistrationCodeResponse extends js.Object {
@@ -3253,7 +3253,7 @@ package iot {
   }
 
   /**
-   * <p>The input for the DeleteThing operation.</p>
+   * The input for the DeleteThing operation.
    */
   @js.native
   trait DeleteThingRequest extends js.Object {
@@ -3274,7 +3274,7 @@ package iot {
   }
 
   /**
-   * <p>The output of the DeleteThing operation.</p>
+   * The output of the DeleteThing operation.
    */
   @js.native
   trait DeleteThingResponse extends js.Object {
@@ -3290,7 +3290,7 @@ package iot {
   }
 
   /**
-   * <p>The input for the DeleteThingType operation.</p>
+   * The input for the DeleteThingType operation.
    */
   @js.native
   trait DeleteThingTypeRequest extends js.Object {
@@ -3308,7 +3308,7 @@ package iot {
   }
 
   /**
-   * <p>The output for the DeleteThingType operation.</p>
+   * The output for the DeleteThingType operation.
    */
   @js.native
   trait DeleteThingTypeResponse extends js.Object {
@@ -3324,7 +3324,7 @@ package iot {
   }
 
   /**
-   * <p>The input for the DeleteTopicRule operation.</p>
+   * The input for the DeleteTopicRule operation.
    */
   @js.native
   trait DeleteTopicRuleRequest extends js.Object {
@@ -3360,7 +3360,7 @@ package iot {
   }
 
   /**
-   * <p>Contains information that denied the authorization.</p>
+   * Contains information that denied the authorization.
    */
   @js.native
   trait Denied extends js.Object {
@@ -3381,7 +3381,7 @@ package iot {
   }
 
   /**
-   * <p>The input for the DeprecateThingType operation.</p>
+   * The input for the DeprecateThingType operation.
    */
   @js.native
   trait DeprecateThingTypeRequest extends js.Object {
@@ -3402,7 +3402,7 @@ package iot {
   }
 
   /**
-   * <p>The output for the DeprecateThingType operation.</p>
+   * The output for the DeprecateThingType operation.
    */
   @js.native
   trait DeprecateThingTypeResponse extends js.Object {
@@ -3572,7 +3572,7 @@ package iot {
   }
 
   /**
-   * <p>The input for the DescribeCACertificate operation.</p>
+   * The input for the DescribeCACertificate operation.
    */
   @js.native
   trait DescribeCACertificateRequest extends js.Object {
@@ -3590,7 +3590,7 @@ package iot {
   }
 
   /**
-   * <p>The output from the DescribeCACertificate operation.</p>
+   * The output from the DescribeCACertificate operation.
    */
   @js.native
   trait DescribeCACertificateResponse extends js.Object {
@@ -3611,7 +3611,7 @@ package iot {
   }
 
   /**
-   * <p>The input for the DescribeCertificate operation.</p>
+   * The input for the DescribeCertificate operation.
    */
   @js.native
   trait DescribeCertificateRequest extends js.Object {
@@ -3629,7 +3629,7 @@ package iot {
   }
 
   /**
-   * <p>The output of the DescribeCertificate operation.</p>
+   * The output of the DescribeCertificate operation.
    */
   @js.native
   trait DescribeCertificateResponse extends js.Object {
@@ -3675,7 +3675,7 @@ package iot {
   }
 
   /**
-   * <p>The input for the DescribeEndpoint operation.</p>
+   * The input for the DescribeEndpoint operation.
    */
   @js.native
   trait DescribeEndpointRequest extends js.Object {
@@ -3693,7 +3693,7 @@ package iot {
   }
 
   /**
-   * <p>The output from the DescribeEndpoint operation.</p>
+   * The output from the DescribeEndpoint operation.
    */
   @js.native
   trait DescribeEndpointResponse extends js.Object {
@@ -4126,7 +4126,7 @@ package iot {
   }
 
   /**
-   * <p>The input for the DescribeThing operation.</p>
+   * The input for the DescribeThing operation.
    */
   @js.native
   trait DescribeThingRequest extends js.Object {
@@ -4144,7 +4144,7 @@ package iot {
   }
 
   /**
-   * <p>The output from the DescribeThing operation.</p>
+   * The output from the DescribeThing operation.
    */
   @js.native
   trait DescribeThingResponse extends js.Object {
@@ -4183,7 +4183,7 @@ package iot {
   }
 
   /**
-   * <p>The input for the DescribeThingType operation.</p>
+   * The input for the DescribeThingType operation.
    */
   @js.native
   trait DescribeThingTypeRequest extends js.Object {
@@ -4201,7 +4201,7 @@ package iot {
   }
 
   /**
-   * <p>The output for the DescribeThingType operation.</p>
+   * The output for the DescribeThingType operation.
    */
   @js.native
   trait DescribeThingTypeResponse extends js.Object {
@@ -4231,7 +4231,7 @@ package iot {
   }
 
   /**
-   * <p>Describes the location of the updated firmware.</p>
+   * Describes the location of the updated firmware.
    */
   @js.native
   trait Destination extends js.Object {
@@ -4267,7 +4267,7 @@ package iot {
   }
 
   /**
-   * <p>The input for the DetachPrincipalPolicy operation.</p>
+   * The input for the DetachPrincipalPolicy operation.
    */
   @js.native
   trait DetachPrincipalPolicyRequest extends js.Object {
@@ -4319,7 +4319,7 @@ package iot {
   }
 
   /**
-   * <p>The input for the DetachThingPrincipal operation.</p>
+   * The input for the DetachThingPrincipal operation.
    */
   @js.native
   trait DetachThingPrincipalRequest extends js.Object {
@@ -4340,7 +4340,7 @@ package iot {
   }
 
   /**
-   * <p>The output from the DetachThingPrincipal operation.</p>
+   * The output from the DetachThingPrincipal operation.
    */
   @js.native
   trait DetachThingPrincipalResponse extends js.Object {
@@ -4356,7 +4356,7 @@ package iot {
   }
 
   /**
-   * <p>The input for the DisableTopicRuleRequest operation.</p>
+   * The input for the DisableTopicRuleRequest operation.
    */
   @js.native
   trait DisableTopicRuleRequest extends js.Object {
@@ -4382,7 +4382,13 @@ package iot {
   }
 
   /**
-   * <p>Describes an action to write to a DynamoDB table.</p> <p>The <code>tableName</code>, <code>hashKeyField</code>, and <code>rangeKeyField</code> values must match the values used when you created the table.</p> <p>The <code>hashKeyValue</code> and <code>rangeKeyvalue</code> fields use a substitution template syntax. These templates provide data at runtime. The syntax is as follows: ${<i>sql-expression</i>}.</p> <p>You can specify any valid expression in a WHERE or SELECT clause, including JSON properties, comparisons, calculations, and functions. For example, the following field uses the third level of the topic:</p> <p> <code>"hashKeyValue": "${topic(3)}"</code> </p> <p>The following field uses the timestamp:</p> <p> <code>"rangeKeyValue": "${timestamp()}"</code> </p>
+   * Describes an action to write to a DynamoDB table.
+   *  The <code>tableName</code>, <code>hashKeyField</code>, and <code>rangeKeyField</code> values must match the values used when you created the table.
+   *  The <code>hashKeyValue</code> and <code>rangeKeyvalue</code> fields use a substitution template syntax. These templates provide data at runtime. The syntax is as follows: {<i>sql-expression</i>}.
+   *  You can specify any valid expression in a WHERE or SELECT clause, including JSON properties, comparisons, calculations, and functions. For example, the following field uses the third level of the topic:
+   *  <code>"hashKeyValue": "{topic(3)}"</code>
+   *  The following field uses the timestamp:
+   *  <code>"rangeKeyValue": "{timestamp()}"</code>
    */
   @js.native
   trait DynamoDBAction extends js.Object {
@@ -4427,7 +4433,8 @@ package iot {
   }
 
   /**
-   * <p>Describes an action to write to a DynamoDB table.</p> <p>This DynamoDB action writes each attribute in the message payload into it's own column in the DynamoDB table.</p>
+   * Describes an action to write to a DynamoDB table.
+   *  This DynamoDB action writes each attribute in the message payload into it's own column in the DynamoDB table.
    */
   @js.native
   trait DynamoDBv2Action extends js.Object {
@@ -4455,7 +4462,7 @@ package iot {
   }
 
   /**
-   * <p>The policy that has the effect on the authorization results.</p>
+   * The policy that has the effect on the authorization results.
    */
   @js.native
   trait EffectivePolicy extends js.Object {
@@ -4479,7 +4486,7 @@ package iot {
   }
 
   /**
-   * <p>Describes an action that writes data to an Amazon Elasticsearch Service domain.</p>
+   * Describes an action that writes data to an Amazon Elasticsearch Service domain.
    */
   @js.native
   trait ElasticsearchAction extends js.Object {
@@ -4509,7 +4516,7 @@ package iot {
   }
 
   /**
-   * <p>The input for the EnableTopicRuleRequest operation.</p>
+   * The input for the EnableTopicRuleRequest operation.
    */
   @js.native
   trait EnableTopicRuleRequest extends js.Object {
@@ -4527,7 +4534,7 @@ package iot {
   }
 
   /**
-   * <p>Error information.</p>
+   * Error information.
    */
   @js.native
   trait ErrorInfo extends js.Object {
@@ -4564,7 +4571,7 @@ package iot {
   }
 
   /**
-   * <p>Information that explicitly denies authorization.</p>
+   * Information that explicitly denies authorization.
    */
   @js.native
   trait ExplicitDeny extends js.Object {
@@ -4582,7 +4589,7 @@ package iot {
   }
 
   /**
-   * <p>Allows you to create an exponential rate of rollout for a job.</p>
+   * Allows you to create an exponential rate of rollout for a job.
    */
   @js.native
   trait ExponentialRolloutRate extends js.Object {
@@ -4606,7 +4613,7 @@ package iot {
   }
 
   /**
-   * <p>The location of the OTA update.</p>
+   * The location of the OTA update.
    */
   @js.native
   trait FileLocation extends js.Object {
@@ -4627,7 +4634,7 @@ package iot {
   }
 
   /**
-   * <p>Describes an action that writes data to an Amazon Kinesis Firehose stream.</p>
+   * Describes an action that writes data to an Amazon Kinesis Firehose stream.
    */
   @js.native
   trait FirehoseAction extends js.Object {
@@ -4748,7 +4755,7 @@ package iot {
   }
 
   /**
-   * <p>The input for the GetLoggingOptions operation.</p>
+   * The input for the GetLoggingOptions operation.
    */
   @js.native
   trait GetLoggingOptionsRequest extends js.Object {
@@ -4764,7 +4771,7 @@ package iot {
   }
 
   /**
-   * <p>The output from the GetLoggingOptions operation.</p>
+   * The output from the GetLoggingOptions operation.
    */
   @js.native
   trait GetLoggingOptionsResponse extends js.Object {
@@ -4815,7 +4822,7 @@ package iot {
   }
 
   /**
-   * <p>The input for the GetPolicy operation.</p>
+   * The input for the GetPolicy operation.
    */
   @js.native
   trait GetPolicyRequest extends js.Object {
@@ -4833,7 +4840,7 @@ package iot {
   }
 
   /**
-   * <p>The output from the GetPolicy operation.</p>
+   * The output from the GetPolicy operation.
    */
   @js.native
   trait GetPolicyResponse extends js.Object {
@@ -4869,7 +4876,7 @@ package iot {
   }
 
   /**
-   * <p>The input for the GetPolicyVersion operation.</p>
+   * The input for the GetPolicyVersion operation.
    */
   @js.native
   trait GetPolicyVersionRequest extends js.Object {
@@ -4890,7 +4897,7 @@ package iot {
   }
 
   /**
-   * <p>The output from the GetPolicyVersion operation.</p>
+   * The output from the GetPolicyVersion operation.
    */
   @js.native
   trait GetPolicyVersionResponse extends js.Object {
@@ -4929,7 +4936,7 @@ package iot {
   }
 
   /**
-   * <p>The input to the GetRegistrationCode operation.</p>
+   * The input to the GetRegistrationCode operation.
    */
   @js.native
   trait GetRegistrationCodeRequest extends js.Object {
@@ -4945,7 +4952,7 @@ package iot {
   }
 
   /**
-   * <p>The output from the GetRegistrationCode operation.</p>
+   * The output from the GetRegistrationCode operation.
    */
   @js.native
   trait GetRegistrationCodeResponse extends js.Object {
@@ -4963,7 +4970,7 @@ package iot {
   }
 
   /**
-   * <p>The input for the GetTopicRule operation.</p>
+   * The input for the GetTopicRule operation.
    */
   @js.native
   trait GetTopicRuleRequest extends js.Object {
@@ -4981,7 +4988,7 @@ package iot {
   }
 
   /**
-   * <p>The output from the GetTopicRule operation.</p>
+   * The output from the GetTopicRule operation.
    */
   @js.native
   trait GetTopicRuleResponse extends js.Object {
@@ -5036,7 +5043,7 @@ package iot {
   }
 
   /**
-   * <p>The name and ARN of a group.</p>
+   * The name and ARN of a group.
    */
   @js.native
   trait GroupNameAndArn extends js.Object {
@@ -5057,7 +5064,7 @@ package iot {
   }
 
   /**
-   * <p>Information that implicitly denies authorization. When policy doesn't explicitly deny or allow an action on a resource it is considered an implicit deny.</p>
+   * Information that implicitly denies authorization. When policy doesn't explicitly deny or allow an action on a resource it is considered an implicit deny.
    */
   @js.native
   trait ImplicitDeny extends js.Object {
@@ -5083,7 +5090,7 @@ package iot {
   }
 
   /**
-   * <p>Sends messge data to an AWS IoT Analytics channel.</p>
+   * Sends messge data to an AWS IoT Analytics channel.
    */
   @js.native
   trait IotAnalyticsAction extends js.Object {
@@ -5107,7 +5114,7 @@ package iot {
   }
 
   /**
-   * <p>Sends an input to an AWS IoT Events detector.</p>
+   * Sends an input to an AWS IoT Events detector.
    */
   @js.native
   trait IotEventsAction extends js.Object {
@@ -5131,7 +5138,7 @@ package iot {
   }
 
   /**
-   * <p>The <code>Job</code> object contains details about a job.</p>
+   * The <code>Job</code> object contains details about a job.
    */
   @js.native
   trait Job extends js.Object {
@@ -5197,7 +5204,7 @@ package iot {
   }
 
   /**
-   * <p>The job execution object represents the execution of a job on a particular device.</p>
+   * The job execution object represents the execution of a job on a particular device.
    */
   @js.native
   trait JobExecution extends js.Object {
@@ -5267,7 +5274,7 @@ package iot {
   }
 
   /**
-   * <p>Details of the job execution status.</p>
+   * Details of the job execution status.
    */
   @js.native
   trait JobExecutionStatusDetails extends js.Object {
@@ -5285,7 +5292,7 @@ package iot {
   }
 
   /**
-   * <p>The job execution summary.</p>
+   * The job execution summary.
    */
   @js.native
   trait JobExecutionSummary extends js.Object {
@@ -5315,7 +5322,7 @@ package iot {
   }
 
   /**
-   * <p>Contains a summary of information about job executions for a specific job.</p>
+   * Contains a summary of information about job executions for a specific job.
    */
   @js.native
   trait JobExecutionSummaryForJob extends js.Object {
@@ -5336,7 +5343,7 @@ package iot {
   }
 
   /**
-   * <p>The job execution summary for a thing.</p>
+   * The job execution summary for a thing.
    */
   @js.native
   trait JobExecutionSummaryForThing extends js.Object {
@@ -5357,7 +5364,7 @@ package iot {
   }
 
   /**
-   * <p>Allows you to create a staged rollout of a job.</p>
+   * Allows you to create a staged rollout of a job.
    */
   @js.native
   trait JobExecutionsRolloutConfig extends js.Object {
@@ -5378,7 +5385,7 @@ package iot {
   }
 
   /**
-   * <p>The job process details.</p>
+   * The job process details.
    */
   @js.native
   trait JobProcessDetails extends js.Object {
@@ -5429,7 +5436,7 @@ package iot {
   }
 
   /**
-   * <p>The job summary.</p>
+   * The job summary.
    */
   @js.native
   trait JobSummary extends js.Object {
@@ -5468,7 +5475,7 @@ package iot {
   }
 
   /**
-   * <p>Describes a key pair.</p>
+   * Describes a key pair.
    */
   @js.native
   trait KeyPair extends js.Object {
@@ -5489,7 +5496,7 @@ package iot {
   }
 
   /**
-   * <p>Describes an action to write data to an Amazon Kinesis stream.</p>
+   * Describes an action to write data to an Amazon Kinesis stream.
    */
   @js.native
   trait KinesisAction extends js.Object {
@@ -5513,7 +5520,7 @@ package iot {
   }
 
   /**
-   * <p>Describes an action to invoke a Lambda function.</p>
+   * Describes an action to invoke a Lambda function.
    */
   @js.native
   trait LambdaAction extends js.Object {
@@ -5795,7 +5802,7 @@ package iot {
   }
 
   /**
-   * <p>Input for the ListCACertificates operation.</p>
+   * Input for the ListCACertificates operation.
    */
   @js.native
   trait ListCACertificatesRequest extends js.Object {
@@ -5819,7 +5826,7 @@ package iot {
   }
 
   /**
-   * <p>The output from the ListCACertificates operation.</p>
+   * The output from the ListCACertificates operation.
    */
   @js.native
   trait ListCACertificatesResponse extends js.Object {
@@ -5840,7 +5847,7 @@ package iot {
   }
 
   /**
-   * <p>The input to the ListCertificatesByCA operation.</p>
+   * The input to the ListCertificatesByCA operation.
    */
   @js.native
   trait ListCertificatesByCARequest extends js.Object {
@@ -5867,7 +5874,7 @@ package iot {
   }
 
   /**
-   * <p>The output of the ListCertificatesByCA operation.</p>
+   * The output of the ListCertificatesByCA operation.
    */
   @js.native
   trait ListCertificatesByCAResponse extends js.Object {
@@ -5888,7 +5895,7 @@ package iot {
   }
 
   /**
-   * <p>The input for the ListCertificates operation.</p>
+   * The input for the ListCertificates operation.
    */
   @js.native
   trait ListCertificatesRequest extends js.Object {
@@ -5912,7 +5919,7 @@ package iot {
   }
 
   /**
-   * <p>The output of the ListCertificates operation.</p>
+   * The output of the ListCertificates operation.
    */
   @js.native
   trait ListCertificatesResponse extends js.Object {
@@ -6140,7 +6147,7 @@ package iot {
   }
 
   /**
-   * <p>The input to the ListOutgoingCertificates operation.</p>
+   * The input to the ListOutgoingCertificates operation.
    */
   @js.native
   trait ListOutgoingCertificatesRequest extends js.Object {
@@ -6164,7 +6171,7 @@ package iot {
   }
 
   /**
-   * <p>The output from the ListOutgoingCertificates operation.</p>
+   * The output from the ListOutgoingCertificates operation.
    */
   @js.native
   trait ListOutgoingCertificatesResponse extends js.Object {
@@ -6185,7 +6192,7 @@ package iot {
   }
 
   /**
-   * <p>The input for the ListPolicies operation.</p>
+   * The input for the ListPolicies operation.
    */
   @js.native
   trait ListPoliciesRequest extends js.Object {
@@ -6209,7 +6216,7 @@ package iot {
   }
 
   /**
-   * <p>The output from the ListPolicies operation.</p>
+   * The output from the ListPolicies operation.
    */
   @js.native
   trait ListPoliciesResponse extends js.Object {
@@ -6230,7 +6237,7 @@ package iot {
   }
 
   /**
-   * <p>The input for the ListPolicyPrincipals operation.</p>
+   * The input for the ListPolicyPrincipals operation.
    */
   @js.native
   trait ListPolicyPrincipalsRequest extends js.Object {
@@ -6257,7 +6264,7 @@ package iot {
   }
 
   /**
-   * <p>The output from the ListPolicyPrincipals operation.</p>
+   * The output from the ListPolicyPrincipals operation.
    */
   @js.native
   trait ListPolicyPrincipalsResponse extends js.Object {
@@ -6278,7 +6285,7 @@ package iot {
   }
 
   /**
-   * <p>The input for the ListPolicyVersions operation.</p>
+   * The input for the ListPolicyVersions operation.
    */
   @js.native
   trait ListPolicyVersionsRequest extends js.Object {
@@ -6296,7 +6303,7 @@ package iot {
   }
 
   /**
-   * <p>The output from the ListPolicyVersions operation.</p>
+   * The output from the ListPolicyVersions operation.
    */
   @js.native
   trait ListPolicyVersionsResponse extends js.Object {
@@ -6314,7 +6321,7 @@ package iot {
   }
 
   /**
-   * <p>The input for the ListPrincipalPolicies operation.</p>
+   * The input for the ListPrincipalPolicies operation.
    */
   @js.native
   trait ListPrincipalPoliciesRequest extends js.Object {
@@ -6341,7 +6348,7 @@ package iot {
   }
 
   /**
-   * <p>The output from the ListPrincipalPolicies operation.</p>
+   * The output from the ListPrincipalPolicies operation.
    */
   @js.native
   trait ListPrincipalPoliciesResponse extends js.Object {
@@ -6362,7 +6369,7 @@ package iot {
   }
 
   /**
-   * <p>The input for the ListPrincipalThings operation.</p>
+   * The input for the ListPrincipalThings operation.
    */
   @js.native
   trait ListPrincipalThingsRequest extends js.Object {
@@ -6386,7 +6393,7 @@ package iot {
   }
 
   /**
-   * <p>The output from the ListPrincipalThings operation.</p>
+   * The output from the ListPrincipalThings operation.
    */
   @js.native
   trait ListPrincipalThingsResponse extends js.Object {
@@ -6797,7 +6804,7 @@ package iot {
   }
 
   /**
-   * <p>The input for the ListThingPrincipal operation.</p>
+   * The input for the ListThingPrincipal operation.
    */
   @js.native
   trait ListThingPrincipalsRequest extends js.Object {
@@ -6815,7 +6822,7 @@ package iot {
   }
 
   /**
-   * <p>The output from the ListThingPrincipals operation.</p>
+   * The output from the ListThingPrincipals operation.
    */
   @js.native
   trait ListThingPrincipalsResponse extends js.Object {
@@ -6917,7 +6924,7 @@ package iot {
   }
 
   /**
-   * <p>The input for the ListThingTypes operation.</p>
+   * The input for the ListThingTypes operation.
    */
   @js.native
   trait ListThingTypesRequest extends js.Object {
@@ -6941,7 +6948,7 @@ package iot {
   }
 
   /**
-   * <p>The output for the ListThingTypes operation.</p>
+   * The output for the ListThingTypes operation.
    */
   @js.native
   trait ListThingTypesResponse extends js.Object {
@@ -7043,7 +7050,7 @@ package iot {
   }
 
   /**
-   * <p>The input for the ListThings operation.</p>
+   * The input for the ListThings operation.
    */
   @js.native
   trait ListThingsRequest extends js.Object {
@@ -7073,7 +7080,7 @@ package iot {
   }
 
   /**
-   * <p>The output from the ListThings operation.</p>
+   * The output from the ListThings operation.
    */
   @js.native
   trait ListThingsResponse extends js.Object {
@@ -7094,7 +7101,7 @@ package iot {
   }
 
   /**
-   * <p>The input for the ListTopicRules operation.</p>
+   * The input for the ListTopicRules operation.
    */
   @js.native
   trait ListTopicRulesRequest extends js.Object {
@@ -7121,7 +7128,7 @@ package iot {
   }
 
   /**
-   * <p>The output from the ListTopicRules operation.</p>
+   * The output from the ListTopicRules operation.
    */
   @js.native
   trait ListTopicRulesResponse extends js.Object {
@@ -7239,7 +7246,7 @@ package iot {
   }
 
   /**
-   * <p>A log target.</p>
+   * A log target.
    */
   @js.native
   trait LogTarget extends js.Object {
@@ -7260,7 +7267,7 @@ package iot {
   }
 
   /**
-   * <p>The target configuration.</p>
+   * The target configuration.
    */
   @js.native
   trait LogTargetConfiguration extends js.Object {
@@ -7288,7 +7295,7 @@ package iot {
   }
 
   /**
-   * <p>Describes the logging options payload.</p>
+   * Describes the logging options payload.
    */
   @js.native
   trait LoggingOptionsPayload extends js.Object {
@@ -7316,7 +7323,7 @@ package iot {
   }
 
   /**
-   * <p>The value to be compared with the <code>metric</code>.</p>
+   * The value to be compared with the <code>metric</code>.
    */
   @js.native
   trait MetricValue extends js.Object {
@@ -7340,7 +7347,7 @@ package iot {
   }
 
   /**
-   * <p>Information about the resource that was non-compliant with the audit check.</p>
+   * Information about the resource that was non-compliant with the audit check.
    */
   @js.native
   trait NonCompliantResource extends js.Object {
@@ -7364,7 +7371,7 @@ package iot {
   }
 
   /**
-   * <p>Describes a file to be associated with an OTA update.</p>
+   * Describes a file to be associated with an OTA update.
    */
   @js.native
   trait OTAUpdateFile extends js.Object {
@@ -7394,7 +7401,7 @@ package iot {
   }
 
   /**
-   * <p>Information about an OTA update.</p>
+   * Information about an OTA update.
    */
   @js.native
   trait OTAUpdateInfo extends js.Object {
@@ -7460,7 +7467,7 @@ package iot {
   }
 
   /**
-   * <p>An OTA update summary.</p>
+   * An OTA update summary.
    */
   @js.native
   trait OTAUpdateSummary extends js.Object {
@@ -7484,7 +7491,7 @@ package iot {
   }
 
   /**
-   * <p>A certificate that has been transferred but not yet accepted.</p>
+   * A certificate that has been transferred but not yet accepted.
    */
   @js.native
   trait OutgoingCertificate extends js.Object {
@@ -7517,7 +7524,7 @@ package iot {
   }
 
   /**
-   * <p>Describes an AWS IoT policy.</p>
+   * Describes an AWS IoT policy.
    */
   @js.native
   trait Policy extends js.Object {
@@ -7538,7 +7545,7 @@ package iot {
   }
 
   /**
-   * <p>Describes a policy version.</p>
+   * Describes a policy version.
    */
   @js.native
   trait PolicyVersion extends js.Object {
@@ -7562,7 +7569,7 @@ package iot {
   }
 
   /**
-   * <p>Information about the version of the policy associated with the resource.</p>
+   * Information about the version of the policy associated with the resource.
    */
   @js.native
   trait PolicyVersionIdentifier extends js.Object {
@@ -7583,7 +7590,7 @@ package iot {
   }
 
   /**
-   * <p>Configuration for pre-signed S3 URLs.</p>
+   * Configuration for pre-signed S3 URLs.
    */
   @js.native
   trait PresignedUrlConfig extends js.Object {
@@ -7604,7 +7611,7 @@ package iot {
   }
 
   /**
-   * <p>The input for the DynamoActionVS action that specifies the DynamoDB table to which the message data will be written.</p>
+   * The input for the DynamoActionVS action that specifies the DynamoDB table to which the message data will be written.
    */
   @js.native
   trait PutItemInput extends js.Object {
@@ -7622,7 +7629,7 @@ package iot {
   }
 
   /**
-   * <p>Allows you to define a criteria to initiate the increase in rate of rollout for a job.</p>
+   * Allows you to define a criteria to initiate the increase in rate of rollout for a job.
    */
   @js.native
   trait RateIncreaseCriteria extends js.Object {
@@ -7643,7 +7650,7 @@ package iot {
   }
 
   /**
-   * <p>The input to the RegisterCACertificate operation.</p>
+   * The input to the RegisterCACertificate operation.
    */
   @js.native
   trait RegisterCACertificateRequest extends js.Object {
@@ -7673,7 +7680,7 @@ package iot {
   }
 
   /**
-   * <p>The output from the RegisterCACertificateResponse operation.</p>
+   * The output from the RegisterCACertificateResponse operation.
    */
   @js.native
   trait RegisterCACertificateResponse extends js.Object {
@@ -7694,7 +7701,7 @@ package iot {
   }
 
   /**
-   * <p>The input to the RegisterCertificate operation.</p>
+   * The input to the RegisterCertificate operation.
    */
   @js.native
   trait RegisterCertificateRequest extends js.Object {
@@ -7721,7 +7728,7 @@ package iot {
   }
 
   /**
-   * <p>The output from the RegisterCertificate operation.</p>
+   * The output from the RegisterCertificate operation.
    */
   @js.native
   trait RegisterCertificateResponse extends js.Object {
@@ -7778,7 +7785,7 @@ package iot {
   }
 
   /**
-   * <p>The registration configuration.</p>
+   * The registration configuration.
    */
   @js.native
   trait RegistrationConfig extends js.Object {
@@ -7799,7 +7806,7 @@ package iot {
   }
 
   /**
-   * <p>The input for the RejectCertificateTransfer operation.</p>
+   * The input for the RejectCertificateTransfer operation.
    */
   @js.native
   trait RejectCertificateTransferRequest extends js.Object {
@@ -7820,7 +7827,7 @@ package iot {
   }
 
   /**
-   * <p>Information about a related resource.</p>
+   * Information about a related resource.
    */
   @js.native
   trait RelatedResource extends js.Object {
@@ -7918,7 +7925,7 @@ package iot {
   }
 
   /**
-   * <p>The input for the ReplaceTopicRule operation.</p>
+   * The input for the ReplaceTopicRule operation.
    */
   @js.native
   trait ReplaceTopicRuleRequest extends js.Object {
@@ -7946,7 +7953,7 @@ package iot {
   }
 
   /**
-   * <p>Describes an action to republish to another topic.</p>
+   * Describes an action to republish to another topic.
    */
   @js.native
   trait RepublishAction extends js.Object {
@@ -7967,7 +7974,7 @@ package iot {
   }
 
   /**
-   * <p>Information identifying the non-compliant resource.</p>
+   * Information identifying the non-compliant resource.
    */
   @js.native
   trait ResourceIdentifier extends js.Object {
@@ -8011,7 +8018,7 @@ package iot {
   }
 
   /**
-   * <p>Role alias description.</p>
+   * Role alias description.
    */
   @js.native
   trait RoleAliasDescription extends js.Object {
@@ -8047,7 +8054,7 @@ package iot {
   }
 
   /**
-   * <p>Describes an action to write data to an Amazon S3 bucket.</p>
+   * Describes an action to write data to an Amazon S3 bucket.
    */
   @js.native
   trait S3Action extends js.Object {
@@ -8074,7 +8081,7 @@ package iot {
   }
 
   /**
-   * <p>Describes the location of updated firmware in S3.</p>
+   * Describes the location of updated firmware in S3.
    */
   @js.native
   trait S3Destination extends js.Object {
@@ -8095,7 +8102,7 @@ package iot {
   }
 
   /**
-   * <p>The S3 location.</p>
+   * The S3 location.
    */
   @js.native
   trait S3Location extends js.Object {
@@ -8119,7 +8126,7 @@ package iot {
   }
 
   /**
-   * <p>Describes an action to write a message to a Salesforce IoT Cloud Input Stream.</p>
+   * Describes an action to write a message to a Salesforce IoT Cloud Input Stream.
    */
   @js.native
   trait SalesforceAction extends js.Object {
@@ -8140,7 +8147,7 @@ package iot {
   }
 
   /**
-   * <p>Information about the scheduled audit.</p>
+   * Information about the scheduled audit.
    */
   @js.native
   trait ScheduledAuditMetadata extends js.Object {
@@ -8218,7 +8225,7 @@ package iot {
   }
 
   /**
-   * <p>Identifying information for a Device Defender security profile.</p>
+   * Identifying information for a Device Defender security profile.
    */
   @js.native
   trait SecurityProfileIdentifier extends js.Object {
@@ -8239,7 +8246,7 @@ package iot {
   }
 
   /**
-   * <p>A target to which an alert is sent when a security profile behavior is violated.</p>
+   * A target to which an alert is sent when a security profile behavior is violated.
    */
   @js.native
   trait SecurityProfileTarget extends js.Object {
@@ -8257,7 +8264,7 @@ package iot {
   }
 
   /**
-   * <p>Information about a security profile and the target associated with it.</p>
+   * Information about a security profile and the target associated with it.
    */
   @js.native
   trait SecurityProfileTargetMapping extends js.Object {
@@ -8311,7 +8318,7 @@ package iot {
   }
 
   /**
-   * <p>The input for the SetDefaultPolicyVersion operation.</p>
+   * The input for the SetDefaultPolicyVersion operation.
    */
   @js.native
   trait SetDefaultPolicyVersionRequest extends js.Object {
@@ -8332,7 +8339,7 @@ package iot {
   }
 
   /**
-   * <p>The input for the SetLoggingOptions operation.</p>
+   * The input for the SetLoggingOptions operation.
    */
   @js.native
   trait SetLoggingOptionsRequest extends js.Object {
@@ -8389,7 +8396,7 @@ package iot {
   }
 
   /**
-   * <p>Describes the code-signing profile.</p>
+   * Describes the code-signing profile.
    */
   @js.native
   trait SigningProfileParameter extends js.Object {
@@ -8413,7 +8420,7 @@ package iot {
   }
 
   /**
-   * <p>Describes an action to publish to an Amazon SNS topic.</p>
+   * Describes an action to publish to an Amazon SNS topic.
    */
   @js.native
   trait SnsAction extends js.Object {
@@ -8437,7 +8444,7 @@ package iot {
   }
 
   /**
-   * <p>Describes an action to publish data to an Amazon SQS queue.</p>
+   * Describes an action to publish data to an Amazon SQS queue.
    */
   @js.native
   trait SqsAction extends js.Object {
@@ -8491,7 +8498,7 @@ package iot {
   }
 
   /**
-   * <p>Information required to start a signing job.</p>
+   * Information required to start a signing job.
    */
   @js.native
   trait StartSigningJobParameter extends js.Object {
@@ -8564,7 +8571,7 @@ package iot {
   }
 
   /**
-   * <p>Starts execution of a Step Functions state machine.</p>
+   * Starts execution of a Step Functions state machine.
    */
   @js.native
   trait StepFunctionsAction extends js.Object {
@@ -8616,7 +8623,7 @@ package iot {
   }
 
   /**
-   * <p>Describes a group of files that can be streamed.</p>
+   * Describes a group of files that can be streamed.
    */
   @js.native
   trait Stream extends js.Object {
@@ -8637,7 +8644,7 @@ package iot {
   }
 
   /**
-   * <p>Represents a file to stream.</p>
+   * Represents a file to stream.
    */
   @js.native
   trait StreamFile extends js.Object {
@@ -8658,7 +8665,7 @@ package iot {
   }
 
   /**
-   * <p>Information about a stream.</p>
+   * Information about a stream.
    */
   @js.native
   trait StreamInfo extends js.Object {
@@ -8697,7 +8704,7 @@ package iot {
   }
 
   /**
-   * <p>A summary of a stream.</p>
+   * A summary of a stream.
    */
   @js.native
   trait StreamSummary extends js.Object {
@@ -8724,7 +8731,7 @@ package iot {
   }
 
   /**
-   * <p>A set of key/value pairs that are used to manage the resource.</p>
+   * A set of key/value pairs that are used to manage the resource.
    */
   @js.native
   trait Tag extends js.Object {
@@ -8783,7 +8790,7 @@ package iot {
   }
 
   /**
-   * <p>Statistics for the checks performed during the audit.</p>
+   * Statistics for the checks performed during the audit.
    */
   @js.native
   trait TaskStatistics extends js.Object {
@@ -8912,7 +8919,7 @@ package iot {
   }
 
   /**
-   * <p>The properties of the thing, including thing name, thing type name, and a list of thing attributes.</p>
+   * The properties of the thing, including thing name, thing type name, and a list of thing attributes.
    */
   @js.native
   trait ThingAttribute extends js.Object {
@@ -8942,7 +8949,7 @@ package iot {
   }
 
   /**
-   * <p>The connectivity status of the thing.</p>
+   * The connectivity status of the thing.
    */
   @js.native
   trait ThingConnectivity extends js.Object {
@@ -8970,7 +8977,7 @@ package iot {
   }
 
   /**
-   * <p>The thing search index document.</p>
+   * The thing search index document.
    */
   @js.native
   trait ThingDocument extends js.Object {
@@ -9006,7 +9013,7 @@ package iot {
   }
 
   /**
-   * <p>The thing group search index document.</p>
+   * The thing group search index document.
    */
   @js.native
   trait ThingGroupDocument extends js.Object {
@@ -9036,7 +9043,7 @@ package iot {
   }
 
   /**
-   * <p>Thing group indexing configuration.</p>
+   * Thing group indexing configuration.
    */
   @js.native
   trait ThingGroupIndexingConfiguration extends js.Object {
@@ -9061,7 +9068,7 @@ package iot {
   }
 
   /**
-   * <p>Thing group metadata.</p>
+   * Thing group metadata.
    */
   @js.native
   trait ThingGroupMetadata extends js.Object {
@@ -9085,7 +9092,7 @@ package iot {
   }
 
   /**
-   * <p>Thing group properties.</p>
+   * Thing group properties.
    */
   @js.native
   trait ThingGroupProperties extends js.Object {
@@ -9106,7 +9113,7 @@ package iot {
   }
 
   /**
-   * <p>The thing indexing configuration. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/managing-index.html">Managing Thing Indexing</a>.</p>
+   * The thing indexing configuration. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/managing-index.html">Managing Thing Indexing</a>.
    */
   @js.native
   trait ThingIndexingConfiguration extends js.Object {
@@ -9135,7 +9142,7 @@ package iot {
   }
 
   /**
-   * <p>The definition of the thing type, including thing type name and description.</p>
+   * The definition of the thing type, including thing type name and description.
    */
   @js.native
   trait ThingTypeDefinition extends js.Object {
@@ -9162,7 +9169,7 @@ package iot {
   }
 
   /**
-   * <p>The ThingTypeMetadata contains additional information about the thing type including: creation date and time, a value indicating whether the thing type is deprecated, and a date and time when time was deprecated.</p>
+   * The ThingTypeMetadata contains additional information about the thing type including: creation date and time, a value indicating whether the thing type is deprecated, and a date and time when time was deprecated.
    */
   @js.native
   trait ThingTypeMetadata extends js.Object {
@@ -9186,7 +9193,7 @@ package iot {
   }
 
   /**
-   * <p>The ThingTypeProperties contains information about the thing type including: a thing type description, and a list of searchable thing attribute names.</p>
+   * The ThingTypeProperties contains information about the thing type including: a thing type description, and a list of searchable thing attribute names.
    */
   @js.native
   trait ThingTypeProperties extends js.Object {
@@ -9207,7 +9214,7 @@ package iot {
   }
 
   /**
-   * <p>Specifies the amount of time each device has to finish its execution of the job. A timer is started when the job execution status is set to <code>IN_PROGRESS</code>. If the job execution status is not set to another terminal state before the timer expires, it will be automatically set to <code>TIMED_OUT</code>.</p>
+   * Specifies the amount of time each device has to finish its execution of the job. A timer is started when the job execution status is set to <code>IN_PROGRESS</code>. If the job execution status is not set to another terminal state before the timer expires, it will be automatically set to <code>TIMED_OUT</code>.
    */
   @js.native
   trait TimeoutConfig extends js.Object {
@@ -9225,7 +9232,7 @@ package iot {
   }
 
   /**
-   * <p>Describes a rule.</p>
+   * Describes a rule.
    */
   @js.native
   trait TopicRule extends js.Object {
@@ -9264,7 +9271,7 @@ package iot {
   }
 
   /**
-   * <p>Describes a rule.</p>
+   * Describes a rule.
    */
   @js.native
   trait TopicRuleListItem extends js.Object {
@@ -9294,7 +9301,7 @@ package iot {
   }
 
   /**
-   * <p>Describes a rule.</p>
+   * Describes a rule.
    */
   @js.native
   trait TopicRulePayload extends js.Object {
@@ -9327,7 +9334,7 @@ package iot {
   }
 
   /**
-   * <p>The input for the TransferCertificate operation.</p>
+   * The input for the TransferCertificate operation.
    */
   @js.native
   trait TransferCertificateRequest extends js.Object {
@@ -9351,7 +9358,7 @@ package iot {
   }
 
   /**
-   * <p>The output from the TransferCertificate operation.</p>
+   * The output from the TransferCertificate operation.
    */
   @js.native
   trait TransferCertificateResponse extends js.Object {
@@ -9369,7 +9376,7 @@ package iot {
   }
 
   /**
-   * <p>Data used to transfer a certificate to an AWS account.</p>
+   * Data used to transfer a certificate to an AWS account.
    */
   @js.native
   trait TransferData extends js.Object {
@@ -9545,7 +9552,7 @@ package iot {
   }
 
   /**
-   * <p>The input to the UpdateCACertificate operation.</p>
+   * The input to the UpdateCACertificate operation.
    */
   @js.native
   trait UpdateCACertificateRequest extends js.Object {
@@ -9575,7 +9582,7 @@ package iot {
   }
 
   /**
-   * <p>The input for the UpdateCertificate operation.</p>
+   * The input for the UpdateCertificate operation.
    */
   @js.native
   trait UpdateCertificateRequest extends js.Object {
@@ -9995,7 +10002,7 @@ package iot {
   }
 
   /**
-   * <p>The input for the UpdateThing operation.</p>
+   * The input for the UpdateThing operation.
    */
   @js.native
   trait UpdateThingRequest extends js.Object {
@@ -10025,7 +10032,7 @@ package iot {
   }
 
   /**
-   * <p>The output from the UpdateThing operation.</p>
+   * The output from the UpdateThing operation.
    */
   @js.native
   trait UpdateThingResponse extends js.Object {
@@ -10074,7 +10081,7 @@ package iot {
   }
 
   /**
-   * <p>Information about an error found in a behavior specification.</p>
+   * Information about an error found in a behavior specification.
    */
   @js.native
   trait ValidationError extends js.Object {
@@ -10092,7 +10099,7 @@ package iot {
   }
 
   /**
-   * <p>Information about a Device Defender security profile behavior violation.</p>
+   * Information about a Device Defender security profile behavior violation.
    */
   @js.native
   trait ViolationEvent extends js.Object {

@@ -85,7 +85,7 @@ package cognitoidentity {
   }
 
   /**
-   * <p>A provider representing an Amazon Cognito Identity User Pool and its client ID.</p>
+   * A provider representing an Amazon Cognito Identity User Pool and its client ID.
    */
   @js.native
   trait CognitoIdentityProvider extends js.Object {
@@ -109,7 +109,7 @@ package cognitoidentity {
   }
 
   /**
-   * <p>Thrown if there are parallel requests to modify a resource.</p>
+   * Thrown if there are parallel requests to modify a resource.
    */
   @js.native
   trait ConcurrentModificationExceptionException extends js.Object {
@@ -117,7 +117,7 @@ package cognitoidentity {
   }
 
   /**
-   * <p>Input to the CreateIdentityPool action.</p>
+   * Input to the CreateIdentityPool action.
    */
   @js.native
   trait CreateIdentityPoolInput extends js.Object {
@@ -153,7 +153,7 @@ package cognitoidentity {
   }
 
   /**
-   * <p>Credentials for the provided identity ID.</p>
+   * Credentials for the provided identity ID.
    */
   @js.native
   trait Credentials extends js.Object {
@@ -180,7 +180,7 @@ package cognitoidentity {
   }
 
   /**
-   * <p>Input to the <code>DeleteIdentities</code> action.</p>
+   * Input to the <code>DeleteIdentities</code> action.
    */
   @js.native
   trait DeleteIdentitiesInput extends js.Object {
@@ -198,7 +198,7 @@ package cognitoidentity {
   }
 
   /**
-   * <p>Returned in response to a successful <code>DeleteIdentities</code> operation.</p>
+   * Returned in response to a successful <code>DeleteIdentities</code> operation.
    */
   @js.native
   trait DeleteIdentitiesResponse extends js.Object {
@@ -216,7 +216,7 @@ package cognitoidentity {
   }
 
   /**
-   * <p>Input to the DeleteIdentityPool action.</p>
+   * Input to the DeleteIdentityPool action.
    */
   @js.native
   trait DeleteIdentityPoolInput extends js.Object {
@@ -234,7 +234,7 @@ package cognitoidentity {
   }
 
   /**
-   * <p>Input to the <code>DescribeIdentity</code> action.</p>
+   * Input to the <code>DescribeIdentity</code> action.
    */
   @js.native
   trait DescribeIdentityInput extends js.Object {
@@ -252,7 +252,7 @@ package cognitoidentity {
   }
 
   /**
-   * <p>Input to the DescribeIdentityPool action.</p>
+   * Input to the DescribeIdentityPool action.
    */
   @js.native
   trait DescribeIdentityPoolInput extends js.Object {
@@ -270,7 +270,7 @@ package cognitoidentity {
   }
 
   /**
-   * <p>The provided developer user identifier is already registered with Cognito under a different identity ID.</p>
+   * The provided developer user identifier is already registered with Cognito under a different identity ID.
    */
   @js.native
   trait DeveloperUserAlreadyRegisteredExceptionException extends js.Object {
@@ -285,7 +285,7 @@ package cognitoidentity {
   }
 
   /**
-   * <p>An exception thrown when a dependent service such as Facebook or Twitter is not responding</p>
+   * An exception thrown when a dependent service such as Facebook or Twitter is not responding
    */
   @js.native
   trait ExternalServiceExceptionException extends js.Object {
@@ -293,7 +293,7 @@ package cognitoidentity {
   }
 
   /**
-   * <p>Input to the <code>GetCredentialsForIdentity</code> action.</p>
+   * Input to the <code>GetCredentialsForIdentity</code> action.
    */
   @js.native
   trait GetCredentialsForIdentityInput extends js.Object {
@@ -317,7 +317,7 @@ package cognitoidentity {
   }
 
   /**
-   * <p>Returned in response to a successful <code>GetCredentialsForIdentity</code> operation.</p>
+   * Returned in response to a successful <code>GetCredentialsForIdentity</code> operation.
    */
   @js.native
   trait GetCredentialsForIdentityResponse extends js.Object {
@@ -338,7 +338,7 @@ package cognitoidentity {
   }
 
   /**
-   * <p>Input to the GetId action.</p>
+   * Input to the GetId action.
    */
   @js.native
   trait GetIdInput extends js.Object {
@@ -362,7 +362,7 @@ package cognitoidentity {
   }
 
   /**
-   * <p>Returned in response to a GetId request.</p>
+   * Returned in response to a GetId request.
    */
   @js.native
   trait GetIdResponse extends js.Object {
@@ -380,7 +380,7 @@ package cognitoidentity {
   }
 
   /**
-   * <p>Input to the <code>GetIdentityPoolRoles</code> action.</p>
+   * Input to the <code>GetIdentityPoolRoles</code> action.
    */
   @js.native
   trait GetIdentityPoolRolesInput extends js.Object {
@@ -398,7 +398,7 @@ package cognitoidentity {
   }
 
   /**
-   * <p>Returned in response to a successful <code>GetIdentityPoolRoles</code> operation.</p>
+   * Returned in response to a successful <code>GetIdentityPoolRoles</code> operation.
    */
   @js.native
   trait GetIdentityPoolRolesResponse extends js.Object {
@@ -422,7 +422,7 @@ package cognitoidentity {
   }
 
   /**
-   * <p>Input to the <code>GetOpenIdTokenForDeveloperIdentity</code> action.</p>
+   * Input to the <code>GetOpenIdTokenForDeveloperIdentity</code> action.
    */
   @js.native
   trait GetOpenIdTokenForDeveloperIdentityInput extends js.Object {
@@ -449,7 +449,7 @@ package cognitoidentity {
   }
 
   /**
-   * <p>Returned in response to a successful <code>GetOpenIdTokenForDeveloperIdentity</code> request.</p>
+   * Returned in response to a successful <code>GetOpenIdTokenForDeveloperIdentity</code> request.
    */
   @js.native
   trait GetOpenIdTokenForDeveloperIdentityResponse extends js.Object {
@@ -470,7 +470,7 @@ package cognitoidentity {
   }
 
   /**
-   * <p>Input to the GetOpenIdToken action.</p>
+   * Input to the GetOpenIdToken action.
    */
   @js.native
   trait GetOpenIdTokenInput extends js.Object {
@@ -491,7 +491,7 @@ package cognitoidentity {
   }
 
   /**
-   * <p>Returned in response to a successful GetOpenIdToken request.</p>
+   * Returned in response to a successful GetOpenIdToken request.
    */
   @js.native
   trait GetOpenIdTokenResponse extends js.Object {
@@ -512,7 +512,7 @@ package cognitoidentity {
   }
 
   /**
-   * <p>A description of the identity.</p>
+   * A description of the identity.
    */
   @js.native
   trait IdentityDescription extends js.Object {
@@ -539,7 +539,7 @@ package cognitoidentity {
   }
 
   /**
-   * <p>An object representing an Amazon Cognito identity pool.</p>
+   * An object representing an Amazon Cognito identity pool.
    */
   @js.native
   trait IdentityPool extends js.Object {
@@ -578,7 +578,7 @@ package cognitoidentity {
   }
 
   /**
-   * <p>A description of the identity pool.</p>
+   * A description of the identity pool.
    */
   @js.native
   trait IdentityPoolShortDescription extends js.Object {
@@ -599,7 +599,7 @@ package cognitoidentity {
   }
 
   /**
-   * <p>Thrown when the service encounters an error during processing the request.</p>
+   * Thrown when the service encounters an error during processing the request.
    */
   @js.native
   trait InternalErrorExceptionException extends js.Object {
@@ -607,7 +607,7 @@ package cognitoidentity {
   }
 
   /**
-   * <p>Thrown if the identity pool has no role associated for the given auth type (auth/unauth) or if the AssumeRole fails.</p>
+   * Thrown if the identity pool has no role associated for the given auth type (auth/unauth) or if the AssumeRole fails.
    */
   @js.native
   trait InvalidIdentityPoolConfigurationExceptionException extends js.Object {
@@ -615,7 +615,7 @@ package cognitoidentity {
   }
 
   /**
-   * <p>Thrown for missing or bad input parameter(s).</p>
+   * Thrown for missing or bad input parameter(s).
    */
   @js.native
   trait InvalidParameterExceptionException extends js.Object {
@@ -623,7 +623,7 @@ package cognitoidentity {
   }
 
   /**
-   * <p>Thrown when the total number of user pools has exceeded a preset limit.</p>
+   * Thrown when the total number of user pools has exceeded a preset limit.
    */
   @js.native
   trait LimitExceededExceptionException extends js.Object {
@@ -631,7 +631,7 @@ package cognitoidentity {
   }
 
   /**
-   * <p>Input to the ListIdentities action.</p>
+   * Input to the ListIdentities action.
    */
   @js.native
   trait ListIdentitiesInput extends js.Object {
@@ -658,7 +658,7 @@ package cognitoidentity {
   }
 
   /**
-   * <p>The response to a ListIdentities request.</p>
+   * The response to a ListIdentities request.
    */
   @js.native
   trait ListIdentitiesResponse extends js.Object {
@@ -682,7 +682,7 @@ package cognitoidentity {
   }
 
   /**
-   * <p>Input to the ListIdentityPools action.</p>
+   * Input to the ListIdentityPools action.
    */
   @js.native
   trait ListIdentityPoolsInput extends js.Object {
@@ -703,7 +703,7 @@ package cognitoidentity {
   }
 
   /**
-   * <p>The result of a successful ListIdentityPools action.</p>
+   * The result of a successful ListIdentityPools action.
    */
   @js.native
   trait ListIdentityPoolsResponse extends js.Object {
@@ -724,7 +724,7 @@ package cognitoidentity {
   }
 
   /**
-   * <p>Input to the <code>LookupDeveloperIdentityInput</code> action.</p>
+   * Input to the <code>LookupDeveloperIdentityInput</code> action.
    */
   @js.native
   trait LookupDeveloperIdentityInput extends js.Object {
@@ -754,7 +754,7 @@ package cognitoidentity {
   }
 
   /**
-   * <p>Returned in response to a successful <code>LookupDeveloperIdentity</code> action.</p>
+   * Returned in response to a successful <code>LookupDeveloperIdentity</code> action.
    */
   @js.native
   trait LookupDeveloperIdentityResponse extends js.Object {
@@ -778,7 +778,7 @@ package cognitoidentity {
   }
 
   /**
-   * <p>A rule that maps a claim name, a claim value, and a match type to a role ARN.</p>
+   * A rule that maps a claim name, a claim value, and a match type to a role ARN.
    */
   @js.native
   trait MappingRule extends js.Object {
@@ -814,7 +814,7 @@ package cognitoidentity {
   }
 
   /**
-   * <p>Input to the <code>MergeDeveloperIdentities</code> action.</p>
+   * Input to the <code>MergeDeveloperIdentities</code> action.
    */
   @js.native
   trait MergeDeveloperIdentitiesInput extends js.Object {
@@ -841,7 +841,7 @@ package cognitoidentity {
   }
 
   /**
-   * <p>Returned in response to a successful <code>MergeDeveloperIdentities</code> action.</p>
+   * Returned in response to a successful <code>MergeDeveloperIdentities</code> action.
    */
   @js.native
   trait MergeDeveloperIdentitiesResponse extends js.Object {
@@ -859,7 +859,7 @@ package cognitoidentity {
   }
 
   /**
-   * <p>Thrown when a user is not authorized to access the requested resource.</p>
+   * Thrown when a user is not authorized to access the requested resource.
    */
   @js.native
   trait NotAuthorizedExceptionException extends js.Object {
@@ -867,7 +867,7 @@ package cognitoidentity {
   }
 
   /**
-   * <p>Thrown when a user tries to use a login which is already linked to another account.</p>
+   * Thrown when a user tries to use a login which is already linked to another account.
    */
   @js.native
   trait ResourceConflictExceptionException extends js.Object {
@@ -875,7 +875,7 @@ package cognitoidentity {
   }
 
   /**
-   * <p>Thrown when the requested resource (for example, a dataset or record) does not exist.</p>
+   * Thrown when the requested resource (for example, a dataset or record) does not exist.
    */
   @js.native
   trait ResourceNotFoundExceptionException extends js.Object {
@@ -883,7 +883,7 @@ package cognitoidentity {
   }
 
   /**
-   * <p>A role mapping.</p>
+   * A role mapping.
    */
   @js.native
   trait RoleMapping extends js.Object {
@@ -914,7 +914,7 @@ package cognitoidentity {
   }
 
   /**
-   * <p>A container for rules.</p>
+   * A container for rules.
    */
   @js.native
   trait RulesConfigurationType extends js.Object {
@@ -932,7 +932,7 @@ package cognitoidentity {
   }
 
   /**
-   * <p>Input to the <code>SetIdentityPoolRoles</code> action.</p>
+   * Input to the <code>SetIdentityPoolRoles</code> action.
    */
   @js.native
   trait SetIdentityPoolRolesInput extends js.Object {
@@ -956,7 +956,7 @@ package cognitoidentity {
   }
 
   /**
-   * <p>Thrown when a request is throttled.</p>
+   * Thrown when a request is throttled.
    */
   @js.native
   trait TooManyRequestsExceptionException extends js.Object {
@@ -964,7 +964,7 @@ package cognitoidentity {
   }
 
   /**
-   * <p>Input to the <code>UnlinkDeveloperIdentity</code> action.</p>
+   * Input to the <code>UnlinkDeveloperIdentity</code> action.
    */
   @js.native
   trait UnlinkDeveloperIdentityInput extends js.Object {
@@ -991,7 +991,7 @@ package cognitoidentity {
   }
 
   /**
-   * <p>Input to the UnlinkIdentity action.</p>
+   * Input to the UnlinkIdentity action.
    */
   @js.native
   trait UnlinkIdentityInput extends js.Object {
@@ -1015,7 +1015,7 @@ package cognitoidentity {
   }
 
   /**
-   * <p>An array of UnprocessedIdentityId objects, each of which contains an ErrorCode and IdentityId.</p>
+   * An array of UnprocessedIdentityId objects, each of which contains an ErrorCode and IdentityId.
    */
   @js.native
   trait UnprocessedIdentityId extends js.Object {

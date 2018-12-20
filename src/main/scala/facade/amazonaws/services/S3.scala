@@ -341,7 +341,7 @@ package s3 {
   }
 
   /**
-   * <p>Specifies the days since the initiation of an Incomplete Multipart Upload that Lifecycle will wait before permanently removing all parts of the upload.</p>
+   * Specifies the days since the initiation of an Incomplete Multipart Upload that Lifecycle will wait before permanently removing all parts of the upload.
    */
   @js.native
   trait AbortIncompleteMultipartUpload extends js.Object {
@@ -431,7 +431,7 @@ package s3 {
   }
 
   /**
-   * <p>A container for information about access control for replicas.</p>
+   * A container for information about access control for replicas.
    */
   @js.native
   trait AccessControlTranslation extends js.Object {
@@ -691,7 +691,7 @@ package s3 {
   }
 
   /**
-   * <p>Describes how a CSV-formatted input object is formatted.</p>
+   * Describes how a CSV-formatted input object is formatted.
    */
   @js.native
   trait CSVInput extends js.Object {
@@ -727,7 +727,7 @@ package s3 {
   }
 
   /**
-   * <p>Describes how CSV-formatted results are formatted.</p>
+   * Describes how CSV-formatted results are formatted.
    */
   @js.native
   trait CSVOutput extends js.Object {
@@ -1333,7 +1333,7 @@ package s3 {
   }
 
   /**
-   * <p>The container element for specifying the default Object Lock retention settings for new objects placed in the specified bucket.</p>
+   * The container element for specifying the default Object Lock retention settings for new objects placed in the specified bucket.
    */
   @js.native
   trait DefaultRetention extends js.Object {
@@ -1576,7 +1576,7 @@ package s3 {
   }
 
   /**
-   * <p>Specifies whether Amazon S3 should replicate delete makers.</p>
+   * Specifies whether Amazon S3 should replicate delete makers.
    */
   @js.native
   trait DeleteMarkerReplication extends js.Object {
@@ -1775,7 +1775,7 @@ package s3 {
   }
 
   /**
-   * <p>A container for information about the replication destination.</p>
+   * A container for information about the replication destination.
    */
   @js.native
   trait Destination extends js.Object {
@@ -1805,7 +1805,7 @@ package s3 {
   }
 
   /**
-   * <p>Requests Amazon S3 to encode the object keys in the response and specifies the encoding method to use. An object key may contain any Unicode character; however, XML 1.0 parser cannot parse some characters, such as characters with an ASCII value from 0 to 10. For characters that are not supported in XML 1.0, you can add this parameter to request that Amazon S3 encode the keys in the response.</p>
+   * Requests Amazon S3 to encode the object keys in the response and specifies the encoding method to use. An object key may contain any Unicode character; however, XML 1.0 parser cannot parse some characters, such as characters with an ASCII value from 0 to 10. For characters that are not supported in XML 1.0, you can add this parameter to request that Amazon S3 encode the keys in the response.
    */
   object EncodingTypeEnum {
     val url = "url"
@@ -1814,7 +1814,7 @@ package s3 {
   }
 
   /**
-   * <p>Describes the server-side encryption that will be applied to the restore results.</p>
+   * Describes the server-side encryption that will be applied to the restore results.
    */
   @js.native
   trait Encryption extends js.Object {
@@ -1838,7 +1838,7 @@ package s3 {
   }
 
   /**
-   * <p>A container for information about the encryption-based configuration for replicas.</p>
+   * A container for information about the encryption-based configuration for replicas.
    */
   @js.native
   trait EncryptionConfiguration extends js.Object {
@@ -1908,7 +1908,7 @@ package s3 {
   }
 
   /**
-   * <p>The bucket event for which to send notifications.</p>
+   * The bucket event for which to send notifications.
    */
   object EventEnum {
     val `s3:ReducedRedundancyLostObject` = "s3:ReducedRedundancyLostObject"
@@ -1948,7 +1948,7 @@ package s3 {
   }
 
   /**
-   * <p>A container for a key value pair that defines the criteria for the filter rule.</p>
+   * A container for a key value pair that defines the criteria for the filter rule.
    */
   @js.native
   trait FilterRule extends js.Object {
@@ -3245,7 +3245,7 @@ package s3 {
   }
 
   /**
-   * <p>Describes the serialization format of the object.</p>
+   * Describes the serialization format of the object.
    */
   @js.native
   trait InputSerialization extends js.Object {
@@ -3320,7 +3320,7 @@ package s3 {
   }
 
   /**
-   * <p>Contains the type of server-side encryption used to encrypt the inventory results.</p>
+   * Contains the type of server-side encryption used to encrypt the inventory results.
    */
   @js.native
   trait InventoryEncryption extends js.Object {
@@ -3471,7 +3471,7 @@ package s3 {
   }
 
   /**
-   * <p>A container for specifying the configuration for AWS Lambda notifications.</p>
+   * A container for specifying the configuration for AWS Lambda notifications.
    */
   @js.native
   trait LambdaFunctionConfiguration extends js.Object {
@@ -3573,7 +3573,7 @@ package s3 {
   }
 
   /**
-   * <p>This is used in a Lifecycle Rule Filter to apply a logical AND to two or more predicates. The Lifecycle Rule will apply to any object matching all of the predicates configured inside the And operator.</p>
+   * This is used in a Lifecycle Rule Filter to apply a logical AND to two or more predicates. The Lifecycle Rule will apply to any object matching all of the predicates configured inside the And operator.
    */
   @js.native
   trait LifecycleRuleAndOperator extends js.Object {
@@ -3594,7 +3594,7 @@ package s3 {
   }
 
   /**
-   * <p>The Filter is used to identify objects that a Lifecycle Rule applies to. A Filter must have exactly one of Prefix, Tag, or And specified.</p>
+   * The Filter is used to identify objects that a Lifecycle Rule applies to. A Filter must have exactly one of Prefix, Tag, or And specified.
    */
   @js.native
   trait LifecycleRuleFilter extends js.Object {
@@ -4173,7 +4173,7 @@ package s3 {
   }
 
   /**
-   * <p>Container for logging information. Presence of this element indicates that logging is enabled. Parameters TargetBucket and TargetPrefix are required in this case.</p>
+   * Container for logging information. Presence of this element indicates that logging is enabled. Parameters TargetBucket and TargetPrefix are required in this case.
    */
   @js.native
   trait LoggingEnabled extends js.Object {
@@ -4218,7 +4218,7 @@ package s3 {
   }
 
   /**
-   * <p>A metadata key-value pair to store with an object.</p>
+   * A metadata key-value pair to store with an object.
    */
   @js.native
   trait MetadataEntry extends js.Object {
@@ -4326,7 +4326,7 @@ package s3 {
   }
 
   /**
-   * <p>Specifies when noncurrent object versions expire. Upon expiration, Amazon S3 permanently deletes the noncurrent object versions. You set this lifecycle configuration action on a bucket that has versioning enabled (or suspended) to request that Amazon S3 delete noncurrent object versions at a specific period in the object's lifetime.</p>
+   * Specifies when noncurrent object versions expire. Upon expiration, Amazon S3 permanently deletes the noncurrent object versions. You set this lifecycle configuration action on a bucket that has versioning enabled (or suspended) to request that Amazon S3 delete noncurrent object versions at a specific period in the object's lifetime.
    */
   @js.native
   trait NoncurrentVersionExpiration extends js.Object {
@@ -4344,7 +4344,7 @@ package s3 {
   }
 
   /**
-   * <p>Container for the transition rule that describes when noncurrent objects transition to the STANDARD_IA, ONEZONE_IA, INTELLIGENT_TIERING or GLACIER storage class. If your bucket is versioning-enabled (or versioning is suspended), you can set this action to request that Amazon S3 transition noncurrent object versions to the STANDARD_IA, ONEZONE_IA, INTELLIGENT_TIERING or GLACIER storage class at a specific period in the object's lifetime.</p>
+   * Container for the transition rule that describes when noncurrent objects transition to the STANDARD_IA, ONEZONE_IA, INTELLIGENT_TIERING or GLACIER storage class. If your bucket is versioning-enabled (or versioning is suspended), you can set this action to request that Amazon S3 transition noncurrent object versions to the STANDARD_IA, ONEZONE_IA, INTELLIGENT_TIERING or GLACIER storage class at a specific period in the object's lifetime.
    */
   @js.native
   trait NoncurrentVersionTransition extends js.Object {
@@ -4365,7 +4365,7 @@ package s3 {
   }
 
   /**
-   * <p>A container for specifying the notification configuration of the bucket. If this element is empty, notifications are turned off for the bucket.</p>
+   * A container for specifying the notification configuration of the bucket. If this element is empty, notifications are turned off for the bucket.
    */
   @js.native
   trait NotificationConfiguration extends js.Object {
@@ -4410,7 +4410,7 @@ package s3 {
   }
 
   /**
-   * <p>A container for object key name filtering rules. For information about key name filtering, see <a href="http://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html">Configuring Event Notifications</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.</p>
+   * A container for object key name filtering rules. For information about key name filtering, see <a href="http://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html">Configuring Event Notifications</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
    */
   @js.native
   trait NotificationConfigurationFilter extends js.Object {
@@ -4488,7 +4488,7 @@ package s3 {
   }
 
   /**
-   * <p>The container element for Object Lock configuration parameters.</p>
+   * The container element for Object Lock configuration parameters.
    */
   @js.native
   trait ObjectLockConfiguration extends js.Object {
@@ -4515,7 +4515,7 @@ package s3 {
   }
 
   /**
-   * <p>A Legal Hold configuration for an object.</p>
+   * A Legal Hold configuration for an object.
    */
   @js.native
   trait ObjectLockLegalHold extends js.Object {
@@ -4547,7 +4547,7 @@ package s3 {
   }
 
   /**
-   * <p>A Retention configuration for an object.</p>
+   * A Retention configuration for an object.
    */
   @js.native
   trait ObjectLockRetention extends js.Object {
@@ -4575,7 +4575,7 @@ package s3 {
   }
 
   /**
-   * <p>The container element for an Object Lock rule.</p>
+   * The container element for an Object Lock rule.
    */
   @js.native
   trait ObjectLockRule extends js.Object {
@@ -4646,7 +4646,7 @@ package s3 {
   }
 
   /**
-   * <p>Describes the location where the restore job's output is stored.</p>
+   * Describes the location where the restore job's output is stored.
    */
   @js.native
   trait OutputLocation extends js.Object {
@@ -4664,7 +4664,7 @@ package s3 {
   }
 
   /**
-   * <p>Describes how results of the Select job are serialized.</p>
+   * Describes how results of the Select job are serialized.
    */
   @js.native
   trait OutputSerialization extends js.Object {
@@ -4763,7 +4763,7 @@ package s3 {
   }
 
   /**
-   * <p>The container element for a bucket's policy status.</p>
+   * The container element for a bucket's policy status.
    */
   @js.native
   trait PolicyStatus extends js.Object {
@@ -5637,7 +5637,7 @@ package s3 {
   }
 
   /**
-   * <p>A container for specifying the configuration for publication of messages to an Amazon Simple Queue Service (Amazon SQS) queue.when Amazon S3 detects specified events.</p>
+   * A container for specifying the configuration for publication of messages to an Amazon Simple Queue Service (Amazon SQS) queue.when Amazon S3 detects specified events.
    */
   @js.native
   trait QueueConfiguration extends js.Object {
@@ -5755,7 +5755,7 @@ package s3 {
   }
 
   /**
-   * <p>A container for replication rules. You can add up to 1,000 rules. The maximum size of a replication configuration is 2 MB.</p>
+   * A container for replication rules. You can add up to 1,000 rules. The maximum size of a replication configuration is 2 MB.
    */
   @js.native
   trait ReplicationConfiguration extends js.Object {
@@ -5776,7 +5776,7 @@ package s3 {
   }
 
   /**
-   * <p>A container for information about a specific replication rule.</p>
+   * A container for information about a specific replication rule.
    */
   @js.native
   trait ReplicationRule extends js.Object {
@@ -5833,7 +5833,7 @@ package s3 {
   }
 
   /**
-   * <p>A filter that identifies the subset of objects to which the replication rule applies. A <code>Filter</code> must specify exactly one <code>Prefix</code>, <code>Tag</code>, or an <code>And</code> child element.</p>
+   * A filter that identifies the subset of objects to which the replication rule applies. A <code>Filter</code> must specify exactly one <code>Prefix</code>, <code>Tag</code>, or an <code>And</code> child element.
    */
   @js.native
   trait ReplicationRuleFilter extends js.Object {
@@ -5873,7 +5873,7 @@ package s3 {
   }
 
   /**
-   * <p>If present, indicates that the requester was successfully charged for the request.</p>
+   * If present, indicates that the requester was successfully charged for the request.
    */
   object RequestChargedEnum {
     val requester = "requester"
@@ -5882,7 +5882,7 @@ package s3 {
   }
 
   /**
-   * <p>Confirms that the requester knows that she or he will be charged for the request. Bucket owners need not specify this parameter in their requests. Documentation on downloading objects from requester pays buckets can be found at http://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html</p>
+   * Confirms that the requester knows that she or he will be charged for the request. Bucket owners need not specify this parameter in their requests. Documentation on downloading objects from requester pays buckets can be found at http://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html
    */
   object RequestPayerEnum {
     val requester = "requester"
@@ -5966,7 +5966,7 @@ package s3 {
   }
 
   /**
-   * <p>Container for restore job parameters.</p>
+   * Container for restore job parameters.
    */
   @js.native
   trait RestoreRequest extends js.Object {
@@ -6062,7 +6062,7 @@ package s3 {
   }
 
   /**
-   * <p>A container for object key name prefix and suffix filtering rules.</p>
+   * A container for object key name prefix and suffix filtering rules.
    */
   @js.native
   trait S3KeyFilter extends js.Object {
@@ -6080,7 +6080,7 @@ package s3 {
   }
 
   /**
-   * <p>Describes an S3 location that will receive the results of the restore request.</p>
+   * Describes an S3 location that will receive the results of the restore request.
    */
   @js.native
   trait S3Location extends js.Object {
@@ -6119,7 +6119,7 @@ package s3 {
   }
 
   /**
-   * <p>Specifies the use of SSE-KMS to encrypt delivered Inventory reports.</p>
+   * Specifies the use of SSE-KMS to encrypt delivered Inventory reports.
    */
   @js.native
   trait SSEKMS extends js.Object {
@@ -6137,7 +6137,7 @@ package s3 {
   }
 
   /**
-   * <p>Specifies the use of SSE-S3 to encrypt delivered Inventory reports.</p>
+   * Specifies the use of SSE-S3 to encrypt delivered Inventory reports.
    */
   @js.native
   trait SSES3 extends js.Object {
@@ -6195,7 +6195,7 @@ package s3 {
   }
 
   /**
-   * <p>Request to filter the contents of an Amazon S3 object based on a simple Structured Query Language (SQL) statement. In the request, along with the SQL expression, you must specify a data serialization format (JSON or CSV) of the object. Amazon S3 uses this to parse object data into records. It returns only records that match the specified SQL expression. You must also specify the data serialization format for the response. For more information, see <a href="http://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectSELECTContent.html">S3Select API Documentation</a>.</p>
+   * Request to filter the contents of an Amazon S3 object based on a simple Structured Query Language (SQL) statement. In the request, along with the SQL expression, you must specify a data serialization format (JSON or CSV) of the object. Amazon S3 uses this to parse object data into records. It returns only records that match the specified SQL expression. You must also specify the data serialization format for the response. For more information, see <a href="http://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectSELECTContent.html">S3Select API Documentation</a>.
    */
   @js.native
   trait SelectObjectContentRequest extends js.Object {
@@ -6240,7 +6240,7 @@ package s3 {
   }
 
   /**
-   * <p>Describes the parameters for Select job types.</p>
+   * Describes the parameters for Select job types.
    */
   @js.native
   trait SelectParameters extends js.Object {
@@ -6274,7 +6274,7 @@ package s3 {
   }
 
   /**
-   * <p>Describes the default server-side encryption to apply to new objects in the bucket. If Put Object request does not specify any server-side encryption, this default encryption will be applied.</p>
+   * Describes the default server-side encryption to apply to new objects in the bucket. If Put Object request does not specify any server-side encryption, this default encryption will be applied.
    */
   @js.native
   trait ServerSideEncryptionByDefault extends js.Object {
@@ -6295,7 +6295,7 @@ package s3 {
   }
 
   /**
-   * <p>Container for server-side encryption configuration rules. Currently S3 supports one rule only.</p>
+   * Container for server-side encryption configuration rules. Currently S3 supports one rule only.
    */
   @js.native
   trait ServerSideEncryptionConfiguration extends js.Object {
@@ -6313,7 +6313,7 @@ package s3 {
   }
 
   /**
-   * <p>Container for information about a particular server-side encryption configuration rule.</p>
+   * Container for information about a particular server-side encryption configuration rule.
    */
   @js.native
   trait ServerSideEncryptionRule extends js.Object {
@@ -6331,7 +6331,7 @@ package s3 {
   }
 
   /**
-   * <p>A container for filters that define which source objects should be replicated.</p>
+   * A container for filters that define which source objects should be replicated.
    */
   @js.native
   trait SourceSelectionCriteria extends js.Object {
@@ -6349,7 +6349,7 @@ package s3 {
   }
 
   /**
-   * <p>A container for filter information for the selection of S3 objects encrypted with AWS KMS.</p>
+   * A container for filter information for the selection of S3 objects encrypted with AWS KMS.
    */
   @js.native
   trait SseKmsEncryptedObjects extends js.Object {
@@ -6526,7 +6526,7 @@ package s3 {
   }
 
   /**
-   * <p>A container for specifying the configuration for publication of messages to an Amazon Simple Notification Service (Amazon SNS) topic.when Amazon S3 detects specified events.</p>
+   * A container for specifying the configuration for publication of messages to an Amazon Simple Notification Service (Amazon SNS) topic.when Amazon S3 detects specified events.
    */
   @js.native
   trait TopicConfiguration extends js.Object {

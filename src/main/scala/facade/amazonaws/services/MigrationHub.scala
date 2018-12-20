@@ -60,7 +60,7 @@ package migrationhub {
   }
 
   /**
-   * <p>You do not have sufficient access to perform this action.</p>
+   * You do not have sufficient access to perform this action.
    */
   @js.native
   trait AccessDeniedExceptionException extends js.Object {
@@ -181,7 +181,7 @@ package migrationhub {
   }
 
   /**
-   * <p>An ARN of the AWS cloud resource target receiving the migration (e.g., AMI, EC2 instance, RDS instance, etc.).</p>
+   * An ARN of the AWS cloud resource target receiving the migration (e.g., AMI, EC2 instance, RDS instance, etc.).
    */
   @js.native
   trait CreatedArtifact extends js.Object {
@@ -373,7 +373,7 @@ package migrationhub {
   }
 
   /**
-   * <p>Object representing the on-premises resource being migrated.</p>
+   * Object representing the on-premises resource being migrated.
    */
   @js.native
   trait DiscoveredResource extends js.Object {
@@ -394,7 +394,7 @@ package migrationhub {
   }
 
   /**
-   * <p>Exception raised to indicate a successfully authorized action when the <code>DryRun</code> flag is set to "true".</p>
+   * Exception raised to indicate a successfully authorized action when the <code>DryRun</code> flag is set to "true".
    */
   @js.native
   trait DryRunOperationException extends js.Object {
@@ -436,7 +436,7 @@ package migrationhub {
   }
 
   /**
-   * <p>Exception raised when there is an internal, configuration, or dependency error encountered.</p>
+   * Exception raised when there is an internal, configuration, or dependency error encountered.
    */
   @js.native
   trait InternalServerErrorException extends js.Object {
@@ -444,7 +444,7 @@ package migrationhub {
   }
 
   /**
-   * <p>Exception raised when the provided input violates a policy constraint or is entered in the wrong format or data type.</p>
+   * Exception raised when the provided input violates a policy constraint or is entered in the wrong format or data type.
    */
   @js.native
   trait InvalidInputExceptionException extends js.Object {
@@ -611,7 +611,7 @@ package migrationhub {
   }
 
   /**
-   * <p>Represents a migration task in a migration tool.</p>
+   * Represents a migration task in a migration tool.
    */
   @js.native
   trait MigrationTask extends js.Object {
@@ -641,7 +641,7 @@ package migrationhub {
   }
 
   /**
-   * <p>MigrationTaskSummary includes <code>MigrationTaskName</code>, <code>ProgressPercent</code>, <code>ProgressUpdateStream</code>, <code>Status</code>, and <code>UpdateDateTime</code> for each task.</p>
+   * MigrationTaskSummary includes <code>MigrationTaskName</code>, <code>ProgressPercent</code>, <code>ProgressUpdateStream</code>, <code>Status</code>, and <code>UpdateDateTime</code> for each task.
    */
   @js.native
   trait MigrationTaskSummary extends js.Object {
@@ -751,7 +751,7 @@ package migrationhub {
   }
 
   /**
-   * <p>Exception raised when there are problems accessing ADS (Application Discovery Service); most likely due to a misconfigured policy or the <code>migrationhub-discovery</code> role is missing or not configured correctly.</p>
+   * Exception raised when there are problems accessing ADS (Application Discovery Service); most likely due to a misconfigured policy or the <code>migrationhub-discovery</code> role is missing or not configured correctly.
    */
   @js.native
   trait PolicyErrorExceptionException extends js.Object {
@@ -759,7 +759,7 @@ package migrationhub {
   }
 
   /**
-   * <p>Summary of the AWS resource used for access control that is implicitly linked to your AWS account.</p>
+   * Summary of the AWS resource used for access control that is implicitly linked to your AWS account.
    */
   @js.native
   trait ProgressUpdateStreamSummary extends js.Object {
@@ -814,7 +814,15 @@ package migrationhub {
   }
 
   /**
-   * <p>Attribute associated with a resource.</p> <p>Note the corresponding format required per type listed below:</p> <dl> <dt>IPV4</dt> <dd> <p> <code>x.x.x.x</code> </p> <p> <i>where x is an integer in the range [0,255]</i> </p> </dd> <dt>IPV6</dt> <dd> <p> <code>y : y : y : y : y : y : y : y</code> </p> <p> <i>where y is a hexadecimal between 0 and FFFF. [0, FFFF]</i> </p> </dd> <dt>MAC_ADDRESS</dt> <dd> <p> <code>^([0-9A-Fa-f]{2}[:-]){5}([0-9A-Fa-f]{2})$</code> </p> </dd> <dt>FQDN</dt> <dd> <p> <code>^[^&lt;&gt;{}\\\\/?,=\\p{Cntrl}]{1,256}$</code> </p> </dd> </dl>
+   * Attribute associated with a resource.
+   *  Note the corresponding format required per type listed below:
+   *  <dl> <dt>IPV4</dt> <dd> <code>x.x.x.x</code>
+   *  <i>where x is an integer in the range [0,255]</i>
+   *  </dd> <dt>IPV6</dt> <dd> <code>y : y : y : y : y : y : y : y</code>
+   *  <i>where y is a hexadecimal between 0 and FFFF. [0, FFFF]</i>
+   *  </dd> <dt>MAC_ADDRESS</dt> <dd> <code>^([0-9A-Fa-f]{2}[:-]){5}([0-9A-Fa-f]{2})</code>
+   *  </dd> <dt>FQDN</dt> <dd> <code>^[^&lt;&gt;{}\\/?,=\p{Cntrl}]{1,256}</code>
+   *  </dd> </dl>
    */
   @js.native
   trait ResourceAttribute extends js.Object {
@@ -850,7 +858,7 @@ package migrationhub {
   }
 
   /**
-   * <p>Exception raised when the request references a resource (ADS configuration, update stream, migration task, etc.) that does not exist in ADS (Application Discovery Service) or in Migration Hub's repository.</p>
+   * Exception raised when the request references a resource (ADS configuration, update stream, migration task, etc.) that does not exist in ADS (Application Discovery Service) or in Migration Hub's repository.
    */
   @js.native
   trait ResourceNotFoundExceptionException extends js.Object {
@@ -858,7 +866,7 @@ package migrationhub {
   }
 
   /**
-   * <p>Exception raised when there is an internal, configuration, or dependency error encountered.</p>
+   * Exception raised when there is an internal, configuration, or dependency error encountered.
    */
   @js.native
   trait ServiceUnavailableExceptionException extends js.Object {
@@ -875,7 +883,7 @@ package migrationhub {
   }
 
   /**
-   * <p>Task object encapsulating task information.</p>
+   * Task object encapsulating task information.
    */
   @js.native
   trait Task extends js.Object {
@@ -899,7 +907,7 @@ package migrationhub {
   }
 
   /**
-   * <p>Exception raised to indicate a request was not authorized when the <code>DryRun</code> flag is set to "true".</p>
+   * Exception raised to indicate a request was not authorized when the <code>DryRun</code> flag is set to "true".
    */
   @js.native
   trait UnauthorizedOperationException extends js.Object {

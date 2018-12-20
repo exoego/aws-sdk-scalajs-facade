@@ -50,7 +50,7 @@ package resourcegroupstaggingapi {
   }
 
   /**
-   * <p>Details of the common errors that all actions return.</p>
+   * Details of the common errors that all actions return.
    */
   @js.native
   trait FailureInfo extends js.Object {
@@ -188,7 +188,7 @@ package resourcegroupstaggingapi {
   }
 
   /**
-   * <p>The request processing failed because of an unknown error, exception, or failure. You can retry the request.</p>
+   * The request processing failed because of an unknown error, exception, or failure. You can retry the request.
    */
   @js.native
   trait InternalServiceExceptionException extends js.Object {
@@ -196,7 +196,7 @@ package resourcegroupstaggingapi {
   }
 
   /**
-   * <p>A parameter is missing or a malformed string or invalid or out-of-range value was supplied for the request parameter.</p>
+   * A parameter is missing or a malformed string or invalid or out-of-range value was supplied for the request parameter.
    */
   @js.native
   trait InvalidParameterExceptionException extends js.Object {
@@ -204,7 +204,7 @@ package resourcegroupstaggingapi {
   }
 
   /**
-   * <p>A <code>PaginationToken</code> is valid for a maximum of 15 minutes. Your request was denied because the specified <code>PaginationToken</code> has expired.</p>
+   * A <code>PaginationToken</code> is valid for a maximum of 15 minutes. Your request was denied because the specified <code>PaginationToken</code> has expired.
    */
   @js.native
   trait PaginationTokenExpiredExceptionException extends js.Object {
@@ -212,7 +212,7 @@ package resourcegroupstaggingapi {
   }
 
   /**
-   * <p>A list of resource ARNs and the tags (keys and values) that are associated with each.</p>
+   * A list of resource ARNs and the tags (keys and values) that are associated with each.
    */
   @js.native
   trait ResourceTagMapping extends js.Object {
@@ -233,7 +233,7 @@ package resourcegroupstaggingapi {
   }
 
   /**
-   * <p>The metadata that you apply to AWS resources to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-basics">Tag Basics</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
+   * The metadata that you apply to AWS resources to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-basics">Tag Basics</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
    */
   @js.native
   trait Tag extends js.Object {
@@ -254,7 +254,7 @@ package resourcegroupstaggingapi {
   }
 
   /**
-   * <p>A list of tags (keys and values) that are used to specify the associated resources.</p>
+   * A list of tags (keys and values) that are used to specify the associated resources.
    */
   @js.native
   trait TagFilter extends js.Object {
@@ -308,7 +308,7 @@ package resourcegroupstaggingapi {
   }
 
   /**
-   * <p>The request was denied to limit the frequency of submitted requests.</p>
+   * The request was denied to limit the frequency of submitted requests.
    */
   @js.native
   trait ThrottledExceptionException extends js.Object {

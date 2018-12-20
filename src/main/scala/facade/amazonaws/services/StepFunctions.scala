@@ -57,7 +57,7 @@ package stepfunctions {
   }
 
   /**
-   * <p>Contains details about an activity that failed during an execution.</p>
+   * Contains details about an activity that failed during an execution.
    */
   @js.native
   trait ActivityFailedEventDetails extends js.Object {
@@ -78,7 +78,7 @@ package stepfunctions {
   }
 
   /**
-   * <p>Contains details about an activity.</p>
+   * Contains details about an activity.
    */
   @js.native
   trait ActivityListItem extends js.Object {
@@ -102,7 +102,7 @@ package stepfunctions {
   }
 
   /**
-   * <p>Contains details about an activity schedule failure that occurred during an execution.</p>
+   * Contains details about an activity schedule failure that occurred during an execution.
    */
   @js.native
   trait ActivityScheduleFailedEventDetails extends js.Object {
@@ -123,7 +123,7 @@ package stepfunctions {
   }
 
   /**
-   * <p>Contains details about an activity scheduled during an execution.</p>
+   * Contains details about an activity scheduled during an execution.
    */
   @js.native
   trait ActivityScheduledEventDetails extends js.Object {
@@ -150,7 +150,7 @@ package stepfunctions {
   }
 
   /**
-   * <p>Contains details about the start of an activity during an execution.</p>
+   * Contains details about the start of an activity during an execution.
    */
   @js.native
   trait ActivityStartedEventDetails extends js.Object {
@@ -168,7 +168,7 @@ package stepfunctions {
   }
 
   /**
-   * <p>Contains details about an activity that successfully terminated during an execution.</p>
+   * Contains details about an activity that successfully terminated during an execution.
    */
   @js.native
   trait ActivitySucceededEventDetails extends js.Object {
@@ -186,7 +186,7 @@ package stepfunctions {
   }
 
   /**
-   * <p>Contains details about an activity timeout that occurred during an execution.</p>
+   * Contains details about an activity timeout that occurred during an execution.
    */
   @js.native
   trait ActivityTimedOutEventDetails extends js.Object {
@@ -509,7 +509,7 @@ package stepfunctions {
   }
 
   /**
-   * <p>Contains details about an abort of an execution.</p>
+   * Contains details about an abort of an execution.
    */
   @js.native
   trait ExecutionAbortedEventDetails extends js.Object {
@@ -530,7 +530,7 @@ package stepfunctions {
   }
 
   /**
-   * <p>Contains details about an execution failure event.</p>
+   * Contains details about an execution failure event.
    */
   @js.native
   trait ExecutionFailedEventDetails extends js.Object {
@@ -551,7 +551,7 @@ package stepfunctions {
   }
 
   /**
-   * <p>Contains details about an execution.</p>
+   * Contains details about an execution.
    */
   @js.native
   trait ExecutionListItem extends js.Object {
@@ -584,7 +584,7 @@ package stepfunctions {
   }
 
   /**
-   * <p>Contains details about the start of the execution.</p>
+   * Contains details about the start of the execution.
    */
   @js.native
   trait ExecutionStartedEventDetails extends js.Object {
@@ -615,7 +615,7 @@ package stepfunctions {
   }
 
   /**
-   * <p>Contains details about the successful termination of the execution.</p>
+   * Contains details about the successful termination of the execution.
    */
   @js.native
   trait ExecutionSucceededEventDetails extends js.Object {
@@ -633,7 +633,7 @@ package stepfunctions {
   }
 
   /**
-   * <p>Contains details about the execution timeout that occurred during the execution.</p>
+   * Contains details about the execution timeout that occurred during the execution.
    */
   @js.native
   trait ExecutionTimedOutEventDetails extends js.Object {
@@ -732,7 +732,7 @@ package stepfunctions {
   }
 
   /**
-   * <p>Contains details about the events of an execution.</p>
+   * Contains details about the events of an execution.
    */
   @js.native
   trait HistoryEvent extends js.Object {
@@ -890,7 +890,7 @@ package stepfunctions {
   }
 
   /**
-   * <p>Contains details about a lambda function that failed during an execution.</p>
+   * Contains details about a lambda function that failed during an execution.
    */
   @js.native
   trait LambdaFunctionFailedEventDetails extends js.Object {
@@ -911,7 +911,7 @@ package stepfunctions {
   }
 
   /**
-   * <p>Contains details about a failed lambda function schedule event that occurred during an execution.</p>
+   * Contains details about a failed lambda function schedule event that occurred during an execution.
    */
   @js.native
   trait LambdaFunctionScheduleFailedEventDetails extends js.Object {
@@ -932,7 +932,7 @@ package stepfunctions {
   }
 
   /**
-   * <p>Contains details about a lambda function scheduled during an execution.</p>
+   * Contains details about a lambda function scheduled during an execution.
    */
   @js.native
   trait LambdaFunctionScheduledEventDetails extends js.Object {
@@ -956,7 +956,7 @@ package stepfunctions {
   }
 
   /**
-   * <p>Contains details about a lambda function that failed to start during an execution.</p>
+   * Contains details about a lambda function that failed to start during an execution.
    */
   @js.native
   trait LambdaFunctionStartFailedEventDetails extends js.Object {
@@ -977,7 +977,7 @@ package stepfunctions {
   }
 
   /**
-   * <p>Contains details about a lambda function that successfully terminated during an execution.</p>
+   * Contains details about a lambda function that successfully terminated during an execution.
    */
   @js.native
   trait LambdaFunctionSucceededEventDetails extends js.Object {
@@ -995,7 +995,7 @@ package stepfunctions {
   }
 
   /**
-   * <p>Contains details about a lambda function timeout that occurred during an execution.</p>
+   * Contains details about a lambda function timeout that occurred during an execution.
    */
   @js.native
   trait LambdaFunctionTimedOutEventDetails extends js.Object {
@@ -1262,7 +1262,7 @@ package stepfunctions {
   }
 
   /**
-   * <p>Contains details about a state entered during an execution.</p>
+   * Contains details about a state entered during an execution.
    */
   @js.native
   trait StateEnteredEventDetails extends js.Object {
@@ -1283,7 +1283,7 @@ package stepfunctions {
   }
 
   /**
-   * <p>Contains details about an exit from a state during an execution.</p>
+   * Contains details about an exit from a state during an execution.
    */
   @js.native
   trait StateExitedEventDetails extends js.Object {
@@ -1304,7 +1304,7 @@ package stepfunctions {
   }
 
   /**
-   * <p>Contains details about the state machine.</p>
+   * Contains details about the state machine.
    */
   @js.native
   trait StateMachineListItem extends js.Object {
@@ -1371,7 +1371,7 @@ package stepfunctions {
   }
 
   /**
-   * <p>Contains details about a task failure event.</p>
+   * Contains details about a task failure event.
    */
   @js.native
   trait TaskFailedEventDetails extends js.Object {
@@ -1398,7 +1398,7 @@ package stepfunctions {
   }
 
   /**
-   * <p>Contains details about a task scheduled during an execution.</p>
+   * Contains details about a task scheduled during an execution.
    */
   @js.native
   trait TaskScheduledEventDetails extends js.Object {
@@ -1428,7 +1428,7 @@ package stepfunctions {
   }
 
   /**
-   * <p>Contains details about a task that failed to start during an execution.</p>
+   * Contains details about a task that failed to start during an execution.
    */
   @js.native
   trait TaskStartFailedEventDetails extends js.Object {
@@ -1455,7 +1455,7 @@ package stepfunctions {
   }
 
   /**
-   * <p>Contains details about the start of a task during an execution.</p>
+   * Contains details about the start of a task during an execution.
    */
   @js.native
   trait TaskStartedEventDetails extends js.Object {
@@ -1527,7 +1527,7 @@ package stepfunctions {
   }
 
   /**
-   * <p>Contains details about the start of connected service by a task state.</p>
+   * Contains details about the start of connected service by a task state.
    */
   @js.native
   trait TaskSucceededEventDetails extends js.Object {
@@ -1551,7 +1551,7 @@ package stepfunctions {
   }
 
   /**
-   * <p>Contains details about a connected service timeout that occured during an execution.</p>
+   * Contains details about a connected service timeout that occured during an execution.
    */
   @js.native
   trait TaskTimedOutEventDetails extends js.Object {

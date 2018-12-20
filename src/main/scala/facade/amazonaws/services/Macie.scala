@@ -39,7 +39,7 @@ package macie {
   }
 
   /**
-   * <p>You do not have required permissions to access the requested resource.</p>
+   * You do not have required permissions to access the requested resource.
    */
   @js.native
   trait AccessDeniedExceptionException extends js.Object {
@@ -96,7 +96,7 @@ package macie {
   }
 
   /**
-   * <p>The classification type that Amazon Macie applies to the associated S3 resources. </p>
+   * The classification type that Amazon Macie applies to the associated S3 resources.
    */
   @js.native
   trait ClassificationType extends js.Object {
@@ -117,7 +117,7 @@ package macie {
   }
 
   /**
-   * <p>The classification type that Amazon Macie applies to the associated S3 resources. At least one of the classification types (oneTime or continuous) must be specified. </p>
+   * The classification type that Amazon Macie applies to the associated S3 resources. At least one of the classification types (oneTime or continuous) must be specified.
    */
   @js.native
   trait ClassificationTypeUpdate extends js.Object {
@@ -186,7 +186,7 @@ package macie {
   }
 
   /**
-   * <p>Includes details about the failed S3 resources.</p>
+   * Includes details about the failed S3 resources.
    */
   @js.native
   trait FailedS3Resource extends js.Object {
@@ -210,7 +210,7 @@ package macie {
   }
 
   /**
-   * <p>Internal server error.</p>
+   * Internal server error.
    */
   @js.native
   trait InternalExceptionException extends js.Object {
@@ -219,7 +219,7 @@ package macie {
   }
 
   /**
-   * <p>The request was rejected because an invalid or out-of-range value was supplied for an input parameter. </p>
+   * The request was rejected because an invalid or out-of-range value was supplied for an input parameter.
    */
   @js.native
   trait InvalidInputExceptionException extends js.Object {
@@ -229,7 +229,7 @@ package macie {
   }
 
   /**
-   * <p>The request was rejected because it attempted to create resources beyond the current AWS account limits. The error code describes the limit exceeded. </p>
+   * The request was rejected because it attempted to create resources beyond the current AWS account limits. The error code describes the limit exceeded.
    */
   @js.native
   trait LimitExceededExceptionException extends js.Object {
@@ -314,7 +314,7 @@ package macie {
   }
 
   /**
-   * <p>Contains information about the Amazon Macie member account.</p>
+   * Contains information about the Amazon Macie member account.
    */
   @js.native
   trait MemberAccount extends js.Object {
@@ -345,7 +345,7 @@ package macie {
   }
 
   /**
-   * <p>Contains information about the S3 resource. This data type is used as a request parameter in the DisassociateS3Resources action and can be used as a response parameter in the AssociateS3Resources and UpdateS3Resources actions. </p>
+   * Contains information about the S3 resource. This data type is used as a request parameter in the DisassociateS3Resources action and can be used as a response parameter in the AssociateS3Resources and UpdateS3Resources actions.
    */
   @js.native
   trait S3Resource extends js.Object {
@@ -366,7 +366,7 @@ package macie {
   }
 
   /**
-   * <p>The S3 resources that you want to associate with Amazon Macie for monitoring and data classification. This data type is used as a request parameter in the AssociateS3Resources action and a response parameter in the ListS3Resources action. </p>
+   * The S3 resources that you want to associate with Amazon Macie for monitoring and data classification. This data type is used as a request parameter in the AssociateS3Resources action and a response parameter in the ListS3Resources action.
    */
   @js.native
   trait S3ResourceClassification extends js.Object {
@@ -390,7 +390,7 @@ package macie {
   }
 
   /**
-   * <p>The S3 resources whose classification types you want to update. This data type is used as a request parameter in the UpdateS3Resources action. </p>
+   * The S3 resources whose classification types you want to update. This data type is used as a request parameter in the UpdateS3Resources action.
    */
   @js.native
   trait S3ResourceClassificationUpdate extends js.Object {

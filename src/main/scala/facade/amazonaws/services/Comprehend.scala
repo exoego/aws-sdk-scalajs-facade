@@ -98,7 +98,7 @@ package comprehend {
   }
 
   /**
-   * <p>The result of calling the operation. The operation returns one object for each document that is successfully processed by the operation.</p>
+   * The result of calling the operation. The operation returns one object for each document that is successfully processed by the operation.
    */
   @js.native
   trait BatchDetectDominantLanguageItemResult extends js.Object {
@@ -152,7 +152,7 @@ package comprehend {
   }
 
   /**
-   * <p>The result of calling the operation. The operation returns one object for each document that is successfully processed by the operation.</p>
+   * The result of calling the operation. The operation returns one object for each document that is successfully processed by the operation.
    */
   @js.native
   trait BatchDetectEntitiesItemResult extends js.Object {
@@ -209,7 +209,7 @@ package comprehend {
   }
 
   /**
-   * <p>The result of calling the operation. The operation returns one object for each document that is successfully processed by the operation.</p>
+   * The result of calling the operation. The operation returns one object for each document that is successfully processed by the operation.
    */
   @js.native
   trait BatchDetectKeyPhrasesItemResult extends js.Object {
@@ -266,7 +266,7 @@ package comprehend {
   }
 
   /**
-   * <p>The result of calling the operation. The operation returns one object for each document that is successfully processed by the operation.</p>
+   * The result of calling the operation. The operation returns one object for each document that is successfully processed by the operation.
    */
   @js.native
   trait BatchDetectSentimentItemResult extends js.Object {
@@ -326,7 +326,7 @@ package comprehend {
   }
 
   /**
-   * <p>The result of calling the operation. The operation returns one object that is successfully processed by the operation.</p>
+   * The result of calling the operation. The operation returns one object that is successfully processed by the operation.
    */
   @js.native
   trait BatchDetectSyntaxItemResult extends js.Object {
@@ -383,7 +383,7 @@ package comprehend {
   }
 
   /**
-   * <p>Describes an error that occurred while processing a document in a batch. The operation returns on <code>BatchItemError</code> object for each document that contained an error.</p>
+   * Describes an error that occurred while processing a document in a batch. The operation returns on <code>BatchItemError</code> object for each document that contained an error.
    */
   @js.native
   trait BatchItemError extends js.Object {
@@ -407,7 +407,7 @@ package comprehend {
   }
 
   /**
-   * <p>Describes the result metrics for the test data associated with an documentation classifier.</p>
+   * Describes the result metrics for the test data associated with an documentation classifier.
    */
   @js.native
   trait ClassifierEvaluationMetrics extends js.Object {
@@ -434,7 +434,7 @@ package comprehend {
   }
 
   /**
-   * <p>Provides information about a document classifier.</p>
+   * Provides information about a document classifier.
    */
   @js.native
   trait ClassifierMetadata extends js.Object {
@@ -1006,7 +1006,7 @@ package comprehend {
   }
 
   /**
-   * <p>Provides information for filtering a list of document classification jobs. For more information, see the operation. You can provide only one filter parameter in each request.</p>
+   * Provides information for filtering a list of document classification jobs. For more information, see the operation. You can provide only one filter parameter in each request.
    */
   @js.native
   trait DocumentClassificationJobFilter extends js.Object {
@@ -1033,7 +1033,7 @@ package comprehend {
   }
 
   /**
-   * <p>Provides information about a document classification job.</p>
+   * Provides information about a document classification job.
    */
   @js.native
   trait DocumentClassificationJobProperties extends js.Object {
@@ -1078,7 +1078,7 @@ package comprehend {
   }
 
   /**
-   * <p>Provides information for filtering a list of document classifiers. You can only specify one filtering parameter in a request. For more information, see the operation.</p>
+   * Provides information for filtering a list of document classifiers. You can only specify one filtering parameter in a request. For more information, see the operation.
    */
   @js.native
   trait DocumentClassifierFilter extends js.Object {
@@ -1102,7 +1102,8 @@ package comprehend {
   }
 
   /**
-   * <p>The input properties for training a document classifier. </p> <p>For more information on how the input file is formatted, see <a>how-document-classification-training-data</a>. </p>
+   * The input properties for training a document classifier.
+   *  For more information on how the input file is formatted, see <a>how-document-classification-training-data</a>.
    */
   @js.native
   trait DocumentClassifierInputDataConfig extends js.Object {
@@ -1120,7 +1121,7 @@ package comprehend {
   }
 
   /**
-   * <p>Provides information about a document classifier.</p>
+   * Provides information about a document classifier.
    */
   @js.native
   trait DocumentClassifierProperties extends js.Object {
@@ -1168,7 +1169,7 @@ package comprehend {
   }
 
   /**
-   * <p>Returns the code for the dominant language in the input text and the level of confidence that Amazon Comprehend has in the accuracy of the detection.</p>
+   * Returns the code for the dominant language in the input text and the level of confidence that Amazon Comprehend has in the accuracy of the detection.
    */
   @js.native
   trait DominantLanguage extends js.Object {
@@ -1189,7 +1190,7 @@ package comprehend {
   }
 
   /**
-   * <p>Provides information for filtering a list of dominant language detection jobs. For more information, see the operation.</p>
+   * Provides information for filtering a list of dominant language detection jobs. For more information, see the operation.
    */
   @js.native
   trait DominantLanguageDetectionJobFilter extends js.Object {
@@ -1216,7 +1217,7 @@ package comprehend {
   }
 
   /**
-   * <p>Provides information about a dominant language detection job.</p>
+   * Provides information about a dominant language detection job.
    */
   @js.native
   trait DominantLanguageDetectionJobProperties extends js.Object {
@@ -1258,7 +1259,7 @@ package comprehend {
   }
 
   /**
-   * <p>Provides information for filtering a list of dominant language detection jobs. For more information, see the operation.</p>
+   * Provides information for filtering a list of dominant language detection jobs. For more information, see the operation.
    */
   @js.native
   trait EntitiesDetectionJobFilter extends js.Object {
@@ -1285,7 +1286,7 @@ package comprehend {
   }
 
   /**
-   * <p>Provides information about an entities detection job.</p>
+   * Provides information about an entities detection job.
    */
   @js.native
   trait EntitiesDetectionJobProperties extends js.Object {
@@ -1333,7 +1334,8 @@ package comprehend {
   }
 
   /**
-   * <p>Provides information about an entity. </p> <p> </p>
+   * Provides information about an entity.
+   *
    */
   @js.native
   trait Entity extends js.Object {
@@ -1363,7 +1365,7 @@ package comprehend {
   }
 
   /**
-   * <p>Describes the annotations associated with a entity recognizer.</p>
+   * Describes the annotations associated with a entity recognizer.
    */
   @js.native
   trait EntityRecognizerAnnotations extends js.Object {
@@ -1381,7 +1383,7 @@ package comprehend {
   }
 
   /**
-   * <p>Describes the training documents submitted with an entity recognizer.</p>
+   * Describes the training documents submitted with an entity recognizer.
    */
   @js.native
   trait EntityRecognizerDocuments extends js.Object {
@@ -1399,7 +1401,7 @@ package comprehend {
   }
 
   /**
-   * <p>Describes the entity recognizer submitted with an entity recognizer.</p>
+   * Describes the entity recognizer submitted with an entity recognizer.
    */
   @js.native
   trait EntityRecognizerEntityList extends js.Object {
@@ -1417,7 +1419,7 @@ package comprehend {
   }
 
   /**
-   * <p> Detailed information about the accuracy of an entity recognizer. </p>
+   * Detailed information about the accuracy of an entity recognizer.
    */
   @js.native
   trait EntityRecognizerEvaluationMetrics extends js.Object {
@@ -1441,7 +1443,7 @@ package comprehend {
   }
 
   /**
-   * <p>Provides information for filtering a list of entity recognizers. You can only specify one filtering parameter in a request. For more information, see the operation./&gt;</p>
+   * Provides information for filtering a list of entity recognizers. You can only specify one filtering parameter in a request. For more information, see the operation./&gt;
    */
   @js.native
   trait EntityRecognizerFilter extends js.Object {
@@ -1465,7 +1467,7 @@ package comprehend {
   }
 
   /**
-   * <p>Specifies the format and location of the input data.</p>
+   * Specifies the format and location of the input data.
    */
   @js.native
   trait EntityRecognizerInputDataConfig extends js.Object {
@@ -1492,7 +1494,7 @@ package comprehend {
   }
 
   /**
-   * <p>Detailed information about an entity recognizer.</p>
+   * Detailed information about an entity recognizer.
    */
   @js.native
   trait EntityRecognizerMetadata extends js.Object {
@@ -1519,7 +1521,7 @@ package comprehend {
   }
 
   /**
-   * <p>Individual item from the list of entity types in the metadata of an entity recognizer.</p>
+   * Individual item from the list of entity types in the metadata of an entity recognizer.
    */
   @js.native
   trait EntityRecognizerMetadataEntityTypesListItem extends js.Object {
@@ -1537,7 +1539,7 @@ package comprehend {
   }
 
   /**
-   * <p>Describes information about an entity recognizer.</p>
+   * Describes information about an entity recognizer.
    */
   @js.native
   trait EntityRecognizerProperties extends js.Object {
@@ -1599,7 +1601,7 @@ package comprehend {
   }
 
   /**
-   * <p>Information about an individual item on a list of entity types.</p>
+   * Information about an individual item on a list of entity types.
    */
   @js.native
   trait EntityTypesListItem extends js.Object {
@@ -1617,7 +1619,7 @@ package comprehend {
   }
 
   /**
-   * <p>The input properties for a topic detection job.</p>
+   * The input properties for a topic detection job.
    */
   @js.native
   trait InputDataConfig extends js.Object {
@@ -1656,7 +1658,7 @@ package comprehend {
   }
 
   /**
-   * <p>Describes a key noun phrase.</p>
+   * Describes a key noun phrase.
    */
   @js.native
   trait KeyPhrase extends js.Object {
@@ -1683,7 +1685,7 @@ package comprehend {
   }
 
   /**
-   * <p>Provides information for filtering a list of dominant language detection jobs. For more information, see the operation.</p>
+   * Provides information for filtering a list of dominant language detection jobs. For more information, see the operation.
    */
   @js.native
   trait KeyPhrasesDetectionJobFilter extends js.Object {
@@ -1710,7 +1712,7 @@ package comprehend {
   }
 
   /**
-   * <p>Provides information about a key phrases detection job.</p>
+   * Provides information about a key phrases detection job.
    */
   @js.native
   trait KeyPhrasesDetectionJobProperties extends js.Object {
@@ -2088,7 +2090,8 @@ package comprehend {
   }
 
   /**
-   * <p>Provides configuration parameters for the output of topic detection jobs.</p> <p/>
+   * Provides configuration parameters for the output of topic detection jobs.
+   *  <p/>
    */
   @js.native
   trait OutputDataConfig extends js.Object {
@@ -2106,7 +2109,7 @@ package comprehend {
   }
 
   /**
-   * <p>Identifies the part of speech represented by the token and gives the confidence that Amazon Comprehend has that the part of speech was correctly identified. For more information about the parts of speech that Amazon Comprehend can identify, see <a>how-syntax</a>.</p>
+   * Identifies the part of speech represented by the token and gives the confidence that Amazon Comprehend has that the part of speech was correctly identified. For more information about the parts of speech that Amazon Comprehend can identify, see <a>how-syntax</a>.
    */
   @js.native
   trait PartOfSpeechTag extends js.Object {
@@ -2150,7 +2153,7 @@ package comprehend {
   }
 
   /**
-   * <p>Provides information for filtering a list of dominant language detection jobs. For more information, see the operation.</p>
+   * Provides information for filtering a list of dominant language detection jobs. For more information, see the operation.
    */
   @js.native
   trait SentimentDetectionJobFilter extends js.Object {
@@ -2177,7 +2180,7 @@ package comprehend {
   }
 
   /**
-   * <p>Provides information about a sentiment detection job.</p>
+   * Provides information about a sentiment detection job.
    */
   @js.native
   trait SentimentDetectionJobProperties extends js.Object {
@@ -2222,7 +2225,7 @@ package comprehend {
   }
 
   /**
-   * <p>Describes the level of confidence that Amazon Comprehend has in the accuracy of its detection of sentiments.</p>
+   * Describes the level of confidence that Amazon Comprehend has in the accuracy of its detection of sentiments.
    */
   @js.native
   trait SentimentScore extends js.Object {
@@ -2689,7 +2692,7 @@ package comprehend {
   }
 
   /**
-   * <p>Represents a work in the input text that was recognized and assigned a part of speech. There is one syntax token record for each word in the source text.</p>
+   * Represents a work in the input text that was recognized and assigned a part of speech. There is one syntax token record for each word in the source text.
    */
   @js.native
   trait SyntaxToken extends js.Object {
@@ -2719,7 +2722,7 @@ package comprehend {
   }
 
   /**
-   * <p>Provides information for filtering topic detection jobs. For more information, see .</p>
+   * Provides information for filtering topic detection jobs. For more information, see .
    */
   @js.native
   trait TopicsDetectionJobFilter extends js.Object {
@@ -2746,7 +2749,7 @@ package comprehend {
   }
 
   /**
-   * <p>Provides information about a topic detection job.</p>
+   * Provides information about a topic detection job.
    */
   @js.native
   trait TopicsDetectionJobProperties extends js.Object {

@@ -271,7 +271,7 @@ package transfer {
   }
 
   /**
-   * <p>Describe the properties of the server that was specified. Information returned includes: the server Amazon Resource Name (ARN), the authentication configuration and type, the logging role, server Id and state, and assigned tags or metadata. </p>
+   * Describe the properties of the server that was specified. Information returned includes: the server Amazon Resource Name (ARN), the authentication configuration and type, the logging role, server Id and state, and assigned tags or metadata.
    */
   @js.native
   trait DescribedServer extends js.Object {
@@ -310,7 +310,7 @@ package transfer {
   }
 
   /**
-   * <p>Returns properties of the user that you wish to describe.</p>
+   * Returns properties of the user that you wish to describe.
    */
   @js.native
   trait DescribedUser extends js.Object {
@@ -346,7 +346,7 @@ package transfer {
   }
 
   /**
-   * <p>Returns information related to the type of user authentication that is in use for a server's users. A server can only have one method of authentication.</p>
+   * Returns information related to the type of user authentication that is in use for a server's users. A server can only have one method of authentication.
    */
   @js.native
   trait IdentityProviderDetails extends js.Object {
@@ -367,7 +367,7 @@ package transfer {
   }
 
   /**
-   * <p>Returns information related to the type of user authentication that is in use for a server's users. For <code>SERVICE_MANAGED</code> authentication, the Secure Shell (SSH) public keys are stored with a user on an SFTP server instance. For <code>API_GATEWAY</code> authentication, your custom authentication method is implemented by using an API call. A server can only have one method of authentication.</p>
+   * Returns information related to the type of user authentication that is in use for a server's users. For <code>SERVICE_MANAGED</code> authentication, the Secure Shell (SSH) public keys are stored with a user on an SFTP server instance. For <code>API_GATEWAY</code> authentication, your custom authentication method is implemented by using an API call. A server can only have one method of authentication.
    */
   object IdentityProviderTypeEnum {
     val SERVICE_MANAGED = "SERVICE_MANAGED"
@@ -398,7 +398,7 @@ package transfer {
   }
 
   /**
-   * <p>This response identifies the user, server they belong to, and the identifier of the SSH public key associated with that user. A user can have more than one key on each server that they are associate with.</p>
+   * This response identifies the user, server they belong to, and the identifier of the SSH public key associated with that user. A user can have more than one key on each server that they are associate with.
    */
   @js.native
   trait ImportSshPublicKeyResponse extends js.Object {
@@ -542,7 +542,7 @@ package transfer {
   }
 
   /**
-   * <p>Returns properties of the server that was specified.</p>
+   * Returns properties of the server that was specified.
    */
   @js.native
   trait ListedServer extends js.Object {
@@ -575,7 +575,7 @@ package transfer {
   }
 
   /**
-   * <p>Returns properties of the user that you specify.</p>
+   * Returns properties of the user that you specify.
    */
   @js.native
   trait ListedUser extends js.Object {
@@ -605,7 +605,7 @@ package transfer {
   }
 
   /**
-   * <p>Provides information about the public Secure Shell (SSH) key that is associated with a user account for a specific server (as identified by <code>ServerId</code>). The information returned includes the date the key was imported, the public key contents, and the public key ID. A user can store more than one SSH public key associated with their user name on a specific SFTP server.</p>
+   * Provides information about the public Secure Shell (SSH) key that is associated with a user account for a specific server (as identified by <code>ServerId</code>). The information returned includes the date the key was imported, the public key contents, and the public key ID. A user can store more than one SSH public key associated with their user name on a specific SFTP server.
    */
   @js.native
   trait SshPublicKey extends js.Object {
@@ -644,7 +644,8 @@ package transfer {
   }
 
   /**
-   * <p>Describes the condition of the SFTP server with respect to its ability to perform file operations. There are six possible states: <code>OFFLINE</code>, <code>ONLINE</code>, <code>STARTING</code>, <code>STOPPING</code>, <code>START_FAILED</code>, and <code>STOP_FAILED</code>.</p> <p> <code>OFFLINE</code> indicates that the SFTP server exists, but that it is not available for file operations. <code>ONLINE</code> indicates that the SFTP server is available to perform file operations. <code>STARTING</code> indicates that the SFTP server's was instantiated, but the server is not yet available to perform file operations. Under normal conditions, it can take a couple of minutes for an SFTP server to be completely operational. Both <code>START_FAILED</code> and <code>STOP_FAILED</code> are error conditions.</p>
+   * Describes the condition of the SFTP server with respect to its ability to perform file operations. There are six possible states: <code>OFFLINE</code>, <code>ONLINE</code>, <code>STARTING</code>, <code>STOPPING</code>, <code>START_FAILED</code>, and <code>STOP_FAILED</code>.
+   *  <code>OFFLINE</code> indicates that the SFTP server exists, but that it is not available for file operations. <code>ONLINE</code> indicates that the SFTP server is available to perform file operations. <code>STARTING</code> indicates that the SFTP server's was instantiated, but the server is not yet available to perform file operations. Under normal conditions, it can take a couple of minutes for an SFTP server to be completely operational. Both <code>START_FAILED</code> and <code>STOP_FAILED</code> are error conditions.
    */
   object StateEnum {
     val OFFLINE = "OFFLINE"
@@ -673,7 +674,7 @@ package transfer {
   }
 
   /**
-   * <p>Creates a key-value pair for a specific resource. Tags are metadata that you can use to search for and group a resource for various purposes. You can apply tags to servers, users, and roles. A tag key can take more than one value. For example, to group servers for accounting purposes, you might create a tag called <code>Group</code> and assign the values <code>Research</code> and <code>Accounting</code> to that group.</p>
+   * Creates a key-value pair for a specific resource. Tags are metadata that you can use to search for and group a resource for various purposes. You can apply tags to servers, users, and roles. A tag key can take more than one value. For example, to group servers for accounting purposes, you might create a tag called <code>Group</code> and assign the values <code>Research</code> and <code>Accounting</code> to that group.
    */
   @js.native
   trait Tag extends js.Object {
@@ -835,7 +836,7 @@ package transfer {
   }
 
   /**
-   * <p> <code>UpdateUserResponse</code> returns the user name and server identifier for the request to update a user's properties.</p>
+   * <code>UpdateUserResponse</code> returns the user name and server identifier for the request to update a user's properties.
    */
   @js.native
   trait UpdateUserResponse extends js.Object {

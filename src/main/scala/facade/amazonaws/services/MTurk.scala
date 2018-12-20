@@ -164,7 +164,7 @@ package mturk {
   }
 
   /**
-   * <p> The Assignment data structure represents a single assignment of a HIT to a Worker. The assignment tracks the Worker's efforts to complete the HIT, and contains the results for later retrieval. </p>
+   * The Assignment data structure represents a single assignment of a HIT to a Worker. The assignment tracks the Worker's efforts to complete the HIT, and contains the results for later retrieval.
    */
   @js.native
   trait Assignment extends js.Object {
@@ -260,7 +260,7 @@ package mturk {
   }
 
   /**
-   * <p>An object representing a Bonus payment paid to a Worker.</p>
+   * An object representing a Bonus payment paid to a Worker.
    */
   @js.native
   trait BonusPayment extends js.Object {
@@ -935,7 +935,7 @@ package mturk {
   }
 
   /**
-   * <p> The HIT data structure represents a single HIT, including all the information necessary for a Worker to accept and complete the HIT.</p>
+   * The HIT data structure represents a single HIT, including all the information necessary for a Worker to accept and complete the HIT.
    */
   @js.native
   trait HIT extends js.Object {
@@ -1021,7 +1021,7 @@ package mturk {
   }
 
   /**
-   * <p> The HITLayoutParameter data structure defines parameter values used with a HITLayout. A HITLayout is a reusable Amazon Mechanical Turk project template used to provide Human Intelligence Task (HIT) question data for CreateHIT. </p>
+   * The HITLayoutParameter data structure defines parameter values used with a HITLayout. A HITLayout is a reusable Amazon Mechanical Turk project template used to provide Human Intelligence Task (HIT) question data for CreateHIT.
    */
   @js.native
   trait HITLayoutParameter extends js.Object {
@@ -1511,7 +1511,7 @@ package mturk {
   }
 
   /**
-   * <p>The Locale data structure represents a geographical region or location.</p>
+   * The Locale data structure represents a geographical region or location.
    */
   @js.native
   trait Locale extends js.Object {
@@ -1532,7 +1532,7 @@ package mturk {
   }
 
   /**
-   * <p>The NotificationSpecification data structure describes a HIT event notification for a HIT type.</p>
+   * The NotificationSpecification data structure describes a HIT event notification for a HIT type.
    */
   @js.native
   trait NotificationSpecification extends js.Object {
@@ -1574,7 +1574,7 @@ package mturk {
   }
 
   /**
-   * <p> When MTurk encounters an issue with notifying the Workers you specified, it returns back this object with failure details. </p>
+   * When MTurk encounters an issue with notifying the Workers you specified, it returns back this object with failure details.
    */
   @js.native
   trait NotifyWorkersFailureStatus extends js.Object {
@@ -1634,7 +1634,7 @@ package mturk {
   }
 
   /**
-   * <p> This data structure is the data type for the AnswerKey parameter of the ScoreMyKnownAnswers/2011-09-01 Review Policy. </p>
+   * This data structure is the data type for the AnswerKey parameter of the ScoreMyKnownAnswers/2011-09-01 Review Policy.
    */
   @js.native
   trait ParameterMapEntry extends js.Object {
@@ -1655,7 +1655,7 @@ package mturk {
   }
 
   /**
-   * <p> Name of the parameter from the Review policy. </p>
+   * Name of the parameter from the Review policy.
    */
   @js.native
   trait PolicyParameter extends js.Object {
@@ -1679,7 +1679,7 @@ package mturk {
   }
 
   /**
-   * <p>The Qualification data structure represents a Qualification assigned to a user, including the Qualification type and the value (score).</p>
+   * The Qualification data structure represents a Qualification assigned to a user, including the Qualification type and the value (score).
    */
   @js.native
   trait Qualification extends js.Object {
@@ -1712,7 +1712,7 @@ package mturk {
   }
 
   /**
-   * <p> The QualificationRequest data structure represents a request a Worker has made for a Qualification. </p>
+   * The QualificationRequest data structure represents a request a Worker has made for a Qualification.
    */
   @js.native
   trait QualificationRequest extends js.Object {
@@ -1745,7 +1745,7 @@ package mturk {
   }
 
   /**
-   * <p> The QualificationRequirement data structure describes a Qualification that a Worker must have before the Worker is allowed to accept a HIT. A requirement may optionally state that a Worker must have the Qualification in order to preview the HIT, or see the HIT in search results. </p>
+   * The QualificationRequirement data structure describes a Qualification that a Worker must have before the Worker is allowed to accept a HIT. A requirement may optionally state that a Worker must have the Qualification in order to preview the HIT, or see the HIT in search results.
    */
   @js.native
   trait QualificationRequirement extends js.Object {
@@ -1785,7 +1785,7 @@ package mturk {
   }
 
   /**
-   * <p> The QualificationType data structure represents a Qualification type, a description of a property of a Worker that must match the requirements of a HIT for the Worker to be able to accept the HIT. The type also describes how a Worker can obtain a Qualification of that type, such as through a Qualification test. </p>
+   * The QualificationType data structure represents a Qualification type, a description of a property of a Worker that must match the requirements of a HIT for the Worker to be able to accept the HIT. The type also describes how a Worker can obtain a Qualification of that type, such as through a Qualification test.
    */
   @js.native
   trait QualificationType extends js.Object {
@@ -1908,7 +1908,7 @@ package mturk {
   }
 
   /**
-   * <p>Your request is invalid.</p>
+   * Your request is invalid.
    */
   @js.native
   trait RequestErrorException extends js.Object {
@@ -1917,7 +1917,7 @@ package mturk {
   }
 
   /**
-   * <p> Both the AssignmentReviewReport and the HITReviewReport elements contains the ReviewActionDetail data structure. This structure is returned multiple times for each action specified in the Review Policy. </p>
+   * Both the AssignmentReviewReport and the HITReviewReport elements contains the ReviewActionDetail data structure. This structure is returned multiple times for each action specified in the Review Policy.
    */
   @js.native
   trait ReviewActionDetail extends js.Object {
@@ -1965,7 +1965,7 @@ package mturk {
   }
 
   /**
-   * <p> HIT Review Policy data structures represent HIT review policies, which you specify when you create a HIT. </p>
+   * HIT Review Policy data structures represent HIT review policies, which you specify when you create a HIT.
    */
   @js.native
   trait ReviewPolicy extends js.Object {
@@ -1993,7 +1993,7 @@ package mturk {
   }
 
   /**
-   * <p> Contains both ReviewResult and ReviewAction elements for a particular HIT. </p>
+   * Contains both ReviewResult and ReviewAction elements for a particular HIT.
    */
   @js.native
   trait ReviewReport extends js.Object {
@@ -2014,7 +2014,7 @@ package mturk {
   }
 
   /**
-   * <p> This data structure is returned multiple times for each result specified in the Review Policy. </p>
+   * This data structure is returned multiple times for each result specified in the Review Policy.
    */
   @js.native
   trait ReviewResultDetail extends js.Object {
@@ -2125,7 +2125,7 @@ package mturk {
   }
 
   /**
-   * <p>Amazon Mechanical Turk is temporarily unable to process your request. Try your call again.</p>
+   * Amazon Mechanical Turk is temporarily unable to process your request. Try your call again.
    */
   @js.native
   trait ServiceFaultException extends js.Object {
@@ -2315,7 +2315,7 @@ package mturk {
   }
 
   /**
-   * <p> The WorkerBlock data structure represents a Worker who has been blocked. It has two elements: the WorkerId and the Reason for the block. </p>
+   * The WorkerBlock data structure represents a Worker who has been blocked. It has two elements: the WorkerId and the Reason for the block.
    */
   @js.native
   trait WorkerBlock extends js.Object {

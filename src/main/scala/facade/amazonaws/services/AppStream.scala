@@ -144,7 +144,7 @@ package appstream {
   }
 
   /**
-   * <p>Describes an application in the application catalog.</p>
+   * Describes an application in the application catalog.
    */
   @js.native
   trait Application extends js.Object {
@@ -180,7 +180,7 @@ package appstream {
   }
 
   /**
-   * <p>The persistent application settings for users of a stack.</p>
+   * The persistent application settings for users of a stack.
    */
   @js.native
   trait ApplicationSettings extends js.Object {
@@ -201,7 +201,7 @@ package appstream {
   }
 
   /**
-   * <p>Describes the persistent application settings for users of a stack.</p>
+   * Describes the persistent application settings for users of a stack.
    */
   @js.native
   trait ApplicationSettingsResponse extends js.Object {
@@ -324,7 +324,7 @@ package appstream {
   }
 
   /**
-   * <p>Describes the capacity for a fleet.</p>
+   * Describes the capacity for a fleet.
    */
   @js.native
   trait ComputeCapacity extends js.Object {
@@ -342,7 +342,7 @@ package appstream {
   }
 
   /**
-   * <p>Describes the capacity status for a fleet.</p>
+   * Describes the capacity status for a fleet.
    */
   @js.native
   trait ComputeCapacityStatus extends js.Object {
@@ -1320,7 +1320,7 @@ package appstream {
   }
 
   /**
-   * <p>Configuration information for the directory used to join domains.</p>
+   * Configuration information for the directory used to join domains.
    */
   @js.native
   trait DirectoryConfig extends js.Object {
@@ -1409,7 +1409,7 @@ package appstream {
   }
 
   /**
-   * <p>Contains the information needed to join a Microsoft Active Directory domain.</p>
+   * Contains the information needed to join a Microsoft Active Directory domain.
    */
   @js.native
   trait DomainJoinInfo extends js.Object {
@@ -1489,7 +1489,7 @@ package appstream {
   }
 
   /**
-   * <p>Contains the parameters for a fleet.</p>
+   * Contains the parameters for a fleet.
    */
   @js.native
   trait Fleet extends js.Object {
@@ -1555,7 +1555,7 @@ package appstream {
   }
 
   /**
-   * <p>The fleet attribute.</p>
+   * The fleet attribute.
    */
   object FleetAttributeEnum {
     val VPC_CONFIGURATION = "VPC_CONFIGURATION"
@@ -1566,7 +1566,7 @@ package appstream {
   }
 
   /**
-   * <p>Describes a fleet error.</p>
+   * Describes a fleet error.
    */
   @js.native
   trait FleetError extends js.Object {
@@ -1634,7 +1634,7 @@ package appstream {
   }
 
   /**
-   * <p>Describes an image.</p>
+   * Describes an image.
    */
   @js.native
   trait Image extends js.Object {
@@ -1694,7 +1694,7 @@ package appstream {
   }
 
   /**
-   * <p>Describes a streaming instance used for editing an image. New images are created from a snapshot through an image builder.</p>
+   * Describes a streaming instance used for editing an image. New images are created from a snapshot through an image builder.
    */
   @js.native
   trait ImageBuilder extends js.Object {
@@ -1768,7 +1768,7 @@ package appstream {
   }
 
   /**
-   * <p>Describes the reason why the last image builder state change occurred.</p>
+   * Describes the reason why the last image builder state change occurred.
    */
   @js.native
   trait ImageBuilderStateChangeReason extends js.Object {
@@ -1796,7 +1796,7 @@ package appstream {
   }
 
   /**
-   * <p>Describes the permissions for an image. </p>
+   * Describes the permissions for an image.
    */
   @js.native
   trait ImagePermissions extends js.Object {
@@ -1827,7 +1827,7 @@ package appstream {
   }
 
   /**
-   * <p>Describes the reason why the last image state change occurred.</p>
+   * Describes the reason why the last image state change occurred.
    */
   @js.native
   trait ImageStateChangeReason extends js.Object {
@@ -1965,7 +1965,7 @@ package appstream {
   }
 
   /**
-   * <p>The network details of the fleet instance for the streaming session.</p>
+   * The network details of the fleet instance for the streaming session.
    */
   @js.native
   trait NetworkAccessConfiguration extends js.Object {
@@ -1999,7 +1999,7 @@ package appstream {
   }
 
   /**
-   * <p>Describes a resource error.</p>
+   * Describes a resource error.
    */
   @js.native
   trait ResourceError extends js.Object {
@@ -2023,7 +2023,7 @@ package appstream {
   }
 
   /**
-   * <p>Describes the credentials for the service account used by the streaming instance to connect to the directory.</p>
+   * Describes the credentials for the service account used by the streaming instance to connect to the directory.
    */
   @js.native
   trait ServiceAccountCredentials extends js.Object {
@@ -2044,7 +2044,7 @@ package appstream {
   }
 
   /**
-   * <p>Describes a streaming session.</p>
+   * Describes a streaming session.
    */
   @js.native
   trait Session extends js.Object {
@@ -2080,7 +2080,7 @@ package appstream {
   }
 
   /**
-   * <p>Possible values for the state of a streaming session.</p>
+   * Possible values for the state of a streaming session.
    */
   object SessionStateEnum {
     val ACTIVE = "ACTIVE"
@@ -2091,7 +2091,7 @@ package appstream {
   }
 
   /**
-   * <p>Describes the permissions that are available to the specified AWS account for a shared image.</p>
+   * Describes the permissions that are available to the specified AWS account for a shared image.
    */
   @js.native
   trait SharedImagePermissions extends js.Object {
@@ -2112,7 +2112,7 @@ package appstream {
   }
 
   /**
-   * <p>Describes a stack.</p>
+   * Describes a stack.
    */
   @js.native
   trait Stack extends js.Object {
@@ -2173,7 +2173,7 @@ package appstream {
   }
 
   /**
-   * <p>Describes a stack error.</p>
+   * Describes a stack error.
    */
   @js.native
   trait StackError extends js.Object {
@@ -2320,7 +2320,7 @@ package appstream {
   }
 
   /**
-   * <p>Describes a connector to enable persistent storage for users.</p>
+   * Describes a connector to enable persistent storage for users.
    */
   @js.native
   trait StorageConnector extends js.Object {
@@ -2344,7 +2344,7 @@ package appstream {
   }
 
   /**
-   * <p>The type of storage connector.</p>
+   * The type of storage connector.
    */
   object StorageConnectorTypeEnum {
     val HOMEFOLDERS = "HOMEFOLDERS"
@@ -2613,7 +2613,7 @@ package appstream {
   }
 
   /**
-   * <p>Describes a user in the user pool.</p>
+   * Describes a user in the user pool.
    */
   @js.native
   trait User extends js.Object {
@@ -2652,7 +2652,7 @@ package appstream {
   }
 
   /**
-   * <p>Describes an action and whether the action is enabled or disabled for users during their streaming sessions.</p>
+   * Describes an action and whether the action is enabled or disabled for users during their streaming sessions.
    */
   @js.native
   trait UserSetting extends js.Object {
@@ -2673,7 +2673,7 @@ package appstream {
   }
 
   /**
-   * <p>Describes a user in the user pool and the associated stack.</p>
+   * Describes a user in the user pool and the associated stack.
    */
   @js.native
   trait UserStackAssociation extends js.Object {
@@ -2700,7 +2700,7 @@ package appstream {
   }
 
   /**
-   * <p>Describes the error that is returned when a user can�ft be associated with or disassociated from a stack. </p>
+   * Describes the error that is returned when a user can�ft be associated with or disassociated from a stack.
    */
   @js.native
   trait UserStackAssociationError extends js.Object {
@@ -2740,7 +2740,7 @@ package appstream {
   }
 
   /**
-   * <p>Describes VPC configuration information.</p>
+   * Describes VPC configuration information.
    */
   @js.native
   trait VpcConfig extends js.Object {

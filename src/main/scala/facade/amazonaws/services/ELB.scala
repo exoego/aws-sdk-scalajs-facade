@@ -120,7 +120,7 @@ package elb {
   }
 
   /**
-   * <p>Information about the <code>AccessLog</code> attribute.</p>
+   * Information about the <code>AccessLog</code> attribute.
    */
   @js.native
   trait AccessLog extends js.Object {
@@ -147,7 +147,7 @@ package elb {
   }
 
   /**
-   * <p>Contains the parameters for EnableAvailabilityZonesForLoadBalancer.</p>
+   * Contains the parameters for EnableAvailabilityZonesForLoadBalancer.
    */
   @js.native
   trait AddAvailabilityZonesInput extends js.Object {
@@ -168,7 +168,7 @@ package elb {
   }
 
   /**
-   * <p>Contains the output of EnableAvailabilityZonesForLoadBalancer.</p>
+   * Contains the output of EnableAvailabilityZonesForLoadBalancer.
    */
   @js.native
   trait AddAvailabilityZonesOutput extends js.Object {
@@ -186,7 +186,7 @@ package elb {
   }
 
   /**
-   * <p>Contains the parameters for AddTags.</p>
+   * Contains the parameters for AddTags.
    */
   @js.native
   trait AddTagsInput extends js.Object {
@@ -207,7 +207,7 @@ package elb {
   }
 
   /**
-   * <p>Contains the output of AddTags.</p>
+   * Contains the output of AddTags.
    */
   @js.native
   trait AddTagsOutput extends js.Object {
@@ -223,7 +223,7 @@ package elb {
   }
 
   /**
-   * <p>This data type is reserved.</p>
+   * This data type is reserved.
    */
   @js.native
   trait AdditionalAttribute extends js.Object {
@@ -244,7 +244,7 @@ package elb {
   }
 
   /**
-   * <p>Information about a policy for application-controlled session stickiness.</p>
+   * Information about a policy for application-controlled session stickiness.
    */
   @js.native
   trait AppCookieStickinessPolicy extends js.Object {
@@ -265,7 +265,7 @@ package elb {
   }
 
   /**
-   * <p>Contains the parameters for ApplySecurityGroupsToLoadBalancer.</p>
+   * Contains the parameters for ApplySecurityGroupsToLoadBalancer.
    */
   @js.native
   trait ApplySecurityGroupsToLoadBalancerInput extends js.Object {
@@ -286,7 +286,7 @@ package elb {
   }
 
   /**
-   * <p>Contains the output of ApplySecurityGroupsToLoadBalancer.</p>
+   * Contains the output of ApplySecurityGroupsToLoadBalancer.
    */
   @js.native
   trait ApplySecurityGroupsToLoadBalancerOutput extends js.Object {
@@ -304,7 +304,7 @@ package elb {
   }
 
   /**
-   * <p>Contains the parameters for AttachLoaBalancerToSubnets.</p>
+   * Contains the parameters for AttachLoaBalancerToSubnets.
    */
   @js.native
   trait AttachLoadBalancerToSubnetsInput extends js.Object {
@@ -325,7 +325,7 @@ package elb {
   }
 
   /**
-   * <p>Contains the output of AttachLoadBalancerToSubnets.</p>
+   * Contains the output of AttachLoadBalancerToSubnets.
    */
   @js.native
   trait AttachLoadBalancerToSubnetsOutput extends js.Object {
@@ -343,7 +343,7 @@ package elb {
   }
 
   /**
-   * <p>Information about the configuration of an EC2 instance.</p>
+   * Information about the configuration of an EC2 instance.
    */
   @js.native
   trait BackendServerDescription extends js.Object {
@@ -364,7 +364,7 @@ package elb {
   }
 
   /**
-   * <p>Contains the parameters for ConfigureHealthCheck.</p>
+   * Contains the parameters for ConfigureHealthCheck.
    */
   @js.native
   trait ConfigureHealthCheckInput extends js.Object {
@@ -385,7 +385,7 @@ package elb {
   }
 
   /**
-   * <p>Contains the output of ConfigureHealthCheck.</p>
+   * Contains the output of ConfigureHealthCheck.
    */
   @js.native
   trait ConfigureHealthCheckOutput extends js.Object {
@@ -403,7 +403,7 @@ package elb {
   }
 
   /**
-   * <p>Information about the <code>ConnectionDraining</code> attribute.</p>
+   * Information about the <code>ConnectionDraining</code> attribute.
    */
   @js.native
   trait ConnectionDraining extends js.Object {
@@ -424,7 +424,7 @@ package elb {
   }
 
   /**
-   * <p>Information about the <code>ConnectionSettings</code> attribute.</p>
+   * Information about the <code>ConnectionSettings</code> attribute.
    */
   @js.native
   trait ConnectionSettings extends js.Object {
@@ -442,7 +442,7 @@ package elb {
   }
 
   /**
-   * <p>Contains the parameters for CreateLoadBalancer.</p>
+   * Contains the parameters for CreateLoadBalancer.
    */
   @js.native
   trait CreateAccessPointInput extends js.Object {
@@ -478,7 +478,7 @@ package elb {
   }
 
   /**
-   * <p>Contains the output for CreateLoadBalancer.</p>
+   * Contains the output for CreateLoadBalancer.
    */
   @js.native
   trait CreateAccessPointOutput extends js.Object {
@@ -496,7 +496,7 @@ package elb {
   }
 
   /**
-   * <p>Contains the parameters for CreateAppCookieStickinessPolicy.</p>
+   * Contains the parameters for CreateAppCookieStickinessPolicy.
    */
   @js.native
   trait CreateAppCookieStickinessPolicyInput extends js.Object {
@@ -520,7 +520,7 @@ package elb {
   }
 
   /**
-   * <p>Contains the output for CreateAppCookieStickinessPolicy.</p>
+   * Contains the output for CreateAppCookieStickinessPolicy.
    */
   @js.native
   trait CreateAppCookieStickinessPolicyOutput extends js.Object {
@@ -536,7 +536,7 @@ package elb {
   }
 
   /**
-   * <p>Contains the parameters for CreateLBCookieStickinessPolicy.</p>
+   * Contains the parameters for CreateLBCookieStickinessPolicy.
    */
   @js.native
   trait CreateLBCookieStickinessPolicyInput extends js.Object {
@@ -560,7 +560,7 @@ package elb {
   }
 
   /**
-   * <p>Contains the output for CreateLBCookieStickinessPolicy.</p>
+   * Contains the output for CreateLBCookieStickinessPolicy.
    */
   @js.native
   trait CreateLBCookieStickinessPolicyOutput extends js.Object {
@@ -576,7 +576,7 @@ package elb {
   }
 
   /**
-   * <p>Contains the parameters for CreateLoadBalancerListeners.</p>
+   * Contains the parameters for CreateLoadBalancerListeners.
    */
   @js.native
   trait CreateLoadBalancerListenerInput extends js.Object {
@@ -597,7 +597,7 @@ package elb {
   }
 
   /**
-   * <p>Contains the parameters for CreateLoadBalancerListener.</p>
+   * Contains the parameters for CreateLoadBalancerListener.
    */
   @js.native
   trait CreateLoadBalancerListenerOutput extends js.Object {
@@ -613,7 +613,7 @@ package elb {
   }
 
   /**
-   * <p>Contains the parameters for CreateLoadBalancerPolicy.</p>
+   * Contains the parameters for CreateLoadBalancerPolicy.
    */
   @js.native
   trait CreateLoadBalancerPolicyInput extends js.Object {
@@ -640,7 +640,7 @@ package elb {
   }
 
   /**
-   * <p>Contains the output of CreateLoadBalancerPolicy.</p>
+   * Contains the output of CreateLoadBalancerPolicy.
    */
   @js.native
   trait CreateLoadBalancerPolicyOutput extends js.Object {
@@ -656,7 +656,7 @@ package elb {
   }
 
   /**
-   * <p>Information about the <code>CrossZoneLoadBalancing</code> attribute.</p>
+   * Information about the <code>CrossZoneLoadBalancing</code> attribute.
    */
   @js.native
   trait CrossZoneLoadBalancing extends js.Object {
@@ -674,7 +674,7 @@ package elb {
   }
 
   /**
-   * <p>Contains the parameters for DeleteLoadBalancer.</p>
+   * Contains the parameters for DeleteLoadBalancer.
    */
   @js.native
   trait DeleteAccessPointInput extends js.Object {
@@ -692,7 +692,7 @@ package elb {
   }
 
   /**
-   * <p>Contains the output of DeleteLoadBalancer.</p>
+   * Contains the output of DeleteLoadBalancer.
    */
   @js.native
   trait DeleteAccessPointOutput extends js.Object {
@@ -708,7 +708,7 @@ package elb {
   }
 
   /**
-   * <p>Contains the parameters for DeleteLoadBalancerListeners.</p>
+   * Contains the parameters for DeleteLoadBalancerListeners.
    */
   @js.native
   trait DeleteLoadBalancerListenerInput extends js.Object {
@@ -729,7 +729,7 @@ package elb {
   }
 
   /**
-   * <p>Contains the output of DeleteLoadBalancerListeners.</p>
+   * Contains the output of DeleteLoadBalancerListeners.
    */
   @js.native
   trait DeleteLoadBalancerListenerOutput extends js.Object {
@@ -745,7 +745,7 @@ package elb {
   }
 
   /**
-   * <p>Contains the parameters for DeleteLoadBalancerPolicy.</p>
+   * Contains the parameters for DeleteLoadBalancerPolicy.
    */
   @js.native
   trait DeleteLoadBalancerPolicyInput extends js.Object {
@@ -766,7 +766,7 @@ package elb {
   }
 
   /**
-   * <p>Contains the output of DeleteLoadBalancerPolicy.</p>
+   * Contains the output of DeleteLoadBalancerPolicy.
    */
   @js.native
   trait DeleteLoadBalancerPolicyOutput extends js.Object {
@@ -782,7 +782,7 @@ package elb {
   }
 
   /**
-   * <p>Contains the parameters for DeregisterInstancesFromLoadBalancer.</p>
+   * Contains the parameters for DeregisterInstancesFromLoadBalancer.
    */
   @js.native
   trait DeregisterEndPointsInput extends js.Object {
@@ -803,7 +803,7 @@ package elb {
   }
 
   /**
-   * <p>Contains the output of DeregisterInstancesFromLoadBalancer.</p>
+   * Contains the output of DeregisterInstancesFromLoadBalancer.
    */
   @js.native
   trait DeregisterEndPointsOutput extends js.Object {
@@ -821,7 +821,7 @@ package elb {
   }
 
   /**
-   * <p>Contains the parameters for DescribeLoadBalancers.</p>
+   * Contains the parameters for DescribeLoadBalancers.
    */
   @js.native
   trait DescribeAccessPointsInput extends js.Object {
@@ -845,7 +845,7 @@ package elb {
   }
 
   /**
-   * <p>Contains the parameters for DescribeLoadBalancers.</p>
+   * Contains the parameters for DescribeLoadBalancers.
    */
   @js.native
   trait DescribeAccessPointsOutput extends js.Object {
@@ -902,7 +902,7 @@ package elb {
   }
 
   /**
-   * <p>Contains the parameters for DescribeInstanceHealth.</p>
+   * Contains the parameters for DescribeInstanceHealth.
    */
   @js.native
   trait DescribeEndPointStateInput extends js.Object {
@@ -923,7 +923,7 @@ package elb {
   }
 
   /**
-   * <p>Contains the output for DescribeInstanceHealth.</p>
+   * Contains the output for DescribeInstanceHealth.
    */
   @js.native
   trait DescribeEndPointStateOutput extends js.Object {
@@ -941,7 +941,7 @@ package elb {
   }
 
   /**
-   * <p>Contains the parameters for DescribeLoadBalancerAttributes.</p>
+   * Contains the parameters for DescribeLoadBalancerAttributes.
    */
   @js.native
   trait DescribeLoadBalancerAttributesInput extends js.Object {
@@ -959,7 +959,7 @@ package elb {
   }
 
   /**
-   * <p>Contains the output of DescribeLoadBalancerAttributes.</p>
+   * Contains the output of DescribeLoadBalancerAttributes.
    */
   @js.native
   trait DescribeLoadBalancerAttributesOutput extends js.Object {
@@ -977,7 +977,7 @@ package elb {
   }
 
   /**
-   * <p>Contains the parameters for DescribeLoadBalancerPolicies.</p>
+   * Contains the parameters for DescribeLoadBalancerPolicies.
    */
   @js.native
   trait DescribeLoadBalancerPoliciesInput extends js.Object {
@@ -998,7 +998,7 @@ package elb {
   }
 
   /**
-   * <p>Contains the output of DescribeLoadBalancerPolicies.</p>
+   * Contains the output of DescribeLoadBalancerPolicies.
    */
   @js.native
   trait DescribeLoadBalancerPoliciesOutput extends js.Object {
@@ -1016,7 +1016,7 @@ package elb {
   }
 
   /**
-   * <p>Contains the parameters for DescribeLoadBalancerPolicyTypes.</p>
+   * Contains the parameters for DescribeLoadBalancerPolicyTypes.
    */
   @js.native
   trait DescribeLoadBalancerPolicyTypesInput extends js.Object {
@@ -1034,7 +1034,7 @@ package elb {
   }
 
   /**
-   * <p>Contains the output of DescribeLoadBalancerPolicyTypes.</p>
+   * Contains the output of DescribeLoadBalancerPolicyTypes.
    */
   @js.native
   trait DescribeLoadBalancerPolicyTypesOutput extends js.Object {
@@ -1052,7 +1052,7 @@ package elb {
   }
 
   /**
-   * <p>Contains the parameters for DescribeTags.</p>
+   * Contains the parameters for DescribeTags.
    */
   @js.native
   trait DescribeTagsInput extends js.Object {
@@ -1070,7 +1070,7 @@ package elb {
   }
 
   /**
-   * <p>Contains the output for DescribeTags.</p>
+   * Contains the output for DescribeTags.
    */
   @js.native
   trait DescribeTagsOutput extends js.Object {
@@ -1088,7 +1088,7 @@ package elb {
   }
 
   /**
-   * <p>Contains the parameters for DetachLoadBalancerFromSubnets.</p>
+   * Contains the parameters for DetachLoadBalancerFromSubnets.
    */
   @js.native
   trait DetachLoadBalancerFromSubnetsInput extends js.Object {
@@ -1109,7 +1109,7 @@ package elb {
   }
 
   /**
-   * <p>Contains the output of DetachLoadBalancerFromSubnets.</p>
+   * Contains the output of DetachLoadBalancerFromSubnets.
    */
   @js.native
   trait DetachLoadBalancerFromSubnetsOutput extends js.Object {
@@ -1127,7 +1127,7 @@ package elb {
   }
 
   /**
-   * <p>Information about a health check.</p>
+   * Information about a health check.
    */
   @js.native
   trait HealthCheck extends js.Object {
@@ -1157,7 +1157,7 @@ package elb {
   }
 
   /**
-   * <p>The ID of an EC2 instance.</p>
+   * The ID of an EC2 instance.
    */
   @js.native
   trait Instance extends js.Object {
@@ -1175,7 +1175,7 @@ package elb {
   }
 
   /**
-   * <p>Information about the state of an EC2 instance.</p>
+   * Information about the state of an EC2 instance.
    */
   @js.native
   trait InstanceState extends js.Object {
@@ -1202,7 +1202,7 @@ package elb {
   }
 
   /**
-   * <p>Information about a policy for duration-based session stickiness.</p>
+   * Information about a policy for duration-based session stickiness.
    */
   @js.native
   trait LBCookieStickinessPolicy extends js.Object {
@@ -1223,7 +1223,7 @@ package elb {
   }
 
   /**
-   * <p>Information about an Elastic Load Balancing resource limit for your AWS account.</p>
+   * Information about an Elastic Load Balancing resource limit for your AWS account.
    */
   @js.native
   trait Limit extends js.Object {
@@ -1244,7 +1244,8 @@ package elb {
   }
 
   /**
-   * <p>Information about a listener.</p> <p>For information about the protocols and the ports supported by Elastic Load Balancing, see <a href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-listener-config.html">Listeners for Your Classic Load Balancer</a> in the <i>Classic Load Balancers Guide</i>.</p>
+   * Information about a listener.
+   *  For information about the protocols and the ports supported by Elastic Load Balancing, see <a href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-listener-config.html">Listeners for Your Classic Load Balancer</a> in the <i>Classic Load Balancers Guide</i>.
    */
   @js.native
   trait Listener extends js.Object {
@@ -1274,7 +1275,7 @@ package elb {
   }
 
   /**
-   * <p>The policies enabled for a listener.</p>
+   * The policies enabled for a listener.
    */
   @js.native
   trait ListenerDescription extends js.Object {
@@ -1295,7 +1296,7 @@ package elb {
   }
 
   /**
-   * <p>The attributes for a load balancer.</p>
+   * The attributes for a load balancer.
    */
   @js.native
   trait LoadBalancerAttributes extends js.Object {
@@ -1325,7 +1326,7 @@ package elb {
   }
 
   /**
-   * <p>Information about a load balancer.</p>
+   * Information about a load balancer.
    */
   @js.native
   trait LoadBalancerDescription extends js.Object {
@@ -1388,7 +1389,7 @@ package elb {
   }
 
   /**
-   * <p>Contains the parameters for ModifyLoadBalancerAttributes.</p>
+   * Contains the parameters for ModifyLoadBalancerAttributes.
    */
   @js.native
   trait ModifyLoadBalancerAttributesInput extends js.Object {
@@ -1409,7 +1410,7 @@ package elb {
   }
 
   /**
-   * <p>Contains the output of ModifyLoadBalancerAttributes.</p>
+   * Contains the output of ModifyLoadBalancerAttributes.
    */
   @js.native
   trait ModifyLoadBalancerAttributesOutput extends js.Object {
@@ -1430,7 +1431,7 @@ package elb {
   }
 
   /**
-   * <p>The policies for a load balancer.</p>
+   * The policies for a load balancer.
    */
   @js.native
   trait Policies extends js.Object {
@@ -1454,7 +1455,7 @@ package elb {
   }
 
   /**
-   * <p>Information about a policy attribute.</p>
+   * Information about a policy attribute.
    */
   @js.native
   trait PolicyAttribute extends js.Object {
@@ -1475,7 +1476,7 @@ package elb {
   }
 
   /**
-   * <p>Information about a policy attribute.</p>
+   * Information about a policy attribute.
    */
   @js.native
   trait PolicyAttributeDescription extends js.Object {
@@ -1496,7 +1497,7 @@ package elb {
   }
 
   /**
-   * <p>Information about a policy attribute type.</p>
+   * Information about a policy attribute type.
    */
   @js.native
   trait PolicyAttributeTypeDescription extends js.Object {
@@ -1526,7 +1527,7 @@ package elb {
   }
 
   /**
-   * <p>Information about a policy.</p>
+   * Information about a policy.
    */
   @js.native
   trait PolicyDescription extends js.Object {
@@ -1550,7 +1551,7 @@ package elb {
   }
 
   /**
-   * <p>Information about a policy type.</p>
+   * Information about a policy type.
    */
   @js.native
   trait PolicyTypeDescription extends js.Object {
@@ -1574,7 +1575,7 @@ package elb {
   }
 
   /**
-   * <p>Contains the parameters for RegisterInstancesWithLoadBalancer.</p>
+   * Contains the parameters for RegisterInstancesWithLoadBalancer.
    */
   @js.native
   trait RegisterEndPointsInput extends js.Object {
@@ -1595,7 +1596,7 @@ package elb {
   }
 
   /**
-   * <p>Contains the output of RegisterInstancesWithLoadBalancer.</p>
+   * Contains the output of RegisterInstancesWithLoadBalancer.
    */
   @js.native
   trait RegisterEndPointsOutput extends js.Object {
@@ -1613,7 +1614,7 @@ package elb {
   }
 
   /**
-   * <p>Contains the parameters for DisableAvailabilityZonesForLoadBalancer.</p>
+   * Contains the parameters for DisableAvailabilityZonesForLoadBalancer.
    */
   @js.native
   trait RemoveAvailabilityZonesInput extends js.Object {
@@ -1634,7 +1635,7 @@ package elb {
   }
 
   /**
-   * <p>Contains the output for DisableAvailabilityZonesForLoadBalancer.</p>
+   * Contains the output for DisableAvailabilityZonesForLoadBalancer.
    */
   @js.native
   trait RemoveAvailabilityZonesOutput extends js.Object {
@@ -1652,7 +1653,7 @@ package elb {
   }
 
   /**
-   * <p>Contains the parameters for RemoveTags.</p>
+   * Contains the parameters for RemoveTags.
    */
   @js.native
   trait RemoveTagsInput extends js.Object {
@@ -1673,7 +1674,7 @@ package elb {
   }
 
   /**
-   * <p>Contains the output of RemoveTags.</p>
+   * Contains the output of RemoveTags.
    */
   @js.native
   trait RemoveTagsOutput extends js.Object {
@@ -1689,7 +1690,7 @@ package elb {
   }
 
   /**
-   * <p>Contains the parameters for SetLoadBalancerListenerSSLCertificate.</p>
+   * Contains the parameters for SetLoadBalancerListenerSSLCertificate.
    */
   @js.native
   trait SetLoadBalancerListenerSSLCertificateInput extends js.Object {
@@ -1713,7 +1714,7 @@ package elb {
   }
 
   /**
-   * <p>Contains the output of SetLoadBalancerListenerSSLCertificate.</p>
+   * Contains the output of SetLoadBalancerListenerSSLCertificate.
    */
   @js.native
   trait SetLoadBalancerListenerSSLCertificateOutput extends js.Object {
@@ -1729,7 +1730,7 @@ package elb {
   }
 
   /**
-   * <p>Contains the parameters for SetLoadBalancerPoliciesForBackendServer.</p>
+   * Contains the parameters for SetLoadBalancerPoliciesForBackendServer.
    */
   @js.native
   trait SetLoadBalancerPoliciesForBackendServerInput extends js.Object {
@@ -1753,7 +1754,7 @@ package elb {
   }
 
   /**
-   * <p>Contains the output of SetLoadBalancerPoliciesForBackendServer.</p>
+   * Contains the output of SetLoadBalancerPoliciesForBackendServer.
    */
   @js.native
   trait SetLoadBalancerPoliciesForBackendServerOutput extends js.Object {
@@ -1769,7 +1770,7 @@ package elb {
   }
 
   /**
-   * <p>Contains the parameters for SetLoadBalancePoliciesOfListener.</p>
+   * Contains the parameters for SetLoadBalancePoliciesOfListener.
    */
   @js.native
   trait SetLoadBalancerPoliciesOfListenerInput extends js.Object {
@@ -1793,7 +1794,7 @@ package elb {
   }
 
   /**
-   * <p>Contains the output of SetLoadBalancePoliciesOfListener.</p>
+   * Contains the output of SetLoadBalancePoliciesOfListener.
    */
   @js.native
   trait SetLoadBalancerPoliciesOfListenerOutput extends js.Object {
@@ -1809,7 +1810,7 @@ package elb {
   }
 
   /**
-   * <p>Information about a source security group.</p>
+   * Information about a source security group.
    */
   @js.native
   trait SourceSecurityGroup extends js.Object {
@@ -1830,7 +1831,7 @@ package elb {
   }
 
   /**
-   * <p>Information about a tag.</p>
+   * Information about a tag.
    */
   @js.native
   trait Tag extends js.Object {
@@ -1851,7 +1852,7 @@ package elb {
   }
 
   /**
-   * <p>The tags associated with a load balancer.</p>
+   * The tags associated with a load balancer.
    */
   @js.native
   trait TagDescription extends js.Object {
@@ -1872,7 +1873,7 @@ package elb {
   }
 
   /**
-   * <p>The key of a tag.</p>
+   * The key of a tag.
    */
   @js.native
   trait TagKeyOnly extends js.Object {

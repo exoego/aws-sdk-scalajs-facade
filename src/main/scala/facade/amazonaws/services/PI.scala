@@ -31,7 +31,7 @@ package pi {
   }
 
   /**
-   * <p>A timestamp, and a single numerical value, which together represent a measurement at a particular point in time.</p>
+   * A timestamp, and a single numerical value, which together represent a measurement at a particular point in time.
    */
   @js.native
   trait DataPoint extends js.Object {
@@ -124,7 +124,7 @@ package pi {
   }
 
   /**
-   * <p>A logical grouping of Performance Insights metrics for a related subject area. For example, the <code>db.sql</code> dimension group consists of the following dimensions: <code>db.sql.id</code>, <code>db.sql.db_id</code>, <code>db.sql.statement</code>, and <code>db.sql.tokenized_id</code>.</p>
+   * A logical grouping of Performance Insights metrics for a related subject area. For example, the <code>db.sql</code> dimension group consists of the following dimensions: <code>db.sql.id</code>, <code>db.sql.db_id</code>, <code>db.sql.statement</code>, and <code>db.sql.tokenized_id</code>.
    */
   @js.native
   trait DimensionGroup extends js.Object {
@@ -148,7 +148,7 @@ package pi {
   }
 
   /**
-   * <p>An array of descriptions and aggregated values for each dimension within a dimension group.</p>
+   * An array of descriptions and aggregated values for each dimension within a dimension group.
    */
   @js.native
   trait DimensionKeyDescription extends js.Object {
@@ -235,7 +235,7 @@ package pi {
   }
 
   /**
-   * <p>The request failed due to an unknown error.</p>
+   * The request failed due to an unknown error.
    */
   @js.native
   trait InternalServiceErrorException extends js.Object {
@@ -243,7 +243,7 @@ package pi {
   }
 
   /**
-   * <p>One of the arguments provided is invalid for this request.</p>
+   * One of the arguments provided is invalid for this request.
    */
   @js.native
   trait InvalidArgumentExceptionException extends js.Object {
@@ -251,7 +251,7 @@ package pi {
   }
 
   /**
-   * <p>A time-ordered series of data points, correpsonding to a dimension of a Performance Insights metric.</p>
+   * A time-ordered series of data points, correpsonding to a dimension of a Performance Insights metric.
    */
   @js.native
   trait MetricKeyDataPoints extends js.Object {
@@ -272,7 +272,7 @@ package pi {
   }
 
   /**
-   * <p>A single query to be processed. You must provide the metric to query. If no other parameters are specified, Performance Insights returns all of the data points for that metric. You can optionally request that the data points be aggregated by dimension group ( <code>GroupBy</code>), and return only those data points that match your criteria (<code>Filter</code>).</p>
+   * A single query to be processed. You must provide the metric to query. If no other parameters are specified, Performance Insights returns all of the data points for that metric. You can optionally request that the data points be aggregated by dimension group ( <code>GroupBy</code>), and return only those data points that match your criteria (<code>Filter</code>).
    */
   @js.native
   trait MetricQuery extends js.Object {
@@ -296,7 +296,7 @@ package pi {
   }
 
   /**
-   * <p>The user is not authorized to perform this request.</p>
+   * The user is not authorized to perform this request.
    */
   @js.native
   trait NotAuthorizedExceptionException extends js.Object {
@@ -304,7 +304,7 @@ package pi {
   }
 
   /**
-   * <p>If <code>PartitionBy</code> was specified in a <code>DescribeDimensionKeys</code> request, the dimensions are returned in an array. Each element in the array specifies one dimension. </p>
+   * If <code>PartitionBy</code> was specified in a <code>DescribeDimensionKeys</code> request, the dimensions are returned in an array. Each element in the array specifies one dimension.
    */
   @js.native
   trait ResponsePartitionKey extends js.Object {
@@ -322,7 +322,7 @@ package pi {
   }
 
   /**
-   * <p>An object describing a Performance Insights metric and one or more dimensions for that metric.</p>
+   * An object describing a Performance Insights metric and one or more dimensions for that metric.
    */
   @js.native
   trait ResponseResourceMetricKey extends js.Object {

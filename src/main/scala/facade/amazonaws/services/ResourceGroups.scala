@@ -223,7 +223,7 @@ package resourcegroups {
   }
 
   /**
-   * <p>A resource group.</p>
+   * A resource group.
    */
   @js.native
   trait Group extends js.Object {
@@ -247,7 +247,7 @@ package resourcegroups {
   }
 
   /**
-   * <p>A filter name and value pair that is used to obtain more specific results from a list of groups.</p>
+   * A filter name and value pair that is used to obtain more specific results from a list of groups.
    */
   @js.native
   trait GroupFilter extends js.Object {
@@ -274,7 +274,7 @@ package resourcegroups {
   }
 
   /**
-   * <p>The ARN and group name of a group.</p>
+   * The ARN and group name of a group.
    */
   @js.native
   trait GroupIdentifier extends js.Object {
@@ -295,7 +295,7 @@ package resourcegroups {
   }
 
   /**
-   * <p>The underlying resource query of a resource group. Resources that match query results are part of the group.</p>
+   * The underlying resource query of a resource group. Resources that match query results are part of the group.
    */
   @js.native
   trait GroupQuery extends js.Object {
@@ -403,7 +403,7 @@ package resourcegroups {
   }
 
   /**
-   * <p>A two-part error structure that can occur in <code>ListGroupResources</code> or <code>SearchResources</code> operations on CloudFormation stack-based queries. The error occurs if the CloudFormation stack on which the query is based either does not exist, or has a status that renders the stack inactive. A <code>QueryError</code> occurrence does not necessarily mean that AWS Resource Groups could not complete the operation, but the resulting group might have no member resources.</p>
+   * A two-part error structure that can occur in <code>ListGroupResources</code> or <code>SearchResources</code> operations on CloudFormation stack-based queries. The error occurs if the CloudFormation stack on which the query is based either does not exist, or has a status that renders the stack inactive. A <code>QueryError</code> occurrence does not necessarily mean that AWS Resource Groups could not complete the operation, but the resulting group might have no member resources.
    */
   @js.native
   trait QueryError extends js.Object {
@@ -438,7 +438,7 @@ package resourcegroups {
   }
 
   /**
-   * <p>A filter name and value pair that is used to obtain more specific results from a list of resources.</p>
+   * A filter name and value pair that is used to obtain more specific results from a list of resources.
    */
   @js.native
   trait ResourceFilter extends js.Object {
@@ -465,7 +465,7 @@ package resourcegroups {
   }
 
   /**
-   * <p>The ARN of a resource, and its resource type.</p>
+   * The ARN of a resource, and its resource type.
    */
   @js.native
   trait ResourceIdentifier extends js.Object {
@@ -486,7 +486,7 @@ package resourcegroups {
   }
 
   /**
-   * <p>The query that is used to define a resource group or a search for resources.</p>
+   * The query that is used to define a resource group or a search for resources.
    */
   @js.native
   trait ResourceQuery extends js.Object {

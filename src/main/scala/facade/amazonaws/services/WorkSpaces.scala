@@ -140,7 +140,7 @@ package workspaces {
   }
 
   /**
-   * <p>Describes a modification to the configuration of bring your own license (BYOL) for the specified account. </p>
+   * Describes a modification to the configuration of bring your own license (BYOL) for the specified account.
    */
   @js.native
   trait AccountModification extends js.Object {
@@ -235,7 +235,7 @@ package workspaces {
   }
 
   /**
-   * <p>Describes an Amazon WorkSpaces client.</p>
+   * Describes an Amazon WorkSpaces client.
    */
   @js.native
   trait ClientProperties extends js.Object {
@@ -253,7 +253,7 @@ package workspaces {
   }
 
   /**
-   * <p>Information about the Amazon WorkSpaces client.</p>
+   * Information about the Amazon WorkSpaces client.
    */
   @js.native
   trait ClientPropertiesResult extends js.Object {
@@ -286,7 +286,7 @@ package workspaces {
   }
 
   /**
-   * <p>Describes the compute type.</p>
+   * Describes the compute type.
    */
   @js.native
   trait ComputeType extends js.Object {
@@ -433,7 +433,7 @@ package workspaces {
   }
 
   /**
-   * <p>Describes the default values used to create a WorkSpace.</p>
+   * Describes the default values used to create a WorkSpace.
    */
   @js.native
   trait DefaultWorkspaceCreationProperties extends js.Object {
@@ -942,7 +942,7 @@ package workspaces {
   }
 
   /**
-   * <p>Describes a WorkSpace that cannot be created.</p>
+   * Describes a WorkSpace that cannot be created.
    */
   @js.native
   trait FailedCreateWorkspaceRequest extends js.Object {
@@ -966,7 +966,7 @@ package workspaces {
   }
 
   /**
-   * <p>Describes a WorkSpace that could not be rebooted. (<a>RebootWorkspaces</a>), rebuilt (<a>RebuildWorkspaces</a>), terminated (<a>TerminateWorkspaces</a>), started (<a>StartWorkspaces</a>), or stopped (<a>StopWorkspaces</a>).</p>
+   * Describes a WorkSpace that could not be rebooted. ('''RebootWorkspaces'''), rebuilt ('''RebuildWorkspaces'''), terminated ('''TerminateWorkspaces'''), started ('''StartWorkspaces'''), or stopped ('''StopWorkspaces''').
    */
   @js.native
   trait FailedWorkspaceChangeRequest extends js.Object {
@@ -1029,7 +1029,7 @@ package workspaces {
   }
 
   /**
-   * <p>Describes a rule for an IP access control group.</p>
+   * Describes a rule for an IP access control group.
    */
   @js.native
   trait IpRuleItem extends js.Object {
@@ -1097,7 +1097,7 @@ package workspaces {
   }
 
   /**
-   * <p>Describes a WorkSpace modification.</p>
+   * Describes a WorkSpace modification.
    */
   @js.native
   trait ModificationState extends js.Object {
@@ -1249,7 +1249,7 @@ package workspaces {
   }
 
   /**
-   * <p>The operating system that the image is running.</p>
+   * The operating system that the image is running.
    */
   @js.native
   trait OperatingSystem extends js.Object {
@@ -1274,7 +1274,7 @@ package workspaces {
   }
 
   /**
-   * <p>Describes the information used to reboot a WorkSpace.</p>
+   * Describes the information used to reboot a WorkSpace.
    */
   @js.native
   trait RebootRequest extends js.Object {
@@ -1322,7 +1322,7 @@ package workspaces {
   }
 
   /**
-   * <p>Describes the information used to rebuild a WorkSpace.</p>
+   * Describes the information used to rebuild a WorkSpace.
    */
   @js.native
   trait RebuildRequest extends js.Object {
@@ -1408,7 +1408,7 @@ package workspaces {
   }
 
   /**
-   * <p>Describes the root volume for a WorkSpace bundle.</p>
+   * Describes the root volume for a WorkSpace bundle.
    */
   @js.native
   trait RootStorage extends js.Object {
@@ -1433,7 +1433,7 @@ package workspaces {
   }
 
   /**
-   * <p>Information used to start a WorkSpace.</p>
+   * Information used to start a WorkSpace.
    */
   @js.native
   trait StartRequest extends js.Object {
@@ -1481,7 +1481,7 @@ package workspaces {
   }
 
   /**
-   * <p>Describes the information used to stop a WorkSpace.</p>
+   * Describes the information used to stop a WorkSpace.
    */
   @js.native
   trait StopRequest extends js.Object {
@@ -1529,7 +1529,7 @@ package workspaces {
   }
 
   /**
-   * <p>Describes a tag.</p>
+   * Describes a tag.
    */
   @js.native
   trait Tag extends js.Object {
@@ -1557,7 +1557,7 @@ package workspaces {
   }
 
   /**
-   * <p>Describes the information used to terminate a WorkSpace.</p>
+   * Describes the information used to terminate a WorkSpace.
    */
   @js.native
   trait TerminateRequest extends js.Object {
@@ -1636,7 +1636,7 @@ package workspaces {
   }
 
   /**
-   * <p>Describes the user storage for a WorkSpace bundle.</p>
+   * Describes the user storage for a WorkSpace bundle.
    */
   @js.native
   trait UserStorage extends js.Object {
@@ -1654,7 +1654,7 @@ package workspaces {
   }
 
   /**
-   * <p>Describes a WorkSpace.</p>
+   * Describes a WorkSpace.
    */
   @js.native
   trait Workspace extends js.Object {
@@ -1714,7 +1714,7 @@ package workspaces {
   }
 
   /**
-   * <p>Describes a WorkSpace bundle.</p>
+   * Describes a WorkSpace bundle.
    */
   @js.native
   trait WorkspaceBundle extends js.Object {
@@ -1750,7 +1750,7 @@ package workspaces {
   }
 
   /**
-   * <p>Describes the connection status of a WorkSpace.</p>
+   * Describes the connection status of a WorkSpace.
    */
   @js.native
   trait WorkspaceConnectionStatus extends js.Object {
@@ -1777,7 +1777,7 @@ package workspaces {
   }
 
   /**
-   * <p>Describes an AWS Directory Service directory that is used with Amazon WorkSpaces.</p>
+   * Describes an AWS Directory Service directory that is used with Amazon WorkSpaces.
    */
   @js.native
   trait WorkspaceDirectory extends js.Object {
@@ -1848,7 +1848,7 @@ package workspaces {
   }
 
   /**
-   * <p>Describes a WorkSpace image.</p>
+   * Describes a WorkSpace image.
    */
   @js.native
   trait WorkspaceImage extends js.Object {
@@ -1910,7 +1910,7 @@ package workspaces {
   }
 
   /**
-   * <p>Describes a WorkSpace.</p>
+   * Describes a WorkSpace.
    */
   @js.native
   trait WorkspaceProperties extends js.Object {
@@ -1940,7 +1940,7 @@ package workspaces {
   }
 
   /**
-   * <p>Describes the information used to create a WorkSpace.</p>
+   * Describes the information used to create a WorkSpace.
    */
   @js.native
   trait WorkspaceRequest extends js.Object {
@@ -2000,7 +2000,7 @@ package workspaces {
   }
 
   /**
-   * <p>Describes an IP access control group.</p>
+   * Describes an IP access control group.
    */
   @js.native
   trait WorkspacesIpGroup extends js.Object {

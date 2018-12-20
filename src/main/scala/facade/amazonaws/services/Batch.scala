@@ -67,7 +67,7 @@ package batch {
   }
 
   /**
-   * <p>An object representing an AWS Batch array job.</p>
+   * An object representing an AWS Batch array job.
    */
   @js.native
   trait ArrayProperties extends js.Object {
@@ -85,7 +85,7 @@ package batch {
   }
 
   /**
-   * <p>An object representing the array properties of a job.</p>
+   * An object representing the array properties of a job.
    */
   @js.native
   trait ArrayPropertiesDetail extends js.Object {
@@ -109,7 +109,7 @@ package batch {
   }
 
   /**
-   * <p>An object representing the array properties of a job.</p>
+   * An object representing the array properties of a job.
    */
   @js.native
   trait ArrayPropertiesSummary extends js.Object {
@@ -130,7 +130,7 @@ package batch {
   }
 
   /**
-   * <p>An object representing the details of a container that is part of a job attempt.</p>
+   * An object representing the details of a container that is part of a job attempt.
    */
   @js.native
   trait AttemptContainerDetail extends js.Object {
@@ -163,7 +163,7 @@ package batch {
   }
 
   /**
-   * <p>An object representing a job attempt.</p>
+   * An object representing a job attempt.
    */
   @js.native
   trait AttemptDetail extends js.Object {
@@ -253,7 +253,7 @@ package batch {
   }
 
   /**
-   * <p>An object representing an AWS Batch compute environment.</p>
+   * An object representing an AWS Batch compute environment.
    */
   @js.native
   trait ComputeEnvironmentDetail extends js.Object {
@@ -295,7 +295,7 @@ package batch {
   }
 
   /**
-   * <p>The order in which compute environments are tried for job placement within a queue. Compute environments are tried in ascending order. For example, if two compute environments are associated with a job queue, the compute environment with a lower order integer value is tried for job placement first.</p>
+   * The order in which compute environments are tried for job placement within a queue. Compute environments are tried in ascending order. For example, if two compute environments are associated with a job queue, the compute environment with a lower order integer value is tried for job placement first.
    */
   @js.native
   trait ComputeEnvironmentOrder extends js.Object {
@@ -316,7 +316,7 @@ package batch {
   }
 
   /**
-   * <p>An object representing an AWS Batch compute resource.</p>
+   * An object representing an AWS Batch compute resource.
    */
   @js.native
   trait ComputeResource extends js.Object {
@@ -376,7 +376,7 @@ package batch {
   }
 
   /**
-   * <p>An object representing the attributes of a compute environment that can be updated.</p>
+   * An object representing the attributes of a compute environment that can be updated.
    */
   @js.native
   trait ComputeResourceUpdate extends js.Object {
@@ -400,7 +400,7 @@ package batch {
   }
 
   /**
-   * <p>An object representing the details of a container that is part of a job.</p>
+   * An object representing the details of a container that is part of a job.
    */
   @js.native
   trait ContainerDetail extends js.Object {
@@ -472,7 +472,7 @@ package batch {
   }
 
   /**
-   * <p>The overrides that should be sent to a container.</p>
+   * The overrides that should be sent to a container.
    */
   @js.native
   trait ContainerOverrides extends js.Object {
@@ -502,7 +502,7 @@ package batch {
   }
 
   /**
-   * <p>Container properties are used in job definitions to describe the container that is launched as part of a job.</p>
+   * Container properties are used in job definitions to describe the container that is launched as part of a job.
    */
   @js.native
   trait ContainerProperties extends js.Object {
@@ -556,7 +556,7 @@ package batch {
   }
 
   /**
-   * <p>An object representing summary details of a container within a job.</p>
+   * An object representing summary details of a container within a job.
    */
   @js.native
   trait ContainerSummary extends js.Object {
@@ -901,7 +901,7 @@ package batch {
   }
 
   /**
-   * <p>The contents of the <code>host</code> parameter determine whether your data volume persists on the host container instance and where it is stored. If the host parameter is empty, then the Docker daemon assigns a host path for your data volume, but the data is not guaranteed to persist after the containers associated with it stop running.</p>
+   * The contents of the <code>host</code> parameter determine whether your data volume persists on the host container instance and where it is stored. If the host parameter is empty, then the Docker daemon assigns a host path for your data volume, but the data is not guaranteed to persist after the containers associated with it stop running.
    */
   @js.native
   trait Host extends js.Object {
@@ -937,7 +937,7 @@ package batch {
   }
 
   /**
-   * <p>An object representing an AWS Batch job definition.</p>
+   * An object representing an AWS Batch job definition.
    */
   @js.native
   trait JobDefinition extends js.Object {
@@ -989,7 +989,7 @@ package batch {
   }
 
   /**
-   * <p>An object representing an AWS Batch job dependency.</p>
+   * An object representing an AWS Batch job dependency.
    */
   @js.native
   trait JobDependency extends js.Object {
@@ -1010,7 +1010,7 @@ package batch {
   }
 
   /**
-   * <p>An object representing an AWS Batch job.</p>
+   * An object representing an AWS Batch job.
    */
   @js.native
   trait JobDetail extends js.Object {
@@ -1079,7 +1079,7 @@ package batch {
   }
 
   /**
-   * <p>An object representing the details of an AWS Batch job queue.</p>
+   * An object representing the details of an AWS Batch job queue.
    */
   @js.native
   trait JobQueueDetail extends js.Object {
@@ -1127,7 +1127,7 @@ package batch {
   }
 
   /**
-   * <p>An object representing summary details of a job.</p>
+   * An object representing summary details of a job.
    */
   @js.native
   trait JobSummary extends js.Object {
@@ -1172,7 +1172,7 @@ package batch {
   }
 
   /**
-   * <p>An object representing a job timeout configuration.</p>
+   * An object representing a job timeout configuration.
    */
   @js.native
   trait JobTimeout extends js.Object {
@@ -1190,7 +1190,7 @@ package batch {
   }
 
   /**
-   * <p>A key-value pair object.</p>
+   * A key-value pair object.
    */
   @js.native
   trait KeyValuePair extends js.Object {
@@ -1211,7 +1211,7 @@ package batch {
   }
 
   /**
-   * <p>An object representing a launch template associated with a compute resource. You must specify either the launch template ID or launch template name in the request, but not both. </p>
+   * An object representing a launch template associated with a compute resource. You must specify either the launch template ID or launch template name in the request, but not both.
    */
   @js.native
   trait LaunchTemplateSpecification extends js.Object {
@@ -1283,7 +1283,7 @@ package batch {
   }
 
   /**
-   * <p>Details on a Docker volume mount point that is used in a job's container properties.</p>
+   * Details on a Docker volume mount point that is used in a job's container properties.
    */
   @js.native
   trait MountPoint extends js.Object {
@@ -1307,7 +1307,7 @@ package batch {
   }
 
   /**
-   * <p>An object representing the elastic network interface for a multi-node parallel job node.</p>
+   * An object representing the elastic network interface for a multi-node parallel job node.
    */
   @js.native
   trait NetworkInterface extends js.Object {
@@ -1331,7 +1331,7 @@ package batch {
   }
 
   /**
-   * <p>An object representing the details of a multi-node parallel job node.</p>
+   * An object representing the details of a multi-node parallel job node.
    */
   @js.native
   trait NodeDetails extends js.Object {
@@ -1352,7 +1352,7 @@ package batch {
   }
 
   /**
-   * <p>Object representing any node overrides to a job definition that is used in a <a>SubmitJob</a> API operation.</p>
+   * Object representing any node overrides to a job definition that is used in a '''SubmitJob''' API operation.
    */
   @js.native
   trait NodeOverrides extends js.Object {
@@ -1370,7 +1370,7 @@ package batch {
   }
 
   /**
-   * <p>An object representing the node properties of a multi-node parallel job.</p>
+   * An object representing the node properties of a multi-node parallel job.
    */
   @js.native
   trait NodeProperties extends js.Object {
@@ -1394,7 +1394,7 @@ package batch {
   }
 
   /**
-   * <p>An object representing the properties of a node that is associated with a multi-node parallel job.</p>
+   * An object representing the properties of a node that is associated with a multi-node parallel job.
    */
   @js.native
   trait NodePropertiesSummary extends js.Object {
@@ -1418,7 +1418,7 @@ package batch {
   }
 
   /**
-   * <p>Object representing any node overrides to a job definition that is used in a <a>SubmitJob</a> API operation.</p>
+   * Object representing any node overrides to a job definition that is used in a '''SubmitJob''' API operation.
    */
   @js.native
   trait NodePropertyOverride extends js.Object {
@@ -1439,7 +1439,7 @@ package batch {
   }
 
   /**
-   * <p>An object representing the properties of the node range for a multi-node parallel job.</p>
+   * An object representing the properties of the node range for a multi-node parallel job.
    */
   @js.native
   trait NodeRangeProperty extends js.Object {
@@ -1514,7 +1514,7 @@ package batch {
   }
 
   /**
-   * <p>The retry strategy associated with a job.</p>
+   * The retry strategy associated with a job.
    */
   @js.native
   trait RetryStrategy extends js.Object {
@@ -1623,7 +1623,7 @@ package batch {
   }
 
   /**
-   * <p>The <code>ulimit</code> settings to pass to the container.</p>
+   * The <code>ulimit</code> settings to pass to the container.
    */
   @js.native
   trait Ulimit extends js.Object {
@@ -1731,7 +1731,7 @@ package batch {
   }
 
   /**
-   * <p>A data volume used in a job's container properties.</p>
+   * A data volume used in a job's container properties.
    */
   @js.native
   trait Volume extends js.Object {

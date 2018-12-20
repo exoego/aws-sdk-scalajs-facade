@@ -119,7 +119,7 @@ package codestar {
   }
 
   /**
-   * <p>Location and destination information about the source code files provided with the project request. The source code is uploaded to the new project source repository after project creation.</p>
+   * Location and destination information about the source code files provided with the project request. The source code is uploaded to the new project source repository after project creation.
    */
   @js.native
   trait Code extends js.Object {
@@ -140,7 +140,7 @@ package codestar {
   }
 
   /**
-   * <p>Information about the AWS CodeCommit repository to be created in AWS CodeStar. This is where the source code files provided with the project request will be uploaded after project creation.</p>
+   * Information about the AWS CodeCommit repository to be created in AWS CodeStar. This is where the source code files provided with the project request will be uploaded after project creation.
    */
   @js.native
   trait CodeCommitCodeDestination extends js.Object {
@@ -158,7 +158,7 @@ package codestar {
   }
 
   /**
-   * <p>The repository to be created in AWS CodeStar. Valid values are AWS CodeCommit or GitHub. After AWS CodeStar provisions the new repository, the source code files provided with the project request are placed in the repository.</p>
+   * The repository to be created in AWS CodeStar. Valid values are AWS CodeCommit or GitHub. After AWS CodeStar provisions the new repository, the source code files provided with the project request are placed in the repository.
    */
   @js.native
   trait CodeDestination extends js.Object {
@@ -179,7 +179,7 @@ package codestar {
   }
 
   /**
-   * <p>The location where the source code files provided with the project request are stored. AWS CodeStar retrieves the files during project creation.</p>
+   * The location where the source code files provided with the project request are stored. AWS CodeStar retrieves the files during project creation.
    */
   @js.native
   trait CodeSource extends js.Object {
@@ -507,7 +507,7 @@ package codestar {
   }
 
   /**
-   * <p>Information about the GitHub repository to be created in AWS CodeStar. This is where the source code files provided with the project request will be uploaded after project creation.</p>
+   * Information about the GitHub repository to be created in AWS CodeStar. This is where the source code files provided with the project request will be uploaded after project creation.
    */
   @js.native
   trait GitHubCodeDestination extends js.Object {
@@ -732,7 +732,7 @@ package codestar {
   }
 
   /**
-   * <p>An indication of whether a project creation or deletion is failed or successful.</p>
+   * An indication of whether a project creation or deletion is failed or successful.
    */
   @js.native
   trait ProjectStatus extends js.Object {
@@ -753,7 +753,7 @@ package codestar {
   }
 
   /**
-   * <p>Information about the metadata for a project.</p>
+   * Information about the metadata for a project.
    */
   @js.native
   trait ProjectSummary extends js.Object {
@@ -774,7 +774,7 @@ package codestar {
   }
 
   /**
-   * <p>Information about a resource for a project.</p>
+   * Information about a resource for a project.
    */
   @js.native
   trait Resource extends js.Object {
@@ -792,7 +792,7 @@ package codestar {
   }
 
   /**
-   * <p>The Amazon S3 location where the source code files provided with the project request are stored.</p>
+   * The Amazon S3 location where the source code files provided with the project request are stored.
    */
   @js.native
   trait S3Location extends js.Object {
@@ -846,7 +846,7 @@ package codestar {
   }
 
   /**
-   * <p>Information about a team member in a project.</p>
+   * Information about a team member in a project.
    */
   @js.native
   trait TeamMember extends js.Object {
@@ -870,7 +870,7 @@ package codestar {
   }
 
   /**
-   * <p>The toolchain template file provided with the project request. AWS CodeStar uses the template to provision the toolchain stack in AWS CloudFormation.</p>
+   * The toolchain template file provided with the project request. AWS CodeStar uses the template to provision the toolchain stack in AWS CloudFormation.
    */
   @js.native
   trait Toolchain extends js.Object {
@@ -894,7 +894,7 @@ package codestar {
   }
 
   /**
-   * <p>The Amazon S3 location where the toolchain template file provided with the project request is stored. AWS CodeStar retrieves the file during project creation.</p>
+   * The Amazon S3 location where the toolchain template file provided with the project request is stored. AWS CodeStar retrieves the file during project creation.
    */
   @js.native
   trait ToolchainSource extends js.Object {
@@ -1076,7 +1076,7 @@ package codestar {
   }
 
   /**
-   * <p>Information about a user's profile in AWS CodeStar.</p>
+   * Information about a user's profile in AWS CodeStar.
    */
   @js.native
   trait UserProfileSummary extends js.Object {

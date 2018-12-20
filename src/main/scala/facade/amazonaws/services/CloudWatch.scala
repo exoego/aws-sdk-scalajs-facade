@@ -108,7 +108,7 @@ package cloudwatch {
   }
 
   /**
-   * <p>Represents the history of a specific alarm.</p>
+   * Represents the history of a specific alarm.
    */
   @js.native
   trait AlarmHistoryItem extends js.Object {
@@ -147,7 +147,7 @@ package cloudwatch {
   }
 
   /**
-   * <p>Represents a specific dashboard.</p>
+   * Represents a specific dashboard.
    */
   @js.native
   trait DashboardEntry extends js.Object {
@@ -174,7 +174,7 @@ package cloudwatch {
   }
 
   /**
-   * <p>An error or warning for the operation.</p>
+   * An error or warning for the operation.
    */
   @js.native
   trait DashboardValidationMessage extends js.Object {
@@ -195,7 +195,7 @@ package cloudwatch {
   }
 
   /**
-   * <p>Encapsulates the statistical data that CloudWatch computes from metric data.</p>
+   * Encapsulates the statistical data that CloudWatch computes from metric data.
    */
   @js.native
   trait Datapoint extends js.Object {
@@ -421,7 +421,7 @@ package cloudwatch {
   }
 
   /**
-   * <p>Expands the identity of a metric.</p>
+   * Expands the identity of a metric.
    */
   @js.native
   trait Dimension extends js.Object {
@@ -442,7 +442,7 @@ package cloudwatch {
   }
 
   /**
-   * <p>Represents filters for a dimension.</p>
+   * Represents filters for a dimension.
    */
   @js.native
   trait DimensionFilter extends js.Object {
@@ -753,7 +753,7 @@ package cloudwatch {
   }
 
   /**
-   * <p>A message returned by the <code>GetMetricData</code>API, including a code and a description.</p>
+   * A message returned by the <code>GetMetricData</code>API, including a code and a description.
    */
   @js.native
   trait MessageData extends js.Object {
@@ -774,7 +774,7 @@ package cloudwatch {
   }
 
   /**
-   * <p>Represents a specific metric.</p>
+   * Represents a specific metric.
    */
   @js.native
   trait Metric extends js.Object {
@@ -798,7 +798,7 @@ package cloudwatch {
   }
 
   /**
-   * <p>Represents an alarm.</p>
+   * Represents an alarm.
    */
   @js.native
   trait MetricAlarm extends js.Object {
@@ -891,7 +891,10 @@ package cloudwatch {
   }
 
   /**
-   * <p>This structure is used in both <code>GetMetricData</code> and <code>PutMetricAlarm</code>. The supported use of this structure is different for those two operations.</p> <p>When used in <code>GetMetricData</code>, it indicates the metric data to return, and whether this call is just retrieving a batch set of data for one metric, or is performing a math expression on metric data. A single <code>GetMetricData</code> call can include up to 100 <code>MetricDataQuery</code> structures.</p> <p>When used in <code>PutMetricAlarm</code>, it enables you to create an alarm based on a metric math expression. Each <code>MetricDataQuery</code> in the array specifies either a metric to retrieve, or a math expression to be performed on retrieved metrics. A single <code>PutMetricAlarm</code> call can include up to 20 <code>MetricDataQuery</code> structures in the array. The 20 structures can include as many as 10 structures that contain a <code>MetricStat</code> parameter to retrieve a metric, and as many as 10 structures that contain the <code>Expression</code> parameter to perform a math expression. Any expression used in a <code>PutMetricAlarm</code> operation must return a single time series. For more information, see <a href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/using-metric-math.html#metric-math-syntax">Metric Math Syntax and Functions</a> in the <i>Amazon CloudWatch User Guide</i>.</p> <p>Some of the parameters of this structure also have different uses whether you are using this structure in a <code>GetMetricData</code> operation or a <code>PutMetricAlarm</code> operation. These differences are explained in the following parameter list.</p>
+   * This structure is used in both <code>GetMetricData</code> and <code>PutMetricAlarm</code>. The supported use of this structure is different for those two operations.
+   *  When used in <code>GetMetricData</code>, it indicates the metric data to return, and whether this call is just retrieving a batch set of data for one metric, or is performing a math expression on metric data. A single <code>GetMetricData</code> call can include up to 100 <code>MetricDataQuery</code> structures.
+   *  When used in <code>PutMetricAlarm</code>, it enables you to create an alarm based on a metric math expression. Each <code>MetricDataQuery</code> in the array specifies either a metric to retrieve, or a math expression to be performed on retrieved metrics. A single <code>PutMetricAlarm</code> call can include up to 20 <code>MetricDataQuery</code> structures in the array. The 20 structures can include as many as 10 structures that contain a <code>MetricStat</code> parameter to retrieve a metric, and as many as 10 structures that contain the <code>Expression</code> parameter to perform a math expression. Any expression used in a <code>PutMetricAlarm</code> operation must return a single time series. For more information, see <a href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/using-metric-math.html#metric-math-syntax">Metric Math Syntax and Functions</a> in the <i>Amazon CloudWatch User Guide</i>.
+   *  Some of the parameters of this structure also have different uses whether you are using this structure in a <code>GetMetricData</code> operation or a <code>PutMetricAlarm</code> operation. These differences are explained in the following parameter list.
    */
   @js.native
   trait MetricDataQuery extends js.Object {
@@ -921,7 +924,7 @@ package cloudwatch {
   }
 
   /**
-   * <p>A <code>GetMetricData</code> call returns an array of <code>MetricDataResult</code> structures. Each of these structures includes the data points for that metric, along with the timestamps of those data points and other identifying information.</p>
+   * A <code>GetMetricData</code> call returns an array of <code>MetricDataResult</code> structures. Each of these structures includes the data points for that metric, along with the timestamps of those data points and other identifying information.
    */
   @js.native
   trait MetricDataResult extends js.Object {
@@ -954,7 +957,7 @@ package cloudwatch {
   }
 
   /**
-   * <p>Encapsulates the information sent to either create a metric or add new values to be aggregated into an existing metric.</p>
+   * Encapsulates the information sent to either create a metric or add new values to be aggregated into an existing metric.
    */
   @js.native
   trait MetricDatum extends js.Object {
@@ -996,7 +999,7 @@ package cloudwatch {
   }
 
   /**
-   * <p>This structure defines the metric to be returned, along with the statistics, period, and units.</p>
+   * This structure defines the metric to be returned, along with the statistics, period, and units.
    */
   @js.native
   trait MetricStat extends js.Object {
@@ -1227,7 +1230,7 @@ package cloudwatch {
   }
 
   /**
-   * <p>Represents a set of statistics that describes a specific metric. </p>
+   * Represents a set of statistics that describes a specific metric.
    */
   @js.native
   trait StatisticSet extends js.Object {

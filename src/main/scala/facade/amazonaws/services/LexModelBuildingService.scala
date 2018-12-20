@@ -119,7 +119,7 @@ package lexmodelbuildingservice {
   }
 
   /**
-   * <p>Provides information about a bot alias.</p>
+   * Provides information about a bot alias.
    */
   @js.native
   trait BotAliasMetadata extends js.Object {
@@ -155,7 +155,7 @@ package lexmodelbuildingservice {
   }
 
   /**
-   * <p>Represents an association between an Amazon Lex bot and an external messaging platform.</p>
+   * Represents an association between an Amazon Lex bot and an external messaging platform.
    */
   @js.native
   trait BotChannelAssociation extends js.Object {
@@ -197,7 +197,7 @@ package lexmodelbuildingservice {
   }
 
   /**
-   * <p>Provides information about a bot. .</p>
+   * Provides information about a bot. .
    */
   @js.native
   trait BotMetadata extends js.Object {
@@ -230,7 +230,7 @@ package lexmodelbuildingservice {
   }
 
   /**
-   * <p>Provides metadata for a built-in intent.</p>
+   * Provides metadata for a built-in intent.
    */
   @js.native
   trait BuiltinIntentMetadata extends js.Object {
@@ -251,7 +251,7 @@ package lexmodelbuildingservice {
   }
 
   /**
-   * <p>Provides information about a slot used in a built-in intent.</p>
+   * Provides information about a slot used in a built-in intent.
    */
   @js.native
   trait BuiltinIntentSlot extends js.Object {
@@ -269,7 +269,7 @@ package lexmodelbuildingservice {
   }
 
   /**
-   * <p>Provides information about a built in slot type.</p>
+   * Provides information about a built in slot type.
    */
   @js.native
   trait BuiltinSlotTypeMetadata extends js.Object {
@@ -307,7 +307,7 @@ package lexmodelbuildingservice {
   }
 
   /**
-   * <p>Specifies a Lambda function that verifies requests to a bot or fulfills the user's request to a bot..</p>
+   * Specifies a Lambda function that verifies requests to a bot or fulfills the user's request to a bot..
    */
   @js.native
   trait CodeHook extends js.Object {
@@ -696,7 +696,11 @@ package lexmodelbuildingservice {
   }
 
   /**
-   * <p>Each slot type can have a set of values. Each enumeration value represents a value the slot type can take. </p> <p>For example, a pizza ordering bot could have a slot type that specifies the type of crust that the pizza should have. The slot type could include the values </p> <ul> <li> <p>thick</p> </li> <li> <p>thin</p> </li> <li> <p>stuffed</p> </li> </ul>
+   * Each slot type can have a set of values. Each enumeration value represents a value the slot type can take.
+   *  For example, a pizza ordering bot could have a slot type that specifies the type of crust that the pizza should have. The slot type could include the values
+   * * thick
+   *  * thin
+   *  * stuffed
    */
   @js.native
   trait EnumerationValue extends js.Object {
@@ -732,7 +736,7 @@ package lexmodelbuildingservice {
   }
 
   /**
-   * <p>A prompt for additional activity after an intent is fulfilled. For example, after the <code>OrderPizza</code> intent is fulfilled, you might prompt the user to find out whether the user wants to order drinks.</p>
+   * A prompt for additional activity after an intent is fulfilled. For example, after the <code>OrderPizza</code> intent is fulfilled, you might prompt the user to find out whether the user wants to order drinks.
    */
   @js.native
   trait FollowUpPrompt extends js.Object {
@@ -753,7 +757,10 @@ package lexmodelbuildingservice {
   }
 
   /**
-   * <p> Describes how the intent is fulfilled after the user provides all of the information required for the intent. You can provide a Lambda function to process the intent, or you can return the intent information to the client application. We recommend that you use a Lambda function so that the relevant logic lives in the Cloud and limit the client-side code primarily to presentation. If you need to update the logic, you only update the Lambda function; you don't need to upgrade your client application. </p> <p>Consider the following examples:</p> <ul> <li> <p>In a pizza ordering application, after the user provides all of the information for placing an order, you use a Lambda function to place an order with a pizzeria. </p> </li> <li> <p>In a gaming application, when a user says "pick up a rock," this information must go back to the client application so that it can perform the operation and update the graphics. In this case, you want Amazon Lex to return the intent data to the client. </p> </li> </ul>
+   * Describes how the intent is fulfilled after the user provides all of the information required for the intent. You can provide a Lambda function to process the intent, or you can return the intent information to the client application. We recommend that you use a Lambda function so that the relevant logic lives in the Cloud and limit the client-side code primarily to presentation. If you need to update the logic, you only update the Lambda function; you don't need to upgrade your client application.
+   *  Consider the following examples:
+   * * In a pizza ordering application, after the user provides all of the information for placing an order, you use a Lambda function to place an order with a pizzeria.
+   *  * In a gaming application, when a user says "pick up a rock," this information must go back to the client application so that it can perform the operation and update the graphics. In this case, you want Amazon Lex to return the intent data to the client.
    */
   @js.native
   trait FulfillmentActivity extends js.Object {
@@ -1689,7 +1696,7 @@ package lexmodelbuildingservice {
   }
 
   /**
-   * <p>Identifies the specific version of an intent.</p>
+   * Identifies the specific version of an intent.
    */
   @js.native
   trait Intent extends js.Object {
@@ -1710,7 +1717,7 @@ package lexmodelbuildingservice {
   }
 
   /**
-   * <p>Provides information about an intent.</p>
+   * Provides information about an intent.
    */
   @js.native
   trait IntentMetadata extends js.Object {
@@ -1755,7 +1762,7 @@ package lexmodelbuildingservice {
   }
 
   /**
-   * <p>The message object that provides the message text and its type.</p>
+   * The message object that provides the message text and its type.
    */
   @js.native
   trait Message extends js.Object {
@@ -1786,7 +1793,7 @@ package lexmodelbuildingservice {
   }
 
   /**
-   * <p>Obtains information from the user. To define a prompt, provide one or more messages and specify the number of attempts to get information from the user. If you provide more than one message, Amazon Lex chooses one of the messages to use to prompt the user. For more information, see <a>how-it-works</a>.</p>
+   * Obtains information from the user. To define a prompt, provide one or more messages and specify the number of attempts to get information from the user. If you provide more than one message, Amazon Lex chooses one of the messages to use to prompt the user. For more information, see <a>how-it-works</a>.
    */
   @js.native
   trait Prompt extends js.Object {
@@ -2166,7 +2173,7 @@ package lexmodelbuildingservice {
   }
 
   /**
-   * <p>Identifies the version of a specific slot.</p>
+   * Identifies the version of a specific slot.
    */
   @js.native
   trait Slot extends js.Object {
@@ -2215,7 +2222,7 @@ package lexmodelbuildingservice {
   }
 
   /**
-   * <p>Provides information about a slot type..</p>
+   * Provides information about a slot type..
    */
   @js.native
   trait SlotTypeMetadata extends js.Object {
@@ -2303,7 +2310,7 @@ package lexmodelbuildingservice {
   }
 
   /**
-   * <p>A collection of messages that convey information to the user. At runtime, Amazon Lex selects the message to convey. </p>
+   * A collection of messages that convey information to the user. At runtime, Amazon Lex selects the message to convey.
    */
   @js.native
   trait Statement extends js.Object {
@@ -2341,7 +2348,7 @@ package lexmodelbuildingservice {
   }
 
   /**
-   * <p>Provides information about a single utterance that was made to your bot. </p>
+   * Provides information about a single utterance that was made to your bot.
    */
   @js.native
   trait UtteranceData extends js.Object {
@@ -2371,7 +2378,7 @@ package lexmodelbuildingservice {
   }
 
   /**
-   * <p>Provides a list of utterances that have been made to a specific version of your bot. The list contains a maximum of 100 utterances.</p>
+   * Provides a list of utterances that have been made to a specific version of your bot. The list contains a maximum of 100 utterances.
    */
   @js.native
   trait UtteranceList extends js.Object {

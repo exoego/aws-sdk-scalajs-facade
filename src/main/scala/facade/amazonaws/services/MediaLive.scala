@@ -4262,7 +4262,6 @@ package medialive {
 
   /**
    * Input resolution based on lines of vertical resolution in the input; SD is less than 720 lines, HD is 720 to 1080 lines, UHD is greater than 1080 lines
-   *
    */
   object InputResolutionEnum {
     val SD = "SD"
@@ -5825,7 +5824,6 @@ package medialive {
 
   /**
    * Resolution based on lines of vertical resolution; SD is less than 720 lines, HD is 720 to 1080 lines, UHD is greater than 1080 lines
-   *
    */
   object ReservationResolutionEnum {
     val SD = "SD"

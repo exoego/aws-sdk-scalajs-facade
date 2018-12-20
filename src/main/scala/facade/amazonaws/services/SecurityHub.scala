@@ -126,7 +126,7 @@ package securityhub {
   }
 
   /**
-   * <p>The details of an AWS account.</p>
+   * The details of an AWS account.
    */
   @js.native
   trait AccountDetails extends js.Object {
@@ -147,7 +147,7 @@ package securityhub {
   }
 
   /**
-   * <p>The details of an AWS EC2 instance.</p>
+   * The details of an AWS EC2 instance.
    */
   @js.native
   trait AwsEc2InstanceDetails extends js.Object {
@@ -189,7 +189,7 @@ package securityhub {
   }
 
   /**
-   * <p>AWS IAM access key details related to a finding.</p>
+   * AWS IAM access key details related to a finding.
    */
   @js.native
   trait AwsIamAccessKeyDetails extends js.Object {
@@ -220,7 +220,7 @@ package securityhub {
   }
 
   /**
-   * <p>The details of an AWS S3 Bucket.</p>
+   * The details of an AWS S3 Bucket.
    */
   @js.native
   trait AwsS3BucketDetails extends js.Object {
@@ -241,7 +241,9 @@ package securityhub {
   }
 
   /**
-   * <p>Provides consistent format for the contents of the Security Hub-aggregated findings. AwsSecurityFinding format enables you to share findings between AWS security services and third-party solutions, and compliance checks.</p> <note> <p>A finding is a potential security issue generated either by AWS services (GuardDuty, Inspector, Macie) or by the integrated third-party solutions and compliance checks.</p> </note>
+   * Provides consistent format for the contents of the Security Hub-aggregated findings. AwsSecurityFinding format enables you to share findings between AWS security services and third-party solutions, and compliance checks.
+   *
+   * '''Note:'''A finding is a potential security issue generated either by AWS services (GuardDuty, Inspector, Macie) or by the integrated third-party solutions and compliance checks.
    */
   @js.native
   trait AwsSecurityFinding extends js.Object {
@@ -346,7 +348,7 @@ package securityhub {
   }
 
   /**
-   * <p>A collection of attributes that are applied to all active Security Hub-aggregated findings and that result in a subset of findings that are included in this insight. </p>
+   * A collection of attributes that are applied to all active Security Hub-aggregated findings and that result in a subset of findings that are included in this insight.
    */
   @js.native
   trait AwsSecurityFindingFilters extends js.Object {
@@ -706,7 +708,7 @@ package securityhub {
   }
 
   /**
-   * <p>Exclusive to findings that are generated as the result of a check run against a specific rule in a supported standard (for example, AWS CIS Foundations). Contains compliance-related finding details.</p>
+   * Exclusive to findings that are generated as the result of a check run against a specific rule in a supported standard (for example, AWS CIS Foundations). Contains compliance-related finding details.
    */
   @js.native
   trait Compliance extends js.Object {
@@ -733,7 +735,7 @@ package securityhub {
   }
 
   /**
-   * <p>Container details related to a finding.</p>
+   * Container details related to a finding.
    */
   @js.native
   trait ContainerDetails extends js.Object {
@@ -826,7 +828,7 @@ package securityhub {
   }
 
   /**
-   * <p>A date filter for querying findings.</p>
+   * A date filter for querying findings.
    */
   @js.native
   trait DateFilter extends js.Object {
@@ -850,7 +852,7 @@ package securityhub {
   }
 
   /**
-   * <p>A date range for the date filter.</p>
+   * A date range for the date filter.
    */
   @js.native
   trait DateRange extends js.Object {
@@ -1400,7 +1402,7 @@ package securityhub {
   }
 
   /**
-   * <p>Includes details of the list of the findings that cannot be imported. </p>
+   * Includes details of the list of the findings that cannot be imported.
    */
   @js.native
   trait ImportFindingsError extends js.Object {
@@ -1424,7 +1426,7 @@ package securityhub {
   }
 
   /**
-   * <p>Contains information about a Security Hub insight. </p>
+   * Contains information about a Security Hub insight.
    */
   @js.native
   trait Insight extends js.Object {
@@ -1451,7 +1453,7 @@ package securityhub {
   }
 
   /**
-   * <p>The insight result values returned by the GetInsightResults operation.</p>
+   * The insight result values returned by the GetInsightResults operation.
    */
   @js.native
   trait InsightResultValue extends js.Object {
@@ -1472,7 +1474,7 @@ package securityhub {
   }
 
   /**
-   * <p>The insight results returned by the GetInsightResults operation.</p>
+   * The insight results returned by the GetInsightResults operation.
    */
   @js.native
   trait InsightResults extends js.Object {
@@ -1496,7 +1498,7 @@ package securityhub {
   }
 
   /**
-   * <p>The details of an invitation sent to an AWS account by the Security Hub master account. </p>
+   * The details of an invitation sent to an AWS account by the Security Hub master account.
    */
   @js.native
   trait Invitation extends js.Object {
@@ -1553,7 +1555,7 @@ package securityhub {
   }
 
   /**
-   * <p>The IP filter for querying findings.&gt;</p>
+   * The IP filter for querying findings.&gt;
    */
   @js.native
   trait IpFilter extends js.Object {
@@ -1571,7 +1573,7 @@ package securityhub {
   }
 
   /**
-   * <p>A keyword filter for querying findings.</p>
+   * A keyword filter for querying findings.
    */
   @js.native
   trait KeywordFilter extends js.Object {
@@ -1700,7 +1702,7 @@ package securityhub {
   }
 
   /**
-   * <p>A list of malware related to a finding.</p>
+   * A list of malware related to a finding.
    */
   @js.native
   trait Malware extends js.Object {
@@ -1755,7 +1757,7 @@ package securityhub {
   }
 
   /**
-   * <p>The map filter for querying findings.</p>
+   * The map filter for querying findings.
    */
   @js.native
   trait MapFilter extends js.Object {
@@ -1785,7 +1787,7 @@ package securityhub {
   }
 
   /**
-   * <p>The details for a Security Hub member account.</p>
+   * The details for a Security Hub member account.
    */
   @js.native
   trait Member extends js.Object {
@@ -1818,7 +1820,7 @@ package securityhub {
   }
 
   /**
-   * <p>The details of network-related information about a finding.</p>
+   * The details of network-related information about a finding.
    */
   @js.native
   trait Network extends js.Object {
@@ -1873,7 +1875,7 @@ package securityhub {
   }
 
   /**
-   * <p>A user-defined note added to a finding.</p>
+   * A user-defined note added to a finding.
    */
   @js.native
   trait Note extends js.Object {
@@ -1897,7 +1899,7 @@ package securityhub {
   }
 
   /**
-   * <p>The updated note.</p>
+   * The updated note.
    */
   @js.native
   trait NoteUpdate extends js.Object {
@@ -1918,7 +1920,7 @@ package securityhub {
   }
 
   /**
-   * <p>A number filter for querying findings.</p>
+   * A number filter for querying findings.
    */
   @js.native
   trait NumberFilter extends js.Object {
@@ -1950,7 +1952,7 @@ package securityhub {
   }
 
   /**
-   * <p>The details of process-related information about a finding.</p>
+   * The details of process-related information about a finding.
    */
   @js.native
   trait ProcessDetails extends js.Object {
@@ -1983,7 +1985,7 @@ package securityhub {
   }
 
   /**
-   * <p>Provides a recommendation on how to remediate the issue identified within a finding.</p>
+   * Provides a recommendation on how to remediate the issue identified within a finding.
    */
   @js.native
   trait Recommendation extends js.Object {
@@ -2011,7 +2013,7 @@ package securityhub {
   }
 
   /**
-   * <p>Related finding's details.</p>
+   * Related finding's details.
    */
   @js.native
   trait RelatedFinding extends js.Object {
@@ -2032,7 +2034,7 @@ package securityhub {
   }
 
   /**
-   * <p>The remediation options for a finding. </p>
+   * The remediation options for a finding.
    */
   @js.native
   trait Remediation extends js.Object {
@@ -2050,7 +2052,7 @@ package securityhub {
   }
 
   /**
-   * <p>A resource data type that describes a resource to which the finding refers.</p>
+   * A resource data type that describes a resource to which the finding refers.
    */
   @js.native
   trait Resource extends js.Object {
@@ -2083,7 +2085,7 @@ package securityhub {
   }
 
   /**
-   * <p>Provides additional details about the resource.</p>
+   * Provides additional details about the resource.
    */
   @js.native
   trait ResourceDetails extends js.Object {
@@ -2113,7 +2115,7 @@ package securityhub {
   }
 
   /**
-   * <p>The account details that could not be processed.</p>
+   * The account details that could not be processed.
    */
   @js.native
   trait Result extends js.Object {
@@ -2134,7 +2136,7 @@ package securityhub {
   }
 
   /**
-   * <p>A finding's severity.</p>
+   * A finding's severity.
    */
   @js.native
   trait Severity extends js.Object {
@@ -2155,7 +2157,7 @@ package securityhub {
   }
 
   /**
-   * <p>A collection of attributes used for sorting findings.</p>
+   * A collection of attributes used for sorting findings.
    */
   @js.native
   trait SortCriterion extends js.Object {
@@ -2192,7 +2194,7 @@ package securityhub {
   }
 
   /**
-   * <p>A resource that represents your subscription to a supported standard.</p>
+   * A resource that represents your subscription to a supported standard.
    */
   @js.native
   trait StandardsSubscription extends js.Object {
@@ -2219,7 +2221,7 @@ package securityhub {
   }
 
   /**
-   * <p>The standard that you want to enable.</p>
+   * The standard that you want to enable.
    */
   @js.native
   trait StandardsSubscriptionRequest extends js.Object {
@@ -2240,7 +2242,7 @@ package securityhub {
   }
 
   /**
-   * <p>A string filter for querying findings.</p>
+   * A string filter for querying findings.
    */
   @js.native
   trait StringFilter extends js.Object {
@@ -2269,7 +2271,7 @@ package securityhub {
   }
 
   /**
-   * <p>Threat intel details related to a finding.</p>
+   * Threat intel details related to a finding.
    */
   @js.native
   trait ThreatIntelIndicator extends js.Object {

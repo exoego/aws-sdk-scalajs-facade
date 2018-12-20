@@ -199,7 +199,14 @@ package storagegateway {
   }
 
   /**
-   * <p>A JSON object containing one or more of the following fields:</p> <ul> <li> <p> <a>ActivateGatewayInput$ActivationKey</a> </p> </li> <li> <p> <a>ActivateGatewayInput$GatewayName</a> </p> </li> <li> <p> <a>ActivateGatewayInput$GatewayRegion</a> </p> </li> <li> <p> <a>ActivateGatewayInput$GatewayTimezone</a> </p> </li> <li> <p> <a>ActivateGatewayInput$GatewayType</a> </p> </li> <li> <p> <a>ActivateGatewayInput$TapeDriveType</a> </p> </li> <li> <p> <a>ActivateGatewayInput$MediumChangerType</a> </p> </li> </ul>
+   * A JSON object containing one or more of the following fields:
+   * * ActivationKey
+   *  * GatewayName
+   *  * GatewayRegion
+   *  * GatewayTimezone
+   *  * GatewayType
+   *  * TapeDriveType
+   *  * MediumChangerType
    */
   @js.native
   trait ActivateGatewayInput extends js.Object {
@@ -235,7 +242,9 @@ package storagegateway {
   }
 
   /**
-   * <p>AWS Storage Gateway returns the Amazon Resource Name (ARN) of the activated gateway. It is a string made of information such as your account, gateway name, and region. This ARN is used to reference the gateway in other API operations as well as resource-based authorization.</p> <note> <p>For gateways activated prior to September 02, 2015, the gateway ARN contains the gateway name rather than the gateway ID. Changing the name of the gateway has no effect on the gateway ARN.</p> </note>
+   * AWS Storage Gateway returns the Amazon Resource Name (ARN) of the activated gateway. It is a string made of information such as your account, gateway name, and region. This ARN is used to reference the gateway in other API operations as well as resource-based authorization.
+   *
+   * '''Note:'''For gateways activated prior to September 02, 2015, the gateway ARN contains the gateway name rather than the gateway ID. Changing the name of the gateway has no effect on the gateway ARN.
    */
   @js.native
   trait ActivateGatewayOutput extends js.Object {
@@ -285,9 +294,6 @@ package storagegateway {
     }
   }
 
-  /**
-   * <p>AddTagsToResourceInput</p>
-   */
   @js.native
   trait AddTagsToResourceInput extends js.Object {
     var ResourceARN: ResourceARN
@@ -306,9 +312,6 @@ package storagegateway {
     }
   }
 
-  /**
-   * <p>AddTagsToResourceOutput</p>
-   */
   @js.native
   trait AddTagsToResourceOutput extends js.Object {
     var ResourceARN: js.UndefOr[ResourceARN]
@@ -358,7 +361,8 @@ package storagegateway {
   }
 
   /**
-   * <p>A JSON object containing one or more of the following fields:</p> <ul> <li> <p> <a>AddWorkingStorageInput$DiskIds</a> </p> </li> </ul>
+   * A JSON object containing one or more of the following fields:
+   * * DiskIds
    */
   @js.native
   trait AddWorkingStorageInput extends js.Object {
@@ -379,7 +383,7 @@ package storagegateway {
   }
 
   /**
-   * <p>A JSON object containing the of the gateway for which working storage was configured.</p>
+   * A JSON object containing the of the gateway for which working storage was configured.
    */
   @js.native
   trait AddWorkingStorageOutput extends js.Object {
@@ -397,7 +401,7 @@ package storagegateway {
   }
 
   /**
-   * <p>Describes an iSCSI cached volume.</p>
+   * Describes an iSCSI cached volume.
    */
   @js.native
   trait CachediSCSIVolume extends js.Object {
@@ -444,9 +448,6 @@ package storagegateway {
     }
   }
 
-  /**
-   * <p>CancelArchivalInput</p>
-   */
   @js.native
   trait CancelArchivalInput extends js.Object {
     var GatewayARN: GatewayARN
@@ -465,9 +466,6 @@ package storagegateway {
     }
   }
 
-  /**
-   * <p>CancelArchivalOutput</p>
-   */
   @js.native
   trait CancelArchivalOutput extends js.Object {
     var TapeARN: js.UndefOr[TapeARN]
@@ -483,9 +481,6 @@ package storagegateway {
     }
   }
 
-  /**
-   * <p>CancelRetrievalInput</p>
-   */
   @js.native
   trait CancelRetrievalInput extends js.Object {
     var GatewayARN: GatewayARN
@@ -504,9 +499,6 @@ package storagegateway {
     }
   }
 
-  /**
-   * <p>CancelRetrievalOutput</p>
-   */
   @js.native
   trait CancelRetrievalOutput extends js.Object {
     var TapeARN: js.UndefOr[TapeARN]
@@ -523,7 +515,7 @@ package storagegateway {
   }
 
   /**
-   * <p>Describes Challenge-Handshake Authentication Protocol (CHAP) information that supports authentication between your gateway and iSCSI initiators.</p>
+   * Describes Challenge-Handshake Authentication Protocol (CHAP) information that supports authentication between your gateway and iSCSI initiators.
    */
   @js.native
   trait ChapInfo extends js.Object {
@@ -606,9 +598,6 @@ package storagegateway {
     }
   }
 
-  /**
-   * <p>CreateNFSFileShareInput</p>
-   */
   @js.native
   trait CreateNFSFileShareInput extends js.Object {
     var ClientToken: ClientToken
@@ -663,9 +652,6 @@ package storagegateway {
     }
   }
 
-  /**
-   * <p>CreateNFSFileShareOutput</p>
-   */
   @js.native
   trait CreateNFSFileShareOutput extends js.Object {
     var FileShareARN: js.UndefOr[FileShareARN]
@@ -681,9 +667,6 @@ package storagegateway {
     }
   }
 
-  /**
-   * <p>CreateSMBFileShareInput</p>
-   */
   @js.native
   trait CreateSMBFileShareInput extends js.Object {
     var ClientToken: ClientToken
@@ -738,9 +721,6 @@ package storagegateway {
     }
   }
 
-  /**
-   * <p>CreateSMBFileShareOutput</p>
-   */
   @js.native
   trait CreateSMBFileShareOutput extends js.Object {
     var FileShareARN: js.UndefOr[FileShareARN]
@@ -796,7 +776,9 @@ package storagegateway {
   }
 
   /**
-   * <p>A JSON object containing one or more of the following fields:</p> <ul> <li> <p> <a>CreateSnapshotInput$SnapshotDescription</a> </p> </li> <li> <p> <a>CreateSnapshotInput$VolumeARN</a> </p> </li> </ul>
+   * A JSON object containing one or more of the following fields:
+   * * SnapshotDescription
+   *  * VolumeARN
    */
   @js.native
   trait CreateSnapshotInput extends js.Object {
@@ -817,7 +799,7 @@ package storagegateway {
   }
 
   /**
-   * <p>A JSON object containing the following fields:</p>
+   * A JSON object containing the following fields:
    */
   @js.native
   trait CreateSnapshotOutput extends js.Object {
@@ -838,7 +820,12 @@ package storagegateway {
   }
 
   /**
-   * <p>A JSON object containing one or more of the following fields:</p> <ul> <li> <p> <a>CreateStorediSCSIVolumeInput$DiskId</a> </p> </li> <li> <p> <a>CreateStorediSCSIVolumeInput$NetworkInterfaceId</a> </p> </li> <li> <p> <a>CreateStorediSCSIVolumeInput$PreserveExistingData</a> </p> </li> <li> <p> <a>CreateStorediSCSIVolumeInput$SnapshotId</a> </p> </li> <li> <p> <a>CreateStorediSCSIVolumeInput$TargetName</a> </p> </li> </ul>
+   * A JSON object containing one or more of the following fields:
+   * * DiskId
+   *  * NetworkInterfaceId
+   *  * PreserveExistingData
+   *  * SnapshotId
+   *  * TargetName
    */
   @js.native
   trait CreateStorediSCSIVolumeInput extends js.Object {
@@ -877,7 +864,7 @@ package storagegateway {
   }
 
   /**
-   * <p>A JSON object containing the following fields:</p>
+   * A JSON object containing the following fields:
    */
   @js.native
   trait CreateStorediSCSIVolumeOutput extends js.Object {
@@ -900,9 +887,6 @@ package storagegateway {
     }
   }
 
-  /**
-   * <p>CreateTapeWithBarcodeInput</p>
-   */
   @js.native
   trait CreateTapeWithBarcodeInput extends js.Object {
     var GatewayARN: GatewayARN
@@ -931,7 +915,7 @@ package storagegateway {
   }
 
   /**
-   * <p>CreateTapeOutput</p>
+   * CreateTapeOutput
    */
   @js.native
   trait CreateTapeWithBarcodeOutput extends js.Object {
@@ -948,9 +932,6 @@ package storagegateway {
     }
   }
 
-  /**
-   * <p>CreateTapesInput</p>
-   */
   @js.native
   trait CreateTapesInput extends js.Object {
     var ClientToken: ClientToken
@@ -985,7 +966,7 @@ package storagegateway {
   }
 
   /**
-   * <p>CreateTapeOutput</p>
+   * CreateTapeOutput
    */
   @js.native
   trait CreateTapesOutput extends js.Object {
@@ -1003,7 +984,8 @@ package storagegateway {
   }
 
   /**
-   * <p>A JSON object containing the following fields:</p> <ul> <li> <p> <a>DeleteBandwidthRateLimitInput$BandwidthType</a> </p> </li> </ul>
+   * A JSON object containing the following fields:
+   * * BandwidthType
    */
   @js.native
   trait DeleteBandwidthRateLimitInput extends js.Object {
@@ -1024,7 +1006,7 @@ package storagegateway {
   }
 
   /**
-   * <p>A JSON object containing the of the gateway whose bandwidth rate information was deleted.</p>
+   * A JSON object containing the of the gateway whose bandwidth rate information was deleted.
    */
   @js.native
   trait DeleteBandwidthRateLimitOutput extends js.Object {
@@ -1042,7 +1024,9 @@ package storagegateway {
   }
 
   /**
-   * <p>A JSON object containing one or more of the following fields:</p> <ul> <li> <p> <a>DeleteChapCredentialsInput$InitiatorName</a> </p> </li> <li> <p> <a>DeleteChapCredentialsInput$TargetARN</a> </p> </li> </ul>
+   * A JSON object containing one or more of the following fields:
+   * * InitiatorName
+   *  * TargetARN
    */
   @js.native
   trait DeleteChapCredentialsInput extends js.Object {
@@ -1063,7 +1047,7 @@ package storagegateway {
   }
 
   /**
-   * <p>A JSON object containing the following fields:</p>
+   * A JSON object containing the following fields:
    */
   @js.native
   trait DeleteChapCredentialsOutput extends js.Object {
@@ -1083,9 +1067,6 @@ package storagegateway {
     }
   }
 
-  /**
-   * <p>DeleteFileShareInput</p>
-   */
   @js.native
   trait DeleteFileShareInput extends js.Object {
     var FileShareARN: FileShareARN
@@ -1104,9 +1085,6 @@ package storagegateway {
     }
   }
 
-  /**
-   * <p>DeleteFileShareOutput</p>
-   */
   @js.native
   trait DeleteFileShareOutput extends js.Object {
     var FileShareARN: js.UndefOr[FileShareARN]
@@ -1123,7 +1101,7 @@ package storagegateway {
   }
 
   /**
-   * <p>A JSON object containing the ID of the gateway to delete.</p>
+   * A JSON object containing the ID of the gateway to delete.
    */
   @js.native
   trait DeleteGatewayInput extends js.Object {
@@ -1141,7 +1119,7 @@ package storagegateway {
   }
 
   /**
-   * <p>A JSON object containing the ID of the deleted gateway.</p>
+   * A JSON object containing the ID of the deleted gateway.
    */
   @js.native
   trait DeleteGatewayOutput extends js.Object {
@@ -1188,9 +1166,6 @@ package storagegateway {
     }
   }
 
-  /**
-   * <p>DeleteTapeArchiveInput</p>
-   */
   @js.native
   trait DeleteTapeArchiveInput extends js.Object {
     var TapeARN: TapeARN
@@ -1206,9 +1181,6 @@ package storagegateway {
     }
   }
 
-  /**
-   * <p>DeleteTapeArchiveOutput</p>
-   */
   @js.native
   trait DeleteTapeArchiveOutput extends js.Object {
     var TapeARN: js.UndefOr[TapeARN]
@@ -1224,9 +1196,6 @@ package storagegateway {
     }
   }
 
-  /**
-   * <p>DeleteTapeInput</p>
-   */
   @js.native
   trait DeleteTapeInput extends js.Object {
     var GatewayARN: GatewayARN
@@ -1245,9 +1214,6 @@ package storagegateway {
     }
   }
 
-  /**
-   * <p>DeleteTapeOutput</p>
-   */
   @js.native
   trait DeleteTapeOutput extends js.Object {
     var TapeARN: js.UndefOr[TapeARN]
@@ -1264,7 +1230,7 @@ package storagegateway {
   }
 
   /**
-   * <p>A JSON object containing the <a>DeleteVolumeInput$VolumeARN</a> to delete.</p>
+   * A JSON object containing the VolumeARN to delete.
    */
   @js.native
   trait DeleteVolumeInput extends js.Object {
@@ -1282,7 +1248,7 @@ package storagegateway {
   }
 
   /**
-   * <p>A JSON object containing the of the storage volume that was deleted</p>
+   * A JSON object containing the of the storage volume that was deleted
    */
   @js.native
   trait DeleteVolumeOutput extends js.Object {
@@ -1300,7 +1266,7 @@ package storagegateway {
   }
 
   /**
-   * <p>A JSON object containing the of the gateway.</p>
+   * A JSON object containing the of the gateway.
    */
   @js.native
   trait DescribeBandwidthRateLimitInput extends js.Object {
@@ -1318,7 +1284,7 @@ package storagegateway {
   }
 
   /**
-   * <p>A JSON object containing the following fields:</p>
+   * A JSON object containing the following fields:
    */
   @js.native
   trait DescribeBandwidthRateLimitOutput extends js.Object {
@@ -1405,7 +1371,7 @@ package storagegateway {
   }
 
   /**
-   * <p>A JSON object containing the following fields:</p>
+   * A JSON object containing the following fields:
    */
   @js.native
   trait DescribeCachediSCSIVolumesOutput extends js.Object {
@@ -1423,7 +1389,7 @@ package storagegateway {
   }
 
   /**
-   * <p>A JSON object containing the Amazon Resource Name (ARN) of the iSCSI volume target.</p>
+   * A JSON object containing the Amazon Resource Name (ARN) of the iSCSI volume target.
    */
   @js.native
   trait DescribeChapCredentialsInput extends js.Object {
@@ -1441,7 +1407,7 @@ package storagegateway {
   }
 
   /**
-   * <p>A JSON object containing a .</p>
+   * A JSON object containing a .
    */
   @js.native
   trait DescribeChapCredentialsOutput extends js.Object {
@@ -1459,7 +1425,7 @@ package storagegateway {
   }
 
   /**
-   * <p>A JSON object containing the ID of the gateway.</p>
+   * A JSON object containing the ID of the gateway.
    */
   @js.native
   trait DescribeGatewayInformationInput extends js.Object {
@@ -1477,7 +1443,7 @@ package storagegateway {
   }
 
   /**
-   * <p>A JSON object containing the following fields:</p>
+   * A JSON object containing the following fields:
    */
   @js.native
   trait DescribeGatewayInformationOutput extends js.Object {
@@ -1519,7 +1485,7 @@ package storagegateway {
   }
 
   /**
-   * <p>A JSON object containing the of the gateway.</p>
+   * A JSON object containing the of the gateway.
    */
   @js.native
   trait DescribeMaintenanceStartTimeInput extends js.Object {
@@ -1537,7 +1503,11 @@ package storagegateway {
   }
 
   /**
-   * <p>A JSON object containing the following fields:</p> <ul> <li> <p> <a>DescribeMaintenanceStartTimeOutput$DayOfWeek</a> </p> </li> <li> <p> <a>DescribeMaintenanceStartTimeOutput$HourOfDay</a> </p> </li> <li> <p> <a>DescribeMaintenanceStartTimeOutput$MinuteOfHour</a> </p> </li> <li> <p> <a>DescribeMaintenanceStartTimeOutput$Timezone</a> </p> </li> </ul>
+   * A JSON object containing the following fields:
+   * * DayOfWeek
+   *  * HourOfDay
+   *  * MinuteOfHour
+   *  * Timezone
    */
   @js.native
   trait DescribeMaintenanceStartTimeOutput extends js.Object {
@@ -1566,9 +1536,6 @@ package storagegateway {
     }
   }
 
-  /**
-   * <p>DescribeNFSFileSharesInput</p>
-   */
   @js.native
   trait DescribeNFSFileSharesInput extends js.Object {
     var FileShareARNList: FileShareARNList
@@ -1584,9 +1551,6 @@ package storagegateway {
     }
   }
 
-  /**
-   * <p>DescribeNFSFileSharesOutput</p>
-   */
   @js.native
   trait DescribeNFSFileSharesOutput extends js.Object {
     var NFSFileShareInfoList: js.UndefOr[NFSFileShareInfoList]
@@ -1602,9 +1566,6 @@ package storagegateway {
     }
   }
 
-  /**
-   * <p>DescribeSMBFileSharesInput</p>
-   */
   @js.native
   trait DescribeSMBFileSharesInput extends js.Object {
     var FileShareARNList: FileShareARNList
@@ -1620,9 +1581,6 @@ package storagegateway {
     }
   }
 
-  /**
-   * <p>DescribeSMBFileSharesOutput</p>
-   */
   @js.native
   trait DescribeSMBFileSharesOutput extends js.Object {
     var SMBFileShareInfoList: js.UndefOr[SMBFileShareInfoList]
@@ -1675,7 +1633,7 @@ package storagegateway {
   }
 
   /**
-   * <p>A JSON object containing the <a>DescribeSnapshotScheduleInput$VolumeARN</a> of the volume.</p>
+   * A JSON object containing the VolumeARN of the volume.
    */
   @js.native
   trait DescribeSnapshotScheduleInput extends js.Object {
@@ -1720,7 +1678,7 @@ package storagegateway {
   }
 
   /**
-   * <p>A JSON object containing a list of <a>DescribeStorediSCSIVolumesInput$VolumeARNs</a>.</p>
+   * A JSON object containing a list of VolumeARNs.
    */
   @js.native
   trait DescribeStorediSCSIVolumesInput extends js.Object {
@@ -1752,9 +1710,6 @@ package storagegateway {
     }
   }
 
-  /**
-   * <p>DescribeTapeArchivesInput</p>
-   */
   @js.native
   trait DescribeTapeArchivesInput extends js.Object {
     var Limit: js.UndefOr[PositiveIntObject]
@@ -1776,9 +1731,6 @@ package storagegateway {
     }
   }
 
-  /**
-   * <p>DescribeTapeArchivesOutput</p>
-   */
   @js.native
   trait DescribeTapeArchivesOutput extends js.Object {
     var Marker: js.UndefOr[Marker]
@@ -1797,9 +1749,6 @@ package storagegateway {
     }
   }
 
-  /**
-   * <p>DescribeTapeRecoveryPointsInput</p>
-   */
   @js.native
   trait DescribeTapeRecoveryPointsInput extends js.Object {
     var GatewayARN: GatewayARN
@@ -1821,9 +1770,6 @@ package storagegateway {
     }
   }
 
-  /**
-   * <p>DescribeTapeRecoveryPointsOutput</p>
-   */
   @js.native
   trait DescribeTapeRecoveryPointsOutput extends js.Object {
     var GatewayARN: js.UndefOr[GatewayARN]
@@ -1845,9 +1791,6 @@ package storagegateway {
     }
   }
 
-  /**
-   * <p>DescribeTapesInput</p>
-   */
   @js.native
   trait DescribeTapesInput extends js.Object {
     var GatewayARN: GatewayARN
@@ -1872,9 +1815,6 @@ package storagegateway {
     }
   }
 
-  /**
-   * <p>DescribeTapesOutput</p>
-   */
   @js.native
   trait DescribeTapesOutput extends js.Object {
     var Marker: js.UndefOr[Marker]
@@ -1932,9 +1872,6 @@ package storagegateway {
     }
   }
 
-  /**
-   * <p>DescribeVTLDevicesInput</p>
-   */
   @js.native
   trait DescribeVTLDevicesInput extends js.Object {
     var GatewayARN: GatewayARN
@@ -1959,9 +1896,6 @@ package storagegateway {
     }
   }
 
-  /**
-   * <p>DescribeVTLDevicesOutput</p>
-   */
   @js.native
   trait DescribeVTLDevicesOutput extends js.Object {
     var GatewayARN: js.UndefOr[GatewayARN]
@@ -1984,7 +1918,7 @@ package storagegateway {
   }
 
   /**
-   * <p>A JSON object containing the of the gateway.</p>
+   * A JSON object containing the of the gateway.
    */
   @js.native
   trait DescribeWorkingStorageInput extends js.Object {
@@ -2002,7 +1936,7 @@ package storagegateway {
   }
 
   /**
-   * <p>A JSON object containing the following fields:</p>
+   * A JSON object containing the following fields:
    */
   @js.native
   trait DescribeWorkingStorageOutput extends js.Object {
@@ -2029,7 +1963,7 @@ package storagegateway {
   }
 
   /**
-   * <p>Lists iSCSI information about a VTL device.</p>
+   * Lists iSCSI information about a VTL device.
    */
   @js.native
   trait DeviceiSCSIAttributes extends js.Object {
@@ -2055,9 +1989,6 @@ package storagegateway {
     }
   }
 
-  /**
-   * <p>DisableGatewayInput</p>
-   */
   @js.native
   trait DisableGatewayInput extends js.Object {
     var GatewayARN: GatewayARN
@@ -2073,9 +2004,6 @@ package storagegateway {
     }
   }
 
-  /**
-   * <p>DisableGatewayOutput</p>
-   */
   @js.native
   trait DisableGatewayOutput extends js.Object {
     var GatewayARN: js.UndefOr[GatewayARN]
@@ -2125,7 +2053,7 @@ package storagegateway {
   }
 
   /**
-   * <p>Describes a file share.</p>
+   * Describes a file share.
    */
   @js.native
   trait FileShareInfo extends js.Object {
@@ -2155,7 +2083,7 @@ package storagegateway {
   }
 
   /**
-   * <p>The type of the file share.</p>
+   * The type of the file share.
    */
   object FileShareTypeEnum {
     val NFS = "NFS"
@@ -2165,7 +2093,7 @@ package storagegateway {
   }
 
   /**
-   * <p>Describes a gateway object.</p>
+   * Describes a gateway object.
    */
   @js.native
   trait GatewayInfo extends js.Object {
@@ -2194,9 +2122,6 @@ package storagegateway {
     }
   }
 
-  /**
-   * <p>JoinDomainInput</p>
-   */
   @js.native
   trait JoinDomainInput extends js.Object {
     var DomainName: DomainName
@@ -2221,9 +2146,6 @@ package storagegateway {
     }
   }
 
-  /**
-   * <p>JoinDomainOutput</p>
-   */
   @js.native
   trait JoinDomainOutput extends js.Object {
     var GatewayARN: js.UndefOr[GatewayARN]
@@ -2240,7 +2162,7 @@ package storagegateway {
   }
 
   /**
-   * <p>ListFileShareInput</p>
+   * ListFileShareInput
    */
   @js.native
   trait ListFileSharesInput extends js.Object {
@@ -2264,7 +2186,7 @@ package storagegateway {
   }
 
   /**
-   * <p>ListFileShareOutput</p>
+   * ListFileShareOutput
    */
   @js.native
   trait ListFileSharesOutput extends js.Object {
@@ -2288,7 +2210,9 @@ package storagegateway {
   }
 
   /**
-   * <p>A JSON object containing zero or more of the following fields:</p> <ul> <li> <p> <a>ListGatewaysInput$Limit</a> </p> </li> <li> <p> <a>ListGatewaysInput$Marker</a> </p> </li> </ul>
+   * A JSON object containing zero or more of the following fields:
+   * * Limit
+   *  * Marker
    */
   @js.native
   trait ListGatewaysInput extends js.Object {
@@ -2327,7 +2251,7 @@ package storagegateway {
   }
 
   /**
-   * <p>A JSON object containing the of the gateway.</p>
+   * A JSON object containing the of the gateway.
    */
   @js.native
   trait ListLocalDisksInput extends js.Object {
@@ -2362,9 +2286,6 @@ package storagegateway {
     }
   }
 
-  /**
-   * <p>ListTagsForResourceInput</p>
-   */
   @js.native
   trait ListTagsForResourceInput extends js.Object {
     var ResourceARN: ResourceARN
@@ -2386,9 +2307,6 @@ package storagegateway {
     }
   }
 
-  /**
-   * <p>ListTagsForResourceOutput</p>
-   */
   @js.native
   trait ListTagsForResourceOutput extends js.Object {
     var Marker: js.UndefOr[Marker]
@@ -2411,7 +2329,10 @@ package storagegateway {
   }
 
   /**
-   * <p>A JSON object that contains one or more of the following fields:</p> <ul> <li> <p> <a>ListTapesInput$Limit</a> </p> </li> <li> <p> <a>ListTapesInput$Marker</a> </p> </li> <li> <p> <a>ListTapesInput$TapeARNs</a> </p> </li> </ul>
+   * A JSON object that contains one or more of the following fields:
+   * * Limit
+   *  * Marker
+   *  * TapeARNs
    */
   @js.native
   trait ListTapesInput extends js.Object {
@@ -2435,7 +2356,9 @@ package storagegateway {
   }
 
   /**
-   * <p>A JSON object containing the following fields:</p> <ul> <li> <p> <a>ListTapesOutput$Marker</a> </p> </li> <li> <p> <a>ListTapesOutput$VolumeInfos</a> </p> </li> </ul>
+   * A JSON object containing the following fields:
+   * * Marker
+   *  * VolumeInfos
    */
   @js.native
   trait ListTapesOutput extends js.Object {
@@ -2455,9 +2378,6 @@ package storagegateway {
     }
   }
 
-  /**
-   * <p>ListVolumeInitiatorsInput</p>
-   */
   @js.native
   trait ListVolumeInitiatorsInput extends js.Object {
     var VolumeARN: VolumeARN
@@ -2473,9 +2393,6 @@ package storagegateway {
     }
   }
 
-  /**
-   * <p>ListVolumeInitiatorsOutput</p>
-   */
   @js.native
   trait ListVolumeInitiatorsOutput extends js.Object {
     var Initiators: js.UndefOr[Initiators]
@@ -2525,7 +2442,9 @@ package storagegateway {
   }
 
   /**
-   * <p>A JSON object that contains one or more of the following fields:</p> <ul> <li> <p> <a>ListVolumesInput$Limit</a> </p> </li> <li> <p> <a>ListVolumesInput$Marker</a> </p> </li> </ul>
+   * A JSON object that contains one or more of the following fields:
+   * * Limit
+   *  * Marker
    */
   @js.native
   trait ListVolumesInput extends js.Object {
@@ -2570,7 +2489,7 @@ package storagegateway {
   }
 
   /**
-   * <p>Describes Network File System (NFS) file share default values. Files and folders stored as Amazon S3 objects in S3 buckets don't, by default, have Unix file permissions assigned to them. Upon discovery in an S3 bucket by Storage Gateway, the S3 objects that represent files and folders are assigned these default Unix permissions. This operation is only supported for file gateways.</p>
+   * Describes Network File System (NFS) file share default values. Files and folders stored as Amazon S3 objects in S3 buckets don't, by default, have Unix file permissions assigned to them. Upon discovery in an S3 bucket by Storage Gateway, the S3 objects that represent files and folders are assigned these default Unix permissions. This operation is only supported for file gateways.
    */
   @js.native
   trait NFSFileShareDefaults extends js.Object {
@@ -2597,7 +2516,7 @@ package storagegateway {
   }
 
   /**
-   * <p>The Unix file permissions and ownership information assigned, by default, to native S3 objects when file gateway discovers them in S3 buckets. This operation is only supported in file gateways.</p>
+   * The Unix file permissions and ownership information assigned, by default, to native S3 objects when file gateway discovers them in S3 buckets. This operation is only supported in file gateways.
    */
   @js.native
   trait NFSFileShareInfo extends js.Object {
@@ -2663,7 +2582,7 @@ package storagegateway {
   }
 
   /**
-   * <p>Describes a gateway's network interface.</p>
+   * Describes a gateway's network interface.
    */
   @js.native
   trait NetworkInterface extends js.Object {
@@ -2720,7 +2639,7 @@ package storagegateway {
   }
 
   /**
-   * <p>A value that sets the access control list permission for objects in the S3 bucket that a file gateway puts objects into. The default value is "private".</p>
+   * A value that sets the access control list permission for objects in the S3 bucket that a file gateway puts objects into. The default value is "private".
    */
   object ObjectACLEnum {
     val `private` = "private"
@@ -2755,9 +2674,6 @@ package storagegateway {
     }
   }
 
-  /**
-   * <p>RefreshCacheOutput</p>
-   */
   @js.native
   trait RefreshCacheOutput extends js.Object {
     var FileShareARN: js.UndefOr[FileShareARN]
@@ -2776,9 +2692,6 @@ package storagegateway {
     }
   }
 
-  /**
-   * <p>RemoveTagsFromResourceInput</p>
-   */
   @js.native
   trait RemoveTagsFromResourceInput extends js.Object {
     var ResourceARN: ResourceARN
@@ -2797,9 +2710,6 @@ package storagegateway {
     }
   }
 
-  /**
-   * <p>RemoveTagsFromResourceOutput</p>
-   */
   @js.native
   trait RemoveTagsFromResourceOutput extends js.Object {
     var ResourceARN: js.UndefOr[ResourceARN]
@@ -2845,9 +2755,6 @@ package storagegateway {
     }
   }
 
-  /**
-   * <p>RetrieveTapeArchiveInput</p>
-   */
   @js.native
   trait RetrieveTapeArchiveInput extends js.Object {
     var GatewayARN: GatewayARN
@@ -2866,9 +2773,6 @@ package storagegateway {
     }
   }
 
-  /**
-   * <p>RetrieveTapeArchiveOutput</p>
-   */
   @js.native
   trait RetrieveTapeArchiveOutput extends js.Object {
     var TapeARN: js.UndefOr[TapeARN]
@@ -2884,9 +2788,6 @@ package storagegateway {
     }
   }
 
-  /**
-   * <p>RetrieveTapeRecoveryPointInput</p>
-   */
   @js.native
   trait RetrieveTapeRecoveryPointInput extends js.Object {
     var GatewayARN: GatewayARN
@@ -2905,9 +2806,6 @@ package storagegateway {
     }
   }
 
-  /**
-   * <p>RetrieveTapeRecoveryPointOutput</p>
-   */
   @js.native
   trait RetrieveTapeRecoveryPointOutput extends js.Object {
     var TapeARN: js.UndefOr[TapeARN]
@@ -2924,7 +2822,7 @@ package storagegateway {
   }
 
   /**
-   * <p>The Windows file permissions and ownership information assigned, by default, to native S3 objects when file gateway discovers them in S3 buckets. This operation is only supported for file gateways.</p>
+   * The Windows file permissions and ownership information assigned, by default, to native S3 objects when file gateway discovers them in S3 buckets. This operation is only supported for file gateways.
    */
   @js.native
   trait SMBFileShareInfo extends js.Object {
@@ -2989,9 +2887,6 @@ package storagegateway {
     }
   }
 
-  /**
-   * <p>SetLocalConsolePasswordInput</p>
-   */
   @js.native
   trait SetLocalConsolePasswordInput extends js.Object {
     var GatewayARN: GatewayARN
@@ -3025,9 +2920,6 @@ package storagegateway {
     }
   }
 
-  /**
-   * <p>SetSMBGuestPasswordInput</p>
-   */
   @js.native
   trait SetSMBGuestPasswordInput extends js.Object {
     var GatewayARN: GatewayARN
@@ -3062,7 +2954,7 @@ package storagegateway {
   }
 
   /**
-   * <p>A JSON object containing the of the gateway to shut down.</p>
+   * A JSON object containing the of the gateway to shut down.
    */
   @js.native
   trait ShutdownGatewayInput extends js.Object {
@@ -3080,7 +2972,7 @@ package storagegateway {
   }
 
   /**
-   * <p>A JSON object containing the of the gateway that was shut down.</p>
+   * A JSON object containing the of the gateway that was shut down.
    */
   @js.native
   trait ShutdownGatewayOutput extends js.Object {
@@ -3098,7 +2990,7 @@ package storagegateway {
   }
 
   /**
-   * <p>A JSON object containing the of the gateway to start.</p>
+   * A JSON object containing the of the gateway to start.
    */
   @js.native
   trait StartGatewayInput extends js.Object {
@@ -3116,7 +3008,7 @@ package storagegateway {
   }
 
   /**
-   * <p>A JSON object containing the of the gateway that was restarted.</p>
+   * A JSON object containing the of the gateway that was restarted.
    */
   @js.native
   trait StartGatewayOutput extends js.Object {
@@ -3134,7 +3026,7 @@ package storagegateway {
   }
 
   /**
-   * <p>Describes an iSCSI stored volume.</p>
+   * Describes an iSCSI stored volume.
    */
   @js.native
   trait StorediSCSIVolume extends js.Object {
@@ -3206,7 +3098,7 @@ package storagegateway {
   }
 
   /**
-   * <p>Describes a virtual tape object.</p>
+   * Describes a virtual tape object.
    */
   @js.native
   trait Tape extends js.Object {
@@ -3248,7 +3140,7 @@ package storagegateway {
   }
 
   /**
-   * <p>Represents a virtual tape that is archived in the virtual tape shelf (VTS).</p>
+   * Represents a virtual tape that is archived in the virtual tape shelf (VTS).
    */
   @js.native
   trait TapeArchive extends js.Object {
@@ -3290,7 +3182,7 @@ package storagegateway {
   }
 
   /**
-   * <p>Describes a virtual tape.</p>
+   * Describes a virtual tape.
    */
   @js.native
   trait TapeInfo extends js.Object {
@@ -3320,7 +3212,7 @@ package storagegateway {
   }
 
   /**
-   * <p>Describes a recovery point.</p>
+   * Describes a recovery point.
    */
   @js.native
   trait TapeRecoveryPointInfo extends js.Object {
@@ -3347,7 +3239,9 @@ package storagegateway {
   }
 
   /**
-   * <p>A JSON object containing one or more of the following fields:</p> <ul> <li> <p> <a>UpdateBandwidthRateLimitInput$AverageDownloadRateLimitInBitsPerSec</a> </p> </li> <li> <p> <a>UpdateBandwidthRateLimitInput$AverageUploadRateLimitInBitsPerSec</a> </p> </li> </ul>
+   * A JSON object containing one or more of the following fields:
+   * * AverageDownloadRateLimitInBitsPerSec
+   *  * AverageUploadRateLimitInBitsPerSec
    */
   @js.native
   trait UpdateBandwidthRateLimitInput extends js.Object {
@@ -3371,7 +3265,7 @@ package storagegateway {
   }
 
   /**
-   * <p>A JSON object containing the of the gateway whose throttle information was updated.</p>
+   * A JSON object containing the of the gateway whose throttle information was updated.
    */
   @js.native
   trait UpdateBandwidthRateLimitOutput extends js.Object {
@@ -3389,7 +3283,11 @@ package storagegateway {
   }
 
   /**
-   * <p>A JSON object containing one or more of the following fields:</p> <ul> <li> <p> <a>UpdateChapCredentialsInput$InitiatorName</a> </p> </li> <li> <p> <a>UpdateChapCredentialsInput$SecretToAuthenticateInitiator</a> </p> </li> <li> <p> <a>UpdateChapCredentialsInput$SecretToAuthenticateTarget</a> </p> </li> <li> <p> <a>UpdateChapCredentialsInput$TargetARN</a> </p> </li> </ul>
+   * A JSON object containing one or more of the following fields:
+   * * InitiatorName
+   *  * SecretToAuthenticateInitiator
+   *  * SecretToAuthenticateTarget
+   *  * TargetARN
    */
   @js.native
   trait UpdateChapCredentialsInput extends js.Object {
@@ -3416,7 +3314,7 @@ package storagegateway {
   }
 
   /**
-   * <p>A JSON object containing the following fields:</p>
+   * A JSON object containing the following fields:
    */
   @js.native
   trait UpdateChapCredentialsOutput extends js.Object {
@@ -3458,7 +3356,7 @@ package storagegateway {
   }
 
   /**
-   * <p>A JSON object containing the ARN of the gateway that was updated.</p>
+   * A JSON object containing the ARN of the gateway that was updated.
    */
   @js.native
   trait UpdateGatewayInformationOutput extends js.Object {
@@ -3479,7 +3377,7 @@ package storagegateway {
   }
 
   /**
-   * <p>A JSON object containing the of the gateway to update.</p>
+   * A JSON object containing the of the gateway to update.
    */
   @js.native
   trait UpdateGatewaySoftwareNowInput extends js.Object {
@@ -3497,7 +3395,7 @@ package storagegateway {
   }
 
   /**
-   * <p>A JSON object containing the of the gateway that was updated.</p>
+   * A JSON object containing the of the gateway that was updated.
    */
   @js.native
   trait UpdateGatewaySoftwareNowOutput extends js.Object {
@@ -3515,7 +3413,10 @@ package storagegateway {
   }
 
   /**
-   * <p>A JSON object containing the following fields:</p> <ul> <li> <p> <a>UpdateMaintenanceStartTimeInput$DayOfWeek</a> </p> </li> <li> <p> <a>UpdateMaintenanceStartTimeInput$HourOfDay</a> </p> </li> <li> <p> <a>UpdateMaintenanceStartTimeInput$MinuteOfHour</a> </p> </li> </ul>
+   * A JSON object containing the following fields:
+   * * DayOfWeek
+   *  * HourOfDay
+   *  * MinuteOfHour
    */
   @js.native
   trait UpdateMaintenanceStartTimeInput extends js.Object {
@@ -3542,7 +3443,7 @@ package storagegateway {
   }
 
   /**
-   * <p>A JSON object containing the of the gateway whose maintenance start time is updated.</p>
+   * A JSON object containing the of the gateway whose maintenance start time is updated.
    */
   @js.native
   trait UpdateMaintenanceStartTimeOutput extends js.Object {
@@ -3559,9 +3460,6 @@ package storagegateway {
     }
   }
 
-  /**
-   * <p>UpdateNFSFileShareInput</p>
-   */
   @js.native
   trait UpdateNFSFileShareInput extends js.Object {
     var FileShareARN: FileShareARN
@@ -3607,9 +3505,6 @@ package storagegateway {
     }
   }
 
-  /**
-   * <p>UpdateNFSFileShareOutput</p>
-   */
   @js.native
   trait UpdateNFSFileShareOutput extends js.Object {
     var FileShareARN: js.UndefOr[FileShareARN]
@@ -3625,9 +3520,6 @@ package storagegateway {
     }
   }
 
-  /**
-   * <p>UpdateSMBFileShareInput</p>
-   */
   @js.native
   trait UpdateSMBFileShareInput extends js.Object {
     var FileShareARN: FileShareARN
@@ -3670,9 +3562,6 @@ package storagegateway {
     }
   }
 
-  /**
-   * <p>UpdateSMBFileShareOutput</p>
-   */
   @js.native
   trait UpdateSMBFileShareOutput extends js.Object {
     var FileShareARN: js.UndefOr[FileShareARN]
@@ -3689,7 +3578,11 @@ package storagegateway {
   }
 
   /**
-   * <p>A JSON object containing one or more of the following fields:</p> <ul> <li> <p> <a>UpdateSnapshotScheduleInput$Description</a> </p> </li> <li> <p> <a>UpdateSnapshotScheduleInput$RecurrenceInHours</a> </p> </li> <li> <p> <a>UpdateSnapshotScheduleInput$StartAt</a> </p> </li> <li> <p> <a>UpdateSnapshotScheduleInput$VolumeARN</a> </p> </li> </ul>
+   * A JSON object containing one or more of the following fields:
+   * * Description
+   *  * RecurrenceInHours
+   *  * StartAt
+   *  * VolumeARN
    */
   @js.native
   trait UpdateSnapshotScheduleInput extends js.Object {
@@ -3716,7 +3609,7 @@ package storagegateway {
   }
 
   /**
-   * <p>A JSON object containing the of the updated storage volume.</p>
+   * A JSON object containing the of the updated storage volume.
    */
   @js.native
   trait UpdateSnapshotScheduleOutput extends js.Object {
@@ -3751,9 +3644,6 @@ package storagegateway {
     }
   }
 
-  /**
-   * <p>UpdateVTLDeviceTypeOutput</p>
-   */
   @js.native
   trait UpdateVTLDeviceTypeOutput extends js.Object {
     var VTLDeviceARN: js.UndefOr[VTLDeviceARN]
@@ -3770,7 +3660,7 @@ package storagegateway {
   }
 
   /**
-   * <p>Represents a device object associated with a tape gateway.</p>
+   * Represents a device object associated with a tape gateway.
    */
   @js.native
   trait VTLDevice extends js.Object {
@@ -3800,7 +3690,7 @@ package storagegateway {
   }
 
   /**
-   * <p>Describes a storage volume object.</p>
+   * Describes a storage volume object.
    */
   @js.native
   trait VolumeInfo extends js.Object {
@@ -3857,7 +3747,7 @@ package storagegateway {
   }
 
   /**
-   * <p>Lists iSCSI information about a volume.</p>
+   * Lists iSCSI information about a volume.
    */
   @js.native
   trait VolumeiSCSIAttributes extends js.Object {

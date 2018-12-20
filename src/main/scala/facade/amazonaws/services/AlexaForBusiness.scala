@@ -205,7 +205,7 @@ package alexaforbusiness {
   }
 
   /**
-   * <p>An address book with attributes.</p>
+   * An address book with attributes.
    */
   @js.native
   trait AddressBook extends js.Object {
@@ -229,7 +229,7 @@ package alexaforbusiness {
   }
 
   /**
-   * <p>Information related to an address book.</p>
+   * Information related to an address book.
    */
   @js.native
   trait AddressBookData extends js.Object {
@@ -405,7 +405,7 @@ package alexaforbusiness {
   }
 
   /**
-   * <p>The skill store category that is shown. Alexa skills are assigned a specific skill category during creation, such as News, Social, and Sports.</p>
+   * The skill store category that is shown. Alexa skills are assigned a specific skill category during creation, such as News, Social, and Sports.
    */
   @js.native
   trait Category extends js.Object {
@@ -434,7 +434,7 @@ package alexaforbusiness {
   }
 
   /**
-   * <p>The default conference provider that is used if no other scheduled meetings are detected.</p>
+   * The default conference provider that is used if no other scheduled meetings are detected.
    */
   @js.native
   trait ConferencePreference extends js.Object {
@@ -452,7 +452,7 @@ package alexaforbusiness {
   }
 
   /**
-   * <p>An entity that provides a conferencing solution. Alexa for Business acts as the voice interface and mediator that connects users to their preferred conference provider. Examples of conference providers include Amazon Chime, Zoom, Cisco, and Polycom. </p>
+   * An entity that provides a conferencing solution. Alexa for Business acts as the voice interface and mediator that connects users to their preferred conference provider. Examples of conference providers include Amazon Chime, Zoom, Cisco, and Polycom.
    */
   @js.native
   trait ConferenceProvider extends js.Object {
@@ -507,7 +507,7 @@ package alexaforbusiness {
   }
 
   /**
-   * <p>A contact with attributes.</p>
+   * A contact with attributes.
    */
   @js.native
   trait Contact extends js.Object {
@@ -537,7 +537,7 @@ package alexaforbusiness {
   }
 
   /**
-   * <p>Information related to a contact.</p>
+   * Information related to a contact.
    */
   @js.native
   trait ContactData extends js.Object {
@@ -1165,7 +1165,7 @@ package alexaforbusiness {
   }
 
   /**
-   * <p>The details about the developer that published the skill.</p>
+   * The details about the developer that published the skill.
    */
   @js.native
   trait DeveloperInfo extends js.Object {
@@ -1192,7 +1192,7 @@ package alexaforbusiness {
   }
 
   /**
-   * <p>A device with attributes.</p>
+   * A device with attributes.
    */
   @js.native
   trait Device extends js.Object {
@@ -1234,7 +1234,7 @@ package alexaforbusiness {
   }
 
   /**
-   * <p>Device attributes.</p>
+   * Device attributes.
    */
   @js.native
   trait DeviceData extends js.Object {
@@ -1279,7 +1279,7 @@ package alexaforbusiness {
   }
 
   /**
-   * <p>The list of device events.</p>
+   * The list of device events.
    */
   @js.native
   trait DeviceEvent extends js.Object {
@@ -1319,7 +1319,7 @@ package alexaforbusiness {
   }
 
   /**
-   * <p>Details of a device�fs status.</p>
+   * Details of a device�fs status.
    */
   @js.native
   trait DeviceStatusDetail extends js.Object {
@@ -1344,7 +1344,7 @@ package alexaforbusiness {
   }
 
   /**
-   * <p>Detailed information about a device's status.</p>
+   * Detailed information about a device's status.
    */
   @js.native
   trait DeviceStatusInfo extends js.Object {
@@ -1528,7 +1528,7 @@ package alexaforbusiness {
   }
 
   /**
-   * <p>A filter name and value pair that is used to return a more specific list of results. Filters can be used to match a set of resources by various criteria.</p>
+   * A filter name and value pair that is used to return a more specific list of results. Filters can be used to match a set of resources by various criteria.
    */
   @js.native
   trait Filter extends js.Object {
@@ -1851,7 +1851,7 @@ package alexaforbusiness {
   }
 
   /**
-   * <p>The IP endpoint and protocol for calling.</p>
+   * The IP endpoint and protocol for calling.
    */
   @js.native
   trait IPDialIn extends js.Object {
@@ -2148,7 +2148,10 @@ package alexaforbusiness {
   }
 
   /**
-   * <p>The values that indicate whether a pin is always required (YES), never required (NO), or OPTIONAL.</p> <ul> <li> <p>If YES, Alexa will always ask for a meeting pin.</p> </li> <li> <p>If NO, Alexa will never ask for a meeting pin.</p> </li> <li> <p>If OPTIONAL, Alexa will ask if you have a meeting pin and if the customer responds with yes, it will ask for the meeting pin.</p> </li> </ul>
+   * The values that indicate whether a pin is always required (YES), never required (NO), or OPTIONAL.
+   * * If YES, Alexa will always ask for a meeting pin.
+   *  * If NO, Alexa will never ask for a meeting pin.
+   *  * If OPTIONAL, Alexa will ask if you have a meeting pin and if the customer responds with yes, it will ask for the meeting pin.
    */
   @js.native
   trait MeetingSetting extends js.Object {
@@ -2166,7 +2169,7 @@ package alexaforbusiness {
   }
 
   /**
-   * <p>The information for public switched telephone network (PSTN) conferencing.</p>
+   * The information for public switched telephone network (PSTN) conferencing.
    */
   @js.native
   trait PSTNDialIn extends js.Object {
@@ -2193,7 +2196,7 @@ package alexaforbusiness {
   }
 
   /**
-   * <p>A room profile with attributes.</p>
+   * A room profile with attributes.
    */
   @js.native
   trait Profile extends js.Object {
@@ -2244,7 +2247,7 @@ package alexaforbusiness {
   }
 
   /**
-   * <p>The data of a room profile.</p>
+   * The data of a room profile.
    */
   @js.native
   trait ProfileData extends js.Object {
@@ -2527,7 +2530,7 @@ package alexaforbusiness {
   }
 
   /**
-   * <p>A room with attributes.</p>
+   * A room with attributes.
    */
   @js.native
   trait Room extends js.Object {
@@ -2557,7 +2560,7 @@ package alexaforbusiness {
   }
 
   /**
-   * <p>The data of a room.</p>
+   * The data of a room.
    */
   @js.native
   trait RoomData extends js.Object {
@@ -2590,7 +2593,7 @@ package alexaforbusiness {
   }
 
   /**
-   * <p>A skill parameter associated with a room.</p>
+   * A skill parameter associated with a room.
    */
   @js.native
   trait RoomSkillParameter extends js.Object {
@@ -2954,7 +2957,7 @@ package alexaforbusiness {
   }
 
   /**
-   * <p>Granular information about the skill.</p>
+   * Granular information about the skill.
    */
   @js.native
   trait SkillDetails extends js.Object {
@@ -2999,7 +3002,7 @@ package alexaforbusiness {
   }
 
   /**
-   * <p>A skill group with attributes.</p>
+   * A skill group with attributes.
    */
   @js.native
   trait SkillGroup extends js.Object {
@@ -3023,7 +3026,7 @@ package alexaforbusiness {
   }
 
   /**
-   * <p>The attributes of a skill group.</p>
+   * The attributes of a skill group.
    */
   @js.native
   trait SkillGroupData extends js.Object {
@@ -3047,7 +3050,7 @@ package alexaforbusiness {
   }
 
   /**
-   * <p>The summary of skills.</p>
+   * The summary of skills.
    */
   @js.native
   trait SkillSummary extends js.Object {
@@ -3092,7 +3095,7 @@ package alexaforbusiness {
   }
 
   /**
-   * <p>The detailed information about an Alexa skill.</p>
+   * The detailed information about an Alexa skill.
    */
   @js.native
   trait SkillsStoreSkill extends js.Object {
@@ -3128,7 +3131,7 @@ package alexaforbusiness {
   }
 
   /**
-   * <p>A smart home appliance that can connect to a central system. Any domestic device can be a smart appliance. </p>
+   * A smart home appliance that can connect to a central system. Any domestic device can be a smart appliance.
    */
   @js.native
   trait SmartHomeAppliance extends js.Object {
@@ -3152,7 +3155,7 @@ package alexaforbusiness {
   }
 
   /**
-   * <p>An object representing a sort criteria. </p>
+   * An object representing a sort criteria.
    */
   @js.native
   trait Sort extends js.Object {
@@ -3242,7 +3245,7 @@ package alexaforbusiness {
   }
 
   /**
-   * <p>A key-value pair that can be associated with a resource. </p>
+   * A key-value pair that can be associated with a resource.
    */
   @js.native
   trait Tag extends js.Object {
@@ -3609,7 +3612,7 @@ package alexaforbusiness {
   }
 
   /**
-   * <p>Information related to a user.</p>
+   * Information related to a user.
    */
   @js.native
   trait UserData extends js.Object {

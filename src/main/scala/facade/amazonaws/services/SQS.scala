@@ -89,7 +89,7 @@ package sqs {
   }
 
   /**
-   * <p>Gives a detailed description of the result of an action on each entry in the request.</p>
+   * Gives a detailed description of the result of an action on each entry in the request.
    */
   @js.native
   trait BatchResultErrorEntry extends js.Object {
@@ -137,7 +137,11 @@ package sqs {
   }
 
   /**
-   * <p>Encloses a receipt handle and an entry id for each message in <code> <a>ChangeMessageVisibilityBatch</a>.</code> </p> <important> <p>All of the following list parameters must be prefixed with <code>ChangeMessageVisibilityBatchRequestEntry.n</code>, where <code>n</code> is an integer value starting with <code>1</code>. For example, a parameter list for this action might look like this:</p> </important> <p> <code>&amp;ChangeMessageVisibilityBatchRequestEntry.1.Id=change_visibility_msg_2</code> </p> <p> <code>&amp;ChangeMessageVisibilityBatchRequestEntry.1.ReceiptHandle=your_receipt_handle</code> </p> <p> <code>&amp;ChangeMessageVisibilityBatchRequestEntry.1.VisibilityTimeout=45</code> </p>
+   * Encloses a receipt handle and an entry id for each message in <code> '''ChangeMessageVisibilityBatch'''.</code>
+   *  <important> All of the following list parameters must be prefixed with <code>ChangeMessageVisibilityBatchRequestEntry.n</code>, where <code>n</code> is an integer value starting with <code>1</code>. For example, a parameter list for this action might look like this:
+   *  </important> <code>&amp;ChangeMessageVisibilityBatchRequestEntry.1.Id=change_visibility_msg_2</code>
+   *  <code>&amp;ChangeMessageVisibilityBatchRequestEntry.1.ReceiptHandle=your_receipt_handle</code>
+   *  <code>&amp;ChangeMessageVisibilityBatchRequestEntry.1.VisibilityTimeout=45</code>
    */
   @js.native
   trait ChangeMessageVisibilityBatchRequestEntry extends js.Object {
@@ -161,7 +165,7 @@ package sqs {
   }
 
   /**
-   * <p>For each message in the batch, the response contains a <code> <a>ChangeMessageVisibilityBatchResultEntry</a> </code> tag if the message succeeds or a <code> <a>BatchResultErrorEntry</a> </code> tag if the message fails.</p>
+   * For each message in the batch, the response contains a <code> '''ChangeMessageVisibilityBatchResultEntry''' </code> tag if the message succeeds or a <code> '''BatchResultErrorEntry''' </code> tag if the message fails.
    */
   @js.native
   trait ChangeMessageVisibilityBatchResult extends js.Object {
@@ -182,7 +186,7 @@ package sqs {
   }
 
   /**
-   * <p>Encloses the <code>Id</code> of an entry in <code> <a>ChangeMessageVisibilityBatch</a>.</code> </p>
+   * Encloses the <code>Id</code> of an entry in <code> '''ChangeMessageVisibilityBatch'''.</code>
    */
   @js.native
   trait ChangeMessageVisibilityBatchResultEntry extends js.Object {
@@ -242,7 +246,7 @@ package sqs {
   }
 
   /**
-   * <p>Returns the <code>QueueUrl</code> attribute of the created queue.</p>
+   * Returns the <code>QueueUrl</code> attribute of the created queue.
    */
   @js.native
   trait CreateQueueResult extends js.Object {
@@ -281,7 +285,7 @@ package sqs {
   }
 
   /**
-   * <p>Encloses a receipt handle and an identifier for it.</p>
+   * Encloses a receipt handle and an identifier for it.
    */
   @js.native
   trait DeleteMessageBatchRequestEntry extends js.Object {
@@ -302,7 +306,7 @@ package sqs {
   }
 
   /**
-   * <p>For each message in the batch, the response contains a <code> <a>DeleteMessageBatchResultEntry</a> </code> tag if the message is deleted or a <code> <a>BatchResultErrorEntry</a> </code> tag if the message can't be deleted.</p>
+   * For each message in the batch, the response contains a <code> '''DeleteMessageBatchResultEntry''' </code> tag if the message is deleted or a <code> '''BatchResultErrorEntry''' </code> tag if the message can't be deleted.
    */
   @js.native
   trait DeleteMessageBatchResult extends js.Object {
@@ -323,7 +327,7 @@ package sqs {
   }
 
   /**
-   * <p>Encloses the <code>Id</code> of an entry in <code> <a>DeleteMessageBatch</a>.</code> </p>
+   * Encloses the <code>Id</code> of an entry in <code> '''DeleteMessageBatch'''.</code>
    */
   @js.native
   trait DeleteMessageBatchResultEntry extends js.Object {
@@ -401,7 +405,7 @@ package sqs {
   }
 
   /**
-   * <p>A list of returned queue attributes.</p>
+   * A list of returned queue attributes.
    */
   @js.native
   trait GetQueueAttributesResult extends js.Object {
@@ -440,7 +444,7 @@ package sqs {
   }
 
   /**
-   * <p>For more information, see <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-api-responses.html">Interpreting Responses</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.</p>
+   * For more information, see <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-api-responses.html">Interpreting Responses</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
    */
   @js.native
   trait GetQueueUrlResult extends js.Object {
@@ -476,7 +480,7 @@ package sqs {
   }
 
   /**
-   * <p>A list of your dead letter source queues.</p>
+   * A list of your dead letter source queues.
    */
   @js.native
   trait ListDeadLetterSourceQueuesResult extends js.Object {
@@ -542,7 +546,7 @@ package sqs {
   }
 
   /**
-   * <p>A list of your queues.</p>
+   * A list of your queues.
    */
   @js.native
   trait ListQueuesResult extends js.Object {
@@ -560,7 +564,7 @@ package sqs {
   }
 
   /**
-   * <p>An Amazon SQS message.</p>
+   * An Amazon SQS message.
    */
   @js.native
   trait Message extends js.Object {
@@ -596,7 +600,8 @@ package sqs {
   }
 
   /**
-   * <p>The user-specified message attribute value. For string data types, the <code>Value</code> attribute has the same restrictions on the content as the message body. For more information, see <code> <a>SendMessage</a>.</code> </p> <p> <code>Name</code>, <code>type</code>, <code>value</code> and the message body must not be empty or null. All parts of the message attribute, including <code>Name</code>, <code>Type</code>, and <code>Value</code>, are part of the message size restriction (256 KB or 262,144 bytes).</p>
+   * The user-specified message attribute value. For string data types, the <code>Value</code> attribute has the same restrictions on the content as the message body. For more information, see <code> '''SendMessage'''.</code>
+   *  <code>Name</code>, <code>type</code>, <code>value</code> and the message body must not be empty or null. All parts of the message attribute, including <code>Name</code>, <code>Type</code>, and <code>Value</code>, are part of the message size restriction (256 KB or 262,144 bytes).
    */
   @js.native
   trait MessageAttributeValue extends js.Object {
@@ -715,7 +720,7 @@ package sqs {
   }
 
   /**
-   * <p>A list of received messages.</p>
+   * A list of received messages.
    */
   @js.native
   trait ReceiveMessageResult extends js.Object {
@@ -775,7 +780,7 @@ package sqs {
   }
 
   /**
-   * <p>Contains the details of a single Amazon SQS message along with an <code>Id</code>.</p>
+   * Contains the details of a single Amazon SQS message along with an <code>Id</code>.
    */
   @js.native
   trait SendMessageBatchRequestEntry extends js.Object {
@@ -808,7 +813,7 @@ package sqs {
   }
 
   /**
-   * <p>For each message in the batch, the response contains a <code> <a>SendMessageBatchResultEntry</a> </code> tag if the message succeeds or a <code> <a>BatchResultErrorEntry</a> </code> tag if the message fails.</p>
+   * For each message in the batch, the response contains a <code> '''SendMessageBatchResultEntry''' </code> tag if the message succeeds or a <code> '''BatchResultErrorEntry''' </code> tag if the message fails.
    */
   @js.native
   trait SendMessageBatchResult extends js.Object {
@@ -829,7 +834,7 @@ package sqs {
   }
 
   /**
-   * <p>Encloses a <code>MessageId</code> for a successfully-enqueued message in a <code> <a>SendMessageBatch</a>.</code> </p>
+   * Encloses a <code>MessageId</code> for a successfully-enqueued message in a <code> '''SendMessageBatch'''.</code>
    */
   @js.native
   trait SendMessageBatchResultEntry extends js.Object {
@@ -892,7 +897,7 @@ package sqs {
   }
 
   /**
-   * <p>The <code>MD5OfMessageBody</code> and <code>MessageId</code> elements.</p>
+   * The <code>MD5OfMessageBody</code> and <code>MessageId</code> elements.
    */
   @js.native
   trait SendMessageResult extends js.Object {

@@ -111,7 +111,7 @@ package cloudhsm {
   }
 
   /**
-   * <p>Indicates that an internal error occurred.</p>
+   * Indicates that an internal error occurred.
    */
   @js.native
   trait CloudHsmInternalExceptionException extends js.Object {
@@ -127,7 +127,7 @@ package cloudhsm {
   }
 
   /**
-   * <p>Indicates that an exception occurred in the AWS CloudHSM service.</p>
+   * Indicates that an exception occurred in the AWS CloudHSM service.
    */
   @js.native
   trait CloudHsmServiceExceptionException extends js.Object {
@@ -136,7 +136,7 @@ package cloudhsm {
   }
 
   /**
-   * <p>Contains the inputs for the <a>CreateHapgRequest</a> action.</p>
+   * Contains the inputs for the '''CreateHapgRequest''' action.
    */
   @js.native
   trait CreateHapgRequest extends js.Object {
@@ -154,7 +154,7 @@ package cloudhsm {
   }
 
   /**
-   * <p>Contains the output of the <a>CreateHAPartitionGroup</a> action.</p>
+   * Contains the output of the '''CreateHAPartitionGroup''' action.
    */
   @js.native
   trait CreateHapgResponse extends js.Object {
@@ -172,7 +172,7 @@ package cloudhsm {
   }
 
   /**
-   * <p>Contains the inputs for the <code>CreateHsm</code> operation.</p>
+   * Contains the inputs for the <code>CreateHsm</code> operation.
    */
   @js.native
   trait CreateHsmRequest extends js.Object {
@@ -211,7 +211,7 @@ package cloudhsm {
   }
 
   /**
-   * <p>Contains the output of the <code>CreateHsm</code> operation.</p>
+   * Contains the output of the <code>CreateHsm</code> operation.
    */
   @js.native
   trait CreateHsmResponse extends js.Object {
@@ -229,7 +229,7 @@ package cloudhsm {
   }
 
   /**
-   * <p>Contains the inputs for the <a>CreateLunaClient</a> action.</p>
+   * Contains the inputs for the '''CreateLunaClient''' action.
    */
   @js.native
   trait CreateLunaClientRequest extends js.Object {
@@ -250,7 +250,7 @@ package cloudhsm {
   }
 
   /**
-   * <p>Contains the output of the <a>CreateLunaClient</a> action.</p>
+   * Contains the output of the '''CreateLunaClient''' action.
    */
   @js.native
   trait CreateLunaClientResponse extends js.Object {
@@ -268,7 +268,7 @@ package cloudhsm {
   }
 
   /**
-   * <p>Contains the inputs for the <a>DeleteHapg</a> action.</p>
+   * Contains the inputs for the '''DeleteHapg''' action.
    */
   @js.native
   trait DeleteHapgRequest extends js.Object {
@@ -286,7 +286,7 @@ package cloudhsm {
   }
 
   /**
-   * <p>Contains the output of the <a>DeleteHapg</a> action.</p>
+   * Contains the output of the '''DeleteHapg''' action.
    */
   @js.native
   trait DeleteHapgResponse extends js.Object {
@@ -304,7 +304,7 @@ package cloudhsm {
   }
 
   /**
-   * <p>Contains the inputs for the <a>DeleteHsm</a> operation.</p>
+   * Contains the inputs for the '''DeleteHsm''' operation.
    */
   @js.native
   trait DeleteHsmRequest extends js.Object {
@@ -322,7 +322,7 @@ package cloudhsm {
   }
 
   /**
-   * <p>Contains the output of the <a>DeleteHsm</a> operation.</p>
+   * Contains the output of the '''DeleteHsm''' operation.
    */
   @js.native
   trait DeleteHsmResponse extends js.Object {
@@ -370,7 +370,7 @@ package cloudhsm {
   }
 
   /**
-   * <p>Contains the inputs for the <a>DescribeHapg</a> action.</p>
+   * Contains the inputs for the '''DescribeHapg''' action.
    */
   @js.native
   trait DescribeHapgRequest extends js.Object {
@@ -388,7 +388,7 @@ package cloudhsm {
   }
 
   /**
-   * <p>Contains the output of the <a>DescribeHapg</a> action.</p>
+   * Contains the output of the '''DescribeHapg''' action.
    */
   @js.native
   trait DescribeHapgResponse extends js.Object {
@@ -430,7 +430,7 @@ package cloudhsm {
   }
 
   /**
-   * <p>Contains the inputs for the <a>DescribeHsm</a> operation.</p>
+   * Contains the inputs for the '''DescribeHsm''' operation.
    */
   @js.native
   trait DescribeHsmRequest extends js.Object {
@@ -451,7 +451,7 @@ package cloudhsm {
   }
 
   /**
-   * <p>Contains the output of the <a>DescribeHsm</a> operation.</p>
+   * Contains the output of the '''DescribeHsm''' operation.
    */
   @js.native
   trait DescribeHsmResponse extends js.Object {
@@ -628,7 +628,7 @@ package cloudhsm {
   }
 
   /**
-   * <p>Indicates that one or more of the request parameters are not valid.</p>
+   * Indicates that one or more of the request parameters are not valid.
    */
   @js.native
   trait InvalidRequestExceptionException extends js.Object {
@@ -636,7 +636,7 @@ package cloudhsm {
   }
 
   /**
-   * <p>Contains the inputs for the <a>ListAvailableZones</a> action.</p>
+   * Contains the inputs for the '''ListAvailableZones''' action.
    */
   @js.native
   trait ListAvailableZonesRequest extends js.Object {
@@ -715,7 +715,7 @@ package cloudhsm {
   }
 
   /**
-   * <p>Contains the output of the <code>ListHsms</code> operation.</p>
+   * Contains the output of the <code>ListHsms</code> operation.
    */
   @js.native
   trait ListHsmsResponse extends js.Object {
@@ -835,7 +835,7 @@ package cloudhsm {
   }
 
   /**
-   * <p>Contains the inputs for the <a>ModifyHsm</a> operation.</p>
+   * Contains the inputs for the '''ModifyHsm''' operation.
    */
   @js.native
   trait ModifyHsmRequest extends js.Object {
@@ -868,7 +868,7 @@ package cloudhsm {
   }
 
   /**
-   * <p>Contains the output of the <a>ModifyHsm</a> operation.</p>
+   * Contains the output of the '''ModifyHsm''' operation.
    */
   @js.native
   trait ModifyHsmResponse extends js.Object {
@@ -952,7 +952,9 @@ package cloudhsm {
   }
 
   /**
-   * <p>Specifies the type of subscription for the HSM.</p> <ul> <li> <p> <b>PRODUCTION</b> - The HSM is being used in a production environment.</p> </li> <li> <p> <b>TRIAL</b> - The HSM is being used in a product trial.</p> </li> </ul>
+   * Specifies the type of subscription for the HSM.
+   * * <b>PRODUCTION</b> - The HSM is being used in a production environment.
+   *  * <b>TRIAL</b> - The HSM is being used in a product trial.
    */
   object SubscriptionTypeEnum {
     val PRODUCTION = "PRODUCTION"
@@ -961,7 +963,7 @@ package cloudhsm {
   }
 
   /**
-   * <p>A key-value pair that identifies or specifies metadata about an AWS CloudHSM resource.</p>
+   * A key-value pair that identifies or specifies metadata about an AWS CloudHSM resource.
    */
   @js.native
   trait Tag extends js.Object {

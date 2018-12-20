@@ -290,7 +290,7 @@ package directconnect {
   }
 
   /**
-   * <p>Information about a BGP peer.</p>
+   * Information about a BGP peer.
    */
   @js.native
   trait BGPPeer extends js.Object {
@@ -445,7 +445,7 @@ package directconnect {
   }
 
   /**
-   * <p>Information about an AWS Direct Connect connection.</p>
+   * Information about an AWS Direct Connect connection.
    */
   @js.native
   trait Connection extends js.Object {
@@ -1274,7 +1274,7 @@ package directconnect {
   }
 
   /**
-   * <p>Information about a Direct Connect gateway, which enables you to connect virtual interfaces and virtual private gateways.</p>
+   * Information about a Direct Connect gateway, which enables you to connect virtual interfaces and virtual private gateways.
    */
   @js.native
   trait DirectConnectGateway extends js.Object {
@@ -1307,7 +1307,7 @@ package directconnect {
   }
 
   /**
-   * <p>Information about an association between a Direct Connect gateway and a virtual private gateway.</p>
+   * Information about an association between a Direct Connect gateway and a virtual private gateway.
    */
   @js.native
   trait DirectConnectGatewayAssociation extends js.Object {
@@ -1349,7 +1349,7 @@ package directconnect {
   }
 
   /**
-   * <p>Information about an attachment between a Direct Connect gateway and a virtual interface.</p>
+   * Information about an attachment between a Direct Connect gateway and a virtual interface.
    */
   @js.native
   trait DirectConnectGatewayAttachment extends js.Object {
@@ -1426,7 +1426,7 @@ package directconnect {
   }
 
   /**
-   * <p>Information about an interconnect.</p>
+   * Information about an interconnect.
    */
   @js.native
   trait Interconnect extends js.Object {
@@ -1503,7 +1503,7 @@ package directconnect {
   }
 
   /**
-   * <p>Information about a link aggregation group (LAG).</p>
+   * Information about a link aggregation group (LAG).
    */
   @js.native
   trait Lag extends js.Object {
@@ -1589,7 +1589,7 @@ package directconnect {
   }
 
   /**
-   * <p>Information about a Letter of Authorization - Connecting Facility Assignment (LOA-CFA) for a connection.</p>
+   * Information about a Letter of Authorization - Connecting Facility Assignment (LOA-CFA) for a connection.
    */
   @js.native
   trait Loa extends js.Object {
@@ -1616,7 +1616,7 @@ package directconnect {
   }
 
   /**
-   * <p>Information about an AWS Direct Connect location.</p>
+   * Information about an AWS Direct Connect location.
    */
   @js.native
   trait Location extends js.Object {
@@ -1655,7 +1655,7 @@ package directconnect {
   }
 
   /**
-   * <p>Information about a new BGP peer.</p>
+   * Information about a new BGP peer.
    */
   @js.native
   trait NewBGPPeer extends js.Object {
@@ -1685,7 +1685,7 @@ package directconnect {
   }
 
   /**
-   * <p>Information about a private virtual interface.</p>
+   * Information about a private virtual interface.
    */
   @js.native
   trait NewPrivateVirtualInterface extends js.Object {
@@ -1730,7 +1730,7 @@ package directconnect {
   }
 
   /**
-   * <p>Information about a private virtual interface to be provisioned on a connection.</p>
+   * Information about a private virtual interface to be provisioned on a connection.
    */
   @js.native
   trait NewPrivateVirtualInterfaceAllocation extends js.Object {
@@ -1769,7 +1769,7 @@ package directconnect {
   }
 
   /**
-   * <p>Information about a public virtual interface.</p>
+   * Information about a public virtual interface.
    */
   @js.native
   trait NewPublicVirtualInterface extends js.Object {
@@ -1808,7 +1808,7 @@ package directconnect {
   }
 
   /**
-   * <p>Information about a public virtual interface to be provisioned on a connection.</p>
+   * Information about a public virtual interface to be provisioned on a connection.
    */
   @js.native
   trait NewPublicVirtualInterfaceAllocation extends js.Object {
@@ -1847,7 +1847,7 @@ package directconnect {
   }
 
   /**
-   * <p>Information about a tag associated with an AWS Direct Connect resource.</p>
+   * Information about a tag associated with an AWS Direct Connect resource.
    */
   @js.native
   trait ResourceTag extends js.Object {
@@ -1868,7 +1868,7 @@ package directconnect {
   }
 
   /**
-   * <p>Information about a route filter prefix that a customer can advertise through Border Gateway Protocol (BGP) over a public virtual interface.</p>
+   * Information about a route filter prefix that a customer can advertise through Border Gateway Protocol (BGP) over a public virtual interface.
    */
   @js.native
   trait RouteFilterPrefix extends js.Object {
@@ -1886,7 +1886,7 @@ package directconnect {
   }
 
   /**
-   * <p>Information about a tag.</p>
+   * Information about a tag.
    */
   @js.native
   trait Tag extends js.Object {
@@ -2008,7 +2008,7 @@ package directconnect {
   }
 
   /**
-   * <p>Information about a virtual private gateway for a private virtual interface.</p>
+   * Information about a virtual private gateway for a private virtual interface.
    */
   @js.native
   trait VirtualGateway extends js.Object {
@@ -2044,7 +2044,7 @@ package directconnect {
   }
 
   /**
-   * <p>Information about a virtual interface.</p>
+   * Information about a virtual interface.
    */
   @js.native
   trait VirtualInterface extends js.Object {

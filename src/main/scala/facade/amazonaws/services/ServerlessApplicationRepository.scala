@@ -45,7 +45,7 @@ package serverlessapplicationrepository {
   }
 
   /**
-   * <p>A nested application summary.</p>
+   * A nested application summary.
    */
   @js.native
   trait ApplicationDependencySummary extends js.Object {
@@ -66,7 +66,7 @@ package serverlessapplicationrepository {
   }
 
   /**
-   * <p>Policy statement applied to the application.</p>
+   * Policy statement applied to the application.
    */
   @js.native
   trait ApplicationPolicyStatement extends js.Object {
@@ -90,7 +90,7 @@ package serverlessapplicationrepository {
   }
 
   /**
-   * <p>Summary of details about the application.</p>
+   * Summary of details about the application.
    */
   @js.native
   trait ApplicationSummary extends js.Object {
@@ -129,7 +129,7 @@ package serverlessapplicationrepository {
   }
 
   /**
-   * <p>Values that must be specified in order to deploy some applications.</p>
+   * Values that must be specified in order to deploy some applications.
    */
   object CapabilityEnum {
     val CAPABILITY_IAM = "CAPABILITY_IAM"
@@ -705,7 +705,7 @@ package serverlessapplicationrepository {
   }
 
   /**
-   * <p>Parameters supported by the application.</p>
+   * Parameters supported by the application.
    */
   @js.native
   trait ParameterDefinition extends js.Object {
@@ -759,7 +759,7 @@ package serverlessapplicationrepository {
   }
 
   /**
-   * <p>Parameter value of the application.</p>
+   * Parameter value of the application.
    */
   @js.native
   trait ParameterValue extends js.Object {
@@ -813,7 +813,7 @@ package serverlessapplicationrepository {
   }
 
   /**
-   * <p>This property corresponds to the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RollbackConfiguration">RollbackConfiguration</a></i> Data Type.</p>
+   * This property corresponds to the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RollbackConfiguration">RollbackConfiguration</a></i> Data Type.
    */
   @js.native
   trait RollbackConfiguration extends js.Object {
@@ -834,7 +834,7 @@ package serverlessapplicationrepository {
   }
 
   /**
-   * <p>This property corresponds to the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RollbackTrigger">RollbackTrigger</a></i> Data Type.</p>
+   * This property corresponds to the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RollbackTrigger">RollbackTrigger</a></i> Data Type.
    */
   @js.native
   trait RollbackTrigger extends js.Object {
@@ -863,7 +863,7 @@ package serverlessapplicationrepository {
   }
 
   /**
-   * <p>This property corresponds to the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/Tag">Tag</a></i> Data Type.</p>
+   * This property corresponds to the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/Tag">Tag</a></i> Data Type.
    */
   @js.native
   trait Tag extends js.Object {
@@ -962,7 +962,7 @@ package serverlessapplicationrepository {
   }
 
   /**
-   * <p>Application version details.</p>
+   * Application version details.
    */
   @js.native
   trait Version extends js.Object {
@@ -1001,7 +1001,7 @@ package serverlessapplicationrepository {
   }
 
   /**
-   * <p>An application version summary.</p>
+   * An application version summary.
    */
   @js.native
   trait VersionSummary extends js.Object {

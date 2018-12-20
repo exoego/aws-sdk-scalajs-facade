@@ -70,7 +70,7 @@ package applicationautoscaling {
   }
 
   /**
-   * <p>Represents a CloudWatch alarm associated with a scaling policy.</p>
+   * Represents a CloudWatch alarm associated with a scaling policy.
    */
   @js.native
   trait Alarm extends js.Object {
@@ -91,7 +91,7 @@ package applicationautoscaling {
   }
 
   /**
-   * <p>Concurrent updates caused an exception, for example, if you request an update to an Application Auto Scaling resource that already has a pending update.</p>
+   * Concurrent updates caused an exception, for example, if you request an update to an Application Auto Scaling resource that already has a pending update.
    */
   @js.native
   trait ConcurrentUpdateExceptionException extends js.Object {
@@ -99,7 +99,7 @@ package applicationautoscaling {
   }
 
   /**
-   * <p>Configures a customized metric for a target tracking policy.</p>
+   * Configures a customized metric for a target tracking policy.
    */
   @js.native
   trait CustomizedMetricSpecification extends js.Object {
@@ -423,7 +423,7 @@ package applicationautoscaling {
   }
 
   /**
-   * <p>Failed access to resources caused an exception. This exception is thrown when Application Auto Scaling is unable to retrieve the alarms associated with a scaling policy due to a client error, for example, if the role ARN specified for a scalable target does not have permission to call the CloudWatch <a href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DescribeAlarms.html">DescribeAlarms</a> on your behalf.</p>
+   * Failed access to resources caused an exception. This exception is thrown when Application Auto Scaling is unable to retrieve the alarms associated with a scaling policy due to a client error, for example, if the role ARN specified for a scalable target does not have permission to call the CloudWatch <a href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DescribeAlarms.html">DescribeAlarms</a> on your behalf.
    */
   @js.native
   trait FailedResourceAccessExceptionException extends js.Object {
@@ -431,7 +431,7 @@ package applicationautoscaling {
   }
 
   /**
-   * <p>The service encountered an internal error.</p>
+   * The service encountered an internal error.
    */
   @js.native
   trait InternalServiceExceptionException extends js.Object {
@@ -439,7 +439,7 @@ package applicationautoscaling {
   }
 
   /**
-   * <p>The next token supplied was invalid.</p>
+   * The next token supplied was invalid.
    */
   @js.native
   trait InvalidNextTokenExceptionException extends js.Object {
@@ -447,7 +447,7 @@ package applicationautoscaling {
   }
 
   /**
-   * <p>A per-account resource limit is exceeded. For more information, see <a href="http://docs.aws.amazon.com/ApplicationAutoScaling/latest/userguide/application-auto-scaling-limits.html">Application Auto Scaling Limits</a>.</p>
+   * A per-account resource limit is exceeded. For more information, see <a href="http://docs.aws.amazon.com/ApplicationAutoScaling/latest/userguide/application-auto-scaling-limits.html">Application Auto Scaling Limits</a>.
    */
   @js.native
   trait LimitExceededExceptionException extends js.Object {
@@ -463,7 +463,7 @@ package applicationautoscaling {
   }
 
   /**
-   * <p>Describes the dimension of a metric.</p>
+   * Describes the dimension of a metric.
    */
   @js.native
   trait MetricDimension extends js.Object {
@@ -510,7 +510,7 @@ package applicationautoscaling {
   }
 
   /**
-   * <p>The specified object could not be found. For any operation that depends on the existence of a scalable target, this exception is thrown if the scalable target with the specified service namespace, resource ID, and scalable dimension does not exist. For any operation that deletes or deregisters a resource, this exception is thrown if the resource cannot be found.</p>
+   * The specified object could not be found. For any operation that depends on the existence of a scalable target, this exception is thrown if the scalable target with the specified service namespace, resource ID, and scalable dimension does not exist. For any operation that deletes or deregisters a resource, this exception is thrown if the resource cannot be found.
    */
   @js.native
   trait ObjectNotFoundExceptionException extends js.Object {
@@ -525,7 +525,7 @@ package applicationautoscaling {
   }
 
   /**
-   * <p>Configures a predefined metric for a target tracking policy.</p>
+   * Configures a predefined metric for a target tracking policy.
    */
   @js.native
   trait PredefinedMetricSpecification extends js.Object {
@@ -705,7 +705,7 @@ package applicationautoscaling {
   }
 
   /**
-   * <p>Represents a scalable target.</p>
+   * Represents a scalable target.
    */
   @js.native
   trait ScalableTarget extends js.Object {
@@ -741,7 +741,7 @@ package applicationautoscaling {
   }
 
   /**
-   * <p>Represents the minimum and maximum capacity for a scheduled action.</p>
+   * Represents the minimum and maximum capacity for a scheduled action.
    */
   @js.native
   trait ScalableTargetAction extends js.Object {
@@ -762,7 +762,7 @@ package applicationautoscaling {
   }
 
   /**
-   * <p>Represents a scaling activity.</p>
+   * Represents a scaling activity.
    */
   @js.native
   trait ScalingActivity extends js.Object {
@@ -821,7 +821,7 @@ package applicationautoscaling {
   }
 
   /**
-   * <p>Represents a scaling policy.</p>
+   * Represents a scaling policy.
    */
   @js.native
   trait ScalingPolicy extends js.Object {
@@ -866,7 +866,7 @@ package applicationautoscaling {
   }
 
   /**
-   * <p>Represents a scheduled action.</p>
+   * Represents a scheduled action.
    */
   @js.native
   trait ScheduledAction extends js.Object {
@@ -924,7 +924,15 @@ package applicationautoscaling {
   }
 
   /**
-   * <p>Represents a step adjustment for a <a>StepScalingPolicyConfiguration</a>. Describes an adjustment based on the difference between the value of the aggregated CloudWatch metric and the breach threshold that you've defined for the alarm. </p> <p>For the following examples, suppose that you have an alarm with a breach threshold of 50:</p> <ul> <li> <p>To trigger the adjustment when the metric is greater than or equal to 50 and less than 60, specify a lower bound of 0 and an upper bound of 10.</p> </li> <li> <p>To trigger the adjustment when the metric is greater than 40 and less than or equal to 50, specify a lower bound of -10 and an upper bound of 0.</p> </li> </ul> <p>There are a few rules for the step adjustments for your step policy:</p> <ul> <li> <p>The ranges of your step adjustments can't overlap or have a gap.</p> </li> <li> <p>At most one step adjustment can have a null lower bound. If one step adjustment has a negative lower bound, then there must be a step adjustment with a null lower bound.</p> </li> <li> <p>At most one step adjustment can have a null upper bound. If one step adjustment has a positive upper bound, then there must be a step adjustment with a null upper bound.</p> </li> <li> <p>The upper and lower bound can't be null in the same step adjustment.</p> </li> </ul>
+   * Represents a step adjustment for a '''StepScalingPolicyConfiguration'''. Describes an adjustment based on the difference between the value of the aggregated CloudWatch metric and the breach threshold that you've defined for the alarm.
+   *  For the following examples, suppose that you have an alarm with a breach threshold of 50:
+   * * To trigger the adjustment when the metric is greater than or equal to 50 and less than 60, specify a lower bound of 0 and an upper bound of 10.
+   *  * To trigger the adjustment when the metric is greater than 40 and less than or equal to 50, specify a lower bound of -10 and an upper bound of 0.
+   * There are a few rules for the step adjustments for your step policy:
+   * * The ranges of your step adjustments can't overlap or have a gap.
+   *  * At most one step adjustment can have a null lower bound. If one step adjustment has a negative lower bound, then there must be a step adjustment with a null lower bound.
+   *  * At most one step adjustment can have a null upper bound. If one step adjustment has a positive upper bound, then there must be a step adjustment with a null upper bound.
+   *  * The upper and lower bound can't be null in the same step adjustment.
    */
   @js.native
   trait StepAdjustment extends js.Object {
@@ -948,7 +956,7 @@ package applicationautoscaling {
   }
 
   /**
-   * <p>Represents a step scaling policy configuration.</p>
+   * Represents a step scaling policy configuration.
    */
   @js.native
   trait StepScalingPolicyConfiguration extends js.Object {
@@ -978,7 +986,7 @@ package applicationautoscaling {
   }
 
   /**
-   * <p>Represents a target tracking scaling policy configuration.</p>
+   * Represents a target tracking scaling policy configuration.
    */
   @js.native
   trait TargetTrackingScalingPolicyConfiguration extends js.Object {
@@ -1011,7 +1019,7 @@ package applicationautoscaling {
   }
 
   /**
-   * <p>An exception was thrown for a validation issue. Review the available parameters for the API request.</p>
+   * An exception was thrown for a validation issue. Review the available parameters for the API request.
    */
   @js.native
   trait ValidationExceptionException extends js.Object {

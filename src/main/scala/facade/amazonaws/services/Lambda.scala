@@ -128,7 +128,7 @@ package lambda {
   }
 
   /**
-   * <p>Provides limits of code size and concurrency associated with the current account and region. For more information or to request a limit increase for concurrent executions, see <a href="http://docs.aws.amazon.com/lambda/latest/dg/limits.html">Lambda Limits</a>. </p>
+   * Provides limits of code size and concurrency associated with the current account and region. For more information or to request a limit increase for concurrent executions, see <a href="http://docs.aws.amazon.com/lambda/latest/dg/limits.html">Lambda Limits</a>.
    */
   @js.native
   trait AccountLimit extends js.Object {
@@ -158,7 +158,7 @@ package lambda {
   }
 
   /**
-   * <p>Provides code size usage and function count associated with the current account and region.</p>
+   * Provides code size usage and function count associated with the current account and region.
    */
   @js.native
   trait AccountUsage extends js.Object {
@@ -284,7 +284,7 @@ package lambda {
   }
 
   /**
-   * <p>Provides configuration information about a Lambda function version alias.</p>
+   * Provides configuration information about a Lambda function version alias.
    */
   @js.native
   trait AliasConfiguration extends js.Object {
@@ -317,7 +317,7 @@ package lambda {
   }
 
   /**
-   * <p>The alias's <a href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">traffic shifting</a> configuration.</p>
+   * The alias's <a href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">traffic shifting</a> configuration.
    */
   @js.native
   trait AliasRoutingConfiguration extends js.Object {
@@ -467,7 +467,7 @@ package lambda {
   }
 
   /**
-   * <p>The <a href="http://docs.aws.amazon.com/lambda/latest/dg/dlq.html">dead letter queue</a> for failed asynchronous invocations.</p>
+   * The <a href="http://docs.aws.amazon.com/lambda/latest/dg/dlq.html">dead letter queue</a> for failed asynchronous invocations.
    */
   @js.native
   trait DeadLetterConfig extends js.Object {
@@ -569,7 +569,7 @@ package lambda {
   }
 
   /**
-   * <p>A function's environment variable settings.</p>
+   * A function's environment variable settings.
    */
   @js.native
   trait Environment extends js.Object {
@@ -587,7 +587,7 @@ package lambda {
   }
 
   /**
-   * <p>Error messages for environment variables that could not be applied.</p>
+   * Error messages for environment variables that could not be applied.
    */
   @js.native
   trait EnvironmentError extends js.Object {
@@ -608,7 +608,7 @@ package lambda {
   }
 
   /**
-   * <p>The results of a configuration update that applied environment variables.</p>
+   * The results of a configuration update that applied environment variables.
    */
   @js.native
   trait EnvironmentResponse extends js.Object {
@@ -629,7 +629,7 @@ package lambda {
   }
 
   /**
-   * <p>A mapping between an AWS resource and an AWS Lambda function. See <a>CreateEventSourceMapping</a> for details.</p>
+   * A mapping between an AWS resource and an AWS Lambda function. See '''CreateEventSourceMapping''' for details.
    */
   @js.native
   trait EventSourceMappingConfiguration extends js.Object {
@@ -676,7 +676,7 @@ package lambda {
   }
 
   /**
-   * <p>The code for the Lambda function. You can specify either an S3 location, or upload a deployment package directly.</p>
+   * The code for the Lambda function. You can specify either an S3 location, or upload a deployment package directly.
    */
   @js.native
   trait FunctionCode extends js.Object {
@@ -703,7 +703,7 @@ package lambda {
   }
 
   /**
-   * <p>The object for the Lambda function location.</p>
+   * The object for the Lambda function location.
    */
   @js.native
   trait FunctionCodeLocation extends js.Object {
@@ -724,7 +724,7 @@ package lambda {
   }
 
   /**
-   * <p>A Lambda function's configuration settings.</p>
+   * A Lambda function's configuration settings.
    */
   @js.native
   trait FunctionConfiguration extends js.Object {
@@ -905,7 +905,7 @@ package lambda {
   }
 
   /**
-   * <p>This response contains the object for the Lambda function location (see <a>FunctionCodeLocation</a>.</p>
+   * This response contains the object for the Lambda function location (see '''FunctionCodeLocation'''.
    */
   @js.native
   trait GetFunctionResponse extends js.Object {
@@ -1088,7 +1088,7 @@ package lambda {
   }
 
   /**
-   * <p>Upon success, returns an empty response. Otherwise, throws an exception.</p>
+   * Upon success, returns an empty response. Otherwise, throws an exception.
    */
   @js.native
   trait InvocationResponse extends js.Object {
@@ -1145,7 +1145,7 @@ package lambda {
   }
 
   /**
-   * <p>Upon success, it returns empty response. Otherwise, throws an exception.</p>
+   * Upon success, it returns empty response. Otherwise, throws an exception.
    */
   @deprecated
   @js.native
@@ -1164,7 +1164,7 @@ package lambda {
   }
 
   /**
-   * <p>A function layer.</p>
+   * A function layer.
    */
   @js.native
   trait Layer extends js.Object {
@@ -1185,7 +1185,7 @@ package lambda {
   }
 
   /**
-   * <p>A ZIP archive that contains the contents of the function layer. You can specify either an Amazon S3 location, or upload a layer archive directly.</p>
+   * A ZIP archive that contains the contents of the function layer. You can specify either an Amazon S3 location, or upload a layer archive directly.
    */
   @js.native
   trait LayerVersionContentInput extends js.Object {
@@ -1212,7 +1212,7 @@ package lambda {
   }
 
   /**
-   * <p>Details about a layer version.</p>
+   * Details about a layer version.
    */
   @js.native
   trait LayerVersionContentOutput extends js.Object {
@@ -1236,7 +1236,7 @@ package lambda {
   }
 
   /**
-   * <p>Details about a layer version.</p>
+   * Details about a layer version.
    */
   @js.native
   trait LayerVersionsListItem extends js.Object {
@@ -1269,7 +1269,7 @@ package lambda {
   }
 
   /**
-   * <p>Details about a function layer.</p>
+   * Details about a function layer.
    */
   @js.native
   trait LayersListItem extends js.Object {
@@ -1401,7 +1401,7 @@ package lambda {
   }
 
   /**
-   * <p>A list of Lambda functions.</p>
+   * A list of Lambda functions.
    */
   @js.native
   trait ListFunctionsResponse extends js.Object {
@@ -1770,7 +1770,7 @@ package lambda {
   }
 
   /**
-   * <p>The function's AWS X-Ray tracing configuration.</p>
+   * The function's AWS X-Ray tracing configuration.
    */
   @js.native
   trait TracingConfig extends js.Object {
@@ -1788,7 +1788,7 @@ package lambda {
   }
 
   /**
-   * <p>The function's AWS X-Ray tracing configuration.</p>
+   * The function's AWS X-Ray tracing configuration.
    */
   @js.native
   trait TracingConfigResponse extends js.Object {
@@ -1975,7 +1975,7 @@ package lambda {
   }
 
   /**
-   * <p>The VPC security groups and subnets attached to a Lambda function.</p>
+   * The VPC security groups and subnets attached to a Lambda function.
    */
   @js.native
   trait VpcConfig extends js.Object {
@@ -1996,7 +1996,7 @@ package lambda {
   }
 
   /**
-   * <p>The VPC security groups and subnets attached to a Lambda function.</p>
+   * The VPC security groups and subnets attached to a Lambda function.
    */
   @js.native
   trait VpcConfigResponse extends js.Object {

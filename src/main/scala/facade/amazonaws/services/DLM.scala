@@ -83,7 +83,7 @@ package dlm {
   }
 
   /**
-   * <p>Specifies when to create snapshots of EBS volumes.</p>
+   * Specifies when to create snapshots of EBS volumes.
    */
   @js.native
   trait CreateRule extends js.Object {
@@ -221,7 +221,7 @@ package dlm {
   }
 
   /**
-   * <p>Detailed information about a lifecycle policy.</p>
+   * Detailed information about a lifecycle policy.
    */
   @js.native
   trait LifecyclePolicy extends js.Object {
@@ -257,7 +257,7 @@ package dlm {
   }
 
   /**
-   * <p>Summary information about a lifecycle policy.</p>
+   * Summary information about a lifecycle policy.
    */
   @js.native
   trait LifecyclePolicySummary extends js.Object {
@@ -281,7 +281,7 @@ package dlm {
   }
 
   /**
-   * <p>Specifies the configuration of a lifecycle policy.</p>
+   * Specifies the configuration of a lifecycle policy.
    */
   @js.native
   trait PolicyDetails extends js.Object {
@@ -311,7 +311,7 @@ package dlm {
   }
 
   /**
-   * <p>Specifies the number of snapshots to keep for each EBS volume.</p>
+   * Specifies the number of snapshots to keep for each EBS volume.
    */
   @js.native
   trait RetainRule extends js.Object {
@@ -329,7 +329,7 @@ package dlm {
   }
 
   /**
-   * <p>Specifies a schedule.</p>
+   * Specifies a schedule.
    */
   @js.native
   trait Schedule extends js.Object {
@@ -366,7 +366,7 @@ package dlm {
   }
 
   /**
-   * <p>Specifies a tag for a resource.</p>
+   * Specifies a tag for a resource.
    */
   @js.native
   trait Tag extends js.Object {

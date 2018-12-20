@@ -108,7 +108,7 @@ package firehose {
   }
 
   /**
-   * <p>Describes hints for the buffering to perform before delivering data to the destination. These options are treated as hints, and therefore Kinesis Data Firehose might choose to use different values when it is optimal.</p>
+   * Describes hints for the buffering to perform before delivering data to the destination. These options are treated as hints, and therefore Kinesis Data Firehose might choose to use different values when it is optimal.
    */
   @js.native
   trait BufferingHints extends js.Object {
@@ -129,7 +129,7 @@ package firehose {
   }
 
   /**
-   * <p>Describes the Amazon CloudWatch logging options for your delivery stream.</p>
+   * Describes the Amazon CloudWatch logging options for your delivery stream.
    */
   @js.native
   trait CloudWatchLoggingOptions extends js.Object {
@@ -162,7 +162,7 @@ package firehose {
   }
 
   /**
-   * <p>Describes a <code>COPY</code> command for Amazon Redshift.</p>
+   * Describes a <code>COPY</code> command for Amazon Redshift.
    */
   @js.native
   trait CopyCommand extends js.Object {
@@ -240,7 +240,7 @@ package firehose {
   }
 
   /**
-   * <p>Specifies that you want Kinesis Data Firehose to convert data from the JSON format to the Parquet or ORC format before writing it to Amazon S3. Kinesis Data Firehose uses the serializer and deserializer that you specify, in addition to the column information from the AWS Glue table, to deserialize your input data from JSON and then serialize it to the Parquet or ORC format. For more information, see <a href="https://docs.aws.amazon.com/firehose/latest/dev/record-format-conversion.html">Kinesis Data Firehose Record Format Conversion</a>.</p>
+   * Specifies that you want Kinesis Data Firehose to convert data from the JSON format to the Parquet or ORC format before writing it to Amazon S3. Kinesis Data Firehose uses the serializer and deserializer that you specify, in addition to the column information from the AWS Glue table, to deserialize your input data from JSON and then serialize it to the Parquet or ORC format. For more information, see <a href="https://docs.aws.amazon.com/firehose/latest/dev/record-format-conversion.html">Kinesis Data Firehose Record Format Conversion</a>.
    */
   @js.native
   trait DataFormatConversionConfiguration extends js.Object {
@@ -295,7 +295,7 @@ package firehose {
   }
 
   /**
-   * <p>Contains information about a delivery stream.</p>
+   * Contains information about a delivery stream.
    */
   @js.native
   trait DeliveryStreamDescription extends js.Object {
@@ -343,7 +343,7 @@ package firehose {
   }
 
   /**
-   * <p>Indicates the server-side encryption (SSE) status for the delivery stream.</p>
+   * Indicates the server-side encryption (SSE) status for the delivery stream.
    */
   @js.native
   trait DeliveryStreamEncryptionConfiguration extends js.Object {
@@ -421,7 +421,7 @@ package firehose {
   }
 
   /**
-   * <p>The deserializer you want Kinesis Data Firehose to use for converting the input data from JSON. Kinesis Data Firehose then serializes the data to its final format using the <a>Serializer</a>. Kinesis Data Firehose supports two types of deserializers: the <a href="https://cwiki.apache.org/confluence/display/Hive/LanguageManual+DDL#LanguageManualDDL-JSON">Apache Hive JSON SerDe</a> and the <a href="https://github.com/rcongiu/Hive-JSON-Serde">OpenX JSON SerDe</a>.</p>
+   * The deserializer you want Kinesis Data Firehose to use for converting the input data from JSON. Kinesis Data Firehose then serializes the data to its final format using the '''Serializer'''. Kinesis Data Firehose supports two types of deserializers: the <a href="https://cwiki.apache.org/confluence/display/Hive/LanguageManual+DDL#LanguageManualDDL-JSON">Apache Hive JSON SerDe</a> and the <a href="https://github.com/rcongiu/Hive-JSON-Serde">OpenX JSON SerDe</a>.
    */
   @js.native
   trait Deserializer extends js.Object {
@@ -442,7 +442,7 @@ package firehose {
   }
 
   /**
-   * <p>Describes the destination for a delivery stream.</p>
+   * Describes the destination for a delivery stream.
    */
   @js.native
   trait DestinationDescription extends js.Object {
@@ -475,7 +475,7 @@ package firehose {
   }
 
   /**
-   * <p>Describes the buffering to perform before delivering data to the Amazon ES destination.</p>
+   * Describes the buffering to perform before delivering data to the Amazon ES destination.
    */
   @js.native
   trait ElasticsearchBufferingHints extends js.Object {
@@ -496,7 +496,7 @@ package firehose {
   }
 
   /**
-   * <p>Describes the configuration of a destination in Amazon ES.</p>
+   * Describes the configuration of a destination in Amazon ES.
    */
   @js.native
   trait ElasticsearchDestinationConfiguration extends js.Object {
@@ -544,7 +544,7 @@ package firehose {
   }
 
   /**
-   * <p>The destination description in Amazon ES.</p>
+   * The destination description in Amazon ES.
    */
   @js.native
   trait ElasticsearchDestinationDescription extends js.Object {
@@ -592,7 +592,7 @@ package firehose {
   }
 
   /**
-   * <p>Describes an update for a destination in Amazon ES.</p>
+   * Describes an update for a destination in Amazon ES.
    */
   @js.native
   trait ElasticsearchDestinationUpdate extends js.Object {
@@ -647,7 +647,7 @@ package firehose {
   }
 
   /**
-   * <p>Configures retry behavior in case Kinesis Data Firehose is unable to deliver documents to Amazon ES.</p>
+   * Configures retry behavior in case Kinesis Data Firehose is unable to deliver documents to Amazon ES.
    */
   @js.native
   trait ElasticsearchRetryOptions extends js.Object {
@@ -672,7 +672,7 @@ package firehose {
   }
 
   /**
-   * <p>Describes the encryption for a destination in Amazon S3.</p>
+   * Describes the encryption for a destination in Amazon S3.
    */
   @js.native
   trait EncryptionConfiguration extends js.Object {
@@ -693,7 +693,7 @@ package firehose {
   }
 
   /**
-   * <p>Describes the configuration of a destination in Amazon S3.</p>
+   * Describes the configuration of a destination in Amazon S3.
    */
   @js.native
   trait ExtendedS3DestinationConfiguration extends js.Object {
@@ -741,7 +741,7 @@ package firehose {
   }
 
   /**
-   * <p>Describes a destination in Amazon S3.</p>
+   * Describes a destination in Amazon S3.
    */
   @js.native
   trait ExtendedS3DestinationDescription extends js.Object {
@@ -789,7 +789,7 @@ package firehose {
   }
 
   /**
-   * <p>Describes an update for a destination in Amazon S3.</p>
+   * Describes an update for a destination in Amazon S3.
    */
   @js.native
   trait ExtendedS3DestinationUpdate extends js.Object {
@@ -844,7 +844,7 @@ package firehose {
   }
 
   /**
-   * <p>The native Hive / HCatalog JsonSerDe. Used by Kinesis Data Firehose for deserializing data, which means converting it from the JSON format in preparation for serializing it to the Parquet or ORC format. This is one of two deserializers you can choose, depending on which one offers the functionality you need. The other option is the OpenX SerDe.</p>
+   * The native Hive / HCatalog JsonSerDe. Used by Kinesis Data Firehose for deserializing data, which means converting it from the JSON format in preparation for serializing it to the Parquet or ORC format. This is one of two deserializers you can choose, depending on which one offers the functionality you need. The other option is the OpenX SerDe.
    */
   @js.native
   trait HiveJsonSerDe extends js.Object {
@@ -862,7 +862,7 @@ package firehose {
   }
 
   /**
-   * <p>Specifies the deserializer you want to use to convert the format of the input data.</p>
+   * Specifies the deserializer you want to use to convert the format of the input data.
    */
   @js.native
   trait InputFormatConfiguration extends js.Object {
@@ -880,7 +880,7 @@ package firehose {
   }
 
   /**
-   * <p>Describes an encryption key for a destination in Amazon S3.</p>
+   * Describes an encryption key for a destination in Amazon S3.
    */
   @js.native
   trait KMSEncryptionConfig extends js.Object {
@@ -898,7 +898,7 @@ package firehose {
   }
 
   /**
-   * <p>The stream and role Amazon Resource Names (ARNs) for a Kinesis data stream used as the source for a delivery stream.</p>
+   * The stream and role Amazon Resource Names (ARNs) for a Kinesis data stream used as the source for a delivery stream.
    */
   @js.native
   trait KinesisStreamSourceConfiguration extends js.Object {
@@ -919,7 +919,7 @@ package firehose {
   }
 
   /**
-   * <p>Details about a Kinesis data stream used as the source for a Kinesis Data Firehose delivery stream.</p>
+   * Details about a Kinesis data stream used as the source for a Kinesis Data Firehose delivery stream.
    */
   @js.native
   trait KinesisStreamSourceDescription extends js.Object {
@@ -1027,7 +1027,7 @@ package firehose {
   }
 
   /**
-   * <p>The OpenX SerDe. Used by Kinesis Data Firehose for deserializing data, which means converting it from the JSON format in preparation for serializing it to the Parquet or ORC format. This is one of two deserializers you can choose, depending on which one offers the functionality you need. The other option is the native Hive / HCatalog JsonSerDe.</p>
+   * The OpenX SerDe. Used by Kinesis Data Firehose for deserializing data, which means converting it from the JSON format in preparation for serializing it to the Parquet or ORC format. This is one of two deserializers you can choose, depending on which one offers the functionality you need. The other option is the native Hive / HCatalog JsonSerDe.
    */
   @js.native
   trait OpenXJsonSerDe extends js.Object {
@@ -1066,7 +1066,7 @@ package firehose {
   }
 
   /**
-   * <p>A serializer to use for converting data to the ORC format before storing it in Amazon S3. For more information, see <a href="https://orc.apache.org/docs/">Apache ORC</a>.</p>
+   * A serializer to use for converting data to the ORC format before storing it in Amazon S3. For more information, see <a href="https://orc.apache.org/docs/">Apache ORC</a>.
    */
   @js.native
   trait OrcSerDe extends js.Object {
@@ -1111,7 +1111,7 @@ package firehose {
   }
 
   /**
-   * <p>Specifies the serializer that you want Kinesis Data Firehose to use to convert the format of your data before it writes it to Amazon S3.</p>
+   * Specifies the serializer that you want Kinesis Data Firehose to use to convert the format of your data before it writes it to Amazon S3.
    */
   @js.native
   trait OutputFormatConfiguration extends js.Object {
@@ -1137,7 +1137,7 @@ package firehose {
   }
 
   /**
-   * <p>A serializer to use for converting data to the Parquet format before storing it in Amazon S3. For more information, see <a href="https://parquet.apache.org/documentation/latest/">Apache Parquet</a>.</p>
+   * A serializer to use for converting data to the Parquet format before storing it in Amazon S3. For more information, see <a href="https://parquet.apache.org/documentation/latest/">Apache Parquet</a>.
    */
   @js.native
   trait ParquetSerDe extends js.Object {
@@ -1177,7 +1177,7 @@ package firehose {
   }
 
   /**
-   * <p>Describes a data processing configuration.</p>
+   * Describes a data processing configuration.
    */
   @js.native
   trait ProcessingConfiguration extends js.Object {
@@ -1198,7 +1198,7 @@ package firehose {
   }
 
   /**
-   * <p>Describes a data processor.</p>
+   * Describes a data processor.
    */
   @js.native
   trait Processor extends js.Object {
@@ -1219,7 +1219,7 @@ package firehose {
   }
 
   /**
-   * <p>Describes the processor parameter.</p>
+   * Describes the processor parameter.
    */
   @js.native
   trait ProcessorParameter extends js.Object {
@@ -1295,7 +1295,7 @@ package firehose {
   }
 
   /**
-   * <p>Contains the result for an individual record from a <a>PutRecordBatch</a> request. If the record is successfully added to your delivery stream, it receives a record ID. If the record fails to be added to your delivery stream, the result includes an error code and an error message.</p>
+   * Contains the result for an individual record from a '''PutRecordBatch''' request. If the record is successfully added to your delivery stream, it receives a record ID. If the record fails to be added to your delivery stream, the result includes an error code and an error message.
    */
   @js.native
   trait PutRecordBatchResponseEntry extends js.Object {
@@ -1355,7 +1355,7 @@ package firehose {
   }
 
   /**
-   * <p>The unit of data in a delivery stream.</p>
+   * The unit of data in a delivery stream.
    */
   @js.native
   trait Record extends js.Object {
@@ -1373,7 +1373,7 @@ package firehose {
   }
 
   /**
-   * <p>Describes the configuration of a destination in Amazon Redshift.</p>
+   * Describes the configuration of a destination in Amazon Redshift.
    */
   @js.native
   trait RedshiftDestinationConfiguration extends js.Object {
@@ -1421,7 +1421,7 @@ package firehose {
   }
 
   /**
-   * <p>Describes a destination in Amazon Redshift.</p>
+   * Describes a destination in Amazon Redshift.
    */
   @js.native
   trait RedshiftDestinationDescription extends js.Object {
@@ -1466,7 +1466,7 @@ package firehose {
   }
 
   /**
-   * <p>Describes an update for a destination in Amazon Redshift.</p>
+   * Describes an update for a destination in Amazon Redshift.
    */
   @js.native
   trait RedshiftDestinationUpdate extends js.Object {
@@ -1514,7 +1514,7 @@ package firehose {
   }
 
   /**
-   * <p>Configures retry behavior in case Kinesis Data Firehose is unable to deliver documents to Amazon Redshift.</p>
+   * Configures retry behavior in case Kinesis Data Firehose is unable to deliver documents to Amazon Redshift.
    */
   @js.native
   trait RedshiftRetryOptions extends js.Object {
@@ -1546,7 +1546,7 @@ package firehose {
   }
 
   /**
-   * <p>Describes the configuration of a destination in Amazon S3.</p>
+   * Describes the configuration of a destination in Amazon S3.
    */
   @js.native
   trait S3DestinationConfiguration extends js.Object {
@@ -1582,7 +1582,7 @@ package firehose {
   }
 
   /**
-   * <p>Describes a destination in Amazon S3.</p>
+   * Describes a destination in Amazon S3.
    */
   @js.native
   trait S3DestinationDescription extends js.Object {
@@ -1618,7 +1618,7 @@ package firehose {
   }
 
   /**
-   * <p>Describes an update for a destination in Amazon S3.</p>
+   * Describes an update for a destination in Amazon S3.
    */
   @js.native
   trait S3DestinationUpdate extends js.Object {
@@ -1654,7 +1654,7 @@ package firehose {
   }
 
   /**
-   * <p>Specifies the schema to which you want Kinesis Data Firehose to configure your data before it writes it to Amazon S3.</p>
+   * Specifies the schema to which you want Kinesis Data Firehose to configure your data before it writes it to Amazon S3.
    */
   @js.native
   trait SchemaConfiguration extends js.Object {
@@ -1687,7 +1687,7 @@ package firehose {
   }
 
   /**
-   * <p>The serializer that you want Kinesis Data Firehose to use to convert data to the target format before writing it to Amazon S3. Kinesis Data Firehose supports two types of serializers: the <a href="https://hive.apache.org/javadocs/r1.2.2/api/org/apache/hadoop/hive/ql/io/orc/OrcSerde.html">ORC SerDe</a> and the <a href="https://hive.apache.org/javadocs/r1.2.2/api/org/apache/hadoop/hive/ql/io/parquet/serde/ParquetHiveSerDe.html">Parquet SerDe</a>.</p>
+   * The serializer that you want Kinesis Data Firehose to use to convert data to the target format before writing it to Amazon S3. Kinesis Data Firehose supports two types of serializers: the <a href="https://hive.apache.org/javadocs/r1.2.2/api/org/apache/hadoop/hive/ql/io/orc/OrcSerde.html">ORC SerDe</a> and the <a href="https://hive.apache.org/javadocs/r1.2.2/api/org/apache/hadoop/hive/ql/io/parquet/serde/ParquetHiveSerDe.html">Parquet SerDe</a>.
    */
   @js.native
   trait Serializer extends js.Object {
@@ -1708,7 +1708,7 @@ package firehose {
   }
 
   /**
-   * <p>Details about a Kinesis data stream used as the source for a Kinesis Data Firehose delivery stream.</p>
+   * Details about a Kinesis data stream used as the source for a Kinesis Data Firehose delivery stream.
    */
   @js.native
   trait SourceDescription extends js.Object {
@@ -1726,7 +1726,7 @@ package firehose {
   }
 
   /**
-   * <p>Describes the configuration of a destination in Splunk.</p>
+   * Describes the configuration of a destination in Splunk.
    */
   @js.native
   trait SplunkDestinationConfiguration extends js.Object {
@@ -1768,7 +1768,7 @@ package firehose {
   }
 
   /**
-   * <p>Describes a destination in Splunk.</p>
+   * Describes a destination in Splunk.
    */
   @js.native
   trait SplunkDestinationDescription extends js.Object {
@@ -1810,7 +1810,7 @@ package firehose {
   }
 
   /**
-   * <p>Describes an update for a destination in Splunk.</p>
+   * Describes an update for a destination in Splunk.
    */
   @js.native
   trait SplunkDestinationUpdate extends js.Object {
@@ -1852,7 +1852,7 @@ package firehose {
   }
 
   /**
-   * <p>Configures retry behavior in case Kinesis Data Firehose is unable to deliver documents to Splunk, or if it doesn't receive an acknowledgment from Splunk.</p>
+   * Configures retry behavior in case Kinesis Data Firehose is unable to deliver documents to Splunk, or if it doesn't receive an acknowledgment from Splunk.
    */
   @js.native
   trait SplunkRetryOptions extends js.Object {
@@ -1933,7 +1933,7 @@ package firehose {
   }
 
   /**
-   * <p>Metadata that you can assign to a delivery stream, consisting of a key-value pair.</p>
+   * Metadata that you can assign to a delivery stream, consisting of a key-value pair.
    */
   @js.native
   trait Tag extends js.Object {

@@ -130,7 +130,7 @@ package iotanalytics {
   }
 
   /**
-   * <p>An activity that adds other attributes based on existing attributes in the message.</p>
+   * An activity that adds other attributes based on existing attributes in the message.
    */
   @js.native
   trait AddAttributesActivity extends js.Object {
@@ -154,7 +154,7 @@ package iotanalytics {
   }
 
   /**
-   * <p>Contains informations about errors.</p>
+   * Contains informations about errors.
    */
   @js.native
   trait BatchPutMessageErrorEntry extends js.Object {
@@ -242,7 +242,7 @@ package iotanalytics {
   }
 
   /**
-   * <p>A collection of data from an MQTT topic. Channels archive the raw, unprocessed messages before publishing the data to a pipeline.</p>
+   * A collection of data from an MQTT topic. Channels archive the raw, unprocessed messages before publishing the data to a pipeline.
    */
   @js.native
   trait Channel extends js.Object {
@@ -275,7 +275,7 @@ package iotanalytics {
   }
 
   /**
-   * <p>The activity that determines the source of the messages to be processed.</p>
+   * The activity that determines the source of the messages to be processed.
    */
   @js.native
   trait ChannelActivity extends js.Object {
@@ -299,7 +299,7 @@ package iotanalytics {
   }
 
   /**
-   * <p>Statistics information about the channel.</p>
+   * Statistics information about the channel.
    */
   @js.native
   trait ChannelStatistics extends js.Object {
@@ -325,7 +325,7 @@ package iotanalytics {
   }
 
   /**
-   * <p>A summary of information about a channel.</p>
+   * A summary of information about a channel.
    */
   @js.native
   trait ChannelSummary extends js.Object {
@@ -359,7 +359,7 @@ package iotanalytics {
   }
 
   /**
-   * <p>Information needed to run the "containerAction" to produce data set contents.</p>
+   * Information needed to run the "containerAction" to produce data set contents.
    */
   @js.native
   trait ContainerDatasetAction extends js.Object {
@@ -590,7 +590,7 @@ package iotanalytics {
   }
 
   /**
-   * <p>Information about a data set.</p>
+   * Information about a data set.
    */
   @js.native
   trait Dataset extends js.Object {
@@ -632,7 +632,7 @@ package iotanalytics {
   }
 
   /**
-   * <p>A "DatasetAction" object specifying the query that creates the data set content.</p>
+   * A "DatasetAction" object specifying the query that creates the data set content.
    */
   @js.native
   trait DatasetAction extends js.Object {
@@ -725,7 +725,7 @@ package iotanalytics {
   }
 
   /**
-   * <p>The state of the data set contents and the reason they are in this state.</p>
+   * The state of the data set contents and the reason they are in this state.
    */
   @js.native
   trait DatasetContentStatus extends js.Object {
@@ -746,7 +746,7 @@ package iotanalytics {
   }
 
   /**
-   * <p>Summary information about data set contents.</p>
+   * Summary information about data set contents.
    */
   @js.native
   trait DatasetContentSummary extends js.Object {
@@ -773,7 +773,7 @@ package iotanalytics {
   }
 
   /**
-   * <p>The data set whose latest contents will be used as input to the notebook or application.</p>
+   * The data set whose latest contents will be used as input to the notebook or application.
    */
   @js.native
   trait DatasetContentVersionValue extends js.Object {
@@ -791,7 +791,7 @@ package iotanalytics {
   }
 
   /**
-   * <p>The reference to a data set entry.</p>
+   * The reference to a data set entry.
    */
   @js.native
   trait DatasetEntry extends js.Object {
@@ -820,7 +820,7 @@ package iotanalytics {
   }
 
   /**
-   * <p>A summary of information about a data set.</p>
+   * A summary of information about a data set.
    */
   @js.native
   trait DatasetSummary extends js.Object {
@@ -853,7 +853,7 @@ package iotanalytics {
   }
 
   /**
-   * <p>The "DatasetTrigger" that specifies when the data set is automatically updated.</p>
+   * The "DatasetTrigger" that specifies when the data set is automatically updated.
    */
   @js.native
   trait DatasetTrigger extends js.Object {
@@ -874,7 +874,7 @@ package iotanalytics {
   }
 
   /**
-   * <p>Information about a data store.</p>
+   * Information about a data store.
    */
   @js.native
   trait Datastore extends js.Object {
@@ -907,7 +907,7 @@ package iotanalytics {
   }
 
   /**
-   * <p>The 'datastore' activity that specifies where to store the processed data.</p>
+   * The 'datastore' activity that specifies where to store the processed data.
    */
   @js.native
   trait DatastoreActivity extends js.Object {
@@ -928,7 +928,7 @@ package iotanalytics {
   }
 
   /**
-   * <p>Statistical information about the data store.</p>
+   * Statistical information about the data store.
    */
   @js.native
   trait DatastoreStatistics extends js.Object {
@@ -954,7 +954,7 @@ package iotanalytics {
   }
 
   /**
-   * <p>A summary of information about a data store.</p>
+   * A summary of information about a data store.
    */
   @js.native
   trait DatastoreSummary extends js.Object {
@@ -1059,7 +1059,7 @@ package iotanalytics {
   }
 
   /**
-   * <p>When you create data set contents using message data from a specified time frame, some message data may still be "in flight" when processing begins, and so will not arrive in time to be processed. Use this field to make allowances for the "in flight" time of your message data, so that data not processed from the previous time frame will be included with the next time frame. Without this, missed message data would be excluded from processing during the next time frame as well, because its timestamp places it within the previous time frame.</p>
+   * When you create data set contents using message data from a specified time frame, some message data may still be "in flight" when processing begins, and so will not arrive in time to be processed. Use this field to make allowances for the "in flight" time of your message data, so that data not processed from the previous time frame will be included with the next time frame. Without this, missed message data would be excluded from processing during the next time frame as well, because its timestamp places it within the previous time frame.
    */
   @js.native
   trait DeltaTime extends js.Object {
@@ -1240,7 +1240,7 @@ package iotanalytics {
   }
 
   /**
-   * <p>An activity that adds data from the AWS IoT device registry to your message.</p>
+   * An activity that adds data from the AWS IoT device registry to your message.
    */
   @js.native
   trait DeviceRegistryEnrichActivity extends js.Object {
@@ -1270,7 +1270,7 @@ package iotanalytics {
   }
 
   /**
-   * <p>An activity that adds information from the AWS IoT Device Shadows service to a message.</p>
+   * An activity that adds information from the AWS IoT Device Shadows service to a message.
    */
   @js.native
   trait DeviceShadowEnrichActivity extends js.Object {
@@ -1300,7 +1300,7 @@ package iotanalytics {
   }
 
   /**
-   * <p>The estimated size of the resource.</p>
+   * The estimated size of the resource.
    */
   @js.native
   trait EstimatedResourceSize extends js.Object {
@@ -1321,7 +1321,7 @@ package iotanalytics {
   }
 
   /**
-   * <p>An activity that filters a message based on its attributes.</p>
+   * An activity that filters a message based on its attributes.
    */
   @js.native
   trait FilterActivity extends js.Object {
@@ -1402,7 +1402,7 @@ package iotanalytics {
   }
 
   /**
-   * <p>An activity that runs a Lambda function to modify the message.</p>
+   * An activity that runs a Lambda function to modify the message.
    */
   @js.native
   trait LambdaActivity extends js.Object {
@@ -1648,7 +1648,7 @@ package iotanalytics {
   }
 
   /**
-   * <p>Information about logging options.</p>
+   * Information about logging options.
    */
   @js.native
   trait LoggingOptions extends js.Object {
@@ -1672,7 +1672,7 @@ package iotanalytics {
   }
 
   /**
-   * <p>An activity that computes an arithmetic expression using the message's attributes.</p>
+   * An activity that computes an arithmetic expression using the message's attributes.
    */
   @js.native
   trait MathActivity extends js.Object {
@@ -1699,7 +1699,7 @@ package iotanalytics {
   }
 
   /**
-   * <p>Information about a message.</p>
+   * Information about a message.
    */
   @js.native
   trait Message extends js.Object {
@@ -1720,7 +1720,7 @@ package iotanalytics {
   }
 
   /**
-   * <p>The URI of the location where data set contents are stored, usually the URI of a file in an S3 bucket.</p>
+   * The URI of the location where data set contents are stored, usually the URI of a file in an S3 bucket.
    */
   @js.native
   trait OutputFileUriValue extends js.Object {
@@ -1738,7 +1738,7 @@ package iotanalytics {
   }
 
   /**
-   * <p>Contains information about a pipeline.</p>
+   * Contains information about a pipeline.
    */
   @js.native
   trait Pipeline extends js.Object {
@@ -1771,7 +1771,7 @@ package iotanalytics {
   }
 
   /**
-   * <p>An activity that performs a transformation on a message.</p>
+   * An activity that performs a transformation on a message.
    */
   @js.native
   trait PipelineActivity extends js.Object {
@@ -1816,7 +1816,7 @@ package iotanalytics {
   }
 
   /**
-   * <p>A summary of information about a pipeline.</p>
+   * A summary of information about a pipeline.
    */
   @js.native
   trait PipelineSummary extends js.Object {
@@ -1858,7 +1858,7 @@ package iotanalytics {
   }
 
   /**
-   * <p>Information which is used to filter message data, to segregate it according to the time frame in which it arrives.</p>
+   * Information which is used to filter message data, to segregate it according to the time frame in which it arrives.
    */
   @js.native
   trait QueryFilter extends js.Object {
@@ -1876,7 +1876,7 @@ package iotanalytics {
   }
 
   /**
-   * <p>An activity that removes attributes from a message.</p>
+   * An activity that removes attributes from a message.
    */
   @js.native
   trait RemoveAttributesActivity extends js.Object {
@@ -1909,7 +1909,7 @@ package iotanalytics {
   }
 
   /**
-   * <p>Information about pipeline reprocessing.</p>
+   * Information about pipeline reprocessing.
    */
   @js.native
   trait ReprocessingSummary extends js.Object {
@@ -1933,7 +1933,7 @@ package iotanalytics {
   }
 
   /**
-   * <p>The configuration of the resource used to execute the "containerAction".</p>
+   * The configuration of the resource used to execute the "containerAction".
    */
   @js.native
   trait ResourceConfiguration extends js.Object {
@@ -1954,7 +1954,7 @@ package iotanalytics {
   }
 
   /**
-   * <p>How long, in days, message data is kept.</p>
+   * How long, in days, message data is kept.
    */
   @js.native
   trait RetentionPeriod extends js.Object {
@@ -2050,7 +2050,7 @@ package iotanalytics {
   }
 
   /**
-   * <p>The schedule for when to trigger an update.</p>
+   * The schedule for when to trigger an update.
    */
   @js.native
   trait Schedule extends js.Object {
@@ -2068,7 +2068,7 @@ package iotanalytics {
   }
 
   /**
-   * <p>Creates a new message using only the specified attributes from the original message.</p>
+   * Creates a new message using only the specified attributes from the original message.
    */
   @js.native
   trait SelectAttributesActivity extends js.Object {
@@ -2092,7 +2092,7 @@ package iotanalytics {
   }
 
   /**
-   * <p>The SQL query to modify the message.</p>
+   * The SQL query to modify the message.
    */
   @js.native
   trait SqlQueryDatasetAction extends js.Object {
@@ -2149,7 +2149,7 @@ package iotanalytics {
   }
 
   /**
-   * <p>A set of key/value pairs which are used to manage the resource.</p>
+   * A set of key/value pairs which are used to manage the resource.
    */
   @js.native
   trait Tag extends js.Object {
@@ -2201,7 +2201,7 @@ package iotanalytics {
   }
 
   /**
-   * <p>Information about the data set whose content generation will trigger the new data set content generation.</p>
+   * Information about the data set whose content generation will trigger the new data set content generation.
    */
   @js.native
   trait TriggeringDataset extends js.Object {
@@ -2331,7 +2331,7 @@ package iotanalytics {
   }
 
   /**
-   * <p>An instance of a variable to be passed to the "containerAction" execution. Each variable must have a name and a value given by one of "stringValue", "datasetContentVersionValue", or "outputFileUriValue".</p>
+   * An instance of a variable to be passed to the "containerAction" execution. Each variable must have a name and a value given by one of "stringValue", "datasetContentVersionValue", or "outputFileUriValue".
    */
   @js.native
   trait Variable extends js.Object {

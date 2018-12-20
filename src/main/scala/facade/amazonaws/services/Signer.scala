@@ -147,7 +147,7 @@ package signer {
   }
 
   /**
-   * <p>Points to an <code>S3Destination</code> object that contains information about your S3 bucket.</p>
+   * Points to an <code>S3Destination</code> object that contains information about your S3 bucket.
    */
   @js.native
   trait Destination extends js.Object {
@@ -172,7 +172,7 @@ package signer {
   }
 
   /**
-   * <p>The encryption algorithm options that are available to an AWS Signer job.</p>
+   * The encryption algorithm options that are available to an AWS Signer job.
    */
   @js.native
   trait EncryptionAlgorithmOptions extends js.Object {
@@ -296,7 +296,7 @@ package signer {
   }
 
   /**
-   * <p>The hash algorithms that are available to an AWS Signer job.</p>
+   * The hash algorithms that are available to an AWS Signer job.
    */
   @js.native
   trait HashAlgorithmOptions extends js.Object {
@@ -494,7 +494,7 @@ package signer {
   }
 
   /**
-   * <p>The name and prefix of the S3 bucket where AWS Signer saves your signed objects.</p>
+   * The name and prefix of the S3 bucket where AWS Signer saves your signed objects.
    */
   @js.native
   trait S3Destination extends js.Object {
@@ -515,7 +515,7 @@ package signer {
   }
 
   /**
-   * <p>The S3 bucket name and key where AWS Signer saved your signed code image.</p>
+   * The S3 bucket name and key where AWS Signer saved your signed code image.
    */
   @js.native
   trait S3SignedObject extends js.Object {
@@ -536,7 +536,7 @@ package signer {
   }
 
   /**
-   * <p>Information about the S3 bucket where you saved your unsigned code.</p>
+   * Information about the S3 bucket where you saved your unsigned code.
    */
   @js.native
   trait S3Source extends js.Object {
@@ -560,7 +560,7 @@ package signer {
   }
 
   /**
-   * <p>Points to an <code>S3SignedObject</code> object that contains information about your signed code image.</p>
+   * Points to an <code>S3SignedObject</code> object that contains information about your signed code image.
    */
   @js.native
   trait SignedObject extends js.Object {
@@ -578,7 +578,7 @@ package signer {
   }
 
   /**
-   * <p>The configuration of an AWS Signer operation.</p>
+   * The configuration of an AWS Signer operation.
    */
   @js.native
   trait SigningConfiguration extends js.Object {
@@ -599,7 +599,7 @@ package signer {
   }
 
   /**
-   * <p>A signing configuration that overrides the default encryption or hash algorithm of a signing job.</p>
+   * A signing configuration that overrides the default encryption or hash algorithm of a signing job.
    */
   @js.native
   trait SigningConfigurationOverrides extends js.Object {
@@ -620,7 +620,7 @@ package signer {
   }
 
   /**
-   * <p>The image format of an AWS Signer platform or profile.</p>
+   * The image format of an AWS Signer platform or profile.
    */
   @js.native
   trait SigningImageFormat extends js.Object {
@@ -641,7 +641,7 @@ package signer {
   }
 
   /**
-   * <p>Contains information about a signing job.</p>
+   * Contains information about a signing job.
    */
   @js.native
   trait SigningJob extends js.Object {
@@ -674,7 +674,7 @@ package signer {
   }
 
   /**
-   * <p>The ACM certificate that is used to sign your code.</p>
+   * The ACM certificate that is used to sign your code.
    */
   @js.native
   trait SigningMaterial extends js.Object {
@@ -692,7 +692,7 @@ package signer {
   }
 
   /**
-   * <p>Contains information about the signing configurations and parameters that is used to perform an AWS Signer job.</p>
+   * Contains information about the signing configurations and parameters that is used to perform an AWS Signer job.
    */
   @js.native
   trait SigningPlatform extends js.Object {
@@ -731,7 +731,7 @@ package signer {
   }
 
   /**
-   * <p>Any overrides that are applied to the signing configuration of an AWS Signer platform.</p>
+   * Any overrides that are applied to the signing configuration of an AWS Signer platform.
    */
   @js.native
   trait SigningPlatformOverrides extends js.Object {
@@ -749,7 +749,7 @@ package signer {
   }
 
   /**
-   * <p>Contains information about the ACM certificates and AWS Signer configuration parameters that can be used by a given AWS Signer user.</p>
+   * Contains information about the ACM certificates and AWS Signer configuration parameters that can be used by a given AWS Signer user.
    */
   @js.native
   trait SigningProfile extends js.Object {
@@ -794,7 +794,7 @@ package signer {
   }
 
   /**
-   * <p>An <code>S3Source</code> object that contains information about the S3 bucket where you saved your unsigned code.</p>
+   * An <code>S3Source</code> object that contains information about the S3 bucket where you saved your unsigned code.
    */
   @js.native
   trait Source extends js.Object {

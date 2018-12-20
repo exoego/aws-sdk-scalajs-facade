@@ -52,7 +52,7 @@ package chime {
   }
 
   /**
-   * <p>The Amazon Chime account details. An AWS account can have multiple Amazon Chime accounts.</p>
+   * The Amazon Chime account details. An AWS account can have multiple Amazon Chime accounts.
    */
   @js.native
   trait Account extends js.Object {
@@ -88,7 +88,7 @@ package chime {
   }
 
   /**
-   * <p>Settings related to the Amazon Chime account. This includes settings that start or stop remote control of shared screens, or start or stop the dial-out option in the Amazon Chime web application. For more information about these settings, see <a href="http://docs.aws.amazon.com/chime/latest/ag/policies.html">Use the Policies Page</a> in the <i>Amazon Chime Administration Guide</i>.</p>
+   * Settings related to the Amazon Chime account. This includes settings that start or stop remote control of shared screens, or start or stop the dial-out option in the Amazon Chime web application. For more information about these settings, see <a href="http://docs.aws.amazon.com/chime/latest/ag/policies.html">Use the Policies Page</a> in the <i>Amazon Chime Administration Guide</i>.
    */
   @js.native
   trait AccountSettings extends js.Object {
@@ -391,7 +391,7 @@ package chime {
   }
 
   /**
-   * <p>Invitation object returned after emailing users to invite them to join the Amazon Chime <code>Team</code> account.</p>
+   * Invitation object returned after emailing users to invite them to join the Amazon Chime <code>Team</code> account.
    */
   @js.native
   trait Invite extends js.Object {
@@ -709,7 +709,7 @@ package chime {
   }
 
   /**
-   * <p>The user ID and user fields to update, used with the <a>BatchUpdateUser</a> action.</p>
+   * The user ID and user fields to update, used with the '''BatchUpdateUser''' action.
    */
   @js.native
   trait UpdateUserRequestItem extends js.Object {
@@ -745,7 +745,7 @@ package chime {
   }
 
   /**
-   * <p>The user on the Amazon Chime account.</p>
+   * The user on the Amazon Chime account.
    */
   @js.native
   trait User extends js.Object {
@@ -790,7 +790,7 @@ package chime {
   }
 
   /**
-   * <p>The list of errors returned when errors are encountered during the <a>BatchSuspendUser</a>, <a>BatchUnsuspendUser</a>, or <a>BatchUpdateUser</a> actions. This includes user IDs, error codes, and error messages.</p>
+   * The list of errors returned when errors are encountered during the '''BatchSuspendUser''', '''BatchUnsuspendUser''', or '''BatchUpdateUser''' actions. This includes user IDs, error codes, and error messages.
    */
   @js.native
   trait UserError extends js.Object {

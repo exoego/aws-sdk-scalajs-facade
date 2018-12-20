@@ -387,7 +387,8 @@ package sagemaker {
   }
 
   /**
-   * <p>Specifies the training algorithm to use in a <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateTrainingJob.html">CreateTrainingJob</a> request.</p> <p>For more information about algorithms provided by Amazon SageMaker, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>. For information about using your own algorithms, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using Your Own Algorithms with Amazon SageMaker</a>. </p>
+   * Specifies the training algorithm to use in a <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateTrainingJob.html">CreateTrainingJob</a> request.
+   *  For more information about algorithms provided by Amazon SageMaker, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>. For information about using your own algorithms, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using Your Own Algorithms with Amazon SageMaker</a>.
    */
   @js.native
   trait AlgorithmSpecification extends js.Object {
@@ -424,7 +425,7 @@ package sagemaker {
   }
 
   /**
-   * <p>Specifies the validation and image scan statuses of the algorithm.</p>
+   * Specifies the validation and image scan statuses of the algorithm.
    */
   @js.native
   trait AlgorithmStatusDetails extends js.Object {
@@ -445,7 +446,7 @@ package sagemaker {
   }
 
   /**
-   * <p>Represents the overall status of an algorithm.</p>
+   * Represents the overall status of an algorithm.
    */
   @js.native
   trait AlgorithmStatusItem extends js.Object {
@@ -469,7 +470,7 @@ package sagemaker {
   }
 
   /**
-   * <p>Provides summary information about an algorithm.</p>
+   * Provides summary information about an algorithm.
    */
   @js.native
   trait AlgorithmSummary extends js.Object {
@@ -499,7 +500,8 @@ package sagemaker {
   }
 
   /**
-   * <p>Defines a training job and a batch transform job that Amazon SageMaker runs to validate your algorithm.</p> <p>The data provided in the validation profile is made available to your buyers on AWS Marketplace.</p>
+   * Defines a training job and a batch transform job that Amazon SageMaker runs to validate your algorithm.
+   *  The data provided in the validation profile is made available to your buyers on AWS Marketplace.
    */
   @js.native
   trait AlgorithmValidationProfile extends js.Object {
@@ -523,7 +525,7 @@ package sagemaker {
   }
 
   /**
-   * <p>Specifies configurations for one or more training jobs that Amazon SageMaker runs to test the algorithm.</p>
+   * Specifies configurations for one or more training jobs that Amazon SageMaker runs to test the algorithm.
    */
   @js.native
   trait AlgorithmValidationSpecification extends js.Object {
@@ -544,7 +546,7 @@ package sagemaker {
   }
 
   /**
-   * <p>Configures how labels are consolidated across human workers.</p>
+   * Configures how labels are consolidated across human workers.
    */
   @js.native
   trait AnnotationConsolidationConfig extends js.Object {
@@ -583,7 +585,7 @@ package sagemaker {
   }
 
   /**
-   * <p>A list of categorical hyperparameters to tune.</p>
+   * A list of categorical hyperparameters to tune.
    */
   @js.native
   trait CategoricalParameterRange extends js.Object {
@@ -604,7 +606,7 @@ package sagemaker {
   }
 
   /**
-   * <p>Defines the possible values for a categorical hyperparameter.</p>
+   * Defines the possible values for a categorical hyperparameter.
    */
   @js.native
   trait CategoricalParameterRangeSpecification extends js.Object {
@@ -622,7 +624,7 @@ package sagemaker {
   }
 
   /**
-   * <p>A channel is a named input source that training algorithms can consume. </p>
+   * A channel is a named input source that training algorithms can consume.
    */
   @js.native
   trait Channel extends js.Object {
@@ -658,7 +660,7 @@ package sagemaker {
   }
 
   /**
-   * <p>Defines a named input source, called a channel, to be used by an algorithm.</p>
+   * Defines a named input source, called a channel, to be used by an algorithm.
    */
   @js.native
   trait ChannelSpecification extends js.Object {
@@ -706,7 +708,7 @@ package sagemaker {
   }
 
   /**
-   * <p>Specifies summary information about a git repository.</p>
+   * Specifies summary information about a git repository.
    */
   @js.native
   trait CodeRepositorySummary extends js.Object {
@@ -736,7 +738,7 @@ package sagemaker {
   }
 
   /**
-   * <p>Identifies a Amazon Cognito user group. A user group can be used in on or more work teams.</p>
+   * Identifies a Amazon Cognito user group. A user group can be used in on or more work teams.
    */
   @js.native
   trait CognitoMemberDefinition extends js.Object {
@@ -771,7 +773,7 @@ package sagemaker {
   }
 
   /**
-   * <p>A summary of a model compilation job.</p>
+   * A summary of a model compilation job.
    */
   @js.native
   trait CompilationJobSummary extends js.Object {
@@ -814,7 +816,7 @@ package sagemaker {
   }
 
   /**
-   * <p>Describes the container, as part of model definition.</p>
+   * Describes the container, as part of model definition.
    */
   @js.native
   trait ContainerDefinition extends js.Object {
@@ -851,7 +853,7 @@ package sagemaker {
   }
 
   /**
-   * <p>A list of continuous hyperparameters to tune.</p>
+   * A list of continuous hyperparameters to tune.
    */
   @js.native
   trait ContinuousParameterRange extends js.Object {
@@ -875,7 +877,7 @@ package sagemaker {
   }
 
   /**
-   * <p>Defines the possible values for a continuous hyperparameter.</p>
+   * Defines the possible values for a continuous hyperparameter.
    */
   @js.native
   trait ContinuousParameterRangeSpecification extends js.Object {
@@ -1574,7 +1576,7 @@ package sagemaker {
   }
 
   /**
-   * <p>Describes the location of the channel data.</p>
+   * Describes the location of the channel data.
    */
   @js.native
   trait DataSource extends js.Object {
@@ -1773,7 +1775,8 @@ package sagemaker {
   }
 
   /**
-   * <p>Gets the Amazon EC2 Container Registry path of the docker image of the model that is hosted in this <a>ProductionVariant</a>.</p> <p>If you used the <code>registry/repository[:tag]</code> form to specify the image path of the primary container when you created the model hosted in this <code>ProductionVariant</code>, the path resolves to a path of the form <code>registry/repository[@digest]</code>. A digest is a hash value that identifies a specific version of an image. For information about Amazon ECR paths, see <a href="http://docs.aws.amazon.com//AmazonECR/latest/userguide/docker-pull-ecr-image.html">Pulling an Image</a> in the <i>Amazon ECR User Guide</i>.</p>
+   * Gets the Amazon EC2 Container Registry path of the docker image of the model that is hosted in this '''ProductionVariant'''.
+   *  If you used the <code>registry/repository[:tag]</code> form to specify the image path of the primary container when you created the model hosted in this <code>ProductionVariant</code>, the path resolves to a path of the form <code>registry/repository[@digest]</code>. A digest is a hash value that identifies a specific version of an image. For information about Amazon ECR paths, see <a href="http://docs.aws.amazon.com//AmazonECR/latest/userguide/docker-pull-ecr-image.html">Pulling an Image</a> in the <i>Amazon ECR User Guide</i>.
    */
   @js.native
   trait DeployedImage extends js.Object {
@@ -2676,7 +2679,7 @@ package sagemaker {
   }
 
   /**
-   * <p>Specifies weight and capacity values for a production variant.</p>
+   * Specifies weight and capacity values for a production variant.
    */
   @js.native
   trait DesiredWeightAndCapacity extends js.Object {
@@ -2732,7 +2735,7 @@ package sagemaker {
   }
 
   /**
-   * <p>Provides summary information for an endpoint configuration.</p>
+   * Provides summary information for an endpoint configuration.
    */
   @js.native
   trait EndpointConfigSummary extends js.Object {
@@ -2777,7 +2780,7 @@ package sagemaker {
   }
 
   /**
-   * <p>Provides summary information for an endpoint.</p>
+   * Provides summary information for an endpoint.
    */
   @js.native
   trait EndpointSummary extends js.Object {
@@ -2807,7 +2810,24 @@ package sagemaker {
   }
 
   /**
-   * <p>A conditional statement for a search expression that includes a Boolean operator, a resource property, and a value.</p> <p>If you don't specify an <code>Operator</code> and a <code>Value</code>, the filter searches for only the specified property. For example, defining a <code>Filter</code> for the <code>FailureReason</code> for the <code>TrainingJob</code> <code>Resource</code> searches for training job objects that have a value in the <code>FailureReason</code> field.</p> <p>If you specify a <code>Value</code>, but not an <code>Operator</code>, Amazon SageMaker uses the equals operator as a default.</p> <p>In search, there are several property types:</p> <dl> <dt>Metrics</dt> <dd> <p>To define a metric filter, enter a value using the form <code>"Metrics.&lt;name&gt;"</code>, where <code>&lt;name&gt;</code> is a metric name. For example, the following filter searches for training jobs with an <code>"accuracy"</code> metric greater than <code>"0.9"</code>:</p> <p> <code>{</code> </p> <p> <code>"Name": "Metrics.accuracy",</code> </p> <p> <code>"Operator": "GREATER_THAN",</code> </p> <p> <code>"Value": "0.9"</code> </p> <p> <code>}</code> </p> </dd> <dt>HyperParameters</dt> <dd> <p>To define a hyperparameter filter, enter a value with the form <code>"HyperParamters.&lt;name&gt;"</code>. Decimal hyperparameter values are treated as a decimal in a comparison if the specified <code>Value</code> is also a decimal value. If the specified <code>Value</code> is an integer, the decimal hyperparameter values are treated as integers. For example, the following filter is satisfied by training jobs with a <code>"learning_rate"</code> hyperparameter that is less than <code>"0.5"</code>:</p> <p> <code> {</code> </p> <p> <code> "Name": "HyperParameters.learning_rate",</code> </p> <p> <code> "Operator": "LESS_THAN",</code> </p> <p> <code> "Value": "0.5"</code> </p> <p> <code> }</code> </p> </dd> <dt>Tags</dt> <dd> <p>To define a tag filter, enter a value with the form <code>"Tags.&lt;key&gt;"</code>.</p> </dd> </dl>
+   * A conditional statement for a search expression that includes a Boolean operator, a resource property, and a value.
+   *  If you don't specify an <code>Operator</code> and a <code>Value</code>, the filter searches for only the specified property. For example, defining a <code>Filter</code> for the <code>FailureReason</code> for the <code>TrainingJob</code> <code>Resource</code> searches for training job objects that have a value in the <code>FailureReason</code> field.
+   *  If you specify a <code>Value</code>, but not an <code>Operator</code>, Amazon SageMaker uses the equals operator as a default.
+   *  In search, there are several property types:
+   *  <dl> <dt>Metrics</dt> <dd> To define a metric filter, enter a value using the form <code>"Metrics.&lt;name&gt;"</code>, where <code>&lt;name&gt;</code> is a metric name. For example, the following filter searches for training jobs with an <code>"accuracy"</code> metric greater than <code>"0.9"</code>:
+   *  <code>{</code>
+   *  <code>"Name": "Metrics.accuracy",</code>
+   *  <code>"Operator": "GREATER_THAN",</code>
+   *  <code>"Value": "0.9"</code>
+   *  <code>}</code>
+   *  </dd> <dt>HyperParameters</dt> <dd> To define a hyperparameter filter, enter a value with the form <code>"HyperParamters.&lt;name&gt;"</code>. Decimal hyperparameter values are treated as a decimal in a comparison if the specified <code>Value</code> is also a decimal value. If the specified <code>Value</code> is an integer, the decimal hyperparameter values are treated as integers. For example, the following filter is satisfied by training jobs with a <code>"learning_rate"</code> hyperparameter that is less than <code>"0.5"</code>:
+   *  <code> {</code>
+   *  <code> "Name": "HyperParameters.learning_rate",</code>
+   *  <code> "Operator": "LESS_THAN",</code>
+   *  <code> "Value": "0.5"</code>
+   *  <code> }</code>
+   *  </dd> <dt>Tags</dt> <dd> To define a tag filter, enter a value with the form <code>"Tags.&lt;key&gt;"</code>.
+   *  </dd> </dl>
    */
   @js.native
   trait Filter extends js.Object {
@@ -2831,7 +2851,7 @@ package sagemaker {
   }
 
   /**
-   * <p>Shows the final value for the objective metric for a training job that was launched by a hyperparameter tuning job. You define the objective metric in the <code>HyperParameterTuningJobObjective</code> parameter of <a>HyperParameterTuningJobConfig</a>.</p>
+   * Shows the final value for the objective metric for a training job that was launched by a hyperparameter tuning job. You define the objective metric in the <code>HyperParameterTuningJobObjective</code> parameter of '''HyperParameterTuningJobConfig'''.
    */
   @js.native
   trait FinalHyperParameterTuningJobObjectiveMetric extends js.Object {
@@ -2898,7 +2918,7 @@ package sagemaker {
   }
 
   /**
-   * <p>Specifies configuration details for a git repository in your AWS account.</p>
+   * Specifies configuration details for a git repository in your AWS account.
    */
   @js.native
   trait GitConfig extends js.Object {
@@ -2922,7 +2942,7 @@ package sagemaker {
   }
 
   /**
-   * <p>Specifies configuration details for a git repository when the repository is updated.</p>
+   * Specifies configuration details for a git repository when the repository is updated.
    */
   @js.native
   trait GitConfigForUpdate extends js.Object {
@@ -2940,7 +2960,7 @@ package sagemaker {
   }
 
   /**
-   * <p>Information required for human workers to complete a labeling task.</p>
+   * Information required for human workers to complete a labeling task.
    */
   @js.native
   trait HumanTaskConfig extends js.Object {
@@ -2991,7 +3011,7 @@ package sagemaker {
   }
 
   /**
-   * <p>Specifies which training algorithm to use for training jobs that a hyperparameter tuning job launches and the metrics to monitor.</p>
+   * Specifies which training algorithm to use for training jobs that a hyperparameter tuning job launches and the metrics to monitor.
    */
   @js.native
   trait HyperParameterAlgorithmSpecification extends js.Object {
@@ -3018,7 +3038,7 @@ package sagemaker {
   }
 
   /**
-   * <p>Defines a hyperparameter to be used by an algorithm.</p>
+   * Defines a hyperparameter to be used by an algorithm.
    */
   @js.native
   trait HyperParameterSpecification extends js.Object {
@@ -3054,7 +3074,7 @@ package sagemaker {
   }
 
   /**
-   * <p>Defines the training jobs launched by a hyperparameter tuning job.</p>
+   * Defines the training jobs launched by a hyperparameter tuning job.
    */
   @js.native
   trait HyperParameterTrainingJobDefinition extends js.Object {
@@ -3096,7 +3116,7 @@ package sagemaker {
   }
 
   /**
-   * <p>Specifies summary information about a training job.</p>
+   * Specifies summary information about a training job.
    */
   @js.native
   trait HyperParameterTrainingJobSummary extends js.Object {
@@ -3144,7 +3164,7 @@ package sagemaker {
   }
 
   /**
-   * <p>Configures a hyperparameter tuning job.</p>
+   * Configures a hyperparameter tuning job.
    */
   @js.native
   trait HyperParameterTuningJobConfig extends js.Object {
@@ -3171,7 +3191,7 @@ package sagemaker {
   }
 
   /**
-   * <p>Defines the objective metric for a hyperparameter tuning job. Hyperparameter tuning uses the value of this metric to evaluate the training jobs it launches, and returns the training job that results in either the highest or lowest value for this metric, depending on the value you specify for the <code>Type</code> parameter.</p>
+   * Defines the objective metric for a hyperparameter tuning job. Hyperparameter tuning uses the value of this metric to evaluate the training jobs it launches, and returns the training job that results in either the highest or lowest value for this metric, depending on the value you specify for the <code>Type</code> parameter.
    */
   @js.native
   trait HyperParameterTuningJobObjective extends js.Object {
@@ -3217,7 +3237,7 @@ package sagemaker {
   }
 
   /**
-   * <p>The strategy hyperparameter tuning uses to find the best combination of hyperparameters for your model. Currently, the only supported value is <code>Bayesian</code>.</p>
+   * The strategy hyperparameter tuning uses to find the best combination of hyperparameters for your model. Currently, the only supported value is <code>Bayesian</code>.
    */
   object HyperParameterTuningJobStrategyTypeEnum {
     val Bayesian = "Bayesian"
@@ -3226,7 +3246,7 @@ package sagemaker {
   }
 
   /**
-   * <p>Provides summary information about a hyperparameter tuning job.</p>
+   * Provides summary information about a hyperparameter tuning job.
    */
   @js.native
   trait HyperParameterTuningJobSummary extends js.Object {
@@ -3271,7 +3291,10 @@ package sagemaker {
   }
 
   /**
-   * <p>Specifies the configuration for a hyperparameter tuning job that uses one or more previous hyperparameter tuning jobs as a starting point. The results of previous tuning jobs are used to inform which combinations of hyperparameters to search over in the new tuning job.</p> <p>All training jobs launched by the new hyperparameter tuning job are evaluated by using the objective metric, and the training job that performs the best is compared to the best training jobs from the parent tuning jobs. From these, the training job that performs the best as measured by the objective metric is returned as the overall best training job.</p> <note> <p>All training jobs launched by parent hyperparameter tuning jobs and the new hyperparameter tuning jobs count against the limit of training jobs for the tuning job.</p> </note>
+   * Specifies the configuration for a hyperparameter tuning job that uses one or more previous hyperparameter tuning jobs as a starting point. The results of previous tuning jobs are used to inform which combinations of hyperparameters to search over in the new tuning job.
+   *  All training jobs launched by the new hyperparameter tuning job are evaluated by using the objective metric, and the training job that performs the best is compared to the best training jobs from the parent tuning jobs. From these, the training job that performs the best as measured by the objective metric is returned as the overall best training job.
+   *
+   * '''Note:'''All training jobs launched by parent hyperparameter tuning jobs and the new hyperparameter tuning jobs count against the limit of training jobs for the tuning job.
    */
   @js.native
   trait HyperParameterTuningJobWarmStartConfig extends js.Object {
@@ -3299,7 +3322,7 @@ package sagemaker {
   }
 
   /**
-   * <p>Defines how to perform inference generation after a training job is run.</p>
+   * Defines how to perform inference generation after a training job is run.
    */
   @js.native
   trait InferenceSpecification extends js.Object {
@@ -3329,7 +3352,7 @@ package sagemaker {
   }
 
   /**
-   * <p>Contains information about the location of input model artifacts, the name and shape of the expected data inputs, and the framework in which the model was trained.</p>
+   * Contains information about the location of input model artifacts, the name and shape of the expected data inputs, and the framework in which the model was trained.
    */
   @js.native
   trait InputConfig extends js.Object {
@@ -3396,7 +3419,7 @@ package sagemaker {
   }
 
   /**
-   * <p>For a hyperparameter of the integer type, specifies the range that a hyperparameter tuning job searches.</p>
+   * For a hyperparameter of the integer type, specifies the range that a hyperparameter tuning job searches.
    */
   @js.native
   trait IntegerParameterRange extends js.Object {
@@ -3420,7 +3443,7 @@ package sagemaker {
   }
 
   /**
-   * <p>Defines the possible values for an integer hyperparameter.</p>
+   * Defines the possible values for an integer hyperparameter.
    */
   @js.native
   trait IntegerParameterRangeSpecification extends js.Object {
@@ -3441,7 +3464,7 @@ package sagemaker {
   }
 
   /**
-   * <p>Provides a breakdown of the number of objects labeled.</p>
+   * Provides a breakdown of the number of objects labeled.
    */
   @js.native
   trait LabelCounters extends js.Object {
@@ -3471,7 +3494,7 @@ package sagemaker {
   }
 
   /**
-   * <p>Provides counts for human-labeled tasks in the labeling job.</p>
+   * Provides counts for human-labeled tasks in the labeling job.
    */
   @js.native
   trait LabelCountersForWorkteam extends js.Object {
@@ -3495,7 +3518,7 @@ package sagemaker {
   }
 
   /**
-   * <p>Provides configuration information for auto-labeling of your data objects. A <code>LabelingJobAlgorithmsConfig</code> object must be supplied in order to use auto-labeling.</p>
+   * Provides configuration information for auto-labeling of your data objects. A <code>LabelingJobAlgorithmsConfig</code> object must be supplied in order to use auto-labeling.
    */
   @js.native
   trait LabelingJobAlgorithmsConfig extends js.Object {
@@ -3519,7 +3542,7 @@ package sagemaker {
   }
 
   /**
-   * <p>Attributes of the data specified by the customer. Use these to describe the data to be labeled.</p>
+   * Attributes of the data specified by the customer. Use these to describe the data to be labeled.
    */
   @js.native
   trait LabelingJobDataAttributes extends js.Object {
@@ -3537,7 +3560,7 @@ package sagemaker {
   }
 
   /**
-   * <p>Provides information about the location of input data.</p>
+   * Provides information about the location of input data.
    */
   @js.native
   trait LabelingJobDataSource extends js.Object {
@@ -3555,7 +3578,7 @@ package sagemaker {
   }
 
   /**
-   * <p>Provides summary information for a work team.</p>
+   * Provides summary information for a work team.
    */
   @js.native
   trait LabelingJobForWorkteamSummary extends js.Object {
@@ -3585,7 +3608,7 @@ package sagemaker {
   }
 
   /**
-   * <p>Input configuration information for a labeling job.</p>
+   * Input configuration information for a labeling job.
    */
   @js.native
   trait LabelingJobInputConfig extends js.Object {
@@ -3606,7 +3629,7 @@ package sagemaker {
   }
 
   /**
-   * <p>Specifies the location of the output produced by the labeling job. </p>
+   * Specifies the location of the output produced by the labeling job.
    */
   @js.native
   trait LabelingJobOutput extends js.Object {
@@ -3627,7 +3650,7 @@ package sagemaker {
   }
 
   /**
-   * <p>Output configuration information for a labeling job.</p>
+   * Output configuration information for a labeling job.
    */
   @js.native
   trait LabelingJobOutputConfig extends js.Object {
@@ -3648,7 +3671,7 @@ package sagemaker {
   }
 
   /**
-   * <p>Provides configuration information for labeling jobs.</p>
+   * Provides configuration information for labeling jobs.
    */
   @js.native
   trait LabelingJobResourceConfig extends js.Object {
@@ -3666,7 +3689,7 @@ package sagemaker {
   }
 
   /**
-   * <p>The Amazon S3 location of the input data objects.</p>
+   * The Amazon S3 location of the input data objects.
    */
   @js.native
   trait LabelingJobS3DataSource extends js.Object {
@@ -3694,7 +3717,7 @@ package sagemaker {
   }
 
   /**
-   * <p>A set of conditions for stopping a labeling job. If any of the conditions are met, the job is automatically stopped. You can use these conditions to control the cost of data labeling.</p>
+   * A set of conditions for stopping a labeling job. If any of the conditions are met, the job is automatically stopped. You can use these conditions to control the cost of data labeling.
    */
   @js.native
   trait LabelingJobStoppingConditions extends js.Object {
@@ -3715,7 +3738,7 @@ package sagemaker {
   }
 
   /**
-   * <p>Provides summary information about a labeling job.</p>
+   * Provides summary information about a labeling job.
    */
   @js.native
   trait LabelingJobSummary extends js.Object {
@@ -4745,7 +4768,7 @@ package sagemaker {
   }
 
   /**
-   * <p>Defines the Amazon Cognito user group that is part of a work team.</p>
+   * Defines the Amazon Cognito user group that is part of a work team.
    */
   @js.native
   trait MemberDefinition extends js.Object {
@@ -4763,7 +4786,7 @@ package sagemaker {
   }
 
   /**
-   * <p>The name, value, and date and time of a metric that was emitted to Amazon CloudWatch.</p>
+   * The name, value, and date and time of a metric that was emitted to Amazon CloudWatch.
    */
   @js.native
   trait MetricData extends js.Object {
@@ -4787,7 +4810,7 @@ package sagemaker {
   }
 
   /**
-   * <p>Specifies a metric that the training algorithm writes to <code>stderr</code> or <code>stdout</code>. Amazon SageMakerhyperparameter tuning captures all defined metrics. You specify one metric that a hyperparameter tuning job uses as its objective metric to choose the best training job.</p>
+   * Specifies a metric that the training algorithm writes to <code>stderr</code> or <code>stdout</code>. Amazon SageMakerhyperparameter tuning captures all defined metrics. You specify one metric that a hyperparameter tuning job uses as its objective metric to choose the best training job.
    */
   @js.native
   trait MetricDefinition extends js.Object {
@@ -4808,7 +4831,7 @@ package sagemaker {
   }
 
   /**
-   * <p>Provides information about the location that is configured for storing model artifacts. </p>
+   * Provides information about the location that is configured for storing model artifacts.
    */
   @js.native
   trait ModelArtifacts extends js.Object {
@@ -4826,7 +4849,7 @@ package sagemaker {
   }
 
   /**
-   * <p>Describes the Docker container for the model package.</p>
+   * Describes the Docker container for the model package.
    */
   @js.native
   trait ModelPackageContainerDefinition extends js.Object {
@@ -4873,7 +4896,7 @@ package sagemaker {
   }
 
   /**
-   * <p>Specifies the validation and image scan statuses of the model package.</p>
+   * Specifies the validation and image scan statuses of the model package.
    */
   @js.native
   trait ModelPackageStatusDetails extends js.Object {
@@ -4894,7 +4917,7 @@ package sagemaker {
   }
 
   /**
-   * <p>Represents the overall status of a model package.</p>
+   * Represents the overall status of a model package.
    */
   @js.native
   trait ModelPackageStatusItem extends js.Object {
@@ -4918,7 +4941,7 @@ package sagemaker {
   }
 
   /**
-   * <p>Provides summary information about a model package.</p>
+   * Provides summary information about a model package.
    */
   @js.native
   trait ModelPackageSummary extends js.Object {
@@ -4948,7 +4971,8 @@ package sagemaker {
   }
 
   /**
-   * <p>Contains data such as the inputs and targeted instance types that are used in the process of validating the model package.</p> <p>The data provided in the validation profile is made available to your buyers on AWS Marketplace.</p>
+   * Contains data such as the inputs and targeted instance types that are used in the process of validating the model package.
+   *  The data provided in the validation profile is made available to your buyers on AWS Marketplace.
    */
   @js.native
   trait ModelPackageValidationProfile extends js.Object {
@@ -4969,7 +4993,7 @@ package sagemaker {
   }
 
   /**
-   * <p>Specifies batch transform jobs that Amazon SageMaker runs to validate your model package.</p>
+   * Specifies batch transform jobs that Amazon SageMaker runs to validate your model package.
    */
   @js.native
   trait ModelPackageValidationSpecification extends js.Object {
@@ -4997,7 +5021,7 @@ package sagemaker {
   }
 
   /**
-   * <p>Provides summary information about a model.</p>
+   * Provides summary information about a model.
    */
   @js.native
   trait ModelSummary extends js.Object {
@@ -5021,7 +5045,11 @@ package sagemaker {
   }
 
   /**
-   * <p>A <code>NestedFilter</code> is defined by using a resource name under <code>NestedPropertyName</code>, which entries in a list that properties must match to be included in the results. To satisfy the conditions specified in the <code>NestedFilters</code> call, each object in the list must satisfy the conditions of all of the filters.</p> <p>For example, a <code>NestedFilters</code> could be defined using the training job's <code>InputDataConfig</code> property, this would be defined as a list of <code>Channel</code> objects. </p> <p>A <code>NestedFilters</code> object contains multiple filters. For example, to find all training jobs that have <code>train</code> in their name, and have <code>cat/data</code> in their<code/> <code>S3Uri</code> (under <code>InputDataConfig</code>), you need to create a <code>NestedFilters</code> object that specfies the <code>InputDataConfig</code> property with the following <code>Filter</code> objects:</p> <ul> <li> <p> <code>'{Name:"InputDataConfig.ChannelName", "Operator":"EQUALS", "Value":"train"}',</code> </p> </li> <li> <p> <code>'{Name:"InputDataConfig.DataSource.S3DataSource.S3Uri", "Operator":"CONTAINS", "Value":"cat/data"}'</code> </p> </li> </ul>
+   * A <code>NestedFilter</code> is defined by using a resource name under <code>NestedPropertyName</code>, which entries in a list that properties must match to be included in the results. To satisfy the conditions specified in the <code>NestedFilters</code> call, each object in the list must satisfy the conditions of all of the filters.
+   *  For example, a <code>NestedFilters</code> could be defined using the training job's <code>InputDataConfig</code> property, this would be defined as a list of <code>Channel</code> objects.
+   *  A <code>NestedFilters</code> object contains multiple filters. For example, to find all training jobs that have <code>train</code> in their name, and have <code>cat/data</code> in their<code/> <code>S3Uri</code> (under <code>InputDataConfig</code>), you need to create a <code>NestedFilters</code> object that specfies the <code>InputDataConfig</code> property with the following <code>Filter</code> objects:
+   * * <code>'{Name:"InputDataConfig.ChannelName", "Operator":"EQUALS", "Value":"train"}',</code>
+   *  * <code>'{Name:"InputDataConfig.DataSource.S3DataSource.S3Uri", "Operator":"CONTAINS", "Value":"cat/data"}'</code>
    */
   @js.native
   trait NestedFilters extends js.Object {
@@ -5065,7 +5093,7 @@ package sagemaker {
   }
 
   /**
-   * <p>Provides a summary of a notebook instance lifecycle configuration.</p>
+   * Provides a summary of a notebook instance lifecycle configuration.
    */
   @js.native
   trait NotebookInstanceLifecycleConfigSummary extends js.Object {
@@ -5092,7 +5120,12 @@ package sagemaker {
   }
 
   /**
-   * <p>Contains the notebook instance lifecycle configuration script.</p> <p>Each lifecycle configuration script has a limit of 16384 characters.</p> <p>The value of the <code>$PATH</code> environment variable that is available to both scripts is <code>/sbin:bin:/usr/sbin:/usr/bin</code>.</p> <p>View CloudWatch Logs for notebook instance lifecycle configurations in log group <code>/aws/sagemaker/NotebookInstances</code> in log stream <code>[notebook-instance-name]/[LifecycleConfigHook]</code>.</p> <p>Lifecycle configuration scripts cannot run for longer than 5 minutes. If a script runs for longer than 5 minutes, it fails and the notebook instance is not created or started.</p> <p>For information about notebook instance lifestyle configurations, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Step 2.1: (Optional) Customize a Notebook Instance</a>.</p>
+   * Contains the notebook instance lifecycle configuration script.
+   *  Each lifecycle configuration script has a limit of 16384 characters.
+   *  The value of the <code>PATH</code> environment variable that is available to both scripts is <code>/sbin:bin:/usr/sbin:/usr/bin</code>.
+   *  View CloudWatch Logs for notebook instance lifecycle configurations in log group <code>/aws/sagemaker/NotebookInstances</code> in log stream <code>[notebook-instance-name]/[LifecycleConfigHook]</code>.
+   *  Lifecycle configuration scripts cannot run for longer than 5 minutes. If a script runs for longer than 5 minutes, it fails and the notebook instance is not created or started.
+   *  For information about notebook instance lifestyle configurations, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Step 2.1: (Optional) Customize a Notebook Instance</a>.
    */
   @js.native
   trait NotebookInstanceLifecycleHook extends js.Object {
@@ -5137,7 +5170,7 @@ package sagemaker {
   }
 
   /**
-   * <p>Provides summary information for an Amazon SageMaker notebook instance.</p>
+   * Provides summary information for an Amazon SageMaker notebook instance.
    */
   @js.native
   trait NotebookInstanceSummary extends js.Object {
@@ -5190,7 +5223,7 @@ package sagemaker {
   }
 
   /**
-   * <p>Specifies the number of training jobs that this hyperparameter tuning job launched, categorized by the status of their objective metric. The objective metric status shows whether the final objective metric for the training job has been evaluated by the tuning job and used in the hyperparameter tuning process.</p>
+   * Specifies the number of training jobs that this hyperparameter tuning job launched, categorized by the status of their objective metric. The objective metric status shows whether the final objective metric for the training job has been evaluated by the tuning job and used in the hyperparameter tuning process.
    */
   @js.native
   trait ObjectiveStatusCounters extends js.Object {
@@ -5233,7 +5266,7 @@ package sagemaker {
   }
 
   /**
-   * <p>Contains information about the output location for the compiled model and the device (target) that the model runs on.</p>
+   * Contains information about the output location for the compiled model and the device (target) that the model runs on.
    */
   @js.native
   trait OutputConfig extends js.Object {
@@ -5254,7 +5287,7 @@ package sagemaker {
   }
 
   /**
-   * <p>Provides information about how to store model training results (model artifacts).</p>
+   * Provides information about how to store model training results (model artifacts).
    */
   @js.native
   trait OutputDataConfig extends js.Object {
@@ -5275,7 +5308,7 @@ package sagemaker {
   }
 
   /**
-   * <p>Defines the possible values for categorical, continous, and integer hyperparameters to be used by an algorithm.</p>
+   * Defines the possible values for categorical, continous, and integer hyperparameters to be used by an algorithm.
    */
   @js.native
   trait ParameterRange extends js.Object {
@@ -5299,7 +5332,9 @@ package sagemaker {
   }
 
   /**
-   * <p>Specifies ranges of integer, continuous, and categorical hyperparameters that a hyperparameter tuning job searches. The hyperparameter tuning job launches training jobs with hyperparameter values within these ranges to find the combination of values that result in the training job with the best performance as measured by the objective metric of the hyperparameter tuning job.</p> <note> <p>You can specify a maximum of 20 hyperparameters that a hyperparameter tuning job can search over. Every possible value of a categorical parameter range counts against this limit.</p> </note>
+   * Specifies ranges of integer, continuous, and categorical hyperparameters that a hyperparameter tuning job searches. The hyperparameter tuning job launches training jobs with hyperparameter values within these ranges to find the combination of values that result in the training job with the best performance as measured by the objective metric of the hyperparameter tuning job.
+   *
+   * '''Note:'''You can specify a maximum of 20 hyperparameters that a hyperparameter tuning job can search over. Every possible value of a categorical parameter range counts against this limit.
    */
   @js.native
   trait ParameterRanges extends js.Object {
@@ -5332,7 +5367,7 @@ package sagemaker {
   }
 
   /**
-   * <p>A previously completed or stopped hyperparameter tuning job to be used as a starting point for a new hyperparameter tuning job.</p>
+   * A previously completed or stopped hyperparameter tuning job to be used as a starting point for a new hyperparameter tuning job.
    */
   @js.native
   trait ParentHyperParameterTuningJob extends js.Object {
@@ -5350,7 +5385,7 @@ package sagemaker {
   }
 
   /**
-   * <p>Identifies a model that you want to host and the resources to deploy for hosting it. If you are deploying multiple models, tell Amazon SageMaker how to distribute traffic among the models by specifying variant weights. </p>
+   * Identifies a model that you want to host and the resources to deploy for hosting it. If you are deploying multiple models, tell Amazon SageMaker how to distribute traffic among the models by specifying variant weights.
    */
   @js.native
   trait ProductionVariant extends js.Object {
@@ -5428,7 +5463,7 @@ package sagemaker {
   }
 
   /**
-   * <p>Describes weight and capacities for a production variant associated with an endpoint. If you sent a request to the <code>UpdateEndpointWeightsAndCapacities</code> API and the endpoint status is <code>Updating</code>, you get different desired and current values. </p>
+   * Describes weight and capacities for a production variant associated with an endpoint. If you sent a request to the <code>UpdateEndpointWeightsAndCapacities</code> API and the endpoint status is <code>Updating</code>, you get different desired and current values.
    */
   @js.native
   trait ProductionVariantSummary extends js.Object {
@@ -5461,7 +5496,7 @@ package sagemaker {
   }
 
   /**
-   * <p>A suggestion query for retrieving property names.</p>
+   * A suggestion query for retrieving property names.
    */
   @js.native
   trait PropertyNameQuery extends js.Object {
@@ -5479,7 +5514,7 @@ package sagemaker {
   }
 
   /**
-   * <p>A property name returned from a <code>GetSearchSuggestions</code> call that specifies a value in the <code>PropertyNameQuery</code> field.</p>
+   * A property name returned from a <code>GetSearchSuggestions</code> call that specifies a value in the <code>PropertyNameQuery</code> field.
    */
   @js.native
   trait PropertyNameSuggestion extends js.Object {
@@ -5497,7 +5532,7 @@ package sagemaker {
   }
 
   /**
-   * <p>Defines the amount of money paid to an Amazon Mechanical Turk worker for each task performed. For more information, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/sms-public-payment.html"> Public Workforce Task Price</a>. </p>
+   * Defines the amount of money paid to an Amazon Mechanical Turk worker for each task performed. For more information, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/sms-public-payment.html"> Public Workforce Task Price</a>.
    */
   @js.native
   trait PublicWorkforceTaskPrice extends js.Object {
@@ -5561,7 +5596,7 @@ package sagemaker {
   }
 
   /**
-   * <p>Contains input values for a task.</p>
+   * Contains input values for a task.
    */
   @js.native
   trait RenderableTask extends js.Object {
@@ -5579,7 +5614,7 @@ package sagemaker {
   }
 
   /**
-   * <p>A description of an error that occurred while rendering the template.</p>
+   * A description of an error that occurred while rendering the template.
    */
   @js.native
   trait RenderingError extends js.Object {
@@ -5600,7 +5635,7 @@ package sagemaker {
   }
 
   /**
-   * <p>Describes the resources, including ML compute instances and ML storage volumes, to use for model training. </p>
+   * Describes the resources, including ML compute instances and ML storage volumes, to use for model training.
    */
   @js.native
   trait ResourceConfig extends js.Object {
@@ -5627,7 +5662,7 @@ package sagemaker {
   }
 
   /**
-   * <p>Specifies the maximum number of training jobs and parallel training jobs that a hyperparameter tuning job can launch.</p>
+   * Specifies the maximum number of training jobs and parallel training jobs that a hyperparameter tuning job can launch.
    */
   @js.native
   trait ResourceLimits extends js.Object {
@@ -5661,7 +5696,7 @@ package sagemaker {
   }
 
   /**
-   * <p>Describes the S3 data source.</p>
+   * Describes the S3 data source.
    */
   @js.native
   trait S3DataSource extends js.Object {
@@ -5696,7 +5731,12 @@ package sagemaker {
   }
 
   /**
-   * <p>A multi-expression that searches for the specified resource or resources. All resource objects that satisfy the expression's condition are included in the search results.</p> <p>A <code>SearchExpression</code> contains the following components:</p> <ul> <li> <p>A list of <code>Filter</code> objects. Each filter defines a simple Boolean expression comprised of a resource property name, Boolean operator, and value.</p> </li> <li> <p>A list of <code>NestedFilter</code> objects. Each nested filter defines a list of Boolean expressions using a list of resource properties. A nested filter is satisfied if a single object in the list satisfies all Boolean expressions.</p> </li> <li> <p>A list of <code>SearchExpression</code> objects.</p> </li> <li> <p>A Boolean operator: <code>And</code> or <code>Or</code>.</p> </li> </ul>
+   * A multi-expression that searches for the specified resource or resources. All resource objects that satisfy the expression's condition are included in the search results.
+   *  A <code>SearchExpression</code> contains the following components:
+   * * A list of <code>Filter</code> objects. Each filter defines a simple Boolean expression comprised of a resource property name, Boolean operator, and value.
+   *  * A list of <code>NestedFilter</code> objects. Each nested filter defines a list of Boolean expressions using a list of resource properties. A nested filter is satisfied if a single object in the list satisfies all Boolean expressions.
+   *  * A list of <code>SearchExpression</code> objects.
+   *  * A Boolean operator: <code>And</code> or <code>Or</code>.
    */
   @js.native
   trait SearchExpression extends js.Object {
@@ -5723,7 +5763,7 @@ package sagemaker {
   }
 
   /**
-   * <p>An individual search result record that contains a single resource object.</p>
+   * An individual search result record that contains a single resource object.
    */
   @js.native
   trait SearchRecord extends js.Object {
@@ -5813,7 +5853,8 @@ package sagemaker {
   }
 
   /**
-   * <p>An array element of <a>DescribeTrainingJobResponse$SecondaryStatusTransitions</a>. It provides additional details about a status that the training job has transitioned through. A training job can be in one of several states, for example, starting, downloading, training, or uploading. Within each state, there are a number of intermediate states. For example, within the starting state, Amazon SageMaker could be starting the training job or launching the ML instances. These transitional states are referred to as the job's secondary status. </p> <p/>
+   * An array element of [[DescribeTrainingJobResponse.SecondaryStatusTransitions]]. It provides additional details about a status that the training job has transitioned through. A training job can be in one of several states, for example, starting, downloading, training, or uploading. Within each state, there are a number of intermediate states. For example, within the starting state, Amazon SageMaker could be starting the training job or launching the ML instances. These transitional states are referred to as the job's secondary status.
+   *  <p/>
    */
   @js.native
   trait SecondaryStatusTransition extends js.Object {
@@ -5840,7 +5881,8 @@ package sagemaker {
   }
 
   /**
-   * <p>A configuration for a shuffle option for input data in a channel. If you use <code>S3Prefix</code> for <code>S3DataType</code>, the results of the S3 key prefix matches are shuffled. If you use <code>ManifestFile</code>, the order of the S3 object references in the <code>ManifestFile</code> is shuffled. If you use <code>AugmentedManifestFile</code>, the order of the JSON lines in the <code>AugmentedManifestFile</code> is shuffled. The shuffling order is determined using the <code>Seed</code> value.</p> <p>For Pipe input mode, shuffling is done at the start of every epoch. With large datasets, this ensures that the order of the training data is different for each epoch, and it helps reduce bias and possible overfitting. In a multi-node training job when <code>ShuffleConfig</code> is combined with <code>S3DataDistributionType</code> of <code>ShardedByS3Key</code>, the data is shuffled across nodes so that the content sent to a particular node on the first epoch might be sent to a different node on the second epoch.</p>
+   * A configuration for a shuffle option for input data in a channel. If you use <code>S3Prefix</code> for <code>S3DataType</code>, the results of the S3 key prefix matches are shuffled. If you use <code>ManifestFile</code>, the order of the S3 object references in the <code>ManifestFile</code> is shuffled. If you use <code>AugmentedManifestFile</code>, the order of the JSON lines in the <code>AugmentedManifestFile</code> is shuffled. The shuffling order is determined using the <code>Seed</code> value.
+   *  For Pipe input mode, shuffling is done at the start of every epoch. With large datasets, this ensures that the order of the training data is different for each epoch, and it helps reduce bias and possible overfitting. In a multi-node training job when <code>ShuffleConfig</code> is combined with <code>S3DataDistributionType</code> of <code>ShardedByS3Key</code>, the data is shuffled across nodes so that the content sent to a particular node on the first epoch might be sent to a different node on the second epoch.
    */
   @js.native
   trait ShuffleConfig extends js.Object {
@@ -5873,7 +5915,7 @@ package sagemaker {
   }
 
   /**
-   * <p>Specifies an algorithm that was used to create the model package. The algorithm must be either an algorithm resource in your Amazon SageMaker account or an algorithm in AWS Marketplace that you are subscribed to.</p>
+   * Specifies an algorithm that was used to create the model package. The algorithm must be either an algorithm resource in your Amazon SageMaker account or an algorithm in AWS Marketplace that you are subscribed to.
    */
   @js.native
   trait SourceAlgorithm extends js.Object {
@@ -5894,7 +5936,7 @@ package sagemaker {
   }
 
   /**
-   * <p>A list of algorithms that were used to create a model package.</p>
+   * A list of algorithms that were used to create a model package.
    */
   @js.native
   trait SourceAlgorithmSpecification extends js.Object {
@@ -6025,7 +6067,9 @@ package sagemaker {
   }
 
   /**
-   * <p>Specifies how long a model training or compilation job can run. When the job reaches the limit, Amazon SageMaker ends the training job. Use this API to cap model processing cost.</p> <p>To stop a job, Amazon SageMaker sends the algorithm the <code>SIGTERM</code> signal, which delays job termination for 120 seconds. Algorithms might use this 120-second window to save the model artifacts, so the results of training is not lost. </p> <p>Training algorithms provided by Amazon SageMaker automatically saves the intermediate results of a model training job (it is best effort case, as model might not be ready to save as some stages, for example training just started). This intermediate data is a valid model artifact. You can use it to create a model (<code>CreateModel</code>). </p>
+   * Specifies how long a model training or compilation job can run. When the job reaches the limit, Amazon SageMaker ends the training job. Use this API to cap model processing cost.
+   *  To stop a job, Amazon SageMaker sends the algorithm the <code>SIGTERM</code> signal, which delays job termination for 120 seconds. Algorithms might use this 120-second window to save the model artifacts, so the results of training is not lost.
+   *  Training algorithms provided by Amazon SageMaker automatically saves the intermediate results of a model training job (it is best effort case, as model might not be ready to save as some stages, for example training just started). This intermediate data is a valid model artifact. You can use it to create a model (<code>CreateModel</code>).
    */
   @js.native
   trait StoppingCondition extends js.Object {
@@ -6043,7 +6087,7 @@ package sagemaker {
   }
 
   /**
-   * <p>Describes a work team of a vendor that does the a labelling job.</p>
+   * Describes a work team of a vendor that does the a labelling job.
    */
   @js.native
   trait SubscribedWorkteam extends js.Object {
@@ -6073,7 +6117,7 @@ package sagemaker {
   }
 
   /**
-   * <p>Limits the property names that are included in the response.</p>
+   * Limits the property names that are included in the response.
    */
   @js.native
   trait SuggestionQuery extends js.Object {
@@ -6091,7 +6135,7 @@ package sagemaker {
   }
 
   /**
-   * <p>Describes a tag. </p>
+   * Describes a tag.
    */
   @js.native
   trait Tag extends js.Object {
@@ -6165,7 +6209,7 @@ package sagemaker {
   }
 
   /**
-   * <p>Contains information about a training job.</p>
+   * Contains information about a training job.
    */
   @js.native
   trait TrainingJob extends js.Object {
@@ -6252,7 +6296,7 @@ package sagemaker {
   }
 
   /**
-   * <p>Defines the input needed to run a training job using the algorithm.</p>
+   * Defines the input needed to run a training job using the algorithm.
    */
   @js.native
   trait TrainingJobDefinition extends js.Object {
@@ -6304,7 +6348,7 @@ package sagemaker {
   }
 
   /**
-   * <p>The numbers of training jobs launched by a hyperparameter tuning job, categorized by status.</p>
+   * The numbers of training jobs launched by a hyperparameter tuning job, categorized by status.
    */
   @js.native
   trait TrainingJobStatusCounters extends js.Object {
@@ -6334,7 +6378,7 @@ package sagemaker {
   }
 
   /**
-   * <p>Provides summary information about a training job.</p>
+   * Provides summary information about a training job.
    */
   @js.native
   trait TrainingJobSummary extends js.Object {
@@ -6367,7 +6411,7 @@ package sagemaker {
   }
 
   /**
-   * <p>Defines how the algorithm is used for a training job.</p>
+   * Defines how the algorithm is used for a training job.
    */
   @js.native
   trait TrainingSpecification extends js.Object {
@@ -6406,7 +6450,7 @@ package sagemaker {
   }
 
   /**
-   * <p>Describes the location of the channel data.</p>
+   * Describes the location of the channel data.
    */
   @js.native
   trait TransformDataSource extends js.Object {
@@ -6424,7 +6468,7 @@ package sagemaker {
   }
 
   /**
-   * <p>Describes the input source of a transform job and the way the transform job consumes it.</p>
+   * Describes the input source of a transform job and the way the transform job consumes it.
    */
   @js.native
   trait TransformInput extends js.Object {
@@ -6482,7 +6526,7 @@ package sagemaker {
   }
 
   /**
-   * <p>Defines the input needed to run a transform job using the inference specification specified in the algorithm.</p>
+   * Defines the input needed to run a transform job using the inference specification specified in the algorithm.
    */
   @js.native
   trait TransformJobDefinition extends js.Object {
@@ -6528,7 +6572,7 @@ package sagemaker {
   }
 
   /**
-   * <p>Provides a summary of a transform job. Multiple TransformJobSummary objects are returned as a list after calling <a>ListTransformJobs</a>.</p>
+   * Provides a summary of a transform job. Multiple TransformJobSummary objects are returned as a list after calling '''ListTransformJobs'''.
    */
   @js.native
   trait TransformJobSummary extends js.Object {
@@ -6564,7 +6608,7 @@ package sagemaker {
   }
 
   /**
-   * <p>Describes the results of a transform job output.</p>
+   * Describes the results of a transform job output.
    */
   @js.native
   trait TransformOutput extends js.Object {
@@ -6591,7 +6635,7 @@ package sagemaker {
   }
 
   /**
-   * <p>Describes the resources, including ML instance types and ML instance count, to use for transform job.</p>
+   * Describes the resources, including ML instance types and ML instance count, to use for transform job.
    */
   @js.native
   trait TransformResources extends js.Object {
@@ -6615,7 +6659,7 @@ package sagemaker {
   }
 
   /**
-   * <p>Describes the S3 data source.</p>
+   * Describes the S3 data source.
    */
   @js.native
   trait TransformS3DataSource extends js.Object {
@@ -6636,7 +6680,7 @@ package sagemaker {
   }
 
   /**
-   * <p>Represents an amount of money in United States dollars/</p>
+   * Represents an amount of money in United States dollars/
    */
   @js.native
   trait USD extends js.Object {
@@ -6660,7 +6704,7 @@ package sagemaker {
   }
 
   /**
-   * <p>Provided configuration information for the worker UI for a labeling job. </p>
+   * Provided configuration information for the worker UI for a labeling job.
    */
   @js.native
   trait UiConfig extends js.Object {
@@ -6678,7 +6722,7 @@ package sagemaker {
   }
 
   /**
-   * <p>The Liquid template for the worker user interface.</p>
+   * The Liquid template for the worker user interface.
    */
   @js.native
   trait UiTemplate extends js.Object {
@@ -6926,7 +6970,7 @@ package sagemaker {
   }
 
   /**
-   * <p>Specifies a VPC that your training jobs and hosted models have access to. Control access to and from your training and model containers by configuring the VPC. For more information, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/host-vpc.html">Protect Endpoints by Using an Amazon Virtual Private Cloud</a> and <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect Training Jobs by Using an Amazon Virtual Private Cloud</a>. </p>
+   * Specifies a VPC that your training jobs and hosted models have access to. Control access to and from your training and model containers by configuring the VPC. For more information, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/host-vpc.html">Protect Endpoints by Using an Amazon Virtual Private Cloud</a> and <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect Training Jobs by Using an Amazon Virtual Private Cloud</a>.
    */
   @js.native
   trait VpcConfig extends js.Object {
@@ -6947,7 +6991,7 @@ package sagemaker {
   }
 
   /**
-   * <p>Provides details about a labeling work team.</p>
+   * Provides details about a labeling work team.
    */
   @js.native
   trait Workteam extends js.Object {

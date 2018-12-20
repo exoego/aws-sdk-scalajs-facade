@@ -25,7 +25,7 @@ package eks {
   }
 
   /**
-   * <p>An object representing the <code>certificate-authority-data</code> for your cluster.</p>
+   * An object representing the <code>certificate-authority-data</code> for your cluster.
    */
   @js.native
   trait Certificate extends js.Object {
@@ -43,7 +43,7 @@ package eks {
   }
 
   /**
-   * <p>An object representing an Amazon EKS cluster.</p>
+   * An object representing an Amazon EKS cluster.
    */
   @js.native
   trait Cluster extends js.Object {
@@ -238,7 +238,7 @@ package eks {
   }
 
   /**
-   * <p>An object representing an Amazon EKS cluster VPC configuration request.</p>
+   * An object representing an Amazon EKS cluster VPC configuration request.
    */
   @js.native
   trait VpcConfigRequest extends js.Object {
@@ -259,7 +259,7 @@ package eks {
   }
 
   /**
-   * <p>An object representing an Amazon EKS cluster VPC configuration response.</p>
+   * An object representing an Amazon EKS cluster VPC configuration response.
    */
   @js.native
   trait VpcConfigResponse extends js.Object {

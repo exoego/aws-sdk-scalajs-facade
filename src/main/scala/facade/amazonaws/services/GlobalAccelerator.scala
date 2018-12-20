@@ -59,7 +59,7 @@ package globalaccelerator {
   }
 
   /**
-   * <p>An accelerator is a complex type that includes one or more listeners that process inbound connections and then direct traffic to one or more endpoint groups, each of which includes endpoints, such as load balancers.</p>
+   * An accelerator is a complex type that includes one or more listeners that process inbound connections and then direct traffic to one or more endpoint groups, each of which includes endpoints, such as load balancers.
    */
   @js.native
   trait Accelerator extends js.Object {
@@ -98,7 +98,7 @@ package globalaccelerator {
   }
 
   /**
-   * <p>Attributes of an accelerator.</p>
+   * Attributes of an accelerator.
    */
   @js.native
   trait AcceleratorAttributes extends js.Object {
@@ -439,7 +439,7 @@ package globalaccelerator {
   }
 
   /**
-   * <p>A complex type for endpoints.</p>
+   * A complex type for endpoints.
    */
   @js.native
   trait EndpointConfiguration extends js.Object {
@@ -460,7 +460,7 @@ package globalaccelerator {
   }
 
   /**
-   * <p>A complex type for an endpoint. Each endpoint group can include one or more endpoints, such as load balancers.</p>
+   * A complex type for an endpoint. Each endpoint group can include one or more endpoints, such as load balancers.
    */
   @js.native
   trait EndpointDescription extends js.Object {
@@ -487,7 +487,7 @@ package globalaccelerator {
   }
 
   /**
-   * <p>A complex type for the endpoint group. An AWS Region can have only one endpoint group for a specific listener. </p>
+   * A complex type for the endpoint group. An AWS Region can have only one endpoint group for a specific listener.
    */
   @js.native
   trait EndpointGroup extends js.Object {
@@ -551,7 +551,7 @@ package globalaccelerator {
   }
 
   /**
-   * <p>A complex type for the set of IP addresses for an accelerator.</p>
+   * A complex type for the set of IP addresses for an accelerator.
    */
   @js.native
   trait IpSet extends js.Object {
@@ -686,7 +686,7 @@ package globalaccelerator {
   }
 
   /**
-   * <p>A complex type for a listener.</p>
+   * A complex type for a listener.
    */
   @js.native
   trait Listener extends js.Object {
@@ -713,7 +713,7 @@ package globalaccelerator {
   }
 
   /**
-   * <p>A complex type for a range of ports for a listener.</p>
+   * A complex type for a range of ports for a listener.
    */
   @js.native
   trait PortRange extends js.Object {

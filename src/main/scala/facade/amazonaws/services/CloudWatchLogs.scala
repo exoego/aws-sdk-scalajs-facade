@@ -702,7 +702,7 @@ package cloudwatchlogs {
   }
 
   /**
-   * <p>Represents a cross-account destination that receives subscription log events.</p>
+   * Represents a cross-account destination that receives subscription log events.
    */
   @js.native
   trait Destination extends js.Object {
@@ -750,7 +750,7 @@ package cloudwatchlogs {
   }
 
   /**
-   * <p>The method used to distribute log data to the destination, which can be either random or grouped by log stream.</p>
+   * The method used to distribute log data to the destination, which can be either random or grouped by log stream.
    */
   object DistributionEnum {
     val Random = "Random"
@@ -760,7 +760,7 @@ package cloudwatchlogs {
   }
 
   /**
-   * <p>Represents an export task.</p>
+   * Represents an export task.
    */
   @js.native
   trait ExportTask extends js.Object {
@@ -802,7 +802,7 @@ package cloudwatchlogs {
   }
 
   /**
-   * <p>Represents the status of an export task.</p>
+   * Represents the status of an export task.
    */
   @js.native
   trait ExportTaskExecutionInfo extends js.Object {
@@ -823,7 +823,7 @@ package cloudwatchlogs {
   }
 
   /**
-   * <p>Represents the status of an export task.</p>
+   * Represents the status of an export task.
    */
   @js.native
   trait ExportTaskStatus extends js.Object {
@@ -915,7 +915,7 @@ package cloudwatchlogs {
   }
 
   /**
-   * <p>Represents a matched event.</p>
+   * Represents a matched event.
    */
   @js.native
   trait FilteredLogEvent extends js.Object {
@@ -1098,7 +1098,7 @@ package cloudwatchlogs {
   }
 
   /**
-   * <p>Represents a log event, which is a record of activity that was recorded by the application or resource being monitored.</p>
+   * Represents a log event, which is a record of activity that was recorded by the application or resource being monitored.
    */
   @js.native
   trait InputLogEvent extends js.Object {
@@ -1149,7 +1149,7 @@ package cloudwatchlogs {
   }
 
   /**
-   * <p>Represents a log group.</p>
+   * Represents a log group.
    */
   @js.native
   trait LogGroup extends js.Object {
@@ -1185,7 +1185,7 @@ package cloudwatchlogs {
   }
 
   /**
-   * <p>The fields contained in log events found by a <code>GetLogGroupFields</code> operation, along with the percentage of queried log events in which each field appears.</p>
+   * The fields contained in log events found by a <code>GetLogGroupFields</code> operation, along with the percentage of queried log events in which each field appears.
    */
   @js.native
   trait LogGroupField extends js.Object {
@@ -1206,7 +1206,7 @@ package cloudwatchlogs {
   }
 
   /**
-   * <p>Represents a log stream, which is a sequence of log events from a single emitter of logs.</p>
+   * Represents a log stream, which is a sequence of log events from a single emitter of logs.
    */
   @js.native
   trait LogStream extends js.Object {
@@ -1245,7 +1245,7 @@ package cloudwatchlogs {
   }
 
   /**
-   * <p>Metric filters express how CloudWatch Logs would extract metric observations from ingested log events and transform them into metric data in a CloudWatch metric.</p>
+   * Metric filters express how CloudWatch Logs would extract metric observations from ingested log events and transform them into metric data in a CloudWatch metric.
    */
   @js.native
   trait MetricFilter extends js.Object {
@@ -1275,7 +1275,7 @@ package cloudwatchlogs {
   }
 
   /**
-   * <p>Represents a matched event.</p>
+   * Represents a matched event.
    */
   @js.native
   trait MetricFilterMatchRecord extends js.Object {
@@ -1299,7 +1299,7 @@ package cloudwatchlogs {
   }
 
   /**
-   * <p>Indicates how to transform ingested log eventsto metric data in a CloudWatch metric.</p>
+   * Indicates how to transform ingested log eventsto metric data in a CloudWatch metric.
    */
   @js.native
   trait MetricTransformation extends js.Object {
@@ -1333,7 +1333,7 @@ package cloudwatchlogs {
   }
 
   /**
-   * <p>Represents a log event.</p>
+   * Represents a log event.
    */
   @js.native
   trait OutputLogEvent extends js.Object {
@@ -1558,7 +1558,7 @@ package cloudwatchlogs {
   }
 
   /**
-   * <p>Information about one CloudWatch Logs Insights query that matches the request in a <code>DescribeQueries</code> operation. </p>
+   * Information about one CloudWatch Logs Insights query that matches the request in a <code>DescribeQueries</code> operation.
    */
   @js.native
   trait QueryInfo extends js.Object {
@@ -1588,7 +1588,7 @@ package cloudwatchlogs {
   }
 
   /**
-   * <p>Contains the number of log events scanned by the query, the number of log events that matched the query criteria, and the total number of bytes in the log events that were scanned.</p>
+   * Contains the number of log events scanned by the query, the number of log events that matched the query criteria, and the total number of bytes in the log events that were scanned.
    */
   @js.native
   trait QueryStatistics extends js.Object {
@@ -1622,7 +1622,7 @@ package cloudwatchlogs {
   }
 
   /**
-   * <p>Represents the rejected events.</p>
+   * Represents the rejected events.
    */
   @js.native
   trait RejectedLogEventsInfo extends js.Object {
@@ -1646,7 +1646,7 @@ package cloudwatchlogs {
   }
 
   /**
-   * <p>A policy enabling one or more entities to put logs to a log group in this account.</p>
+   * A policy enabling one or more entities to put logs to a log group in this account.
    */
   @js.native
   trait ResourcePolicy extends js.Object {
@@ -1670,7 +1670,7 @@ package cloudwatchlogs {
   }
 
   /**
-   * <p>Contains one field from one log event returned by a CloudWatch Logs Insights query, along with the value of that field.</p>
+   * Contains one field from one log event returned by a CloudWatch Logs Insights query, along with the value of that field.
    */
   @js.native
   trait ResultField extends js.Object {
@@ -1691,7 +1691,7 @@ package cloudwatchlogs {
   }
 
   /**
-   * <p>Represents the search status of a log stream.</p>
+   * Represents the search status of a log stream.
    */
   @js.native
   trait SearchedLogStream extends js.Object {
@@ -1784,7 +1784,7 @@ package cloudwatchlogs {
   }
 
   /**
-   * <p>Represents a subscription filter.</p>
+   * Represents a subscription filter.
    */
   @js.native
   trait SubscriptionFilter extends js.Object {

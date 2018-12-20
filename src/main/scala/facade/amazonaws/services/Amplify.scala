@@ -109,7 +109,7 @@ package amplify {
   }
 
   /**
-   * <p> Amplify App represents different branches of a repository for building, deploying, and hosting. </p>
+   * Amplify App represents different branches of a repository for building, deploying, and hosting.
    */
   @js.native
   trait App extends js.Object {
@@ -178,7 +178,7 @@ package amplify {
   }
 
   /**
-   * <p> Branch for an Amplify App, which maps to a 3rd party repository branch. </p>
+   * Branch for an Amplify App, which maps to a 3rd party repository branch.
    */
   @js.native
   trait Branch extends js.Object {
@@ -253,7 +253,7 @@ package amplify {
   }
 
   /**
-   * <p> Request structure used to create Apps in Amplify. </p>
+   * Request structure used to create Apps in Amplify.
    */
   @js.native
   trait CreateAppRequest extends js.Object {
@@ -322,7 +322,7 @@ package amplify {
   }
 
   /**
-   * <p> Request structure for a branch create request. </p>
+   * Request structure for a branch create request.
    */
   @js.native
   trait CreateBranchRequest extends js.Object {
@@ -376,7 +376,7 @@ package amplify {
   }
 
   /**
-   * <p> Result structure for create branch request. </p>
+   * Result structure for create branch request.
    */
   @js.native
   trait CreateBranchResult extends js.Object {
@@ -394,7 +394,7 @@ package amplify {
   }
 
   /**
-   * <p> Request structure for create Domain Association request. </p>
+   * Request structure for create Domain Association request.
    */
   @js.native
   trait CreateDomainAssociationRequest extends js.Object {
@@ -421,7 +421,7 @@ package amplify {
   }
 
   /**
-   * <p> Result structure for the create Domain Association request. </p>
+   * Result structure for the create Domain Association request.
    */
   @js.native
   trait CreateDomainAssociationResult extends js.Object {
@@ -439,7 +439,7 @@ package amplify {
   }
 
   /**
-   * <p> Custom rewrite / redirect rule. </p>
+   * Custom rewrite / redirect rule.
    */
   @js.native
   trait CustomRule extends js.Object {
@@ -466,7 +466,7 @@ package amplify {
   }
 
   /**
-   * <p> Request structure for an Amplify App delete request. </p>
+   * Request structure for an Amplify App delete request.
    */
   @js.native
   trait DeleteAppRequest extends js.Object {
@@ -484,7 +484,7 @@ package amplify {
   }
 
   /**
-   * <p> Result structure for an Amplify App delete request. </p>
+   * Result structure for an Amplify App delete request.
    */
   @js.native
   trait DeleteAppResult extends js.Object {
@@ -502,7 +502,7 @@ package amplify {
   }
 
   /**
-   * <p> Request structure for delete branch request. </p>
+   * Request structure for delete branch request.
    */
   @js.native
   trait DeleteBranchRequest extends js.Object {
@@ -523,7 +523,7 @@ package amplify {
   }
 
   /**
-   * <p> Result structure for delete branch request. </p>
+   * Result structure for delete branch request.
    */
   @js.native
   trait DeleteBranchResult extends js.Object {
@@ -541,7 +541,7 @@ package amplify {
   }
 
   /**
-   * <p> Request structure for the delete Domain Association request. </p>
+   * Request structure for the delete Domain Association request.
    */
   @js.native
   trait DeleteDomainAssociationRequest extends js.Object {
@@ -577,7 +577,7 @@ package amplify {
   }
 
   /**
-   * <p> Request structure for delete job request. </p>
+   * Request structure for delete job request.
    */
   @js.native
   trait DeleteJobRequest extends js.Object {
@@ -601,7 +601,7 @@ package amplify {
   }
 
   /**
-   * <p> Result structure for the delete job request. </p>
+   * Result structure for the delete job request.
    */
   @js.native
   trait DeleteJobResult extends js.Object {
@@ -619,7 +619,7 @@ package amplify {
   }
 
   /**
-   * <p> Structure for Domain Association, which associates a custom domain with an Amplify App. </p>
+   * Structure for Domain Association, which associates a custom domain with an Amplify App.
    */
   @js.native
   trait DomainAssociation extends js.Object {
@@ -665,7 +665,7 @@ package amplify {
   }
 
   /**
-   * <p> Request structure for get App request. </p>
+   * Request structure for get App request.
    */
   @js.native
   trait GetAppRequest extends js.Object {
@@ -698,7 +698,7 @@ package amplify {
   }
 
   /**
-   * <p> Result structure for get branch request. </p>
+   * Result structure for get branch request.
    */
   @js.native
   trait GetBranchRequest extends js.Object {
@@ -734,7 +734,7 @@ package amplify {
   }
 
   /**
-   * <p> Request structure for the get Domain Association request. </p>
+   * Request structure for the get Domain Association request.
    */
   @js.native
   trait GetDomainAssociationRequest extends js.Object {
@@ -755,7 +755,7 @@ package amplify {
   }
 
   /**
-   * <p> Result structure for the get Domain Association request. </p>
+   * Result structure for the get Domain Association request.
    */
   @js.native
   trait GetDomainAssociationResult extends js.Object {
@@ -773,7 +773,7 @@ package amplify {
   }
 
   /**
-   * <p> Request structure for get job request. </p>
+   * Request structure for get job request.
    */
   @js.native
   trait GetJobRequest extends js.Object {
@@ -812,7 +812,7 @@ package amplify {
   }
 
   /**
-   * <p> Structure for an execution job for an Amplify App. </p>
+   * Structure for an execution job for an Amplify App.
    */
   @js.native
   trait Job extends js.Object {
@@ -845,7 +845,7 @@ package amplify {
   }
 
   /**
-   * <p> Structure for the summary of a Job. </p>
+   * Structure for the summary of a Job.
    */
   @js.native
   trait JobSummary extends js.Object {
@@ -895,7 +895,7 @@ package amplify {
   }
 
   /**
-   * <p> Request structure for an Amplify App list request. </p>
+   * Request structure for an Amplify App list request.
    */
   @js.native
   trait ListAppsRequest extends js.Object {
@@ -916,7 +916,7 @@ package amplify {
   }
 
   /**
-   * <p> Result structure for an Amplify App list request. </p>
+   * Result structure for an Amplify App list request.
    */
   @js.native
   trait ListAppsResult extends js.Object {
@@ -937,7 +937,7 @@ package amplify {
   }
 
   /**
-   * <p> Request structure for list branches request. </p>
+   * Request structure for list branches request.
    */
   @js.native
   trait ListBranchesRequest extends js.Object {
@@ -961,7 +961,7 @@ package amplify {
   }
 
   /**
-   * <p> Result structure for list branches request. </p>
+   * Result structure for list branches request.
    */
   @js.native
   trait ListBranchesResult extends js.Object {
@@ -982,7 +982,7 @@ package amplify {
   }
 
   /**
-   * <p> Request structure for the list Domain Associations request. </p>
+   * Request structure for the list Domain Associations request.
    */
   @js.native
   trait ListDomainAssociationsRequest extends js.Object {
@@ -1006,7 +1006,7 @@ package amplify {
   }
 
   /**
-   * <p> Result structure for the list Domain Association request. </p>
+   * Result structure for the list Domain Association request.
    */
   @js.native
   trait ListDomainAssociationsResult extends js.Object {
@@ -1027,7 +1027,7 @@ package amplify {
   }
 
   /**
-   * <p> Request structure for list job request. </p>
+   * Request structure for list job request.
    */
   @js.native
   trait ListJobsRequest extends js.Object {
@@ -1054,7 +1054,7 @@ package amplify {
   }
 
   /**
-   * <p> Maximum number of records to list in a single response. </p>
+   * Maximum number of records to list in a single response.
    */
   @js.native
   trait ListJobsResult extends js.Object {
@@ -1084,7 +1084,7 @@ package amplify {
   }
 
   /**
-   * <p> Structure with Production Branch information. </p>
+   * Structure with Production Branch information.
    */
   @js.native
   trait ProductionBranch extends js.Object {
@@ -1120,7 +1120,7 @@ package amplify {
   }
 
   /**
-   * <p> Request structure for Start job request. </p>
+   * Request structure for Start job request.
    */
   @js.native
   trait StartJobRequest extends js.Object {
@@ -1159,7 +1159,7 @@ package amplify {
   }
 
   /**
-   * <p> Result structure for run job request. </p>
+   * Result structure for run job request.
    */
   @js.native
   trait StartJobResult extends js.Object {
@@ -1177,7 +1177,7 @@ package amplify {
   }
 
   /**
-   * <p> Structure for an execution step for an execution job, for an Amplify App. </p>
+   * Structure for an execution step for an execution job, for an Amplify App.
    */
   @js.native
   trait Step extends js.Object {
@@ -1213,7 +1213,7 @@ package amplify {
   }
 
   /**
-   * <p> Request structure for stop job request. </p>
+   * Request structure for stop job request.
    */
   @js.native
   trait StopJobRequest extends js.Object {
@@ -1237,7 +1237,7 @@ package amplify {
   }
 
   /**
-   * <p> Result structure for the stop job request. </p>
+   * Result structure for the stop job request.
    */
   @js.native
   trait StopJobResult extends js.Object {
@@ -1255,7 +1255,7 @@ package amplify {
   }
 
   /**
-   * <p> Subdomain for the Domain Association. </p>
+   * Subdomain for the Domain Association.
    */
   @js.native
   trait SubDomain extends js.Object {
@@ -1279,7 +1279,7 @@ package amplify {
   }
 
   /**
-   * <p> Setting for the Subdomain. </p>
+   * Setting for the Subdomain.
    */
   @js.native
   trait SubDomainSetting extends js.Object {
@@ -1300,7 +1300,7 @@ package amplify {
   }
 
   /**
-   * <p> Request structure for update App request. </p>
+   * Request structure for update App request.
    */
   @js.native
   trait UpdateAppRequest extends js.Object {
@@ -1348,7 +1348,7 @@ package amplify {
   }
 
   /**
-   * <p> Result structure for an Amplify App update request. </p>
+   * Result structure for an Amplify App update request.
    */
   @js.native
   trait UpdateAppResult extends js.Object {
@@ -1366,7 +1366,7 @@ package amplify {
   }
 
   /**
-   * <p> Request structure for update branch request. </p>
+   * Request structure for update branch request.
    */
   @js.native
   trait UpdateBranchRequest extends js.Object {
@@ -1417,7 +1417,7 @@ package amplify {
   }
 
   /**
-   * <p> Result structure for update branch request. </p>
+   * Result structure for update branch request.
    */
   @js.native
   trait UpdateBranchResult extends js.Object {
@@ -1435,7 +1435,7 @@ package amplify {
   }
 
   /**
-   * <p> Request structure for update Domain Association request. </p>
+   * Request structure for update Domain Association request.
    */
   @js.native
   trait UpdateDomainAssociationRequest extends js.Object {
@@ -1462,7 +1462,7 @@ package amplify {
   }
 
   /**
-   * <p> Result structure for the update Domain Association request. </p>
+   * Result structure for the update Domain Association request.
    */
   @js.native
   trait UpdateDomainAssociationResult extends js.Object {

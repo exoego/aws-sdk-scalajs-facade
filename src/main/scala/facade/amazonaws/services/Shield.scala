@@ -121,7 +121,7 @@ package shield {
   }
 
   /**
-   * <p>The details of a DDoS attack.</p>
+   * The details of a DDoS attack.
    */
   @js.native
   trait AttackDetail extends js.Object {
@@ -167,7 +167,7 @@ package shield {
   }
 
   /**
-   * <p>Details of the described attack.</p>
+   * Details of the described attack.
    */
   @js.native
   trait AttackProperty extends js.Object {
@@ -208,7 +208,7 @@ package shield {
   }
 
   /**
-   * <p>Summarizes all DDoS attacks for a specified time period.</p>
+   * Summarizes all DDoS attacks for a specified time period.
    */
   @js.native
   trait AttackSummary extends js.Object {
@@ -238,7 +238,7 @@ package shield {
   }
 
   /**
-   * <p>Describes the attack.</p>
+   * Describes the attack.
    */
   @js.native
   trait AttackVectorDescription extends js.Object {
@@ -263,7 +263,7 @@ package shield {
   }
 
   /**
-   * <p>A contributor to the attack and their contribution.</p>
+   * A contributor to the attack and their contribution.
    */
   @js.native
   trait Contributor extends js.Object {
@@ -600,7 +600,7 @@ package shield {
   }
 
   /**
-   * <p>Contact information that the DRT can use to contact you during a suspected attack.</p>
+   * Contact information that the DRT can use to contact you during a suspected attack.
    */
   @js.native
   trait EmergencyContact extends js.Object {
@@ -646,7 +646,7 @@ package shield {
   }
 
   /**
-   * <p>Specifies how many protections of a given type you can create.</p>
+   * Specifies how many protections of a given type you can create.
    */
   @js.native
   trait Limit extends js.Object {
@@ -748,7 +748,7 @@ package shield {
   }
 
   /**
-   * <p>The mitigation applied to a DDoS attack.</p>
+   * The mitigation applied to a DDoS attack.
    */
   @js.native
   trait Mitigation extends js.Object {
@@ -766,7 +766,7 @@ package shield {
   }
 
   /**
-   * <p>An object that represents a resource that is under DDoS protection.</p>
+   * An object that represents a resource that is under DDoS protection.
    */
   @js.native
   trait Protection extends js.Object {
@@ -790,7 +790,7 @@ package shield {
   }
 
   /**
-   * <p>The attack information for the specified SubResource.</p>
+   * The attack information for the specified SubResource.
    */
   @js.native
   trait SubResourceSummary extends js.Object {
@@ -824,7 +824,7 @@ package shield {
   }
 
   /**
-   * <p>Information about the AWS Shield Advanced subscription for an account.</p>
+   * Information about the AWS Shield Advanced subscription for an account.
    */
   @js.native
   trait Subscription extends js.Object {
@@ -861,7 +861,7 @@ package shield {
   }
 
   /**
-   * <p>A summary of information about the attack.</p>
+   * A summary of information about the attack.
    */
   @js.native
   trait SummarizedAttackVector extends js.Object {
@@ -882,7 +882,7 @@ package shield {
   }
 
   /**
-   * <p>The counter that describes a DDoS attack.</p>
+   * The counter that describes a DDoS attack.
    */
   @js.native
   trait SummarizedCounter extends js.Object {
@@ -915,7 +915,7 @@ package shield {
   }
 
   /**
-   * <p>The time range.</p>
+   * The time range.
    */
   @js.native
   trait TimeRange extends js.Object {
