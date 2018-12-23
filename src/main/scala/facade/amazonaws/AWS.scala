@@ -1,6 +1,13 @@
 package facade.amazonaws
 
-object AWS {
+import scala.scalajs.js
+import scala.scalajs.js.annotation.JSImport
+
+@js.native
+@JSImport("aws-sdk", JSImport.Namespace)
+object AWS extends js.Object {
+  var config: AWSConfig = js.native
+
   def ACM(options: AWSConfig = AWSConfig()): services.acm.ACM = new services.acm.ACM(options)
   def ACMPCA(options: AWSConfig = AWSConfig()): services.acmpca.ACMPCA = new services.acmpca.ACMPCA(options)
   def AlexaForBusiness(options: AWSConfig = AWSConfig()): services.alexaforbusiness.AlexaForBusiness = new services.alexaforbusiness.AlexaForBusiness(options)
