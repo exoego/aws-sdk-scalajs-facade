@@ -8,166 +8,166 @@ import scala.scalajs.js.annotation.JSImport
 object AWS extends js.Object {
   var config: AWSConfig = js.native
 
-  def ACM(options: AWSConfig = AWSConfig()): services.acm.ACM = new services.acm.ACM(options)
-  def ACMPCA(options: AWSConfig = AWSConfig()): services.acmpca.ACMPCA = new services.acmpca.ACMPCA(options)
-  def AlexaForBusiness(options: AWSConfig = AWSConfig()): services.alexaforbusiness.AlexaForBusiness = new services.alexaforbusiness.AlexaForBusiness(options)
-  def Amplify(options: AWSConfig = AWSConfig()): services.amplify.Amplify = new services.amplify.Amplify(options)
-  def APIGateway(options: AWSConfig = AWSConfig()): services.apigateway.APIGateway = new services.apigateway.APIGateway(options)
-  def ApplicationAutoScaling(options: AWSConfig = AWSConfig()): services.applicationautoscaling.ApplicationAutoScaling = new services.applicationautoscaling.ApplicationAutoScaling(options)
-  def AppMesh(options: AWSConfig = AWSConfig()): services.appmesh.AppMesh = new services.appmesh.AppMesh(options)
-  def AppStream(options: AWSConfig = AWSConfig()): services.appstream.AppStream = new services.appstream.AppStream(options)
-  def AppSync(options: AWSConfig = AWSConfig()): services.appsync.AppSync = new services.appsync.AppSync(options)
-  def Athena(options: AWSConfig = AWSConfig()): services.athena.Athena = new services.athena.Athena(options)
-  def AutoScaling(options: AWSConfig = AWSConfig()): services.autoscaling.AutoScaling = new services.autoscaling.AutoScaling(options)
-  def MigrationHub(options: AWSConfig = AWSConfig()): services.migrationhub.MigrationHub = new services.migrationhub.MigrationHub(options)
-  def Batch(options: AWSConfig = AWSConfig()): services.batch.Batch = new services.batch.Batch(options)
-  def BudgetsService(options: AWSConfig = AWSConfig()): services.budgetsservice.BudgetsService = new services.budgetsservice.BudgetsService(options)
-  def CostExplorer(options: AWSConfig = AWSConfig()): services.costexplorer.CostExplorer = new services.costexplorer.CostExplorer(options)
-  def Chime(options: AWSConfig = AWSConfig()): services.chime.Chime = new services.chime.Chime(options)
-  def Cloud9(options: AWSConfig = AWSConfig()): services.cloud9.Cloud9 = new services.cloud9.Cloud9(options)
-  def CloudDirectory(options: AWSConfig = AWSConfig()): services.clouddirectory.CloudDirectory = new services.clouddirectory.CloudDirectory(options)
-  def CloudFormation(options: AWSConfig = AWSConfig()): services.cloudformation.CloudFormation = new services.cloudformation.CloudFormation(options)
-  def CloudFront(options: AWSConfig = AWSConfig()): services.cloudfront.CloudFront = new services.cloudfront.CloudFront(options)
-  def CloudHSM(options: AWSConfig = AWSConfig()): services.cloudhsm.CloudHSM = new services.cloudhsm.CloudHSM(options)
-  def CloudHSMV2(options: AWSConfig = AWSConfig()): services.cloudhsmv2.CloudHSMV2 = new services.cloudhsmv2.CloudHSMV2(options)
-  def CloudSearch(options: AWSConfig = AWSConfig()): services.cloudsearch.CloudSearch = new services.cloudsearch.CloudSearch(options)
-  def CloudSearchDomain(options: AWSConfig = AWSConfig()): services.cloudsearchdomain.CloudSearchDomain = new services.cloudsearchdomain.CloudSearchDomain(options)
-  def CloudTrail(options: AWSConfig = AWSConfig()): services.cloudtrail.CloudTrail = new services.cloudtrail.CloudTrail(options)
-  def CodeDeploy(options: AWSConfig = AWSConfig()): services.codedeploy.CodeDeploy = new services.codedeploy.CodeDeploy(options)
-  def CodeCommit(options: AWSConfig = AWSConfig()): services.codecommit.CodeCommit = new services.codecommit.CodeCommit(options)
-  def CodeStar(options: AWSConfig = AWSConfig()): services.codestar.CodeStar = new services.codestar.CodeStar(options)
-  def CognitoIdentityProvider(options: AWSConfig = AWSConfig()): services.cognitoidentityprovider.CognitoIdentityProvider = new services.cognitoidentityprovider.CognitoIdentityProvider(options)
-  def CognitoIdentity(options: AWSConfig = AWSConfig()): services.cognitoidentity.CognitoIdentity = new services.cognitoidentity.CognitoIdentity(options)
-  def CognitoSync(options: AWSConfig = AWSConfig()): services.cognitosync.CognitoSync = new services.cognitosync.CognitoSync(options)
-  def Comprehend(options: AWSConfig = AWSConfig()): services.comprehend.Comprehend = new services.comprehend.Comprehend(options)
-  def ComprehendMedical(options: AWSConfig = AWSConfig()): services.comprehendmedical.ComprehendMedical = new services.comprehendmedical.ComprehendMedical(options)
-  def ConfigService(options: AWSConfig = AWSConfig()): services.configservice.ConfigService = new services.configservice.ConfigService(options)
-  def Connect(options: AWSConfig = AWSConfig()): services.connect.Connect = new services.connect.Connect(options)
-  def CUR(options: AWSConfig = AWSConfig()): services.cur.CUR = new services.cur.CUR(options)
-  def DataPipeline(options: AWSConfig = AWSConfig()): services.datapipeline.DataPipeline = new services.datapipeline.DataPipeline(options)
-  def DataSync(options: AWSConfig = AWSConfig()): services.datasync.DataSync = new services.datasync.DataSync(options)
-  def DAX(options: AWSConfig = AWSConfig()): services.dax.DAX = new services.dax.DAX(options)
-  def DeviceFarm(options: AWSConfig = AWSConfig()): services.devicefarm.DeviceFarm = new services.devicefarm.DeviceFarm(options)
-  def DirectConnect(options: AWSConfig = AWSConfig()): services.directconnect.DirectConnect = new services.directconnect.DirectConnect(options)
-  def ApplicationDiscovery(options: AWSConfig = AWSConfig()): services.applicationdiscovery.ApplicationDiscovery = new services.applicationdiscovery.ApplicationDiscovery(options)
-  def DLM(options: AWSConfig = AWSConfig()): services.dlm.DLM = new services.dlm.DLM(options)
-  def DMS(options: AWSConfig = AWSConfig()): services.dms.DMS = new services.dms.DMS(options)
-  def DirectoryService(options: AWSConfig = AWSConfig()): services.directoryservice.DirectoryService = new services.directoryservice.DirectoryService(options)
-  def DynamoDB(options: AWSConfig = AWSConfig()): services.dynamodb.DynamoDB = new services.dynamodb.DynamoDB(options)
-  def EC2(options: AWSConfig = AWSConfig()): services.ec2.EC2 = new services.ec2.EC2(options)
-  def ECR(options: AWSConfig = AWSConfig()): services.ecr.ECR = new services.ecr.ECR(options)
-  def ECS(options: AWSConfig = AWSConfig()): services.ecs.ECS = new services.ecs.ECS(options)
-  def EKS(options: AWSConfig = AWSConfig()): services.eks.EKS = new services.eks.EKS(options)
-  def ElastiCache(options: AWSConfig = AWSConfig()): services.elasticache.ElastiCache = new services.elasticache.ElastiCache(options)
-  def ElasticBeanstalk(options: AWSConfig = AWSConfig()): services.elasticbeanstalk.ElasticBeanstalk = new services.elasticbeanstalk.ElasticBeanstalk(options)
-  def EFS(options: AWSConfig = AWSConfig()): services.efs.EFS = new services.efs.EFS(options)
-  def ELB(options: AWSConfig = AWSConfig()): services.elb.ELB = new services.elb.ELB(options)
-  def ELBv2(options: AWSConfig = AWSConfig()): services.elbv2.ELBv2 = new services.elbv2.ELBv2(options)
-  def EMR(options: AWSConfig = AWSConfig()): services.emr.EMR = new services.emr.EMR(options)
-  def ElasticTranscoder(options: AWSConfig = AWSConfig()): services.elastictranscoder.ElasticTranscoder = new services.elastictranscoder.ElasticTranscoder(options)
-  def SES(options: AWSConfig = AWSConfig()): services.ses.SES = new services.ses.SES(options)
-  def MarketplaceEntitlementService(options: AWSConfig = AWSConfig()): services.marketplaceentitlementservice.MarketplaceEntitlementService = new services.marketplaceentitlementservice.MarketplaceEntitlementService(options)
-  def ES(options: AWSConfig = AWSConfig()): services.es.ES = new services.es.ES(options)
-  def CloudWatchEvents(options: AWSConfig = AWSConfig()): services.cloudwatchevents.CloudWatchEvents = new services.cloudwatchevents.CloudWatchEvents(options)
-  def Firehose(options: AWSConfig = AWSConfig()): services.firehose.Firehose = new services.firehose.Firehose(options)
-  def FMS(options: AWSConfig = AWSConfig()): services.fms.FMS = new services.fms.FMS(options)
-  def FSx(options: AWSConfig = AWSConfig()): services.fsx.FSx = new services.fsx.FSx(options)
-  def GameLift(options: AWSConfig = AWSConfig()): services.gamelift.GameLift = new services.gamelift.GameLift(options)
-  def Glacier(options: AWSConfig = AWSConfig()): services.glacier.Glacier = new services.glacier.Glacier(options)
-  def GlobalAccelerator(options: AWSConfig = AWSConfig()): services.globalaccelerator.GlobalAccelerator = new services.globalaccelerator.GlobalAccelerator(options)
-  def Glue(options: AWSConfig = AWSConfig()): services.glue.Glue = new services.glue.Glue(options)
-  def Greengrass(options: AWSConfig = AWSConfig()): services.greengrass.Greengrass = new services.greengrass.Greengrass(options)
-  def GuardDuty(options: AWSConfig = AWSConfig()): services.guardduty.GuardDuty = new services.guardduty.GuardDuty(options)
-  def Health(options: AWSConfig = AWSConfig()): services.health.Health = new services.health.Health(options)
-  def IAM(options: AWSConfig = AWSConfig()): services.iam.IAM = new services.iam.IAM(options)
-  def ImportExport(options: AWSConfig = AWSConfig()): services.importexport.ImportExport = new services.importexport.ImportExport(options)
-  def Inspector(options: AWSConfig = AWSConfig()): services.inspector.Inspector = new services.inspector.Inspector(options)
-  def IoT1ClickDevicesService(options: AWSConfig = AWSConfig()): services.iot1clickdevicesservice.IoT1ClickDevicesService = new services.iot1clickdevicesservice.IoT1ClickDevicesService(options)
-  def IoT1ClickProjects(options: AWSConfig = AWSConfig()): services.iot1clickprojects.IoT1ClickProjects = new services.iot1clickprojects.IoT1ClickProjects(options)
-  def Iot(options: AWSConfig = AWSConfig()): services.iot.Iot = new services.iot.Iot(options)
-  def IoTJobsDataPlane(options: AWSConfig = AWSConfig()): services.iotjobsdataplane.IoTJobsDataPlane = new services.iotjobsdataplane.IoTJobsDataPlane(options)
-  def IoTAnalytics(options: AWSConfig = AWSConfig()): services.iotanalytics.IoTAnalytics = new services.iotanalytics.IoTAnalytics(options)
-  def Kafka(options: AWSConfig = AWSConfig()): services.kafka.Kafka = new services.kafka.Kafka(options)
-  def Kinesis(options: AWSConfig = AWSConfig()): services.kinesis.Kinesis = new services.kinesis.Kinesis(options)
-  def KinesisVideoArchivedMedia(options: AWSConfig = AWSConfig()): services.kinesisvideoarchivedmedia.KinesisVideoArchivedMedia = new services.kinesisvideoarchivedmedia.KinesisVideoArchivedMedia(options)
-  def KinesisVideoMedia(options: AWSConfig = AWSConfig()): services.kinesisvideomedia.KinesisVideoMedia = new services.kinesisvideomedia.KinesisVideoMedia(options)
-  def KinesisAnalytics(options: AWSConfig = AWSConfig()): services.kinesisanalytics.KinesisAnalytics = new services.kinesisanalytics.KinesisAnalytics(options)
-  def KinesisAnalyticsV2(options: AWSConfig = AWSConfig()): services.kinesisanalyticsv2.KinesisAnalyticsV2 = new services.kinesisanalyticsv2.KinesisAnalyticsV2(options)
-  def KinesisVideo(options: AWSConfig = AWSConfig()): services.kinesisvideo.KinesisVideo = new services.kinesisvideo.KinesisVideo(options)
-  def KMS(options: AWSConfig = AWSConfig()): services.kms.KMS = new services.kms.KMS(options)
-  def Lambda(options: AWSConfig = AWSConfig()): services.lambda.Lambda = new services.lambda.Lambda(options)
-  def LexModelBuildingService(options: AWSConfig = AWSConfig()): services.lexmodelbuildingservice.LexModelBuildingService = new services.lexmodelbuildingservice.LexModelBuildingService(options)
-  def Lightsail(options: AWSConfig = AWSConfig()): services.lightsail.Lightsail = new services.lightsail.Lightsail(options)
-  def LicenseManager(options: AWSConfig = AWSConfig()): services.licensemanager.LicenseManager = new services.licensemanager.LicenseManager(options)
-  def CloudWatchLogs(options: AWSConfig = AWSConfig()): services.cloudwatchlogs.CloudWatchLogs = new services.cloudwatchlogs.CloudWatchLogs(options)
-  def MachineLearning(options: AWSConfig = AWSConfig()): services.machinelearning.MachineLearning = new services.machinelearning.MachineLearning(options)
-  def Macie(options: AWSConfig = AWSConfig()): services.macie.Macie = new services.macie.Macie(options)
-  def MarketplaceCommerceAnalytics(options: AWSConfig = AWSConfig()): services.marketplacecommerceanalytics.MarketplaceCommerceAnalytics = new services.marketplacecommerceanalytics.MarketplaceCommerceAnalytics(options)
-  def MediaConnect(options: AWSConfig = AWSConfig()): services.mediaconnect.MediaConnect = new services.mediaconnect.MediaConnect(options)
-  def MediaConvert(options: AWSConfig = AWSConfig()): services.mediaconvert.MediaConvert = new services.mediaconvert.MediaConvert(options)
-  def MediaLive(options: AWSConfig = AWSConfig()): services.medialive.MediaLive = new services.medialive.MediaLive(options)
-  def MediaPackage(options: AWSConfig = AWSConfig()): services.mediapackage.MediaPackage = new services.mediapackage.MediaPackage(options)
-  def MediaStore(options: AWSConfig = AWSConfig()): services.mediastore.MediaStore = new services.mediastore.MediaStore(options)
-  def MediaStoreData(options: AWSConfig = AWSConfig()): services.mediastoredata.MediaStoreData = new services.mediastoredata.MediaStoreData(options)
-  def MediaTailor(options: AWSConfig = AWSConfig()): services.mediatailor.MediaTailor = new services.mediatailor.MediaTailor(options)
-  def MarketplaceMetering(options: AWSConfig = AWSConfig()): services.marketplacemetering.MarketplaceMetering = new services.marketplacemetering.MarketplaceMetering(options)
-  def Mobile(options: AWSConfig = AWSConfig()): services.mobile.Mobile = new services.mobile.Mobile(options)
-  def MobileAnalytics(options: AWSConfig = AWSConfig()): services.mobileanalytics.MobileAnalytics = new services.mobileanalytics.MobileAnalytics(options)
-  def CloudWatch(options: AWSConfig = AWSConfig()): services.cloudwatch.CloudWatch = new services.cloudwatch.CloudWatch(options)
-  def MQ(options: AWSConfig = AWSConfig()): services.mq.MQ = new services.mq.MQ(options)
-  def MTurk(options: AWSConfig = AWSConfig()): services.mturk.MTurk = new services.mturk.MTurk(options)
-  def Neptune(options: AWSConfig = AWSConfig()): services.neptune.Neptune = new services.neptune.Neptune(options)
-  def OpsWorks(options: AWSConfig = AWSConfig()): services.opsworks.OpsWorks = new services.opsworks.OpsWorks(options)
-  def OpsWorksCM(options: AWSConfig = AWSConfig()): services.opsworkscm.OpsWorksCM = new services.opsworkscm.OpsWorksCM(options)
-  def Organizations(options: AWSConfig = AWSConfig()): services.organizations.Organizations = new services.organizations.Organizations(options)
-  def PI(options: AWSConfig = AWSConfig()): services.pi.PI = new services.pi.PI(options)
-  def Pinpoint(options: AWSConfig = AWSConfig()): services.pinpoint.Pinpoint = new services.pinpoint.Pinpoint(options)
-  def PinpointEmail(options: AWSConfig = AWSConfig()): services.pinpointemail.PinpointEmail = new services.pinpointemail.PinpointEmail(options)
-  def Polly(options: AWSConfig = AWSConfig()): services.polly.Polly = new services.polly.Polly(options)
-  def Pricing(options: AWSConfig = AWSConfig()): services.pricing.Pricing = new services.pricing.Pricing(options)
-  def RAM(options: AWSConfig = AWSConfig()): services.ram.RAM = new services.ram.RAM(options)
-  def RDS(options: AWSConfig = AWSConfig()): services.rds.RDS = new services.rds.RDS(options)
-  def RDSDataService(options: AWSConfig = AWSConfig()): services.rdsdataservice.RDSDataService = new services.rdsdataservice.RDSDataService(options)
-  def Redshift(options: AWSConfig = AWSConfig()): services.redshift.Redshift = new services.redshift.Redshift(options)
-  def Rekognition(options: AWSConfig = AWSConfig()): services.rekognition.Rekognition = new services.rekognition.Rekognition(options)
-  def ResourceGroups(options: AWSConfig = AWSConfig()): services.resourcegroups.ResourceGroups = new services.resourcegroups.ResourceGroups(options)
-  def ResourceGroupsTaggingAPI(options: AWSConfig = AWSConfig()): services.resourcegroupstaggingapi.ResourceGroupsTaggingAPI = new services.resourcegroupstaggingapi.ResourceGroupsTaggingAPI(options)
-  def RoboMaker(options: AWSConfig = AWSConfig()): services.robomaker.RoboMaker = new services.robomaker.RoboMaker(options)
-  def Route53(options: AWSConfig = AWSConfig()): services.route53.Route53 = new services.route53.Route53(options)
-  def Route53Domains(options: AWSConfig = AWSConfig()): services.route53domains.Route53Domains = new services.route53domains.Route53Domains(options)
-  def Route53Resolver(options: AWSConfig = AWSConfig()): services.route53resolver.Route53Resolver = new services.route53resolver.Route53Resolver(options)
-  def LexRuntime(options: AWSConfig = AWSConfig()): services.lexruntime.LexRuntime = new services.lexruntime.LexRuntime(options)
-  def SageMakerRuntime(options: AWSConfig = AWSConfig()): services.sagemakerruntime.SageMakerRuntime = new services.sagemakerruntime.SageMakerRuntime(options)
-  def S3(options: AWSConfig = AWSConfig()): services.s3.S3 = new services.s3.S3(options)
-  def S3Control(options: AWSConfig = AWSConfig()): services.s3control.S3Control = new services.s3control.S3Control(options)
-  def SageMaker(options: AWSConfig = AWSConfig()): services.sagemaker.SageMaker = new services.sagemaker.SageMaker(options)
-  def SimpleDB(options: AWSConfig = AWSConfig()): services.simpledb.SimpleDB = new services.simpledb.SimpleDB(options)
-  def SecretsManager(options: AWSConfig = AWSConfig()): services.secretsmanager.SecretsManager = new services.secretsmanager.SecretsManager(options)
-  def SecurityHub(options: AWSConfig = AWSConfig()): services.securityhub.SecurityHub = new services.securityhub.SecurityHub(options)
-  def ServerlessApplicationRepository(options: AWSConfig = AWSConfig()): services.serverlessapplicationrepository.ServerlessApplicationRepository = new services.serverlessapplicationrepository.ServerlessApplicationRepository(options)
-  def ServiceCatalog(options: AWSConfig = AWSConfig()): services.servicecatalog.ServiceCatalog = new services.servicecatalog.ServiceCatalog(options)
-  def ServiceDiscovery(options: AWSConfig = AWSConfig()): services.servicediscovery.ServiceDiscovery = new services.servicediscovery.ServiceDiscovery(options)
-  def Shield(options: AWSConfig = AWSConfig()): services.shield.Shield = new services.shield.Shield(options)
-  def Signer(options: AWSConfig = AWSConfig()): services.signer.Signer = new services.signer.Signer(options)
-  def SMS(options: AWSConfig = AWSConfig()): services.sms.SMS = new services.sms.SMS(options)
-  def PinpointSMSVoice(options: AWSConfig = AWSConfig()): services.pinpointsmsvoice.PinpointSMSVoice = new services.pinpointsmsvoice.PinpointSMSVoice(options)
-  def Snowball(options: AWSConfig = AWSConfig()): services.snowball.Snowball = new services.snowball.Snowball(options)
-  def SNS(options: AWSConfig = AWSConfig()): services.sns.SNS = new services.sns.SNS(options)
-  def SQS(options: AWSConfig = AWSConfig()): services.sqs.SQS = new services.sqs.SQS(options)
-  def SSM(options: AWSConfig = AWSConfig()): services.ssm.SSM = new services.ssm.SSM(options)
-  def StepFunctions(options: AWSConfig = AWSConfig()): services.stepfunctions.StepFunctions = new services.stepfunctions.StepFunctions(options)
-  def StorageGateway(options: AWSConfig = AWSConfig()): services.storagegateway.StorageGateway = new services.storagegateway.StorageGateway(options)
-  def DynamoDBStreams(options: AWSConfig = AWSConfig()): services.dynamodbstreams.DynamoDBStreams = new services.dynamodbstreams.DynamoDBStreams(options)
-  def STS(options: AWSConfig = AWSConfig()): services.sts.STS = new services.sts.STS(options)
-  def Support(options: AWSConfig = AWSConfig()): services.support.Support = new services.support.Support(options)
-  def SWF(options: AWSConfig = AWSConfig()): services.swf.SWF = new services.swf.SWF(options)
-  def TranscribeService(options: AWSConfig = AWSConfig()): services.transcribeservice.TranscribeService = new services.transcribeservice.TranscribeService(options)
-  def Transfer(options: AWSConfig = AWSConfig()): services.transfer.Transfer = new services.transfer.Transfer(options)
-  def Translate(options: AWSConfig = AWSConfig()): services.translate.Translate = new services.translate.Translate(options)
-  def WAF(options: AWSConfig = AWSConfig()): services.waf.WAF = new services.waf.WAF(options)
-  def WAFRegional(options: AWSConfig = AWSConfig()): services.wafregional.WAFRegional = new services.wafregional.WAFRegional(options)
-  def WorkDocs(options: AWSConfig = AWSConfig()): services.workdocs.WorkDocs = new services.workdocs.WorkDocs(options)
-  def WorkMail(options: AWSConfig = AWSConfig()): services.workmail.WorkMail = new services.workmail.WorkMail(options)
-  def WorkSpaces(options: AWSConfig = AWSConfig()): services.workspaces.WorkSpaces = new services.workspaces.WorkSpaces(options)
-  def XRay(options: AWSConfig = AWSConfig()): services.xray.XRay = new services.xray.XRay(options)
+  type ACM = services.acm.ACM
+  type ACMPCA = services.acmpca.ACMPCA
+  type AlexaForBusiness = services.alexaforbusiness.AlexaForBusiness
+  type Amplify = services.amplify.Amplify
+  type APIGateway = services.apigateway.APIGateway
+  type ApplicationAutoScaling = services.applicationautoscaling.ApplicationAutoScaling
+  type AppMesh = services.appmesh.AppMesh
+  type AppStream = services.appstream.AppStream
+  type AppSync = services.appsync.AppSync
+  type Athena = services.athena.Athena
+  type AutoScaling = services.autoscaling.AutoScaling
+  type MigrationHub = services.migrationhub.MigrationHub
+  type Batch = services.batch.Batch
+  type BudgetsService = services.budgetsservice.BudgetsService
+  type CostExplorer = services.costexplorer.CostExplorer
+  type Chime = services.chime.Chime
+  type Cloud9 = services.cloud9.Cloud9
+  type CloudDirectory = services.clouddirectory.CloudDirectory
+  type CloudFormation = services.cloudformation.CloudFormation
+  type CloudFront = services.cloudfront.CloudFront
+  type CloudHSM = services.cloudhsm.CloudHSM
+  type CloudHSMV2 = services.cloudhsmv2.CloudHSMV2
+  type CloudSearch = services.cloudsearch.CloudSearch
+  type CloudSearchDomain = services.cloudsearchdomain.CloudSearchDomain
+  type CloudTrail = services.cloudtrail.CloudTrail
+  type CodeDeploy = services.codedeploy.CodeDeploy
+  type CodeCommit = services.codecommit.CodeCommit
+  type CodeStar = services.codestar.CodeStar
+  type CognitoIdentityProvider = services.cognitoidentityprovider.CognitoIdentityProvider
+  type CognitoIdentity = services.cognitoidentity.CognitoIdentity
+  type CognitoSync = services.cognitosync.CognitoSync
+  type Comprehend = services.comprehend.Comprehend
+  type ComprehendMedical = services.comprehendmedical.ComprehendMedical
+  type ConfigService = services.configservice.ConfigService
+  type Connect = services.connect.Connect
+  type CUR = services.cur.CUR
+  type DataPipeline = services.datapipeline.DataPipeline
+  type DataSync = services.datasync.DataSync
+  type DAX = services.dax.DAX
+  type DeviceFarm = services.devicefarm.DeviceFarm
+  type DirectConnect = services.directconnect.DirectConnect
+  type ApplicationDiscovery = services.applicationdiscovery.ApplicationDiscovery
+  type DLM = services.dlm.DLM
+  type DMS = services.dms.DMS
+  type DirectoryService = services.directoryservice.DirectoryService
+  type DynamoDB = services.dynamodb.DynamoDB
+  type EC2 = services.ec2.EC2
+  type ECR = services.ecr.ECR
+  type ECS = services.ecs.ECS
+  type EKS = services.eks.EKS
+  type ElastiCache = services.elasticache.ElastiCache
+  type ElasticBeanstalk = services.elasticbeanstalk.ElasticBeanstalk
+  type EFS = services.efs.EFS
+  type ELB = services.elb.ELB
+  type ELBv2 = services.elbv2.ELBv2
+  type EMR = services.emr.EMR
+  type ElasticTranscoder = services.elastictranscoder.ElasticTranscoder
+  type SES = services.ses.SES
+  type MarketplaceEntitlementService = services.marketplaceentitlementservice.MarketplaceEntitlementService
+  type ES = services.es.ES
+  type CloudWatchEvents = services.cloudwatchevents.CloudWatchEvents
+  type Firehose = services.firehose.Firehose
+  type FMS = services.fms.FMS
+  type FSx = services.fsx.FSx
+  type GameLift = services.gamelift.GameLift
+  type Glacier = services.glacier.Glacier
+  type GlobalAccelerator = services.globalaccelerator.GlobalAccelerator
+  type Glue = services.glue.Glue
+  type Greengrass = services.greengrass.Greengrass
+  type GuardDuty = services.guardduty.GuardDuty
+  type Health = services.health.Health
+  type IAM = services.iam.IAM
+  type ImportExport = services.importexport.ImportExport
+  type Inspector = services.inspector.Inspector
+  type IoT1ClickDevicesService = services.iot1clickdevicesservice.IoT1ClickDevicesService
+  type IoT1ClickProjects = services.iot1clickprojects.IoT1ClickProjects
+  type Iot = services.iot.Iot
+  type IoTJobsDataPlane = services.iotjobsdataplane.IoTJobsDataPlane
+  type IoTAnalytics = services.iotanalytics.IoTAnalytics
+  type Kafka = services.kafka.Kafka
+  type Kinesis = services.kinesis.Kinesis
+  type KinesisVideoArchivedMedia = services.kinesisvideoarchivedmedia.KinesisVideoArchivedMedia
+  type KinesisVideoMedia = services.kinesisvideomedia.KinesisVideoMedia
+  type KinesisAnalytics = services.kinesisanalytics.KinesisAnalytics
+  type KinesisAnalyticsV2 = services.kinesisanalyticsv2.KinesisAnalyticsV2
+  type KinesisVideo = services.kinesisvideo.KinesisVideo
+  type KMS = services.kms.KMS
+  type Lambda = services.lambda.Lambda
+  type LexModelBuildingService = services.lexmodelbuildingservice.LexModelBuildingService
+  type Lightsail = services.lightsail.Lightsail
+  type LicenseManager = services.licensemanager.LicenseManager
+  type CloudWatchLogs = services.cloudwatchlogs.CloudWatchLogs
+  type MachineLearning = services.machinelearning.MachineLearning
+  type Macie = services.macie.Macie
+  type MarketplaceCommerceAnalytics = services.marketplacecommerceanalytics.MarketplaceCommerceAnalytics
+  type MediaConnect = services.mediaconnect.MediaConnect
+  type MediaConvert = services.mediaconvert.MediaConvert
+  type MediaLive = services.medialive.MediaLive
+  type MediaPackage = services.mediapackage.MediaPackage
+  type MediaStore = services.mediastore.MediaStore
+  type MediaStoreData = services.mediastoredata.MediaStoreData
+  type MediaTailor = services.mediatailor.MediaTailor
+  type MarketplaceMetering = services.marketplacemetering.MarketplaceMetering
+  type Mobile = services.mobile.Mobile
+  type MobileAnalytics = services.mobileanalytics.MobileAnalytics
+  type CloudWatch = services.cloudwatch.CloudWatch
+  type MQ = services.mq.MQ
+  type MTurk = services.mturk.MTurk
+  type Neptune = services.neptune.Neptune
+  type OpsWorks = services.opsworks.OpsWorks
+  type OpsWorksCM = services.opsworkscm.OpsWorksCM
+  type Organizations = services.organizations.Organizations
+  type PI = services.pi.PI
+  type Pinpoint = services.pinpoint.Pinpoint
+  type PinpointEmail = services.pinpointemail.PinpointEmail
+  type Polly = services.polly.Polly
+  type Pricing = services.pricing.Pricing
+  type RAM = services.ram.RAM
+  type RDS = services.rds.RDS
+  type RDSDataService = services.rdsdataservice.RDSDataService
+  type Redshift = services.redshift.Redshift
+  type Rekognition = services.rekognition.Rekognition
+  type ResourceGroups = services.resourcegroups.ResourceGroups
+  type ResourceGroupsTaggingAPI = services.resourcegroupstaggingapi.ResourceGroupsTaggingAPI
+  type RoboMaker = services.robomaker.RoboMaker
+  type Route53 = services.route53.Route53
+  type Route53Domains = services.route53domains.Route53Domains
+  type Route53Resolver = services.route53resolver.Route53Resolver
+  type LexRuntime = services.lexruntime.LexRuntime
+  type SageMakerRuntime = services.sagemakerruntime.SageMakerRuntime
+  type S3 = services.s3.S3
+  type S3Control = services.s3control.S3Control
+  type SageMaker = services.sagemaker.SageMaker
+  type SimpleDB = services.simpledb.SimpleDB
+  type SecretsManager = services.secretsmanager.SecretsManager
+  type SecurityHub = services.securityhub.SecurityHub
+  type ServerlessApplicationRepository = services.serverlessapplicationrepository.ServerlessApplicationRepository
+  type ServiceCatalog = services.servicecatalog.ServiceCatalog
+  type ServiceDiscovery = services.servicediscovery.ServiceDiscovery
+  type Shield = services.shield.Shield
+  type Signer = services.signer.Signer
+  type SMS = services.sms.SMS
+  type PinpointSMSVoice = services.pinpointsmsvoice.PinpointSMSVoice
+  type Snowball = services.snowball.Snowball
+  type SNS = services.sns.SNS
+  type SQS = services.sqs.SQS
+  type SSM = services.ssm.SSM
+  type StepFunctions = services.stepfunctions.StepFunctions
+  type StorageGateway = services.storagegateway.StorageGateway
+  type DynamoDBStreams = services.dynamodbstreams.DynamoDBStreams
+  type STS = services.sts.STS
+  type Support = services.support.Support
+  type SWF = services.swf.SWF
+  type TranscribeService = services.transcribeservice.TranscribeService
+  type Transfer = services.transfer.Transfer
+  type Translate = services.translate.Translate
+  type WAF = services.waf.WAF
+  type WAFRegional = services.wafregional.WAFRegional
+  type WorkDocs = services.workdocs.WorkDocs
+  type WorkMail = services.workmail.WorkMail
+  type WorkSpaces = services.workspaces.WorkSpaces
+  type XRay = services.xray.XRay
 }
