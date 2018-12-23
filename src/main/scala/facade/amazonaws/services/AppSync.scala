@@ -72,7 +72,20 @@ package appsync {
   }
 
   /**
-   * <p>Describes an API key.</p> <p>Customers invoke AWS AppSync GraphQL API operations with API keys as an identity mechanism. There are two key versions:</p> <p> <b>da1</b>: This version was introduced at launch in November 2017. These keys always expire after 7 days. Key expiration is managed by Amazon DynamoDB TTL. The keys ceased to be valid after February 21, 2018 and should not be used after that date.</p> <ul> <li> <p> <code>ListApiKeys</code> returns the expiration time in milliseconds.</p> </li> <li> <p> <code>CreateApiKey</code> returns the expiration time in milliseconds.</p> </li> <li> <p> <code>UpdateApiKey</code> is not available for this key version.</p> </li> <li> <p> <code>DeleteApiKey</code> deletes the item from the table.</p> </li> <li> <p>Expiration is stored in Amazon DynamoDB as milliseconds. This results in a bug where keys are not automatically deleted because DynamoDB expects the TTL to be stored in seconds. As a one-time action, we will delete these keys from the table after February 21, 2018.</p> </li> </ul> <p> <b>da2</b>: This version was introduced in February 2018 when AppSync added support to extend key expiration.</p> <ul> <li> <p> <code>ListApiKeys</code> returns the expiration time in seconds.</p> </li> <li> <p> <code>CreateApiKey</code> returns the expiration time in seconds and accepts a user-provided expiration time in seconds.</p> </li> <li> <p> <code>UpdateApiKey</code> returns the expiration time in seconds and accepts a user-provided expiration time in seconds. Key expiration can only be updated while the key has not expired.</p> </li> <li> <p> <code>DeleteApiKey</code> deletes the item from the table.</p> </li> <li> <p>Expiration is stored in Amazon DynamoDB as seconds.</p> </li> </ul>
+   * Describes an API key.
+   *  Customers invoke AWS AppSync GraphQL API operations with API keys as an identity mechanism. There are two key versions:
+   *  <b>da1</b>: This version was introduced at launch in November 2017. These keys always expire after 7 days. Key expiration is managed by Amazon DynamoDB TTL. The keys ceased to be valid after February 21, 2018 and should not be used after that date.
+   * * <code>ListApiKeys</code> returns the expiration time in milliseconds.
+   *  * <code>CreateApiKey</code> returns the expiration time in milliseconds.
+   *  * <code>UpdateApiKey</code> is not available for this key version.
+   *  * <code>DeleteApiKey</code> deletes the item from the table.
+   *  * Expiration is stored in Amazon DynamoDB as milliseconds. This results in a bug where keys are not automatically deleted because DynamoDB expects the TTL to be stored in seconds. As a one-time action, we will delete these keys from the table after February 21, 2018.
+   * <b>da2</b>: This version was introduced in February 2018 when AppSync added support to extend key expiration.
+   * * <code>ListApiKeys</code> returns the expiration time in seconds.
+   *  * <code>CreateApiKey</code> returns the expiration time in seconds and accepts a user-provided expiration time in seconds.
+   *  * <code>UpdateApiKey</code> returns the expiration time in seconds and accepts a user-provided expiration time in seconds. Key expiration can only be updated while the key has not expired.
+   *  * <code>DeleteApiKey</code> deletes the item from the table.
+   *  * Expiration is stored in Amazon DynamoDB as seconds.
    */
   @js.native
   trait ApiKey extends js.Object {
@@ -105,7 +118,7 @@ package appsync {
   }
 
   /**
-   * <p>The authorization config in case the HTTP endpoint requires authorization.</p>
+   * The authorization config in case the HTTP endpoint requires authorization.
    */
   @js.native
   trait AuthorizationConfig extends js.Object {
@@ -132,7 +145,7 @@ package appsync {
   }
 
   /**
-   * <p>The AWS IAM configuration.</p>
+   * The AWS IAM configuration.
    */
   @js.native
   trait AwsIamConfig extends js.Object {
@@ -423,7 +436,7 @@ package appsync {
   }
 
   /**
-   * <p>Describes a data source.</p>
+   * Describes a data source.
    */
   @js.native
   trait DataSource extends js.Object {
@@ -672,7 +685,7 @@ package appsync {
   }
 
   /**
-   * <p>Describes an Amazon DynamoDB data source configuration.</p>
+   * Describes an Amazon DynamoDB data source configuration.
    */
   @js.native
   trait DynamodbDataSourceConfig extends js.Object {
@@ -696,7 +709,7 @@ package appsync {
   }
 
   /**
-   * <p>Describes an Elasticsearch data source configuration.</p>
+   * Describes an Elasticsearch data source configuration.
    */
   @js.native
   trait ElasticsearchDataSourceConfig extends js.Object {
@@ -725,7 +738,7 @@ package appsync {
   }
 
   /**
-   * <p>A function is a reusable entity. Multiple functions can be used to compose the resolver logic.</p>
+   * A function is a reusable entity. Multiple functions can be used to compose the resolver logic.
    */
   @js.native
   trait FunctionConfiguration extends js.Object {
@@ -998,7 +1011,7 @@ package appsync {
   }
 
   /**
-   * <p>Describes a GraphQL API.</p>
+   * Describes a GraphQL API.
    */
   @js.native
   trait GraphqlApi extends js.Object {
@@ -1037,7 +1050,7 @@ package appsync {
   }
 
   /**
-   * <p>Describes an HTTP data source configuration.</p>
+   * Describes an HTTP data source configuration.
    */
   @js.native
   trait HttpDataSourceConfig extends js.Object {
@@ -1058,7 +1071,7 @@ package appsync {
   }
 
   /**
-   * <p>Describes an AWS Lambda data source configuration.</p>
+   * Describes an AWS Lambda data source configuration.
    */
   @js.native
   trait LambdaDataSourceConfig extends js.Object {
@@ -1355,7 +1368,7 @@ package appsync {
   }
 
   /**
-   * <p>The CloudWatch Logs configuration.</p>
+   * The CloudWatch Logs configuration.
    */
   @js.native
   trait LogConfig extends js.Object {
@@ -1376,7 +1389,7 @@ package appsync {
   }
 
   /**
-   * <p>Describes an OpenID Connect configuration.</p>
+   * Describes an OpenID Connect configuration.
    */
   @js.native
   trait OpenIDConnectConfig extends js.Object {
@@ -1410,7 +1423,7 @@ package appsync {
   }
 
   /**
-   * <p>The pipeline configuration for a resolver of kind <code>PIPELINE</code>.</p>
+   * The pipeline configuration for a resolver of kind <code>PIPELINE</code>.
    */
   @js.native
   trait PipelineConfig extends js.Object {
@@ -1428,7 +1441,7 @@ package appsync {
   }
 
   /**
-   * <p>The Amazon RDS HTTP endpoint configuration.</p>
+   * The Amazon RDS HTTP endpoint configuration.
    */
   @js.native
   trait RdsHttpEndpointConfig extends js.Object {
@@ -1458,7 +1471,7 @@ package appsync {
   }
 
   /**
-   * <p>Describes a relational database data source configuration.</p>
+   * Describes a relational database data source configuration.
    */
   @js.native
   trait RelationalDatabaseDataSourceConfig extends js.Object {
@@ -1485,7 +1498,7 @@ package appsync {
   }
 
   /**
-   * <p>Describes a resolver.</p>
+   * Describes a resolver.
    */
   @js.native
   trait Resolver extends js.Object {
@@ -1572,7 +1585,7 @@ package appsync {
   }
 
   /**
-   * <p>Describes a type.</p>
+   * Describes a type.
    */
   @js.native
   trait Type extends js.Object {
@@ -1891,7 +1904,7 @@ package appsync {
   }
 
   /**
-   * <p>Describes an Amazon Cognito user pool configuration.</p>
+   * Describes an Amazon Cognito user pool configuration.
    */
   @js.native
   trait UserPoolConfig extends js.Object {

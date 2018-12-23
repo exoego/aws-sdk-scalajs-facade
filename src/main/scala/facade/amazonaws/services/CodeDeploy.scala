@@ -190,7 +190,7 @@ package codedeploy {
   }
 
   /**
-   * <p>Represents the input of, and adds tags to, an on-premises instance operation.</p>
+   * Represents the input of, and adds tags to, an on-premises instance operation.
    */
   @js.native
   trait AddTagsToOnPremisesInstancesInput extends js.Object {
@@ -211,7 +211,7 @@ package codedeploy {
   }
 
   /**
-   * <p>Information about an alarm.</p>
+   * Information about an alarm.
    */
   @js.native
   trait Alarm extends js.Object {
@@ -229,7 +229,7 @@ package codedeploy {
   }
 
   /**
-   * <p>Information about alarms associated with the deployment group.</p>
+   * Information about alarms associated with the deployment group.
    */
   @js.native
   trait AlarmConfiguration extends js.Object {
@@ -253,7 +253,7 @@ package codedeploy {
   }
 
   /**
-   * <p> A revision for an AWS Lambda or Amazon ECS deployment that is a YAML-formatted or JSON-formatted string. For AWS Lambda and Amazon ECS deployments, the revision is the same as the AppSpec file. This method replaces the deprecated <code>RawString</code> data type. </p>
+   * A revision for an AWS Lambda or Amazon ECS deployment that is a YAML-formatted or JSON-formatted string. For AWS Lambda and Amazon ECS deployments, the revision is the same as the AppSpec file. This method replaces the deprecated <code>RawString</code> data type.
    */
   @js.native
   trait AppSpecContent extends js.Object {
@@ -274,7 +274,7 @@ package codedeploy {
   }
 
   /**
-   * <p>Information about an application.</p>
+   * Information about an application.
    */
   @js.native
   trait ApplicationInfo extends js.Object {
@@ -315,7 +315,7 @@ package codedeploy {
   }
 
   /**
-   * <p>Information about a configuration for automatically rolling back to a previous version of an application revision when a deployment doesn't complete successfully.</p>
+   * Information about a configuration for automatically rolling back to a previous version of an application revision when a deployment doesn't complete successfully.
    */
   @js.native
   trait AutoRollbackConfiguration extends js.Object {
@@ -344,7 +344,7 @@ package codedeploy {
   }
 
   /**
-   * <p>Information about an Auto Scaling group.</p>
+   * Information about an Auto Scaling group.
    */
   @js.native
   trait AutoScalingGroup extends js.Object {
@@ -365,7 +365,7 @@ package codedeploy {
   }
 
   /**
-   * <p>Represents the input of a BatchGetApplicationRevisions operation.</p>
+   * Represents the input of a BatchGetApplicationRevisions operation.
    */
   @js.native
   trait BatchGetApplicationRevisionsInput extends js.Object {
@@ -386,7 +386,7 @@ package codedeploy {
   }
 
   /**
-   * <p>Represents the output of a BatchGetApplicationRevisions operation.</p>
+   * Represents the output of a BatchGetApplicationRevisions operation.
    */
   @js.native
   trait BatchGetApplicationRevisionsOutput extends js.Object {
@@ -410,7 +410,7 @@ package codedeploy {
   }
 
   /**
-   * <p>Represents the input of a BatchGetApplications operation.</p>
+   * Represents the input of a BatchGetApplications operation.
    */
   @js.native
   trait BatchGetApplicationsInput extends js.Object {
@@ -428,7 +428,7 @@ package codedeploy {
   }
 
   /**
-   * <p>Represents the output of a BatchGetApplications operation.</p>
+   * Represents the output of a BatchGetApplications operation.
    */
   @js.native
   trait BatchGetApplicationsOutput extends js.Object {
@@ -446,7 +446,7 @@ package codedeploy {
   }
 
   /**
-   * <p>Represents the input of a BatchGetDeploymentGroups operation.</p>
+   * Represents the input of a BatchGetDeploymentGroups operation.
    */
   @js.native
   trait BatchGetDeploymentGroupsInput extends js.Object {
@@ -467,7 +467,7 @@ package codedeploy {
   }
 
   /**
-   * <p>Represents the output of a BatchGetDeploymentGroups operation.</p>
+   * Represents the output of a BatchGetDeploymentGroups operation.
    */
   @js.native
   trait BatchGetDeploymentGroupsOutput extends js.Object {
@@ -488,7 +488,7 @@ package codedeploy {
   }
 
   /**
-   * <p> Represents the input of a BatchGetDeploymentInstances operation. </p>
+   * Represents the input of a BatchGetDeploymentInstances operation.
    */
   @js.native
   trait BatchGetDeploymentInstancesInput extends js.Object {
@@ -509,7 +509,7 @@ package codedeploy {
   }
 
   /**
-   * <p>Represents the output of a BatchGetDeploymentInstances operation.</p>
+   * Represents the output of a BatchGetDeploymentInstances operation.
    */
   @js.native
   trait BatchGetDeploymentInstancesOutput extends js.Object {
@@ -563,7 +563,7 @@ package codedeploy {
   }
 
   /**
-   * <p> Represents the input of a BatchGetDeployments operation. </p>
+   * Represents the input of a BatchGetDeployments operation.
    */
   @js.native
   trait BatchGetDeploymentsInput extends js.Object {
@@ -581,7 +581,7 @@ package codedeploy {
   }
 
   /**
-   * <p> Represents the output of a BatchGetDeployments operation. </p>
+   * Represents the output of a BatchGetDeployments operation.
    */
   @js.native
   trait BatchGetDeploymentsOutput extends js.Object {
@@ -599,7 +599,7 @@ package codedeploy {
   }
 
   /**
-   * <p>Represents the input of a BatchGetOnPremisesInstances operation.</p>
+   * Represents the input of a BatchGetOnPremisesInstances operation.
    */
   @js.native
   trait BatchGetOnPremisesInstancesInput extends js.Object {
@@ -617,7 +617,7 @@ package codedeploy {
   }
 
   /**
-   * <p>Represents the output of a BatchGetOnPremisesInstances operation.</p>
+   * Represents the output of a BatchGetOnPremisesInstances operation.
    */
   @js.native
   trait BatchGetOnPremisesInstancesOutput extends js.Object {
@@ -635,7 +635,7 @@ package codedeploy {
   }
 
   /**
-   * <p>Information about blue/green deployment options for a deployment group.</p>
+   * Information about blue/green deployment options for a deployment group.
    */
   @js.native
   trait BlueGreenDeploymentConfiguration extends js.Object {
@@ -659,7 +659,7 @@ package codedeploy {
   }
 
   /**
-   * <p>Information about whether instances in the original environment are terminated when a blue/green deployment is successful.</p>
+   * Information about whether instances in the original environment are terminated when a blue/green deployment is successful.
    */
   @js.native
   trait BlueInstanceTerminationOption extends js.Object {
@@ -716,7 +716,7 @@ package codedeploy {
   }
 
   /**
-   * <p>Represents the input of a CreateApplication operation.</p>
+   * Represents the input of a CreateApplication operation.
    */
   @js.native
   trait CreateApplicationInput extends js.Object {
@@ -737,7 +737,7 @@ package codedeploy {
   }
 
   /**
-   * <p>Represents the output of a CreateApplication operation.</p>
+   * Represents the output of a CreateApplication operation.
    */
   @js.native
   trait CreateApplicationOutput extends js.Object {
@@ -755,7 +755,7 @@ package codedeploy {
   }
 
   /**
-   * <p>Represents the input of a CreateDeploymentConfig operation.</p>
+   * Represents the input of a CreateDeploymentConfig operation.
    */
   @js.native
   trait CreateDeploymentConfigInput extends js.Object {
@@ -782,7 +782,7 @@ package codedeploy {
   }
 
   /**
-   * <p>Represents the output of a CreateDeploymentConfig operation.</p>
+   * Represents the output of a CreateDeploymentConfig operation.
    */
   @js.native
   trait CreateDeploymentConfigOutput extends js.Object {
@@ -800,7 +800,7 @@ package codedeploy {
   }
 
   /**
-   * <p>Represents the input of a CreateDeploymentGroup operation.</p>
+   * Represents the input of a CreateDeploymentGroup operation.
    */
   @js.native
   trait CreateDeploymentGroupInput extends js.Object {
@@ -863,7 +863,7 @@ package codedeploy {
   }
 
   /**
-   * <p>Represents the output of a CreateDeploymentGroup operation.</p>
+   * Represents the output of a CreateDeploymentGroup operation.
    */
   @js.native
   trait CreateDeploymentGroupOutput extends js.Object {
@@ -881,7 +881,7 @@ package codedeploy {
   }
 
   /**
-   * <p>Represents the input of a CreateDeployment operation.</p>
+   * Represents the input of a CreateDeployment operation.
    */
   @js.native
   trait CreateDeploymentInput extends js.Object {
@@ -926,7 +926,7 @@ package codedeploy {
   }
 
   /**
-   * <p> Represents the output of a CreateDeployment operation. </p>
+   * Represents the output of a CreateDeployment operation.
    */
   @js.native
   trait CreateDeploymentOutput extends js.Object {
@@ -944,7 +944,7 @@ package codedeploy {
   }
 
   /**
-   * <p>Represents the input of a DeleteApplication operation.</p>
+   * Represents the input of a DeleteApplication operation.
    */
   @js.native
   trait DeleteApplicationInput extends js.Object {
@@ -962,7 +962,7 @@ package codedeploy {
   }
 
   /**
-   * <p>Represents the input of a DeleteDeploymentConfig operation.</p>
+   * Represents the input of a DeleteDeploymentConfig operation.
    */
   @js.native
   trait DeleteDeploymentConfigInput extends js.Object {
@@ -980,7 +980,7 @@ package codedeploy {
   }
 
   /**
-   * <p>Represents the input of a DeleteDeploymentGroup operation.</p>
+   * Represents the input of a DeleteDeploymentGroup operation.
    */
   @js.native
   trait DeleteDeploymentGroupInput extends js.Object {
@@ -1001,7 +1001,7 @@ package codedeploy {
   }
 
   /**
-   * <p>Represents the output of a DeleteDeploymentGroup operation.</p>
+   * Represents the output of a DeleteDeploymentGroup operation.
    */
   @js.native
   trait DeleteDeploymentGroupOutput extends js.Object {
@@ -1019,7 +1019,7 @@ package codedeploy {
   }
 
   /**
-   * <p>Represents the input of a DeleteGitHubAccount operation.</p>
+   * Represents the input of a DeleteGitHubAccount operation.
    */
   @js.native
   trait DeleteGitHubAccountTokenInput extends js.Object {
@@ -1037,7 +1037,7 @@ package codedeploy {
   }
 
   /**
-   * <p>Represents the output of a DeleteGitHubAccountToken operation.</p>
+   * Represents the output of a DeleteGitHubAccountToken operation.
    */
   @js.native
   trait DeleteGitHubAccountTokenOutput extends js.Object {
@@ -1055,7 +1055,7 @@ package codedeploy {
   }
 
   /**
-   * <p>Information about a deployment configuration.</p>
+   * Information about a deployment configuration.
    */
   @js.native
   trait DeploymentConfigInfo extends js.Object {
@@ -1096,7 +1096,7 @@ package codedeploy {
   }
 
   /**
-   * <p>Information about a deployment group.</p>
+   * Information about a deployment group.
    */
   @js.native
   trait DeploymentGroupInfo extends js.Object {
@@ -1174,7 +1174,7 @@ package codedeploy {
   }
 
   /**
-   * <p>Information about a deployment.</p>
+   * Information about a deployment.
    */
   @js.native
   trait DeploymentInfo extends js.Object {
@@ -1277,7 +1277,7 @@ package codedeploy {
   }
 
   /**
-   * <p>Information about the deployment status of the instances in the deployment.</p>
+   * Information about the deployment status of the instances in the deployment.
    */
   @js.native
   trait DeploymentOverview extends js.Object {
@@ -1317,7 +1317,7 @@ package codedeploy {
   }
 
   /**
-   * <p>Information about how traffic is rerouted to instances in a replacement environment in a blue/green deployment.</p>
+   * Information about how traffic is rerouted to instances in a replacement environment in a blue/green deployment.
    */
   @js.native
   trait DeploymentReadyOption extends js.Object {
@@ -1350,7 +1350,7 @@ package codedeploy {
   }
 
   /**
-   * <p>Information about the type of deployment, either in-place or blue/green, you want to run and whether to route deployment traffic behind a load balancer.</p>
+   * Information about the type of deployment, either in-place or blue/green, you want to run and whether to route deployment traffic behind a load balancer.
    */
   @js.native
   trait DeploymentStyle extends js.Object {
@@ -1371,7 +1371,7 @@ package codedeploy {
   }
 
   /**
-   * <p> Information about the deployment target. </p>
+   * Information about the deployment target.
    */
   @js.native
   trait DeploymentTarget extends js.Object {
@@ -1420,7 +1420,7 @@ package codedeploy {
   }
 
   /**
-   * <p>Represents the input of a DeregisterOnPremisesInstance operation.</p>
+   * Represents the input of a DeregisterOnPremisesInstance operation.
    */
   @js.native
   trait DeregisterOnPremisesInstanceInput extends js.Object {
@@ -1438,7 +1438,7 @@ package codedeploy {
   }
 
   /**
-   * <p>Diagnostic information about executable scripts that are part of a deployment.</p>
+   * Diagnostic information about executable scripts that are part of a deployment.
    */
   @js.native
   trait Diagnostics extends js.Object {
@@ -1465,7 +1465,7 @@ package codedeploy {
   }
 
   /**
-   * <p>Information about an EC2 tag filter.</p>
+   * Information about an EC2 tag filter.
    */
   @js.native
   trait EC2TagFilter extends js.Object {
@@ -1497,7 +1497,7 @@ package codedeploy {
   }
 
   /**
-   * <p>Information about groups of EC2 instance tags.</p>
+   * Information about groups of EC2 instance tags.
    */
   @js.native
   trait EC2TagSet extends js.Object {
@@ -1515,7 +1515,7 @@ package codedeploy {
   }
 
   /**
-   * <p> Contains the service and cluster names used to identify an Amazon ECS deployment's target. </p>
+   * Contains the service and cluster names used to identify an Amazon ECS deployment's target.
    */
   @js.native
   trait ECSService extends js.Object {
@@ -1536,7 +1536,7 @@ package codedeploy {
   }
 
   /**
-   * <p> Information about the target of an Amazon ECS deployment. </p>
+   * Information about the target of an Amazon ECS deployment.
    */
   @js.native
   trait ECSTarget extends js.Object {
@@ -1572,7 +1572,7 @@ package codedeploy {
   }
 
   /**
-   * <p> A set of Amazon ECS tasks. A task set runs a specified number of instances of a task definition simultaneously inside an Amazon ECS service. Information about a set of Amazon ECS tasks in an AWS CodeDeploy deployment. An Amazon ECS task set includes details such as the desired number of tasks, how many tasks are running, and whether the task set serves production traffic or not. </p>
+   * A set of Amazon ECS tasks. A task set runs a specified number of instances of a task definition simultaneously inside an Amazon ECS service. Information about a set of Amazon ECS tasks in an AWS CodeDeploy deployment. An Amazon ECS task set includes details such as the desired number of tasks, how many tasks are running, and whether the task set serves production traffic or not.
    */
   @js.native
   trait ECSTaskSet extends js.Object {
@@ -1611,7 +1611,7 @@ package codedeploy {
   }
 
   /**
-   * <p>Information about a load balancer in Elastic Load Balancing to use in a deployment. Instances are registered directly with a load balancer, and traffic is routed to the load balancer.</p>
+   * Information about a load balancer in Elastic Load Balancing to use in a deployment. Instances are registered directly with a load balancer, and traffic is routed to the load balancer.
    */
   @js.native
   trait ELBInfo extends js.Object {
@@ -1664,7 +1664,7 @@ package codedeploy {
   }
 
   /**
-   * <p>Information about a deployment error.</p>
+   * Information about a deployment error.
    */
   @js.native
   trait ErrorInformation extends js.Object {
@@ -1693,7 +1693,7 @@ package codedeploy {
   }
 
   /**
-   * <p>Information about an application revision.</p>
+   * Information about an application revision.
    */
   @js.native
   trait GenericRevisionInfo extends js.Object {
@@ -1723,7 +1723,7 @@ package codedeploy {
   }
 
   /**
-   * <p>Represents the input of a GetApplication operation.</p>
+   * Represents the input of a GetApplication operation.
    */
   @js.native
   trait GetApplicationInput extends js.Object {
@@ -1741,7 +1741,7 @@ package codedeploy {
   }
 
   /**
-   * <p>Represents the output of a GetApplication operation.</p>
+   * Represents the output of a GetApplication operation.
    */
   @js.native
   trait GetApplicationOutput extends js.Object {
@@ -1759,7 +1759,7 @@ package codedeploy {
   }
 
   /**
-   * <p>Represents the input of a GetApplicationRevision operation.</p>
+   * Represents the input of a GetApplicationRevision operation.
    */
   @js.native
   trait GetApplicationRevisionInput extends js.Object {
@@ -1780,7 +1780,7 @@ package codedeploy {
   }
 
   /**
-   * <p>Represents the output of a GetApplicationRevision operation.</p>
+   * Represents the output of a GetApplicationRevision operation.
    */
   @js.native
   trait GetApplicationRevisionOutput extends js.Object {
@@ -1804,7 +1804,7 @@ package codedeploy {
   }
 
   /**
-   * <p>Represents the input of a GetDeploymentConfig operation.</p>
+   * Represents the input of a GetDeploymentConfig operation.
    */
   @js.native
   trait GetDeploymentConfigInput extends js.Object {
@@ -1822,7 +1822,7 @@ package codedeploy {
   }
 
   /**
-   * <p>Represents the output of a GetDeploymentConfig operation.</p>
+   * Represents the output of a GetDeploymentConfig operation.
    */
   @js.native
   trait GetDeploymentConfigOutput extends js.Object {
@@ -1840,7 +1840,7 @@ package codedeploy {
   }
 
   /**
-   * <p>Represents the input of a GetDeploymentGroup operation.</p>
+   * Represents the input of a GetDeploymentGroup operation.
    */
   @js.native
   trait GetDeploymentGroupInput extends js.Object {
@@ -1861,7 +1861,7 @@ package codedeploy {
   }
 
   /**
-   * <p>Represents the output of a GetDeploymentGroup operation.</p>
+   * Represents the output of a GetDeploymentGroup operation.
    */
   @js.native
   trait GetDeploymentGroupOutput extends js.Object {
@@ -1879,7 +1879,7 @@ package codedeploy {
   }
 
   /**
-   * <p>Represents the input of a GetDeployment operation.</p>
+   * Represents the input of a GetDeployment operation.
    */
   @js.native
   trait GetDeploymentInput extends js.Object {
@@ -1897,7 +1897,7 @@ package codedeploy {
   }
 
   /**
-   * <p> Represents the input of a GetDeploymentInstance operation. </p>
+   * Represents the input of a GetDeploymentInstance operation.
    */
   @js.native
   trait GetDeploymentInstanceInput extends js.Object {
@@ -1918,7 +1918,7 @@ package codedeploy {
   }
 
   /**
-   * <p> Represents the output of a GetDeploymentInstance operation. </p>
+   * Represents the output of a GetDeploymentInstance operation.
    */
   @js.native
   trait GetDeploymentInstanceOutput extends js.Object {
@@ -1936,7 +1936,7 @@ package codedeploy {
   }
 
   /**
-   * <p>Represents the output of a GetDeployment operation.</p>
+   * Represents the output of a GetDeployment operation.
    */
   @js.native
   trait GetDeploymentOutput extends js.Object {
@@ -1987,7 +1987,7 @@ package codedeploy {
   }
 
   /**
-   * <p> Represents the input of a GetOnPremisesInstance operation. </p>
+   * Represents the input of a GetOnPremisesInstance operation.
    */
   @js.native
   trait GetOnPremisesInstanceInput extends js.Object {
@@ -2005,7 +2005,7 @@ package codedeploy {
   }
 
   /**
-   * <p> Represents the output of a GetOnPremisesInstance operation. </p>
+   * Represents the output of a GetOnPremisesInstance operation.
    */
   @js.native
   trait GetOnPremisesInstanceOutput extends js.Object {
@@ -2023,7 +2023,7 @@ package codedeploy {
   }
 
   /**
-   * <p>Information about the location of application artifacts stored in GitHub.</p>
+   * Information about the location of application artifacts stored in GitHub.
    */
   @js.native
   trait GitHubLocation extends js.Object {
@@ -2051,7 +2051,7 @@ package codedeploy {
   }
 
   /**
-   * <p>Information about the instances that belong to the replacement environment in a blue/green deployment.</p>
+   * Information about the instances that belong to the replacement environment in a blue/green deployment.
    */
   @js.native
   trait GreenFleetProvisioningOption extends js.Object {
@@ -2076,7 +2076,7 @@ package codedeploy {
   }
 
   /**
-   * <p>Information about an on-premises instance.</p>
+   * Information about an on-premises instance.
    */
   @js.native
   trait InstanceInfo extends js.Object {
@@ -2125,7 +2125,7 @@ package codedeploy {
   }
 
   /**
-   * <p>Information about an instance in a deployment.</p>
+   * Information about an instance in a deployment.
    */
   @deprecated
   @js.native
@@ -2159,7 +2159,7 @@ package codedeploy {
   }
 
   /**
-   * <p> A target Amazon EC2 or on-premises instance during a deployment that uses the EC2/On-premises compute platform. </p>
+   * A target Amazon EC2 or on-premises instance during a deployment that uses the EC2/On-premises compute platform.
    */
   @js.native
   trait InstanceTarget extends js.Object {
@@ -2202,7 +2202,7 @@ package codedeploy {
   }
 
   /**
-   * <p> Information about the target AWS Lambda function during an AWS Lambda deployment. </p>
+   * Information about the target AWS Lambda function during an AWS Lambda deployment.
    */
   @js.native
   trait LambdaTarget extends js.Object {
@@ -2235,7 +2235,7 @@ package codedeploy {
   }
 
   /**
-   * <p>Information about the most recent attempted or successful deployment to a deployment group.</p>
+   * Information about the most recent attempted or successful deployment to a deployment group.
    */
   @js.native
   trait LastDeploymentInfo extends js.Object {
@@ -2273,7 +2273,7 @@ package codedeploy {
   }
 
   /**
-   * <p>Information about a deployment lifecycle event.</p>
+   * Information about a deployment lifecycle event.
    */
   @js.native
   trait LifecycleEvent extends js.Object {
@@ -2314,7 +2314,7 @@ package codedeploy {
   }
 
   /**
-   * <p> Represents the input of a ListApplicationRevisions operation. </p>
+   * Represents the input of a ListApplicationRevisions operation.
    */
   @js.native
   trait ListApplicationRevisionsInput extends js.Object {
@@ -2350,7 +2350,7 @@ package codedeploy {
   }
 
   /**
-   * <p>Represents the output of a ListApplicationRevisions operation.</p>
+   * Represents the output of a ListApplicationRevisions operation.
    */
   @js.native
   trait ListApplicationRevisionsOutput extends js.Object {
@@ -2371,7 +2371,7 @@ package codedeploy {
   }
 
   /**
-   * <p>Represents the input of a ListApplications operation.</p>
+   * Represents the input of a ListApplications operation.
    */
   @js.native
   trait ListApplicationsInput extends js.Object {
@@ -2389,7 +2389,7 @@ package codedeploy {
   }
 
   /**
-   * <p>Represents the output of a ListApplications operation.</p>
+   * Represents the output of a ListApplications operation.
    */
   @js.native
   trait ListApplicationsOutput extends js.Object {
@@ -2410,7 +2410,7 @@ package codedeploy {
   }
 
   /**
-   * <p>Represents the input of a ListDeploymentConfigs operation.</p>
+   * Represents the input of a ListDeploymentConfigs operation.
    */
   @js.native
   trait ListDeploymentConfigsInput extends js.Object {
@@ -2428,7 +2428,7 @@ package codedeploy {
   }
 
   /**
-   * <p>Represents the output of a ListDeploymentConfigs operation.</p>
+   * Represents the output of a ListDeploymentConfigs operation.
    */
   @js.native
   trait ListDeploymentConfigsOutput extends js.Object {
@@ -2449,7 +2449,7 @@ package codedeploy {
   }
 
   /**
-   * <p>Represents the input of a ListDeploymentGroups operation.</p>
+   * Represents the input of a ListDeploymentGroups operation.
    */
   @js.native
   trait ListDeploymentGroupsInput extends js.Object {
@@ -2470,7 +2470,7 @@ package codedeploy {
   }
 
   /**
-   * <p>Represents the output of a ListDeploymentGroups operation.</p>
+   * Represents the output of a ListDeploymentGroups operation.
    */
   @js.native
   trait ListDeploymentGroupsOutput extends js.Object {
@@ -2494,7 +2494,7 @@ package codedeploy {
   }
 
   /**
-   * <p> Represents the input of a ListDeploymentInstances operation. </p>
+   * Represents the input of a ListDeploymentInstances operation.
    */
   @js.native
   trait ListDeploymentInstancesInput extends js.Object {
@@ -2521,7 +2521,7 @@ package codedeploy {
   }
 
   /**
-   * <p>Represents the output of a ListDeploymentInstances operation.</p>
+   * Represents the output of a ListDeploymentInstances operation.
    */
   @js.native
   trait ListDeploymentInstancesOutput extends js.Object {
@@ -2581,7 +2581,7 @@ package codedeploy {
   }
 
   /**
-   * <p>Represents the input of a ListDeployments operation.</p>
+   * Represents the input of a ListDeployments operation.
    */
   @js.native
   trait ListDeploymentsInput extends js.Object {
@@ -2611,7 +2611,7 @@ package codedeploy {
   }
 
   /**
-   * <p>Represents the output of a ListDeployments operation.</p>
+   * Represents the output of a ListDeployments operation.
    */
   @js.native
   trait ListDeploymentsOutput extends js.Object {
@@ -2632,7 +2632,7 @@ package codedeploy {
   }
 
   /**
-   * <p>Represents the input of a ListGitHubAccountTokenNames operation.</p>
+   * Represents the input of a ListGitHubAccountTokenNames operation.
    */
   @js.native
   trait ListGitHubAccountTokenNamesInput extends js.Object {
@@ -2650,7 +2650,7 @@ package codedeploy {
   }
 
   /**
-   * <p>Represents the output of a ListGitHubAccountTokenNames operation.</p>
+   * Represents the output of a ListGitHubAccountTokenNames operation.
    */
   @js.native
   trait ListGitHubAccountTokenNamesOutput extends js.Object {
@@ -2671,7 +2671,7 @@ package codedeploy {
   }
 
   /**
-   * <p>Represents the input of a ListOnPremisesInstances operation.</p>
+   * Represents the input of a ListOnPremisesInstances operation.
    */
   @js.native
   trait ListOnPremisesInstancesInput extends js.Object {
@@ -2695,7 +2695,7 @@ package codedeploy {
   }
 
   /**
-   * <p>Represents the output of list on-premises instances operation.</p>
+   * Represents the output of list on-premises instances operation.
    */
   @js.native
   trait ListOnPremisesInstancesOutput extends js.Object {
@@ -2724,7 +2724,7 @@ package codedeploy {
   }
 
   /**
-   * <p>Information about the Elastic Load Balancing load balancer or target group used in a deployment.</p>
+   * Information about the Elastic Load Balancing load balancer or target group used in a deployment.
    */
   @js.native
   trait LoadBalancerInfo extends js.Object {
@@ -2748,7 +2748,7 @@ package codedeploy {
   }
 
   /**
-   * <p>Information about minimum healthy instance.</p>
+   * Information about minimum healthy instance.
    */
   @js.native
   trait MinimumHealthyHosts extends js.Object {
@@ -2776,7 +2776,7 @@ package codedeploy {
   }
 
   /**
-   * <p>Information about groups of on-premises instance tags.</p>
+   * Information about groups of on-premises instance tags.
    */
   @js.native
   trait OnPremisesTagSet extends js.Object {
@@ -2830,7 +2830,7 @@ package codedeploy {
   }
 
   /**
-   * <p>A revision for an AWS Lambda deployment that is a YAML-formatted or JSON-formatted string. For AWS Lambda deployments, the revision is the same as the AppSpec file.</p>
+   * A revision for an AWS Lambda deployment that is a YAML-formatted or JSON-formatted string. For AWS Lambda deployments, the revision is the same as the AppSpec file.
    */
   @deprecated
   @js.native
@@ -2852,7 +2852,7 @@ package codedeploy {
   }
 
   /**
-   * <p>Represents the input of a RegisterApplicationRevision operation.</p>
+   * Represents the input of a RegisterApplicationRevision operation.
    */
   @js.native
   trait RegisterApplicationRevisionInput extends js.Object {
@@ -2876,7 +2876,7 @@ package codedeploy {
   }
 
   /**
-   * <p>Represents the input of the register on-premises instance operation.</p>
+   * Represents the input of the register on-premises instance operation.
    */
   @js.native
   trait RegisterOnPremisesInstanceInput extends js.Object {
@@ -2907,7 +2907,7 @@ package codedeploy {
   }
 
   /**
-   * <p>Represents the input of a RemoveTagsFromOnPremisesInstances operation.</p>
+   * Represents the input of a RemoveTagsFromOnPremisesInstances operation.
    */
   @js.native
   trait RemoveTagsFromOnPremisesInstancesInput extends js.Object {
@@ -2928,7 +2928,7 @@ package codedeploy {
   }
 
   /**
-   * <p>Information about an application revision.</p>
+   * Information about an application revision.
    */
   @js.native
   trait RevisionInfo extends js.Object {
@@ -2949,7 +2949,7 @@ package codedeploy {
   }
 
   /**
-   * <p>Information about the location of an application revision.</p>
+   * Information about the location of an application revision.
    */
   @js.native
   trait RevisionLocation extends js.Object {
@@ -2988,7 +2988,7 @@ package codedeploy {
   }
 
   /**
-   * <p>Information about a deployment rollback.</p>
+   * Information about a deployment rollback.
    */
   @js.native
   trait RollbackInfo extends js.Object {
@@ -3012,7 +3012,7 @@ package codedeploy {
   }
 
   /**
-   * <p>Information about the location of application artifacts stored in Amazon S3.</p>
+   * Information about the location of application artifacts stored in Amazon S3.
    */
   @js.native
   trait S3Location extends js.Object {
@@ -3064,7 +3064,7 @@ package codedeploy {
   }
 
   /**
-   * <p> Represents the input of a StopDeployment operation. </p>
+   * Represents the input of a StopDeployment operation.
    */
   @js.native
   trait StopDeploymentInput extends js.Object {
@@ -3085,7 +3085,7 @@ package codedeploy {
   }
 
   /**
-   * <p> Represents the output of a StopDeployment operation. </p>
+   * Represents the output of a StopDeployment operation.
    */
   @js.native
   trait StopDeploymentOutput extends js.Object {
@@ -3113,7 +3113,7 @@ package codedeploy {
   }
 
   /**
-   * <p>Information about a tag.</p>
+   * Information about a tag.
    */
   @js.native
   trait Tag extends js.Object {
@@ -3134,7 +3134,7 @@ package codedeploy {
   }
 
   /**
-   * <p>Information about an on-premises instance tag filter.</p>
+   * Information about an on-premises instance tag filter.
    */
   @js.native
   trait TagFilter extends js.Object {
@@ -3173,7 +3173,7 @@ package codedeploy {
   }
 
   /**
-   * <p>Information about a target group in Elastic Load Balancing to use in a deployment. Instances are registered as targets in a target group, and traffic is routed to the target group.</p>
+   * Information about a target group in Elastic Load Balancing to use in a deployment. Instances are registered as targets in a target group, and traffic is routed to the target group.
    */
   @js.native
   trait TargetGroupInfo extends js.Object {
@@ -3191,7 +3191,7 @@ package codedeploy {
   }
 
   /**
-   * <p> Information about two target groups and how traffic routes during an Amazon ECS deployment. An optional test traffic route can be specified. </p>
+   * Information about two target groups and how traffic routes during an Amazon ECS deployment. An optional test traffic route can be specified.
    */
   @js.native
   trait TargetGroupPairInfo extends js.Object {
@@ -3215,7 +3215,7 @@ package codedeploy {
   }
 
   /**
-   * <p>Information about the instances to be used in the replacement environment in a blue/green deployment.</p>
+   * Information about the instances to be used in the replacement environment in a blue/green deployment.
    */
   @js.native
   trait TargetInstances extends js.Object {
@@ -3258,7 +3258,7 @@ package codedeploy {
   }
 
   /**
-   * <p>A configuration that shifts traffic from one version of a Lambda function to another in two increments. The original and target Lambda function versions are specified in the deployment's AppSpec file.</p>
+   * A configuration that shifts traffic from one version of a Lambda function to another in two increments. The original and target Lambda function versions are specified in the deployment's AppSpec file.
    */
   @js.native
   trait TimeBasedCanary extends js.Object {
@@ -3279,7 +3279,7 @@ package codedeploy {
   }
 
   /**
-   * <p>A configuration that shifts traffic from one version of a Lambda function to another in equal increments, with an equal number of minutes between each increment. The original and target Lambda function versions are specified in the deployment's AppSpec file.</p>
+   * A configuration that shifts traffic from one version of a Lambda function to another in equal increments, with an equal number of minutes between each increment. The original and target Lambda function versions are specified in the deployment's AppSpec file.
    */
   @js.native
   trait TimeBasedLinear extends js.Object {
@@ -3300,7 +3300,7 @@ package codedeploy {
   }
 
   /**
-   * <p>Information about a time range.</p>
+   * Information about a time range.
    */
   @js.native
   trait TimeRange extends js.Object {
@@ -3321,7 +3321,7 @@ package codedeploy {
   }
 
   /**
-   * <p> Information about a listener. The listener contains the path used to route traffic that is received from the load balancer to a target group. </p>
+   * Information about a listener. The listener contains the path used to route traffic that is received from the load balancer to a target group.
    */
   @js.native
   trait TrafficRoute extends js.Object {
@@ -3339,7 +3339,7 @@ package codedeploy {
   }
 
   /**
-   * <p>The configuration that specifies how traffic is shifted from one version of a Lambda function to another version during an AWS Lambda deployment.</p>
+   * The configuration that specifies how traffic is shifted from one version of a Lambda function to another version during an AWS Lambda deployment.
    */
   @js.native
   trait TrafficRoutingConfig extends js.Object {
@@ -3371,7 +3371,7 @@ package codedeploy {
   }
 
   /**
-   * <p>Information about notification triggers for the deployment group.</p>
+   * Information about notification triggers for the deployment group.
    */
   @js.native
   trait TriggerConfig extends js.Object {
@@ -3410,7 +3410,7 @@ package codedeploy {
   }
 
   /**
-   * <p>Represents the input of an UpdateApplication operation.</p>
+   * Represents the input of an UpdateApplication operation.
    */
   @js.native
   trait UpdateApplicationInput extends js.Object {
@@ -3431,7 +3431,7 @@ package codedeploy {
   }
 
   /**
-   * <p>Represents the input of an UpdateDeploymentGroup operation.</p>
+   * Represents the input of an UpdateDeploymentGroup operation.
    */
   @js.native
   trait UpdateDeploymentGroupInput extends js.Object {
@@ -3497,7 +3497,7 @@ package codedeploy {
   }
 
   /**
-   * <p>Represents the output of an UpdateDeploymentGroup operation.</p>
+   * Represents the output of an UpdateDeploymentGroup operation.
    */
   @js.native
   trait UpdateDeploymentGroupOutput extends js.Object {

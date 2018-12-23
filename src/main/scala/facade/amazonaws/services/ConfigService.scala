@@ -169,7 +169,7 @@ package configservice {
   }
 
   /**
-   * <p>A collection of accounts and regions.</p>
+   * A collection of accounts and regions.
    */
   @js.native
   trait AccountAggregationSource extends js.Object {
@@ -193,7 +193,8 @@ package configservice {
   }
 
   /**
-   * <p>Indicates whether an AWS Config rule is compliant based on account ID, region, compliance, and rule name.</p> <p>A rule is compliant if all of the resources that the rule evaluated comply with it. It is noncompliant if any of these resources do not comply.</p>
+   * Indicates whether an AWS Config rule is compliant based on account ID, region, compliance, and rule name.
+   *  A rule is compliant if all of the resources that the rule evaluated comply with it. It is noncompliant if any of these resources do not comply.
    */
   @js.native
   trait AggregateComplianceByConfigRule extends js.Object {
@@ -220,7 +221,7 @@ package configservice {
   }
 
   /**
-   * <p>Returns the number of compliant and noncompliant rules for one or more accounts and regions in an aggregator.</p>
+   * Returns the number of compliant and noncompliant rules for one or more accounts and regions in an aggregator.
    */
   @js.native
   trait AggregateComplianceCount extends js.Object {
@@ -241,7 +242,7 @@ package configservice {
   }
 
   /**
-   * <p>The details of an AWS Config evaluation for an account ID and region in an aggregator. Provides the AWS resource that was evaluated, the compliance of the resource, related time stamps, and supplementary information. </p>
+   * The details of an AWS Config evaluation for an account ID and region in an aggregator. Provides the AWS resource that was evaluated, the compliance of the resource, related time stamps, and supplementary information.
    */
   @js.native
   trait AggregateEvaluationResult extends js.Object {
@@ -277,7 +278,7 @@ package configservice {
   }
 
   /**
-   * <p>The details that identify a resource that is collected by AWS Config aggregator, including the resource type, ID, (if available) the custom resource name, the source account, and source region.</p>
+   * The details that identify a resource that is collected by AWS Config aggregator, including the resource type, ID, (if available) the custom resource name, the source account, and source region.
    */
   @js.native
   trait AggregateResourceIdentifier extends js.Object {
@@ -307,7 +308,7 @@ package configservice {
   }
 
   /**
-   * <p>The current sync status between the source and the aggregator account.</p>
+   * The current sync status between the source and the aggregator account.
    */
   @js.native
   trait AggregatedSourceStatus extends js.Object {
@@ -358,7 +359,7 @@ package configservice {
   }
 
   /**
-   * <p>An object that represents the authorizations granted to aggregator accounts and regions.</p>
+   * An object that represents the authorizations granted to aggregator accounts and regions.
    */
   @js.native
   trait AggregationAuthorization extends js.Object {
@@ -385,7 +386,7 @@ package configservice {
   }
 
   /**
-   * <p>The detailed configuration of a specified resource.</p>
+   * The detailed configuration of a specified resource.
    */
   @js.native
   trait BaseConfigurationItem extends js.Object {
@@ -518,7 +519,7 @@ package configservice {
   }
 
   /**
-   * <p>Indicates whether an AWS resource or AWS Config rule is compliant and provides the number of contributors that affect the compliance.</p>
+   * Indicates whether an AWS resource or AWS Config rule is compliant and provides the number of contributors that affect the compliance.
    */
   @js.native
   trait Compliance extends js.Object {
@@ -539,7 +540,7 @@ package configservice {
   }
 
   /**
-   * <p>Indicates whether an AWS Config rule is compliant. A rule is compliant if all of the resources that the rule evaluated comply with it. A rule is noncompliant if any of these resources do not comply.</p>
+   * Indicates whether an AWS Config rule is compliant. A rule is compliant if all of the resources that the rule evaluated comply with it. A rule is noncompliant if any of these resources do not comply.
    */
   @js.native
   trait ComplianceByConfigRule extends js.Object {
@@ -560,7 +561,7 @@ package configservice {
   }
 
   /**
-   * <p>Indicates whether an AWS resource that is evaluated according to one or more AWS Config rules is compliant. A resource is compliant if it complies with all of the rules that evaluate it. A resource is noncompliant if it does not comply with one or more of these rules.</p>
+   * Indicates whether an AWS resource that is evaluated according to one or more AWS Config rules is compliant. A resource is compliant if it complies with all of the rules that evaluate it. A resource is noncompliant if it does not comply with one or more of these rules.
    */
   @js.native
   trait ComplianceByResource extends js.Object {
@@ -584,7 +585,7 @@ package configservice {
   }
 
   /**
-   * <p>The number of AWS resources or AWS Config rules responsible for the current compliance of the item, up to a maximum number.</p>
+   * The number of AWS resources or AWS Config rules responsible for the current compliance of the item, up to a maximum number.
    */
   @js.native
   trait ComplianceContributorCount extends js.Object {
@@ -605,7 +606,7 @@ package configservice {
   }
 
   /**
-   * <p>The number of AWS Config rules or AWS resources that are compliant and noncompliant.</p>
+   * The number of AWS Config rules or AWS resources that are compliant and noncompliant.
    */
   @js.native
   trait ComplianceSummary extends js.Object {
@@ -629,7 +630,7 @@ package configservice {
   }
 
   /**
-   * <p>The number of AWS resources of a specific type that are compliant or noncompliant, up to a maximum of 100 for each.</p>
+   * The number of AWS resources of a specific type that are compliant or noncompliant, up to a maximum of 100 for each.
    */
   @js.native
   trait ComplianceSummaryByResourceType extends js.Object {
@@ -659,7 +660,7 @@ package configservice {
   }
 
   /**
-   * <p>Provides status of the delivery of the snapshot or the configuration history to the specified Amazon S3 bucket. Also provides the status of notifications about the Amazon S3 delivery to the specified Amazon SNS topic.</p>
+   * Provides status of the delivery of the snapshot or the configuration history to the specified Amazon S3 bucket. Also provides the status of notifications about the Amazon S3 delivery to the specified Amazon SNS topic.
    */
   @js.native
   trait ConfigExportDeliveryInfo extends js.Object {
@@ -692,7 +693,10 @@ package configservice {
   }
 
   /**
-   * <p>An AWS Config rule represents an AWS Lambda function that you create for a custom rule or a predefined function for an AWS managed rule. The function evaluates configuration items to assess whether your AWS resources comply with your desired configurations. This function can run when AWS Config detects a configuration change to an AWS resource and at a periodic frequency that you choose (for example, every 24 hours).</p> <note> <p>You can use the AWS CLI and AWS SDKs if you want to create a rule that triggers evaluations for your resources when AWS Config delivers the configuration snapshot. For more information, see <a>ConfigSnapshotDeliveryProperties</a>.</p> </note> <p>For more information about developing and using AWS Config rules, see <a href="http://docs.aws.amazon.com/config/latest/developerguide/evaluate-config.html">Evaluating AWS Resource Configurations with AWS Config</a> in the <i>AWS Config Developer Guide</i>.</p>
+   * An AWS Config rule represents an AWS Lambda function that you create for a custom rule or a predefined function for an AWS managed rule. The function evaluates configuration items to assess whether your AWS resources comply with your desired configurations. This function can run when AWS Config detects a configuration change to an AWS resource and at a periodic frequency that you choose (for example, every 24 hours).
+   *
+   * '''Note:'''You can use the AWS CLI and AWS SDKs if you want to create a rule that triggers evaluations for your resources when AWS Config delivers the configuration snapshot. For more information, see '''ConfigSnapshotDeliveryProperties'''.
+   * For more information about developing and using AWS Config rules, see <a href="http://docs.aws.amazon.com/config/latest/developerguide/evaluate-config.html">Evaluating AWS Resource Configurations with AWS Config</a> in the <i>AWS Config Developer Guide</i>.
    */
   @js.native
   trait ConfigRule extends js.Object {
@@ -737,7 +741,7 @@ package configservice {
   }
 
   /**
-   * <p>Filters the compliance results based on account ID, region, compliance type, and rule name.</p>
+   * Filters the compliance results based on account ID, region, compliance type, and rule name.
    */
   @js.native
   trait ConfigRuleComplianceFilters extends js.Object {
@@ -764,7 +768,7 @@ package configservice {
   }
 
   /**
-   * <p>Filters the results based on the account IDs and regions.</p>
+   * Filters the results based on the account IDs and regions.
    */
   @js.native
   trait ConfigRuleComplianceSummaryFilters extends js.Object {
@@ -792,7 +796,8 @@ package configservice {
   }
 
   /**
-   * <p>Status information for your AWS managed Config rules. The status includes information such as the last time the rule ran, the last time it failed, and the related error for the last failure.</p> <p>This action does not return status information about custom AWS Config rules.</p>
+   * Status information for your AWS managed Config rules. The status includes information such as the last time the rule ran, the last time it failed, and the related error for the last failure.
+   *  This action does not return status information about custom AWS Config rules.
    */
   @js.native
   trait ConfigRuleEvaluationStatus extends js.Object {
@@ -849,7 +854,19 @@ package configservice {
   }
 
   /**
-   * <p>Provides options for how often AWS Config delivers configuration snapshots to the Amazon S3 bucket in your delivery channel.</p> <note> <p>If you want to create a rule that triggers evaluations for your resources when AWS Config delivers the configuration snapshot, see the following:</p> </note> <p>The frequency for a rule that triggers evaluations for your resources when AWS Config delivers the configuration snapshot is set by one of two values, depending on which is less frequent:</p> <ul> <li> <p>The value for the <code>deliveryFrequency</code> parameter within the delivery channel configuration, which sets how often AWS Config delivers configuration snapshots. This value also sets how often AWS Config invokes evaluations for AWS Config rules.</p> </li> <li> <p>The value for the <code>MaximumExecutionFrequency</code> parameter, which sets the maximum frequency with which AWS Config invokes evaluations for the rule. For more information, see <a>ConfigRule</a>.</p> </li> </ul> <p>If the <code>deliveryFrequency</code> value is less frequent than the <code>MaximumExecutionFrequency</code> value for a rule, AWS Config invokes the rule only as often as the <code>deliveryFrequency</code> value.</p> <ol> <li> <p>For example, you want your rule to run evaluations when AWS Config delivers the configuration snapshot.</p> </li> <li> <p>You specify the <code>MaximumExecutionFrequency</code> value for <code>Six_Hours</code>. </p> </li> <li> <p>You then specify the delivery channel <code>deliveryFrequency</code> value for <code>TwentyFour_Hours</code>.</p> </li> <li> <p>Because the value for <code>deliveryFrequency</code> is less frequent than <code>MaximumExecutionFrequency</code>, AWS Config invokes evaluations for the rule every 24 hours. </p> </li> </ol> <p>You should set the <code>MaximumExecutionFrequency</code> value to be at least as frequent as the <code>deliveryFrequency</code> value. You can view the <code>deliveryFrequency</code> value by using the <code>DescribeDeliveryChannnels</code> action.</p> <p>To update the <code>deliveryFrequency</code> with which AWS Config delivers your configuration snapshots, use the <code>PutDeliveryChannel</code> action.</p>
+   * Provides options for how often AWS Config delivers configuration snapshots to the Amazon S3 bucket in your delivery channel.
+   *
+   * '''Note:'''If you want to create a rule that triggers evaluations for your resources when AWS Config delivers the configuration snapshot, see the following:
+   * The frequency for a rule that triggers evaluations for your resources when AWS Config delivers the configuration snapshot is set by one of two values, depending on which is less frequent:
+   * * The value for the <code>deliveryFrequency</code> parameter within the delivery channel configuration, which sets how often AWS Config delivers configuration snapshots. This value also sets how often AWS Config invokes evaluations for AWS Config rules.
+   *  * The value for the <code>MaximumExecutionFrequency</code> parameter, which sets the maximum frequency with which AWS Config invokes evaluations for the rule. For more information, see '''ConfigRule'''.
+   * If the <code>deliveryFrequency</code> value is less frequent than the <code>MaximumExecutionFrequency</code> value for a rule, AWS Config invokes the rule only as often as the <code>deliveryFrequency</code> value.
+   *  <ol> * For example, you want your rule to run evaluations when AWS Config delivers the configuration snapshot.
+   *  * You specify the <code>MaximumExecutionFrequency</code> value for <code>Six_Hours</code>.
+   *  * You then specify the delivery channel <code>deliveryFrequency</code> value for <code>TwentyFour_Hours</code>.
+   *  * Because the value for <code>deliveryFrequency</code> is less frequent than <code>MaximumExecutionFrequency</code>, AWS Config invokes evaluations for the rule every 24 hours.
+   *  </ol> You should set the <code>MaximumExecutionFrequency</code> value to be at least as frequent as the <code>deliveryFrequency</code> value. You can view the <code>deliveryFrequency</code> value by using the <code>DescribeDeliveryChannnels</code> action.
+   *  To update the <code>deliveryFrequency</code> with which AWS Config delivers your configuration snapshots, use the <code>PutDeliveryChannel</code> action.
    */
   @js.native
   trait ConfigSnapshotDeliveryProperties extends js.Object {
@@ -867,7 +884,7 @@ package configservice {
   }
 
   /**
-   * <p>A list that contains the status of the delivery of the configuration stream notification to the Amazon SNS topic.</p>
+   * A list that contains the status of the delivery of the configuration stream notification to the Amazon SNS topic.
    */
   @js.native
   trait ConfigStreamDeliveryInfo extends js.Object {
@@ -894,7 +911,7 @@ package configservice {
   }
 
   /**
-   * <p>The details about the configuration aggregator, including information about source accounts, regions, and metadata of the aggregator. </p>
+   * The details about the configuration aggregator, including information about source accounts, regions, and metadata of the aggregator.
    */
   @js.native
   trait ConfigurationAggregator extends js.Object {
@@ -927,7 +944,7 @@ package configservice {
   }
 
   /**
-   * <p>A list that contains detailed configurations of a specified resource.</p>
+   * A list that contains detailed configurations of a specified resource.
    */
   @js.native
   trait ConfigurationItem extends js.Object {
@@ -1006,7 +1023,7 @@ package configservice {
   }
 
   /**
-   * <p>An object that represents the recording of configuration changes of an AWS resource.</p>
+   * An object that represents the recording of configuration changes of an AWS resource.
    */
   @js.native
   trait ConfigurationRecorder extends js.Object {
@@ -1030,7 +1047,7 @@ package configservice {
   }
 
   /**
-   * <p>The current status of the configuration recorder.</p>
+   * The current status of the configuration recorder.
    */
   @js.native
   trait ConfigurationRecorderStatus extends js.Object {
@@ -1120,7 +1137,7 @@ package configservice {
   }
 
   /**
-   * <p>The request object for the <code>DeleteConfigurationRecorder</code> action.</p>
+   * The request object for the <code>DeleteConfigurationRecorder</code> action.
    */
   @js.native
   trait DeleteConfigurationRecorderRequest extends js.Object {
@@ -1138,7 +1155,7 @@ package configservice {
   }
 
   /**
-   * <p>The input for the <a>DeleteDeliveryChannel</a> action. The action accepts the following data, in JSON format. </p>
+   * The input for the '''DeleteDeliveryChannel''' action. The action accepts the following data, in JSON format.
    */
   @js.native
   trait DeleteDeliveryChannelRequest extends js.Object {
@@ -1174,7 +1191,7 @@ package configservice {
   }
 
   /**
-   * <p>The output when you delete the evaluation results for the specified AWS Config rule.</p>
+   * The output when you delete the evaluation results for the specified AWS Config rule.
    */
   @js.native
   trait DeleteEvaluationResultsResponse extends js.Object {
@@ -1223,7 +1240,7 @@ package configservice {
   }
 
   /**
-   * <p>The input for the <a>DeliverConfigSnapshot</a> action.</p>
+   * The input for the '''DeliverConfigSnapshot''' action.
    */
   @js.native
   trait DeliverConfigSnapshotRequest extends js.Object {
@@ -1241,7 +1258,7 @@ package configservice {
   }
 
   /**
-   * <p>The output for the <a>DeliverConfigSnapshot</a> action, in JSON format.</p>
+   * The output for the '''DeliverConfigSnapshot''' action, in JSON format.
    */
   @js.native
   trait DeliverConfigSnapshotResponse extends js.Object {
@@ -1259,7 +1276,7 @@ package configservice {
   }
 
   /**
-   * <p>The channel through which AWS Config delivers notifications and updated configuration states.</p>
+   * The channel through which AWS Config delivers notifications and updated configuration states.
    */
   @js.native
   trait DeliveryChannel extends js.Object {
@@ -1289,7 +1306,8 @@ package configservice {
   }
 
   /**
-   * <p>The status of a specified delivery channel.</p> <p>Valid values: <code>Success</code> | <code>Failure</code> </p>
+   * The status of a specified delivery channel.
+   *  Valid values: <code>Success</code> | <code>Failure</code>
    */
   @js.native
   trait DeliveryChannelStatus extends js.Object {
@@ -1666,7 +1684,7 @@ package configservice {
   }
 
   /**
-   * <p>The input for the <a>DescribeConfigurationRecorderStatus</a> action.</p>
+   * The input for the '''DescribeConfigurationRecorderStatus''' action.
    */
   @js.native
   trait DescribeConfigurationRecorderStatusRequest extends js.Object {
@@ -1684,7 +1702,7 @@ package configservice {
   }
 
   /**
-   * <p>The output for the <a>DescribeConfigurationRecorderStatus</a> action, in JSON format.</p>
+   * The output for the '''DescribeConfigurationRecorderStatus''' action, in JSON format.
    */
   @js.native
   trait DescribeConfigurationRecorderStatusResponse extends js.Object {
@@ -1702,7 +1720,7 @@ package configservice {
   }
 
   /**
-   * <p>The input for the <a>DescribeConfigurationRecorders</a> action.</p>
+   * The input for the '''DescribeConfigurationRecorders''' action.
    */
   @js.native
   trait DescribeConfigurationRecordersRequest extends js.Object {
@@ -1720,7 +1738,7 @@ package configservice {
   }
 
   /**
-   * <p>The output for the <a>DescribeConfigurationRecorders</a> action.</p>
+   * The output for the '''DescribeConfigurationRecorders''' action.
    */
   @js.native
   trait DescribeConfigurationRecordersResponse extends js.Object {
@@ -1738,7 +1756,7 @@ package configservice {
   }
 
   /**
-   * <p>The input for the <a>DeliveryChannelStatus</a> action.</p>
+   * The input for the '''DeliveryChannelStatus''' action.
    */
   @js.native
   trait DescribeDeliveryChannelStatusRequest extends js.Object {
@@ -1756,7 +1774,7 @@ package configservice {
   }
 
   /**
-   * <p>The output for the <a>DescribeDeliveryChannelStatus</a> action.</p>
+   * The output for the '''DescribeDeliveryChannelStatus''' action.
    */
   @js.native
   trait DescribeDeliveryChannelStatusResponse extends js.Object {
@@ -1774,7 +1792,7 @@ package configservice {
   }
 
   /**
-   * <p>The input for the <a>DescribeDeliveryChannels</a> action.</p>
+   * The input for the '''DescribeDeliveryChannels''' action.
    */
   @js.native
   trait DescribeDeliveryChannelsRequest extends js.Object {
@@ -1792,7 +1810,7 @@ package configservice {
   }
 
   /**
-   * <p>The output for the <a>DescribeDeliveryChannels</a> action.</p>
+   * The output for the '''DescribeDeliveryChannels''' action.
    */
   @js.native
   trait DescribeDeliveryChannelsResponse extends js.Object {
@@ -1882,7 +1900,7 @@ package configservice {
   }
 
   /**
-   * <p>Identifies an AWS resource and indicates whether it complies with the AWS Config rule that it was evaluated against.</p>
+   * Identifies an AWS resource and indicates whether it complies with the AWS Config rule that it was evaluated against.
    */
   @js.native
   trait Evaluation extends js.Object {
@@ -1912,7 +1930,7 @@ package configservice {
   }
 
   /**
-   * <p>The details of an AWS Config evaluation. Provides the AWS resource that was evaluated, the compliance of the resource, related time stamps, and supplementary information.</p>
+   * The details of an AWS Config evaluation. Provides the AWS resource that was evaluated, the compliance of the resource, related time stamps, and supplementary information.
    */
   @js.native
   trait EvaluationResult extends js.Object {
@@ -1945,7 +1963,7 @@ package configservice {
   }
 
   /**
-   * <p>Uniquely identifies an evaluation result.</p>
+   * Uniquely identifies an evaluation result.
    */
   @js.native
   trait EvaluationResultIdentifier extends js.Object {
@@ -1966,7 +1984,7 @@ package configservice {
   }
 
   /**
-   * <p>Identifies an AWS Config rule that evaluated an AWS resource, and provides the type and ID of the resource that the rule evaluated.</p>
+   * Identifies an AWS Config rule that evaluated an AWS resource, and provides the type and ID of the resource that the rule evaluated.
    */
   @js.native
   trait EvaluationResultQualifier extends js.Object {
@@ -2371,7 +2389,7 @@ package configservice {
   }
 
   /**
-   * <p>The input for the <a>GetResourceConfigHistory</a> action.</p>
+   * The input for the '''GetResourceConfigHistory''' action.
    */
   @js.native
   trait GetResourceConfigHistoryRequest extends js.Object {
@@ -2407,7 +2425,7 @@ package configservice {
   }
 
   /**
-   * <p>The output for the <a>GetResourceConfigHistory</a> action.</p>
+   * The output for the '''GetResourceConfigHistory''' action.
    */
   @js.native
   trait GetResourceConfigHistoryResponse extends js.Object {
@@ -2428,7 +2446,7 @@ package configservice {
   }
 
   /**
-   * <p>The count of resources that are grouped by the group name.</p>
+   * The count of resources that are grouped by the group name.
    */
   @js.native
   trait GroupedResourceCount extends js.Object {
@@ -2567,7 +2585,7 @@ package configservice {
   }
 
   /**
-   * <p>This object contains regions to setup the aggregator and an IAM role to retrieve organization details.</p>
+   * This object contains regions to setup the aggregator and an IAM role to retrieve organization details.
    */
   @js.native
   trait OrganizationAggregationSource extends js.Object {
@@ -2598,7 +2616,7 @@ package configservice {
   }
 
   /**
-   * <p>An object that represents the account ID and region of an aggregator account that is requesting authorization but is not yet authorized.</p>
+   * An object that represents the account ID and region of an aggregator account that is requesting authorization but is not yet authorized.
    */
   @js.native
   trait PendingAggregationRequest extends js.Object {
@@ -2703,7 +2721,7 @@ package configservice {
   }
 
   /**
-   * <p>The input for the <a>PutConfigurationRecorder</a> action.</p>
+   * The input for the '''PutConfigurationRecorder''' action.
    */
   @js.native
   trait PutConfigurationRecorderRequest extends js.Object {
@@ -2721,7 +2739,7 @@ package configservice {
   }
 
   /**
-   * <p>The input for the <a>PutDeliveryChannel</a> action.</p>
+   * The input for the '''PutDeliveryChannel''' action.
    */
   @js.native
   trait PutDeliveryChannelRequest extends js.Object {
@@ -2819,7 +2837,14 @@ package configservice {
   }
 
   /**
-   * <p>Specifies the types of AWS resource for which AWS Config records configuration changes.</p> <p>In the recording group, you specify whether all supported types or specific types of resources are recorded.</p> <p>By default, AWS Config records configuration changes for all supported types of regional resources that AWS Config discovers in the region in which it is running. Regional resources are tied to a region and can be used only in that region. Examples of regional resources are EC2 instances and EBS volumes.</p> <p>You can also have AWS Config record configuration changes for supported types of global resources (for example, IAM resources). Global resources are not tied to an individual region and can be used in all regions.</p> <important> <p>The configuration details for any global resource are the same in all regions. If you customize AWS Config in multiple regions to record global resources, it will create multiple configuration items each time a global resource changes: one configuration item for each region. These configuration items will contain identical data. To prevent duplicate configuration items, you should consider customizing AWS Config in only one region to record global resources, unless you want the configuration items to be available in multiple regions.</p> </important> <p>If you don't want AWS Config to record all resources, you can specify which types of resources it will record with the <code>resourceTypes</code> parameter.</p> <p>For a list of supported resource types, see <a href="http://docs.aws.amazon.com/config/latest/developerguide/resource-config-reference.html#supported-resources">Supported Resource Types</a>.</p> <p>For more information, see <a href="http://docs.aws.amazon.com/config/latest/developerguide/select-resources.html">Selecting Which Resources AWS Config Records</a>.</p>
+   * Specifies the types of AWS resource for which AWS Config records configuration changes.
+   *  In the recording group, you specify whether all supported types or specific types of resources are recorded.
+   *  By default, AWS Config records configuration changes for all supported types of regional resources that AWS Config discovers in the region in which it is running. Regional resources are tied to a region and can be used only in that region. Examples of regional resources are EC2 instances and EBS volumes.
+   *  You can also have AWS Config record configuration changes for supported types of global resources (for example, IAM resources). Global resources are not tied to an individual region and can be used in all regions.
+   *  <important> The configuration details for any global resource are the same in all regions. If you customize AWS Config in multiple regions to record global resources, it will create multiple configuration items each time a global resource changes: one configuration item for each region. These configuration items will contain identical data. To prevent duplicate configuration items, you should consider customizing AWS Config in only one region to record global resources, unless you want the configuration items to be available in multiple regions.
+   *  </important> If you don't want AWS Config to record all resources, you can specify which types of resources it will record with the <code>resourceTypes</code> parameter.
+   *  For a list of supported resource types, see <a href="http://docs.aws.amazon.com/config/latest/developerguide/resource-config-reference.html#supported-resources">Supported Resource Types</a>.
+   *  For more information, see <a href="http://docs.aws.amazon.com/config/latest/developerguide/select-resources.html">Selecting Which Resources AWS Config Records</a>.
    */
   @js.native
   trait RecordingGroup extends js.Object {
@@ -2843,7 +2868,7 @@ package configservice {
   }
 
   /**
-   * <p>The relationship of the related resource to the main resource.</p>
+   * The relationship of the related resource to the main resource.
    */
   @js.native
   trait Relationship extends js.Object {
@@ -2870,7 +2895,7 @@ package configservice {
   }
 
   /**
-   * <p>An object that contains the resource type and the number of resources.</p>
+   * An object that contains the resource type and the number of resources.
    */
   @js.native
   trait ResourceCount extends js.Object {
@@ -2891,7 +2916,7 @@ package configservice {
   }
 
   /**
-   * <p>Filters the resource count based on account ID, region, and resource type.</p>
+   * Filters the resource count based on account ID, region, and resource type.
    */
   @js.native
   trait ResourceCountFilters extends js.Object {
@@ -2923,7 +2948,7 @@ package configservice {
   }
 
   /**
-   * <p>Filters the results by resource account ID, region, resource ID, and resource name.</p>
+   * Filters the results by resource account ID, region, resource ID, and resource name.
    */
   @js.native
   trait ResourceFilters extends js.Object {
@@ -2950,7 +2975,7 @@ package configservice {
   }
 
   /**
-   * <p>The details that identify a resource that is discovered by AWS Config, including the resource type, ID, and (if available) the custom resource name.</p>
+   * The details that identify a resource that is discovered by AWS Config, including the resource type, ID, and (if available) the custom resource name.
    */
   @js.native
   trait ResourceIdentifier extends js.Object {
@@ -2977,7 +3002,7 @@ package configservice {
   }
 
   /**
-   * <p>The details that identify a resource within AWS Config, including the resource type and resource ID.</p>
+   * The details that identify a resource within AWS Config, including the resource type and resource ID.
    */
   @js.native
   trait ResourceKey extends js.Object {
@@ -3067,7 +3092,7 @@ package configservice {
   }
 
   /**
-   * <p>An object with the name of the retention configuration and the retention period in days. The object stores the configuration for data retention in AWS Config.</p>
+   * An object with the name of the retention configuration and the retention period in days. The object stores the configuration for data retention in AWS Config.
    */
   @js.native
   trait RetentionConfiguration extends js.Object {
@@ -3088,7 +3113,7 @@ package configservice {
   }
 
   /**
-   * <p>Defines which resources trigger an evaluation for an AWS Config rule. The scope can include one or more resource types, a combination of a tag key and value, or a combination of one resource type and one resource ID. Specify a scope to constrain which resources trigger an evaluation for a rule. Otherwise, evaluations for the rule are triggered when any resource in your recording group changes in configuration.</p>
+   * Defines which resources trigger an evaluation for an AWS Config rule. The scope can include one or more resource types, a combination of a tag key and value, or a combination of one resource type and one resource ID. Specify a scope to constrain which resources trigger an evaluation for a rule. Otherwise, evaluations for the rule are triggered when any resource in your recording group changes in configuration.
    */
   @js.native
   trait Scope extends js.Object {
@@ -3115,7 +3140,7 @@ package configservice {
   }
 
   /**
-   * <p>Provides the AWS Config rule owner (AWS or customer), the rule identifier, and the events that trigger the evaluation of your AWS resources.</p>
+   * Provides the AWS Config rule owner (AWS or customer), the rule identifier, and the events that trigger the evaluation of your AWS resources.
    */
   @js.native
   trait Source extends js.Object {
@@ -3139,7 +3164,7 @@ package configservice {
   }
 
   /**
-   * <p>Provides the source and the message types that trigger AWS Config to evaluate your AWS resources against a rule. It also provides the frequency with which you want AWS Config to run evaluations for the rule if the trigger type is periodic. You can specify the parameter values for <code>SourceDetail</code> only for custom rules. </p>
+   * Provides the source and the message types that trigger AWS Config to evaluate your AWS resources against a rule. It also provides the frequency with which you want AWS Config to run evaluations for the rule if the trigger type is periodic. You can specify the parameter values for <code>SourceDetail</code> only for custom rules.
    */
   @js.native
   trait SourceDetail extends js.Object {
@@ -3181,7 +3206,7 @@ package configservice {
   }
 
   /**
-   * <p>The output when you start the evaluation for the specified AWS Config rule.</p>
+   * The output when you start the evaluation for the specified AWS Config rule.
    */
   @js.native
   trait StartConfigRulesEvaluationResponse extends js.Object {
@@ -3197,7 +3222,7 @@ package configservice {
   }
 
   /**
-   * <p>The input for the <a>StartConfigurationRecorder</a> action.</p>
+   * The input for the '''StartConfigurationRecorder''' action.
    */
   @js.native
   trait StartConfigurationRecorderRequest extends js.Object {
@@ -3215,7 +3240,7 @@ package configservice {
   }
 
   /**
-   * <p>The input for the <a>StopConfigurationRecorder</a> action.</p>
+   * The input for the '''StopConfigurationRecorder''' action.
    */
   @js.native
   trait StopConfigurationRecorderRequest extends js.Object {

@@ -71,7 +71,7 @@ package health {
   }
 
   /**
-   * <p>Information about an entity that is affected by a Health event.</p>
+   * Information about an entity that is affected by a Health event.
    */
   @js.native
   trait AffectedEntity extends js.Object {
@@ -107,7 +107,7 @@ package health {
   }
 
   /**
-   * <p>A range of dates and times that is used by the <a>EventFilter</a> and <a>EntityFilter</a> objects. If <code>from</code> is set and <code>to</code> is set: match items where the timestamp (<code>startTime</code>, <code>endTime</code>, or <code>lastUpdatedTime</code>) is between <code>from</code> and <code>to</code> inclusive. If <code>from</code> is set and <code>to</code> is not set: match items where the timestamp value is equal to or after <code>from</code>. If <code>from</code> is not set and <code>to</code> is set: match items where the timestamp value is equal to or before <code>to</code>.</p>
+   * A range of dates and times that is used by the '''EventFilter''' and '''EntityFilter''' objects. If <code>from</code> is set and <code>to</code> is set: match items where the timestamp (<code>startTime</code>, <code>endTime</code>, or <code>lastUpdatedTime</code>) is between <code>from</code> and <code>to</code> inclusive. If <code>from</code> is set and <code>to</code> is not set: match items where the timestamp value is equal to or after <code>from</code>. If <code>from</code> is not set and <code>to</code> is set: match items where the timestamp value is equal to or before <code>to</code>.
    */
   @js.native
   trait DateTimeRange extends js.Object {
@@ -362,7 +362,7 @@ package health {
   }
 
   /**
-   * <p>The number of entities that are affected by one or more events. Returned by the <a>DescribeEntityAggregates</a> operation.</p>
+   * The number of entities that are affected by one or more events. Returned by the '''DescribeEntityAggregates''' operation.
    */
   @js.native
   trait EntityAggregate extends js.Object {
@@ -383,7 +383,7 @@ package health {
   }
 
   /**
-   * <p>The values to use to filter results from the <a>DescribeAffectedEntities</a> operation.</p>
+   * The values to use to filter results from the '''DescribeAffectedEntities''' operation.
    */
   @js.native
   trait EntityFilter extends js.Object {
@@ -416,7 +416,7 @@ package health {
   }
 
   /**
-   * <p>Summary information about an event, returned by the <a>DescribeEvents</a> operation. The <a>DescribeEventDetails</a> operation also returns this information, as well as the <a>EventDescription</a> and additional event metadata.</p>
+   * Summary information about an event, returned by the '''DescribeEvents''' operation. The '''DescribeEventDetails''' operation also returns this information, as well as the '''EventDescription''' and additional event metadata.
    */
   @js.native
   trait Event extends js.Object {
@@ -461,7 +461,7 @@ package health {
   }
 
   /**
-   * <p>The number of events of each issue type. Returned by the <a>DescribeEventAggregates</a> operation.</p>
+   * The number of events of each issue type. Returned by the '''DescribeEventAggregates''' operation.
    */
   @js.native
   trait EventAggregate extends js.Object {
@@ -482,7 +482,7 @@ package health {
   }
 
   /**
-   * <p>The detailed description of the event. Included in the information returned by the <a>DescribeEventDetails</a> operation.</p>
+   * The detailed description of the event. Included in the information returned by the '''DescribeEventDetails''' operation.
    */
   @js.native
   trait EventDescription extends js.Object {
@@ -500,7 +500,7 @@ package health {
   }
 
   /**
-   * <p>Detailed information about an event. A combination of an <a>Event</a> object, an <a>EventDescription</a> object, and additional metadata about the event. Returned by the <a>DescribeEventDetails</a> operation.</p>
+   * Detailed information about an event. A combination of an '''Event''' object, an '''EventDescription''' object, and additional metadata about the event. Returned by the '''DescribeEventDetails''' operation.
    */
   @js.native
   trait EventDetails extends js.Object {
@@ -524,7 +524,7 @@ package health {
   }
 
   /**
-   * <p>Error information returned when a <a>DescribeEventDetails</a> operation cannot find a specified event.</p>
+   * Error information returned when a '''DescribeEventDetails''' operation cannot find a specified event.
    */
   @js.native
   trait EventDetailsErrorItem extends js.Object {
@@ -548,7 +548,7 @@ package health {
   }
 
   /**
-   * <p>The values to use to filter results from the <a>DescribeEvents</a> and <a>DescribeEventAggregates</a> operations.</p>
+   * The values to use to filter results from the '''DescribeEvents''' and '''DescribeEventAggregates''' operations.
    */
   @js.native
   trait EventFilter extends js.Object {
@@ -602,7 +602,7 @@ package health {
   }
 
   /**
-   * <p>Metadata about a type of event that is reported by AWS Health. Data consists of the category (for example, <code>issue</code>), the service (for example, <code>EC2</code>), and the event type code (for example, <code>AWS_EC2_SYSTEM_MAINTENANCE_EVENT</code>).</p>
+   * Metadata about a type of event that is reported by AWS Health. Data consists of the category (for example, <code>issue</code>), the service (for example, <code>EC2</code>), and the event type code (for example, <code>AWS_EC2_SYSTEM_MAINTENANCE_EVENT</code>).
    */
   @js.native
   trait EventType extends js.Object {
@@ -626,7 +626,7 @@ package health {
   }
 
   /**
-   * <p>The values to use to filter results from the <a>DescribeEventTypes</a> operation.</p>
+   * The values to use to filter results from the '''DescribeEventTypes''' operation.
    */
   @js.native
   trait EventTypeFilter extends js.Object {
@@ -650,7 +650,7 @@ package health {
   }
 
   /**
-   * <p>The specified pagination token (<code>nextToken</code>) is not valid.</p>
+   * The specified pagination token (<code>nextToken</code>) is not valid.
    */
   @js.native
   trait InvalidPaginationTokenException extends js.Object {
@@ -658,7 +658,7 @@ package health {
   }
 
   /**
-   * <p>The specified locale is not supported.</p>
+   * The specified locale is not supported.
    */
   @js.native
   trait UnsupportedLocaleException extends js.Object {

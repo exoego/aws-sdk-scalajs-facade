@@ -91,7 +91,8 @@ package pinpointemail {
   }
 
   /**
-   * <p>The action that you want Amazon Pinpoint to take if it can't read the required MX record for a custom MAIL FROM domain. When you set this value to <code>UseDefaultValue</code>, Amazon Pinpoint uses <i>amazonses.com</i> as the MAIL FROM domain. When you set this value to <code>RejectMessage</code>, Amazon Pinpoint returns a <code>MailFromDomainNotVerified</code> error, and doesn't attempt to deliver the email.</p> <p>These behaviors are taken when the custom MAIL FROM domain configuration is in the <code>Pending</code>, <code>Failed</code>, and <code>TemporaryFailure</code> states.</p>
+   * The action that you want Amazon Pinpoint to take if it can't read the required MX record for a custom MAIL FROM domain. When you set this value to <code>UseDefaultValue</code>, Amazon Pinpoint uses <i>amazonses.com</i> as the MAIL FROM domain. When you set this value to <code>RejectMessage</code>, Amazon Pinpoint returns a <code>MailFromDomainNotVerified</code> error, and doesn't attempt to deliver the email.
+   *  These behaviors are taken when the custom MAIL FROM domain configuration is in the <code>Pending</code>, <code>Failed</code>, and <code>TemporaryFailure</code> states.
    */
   object BehaviorOnMxFailureEnum {
     val USE_DEFAULT_VALUE = "USE_DEFAULT_VALUE"
@@ -101,7 +102,7 @@ package pinpointemail {
   }
 
   /**
-   * <p>Represents the body of the email message.</p>
+   * Represents the body of the email message.
    */
   @js.native
   trait Body extends js.Object {
@@ -122,7 +123,7 @@ package pinpointemail {
   }
 
   /**
-   * <p>An object that defines an Amazon CloudWatch destination for email events. You can use Amazon CloudWatch to monitor and gain insights on your email sending metrics.</p>
+   * An object that defines an Amazon CloudWatch destination for email events. You can use Amazon CloudWatch to monitor and gain insights on your email sending metrics.
    */
   @js.native
   trait CloudWatchDestination extends js.Object {
@@ -140,7 +141,7 @@ package pinpointemail {
   }
 
   /**
-   * <p>An object that defines the dimension configuration to use when you send Amazon Pinpoint email events to Amazon CloudWatch.</p>
+   * An object that defines the dimension configuration to use when you send Amazon Pinpoint email events to Amazon CloudWatch.
    */
   @js.native
   trait CloudWatchDimensionConfiguration extends js.Object {
@@ -164,7 +165,7 @@ package pinpointemail {
   }
 
   /**
-   * <p>An object that represents the content of the email, and optionally a character set specification.</p>
+   * An object that represents the content of the email, and optionally a character set specification.
    */
   @js.native
   trait Content extends js.Object {
@@ -185,7 +186,7 @@ package pinpointemail {
   }
 
   /**
-   * <p>A request to add an event destination to a configuration set.</p>
+   * A request to add an event destination to a configuration set.
    */
   @js.native
   trait CreateConfigurationSetEventDestinationRequest extends js.Object {
@@ -209,7 +210,7 @@ package pinpointemail {
   }
 
   /**
-   * <p>An HTTP 200 response if the request succeeds, or an error message if the request fails.</p>
+   * An HTTP 200 response if the request succeeds, or an error message if the request fails.
    */
   @js.native
   trait CreateConfigurationSetEventDestinationResponse extends js.Object {
@@ -225,7 +226,7 @@ package pinpointemail {
   }
 
   /**
-   * <p>A request to create a configuration set.</p>
+   * A request to create a configuration set.
    */
   @js.native
   trait CreateConfigurationSetRequest extends js.Object {
@@ -255,7 +256,7 @@ package pinpointemail {
   }
 
   /**
-   * <p>An HTTP 200 response if the request succeeds, or an error message if the request fails.</p>
+   * An HTTP 200 response if the request succeeds, or an error message if the request fails.
    */
   @js.native
   trait CreateConfigurationSetResponse extends js.Object {
@@ -271,7 +272,7 @@ package pinpointemail {
   }
 
   /**
-   * <p>A request to create a new dedicated IP pool.</p>
+   * A request to create a new dedicated IP pool.
    */
   @js.native
   trait CreateDedicatedIpPoolRequest extends js.Object {
@@ -289,7 +290,7 @@ package pinpointemail {
   }
 
   /**
-   * <p>An HTTP 200 response if the request succeeds, or an error message if the request fails.</p>
+   * An HTTP 200 response if the request succeeds, or an error message if the request fails.
    */
   @js.native
   trait CreateDedicatedIpPoolResponse extends js.Object {
@@ -305,7 +306,7 @@ package pinpointemail {
   }
 
   /**
-   * <p>A request to begin the verification process for an email identity (an email address or domain).</p>
+   * A request to begin the verification process for an email identity (an email address or domain).
    */
   @js.native
   trait CreateEmailIdentityRequest extends js.Object {
@@ -323,7 +324,8 @@ package pinpointemail {
   }
 
   /**
-   * <p>If the email identity is a domain, this object contains tokens that you can use to create a set of CNAME records. To sucessfully verify your domain, you have to add these records to the DNS configuration for your domain.</p> <p>If the email identity is an email address, this object is empty. </p>
+   * If the email identity is a domain, this object contains tokens that you can use to create a set of CNAME records. To sucessfully verify your domain, you have to add these records to the DNS configuration for your domain.
+   *  If the email identity is an email address, this object is empty.
    */
   @js.native
   trait CreateEmailIdentityResponse extends js.Object {
@@ -347,7 +349,8 @@ package pinpointemail {
   }
 
   /**
-   * <p>Contains information about a dedicated IP address that is associated with your Amazon Pinpoint account.</p> <p/>
+   * Contains information about a dedicated IP address that is associated with your Amazon Pinpoint account.
+   *  <p/>
    */
   @js.native
   trait DedicatedIp extends js.Object {
@@ -374,7 +377,7 @@ package pinpointemail {
   }
 
   /**
-   * <p>A request to delete an event destination from a configuration set.</p>
+   * A request to delete an event destination from a configuration set.
    */
   @js.native
   trait DeleteConfigurationSetEventDestinationRequest extends js.Object {
@@ -395,7 +398,7 @@ package pinpointemail {
   }
 
   /**
-   * <p>An HTTP 200 response if the request succeeds, or an error message if the request fails.</p>
+   * An HTTP 200 response if the request succeeds, or an error message if the request fails.
    */
   @js.native
   trait DeleteConfigurationSetEventDestinationResponse extends js.Object {
@@ -411,7 +414,7 @@ package pinpointemail {
   }
 
   /**
-   * <p>A request to delete a configuration set.</p>
+   * A request to delete a configuration set.
    */
   @js.native
   trait DeleteConfigurationSetRequest extends js.Object {
@@ -429,7 +432,7 @@ package pinpointemail {
   }
 
   /**
-   * <p>An HTTP 200 response if the request succeeds, or an error message if the request fails.</p>
+   * An HTTP 200 response if the request succeeds, or an error message if the request fails.
    */
   @js.native
   trait DeleteConfigurationSetResponse extends js.Object {
@@ -445,7 +448,7 @@ package pinpointemail {
   }
 
   /**
-   * <p>A request to delete a dedicated IP pool.</p>
+   * A request to delete a dedicated IP pool.
    */
   @js.native
   trait DeleteDedicatedIpPoolRequest extends js.Object {
@@ -463,7 +466,7 @@ package pinpointemail {
   }
 
   /**
-   * <p>An HTTP 200 response if the request succeeds, or an error message if the request fails.</p>
+   * An HTTP 200 response if the request succeeds, or an error message if the request fails.
    */
   @js.native
   trait DeleteDedicatedIpPoolResponse extends js.Object {
@@ -479,7 +482,7 @@ package pinpointemail {
   }
 
   /**
-   * <p>A request to delete an existing email identity. When you delete an identity, you lose the ability to use Amazon Pinpoint to send email from that identity. You can restore your ability to send email by completing the verification process for the identity again.</p>
+   * A request to delete an existing email identity. When you delete an identity, you lose the ability to use Amazon Pinpoint to send email from that identity. You can restore your ability to send email by completing the verification process for the identity again.
    */
   @js.native
   trait DeleteEmailIdentityRequest extends js.Object {
@@ -497,7 +500,7 @@ package pinpointemail {
   }
 
   /**
-   * <p>An HTTP 200 response if the request succeeds, or an error message if the request fails.</p>
+   * An HTTP 200 response if the request succeeds, or an error message if the request fails.
    */
   @js.native
   trait DeleteEmailIdentityResponse extends js.Object {
@@ -513,7 +516,7 @@ package pinpointemail {
   }
 
   /**
-   * <p>Used to associate a configuration set with a dedicated IP pool.</p>
+   * Used to associate a configuration set with a dedicated IP pool.
    */
   @js.native
   trait DeliveryOptions extends js.Object {
@@ -531,7 +534,7 @@ package pinpointemail {
   }
 
   /**
-   * <p>An object that describes the recipients for an email.</p>
+   * An object that describes the recipients for an email.
    */
   @js.native
   trait Destination extends js.Object {
@@ -555,7 +558,7 @@ package pinpointemail {
   }
 
   /**
-   * <p>The location where Amazon Pinpoint finds the value of a dimension to publish to Amazon CloudWatch. If you want Amazon Pinpoint to use the message tags that you specify using an X-SES-MESSAGE-TAGS header or a parameter to the SendEmail/SendRawEmail API, choose <code>messageTag</code>. If you want Amazon Pinpoint to use your own email headers, choose <code>emailHeader</code>. If you want Amazon Pinpoint to use link tags, choose <code>linkTags</code>.</p>
+   * The location where Amazon Pinpoint finds the value of a dimension to publish to Amazon CloudWatch. If you want Amazon Pinpoint to use the message tags that you specify using an X-SES-MESSAGE-TAGS header or a parameter to the SendEmail/SendRawEmail API, choose <code>messageTag</code>. If you want Amazon Pinpoint to use your own email headers, choose <code>emailHeader</code>. If you want Amazon Pinpoint to use link tags, choose <code>linkTags</code>.
    */
   object DimensionValueSourceEnum {
     val MESSAGE_TAG = "MESSAGE_TAG"
@@ -566,7 +569,7 @@ package pinpointemail {
   }
 
   /**
-   * <p>An object that contains information about the DKIM configuration for an email identity.</p>
+   * An object that contains information about the DKIM configuration for an email identity.
    */
   @js.native
   trait DkimAttributes extends js.Object {
@@ -590,7 +593,12 @@ package pinpointemail {
   }
 
   /**
-   * <p>The DKIM authentication status of the identity. The status can be one of the following:</p> <ul> <li> <p> <code>PENDING</code> ? The DKIM verification process was initiated, and Amazon Pinpoint is still waiting for the required CNAME records to appear in the DNS configuration for the domain.</p> </li> <li> <p> <code>SUCCESS</code> ? The DKIM authentication process completed successfully.</p> </li> <li> <p> <code>FAILED</code> ? The DKIM authentication process failed. This can happen when Amazon Pinpoint fails to find the required CNAME records in the DNS configuration of the domain.</p> </li> <li> <p> <code>TEMPORARY_FAILURE</code> ? A temporary issue is preventing Amazon Pinpoint from determining the DKIM authentication status of the domain.</p> </li> <li> <p> <code>NOT_STARTED</code> ? The DKIM verification process hasn't been initiated for the domain.</p> </li> </ul>
+   * The DKIM authentication status of the identity. The status can be one of the following:
+   * * <code>PENDING</code> ? The DKIM verification process was initiated, and Amazon Pinpoint is still waiting for the required CNAME records to appear in the DNS configuration for the domain.
+   *  * <code>SUCCESS</code> ? The DKIM authentication process completed successfully.
+   *  * <code>FAILED</code> ? The DKIM authentication process failed. This can happen when Amazon Pinpoint fails to find the required CNAME records in the DNS configuration of the domain.
+   *  * <code>TEMPORARY_FAILURE</code> ? A temporary issue is preventing Amazon Pinpoint from determining the DKIM authentication status of the domain.
+   *  * <code>NOT_STARTED</code> ? The DKIM verification process hasn't been initiated for the domain.
    */
   object DkimStatusEnum {
     val PENDING = "PENDING"
@@ -603,7 +611,7 @@ package pinpointemail {
   }
 
   /**
-   * <p>An object that defines the entire content of the email, including the message headers and the body content. You can create a simple email message, in which you specify the subject and the text and HTML versions of the message body. You can also create raw messages, in which you specify a complete MIME-formatted message. Raw messages can include attachments and custom headers.</p>
+   * An object that defines the entire content of the email, including the message headers and the body content. You can create a simple email message, in which you specify the subject and the text and HTML versions of the message body. You can also create raw messages, in which you specify a complete MIME-formatted message. Raw messages can include attachments and custom headers.
    */
   @js.native
   trait EmailContent extends js.Object {
@@ -624,7 +632,7 @@ package pinpointemail {
   }
 
   /**
-   * <p>In Amazon Pinpoint, <i>events</i> include message sends, deliveries, opens, clicks, bounces, and complaints. <i>Event destinations</i> are places that you can send information about these events to. For example, you can send event data to Amazon SNS to receive notifications when you receive bounces or complaints, or you can use Amazon Kinesis Data Firehose to stream data to Amazon S3 for long-term storage.</p>
+   * In Amazon Pinpoint, <i>events</i> include message sends, deliveries, opens, clicks, bounces, and complaints. <i>Event destinations</i> are places that you can send information about these events to. For example, you can send event data to Amazon SNS to receive notifications when you receive bounces or complaints, or you can use Amazon Kinesis Data Firehose to stream data to Amazon S3 for long-term storage.
    */
   @js.native
   trait EventDestination extends js.Object {
@@ -660,7 +668,7 @@ package pinpointemail {
   }
 
   /**
-   * <p>An object that defines the event destination. Specifically, it defines which services receive events from emails sent using the configuration set that the event destination is associated with. Also defines the types of events that are sent to the event destination.</p>
+   * An object that defines the event destination. Specifically, it defines which services receive events from emails sent using the configuration set that the event destination is associated with. Also defines the types of events that are sent to the event destination.
    */
   @js.native
   trait EventDestinationDefinition extends js.Object {
@@ -693,7 +701,7 @@ package pinpointemail {
   }
 
   /**
-   * <p>An email sending event type. For example, email sends, opens, and bounces are all email events.</p>
+   * An email sending event type. For example, email sends, opens, and bounces are all email events.
    */
   object EventTypeEnum {
     val SEND = "SEND"
@@ -709,7 +717,7 @@ package pinpointemail {
   }
 
   /**
-   * <p>A request to obtain information about the email-sending capabilities of your Amazon Pinpoint account.</p>
+   * A request to obtain information about the email-sending capabilities of your Amazon Pinpoint account.
    */
   @js.native
   trait GetAccountRequest extends js.Object {
@@ -725,7 +733,7 @@ package pinpointemail {
   }
 
   /**
-   * <p>A list of details about the email-sending capabilities of your Amazon Pinpoint account in the current AWS Region.</p>
+   * A list of details about the email-sending capabilities of your Amazon Pinpoint account in the current AWS Region.
    */
   @js.native
   trait GetAccountResponse extends js.Object {
@@ -755,7 +763,7 @@ package pinpointemail {
   }
 
   /**
-   * <p>A request to obtain information about the event destinations for a configuration set.</p>
+   * A request to obtain information about the event destinations for a configuration set.
    */
   @js.native
   trait GetConfigurationSetEventDestinationsRequest extends js.Object {
@@ -773,7 +781,7 @@ package pinpointemail {
   }
 
   /**
-   * <p>Information about an event destination for a configuration set.</p>
+   * Information about an event destination for a configuration set.
    */
   @js.native
   trait GetConfigurationSetEventDestinationsResponse extends js.Object {
@@ -791,7 +799,7 @@ package pinpointemail {
   }
 
   /**
-   * <p>A request to obtain information about a configuration set.</p>
+   * A request to obtain information about a configuration set.
    */
   @js.native
   trait GetConfigurationSetRequest extends js.Object {
@@ -809,7 +817,7 @@ package pinpointemail {
   }
 
   /**
-   * <p>Information about a configuration set.</p>
+   * Information about a configuration set.
    */
   @js.native
   trait GetConfigurationSetResponse extends js.Object {
@@ -839,7 +847,7 @@ package pinpointemail {
   }
 
   /**
-   * <p>A request to obtain more information about a dedicated IP address.</p>
+   * A request to obtain more information about a dedicated IP address.
    */
   @js.native
   trait GetDedicatedIpRequest extends js.Object {
@@ -857,7 +865,7 @@ package pinpointemail {
   }
 
   /**
-   * <p>Information about a dedicated IP address.</p>
+   * Information about a dedicated IP address.
    */
   @js.native
   trait GetDedicatedIpResponse extends js.Object {
@@ -875,7 +883,7 @@ package pinpointemail {
   }
 
   /**
-   * <p>A request to obtain more information about dedicated IP pools.</p>
+   * A request to obtain more information about dedicated IP pools.
    */
   @js.native
   trait GetDedicatedIpsRequest extends js.Object {
@@ -899,7 +907,7 @@ package pinpointemail {
   }
 
   /**
-   * <p>Information about the dedicated IP addresses that are associated with your Amazon Pinpoint account.</p>
+   * Information about the dedicated IP addresses that are associated with your Amazon Pinpoint account.
    */
   @js.native
   trait GetDedicatedIpsResponse extends js.Object {
@@ -920,7 +928,7 @@ package pinpointemail {
   }
 
   /**
-   * <p>A request to return details about an email identity.</p>
+   * A request to return details about an email identity.
    */
   @js.native
   trait GetEmailIdentityRequest extends js.Object {
@@ -938,7 +946,7 @@ package pinpointemail {
   }
 
   /**
-   * <p>Details about an email identity.</p>
+   * Details about an email identity.
    */
   @js.native
   trait GetEmailIdentityResponse extends js.Object {
@@ -968,7 +976,7 @@ package pinpointemail {
   }
 
   /**
-   * <p>Information about an email identity.</p>
+   * Information about an email identity.
    */
   @js.native
   trait IdentityInfo extends js.Object {
@@ -992,7 +1000,9 @@ package pinpointemail {
   }
 
   /**
-   * <p>The email identity type. The identity type can be one of the following:</p> <ul> <li> <p> <code>EMAIL_ADDRESS</code> ? The identity is an email address.</p> </li> <li> <p> <code>DOMAIN</code> ? The identity is a domain.</p> </li> </ul>
+   * The email identity type. The identity type can be one of the following:
+   * * <code>EMAIL_ADDRESS</code> ? The identity is an email address.
+   *  * <code>DOMAIN</code> ? The identity is a domain.
    */
   object IdentityTypeEnum {
     val EMAIL_ADDRESS = "EMAIL_ADDRESS"
@@ -1003,7 +1013,7 @@ package pinpointemail {
   }
 
   /**
-   * <p>An object that defines an Amazon Kinesis Data Firehose destination for email events. You can use Amazon Kinesis Data Firehose to stream data to other services, such as Amazon S3 and Amazon Redshift.</p>
+   * An object that defines an Amazon Kinesis Data Firehose destination for email events. You can use Amazon Kinesis Data Firehose to stream data to other services, such as Amazon S3 and Amazon Redshift.
    */
   @js.native
   trait KinesisFirehoseDestination extends js.Object {
@@ -1024,7 +1034,7 @@ package pinpointemail {
   }
 
   /**
-   * <p>A request to obtain a list of configuration sets for your Amazon Pinpoint account in the current AWS Region.</p>
+   * A request to obtain a list of configuration sets for your Amazon Pinpoint account in the current AWS Region.
    */
   @js.native
   trait ListConfigurationSetsRequest extends js.Object {
@@ -1045,7 +1055,7 @@ package pinpointemail {
   }
 
   /**
-   * <p>A list of configuration sets in your Amazon Pinpoint account in the current AWS Region.</p>
+   * A list of configuration sets in your Amazon Pinpoint account in the current AWS Region.
    */
   @js.native
   trait ListConfigurationSetsResponse extends js.Object {
@@ -1066,7 +1076,7 @@ package pinpointemail {
   }
 
   /**
-   * <p>A request to obtain a list of dedicated IP pools.</p>
+   * A request to obtain a list of dedicated IP pools.
    */
   @js.native
   trait ListDedicatedIpPoolsRequest extends js.Object {
@@ -1087,7 +1097,7 @@ package pinpointemail {
   }
 
   /**
-   * <p>A list of dedicated IP pools.</p>
+   * A list of dedicated IP pools.
    */
   @js.native
   trait ListDedicatedIpPoolsResponse extends js.Object {
@@ -1108,7 +1118,7 @@ package pinpointemail {
   }
 
   /**
-   * <p>A request to list all of the email identities associated with your Amazon Pinpoint account. This list includes identities that you've already verified, identities that are unverified, and identities that were verified in the past, but are no longer verified.</p>
+   * A request to list all of the email identities associated with your Amazon Pinpoint account. This list includes identities that you've already verified, identities that are unverified, and identities that were verified in the past, but are no longer verified.
    */
   @js.native
   trait ListEmailIdentitiesRequest extends js.Object {
@@ -1129,7 +1139,7 @@ package pinpointemail {
   }
 
   /**
-   * <p>A list of all of the identities that you've attempted to verify for use with Amazon Pinpoint, regardless of whether or not those identities were successfully verified.</p>
+   * A list of all of the identities that you've attempted to verify for use with Amazon Pinpoint, regardless of whether or not those identities were successfully verified.
    */
   @js.native
   trait ListEmailIdentitiesResponse extends js.Object {
@@ -1150,7 +1160,7 @@ package pinpointemail {
   }
 
   /**
-   * <p>A list of attributes that are associated with a MAIL FROM domain.</p>
+   * A list of attributes that are associated with a MAIL FROM domain.
    */
   @js.native
   trait MailFromAttributes extends js.Object {
@@ -1174,7 +1184,11 @@ package pinpointemail {
   }
 
   /**
-   * <p>The status of the MAIL FROM domain. This status can have the following values:</p> <ul> <li> <p> <code>PENDING</code> ? Amazon Pinpoint hasn't started searching for the MX record yet.</p> </li> <li> <p> <code>SUCCESS</code> ? Amazon Pinpoint detected the required MX record for the MAIL FROM domain.</p> </li> <li> <p> <code>FAILED</code> ? Amazon Pinpoint can't find the required MX record, or the record no longer exists.</p> </li> <li> <p> <code>TEMPORARY_FAILURE</code> ? A temporary issue occurred, which prevented Amazon Pinpoint from determining the status of the MAIL FROM domain.</p> </li> </ul>
+   * The status of the MAIL FROM domain. This status can have the following values:
+   * * <code>PENDING</code> ? Amazon Pinpoint hasn't started searching for the MX record yet.
+   *  * <code>SUCCESS</code> ? Amazon Pinpoint detected the required MX record for the MAIL FROM domain.
+   *  * <code>FAILED</code> ? Amazon Pinpoint can't find the required MX record, or the record no longer exists.
+   *  * <code>TEMPORARY_FAILURE</code> ? A temporary issue occurred, which prevented Amazon Pinpoint from determining the status of the MAIL FROM domain.
    */
   object MailFromDomainStatusEnum {
     val PENDING = "PENDING"
@@ -1186,7 +1200,7 @@ package pinpointemail {
   }
 
   /**
-   * <p>Represents the email message that you're sending. The <code>Message</code> object consists of a subject line and a message body.</p>
+   * Represents the email message that you're sending. The <code>Message</code> object consists of a subject line and a message body.
    */
   @js.native
   trait Message extends js.Object {
@@ -1207,7 +1221,7 @@ package pinpointemail {
   }
 
   /**
-   * <p>Contains the name and value of a tag that you apply to an email. You can use message tags when you publish email sending events. </p>
+   * Contains the name and value of a tag that you apply to an email. You can use message tags when you publish email sending events.
    */
   @js.native
   trait MessageTag extends js.Object {
@@ -1228,7 +1242,7 @@ package pinpointemail {
   }
 
   /**
-   * <p>An object that defines a Amazon Pinpoint destination for email events. You can use Amazon Pinpoint events to create attributes in Amazon Pinpoint projects. You can use these attributes to create segments for your campaigns.</p>
+   * An object that defines a Amazon Pinpoint destination for email events. You can use Amazon Pinpoint events to create attributes in Amazon Pinpoint projects. You can use these attributes to create segments for your campaigns.
    */
   @js.native
   trait PinpointDestination extends js.Object {
@@ -1246,7 +1260,7 @@ package pinpointemail {
   }
 
   /**
-   * <p>A request to enable or disable the automatic IP address warm-up feature.</p>
+   * A request to enable or disable the automatic IP address warm-up feature.
    */
   @js.native
   trait PutAccountDedicatedIpWarmupAttributesRequest extends js.Object {
@@ -1264,7 +1278,7 @@ package pinpointemail {
   }
 
   /**
-   * <p>An HTTP 200 response if the request succeeds, or an error message if the request fails.</p>
+   * An HTTP 200 response if the request succeeds, or an error message if the request fails.
    */
   @js.native
   trait PutAccountDedicatedIpWarmupAttributesResponse extends js.Object {
@@ -1280,7 +1294,7 @@ package pinpointemail {
   }
 
   /**
-   * <p>A request to change the ability of your account to send email.</p>
+   * A request to change the ability of your account to send email.
    */
   @js.native
   trait PutAccountSendingAttributesRequest extends js.Object {
@@ -1298,7 +1312,7 @@ package pinpointemail {
   }
 
   /**
-   * <p>An HTTP 200 response if the request succeeds, or an error message if the request fails.</p>
+   * An HTTP 200 response if the request succeeds, or an error message if the request fails.
    */
   @js.native
   trait PutAccountSendingAttributesResponse extends js.Object {
@@ -1314,7 +1328,7 @@ package pinpointemail {
   }
 
   /**
-   * <p>A request to associate a configuration set with a dedicated IP pool.</p>
+   * A request to associate a configuration set with a dedicated IP pool.
    */
   @js.native
   trait PutConfigurationSetDeliveryOptionsRequest extends js.Object {
@@ -1335,7 +1349,7 @@ package pinpointemail {
   }
 
   /**
-   * <p>An HTTP 200 response if the request succeeds, or an error message if the request fails.</p>
+   * An HTTP 200 response if the request succeeds, or an error message if the request fails.
    */
   @js.native
   trait PutConfigurationSetDeliveryOptionsResponse extends js.Object {
@@ -1351,7 +1365,7 @@ package pinpointemail {
   }
 
   /**
-   * <p>A request to enable or disable tracking of reputation metrics for a configuration set.</p>
+   * A request to enable or disable tracking of reputation metrics for a configuration set.
    */
   @js.native
   trait PutConfigurationSetReputationOptionsRequest extends js.Object {
@@ -1372,7 +1386,7 @@ package pinpointemail {
   }
 
   /**
-   * <p>An HTTP 200 response if the request succeeds, or an error message if the request fails.</p>
+   * An HTTP 200 response if the request succeeds, or an error message if the request fails.
    */
   @js.native
   trait PutConfigurationSetReputationOptionsResponse extends js.Object {
@@ -1388,7 +1402,7 @@ package pinpointemail {
   }
 
   /**
-   * <p>A request to enable or disable the ability of Amazon Pinpoint to send emails that use a specific configuration set.</p>
+   * A request to enable or disable the ability of Amazon Pinpoint to send emails that use a specific configuration set.
    */
   @js.native
   trait PutConfigurationSetSendingOptionsRequest extends js.Object {
@@ -1409,7 +1423,7 @@ package pinpointemail {
   }
 
   /**
-   * <p>An HTTP 200 response if the request succeeds, or an error message if the request fails.</p>
+   * An HTTP 200 response if the request succeeds, or an error message if the request fails.
    */
   @js.native
   trait PutConfigurationSetSendingOptionsResponse extends js.Object {
@@ -1425,7 +1439,7 @@ package pinpointemail {
   }
 
   /**
-   * <p>A request to add a custom domain for tracking open and click events to a configuration set.</p>
+   * A request to add a custom domain for tracking open and click events to a configuration set.
    */
   @js.native
   trait PutConfigurationSetTrackingOptionsRequest extends js.Object {
@@ -1446,7 +1460,7 @@ package pinpointemail {
   }
 
   /**
-   * <p>An HTTP 200 response if the request succeeds, or an error message if the request fails.</p>
+   * An HTTP 200 response if the request succeeds, or an error message if the request fails.
    */
   @js.native
   trait PutConfigurationSetTrackingOptionsResponse extends js.Object {
@@ -1462,7 +1476,7 @@ package pinpointemail {
   }
 
   /**
-   * <p>A request to move a dedicated IP address to a dedicated IP pool.</p>
+   * A request to move a dedicated IP address to a dedicated IP pool.
    */
   @js.native
   trait PutDedicatedIpInPoolRequest extends js.Object {
@@ -1496,7 +1510,7 @@ package pinpointemail {
   }
 
   /**
-   * <p>A request to change the warm-up attributes for a dedicated IP address. This operation is useful when you want to resume the warm-up process for an existing IP address.</p>
+   * A request to change the warm-up attributes for a dedicated IP address. This operation is useful when you want to resume the warm-up process for an existing IP address.
    */
   @js.native
   trait PutDedicatedIpWarmupAttributesRequest extends js.Object {
@@ -1517,7 +1531,7 @@ package pinpointemail {
   }
 
   /**
-   * <p>An HTTP 200 response if the request succeeds, or an error message if the request fails.</p>
+   * An HTTP 200 response if the request succeeds, or an error message if the request fails.
    */
   @js.native
   trait PutDedicatedIpWarmupAttributesResponse extends js.Object {
@@ -1533,7 +1547,7 @@ package pinpointemail {
   }
 
   /**
-   * <p>A request to enable or disable DKIM signing of email that you send from an email identity.</p>
+   * A request to enable or disable DKIM signing of email that you send from an email identity.
    */
   @js.native
   trait PutEmailIdentityDkimAttributesRequest extends js.Object {
@@ -1554,7 +1568,7 @@ package pinpointemail {
   }
 
   /**
-   * <p>An HTTP 200 response if the request succeeds, or an error message if the request fails.</p>
+   * An HTTP 200 response if the request succeeds, or an error message if the request fails.
    */
   @js.native
   trait PutEmailIdentityDkimAttributesResponse extends js.Object {
@@ -1570,7 +1584,7 @@ package pinpointemail {
   }
 
   /**
-   * <p>A request to set the attributes that control how bounce and complaint events are processed.</p>
+   * A request to set the attributes that control how bounce and complaint events are processed.
    */
   @js.native
   trait PutEmailIdentityFeedbackAttributesRequest extends js.Object {
@@ -1591,7 +1605,7 @@ package pinpointemail {
   }
 
   /**
-   * <p>An HTTP 200 response if the request succeeds, or an error message if the request fails.</p>
+   * An HTTP 200 response if the request succeeds, or an error message if the request fails.
    */
   @js.native
   trait PutEmailIdentityFeedbackAttributesResponse extends js.Object {
@@ -1607,7 +1621,7 @@ package pinpointemail {
   }
 
   /**
-   * <p>A request to configure the custom MAIL FROM domain for a verified identity.</p>
+   * A request to configure the custom MAIL FROM domain for a verified identity.
    */
   @js.native
   trait PutEmailIdentityMailFromAttributesRequest extends js.Object {
@@ -1631,7 +1645,7 @@ package pinpointemail {
   }
 
   /**
-   * <p>An HTTP 200 response if the request succeeds, or an error message if the request fails.</p>
+   * An HTTP 200 response if the request succeeds, or an error message if the request fails.
    */
   @js.native
   trait PutEmailIdentityMailFromAttributesResponse extends js.Object {
@@ -1647,7 +1661,7 @@ package pinpointemail {
   }
 
   /**
-   * <p>The raw email message.</p>
+   * The raw email message.
    */
   @js.native
   trait RawMessage extends js.Object {
@@ -1665,7 +1679,7 @@ package pinpointemail {
   }
 
   /**
-   * <p>Enable or disable collection of reputation metrics for emails that you send using this configuration set in the current AWS Region. </p>
+   * Enable or disable collection of reputation metrics for emails that you send using this configuration set in the current AWS Region.
    */
   @js.native
   trait ReputationOptions extends js.Object {
@@ -1686,7 +1700,7 @@ package pinpointemail {
   }
 
   /**
-   * <p>A request to send an email message.</p>
+   * A request to send an email message.
    */
   @js.native
   trait SendEmailRequest extends js.Object {
@@ -1722,7 +1736,7 @@ package pinpointemail {
   }
 
   /**
-   * <p>A unique message ID that you receive when Amazon Pinpoint accepts an email for sending.</p>
+   * A unique message ID that you receive when Amazon Pinpoint accepts an email for sending.
    */
   @js.native
   trait SendEmailResponse extends js.Object {
@@ -1740,7 +1754,7 @@ package pinpointemail {
   }
 
   /**
-   * <p>An object that contains information about the per-day and per-second sending limits for your Amazon Pinpoint account in the current AWS Region.</p>
+   * An object that contains information about the per-day and per-second sending limits for your Amazon Pinpoint account in the current AWS Region.
    */
   @js.native
   trait SendQuota extends js.Object {
@@ -1764,7 +1778,7 @@ package pinpointemail {
   }
 
   /**
-   * <p>Used to enable or disable email sending for messages that use this configuration set in the current AWS Region.</p>
+   * Used to enable or disable email sending for messages that use this configuration set in the current AWS Region.
    */
   @js.native
   trait SendingOptions extends js.Object {
@@ -1782,7 +1796,7 @@ package pinpointemail {
   }
 
   /**
-   * <p>An object that defines an Amazon SNS destination for email events. You can use Amazon SNS to send notification when certain email events occur.</p>
+   * An object that defines an Amazon SNS destination for email events. You can use Amazon SNS to send notification when certain email events occur.
    */
   @js.native
   trait SnsDestination extends js.Object {
@@ -1800,7 +1814,8 @@ package pinpointemail {
   }
 
   /**
-   * <p>An object that defines the tracking options for a configuration set. When you use Amazon Pinpoint to send an email, it contains an invisible image that's used to track when recipients open your email. If your email contains links, those links are changed slightly in order to track when recipients click them.</p> <p>These images and links include references to a domain operated by AWS. You can optionally configure Amazon Pinpoint to use a domain that you operate for these images and links.</p>
+   * An object that defines the tracking options for a configuration set. When you use Amazon Pinpoint to send an email, it contains an invisible image that's used to track when recipients open your email. If your email contains links, those links are changed slightly in order to track when recipients click them.
+   *  These images and links include references to a domain operated by AWS. You can optionally configure Amazon Pinpoint to use a domain that you operate for these images and links.
    */
   @js.native
   trait TrackingOptions extends js.Object {
@@ -1818,7 +1833,7 @@ package pinpointemail {
   }
 
   /**
-   * <p>A request to change the settings for an event destination for a configuration set.</p>
+   * A request to change the settings for an event destination for a configuration set.
    */
   @js.native
   trait UpdateConfigurationSetEventDestinationRequest extends js.Object {
@@ -1842,7 +1857,7 @@ package pinpointemail {
   }
 
   /**
-   * <p>An HTTP 200 response if the request succeeds, or an error message if the request fails.</p>
+   * An HTTP 200 response if the request succeeds, or an error message if the request fails.
    */
   @js.native
   trait UpdateConfigurationSetEventDestinationResponse extends js.Object {
@@ -1858,7 +1873,7 @@ package pinpointemail {
   }
 
   /**
-   * <p>The warmup status of a dedicated IP.</p>
+   * The warmup status of a dedicated IP.
    */
   object WarmupStatusEnum {
     val IN_PROGRESS = "IN_PROGRESS"

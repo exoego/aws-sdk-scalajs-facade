@@ -233,7 +233,7 @@ package iot1clickdevicesservice {
   }
 
   /**
-   * <p>On success, an empty object is returned.</p>
+   * On success, an empty object is returned.
    */
   @js.native
   trait Empty extends js.Object {

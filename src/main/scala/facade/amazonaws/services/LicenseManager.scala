@@ -54,7 +54,7 @@ package licensemanager {
   }
 
   /**
-   * <p>Details about license consumption.</p>
+   * Details about license consumption.
    */
   @js.native
   trait ConsumedLicenseSummary extends js.Object {
@@ -151,7 +151,7 @@ package licensemanager {
   }
 
   /**
-   * <p>A filter name and value pair that is used to return a more specific list of results from a describe operation. Filters can be used to match a set of resources by specific criteria, such as tags, attributes, or IDs. The filters supported by a <code>Describe</code> operation are documented with the <code>Describe</code> operation.</p>
+   * A filter name and value pair that is used to return a more specific list of results from a describe operation. Filters can be used to match a set of resources by specific criteria, such as tags, attributes, or IDs. The filters supported by a <code>Describe</code> operation are documented with the <code>Describe</code> operation.
    */
   @js.native
   trait Filter extends js.Object {
@@ -278,7 +278,7 @@ package licensemanager {
   }
 
   /**
-   * <p>An inventory filter object.</p>
+   * An inventory filter object.
    */
   @js.native
   trait InventoryFilter extends js.Object {
@@ -311,7 +311,7 @@ package licensemanager {
   }
 
   /**
-   * <p>A license configuration is an abstraction of a customer license agreement that can be consumed and enforced by License Manager. Components include specifications for the license type (licensing by instance, socket, CPU, or VCPU), tenancy (shared tenancy, Amazon EC2 Dedicated Instance, Amazon EC2 Dedicated Host, or any of these), host affinity (how long a VM must be associated with a host), the number of licenses purchased and used.</p>
+   * A license configuration is an abstraction of a customer license agreement that can be consumed and enforced by License Manager. Components include specifications for the license type (licensing by instance, socket, CPU, or VCPU), tenancy (shared tenancy, Amazon EC2 Dedicated Instance, Amazon EC2 Dedicated Host, or any of these), host affinity (how long a VM must be associated with a host), the number of licenses purchased and used.
    */
   @js.native
   trait LicenseConfiguration extends js.Object {
@@ -365,7 +365,7 @@ package licensemanager {
   }
 
   /**
-   * <p>Describes a server resource that is associated with a license configuration.</p>
+   * Describes a server resource that is associated with a license configuration.
    */
   @js.native
   trait LicenseConfigurationAssociation extends js.Object {
@@ -399,7 +399,7 @@ package licensemanager {
   }
 
   /**
-   * <p>Contains details of the usage of each resource from the license pool.</p>
+   * Contains details of the usage of each resource from the license pool.
    */
   @js.native
   trait LicenseConfigurationUsage extends js.Object {
@@ -441,7 +441,7 @@ package licensemanager {
   }
 
   /**
-   * <p>Object used for associating a license configuration with a resource.</p>
+   * Object used for associating a license configuration with a resource.
    */
   @js.native
   trait LicenseSpecification extends js.Object {
@@ -690,7 +690,7 @@ package licensemanager {
   }
 
   /**
-   * <p>Summary for a resource.</p>
+   * Summary for a resource.
    */
   @js.native
   trait ManagedResourceSummary extends js.Object {
@@ -711,7 +711,7 @@ package licensemanager {
   }
 
   /**
-   * <p>Object containing configuration information for AWS Organizations.</p>
+   * Object containing configuration information for AWS Organizations.
    */
   @js.native
   trait OrganizationConfiguration extends js.Object {
@@ -729,7 +729,7 @@ package licensemanager {
   }
 
   /**
-   * <p>A set of attributes that describe a resource.</p>
+   * A set of attributes that describe a resource.
    */
   @js.native
   trait ResourceInventory extends js.Object {
@@ -770,7 +770,7 @@ package licensemanager {
   }
 
   /**
-   * <p>Tag for a resource in a key-value format.</p>
+   * Tag for a resource in a key-value format.
    */
   @js.native
   trait Tag extends js.Object {

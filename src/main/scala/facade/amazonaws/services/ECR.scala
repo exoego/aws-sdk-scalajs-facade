@@ -90,7 +90,7 @@ package ecr {
   }
 
   /**
-   * <p>An object representing authorization data for an Amazon ECR registry.</p>
+   * An object representing authorization data for an Amazon ECR registry.
    */
   @js.native
   trait AuthorizationData extends js.Object {
@@ -153,7 +153,7 @@ package ecr {
   }
 
   /**
-   * <p>Deletes specified images within a specified repository. Images are specified with either the <code>imageTag</code> or <code>imageDigest</code>.</p>
+   * Deletes specified images within a specified repository. Images are specified with either the <code>imageTag</code> or <code>imageDigest</code>.
    */
   @js.native
   trait BatchDeleteImageRequest extends js.Object {
@@ -432,7 +432,7 @@ package ecr {
   }
 
   /**
-   * <p>An object representing a filter on a <a>DescribeImages</a> operation.</p>
+   * An object representing a filter on a '''DescribeImages''' operation.
    */
   @js.native
   trait DescribeImagesFilter extends js.Object {
@@ -540,7 +540,7 @@ package ecr {
   }
 
   /**
-   * <p>The specified layer upload does not contain any layer parts.</p>
+   * The specified layer upload does not contain any layer parts.
    */
   @js.native
   trait EmptyUploadExceptionException extends js.Object {
@@ -761,7 +761,7 @@ package ecr {
   }
 
   /**
-   * <p>An object representing an Amazon ECR image.</p>
+   * An object representing an Amazon ECR image.
    */
   @js.native
   trait Image extends js.Object {
@@ -794,7 +794,7 @@ package ecr {
   }
 
   /**
-   * <p>The specified image has already been pushed, and there were no changes to the manifest or image tag after the last push.</p>
+   * The specified image has already been pushed, and there were no changes to the manifest or image tag after the last push.
    */
   @js.native
   trait ImageAlreadyExistsExceptionException extends js.Object {
@@ -802,7 +802,7 @@ package ecr {
   }
 
   /**
-   * <p>An object that describes an image returned by a <a>DescribeImages</a> operation.</p>
+   * An object that describes an image returned by a '''DescribeImages''' operation.
    */
   @js.native
   trait ImageDetail extends js.Object {
@@ -835,7 +835,7 @@ package ecr {
   }
 
   /**
-   * <p>An object representing an Amazon ECR image failure.</p>
+   * An object representing an Amazon ECR image failure.
    */
   @js.native
   trait ImageFailure extends js.Object {
@@ -869,7 +869,7 @@ package ecr {
   }
 
   /**
-   * <p>An object with identifying information for an Amazon ECR image.</p>
+   * An object with identifying information for an Amazon ECR image.
    */
   @js.native
   trait ImageIdentifier extends js.Object {
@@ -890,7 +890,7 @@ package ecr {
   }
 
   /**
-   * <p>The image requested does not exist in the specified repository.</p>
+   * The image requested does not exist in the specified repository.
    */
   @js.native
   trait ImageNotFoundExceptionException extends js.Object {
@@ -934,7 +934,7 @@ package ecr {
   }
 
   /**
-   * <p>The layer digest calculation performed by Amazon ECR upon receipt of the image layer does not match the digest specified.</p>
+   * The layer digest calculation performed by Amazon ECR upon receipt of the image layer does not match the digest specified.
    */
   @js.native
   trait InvalidLayerExceptionException extends js.Object {
@@ -942,7 +942,7 @@ package ecr {
   }
 
   /**
-   * <p>The layer part size is not valid, or the first byte specified is not consecutive to the last byte of a previous layer part upload.</p>
+   * The layer part size is not valid, or the first byte specified is not consecutive to the last byte of a previous layer part upload.
    */
   @js.native
   trait InvalidLayerPartExceptionException extends js.Object {
@@ -954,7 +954,7 @@ package ecr {
   }
 
   /**
-   * <p>The specified parameter is invalid. Review the available parameters for the API request.</p>
+   * The specified parameter is invalid. Review the available parameters for the API request.
    */
   @js.native
   trait InvalidParameterExceptionException extends js.Object {
@@ -962,7 +962,7 @@ package ecr {
   }
 
   /**
-   * <p>An object representing an Amazon ECR image layer.</p>
+   * An object representing an Amazon ECR image layer.
    */
   @js.native
   trait Layer extends js.Object {
@@ -989,7 +989,7 @@ package ecr {
   }
 
   /**
-   * <p>The image layer already exists in the associated repository.</p>
+   * The image layer already exists in the associated repository.
    */
   @js.native
   trait LayerAlreadyExistsExceptionException extends js.Object {
@@ -1004,7 +1004,7 @@ package ecr {
   }
 
   /**
-   * <p>An object representing an Amazon ECR image layer failure.</p>
+   * An object representing an Amazon ECR image layer failure.
    */
   @js.native
   trait LayerFailure extends js.Object {
@@ -1035,7 +1035,7 @@ package ecr {
   }
 
   /**
-   * <p>The specified layer is not available because it is not associated with an image. Unassociated image layers may be cleaned up at any time.</p>
+   * The specified layer is not available because it is not associated with an image. Unassociated image layers may be cleaned up at any time.
    */
   @js.native
   trait LayerInaccessibleExceptionException extends js.Object {
@@ -1043,7 +1043,7 @@ package ecr {
   }
 
   /**
-   * <p>Layer parts must be at least 5 MiB in size.</p>
+   * Layer parts must be at least 5 MiB in size.
    */
   @js.native
   trait LayerPartTooSmallExceptionException extends js.Object {
@@ -1051,7 +1051,7 @@ package ecr {
   }
 
   /**
-   * <p>The specified layers could not be found, or the specified layer is not valid for this repository.</p>
+   * The specified layers could not be found, or the specified layer is not valid for this repository.
    */
   @js.native
   trait LayersNotFoundExceptionException extends js.Object {
@@ -1059,7 +1059,7 @@ package ecr {
   }
 
   /**
-   * <p>The lifecycle policy could not be found, and no policy is set to the repository.</p>
+   * The lifecycle policy could not be found, and no policy is set to the repository.
    */
   @js.native
   trait LifecyclePolicyNotFoundExceptionException extends js.Object {
@@ -1067,7 +1067,7 @@ package ecr {
   }
 
   /**
-   * <p>The filter for the lifecycle policy preview.</p>
+   * The filter for the lifecycle policy preview.
    */
   @js.native
   trait LifecyclePolicyPreviewFilter extends js.Object {
@@ -1085,7 +1085,7 @@ package ecr {
   }
 
   /**
-   * <p>The previous lifecycle policy preview request has not completed. Please try again later.</p>
+   * The previous lifecycle policy preview request has not completed. Please try again later.
    */
   @js.native
   trait LifecyclePolicyPreviewInProgressExceptionException extends js.Object {
@@ -1093,7 +1093,7 @@ package ecr {
   }
 
   /**
-   * <p>There is no dry run for this repository.</p>
+   * There is no dry run for this repository.
    */
   @js.native
   trait LifecyclePolicyPreviewNotFoundExceptionException extends js.Object {
@@ -1101,7 +1101,7 @@ package ecr {
   }
 
   /**
-   * <p>The result of the lifecycle policy preview.</p>
+   * The result of the lifecycle policy preview.
    */
   @js.native
   trait LifecyclePolicyPreviewResult extends js.Object {
@@ -1140,7 +1140,7 @@ package ecr {
   }
 
   /**
-   * <p>The summary of the lifecycle policy preview request.</p>
+   * The summary of the lifecycle policy preview request.
    */
   @js.native
   trait LifecyclePolicyPreviewSummary extends js.Object {
@@ -1158,7 +1158,7 @@ package ecr {
   }
 
   /**
-   * <p>The type of action to be taken.</p>
+   * The type of action to be taken.
    */
   @js.native
   trait LifecyclePolicyRuleAction extends js.Object {
@@ -1176,7 +1176,7 @@ package ecr {
   }
 
   /**
-   * <p>The operation did not succeed because it would have exceeded a service limit for your account. For more information, see <a href="http://docs.aws.amazon.com/AmazonECR/latest/userguide/service_limits.html">Amazon ECR Default Service Limits</a> in the Amazon Elastic Container Registry User Guide.</p>
+   * The operation did not succeed because it would have exceeded a service limit for your account. For more information, see <a href="http://docs.aws.amazon.com/AmazonECR/latest/userguide/service_limits.html">Amazon ECR Default Service Limits</a> in the Amazon Elastic Container Registry User Guide.
    */
   @js.native
   trait LimitExceededExceptionException extends js.Object {
@@ -1184,7 +1184,7 @@ package ecr {
   }
 
   /**
-   * <p>An object representing a filter on a <a>ListImages</a> operation.</p>
+   * An object representing a filter on a '''ListImages''' operation.
    */
   @js.native
   trait ListImagesFilter extends js.Object {
@@ -1328,7 +1328,7 @@ package ecr {
   }
 
   /**
-   * <p>An object representing a repository.</p>
+   * An object representing a repository.
    */
   @js.native
   trait Repository extends js.Object {
@@ -1358,7 +1358,7 @@ package ecr {
   }
 
   /**
-   * <p>The specified repository already exists in the specified registry.</p>
+   * The specified repository already exists in the specified registry.
    */
   @js.native
   trait RepositoryAlreadyExistsExceptionException extends js.Object {
@@ -1366,7 +1366,7 @@ package ecr {
   }
 
   /**
-   * <p>The specified repository contains images. To delete a repository that contains images, you must force the deletion with the <code>force</code> parameter.</p>
+   * The specified repository contains images. To delete a repository that contains images, you must force the deletion with the <code>force</code> parameter.
    */
   @js.native
   trait RepositoryNotEmptyExceptionException extends js.Object {
@@ -1374,7 +1374,7 @@ package ecr {
   }
 
   /**
-   * <p>The specified repository could not be found. Check the spelling of the specified repository and ensure that you are performing operations on the correct registry.</p>
+   * The specified repository could not be found. Check the spelling of the specified repository and ensure that you are performing operations on the correct registry.
    */
   @js.native
   trait RepositoryNotFoundExceptionException extends js.Object {
@@ -1382,7 +1382,7 @@ package ecr {
   }
 
   /**
-   * <p>The specified repository and registry combination does not have an associated repository policy.</p>
+   * The specified repository and registry combination does not have an associated repository policy.
    */
   @js.native
   trait RepositoryPolicyNotFoundExceptionException extends js.Object {
@@ -1390,7 +1390,7 @@ package ecr {
   }
 
   /**
-   * <p>These errors are usually caused by a server-side issue.</p>
+   * These errors are usually caused by a server-side issue.
    */
   @js.native
   trait ServerExceptionException extends js.Object {
@@ -1549,7 +1549,7 @@ package ecr {
   }
 
   /**
-   * <p>The upload could not be found, or the specified upload id is not valid for this repository.</p>
+   * The upload could not be found, or the specified upload id is not valid for this repository.
    */
   @js.native
   trait UploadNotFoundExceptionException extends js.Object {

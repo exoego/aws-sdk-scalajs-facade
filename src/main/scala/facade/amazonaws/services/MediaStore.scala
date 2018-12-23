@@ -45,7 +45,7 @@ package mediastore {
   }
 
   /**
-   * <p>This section describes operations that you can perform on an AWS Elemental MediaStore container.</p>
+   * This section describes operations that you can perform on an AWS Elemental MediaStore container.
    */
   @js.native
   trait Container extends js.Object {
@@ -75,7 +75,7 @@ package mediastore {
   }
 
   /**
-   * <p>Resource already exists or is being updated.</p>
+   * Resource already exists or is being updated.
    */
   @js.native
   trait ContainerInUseExceptionException extends js.Object {
@@ -83,7 +83,7 @@ package mediastore {
   }
 
   /**
-   * <p>Could not perform an operation on a container that does not exist.</p>
+   * Could not perform an operation on a container that does not exist.
    */
   @js.native
   trait ContainerNotFoundExceptionException extends js.Object {
@@ -99,7 +99,7 @@ package mediastore {
   }
 
   /**
-   * <p>Could not perform an operation on a policy that does not exist.</p>
+   * Could not perform an operation on a policy that does not exist.
    */
   @js.native
   trait CorsPolicyNotFoundExceptionException extends js.Object {
@@ -107,7 +107,7 @@ package mediastore {
   }
 
   /**
-   * <p>A rule for a CORS policy. You can add up to 100 rules to a CORS policy. If more than one rule applies, the service uses the first applicable rule listed.</p>
+   * A rule for a CORS policy. You can add up to 100 rules to a CORS policy. If more than one rule applies, the service uses the first applicable rule listed.
    */
   @js.native
   trait CorsRule extends js.Object {
@@ -341,7 +341,7 @@ package mediastore {
   }
 
   /**
-   * <p>The service is temporarily unavailable.</p>
+   * The service is temporarily unavailable.
    */
   @js.native
   trait InternalServerErrorException extends js.Object {
@@ -349,7 +349,7 @@ package mediastore {
   }
 
   /**
-   * <p>A service limit has been exceeded.</p>
+   * A service limit has been exceeded.
    */
   @js.native
   trait LimitExceededExceptionException extends js.Object {
@@ -402,7 +402,7 @@ package mediastore {
   }
 
   /**
-   * <p>Could not perform an operation on a policy that does not exist.</p>
+   * Could not perform an operation on a policy that does not exist.
    */
   @js.native
   trait PolicyNotFoundExceptionException extends js.Object {

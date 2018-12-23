@@ -48,7 +48,7 @@ package cloudtrail {
   }
 
   /**
-   * <p>Specifies the tags to add to a trail.</p>
+   * Specifies the tags to add to a trail.
    */
   @js.native
   trait AddTagsRequest extends js.Object {
@@ -69,7 +69,7 @@ package cloudtrail {
   }
 
   /**
-   * <p>Returns the objects or data listed below if successful. Otherwise, returns an error.</p>
+   * Returns the objects or data listed below if successful. Otherwise, returns an error.
    */
   @js.native
   trait AddTagsResponse extends js.Object {
@@ -85,7 +85,7 @@ package cloudtrail {
   }
 
   /**
-   * <p>Specifies the settings for each trail.</p>
+   * Specifies the settings for each trail.
    */
   @js.native
   trait CreateTrailRequest extends js.Object {
@@ -133,7 +133,7 @@ package cloudtrail {
   }
 
   /**
-   * <p>Returns the objects or data listed below if successful. Otherwise, returns an error.</p>
+   * Returns the objects or data listed below if successful. Otherwise, returns an error.
    */
   @js.native
   trait CreateTrailResponse extends js.Object {
@@ -187,7 +187,19 @@ package cloudtrail {
   }
 
   /**
-   * <p>The Amazon S3 buckets or AWS Lambda functions that you specify in your event selectors for your trail to log data events. Data events provide insight into the resource operations performed on or within a resource itself. These are also known as data plane operations. You can specify up to 250 data resources for a trail.</p> <note> <p>The total number of allowed data resources is 250. This number can be distributed between 1 and 5 event selectors, but the total cannot exceed 250 across all selectors.</p> </note> <p>The following example demonstrates how logging works when you configure logging of all data events for an S3 bucket named <code>bucket-1</code>. In this example, the CloudTrail user spcified an empty prefix, and the option to log both <code>Read</code> and <code>Write</code> data events.</p> <ol> <li> <p>A user uploads an image file to <code>bucket-1</code>.</p> </li> <li> <p>The <code>PutObject</code> API operation is an Amazon S3 object-level API. It is recorded as a data event in CloudTrail. Because the CloudTrail user specified an S3 bucket with an empty prefix, events that occur on any object in that bucket are logged. The trail processes and logs the event.</p> </li> <li> <p>A user uploads an object to an Amazon S3 bucket named <code>arn:aws:s3:::bucket-2</code>.</p> </li> <li> <p>The <code>PutObject</code> API operation occurred for an object in an S3 bucket that the CloudTrail user didn't specify for the trail. The trail doesn�ft log the event.</p> </li> </ol> <p>The following example demonstrates how logging works when you configure logging of AWS Lambda data events for a Lambda function named <i>MyLambdaFunction</i>, but not for all AWS Lambda functions.</p> <ol> <li> <p>A user runs a script that includes a call to the <i>MyLambdaFunction</i> function and the <i>MyOtherLambdaFunction</i> function.</p> </li> <li> <p>The <code>Invoke</code> API operation on <i>MyLambdaFunction</i> is an AWS Lambda API. It is recorded as a data event in CloudTrail. Because the CloudTrail user specified logging data events for <i>MyLambdaFunction</i>, any invocations of that function are logged. The trail processes and logs the event. </p> </li> <li> <p>The <code>Invoke</code> API operation on <i>MyOtherLambdaFunction</i> is an AWS Lambda API. Because the CloudTrail user did not specify logging data events for all Lambda functions, the <code>Invoke</code> operation for <i>MyOtherLambdaFunction</i> does not match the function specified for the trail. The trail doesn�ft log the event. </p> </li> </ol>
+   * The Amazon S3 buckets or AWS Lambda functions that you specify in your event selectors for your trail to log data events. Data events provide insight into the resource operations performed on or within a resource itself. These are also known as data plane operations. You can specify up to 250 data resources for a trail.
+   *
+   * '''Note:'''The total number of allowed data resources is 250. This number can be distributed between 1 and 5 event selectors, but the total cannot exceed 250 across all selectors.
+   * The following example demonstrates how logging works when you configure logging of all data events for an S3 bucket named <code>bucket-1</code>. In this example, the CloudTrail user spcified an empty prefix, and the option to log both <code>Read</code> and <code>Write</code> data events.
+   *  <ol> * A user uploads an image file to <code>bucket-1</code>.
+   *  * The <code>PutObject</code> API operation is an Amazon S3 object-level API. It is recorded as a data event in CloudTrail. Because the CloudTrail user specified an S3 bucket with an empty prefix, events that occur on any object in that bucket are logged. The trail processes and logs the event.
+   *  * A user uploads an object to an Amazon S3 bucket named <code>arn:aws:s3:::bucket-2</code>.
+   *  * The <code>PutObject</code> API operation occurred for an object in an S3 bucket that the CloudTrail user didn't specify for the trail. The trail doesn�ft log the event.
+   *  </ol> The following example demonstrates how logging works when you configure logging of AWS Lambda data events for a Lambda function named <i>MyLambdaFunction</i>, but not for all AWS Lambda functions.
+   *  <ol> * A user runs a script that includes a call to the <i>MyLambdaFunction</i> function and the <i>MyOtherLambdaFunction</i> function.
+   *  * The <code>Invoke</code> API operation on <i>MyLambdaFunction</i> is an AWS Lambda API. It is recorded as a data event in CloudTrail. Because the CloudTrail user specified logging data events for <i>MyLambdaFunction</i>, any invocations of that function are logged. The trail processes and logs the event.
+   *  * The <code>Invoke</code> API operation on <i>MyOtherLambdaFunction</i> is an AWS Lambda API. Because the CloudTrail user did not specify logging data events for all Lambda functions, the <code>Invoke</code> operation for <i>MyOtherLambdaFunction</i> does not match the function specified for the trail. The trail doesn�ft log the event.
+   *  </ol>
    */
   @js.native
   trait DataResource extends js.Object {
@@ -208,7 +220,7 @@ package cloudtrail {
   }
 
   /**
-   * <p>The request that specifies the name of a trail to delete.</p>
+   * The request that specifies the name of a trail to delete.
    */
   @js.native
   trait DeleteTrailRequest extends js.Object {
@@ -226,7 +238,7 @@ package cloudtrail {
   }
 
   /**
-   * <p>Returns the objects or data listed below if successful. Otherwise, returns an error.</p>
+   * Returns the objects or data listed below if successful. Otherwise, returns an error.
    */
   @js.native
   trait DeleteTrailResponse extends js.Object {
@@ -242,7 +254,7 @@ package cloudtrail {
   }
 
   /**
-   * <p>Returns information about the trail.</p>
+   * Returns information about the trail.
    */
   @js.native
   trait DescribeTrailsRequest extends js.Object {
@@ -263,7 +275,7 @@ package cloudtrail {
   }
 
   /**
-   * <p>Returns the objects or data listed below if successful. Otherwise, returns an error.</p>
+   * Returns the objects or data listed below if successful. Otherwise, returns an error.
    */
   @js.native
   trait DescribeTrailsResponse extends js.Object {
@@ -281,7 +293,7 @@ package cloudtrail {
   }
 
   /**
-   * <p>Contains information about an event that was returned by a lookup request. The result includes a representation of a CloudTrail event.</p>
+   * Contains information about an event that was returned by a lookup request. The result includes a representation of a CloudTrail event.
    */
   @js.native
   trait Event extends js.Object {
@@ -323,7 +335,8 @@ package cloudtrail {
   }
 
   /**
-   * <p>Use event selectors to further specify the management and data event settings for your trail. By default, trails created without specific event selectors will be configured to log all read and write management events, and no data events. When an event occurs in your account, CloudTrail evaluates the event selector for all trails. For each trail, if the event matches any event selector, the trail processes and logs the event. If the event doesn't match any event selector, the trail doesn't log the event.</p> <p>You can configure up to five event selectors for a trail.</p>
+   * Use event selectors to further specify the management and data event settings for your trail. By default, trails created without specific event selectors will be configured to log all read and write management events, and no data events. When an event occurs in your account, CloudTrail evaluates the event selector for all trails. For each trail, if the event matches any event selector, the trail processes and logs the event. If the event doesn't match any event selector, the trail doesn't log the event.
+   *  You can configure up to five event selectors for a trail.
    */
   @js.native
   trait EventSelector extends js.Object {
@@ -380,7 +393,7 @@ package cloudtrail {
   }
 
   /**
-   * <p>The name of a trail about which you want the current status.</p>
+   * The name of a trail about which you want the current status.
    */
   @js.native
   trait GetTrailStatusRequest extends js.Object {
@@ -398,7 +411,7 @@ package cloudtrail {
   }
 
   /**
-   * <p>Returns the objects or data listed below if successful. Otherwise, returns an error.</p>
+   * Returns the objects or data listed below if successful. Otherwise, returns an error.
    */
   @js.native
   trait GetTrailStatusResponse extends js.Object {
@@ -464,7 +477,7 @@ package cloudtrail {
   }
 
   /**
-   * <p>Requests the public keys for a specified time range.</p>
+   * Requests the public keys for a specified time range.
    */
   @js.native
   trait ListPublicKeysRequest extends js.Object {
@@ -488,7 +501,7 @@ package cloudtrail {
   }
 
   /**
-   * <p>Returns the objects or data listed below if successful. Otherwise, returns an error.</p>
+   * Returns the objects or data listed below if successful. Otherwise, returns an error.
    */
   @js.native
   trait ListPublicKeysResponse extends js.Object {
@@ -509,7 +522,7 @@ package cloudtrail {
   }
 
   /**
-   * <p>Specifies a list of trail tags to return.</p>
+   * Specifies a list of trail tags to return.
    */
   @js.native
   trait ListTagsRequest extends js.Object {
@@ -530,7 +543,7 @@ package cloudtrail {
   }
 
   /**
-   * <p>Returns the objects or data listed below if successful. Otherwise, returns an error.</p>
+   * Returns the objects or data listed below if successful. Otherwise, returns an error.
    */
   @js.native
   trait ListTagsResponse extends js.Object {
@@ -551,7 +564,7 @@ package cloudtrail {
   }
 
   /**
-   * <p>Specifies an attribute and value that filter the events returned.</p>
+   * Specifies an attribute and value that filter the events returned.
    */
   @js.native
   trait LookupAttribute extends js.Object {
@@ -585,7 +598,7 @@ package cloudtrail {
   }
 
   /**
-   * <p>Contains a request for LookupEvents.</p>
+   * Contains a request for LookupEvents.
    */
   @js.native
   trait LookupEventsRequest extends js.Object {
@@ -615,7 +628,7 @@ package cloudtrail {
   }
 
   /**
-   * <p>Contains a response to a LookupEvents action.</p>
+   * Contains a response to a LookupEvents action.
    */
   @js.native
   trait LookupEventsResponse extends js.Object {
@@ -636,7 +649,7 @@ package cloudtrail {
   }
 
   /**
-   * <p>Contains information about a returned public key.</p>
+   * Contains information about a returned public key.
    */
   @js.native
   trait PublicKey extends js.Object {
@@ -707,7 +720,7 @@ package cloudtrail {
   }
 
   /**
-   * <p>Specifies the tags to remove from a trail.</p>
+   * Specifies the tags to remove from a trail.
    */
   @js.native
   trait RemoveTagsRequest extends js.Object {
@@ -728,7 +741,7 @@ package cloudtrail {
   }
 
   /**
-   * <p>Returns the objects or data listed below if successful. Otherwise, returns an error.</p>
+   * Returns the objects or data listed below if successful. Otherwise, returns an error.
    */
   @js.native
   trait RemoveTagsResponse extends js.Object {
@@ -744,7 +757,7 @@ package cloudtrail {
   }
 
   /**
-   * <p>Specifies the type and name of a resource referenced by an event.</p>
+   * Specifies the type and name of a resource referenced by an event.
    */
   @js.native
   trait Resource extends js.Object {
@@ -765,7 +778,7 @@ package cloudtrail {
   }
 
   /**
-   * <p>A resource tag.</p>
+   * A resource tag.
    */
   @js.native
   trait ResourceTag extends js.Object {
@@ -786,7 +799,7 @@ package cloudtrail {
   }
 
   /**
-   * <p>The request to CloudTrail to start logging AWS API calls for an account.</p>
+   * The request to CloudTrail to start logging AWS API calls for an account.
    */
   @js.native
   trait StartLoggingRequest extends js.Object {
@@ -804,7 +817,7 @@ package cloudtrail {
   }
 
   /**
-   * <p>Returns the objects or data listed below if successful. Otherwise, returns an error.</p>
+   * Returns the objects or data listed below if successful. Otherwise, returns an error.
    */
   @js.native
   trait StartLoggingResponse extends js.Object {
@@ -820,7 +833,7 @@ package cloudtrail {
   }
 
   /**
-   * <p>Passes the request to CloudTrail to stop logging AWS API calls for the specified account.</p>
+   * Passes the request to CloudTrail to stop logging AWS API calls for the specified account.
    */
   @js.native
   trait StopLoggingRequest extends js.Object {
@@ -838,7 +851,7 @@ package cloudtrail {
   }
 
   /**
-   * <p>Returns the objects or data listed below if successful. Otherwise, returns an error.</p>
+   * Returns the objects or data listed below if successful. Otherwise, returns an error.
    */
   @js.native
   trait StopLoggingResponse extends js.Object {
@@ -854,7 +867,7 @@ package cloudtrail {
   }
 
   /**
-   * <p>A custom key-value pair associated with a resource such as a CloudTrail trail.</p>
+   * A custom key-value pair associated with a resource such as a CloudTrail trail.
    */
   @js.native
   trait Tag extends js.Object {
@@ -875,7 +888,7 @@ package cloudtrail {
   }
 
   /**
-   * <p>The settings for a trail.</p>
+   * The settings for a trail.
    */
   @js.native
   trait Trail extends js.Object {
@@ -935,7 +948,7 @@ package cloudtrail {
   }
 
   /**
-   * <p>Specifies settings to update for the trail.</p>
+   * Specifies settings to update for the trail.
    */
   @js.native
   trait UpdateTrailRequest extends js.Object {
@@ -983,7 +996,7 @@ package cloudtrail {
   }
 
   /**
-   * <p>Returns the objects or data listed below if successful. Otherwise, returns an error.</p>
+   * Returns the objects or data listed below if successful. Otherwise, returns an error.
    */
   @js.native
   trait UpdateTrailResponse extends js.Object {

@@ -162,7 +162,7 @@ package ecs {
   }
 
   /**
-   * <p>An object representing a container instance or task attachment.</p>
+   * An object representing a container instance or task attachment.
    */
   @js.native
   trait Attachment extends js.Object {
@@ -189,7 +189,7 @@ package ecs {
   }
 
   /**
-   * <p>An object representing a change in state for a task attachment.</p>
+   * An object representing a change in state for a task attachment.
    */
   @js.native
   trait AttachmentStateChange extends js.Object {
@@ -210,7 +210,7 @@ package ecs {
   }
 
   /**
-   * <p>An attribute is a name-value pair associated with an Amazon ECS object. Attributes enable you to extend the Amazon ECS data model by adding custom metadata to your resources. For more information, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement-constraints.html#attributes">Attributes</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+   * An attribute is a name-value pair associated with an Amazon ECS object. Attributes enable you to extend the Amazon ECS data model by adding custom metadata to your resources. For more information, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement-constraints.html#attributes">Attributes</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
    */
   @js.native
   trait Attribute extends js.Object {
@@ -237,7 +237,7 @@ package ecs {
   }
 
   /**
-   * <p>An object representing the networking details for a task or service.</p>
+   * An object representing the networking details for a task or service.
    */
   @js.native
   trait AwsVpcConfiguration extends js.Object {
@@ -261,7 +261,7 @@ package ecs {
   }
 
   /**
-   * <p>A regional grouping of one or more container instances on which you can run task requests. Each account receives a default cluster the first time you use the Amazon ECS service, but you may also create other clusters. Clusters may contain more than one instance type simultaneously.</p>
+   * A regional grouping of one or more container instances on which you can run task requests. Each account receives a default cluster the first time you use the Amazon ECS service, but you may also create other clusters. Clusters may contain more than one instance type simultaneously.
    */
   @js.native
   trait Cluster extends js.Object {
@@ -324,7 +324,7 @@ package ecs {
   }
 
   /**
-   * <p>A Docker container that is part of a task.</p>
+   * A Docker container that is part of a task.
    */
   @js.native
   trait Container extends js.Object {
@@ -366,7 +366,7 @@ package ecs {
   }
 
   /**
-   * <p>Container definitions are used in task definitions to describe the different containers that are launched as part of a task.</p>
+   * Container definitions are used in task definitions to describe the different containers that are launched as part of a task.
    */
   @js.native
   trait ContainerDefinition extends js.Object {
@@ -480,7 +480,7 @@ package ecs {
   }
 
   /**
-   * <p>An EC2 instance that is running the Amazon ECS agent and has been registered with a cluster.</p>
+   * An EC2 instance that is running the Amazon ECS agent and has been registered with a cluster.
    */
   @js.native
   trait ContainerInstance extends js.Object {
@@ -553,7 +553,7 @@ package ecs {
   }
 
   /**
-   * <p>The overrides that should be sent to a container.</p>
+   * The overrides that should be sent to a container.
    */
   @js.native
   trait ContainerOverride extends js.Object {
@@ -586,7 +586,7 @@ package ecs {
   }
 
   /**
-   * <p>An object representing a change in state for a container.</p>
+   * An object representing a change in state for a container.
    */
   @js.native
   trait ContainerStateChange extends js.Object {
@@ -868,7 +868,7 @@ package ecs {
   }
 
   /**
-   * <p>The details of an Amazon ECS service deployment. This is used when a service uses the <code>CODE_DEPLOY</code> deployment controller type.</p>
+   * The details of an Amazon ECS service deployment. This is used when a service uses the <code>CODE_DEPLOY</code> deployment controller type.
    */
   @js.native
   trait Deployment extends js.Object {
@@ -916,7 +916,7 @@ package ecs {
   }
 
   /**
-   * <p>Optional deployment parameters that control how many tasks run during the deployment and the ordering of stopping and starting tasks.</p>
+   * Optional deployment parameters that control how many tasks run during the deployment and the ordering of stopping and starting tasks.
    */
   @js.native
   trait DeploymentConfiguration extends js.Object {
@@ -937,7 +937,7 @@ package ecs {
   }
 
   /**
-   * <p>The deployment controller to use for the service. For more information, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon ECS Deployment Types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+   * The deployment controller to use for the service. For more information, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon ECS Deployment Types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
    */
   @js.native
   trait DeploymentController extends js.Object {
@@ -1225,7 +1225,7 @@ package ecs {
   }
 
   /**
-   * <p>An object representing a container instance host device.</p>
+   * An object representing a container instance host device.
    */
   @js.native
   trait Device extends js.Object {
@@ -1293,7 +1293,7 @@ package ecs {
   }
 
   /**
-   * <p>This parameter is specified when you are using Docker volumes. Docker volumes are only supported when you are using the EC2 launch type. Windows containers only support the use of the <code>local</code> driver. To use bind mounts, specify a <code>host</code> instead.</p>
+   * This parameter is specified when you are using Docker volumes. Docker volumes are only supported when you are using the EC2 launch type. Windows containers only support the use of the <code>local</code> driver. To use bind mounts, specify a <code>host</code> instead.
    */
   @js.native
   trait DockerVolumeConfiguration extends js.Object {
@@ -1323,7 +1323,7 @@ package ecs {
   }
 
   /**
-   * <p>A failed resource.</p>
+   * A failed resource.
    */
   @js.native
   trait Failure extends js.Object {
@@ -1344,7 +1344,11 @@ package ecs {
   }
 
   /**
-   * <p>An object representing a container health check. Health check parameters that are specified in a container definition override any Docker health checks that exist in the container image (such as those specified in a parent image or from the image's Dockerfile).</p> <p>The following are notes about container health check support:</p> <ul> <li> <p>Container health checks require version 1.17.0 or greater of the Amazon ECS container agent. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating the Amazon ECS Container Agent</a>.</p> </li> <li> <p>Container health checks are supported for Fargate tasks if you are using platform version 1.1.0 or greater. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS Fargate Platform Versions</a>.</p> </li> <li> <p>Container health checks are not supported for tasks that are part of a service that is configured to use a Classic Load Balancer.</p> </li> </ul>
+   * An object representing a container health check. Health check parameters that are specified in a container definition override any Docker health checks that exist in the container image (such as those specified in a parent image or from the image's Dockerfile).
+   *  The following are notes about container health check support:
+   * * Container health checks require version 1.17.0 or greater of the Amazon ECS container agent. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating the Amazon ECS Container Agent</a>.
+   *  * Container health checks are supported for Fargate tasks if you are using platform version 1.1.0 or greater. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS Fargate Platform Versions</a>.
+   *  * Container health checks are not supported for tasks that are part of a service that is configured to use a Classic Load Balancer.
    */
   @js.native
   trait HealthCheck extends js.Object {
@@ -1382,7 +1386,7 @@ package ecs {
   }
 
   /**
-   * <p>Hostnames and IP address entries that are added to the <code>/etc/hosts</code> file of a container via the <code>extraHosts</code> parameter of its <a>ContainerDefinition</a>. </p>
+   * Hostnames and IP address entries that are added to the <code>/etc/hosts</code> file of a container via the <code>extraHosts</code> parameter of its '''ContainerDefinition'''.
    */
   @js.native
   trait HostEntry extends js.Object {
@@ -1403,7 +1407,7 @@ package ecs {
   }
 
   /**
-   * <p>Details on a container instance bind mount host volume.</p>
+   * Details on a container instance bind mount host volume.
    */
   @js.native
   trait HostVolumeProperties extends js.Object {
@@ -1429,7 +1433,7 @@ package ecs {
   }
 
   /**
-   * <p>The Linux capabilities for the container that are added to or dropped from the default configuration provided by Docker. For more information on the default capabilities and the non-default available capabilities, see <a href="https://docs.docker.com/engine/reference/run/#runtime-privilege-and-linux-capabilities">Runtime privilege and Linux capabilities</a> in the <i>Docker run reference</i>. For more detailed information on these Linux capabilities, see the <a href="http://man7.org/linux/man-pages/man7/capabilities.7.html">capabilities(7)</a> Linux manual page.</p>
+   * The Linux capabilities for the container that are added to or dropped from the default configuration provided by Docker. For more information on the default capabilities and the non-default available capabilities, see <a href="https://docs.docker.com/engine/reference/run/#runtime-privilege-and-linux-capabilities">Runtime privilege and Linux capabilities</a> in the <i>Docker run reference</i>. For more detailed information on these Linux capabilities, see the <a href="http://man7.org/linux/man-pages/man7/capabilities.7.html">capabilities(7)</a> Linux manual page.
    */
   @js.native
   trait KernelCapabilities extends js.Object {
@@ -1450,7 +1454,7 @@ package ecs {
   }
 
   /**
-   * <p>A key-value pair object.</p>
+   * A key-value pair object.
    */
   @js.native
   trait KeyValuePair extends js.Object {
@@ -1478,7 +1482,7 @@ package ecs {
   }
 
   /**
-   * <p>Linux-specific options that are applied to the container, such as Linux <a>KernelCapabilities</a>.</p>
+   * Linux-specific options that are applied to the container, such as Linux '''KernelCapabilities'''.
    */
   @js.native
   trait LinuxParameters extends js.Object {
@@ -1904,7 +1908,10 @@ package ecs {
   }
 
   /**
-   * <p>Details on a load balancer that is used with a service.</p> <p>If the service is using the <code>ECS</code> deployment controller, you are limited to one load balancer or target group.</p> <p>If the service is using the <code>CODE_DEPLOY</code> deployment controller, the service is required to use either an Application Load Balancer or Network Load Balancer. When you are creating an AWS CodeDeploy deployment group, you specify two target groups (referred to as a <code>targetGroupPair</code>). Each target group binds to a separate task set in the deployment. The load balancer can also have up to two listeners, a required listener for production traffic and an optional listener that allows you to test new revisions of the service before routing production traffic to it.</p> <p>Services with tasks that use the <code>awsvpc</code> network mode (for example, those with the Fargate launch type) only support Application Load Balancers and Network Load Balancers. Classic Load Balancers are not supported. Also, when you create any target groups for these services, you must choose <code>ip</code> as the target type, not <code>instance</code>. Tasks that use the <code>awsvpc</code> network mode are associated with an elastic network interface, not an Amazon EC2 instance.</p>
+   * Details on a load balancer that is used with a service.
+   *  If the service is using the <code>ECS</code> deployment controller, you are limited to one load balancer or target group.
+   *  If the service is using the <code>CODE_DEPLOY</code> deployment controller, the service is required to use either an Application Load Balancer or Network Load Balancer. When you are creating an AWS CodeDeploy deployment group, you specify two target groups (referred to as a <code>targetGroupPair</code>). Each target group binds to a separate task set in the deployment. The load balancer can also have up to two listeners, a required listener for production traffic and an optional listener that allows you to test new revisions of the service before routing production traffic to it.
+   *  Services with tasks that use the <code>awsvpc</code> network mode (for example, those with the Fargate launch type) only support Application Load Balancers and Network Load Balancers. Classic Load Balancers are not supported. Also, when you create any target groups for these services, you must choose <code>ip</code> as the target type, not <code>instance</code>. Tasks that use the <code>awsvpc</code> network mode are associated with an elastic network interface, not an Amazon EC2 instance.
    */
   @js.native
   trait LoadBalancer extends js.Object {
@@ -1931,7 +1938,7 @@ package ecs {
   }
 
   /**
-   * <p>Log configuration options to send to a custom log driver for the container.</p>
+   * Log configuration options to send to a custom log driver for the container.
    */
   @js.native
   trait LogConfiguration extends js.Object {
@@ -1964,7 +1971,7 @@ package ecs {
   }
 
   /**
-   * <p>Details on a volume mount point that is used in a container definition.</p>
+   * Details on a volume mount point that is used in a container definition.
    */
   @js.native
   trait MountPoint extends js.Object {
@@ -1988,7 +1995,7 @@ package ecs {
   }
 
   /**
-   * <p>Details on the network bindings between a container and its host container instance. After a task reaches the <code>RUNNING</code> status, manual and automatic host and container port assignments are visible in the <code>networkBindings</code> section of <a>DescribeTasks</a> API responses.</p>
+   * Details on the network bindings between a container and its host container instance. After a task reaches the <code>RUNNING</code> status, manual and automatic host and container port assignments are visible in the <code>networkBindings</code> section of '''DescribeTasks''' API responses.
    */
   @js.native
   trait NetworkBinding extends js.Object {
@@ -2015,7 +2022,7 @@ package ecs {
   }
 
   /**
-   * <p>An object representing the network configuration for a task or service.</p>
+   * An object representing the network configuration for a task or service.
    */
   @js.native
   trait NetworkConfiguration extends js.Object {
@@ -2033,7 +2040,7 @@ package ecs {
   }
 
   /**
-   * <p>An object representing the elastic network interface for tasks that use the <code>awsvpc</code> network mode.</p>
+   * An object representing the elastic network interface for tasks that use the <code>awsvpc</code> network mode.
    */
   @js.native
   trait NetworkInterface extends js.Object {
@@ -2073,7 +2080,7 @@ package ecs {
   }
 
   /**
-   * <p>An object representing a constraint on task placement. For more information, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement-constraints.html">Task Placement Constraints</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+   * An object representing a constraint on task placement. For more information, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement-constraints.html">Task Placement Constraints</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
    */
   @js.native
   trait PlacementConstraint extends js.Object {
@@ -2101,7 +2108,7 @@ package ecs {
   }
 
   /**
-   * <p>The task placement strategy for a task or service. For more information, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement-strategies.html">Task Placement Strategies</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+   * The task placement strategy for a task or service. For more information, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement-strategies.html">Task Placement Strategies</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
    */
   @js.native
   trait PlacementStrategy extends js.Object {
@@ -2130,7 +2137,9 @@ package ecs {
   }
 
   /**
-   * <p>Port mappings allow containers to access ports on the host container instance to send or receive traffic. Port mappings are specified as part of the container definition.</p> <p>If you are using containers in a task with the <code>awsvpc</code> or <code>host</code> network mode, exposed ports should be specified using <code>containerPort</code>. The <code>hostPort</code> can be left blank or it must be the same value as the <code>containerPort</code>.</p> <p>After a task reaches the <code>RUNNING</code> status, manual and automatic host and container port assignments are visible in the <code>networkBindings</code> section of <a>DescribeTasks</a> API responses.</p>
+   * Port mappings allow containers to access ports on the host container instance to send or receive traffic. Port mappings are specified as part of the container definition.
+   *  If you are using containers in a task with the <code>awsvpc</code> or <code>host</code> network mode, exposed ports should be specified using <code>containerPort</code>. The <code>hostPort</code> can be left blank or it must be the same value as the <code>containerPort</code>.
+   *  After a task reaches the <code>RUNNING</code> status, manual and automatic host and container port assignments are visible in the <code>networkBindings</code> section of '''DescribeTasks''' API responses.
    */
   @js.native
   trait PortMapping extends js.Object {
@@ -2350,7 +2359,7 @@ package ecs {
   }
 
   /**
-   * <p>The repository credentials for private registry authentication.</p>
+   * The repository credentials for private registry authentication.
    */
   @js.native
   trait RepositoryCredentials extends js.Object {
@@ -2368,7 +2377,7 @@ package ecs {
   }
 
   /**
-   * <p>Describes the resources available for a container instance.</p>
+   * Describes the resources available for a container instance.
    */
   @js.native
   trait Resource extends js.Object {
@@ -2473,7 +2482,7 @@ package ecs {
   }
 
   /**
-   * <p>A floating-point percentage of the desired number of tasks to place and keep running in the service. This is used when a service uses the <code>CODE_DEPLOY</code> deployment controller type.</p>
+   * A floating-point percentage of the desired number of tasks to place and keep running in the service. This is used when a service uses the <code>CODE_DEPLOY</code> deployment controller type.
    */
   @js.native
   trait Scale extends js.Object {
@@ -2514,7 +2523,7 @@ package ecs {
   }
 
   /**
-   * <p>An object representing the secret to expose to your container.</p>
+   * An object representing the secret to expose to your container.
    */
   @js.native
   trait Secret extends js.Object {
@@ -2535,7 +2544,7 @@ package ecs {
   }
 
   /**
-   * <p>Details on a service within a cluster</p>
+   * Details on a service within a cluster
    */
   @js.native
   trait Service extends js.Object {
@@ -2634,7 +2643,7 @@ package ecs {
   }
 
   /**
-   * <p>Details on an event associated with a service.</p>
+   * Details on an event associated with a service.
    */
   @js.native
   trait ServiceEvent extends js.Object {
@@ -2664,7 +2673,7 @@ package ecs {
   }
 
   /**
-   * <p>Details of the service registry.</p>
+   * Details of the service registry.
    */
   @js.native
   trait ServiceRegistry extends js.Object {
@@ -2691,7 +2700,7 @@ package ecs {
   }
 
   /**
-   * <p>The current account setting for a resource.</p>
+   * The current account setting for a resource.
    */
   @js.native
   trait Setting extends js.Object {
@@ -2935,7 +2944,10 @@ package ecs {
   }
 
   /**
-   * <p>A list of namespaced kernel parameters to set in the container. This parameter maps to <code>Sysctls</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--sysctl</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <p>It is not recommended that you specify network-related <code>systemControls</code> parameters for multiple containers in a single task that also uses either the <code>awsvpc</code> or <code>host</code> network mode for the following reasons:</p> <ul> <li> <p>For tasks that use the <code>awsvpc</code> network mode, if you set <code>systemControls</code> for any container, it applies to all containers in the task. If you set different <code>systemControls</code> for multiple containers in a single task, the container that is started last determines which <code>systemControls</code> take effect.</p> </li> <li> <p>For tasks that use the <code>host</code> network mode, the <code>systemControls</code> parameter applies to the container instance's kernel parameter as well as that of all containers of any tasks running on that container instance.</p> </li> </ul>
+   * A list of namespaced kernel parameters to set in the container. This parameter maps to <code>Sysctls</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--sysctl</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
+   *  It is not recommended that you specify network-related <code>systemControls</code> parameters for multiple containers in a single task that also uses either the <code>awsvpc</code> or <code>host</code> network mode for the following reasons:
+   * * For tasks that use the <code>awsvpc</code> network mode, if you set <code>systemControls</code> for any container, it applies to all containers in the task. If you set different <code>systemControls</code> for multiple containers in a single task, the container that is started last determines which <code>systemControls</code> take effect.
+   *  * For tasks that use the <code>host</code> network mode, the <code>systemControls</code> parameter applies to the container instance's kernel parameter as well as that of all containers of any tasks running on that container instance.
    */
   @js.native
   trait SystemControl extends js.Object {
@@ -2956,7 +2968,7 @@ package ecs {
   }
 
   /**
-   * <p>The metadata that you apply to a resource to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.</p>
+   * The metadata that you apply to a resource to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.
    */
   @js.native
   trait Tag extends js.Object {
@@ -3014,7 +3026,7 @@ package ecs {
   }
 
   /**
-   * <p>Details on a task in a cluster.</p>
+   * Details on a task in a cluster.
    */
   @js.native
   trait Task extends js.Object {
@@ -3116,7 +3128,7 @@ package ecs {
   }
 
   /**
-   * <p>Details of a task definition.</p>
+   * Details of a task definition.
    */
   @js.native
   trait TaskDefinition extends js.Object {
@@ -3196,7 +3208,9 @@ package ecs {
   }
 
   /**
-   * <p>An object representing a constraint on task placement in the task definition.</p> <p>If you are using the Fargate launch type, task placement constraints are not supported.</p> <p>For more information, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement-constraints.html">Task Placement Constraints</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+   * An object representing a constraint on task placement in the task definition.
+   *  If you are using the Fargate launch type, task placement constraints are not supported.
+   *  For more information, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement-constraints.html">Task Placement Constraints</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
    */
   @js.native
   trait TaskDefinitionPlacementConstraint extends js.Object {
@@ -3236,7 +3250,7 @@ package ecs {
   }
 
   /**
-   * <p>The overrides associated with a task.</p>
+   * The overrides associated with a task.
    */
   @js.native
   trait TaskOverride extends js.Object {
@@ -3260,7 +3274,7 @@ package ecs {
   }
 
   /**
-   * <p>Information about a set of Amazon ECS tasks in an AWS CodeDeploy deployment. An Amazon ECS task set includes details such as the desired number of tasks, how many tasks are running, and whether the task set serves production traffic.</p>
+   * Information about a set of Amazon ECS tasks in an AWS CodeDeploy deployment. An Amazon ECS task set includes details such as the desired number of tasks, how many tasks are running, and whether the task set serves production traffic.
    */
   @js.native
   trait TaskSet extends js.Object {
@@ -3337,7 +3351,7 @@ package ecs {
   }
 
   /**
-   * <p>The container path, mount options, and size of the tmpfs mount.</p>
+   * The container path, mount options, and size of the tmpfs mount.
    */
   @js.native
   trait Tmpfs extends js.Object {
@@ -3368,7 +3382,7 @@ package ecs {
   }
 
   /**
-   * <p>The <code>ulimit</code> settings to pass to the container.</p>
+   * The <code>ulimit</code> settings to pass to the container.
    */
   @js.native
   trait Ulimit extends js.Object {
@@ -3569,7 +3583,7 @@ package ecs {
   }
 
   /**
-   * <p>The Docker and Amazon ECS container agent version information about a container instance.</p>
+   * The Docker and Amazon ECS container agent version information about a container instance.
    */
   @js.native
   trait VersionInfo extends js.Object {
@@ -3593,7 +3607,7 @@ package ecs {
   }
 
   /**
-   * <p>A data volume used in a task definition. For tasks that use a Docker volume, specify a <code>DockerVolumeConfiguration</code>. For tasks that use a bind mount host volume, specify a <code>host</code> and optional <code>sourcePath</code>. For more information, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_data_volumes.html">Using Data Volumes in Tasks</a>.</p>
+   * A data volume used in a task definition. For tasks that use a Docker volume, specify a <code>DockerVolumeConfiguration</code>. For tasks that use a bind mount host volume, specify a <code>host</code> and optional <code>sourcePath</code>. For more information, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_data_volumes.html">Using Data Volumes in Tasks</a>.
    */
   @js.native
   trait Volume extends js.Object {
@@ -3617,7 +3631,7 @@ package ecs {
   }
 
   /**
-   * <p>Details on a data volume from another container in the same task definition.</p>
+   * Details on a data volume from another container in the same task definition.
    */
   @js.native
   trait VolumeFrom extends js.Object {

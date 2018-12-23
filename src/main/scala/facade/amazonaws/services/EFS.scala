@@ -56,7 +56,7 @@ package efs {
   }
 
   /**
-   * <p>Returned if the request is malformed or contains an error such as an invalid parameter value or a missing required parameter.</p>
+   * Returned if the request is malformed or contains an error such as an invalid parameter value or a missing required parameter.
    */
   @js.native
   trait BadRequestException extends js.Object {
@@ -200,7 +200,7 @@ package efs {
   }
 
   /**
-   * <p>The service timed out trying to fulfill the request, and the client should try the call again.</p>
+   * The service timed out trying to fulfill the request, and the client should try the call again.
    */
   @js.native
   trait DependencyTimeoutException extends js.Object {
@@ -389,7 +389,7 @@ package efs {
   }
 
   /**
-   * <p>Returned if the file system you are trying to create already exists, with the creation token you provided.</p>
+   * Returned if the file system you are trying to create already exists, with the creation token you provided.
    */
   @js.native
   trait FileSystemAlreadyExistsException extends js.Object {
@@ -399,7 +399,7 @@ package efs {
   }
 
   /**
-   * <p>Description of the file system.</p>
+   * Description of the file system.
    */
   @js.native
   trait FileSystemDescription extends js.Object {
@@ -453,7 +453,7 @@ package efs {
   }
 
   /**
-   * <p>Returned if a file system has mount targets.</p>
+   * Returned if a file system has mount targets.
    */
   @js.native
   trait FileSystemInUseException extends js.Object {
@@ -462,7 +462,7 @@ package efs {
   }
 
   /**
-   * <p>Returned if the AWS account has already created the maximum number of file systems allowed per account.</p>
+   * Returned if the AWS account has already created the maximum number of file systems allowed per account.
    */
   @js.native
   trait FileSystemLimitExceededException extends js.Object {
@@ -471,7 +471,7 @@ package efs {
   }
 
   /**
-   * <p>Returned if the specified <code>FileSystemId</code> value doesn't exist in the requester's AWS account.</p>
+   * Returned if the specified <code>FileSystemId</code> value doesn't exist in the requester's AWS account.
    */
   @js.native
   trait FileSystemNotFoundException extends js.Object {
@@ -480,7 +480,7 @@ package efs {
   }
 
   /**
-   * <p>Latest known metered size (in bytes) of data stored in the file system, in its <code>Value</code> field, and the time at which that size was determined in its <code>Timestamp</code> field. Note that the value does not represent the size of a consistent snapshot of the file system, but it is eventually consistent when there are no writes to the file system. That is, the value will represent the actual size only if the file system is not modified for a period longer than a couple of hours. Otherwise, the value is not necessarily the exact size the file system was at any instant in time.</p>
+   * Latest known metered size (in bytes) of data stored in the file system, in its <code>Value</code> field, and the time at which that size was determined in its <code>Timestamp</code> field. Note that the value does not represent the size of a consistent snapshot of the file system, but it is eventually consistent when there are no writes to the file system. That is, the value will represent the actual size only if the file system is not modified for a period longer than a couple of hours. Otherwise, the value is not necessarily the exact size the file system was at any instant in time.
    */
   @js.native
   trait FileSystemSize extends js.Object {
@@ -501,7 +501,7 @@ package efs {
   }
 
   /**
-   * <p>Returned if the file system's lifecycle state is not "available".</p>
+   * Returned if the file system's lifecycle state is not "available".
    */
   @js.native
   trait IncorrectFileSystemLifeCycleStateException extends js.Object {
@@ -510,7 +510,7 @@ package efs {
   }
 
   /**
-   * <p>Returned if the mount target is not in the correct state for the operation.</p>
+   * Returned if the mount target is not in the correct state for the operation.
    */
   @js.native
   trait IncorrectMountTargetStateException extends js.Object {
@@ -519,7 +519,7 @@ package efs {
   }
 
   /**
-   * <p>Returned if there's not enough capacity to provision additional throughput. This value might be returned when you try to create a file system in provisioned throughput mode, when you attempt to increase the provisioned throughput of an existing file system, or when you attempt to change an existing file system from bursting to provisioned throughput mode.</p>
+   * Returned if there's not enough capacity to provision additional throughput. This value might be returned when you try to create a file system in provisioned throughput mode, when you attempt to increase the provisioned throughput of an existing file system, or when you attempt to change an existing file system from bursting to provisioned throughput mode.
    */
   @js.native
   trait InsufficientThroughputCapacityException extends js.Object {
@@ -528,7 +528,7 @@ package efs {
   }
 
   /**
-   * <p>Returned if an error occurred on the server side.</p>
+   * Returned if an error occurred on the server side.
    */
   @js.native
   trait InternalServerErrorException extends js.Object {
@@ -537,7 +537,7 @@ package efs {
   }
 
   /**
-   * <p>Returned if the request specified an <code>IpAddress</code> that is already in use in the subnet.</p>
+   * Returned if the request specified an <code>IpAddress</code> that is already in use in the subnet.
    */
   @js.native
   trait IpAddressInUseException extends js.Object {
@@ -577,7 +577,7 @@ package efs {
   }
 
   /**
-   * <p>Returned if the mount target would violate one of the specified restrictions based on the file system's existing mount targets.</p>
+   * Returned if the mount target would violate one of the specified restrictions based on the file system's existing mount targets.
    */
   @js.native
   trait MountTargetConflictException extends js.Object {
@@ -586,7 +586,7 @@ package efs {
   }
 
   /**
-   * <p>Provides a description of a mount target.</p>
+   * Provides a description of a mount target.
    */
   @js.native
   trait MountTargetDescription extends js.Object {
@@ -622,7 +622,7 @@ package efs {
   }
 
   /**
-   * <p>Returned if there is no mount target with the specified ID found in the caller's account.</p>
+   * Returned if there is no mount target with the specified ID found in the caller's account.
    */
   @js.native
   trait MountTargetNotFoundException extends js.Object {
@@ -631,7 +631,7 @@ package efs {
   }
 
   /**
-   * <p>The calling account has reached the limit for elastic network interfaces for the specific AWS Region. The client should try to delete some elastic network interfaces or get the account limit raised. For more information, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Appendix_Limits.html">Amazon VPC Limits</a> in the <i>Amazon VPC User Guide </i> (see the Network interfaces per VPC entry in the table). </p>
+   * The calling account has reached the limit for elastic network interfaces for the specific AWS Region. The client should try to delete some elastic network interfaces or get the account limit raised. For more information, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Appendix_Limits.html">Amazon VPC Limits</a> in the <i>Amazon VPC User Guide </i> (see the Network interfaces per VPC entry in the table).
    */
   @js.native
   trait NetworkInterfaceLimitExceededException extends js.Object {
@@ -640,7 +640,7 @@ package efs {
   }
 
   /**
-   * <p>Returned if <code>IpAddress</code> was not specified in the request and there are no free IP addresses in the subnet.</p>
+   * Returned if <code>IpAddress</code> was not specified in the request and there are no free IP addresses in the subnet.
    */
   @js.native
   trait NoFreeAddressesInSubnetException extends js.Object {
@@ -656,7 +656,7 @@ package efs {
   }
 
   /**
-   * <p>Returned if the size of <code>SecurityGroups</code> specified in the request is greater than five.</p>
+   * Returned if the size of <code>SecurityGroups</code> specified in the request is greater than five.
    */
   @js.native
   trait SecurityGroupLimitExceededException extends js.Object {
@@ -665,7 +665,7 @@ package efs {
   }
 
   /**
-   * <p>Returned if one of the specified security groups doesn't exist in the subnet's VPC.</p>
+   * Returned if one of the specified security groups doesn't exist in the subnet's VPC.
    */
   @js.native
   trait SecurityGroupNotFoundException extends js.Object {
@@ -674,7 +674,7 @@ package efs {
   }
 
   /**
-   * <p>Returned if there is no subnet with ID <code>SubnetId</code> provided in the request.</p>
+   * Returned if there is no subnet with ID <code>SubnetId</code> provided in the request.
    */
   @js.native
   trait SubnetNotFoundException extends js.Object {
@@ -683,7 +683,7 @@ package efs {
   }
 
   /**
-   * <p>A tag is a key-value pair. Allowed characters: letters, whitespace, and numbers, representable in UTF-8, and the following characters:<code> + - = . _ : /</code> </p>
+   * A tag is a key-value pair. Allowed characters: letters, whitespace, and numbers, representable in UTF-8, and the following characters:<code> + - = . _ : /</code>
    */
   @js.native
   trait Tag extends js.Object {
@@ -704,7 +704,7 @@ package efs {
   }
 
   /**
-   * <p>Returned if the throughput mode or amount of provisioned throughput can't be changed because the throughput limit of 1024 MiB/s has been reached.</p>
+   * Returned if the throughput mode or amount of provisioned throughput can't be changed because the throughput limit of 1024 MiB/s has been reached.
    */
   @js.native
   trait ThroughputLimitExceededException extends js.Object {
@@ -720,7 +720,7 @@ package efs {
   }
 
   /**
-   * <p>Returned if you don�ft wait at least 24 hours before changing the throughput mode, or decreasing the Provisioned Throughput value.</p>
+   * Returned if you don�ft wait at least 24 hours before changing the throughput mode, or decreasing the Provisioned Throughput value.
    */
   @js.native
   trait TooManyRequestsException extends js.Object {

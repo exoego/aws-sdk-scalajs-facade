@@ -549,7 +549,7 @@ package appmesh {
   }
 
   /**
-   * <p>The DNS service discovery information for your virtual node.</p>
+   * The DNS service discovery information for your virtual node.
    */
   @js.native
   trait DnsServiceDiscovery extends js.Object {
@@ -567,10 +567,9 @@ package appmesh {
   }
 
   /**
-   * <p>An object representing the health check policy for a virtual node's listener.</p>
-   * <note>
-   * <p>Listener health checks are not available during the App Mesh preview.</p>
-   * </note>
+   * An object representing the health check policy for a virtual node's listener.
+   *
+   * '''Note:'''Listener health checks are not available during the App Mesh preview.
    */
   @js.native
   trait HealthCheckPolicy extends js.Object {
@@ -606,7 +605,7 @@ package appmesh {
   }
 
   /**
-   * <p>An object representing the HTTP routing specification for a route.</p>
+   * An object representing the HTTP routing specification for a route.
    */
   @js.native
   trait HttpRoute extends js.Object {
@@ -628,7 +627,7 @@ package appmesh {
 
   /**
    * <p>An object representing the traffic distribution requirements for matched HTTP
-   * requests.</p>
+   *          requests.</p>
    */
   @js.native
   trait HttpRouteAction extends js.Object {
@@ -647,7 +646,7 @@ package appmesh {
 
   /**
    * <p>An object representing the requirements for a route to match HTTP requests for a virtual
-   * router.</p>
+   *          router.</p>
    */
   @js.native
   trait HttpRouteMatch extends js.Object {
@@ -845,7 +844,7 @@ package appmesh {
   }
 
   /**
-   * <p>An object representing a listener for a virtual node.</p>
+   * An object representing a listener for a virtual node.
    */
   @js.native
   trait Listener extends js.Object {
@@ -866,7 +865,7 @@ package appmesh {
   }
 
   /**
-   * <p>An object representing a service mesh returned by a describe operation.</p>
+   * An object representing a service mesh returned by a describe operation.
    */
   @js.native
   trait MeshData extends js.Object {
@@ -890,7 +889,7 @@ package appmesh {
   }
 
   /**
-   * <p>An object representing a service mesh returned by a list operation.</p>
+   * An object representing a service mesh returned by a list operation.
    */
   @js.native
   trait MeshRef extends js.Object {
@@ -911,7 +910,7 @@ package appmesh {
   }
 
   /**
-   * <p>An object representing the status of a service mesh.</p>
+   * An object representing the status of a service mesh.
    */
   @js.native
   trait MeshStatus extends js.Object {
@@ -937,7 +936,7 @@ package appmesh {
   }
 
   /**
-   * <p>An object representing a virtual node listener port mapping.</p>
+   * An object representing a virtual node listener port mapping.
    */
   @js.native
   trait PortMapping extends js.Object {
@@ -965,7 +964,7 @@ package appmesh {
   }
 
   /**
-   * <p>An object representing metadata for a resource.</p>
+   * An object representing metadata for a resource.
    */
   @js.native
   trait ResourceMetadata extends js.Object {
@@ -995,7 +994,7 @@ package appmesh {
   }
 
   /**
-   * <p>An object representing a route returned by a describe operation.</p>
+   * An object representing a route returned by a describe operation.
    */
   @js.native
   trait RouteData extends js.Object {
@@ -1028,7 +1027,7 @@ package appmesh {
   }
 
   /**
-   * <p>An object representing a route returned by a list operation.</p>
+   * An object representing a route returned by a list operation.
    */
   @js.native
   trait RouteRef extends js.Object {
@@ -1055,7 +1054,7 @@ package appmesh {
   }
 
   /**
-   * <p>An object representing the specification of a route.</p>
+   * An object representing the specification of a route.
    */
   @js.native
   trait RouteSpec extends js.Object {
@@ -1073,7 +1072,7 @@ package appmesh {
   }
 
   /**
-   * <p>An object representing the current status of a route.</p>
+   * An object representing the current status of a route.
    */
   @js.native
   trait RouteStatus extends js.Object {
@@ -1099,7 +1098,7 @@ package appmesh {
   }
 
   /**
-   * <p>An object representing the service discovery information for a virtual node.</p>
+   * An object representing the service discovery information for a virtual node.
    */
   @js.native
   trait ServiceDiscovery extends js.Object {
@@ -1255,7 +1254,7 @@ package appmesh {
   }
 
   /**
-   * <p>An object representing a virtual node returned by a describe operation.</p>
+   * An object representing a virtual node returned by a describe operation.
    */
   @js.native
   trait VirtualNodeData extends js.Object {
@@ -1285,7 +1284,7 @@ package appmesh {
   }
 
   /**
-   * <p>An object representing a virtual node returned by a list operation.</p>
+   * An object representing a virtual node returned by a list operation.
    */
   @js.native
   trait VirtualNodeRef extends js.Object {
@@ -1309,7 +1308,7 @@ package appmesh {
   }
 
   /**
-   * <p>An object representing the specification of a virtual node.</p>
+   * An object representing the specification of a virtual node.
    */
   @js.native
   trait VirtualNodeSpec extends js.Object {
@@ -1333,7 +1332,7 @@ package appmesh {
   }
 
   /**
-   * <p>An object representing the current status of the virtual node.</p>
+   * An object representing the current status of the virtual node.
    */
   @js.native
   trait VirtualNodeStatus extends js.Object {
@@ -1359,7 +1358,7 @@ package appmesh {
   }
 
   /**
-   * <p>An object representing a virtual router returned by a describe operation.</p>
+   * An object representing a virtual router returned by a describe operation.
    */
   @js.native
   trait VirtualRouterData extends js.Object {
@@ -1389,7 +1388,7 @@ package appmesh {
   }
 
   /**
-   * <p>An object representing a virtual router returned by a list operation.</p>
+   * An object representing a virtual router returned by a list operation.
    */
   @js.native
   trait VirtualRouterRef extends js.Object {
@@ -1413,7 +1412,7 @@ package appmesh {
   }
 
   /**
-   * <p>An object representing the specification of a virtual router.</p>
+   * An object representing the specification of a virtual router.
    */
   @js.native
   trait VirtualRouterSpec extends js.Object {
@@ -1431,7 +1430,7 @@ package appmesh {
   }
 
   /**
-   * <p>An object representing the status of a virtual router. </p>
+   * An object representing the status of a virtual router.
    */
   @js.native
   trait VirtualRouterStatus extends js.Object {
@@ -1458,9 +1457,9 @@ package appmesh {
 
   /**
    * <p>An object representing a target and its relative weight. Traffic is distributed across
-   * targets according to their relative weight. For example, a weighted target with a relative
-   * weight of 50 receives five times as much traffic as one with a relative weight of
-   * 10.</p>
+   *          targets according to their relative weight. For example, a weighted target with a relative
+   *          weight of 50 receives five times as much traffic as one with a relative weight of
+   *          10.</p>
    */
   @js.native
   trait WeightedTarget extends js.Object {

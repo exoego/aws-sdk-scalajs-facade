@@ -67,7 +67,7 @@ package datapipeline {
   }
 
   /**
-   * <p>Contains the parameters for ActivatePipeline.</p>
+   * Contains the parameters for ActivatePipeline.
    */
   @js.native
   trait ActivatePipelineInput extends js.Object {
@@ -91,7 +91,7 @@ package datapipeline {
   }
 
   /**
-   * <p>Contains the output of ActivatePipeline.</p>
+   * Contains the output of ActivatePipeline.
    */
   @js.native
   trait ActivatePipelineOutput extends js.Object {
@@ -107,7 +107,7 @@ package datapipeline {
   }
 
   /**
-   * <p>Contains the parameters for AddTags.</p>
+   * Contains the parameters for AddTags.
    */
   @js.native
   trait AddTagsInput extends js.Object {
@@ -128,7 +128,7 @@ package datapipeline {
   }
 
   /**
-   * <p>Contains the output of AddTags.</p>
+   * Contains the output of AddTags.
    */
   @js.native
   trait AddTagsOutput extends js.Object {
@@ -144,7 +144,7 @@ package datapipeline {
   }
 
   /**
-   * <p>Contains the parameters for CreatePipeline.</p>
+   * Contains the parameters for CreatePipeline.
    */
   @js.native
   trait CreatePipelineInput extends js.Object {
@@ -171,7 +171,7 @@ package datapipeline {
   }
 
   /**
-   * <p>Contains the output of CreatePipeline.</p>
+   * Contains the output of CreatePipeline.
    */
   @js.native
   trait CreatePipelineOutput extends js.Object {
@@ -189,7 +189,7 @@ package datapipeline {
   }
 
   /**
-   * <p>Contains the parameters for DeactivatePipeline.</p>
+   * Contains the parameters for DeactivatePipeline.
    */
   @js.native
   trait DeactivatePipelineInput extends js.Object {
@@ -210,7 +210,7 @@ package datapipeline {
   }
 
   /**
-   * <p>Contains the output of DeactivatePipeline.</p>
+   * Contains the output of DeactivatePipeline.
    */
   @js.native
   trait DeactivatePipelineOutput extends js.Object {
@@ -226,7 +226,7 @@ package datapipeline {
   }
 
   /**
-   * <p>Contains the parameters for DeletePipeline.</p>
+   * Contains the parameters for DeletePipeline.
    */
   @js.native
   trait DeletePipelineInput extends js.Object {
@@ -244,7 +244,7 @@ package datapipeline {
   }
 
   /**
-   * <p>Contains the parameters for DescribeObjects.</p>
+   * Contains the parameters for DescribeObjects.
    */
   @js.native
   trait DescribeObjectsInput extends js.Object {
@@ -271,7 +271,7 @@ package datapipeline {
   }
 
   /**
-   * <p>Contains the output of DescribeObjects.</p>
+   * Contains the output of DescribeObjects.
    */
   @js.native
   trait DescribeObjectsOutput extends js.Object {
@@ -295,7 +295,7 @@ package datapipeline {
   }
 
   /**
-   * <p>Contains the parameters for DescribePipelines.</p>
+   * Contains the parameters for DescribePipelines.
    */
   @js.native
   trait DescribePipelinesInput extends js.Object {
@@ -313,7 +313,7 @@ package datapipeline {
   }
 
   /**
-   * <p>Contains the output of DescribePipelines.</p>
+   * Contains the output of DescribePipelines.
    */
   @js.native
   trait DescribePipelinesOutput extends js.Object {
@@ -331,7 +331,7 @@ package datapipeline {
   }
 
   /**
-   * <p>Contains the parameters for EvaluateExpression.</p>
+   * Contains the parameters for EvaluateExpression.
    */
   @js.native
   trait EvaluateExpressionInput extends js.Object {
@@ -355,7 +355,7 @@ package datapipeline {
   }
 
   /**
-   * <p>Contains the output of EvaluateExpression.</p>
+   * Contains the output of EvaluateExpression.
    */
   @js.native
   trait EvaluateExpressionOutput extends js.Object {
@@ -373,7 +373,7 @@ package datapipeline {
   }
 
   /**
-   * <p>A key-value pair that describes a property of a pipeline object. The value is specified as either a string value (<code>StringValue</code>) or a reference to another object (<code>RefValue</code>) but not as both.</p>
+   * A key-value pair that describes a property of a pipeline object. The value is specified as either a string value (<code>StringValue</code>) or a reference to another object (<code>RefValue</code>) but not as both.
    */
   @js.native
   trait Field extends js.Object {
@@ -397,7 +397,7 @@ package datapipeline {
   }
 
   /**
-   * <p>Contains the parameters for GetPipelineDefinition.</p>
+   * Contains the parameters for GetPipelineDefinition.
    */
   @js.native
   trait GetPipelineDefinitionInput extends js.Object {
@@ -418,7 +418,7 @@ package datapipeline {
   }
 
   /**
-   * <p>Contains the output of GetPipelineDefinition.</p>
+   * Contains the output of GetPipelineDefinition.
    */
   @js.native
   trait GetPipelineDefinitionOutput extends js.Object {
@@ -442,7 +442,8 @@ package datapipeline {
   }
 
   /**
-   * <p><p>Identity information for the EC2 instance that is hosting the task runner. You can get this value by calling a metadata URI from the EC2 instance. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AESDG-chapter-instancedata.html">Instance Metadata</a> in the <i>Amazon Elastic Compute Cloud User Guide.</i> Passing in this value proves that your task runner is running on an EC2 instance, and ensures the proper AWS Data Pipeline service charges are applied to your pipeline.</p></p>
+   * <p>Identity information for the EC2 instance that is hosting the task runner. You can get this value by calling a metadata URI from the EC2 instance. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AESDG-chapter-instancedata.html">Instance Metadata</a> in the <i>Amazon Elastic Compute Cloud User Guide.</i> Passing in this value proves that your task runner is running on an EC2 instance, and ensures the proper AWS Data Pipeline service charges are applied to your pipeline.
+   * </p>
    */
   @js.native
   trait InstanceIdentity extends js.Object {
@@ -463,7 +464,7 @@ package datapipeline {
   }
 
   /**
-   * <p>An internal service error occurred.</p>
+   * An internal service error occurred.
    */
   @js.native
   trait InternalServiceErrorException extends js.Object {
@@ -471,7 +472,7 @@ package datapipeline {
   }
 
   /**
-   * <p>The request was not valid. Verify that your request was properly formatted, that the signature was generated with the correct credentials, and that you haven't exceeded any of the service limits for your account.</p>
+   * The request was not valid. Verify that your request was properly formatted, that the signature was generated with the correct credentials, and that you haven't exceeded any of the service limits for your account.
    */
   @js.native
   trait InvalidRequestExceptionException extends js.Object {
@@ -479,7 +480,7 @@ package datapipeline {
   }
 
   /**
-   * <p>Contains the parameters for ListPipelines.</p>
+   * Contains the parameters for ListPipelines.
    */
   @js.native
   trait ListPipelinesInput extends js.Object {
@@ -497,7 +498,7 @@ package datapipeline {
   }
 
   /**
-   * <p>Contains the output of ListPipelines.</p>
+   * Contains the output of ListPipelines.
    */
   @js.native
   trait ListPipelinesOutput extends js.Object {
@@ -521,7 +522,7 @@ package datapipeline {
   }
 
   /**
-   * <p>Contains a logical operation for comparing the value of a field with a specified value.</p>
+   * Contains a logical operation for comparing the value of a field with a specified value.
    */
   @js.native
   trait Operator extends js.Object {
@@ -552,7 +553,7 @@ package datapipeline {
   }
 
   /**
-   * <p>The attributes allowed or specified with a parameter object.</p>
+   * The attributes allowed or specified with a parameter object.
    */
   @js.native
   trait ParameterAttribute extends js.Object {
@@ -573,7 +574,7 @@ package datapipeline {
   }
 
   /**
-   * <p>Contains information about a parameter object.</p>
+   * Contains information about a parameter object.
    */
   @js.native
   trait ParameterObject extends js.Object {
@@ -594,7 +595,7 @@ package datapipeline {
   }
 
   /**
-   * <p>A value or list of parameter values. </p>
+   * A value or list of parameter values.
    */
   @js.native
   trait ParameterValue extends js.Object {
@@ -615,7 +616,7 @@ package datapipeline {
   }
 
   /**
-   * <p>The specified pipeline has been deleted.</p>
+   * The specified pipeline has been deleted.
    */
   @js.native
   trait PipelineDeletedExceptionException extends js.Object {
@@ -623,7 +624,7 @@ package datapipeline {
   }
 
   /**
-   * <p>Contains pipeline metadata.</p>
+   * Contains pipeline metadata.
    */
   @js.native
   trait PipelineDescription extends js.Object {
@@ -653,7 +654,7 @@ package datapipeline {
   }
 
   /**
-   * <p>Contains the name and identifier of a pipeline.</p>
+   * Contains the name and identifier of a pipeline.
    */
   @js.native
   trait PipelineIdName extends js.Object {
@@ -674,7 +675,7 @@ package datapipeline {
   }
 
   /**
-   * <p>The specified pipeline was not found. Verify that you used the correct user and account identifiers.</p>
+   * The specified pipeline was not found. Verify that you used the correct user and account identifiers.
    */
   @js.native
   trait PipelineNotFoundExceptionException extends js.Object {
@@ -682,7 +683,7 @@ package datapipeline {
   }
 
   /**
-   * <p>Contains information about a pipeline object. This can be a logical, physical, or physical attempt pipeline object. The complete set of components of a pipeline defines the pipeline.</p>
+   * Contains information about a pipeline object. This can be a logical, physical, or physical attempt pipeline object. The complete set of components of a pipeline defines the pipeline.
    */
   @js.native
   trait PipelineObject extends js.Object {
@@ -706,7 +707,7 @@ package datapipeline {
   }
 
   /**
-   * <p>Contains the parameters for PollForTask.</p>
+   * Contains the parameters for PollForTask.
    */
   @js.native
   trait PollForTaskInput extends js.Object {
@@ -730,7 +731,7 @@ package datapipeline {
   }
 
   /**
-   * <p>Contains the output of PollForTask.</p>
+   * Contains the output of PollForTask.
    */
   @js.native
   trait PollForTaskOutput extends js.Object {
@@ -748,7 +749,7 @@ package datapipeline {
   }
 
   /**
-   * <p>Contains the parameters for PutPipelineDefinition.</p>
+   * Contains the parameters for PutPipelineDefinition.
    */
   @js.native
   trait PutPipelineDefinitionInput extends js.Object {
@@ -775,7 +776,7 @@ package datapipeline {
   }
 
   /**
-   * <p>Contains the output of PutPipelineDefinition.</p>
+   * Contains the output of PutPipelineDefinition.
    */
   @js.native
   trait PutPipelineDefinitionOutput extends js.Object {
@@ -799,7 +800,7 @@ package datapipeline {
   }
 
   /**
-   * <p>Defines the query to run against an object.</p>
+   * Defines the query to run against an object.
    */
   @js.native
   trait Query extends js.Object {
@@ -817,7 +818,7 @@ package datapipeline {
   }
 
   /**
-   * <p>Contains the parameters for QueryObjects.</p>
+   * Contains the parameters for QueryObjects.
    */
   @js.native
   trait QueryObjectsInput extends js.Object {
@@ -847,7 +848,7 @@ package datapipeline {
   }
 
   /**
-   * <p>Contains the output of QueryObjects.</p>
+   * Contains the output of QueryObjects.
    */
   @js.native
   trait QueryObjectsOutput extends js.Object {
@@ -871,7 +872,7 @@ package datapipeline {
   }
 
   /**
-   * <p>Contains the parameters for RemoveTags.</p>
+   * Contains the parameters for RemoveTags.
    */
   @js.native
   trait RemoveTagsInput extends js.Object {
@@ -892,7 +893,7 @@ package datapipeline {
   }
 
   /**
-   * <p>Contains the output of RemoveTags.</p>
+   * Contains the output of RemoveTags.
    */
   @js.native
   trait RemoveTagsOutput extends js.Object {
@@ -908,7 +909,7 @@ package datapipeline {
   }
 
   /**
-   * <p>Contains the parameters for ReportTaskProgress.</p>
+   * Contains the parameters for ReportTaskProgress.
    */
   @js.native
   trait ReportTaskProgressInput extends js.Object {
@@ -929,7 +930,7 @@ package datapipeline {
   }
 
   /**
-   * <p>Contains the output of ReportTaskProgress.</p>
+   * Contains the output of ReportTaskProgress.
    */
   @js.native
   trait ReportTaskProgressOutput extends js.Object {
@@ -947,7 +948,7 @@ package datapipeline {
   }
 
   /**
-   * <p>Contains the parameters for ReportTaskRunnerHeartbeat.</p>
+   * Contains the parameters for ReportTaskRunnerHeartbeat.
    */
   @js.native
   trait ReportTaskRunnerHeartbeatInput extends js.Object {
@@ -971,7 +972,7 @@ package datapipeline {
   }
 
   /**
-   * <p>Contains the output of ReportTaskRunnerHeartbeat.</p>
+   * Contains the output of ReportTaskRunnerHeartbeat.
    */
   @js.native
   trait ReportTaskRunnerHeartbeatOutput extends js.Object {
@@ -989,7 +990,7 @@ package datapipeline {
   }
 
   /**
-   * <p>A comparision that is used to determine whether a query should return this object.</p>
+   * A comparision that is used to determine whether a query should return this object.
    */
   @js.native
   trait Selector extends js.Object {
@@ -1010,7 +1011,7 @@ package datapipeline {
   }
 
   /**
-   * <p>Contains the parameters for SetStatus.</p>
+   * Contains the parameters for SetStatus.
    */
   @js.native
   trait SetStatusInput extends js.Object {
@@ -1034,7 +1035,7 @@ package datapipeline {
   }
 
   /**
-   * <p>Contains the parameters for SetTaskStatus.</p>
+   * Contains the parameters for SetTaskStatus.
    */
   @js.native
   trait SetTaskStatusInput extends js.Object {
@@ -1064,7 +1065,7 @@ package datapipeline {
   }
 
   /**
-   * <p>Contains the output of SetTaskStatus.</p>
+   * Contains the output of SetTaskStatus.
    */
   @js.native
   trait SetTaskStatusOutput extends js.Object {
@@ -1080,7 +1081,7 @@ package datapipeline {
   }
 
   /**
-   * <p>Tags are key/value pairs defined by a user and associated with a pipeline to control access. AWS Data Pipeline allows you to associate ten tags per pipeline. For more information, see <a href="http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-control-access.html">Controlling User Access to Pipelines</a> in the <i>AWS Data Pipeline Developer Guide</i>.</p>
+   * Tags are key/value pairs defined by a user and associated with a pipeline to control access. AWS Data Pipeline allows you to associate ten tags per pipeline. For more information, see <a href="http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-control-access.html">Controlling User Access to Pipelines</a> in the <i>AWS Data Pipeline Developer Guide</i>.
    */
   @js.native
   trait Tag extends js.Object {
@@ -1101,7 +1102,7 @@ package datapipeline {
   }
 
   /**
-   * <p>The specified task was not found. </p>
+   * The specified task was not found.
    */
   @js.native
   trait TaskNotFoundExceptionException extends js.Object {
@@ -1109,7 +1110,7 @@ package datapipeline {
   }
 
   /**
-   * <p>Contains information about a pipeline task that is assigned to a task runner.</p>
+   * Contains information about a pipeline task that is assigned to a task runner.
    */
   @js.native
   trait TaskObject extends js.Object {
@@ -1144,7 +1145,7 @@ package datapipeline {
   }
 
   /**
-   * <p>Contains the parameters for ValidatePipelineDefinition.</p>
+   * Contains the parameters for ValidatePipelineDefinition.
    */
   @js.native
   trait ValidatePipelineDefinitionInput extends js.Object {
@@ -1171,7 +1172,7 @@ package datapipeline {
   }
 
   /**
-   * <p>Contains the output of ValidatePipelineDefinition.</p>
+   * Contains the output of ValidatePipelineDefinition.
    */
   @js.native
   trait ValidatePipelineDefinitionOutput extends js.Object {
@@ -1195,7 +1196,7 @@ package datapipeline {
   }
 
   /**
-   * <p>Defines a validation error. Validation errors prevent pipeline activation. The set of validation errors that can be returned are defined by AWS Data Pipeline.</p>
+   * Defines a validation error. Validation errors prevent pipeline activation. The set of validation errors that can be returned are defined by AWS Data Pipeline.
    */
   @js.native
   trait ValidationError extends js.Object {
@@ -1216,7 +1217,7 @@ package datapipeline {
   }
 
   /**
-   * <p>Defines a validation warning. Validation warnings do not prevent pipeline activation. The set of validation warnings that can be returned are defined by AWS Data Pipeline.</p>
+   * Defines a validation warning. Validation warnings do not prevent pipeline activation. The set of validation warnings that can be returned are defined by AWS Data Pipeline.
    */
   @js.native
   trait ValidationWarning extends js.Object {

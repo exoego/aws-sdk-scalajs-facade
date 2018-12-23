@@ -28,7 +28,7 @@ package pricing {
   }
 
   /**
-   * <p>The values of a given attribute, such as <code>Throughput Optimized HDD</code> or <code>Provisioned IOPS</code> for the <code>Amazon EC2</code> <code>volumeType</code> attribute.</p>
+   * The values of a given attribute, such as <code>Throughput Optimized HDD</code> or <code>Provisioned IOPS</code> for the <code>Amazon EC2</code> <code>volumeType</code> attribute.
    */
   @js.native
   trait AttributeValue extends js.Object {
@@ -91,7 +91,7 @@ package pricing {
   }
 
   /**
-   * <p>The pagination token expired. Try again without a pagination token.</p>
+   * The pagination token expired. Try again without a pagination token.
    */
   @js.native
   trait ExpiredNextTokenExceptionException extends js.Object {
@@ -99,7 +99,7 @@ package pricing {
   }
 
   /**
-   * <p>The constraints that you want all returned products to match.</p>
+   * The constraints that you want all returned products to match.
    */
   @js.native
   trait Filter extends js.Object {
@@ -219,7 +219,7 @@ package pricing {
   }
 
   /**
-   * <p>An error on the server occurred during the processing of your request. Try again later.</p>
+   * An error on the server occurred during the processing of your request. Try again later.
    */
   @js.native
   trait InternalErrorExceptionException extends js.Object {
@@ -227,7 +227,7 @@ package pricing {
   }
 
   /**
-   * <p>The pagination token is invalid. Try again without a pagination token.</p>
+   * The pagination token is invalid. Try again without a pagination token.
    */
   @js.native
   trait InvalidNextTokenExceptionException extends js.Object {
@@ -235,7 +235,7 @@ package pricing {
   }
 
   /**
-   * <p>One or more parameters had an invalid value.</p>
+   * One or more parameters had an invalid value.
    */
   @js.native
   trait InvalidParameterExceptionException extends js.Object {
@@ -243,7 +243,7 @@ package pricing {
   }
 
   /**
-   * <p>The requested resource can't be found.</p>
+   * The requested resource can't be found.
    */
   @js.native
   trait NotFoundExceptionException extends js.Object {
@@ -251,7 +251,7 @@ package pricing {
   }
 
   /**
-   * <p>The metadata for a service, such as the service code and available attribute names.</p>
+   * The metadata for a service, such as the service code and available attribute names.
    */
   @js.native
   trait Service extends js.Object {

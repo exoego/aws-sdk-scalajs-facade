@@ -129,7 +129,7 @@ package codecommit {
   }
 
   /**
-   * <p>Represents the input of a batch get repositories operation.</p>
+   * Represents the input of a batch get repositories operation.
    */
   @js.native
   trait BatchGetRepositoriesInput extends js.Object {
@@ -147,7 +147,7 @@ package codecommit {
   }
 
   /**
-   * <p>Represents the output of a batch get repositories operation.</p>
+   * Represents the output of a batch get repositories operation.
    */
   @js.native
   trait BatchGetRepositoriesOutput extends js.Object {
@@ -168,7 +168,7 @@ package codecommit {
   }
 
   /**
-   * <p>Returns information about a specific Git blob object.</p>
+   * Returns information about a specific Git blob object.
    */
   @js.native
   trait BlobMetadata extends js.Object {
@@ -192,7 +192,7 @@ package codecommit {
   }
 
   /**
-   * <p>Returns information about a branch.</p>
+   * Returns information about a branch.
    */
   @js.native
   trait BranchInfo extends js.Object {
@@ -221,7 +221,7 @@ package codecommit {
   }
 
   /**
-   * <p>Returns information about a specific comment.</p>
+   * Returns information about a specific comment.
    */
   @js.native
   trait Comment extends js.Object {
@@ -260,7 +260,7 @@ package codecommit {
   }
 
   /**
-   * <p>Returns information about comments on the comparison between two commits.</p>
+   * Returns information about comments on the comparison between two commits.
    */
   @js.native
   trait CommentsForComparedCommit extends js.Object {
@@ -296,7 +296,7 @@ package codecommit {
   }
 
   /**
-   * <p>Returns information about comments on a pull request.</p>
+   * Returns information about comments on a pull request.
    */
   @js.native
   trait CommentsForPullRequest extends js.Object {
@@ -335,7 +335,7 @@ package codecommit {
   }
 
   /**
-   * <p>Returns information about a specific commit.</p>
+   * Returns information about a specific commit.
    */
   @js.native
   trait Commit extends js.Object {
@@ -371,7 +371,7 @@ package codecommit {
   }
 
   /**
-   * <p>Represents the input of a create branch operation.</p>
+   * Represents the input of a create branch operation.
    */
   @js.native
   trait CreateBranchInput extends js.Object {
@@ -434,7 +434,7 @@ package codecommit {
   }
 
   /**
-   * <p>Represents the input of a create repository operation.</p>
+   * Represents the input of a create repository operation.
    */
   @js.native
   trait CreateRepositoryInput extends js.Object {
@@ -455,7 +455,7 @@ package codecommit {
   }
 
   /**
-   * <p>Represents the output of a create repository operation.</p>
+   * Represents the output of a create repository operation.
    */
   @js.native
   trait CreateRepositoryOutput extends js.Object {
@@ -473,7 +473,7 @@ package codecommit {
   }
 
   /**
-   * <p>Represents the input of a delete branch operation.</p>
+   * Represents the input of a delete branch operation.
    */
   @js.native
   trait DeleteBranchInput extends js.Object {
@@ -494,7 +494,7 @@ package codecommit {
   }
 
   /**
-   * <p>Represents the output of a delete branch operation.</p>
+   * Represents the output of a delete branch operation.
    */
   @js.native
   trait DeleteBranchOutput extends js.Object {
@@ -602,7 +602,7 @@ package codecommit {
   }
 
   /**
-   * <p>Represents the input of a delete repository operation.</p>
+   * Represents the input of a delete repository operation.
    */
   @js.native
   trait DeleteRepositoryInput extends js.Object {
@@ -620,7 +620,7 @@ package codecommit {
   }
 
   /**
-   * <p>Represents the output of a delete repository operation.</p>
+   * Represents the output of a delete repository operation.
    */
   @js.native
   trait DeleteRepositoryOutput extends js.Object {
@@ -683,7 +683,7 @@ package codecommit {
   }
 
   /**
-   * <p>Returns information about a set of differences for a commit specifier.</p>
+   * Returns information about a set of differences for a commit specifier.
    */
   @js.native
   trait Difference extends js.Object {
@@ -707,7 +707,7 @@ package codecommit {
   }
 
   /**
-   * <p>Returns information about a file in a repository.</p>
+   * Returns information about a file in a repository.
    */
   @js.native
   trait File extends js.Object {
@@ -742,7 +742,7 @@ package codecommit {
   }
 
   /**
-   * <p>Returns information about a folder in a repository.</p>
+   * Returns information about a folder in a repository.
    */
   @js.native
   trait Folder extends js.Object {
@@ -766,7 +766,7 @@ package codecommit {
   }
 
   /**
-   * <p>Represents the input of a get blob operation.</p>
+   * Represents the input of a get blob operation.
    */
   @js.native
   trait GetBlobInput extends js.Object {
@@ -787,7 +787,7 @@ package codecommit {
   }
 
   /**
-   * <p>Represents the output of a get blob operation.</p>
+   * Represents the output of a get blob operation.
    */
   @js.native
   trait GetBlobOutput extends js.Object {
@@ -805,7 +805,7 @@ package codecommit {
   }
 
   /**
-   * <p>Represents the input of a get branch operation.</p>
+   * Represents the input of a get branch operation.
    */
   @js.native
   trait GetBranchInput extends js.Object {
@@ -826,7 +826,7 @@ package codecommit {
   }
 
   /**
-   * <p>Represents the output of a get branch operation.</p>
+   * Represents the output of a get branch operation.
    */
   @js.native
   trait GetBranchOutput extends js.Object {
@@ -967,7 +967,7 @@ package codecommit {
   }
 
   /**
-   * <p>Represents the input of a get commit operation.</p>
+   * Represents the input of a get commit operation.
    */
   @js.native
   trait GetCommitInput extends js.Object {
@@ -988,7 +988,7 @@ package codecommit {
   }
 
   /**
-   * <p>Represents the output of a get commit operation.</p>
+   * Represents the output of a get commit operation.
    */
   @js.native
   trait GetCommitOutput extends js.Object {
@@ -1237,7 +1237,7 @@ package codecommit {
   }
 
   /**
-   * <p>Represents the input of a get repository operation.</p>
+   * Represents the input of a get repository operation.
    */
   @js.native
   trait GetRepositoryInput extends js.Object {
@@ -1255,7 +1255,7 @@ package codecommit {
   }
 
   /**
-   * <p>Represents the output of a get repository operation.</p>
+   * Represents the output of a get repository operation.
    */
   @js.native
   trait GetRepositoryOutput extends js.Object {
@@ -1273,7 +1273,7 @@ package codecommit {
   }
 
   /**
-   * <p>Represents the input of a get repository triggers operation.</p>
+   * Represents the input of a get repository triggers operation.
    */
   @js.native
   trait GetRepositoryTriggersInput extends js.Object {
@@ -1291,7 +1291,7 @@ package codecommit {
   }
 
   /**
-   * <p>Represents the output of a get repository triggers operation.</p>
+   * Represents the output of a get repository triggers operation.
    */
   @js.native
   trait GetRepositoryTriggersOutput extends js.Object {
@@ -1312,7 +1312,7 @@ package codecommit {
   }
 
   /**
-   * <p>Represents the input of a list branches operation.</p>
+   * Represents the input of a list branches operation.
    */
   @js.native
   trait ListBranchesInput extends js.Object {
@@ -1333,7 +1333,7 @@ package codecommit {
   }
 
   /**
-   * <p>Represents the output of a list branches operation.</p>
+   * Represents the output of a list branches operation.
    */
   @js.native
   trait ListBranchesOutput extends js.Object {
@@ -1399,7 +1399,7 @@ package codecommit {
   }
 
   /**
-   * <p>Represents the input of a list repositories operation.</p>
+   * Represents the input of a list repositories operation.
    */
   @js.native
   trait ListRepositoriesInput extends js.Object {
@@ -1423,7 +1423,7 @@ package codecommit {
   }
 
   /**
-   * <p>Represents the output of a list repositories operation.</p>
+   * Represents the output of a list repositories operation.
    */
   @js.native
   trait ListRepositoriesOutput extends js.Object {
@@ -1444,7 +1444,7 @@ package codecommit {
   }
 
   /**
-   * <p>Returns information about the location of a change or comment in the comparison between two commits or a pull request.</p>
+   * Returns information about the location of a change or comment in the comparison between two commits or a pull request.
    */
   @js.native
   trait Location extends js.Object {
@@ -1468,7 +1468,7 @@ package codecommit {
   }
 
   /**
-   * <p>Returns information about a merge or potential merge between a source reference and a destination reference in a pull request.</p>
+   * Returns information about a merge or potential merge between a source reference and a destination reference in a pull request.
    */
   @js.native
   trait MergeMetadata extends js.Object {
@@ -1706,7 +1706,7 @@ package codecommit {
   }
 
   /**
-   * <p>Returns information about a pull request.</p>
+   * Returns information about a pull request.
    */
   @js.native
   trait PullRequest extends js.Object {
@@ -1748,7 +1748,7 @@ package codecommit {
   }
 
   /**
-   * <p>Metadata about the pull request that is used when comparing the pull request source with its destination.</p>
+   * Metadata about the pull request that is used when comparing the pull request source with its destination.
    */
   @js.native
   trait PullRequestCreatedEventMetadata extends js.Object {
@@ -1775,7 +1775,7 @@ package codecommit {
   }
 
   /**
-   * <p>Returns information about a pull request event.</p>
+   * Returns information about a pull request event.
    */
   @js.native
   trait PullRequestEvent extends js.Object {
@@ -1823,7 +1823,7 @@ package codecommit {
   }
 
   /**
-   * <p>Returns information about the change in the merge state for a pull request event. </p>
+   * Returns information about the change in the merge state for a pull request event.
    */
   @js.native
   trait PullRequestMergedStateChangedEventMetadata extends js.Object {
@@ -1847,7 +1847,7 @@ package codecommit {
   }
 
   /**
-   * <p>Information about an update to the source branch of a pull request.</p>
+   * Information about an update to the source branch of a pull request.
    */
   @js.native
   trait PullRequestSourceReferenceUpdatedEventMetadata extends js.Object {
@@ -1874,7 +1874,7 @@ package codecommit {
   }
 
   /**
-   * <p>Information about a change to the status of a pull request.</p>
+   * Information about a change to the status of a pull request.
    */
   @js.native
   trait PullRequestStatusChangedEventMetadata extends js.Object {
@@ -1899,7 +1899,7 @@ package codecommit {
   }
 
   /**
-   * <p>Returns information about a pull request target.</p>
+   * Returns information about a pull request target.
    */
   @js.native
   trait PullRequestTarget extends js.Object {
@@ -1995,7 +1995,7 @@ package codecommit {
   }
 
   /**
-   * <p>Represents the input ofa put repository triggers operation.</p>
+   * Represents the input ofa put repository triggers operation.
    */
   @js.native
   trait PutRepositoryTriggersInput extends js.Object {
@@ -2016,7 +2016,7 @@ package codecommit {
   }
 
   /**
-   * <p>Represents the output of a put repository triggers operation.</p>
+   * Represents the output of a put repository triggers operation.
    */
   @js.native
   trait PutRepositoryTriggersOutput extends js.Object {
@@ -2041,7 +2041,7 @@ package codecommit {
   }
 
   /**
-   * <p>Information about a repository.</p>
+   * Information about a repository.
    */
   @js.native
   trait RepositoryMetadata extends js.Object {
@@ -2086,7 +2086,7 @@ package codecommit {
   }
 
   /**
-   * <p>Information about a repository name and ID.</p>
+   * Information about a repository name and ID.
    */
   @js.native
   trait RepositoryNameIdPair extends js.Object {
@@ -2107,7 +2107,7 @@ package codecommit {
   }
 
   /**
-   * <p>Information about a trigger for a repository.</p>
+   * Information about a trigger for a repository.
    */
   @js.native
   trait RepositoryTrigger extends js.Object {
@@ -2146,7 +2146,7 @@ package codecommit {
   }
 
   /**
-   * <p>A trigger failed to run.</p>
+   * A trigger failed to run.
    */
   @js.native
   trait RepositoryTriggerExecutionFailure extends js.Object {
@@ -2174,7 +2174,7 @@ package codecommit {
   }
 
   /**
-   * <p>Returns information about a submodule reference in a repository folder.</p>
+   * Returns information about a submodule reference in a repository folder.
    */
   @js.native
   trait SubModule extends js.Object {
@@ -2198,7 +2198,7 @@ package codecommit {
   }
 
   /**
-   * <p>Returns information about a symbolic link in a repository folder.</p>
+   * Returns information about a symbolic link in a repository folder.
    */
   @js.native
   trait SymbolicLink extends js.Object {
@@ -2225,7 +2225,7 @@ package codecommit {
   }
 
   /**
-   * <p>Returns information about a target for a pull request.</p>
+   * Returns information about a target for a pull request.
    */
   @js.native
   trait Target extends js.Object {
@@ -2249,7 +2249,7 @@ package codecommit {
   }
 
   /**
-   * <p>Represents the input of a test repository triggers operation.</p>
+   * Represents the input of a test repository triggers operation.
    */
   @js.native
   trait TestRepositoryTriggersInput extends js.Object {
@@ -2270,7 +2270,7 @@ package codecommit {
   }
 
   /**
-   * <p>Represents the output of a test repository triggers operation.</p>
+   * Represents the output of a test repository triggers operation.
    */
   @js.native
   trait TestRepositoryTriggersOutput extends js.Object {
@@ -2324,7 +2324,7 @@ package codecommit {
   }
 
   /**
-   * <p>Represents the input of an update default branch operation.</p>
+   * Represents the input of an update default branch operation.
    */
   @js.native
   trait UpdateDefaultBranchInput extends js.Object {
@@ -2444,7 +2444,7 @@ package codecommit {
   }
 
   /**
-   * <p>Represents the input of an update repository description operation.</p>
+   * Represents the input of an update repository description operation.
    */
   @js.native
   trait UpdateRepositoryDescriptionInput extends js.Object {
@@ -2465,7 +2465,7 @@ package codecommit {
   }
 
   /**
-   * <p>Represents the input of an update repository description operation.</p>
+   * Represents the input of an update repository description operation.
    */
   @js.native
   trait UpdateRepositoryNameInput extends js.Object {
@@ -2486,7 +2486,7 @@ package codecommit {
   }
 
   /**
-   * <p>Information about the user who made a specified commit.</p>
+   * Information about the user who made a specified commit.
    */
   @js.native
   trait UserInfo extends js.Object {

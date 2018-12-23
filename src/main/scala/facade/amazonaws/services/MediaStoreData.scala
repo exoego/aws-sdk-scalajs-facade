@@ -163,7 +163,7 @@ package mediastoredata {
   }
 
   /**
-   * <p>A metadata entry for a folder or object.</p>
+   * A metadata entry for a folder or object.
    */
   @js.native
   trait Item extends js.Object {

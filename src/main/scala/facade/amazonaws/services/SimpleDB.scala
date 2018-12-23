@@ -34,7 +34,7 @@ package simpledb {
   }
 
   /**
-   * <p></p>
+   *
    */
   @js.native
   trait Attribute extends js.Object {
@@ -61,7 +61,7 @@ package simpledb {
   }
 
   /**
-   * <p>The specified attribute does not exist.</p>
+   * The specified attribute does not exist.
    */
   @js.native
   trait AttributeDoesNotExistException extends js.Object {
@@ -120,7 +120,7 @@ package simpledb {
   }
 
   /**
-   * <p></p>
+   *
    */
   @js.native
   trait DeletableAttribute extends js.Object {
@@ -246,7 +246,7 @@ package simpledb {
   }
 
   /**
-   * <p>The item name was specified more than once. </p>
+   * The item name was specified more than once.
    */
   @js.native
   trait DuplicateItemNameException extends js.Object {
@@ -293,7 +293,7 @@ package simpledb {
   }
 
   /**
-   * <p>The specified NextToken is not valid. </p>
+   * The specified NextToken is not valid.
    */
   @js.native
   trait InvalidNextTokenException extends js.Object {
@@ -301,7 +301,7 @@ package simpledb {
   }
 
   /**
-   * <p>Too many predicates exist in the query expression.</p>
+   * Too many predicates exist in the query expression.
    */
   @js.native
   trait InvalidNumberPredicatesException extends js.Object {
@@ -309,7 +309,7 @@ package simpledb {
   }
 
   /**
-   * <p>Too many predicates exist in the query expression.</p>
+   * Too many predicates exist in the query expression.
    */
   @js.native
   trait InvalidNumberValueTestsException extends js.Object {
@@ -317,7 +317,7 @@ package simpledb {
   }
 
   /**
-   * <p>The value for a parameter is invalid.</p>
+   * The value for a parameter is invalid.
    */
   @js.native
   trait InvalidParameterValueException extends js.Object {
@@ -325,7 +325,7 @@ package simpledb {
   }
 
   /**
-   * <p>The specified query expression syntax is not valid.</p>
+   * The specified query expression syntax is not valid.
    */
   @js.native
   trait InvalidQueryExpressionException extends js.Object {
@@ -333,7 +333,7 @@ package simpledb {
   }
 
   /**
-   * <p></p>
+   *
    */
   @js.native
   trait Item extends js.Object {
@@ -393,7 +393,7 @@ package simpledb {
   }
 
   /**
-   * <p>The request must contain the specified missing parameter.</p>
+   * The request must contain the specified missing parameter.
    */
   @js.native
   trait MissingParameterException extends js.Object {
@@ -401,7 +401,7 @@ package simpledb {
   }
 
   /**
-   * <p>The specified domain does not exist.</p>
+   * The specified domain does not exist.
    */
   @js.native
   trait NoSuchDomainException extends js.Object {
@@ -409,7 +409,7 @@ package simpledb {
   }
 
   /**
-   * <p>Too many attributes in this domain.</p>
+   * Too many attributes in this domain.
    */
   @js.native
   trait NumberDomainAttributesExceededException extends js.Object {
@@ -417,7 +417,7 @@ package simpledb {
   }
 
   /**
-   * <p>Too many bytes in this domain.</p>
+   * Too many bytes in this domain.
    */
   @js.native
   trait NumberDomainBytesExceededException extends js.Object {
@@ -425,7 +425,7 @@ package simpledb {
   }
 
   /**
-   * <p>Too many domains exist per this account.</p>
+   * Too many domains exist per this account.
    */
   @js.native
   trait NumberDomainsExceededException extends js.Object {
@@ -433,7 +433,7 @@ package simpledb {
   }
 
   /**
-   * <p>Too many attributes in this item.</p>
+   * Too many attributes in this item.
    */
   @js.native
   trait NumberItemAttributesExceededException extends js.Object {
@@ -441,7 +441,7 @@ package simpledb {
   }
 
   /**
-   * <p>Too many attributes exist in a single call.</p>
+   * Too many attributes exist in a single call.
    */
   @js.native
   trait NumberSubmittedAttributesExceededException extends js.Object {
@@ -449,7 +449,7 @@ package simpledb {
   }
 
   /**
-   * <p>Too many items exist in a single call.</p>
+   * Too many items exist in a single call.
    */
   @js.native
   trait NumberSubmittedItemsExceededException extends js.Object {
@@ -481,7 +481,7 @@ package simpledb {
   }
 
   /**
-   * <p></p>
+   *
    */
   @js.native
   trait ReplaceableAttribute extends js.Object {
@@ -505,7 +505,7 @@ package simpledb {
   }
 
   /**
-   * <p></p>
+   *
    */
   @js.native
   trait ReplaceableItem extends js.Object {
@@ -526,7 +526,7 @@ package simpledb {
   }
 
   /**
-   * <p>A timeout occurred when attempting to query the specified domain with specified query expression.</p>
+   * A timeout occurred when attempting to query the specified domain with specified query expression.
    */
   @js.native
   trait RequestTimeoutException extends js.Object {
@@ -573,7 +573,7 @@ package simpledb {
   }
 
   /**
-   * <p>Too many attributes requested.</p>
+   * Too many attributes requested.
    */
   @js.native
   trait TooManyRequestedAttributesException extends js.Object {
@@ -581,7 +581,7 @@ package simpledb {
   }
 
   /**
-   * <p> Specifies the conditions under which data should be updated. If an update condition is specified for a request, the data will only be updated if the condition is satisfied. For example, if an attribute with a specific name and value exists, or if a specific attribute doesn't exist. </p>
+   * Specifies the conditions under which data should be updated. If an update condition is specified for a request, the data will only be updated if the condition is satisfied. For example, if an attribute with a specific name and value exists, or if a specific attribute doesn't exist.
    */
   @js.native
   trait UpdateCondition extends js.Object {

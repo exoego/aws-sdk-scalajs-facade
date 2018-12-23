@@ -89,7 +89,7 @@ package kinesis {
   }
 
   /**
-   * <p>Represents the input for <code>AddTagsToStream</code>.</p>
+   * Represents the input for <code>AddTagsToStream</code>.
    */
   @js.native
   trait AddTagsToStreamInput extends js.Object {
@@ -110,7 +110,7 @@ package kinesis {
   }
 
   /**
-   * <p>An object that represents the details of the consumer you registered.</p>
+   * An object that represents the details of the consumer you registered.
    */
   @js.native
   trait Consumer extends js.Object {
@@ -137,7 +137,7 @@ package kinesis {
   }
 
   /**
-   * <p>An object that represents the details of a registered consumer.</p>
+   * An object that represents the details of a registered consumer.
    */
   @js.native
   trait ConsumerDescription extends js.Object {
@@ -175,7 +175,7 @@ package kinesis {
   }
 
   /**
-   * <p>Represents the input for <code>CreateStream</code>.</p>
+   * Represents the input for <code>CreateStream</code>.
    */
   @js.native
   trait CreateStreamInput extends js.Object {
@@ -196,7 +196,7 @@ package kinesis {
   }
 
   /**
-   * <p>Represents the input for <a>DecreaseStreamRetentionPeriod</a>.</p>
+   * Represents the input for '''DecreaseStreamRetentionPeriod'''.
    */
   @js.native
   trait DecreaseStreamRetentionPeriodInput extends js.Object {
@@ -217,7 +217,7 @@ package kinesis {
   }
 
   /**
-   * <p>Represents the input for <a>DeleteStream</a>.</p>
+   * Represents the input for '''DeleteStream'''.
    */
   @js.native
   trait DeleteStreamInput extends js.Object {
@@ -326,7 +326,7 @@ package kinesis {
   }
 
   /**
-   * <p>Represents the input for <code>DescribeStream</code>.</p>
+   * Represents the input for <code>DescribeStream</code>.
    */
   @js.native
   trait DescribeStreamInput extends js.Object {
@@ -350,7 +350,7 @@ package kinesis {
   }
 
   /**
-   * <p>Represents the output for <code>DescribeStream</code>.</p>
+   * Represents the output for <code>DescribeStream</code>.
    */
   @js.native
   trait DescribeStreamOutput extends js.Object {
@@ -398,7 +398,7 @@ package kinesis {
   }
 
   /**
-   * <p>Represents the input for <a>DisableEnhancedMonitoring</a>.</p>
+   * Represents the input for '''DisableEnhancedMonitoring'''.
    */
   @js.native
   trait DisableEnhancedMonitoringInput extends js.Object {
@@ -419,7 +419,7 @@ package kinesis {
   }
 
   /**
-   * <p>Represents the input for <a>EnableEnhancedMonitoring</a>.</p>
+   * Represents the input for '''EnableEnhancedMonitoring'''.
    */
   @js.native
   trait EnableEnhancedMonitoringInput extends js.Object {
@@ -447,7 +447,7 @@ package kinesis {
   }
 
   /**
-   * <p>Represents enhanced metrics types.</p>
+   * Represents enhanced metrics types.
    */
   @js.native
   trait EnhancedMetrics extends js.Object {
@@ -465,7 +465,7 @@ package kinesis {
   }
 
   /**
-   * <p>Represents the output for <a>EnableEnhancedMonitoring</a> and <a>DisableEnhancedMonitoring</a>.</p>
+   * Represents the output for '''EnableEnhancedMonitoring''' and '''DisableEnhancedMonitoring'''.
    */
   @js.native
   trait EnhancedMonitoringOutput extends js.Object {
@@ -489,7 +489,7 @@ package kinesis {
   }
 
   /**
-   * <p>The provided iterator exceeds the maximum age allowed.</p>
+   * The provided iterator exceeds the maximum age allowed.
    */
   @js.native
   trait ExpiredIteratorExceptionException extends js.Object {
@@ -497,7 +497,7 @@ package kinesis {
   }
 
   /**
-   * <p>The pagination token passed to the operation is expired.</p>
+   * The pagination token passed to the operation is expired.
    */
   @js.native
   trait ExpiredNextTokenExceptionException extends js.Object {
@@ -505,7 +505,7 @@ package kinesis {
   }
 
   /**
-   * <p>Represents the input for <a>GetRecords</a>.</p>
+   * Represents the input for '''GetRecords'''.
    */
   @js.native
   trait GetRecordsInput extends js.Object {
@@ -526,7 +526,7 @@ package kinesis {
   }
 
   /**
-   * <p>Represents the output for <a>GetRecords</a>.</p>
+   * Represents the output for '''GetRecords'''.
    */
   @js.native
   trait GetRecordsOutput extends js.Object {
@@ -550,7 +550,7 @@ package kinesis {
   }
 
   /**
-   * <p>Represents the input for <code>GetShardIterator</code>.</p>
+   * Represents the input for <code>GetShardIterator</code>.
    */
   @js.native
   trait GetShardIteratorInput extends js.Object {
@@ -580,7 +580,7 @@ package kinesis {
   }
 
   /**
-   * <p>Represents the output for <code>GetShardIterator</code>.</p>
+   * Represents the output for <code>GetShardIterator</code>.
    */
   @js.native
   trait GetShardIteratorOutput extends js.Object {
@@ -598,7 +598,7 @@ package kinesis {
   }
 
   /**
-   * <p>The range of possible hash key values for the shard, which is a set of ordered contiguous positive integers.</p>
+   * The range of possible hash key values for the shard, which is a set of ordered contiguous positive integers.
    */
   @js.native
   trait HashKeyRange extends js.Object {
@@ -619,7 +619,7 @@ package kinesis {
   }
 
   /**
-   * <p>Represents the input for <a>IncreaseStreamRetentionPeriod</a>.</p>
+   * Represents the input for '''IncreaseStreamRetentionPeriod'''.
    */
   @js.native
   trait IncreaseStreamRetentionPeriodInput extends js.Object {
@@ -645,7 +645,7 @@ package kinesis {
   }
 
   /**
-   * <p>A specified parameter exceeds its restrictions, is not supported, or can't be used. For more information, see the returned message.</p>
+   * A specified parameter exceeds its restrictions, is not supported, or can't be used. For more information, see the returned message.
    */
   @js.native
   trait InvalidArgumentExceptionException extends js.Object {
@@ -653,7 +653,7 @@ package kinesis {
   }
 
   /**
-   * <p>The ciphertext references a key that doesn't exist or that you don't have access to.</p>
+   * The ciphertext references a key that doesn't exist or that you don't have access to.
    */
   @js.native
   trait KMSAccessDeniedExceptionException extends js.Object {
@@ -661,7 +661,7 @@ package kinesis {
   }
 
   /**
-   * <p>The request was rejected because the specified customer master key (CMK) isn't enabled.</p>
+   * The request was rejected because the specified customer master key (CMK) isn't enabled.
    */
   @js.native
   trait KMSDisabledExceptionException extends js.Object {
@@ -669,7 +669,7 @@ package kinesis {
   }
 
   /**
-   * <p>The request was rejected because the state of the specified resource isn't valid for this request. For more information, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
+   * The request was rejected because the state of the specified resource isn't valid for this request. For more information, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service Developer Guide</i>.
    */
   @js.native
   trait KMSInvalidStateExceptionException extends js.Object {
@@ -677,7 +677,7 @@ package kinesis {
   }
 
   /**
-   * <p>The request was rejected because the specified entity or resource can't be found.</p>
+   * The request was rejected because the specified entity or resource can't be found.
    */
   @js.native
   trait KMSNotFoundExceptionException extends js.Object {
@@ -685,7 +685,7 @@ package kinesis {
   }
 
   /**
-   * <p>The AWS access key ID needs a subscription for the service.</p>
+   * The AWS access key ID needs a subscription for the service.
    */
   @js.native
   trait KMSOptInRequiredException extends js.Object {
@@ -693,7 +693,7 @@ package kinesis {
   }
 
   /**
-   * <p>The request was denied due to request throttling. For more information about throttling, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/limits.html#requests-per-second">Limits</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
+   * The request was denied due to request throttling. For more information about throttling, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/limits.html#requests-per-second">Limits</a> in the <i>AWS Key Management Service Developer Guide</i>.
    */
   @js.native
   trait KMSThrottlingExceptionException extends js.Object {
@@ -701,7 +701,7 @@ package kinesis {
   }
 
   /**
-   * <p>The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests exceeds the maximum number allowed. </p>
+   * The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests exceeds the maximum number allowed.
    */
   @js.native
   trait LimitExceededExceptionException extends js.Object {
@@ -796,7 +796,7 @@ package kinesis {
   }
 
   /**
-   * <p>Represents the input for <code>ListStreams</code>.</p>
+   * Represents the input for <code>ListStreams</code>.
    */
   @js.native
   trait ListStreamsInput extends js.Object {
@@ -817,7 +817,7 @@ package kinesis {
   }
 
   /**
-   * <p>Represents the output for <code>ListStreams</code>.</p>
+   * Represents the output for <code>ListStreams</code>.
    */
   @js.native
   trait ListStreamsOutput extends js.Object {
@@ -838,7 +838,7 @@ package kinesis {
   }
 
   /**
-   * <p>Represents the input for <code>ListTagsForStream</code>.</p>
+   * Represents the input for <code>ListTagsForStream</code>.
    */
   @js.native
   trait ListTagsForStreamInput extends js.Object {
@@ -862,7 +862,7 @@ package kinesis {
   }
 
   /**
-   * <p>Represents the output for <code>ListTagsForStream</code>.</p>
+   * Represents the output for <code>ListTagsForStream</code>.
    */
   @js.native
   trait ListTagsForStreamOutput extends js.Object {
@@ -883,7 +883,7 @@ package kinesis {
   }
 
   /**
-   * <p>Represents the input for <code>MergeShards</code>.</p>
+   * Represents the input for <code>MergeShards</code>.
    */
   @js.native
   trait MergeShardsInput extends js.Object {
@@ -920,7 +920,7 @@ package kinesis {
   }
 
   /**
-   * <p>The request rate for the stream is too high, or the requested data is too large for the available throughput. Reduce the frequency or size of your requests. For more information, see <a href="http://docs.aws.amazon.com/kinesis/latest/dev/service-sizes-and-limits.html">Streams Limits</a> in the <i>Amazon Kinesis Data Streams Developer Guide</i>, and <a href="http://docs.aws.amazon.com/general/latest/gr/api-retries.html">Error Retries and Exponential Backoff in AWS</a> in the <i>AWS General Reference</i>.</p>
+   * The request rate for the stream is too high, or the requested data is too large for the available throughput. Reduce the frequency or size of your requests. For more information, see <a href="http://docs.aws.amazon.com/kinesis/latest/dev/service-sizes-and-limits.html">Streams Limits</a> in the <i>Amazon Kinesis Data Streams Developer Guide</i>, and <a href="http://docs.aws.amazon.com/general/latest/gr/api-retries.html">Error Retries and Exponential Backoff in AWS</a> in the <i>AWS General Reference</i>.
    */
   @js.native
   trait ProvisionedThroughputExceededExceptionException extends js.Object {
@@ -928,7 +928,7 @@ package kinesis {
   }
 
   /**
-   * <p>Represents the input for <code>PutRecord</code>.</p>
+   * Represents the input for <code>PutRecord</code>.
    */
   @js.native
   trait PutRecordInput extends js.Object {
@@ -958,7 +958,7 @@ package kinesis {
   }
 
   /**
-   * <p>Represents the output for <code>PutRecord</code>.</p>
+   * Represents the output for <code>PutRecord</code>.
    */
   @js.native
   trait PutRecordOutput extends js.Object {
@@ -982,7 +982,7 @@ package kinesis {
   }
 
   /**
-   * <p>A <code>PutRecords</code> request.</p>
+   * A <code>PutRecords</code> request.
    */
   @js.native
   trait PutRecordsInput extends js.Object {
@@ -1003,7 +1003,7 @@ package kinesis {
   }
 
   /**
-   * <p> <code>PutRecords</code> results.</p>
+   * <code>PutRecords</code> results.
    */
   @js.native
   trait PutRecordsOutput extends js.Object {
@@ -1027,7 +1027,7 @@ package kinesis {
   }
 
   /**
-   * <p>Represents the output for <code>PutRecords</code>.</p>
+   * Represents the output for <code>PutRecords</code>.
    */
   @js.native
   trait PutRecordsRequestEntry extends js.Object {
@@ -1051,7 +1051,7 @@ package kinesis {
   }
 
   /**
-   * <p>Represents the result of an individual record from a <code>PutRecords</code> request. A record that is successfully added to a stream includes <code>SequenceNumber</code> and <code>ShardId</code> in the result. A record that fails to be added to the stream includes <code>ErrorCode</code> and <code>ErrorMessage</code> in the result.</p>
+   * Represents the result of an individual record from a <code>PutRecords</code> request. A record that is successfully added to a stream includes <code>SequenceNumber</code> and <code>ShardId</code> in the result. A record that fails to be added to the stream includes <code>ErrorCode</code> and <code>ErrorMessage</code> in the result.
    */
   @js.native
   trait PutRecordsResultEntry extends js.Object {
@@ -1078,7 +1078,7 @@ package kinesis {
   }
 
   /**
-   * <p>The unit of data of the Kinesis data stream, which is composed of a sequence number, a partition key, and a data blob.</p>
+   * The unit of data of the Kinesis data stream, which is composed of a sequence number, a partition key, and a data blob.
    */
   @js.native
   trait Record extends js.Object {
@@ -1141,7 +1141,7 @@ package kinesis {
   }
 
   /**
-   * <p>Represents the input for <code>RemoveTagsFromStream</code>.</p>
+   * Represents the input for <code>RemoveTagsFromStream</code>.
    */
   @js.native
   trait RemoveTagsFromStreamInput extends js.Object {
@@ -1162,7 +1162,7 @@ package kinesis {
   }
 
   /**
-   * <p>The resource is not available for this operation. For successful operation, the resource must be in the <code>ACTIVE</code> state.</p>
+   * The resource is not available for this operation. For successful operation, the resource must be in the <code>ACTIVE</code> state.
    */
   @js.native
   trait ResourceInUseExceptionException extends js.Object {
@@ -1170,7 +1170,7 @@ package kinesis {
   }
 
   /**
-   * <p>The requested resource could not be found. The stream might not be specified correctly.</p>
+   * The requested resource could not be found. The stream might not be specified correctly.
    */
   @js.native
   trait ResourceNotFoundExceptionException extends js.Object {
@@ -1184,7 +1184,7 @@ package kinesis {
   }
 
   /**
-   * <p>The range of possible sequence numbers for the shard.</p>
+   * The range of possible sequence numbers for the shard.
    */
   @js.native
   trait SequenceNumberRange extends js.Object {
@@ -1205,7 +1205,7 @@ package kinesis {
   }
 
   /**
-   * <p>A uniquely identified group of data records in a Kinesis data stream.</p>
+   * A uniquely identified group of data records in a Kinesis data stream.
    */
   @js.native
   trait Shard extends js.Object {
@@ -1245,7 +1245,7 @@ package kinesis {
   }
 
   /**
-   * <p>Represents the input for <code>SplitShard</code>.</p>
+   * Represents the input for <code>SplitShard</code>.
    */
   @js.native
   trait SplitShardInput extends js.Object {
@@ -1332,7 +1332,7 @@ package kinesis {
   }
 
   /**
-   * <p>Represents the output for <a>DescribeStream</a>.</p>
+   * Represents the output for '''DescribeStream'''.
    */
   @js.native
   trait StreamDescription extends js.Object {
@@ -1377,7 +1377,7 @@ package kinesis {
   }
 
   /**
-   * <p>Represents the output for <a>DescribeStreamSummary</a> </p>
+   * Represents the output for '''DescribeStreamSummary'''
    */
   @js.native
   trait StreamDescriptionSummary extends js.Object {
@@ -1431,7 +1431,7 @@ package kinesis {
   }
 
   /**
-   * <p>After you call <a>SubscribeToShard</a>, Kinesis Data Streams sends events of this type to your consumer. </p>
+   * After you call '''SubscribeToShard''', Kinesis Data Streams sends events of this type to your consumer.
    */
   @js.native
   trait SubscribeToShardEvent extends js.Object {
@@ -1506,7 +1506,7 @@ package kinesis {
   }
 
   /**
-   * <p>Metadata assigned to the stream, consisting of a key-value pair.</p>
+   * Metadata assigned to the stream, consisting of a key-value pair.
    */
   @js.native
   trait Tag extends js.Object {

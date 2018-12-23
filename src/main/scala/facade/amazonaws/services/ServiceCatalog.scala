@@ -322,7 +322,7 @@ package servicecatalog {
   }
 
   /**
-   * <p>The access level to use to filter results.</p>
+   * The access level to use to filter results.
    */
   @js.native
   trait AccessLevelFilter extends js.Object {
@@ -575,7 +575,7 @@ package servicecatalog {
   }
 
   /**
-   * <p>Information about a CloudWatch dashboard.</p>
+   * Information about a CloudWatch dashboard.
    */
   @js.native
   trait CloudWatchDashboard extends js.Object {
@@ -593,7 +593,7 @@ package servicecatalog {
   }
 
   /**
-   * <p>Information about a constraint.</p>
+   * Information about a constraint.
    */
   @js.native
   trait ConstraintDetail extends js.Object {
@@ -620,7 +620,7 @@ package servicecatalog {
   }
 
   /**
-   * <p>Summary information about a constraint.</p>
+   * Summary information about a constraint.
    */
   @js.native
   trait ConstraintSummary extends js.Object {
@@ -2195,7 +2195,7 @@ package servicecatalog {
   }
 
   /**
-   * <p>An object containing information about the error, along with identifying information about the self-service action and its associations.</p>
+   * An object containing information about the error, along with identifying information about the self-service action and its associations.
    */
   @js.native
   trait FailedServiceActionAssociation extends js.Object {
@@ -2253,7 +2253,7 @@ package servicecatalog {
   }
 
   /**
-   * <p>Summary information about a product path for a user.</p>
+   * Summary information about a product path for a user.
    */
   @js.native
   trait LaunchPathSummary extends js.Object {
@@ -2781,7 +2781,7 @@ package servicecatalog {
   }
 
   /**
-   * <p>The search filter to use when listing history records.</p>
+   * The search filter to use when listing history records.
    */
   @js.native
   trait ListRecordHistorySearchFilter extends js.Object {
@@ -2928,7 +2928,7 @@ package servicecatalog {
   }
 
   /**
-   * <p>Filters to use when listing TagOptions.</p>
+   * Filters to use when listing TagOptions.
    */
   @js.native
   trait ListTagOptionsFilters extends js.Object {
@@ -3020,7 +3020,7 @@ package servicecatalog {
   }
 
   /**
-   * <p>The constraints that the administrator has put on the parameter.</p>
+   * The constraints that the administrator has put on the parameter.
    */
   @js.native
   trait ParameterConstraints extends js.Object {
@@ -3038,7 +3038,7 @@ package servicecatalog {
   }
 
   /**
-   * <p>Information about a portfolio.</p>
+   * Information about a portfolio.
    */
   @js.native
   trait PortfolioDetail extends js.Object {
@@ -3079,7 +3079,7 @@ package servicecatalog {
   }
 
   /**
-   * <p>Information about a principal.</p>
+   * Information about a principal.
    */
   @js.native
   trait Principal extends js.Object {
@@ -3119,7 +3119,7 @@ package servicecatalog {
   }
 
   /**
-   * <p>A single product view aggregation value/count pair, containing metadata about each product to which the calling user has access.</p>
+   * A single product view aggregation value/count pair, containing metadata about each product to which the calling user has access.
    */
   @js.native
   trait ProductViewAggregationValue extends js.Object {
@@ -3140,7 +3140,7 @@ package servicecatalog {
   }
 
   /**
-   * <p>Information about a product view.</p>
+   * Information about a product view.
    */
   @js.native
   trait ProductViewDetail extends js.Object {
@@ -3184,7 +3184,7 @@ package servicecatalog {
   }
 
   /**
-   * <p>Summary information about a product view.</p>
+   * Summary information about a product view.
    */
   @js.native
   trait ProductViewSummary extends js.Object {
@@ -3289,7 +3289,7 @@ package servicecatalog {
   }
 
   /**
-   * <p>Information about a provisioned product.</p>
+   * Information about a provisioned product.
    */
   @js.native
   trait ProvisionedProductAttribute extends js.Object {
@@ -3349,7 +3349,7 @@ package servicecatalog {
   }
 
   /**
-   * <p>Information about a provisioned product.</p>
+   * Information about a provisioned product.
    */
   @js.native
   trait ProvisionedProductDetail extends js.Object {
@@ -3397,7 +3397,7 @@ package servicecatalog {
   }
 
   /**
-   * <p>Information about a plan.</p>
+   * Information about a plan.
    */
   @js.native
   trait ProvisionedProductPlanDetails extends js.Object {
@@ -3468,7 +3468,7 @@ package servicecatalog {
   }
 
   /**
-   * <p>Summary information about a plan.</p>
+   * Summary information about a plan.
    */
   @js.native
   trait ProvisionedProductPlanSummary extends js.Object {
@@ -3523,7 +3523,7 @@ package servicecatalog {
   }
 
   /**
-   * <p>Information about a provisioning artifact. A provisioning artifact is also known as a product version.</p>
+   * Information about a provisioning artifact. A provisioning artifact is also known as a product version.
    */
   @js.native
   trait ProvisioningArtifact extends js.Object {
@@ -3550,7 +3550,7 @@ package servicecatalog {
   }
 
   /**
-   * <p>Information about a provisioning artifact (also known as a version) for a product.</p>
+   * Information about a provisioning artifact (also known as a version) for a product.
    */
   @js.native
   trait ProvisioningArtifactDetail extends js.Object {
@@ -3583,7 +3583,7 @@ package servicecatalog {
   }
 
   /**
-   * <p>Information about a parameter used to provision a product.</p>
+   * Information about a parameter used to provision a product.
    */
   @js.native
   trait ProvisioningArtifactParameter extends js.Object {
@@ -3616,7 +3616,8 @@ package servicecatalog {
   }
 
   /**
-   * <p>The user-defined preferences that will be applied during product provisioning, unless overridden by <code>ProvisioningPreferences</code> or <code>UpdateProvisioningPreferences</code>.</p> <p>For more information on maximum concurrent accounts and failure tolerance, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-ops-options">Stack set operation options</a> in the <i>AWS CloudFormation User Guide</i>.</p>
+   * The user-defined preferences that will be applied during product provisioning, unless overridden by <code>ProvisioningPreferences</code> or <code>UpdateProvisioningPreferences</code>.
+   *  For more information on maximum concurrent accounts and failure tolerance, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-ops-options">Stack set operation options</a> in the <i>AWS CloudFormation User Guide</i>.
    */
   @js.native
   trait ProvisioningArtifactPreferences extends js.Object {
@@ -3637,7 +3638,7 @@ package servicecatalog {
   }
 
   /**
-   * <p>Information about a provisioning artifact (also known as a version) for a product.</p>
+   * Information about a provisioning artifact (also known as a version) for a product.
    */
   @js.native
   trait ProvisioningArtifactProperties extends js.Object {
@@ -3670,7 +3671,7 @@ package servicecatalog {
   }
 
   /**
-   * <p>Summary information about a provisioning artifact (also known as a version) for a product.</p>
+   * Summary information about a provisioning artifact (also known as a version) for a product.
    */
   @js.native
   trait ProvisioningArtifactSummary extends js.Object {
@@ -3708,7 +3709,7 @@ package servicecatalog {
   }
 
   /**
-   * <p>An object that contains summary information about a product view and a provisioning artifact.</p>
+   * An object that contains summary information about a product view and a provisioning artifact.
    */
   @js.native
   trait ProvisioningArtifactView extends js.Object {
@@ -3729,7 +3730,7 @@ package servicecatalog {
   }
 
   /**
-   * <p>Information about a parameter used to provision a product.</p>
+   * Information about a parameter used to provision a product.
    */
   @js.native
   trait ProvisioningParameter extends js.Object {
@@ -3750,7 +3751,7 @@ package servicecatalog {
   }
 
   /**
-   * <p>The user-defined preferences that will be applied when updating a provisioned product. Not all preferences are applicable to all provisioned product types.</p>
+   * The user-defined preferences that will be applied when updating a provisioned product. Not all preferences are applicable to all provisioned product types.
    */
   @js.native
   trait ProvisioningPreferences extends js.Object {
@@ -3783,7 +3784,7 @@ package servicecatalog {
   }
 
   /**
-   * <p>Information about a request operation.</p>
+   * Information about a request operation.
    */
   @js.native
   trait RecordDetail extends js.Object {
@@ -3837,7 +3838,7 @@ package servicecatalog {
   }
 
   /**
-   * <p>The error code and description resulting from an operation.</p>
+   * The error code and description resulting from an operation.
    */
   @js.native
   trait RecordError extends js.Object {
@@ -3858,7 +3859,7 @@ package servicecatalog {
   }
 
   /**
-   * <p>The output for the product created as the result of a request. For example, the output for a CloudFormation-backed product that creates an S3 bucket would include the S3 bucket URL.</p>
+   * The output for the product created as the result of a request. For example, the output for a CloudFormation-backed product that creates an S3 bucket would include the S3 bucket URL.
    */
   @js.native
   trait RecordOutput extends js.Object {
@@ -3892,7 +3893,7 @@ package servicecatalog {
   }
 
   /**
-   * <p>Information about a tag, which is a key-value pair.</p>
+   * Information about a tag, which is a key-value pair.
    */
   @js.native
   trait RecordTag extends js.Object {
@@ -3974,7 +3975,7 @@ package servicecatalog {
   }
 
   /**
-   * <p>Information about a resource change that will occur when a plan is executed.</p>
+   * Information about a resource change that will occur when a plan is executed.
    */
   @js.native
   trait ResourceChange extends js.Object {
@@ -4010,7 +4011,7 @@ package servicecatalog {
   }
 
   /**
-   * <p>Information about a change to a resource attribute.</p>
+   * Information about a change to a resource attribute.
    */
   @js.native
   trait ResourceChangeDetail extends js.Object {
@@ -4034,7 +4035,7 @@ package servicecatalog {
   }
 
   /**
-   * <p>Information about a resource.</p>
+   * Information about a resource.
    */
   @js.native
   trait ResourceDetail extends js.Object {
@@ -4064,7 +4065,7 @@ package servicecatalog {
   }
 
   /**
-   * <p>Information about a change to a resource attribute.</p>
+   * Information about a change to a resource attribute.
    */
   @js.native
   trait ResourceTargetDefinition extends js.Object {
@@ -4289,7 +4290,7 @@ package servicecatalog {
   }
 
   /**
-   * <p>A self-service action association consisting of the Action ID, the Product ID, and the Provisioning Artifact ID.</p>
+   * A self-service action association consisting of the Action ID, the Product ID, and the Provisioning Artifact ID.
    */
   @js.native
   trait ServiceActionAssociation extends js.Object {
@@ -4338,7 +4339,7 @@ package servicecatalog {
   }
 
   /**
-   * <p>An object containing detailed information about the self-service action.</p>
+   * An object containing detailed information about the self-service action.
    */
   @js.native
   trait ServiceActionDetail extends js.Object {
@@ -4359,7 +4360,7 @@ package servicecatalog {
   }
 
   /**
-   * <p>Detailed information about the self-service action.</p>
+   * Detailed information about the self-service action.
    */
   @js.native
   trait ServiceActionSummary extends js.Object {
@@ -4386,7 +4387,7 @@ package servicecatalog {
   }
 
   /**
-   * <p>Information about the portfolio share operation.</p>
+   * Information about the portfolio share operation.
    */
   @js.native
   trait ShareDetails extends js.Object {
@@ -4407,7 +4408,7 @@ package servicecatalog {
   }
 
   /**
-   * <p>Errors that occurred during the portfolio share operation.</p>
+   * Errors that occurred during the portfolio share operation.
    */
   @js.native
   trait ShareError extends js.Object {
@@ -4464,7 +4465,7 @@ package servicecatalog {
   }
 
   /**
-   * <p>Information about a tag. A tag is a key-value pair. Tags are propagated to the resources created when provisioning a product.</p>
+   * Information about a tag. A tag is a key-value pair. Tags are propagated to the resources created when provisioning a product.
    */
   @js.native
   trait Tag extends js.Object {
@@ -4485,7 +4486,7 @@ package servicecatalog {
   }
 
   /**
-   * <p>Information about a TagOption.</p>
+   * Information about a TagOption.
    */
   @js.native
   trait TagOptionDetail extends js.Object {
@@ -4512,7 +4513,7 @@ package servicecatalog {
   }
 
   /**
-   * <p>Summary information about a TagOption.</p>
+   * Summary information about a TagOption.
    */
   @js.native
   trait TagOptionSummary extends js.Object {
@@ -4836,7 +4837,7 @@ package servicecatalog {
   }
 
   /**
-   * <p>The parameter key-value pair used to update a provisioned product.</p>
+   * The parameter key-value pair used to update a provisioned product.
    */
   @js.native
   trait UpdateProvisioningParameter extends js.Object {
@@ -4860,7 +4861,7 @@ package servicecatalog {
   }
 
   /**
-   * <p>The user-defined preferences that will be applied when updating a provisioned product. Not all preferences are applicable to all provisioned product types.</p>
+   * The user-defined preferences that will be applied when updating a provisioned product. Not all preferences are applicable to all provisioned product types.
    */
   @js.native
   trait UpdateProvisioningPreferences extends js.Object {
@@ -4974,7 +4975,7 @@ package servicecatalog {
   }
 
   /**
-   * <p>Additional information provided by the administrator.</p>
+   * Additional information provided by the administrator.
    */
   @js.native
   trait UsageInstruction extends js.Object {

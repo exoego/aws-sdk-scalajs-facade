@@ -211,7 +211,9 @@ package cloudformation {
   }
 
   /**
-   * <p>Structure that contains the results of the account gate function which AWS CloudFormation invokes, if present, before proceeding with a stack set operation in an account and region.</p> <p>For each account and region, AWS CloudFormation lets you specify a Lamdba function that encapsulates any requirements that must be met before CloudFormation can proceed with a stack set operation in that account and region. CloudFormation invokes the function each time a stack set operation is requested for that account and region; if the function returns <code>FAILED</code>, CloudFormation cancels the operation in that account and region, and sets the stack set operation result status for that account and region to <code>FAILED</code>. </p> <p>For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-account-gating.html">Configuring a target account gate</a>.</p>
+   * Structure that contains the results of the account gate function which AWS CloudFormation invokes, if present, before proceeding with a stack set operation in an account and region.
+   *  For each account and region, AWS CloudFormation lets you specify a Lamdba function that encapsulates any requirements that must be met before CloudFormation can proceed with a stack set operation in that account and region. CloudFormation invokes the function each time a stack set operation is requested for that account and region; if the function returns <code>FAILED</code>, CloudFormation cancels the operation in that account and region, and sets the stack set operation result status for that account and region to <code>FAILED</code>.
+   *  For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-account-gating.html">Configuring a target account gate</a>.
    */
   @js.native
   trait AccountGateResult extends js.Object {
@@ -240,7 +242,7 @@ package cloudformation {
   }
 
   /**
-   * <p>The AccountLimit data type.</p>
+   * The AccountLimit data type.
    */
   @js.native
   trait AccountLimit extends js.Object {
@@ -261,7 +263,7 @@ package cloudformation {
   }
 
   /**
-   * <p>The input for the <a>CancelUpdateStack</a> action.</p>
+   * The input for the '''CancelUpdateStack''' action.
    */
   @js.native
   trait CancelUpdateStackInput extends js.Object {
@@ -290,7 +292,7 @@ package cloudformation {
   }
 
   /**
-   * <p>The <code>Change</code> structure describes the changes AWS CloudFormation will perform if you execute the change set.</p>
+   * The <code>Change</code> structure describes the changes AWS CloudFormation will perform if you execute the change set.
    */
   @js.native
   trait Change extends js.Object {
@@ -329,7 +331,7 @@ package cloudformation {
   }
 
   /**
-   * <p>The <code>ChangeSetSummary</code> structure describes a change set, its status, and the stack with which it's associated.</p>
+   * The <code>ChangeSetSummary</code> structure describes a change set, its status, and the stack with which it's associated.
    */
   @js.native
   trait ChangeSetSummary extends js.Object {
@@ -394,7 +396,7 @@ package cloudformation {
   }
 
   /**
-   * <p>The input for the <a>ContinueUpdateRollback</a> action.</p>
+   * The input for the '''ContinueUpdateRollback''' action.
    */
   @js.native
   trait ContinueUpdateRollbackInput extends js.Object {
@@ -421,7 +423,7 @@ package cloudformation {
   }
 
   /**
-   * <p>The output for a <a>ContinueUpdateRollback</a> action.</p>
+   * The output for a '''ContinueUpdateRollback''' action.
    */
   @js.native
   trait ContinueUpdateRollbackOutput extends js.Object {
@@ -437,7 +439,7 @@ package cloudformation {
   }
 
   /**
-   * <p>The input for the <a>CreateChangeSet</a> action.</p>
+   * The input for the '''CreateChangeSet''' action.
    */
   @js.native
   trait CreateChangeSetInput extends js.Object {
@@ -497,7 +499,7 @@ package cloudformation {
   }
 
   /**
-   * <p>The output for the <a>CreateChangeSet</a> action.</p>
+   * The output for the '''CreateChangeSet''' action.
    */
   @js.native
   trait CreateChangeSetOutput extends js.Object {
@@ -518,7 +520,7 @@ package cloudformation {
   }
 
   /**
-   * <p>The input for <a>CreateStack</a> action.</p>
+   * The input for '''CreateStack''' action.
    */
   @js.native
   trait CreateStackInput extends js.Object {
@@ -629,7 +631,7 @@ package cloudformation {
   }
 
   /**
-   * <p>The output for a <a>CreateStack</a> action.</p>
+   * The output for a '''CreateStack''' action.
    */
   @js.native
   trait CreateStackOutput extends js.Object {
@@ -704,7 +706,7 @@ package cloudformation {
   }
 
   /**
-   * <p>The input for the <a>DeleteChangeSet</a> action.</p>
+   * The input for the '''DeleteChangeSet''' action.
    */
   @js.native
   trait DeleteChangeSetInput extends js.Object {
@@ -725,7 +727,7 @@ package cloudformation {
   }
 
   /**
-   * <p>The output for the <a>DeleteChangeSet</a> action.</p>
+   * The output for the '''DeleteChangeSet''' action.
    */
   @js.native
   trait DeleteChangeSetOutput extends js.Object {
@@ -741,7 +743,7 @@ package cloudformation {
   }
 
   /**
-   * <p>The input for <a>DeleteStack</a> action.</p>
+   * The input for '''DeleteStack''' action.
    */
   @js.native
   trait DeleteStackInput extends js.Object {
@@ -841,7 +843,7 @@ package cloudformation {
   }
 
   /**
-   * <p>The input for the <a>DescribeAccountLimits</a> action.</p>
+   * The input for the '''DescribeAccountLimits''' action.
    */
   @js.native
   trait DescribeAccountLimitsInput extends js.Object {
@@ -859,7 +861,7 @@ package cloudformation {
   }
 
   /**
-   * <p>The output for the <a>DescribeAccountLimits</a> action.</p>
+   * The output for the '''DescribeAccountLimits''' action.
    */
   @js.native
   trait DescribeAccountLimitsOutput extends js.Object {
@@ -880,7 +882,7 @@ package cloudformation {
   }
 
   /**
-   * <p>The input for the <a>DescribeChangeSet</a> action.</p>
+   * The input for the '''DescribeChangeSet''' action.
    */
   @js.native
   trait DescribeChangeSetInput extends js.Object {
@@ -904,7 +906,7 @@ package cloudformation {
   }
 
   /**
-   * <p>The output for the <a>DescribeChangeSet</a> action.</p>
+   * The output for the '''DescribeChangeSet''' action.
    */
   @js.native
   trait DescribeChangeSetOutput extends js.Object {
@@ -1015,7 +1017,7 @@ package cloudformation {
   }
 
   /**
-   * <p>The input for <a>DescribeStackEvents</a> action.</p>
+   * The input for '''DescribeStackEvents''' action.
    */
   @js.native
   trait DescribeStackEventsInput extends js.Object {
@@ -1036,7 +1038,7 @@ package cloudformation {
   }
 
   /**
-   * <p>The output for a <a>DescribeStackEvents</a> action.</p>
+   * The output for a '''DescribeStackEvents''' action.
    */
   @js.native
   trait DescribeStackEventsOutput extends js.Object {
@@ -1135,7 +1137,7 @@ package cloudformation {
   }
 
   /**
-   * <p>The input for <a>DescribeStackResource</a> action.</p>
+   * The input for '''DescribeStackResource''' action.
    */
   @js.native
   trait DescribeStackResourceInput extends js.Object {
@@ -1156,7 +1158,7 @@ package cloudformation {
   }
 
   /**
-   * <p>The output for a <a>DescribeStackResource</a> action.</p>
+   * The output for a '''DescribeStackResource''' action.
    */
   @js.native
   trait DescribeStackResourceOutput extends js.Object {
@@ -1174,7 +1176,7 @@ package cloudformation {
   }
 
   /**
-   * <p>The input for <a>DescribeStackResources</a> action.</p>
+   * The input for '''DescribeStackResources''' action.
    */
   @js.native
   trait DescribeStackResourcesInput extends js.Object {
@@ -1198,7 +1200,7 @@ package cloudformation {
   }
 
   /**
-   * <p>The output for a <a>DescribeStackResources</a> action.</p>
+   * The output for a '''DescribeStackResources''' action.
    */
   @js.native
   trait DescribeStackResourcesOutput extends js.Object {
@@ -1279,7 +1281,7 @@ package cloudformation {
   }
 
   /**
-   * <p>The input for <a>DescribeStacks</a> action.</p>
+   * The input for '''DescribeStacks''' action.
    */
   @js.native
   trait DescribeStacksInput extends js.Object {
@@ -1300,7 +1302,7 @@ package cloudformation {
   }
 
   /**
-   * <p>The output for a <a>DescribeStacks</a> action.</p>
+   * The output for a '''DescribeStacks''' action.
    */
   @js.native
   trait DescribeStacksOutput extends js.Object {
@@ -1395,7 +1397,7 @@ package cloudformation {
   }
 
   /**
-   * <p>The input for an <a>EstimateTemplateCost</a> action.</p>
+   * The input for an '''EstimateTemplateCost''' action.
    */
   @js.native
   trait EstimateTemplateCostInput extends js.Object {
@@ -1419,7 +1421,7 @@ package cloudformation {
   }
 
   /**
-   * <p>The output for a <a>EstimateTemplateCost</a> action.</p>
+   * The output for a '''EstimateTemplateCost''' action.
    */
   @js.native
   trait EstimateTemplateCostOutput extends js.Object {
@@ -1444,7 +1446,7 @@ package cloudformation {
   }
 
   /**
-   * <p>The input for the <a>ExecuteChangeSet</a> action.</p>
+   * The input for the '''ExecuteChangeSet''' action.
    */
   @js.native
   trait ExecuteChangeSetInput extends js.Object {
@@ -1468,7 +1470,7 @@ package cloudformation {
   }
 
   /**
-   * <p>The output for the <a>ExecuteChangeSet</a> action.</p>
+   * The output for the '''ExecuteChangeSet''' action.
    */
   @js.native
   trait ExecuteChangeSetOutput extends js.Object {
@@ -1495,7 +1497,7 @@ package cloudformation {
   }
 
   /**
-   * <p>The <code>Export</code> structure describes the exported output values for a stack.</p>
+   * The <code>Export</code> structure describes the exported output values for a stack.
    */
   @js.native
   trait Export extends js.Object {
@@ -1519,7 +1521,7 @@ package cloudformation {
   }
 
   /**
-   * <p>The input for the <a>GetStackPolicy</a> action.</p>
+   * The input for the '''GetStackPolicy''' action.
    */
   @js.native
   trait GetStackPolicyInput extends js.Object {
@@ -1537,7 +1539,7 @@ package cloudformation {
   }
 
   /**
-   * <p>The output for the <a>GetStackPolicy</a> action.</p>
+   * The output for the '''GetStackPolicy''' action.
    */
   @js.native
   trait GetStackPolicyOutput extends js.Object {
@@ -1555,7 +1557,7 @@ package cloudformation {
   }
 
   /**
-   * <p>The input for a <a>GetTemplate</a> action.</p>
+   * The input for a '''GetTemplate''' action.
    */
   @js.native
   trait GetTemplateInput extends js.Object {
@@ -1579,7 +1581,7 @@ package cloudformation {
   }
 
   /**
-   * <p>The output for <a>GetTemplate</a> action.</p>
+   * The output for '''GetTemplate''' action.
    */
   @js.native
   trait GetTemplateOutput extends js.Object {
@@ -1600,7 +1602,7 @@ package cloudformation {
   }
 
   /**
-   * <p>The input for the <a>GetTemplateSummary</a> action.</p>
+   * The input for the '''GetTemplateSummary''' action.
    */
   @js.native
   trait GetTemplateSummaryInput extends js.Object {
@@ -1627,7 +1629,7 @@ package cloudformation {
   }
 
   /**
-   * <p>The output for the <a>GetTemplateSummary</a> action.</p>
+   * The output for the '''GetTemplateSummary''' action.
    */
   @js.native
   trait GetTemplateSummaryOutput extends js.Object {
@@ -1666,7 +1668,7 @@ package cloudformation {
   }
 
   /**
-   * <p>The input for the <a>ListChangeSets</a> action.</p>
+   * The input for the '''ListChangeSets''' action.
    */
   @js.native
   trait ListChangeSetsInput extends js.Object {
@@ -1687,7 +1689,7 @@ package cloudformation {
   }
 
   /**
-   * <p>The output for the <a>ListChangeSets</a> action.</p>
+   * The output for the '''ListChangeSets''' action.
    */
   @js.native
   trait ListChangeSetsOutput extends js.Object {
@@ -1822,7 +1824,7 @@ package cloudformation {
   }
 
   /**
-   * <p>The input for the <a>ListStackResource</a> action.</p>
+   * The input for the '''ListStackResource''' action.
    */
   @js.native
   trait ListStackResourcesInput extends js.Object {
@@ -1843,7 +1845,7 @@ package cloudformation {
   }
 
   /**
-   * <p>The output for a <a>ListStackResources</a> action.</p>
+   * The output for a '''ListStackResources''' action.
    */
   @js.native
   trait ListStackResourcesOutput extends js.Object {
@@ -1984,7 +1986,7 @@ package cloudformation {
   }
 
   /**
-   * <p>The input for <a>ListStacks</a> action.</p>
+   * The input for '''ListStacks''' action.
    */
   @js.native
   trait ListStacksInput extends js.Object {
@@ -2005,7 +2007,7 @@ package cloudformation {
   }
 
   /**
-   * <p>The output for <a>ListStacks</a> action.</p>
+   * The output for '''ListStacks''' action.
    */
   @js.native
   trait ListStacksOutput extends js.Object {
@@ -2034,7 +2036,7 @@ package cloudformation {
   }
 
   /**
-   * <p>The Output data type.</p>
+   * The Output data type.
    */
   @js.native
   trait Output extends js.Object {
@@ -2061,7 +2063,7 @@ package cloudformation {
   }
 
   /**
-   * <p>The Parameter data type.</p>
+   * The Parameter data type.
    */
   @js.native
   trait Parameter extends js.Object {
@@ -2088,7 +2090,7 @@ package cloudformation {
   }
 
   /**
-   * <p>A set of criteria that AWS CloudFormation uses to validate parameter values. Although other constraints might be defined in the stack template, AWS CloudFormation returns only the <code>AllowedValues</code> property.</p>
+   * A set of criteria that AWS CloudFormation uses to validate parameter values. Although other constraints might be defined in the stack template, AWS CloudFormation returns only the <code>AllowedValues</code> property.
    */
   @js.native
   trait ParameterConstraints extends js.Object {
@@ -2106,7 +2108,7 @@ package cloudformation {
   }
 
   /**
-   * <p>The ParameterDeclaration data type.</p>
+   * The ParameterDeclaration data type.
    */
   @js.native
   trait ParameterDeclaration extends js.Object {
@@ -2139,7 +2141,7 @@ package cloudformation {
   }
 
   /**
-   * <p>Context information that enables AWS CloudFormation to uniquely identify a resource. AWS CloudFormation uses context key-value pairs in cases where a resource's logical and physical IDs are not enough to uniquely identify that resource. Each context key-value pair specifies a resource that contains the targeted resource.</p>
+   * Context information that enables AWS CloudFormation to uniquely identify a resource. AWS CloudFormation uses context key-value pairs in cases where a resource's logical and physical IDs are not enough to uniquely identify that resource. Each context key-value pair specifies a resource that contains the targeted resource.
    */
   @js.native
   trait PhysicalResourceIdContextKeyValuePair extends js.Object {
@@ -2160,7 +2162,7 @@ package cloudformation {
   }
 
   /**
-   * <p>Information about a resource property whose actual value differs from its expected value, as defined in the stack template and any values specified as template parameters. These will be present only for resources whose <code>StackResourceDriftStatus</code> is <code>MODIFIED</code>. For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting Unregulated Configuration Changes to Stacks and Resources</a>.</p>
+   * Information about a resource property whose actual value differs from its expected value, as defined in the stack template and any values specified as template parameters. These will be present only for resources whose <code>StackResourceDriftStatus</code> is <code>MODIFIED</code>. For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting Unregulated Configuration Changes to Stacks and Resources</a>.
    */
   @js.native
   trait PropertyDifference extends js.Object {
@@ -2214,7 +2216,7 @@ package cloudformation {
   }
 
   /**
-   * <p>The <code>ResourceChange</code> structure describes the resource and the action that AWS CloudFormation will perform on it if you execute this change set.</p>
+   * The <code>ResourceChange</code> structure describes the resource and the action that AWS CloudFormation will perform on it if you execute this change set.
    */
   @js.native
   trait ResourceChange extends js.Object {
@@ -2250,7 +2252,7 @@ package cloudformation {
   }
 
   /**
-   * <p>For a resource with <code>Modify</code> as the action, the <code>ResourceChange</code> structure describes the changes AWS CloudFormation will make to that resource.</p>
+   * For a resource with <code>Modify</code> as the action, the <code>ResourceChange</code> structure describes the changes AWS CloudFormation will make to that resource.
    */
   @js.native
   trait ResourceChangeDetail extends js.Object {
@@ -2299,7 +2301,7 @@ package cloudformation {
   }
 
   /**
-   * <p>The field that AWS CloudFormation will change, such as the name of a resource's property, and whether the resource will be recreated.</p>
+   * The field that AWS CloudFormation will change, such as the name of a resource's property, and whether the resource will be recreated.
    */
   @js.native
   trait ResourceTargetDefinition extends js.Object {
@@ -2323,7 +2325,8 @@ package cloudformation {
   }
 
   /**
-   * <p>Structure containing the rollback triggers for AWS CloudFormation to monitor during stack creation and updating operations, and for the specified monitoring period afterwards.</p> <p>Rollback triggers enable you to have AWS CloudFormation monitor the state of your application during stack creation and updating, and to roll back that operation if the application breaches the threshold of any of the alarms you've specified. For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-rollback-triggers.html">Monitor and Roll Back Stack Operations</a>.</p>
+   * Structure containing the rollback triggers for AWS CloudFormation to monitor during stack creation and updating operations, and for the specified monitoring period afterwards.
+   *  Rollback triggers enable you to have AWS CloudFormation monitor the state of your application during stack creation and updating, and to roll back that operation if the application breaches the threshold of any of the alarms you've specified. For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-rollback-triggers.html">Monitor and Roll Back Stack Operations</a>.
    */
   @js.native
   trait RollbackConfiguration extends js.Object {
@@ -2344,7 +2347,7 @@ package cloudformation {
   }
 
   /**
-   * <p>A rollback trigger AWS CloudFormation monitors during creation and updating of stacks. If any of the alarms you specify goes to ALARM state during the stack operation or within the specified monitoring period afterwards, CloudFormation rolls back the entire stack operation. </p>
+   * A rollback trigger AWS CloudFormation monitors during creation and updating of stacks. If any of the alarms you specify goes to ALARM state during the stack operation or within the specified monitoring period afterwards, CloudFormation rolls back the entire stack operation.
    */
   @js.native
   trait RollbackTrigger extends js.Object {
@@ -2365,7 +2368,7 @@ package cloudformation {
   }
 
   /**
-   * <p>The input for the <a>SetStackPolicy</a> action.</p>
+   * The input for the '''SetStackPolicy''' action.
    */
   @js.native
   trait SetStackPolicyInput extends js.Object {
@@ -2389,7 +2392,7 @@ package cloudformation {
   }
 
   /**
-   * <p>The input for the <a>SignalResource</a> action.</p>
+   * The input for the '''SignalResource''' action.
    */
   @js.native
   trait SignalResourceInput extends js.Object {
@@ -2416,7 +2419,7 @@ package cloudformation {
   }
 
   /**
-   * <p>The Stack data type.</p>
+   * The Stack data type.
    */
   @js.native
   trait Stack extends js.Object {
@@ -2505,7 +2508,7 @@ package cloudformation {
   }
 
   /**
-   * <p>Contains information about whether the stack's actual configuration differs, or has <i>drifted</i>, from its expected configuration, as defined in the stack template and any values specified as template parameters. A stack is considered to have drifted if one or more of its resources have drifted.</p>
+   * Contains information about whether the stack's actual configuration differs, or has <i>drifted</i>, from its expected configuration, as defined in the stack template and any values specified as template parameters. A stack is considered to have drifted if one or more of its resources have drifted.
    */
   @js.native
   trait StackDriftInformation extends js.Object {
@@ -2526,7 +2529,7 @@ package cloudformation {
   }
 
   /**
-   * <p>Contains information about whether the stack's actual configuration differs, or has <i>drifted</i>, from its expected configuration, as defined in the stack template and any values specified as template parameters. A stack is considered to have drifted if one or more of its resources have drifted.</p>
+   * Contains information about whether the stack's actual configuration differs, or has <i>drifted</i>, from its expected configuration, as defined in the stack template and any values specified as template parameters. A stack is considered to have drifted if one or more of its resources have drifted.
    */
   @js.native
   trait StackDriftInformationSummary extends js.Object {
@@ -2556,7 +2559,7 @@ package cloudformation {
   }
 
   /**
-   * <p>The StackEvent data type.</p>
+   * The StackEvent data type.
    */
   @js.native
   trait StackEvent extends js.Object {
@@ -2604,7 +2607,7 @@ package cloudformation {
   }
 
   /**
-   * <p>An AWS CloudFormation stack, in a specific account and region, that's part of a stack set operation. A stack instance is a reference to an attempted or actual stack in a given account within a given region. A stack instance can exist without a stack?for example, if the stack couldn't be created for some reason. A stack instance is associated with only one stack set. Each stack instance contains the ID of its associated stack set, as well as the ID of the actual stack and the stack status.</p>
+   * An AWS CloudFormation stack, in a specific account and region, that's part of a stack set operation. A stack instance is a reference to an attempted or actual stack in a given account within a given region. A stack instance can exist without a stack?for example, if the stack couldn't be created for some reason. A stack instance is associated with only one stack set. Each stack instance contains the ID of its associated stack set, as well as the ID of the actual stack and the stack status.
    */
   @js.native
   trait StackInstance extends js.Object {
@@ -2648,7 +2651,7 @@ package cloudformation {
   }
 
   /**
-   * <p>The structure that contains summary information about a stack instance.</p>
+   * The structure that contains summary information about a stack instance.
    */
   @js.native
   trait StackInstanceSummary extends js.Object {
@@ -2681,7 +2684,7 @@ package cloudformation {
   }
 
   /**
-   * <p>The StackResource data type.</p>
+   * The StackResource data type.
    */
   @js.native
   trait StackResource extends js.Object {
@@ -2726,7 +2729,7 @@ package cloudformation {
   }
 
   /**
-   * <p>Contains detailed information about the specified stack resource.</p>
+   * Contains detailed information about the specified stack resource.
    */
   @js.native
   trait StackResourceDetail extends js.Object {
@@ -2774,7 +2777,9 @@ package cloudformation {
   }
 
   /**
-   * <p>Contains the drift information for a resource that has been checked for drift. This includes actual and expected property values for resources in which AWS CloudFormation has detected drift. Only resource properties explicitly defined in the stack template are checked for drift. For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting Unregulated Configuration Changes to Stacks and Resources</a>.</p> <p>Resources that do not currently support drift detection cannot be checked. For a list of resources that support drift detection, see <a href="http://docs.aws.amazon.com/http:/docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift-resource-list.html">Resources that Support Drift Detection</a>.</p> <p>Use <a>DetectStackResourceDrift</a> to detect drift on individual resources, or <a>DetectStackDrift</a> to detect drift on all resources in a given stack that support drift detection.</p>
+   * Contains the drift information for a resource that has been checked for drift. This includes actual and expected property values for resources in which AWS CloudFormation has detected drift. Only resource properties explicitly defined in the stack template are checked for drift. For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting Unregulated Configuration Changes to Stacks and Resources</a>.
+   *  Resources that do not currently support drift detection cannot be checked. For a list of resources that support drift detection, see <a href="http://docs.aws.amazon.com/http:/docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift-resource-list.html">Resources that Support Drift Detection</a>.
+   *  Use '''DetectStackResourceDrift''' to detect drift on individual resources, or '''DetectStackDrift''' to detect drift on all resources in a given stack that support drift detection.
    */
   @js.native
   trait StackResourceDrift extends js.Object {
@@ -2819,7 +2824,7 @@ package cloudformation {
   }
 
   /**
-   * <p>Contains information about whether the resource's actual configuration differs, or has <i>drifted</i>, from its expected configuration.</p>
+   * Contains information about whether the resource's actual configuration differs, or has <i>drifted</i>, from its expected configuration.
    */
   @js.native
   trait StackResourceDriftInformation extends js.Object {
@@ -2840,7 +2845,7 @@ package cloudformation {
   }
 
   /**
-   * <p>Summarizes information about whether the resource's actual configuration differs, or has <i>drifted</i>, from its expected configuration.</p>
+   * Summarizes information about whether the resource's actual configuration differs, or has <i>drifted</i>, from its expected configuration.
    */
   @js.native
   trait StackResourceDriftInformationSummary extends js.Object {
@@ -2870,7 +2875,7 @@ package cloudformation {
   }
 
   /**
-   * <p>Contains high-level information about the specified stack resource.</p>
+   * Contains high-level information about the specified stack resource.
    */
   @js.native
   trait StackResourceSummary extends js.Object {
@@ -2906,7 +2911,7 @@ package cloudformation {
   }
 
   /**
-   * <p>A structure that contains information about a stack set. A stack set enables you to provision stacks into AWS accounts and across regions by using a single CloudFormation template. In the stack set, you specify the template to use, as well as any parameters and capabilities that the template requires. </p>
+   * A structure that contains information about a stack set. A stack set enables you to provision stacks into AWS accounts and across regions by using a single CloudFormation template. In the stack set, you specify the template to use, as well as any parameters and capabilities that the template requires.
    */
   @js.native
   trait StackSet extends js.Object {
@@ -2954,7 +2959,7 @@ package cloudformation {
   }
 
   /**
-   * <p>The structure that contains information about a stack set operation. </p>
+   * The structure that contains information about a stack set operation.
    */
   @js.native
   trait StackSetOperation extends js.Object {
@@ -3007,7 +3012,8 @@ package cloudformation {
   }
 
   /**
-   * <p>The user-specified preferences for how AWS CloudFormation performs a stack set operation. </p> <p>For more information on maximum concurrent accounts and failure tolerance, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-ops-options">Stack set operation options</a>.</p>
+   * The user-specified preferences for how AWS CloudFormation performs a stack set operation.
+   *  For more information on maximum concurrent accounts and failure tolerance, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-ops-options">Stack set operation options</a>.
    */
   @js.native
   trait StackSetOperationPreferences extends js.Object {
@@ -3047,7 +3053,7 @@ package cloudformation {
   }
 
   /**
-   * <p>The structure that contains information about a specified operation's results for a given account in a given region.</p>
+   * The structure that contains information about a specified operation's results for a given account in a given region.
    */
   @js.native
   trait StackSetOperationResultSummary extends js.Object {
@@ -3087,7 +3093,7 @@ package cloudformation {
   }
 
   /**
-   * <p>The structures that contain summary information about the specified operation.</p>
+   * The structures that contain summary information about the specified operation.
    */
   @js.native
   trait StackSetOperationSummary extends js.Object {
@@ -3124,7 +3130,7 @@ package cloudformation {
   }
 
   /**
-   * <p>The structures that contain summary information about the specified stack set.</p>
+   * The structures that contain summary information about the specified stack set.
    */
   @js.native
   trait StackSetSummary extends js.Object {
@@ -3173,7 +3179,7 @@ package cloudformation {
   }
 
   /**
-   * <p>The StackSummary Data Type</p>
+   * The StackSummary Data Type
    */
   @js.native
   trait StackSummary extends js.Object {
@@ -3252,7 +3258,7 @@ package cloudformation {
   }
 
   /**
-   * <p>The Tag type enables you to specify a key-value pair that can be used to store information about an AWS CloudFormation stack.</p>
+   * The Tag type enables you to specify a key-value pair that can be used to store information about an AWS CloudFormation stack.
    */
   @js.native
   trait Tag extends js.Object {
@@ -3273,7 +3279,7 @@ package cloudformation {
   }
 
   /**
-   * <p>The TemplateParameter data type.</p>
+   * The TemplateParameter data type.
    */
   @js.native
   trait TemplateParameter extends js.Object {
@@ -3307,7 +3313,7 @@ package cloudformation {
   }
 
   /**
-   * <p>The input for an <a>UpdateStack</a> action.</p>
+   * The input for an '''UpdateStack''' action.
    */
   @js.native
   trait UpdateStackInput extends js.Object {
@@ -3415,7 +3421,7 @@ package cloudformation {
   }
 
   /**
-   * <p>The output for an <a>UpdateStack</a> action.</p>
+   * The output for an '''UpdateStack''' action.
    */
   @js.native
   trait UpdateStackOutput extends js.Object {
@@ -3535,7 +3541,7 @@ package cloudformation {
   }
 
   /**
-   * <p>The input for <a>ValidateTemplate</a> action.</p>
+   * The input for '''ValidateTemplate''' action.
    */
   @js.native
   trait ValidateTemplateInput extends js.Object {
@@ -3556,7 +3562,7 @@ package cloudformation {
   }
 
   /**
-   * <p>The output for <a>ValidateTemplate</a> action.</p>
+   * The output for '''ValidateTemplate''' action.
    */
   @js.native
   trait ValidateTemplateOutput extends js.Object {

@@ -90,7 +90,7 @@ package route53domains {
   }
 
   /**
-   * <p>Information for one billing record.</p>
+   * Information for one billing record.
    */
   @js.native
   trait BillingRecord extends js.Object {
@@ -120,7 +120,7 @@ package route53domains {
   }
 
   /**
-   * <p>The CheckDomainAvailability request contains the following elements.</p>
+   * The CheckDomainAvailability request contains the following elements.
    */
   @js.native
   trait CheckDomainAvailabilityRequest extends js.Object {
@@ -141,7 +141,7 @@ package route53domains {
   }
 
   /**
-   * <p>The CheckDomainAvailability response includes the following elements.</p>
+   * The CheckDomainAvailability response includes the following elements.
    */
   @js.native
   trait CheckDomainAvailabilityResponse extends js.Object {
@@ -159,7 +159,7 @@ package route53domains {
   }
 
   /**
-   * <p>The CheckDomainTransferability request contains the following elements.</p>
+   * The CheckDomainTransferability request contains the following elements.
    */
   @js.native
   trait CheckDomainTransferabilityRequest extends js.Object {
@@ -180,7 +180,7 @@ package route53domains {
   }
 
   /**
-   * <p>The CheckDomainTransferability response includes the following elements.</p>
+   * The CheckDomainTransferability response includes the following elements.
    */
   @js.native
   trait CheckDomainTransferabilityResponse extends js.Object {
@@ -198,7 +198,7 @@ package route53domains {
   }
 
   /**
-   * <p>ContactDetail includes the following elements.</p>
+   * ContactDetail includes the following elements.
    */
   @js.native
   trait ContactDetail extends js.Object {
@@ -499,7 +499,7 @@ package route53domains {
   }
 
   /**
-   * <p>The DeleteTagsForDomainRequest includes the following elements.</p>
+   * The DeleteTagsForDomainRequest includes the following elements.
    */
   @js.native
   trait DeleteTagsForDomainRequest extends js.Object {
@@ -561,7 +561,7 @@ package route53domains {
   }
 
   /**
-   * <p>The DisableDomainTransferLock request includes the following element.</p>
+   * The DisableDomainTransferLock request includes the following element.
    */
   @js.native
   trait DisableDomainTransferLockRequest extends js.Object {
@@ -579,7 +579,7 @@ package route53domains {
   }
 
   /**
-   * <p>The DisableDomainTransferLock response includes the following element.</p>
+   * The DisableDomainTransferLock response includes the following element.
    */
   @js.native
   trait DisableDomainTransferLockResponse extends js.Object {
@@ -610,7 +610,7 @@ package route53domains {
   }
 
   /**
-   * <p>The number of domains has exceeded the allowed threshold for the account.</p>
+   * The number of domains has exceeded the allowed threshold for the account.
    */
   @js.native
   trait DomainLimitExceededException extends js.Object {
@@ -618,7 +618,7 @@ package route53domains {
   }
 
   /**
-   * <p>Information about one suggested domain name.</p>
+   * Information about one suggested domain name.
    */
   @js.native
   trait DomainSuggestion extends js.Object {
@@ -639,7 +639,7 @@ package route53domains {
   }
 
   /**
-   * <p>Summary information about one domain.</p>
+   * Summary information about one domain.
    */
   @js.native
   trait DomainSummary extends js.Object {
@@ -666,7 +666,7 @@ package route53domains {
   }
 
   /**
-   * <p>A complex type that contains information about whether the specified domain can be transferred to Amazon Route 53.</p>
+   * A complex type that contains information about whether the specified domain can be transferred to Amazon Route 53.
    */
   @js.native
   trait DomainTransferability extends js.Object {
@@ -684,7 +684,7 @@ package route53domains {
   }
 
   /**
-   * <p>The request is already in progress for the domain.</p>
+   * The request is already in progress for the domain.
    */
   @js.native
   trait DuplicateRequestException extends js.Object {
@@ -720,7 +720,7 @@ package route53domains {
   }
 
   /**
-   * <p>A request to set the transfer lock for the specified domain.</p>
+   * A request to set the transfer lock for the specified domain.
    */
   @js.native
   trait EnableDomainTransferLockRequest extends js.Object {
@@ -738,7 +738,7 @@ package route53domains {
   }
 
   /**
-   * <p>The EnableDomainTransferLock response includes the following elements.</p>
+   * The EnableDomainTransferLock response includes the following elements.
    */
   @js.native
   trait EnableDomainTransferLockResponse extends js.Object {
@@ -756,7 +756,7 @@ package route53domains {
   }
 
   /**
-   * <p>ExtraParam includes the following elements.</p>
+   * ExtraParam includes the following elements.
    */
   @js.native
   trait ExtraParam extends js.Object {
@@ -841,7 +841,7 @@ package route53domains {
   }
 
   /**
-   * <p>The GetDomainDetail request includes the following element.</p>
+   * The GetDomainDetail request includes the following element.
    */
   @js.native
   trait GetDomainDetailRequest extends js.Object {
@@ -859,7 +859,7 @@ package route53domains {
   }
 
   /**
-   * <p>The GetDomainDetail response includes the following elements.</p>
+   * The GetDomainDetail response includes the following elements.
    */
   @js.native
   trait GetDomainDetailResponse extends js.Object {
@@ -973,7 +973,7 @@ package route53domains {
   }
 
   /**
-   * <p>The <a>GetOperationDetail</a> request includes the following element.</p>
+   * The '''GetOperationDetail''' request includes the following element.
    */
   @js.native
   trait GetOperationDetailRequest extends js.Object {
@@ -991,7 +991,7 @@ package route53domains {
   }
 
   /**
-   * <p>The GetOperationDetail response includes the following elements.</p>
+   * The GetOperationDetail response includes the following elements.
    */
   @js.native
   trait GetOperationDetailResponse extends js.Object {
@@ -1024,7 +1024,7 @@ package route53domains {
   }
 
   /**
-   * <p>The requested item is not acceptable. For example, for an OperationId it might refer to the ID of an operation that is already completed. For a domain name, it might not be a valid domain name or belong to the requester account.</p>
+   * The requested item is not acceptable. For example, for an OperationId it might refer to the ID of an operation that is already completed. For a domain name, it might not be a valid domain name or belong to the requester account.
    */
   @js.native
   trait InvalidInputException extends js.Object {
@@ -1032,7 +1032,7 @@ package route53domains {
   }
 
   /**
-   * <p>The ListDomains request includes the following elements.</p>
+   * The ListDomains request includes the following elements.
    */
   @js.native
   trait ListDomainsRequest extends js.Object {
@@ -1053,7 +1053,7 @@ package route53domains {
   }
 
   /**
-   * <p>The ListDomains response includes the following elements.</p>
+   * The ListDomains response includes the following elements.
    */
   @js.native
   trait ListDomainsResponse extends js.Object {
@@ -1074,7 +1074,7 @@ package route53domains {
   }
 
   /**
-   * <p>The ListOperations request includes the following elements.</p>
+   * The ListOperations request includes the following elements.
    */
   @js.native
   trait ListOperationsRequest extends js.Object {
@@ -1098,7 +1098,7 @@ package route53domains {
   }
 
   /**
-   * <p>The ListOperations response includes the following elements.</p>
+   * The ListOperations response includes the following elements.
    */
   @js.native
   trait ListOperationsResponse extends js.Object {
@@ -1119,7 +1119,7 @@ package route53domains {
   }
 
   /**
-   * <p>The ListTagsForDomainRequest includes the following elements.</p>
+   * The ListTagsForDomainRequest includes the following elements.
    */
   @js.native
   trait ListTagsForDomainRequest extends js.Object {
@@ -1137,7 +1137,7 @@ package route53domains {
   }
 
   /**
-   * <p>The ListTagsForDomain response includes the following elements.</p>
+   * The ListTagsForDomain response includes the following elements.
    */
   @js.native
   trait ListTagsForDomainResponse extends js.Object {
@@ -1155,7 +1155,7 @@ package route53domains {
   }
 
   /**
-   * <p>Nameserver includes the following elements.</p>
+   * Nameserver includes the following elements.
    */
   @js.native
   trait Nameserver extends js.Object {
@@ -1176,7 +1176,7 @@ package route53domains {
   }
 
   /**
-   * <p>The number of operations or jobs running exceeded the allowed threshold for the account.</p>
+   * The number of operations or jobs running exceeded the allowed threshold for the account.
    */
   @js.native
   trait OperationLimitExceededException extends js.Object {
@@ -1194,7 +1194,7 @@ package route53domains {
   }
 
   /**
-   * <p>OperationSummary includes the following elements.</p>
+   * OperationSummary includes the following elements.
    */
   @js.native
   trait OperationSummary extends js.Object {
@@ -1250,7 +1250,7 @@ package route53domains {
   }
 
   /**
-   * <p>The RegisterDomain request includes the following elements.</p>
+   * The RegisterDomain request includes the following elements.
    */
   @js.native
   trait RegisterDomainRequest extends js.Object {
@@ -1295,7 +1295,7 @@ package route53domains {
   }
 
   /**
-   * <p>The RegisterDomain response includes the following element.</p>
+   * The RegisterDomain response includes the following element.
    */
   @js.native
   trait RegisterDomainResponse extends js.Object {
@@ -1313,7 +1313,7 @@ package route53domains {
   }
 
   /**
-   * <p>A <code>RenewDomain</code> request includes the number of years that you want to renew for and the current expiration year.</p>
+   * A <code>RenewDomain</code> request includes the number of years that you want to renew for and the current expiration year.
    */
   @js.native
   trait RenewDomainRequest extends js.Object {
@@ -1388,7 +1388,7 @@ package route53domains {
   }
 
   /**
-   * <p>A request for the authorization code for the specified domain. To transfer a domain to another registrar, you provide this value to the new registrar.</p>
+   * A request for the authorization code for the specified domain. To transfer a domain to another registrar, you provide this value to the new registrar.
    */
   @js.native
   trait RetrieveDomainAuthCodeRequest extends js.Object {
@@ -1406,7 +1406,7 @@ package route53domains {
   }
 
   /**
-   * <p>The RetrieveDomainAuthCode response includes the following element.</p>
+   * The RetrieveDomainAuthCode response includes the following element.
    */
   @js.native
   trait RetrieveDomainAuthCodeResponse extends js.Object {
@@ -1424,7 +1424,7 @@ package route53domains {
   }
 
   /**
-   * <p>The top-level domain does not support this operation.</p>
+   * The top-level domain does not support this operation.
    */
   @js.native
   trait TLDRulesViolationException extends js.Object {
@@ -1432,7 +1432,7 @@ package route53domains {
   }
 
   /**
-   * <p>Each tag includes the following elements.</p>
+   * Each tag includes the following elements.
    */
   @js.native
   trait Tag extends js.Object {
@@ -1453,7 +1453,7 @@ package route53domains {
   }
 
   /**
-   * <p>The TransferDomain request includes the following elements.</p>
+   * The TransferDomain request includes the following elements.
    */
   @js.native
   trait TransferDomainRequest extends js.Object {
@@ -1504,7 +1504,7 @@ package route53domains {
   }
 
   /**
-   * <p>The TranserDomain response includes the following element.</p>
+   * The TranserDomain response includes the following element.
    */
   @js.native
   trait TransferDomainResponse extends js.Object {
@@ -1522,7 +1522,14 @@ package route53domains {
   }
 
   /**
-   * <p>Whether the domain name can be transferred to Amazon Route 53.</p> <note> <p>You can transfer only domains that have a value of <code>TRANSFERABLE</code> for <code>Transferable</code>.</p> </note> <p>Valid values:</p> <dl> <dt>TRANSFERABLE</dt> <dd> <p>The domain name can be transferred to Amazon Route 53.</p> </dd> <dt>UNTRANSFERRABLE</dt> <dd> <p>The domain name can't be transferred to Amazon Route 53.</p> </dd> <dt>DONT_KNOW</dt> <dd> <p>Reserved for future use.</p> </dd> </dl>
+   * Whether the domain name can be transferred to Amazon Route 53.
+   *
+   * '''Note:'''You can transfer only domains that have a value of <code>TRANSFERABLE</code> for <code>Transferable</code>.
+   * Valid values:
+   *  <dl> <dt>TRANSFERABLE</dt> <dd> The domain name can be transferred to Amazon Route 53.
+   *  </dd> <dt>UNTRANSFERRABLE</dt> <dd> The domain name can't be transferred to Amazon Route 53.
+   *  </dd> <dt>DONT_KNOW</dt> <dd> Reserved for future use.
+   *  </dd> </dl>
    */
   object TransferableEnum {
     val TRANSFERABLE = "TRANSFERABLE"
@@ -1533,7 +1540,7 @@ package route53domains {
   }
 
   /**
-   * <p>Amazon Route 53 does not support this top-level domain (TLD).</p>
+   * Amazon Route 53 does not support this top-level domain (TLD).
    */
   @js.native
   trait UnsupportedTLDException extends js.Object {
@@ -1541,7 +1548,7 @@ package route53domains {
   }
 
   /**
-   * <p>The UpdateDomainContactPrivacy request includes the following elements.</p>
+   * The UpdateDomainContactPrivacy request includes the following elements.
    */
   @js.native
   trait UpdateDomainContactPrivacyRequest extends js.Object {
@@ -1568,7 +1575,7 @@ package route53domains {
   }
 
   /**
-   * <p>The UpdateDomainContactPrivacy response includes the following element.</p>
+   * The UpdateDomainContactPrivacy response includes the following element.
    */
   @js.native
   trait UpdateDomainContactPrivacyResponse extends js.Object {
@@ -1586,7 +1593,7 @@ package route53domains {
   }
 
   /**
-   * <p>The UpdateDomainContact request includes the following elements.</p>
+   * The UpdateDomainContact request includes the following elements.
    */
   @js.native
   trait UpdateDomainContactRequest extends js.Object {
@@ -1613,7 +1620,7 @@ package route53domains {
   }
 
   /**
-   * <p>The UpdateDomainContact response includes the following element.</p>
+   * The UpdateDomainContact response includes the following element.
    */
   @js.native
   trait UpdateDomainContactResponse extends js.Object {
@@ -1631,7 +1638,8 @@ package route53domains {
   }
 
   /**
-   * <p>Replaces the current set of name servers for the domain with the specified set of name servers. If you use Amazon Route 53 as your DNS service, specify the four name servers in the delegation set for the hosted zone for the domain.</p> <p>If successful, this operation returns an operation ID that you can use to track the progress and completion of the action. If the request is not completed successfully, the domain registrant will be notified by email. </p>
+   * Replaces the current set of name servers for the domain with the specified set of name servers. If you use Amazon Route 53 as your DNS service, specify the four name servers in the delegation set for the hosted zone for the domain.
+   *  If successful, this operation returns an operation ID that you can use to track the progress and completion of the action. If the request is not completed successfully, the domain registrant will be notified by email.
    */
   @js.native
   trait UpdateDomainNameserversRequest extends js.Object {
@@ -1655,7 +1663,7 @@ package route53domains {
   }
 
   /**
-   * <p>The UpdateDomainNameservers response includes the following element.</p>
+   * The UpdateDomainNameservers response includes the following element.
    */
   @js.native
   trait UpdateDomainNameserversResponse extends js.Object {
@@ -1673,7 +1681,7 @@ package route53domains {
   }
 
   /**
-   * <p>The UpdateTagsForDomainRequest includes the following elements.</p>
+   * The UpdateTagsForDomainRequest includes the following elements.
    */
   @js.native
   trait UpdateTagsForDomainRequest extends js.Object {
@@ -1707,7 +1715,7 @@ package route53domains {
   }
 
   /**
-   * <p>The ViewBilling request includes the following elements.</p>
+   * The ViewBilling request includes the following elements.
    */
   @js.native
   trait ViewBillingRequest extends js.Object {
@@ -1734,7 +1742,7 @@ package route53domains {
   }
 
   /**
-   * <p>The ViewBilling response includes the following elements.</p>
+   * The ViewBilling response includes the following elements.
    */
   @js.native
   trait ViewBillingResponse extends js.Object {

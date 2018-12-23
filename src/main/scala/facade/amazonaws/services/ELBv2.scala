@@ -183,7 +183,7 @@ package elbv2 {
   }
 
   /**
-   * <p>Information about an action.</p>
+   * Information about an action.
    */
   @js.native
   trait Action extends js.Object {
@@ -301,7 +301,7 @@ package elbv2 {
   }
 
   /**
-   * <p>Request parameters to use when integrating with Amazon Cognito to authenticate users.</p>
+   * Request parameters to use when integrating with Amazon Cognito to authenticate users.
    */
   @js.native
   trait AuthenticateCognitoActionConfig extends js.Object {
@@ -348,7 +348,7 @@ package elbv2 {
   }
 
   /**
-   * <p>Request parameters when using an identity provider (IdP) that is compliant with OpenID Connect (OIDC) to authenticate users.</p>
+   * Request parameters when using an identity provider (IdP) that is compliant with OpenID Connect (OIDC) to authenticate users.
    */
   @js.native
   trait AuthenticateOidcActionConfig extends js.Object {
@@ -399,7 +399,7 @@ package elbv2 {
   }
 
   /**
-   * <p>Information about an Availability Zone.</p>
+   * Information about an Availability Zone.
    */
   @js.native
   trait AvailabilityZone extends js.Object {
@@ -426,7 +426,7 @@ package elbv2 {
   }
 
   /**
-   * <p>Information about an SSL server certificate.</p>
+   * Information about an SSL server certificate.
    */
   @js.native
   trait Certificate extends js.Object {
@@ -447,7 +447,7 @@ package elbv2 {
   }
 
   /**
-   * <p>Information about a cipher used in a policy.</p>
+   * Information about a cipher used in a policy.
    */
   @js.native
   trait Cipher extends js.Object {
@@ -1253,7 +1253,7 @@ package elbv2 {
   }
 
   /**
-   * <p>Information about an action that returns a custom HTTP response.</p>
+   * Information about an action that returns a custom HTTP response.
    */
   @js.native
   trait FixedResponseActionConfig extends js.Object {
@@ -1346,7 +1346,7 @@ package elbv2 {
   }
 
   /**
-   * <p>Information about an Elastic Load Balancing resource limit for your AWS account.</p>
+   * Information about an Elastic Load Balancing resource limit for your AWS account.
    */
   @js.native
   trait Limit extends js.Object {
@@ -1367,7 +1367,7 @@ package elbv2 {
   }
 
   /**
-   * <p>Information about a listener.</p>
+   * Information about a listener.
    */
   @js.native
   trait Listener extends js.Object {
@@ -1403,7 +1403,7 @@ package elbv2 {
   }
 
   /**
-   * <p>Information about a load balancer.</p>
+   * Information about a load balancer.
    */
   @js.native
   trait LoadBalancer extends js.Object {
@@ -1454,7 +1454,7 @@ package elbv2 {
   }
 
   /**
-   * <p>Information about a static IP address for a load balancer.</p>
+   * Information about a static IP address for a load balancer.
    */
   @js.native
   trait LoadBalancerAddress extends js.Object {
@@ -1475,7 +1475,7 @@ package elbv2 {
   }
 
   /**
-   * <p>Information about a load balancer attribute.</p>
+   * Information about a load balancer attribute.
    */
   @js.native
   trait LoadBalancerAttribute extends js.Object {
@@ -1503,7 +1503,7 @@ package elbv2 {
   }
 
   /**
-   * <p>Information about the state of the load balancer.</p>
+   * Information about the state of the load balancer.
    */
   @js.native
   trait LoadBalancerState extends js.Object {
@@ -1540,7 +1540,7 @@ package elbv2 {
   }
 
   /**
-   * <p>Information to use when checking for a successful response from a target.</p>
+   * Information to use when checking for a successful response from a target.
    */
   @js.native
   trait Matcher extends js.Object {
@@ -1868,7 +1868,15 @@ package elbv2 {
   }
 
   /**
-   * <p>Information about a redirect action.</p> <p>A URI consists of the following components: protocol://hostname:port/path?query. You must modify at least one of the following components to avoid a redirect loop: protocol, hostname, port, or path. Any components that you do not modify retain their original values.</p> <p>You can reuse URI components using the following reserved keywords:</p> <ul> <li> <p>#{protocol}</p> </li> <li> <p>#{host}</p> </li> <li> <p>#{port}</p> </li> <li> <p>#{path} (the leading "/" is removed)</p> </li> <li> <p>#{query}</p> </li> </ul> <p>For example, you can change the path to "/new/#{path}", the hostname to "example.#{host}", or the query to "#{query}&amp;value=xyz".</p>
+   * Information about a redirect action.
+   *  A URI consists of the following components: protocol://hostname:port/path?query. You must modify at least one of the following components to avoid a redirect loop: protocol, hostname, port, or path. Any components that you do not modify retain their original values.
+   *  You can reuse URI components using the following reserved keywords:
+   * * #{protocol}
+   *  * #{host}
+   *  * #{port}
+   *  * #{path} (the leading "/" is removed)
+   *  * #{query}
+   * For example, you can change the path to "/new/#{path}", the hostname to "example.#{host}", or the query to "#{query}&amp;value=xyz".
    */
   @js.native
   trait RedirectActionConfig extends js.Object {
@@ -2001,7 +2009,7 @@ package elbv2 {
   }
 
   /**
-   * <p>Information about a rule.</p>
+   * Information about a rule.
    */
   @js.native
   trait Rule extends js.Object {
@@ -2031,7 +2039,7 @@ package elbv2 {
   }
 
   /**
-   * <p>Information about a condition for a rule.</p>
+   * Information about a condition for a rule.
    */
   @js.native
   trait RuleCondition extends js.Object {
@@ -2067,7 +2075,7 @@ package elbv2 {
   }
 
   /**
-   * <p>Information about the priorities for the rules for a listener.</p>
+   * Information about the priorities for the rules for a listener.
    */
   @js.native
   trait RulePriorityPair extends js.Object {
@@ -2220,7 +2228,7 @@ package elbv2 {
   }
 
   /**
-   * <p>Information about a policy used for SSL negotiation.</p>
+   * Information about a policy used for SSL negotiation.
    */
   @js.native
   trait SslPolicy extends js.Object {
@@ -2244,7 +2252,7 @@ package elbv2 {
   }
 
   /**
-   * <p>Information about a subnet mapping.</p>
+   * Information about a subnet mapping.
    */
   @js.native
   trait SubnetMapping extends js.Object {
@@ -2268,7 +2276,7 @@ package elbv2 {
   }
 
   /**
-   * <p>Information about a tag.</p>
+   * Information about a tag.
    */
   @js.native
   trait Tag extends js.Object {
@@ -2289,7 +2297,7 @@ package elbv2 {
   }
 
   /**
-   * <p>The tags associated with a resource.</p>
+   * The tags associated with a resource.
    */
   @js.native
   trait TagDescription extends js.Object {
@@ -2310,7 +2318,7 @@ package elbv2 {
   }
 
   /**
-   * <p>Information about a target.</p>
+   * Information about a target.
    */
   @js.native
   trait TargetDescription extends js.Object {
@@ -2334,7 +2342,7 @@ package elbv2 {
   }
 
   /**
-   * <p>Information about a target group.</p>
+   * Information about a target group.
    */
   @js.native
   trait TargetGroup extends js.Object {
@@ -2397,7 +2405,7 @@ package elbv2 {
   }
 
   /**
-   * <p>Information about a target group attribute.</p>
+   * Information about a target group attribute.
    */
   @js.native
   trait TargetGroupAttribute extends js.Object {
@@ -2418,7 +2426,7 @@ package elbv2 {
   }
 
   /**
-   * <p>Information about the current health of a target.</p>
+   * Information about the current health of a target.
    */
   @js.native
   trait TargetHealth extends js.Object {
@@ -2442,7 +2450,7 @@ package elbv2 {
   }
 
   /**
-   * <p>Information about the health of a target.</p>
+   * Information about the health of a target.
    */
   @js.native
   trait TargetHealthDescription extends js.Object {

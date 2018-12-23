@@ -85,7 +85,7 @@ package datasync {
   }
 
   /**
-   * <p>Represents a single entry in a list of agents. <code>AgentListEntry</code> returns an array that contains a list of agents when the <a>ListAgents</a> operation is called.</p>
+   * Represents a single entry in a list of agents. <code>AgentListEntry</code> returns an array that contains a list of agents when the '''ListAgents''' operation is called.
    */
   @js.native
   trait AgentListEntry extends js.Object {
@@ -122,9 +122,6 @@ package datasync {
     val values = IndexedSeq(NONE, BEST_EFFORT)
   }
 
-  /**
-   * <p>CancelTaskExecutionRequest</p>
-   */
   @js.native
   trait CancelTaskExecutionRequest extends js.Object {
     var TaskExecutionArn: TaskExecutionArn
@@ -153,9 +150,6 @@ package datasync {
     }
   }
 
-  /**
-   * <p>CreateAgentRequest</p>
-   */
   @js.native
   trait CreateAgentRequest extends js.Object {
     var ActivationKey: ActivationKey
@@ -177,9 +171,6 @@ package datasync {
     }
   }
 
-  /**
-   * <p>CreateAgentResponse</p>
-   */
   @js.native
   trait CreateAgentResponse extends js.Object {
     var AgentArn: js.UndefOr[AgentArn]
@@ -195,9 +186,6 @@ package datasync {
     }
   }
 
-  /**
-   * <p>CreateLocationEfsRequest</p>
-   */
   @js.native
   trait CreateLocationEfsRequest extends js.Object {
     var Ec2Config: Ec2Config
@@ -223,7 +211,7 @@ package datasync {
   }
 
   /**
-   * <p>CreateLocationEfs</p>
+   * CreateLocationEfs
    */
   @js.native
   trait CreateLocationEfsResponse extends js.Object {
@@ -240,9 +228,6 @@ package datasync {
     }
   }
 
-  /**
-   * <p>CreateLocationNfsRequest</p>
-   */
   @js.native
   trait CreateLocationNfsRequest extends js.Object {
     var OnPremConfig: OnPremConfig
@@ -267,9 +252,6 @@ package datasync {
     }
   }
 
-  /**
-   * <p>CreateLocationNfsResponse</p>
-   */
   @js.native
   trait CreateLocationNfsResponse extends js.Object {
     var LocationArn: js.UndefOr[LocationArn]
@@ -285,9 +267,6 @@ package datasync {
     }
   }
 
-  /**
-   * <p>CreateLocationS3Request</p>
-   */
   @js.native
   trait CreateLocationS3Request extends js.Object {
     var S3BucketArn: S3BucketArn
@@ -312,9 +291,6 @@ package datasync {
     }
   }
 
-  /**
-   * <p>CreateLocationS3Response</p>
-   */
   @js.native
   trait CreateLocationS3Response extends js.Object {
     var LocationArn: js.UndefOr[LocationArn]
@@ -330,9 +306,6 @@ package datasync {
     }
   }
 
-  /**
-   * <p>CreateTaskRequest</p>
-   */
   @js.native
   trait CreateTaskRequest extends js.Object {
     var DestinationLocationArn: LocationArn
@@ -363,9 +336,6 @@ package datasync {
     }
   }
 
-  /**
-   * <p>CreateTaskResponse</p>
-   */
   @js.native
   trait CreateTaskResponse extends js.Object {
     var TaskArn: js.UndefOr[TaskArn]
@@ -381,9 +351,6 @@ package datasync {
     }
   }
 
-  /**
-   * <p>DeleteAgentRequest</p>
-   */
   @js.native
   trait DeleteAgentRequest extends js.Object {
     var AgentArn: AgentArn
@@ -413,7 +380,7 @@ package datasync {
   }
 
   /**
-   * <p>DeleteLocation</p>
+   * DeleteLocation
    */
   @js.native
   trait DeleteLocationRequest extends js.Object {
@@ -444,7 +411,7 @@ package datasync {
   }
 
   /**
-   * <p>DeleteTask</p>
+   * DeleteTask
    */
   @js.native
   trait DeleteTaskRequest extends js.Object {
@@ -475,7 +442,7 @@ package datasync {
   }
 
   /**
-   * <p>DescribeAgent</p>
+   * DescribeAgent
    */
   @js.native
   trait DescribeAgentRequest extends js.Object {
@@ -492,9 +459,6 @@ package datasync {
     }
   }
 
-  /**
-   * <p>DescribeAgentResponse</p>
-   */
   @js.native
   trait DescribeAgentResponse extends js.Object {
     var AgentArn: js.UndefOr[AgentArn]
@@ -522,9 +486,6 @@ package datasync {
     }
   }
 
-  /**
-   * <p>DescribeLocationEfsRequest</p>
-   */
   @js.native
   trait DescribeLocationEfsRequest extends js.Object {
     var LocationArn: LocationArn
@@ -540,9 +501,6 @@ package datasync {
     }
   }
 
-  /**
-   * <p>DescribeLocationEfsResponse</p>
-   */
   @js.native
   trait DescribeLocationEfsResponse extends js.Object {
     var CreationTime: js.UndefOr[Time]
@@ -567,9 +525,6 @@ package datasync {
     }
   }
 
-  /**
-   * <p>DescribeLocationNfsRequest</p>
-   */
   @js.native
   trait DescribeLocationNfsRequest extends js.Object {
     var LocationArn: LocationArn
@@ -585,9 +540,6 @@ package datasync {
     }
   }
 
-  /**
-   * <p>DescribeLocationNfsResponse</p>
-   */
   @js.native
   trait DescribeLocationNfsResponse extends js.Object {
     var CreationTime: js.UndefOr[Time]
@@ -612,9 +564,6 @@ package datasync {
     }
   }
 
-  /**
-   * <p>DescribeLocationS3Request</p>
-   */
   @js.native
   trait DescribeLocationS3Request extends js.Object {
     var LocationArn: LocationArn
@@ -630,9 +579,6 @@ package datasync {
     }
   }
 
-  /**
-   * <p>DescribeLocationS3Response</p>
-   */
   @js.native
   trait DescribeLocationS3Response extends js.Object {
     var CreationTime: js.UndefOr[Time]
@@ -657,9 +603,6 @@ package datasync {
     }
   }
 
-  /**
-   * <p>DescribeTaskExecutionRequest</p>
-   */
   @js.native
   trait DescribeTaskExecutionRequest extends js.Object {
     var TaskExecutionArn: TaskExecutionArn
@@ -675,9 +618,6 @@ package datasync {
     }
   }
 
-  /**
-   * <p>DescribeTaskExecutionResponse</p>
-   */
   @js.native
   trait DescribeTaskExecutionResponse extends js.Object {
     var BytesTransferred: js.UndefOr[long]
@@ -720,9 +660,6 @@ package datasync {
     }
   }
 
-  /**
-   * <p>DescribeTaskRequest</p>
-   */
   @js.native
   trait DescribeTaskRequest extends js.Object {
     var TaskArn: TaskArn
@@ -738,9 +675,6 @@ package datasync {
     }
   }
 
-  /**
-   * <p>DescribeTaskResponse</p>
-   */
   @js.native
   trait DescribeTaskResponse extends js.Object {
     var CloudWatchLogGroupArn: js.UndefOr[LogGroupArn]
@@ -787,7 +721,10 @@ package datasync {
   }
 
   /**
-   * <p>The subnet and the security group that the target Amazon EFS file system uses. The subnet must have at least one mount target for that file system. The security group that you provide needs to be able to communicate with the security group on the mount target in the subnet specified. </p> <p>The exact relationship between security group M (of the mount target) and security group S (which you provide for DataSync to use at this stage) is as follows: </p> <ul> <li> <p> Security group M (which you associate with the mount target) must allow inbound access for the Transmission Control Protocol (TCP) on the NFS port (2049) from security group S. You can enable inbound connections either by IP address (CIDR range) or security group. </p> </li> <li> <p>Security group S (provided to DataSync to access EFS) should have a rule that enables outbound connections to the NFS port on one of the file system�fs mount targets. You can enable outbound connections either by IP address (CIDR range) or security group. For information about security groups and mount targets, see <a href="https://docs.aws.amazon.com/efs/latest/ug/security-considerations.html#network-access">Security Groups for Amazon EC2 Instances and Mount Targets</a> in the <i>Amazon EFS User Guide.</i> </p> </li> </ul>
+   * The subnet and the security group that the target Amazon EFS file system uses. The subnet must have at least one mount target for that file system. The security group that you provide needs to be able to communicate with the security group on the mount target in the subnet specified.
+   *  The exact relationship between security group M (of the mount target) and security group S (which you provide for DataSync to use at this stage) is as follows:
+   * * Security group M (which you associate with the mount target) must allow inbound access for the Transmission Control Protocol (TCP) on the NFS port (2049) from security group S. You can enable inbound connections either by IP address (CIDR range) or security group.
+   *  * Security group S (provided to DataSync to access EFS) should have a rule that enables outbound connections to the NFS port on one of the file system�fs mount targets. You can enable outbound connections either by IP address (CIDR range) or security group. For information about security groups and mount targets, see <a href="https://docs.aws.amazon.com/efs/latest/ug/security-considerations.html#network-access">Security Groups for Amazon EC2 Instances and Mount Targets</a> in the <i>Amazon EFS User Guide.</i>
    */
   @js.native
   trait Ec2Config extends js.Object {
@@ -816,9 +753,6 @@ package datasync {
     val values = IndexedSeq(NONE, INT_VALUE, NAME, BOTH)
   }
 
-  /**
-   * <p>ListAgentsRequest</p>
-   */
   @js.native
   trait ListAgentsRequest extends js.Object {
     var MaxResults: js.UndefOr[MaxResults]
@@ -837,9 +771,6 @@ package datasync {
     }
   }
 
-  /**
-   * <p>ListAgentsResponse</p>
-   */
   @js.native
   trait ListAgentsResponse extends js.Object {
     var Agents: js.UndefOr[AgentList]
@@ -858,9 +789,6 @@ package datasync {
     }
   }
 
-  /**
-   * <p>ListLocationsRequest</p>
-   */
   @js.native
   trait ListLocationsRequest extends js.Object {
     var MaxResults: js.UndefOr[MaxResults]
@@ -879,9 +807,6 @@ package datasync {
     }
   }
 
-  /**
-   * <p>ListLocationsResponse</p>
-   */
   @js.native
   trait ListLocationsResponse extends js.Object {
     var Locations: js.UndefOr[LocationList]
@@ -900,9 +825,6 @@ package datasync {
     }
   }
 
-  /**
-   * <p>ListTagsForResourceRequest</p>
-   */
   @js.native
   trait ListTagsForResourceRequest extends js.Object {
     var ResourceArn: TaggableResourceArn
@@ -924,9 +846,6 @@ package datasync {
     }
   }
 
-  /**
-   * <p>ListTagsForResourceResponse</p>
-   */
   @js.native
   trait ListTagsForResourceResponse extends js.Object {
     var NextToken: js.UndefOr[NextToken]
@@ -946,7 +865,7 @@ package datasync {
   }
 
   /**
-   * <p>ListTaskExecutions</p>
+   * ListTaskExecutions
    */
   @js.native
   trait ListTaskExecutionsRequest extends js.Object {
@@ -969,9 +888,6 @@ package datasync {
     }
   }
 
-  /**
-   * <p>ListTaskExecutionsResponse</p>
-   */
   @js.native
   trait ListTaskExecutionsResponse extends js.Object {
     var NextToken: js.UndefOr[NextToken]
@@ -990,9 +906,6 @@ package datasync {
     }
   }
 
-  /**
-   * <p>ListTasksRequest</p>
-   */
   @js.native
   trait ListTasksRequest extends js.Object {
     var MaxResults: js.UndefOr[MaxResults]
@@ -1011,9 +924,6 @@ package datasync {
     }
   }
 
-  /**
-   * <p>ListTasksResponse</p>
-   */
   @js.native
   trait ListTasksResponse extends js.Object {
     var NextToken: js.UndefOr[NextToken]
@@ -1033,7 +943,7 @@ package datasync {
   }
 
   /**
-   * <p>Represents a single entry in a list of locations. <code>LocationListEntry</code> returns an array that contains a list of locations when the <a>ListLocations</a> operation is called.</p>
+   * Represents a single entry in a list of locations. <code>LocationListEntry</code> returns an array that contains a list of locations when the '''ListLocations''' operation is called.
    */
   @js.native
   trait LocationListEntry extends js.Object {
@@ -1061,7 +971,7 @@ package datasync {
   }
 
   /**
-   * <p>A list of Amazon Resource Names (ARNs) of agents to use for a Network File System (NFS) location.</p>
+   * A list of Amazon Resource Names (ARNs) of agents to use for a Network File System (NFS) location.
    */
   @js.native
   trait OnPremConfig extends js.Object {
@@ -1079,7 +989,8 @@ package datasync {
   }
 
   /**
-   * <p>Represents the options that are available to control the behavior of a <a>StartTaskExecution</a> operation. Behavior includes preserving metadata such as user ID (UID), group ID (GID), and file permissions, and also overwriting files in the destination, data integrity verification, and so on.</p> <p>A task has a set of default options associated with it. If you don't specify an option in <a>StartTaskExecution</a>, the default value is used. You can override the defaults options on each task execution by specifying an overriding <code>Options</code> value to <a>StartTaskExecution</a>.</p>
+   * Represents the options that are available to control the behavior of a '''StartTaskExecution''' operation. Behavior includes preserving metadata such as user ID (UID), group ID (GID), and file permissions, and also overwriting files in the destination, data integrity verification, and so on.
+   *  A task has a set of default options associated with it. If you don't specify an option in '''StartTaskExecution''', the default value is used. You can override the defaults options on each task execution by specifying an overriding <code>Options</code> value to '''StartTaskExecution'''.
    */
   @js.native
   trait Options extends js.Object {
@@ -1151,7 +1062,7 @@ package datasync {
   }
 
   /**
-   * <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that is used to access an Amazon S3 bucket. For detailed information about using such a role, see <a href="https://alpha-aws-docs.aws.amazon.com/sync-service/latest/userguide/create-locations-cli.html#create-location-s3-cli">Components and Terminology</a> in the <i>AWS DataSync User Guide</i>.</p>
+   * The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that is used to access an Amazon S3 bucket. For detailed information about using such a role, see <a href="https://alpha-aws-docs.aws.amazon.com/sync-service/latest/userguide/create-locations-cli.html#create-location-s3-cli">Components and Terminology</a> in the <i>AWS DataSync User Guide</i>.
    */
   @js.native
   trait S3Config extends js.Object {
@@ -1168,9 +1079,6 @@ package datasync {
     }
   }
 
-  /**
-   * <p>StartTaskExecutionRequest</p>
-   */
   @js.native
   trait StartTaskExecutionRequest extends js.Object {
     var TaskArn: TaskArn
@@ -1189,9 +1097,6 @@ package datasync {
     }
   }
 
-  /**
-   * <p>StartTaskExecutionResponse</p>
-   */
   @js.native
   trait StartTaskExecutionResponse extends js.Object {
     var TaskExecutionArn: js.UndefOr[TaskExecutionArn]
@@ -1208,7 +1113,7 @@ package datasync {
   }
 
   /**
-   * <p>Represents a single entry in a list of AWS resource tags. <code>TagListEntry</code> returns an array that contains a list of tasks when the <a>ListTagsForResource</a> operation is called.</p>
+   * Represents a single entry in a list of AWS resource tags. <code>TagListEntry</code> returns an array that contains a list of tasks when the '''ListTagsForResource''' operation is called.
    */
   @js.native
   trait TagListEntry extends js.Object {
@@ -1228,9 +1133,6 @@ package datasync {
     }
   }
 
-  /**
-   * <p>TagResourceRequest</p>
-   */
   @js.native
   trait TagResourceRequest extends js.Object {
     var ResourceArn: TaggableResourceArn
@@ -1263,7 +1165,7 @@ package datasync {
   }
 
   /**
-   * <p>Represents a single entry in a list of task executions. <code>TaskExecutionListEntry</code> returns an array that contains a list of specific invocations of a task when <a>ListTaskExecutions</a> operation is called.</p>
+   * Represents a single entry in a list of task executions. <code>TaskExecutionListEntry</code> returns an array that contains a list of specific invocations of a task when '''ListTaskExecutions''' operation is called.
    */
   @js.native
   trait TaskExecutionListEntry extends js.Object {
@@ -1284,7 +1186,7 @@ package datasync {
   }
 
   /**
-   * <p>Describes the detailed result of a <code>TaskExecution</code> operation. This result includes the time in milliseconds spent in each phase, the status of the task execution, and the errors encountered.</p>
+   * Describes the detailed result of a <code>TaskExecution</code> operation. This result includes the time in milliseconds spent in each phase, the status of the task execution, and the errors encountered.
    */
   @js.native
   trait TaskExecutionResultDetail extends js.Object {
@@ -1334,7 +1236,7 @@ package datasync {
   }
 
   /**
-   * <p>Represents a single entry in a list of tasks. <code>TaskListEntry</code> returns an array that contains a list of tasks when the <a>ListTasks</a> operation is called. A task includes the source and destination file systems to sync and the options to use for the tasks.</p>
+   * Represents a single entry in a list of tasks. <code>TaskListEntry</code> returns an array that contains a list of tasks when the '''ListTasks''' operation is called. A task includes the source and destination file systems to sync and the options to use for the tasks.
    */
   @js.native
   trait TaskListEntry extends js.Object {
@@ -1375,9 +1277,6 @@ package datasync {
     val values = IndexedSeq(NONE, INT_VALUE, NAME, BOTH)
   }
 
-  /**
-   * <p>UntagResourceRequest</p>
-   */
   @js.native
   trait UntagResourceRequest extends js.Object {
     var Keys: TagKeyList
@@ -1409,9 +1308,6 @@ package datasync {
     }
   }
 
-  /**
-   * <p>UpdateAgentRequest</p>
-   */
   @js.native
   trait UpdateAgentRequest extends js.Object {
     var AgentArn: AgentArn
@@ -1444,7 +1340,7 @@ package datasync {
   }
 
   /**
-   * <p>UpdateTaskResponse</p>
+   * UpdateTaskResponse
    */
   @js.native
   trait UpdateTaskRequest extends js.Object {

@@ -279,7 +279,7 @@ package directoryservice {
   }
 
   /**
-   * <p>Represents a named directory attribute.</p>
+   * Represents a named directory attribute.
    */
   @js.native
   trait Attribute extends js.Object {
@@ -331,7 +331,7 @@ package directoryservice {
   }
 
   /**
-   * <p>Contains information about a computer account in a directory.</p>
+   * Contains information about a computer account in a directory.
    */
   @js.native
   trait Computer extends js.Object {
@@ -355,7 +355,7 @@ package directoryservice {
   }
 
   /**
-   * <p>Points to a remote domain with which you are setting up a trust relationship. Conditional forwarders are required in order to set up a trust relationship with another domain.</p>
+   * Points to a remote domain with which you are setting up a trust relationship. Conditional forwarders are required in order to set up a trust relationship with another domain.
    */
   @js.native
   trait ConditionalForwarder extends js.Object {
@@ -379,7 +379,7 @@ package directoryservice {
   }
 
   /**
-   * <p>Contains the inputs for the <a>ConnectDirectory</a> operation.</p>
+   * Contains the inputs for the '''ConnectDirectory''' operation.
    */
   @js.native
   trait ConnectDirectoryRequest extends js.Object {
@@ -412,7 +412,7 @@ package directoryservice {
   }
 
   /**
-   * <p>Contains the results of the <a>ConnectDirectory</a> operation.</p>
+   * Contains the results of the '''ConnectDirectory''' operation.
    */
   @js.native
   trait ConnectDirectoryResult extends js.Object {
@@ -430,7 +430,7 @@ package directoryservice {
   }
 
   /**
-   * <p>Contains the inputs for the <a>CreateAlias</a> operation.</p>
+   * Contains the inputs for the '''CreateAlias''' operation.
    */
   @js.native
   trait CreateAliasRequest extends js.Object {
@@ -451,7 +451,7 @@ package directoryservice {
   }
 
   /**
-   * <p>Contains the results of the <a>CreateAlias</a> operation.</p>
+   * Contains the results of the '''CreateAlias''' operation.
    */
   @js.native
   trait CreateAliasResult extends js.Object {
@@ -472,7 +472,7 @@ package directoryservice {
   }
 
   /**
-   * <p>Contains the inputs for the <a>CreateComputer</a> operation.</p>
+   * Contains the inputs for the '''CreateComputer''' operation.
    */
   @js.native
   trait CreateComputerRequest extends js.Object {
@@ -502,7 +502,7 @@ package directoryservice {
   }
 
   /**
-   * <p>Contains the results for the <a>CreateComputer</a> operation.</p>
+   * Contains the results for the '''CreateComputer''' operation.
    */
   @js.native
   trait CreateComputerResult extends js.Object {
@@ -520,7 +520,7 @@ package directoryservice {
   }
 
   /**
-   * <p>Initiates the creation of a conditional forwarder for your AWS Directory Service for Microsoft Active Directory. Conditional forwarders are required in order to set up a trust relationship with another domain.</p>
+   * Initiates the creation of a conditional forwarder for your AWS Directory Service for Microsoft Active Directory. Conditional forwarders are required in order to set up a trust relationship with another domain.
    */
   @js.native
   trait CreateConditionalForwarderRequest extends js.Object {
@@ -544,7 +544,7 @@ package directoryservice {
   }
 
   /**
-   * <p>The result of a CreateConditinalForwarder request.</p>
+   * The result of a CreateConditinalForwarder request.
    */
   @js.native
   trait CreateConditionalForwarderResult extends js.Object {
@@ -560,7 +560,7 @@ package directoryservice {
   }
 
   /**
-   * <p>Contains the inputs for the <a>CreateDirectory</a> operation. </p>
+   * Contains the inputs for the '''CreateDirectory''' operation.
    */
   @js.native
   trait CreateDirectoryRequest extends js.Object {
@@ -593,7 +593,7 @@ package directoryservice {
   }
 
   /**
-   * <p>Contains the results of the <a>CreateDirectory</a> operation.</p>
+   * Contains the results of the '''CreateDirectory''' operation.
    */
   @js.native
   trait CreateDirectoryResult extends js.Object {
@@ -642,7 +642,7 @@ package directoryservice {
   }
 
   /**
-   * <p>Creates an AWS Managed Microsoft AD directory.</p>
+   * Creates an AWS Managed Microsoft AD directory.
    */
   @js.native
   trait CreateMicrosoftADRequest extends js.Object {
@@ -675,7 +675,7 @@ package directoryservice {
   }
 
   /**
-   * <p>Result of a CreateMicrosoftAD request.</p>
+   * Result of a CreateMicrosoftAD request.
    */
   @js.native
   trait CreateMicrosoftADResult extends js.Object {
@@ -693,7 +693,7 @@ package directoryservice {
   }
 
   /**
-   * <p>Contains the inputs for the <a>CreateSnapshot</a> operation.</p>
+   * Contains the inputs for the '''CreateSnapshot''' operation.
    */
   @js.native
   trait CreateSnapshotRequest extends js.Object {
@@ -714,7 +714,7 @@ package directoryservice {
   }
 
   /**
-   * <p>Contains the results of the <a>CreateSnapshot</a> operation.</p>
+   * Contains the results of the '''CreateSnapshot''' operation.
    */
   @js.native
   trait CreateSnapshotResult extends js.Object {
@@ -732,7 +732,8 @@ package directoryservice {
   }
 
   /**
-   * <p>AWS Directory Service for Microsoft Active Directory allows you to configure trust relationships. For example, you can establish a trust between your AWS Managed Microsoft AD directory, and your existing on-premises Microsoft Active Directory. This would allow you to provide users and groups access to resources in either domain, with a single set of credentials.</p> <p>This action initiates the creation of the AWS side of a trust relationship between an AWS Managed Microsoft AD directory and an external domain.</p>
+   * AWS Directory Service for Microsoft Active Directory allows you to configure trust relationships. For example, you can establish a trust between your AWS Managed Microsoft AD directory, and your existing on-premises Microsoft Active Directory. This would allow you to provide users and groups access to resources in either domain, with a single set of credentials.
+   *  This action initiates the creation of the AWS side of a trust relationship between an AWS Managed Microsoft AD directory and an external domain.
    */
   @js.native
   trait CreateTrustRequest extends js.Object {
@@ -768,7 +769,7 @@ package directoryservice {
   }
 
   /**
-   * <p>The result of a CreateTrust request.</p>
+   * The result of a CreateTrust request.
    */
   @js.native
   trait CreateTrustResult extends js.Object {
@@ -786,7 +787,7 @@ package directoryservice {
   }
 
   /**
-   * <p>Deletes a conditional forwarder.</p>
+   * Deletes a conditional forwarder.
    */
   @js.native
   trait DeleteConditionalForwarderRequest extends js.Object {
@@ -807,7 +808,7 @@ package directoryservice {
   }
 
   /**
-   * <p>The result of a DeleteConditionalForwarder request.</p>
+   * The result of a DeleteConditionalForwarder request.
    */
   @js.native
   trait DeleteConditionalForwarderResult extends js.Object {
@@ -823,7 +824,7 @@ package directoryservice {
   }
 
   /**
-   * <p>Contains the inputs for the <a>DeleteDirectory</a> operation.</p>
+   * Contains the inputs for the '''DeleteDirectory''' operation.
    */
   @js.native
   trait DeleteDirectoryRequest extends js.Object {
@@ -841,7 +842,7 @@ package directoryservice {
   }
 
   /**
-   * <p>Contains the results of the <a>DeleteDirectory</a> operation.</p>
+   * Contains the results of the '''DeleteDirectory''' operation.
    */
   @js.native
   trait DeleteDirectoryResult extends js.Object {
@@ -887,7 +888,7 @@ package directoryservice {
   }
 
   /**
-   * <p>Contains the inputs for the <a>DeleteSnapshot</a> operation.</p>
+   * Contains the inputs for the '''DeleteSnapshot''' operation.
    */
   @js.native
   trait DeleteSnapshotRequest extends js.Object {
@@ -905,7 +906,7 @@ package directoryservice {
   }
 
   /**
-   * <p>Contains the results of the <a>DeleteSnapshot</a> operation.</p>
+   * Contains the results of the '''DeleteSnapshot''' operation.
    */
   @js.native
   trait DeleteSnapshotResult extends js.Object {
@@ -923,7 +924,7 @@ package directoryservice {
   }
 
   /**
-   * <p>Deletes the local side of an existing trust relationship between the AWS Managed Microsoft AD directory and the external domain.</p>
+   * Deletes the local side of an existing trust relationship between the AWS Managed Microsoft AD directory and the external domain.
    */
   @js.native
   trait DeleteTrustRequest extends js.Object {
@@ -944,7 +945,7 @@ package directoryservice {
   }
 
   /**
-   * <p>The result of a DeleteTrust request.</p>
+   * The result of a DeleteTrust request.
    */
   @js.native
   trait DeleteTrustResult extends js.Object {
@@ -962,7 +963,7 @@ package directoryservice {
   }
 
   /**
-   * <p>Removes the specified directory as a publisher to the specified SNS topic.</p>
+   * Removes the specified directory as a publisher to the specified SNS topic.
    */
   @js.native
   trait DeregisterEventTopicRequest extends js.Object {
@@ -983,7 +984,7 @@ package directoryservice {
   }
 
   /**
-   * <p>The result of a DeregisterEventTopic request.</p>
+   * The result of a DeregisterEventTopic request.
    */
   @js.native
   trait DeregisterEventTopicResult extends js.Object {
@@ -999,7 +1000,7 @@ package directoryservice {
   }
 
   /**
-   * <p>Describes a conditional forwarder.</p>
+   * Describes a conditional forwarder.
    */
   @js.native
   trait DescribeConditionalForwardersRequest extends js.Object {
@@ -1020,7 +1021,7 @@ package directoryservice {
   }
 
   /**
-   * <p>The result of a DescribeConditionalForwarder request.</p>
+   * The result of a DescribeConditionalForwarder request.
    */
   @js.native
   trait DescribeConditionalForwardersResult extends js.Object {
@@ -1038,7 +1039,7 @@ package directoryservice {
   }
 
   /**
-   * <p>Contains the inputs for the <a>DescribeDirectories</a> operation.</p>
+   * Contains the inputs for the '''DescribeDirectories''' operation.
    */
   @js.native
   trait DescribeDirectoriesRequest extends js.Object {
@@ -1062,7 +1063,7 @@ package directoryservice {
   }
 
   /**
-   * <p>Contains the results of the <a>DescribeDirectories</a> operation.</p>
+   * Contains the results of the '''DescribeDirectories''' operation.
    */
   @js.native
   trait DescribeDirectoriesResult extends js.Object {
@@ -1125,7 +1126,7 @@ package directoryservice {
   }
 
   /**
-   * <p>Describes event topics.</p>
+   * Describes event topics.
    */
   @js.native
   trait DescribeEventTopicsRequest extends js.Object {
@@ -1146,7 +1147,7 @@ package directoryservice {
   }
 
   /**
-   * <p>The result of a DescribeEventTopic request.</p>
+   * The result of a DescribeEventTopic request.
    */
   @js.native
   trait DescribeEventTopicsResult extends js.Object {
@@ -1206,7 +1207,7 @@ package directoryservice {
   }
 
   /**
-   * <p>Contains the inputs for the <a>DescribeSnapshots</a> operation.</p>
+   * Contains the inputs for the '''DescribeSnapshots''' operation.
    */
   @js.native
   trait DescribeSnapshotsRequest extends js.Object {
@@ -1233,7 +1234,7 @@ package directoryservice {
   }
 
   /**
-   * <p>Contains the results of the <a>DescribeSnapshots</a> operation.</p>
+   * Contains the results of the '''DescribeSnapshots''' operation.
    */
   @js.native
   trait DescribeSnapshotsResult extends js.Object {
@@ -1254,7 +1255,7 @@ package directoryservice {
   }
 
   /**
-   * <p>Describes the trust relationships for a particular AWS Managed Microsoft AD directory. If no input parameters are are provided, such as directory ID or trust ID, this request describes all the trust relationships.</p>
+   * Describes the trust relationships for a particular AWS Managed Microsoft AD directory. If no input parameters are are provided, such as directory ID or trust ID, this request describes all the trust relationships.
    */
   @js.native
   trait DescribeTrustsRequest extends js.Object {
@@ -1281,7 +1282,7 @@ package directoryservice {
   }
 
   /**
-   * <p>The result of a DescribeTrust request.</p>
+   * The result of a DescribeTrust request.
    */
   @js.native
   trait DescribeTrustsResult extends js.Object {
@@ -1302,7 +1303,7 @@ package directoryservice {
   }
 
   /**
-   * <p>Contains information for the <a>ConnectDirectory</a> operation when an AD Connector directory is being created.</p>
+   * Contains information for the '''ConnectDirectory''' operation when an AD Connector directory is being created.
    */
   @js.native
   trait DirectoryConnectSettings extends js.Object {
@@ -1329,7 +1330,7 @@ package directoryservice {
   }
 
   /**
-   * <p>Contains information about an AD Connector directory.</p>
+   * Contains information about an AD Connector directory.
    */
   @js.native
   trait DirectoryConnectSettingsDescription extends js.Object {
@@ -1362,7 +1363,7 @@ package directoryservice {
   }
 
   /**
-   * <p>Contains information about an AWS Directory Service directory.</p>
+   * Contains information about an AWS Directory Service directory.
    */
   @js.native
   trait DirectoryDescription extends js.Object {
@@ -1456,7 +1457,7 @@ package directoryservice {
   }
 
   /**
-   * <p>Contains directory limit information for a region.</p>
+   * Contains directory limit information for a region.
    */
   @js.native
   trait DirectoryLimits extends js.Object {
@@ -1530,7 +1531,7 @@ package directoryservice {
   }
 
   /**
-   * <p>Contains VPC information for the <a>CreateDirectory</a> or <a>CreateMicrosoftAD</a> operation.</p>
+   * Contains VPC information for the '''CreateDirectory''' or '''CreateMicrosoftAD''' operation.
    */
   @js.native
   trait DirectoryVpcSettings extends js.Object {
@@ -1551,7 +1552,7 @@ package directoryservice {
   }
 
   /**
-   * <p>Contains information about the directory.</p>
+   * Contains information about the directory.
    */
   @js.native
   trait DirectoryVpcSettingsDescription extends js.Object {
@@ -1578,7 +1579,7 @@ package directoryservice {
   }
 
   /**
-   * <p>Contains the inputs for the <a>DisableRadius</a> operation.</p>
+   * Contains the inputs for the '''DisableRadius''' operation.
    */
   @js.native
   trait DisableRadiusRequest extends js.Object {
@@ -1596,7 +1597,7 @@ package directoryservice {
   }
 
   /**
-   * <p>Contains the results of the <a>DisableRadius</a> operation.</p>
+   * Contains the results of the '''DisableRadius''' operation.
    */
   @js.native
   trait DisableRadiusResult extends js.Object {
@@ -1612,7 +1613,7 @@ package directoryservice {
   }
 
   /**
-   * <p>Contains the inputs for the <a>DisableSso</a> operation.</p>
+   * Contains the inputs for the '''DisableSso''' operation.
    */
   @js.native
   trait DisableSsoRequest extends js.Object {
@@ -1636,7 +1637,7 @@ package directoryservice {
   }
 
   /**
-   * <p>Contains the results of the <a>DisableSso</a> operation.</p>
+   * Contains the results of the '''DisableSso''' operation.
    */
   @js.native
   trait DisableSsoResult extends js.Object {
@@ -1652,7 +1653,7 @@ package directoryservice {
   }
 
   /**
-   * <p>Contains information about the domain controllers for a specified directory.</p>
+   * Contains information about the domain controllers for a specified directory.
    */
   @js.native
   trait DomainController extends js.Object {
@@ -1709,7 +1710,7 @@ package directoryservice {
   }
 
   /**
-   * <p>Contains the inputs for the <a>EnableRadius</a> operation.</p>
+   * Contains the inputs for the '''EnableRadius''' operation.
    */
   @js.native
   trait EnableRadiusRequest extends js.Object {
@@ -1730,7 +1731,7 @@ package directoryservice {
   }
 
   /**
-   * <p>Contains the results of the <a>EnableRadius</a> operation.</p>
+   * Contains the results of the '''EnableRadius''' operation.
    */
   @js.native
   trait EnableRadiusResult extends js.Object {
@@ -1746,7 +1747,7 @@ package directoryservice {
   }
 
   /**
-   * <p>Contains the inputs for the <a>EnableSso</a> operation.</p>
+   * Contains the inputs for the '''EnableSso''' operation.
    */
   @js.native
   trait EnableSsoRequest extends js.Object {
@@ -1770,7 +1771,7 @@ package directoryservice {
   }
 
   /**
-   * <p>Contains the results of the <a>EnableSso</a> operation.</p>
+   * Contains the results of the '''EnableSso''' operation.
    */
   @js.native
   trait EnableSsoResult extends js.Object {
@@ -1786,7 +1787,7 @@ package directoryservice {
   }
 
   /**
-   * <p>Information about SNS topic and AWS Directory Service directory associations.</p>
+   * Information about SNS topic and AWS Directory Service directory associations.
    */
   @js.native
   trait EventTopic extends js.Object {
@@ -1816,7 +1817,7 @@ package directoryservice {
   }
 
   /**
-   * <p>Contains the inputs for the <a>GetDirectoryLimits</a> operation.</p>
+   * Contains the inputs for the '''GetDirectoryLimits''' operation.
    */
   @js.native
   trait GetDirectoryLimitsRequest extends js.Object {
@@ -1832,7 +1833,7 @@ package directoryservice {
   }
 
   /**
-   * <p>Contains the results of the <a>GetDirectoryLimits</a> operation.</p>
+   * Contains the results of the '''GetDirectoryLimits''' operation.
    */
   @js.native
   trait GetDirectoryLimitsResult extends js.Object {
@@ -1850,7 +1851,7 @@ package directoryservice {
   }
 
   /**
-   * <p>Contains the inputs for the <a>GetSnapshotLimits</a> operation.</p>
+   * Contains the inputs for the '''GetSnapshotLimits''' operation.
    */
   @js.native
   trait GetSnapshotLimitsRequest extends js.Object {
@@ -1868,7 +1869,7 @@ package directoryservice {
   }
 
   /**
-   * <p>Contains the results of the <a>GetSnapshotLimits</a> operation.</p>
+   * Contains the results of the '''GetSnapshotLimits''' operation.
    */
   @js.native
   trait GetSnapshotLimitsResult extends js.Object {
@@ -1886,7 +1887,7 @@ package directoryservice {
   }
 
   /**
-   * <p>IP address block. This is often the address block of the DNS server used for your on-premises domain. </p>
+   * IP address block. This is often the address block of the DNS server used for your on-premises domain.
    */
   @js.native
   trait IpRoute extends js.Object {
@@ -1907,7 +1908,7 @@ package directoryservice {
   }
 
   /**
-   * <p>Information about one or more IP address blocks.</p>
+   * Information about one or more IP address blocks.
    */
   @js.native
   trait IpRouteInfo extends js.Object {
@@ -2107,7 +2108,7 @@ package directoryservice {
   }
 
   /**
-   * <p>Represents a log subscription, which tracks real-time data from a chosen log group to a specified destination.</p>
+   * Represents a log subscription, which tracks real-time data from a chosen log group to a specified destination.
    */
   @js.native
   trait LogSubscription extends js.Object {
@@ -2131,7 +2132,7 @@ package directoryservice {
   }
 
   /**
-   * <p>Describes the directory owner account details that have been shared to the directory consumer account.</p>
+   * Describes the directory owner account details that have been shared to the directory consumer account.
    */
   @js.native
   trait OwnerDirectoryDescription extends js.Object {
@@ -2173,7 +2174,7 @@ package directoryservice {
   }
 
   /**
-   * <p>Contains information about a Remote Authentication Dial In User Service (RADIUS) server.</p>
+   * Contains information about a Remote Authentication Dial In User Service (RADIUS) server.
    */
   @js.native
   trait RadiusSettings extends js.Object {
@@ -2220,7 +2221,7 @@ package directoryservice {
   }
 
   /**
-   * <p>Registers a new event topic.</p>
+   * Registers a new event topic.
    */
   @js.native
   trait RegisterEventTopicRequest extends js.Object {
@@ -2241,7 +2242,7 @@ package directoryservice {
   }
 
   /**
-   * <p>The result of a RegisterEventTopic request.</p>
+   * The result of a RegisterEventTopic request.
    */
   @js.native
   trait RegisterEventTopicResult extends js.Object {
@@ -2389,7 +2390,7 @@ package directoryservice {
   }
 
   /**
-   * <p>An object representing the inputs for the <a>RestoreFromSnapshot</a> operation.</p>
+   * An object representing the inputs for the '''RestoreFromSnapshot''' operation.
    */
   @js.native
   trait RestoreFromSnapshotRequest extends js.Object {
@@ -2407,7 +2408,7 @@ package directoryservice {
   }
 
   /**
-   * <p>Contains the results of the <a>RestoreFromSnapshot</a> operation.</p>
+   * Contains the results of the '''RestoreFromSnapshot''' operation.
    */
   @js.native
   trait RestoreFromSnapshotResult extends js.Object {
@@ -2423,7 +2424,7 @@ package directoryservice {
   }
 
   /**
-   * <p>Information about a schema extension.</p>
+   * Information about a schema extension.
    */
   @js.native
   trait SchemaExtensionInfo extends js.Object {
@@ -2540,7 +2541,7 @@ package directoryservice {
   }
 
   /**
-   * <p>Identifier that contains details about the directory consumer account.</p>
+   * Identifier that contains details about the directory consumer account.
    */
   @js.native
   trait ShareTarget extends js.Object {
@@ -2561,7 +2562,7 @@ package directoryservice {
   }
 
   /**
-   * <p>Details about the shared directory in the directory owner account for which the share request in the directory consumer account has been accepted.</p>
+   * Details about the shared directory in the directory owner account for which the share request in the directory consumer account has been accepted.
    */
   @js.native
   trait SharedDirectory extends js.Object {
@@ -2603,7 +2604,7 @@ package directoryservice {
   }
 
   /**
-   * <p>Describes a directory snapshot.</p>
+   * Describes a directory snapshot.
    */
   @js.native
   trait Snapshot extends js.Object {
@@ -2636,7 +2637,7 @@ package directoryservice {
   }
 
   /**
-   * <p>Contains manual snapshot limit information for a directory.</p>
+   * Contains manual snapshot limit information for a directory.
    */
   @js.native
   trait SnapshotLimits extends js.Object {
@@ -2714,7 +2715,7 @@ package directoryservice {
   }
 
   /**
-   * <p>Metadata assigned to a directory consisting of a key-value pair.</p>
+   * Metadata assigned to a directory consisting of a key-value pair.
    */
   @js.native
   trait Tag extends js.Object {
@@ -2750,7 +2751,7 @@ package directoryservice {
   }
 
   /**
-   * <p>Describes a trust relationship between an AWS Managed Microsoft AD directory and an external domain.</p>
+   * Describes a trust relationship between an AWS Managed Microsoft AD directory and an external domain.
    */
   @js.native
   trait Trust extends js.Object {
@@ -2862,7 +2863,7 @@ package directoryservice {
   }
 
   /**
-   * <p>Identifier that contains details about the directory consumer account with whom the directory is being unshared.</p>
+   * Identifier that contains details about the directory consumer account with whom the directory is being unshared.
    */
   @js.native
   trait UnshareTarget extends js.Object {
@@ -2883,7 +2884,7 @@ package directoryservice {
   }
 
   /**
-   * <p>Updates a conditional forwarder.</p>
+   * Updates a conditional forwarder.
    */
   @js.native
   trait UpdateConditionalForwarderRequest extends js.Object {
@@ -2907,7 +2908,7 @@ package directoryservice {
   }
 
   /**
-   * <p>The result of an UpdateConditionalForwarder request.</p>
+   * The result of an UpdateConditionalForwarder request.
    */
   @js.native
   trait UpdateConditionalForwarderResult extends js.Object {
@@ -2954,7 +2955,7 @@ package directoryservice {
   }
 
   /**
-   * <p>Contains the inputs for the <a>UpdateRadius</a> operation.</p>
+   * Contains the inputs for the '''UpdateRadius''' operation.
    */
   @js.native
   trait UpdateRadiusRequest extends js.Object {
@@ -2975,7 +2976,7 @@ package directoryservice {
   }
 
   /**
-   * <p>Contains the results of the <a>UpdateRadius</a> operation.</p>
+   * Contains the results of the '''UpdateRadius''' operation.
    */
   @js.native
   trait UpdateRadiusResult extends js.Object {
@@ -3027,7 +3028,7 @@ package directoryservice {
   }
 
   /**
-   * <p>Initiates the verification of an existing trust relationship between an AWS Managed Microsoft AD directory and an external domain.</p>
+   * Initiates the verification of an existing trust relationship between an AWS Managed Microsoft AD directory and an external domain.
    */
   @js.native
   trait VerifyTrustRequest extends js.Object {
@@ -3045,7 +3046,7 @@ package directoryservice {
   }
 
   /**
-   * <p>Result of a VerifyTrust request.</p>
+   * Result of a VerifyTrust request.
    */
   @js.native
   trait VerifyTrustResult extends js.Object {

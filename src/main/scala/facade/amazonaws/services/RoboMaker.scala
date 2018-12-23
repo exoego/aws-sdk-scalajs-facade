@@ -749,7 +749,7 @@ package robomaker {
   }
 
   /**
-   * <p>Information about a deployment application configuration.</p>
+   * Information about a deployment application configuration.
    */
   @js.native
   trait DeploymentApplicationConfig extends js.Object {
@@ -773,7 +773,7 @@ package robomaker {
   }
 
   /**
-   * <p>Information about a deployment configuration.</p>
+   * Information about a deployment configuration.
    */
   @js.native
   trait DeploymentConfig extends js.Object {
@@ -794,7 +794,7 @@ package robomaker {
   }
 
   /**
-   * <p>Information about a deployment job.</p>
+   * Information about a deployment job.
    */
   @js.native
   trait DeploymentJob extends js.Object {
@@ -851,7 +851,7 @@ package robomaker {
   }
 
   /**
-   * <p>Configuration information for a deployment launch.</p>
+   * Configuration information for a deployment launch.
    */
   @js.native
   trait DeploymentLaunchConfig extends js.Object {
@@ -1267,7 +1267,7 @@ package robomaker {
   }
 
   /**
-   * <p>Information about a filter.</p>
+   * Information about a filter.
    */
   @js.native
   trait Filter extends js.Object {
@@ -1288,7 +1288,7 @@ package robomaker {
   }
 
   /**
-   * <p>Information about a fleet.</p>
+   * Information about a fleet.
    */
   @js.native
   trait Fleet extends js.Object {
@@ -1321,7 +1321,7 @@ package robomaker {
   }
 
   /**
-   * <p>Information about a launch configuration.</p>
+   * Information about a launch configuration.
    */
   @js.native
   trait LaunchConfig extends js.Object {
@@ -1585,7 +1585,7 @@ package robomaker {
   }
 
   /**
-   * <p>The output location.</p>
+   * The output location.
    */
   @js.native
   trait OutputLocation extends js.Object {
@@ -1606,7 +1606,7 @@ package robomaker {
   }
 
   /**
-   * <p>Information about the progress of a deployment job.</p>
+   * Information about the progress of a deployment job.
    */
   @js.native
   trait ProgressDetail extends js.Object {
@@ -1663,7 +1663,7 @@ package robomaker {
   }
 
   /**
-   * <p>Information about a rendering engine.</p>
+   * Information about a rendering engine.
    */
   @js.native
   trait RenderingEngine extends js.Object {
@@ -1718,7 +1718,7 @@ package robomaker {
   }
 
   /**
-   * <p>Information about a robot.</p>
+   * Information about a robot.
    */
   @js.native
   trait Robot extends js.Object {
@@ -1760,7 +1760,7 @@ package robomaker {
   }
 
   /**
-   * <p>Application configuration information for a robot.</p>
+   * Application configuration information for a robot.
    */
   @js.native
   trait RobotApplicationConfig extends js.Object {
@@ -1784,7 +1784,7 @@ package robomaker {
   }
 
   /**
-   * <p>Summary information for a robot application.</p>
+   * Summary information for a robot application.
    */
   @js.native
   trait RobotApplicationSummary extends js.Object {
@@ -1811,7 +1811,7 @@ package robomaker {
   }
 
   /**
-   * <p>Information about a robot deployment.</p>
+   * Information about a robot deployment.
    */
   @js.native
   trait RobotDeployment extends js.Object {
@@ -1847,7 +1847,7 @@ package robomaker {
   }
 
   /**
-   * <p>Information about a robot software suite.</p>
+   * Information about a robot software suite.
    */
   @js.native
   trait RobotSoftwareSuite extends js.Object {
@@ -1892,7 +1892,7 @@ package robomaker {
   }
 
   /**
-   * <p>Information about a simulation application configuration.</p>
+   * Information about a simulation application configuration.
    */
   @js.native
   trait SimulationApplicationConfig extends js.Object {
@@ -1916,7 +1916,7 @@ package robomaker {
   }
 
   /**
-   * <p>Summary information for a simulation application.</p>
+   * Summary information for a simulation application.
    */
   @js.native
   trait SimulationApplicationSummary extends js.Object {
@@ -1943,7 +1943,7 @@ package robomaker {
   }
 
   /**
-   * <p>Information about a simulation job.</p>
+   * Information about a simulation job.
    */
   @js.native
   trait SimulationJob extends js.Object {
@@ -2034,7 +2034,7 @@ package robomaker {
   }
 
   /**
-   * <p>Summary information for a simulation job.</p>
+   * Summary information for a simulation job.
    */
   @js.native
   trait SimulationJobSummary extends js.Object {
@@ -2067,7 +2067,7 @@ package robomaker {
   }
 
   /**
-   * <p>Information about a simulation software suite.</p>
+   * Information about a simulation software suite.
    */
   @js.native
   trait SimulationSoftwareSuite extends js.Object {
@@ -2094,7 +2094,7 @@ package robomaker {
   }
 
   /**
-   * <p>Information about a source.</p>
+   * Information about a source.
    */
   @js.native
   trait Source extends js.Object {
@@ -2121,7 +2121,7 @@ package robomaker {
   }
 
   /**
-   * <p>Information about a source configuration.</p>
+   * Information about a source configuration.
    */
   @js.native
   trait SourceConfig extends js.Object {
@@ -2325,7 +2325,7 @@ package robomaker {
   }
 
   /**
-   * <p>If your simulation job accesses resources in a VPC, you provide this parameter identifying the list of security group IDs and subnet IDs. These must belong to the same VPC. You must provide at least one security group and two subnet IDs.</p>
+   * If your simulation job accesses resources in a VPC, you provide this parameter identifying the list of security group IDs and subnet IDs. These must belong to the same VPC. You must provide at least one security group and two subnet IDs.
    */
   @js.native
   trait VPCConfig extends js.Object {
@@ -2349,7 +2349,7 @@ package robomaker {
   }
 
   /**
-   * <p>VPC configuration associated with your simulation job.</p>
+   * VPC configuration associated with your simulation job.
    */
   @js.native
   trait VPCConfigResponse extends js.Object {

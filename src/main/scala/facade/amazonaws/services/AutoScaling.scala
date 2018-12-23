@@ -202,7 +202,7 @@ package autoscaling {
   }
 
   /**
-   * <p>Describes scaling activity, which is a long-running process that represents a change to your Auto Scaling group, such as changing its size or replacing an instance.</p>
+   * Describes scaling activity, which is a long-running process that represents a change to your Auto Scaling group, such as changing its size or replacing an instance.
    */
   @js.native
   trait Activity extends js.Object {
@@ -262,7 +262,8 @@ package autoscaling {
   }
 
   /**
-   * <p>Describes a policy adjustment type.</p> <p>For more information, see <a href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scale-based-on-demand.html">Dynamic Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+   * Describes a policy adjustment type.
+   *  For more information, see <a href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scale-based-on-demand.html">Dynamic Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
    */
   @js.native
   trait AdjustmentType extends js.Object {
@@ -280,7 +281,7 @@ package autoscaling {
   }
 
   /**
-   * <p>Describes an alarm.</p>
+   * Describes an alarm.
    */
   @js.native
   trait Alarm extends js.Object {
@@ -381,7 +382,7 @@ package autoscaling {
   }
 
   /**
-   * <p>Describes an Auto Scaling group.</p>
+   * Describes an Auto Scaling group.
    */
   @js.native
   trait AutoScalingGroup extends js.Object {
@@ -510,7 +511,7 @@ package autoscaling {
   }
 
   /**
-   * <p>Describes an EC2 instance associated with an Auto Scaling group.</p>
+   * Describes an EC2 instance associated with an Auto Scaling group.
    */
   @js.native
   trait AutoScalingInstanceDetails extends js.Object {
@@ -633,7 +634,7 @@ package autoscaling {
   }
 
   /**
-   * <p>Describes a block device mapping.</p>
+   * Describes a block device mapping.
    */
   @js.native
   trait BlockDeviceMapping extends js.Object {
@@ -856,7 +857,7 @@ package autoscaling {
   }
 
   /**
-   * <p>Configures a customized metric for a target tracking policy.</p>
+   * Configures a customized metric for a target tracking policy.
    */
   @js.native
   trait CustomizedMetricSpecification extends js.Object {
@@ -1495,7 +1496,7 @@ package autoscaling {
   }
 
   /**
-   * <p>Describes an Amazon EBS volume.</p>
+   * Describes an Amazon EBS volume.
    */
   @js.native
   trait Ebs extends js.Object {
@@ -1549,7 +1550,7 @@ package autoscaling {
   }
 
   /**
-   * <p>Describes an enabled metric.</p>
+   * Describes an enabled metric.
    */
   @js.native
   trait EnabledMetric extends js.Object {
@@ -1666,7 +1667,7 @@ package autoscaling {
   }
 
   /**
-   * <p>Describes a scheduled action that could not be created, updated, or deleted.</p>
+   * Describes a scheduled action that could not be created, updated, or deleted.
    */
   @js.native
   trait FailedScheduledUpdateGroupActionRequest extends js.Object {
@@ -1690,7 +1691,7 @@ package autoscaling {
   }
 
   /**
-   * <p>Describes a filter.</p>
+   * Describes a filter.
    */
   @js.native
   trait Filter extends js.Object {
@@ -1711,7 +1712,7 @@ package autoscaling {
   }
 
   /**
-   * <p>Describes an EC2 instance.</p>
+   * Describes an EC2 instance.
    */
   @js.native
   trait Instance extends js.Object {
@@ -1747,7 +1748,7 @@ package autoscaling {
   }
 
   /**
-   * <p>Describes whether detailed monitoring is enabled for the Auto Scaling instances.</p>
+   * Describes whether detailed monitoring is enabled for the Auto Scaling instances.
    */
   @js.native
   trait InstanceMonitoring extends js.Object {
@@ -1765,7 +1766,8 @@ package autoscaling {
   }
 
   /**
-   * <p>Describes an instances distribution for an Auto Scaling group with <a>MixedInstancesPolicy</a>.</p> <p>The instances distribution specifies the distribution of On-Demand Instances and Spot Instances, the maximum price to pay for Spot Instances, and how the Auto Scaling group allocates instance types.</p>
+   * Describes an instances distribution for an Auto Scaling group with '''MixedInstancesPolicy'''.
+   *  The instances distribution specifies the distribution of On-Demand Instances and Spot Instances, the maximum price to pay for Spot Instances, and how the Auto Scaling group allocates instance types.
    */
   @js.native
   trait InstancesDistribution extends js.Object {
@@ -1798,7 +1800,7 @@ package autoscaling {
   }
 
   /**
-   * <p>Describes a launch configuration.</p>
+   * Describes a launch configuration.
    */
   @js.native
   trait LaunchConfiguration extends js.Object {
@@ -1924,7 +1926,8 @@ package autoscaling {
   }
 
   /**
-   * <p>Describes a launch template and overrides. </p> <p>The overrides are used to override the instance type specified by the launch template with multiple instance types that can be used to launch On-Demand Instances and Spot Instances. </p>
+   * Describes a launch template and overrides.
+   *  The overrides are used to override the instance type specified by the launch template with multiple instance types that can be used to launch On-Demand Instances and Spot Instances.
    */
   @js.native
   trait LaunchTemplate extends js.Object {
@@ -1945,7 +1948,7 @@ package autoscaling {
   }
 
   /**
-   * <p>Describes an override for a launch template. </p>
+   * Describes an override for a launch template.
    */
   @js.native
   trait LaunchTemplateOverrides extends js.Object {
@@ -1963,7 +1966,8 @@ package autoscaling {
   }
 
   /**
-   * <p>Describes a launch template and the launch template version.</p> <p>The launch template that is specified must be configured for use with an Auto Scaling group. For more information, see <a href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/create-launch-template.html">Creating a Launch Template for an Auto Scaling group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+   * Describes a launch template and the launch template version.
+   *  The launch template that is specified must be configured for use with an Auto Scaling group. For more information, see <a href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/create-launch-template.html">Creating a Launch Template for an Auto Scaling group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
    */
   @js.native
   trait LaunchTemplateSpecification extends js.Object {
@@ -1987,7 +1991,8 @@ package autoscaling {
   }
 
   /**
-   * <p>Describes a lifecycle hook, which tells Amazon EC2 Auto Scaling that you want to perform an action whenever it launches instances or whenever it terminates instances.</p> <p>For more information, see <a href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/lifecycle-hooks.html">Lifecycle Hooks</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+   * Describes a lifecycle hook, which tells Amazon EC2 Auto Scaling that you want to perform an action whenever it launches instances or whenever it terminates instances.
+   *  For more information, see <a href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/lifecycle-hooks.html">Lifecycle Hooks</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
    */
   @js.native
   trait LifecycleHook extends js.Object {
@@ -2029,7 +2034,8 @@ package autoscaling {
   }
 
   /**
-   * <p>Describes a lifecycle hook, which tells Amazon EC2 Auto Scaling that you want to perform an action whenever it launches instances or whenever it terminates instances.</p> <p>For more information, see <a href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/lifecycle-hooks.html">Lifecycle Hooks</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+   * Describes a lifecycle hook, which tells Amazon EC2 Auto Scaling that you want to perform an action whenever it launches instances or whenever it terminates instances.
+   *  For more information, see <a href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/lifecycle-hooks.html">Lifecycle Hooks</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
    */
   @js.native
   trait LifecycleHookSpecification extends js.Object {
@@ -2083,7 +2089,9 @@ package autoscaling {
   }
 
   /**
-   * <p>Describes the state of a Classic Load Balancer.</p> <p>If you specify a load balancer when creating the Auto Scaling group, the state of the load balancer is <code>InService</code>.</p> <p>If you attach a load balancer to an existing Auto Scaling group, the initial state is <code>Adding</code>. The state transitions to <code>Added</code> after all instances in the group are registered with the load balancer. If Elastic Load Balancing health checks are enabled for the load balancer, the state transitions to <code>InService</code> after at least one instance in the group passes the health check. If EC2 health checks are enabled instead, the load balancer remains in the <code>Added</code> state.</p>
+   * Describes the state of a Classic Load Balancer.
+   *  If you specify a load balancer when creating the Auto Scaling group, the state of the load balancer is <code>InService</code>.
+   *  If you attach a load balancer to an existing Auto Scaling group, the initial state is <code>Adding</code>. The state transitions to <code>Added</code> after all instances in the group are registered with the load balancer. If Elastic Load Balancing health checks are enabled for the load balancer, the state transitions to <code>InService</code> after at least one instance in the group passes the health check. If EC2 health checks are enabled instead, the load balancer remains in the <code>Added</code> state.
    */
   @js.native
   trait LoadBalancerState extends js.Object {
@@ -2104,7 +2112,8 @@ package autoscaling {
   }
 
   /**
-   * <p>Describes the state of a target group.</p> <p>If you attach a target group to an existing Auto Scaling group, the initial state is <code>Adding</code>. The state transitions to <code>Added</code> after all Auto Scaling instances are registered with the target group. If Elastic Load Balancing health checks are enabled, the state transitions to <code>InService</code> after at least one Auto Scaling instance passes the health check. If EC2 health checks are enabled instead, the target group remains in the <code>Added</code> state.</p>
+   * Describes the state of a target group.
+   *  If you attach a target group to an existing Auto Scaling group, the initial state is <code>Adding</code>. The state transitions to <code>Added</code> after all Auto Scaling instances are registered with the target group. If Elastic Load Balancing health checks are enabled, the state transitions to <code>InService</code> after at least one Auto Scaling instance passes the health check. If EC2 health checks are enabled instead, the target group remains in the <code>Added</code> state.
    */
   @js.native
   trait LoadBalancerTargetGroupState extends js.Object {
@@ -2125,7 +2134,7 @@ package autoscaling {
   }
 
   /**
-   * <p>Describes a metric.</p>
+   * Describes a metric.
    */
   @js.native
   trait MetricCollectionType extends js.Object {
@@ -2143,7 +2152,7 @@ package autoscaling {
   }
 
   /**
-   * <p>Describes the dimension of a metric.</p>
+   * Describes the dimension of a metric.
    */
   @js.native
   trait MetricDimension extends js.Object {
@@ -2164,7 +2173,7 @@ package autoscaling {
   }
 
   /**
-   * <p>Describes a granularity of a metric.</p>
+   * Describes a granularity of a metric.
    */
   @js.native
   trait MetricGranularityType extends js.Object {
@@ -2201,7 +2210,8 @@ package autoscaling {
   }
 
   /**
-   * <p>Describes a mixed instances policy for an Auto Scaling group. With mixed instances, your Auto Scaling group can provision a combination of On-Demand Instances and Spot Instances across multiple instance types. For more information, see <a href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/AutoScalingGroup.html#asg-purchase-options">Using Multiple Instance Types and Purchase Options</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p> <p>When you create your Auto Scaling group, you can specify a launch configuration or template as a parameter for the top-level object, or you can specify a mixed instances policy, but not both at the same time.</p>
+   * Describes a mixed instances policy for an Auto Scaling group. With mixed instances, your Auto Scaling group can provision a combination of On-Demand Instances and Spot Instances across multiple instance types. For more information, see <a href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/AutoScalingGroup.html#asg-purchase-options">Using Multiple Instance Types and Purchase Options</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+   *  When you create your Auto Scaling group, you can specify a launch configuration or template as a parameter for the top-level object, or you can specify a mixed instances policy, but not both at the same time.
    */
   @js.native
   trait MixedInstancesPolicy extends js.Object {
@@ -2222,7 +2232,7 @@ package autoscaling {
   }
 
   /**
-   * <p>Describes a notification.</p>
+   * Describes a notification.
    */
   @js.native
   trait NotificationConfiguration extends js.Object {
@@ -2264,7 +2274,7 @@ package autoscaling {
   }
 
   /**
-   * <p>Contains the output of PutScalingPolicy.</p>
+   * Contains the output of PutScalingPolicy.
    */
   @js.native
   trait PolicyARNType extends js.Object {
@@ -2285,7 +2295,7 @@ package autoscaling {
   }
 
   /**
-   * <p>Configures a predefined metric for a target tracking policy.</p>
+   * Configures a predefined metric for a target tracking policy.
    */
   @js.native
   trait PredefinedMetricSpecification extends js.Object {
@@ -2306,7 +2316,8 @@ package autoscaling {
   }
 
   /**
-   * <p>Describes a process type.</p> <p>For more information, see <a href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/as-suspend-resume-processes.html#process-types">Scaling Processes</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+   * Describes a process type.
+   *  For more information, see <a href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/as-suspend-resume-processes.html#process-types">Scaling Processes</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
    */
   @js.native
   trait ProcessType extends js.Object {
@@ -2550,7 +2561,7 @@ package autoscaling {
   }
 
   /**
-   * <p>Describes a scaling policy.</p>
+   * Describes a scaling policy.
    */
   @js.native
   trait ScalingPolicy extends js.Object {
@@ -2643,7 +2654,7 @@ package autoscaling {
   }
 
   /**
-   * <p>Describes a scheduled scaling action. Used in response to <a>DescribeScheduledActions</a>. </p>
+   * Describes a scheduled scaling action. Used in response to '''DescribeScheduledActions'''.
    */
   @js.native
   trait ScheduledUpdateGroupAction extends js.Object {
@@ -2688,7 +2699,8 @@ package autoscaling {
   }
 
   /**
-   * <p>Describes one or more scheduled scaling action updates for a specified Auto Scaling group. Used in combination with <a>BatchPutScheduledUpdateGroupAction</a>. </p> <p>When updating a scheduled scaling action, all optional parameters are left unchanged if not specified. </p>
+   * Describes one or more scheduled scaling action updates for a specified Auto Scaling group. Used in combination with '''BatchPutScheduledUpdateGroupAction'''.
+   *  When updating a scheduled scaling action, all optional parameters are left unchanged if not specified.
    */
   @js.native
   trait ScheduledUpdateGroupActionRequest extends js.Object {
@@ -2800,7 +2812,15 @@ package autoscaling {
   }
 
   /**
-   * <p>Describes an adjustment based on the difference between the value of the aggregated CloudWatch metric and the breach threshold that you've defined for the alarm.</p> <p>For the following examples, suppose that you have an alarm with a breach threshold of 50:</p> <ul> <li> <p>To trigger the adjustment when the metric is greater than or equal to 50 and less than 60, specify a lower bound of 0 and an upper bound of 10.</p> </li> <li> <p>To trigger the adjustment when the metric is greater than 40 and less than or equal to 50, specify a lower bound of -10 and an upper bound of 0.</p> </li> </ul> <p>There are a few rules for the step adjustments for your step policy:</p> <ul> <li> <p>The ranges of your step adjustments can't overlap or have a gap.</p> </li> <li> <p>At most, one step adjustment can have a null lower bound. If one step adjustment has a negative lower bound, then there must be a step adjustment with a null lower bound.</p> </li> <li> <p>At most, one step adjustment can have a null upper bound. If one step adjustment has a positive upper bound, then there must be a step adjustment with a null upper bound.</p> </li> <li> <p>The upper and lower bound can't be null in the same step adjustment.</p> </li> </ul>
+   * Describes an adjustment based on the difference between the value of the aggregated CloudWatch metric and the breach threshold that you've defined for the alarm.
+   *  For the following examples, suppose that you have an alarm with a breach threshold of 50:
+   * * To trigger the adjustment when the metric is greater than or equal to 50 and less than 60, specify a lower bound of 0 and an upper bound of 10.
+   *  * To trigger the adjustment when the metric is greater than 40 and less than or equal to 50, specify a lower bound of -10 and an upper bound of 0.
+   * There are a few rules for the step adjustments for your step policy:
+   * * The ranges of your step adjustments can't overlap or have a gap.
+   *  * At most, one step adjustment can have a null lower bound. If one step adjustment has a negative lower bound, then there must be a step adjustment with a null lower bound.
+   *  * At most, one step adjustment can have a null upper bound. If one step adjustment has a positive upper bound, then there must be a step adjustment with a null upper bound.
+   *  * The upper and lower bound can't be null in the same step adjustment.
    */
   @js.native
   trait StepAdjustment extends js.Object {
@@ -2824,7 +2844,7 @@ package autoscaling {
   }
 
   /**
-   * <p>Describes an automatic scaling process that has been suspended. For more information, see <a>ProcessType</a>.</p>
+   * Describes an automatic scaling process that has been suspended. For more information, see '''ProcessType'''.
    */
   @js.native
   trait SuspendedProcess extends js.Object {
@@ -2845,7 +2865,7 @@ package autoscaling {
   }
 
   /**
-   * <p>Describes a tag for an Auto Scaling group.</p>
+   * Describes a tag for an Auto Scaling group.
    */
   @js.native
   trait Tag extends js.Object {
@@ -2875,7 +2895,7 @@ package autoscaling {
   }
 
   /**
-   * <p>Describes a tag for an Auto Scaling group.</p>
+   * Describes a tag for an Auto Scaling group.
    */
   @js.native
   trait TagDescription extends js.Object {
@@ -2923,7 +2943,7 @@ package autoscaling {
   }
 
   /**
-   * <p>Represents a target tracking policy configuration.</p>
+   * Represents a target tracking policy configuration.
    */
   @js.native
   trait TargetTrackingConfiguration extends js.Object {

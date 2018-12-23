@@ -247,7 +247,8 @@ package neptune {
   }
 
   /**
-   * <p>Specified CIDRIP or EC2 security group is not authorized for the specified DB security group.</p> <p>Neptune may not also be authorized via IAM to perform necessary actions on your behalf.</p>
+   * Specified CIDRIP or EC2 security group is not authorized for the specified DB security group.
+   *  Neptune may not also be authorized via IAM to perform necessary actions on your behalf.
    */
   @js.native
   trait AuthorizationNotFoundFaultException extends js.Object {
@@ -255,7 +256,9 @@ package neptune {
   }
 
   /**
-   * <p>Contains Availability Zone information.</p> <p> This data type is used as an element in the following data type:</p> <ul> <li> <p> <a>OrderableDBInstanceOption</a> </p> </li> </ul>
+   * Contains Availability Zone information.
+   *  This data type is used as an element in the following data type:
+   * * '''OrderableDBInstanceOption'''
    */
   @js.native
   trait AvailabilityZone extends js.Object {
@@ -273,7 +276,7 @@ package neptune {
   }
 
   /**
-   * <p> <i>CertificateIdentifier</i> does not refer to an existing certificate. </p>
+   * <i>CertificateIdentifier</i> does not refer to an existing certificate.
    */
   @js.native
   trait CertificateNotFoundFaultException extends js.Object {
@@ -281,7 +284,7 @@ package neptune {
   }
 
   /**
-   * <p> This data type is used as a response element in the action <a>DescribeDBEngineVersions</a>. </p>
+   * This data type is used as a response element in the action '''DescribeDBEngineVersions'''.
    */
   @js.native
   trait CharacterSet extends js.Object {
@@ -302,7 +305,7 @@ package neptune {
   }
 
   /**
-   * <p>The configuration setting for the log types to be enabled for export to CloudWatch Logs for a specific DB instance or DB cluster.</p>
+   * The configuration setting for the log types to be enabled for export to CloudWatch Logs for a specific DB instance or DB cluster.
    */
   @js.native
   trait CloudwatchLogsExportConfiguration extends js.Object {
@@ -920,7 +923,8 @@ package neptune {
   }
 
   /**
-   * <p>Contains the details of an Amazon Neptune DB cluster. </p> <p>This data type is used as a response element in the <a>DescribeDBClusters</a> action. </p>
+   * Contains the details of an Amazon Neptune DB cluster.
+   *  This data type is used as a response element in the '''DescribeDBClusters''' action.
    */
   @js.native
   trait DBCluster extends js.Object {
@@ -1040,7 +1044,7 @@ package neptune {
   }
 
   /**
-   * <p>User already has a DB cluster with the given identifier.</p>
+   * User already has a DB cluster with the given identifier.
    */
   @js.native
   trait DBClusterAlreadyExistsFaultException extends js.Object {
@@ -1048,7 +1052,7 @@ package neptune {
   }
 
   /**
-   * <p>Contains information about an instance that is part of a DB cluster.</p>
+   * Contains information about an instance that is part of a DB cluster.
    */
   @js.native
   trait DBClusterMember extends js.Object {
@@ -1075,7 +1079,7 @@ package neptune {
   }
 
   /**
-   * <p>Contains the result of a successful invocation of the <a>DescribeDBClusters</a> action.</p>
+   * Contains the result of a successful invocation of the '''DescribeDBClusters''' action.
    */
   @js.native
   trait DBClusterMessage extends js.Object {
@@ -1096,7 +1100,7 @@ package neptune {
   }
 
   /**
-   * <p> <i>DBClusterIdentifier</i> does not refer to an existing DB cluster. </p>
+   * <i>DBClusterIdentifier</i> does not refer to an existing DB cluster.
    */
   @js.native
   trait DBClusterNotFoundFaultException extends js.Object {
@@ -1104,7 +1108,7 @@ package neptune {
   }
 
   /**
-   * <p>Contains status information for a DB cluster option group.</p>
+   * Contains status information for a DB cluster option group.
    */
   @js.native
   trait DBClusterOptionGroupStatus extends js.Object {
@@ -1125,7 +1129,8 @@ package neptune {
   }
 
   /**
-   * <p>Contains the details of an Amazon Neptune DB cluster parameter group. </p> <p>This data type is used as a response element in the <a>DescribeDBClusterParameterGroups</a> action. </p>
+   * Contains the details of an Amazon Neptune DB cluster parameter group.
+   *  This data type is used as a response element in the '''DescribeDBClusterParameterGroups''' action.
    */
   @js.native
   trait DBClusterParameterGroup extends js.Object {
@@ -1152,7 +1157,7 @@ package neptune {
   }
 
   /**
-   * <p>Provides details about a DB cluster parameter group including the parameters in the DB cluster parameter group.</p>
+   * Provides details about a DB cluster parameter group including the parameters in the DB cluster parameter group.
    */
   @js.native
   trait DBClusterParameterGroupDetails extends js.Object {
@@ -1191,7 +1196,7 @@ package neptune {
   }
 
   /**
-   * <p> <i>DBClusterParameterGroupName</i> does not refer to an existing DB Cluster parameter group. </p>
+   * <i>DBClusterParameterGroupName</i> does not refer to an existing DB Cluster parameter group.
    */
   @js.native
   trait DBClusterParameterGroupNotFoundFaultException extends js.Object {
@@ -1220,7 +1225,7 @@ package neptune {
   }
 
   /**
-   * <p>User attempted to create a new DB cluster and the user has already reached the maximum allowed DB cluster quota.</p>
+   * User attempted to create a new DB cluster and the user has already reached the maximum allowed DB cluster quota.
    */
   @js.native
   trait DBClusterQuotaExceededFaultException extends js.Object {
@@ -1228,7 +1233,7 @@ package neptune {
   }
 
   /**
-   * <p>Describes an AWS Identity and Access Management (IAM) role that is associated with a DB cluster.</p>
+   * Describes an AWS Identity and Access Management (IAM) role that is associated with a DB cluster.
    */
   @js.native
   trait DBClusterRole extends js.Object {
@@ -1249,7 +1254,7 @@ package neptune {
   }
 
   /**
-   * <p>The specified IAM role Amazon Resource Name (ARN) is already associated with the specified DB cluster.</p>
+   * The specified IAM role Amazon Resource Name (ARN) is already associated with the specified DB cluster.
    */
   @js.native
   trait DBClusterRoleAlreadyExistsFaultException extends js.Object {
@@ -1257,7 +1262,7 @@ package neptune {
   }
 
   /**
-   * <p>The specified IAM role Amazon Resource Name (ARN) is not associated with the specified DB cluster.</p>
+   * The specified IAM role Amazon Resource Name (ARN) is not associated with the specified DB cluster.
    */
   @js.native
   trait DBClusterRoleNotFoundFaultException extends js.Object {
@@ -1265,7 +1270,7 @@ package neptune {
   }
 
   /**
-   * <p>You have exceeded the maximum number of IAM roles that can be associated with the specified DB cluster.</p>
+   * You have exceeded the maximum number of IAM roles that can be associated with the specified DB cluster.
    */
   @js.native
   trait DBClusterRoleQuotaExceededFaultException extends js.Object {
@@ -1273,7 +1278,8 @@ package neptune {
   }
 
   /**
-   * <p>Contains the details for an Amazon Neptune DB cluster snapshot </p> <p>This data type is used as a response element in the <a>DescribeDBClusterSnapshots</a> action. </p>
+   * Contains the details for an Amazon Neptune DB cluster snapshot
+   *  This data type is used as a response element in the '''DescribeDBClusterSnapshots''' action.
    */
   @js.native
   trait DBClusterSnapshot extends js.Object {
@@ -1348,7 +1354,7 @@ package neptune {
   }
 
   /**
-   * <p>User already has a DB cluster snapshot with the given identifier.</p>
+   * User already has a DB cluster snapshot with the given identifier.
    */
   @js.native
   trait DBClusterSnapshotAlreadyExistsFaultException extends js.Object {
@@ -1356,7 +1362,8 @@ package neptune {
   }
 
   /**
-   * <p>Contains the name and values of a manual DB cluster snapshot attribute.</p> <p>Manual DB cluster snapshot attributes are used to authorize other AWS accounts to restore a manual DB cluster snapshot. For more information, see the <a>ModifyDBClusterSnapshotAttribute</a> API action.</p>
+   * Contains the name and values of a manual DB cluster snapshot attribute.
+   *  Manual DB cluster snapshot attributes are used to authorize other AWS accounts to restore a manual DB cluster snapshot. For more information, see the '''ModifyDBClusterSnapshotAttribute''' API action.
    */
   @js.native
   trait DBClusterSnapshotAttribute extends js.Object {
@@ -1377,7 +1384,8 @@ package neptune {
   }
 
   /**
-   * <p>Contains the results of a successful call to the <a>DescribeDBClusterSnapshotAttributes</a> API action.</p> <p>Manual DB cluster snapshot attributes are used to authorize other AWS accounts to copy or restore a manual DB cluster snapshot. For more information, see the <a>ModifyDBClusterSnapshotAttribute</a> API action.</p>
+   * Contains the results of a successful call to the '''DescribeDBClusterSnapshotAttributes''' API action.
+   *  Manual DB cluster snapshot attributes are used to authorize other AWS accounts to copy or restore a manual DB cluster snapshot. For more information, see the '''ModifyDBClusterSnapshotAttribute''' API action.
    */
   @js.native
   trait DBClusterSnapshotAttributesResult extends js.Object {
@@ -1398,7 +1406,7 @@ package neptune {
   }
 
   /**
-   * <p> Provides a list of DB cluster snapshots for the user as the result of a call to the <a>DescribeDBClusterSnapshots</a> action. </p>
+   * Provides a list of DB cluster snapshots for the user as the result of a call to the '''DescribeDBClusterSnapshots''' action.
    */
   @js.native
   trait DBClusterSnapshotMessage extends js.Object {
@@ -1419,7 +1427,7 @@ package neptune {
   }
 
   /**
-   * <p> <i>DBClusterSnapshotIdentifier</i> does not refer to an existing DB cluster snapshot. </p>
+   * <i>DBClusterSnapshotIdentifier</i> does not refer to an existing DB cluster snapshot.
    */
   @js.native
   trait DBClusterSnapshotNotFoundFaultException extends js.Object {
@@ -1427,7 +1435,7 @@ package neptune {
   }
 
   /**
-   * <p> This data type is used as a response element in the action <a>DescribeDBEngineVersions</a>. </p>
+   * This data type is used as a response element in the action '''DescribeDBEngineVersions'''.
    */
   @js.native
   trait DBEngineVersion extends js.Object {
@@ -1478,7 +1486,7 @@ package neptune {
   }
 
   /**
-   * <p> Contains the result of a successful invocation of the <a>DescribeDBEngineVersions</a> action. </p>
+   * Contains the result of a successful invocation of the '''DescribeDBEngineVersions''' action.
    */
   @js.native
   trait DBEngineVersionMessage extends js.Object {
@@ -1499,7 +1507,8 @@ package neptune {
   }
 
   /**
-   * <p>Contains the details of an Amazon Neptune DB instance. </p> <p>This data type is used as a response element in the <a>DescribeDBInstances</a> action. </p>
+   * Contains the details of an Amazon Neptune DB instance.
+   *  This data type is used as a response element in the '''DescribeDBInstances''' action.
    */
   @js.native
   trait DBInstance extends js.Object {
@@ -1670,7 +1679,7 @@ package neptune {
   }
 
   /**
-   * <p>User already has a DB instance with the given identifier.</p>
+   * User already has a DB instance with the given identifier.
    */
   @js.native
   trait DBInstanceAlreadyExistsFaultException extends js.Object {
@@ -1678,7 +1687,7 @@ package neptune {
   }
 
   /**
-   * <p> Contains the result of a successful invocation of the <a>DescribeDBInstances</a> action. </p>
+   * Contains the result of a successful invocation of the '''DescribeDBInstances''' action.
    */
   @js.native
   trait DBInstanceMessage extends js.Object {
@@ -1699,7 +1708,7 @@ package neptune {
   }
 
   /**
-   * <p> <i>DBInstanceIdentifier</i> does not refer to an existing DB instance. </p>
+   * <i>DBInstanceIdentifier</i> does not refer to an existing DB instance.
    */
   @js.native
   trait DBInstanceNotFoundFaultException extends js.Object {
@@ -1707,7 +1716,7 @@ package neptune {
   }
 
   /**
-   * <p>Provides a list of status information for a DB instance.</p>
+   * Provides a list of status information for a DB instance.
    */
   @js.native
   trait DBInstanceStatusInfo extends js.Object {
@@ -1734,7 +1743,8 @@ package neptune {
   }
 
   /**
-   * <p>Contains the details of an Amazon Neptune DB parameter group. </p> <p>This data type is used as a response element in the <a>DescribeDBParameterGroups</a> action. </p>
+   * Contains the details of an Amazon Neptune DB parameter group.
+   *  This data type is used as a response element in the '''DescribeDBParameterGroups''' action.
    */
   @js.native
   trait DBParameterGroup extends js.Object {
@@ -1761,7 +1771,7 @@ package neptune {
   }
 
   /**
-   * <p>A DB parameter group with the same name exists.</p>
+   * A DB parameter group with the same name exists.
    */
   @js.native
   trait DBParameterGroupAlreadyExistsFaultException extends js.Object {
@@ -1769,7 +1779,7 @@ package neptune {
   }
 
   /**
-   * <p> Contains the result of a successful invocation of the <a>DescribeDBParameters</a> action. </p>
+   * Contains the result of a successful invocation of the '''DescribeDBParameters''' action.
    */
   @js.native
   trait DBParameterGroupDetails extends js.Object {
@@ -1790,7 +1800,7 @@ package neptune {
   }
 
   /**
-   * <p> Contains the result of a successful invocation of the <a>ModifyDBParameterGroup</a> or <a>ResetDBParameterGroup</a> action. </p>
+   * Contains the result of a successful invocation of the '''ModifyDBParameterGroup''' or '''ResetDBParameterGroup''' action.
    */
   @js.native
   trait DBParameterGroupNameMessage extends js.Object {
@@ -1808,7 +1818,7 @@ package neptune {
   }
 
   /**
-   * <p> <i>DBParameterGroupName</i> does not refer to an existing DB parameter group. </p>
+   * <i>DBParameterGroupName</i> does not refer to an existing DB parameter group.
    */
   @js.native
   trait DBParameterGroupNotFoundFaultException extends js.Object {
@@ -1816,7 +1826,7 @@ package neptune {
   }
 
   /**
-   * <p>Request would result in user exceeding the allowed number of DB parameter groups.</p>
+   * Request would result in user exceeding the allowed number of DB parameter groups.
    */
   @js.native
   trait DBParameterGroupQuotaExceededFaultException extends js.Object {
@@ -1824,7 +1834,12 @@ package neptune {
   }
 
   /**
-   * <p>The status of the DB parameter group.</p> <p>This data type is used as a response element in the following actions:</p> <ul> <li> <p> <a>CreateDBInstance</a> </p> </li> <li> <p> <a>DeleteDBInstance</a> </p> </li> <li> <p> <a>ModifyDBInstance</a> </p> </li> <li> <p> <a>RebootDBInstance</a> </p> </li> </ul>
+   * The status of the DB parameter group.
+   *  This data type is used as a response element in the following actions:
+   * * '''CreateDBInstance'''
+   *  * '''DeleteDBInstance'''
+   *  * '''ModifyDBInstance'''
+   *  * '''RebootDBInstance'''
    */
   @js.native
   trait DBParameterGroupStatus extends js.Object {
@@ -1845,7 +1860,7 @@ package neptune {
   }
 
   /**
-   * <p> Contains the result of a successful invocation of the <a>DescribeDBParameterGroups</a> action. </p>
+   * Contains the result of a successful invocation of the '''DescribeDBParameterGroups''' action.
    */
   @js.native
   trait DBParameterGroupsMessage extends js.Object {
@@ -1866,7 +1881,9 @@ package neptune {
   }
 
   /**
-   * <p>This data type is used as a response element in the following actions:</p> <ul> <li> <p> <a>ModifyDBInstance</a> </p> </li> <li> <p> <a>RebootDBInstance</a> </p> </li> </ul>
+   * This data type is used as a response element in the following actions:
+   * * '''ModifyDBInstance'''
+   *  * '''RebootDBInstance'''
    */
   @js.native
   trait DBSecurityGroupMembership extends js.Object {
@@ -1887,7 +1904,7 @@ package neptune {
   }
 
   /**
-   * <p> <i>DBSecurityGroupName</i> does not refer to an existing DB security group. </p>
+   * <i>DBSecurityGroupName</i> does not refer to an existing DB security group.
    */
   @js.native
   trait DBSecurityGroupNotFoundFaultException extends js.Object {
@@ -1895,7 +1912,7 @@ package neptune {
   }
 
   /**
-   * <p> <i>DBSnapshotIdentifier</i> is already used by an existing snapshot. </p>
+   * <i>DBSnapshotIdentifier</i> is already used by an existing snapshot.
    */
   @js.native
   trait DBSnapshotAlreadyExistsFaultException extends js.Object {
@@ -1903,7 +1920,7 @@ package neptune {
   }
 
   /**
-   * <p> <i>DBSnapshotIdentifier</i> does not refer to an existing DB snapshot. </p>
+   * <i>DBSnapshotIdentifier</i> does not refer to an existing DB snapshot.
    */
   @js.native
   trait DBSnapshotNotFoundFaultException extends js.Object {
@@ -1911,7 +1928,8 @@ package neptune {
   }
 
   /**
-   * <p>Contains the details of an Amazon Neptune DB subnet group. </p> <p>This data type is used as a response element in the <a>DescribeDBSubnetGroups</a> action. </p>
+   * Contains the details of an Amazon Neptune DB subnet group.
+   *  This data type is used as a response element in the '''DescribeDBSubnetGroups''' action.
    */
   @js.native
   trait DBSubnetGroup extends js.Object {
@@ -1944,7 +1962,7 @@ package neptune {
   }
 
   /**
-   * <p> <i>DBSubnetGroupName</i> is already used by an existing DB subnet group. </p>
+   * <i>DBSubnetGroupName</i> is already used by an existing DB subnet group.
    */
   @js.native
   trait DBSubnetGroupAlreadyExistsFaultException extends js.Object {
@@ -1952,7 +1970,7 @@ package neptune {
   }
 
   /**
-   * <p>Subnets in the DB subnet group should cover at least two Availability Zones unless there is only one Availability Zone.</p>
+   * Subnets in the DB subnet group should cover at least two Availability Zones unless there is only one Availability Zone.
    */
   @js.native
   trait DBSubnetGroupDoesNotCoverEnoughAZsException extends js.Object {
@@ -1960,7 +1978,7 @@ package neptune {
   }
 
   /**
-   * <p> Contains the result of a successful invocation of the <a>DescribeDBSubnetGroups</a> action. </p>
+   * Contains the result of a successful invocation of the '''DescribeDBSubnetGroups''' action.
    */
   @js.native
   trait DBSubnetGroupMessage extends js.Object {
@@ -1981,7 +1999,7 @@ package neptune {
   }
 
   /**
-   * <p> <i>DBSubnetGroupName</i> does not refer to an existing DB subnet group. </p>
+   * <i>DBSubnetGroupName</i> does not refer to an existing DB subnet group.
    */
   @js.native
   trait DBSubnetGroupNotFoundFaultException extends js.Object {
@@ -1989,7 +2007,7 @@ package neptune {
   }
 
   /**
-   * <p>Request would result in user exceeding the allowed number of DB subnet groups.</p>
+   * Request would result in user exceeding the allowed number of DB subnet groups.
    */
   @js.native
   trait DBSubnetGroupQuotaExceededFaultException extends js.Object {
@@ -1997,7 +2015,7 @@ package neptune {
   }
 
   /**
-   * <p>Request would result in user exceeding the allowed number of subnets in a DB subnet groups.</p>
+   * Request would result in user exceeding the allowed number of subnets in a DB subnet groups.
    */
   @js.native
   trait DBSubnetQuotaExceededFaultException extends js.Object {
@@ -2005,7 +2023,7 @@ package neptune {
   }
 
   /**
-   * <p>The DB upgrade failed because a resource the DB depends on could not be modified.</p>
+   * The DB upgrade failed because a resource the DB depends on could not be modified.
    */
   @js.native
   trait DBUpgradeDependencyFailureFaultException extends js.Object {
@@ -2787,7 +2805,7 @@ package neptune {
   }
 
   /**
-   * <p>An Active Directory Domain membership record associated with the DB instance.</p>
+   * An Active Directory Domain membership record associated with the DB instance.
    */
   @js.native
   trait DomainMembership extends js.Object {
@@ -2814,7 +2832,7 @@ package neptune {
   }
 
   /**
-   * <p> <i>Domain</i> does not refer to an existing Active Directory Domain. </p>
+   * <i>Domain</i> does not refer to an existing Active Directory Domain.
    */
   @js.native
   trait DomainNotFoundFaultException extends js.Object {
@@ -2822,7 +2840,7 @@ package neptune {
   }
 
   /**
-   * <p>A range of double values.</p>
+   * A range of double values.
    */
   @js.native
   trait DoubleRange extends js.Object {
@@ -2843,7 +2861,10 @@ package neptune {
   }
 
   /**
-   * <p>This data type is used as a response element in the following actions:</p> <ul> <li> <p> <a>CreateDBInstance</a> </p> </li> <li> <p> <a>DescribeDBInstances</a> </p> </li> <li> <p> <a>DeleteDBInstance</a> </p> </li> </ul>
+   * This data type is used as a response element in the following actions:
+   * * '''CreateDBInstance'''
+   *  * '''DescribeDBInstances'''
+   *  * '''DeleteDBInstance'''
    */
   @js.native
   trait Endpoint extends js.Object {
@@ -2867,7 +2888,7 @@ package neptune {
   }
 
   /**
-   * <p> Contains the result of a successful invocation of the <a>DescribeEngineDefaultParameters</a> action. </p>
+   * Contains the result of a successful invocation of the '''DescribeEngineDefaultParameters''' action.
    */
   @js.native
   trait EngineDefaults extends js.Object {
@@ -2891,7 +2912,7 @@ package neptune {
   }
 
   /**
-   * <p> This data type is used as a response element in the <a>DescribeEvents</a> action. </p>
+   * This data type is used as a response element in the '''DescribeEvents''' action.
    */
   @js.native
   trait Event extends js.Object {
@@ -2924,7 +2945,7 @@ package neptune {
   }
 
   /**
-   * <p>Contains the results of a successful invocation of the <a>DescribeEventCategories</a> action.</p>
+   * Contains the results of a successful invocation of the '''DescribeEventCategories''' action.
    */
   @js.native
   trait EventCategoriesMap extends js.Object {
@@ -2945,7 +2966,7 @@ package neptune {
   }
 
   /**
-   * <p>Data returned from the <b>DescribeEventCategories</b> action.</p>
+   * Data returned from the <b>DescribeEventCategories</b> action.
    */
   @js.native
   trait EventCategoriesMessage extends js.Object {
@@ -2963,7 +2984,7 @@ package neptune {
   }
 
   /**
-   * <p>Contains the results of a successful invocation of the <a>DescribeEventSubscriptions</a> action.</p>
+   * Contains the results of a successful invocation of the '''DescribeEventSubscriptions''' action.
    */
   @js.native
   trait EventSubscription extends js.Object {
@@ -3013,7 +3034,7 @@ package neptune {
   }
 
   /**
-   * <p>Data returned by the <b>DescribeEventSubscriptions</b> action.</p>
+   * Data returned by the <b>DescribeEventSubscriptions</b> action.
    */
   @js.native
   trait EventSubscriptionsMessage extends js.Object {
@@ -3034,7 +3055,7 @@ package neptune {
   }
 
   /**
-   * <p> Contains the result of a successful invocation of the <a>DescribeEvents</a> action. </p>
+   * Contains the result of a successful invocation of the '''DescribeEvents''' action.
    */
   @js.native
   trait EventsMessage extends js.Object {
@@ -3091,7 +3112,7 @@ package neptune {
   }
 
   /**
-   * <p>This type is not currently supported.</p>
+   * This type is not currently supported.
    */
   @js.native
   trait Filter extends js.Object {
@@ -3112,7 +3133,7 @@ package neptune {
   }
 
   /**
-   * <p>Request would result in user exceeding the allowed number of DB instances.</p>
+   * Request would result in user exceeding the allowed number of DB instances.
    */
   @js.native
   trait InstanceQuotaExceededFaultException extends js.Object {
@@ -3120,7 +3141,7 @@ package neptune {
   }
 
   /**
-   * <p>The DB cluster does not have enough capacity for the current operation.</p>
+   * The DB cluster does not have enough capacity for the current operation.
    */
   @js.native
   trait InsufficientDBClusterCapacityFaultException extends js.Object {
@@ -3128,7 +3149,7 @@ package neptune {
   }
 
   /**
-   * <p>Specified DB instance class is not available in the specified Availability Zone.</p>
+   * Specified DB instance class is not available in the specified Availability Zone.
    */
   @js.native
   trait InsufficientDBInstanceCapacityFaultException extends js.Object {
@@ -3136,7 +3157,7 @@ package neptune {
   }
 
   /**
-   * <p>There is insufficient storage available for the current action. You may be able to resolve this error by updating your subnet group to use different Availability Zones that have more storage available.</p>
+   * There is insufficient storage available for the current action. You may be able to resolve this error by updating your subnet group to use different Availability Zones that have more storage available.
    */
   @js.native
   trait InsufficientStorageClusterCapacityFaultException extends js.Object {
@@ -3144,7 +3165,7 @@ package neptune {
   }
 
   /**
-   * <p>The supplied value is not a valid DB cluster snapshot state.</p>
+   * The supplied value is not a valid DB cluster snapshot state.
    */
   @js.native
   trait InvalidDBClusterSnapshotStateFaultException extends js.Object {
@@ -3152,7 +3173,7 @@ package neptune {
   }
 
   /**
-   * <p>The DB cluster is not in a valid state.</p>
+   * The DB cluster is not in a valid state.
    */
   @js.native
   trait InvalidDBClusterStateFaultException extends js.Object {
@@ -3160,7 +3181,7 @@ package neptune {
   }
 
   /**
-   * <p> The specified DB instance is not in the <i>available</i> state. </p>
+   * The specified DB instance is not in the <i>available</i> state.
    */
   @js.native
   trait InvalidDBInstanceStateFaultException extends js.Object {
@@ -3168,7 +3189,7 @@ package neptune {
   }
 
   /**
-   * <p>The DB parameter group is in use or is in an invalid state. If you are attempting to delete the parameter group, you cannot delete it when the parameter group is in this state.</p>
+   * The DB parameter group is in use or is in an invalid state. If you are attempting to delete the parameter group, you cannot delete it when the parameter group is in this state.
    */
   @js.native
   trait InvalidDBParameterGroupStateFaultException extends js.Object {
@@ -3176,7 +3197,7 @@ package neptune {
   }
 
   /**
-   * <p>The state of the DB security group does not allow deletion.</p>
+   * The state of the DB security group does not allow deletion.
    */
   @js.native
   trait InvalidDBSecurityGroupStateFaultException extends js.Object {
@@ -3184,7 +3205,7 @@ package neptune {
   }
 
   /**
-   * <p>The state of the DB snapshot does not allow deletion.</p>
+   * The state of the DB snapshot does not allow deletion.
    */
   @js.native
   trait InvalidDBSnapshotStateFaultException extends js.Object {
@@ -3192,7 +3213,7 @@ package neptune {
   }
 
   /**
-   * <p>The DB subnet group cannot be deleted because it is in use.</p>
+   * The DB subnet group cannot be deleted because it is in use.
    */
   @js.native
   trait InvalidDBSubnetGroupStateFaultException extends js.Object {
@@ -3200,7 +3221,7 @@ package neptune {
   }
 
   /**
-   * <p> The DB subnet is not in the <i>available</i> state. </p>
+   * The DB subnet is not in the <i>available</i> state.
    */
   @js.native
   trait InvalidDBSubnetStateFaultException extends js.Object {
@@ -3213,7 +3234,7 @@ package neptune {
   }
 
   /**
-   * <p>Cannot restore from vpc backup to non-vpc DB instance.</p>
+   * Cannot restore from vpc backup to non-vpc DB instance.
    */
   @js.native
   trait InvalidRestoreFaultException extends js.Object {
@@ -3221,7 +3242,7 @@ package neptune {
   }
 
   /**
-   * <p>The requested subnet is invalid, or multiple subnets were requested that are not all in a common VPC.</p>
+   * The requested subnet is invalid, or multiple subnets were requested that are not all in a common VPC.
    */
   @js.native
   trait InvalidSubnetException extends js.Object {
@@ -3229,7 +3250,7 @@ package neptune {
   }
 
   /**
-   * <p>DB subnet group does not cover all Availability Zones after it is created because users' change.</p>
+   * DB subnet group does not cover all Availability Zones after it is created because users' change.
    */
   @js.native
   trait InvalidVPCNetworkStateFaultException extends js.Object {
@@ -3237,7 +3258,7 @@ package neptune {
   }
 
   /**
-   * <p>Error accessing KMS key.</p>
+   * Error accessing KMS key.
    */
   @js.native
   trait KMSKeyNotAccessibleFaultException extends js.Object {
@@ -3641,7 +3662,7 @@ package neptune {
   }
 
   /**
-   * <p>Provides information on the option groups the DB instance is a member of.</p>
+   * Provides information on the option groups the DB instance is a member of.
    */
   @js.native
   trait OptionGroupMembership extends js.Object {
@@ -3667,7 +3688,8 @@ package neptune {
   }
 
   /**
-   * <p>Contains a list of available options for a DB instance.</p> <p> This data type is used as a response element in the <a>DescribeOrderableDBInstanceOptions</a> action. </p>
+   * Contains a list of available options for a DB instance.
+   *  This data type is used as a response element in the '''DescribeOrderableDBInstanceOptions''' action.
    */
   @js.native
   trait OrderableDBInstanceOption extends js.Object {
@@ -3742,7 +3764,7 @@ package neptune {
   }
 
   /**
-   * <p> Contains the result of a successful invocation of the <a>DescribeOrderableDBInstanceOptions</a> action. </p>
+   * Contains the result of a successful invocation of the '''DescribeOrderableDBInstanceOptions''' action.
    */
   @js.native
   trait OrderableDBInstanceOptionsMessage extends js.Object {
@@ -3763,7 +3785,8 @@ package neptune {
   }
 
   /**
-   * <p> This data type is used as a request parameter in the <a>ModifyDBParameterGroup</a> and <a>ResetDBParameterGroup</a> actions. </p> <p>This data type is used as a response element in the <a>DescribeEngineDefaultParameters</a> and <a>DescribeDBParameters</a> actions.</p>
+   * This data type is used as a request parameter in the '''ModifyDBParameterGroup''' and '''ResetDBParameterGroup''' actions.
+   *  This data type is used as a response element in the '''DescribeEngineDefaultParameters''' and '''DescribeDBParameters''' actions.
    */
   @js.native
   trait Parameter extends js.Object {
@@ -3808,7 +3831,7 @@ package neptune {
   }
 
   /**
-   * <p>A list of the log types whose configuration is still pending. In other words, these log types are in the process of being activated or deactivated.</p>
+   * A list of the log types whose configuration is still pending. In other words, these log types are in the process of being activated or deactivated.
    */
   @js.native
   trait PendingCloudwatchLogsExports extends js.Object {
@@ -3829,7 +3852,7 @@ package neptune {
   }
 
   /**
-   * <p>Provides information about a pending maintenance action for a resource.</p>
+   * Provides information about a pending maintenance action for a resource.
    */
   @js.native
   trait PendingMaintenanceAction extends js.Object {
@@ -3862,7 +3885,7 @@ package neptune {
   }
 
   /**
-   * <p>Data returned from the <b>DescribePendingMaintenanceActions</b> action.</p>
+   * Data returned from the <b>DescribePendingMaintenanceActions</b> action.
    */
   @js.native
   trait PendingMaintenanceActionsMessage extends js.Object {
@@ -3883,7 +3906,7 @@ package neptune {
   }
 
   /**
-   * <p> This data type is used as a response element in the <a>ModifyDBInstance</a> action. </p>
+   * This data type is used as a response element in the '''ModifyDBInstance''' action.
    */
   @js.native
   trait PendingModifiedValues extends js.Object {
@@ -3973,7 +3996,7 @@ package neptune {
   }
 
   /**
-   * <p>Provisioned IOPS not available in the specified Availability Zone.</p>
+   * Provisioned IOPS not available in the specified Availability Zone.
    */
   @js.native
   trait ProvisionedIopsNotAvailableInAZFaultException extends js.Object {
@@ -3981,7 +4004,7 @@ package neptune {
   }
 
   /**
-   * <p>A range of integer values.</p>
+   * A range of integer values.
    */
   @js.native
   trait Range extends js.Object {
@@ -4164,7 +4187,7 @@ package neptune {
   }
 
   /**
-   * <p>The specified resource ID was not found.</p>
+   * The specified resource ID was not found.
    */
   @js.native
   trait ResourceNotFoundFaultException extends js.Object {
@@ -4172,7 +4195,7 @@ package neptune {
   }
 
   /**
-   * <p>Describes the pending maintenance actions for a resource.</p>
+   * Describes the pending maintenance actions for a resource.
    */
   @js.native
   trait ResourcePendingMaintenanceActions extends js.Object {
@@ -4343,7 +4366,7 @@ package neptune {
   }
 
   /**
-   * <p>You have exceeded the maximum number of accounts that you can share a manual DB snapshot with.</p>
+   * You have exceeded the maximum number of accounts that you can share a manual DB snapshot with.
    */
   @js.native
   trait SharedSnapshotQuotaExceededFaultException extends js.Object {
@@ -4351,7 +4374,7 @@ package neptune {
   }
 
   /**
-   * <p>Request would result in user exceeding the allowed number of DB snapshots.</p>
+   * Request would result in user exceeding the allowed number of DB snapshots.
    */
   @js.native
   trait SnapshotQuotaExceededFaultException extends js.Object {
@@ -4375,7 +4398,7 @@ package neptune {
   }
 
   /**
-   * <p>Request would result in user exceeding the allowed amount of storage available across all DB instances.</p>
+   * Request would result in user exceeding the allowed amount of storage available across all DB instances.
    */
   @js.native
   trait StorageQuotaExceededFaultException extends js.Object {
@@ -4383,7 +4406,7 @@ package neptune {
   }
 
   /**
-   * <p> <i>StorageType</i> specified cannot be associated with the DB Instance. </p>
+   * <i>StorageType</i> specified cannot be associated with the DB Instance.
    */
   @js.native
   trait StorageTypeNotSupportedFaultException extends js.Object {
@@ -4391,7 +4414,7 @@ package neptune {
   }
 
   /**
-   * <p> This data type is used as a response element in the <a>DescribeDBSubnetGroups</a> action. </p>
+   * This data type is used as a response element in the '''DescribeDBSubnetGroups''' action.
    */
   @js.native
   trait Subnet extends js.Object {
@@ -4415,7 +4438,7 @@ package neptune {
   }
 
   /**
-   * <p>The DB subnet is already in use in the Availability Zone.</p>
+   * The DB subnet is already in use in the Availability Zone.
    */
   @js.native
   trait SubnetAlreadyInUseException extends js.Object {
@@ -4438,7 +4461,7 @@ package neptune {
   }
 
   /**
-   * <p>Metadata assigned to an Amazon Neptune resource consisting of a key-value pair.</p>
+   * Metadata assigned to an Amazon Neptune resource consisting of a key-value pair.
    */
   @js.native
   trait Tag extends js.Object {
@@ -4477,7 +4500,7 @@ package neptune {
   }
 
   /**
-   * <p>A time zone associated with a <a>DBInstance</a>. This data type is an element in the response to the <a>DescribeDBInstances</a>, and the <a>DescribeDBEngineVersions</a> actions. </p>
+   * A time zone associated with a '''DBInstance'''. This data type is an element in the response to the '''DescribeDBInstances''', and the '''DescribeDBEngineVersions''' actions.
    */
   @js.native
   trait Timezone extends js.Object {
@@ -4495,7 +4518,7 @@ package neptune {
   }
 
   /**
-   * <p>The version of the database engine that a DB instance can be upgraded to.</p>
+   * The version of the database engine that a DB instance can be upgraded to.
    */
   @js.native
   trait UpgradeTarget extends js.Object {
@@ -4525,7 +4548,7 @@ package neptune {
   }
 
   /**
-   * <p>Information about valid modifications that you can make to your DB instance. Contains the result of a successful call to the <a>DescribeValidDBInstanceModifications</a> action. You can use this information when you call <a>ModifyDBInstance</a>. </p>
+   * Information about valid modifications that you can make to your DB instance. Contains the result of a successful call to the '''DescribeValidDBInstanceModifications''' action. You can use this information when you call '''ModifyDBInstance'''.
    */
   @js.native
   trait ValidDBInstanceModificationsMessage extends js.Object {
@@ -4543,7 +4566,7 @@ package neptune {
   }
 
   /**
-   * <p>Information about valid modifications that you can make to your DB instance. Contains the result of a successful call to the <a>DescribeValidDBInstanceModifications</a> action. </p>
+   * Information about valid modifications that you can make to your DB instance. Contains the result of a successful call to the '''DescribeValidDBInstanceModifications''' action.
    */
   @js.native
   trait ValidStorageOptions extends js.Object {
@@ -4570,7 +4593,7 @@ package neptune {
   }
 
   /**
-   * <p>This data type is used as a response element for queries on VPC security group membership.</p>
+   * This data type is used as a response element for queries on VPC security group membership.
    */
   @js.native
   trait VpcSecurityGroupMembership extends js.Object {

@@ -87,7 +87,7 @@ package acm {
   }
 
   /**
-   * <p>Contains metadata about an ACM certificate. This structure is returned in the response to a <a>DescribeCertificate</a> request. </p>
+   * Contains metadata about an ACM certificate. This structure is returned in the response to a '''DescribeCertificate''' request.
    */
   @js.native
   trait CertificateDetail extends js.Object {
@@ -180,7 +180,7 @@ package acm {
   }
 
   /**
-   * <p>Structure that contains options for your certificate. Currently, you can use this only to specify whether to opt in to or out of certificate transparency logging. Some browsers require that public certificates issued for your domain be recorded in a log. Certificates that are not logged typically generate a browser error. Transparency makes it possible for you to detect SSL/TLS certificates that have been mistakenly or maliciously issued for your domain. For general information, see <a href="http://docs.aws.amazon.com/acm/latest/userguide/acm-concepts.html#concept-transparency">Certificate Transparency Logging</a>. </p>
+   * Structure that contains options for your certificate. Currently, you can use this only to specify whether to opt in to or out of certificate transparency logging. Some browsers require that public certificates issued for your domain be recorded in a log. Certificates that are not logged typically generate a browser error. Transparency makes it possible for you to detect SSL/TLS certificates that have been mistakenly or maliciously issued for your domain. For general information, see <a href="http://docs.aws.amazon.com/acm/latest/userguide/acm-concepts.html#concept-transparency">Certificate Transparency Logging</a>.
    */
   @js.native
   trait CertificateOptions extends js.Object {
@@ -210,7 +210,7 @@ package acm {
   }
 
   /**
-   * <p>This structure is returned in the response object of <a>ListCertificates</a> action. </p>
+   * This structure is returned in the response object of '''ListCertificates''' action.
    */
   @js.native
   trait CertificateSummary extends js.Object {
@@ -299,7 +299,7 @@ package acm {
   }
 
   /**
-   * <p>Contains information about the validation of each domain name in the certificate.</p>
+   * Contains information about the validation of each domain name in the certificate.
    */
   @js.native
   trait DomainValidation extends js.Object {
@@ -332,7 +332,7 @@ package acm {
   }
 
   /**
-   * <p>Contains information about the domain names that you want ACM to use to send you emails that enable you to validate domain ownership.</p>
+   * Contains information about the domain names that you want ACM to use to send you emails that enable you to validate domain ownership.
    */
   @js.native
   trait DomainValidationOption extends js.Object {
@@ -392,7 +392,7 @@ package acm {
   }
 
   /**
-   * <p>The Extended Key Usage X.509 v3 extension defines one or more purposes for which the public key can be used. This is in addition to or in place of the basic purposes specified by the Key Usage extension. </p>
+   * The Extended Key Usage X.509 v3 extension defines one or more purposes for which the public key can be used. This is in addition to or in place of the basic purposes specified by the Key Usage extension.
    */
   @js.native
   trait ExtendedKeyUsage extends js.Object {
@@ -447,7 +447,7 @@ package acm {
   }
 
   /**
-   * <p>This structure can be used in the <a>ListCertificates</a> action to filter the output of the certificate list. </p>
+   * This structure can be used in the '''ListCertificates''' action to filter the output of the certificate list.
    */
   @js.native
   trait Filters extends js.Object {
@@ -543,7 +543,7 @@ package acm {
   }
 
   /**
-   * <p>The requested Amazon Resource Name (ARN) does not refer to an existing resource.</p>
+   * The requested Amazon Resource Name (ARN) does not refer to an existing resource.
    */
   @js.native
   trait InvalidArnExceptionException extends js.Object {
@@ -551,7 +551,7 @@ package acm {
   }
 
   /**
-   * <p>One or more values in the <a>DomainValidationOption</a> structure is incorrect.</p>
+   * One or more values in the '''DomainValidationOption''' structure is incorrect.
    */
   @js.native
   trait InvalidDomainValidationOptionsExceptionException extends js.Object {
@@ -559,7 +559,7 @@ package acm {
   }
 
   /**
-   * <p>Processing has reached an invalid state.</p>
+   * Processing has reached an invalid state.
    */
   @js.native
   trait InvalidStateExceptionException extends js.Object {
@@ -567,7 +567,7 @@ package acm {
   }
 
   /**
-   * <p>One or both of the values that make up the key-value pair is not valid. For example, you cannot specify a tag value that begins with <code>aws:</code>.</p>
+   * One or both of the values that make up the key-value pair is not valid. For example, you cannot specify a tag value that begins with <code>aws:</code>.
    */
   @js.native
   trait InvalidTagExceptionException extends js.Object {
@@ -586,7 +586,7 @@ package acm {
   }
 
   /**
-   * <p>The Key Usage X.509 v3 extension defines the purpose of the public key contained in the certificate.</p>
+   * The Key Usage X.509 v3 extension defines the purpose of the public key contained in the certificate.
    */
   @js.native
   trait KeyUsage extends js.Object {
@@ -620,7 +620,7 @@ package acm {
   }
 
   /**
-   * <p>An ACM limit has been exceeded.</p>
+   * An ACM limit has been exceeded.
    */
   @js.native
   trait LimitExceededExceptionException extends js.Object {
@@ -740,7 +740,7 @@ package acm {
   }
 
   /**
-   * <p>Contains information about the status of ACM's <a href="http://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed renewal</a> for the certificate. This structure exists only when the certificate type is <code>AMAZON_ISSUED</code>.</p>
+   * Contains information about the status of ACM's <a href="http://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed renewal</a> for the certificate. This structure exists only when the certificate type is <code>AMAZON_ISSUED</code>.
    */
   @js.native
   trait RenewalSummary extends js.Object {
@@ -809,7 +809,7 @@ package acm {
   }
 
   /**
-   * <p>The certificate request is in process and the certificate in your account has not yet been issued.</p>
+   * The certificate request is in process and the certificate in your account has not yet been issued.
    */
   @js.native
   trait RequestInProgressExceptionException extends js.Object {
@@ -838,7 +838,7 @@ package acm {
   }
 
   /**
-   * <p>The certificate is in use by another AWS service in the caller's account. Remove the association and try again.</p>
+   * The certificate is in use by another AWS service in the caller's account. Remove the association and try again.
    */
   @js.native
   trait ResourceInUseExceptionException extends js.Object {
@@ -846,7 +846,7 @@ package acm {
   }
 
   /**
-   * <p>The specified certificate cannot be found in the caller's account or the caller's account cannot be found.</p>
+   * The specified certificate cannot be found in the caller's account or the caller's account cannot be found.
    */
   @js.native
   trait ResourceNotFoundExceptionException extends js.Object {
@@ -854,7 +854,7 @@ package acm {
   }
 
   /**
-   * <p>Contains a DNS record value that you can use to can use to validate ownership or control of a domain. This is used by the <a>DescribeCertificate</a> action. </p>
+   * Contains a DNS record value that you can use to can use to validate ownership or control of a domain. This is used by the '''DescribeCertificate''' action.
    */
   @js.native
   trait ResourceRecord extends js.Object {
@@ -893,7 +893,7 @@ package acm {
   }
 
   /**
-   * <p>A key-value pair that identifies or specifies metadata about an ACM resource.</p>
+   * A key-value pair that identifies or specifies metadata about an ACM resource.
    */
   @js.native
   trait Tag extends js.Object {
@@ -914,7 +914,7 @@ package acm {
   }
 
   /**
-   * <p>The request contains too many tags. Try the request again with fewer tags.</p>
+   * The request contains too many tags. Try the request again with fewer tags.
    */
   @js.native
   trait TooManyTagsExceptionException extends js.Object {

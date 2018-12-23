@@ -58,7 +58,7 @@ package kinesisvideo {
   }
 
   /**
-   * <p>The number of streams created for the account is too high.</p>
+   * The number of streams created for the account is too high.
    */
   @js.native
   trait AccountStreamLimitExceededExceptionException extends js.Object {
@@ -66,7 +66,7 @@ package kinesisvideo {
   }
 
   /**
-   * <p>Kinesis Video Streams has throttled the request because you have exceeded the limit of allowed client calls. Try making the call later.</p>
+   * Kinesis Video Streams has throttled the request because you have exceeded the limit of allowed client calls. Try making the call later.
    */
   @js.native
   trait ClientLimitExceededExceptionException extends js.Object {
@@ -186,7 +186,7 @@ package kinesisvideo {
   }
 
   /**
-   * <p>Not implemented. </p>
+   * Not implemented.
    */
   @js.native
   trait DeviceStreamLimitExceededExceptionException extends js.Object {
@@ -230,7 +230,7 @@ package kinesisvideo {
   }
 
   /**
-   * <p>The value for this input parameter is invalid.</p>
+   * The value for this input parameter is invalid.
    */
   @js.native
   trait InvalidArgumentExceptionException extends js.Object {
@@ -238,7 +238,7 @@ package kinesisvideo {
   }
 
   /**
-   * <p>Not implemented.</p>
+   * Not implemented.
    */
   @js.native
   trait InvalidDeviceExceptionException extends js.Object {
@@ -246,7 +246,7 @@ package kinesisvideo {
   }
 
   /**
-   * <p>The format of the <code>StreamARN</code> is invalid.</p>
+   * The format of the <code>StreamARN</code> is invalid.
    */
   @js.native
   trait InvalidResourceFormatExceptionException extends js.Object {
@@ -332,7 +332,7 @@ package kinesisvideo {
   }
 
   /**
-   * <p>The caller is not authorized to perform this operation.</p>
+   * The caller is not authorized to perform this operation.
    */
   @js.native
   trait NotAuthorizedExceptionException extends js.Object {
@@ -340,7 +340,7 @@ package kinesisvideo {
   }
 
   /**
-   * <p>The stream is currently not available for this operation.</p>
+   * The stream is currently not available for this operation.
    */
   @js.native
   trait ResourceInUseExceptionException extends js.Object {
@@ -348,7 +348,7 @@ package kinesisvideo {
   }
 
   /**
-   * <p>Amazon Kinesis Video Streams can't find the stream that you specified.</p>
+   * Amazon Kinesis Video Streams can't find the stream that you specified.
    */
   @js.native
   trait ResourceNotFoundExceptionException extends js.Object {
@@ -365,7 +365,7 @@ package kinesisvideo {
   }
 
   /**
-   * <p>An object describing a Kinesis video stream.</p>
+   * An object describing a Kinesis video stream.
    */
   @js.native
   trait StreamInfo extends js.Object {
@@ -407,7 +407,7 @@ package kinesisvideo {
   }
 
   /**
-   * <p>Specifies the condition that streams must satisfy to be returned when you list streams (see the <code>ListStreams</code> API). A condition has a comparison operation and a value. Currently, you can specify only the <code>BEGINS_WITH</code> operator, which finds streams whose names start with a given prefix. </p>
+   * Specifies the condition that streams must satisfy to be returned when you list streams (see the <code>ListStreams</code> API). A condition has a comparison operation and a value. Currently, you can specify only the <code>BEGINS_WITH</code> operator, which finds streams whose names start with a given prefix.
    */
   @js.native
   trait StreamNameCondition extends js.Object {
@@ -462,7 +462,7 @@ package kinesisvideo {
   }
 
   /**
-   * <p>You have exceeded the limit of tags that you can associate with the resource. Kinesis video streams support up to 50 tags. </p>
+   * You have exceeded the limit of tags that you can associate with the resource. Kinesis video streams support up to 50 tags.
    */
   @js.native
   trait TagsPerResourceExceededLimitExceptionException extends js.Object {
@@ -591,7 +591,7 @@ package kinesisvideo {
   }
 
   /**
-   * <p>The stream version that you specified is not the latest version. To get the latest version, use the <a href="http://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_DescribeStream.html">DescribeStream</a> API.</p>
+   * The stream version that you specified is not the latest version. To get the latest version, use the <a href="http://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_DescribeStream.html">DescribeStream</a> API.
    */
   @js.native
   trait VersionMismatchExceptionException extends js.Object {

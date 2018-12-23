@@ -39,7 +39,7 @@ package translate {
   }
 
   /**
-   * <p>The custom terminology applied to the input text by Amazon Translate for the translated text response. This is optional in the response and will only be present if you specified terminology input in the request. Currently, only one terminology can be applied per TranslateText request.</p>
+   * The custom terminology applied to the input text by Amazon Translate for the translated text response. This is optional in the response and will only be present if you specified terminology input in the request. Currently, only one terminology can be applied per TranslateText request.
    */
   @js.native
   trait AppliedTerminology extends js.Object {
@@ -75,7 +75,7 @@ package translate {
   }
 
   /**
-   * <p>The encryption key used to encrypt the custom terminologies used by Amazon Translate.</p>
+   * The encryption key used to encrypt the custom terminologies used by Amazon Translate.
    */
   @js.native
   trait EncryptionKey extends js.Object {
@@ -222,7 +222,7 @@ package translate {
   }
 
   /**
-   * <p>The term being translated by the custom terminology.</p>
+   * The term being translated by the custom terminology.
    */
   @js.native
   trait Term extends js.Object {
@@ -243,7 +243,7 @@ package translate {
   }
 
   /**
-   * <p>The data associated with the custom terminology.</p>
+   * The data associated with the custom terminology.
    */
   @js.native
   trait TerminologyData extends js.Object {
@@ -271,7 +271,7 @@ package translate {
   }
 
   /**
-   * <p>The location of the custom terminology data.</p>
+   * The location of the custom terminology data.
    */
   @js.native
   trait TerminologyDataLocation extends js.Object {
@@ -292,7 +292,7 @@ package translate {
   }
 
   /**
-   * <p>The properties of the custom terminology.</p>
+   * The properties of the custom terminology.
    */
   @js.native
   trait TerminologyProperties extends js.Object {

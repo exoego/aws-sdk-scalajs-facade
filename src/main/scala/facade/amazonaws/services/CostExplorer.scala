@@ -100,7 +100,7 @@ package costexplorer {
   }
 
   /**
-   * <p>The amount of instance usage that a reservation covered.</p>
+   * The amount of instance usage that a reservation covered.
    */
   @js.native
   trait Coverage extends js.Object {
@@ -118,7 +118,7 @@ package costexplorer {
   }
 
   /**
-   * <p>Reservation coverage for a specified period, in hours.</p>
+   * Reservation coverage for a specified period, in hours.
    */
   @js.native
   trait CoverageByTime extends js.Object {
@@ -142,7 +142,7 @@ package costexplorer {
   }
 
   /**
-   * <p>How long a running instance either used a reservation or was On-Demand.</p>
+   * How long a running instance either used a reservation or was On-Demand.
    */
   @js.native
   trait CoverageHours extends js.Object {
@@ -169,7 +169,7 @@ package costexplorer {
   }
 
   /**
-   * <p>The time period that you want the usage and costs for. </p>
+   * The time period that you want the usage and costs for.
    */
   @js.native
   trait DateInterval extends js.Object {
@@ -217,7 +217,7 @@ package costexplorer {
   }
 
   /**
-   * <p>The metadata that you can use to filter and group your results. You can use <code>GetDimensionValues</code> to find specific values.</p>
+   * The metadata that you can use to filter and group your results. You can use <code>GetDimensionValues</code> to find specific values.
    */
   @js.native
   trait DimensionValues extends js.Object {
@@ -238,7 +238,7 @@ package costexplorer {
   }
 
   /**
-   * <p>The metadata of a specific type that you can use to filter and group your results. You can use <code>GetDimensionValues</code> to find specific values.</p>
+   * The metadata of a specific type that you can use to filter and group your results. You can use <code>GetDimensionValues</code> to find specific values.
    */
   @js.native
   trait DimensionValuesWithAttributes extends js.Object {
@@ -259,7 +259,7 @@ package costexplorer {
   }
 
   /**
-   * <p>Details about the EC2 instances that AWS recommends that you purchase.</p>
+   * Details about the EC2 instances that AWS recommends that you purchase.
    */
   @js.native
   trait EC2InstanceDetails extends js.Object {
@@ -298,7 +298,7 @@ package costexplorer {
   }
 
   /**
-   * <p>The EC2 hardware specifications that you want AWS to provide recommendations for.</p>
+   * The EC2 hardware specifications that you want AWS to provide recommendations for.
    */
   @js.native
   trait EC2Specification extends js.Object {
@@ -316,7 +316,7 @@ package costexplorer {
   }
 
   /**
-   * <p>Details about the ES instances that AWS recommends that you purchase.</p>
+   * Details about the ES instances that AWS recommends that you purchase.
    */
   @js.native
   trait ESInstanceDetails extends js.Object {
@@ -346,7 +346,7 @@ package costexplorer {
   }
 
   /**
-   * <p>Details about the ElastiCache instances that AWS recommends that you purchase.</p>
+   * Details about the ElastiCache instances that AWS recommends that you purchase.
    */
   @js.native
   trait ElastiCacheInstanceDetails extends js.Object {
@@ -379,7 +379,16 @@ package costexplorer {
   }
 
   /**
-   * <p>Use <code>Expression</code> to filter by cost or by usage. There are two patterns: </p> <ul> <li> <p>Simple dimension values - You can set the dimension name and values for the filters that you plan to use. For example, you can filter for <code>INSTANCE_TYPE==m4.xlarge OR INSTANCE_TYPE==c4.large</code>. The <code>Expression</code> for that looks like this:</p> <p> <code>{ "Dimensions": { "Key": "INSTANCE_TYPE", "Values": [ "m4.xlarge", �gc4.large�h ] } }</code> </p> <p>The list of dimension values are OR'd together to retrieve cost or usage data. You can create <code>Expression</code> and <code>DimensionValues</code> objects using either <code>with*</code> methods or <code>set*</code> methods in multiple lines. </p> </li> <li> <p>Compound dimension values with logical operations - You can use multiple <code>Expression</code> types and the logical operators <code>AND/OR/NOT</code> to create a list of one or more <code>Expression</code> objects. This allows you to filter on more advanced options. For example, you can filter on <code>((INSTANCE_TYPE == m4.large OR INSTANCE_TYPE == m3.large) OR (TAG.Type == Type1)) AND (USAGE_TYPE != DataTransfer)</code>. The <code>Expression</code> for that looks like this:</p> <p> <code>{ "And": [ {"Or": [ {"Dimensions": { "Key": "INSTANCE_TYPE", "Values": [ "m4.x.large", "c4.large" ] }}, {"Tags": { "Key": "TagName", "Values": ["Value1"] } } ]}, {"Not": {"Dimensions": { "Key": "USAGE_TYPE", "Values": ["DataTransfer"] }}} ] } </code> </p> <note> <p>Because each <code>Expression</code> can have only one operator, the service returns an error if more than one is specified. The following example shows an <code>Expression</code> object that creates an error.</p> </note> <p> <code> { "And": [ ... ], "DimensionValues": { "Dimension": "USAGE_TYPE", "Values": [ "DataTransfer" ] } } </code> </p> </li> </ul>
+   * Use <code>Expression</code> to filter by cost or by usage. There are two patterns:
+   * * Simple dimension values - You can set the dimension name and values for the filters that you plan to use. For example, you can filter for <code>INSTANCE_TYPE==m4.xlarge OR INSTANCE_TYPE==c4.large</code>. The <code>Expression</code> for that looks like this:
+   *  <code>{ "Dimensions": { "Key": "INSTANCE_TYPE", "Values": [ "m4.xlarge", �gc4.large�h ] } }</code>
+   *  The list of dimension values are OR'd together to retrieve cost or usage data. You can create <code>Expression</code> and <code>DimensionValues</code> objects using either <code>with*</code> methods or <code>set*</code> methods in multiple lines.
+   *  <li> Compound dimension values with logical operations - You can use multiple <code>Expression</code> types and the logical operators <code>AND/OR/NOT</code> to create a list of one or more <code>Expression</code> objects. This allows you to filter on more advanced options. For example, you can filter on <code>((INSTANCE_TYPE == m4.large OR INSTANCE_TYPE == m3.large) OR (TAG.Type == Type1)) AND (USAGE_TYPE != DataTransfer)</code>. The <code>Expression</code> for that looks like this:
+   *  <code>{ "And": [ {"Or": [ {"Dimensions": { "Key": "INSTANCE_TYPE", "Values": [ "m4.x.large", "c4.large" ] }}, {"Tags": { "Key": "TagName", "Values": ["Value1"] } } ]}, {"Not": {"Dimensions": { "Key": "USAGE_TYPE", "Values": ["DataTransfer"] }}} ] } </code>
+   *
+   * '''Note:'''Because each <code>Expression</code> can have only one operator, the service returns an error if more than one is specified. The following example shows an <code>Expression</code> object that creates an error.
+   * <code> { "And": [ ... ], "DimensionValues": { "Dimension": "USAGE_TYPE", "Values": [ "DataTransfer" ] } } </code>
+   *  </li>
    */
   @js.native
   trait Expression extends js.Object {
@@ -409,7 +418,7 @@ package costexplorer {
   }
 
   /**
-   * <p>The forecast created for your query.</p>
+   * The forecast created for your query.
    */
   @js.native
   trait ForecastResult extends js.Object {
@@ -583,7 +592,7 @@ package costexplorer {
   }
 
   /**
-   * <p>You can use the following request parameters to query for how much of your instance usage is covered by a reservation.</p>
+   * You can use the following request parameters to query for how much of your instance usage is covered by a reservation.
    */
   @js.native
   trait GetReservationCoverageRequest extends js.Object {
@@ -798,7 +807,7 @@ package costexplorer {
   }
 
   /**
-   * <p>One level of grouped data within the results.</p>
+   * One level of grouped data within the results.
    */
   @js.native
   trait Group extends js.Object {
@@ -819,7 +828,7 @@ package costexplorer {
   }
 
   /**
-   * <p>Represents a group when you specify a group by criteria, or in the response to a query with a specific grouping.</p>
+   * Represents a group when you specify a group by criteria, or in the response to a query with a specific grouping.
    */
   @js.native
   trait GroupDefinition extends js.Object {
@@ -847,7 +856,7 @@ package costexplorer {
   }
 
   /**
-   * <p>Details about the instances that AWS recommends that you purchase.</p>
+   * Details about the instances that AWS recommends that you purchase.
    */
   @js.native
   trait InstanceDetails extends js.Object {
@@ -897,7 +906,7 @@ package costexplorer {
   }
 
   /**
-   * <p>The aggregated value for a metric.</p>
+   * The aggregated value for a metric.
    */
   @js.native
   trait MetricValue extends js.Object {
@@ -936,7 +945,7 @@ package costexplorer {
   }
 
   /**
-   * <p>Details about the RDS instances that AWS recommends that you purchase.</p>
+   * Details about the RDS instances that AWS recommends that you purchase.
    */
   @js.native
   trait RDSInstanceDetails extends js.Object {
@@ -978,7 +987,7 @@ package costexplorer {
   }
 
   /**
-   * <p>Details about the Amazon Redshift instances that AWS recommends that you purchase.</p>
+   * Details about the Amazon Redshift instances that AWS recommends that you purchase.
    */
   @js.native
   trait RedshiftInstanceDetails extends js.Object {
@@ -1008,7 +1017,7 @@ package costexplorer {
   }
 
   /**
-   * <p>The aggregated numbers for your Reserved Instance (RI) usage.</p>
+   * The aggregated numbers for your Reserved Instance (RI) usage.
    */
   @js.native
   trait ReservationAggregates extends js.Object {
@@ -1053,7 +1062,7 @@ package costexplorer {
   }
 
   /**
-   * <p>A group of reservations that share a set of attributes.</p>
+   * A group of reservations that share a set of attributes.
    */
   @js.native
   trait ReservationCoverageGroup extends js.Object {
@@ -1074,7 +1083,7 @@ package costexplorer {
   }
 
   /**
-   * <p>A specific reservation that AWS recommends for purchase.</p>
+   * A specific reservation that AWS recommends for purchase.
    */
   @js.native
   trait ReservationPurchaseRecommendation extends js.Object {
@@ -1110,7 +1119,7 @@ package costexplorer {
   }
 
   /**
-   * <p>Details about your recommended reservation purchase.</p>
+   * Details about your recommended reservation purchase.
    */
   @js.native
   trait ReservationPurchaseRecommendationDetail extends js.Object {
@@ -1182,7 +1191,7 @@ package costexplorer {
   }
 
   /**
-   * <p>Information about this specific recommendation, such as the time stamp for when AWS made a specific recommendation.</p>
+   * Information about this specific recommendation, such as the time stamp for when AWS made a specific recommendation.
    */
   @js.native
   trait ReservationPurchaseRecommendationMetadata extends js.Object {
@@ -1203,7 +1212,7 @@ package costexplorer {
   }
 
   /**
-   * <p>A summary about this recommendation, such as the currency code, the amount that AWS estimates that you could save, and the total amount of reservation to purchase.</p>
+   * A summary about this recommendation, such as the currency code, the amount that AWS estimates that you could save, and the total amount of reservation to purchase.
    */
   @js.native
   trait ReservationPurchaseRecommendationSummary extends js.Object {
@@ -1227,7 +1236,7 @@ package costexplorer {
   }
 
   /**
-   * <p>A group of Reserved Instances (RIs) that share a set of attributes.</p>
+   * A group of Reserved Instances (RIs) that share a set of attributes.
    */
   @js.native
   trait ReservationUtilizationGroup extends js.Object {
@@ -1254,7 +1263,7 @@ package costexplorer {
   }
 
   /**
-   * <p>The result that is associated with a time period.</p>
+   * The result that is associated with a time period.
    */
   @js.native
   trait ResultByTime extends js.Object {
@@ -1281,7 +1290,7 @@ package costexplorer {
   }
 
   /**
-   * <p>Hardware specifications for the service that you want recommendations for.</p>
+   * Hardware specifications for the service that you want recommendations for.
    */
   @js.native
   trait ServiceSpecification extends js.Object {
@@ -1299,7 +1308,7 @@ package costexplorer {
   }
 
   /**
-   * <p>The values that are available for a tag.</p>
+   * The values that are available for a tag.
    */
   @js.native
   trait TagValues extends js.Object {
@@ -1327,7 +1336,7 @@ package costexplorer {
   }
 
   /**
-   * <p>The amount of utilization, in hours.</p>
+   * The amount of utilization, in hours.
    */
   @js.native
   trait UtilizationByTime extends js.Object {

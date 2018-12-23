@@ -71,7 +71,7 @@ package dax {
   }
 
   /**
-   * <p>Contains all of the attributes of a specific DAX cluster.</p>
+   * Contains all of the attributes of a specific DAX cluster.
    */
   @js.native
   trait Cluster extends js.Object {
@@ -647,7 +647,7 @@ package dax {
   }
 
   /**
-   * <p>Represents the information required for client programs to connect to the configuration endpoint for a DAX cluster, or to an individual node within the cluster.</p>
+   * Represents the information required for client programs to connect to the configuration endpoint for a DAX cluster, or to an individual node within the cluster.
    */
   @js.native
   trait Endpoint extends js.Object {
@@ -668,7 +668,7 @@ package dax {
   }
 
   /**
-   * <p>Represents a single occurrence of something interesting within the system. Some examples of events are creating a DAX cluster, adding or removing a node, or rebooting a node.</p>
+   * Represents a single occurrence of something interesting within the system. Some examples of events are creating a DAX cluster, adding or removing a node, or rebooting a node.
    */
   @js.native
   trait Event extends js.Object {
@@ -775,7 +775,7 @@ package dax {
   }
 
   /**
-   * <p>Represents an individual node within a DAX cluster.</p>
+   * Represents an individual node within a DAX cluster.
    */
   @js.native
   trait Node extends js.Object {
@@ -808,7 +808,7 @@ package dax {
   }
 
   /**
-   * <p>Represents a parameter value that is applicable to a particular node type.</p>
+   * Represents a parameter value that is applicable to a particular node type.
    */
   @js.native
   trait NodeTypeSpecificValue extends js.Object {
@@ -829,7 +829,7 @@ package dax {
   }
 
   /**
-   * <p>Describes a notification topic and its status. Notification topics are used for publishing DAX events to subscribers using Amazon Simple Notification Service (SNS).</p>
+   * Describes a notification topic and its status. Notification topics are used for publishing DAX events to subscribers using Amazon Simple Notification Service (SNS).
    */
   @js.native
   trait NotificationConfiguration extends js.Object {
@@ -850,7 +850,7 @@ package dax {
   }
 
   /**
-   * <p>Describes an individual setting that controls some aspect of DAX behavior.</p>
+   * Describes an individual setting that controls some aspect of DAX behavior.
    */
   @js.native
   trait Parameter extends js.Object {
@@ -895,7 +895,7 @@ package dax {
   }
 
   /**
-   * <p>A named set of parameters that are applied to all of the nodes in a DAX cluster.</p>
+   * A named set of parameters that are applied to all of the nodes in a DAX cluster.
    */
   @js.native
   trait ParameterGroup extends js.Object {
@@ -916,7 +916,7 @@ package dax {
   }
 
   /**
-   * <p>The status of a parameter group.</p>
+   * The status of a parameter group.
    */
   @js.native
   trait ParameterGroupStatus extends js.Object {
@@ -940,7 +940,7 @@ package dax {
   }
 
   /**
-   * <p>An individual DAX parameter.</p>
+   * An individual DAX parameter.
    */
   @js.native
   trait ParameterNameValue extends js.Object {
@@ -1001,7 +1001,7 @@ package dax {
   }
 
   /**
-   * <p>The description of the server-side encryption status on the specified DAX cluster.</p>
+   * The description of the server-side encryption status on the specified DAX cluster.
    */
   @js.native
   trait SSEDescription extends js.Object {
@@ -1019,7 +1019,7 @@ package dax {
   }
 
   /**
-   * <p>Represents the settings used to enable server-side encryption.</p>
+   * Represents the settings used to enable server-side encryption.
    */
   @js.native
   trait SSESpecification extends js.Object {
@@ -1046,7 +1046,7 @@ package dax {
   }
 
   /**
-   * <p>An individual VPC security group and its status.</p>
+   * An individual VPC security group and its status.
    */
   @js.native
   trait SecurityGroupMembership extends js.Object {
@@ -1075,7 +1075,7 @@ package dax {
   }
 
   /**
-   * <p>Represents the subnet associated with a DAX cluster. This parameter refers to subnets defined in Amazon Virtual Private Cloud (Amazon VPC) and used with DAX.</p>
+   * Represents the subnet associated with a DAX cluster. This parameter refers to subnets defined in Amazon Virtual Private Cloud (Amazon VPC) and used with DAX.
    */
   @js.native
   trait Subnet extends js.Object {
@@ -1096,7 +1096,9 @@ package dax {
   }
 
   /**
-   * <p>Represents the output of one of the following actions:</p> <ul> <li> <p> <i>CreateSubnetGroup</i> </p> </li> <li> <p> <i>ModifySubnetGroup</i> </p> </li> </ul>
+   * Represents the output of one of the following actions:
+   * * <i>CreateSubnetGroup</i>
+   *  * <i>ModifySubnetGroup</i>
    */
   @js.native
   trait SubnetGroup extends js.Object {
@@ -1123,7 +1125,9 @@ package dax {
   }
 
   /**
-   * <p>A description of a tag. Every tag is a key-value pair. You can add up to 50 tags to a single DAX cluster.</p> <p>AWS-assigned tag names and values are automatically assigned the <code>aws:</code> prefix, which the user cannot assign. AWS-assigned tag names do not count towards the tag limit of 50. User-assigned tag names have the prefix <code>user:</code>.</p> <p>You cannot backdate the application of a tag.</p>
+   * A description of a tag. Every tag is a key-value pair. You can add up to 50 tags to a single DAX cluster.
+   *  AWS-assigned tag names and values are automatically assigned the <code>aws:</code> prefix, which the user cannot assign. AWS-assigned tag names do not count towards the tag limit of 50. User-assigned tag names have the prefix <code>user:</code>.
+   *  You cannot backdate the application of a tag.
    */
   @js.native
   trait Tag extends js.Object {

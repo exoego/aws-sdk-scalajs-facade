@@ -121,7 +121,7 @@ package athena {
   }
 
   /**
-   * <p>Information about the columns in a query execution result.</p>
+   * Information about the columns in a query execution result.
    */
   @js.native
   trait ColumnInfo extends js.Object {
@@ -216,7 +216,7 @@ package athena {
   }
 
   /**
-   * <p>A piece of data (a field in the table).</p>
+   * A piece of data (a field in the table).
    */
   @js.native
   trait Datum extends js.Object {
@@ -262,7 +262,7 @@ package athena {
   }
 
   /**
-   * <p>If query results are encrypted in Amazon S3, indicates the encryption option used (for example, <code>SSE-KMS</code> or <code>CSE-KMS</code>) and key information.</p>
+   * If query results are encrypted in Amazon S3, indicates the encryption option used (for example, <code>SSE-KMS</code> or <code>CSE-KMS</code>) and key information.
    */
   @js.native
   trait EncryptionConfiguration extends js.Object {
@@ -465,7 +465,7 @@ package athena {
   }
 
   /**
-   * <p>A query, where <code>QueryString</code> is the SQL query statements that comprise the query.</p>
+   * A query, where <code>QueryString</code> is the SQL query statements that comprise the query.
    */
   @js.native
   trait NamedQuery extends js.Object {
@@ -495,7 +495,7 @@ package athena {
   }
 
   /**
-   * <p>Information about a single instance of a query execution.</p>
+   * Information about a single instance of a query execution.
    */
   @js.native
   trait QueryExecution extends js.Object {
@@ -531,7 +531,7 @@ package athena {
   }
 
   /**
-   * <p>The database in which the query execution occurs.</p>
+   * The database in which the query execution occurs.
    */
   @js.native
   trait QueryExecutionContext extends js.Object {
@@ -559,7 +559,7 @@ package athena {
   }
 
   /**
-   * <p>The amount of data scanned during the query execution and the amount of time that it took to execute, and the type of statement that was run.</p>
+   * The amount of data scanned during the query execution and the amount of time that it took to execute, and the type of statement that was run.
    */
   @js.native
   trait QueryExecutionStatistics extends js.Object {
@@ -580,7 +580,7 @@ package athena {
   }
 
   /**
-   * <p>The completion date, current state, submission time, and state change reason (if applicable) for the query execution.</p>
+   * The completion date, current state, submission time, and state change reason (if applicable) for the query execution.
    */
   @js.native
   trait QueryExecutionStatus extends js.Object {
@@ -607,7 +607,7 @@ package athena {
   }
 
   /**
-   * <p>The location in Amazon S3 where query results are stored and the encryption option, if any, used for query results.</p>
+   * The location in Amazon S3 where query results are stored and the encryption option, if any, used for query results.
    */
   @js.native
   trait ResultConfiguration extends js.Object {
@@ -628,7 +628,7 @@ package athena {
   }
 
   /**
-   * <p>The metadata and rows that comprise a query result set. The metadata describes the column structure and data types.</p>
+   * The metadata and rows that comprise a query result set. The metadata describes the column structure and data types.
    */
   @js.native
   trait ResultSet extends js.Object {
@@ -649,7 +649,7 @@ package athena {
   }
 
   /**
-   * <p>The metadata that describes the column structure and data types of a table of query results. </p>
+   * The metadata that describes the column structure and data types of a table of query results.
    */
   @js.native
   trait ResultSetMetadata extends js.Object {
@@ -667,7 +667,7 @@ package athena {
   }
 
   /**
-   * <p>The rows that comprise a query result table.</p>
+   * The rows that comprise a query result table.
    */
   @js.native
   trait Row extends js.Object {
@@ -760,7 +760,7 @@ package athena {
   }
 
   /**
-   * <p>Information about a named query ID that could not be processed.</p>
+   * Information about a named query ID that could not be processed.
    */
   @js.native
   trait UnprocessedNamedQueryId extends js.Object {
@@ -784,7 +784,7 @@ package athena {
   }
 
   /**
-   * <p>Describes a query execution that failed to process.</p>
+   * Describes a query execution that failed to process.
    */
   @js.native
   trait UnprocessedQueryExecutionId extends js.Object {

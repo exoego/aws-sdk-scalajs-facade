@@ -71,7 +71,7 @@ package acmpca {
   }
 
   /**
-   * <p>Contains information about the certificate subject. The certificate can be one issued by your private certificate authority (CA) or it can be your private CA certificate. The <b>Subject</b> field in the certificate identifies the entity that owns or controls the public key in the certificate. The entity can be a user, computer, device, or service. The <b>Subject</b> must contain an X.500 distinguished name (DN). A DN is a sequence of relative distinguished names (RDNs). The RDNs are separated by commas in the certificate. The DN must be unique for each entity, but your private CA can issue more than one certificate with the same DN to the same entity. </p>
+   * Contains information about the certificate subject. The certificate can be one issued by your private certificate authority (CA) or it can be your private CA certificate. The <b>Subject</b> field in the certificate identifies the entity that owns or controls the public key in the certificate. The entity can be a user, computer, device, or service. The <b>Subject</b> must contain an X.500 distinguished name (DN). A DN is a sequence of relative distinguished names (RDNs). The RDNs are separated by commas in the certificate. The DN must be unique for each entity, but your private CA can issue more than one certificate with the same DN to the same entity.
    */
   @js.native
   trait ASN1Subject extends js.Object {
@@ -143,7 +143,7 @@ package acmpca {
   }
 
   /**
-   * <p>Contains information about your private certificate authority (CA). Your private CA can issue and revoke X.509 digital certificates. Digital certificates verify that the entity named in the certificate <b>Subject</b> field owns or controls the public key contained in the <b>Subject Public Key Info</b> field. Call the <a>CreateCertificateAuthority</a> operation to create your private CA. You must then call the <a>GetCertificateAuthorityCertificate</a> operation to retrieve a private CA certificate signing request (CSR). Take the CSR to your on-premises CA and sign it with the root CA certificate or a subordinate certificate. Call the <a>ImportCertificateAuthorityCertificate</a> operation to import the signed certificate into AWS Certificate Manager (ACM). </p>
+   * Contains information about your private certificate authority (CA). Your private CA can issue and revoke X.509 digital certificates. Digital certificates verify that the entity named in the certificate <b>Subject</b> field owns or controls the public key contained in the <b>Subject Public Key Info</b> field. Call the '''CreateCertificateAuthority''' operation to create your private CA. You must then call the '''GetCertificateAuthorityCertificate''' operation to retrieve a private CA certificate signing request (CSR). Take the CSR to your on-premises CA and sign it with the root CA certificate or a subordinate certificate. Call the '''ImportCertificateAuthorityCertificate''' operation to import the signed certificate into AWS Certificate Manager (ACM).
    */
   @js.native
   trait CertificateAuthority extends js.Object {
@@ -194,7 +194,7 @@ package acmpca {
   }
 
   /**
-   * <p>Contains configuration information for your private certificate authority (CA). This includes information about the class of public key algorithm and the key pair that your private CA creates when it issues a certificate, the signature algorithm it uses used when issuing certificates, and its X.500 distinguished name. You must specify this information when you call the <a>CreateCertificateAuthority</a> operation. </p>
+   * Contains configuration information for your private certificate authority (CA). This includes information about the class of public key algorithm and the key pair that your private CA creates when it issues a certificate, the signature algorithm it uses used when issuing certificates, and its X.500 distinguished name. You must specify this information when you call the '''CreateCertificateAuthority''' operation.
    */
   @js.native
   trait CertificateAuthorityConfiguration extends js.Object {
@@ -236,7 +236,7 @@ package acmpca {
   }
 
   /**
-   * <p>The certificate authority certificate you are importing does not comply with conditions specified in the certificate that signed it.</p>
+   * The certificate authority certificate you are importing does not comply with conditions specified in the certificate that signed it.
    */
   @js.native
   trait CertificateMismatchExceptionException extends js.Object {
@@ -244,7 +244,7 @@ package acmpca {
   }
 
   /**
-   * <p>A previous update to your private CA is still ongoing.</p>
+   * A previous update to your private CA is still ongoing.
    */
   @js.native
   trait ConcurrentModificationExceptionException extends js.Object {
@@ -330,7 +330,26 @@ package acmpca {
   }
 
   /**
-   * <p>Contains configuration information for a certificate revocation list (CRL). Your private certificate authority (CA) creates base CRLs. Delta CRLs are not supported. You can enable CRLs for your new or an existing private CA by setting the <b>Enabled</b> parameter to <code>true</code>. Your private CA writes CRLs to an S3 bucket that you specify in the <b>S3BucketName</b> parameter. You can hide the name of your bucket by specifying a value for the <b>CustomCname</b> parameter. Your private CA copies the CNAME or the S3 bucket name to the <b>CRL Distribution Points</b> extension of each certificate it issues. Your S3 bucket policy must give write permission to ACM PCA. </p> <p>Your private CA uses the value in the <b>ExpirationInDays</b> parameter to calculate the <b>nextUpdate</b> field in the CRL. The CRL is refreshed at 1/2 the age of next update or when a certificate is revoked. When a certificate is revoked, it is recorded in the next CRL that is generated and in the next audit report. Only time valid certificates are listed in the CRL. Expired certificates are not included. </p> <p>CRLs contain the following fields:</p> <ul> <li> <p> <b>Version</b>: The current version number defined in RFC 5280 is V2. The integer value is 0x1. </p> </li> <li> <p> <b>Signature Algorithm</b>: The name of the algorithm used to sign the CRL.</p> </li> <li> <p> <b>Issuer</b>: The X.500 distinguished name of your private CA that issued the CRL.</p> </li> <li> <p> <b>Last Update</b>: The issue date and time of this CRL.</p> </li> <li> <p> <b>Next Update</b>: The day and time by which the next CRL will be issued.</p> </li> <li> <p> <b>Revoked Certificates</b>: List of revoked certificates. Each list item contains the following information.</p> <ul> <li> <p> <b>Serial Number</b>: The serial number, in hexadecimal format, of the revoked certificate.</p> </li> <li> <p> <b>Revocation Date</b>: Date and time the certificate was revoked.</p> </li> <li> <p> <b>CRL Entry Extensions</b>: Optional extensions for the CRL entry.</p> <ul> <li> <p> <b>X509v3 CRL Reason Code</b>: Reason the certificate was revoked.</p> </li> </ul> </li> </ul> </li> <li> <p> <b>CRL Extensions</b>: Optional extensions for the CRL.</p> <ul> <li> <p> <b>X509v3 Authority Key Identifier</b>: Identifies the public key associated with the private key used to sign the certificate.</p> </li> <li> <p> <b>X509v3 CRL Number:</b>: Decimal sequence number for the CRL.</p> </li> </ul> </li> <li> <p> <b>Signature Algorithm</b>: Algorithm used by your private CA to sign the CRL.</p> </li> <li> <p> <b>Signature Value</b>: Signature computed over the CRL.</p> </li> </ul> <p>Certificate revocation lists created by ACM PCA are DER-encoded. You can use the following OpenSSL command to list a CRL.</p> <p> <code>openssl crl -inform DER -text -in <i>crl_path</i> -noout</code> </p>
+   * Contains configuration information for a certificate revocation list (CRL). Your private certificate authority (CA) creates base CRLs. Delta CRLs are not supported. You can enable CRLs for your new or an existing private CA by setting the <b>Enabled</b> parameter to <code>true</code>. Your private CA writes CRLs to an S3 bucket that you specify in the <b>S3BucketName</b> parameter. You can hide the name of your bucket by specifying a value for the <b>CustomCname</b> parameter. Your private CA copies the CNAME or the S3 bucket name to the <b>CRL Distribution Points</b> extension of each certificate it issues. Your S3 bucket policy must give write permission to ACM PCA.
+   *  Your private CA uses the value in the <b>ExpirationInDays</b> parameter to calculate the <b>nextUpdate</b> field in the CRL. The CRL is refreshed at 1/2 the age of next update or when a certificate is revoked. When a certificate is revoked, it is recorded in the next CRL that is generated and in the next audit report. Only time valid certificates are listed in the CRL. Expired certificates are not included.
+   *  CRLs contain the following fields:
+   * * <b>Version</b>: The current version number defined in RFC 5280 is V2. The integer value is 0x1.
+   *  * <b>Signature Algorithm</b>: The name of the algorithm used to sign the CRL.
+   *  * <b>Issuer</b>: The X.500 distinguished name of your private CA that issued the CRL.
+   *  * <b>Last Update</b>: The issue date and time of this CRL.
+   *  * <b>Next Update</b>: The day and time by which the next CRL will be issued.
+   *  * <b>Revoked Certificates</b>: List of revoked certificates. Each list item contains the following information.
+   * <li> <b>Serial Number</b>: The serial number, in hexadecimal format, of the revoked certificate.
+   *  * <b>Revocation Date</b>: Date and time the certificate was revoked.
+   *  * <b>CRL Entry Extensions</b>: Optional extensions for the CRL entry.
+   * <li> <b>X509v3 CRL Reason Code</b>: Reason the certificate was revoked.
+   * </li></li> * <b>CRL Extensions</b>: Optional extensions for the CRL.
+   * <li> <b>X509v3 Authority Key Identifier</b>: Identifies the public key associated with the private key used to sign the certificate.
+   *  * <b>X509v3 CRL Number:</b>: Decimal sequence number for the CRL.
+   * </li> * <b>Signature Algorithm</b>: Algorithm used by your private CA to sign the CRL.
+   *  * <b>Signature Value</b>: Signature computed over the CRL.
+   * Certificate revocation lists created by ACM PCA are DER-encoded. You can use the following OpenSSL command to list a CRL.
+   *  <code>openssl crl -inform DER -text -in <i>crl_path</i> -noout</code>
    */
   @js.native
   trait CrlConfiguration extends js.Object {
@@ -575,7 +594,7 @@ package acmpca {
   }
 
   /**
-   * <p>One or more of the specified arguments was not valid.</p>
+   * One or more of the specified arguments was not valid.
    */
   @js.native
   trait InvalidArgsExceptionException extends js.Object {
@@ -583,7 +602,7 @@ package acmpca {
   }
 
   /**
-   * <p>The requested Amazon Resource Name (ARN) does not refer to an existing resource.</p>
+   * The requested Amazon Resource Name (ARN) does not refer to an existing resource.
    */
   @js.native
   trait InvalidArnExceptionException extends js.Object {
@@ -591,7 +610,7 @@ package acmpca {
   }
 
   /**
-   * <p>The token specified in the <code>NextToken</code> argument is not valid. Use the token returned from your previous call to <a>ListCertificateAuthorities</a>.</p>
+   * The token specified in the <code>NextToken</code> argument is not valid. Use the token returned from your previous call to '''ListCertificateAuthorities'''.
    */
   @js.native
   trait InvalidNextTokenExceptionException extends js.Object {
@@ -599,7 +618,7 @@ package acmpca {
   }
 
   /**
-   * <p>The S3 bucket policy is not valid. The policy must give ACM PCA rights to read from and write to the bucket and find the bucket location.</p>
+   * The S3 bucket policy is not valid. The policy must give ACM PCA rights to read from and write to the bucket and find the bucket location.
    */
   @js.native
   trait InvalidPolicyExceptionException extends js.Object {
@@ -607,7 +626,7 @@ package acmpca {
   }
 
   /**
-   * <p>The private CA is in a state during which a report cannot be generated.</p>
+   * The private CA is in a state during which a report cannot be generated.
    */
   @js.native
   trait InvalidStateExceptionException extends js.Object {
@@ -615,7 +634,7 @@ package acmpca {
   }
 
   /**
-   * <p>The tag associated with the CA is not valid. The invalid argument is contained in the message field.</p>
+   * The tag associated with the CA is not valid. The invalid argument is contained in the message field.
    */
   @js.native
   trait InvalidTagExceptionException extends js.Object {
@@ -674,7 +693,7 @@ package acmpca {
   }
 
   /**
-   * <p>An ACM PCA limit has been exceeded. See the exception message returned to determine the limit that was exceeded.</p>
+   * An ACM PCA limit has been exceeded. See the exception message returned to determine the limit that was exceeded.
    */
   @js.native
   trait LimitExceededExceptionException extends js.Object {
@@ -757,7 +776,7 @@ package acmpca {
   }
 
   /**
-   * <p>The certificate signing request is invalid.</p>
+   * The certificate signing request is invalid.
    */
   @js.native
   trait MalformedCSRExceptionException extends js.Object {
@@ -765,7 +784,7 @@ package acmpca {
   }
 
   /**
-   * <p>One or more fields in the certificate are invalid.</p>
+   * One or more fields in the certificate are invalid.
    */
   @js.native
   trait MalformedCertificateExceptionException extends js.Object {
@@ -773,7 +792,7 @@ package acmpca {
   }
 
   /**
-   * <p>Your request has already been completed.</p>
+   * Your request has already been completed.
    */
   @js.native
   trait RequestAlreadyProcessedExceptionException extends js.Object {
@@ -781,7 +800,7 @@ package acmpca {
   }
 
   /**
-   * <p>The request has failed for an unspecified reason.</p>
+   * The request has failed for an unspecified reason.
    */
   @js.native
   trait RequestFailedExceptionException extends js.Object {
@@ -789,7 +808,7 @@ package acmpca {
   }
 
   /**
-   * <p>Your request is already in progress.</p>
+   * Your request is already in progress.
    */
   @js.native
   trait RequestInProgressExceptionException extends js.Object {
@@ -797,7 +816,7 @@ package acmpca {
   }
 
   /**
-   * <p>A resource such as a private CA, S3 bucket, certificate, or audit report cannot be found.</p>
+   * A resource such as a private CA, S3 bucket, certificate, or audit report cannot be found.
    */
   @js.native
   trait ResourceNotFoundExceptionException extends js.Object {
@@ -820,7 +839,7 @@ package acmpca {
   }
 
   /**
-   * <p>Certificate revocation information used by the <a>CreateCertificateAuthority</a> and <a>UpdateCertificateAuthority</a> operations. Your private certificate authority (CA) can create and maintain a certificate revocation list (CRL). A CRL contains information about certificates revoked by your CA. For more information, see <a>RevokeCertificate</a>.</p>
+   * Certificate revocation information used by the '''CreateCertificateAuthority''' and '''UpdateCertificateAuthority''' operations. Your private certificate authority (CA) can create and maintain a certificate revocation list (CRL). A CRL contains information about certificates revoked by your CA. For more information, see '''RevokeCertificate'''.
    */
   @js.native
   trait RevocationConfiguration extends js.Object {
@@ -883,7 +902,7 @@ package acmpca {
   }
 
   /**
-   * <p>Tags are labels that you can use to identify and organize your private CAs. Each tag consists of a key and an optional value. You can associate up to 50 tags with a private CA. To add one or more tags to a private CA, call the <a>TagCertificateAuthority</a> operation. To remove a tag, call the <a>UntagCertificateAuthority</a> operation. </p>
+   * Tags are labels that you can use to identify and organize your private CAs. Each tag consists of a key and an optional value. You can associate up to 50 tags with a private CA. To add one or more tags to a private CA, call the '''TagCertificateAuthority''' operation. To remove a tag, call the '''UntagCertificateAuthority''' operation.
    */
   @js.native
   trait Tag extends js.Object {
@@ -922,7 +941,7 @@ package acmpca {
   }
 
   /**
-   * <p>You can associate up to 50 tags with a private CA. Exception information is contained in the exception message field.</p>
+   * You can associate up to 50 tags with a private CA. Exception information is contained in the exception message field.
    */
   @js.native
   trait TooManyTagsExceptionException extends js.Object {
@@ -969,7 +988,7 @@ package acmpca {
   }
 
   /**
-   * <p>Length of time for which the certificate issued by your private certificate authority (CA), or by the private CA itself, is valid in days, months, or years. You can issue a certificate by calling the <a>IssueCertificate</a> operation.</p>
+   * Length of time for which the certificate issued by your private certificate authority (CA), or by the private CA itself, is valid in days, months, or years. You can issue a certificate by calling the '''IssueCertificate''' operation.
    */
   @js.native
   trait Validity extends js.Object {

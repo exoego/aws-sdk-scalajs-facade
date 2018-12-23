@@ -577,7 +577,7 @@ package ram {
   }
 
   /**
-   * <p>Describes a principal for use with AWS Resource Access Manager.</p>
+   * Describes a principal for use with AWS Resource Access Manager.
    */
   @js.native
   trait Principal extends js.Object {
@@ -643,7 +643,7 @@ package ram {
   }
 
   /**
-   * <p>Describes a resource associated with a resource share.</p>
+   * Describes a resource associated with a resource share.
    */
   @js.native
   trait Resource extends js.Object {
@@ -686,7 +686,7 @@ package ram {
   }
 
   /**
-   * <p>Describes a resource share.</p>
+   * Describes a resource share.
    */
   @js.native
   trait ResourceShare extends js.Object {
@@ -728,7 +728,7 @@ package ram {
   }
 
   /**
-   * <p>Describes an association with a resource share.</p>
+   * Describes an association with a resource share.
    */
   @js.native
   trait ResourceShareAssociation extends js.Object {
@@ -784,7 +784,7 @@ package ram {
   }
 
   /**
-   * <p>Describes an invitation to join a resource share.</p>
+   * Describes an invitation to join a resource share.
    */
   @js.native
   trait ResourceShareInvitation extends js.Object {
@@ -851,7 +851,7 @@ package ram {
   }
 
   /**
-   * <p>Information about a tag.</p>
+   * Information about a tag.
    */
   @js.native
   trait Tag extends js.Object {
@@ -872,7 +872,7 @@ package ram {
   }
 
   /**
-   * <p>Used to filter information based on tags.</p>
+   * Used to filter information based on tags.
    */
   @js.native
   trait TagFilter extends js.Object {

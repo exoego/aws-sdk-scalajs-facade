@@ -101,7 +101,7 @@ package es {
   }
 
   /**
-   * <p>The configured access rules for the domain's document and search endpoints, and the current status of those rules.</p>
+   * The configured access rules for the domain's document and search endpoints, and the current status of those rules.
    */
   @js.native
   trait AccessPoliciesStatus extends js.Object {
@@ -122,7 +122,7 @@ package es {
   }
 
   /**
-   * <p>Container for the parameters to the <code><a>AddTags</a></code> operation. Specify the tags that you want to attach to the Elasticsearch domain.</p>
+   * Container for the parameters to the <code>'''AddTags'''</code> operation. Specify the tags that you want to attach to the Elasticsearch domain.
    */
   @js.native
   trait AddTagsRequest extends js.Object {
@@ -143,7 +143,7 @@ package es {
   }
 
   /**
-   * <p> List of limits that are specific to a given InstanceType and for each of it's <code> <a>InstanceRole</a> </code> . </p>
+   * List of limits that are specific to a given InstanceType and for each of it's <code> '''InstanceRole''' </code> .
    */
   @js.native
   trait AdditionalLimit extends js.Object {
@@ -164,7 +164,10 @@ package es {
   }
 
   /**
-   * <p> Status of the advanced options for the specified Elasticsearch domain. Currently, the following advanced options are available:</p> <ul> <li>Option to allow references to indices in an HTTP request body. Must be <code>false</code> when configuring access to individual sub-resources. By default, the value is <code>true</code>. See <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-advanced-options" target="_blank">Configuration Advanced Options</a> for more information.</li> <li>Option to specify the percentage of heap space that is allocated to field data. By default, this setting is unbounded.</li> </ul> <p>For more information, see <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-advanced-options">Configuring Advanced Options</a>.</p>
+   * Status of the advanced options for the specified Elasticsearch domain. Currently, the following advanced options are available:
+   * * Option to allow references to indices in an HTTP request body. Must be <code>false</code> when configuring access to individual sub-resources. By default, the value is <code>true</code>. See <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-advanced-options" target="_blank">Configuration Advanced Options</a> for more information.
+   *  * Option to specify the percentage of heap space that is allocated to field data. By default, this setting is unbounded.
+   * For more information, see <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-advanced-options">Configuring Advanced Options</a>.
    */
   @js.native
   trait AdvancedOptionsStatus extends js.Object {
@@ -185,7 +188,7 @@ package es {
   }
 
   /**
-   * <p>Container for the parameters to the <code><a>CancelElasticsearchServiceSoftwareUpdate</a></code> operation. Specifies the name of the Elasticsearch domain that you wish to cancel a service software update on.</p>
+   * Container for the parameters to the <code>'''CancelElasticsearchServiceSoftwareUpdate'''</code> operation. Specifies the name of the Elasticsearch domain that you wish to cancel a service software update on.
    */
   @js.native
   trait CancelElasticsearchServiceSoftwareUpdateRequest extends js.Object {
@@ -203,7 +206,7 @@ package es {
   }
 
   /**
-   * <p>The result of a <code>CancelElasticsearchServiceSoftwareUpdate</code> operation. Contains the status of the update.</p>
+   * The result of a <code>CancelElasticsearchServiceSoftwareUpdate</code> operation. Contains the status of the update.
    */
   @js.native
   trait CancelElasticsearchServiceSoftwareUpdateResponse extends js.Object {
@@ -221,7 +224,7 @@ package es {
   }
 
   /**
-   * <p>Options to specify the Cognito user and identity pools for Kibana authentication. For more information, see <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-cognito-auth.html" target="_blank">Amazon Cognito Authentication for Kibana</a>.</p>
+   * Options to specify the Cognito user and identity pools for Kibana authentication. For more information, see <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-cognito-auth.html" target="_blank">Amazon Cognito Authentication for Kibana</a>.
    */
   @js.native
   trait CognitoOptions extends js.Object {
@@ -248,7 +251,7 @@ package es {
   }
 
   /**
-   * <p>Status of the Cognito options for the specified Elasticsearch domain.</p>
+   * Status of the Cognito options for the specified Elasticsearch domain.
    */
   @js.native
   trait CognitoOptionsStatus extends js.Object {
@@ -269,7 +272,7 @@ package es {
   }
 
   /**
-   * <p> A map from an <code> <a>ElasticsearchVersion</a> </code> to a list of compatible <code> <a>ElasticsearchVersion</a> </code> s to which the domain can be upgraded. </p>
+   * A map from an <code> '''ElasticsearchVersion''' </code> to a list of compatible <code> '''ElasticsearchVersion''' </code> s to which the domain can be upgraded.
    */
   @js.native
   trait CompatibleVersionsMap extends js.Object {
@@ -338,7 +341,7 @@ package es {
   }
 
   /**
-   * <p>The result of a <code>CreateElasticsearchDomain</code> operation. Contains the status of the newly created Elasticsearch domain.</p>
+   * The result of a <code>CreateElasticsearchDomain</code> operation. Contains the status of the newly created Elasticsearch domain.
    */
   @js.native
   trait CreateElasticsearchDomainResponse extends js.Object {
@@ -356,7 +359,7 @@ package es {
   }
 
   /**
-   * <p>Container for the parameters to the <code><a>DeleteElasticsearchDomain</a></code> operation. Specifies the name of the Elasticsearch domain that you want to delete.</p>
+   * Container for the parameters to the <code>'''DeleteElasticsearchDomain'''</code> operation. Specifies the name of the Elasticsearch domain that you want to delete.
    */
   @js.native
   trait DeleteElasticsearchDomainRequest extends js.Object {
@@ -374,7 +377,7 @@ package es {
   }
 
   /**
-   * <p>The result of a <code>DeleteElasticsearchDomain</code> request. Contains the status of the pending deletion, or no status if the domain and all of its resources have been deleted.</p>
+   * The result of a <code>DeleteElasticsearchDomain</code> request. Contains the status of the pending deletion, or no status if the domain and all of its resources have been deleted.
    */
   @js.native
   trait DeleteElasticsearchDomainResponse extends js.Object {
@@ -402,7 +405,7 @@ package es {
   }
 
   /**
-   * <p> Container for the parameters to the <code>DescribeElasticsearchDomainConfig</code> operation. Specifies the domain name for which you want configuration information.</p>
+   * Container for the parameters to the <code>DescribeElasticsearchDomainConfig</code> operation. Specifies the domain name for which you want configuration information.
    */
   @js.native
   trait DescribeElasticsearchDomainConfigRequest extends js.Object {
@@ -420,7 +423,7 @@ package es {
   }
 
   /**
-   * <p>The result of a <code>DescribeElasticsearchDomainConfig</code> request. Contains the configuration information of the requested domain.</p>
+   * The result of a <code>DescribeElasticsearchDomainConfig</code> request. Contains the configuration information of the requested domain.
    */
   @js.native
   trait DescribeElasticsearchDomainConfigResponse extends js.Object {
@@ -438,7 +441,7 @@ package es {
   }
 
   /**
-   * <p>Container for the parameters to the <code><a>DescribeElasticsearchDomain</a></code> operation.</p>
+   * Container for the parameters to the <code>'''DescribeElasticsearchDomain'''</code> operation.
    */
   @js.native
   trait DescribeElasticsearchDomainRequest extends js.Object {
@@ -456,7 +459,7 @@ package es {
   }
 
   /**
-   * <p>The result of a <code>DescribeElasticsearchDomain</code> request. Contains the status of the domain specified in the request.</p>
+   * The result of a <code>DescribeElasticsearchDomain</code> request. Contains the status of the domain specified in the request.
    */
   @js.native
   trait DescribeElasticsearchDomainResponse extends js.Object {
@@ -474,7 +477,7 @@ package es {
   }
 
   /**
-   * <p>Container for the parameters to the <code><a>DescribeElasticsearchDomains</a></code> operation. By default, the API returns the status of all Elasticsearch domains.</p>
+   * Container for the parameters to the <code>'''DescribeElasticsearchDomains'''</code> operation. By default, the API returns the status of all Elasticsearch domains.
    */
   @js.native
   trait DescribeElasticsearchDomainsRequest extends js.Object {
@@ -492,7 +495,7 @@ package es {
   }
 
   /**
-   * <p>The result of a <code>DescribeElasticsearchDomains</code> request. Contains the status of the specified domains or all domains owned by the account.</p>
+   * The result of a <code>DescribeElasticsearchDomains</code> request. Contains the status of the specified domains or all domains owned by the account.
    */
   @js.native
   trait DescribeElasticsearchDomainsResponse extends js.Object {
@@ -510,7 +513,7 @@ package es {
   }
 
   /**
-   * <p> Container for the parameters to <code> <a>DescribeElasticsearchInstanceTypeLimits</a> </code> operation. </p>
+   * Container for the parameters to <code> '''DescribeElasticsearchInstanceTypeLimits''' </code> operation.
    */
   @js.native
   trait DescribeElasticsearchInstanceTypeLimitsRequest extends js.Object {
@@ -534,7 +537,7 @@ package es {
   }
 
   /**
-   * <p> Container for the parameters received from <code> <a>DescribeElasticsearchInstanceTypeLimits</a> </code> operation. </p>
+   * Container for the parameters received from <code> '''DescribeElasticsearchInstanceTypeLimits''' </code> operation.
    */
   @js.native
   trait DescribeElasticsearchInstanceTypeLimitsResponse extends js.Object {
@@ -552,7 +555,7 @@ package es {
   }
 
   /**
-   * <p>Container for parameters to <code>DescribeReservedElasticsearchInstanceOfferings</code></p>
+   * Container for parameters to <code>DescribeReservedElasticsearchInstanceOfferings</code>
    */
   @js.native
   trait DescribeReservedElasticsearchInstanceOfferingsRequest extends js.Object {
@@ -576,7 +579,7 @@ package es {
   }
 
   /**
-   * <p>Container for results from <code>DescribeReservedElasticsearchInstanceOfferings</code></p>
+   * Container for results from <code>DescribeReservedElasticsearchInstanceOfferings</code>
    */
   @js.native
   trait DescribeReservedElasticsearchInstanceOfferingsResponse extends js.Object {
@@ -597,7 +600,7 @@ package es {
   }
 
   /**
-   * <p>Container for parameters to <code>DescribeReservedElasticsearchInstances</code></p>
+   * Container for parameters to <code>DescribeReservedElasticsearchInstances</code>
    */
   @js.native
   trait DescribeReservedElasticsearchInstancesRequest extends js.Object {
@@ -621,7 +624,7 @@ package es {
   }
 
   /**
-   * <p>Container for results from <code>DescribeReservedElasticsearchInstances</code></p>
+   * Container for results from <code>DescribeReservedElasticsearchInstances</code>
    */
   @js.native
   trait DescribeReservedElasticsearchInstancesResponse extends js.Object {
@@ -657,7 +660,7 @@ package es {
   }
 
   /**
-   * <p>Options to enable, disable, and specify the properties of EBS storage volumes. For more information, see <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-ebs" target="_blank"> Configuring EBS-based Storage</a>.</p>
+   * Options to enable, disable, and specify the properties of EBS storage volumes. For more information, see <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-ebs" target="_blank"> Configuring EBS-based Storage</a>.
    */
   @js.native
   trait EBSOptions extends js.Object {
@@ -684,7 +687,7 @@ package es {
   }
 
   /**
-   * <p> Status of the EBS options for the specified Elasticsearch domain.</p>
+   * Status of the EBS options for the specified Elasticsearch domain.
    */
   @js.native
   trait EBSOptionsStatus extends js.Object {
@@ -750,7 +753,7 @@ package es {
   }
 
   /**
-   * <p>Specifies the configuration for the domain cluster, such as the type and number of instances.</p>
+   * Specifies the configuration for the domain cluster, such as the type and number of instances.
    */
   @js.native
   trait ElasticsearchClusterConfig extends js.Object {
@@ -783,7 +786,7 @@ package es {
   }
 
   /**
-   * <p> Specifies the configuration status for the specified Elasticsearch domain.</p>
+   * Specifies the configuration status for the specified Elasticsearch domain.
    */
   @js.native
   trait ElasticsearchClusterConfigStatus extends js.Object {
@@ -804,7 +807,7 @@ package es {
   }
 
   /**
-   * <p>The configuration of an Elasticsearch domain.</p>
+   * The configuration of an Elasticsearch domain.
    */
   @js.native
   trait ElasticsearchDomainConfig extends js.Object {
@@ -852,7 +855,7 @@ package es {
   }
 
   /**
-   * <p>The current status of an Elasticsearch domain.</p>
+   * The current status of an Elasticsearch domain.
    */
   @js.native
   trait ElasticsearchDomainStatus extends js.Object {
@@ -930,7 +933,7 @@ package es {
   }
 
   /**
-   * <p> Status of the Elasticsearch version options for the specified Elasticsearch domain.</p>
+   * Status of the Elasticsearch version options for the specified Elasticsearch domain.
    */
   @js.native
   trait ElasticsearchVersionStatus extends js.Object {
@@ -951,7 +954,7 @@ package es {
   }
 
   /**
-   * <p>Specifies the Encryption At Rest Options.</p>
+   * Specifies the Encryption At Rest Options.
    */
   @js.native
   trait EncryptionAtRestOptions extends js.Object {
@@ -972,7 +975,7 @@ package es {
   }
 
   /**
-   * <p> Status of the Encryption At Rest options for the specified Elasticsearch domain.</p>
+   * Status of the Encryption At Rest options for the specified Elasticsearch domain.
    */
   @js.native
   trait EncryptionAtRestOptionsStatus extends js.Object {
@@ -993,7 +996,7 @@ package es {
   }
 
   /**
-   * <p> Container for request parameters to <code> <a>GetCompatibleElasticsearchVersions</a> </code> operation. </p>
+   * Container for request parameters to <code> '''GetCompatibleElasticsearchVersions''' </code> operation.
    */
   @js.native
   trait GetCompatibleElasticsearchVersionsRequest extends js.Object {
@@ -1011,7 +1014,7 @@ package es {
   }
 
   /**
-   * <p> Container for response returned by <code> <a>GetCompatibleElasticsearchVersions</a> </code> operation. </p>
+   * Container for response returned by <code> '''GetCompatibleElasticsearchVersions''' </code> operation.
    */
   @js.native
   trait GetCompatibleElasticsearchVersionsResponse extends js.Object {
@@ -1029,7 +1032,7 @@ package es {
   }
 
   /**
-   * <p> Container for request parameters to <code> <a>GetUpgradeHistory</a> </code> operation. </p>
+   * Container for request parameters to <code> '''GetUpgradeHistory''' </code> operation.
    */
   @js.native
   trait GetUpgradeHistoryRequest extends js.Object {
@@ -1053,7 +1056,7 @@ package es {
   }
 
   /**
-   * <p> Container for response returned by <code> <a>GetUpgradeHistory</a> </code> operation. </p>
+   * Container for response returned by <code> '''GetUpgradeHistory''' </code> operation.
    */
   @js.native
   trait GetUpgradeHistoryResponse extends js.Object {
@@ -1074,7 +1077,7 @@ package es {
   }
 
   /**
-   * <p> Container for request parameters to <code> <a>GetUpgradeStatus</a> </code> operation. </p>
+   * Container for request parameters to <code> '''GetUpgradeStatus''' </code> operation.
    */
   @js.native
   trait GetUpgradeStatusRequest extends js.Object {
@@ -1092,7 +1095,7 @@ package es {
   }
 
   /**
-   * <p> Container for response returned by <code> <a>GetUpgradeStatus</a> </code> operation. </p>
+   * Container for response returned by <code> '''GetUpgradeStatus''' </code> operation.
    */
   @js.native
   trait GetUpgradeStatusResponse extends js.Object {
@@ -1116,7 +1119,7 @@ package es {
   }
 
   /**
-   * <p> InstanceCountLimits represents the limits on number of instances that be created in Amazon Elasticsearch for given InstanceType. </p>
+   * InstanceCountLimits represents the limits on number of instances that be created in Amazon Elasticsearch for given InstanceType.
    */
   @js.native
   trait InstanceCountLimits extends js.Object {
@@ -1137,7 +1140,7 @@ package es {
   }
 
   /**
-   * <p>InstanceLimits represents the list of instance related attributes that are available for given InstanceType. </p>
+   * InstanceLimits represents the list of instance related attributes that are available for given InstanceType.
    */
   @js.native
   trait InstanceLimits extends js.Object {
@@ -1155,7 +1158,7 @@ package es {
   }
 
   /**
-   * <p> Limits for given InstanceType and for each of it's role. <br/> Limits contains following <code> <a>StorageTypes,</a> </code> <code> <a>InstanceLimits</a> </code> and <code> <a>AdditionalLimits</a> </code> </p>
+   * Limits for given InstanceType and for each of it's role. <br/> Limits contains following <code> <a>StorageTypes,</a> </code> <code> '''InstanceLimits''' </code> and <code> '''AdditionalLimits''' </code>
    */
   @js.native
   trait Limits extends js.Object {
@@ -1179,7 +1182,7 @@ package es {
   }
 
   /**
-   * <p>The result of a <code>ListDomainNames</code> operation. Contains the names of all Elasticsearch domains owned by this account.</p>
+   * The result of a <code>ListDomainNames</code> operation. Contains the names of all Elasticsearch domains owned by this account.
    */
   @js.native
   trait ListDomainNamesResponse extends js.Object {
@@ -1197,7 +1200,7 @@ package es {
   }
 
   /**
-   * <p> Container for the parameters to the <code> <a>ListElasticsearchInstanceTypes</a> </code> operation. </p>
+   * Container for the parameters to the <code> '''ListElasticsearchInstanceTypes''' </code> operation.
    */
   @js.native
   trait ListElasticsearchInstanceTypesRequest extends js.Object {
@@ -1224,7 +1227,7 @@ package es {
   }
 
   /**
-   * <p> Container for the parameters returned by <code> <a>ListElasticsearchInstanceTypes</a> </code> operation. </p>
+   * Container for the parameters returned by <code> '''ListElasticsearchInstanceTypes''' </code> operation.
    */
   @js.native
   trait ListElasticsearchInstanceTypesResponse extends js.Object {
@@ -1245,7 +1248,9 @@ package es {
   }
 
   /**
-   * <p> Container for the parameters to the <code> <a>ListElasticsearchVersions</a> </code> operation. <p> Use <code> <a>MaxResults</a> </code> to control the maximum number of results to retrieve in a single call. </p> <p> Use <code> <a>NextToken</a> </code> in response to retrieve more results. If the received response does not contain a NextToken, then there are no more results to retrieve. </p> </p>
+   * Container for the parameters to the <code> '''ListElasticsearchVersions''' </code> operation. <p> Use <code> '''MaxResults''' </code> to control the maximum number of results to retrieve in a single call.
+   *  Use <code> '''NextToken''' </code> in response to retrieve more results. If the received response does not contain a NextToken, then there are no more results to retrieve.
+   *  </p>
    */
   @js.native
   trait ListElasticsearchVersionsRequest extends js.Object {
@@ -1266,7 +1271,7 @@ package es {
   }
 
   /**
-   * <p> Container for the parameters for response received from <code> <a>ListElasticsearchVersions</a> </code> operation. </p>
+   * Container for the parameters for response received from <code> '''ListElasticsearchVersions''' </code> operation.
    */
   @js.native
   trait ListElasticsearchVersionsResponse extends js.Object {
@@ -1287,7 +1292,7 @@ package es {
   }
 
   /**
-   * <p>Container for the parameters to the <code><a>ListTags</a></code> operation. Specify the <code>ARN</code> for the Elasticsearch domain to which the tags are attached that you want to view are attached.</p>
+   * Container for the parameters to the <code>'''ListTags'''</code> operation. Specify the <code>ARN</code> for the Elasticsearch domain to which the tags are attached that you want to view are attached.
    */
   @js.native
   trait ListTagsRequest extends js.Object {
@@ -1305,7 +1310,7 @@ package es {
   }
 
   /**
-   * <p>The result of a <code>ListTags</code> operation. Contains tags for all requested Elasticsearch domains.</p>
+   * The result of a <code>ListTags</code> operation. Contains tags for all requested Elasticsearch domains.
    */
   @js.native
   trait ListTagsResponse extends js.Object {
@@ -1323,7 +1328,9 @@ package es {
   }
 
   /**
-   * <p>Log Publishing option that is set for given domain. <br/>Attributes and their details: <ul> <li>CloudWatchLogsLogGroupArn: ARN of the Cloudwatch log group to which log needs to be published.</li> <li>Enabled: Whether the log publishing for given log type is enabled or not</li> </ul> </p>
+   * <p>Log Publishing option that is set for given domain. <br/>Attributes and their details:* CloudWatchLogsLogGroupArn: ARN of the Cloudwatch log group to which log needs to be published.
+   *  * Enabled: Whether the log publishing for given log type is enabled or not
+   * </p>
    */
   @js.native
   trait LogPublishingOption extends js.Object {
@@ -1344,7 +1351,7 @@ package es {
   }
 
   /**
-   * <p>The configured log publishing options for the domain and their current status.</p>
+   * The configured log publishing options for the domain and their current status.
    */
   @js.native
   trait LogPublishingOptionsStatus extends js.Object {
@@ -1365,7 +1372,10 @@ package es {
   }
 
   /**
-   * <p>Type of Log File, it can be one of the following: <ul> <li>INDEX_SLOW_LOGS: Index slow logs contain insert requests that took more time than configured index query log threshold to execute.</li> <li>SEARCH_SLOW_LOGS: Search slow logs contain search queries that took more time than configured search query log threshold to execute.</li> <li>ES_APPLICATION_LOGS: Elasticsearch application logs contain information about errors and warnings raised during the operation of the service and can be useful for troubleshooting.</li> </ul> </p>
+   * <p>Type of Log File, it can be one of the following:* INDEX_SLOW_LOGS: Index slow logs contain insert requests that took more time than configured index query log threshold to execute.
+   *  * SEARCH_SLOW_LOGS: Search slow logs contain search queries that took more time than configured search query log threshold to execute.
+   *  * ES_APPLICATION_LOGS: Elasticsearch application logs contain information about errors and warnings raised during the operation of the service and can be useful for troubleshooting.
+   * </p>
    */
   object LogTypeEnum {
     val INDEX_SLOW_LOGS = "INDEX_SLOW_LOGS"
@@ -1376,7 +1386,7 @@ package es {
   }
 
   /**
-   * <p>Specifies the node-to-node encryption options.</p>
+   * Specifies the node-to-node encryption options.
    */
   @js.native
   trait NodeToNodeEncryptionOptions extends js.Object {
@@ -1394,7 +1404,7 @@ package es {
   }
 
   /**
-   * <p>Status of the node-to-node encryption options for the specified Elasticsearch domain.</p>
+   * Status of the node-to-node encryption options for the specified Elasticsearch domain.
    */
   @js.native
   trait NodeToNodeEncryptionOptionsStatus extends js.Object {
@@ -1415,7 +1425,9 @@ package es {
   }
 
   /**
-   * <p>The state of a requested change. One of the following:</p> <ul> <li>Processing: The request change is still in-process.</li> <li>Active: The request change is processed and deployed to the Elasticsearch domain.</li> </ul>
+   * The state of a requested change. One of the following:
+   * * Processing: The request change is still in-process.
+   *  * Active: The request change is processed and deployed to the Elasticsearch domain.
    */
   object OptionStateEnum {
     val RequiresIndexDocuments = "RequiresIndexDocuments"
@@ -1426,7 +1438,7 @@ package es {
   }
 
   /**
-   * <p>Provides the current status of the entity.</p>
+   * Provides the current status of the entity.
    */
   @js.native
   trait OptionStatus extends js.Object {
@@ -1456,7 +1468,7 @@ package es {
   }
 
   /**
-   * <p>Container for parameters to <code>PurchaseReservedElasticsearchInstanceOffering</code></p>
+   * Container for parameters to <code>PurchaseReservedElasticsearchInstanceOffering</code>
    */
   @js.native
   trait PurchaseReservedElasticsearchInstanceOfferingRequest extends js.Object {
@@ -1480,7 +1492,7 @@ package es {
   }
 
   /**
-   * <p>Represents the output of a <code>PurchaseReservedElasticsearchInstanceOffering</code> operation.</p>
+   * Represents the output of a <code>PurchaseReservedElasticsearchInstanceOffering</code> operation.
    */
   @js.native
   trait PurchaseReservedElasticsearchInstanceOfferingResponse extends js.Object {
@@ -1501,7 +1513,7 @@ package es {
   }
 
   /**
-   * <p>Contains the specific price and frequency of a recurring charges for a reserved Elasticsearch instance, or for a reserved Elasticsearch instance offering.</p>
+   * Contains the specific price and frequency of a recurring charges for a reserved Elasticsearch instance, or for a reserved Elasticsearch instance offering.
    */
   @js.native
   trait RecurringCharge extends js.Object {
@@ -1522,7 +1534,7 @@ package es {
   }
 
   /**
-   * <p>Container for the parameters to the <code><a>RemoveTags</a></code> operation. Specify the <code>ARN</code> for the Elasticsearch domain from which you want to remove the specified <code>TagKey</code>.</p>
+   * Container for the parameters to the <code>'''RemoveTags'''</code> operation. Specify the <code>ARN</code> for the Elasticsearch domain from which you want to remove the specified <code>TagKey</code>.
    */
   @js.native
   trait RemoveTagsRequest extends js.Object {
@@ -1543,7 +1555,7 @@ package es {
   }
 
   /**
-   * <p>Details of a reserved Elasticsearch instance.</p>
+   * Details of a reserved Elasticsearch instance.
    */
   @js.native
   trait ReservedElasticsearchInstance extends js.Object {
@@ -1597,7 +1609,7 @@ package es {
   }
 
   /**
-   * <p>Details of a reserved Elasticsearch instance offering.</p>
+   * Details of a reserved Elasticsearch instance offering.
    */
   @js.native
   trait ReservedElasticsearchInstanceOffering extends js.Object {
@@ -1644,7 +1656,7 @@ package es {
   }
 
   /**
-   * <p>The current options of an Elasticsearch domain service software options.</p>
+   * The current options of an Elasticsearch domain service software options.
    */
   @js.native
   trait ServiceSoftwareOptions extends js.Object {
@@ -1680,7 +1692,7 @@ package es {
   }
 
   /**
-   * <p>Specifies the time, in UTC format, when the service takes a daily automated snapshot of the specified Elasticsearch domain. Default value is <code>0</code> hours.</p>
+   * Specifies the time, in UTC format, when the service takes a daily automated snapshot of the specified Elasticsearch domain. Default value is <code>0</code> hours.
    */
   @js.native
   trait SnapshotOptions extends js.Object {
@@ -1698,7 +1710,7 @@ package es {
   }
 
   /**
-   * <p>Status of a daily automated snapshot.</p>
+   * Status of a daily automated snapshot.
    */
   @js.native
   trait SnapshotOptionsStatus extends js.Object {
@@ -1719,7 +1731,7 @@ package es {
   }
 
   /**
-   * <p>Container for the parameters to the <code><a>StartElasticsearchServiceSoftwareUpdate</a></code> operation. Specifies the name of the Elasticsearch domain that you wish to schedule a service software update on.</p>
+   * Container for the parameters to the <code>'''StartElasticsearchServiceSoftwareUpdate'''</code> operation. Specifies the name of the Elasticsearch domain that you wish to schedule a service software update on.
    */
   @js.native
   trait StartElasticsearchServiceSoftwareUpdateRequest extends js.Object {
@@ -1737,7 +1749,7 @@ package es {
   }
 
   /**
-   * <p>The result of a <code>StartElasticsearchServiceSoftwareUpdate</code> operation. Contains the status of the update.</p>
+   * The result of a <code>StartElasticsearchServiceSoftwareUpdate</code> operation. Contains the status of the update.
    */
   @js.native
   trait StartElasticsearchServiceSoftwareUpdateResponse extends js.Object {
@@ -1755,7 +1767,7 @@ package es {
   }
 
   /**
-   * <p>StorageTypes represents the list of storage related types and their attributes that are available for given InstanceType. </p>
+   * StorageTypes represents the list of storage related types and their attributes that are available for given InstanceType.
    */
   @js.native
   trait StorageType extends js.Object {
@@ -1779,7 +1791,7 @@ package es {
   }
 
   /**
-   * <p>Limits that are applicable for given storage type. </p>
+   * Limits that are applicable for given storage type.
    */
   @js.native
   trait StorageTypeLimit extends js.Object {
@@ -1800,7 +1812,7 @@ package es {
   }
 
   /**
-   * <p>Specifies a key value pair for a resource tag.</p>
+   * Specifies a key value pair for a resource tag.
    */
   @js.native
   trait Tag extends js.Object {
@@ -1821,7 +1833,7 @@ package es {
   }
 
   /**
-   * <p>Container for the parameters to the <code><a>UpdateElasticsearchDomain</a></code> operation. Specifies the type and number of instances in the domain cluster.</p>
+   * Container for the parameters to the <code>'''UpdateElasticsearchDomain'''</code> operation. Specifies the type and number of instances in the domain cluster.
    */
   @js.native
   trait UpdateElasticsearchDomainConfigRequest extends js.Object {
@@ -1863,7 +1875,7 @@ package es {
   }
 
   /**
-   * <p>The result of an <code>UpdateElasticsearchDomain</code> request. Contains the status of the Elasticsearch domain being updated.</p>
+   * The result of an <code>UpdateElasticsearchDomain</code> request. Contains the status of the Elasticsearch domain being updated.
    */
   @js.native
   trait UpdateElasticsearchDomainConfigResponse extends js.Object {
@@ -1881,7 +1893,7 @@ package es {
   }
 
   /**
-   * <p> Container for request parameters to <code> <a>UpgradeElasticsearchDomain</a> </code> operation. </p>
+   * Container for request parameters to <code> '''UpgradeElasticsearchDomain''' </code> operation.
    */
   @js.native
   trait UpgradeElasticsearchDomainRequest extends js.Object {
@@ -1905,7 +1917,7 @@ package es {
   }
 
   /**
-   * <p> Container for response returned by <code> <a>UpgradeElasticsearchDomain</a> </code> operation. </p>
+   * Container for response returned by <code> '''UpgradeElasticsearchDomain''' </code> operation.
    */
   @js.native
   trait UpgradeElasticsearchDomainResponse extends js.Object {
@@ -1929,7 +1941,7 @@ package es {
   }
 
   /**
-   * <p>History of the last 10 Upgrades and Upgrade Eligibility Checks.</p>
+   * History of the last 10 Upgrades and Upgrade Eligibility Checks.
    */
   @js.native
   trait UpgradeHistory extends js.Object {
@@ -1973,7 +1985,7 @@ package es {
   }
 
   /**
-   * <p>Represents a single step of the Upgrade or Upgrade Eligibility Check workflow.</p>
+   * Represents a single step of the Upgrade or Upgrade Eligibility Check workflow.
    */
   @js.native
   trait UpgradeStepItem extends js.Object {
@@ -2000,7 +2012,7 @@ package es {
   }
 
   /**
-   * <p>Options to specify the subnets and security groups for VPC endpoint. For more information, see <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-vpc.html" target="_blank"> VPC Endpoints for Amazon Elasticsearch Service Domains</a>.</p>
+   * Options to specify the subnets and security groups for VPC endpoint. For more information, see <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-vpc.html" target="_blank"> VPC Endpoints for Amazon Elasticsearch Service Domains</a>.
    */
   @js.native
   trait VPCDerivedInfo extends js.Object {
@@ -2027,7 +2039,7 @@ package es {
   }
 
   /**
-   * <p> Status of the VPC options for the specified Elasticsearch domain.</p>
+   * Status of the VPC options for the specified Elasticsearch domain.
    */
   @js.native
   trait VPCDerivedInfoStatus extends js.Object {
@@ -2048,7 +2060,7 @@ package es {
   }
 
   /**
-   * <p>Options to specify the subnets and security groups for VPC endpoint. For more information, see <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-vpc.html" target="_blank"> VPC Endpoints for Amazon Elasticsearch Service Domains</a>.</p>
+   * Options to specify the subnets and security groups for VPC endpoint. For more information, see <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-vpc.html" target="_blank"> VPC Endpoints for Amazon Elasticsearch Service Domains</a>.
    */
   @js.native
   trait VPCOptions extends js.Object {
@@ -2069,7 +2081,7 @@ package es {
   }
 
   /**
-   * <p> The type of EBS volume, standard, gp2, or io1. See <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-ebs" target="_blank">Configuring EBS-based Storage</a>for more information.</p>
+   * The type of EBS volume, standard, gp2, or io1. See <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-ebs" target="_blank">Configuring EBS-based Storage</a>for more information.
    */
   object VolumeTypeEnum {
     val standard = "standard"

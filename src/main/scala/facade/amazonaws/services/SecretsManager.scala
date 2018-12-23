@@ -697,7 +697,7 @@ package secretsmanager {
   }
 
   /**
-   * <p>A structure that defines the rotation configuration for the secret.</p>
+   * A structure that defines the rotation configuration for the secret.
    */
   @js.native
   trait RotationRulesType extends js.Object {
@@ -715,7 +715,7 @@ package secretsmanager {
   }
 
   /**
-   * <p>A structure that contains the details about a secret. It does not include the encrypted <code>SecretString</code> and <code>SecretBinary</code> values. To get those values, use the <a>GetSecretValue</a> operation.</p>
+   * A structure that contains the details about a secret. It does not include the encrypted <code>SecretString</code> and <code>SecretBinary</code> values. To get those values, use the '''GetSecretValue''' operation.
    */
   @js.native
   trait SecretListEntry extends js.Object {
@@ -769,7 +769,7 @@ package secretsmanager {
   }
 
   /**
-   * <p>A structure that contains information about one version of a secret.</p>
+   * A structure that contains information about one version of a secret.
    */
   @js.native
   trait SecretVersionsListEntry extends js.Object {
@@ -796,7 +796,7 @@ package secretsmanager {
   }
 
   /**
-   * <p>A structure that contains information about a tag.</p>
+   * A structure that contains information about a tag.
    */
   @js.native
   trait Tag extends js.Object {

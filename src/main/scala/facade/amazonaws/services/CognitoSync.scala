@@ -138,7 +138,7 @@ package cognitosync {
   }
 
   /**
-   * <p>Thrown if there are parallel requests to modify a resource.</p>
+   * Thrown if there are parallel requests to modify a resource.
    */
   @js.native
   trait ConcurrentModificationExceptionException extends js.Object {
@@ -397,7 +397,7 @@ package cognitosync {
   }
 
   /**
-   * <p>A request for a list of the configured Cognito Events</p>
+   * A request for a list of the configured Cognito Events
    */
   @js.native
   trait GetCognitoEventsRequest extends js.Object {
@@ -415,7 +415,7 @@ package cognitosync {
   }
 
   /**
-   * <p>The response from the GetCognitoEvents request</p>
+   * The response from the GetCognitoEvents request
    */
   @js.native
   trait GetCognitoEventsResponse extends js.Object {
@@ -433,7 +433,7 @@ package cognitosync {
   }
 
   /**
-   * <p>The input for the GetIdentityPoolConfiguration operation.</p>
+   * The input for the GetIdentityPoolConfiguration operation.
    */
   @js.native
   trait GetIdentityPoolConfigurationRequest extends js.Object {
@@ -451,7 +451,7 @@ package cognitosync {
   }
 
   /**
-   * <p>The output for the GetIdentityPoolConfiguration operation.</p>
+   * The output for the GetIdentityPoolConfiguration operation.
    */
   @js.native
   trait GetIdentityPoolConfigurationResponse extends js.Object {
@@ -545,7 +545,7 @@ package cognitosync {
   }
 
   /**
-   * <p>The AWS Lambda function returned invalid output or an exception.</p>
+   * The AWS Lambda function returned invalid output or an exception.
    */
   @js.native
   trait InvalidLambdaFunctionOutputExceptionException extends js.Object {
@@ -561,7 +561,7 @@ package cognitosync {
   }
 
   /**
-   * <p>AWS Lambda throttled your account, please contact AWS Support</p>
+   * AWS Lambda throttled your account, please contact AWS Support
    */
   @js.native
   trait LambdaThrottledExceptionException extends js.Object {
@@ -778,7 +778,7 @@ package cognitosync {
   }
 
   /**
-   * <p>Configuration options to be applied to the identity pool.</p>
+   * Configuration options to be applied to the identity pool.
    */
   @js.native
   trait PushSync extends js.Object {
@@ -862,7 +862,7 @@ package cognitosync {
   }
 
   /**
-   * <p>A request to RegisterDevice.</p>
+   * A request to RegisterDevice.
    */
   @js.native
   trait RegisterDeviceRequest extends js.Object {
@@ -889,7 +889,7 @@ package cognitosync {
   }
 
   /**
-   * <p>Response to a RegisterDevice request.</p>
+   * Response to a RegisterDevice request.
    */
   @js.native
   trait RegisterDeviceResponse extends js.Object {
@@ -923,7 +923,8 @@ package cognitosync {
   }
 
   /**
-   * <p>A request to configure Cognito Events"</p>"
+   * A request to configure Cognito Events"
+   * "
    */
   @js.native
   trait SetCognitoEventsRequest extends js.Object {
@@ -944,7 +945,7 @@ package cognitosync {
   }
 
   /**
-   * <p>The input for the SetIdentityPoolConfiguration operation.</p>
+   * The input for the SetIdentityPoolConfiguration operation.
    */
   @js.native
   trait SetIdentityPoolConfigurationRequest extends js.Object {
@@ -968,7 +969,7 @@ package cognitosync {
   }
 
   /**
-   * <p>The output for the SetIdentityPoolConfiguration operation</p>
+   * The output for the SetIdentityPoolConfiguration operation
    */
   @js.native
   trait SetIdentityPoolConfigurationResponse extends js.Object {
@@ -999,7 +1000,7 @@ package cognitosync {
   }
 
   /**
-   * <p>A request to SubscribeToDatasetRequest.</p>
+   * A request to SubscribeToDatasetRequest.
    */
   @js.native
   trait SubscribeToDatasetRequest extends js.Object {
@@ -1026,7 +1027,7 @@ package cognitosync {
   }
 
   /**
-   * <p>Response to a SubscribeToDataset request.</p>
+   * Response to a SubscribeToDataset request.
    */
   @js.native
   trait SubscribeToDatasetResponse extends js.Object {
@@ -1050,7 +1051,7 @@ package cognitosync {
   }
 
   /**
-   * <p>A request to UnsubscribeFromDataset.</p>
+   * A request to UnsubscribeFromDataset.
    */
   @js.native
   trait UnsubscribeFromDatasetRequest extends js.Object {
@@ -1077,7 +1078,7 @@ package cognitosync {
   }
 
   /**
-   * <p>Response to an UnsubscribeFromDataset request.</p>
+   * Response to an UnsubscribeFromDataset request.
    */
   @js.native
   trait UnsubscribeFromDatasetResponse extends js.Object {

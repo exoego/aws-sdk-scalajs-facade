@@ -197,7 +197,7 @@ package dynamodb {
   }
 
   /**
-   * <p>Represents an attribute for describing the key schema for the table and indexes.</p>
+   * Represents an attribute for describing the key schema for the table and indexes.
    */
   @js.native
   trait AttributeDefinition extends js.Object {
@@ -218,7 +218,9 @@ package dynamodb {
   }
 
   /**
-   * <p>Represents the data for an attribute.</p> <p>Each attribute value is described as a name-value pair. The name is the data type, and the value is the data itself.</p> <p>For more information, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.NamingRulesDataTypes.html#HowItWorks.DataTypes">Data Types</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+   * Represents the data for an attribute.
+   *  Each attribute value is described as a name-value pair. The name is the data type, and the value is the data itself.
+   *  For more information, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.NamingRulesDataTypes.html#HowItWorks.DataTypes">Data Types</a> in the <i>Amazon DynamoDB Developer Guide</i>.
    */
   @js.native
   trait AttributeValue extends js.Object {
@@ -291,7 +293,10 @@ package dynamodb {
   }
 
   /**
-   * <p>For the <code>UpdateItem</code> operation, represents the attributes to be modified, the action to perform on each, and the new value for each.</p> <note> <p>You cannot use <code>UpdateItem</code> to update any primary key attributes. Instead, you will need to delete the item, and then use <code>PutItem</code> to create a new item with new attributes.</p> </note> <p>Attribute values cannot be null; string and binary type attributes must have lengths greater than zero; and set type attributes must not be empty. Requests with empty values will be rejected with a <code>ValidationException</code> exception.</p>
+   * For the <code>UpdateItem</code> operation, represents the attributes to be modified, the action to perform on each, and the new value for each.
+   *
+   * '''Note:'''You cannot use <code>UpdateItem</code> to update any primary key attributes. Instead, you will need to delete the item, and then use <code>PutItem</code> to create a new item with new attributes.
+   * Attribute values cannot be null; string and binary type attributes must have lengths greater than zero; and set type attributes must not be empty. Requests with empty values will be rejected with a <code>ValidationException</code> exception.
    */
   @js.native
   trait AttributeValueUpdate extends js.Object {
@@ -312,7 +317,7 @@ package dynamodb {
   }
 
   /**
-   * <p>Represents the properties of the scaling policy.</p>
+   * Represents the properties of the scaling policy.
    */
   @js.native
   trait AutoScalingPolicyDescription extends js.Object {
@@ -333,7 +338,7 @@ package dynamodb {
   }
 
   /**
-   * <p>Represents the autoscaling policy to be modified.</p>
+   * Represents the autoscaling policy to be modified.
    */
   @js.native
   trait AutoScalingPolicyUpdate extends js.Object {
@@ -354,7 +359,7 @@ package dynamodb {
   }
 
   /**
-   * <p>Represents the autoscaling settings for a global table or global secondary index.</p>
+   * Represents the autoscaling settings for a global table or global secondary index.
    */
   @js.native
   trait AutoScalingSettingsDescription extends js.Object {
@@ -384,7 +389,7 @@ package dynamodb {
   }
 
   /**
-   * <p>Represents the autoscaling settings to be modified for a global table or global secondary index.</p>
+   * Represents the autoscaling settings to be modified for a global table or global secondary index.
    */
   @js.native
   trait AutoScalingSettingsUpdate extends js.Object {
@@ -414,7 +419,7 @@ package dynamodb {
   }
 
   /**
-   * <p>Represents the properties of a target tracking scaling policy.</p>
+   * Represents the properties of a target tracking scaling policy.
    */
   @js.native
   trait AutoScalingTargetTrackingScalingPolicyConfigurationDescription extends js.Object {
@@ -441,7 +446,7 @@ package dynamodb {
   }
 
   /**
-   * <p>Represents the settings of a target tracking scaling policy that will be modified.</p>
+   * Represents the settings of a target tracking scaling policy that will be modified.
    */
   @js.native
   trait AutoScalingTargetTrackingScalingPolicyConfigurationUpdate extends js.Object {
@@ -468,7 +473,7 @@ package dynamodb {
   }
 
   /**
-   * <p>Contains the description of the backup created for the table.</p>
+   * Contains the description of the backup created for the table.
    */
   @js.native
   trait BackupDescription extends js.Object {
@@ -492,7 +497,7 @@ package dynamodb {
   }
 
   /**
-   * <p>Contains the details of the backup created for the table.</p>
+   * Contains the details of the backup created for the table.
    */
   @js.native
   trait BackupDetails extends js.Object {
@@ -536,7 +541,7 @@ package dynamodb {
   }
 
   /**
-   * <p>Contains details for the backup.</p>
+   * Contains details for the backup.
    */
   @js.native
   trait BackupSummary extends js.Object {
@@ -596,7 +601,7 @@ package dynamodb {
   }
 
   /**
-   * <p>Represents the input of a <code>BatchGetItem</code> operation.</p>
+   * Represents the input of a <code>BatchGetItem</code> operation.
    */
   @js.native
   trait BatchGetItemInput extends js.Object {
@@ -617,7 +622,7 @@ package dynamodb {
   }
 
   /**
-   * <p>Represents the output of a <code>BatchGetItem</code> operation.</p>
+   * Represents the output of a <code>BatchGetItem</code> operation.
    */
   @js.native
   trait BatchGetItemOutput extends js.Object {
@@ -641,7 +646,7 @@ package dynamodb {
   }
 
   /**
-   * <p>Represents the input of a <code>BatchWriteItem</code> operation.</p>
+   * Represents the input of a <code>BatchWriteItem</code> operation.
    */
   @js.native
   trait BatchWriteItemInput extends js.Object {
@@ -665,7 +670,7 @@ package dynamodb {
   }
 
   /**
-   * <p>Represents the output of a <code>BatchWriteItem</code> operation.</p>
+   * Represents the output of a <code>BatchWriteItem</code> operation.
    */
   @js.native
   trait BatchWriteItemOutput extends js.Object {
@@ -696,7 +701,7 @@ package dynamodb {
   }
 
   /**
-   * <p>Contains the details for the read/write capacity mode.</p>
+   * Contains the details for the read/write capacity mode.
    */
   @js.native
   trait BillingModeSummary extends js.Object {
@@ -717,7 +722,7 @@ package dynamodb {
   }
 
   /**
-   * <p>Represents the amount of provisioned throughput capacity consumed on a table or an index.</p>
+   * Represents the amount of provisioned throughput capacity consumed on a table or an index.
    */
   @js.native
   trait Capacity extends js.Object {
@@ -759,7 +764,11 @@ package dynamodb {
   }
 
   /**
-   * <p>Represents the selection criteria for a <code>Query</code> or <code>Scan</code> operation:</p> <ul> <li> <p>For a <code>Query</code> operation, <code>Condition</code> is used for specifying the <code>KeyConditions</code> to use when querying a table or an index. For <code>KeyConditions</code>, only the following comparison operators are supported:</p> <p> <code>EQ | LE | LT | GE | GT | BEGINS_WITH | BETWEEN</code> </p> <p> <code>Condition</code> is also used in a <code>QueryFilter</code>, which evaluates the query results and returns only the desired values.</p> </li> <li> <p>For a <code>Scan</code> operation, <code>Condition</code> is used in a <code>ScanFilter</code>, which evaluates the scan results and returns only the desired values.</p> </li> </ul>
+   * Represents the selection criteria for a <code>Query</code> or <code>Scan</code> operation:
+   * * For a <code>Query</code> operation, <code>Condition</code> is used for specifying the <code>KeyConditions</code> to use when querying a table or an index. For <code>KeyConditions</code>, only the following comparison operators are supported:
+   *  <code>EQ | LE | LT | GE | GT | BEGINS_WITH | BETWEEN</code>
+   *  <code>Condition</code> is also used in a <code>QueryFilter</code>, which evaluates the query results and returns only the desired values.
+   *  * For a <code>Scan</code> operation, <code>Condition</code> is used in a <code>ScanFilter</code>, which evaluates the scan results and returns only the desired values.
    */
   @js.native
   trait Condition extends js.Object {
@@ -780,7 +789,7 @@ package dynamodb {
   }
 
   /**
-   * <p>Represents a request to perform a check that an item exists or to check the condition of specific attributes of the item..</p>
+   * Represents a request to perform a check that an item exists or to check the condition of specific attributes of the item..
    */
   @js.native
   trait ConditionCheck extends js.Object {
@@ -820,7 +829,7 @@ package dynamodb {
   }
 
   /**
-   * <p>The capacity units consumed by an operation. The data returned includes the total provisioned throughput consumed, along with statistics for the table and any indexes involved in the operation. <code>ConsumedCapacity</code> is only returned if the request asked for it. For more information, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html">Provisioned Throughput</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+   * The capacity units consumed by an operation. The data returned includes the total provisioned throughput consumed, along with statistics for the table and any indexes involved in the operation. <code>ConsumedCapacity</code> is only returned if the request asked for it. For more information, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html">Provisioned Throughput</a> in the <i>Amazon DynamoDB Developer Guide</i>.
    */
   @js.native
   trait ConsumedCapacity extends js.Object {
@@ -856,7 +865,7 @@ package dynamodb {
   }
 
   /**
-   * <p>Represents the continuous backups and point in time recovery settings on the table.</p>
+   * Represents the continuous backups and point in time recovery settings on the table.
    */
   @js.native
   trait ContinuousBackupsDescription extends js.Object {
@@ -917,7 +926,7 @@ package dynamodb {
   }
 
   /**
-   * <p>Represents a new global secondary index to be added to an existing table.</p>
+   * Represents a new global secondary index to be added to an existing table.
    */
   @js.native
   trait CreateGlobalSecondaryIndexAction extends js.Object {
@@ -977,7 +986,7 @@ package dynamodb {
   }
 
   /**
-   * <p>Represents a replica to be added.</p>
+   * Represents a replica to be added.
    */
   @js.native
   trait CreateReplicaAction extends js.Object {
@@ -995,7 +1004,7 @@ package dynamodb {
   }
 
   /**
-   * <p>Represents the input of a <code>CreateTable</code> operation.</p>
+   * Represents the input of a <code>CreateTable</code> operation.
    */
   @js.native
   trait CreateTableInput extends js.Object {
@@ -1037,7 +1046,7 @@ package dynamodb {
   }
 
   /**
-   * <p>Represents the output of a <code>CreateTable</code> operation.</p>
+   * Represents the output of a <code>CreateTable</code> operation.
    */
   @js.native
   trait CreateTableOutput extends js.Object {
@@ -1055,7 +1064,7 @@ package dynamodb {
   }
 
   /**
-   * <p>Represents a request to perform a <code>DeleteItem</code> operation.</p>
+   * Represents a request to perform a <code>DeleteItem</code> operation.
    */
   @js.native
   trait Delete extends js.Object {
@@ -1118,7 +1127,7 @@ package dynamodb {
   }
 
   /**
-   * <p>Represents a global secondary index to be deleted from an existing table.</p>
+   * Represents a global secondary index to be deleted from an existing table.
    */
   @js.native
   trait DeleteGlobalSecondaryIndexAction extends js.Object {
@@ -1136,7 +1145,7 @@ package dynamodb {
   }
 
   /**
-   * <p>Represents the input of a <code>DeleteItem</code> operation.</p>
+   * Represents the input of a <code>DeleteItem</code> operation.
    */
   @js.native
   trait DeleteItemInput extends js.Object {
@@ -1181,7 +1190,7 @@ package dynamodb {
   }
 
   /**
-   * <p>Represents the output of a <code>DeleteItem</code> operation.</p>
+   * Represents the output of a <code>DeleteItem</code> operation.
    */
   @js.native
   trait DeleteItemOutput extends js.Object {
@@ -1205,7 +1214,7 @@ package dynamodb {
   }
 
   /**
-   * <p>Represents a replica to be removed.</p>
+   * Represents a replica to be removed.
    */
   @js.native
   trait DeleteReplicaAction extends js.Object {
@@ -1223,7 +1232,7 @@ package dynamodb {
   }
 
   /**
-   * <p>Represents a request to perform a <code>DeleteItem</code> operation on an item.</p>
+   * Represents a request to perform a <code>DeleteItem</code> operation on an item.
    */
   @js.native
   trait DeleteRequest extends js.Object {
@@ -1241,7 +1250,7 @@ package dynamodb {
   }
 
   /**
-   * <p>Represents the input of a <code>DeleteTable</code> operation.</p>
+   * Represents the input of a <code>DeleteTable</code> operation.
    */
   @js.native
   trait DeleteTableInput extends js.Object {
@@ -1259,7 +1268,7 @@ package dynamodb {
   }
 
   /**
-   * <p>Represents the output of a <code>DeleteTable</code> operation.</p>
+   * Represents the output of a <code>DeleteTable</code> operation.
    */
   @js.native
   trait DeleteTableOutput extends js.Object {
@@ -1428,7 +1437,7 @@ package dynamodb {
   }
 
   /**
-   * <p>Represents the input of a <code>DescribeLimits</code> operation. Has no content.</p>
+   * Represents the input of a <code>DescribeLimits</code> operation. Has no content.
    */
   @js.native
   trait DescribeLimitsInput extends js.Object {
@@ -1444,7 +1453,7 @@ package dynamodb {
   }
 
   /**
-   * <p>Represents the output of a <code>DescribeLimits</code> operation.</p>
+   * Represents the output of a <code>DescribeLimits</code> operation.
    */
   @js.native
   trait DescribeLimitsOutput extends js.Object {
@@ -1471,7 +1480,7 @@ package dynamodb {
   }
 
   /**
-   * <p>Represents the input of a <code>DescribeTable</code> operation.</p>
+   * Represents the input of a <code>DescribeTable</code> operation.
    */
   @js.native
   trait DescribeTableInput extends js.Object {
@@ -1489,7 +1498,7 @@ package dynamodb {
   }
 
   /**
-   * <p>Represents the output of a <code>DescribeTable</code> operation.</p>
+   * Represents the output of a <code>DescribeTable</code> operation.
    */
   @js.native
   trait DescribeTableOutput extends js.Object {
@@ -1555,7 +1564,10 @@ package dynamodb {
   }
 
   /**
-   * <p>Represents a condition to be compared with an attribute value. This condition can be used with <code>DeleteItem</code>, <code>PutItem</code> or <code>UpdateItem</code> operations; if the comparison evaluates to true, the operation succeeds; if not, the operation fails. You can use <code>ExpectedAttributeValue</code> in one of two different ways:</p> <ul> <li> <p>Use <code>AttributeValueList</code> to specify one or more values to compare against an attribute. Use <code>ComparisonOperator</code> to specify how you want to perform the comparison. If the comparison evaluates to true, then the conditional operation succeeds.</p> </li> <li> <p>Use <code>Value</code> to specify a value that DynamoDB will compare against an attribute. If the values match, then <code>ExpectedAttributeValue</code> evaluates to true and the conditional operation succeeds. Optionally, you can also set <code>Exists</code> to false, indicating that you <i>do not</i> expect to find the attribute value in the table. In this case, the conditional operation succeeds only if the comparison evaluates to false.</p> </li> </ul> <p> <code>Value</code> and <code>Exists</code> are incompatible with <code>AttributeValueList</code> and <code>ComparisonOperator</code>. Note that if you use both sets of parameters at once, DynamoDB will return a <code>ValidationException</code> exception.</p>
+   * Represents a condition to be compared with an attribute value. This condition can be used with <code>DeleteItem</code>, <code>PutItem</code> or <code>UpdateItem</code> operations; if the comparison evaluates to true, the operation succeeds; if not, the operation fails. You can use <code>ExpectedAttributeValue</code> in one of two different ways:
+   * * Use <code>AttributeValueList</code> to specify one or more values to compare against an attribute. Use <code>ComparisonOperator</code> to specify how you want to perform the comparison. If the comparison evaluates to true, then the conditional operation succeeds.
+   *  * Use <code>Value</code> to specify a value that DynamoDB will compare against an attribute. If the values match, then <code>ExpectedAttributeValue</code> evaluates to true and the conditional operation succeeds. Optionally, you can also set <code>Exists</code> to false, indicating that you <i>do not</i> expect to find the attribute value in the table. In this case, the conditional operation succeeds only if the comparison evaluates to false.
+   * <code>Value</code> and <code>Exists</code> are incompatible with <code>AttributeValueList</code> and <code>ComparisonOperator</code>. Note that if you use both sets of parameters at once, DynamoDB will return a <code>ValidationException</code> exception.
    */
   @js.native
   trait ExpectedAttributeValue extends js.Object {
@@ -1582,7 +1594,7 @@ package dynamodb {
   }
 
   /**
-   * <p>Specifies an item and related attribute values to retrieve in a <code>TransactGetItem</code> object.</p>
+   * Specifies an item and related attribute values to retrieve in a <code>TransactGetItem</code> object.
    */
   @js.native
   trait Get extends js.Object {
@@ -1609,7 +1621,7 @@ package dynamodb {
   }
 
   /**
-   * <p>Represents the input of a <code>GetItem</code> operation.</p>
+   * Represents the input of a <code>GetItem</code> operation.
    */
   @js.native
   trait GetItemInput extends js.Object {
@@ -1645,7 +1657,7 @@ package dynamodb {
   }
 
   /**
-   * <p>Represents the output of a <code>GetItem</code> operation.</p>
+   * Represents the output of a <code>GetItem</code> operation.
    */
   @js.native
   trait GetItemOutput extends js.Object {
@@ -1666,7 +1678,7 @@ package dynamodb {
   }
 
   /**
-   * <p>Represents the properties of a global secondary index.</p>
+   * Represents the properties of a global secondary index.
    */
   @js.native
   trait GlobalSecondaryIndex extends js.Object {
@@ -1693,7 +1705,7 @@ package dynamodb {
   }
 
   /**
-   * <p>Represents the properties of a global secondary index.</p>
+   * Represents the properties of a global secondary index.
    */
   @js.native
   trait GlobalSecondaryIndexDescription extends js.Object {
@@ -1735,7 +1747,7 @@ package dynamodb {
   }
 
   /**
-   * <p>Represents the properties of a global secondary index for the table when the backup was created.</p>
+   * Represents the properties of a global secondary index for the table when the backup was created.
    */
   @js.native
   trait GlobalSecondaryIndexInfo extends js.Object {
@@ -1762,7 +1774,10 @@ package dynamodb {
   }
 
   /**
-   * <p>Represents one of the following:</p> <ul> <li> <p>A new global secondary index to be added to an existing table.</p> </li> <li> <p>New provisioned throughput parameters for an existing global secondary index.</p> </li> <li> <p>An existing global secondary index to be removed from an existing table.</p> </li> </ul>
+   * Represents one of the following:
+   * * A new global secondary index to be added to an existing table.
+   *  * New provisioned throughput parameters for an existing global secondary index.
+   *  * An existing global secondary index to be removed from an existing table.
    */
   @js.native
   trait GlobalSecondaryIndexUpdate extends js.Object {
@@ -1786,7 +1801,7 @@ package dynamodb {
   }
 
   /**
-   * <p>Represents the properties of a global table.</p>
+   * Represents the properties of a global table.
    */
   @js.native
   trait GlobalTable extends js.Object {
@@ -1807,7 +1822,7 @@ package dynamodb {
   }
 
   /**
-   * <p>Contains details about the global table.</p>
+   * Contains details about the global table.
    */
   @js.native
   trait GlobalTableDescription extends js.Object {
@@ -1837,7 +1852,7 @@ package dynamodb {
   }
 
   /**
-   * <p>Represents the settings of a global secondary index for a global table that will be modified.</p>
+   * Represents the settings of a global secondary index for a global table that will be modified.
    */
   @js.native
   trait GlobalTableGlobalSecondaryIndexSettingsUpdate extends js.Object {
@@ -1879,7 +1894,7 @@ package dynamodb {
   }
 
   /**
-   * <p>Information about item collections, if any, that were affected by the operation. <code>ItemCollectionMetrics</code> is only returned if the request asked for it. If the table does not have any local secondary indexes, this information is not returned in the response.</p>
+   * Information about item collections, if any, that were affected by the operation. <code>ItemCollectionMetrics</code> is only returned if the request asked for it. If the table does not have any local secondary indexes, this information is not returned in the response.
    */
   @js.native
   trait ItemCollectionMetrics extends js.Object {
@@ -1900,7 +1915,7 @@ package dynamodb {
   }
 
   /**
-   * <p>Details for the requested item.</p>
+   * Details for the requested item.
    */
   @js.native
   trait ItemResponse extends js.Object {
@@ -1918,7 +1933,9 @@ package dynamodb {
   }
 
   /**
-   * <p>Represents <i>a single element</i> of a key schema. A key schema specifies the attributes that make up the primary key of a table, or the key attributes of an index.</p> <p>A <code>KeySchemaElement</code> represents exactly one attribute of the primary key. For example, a simple primary key would be represented by one <code>KeySchemaElement</code> (for the partition key). A composite primary key would require one <code>KeySchemaElement</code> for the partition key, and another <code>KeySchemaElement</code> for the sort key.</p> <p>A <code>KeySchemaElement</code> must be a scalar, top-level attribute (not a nested attribute). The data type must be one of String, Number, or Binary. The attribute cannot be nested within a List or a Map.</p>
+   * Represents <i>a single element</i> of a key schema. A key schema specifies the attributes that make up the primary key of a table, or the key attributes of an index.
+   *  A <code>KeySchemaElement</code> represents exactly one attribute of the primary key. For example, a simple primary key would be represented by one <code>KeySchemaElement</code> (for the partition key). A composite primary key would require one <code>KeySchemaElement</code> for the partition key, and another <code>KeySchemaElement</code> for the sort key.
+   *  A <code>KeySchemaElement</code> must be a scalar, top-level attribute (not a nested attribute). The data type must be one of String, Number, or Binary. The attribute cannot be nested within a List or a Map.
    */
   @js.native
   trait KeySchemaElement extends js.Object {
@@ -1946,7 +1963,8 @@ package dynamodb {
   }
 
   /**
-   * <p>Represents a set of primary keys and, for each key, the attributes to retrieve from the table.</p> <p>For each primary key, you must provide <i>all</i> of the key attributes. For example, with a simple primary key, you only need to provide the partition key. For a composite primary key, you must provide <i>both</i> the partition key and the sort key.</p>
+   * Represents a set of primary keys and, for each key, the attributes to retrieve from the table.
+   *  For each primary key, you must provide <i>all</i> of the key attributes. For example, with a simple primary key, you only need to provide the partition key. For a composite primary key, you must provide <i>both</i> the partition key and the sort key.
    */
   @js.native
   trait KeysAndAttributes extends js.Object {
@@ -2063,7 +2081,7 @@ package dynamodb {
   }
 
   /**
-   * <p>Represents the input of a <code>ListTables</code> operation.</p>
+   * Represents the input of a <code>ListTables</code> operation.
    */
   @js.native
   trait ListTablesInput extends js.Object {
@@ -2084,7 +2102,7 @@ package dynamodb {
   }
 
   /**
-   * <p>Represents the output of a <code>ListTables</code> operation.</p>
+   * Represents the output of a <code>ListTables</code> operation.
    */
   @js.native
   trait ListTablesOutput extends js.Object {
@@ -2141,7 +2159,7 @@ package dynamodb {
   }
 
   /**
-   * <p>Represents the properties of a local secondary index.</p>
+   * Represents the properties of a local secondary index.
    */
   @js.native
   trait LocalSecondaryIndex extends js.Object {
@@ -2165,7 +2183,7 @@ package dynamodb {
   }
 
   /**
-   * <p>Represents the properties of a local secondary index.</p>
+   * Represents the properties of a local secondary index.
    */
   @js.native
   trait LocalSecondaryIndexDescription extends js.Object {
@@ -2198,7 +2216,7 @@ package dynamodb {
   }
 
   /**
-   * <p>Represents the properties of a local secondary index for the table when the backup was created.</p>
+   * Represents the properties of a local secondary index for the table when the backup was created.
    */
   @js.native
   trait LocalSecondaryIndexInfo extends js.Object {
@@ -2222,7 +2240,7 @@ package dynamodb {
   }
 
   /**
-   * <p>The description of the point in time settings applied to the table.</p>
+   * The description of the point in time settings applied to the table.
    */
   @js.native
   trait PointInTimeRecoveryDescription extends js.Object {
@@ -2246,7 +2264,7 @@ package dynamodb {
   }
 
   /**
-   * <p>Represents the settings used to enable point in time recovery.</p>
+   * Represents the settings used to enable point in time recovery.
    */
   @js.native
   trait PointInTimeRecoverySpecification extends js.Object {
@@ -2271,7 +2289,7 @@ package dynamodb {
   }
 
   /**
-   * <p>Represents attributes that are copied (projected) from the table into an index. These are in addition to the primary key attributes and index key attributes, which are automatically projected.</p>
+   * Represents attributes that are copied (projected) from the table into an index. These are in addition to the primary key attributes and index key attributes, which are automatically projected.
    */
   @js.native
   trait Projection extends js.Object {
@@ -2300,7 +2318,8 @@ package dynamodb {
   }
 
   /**
-   * <p>Represents the provisioned throughput settings for a specified table or index. The settings can be modified using the <code>UpdateTable</code> operation.</p> <p>For current minimum and maximum provisioned throughput values, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+   * Represents the provisioned throughput settings for a specified table or index. The settings can be modified using the <code>UpdateTable</code> operation.
+   *  For current minimum and maximum provisioned throughput values, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a> in the <i>Amazon DynamoDB Developer Guide</i>.
    */
   @js.native
   trait ProvisionedThroughput extends js.Object {
@@ -2321,7 +2340,7 @@ package dynamodb {
   }
 
   /**
-   * <p>Represents the provisioned throughput settings for the table, consisting of read and write capacity units, along with data about increases and decreases.</p>
+   * Represents the provisioned throughput settings for the table, consisting of read and write capacity units, along with data about increases and decreases.
    */
   @js.native
   trait ProvisionedThroughputDescription extends js.Object {
@@ -2351,7 +2370,7 @@ package dynamodb {
   }
 
   /**
-   * <p>Represents a request to perform a <code>PutItem</code> operation.</p>
+   * Represents a request to perform a <code>PutItem</code> operation.
    */
   @js.native
   trait Put extends js.Object {
@@ -2384,7 +2403,7 @@ package dynamodb {
   }
 
   /**
-   * <p>Represents the input of a <code>PutItem</code> operation.</p>
+   * Represents the input of a <code>PutItem</code> operation.
    */
   @js.native
   trait PutItemInput extends js.Object {
@@ -2429,7 +2448,7 @@ package dynamodb {
   }
 
   /**
-   * <p>Represents the output of a <code>PutItem</code> operation.</p>
+   * Represents the output of a <code>PutItem</code> operation.
    */
   @js.native
   trait PutItemOutput extends js.Object {
@@ -2453,7 +2472,7 @@ package dynamodb {
   }
 
   /**
-   * <p>Represents a request to perform a <code>PutItem</code> operation on an item.</p>
+   * Represents a request to perform a <code>PutItem</code> operation on an item.
    */
   @js.native
   trait PutRequest extends js.Object {
@@ -2471,7 +2490,7 @@ package dynamodb {
   }
 
   /**
-   * <p>Represents the input of a <code>Query</code> operation.</p>
+   * Represents the input of a <code>Query</code> operation.
    */
   @js.native
   trait QueryInput extends js.Object {
@@ -2537,7 +2556,7 @@ package dynamodb {
   }
 
   /**
-   * <p>Represents the output of a <code>Query</code> operation.</p>
+   * Represents the output of a <code>Query</code> operation.
    */
   @js.native
   trait QueryOutput extends js.Object {
@@ -2567,7 +2586,7 @@ package dynamodb {
   }
 
   /**
-   * <p>Represents the properties of a replica.</p>
+   * Represents the properties of a replica.
    */
   @js.native
   trait Replica extends js.Object {
@@ -2585,7 +2604,7 @@ package dynamodb {
   }
 
   /**
-   * <p>Contains the details of the replica.</p>
+   * Contains the details of the replica.
    */
   @js.native
   trait ReplicaDescription extends js.Object {
@@ -2603,7 +2622,7 @@ package dynamodb {
   }
 
   /**
-   * <p>Represents the properties of a global secondary index.</p>
+   * Represents the properties of a global secondary index.
    */
   @js.native
   trait ReplicaGlobalSecondaryIndexSettingsDescription extends js.Object {
@@ -2636,7 +2655,7 @@ package dynamodb {
   }
 
   /**
-   * <p>Represents the settings of a global secondary index for a global table that will be modified.</p>
+   * Represents the settings of a global secondary index for a global table that will be modified.
    */
   @js.native
   trait ReplicaGlobalSecondaryIndexSettingsUpdate extends js.Object {
@@ -2660,7 +2679,7 @@ package dynamodb {
   }
 
   /**
-   * <p>Represents the properties of a replica.</p>
+   * Represents the properties of a replica.
    */
   @js.native
   trait ReplicaSettingsDescription extends js.Object {
@@ -2699,7 +2718,7 @@ package dynamodb {
   }
 
   /**
-   * <p>Represents the settings for a global table in a region that will be modified.</p>
+   * Represents the settings for a global table in a region that will be modified.
    */
   @js.native
   trait ReplicaSettingsUpdate extends js.Object {
@@ -2735,7 +2754,10 @@ package dynamodb {
   }
 
   /**
-   * <p>Represents one of the following:</p> <ul> <li> <p>A new replica to be added to an existing global table.</p> </li> <li> <p>New parameters for an existing replica.</p> </li> <li> <p>An existing replica to be removed from an existing global table.</p> </li> </ul>
+   * Represents one of the following:
+   * * A new replica to be added to an existing global table.
+   *  * New parameters for an existing replica.
+   *  * An existing replica to be removed from an existing global table.
    */
   @js.native
   trait ReplicaUpdate extends js.Object {
@@ -2756,7 +2778,7 @@ package dynamodb {
   }
 
   /**
-   * <p>Contains details for the restore.</p>
+   * Contains details for the restore.
    */
   @js.native
   trait RestoreSummary extends js.Object {
@@ -2855,7 +2877,11 @@ package dynamodb {
   }
 
   /**
-   * <p>Determines the level of detail about provisioned throughput consumption that is returned in the response:</p> <ul> <li> <p> <code>INDEXES</code> - The response includes the aggregate <code>ConsumedCapacity</code> for the operation, together with <code>ConsumedCapacity</code> for each table and secondary index that was accessed.</p> <p>Note that some operations, such as <code>GetItem</code> and <code>BatchGetItem</code>, do not access any indexes at all. In these cases, specifying <code>INDEXES</code> will only return <code>ConsumedCapacity</code> information for table(s).</p> </li> <li> <p> <code>TOTAL</code> - The response includes only the aggregate <code>ConsumedCapacity</code> for the operation.</p> </li> <li> <p> <code>NONE</code> - No <code>ConsumedCapacity</code> details are included in the response.</p> </li> </ul>
+   * Determines the level of detail about provisioned throughput consumption that is returned in the response:
+   * * <code>INDEXES</code> - The response includes the aggregate <code>ConsumedCapacity</code> for the operation, together with <code>ConsumedCapacity</code> for each table and secondary index that was accessed.
+   *  Note that some operations, such as <code>GetItem</code> and <code>BatchGetItem</code>, do not access any indexes at all. In these cases, specifying <code>INDEXES</code> will only return <code>ConsumedCapacity</code> information for table(s).
+   *  * <code>TOTAL</code> - The response includes only the aggregate <code>ConsumedCapacity</code> for the operation.
+   *  * <code>NONE</code> - No <code>ConsumedCapacity</code> details are included in the response.
    */
   object ReturnConsumedCapacityEnum {
     val INDEXES = "INDEXES"
@@ -2890,7 +2916,7 @@ package dynamodb {
   }
 
   /**
-   * <p>The description of the server-side encryption status on the specified table.</p>
+   * The description of the server-side encryption status on the specified table.
    */
   @js.native
   trait SSEDescription extends js.Object {
@@ -2914,7 +2940,7 @@ package dynamodb {
   }
 
   /**
-   * <p>Represents the settings used to enable server-side encryption.</p>
+   * Represents the settings used to enable server-side encryption.
    */
   @js.native
   trait SSESpecification extends js.Object {
@@ -2963,7 +2989,7 @@ package dynamodb {
   }
 
   /**
-   * <p>Represents the input of a <code>Scan</code> operation.</p>
+   * Represents the input of a <code>Scan</code> operation.
    */
   @js.native
   trait ScanInput extends js.Object {
@@ -3026,7 +3052,7 @@ package dynamodb {
   }
 
   /**
-   * <p>Represents the output of a <code>Scan</code> operation.</p>
+   * Represents the output of a <code>Scan</code> operation.
    */
   @js.native
   trait ScanOutput extends js.Object {
@@ -3065,7 +3091,7 @@ package dynamodb {
   }
 
   /**
-   * <p>Contains the details of the table when the backup was created. </p>
+   * Contains the details of the table when the backup was created.
    */
   @js.native
   trait SourceTableDetails extends js.Object {
@@ -3107,7 +3133,7 @@ package dynamodb {
   }
 
   /**
-   * <p>Contains the details of the features enabled on the table when the backup was created. For example, LSIs, GSIs, streams, TTL. </p>
+   * Contains the details of the features enabled on the table when the backup was created. For example, LSIs, GSIs, streams, TTL.
    */
   @js.native
   trait SourceTableFeatureDetails extends js.Object {
@@ -3137,7 +3163,7 @@ package dynamodb {
   }
 
   /**
-   * <p>Represents the DynamoDB Streams configuration for a table in DynamoDB.</p>
+   * Represents the DynamoDB Streams configuration for a table in DynamoDB.
    */
   @js.native
   trait StreamSpecification extends js.Object {
@@ -3167,7 +3193,7 @@ package dynamodb {
   }
 
   /**
-   * <p>Represents the properties of a table.</p>
+   * Represents the properties of a table.
    */
   @js.native
   trait TableDescription extends js.Object {
@@ -3245,7 +3271,9 @@ package dynamodb {
   }
 
   /**
-   * <p>Describes a tag. A tag is a key-value pair. You can add up to 50 tags to a single DynamoDB table. </p> <p> AWS-assigned tag names and values are automatically assigned the aws: prefix, which the user cannot assign. AWS-assigned tag names do not count towards the tag limit of 50. User-assigned tag names have the prefix user: in the Cost Allocation Report. You cannot backdate the application of a tag. </p> <p>For an overview on tagging DynamoDB resources, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Tagging.html">Tagging for DynamoDB</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+   * Describes a tag. A tag is a key-value pair. You can add up to 50 tags to a single DynamoDB table.
+   *  AWS-assigned tag names and values are automatically assigned the aws: prefix, which the user cannot assign. AWS-assigned tag names do not count towards the tag limit of 50. User-assigned tag names have the prefix user: in the Cost Allocation Report. You cannot backdate the application of a tag.
+   *  For an overview on tagging DynamoDB resources, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Tagging.html">Tagging for DynamoDB</a> in the <i>Amazon DynamoDB Developer Guide</i>.
    */
   @js.native
   trait Tag extends js.Object {
@@ -3284,7 +3312,7 @@ package dynamodb {
   }
 
   /**
-   * <p>The description of the Time to Live (TTL) status on the specified table. </p>
+   * The description of the Time to Live (TTL) status on the specified table.
    */
   @js.native
   trait TimeToLiveDescription extends js.Object {
@@ -3305,7 +3333,7 @@ package dynamodb {
   }
 
   /**
-   * <p>Represents the settings used to enable or disable Time to Live for the specified table.</p>
+   * Represents the settings used to enable or disable Time to Live for the specified table.
    */
   @js.native
   trait TimeToLiveSpecification extends js.Object {
@@ -3335,7 +3363,7 @@ package dynamodb {
   }
 
   /**
-   * <p>Specifies an item to be retrieved as part of the transaction.</p>
+   * Specifies an item to be retrieved as part of the transaction.
    */
   @js.native
   trait TransactGetItem extends js.Object {
@@ -3389,7 +3417,7 @@ package dynamodb {
   }
 
   /**
-   * <p>A list of requests that can perform update, put, delete, or check operations on multiple items in one or more tables atomically.</p>
+   * A list of requests that can perform update, put, delete, or check operations on multiple items in one or more tables atomically.
    */
   @js.native
   trait TransactWriteItem extends js.Object {
@@ -3476,7 +3504,7 @@ package dynamodb {
   }
 
   /**
-   * <p>Represents a request to perform an <code>UpdateItem</code> operation.</p>
+   * Represents a request to perform an <code>UpdateItem</code> operation.
    */
   @js.native
   trait Update extends js.Object {
@@ -3545,7 +3573,7 @@ package dynamodb {
   }
 
   /**
-   * <p>Represents the new provisioned throughput settings to be applied to a global secondary index.</p>
+   * Represents the new provisioned throughput settings to be applied to a global secondary index.
    */
   @js.native
   trait UpdateGlobalSecondaryIndexAction extends js.Object {
@@ -3647,7 +3675,7 @@ package dynamodb {
   }
 
   /**
-   * <p>Represents the input of an <code>UpdateItem</code> operation.</p>
+   * Represents the input of an <code>UpdateItem</code> operation.
    */
   @js.native
   trait UpdateItemInput extends js.Object {
@@ -3698,7 +3726,7 @@ package dynamodb {
   }
 
   /**
-   * <p>Represents the output of an <code>UpdateItem</code> operation.</p>
+   * Represents the output of an <code>UpdateItem</code> operation.
    */
   @js.native
   trait UpdateItemOutput extends js.Object {
@@ -3722,7 +3750,7 @@ package dynamodb {
   }
 
   /**
-   * <p>Represents the input of an <code>UpdateTable</code> operation.</p>
+   * Represents the input of an <code>UpdateTable</code> operation.
    */
   @js.native
   trait UpdateTableInput extends js.Object {
@@ -3758,7 +3786,7 @@ package dynamodb {
   }
 
   /**
-   * <p>Represents the output of an <code>UpdateTable</code> operation.</p>
+   * Represents the output of an <code>UpdateTable</code> operation.
    */
   @js.native
   trait UpdateTableOutput extends js.Object {
@@ -3776,7 +3804,7 @@ package dynamodb {
   }
 
   /**
-   * <p>Represents the input of an <code>UpdateTimeToLive</code> operation.</p>
+   * Represents the input of an <code>UpdateTimeToLive</code> operation.
    */
   @js.native
   trait UpdateTimeToLiveInput extends js.Object {
@@ -3812,7 +3840,7 @@ package dynamodb {
   }
 
   /**
-   * <p>Represents an operation to perform - either <code>DeleteItem</code> or <code>PutItem</code>. You can only request one of these operations, not both, in a single <code>WriteRequest</code>. If you do need to perform both of these operations, you will need to provide two separate <code>WriteRequest</code> objects.</p>
+   * Represents an operation to perform - either <code>DeleteItem</code> or <code>PutItem</code>. You can only request one of these operations, not both, in a single <code>WriteRequest</code>. If you do need to perform both of these operations, you will need to provide two separate <code>WriteRequest</code> objects.
    */
   @js.native
   trait WriteRequest extends js.Object {

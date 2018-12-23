@@ -79,7 +79,7 @@ package cloudsearch {
   }
 
   /**
-   * <p>The configured access rules for the domain's document and search endpoints, and the current status of those rules.</p>
+   * The configured access rules for the domain's document and search endpoints, and the current status of those rules.
    */
   @js.native
   trait AccessPoliciesStatus extends js.Object {
@@ -109,7 +109,7 @@ package cloudsearch {
   }
 
   /**
-   * <p>Synonyms, stopwords, and stemming options for an analysis scheme. Includes tokenization dictionary for Japanese.</p>
+   * Synonyms, stopwords, and stemming options for an analysis scheme. Includes tokenization dictionary for Japanese.
    */
   @js.native
   trait AnalysisOptions extends js.Object {
@@ -139,7 +139,7 @@ package cloudsearch {
   }
 
   /**
-   * <p>Configuration information for an analysis scheme. Each analysis scheme has a unique name and specifies the language of the text to be processed. The following options can be configured for an analysis scheme: <code>Synonyms</code>, <code>Stopwords</code>, <code>StemmingDictionary</code>, <code>JapaneseTokenizationDictionary</code> and <code>AlgorithmicStemming</code>.</p>
+   * Configuration information for an analysis scheme. Each analysis scheme has a unique name and specifies the language of the text to be processed. The following options can be configured for an analysis scheme: <code>Synonyms</code>, <code>Stopwords</code>, <code>StemmingDictionary</code>, <code>JapaneseTokenizationDictionary</code> and <code>AlgorithmicStemming</code>.
    */
   @js.native
   trait AnalysisScheme extends js.Object {
@@ -163,7 +163,7 @@ package cloudsearch {
   }
 
   /**
-   * <p>An <a href="http://tools.ietf.org/html/rfc4646" target="_blank">IETF RFC 4646</a> language code or <code>mul</code> for multiple languages.</p>
+   * An <a href="http://tools.ietf.org/html/rfc4646" target="_blank">IETF RFC 4646</a> language code or <code>mul</code> for multiple languages.
    */
   object AnalysisSchemeLanguageEnum {
     val ar = "ar"
@@ -206,7 +206,7 @@ package cloudsearch {
   }
 
   /**
-   * <p>The status and configuration of an <code>AnalysisScheme</code>.</p>
+   * The status and configuration of an <code>AnalysisScheme</code>.
    */
   @js.native
   trait AnalysisSchemeStatus extends js.Object {
@@ -227,7 +227,7 @@ package cloudsearch {
   }
 
   /**
-   * <p>The status and configuration of the domain's availability options.</p>
+   * The status and configuration of the domain's availability options.
    */
   @js.native
   trait AvailabilityOptionsStatus extends js.Object {
@@ -248,7 +248,7 @@ package cloudsearch {
   }
 
   /**
-   * <p>An error occurred while processing the request.</p>
+   * An error occurred while processing the request.
    */
   @js.native
   trait BaseExceptionException extends js.Object {
@@ -257,7 +257,7 @@ package cloudsearch {
   }
 
   /**
-   * <p>Container for the parameters to the <code><a>BuildSuggester</a></code> operation. Specifies the name of the domain you want to update.</p>
+   * Container for the parameters to the <code>'''BuildSuggester'''</code> operation. Specifies the name of the domain you want to update.
    */
   @js.native
   trait BuildSuggestersRequest extends js.Object {
@@ -275,7 +275,7 @@ package cloudsearch {
   }
 
   /**
-   * <p>The result of a <code>BuildSuggester</code> request. Contains a list of the fields used for suggestions.</p>
+   * The result of a <code>BuildSuggester</code> request. Contains a list of the fields used for suggestions.
    */
   @js.native
   trait BuildSuggestersResponse extends js.Object {
@@ -293,7 +293,7 @@ package cloudsearch {
   }
 
   /**
-   * <p>Container for the parameters to the <code><a>CreateDomain</a></code> operation. Specifies a name for the new search domain.</p>
+   * Container for the parameters to the <code>'''CreateDomain'''</code> operation. Specifies a name for the new search domain.
    */
   @js.native
   trait CreateDomainRequest extends js.Object {
@@ -311,7 +311,7 @@ package cloudsearch {
   }
 
   /**
-   * <p>The result of a <code>CreateDomainRequest</code>. Contains the status of a newly created domain.</p>
+   * The result of a <code>CreateDomainRequest</code>. Contains the status of a newly created domain.
    */
   @js.native
   trait CreateDomainResponse extends js.Object {
@@ -329,7 +329,7 @@ package cloudsearch {
   }
 
   /**
-   * <p>Options for a field that contains an array of dates. Present if <code>IndexFieldType</code> specifies the field is of type <code>date-array</code>. All options are enabled by default.</p>
+   * Options for a field that contains an array of dates. Present if <code>IndexFieldType</code> specifies the field is of type <code>date-array</code>. All options are enabled by default.
    */
   @js.native
   trait DateArrayOptions extends js.Object {
@@ -359,7 +359,7 @@ package cloudsearch {
   }
 
   /**
-   * <p>Options for a date field. Dates and times are specified in UTC (Coordinated Universal Time) according to IETF RFC3339: yyyy-mm-ddT00:00:00Z. Present if <code>IndexFieldType</code> specifies the field is of type <code>date</code>. All options are enabled by default.</p>
+   * Options for a date field. Dates and times are specified in UTC (Coordinated Universal Time) according to IETF RFC3339: yyyy-mm-ddT00:00:00Z. Present if <code>IndexFieldType</code> specifies the field is of type <code>date</code>. All options are enabled by default.
    */
   @js.native
   trait DateOptions extends js.Object {
@@ -392,7 +392,7 @@ package cloudsearch {
   }
 
   /**
-   * <p>Container for the parameters to the <code><a>DefineAnalysisScheme</a></code> operation. Specifies the name of the domain you want to update and the analysis scheme configuration.</p>
+   * Container for the parameters to the <code>'''DefineAnalysisScheme'''</code> operation. Specifies the name of the domain you want to update and the analysis scheme configuration.
    */
   @js.native
   trait DefineAnalysisSchemeRequest extends js.Object {
@@ -413,7 +413,7 @@ package cloudsearch {
   }
 
   /**
-   * <p>The result of a <code><a>DefineAnalysisScheme</a></code> request. Contains the status of the newly-configured analysis scheme.</p>
+   * The result of a <code>'''DefineAnalysisScheme'''</code> request. Contains the status of the newly-configured analysis scheme.
    */
   @js.native
   trait DefineAnalysisSchemeResponse extends js.Object {
@@ -431,7 +431,7 @@ package cloudsearch {
   }
 
   /**
-   * <p>Container for the parameters to the <code><a>DefineExpression</a></code> operation. Specifies the name of the domain you want to update and the expression you want to configure.</p>
+   * Container for the parameters to the <code>'''DefineExpression'''</code> operation. Specifies the name of the domain you want to update and the expression you want to configure.
    */
   @js.native
   trait DefineExpressionRequest extends js.Object {
@@ -452,7 +452,7 @@ package cloudsearch {
   }
 
   /**
-   * <p>The result of a <code>DefineExpression</code> request. Contains the status of the newly-configured expression.</p>
+   * The result of a <code>DefineExpression</code> request. Contains the status of the newly-configured expression.
    */
   @js.native
   trait DefineExpressionResponse extends js.Object {
@@ -470,7 +470,7 @@ package cloudsearch {
   }
 
   /**
-   * <p>Container for the parameters to the <code><a>DefineIndexField</a></code> operation. Specifies the name of the domain you want to update and the index field configuration.</p>
+   * Container for the parameters to the <code>'''DefineIndexField'''</code> operation. Specifies the name of the domain you want to update and the index field configuration.
    */
   @js.native
   trait DefineIndexFieldRequest extends js.Object {
@@ -491,7 +491,7 @@ package cloudsearch {
   }
 
   /**
-   * <p>The result of a <code><a>DefineIndexField</a></code> request. Contains the status of the newly-configured index field.</p>
+   * The result of a <code>'''DefineIndexField'''</code> request. Contains the status of the newly-configured index field.
    */
   @js.native
   trait DefineIndexFieldResponse extends js.Object {
@@ -509,7 +509,7 @@ package cloudsearch {
   }
 
   /**
-   * <p>Container for the parameters to the <code><a>DefineSuggester</a></code> operation. Specifies the name of the domain you want to update and the suggester configuration.</p>
+   * Container for the parameters to the <code>'''DefineSuggester'''</code> operation. Specifies the name of the domain you want to update and the suggester configuration.
    */
   @js.native
   trait DefineSuggesterRequest extends js.Object {
@@ -530,7 +530,7 @@ package cloudsearch {
   }
 
   /**
-   * <p>The result of a <code>DefineSuggester</code> request. Contains the status of the newly-configured suggester.</p>
+   * The result of a <code>DefineSuggester</code> request. Contains the status of the newly-configured suggester.
    */
   @js.native
   trait DefineSuggesterResponse extends js.Object {
@@ -548,7 +548,7 @@ package cloudsearch {
   }
 
   /**
-   * <p>Container for the parameters to the <code><a>DeleteAnalysisScheme</a></code> operation. Specifies the name of the domain you want to update and the analysis scheme you want to delete. </p>
+   * Container for the parameters to the <code>'''DeleteAnalysisScheme'''</code> operation. Specifies the name of the domain you want to update and the analysis scheme you want to delete.
    */
   @js.native
   trait DeleteAnalysisSchemeRequest extends js.Object {
@@ -569,7 +569,7 @@ package cloudsearch {
   }
 
   /**
-   * <p>The result of a <code>DeleteAnalysisScheme</code> request. Contains the status of the deleted analysis scheme.</p>
+   * The result of a <code>DeleteAnalysisScheme</code> request. Contains the status of the deleted analysis scheme.
    */
   @js.native
   trait DeleteAnalysisSchemeResponse extends js.Object {
@@ -587,7 +587,7 @@ package cloudsearch {
   }
 
   /**
-   * <p>Container for the parameters to the <code><a>DeleteDomain</a></code> operation. Specifies the name of the domain you want to delete.</p>
+   * Container for the parameters to the <code>'''DeleteDomain'''</code> operation. Specifies the name of the domain you want to delete.
    */
   @js.native
   trait DeleteDomainRequest extends js.Object {
@@ -605,7 +605,7 @@ package cloudsearch {
   }
 
   /**
-   * <p>The result of a <code>DeleteDomain</code> request. Contains the status of a newly deleted domain, or no status if the domain has already been completely deleted.</p>
+   * The result of a <code>DeleteDomain</code> request. Contains the status of a newly deleted domain, or no status if the domain has already been completely deleted.
    */
   @js.native
   trait DeleteDomainResponse extends js.Object {
@@ -623,7 +623,7 @@ package cloudsearch {
   }
 
   /**
-   * <p>Container for the parameters to the <code><a>DeleteExpression</a></code> operation. Specifies the name of the domain you want to update and the name of the expression you want to delete.</p>
+   * Container for the parameters to the <code>'''DeleteExpression'''</code> operation. Specifies the name of the domain you want to update and the name of the expression you want to delete.
    */
   @js.native
   trait DeleteExpressionRequest extends js.Object {
@@ -644,7 +644,7 @@ package cloudsearch {
   }
 
   /**
-   * <p>The result of a <code><a>DeleteExpression</a></code> request. Specifies the expression being deleted.</p>
+   * The result of a <code>'''DeleteExpression'''</code> request. Specifies the expression being deleted.
    */
   @js.native
   trait DeleteExpressionResponse extends js.Object {
@@ -662,7 +662,7 @@ package cloudsearch {
   }
 
   /**
-   * <p>Container for the parameters to the <code><a>DeleteIndexField</a></code> operation. Specifies the name of the domain you want to update and the name of the index field you want to delete.</p>
+   * Container for the parameters to the <code>'''DeleteIndexField'''</code> operation. Specifies the name of the domain you want to update and the name of the index field you want to delete.
    */
   @js.native
   trait DeleteIndexFieldRequest extends js.Object {
@@ -683,7 +683,7 @@ package cloudsearch {
   }
 
   /**
-   * <p>The result of a <code><a>DeleteIndexField</a></code> request.</p>
+   * The result of a <code>'''DeleteIndexField'''</code> request.
    */
   @js.native
   trait DeleteIndexFieldResponse extends js.Object {
@@ -701,7 +701,7 @@ package cloudsearch {
   }
 
   /**
-   * <p>Container for the parameters to the <code><a>DeleteSuggester</a></code> operation. Specifies the name of the domain you want to update and name of the suggester you want to delete.</p>
+   * Container for the parameters to the <code>'''DeleteSuggester'''</code> operation. Specifies the name of the domain you want to update and name of the suggester you want to delete.
    */
   @js.native
   trait DeleteSuggesterRequest extends js.Object {
@@ -722,7 +722,7 @@ package cloudsearch {
   }
 
   /**
-   * <p>The result of a <code>DeleteSuggester</code> request. Contains the status of the deleted suggester.</p>
+   * The result of a <code>DeleteSuggester</code> request. Contains the status of the deleted suggester.
    */
   @js.native
   trait DeleteSuggesterResponse extends js.Object {
@@ -740,7 +740,7 @@ package cloudsearch {
   }
 
   /**
-   * <p>Container for the parameters to the <code><a>DescribeAnalysisSchemes</a></code> operation. Specifies the name of the domain you want to describe. To limit the response to particular analysis schemes, specify the names of the analysis schemes you want to describe. To show the active configuration and exclude any pending changes, set the <code>Deployed</code> option to <code>true</code>. </p>
+   * Container for the parameters to the <code>'''DescribeAnalysisSchemes'''</code> operation. Specifies the name of the domain you want to describe. To limit the response to particular analysis schemes, specify the names of the analysis schemes you want to describe. To show the active configuration and exclude any pending changes, set the <code>Deployed</code> option to <code>true</code>.
    */
   @js.native
   trait DescribeAnalysisSchemesRequest extends js.Object {
@@ -764,7 +764,7 @@ package cloudsearch {
   }
 
   /**
-   * <p>The result of a <code>DescribeAnalysisSchemes</code> request. Contains the analysis schemes configured for the domain specified in the request.</p>
+   * The result of a <code>DescribeAnalysisSchemes</code> request. Contains the analysis schemes configured for the domain specified in the request.
    */
   @js.native
   trait DescribeAnalysisSchemesResponse extends js.Object {
@@ -782,7 +782,7 @@ package cloudsearch {
   }
 
   /**
-   * <p>Container for the parameters to the <code><a>DescribeAvailabilityOptions</a></code> operation. Specifies the name of the domain you want to describe. To show the active configuration and exclude any pending changes, set the Deployed option to <code>true</code>.</p>
+   * Container for the parameters to the <code>'''DescribeAvailabilityOptions'''</code> operation. Specifies the name of the domain you want to describe. To show the active configuration and exclude any pending changes, set the Deployed option to <code>true</code>.
    */
   @js.native
   trait DescribeAvailabilityOptionsRequest extends js.Object {
@@ -803,7 +803,7 @@ package cloudsearch {
   }
 
   /**
-   * <p>The result of a <code>DescribeAvailabilityOptions</code> request. Indicates whether or not the Multi-AZ option is enabled for the domain specified in the request. </p>
+   * The result of a <code>DescribeAvailabilityOptions</code> request. Indicates whether or not the Multi-AZ option is enabled for the domain specified in the request.
    */
   @js.native
   trait DescribeAvailabilityOptionsResponse extends js.Object {
@@ -821,7 +821,7 @@ package cloudsearch {
   }
 
   /**
-   * <p>Container for the parameters to the <code><a>DescribeDomains</a></code> operation. By default shows the status of all domains. To restrict the response to particular domains, specify the names of the domains you want to describe.</p>
+   * Container for the parameters to the <code>'''DescribeDomains'''</code> operation. By default shows the status of all domains. To restrict the response to particular domains, specify the names of the domains you want to describe.
    */
   @js.native
   trait DescribeDomainsRequest extends js.Object {
@@ -839,7 +839,7 @@ package cloudsearch {
   }
 
   /**
-   * <p>The result of a <code>DescribeDomains</code> request. Contains the status of the domains specified in the request or all domains owned by the account.</p>
+   * The result of a <code>DescribeDomains</code> request. Contains the status of the domains specified in the request or all domains owned by the account.
    */
   @js.native
   trait DescribeDomainsResponse extends js.Object {
@@ -857,7 +857,7 @@ package cloudsearch {
   }
 
   /**
-   * <p>Container for the parameters to the <code><a>DescribeDomains</a></code> operation. Specifies the name of the domain you want to describe. To restrict the response to particular expressions, specify the names of the expressions you want to describe. To show the active configuration and exclude any pending changes, set the <code>Deployed</code> option to <code>true</code>.</p>
+   * Container for the parameters to the <code>'''DescribeDomains'''</code> operation. Specifies the name of the domain you want to describe. To restrict the response to particular expressions, specify the names of the expressions you want to describe. To show the active configuration and exclude any pending changes, set the <code>Deployed</code> option to <code>true</code>.
    */
   @js.native
   trait DescribeExpressionsRequest extends js.Object {
@@ -881,7 +881,7 @@ package cloudsearch {
   }
 
   /**
-   * <p>The result of a <code>DescribeExpressions</code> request. Contains the expressions configured for the domain specified in the request.</p>
+   * The result of a <code>DescribeExpressions</code> request. Contains the expressions configured for the domain specified in the request.
    */
   @js.native
   trait DescribeExpressionsResponse extends js.Object {
@@ -899,7 +899,7 @@ package cloudsearch {
   }
 
   /**
-   * <p>Container for the parameters to the <code><a>DescribeIndexFields</a></code> operation. Specifies the name of the domain you want to describe. To restrict the response to particular index fields, specify the names of the index fields you want to describe. To show the active configuration and exclude any pending changes, set the <code>Deployed</code> option to <code>true</code>.</p>
+   * Container for the parameters to the <code>'''DescribeIndexFields'''</code> operation. Specifies the name of the domain you want to describe. To restrict the response to particular index fields, specify the names of the index fields you want to describe. To show the active configuration and exclude any pending changes, set the <code>Deployed</code> option to <code>true</code>.
    */
   @js.native
   trait DescribeIndexFieldsRequest extends js.Object {
@@ -923,7 +923,7 @@ package cloudsearch {
   }
 
   /**
-   * <p>The result of a <code>DescribeIndexFields</code> request. Contains the index fields configured for the domain specified in the request.</p>
+   * The result of a <code>DescribeIndexFields</code> request. Contains the index fields configured for the domain specified in the request.
    */
   @js.native
   trait DescribeIndexFieldsResponse extends js.Object {
@@ -941,7 +941,7 @@ package cloudsearch {
   }
 
   /**
-   * <p>Container for the parameters to the <code><a>DescribeScalingParameters</a></code> operation. Specifies the name of the domain you want to describe. </p>
+   * Container for the parameters to the <code>'''DescribeScalingParameters'''</code> operation. Specifies the name of the domain you want to describe.
    */
   @js.native
   trait DescribeScalingParametersRequest extends js.Object {
@@ -959,7 +959,7 @@ package cloudsearch {
   }
 
   /**
-   * <p>The result of a <code>DescribeScalingParameters</code> request. Contains the scaling parameters configured for the domain specified in the request.</p>
+   * The result of a <code>DescribeScalingParameters</code> request. Contains the scaling parameters configured for the domain specified in the request.
    */
   @js.native
   trait DescribeScalingParametersResponse extends js.Object {
@@ -977,7 +977,7 @@ package cloudsearch {
   }
 
   /**
-   * <p>Container for the parameters to the <code><a>DescribeServiceAccessPolicies</a></code> operation. Specifies the name of the domain you want to describe. To show the active configuration and exclude any pending changes, set the <code>Deployed</code> option to <code>true</code>.</p>
+   * Container for the parameters to the <code>'''DescribeServiceAccessPolicies'''</code> operation. Specifies the name of the domain you want to describe. To show the active configuration and exclude any pending changes, set the <code>Deployed</code> option to <code>true</code>.
    */
   @js.native
   trait DescribeServiceAccessPoliciesRequest extends js.Object {
@@ -998,7 +998,7 @@ package cloudsearch {
   }
 
   /**
-   * <p>The result of a <code>DescribeServiceAccessPolicies</code> request.</p>
+   * The result of a <code>DescribeServiceAccessPolicies</code> request.
    */
   @js.native
   trait DescribeServiceAccessPoliciesResponse extends js.Object {
@@ -1016,7 +1016,7 @@ package cloudsearch {
   }
 
   /**
-   * <p>Container for the parameters to the <code><a>DescribeSuggester</a></code> operation. Specifies the name of the domain you want to describe. To restrict the response to particular suggesters, specify the names of the suggesters you want to describe. To show the active configuration and exclude any pending changes, set the <code>Deployed</code> option to <code>true</code>.</p>
+   * Container for the parameters to the <code>'''DescribeSuggester'''</code> operation. Specifies the name of the domain you want to describe. To restrict the response to particular suggesters, specify the names of the suggesters you want to describe. To show the active configuration and exclude any pending changes, set the <code>Deployed</code> option to <code>true</code>.
    */
   @js.native
   trait DescribeSuggestersRequest extends js.Object {
@@ -1040,7 +1040,7 @@ package cloudsearch {
   }
 
   /**
-   * <p>The result of a <code>DescribeSuggesters</code> request.</p>
+   * The result of a <code>DescribeSuggesters</code> request.
    */
   @js.native
   trait DescribeSuggestersResponse extends js.Object {
@@ -1058,7 +1058,7 @@ package cloudsearch {
   }
 
   /**
-   * <p>The request was rejected because it attempted an operation which is not enabled.</p>
+   * The request was rejected because it attempted an operation which is not enabled.
    */
   @js.native
   trait DisabledOperationExceptionException extends js.Object {
@@ -1066,7 +1066,7 @@ package cloudsearch {
   }
 
   /**
-   * <p>Options for a search suggester.</p>
+   * Options for a search suggester.
    */
   @js.native
   trait DocumentSuggesterOptions extends js.Object {
@@ -1090,7 +1090,7 @@ package cloudsearch {
   }
 
   /**
-   * <p>The current status of the search domain.</p>
+   * The current status of the search domain.
    */
   @js.native
   trait DomainStatus extends js.Object {
@@ -1144,7 +1144,7 @@ package cloudsearch {
   }
 
   /**
-   * <p>Options for a field that contains an array of double-precision 64-bit floating point values. Present if <code>IndexFieldType</code> specifies the field is of type <code>double-array</code>. All options are enabled by default.</p>
+   * Options for a field that contains an array of double-precision 64-bit floating point values. Present if <code>IndexFieldType</code> specifies the field is of type <code>double-array</code>. All options are enabled by default.
    */
   @js.native
   trait DoubleArrayOptions extends js.Object {
@@ -1174,7 +1174,7 @@ package cloudsearch {
   }
 
   /**
-   * <p>Options for a double-precision 64-bit floating point field. Present if <code>IndexFieldType</code> specifies the field is of type <code>double</code>. All options are enabled by default.</p>
+   * Options for a double-precision 64-bit floating point field. Present if <code>IndexFieldType</code> specifies the field is of type <code>double</code>. All options are enabled by default.
    */
   @js.native
   trait DoubleOptions extends js.Object {
@@ -1207,7 +1207,7 @@ package cloudsearch {
   }
 
   /**
-   * <p>A named expression that can be evaluated at search time. Can be used to sort the search results, define other expressions, or return computed information in the search results. </p>
+   * A named expression that can be evaluated at search time. Can be used to sort the search results, define other expressions, or return computed information in the search results.
    */
   @js.native
   trait Expression extends js.Object {
@@ -1228,7 +1228,7 @@ package cloudsearch {
   }
 
   /**
-   * <p>The value of an <code>Expression</code> and its current status.</p>
+   * The value of an <code>Expression</code> and its current status.
    */
   @js.native
   trait ExpressionStatus extends js.Object {
@@ -1249,7 +1249,7 @@ package cloudsearch {
   }
 
   /**
-   * <p>Container for the parameters to the <code><a>IndexDocuments</a></code> operation. Specifies the name of the domain you want to re-index.</p>
+   * Container for the parameters to the <code>'''IndexDocuments'''</code> operation. Specifies the name of the domain you want to re-index.
    */
   @js.native
   trait IndexDocumentsRequest extends js.Object {
@@ -1267,7 +1267,7 @@ package cloudsearch {
   }
 
   /**
-   * <p>The result of an <code>IndexDocuments</code> request. Contains the status of the indexing operation, including the fields being indexed.</p>
+   * The result of an <code>IndexDocuments</code> request. Contains the status of the indexing operation, including the fields being indexed.
    */
   @js.native
   trait IndexDocumentsResponse extends js.Object {
@@ -1285,7 +1285,7 @@ package cloudsearch {
   }
 
   /**
-   * <p>Configuration information for a field in the index, including its name, type, and options. The supported options depend on the <code><a>IndexFieldType</a></code>.</p>
+   * Configuration information for a field in the index, including its name, type, and options. The supported options depend on the <code>'''IndexFieldType'''</code>.
    */
   @js.native
   trait IndexField extends js.Object {
@@ -1339,7 +1339,7 @@ package cloudsearch {
   }
 
   /**
-   * <p>The value of an <code>IndexField</code> and its current status.</p>
+   * The value of an <code>IndexField</code> and its current status.
    */
   @js.native
   trait IndexFieldStatus extends js.Object {
@@ -1360,7 +1360,7 @@ package cloudsearch {
   }
 
   /**
-   * <p>The type of field. The valid options for a field depend on the field type. For more information about the supported field types, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-index-fields.html" target="_blank">Configuring Index Fields</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>
+   * The type of field. The valid options for a field depend on the field type. For more information about the supported field types, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-index-fields.html" target="_blank">Configuring Index Fields</a> in the <i>Amazon CloudSearch Developer Guide</i>.
    */
   object IndexFieldTypeEnum {
     val int = "int"
@@ -1379,7 +1379,7 @@ package cloudsearch {
   }
 
   /**
-   * <p>Options for a field that contains an array of 64-bit signed integers. Present if <code>IndexFieldType</code> specifies the field is of type <code>int-array</code>. All options are enabled by default.</p>
+   * Options for a field that contains an array of 64-bit signed integers. Present if <code>IndexFieldType</code> specifies the field is of type <code>int-array</code>. All options are enabled by default.
    */
   @js.native
   trait IntArrayOptions extends js.Object {
@@ -1409,7 +1409,7 @@ package cloudsearch {
   }
 
   /**
-   * <p>Options for a 64-bit signed integer field. Present if <code>IndexFieldType</code> specifies the field is of type <code>int</code>. All options are enabled by default.</p>
+   * Options for a 64-bit signed integer field. Present if <code>IndexFieldType</code> specifies the field is of type <code>int</code>. All options are enabled by default.
    */
   @js.native
   trait IntOptions extends js.Object {
@@ -1442,7 +1442,7 @@ package cloudsearch {
   }
 
   /**
-   * <p>An internal error occurred while processing the request. If this problem persists, report an issue from the <a href="http://status.aws.amazon.com/" target="_blank">Service Health Dashboard</a>.</p>
+   * An internal error occurred while processing the request. If this problem persists, report an issue from the <a href="http://status.aws.amazon.com/" target="_blank">Service Health Dashboard</a>.
    */
   @js.native
   trait InternalExceptionException extends js.Object {
@@ -1450,7 +1450,7 @@ package cloudsearch {
   }
 
   /**
-   * <p>The request was rejected because it specified an invalid type definition.</p>
+   * The request was rejected because it specified an invalid type definition.
    */
   @js.native
   trait InvalidTypeExceptionException extends js.Object {
@@ -1458,7 +1458,7 @@ package cloudsearch {
   }
 
   /**
-   * <p>Options for a latlon field. A latlon field contains a location stored as a latitude and longitude value pair. Present if <code>IndexFieldType</code> specifies the field is of type <code>latlon</code>. All options are enabled by default.</p>
+   * Options for a latlon field. A latlon field contains a location stored as a latitude and longitude value pair. Present if <code>IndexFieldType</code> specifies the field is of type <code>latlon</code>. All options are enabled by default.
    */
   @js.native
   trait LatLonOptions extends js.Object {
@@ -1491,7 +1491,7 @@ package cloudsearch {
   }
 
   /**
-   * <p>The request was rejected because a resource limit has already been met.</p>
+   * The request was rejected because a resource limit has already been met.
    */
   @js.native
   trait LimitExceededExceptionException extends js.Object {
@@ -1517,7 +1517,7 @@ package cloudsearch {
   }
 
   /**
-   * <p>The result of a <code>ListDomainNames</code> request. Contains a list of the domains owned by an account.</p>
+   * The result of a <code>ListDomainNames</code> request. Contains a list of the domains owned by an account.
    */
   @js.native
   trait ListDomainNamesResponse extends js.Object {
@@ -1535,7 +1535,7 @@ package cloudsearch {
   }
 
   /**
-   * <p>Options for a field that contains an array of literal strings. Present if <code>IndexFieldType</code> specifies the field is of type <code>literal-array</code>. All options are enabled by default.</p>
+   * Options for a field that contains an array of literal strings. Present if <code>IndexFieldType</code> specifies the field is of type <code>literal-array</code>. All options are enabled by default.
    */
   @js.native
   trait LiteralArrayOptions extends js.Object {
@@ -1565,7 +1565,7 @@ package cloudsearch {
   }
 
   /**
-   * <p>Options for literal field. Present if <code>IndexFieldType</code> specifies the field is of type <code>literal</code>. All options are enabled by default.</p>
+   * Options for literal field. Present if <code>IndexFieldType</code> specifies the field is of type <code>literal</code>. All options are enabled by default.
    */
   @js.native
   trait LiteralOptions extends js.Object {
@@ -1598,7 +1598,11 @@ package cloudsearch {
   }
 
   /**
-   * <p>The state of processing a change to an option. One of:</p> <ul> <li>RequiresIndexDocuments: The option's latest value will not be deployed until <a>IndexDocuments</a> has been called and indexing is complete.</li> <li>Processing: The option's latest value is in the process of being activated.</li> <li>Active: The option's latest value is fully deployed. </li> <li>FailedToValidate: The option value is not compatible with the domain's data and cannot be used to index the data. You must either modify the option value or update or remove the incompatible documents.</li> </ul>
+   * The state of processing a change to an option. One of:
+   * * RequiresIndexDocuments: The option's latest value will not be deployed until '''IndexDocuments''' has been called and indexing is complete.
+   *  * Processing: The option's latest value is in the process of being activated.
+   *  * Active: The option's latest value is fully deployed.
+   *  * FailedToValidate: The option value is not compatible with the domain's data and cannot be used to index the data. You must either modify the option value or update or remove the incompatible documents.
    */
   object OptionStateEnum {
     val RequiresIndexDocuments = "RequiresIndexDocuments"
@@ -1610,7 +1614,7 @@ package cloudsearch {
   }
 
   /**
-   * <p>The status of domain configuration option.</p>
+   * The status of domain configuration option.
    */
   @js.native
   trait OptionStatus extends js.Object {
@@ -1640,7 +1644,7 @@ package cloudsearch {
   }
 
   /**
-   * <p>The instance type (such as <code>search.m1.small</code>) on which an index partition is hosted.</p>
+   * The instance type (such as <code>search.m1.small</code>) on which an index partition is hosted.
    */
   object PartitionInstanceTypeEnum {
     val `search.m1.small` = "search.m1.small"
@@ -1656,7 +1660,7 @@ package cloudsearch {
   }
 
   /**
-   * <p>The request was rejected because it attempted to reference a resource that does not exist.</p>
+   * The request was rejected because it attempted to reference a resource that does not exist.
    */
   @js.native
   trait ResourceNotFoundExceptionException extends js.Object {
@@ -1664,7 +1668,7 @@ package cloudsearch {
   }
 
   /**
-   * <p>The desired instance type and desired number of replicas of each index partition.</p>
+   * The desired instance type and desired number of replicas of each index partition.
    */
   @js.native
   trait ScalingParameters extends js.Object {
@@ -1688,7 +1692,7 @@ package cloudsearch {
   }
 
   /**
-   * <p>The status and configuration of a search domain's scaling parameters. </p>
+   * The status and configuration of a search domain's scaling parameters.
    */
   @js.native
   trait ScalingParametersStatus extends js.Object {
@@ -1709,7 +1713,7 @@ package cloudsearch {
   }
 
   /**
-   * <p>The endpoint to which service requests can be submitted.</p>
+   * The endpoint to which service requests can be submitted.
    */
   @js.native
   trait ServiceEndpoint extends js.Object {
@@ -1727,7 +1731,7 @@ package cloudsearch {
   }
 
   /**
-   * <p>Configuration information for a search suggester. Each suggester has a unique name and specifies the text field you want to use for suggestions. The following options can be configured for a suggester: <code>FuzzyMatching</code>, <code>SortExpression</code>. </p>
+   * Configuration information for a search suggester. Each suggester has a unique name and specifies the text field you want to use for suggestions. The following options can be configured for a suggester: <code>FuzzyMatching</code>, <code>SortExpression</code>.
    */
   @js.native
   trait Suggester extends js.Object {
@@ -1756,7 +1760,7 @@ package cloudsearch {
   }
 
   /**
-   * <p>The value of a <code>Suggester</code> and its current status.</p>
+   * The value of a <code>Suggester</code> and its current status.
    */
   @js.native
   trait SuggesterStatus extends js.Object {
@@ -1777,7 +1781,7 @@ package cloudsearch {
   }
 
   /**
-   * <p>Options for a field that contains an array of text strings. Present if <code>IndexFieldType</code> specifies the field is of type <code>text-array</code>. A <code>text-array</code> field is always searchable. All options are enabled by default.</p>
+   * Options for a field that contains an array of text strings. Present if <code>IndexFieldType</code> specifies the field is of type <code>text-array</code>. A <code>text-array</code> field is always searchable. All options are enabled by default.
    */
   @js.native
   trait TextArrayOptions extends js.Object {
@@ -1807,7 +1811,7 @@ package cloudsearch {
   }
 
   /**
-   * <p>Options for text field. Present if <code>IndexFieldType</code> specifies the field is of type <code>text</code>. A <code>text</code> field is always searchable. All options are enabled by default.</p>
+   * Options for text field. Present if <code>IndexFieldType</code> specifies the field is of type <code>text</code>. A <code>text</code> field is always searchable. All options are enabled by default.
    */
   @js.native
   trait TextOptions extends js.Object {
@@ -1840,7 +1844,7 @@ package cloudsearch {
   }
 
   /**
-   * <p>Container for the parameters to the <code><a>UpdateAvailabilityOptions</a></code> operation. Specifies the name of the domain you want to update and the Multi-AZ availability option.</p>
+   * Container for the parameters to the <code>'''UpdateAvailabilityOptions'''</code> operation. Specifies the name of the domain you want to update and the Multi-AZ availability option.
    */
   @js.native
   trait UpdateAvailabilityOptionsRequest extends js.Object {
@@ -1861,7 +1865,7 @@ package cloudsearch {
   }
 
   /**
-   * <p>The result of a <code>UpdateAvailabilityOptions</code> request. Contains the status of the domain's availability options. </p>
+   * The result of a <code>UpdateAvailabilityOptions</code> request. Contains the status of the domain's availability options.
    */
   @js.native
   trait UpdateAvailabilityOptionsResponse extends js.Object {
@@ -1879,7 +1883,7 @@ package cloudsearch {
   }
 
   /**
-   * <p>Container for the parameters to the <code><a>UpdateScalingParameters</a></code> operation. Specifies the name of the domain you want to update and the scaling parameters you want to configure.</p>
+   * Container for the parameters to the <code>'''UpdateScalingParameters'''</code> operation. Specifies the name of the domain you want to update and the scaling parameters you want to configure.
    */
   @js.native
   trait UpdateScalingParametersRequest extends js.Object {
@@ -1900,7 +1904,7 @@ package cloudsearch {
   }
 
   /**
-   * <p>The result of a <code>UpdateScalingParameters</code> request. Contains the status of the newly-configured scaling parameters.</p>
+   * The result of a <code>UpdateScalingParameters</code> request. Contains the status of the newly-configured scaling parameters.
    */
   @js.native
   trait UpdateScalingParametersResponse extends js.Object {
@@ -1918,7 +1922,7 @@ package cloudsearch {
   }
 
   /**
-   * <p>Container for the parameters to the <code><a>UpdateServiceAccessPolicies</a></code> operation. Specifies the name of the domain you want to update and the access rules you want to configure.</p>
+   * Container for the parameters to the <code>'''UpdateServiceAccessPolicies'''</code> operation. Specifies the name of the domain you want to update and the access rules you want to configure.
    */
   @js.native
   trait UpdateServiceAccessPoliciesRequest extends js.Object {
@@ -1939,7 +1943,7 @@ package cloudsearch {
   }
 
   /**
-   * <p>The result of an <code>UpdateServiceAccessPolicies</code> request. Contains the new access policies.</p>
+   * The result of an <code>UpdateServiceAccessPolicies</code> request. Contains the new access policies.
    */
   @js.native
   trait UpdateServiceAccessPoliciesResponse extends js.Object {

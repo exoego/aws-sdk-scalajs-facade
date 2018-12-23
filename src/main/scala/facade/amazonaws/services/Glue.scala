@@ -254,7 +254,7 @@ package glue {
   }
 
   /**
-   * <p>Defines an action to be initiated by a trigger.</p>
+   * Defines an action to be initiated by a trigger.
    */
   @js.native
   trait Action extends js.Object {
@@ -515,7 +515,7 @@ package glue {
   }
 
   /**
-   * <p>Records an error that occurred when attempting to stop a specified job run.</p>
+   * Records an error that occurred when attempting to stop a specified job run.
    */
   @js.native
   trait BatchStopJobRunError extends js.Object {
@@ -575,7 +575,7 @@ package glue {
   }
 
   /**
-   * <p>Records a successful request to stop a specified JobRun.</p>
+   * Records a successful request to stop a specified JobRun.
    */
   @js.native
   trait BatchStopJobRunSuccessfulSubmission extends js.Object {
@@ -603,7 +603,7 @@ package glue {
   }
 
   /**
-   * <p>Specifies a table definition in the Data Catalog.</p>
+   * Specifies a table definition in the Data Catalog.
    */
   @js.native
   trait CatalogEntry extends js.Object {
@@ -624,7 +624,7 @@ package glue {
   }
 
   /**
-   * <p>A structure containing migration status information.</p>
+   * A structure containing migration status information.
    */
   @js.native
   trait CatalogImportStatus extends js.Object {
@@ -648,7 +648,8 @@ package glue {
   }
 
   /**
-   * <p>Classifiers are triggered during a crawl task. A classifier checks whether a given file is in a format it can handle, and if it is, the classifier creates a schema in the form of a <code>StructType</code> object that matches that data format.</p> <p>You can use the standard classifiers that AWS Glue supplies, or you can write your own classifiers to best categorize your data sources and specify the appropriate schemas to use for them. A classifier can be a <code>grok</code> classifier, an <code>XML</code> classifier, or a <code>JSON</code> classifier, as specified in one of the fields in the <code>Classifier</code> object.</p>
+   * Classifiers are triggered during a crawl task. A classifier checks whether a given file is in a format it can handle, and if it is, the classifier creates a schema in the form of a <code>StructType</code> object that matches that data format.
+   *  You can use the standard classifiers that AWS Glue supplies, or you can write your own classifiers to best categorize your data sources and specify the appropriate schemas to use for them. A classifier can be a <code>grok</code> classifier, an <code>XML</code> classifier, or a <code>JSON</code> classifier, as specified in one of the fields in the <code>Classifier</code> object.
    */
   @js.native
   trait Classifier extends js.Object {
@@ -672,7 +673,7 @@ package glue {
   }
 
   /**
-   * <p>Specifies how CloudWatch data should be encrypted.</p>
+   * Specifies how CloudWatch data should be encrypted.
    */
   @js.native
   trait CloudWatchEncryption extends js.Object {
@@ -700,7 +701,7 @@ package glue {
   }
 
   /**
-   * <p>Represents a directional edge in a directed acyclic graph (DAG).</p>
+   * Represents a directional edge in a directed acyclic graph (DAG).
    */
   @js.native
   trait CodeGenEdge extends js.Object {
@@ -724,7 +725,7 @@ package glue {
   }
 
   /**
-   * <p>Represents a node in a directed acyclic graph (DAG)</p>
+   * Represents a node in a directed acyclic graph (DAG)
    */
   @js.native
   trait CodeGenNode extends js.Object {
@@ -751,7 +752,7 @@ package glue {
   }
 
   /**
-   * <p>An argument or property of a node.</p>
+   * An argument or property of a node.
    */
   @js.native
   trait CodeGenNodeArg extends js.Object {
@@ -775,7 +776,7 @@ package glue {
   }
 
   /**
-   * <p>A column in a <code>Table</code>.</p>
+   * A column in a <code>Table</code>.
    */
   @js.native
   trait Column extends js.Object {
@@ -799,7 +800,7 @@ package glue {
   }
 
   /**
-   * <p>Defines a condition under which a trigger fires.</p>
+   * Defines a condition under which a trigger fires.
    */
   @js.native
   trait Condition extends js.Object {
@@ -823,7 +824,7 @@ package glue {
   }
 
   /**
-   * <p>Defines a connection to a data source.</p>
+   * Defines a connection to a data source.
    */
   @js.native
   trait Connection extends js.Object {
@@ -865,7 +866,7 @@ package glue {
   }
 
   /**
-   * <p>A structure used to specify a connection to create or update.</p>
+   * A structure used to specify a connection to create or update.
    */
   @js.native
   trait ConnectionInput extends js.Object {
@@ -922,7 +923,7 @@ package glue {
   }
 
   /**
-   * <p>Specifies the connections used by a job.</p>
+   * Specifies the connections used by a job.
    */
   @js.native
   trait ConnectionsList extends js.Object {
@@ -940,7 +941,7 @@ package glue {
   }
 
   /**
-   * <p>Specifies a crawler program that examines a data source and uses classifiers to try to determine its schema. If successful, the crawler records metadata concerning the data source in the AWS Glue Data Catalog.</p>
+   * Specifies a crawler program that examines a data source and uses classifiers to try to determine its schema. If successful, the crawler records metadata concerning the data source in the AWS Glue Data Catalog.
    */
   @js.native
   trait Crawler extends js.Object {
@@ -1006,7 +1007,7 @@ package glue {
   }
 
   /**
-   * <p>Metrics for a specified crawler.</p>
+   * Metrics for a specified crawler.
    */
   @js.native
   trait CrawlerMetrics extends js.Object {
@@ -1053,7 +1054,7 @@ package glue {
   }
 
   /**
-   * <p>Specifies data stores to crawl.</p>
+   * Specifies data stores to crawl.
    */
   @js.native
   trait CrawlerTargets extends js.Object {
@@ -1330,7 +1331,7 @@ package glue {
   }
 
   /**
-   * <p>Specifies a <code>grok</code> classifier for <code>CreateClassifier</code> to create.</p>
+   * Specifies a <code>grok</code> classifier for <code>CreateClassifier</code> to create.
    */
   @js.native
   trait CreateGrokClassifierRequest extends js.Object {
@@ -1423,7 +1424,7 @@ package glue {
   }
 
   /**
-   * <p>Specifies a JSON classifier for <code>CreateClassifier</code> to create.</p>
+   * Specifies a JSON classifier for <code>CreateClassifier</code> to create.
    */
   @js.native
   trait CreateJsonClassifierRequest extends js.Object {
@@ -1672,7 +1673,7 @@ package glue {
   }
 
   /**
-   * <p>Specifies an XML classifier for <code>CreateClassifier</code> to create.</p>
+   * Specifies an XML classifier for <code>CreateClassifier</code> to create.
    */
   @js.native
   trait CreateXMLClassifierRequest extends js.Object {
@@ -1696,7 +1697,7 @@ package glue {
   }
 
   /**
-   * <p>Contains configuration information for maintaining Data Catalog security.</p>
+   * Contains configuration information for maintaining Data Catalog security.
    */
   @js.native
   trait DataCatalogEncryptionSettings extends js.Object {
@@ -1714,7 +1715,7 @@ package glue {
   }
 
   /**
-   * <p>The <code>Database</code> object represents a logical grouping of tables that may reside in a Hive metastore or an RDBMS.</p>
+   * The <code>Database</code> object represents a logical grouping of tables that may reside in a Hive metastore or an RDBMS.
    */
   @js.native
   trait Database extends js.Object {
@@ -1744,7 +1745,7 @@ package glue {
   }
 
   /**
-   * <p>The structure used to create or update a database.</p>
+   * The structure used to create or update a database.
    */
   @js.native
   trait DatabaseInput extends js.Object {
@@ -2183,7 +2184,7 @@ package glue {
   }
 
   /**
-   * <p>A development endpoint where a developer can remotely debug ETL scripts.</p>
+   * A development endpoint where a developer can remotely debug ETL scripts.
    */
   @js.native
   trait DevEndpoint extends js.Object {
@@ -2261,7 +2262,7 @@ package glue {
   }
 
   /**
-   * <p>Custom libraries to be loaded into a DevEndpoint.</p>
+   * Custom libraries to be loaded into a DevEndpoint.
    */
   @js.native
   trait DevEndpointCustomLibraries extends js.Object {
@@ -2282,7 +2283,7 @@ package glue {
   }
 
   /**
-   * <p>Specifies a DynamoDB table to crawl.</p>
+   * Specifies a DynamoDB table to crawl.
    */
   @js.native
   trait DynamoDBTarget extends js.Object {
@@ -2300,7 +2301,7 @@ package glue {
   }
 
   /**
-   * <p>Specifies encryption-at-rest configuration for the Data Catalog.</p>
+   * Specifies encryption-at-rest configuration for the Data Catalog.
    */
   @js.native
   trait EncryptionAtRest extends js.Object {
@@ -2321,7 +2322,7 @@ package glue {
   }
 
   /**
-   * <p>Specifies an encryption configuration.</p>
+   * Specifies an encryption configuration.
    */
   @js.native
   trait EncryptionConfiguration extends js.Object {
@@ -2345,7 +2346,7 @@ package glue {
   }
 
   /**
-   * <p>Contains details about an error.</p>
+   * Contains details about an error.
    */
   @js.native
   trait ErrorDetail extends js.Object {
@@ -2366,7 +2367,7 @@ package glue {
   }
 
   /**
-   * <p>An execution property of a job.</p>
+   * An execution property of a job.
    */
   @js.native
   trait ExecutionProperty extends js.Object {
@@ -2521,7 +2522,7 @@ package glue {
   }
 
   /**
-   * <p>Filters the connection definitions returned by the <code>GetConnections</code> API.</p>
+   * Filters the connection definitions returned by the <code>GetConnections</code> API.
    */
   @js.native
   trait GetConnectionsFilter extends js.Object {
@@ -3620,7 +3621,7 @@ package glue {
   }
 
   /**
-   * <p>A classifier that uses <code>grok</code> patterns.</p>
+   * A classifier that uses <code>grok</code> patterns.
    */
   @js.native
   trait GrokClassifier extends js.Object {
@@ -3684,7 +3685,7 @@ package glue {
   }
 
   /**
-   * <p>Specifies a JDBC data store to crawl.</p>
+   * Specifies a JDBC data store to crawl.
    */
   @js.native
   trait JdbcTarget extends js.Object {
@@ -3708,7 +3709,7 @@ package glue {
   }
 
   /**
-   * <p>Specifies a job definition.</p>
+   * Specifies a job definition.
    */
   @js.native
   trait Job extends js.Object {
@@ -3768,7 +3769,7 @@ package glue {
   }
 
   /**
-   * <p>Defines a point which a job can resume processing.</p>
+   * Defines a point which a job can resume processing.
    */
   @js.native
   trait JobBookmarkEntry extends js.Object {
@@ -3798,7 +3799,7 @@ package glue {
   }
 
   /**
-   * <p>Specifies how Job bookmark data should be encrypted.</p>
+   * Specifies how Job bookmark data should be encrypted.
    */
   @js.native
   trait JobBookmarksEncryption extends js.Object {
@@ -3826,7 +3827,7 @@ package glue {
   }
 
   /**
-   * <p>Specifies code executed when a job is run.</p>
+   * Specifies code executed when a job is run.
    */
   @js.native
   trait JobCommand extends js.Object {
@@ -3847,7 +3848,7 @@ package glue {
   }
 
   /**
-   * <p>Contains information about a job run.</p>
+   * Contains information about a job run.
    */
   @js.native
   trait JobRun extends js.Object {
@@ -3928,7 +3929,7 @@ package glue {
   }
 
   /**
-   * <p>Specifies information used to update an existing job definition. Note that the previous job definition will be completely overwritten by this information.</p>
+   * Specifies information used to update an existing job definition. Note that the previous job definition will be completely overwritten by this information.
    */
   @js.native
   trait JobUpdate extends js.Object {
@@ -3979,7 +3980,7 @@ package glue {
   }
 
   /**
-   * <p>A classifier for <code>JSON</code> content.</p>
+   * A classifier for <code>JSON</code> content.
    */
   @js.native
   trait JsonClassifier extends js.Object {
@@ -4016,7 +4017,7 @@ package glue {
   }
 
   /**
-   * <p>Status and error information about the most recent crawl.</p>
+   * Status and error information about the most recent crawl.
    */
   @js.native
   trait LastCrawlInfo extends js.Object {
@@ -4057,7 +4058,7 @@ package glue {
   }
 
   /**
-   * <p>The location of resources.</p>
+   * The location of resources.
    */
   @js.native
   trait Location extends js.Object {
@@ -4094,7 +4095,7 @@ package glue {
   }
 
   /**
-   * <p>Defines a mapping.</p>
+   * Defines a mapping.
    */
   @js.native
   trait MappingEntry extends js.Object {
@@ -4127,7 +4128,7 @@ package glue {
   }
 
   /**
-   * <p>Specifies configuration properties of a notification.</p>
+   * Specifies configuration properties of a notification.
    */
   @js.native
   trait NotificationProperty extends js.Object {
@@ -4145,7 +4146,7 @@ package glue {
   }
 
   /**
-   * <p>Specifies the sort order of a sorted column.</p>
+   * Specifies the sort order of a sorted column.
    */
   @js.native
   trait Order extends js.Object {
@@ -4166,7 +4167,7 @@ package glue {
   }
 
   /**
-   * <p>Represents a slice of table data.</p>
+   * Represents a slice of table data.
    */
   @js.native
   trait Partition extends js.Object {
@@ -4205,7 +4206,7 @@ package glue {
   }
 
   /**
-   * <p>Contains information about a partition error.</p>
+   * Contains information about a partition error.
    */
   @js.native
   trait PartitionError extends js.Object {
@@ -4226,7 +4227,7 @@ package glue {
   }
 
   /**
-   * <p>The structure used to create and update a partion.</p>
+   * The structure used to create and update a partion.
    */
   @js.native
   trait PartitionInput extends js.Object {
@@ -4256,7 +4257,7 @@ package glue {
   }
 
   /**
-   * <p>Contains a list of values defining partitions.</p>
+   * Contains a list of values defining partitions.
    */
   @js.native
   trait PartitionValueList extends js.Object {
@@ -4274,7 +4275,7 @@ package glue {
   }
 
   /**
-   * <p>Specifies the physical requirements for a connection.</p>
+   * Specifies the physical requirements for a connection.
    */
   @js.native
   trait PhysicalConnectionRequirements extends js.Object {
@@ -4298,7 +4299,7 @@ package glue {
   }
 
   /**
-   * <p>A job run that was used in the predicate of a conditional trigger that triggered this job run.</p>
+   * A job run that was used in the predicate of a conditional trigger that triggered this job run.
    */
   @js.native
   trait Predecessor extends js.Object {
@@ -4319,7 +4320,7 @@ package glue {
   }
 
   /**
-   * <p>Defines the predicate of the trigger, which determines when it fires.</p>
+   * Defines the predicate of the trigger, which determines when it fires.
    */
   @js.native
   trait Predicate extends js.Object {
@@ -4453,7 +4454,7 @@ package glue {
   }
 
   /**
-   * <p>URIs for function resources.</p>
+   * URIs for function resources.
    */
   @js.native
   trait ResourceUri extends js.Object {
@@ -4474,7 +4475,7 @@ package glue {
   }
 
   /**
-   * <p>Specifies how S3 data should be encrypted.</p>
+   * Specifies how S3 data should be encrypted.
    */
   @js.native
   trait S3Encryption extends js.Object {
@@ -4503,7 +4504,7 @@ package glue {
   }
 
   /**
-   * <p>Specifies a data store in Amazon S3.</p>
+   * Specifies a data store in Amazon S3.
    */
   @js.native
   trait S3Target extends js.Object {
@@ -4524,7 +4525,7 @@ package glue {
   }
 
   /**
-   * <p>A scheduling object using a <code>cron</code> statement to schedule an event.</p>
+   * A scheduling object using a <code>cron</code> statement to schedule an event.
    */
   @js.native
   trait Schedule extends js.Object {
@@ -4553,7 +4554,7 @@ package glue {
   }
 
   /**
-   * <p>Crawler policy for update and deletion behavior.</p>
+   * Crawler policy for update and deletion behavior.
    */
   @js.native
   trait SchemaChangePolicy extends js.Object {
@@ -4574,7 +4575,7 @@ package glue {
   }
 
   /**
-   * <p>Specifies a security configuration.</p>
+   * Specifies a security configuration.
    */
   @js.native
   trait SecurityConfiguration extends js.Object {
@@ -4598,7 +4599,7 @@ package glue {
   }
 
   /**
-   * <p>Defines a non-overlapping region of a table's partitions, allowing multiple requests to be executed in parallel.</p>
+   * Defines a non-overlapping region of a table's partitions, allowing multiple requests to be executed in parallel.
    */
   @js.native
   trait Segment extends js.Object {
@@ -4619,7 +4620,7 @@ package glue {
   }
 
   /**
-   * <p>Information about a serialization/deserialization program (SerDe) which serves as an extractor and loader.</p>
+   * Information about a serialization/deserialization program (SerDe) which serves as an extractor and loader.
    */
   @js.native
   trait SerDeInfo extends js.Object {
@@ -4643,7 +4644,7 @@ package glue {
   }
 
   /**
-   * <p>Specifies skewed values in a table. Skewed are ones that occur with very high frequency.</p>
+   * Specifies skewed values in a table. Skewed are ones that occur with very high frequency.
    */
   @js.native
   trait SkewedInfo extends js.Object {
@@ -4887,7 +4888,7 @@ package glue {
   }
 
   /**
-   * <p>Describes the physical storage of table data.</p>
+   * Describes the physical storage of table data.
    */
   @js.native
   trait StorageDescriptor extends js.Object {
@@ -4938,7 +4939,7 @@ package glue {
   }
 
   /**
-   * <p>Represents a collection of related data organized in columns and rows.</p>
+   * Represents a collection of related data organized in columns and rows.
    */
   @js.native
   trait Table extends js.Object {
@@ -5001,7 +5002,7 @@ package glue {
   }
 
   /**
-   * <p>An error record for table operations.</p>
+   * An error record for table operations.
    */
   @js.native
   trait TableError extends js.Object {
@@ -5022,7 +5023,7 @@ package glue {
   }
 
   /**
-   * <p>Structure used to create or update the table.</p>
+   * Structure used to create or update the table.
    */
   @js.native
   trait TableInput extends js.Object {
@@ -5073,7 +5074,7 @@ package glue {
   }
 
   /**
-   * <p>Specifies a version of a table.</p>
+   * Specifies a version of a table.
    */
   @js.native
   trait TableVersion extends js.Object {
@@ -5094,7 +5095,7 @@ package glue {
   }
 
   /**
-   * <p>An error record for table-version operations.</p>
+   * An error record for table-version operations.
    */
   @js.native
   trait TableVersionError extends js.Object {
@@ -5118,7 +5119,7 @@ package glue {
   }
 
   /**
-   * <p>Information about a specific trigger.</p>
+   * Information about a specific trigger.
    */
   @js.native
   trait Trigger extends js.Object {
@@ -5178,7 +5179,7 @@ package glue {
   }
 
   /**
-   * <p>A structure used to provide information used to update a trigger. This object will update the the previous trigger definition by overwriting it completely.</p>
+   * A structure used to provide information used to update a trigger. This object will update the the previous trigger definition by overwriting it completely.
    */
   @js.native
   trait TriggerUpdate extends js.Object {
@@ -5449,7 +5450,7 @@ package glue {
   }
 
   /**
-   * <p>Specifies a grok classifier to update when passed to <code>UpdateClassifier</code>.</p>
+   * Specifies a grok classifier to update when passed to <code>UpdateClassifier</code>.
    */
   @js.native
   trait UpdateGrokClassifierRequest extends js.Object {
@@ -5509,7 +5510,7 @@ package glue {
   }
 
   /**
-   * <p>Specifies a JSON classifier to be updated.</p>
+   * Specifies a JSON classifier to be updated.
    */
   @js.native
   trait UpdateJsonClassifierRequest extends js.Object {
@@ -5677,7 +5678,7 @@ package glue {
   }
 
   /**
-   * <p>Specifies an XML classifier to be updated.</p>
+   * Specifies an XML classifier to be updated.
    */
   @js.native
   trait UpdateXMLClassifierRequest extends js.Object {
@@ -5701,7 +5702,7 @@ package glue {
   }
 
   /**
-   * <p>Represents the equivalent of a Hive user-defined function (<code>UDF</code>) definition.</p>
+   * Represents the equivalent of a Hive user-defined function (<code>UDF</code>) definition.
    */
   @js.native
   trait UserDefinedFunction extends js.Object {
@@ -5734,7 +5735,7 @@ package glue {
   }
 
   /**
-   * <p>A structure used to create or updata a user-defined function.</p>
+   * A structure used to create or updata a user-defined function.
    */
   @js.native
   trait UserDefinedFunctionInput extends js.Object {
@@ -5764,7 +5765,7 @@ package glue {
   }
 
   /**
-   * <p>A classifier for <code>XML</code> content.</p>
+   * A classifier for <code>XML</code> content.
    */
   @js.native
   trait XMLClassifier extends js.Object {

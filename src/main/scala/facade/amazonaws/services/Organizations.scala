@@ -151,7 +151,7 @@ package organizations {
   }
 
   /**
-   * <p>Contains information about an AWS account that is a member of an organization.</p>
+   * Contains information about an AWS account that is a member of an organization.
    */
   @js.native
   trait Account extends js.Object {
@@ -258,7 +258,7 @@ package organizations {
   }
 
   /**
-   * <p>Contains a list of child entities, either OUs or accounts.</p>
+   * Contains a list of child entities, either OUs or accounts.
    */
   @js.native
   trait Child extends js.Object {
@@ -344,7 +344,7 @@ package organizations {
   }
 
   /**
-   * <p>Contains the status about a <a>CreateAccount</a> request to create an AWS account in an organization.</p>
+   * Contains the status about a '''CreateAccount''' request to create an AWS account in an organization.
    */
   @js.native
   trait CreateAccountStatus extends js.Object {
@@ -849,7 +849,7 @@ package organizations {
   }
 
   /**
-   * <p>A structure that contains details of a service principal that is enabled to integrate with AWS Organizations.</p>
+   * A structure that contains details of a service principal that is enabled to integrate with AWS Organizations.
    */
   @js.native
   trait EnabledServicePrincipal extends js.Object {
@@ -870,7 +870,8 @@ package organizations {
   }
 
   /**
-   * <p>Contains information that must be exchanged to securely establish a relationship between two accounts (an <i>originator</i> and a <i>recipient</i>). For example, when a master account (the originator) invites another account (the recipient) to join its organization, the two accounts exchange information as a series of handshake requests and responses.</p> <p> <b>Note:</b> Handshakes that are CANCELED, ACCEPTED, or DECLINED show up in lists for only 30 days after entering that state After that they are deleted.</p>
+   * Contains information that must be exchanged to securely establish a relationship between two accounts (an <i>originator</i> and a <i>recipient</i>). For example, when a master account (the originator) invites another account (the recipient) to join its organization, the two accounts exchange information as a series of handshake requests and responses.
+   *  <b>Note:</b> Handshakes that are CANCELED, ACCEPTED, or DECLINED show up in lists for only 30 days after entering that state After that they are deleted.
    */
   @js.native
   trait Handshake extends js.Object {
@@ -909,7 +910,7 @@ package organizations {
   }
 
   /**
-   * <p>Specifies the criteria that are used to select the handshakes for the operation.</p>
+   * Specifies the criteria that are used to select the handshakes for the operation.
    */
   @js.native
   trait HandshakeFilter extends js.Object {
@@ -930,7 +931,7 @@ package organizations {
   }
 
   /**
-   * <p>Identifies a participant in a handshake.</p>
+   * Identifies a participant in a handshake.
    */
   @js.native
   trait HandshakeParty extends js.Object {
@@ -959,7 +960,7 @@ package organizations {
   }
 
   /**
-   * <p>Contains additional data that is needed to process a handshake.</p>
+   * Contains additional data that is needed to process a handshake.
    */
   @js.native
   trait HandshakeResource extends js.Object {
@@ -1572,7 +1573,7 @@ package organizations {
   }
 
   /**
-   * <p>Contains details about an organization. An organization is a collection of accounts that are centrally managed together using consolidated billing, organized hierarchically with organizational units (OUs), and controlled with policies .</p>
+   * Contains details about an organization. An organization is a collection of accounts that are centrally managed together using consolidated billing, organized hierarchically with organizational units (OUs), and controlled with policies .
    */
   @js.native
   trait Organization extends js.Object {
@@ -1615,7 +1616,7 @@ package organizations {
   }
 
   /**
-   * <p>Contains details about an organizational unit (OU). An OU is a container of AWS accounts within a root of an organization. Policies that are attached to an OU apply to all accounts contained in that OU and in any child OUs.</p>
+   * Contains details about an organizational unit (OU). An OU is a container of AWS accounts within a root of an organization. Policies that are attached to an OU apply to all accounts contained in that OU and in any child OUs.
    */
   @js.native
   trait OrganizationalUnit extends js.Object {
@@ -1639,7 +1640,7 @@ package organizations {
   }
 
   /**
-   * <p>Contains information about either a root or an organizational unit (OU) that can contain OUs or accounts in an organization.</p>
+   * Contains information about either a root or an organizational unit (OU) that can contain OUs or accounts in an organization.
    */
   @js.native
   trait Parent extends js.Object {
@@ -1667,7 +1668,7 @@ package organizations {
   }
 
   /**
-   * <p>Contains rules to be applied to the affected accounts. Policies can be attached directly to accounts, or to roots and OUs to affect all accounts in those hierarchies.</p>
+   * Contains rules to be applied to the affected accounts. Policies can be attached directly to accounts, or to roots and OUs to affect all accounts in those hierarchies.
    */
   @js.native
   trait Policy extends js.Object {
@@ -1688,7 +1689,7 @@ package organizations {
   }
 
   /**
-   * <p>Contains information about a policy, but does not include the content. To see the content of a policy, see <a>DescribePolicy</a>.</p>
+   * Contains information about a policy, but does not include the content. To see the content of a policy, see '''DescribePolicy'''.
    */
   @js.native
   trait PolicySummary extends js.Object {
@@ -1721,7 +1722,7 @@ package organizations {
   }
 
   /**
-   * <p>Contains information about a root, OU, or account that a policy is attached to.</p>
+   * Contains information about a root, OU, or account that a policy is attached to.
    */
   @js.native
   trait PolicyTargetSummary extends js.Object {
@@ -1762,7 +1763,7 @@ package organizations {
   }
 
   /**
-   * <p>Contains information about a policy type and its status in the associated root.</p>
+   * Contains information about a policy type and its status in the associated root.
    */
   @js.native
   trait PolicyTypeSummary extends js.Object {
@@ -1798,7 +1799,7 @@ package organizations {
   }
 
   /**
-   * <p>Contains details about a root. A root is a top-level parent node in the hierarchy of an organization that can contain organizational units (OUs) and accounts. Every root contains every AWS account in the organization. Each root enables the accounts to be organized in a different way and to have different policy types enabled for use in that root.</p>
+   * Contains details about a root. A root is a top-level parent node in the hierarchy of an organization that can contain organizational units (OUs) and accounts. Every root contains every AWS account in the organization. Each root enables the accounts to be organized in a different way and to have different policy types enabled for use in that root.
    */
   @js.native
   trait Root extends js.Object {

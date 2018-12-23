@@ -62,7 +62,7 @@ package cloudhsmv2 {
   }
 
   /**
-   * <p>Contains information about a backup of an AWS CloudHSM cluster.</p>
+   * Contains information about a backup of an AWS CloudHSM cluster.
    */
   @js.native
   trait Backup extends js.Object {
@@ -119,7 +119,7 @@ package cloudhsmv2 {
   }
 
   /**
-   * <p>Contains one or more certificates or a certificate signing request (CSR).</p>
+   * Contains one or more certificates or a certificate signing request (CSR).
    */
   @js.native
   trait Certificates extends js.Object {
@@ -149,7 +149,7 @@ package cloudhsmv2 {
   }
 
   /**
-   * <p>Contains information about an AWS CloudHSM cluster.</p>
+   * Contains information about an AWS CloudHSM cluster.
    */
   @js.native
   trait Cluster extends js.Object {
@@ -526,7 +526,7 @@ package cloudhsmv2 {
   }
 
   /**
-   * <p>Contains information about a hardware security module (HSM) in an AWS CloudHSM cluster.</p>
+   * Contains information about a hardware security module (HSM) in an AWS CloudHSM cluster.
    */
   @js.native
   trait Hsm extends js.Object {
@@ -683,7 +683,7 @@ package cloudhsmv2 {
   }
 
   /**
-   * <p>Contains a tag. A tag is a key-value pair.</p>
+   * Contains a tag. A tag is a key-value pair.
    */
   @js.native
   trait Tag extends js.Object {

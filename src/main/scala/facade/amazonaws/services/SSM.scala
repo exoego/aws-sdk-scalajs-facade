@@ -581,7 +581,7 @@ package ssm {
   }
 
   /**
-   * <p>An activation registers one or more on-premises servers or virtual machines (VMs) with AWS so that you can configure those servers or VMs using Run Command. A server or VM that has been registered with AWS is called a managed instance.</p>
+   * An activation registers one or more on-premises servers or virtual machines (VMs) with AWS so that you can configure those servers or VMs using Run Command. A server or VM that has been registered with AWS is called a managed instance.
    */
   @js.native
   trait Activation extends js.Object {
@@ -657,7 +657,7 @@ package ssm {
   }
 
   /**
-   * <p>Describes an association of a Systems Manager document and an instance.</p>
+   * Describes an association of a Systems Manager document and an instance.
    */
   @js.native
   trait Association extends js.Object {
@@ -712,7 +712,7 @@ package ssm {
   }
 
   /**
-   * <p>Describes the parameters for a document.</p>
+   * Describes the parameters for a document.
    */
   @js.native
   trait AssociationDescription extends js.Object {
@@ -784,7 +784,7 @@ package ssm {
   }
 
   /**
-   * <p>Includes information about the specified association.</p>
+   * Includes information about the specified association.
    */
   @js.native
   trait AssociationExecution extends js.Object {
@@ -823,7 +823,7 @@ package ssm {
   }
 
   /**
-   * <p>Filters used in the request.</p>
+   * Filters used in the request.
    */
   @js.native
   trait AssociationExecutionFilter extends js.Object {
@@ -855,7 +855,7 @@ package ssm {
   }
 
   /**
-   * <p>Includes information about the specified association execution.</p>
+   * Includes information about the specified association execution.
    */
   @js.native
   trait AssociationExecutionTarget extends js.Object {
@@ -897,7 +897,7 @@ package ssm {
   }
 
   /**
-   * <p>Filters for the association execution.</p>
+   * Filters for the association execution.
    */
   @js.native
   trait AssociationExecutionTargetsFilter extends js.Object {
@@ -926,7 +926,7 @@ package ssm {
   }
 
   /**
-   * <p>Describes a filter.</p>
+   * Describes a filter.
    */
   @js.native
   trait AssociationFilter extends js.Object {
@@ -967,7 +967,7 @@ package ssm {
   }
 
   /**
-   * <p>Information about the association.</p>
+   * Information about the association.
    */
   @js.native
   trait AssociationOverview extends js.Object {
@@ -991,7 +991,7 @@ package ssm {
   }
 
   /**
-   * <p>Describes an association status.</p>
+   * Describes an association status.
    */
   @js.native
   trait AssociationStatus extends js.Object {
@@ -1026,7 +1026,7 @@ package ssm {
   }
 
   /**
-   * <p>Information about the association version.</p>
+   * Information about the association version.
    */
   @js.native
   trait AssociationVersionInfo extends js.Object {
@@ -1080,7 +1080,7 @@ package ssm {
   }
 
   /**
-   * <p>A structure that includes attributes that describe a document attachment.</p>
+   * A structure that includes attributes that describe a document attachment.
    */
   @js.native
   trait AttachmentContent extends js.Object {
@@ -1116,7 +1116,7 @@ package ssm {
   }
 
   /**
-   * <p>An attribute of an attachment, such as the attachment name or size.</p>
+   * An attribute of an attachment, such as the attachment name or size.
    */
   @js.native
   trait AttachmentInformation extends js.Object {
@@ -1134,7 +1134,7 @@ package ssm {
   }
 
   /**
-   * <p>A key and value pair that identifies the location of an attachment to a document.</p>
+   * A key and value pair that identifies the location of an attachment to a document.
    */
   @js.native
   trait AttachmentsSource extends js.Object {
@@ -1161,7 +1161,7 @@ package ssm {
   }
 
   /**
-   * <p>Detailed information about the current state of an individual Automation execution.</p>
+   * Detailed information about the current state of an individual Automation execution.
    */
   @js.native
   trait AutomationExecution extends js.Object {
@@ -1251,7 +1251,7 @@ package ssm {
   }
 
   /**
-   * <p>A filter used to match specific automation executions. This is used to limit the scope of Automation execution information returned.</p>
+   * A filter used to match specific automation executions. This is used to limit the scope of Automation execution information returned.
    */
   @js.native
   trait AutomationExecutionFilter extends js.Object {
@@ -1285,7 +1285,7 @@ package ssm {
   }
 
   /**
-   * <p>Details about a specific Automation execution.</p>
+   * Details about a specific Automation execution.
    */
   @js.native
   trait AutomationExecutionMetadata extends js.Object {
@@ -1407,7 +1407,7 @@ package ssm {
   }
 
   /**
-   * <p>Whether or not the command was successfully canceled. There is no guarantee that a request can be canceled.</p>
+   * Whether or not the command was successfully canceled. There is no guarantee that a request can be canceled.
    */
   @js.native
   trait CancelCommandResult extends js.Object {
@@ -1453,7 +1453,7 @@ package ssm {
   }
 
   /**
-   * <p>Configuration options for sending command output to CloudWatch Logs.</p>
+   * Configuration options for sending command output to CloudWatch Logs.
    */
   @js.native
   trait CloudWatchOutputConfig extends js.Object {
@@ -1474,7 +1474,7 @@ package ssm {
   }
 
   /**
-   * <p>Describes a command request.</p>
+   * Describes a command request.
    */
   @js.native
   trait Command extends js.Object {
@@ -1558,7 +1558,7 @@ package ssm {
   }
 
   /**
-   * <p>Describes a command filter.</p>
+   * Describes a command filter.
    */
   @js.native
   trait CommandFilter extends js.Object {
@@ -1589,7 +1589,7 @@ package ssm {
   }
 
   /**
-   * <p>An invocation is copy of a command sent to a specific instance. A command can apply to one or more instances. A command invocation applies to one instance. For example, if a user executes SendCommand against three instances, then a command invocation is created for each requested instance ID. A command invocation returns status and detail information about a command you executed. </p>
+   * An invocation is copy of a command sent to a specific instance. A command can apply to one or more instances. A command invocation applies to one instance. For example, if a user executes SendCommand against three instances, then a command invocation is created for each requested instance ID. A command invocation returns status and detail information about a command you executed.
    */
   @js.native
   trait CommandInvocation extends js.Object {
@@ -1665,7 +1665,7 @@ package ssm {
   }
 
   /**
-   * <p>Describes plugin details.</p>
+   * Describes plugin details.
    */
   @js.native
   trait CommandPlugin extends js.Object {
@@ -1739,7 +1739,7 @@ package ssm {
   }
 
   /**
-   * <p>A summary of the call execution that includes an execution ID, the type of execution (for example, <code>Command</code>), and the date/time of the execution using a datetime object that is saved in the following format: yyyy-MM-dd'T'HH:mm:ss'Z'.</p>
+   * A summary of the call execution that includes an execution ID, the type of execution (for example, <code>Command</code>), and the date/time of the execution using a datetime object that is saved in the following format: yyyy-MM-dd'T'HH:mm:ss'Z'.
    */
   @js.native
   trait ComplianceExecutionSummary extends js.Object {
@@ -1763,7 +1763,7 @@ package ssm {
   }
 
   /**
-   * <p>Information about the compliance as defined by the resource type. For example, for a patch resource type, <code>Items</code> includes information about the PatchSeverity, Classification, etc.</p>
+   * Information about the compliance as defined by the resource type. For example, for a patch resource type, <code>Items</code> includes information about the PatchSeverity, Classification, etc.
    */
   @js.native
   trait ComplianceItem extends js.Object {
@@ -1805,7 +1805,7 @@ package ssm {
   }
 
   /**
-   * <p>Information about a compliance item.</p>
+   * Information about a compliance item.
    */
   @js.native
   trait ComplianceItemEntry extends js.Object {
@@ -1863,7 +1863,7 @@ package ssm {
   }
 
   /**
-   * <p>One or more filters. Use a filter to return a more specific list of results.</p>
+   * One or more filters. Use a filter to return a more specific list of results.
    */
   @js.native
   trait ComplianceStringFilter extends js.Object {
@@ -1887,7 +1887,7 @@ package ssm {
   }
 
   /**
-   * <p>A summary of compliance information by compliance type.</p>
+   * A summary of compliance information by compliance type.
    */
   @js.native
   trait ComplianceSummaryItem extends js.Object {
@@ -1911,7 +1911,7 @@ package ssm {
   }
 
   /**
-   * <p>A summary of resources that are compliant. The summary is organized according to the resource count for each compliance type.</p>
+   * A summary of resources that are compliant. The summary is organized according to the resource count for each compliance type.
    */
   @js.native
   trait CompliantSummary extends js.Object {
@@ -1999,7 +1999,7 @@ package ssm {
   }
 
   /**
-   * <p>Describes the association of a Systems Manager SSM document and an instance.</p>
+   * Describes the association of a Systems Manager SSM document and an instance.
    */
   @js.native
   trait CreateAssociationBatchRequestEntry extends js.Object {
@@ -2747,7 +2747,7 @@ package ssm {
   }
 
   /**
-   * <p>Filter for the DescribeActivation API.</p>
+   * Filter for the DescribeActivation API.
    */
   @js.native
   trait DescribeActivationsFilter extends js.Object {
@@ -4006,7 +4006,7 @@ package ssm {
   }
 
   /**
-   * <p>A default version of a document.</p>
+   * A default version of a document.
    */
   @js.native
   trait DocumentDefaultVersionDescription extends js.Object {
@@ -4030,7 +4030,7 @@ package ssm {
   }
 
   /**
-   * <p>Describes a Systems Manager document. </p>
+   * Describes a Systems Manager document.
    */
   @js.native
   trait DocumentDescription extends js.Object {
@@ -4108,7 +4108,7 @@ package ssm {
   }
 
   /**
-   * <p>Describes a filter.</p>
+   * Describes a filter.
    */
   @js.native
   trait DocumentFilter extends js.Object {
@@ -4152,7 +4152,7 @@ package ssm {
   }
 
   /**
-   * <p>Describes the name of a Systems Manager document.</p>
+   * Describes the name of a Systems Manager document.
    */
   @js.native
   trait DocumentIdentifier extends js.Object {
@@ -4197,7 +4197,16 @@ package ssm {
   }
 
   /**
-   * <p>One or more filters. Use a filter to return a more specific list of documents.</p> <p>For keys, you can specify one or more tags that have been applied to a document. </p> <p>Other valid values include Owner, Name, PlatformTypes, and DocumentType.</p> <p>Note that only one Owner can be specified in a request. For example: <code>Key=Owner,Values=Self</code>.</p> <p>If you use Name as a key, you can use a name prefix to return a list of documents. For example, in the AWS CLI, to return a list of all documents that begin with <code>Te</code>, run the following command:</p> <p> <code>aws ssm list-documents --filters Key=Name,Values=Te</code> </p> <p>If you specify more than two keys, only documents that are identified by all the tags are returned in the results. If you specify more than two values for a key, documents that are identified by any of the values are returned in the results.</p> <p>To specify a custom key and value pair, use the format <code>Key=tag:[tagName],Values=[valueName]</code>.</p> <p>For example, if you created a Key called region and are using the AWS CLI to call the <code>list-documents</code> command: </p> <p> <code>aws ssm list-documents --filters Key=tag:region,Values=east,west Key=Owner,Values=Self</code> </p>
+   * One or more filters. Use a filter to return a more specific list of documents.
+   *  For keys, you can specify one or more tags that have been applied to a document.
+   *  Other valid values include Owner, Name, PlatformTypes, and DocumentType.
+   *  Note that only one Owner can be specified in a request. For example: <code>Key=Owner,Values=Self</code>.
+   *  If you use Name as a key, you can use a name prefix to return a list of documents. For example, in the AWS CLI, to return a list of all documents that begin with <code>Te</code>, run the following command:
+   *  <code>aws ssm list-documents --filters Key=Name,Values=Te</code>
+   *  If you specify more than two keys, only documents that are identified by all the tags are returned in the results. If you specify more than two values for a key, documents that are identified by any of the values are returned in the results.
+   *  To specify a custom key and value pair, use the format <code>Key=tag:[tagName],Values=[valueName]</code>.
+   *  For example, if you created a Key called region and are using the AWS CLI to call the <code>list-documents</code> command:
+   *  <code>aws ssm list-documents --filters Key=tag:region,Values=east,west Key=Owner,Values=Self</code>
    */
   @js.native
   trait DocumentKeyValuesFilter extends js.Object {
@@ -4218,7 +4227,7 @@ package ssm {
   }
 
   /**
-   * <p>Parameters specified in a System Manager document that execute on the server when the command is run. </p>
+   * Parameters specified in a System Manager document that execute on the server when the command is run.
    */
   @js.native
   trait DocumentParameter extends js.Object {
@@ -4258,7 +4267,7 @@ package ssm {
   }
 
   /**
-   * <p>The status of a document.</p>
+   * The status of a document.
    */
   object DocumentStatusEnum {
     val Creating = "Creating"
@@ -4281,7 +4290,7 @@ package ssm {
   }
 
   /**
-   * <p>Version information about the document.</p>
+   * Version information about the document.
    */
   @js.native
   trait DocumentVersionInfo extends js.Object {
@@ -4320,7 +4329,7 @@ package ssm {
   }
 
   /**
-   * <p>The EffectivePatch structure defines metadata about a patch along with the approval state of the patch in a particular patch baseline. The approval state includes information about whether the patch is currently approved, due to be approved by a rule, explicitly approved, or explicitly rejected and the date the patch was or will be approved.</p>
+   * The EffectivePatch structure defines metadata about a patch along with the approval state of the patch in a particular patch baseline. The approval state includes information about whether the patch is currently approved, due to be approved by a rule, explicitly approved, or explicitly rejected and the date the patch was or will be approved.
    */
   @js.native
   trait EffectivePatch extends js.Object {
@@ -4348,7 +4357,7 @@ package ssm {
   }
 
   /**
-   * <p>Describes a failed association.</p>
+   * Describes a failed association.
    */
   @js.native
   trait FailedCreateAssociation extends js.Object {
@@ -4372,7 +4381,7 @@ package ssm {
   }
 
   /**
-   * <p>Information about an Automation failure.</p>
+   * Information about an Automation failure.
    */
   @js.native
   trait FailureDetails extends js.Object {
@@ -5373,7 +5382,7 @@ package ssm {
   }
 
   /**
-   * <p>Status information about the aggregated associations.</p>
+   * Status information about the aggregated associations.
    */
   @js.native
   trait InstanceAggregatedAssociationOverview extends js.Object {
@@ -5394,7 +5403,7 @@ package ssm {
   }
 
   /**
-   * <p>One or more association documents on the instance. </p>
+   * One or more association documents on the instance.
    */
   @js.native
   trait InstanceAssociation extends js.Object {
@@ -5421,7 +5430,7 @@ package ssm {
   }
 
   /**
-   * <p>An Amazon S3 bucket where you want to store the results of this request.</p>
+   * An Amazon S3 bucket where you want to store the results of this request.
    */
   @js.native
   trait InstanceAssociationOutputLocation extends js.Object {
@@ -5439,7 +5448,7 @@ package ssm {
   }
 
   /**
-   * <p>The URL of Amazon S3 bucket where you want to store the results of this request.</p>
+   * The URL of Amazon S3 bucket where you want to store the results of this request.
    */
   @js.native
   trait InstanceAssociationOutputUrl extends js.Object {
@@ -5457,7 +5466,7 @@ package ssm {
   }
 
   /**
-   * <p>Status information about the instance association.</p>
+   * Status information about the instance association.
    */
   @js.native
   trait InstanceAssociationStatusInfo extends js.Object {
@@ -5508,7 +5517,7 @@ package ssm {
   }
 
   /**
-   * <p>Describes a filter for a specific list of instances. </p>
+   * Describes a filter for a specific list of instances.
    */
   @js.native
   trait InstanceInformation extends js.Object {
@@ -5580,7 +5589,8 @@ package ssm {
   }
 
   /**
-   * <p>Describes a filter for a specific list of instances. You can filter instances information by using tags. You specify tags by using a key-value mapping.</p> <p>Use this action instead of the <a>DescribeInstanceInformationRequest$InstanceInformationFilterList</a> method. The <code>InstanceInformationFilterList</code> method is a legacy method and does not support tags. </p>
+   * Describes a filter for a specific list of instances. You can filter instances information by using tags. You specify tags by using a key-value mapping.
+   *  Use this action instead of the [[DescribeInstanceInformationRequest.InstanceInformationFilterList]] method. The <code>InstanceInformationFilterList</code> method is a legacy method and does not support tags.
    */
   @js.native
   trait InstanceInformationFilter extends js.Object {
@@ -5614,7 +5624,7 @@ package ssm {
   }
 
   /**
-   * <p>The filters to describe or get information about your managed instances.</p>
+   * The filters to describe or get information about your managed instances.
    */
   @js.native
   trait InstanceInformationStringFilter extends js.Object {
@@ -5635,7 +5645,7 @@ package ssm {
   }
 
   /**
-   * <p>Defines the high-level patch compliance state for a managed instance, providing information about the number of installed, missing, not applicable, and failed patches along with metadata about the operation when this information was gathered for the instance.</p>
+   * Defines the high-level patch compliance state for a managed instance, providing information about the number of installed, missing, not applicable, and failed patches along with metadata about the operation when this information was gathered for the instance.
    */
   @js.native
   trait InstancePatchState extends js.Object {
@@ -5695,7 +5705,7 @@ package ssm {
   }
 
   /**
-   * <p>Defines a filter used in DescribeInstancePatchStatesForPatchGroup used to scope down the information returned by the API.</p>
+   * Defines a filter used in DescribeInstancePatchStatesForPatchGroup used to scope down the information returned by the API.
    */
   @js.native
   trait InstancePatchStateFilter extends js.Object {
@@ -5728,7 +5738,7 @@ package ssm {
   }
 
   /**
-   * <p>Specifies the inventory type and attribute for the aggregation execution.</p>
+   * Specifies the inventory type and attribute for the aggregation execution.
    */
   @js.native
   trait InventoryAggregator extends js.Object {
@@ -5766,7 +5776,7 @@ package ssm {
   }
 
   /**
-   * <p>Status information returned by the <code>DeleteInventory</code> action.</p>
+   * Status information returned by the <code>DeleteInventory</code> action.
    */
   @js.native
   trait InventoryDeletionStatusItem extends js.Object {
@@ -5802,7 +5812,7 @@ package ssm {
   }
 
   /**
-   * <p>Information about the delete operation.</p>
+   * Information about the delete operation.
    */
   @js.native
   trait InventoryDeletionSummary extends js.Object {
@@ -5826,7 +5836,7 @@ package ssm {
   }
 
   /**
-   * <p>Either a count, remaining count, or a version number in a delete inventory summary.</p>
+   * Either a count, remaining count, or a version number in a delete inventory summary.
    */
   @js.native
   trait InventoryDeletionSummaryItem extends js.Object {
@@ -5850,7 +5860,7 @@ package ssm {
   }
 
   /**
-   * <p>One or more filters. Use a filter to return a more specific list of results.</p>
+   * One or more filters. Use a filter to return a more specific list of results.
    */
   @js.native
   trait InventoryFilter extends js.Object {
@@ -5874,7 +5884,7 @@ package ssm {
   }
 
   /**
-   * <p>A user-defined set of one or more filters on which to aggregate inventory data. Groups return a count of resources that match and don't match the specified criteria.</p>
+   * A user-defined set of one or more filters on which to aggregate inventory data. Groups return a count of resources that match and don't match the specified criteria.
    */
   @js.native
   trait InventoryGroup extends js.Object {
@@ -5895,7 +5905,7 @@ package ssm {
   }
 
   /**
-   * <p>Information collected from managed instances based on your inventory policy document</p>
+   * Information collected from managed instances based on your inventory policy document
    */
   @js.native
   trait InventoryItem extends js.Object {
@@ -5928,7 +5938,7 @@ package ssm {
   }
 
   /**
-   * <p>Attributes are the entries within the inventory item content. It contains name and value.</p>
+   * Attributes are the entries within the inventory item content. It contains name and value.
    */
   @js.native
   trait InventoryItemAttribute extends js.Object {
@@ -5949,7 +5959,7 @@ package ssm {
   }
 
   /**
-   * <p>The inventory item schema definition. Users can use this to compose inventory query filters.</p>
+   * The inventory item schema definition. Users can use this to compose inventory query filters.
    */
   @js.native
   trait InventoryItemSchema extends js.Object {
@@ -5987,7 +5997,7 @@ package ssm {
   }
 
   /**
-   * <p>Inventory query results.</p>
+   * Inventory query results.
    */
   @js.native
   trait InventoryResultEntity extends js.Object {
@@ -6008,7 +6018,7 @@ package ssm {
   }
 
   /**
-   * <p>The inventory result item.</p>
+   * The inventory result item.
    */
   @js.native
   trait InventoryResultItem extends js.Object {
@@ -6590,7 +6600,9 @@ package ssm {
   }
 
   /**
-   * <p>Information about an Amazon S3 bucket to write instance-level logs to.</p> <note> <p> <code>LoggingInfo</code> has been deprecated. To specify an S3 bucket to contain logs, instead use the <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported Maintenance Window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p> </note>
+   * Information about an Amazon S3 bucket to write instance-level logs to.
+   *
+   * '''Note:'''<code>LoggingInfo</code> has been deprecated. To specify an S3 bucket to contain logs, instead use the <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported Maintenance Window task types, see '''MaintenanceWindowTaskInvocationParameters'''.
    */
   @js.native
   trait LoggingInfo extends js.Object {
@@ -6614,7 +6626,7 @@ package ssm {
   }
 
   /**
-   * <p>The parameters for an AUTOMATION task type.</p>
+   * The parameters for an AUTOMATION task type.
    */
   @js.native
   trait MaintenanceWindowAutomationParameters extends js.Object {
@@ -6635,7 +6647,7 @@ package ssm {
   }
 
   /**
-   * <p>Describes the information about an execution of a Maintenance Window. </p>
+   * Describes the information about an execution of a Maintenance Window.
    */
   @js.native
   trait MaintenanceWindowExecution extends js.Object {
@@ -6681,7 +6693,7 @@ package ssm {
   }
 
   /**
-   * <p>Information about a task execution performed as part of a Maintenance Window execution.</p>
+   * Information about a task execution performed as part of a Maintenance Window execution.
    */
   @js.native
   trait MaintenanceWindowExecutionTaskIdentity extends js.Object {
@@ -6720,7 +6732,7 @@ package ssm {
   }
 
   /**
-   * <p>Describes the information about a task invocation for a particular target as part of a task execution performed as part of a Maintenance Window execution.</p>
+   * Describes the information about a task invocation for a particular target as part of a task execution performed as part of a Maintenance Window execution.
    */
   @js.native
   trait MaintenanceWindowExecutionTaskInvocationIdentity extends js.Object {
@@ -6771,7 +6783,7 @@ package ssm {
   }
 
   /**
-   * <p>Filter used in the request. Supported filter keys are Name and Enabled.</p>
+   * Filter used in the request. Supported filter keys are Name and Enabled.
    */
   @js.native
   trait MaintenanceWindowFilter extends js.Object {
@@ -6792,7 +6804,7 @@ package ssm {
   }
 
   /**
-   * <p>Information about the Maintenance Window.</p>
+   * Information about the Maintenance Window.
    */
   @js.native
   trait MaintenanceWindowIdentity extends js.Object {
@@ -6840,7 +6852,7 @@ package ssm {
   }
 
   /**
-   * <p>The Maintenance Window to which the specified target belongs.</p>
+   * The Maintenance Window to which the specified target belongs.
    */
   @js.native
   trait MaintenanceWindowIdentityForTarget extends js.Object {
@@ -6861,7 +6873,12 @@ package ssm {
   }
 
   /**
-   * <p>The parameters for a LAMBDA task type.</p> <p>For information about specifying and updating task parameters, see <a>RegisterTaskWithMaintenanceWindow</a> and <a>UpdateMaintenanceWindowTask</a>.</p> <note> <p> <code>LoggingInfo</code> has been deprecated. To specify an S3 bucket to contain logs, instead use the <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported Maintenance Window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p> <p> <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs, instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported Maintenance Window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p> <p>For Lambda tasks, Systems Manager ignores any values specified for TaskParameters and LoggingInfo.</p> </note>
+   * The parameters for a LAMBDA task type.
+   *  For information about specifying and updating task parameters, see '''RegisterTaskWithMaintenanceWindow''' and '''UpdateMaintenanceWindowTask'''.
+   *
+   * '''Note:'''<code>LoggingInfo</code> has been deprecated. To specify an S3 bucket to contain logs, instead use the <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported Maintenance Window task types, see '''MaintenanceWindowTaskInvocationParameters'''.
+   *  <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs, instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported Maintenance Window task types, see '''MaintenanceWindowTaskInvocationParameters'''.
+   *  For Lambda tasks, Systems Manager ignores any values specified for TaskParameters and LoggingInfo.
    */
   @js.native
   trait MaintenanceWindowLambdaParameters extends js.Object {
@@ -6891,7 +6908,12 @@ package ssm {
   }
 
   /**
-   * <p>The parameters for a RUN_COMMAND task type.</p> <p>For information about specifying and updating task parameters, see <a>RegisterTaskWithMaintenanceWindow</a> and <a>UpdateMaintenanceWindowTask</a>.</p> <note> <p> <code>LoggingInfo</code> has been deprecated. To specify an S3 bucket to contain logs, instead use the <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported Maintenance Window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p> <p> <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs, instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported Maintenance Window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p> <p>For Run Command tasks, Systems Manager uses specified values for <code>TaskParameters</code> and <code>LoggingInfo</code> only if no values are specified for <code>TaskInvocationParameters</code>. </p> </note>
+   * The parameters for a RUN_COMMAND task type.
+   *  For information about specifying and updating task parameters, see '''RegisterTaskWithMaintenanceWindow''' and '''UpdateMaintenanceWindowTask'''.
+   *
+   * '''Note:'''<code>LoggingInfo</code> has been deprecated. To specify an S3 bucket to contain logs, instead use the <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported Maintenance Window task types, see '''MaintenanceWindowTaskInvocationParameters'''.
+   *  <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs, instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported Maintenance Window task types, see '''MaintenanceWindowTaskInvocationParameters'''.
+   *  For Run Command tasks, Systems Manager uses specified values for <code>TaskParameters</code> and <code>LoggingInfo</code> only if no values are specified for <code>TaskInvocationParameters</code>.
    */
   @js.native
   trait MaintenanceWindowRunCommandParameters extends js.Object {
@@ -6933,7 +6955,12 @@ package ssm {
   }
 
   /**
-   * <p>The parameters for a STEP_FUNCTION task.</p> <p>For information about specifying and updating task parameters, see <a>RegisterTaskWithMaintenanceWindow</a> and <a>UpdateMaintenanceWindowTask</a>.</p> <note> <p> <code>LoggingInfo</code> has been deprecated. To specify an S3 bucket to contain logs, instead use the <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported Maintenance Window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p> <p> <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs, instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported Maintenance Window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p> <p>For Step Functions tasks, Systems Manager ignores any values specified for <code>TaskParameters</code> and <code>LoggingInfo</code>.</p> </note>
+   * The parameters for a STEP_FUNCTION task.
+   *  For information about specifying and updating task parameters, see '''RegisterTaskWithMaintenanceWindow''' and '''UpdateMaintenanceWindowTask'''.
+   *
+   * '''Note:'''<code>LoggingInfo</code> has been deprecated. To specify an S3 bucket to contain logs, instead use the <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported Maintenance Window task types, see '''MaintenanceWindowTaskInvocationParameters'''.
+   *  <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs, instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported Maintenance Window task types, see '''MaintenanceWindowTaskInvocationParameters'''.
+   *  For Step Functions tasks, Systems Manager ignores any values specified for <code>TaskParameters</code> and <code>LoggingInfo</code>.
    */
   @js.native
   trait MaintenanceWindowStepFunctionsParameters extends js.Object {
@@ -6954,7 +6981,7 @@ package ssm {
   }
 
   /**
-   * <p>The target registered with the Maintenance Window.</p>
+   * The target registered with the Maintenance Window.
    */
   @js.native
   trait MaintenanceWindowTarget extends js.Object {
@@ -6990,7 +7017,7 @@ package ssm {
   }
 
   /**
-   * <p>Information about a task defined for a Maintenance Window.</p>
+   * Information about a task defined for a Maintenance Window.
    */
   @js.native
   trait MaintenanceWindowTask extends js.Object {
@@ -7044,7 +7071,7 @@ package ssm {
   }
 
   /**
-   * <p>The parameters for task execution.</p>
+   * The parameters for task execution.
    */
   @js.native
   trait MaintenanceWindowTaskInvocationParameters extends js.Object {
@@ -7071,7 +7098,7 @@ package ssm {
   }
 
   /**
-   * <p>Defines the values for a task parameter.</p>
+   * Defines the values for a task parameter.
    */
   @js.native
   trait MaintenanceWindowTaskParameterValueExpression extends js.Object {
@@ -7135,7 +7162,7 @@ package ssm {
   }
 
   /**
-   * <p>A summary of resources that are not compliant. The summary is organized according to resource type.</p>
+   * A summary of resources that are not compliant. The summary is organized according to resource type.
    */
   @js.native
   trait NonCompliantSummary extends js.Object {
@@ -7156,7 +7183,7 @@ package ssm {
   }
 
   /**
-   * <p>Configurations for sending notifications.</p>
+   * Configurations for sending notifications.
    */
   @js.native
   trait NotificationConfig extends js.Object {
@@ -7210,7 +7237,7 @@ package ssm {
   }
 
   /**
-   * <p>Information about the source where the association execution details are stored.</p>
+   * Information about the source where the association execution details are stored.
    */
   @js.native
   trait OutputSource extends js.Object {
@@ -7231,7 +7258,7 @@ package ssm {
   }
 
   /**
-   * <p>An Amazon EC2 Systems Manager parameter in Parameter Store.</p>
+   * An Amazon EC2 Systems Manager parameter in Parameter Store.
    */
   @js.native
   trait Parameter extends js.Object {
@@ -7270,7 +7297,7 @@ package ssm {
   }
 
   /**
-   * <p>Information about parameter usage.</p>
+   * Information about parameter usage.
    */
   @js.native
   trait ParameterHistory extends js.Object {
@@ -7315,7 +7342,7 @@ package ssm {
   }
 
   /**
-   * <p>Metada includes information like the ARN of the last user and the date/time the parameter was last used.</p>
+   * Metada includes information like the ARN of the last user and the date/time the parameter was last used.
    */
   @js.native
   trait ParameterMetadata extends js.Object {
@@ -7354,7 +7381,9 @@ package ssm {
   }
 
   /**
-   * <p>One or more filters. Use a filter to return a more specific list of results.</p> <note> <p>The <code>Name</code> field can't be used with the <a>GetParametersByPath</a> API action.</p> </note>
+   * One or more filters. Use a filter to return a more specific list of results.
+   *
+   * '''Note:'''The <code>Name</code> field can't be used with the '''GetParametersByPath''' API action.
    */
   @js.native
   trait ParameterStringFilter extends js.Object {
@@ -7386,7 +7415,7 @@ package ssm {
   }
 
   /**
-   * <p>This data type is deprecated. Instead, use <a>ParameterStringFilter</a>.</p>
+   * This data type is deprecated. Instead, use '''ParameterStringFilter'''.
    */
   @js.native
   trait ParametersFilter extends js.Object {
@@ -7415,7 +7444,7 @@ package ssm {
   }
 
   /**
-   * <p>Represents metadata about a patch.</p>
+   * Represents metadata about a patch.
    */
   @js.native
   trait Patch extends js.Object {
@@ -7476,7 +7505,7 @@ package ssm {
   }
 
   /**
-   * <p>Defines the basic information about a patch baseline.</p>
+   * Defines the basic information about a patch baseline.
    */
   @js.native
   trait PatchBaselineIdentity extends js.Object {
@@ -7506,7 +7535,7 @@ package ssm {
   }
 
   /**
-   * <p>Information about the state of a patch on a particular instance as it relates to the patch baseline used to patch the instance.</p>
+   * Information about the state of a patch on a particular instance as it relates to the patch baseline used to patch the instance.
    */
   @js.native
   trait PatchComplianceData extends js.Object {
@@ -7570,7 +7599,202 @@ package ssm {
   }
 
   /**
-   * <p>Defines a patch filter.</p> <p>A patch filter consists of key/value pairs, but not all keys are valid for all operating system types. For example, the key <code>PRODUCT</code> is valid for all supported operating system types. The key <code>MSRC_SEVERITY</code>, however, is valid only for Windows operating systems, and the key <code>SECTION</code> is valid only for Ubuntu operating systems.</p> <p>Refer to the following sections for information about which keys may be used with each major operating system, and which values are valid for each key.</p> <p> <b>Windows Operating Systems</b> </p> <p>The supported keys for Windows operating systems are <code>PRODUCT</code>, <code>CLASSIFICATION</code>, and <code>MSRC_SEVERITY</code>. See the following lists for valid values for each of these keys.</p> <p> <i>Supported key:</i> <code>PRODUCT</code> </p> <p> <i>Supported values:</i> </p> <ul> <li> <p> <code>Windows7</code> </p> </li> <li> <p> <code>Windows8</code> </p> </li> <li> <p> <code>Windows8.1</code> </p> </li> <li> <p> <code>Windows8Embedded</code> </p> </li> <li> <p> <code>Windows10</code> </p> </li> <li> <p> <code>Windows10LTSB</code> </p> </li> <li> <p> <code>WindowsServer2008</code> </p> </li> <li> <p> <code>WindowsServer2008R2</code> </p> </li> <li> <p> <code>WindowsServer2012</code> </p> </li> <li> <p> <code>WindowsServer2012R2</code> </p> </li> <li> <p> <code>WindowsServer2016</code> </p> </li> <li> <p> <code>*</code> </p> <p> <i>Use a wildcard character (*) to target all supported operating system versions.</i> </p> </li> </ul> <p> <i>Supported key:</i> <code>CLASSIFICATION</code> </p> <p> <i>Supported values:</i> </p> <ul> <li> <p> <code>CriticalUpdates</code> </p> </li> <li> <p> <code>DefinitionUpdates</code> </p> </li> <li> <p> <code>Drivers</code> </p> </li> <li> <p> <code>FeaturePacks</code> </p> </li> <li> <p> <code>SecurityUpdates</code> </p> </li> <li> <p> <code>ServicePacks</code> </p> </li> <li> <p> <code>Tools</code> </p> </li> <li> <p> <code>UpdateRollups</code> </p> </li> <li> <p> <code>Updates</code> </p> </li> <li> <p> <code>Upgrades</code> </p> </li> </ul> <p> <i>Supported key:</i> <code>MSRC_SEVERITY</code> </p> <p> <i>Supported values:</i> </p> <ul> <li> <p> <code>Critical</code> </p> </li> <li> <p> <code>Important</code> </p> </li> <li> <p> <code>Moderate</code> </p> </li> <li> <p> <code>Low</code> </p> </li> <li> <p> <code>Unspecified</code> </p> </li> </ul> <p> <b>Ubuntu Operating Systems</b> </p> <p>The supported keys for Ubuntu operating systems are <code>PRODUCT</code>, <code>PRIORITY</code>, and <code>SECTION</code>. See the following lists for valid values for each of these keys.</p> <p> <i>Supported key:</i> <code>PRODUCT</code> </p> <p> <i>Supported values:</i> </p> <ul> <li> <p> <code>Ubuntu14.04</code> </p> </li> <li> <p> <code>Ubuntu16.04</code> </p> </li> <li> <p> <code>*</code> </p> <p> <i>Use a wildcard character (*) to target all supported operating system versions.</i> </p> </li> </ul> <p> <i>Supported key:</i> <code>PRIORITY</code> </p> <p> <i>Supported values:</i> </p> <ul> <li> <p> <code>Required</code> </p> </li> <li> <p> <code>Important</code> </p> </li> <li> <p> <code>Standard</code> </p> </li> <li> <p> <code>Optional</code> </p> </li> <li> <p> <code>Extra</code> </p> </li> </ul> <p> <i>Supported key:</i> <code>SECTION</code> </p> <p>Only the length of the key value is validated. Minimum length is 1. Maximum length is 64.</p> <p> <b>Amazon Linux Operating Systems</b> </p> <p>The supported keys for Amazon Linux operating systems are <code>PRODUCT</code>, <code>CLASSIFICATION</code>, and <code>SEVERITY</code>. See the following lists for valid values for each of these keys.</p> <p> <i>Supported key:</i> <code>PRODUCT</code> </p> <p> <i>Supported values:</i> </p> <ul> <li> <p> <code>AmazonLinux2012.03</code> </p> </li> <li> <p> <code>AmazonLinux2012.09</code> </p> </li> <li> <p> <code>AmazonLinux2013.03</code> </p> </li> <li> <p> <code>AmazonLinux2013.09</code> </p> </li> <li> <p> <code>AmazonLinux2014.03</code> </p> </li> <li> <p> <code>AmazonLinux2014.09</code> </p> </li> <li> <p> <code>AmazonLinux2015.03</code> </p> </li> <li> <p> <code>AmazonLinux2015.09</code> </p> </li> <li> <p> <code>AmazonLinux2016.03</code> </p> </li> <li> <p> <code>AmazonLinux2016.09</code> </p> </li> <li> <p> <code>AmazonLinux2017.03</code> </p> </li> <li> <p> <code>AmazonLinux2017.09</code> </p> </li> <li> <p> <code>*</code> </p> <p> <i>Use a wildcard character (*) to target all supported operating system versions.</i> </p> </li> </ul> <p> <i>Supported key:</i> <code>CLASSIFICATION</code> </p> <p> <i>Supported values:</i> </p> <ul> <li> <p> <code>Security</code> </p> </li> <li> <p> <code>Bugfix</code> </p> </li> <li> <p> <code>Enhancement</code> </p> </li> <li> <p> <code>Recommended</code> </p> </li> <li> <p> <code>Newpackage</code> </p> </li> </ul> <p> <i>Supported key:</i> <code>SEVERITY</code> </p> <p> <i>Supported values:</i> </p> <ul> <li> <p> <code>Critical</code> </p> </li> <li> <p> <code>Important</code> </p> </li> <li> <p> <code>Medium</code> </p> </li> <li> <p> <code>Low</code> </p> </li> </ul> <p> <b>Amazon Linux 2 Operating Systems</b> </p> <p>The supported keys for Amazon Linux 2 operating systems are <code>PRODUCT</code>, <code>CLASSIFICATION</code>, and <code>SEVERITY</code>. See the following lists for valid values for each of these keys.</p> <p> <i>Supported key:</i> <code>PRODUCT</code> </p> <p> <i>Supported values:</i> </p> <ul> <li> <p> <code>AmazonLinux2</code> </p> </li> <li> <p> <code>AmazonLinux2.0</code> </p> </li> <li> <p> <code>*</code> </p> <p> <i>Use a wildcard character (*) to target all supported operating system versions.</i> </p> </li> </ul> <p> <i>Supported key:</i> <code>CLASSIFICATION</code> </p> <p> <i>Supported values:</i> </p> <ul> <li> <p> <code>Security</code> </p> </li> <li> <p> <code>Bugfix</code> </p> </li> <li> <p> <code>Enhancement</code> </p> </li> <li> <p> <code>Recommended</code> </p> </li> <li> <p> <code>Newpackage</code> </p> </li> </ul> <p> <i>Supported key:</i> <code>SEVERITY</code> </p> <p> <i>Supported values:</i> </p> <ul> <li> <p> <code>Critical</code> </p> </li> <li> <p> <code>Important</code> </p> </li> <li> <p> <code>Medium</code> </p> </li> <li> <p> <code>Low</code> </p> </li> </ul> <p> <b>RedHat Enterprise Linux (RHEL) Operating Systems</b> </p> <p>The supported keys for RedHat Enterprise Linux operating systems are <code>PRODUCT</code>, <code>CLASSIFICATION</code>, and <code>SEVERITY</code>. See the following lists for valid values for each of these keys.</p> <p> <i>Supported key:</i> <code>PRODUCT</code> </p> <p> <i>Supported values:</i> </p> <ul> <li> <p> <code>RedhatEnterpriseLinux6.5</code> </p> </li> <li> <p> <code>RedhatEnterpriseLinux6.6</code> </p> </li> <li> <p> <code>RedhatEnterpriseLinux6.7</code> </p> </li> <li> <p> <code>RedhatEnterpriseLinux6.8</code> </p> </li> <li> <p> <code>RedhatEnterpriseLinux6.9</code> </p> </li> <li> <p> <code>RedhatEnterpriseLinux7.0</code> </p> </li> <li> <p> <code>RedhatEnterpriseLinux7.1</code> </p> </li> <li> <p> <code>RedhatEnterpriseLinux7.2</code> </p> </li> <li> <p> <code>RedhatEnterpriseLinux7.3</code> </p> </li> <li> <p> <code>RedhatEnterpriseLinux7.4</code> </p> </li> <li> <p> <code>*</code> </p> <p> <i>Use a wildcard character (*) to target all supported operating system versions.</i> </p> </li> </ul> <p> <i>Supported key:</i> <code>CLASSIFICATION</code> </p> <p> <i>Supported values:</i> </p> <ul> <li> <p> <code>Security</code> </p> </li> <li> <p> <code>Bugfix</code> </p> </li> <li> <p> <code>Enhancement</code> </p> </li> <li> <p> <code>Recommended</code> </p> </li> <li> <p> <code>Newpackage</code> </p> </li> </ul> <p> <i>Supported key:</i> <code>SEVERITY</code> </p> <p> <i>Supported values:</i> </p> <ul> <li> <p> <code>Critical</code> </p> </li> <li> <p> <code>Important</code> </p> </li> <li> <p> <code>Medium</code> </p> </li> <li> <p> <code>Low</code> </p> </li> </ul> <p> <b>SUSE Linux Enterprise Server (SLES) Operating Systems</b> </p> <p>The supported keys for SLES operating systems are <code>PRODUCT</code>, <code>CLASSIFICATION</code>, and <code>SEVERITY</code>. See the following lists for valid values for each of these keys.</p> <p> <i>Supported key:</i> <code>PRODUCT</code> </p> <p> <i>Supported values:</i> </p> <ul> <li> <p> <code>Suse12.0</code> </p> </li> <li> <p> <code>Suse12.1</code> </p> </li> <li> <p> <code>Suse12.2</code> </p> </li> <li> <p> <code>Suse12.3</code> </p> </li> <li> <p> <code>Suse12.4</code> </p> </li> <li> <p> <code>Suse12.5</code> </p> </li> <li> <p> <code>Suse12.6</code> </p> </li> <li> <p> <code>Suse12.7</code> </p> </li> <li> <p> <code>Suse12.8</code> </p> </li> <li> <p> <code>Suse12.9</code> </p> </li> <li> <p> <code>*</code> </p> <p> <i>Use a wildcard character (*) to target all supported operating system versions.</i> </p> </li> </ul> <p> <i>Supported key:</i> <code>CLASSIFICATION</code> </p> <p> <i>Supported values:</i> </p> <ul> <li> <p> <code>Security</code> </p> </li> <li> <p> <code>Recommended</code> </p> </li> <li> <p> <code>Optional</code> </p> </li> <li> <p> <code>Feature</code> </p> </li> <li> <p> <code>Document</code> </p> </li> <li> <p> <code>Yast</code> </p> </li> </ul> <p> <i>Supported key:</i> <code>SEVERITY</code> </p> <p> <i>Supported values:</i> </p> <ul> <li> <p> <code>Critical</code> </p> </li> <li> <p> <code>Important</code> </p> </li> <li> <p> <code>Moderate</code> </p> </li> <li> <p> <code>Low</code> </p> </li> </ul> <p> <b>CentOS Operating Systems</b> </p> <p>The supported keys for CentOS operating systems are <code>PRODUCT</code>, <code>CLASSIFICATION</code>, and <code>SEVERITY</code>. See the following lists for valid values for each of these keys.</p> <p> <i>Supported key:</i> <code>PRODUCT</code> </p> <p> <i>Supported values:</i> </p> <ul> <li> <p> <code>CentOS6.5</code> </p> </li> <li> <p> <code>CentOS6.6</code> </p> </li> <li> <p> <code>CentOS6.7</code> </p> </li> <li> <p> <code>CentOS6.8</code> </p> </li> <li> <p> <code>CentOS6.9</code> </p> </li> <li> <p> <code>CentOS7.0</code> </p> </li> <li> <p> <code>CentOS7.1</code> </p> </li> <li> <p> <code>CentOS7.2</code> </p> </li> <li> <p> <code>CentOS7.3</code> </p> </li> <li> <p> <code>CentOS7.4</code> </p> </li> <li> <p> <code>*</code> </p> <p> <i>Use a wildcard character (*) to target all supported operating system versions.</i> </p> </li> </ul> <p> <i>Supported key:</i> <code>CLASSIFICATION</code> </p> <p> <i>Supported values:</i> </p> <ul> <li> <p> <code>Security</code> </p> </li> <li> <p> <code>Bugfix</code> </p> </li> <li> <p> <code>Enhancement</code> </p> </li> <li> <p> <code>Recommended</code> </p> </li> <li> <p> <code>Newpackage</code> </p> </li> </ul> <p> <i>Supported key:</i> <code>SEVERITY</code> </p> <p> <i>Supported values:</i> </p> <ul> <li> <p> <code>Critical</code> </p> </li> <li> <p> <code>Important</code> </p> </li> <li> <p> <code>Medium</code> </p> </li> <li> <p> <code>Low</code> </p> </li> </ul>
+   * Defines a patch filter.
+   *  A patch filter consists of key/value pairs, but not all keys are valid for all operating system types. For example, the key <code>PRODUCT</code> is valid for all supported operating system types. The key <code>MSRC_SEVERITY</code>, however, is valid only for Windows operating systems, and the key <code>SECTION</code> is valid only for Ubuntu operating systems.
+   *  Refer to the following sections for information about which keys may be used with each major operating system, and which values are valid for each key.
+   *  <b>Windows Operating Systems</b>
+   *  The supported keys for Windows operating systems are <code>PRODUCT</code>, <code>CLASSIFICATION</code>, and <code>MSRC_SEVERITY</code>. See the following lists for valid values for each of these keys.
+   *  <i>Supported key:</i> <code>PRODUCT</code>
+   *  <i>Supported values:</i>
+   * * <code>Windows7</code>
+   *  * <code>Windows8</code>
+   *  * <code>Windows8.1</code>
+   *  * <code>Windows8Embedded</code>
+   *  * <code>Windows10</code>
+   *  * <code>Windows10LTSB</code>
+   *  * <code>WindowsServer2008</code>
+   *  * <code>WindowsServer2008R2</code>
+   *  * <code>WindowsServer2012</code>
+   *  * <code>WindowsServer2012R2</code>
+   *  * <code>WindowsServer2016</code>
+   *  * <code>*</code>
+   *  <i>Use a wildcard character (*) to target all supported operating system versions.</i>
+   * <i>Supported key:</i> <code>CLASSIFICATION</code>
+   *  <i>Supported values:</i>
+   * * <code>CriticalUpdates</code>
+   *  * <code>DefinitionUpdates</code>
+   *  * <code>Drivers</code>
+   *  * <code>FeaturePacks</code>
+   *  * <code>SecurityUpdates</code>
+   *  * <code>ServicePacks</code>
+   *  * <code>Tools</code>
+   *  * <code>UpdateRollups</code>
+   *  * <code>Updates</code>
+   *  * <code>Upgrades</code>
+   * <i>Supported key:</i> <code>MSRC_SEVERITY</code>
+   *  <i>Supported values:</i>
+   * * <code>Critical</code>
+   *  * <code>Important</code>
+   *  * <code>Moderate</code>
+   *  * <code>Low</code>
+   *  * <code>Unspecified</code>
+   * <b>Ubuntu Operating Systems</b>
+   *  The supported keys for Ubuntu operating systems are <code>PRODUCT</code>, <code>PRIORITY</code>, and <code>SECTION</code>. See the following lists for valid values for each of these keys.
+   *  <i>Supported key:</i> <code>PRODUCT</code>
+   *  <i>Supported values:</i>
+   * * <code>Ubuntu14.04</code>
+   *  * <code>Ubuntu16.04</code>
+   *  * <code>*</code>
+   *  <i>Use a wildcard character (*) to target all supported operating system versions.</i>
+   * <i>Supported key:</i> <code>PRIORITY</code>
+   *  <i>Supported values:</i>
+   * * <code>Required</code>
+   *  * <code>Important</code>
+   *  * <code>Standard</code>
+   *  * <code>Optional</code>
+   *  * <code>Extra</code>
+   * <i>Supported key:</i> <code>SECTION</code>
+   *  Only the length of the key value is validated. Minimum length is 1. Maximum length is 64.
+   *  <b>Amazon Linux Operating Systems</b>
+   *  The supported keys for Amazon Linux operating systems are <code>PRODUCT</code>, <code>CLASSIFICATION</code>, and <code>SEVERITY</code>. See the following lists for valid values for each of these keys.
+   *  <i>Supported key:</i> <code>PRODUCT</code>
+   *  <i>Supported values:</i>
+   * * <code>AmazonLinux2012.03</code>
+   *  * <code>AmazonLinux2012.09</code>
+   *  * <code>AmazonLinux2013.03</code>
+   *  * <code>AmazonLinux2013.09</code>
+   *  * <code>AmazonLinux2014.03</code>
+   *  * <code>AmazonLinux2014.09</code>
+   *  * <code>AmazonLinux2015.03</code>
+   *  * <code>AmazonLinux2015.09</code>
+   *  * <code>AmazonLinux2016.03</code>
+   *  * <code>AmazonLinux2016.09</code>
+   *  * <code>AmazonLinux2017.03</code>
+   *  * <code>AmazonLinux2017.09</code>
+   *  * <code>*</code>
+   *  <i>Use a wildcard character (*) to target all supported operating system versions.</i>
+   * <i>Supported key:</i> <code>CLASSIFICATION</code>
+   *  <i>Supported values:</i>
+   * * <code>Security</code>
+   *  * <code>Bugfix</code>
+   *  * <code>Enhancement</code>
+   *  * <code>Recommended</code>
+   *  * <code>Newpackage</code>
+   * <i>Supported key:</i> <code>SEVERITY</code>
+   *  <i>Supported values:</i>
+   * * <code>Critical</code>
+   *  * <code>Important</code>
+   *  * <code>Medium</code>
+   *  * <code>Low</code>
+   * <b>Amazon Linux 2 Operating Systems</b>
+   *  The supported keys for Amazon Linux 2 operating systems are <code>PRODUCT</code>, <code>CLASSIFICATION</code>, and <code>SEVERITY</code>. See the following lists for valid values for each of these keys.
+   *  <i>Supported key:</i> <code>PRODUCT</code>
+   *  <i>Supported values:</i>
+   * * <code>AmazonLinux2</code>
+   *  * <code>AmazonLinux2.0</code>
+   *  * <code>*</code>
+   *  <i>Use a wildcard character (*) to target all supported operating system versions.</i>
+   * <i>Supported key:</i> <code>CLASSIFICATION</code>
+   *  <i>Supported values:</i>
+   * * <code>Security</code>
+   *  * <code>Bugfix</code>
+   *  * <code>Enhancement</code>
+   *  * <code>Recommended</code>
+   *  * <code>Newpackage</code>
+   * <i>Supported key:</i> <code>SEVERITY</code>
+   *  <i>Supported values:</i>
+   * * <code>Critical</code>
+   *  * <code>Important</code>
+   *  * <code>Medium</code>
+   *  * <code>Low</code>
+   * <b>RedHat Enterprise Linux (RHEL) Operating Systems</b>
+   *  The supported keys for RedHat Enterprise Linux operating systems are <code>PRODUCT</code>, <code>CLASSIFICATION</code>, and <code>SEVERITY</code>. See the following lists for valid values for each of these keys.
+   *  <i>Supported key:</i> <code>PRODUCT</code>
+   *  <i>Supported values:</i>
+   * * <code>RedhatEnterpriseLinux6.5</code>
+   *  * <code>RedhatEnterpriseLinux6.6</code>
+   *  * <code>RedhatEnterpriseLinux6.7</code>
+   *  * <code>RedhatEnterpriseLinux6.8</code>
+   *  * <code>RedhatEnterpriseLinux6.9</code>
+   *  * <code>RedhatEnterpriseLinux7.0</code>
+   *  * <code>RedhatEnterpriseLinux7.1</code>
+   *  * <code>RedhatEnterpriseLinux7.2</code>
+   *  * <code>RedhatEnterpriseLinux7.3</code>
+   *  * <code>RedhatEnterpriseLinux7.4</code>
+   *  * <code>*</code>
+   *  <i>Use a wildcard character (*) to target all supported operating system versions.</i>
+   * <i>Supported key:</i> <code>CLASSIFICATION</code>
+   *  <i>Supported values:</i>
+   * * <code>Security</code>
+   *  * <code>Bugfix</code>
+   *  * <code>Enhancement</code>
+   *  * <code>Recommended</code>
+   *  * <code>Newpackage</code>
+   * <i>Supported key:</i> <code>SEVERITY</code>
+   *  <i>Supported values:</i>
+   * * <code>Critical</code>
+   *  * <code>Important</code>
+   *  * <code>Medium</code>
+   *  * <code>Low</code>
+   * <b>SUSE Linux Enterprise Server (SLES) Operating Systems</b>
+   *  The supported keys for SLES operating systems are <code>PRODUCT</code>, <code>CLASSIFICATION</code>, and <code>SEVERITY</code>. See the following lists for valid values for each of these keys.
+   *  <i>Supported key:</i> <code>PRODUCT</code>
+   *  <i>Supported values:</i>
+   * * <code>Suse12.0</code>
+   *  * <code>Suse12.1</code>
+   *  * <code>Suse12.2</code>
+   *  * <code>Suse12.3</code>
+   *  * <code>Suse12.4</code>
+   *  * <code>Suse12.5</code>
+   *  * <code>Suse12.6</code>
+   *  * <code>Suse12.7</code>
+   *  * <code>Suse12.8</code>
+   *  * <code>Suse12.9</code>
+   *  * <code>*</code>
+   *  <i>Use a wildcard character (*) to target all supported operating system versions.</i>
+   * <i>Supported key:</i> <code>CLASSIFICATION</code>
+   *  <i>Supported values:</i>
+   * * <code>Security</code>
+   *  * <code>Recommended</code>
+   *  * <code>Optional</code>
+   *  * <code>Feature</code>
+   *  * <code>Document</code>
+   *  * <code>Yast</code>
+   * <i>Supported key:</i> <code>SEVERITY</code>
+   *  <i>Supported values:</i>
+   * * <code>Critical</code>
+   *  * <code>Important</code>
+   *  * <code>Moderate</code>
+   *  * <code>Low</code>
+   * <b>CentOS Operating Systems</b>
+   *  The supported keys for CentOS operating systems are <code>PRODUCT</code>, <code>CLASSIFICATION</code>, and <code>SEVERITY</code>. See the following lists for valid values for each of these keys.
+   *  <i>Supported key:</i> <code>PRODUCT</code>
+   *  <i>Supported values:</i>
+   * * <code>CentOS6.5</code>
+   *  * <code>CentOS6.6</code>
+   *  * <code>CentOS6.7</code>
+   *  * <code>CentOS6.8</code>
+   *  * <code>CentOS6.9</code>
+   *  * <code>CentOS7.0</code>
+   *  * <code>CentOS7.1</code>
+   *  * <code>CentOS7.2</code>
+   *  * <code>CentOS7.3</code>
+   *  * <code>CentOS7.4</code>
+   *  * <code>*</code>
+   *  <i>Use a wildcard character (*) to target all supported operating system versions.</i>
+   * <i>Supported key:</i> <code>CLASSIFICATION</code>
+   *  <i>Supported values:</i>
+   * * <code>Security</code>
+   *  * <code>Bugfix</code>
+   *  * <code>Enhancement</code>
+   *  * <code>Recommended</code>
+   *  * <code>Newpackage</code>
+   * <i>Supported key:</i> <code>SEVERITY</code>
+   *  <i>Supported values:</i>
+   * * <code>Critical</code>
+   *  * <code>Important</code>
+   *  * <code>Medium</code>
+   *  * <code>Low</code>
    */
   @js.native
   trait PatchFilter extends js.Object {
@@ -7591,7 +7815,7 @@ package ssm {
   }
 
   /**
-   * <p>A set of patch filters, typically used for approval rules.</p>
+   * A set of patch filters, typically used for approval rules.
    */
   @js.native
   trait PatchFilterGroup extends js.Object {
@@ -7621,7 +7845,7 @@ package ssm {
   }
 
   /**
-   * <p>The mapping between a patch group and the patch baseline the patch group is registered with.</p>
+   * The mapping between a patch group and the patch baseline the patch group is registered with.
    */
   @js.native
   trait PatchGroupPatchBaselineMapping extends js.Object {
@@ -7649,7 +7873,7 @@ package ssm {
   }
 
   /**
-   * <p>Defines a filter used in Patch Manager APIs.</p>
+   * Defines a filter used in Patch Manager APIs.
    */
   @js.native
   trait PatchOrchestratorFilter extends js.Object {
@@ -7670,7 +7894,7 @@ package ssm {
   }
 
   /**
-   * <p>Defines an approval rule for a patch baseline.</p>
+   * Defines an approval rule for a patch baseline.
    */
   @js.native
   trait PatchRule extends js.Object {
@@ -7697,7 +7921,7 @@ package ssm {
   }
 
   /**
-   * <p>A set of rules defining the approval rules for a patch baseline.</p>
+   * A set of rules defining the approval rules for a patch baseline.
    */
   @js.native
   trait PatchRuleGroup extends js.Object {
@@ -7715,7 +7939,7 @@ package ssm {
   }
 
   /**
-   * <p>Information about the patches to use to update the instances, including target operating systems and source repository. Applies to Linux instances only.</p>
+   * Information about the patches to use to update the instances, including target operating systems and source repository. Applies to Linux instances only.
    */
   @js.native
   trait PatchSource extends js.Object {
@@ -7739,7 +7963,7 @@ package ssm {
   }
 
   /**
-   * <p>Information about the approval status of a patch.</p>
+   * Information about the approval status of a patch.
    */
   @js.native
   trait PatchStatus extends js.Object {
@@ -7778,7 +8002,7 @@ package ssm {
   }
 
   /**
-   * <p>An aggregate of step execution statuses displayed in the AWS Console for a multi-Region and multi-account Automation execution.</p>
+   * An aggregate of step execution statuses displayed in the AWS Console for a multi-Region and multi-account Automation execution.
    */
   @js.native
   trait ProgressCounters extends js.Object {
@@ -8149,7 +8373,7 @@ package ssm {
   }
 
   /**
-   * <p>Information about targets that resolved during the Automation execution.</p>
+   * Information about targets that resolved during the Automation execution.
    */
   @js.native
   trait ResolvedTargets extends js.Object {
@@ -8170,7 +8394,7 @@ package ssm {
   }
 
   /**
-   * <p>Compliance summary information for a specific resource. </p>
+   * Compliance summary information for a specific resource.
    */
   @js.native
   trait ResourceComplianceSummaryItem extends js.Object {
@@ -8209,7 +8433,7 @@ package ssm {
   }
 
   /**
-   * <p>Information about a Resource Data Sync configuration, including its current status and last successful sync.</p>
+   * Information about a Resource Data Sync configuration, including its current status and last successful sync.
    */
   @js.native
   trait ResourceDataSyncItem extends js.Object {
@@ -8245,7 +8469,7 @@ package ssm {
   }
 
   /**
-   * <p>Information about the target Amazon S3 bucket for the Resource Data Sync.</p>
+   * Information about the target Amazon S3 bucket for the Resource Data Sync.
    */
   @js.native
   trait ResourceDataSyncS3Destination extends js.Object {
@@ -8299,7 +8523,7 @@ package ssm {
   }
 
   /**
-   * <p>The inventory item result attribute.</p>
+   * The inventory item result attribute.
    */
   @js.native
   trait ResultAttribute extends js.Object {
@@ -8353,7 +8577,7 @@ package ssm {
   }
 
   /**
-   * <p>An Amazon S3 bucket where you want to store the results of this request.</p>
+   * An Amazon S3 bucket where you want to store the results of this request.
    */
   @js.native
   trait S3OutputLocation extends js.Object {
@@ -8377,7 +8601,7 @@ package ssm {
   }
 
   /**
-   * <p>A URL for the Amazon S3 bucket where you want to store the results of this request.</p>
+   * A URL for the Amazon S3 bucket where you want to store the results of this request.
    */
   @js.native
   trait S3OutputUrl extends js.Object {
@@ -8395,7 +8619,7 @@ package ssm {
   }
 
   /**
-   * <p>Information about a scheduled execution for a Maintenance Window.</p>
+   * Information about a scheduled execution for a Maintenance Window.
    */
   @js.native
   trait ScheduledWindowExecution extends js.Object {
@@ -8531,7 +8755,7 @@ package ssm {
   }
 
   /**
-   * <p>Information about a Session Manager connection to an instance.</p>
+   * Information about a Session Manager connection to an instance.
    */
   @js.native
   trait Session extends js.Object {
@@ -8573,7 +8797,7 @@ package ssm {
   }
 
   /**
-   * <p>Describes a filter for Session Manager information.</p>
+   * Describes a filter for Session Manager information.
    */
   @js.native
   trait SessionFilter extends js.Object {
@@ -8604,7 +8828,7 @@ package ssm {
   }
 
   /**
-   * <p>Reserved for future use.</p>
+   * Reserved for future use.
    */
   @js.native
   trait SessionManagerOutputUrl extends js.Object {
@@ -8643,7 +8867,7 @@ package ssm {
   }
 
   /**
-   * <p>The number of managed instances found for each patch severity level defined in the request filter.</p>
+   * The number of managed instances found for each patch severity level defined in the request filter.
    */
   @js.native
   trait SeveritySummary extends js.Object {
@@ -8816,7 +9040,7 @@ package ssm {
   }
 
   /**
-   * <p>Detailed information about an the execution state of an Automation step.</p>
+   * Detailed information about an the execution state of an Automation step.
    */
   @js.native
   trait StepExecution extends js.Object {
@@ -8897,7 +9121,7 @@ package ssm {
   }
 
   /**
-   * <p>A filter to limit the amount of step execution information returned by the call.</p>
+   * A filter to limit the amount of step execution information returned by the call.
    */
   @js.native
   trait StepExecutionFilter extends js.Object {
@@ -8967,7 +9191,7 @@ package ssm {
   }
 
   /**
-   * <p>Metadata that you assign to your AWS resources. Tags enable you to categorize your resources in different ways, for example, by purpose, owner, or environment. In Systems Manager, you can apply tags to documents, managed instances, Maintenance Windows, Parameter Store parameters, and patch baselines.</p>
+   * Metadata that you assign to your AWS resources. Tags enable you to categorize your resources in different ways, for example, by purpose, owner, or environment. In Systems Manager, you can apply tags to documents, managed instances, Maintenance Windows, Parameter Store parameters, and patch baselines.
    */
   @js.native
   trait Tag extends js.Object {
@@ -8988,7 +9212,8 @@ package ssm {
   }
 
   /**
-   * <p>An array of search criteria that targets instances using a Key,Value combination that you specify. <code>Targets</code> is required if you don't provide one or more instance IDs in the call.</p> <p/>
+   * An array of search criteria that targets instances using a Key,Value combination that you specify. <code>Targets</code> is required if you don't provide one or more instance IDs in the call.
+   *  <p/>
    */
   @js.native
   trait Target extends js.Object {
@@ -9009,7 +9234,7 @@ package ssm {
   }
 
   /**
-   * <p>The combination of AWS Regions and accounts targeted by the current Automation execution.</p>
+   * The combination of AWS Regions and accounts targeted by the current Automation execution.
    */
   @js.native
   trait TargetLocation extends js.Object {

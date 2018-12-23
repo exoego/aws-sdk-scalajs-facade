@@ -85,7 +85,7 @@ package fms {
   }
 
   /**
-   * <p>Details of the resource that is not protected by the policy.</p>
+   * Details of the resource that is not protected by the policy.
    */
   @js.native
   trait ComplianceViolator extends js.Object {
@@ -163,7 +163,7 @@ package fms {
   }
 
   /**
-   * <p>Describes the compliance status for the account. An account is considered non-compliant if it includes resources that are not protected by the specified policy.</p>
+   * Describes the compliance status for the account. An account is considered non-compliant if it includes resources that are not protected by the specified policy.
    */
   @js.native
   trait EvaluationResult extends js.Object {
@@ -426,7 +426,7 @@ package fms {
   }
 
   /**
-   * <p>An AWS Firewall Manager policy.</p>
+   * An AWS Firewall Manager policy.
    */
   @js.native
   trait Policy extends js.Object {
@@ -471,7 +471,7 @@ package fms {
   }
 
   /**
-   * <p>Describes the non-compliant resources in a member account for a specific AWS Firewall Manager policy. A maximum of 100 entries are displayed. If more than 100 resources are non-compliant, <code>EvaluationLimitExceeded</code> is set to <code>True</code>.</p>
+   * Describes the non-compliant resources in a member account for a specific AWS Firewall Manager policy. A maximum of 100 entries are displayed. If more than 100 resources are non-compliant, <code>EvaluationLimitExceeded</code> is set to <code>True</code>.
    */
   @js.native
   trait PolicyComplianceDetail extends js.Object {
@@ -507,7 +507,7 @@ package fms {
   }
 
   /**
-   * <p>Indicates whether the account is compliant with the specified policy. An account is considered non-compliant if it includes resources that are not protected by the policy.</p>
+   * Indicates whether the account is compliant with the specified policy. An account is considered non-compliant if it includes resources that are not protected by the policy.
    */
   @js.native
   trait PolicyComplianceStatus extends js.Object {
@@ -550,7 +550,7 @@ package fms {
   }
 
   /**
-   * <p>Details of the AWS Firewall Manager policy. </p>
+   * Details of the AWS Firewall Manager policy.
    */
   @js.native
   trait PolicySummary extends js.Object {
@@ -634,7 +634,7 @@ package fms {
   }
 
   /**
-   * <p>The resource tags that AWS Firewall Manager uses to determine if a particular resource should be included or excluded from protection by the AWS Firewall Manager policy. Tags enable you to categorize your AWS resources in different ways, for example, by purpose, owner, or environment. Each tag consists of a key and an optional value, both of which you define. Tags are combined with an "OR." That is, if you add more than one tag, if any of the tags matches, the resource is considered a match for the include or exclude. <a href="https://docs.aws.amazon.com/awsconsolehelpdocs/latest/gsg/tag-editor.html">Working with Tag Editor</a>.</p>
+   * The resource tags that AWS Firewall Manager uses to determine if a particular resource should be included or excluded from protection by the AWS Firewall Manager policy. Tags enable you to categorize your AWS resources in different ways, for example, by purpose, owner, or environment. Each tag consists of a key and an optional value, both of which you define. Tags are combined with an "OR." That is, if you add more than one tag, if any of the tags matches, the resource is considered a match for the include or exclude. <a href="https://docs.aws.amazon.com/awsconsolehelpdocs/latest/gsg/tag-editor.html">Working with Tag Editor</a>.
    */
   @js.native
   trait ResourceTag extends js.Object {
@@ -655,7 +655,7 @@ package fms {
   }
 
   /**
-   * <p>Details about the security service that is being used to protect the resources.</p>
+   * Details about the security service that is being used to protect the resources.
    */
   @js.native
   trait SecurityServicePolicyData extends js.Object {

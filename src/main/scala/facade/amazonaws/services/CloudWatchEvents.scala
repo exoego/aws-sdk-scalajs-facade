@@ -83,7 +83,7 @@ package cloudwatchevents {
   }
 
   /**
-   * <p>This structure specifies the VPC subnets and security groups for the task, and whether a public IP address is to be used. This structure is relevant only for ECS tasks that use the <code>awsvpc</code> network mode.</p>
+   * This structure specifies the VPC subnets and security groups for the task, and whether a public IP address is to be used. This structure is relevant only for ECS tasks that use the <code>awsvpc</code> network mode.
    */
   @js.native
   trait AwsVpcConfiguration extends js.Object {
@@ -107,7 +107,7 @@ package cloudwatchevents {
   }
 
   /**
-   * <p>The array properties for the submitted job, such as the size of the array. The array size can be between 2 and 10,000. If you specify array properties for a job, it becomes an array job. This parameter is used only if the target is an AWS Batch job.</p>
+   * The array properties for the submitted job, such as the size of the array. The array size can be between 2 and 10,000. If you specify array properties for a job, it becomes an array job. This parameter is used only if the target is an AWS Batch job.
    */
   @js.native
   trait BatchArrayProperties extends js.Object {
@@ -125,7 +125,7 @@ package cloudwatchevents {
   }
 
   /**
-   * <p>The custom parameters to be used when the target is an AWS Batch job.</p>
+   * The custom parameters to be used when the target is an AWS Batch job.
    */
   @js.native
   trait BatchParameters extends js.Object {
@@ -152,7 +152,7 @@ package cloudwatchevents {
   }
 
   /**
-   * <p>The retry strategy to use for failed jobs, if the target is an AWS Batch job. If you specify a retry strategy here, it overrides the retry strategy defined in the job definition.</p>
+   * The retry strategy to use for failed jobs, if the target is an AWS Batch job. If you specify a retry strategy here, it overrides the retry strategy defined in the job definition.
    */
   @js.native
   trait BatchRetryStrategy extends js.Object {
@@ -170,7 +170,8 @@ package cloudwatchevents {
   }
 
   /**
-   * <p>A JSON string which you can use to limit the event bus permissions you are granting to only accounts that fulfill the condition. Currently, the only supported condition is membership in a certain AWS organization. The string must contain <code>Type</code>, <code>Key</code>, and <code>Value</code> fields. The <code>Value</code> field specifies the ID of the AWS organization. Following is an example value for <code>Condition</code>:</p> <p> <code>'{"Type" : "StringEquals", "Key": "aws:PrincipalOrgID", "Value": "o-1234567890"}'</code> </p>
+   * A JSON string which you can use to limit the event bus permissions you are granting to only accounts that fulfill the condition. Currently, the only supported condition is membership in a certain AWS organization. The string must contain <code>Type</code>, <code>Key</code>, and <code>Value</code> fields. The <code>Value</code> field specifies the ID of the AWS organization. Following is an example value for <code>Condition</code>:
+   *  <code>'{"Type" : "StringEquals", "Key": "aws:PrincipalOrgID", "Value": "o-1234567890"}'</code>
    */
   @js.native
   trait Condition extends js.Object {
@@ -312,7 +313,7 @@ package cloudwatchevents {
   }
 
   /**
-   * <p>The custom parameters to be used when the target is an Amazon ECS task.</p>
+   * The custom parameters to be used when the target is an Amazon ECS task.
    */
   @js.native
   trait EcsParameters extends js.Object {
@@ -360,7 +361,7 @@ package cloudwatchevents {
   }
 
   /**
-   * <p>Contains the parameters needed for you to provide custom input to a target based on one or more pieces of data extracted from the event.</p>
+   * Contains the parameters needed for you to provide custom input to a target based on one or more pieces of data extracted from the event.
    */
   @js.native
   trait InputTransformer extends js.Object {
@@ -381,7 +382,7 @@ package cloudwatchevents {
   }
 
   /**
-   * <p>This object enables you to specify a JSON path to extract from the event and use as the partition key for the Amazon Kinesis data stream, so that you can control the shard to which the event goes. If you do not include this parameter, the default is to use the <code>eventId</code> as the partition key.</p>
+   * This object enables you to specify a JSON path to extract from the event and use as the partition key for the Amazon Kinesis data stream, so that you can control the shard to which the event goes. If you do not include this parameter, the default is to use the <code>eventId</code> as the partition key.
    */
   @js.native
   trait KinesisParameters extends js.Object {
@@ -523,7 +524,7 @@ package cloudwatchevents {
   }
 
   /**
-   * <p>This structure specifies the network configuration for an ECS task.</p>
+   * This structure specifies the network configuration for an ECS task.
    */
   @js.native
   trait NetworkConfiguration extends js.Object {
@@ -556,7 +557,7 @@ package cloudwatchevents {
   }
 
   /**
-   * <p>Represents an event to be submitted.</p>
+   * Represents an event to be submitted.
    */
   @js.native
   trait PutEventsRequestEntry extends js.Object {
@@ -604,7 +605,7 @@ package cloudwatchevents {
   }
 
   /**
-   * <p>Represents an event that failed to be submitted.</p>
+   * Represents an event that failed to be submitted.
    */
   @js.native
   trait PutEventsResultEntry extends js.Object {
@@ -733,7 +734,7 @@ package cloudwatchevents {
   }
 
   /**
-   * <p>Represents a target that failed to be added to a rule.</p>
+   * Represents a target that failed to be added to a rule.
    */
   @js.native
   trait PutTargetsResultEntry extends js.Object {
@@ -811,7 +812,7 @@ package cloudwatchevents {
   }
 
   /**
-   * <p>Represents a target that failed to be removed from a rule.</p>
+   * Represents a target that failed to be removed from a rule.
    */
   @js.native
   trait RemoveTargetsResultEntry extends js.Object {
@@ -835,7 +836,7 @@ package cloudwatchevents {
   }
 
   /**
-   * <p>Contains information about a rule in Amazon CloudWatch Events.</p>
+   * Contains information about a rule in Amazon CloudWatch Events.
    */
   @js.native
   trait Rule extends js.Object {
@@ -881,7 +882,7 @@ package cloudwatchevents {
   }
 
   /**
-   * <p>This parameter contains the criteria (either InstanceIds or a tag) used to specify which EC2 instances are to be sent the command. </p>
+   * This parameter contains the criteria (either InstanceIds or a tag) used to specify which EC2 instances are to be sent the command.
    */
   @js.native
   trait RunCommandParameters extends js.Object {
@@ -899,7 +900,7 @@ package cloudwatchevents {
   }
 
   /**
-   * <p>Information about the EC2 instances that are to be sent the command, specified as key-value pairs. Each <code>RunCommandTarget</code> block can include only one key, but this key may specify multiple values.</p>
+   * Information about the EC2 instances that are to be sent the command, specified as key-value pairs. Each <code>RunCommandTarget</code> block can include only one key, but this key may specify multiple values.
    */
   @js.native
   trait RunCommandTarget extends js.Object {
@@ -920,7 +921,7 @@ package cloudwatchevents {
   }
 
   /**
-   * <p>This structure includes the custom parameter to be used when the target is an SQS FIFO queue.</p>
+   * This structure includes the custom parameter to be used when the target is an SQS FIFO queue.
    */
   @js.native
   trait SqsParameters extends js.Object {
@@ -938,7 +939,8 @@ package cloudwatchevents {
   }
 
   /**
-   * <p>Targets are the resources to be invoked when a rule is triggered. For a complete list of services and resources that can be set as a target, see <a>PutTargets</a>.</p> <p>If you are setting the event bus of another account as the target, and that account granted permission to your account through an organization instead of directly by the account ID, then you must specify a <code>RoleArn</code> with proper permissions in the <code>Target</code> structure. For more information, see <a href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/CloudWatchEvents-CrossAccountEventDelivery.html">Sending and Receiving Events Between AWS Accounts</a> in the <i>Amazon CloudWatch Events User Guide</i>.</p>
+   * Targets are the resources to be invoked when a rule is triggered. For a complete list of services and resources that can be set as a target, see '''PutTargets'''.
+   *  If you are setting the event bus of another account as the target, and that account granted permission to your account through an organization instead of directly by the account ID, then you must specify a <code>RoleArn</code> with proper permissions in the <code>Target</code> structure. For more information, see <a href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/CloudWatchEvents-CrossAccountEventDelivery.html">Sending and Receiving Events Between AWS Accounts</a> in the <i>Amazon CloudWatch Events User Guide</i>.
    */
   @js.native
   trait Target extends js.Object {

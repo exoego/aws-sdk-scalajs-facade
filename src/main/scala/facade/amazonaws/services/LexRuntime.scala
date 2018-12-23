@@ -38,7 +38,7 @@ package lexruntime {
   }
 
   /**
-   * <p>Either the Amazon Lex bot is still building, or one of the dependent services (Amazon Polly, AWS Lambda) failed with an internal service error.</p>
+   * Either the Amazon Lex bot is still building, or one of the dependent services (Amazon Polly, AWS Lambda) failed with an internal service error.
    */
   @js.native
   trait BadGatewayExceptionException extends js.Object {
@@ -46,7 +46,7 @@ package lexruntime {
   }
 
   /**
-   * <p> Request validation failed, there is no usable message in the context, or the bot build failed, is still in progress, or contains unbuilt changes. </p>
+   * Request validation failed, there is no usable message in the context, or the bot build failed, is still in progress, or contains unbuilt changes.
    */
   @js.native
   trait BadRequestExceptionException extends js.Object {
@@ -54,7 +54,7 @@ package lexruntime {
   }
 
   /**
-   * <p>Represents an option to be shown on the client platform (Facebook, Slack, etc.)</p>
+   * Represents an option to be shown on the client platform (Facebook, Slack, etc.)
    */
   @js.native
   trait Button extends js.Object {
@@ -75,7 +75,7 @@ package lexruntime {
   }
 
   /**
-   * <p> Two clients are using the same AWS account, Amazon Lex bot, and user ID. </p>
+   * Two clients are using the same AWS account, Amazon Lex bot, and user ID.
    */
   @js.native
   trait ConflictExceptionException extends js.Object {
@@ -89,7 +89,10 @@ package lexruntime {
   }
 
   /**
-   * <p> One of the dependencies, such as AWS Lambda or Amazon Polly, threw an exception. For example, </p> <ul> <li> <p>If Amazon Lex does not have sufficient permissions to call a Lambda function.</p> </li> <li> <p>If a Lambda function takes longer than 30 seconds to execute.</p> </li> <li> <p>If a fulfillment Lambda function returns a <code>Delegate</code> dialog action without removing any slot values.</p> </li> </ul>
+   * One of the dependencies, such as AWS Lambda or Amazon Polly, threw an exception. For example,
+   * * If Amazon Lex does not have sufficient permissions to call a Lambda function.
+   *  * If a Lambda function takes longer than 30 seconds to execute.
+   *  * If a fulfillment Lambda function returns a <code>Delegate</code> dialog action without removing any slot values.
    */
   @js.native
   trait DependencyFailedExceptionException extends js.Object {
@@ -108,7 +111,7 @@ package lexruntime {
   }
 
   /**
-   * <p>Represents an option rendered to the user when a prompt is shown. It could be an image, a button, a link, or text. </p>
+   * Represents an option rendered to the user when a prompt is shown. It could be an image, a button, a link, or text.
    */
   @js.native
   trait GenericAttachment extends js.Object {
@@ -138,7 +141,7 @@ package lexruntime {
   }
 
   /**
-   * <p>Internal service error. Retry the call.</p>
+   * Internal service error. Retry the call.
    */
   @js.native
   trait InternalFailureExceptionException extends js.Object {
@@ -146,7 +149,7 @@ package lexruntime {
   }
 
   /**
-   * <p>Exceeded a limit.</p>
+   * Exceeded a limit.
    */
   @js.native
   trait LimitExceededExceptionException extends js.Object {
@@ -155,7 +158,7 @@ package lexruntime {
   }
 
   /**
-   * <p>This exception is not used.</p>
+   * This exception is not used.
    */
   @js.native
   trait LoopDetectedExceptionException extends js.Object {
@@ -172,7 +175,7 @@ package lexruntime {
   }
 
   /**
-   * <p>The accept header in the request does not have a valid value.</p>
+   * The accept header in the request does not have a valid value.
    */
   @js.native
   trait NotAcceptableExceptionException extends js.Object {
@@ -180,7 +183,7 @@ package lexruntime {
   }
 
   /**
-   * <p>The resource (such as the Amazon Lex bot or an alias) that is referred to is not found.</p>
+   * The resource (such as the Amazon Lex bot or an alias) that is referred to is not found.
    */
   @js.native
   trait NotFoundExceptionException extends js.Object {
@@ -332,7 +335,7 @@ package lexruntime {
   }
 
   /**
-   * <p>The input speech is too long.</p>
+   * The input speech is too long.
    */
   @js.native
   trait RequestTimeoutExceptionException extends js.Object {
@@ -340,7 +343,7 @@ package lexruntime {
   }
 
   /**
-   * <p>If you configure a response card when creating your bots, Amazon Lex substitutes the session attributes and slot values that are available, and then returns it. The response card can also come from a Lambda function ( <code>dialogCodeHook</code> and <code>fulfillmentActivity</code> on an intent).</p>
+   * If you configure a response card when creating your bots, Amazon Lex substitutes the session attributes and slot values that are available, and then returns it. The response card can also come from a Lambda function ( <code>dialogCodeHook</code> and <code>fulfillmentActivity</code> on an intent).
    */
   @js.native
   trait ResponseCard extends js.Object {
@@ -364,7 +367,7 @@ package lexruntime {
   }
 
   /**
-   * <p>The Content-Type header (<code>PostContent</code> API) has an invalid value. </p>
+   * The Content-Type header (<code>PostContent</code> API) has an invalid value.
    */
   @js.native
   trait UnsupportedMediaTypeExceptionException extends js.Object {

@@ -24,7 +24,7 @@ package mobileanalytics {
   }
 
   /**
-   * <p>An exception object returned when a request fails.</p>
+   * An exception object returned when a request fails.
    */
   @js.native
   trait BadRequestExceptionException extends js.Object {
@@ -32,7 +32,7 @@ package mobileanalytics {
   }
 
   /**
-   * <p>A JSON object representing a batch of unique event occurrences in your app.</p>
+   * A JSON object representing a batch of unique event occurrences in your app.
    */
   @js.native
   trait Event extends js.Object {
@@ -65,7 +65,7 @@ package mobileanalytics {
   }
 
   /**
-   * <p>A container for the data needed for a PutEvent operation</p>
+   * A container for the data needed for a PutEvent operation
    */
   @js.native
   trait PutEventsInput extends js.Object {
@@ -89,7 +89,7 @@ package mobileanalytics {
   }
 
   /**
-   * <p>Describes the session. Session information is required on ALL events.</p>
+   * Describes the session. Session information is required on ALL events.
    */
   @js.native
   trait Session extends js.Object {

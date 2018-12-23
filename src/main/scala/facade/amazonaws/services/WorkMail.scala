@@ -141,7 +141,7 @@ package workmail {
   }
 
   /**
-   * <p>At least one delegate must be associated to the resource to disable automatic replies from the resource.</p>
+   * At least one delegate must be associated to the resource to disable automatic replies from the resource.
    */
   @js.native
   trait BookingOptions extends js.Object {
@@ -307,7 +307,7 @@ package workmail {
   }
 
   /**
-   * <p>The name of the attribute, which is one of the values defined in the UserAttribute enumeration.</p>
+   * The name of the attribute, which is one of the values defined in the UserAttribute enumeration.
    */
   @js.native
   trait Delegate extends js.Object {
@@ -727,7 +727,7 @@ package workmail {
   }
 
   /**
-   * <p>The Directory Service doesn't recognize the credentials supplied by the Amazon WorkMail service.</p>
+   * The Directory Service doesn't recognize the credentials supplied by the Amazon WorkMail service.
    */
   @js.native
   trait DirectoryServiceAuthenticationFailedExceptionException extends js.Object {
@@ -735,7 +735,7 @@ package workmail {
   }
 
   /**
-   * <p>The directory that you are trying to perform operations on isn't available.</p>
+   * The directory that you are trying to perform operations on isn't available.
    */
   @js.native
   trait DirectoryUnavailableExceptionException extends js.Object {
@@ -811,7 +811,7 @@ package workmail {
   }
 
   /**
-   * <p>The email address that you're trying to assign is already created for a different user, group, or resource.</p>
+   * The email address that you're trying to assign is already created for a different user, group, or resource.
    */
   @js.native
   trait EmailAddressInUseExceptionException extends js.Object {
@@ -819,7 +819,7 @@ package workmail {
   }
 
   /**
-   * <p>The user, group, or resource that you're trying to register is already registered.</p>
+   * The user, group, or resource that you're trying to register is already registered.
    */
   @js.native
   trait EntityAlreadyRegisteredExceptionException extends js.Object {
@@ -827,7 +827,7 @@ package workmail {
   }
 
   /**
-   * <p>The identifier supplied for the entity is valid, but it does not exist in your organization.</p>
+   * The identifier supplied for the entity is valid, but it does not exist in your organization.
    */
   @js.native
   trait EntityNotFoundExceptionException extends js.Object {
@@ -843,7 +843,7 @@ package workmail {
   }
 
   /**
-   * <p>You are performing an operation on an entity that isn't in the expected state, such as trying to update a deleted user.</p>
+   * You are performing an operation on an entity that isn't in the expected state, such as trying to update a deleted user.
    */
   @js.native
   trait EntityStateExceptionException extends js.Object {
@@ -851,7 +851,7 @@ package workmail {
   }
 
   /**
-   * <p>The representation of an Amazon WorkMail group.</p>
+   * The representation of an Amazon WorkMail group.
    */
   @js.native
   trait Group extends js.Object {
@@ -884,7 +884,7 @@ package workmail {
   }
 
   /**
-   * <p>The configuration for a resource isn't valid. A resource must either be able to auto-respond to requests or have at least one delegate associated that can do it on its behalf.</p>
+   * The configuration for a resource isn't valid. A resource must either be able to auto-respond to requests or have at least one delegate associated that can do it on its behalf.
    */
   @js.native
   trait InvalidConfigurationExceptionException extends js.Object {
@@ -892,7 +892,7 @@ package workmail {
   }
 
   /**
-   * <p>One or more of the input parameters don't match the service's restrictions.</p>
+   * One or more of the input parameters don't match the service's restrictions.
    */
   @js.native
   trait InvalidParameterExceptionException extends js.Object {
@@ -900,7 +900,7 @@ package workmail {
   }
 
   /**
-   * <p>The supplied password doesn't match the minimum security constraints, such as length or use of special characters.</p>
+   * The supplied password doesn't match the minimum security constraints, such as length or use of special characters.
    */
   @js.native
   trait InvalidPasswordExceptionException extends js.Object {
@@ -1229,7 +1229,7 @@ package workmail {
   }
 
   /**
-   * <p>For an email or alias to be created in Amazon WorkMail, the included domain must be defined in the organization.</p>
+   * For an email or alias to be created in Amazon WorkMail, the included domain must be defined in the organization.
    */
   @js.native
   trait MailDomainNotFoundExceptionException extends js.Object {
@@ -1237,7 +1237,7 @@ package workmail {
   }
 
   /**
-   * <p>After a domain has been added to the organization, it must be verified. The domain is not yet verified.</p>
+   * After a domain has been added to the organization, it must be verified. The domain is not yet verified.
    */
   @js.native
   trait MailDomainStateExceptionException extends js.Object {
@@ -1245,7 +1245,7 @@ package workmail {
   }
 
   /**
-   * <p>The representation of a group member (user or group).</p>
+   * The representation of a group member (user or group).
    */
   @js.native
   trait Member extends js.Object {
@@ -1285,7 +1285,7 @@ package workmail {
   }
 
   /**
-   * <p>The entity (user, group, or user) name isn't unique in Amazon WorkMail.</p>
+   * The entity (user, group, or user) name isn't unique in Amazon WorkMail.
    */
   @js.native
   trait NameAvailabilityExceptionException extends js.Object {
@@ -1293,7 +1293,7 @@ package workmail {
   }
 
   /**
-   * <p>An operation received a valid organization identifier that either doesn't belong or exist in the system.</p>
+   * An operation received a valid organization identifier that either doesn't belong or exist in the system.
    */
   @js.native
   trait OrganizationNotFoundExceptionException extends js.Object {
@@ -1301,7 +1301,7 @@ package workmail {
   }
 
   /**
-   * <p>The organization must have a valid state (Active or Synchronizing) to perform certain operations on the organization or its entities.</p>
+   * The organization must have a valid state (Active or Synchronizing) to perform certain operations on the organization or its entities.
    */
   @js.native
   trait OrganizationStateExceptionException extends js.Object {
@@ -1309,7 +1309,7 @@ package workmail {
   }
 
   /**
-   * <p>The brief overview associated with an organization.</p>
+   * The brief overview associated with an organization.
    */
   @js.native
   trait OrganizationSummary extends js.Object {
@@ -1336,7 +1336,7 @@ package workmail {
   }
 
   /**
-   * <p>Permission granted to an entity (user, group) to access a certain aspect of another entity's mailbox.</p>
+   * Permission granted to an entity (user, group) to access a certain aspect of another entity's mailbox.
    */
   @js.native
   trait Permission extends js.Object {
@@ -1439,7 +1439,7 @@ package workmail {
   }
 
   /**
-   * <p>This entity name is not allowed in Amazon WorkMail.</p>
+   * This entity name is not allowed in Amazon WorkMail.
    */
   @js.native
   trait ReservedNameExceptionException extends js.Object {
@@ -1481,7 +1481,7 @@ package workmail {
   }
 
   /**
-   * <p>The overview for a resource containing relevant data regarding it.</p>
+   * The overview for a resource containing relevant data regarding it.
    */
   @js.native
   trait Resource extends js.Object {
@@ -1524,7 +1524,7 @@ package workmail {
   }
 
   /**
-   * <p>You can't perform a write operation against a read-only directory.</p>
+   * You can't perform a write operation against a read-only directory.
    */
   @js.native
   trait UnsupportedOperationExceptionException extends js.Object {
@@ -1603,7 +1603,7 @@ package workmail {
   }
 
   /**
-   * <p>The representation of an Amazon WorkMail user.</p>
+   * The representation of an Amazon WorkMail user.
    */
   @js.native
   trait User extends js.Object {

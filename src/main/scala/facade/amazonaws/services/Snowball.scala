@@ -60,7 +60,7 @@ package snowball {
   }
 
   /**
-   * <p>The address that you want the Snowball or Snowballs associated with a specific job to be shipped to. Addresses are validated at the time of creation. The address you provide must be located within the serviceable area of your region. Although no individual elements of the <code>Address</code> are required, if the address is invalid or unsupported, then an exception is thrown.</p>
+   * The address that you want the Snowball or Snowballs associated with a specific job to be shipped to. Addresses are validated at the time of creation. The address you provide must be located within the serviceable area of your region. Although no individual elements of the <code>Address</code> are required, if the address is invalid or unsupported, then an exception is thrown.
    */
   @js.native
   trait Address extends js.Object {
@@ -173,7 +173,7 @@ package snowball {
   }
 
   /**
-   * <p>Contains a cluster's state, a cluster's ID, and other important information.</p>
+   * Contains a cluster's state, a cluster's ID, and other important information.
    */
   @js.native
   trait ClusterListEntry extends js.Object {
@@ -200,7 +200,7 @@ package snowball {
   }
 
   /**
-   * <p>Contains metadata about a specific cluster.</p>
+   * Contains metadata about a specific cluster.
    */
   @js.native
   trait ClusterMetadata extends js.Object {
@@ -264,7 +264,7 @@ package snowball {
   }
 
   /**
-   * <p>A JSON-formatted object that describes a compatible Amazon Machine Image (AMI). For more information on compatible AMIs, see <a href="http://docs.aws.amazon.com/snowball/latest/developer-guide/using-ec2.html">Using Amazon EC2 Compute Instances</a> in the <i>AWS Snowball Developer Guide</i>.</p>
+   * A JSON-formatted object that describes a compatible Amazon Machine Image (AMI). For more information on compatible AMIs, see <a href="http://docs.aws.amazon.com/snowball/latest/developer-guide/using-ec2.html">Using Amazon EC2 Compute Instances</a> in the <i>AWS Snowball Developer Guide</i>.
    */
   @js.native
   trait CompatibleImage extends js.Object {
@@ -435,7 +435,7 @@ package snowball {
   }
 
   /**
-   * <p>Defines the real-time status of a Snowball's data transfer while the device is at AWS. This data is only available while a job has a <code>JobState</code> value of <code>InProgress</code>, for both import and export jobs.</p>
+   * Defines the real-time status of a Snowball's data transfer while the device is at AWS. This data is only available while a job has a <code>JobState</code> value of <code>InProgress</code>, for both import and export jobs.
    */
   @js.native
   trait DataTransfer extends js.Object {
@@ -591,7 +591,7 @@ package snowball {
   }
 
   /**
-   * <p>A JSON-formatted object that contains the IDs for an Amazon Machine Image (AMI), including the Amazon EC2 AMI ID and the Snowball Edge AMI ID. Each AMI has these two IDs to simplify identifying the AMI in both the AWS Cloud and on the device.</p>
+   * A JSON-formatted object that contains the IDs for an Amazon Machine Image (AMI), including the Amazon EC2 AMI ID and the Snowball Edge AMI ID. Each AMI has these two IDs to simplify identifying the AMI in both the AWS Cloud and on the device.
    */
   @js.native
   trait Ec2AmiResource extends js.Object {
@@ -612,7 +612,7 @@ package snowball {
   }
 
   /**
-   * <p>The container for the <a>EventTriggerDefinition$EventResourceARN</a>.</p>
+   * The container for the EventResourceARN.
    */
   @js.native
   trait EventTriggerDefinition extends js.Object {
@@ -721,7 +721,7 @@ package snowball {
   }
 
   /**
-   * <p>Each <code>JobListEntry</code> object contains a job's state, a job's ID, and a value that indicates whether the job is a job part, in the case of an export job.</p>
+   * Each <code>JobListEntry</code> object contains a job's state, a job's ID, and a value that indicates whether the job is a job part, in the case of an export job.
    */
   @js.native
   trait JobListEntry extends js.Object {
@@ -757,7 +757,10 @@ package snowball {
   }
 
   /**
-   * <p>Contains job logs. Whenever Snowball is used to import data into or export data out of Amazon S3, you'll have the option of downloading a PDF job report. Job logs are returned as a part of the response syntax of the <code>DescribeJob</code> action in the <code>JobMetadata</code> data type. The job logs can be accessed for up to 60 minutes after this request has been made. To access any of the job logs after 60 minutes have passed, you'll have to make another call to the <code>DescribeJob</code> action.</p> <p>For import jobs, the PDF job report becomes available at the end of the import process. For export jobs, your job report typically becomes available while the Snowball for your job part is being delivered to you.</p> <p>The job report provides you insight into the state of your Amazon S3 data transfer. The report includes details about your job or job part for your records.</p> <p>For deeper visibility into the status of your transferred objects, you can look at the two associated logs: a success log and a failure log. The logs are saved in comma-separated value (CSV) format, and the name of each log includes the ID of the job or job part that the log describes.</p>
+   * Contains job logs. Whenever Snowball is used to import data into or export data out of Amazon S3, you'll have the option of downloading a PDF job report. Job logs are returned as a part of the response syntax of the <code>DescribeJob</code> action in the <code>JobMetadata</code> data type. The job logs can be accessed for up to 60 minutes after this request has been made. To access any of the job logs after 60 minutes have passed, you'll have to make another call to the <code>DescribeJob</code> action.
+   *  For import jobs, the PDF job report becomes available at the end of the import process. For export jobs, your job report typically becomes available while the Snowball for your job part is being delivered to you.
+   *  The job report provides you insight into the state of your Amazon S3 data transfer. The report includes details about your job or job part for your records.
+   *  For deeper visibility into the status of your transferred objects, you can look at the two associated logs: a success log and a failure log. The logs are saved in comma-separated value (CSV) format, and the name of each log includes the ID of the job or job part that the log describes.
    */
   @js.native
   trait JobLogs extends js.Object {
@@ -781,7 +784,7 @@ package snowball {
   }
 
   /**
-   * <p>Contains information about a specific job including shipping information, job status, and other important metadata. This information is returned as a part of the response syntax of the <code>DescribeJob</code> action.</p>
+   * Contains information about a specific job including shipping information, job status, and other important metadata. This information is returned as a part of the response syntax of the <code>DescribeJob</code> action.
    */
   @js.native
   trait JobMetadata extends js.Object {
@@ -847,7 +850,7 @@ package snowball {
   }
 
   /**
-   * <p>Contains an array of AWS resource objects. Each object represents an Amazon S3 bucket, an AWS Lambda function, or an Amazon Machine Image (AMI) based on Amazon EC2 that is associated with a particular job.</p>
+   * Contains an array of AWS resource objects. Each object represents an Amazon S3 bucket, an AWS Lambda function, or an Amazon Machine Image (AMI) based on Amazon EC2 that is associated with a particular job.
    */
   @js.native
   trait JobResource extends js.Object {
@@ -897,7 +900,7 @@ package snowball {
   }
 
   /**
-   * <p>Contains a key range. For export jobs, a <code>S3Resource</code> object can have an optional <code>KeyRange</code> value. The length of the range is defined at job creation, and has either an inclusive <code>BeginMarker</code>, an inclusive <code>EndMarker</code>, or both. Ranges are UTF-8 binary sorted.</p>
+   * Contains a key range. For export jobs, a <code>S3Resource</code> object can have an optional <code>KeyRange</code> value. The length of the range is defined at job creation, and has either an inclusive <code>BeginMarker</code>, an inclusive <code>EndMarker</code>, or both. Ranges are UTF-8 binary sorted.
    */
   @js.native
   trait KeyRange extends js.Object {
@@ -918,7 +921,7 @@ package snowball {
   }
 
   /**
-   * <p>Identifies </p>
+   * Identifies
    */
   @js.native
   trait LambdaResource extends js.Object {
@@ -1086,7 +1089,8 @@ package snowball {
   }
 
   /**
-   * <p>The Amazon Simple Notification Service (Amazon SNS) notification settings associated with a specific job. The <code>Notification</code> object is returned as a part of the response syntax of the <code>DescribeJob</code> action in the <code>JobMetadata</code> data type.</p> <p>When the notification settings are defined during job creation, you can choose to notify based on a specific set of job states using the <code>JobStatesToNotify</code> array of strings, or you can specify that you want to have Amazon SNS notifications sent out for all job states with <code>NotifyAll</code> set to true.</p>
+   * The Amazon Simple Notification Service (Amazon SNS) notification settings associated with a specific job. The <code>Notification</code> object is returned as a part of the response syntax of the <code>DescribeJob</code> action in the <code>JobMetadata</code> data type.
+   *  When the notification settings are defined during job creation, you can choose to notify based on a specific set of job states using the <code>JobStatesToNotify</code> array of strings, or you can specify that you want to have Amazon SNS notifications sent out for all job states with <code>NotifyAll</code> set to true.
    */
   @js.native
   trait Notification extends js.Object {
@@ -1110,7 +1114,7 @@ package snowball {
   }
 
   /**
-   * <p>Each <code>S3Resource</code> object represents an Amazon S3 bucket that your transferred data will be exported from or imported into. For export jobs, this object can have an optional <code>KeyRange</code> value. The length of the range is defined at job creation, and has either an inclusive <code>BeginMarker</code>, an inclusive <code>EndMarker</code>, or both. Ranges are UTF-8 binary sorted.</p>
+   * Each <code>S3Resource</code> object represents an Amazon S3 bucket that your transferred data will be exported from or imported into. For export jobs, this object can have an optional <code>KeyRange</code> value. The length of the range is defined at job creation, and has either an inclusive <code>BeginMarker</code>, an inclusive <code>EndMarker</code>, or both. Ranges are UTF-8 binary sorted.
    */
   @js.native
   trait S3Resource extends js.Object {
@@ -1131,7 +1135,7 @@ package snowball {
   }
 
   /**
-   * <p>The <code>Status</code> and <code>TrackingNumber</code> information for an inbound or outbound shipment.</p>
+   * The <code>Status</code> and <code>TrackingNumber</code> information for an inbound or outbound shipment.
    */
   @js.native
   trait Shipment extends js.Object {
@@ -1152,7 +1156,7 @@ package snowball {
   }
 
   /**
-   * <p>A job's shipping information, including inbound and outbound tracking numbers and shipping speed options.</p>
+   * A job's shipping information, including inbound and outbound tracking numbers and shipping speed options.
    */
   @js.native
   trait ShippingDetails extends js.Object {

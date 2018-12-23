@@ -161,7 +161,7 @@ package connect {
   }
 
   /**
-   * <p>The credentials to use for federation.</p>
+   * The credentials to use for federation.
    */
   @js.native
   trait Credentials extends js.Object {
@@ -188,7 +188,7 @@ package connect {
   }
 
   /**
-   * <p>A <code>CurrentMetric</code> object that contains the Name and Unit for the metric.</p>
+   * A <code>CurrentMetric</code> object that contains the Name and Unit for the metric.
    */
   @js.native
   trait CurrentMetric extends js.Object {
@@ -209,7 +209,7 @@ package connect {
   }
 
   /**
-   * <p>A <code>CurrentMetricData</code> object.</p>
+   * A <code>CurrentMetricData</code> object.
    */
   @js.native
   trait CurrentMetricData extends js.Object {
@@ -230,7 +230,7 @@ package connect {
   }
 
   /**
-   * <p>A list of current metric names.</p>
+   * A list of current metric names.
    */
   object CurrentMetricNameEnum {
     val AGENTS_ONLINE = "AGENTS_ONLINE"
@@ -248,7 +248,7 @@ package connect {
   }
 
   /**
-   * <p>A <code>CurrentMetricResult</code> object.</p>
+   * A <code>CurrentMetricResult</code> object.
    */
   @js.native
   trait CurrentMetricResult extends js.Object {
@@ -383,7 +383,7 @@ package connect {
   }
 
   /**
-   * <p>A <code>Dimensions</code> object that includes the Channel and Queue for the metric.</p>
+   * A <code>Dimensions</code> object that includes the Channel and Queue for the metric.
    */
   @js.native
   trait Dimensions extends js.Object {
@@ -404,7 +404,7 @@ package connect {
   }
 
   /**
-   * <p>The filter, either channel or queues, to apply to the metric results retrieved.</p>
+   * The filter, either channel or queues, to apply to the metric results retrieved.
    */
   @js.native
   trait Filters extends js.Object {
@@ -567,7 +567,7 @@ package connect {
   }
 
   /**
-   * <p>A <code>HierarchyGroup</code> object that contains information about a hierarchy group in your Amazon Connect instance.</p>
+   * A <code>HierarchyGroup</code> object that contains information about a hierarchy group in your Amazon Connect instance.
    */
   @js.native
   trait HierarchyGroup extends js.Object {
@@ -597,7 +597,7 @@ package connect {
   }
 
   /**
-   * <p>A <code>HierarchyGroupSummary</code> object that contains information about the hierarchy group, including ARN, Id, and Name.</p>
+   * A <code>HierarchyGroupSummary</code> object that contains information about the hierarchy group, including ARN, Id, and Name.
    */
   @js.native
   trait HierarchyGroupSummary extends js.Object {
@@ -621,7 +621,7 @@ package connect {
   }
 
   /**
-   * <p>A <code>HierarchyLevel</code> object that contains information about the levels in a hierarchy group, including ARN, Id, and Name.</p>
+   * A <code>HierarchyLevel</code> object that contains information about the levels in a hierarchy group, including ARN, Id, and Name.
    */
   @js.native
   trait HierarchyLevel extends js.Object {
@@ -645,7 +645,7 @@ package connect {
   }
 
   /**
-   * <p>A <code>HierarchyPath</code> object that contains information about the levels of the hierarchy group.</p>
+   * A <code>HierarchyPath</code> object that contains information about the levels of the hierarchy group.
    */
   @js.native
   trait HierarchyPath extends js.Object {
@@ -675,7 +675,7 @@ package connect {
   }
 
   /**
-   * <p>A <code>HierarchyStructure</code> object that contains information about the hierarchy group structure.</p>
+   * A <code>HierarchyStructure</code> object that contains information about the hierarchy group structure.
    */
   @js.native
   trait HierarchyStructure extends js.Object {
@@ -705,7 +705,7 @@ package connect {
   }
 
   /**
-   * <p>A <code>HistoricalMetric</code> object that contains the Name, Unit, Statistic, and Threshold for the metric.</p>
+   * A <code>HistoricalMetric</code> object that contains the Name, Unit, Statistic, and Threshold for the metric.
    */
   @js.native
   trait HistoricalMetric extends js.Object {
@@ -732,7 +732,7 @@ package connect {
   }
 
   /**
-   * <p>A <code>HistoricalMetricData</code> object than contains a <code>Metric</code> and a <code>Value</code>.</p>
+   * A <code>HistoricalMetricData</code> object than contains a <code>Metric</code> and a <code>Value</code>.
    */
   @js.native
   trait HistoricalMetricData extends js.Object {
@@ -753,7 +753,7 @@ package connect {
   }
 
   /**
-   * <p>A list of historical metric names.</p>
+   * A list of historical metric names.
    */
   object HistoricalMetricNameEnum {
     val CONTACTS_QUEUED = "CONTACTS_QUEUED"
@@ -786,7 +786,7 @@ package connect {
   }
 
   /**
-   * <p>The metrics data returned from a <code>GetMetricData</code> operation.</p>
+   * The metrics data returned from a <code>GetMetricData</code> operation.
    */
   @js.native
   trait HistoricalMetricResult extends js.Object {
@@ -970,7 +970,7 @@ package connect {
   }
 
   /**
-   * <p>A QueueReference object that contains the the QueueId and ARN for the queue resource for which metrics are returned.</p>
+   * A QueueReference object that contains the the QueueId and ARN for the queue resource for which metrics are returned.
    */
   @js.native
   trait QueueReference extends js.Object {
@@ -991,7 +991,7 @@ package connect {
   }
 
   /**
-   * <p>A <code>RoutingProfileSummary</code> object that contains information about a routing profile, including ARN, Id, and Name.</p>
+   * A <code>RoutingProfileSummary</code> object that contains information about a routing profile, including ARN, Id, and Name.
    */
   @js.native
   trait RoutingProfileSummary extends js.Object {
@@ -1015,7 +1015,7 @@ package connect {
   }
 
   /**
-   * <p>A <code>SecurityProfileSummary</code> object that contains information about a security profile, including ARN, Id, Name.</p>
+   * A <code>SecurityProfileSummary</code> object that contains information about a security profile, including ARN, Id, Name.
    */
   @js.native
   trait SecurityProfileSummary extends js.Object {
@@ -1126,7 +1126,7 @@ package connect {
   }
 
   /**
-   * <p>A <code>Threshold</code> object that includes a comparison and <code>ThresholdValue</code> to compare to. Used with service level metrics.</p>
+   * A <code>Threshold</code> object that includes a comparison and <code>ThresholdValue</code> to compare to. Used with service level metrics.
    */
   @js.native
   trait Threshold extends js.Object {
@@ -1294,7 +1294,7 @@ package connect {
   }
 
   /**
-   * <p>A <code>User</code> object that contains information about a user account in your Amazon Connect instance, including configuration settings.</p>
+   * A <code>User</code> object that contains information about a user account in your Amazon Connect instance, including configuration settings.
    */
   @js.native
   trait User extends js.Object {
@@ -1336,7 +1336,7 @@ package connect {
   }
 
   /**
-   * <p>A <code>UserIdentityInfo</code> object that contains information about the user's identity, including email address, first name, and last name.</p>
+   * A <code>UserIdentityInfo</code> object that contains information about the user's identity, including email address, first name, and last name.
    */
   @js.native
   trait UserIdentityInfo extends js.Object {
@@ -1360,7 +1360,7 @@ package connect {
   }
 
   /**
-   * <p>A <code>UserPhoneConfig</code> object that contains information about the user phone configuration settings.</p>
+   * A <code>UserPhoneConfig</code> object that contains information about the user phone configuration settings.
    */
   @js.native
   trait UserPhoneConfig extends js.Object {
@@ -1387,7 +1387,7 @@ package connect {
   }
 
   /**
-   * <p>A <code>UserSummary</code> object that contains Information about a user, including ARN, Id, and user name.</p>
+   * A <code>UserSummary</code> object that contains Information about a user, including ARN, Id, and user name.
    */
   @js.native
   trait UserSummary extends js.Object {

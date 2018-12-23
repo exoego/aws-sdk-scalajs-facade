@@ -73,7 +73,7 @@ package fsx {
   }
 
   /**
-   * <p>A backup of an Amazon FSx for Windows File Server file system. You can create a new file system from a backup to protect against data loss.</p>
+   * A backup of an Amazon FSx for Windows File Server file system. You can create a new file system from a backup to protect against data loss.
    */
   @js.native
   trait Backup extends js.Object {
@@ -118,7 +118,7 @@ package fsx {
   }
 
   /**
-   * <p>If backup creation fails, this structure contains the details of that failure.</p>
+   * If backup creation fails, this structure contains the details of that failure.
    */
   @js.native
   trait BackupFailureDetails extends js.Object {
@@ -136,7 +136,7 @@ package fsx {
   }
 
   /**
-   * <p>The lifecycle status of the backup.</p>
+   * The lifecycle status of the backup.
    */
   object BackupLifecycleEnum {
     val AVAILABLE = "AVAILABLE"
@@ -148,7 +148,7 @@ package fsx {
   }
 
   /**
-   * <p>The type of the backup.</p>
+   * The type of the backup.
    */
   object BackupTypeEnum {
     val AUTOMATIC = "AUTOMATIC"
@@ -158,7 +158,7 @@ package fsx {
   }
 
   /**
-   * <p>The request object for the <code>CreateBackup</code> operation.</p>
+   * The request object for the <code>CreateBackup</code> operation.
    */
   @js.native
   trait CreateBackupRequest extends js.Object {
@@ -182,7 +182,7 @@ package fsx {
   }
 
   /**
-   * <p>The response object for the <code>CreateBackup</code> operation.</p>
+   * The response object for the <code>CreateBackup</code> operation.
    */
   @js.native
   trait CreateBackupResponse extends js.Object {
@@ -200,7 +200,7 @@ package fsx {
   }
 
   /**
-   * <p>The request object for the <code>CreateFileSystemFromBackup</code> operation.</p>
+   * The request object for the <code>CreateFileSystemFromBackup</code> operation.
    */
   @js.native
   trait CreateFileSystemFromBackupRequest extends js.Object {
@@ -233,7 +233,7 @@ package fsx {
   }
 
   /**
-   * <p>The response object for the <code>CreateFileSystemFromBackup</code> operation.</p>
+   * The response object for the <code>CreateFileSystemFromBackup</code> operation.
    */
   @js.native
   trait CreateFileSystemFromBackupResponse extends js.Object {
@@ -251,7 +251,7 @@ package fsx {
   }
 
   /**
-   * <p>The configuration object for Lustre file systems used in the <code>CreateFileSystem</code> operation.</p>
+   * The configuration object for Lustre file systems used in the <code>CreateFileSystem</code> operation.
    */
   @js.native
   trait CreateFileSystemLustreConfiguration extends js.Object {
@@ -275,7 +275,7 @@ package fsx {
   }
 
   /**
-   * <p>The request object for the <code>CreateFileSystem</code> operation.</p>
+   * The request object for the <code>CreateFileSystem</code> operation.
    */
   @js.native
   trait CreateFileSystemRequest extends js.Object {
@@ -317,7 +317,7 @@ package fsx {
   }
 
   /**
-   * <p>The response object for the <code>CreateFileSystem</code> operation.</p>
+   * The response object for the <code>CreateFileSystem</code> operation.
    */
   @js.native
   trait CreateFileSystemResponse extends js.Object {
@@ -335,7 +335,7 @@ package fsx {
   }
 
   /**
-   * <p>The configuration object for the Microsoft Windows file system used in <code>CreateFileSystem</code> and <code>CreateFileSystemFromBackup</code> operations.</p>
+   * The configuration object for the Microsoft Windows file system used in <code>CreateFileSystem</code> and <code>CreateFileSystemFromBackup</code> operations.
    */
   @js.native
   trait CreateFileSystemWindowsConfiguration extends js.Object {
@@ -368,7 +368,7 @@ package fsx {
   }
 
   /**
-   * <p>The data repository configuration object for Lustre file systems returned in the response of the <code>CreateFileSystem</code> operation.</p>
+   * The data repository configuration object for Lustre file systems returned in the response of the <code>CreateFileSystem</code> operation.
    */
   @js.native
   trait DataRepositoryConfiguration extends js.Object {
@@ -392,7 +392,7 @@ package fsx {
   }
 
   /**
-   * <p>The request object for <code>DeleteBackup</code> operation.</p>
+   * The request object for <code>DeleteBackup</code> operation.
    */
   @js.native
   trait DeleteBackupRequest extends js.Object {
@@ -413,7 +413,7 @@ package fsx {
   }
 
   /**
-   * <p>The response object for <code>DeleteBackup</code> operation.</p>
+   * The response object for <code>DeleteBackup</code> operation.
    */
   @js.native
   trait DeleteBackupResponse extends js.Object {
@@ -434,7 +434,7 @@ package fsx {
   }
 
   /**
-   * <p>The request object for <code>DeleteFileSystem</code> operation.</p>
+   * The request object for <code>DeleteFileSystem</code> operation.
    */
   @js.native
   trait DeleteFileSystemRequest extends js.Object {
@@ -458,7 +458,7 @@ package fsx {
   }
 
   /**
-   * <p>The response object for the <code>DeleteFileSystem</code> operation.</p>
+   * The response object for the <code>DeleteFileSystem</code> operation.
    */
   @js.native
   trait DeleteFileSystemResponse extends js.Object {
@@ -482,7 +482,7 @@ package fsx {
   }
 
   /**
-   * <p>The configuration object for the Microsoft Windows file system used in the <code>DeleteFileSystem</code> operation.</p>
+   * The configuration object for the Microsoft Windows file system used in the <code>DeleteFileSystem</code> operation.
    */
   @js.native
   trait DeleteFileSystemWindowsConfiguration extends js.Object {
@@ -503,7 +503,7 @@ package fsx {
   }
 
   /**
-   * <p>The response object for the Microsoft Windows file system used in the <code>DeleteFileSystem</code> operation.</p>
+   * The response object for the Microsoft Windows file system used in the <code>DeleteFileSystem</code> operation.
    */
   @js.native
   trait DeleteFileSystemWindowsResponse extends js.Object {
@@ -524,7 +524,7 @@ package fsx {
   }
 
   /**
-   * <p>The request object for <code>DescribeBackups</code> operation.</p>
+   * The request object for <code>DescribeBackups</code> operation.
    */
   @js.native
   trait DescribeBackupsRequest extends js.Object {
@@ -551,7 +551,7 @@ package fsx {
   }
 
   /**
-   * <p>Response object for <code>DescribeBackups</code> operation.</p>
+   * Response object for <code>DescribeBackups</code> operation.
    */
   @js.native
   trait DescribeBackupsResponse extends js.Object {
@@ -572,7 +572,7 @@ package fsx {
   }
 
   /**
-   * <p>The request object for <code>DescribeFileSystems</code> operation.</p>
+   * The request object for <code>DescribeFileSystems</code> operation.
    */
   @js.native
   trait DescribeFileSystemsRequest extends js.Object {
@@ -596,7 +596,7 @@ package fsx {
   }
 
   /**
-   * <p>The response object for <code>DescribeFileSystems</code> operation.</p>
+   * The response object for <code>DescribeFileSystems</code> operation.
    */
   @js.native
   trait DescribeFileSystemsResponse extends js.Object {
@@ -617,7 +617,7 @@ package fsx {
   }
 
   /**
-   * <p>A description of a specific Amazon FSx file system.</p>
+   * A description of a specific Amazon FSx file system.
    */
   @js.native
   trait FileSystem extends js.Object {
@@ -680,7 +680,7 @@ package fsx {
   }
 
   /**
-   * <p>Structure providing details of any failures that occur when creating the file system has failed.</p>
+   * Structure providing details of any failures that occur when creating the file system has failed.
    */
   @js.native
   trait FileSystemFailureDetails extends js.Object {
@@ -698,7 +698,7 @@ package fsx {
   }
 
   /**
-   * <p>The lifecycle status of the file system.</p>
+   * The lifecycle status of the file system.
    */
   object FileSystemLifecycleEnum {
     val AVAILABLE = "AVAILABLE"
@@ -710,7 +710,7 @@ package fsx {
   }
 
   /**
-   * <p>An enumeration specifying the currently ongoing maintenance operation.</p>
+   * An enumeration specifying the currently ongoing maintenance operation.
    */
   object FileSystemMaintenanceOperationEnum {
     val PATCHING = "PATCHING"
@@ -720,7 +720,7 @@ package fsx {
   }
 
   /**
-   * <p>The type of file system.</p>
+   * The type of file system.
    */
   object FileSystemTypeEnum {
     val WINDOWS = "WINDOWS"
@@ -730,7 +730,7 @@ package fsx {
   }
 
   /**
-   * <p>A filter used to restrict the results of describe calls. You can use multiple filters to return results that meet all applied filter requirements.</p>
+   * A filter used to restrict the results of describe calls. You can use multiple filters to return results that meet all applied filter requirements.
    */
   @js.native
   trait Filter extends js.Object {
@@ -751,7 +751,7 @@ package fsx {
   }
 
   /**
-   * <p>The name for a filter.</p>
+   * The name for a filter.
    */
   object FilterNameEnum {
     val `file-system-id` = "file-system-id"
@@ -761,7 +761,7 @@ package fsx {
   }
 
   /**
-   * <p>The request object for <code>ListTagsForResource</code> operation.</p>
+   * The request object for <code>ListTagsForResource</code> operation.
    */
   @js.native
   trait ListTagsForResourceRequest extends js.Object {
@@ -785,7 +785,7 @@ package fsx {
   }
 
   /**
-   * <p>The response object for <code>ListTagsForResource</code> operation.</p>
+   * The response object for <code>ListTagsForResource</code> operation.
    */
   @js.native
   trait ListTagsForResourceResponse extends js.Object {
@@ -806,7 +806,7 @@ package fsx {
   }
 
   /**
-   * <p>The configuration for the Amazon FSx for Lustre file system.</p>
+   * The configuration for the Amazon FSx for Lustre file system.
    */
   @js.native
   trait LustreFileSystemConfiguration extends js.Object {
@@ -827,7 +827,7 @@ package fsx {
   }
 
   /**
-   * <p>Specifies a key-value pair for a resource tag.</p>
+   * Specifies a key-value pair for a resource tag.
    */
   @js.native
   trait Tag extends js.Object {
@@ -848,7 +848,7 @@ package fsx {
   }
 
   /**
-   * <p>The request object for the <code>TagResource</code> operation.</p>
+   * The request object for the <code>TagResource</code> operation.
    */
   @js.native
   trait TagResourceRequest extends js.Object {
@@ -869,7 +869,7 @@ package fsx {
   }
 
   /**
-   * <p>The response object for the <code>TagResource</code> operation.</p>
+   * The response object for the <code>TagResource</code> operation.
    */
   @js.native
   trait TagResourceResponse extends js.Object {
@@ -885,7 +885,7 @@ package fsx {
   }
 
   /**
-   * <p>The request object for <code>UntagResource</code> action.</p>
+   * The request object for <code>UntagResource</code> action.
    */
   @js.native
   trait UntagResourceRequest extends js.Object {
@@ -906,7 +906,7 @@ package fsx {
   }
 
   /**
-   * <p>The response object for <code>UntagResource</code> action.</p>
+   * The response object for <code>UntagResource</code> action.
    */
   @js.native
   trait UntagResourceResponse extends js.Object {
@@ -922,7 +922,7 @@ package fsx {
   }
 
   /**
-   * <p>The configuration object for Amazon FSx for Lustre file systems used in the <code>UpdateFileSystem</code> operation.</p>
+   * The configuration object for Amazon FSx for Lustre file systems used in the <code>UpdateFileSystem</code> operation.
    */
   @js.native
   trait UpdateFileSystemLustreConfiguration extends js.Object {
@@ -940,7 +940,7 @@ package fsx {
   }
 
   /**
-   * <p>The request object for the <code>UpdateFileSystem</code> operation.</p>
+   * The request object for the <code>UpdateFileSystem</code> operation.
    */
   @js.native
   trait UpdateFileSystemRequest extends js.Object {
@@ -967,7 +967,7 @@ package fsx {
   }
 
   /**
-   * <p>The response object for the <code>UpdateFileSystem</code> operation.</p>
+   * The response object for the <code>UpdateFileSystem</code> operation.
    */
   @js.native
   trait UpdateFileSystemResponse extends js.Object {
@@ -985,7 +985,7 @@ package fsx {
   }
 
   /**
-   * <p>The configuration object for the Microsoft Windows file system used in the <code>UpdateFileSystem</code> operation.</p>
+   * The configuration object for the Microsoft Windows file system used in the <code>UpdateFileSystem</code> operation.
    */
   @js.native
   trait UpdateFileSystemWindowsConfiguration extends js.Object {
@@ -1009,7 +1009,7 @@ package fsx {
   }
 
   /**
-   * <p>The configuration for this Microsoft Windows file system.</p>
+   * The configuration for this Microsoft Windows file system.
    */
   @js.native
   trait WindowsFileSystemConfiguration extends js.Object {

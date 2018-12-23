@@ -176,7 +176,7 @@ package sms {
   }
 
   /**
-   * <p>Information about the application.</p>
+   * Information about the application.
    */
   @js.native
   trait AppSummary extends js.Object {
@@ -239,7 +239,7 @@ package sms {
   }
 
   /**
-   * <p>Represents a connector.</p>
+   * Represents a connector.
    */
   @js.native
   trait Connector extends js.Object {
@@ -964,7 +964,7 @@ package sms {
   }
 
   /**
-   * <p>Details about the latest launch of an application.</p>
+   * Details about the latest launch of an application.
    */
   @js.native
   trait LaunchDetails extends js.Object {
@@ -1106,7 +1106,7 @@ package sms {
   }
 
   /**
-   * <p>Represents a replication job.</p>
+   * Represents a replication job.
    */
   @js.native
   trait ReplicationJob extends js.Object {
@@ -1188,7 +1188,7 @@ package sms {
   }
 
   /**
-   * <p>Represents a replication run.</p>
+   * Represents a replication run.
    */
   @js.native
   trait ReplicationRun extends js.Object {
@@ -1236,7 +1236,7 @@ package sms {
   }
 
   /**
-   * <p>Details of the current stage of a replication run.</p>
+   * Details of the current stage of a replication run.
    */
   @js.native
   trait ReplicationRunStageDetails extends js.Object {
@@ -1276,7 +1276,7 @@ package sms {
   }
 
   /**
-   * <p>Location of the Amazon S3 object in the customer's account.</p>
+   * Location of the Amazon S3 object in the customer's account.
    */
   @js.native
   trait S3Location extends js.Object {
@@ -1297,7 +1297,7 @@ package sms {
   }
 
   /**
-   * <p>Represents a server.</p>
+   * Represents a server.
    */
   @js.native
   trait Server extends js.Object {
@@ -1337,7 +1337,7 @@ package sms {
   }
 
   /**
-   * <p>A logical grouping of servers.</p>
+   * A logical grouping of servers.
    */
   @js.native
   trait ServerGroup extends js.Object {
@@ -1361,7 +1361,7 @@ package sms {
   }
 
   /**
-   * <p>Launch configuration for a server group.</p>
+   * Launch configuration for a server group.
    */
   @js.native
   trait ServerGroupLaunchConfiguration extends js.Object {
@@ -1385,7 +1385,7 @@ package sms {
   }
 
   /**
-   * <p>Replication configuration for a server group.</p>
+   * Replication configuration for a server group.
    */
   @js.native
   trait ServerGroupReplicationConfiguration extends js.Object {
@@ -1406,7 +1406,7 @@ package sms {
   }
 
   /**
-   * <p>Launch configuration for a server.</p>
+   * Launch configuration for a server.
    */
   @js.native
   trait ServerLaunchConfiguration extends js.Object {
@@ -1448,7 +1448,7 @@ package sms {
   }
 
   /**
-   * <p>Replication configuration of a server.</p>
+   * Replication configuration of a server.
    */
   @js.native
   trait ServerReplicationConfiguration extends js.Object {
@@ -1469,7 +1469,7 @@ package sms {
   }
 
   /**
-   * <p>Replication parameters for replicating a server.</p>
+   * Replication parameters for replicating a server.
    */
   @js.native
   trait ServerReplicationParameters extends js.Object {
@@ -1600,7 +1600,7 @@ package sms {
   }
 
   /**
-   * <p>A label that can be assigned to an application.</p>
+   * A label that can be assigned to an application.
    */
   @js.native
   trait Tag extends js.Object {
@@ -1752,7 +1752,7 @@ package sms {
   }
 
   /**
-   * <p>A script that runs on first launch of an Amazon EC2 instance. Used for configuring the server during launch.</p>
+   * A script that runs on first launch of an Amazon EC2 instance. Used for configuring the server during launch.
    */
   @js.native
   trait UserData extends js.Object {
@@ -1778,7 +1778,7 @@ package sms {
   }
 
   /**
-   * <p>Represents a VM server.</p>
+   * Represents a VM server.
    */
   @js.native
   trait VmServer extends js.Object {
@@ -1808,7 +1808,7 @@ package sms {
   }
 
   /**
-   * <p>Represents a VM server location.</p>
+   * Represents a VM server location.
    */
   @js.native
   trait VmServerAddress extends js.Object {

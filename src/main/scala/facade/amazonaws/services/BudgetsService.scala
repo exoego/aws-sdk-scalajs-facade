@@ -54,7 +54,9 @@ package budgetsservice {
   }
 
   /**
-   * <p>Represents the output of the <code>CreateBudget</code> operation. The content consists of the detailed metadata and data file information, and the current status of the <code>budget</code> object.</p> <p>This is the ARN pattern for a budget: </p> <p> <code>arn:aws:budgetservice::AccountId:budget/budgetName</code> </p>
+   * Represents the output of the <code>CreateBudget</code> operation. The content consists of the detailed metadata and data file information, and the current status of the <code>budget</code> object.
+   *  This is the ARN pattern for a budget:
+   *  <code>arn:aws:budgetservice::AccountId:budget/budgetName</code>
    */
   @js.native
   trait Budget extends js.Object {
@@ -96,7 +98,7 @@ package budgetsservice {
   }
 
   /**
-   * <p>A history of the state of a budget at the end of the budget's specified time period.</p>
+   * A history of the state of a budget at the end of the budget's specified time period.
    */
   @js.native
   trait BudgetPerformanceHistory extends js.Object {
@@ -129,7 +131,8 @@ package budgetsservice {
   }
 
   /**
-   * <p> The type of a budget. It must be one of the following types: </p> <p> <code>COST</code>, <code>USAGE</code>, <code>RI_UTILIZATION</code>, or <code>RI_COVERAGE</code>.</p>
+   * The type of a budget. It must be one of the following types:
+   *  <code>COST</code>, <code>USAGE</code>, <code>RI_UTILIZATION</code>, or <code>RI_COVERAGE</code>.
    */
   object BudgetTypeEnum {
     val USAGE = "USAGE"
@@ -141,7 +144,7 @@ package budgetsservice {
   }
 
   /**
-   * <p>The amount of cost or usage that you created the budget for, compared to your actual costs or usage.</p>
+   * The amount of cost or usage that you created the budget for, compared to your actual costs or usage.
    */
   @js.native
   trait BudgetedAndActualAmounts extends js.Object {
@@ -165,7 +168,8 @@ package budgetsservice {
   }
 
   /**
-   * <p>The spend objects that are associated with this budget. The <code>actualSpend</code> tracks how much you've used, cost, usage, or RI units, and the <code>forecastedSpend</code> tracks how much you are predicted to spend if your current usage remains steady.</p> <p>For example, if it is the 20th of the month and you have spent <code>50</code> dollars on Amazon EC2, your <code>actualSpend</code> is <code>50 USD</code>, and your <code>forecastedSpend</code> is <code>75 USD</code>.</p>
+   * The spend objects that are associated with this budget. The <code>actualSpend</code> tracks how much you've used, cost, usage, or RI units, and the <code>forecastedSpend</code> tracks how much you are predicted to spend if your current usage remains steady.
+   *  For example, if it is the 20th of the month and you have spent <code>50</code> dollars on Amazon EC2, your <code>actualSpend</code> is <code>50 USD</code>, and your <code>forecastedSpend</code> is <code>75 USD</code>.
    */
   @js.native
   trait CalculatedSpend extends js.Object {
@@ -186,7 +190,8 @@ package budgetsservice {
   }
 
   /**
-   * <p> The comparison operator of a notification. Currently the service supports the following operators:</p> <p> <code>GREATER_THAN</code>, <code>LESS_THAN</code>, <code>EQUAL_TO</code> </p>
+   * The comparison operator of a notification. Currently the service supports the following operators:
+   *  <code>GREATER_THAN</code>, <code>LESS_THAN</code>, <code>EQUAL_TO</code>
    */
   object ComparisonOperatorEnum {
     val GREATER_THAN = "GREATER_THAN"
@@ -197,7 +202,8 @@ package budgetsservice {
   }
 
   /**
-   * <p>The types of cost that are included in a <code>COST</code> budget, such as tax and subscriptions.</p> <p> <code>USAGE</code>, <code>RI_UTILIZATION</code>, and <code>RI_COVERAGE</code> budgets do not have <code>CostTypes</code>.</p>
+   * The types of cost that are included in a <code>COST</code> budget, such as tax and subscriptions.
+   *  <code>USAGE</code>, <code>RI_UTILIZATION</code>, and <code>RI_COVERAGE</code> budgets do not have <code>CostTypes</code>.
    */
   @js.native
   trait CostTypes extends js.Object {
@@ -245,7 +251,7 @@ package budgetsservice {
   }
 
   /**
-   * <p> Request of CreateBudget </p>
+   * Request of CreateBudget
    */
   @js.native
   trait CreateBudgetRequest extends js.Object {
@@ -269,7 +275,7 @@ package budgetsservice {
   }
 
   /**
-   * <p> Response of CreateBudget </p>
+   * Response of CreateBudget
    */
   @js.native
   trait CreateBudgetResponse extends js.Object {
@@ -285,7 +291,7 @@ package budgetsservice {
   }
 
   /**
-   * <p> Request of CreateNotification </p>
+   * Request of CreateNotification
    */
   @js.native
   trait CreateNotificationRequest extends js.Object {
@@ -312,7 +318,7 @@ package budgetsservice {
   }
 
   /**
-   * <p> Response of CreateNotification </p>
+   * Response of CreateNotification
    */
   @js.native
   trait CreateNotificationResponse extends js.Object {
@@ -328,7 +334,7 @@ package budgetsservice {
   }
 
   /**
-   * <p> Request of CreateSubscriber </p>
+   * Request of CreateSubscriber
    */
   @js.native
   trait CreateSubscriberRequest extends js.Object {
@@ -355,7 +361,7 @@ package budgetsservice {
   }
 
   /**
-   * <p> Response of CreateSubscriber </p>
+   * Response of CreateSubscriber
    */
   @js.native
   trait CreateSubscriberResponse extends js.Object {
@@ -371,7 +377,7 @@ package budgetsservice {
   }
 
   /**
-   * <p> Request of DeleteBudget </p>
+   * Request of DeleteBudget
    */
   @js.native
   trait DeleteBudgetRequest extends js.Object {
@@ -392,7 +398,7 @@ package budgetsservice {
   }
 
   /**
-   * <p> Response of DeleteBudget </p>
+   * Response of DeleteBudget
    */
   @js.native
   trait DeleteBudgetResponse extends js.Object {
@@ -408,7 +414,7 @@ package budgetsservice {
   }
 
   /**
-   * <p> Request of DeleteNotification </p>
+   * Request of DeleteNotification
    */
   @js.native
   trait DeleteNotificationRequest extends js.Object {
@@ -432,7 +438,7 @@ package budgetsservice {
   }
 
   /**
-   * <p> Response of DeleteNotification </p>
+   * Response of DeleteNotification
    */
   @js.native
   trait DeleteNotificationResponse extends js.Object {
@@ -448,7 +454,7 @@ package budgetsservice {
   }
 
   /**
-   * <p> Request of DeleteSubscriber </p>
+   * Request of DeleteSubscriber
    */
   @js.native
   trait DeleteSubscriberRequest extends js.Object {
@@ -475,7 +481,7 @@ package budgetsservice {
   }
 
   /**
-   * <p> Response of DeleteSubscriber </p>
+   * Response of DeleteSubscriber
    */
   @js.native
   trait DeleteSubscriberResponse extends js.Object {
@@ -536,7 +542,7 @@ package budgetsservice {
   }
 
   /**
-   * <p> Request of DescribeBudget </p>
+   * Request of DescribeBudget
    */
   @js.native
   trait DescribeBudgetRequest extends js.Object {
@@ -557,7 +563,7 @@ package budgetsservice {
   }
 
   /**
-   * <p> Response of DescribeBudget </p>
+   * Response of DescribeBudget
    */
   @js.native
   trait DescribeBudgetResponse extends js.Object {
@@ -575,7 +581,7 @@ package budgetsservice {
   }
 
   /**
-   * <p> Request of DescribeBudgets </p>
+   * Request of DescribeBudgets
    */
   @js.native
   trait DescribeBudgetsRequest extends js.Object {
@@ -599,7 +605,7 @@ package budgetsservice {
   }
 
   /**
-   * <p> Response of DescribeBudgets </p>
+   * Response of DescribeBudgets
    */
   @js.native
   trait DescribeBudgetsResponse extends js.Object {
@@ -620,7 +626,7 @@ package budgetsservice {
   }
 
   /**
-   * <p> Request of DescribeNotificationsForBudget </p>
+   * Request of DescribeNotificationsForBudget
    */
   @js.native
   trait DescribeNotificationsForBudgetRequest extends js.Object {
@@ -647,7 +653,7 @@ package budgetsservice {
   }
 
   /**
-   * <p> Response of GetNotificationsForBudget </p>
+   * Response of GetNotificationsForBudget
    */
   @js.native
   trait DescribeNotificationsForBudgetResponse extends js.Object {
@@ -668,7 +674,7 @@ package budgetsservice {
   }
 
   /**
-   * <p> Request of DescribeSubscribersForNotification </p>
+   * Request of DescribeSubscribersForNotification
    */
   @js.native
   trait DescribeSubscribersForNotificationRequest extends js.Object {
@@ -698,7 +704,7 @@ package budgetsservice {
   }
 
   /**
-   * <p> Response of DescribeSubscribersForNotification </p>
+   * Response of DescribeSubscribersForNotification
    */
   @js.native
   trait DescribeSubscribersForNotificationResponse extends js.Object {
@@ -719,7 +725,13 @@ package budgetsservice {
   }
 
   /**
-   * <p>A notification that is associated with a budget. A budget can have up to five notifications. </p> <p>Each notification must have at least one subscriber. A notification can have one SNS subscriber and up to 10 email subscribers, for a total of 11 subscribers.</p> <p>For example, if you have a budget for 200 dollars and you want to be notified when you go over 160 dollars, create a notification with the following parameters:</p> <ul> <li> <p>A notificationType of <code>ACTUAL</code> </p> </li> <li> <p>A <code>thresholdType</code> of <code>PERCENTAGE</code> </p> </li> <li> <p>A <code>comparisonOperator</code> of <code>GREATER_THAN</code> </p> </li> <li> <p>A notification <code>threshold</code> of <code>80</code> </p> </li> </ul>
+   * A notification that is associated with a budget. A budget can have up to five notifications.
+   *  Each notification must have at least one subscriber. A notification can have one SNS subscriber and up to 10 email subscribers, for a total of 11 subscribers.
+   *  For example, if you have a budget for 200 dollars and you want to be notified when you go over 160 dollars, create a notification with the following parameters:
+   * * A notificationType of <code>ACTUAL</code>
+   *  * A <code>thresholdType</code> of <code>PERCENTAGE</code>
+   *  * A <code>comparisonOperator</code> of <code>GREATER_THAN</code>
+   *  * A notification <code>threshold</code> of <code>80</code>
    */
   @js.native
   trait Notification extends js.Object {
@@ -756,7 +768,7 @@ package budgetsservice {
   }
 
   /**
-   * <p> The type of a notification. It must be ACTUAL or FORECASTED.</p>
+   * The type of a notification. It must be ACTUAL or FORECASTED.
    */
   object NotificationTypeEnum {
     val ACTUAL = "ACTUAL"
@@ -766,7 +778,7 @@ package budgetsservice {
   }
 
   /**
-   * <p>A notification with subscribers. A notification can have one SNS subscriber and up to 10 email subscribers, for a total of 11 subscribers.</p>
+   * A notification with subscribers. A notification can have one SNS subscriber and up to 10 email subscribers, for a total of 11 subscribers.
    */
   @js.native
   trait NotificationWithSubscribers extends js.Object {
@@ -787,7 +799,10 @@ package budgetsservice {
   }
 
   /**
-   * <p>The amount of cost or usage that is measured for a budget.</p> <p>For example, a <code>Spend</code> for <code>3 GB</code> of S3 usage would have the following parameters:</p> <ul> <li> <p>An <code>Amount</code> of <code>3</code> </p> </li> <li> <p>A <code>unit</code> of <code>GB</code> </p> </li> </ul>
+   * The amount of cost or usage that is measured for a budget.
+   *  For example, a <code>Spend</code> for <code>3 GB</code> of S3 usage would have the following parameters:
+   * * An <code>Amount</code> of <code>3</code>
+   *  * A <code>unit</code> of <code>GB</code>
    */
   @js.native
   trait Spend extends js.Object {
@@ -808,7 +823,10 @@ package budgetsservice {
   }
 
   /**
-   * <p>The subscriber to a budget notification. The subscriber consists of a subscription type and either an Amazon SNS topic or an email address.</p> <p>For example, an email subscriber would have the following parameters:</p> <ul> <li> <p>A <code>subscriptionType</code> of <code>EMAIL</code> </p> </li> <li> <p>An <code>address</code> of <code>example@example.com</code> </p> </li> </ul>
+   * The subscriber to a budget notification. The subscriber consists of a subscription type and either an Amazon SNS topic or an email address.
+   *  For example, an email subscriber would have the following parameters:
+   * * A <code>subscriptionType</code> of <code>EMAIL</code>
+   *  * An <code>address</code> of <code>example@example.com</code>
    */
   @js.native
   trait Subscriber extends js.Object {
@@ -829,7 +847,7 @@ package budgetsservice {
   }
 
   /**
-   * <p> The subscription type of the subscriber. It can be SMS or EMAIL.</p>
+   * The subscription type of the subscriber. It can be SMS or EMAIL.
    */
   object SubscriptionTypeEnum {
     val SNS = "SNS"
@@ -839,7 +857,7 @@ package budgetsservice {
   }
 
   /**
-   * <p> The type of threshold for a notification. It can be PERCENTAGE or ABSOLUTE_VALUE.</p>
+   * The type of threshold for a notification. It can be PERCENTAGE or ABSOLUTE_VALUE.
    */
   object ThresholdTypeEnum {
     val PERCENTAGE = "PERCENTAGE"
@@ -849,7 +867,7 @@ package budgetsservice {
   }
 
   /**
-   * <p>The period of time that is covered by a budget. The period has a start date and an end date. The start date must come before the end date. There are no restrictions on the end date. </p>
+   * The period of time that is covered by a budget. The period has a start date and an end date. The start date must come before the end date. There are no restrictions on the end date.
    */
   @js.native
   trait TimePeriod extends js.Object {
@@ -870,7 +888,7 @@ package budgetsservice {
   }
 
   /**
-   * <p> The time unit of the budget, such as MONTHLY or QUARTERLY.</p>
+   * The time unit of the budget, such as MONTHLY or QUARTERLY.
    */
   object TimeUnitEnum {
     val DAILY = "DAILY"
@@ -882,7 +900,7 @@ package budgetsservice {
   }
 
   /**
-   * <p> Request of UpdateBudget </p>
+   * Request of UpdateBudget
    */
   @js.native
   trait UpdateBudgetRequest extends js.Object {
@@ -903,7 +921,7 @@ package budgetsservice {
   }
 
   /**
-   * <p> Response of UpdateBudget </p>
+   * Response of UpdateBudget
    */
   @js.native
   trait UpdateBudgetResponse extends js.Object {
@@ -919,7 +937,7 @@ package budgetsservice {
   }
 
   /**
-   * <p> Request of UpdateNotification </p>
+   * Request of UpdateNotification
    */
   @js.native
   trait UpdateNotificationRequest extends js.Object {
@@ -946,7 +964,7 @@ package budgetsservice {
   }
 
   /**
-   * <p> Response of UpdateNotification </p>
+   * Response of UpdateNotification
    */
   @js.native
   trait UpdateNotificationResponse extends js.Object {
@@ -962,7 +980,7 @@ package budgetsservice {
   }
 
   /**
-   * <p> Request of UpdateSubscriber </p>
+   * Request of UpdateSubscriber
    */
   @js.native
   trait UpdateSubscriberRequest extends js.Object {
@@ -992,7 +1010,7 @@ package budgetsservice {
   }
 
   /**
-   * <p> Response of UpdateSubscriber </p>
+   * Response of UpdateSubscriber
    */
   @js.native
   trait UpdateSubscriberResponse extends js.Object {

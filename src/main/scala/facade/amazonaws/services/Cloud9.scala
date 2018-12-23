@@ -45,7 +45,7 @@ package cloud9 {
   }
 
   /**
-   * <p>The target request is invalid.</p>
+   * The target request is invalid.
    */
   @js.native
   trait BadRequestExceptionException extends js.Object {
@@ -53,7 +53,7 @@ package cloud9 {
   }
 
   /**
-   * <p>A conflict occurred.</p>
+   * A conflict occurred.
    */
   @js.native
   trait ConflictExceptionException extends js.Object {
@@ -312,7 +312,7 @@ package cloud9 {
   }
 
   /**
-   * <p>Information about an AWS Cloud9 development environment.</p>
+   * Information about an AWS Cloud9 development environment.
    */
   @js.native
   trait Environment extends js.Object {
@@ -345,7 +345,7 @@ package cloud9 {
   }
 
   /**
-   * <p>Information about an environment member for an AWS Cloud9 development environment.</p>
+   * Information about an environment member for an AWS Cloud9 development environment.
    */
   @js.native
   trait EnvironmentMember extends js.Object {
@@ -394,7 +394,7 @@ package cloud9 {
   }
 
   /**
-   * <p>An access permissions issue occurred.</p>
+   * An access permissions issue occurred.
    */
   @js.native
   trait ForbiddenExceptionException extends js.Object {
@@ -402,7 +402,7 @@ package cloud9 {
   }
 
   /**
-   * <p>An internal server error occurred.</p>
+   * An internal server error occurred.
    */
   @js.native
   trait InternalServerErrorExceptionException extends js.Object {
@@ -410,7 +410,7 @@ package cloud9 {
   }
 
   /**
-   * <p>A service limit was exceeded.</p>
+   * A service limit was exceeded.
    */
   @js.native
   trait LimitExceededExceptionException extends js.Object {
@@ -461,7 +461,7 @@ package cloud9 {
   }
 
   /**
-   * <p>The target resource cannot be found.</p>
+   * The target resource cannot be found.
    */
   @js.native
   trait NotFoundExceptionException extends js.Object {
@@ -477,7 +477,7 @@ package cloud9 {
   }
 
   /**
-   * <p>Too many service requests were made over the given time period.</p>
+   * Too many service requests were made over the given time period.
    */
   @js.native
   trait TooManyRequestsExceptionException extends js.Object {
