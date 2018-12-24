@@ -71,7 +71,9 @@ package object opsworks {
 package opsworks {
   @js.native
   @JSImport("aws-sdk", "OpsWorks")
-  class OpsWorks(config: AWSConfig) extends js.Object {
+  class OpsWorks() extends js.Object {
+    def this(config: AWSConfig) = this()
+
     def assignInstance(params: AssignInstanceRequest): Request[js.Object] = js.native
     def assignVolume(params: AssignVolumeRequest): Request[js.Object] = js.native
     def associateElasticIp(params: AssociateElasticIpRequest): Request[js.Object] = js.native

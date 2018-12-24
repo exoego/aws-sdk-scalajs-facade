@@ -39,7 +39,9 @@ package object opsworkscm {
 package opsworkscm {
   @js.native
   @JSImport("aws-sdk", "OpsWorksCM")
-  class OpsWorksCM(config: AWSConfig) extends js.Object {
+  class OpsWorksCM() extends js.Object {
+    def this(config: AWSConfig) = this()
+
     def associateNode(params: AssociateNodeRequest): Request[AssociateNodeResponse] = js.native
     def createBackup(params: CreateBackupRequest): Request[CreateBackupResponse] = js.native
     def createServer(params: CreateServerRequest): Request[CreateServerResponse] = js.native

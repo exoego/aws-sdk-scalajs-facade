@@ -100,7 +100,9 @@ package object rds {
 package rds {
   @js.native
   @JSImport("aws-sdk", "RDS")
-  class RDS(config: AWSConfig) extends js.Object {
+  class RDS() extends js.Object {
+    def this(config: AWSConfig) = this()
+
     def addRoleToDBCluster(params: AddRoleToDBClusterMessage): Request[js.Object] = js.native
     def addSourceIdentifierToSubscription(params: AddSourceIdentifierToSubscriptionMessage): Request[AddSourceIdentifierToSubscriptionResult] = js.native
     def addTagsToResource(params: AddTagsToResourceMessage): Request[js.Object] = js.native
@@ -421,7 +423,7 @@ package rds {
   /**
    * Contains Availability Zone information.
    *  This data type is used as an element in the following data type:
-   * * '''OrderableDBInstanceOption'''
+   * * <a>OrderableDBInstanceOption</a>
    */
   @js.native
   trait AvailabilityZone extends js.Object {
@@ -545,7 +547,7 @@ package rds {
   }
 
   /**
-   * This data type is used as a response element in the action '''DescribeDBEngineVersions'''.
+   * This data type is used as a response element in the action <a>DescribeDBEngineVersions</a>.
    */
   @js.native
   trait CharacterSet extends js.Object {
@@ -1624,7 +1626,7 @@ package rds {
 
   /**
    * Contains the details of an Amazon Aurora DB cluster.
-   *  This data type is used as a response element in the '''DescribeDBClusters''', '''StopDBCluster''', and '''StartDBCluster''' actions.
+   *  This data type is used as a response element in the <a>DescribeDBClusters</a>, <a>StopDBCluster</a>, and <a>StartDBCluster</a> actions.
    */
   @js.native
   trait DBCluster extends js.Object {
@@ -1774,7 +1776,7 @@ package rds {
   }
 
   /**
-   * This data type is used as a response element in the '''DescribeDBClusterBacktracks''' action.
+   * This data type is used as a response element in the <a>DescribeDBClusterBacktracks</a> action.
    */
   @js.native
   trait DBClusterBacktrack extends js.Object {
@@ -1807,7 +1809,7 @@ package rds {
   }
 
   /**
-   * Contains the result of a successful invocation of the '''DescribeDBClusterBacktracks''' action.
+   * Contains the result of a successful invocation of the <a>DescribeDBClusterBacktracks</a> action.
    */
   @js.native
   trait DBClusterBacktrackMessage extends js.Object {
@@ -1856,11 +1858,11 @@ package rds {
 
   /**
    * This data type represents the information you need to connect to an Amazon Aurora DB cluster. This data type is used as a response element in the following actions:
-   * * '''CreateDBClusterEndpoint'''
-   *  * '''DescribeDBClusterEndpoints'''
-   *  * '''ModifyDBClusterEndpoint'''
-   *  * '''DeleteDBClusterEndpoint'''
-   * For the data structure that represents Amazon RDS DB instance endpoints, see '''Endpoint'''.
+   * * <a>CreateDBClusterEndpoint</a>
+   *  * <a>DescribeDBClusterEndpoints</a>
+   *  * <a>ModifyDBClusterEndpoint</a>
+   *  * <a>DeleteDBClusterEndpoint</a>
+   * For the data structure that represents Amazon RDS DB instance endpoints, see <a>Endpoint</a>.
    */
   @js.native
   trait DBClusterEndpoint extends js.Object {
@@ -1950,7 +1952,7 @@ package rds {
   }
 
   /**
-   * Contains the result of a successful invocation of the '''DescribeDBClusters''' action.
+   * Contains the result of a successful invocation of the <a>DescribeDBClusters</a> action.
    */
   @js.native
   trait DBClusterMessage extends js.Object {
@@ -1993,7 +1995,7 @@ package rds {
 
   /**
    * Contains the details of an Amazon RDS DB cluster parameter group.
-   *  This data type is used as a response element in the '''DescribeDBClusterParameterGroups''' action.
+   *  This data type is used as a response element in the <a>DescribeDBClusterParameterGroups</a> action.
    */
   @js.native
   trait DBClusterParameterGroup extends js.Object {
@@ -2105,7 +2107,7 @@ package rds {
 
   /**
    * Contains the details for an Amazon RDS DB cluster snapshot
-   *  This data type is used as a response element in the '''DescribeDBClusterSnapshots''' action.
+   *  This data type is used as a response element in the <a>DescribeDBClusterSnapshots</a> action.
    */
   @js.native
   trait DBClusterSnapshot extends js.Object {
@@ -2181,7 +2183,7 @@ package rds {
 
   /**
    * Contains the name and values of a manual DB cluster snapshot attribute.
-   *  Manual DB cluster snapshot attributes are used to authorize other AWS accounts to restore a manual DB cluster snapshot. For more information, see the '''ModifyDBClusterSnapshotAttribute''' API action.
+   *  Manual DB cluster snapshot attributes are used to authorize other AWS accounts to restore a manual DB cluster snapshot. For more information, see the <a>ModifyDBClusterSnapshotAttribute</a> API action.
    */
   @js.native
   trait DBClusterSnapshotAttribute extends js.Object {
@@ -2202,8 +2204,8 @@ package rds {
   }
 
   /**
-   * Contains the results of a successful call to the '''DescribeDBClusterSnapshotAttributes''' API action.
-   *  Manual DB cluster snapshot attributes are used to authorize other AWS accounts to copy or restore a manual DB cluster snapshot. For more information, see the '''ModifyDBClusterSnapshotAttribute''' API action.
+   * Contains the results of a successful call to the <a>DescribeDBClusterSnapshotAttributes</a> API action.
+   *  Manual DB cluster snapshot attributes are used to authorize other AWS accounts to copy or restore a manual DB cluster snapshot. For more information, see the <a>ModifyDBClusterSnapshotAttribute</a> API action.
    */
   @js.native
   trait DBClusterSnapshotAttributesResult extends js.Object {
@@ -2224,7 +2226,7 @@ package rds {
   }
 
   /**
-   * Provides a list of DB cluster snapshots for the user as the result of a call to the '''DescribeDBClusterSnapshots''' action.
+   * Provides a list of DB cluster snapshots for the user as the result of a call to the <a>DescribeDBClusterSnapshots</a> action.
    */
   @js.native
   trait DBClusterSnapshotMessage extends js.Object {
@@ -2245,7 +2247,7 @@ package rds {
   }
 
   /**
-   * This data type is used as a response element in the action '''DescribeDBEngineVersions'''.
+   * This data type is used as a response element in the action <a>DescribeDBEngineVersions</a>.
    */
   @js.native
   trait DBEngineVersion extends js.Object {
@@ -2299,7 +2301,7 @@ package rds {
   }
 
   /**
-   * Contains the result of a successful invocation of the '''DescribeDBEngineVersions''' action.
+   * Contains the result of a successful invocation of the <a>DescribeDBEngineVersions</a> action.
    */
   @js.native
   trait DBEngineVersionMessage extends js.Object {
@@ -2321,7 +2323,7 @@ package rds {
 
   /**
    * Contains the details of an Amazon RDS DB instance.
-   *  This data type is used as a response element in the '''DescribeDBInstances''' action.
+   *  This data type is used as a response element in the <a>DescribeDBInstances</a> action.
    */
   @js.native
   trait DBInstance extends js.Object {
@@ -2588,7 +2590,7 @@ package rds {
   }
 
   /**
-   * Contains the result of a successful invocation of the '''DescribeDBInstanceAutomatedBackups''' action.
+   * Contains the result of a successful invocation of the <a>DescribeDBInstanceAutomatedBackups</a> action.
    */
   @js.native
   trait DBInstanceAutomatedBackupMessage extends js.Object {
@@ -2609,7 +2611,7 @@ package rds {
   }
 
   /**
-   * Contains the result of a successful invocation of the '''DescribeDBInstances''' action.
+   * Contains the result of a successful invocation of the <a>DescribeDBInstances</a> action.
    */
   @js.native
   trait DBInstanceMessage extends js.Object {
@@ -2658,7 +2660,7 @@ package rds {
 
   /**
    * Contains the details of an Amazon RDS DB parameter group.
-   *  This data type is used as a response element in the '''DescribeDBParameterGroups''' action.
+   *  This data type is used as a response element in the <a>DescribeDBParameterGroups</a> action.
    */
   @js.native
   trait DBParameterGroup extends js.Object {
@@ -2685,7 +2687,7 @@ package rds {
   }
 
   /**
-   * Contains the result of a successful invocation of the '''DescribeDBParameters''' action.
+   * Contains the result of a successful invocation of the <a>DescribeDBParameters</a> action.
    */
   @js.native
   trait DBParameterGroupDetails extends js.Object {
@@ -2706,7 +2708,7 @@ package rds {
   }
 
   /**
-   * Contains the result of a successful invocation of the '''ModifyDBParameterGroup''' or '''ResetDBParameterGroup''' action.
+   * Contains the result of a successful invocation of the <a>ModifyDBParameterGroup</a> or <a>ResetDBParameterGroup</a> action.
    */
   @js.native
   trait DBParameterGroupNameMessage extends js.Object {
@@ -2726,12 +2728,12 @@ package rds {
   /**
    * The status of the DB parameter group.
    *  This data type is used as a response element in the following actions:
-   * * '''CreateDBInstance'''
-   *  * '''CreateDBInstanceReadReplica'''
-   *  * '''DeleteDBInstance'''
-   *  * '''ModifyDBInstance'''
-   *  * '''RebootDBInstance'''
-   *  * '''RestoreDBInstanceFromDBSnapshot'''
+   * * <a>CreateDBInstance</a>
+   *  * <a>CreateDBInstanceReadReplica</a>
+   *  * <a>DeleteDBInstance</a>
+   *  * <a>ModifyDBInstance</a>
+   *  * <a>RebootDBInstance</a>
+   *  * <a>RestoreDBInstanceFromDBSnapshot</a>
    */
   @js.native
   trait DBParameterGroupStatus extends js.Object {
@@ -2752,7 +2754,7 @@ package rds {
   }
 
   /**
-   * Contains the result of a successful invocation of the '''DescribeDBParameterGroups''' action.
+   * Contains the result of a successful invocation of the <a>DescribeDBParameterGroups</a> action.
    */
   @js.native
   trait DBParameterGroupsMessage extends js.Object {
@@ -2774,7 +2776,7 @@ package rds {
 
   /**
    * Contains the details for an Amazon RDS DB security group.
-   *  This data type is used as a response element in the '''DescribeDBSecurityGroups''' action.
+   *  This data type is used as a response element in the <a>DescribeDBSecurityGroups</a> action.
    */
   @js.native
   trait DBSecurityGroup extends js.Object {
@@ -2811,10 +2813,10 @@ package rds {
 
   /**
    * This data type is used as a response element in the following actions:
-   * * '''ModifyDBInstance'''
-   *  * '''RebootDBInstance'''
-   *  * '''RestoreDBInstanceFromDBSnapshot'''
-   *  * '''RestoreDBInstanceToPointInTime'''
+   * * <a>ModifyDBInstance</a>
+   *  * <a>RebootDBInstance</a>
+   *  * <a>RestoreDBInstanceFromDBSnapshot</a>
+   *  * <a>RestoreDBInstanceToPointInTime</a>
    */
   @js.native
   trait DBSecurityGroupMembership extends js.Object {
@@ -2835,7 +2837,7 @@ package rds {
   }
 
   /**
-   * Contains the result of a successful invocation of the '''DescribeDBSecurityGroups''' action.
+   * Contains the result of a successful invocation of the <a>DescribeDBSecurityGroups</a> action.
    */
   @js.native
   trait DBSecurityGroupMessage extends js.Object {
@@ -2857,7 +2859,7 @@ package rds {
 
   /**
    * Contains the details of an Amazon RDS DB snapshot.
-   *  This data type is used as a response element in the '''DescribeDBSnapshots''' action.
+   *  This data type is used as a response element in the <a>DescribeDBSnapshots</a> action.
    */
   @js.native
   trait DBSnapshot extends js.Object {
@@ -2957,7 +2959,7 @@ package rds {
 
   /**
    * Contains the name and values of a manual DB snapshot attribute
-   *  Manual DB snapshot attributes are used to authorize other AWS accounts to restore a manual DB snapshot. For more information, see the '''ModifyDBSnapshotAttribute''' API.
+   *  Manual DB snapshot attributes are used to authorize other AWS accounts to restore a manual DB snapshot. For more information, see the <a>ModifyDBSnapshotAttribute</a> API.
    */
   @js.native
   trait DBSnapshotAttribute extends js.Object {
@@ -2978,8 +2980,8 @@ package rds {
   }
 
   /**
-   * Contains the results of a successful call to the '''DescribeDBSnapshotAttributes''' API action.
-   *  Manual DB snapshot attributes are used to authorize other AWS accounts to copy or restore a manual DB snapshot. For more information, see the '''ModifyDBSnapshotAttribute''' API action.
+   * Contains the results of a successful call to the <a>DescribeDBSnapshotAttributes</a> API action.
+   *  Manual DB snapshot attributes are used to authorize other AWS accounts to copy or restore a manual DB snapshot. For more information, see the <a>ModifyDBSnapshotAttribute</a> API action.
    */
   @js.native
   trait DBSnapshotAttributesResult extends js.Object {
@@ -3000,7 +3002,7 @@ package rds {
   }
 
   /**
-   * Contains the result of a successful invocation of the '''DescribeDBSnapshots''' action.
+   * Contains the result of a successful invocation of the <a>DescribeDBSnapshots</a> action.
    */
   @js.native
   trait DBSnapshotMessage extends js.Object {
@@ -3022,7 +3024,7 @@ package rds {
 
   /**
    * Contains the details of an Amazon RDS DB subnet group.
-   *  This data type is used as a response element in the '''DescribeDBSubnetGroups''' action.
+   *  This data type is used as a response element in the <a>DescribeDBSubnetGroups</a> action.
    */
   @js.native
   trait DBSubnetGroup extends js.Object {
@@ -3055,7 +3057,7 @@ package rds {
   }
 
   /**
-   * Contains the result of a successful invocation of the '''DescribeDBSubnetGroups''' action.
+   * Contains the result of a successful invocation of the <a>DescribeDBSubnetGroups</a> action.
    */
   @js.native
   trait DBSubnetGroupMessage extends js.Object {
@@ -3776,7 +3778,7 @@ package rds {
   }
 
   /**
-   * This data type is used as a response element to '''DescribeDBLogFiles'''.
+   * This data type is used as a response element to <a>DescribeDBLogFiles</a>.
    */
   @js.native
   trait DescribeDBLogFilesDetails extends js.Object {
@@ -3836,7 +3838,7 @@ package rds {
   }
 
   /**
-   * The response from a call to '''DescribeDBLogFiles'''.
+   * The response from a call to <a>DescribeDBLogFiles</a>.
    */
   @js.native
   trait DescribeDBLogFilesResponse extends js.Object {
@@ -4562,7 +4564,7 @@ package rds {
   }
 
   /**
-   * This data type is used as a response element to '''DownloadDBLogFilePortion'''.
+   * This data type is used as a response element to <a>DownloadDBLogFilePortion</a>.
    */
   @js.native
   trait DownloadDBLogFilePortionDetails extends js.Object {
@@ -4614,9 +4616,9 @@ package rds {
 
   /**
    * This data type is used as a response element in the following actions:
-   * * '''AuthorizeDBSecurityGroupIngress'''
-   *  * '''DescribeDBSecurityGroups'''
-   *  * '''RevokeDBSecurityGroupIngress'''
+   * * <a>AuthorizeDBSecurityGroupIngress</a>
+   *  * <a>DescribeDBSecurityGroups</a>
+   *  * <a>RevokeDBSecurityGroupIngress</a>
    */
   @js.native
   trait EC2SecurityGroup extends js.Object {
@@ -4644,10 +4646,10 @@ package rds {
 
   /**
    * This data type represents the information you need to connect to an Amazon RDS DB instance. This data type is used as a response element in the following actions:
-   * * '''CreateDBInstance'''
-   *  * '''DescribeDBInstances'''
-   *  * '''DeleteDBInstance'''
-   * For the data structure that represents Amazon Aurora DB cluster endpoints, see '''DBClusterEndpoint'''.
+   * * <a>CreateDBInstance</a>
+   *  * <a>DescribeDBInstances</a>
+   *  * <a>DeleteDBInstance</a>
+   * For the data structure that represents Amazon Aurora DB cluster endpoints, see <a>DBClusterEndpoint</a>.
    */
   @js.native
   trait Endpoint extends js.Object {
@@ -4671,7 +4673,7 @@ package rds {
   }
 
   /**
-   * Contains the result of a successful invocation of the '''DescribeEngineDefaultParameters''' action.
+   * Contains the result of a successful invocation of the <a>DescribeEngineDefaultParameters</a> action.
    */
   @js.native
   trait EngineDefaults extends js.Object {
@@ -4695,7 +4697,7 @@ package rds {
   }
 
   /**
-   * This data type is used as a response element in the '''DescribeEvents''' action.
+   * This data type is used as a response element in the <a>DescribeEvents</a> action.
    */
   @js.native
   trait Event extends js.Object {
@@ -4728,7 +4730,7 @@ package rds {
   }
 
   /**
-   * Contains the results of a successful invocation of the '''DescribeEventCategories''' action.
+   * Contains the results of a successful invocation of the <a>DescribeEventCategories</a> action.
    */
   @js.native
   trait EventCategoriesMap extends js.Object {
@@ -4767,7 +4769,7 @@ package rds {
   }
 
   /**
-   * Contains the results of a successful invocation of the '''DescribeEventSubscriptions''' action.
+   * Contains the results of a successful invocation of the <a>DescribeEventSubscriptions</a> action.
    */
   @js.native
   trait EventSubscription extends js.Object {
@@ -4833,7 +4835,7 @@ package rds {
   }
 
   /**
-   * Contains the result of a successful invocation of the '''DescribeEvents''' action.
+   * Contains the result of a successful invocation of the <a>DescribeEvents</a> action.
    */
   @js.native
   trait EventsMessage extends js.Object {
@@ -4894,11 +4896,11 @@ package rds {
    *
    * '''Note:'''Currently, wildcards are not supported in filters.
    * The following actions can be filtered:
-   * * '''DescribeDBClusterBacktracks'''
-   *  * '''DescribeDBClusterEndpoints'''
-   *  * '''DescribeDBClusters'''
-   *  * '''DescribeDBInstances'''
-   *  * '''DescribePendingMaintenanceActions'''
+   * * <a>DescribeDBClusterBacktracks</a>
+   *  * <a>DescribeDBClusterEndpoints</a>
+   *  * <a>DescribeDBClusters</a>
+   *  * <a>DescribeDBInstances</a>
+   *  * <a>DescribePendingMaintenanceActions</a>
    */
   @js.native
   trait Filter extends js.Object {
@@ -5006,7 +5008,7 @@ package rds {
   }
 
   /**
-   * This data type is used as a response element in the '''DescribeDBSecurityGroups''' action.
+   * This data type is used as a response element in the <a>DescribeDBSecurityGroups</a> action.
    */
   @js.native
   trait IPRange extends js.Object {
@@ -5996,7 +5998,7 @@ package rds {
   }
 
   /**
-   * The version for an option. Option group option versions are returned by the '''DescribeOptionGroupOptions''' action.
+   * The version for an option. Option group option versions are returned by the <a>DescribeOptionGroupOptions</a> action.
    */
   @js.native
   trait OptionVersion extends js.Object {
@@ -6018,7 +6020,7 @@ package rds {
 
   /**
    * Contains a list of available options for a DB instance.
-   *  This data type is used as a response element in the '''DescribeOrderableDBInstanceOptions''' action.
+   *  This data type is used as a response element in the <a>DescribeOrderableDBInstanceOptions</a> action.
    */
   @js.native
   trait OrderableDBInstanceOption extends js.Object {
@@ -6099,7 +6101,7 @@ package rds {
   }
 
   /**
-   * Contains the result of a successful invocation of the '''DescribeOrderableDBInstanceOptions''' action.
+   * Contains the result of a successful invocation of the <a>DescribeOrderableDBInstanceOptions</a> action.
    */
   @js.native
   trait OrderableDBInstanceOptionsMessage extends js.Object {
@@ -6120,8 +6122,8 @@ package rds {
   }
 
   /**
-   * This data type is used as a request parameter in the '''ModifyDBParameterGroup''' and '''ResetDBParameterGroup''' actions.
-   *  This data type is used as a response element in the '''DescribeEngineDefaultParameters''' and '''DescribeDBParameters''' actions.
+   * This data type is used as a request parameter in the <a>ModifyDBParameterGroup</a> and <a>ResetDBParameterGroup</a> actions.
+   *  This data type is used as a response element in the <a>DescribeEngineDefaultParameters</a> and <a>DescribeDBParameters</a> actions.
    */
   @js.native
   trait Parameter extends js.Object {
@@ -6244,7 +6246,7 @@ package rds {
   }
 
   /**
-   * This data type is used as a response element in the '''ModifyDBInstance''' action.
+   * This data type is used as a response element in the <a>ModifyDBInstance</a> action.
    */
   @js.native
   trait PendingModifiedValues extends js.Object {
@@ -6307,16 +6309,16 @@ package rds {
    * Contains the processor features of a DB instance class.
    *  To specify the number of CPU cores, use the <code>coreCount</code> feature name for the <code>Name</code> parameter. To specify the number of threads per core, use the <code>threadsPerCore</code> feature name for the <code>Name</code> parameter.
    *  You can set the processor features of the DB instance class for a DB instance when you call one of the following actions:
-   * * '''CreateDBInstance'''
-   *  * '''ModifyDBInstance'''
-   *  * '''RestoreDBInstanceFromDBSnapshot'''
-   *  * '''RestoreDBInstanceFromS3'''
-   *  * '''RestoreDBInstanceToPointInTime'''
-   * You can view the valid processor values for a particular instance class by calling the '''DescribeOrderableDBInstanceOptions''' action and specifying the instance class for the <code>DBInstanceClass</code> parameter.
+   * * <a>CreateDBInstance</a>
+   *  * <a>ModifyDBInstance</a>
+   *  * <a>RestoreDBInstanceFromDBSnapshot</a>
+   *  * <a>RestoreDBInstanceFromS3</a>
+   *  * <a>RestoreDBInstanceToPointInTime</a>
+   * You can view the valid processor values for a particular instance class by calling the <a>DescribeOrderableDBInstanceOptions</a> action and specifying the instance class for the <code>DBInstanceClass</code> parameter.
    *  In addition, you can use the following actions for DB instance class processor information:
-   * * '''DescribeDBInstances'''
-   *  * '''DescribeDBSnapshots'''
-   *  * '''DescribeValidDBInstanceModifications'''
+   * * <a>DescribeDBInstances</a>
+   *  * <a>DescribeDBSnapshots</a>
+   *  * <a>DescribeValidDBInstanceModifications</a>
    * For more information, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html#USER_ConfigureProcessor">Configuring the Processor of the DB Instance Class</a> in the <i>Amazon RDS User Guide. </i>
    */
   @js.native
@@ -6512,7 +6514,7 @@ package rds {
   }
 
   /**
-   * This data type is used as a response element in the '''DescribeReservedDBInstances''' and '''DescribeReservedDBInstancesOfferings''' actions.
+   * This data type is used as a response element in the <a>DescribeReservedDBInstances</a> and <a>DescribeReservedDBInstancesOfferings</a> actions.
    */
   @js.native
   trait RecurringCharge extends js.Object {
@@ -6641,7 +6643,7 @@ package rds {
   }
 
   /**
-   * This data type is used as a response element in the '''DescribeReservedDBInstances''' and '''PurchaseReservedDBInstancesOffering''' actions.
+   * This data type is used as a response element in the <a>DescribeReservedDBInstances</a> and <a>PurchaseReservedDBInstancesOffering</a> actions.
    */
   @js.native
   trait ReservedDBInstance extends js.Object {
@@ -6701,7 +6703,7 @@ package rds {
   }
 
   /**
-   * Contains the result of a successful invocation of the '''DescribeReservedDBInstances''' action.
+   * Contains the result of a successful invocation of the <a>DescribeReservedDBInstances</a> action.
    */
   @js.native
   trait ReservedDBInstanceMessage extends js.Object {
@@ -6722,7 +6724,7 @@ package rds {
   }
 
   /**
-   * This data type is used as a response element in the '''DescribeReservedDBInstancesOfferings''' action.
+   * This data type is used as a response element in the <a>DescribeReservedDBInstancesOfferings</a> action.
    */
   @js.native
   trait ReservedDBInstancesOffering extends js.Object {
@@ -6767,7 +6769,7 @@ package rds {
   }
 
   /**
-   * Contains the result of a successful invocation of the '''DescribeReservedDBInstancesOfferings''' action.
+   * Contains the result of a successful invocation of the <a>DescribeReservedDBInstancesOfferings</a> action.
    */
   @js.native
   trait ReservedDBInstancesOfferingMessage extends js.Object {
@@ -7648,7 +7650,7 @@ package rds {
   }
 
   /**
-   * Contains an AWS Region name as the result of a successful call to the '''DescribeSourceRegions''' action.
+   * Contains an AWS Region name as the result of a successful call to the <a>DescribeSourceRegions</a> action.
    */
   @js.native
   trait SourceRegion extends js.Object {
@@ -7672,7 +7674,7 @@ package rds {
   }
 
   /**
-   * Contains the result of a successful invocation of the '''DescribeSourceRegions''' action.
+   * Contains the result of a successful invocation of the <a>DescribeSourceRegions</a> action.
    */
   @js.native
   trait SourceRegionMessage extends js.Object {
@@ -7827,7 +7829,7 @@ package rds {
   }
 
   /**
-   * This data type is used as a response element in the '''DescribeDBSubnetGroups''' action.
+   * This data type is used as a response element in the <a>DescribeDBSubnetGroups</a> action.
    */
   @js.native
   trait Subnet extends js.Object {
@@ -7890,7 +7892,7 @@ package rds {
   }
 
   /**
-   * A time zone associated with a '''DBInstance''' or a '''DBSnapshot'''. This data type is an element in the response to the '''DescribeDBInstances''', the '''DescribeDBSnapshots''', and the '''DescribeDBEngineVersions''' actions.
+   * A time zone associated with a <a>DBInstance</a> or a <a>DBSnapshot</a>. This data type is an element in the response to the <a>DescribeDBInstances</a>, the <a>DescribeDBSnapshots</a>, and the <a>DescribeDBEngineVersions</a> actions.
    */
   @js.native
   trait Timezone extends js.Object {
@@ -7938,7 +7940,7 @@ package rds {
   }
 
   /**
-   * Information about valid modifications that you can make to your DB instance. Contains the result of a successful call to the '''DescribeValidDBInstanceModifications''' action. You can use this information when you call '''ModifyDBInstance'''.
+   * Information about valid modifications that you can make to your DB instance. Contains the result of a successful call to the <a>DescribeValidDBInstanceModifications</a> action. You can use this information when you call <a>ModifyDBInstance</a>.
    */
   @js.native
   trait ValidDBInstanceModificationsMessage extends js.Object {
@@ -7959,7 +7961,7 @@ package rds {
   }
 
   /**
-   * Information about valid modifications that you can make to your DB instance. Contains the result of a successful call to the '''DescribeValidDBInstanceModifications''' action.
+   * Information about valid modifications that you can make to your DB instance. Contains the result of a successful call to the <a>DescribeValidDBInstanceModifications</a> action.
    */
   @js.native
   trait ValidStorageOptions extends js.Object {

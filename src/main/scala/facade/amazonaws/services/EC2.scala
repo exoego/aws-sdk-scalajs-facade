@@ -460,7 +460,9 @@ package object ec2 {
 package ec2 {
   @js.native
   @JSImport("aws-sdk", "EC2")
-  class EC2(config: AWSConfig) extends js.Object {
+  class EC2() extends js.Object {
+    def this(config: AWSConfig) = this()
+
     def acceptReservedInstancesExchangeQuote(params: AcceptReservedInstancesExchangeQuoteRequest): Request[AcceptReservedInstancesExchangeQuoteResult] = js.native
     def acceptTransitGatewayVpcAttachment(params: AcceptTransitGatewayVpcAttachmentRequest): Request[AcceptTransitGatewayVpcAttachmentResult] = js.native
     def acceptVpcEndpointConnections(params: AcceptVpcEndpointConnectionsRequest): Request[AcceptVpcEndpointConnectionsResult] = js.native
@@ -2072,7 +2074,7 @@ package ec2 {
   }
 
   /**
-   * Describes an error for '''BundleInstance'''.
+   * Describes an error for <a>BundleInstance</a>.
    */
   @js.native
   trait BundleTaskError extends js.Object {
@@ -11606,16 +11608,16 @@ package ec2 {
 
   /**
    * A filter name and value pair that is used to return a more specific list of results from a describe operation. Filters can be used to match a set of resources by specific criteria, such as tags, attributes, or IDs. The filters supported by a describe operation are documented with the describe operation. For example:
-   * * '''DescribeAvailabilityZones'''
-   *  * '''DescribeImages'''
-   *  * '''DescribeInstances'''
-   *  * '''DescribeKeyPairs'''
-   *  * '''DescribeSecurityGroups'''
-   *  * '''DescribeSnapshots'''
-   *  * '''DescribeSubnets'''
-   *  * '''DescribeTags'''
-   *  * '''DescribeVolumes'''
-   *  * '''DescribeVpcs'''
+   * * <a>DescribeAvailabilityZones</a>
+   *  * <a>DescribeImages</a>
+   *  * <a>DescribeInstances</a>
+   *  * <a>DescribeKeyPairs</a>
+   *  * <a>DescribeSecurityGroups</a>
+   *  * <a>DescribeSnapshots</a>
+   *  * <a>DescribeSubnets</a>
+   *  * <a>DescribeTags</a>
+   *  * <a>DescribeVolumes</a>
+   *  * <a>DescribeVpcs</a>
    */
   @js.native
   trait Filter extends js.Object {

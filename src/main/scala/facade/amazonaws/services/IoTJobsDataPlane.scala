@@ -31,7 +31,9 @@ package object iotjobsdataplane {
 package iotjobsdataplane {
   @js.native
   @JSImport("aws-sdk", "IoTJobsDataPlane")
-  class IoTJobsDataPlane(config: AWSConfig) extends js.Object {
+  class IoTJobsDataPlane() extends js.Object {
+    def this(config: AWSConfig) = this()
+
     def describeJobExecution(params: DescribeJobExecutionRequest): Request[DescribeJobExecutionResponse] = js.native
     def getPendingJobExecutions(params: GetPendingJobExecutionsRequest): Request[GetPendingJobExecutionsResponse] = js.native
     def startNextPendingJobExecution(params: StartNextPendingJobExecutionRequest): Request[StartNextPendingJobExecutionResponse] = js.native

@@ -126,7 +126,9 @@ package object autoscaling {
 package autoscaling {
   @js.native
   @JSImport("aws-sdk", "AutoScaling")
-  class AutoScaling(config: AWSConfig) extends js.Object {
+  class AutoScaling() extends js.Object {
+    def this(config: AWSConfig) = this()
+
     def attachInstances(params: AttachInstancesQuery): Request[js.Object] = js.native
     def attachLoadBalancerTargetGroups(params: AttachLoadBalancerTargetGroupsType): Request[AttachLoadBalancerTargetGroupsResultType] = js.native
     def attachLoadBalancers(params: AttachLoadBalancersType): Request[AttachLoadBalancersResultType] = js.native
@@ -1766,7 +1768,7 @@ package autoscaling {
   }
 
   /**
-   * Describes an instances distribution for an Auto Scaling group with '''MixedInstancesPolicy'''.
+   * Describes an instances distribution for an Auto Scaling group with <a>MixedInstancesPolicy</a>.
    *  The instances distribution specifies the distribution of On-Demand Instances and Spot Instances, the maximum price to pay for Spot Instances, and how the Auto Scaling group allocates instance types.
    */
   @js.native
@@ -2654,7 +2656,7 @@ package autoscaling {
   }
 
   /**
-   * Describes a scheduled scaling action. Used in response to '''DescribeScheduledActions'''.
+   * Describes a scheduled scaling action. Used in response to <a>DescribeScheduledActions</a>.
    */
   @js.native
   trait ScheduledUpdateGroupAction extends js.Object {
@@ -2699,7 +2701,7 @@ package autoscaling {
   }
 
   /**
-   * Describes one or more scheduled scaling action updates for a specified Auto Scaling group. Used in combination with '''BatchPutScheduledUpdateGroupAction'''.
+   * Describes one or more scheduled scaling action updates for a specified Auto Scaling group. Used in combination with <a>BatchPutScheduledUpdateGroupAction</a>.
    *  When updating a scheduled scaling action, all optional parameters are left unchanged if not specified.
    */
   @js.native
@@ -2844,7 +2846,7 @@ package autoscaling {
   }
 
   /**
-   * Describes an automatic scaling process that has been suspended. For more information, see '''ProcessType'''.
+   * Describes an automatic scaling process that has been suspended. For more information, see <a>ProcessType</a>.
    */
   @js.native
   trait SuspendedProcess extends js.Object {

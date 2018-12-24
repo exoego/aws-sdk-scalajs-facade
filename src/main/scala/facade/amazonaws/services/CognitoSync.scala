@@ -40,7 +40,9 @@ package object cognitosync {
 package cognitosync {
   @js.native
   @JSImport("aws-sdk", "CognitoSync")
-  class CognitoSync(config: AWSConfig) extends js.Object {
+  class CognitoSync() extends js.Object {
+    def this(config: AWSConfig) = this()
+
     def bulkPublish(params: BulkPublishRequest): Request[BulkPublishResponse] = js.native
     def deleteDataset(params: DeleteDatasetRequest): Request[DeleteDatasetResponse] = js.native
     def describeDataset(params: DescribeDatasetRequest): Request[DescribeDatasetResponse] = js.native

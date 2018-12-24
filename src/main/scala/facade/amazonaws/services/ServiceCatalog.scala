@@ -207,7 +207,9 @@ package object servicecatalog {
 package servicecatalog {
   @js.native
   @JSImport("aws-sdk", "ServiceCatalog")
-  class ServiceCatalog(config: AWSConfig) extends js.Object {
+  class ServiceCatalog() extends js.Object {
+    def this(config: AWSConfig) = this()
+
     def acceptPortfolioShare(params: AcceptPortfolioShareInput): Request[AcceptPortfolioShareOutput] = js.native
     def associatePrincipalWithPortfolio(params: AssociatePrincipalWithPortfolioInput): Request[AssociatePrincipalWithPortfolioOutput] = js.native
     def associateProductWithPortfolio(params: AssociateProductWithPortfolioInput): Request[AssociateProductWithPortfolioOutput] = js.native

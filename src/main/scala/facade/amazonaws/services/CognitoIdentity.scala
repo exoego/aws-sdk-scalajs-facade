@@ -56,7 +56,9 @@ package object cognitoidentity {
 package cognitoidentity {
   @js.native
   @JSImport("aws-sdk", "CognitoIdentity")
-  class CognitoIdentity(config: AWSConfig) extends js.Object {
+  class CognitoIdentity() extends js.Object {
+    def this(config: AWSConfig) = this()
+
     def createIdentityPool(params: CreateIdentityPoolInput): Request[IdentityPool] = js.native
     def deleteIdentities(params: DeleteIdentitiesInput): Request[DeleteIdentitiesResponse] = js.native
     def deleteIdentityPool(params: DeleteIdentityPoolInput): Request[js.Object] = js.native

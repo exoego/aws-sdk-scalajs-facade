@@ -87,7 +87,9 @@ package object elb {
 package elb {
   @js.native
   @JSImport("aws-sdk", "ELB")
-  class ELB(config: AWSConfig) extends js.Object {
+  class ELB() extends js.Object {
+    def this(config: AWSConfig) = this()
+
     def addTags(params: AddTagsInput): Request[AddTagsOutput] = js.native
     def applySecurityGroupsToLoadBalancer(params: ApplySecurityGroupsToLoadBalancerInput): Request[ApplySecurityGroupsToLoadBalancerOutput] = js.native
     def attachLoadBalancerToSubnets(params: AttachLoadBalancerToSubnetsInput): Request[AttachLoadBalancerToSubnetsOutput] = js.native

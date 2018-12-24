@@ -132,7 +132,9 @@ package object alexaforbusiness {
 package alexaforbusiness {
   @js.native
   @JSImport("aws-sdk", "AlexaForBusiness")
-  class AlexaForBusiness(config: AWSConfig) extends js.Object {
+  class AlexaForBusiness() extends js.Object {
+    def this(config: AWSConfig) = this()
+
     def approveSkill(params: ApproveSkillRequest): Request[ApproveSkillResponse] = js.native
     def associateContactWithAddressBook(params: AssociateContactWithAddressBookRequest): Request[AssociateContactWithAddressBookResponse] = js.native
     def associateDeviceWithRoom(params: AssociateDeviceWithRoomRequest): Request[AssociateDeviceWithRoomResponse] = js.native

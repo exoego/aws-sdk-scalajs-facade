@@ -14,7 +14,9 @@ package object s3control {
 package s3control {
   @js.native
   @JSImport("aws-sdk", "S3Control")
-  class S3Control(config: AWSConfig) extends js.Object {
+  class S3Control() extends js.Object {
+    def this(config: AWSConfig) = this()
+
     def deletePublicAccessBlock(params: DeletePublicAccessBlockRequest): Request[js.Object] = js.native
     def getPublicAccessBlock(params: GetPublicAccessBlockRequest): Request[GetPublicAccessBlockOutput] = js.native
     def putPublicAccessBlock(params: PutPublicAccessBlockRequest): Request[js.Object] = js.native

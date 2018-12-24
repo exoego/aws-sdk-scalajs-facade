@@ -372,7 +372,9 @@ package object mediaconvert {
 package mediaconvert {
   @js.native
   @JSImport("aws-sdk", "MediaConvert")
-  class MediaConvert(config: AWSConfig) extends js.Object {
+  class MediaConvert() extends js.Object {
+    def this(config: AWSConfig) = this()
+
     def associateCertificate(params: AssociateCertificateRequest): Request[AssociateCertificateResponse] = js.native
     def cancelJob(params: CancelJobRequest): Request[CancelJobResponse] = js.native
     def createJob(params: CreateJobRequest): Request[CreateJobResponse] = js.native

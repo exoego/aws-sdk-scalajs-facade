@@ -96,7 +96,9 @@ package object wafregional {
 package wafregional {
   @js.native
   @JSImport("aws-sdk", "WAFRegional")
-  class WAFRegional(config: AWSConfig) extends js.Object {
+  class WAFRegional() extends js.Object {
+    def this(config: AWSConfig) = this()
+
     def associateWebACL(params: AssociateWebACLRequest): Request[AssociateWebACLResponse] = js.native
     def createByteMatchSet(params: CreateByteMatchSetRequest): Request[CreateByteMatchSetResponse] = js.native
     def createGeoMatchSet(params: CreateGeoMatchSetRequest): Request[CreateGeoMatchSetResponse] = js.native
@@ -177,8 +179,8 @@ package wafregional {
   }
 
   /**
-   * The <code>ActivatedRule</code> object in an '''UpdateWebACL''' request specifies a <code>Rule</code> that you want to insert or delete, the priority of the <code>Rule</code> in the <code>WebACL</code>, and the action that you want AWS WAF to take when a web request matches the <code>Rule</code> (<code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>).
-   *  To specify whether to insert or delete a <code>Rule</code>, use the <code>Action</code> parameter in the '''WebACLUpdate''' data type.
+   * The <code>ActivatedRule</code> object in an <a>UpdateWebACL</a> request specifies a <code>Rule</code> that you want to insert or delete, the priority of the <code>Rule</code> in the <code>WebACL</code>, and the action that you want AWS WAF to take when a web request matches the <code>Rule</code> (<code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>).
+   *  To specify whether to insert or delete a <code>Rule</code>, use the <code>Action</code> parameter in the <a>WebACLUpdate</a> data type.
    */
   @js.native
   trait ActivatedRule extends js.Object {
@@ -239,7 +241,7 @@ package wafregional {
   }
 
   /**
-   * In a '''GetByteMatchSet''' request, <code>ByteMatchSet</code> is a complex type that contains the <code>ByteMatchSetId</code> and <code>Name</code> of a <code>ByteMatchSet</code>, and the values that you specified when you updated the <code>ByteMatchSet</code>.
+   * In a <a>GetByteMatchSet</a> request, <code>ByteMatchSet</code> is a complex type that contains the <code>ByteMatchSetId</code> and <code>Name</code> of a <code>ByteMatchSet</code>, and the values that you specified when you updated the <code>ByteMatchSet</code>.
    *  A complex type that contains <code>ByteMatchTuple</code> objects, which specify the parts of web requests that you want AWS WAF to inspect and the values that you want AWS WAF to search for. If a <code>ByteMatchSet</code> contains more than one <code>ByteMatchTuple</code> object, a request needs to match the settings in only one <code>ByteMatchTuple</code> to be considered a match.
    */
   @js.native
@@ -264,7 +266,7 @@ package wafregional {
   }
 
   /**
-   * Returned by '''ListByteMatchSets'''. Each <code>ByteMatchSetSummary</code> object includes the <code>Name</code> and <code>ByteMatchSetId</code> for one '''ByteMatchSet'''.
+   * Returned by <a>ListByteMatchSets</a>. Each <code>ByteMatchSetSummary</code> object includes the <code>Name</code> and <code>ByteMatchSetId</code> for one <a>ByteMatchSet</a>.
    */
   @js.native
   trait ByteMatchSetSummary extends js.Object {
@@ -285,7 +287,7 @@ package wafregional {
   }
 
   /**
-   * In an '''UpdateByteMatchSet''' request, <code>ByteMatchSetUpdate</code> specifies whether to insert or delete a '''ByteMatchTuple''' and includes the settings for the <code>ByteMatchTuple</code>.
+   * In an <a>UpdateByteMatchSet</a> request, <code>ByteMatchSetUpdate</code> specifies whether to insert or delete a <a>ByteMatchTuple</a> and includes the settings for the <code>ByteMatchTuple</code>.
    */
   @js.native
   trait ByteMatchSetUpdate extends js.Object {
@@ -698,7 +700,7 @@ package wafregional {
   }
 
   /**
-   * A request to create a '''SqlInjectionMatchSet'''.
+   * A request to create a <a>SqlInjectionMatchSet</a>.
    */
   @js.native
   trait CreateSqlInjectionMatchSetRequest extends js.Object {
@@ -782,7 +784,7 @@ package wafregional {
   }
 
   /**
-   * A request to create an '''XssMatchSet'''.
+   * A request to create an <a>XssMatchSet</a>.
    */
   @js.native
   trait CreateXssMatchSetRequest extends js.Object {
@@ -1177,7 +1179,7 @@ package wafregional {
   }
 
   /**
-   * A request to delete a '''SqlInjectionMatchSet''' from AWS WAF.
+   * A request to delete a <a>SqlInjectionMatchSet</a> from AWS WAF.
    */
   @js.native
   trait DeleteSqlInjectionMatchSetRequest extends js.Object {
@@ -1198,7 +1200,7 @@ package wafregional {
   }
 
   /**
-   * The response to a request to delete a '''SqlInjectionMatchSet''' from AWS WAF.
+   * The response to a request to delete a <a>SqlInjectionMatchSet</a> from AWS WAF.
    */
   @js.native
   trait DeleteSqlInjectionMatchSetResponse extends js.Object {
@@ -1249,7 +1251,7 @@ package wafregional {
   }
 
   /**
-   * A request to delete an '''XssMatchSet''' from AWS WAF.
+   * A request to delete an <a>XssMatchSet</a> from AWS WAF.
    */
   @js.native
   trait DeleteXssMatchSetRequest extends js.Object {
@@ -1270,7 +1272,7 @@ package wafregional {
   }
 
   /**
-   * The response to a request to delete an '''XssMatchSet''' from AWS WAF.
+   * The response to a request to delete an <a>XssMatchSet</a> from AWS WAF.
    */
   @js.native
   trait DeleteXssMatchSetResponse extends js.Object {
@@ -1663,7 +1665,7 @@ package wafregional {
   }
 
   /**
-   * Specifies the type of update to perform to an '''GeoMatchSet''' with '''UpdateGeoMatchSet'''.
+   * Specifies the type of update to perform to an <a>GeoMatchSet</a> with <a>UpdateGeoMatchSet</a>.
    */
   @js.native
   trait GeoMatchSetUpdate extends js.Object {
@@ -2153,7 +2155,7 @@ package wafregional {
   }
 
   /**
-   * A request to get a '''SqlInjectionMatchSet'''.
+   * A request to get a <a>SqlInjectionMatchSet</a>.
    */
   @js.native
   trait GetSqlInjectionMatchSetRequest extends js.Object {
@@ -2171,7 +2173,7 @@ package wafregional {
   }
 
   /**
-   * The response to a '''GetSqlInjectionMatchSet''' request.
+   * The response to a <a>GetSqlInjectionMatchSet</a> request.
    */
   @js.native
   trait GetSqlInjectionMatchSetResponse extends js.Object {
@@ -2249,7 +2251,7 @@ package wafregional {
   }
 
   /**
-   * A request to get an '''XssMatchSet'''.
+   * A request to get an <a>XssMatchSet</a>.
    */
   @js.native
   trait GetXssMatchSetRequest extends js.Object {
@@ -2267,7 +2269,7 @@ package wafregional {
   }
 
   /**
-   * The response to a '''GetXssMatchSet''' request.
+   * The response to a <a>GetXssMatchSet</a> request.
    */
   @js.native
   trait GetXssMatchSetResponse extends js.Object {
@@ -2285,7 +2287,7 @@ package wafregional {
   }
 
   /**
-   * The response from a '''GetSampledRequests''' request includes an <code>HTTPHeader</code> complex type that appears as <code>Headers</code> in the response syntax. <code>HTTPHeader</code> contains the names and values of all of the headers that appear in one of the web requests that were returned by <code>GetSampledRequests</code>.
+   * The response from a <a>GetSampledRequests</a> request includes an <code>HTTPHeader</code> complex type that appears as <code>Headers</code> in the response syntax. <code>HTTPHeader</code> contains the names and values of all of the headers that appear in one of the web requests that were returned by <code>GetSampledRequests</code>.
    */
   @js.native
   trait HTTPHeader extends js.Object {
@@ -2306,7 +2308,7 @@ package wafregional {
   }
 
   /**
-   * The response from a '''GetSampledRequests''' request includes an <code>HTTPRequest</code> complex type that appears as <code>Request</code> in the response syntax. <code>HTTPRequest</code> contains information about one of the web requests that were returned by <code>GetSampledRequests</code>.
+   * The response from a <a>GetSampledRequests</a> request includes an <code>HTTPRequest</code> complex type that appears as <code>Request</code> in the response syntax. <code>HTTPRequest</code> contains information about one of the web requests that were returned by <code>GetSampledRequests</code>.
    */
   @js.native
   trait HTTPRequest extends js.Object {
@@ -2413,7 +2415,7 @@ package wafregional {
   }
 
   /**
-   * Specifies the type of update to perform to an '''IPSet''' with '''UpdateIPSet'''.
+   * Specifies the type of update to perform to an <a>IPSet</a> with <a>UpdateIPSet</a>.
    */
   @js.native
   trait IPSetUpdate extends js.Object {
@@ -2866,7 +2868,7 @@ package wafregional {
   }
 
   /**
-   * A request to list the '''SqlInjectionMatchSet''' objects created by the current AWS account.
+   * A request to list the <a>SqlInjectionMatchSet</a> objects created by the current AWS account.
    */
   @js.native
   trait ListSqlInjectionMatchSetsRequest extends js.Object {
@@ -2887,7 +2889,7 @@ package wafregional {
   }
 
   /**
-   * The response to a '''ListSqlInjectionMatchSets''' request.
+   * The response to a <a>ListSqlInjectionMatchSets</a> request.
    */
   @js.native
   trait ListSqlInjectionMatchSetsResponse extends js.Object {
@@ -2980,7 +2982,7 @@ package wafregional {
   }
 
   /**
-   * A request to list the '''XssMatchSet''' objects created by the current AWS account.
+   * A request to list the <a>XssMatchSet</a> objects created by the current AWS account.
    */
   @js.native
   trait ListXssMatchSetsRequest extends js.Object {
@@ -3001,7 +3003,7 @@ package wafregional {
   }
 
   /**
-   * The response to a '''ListXssMatchSets''' request.
+   * The response to a <a>ListXssMatchSets</a> request.
    */
   @js.native
   trait ListXssMatchSetsResponse extends js.Object {
@@ -3068,7 +3070,7 @@ package wafregional {
   }
 
   /**
-   * Specifies the '''ByteMatchSet''', '''IPSet''', '''SqlInjectionMatchSet''', '''XssMatchSet''', '''RegexMatchSet''', '''GeoMatchSet''', and '''SizeConstraintSet''' objects that you want to add to a <code>Rule</code> and, for each object, indicates whether you want to negate the settings, for example, requests that do NOT originate from the IP address 192.0.2.44.
+   * Specifies the <a>ByteMatchSet</a>, <a>IPSet</a>, <a>SqlInjectionMatchSet</a>, <a>XssMatchSet</a>, <a>RegexMatchSet</a>, <a>GeoMatchSet</a>, and <a>SizeConstraintSet</a> objects that you want to add to a <code>Rule</code> and, for each object, indicates whether you want to negate the settings, for example, requests that do NOT originate from the IP address 192.0.2.44.
    */
   @js.native
   trait Predicate extends js.Object {
@@ -3165,7 +3167,7 @@ package wafregional {
   }
 
   /**
-   * A <code>RateBasedRule</code> is identical to a regular '''Rule''', with one addition: a <code>RateBasedRule</code> counts the number of requests that arrive from a specified IP address every five minutes. For example, based on recent requests that you've seen from an attacker, you might create a <code>RateBasedRule</code> that includes the following conditions:
+   * A <code>RateBasedRule</code> is identical to a regular <a>Rule</a>, with one addition: a <code>RateBasedRule</code> counts the number of requests that arrive from a specified IP address every five minutes. For example, based on recent requests that you've seen from an attacker, you might create a <code>RateBasedRule</code> that includes the following conditions:
    * * The requests come from 192.0.2.44.
    *  * They contain the value <code>BadBot</code> in the <code>User-Agent</code> header.
    * In the rule, you also define the rate limit as 15,000.
@@ -3208,7 +3210,7 @@ package wafregional {
   }
 
   /**
-   * In a '''GetRegexMatchSet''' request, <code>RegexMatchSet</code> is a complex type that contains the <code>RegexMatchSetId</code> and <code>Name</code> of a <code>RegexMatchSet</code>, and the values that you specified when you updated the <code>RegexMatchSet</code>.
+   * In a <a>GetRegexMatchSet</a> request, <code>RegexMatchSet</code> is a complex type that contains the <code>RegexMatchSetId</code> and <code>Name</code> of a <code>RegexMatchSet</code>, and the values that you specified when you updated the <code>RegexMatchSet</code>.
    *  The values are contained in a <code>RegexMatchTuple</code> object, which specify the parts of web requests that you want AWS WAF to inspect and the values that you want AWS WAF to search for. If a <code>RegexMatchSet</code> contains more than one <code>RegexMatchTuple</code> object, a request needs to match the settings in only one <code>ByteMatchTuple</code> to be considered a match.
    */
   @js.native
@@ -3233,7 +3235,7 @@ package wafregional {
   }
 
   /**
-   * Returned by '''ListRegexMatchSets'''. Each <code>RegexMatchSetSummary</code> object includes the <code>Name</code> and <code>RegexMatchSetId</code> for one '''RegexMatchSet'''.
+   * Returned by <a>ListRegexMatchSets</a>. Each <code>RegexMatchSetSummary</code> object includes the <code>Name</code> and <code>RegexMatchSetId</code> for one <a>RegexMatchSet</a>.
    */
   @js.native
   trait RegexMatchSetSummary extends js.Object {
@@ -3254,7 +3256,7 @@ package wafregional {
   }
 
   /**
-   * In an '''UpdateRegexMatchSet''' request, <code>RegexMatchSetUpdate</code> specifies whether to insert or delete a '''RegexMatchTuple''' and includes the settings for the <code>RegexMatchTuple</code>.
+   * In an <a>UpdateRegexMatchSet</a> request, <code>RegexMatchSetUpdate</code> specifies whether to insert or delete a <a>RegexMatchTuple</a> and includes the settings for the <code>RegexMatchTuple</code>.
    */
   @js.native
   trait RegexMatchSetUpdate extends js.Object {
@@ -3277,7 +3279,7 @@ package wafregional {
   /**
    * The regular expression pattern that you want AWS WAF to search for in web requests, the location in requests that you want AWS WAF to search, and other settings. Each <code>RegexMatchTuple</code> object contains:
    * * The part of a web request that you want AWS WAF to inspect, such as a query string or the value of the <code>User-Agent</code> header.
-   *  * The identifier of the pattern (a regular expression) that you want AWS WAF to look for. For more information, see '''RegexPatternSet'''.
+   *  * The identifier of the pattern (a regular expression) that you want AWS WAF to look for. For more information, see <a>RegexPatternSet</a>.
    *  * Whether to perform any conversions on the request, such as converting it to lowercase, before inspecting it for the specified string.
    */
   @js.native
@@ -3326,7 +3328,7 @@ package wafregional {
   }
 
   /**
-   * Returned by '''ListRegexPatternSets'''. Each <code>RegexPatternSetSummary</code> object includes the <code>Name</code> and <code>RegexPatternSetId</code> for one '''RegexPatternSet'''.
+   * Returned by <a>ListRegexPatternSets</a>. Each <code>RegexPatternSetSummary</code> object includes the <code>Name</code> and <code>RegexPatternSetId</code> for one <a>RegexPatternSet</a>.
    */
   @js.native
   trait RegexPatternSetSummary extends js.Object {
@@ -3347,7 +3349,7 @@ package wafregional {
   }
 
   /**
-   * In an '''UpdateRegexPatternSet''' request, <code>RegexPatternSetUpdate</code> specifies whether to insert or delete a <code>RegexPatternString</code> and includes the settings for the <code>RegexPatternString</code>.
+   * In an <a>UpdateRegexPatternSet</a> request, <code>RegexPatternSetUpdate</code> specifies whether to insert or delete a <code>RegexPatternString</code> and includes the settings for the <code>RegexPatternString</code>.
    */
   @js.native
   trait RegexPatternSetUpdate extends js.Object {
@@ -3375,7 +3377,7 @@ package wafregional {
   }
 
   /**
-   * A combination of '''ByteMatchSet''', '''IPSet''', and/or '''SqlInjectionMatchSet''' objects that identify the web requests that you want to allow, block, or count. For example, you might create a <code>Rule</code> that includes the following predicates:
+   * A combination of <a>ByteMatchSet</a>, <a>IPSet</a>, and/or <a>SqlInjectionMatchSet</a> objects that identify the web requests that you want to allow, block, or count. For example, you might create a <code>Rule</code> that includes the following predicates:
    * * An <code>IPSet</code> that causes AWS WAF to search for web requests that originate from the IP address <code>192.0.2.44</code>
    *  * A <code>ByteMatchSet</code> that causes AWS WAF to search for web requests for which the value of the <code>User-Agent</code> header is <code>BadBot</code>.
    * To match the settings in this <code>Rule</code>, a request must originate from <code>192.0.2.44</code> AND include a <code>User-Agent</code> header for which the value is <code>BadBot</code>.
@@ -3517,7 +3519,7 @@ package wafregional {
   }
 
   /**
-   * The response from a '''GetSampledRequests''' request includes a <code>SampledHTTPRequests</code> complex type that appears as <code>SampledRequests</code> in the response syntax. <code>SampledHTTPRequests</code> contains one <code>SampledHTTPRequest</code> object for each web request that is returned by <code>GetSampledRequests</code>.
+   * The response from a <a>GetSampledRequests</a> request includes a <code>SampledHTTPRequests</code> complex type that appears as <code>SampledRequests</code> in the response syntax. <code>SampledHTTPRequests</code> contains one <code>SampledHTTPRequest</code> object for each web request that is returned by <code>GetSampledRequests</code>.
    */
   @js.native
   trait SampledHTTPRequest extends js.Object {
@@ -3619,7 +3621,7 @@ package wafregional {
   }
 
   /**
-   * Specifies the part of a web request that you want to inspect the size of and indicates whether you want to add the specification to a '''SizeConstraintSet''' or delete it from a <code>SizeConstraintSet</code>.
+   * Specifies the part of a web request that you want to inspect the size of and indicates whether you want to add the specification to a <a>SizeConstraintSet</a> or delete it from a <code>SizeConstraintSet</code>.
    */
   @js.native
   trait SizeConstraintSetUpdate extends js.Object {
@@ -3685,7 +3687,7 @@ package wafregional {
   }
 
   /**
-   * Specifies the part of a web request that you want to inspect for snippets of malicious SQL code and indicates whether you want to add the specification to a '''SqlInjectionMatchSet''' or delete it from a <code>SqlInjectionMatchSet</code>.
+   * Specifies the part of a web request that you want to inspect for snippets of malicious SQL code and indicates whether you want to add the specification to a <a>SqlInjectionMatchSet</a> or delete it from a <code>SqlInjectionMatchSet</code>.
    */
   @js.native
   trait SqlInjectionMatchSetUpdate extends js.Object {
@@ -3762,8 +3764,8 @@ package wafregional {
   }
 
   /**
-   * In a '''GetSampledRequests''' request, the <code>StartTime</code> and <code>EndTime</code> objects specify the time range for which you want AWS WAF to return a sample of web requests.
-   *  In a '''GetSampledRequests''' response, the <code>StartTime</code> and <code>EndTime</code> objects specify the time range for which AWS WAF actually returned a sample of web requests. AWS WAF gets the specified number of requests from among the first 5,000 requests that your AWS resource receives during the specified time period. If your resource receives more than 5,000 requests during that period, AWS WAF stops sampling after the 5,000th request. In that case, <code>EndTime</code> is the time that AWS WAF received the 5,000th request.
+   * In a <a>GetSampledRequests</a> request, the <code>StartTime</code> and <code>EndTime</code> objects specify the time range for which you want AWS WAF to return a sample of web requests.
+   *  In a <a>GetSampledRequests</a> response, the <code>StartTime</code> and <code>EndTime</code> objects specify the time range for which AWS WAF actually returned a sample of web requests. AWS WAF gets the specified number of requests from among the first 5,000 requests that your AWS resource receives during the specified time period. If your resource receives more than 5,000 requests during that period, AWS WAF stops sampling after the 5,000th request. In that case, <code>EndTime</code> is the time that AWS WAF received the 5,000th request.
    */
   @js.native
   trait TimeWindow extends js.Object {
@@ -4111,7 +4113,7 @@ package wafregional {
   }
 
   /**
-   * A request to update a '''SqlInjectionMatchSet'''.
+   * A request to update a <a>SqlInjectionMatchSet</a>.
    */
   @js.native
   trait UpdateSqlInjectionMatchSetRequest extends js.Object {
@@ -4135,7 +4137,7 @@ package wafregional {
   }
 
   /**
-   * The response to an '''UpdateSqlInjectionMatchSets''' request.
+   * The response to an <a>UpdateSqlInjectionMatchSets</a> request.
    */
   @js.native
   trait UpdateSqlInjectionMatchSetResponse extends js.Object {
@@ -4192,7 +4194,7 @@ package wafregional {
   }
 
   /**
-   * A request to update an '''XssMatchSet'''.
+   * A request to update an <a>XssMatchSet</a>.
    */
   @js.native
   trait UpdateXssMatchSetRequest extends js.Object {
@@ -4216,7 +4218,7 @@ package wafregional {
   }
 
   /**
-   * The response to an '''UpdateXssMatchSets''' request.
+   * The response to an <a>UpdateXssMatchSets</a> request.
    */
   @js.native
   trait UpdateXssMatchSetResponse extends js.Object {
@@ -4293,7 +4295,7 @@ package wafregional {
   }
 
   /**
-   * Contains the <code>Rules</code> that identify the requests that you want to allow, block, or count. In a <code>WebACL</code>, you also specify a default action (<code>ALLOW</code> or <code>BLOCK</code>), and the action for each <code>Rule</code> that you add to a <code>WebACL</code>, for example, block requests from specified IP addresses or block requests from specified referrers. You also associate the <code>WebACL</code> with a CloudFront distribution to identify the requests that you want AWS WAF to filter. If you add more than one <code>Rule</code> to a <code>WebACL</code>, a request needs to match only one of the specifications to be allowed, blocked, or counted. For more information, see '''UpdateWebACL'''.
+   * Contains the <code>Rules</code> that identify the requests that you want to allow, block, or count. In a <code>WebACL</code>, you also specify a default action (<code>ALLOW</code> or <code>BLOCK</code>), and the action for each <code>Rule</code> that you add to a <code>WebACL</code>, for example, block requests from specified IP addresses or block requests from specified referrers. You also associate the <code>WebACL</code> with a CloudFront distribution to identify the requests that you want AWS WAF to filter. If you add more than one <code>Rule</code> to a <code>WebACL</code>, a request needs to match only one of the specifications to be allowed, blocked, or counted. For more information, see <a>UpdateWebACL</a>.
    */
   @js.native
   trait WebACL extends js.Object {
@@ -4326,7 +4328,7 @@ package wafregional {
   }
 
   /**
-   * Contains the identifier and the name or description of the '''WebACL'''.
+   * Contains the identifier and the name or description of the <a>WebACL</a>.
    */
   @js.native
   trait WebACLSummary extends js.Object {
@@ -4413,7 +4415,7 @@ package wafregional {
   }
 
   /**
-   * Specifies the part of a web request that you want to inspect for cross-site scripting attacks and indicates whether you want to add the specification to an '''XssMatchSet''' or delete it from an <code>XssMatchSet</code>.
+   * Specifies the part of a web request that you want to inspect for cross-site scripting attacks and indicates whether you want to add the specification to an <a>XssMatchSet</a> or delete it from an <code>XssMatchSet</code>.
    */
   @js.native
   trait XssMatchSetUpdate extends js.Object {

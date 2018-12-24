@@ -58,7 +58,9 @@ package object dms {
 package dms {
   @js.native
   @JSImport("aws-sdk", "DMS")
-  class DMS(config: AWSConfig) extends js.Object {
+  class DMS() extends js.Object {
+    def this(config: AWSConfig) = this()
+
     def addTagsToResource(params: AddTagsToResourceMessage): Request[AddTagsToResourceResponse] = js.native
     def createEndpoint(params: CreateEndpointMessage): Request[CreateEndpointResponse] = js.native
     def createEventSubscription(params: CreateEventSubscriptionMessage): Request[CreateEventSubscriptionResponse] = js.native

@@ -20,7 +20,9 @@ package object simpledb {
 package simpledb {
   @js.native
   @JSImport("aws-sdk", "SimpleDB")
-  class SimpleDB(config: AWSConfig) extends js.Object {
+  class SimpleDB() extends js.Object {
+    def this(config: AWSConfig) = this()
+
     def batchDeleteAttributes(params: BatchDeleteAttributesRequest): Request[js.Object] = js.native
     def batchPutAttributes(params: BatchPutAttributesRequest): Request[js.Object] = js.native
     def createDomain(params: CreateDomainRequest): Request[js.Object] = js.native

@@ -37,7 +37,9 @@ package object appmesh {
 package appmesh {
   @js.native
   @JSImport("aws-sdk", "AppMesh")
-  class AppMesh(config: AWSConfig) extends js.Object {
+  class AppMesh() extends js.Object {
+    def this(config: AWSConfig) = this()
+
     def createMesh(params: CreateMeshInput): Request[CreateMeshOutput] = js.native
     def createRoute(params: CreateRouteInput): Request[CreateRouteOutput] = js.native
     def createVirtualNode(params: CreateVirtualNodeInput): Request[CreateVirtualNodeOutput] = js.native

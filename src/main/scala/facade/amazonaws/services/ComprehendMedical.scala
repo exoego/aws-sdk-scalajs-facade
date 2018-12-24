@@ -20,7 +20,9 @@ package object comprehendmedical {
 package comprehendmedical {
   @js.native
   @JSImport("aws-sdk", "ComprehendMedical")
-  class ComprehendMedical(config: AWSConfig) extends js.Object {
+  class ComprehendMedical() extends js.Object {
+    def this(config: AWSConfig) = this()
+
     def detectEntities(params: DetectEntitiesRequest): Request[DetectEntitiesResponse] = js.native
     def detectPHI(params: DetectPHIRequest): Request[DetectPHIResponse] = js.native
   }

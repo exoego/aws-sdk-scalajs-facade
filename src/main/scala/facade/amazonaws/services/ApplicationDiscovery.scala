@@ -62,7 +62,9 @@ package object applicationdiscovery {
 package applicationdiscovery {
   @js.native
   @JSImport("aws-sdk", "Discovery")
-  class ApplicationDiscovery(config: AWSConfig) extends js.Object {
+  class ApplicationDiscovery() extends js.Object {
+    def this(config: AWSConfig) = this()
+
     def associateConfigurationItemsToApplication(params: AssociateConfigurationItemsToApplicationRequest): Request[AssociateConfigurationItemsToApplicationResponse] = js.native
     def createApplication(params: CreateApplicationRequest): Request[CreateApplicationResponse] = js.native
     def createTags(params: CreateTagsRequest): Request[CreateTagsResponse] = js.native

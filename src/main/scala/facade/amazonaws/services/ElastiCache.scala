@@ -61,7 +61,9 @@ package object elasticache {
 package elasticache {
   @js.native
   @JSImport("aws-sdk", "ElastiCache")
-  class ElastiCache(config: AWSConfig) extends js.Object {
+  class ElastiCache() extends js.Object {
+    def this(config: AWSConfig) = this()
+
     def addTagsToResource(params: AddTagsToResourceMessage): Request[TagListMessage] = js.native
     def authorizeCacheSecurityGroupIngress(params: AuthorizeCacheSecurityGroupIngressMessage): Request[AuthorizeCacheSecurityGroupIngressResult] = js.native
     def copySnapshot(params: CopySnapshotMessage): Request[CopySnapshotResult] = js.native
@@ -360,7 +362,7 @@ package elasticache {
   }
 
   /**
-   * Represents the output of a '''DescribeCacheEngineVersions''' operation.
+   * Represents the output of a <a>DescribeCacheEngineVersions</a> operation.
    */
   @js.native
   trait CacheEngineVersionMessage extends js.Object {

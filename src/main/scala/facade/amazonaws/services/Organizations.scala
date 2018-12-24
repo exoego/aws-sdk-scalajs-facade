@@ -75,7 +75,9 @@ package object organizations {
 package organizations {
   @js.native
   @JSImport("aws-sdk", "Organizations")
-  class Organizations(config: AWSConfig) extends js.Object {
+  class Organizations() extends js.Object {
+    def this(config: AWSConfig) = this()
+
     def acceptHandshake(params: AcceptHandshakeRequest): Request[AcceptHandshakeResponse] = js.native
     def attachPolicy(params: AttachPolicyRequest): Request[js.Object] = js.native
     def cancelHandshake(params: CancelHandshakeRequest): Request[CancelHandshakeResponse] = js.native
@@ -344,7 +346,7 @@ package organizations {
   }
 
   /**
-   * Contains the status about a '''CreateAccount''' request to create an AWS account in an organization.
+   * Contains the status about a <a>CreateAccount</a> request to create an AWS account in an organization.
    */
   @js.native
   trait CreateAccountStatus extends js.Object {
@@ -1689,7 +1691,7 @@ package organizations {
   }
 
   /**
-   * Contains information about a policy, but does not include the content. To see the content of a policy, see '''DescribePolicy'''.
+   * Contains information about a policy, but does not include the content. To see the content of a policy, see <a>DescribePolicy</a>.
    */
   @js.native
   trait PolicySummary extends js.Object {

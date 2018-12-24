@@ -126,7 +126,9 @@ package object storagegateway {
 package storagegateway {
   @js.native
   @JSImport("aws-sdk", "StorageGateway")
-  class StorageGateway(config: AWSConfig) extends js.Object {
+  class StorageGateway() extends js.Object {
+    def this(config: AWSConfig) = this()
+
     def activateGateway(params: ActivateGatewayInput): Request[ActivateGatewayOutput] = js.native
     def addCache(params: AddCacheInput): Request[AddCacheOutput] = js.native
     def addTagsToResource(params: AddTagsToResourceInput): Request[AddTagsToResourceOutput] = js.native

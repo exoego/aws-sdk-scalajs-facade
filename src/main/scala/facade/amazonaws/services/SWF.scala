@@ -83,7 +83,9 @@ package object swf {
 package swf {
   @js.native
   @JSImport("aws-sdk", "SWF")
-  class SWF(config: AWSConfig) extends js.Object {
+  class SWF() extends js.Object {
+    def this(config: AWSConfig) = this()
+
     def countClosedWorkflowExecutions(params: CountClosedWorkflowExecutionsInput): Request[WorkflowExecutionCount] = js.native
     def countOpenWorkflowExecutions(params: CountOpenWorkflowExecutionsInput): Request[WorkflowExecutionCount] = js.native
     def countPendingActivityTasks(params: CountPendingActivityTasksInput): Request[PendingTaskCount] = js.native
@@ -1058,7 +1060,7 @@ package swf {
    *  * <code>ContinueAsNewWorkflowExecution</code> ? Closes the workflow execution and starts a new workflow execution of the same type using the same workflow ID and a unique run Id. A <code>WorkflowExecutionContinuedAsNew</code> event is recorded in the history.
    *  * <code>FailWorkflowExecution</code> ? Closes the workflow execution and records a <code>WorkflowExecutionFailed</code> event in the history.
    *  * <code>RecordMarker</code> ? Records a <code>MarkerRecorded</code> event in the history. Markers can be used for adding custom information in the history for instance to let deciders know that they don't need to look at the history beyond the marker event.
-   *  * <code>RequestCancelActivityTask</code> ? Attempts to cancel a previously scheduled activity task. If the activity task was scheduled but has not been assigned to a worker, then it is canceled. If the activity task was already assigned to a worker, then the worker is informed that cancellation has been requested in the response to '''RecordActivityTaskHeartbeat'''.
+   *  * <code>RequestCancelActivityTask</code> ? Attempts to cancel a previously scheduled activity task. If the activity task was scheduled but has not been assigned to a worker, then it is canceled. If the activity task was already assigned to a worker, then the worker is informed that cancellation has been requested in the response to <a>RecordActivityTaskHeartbeat</a>.
    *  * <code>RequestCancelExternalWorkflowExecution</code> ? Requests that a request be made to cancel the specified external workflow execution and records a <code>RequestCancelExternalWorkflowExecutionInitiated</code> event in the history.
    *  * <code>ScheduleActivityTask</code> ? Schedules an activity task.
    *  * <code>SignalExternalWorkflowExecution</code> ? Requests a signal to be delivered to the specified external workflow execution and records a <code>SignalExternalWorkflowExecutionInitiated</code> event in the history.
@@ -1085,21 +1087,21 @@ package swf {
    *  * <code>FailWorkflowExecutionFailed</code> ? A <code>FailWorkflowExecution</code> decision failed. This could happen if there is an unhandled decision task pending in the workflow execution.
    * The preceding error events might occur due to an error in the decider logic, which might put the workflow execution in an unstable state The cause field in the event structure for the error event indicates the cause of the error.
    *
-   * '''Note:'''A workflow execution may be closed by the decider by returning one of the following decisions when completing a decision task: <code>CompleteWorkflowExecution</code>, <code>FailWorkflowExecution</code>, <code>CancelWorkflowExecution</code> and <code>ContinueAsNewWorkflowExecution</code>. An <code>UnhandledDecision</code> fault is returned if a workflow closing decision is specified and a signal or activity event had been added to the history while the decision task was being performed by the decider. Unlike the above situations which are logic issues, this fault is always possible because of race conditions in a distributed system. The right action here is to call '''RespondDecisionTaskCompleted''' without any decisions. This would result in another decision task with these new events included in the history. The decider should handle the new events and may decide to close the workflow execution.
+   * '''Note:'''A workflow execution may be closed by the decider by returning one of the following decisions when completing a decision task: <code>CompleteWorkflowExecution</code>, <code>FailWorkflowExecution</code>, <code>CancelWorkflowExecution</code> and <code>ContinueAsNewWorkflowExecution</code>. An <code>UnhandledDecision</code> fault is returned if a workflow closing decision is specified and a signal or activity event had been added to the history while the decision task was being performed by the decider. Unlike the above situations which are logic issues, this fault is always possible because of race conditions in a distributed system. The right action here is to call <a>RespondDecisionTaskCompleted</a> without any decisions. This would result in another decision task with these new events included in the history. The decider should handle the new events and may decide to close the workflow execution.
    * <b>How to Code a Decision</b>
    *  You code a decision by first setting the decision type field to one of the above decision values, and then set the corresponding attributes field shown below:
-   * * <code> '''ScheduleActivityTaskDecisionAttributes''' </code>
-   *  * <code> '''RequestCancelActivityTaskDecisionAttributes''' </code>
-   *  * <code> '''CompleteWorkflowExecutionDecisionAttributes''' </code>
-   *  * <code> '''FailWorkflowExecutionDecisionAttributes''' </code>
-   *  * <code> '''CancelWorkflowExecutionDecisionAttributes''' </code>
-   *  * <code> '''ContinueAsNewWorkflowExecutionDecisionAttributes''' </code>
-   *  * <code> '''RecordMarkerDecisionAttributes''' </code>
-   *  * <code> '''StartTimerDecisionAttributes''' </code>
-   *  * <code> '''CancelTimerDecisionAttributes''' </code>
-   *  * <code> '''SignalExternalWorkflowExecutionDecisionAttributes''' </code>
-   *  * <code> '''RequestCancelExternalWorkflowExecutionDecisionAttributes''' </code>
-   *  * <code> '''StartChildWorkflowExecutionDecisionAttributes''' </code>
+   * * <code> <a>ScheduleActivityTaskDecisionAttributes</a> </code>
+   *  * <code> <a>RequestCancelActivityTaskDecisionAttributes</a> </code>
+   *  * <code> <a>CompleteWorkflowExecutionDecisionAttributes</a> </code>
+   *  * <code> <a>FailWorkflowExecutionDecisionAttributes</a> </code>
+   *  * <code> <a>CancelWorkflowExecutionDecisionAttributes</a> </code>
+   *  * <code> <a>ContinueAsNewWorkflowExecutionDecisionAttributes</a> </code>
+   *  * <code> <a>RecordMarkerDecisionAttributes</a> </code>
+   *  * <code> <a>StartTimerDecisionAttributes</a> </code>
+   *  * <code> <a>CancelTimerDecisionAttributes</a> </code>
+   *  * <code> <a>SignalExternalWorkflowExecutionDecisionAttributes</a> </code>
+   *  * <code> <a>RequestCancelExternalWorkflowExecutionDecisionAttributes</a> </code>
+   *  * <code> <a>StartChildWorkflowExecutionDecisionAttributes</a> </code>
    */
   @js.native
   trait Decision extends js.Object {
@@ -1775,8 +1777,8 @@ package swf {
    * Event within a workflow execution. A history event can be one of these types:
    * * <code>ActivityTaskCancelRequested</code> ? A <code>RequestCancelActivityTask</code> decision was received by the system.
    *  * <code>ActivityTaskCanceled</code> ? The activity task was successfully canceled.
-   *  * <code>ActivityTaskCompleted</code> ? An activity worker successfully completed an activity task by calling '''RespondActivityTaskCompleted'''.
-   *  * <code>ActivityTaskFailed</code> ? An activity worker failed an activity task by calling '''RespondActivityTaskFailed'''.
+   *  * <code>ActivityTaskCompleted</code> ? An activity worker successfully completed an activity task by calling <a>RespondActivityTaskCompleted</a>.
+   *  * <code>ActivityTaskFailed</code> ? An activity worker failed an activity task by calling <a>RespondActivityTaskFailed</a>.
    *  * <code>ActivityTaskScheduled</code> ? An activity task was scheduled for execution.
    *  * <code>ActivityTaskStarted</code> ? The scheduled activity task was dispatched to a worker.
    *  * <code>ActivityTaskTimedOut</code> ? The activity task timed out.
@@ -1790,7 +1792,7 @@ package swf {
    *  * <code>ChildWorkflowExecutionTimedOut</code> ? A child workflow execution, started by this workflow execution, timed out and was closed.
    *  * <code>CompleteWorkflowExecutionFailed</code> ? The workflow execution failed to complete.
    *  * <code>ContinueAsNewWorkflowExecutionFailed</code> ? The workflow execution failed to complete after being continued as a new workflow execution.
-   *  * <code>DecisionTaskCompleted</code> ? The decider successfully completed a decision task by calling '''RespondDecisionTaskCompleted'''.
+   *  * <code>DecisionTaskCompleted</code> ? The decider successfully completed a decision task by calling <a>RespondDecisionTaskCompleted</a>.
    *  * <code>DecisionTaskScheduled</code> ? A decision task was scheduled for the workflow execution.
    *  * <code>DecisionTaskStarted</code> ? The decision task was dispatched to a decider.
    *  * <code>DecisionTaskTimedOut</code> ? The decision task timed out.
@@ -2969,7 +2971,7 @@ package swf {
   }
 
   /**
-   * Decision attributes specified in <code>scheduleLambdaFunctionDecisionAttributes</code> within the list of decisions <code>decisions</code> passed to '''RespondDecisionTaskCompleted'''.
+   * Decision attributes specified in <code>scheduleLambdaFunctionDecisionAttributes</code> within the list of decisions <code>decisions</code> passed to <a>RespondDecisionTaskCompleted</a>.
    */
   @js.native
   trait ScheduleLambdaFunctionDecisionAttributes extends js.Object {
@@ -3651,7 +3653,7 @@ package swf {
   }
 
   /**
-   * Returned by '''StartWorkflowExecution''' when an open execution with the same workflowId is already running in the specified domain.
+   * Returned by <a>StartWorkflowExecution</a> when an open execution with the same workflowId is already running in the specified domain.
    */
   @js.native
   trait WorkflowExecutionAlreadyStartedFaultException extends js.Object {
@@ -3812,7 +3814,7 @@ package swf {
   }
 
   /**
-   * Contains the count of workflow executions returned from '''CountOpenWorkflowExecutions''' or '''CountClosedWorkflowExecutions'''
+   * Contains the count of workflow executions returned from <a>CountOpenWorkflowExecutions</a> or <a>CountClosedWorkflowExecutions</a>
    */
   @js.native
   trait WorkflowExecutionCount extends js.Object {

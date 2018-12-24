@@ -86,7 +86,9 @@ package object lambda {
 package lambda {
   @js.native
   @JSImport("aws-sdk", "Lambda")
-  class Lambda(config: AWSConfig) extends js.Object {
+  class Lambda() extends js.Object {
+    def this(config: AWSConfig) = this()
+
     def addLayerVersionPermission(params: AddLayerVersionPermissionRequest): Request[AddLayerVersionPermissionResponse] = js.native
     def addPermission(params: AddPermissionRequest): Request[AddPermissionResponse] = js.native
     def createAlias(params: CreateAliasRequest): Request[AliasConfiguration] = js.native
@@ -629,7 +631,7 @@ package lambda {
   }
 
   /**
-   * A mapping between an AWS resource and an AWS Lambda function. See '''CreateEventSourceMapping''' for details.
+   * A mapping between an AWS resource and an AWS Lambda function. See <a>CreateEventSourceMapping</a> for details.
    */
   @js.native
   trait EventSourceMappingConfiguration extends js.Object {
@@ -905,7 +907,7 @@ package lambda {
   }
 
   /**
-   * This response contains the object for the Lambda function location (see '''FunctionCodeLocation'''.
+   * This response contains the object for the Lambda function location (see <a>FunctionCodeLocation</a>.
    */
   @js.native
   trait GetFunctionResponse extends js.Object {

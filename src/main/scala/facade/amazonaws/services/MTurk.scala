@@ -56,7 +56,9 @@ package object mturk {
 package mturk {
   @js.native
   @JSImport("aws-sdk", "MTurk")
-  class MTurk(config: AWSConfig) extends js.Object {
+  class MTurk() extends js.Object {
+    def this(config: AWSConfig) = this()
+
     def acceptQualificationRequest(params: AcceptQualificationRequestRequest): Request[AcceptQualificationRequestResponse] = js.native
     def approveAssignment(params: ApproveAssignmentRequest): Request[ApproveAssignmentResponse] = js.native
     def associateQualificationWithWorker(params: AssociateQualificationWithWorkerRequest): Request[AssociateQualificationWithWorkerResponse] = js.native

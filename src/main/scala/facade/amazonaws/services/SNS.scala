@@ -46,7 +46,9 @@ package object sns {
 package sns {
   @js.native
   @JSImport("aws-sdk", "SNS")
-  class SNS(config: AWSConfig) extends js.Object {
+  class SNS() extends js.Object {
+    def this(config: AWSConfig) = this()
+
     def addPermission(params: AddPermissionInput): Request[js.Object] = js.native
     def checkIfPhoneNumberIsOptedOut(params: CheckIfPhoneNumberIsOptedOutInput): Request[CheckIfPhoneNumberIsOptedOutResponse] = js.native
     def confirmSubscription(params: ConfirmSubscriptionInput): Request[ConfirmSubscriptionResponse] = js.native

@@ -30,7 +30,9 @@ package object cloudtrail {
 package cloudtrail {
   @js.native
   @JSImport("aws-sdk", "CloudTrail")
-  class CloudTrail(config: AWSConfig) extends js.Object {
+  class CloudTrail() extends js.Object {
+    def this(config: AWSConfig) = this()
+
     def addTags(params: AddTagsRequest): Request[AddTagsResponse] = js.native
     def createTrail(params: CreateTrailRequest): Request[CreateTrailResponse] = js.native
     def deleteTrail(params: DeleteTrailRequest): Request[DeleteTrailResponse] = js.native

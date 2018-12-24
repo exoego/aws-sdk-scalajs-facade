@@ -65,7 +65,9 @@ package object pinpoint {
 package pinpoint {
   @js.native
   @JSImport("aws-sdk", "Pinpoint")
-  class Pinpoint(config: AWSConfig) extends js.Object {
+  class Pinpoint() extends js.Object {
+    def this(config: AWSConfig) = this()
+
     def createApp(params: CreateAppRequest): Request[CreateAppResponse] = js.native
     def createCampaign(params: CreateCampaignRequest): Request[CreateCampaignResponse] = js.native
     def createExportJob(params: CreateExportJobRequest): Request[CreateExportJobResponse] = js.native

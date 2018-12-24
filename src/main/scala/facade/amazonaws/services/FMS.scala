@@ -43,7 +43,9 @@ package object fms {
 package fms {
   @js.native
   @JSImport("aws-sdk", "FMS")
-  class FMS(config: AWSConfig) extends js.Object {
+  class FMS() extends js.Object {
+    def this(config: AWSConfig) = this()
+
     def associateAdminAccount(params: AssociateAdminAccountRequest): Request[js.Object] = js.native
     def deleteNotificationChannel(params: DeleteNotificationChannelRequest): Request[js.Object] = js.native
     def deletePolicy(params: DeletePolicyRequest): Request[js.Object] = js.native

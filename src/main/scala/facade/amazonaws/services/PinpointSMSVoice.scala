@@ -18,7 +18,9 @@ package object pinpointsmsvoice {
 package pinpointsmsvoice {
   @js.native
   @JSImport("aws-sdk", "PinpointSMSVoice")
-  class PinpointSMSVoice(config: AWSConfig) extends js.Object {
+  class PinpointSMSVoice() extends js.Object {
+    def this(config: AWSConfig) = this()
+
     def createConfigurationSet(params: CreateConfigurationSetRequest): Request[CreateConfigurationSetResponse] = js.native
     def createConfigurationSetEventDestination(params: CreateConfigurationSetEventDestinationRequest): Request[CreateConfigurationSetEventDestinationResponse] = js.native
     def deleteConfigurationSet(params: DeleteConfigurationSetRequest): Request[DeleteConfigurationSetResponse] = js.native

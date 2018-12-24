@@ -37,7 +37,9 @@ package object ram {
 package ram {
   @js.native
   @JSImport("aws-sdk", "RAM")
-  class RAM(config: AWSConfig) extends js.Object {
+  class RAM() extends js.Object {
+    def this(config: AWSConfig) = this()
+
     def acceptResourceShareInvitation(params: AcceptResourceShareInvitationRequest): Request[AcceptResourceShareInvitationResponse] = js.native
     def associateResourceShare(params: AssociateResourceShareRequest): Request[AssociateResourceShareResponse] = js.native
     def createResourceShare(params: CreateResourceShareRequest): Request[CreateResourceShareResponse] = js.native

@@ -119,7 +119,9 @@ package object ses {
 package ses {
   @js.native
   @JSImport("aws-sdk", "SES")
-  class SES(config: AWSConfig) extends js.Object {
+  class SES() extends js.Object {
+    def this(config: AWSConfig) = this()
+
     def cloneReceiptRuleSet(params: CloneReceiptRuleSetRequest): Request[CloneReceiptRuleSetResponse] = js.native
     def createConfigurationSet(params: CreateConfigurationSetRequest): Request[CreateConfigurationSetResponse] = js.native
     def createConfigurationSetEventDestination(params: CreateConfigurationSetEventDestinationRequest): Request[CreateConfigurationSetEventDestinationResponse] = js.native

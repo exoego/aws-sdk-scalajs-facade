@@ -53,7 +53,9 @@ package object acm {
 package acm {
   @js.native
   @JSImport("aws-sdk", "ACM")
-  class ACM(config: AWSConfig) extends js.Object {
+  class ACM() extends js.Object {
+    def this(config: AWSConfig) = this()
+
     def addTagsToCertificate(params: AddTagsToCertificateRequest): Request[js.Object] = js.native
     def deleteCertificate(params: DeleteCertificateRequest): Request[js.Object] = js.native
     def describeCertificate(params: DescribeCertificateRequest): Request[DescribeCertificateResponse] = js.native
@@ -87,7 +89,7 @@ package acm {
   }
 
   /**
-   * Contains metadata about an ACM certificate. This structure is returned in the response to a '''DescribeCertificate''' request.
+   * Contains metadata about an ACM certificate. This structure is returned in the response to a <a>DescribeCertificate</a> request.
    */
   @js.native
   trait CertificateDetail extends js.Object {
@@ -210,7 +212,7 @@ package acm {
   }
 
   /**
-   * This structure is returned in the response object of '''ListCertificates''' action.
+   * This structure is returned in the response object of <a>ListCertificates</a> action.
    */
   @js.native
   trait CertificateSummary extends js.Object {
@@ -447,7 +449,7 @@ package acm {
   }
 
   /**
-   * This structure can be used in the '''ListCertificates''' action to filter the output of the certificate list.
+   * This structure can be used in the <a>ListCertificates</a> action to filter the output of the certificate list.
    */
   @js.native
   trait Filters extends js.Object {
@@ -551,7 +553,7 @@ package acm {
   }
 
   /**
-   * One or more values in the '''DomainValidationOption''' structure is incorrect.
+   * One or more values in the <a>DomainValidationOption</a> structure is incorrect.
    */
   @js.native
   trait InvalidDomainValidationOptionsExceptionException extends js.Object {
@@ -854,7 +856,7 @@ package acm {
   }
 
   /**
-   * Contains a DNS record value that you can use to can use to validate ownership or control of a domain. This is used by the '''DescribeCertificate''' action.
+   * Contains a DNS record value that you can use to can use to validate ownership or control of a domain. This is used by the <a>DescribeCertificate</a> action.
    */
   @js.native
   trait ResourceRecord extends js.Object {

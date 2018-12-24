@@ -58,7 +58,9 @@ package object servicediscovery {
 package servicediscovery {
   @js.native
   @JSImport("aws-sdk", "ServiceDiscovery")
-  class ServiceDiscovery(config: AWSConfig) extends js.Object {
+  class ServiceDiscovery() extends js.Object {
+    def this(config: AWSConfig) = this()
+
     def createHttpNamespace(params: CreateHttpNamespaceRequest): Request[CreateHttpNamespaceResponse] = js.native
     def createPrivateDnsNamespace(params: CreatePrivateDnsNamespaceRequest): Request[CreatePrivateDnsNamespaceResponse] = js.native
     def createPublicDnsNamespace(params: CreatePublicDnsNamespaceRequest): Request[CreatePublicDnsNamespaceResponse] = js.native
@@ -683,7 +685,7 @@ package servicediscovery {
    *  </important> To change the status of a custom health check, submit an <code>UpdateInstanceCustomHealthStatus</code> request. Cloud Map doesn't monitor the status of the resource, it just keeps a record of the status specified in the most recent <code>UpdateInstanceCustomHealthStatus</code> request.
    *  Here's how custom health checks work:
    *  <ol> * You create a service and specify a value for <code>FailureThreshold</code>.
-   *  The failure threshold indicates the number of 30-second intervals you want AWS Cloud Map to wait between the time that your application sends an '''UpdateInstanceCustomHealthStatus''' request and the time that AWS Cloud Map stops routing internet traffic to the corresponding resource.
+   *  The failure threshold indicates the number of 30-second intervals you want AWS Cloud Map to wait between the time that your application sends an <a>UpdateInstanceCustomHealthStatus</a> request and the time that AWS Cloud Map stops routing internet traffic to the corresponding resource.
    *  * You register an instance.
    *  <li> You configure a third-party health checker to monitor the resource that is associated with the new instance.
    *
@@ -734,7 +736,7 @@ package servicediscovery {
   }
 
   /**
-   * In a response to a '''DiscoverInstance''' request, <code>HttpInstanceSummary</code> contains information about one instance that matches the values that you specified in the request.
+   * In a response to a <a>DiscoverInstance</a> request, <code>HttpInstanceSummary</code> contains information about one instance that matches the values that you specified in the request.
    */
   @js.native
   trait HttpInstanceSummary extends js.Object {
@@ -1205,7 +1207,7 @@ package servicediscovery {
   }
 
   /**
-   * A complex type that contains information about an operation that matches the criteria that you specified in a '''ListOperations''' request.
+   * A complex type that contains information about an operation that matches the criteria that you specified in a <a>ListOperations</a> request.
    */
   @js.native
   trait OperationSummary extends js.Object {

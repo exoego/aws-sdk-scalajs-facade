@@ -43,7 +43,9 @@ package object shield {
 package shield {
   @js.native
   @JSImport("aws-sdk", "Shield")
-  class Shield(config: AWSConfig) extends js.Object {
+  class Shield() extends js.Object {
+    def this(config: AWSConfig) = this()
+
     def associateDRTLogBucket(params: AssociateDRTLogBucketRequest): Request[AssociateDRTLogBucketResponse] = js.native
     def associateDRTRole(params: AssociateDRTRoleRequest): Request[AssociateDRTRoleResponse] = js.native
     def createProtection(params: CreateProtectionRequest): Request[CreateProtectionResponse] = js.native

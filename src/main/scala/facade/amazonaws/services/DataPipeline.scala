@@ -44,7 +44,9 @@ package object datapipeline {
 package datapipeline {
   @js.native
   @JSImport("aws-sdk", "DataPipeline")
-  class DataPipeline(config: AWSConfig) extends js.Object {
+  class DataPipeline() extends js.Object {
+    def this(config: AWSConfig) = this()
+
     def activatePipeline(params: ActivatePipelineInput): Request[ActivatePipelineOutput] = js.native
     def addTags(params: AddTagsInput): Request[AddTagsOutput] = js.native
     def createPipeline(params: CreatePipelineInput): Request[CreatePipelineOutput] = js.native

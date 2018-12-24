@@ -85,7 +85,9 @@ package object amplify {
 package amplify {
   @js.native
   @JSImport("aws-sdk", "Amplify")
-  class Amplify(config: AWSConfig) extends js.Object {
+  class Amplify() extends js.Object {
+    def this(config: AWSConfig) = this()
+
     def createApp(params: CreateAppRequest): Request[CreateAppResult] = js.native
     def createBranch(params: CreateBranchRequest): Request[CreateBranchResult] = js.native
     def createDomainAssociation(params: CreateDomainAssociationRequest): Request[CreateDomainAssociationResult] = js.native

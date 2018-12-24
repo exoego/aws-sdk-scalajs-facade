@@ -163,7 +163,9 @@ package object glue {
 package glue {
   @js.native
   @JSImport("aws-sdk", "Glue")
-  class Glue(config: AWSConfig) extends js.Object {
+  class Glue() extends js.Object {
+    def this(config: AWSConfig) = this()
+
     def batchCreatePartition(params: BatchCreatePartitionRequest): Request[BatchCreatePartitionResponse] = js.native
     def batchDeleteConnection(params: BatchDeleteConnectionRequest): Request[BatchDeleteConnectionResponse] = js.native
     def batchDeletePartition(params: BatchDeletePartitionRequest): Request[BatchDeletePartitionResponse] = js.native

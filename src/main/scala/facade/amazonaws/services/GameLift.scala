@@ -113,7 +113,9 @@ package object gamelift {
 package gamelift {
   @js.native
   @JSImport("aws-sdk", "GameLift")
-  class GameLift(config: AWSConfig) extends js.Object {
+  class GameLift() extends js.Object {
+    def this(config: AWSConfig) = this()
+
     def acceptMatch(params: AcceptMatchInput): Request[AcceptMatchOutput] = js.native
     def createAlias(params: CreateAliasInput): Request[CreateAliasOutput] = js.native
     def createBuild(params: CreateBuildInput): Request[CreateBuildOutput] = js.native
@@ -230,12 +232,12 @@ package gamelift {
   /**
    * Properties describing a fleet alias.
    *  Alias-related operations include:
-   * * '''CreateAlias'''
-   *  * '''ListAliases'''
-   *  * '''DescribeAlias'''
-   *  * '''UpdateAlias'''
-   *  * '''DeleteAlias'''
-   *  * '''ResolveAlias'''
+   * * <a>CreateAlias</a>
+   *  * <a>ListAliases</a>
+   *  * <a>DescribeAlias</a>
+   *  * <a>UpdateAlias</a>
+   *  * <a>DeleteAlias</a>
+   *  * <a>ResolveAlias</a>
    */
   @js.native
   trait Alias extends js.Object {
@@ -271,7 +273,7 @@ package gamelift {
   }
 
   /**
-   * Values for use in '''Player''' attribute key:value pairs. This object lets you specify an attribute value using any of the valid data types: string, number, string array or data map. Each <code>AttributeValue</code> object can use only one of the available properties.
+   * Values for use in <a>Player</a> attribute key:value pairs. This object lets you specify an attribute value using any of the valid data types: string, number, string array or data map. Each <code>AttributeValue</code> object can use only one of the available properties.
    */
   @js.native
   trait AttributeValue extends js.Object {
@@ -298,7 +300,7 @@ package gamelift {
   }
 
   /**
-   * Temporary access credentials used for uploading game build files to Amazon GameLift. They are valid for a limited time. If they expire before you upload your game build, get a new set by calling '''RequestUploadCredentials'''.
+   * Temporary access credentials used for uploading game build files to Amazon GameLift. They are valid for a limited time. If they expire before you upload your game build, get a new set by calling <a>RequestUploadCredentials</a>.
    */
   @js.native
   trait AwsCredentials extends js.Object {
@@ -324,11 +326,11 @@ package gamelift {
   /**
    * Properties describing a game build.
    *  Build-related operations include:
-   * * '''CreateBuild'''
-   *  * '''ListBuilds'''
-   *  * '''DescribeBuild'''
-   *  * '''UpdateBuild'''
-   *  * '''DeleteBuild'''
+   * * <a>CreateBuild</a>
+   *  * <a>ListBuilds</a>
+   *  * <a>DescribeBuild</a>
+   *  * <a>UpdateBuild</a>
+   *  * <a>DeleteBuild</a>
    */
   @js.native
   trait Build extends js.Object {
@@ -2036,7 +2038,7 @@ package gamelift {
   }
 
   /**
-   * Player information for use when creating player sessions using a game session placement request with '''StartGameSessionPlacement'''.
+   * Player information for use when creating player sessions using a game session placement request with <a>StartGameSessionPlacement</a>.
    */
   @js.native
   trait DesiredPlayerSession extends js.Object {
@@ -2057,27 +2059,27 @@ package gamelift {
   }
 
   /**
-   * Current status of fleet capacity. The number of active instances should match or be in the process of matching the number of desired instances. Pending and terminating counts are non-zero only if fleet capacity is adjusting to an '''UpdateFleetCapacity''' request, or if access to resources is temporarily affected.
+   * Current status of fleet capacity. The number of active instances should match or be in the process of matching the number of desired instances. Pending and terminating counts are non-zero only if fleet capacity is adjusting to an <a>UpdateFleetCapacity</a> request, or if access to resources is temporarily affected.
    *  Fleet-related operations include:
-   * * '''CreateFleet'''
-   *  * '''ListFleets'''
-   *  * '''DeleteFleet'''
+   * * <a>CreateFleet</a>
+   *  * <a>ListFleets</a>
+   *  * <a>DeleteFleet</a>
    *  * Describe fleets:
-   * <li> '''DescribeFleetAttributes'''
-   *  * '''DescribeFleetCapacity'''
-   *  * '''DescribeFleetPortSettings'''
-   *  * '''DescribeFleetUtilization'''
-   *  * '''DescribeRuntimeConfiguration'''
-   *  * '''DescribeEC2InstanceLimits'''
-   *  * '''DescribeFleetEvents'''
+   * <li> <a>DescribeFleetAttributes</a>
+   *  * <a>DescribeFleetCapacity</a>
+   *  * <a>DescribeFleetPortSettings</a>
+   *  * <a>DescribeFleetUtilization</a>
+   *  * <a>DescribeRuntimeConfiguration</a>
+   *  * <a>DescribeEC2InstanceLimits</a>
+   *  * <a>DescribeFleetEvents</a>
    * </li> * Update fleets:
-   * <li> '''UpdateFleetAttributes'''
-   *  * '''UpdateFleetCapacity'''
-   *  * '''UpdateFleetPortSettings'''
-   *  * '''UpdateRuntimeConfiguration'''
+   * <li> <a>UpdateFleetAttributes</a>
+   *  * <a>UpdateFleetCapacity</a>
+   *  * <a>UpdateFleetPortSettings</a>
+   *  * <a>UpdateRuntimeConfiguration</a>
    * </li> * Manage fleet actions:
-   * <li> '''StartFleetActions'''
-   *  * '''StopFleetActions'''
+   * <li> <a>StartFleetActions</a>
+   *  * <a>StopFleetActions</a>
    * </li>
    */
   @js.native
@@ -2114,7 +2116,7 @@ package gamelift {
   }
 
   /**
-   * Maximum number of instances allowed based on the Amazon Elastic Compute Cloud (Amazon EC2) instance type. Instance limits can be retrieved by calling '''DescribeEC2InstanceLimits'''.
+   * Maximum number of instances allowed based on the Amazon Elastic Compute Cloud (Amazon EC2) instance type. Instance limits can be retrieved by calling <a>DescribeEC2InstanceLimits</a>.
    */
   @js.native
   trait EC2InstanceLimit extends js.Object {
@@ -2256,25 +2258,25 @@ package gamelift {
   /**
    * General properties describing a fleet.
    *  Fleet-related operations include:
-   * * '''CreateFleet'''
-   *  * '''ListFleets'''
-   *  * '''DeleteFleet'''
+   * * <a>CreateFleet</a>
+   *  * <a>ListFleets</a>
+   *  * <a>DeleteFleet</a>
    *  * Describe fleets:
-   * <li> '''DescribeFleetAttributes'''
-   *  * '''DescribeFleetCapacity'''
-   *  * '''DescribeFleetPortSettings'''
-   *  * '''DescribeFleetUtilization'''
-   *  * '''DescribeRuntimeConfiguration'''
-   *  * '''DescribeEC2InstanceLimits'''
-   *  * '''DescribeFleetEvents'''
+   * <li> <a>DescribeFleetAttributes</a>
+   *  * <a>DescribeFleetCapacity</a>
+   *  * <a>DescribeFleetPortSettings</a>
+   *  * <a>DescribeFleetUtilization</a>
+   *  * <a>DescribeRuntimeConfiguration</a>
+   *  * <a>DescribeEC2InstanceLimits</a>
+   *  * <a>DescribeFleetEvents</a>
    * </li> * Update fleets:
-   * <li> '''UpdateFleetAttributes'''
-   *  * '''UpdateFleetCapacity'''
-   *  * '''UpdateFleetPortSettings'''
-   *  * '''UpdateRuntimeConfiguration'''
+   * <li> <a>UpdateFleetAttributes</a>
+   *  * <a>UpdateFleetCapacity</a>
+   *  * <a>UpdateFleetPortSettings</a>
+   *  * <a>UpdateRuntimeConfiguration</a>
    * </li> * Manage fleet actions:
-   * <li> '''StartFleetActions'''
-   *  * '''StopFleetActions'''
+   * <li> <a>StartFleetActions</a>
+   *  * <a>StopFleetActions</a>
    * </li>
    */
   @js.native
@@ -2346,25 +2348,25 @@ package gamelift {
   /**
    * Information about the fleet's capacity. Fleet capacity is measured in EC2 instances. By default, new fleets have a capacity of one instance, but can be updated as needed. The maximum number of instances for a fleet is determined by the fleet's instance type.
    *  Fleet-related operations include:
-   * * '''CreateFleet'''
-   *  * '''ListFleets'''
-   *  * '''DeleteFleet'''
+   * * <a>CreateFleet</a>
+   *  * <a>ListFleets</a>
+   *  * <a>DeleteFleet</a>
    *  * Describe fleets:
-   * <li> '''DescribeFleetAttributes'''
-   *  * '''DescribeFleetCapacity'''
-   *  * '''DescribeFleetPortSettings'''
-   *  * '''DescribeFleetUtilization'''
-   *  * '''DescribeRuntimeConfiguration'''
-   *  * '''DescribeEC2InstanceLimits'''
-   *  * '''DescribeFleetEvents'''
+   * <li> <a>DescribeFleetAttributes</a>
+   *  * <a>DescribeFleetCapacity</a>
+   *  * <a>DescribeFleetPortSettings</a>
+   *  * <a>DescribeFleetUtilization</a>
+   *  * <a>DescribeRuntimeConfiguration</a>
+   *  * <a>DescribeEC2InstanceLimits</a>
+   *  * <a>DescribeFleetEvents</a>
    * </li> * Update fleets:
-   * <li> '''UpdateFleetAttributes'''
-   *  * '''UpdateFleetCapacity'''
-   *  * '''UpdateFleetPortSettings'''
-   *  * '''UpdateRuntimeConfiguration'''
+   * <li> <a>UpdateFleetAttributes</a>
+   *  * <a>UpdateFleetCapacity</a>
+   *  * <a>UpdateFleetPortSettings</a>
+   *  * <a>UpdateRuntimeConfiguration</a>
    * </li> * Manage fleet actions:
-   * <li> '''StartFleetActions'''
-   *  * '''StopFleetActions'''
+   * <li> <a>StartFleetActions</a>
+   *  * <a>StopFleetActions</a>
    * </li>
    */
   @js.native
@@ -2420,25 +2422,25 @@ package gamelift {
   /**
    * Current status of fleet utilization, including the number of game and player sessions being hosted.
    *  Fleet-related operations include:
-   * * '''CreateFleet'''
-   *  * '''ListFleets'''
-   *  * '''DeleteFleet'''
+   * * <a>CreateFleet</a>
+   *  * <a>ListFleets</a>
+   *  * <a>DeleteFleet</a>
    *  * Describe fleets:
-   * <li> '''DescribeFleetAttributes'''
-   *  * '''DescribeFleetCapacity'''
-   *  * '''DescribeFleetPortSettings'''
-   *  * '''DescribeFleetUtilization'''
-   *  * '''DescribeRuntimeConfiguration'''
-   *  * '''DescribeEC2InstanceLimits'''
-   *  * '''DescribeFleetEvents'''
+   * <li> <a>DescribeFleetAttributes</a>
+   *  * <a>DescribeFleetCapacity</a>
+   *  * <a>DescribeFleetPortSettings</a>
+   *  * <a>DescribeFleetUtilization</a>
+   *  * <a>DescribeRuntimeConfiguration</a>
+   *  * <a>DescribeEC2InstanceLimits</a>
+   *  * <a>DescribeFleetEvents</a>
    * </li> * Update fleets:
-   * <li> '''UpdateFleetAttributes'''
-   *  * '''UpdateFleetCapacity'''
-   *  * '''UpdateFleetPortSettings'''
-   *  * '''UpdateRuntimeConfiguration'''
+   * <li> <a>UpdateFleetAttributes</a>
+   *  * <a>UpdateFleetCapacity</a>
+   *  * <a>UpdateFleetPortSettings</a>
+   *  * <a>UpdateRuntimeConfiguration</a>
    * </li> * Manage fleet actions:
-   * <li> '''StartFleetActions'''
-   *  * '''StopFleetActions'''
+   * <li> <a>StartFleetActions</a>
+   *  * <a>StopFleetActions</a>
    * </li>
    */
   @js.native
@@ -2494,16 +2496,16 @@ package gamelift {
    *  A game session in ACTIVE status can host players. When a game session ends, its status is set to <code>TERMINATED</code>.
    *  Once the session ends, the game session object is retained for 30 days. This means you can reuse idempotency token values after this time. Game session logs are retained for 14 days.
    *  Game-session-related operations include:
-   * * '''CreateGameSession'''
-   *  * '''DescribeGameSessions'''
-   *  * '''DescribeGameSessionDetails'''
-   *  * '''SearchGameSessions'''
-   *  * '''UpdateGameSession'''
-   *  * '''GetGameSessionLogUrl'''
+   * * <a>CreateGameSession</a>
+   *  * <a>DescribeGameSessions</a>
+   *  * <a>DescribeGameSessionDetails</a>
+   *  * <a>SearchGameSessions</a>
+   *  * <a>UpdateGameSession</a>
+   *  * <a>GetGameSessionLogUrl</a>
    *  * Game session placements
-   * <li> '''StartGameSessionPlacement'''
-   *  * '''DescribeGameSessionPlacement'''
-   *  * '''StopGameSessionPlacement'''
+   * <li> <a>StartGameSessionPlacement</a>
+   *  * <a>DescribeGameSessionPlacement</a>
+   *  * <a>StopGameSessionPlacement</a>
    * </li>
    */
   @js.native
@@ -2567,7 +2569,7 @@ package gamelift {
   }
 
   /**
-   * Connection information for the new game session that is created with matchmaking. (with '''StartMatchmaking'''). Once a match is set, the FlexMatch engine places the match and creates a new game session for it. This information, including the game session endpoint and player sessions for each player in the original matchmaking request, is added to the '''MatchmakingTicket''', which can be retrieved by calling '''DescribeMatchmaking'''.
+   * Connection information for the new game session that is created with matchmaking. (with <a>StartMatchmaking</a>). Once a match is set, the FlexMatch engine places the match and creates a new game session for it. This information, including the game session endpoint and player sessions for each player in the original matchmaking request, is added to the <a>MatchmakingTicket</a>, which can be retrieved by calling <a>DescribeMatchmaking</a>.
    */
   @js.native
   trait GameSessionConnectionInfo extends js.Object {
@@ -2623,11 +2625,11 @@ package gamelift {
   }
 
   /**
-   * Object that describes a '''StartGameSessionPlacement''' request. This object includes the full details of the original request plus the current status and start/end time stamps.
+   * Object that describes a <a>StartGameSessionPlacement</a> request. This object includes the full details of the original request plus the current status and start/end time stamps.
    *  Game session placement-related operations include:
-   * * '''StartGameSessionPlacement'''
-   *  * '''DescribeGameSessionPlacement'''
-   *  * '''StopGameSessionPlacement'''
+   * * <a>StartGameSessionPlacement</a>
+   *  * <a>DescribeGameSessionPlacement</a>
+   *  * <a>StopGameSessionPlacement</a>
    */
   @js.native
   trait GameSessionPlacement extends js.Object {
@@ -2707,10 +2709,10 @@ package gamelift {
    *  * The length of time that placement requests can wait in the queue before timing out.
    *  * A set of optional latency policies that protect individual players from high latencies, preventing game sessions from being placed where any individual player is reporting latency higher than a policy's maximum.
    * Queue-related operations include:
-   * * '''CreateGameSessionQueue'''
-   *  * '''DescribeGameSessionQueues'''
-   *  * '''UpdateGameSessionQueue'''
-   *  * '''DeleteGameSessionQueue'''
+   * * <a>CreateGameSessionQueue</a>
+   *  * <a>DescribeGameSessionQueues</a>
+   *  * <a>UpdateGameSessionQueue</a>
+   *  * <a>DeleteGameSessionQueue</a>
    */
   @js.native
   trait GameSessionQueue extends js.Object {
@@ -2742,10 +2744,10 @@ package gamelift {
   /**
    * Fleet designated in a game session queue. Requests for new game sessions in the queue are fulfilled by starting a new game session on any destination configured for a queue.
    *  Queue-related operations include:
-   * * '''CreateGameSessionQueue'''
-   *  * '''DescribeGameSessionQueues'''
-   *  * '''UpdateGameSessionQueue'''
-   *  * '''DeleteGameSessionQueue'''
+   * * <a>CreateGameSessionQueue</a>
+   *  * <a>DescribeGameSessionQueues</a>
+   *  * <a>UpdateGameSessionQueue</a>
+   *  * <a>DeleteGameSessionQueue</a>
    */
   @js.native
   trait GameSessionQueueDestination extends js.Object {
@@ -2898,7 +2900,7 @@ package gamelift {
   }
 
   /**
-   * Information required to remotely connect to a fleet instance. Access is requested by calling '''GetInstanceAccess'''.
+   * Information required to remotely connect to a fleet instance. Access is requested by calling <a>GetInstanceAccess</a>.
    */
   @js.native
   trait InstanceAccess extends js.Object {
@@ -2928,7 +2930,7 @@ package gamelift {
   }
 
   /**
-   * Set of credentials required to remotely access a fleet instance. Access credentials are requested by calling '''GetInstanceAccess''' and returned in an '''InstanceAccess''' object.
+   * Set of credentials required to remotely access a fleet instance. Access credentials are requested by calling <a>GetInstanceAccess</a> and returned in an <a>InstanceAccess</a> object.
    */
   @js.native
   trait InstanceCredentials extends js.Object {
@@ -2989,7 +2991,7 @@ package gamelift {
   }
 
   /**
-   * A range of IP addresses and port settings that allow inbound traffic to connect to server processes on Amazon GameLift. Each game session hosted on a fleet is assigned a unique combination of IP address and port number, which must fall into the fleet's allowed ranges. This combination is included in the '''GameSession''' object.
+   * A range of IP addresses and port settings that allow inbound traffic to connect to server processes on Amazon GameLift. Each game session hosted on a fleet is assigned a unique combination of IP address and port number, which must fall into the fleet's allowed ranges. This combination is included in the <a>GameSession</a> object.
    */
   @js.native
   trait IpPermission extends js.Object {
@@ -3258,7 +3260,7 @@ package gamelift {
   }
 
   /**
-   * Set of rule statements, used with FlexMatch, that determine how to build a certain kind of player match. Each rule set describes a type of group to be created and defines the parameters for acceptable player matches. Rule sets are used in '''MatchmakingConfiguration''' objects.
+   * Set of rule statements, used with FlexMatch, that determine how to build a certain kind of player match. Each rule set describes a type of group to be created and defines the parameters for acceptable player matches. Rule sets are used in <a>MatchmakingConfiguration</a> objects.
    *  A rule set may define the following elements for a match. For detailed information and examples showing how to construct a rule set, see <a href="http://docs.aws.amazon.com/gamelift/latest/developerguide/match-rulesets.html">Build a FlexMatch Rule Set</a>.
    * * Teams -- Required. A rule set must define one or multiple teams for the match and set minimum and maximum team sizes. For example, a rule set might describe a 4x4 match that requires all eight slots to be filled.
    *  * Player attributes -- Optional. These attributes specify a set of player characteristics to evaluate when looking for a match. Matchmaking requests that use a rule set with player attributes must provide the corresponding attribute values. For example, an attribute might specify a player's skill or level.
@@ -3287,7 +3289,7 @@ package gamelift {
   }
 
   /**
-   * Ticket generated to track the progress of a matchmaking request. Each ticket is uniquely identified by a ticket ID, supplied by the requester, when creating a matchmaking request with '''StartMatchmaking'''. Tickets can be retrieved by calling '''DescribeMatchmaking''' with the ticket ID.
+   * Ticket generated to track the progress of a matchmaking request. Each ticket is uniquely identified by a ticket ID, supplied by the requester, when creating a matchmaking request with <a>StartMatchmaking</a>. Tickets can be retrieved by calling <a>DescribeMatchmaking</a> with the ticket ID.
    */
   @js.native
   trait MatchmakingTicket extends js.Object {
@@ -3363,15 +3365,15 @@ package gamelift {
   }
 
   /**
-   * Information about a player session that was created as part of a '''StartGameSessionPlacement''' request. This object contains only the player ID and player session ID. To retrieve full details on a player session, call '''DescribePlayerSessions''' with the player session ID.
+   * Information about a player session that was created as part of a <a>StartGameSessionPlacement</a> request. This object contains only the player ID and player session ID. To retrieve full details on a player session, call <a>DescribePlayerSessions</a> with the player session ID.
    *  Player-session-related operations include:
-   * * '''CreatePlayerSession'''
-   *  * '''CreatePlayerSessions'''
-   *  * '''DescribePlayerSessions'''
+   * * <a>CreatePlayerSession</a>
+   *  * <a>CreatePlayerSessions</a>
+   *  * <a>DescribePlayerSessions</a>
    *  * Game session placements
-   * <li> '''StartGameSessionPlacement'''
-   *  * '''DescribeGameSessionPlacement'''
-   *  * '''StopGameSessionPlacement'''
+   * <li> <a>StartGameSessionPlacement</a>
+   *  * <a>DescribeGameSessionPlacement</a>
+   *  * <a>StopGameSessionPlacement</a>
    * </li>
    */
   @js.native
@@ -3420,7 +3422,7 @@ package gamelift {
   }
 
   /**
-   * Regional latency information for a player, used when requesting a new game session with '''StartGameSessionPlacement'''. This value indicates the amount of time lag that exists when the player is connected to a fleet in the specified region. The relative difference between a player's latency values for multiple regions are used to determine which fleets are best suited to place a new game session for the player.
+   * Regional latency information for a player, used when requesting a new game session with <a>StartGameSessionPlacement</a>. This value indicates the amount of time lag that exists when the player is connected to a fleet in the specified region. The relative difference between a player's latency values for multiple regions are used to determine which fleets are best suited to place a new game session for the player.
    */
   @js.native
   trait PlayerLatency extends js.Object {
@@ -3446,10 +3448,10 @@ package gamelift {
   /**
    * Queue setting that determines the highest latency allowed for individual players when placing a game session. When a latency policy is in force, a game session cannot be placed at any destination in a region where a player is reporting latency higher than the cap. Latency policies are only enforced when the placement request contains player latency information.
    *  Queue-related operations include:
-   * * '''CreateGameSessionQueue'''
-   *  * '''DescribeGameSessionQueues'''
-   *  * '''UpdateGameSessionQueue'''
-   *  * '''DeleteGameSessionQueue'''
+   * * <a>CreateGameSessionQueue</a>
+   *  * <a>DescribeGameSessionQueues</a>
+   *  * <a>UpdateGameSessionQueue</a>
+   *  * <a>DeleteGameSessionQueue</a>
    */
   @js.native
   trait PlayerLatencyPolicy extends js.Object {
@@ -3473,13 +3475,13 @@ package gamelift {
    * Properties describing a player session. Player session objects are created either by creating a player session for a specific game session, or as part of a game session placement. A player session represents either a player reservation for a game session (status <code>RESERVED</code>) or actual player activity in a game session (status <code>ACTIVE</code>). A player session object (including player data) is automatically passed to a game session when the player connects to the game session and is validated.
    *  When a player disconnects, the player session status changes to <code>COMPLETED</code>. Once the session ends, the player session object is retained for 30 days and then removed.
    *  Player-session-related operations include:
-   * * '''CreatePlayerSession'''
-   *  * '''CreatePlayerSessions'''
-   *  * '''DescribePlayerSessions'''
+   * * <a>CreatePlayerSession</a>
+   *  * <a>CreatePlayerSessions</a>
+   *  * <a>DescribePlayerSessions</a>
    *  * Game session placements
-   * <li> '''StartGameSessionPlacement'''
-   *  * '''DescribeGameSessionPlacement'''
-   *  * '''StopGameSessionPlacement'''
+   * <li> <a>StartGameSessionPlacement</a>
+   *  * <a>DescribeGameSessionPlacement</a>
+   *  * <a>StopGameSessionPlacement</a>
    * </li>
    */
   @js.native
@@ -3717,25 +3719,25 @@ package gamelift {
   /**
    * Routing configuration for a fleet alias.
    *  Fleet-related operations include:
-   * * '''CreateFleet'''
-   *  * '''ListFleets'''
-   *  * '''DeleteFleet'''
+   * * <a>CreateFleet</a>
+   *  * <a>ListFleets</a>
+   *  * <a>DeleteFleet</a>
    *  * Describe fleets:
-   * <li> '''DescribeFleetAttributes'''
-   *  * '''DescribeFleetCapacity'''
-   *  * '''DescribeFleetPortSettings'''
-   *  * '''DescribeFleetUtilization'''
-   *  * '''DescribeRuntimeConfiguration'''
-   *  * '''DescribeEC2InstanceLimits'''
-   *  * '''DescribeFleetEvents'''
+   * <li> <a>DescribeFleetAttributes</a>
+   *  * <a>DescribeFleetCapacity</a>
+   *  * <a>DescribeFleetPortSettings</a>
+   *  * <a>DescribeFleetUtilization</a>
+   *  * <a>DescribeRuntimeConfiguration</a>
+   *  * <a>DescribeEC2InstanceLimits</a>
+   *  * <a>DescribeFleetEvents</a>
    * </li> * Update fleets:
-   * <li> '''UpdateFleetAttributes'''
-   *  * '''UpdateFleetCapacity'''
-   *  * '''UpdateFleetPortSettings'''
-   *  * '''UpdateRuntimeConfiguration'''
+   * <li> <a>UpdateFleetAttributes</a>
+   *  * <a>UpdateFleetCapacity</a>
+   *  * <a>UpdateFleetPortSettings</a>
+   *  * <a>UpdateRuntimeConfiguration</a>
    * </li> * Manage fleet actions:
-   * <li> '''StartFleetActions'''
-   *  * '''StopFleetActions'''
+   * <li> <a>StartFleetActions</a>
+   *  * <a>StopFleetActions</a>
    * </li>
    */
   @js.native
@@ -3769,27 +3771,27 @@ package gamelift {
   /**
    * A collection of server process configurations that describe what processes to run on each instance in a fleet. All fleets must have a run-time configuration. Each instance in the fleet launches the server processes specified in the run-time configuration and launches new ones as existing processes end. Each instance regularly checks for an updated run-time configuration and follows the new instructions.
    *  The run-time configuration enables the instances in a fleet to run multiple processes simultaneously. Potential scenarios are as follows: (1) Run multiple processes of a single game server executable to maximize usage of your hosting resources. (2) Run one or more processes of different build executables, such as your game server executable and a related program, or two or more different versions of a game server. (3) Run multiple processes of a single game server but with different launch parameters, for example to run one process on each instance in debug mode.
-   *  A Amazon GameLift instance is limited to 50 processes running simultaneously. A run-time configuration must specify fewer than this limit. To calculate the total number of processes specified in a run-time configuration, add the values of the <code>ConcurrentExecutions</code> parameter for each <code> '''ServerProcess''' </code> object in the run-time configuration.
+   *  A Amazon GameLift instance is limited to 50 processes running simultaneously. A run-time configuration must specify fewer than this limit. To calculate the total number of processes specified in a run-time configuration, add the values of the <code>ConcurrentExecutions</code> parameter for each <code> <a>ServerProcess</a> </code> object in the run-time configuration.
    *  Fleet-related operations include:
-   * * '''CreateFleet'''
-   *  * '''ListFleets'''
-   *  * '''DeleteFleet'''
+   * * <a>CreateFleet</a>
+   *  * <a>ListFleets</a>
+   *  * <a>DeleteFleet</a>
    *  * Describe fleets:
-   * <li> '''DescribeFleetAttributes'''
-   *  * '''DescribeFleetCapacity'''
-   *  * '''DescribeFleetPortSettings'''
-   *  * '''DescribeFleetUtilization'''
-   *  * '''DescribeRuntimeConfiguration'''
-   *  * '''DescribeEC2InstanceLimits'''
-   *  * '''DescribeFleetEvents'''
+   * <li> <a>DescribeFleetAttributes</a>
+   *  * <a>DescribeFleetCapacity</a>
+   *  * <a>DescribeFleetPortSettings</a>
+   *  * <a>DescribeFleetUtilization</a>
+   *  * <a>DescribeRuntimeConfiguration</a>
+   *  * <a>DescribeEC2InstanceLimits</a>
+   *  * <a>DescribeFleetEvents</a>
    * </li> * Update fleets:
-   * <li> '''UpdateFleetAttributes'''
-   *  * '''UpdateFleetCapacity'''
-   *  * '''UpdateFleetPortSettings'''
-   *  * '''UpdateRuntimeConfiguration'''
+   * <li> <a>UpdateFleetAttributes</a>
+   *  * <a>UpdateFleetCapacity</a>
+   *  * <a>UpdateFleetPortSettings</a>
+   *  * <a>UpdateRuntimeConfiguration</a>
    * </li> * Manage fleet actions:
-   * <li> '''StartFleetActions'''
-   *  * '''StopFleetActions'''
+   * <li> <a>StartFleetActions</a>
+   *  * <a>StopFleetActions</a>
    * </li>
    */
   @js.native
@@ -3814,7 +3816,7 @@ package gamelift {
   }
 
   /**
-   * Location in Amazon Simple Storage Service (Amazon S3) where build files can be stored for access by Amazon GameLift. This location is specified in a '''CreateBuild''' request. For more details, see the <a href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-build-cli-uploading.html#gamelift-build-cli-uploading-create-build">Create a Build with Files in Amazon S3</a>.
+   * Location in Amazon Simple Storage Service (Amazon S3) where build files can be stored for access by Amazon GameLift. This location is specified in a <a>CreateBuild</a> request. For more details, see the <a href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-build-cli-uploading.html#gamelift-build-cli-uploading-create-build">Create a Build with Files in Amazon S3</a>.
    */
   @js.native
   trait S3Location extends js.Object {
@@ -3848,16 +3850,16 @@ package gamelift {
   /**
    * Rule that controls how a fleet is scaled. Scaling policies are uniquely identified by the combination of name and fleet ID.
    *  Operations related to fleet capacity scaling include:
-   * * '''DescribeFleetCapacity'''
-   *  * '''UpdateFleetCapacity'''
-   *  * '''DescribeEC2InstanceLimits'''
+   * * <a>DescribeFleetCapacity</a>
+   *  * <a>UpdateFleetCapacity</a>
+   *  * <a>DescribeEC2InstanceLimits</a>
    *  * Manage scaling policies:
-   * <li> '''PutScalingPolicy''' (auto-scaling)
-   *  * '''DescribeScalingPolicies''' (auto-scaling)
-   *  * '''DeleteScalingPolicy''' (auto-scaling)
+   * <li> <a>PutScalingPolicy</a> (auto-scaling)
+   *  * <a>DescribeScalingPolicies</a> (auto-scaling)
+   *  * <a>DeleteScalingPolicy</a> (auto-scaling)
    * </li> * Manage fleet actions:
-   * <li> '''StartFleetActions'''
-   *  * '''StopFleetActions'''
+   * <li> <a>StartFleetActions</a>
+   *  * <a>StopFleetActions</a>
    * </li>
    */
   @js.native
@@ -3972,7 +3974,7 @@ package gamelift {
   }
 
   /**
-   * A set of instructions for launching server processes on each instance in a fleet. Each instruction set identifies the location of the server executable, optional launch parameters, and the number of server processes with this configuration to maintain concurrently on the instance. Server process configurations make up a fleet's <code> '''RuntimeConfiguration''' </code>.
+   * A set of instructions for launching server processes on each instance in a fleet. Each instruction set identifies the location of the server executable, optional launch parameters, and the number of server processes with this configuration to maintain concurrently on the instance. Server process configurations make up a fleet's <code> <a>RuntimeConfiguration</a> </code>.
    */
   @js.native
   trait ServerProcess extends js.Object {
@@ -4269,18 +4271,18 @@ package gamelift {
   }
 
   /**
-   * Settings for a target-based scaling policy (see '''ScalingPolicy'''. A target-based policy tracks a particular fleet metric specifies a target value for the metric. As player usage changes, the policy triggers Amazon GameLift to adjust capacity so that the metric returns to the target value. The target configuration specifies settings as needed for the target based policy, including the target value.
+   * Settings for a target-based scaling policy (see <a>ScalingPolicy</a>. A target-based policy tracks a particular fleet metric specifies a target value for the metric. As player usage changes, the policy triggers Amazon GameLift to adjust capacity so that the metric returns to the target value. The target configuration specifies settings as needed for the target based policy, including the target value.
    *  Operations related to fleet capacity scaling include:
-   * * '''DescribeFleetCapacity'''
-   *  * '''UpdateFleetCapacity'''
-   *  * '''DescribeEC2InstanceLimits'''
+   * * <a>DescribeFleetCapacity</a>
+   *  * <a>UpdateFleetCapacity</a>
+   *  * <a>DescribeEC2InstanceLimits</a>
    *  * Manage scaling policies:
-   * <li> '''PutScalingPolicy''' (auto-scaling)
-   *  * '''DescribeScalingPolicies''' (auto-scaling)
-   *  * '''DeleteScalingPolicy''' (auto-scaling)
+   * <li> <a>PutScalingPolicy</a> (auto-scaling)
+   *  * <a>DescribeScalingPolicies</a> (auto-scaling)
+   *  * <a>DeleteScalingPolicy</a> (auto-scaling)
    * </li> * Manage fleet actions:
-   * <li> '''StartFleetActions'''
-   *  * '''StopFleetActions'''
+   * <li> <a>StartFleetActions</a>
+   *  * <a>StopFleetActions</a>
    * </li>
    */
   @js.native
@@ -4299,7 +4301,7 @@ package gamelift {
   }
 
   /**
-   * The service is unable to resolve the routing for a particular alias because it has a terminal '''RoutingStrategy''' associated with it. The message returned in this exception is the message defined in the routing strategy itself. Such requests should only be retried if the routing strategy for the specified alias is modified.
+   * The service is unable to resolve the routing for a particular alias because it has a terminal <a>RoutingStrategy</a> associated with it. The message returned in this exception is the message defined in the routing strategy itself. Such requests should only be retried if the routing strategy for the specified alias is modified.
    */
   @js.native
   trait TerminalRoutingStrategyExceptionException extends js.Object {
@@ -4787,12 +4789,12 @@ package gamelift {
   /**
    * Represents an authorization for a VPC peering connection between the VPC for an Amazon GameLift fleet and another VPC on an account you have access to. This authorization must exist and be valid for the peering connection to be established. Authorizations are valid for 24 hours after they are issued.
    *  VPC peering connection operations include:
-   * * '''CreateVpcPeeringAuthorization'''
-   *  * '''DescribeVpcPeeringAuthorizations'''
-   *  * '''DeleteVpcPeeringAuthorization'''
-   *  * '''CreateVpcPeeringConnection'''
-   *  * '''DescribeVpcPeeringConnections'''
-   *  * '''DeleteVpcPeeringConnection'''
+   * * <a>CreateVpcPeeringAuthorization</a>
+   *  * <a>DescribeVpcPeeringAuthorizations</a>
+   *  * <a>DeleteVpcPeeringAuthorization</a>
+   *  * <a>CreateVpcPeeringConnection</a>
+   *  * <a>DescribeVpcPeeringConnections</a>
+   *  * <a>DeleteVpcPeeringConnection</a>
    */
   @js.native
   trait VpcPeeringAuthorization extends js.Object {
@@ -4824,12 +4826,12 @@ package gamelift {
   /**
    * Represents a peering connection between a VPC on one of your AWS accounts and the VPC for your Amazon GameLift fleets. This record may be for an active peering connection or a pending connection that has not yet been established.
    *  VPC peering connection operations include:
-   * * '''CreateVpcPeeringAuthorization'''
-   *  * '''DescribeVpcPeeringAuthorizations'''
-   *  * '''DeleteVpcPeeringAuthorization'''
-   *  * '''CreateVpcPeeringConnection'''
-   *  * '''DescribeVpcPeeringConnections'''
-   *  * '''DeleteVpcPeeringConnection'''
+   * * <a>CreateVpcPeeringAuthorization</a>
+   *  * <a>DescribeVpcPeeringAuthorizations</a>
+   *  * <a>DeleteVpcPeeringAuthorization</a>
+   *  * <a>CreateVpcPeeringConnection</a>
+   *  * <a>DescribeVpcPeeringConnections</a>
+   *  * <a>DeleteVpcPeeringConnection</a>
    */
   @js.native
   trait VpcPeeringConnection extends js.Object {
@@ -4862,7 +4864,7 @@ package gamelift {
   }
 
   /**
-   * Represents status information for a VPC peering connection. Status is associated with a '''VpcPeeringConnection''' object. Status codes and messages are provided from EC2 (see <a href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_VpcPeeringConnectionStateReason.html">VpcPeeringConnectionStateReason</a>). Connection status information is also communicated as a fleet '''Event'''.
+   * Represents status information for a VPC peering connection. Status is associated with a <a>VpcPeeringConnection</a> object. Status codes and messages are provided from EC2 (see <a href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_VpcPeeringConnectionStateReason.html">VpcPeeringConnectionStateReason</a>). Connection status information is also communicated as a fleet <a>Event</a>.
    */
   @js.native
   trait VpcPeeringConnectionStatus extends js.Object {

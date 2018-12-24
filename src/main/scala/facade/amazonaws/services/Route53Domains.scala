@@ -62,7 +62,9 @@ package object route53domains {
 package route53domains {
   @js.native
   @JSImport("aws-sdk", "Route53Domains")
-  class Route53Domains(config: AWSConfig) extends js.Object {
+  class Route53Domains() extends js.Object {
+    def this(config: AWSConfig) = this()
+
     def checkDomainAvailability(params: CheckDomainAvailabilityRequest): Request[CheckDomainAvailabilityResponse] = js.native
     def checkDomainTransferability(params: CheckDomainTransferabilityRequest): Request[CheckDomainTransferabilityResponse] = js.native
     def deleteTagsForDomain(params: DeleteTagsForDomainRequest): Request[DeleteTagsForDomainResponse] = js.native
@@ -973,7 +975,7 @@ package route53domains {
   }
 
   /**
-   * The '''GetOperationDetail''' request includes the following element.
+   * The <a>GetOperationDetail</a> request includes the following element.
    */
   @js.native
   trait GetOperationDetailRequest extends js.Object {

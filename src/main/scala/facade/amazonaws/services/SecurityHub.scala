@@ -62,7 +62,9 @@ package object securityhub {
 package securityhub {
   @js.native
   @JSImport("aws-sdk", "SecurityHub")
-  class SecurityHub(config: AWSConfig) extends js.Object {
+  class SecurityHub() extends js.Object {
+    def this(config: AWSConfig) = this()
+
     def acceptInvitation(params: AcceptInvitationRequest): Request[AcceptInvitationResponse] = js.native
     def batchDisableStandards(params: BatchDisableStandardsRequest): Request[BatchDisableStandardsResponse] = js.native
     def batchEnableStandards(params: BatchEnableStandardsRequest): Request[BatchEnableStandardsResponse] = js.native

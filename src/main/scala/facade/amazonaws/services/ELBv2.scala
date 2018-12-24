@@ -143,7 +143,9 @@ package object elbv2 {
 package elbv2 {
   @js.native
   @JSImport("aws-sdk", "ELBv2")
-  class ELBv2(config: AWSConfig) extends js.Object {
+  class ELBv2() extends js.Object {
+    def this(config: AWSConfig) = this()
+
     def addListenerCertificates(params: AddListenerCertificatesInput): Request[AddListenerCertificatesOutput] = js.native
     def addTags(params: AddTagsInput): Request[AddTagsOutput] = js.native
     def createListener(params: CreateListenerInput): Request[CreateListenerOutput] = js.native

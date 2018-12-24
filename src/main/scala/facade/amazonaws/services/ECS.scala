@@ -103,7 +103,9 @@ package object ecs {
 package ecs {
   @js.native
   @JSImport("aws-sdk", "ECS")
-  class ECS(config: AWSConfig) extends js.Object {
+  class ECS() extends js.Object {
+    def this(config: AWSConfig) = this()
+
     def createCluster(params: CreateClusterRequest): Request[CreateClusterResponse] = js.native
     def createService(params: CreateServiceRequest): Request[CreateServiceResponse] = js.native
     def deleteAccountSetting(params: DeleteAccountSettingRequest): Request[DeleteAccountSettingResponse] = js.native
@@ -1386,7 +1388,7 @@ package ecs {
   }
 
   /**
-   * Hostnames and IP address entries that are added to the <code>/etc/hosts</code> file of a container via the <code>extraHosts</code> parameter of its '''ContainerDefinition'''.
+   * Hostnames and IP address entries that are added to the <code>/etc/hosts</code> file of a container via the <code>extraHosts</code> parameter of its <a>ContainerDefinition</a>.
    */
   @js.native
   trait HostEntry extends js.Object {
@@ -1482,7 +1484,7 @@ package ecs {
   }
 
   /**
-   * Linux-specific options that are applied to the container, such as Linux '''KernelCapabilities'''.
+   * Linux-specific options that are applied to the container, such as Linux <a>KernelCapabilities</a>.
    */
   @js.native
   trait LinuxParameters extends js.Object {
@@ -1995,7 +1997,7 @@ package ecs {
   }
 
   /**
-   * Details on the network bindings between a container and its host container instance. After a task reaches the <code>RUNNING</code> status, manual and automatic host and container port assignments are visible in the <code>networkBindings</code> section of '''DescribeTasks''' API responses.
+   * Details on the network bindings between a container and its host container instance. After a task reaches the <code>RUNNING</code> status, manual and automatic host and container port assignments are visible in the <code>networkBindings</code> section of <a>DescribeTasks</a> API responses.
    */
   @js.native
   trait NetworkBinding extends js.Object {
@@ -2139,7 +2141,7 @@ package ecs {
   /**
    * Port mappings allow containers to access ports on the host container instance to send or receive traffic. Port mappings are specified as part of the container definition.
    *  If you are using containers in a task with the <code>awsvpc</code> or <code>host</code> network mode, exposed ports should be specified using <code>containerPort</code>. The <code>hostPort</code> can be left blank or it must be the same value as the <code>containerPort</code>.
-   *  After a task reaches the <code>RUNNING</code> status, manual and automatic host and container port assignments are visible in the <code>networkBindings</code> section of '''DescribeTasks''' API responses.
+   *  After a task reaches the <code>RUNNING</code> status, manual and automatic host and container port assignments are visible in the <code>networkBindings</code> section of <a>DescribeTasks</a> API responses.
    */
   @js.native
   trait PortMapping extends js.Object {

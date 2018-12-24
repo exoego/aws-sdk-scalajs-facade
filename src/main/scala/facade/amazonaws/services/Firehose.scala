@@ -92,7 +92,9 @@ package object firehose {
 package firehose {
   @js.native
   @JSImport("aws-sdk", "Firehose")
-  class Firehose(config: AWSConfig) extends js.Object {
+  class Firehose() extends js.Object {
+    def this(config: AWSConfig) = this()
+
     def createDeliveryStream(params: CreateDeliveryStreamInput): Request[CreateDeliveryStreamOutput] = js.native
     def deleteDeliveryStream(params: DeleteDeliveryStreamInput): Request[DeleteDeliveryStreamOutput] = js.native
     def describeDeliveryStream(params: DescribeDeliveryStreamInput): Request[DescribeDeliveryStreamOutput] = js.native
@@ -421,7 +423,7 @@ package firehose {
   }
 
   /**
-   * The deserializer you want Kinesis Data Firehose to use for converting the input data from JSON. Kinesis Data Firehose then serializes the data to its final format using the '''Serializer'''. Kinesis Data Firehose supports two types of deserializers: the <a href="https://cwiki.apache.org/confluence/display/Hive/LanguageManual+DDL#LanguageManualDDL-JSON">Apache Hive JSON SerDe</a> and the <a href="https://github.com/rcongiu/Hive-JSON-Serde">OpenX JSON SerDe</a>.
+   * The deserializer you want Kinesis Data Firehose to use for converting the input data from JSON. Kinesis Data Firehose then serializes the data to its final format using the <a>Serializer</a>. Kinesis Data Firehose supports two types of deserializers: the <a href="https://cwiki.apache.org/confluence/display/Hive/LanguageManual+DDL#LanguageManualDDL-JSON">Apache Hive JSON SerDe</a> and the <a href="https://github.com/rcongiu/Hive-JSON-Serde">OpenX JSON SerDe</a>.
    */
   @js.native
   trait Deserializer extends js.Object {
@@ -1295,7 +1297,7 @@ package firehose {
   }
 
   /**
-   * Contains the result for an individual record from a '''PutRecordBatch''' request. If the record is successfully added to your delivery stream, it receives a record ID. If the record fails to be added to your delivery stream, the result includes an error code and an error message.
+   * Contains the result for an individual record from a <a>PutRecordBatch</a> request. If the record is successfully added to your delivery stream, it receives a record ID. If the record fails to be added to your delivery stream, the result includes an error code and an error message.
    */
   @js.native
   trait PutRecordBatchResponseEntry extends js.Object {

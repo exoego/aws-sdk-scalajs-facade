@@ -35,7 +35,9 @@ package object dlm {
 package dlm {
   @js.native
   @JSImport("aws-sdk", "DLM")
-  class DLM(config: AWSConfig) extends js.Object {
+  class DLM() extends js.Object {
+    def this(config: AWSConfig) = this()
+
     def createLifecyclePolicy(params: CreateLifecyclePolicyRequest): Request[CreateLifecyclePolicyResponse] = js.native
     def deleteLifecyclePolicy(params: DeleteLifecyclePolicyRequest): Request[DeleteLifecyclePolicyResponse] = js.native
     def getLifecyclePolicies(params: GetLifecyclePoliciesRequest): Request[GetLifecyclePoliciesResponse] = js.native

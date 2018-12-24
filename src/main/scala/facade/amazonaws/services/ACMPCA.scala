@@ -50,7 +50,9 @@ package object acmpca {
 package acmpca {
   @js.native
   @JSImport("aws-sdk", "ACMPCA")
-  class ACMPCA(config: AWSConfig) extends js.Object {
+  class ACMPCA() extends js.Object {
+    def this(config: AWSConfig) = this()
+
     def createCertificateAuthority(params: CreateCertificateAuthorityRequest): Request[CreateCertificateAuthorityResponse] = js.native
     def createCertificateAuthorityAuditReport(params: CreateCertificateAuthorityAuditReportRequest): Request[CreateCertificateAuthorityAuditReportResponse] = js.native
     def deleteCertificateAuthority(params: DeleteCertificateAuthorityRequest): Request[js.Object] = js.native
@@ -143,7 +145,7 @@ package acmpca {
   }
 
   /**
-   * Contains information about your private certificate authority (CA). Your private CA can issue and revoke X.509 digital certificates. Digital certificates verify that the entity named in the certificate <b>Subject</b> field owns or controls the public key contained in the <b>Subject Public Key Info</b> field. Call the '''CreateCertificateAuthority''' operation to create your private CA. You must then call the '''GetCertificateAuthorityCertificate''' operation to retrieve a private CA certificate signing request (CSR). Take the CSR to your on-premises CA and sign it with the root CA certificate or a subordinate certificate. Call the '''ImportCertificateAuthorityCertificate''' operation to import the signed certificate into AWS Certificate Manager (ACM).
+   * Contains information about your private certificate authority (CA). Your private CA can issue and revoke X.509 digital certificates. Digital certificates verify that the entity named in the certificate <b>Subject</b> field owns or controls the public key contained in the <b>Subject Public Key Info</b> field. Call the <a>CreateCertificateAuthority</a> operation to create your private CA. You must then call the <a>GetCertificateAuthorityCertificate</a> operation to retrieve a private CA certificate signing request (CSR). Take the CSR to your on-premises CA and sign it with the root CA certificate or a subordinate certificate. Call the <a>ImportCertificateAuthorityCertificate</a> operation to import the signed certificate into AWS Certificate Manager (ACM).
    */
   @js.native
   trait CertificateAuthority extends js.Object {
@@ -194,7 +196,7 @@ package acmpca {
   }
 
   /**
-   * Contains configuration information for your private certificate authority (CA). This includes information about the class of public key algorithm and the key pair that your private CA creates when it issues a certificate, the signature algorithm it uses used when issuing certificates, and its X.500 distinguished name. You must specify this information when you call the '''CreateCertificateAuthority''' operation.
+   * Contains configuration information for your private certificate authority (CA). This includes information about the class of public key algorithm and the key pair that your private CA creates when it issues a certificate, the signature algorithm it uses used when issuing certificates, and its X.500 distinguished name. You must specify this information when you call the <a>CreateCertificateAuthority</a> operation.
    */
   @js.native
   trait CertificateAuthorityConfiguration extends js.Object {
@@ -610,7 +612,7 @@ package acmpca {
   }
 
   /**
-   * The token specified in the <code>NextToken</code> argument is not valid. Use the token returned from your previous call to '''ListCertificateAuthorities'''.
+   * The token specified in the <code>NextToken</code> argument is not valid. Use the token returned from your previous call to <a>ListCertificateAuthorities</a>.
    */
   @js.native
   trait InvalidNextTokenExceptionException extends js.Object {
@@ -839,7 +841,7 @@ package acmpca {
   }
 
   /**
-   * Certificate revocation information used by the '''CreateCertificateAuthority''' and '''UpdateCertificateAuthority''' operations. Your private certificate authority (CA) can create and maintain a certificate revocation list (CRL). A CRL contains information about certificates revoked by your CA. For more information, see '''RevokeCertificate'''.
+   * Certificate revocation information used by the <a>CreateCertificateAuthority</a> and <a>UpdateCertificateAuthority</a> operations. Your private certificate authority (CA) can create and maintain a certificate revocation list (CRL). A CRL contains information about certificates revoked by your CA. For more information, see <a>RevokeCertificate</a>.
    */
   @js.native
   trait RevocationConfiguration extends js.Object {
@@ -902,7 +904,7 @@ package acmpca {
   }
 
   /**
-   * Tags are labels that you can use to identify and organize your private CAs. Each tag consists of a key and an optional value. You can associate up to 50 tags with a private CA. To add one or more tags to a private CA, call the '''TagCertificateAuthority''' operation. To remove a tag, call the '''UntagCertificateAuthority''' operation.
+   * Tags are labels that you can use to identify and organize your private CAs. Each tag consists of a key and an optional value. You can associate up to 50 tags with a private CA. To add one or more tags to a private CA, call the <a>TagCertificateAuthority</a> operation. To remove a tag, call the <a>UntagCertificateAuthority</a> operation.
    */
   @js.native
   trait Tag extends js.Object {
@@ -988,7 +990,7 @@ package acmpca {
   }
 
   /**
-   * Length of time for which the certificate issued by your private certificate authority (CA), or by the private CA itself, is valid in days, months, or years. You can issue a certificate by calling the '''IssueCertificate''' operation.
+   * Length of time for which the certificate issued by your private certificate authority (CA), or by the private CA itself, is valid in days, months, or years. You can issue a certificate by calling the <a>IssueCertificate</a> operation.
    */
   @js.native
   trait Validity extends js.Object {

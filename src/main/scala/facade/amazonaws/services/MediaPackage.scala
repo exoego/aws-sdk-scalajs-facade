@@ -29,7 +29,9 @@ package object mediapackage {
 package mediapackage {
   @js.native
   @JSImport("aws-sdk", "MediaPackage")
-  class MediaPackage(config: AWSConfig) extends js.Object {
+  class MediaPackage() extends js.Object {
+    def this(config: AWSConfig) = this()
+
     def createChannel(params: CreateChannelRequest): Request[CreateChannelResponse] = js.native
     def createOriginEndpoint(params: CreateOriginEndpointRequest): Request[CreateOriginEndpointResponse] = js.native
     def deleteChannel(params: DeleteChannelRequest): Request[DeleteChannelResponse] = js.native

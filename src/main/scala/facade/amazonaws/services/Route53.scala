@@ -130,7 +130,9 @@ package object route53 {
 package route53 {
   @js.native
   @JSImport("aws-sdk", "Route53")
-  class Route53(config: AWSConfig) extends js.Object {
+  class Route53() extends js.Object {
+    def this(config: AWSConfig) = this()
+
     def associateVPCWithHostedZone(params: AssociateVPCWithHostedZoneRequest): Request[AssociateVPCWithHostedZoneResponse] = js.native
     def changeResourceRecordSets(params: ChangeResourceRecordSetsRequest): Request[ChangeResourceRecordSetsResponse] = js.native
     def changeTagsForResource(params: ChangeTagsForResourceRequest): Request[ChangeTagsForResourceResponse] = js.native

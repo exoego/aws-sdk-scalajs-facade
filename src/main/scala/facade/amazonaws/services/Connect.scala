@@ -68,7 +68,9 @@ package object connect {
 package connect {
   @js.native
   @JSImport("aws-sdk", "Connect")
-  class Connect(config: AWSConfig) extends js.Object {
+  class Connect() extends js.Object {
+    def this(config: AWSConfig) = this()
+
     def createUser(params: CreateUserRequest): Request[CreateUserResponse] = js.native
     def deleteUser(params: DeleteUserRequest): Request[js.Object] = js.native
     def describeUser(params: DescribeUserRequest): Request[DescribeUserResponse] = js.native

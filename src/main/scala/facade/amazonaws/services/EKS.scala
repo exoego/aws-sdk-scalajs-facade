@@ -17,7 +17,9 @@ package object eks {
 package eks {
   @js.native
   @JSImport("aws-sdk", "EKS")
-  class EKS(config: AWSConfig) extends js.Object {
+  class EKS() extends js.Object {
+    def this(config: AWSConfig) = this()
+
     def createCluster(params: CreateClusterRequest): Request[CreateClusterResponse] = js.native
     def deleteCluster(params: DeleteClusterRequest): Request[DeleteClusterResponse] = js.native
     def describeCluster(params: DescribeClusterRequest): Request[DescribeClusterResponse] = js.native

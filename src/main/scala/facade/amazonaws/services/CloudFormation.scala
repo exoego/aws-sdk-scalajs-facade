@@ -162,7 +162,9 @@ package object cloudformation {
 package cloudformation {
   @js.native
   @JSImport("aws-sdk", "CloudFormation")
-  class CloudFormation(config: AWSConfig) extends js.Object {
+  class CloudFormation() extends js.Object {
+    def this(config: AWSConfig) = this()
+
     def cancelUpdateStack(params: CancelUpdateStackInput): Request[js.Object] = js.native
     def continueUpdateRollback(params: ContinueUpdateRollbackInput): Request[ContinueUpdateRollbackOutput] = js.native
     def createChangeSet(params: CreateChangeSetInput): Request[CreateChangeSetOutput] = js.native
@@ -263,7 +265,7 @@ package cloudformation {
   }
 
   /**
-   * The input for the '''CancelUpdateStack''' action.
+   * The input for the <a>CancelUpdateStack</a> action.
    */
   @js.native
   trait CancelUpdateStackInput extends js.Object {
@@ -396,7 +398,7 @@ package cloudformation {
   }
 
   /**
-   * The input for the '''ContinueUpdateRollback''' action.
+   * The input for the <a>ContinueUpdateRollback</a> action.
    */
   @js.native
   trait ContinueUpdateRollbackInput extends js.Object {
@@ -423,7 +425,7 @@ package cloudformation {
   }
 
   /**
-   * The output for a '''ContinueUpdateRollback''' action.
+   * The output for a <a>ContinueUpdateRollback</a> action.
    */
   @js.native
   trait ContinueUpdateRollbackOutput extends js.Object {
@@ -439,7 +441,7 @@ package cloudformation {
   }
 
   /**
-   * The input for the '''CreateChangeSet''' action.
+   * The input for the <a>CreateChangeSet</a> action.
    */
   @js.native
   trait CreateChangeSetInput extends js.Object {
@@ -499,7 +501,7 @@ package cloudformation {
   }
 
   /**
-   * The output for the '''CreateChangeSet''' action.
+   * The output for the <a>CreateChangeSet</a> action.
    */
   @js.native
   trait CreateChangeSetOutput extends js.Object {
@@ -520,7 +522,7 @@ package cloudformation {
   }
 
   /**
-   * The input for '''CreateStack''' action.
+   * The input for <a>CreateStack</a> action.
    */
   @js.native
   trait CreateStackInput extends js.Object {
@@ -631,7 +633,7 @@ package cloudformation {
   }
 
   /**
-   * The output for a '''CreateStack''' action.
+   * The output for a <a>CreateStack</a> action.
    */
   @js.native
   trait CreateStackOutput extends js.Object {
@@ -706,7 +708,7 @@ package cloudformation {
   }
 
   /**
-   * The input for the '''DeleteChangeSet''' action.
+   * The input for the <a>DeleteChangeSet</a> action.
    */
   @js.native
   trait DeleteChangeSetInput extends js.Object {
@@ -727,7 +729,7 @@ package cloudformation {
   }
 
   /**
-   * The output for the '''DeleteChangeSet''' action.
+   * The output for the <a>DeleteChangeSet</a> action.
    */
   @js.native
   trait DeleteChangeSetOutput extends js.Object {
@@ -743,7 +745,7 @@ package cloudformation {
   }
 
   /**
-   * The input for '''DeleteStack''' action.
+   * The input for <a>DeleteStack</a> action.
    */
   @js.native
   trait DeleteStackInput extends js.Object {
@@ -843,7 +845,7 @@ package cloudformation {
   }
 
   /**
-   * The input for the '''DescribeAccountLimits''' action.
+   * The input for the <a>DescribeAccountLimits</a> action.
    */
   @js.native
   trait DescribeAccountLimitsInput extends js.Object {
@@ -861,7 +863,7 @@ package cloudformation {
   }
 
   /**
-   * The output for the '''DescribeAccountLimits''' action.
+   * The output for the <a>DescribeAccountLimits</a> action.
    */
   @js.native
   trait DescribeAccountLimitsOutput extends js.Object {
@@ -882,7 +884,7 @@ package cloudformation {
   }
 
   /**
-   * The input for the '''DescribeChangeSet''' action.
+   * The input for the <a>DescribeChangeSet</a> action.
    */
   @js.native
   trait DescribeChangeSetInput extends js.Object {
@@ -906,7 +908,7 @@ package cloudformation {
   }
 
   /**
-   * The output for the '''DescribeChangeSet''' action.
+   * The output for the <a>DescribeChangeSet</a> action.
    */
   @js.native
   trait DescribeChangeSetOutput extends js.Object {
@@ -1017,7 +1019,7 @@ package cloudformation {
   }
 
   /**
-   * The input for '''DescribeStackEvents''' action.
+   * The input for <a>DescribeStackEvents</a> action.
    */
   @js.native
   trait DescribeStackEventsInput extends js.Object {
@@ -1038,7 +1040,7 @@ package cloudformation {
   }
 
   /**
-   * The output for a '''DescribeStackEvents''' action.
+   * The output for a <a>DescribeStackEvents</a> action.
    */
   @js.native
   trait DescribeStackEventsOutput extends js.Object {
@@ -1137,7 +1139,7 @@ package cloudformation {
   }
 
   /**
-   * The input for '''DescribeStackResource''' action.
+   * The input for <a>DescribeStackResource</a> action.
    */
   @js.native
   trait DescribeStackResourceInput extends js.Object {
@@ -1158,7 +1160,7 @@ package cloudformation {
   }
 
   /**
-   * The output for a '''DescribeStackResource''' action.
+   * The output for a <a>DescribeStackResource</a> action.
    */
   @js.native
   trait DescribeStackResourceOutput extends js.Object {
@@ -1176,7 +1178,7 @@ package cloudformation {
   }
 
   /**
-   * The input for '''DescribeStackResources''' action.
+   * The input for <a>DescribeStackResources</a> action.
    */
   @js.native
   trait DescribeStackResourcesInput extends js.Object {
@@ -1200,7 +1202,7 @@ package cloudformation {
   }
 
   /**
-   * The output for a '''DescribeStackResources''' action.
+   * The output for a <a>DescribeStackResources</a> action.
    */
   @js.native
   trait DescribeStackResourcesOutput extends js.Object {
@@ -1281,7 +1283,7 @@ package cloudformation {
   }
 
   /**
-   * The input for '''DescribeStacks''' action.
+   * The input for <a>DescribeStacks</a> action.
    */
   @js.native
   trait DescribeStacksInput extends js.Object {
@@ -1302,7 +1304,7 @@ package cloudformation {
   }
 
   /**
-   * The output for a '''DescribeStacks''' action.
+   * The output for a <a>DescribeStacks</a> action.
    */
   @js.native
   trait DescribeStacksOutput extends js.Object {
@@ -1397,7 +1399,7 @@ package cloudformation {
   }
 
   /**
-   * The input for an '''EstimateTemplateCost''' action.
+   * The input for an <a>EstimateTemplateCost</a> action.
    */
   @js.native
   trait EstimateTemplateCostInput extends js.Object {
@@ -1421,7 +1423,7 @@ package cloudformation {
   }
 
   /**
-   * The output for a '''EstimateTemplateCost''' action.
+   * The output for a <a>EstimateTemplateCost</a> action.
    */
   @js.native
   trait EstimateTemplateCostOutput extends js.Object {
@@ -1446,7 +1448,7 @@ package cloudformation {
   }
 
   /**
-   * The input for the '''ExecuteChangeSet''' action.
+   * The input for the <a>ExecuteChangeSet</a> action.
    */
   @js.native
   trait ExecuteChangeSetInput extends js.Object {
@@ -1470,7 +1472,7 @@ package cloudformation {
   }
 
   /**
-   * The output for the '''ExecuteChangeSet''' action.
+   * The output for the <a>ExecuteChangeSet</a> action.
    */
   @js.native
   trait ExecuteChangeSetOutput extends js.Object {
@@ -1521,7 +1523,7 @@ package cloudformation {
   }
 
   /**
-   * The input for the '''GetStackPolicy''' action.
+   * The input for the <a>GetStackPolicy</a> action.
    */
   @js.native
   trait GetStackPolicyInput extends js.Object {
@@ -1539,7 +1541,7 @@ package cloudformation {
   }
 
   /**
-   * The output for the '''GetStackPolicy''' action.
+   * The output for the <a>GetStackPolicy</a> action.
    */
   @js.native
   trait GetStackPolicyOutput extends js.Object {
@@ -1557,7 +1559,7 @@ package cloudformation {
   }
 
   /**
-   * The input for a '''GetTemplate''' action.
+   * The input for a <a>GetTemplate</a> action.
    */
   @js.native
   trait GetTemplateInput extends js.Object {
@@ -1581,7 +1583,7 @@ package cloudformation {
   }
 
   /**
-   * The output for '''GetTemplate''' action.
+   * The output for <a>GetTemplate</a> action.
    */
   @js.native
   trait GetTemplateOutput extends js.Object {
@@ -1602,7 +1604,7 @@ package cloudformation {
   }
 
   /**
-   * The input for the '''GetTemplateSummary''' action.
+   * The input for the <a>GetTemplateSummary</a> action.
    */
   @js.native
   trait GetTemplateSummaryInput extends js.Object {
@@ -1629,7 +1631,7 @@ package cloudformation {
   }
 
   /**
-   * The output for the '''GetTemplateSummary''' action.
+   * The output for the <a>GetTemplateSummary</a> action.
    */
   @js.native
   trait GetTemplateSummaryOutput extends js.Object {
@@ -1668,7 +1670,7 @@ package cloudformation {
   }
 
   /**
-   * The input for the '''ListChangeSets''' action.
+   * The input for the <a>ListChangeSets</a> action.
    */
   @js.native
   trait ListChangeSetsInput extends js.Object {
@@ -1689,7 +1691,7 @@ package cloudformation {
   }
 
   /**
-   * The output for the '''ListChangeSets''' action.
+   * The output for the <a>ListChangeSets</a> action.
    */
   @js.native
   trait ListChangeSetsOutput extends js.Object {
@@ -1824,7 +1826,7 @@ package cloudformation {
   }
 
   /**
-   * The input for the '''ListStackResource''' action.
+   * The input for the <a>ListStackResource</a> action.
    */
   @js.native
   trait ListStackResourcesInput extends js.Object {
@@ -1845,7 +1847,7 @@ package cloudformation {
   }
 
   /**
-   * The output for a '''ListStackResources''' action.
+   * The output for a <a>ListStackResources</a> action.
    */
   @js.native
   trait ListStackResourcesOutput extends js.Object {
@@ -1986,7 +1988,7 @@ package cloudformation {
   }
 
   /**
-   * The input for '''ListStacks''' action.
+   * The input for <a>ListStacks</a> action.
    */
   @js.native
   trait ListStacksInput extends js.Object {
@@ -2007,7 +2009,7 @@ package cloudformation {
   }
 
   /**
-   * The output for '''ListStacks''' action.
+   * The output for <a>ListStacks</a> action.
    */
   @js.native
   trait ListStacksOutput extends js.Object {
@@ -2368,7 +2370,7 @@ package cloudformation {
   }
 
   /**
-   * The input for the '''SetStackPolicy''' action.
+   * The input for the <a>SetStackPolicy</a> action.
    */
   @js.native
   trait SetStackPolicyInput extends js.Object {
@@ -2392,7 +2394,7 @@ package cloudformation {
   }
 
   /**
-   * The input for the '''SignalResource''' action.
+   * The input for the <a>SignalResource</a> action.
    */
   @js.native
   trait SignalResourceInput extends js.Object {
@@ -2779,7 +2781,7 @@ package cloudformation {
   /**
    * Contains the drift information for a resource that has been checked for drift. This includes actual and expected property values for resources in which AWS CloudFormation has detected drift. Only resource properties explicitly defined in the stack template are checked for drift. For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting Unregulated Configuration Changes to Stacks and Resources</a>.
    *  Resources that do not currently support drift detection cannot be checked. For a list of resources that support drift detection, see <a href="http://docs.aws.amazon.com/http:/docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift-resource-list.html">Resources that Support Drift Detection</a>.
-   *  Use '''DetectStackResourceDrift''' to detect drift on individual resources, or '''DetectStackDrift''' to detect drift on all resources in a given stack that support drift detection.
+   *  Use <a>DetectStackResourceDrift</a> to detect drift on individual resources, or <a>DetectStackDrift</a> to detect drift on all resources in a given stack that support drift detection.
    */
   @js.native
   trait StackResourceDrift extends js.Object {
@@ -3313,7 +3315,7 @@ package cloudformation {
   }
 
   /**
-   * The input for an '''UpdateStack''' action.
+   * The input for an <a>UpdateStack</a> action.
    */
   @js.native
   trait UpdateStackInput extends js.Object {
@@ -3421,7 +3423,7 @@ package cloudformation {
   }
 
   /**
-   * The output for an '''UpdateStack''' action.
+   * The output for an <a>UpdateStack</a> action.
    */
   @js.native
   trait UpdateStackOutput extends js.Object {
@@ -3541,7 +3543,7 @@ package cloudformation {
   }
 
   /**
-   * The input for '''ValidateTemplate''' action.
+   * The input for <a>ValidateTemplate</a> action.
    */
   @js.native
   trait ValidateTemplateInput extends js.Object {
@@ -3562,7 +3564,7 @@ package cloudformation {
   }
 
   /**
-   * The output for '''ValidateTemplate''' action.
+   * The output for <a>ValidateTemplate</a> action.
    */
   @js.native
   trait ValidateTemplateOutput extends js.Object {

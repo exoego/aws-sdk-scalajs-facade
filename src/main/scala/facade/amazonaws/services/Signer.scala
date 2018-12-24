@@ -47,7 +47,9 @@ package object signer {
 package signer {
   @js.native
   @JSImport("aws-sdk", "Signer")
-  class Signer(config: AWSConfig) extends js.Object {
+  class Signer() extends js.Object {
+    def this(config: AWSConfig) = this()
+
     def cancelSigningProfile(params: CancelSigningProfileRequest): Request[js.Object] = js.native
     def describeSigningJob(params: DescribeSigningJobRequest): Request[DescribeSigningJobResponse] = js.native
     def getSigningPlatform(params: GetSigningPlatformRequest): Request[GetSigningPlatformResponse] = js.native

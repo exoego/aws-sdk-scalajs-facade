@@ -167,7 +167,9 @@ package object elasticbeanstalk {
 package elasticbeanstalk {
   @js.native
   @JSImport("aws-sdk", "ElasticBeanstalk")
-  class ElasticBeanstalk(config: AWSConfig) extends js.Object {
+  class ElasticBeanstalk() extends js.Object {
+    def this(config: AWSConfig) = this()
+
     def abortEnvironmentUpdate(params: AbortEnvironmentUpdateMessage): Request[js.Object] = js.native
     def applyEnvironmentManagedAction(params: ApplyEnvironmentManagedActionRequest): Request[ApplyEnvironmentManagedActionResult] = js.native
     def checkDNSAvailability(params: CheckDNSAvailabilityMessage): Request[CheckDNSAvailabilityResultMessage] = js.native
@@ -1144,7 +1146,7 @@ package elasticbeanstalk {
   }
 
   /**
-   * Results of a '''CreateStorageLocationResult''' call.
+   * Results of a <a>CreateStorageLocationResult</a> call.
    */
   @js.native
   trait CreateStorageLocationResultMessage extends js.Object {
@@ -2937,7 +2939,7 @@ package elasticbeanstalk {
   }
 
   /**
-   * Request to download logs retrieved with '''RequestEnvironmentInfo'''.
+   * Request to download logs retrieved with <a>RequestEnvironmentInfo</a>.
    */
   @js.native
   trait RetrieveEnvironmentInfoMessage extends js.Object {

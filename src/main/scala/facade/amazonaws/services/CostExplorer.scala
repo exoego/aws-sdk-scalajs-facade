@@ -75,7 +75,9 @@ package object costexplorer {
 package costexplorer {
   @js.native
   @JSImport("aws-sdk", "CostExplorer")
-  class CostExplorer(config: AWSConfig) extends js.Object {
+  class CostExplorer() extends js.Object {
+    def this(config: AWSConfig) = this()
+
     def getCostAndUsage(params: GetCostAndUsageRequest): Request[GetCostAndUsageResponse] = js.native
     def getCostForecast(params: GetCostForecastRequest): Request[GetCostForecastResponse] = js.native
     def getDimensionValues(params: GetDimensionValuesRequest): Request[GetDimensionValuesResponse] = js.native

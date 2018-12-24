@@ -54,7 +54,9 @@ package object comprehend {
 package comprehend {
   @js.native
   @JSImport("aws-sdk", "Comprehend")
-  class Comprehend(config: AWSConfig) extends js.Object {
+  class Comprehend() extends js.Object {
+    def this(config: AWSConfig) = this()
+
     def batchDetectDominantLanguage(params: BatchDetectDominantLanguageRequest): Request[BatchDetectDominantLanguageResponse] = js.native
     def batchDetectEntities(params: BatchDetectEntitiesRequest): Request[BatchDetectEntitiesResponse] = js.native
     def batchDetectKeyPhrases(params: BatchDetectKeyPhrasesRequest): Request[BatchDetectKeyPhrasesResponse] = js.native

@@ -249,7 +249,9 @@ package object s3 {
 package s3 {
   @js.native
   @JSImport("aws-sdk", "S3")
-  class S3(config: AWSConfig) extends js.Object {
+  class S3() extends js.Object {
+    def this(config: AWSConfig) = this()
+
     def abortMultipartUpload(params: AbortMultipartUploadRequest): Request[AbortMultipartUploadOutput] = js.native
     def completeMultipartUpload(params: CompleteMultipartUploadRequest): Request[CompleteMultipartUploadOutput] = js.native
     def copyObject(params: CopyObjectRequest): Request[CopyObjectOutput] = js.native

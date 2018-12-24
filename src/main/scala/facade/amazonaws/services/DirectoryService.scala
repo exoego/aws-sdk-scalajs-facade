@@ -130,7 +130,9 @@ package object directoryservice {
 package directoryservice {
   @js.native
   @JSImport("aws-sdk", "DirectoryService")
-  class DirectoryService(config: AWSConfig) extends js.Object {
+  class DirectoryService() extends js.Object {
+    def this(config: AWSConfig) = this()
+
     def acceptSharedDirectory(params: AcceptSharedDirectoryRequest): Request[AcceptSharedDirectoryResult] = js.native
     def addIpRoutes(params: AddIpRoutesRequest): Request[AddIpRoutesResult] = js.native
     def addTagsToResource(params: AddTagsToResourceRequest): Request[AddTagsToResourceResult] = js.native
@@ -379,7 +381,7 @@ package directoryservice {
   }
 
   /**
-   * Contains the inputs for the '''ConnectDirectory''' operation.
+   * Contains the inputs for the <a>ConnectDirectory</a> operation.
    */
   @js.native
   trait ConnectDirectoryRequest extends js.Object {
@@ -412,7 +414,7 @@ package directoryservice {
   }
 
   /**
-   * Contains the results of the '''ConnectDirectory''' operation.
+   * Contains the results of the <a>ConnectDirectory</a> operation.
    */
   @js.native
   trait ConnectDirectoryResult extends js.Object {
@@ -430,7 +432,7 @@ package directoryservice {
   }
 
   /**
-   * Contains the inputs for the '''CreateAlias''' operation.
+   * Contains the inputs for the <a>CreateAlias</a> operation.
    */
   @js.native
   trait CreateAliasRequest extends js.Object {
@@ -451,7 +453,7 @@ package directoryservice {
   }
 
   /**
-   * Contains the results of the '''CreateAlias''' operation.
+   * Contains the results of the <a>CreateAlias</a> operation.
    */
   @js.native
   trait CreateAliasResult extends js.Object {
@@ -472,7 +474,7 @@ package directoryservice {
   }
 
   /**
-   * Contains the inputs for the '''CreateComputer''' operation.
+   * Contains the inputs for the <a>CreateComputer</a> operation.
    */
   @js.native
   trait CreateComputerRequest extends js.Object {
@@ -502,7 +504,7 @@ package directoryservice {
   }
 
   /**
-   * Contains the results for the '''CreateComputer''' operation.
+   * Contains the results for the <a>CreateComputer</a> operation.
    */
   @js.native
   trait CreateComputerResult extends js.Object {
@@ -560,7 +562,7 @@ package directoryservice {
   }
 
   /**
-   * Contains the inputs for the '''CreateDirectory''' operation.
+   * Contains the inputs for the <a>CreateDirectory</a> operation.
    */
   @js.native
   trait CreateDirectoryRequest extends js.Object {
@@ -593,7 +595,7 @@ package directoryservice {
   }
 
   /**
-   * Contains the results of the '''CreateDirectory''' operation.
+   * Contains the results of the <a>CreateDirectory</a> operation.
    */
   @js.native
   trait CreateDirectoryResult extends js.Object {
@@ -693,7 +695,7 @@ package directoryservice {
   }
 
   /**
-   * Contains the inputs for the '''CreateSnapshot''' operation.
+   * Contains the inputs for the <a>CreateSnapshot</a> operation.
    */
   @js.native
   trait CreateSnapshotRequest extends js.Object {
@@ -714,7 +716,7 @@ package directoryservice {
   }
 
   /**
-   * Contains the results of the '''CreateSnapshot''' operation.
+   * Contains the results of the <a>CreateSnapshot</a> operation.
    */
   @js.native
   trait CreateSnapshotResult extends js.Object {
@@ -824,7 +826,7 @@ package directoryservice {
   }
 
   /**
-   * Contains the inputs for the '''DeleteDirectory''' operation.
+   * Contains the inputs for the <a>DeleteDirectory</a> operation.
    */
   @js.native
   trait DeleteDirectoryRequest extends js.Object {
@@ -842,7 +844,7 @@ package directoryservice {
   }
 
   /**
-   * Contains the results of the '''DeleteDirectory''' operation.
+   * Contains the results of the <a>DeleteDirectory</a> operation.
    */
   @js.native
   trait DeleteDirectoryResult extends js.Object {
@@ -888,7 +890,7 @@ package directoryservice {
   }
 
   /**
-   * Contains the inputs for the '''DeleteSnapshot''' operation.
+   * Contains the inputs for the <a>DeleteSnapshot</a> operation.
    */
   @js.native
   trait DeleteSnapshotRequest extends js.Object {
@@ -906,7 +908,7 @@ package directoryservice {
   }
 
   /**
-   * Contains the results of the '''DeleteSnapshot''' operation.
+   * Contains the results of the <a>DeleteSnapshot</a> operation.
    */
   @js.native
   trait DeleteSnapshotResult extends js.Object {
@@ -1039,7 +1041,7 @@ package directoryservice {
   }
 
   /**
-   * Contains the inputs for the '''DescribeDirectories''' operation.
+   * Contains the inputs for the <a>DescribeDirectories</a> operation.
    */
   @js.native
   trait DescribeDirectoriesRequest extends js.Object {
@@ -1063,7 +1065,7 @@ package directoryservice {
   }
 
   /**
-   * Contains the results of the '''DescribeDirectories''' operation.
+   * Contains the results of the <a>DescribeDirectories</a> operation.
    */
   @js.native
   trait DescribeDirectoriesResult extends js.Object {
@@ -1207,7 +1209,7 @@ package directoryservice {
   }
 
   /**
-   * Contains the inputs for the '''DescribeSnapshots''' operation.
+   * Contains the inputs for the <a>DescribeSnapshots</a> operation.
    */
   @js.native
   trait DescribeSnapshotsRequest extends js.Object {
@@ -1234,7 +1236,7 @@ package directoryservice {
   }
 
   /**
-   * Contains the results of the '''DescribeSnapshots''' operation.
+   * Contains the results of the <a>DescribeSnapshots</a> operation.
    */
   @js.native
   trait DescribeSnapshotsResult extends js.Object {
@@ -1303,7 +1305,7 @@ package directoryservice {
   }
 
   /**
-   * Contains information for the '''ConnectDirectory''' operation when an AD Connector directory is being created.
+   * Contains information for the <a>ConnectDirectory</a> operation when an AD Connector directory is being created.
    */
   @js.native
   trait DirectoryConnectSettings extends js.Object {
@@ -1531,7 +1533,7 @@ package directoryservice {
   }
 
   /**
-   * Contains VPC information for the '''CreateDirectory''' or '''CreateMicrosoftAD''' operation.
+   * Contains VPC information for the <a>CreateDirectory</a> or <a>CreateMicrosoftAD</a> operation.
    */
   @js.native
   trait DirectoryVpcSettings extends js.Object {
@@ -1579,7 +1581,7 @@ package directoryservice {
   }
 
   /**
-   * Contains the inputs for the '''DisableRadius''' operation.
+   * Contains the inputs for the <a>DisableRadius</a> operation.
    */
   @js.native
   trait DisableRadiusRequest extends js.Object {
@@ -1597,7 +1599,7 @@ package directoryservice {
   }
 
   /**
-   * Contains the results of the '''DisableRadius''' operation.
+   * Contains the results of the <a>DisableRadius</a> operation.
    */
   @js.native
   trait DisableRadiusResult extends js.Object {
@@ -1613,7 +1615,7 @@ package directoryservice {
   }
 
   /**
-   * Contains the inputs for the '''DisableSso''' operation.
+   * Contains the inputs for the <a>DisableSso</a> operation.
    */
   @js.native
   trait DisableSsoRequest extends js.Object {
@@ -1637,7 +1639,7 @@ package directoryservice {
   }
 
   /**
-   * Contains the results of the '''DisableSso''' operation.
+   * Contains the results of the <a>DisableSso</a> operation.
    */
   @js.native
   trait DisableSsoResult extends js.Object {
@@ -1710,7 +1712,7 @@ package directoryservice {
   }
 
   /**
-   * Contains the inputs for the '''EnableRadius''' operation.
+   * Contains the inputs for the <a>EnableRadius</a> operation.
    */
   @js.native
   trait EnableRadiusRequest extends js.Object {
@@ -1731,7 +1733,7 @@ package directoryservice {
   }
 
   /**
-   * Contains the results of the '''EnableRadius''' operation.
+   * Contains the results of the <a>EnableRadius</a> operation.
    */
   @js.native
   trait EnableRadiusResult extends js.Object {
@@ -1747,7 +1749,7 @@ package directoryservice {
   }
 
   /**
-   * Contains the inputs for the '''EnableSso''' operation.
+   * Contains the inputs for the <a>EnableSso</a> operation.
    */
   @js.native
   trait EnableSsoRequest extends js.Object {
@@ -1771,7 +1773,7 @@ package directoryservice {
   }
 
   /**
-   * Contains the results of the '''EnableSso''' operation.
+   * Contains the results of the <a>EnableSso</a> operation.
    */
   @js.native
   trait EnableSsoResult extends js.Object {
@@ -1817,7 +1819,7 @@ package directoryservice {
   }
 
   /**
-   * Contains the inputs for the '''GetDirectoryLimits''' operation.
+   * Contains the inputs for the <a>GetDirectoryLimits</a> operation.
    */
   @js.native
   trait GetDirectoryLimitsRequest extends js.Object {
@@ -1833,7 +1835,7 @@ package directoryservice {
   }
 
   /**
-   * Contains the results of the '''GetDirectoryLimits''' operation.
+   * Contains the results of the <a>GetDirectoryLimits</a> operation.
    */
   @js.native
   trait GetDirectoryLimitsResult extends js.Object {
@@ -1851,7 +1853,7 @@ package directoryservice {
   }
 
   /**
-   * Contains the inputs for the '''GetSnapshotLimits''' operation.
+   * Contains the inputs for the <a>GetSnapshotLimits</a> operation.
    */
   @js.native
   trait GetSnapshotLimitsRequest extends js.Object {
@@ -1869,7 +1871,7 @@ package directoryservice {
   }
 
   /**
-   * Contains the results of the '''GetSnapshotLimits''' operation.
+   * Contains the results of the <a>GetSnapshotLimits</a> operation.
    */
   @js.native
   trait GetSnapshotLimitsResult extends js.Object {
@@ -2390,7 +2392,7 @@ package directoryservice {
   }
 
   /**
-   * An object representing the inputs for the '''RestoreFromSnapshot''' operation.
+   * An object representing the inputs for the <a>RestoreFromSnapshot</a> operation.
    */
   @js.native
   trait RestoreFromSnapshotRequest extends js.Object {
@@ -2408,7 +2410,7 @@ package directoryservice {
   }
 
   /**
-   * Contains the results of the '''RestoreFromSnapshot''' operation.
+   * Contains the results of the <a>RestoreFromSnapshot</a> operation.
    */
   @js.native
   trait RestoreFromSnapshotResult extends js.Object {
@@ -2955,7 +2957,7 @@ package directoryservice {
   }
 
   /**
-   * Contains the inputs for the '''UpdateRadius''' operation.
+   * Contains the inputs for the <a>UpdateRadius</a> operation.
    */
   @js.native
   trait UpdateRadiusRequest extends js.Object {
@@ -2976,7 +2978,7 @@ package directoryservice {
   }
 
   /**
-   * Contains the results of the '''UpdateRadius''' operation.
+   * Contains the results of the <a>UpdateRadius</a> operation.
    */
   @js.native
   trait UpdateRadiusResult extends js.Object {

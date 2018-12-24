@@ -268,7 +268,9 @@ package object sagemaker {
 package sagemaker {
   @js.native
   @JSImport("aws-sdk", "SageMaker")
-  class SageMaker(config: AWSConfig) extends js.Object {
+  class SageMaker() extends js.Object {
+    def this(config: AWSConfig) = this()
+
     def addTags(params: AddTagsInput): Request[AddTagsOutput] = js.native
     def createAlgorithm(params: CreateAlgorithmInput): Request[CreateAlgorithmOutput] = js.native
     def createCodeRepository(params: CreateCodeRepositoryInput): Request[CreateCodeRepositoryOutput] = js.native
@@ -1775,7 +1777,7 @@ package sagemaker {
   }
 
   /**
-   * Gets the Amazon EC2 Container Registry path of the docker image of the model that is hosted in this '''ProductionVariant'''.
+   * Gets the Amazon EC2 Container Registry path of the docker image of the model that is hosted in this <a>ProductionVariant</a>.
    *  If you used the <code>registry/repository[:tag]</code> form to specify the image path of the primary container when you created the model hosted in this <code>ProductionVariant</code>, the path resolves to a path of the form <code>registry/repository[@digest]</code>. A digest is a hash value that identifies a specific version of an image. For information about Amazon ECR paths, see <a href="http://docs.aws.amazon.com//AmazonECR/latest/userguide/docker-pull-ecr-image.html">Pulling an Image</a> in the <i>Amazon ECR User Guide</i>.
    */
   @js.native
@@ -2851,7 +2853,7 @@ package sagemaker {
   }
 
   /**
-   * Shows the final value for the objective metric for a training job that was launched by a hyperparameter tuning job. You define the objective metric in the <code>HyperParameterTuningJobObjective</code> parameter of '''HyperParameterTuningJobConfig'''.
+   * Shows the final value for the objective metric for a training job that was launched by a hyperparameter tuning job. You define the objective metric in the <code>HyperParameterTuningJobObjective</code> parameter of <a>HyperParameterTuningJobConfig</a>.
    */
   @js.native
   trait FinalHyperParameterTuningJobObjectiveMetric extends js.Object {
@@ -6572,7 +6574,7 @@ package sagemaker {
   }
 
   /**
-   * Provides a summary of a transform job. Multiple TransformJobSummary objects are returned as a list after calling '''ListTransformJobs'''.
+   * Provides a summary of a transform job. Multiple TransformJobSummary objects are returned as a list after calling <a>ListTransformJobs</a>.
    */
   @js.native
   trait TransformJobSummary extends js.Object {
