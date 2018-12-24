@@ -43,7 +43,9 @@ package object dynamodbstreams {
 package dynamodbstreams {
   @js.native
   @JSImport("aws-sdk", "DynamoDBStreams")
-  class DynamoDBStreams(config: AWSConfig) extends js.Object {
+  class DynamoDBStreams() extends js.Object {
+    def this(config: AWSConfig) = this()
+
     def describeStream(params: DescribeStreamInput): Request[DescribeStreamOutput] = js.native
     def getRecords(params: GetRecordsInput): Request[GetRecordsOutput] = js.native
     def getShardIterator(params: GetShardIteratorInput): Request[GetShardIteratorOutput] = js.native

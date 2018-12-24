@@ -87,7 +87,9 @@ package object clouddirectory {
 package clouddirectory {
   @js.native
   @JSImport("aws-sdk", "CloudDirectory")
-  class CloudDirectory(config: AWSConfig) extends js.Object {
+  class CloudDirectory() extends js.Object {
+    def this(config: AWSConfig) = this()
+
     def addFacetToObject(params: AddFacetToObjectRequest): Request[AddFacetToObjectResponse] = js.native
     def applySchema(params: ApplySchemaRequest): Request[ApplySchemaResponse] = js.native
     def attachObject(params: AttachObjectRequest): Request[AttachObjectResponse] = js.native
@@ -494,7 +496,7 @@ package clouddirectory {
   }
 
   /**
-   * Represents the output of an '''AttachObject''' operation.
+   * Represents the output of an <a>AttachObject</a> operation.
    */
   @js.native
   trait BatchAttachObject extends js.Object {
@@ -518,7 +520,7 @@ package clouddirectory {
   }
 
   /**
-   * Represents the output batch '''AttachObject''' response operation.
+   * Represents the output batch <a>AttachObject</a> response operation.
    */
   @js.native
   trait BatchAttachObjectResponse extends js.Object {
@@ -536,7 +538,7 @@ package clouddirectory {
   }
 
   /**
-   * Attaches a policy object to a regular object inside a '''BatchRead''' operation.?For more information, see '''AttachPolicy''' and [[BatchReadRequest.Operations]].
+   * Attaches a policy object to a regular object inside a <a>BatchRead</a> operation.?For more information, see <a>AttachPolicy</a> and [[BatchReadRequest.Operations]].
    */
   @js.native
   trait BatchAttachPolicy extends js.Object {
@@ -557,7 +559,7 @@ package clouddirectory {
   }
 
   /**
-   * Represents the output of an '''AttachPolicy''' response operation.
+   * Represents the output of an <a>AttachPolicy</a> response operation.
    */
   @js.native
   trait BatchAttachPolicyResponse extends js.Object {
@@ -573,7 +575,7 @@ package clouddirectory {
   }
 
   /**
-   * Attaches the specified object to the specified index inside a '''BatchRead''' operation. For more information, see '''AttachToIndex''' and [[BatchReadRequest.Operations]].
+   * Attaches the specified object to the specified index inside a <a>BatchRead</a> operation. For more information, see <a>AttachToIndex</a> and [[BatchReadRequest.Operations]].
    */
   @js.native
   trait BatchAttachToIndex extends js.Object {
@@ -594,7 +596,7 @@ package clouddirectory {
   }
 
   /**
-   * Represents the output of a '''AttachToIndex''' response operation.
+   * Represents the output of a <a>AttachToIndex</a> response operation.
    */
   @js.native
   trait BatchAttachToIndexResponse extends js.Object {
@@ -612,7 +614,7 @@ package clouddirectory {
   }
 
   /**
-   * Attaches a typed link to a specified source and target object inside a '''BatchRead''' operation. For more information, see '''AttachTypedLink''' and [[BatchReadRequest.Operations]].
+   * Attaches a typed link to a specified source and target object inside a <a>BatchRead</a> operation. For more information, see <a>AttachTypedLink</a> and [[BatchReadRequest.Operations]].
    */
   @js.native
   trait BatchAttachTypedLink extends js.Object {
@@ -639,7 +641,7 @@ package clouddirectory {
   }
 
   /**
-   * Represents the output of a '''AttachTypedLink''' response operation.
+   * Represents the output of a <a>AttachTypedLink</a> response operation.
    */
   @js.native
   trait BatchAttachTypedLinkResponse extends js.Object {
@@ -657,7 +659,7 @@ package clouddirectory {
   }
 
   /**
-   * Creates an index object inside of a '''BatchRead''' operation. For more information, see '''CreateIndex''' and [[BatchReadRequest.Operations]].
+   * Creates an index object inside of a <a>BatchRead</a> operation. For more information, see <a>CreateIndex</a> and [[BatchReadRequest.Operations]].
    */
   @js.native
   trait BatchCreateIndex extends js.Object {
@@ -687,7 +689,7 @@ package clouddirectory {
   }
 
   /**
-   * Represents the output of a '''CreateIndex''' response operation.
+   * Represents the output of a <a>CreateIndex</a> response operation.
    */
   @js.native
   trait BatchCreateIndexResponse extends js.Object {
@@ -705,7 +707,7 @@ package clouddirectory {
   }
 
   /**
-   * Represents the output of a '''CreateObject''' operation.
+   * Represents the output of a <a>CreateObject</a> operation.
    */
   @js.native
   trait BatchCreateObject extends js.Object {
@@ -735,7 +737,7 @@ package clouddirectory {
   }
 
   /**
-   * Represents the output of a '''CreateObject''' response operation.
+   * Represents the output of a <a>CreateObject</a> response operation.
    */
   @js.native
   trait BatchCreateObjectResponse extends js.Object {
@@ -753,7 +755,7 @@ package clouddirectory {
   }
 
   /**
-   * Represents the output of a '''DeleteObject''' operation.
+   * Represents the output of a <a>DeleteObject</a> operation.
    */
   @js.native
   trait BatchDeleteObject extends js.Object {
@@ -771,7 +773,7 @@ package clouddirectory {
   }
 
   /**
-   * Represents the output of a '''DeleteObject''' response operation.
+   * Represents the output of a <a>DeleteObject</a> response operation.
    */
   @js.native
   trait BatchDeleteObjectResponse extends js.Object {
@@ -787,7 +789,7 @@ package clouddirectory {
   }
 
   /**
-   * Detaches the specified object from the specified index inside a '''BatchRead''' operation. For more information, see '''DetachFromIndex''' and [[BatchReadRequest.Operations]].
+   * Detaches the specified object from the specified index inside a <a>BatchRead</a> operation. For more information, see <a>DetachFromIndex</a> and [[BatchReadRequest.Operations]].
    */
   @js.native
   trait BatchDetachFromIndex extends js.Object {
@@ -808,7 +810,7 @@ package clouddirectory {
   }
 
   /**
-   * Represents the output of a '''DetachFromIndex''' response operation.
+   * Represents the output of a <a>DetachFromIndex</a> response operation.
    */
   @js.native
   trait BatchDetachFromIndexResponse extends js.Object {
@@ -826,7 +828,7 @@ package clouddirectory {
   }
 
   /**
-   * Represents the output of a '''DetachObject''' operation.
+   * Represents the output of a <a>DetachObject</a> operation.
    */
   @js.native
   trait BatchDetachObject extends js.Object {
@@ -850,7 +852,7 @@ package clouddirectory {
   }
 
   /**
-   * Represents the output of a '''DetachObject''' response operation.
+   * Represents the output of a <a>DetachObject</a> response operation.
    */
   @js.native
   trait BatchDetachObjectResponse extends js.Object {
@@ -868,7 +870,7 @@ package clouddirectory {
   }
 
   /**
-   * Detaches the specified policy from the specified directory inside a '''BatchWrite''' operation. For more information, see '''DetachPolicy''' and [[BatchWriteRequest.Operations]].
+   * Detaches the specified policy from the specified directory inside a <a>BatchWrite</a> operation. For more information, see <a>DetachPolicy</a> and [[BatchWriteRequest.Operations]].
    */
   @js.native
   trait BatchDetachPolicy extends js.Object {
@@ -889,7 +891,7 @@ package clouddirectory {
   }
 
   /**
-   * Represents the output of a '''DetachPolicy''' response operation.
+   * Represents the output of a <a>DetachPolicy</a> response operation.
    */
   @js.native
   trait BatchDetachPolicyResponse extends js.Object {
@@ -905,7 +907,7 @@ package clouddirectory {
   }
 
   /**
-   * Detaches a typed link from a specified source and target object inside a '''BatchRead''' operation. For more information, see '''DetachTypedLink''' and [[BatchReadRequest.Operations]].
+   * Detaches a typed link from a specified source and target object inside a <a>BatchRead</a> operation. For more information, see <a>DetachTypedLink</a> and [[BatchReadRequest.Operations]].
    */
   @js.native
   trait BatchDetachTypedLink extends js.Object {
@@ -923,7 +925,7 @@ package clouddirectory {
   }
 
   /**
-   * Represents the output of a '''DetachTypedLink''' response operation.
+   * Represents the output of a <a>DetachTypedLink</a> response operation.
    */
   @js.native
   trait BatchDetachTypedLinkResponse extends js.Object {
@@ -939,7 +941,7 @@ package clouddirectory {
   }
 
   /**
-   * Retrieves attributes that are associated with a typed link inside a '''BatchRead''' operation. For more information, see '''GetLinkAttributes''' and [[BatchReadRequest.Operations]].
+   * Retrieves attributes that are associated with a typed link inside a <a>BatchRead</a> operation. For more information, see <a>GetLinkAttributes</a> and [[BatchReadRequest.Operations]].
    */
   @js.native
   trait BatchGetLinkAttributes extends js.Object {
@@ -960,7 +962,7 @@ package clouddirectory {
   }
 
   /**
-   * Represents the output of a '''GetLinkAttributes''' response operation.
+   * Represents the output of a <a>GetLinkAttributes</a> response operation.
    */
   @js.native
   trait BatchGetLinkAttributesResponse extends js.Object {
@@ -978,7 +980,7 @@ package clouddirectory {
   }
 
   /**
-   * Retrieves attributes within a facet that are associated with an object inside an '''BatchRead''' operation. For more information, see '''GetObjectAttributes''' and [[BatchReadRequest.Operations]].
+   * Retrieves attributes within a facet that are associated with an object inside an <a>BatchRead</a> operation. For more information, see <a>GetObjectAttributes</a> and [[BatchReadRequest.Operations]].
    */
   @js.native
   trait BatchGetObjectAttributes extends js.Object {
@@ -1002,7 +1004,7 @@ package clouddirectory {
   }
 
   /**
-   * Represents the output of a '''GetObjectAttributes''' response operation.
+   * Represents the output of a <a>GetObjectAttributes</a> response operation.
    */
   @js.native
   trait BatchGetObjectAttributesResponse extends js.Object {
@@ -1020,7 +1022,7 @@ package clouddirectory {
   }
 
   /**
-   * Retrieves metadata about an object inside a '''BatchRead''' operation. For more information, see '''GetObjectInformation''' and [[BatchReadRequest.Operations]].
+   * Retrieves metadata about an object inside a <a>BatchRead</a> operation. For more information, see <a>GetObjectInformation</a> and [[BatchReadRequest.Operations]].
    */
   @js.native
   trait BatchGetObjectInformation extends js.Object {
@@ -1038,7 +1040,7 @@ package clouddirectory {
   }
 
   /**
-   * Represents the output of a '''GetObjectInformation''' response operation.
+   * Represents the output of a <a>GetObjectInformation</a> response operation.
    */
   @js.native
   trait BatchGetObjectInformationResponse extends js.Object {
@@ -1059,7 +1061,7 @@ package clouddirectory {
   }
 
   /**
-   * Lists indices attached to an object inside a '''BatchRead''' operation. For more information, see '''ListAttachedIndices''' and [[BatchReadRequest.Operations]].
+   * Lists indices attached to an object inside a <a>BatchRead</a> operation. For more information, see <a>ListAttachedIndices</a> and [[BatchReadRequest.Operations]].
    */
   @js.native
   trait BatchListAttachedIndices extends js.Object {
@@ -1083,7 +1085,7 @@ package clouddirectory {
   }
 
   /**
-   * Represents the output of a '''ListAttachedIndices''' response operation.
+   * Represents the output of a <a>ListAttachedIndices</a> response operation.
    */
   @js.native
   trait BatchListAttachedIndicesResponse extends js.Object {
@@ -1104,7 +1106,7 @@ package clouddirectory {
   }
 
   /**
-   * Returns a paginated list of all the incoming '''TypedLinkSpecifier''' information for an object inside a '''BatchRead''' operation. For more information, see '''ListIncomingTypedLinks''' and [[BatchReadRequest.Operations]].
+   * Returns a paginated list of all the incoming <a>TypedLinkSpecifier</a> information for an object inside a <a>BatchRead</a> operation. For more information, see <a>ListIncomingTypedLinks</a> and [[BatchReadRequest.Operations]].
    */
   @js.native
   trait BatchListIncomingTypedLinks extends js.Object {
@@ -1134,7 +1136,7 @@ package clouddirectory {
   }
 
   /**
-   * Represents the output of a '''ListIncomingTypedLinks''' response operation.
+   * Represents the output of a <a>ListIncomingTypedLinks</a> response operation.
    */
   @js.native
   trait BatchListIncomingTypedLinksResponse extends js.Object {
@@ -1155,7 +1157,7 @@ package clouddirectory {
   }
 
   /**
-   * Lists objects attached to the specified index inside a '''BatchRead''' operation. For more information, see '''ListIndex''' and [[BatchReadRequest.Operations]].
+   * Lists objects attached to the specified index inside a <a>BatchRead</a> operation. For more information, see <a>ListIndex</a> and [[BatchReadRequest.Operations]].
    */
   @js.native
   trait BatchListIndex extends js.Object {
@@ -1182,7 +1184,7 @@ package clouddirectory {
   }
 
   /**
-   * Represents the output of a '''ListIndex''' response operation.
+   * Represents the output of a <a>ListIndex</a> response operation.
    */
   @js.native
   trait BatchListIndexResponse extends js.Object {
@@ -1203,7 +1205,7 @@ package clouddirectory {
   }
 
   /**
-   * Represents the output of a '''ListObjectAttributes''' operation.
+   * Represents the output of a <a>ListObjectAttributes</a> operation.
    */
   @js.native
   trait BatchListObjectAttributes extends js.Object {
@@ -1230,7 +1232,7 @@ package clouddirectory {
   }
 
   /**
-   * Represents the output of a '''ListObjectAttributes''' response operation.
+   * Represents the output of a <a>ListObjectAttributes</a> response operation.
    */
   @js.native
   trait BatchListObjectAttributesResponse extends js.Object {
@@ -1251,7 +1253,7 @@ package clouddirectory {
   }
 
   /**
-   * Represents the output of a '''ListObjectChildren''' operation.
+   * Represents the output of a <a>ListObjectChildren</a> operation.
    */
   @js.native
   trait BatchListObjectChildren extends js.Object {
@@ -1275,7 +1277,7 @@ package clouddirectory {
   }
 
   /**
-   * Represents the output of a '''ListObjectChildren''' response operation.
+   * Represents the output of a <a>ListObjectChildren</a> response operation.
    */
   @js.native
   trait BatchListObjectChildrenResponse extends js.Object {
@@ -1296,7 +1298,7 @@ package clouddirectory {
   }
 
   /**
-   * Retrieves all available parent paths for any object type such as node, leaf node, policy node, and index node objects inside a '''BatchRead''' operation. For more information, see '''ListObjectParentPaths''' and [[BatchReadRequest.Operations]].
+   * Retrieves all available parent paths for any object type such as node, leaf node, policy node, and index node objects inside a <a>BatchRead</a> operation. For more information, see <a>ListObjectParentPaths</a> and [[BatchReadRequest.Operations]].
    */
   @js.native
   trait BatchListObjectParentPaths extends js.Object {
@@ -1320,7 +1322,7 @@ package clouddirectory {
   }
 
   /**
-   * Represents the output of a '''ListObjectParentPaths''' response operation.
+   * Represents the output of a <a>ListObjectParentPaths</a> response operation.
    */
   @js.native
   trait BatchListObjectParentPathsResponse extends js.Object {
@@ -1341,7 +1343,7 @@ package clouddirectory {
   }
 
   /**
-   * Returns policies attached to an object in pagination fashion inside a '''BatchRead''' operation. For more information, see '''ListObjectPolicies''' and [[BatchReadRequest.Operations]].
+   * Returns policies attached to an object in pagination fashion inside a <a>BatchRead</a> operation. For more information, see <a>ListObjectPolicies</a> and [[BatchReadRequest.Operations]].
    */
   @js.native
   trait BatchListObjectPolicies extends js.Object {
@@ -1365,7 +1367,7 @@ package clouddirectory {
   }
 
   /**
-   * Represents the output of a '''ListObjectPolicies''' response operation.
+   * Represents the output of a <a>ListObjectPolicies</a> response operation.
    */
   @js.native
   trait BatchListObjectPoliciesResponse extends js.Object {
@@ -1386,7 +1388,7 @@ package clouddirectory {
   }
 
   /**
-   * Returns a paginated list of all the outgoing '''TypedLinkSpecifier''' information for an object inside a '''BatchRead''' operation. For more information, see '''ListOutgoingTypedLinks''' and [[BatchReadRequest.Operations]].
+   * Returns a paginated list of all the outgoing <a>TypedLinkSpecifier</a> information for an object inside a <a>BatchRead</a> operation. For more information, see <a>ListOutgoingTypedLinks</a> and [[BatchReadRequest.Operations]].
    */
   @js.native
   trait BatchListOutgoingTypedLinks extends js.Object {
@@ -1416,7 +1418,7 @@ package clouddirectory {
   }
 
   /**
-   * Represents the output of a '''ListOutgoingTypedLinks''' response operation.
+   * Represents the output of a <a>ListOutgoingTypedLinks</a> response operation.
    */
   @js.native
   trait BatchListOutgoingTypedLinksResponse extends js.Object {
@@ -1437,7 +1439,7 @@ package clouddirectory {
   }
 
   /**
-   * Returns all of the <code>ObjectIdentifiers</code> to which a given policy is attached inside a '''BatchRead''' operation. For more information, see '''ListPolicyAttachments''' and [[BatchReadRequest.Operations]].
+   * Returns all of the <code>ObjectIdentifiers</code> to which a given policy is attached inside a <a>BatchRead</a> operation. For more information, see <a>ListPolicyAttachments</a> and [[BatchReadRequest.Operations]].
    */
   @js.native
   trait BatchListPolicyAttachments extends js.Object {
@@ -1461,7 +1463,7 @@ package clouddirectory {
   }
 
   /**
-   * Represents the output of a '''ListPolicyAttachments''' response operation.
+   * Represents the output of a <a>ListPolicyAttachments</a> response operation.
    */
   @js.native
   trait BatchListPolicyAttachmentsResponse extends js.Object {
@@ -1482,7 +1484,7 @@ package clouddirectory {
   }
 
   /**
-   * Lists all policies from the root of the Directory to the object specified inside a '''BatchRead''' operation. For more information, see '''LookupPolicy''' and [[BatchReadRequest.Operations]].
+   * Lists all policies from the root of the Directory to the object specified inside a <a>BatchRead</a> operation. For more information, see <a>LookupPolicy</a> and [[BatchReadRequest.Operations]].
    */
   @js.native
   trait BatchLookupPolicy extends js.Object {
@@ -1506,7 +1508,7 @@ package clouddirectory {
   }
 
   /**
-   * Represents the output of a '''LookupPolicy''' response operation.
+   * Represents the output of a <a>LookupPolicy</a> response operation.
    */
   @js.native
   trait BatchLookupPolicyResponse extends js.Object {
@@ -1768,7 +1770,7 @@ package clouddirectory {
   }
 
   /**
-   * Updates a given typed link�fs attributes inside a '''BatchRead''' operation. Attributes to be updated must not contribute to the typed link�fs identity, as defined by its <code>IdentityAttributeOrder</code>. For more information, see '''UpdateLinkAttributes''' and [[BatchReadRequest.Operations]].
+   * Updates a given typed link�fs attributes inside a <a>BatchRead</a> operation. Attributes to be updated must not contribute to the typed link�fs identity, as defined by its <code>IdentityAttributeOrder</code>. For more information, see <a>UpdateLinkAttributes</a> and [[BatchReadRequest.Operations]].
    */
   @js.native
   trait BatchUpdateLinkAttributes extends js.Object {
@@ -1789,7 +1791,7 @@ package clouddirectory {
   }
 
   /**
-   * Represents the output of a '''UpdateLinkAttributes''' response operation.
+   * Represents the output of a <a>UpdateLinkAttributes</a> response operation.
    */
   @js.native
   trait BatchUpdateLinkAttributesResponse extends js.Object {
@@ -2030,7 +2032,7 @@ package clouddirectory {
   }
 
   /**
-   * Cannot list the parents of a '''Directory''' root.
+   * Cannot list the parents of a <a>Directory</a> root.
    */
   @js.native
   trait CannotListParentOfRootExceptionException extends js.Object {
@@ -2573,7 +2575,7 @@ package clouddirectory {
   }
 
   /**
-   * Indicates that a '''Directory''' could not be created due to a naming conflict. Choose a different name and try again.
+   * Indicates that a <a>Directory</a> could not be created due to a naming conflict. Choose a different name and try again.
    */
   @js.native
   trait DirectoryAlreadyExistsExceptionException extends js.Object {
@@ -2673,7 +2675,7 @@ package clouddirectory {
   }
 
   /**
-   * A structure that contains <code>Name</code>, <code>ARN</code>, <code>Attributes</code>, <code> '''Rule'''s</code>, and <code>ObjectTypes</code>. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/whatarefacets.html">Facets</a> for more information.
+   * A structure that contains <code>Name</code>, <code>ARN</code>, <code>Attributes</code>, <code> <a>Rule</a>s</code>, and <code>ObjectTypes</code>. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/whatarefacets.html">Facets</a> for more information.
    */
   @js.native
   trait Facet extends js.Object {
@@ -2702,7 +2704,7 @@ package clouddirectory {
   }
 
   /**
-   * An attribute that is associated with the '''Facet'''.
+   * An attribute that is associated with the <a>Facet</a>.
    */
   @js.native
   trait FacetAttribute extends js.Object {
@@ -2816,7 +2818,7 @@ package clouddirectory {
   }
 
   /**
-   * The specified '''Facet''' could not be found.
+   * The specified <a>Facet</a> could not be found.
    */
   @js.native
   trait FacetNotFoundExceptionException extends js.Object {
@@ -2824,7 +2826,7 @@ package clouddirectory {
   }
 
   /**
-   * The '''Facet''' that you provided was not well formed or could not be validated with the schema.
+   * The <a>Facet</a> that you provided was not well formed or could not be validated with the schema.
    */
   @js.native
   trait FacetValidationExceptionException extends js.Object {
@@ -3172,7 +3174,7 @@ package clouddirectory {
   }
 
   /**
-   * An attempt to modify a '''Facet''' resulted in an invalid schema exception.
+   * An attempt to modify a <a>Facet</a> resulted in an invalid schema exception.
    */
   @js.native
   trait InvalidFacetUpdateExceptionException extends js.Object {
@@ -4309,7 +4311,7 @@ package clouddirectory {
   }
 
   /**
-   * Used when a regular object exists in a '''Directory''' and you want to find all of the policies that are associated with that object and the parent to that object.
+   * Used when a regular object exists in a <a>Directory</a> and you want to find all of the policies that are associated with that object and the parent to that object.
    */
   @js.native
   trait PolicyToPath extends js.Object {
@@ -4707,7 +4709,7 @@ package clouddirectory {
   }
 
   /**
-   * Defines the typed links structure and its attributes. To create a typed link facet, use the '''CreateTypedLinkFacet''' API.
+   * Defines the typed links structure and its attributes. To create a typed link facet, use the <a>CreateTypedLinkFacet</a> API.
    */
   @js.native
   trait TypedLinkFacet extends js.Object {
@@ -4773,7 +4775,7 @@ package clouddirectory {
   }
 
   /**
-   * Contains all the information that is used to uniquely identify a typed link. The parameters discussed in this topic are used to uniquely specify the typed link being operated on. The '''AttachTypedLink''' API returns a typed link specifier while the '''DetachTypedLink''' API accepts one as input. Similarly, the '''ListIncomingTypedLinks''' and '''ListOutgoingTypedLinks''' API operations provide typed link specifiers as output. You can also construct a typed link specifier from scratch.
+   * Contains all the information that is used to uniquely identify a typed link. The parameters discussed in this topic are used to uniquely specify the typed link being operated on. The <a>AttachTypedLink</a> API returns a typed link specifier while the <a>DetachTypedLink</a> API accepts one as input. Similarly, the <a>ListIncomingTypedLinks</a> and <a>ListOutgoingTypedLinks</a> API operations provide typed link specifiers as output. You can also construct a typed link specifier from scratch.
    */
   @js.native
   trait TypedLinkSpecifier extends js.Object {

@@ -40,7 +40,9 @@ package object athena {
 package athena {
   @js.native
   @JSImport("aws-sdk", "Athena")
-  class Athena(config: AWSConfig) extends js.Object {
+  class Athena() extends js.Object {
+    def this(config: AWSConfig) = this()
+
     def batchGetNamedQuery(params: BatchGetNamedQueryInput): Request[BatchGetNamedQueryOutput] = js.native
     def batchGetQueryExecution(params: BatchGetQueryExecutionInput): Request[BatchGetQueryExecutionOutput] = js.native
     def createNamedQuery(params: CreateNamedQueryInput): Request[CreateNamedQueryOutput] = js.native

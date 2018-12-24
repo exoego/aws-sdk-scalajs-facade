@@ -87,7 +87,9 @@ package object cloudwatch {
 package cloudwatch {
   @js.native
   @JSImport("aws-sdk", "CloudWatch")
-  class CloudWatch(config: AWSConfig) extends js.Object {
+  class CloudWatch() extends js.Object {
+    def this(config: AWSConfig) = this()
+
     def deleteAlarms(params: DeleteAlarmsInput): Request[js.Object] = js.native
     def deleteDashboards(params: DeleteDashboardsInput): Request[DeleteDashboardsOutput] = js.native
     def describeAlarmHistory(params: DescribeAlarmHistoryInput): Request[DescribeAlarmHistoryOutput] = js.native

@@ -79,7 +79,9 @@ package object lexmodelbuildingservice {
 package lexmodelbuildingservice {
   @js.native
   @JSImport("aws-sdk", "LexModelBuildingService")
-  class LexModelBuildingService(config: AWSConfig) extends js.Object {
+  class LexModelBuildingService() extends js.Object {
+    def this(config: AWSConfig) = this()
+
     def createBotVersion(params: CreateBotVersionRequest): Request[CreateBotVersionResponse] = js.native
     def createIntentVersion(params: CreateIntentVersionRequest): Request[CreateIntentVersionResponse] = js.native
     def createSlotTypeVersion(params: CreateSlotTypeVersionRequest): Request[CreateSlotTypeVersionResponse] = js.native

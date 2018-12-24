@@ -118,7 +118,9 @@ package object configservice {
 package configservice {
   @js.native
   @JSImport("aws-sdk", "ConfigService")
-  class ConfigService(config: AWSConfig) extends js.Object {
+  class ConfigService() extends js.Object {
+    def this(config: AWSConfig) = this()
+
     def batchGetAggregateResourceConfig(params: BatchGetAggregateResourceConfigRequest): Request[BatchGetAggregateResourceConfigResponse] = js.native
     def batchGetResourceConfig(params: BatchGetResourceConfigRequest): Request[BatchGetResourceConfigResponse] = js.native
     def deleteAggregationAuthorization(params: DeleteAggregationAuthorizationRequest): Request[js.Object] = js.native
@@ -695,7 +697,7 @@ package configservice {
   /**
    * An AWS Config rule represents an AWS Lambda function that you create for a custom rule or a predefined function for an AWS managed rule. The function evaluates configuration items to assess whether your AWS resources comply with your desired configurations. This function can run when AWS Config detects a configuration change to an AWS resource and at a periodic frequency that you choose (for example, every 24 hours).
    *
-   * '''Note:'''You can use the AWS CLI and AWS SDKs if you want to create a rule that triggers evaluations for your resources when AWS Config delivers the configuration snapshot. For more information, see '''ConfigSnapshotDeliveryProperties'''.
+   * '''Note:'''You can use the AWS CLI and AWS SDKs if you want to create a rule that triggers evaluations for your resources when AWS Config delivers the configuration snapshot. For more information, see <a>ConfigSnapshotDeliveryProperties</a>.
    * For more information about developing and using AWS Config rules, see <a href="http://docs.aws.amazon.com/config/latest/developerguide/evaluate-config.html">Evaluating AWS Resource Configurations with AWS Config</a> in the <i>AWS Config Developer Guide</i>.
    */
   @js.native
@@ -859,7 +861,7 @@ package configservice {
    * '''Note:'''If you want to create a rule that triggers evaluations for your resources when AWS Config delivers the configuration snapshot, see the following:
    * The frequency for a rule that triggers evaluations for your resources when AWS Config delivers the configuration snapshot is set by one of two values, depending on which is less frequent:
    * * The value for the <code>deliveryFrequency</code> parameter within the delivery channel configuration, which sets how often AWS Config delivers configuration snapshots. This value also sets how often AWS Config invokes evaluations for AWS Config rules.
-   *  * The value for the <code>MaximumExecutionFrequency</code> parameter, which sets the maximum frequency with which AWS Config invokes evaluations for the rule. For more information, see '''ConfigRule'''.
+   *  * The value for the <code>MaximumExecutionFrequency</code> parameter, which sets the maximum frequency with which AWS Config invokes evaluations for the rule. For more information, see <a>ConfigRule</a>.
    * If the <code>deliveryFrequency</code> value is less frequent than the <code>MaximumExecutionFrequency</code> value for a rule, AWS Config invokes the rule only as often as the <code>deliveryFrequency</code> value.
    *  <ol> * For example, you want your rule to run evaluations when AWS Config delivers the configuration snapshot.
    *  * You specify the <code>MaximumExecutionFrequency</code> value for <code>Six_Hours</code>.
@@ -1155,7 +1157,7 @@ package configservice {
   }
 
   /**
-   * The input for the '''DeleteDeliveryChannel''' action. The action accepts the following data, in JSON format.
+   * The input for the <a>DeleteDeliveryChannel</a> action. The action accepts the following data, in JSON format.
    */
   @js.native
   trait DeleteDeliveryChannelRequest extends js.Object {
@@ -1240,7 +1242,7 @@ package configservice {
   }
 
   /**
-   * The input for the '''DeliverConfigSnapshot''' action.
+   * The input for the <a>DeliverConfigSnapshot</a> action.
    */
   @js.native
   trait DeliverConfigSnapshotRequest extends js.Object {
@@ -1258,7 +1260,7 @@ package configservice {
   }
 
   /**
-   * The output for the '''DeliverConfigSnapshot''' action, in JSON format.
+   * The output for the <a>DeliverConfigSnapshot</a> action, in JSON format.
    */
   @js.native
   trait DeliverConfigSnapshotResponse extends js.Object {
@@ -1684,7 +1686,7 @@ package configservice {
   }
 
   /**
-   * The input for the '''DescribeConfigurationRecorderStatus''' action.
+   * The input for the <a>DescribeConfigurationRecorderStatus</a> action.
    */
   @js.native
   trait DescribeConfigurationRecorderStatusRequest extends js.Object {
@@ -1702,7 +1704,7 @@ package configservice {
   }
 
   /**
-   * The output for the '''DescribeConfigurationRecorderStatus''' action, in JSON format.
+   * The output for the <a>DescribeConfigurationRecorderStatus</a> action, in JSON format.
    */
   @js.native
   trait DescribeConfigurationRecorderStatusResponse extends js.Object {
@@ -1720,7 +1722,7 @@ package configservice {
   }
 
   /**
-   * The input for the '''DescribeConfigurationRecorders''' action.
+   * The input for the <a>DescribeConfigurationRecorders</a> action.
    */
   @js.native
   trait DescribeConfigurationRecordersRequest extends js.Object {
@@ -1738,7 +1740,7 @@ package configservice {
   }
 
   /**
-   * The output for the '''DescribeConfigurationRecorders''' action.
+   * The output for the <a>DescribeConfigurationRecorders</a> action.
    */
   @js.native
   trait DescribeConfigurationRecordersResponse extends js.Object {
@@ -1756,7 +1758,7 @@ package configservice {
   }
 
   /**
-   * The input for the '''DeliveryChannelStatus''' action.
+   * The input for the <a>DeliveryChannelStatus</a> action.
    */
   @js.native
   trait DescribeDeliveryChannelStatusRequest extends js.Object {
@@ -1774,7 +1776,7 @@ package configservice {
   }
 
   /**
-   * The output for the '''DescribeDeliveryChannelStatus''' action.
+   * The output for the <a>DescribeDeliveryChannelStatus</a> action.
    */
   @js.native
   trait DescribeDeliveryChannelStatusResponse extends js.Object {
@@ -1792,7 +1794,7 @@ package configservice {
   }
 
   /**
-   * The input for the '''DescribeDeliveryChannels''' action.
+   * The input for the <a>DescribeDeliveryChannels</a> action.
    */
   @js.native
   trait DescribeDeliveryChannelsRequest extends js.Object {
@@ -1810,7 +1812,7 @@ package configservice {
   }
 
   /**
-   * The output for the '''DescribeDeliveryChannels''' action.
+   * The output for the <a>DescribeDeliveryChannels</a> action.
    */
   @js.native
   trait DescribeDeliveryChannelsResponse extends js.Object {
@@ -2389,7 +2391,7 @@ package configservice {
   }
 
   /**
-   * The input for the '''GetResourceConfigHistory''' action.
+   * The input for the <a>GetResourceConfigHistory</a> action.
    */
   @js.native
   trait GetResourceConfigHistoryRequest extends js.Object {
@@ -2425,7 +2427,7 @@ package configservice {
   }
 
   /**
-   * The output for the '''GetResourceConfigHistory''' action.
+   * The output for the <a>GetResourceConfigHistory</a> action.
    */
   @js.native
   trait GetResourceConfigHistoryResponse extends js.Object {
@@ -2721,7 +2723,7 @@ package configservice {
   }
 
   /**
-   * The input for the '''PutConfigurationRecorder''' action.
+   * The input for the <a>PutConfigurationRecorder</a> action.
    */
   @js.native
   trait PutConfigurationRecorderRequest extends js.Object {
@@ -2739,7 +2741,7 @@ package configservice {
   }
 
   /**
-   * The input for the '''PutDeliveryChannel''' action.
+   * The input for the <a>PutDeliveryChannel</a> action.
    */
   @js.native
   trait PutDeliveryChannelRequest extends js.Object {
@@ -3222,7 +3224,7 @@ package configservice {
   }
 
   /**
-   * The input for the '''StartConfigurationRecorder''' action.
+   * The input for the <a>StartConfigurationRecorder</a> action.
    */
   @js.native
   trait StartConfigurationRecorderRequest extends js.Object {
@@ -3240,7 +3242,7 @@ package configservice {
   }
 
   /**
-   * The input for the '''StopConfigurationRecorder''' action.
+   * The input for the <a>StopConfigurationRecorder</a> action.
    */
   @js.native
   trait StopConfigurationRecorderRequest extends js.Object {

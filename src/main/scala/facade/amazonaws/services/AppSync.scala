@@ -35,7 +35,9 @@ package object appsync {
 package appsync {
   @js.native
   @JSImport("aws-sdk", "AppSync")
-  class AppSync(config: AWSConfig) extends js.Object {
+  class AppSync() extends js.Object {
+    def this(config: AWSConfig) = this()
+
     def createApiKey(params: CreateApiKeyRequest): Request[CreateApiKeyResponse] = js.native
     def createDataSource(params: CreateDataSourceRequest): Request[CreateDataSourceResponse] = js.native
     def createFunction(params: CreateFunctionRequest): Request[CreateFunctionResponse] = js.native

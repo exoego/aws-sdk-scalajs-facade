@@ -45,7 +45,9 @@ package object cloudhsmv2 {
 package cloudhsmv2 {
   @js.native
   @JSImport("aws-sdk", "CloudHSMV2")
-  class CloudHSMV2(config: AWSConfig) extends js.Object {
+  class CloudHSMV2() extends js.Object {
+    def this(config: AWSConfig) = this()
+
     def copyBackupToRegion(params: CopyBackupToRegionRequest): Request[CopyBackupToRegionResponse] = js.native
     def createCluster(params: CreateClusterRequest): Request[CreateClusterResponse] = js.native
     def createHsm(params: CreateHsmRequest): Request[CreateHsmResponse] = js.native

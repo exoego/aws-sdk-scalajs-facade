@@ -38,7 +38,9 @@ package object globalaccelerator {
 package globalaccelerator {
   @js.native
   @JSImport("aws-sdk", "GlobalAccelerator")
-  class GlobalAccelerator(config: AWSConfig) extends js.Object {
+  class GlobalAccelerator() extends js.Object {
+    def this(config: AWSConfig) = this()
+
     def createAccelerator(params: CreateAcceleratorRequest): Request[CreateAcceleratorResponse] = js.native
     def createEndpointGroup(params: CreateEndpointGroupRequest): Request[CreateEndpointGroupResponse] = js.native
     def createListener(params: CreateListenerRequest): Request[CreateListenerResponse] = js.native

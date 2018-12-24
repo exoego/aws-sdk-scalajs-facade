@@ -16,7 +16,9 @@ package object sagemakerruntime {
 package sagemakerruntime {
   @js.native
   @JSImport("aws-sdk", "SageMakerRuntime")
-  class SageMakerRuntime(config: AWSConfig) extends js.Object {
+  class SageMakerRuntime() extends js.Object {
+    def this(config: AWSConfig) = this()
+
     def invokeEndpoint(params: InvokeEndpointInput): Request[InvokeEndpointOutput] = js.native
   }
 

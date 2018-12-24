@@ -33,7 +33,9 @@ package object mq {
 package mq {
   @js.native
   @JSImport("aws-sdk", "MQ")
-  class MQ(config: AWSConfig) extends js.Object {
+  class MQ() extends js.Object {
+    def this(config: AWSConfig) = this()
+
     def createBroker(params: CreateBrokerRequest): Request[CreateBrokerResponse] = js.native
     def createConfiguration(params: CreateConfigurationRequest): Request[CreateConfigurationResponse] = js.native
     def createUser(params: CreateUserRequest): Request[CreateUserResponse] = js.native

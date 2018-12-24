@@ -366,7 +366,9 @@ package object iot {
 package iot {
   @js.native
   @JSImport("aws-sdk", "Iot")
-  class Iot(config: AWSConfig) extends js.Object {
+  class Iot() extends js.Object {
+    def this(config: AWSConfig) = this()
+
     def acceptCertificateTransfer(params: AcceptCertificateTransferRequest): Request[js.Object] = js.native
     def addThingToBillingGroup(params: AddThingToBillingGroupRequest): Request[AddThingToBillingGroupResponse] = js.native
     def addThingToThingGroup(params: AddThingToThingGroupRequest): Request[AddThingToThingGroupResponse] = js.native

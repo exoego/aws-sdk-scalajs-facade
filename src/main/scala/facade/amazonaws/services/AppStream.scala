@@ -86,7 +86,9 @@ package object appstream {
 package appstream {
   @js.native
   @JSImport("aws-sdk", "AppStream")
-  class AppStream(config: AWSConfig) extends js.Object {
+  class AppStream() extends js.Object {
+    def this(config: AWSConfig) = this()
+
     def associateFleet(params: AssociateFleetRequest): Request[AssociateFleetResult] = js.native
     def batchAssociateUserStack(params: BatchAssociateUserStackRequest): Request[BatchAssociateUserStackResult] = js.native
     def batchDisassociateUserStack(params: BatchDisassociateUserStackRequest): Request[BatchDisassociateUserStackResult] = js.native

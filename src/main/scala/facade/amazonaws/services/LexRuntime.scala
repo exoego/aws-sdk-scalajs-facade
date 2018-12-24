@@ -32,7 +32,9 @@ package object lexruntime {
 package lexruntime {
   @js.native
   @JSImport("aws-sdk", "LexRuntime")
-  class LexRuntime(config: AWSConfig) extends js.Object {
+  class LexRuntime() extends js.Object {
+    def this(config: AWSConfig) = this()
+
     def postContent(params: PostContentRequest): Request[PostContentResponse] = js.native
     def postText(params: PostTextRequest): Request[PostTextResponse] = js.native
   }

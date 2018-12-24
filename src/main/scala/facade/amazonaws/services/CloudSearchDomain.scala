@@ -42,7 +42,9 @@ package object cloudsearchdomain {
 package cloudsearchdomain {
   @js.native
   @JSImport("aws-sdk", "CloudSearchDomain")
-  class CloudSearchDomain(config: AWSConfig) extends js.Object {
+  class CloudSearchDomain() extends js.Object {
+    def this(config: AWSConfig) = this()
+
     def search(params: SearchRequest): Request[SearchResponse] = js.native
     def suggest(params: SuggestRequest): Request[SuggestResponse] = js.native
     def uploadDocuments(params: UploadDocumentsRequest): Request[UploadDocumentsResponse] = js.native

@@ -149,7 +149,9 @@ package object dynamodb {
 package dynamodb {
   @js.native
   @JSImport("aws-sdk", "DynamoDB")
-  class DynamoDB(config: AWSConfig) extends js.Object {
+  class DynamoDB() extends js.Object {
+    def this(config: AWSConfig) = this()
+
     def batchGetItem(params: BatchGetItemInput): Request[BatchGetItemOutput] = js.native
     def batchWriteItem(params: BatchWriteItemInput): Request[BatchWriteItemOutput] = js.native
     def createBackup(params: CreateBackupInput): Request[CreateBackupOutput] = js.native

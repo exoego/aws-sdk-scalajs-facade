@@ -34,7 +34,9 @@ package object stepfunctions {
 package stepfunctions {
   @js.native
   @JSImport("aws-sdk", "StepFunctions")
-  class StepFunctions(config: AWSConfig) extends js.Object {
+  class StepFunctions() extends js.Object {
+    def this(config: AWSConfig) = this()
+
     def createActivity(params: CreateActivityInput): Request[CreateActivityOutput] = js.native
     def createStateMachine(params: CreateStateMachineInput): Request[CreateStateMachineOutput] = js.native
     def deleteActivity(params: DeleteActivityInput): Request[DeleteActivityOutput] = js.native

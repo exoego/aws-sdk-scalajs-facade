@@ -38,7 +38,9 @@ package object snowball {
 package snowball {
   @js.native
   @JSImport("aws-sdk", "Snowball")
-  class Snowball(config: AWSConfig) extends js.Object {
+  class Snowball() extends js.Object {
+    def this(config: AWSConfig) = this()
+
     def cancelCluster(params: CancelClusterRequest): Request[CancelClusterResult] = js.native
     def cancelJob(params: CancelJobRequest): Request[CancelJobResult] = js.native
     def createAddress(params: CreateAddressRequest): Request[CreateAddressResult] = js.native

@@ -28,7 +28,9 @@ package object macie {
 package macie {
   @js.native
   @JSImport("aws-sdk", "Macie")
-  class Macie(config: AWSConfig) extends js.Object {
+  class Macie() extends js.Object {
+    def this(config: AWSConfig) = this()
+
     def associateMemberAccount(params: AssociateMemberAccountRequest): Request[js.Object] = js.native
     def associateS3Resources(params: AssociateS3ResourcesRequest): Request[AssociateS3ResourcesResult] = js.native
     def disassociateMemberAccount(params: DisassociateMemberAccountRequest): Request[js.Object] = js.native

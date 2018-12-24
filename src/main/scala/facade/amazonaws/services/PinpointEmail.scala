@@ -57,7 +57,9 @@ package object pinpointemail {
 package pinpointemail {
   @js.native
   @JSImport("aws-sdk", "PinpointEmail")
-  class PinpointEmail(config: AWSConfig) extends js.Object {
+  class PinpointEmail() extends js.Object {
+    def this(config: AWSConfig) = this()
+
     def createConfigurationSet(params: CreateConfigurationSetRequest): Request[CreateConfigurationSetResponse] = js.native
     def createConfigurationSetEventDestination(params: CreateConfigurationSetEventDestinationRequest): Request[CreateConfigurationSetEventDestinationResponse] = js.native
     def createDedicatedIpPool(params: CreateDedicatedIpPoolRequest): Request[CreateDedicatedIpPoolResponse] = js.native

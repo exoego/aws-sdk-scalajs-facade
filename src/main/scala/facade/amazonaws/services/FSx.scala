@@ -58,7 +58,9 @@ package object fsx {
 package fsx {
   @js.native
   @JSImport("aws-sdk", "FSx")
-  class FSx(config: AWSConfig) extends js.Object {
+  class FSx() extends js.Object {
+    def this(config: AWSConfig) = this()
+
     def createBackup(params: CreateBackupRequest): Request[CreateBackupResponse] = js.native
     def createFileSystem(params: CreateFileSystemRequest): Request[CreateFileSystemResponse] = js.native
     def createFileSystemFromBackup(params: CreateFileSystemFromBackupRequest): Request[CreateFileSystemFromBackupResponse] = js.native

@@ -96,7 +96,9 @@ package object devicefarm {
 package devicefarm {
   @js.native
   @JSImport("aws-sdk", "DeviceFarm")
-  class DeviceFarm(config: AWSConfig) extends js.Object {
+  class DeviceFarm() extends js.Object {
+    def this(config: AWSConfig) = this()
+
     def createDevicePool(params: CreateDevicePoolRequest): Request[CreateDevicePoolResult] = js.native
     def createInstanceProfile(params: CreateInstanceProfileRequest): Request[CreateInstanceProfileResult] = js.native
     def createNetworkProfile(params: CreateNetworkProfileRequest): Request[CreateNetworkProfileResult] = js.native
@@ -3611,7 +3613,7 @@ package devicefarm {
   }
 
   /**
-   * Represents test settings. This data structure is passed in as the "test" parameter to ScheduleRun. For an example of the JSON request syntax, see '''ScheduleRun'''.
+   * Represents test settings. This data structure is passed in as the "test" parameter to ScheduleRun. For an example of the JSON request syntax, see <a>ScheduleRun</a>.
    */
   @js.native
   trait ScheduleRunTest extends js.Object {

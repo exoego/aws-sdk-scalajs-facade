@@ -85,7 +85,9 @@ package object kinesisanalyticsv2 {
 package kinesisanalyticsv2 {
   @js.native
   @JSImport("aws-sdk", "KinesisAnalyticsV2")
-  class KinesisAnalyticsV2(config: AWSConfig) extends js.Object {
+  class KinesisAnalyticsV2() extends js.Object {
+    def this(config: AWSConfig) = this()
+
     def addApplicationCloudWatchLoggingOption(params: AddApplicationCloudWatchLoggingOptionRequest): Request[AddApplicationCloudWatchLoggingOptionResponse] = js.native
     def addApplicationInput(params: AddApplicationInputRequest): Request[AddApplicationInputResponse] = js.native
     def addApplicationInputProcessingConfiguration(params: AddApplicationInputProcessingConfigurationRequest): Request[AddApplicationInputProcessingConfigurationResponse] = js.native
@@ -1588,7 +1590,7 @@ package kinesisanalyticsv2 {
   }
 
   /**
-   * For an SQL-based Amazon Kinesis Data Analytics application, represents an update to the '''InputLambdaProcessor''' that is used to preprocess the records in the stream.
+   * For an SQL-based Amazon Kinesis Data Analytics application, represents an update to the <a>InputLambdaProcessor</a> that is used to preprocess the records in the stream.
    */
   @js.native
   trait InputLambdaProcessorUpdate extends js.Object {
@@ -1678,7 +1680,7 @@ package kinesisanalyticsv2 {
   }
 
   /**
-   * For an SQL-based Amazon Kinesis Data Analytics application, describes updates to an '''InputProcessingConfiguration'''.
+   * For an SQL-based Amazon Kinesis Data Analytics application, describes updates to an <a>InputProcessingConfiguration</a>.
    */
   @js.native
   trait InputProcessingConfigurationUpdate extends js.Object {
@@ -1896,7 +1898,7 @@ package kinesisanalyticsv2 {
   }
 
   /**
-   * For an SQL-based Amazon Kinesis Data Analytics application, when updating an output configuration using the '''UpdateApplication''' operation, provides information about a Kinesis Data Firehose delivery stream that is configured as the destination.
+   * For an SQL-based Amazon Kinesis Data Analytics application, when updating an output configuration using the <a>UpdateApplication</a> operation, provides information about a Kinesis Data Firehose delivery stream that is configured as the destination.
    */
   @js.native
   trait KinesisFirehoseOutputUpdate extends js.Object {
@@ -2010,7 +2012,7 @@ package kinesisanalyticsv2 {
   }
 
   /**
-   * When you update an SQL-based Amazon Kinesis Data Analytics application's output configuration using the '''UpdateApplication''' operation, provides information about a Kinesis data stream that is configured as the destination.
+   * When you update an SQL-based Amazon Kinesis Data Analytics application's output configuration using the <a>UpdateApplication</a> operation, provides information about a Kinesis data stream that is configured as the destination.
    */
   @js.native
   trait KinesisStreamsOutputUpdate extends js.Object {
@@ -2067,7 +2069,7 @@ package kinesisanalyticsv2 {
   }
 
   /**
-   * When you update an SQL-based Amazon Kinesis Data Analytics application's output configuration using the '''UpdateApplication''' operation, provides information about an AWS Lambda function that is configured as the destination.
+   * When you update an SQL-based Amazon Kinesis Data Analytics application's output configuration using the <a>UpdateApplication</a> operation, provides information about an AWS Lambda function that is configured as the destination.
    */
   @js.native
   trait LambdaOutputUpdate extends js.Object {
@@ -2762,7 +2764,7 @@ package kinesisanalyticsv2 {
 
   /**
    * For an SQL-based Amazon Kinesis Data Analytics application, identifies the Amazon S3 bucket and object that contains the reference data.
-   *  A Kinesis Data Analytics application loads reference data only once. If the data changes, you call the '''UpdateApplication''' operation to trigger reloading of data into your application.
+   *  A Kinesis Data Analytics application loads reference data only once. If the data changes, you call the <a>UpdateApplication</a> operation to trigger reloading of data into your application.
    */
   @js.native
   trait S3ReferenceDataSource extends js.Object {

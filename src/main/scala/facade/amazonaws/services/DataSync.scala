@@ -56,7 +56,9 @@ package object datasync {
 package datasync {
   @js.native
   @JSImport("aws-sdk", "DataSync")
-  class DataSync(config: AWSConfig) extends js.Object {
+  class DataSync() extends js.Object {
+    def this(config: AWSConfig) = this()
+
     def cancelTaskExecution(params: CancelTaskExecutionRequest): Request[CancelTaskExecutionResponse] = js.native
     def createAgent(params: CreateAgentRequest): Request[CreateAgentResponse] = js.native
     def createLocationEfs(params: CreateLocationEfsRequest): Request[CreateLocationEfsResponse] = js.native
@@ -85,7 +87,7 @@ package datasync {
   }
 
   /**
-   * Represents a single entry in a list of agents. <code>AgentListEntry</code> returns an array that contains a list of agents when the '''ListAgents''' operation is called.
+   * Represents a single entry in a list of agents. <code>AgentListEntry</code> returns an array that contains a list of agents when the <a>ListAgents</a> operation is called.
    */
   @js.native
   trait AgentListEntry extends js.Object {
@@ -943,7 +945,7 @@ package datasync {
   }
 
   /**
-   * Represents a single entry in a list of locations. <code>LocationListEntry</code> returns an array that contains a list of locations when the '''ListLocations''' operation is called.
+   * Represents a single entry in a list of locations. <code>LocationListEntry</code> returns an array that contains a list of locations when the <a>ListLocations</a> operation is called.
    */
   @js.native
   trait LocationListEntry extends js.Object {
@@ -989,8 +991,8 @@ package datasync {
   }
 
   /**
-   * Represents the options that are available to control the behavior of a '''StartTaskExecution''' operation. Behavior includes preserving metadata such as user ID (UID), group ID (GID), and file permissions, and also overwriting files in the destination, data integrity verification, and so on.
-   *  A task has a set of default options associated with it. If you don't specify an option in '''StartTaskExecution''', the default value is used. You can override the defaults options on each task execution by specifying an overriding <code>Options</code> value to '''StartTaskExecution'''.
+   * Represents the options that are available to control the behavior of a <a>StartTaskExecution</a> operation. Behavior includes preserving metadata such as user ID (UID), group ID (GID), and file permissions, and also overwriting files in the destination, data integrity verification, and so on.
+   *  A task has a set of default options associated with it. If you don't specify an option in <a>StartTaskExecution</a>, the default value is used. You can override the defaults options on each task execution by specifying an overriding <code>Options</code> value to <a>StartTaskExecution</a>.
    */
   @js.native
   trait Options extends js.Object {
@@ -1113,7 +1115,7 @@ package datasync {
   }
 
   /**
-   * Represents a single entry in a list of AWS resource tags. <code>TagListEntry</code> returns an array that contains a list of tasks when the '''ListTagsForResource''' operation is called.
+   * Represents a single entry in a list of AWS resource tags. <code>TagListEntry</code> returns an array that contains a list of tasks when the <a>ListTagsForResource</a> operation is called.
    */
   @js.native
   trait TagListEntry extends js.Object {
@@ -1165,7 +1167,7 @@ package datasync {
   }
 
   /**
-   * Represents a single entry in a list of task executions. <code>TaskExecutionListEntry</code> returns an array that contains a list of specific invocations of a task when '''ListTaskExecutions''' operation is called.
+   * Represents a single entry in a list of task executions. <code>TaskExecutionListEntry</code> returns an array that contains a list of specific invocations of a task when <a>ListTaskExecutions</a> operation is called.
    */
   @js.native
   trait TaskExecutionListEntry extends js.Object {
@@ -1236,7 +1238,7 @@ package datasync {
   }
 
   /**
-   * Represents a single entry in a list of tasks. <code>TaskListEntry</code> returns an array that contains a list of tasks when the '''ListTasks''' operation is called. A task includes the source and destination file systems to sync and the options to use for the tasks.
+   * Represents a single entry in a list of tasks. <code>TaskListEntry</code> returns an array that contains a list of tasks when the <a>ListTasks</a> operation is called. A task includes the source and destination file systems to sync and the options to use for the tasks.
    */
   @js.native
   trait TaskListEntry extends js.Object {

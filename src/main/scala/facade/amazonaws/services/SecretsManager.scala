@@ -54,7 +54,9 @@ package object secretsmanager {
 package secretsmanager {
   @js.native
   @JSImport("aws-sdk", "SecretsManager")
-  class SecretsManager(config: AWSConfig) extends js.Object {
+  class SecretsManager() extends js.Object {
+    def this(config: AWSConfig) = this()
+
     def cancelRotateSecret(params: CancelRotateSecretRequest): Request[CancelRotateSecretResponse] = js.native
     def createSecret(params: CreateSecretRequest): Request[CreateSecretResponse] = js.native
     def deleteResourcePolicy(params: DeleteResourcePolicyRequest): Request[DeleteResourcePolicyResponse] = js.native
@@ -715,7 +717,7 @@ package secretsmanager {
   }
 
   /**
-   * A structure that contains the details about a secret. It does not include the encrypted <code>SecretString</code> and <code>SecretBinary</code> values. To get those values, use the '''GetSecretValue''' operation.
+   * A structure that contains the details about a secret. It does not include the encrypted <code>SecretString</code> and <code>SecretBinary</code> values. To get those values, use the <a>GetSecretValue</a> operation.
    */
   @js.native
   trait SecretListEntry extends js.Object {

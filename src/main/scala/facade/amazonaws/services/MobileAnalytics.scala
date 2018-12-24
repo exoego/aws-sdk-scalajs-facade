@@ -19,7 +19,9 @@ package object mobileanalytics {
 package mobileanalytics {
   @js.native
   @JSImport("aws-sdk", "MobileAnalytics")
-  class MobileAnalytics(config: AWSConfig) extends js.Object {
+  class MobileAnalytics() extends js.Object {
+    def this(config: AWSConfig) = this()
+
     def putEvents(params: PutEventsInput): Request[js.Object] = js.native
   }
 

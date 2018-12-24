@@ -42,7 +42,9 @@ package object mobile {
 package mobile {
   @js.native
   @JSImport("aws-sdk", "Mobile")
-  class Mobile(config: AWSConfig) extends js.Object {
+  class Mobile() extends js.Object {
+    def this(config: AWSConfig) = this()
+
     def createProject(params: CreateProjectRequest): Request[CreateProjectResult] = js.native
     def deleteProject(params: DeleteProjectRequest): Request[DeleteProjectResult] = js.native
     def describeBundle(params: DescribeBundleRequest): Request[DescribeBundleResult] = js.native

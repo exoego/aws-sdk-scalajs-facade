@@ -31,7 +31,9 @@ package object mediastore {
 package mediastore {
   @js.native
   @JSImport("aws-sdk", "MediaStore")
-  class MediaStore(config: AWSConfig) extends js.Object {
+  class MediaStore() extends js.Object {
+    def this(config: AWSConfig) = this()
+
     def createContainer(params: CreateContainerInput): Request[CreateContainerOutput] = js.native
     def deleteContainer(params: DeleteContainerInput): Request[DeleteContainerOutput] = js.native
     def deleteContainerPolicy(params: DeleteContainerPolicyInput): Request[DeleteContainerPolicyOutput] = js.native

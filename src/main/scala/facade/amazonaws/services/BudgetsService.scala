@@ -36,7 +36,9 @@ package object budgetsservice {
 package budgetsservice {
   @js.native
   @JSImport("aws-sdk", "Budgets")
-  class BudgetsService(config: AWSConfig) extends js.Object {
+  class BudgetsService() extends js.Object {
+    def this(config: AWSConfig) = this()
+
     def createBudget(params: CreateBudgetRequest): Request[CreateBudgetResponse] = js.native
     def createNotification(params: CreateNotificationRequest): Request[CreateNotificationResponse] = js.native
     def createSubscriber(params: CreateSubscriberRequest): Request[CreateSubscriberResponse] = js.native

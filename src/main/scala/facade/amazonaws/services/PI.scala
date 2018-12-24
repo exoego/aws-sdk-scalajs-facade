@@ -25,7 +25,9 @@ package object pi {
 package pi {
   @js.native
   @JSImport("aws-sdk", "PI")
-  class PI(config: AWSConfig) extends js.Object {
+  class PI() extends js.Object {
+    def this(config: AWSConfig) = this()
+
     def describeDimensionKeys(params: DescribeDimensionKeysRequest): Request[DescribeDimensionKeysResponse] = js.native
     def getResourceMetrics(params: GetResourceMetricsRequest): Request[GetResourceMetricsResponse] = js.native
   }

@@ -34,7 +34,9 @@ package object kinesisvideo {
 package kinesisvideo {
   @js.native
   @JSImport("aws-sdk", "KinesisVideo")
-  class KinesisVideo(config: AWSConfig) extends js.Object {
+  class KinesisVideo() extends js.Object {
+    def this(config: AWSConfig) = this()
+
     def createStream(params: CreateStreamInput): Request[CreateStreamOutput] = js.native
     def deleteStream(params: DeleteStreamInput): Request[DeleteStreamOutput] = js.native
     def describeStream(params: DescribeStreamInput): Request[DescribeStreamOutput] = js.native

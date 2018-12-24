@@ -40,7 +40,9 @@ package object efs {
 package efs {
   @js.native
   @JSImport("aws-sdk", "EFS")
-  class EFS(config: AWSConfig) extends js.Object {
+  class EFS() extends js.Object {
+    def this(config: AWSConfig) = this()
+
     def createFileSystem(params: CreateFileSystemRequest): Request[FileSystemDescription] = js.native
     def createMountTarget(params: CreateMountTargetRequest): Request[MountTargetDescription] = js.native
     def createTags(params: CreateTagsRequest): Request[js.Object] = js.native

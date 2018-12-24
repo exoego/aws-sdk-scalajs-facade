@@ -66,7 +66,9 @@ package object cloudfront {
 package cloudfront {
   @js.native
   @JSImport("aws-sdk", "CloudFront")
-  class CloudFront(config: AWSConfig) extends js.Object {
+  class CloudFront() extends js.Object {
+    def this(config: AWSConfig) = this()
+
     def createCloudFrontOriginAccessIdentity(params: CreateCloudFrontOriginAccessIdentityRequest): Request[CreateCloudFrontOriginAccessIdentityResult] = js.native
     def createDistribution(params: CreateDistributionRequest): Request[CreateDistributionResult] = js.native
     def createDistributionWithTags(params: CreateDistributionWithTagsRequest): Request[CreateDistributionWithTagsResult] = js.native
@@ -1746,7 +1748,7 @@ package cloudfront {
   }
 
   /**
-   * The origin access identity's configuration information. For more information, see '''CloudFrontOriginAccessIdentityConfigComplexType'''.
+   * The origin access identity's configuration information. For more information, see <a>CloudFrontOriginAccessIdentityConfigComplexType</a>.
    */
   @js.native
   trait GetCloudFrontOriginAccessIdentityConfigRequest extends js.Object {
@@ -2360,7 +2362,7 @@ package cloudfront {
 
   /**
    * A complex type that lists the active CloudFront key pairs, if any, that are associated with <code>AwsAccountNumber</code>.
-   *  For more information, see '''ActiveTrustedSigners'''.
+   *  For more information, see <a>ActiveTrustedSigners</a>.
    */
   @js.native
   trait KeyPairIds extends js.Object {
@@ -3636,7 +3638,7 @@ package cloudfront {
    *  If you want to require signed URLs in requests for objects in the target origin that match the <code>PathPattern</code> for this cache behavior, specify <code>true</code> for <code>Enabled</code>, and specify the applicable values for <code>Quantity</code> and <code>Items</code>. For more information, see <a href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving Private Content through CloudFront</a> in the <i>Amazon Amazon CloudFront Developer Guide</i>.
    *  If you don't want to require signed URLs in requests for objects that match <code>PathPattern</code>, specify <code>false</code> for <code>Enabled</code> and <code>0</code> for <code>Quantity</code>. Omit <code>Items</code>.
    *  To add, change, or remove one or more trusted signers, change <code>Enabled</code> to <code>true</code> (if it's currently <code>false</code>), change <code>Quantity</code> as applicable, and specify all of the trusted signers that you want to include in the updated distribution.
-   *  For more information about updating the distribution configuration, see '''DistributionConfig''' .
+   *  For more information about updating the distribution configuration, see <a>DistributionConfig</a> .
    */
   @js.native
   trait TrustedSigners extends js.Object {

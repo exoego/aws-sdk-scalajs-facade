@@ -28,7 +28,9 @@ package object cur {
 package cur {
   @js.native
   @JSImport("aws-sdk", "CUR")
-  class CUR(config: AWSConfig) extends js.Object {
+  class CUR() extends js.Object {
+    def this(config: AWSConfig) = this()
+
     def deleteReportDefinition(params: DeleteReportDefinitionRequest): Request[DeleteReportDefinitionResponse] = js.native
     def describeReportDefinitions(params: DescribeReportDefinitionsRequest): Request[DescribeReportDefinitionsResponse] = js.native
     def putReportDefinition(params: PutReportDefinitionRequest): Request[PutReportDefinitionResponse] = js.native

@@ -160,7 +160,9 @@ package object cognitoidentityprovider {
 package cognitoidentityprovider {
   @js.native
   @JSImport("aws-sdk", "CognitoIdentityServiceProvider")
-  class CognitoIdentityProvider(config: AWSConfig) extends js.Object {
+  class CognitoIdentityProvider() extends js.Object {
+    def this(config: AWSConfig) = this()
+
     def addCustomAttributes(params: AddCustomAttributesRequest): Request[AddCustomAttributesResponse] = js.native
     def adminAddUserToGroup(params: AdminAddUserToGroupRequest): Request[js.Object] = js.native
     def adminConfirmSignUp(params: AdminConfirmSignUpRequest): Request[AdminConfirmSignUpResponse] = js.native

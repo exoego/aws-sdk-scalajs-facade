@@ -43,7 +43,9 @@ package object glacier {
 package glacier {
   @js.native
   @JSImport("aws-sdk", "Glacier")
-  class Glacier(config: AWSConfig) extends js.Object {
+  class Glacier() extends js.Object {
+    def this(config: AWSConfig) = this()
+
     def abortMultipartUpload(params: AbortMultipartUploadInput): Request[js.Object] = js.native
     def abortVaultLock(params: AbortVaultLockInput): Request[js.Object] = js.native
     def addTagsToVault(params: AddTagsToVaultInput): Request[js.Object] = js.native

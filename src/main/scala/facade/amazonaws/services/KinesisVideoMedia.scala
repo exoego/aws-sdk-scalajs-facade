@@ -21,7 +21,9 @@ package object kinesisvideomedia {
 package kinesisvideomedia {
   @js.native
   @JSImport("aws-sdk", "KinesisVideoMedia")
-  class KinesisVideoMedia(config: AWSConfig) extends js.Object {
+  class KinesisVideoMedia() extends js.Object {
+    def this(config: AWSConfig) = this()
+
     def getMedia(params: GetMediaInput): Request[GetMediaOutput] = js.native
   }
 

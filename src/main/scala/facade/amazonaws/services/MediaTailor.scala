@@ -15,7 +15,9 @@ package object mediatailor {
 package mediatailor {
   @js.native
   @JSImport("aws-sdk", "MediaTailor")
-  class MediaTailor(config: AWSConfig) extends js.Object {
+  class MediaTailor() extends js.Object {
+    def this(config: AWSConfig) = this()
+
     def deletePlaybackConfiguration(params: DeletePlaybackConfigurationRequest): Request[DeletePlaybackConfigurationResponse] = js.native
     def getPlaybackConfiguration(params: GetPlaybackConfigurationRequest): Request[GetPlaybackConfigurationResponse] = js.native
     def listPlaybackConfigurations(params: ListPlaybackConfigurationsRequest): Request[ListPlaybackConfigurationsResponse] = js.native

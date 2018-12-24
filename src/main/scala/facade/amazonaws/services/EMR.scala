@@ -100,7 +100,9 @@ package object emr {
 package emr {
   @js.native
   @JSImport("aws-sdk", "EMR")
-  class EMR(config: AWSConfig) extends js.Object {
+  class EMR() extends js.Object {
+    def this(config: AWSConfig) = this()
+
     def addInstanceFleet(params: AddInstanceFleetInput): Request[AddInstanceFleetOutput] = js.native
     def addInstanceGroups(params: AddInstanceGroupsInput): Request[AddInstanceGroupsOutput] = js.native
     def addJobFlowSteps(params: AddJobFlowStepsInput): Request[AddJobFlowStepsOutput] = js.native
@@ -218,7 +220,7 @@ package emr {
   }
 
   /**
-   * The input argument to the '''AddJobFlowSteps''' operation.
+   * The input argument to the <a>AddJobFlowSteps</a> operation.
    */
   @js.native
   trait AddJobFlowStepsInput extends js.Object {
@@ -239,7 +241,7 @@ package emr {
   }
 
   /**
-   * The output for the '''AddJobFlowSteps''' operation.
+   * The output for the <a>AddJobFlowSteps</a> operation.
    */
   @js.native
   trait AddJobFlowStepsOutput extends js.Object {
@@ -333,7 +335,7 @@ package emr {
   }
 
   /**
-   * An automatic scaling policy for a core instance group or task instance group in an Amazon EMR cluster. An automatic scaling policy defines how an instance group dynamically adds and terminates EC2 instances in response to the value of a CloudWatch metric. See '''PutAutoScalingPolicy'''.
+   * An automatic scaling policy for a core instance group or task instance group in an Amazon EMR cluster. An automatic scaling policy defines how an instance group dynamically adds and terminates EC2 instances in response to the value of a CloudWatch metric. See <a>PutAutoScalingPolicy</a>.
    */
   @js.native
   trait AutoScalingPolicy extends js.Object {
@@ -354,7 +356,7 @@ package emr {
   }
 
   /**
-   * An automatic scaling policy for a core instance group or task instance group in an Amazon EMR cluster. The automatic scaling policy defines how an instance group dynamically adds and terminates EC2 instances in response to the value of a CloudWatch metric. See '''PutAutoScalingPolicy'''.
+   * An automatic scaling policy for a core instance group or task instance group in an Amazon EMR cluster. The automatic scaling policy defines how an instance group dynamically adds and terminates EC2 instances in response to the value of a CloudWatch metric. See <a>PutAutoScalingPolicy</a>.
    */
   @js.native
   trait AutoScalingPolicyDescription extends js.Object {
@@ -389,7 +391,7 @@ package emr {
   }
 
   /**
-   * The reason for an '''AutoScalingPolicyStatus''' change.
+   * The reason for an <a>AutoScalingPolicyStatus</a> change.
    */
   @js.native
   trait AutoScalingPolicyStateChangeReason extends js.Object {
@@ -502,7 +504,7 @@ package emr {
   }
 
   /**
-   * The input argument to the '''CancelSteps''' operation.
+   * The input argument to the <a>CancelSteps</a> operation.
    */
   @js.native
   trait CancelStepsInput extends js.Object {
@@ -523,7 +525,7 @@ package emr {
   }
 
   /**
-   * The output for the '''CancelSteps''' operation.
+   * The output for the <a>CancelSteps</a> operation.
    */
   @js.native
   trait CancelStepsOutput extends js.Object {
@@ -959,7 +961,7 @@ package emr {
   }
 
   /**
-   * The input for the '''DescribeJobFlows''' operation.
+   * The input for the <a>DescribeJobFlows</a> operation.
    */
   @js.native
   trait DescribeJobFlowsInput extends js.Object {
@@ -986,7 +988,7 @@ package emr {
   }
 
   /**
-   * The output for the '''DescribeJobFlows''' operation.
+   * The output for the <a>DescribeJobFlows</a> operation.
    */
   @js.native
   trait DescribeJobFlowsOutput extends js.Object {
@@ -2870,7 +2872,7 @@ package emr {
   }
 
   /**
-   * Input to the '''RunJobFlow''' operation.
+   * Input to the <a>RunJobFlow</a> operation.
    */
   @js.native
   trait RunJobFlowInput extends js.Object {
@@ -2954,7 +2956,7 @@ package emr {
   }
 
   /**
-   * The result of the '''RunJobFlow''' operation.
+   * The result of the <a>RunJobFlow</a> operation.
    */
   @js.native
   trait RunJobFlowOutput extends js.Object {
@@ -3108,7 +3110,7 @@ package emr {
   }
 
   /**
-   * The input argument to the '''TerminationProtection''' operation.
+   * The input argument to the <a>TerminationProtection</a> operation.
    */
   @js.native
   trait SetTerminationProtectionInput extends js.Object {
@@ -3517,7 +3519,7 @@ package emr {
   }
 
   /**
-   * Input to the '''TerminateJobFlows''' operation.
+   * Input to the <a>TerminateJobFlows</a> operation.
    */
   @js.native
   trait TerminateJobFlowsInput extends js.Object {

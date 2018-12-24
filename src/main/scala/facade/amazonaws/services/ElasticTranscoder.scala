@@ -110,7 +110,9 @@ package object elastictranscoder {
 package elastictranscoder {
   @js.native
   @JSImport("aws-sdk", "ElasticTranscoder")
-  class ElasticTranscoder(config: AWSConfig) extends js.Object {
+  class ElasticTranscoder() extends js.Object {
+    def this(config: AWSConfig) = this()
+
     def cancelJob(params: CancelJobRequest): Request[CancelJobResponse] = js.native
     def createJob(params: CreateJobRequest): Request[CreateJobResponse] = js.native
     def createPipeline(params: CreatePipelineRequest): Request[CreatePipelineResponse] = js.native

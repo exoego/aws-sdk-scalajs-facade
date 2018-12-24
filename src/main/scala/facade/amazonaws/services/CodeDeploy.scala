@@ -143,7 +143,9 @@ package object codedeploy {
 package codedeploy {
   @js.native
   @JSImport("aws-sdk", "CodeDeploy")
-  class CodeDeploy(config: AWSConfig) extends js.Object {
+  class CodeDeploy() extends js.Object {
+    def this(config: AWSConfig) = this()
+
     def addTagsToOnPremisesInstances(params: AddTagsToOnPremisesInstancesInput): Request[js.Object] = js.native
     def batchGetApplicationRevisions(params: BatchGetApplicationRevisionsInput): Request[BatchGetApplicationRevisionsOutput] = js.native
     def batchGetApplications(params: BatchGetApplicationsInput): Request[BatchGetApplicationsOutput] = js.native

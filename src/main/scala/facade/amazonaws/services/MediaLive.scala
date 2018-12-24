@@ -274,7 +274,9 @@ package object medialive {
 package medialive {
   @js.native
   @JSImport("aws-sdk", "MediaLive")
-  class MediaLive(config: AWSConfig) extends js.Object {
+  class MediaLive() extends js.Object {
+    def this(config: AWSConfig) = this()
+
     def batchUpdateSchedule(params: BatchUpdateScheduleRequest): Request[BatchUpdateScheduleResponse] = js.native
     def createChannel(params: CreateChannelRequest): Request[CreateChannelResponse] = js.native
     def createInput(params: CreateInputRequest): Request[CreateInputResponse] = js.native

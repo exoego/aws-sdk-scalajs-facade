@@ -49,7 +49,9 @@ package object sts {
 package sts {
   @js.native
   @JSImport("aws-sdk", "STS")
-  class STS(config: AWSConfig) extends js.Object {
+  class STS() extends js.Object {
+    def this(config: AWSConfig) = this()
+
     def assumeRole(params: AssumeRoleRequest): Request[AssumeRoleResponse] = js.native
     def assumeRoleWithSAML(params: AssumeRoleWithSAMLRequest): Request[AssumeRoleWithSAMLResponse] = js.native
     def assumeRoleWithWebIdentity(params: AssumeRoleWithWebIdentityRequest): Request[AssumeRoleWithWebIdentityResponse] = js.native
@@ -93,7 +95,7 @@ package sts {
   }
 
   /**
-   * Contains the response to a successful '''AssumeRole''' request, including temporary AWS credentials that can be used to make AWS requests.
+   * Contains the response to a successful <a>AssumeRole</a> request, including temporary AWS credentials that can be used to make AWS requests.
    */
   @js.native
   trait AssumeRoleResponse extends js.Object {
@@ -144,7 +146,7 @@ package sts {
   }
 
   /**
-   * Contains the response to a successful '''AssumeRoleWithSAML''' request, including temporary AWS credentials that can be used to make AWS requests.
+   * Contains the response to a successful <a>AssumeRoleWithSAML</a> request, including temporary AWS credentials that can be used to make AWS requests.
    */
   @js.native
   trait AssumeRoleWithSAMLResponse extends js.Object {
@@ -213,7 +215,7 @@ package sts {
   }
 
   /**
-   * Contains the response to a successful '''AssumeRoleWithWebIdentity''' request, including temporary AWS credentials that can be used to make AWS requests.
+   * Contains the response to a successful <a>AssumeRoleWithWebIdentity</a> request, including temporary AWS credentials that can be used to make AWS requests.
    */
   @js.native
   trait AssumeRoleWithWebIdentityResponse extends js.Object {
@@ -369,7 +371,7 @@ package sts {
   }
 
   /**
-   * Contains the response to a successful '''GetCallerIdentity''' request, including information about the entity making the request.
+   * Contains the response to a successful <a>GetCallerIdentity</a> request, including information about the entity making the request.
    */
   @js.native
   trait GetCallerIdentityResponse extends js.Object {
@@ -414,7 +416,7 @@ package sts {
   }
 
   /**
-   * Contains the response to a successful '''GetFederationToken''' request, including temporary AWS credentials that can be used to make AWS requests.
+   * Contains the response to a successful <a>GetFederationToken</a> request, including temporary AWS credentials that can be used to make AWS requests.
    */
   @js.native
   trait GetFederationTokenResponse extends js.Object {
@@ -459,7 +461,7 @@ package sts {
   }
 
   /**
-   * Contains the response to a successful '''GetSessionToken''' request, including temporary AWS credentials that can be used to make AWS requests.
+   * Contains the response to a successful <a>GetSessionToken</a> request, including temporary AWS credentials that can be used to make AWS requests.
    */
   @js.native
   trait GetSessionTokenResponse extends js.Object {

@@ -47,7 +47,9 @@ package object cloudhsm {
 package cloudhsm {
   @js.native
   @JSImport("aws-sdk", "CloudHSM")
-  class CloudHSM(config: AWSConfig) extends js.Object {
+  class CloudHSM() extends js.Object {
+    def this(config: AWSConfig) = this()
+
     def addTagsToResource(params: AddTagsToResourceRequest): Request[AddTagsToResourceResponse] = js.native
     def createHapg(params: CreateHapgRequest): Request[CreateHapgResponse] = js.native
     def createHsm(params: CreateHsmRequest): Request[CreateHsmResponse] = js.native
@@ -136,7 +138,7 @@ package cloudhsm {
   }
 
   /**
-   * Contains the inputs for the '''CreateHapgRequest''' action.
+   * Contains the inputs for the <a>CreateHapgRequest</a> action.
    */
   @js.native
   trait CreateHapgRequest extends js.Object {
@@ -154,7 +156,7 @@ package cloudhsm {
   }
 
   /**
-   * Contains the output of the '''CreateHAPartitionGroup''' action.
+   * Contains the output of the <a>CreateHAPartitionGroup</a> action.
    */
   @js.native
   trait CreateHapgResponse extends js.Object {
@@ -229,7 +231,7 @@ package cloudhsm {
   }
 
   /**
-   * Contains the inputs for the '''CreateLunaClient''' action.
+   * Contains the inputs for the <a>CreateLunaClient</a> action.
    */
   @js.native
   trait CreateLunaClientRequest extends js.Object {
@@ -250,7 +252,7 @@ package cloudhsm {
   }
 
   /**
-   * Contains the output of the '''CreateLunaClient''' action.
+   * Contains the output of the <a>CreateLunaClient</a> action.
    */
   @js.native
   trait CreateLunaClientResponse extends js.Object {
@@ -268,7 +270,7 @@ package cloudhsm {
   }
 
   /**
-   * Contains the inputs for the '''DeleteHapg''' action.
+   * Contains the inputs for the <a>DeleteHapg</a> action.
    */
   @js.native
   trait DeleteHapgRequest extends js.Object {
@@ -286,7 +288,7 @@ package cloudhsm {
   }
 
   /**
-   * Contains the output of the '''DeleteHapg''' action.
+   * Contains the output of the <a>DeleteHapg</a> action.
    */
   @js.native
   trait DeleteHapgResponse extends js.Object {
@@ -304,7 +306,7 @@ package cloudhsm {
   }
 
   /**
-   * Contains the inputs for the '''DeleteHsm''' operation.
+   * Contains the inputs for the <a>DeleteHsm</a> operation.
    */
   @js.native
   trait DeleteHsmRequest extends js.Object {
@@ -322,7 +324,7 @@ package cloudhsm {
   }
 
   /**
-   * Contains the output of the '''DeleteHsm''' operation.
+   * Contains the output of the <a>DeleteHsm</a> operation.
    */
   @js.native
   trait DeleteHsmResponse extends js.Object {
@@ -370,7 +372,7 @@ package cloudhsm {
   }
 
   /**
-   * Contains the inputs for the '''DescribeHapg''' action.
+   * Contains the inputs for the <a>DescribeHapg</a> action.
    */
   @js.native
   trait DescribeHapgRequest extends js.Object {
@@ -388,7 +390,7 @@ package cloudhsm {
   }
 
   /**
-   * Contains the output of the '''DescribeHapg''' action.
+   * Contains the output of the <a>DescribeHapg</a> action.
    */
   @js.native
   trait DescribeHapgResponse extends js.Object {
@@ -430,7 +432,7 @@ package cloudhsm {
   }
 
   /**
-   * Contains the inputs for the '''DescribeHsm''' operation.
+   * Contains the inputs for the <a>DescribeHsm</a> operation.
    */
   @js.native
   trait DescribeHsmRequest extends js.Object {
@@ -451,7 +453,7 @@ package cloudhsm {
   }
 
   /**
-   * Contains the output of the '''DescribeHsm''' operation.
+   * Contains the output of the <a>DescribeHsm</a> operation.
    */
   @js.native
   trait DescribeHsmResponse extends js.Object {
@@ -636,7 +638,7 @@ package cloudhsm {
   }
 
   /**
-   * Contains the inputs for the '''ListAvailableZones''' action.
+   * Contains the inputs for the <a>ListAvailableZones</a> action.
    */
   @js.native
   trait ListAvailableZonesRequest extends js.Object {
@@ -835,7 +837,7 @@ package cloudhsm {
   }
 
   /**
-   * Contains the inputs for the '''ModifyHsm''' operation.
+   * Contains the inputs for the <a>ModifyHsm</a> operation.
    */
   @js.native
   trait ModifyHsmRequest extends js.Object {
@@ -868,7 +870,7 @@ package cloudhsm {
   }
 
   /**
-   * Contains the output of the '''ModifyHsm''' operation.
+   * Contains the output of the <a>ModifyHsm</a> operation.
    */
   @js.native
   trait ModifyHsmResponse extends js.Object {

@@ -83,7 +83,9 @@ package object machinelearning {
 package machinelearning {
   @js.native
   @JSImport("aws-sdk", "MachineLearning")
-  class MachineLearning(config: AWSConfig) extends js.Object {
+  class MachineLearning() extends js.Object {
+    def this(config: AWSConfig) = this()
+
     def addTags(params: AddTagsInput): Request[AddTagsOutput] = js.native
     def createBatchPrediction(params: CreateBatchPredictionInput): Request[CreateBatchPredictionOutput] = js.native
     def createDataSourceFromRDS(params: CreateDataSourceFromRDSInput): Request[CreateDataSourceFromRDSOutput] = js.native
@@ -985,7 +987,7 @@ package machinelearning {
   }
 
   /**
-   * Represents the query results from a '''DescribeDataSources''' operation. The content is essentially a list of <code>DataSource</code>.
+   * Represents the query results from a <a>DescribeDataSources</a> operation. The content is essentially a list of <code>DataSource</code>.
    */
   @js.native
   trait DescribeDataSourcesOutput extends js.Object {

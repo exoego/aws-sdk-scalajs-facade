@@ -60,7 +60,9 @@ package object kinesisanalytics {
 package kinesisanalytics {
   @js.native
   @JSImport("aws-sdk", "KinesisAnalytics")
-  class KinesisAnalytics(config: AWSConfig) extends js.Object {
+  class KinesisAnalytics() extends js.Object {
+    def this(config: AWSConfig) = this()
+
     def addApplicationCloudWatchLoggingOption(params: AddApplicationCloudWatchLoggingOptionRequest): Request[AddApplicationCloudWatchLoggingOptionResponse] = js.native
     def addApplicationInput(params: AddApplicationInputRequest): Request[AddApplicationInputResponse] = js.native
     def addApplicationInputProcessingConfiguration(params: AddApplicationInputProcessingConfigurationRequest): Request[AddApplicationInputProcessingConfigurationResponse] = js.native
@@ -956,7 +958,7 @@ package kinesisanalytics {
   }
 
   /**
-   * Represents an update to the '''InputLambdaProcessor''' that is used to preprocess the records in the stream.
+   * Represents an update to the <a>InputLambdaProcessor</a> that is used to preprocess the records in the stream.
    */
   @js.native
   trait InputLambdaProcessorUpdate extends js.Object {
@@ -1049,7 +1051,7 @@ package kinesisanalytics {
   }
 
   /**
-   * Describes updates to an '''InputProcessingConfiguration'''.
+   * Describes updates to an <a>InputProcessingConfiguration</a>.
    */
   @js.native
   trait InputProcessingConfigurationUpdate extends js.Object {
@@ -1276,7 +1278,7 @@ package kinesisanalytics {
   }
 
   /**
-   * When updating an output configuration using the '''UpdateApplication''' operation, provides information about an Amazon Kinesis Firehose delivery stream configured as the destination.
+   * When updating an output configuration using the <a>UpdateApplication</a> operation, provides information about an Amazon Kinesis Firehose delivery stream configured as the destination.
    */
   @js.native
   trait KinesisFirehoseOutputUpdate extends js.Object {
@@ -1402,7 +1404,7 @@ package kinesisanalytics {
   }
 
   /**
-   * When updating an output configuration using the '''UpdateApplication''' operation, provides information about an Amazon Kinesis stream configured as the destination.
+   * When updating an output configuration using the <a>UpdateApplication</a> operation, provides information about an Amazon Kinesis stream configured as the destination.
    */
   @js.native
   trait KinesisStreamsOutputUpdate extends js.Object {
@@ -1465,7 +1467,7 @@ package kinesisanalytics {
   }
 
   /**
-   * When updating an output configuration using the '''UpdateApplication''' operation, provides information about an AWS Lambda function configured as the destination.
+   * When updating an output configuration using the <a>UpdateApplication</a> operation, provides information about an AWS Lambda function configured as the destination.
    */
   @js.native
   trait LambdaOutputUpdate extends js.Object {
@@ -1802,7 +1804,7 @@ package kinesisanalytics {
 
   /**
    * Identifies the S3 bucket and object that contains the reference data. Also identifies the IAM role Amazon Kinesis Analytics can assume to read this object on your behalf.
-   *  An Amazon Kinesis Analytics application loads reference data only once. If the data changes, you call the '''UpdateApplication''' operation to trigger reloading of data into your application.
+   *  An Amazon Kinesis Analytics application loads reference data only once. If the data changes, you call the <a>UpdateApplication</a> operation to trigger reloading of data into your application.
    */
   @js.native
   trait S3ReferenceDataSource extends js.Object {

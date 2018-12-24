@@ -31,7 +31,9 @@ package object transcribeservice {
 package transcribeservice {
   @js.native
   @JSImport("aws-sdk", "TranscribeService")
-  class TranscribeService(config: AWSConfig) extends js.Object {
+  class TranscribeService() extends js.Object {
+    def this(config: AWSConfig) = this()
+
     def createVocabulary(params: CreateVocabularyRequest): Request[CreateVocabularyResponse] = js.native
     def deleteTranscriptionJob(params: DeleteTranscriptionJobRequest): Request[js.Object] = js.native
     def deleteVocabulary(params: DeleteVocabularyRequest): Request[js.Object] = js.native

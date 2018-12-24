@@ -49,7 +49,9 @@ package object polly {
 package polly {
   @js.native
   @JSImport("aws-sdk", "Polly")
-  class Polly(config: AWSConfig) extends js.Object {
+  class Polly() extends js.Object {
+    def this(config: AWSConfig) = this()
+
     def deleteLexicon(params: DeleteLexiconInput): Request[DeleteLexiconOutput] = js.native
     def describeVoices(params: DescribeVoicesInput): Request[DescribeVoicesOutput] = js.native
     def getLexicon(params: GetLexiconInput): Request[GetLexiconOutput] = js.native

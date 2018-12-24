@@ -28,7 +28,9 @@ package object serverlessapplicationrepository {
 package serverlessapplicationrepository {
   @js.native
   @JSImport("aws-sdk", "ServerlessApplicationRepository")
-  class ServerlessApplicationRepository(config: AWSConfig) extends js.Object {
+  class ServerlessApplicationRepository() extends js.Object {
+    def this(config: AWSConfig) = this()
+
     def createApplication(params: CreateApplicationRequest): Request[CreateApplicationResponse] = js.native
     def createApplicationVersion(params: CreateApplicationVersionRequest): Request[CreateApplicationVersionResponse] = js.native
     def createCloudFormationChangeSet(params: CreateCloudFormationChangeSetRequest): Request[CreateCloudFormationChangeSetResponse] = js.native

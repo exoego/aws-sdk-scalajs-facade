@@ -89,7 +89,9 @@ package object cloudwatchlogs {
 package cloudwatchlogs {
   @js.native
   @JSImport("aws-sdk", "CloudWatchLogs")
-  class CloudWatchLogs(config: AWSConfig) extends js.Object {
+  class CloudWatchLogs() extends js.Object {
+    def this(config: AWSConfig) = this()
+
     def associateKmsKey(params: AssociateKmsKeyRequest): Request[js.Object] = js.native
     def cancelExportTask(params: CancelExportTaskRequest): Request[js.Object] = js.native
     def createExportTask(params: CreateExportTaskRequest): Request[CreateExportTaskResponse] = js.native

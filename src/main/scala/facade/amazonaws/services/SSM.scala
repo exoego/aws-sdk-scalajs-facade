@@ -466,7 +466,9 @@ package object ssm {
 package ssm {
   @js.native
   @JSImport("aws-sdk", "SSM")
-  class SSM(config: AWSConfig) extends js.Object {
+  class SSM() extends js.Object {
+    def this(config: AWSConfig) = this()
+
     def addTagsToResource(params: AddTagsToResourceRequest): Request[AddTagsToResourceResult] = js.native
     def cancelCommand(params: CancelCommandRequest): Request[CancelCommandResult] = js.native
     def cancelMaintenanceWindowExecution(params: CancelMaintenanceWindowExecutionRequest): Request[CancelMaintenanceWindowExecutionResult] = js.native
@@ -6602,7 +6604,7 @@ package ssm {
   /**
    * Information about an Amazon S3 bucket to write instance-level logs to.
    *
-   * '''Note:'''<code>LoggingInfo</code> has been deprecated. To specify an S3 bucket to contain logs, instead use the <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported Maintenance Window task types, see '''MaintenanceWindowTaskInvocationParameters'''.
+   * '''Note:'''<code>LoggingInfo</code> has been deprecated. To specify an S3 bucket to contain logs, instead use the <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported Maintenance Window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>.
    */
   @js.native
   trait LoggingInfo extends js.Object {
@@ -6874,10 +6876,10 @@ package ssm {
 
   /**
    * The parameters for a LAMBDA task type.
-   *  For information about specifying and updating task parameters, see '''RegisterTaskWithMaintenanceWindow''' and '''UpdateMaintenanceWindowTask'''.
+   *  For information about specifying and updating task parameters, see <a>RegisterTaskWithMaintenanceWindow</a> and <a>UpdateMaintenanceWindowTask</a>.
    *
-   * '''Note:'''<code>LoggingInfo</code> has been deprecated. To specify an S3 bucket to contain logs, instead use the <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported Maintenance Window task types, see '''MaintenanceWindowTaskInvocationParameters'''.
-   *  <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs, instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported Maintenance Window task types, see '''MaintenanceWindowTaskInvocationParameters'''.
+   * '''Note:'''<code>LoggingInfo</code> has been deprecated. To specify an S3 bucket to contain logs, instead use the <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported Maintenance Window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>.
+   *  <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs, instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported Maintenance Window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>.
    *  For Lambda tasks, Systems Manager ignores any values specified for TaskParameters and LoggingInfo.
    */
   @js.native
@@ -6909,10 +6911,10 @@ package ssm {
 
   /**
    * The parameters for a RUN_COMMAND task type.
-   *  For information about specifying and updating task parameters, see '''RegisterTaskWithMaintenanceWindow''' and '''UpdateMaintenanceWindowTask'''.
+   *  For information about specifying and updating task parameters, see <a>RegisterTaskWithMaintenanceWindow</a> and <a>UpdateMaintenanceWindowTask</a>.
    *
-   * '''Note:'''<code>LoggingInfo</code> has been deprecated. To specify an S3 bucket to contain logs, instead use the <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported Maintenance Window task types, see '''MaintenanceWindowTaskInvocationParameters'''.
-   *  <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs, instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported Maintenance Window task types, see '''MaintenanceWindowTaskInvocationParameters'''.
+   * '''Note:'''<code>LoggingInfo</code> has been deprecated. To specify an S3 bucket to contain logs, instead use the <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported Maintenance Window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>.
+   *  <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs, instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported Maintenance Window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>.
    *  For Run Command tasks, Systems Manager uses specified values for <code>TaskParameters</code> and <code>LoggingInfo</code> only if no values are specified for <code>TaskInvocationParameters</code>.
    */
   @js.native
@@ -6956,10 +6958,10 @@ package ssm {
 
   /**
    * The parameters for a STEP_FUNCTION task.
-   *  For information about specifying and updating task parameters, see '''RegisterTaskWithMaintenanceWindow''' and '''UpdateMaintenanceWindowTask'''.
+   *  For information about specifying and updating task parameters, see <a>RegisterTaskWithMaintenanceWindow</a> and <a>UpdateMaintenanceWindowTask</a>.
    *
-   * '''Note:'''<code>LoggingInfo</code> has been deprecated. To specify an S3 bucket to contain logs, instead use the <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported Maintenance Window task types, see '''MaintenanceWindowTaskInvocationParameters'''.
-   *  <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs, instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported Maintenance Window task types, see '''MaintenanceWindowTaskInvocationParameters'''.
+   * '''Note:'''<code>LoggingInfo</code> has been deprecated. To specify an S3 bucket to contain logs, instead use the <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported Maintenance Window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>.
+   *  <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs, instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported Maintenance Window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>.
    *  For Step Functions tasks, Systems Manager ignores any values specified for <code>TaskParameters</code> and <code>LoggingInfo</code>.
    */
   @js.native
@@ -7383,7 +7385,7 @@ package ssm {
   /**
    * One or more filters. Use a filter to return a more specific list of results.
    *
-   * '''Note:'''The <code>Name</code> field can't be used with the '''GetParametersByPath''' API action.
+   * '''Note:'''The <code>Name</code> field can't be used with the <a>GetParametersByPath</a> API action.
    */
   @js.native
   trait ParameterStringFilter extends js.Object {
@@ -7415,7 +7417,7 @@ package ssm {
   }
 
   /**
-   * This data type is deprecated. Instead, use '''ParameterStringFilter'''.
+   * This data type is deprecated. Instead, use <a>ParameterStringFilter</a>.
    */
   @js.native
   trait ParametersFilter extends js.Object {

@@ -116,7 +116,9 @@ package object lightsail {
 package lightsail {
   @js.native
   @JSImport("aws-sdk", "Lightsail")
-  class Lightsail(config: AWSConfig) extends js.Object {
+  class Lightsail() extends js.Object {
+    def this(config: AWSConfig) = this()
+
     def allocateStaticIp(params: AllocateStaticIpRequest): Request[AllocateStaticIpResult] = js.native
     def attachDisk(params: AttachDiskRequest): Request[AttachDiskResult] = js.native
     def attachInstancesToLoadBalancer(params: AttachInstancesToLoadBalancerRequest): Request[AttachInstancesToLoadBalancerResult] = js.native

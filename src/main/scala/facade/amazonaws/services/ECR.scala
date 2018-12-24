@@ -64,7 +64,9 @@ package object ecr {
 package ecr {
   @js.native
   @JSImport("aws-sdk", "ECR")
-  class ECR(config: AWSConfig) extends js.Object {
+  class ECR() extends js.Object {
+    def this(config: AWSConfig) = this()
+
     def batchCheckLayerAvailability(params: BatchCheckLayerAvailabilityRequest): Request[BatchCheckLayerAvailabilityResponse] = js.native
     def batchDeleteImage(params: BatchDeleteImageRequest): Request[BatchDeleteImageResponse] = js.native
     def batchGetImage(params: BatchGetImageRequest): Request[BatchGetImageResponse] = js.native
@@ -432,7 +434,7 @@ package ecr {
   }
 
   /**
-   * An object representing a filter on a '''DescribeImages''' operation.
+   * An object representing a filter on a <a>DescribeImages</a> operation.
    */
   @js.native
   trait DescribeImagesFilter extends js.Object {
@@ -802,7 +804,7 @@ package ecr {
   }
 
   /**
-   * An object that describes an image returned by a '''DescribeImages''' operation.
+   * An object that describes an image returned by a <a>DescribeImages</a> operation.
    */
   @js.native
   trait ImageDetail extends js.Object {
@@ -1184,7 +1186,7 @@ package ecr {
   }
 
   /**
-   * An object representing a filter on a '''ListImages''' operation.
+   * An object representing a filter on a <a>ListImages</a> operation.
    */
   @js.native
   trait ListImagesFilter extends js.Object {

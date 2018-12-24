@@ -28,7 +28,9 @@ package object kinesisvideoarchivedmedia {
 package kinesisvideoarchivedmedia {
   @js.native
   @JSImport("aws-sdk", "KinesisVideoArchivedMedia")
-  class KinesisVideoArchivedMedia(config: AWSConfig) extends js.Object {
+  class KinesisVideoArchivedMedia() extends js.Object {
+    def this(config: AWSConfig) = this()
+
     def getHLSStreamingSessionURL(params: GetHLSStreamingSessionURLInput): Request[GetHLSStreamingSessionURLOutput] = js.native
     def getMediaForFragmentList(params: GetMediaForFragmentListInput): Request[GetMediaForFragmentListOutput] = js.native
     def listFragments(params: ListFragmentsInput): Request[ListFragmentsOutput] = js.native

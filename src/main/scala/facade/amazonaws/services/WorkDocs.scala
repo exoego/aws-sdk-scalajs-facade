@@ -93,7 +93,9 @@ package object workdocs {
 package workdocs {
   @js.native
   @JSImport("aws-sdk", "WorkDocs")
-  class WorkDocs(config: AWSConfig) extends js.Object {
+  class WorkDocs() extends js.Object {
+    def this(config: AWSConfig) = this()
+
     def abortDocumentVersionUpload(params: AbortDocumentVersionUploadRequest): Request[js.Object] = js.native
     def activateUser(params: ActivateUserRequest): Request[ActivateUserResponse] = js.native
     def addResourcePermissions(params: AddResourcePermissionsRequest): Request[AddResourcePermissionsResponse] = js.native
