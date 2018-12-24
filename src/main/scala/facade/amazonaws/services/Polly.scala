@@ -234,7 +234,7 @@ package polly {
   }
 
   /**
-   * Provides lexicon name and lexicon content in string format. For more information, see <a href="https://www.w3.org/TR/pronunciation-lexicon/">Pronunciation Lexicon Specification (PLS) Version 1.0</a>.
+   * Provides lexicon name and lexicon content in string format. For more information, see [[https://www.w3.org/TR/pronunciation-lexicon/|Pronunciation Lexicon Specification (PLS) Version 1.0]].
    */
   @js.native
   trait Lexicon extends js.Object {
@@ -255,7 +255,7 @@ package polly {
   }
 
   /**
-   * Contains metadata describing the lexicon such as the number of lexemes, language code, and so on. For more information, see <a href="http://docs.aws.amazon.com/polly/latest/dg/managing-lexicons.html">Managing Lexicons</a>.
+   * Contains metadata describing the lexicon such as the number of lexemes, language code, and so on. For more information, see [[http://docs.aws.amazon.com/polly/latest/dg/managing-lexicons.html|Managing Lexicons]].
    */
   @js.native
   trait LexiconAttributes extends js.Object {

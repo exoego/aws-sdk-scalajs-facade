@@ -5688,7 +5688,7 @@ package lightsail {
 
   /**
    * Describes a tag key and optional value assigned to an Amazon Lightsail resource.
-   *  For more information about tags in Lightsail, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-tags">Lightsail Dev Guide</a>.
+   *  For more information about tags in Lightsail, see the [[https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-tags|Lightsail Dev Guide]].
    */
   @js.native
   trait Tag extends js.Object {

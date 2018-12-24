@@ -408,9 +408,9 @@ package elasticache {
    *  * Redis (cluster mode enabled): Backup/restore is not supported on T1 instances.
    *  * Redis Append-only files (AOF) functionality is not supported for T1 or T2 instances.
    * For a complete listing of node types and specifications, see:
-   * * <a href="http://aws.amazon.com/elasticache/details">Amazon ElastiCache Product Features and Details</a>
-   *  * <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/mem-ug/ParameterGroups.Memcached.html#ParameterGroups.Memcached.NodeSpecific">Cache Node Type-Specific Parameters for Memcached</a>
-   *  * <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/ParameterGroups.Redis.html#ParameterGroups.Redis.NodeSpecific">Cache Node Type-Specific Parameters for Redis</a>
+   * * [[http://aws.amazon.com/elasticache/details|Amazon ElastiCache Product Features and Details]]
+   *  * [[http://docs.aws.amazon.com/AmazonElastiCache/latest/mem-ug/ParameterGroups.Memcached.html#ParameterGroups.Memcached.NodeSpecific|Cache Node Type-Specific Parameters for Memcached]]
+   *  * [[http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/ParameterGroups.Redis.html#ParameterGroups.Redis.NodeSpecific|Cache Node Type-Specific Parameters for Redis]]
    */
   @js.native
   trait CacheNode extends js.Object {

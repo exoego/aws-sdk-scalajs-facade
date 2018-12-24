@@ -130,7 +130,7 @@ package lambda {
   }
 
   /**
-   * Provides limits of code size and concurrency associated with the current account and region. For more information or to request a limit increase for concurrent executions, see <a href="http://docs.aws.amazon.com/lambda/latest/dg/limits.html">Lambda Limits</a>.
+   * Provides limits of code size and concurrency associated with the current account and region. For more information or to request a limit increase for concurrent executions, see [[http://docs.aws.amazon.com/lambda/latest/dg/limits.html|Lambda Limits]].
    */
   @js.native
   trait AccountLimit extends js.Object {
@@ -319,7 +319,7 @@ package lambda {
   }
 
   /**
-   * The alias's <a href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">traffic shifting</a> configuration.
+   * The alias's [[http://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html|traffic shifting]] configuration.
    */
   @js.native
   trait AliasRoutingConfiguration extends js.Object {
@@ -469,7 +469,7 @@ package lambda {
   }
 
   /**
-   * The <a href="http://docs.aws.amazon.com/lambda/latest/dg/dlq.html">dead letter queue</a> for failed asynchronous invocations.
+   * The [[http://docs.aws.amazon.com/lambda/latest/dg/dlq.html|dead letter queue]] for failed asynchronous invocations.
    */
   @js.native
   trait DeadLetterConfig extends js.Object {

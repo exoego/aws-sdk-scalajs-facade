@@ -1247,7 +1247,7 @@ package elb {
 
   /**
    * Information about a listener.
-   *  For information about the protocols and the ports supported by Elastic Load Balancing, see <a href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-listener-config.html">Listeners for Your Classic Load Balancer</a> in the <i>Classic Load Balancers Guide</i>.
+   *  For information about the protocols and the ports supported by Elastic Load Balancing, see [[http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-listener-config.html|Listeners for Your Classic Load Balancer]] in the <i>Classic Load Balancers Guide</i>.
    */
   @js.native
   trait Listener extends js.Object {

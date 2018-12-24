@@ -9115,7 +9115,7 @@ package iot {
   }
 
   /**
-   * The thing indexing configuration. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/managing-index.html">Managing Thing Indexing</a>.
+   * The thing indexing configuration. For more information, see [[https://docs.aws.amazon.com/iot/latest/developerguide/managing-index.html|Managing Thing Indexing]].
    */
   @js.native
   trait ThingIndexingConfiguration extends js.Object {

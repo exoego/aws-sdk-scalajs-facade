@@ -266,7 +266,7 @@ package snowball {
   }
 
   /**
-   * A JSON-formatted object that describes a compatible Amazon Machine Image (AMI). For more information on compatible AMIs, see <a href="http://docs.aws.amazon.com/snowball/latest/developer-guide/using-ec2.html">Using Amazon EC2 Compute Instances</a> in the <i>AWS Snowball Developer Guide</i>.
+   * A JSON-formatted object that describes a compatible Amazon Machine Image (AMI). For more information on compatible AMIs, see [[http://docs.aws.amazon.com/snowball/latest/developer-guide/using-ec2.html|Using Amazon EC2 Compute Instances]] in the <i>AWS Snowball Developer Guide</i>.
    */
   @js.native
   trait CompatibleImage extends js.Object {

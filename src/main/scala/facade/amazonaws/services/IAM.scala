@@ -475,7 +475,7 @@ package iam {
   /**
    * Contains information about an attached permissions boundary.
    *  An attached permissions boundary is a managed policy that has been attached to a user or role to set the permissions boundary.
-   *  For more information about permissions boundaries, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions Boundaries for IAM Identities </a> in the <i>IAM User Guide</i>.
+   *  For more information about permissions boundaries, see [[https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html|Permissions Boundaries for IAM Identities ]] in the <i>IAM User Guide</i>.
    */
   @js.native
   trait AttachedPermissionsBoundary extends js.Object {
@@ -498,7 +498,7 @@ package iam {
   /**
    * Contains information about an attached policy.
    *  An attached policy is a managed policy that has been attached to a user, group, or role. This data type is used as a response element in the <a>ListAttachedGroupPolicies</a>, <a>ListAttachedRolePolicies</a>, <a>ListAttachedUserPolicies</a>, and <a>GetAccountAuthorizationDetails</a> operations.
-   *  For more information about managed policies, refer to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed Policies and Inline Policies</a> in the <i>Using IAM</i> guide.
+   *  For more information about managed policies, refer to [[http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html|Managed Policies and Inline Policies]] in the <i>Using IAM</i> guide.
    */
   @js.native
   trait AttachedPolicy extends js.Object {
@@ -3781,7 +3781,7 @@ package iam {
   /**
    * Contains information about a managed policy, including the policy's ARN, versions, and the number of principal entities (users, groups, and roles) that the policy is attached to.
    *  This data type is used as a response element in the <a>GetAccountAuthorizationDetails</a> operation.
-   *  For more information about managed policies, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed Policies and Inline Policies</a> in the <i>Using IAM</i> guide.
+   *  For more information about managed policies, see [[http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html|Managed Policies and Inline Policies]] in the <i>Using IAM</i> guide.
    */
   @js.native
   trait ManagedPolicyDetail extends js.Object {
@@ -3922,7 +3922,7 @@ package iam {
   /**
    * Contains information about a managed policy.
    *  This data type is used as a response element in the <a>CreatePolicy</a>, <a>GetPolicy</a>, and <a>ListPolicies</a> operations.
-   *  For more information about managed policies, refer to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed Policies and Inline Policies</a> in the <i>Using IAM</i> guide.
+   *  For more information about managed policies, refer to [[http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html|Managed Policies and Inline Policies]] in the <i>Using IAM</i> guide.
    */
   @js.native
   trait Policy extends js.Object {
@@ -4002,7 +4002,7 @@ package iam {
   /**
    * Contains information about a group that a managed policy is attached to.
    *  This data type is used as a response element in the <a>ListEntitiesForPolicy</a> operation.
-   *  For more information about managed policies, refer to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed Policies and Inline Policies</a> in the <i>Using IAM</i> guide.
+   *  For more information about managed policies, refer to [[http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html|Managed Policies and Inline Policies]] in the <i>Using IAM</i> guide.
    */
   @js.native
   trait PolicyGroup extends js.Object {
@@ -4025,7 +4025,7 @@ package iam {
   /**
    * Contains information about a role that a managed policy is attached to.
    *  This data type is used as a response element in the <a>ListEntitiesForPolicy</a> operation.
-   *  For more information about managed policies, refer to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed Policies and Inline Policies</a> in the <i>Using IAM</i> guide.
+   *  For more information about managed policies, refer to [[http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html|Managed Policies and Inline Policies]] in the <i>Using IAM</i> guide.
    */
   @js.native
   trait PolicyRole extends js.Object {
@@ -4059,7 +4059,7 @@ package iam {
 
   /**
    * The policy usage type that indicates whether the policy is used as a permissions policy or as the permissions boundary for an entity.
-   *  For more information about permissions boundaries, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions Boundaries for IAM Identities </a> in the <i>IAM User Guide</i>.
+   *  For more information about permissions boundaries, see [[https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html|Permissions Boundaries for IAM Identities ]] in the <i>IAM User Guide</i>.
    */
   object PolicyUsageTypeEnum {
     val PermissionsPolicy = "PermissionsPolicy"
@@ -4071,7 +4071,7 @@ package iam {
   /**
    * Contains information about a user that a managed policy is attached to.
    *  This data type is used as a response element in the <a>ListEntitiesForPolicy</a> operation.
-   *  For more information about managed policies, refer to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed Policies and Inline Policies</a> in the <i>Using IAM</i> guide.
+   *  For more information about managed policies, refer to [[http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html|Managed Policies and Inline Policies]] in the <i>Using IAM</i> guide.
    */
   @js.native
   trait PolicyUser extends js.Object {
@@ -4094,7 +4094,7 @@ package iam {
   /**
    * Contains information about a version of a managed policy.
    *  This data type is used as a response element in the <a>CreatePolicyVersion</a>, <a>GetPolicyVersion</a>, <a>ListPolicyVersions</a>, and <a>GetAccountAuthorizationDetails</a> operations.
-   *  For more information about managed policies, refer to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed Policies and Inline Policies</a> in the <i>Using IAM</i> guide.
+   *  For more information about managed policies, refer to [[http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html|Managed Policies and Inline Policies]] in the <i>Using IAM</i> guide.
    */
   @js.native
   trait PolicyVersion extends js.Object {
@@ -4916,7 +4916,7 @@ package iam {
   }
 
   /**
-   * A structure that represents user-provided metadata that can be associated with a resource such as an IAM user or role. For more information about tagging, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM Identities</a> in the <i>IAM User Guide</i>.
+   * A structure that represents user-provided metadata that can be associated with a resource such as an IAM user or role. For more information about tagging, see [[http://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html|Tagging IAM Identities]] in the <i>IAM User Guide</i>.
    */
   @js.native
   trait Tag extends js.Object {
