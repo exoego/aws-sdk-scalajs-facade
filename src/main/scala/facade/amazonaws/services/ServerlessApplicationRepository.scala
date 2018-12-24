@@ -815,7 +815,7 @@ package serverlessapplicationrepository {
   }
 
   /**
-   * This property corresponds to the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RollbackConfiguration">RollbackConfiguration</a></i> Data Type.
+   * This property corresponds to the <i>AWS CloudFormation [[https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RollbackConfiguration|RollbackConfiguration]]</i> Data Type.
    */
   @js.native
   trait RollbackConfiguration extends js.Object {
@@ -836,7 +836,7 @@ package serverlessapplicationrepository {
   }
 
   /**
-   * This property corresponds to the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RollbackTrigger">RollbackTrigger</a></i> Data Type.
+   * This property corresponds to the <i>AWS CloudFormation [[https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RollbackTrigger|RollbackTrigger]]</i> Data Type.
    */
   @js.native
   trait RollbackTrigger extends js.Object {
@@ -865,7 +865,7 @@ package serverlessapplicationrepository {
   }
 
   /**
-   * This property corresponds to the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/Tag">Tag</a></i> Data Type.
+   * This property corresponds to the <i>AWS CloudFormation [[https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/Tag|Tag]]</i> Data Type.
    */
   @js.native
   trait Tag extends js.Object {

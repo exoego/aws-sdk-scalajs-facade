@@ -593,7 +593,7 @@ package kinesisvideo {
   }
 
   /**
-   * The stream version that you specified is not the latest version. To get the latest version, use the <a href="http://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_DescribeStream.html">DescribeStream</a> API.
+   * The stream version that you specified is not the latest version. To get the latest version, use the [[http://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_DescribeStream.html|DescribeStream]] API.
    */
   @js.native
   trait VersionMismatchExceptionException extends js.Object {

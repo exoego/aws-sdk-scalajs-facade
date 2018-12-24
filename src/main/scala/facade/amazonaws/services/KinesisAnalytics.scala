@@ -748,7 +748,7 @@ package kinesisanalytics {
   }
 
   /**
-   * Describes the data format when records are written to the destination. For more information, see <a href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring Application Output</a>.
+   * Describes the data format when records are written to the destination. For more information, see [[http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html|Configuring Application Output]].
    */
   @js.native
   trait DestinationSchema extends js.Object {
@@ -820,7 +820,7 @@ package kinesisanalytics {
   }
 
   /**
-   * When you configure the application input, you specify the streaming source, the in-application stream name that is created, and the mapping between the two. For more information, see <a href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring Application Input</a>.
+   * When you configure the application input, you specify the streaming source, the in-application stream name that is created, and the mapping between the two. For more information, see [[http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html|Configuring Application Input]].
    */
   @js.native
   trait Input extends js.Object {
@@ -874,7 +874,7 @@ package kinesisanalytics {
   }
 
   /**
-   * Describes the application input configuration. For more information, see <a href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring Application Input</a>.
+   * Describes the application input configuration. For more information, see [[http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html|Configuring Application Input]].
    */
   @js.native
   trait InputDescription extends js.Object {
@@ -916,7 +916,7 @@ package kinesisanalytics {
   }
 
   /**
-   * An object that contains the Amazon Resource Name (ARN) of the <a href="https://aws.amazon.com/documentation/lambda/">AWS Lambda</a> function that is used to preprocess records in the stream, and the ARN of the IAM role that is used to access the AWS Lambda function.
+   * An object that contains the Amazon Resource Name (ARN) of the [[https://aws.amazon.com/documentation/lambda/|AWS Lambda]] function that is used to preprocess records in the stream, and the ARN of the IAM role that is used to access the AWS Lambda function.
    */
   @js.native
   trait InputLambdaProcessor extends js.Object {
@@ -937,7 +937,7 @@ package kinesisanalytics {
   }
 
   /**
-   * An object that contains the Amazon Resource Name (ARN) of the <a href="https://aws.amazon.com/documentation/lambda/">AWS Lambda</a> function that is used to preprocess records in the stream, and the ARN of the IAM role that is used to access the AWS Lambda expression.
+   * An object that contains the Amazon Resource Name (ARN) of the [[https://aws.amazon.com/documentation/lambda/|AWS Lambda]] function that is used to preprocess records in the stream, and the ARN of the IAM role that is used to access the AWS Lambda expression.
    */
   @js.native
   trait InputLambdaProcessorDescription extends js.Object {
@@ -979,7 +979,7 @@ package kinesisanalytics {
   }
 
   /**
-   * Describes the number of in-application streams to create for a given streaming source. For information about parallelism, see <a href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring Application Input</a>.
+   * Describes the number of in-application streams to create for a given streaming source. For information about parallelism, see [[http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html|Configuring Application Input]].
    */
   @js.native
   trait InputParallelism extends js.Object {
@@ -1015,7 +1015,7 @@ package kinesisanalytics {
   }
 
   /**
-   * Provides a description of a processor that is used to preprocess the records in the stream before being processed by your application code. Currently, the only input processor available is <a href="https://aws.amazon.com/documentation/lambda/">AWS Lambda</a>.
+   * Provides a description of a processor that is used to preprocess the records in the stream before being processed by your application code. Currently, the only input processor available is [[https://aws.amazon.com/documentation/lambda/|AWS Lambda]].
    */
   @js.native
   trait InputProcessingConfiguration extends js.Object {
@@ -1033,7 +1033,7 @@ package kinesisanalytics {
   }
 
   /**
-   * Provides configuration information about an input processor. Currently, the only input processor available is <a href="https://aws.amazon.com/documentation/lambda/">AWS Lambda</a>.
+   * Provides configuration information about an input processor. Currently, the only input processor available is [[https://aws.amazon.com/documentation/lambda/|AWS Lambda]].
    */
   @js.native
   trait InputProcessingConfigurationDescription extends js.Object {
@@ -1552,7 +1552,7 @@ package kinesisanalytics {
 
   /**
    * Describes application output configuration in which you identify an in-application stream and a destination where you want the in-application stream data to be written. The destination can be an Amazon Kinesis stream or an Amazon Kinesis Firehose delivery stream.
-   *  <p/> For limits on how many destinations an application can write and other limitations, see <a href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/limits.html">Limits</a>.
+   *  <p/> For limits on how many destinations an application can write and other limitations, see [[http://docs.aws.amazon.com/kinesisanalytics/latest/dev/limits.html|Limits]].
    */
   @js.native
   trait Output extends js.Object {

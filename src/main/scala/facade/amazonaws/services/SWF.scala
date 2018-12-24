@@ -502,12 +502,12 @@ package swf {
 
   /**
    * Provides the details of the <code>CancelTimer</code> decision.
-   *  <b>Access Control</b>
+   *  ```Access Control```
    *  You can use IAM policies to control this decision's access to Amazon SWF resources as follows:
    * * Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.
    *  * Use an <code>Action</code> element to allow or deny permission to call this action.
    *  * You cannot use an IAM policy to constrain this action's parameters.
-   * If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.
+   * If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see [[http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html|Using IAM to Manage Access to Amazon SWF Workflows]] in the <i>Amazon SWF Developer Guide</i>.
    */
   @js.native
   trait CancelTimerDecisionAttributes extends js.Object {
@@ -557,12 +557,12 @@ package swf {
 
   /**
    * Provides the details of the <code>CancelWorkflowExecution</code> decision.
-   *  <b>Access Control</b>
+   *  ```Access Control```
    *  You can use IAM policies to control this decision's access to Amazon SWF resources as follows:
    * * Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.
    *  * Use an <code>Action</code> element to allow or deny permission to call this action.
    *  * You cannot use an IAM policy to constrain this action's parameters.
-   * If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.
+   * If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see [[http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html|Using IAM to Manage Access to Amazon SWF Workflows]] in the <i>Amazon SWF Developer Guide</i>.
    */
   @js.native
   trait CancelWorkflowExecutionDecisionAttributes extends js.Object {
@@ -820,12 +820,12 @@ package swf {
 
   /**
    * Provides the details of the <code>CompleteWorkflowExecution</code> decision.
-   *  <b>Access Control</b>
+   *  ```Access Control```
    *  You can use IAM policies to control this decision's access to Amazon SWF resources as follows:
    * * Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.
    *  * Use an <code>Action</code> element to allow or deny permission to call this action.
    *  * You cannot use an IAM policy to constrain this action's parameters.
-   * If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.
+   * If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see [[http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html|Using IAM to Manage Access to Amazon SWF Workflows]] in the <i>Amazon SWF Developer Guide</i>.
    */
   @js.native
   trait CompleteWorkflowExecutionDecisionAttributes extends js.Object {
@@ -872,7 +872,7 @@ package swf {
 
   /**
    * Provides the details of the <code>ContinueAsNewWorkflowExecution</code> decision.
-   *  <b>Access Control</b>
+   *  ```Access Control```
    *  You can use IAM policies to control this decision's access to Amazon SWF resources as follows:
    * * Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.
    *  * Use an <code>Action</code> element to allow or deny permission to call this action.
@@ -880,7 +880,7 @@ package swf {
    * <li> <code>tag</code> ? A tag used to identify the workflow execution
    *  * <code>taskList</code> ? String constraint. The key is <code>swf:taskList.name</code>.
    *  * <code>workflowType.version</code> ? String constraint. The key is <code>swf:workflowType.version</code>.
-   * </li>If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.
+   * </li>If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see [[http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html|Using IAM to Manage Access to Amazon SWF Workflows]] in the <i>Amazon SWF Developer Guide</i>.
    */
   @js.native
   trait ContinueAsNewWorkflowExecutionDecisionAttributes extends js.Object {
@@ -1066,14 +1066,14 @@ package swf {
    *  * <code>SignalExternalWorkflowExecution</code> ? Requests a signal to be delivered to the specified external workflow execution and records a <code>SignalExternalWorkflowExecutionInitiated</code> event in the history.
    *  * <code>StartChildWorkflowExecution</code> ? Requests that a child workflow execution be started and records a <code>StartChildWorkflowExecutionInitiated</code> event in the history. The child workflow execution is a separate workflow execution with its own history.
    *  * <code>StartTimer</code> ? Starts a timer for this workflow execution and records a <code>TimerStarted</code> event in the history. This timer fires after the specified delay and record a <code>TimerFired</code> event.
-   * <b>Access Control</b>
-   *  If you grant permission to use <code>RespondDecisionTaskCompleted</code>, you can use IAM policies to express permissions for the list of decisions returned by this action as if they were members of the API. Treating decisions as a pseudo API maintains a uniform conceptual model and helps keep policies readable. For details and example IAM policies, see <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.
-   *  <b>Decision Failure</b>
+   * ```Access Control```
+   *  If you grant permission to use <code>RespondDecisionTaskCompleted</code>, you can use IAM policies to express permissions for the list of decisions returned by this action as if they were members of the API. Treating decisions as a pseudo API maintains a uniform conceptual model and helps keep policies readable. For details and example IAM policies, see [[http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html|Using IAM to Manage Access to Amazon SWF Workflows]] in the <i>Amazon SWF Developer Guide</i>.
+   *  ```Decision Failure```
    *  Decisions can fail for several reasons
    * * The ordering of decisions should follow a logical flow. Some decisions might not make sense in the current context of the workflow execution and therefore fails.
    *  * A limit on your account was reached.
    *  * The decision lacks sufficient permissions.
-   * One of the following events might be added to the history to indicate an error. The event attribute's <code>cause</code> parameter indicates the cause. If <code>cause</code> is set to <code>OPERATION_NOT_PERMITTED</code>, the decision failed because it lacked sufficient permissions. For details and example IAM policies, see <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.
+   * One of the following events might be added to the history to indicate an error. The event attribute's <code>cause</code> parameter indicates the cause. If <code>cause</code> is set to <code>OPERATION_NOT_PERMITTED</code>, the decision failed because it lacked sufficient permissions. For details and example IAM policies, see [[http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html|Using IAM to Manage Access to Amazon SWF Workflows]] in the <i>Amazon SWF Developer Guide</i>.
    * * <code>ScheduleActivityTaskFailed</code> ? A <code>ScheduleActivityTask</code> decision failed. This could happen if the activity type specified in the decision isn't registered, is in a deprecated state, or the decision isn't properly configured.
    *  * <code>RequestCancelActivityTaskFailed</code> ? A <code>RequestCancelActivityTask</code> decision failed. This could happen if there is no open activity task with the specified activityId.
    *  * <code>StartTimerFailed</code> ? A <code>StartTimer</code> decision failed. This could happen if there is another open timer with the same timerId.
@@ -1088,7 +1088,7 @@ package swf {
    * The preceding error events might occur due to an error in the decider logic, which might put the workflow execution in an unstable state The cause field in the event structure for the error event indicates the cause of the error.
    *
    * '''Note:'''A workflow execution may be closed by the decider by returning one of the following decisions when completing a decision task: <code>CompleteWorkflowExecution</code>, <code>FailWorkflowExecution</code>, <code>CancelWorkflowExecution</code> and <code>ContinueAsNewWorkflowExecution</code>. An <code>UnhandledDecision</code> fault is returned if a workflow closing decision is specified and a signal or activity event had been added to the history while the decision task was being performed by the decider. Unlike the above situations which are logic issues, this fault is always possible because of race conditions in a distributed system. The right action here is to call <a>RespondDecisionTaskCompleted</a> without any decisions. This would result in another decision task with these new events included in the history. The decider should handle the new events and may decide to close the workflow execution.
-   * <b>How to Code a Decision</b>
+   * ```How to Code a Decision```
    *  You code a decision by first setting the decision type field to one of the above decision values, and then set the corresponding attributes field shown below:
    * * <code> <a>ScheduleActivityTaskDecisionAttributes</a> </code>
    *  * <code> <a>RequestCancelActivityTaskDecisionAttributes</a> </code>
@@ -1608,7 +1608,7 @@ package swf {
   }
 
   /**
-   * Used to filter the workflow executions in visibility APIs by various time-based rules. Each parameter, if specified, defines a rule that must be satisfied by each returned query result. The parameter values are in the <a href="https://en.wikipedia.org/wiki/Unix_time">Unix Time format</a>. For example: <code>"oldestDate": 1325376070.</code>
+   * Used to filter the workflow executions in visibility APIs by various time-based rules. Each parameter, if specified, defines a rule that must be satisfied by each returned query result. The parameter values are in the [[https://en.wikipedia.org/wiki/Unix_time|Unix Time format]]. For example: <code>"oldestDate": 1325376070.</code>
    */
   @js.native
   trait ExecutionTimeFilter extends js.Object {
@@ -1672,12 +1672,12 @@ package swf {
 
   /**
    * Provides the details of the <code>FailWorkflowExecution</code> decision.
-   *  <b>Access Control</b>
+   *  ```Access Control```
    *  You can use IAM policies to control this decision's access to Amazon SWF resources as follows:
    * * Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.
    *  * Use an <code>Action</code> element to allow or deny permission to call this action.
    *  * You cannot use an IAM policy to constrain this action's parameters.
-   * If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.
+   * If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see [[http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html|Using IAM to Manage Access to Amazon SWF Workflows]] in the <i>Amazon SWF Developer Guide</i>.
    */
   @js.native
   trait FailWorkflowExecutionDecisionAttributes extends js.Object {
@@ -2433,12 +2433,12 @@ package swf {
 
   /**
    * Provides the details of the <code>RecordMarker</code> decision.
-   *  <b>Access Control</b>
+   *  ```Access Control```
    *  You can use IAM policies to control this decision's access to Amazon SWF resources as follows:
    * * Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.
    *  * Use an <code>Action</code> element to allow or deny permission to call this action.
    *  * You cannot use an IAM policy to constrain this action's parameters.
-   * If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.
+   * If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see [[http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html|Using IAM to Manage Access to Amazon SWF Workflows]] in the <i>Amazon SWF Developer Guide</i>.
    */
   @js.native
   trait RecordMarkerDecisionAttributes extends js.Object {
@@ -2602,12 +2602,12 @@ package swf {
 
   /**
    * Provides the details of the <code>RequestCancelActivityTask</code> decision.
-   *  <b>Access Control</b>
+   *  ```Access Control```
    *  You can use IAM policies to control this decision's access to Amazon SWF resources as follows:
    * * Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.
    *  * Use an <code>Action</code> element to allow or deny permission to call this action.
    *  * You cannot use an IAM policy to constrain this action's parameters.
-   * If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.
+   * If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see [[http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html|Using IAM to Manage Access to Amazon SWF Workflows]] in the <i>Amazon SWF Developer Guide</i>.
    */
   @js.native
   trait RequestCancelActivityTaskDecisionAttributes extends js.Object {
@@ -2657,12 +2657,12 @@ package swf {
 
   /**
    * Provides the details of the <code>RequestCancelExternalWorkflowExecution</code> decision.
-   *  <b>Access Control</b>
+   *  ```Access Control```
    *  You can use IAM policies to control this decision's access to Amazon SWF resources as follows:
    * * Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.
    *  * Use an <code>Action</code> element to allow or deny permission to call this action.
    *  * You cannot use an IAM policy to constrain this action's parameters.
-   * If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.
+   * If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see [[http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html|Using IAM to Manage Access to Amazon SWF Workflows]] in the <i>Amazon SWF Developer Guide</i>.
    */
   @js.native
   trait RequestCancelExternalWorkflowExecutionDecisionAttributes extends js.Object {
@@ -2875,7 +2875,7 @@ package swf {
 
   /**
    * Provides the details of the <code>ScheduleActivityTask</code> decision.
-   *  <b>Access Control</b>
+   *  ```Access Control```
    *  You can use IAM policies to control this decision's access to Amazon SWF resources as follows:
    * * Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.
    *  * Use an <code>Action</code> element to allow or deny permission to call this action.
@@ -2883,7 +2883,7 @@ package swf {
    * <li> <code>activityType.name</code> ? String constraint. The key is <code>swf:activityType.name</code>.
    *  * <code>activityType.version</code> ? String constraint. The key is <code>swf:activityType.version</code>.
    *  * <code>taskList</code> ? String constraint. The key is <code>swf:taskList.name</code>.
-   * </li>If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.
+   * </li>If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see [[http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html|Using IAM to Manage Access to Amazon SWF Workflows]] in the <i>Amazon SWF Developer Guide</i>.
    */
   @js.native
   trait ScheduleActivityTaskDecisionAttributes extends js.Object {
@@ -3038,12 +3038,12 @@ package swf {
 
   /**
    * Provides the details of the <code>SignalExternalWorkflowExecution</code> decision.
-   *  <b>Access Control</b>
+   *  ```Access Control```
    *  You can use IAM policies to control this decision's access to Amazon SWF resources as follows:
    * * Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.
    *  * Use an <code>Action</code> element to allow or deny permission to call this action.
    *  * You cannot use an IAM policy to constrain this action's parameters.
-   * If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.
+   * If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see [[http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html|Using IAM to Manage Access to Amazon SWF Workflows]] in the <i>Amazon SWF Developer Guide</i>.
    */
   @js.native
   trait SignalExternalWorkflowExecutionDecisionAttributes extends js.Object {
@@ -3175,7 +3175,7 @@ package swf {
 
   /**
    * Provides the details of the <code>StartChildWorkflowExecution</code> decision.
-   *  <b>Access Control</b>
+   *  ```Access Control```
    *  You can use IAM policies to control this decision's access to Amazon SWF resources as follows:
    * * Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.
    *  * Use an <code>Action</code> element to allow or deny permission to call this action.
@@ -3184,7 +3184,7 @@ package swf {
    *  * <code>taskList</code> ? String constraint. The key is <code>swf:taskList.name</code>.
    *  * <code>workflowType.name</code> ? String constraint. The key is <code>swf:workflowType.name</code>.
    *  * <code>workflowType.version</code> ? String constraint. The key is <code>swf:workflowType.version</code>.
-   * </li>If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.
+   * </li>If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see [[http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html|Using IAM to Manage Access to Amazon SWF Workflows]] in the <i>Amazon SWF Developer Guide</i>.
    */
   @js.native
   trait StartChildWorkflowExecutionDecisionAttributes extends js.Object {
@@ -3363,12 +3363,12 @@ package swf {
 
   /**
    * Provides the details of the <code>StartTimer</code> decision.
-   *  <b>Access Control</b>
+   *  ```Access Control```
    *  You can use IAM policies to control this decision's access to Amazon SWF resources as follows:
    * * Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.
    *  * Use an <code>Action</code> element to allow or deny permission to call this action.
    *  * You cannot use an IAM policy to constrain this action's parameters.
-   * If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.
+   * If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see [[http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html|Using IAM to Manage Access to Amazon SWF Workflows]] in the <i>Amazon SWF Developer Guide</i>.
    */
   @js.native
   trait StartTimerDecisionAttributes extends js.Object {

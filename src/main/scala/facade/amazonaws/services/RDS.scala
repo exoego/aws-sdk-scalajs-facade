@@ -213,7 +213,7 @@ package rds {
   }
 
   /**
-   * Data returned by the <b>DescribeAccountAttributes</b> action.
+   * Data returned by the ```DescribeAccountAttributes``` action.
    */
   @js.native
   trait AccountAttributesMessage extends js.Object {
@@ -442,7 +442,7 @@ package rds {
 
   /**
    * Contains the available processor feature information for the DB instance class of a DB instance.
-   *  For more information, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html#USER_ConfigureProcessor">Configuring the Processor of the DB Instance Class</a> in the <i>Amazon RDS User Guide. </i>
+   *  For more information, see [[http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html#USER_ConfigureProcessor|Configuring the Processor of the DB Instance Class]] in the <i>Amazon RDS User Guide. </i>
    */
   @js.native
   trait AvailableProcessorFeature extends js.Object {
@@ -526,7 +526,7 @@ package rds {
   }
 
   /**
-   * Data returned by the <b>DescribeCertificates</b> action.
+   * Data returned by the ```DescribeCertificates``` action.
    */
   @js.native
   trait CertificateMessage extends js.Object {
@@ -569,7 +569,7 @@ package rds {
 
   /**
    * The configuration setting for the log types to be enabled for export to CloudWatch Logs for a specific DB instance or DB cluster.
-   *  The <code>EnableLogTypes</code> and <code>DisableLogTypes</code> arrays determine which logs will be exported (or not exported) to CloudWatch Logs. The values within these arrays depend on the DB engine being used. For more information, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing Database Logs to Amazon CloudWatch Logs </a> in the <i>Amazon RDS User Guide</i>.
+   *  The <code>EnableLogTypes</code> and <code>DisableLogTypes</code> arrays determine which logs will be exported (or not exported) to CloudWatch Logs. The values within these arrays depend on the DB engine being used. For more information, see [[http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch|Publishing Database Logs to Amazon CloudWatch Logs ]] in the <i>Amazon RDS User Guide</i>.
    */
   @js.native
   trait CloudwatchLogsExportConfiguration extends js.Object {
@@ -4751,7 +4751,7 @@ package rds {
   }
 
   /**
-   * Data returned from the <b>DescribeEventCategories</b> action.
+   * Data returned from the ```DescribeEventCategories``` action.
    */
   @js.native
   trait EventCategoriesMessage extends js.Object {
@@ -4814,7 +4814,7 @@ package rds {
   }
 
   /**
-   * Data returned by the <b>DescribeEventSubscriptions</b> action.
+   * Data returned by the ```DescribeEventSubscriptions``` action.
    */
   @js.native
   trait EventSubscriptionsMessage extends js.Object {
@@ -6225,7 +6225,7 @@ package rds {
   }
 
   /**
-   * Data returned from the <b>DescribePendingMaintenanceActions</b> action.
+   * Data returned from the ```DescribePendingMaintenanceActions``` action.
    */
   @js.native
   trait PendingMaintenanceActionsMessage extends js.Object {
@@ -6319,7 +6319,7 @@ package rds {
    * * <a>DescribeDBInstances</a>
    *  * <a>DescribeDBSnapshots</a>
    *  * <a>DescribeValidDBInstanceModifications</a>
-   * For more information, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html#USER_ConfigureProcessor">Configuring the Processor of the DB Instance Class</a> in the <i>Amazon RDS User Guide. </i>
+   * For more information, see [[http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html#USER_ConfigureProcessor|Configuring the Processor of the DB Instance Class]] in the <i>Amazon RDS User Guide. </i>
    */
   @js.native
   trait ProcessorFeature extends js.Object {
@@ -7595,7 +7595,7 @@ package rds {
 
   /**
    * Contains the scaling configuration of an Aurora Serverless DB cluster.
-   *  For more information, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html">Using Amazon Aurora Serverless</a> in the <i>Amazon Aurora User Guide</i>.
+   *  For more information, see [[http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html|Using Amazon Aurora Serverless]] in the <i>Amazon Aurora User Guide</i>.
    */
   @js.native
   trait ScalingConfiguration extends js.Object {
@@ -7623,7 +7623,7 @@ package rds {
 
   /**
    * Shows the scaling configuration for an Aurora DB cluster in <code>serverless</code> DB engine mode.
-   *  For more information, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html">Using Amazon Aurora Serverless</a> in the <i>Amazon Aurora User Guide</i>.
+   *  For more information, see [[http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html|Using Amazon Aurora Serverless]] in the <i>Amazon Aurora User Guide</i>.
    */
   @js.native
   trait ScalingConfigurationInfo extends js.Object {

@@ -12531,7 +12531,7 @@ package ec2 {
   }
 
   /**
-   * Indicates whether your instance is configured for hibernation. This parameter is valid only if the instance meets the <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html#hibernating-prerequisites">hibernation prerequisites</a>. Hibernation is currently supported only for Amazon Linux. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate Your Instance</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+   * Indicates whether your instance is configured for hibernation. This parameter is valid only if the instance meets the [[http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html#hibernating-prerequisites|hibernation prerequisites]]. Hibernation is currently supported only for Amazon Linux. For more information, see [[http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html|Hibernate Your Instance]] in the <i>Amazon Elastic Compute Cloud User Guide</i>.
    */
   @js.native
   trait HibernationOptions extends js.Object {
@@ -12549,7 +12549,7 @@ package ec2 {
   }
 
   /**
-   * Indicates whether your instance is configured for hibernation. This parameter is valid only if the instance meets the <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html#hibernating-prerequisites">hibernation prerequisites</a>. Hibernation is currently supported only for Amazon Linux. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate Your Instance</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+   * Indicates whether your instance is configured for hibernation. This parameter is valid only if the instance meets the [[http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html#hibernating-prerequisites|hibernation prerequisites]]. Hibernation is currently supported only for Amazon Linux. For more information, see [[http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html|Hibernate Your Instance]] in the <i>Amazon Elastic Compute Cloud User Guide</i>.
    */
   @js.native
   trait HibernationOptionsRequest extends js.Object {
@@ -15349,7 +15349,7 @@ package ec2 {
   }
 
   /**
-   * Indicates whether the instance is configured for hibernation. This parameter is valid only if the instance meets the <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html#hibernating-prerequisites">hibernation prerequisites</a>. Hibernation is currently supported only for Amazon Linux.
+   * Indicates whether the instance is configured for hibernation. This parameter is valid only if the instance meets the [[http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html#hibernating-prerequisites|hibernation prerequisites]]. Hibernation is currently supported only for Amazon Linux.
    */
   @js.native
   trait LaunchTemplateHibernationOptionsRequest extends js.Object {
@@ -18266,7 +18266,7 @@ package ec2 {
   }
 
   /**
-   * Reserved. If you need to sustain traffic greater than the <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-nat-gateway.html">documented limits</a>, contact us through the <a href="https://console.aws.amazon.com/support/home?">Support Center</a>.
+   * Reserved. If you need to sustain traffic greater than the [[http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-nat-gateway.html|documented limits]], contact us through the [[https://console.aws.amazon.com/support/home?|Support Center]].
    */
   @js.native
   trait ProvisionedBandwidth extends js.Object {
@@ -23383,7 +23383,7 @@ package ec2 {
   }
 
   /**
-   * Information about the error that occurred. For more information about errors, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html">Error Codes</a>.
+   * Information about the error that occurred. For more information about errors, see [[http://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html|Error Codes]].
    */
   @js.native
   trait UnsuccessfulItemError extends js.Object {

@@ -7604,7 +7604,7 @@ package ssm {
    * Defines a patch filter.
    *  A patch filter consists of key/value pairs, but not all keys are valid for all operating system types. For example, the key <code>PRODUCT</code> is valid for all supported operating system types. The key <code>MSRC_SEVERITY</code>, however, is valid only for Windows operating systems, and the key <code>SECTION</code> is valid only for Ubuntu operating systems.
    *  Refer to the following sections for information about which keys may be used with each major operating system, and which values are valid for each key.
-   *  <b>Windows Operating Systems</b>
+   *  ```Windows Operating Systems```
    *  The supported keys for Windows operating systems are <code>PRODUCT</code>, <code>CLASSIFICATION</code>, and <code>MSRC_SEVERITY</code>. See the following lists for valid values for each of these keys.
    *  <i>Supported key:</i> <code>PRODUCT</code>
    *  <i>Supported values:</i>
@@ -7640,7 +7640,7 @@ package ssm {
    *  * <code>Moderate</code>
    *  * <code>Low</code>
    *  * <code>Unspecified</code>
-   * <b>Ubuntu Operating Systems</b>
+   * ```Ubuntu Operating Systems```
    *  The supported keys for Ubuntu operating systems are <code>PRODUCT</code>, <code>PRIORITY</code>, and <code>SECTION</code>. See the following lists for valid values for each of these keys.
    *  <i>Supported key:</i> <code>PRODUCT</code>
    *  <i>Supported values:</i>
@@ -7657,7 +7657,7 @@ package ssm {
    *  * <code>Extra</code>
    * <i>Supported key:</i> <code>SECTION</code>
    *  Only the length of the key value is validated. Minimum length is 1. Maximum length is 64.
-   *  <b>Amazon Linux Operating Systems</b>
+   *  ```Amazon Linux Operating Systems```
    *  The supported keys for Amazon Linux operating systems are <code>PRODUCT</code>, <code>CLASSIFICATION</code>, and <code>SEVERITY</code>. See the following lists for valid values for each of these keys.
    *  <i>Supported key:</i> <code>PRODUCT</code>
    *  <i>Supported values:</i>
@@ -7688,7 +7688,7 @@ package ssm {
    *  * <code>Important</code>
    *  * <code>Medium</code>
    *  * <code>Low</code>
-   * <b>Amazon Linux 2 Operating Systems</b>
+   * ```Amazon Linux 2 Operating Systems```
    *  The supported keys for Amazon Linux 2 operating systems are <code>PRODUCT</code>, <code>CLASSIFICATION</code>, and <code>SEVERITY</code>. See the following lists for valid values for each of these keys.
    *  <i>Supported key:</i> <code>PRODUCT</code>
    *  <i>Supported values:</i>
@@ -7709,7 +7709,7 @@ package ssm {
    *  * <code>Important</code>
    *  * <code>Medium</code>
    *  * <code>Low</code>
-   * <b>RedHat Enterprise Linux (RHEL) Operating Systems</b>
+   * ```RedHat Enterprise Linux (RHEL) Operating Systems```
    *  The supported keys for RedHat Enterprise Linux operating systems are <code>PRODUCT</code>, <code>CLASSIFICATION</code>, and <code>SEVERITY</code>. See the following lists for valid values for each of these keys.
    *  <i>Supported key:</i> <code>PRODUCT</code>
    *  <i>Supported values:</i>
@@ -7738,7 +7738,7 @@ package ssm {
    *  * <code>Important</code>
    *  * <code>Medium</code>
    *  * <code>Low</code>
-   * <b>SUSE Linux Enterprise Server (SLES) Operating Systems</b>
+   * ```SUSE Linux Enterprise Server (SLES) Operating Systems```
    *  The supported keys for SLES operating systems are <code>PRODUCT</code>, <code>CLASSIFICATION</code>, and <code>SEVERITY</code>. See the following lists for valid values for each of these keys.
    *  <i>Supported key:</i> <code>PRODUCT</code>
    *  <i>Supported values:</i>
@@ -7768,7 +7768,7 @@ package ssm {
    *  * <code>Important</code>
    *  * <code>Moderate</code>
    *  * <code>Low</code>
-   * <b>CentOS Operating Systems</b>
+   * ```CentOS Operating Systems```
    *  The supported keys for CentOS operating systems are <code>PRODUCT</code>, <code>CLASSIFICATION</code>, and <code>SEVERITY</code>. See the following lists for valid values for each of these keys.
    *  <i>Supported key:</i> <code>PRODUCT</code>
    *  <i>Supported values:</i>

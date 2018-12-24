@@ -255,19 +255,19 @@ package support {
   }
 
   /**
-   * A JSON-formatted object that contains the metadata for a support case. It is contained the response from a <a>DescribeCases</a> request. <b>CaseDetails</b> contains the following fields:
-   * * <b>caseId.</b> The AWS Support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i>.
-   *  * <b>categoryCode.</b> The category of problem for the AWS Support case. Corresponds to the CategoryCode values returned by a call to <a>DescribeServices</a>.
-   *  * <b>displayId.</b> The identifier for the case on pages in the AWS Support Center.
-   *  * <b>language.</b> The ISO 639-1 code for the language in which AWS provides support. AWS Support currently supports English ("en") and Japanese ("ja"). Language parameters must be passed explicitly for operations that take them.
-   *  * <b>recentCommunications.</b> One or more <a>Communication</a> objects. Fields of these objects are <code>attachments</code>, <code>body</code>, <code>caseId</code>, <code>submittedBy</code>, and <code>timeCreated</code>.
-   *  * <b>nextToken.</b> A resumption point for pagination.
-   *  * <b>serviceCode.</b> The identifier for the AWS service that corresponds to the service code defined in the call to <a>DescribeServices</a>.
-   *  * <b>severityCode. </b>The severity code assigned to the case. Contains one of the values returned by the call to <a>DescribeSeverityLevels</a>.
-   *  * <b>status.</b> The status of the case in the AWS Support Center.
-   *  * <b>subject.</b> The subject line of the case.
-   *  * <b>submittedBy.</b> The email address of the account that submitted the case.
-   *  * <b>timeCreated.</b> The time the case was created, in ISO-8601 format.
+   * A JSON-formatted object that contains the metadata for a support case. It is contained the response from a <a>DescribeCases</a> request. ```CaseDetails``` contains the following fields:
+   * * ```caseId.``` The AWS Support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i>.
+   *  * ```categoryCode.``` The category of problem for the AWS Support case. Corresponds to the CategoryCode values returned by a call to <a>DescribeServices</a>.
+   *  * ```displayId.``` The identifier for the case on pages in the AWS Support Center.
+   *  * ```language.``` The ISO 639-1 code for the language in which AWS provides support. AWS Support currently supports English ("en") and Japanese ("ja"). Language parameters must be passed explicitly for operations that take them.
+   *  * ```recentCommunications.``` One or more <a>Communication</a> objects. Fields of these objects are <code>attachments</code>, <code>body</code>, <code>caseId</code>, <code>submittedBy</code>, and <code>timeCreated</code>.
+   *  * ```nextToken.``` A resumption point for pagination.
+   *  * ```serviceCode.``` The identifier for the AWS service that corresponds to the service code defined in the call to <a>DescribeServices</a>.
+   *  * ```severityCode. ```The severity code assigned to the case. Contains one of the values returned by the call to <a>DescribeSeverityLevels</a>.
+   *  * ```status.``` The status of the case in the AWS Support Center.
+   *  * ```subject.``` The subject line of the case.
+   *  * ```submittedBy.``` The email address of the account that submitted the case.
+   *  * ```timeCreated.``` The time the case was created, in ISO-8601 format.
    */
   @js.native
   trait CaseDetails extends js.Object {

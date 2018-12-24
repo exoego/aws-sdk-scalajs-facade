@@ -237,7 +237,7 @@ package machinelearning {
    * A list of the variables to use in searching or filtering <code>BatchPrediction</code>.
    * * <code>CreatedAt</code> - Sets the search criteria to <code>BatchPrediction</code> creation date.
    *  * <code>Status</code> - Sets the search criteria to <code>BatchPrediction</code> status.
-   *  * <code>Name</code> - Sets the search criteria to the contents of <code>BatchPrediction</code><b> </b> <code>Name</code>.
+   *  * <code>Name</code> - Sets the search criteria to the contents of <code>BatchPrediction</code>``` ``` <code>Name</code>.
    *  * <code>IAMUser</code> - Sets the search criteria to the user account that invoked the <code>BatchPrediction</code> creation.
    *  * <code>MLModelId</code> - Sets the search criteria to the <code>MLModel</code> used in the <code>BatchPrediction</code>.
    *  * <code>DataSourceId</code> - Sets the search criteria to the <code>DataSource</code> used in the <code>BatchPrediction</code>.
@@ -645,7 +645,7 @@ package machinelearning {
    * A list of the variables to use in searching or filtering <code>DataSource</code>.
    * * <code>CreatedAt</code> - Sets the search criteria to <code>DataSource</code> creation date.
    *  * <code>Status</code> - Sets the search criteria to <code>DataSource</code> status.
-   *  * <code>Name</code> - Sets the search criteria to the contents of <code>DataSource</code> <b> </b> <code>Name</code>.
+   *  * <code>Name</code> - Sets the search criteria to the contents of <code>DataSource</code> ``` ``` <code>Name</code>.
    *  * <code>DataUri</code> - Sets the search criteria to the URI of data files used to create the <code>DataSource</code>. The URI can identify either a file or an Amazon Simple Storage Service (Amazon S3) bucket or directory.
    *  * <code>IAMUser</code> - Sets the search criteria to the user account that invoked the <code>DataSource</code> creation.
    * '''Note:'''<title>Note</title> The variable names should match the variable names in the <code>DataSource</code>.
@@ -1271,7 +1271,7 @@ package machinelearning {
    * A list of the variables to use in searching or filtering <code>Evaluation</code>.
    * * <code>CreatedAt</code> - Sets the search criteria to <code>Evaluation</code> creation date.
    *  * <code>Status</code> - Sets the search criteria to <code>Evaluation</code> status.
-   *  * <code>Name</code> - Sets the search criteria to the contents of <code>Evaluation</code> <b> </b> <code>Name</code>.
+   *  * <code>Name</code> - Sets the search criteria to the contents of <code>Evaluation</code> ``` ``` <code>Name</code>.
    *  * <code>IAMUser</code> - Sets the search criteria to the user account that invoked an evaluation.
    *  * <code>MLModelId</code> - Sets the search criteria to the <code>Predictor</code> that was evaluated.
    *  * <code>DataSourceId</code> - Sets the search criteria to the <code>DataSource</code> used in evaluation.
@@ -1777,7 +1777,7 @@ package machinelearning {
    * * BinaryAUC: The binary <code>MLModel</code> uses the Area Under the Curve (AUC) technique to measure performance.
    *  * RegressionRMSE: The regression <code>MLModel</code> uses the Root Mean Square Error (RMSE) technique to measure performance. RMSE measures the difference between predicted and actual values for a single variable.
    *  * MulticlassAvgFScore: The multiclass <code>MLModel</code> uses the F1 score technique to measure performance.
-   * For more information about performance metrics, please see the <a href="http://docs.aws.amazon.com/machine-learning/latest/dg">Amazon Machine Learning Developer Guide</a>.
+   * For more information about performance metrics, please see the [[http://docs.aws.amazon.com/machine-learning/latest/dg|Amazon Machine Learning Developer Guide]].
    */
   @js.native
   trait PerformanceMetrics extends js.Object {

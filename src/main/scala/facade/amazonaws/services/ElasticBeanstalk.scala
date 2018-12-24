@@ -803,7 +803,7 @@ package elasticbeanstalk {
   }
 
   /**
-   * A specification identifying an individual configuration option along with its current value. For a list of possible option values, go to <a href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/command-options.html">Option Values</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.
+   * A specification identifying an individual configuration option along with its current value. For a list of possible option values, go to [[http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/command-options.html|Option Values]] in the <i>AWS Elastic Beanstalk Developer Guide</i>.
    */
   @js.native
   trait ConfigurationOptionSetting extends js.Object {
@@ -1957,7 +1957,7 @@ package elasticbeanstalk {
   }
 
   /**
-   * A link to another environment, defined in the environment's manifest. Links provide connection information in system properties that can be used to connect to another environment in the same group. See <a href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-cfg-manifest.html">Environment Manifest (env.yaml)</a> for details.
+   * A link to another environment, defined in the environment's manifest. Links provide connection information in system properties that can be used to connect to another environment in the same group. See [[http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-cfg-manifest.html|Environment Manifest (env.yaml)]] for details.
    */
   @js.native
   trait EnvironmentLink extends js.Object {
@@ -2188,7 +2188,7 @@ package elasticbeanstalk {
   }
 
   /**
-   * Represents summary information about the health of an instance. For more information, see <a href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and Statuses</a>.
+   * Represents summary information about the health of an instance. For more information, see [[http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html|Health Colors and Statuses]].
    */
   @js.native
   trait InstanceHealthSummary extends js.Object {
@@ -3127,7 +3127,7 @@ package elasticbeanstalk {
   }
 
   /**
-   * Represents the percentage of requests over the last 10 seconds that resulted in each type of status code response. For more information, see <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html">Status Code Definitions</a>.
+   * Represents the percentage of requests over the last 10 seconds that resulted in each type of status code response. For more information, see [[http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html|Status Code Definitions]].
    */
   @js.native
   trait StatusCodes extends js.Object {

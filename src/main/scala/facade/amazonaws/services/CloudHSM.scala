@@ -955,8 +955,8 @@ package cloudhsm {
 
   /**
    * Specifies the type of subscription for the HSM.
-   * * <b>PRODUCTION</b> - The HSM is being used in a production environment.
-   *  * <b>TRIAL</b> - The HSM is being used in a product trial.
+   * * ```PRODUCTION``` - The HSM is being used in a production environment.
+   *  * ```TRIAL``` - The HSM is being used in a product trial.
    */
   object SubscriptionTypeEnum {
     val PRODUCTION = "PRODUCTION"

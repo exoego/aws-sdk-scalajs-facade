@@ -70,7 +70,7 @@ package s3control {
   /**
    * The container element for all Public Access Block configuration options. You can enable the configuration options in any combination.
    *  Amazon S3 considers a bucket policy public unless at least one of the following conditions is true:
-   *  <ol> * The policy limits access to a set of CIDRs using <code>aws:SourceIp</code>. For more information on CIDR, see <a href="http://www.rfc-editor.org/rfc/rfc4632.txt">http://www.rfc-editor.org/rfc/rfc4632.txt</a>
+   *  <ol> * The policy limits access to a set of CIDRs using <code>aws:SourceIp</code>. For more information on CIDR, see [[http://www.rfc-editor.org/rfc/rfc4632.txt|http://www.rfc-editor.org/rfc/rfc4632.txt]]
    *  * The policy grants permissions, not including any "bad actions," to one of the following:
    * <li> A fixed AWS principal, user, role, or service principal
    *  * A fixed <code>aws:SourceArn</code>

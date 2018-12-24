@@ -1178,7 +1178,7 @@ package ecr {
   }
 
   /**
-   * The operation did not succeed because it would have exceeded a service limit for your account. For more information, see <a href="http://docs.aws.amazon.com/AmazonECR/latest/userguide/service_limits.html">Amazon ECR Default Service Limits</a> in the Amazon Elastic Container Registry User Guide.
+   * The operation did not succeed because it would have exceeded a service limit for your account. For more information, see [[http://docs.aws.amazon.com/AmazonECR/latest/userguide/service_limits.html|Amazon ECR Default Service Limits]] in the Amazon Elastic Container Registry User Guide.
    */
   @js.native
   trait LimitExceededExceptionException extends js.Object {

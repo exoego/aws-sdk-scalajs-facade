@@ -2675,7 +2675,7 @@ package clouddirectory {
   }
 
   /**
-   * A structure that contains <code>Name</code>, <code>ARN</code>, <code>Attributes</code>, <code> <a>Rule</a>s</code>, and <code>ObjectTypes</code>. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/whatarefacets.html">Facets</a> for more information.
+   * A structure that contains <code>Name</code>, <code>ARN</code>, <code>Attributes</code>, <code> <a>Rule</a>s</code>, and <code>ObjectTypes</code>. See [[http://docs.aws.amazon.com/directoryservice/latest/admin-guide/whatarefacets.html|Facets]] for more information.
    */
   @js.native
   trait Facet extends js.Object {
@@ -2731,7 +2731,7 @@ package clouddirectory {
   }
 
   /**
-   * A facet attribute definition. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_advanced.html#attributereferences">Attribute References</a> for more information.
+   * A facet attribute definition. See [[http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_advanced.html#attributereferences|Attribute References]] for more information.
    */
   @js.native
   trait FacetAttributeDefinition extends js.Object {
@@ -3150,7 +3150,7 @@ package clouddirectory {
   }
 
   /**
-   * Indicates a problem that must be resolved by Amazon Web Services. This might be a transient error in which case you can retry your request until it succeeds. Otherwise, go to the <a href="http://status.aws.amazon.com/">AWS Service Health Dashboard</a> site to see if there are any operational issues with the service.
+   * Indicates a problem that must be resolved by Amazon Web Services. This might be a transient error in which case you can retry your request until it succeeds. Otherwise, go to the [[http://status.aws.amazon.com/|AWS Service Health Dashboard]] site to see if there are any operational issues with the service.
    */
   @js.native
   trait InternalServiceExceptionException extends js.Object {
@@ -3214,7 +3214,7 @@ package clouddirectory {
   }
 
   /**
-   * Indicates that limits are exceeded. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a> for more information.
+   * Indicates that limits are exceeded. See [[http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html|Limits]] for more information.
    */
   @js.native
   trait LimitExceededExceptionException extends js.Object {
@@ -4287,7 +4287,7 @@ package clouddirectory {
   }
 
   /**
-   * Contains the <code>PolicyType</code>, <code>PolicyId</code>, and the <code>ObjectIdentifier</code> to which it is attached. For more information, see <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_key_concepts.html#policies">Policies</a>.
+   * Contains the <code>PolicyType</code>, <code>PolicyId</code>, and the <code>ObjectIdentifier</code> to which it is attached. For more information, see [[http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_key_concepts.html#policies|Policies]].
    */
   @js.native
   trait PolicyAttachment extends js.Object {
@@ -4628,7 +4628,7 @@ package clouddirectory {
   }
 
   /**
-   * A range of attribute values. For more information, see <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#rangefilters">Range Filters</a>.
+   * A range of attribute values. For more information, see [[http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#rangefilters|Range Filters]].
    */
   @js.native
   trait TypedAttributeValueRange extends js.Object {

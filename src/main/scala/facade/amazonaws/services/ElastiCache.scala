@@ -387,30 +387,30 @@ package elasticache {
    *  The following node types are supported by ElastiCache. Generally speaking, the current generation types provide more memory and computational power at lower cost when compared to their equivalent previous generation counterparts.
    * * General purpose:
    * <li> Current generation:
-   *  <b>T2 node types:</b> <code>cache.t2.micro</code>, <code>cache.t2.small</code>, <code>cache.t2.medium</code>
-   *  <b>M3 node types:</b> <code>cache.m3.medium</code>, <code>cache.m3.large</code>, <code>cache.m3.xlarge</code>, <code>cache.m3.2xlarge</code>
-   *  <b>M4 node types:</b> <code>cache.m4.large</code>, <code>cache.m4.xlarge</code>, <code>cache.m4.2xlarge</code>, <code>cache.m4.4xlarge</code>, <code>cache.m4.10xlarge</code>
+   *  ```T2 node types:``` <code>cache.t2.micro</code>, <code>cache.t2.small</code>, <code>cache.t2.medium</code>
+   *  ```M3 node types:``` <code>cache.m3.medium</code>, <code>cache.m3.large</code>, <code>cache.m3.xlarge</code>, <code>cache.m3.2xlarge</code>
+   *  ```M4 node types:``` <code>cache.m4.large</code>, <code>cache.m4.xlarge</code>, <code>cache.m4.2xlarge</code>, <code>cache.m4.4xlarge</code>, <code>cache.m4.10xlarge</code>
    *  * Previous generation: (not recommended)
-   *  <b>T1 node types:</b> <code>cache.t1.micro</code>
-   *  <b>M1 node types:</b> <code>cache.m1.small</code>, <code>cache.m1.medium</code>, <code>cache.m1.large</code>, <code>cache.m1.xlarge</code>
+   *  ```T1 node types:``` <code>cache.t1.micro</code>
+   *  ```M1 node types:``` <code>cache.m1.small</code>, <code>cache.m1.medium</code>, <code>cache.m1.large</code>, <code>cache.m1.xlarge</code>
    * </li> * Compute optimized:
    * <li> Previous generation: (not recommended)
-   *  <b>C1 node types:</b> <code>cache.c1.xlarge</code>
+   *  ```C1 node types:``` <code>cache.c1.xlarge</code>
    * </li> * Memory optimized:
    * <li> Current generation:
-   *  <b>R3 node types:</b> <code>cache.r3.large</code>, <code>cache.r3.xlarge</code>, <code>cache.r3.2xlarge</code>, <code>cache.r3.4xlarge</code>, <code>cache.r3.8xlarge</code>
-   *  <b>R4 node types;</b> <code>cache.r4.large</code>, <code>cache.r4.xlarge</code>, <code>cache.r4.2xlarge</code>, <code>cache.r4.4xlarge</code>, <code>cache.r4.8xlarge</code>, <code>cache.r4.16xlarge</code>
+   *  ```R3 node types:``` <code>cache.r3.large</code>, <code>cache.r3.xlarge</code>, <code>cache.r3.2xlarge</code>, <code>cache.r3.4xlarge</code>, <code>cache.r3.8xlarge</code>
+   *  ```R4 node types;``` <code>cache.r4.large</code>, <code>cache.r4.xlarge</code>, <code>cache.r4.2xlarge</code>, <code>cache.r4.4xlarge</code>, <code>cache.r4.8xlarge</code>, <code>cache.r4.16xlarge</code>
    *  * Previous generation: (not recommended)
-   *  <b>M2 node types:</b> <code>cache.m2.xlarge</code>, <code>cache.m2.2xlarge</code>, <code>cache.m2.4xlarge</code>
-   * </li><b>Notes:</b>
+   *  ```M2 node types:``` <code>cache.m2.xlarge</code>, <code>cache.m2.2xlarge</code>, <code>cache.m2.4xlarge</code>
+   * </li>```Notes:```
    * * All T2 instances are created in an Amazon Virtual Private Cloud (Amazon VPC).
    *  * Redis (cluster mode disabled): Redis backup/restore is not supported on T1 and T2 instances.
    *  * Redis (cluster mode enabled): Backup/restore is not supported on T1 instances.
    *  * Redis Append-only files (AOF) functionality is not supported for T1 or T2 instances.
    * For a complete listing of node types and specifications, see:
-   * * <a href="http://aws.amazon.com/elasticache/details">Amazon ElastiCache Product Features and Details</a>
-   *  * <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/mem-ug/ParameterGroups.Memcached.html#ParameterGroups.Memcached.NodeSpecific">Cache Node Type-Specific Parameters for Memcached</a>
-   *  * <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/ParameterGroups.Redis.html#ParameterGroups.Redis.NodeSpecific">Cache Node Type-Specific Parameters for Redis</a>
+   * * [[http://aws.amazon.com/elasticache/details|Amazon ElastiCache Product Features and Details]]
+   *  * [[http://docs.aws.amazon.com/AmazonElastiCache/latest/mem-ug/ParameterGroups.Memcached.html#ParameterGroups.Memcached.NodeSpecific|Cache Node Type-Specific Parameters for Memcached]]
+   *  * [[http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/ParameterGroups.Redis.html#ParameterGroups.Redis.NodeSpecific|Cache Node Type-Specific Parameters for Redis]]
    */
   @js.native
   trait CacheNode extends js.Object {
