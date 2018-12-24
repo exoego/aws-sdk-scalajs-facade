@@ -502,7 +502,7 @@ package swf {
 
   /**
    * Provides the details of the <code>CancelTimer</code> decision.
-   *  <b>Access Control</b>
+   *  ```Access Control```
    *  You can use IAM policies to control this decision's access to Amazon SWF resources as follows:
    * * Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.
    *  * Use an <code>Action</code> element to allow or deny permission to call this action.
@@ -557,7 +557,7 @@ package swf {
 
   /**
    * Provides the details of the <code>CancelWorkflowExecution</code> decision.
-   *  <b>Access Control</b>
+   *  ```Access Control```
    *  You can use IAM policies to control this decision's access to Amazon SWF resources as follows:
    * * Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.
    *  * Use an <code>Action</code> element to allow or deny permission to call this action.
@@ -820,7 +820,7 @@ package swf {
 
   /**
    * Provides the details of the <code>CompleteWorkflowExecution</code> decision.
-   *  <b>Access Control</b>
+   *  ```Access Control```
    *  You can use IAM policies to control this decision's access to Amazon SWF resources as follows:
    * * Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.
    *  * Use an <code>Action</code> element to allow or deny permission to call this action.
@@ -872,7 +872,7 @@ package swf {
 
   /**
    * Provides the details of the <code>ContinueAsNewWorkflowExecution</code> decision.
-   *  <b>Access Control</b>
+   *  ```Access Control```
    *  You can use IAM policies to control this decision's access to Amazon SWF resources as follows:
    * * Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.
    *  * Use an <code>Action</code> element to allow or deny permission to call this action.
@@ -1066,9 +1066,9 @@ package swf {
    *  * <code>SignalExternalWorkflowExecution</code> ? Requests a signal to be delivered to the specified external workflow execution and records a <code>SignalExternalWorkflowExecutionInitiated</code> event in the history.
    *  * <code>StartChildWorkflowExecution</code> ? Requests that a child workflow execution be started and records a <code>StartChildWorkflowExecutionInitiated</code> event in the history. The child workflow execution is a separate workflow execution with its own history.
    *  * <code>StartTimer</code> ? Starts a timer for this workflow execution and records a <code>TimerStarted</code> event in the history. This timer fires after the specified delay and record a <code>TimerFired</code> event.
-   * <b>Access Control</b>
+   * ```Access Control```
    *  If you grant permission to use <code>RespondDecisionTaskCompleted</code>, you can use IAM policies to express permissions for the list of decisions returned by this action as if they were members of the API. Treating decisions as a pseudo API maintains a uniform conceptual model and helps keep policies readable. For details and example IAM policies, see [[http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html|Using IAM to Manage Access to Amazon SWF Workflows]] in the <i>Amazon SWF Developer Guide</i>.
-   *  <b>Decision Failure</b>
+   *  ```Decision Failure```
    *  Decisions can fail for several reasons
    * * The ordering of decisions should follow a logical flow. Some decisions might not make sense in the current context of the workflow execution and therefore fails.
    *  * A limit on your account was reached.
@@ -1088,7 +1088,7 @@ package swf {
    * The preceding error events might occur due to an error in the decider logic, which might put the workflow execution in an unstable state The cause field in the event structure for the error event indicates the cause of the error.
    *
    * '''Note:'''A workflow execution may be closed by the decider by returning one of the following decisions when completing a decision task: <code>CompleteWorkflowExecution</code>, <code>FailWorkflowExecution</code>, <code>CancelWorkflowExecution</code> and <code>ContinueAsNewWorkflowExecution</code>. An <code>UnhandledDecision</code> fault is returned if a workflow closing decision is specified and a signal or activity event had been added to the history while the decision task was being performed by the decider. Unlike the above situations which are logic issues, this fault is always possible because of race conditions in a distributed system. The right action here is to call <a>RespondDecisionTaskCompleted</a> without any decisions. This would result in another decision task with these new events included in the history. The decider should handle the new events and may decide to close the workflow execution.
-   * <b>How to Code a Decision</b>
+   * ```How to Code a Decision```
    *  You code a decision by first setting the decision type field to one of the above decision values, and then set the corresponding attributes field shown below:
    * * <code> <a>ScheduleActivityTaskDecisionAttributes</a> </code>
    *  * <code> <a>RequestCancelActivityTaskDecisionAttributes</a> </code>
@@ -1672,7 +1672,7 @@ package swf {
 
   /**
    * Provides the details of the <code>FailWorkflowExecution</code> decision.
-   *  <b>Access Control</b>
+   *  ```Access Control```
    *  You can use IAM policies to control this decision's access to Amazon SWF resources as follows:
    * * Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.
    *  * Use an <code>Action</code> element to allow or deny permission to call this action.
@@ -2433,7 +2433,7 @@ package swf {
 
   /**
    * Provides the details of the <code>RecordMarker</code> decision.
-   *  <b>Access Control</b>
+   *  ```Access Control```
    *  You can use IAM policies to control this decision's access to Amazon SWF resources as follows:
    * * Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.
    *  * Use an <code>Action</code> element to allow or deny permission to call this action.
@@ -2602,7 +2602,7 @@ package swf {
 
   /**
    * Provides the details of the <code>RequestCancelActivityTask</code> decision.
-   *  <b>Access Control</b>
+   *  ```Access Control```
    *  You can use IAM policies to control this decision's access to Amazon SWF resources as follows:
    * * Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.
    *  * Use an <code>Action</code> element to allow or deny permission to call this action.
@@ -2657,7 +2657,7 @@ package swf {
 
   /**
    * Provides the details of the <code>RequestCancelExternalWorkflowExecution</code> decision.
-   *  <b>Access Control</b>
+   *  ```Access Control```
    *  You can use IAM policies to control this decision's access to Amazon SWF resources as follows:
    * * Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.
    *  * Use an <code>Action</code> element to allow or deny permission to call this action.
@@ -2875,7 +2875,7 @@ package swf {
 
   /**
    * Provides the details of the <code>ScheduleActivityTask</code> decision.
-   *  <b>Access Control</b>
+   *  ```Access Control```
    *  You can use IAM policies to control this decision's access to Amazon SWF resources as follows:
    * * Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.
    *  * Use an <code>Action</code> element to allow or deny permission to call this action.
@@ -3038,7 +3038,7 @@ package swf {
 
   /**
    * Provides the details of the <code>SignalExternalWorkflowExecution</code> decision.
-   *  <b>Access Control</b>
+   *  ```Access Control```
    *  You can use IAM policies to control this decision's access to Amazon SWF resources as follows:
    * * Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.
    *  * Use an <code>Action</code> element to allow or deny permission to call this action.
@@ -3175,7 +3175,7 @@ package swf {
 
   /**
    * Provides the details of the <code>StartChildWorkflowExecution</code> decision.
-   *  <b>Access Control</b>
+   *  ```Access Control```
    *  You can use IAM policies to control this decision's access to Amazon SWF resources as follows:
    * * Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.
    *  * Use an <code>Action</code> element to allow or deny permission to call this action.
@@ -3363,7 +3363,7 @@ package swf {
 
   /**
    * Provides the details of the <code>StartTimer</code> decision.
-   *  <b>Access Control</b>
+   *  ```Access Control```
    *  You can use IAM policies to control this decision's access to Amazon SWF resources as follows:
    * * Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.
    *  * Use an <code>Action</code> element to allow or deny permission to call this action.

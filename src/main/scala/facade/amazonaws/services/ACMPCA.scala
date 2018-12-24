@@ -73,7 +73,7 @@ package acmpca {
   }
 
   /**
-   * Contains information about the certificate subject. The certificate can be one issued by your private certificate authority (CA) or it can be your private CA certificate. The <b>Subject</b> field in the certificate identifies the entity that owns or controls the public key in the certificate. The entity can be a user, computer, device, or service. The <b>Subject</b> must contain an X.500 distinguished name (DN). A DN is a sequence of relative distinguished names (RDNs). The RDNs are separated by commas in the certificate. The DN must be unique for each entity, but your private CA can issue more than one certificate with the same DN to the same entity.
+   * Contains information about the certificate subject. The certificate can be one issued by your private certificate authority (CA) or it can be your private CA certificate. The ```Subject``` field in the certificate identifies the entity that owns or controls the public key in the certificate. The entity can be a user, computer, device, or service. The ```Subject``` must contain an X.500 distinguished name (DN). A DN is a sequence of relative distinguished names (RDNs). The RDNs are separated by commas in the certificate. The DN must be unique for each entity, but your private CA can issue more than one certificate with the same DN to the same entity.
    */
   @js.native
   trait ASN1Subject extends js.Object {
@@ -145,7 +145,7 @@ package acmpca {
   }
 
   /**
-   * Contains information about your private certificate authority (CA). Your private CA can issue and revoke X.509 digital certificates. Digital certificates verify that the entity named in the certificate <b>Subject</b> field owns or controls the public key contained in the <b>Subject Public Key Info</b> field. Call the <a>CreateCertificateAuthority</a> operation to create your private CA. You must then call the <a>GetCertificateAuthorityCertificate</a> operation to retrieve a private CA certificate signing request (CSR). Take the CSR to your on-premises CA and sign it with the root CA certificate or a subordinate certificate. Call the <a>ImportCertificateAuthorityCertificate</a> operation to import the signed certificate into AWS Certificate Manager (ACM).
+   * Contains information about your private certificate authority (CA). Your private CA can issue and revoke X.509 digital certificates. Digital certificates verify that the entity named in the certificate ```Subject``` field owns or controls the public key contained in the ```Subject Public Key Info``` field. Call the <a>CreateCertificateAuthority</a> operation to create your private CA. You must then call the <a>GetCertificateAuthorityCertificate</a> operation to retrieve a private CA certificate signing request (CSR). Take the CSR to your on-premises CA and sign it with the root CA certificate or a subordinate certificate. Call the <a>ImportCertificateAuthorityCertificate</a> operation to import the signed certificate into AWS Certificate Manager (ACM).
    */
   @js.native
   trait CertificateAuthority extends js.Object {
@@ -332,24 +332,24 @@ package acmpca {
   }
 
   /**
-   * Contains configuration information for a certificate revocation list (CRL). Your private certificate authority (CA) creates base CRLs. Delta CRLs are not supported. You can enable CRLs for your new or an existing private CA by setting the <b>Enabled</b> parameter to <code>true</code>. Your private CA writes CRLs to an S3 bucket that you specify in the <b>S3BucketName</b> parameter. You can hide the name of your bucket by specifying a value for the <b>CustomCname</b> parameter. Your private CA copies the CNAME or the S3 bucket name to the <b>CRL Distribution Points</b> extension of each certificate it issues. Your S3 bucket policy must give write permission to ACM PCA.
-   *  Your private CA uses the value in the <b>ExpirationInDays</b> parameter to calculate the <b>nextUpdate</b> field in the CRL. The CRL is refreshed at 1/2 the age of next update or when a certificate is revoked. When a certificate is revoked, it is recorded in the next CRL that is generated and in the next audit report. Only time valid certificates are listed in the CRL. Expired certificates are not included.
+   * Contains configuration information for a certificate revocation list (CRL). Your private certificate authority (CA) creates base CRLs. Delta CRLs are not supported. You can enable CRLs for your new or an existing private CA by setting the ```Enabled``` parameter to <code>true</code>. Your private CA writes CRLs to an S3 bucket that you specify in the ```S3BucketName``` parameter. You can hide the name of your bucket by specifying a value for the ```CustomCname``` parameter. Your private CA copies the CNAME or the S3 bucket name to the ```CRL Distribution Points``` extension of each certificate it issues. Your S3 bucket policy must give write permission to ACM PCA.
+   *  Your private CA uses the value in the ```ExpirationInDays``` parameter to calculate the ```nextUpdate``` field in the CRL. The CRL is refreshed at 1/2 the age of next update or when a certificate is revoked. When a certificate is revoked, it is recorded in the next CRL that is generated and in the next audit report. Only time valid certificates are listed in the CRL. Expired certificates are not included.
    *  CRLs contain the following fields:
-   * * <b>Version</b>: The current version number defined in RFC 5280 is V2. The integer value is 0x1.
-   *  * <b>Signature Algorithm</b>: The name of the algorithm used to sign the CRL.
-   *  * <b>Issuer</b>: The X.500 distinguished name of your private CA that issued the CRL.
-   *  * <b>Last Update</b>: The issue date and time of this CRL.
-   *  * <b>Next Update</b>: The day and time by which the next CRL will be issued.
-   *  * <b>Revoked Certificates</b>: List of revoked certificates. Each list item contains the following information.
-   * <li> <b>Serial Number</b>: The serial number, in hexadecimal format, of the revoked certificate.
-   *  * <b>Revocation Date</b>: Date and time the certificate was revoked.
-   *  * <b>CRL Entry Extensions</b>: Optional extensions for the CRL entry.
-   * <li> <b>X509v3 CRL Reason Code</b>: Reason the certificate was revoked.
-   * </li></li> * <b>CRL Extensions</b>: Optional extensions for the CRL.
-   * <li> <b>X509v3 Authority Key Identifier</b>: Identifies the public key associated with the private key used to sign the certificate.
-   *  * <b>X509v3 CRL Number:</b>: Decimal sequence number for the CRL.
-   * </li> * <b>Signature Algorithm</b>: Algorithm used by your private CA to sign the CRL.
-   *  * <b>Signature Value</b>: Signature computed over the CRL.
+   * * ```Version```: The current version number defined in RFC 5280 is V2. The integer value is 0x1.
+   *  * ```Signature Algorithm```: The name of the algorithm used to sign the CRL.
+   *  * ```Issuer```: The X.500 distinguished name of your private CA that issued the CRL.
+   *  * ```Last Update```: The issue date and time of this CRL.
+   *  * ```Next Update```: The day and time by which the next CRL will be issued.
+   *  * ```Revoked Certificates```: List of revoked certificates. Each list item contains the following information.
+   * <li> ```Serial Number```: The serial number, in hexadecimal format, of the revoked certificate.
+   *  * ```Revocation Date```: Date and time the certificate was revoked.
+   *  * ```CRL Entry Extensions```: Optional extensions for the CRL entry.
+   * <li> ```X509v3 CRL Reason Code```: Reason the certificate was revoked.
+   * </li></li> * ```CRL Extensions```: Optional extensions for the CRL.
+   * <li> ```X509v3 Authority Key Identifier```: Identifies the public key associated with the private key used to sign the certificate.
+   *  * ```X509v3 CRL Number:```: Decimal sequence number for the CRL.
+   * </li> * ```Signature Algorithm```: Algorithm used by your private CA to sign the CRL.
+   *  * ```Signature Value```: Signature computed over the CRL.
    * Certificate revocation lists created by ACM PCA are DER-encoded. You can use the following OpenSSL command to list a CRL.
    *  <code>openssl crl -inform DER -text -in <i>crl_path</i> -noout</code>
    */

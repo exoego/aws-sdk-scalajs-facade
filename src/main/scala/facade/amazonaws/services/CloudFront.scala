@@ -1056,7 +1056,7 @@ package cloudfront {
 
   /**
    * This action deletes a web distribution. To delete a web distribution using the CloudFront API, perform the following steps.
-   *  <b>To delete a web distribution using the CloudFront API:</b>
+   *  ```To delete a web distribution using the CloudFront API:```
    *  <ol> * Disable the web distribution
    *  * Submit a <code>GET Distribution Config</code> request to get the current configuration and the <code>Etag</code> header for the distribution.
    *  * Update the XML document that was returned in the response to your <code>GET Distribution Config</code> request to change the value of <code>Enabled</code> to <code>false</code>.
@@ -3944,11 +3944,11 @@ package cloudfront {
    *  * IAMCertificateId
    *  * CloudFrontDefaultCertificate
    * Don't specify <code>false</code> for <code>CloudFrontDefaultCertificate</code>.
-   *  <b>If you want viewers to use HTTP instead of HTTPS to request your objects</b>: Specify the following value:
+   *  ```If you want viewers to use HTTP instead of HTTPS to request your objects```: Specify the following value:
    *  <code>&lt;CloudFrontDefaultCertificate&gt;true&lt;CloudFrontDefaultCertificate&gt;</code>
    *  In addition, specify <code>allow-all</code> for <code>ViewerProtocolPolicy</code> for all of your cache behaviors.
-   *  <b>If you want viewers to use HTTPS to request your objects</b>: Choose the type of certificate that you want to use based on whether you're using an alternate domain name for your objects or the CloudFront domain name:
-   * * <b>If you're using an alternate domain name, such as example.com</b>: Specify one of the following values, depending on whether ACM provided your certificate or you purchased your certificate from third-party certificate authority:
+   *  ```If you want viewers to use HTTPS to request your objects```: Choose the type of certificate that you want to use based on whether you're using an alternate domain name for your objects or the CloudFront domain name:
+   * * ```If you're using an alternate domain name, such as example.com```: Specify one of the following values, depending on whether ACM provided your certificate or you purchased your certificate from third-party certificate authority:
    * <li> <code>&lt;ACMCertificateArn&gt;<i>ARN for ACM SSL/TLS certificate</i>&lt;ACMCertificateArn&gt;</code> where <code> <i>ARN for ACM SSL/TLS certificate</i> </code> is the ARN for the ACM SSL/TLS certificate that you want to use for this distribution.
    *  * <code>&lt;IAMCertificateId&gt;<i>IAM certificate ID</i>&lt;IAMCertificateId&gt;</code> where <code> <i>IAM certificate ID</i> </code> is the ID that IAM returned when you added the certificate to the IAM certificate store.
    * If you specify <code>ACMCertificateArn</code> or <code>IAMCertificateId</code>, you must also specify a value for <code>SSLSupportMethod</code>.

@@ -213,7 +213,7 @@ package rds {
   }
 
   /**
-   * Data returned by the <b>DescribeAccountAttributes</b> action.
+   * Data returned by the ```DescribeAccountAttributes``` action.
    */
   @js.native
   trait AccountAttributesMessage extends js.Object {
@@ -526,7 +526,7 @@ package rds {
   }
 
   /**
-   * Data returned by the <b>DescribeCertificates</b> action.
+   * Data returned by the ```DescribeCertificates``` action.
    */
   @js.native
   trait CertificateMessage extends js.Object {
@@ -4751,7 +4751,7 @@ package rds {
   }
 
   /**
-   * Data returned from the <b>DescribeEventCategories</b> action.
+   * Data returned from the ```DescribeEventCategories``` action.
    */
   @js.native
   trait EventCategoriesMessage extends js.Object {
@@ -4814,7 +4814,7 @@ package rds {
   }
 
   /**
-   * Data returned by the <b>DescribeEventSubscriptions</b> action.
+   * Data returned by the ```DescribeEventSubscriptions``` action.
    */
   @js.native
   trait EventSubscriptionsMessage extends js.Object {
@@ -6225,7 +6225,7 @@ package rds {
   }
 
   /**
-   * Data returned from the <b>DescribePendingMaintenanceActions</b> action.
+   * Data returned from the ```DescribePendingMaintenanceActions``` action.
    */
   @js.native
   trait PendingMaintenanceActionsMessage extends js.Object {

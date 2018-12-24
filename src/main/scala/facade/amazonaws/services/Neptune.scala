@@ -2968,7 +2968,7 @@ package neptune {
   }
 
   /**
-   * Data returned from the <b>DescribeEventCategories</b> action.
+   * Data returned from the ```DescribeEventCategories``` action.
    */
   @js.native
   trait EventCategoriesMessage extends js.Object {
@@ -3036,7 +3036,7 @@ package neptune {
   }
 
   /**
-   * Data returned by the <b>DescribeEventSubscriptions</b> action.
+   * Data returned by the ```DescribeEventSubscriptions``` action.
    */
   @js.native
   trait EventSubscriptionsMessage extends js.Object {
@@ -3887,7 +3887,7 @@ package neptune {
   }
 
   /**
-   * Data returned from the <b>DescribePendingMaintenanceActions</b> action.
+   * Data returned from the ```DescribePendingMaintenanceActions``` action.
    */
   @js.native
   trait PendingMaintenanceActionsMessage extends js.Object {
