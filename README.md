@@ -9,7 +9,7 @@ Now with AWS introduced in re:Invent 2018,
 ## Getting Started
 
 ```sbt
-libraryDependencies += "net.exoego" %%% "aws-sdk-scalajs-facade" % "0.20.0"
+libraryDependencies += "net.exoego" %%% "aws-sdk-scalajs-facade" % "0.21.0"
 ```
 
 ## Origin 
