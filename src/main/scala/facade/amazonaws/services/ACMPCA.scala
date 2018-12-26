@@ -237,22 +237,6 @@ package acmpca {
     val values = IndexedSeq(SUBORDINATE)
   }
 
-  /**
-   * The certificate authority certificate you are importing does not comply with conditions specified in the certificate that signed it.
-   */
-  @js.native
-  trait CertificateMismatchExceptionException extends js.Object {
-    val message: String
-  }
-
-  /**
-   * A previous update to your private CA is still ongoing.
-   */
-  @js.native
-  trait ConcurrentModificationExceptionException extends js.Object {
-    val message: String
-  }
-
   @js.native
   trait CreateCertificateAuthorityAuditReportRequest extends js.Object {
     var AuditReportResponseFormat: AuditReportResponseFormat
@@ -595,54 +579,6 @@ package acmpca {
     }
   }
 
-  /**
-   * One or more of the specified arguments was not valid.
-   */
-  @js.native
-  trait InvalidArgsExceptionException extends js.Object {
-    val message: String
-  }
-
-  /**
-   * The requested Amazon Resource Name (ARN) does not refer to an existing resource.
-   */
-  @js.native
-  trait InvalidArnExceptionException extends js.Object {
-    val message: String
-  }
-
-  /**
-   * The token specified in the <code>NextToken</code> argument is not valid. Use the token returned from your previous call to <a>ListCertificateAuthorities</a>.
-   */
-  @js.native
-  trait InvalidNextTokenExceptionException extends js.Object {
-    val message: String
-  }
-
-  /**
-   * The S3 bucket policy is not valid. The policy must give ACM PCA rights to read from and write to the bucket and find the bucket location.
-   */
-  @js.native
-  trait InvalidPolicyExceptionException extends js.Object {
-    val message: String
-  }
-
-  /**
-   * The private CA is in a state during which a report cannot be generated.
-   */
-  @js.native
-  trait InvalidStateExceptionException extends js.Object {
-    val message: String
-  }
-
-  /**
-   * The tag associated with the CA is not valid. The invalid argument is contained in the message field.
-   */
-  @js.native
-  trait InvalidTagExceptionException extends js.Object {
-    val message: String
-  }
-
   @js.native
   trait IssueCertificateRequest extends js.Object {
     var CertificateAuthorityArn: Arn
@@ -692,14 +628,6 @@ package acmpca {
     val EC_secp384r1 = "EC_secp384r1"
 
     val values = IndexedSeq(RSA_2048, RSA_4096, EC_prime256v1, EC_secp384r1)
-  }
-
-  /**
-   * An ACM PCA limit has been exceeded. See the exception message returned to determine the limit that was exceeded.
-   */
-  @js.native
-  trait LimitExceededExceptionException extends js.Object {
-    val message: String
   }
 
   @js.native
@@ -775,54 +703,6 @@ package acmpca {
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListTagsResponse]
     }
-  }
-
-  /**
-   * The certificate signing request is invalid.
-   */
-  @js.native
-  trait MalformedCSRExceptionException extends js.Object {
-    val message: String
-  }
-
-  /**
-   * One or more fields in the certificate are invalid.
-   */
-  @js.native
-  trait MalformedCertificateExceptionException extends js.Object {
-    val message: String
-  }
-
-  /**
-   * Your request has already been completed.
-   */
-  @js.native
-  trait RequestAlreadyProcessedExceptionException extends js.Object {
-    val message: String
-  }
-
-  /**
-   * The request has failed for an unspecified reason.
-   */
-  @js.native
-  trait RequestFailedExceptionException extends js.Object {
-    val message: String
-  }
-
-  /**
-   * Your request is already in progress.
-   */
-  @js.native
-  trait RequestInProgressExceptionException extends js.Object {
-    val message: String
-  }
-
-  /**
-   * A resource such as a private CA, S3 bucket, certificate, or audit report cannot be found.
-   */
-  @js.native
-  trait ResourceNotFoundExceptionException extends js.Object {
-    val message: String
   }
 
   @js.native
@@ -940,14 +820,6 @@ package acmpca {
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TagCertificateAuthorityRequest]
     }
-  }
-
-  /**
-   * You can associate up to 50 tags with a private CA. Exception information is contained in the exception message field.
-   */
-  @js.native
-  trait TooManyTagsExceptionException extends js.Object {
-    val message: String
   }
 
   @js.native

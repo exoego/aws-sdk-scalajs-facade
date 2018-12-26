@@ -21,6 +21,8 @@ package object storagegateway {
   type Description = String
   type DeviceType = String
   type DiskAllocationType = String
+  type DiskAttribute = String
+  type DiskAttributeList = js.Array[DiskAttribute]
   type DiskId = String
   type DiskIds = js.Array[DiskId]
   type Disks = js.Array[Disk]
@@ -2021,10 +2023,14 @@ package storagegateway {
     }
   }
 
+  /**
+   * Represents a gateway's local disk.
+   */
   @js.native
   trait Disk extends js.Object {
     var DiskAllocationResource: js.UndefOr[string]
     var DiskAllocationType: js.UndefOr[DiskAllocationType]
+    var DiskAttributeList: js.UndefOr[DiskAttributeList]
     var DiskId: js.UndefOr[DiskId]
     var DiskNode: js.UndefOr[string]
     var DiskPath: js.UndefOr[string]
@@ -2036,6 +2042,7 @@ package storagegateway {
     def apply(
       DiskAllocationResource: js.UndefOr[string] = js.undefined,
       DiskAllocationType: js.UndefOr[DiskAllocationType] = js.undefined,
+      DiskAttributeList: js.UndefOr[DiskAttributeList] = js.undefined,
       DiskId: js.UndefOr[DiskId] = js.undefined,
       DiskNode: js.UndefOr[string] = js.undefined,
       DiskPath: js.UndefOr[string] = js.undefined,
@@ -2044,6 +2051,7 @@ package storagegateway {
       val _fields = IndexedSeq[(String, js.Any)](
         "DiskAllocationResource" -> DiskAllocationResource.map { x => x.asInstanceOf[js.Any] },
         "DiskAllocationType" -> DiskAllocationType.map { x => x.asInstanceOf[js.Any] },
+        "DiskAttributeList" -> DiskAttributeList.map { x => x.asInstanceOf[js.Any] },
         "DiskId" -> DiskId.map { x => x.asInstanceOf[js.Any] },
         "DiskNode" -> DiskNode.map { x => x.asInstanceOf[js.Any] },
         "DiskPath" -> DiskPath.map { x => x.asInstanceOf[js.Any] },

@@ -534,9 +534,10 @@ package route53 {
     val `ap-northeast-1` = "ap-northeast-1"
     val `ap-northeast-2` = "ap-northeast-2"
     val `ap-northeast-3` = "ap-northeast-3"
+    val `eu-north-1` = "eu-north-1"
     val `sa-east-1` = "sa-east-1"
 
-    val values = IndexedSeq(`us-east-1`, `us-east-2`, `us-west-1`, `us-west-2`, `ca-central-1`, `eu-central-1`, `eu-west-1`, `eu-west-2`, `eu-west-3`, `ap-south-1`, `ap-southeast-1`, `ap-southeast-2`, `ap-northeast-1`, `ap-northeast-2`, `ap-northeast-3`, `sa-east-1`)
+    val values = IndexedSeq(`us-east-1`, `us-east-2`, `us-west-1`, `us-west-2`, `ca-central-1`, `eu-central-1`, `eu-west-1`, `eu-west-2`, `eu-west-3`, `ap-south-1`, `ap-southeast-1`, `ap-southeast-2`, `ap-northeast-1`, `ap-northeast-2`, `ap-northeast-3`, `eu-north-1`, `sa-east-1`)
   }
 
   object ComparisonOperatorEnum {
@@ -3099,12 +3100,13 @@ package route53 {
     val `ap-northeast-1` = "ap-northeast-1"
     val `ap-northeast-2` = "ap-northeast-2"
     val `ap-northeast-3` = "ap-northeast-3"
+    val `eu-north-1` = "eu-north-1"
     val `sa-east-1` = "sa-east-1"
     val `cn-north-1` = "cn-north-1"
     val `cn-northwest-1` = "cn-northwest-1"
     val `ap-south-1` = "ap-south-1"
 
-    val values = IndexedSeq(`us-east-1`, `us-east-2`, `us-west-1`, `us-west-2`, `ca-central-1`, `eu-west-1`, `eu-west-2`, `eu-west-3`, `eu-central-1`, `ap-southeast-1`, `ap-southeast-2`, `ap-northeast-1`, `ap-northeast-2`, `ap-northeast-3`, `sa-east-1`, `cn-north-1`, `cn-northwest-1`, `ap-south-1`)
+    val values = IndexedSeq(`us-east-1`, `us-east-2`, `us-west-1`, `us-west-2`, `ca-central-1`, `eu-west-1`, `eu-west-2`, `eu-west-3`, `eu-central-1`, `ap-southeast-1`, `ap-southeast-2`, `ap-northeast-1`, `ap-northeast-2`, `ap-northeast-3`, `eu-north-1`, `sa-east-1`, `cn-north-1`, `cn-northwest-1`, `ap-south-1`)
   }
 
   /**
@@ -3631,10 +3633,11 @@ package route53 {
     val `ap-northeast-1` = "ap-northeast-1"
     val `ap-northeast-2` = "ap-northeast-2"
     val `ap-northeast-3` = "ap-northeast-3"
+    val `eu-north-1` = "eu-north-1"
     val `sa-east-1` = "sa-east-1"
     val `ca-central-1` = "ca-central-1"
     val `cn-north-1` = "cn-north-1"
 
-    val values = IndexedSeq(`us-east-1`, `us-east-2`, `us-west-1`, `us-west-2`, `eu-west-1`, `eu-west-2`, `eu-west-3`, `eu-central-1`, `ap-southeast-1`, `ap-southeast-2`, `ap-south-1`, `ap-northeast-1`, `ap-northeast-2`, `ap-northeast-3`, `sa-east-1`, `ca-central-1`, `cn-north-1`)
+    val values = IndexedSeq(`us-east-1`, `us-east-2`, `us-west-1`, `us-west-2`, `eu-west-1`, `eu-west-2`, `eu-west-3`, `eu-central-1`, `ap-southeast-1`, `ap-southeast-2`, `ap-south-1`, `ap-northeast-1`, `ap-northeast-2`, `ap-northeast-3`, `eu-north-1`, `sa-east-1`, `ca-central-1`, `cn-north-1`)
   }
 }

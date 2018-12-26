@@ -9,18 +9,28 @@ import facade.amazonaws._
 package object pinpointemail {
   type AmazonResourceName = String
   type BehaviorOnMxFailure = String
+  type BlacklistEntries = js.Array[BlacklistEntry]
+  type BlacklistItemName = String
+  type BlacklistItemNames = js.Array[BlacklistItemName]
+  type BlacklistReport = js.Dictionary[BlacklistEntries]
+  type BlacklistingDescription = String
   type Charset = String
   type CloudWatchDimensionConfigurations = js.Array[CloudWatchDimensionConfiguration]
   type ConfigurationSetName = String
   type ConfigurationSetNameList = js.Array[ConfigurationSetName]
   type CustomRedirectDomain = String
+  type DailyVolumes = js.Array[DailyVolume]
   type DedicatedIpList = js.Array[DedicatedIp]
   type DefaultDimensionValue = String
+  type DeliverabilityTestReports = js.Array[DeliverabilityTestReport]
+  type DeliverabilityTestStatus = String
+  type DeliverabilityTestSubject = String
   type DimensionName = String
   type DimensionValueSource = String
   type DkimStatus = String
   type DnsToken = String
   type DnsTokenList = js.Array[DnsToken]
+  type DomainIspPlacements = js.Array[DomainIspPlacement]
   type EmailAddress = String
   type EmailAddressList = js.Array[EmailAddress]
   type Enabled = Boolean
@@ -33,6 +43,8 @@ package object pinpointemail {
   type IdentityInfoList = js.Array[IdentityInfo]
   type IdentityType = String
   type Ip = String
+  type IspName = String
+  type IspPlacements = js.Array[IspPlacement]
   type LastFreshStart = js.Date
   type ListOfDedicatedIpPools = js.Array[PoolName]
   type MailFromDomainName = String
@@ -40,17 +52,24 @@ package object pinpointemail {
   type Max24HourSend = Double
   type MaxItems = Int
   type MaxSendRate = Double
+  type MessageContent = String
   type MessageData = String
   type MessageTagList = js.Array[MessageTag]
   type MessageTagName = String
   type MessageTagValue = String
   type NextToken = String
   type OutboundMessageId = String
+  type Percentage = Double
   type Percentage100Wrapper = Int
   type PoolName = String
   type RawMessageData = nodejs.buffer.Buffer | nodejs.stream.Readable | js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
+  type RblName = String
+  type ReportId = String
+  type ReportName = String
   type SendingPoolName = String
   type SentLast24Hours = Double
+  type Timestamp = js.Date
+  type Volume = Double
   type WarmupStatus = String
 }
 
@@ -63,19 +82,25 @@ package pinpointemail {
     def createConfigurationSet(params: CreateConfigurationSetRequest): Request[CreateConfigurationSetResponse] = js.native
     def createConfigurationSetEventDestination(params: CreateConfigurationSetEventDestinationRequest): Request[CreateConfigurationSetEventDestinationResponse] = js.native
     def createDedicatedIpPool(params: CreateDedicatedIpPoolRequest): Request[CreateDedicatedIpPoolResponse] = js.native
+    def createDeliverabilityTestReport(params: CreateDeliverabilityTestReportRequest): Request[CreateDeliverabilityTestReportResponse] = js.native
     def createEmailIdentity(params: CreateEmailIdentityRequest): Request[CreateEmailIdentityResponse] = js.native
     def deleteConfigurationSet(params: DeleteConfigurationSetRequest): Request[DeleteConfigurationSetResponse] = js.native
     def deleteConfigurationSetEventDestination(params: DeleteConfigurationSetEventDestinationRequest): Request[DeleteConfigurationSetEventDestinationResponse] = js.native
     def deleteDedicatedIpPool(params: DeleteDedicatedIpPoolRequest): Request[DeleteDedicatedIpPoolResponse] = js.native
     def deleteEmailIdentity(params: DeleteEmailIdentityRequest): Request[DeleteEmailIdentityResponse] = js.native
     def getAccount(params: GetAccountRequest): Request[GetAccountResponse] = js.native
+    def getBlacklistReports(params: GetBlacklistReportsRequest): Request[GetBlacklistReportsResponse] = js.native
     def getConfigurationSet(params: GetConfigurationSetRequest): Request[GetConfigurationSetResponse] = js.native
     def getConfigurationSetEventDestinations(params: GetConfigurationSetEventDestinationsRequest): Request[GetConfigurationSetEventDestinationsResponse] = js.native
     def getDedicatedIp(params: GetDedicatedIpRequest): Request[GetDedicatedIpResponse] = js.native
     def getDedicatedIps(params: GetDedicatedIpsRequest): Request[GetDedicatedIpsResponse] = js.native
+    def getDeliverabilityDashboardOptions(params: GetDeliverabilityDashboardOptionsRequest): Request[GetDeliverabilityDashboardOptionsResponse] = js.native
+    def getDeliverabilityTestReport(params: GetDeliverabilityTestReportRequest): Request[GetDeliverabilityTestReportResponse] = js.native
+    def getDomainStatisticsReport(params: GetDomainStatisticsReportRequest): Request[GetDomainStatisticsReportResponse] = js.native
     def getEmailIdentity(params: GetEmailIdentityRequest): Request[GetEmailIdentityResponse] = js.native
     def listConfigurationSets(params: ListConfigurationSetsRequest): Request[ListConfigurationSetsResponse] = js.native
     def listDedicatedIpPools(params: ListDedicatedIpPoolsRequest): Request[ListDedicatedIpPoolsResponse] = js.native
+    def listDeliverabilityTestReports(params: ListDeliverabilityTestReportsRequest): Request[ListDeliverabilityTestReportsResponse] = js.native
     def listEmailIdentities(params: ListEmailIdentitiesRequest): Request[ListEmailIdentitiesResponse] = js.native
     def putAccountDedicatedIpWarmupAttributes(params: PutAccountDedicatedIpWarmupAttributesRequest): Request[PutAccountDedicatedIpWarmupAttributesResponse] = js.native
     def putAccountSendingAttributes(params: PutAccountSendingAttributesRequest): Request[PutAccountSendingAttributesResponse] = js.native
@@ -85,6 +110,7 @@ package pinpointemail {
     def putConfigurationSetTrackingOptions(params: PutConfigurationSetTrackingOptionsRequest): Request[PutConfigurationSetTrackingOptionsResponse] = js.native
     def putDedicatedIpInPool(params: PutDedicatedIpInPoolRequest): Request[PutDedicatedIpInPoolResponse] = js.native
     def putDedicatedIpWarmupAttributes(params: PutDedicatedIpWarmupAttributesRequest): Request[PutDedicatedIpWarmupAttributesResponse] = js.native
+    def putDeliverabilityDashboardOption(params: PutDeliverabilityDashboardOptionRequest): Request[PutDeliverabilityDashboardOptionResponse] = js.native
     def putEmailIdentityDkimAttributes(params: PutEmailIdentityDkimAttributesRequest): Request[PutEmailIdentityDkimAttributesResponse] = js.native
     def putEmailIdentityFeedbackAttributes(params: PutEmailIdentityFeedbackAttributesRequest): Request[PutEmailIdentityFeedbackAttributesResponse] = js.native
     def putEmailIdentityMailFromAttributes(params: PutEmailIdentityMailFromAttributesRequest): Request[PutEmailIdentityMailFromAttributesResponse] = js.native
@@ -101,6 +127,30 @@ package pinpointemail {
     val REJECT_MESSAGE = "REJECT_MESSAGE"
 
     val values = IndexedSeq(USE_DEFAULT_VALUE, REJECT_MESSAGE)
+  }
+
+  /**
+   * An object that contains information about a blacklisting event that impacts one of the dedicated IP addresses that is associated with your account.
+   */
+  @js.native
+  trait BlacklistEntry extends js.Object {
+    var Description: js.UndefOr[BlacklistingDescription]
+    var ListingTime: js.UndefOr[Timestamp]
+    var RblName: js.UndefOr[RblName]
+  }
+
+  object BlacklistEntry {
+    def apply(
+      Description: js.UndefOr[BlacklistingDescription] = js.undefined,
+      ListingTime: js.UndefOr[Timestamp] = js.undefined,
+      RblName: js.UndefOr[RblName] = js.undefined): BlacklistEntry = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
+        "ListingTime" -> ListingTime.map { x => x.asInstanceOf[js.Any] },
+        "RblName" -> RblName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BlacklistEntry]
+    }
   }
 
   /**
@@ -308,6 +358,51 @@ package pinpointemail {
   }
 
   /**
+   * A request to perform a predictive inbox placement test. Predictive inbox placement tests can help you predict how your messages will be handled by various email providers around the world. When you perform a predictive inbox placement test, you provide a sample message that contains the content that you plan to send to your customers. Amazon Pinpoint then sends that message to special email addresses spread across several major email providers. After about 24 hours, the test is complete, and you can use the <code>GetDeliverabilityTestReport</code> operation to view the results of the test.
+   */
+  @js.native
+  trait CreateDeliverabilityTestReportRequest extends js.Object {
+    var Content: EmailContent
+    var FromEmailAddress: EmailAddress
+    var ReportName: js.UndefOr[ReportName]
+  }
+
+  object CreateDeliverabilityTestReportRequest {
+    def apply(
+      Content: EmailContent,
+      FromEmailAddress: EmailAddress,
+      ReportName: js.UndefOr[ReportName] = js.undefined): CreateDeliverabilityTestReportRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Content" -> Content.asInstanceOf[js.Any],
+        "FromEmailAddress" -> FromEmailAddress.asInstanceOf[js.Any],
+        "ReportName" -> ReportName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateDeliverabilityTestReportRequest]
+    }
+  }
+
+  /**
+   * Information about the predictive inbox placement test that you created.
+   */
+  @js.native
+  trait CreateDeliverabilityTestReportResponse extends js.Object {
+    var DeliverabilityTestStatus: DeliverabilityTestStatus
+    var ReportId: ReportId
+  }
+
+  object CreateDeliverabilityTestReportResponse {
+    def apply(
+      DeliverabilityTestStatus: DeliverabilityTestStatus,
+      ReportId: ReportId): CreateDeliverabilityTestReportResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "DeliverabilityTestStatus" -> DeliverabilityTestStatus.asInstanceOf[js.Any],
+        "ReportId" -> ReportId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateDeliverabilityTestReportResponse]
+    }
+  }
+
+  /**
    * A request to begin the verification process for an email identity (an email address or domain).
    */
   @js.native
@@ -347,6 +442,30 @@ package pinpointemail {
         "VerifiedForSendingStatus" -> VerifiedForSendingStatus.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateEmailIdentityResponse]
+    }
+  }
+
+  /**
+   * An object that contains information about the volume of email sent on each day of the analysis period.
+   */
+  @js.native
+  trait DailyVolume extends js.Object {
+    var DomainIspPlacements: js.UndefOr[DomainIspPlacements]
+    var StartDate: js.UndefOr[Timestamp]
+    var VolumeStatistics: js.UndefOr[VolumeStatistics]
+  }
+
+  object DailyVolume {
+    def apply(
+      DomainIspPlacements: js.UndefOr[DomainIspPlacements] = js.undefined,
+      StartDate: js.UndefOr[Timestamp] = js.undefined,
+      VolumeStatistics: js.UndefOr[VolumeStatistics] = js.undefined): DailyVolume = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "DomainIspPlacements" -> DomainIspPlacements.map { x => x.asInstanceOf[js.Any] },
+        "StartDate" -> StartDate.map { x => x.asInstanceOf[js.Any] },
+        "VolumeStatistics" -> VolumeStatistics.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DailyVolume]
     }
   }
 
@@ -518,6 +637,49 @@ package pinpointemail {
   }
 
   /**
+   * An object that contains metadata related to a predictive inbox placement test.
+   */
+  @js.native
+  trait DeliverabilityTestReport extends js.Object {
+    var CreateDate: js.UndefOr[Timestamp]
+    var DeliverabilityTestStatus: js.UndefOr[DeliverabilityTestStatus]
+    var FromEmailAddress: js.UndefOr[EmailAddress]
+    var ReportId: js.UndefOr[ReportId]
+    var ReportName: js.UndefOr[ReportName]
+    var Subject: js.UndefOr[DeliverabilityTestSubject]
+  }
+
+  object DeliverabilityTestReport {
+    def apply(
+      CreateDate: js.UndefOr[Timestamp] = js.undefined,
+      DeliverabilityTestStatus: js.UndefOr[DeliverabilityTestStatus] = js.undefined,
+      FromEmailAddress: js.UndefOr[EmailAddress] = js.undefined,
+      ReportId: js.UndefOr[ReportId] = js.undefined,
+      ReportName: js.UndefOr[ReportName] = js.undefined,
+      Subject: js.UndefOr[DeliverabilityTestSubject] = js.undefined): DeliverabilityTestReport = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "CreateDate" -> CreateDate.map { x => x.asInstanceOf[js.Any] },
+        "DeliverabilityTestStatus" -> DeliverabilityTestStatus.map { x => x.asInstanceOf[js.Any] },
+        "FromEmailAddress" -> FromEmailAddress.map { x => x.asInstanceOf[js.Any] },
+        "ReportId" -> ReportId.map { x => x.asInstanceOf[js.Any] },
+        "ReportName" -> ReportName.map { x => x.asInstanceOf[js.Any] },
+        "Subject" -> Subject.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeliverabilityTestReport]
+    }
+  }
+
+  /**
+   * The status of a predictive inbox placement test. If the status is <code>IN_PROGRESS</code>, then the predictive inbox placement test is currently running. Predictive inbox placement tests are usually complete within 24 hours of creating the test. If the status is <code>COMPLETE</code>, then the test is finished, and you can use the <code>GetDeliverabilityTestReport</code> operation to view the results of the test.
+   */
+  object DeliverabilityTestStatusEnum {
+    val IN_PROGRESS = "IN_PROGRESS"
+    val COMPLETED = "COMPLETED"
+
+    val values = IndexedSeq(IN_PROGRESS, COMPLETED)
+  }
+
+  /**
    * Used to associate a configuration set with a dedicated IP pool.
    */
   @js.native
@@ -610,6 +772,36 @@ package pinpointemail {
     val NOT_STARTED = "NOT_STARTED"
 
     val values = IndexedSeq(PENDING, SUCCESS, FAILED, TEMPORARY_FAILURE, NOT_STARTED)
+  }
+
+  /**
+   * An object that contains inbox placement data for email sent from one of your email domains to a specific email provider.
+   */
+  @js.native
+  trait DomainIspPlacement extends js.Object {
+    var InboxPercentage: js.UndefOr[Percentage]
+    var InboxRawCount: js.UndefOr[Volume]
+    var IspName: js.UndefOr[IspName]
+    var SpamPercentage: js.UndefOr[Percentage]
+    var SpamRawCount: js.UndefOr[Volume]
+  }
+
+  object DomainIspPlacement {
+    def apply(
+      InboxPercentage: js.UndefOr[Percentage] = js.undefined,
+      InboxRawCount: js.UndefOr[Volume] = js.undefined,
+      IspName: js.UndefOr[IspName] = js.undefined,
+      SpamPercentage: js.UndefOr[Percentage] = js.undefined,
+      SpamRawCount: js.UndefOr[Volume] = js.undefined): DomainIspPlacement = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "InboxPercentage" -> InboxPercentage.map { x => x.asInstanceOf[js.Any] },
+        "InboxRawCount" -> InboxRawCount.map { x => x.asInstanceOf[js.Any] },
+        "IspName" -> IspName.map { x => x.asInstanceOf[js.Any] },
+        "SpamPercentage" -> SpamPercentage.map { x => x.asInstanceOf[js.Any] },
+        "SpamRawCount" -> SpamRawCount.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DomainIspPlacement]
+    }
   }
 
   /**
@@ -761,6 +953,42 @@ package pinpointemail {
         "SendingEnabled" -> SendingEnabled.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetAccountResponse]
+    }
+  }
+
+  /**
+   * A request to retrieve a list of the blacklists that your dedicated IP addresses appear on.
+   */
+  @js.native
+  trait GetBlacklistReportsRequest extends js.Object {
+    var BlacklistItemNames: BlacklistItemNames
+  }
+
+  object GetBlacklistReportsRequest {
+    def apply(
+      BlacklistItemNames: BlacklistItemNames): GetBlacklistReportsRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "BlacklistItemNames" -> BlacklistItemNames.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetBlacklistReportsRequest]
+    }
+  }
+
+  /**
+   * An object that contains information about blacklist events.
+   */
+  @js.native
+  trait GetBlacklistReportsResponse extends js.Object {
+    var BlacklistReport: BlacklistReport
+  }
+
+  object GetBlacklistReportsResponse {
+    def apply(
+      BlacklistReport: BlacklistReport): GetBlacklistReportsResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "BlacklistReport" -> BlacklistReport.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetBlacklistReportsResponse]
     }
   }
 
@@ -930,6 +1158,131 @@ package pinpointemail {
   }
 
   /**
+   * A request to retrieve the status of the Deliverability dashboard for your account. When the Deliverability dashboard is enabled, you gain access to reputation metrics for the domains that you use to send email using Amazon Pinpoint. You also gain the ability to perform predictive inbox placement tests.
+   *  When you use the Deliverability dashboard, you pay a monthly charge of USD1,250.00, in addition to any other fees that you accrue by using Amazon Pinpoint. If you enable the Deliverability dashboard after the first day of a calendar month, AWS prorates the monthly charge based on how many days have elapsed in the current calendar month.
+   */
+  @js.native
+  trait GetDeliverabilityDashboardOptionsRequest extends js.Object {
+
+  }
+
+  object GetDeliverabilityDashboardOptionsRequest {
+    def apply(): GetDeliverabilityDashboardOptionsRequest = {
+      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetDeliverabilityDashboardOptionsRequest]
+    }
+  }
+
+  /**
+   * An object that shows the status of the Deliverability dashboard for your Amazon Pinpoint account.
+   */
+  @js.native
+  trait GetDeliverabilityDashboardOptionsResponse extends js.Object {
+    var DashboardEnabled: Enabled
+  }
+
+  object GetDeliverabilityDashboardOptionsResponse {
+    def apply(
+      DashboardEnabled: Enabled): GetDeliverabilityDashboardOptionsResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "DashboardEnabled" -> DashboardEnabled.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetDeliverabilityDashboardOptionsResponse]
+    }
+  }
+
+  /**
+   * A request to retrieve the results of a predictive inbox placement test.
+   */
+  @js.native
+  trait GetDeliverabilityTestReportRequest extends js.Object {
+    var ReportId: ReportId
+  }
+
+  object GetDeliverabilityTestReportRequest {
+    def apply(
+      ReportId: ReportId): GetDeliverabilityTestReportRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ReportId" -> ReportId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetDeliverabilityTestReportRequest]
+    }
+  }
+
+  /**
+   * The results of the predictive inbox placement test.
+   */
+  @js.native
+  trait GetDeliverabilityTestReportResponse extends js.Object {
+    var DeliverabilityTestReport: DeliverabilityTestReport
+    var IspPlacements: IspPlacements
+    var OverallPlacement: PlacementStatistics
+    var Message: js.UndefOr[MessageContent]
+  }
+
+  object GetDeliverabilityTestReportResponse {
+    def apply(
+      DeliverabilityTestReport: DeliverabilityTestReport,
+      IspPlacements: IspPlacements,
+      OverallPlacement: PlacementStatistics,
+      Message: js.UndefOr[MessageContent] = js.undefined): GetDeliverabilityTestReportResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "DeliverabilityTestReport" -> DeliverabilityTestReport.asInstanceOf[js.Any],
+        "IspPlacements" -> IspPlacements.asInstanceOf[js.Any],
+        "OverallPlacement" -> OverallPlacement.asInstanceOf[js.Any],
+        "Message" -> Message.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetDeliverabilityTestReportResponse]
+    }
+  }
+
+  /**
+   * A request to obtain deliverability metrics for a domain.
+   */
+  @js.native
+  trait GetDomainStatisticsReportRequest extends js.Object {
+    var Domain: Identity
+    var EndDate: Timestamp
+    var StartDate: Timestamp
+  }
+
+  object GetDomainStatisticsReportRequest {
+    def apply(
+      Domain: Identity,
+      EndDate: Timestamp,
+      StartDate: Timestamp): GetDomainStatisticsReportRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Domain" -> Domain.asInstanceOf[js.Any],
+        "EndDate" -> EndDate.asInstanceOf[js.Any],
+        "StartDate" -> StartDate.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetDomainStatisticsReportRequest]
+    }
+  }
+
+  /**
+   * An object that includes statistics that are related to the domain that you specified.
+   */
+  @js.native
+  trait GetDomainStatisticsReportResponse extends js.Object {
+    var DailyVolumes: DailyVolumes
+    var OverallVolume: OverallVolume
+  }
+
+  object GetDomainStatisticsReportResponse {
+    def apply(
+      DailyVolumes: DailyVolumes,
+      OverallVolume: OverallVolume): GetDomainStatisticsReportResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "DailyVolumes" -> DailyVolumes.asInstanceOf[js.Any],
+        "OverallVolume" -> OverallVolume.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetDomainStatisticsReportResponse]
+    }
+  }
+
+  /**
    * A request to return details about an email identity.
    */
   @js.native
@@ -1012,6 +1365,27 @@ package pinpointemail {
     val MANAGED_DOMAIN = "MANAGED_DOMAIN"
 
     val values = IndexedSeq(EMAIL_ADDRESS, DOMAIN, MANAGED_DOMAIN)
+  }
+
+  /**
+   * An object that describes how email sent during the predictive inbox placement test was handled by a certain email provider.
+   */
+  @js.native
+  trait IspPlacement extends js.Object {
+    var IspName: js.UndefOr[IspName]
+    var PlacementStatistics: js.UndefOr[PlacementStatistics]
+  }
+
+  object IspPlacement {
+    def apply(
+      IspName: js.UndefOr[IspName] = js.undefined,
+      PlacementStatistics: js.UndefOr[PlacementStatistics] = js.undefined): IspPlacement = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "IspName" -> IspName.map { x => x.asInstanceOf[js.Any] },
+        "PlacementStatistics" -> PlacementStatistics.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[IspPlacement]
+    }
   }
 
   /**
@@ -1116,6 +1490,48 @@ package pinpointemail {
         "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListDedicatedIpPoolsResponse]
+    }
+  }
+
+  /**
+   * A request to list all of the predictive inbox placement tests that you've performed.
+   */
+  @js.native
+  trait ListDeliverabilityTestReportsRequest extends js.Object {
+    var NextToken: js.UndefOr[NextToken]
+    var PageSize: js.UndefOr[MaxItems]
+  }
+
+  object ListDeliverabilityTestReportsRequest {
+    def apply(
+      NextToken: js.UndefOr[NextToken] = js.undefined,
+      PageSize: js.UndefOr[MaxItems] = js.undefined): ListDeliverabilityTestReportsRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
+        "PageSize" -> PageSize.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListDeliverabilityTestReportsRequest]
+    }
+  }
+
+  /**
+   * A list of the predictive inbox placement test reports that are available for your account, regardless of whether or not those tests are complete.
+   */
+  @js.native
+  trait ListDeliverabilityTestReportsResponse extends js.Object {
+    var DeliverabilityTestReports: DeliverabilityTestReports
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object ListDeliverabilityTestReportsResponse {
+    def apply(
+      DeliverabilityTestReports: DeliverabilityTestReports,
+      NextToken: js.UndefOr[NextToken] = js.undefined): ListDeliverabilityTestReportsResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "DeliverabilityTestReports" -> DeliverabilityTestReports.asInstanceOf[js.Any],
+        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListDeliverabilityTestReportsResponse]
     }
   }
 
@@ -1244,6 +1660,30 @@ package pinpointemail {
   }
 
   /**
+   * An object that contains information about email that was sent from the selected domain.
+   */
+  @js.native
+  trait OverallVolume extends js.Object {
+    var DomainIspPlacements: js.UndefOr[DomainIspPlacements]
+    var ReadRatePercent: js.UndefOr[Percentage]
+    var VolumeStatistics: js.UndefOr[VolumeStatistics]
+  }
+
+  object OverallVolume {
+    def apply(
+      DomainIspPlacements: js.UndefOr[DomainIspPlacements] = js.undefined,
+      ReadRatePercent: js.UndefOr[Percentage] = js.undefined,
+      VolumeStatistics: js.UndefOr[VolumeStatistics] = js.undefined): OverallVolume = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "DomainIspPlacements" -> DomainIspPlacements.map { x => x.asInstanceOf[js.Any] },
+        "ReadRatePercent" -> ReadRatePercent.map { x => x.asInstanceOf[js.Any] },
+        "VolumeStatistics" -> VolumeStatistics.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[OverallVolume]
+    }
+  }
+
+  /**
    * An object that defines a Amazon Pinpoint destination for email events. You can use Amazon Pinpoint events to create attributes in Amazon Pinpoint projects. You can use these attributes to create segments for your campaigns.
    */
   @js.native
@@ -1258,6 +1698,36 @@ package pinpointemail {
         "ApplicationArn" -> ApplicationArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PinpointDestination]
+    }
+  }
+
+  /**
+   * An object that contains inbox placement data for an email provider.
+   */
+  @js.native
+  trait PlacementStatistics extends js.Object {
+    var DkimPercentage: js.UndefOr[Percentage]
+    var InboxPercentage: js.UndefOr[Percentage]
+    var MissingPercentage: js.UndefOr[Percentage]
+    var SpamPercentage: js.UndefOr[Percentage]
+    var SpfPercentage: js.UndefOr[Percentage]
+  }
+
+  object PlacementStatistics {
+    def apply(
+      DkimPercentage: js.UndefOr[Percentage] = js.undefined,
+      InboxPercentage: js.UndefOr[Percentage] = js.undefined,
+      MissingPercentage: js.UndefOr[Percentage] = js.undefined,
+      SpamPercentage: js.UndefOr[Percentage] = js.undefined,
+      SpfPercentage: js.UndefOr[Percentage] = js.undefined): PlacementStatistics = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "DkimPercentage" -> DkimPercentage.map { x => x.asInstanceOf[js.Any] },
+        "InboxPercentage" -> InboxPercentage.map { x => x.asInstanceOf[js.Any] },
+        "MissingPercentage" -> MissingPercentage.map { x => x.asInstanceOf[js.Any] },
+        "SpamPercentage" -> SpamPercentage.map { x => x.asInstanceOf[js.Any] },
+        "SpfPercentage" -> SpfPercentage.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PlacementStatistics]
     }
   }
 
@@ -1498,6 +1968,9 @@ package pinpointemail {
     }
   }
 
+  /**
+   * An HTTP 200 response if the request succeeds, or an error message if the request fails.
+   */
   @js.native
   trait PutDedicatedIpInPoolResponse extends js.Object {
 
@@ -1545,6 +2018,41 @@ package pinpointemail {
       val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutDedicatedIpWarmupAttributesResponse]
+    }
+  }
+
+  /**
+   * A request to enable or disable the Deliverability dashboard. When you enable the Deliverability dashboard, you gain access to reputation metrics for the domains that you use to send email using Amazon Pinpoint. You also gain the ability to perform predictive inbox placement tests.
+   *  When you use the Deliverability dashboard, you pay a monthly charge of USD1,250.00, in addition to any other fees that you accrue by using Amazon Pinpoint. If you enable the Deliverability dashboard after the first day of a calendar month, we prorate the monthly charge based on how many days have elapsed in the current calendar month.
+   */
+  @js.native
+  trait PutDeliverabilityDashboardOptionRequest extends js.Object {
+    var DashboardEnabled: Enabled
+  }
+
+  object PutDeliverabilityDashboardOptionRequest {
+    def apply(
+      DashboardEnabled: Enabled): PutDeliverabilityDashboardOptionRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "DashboardEnabled" -> DashboardEnabled.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutDeliverabilityDashboardOptionRequest]
+    }
+  }
+
+  /**
+   * A response that indicates whether the Deliverability dashboard is enabled for your Amazon Pinpoint account.
+   */
+  @js.native
+  trait PutDeliverabilityDashboardOptionResponse extends js.Object {
+
+  }
+
+  object PutDeliverabilityDashboardOptionResponse {
+    def apply(): PutDeliverabilityDashboardOptionResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutDeliverabilityDashboardOptionResponse]
     }
   }
 
@@ -1871,6 +2379,33 @@ package pinpointemail {
       val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateConfigurationSetEventDestinationResponse]
+    }
+  }
+
+  /**
+   * An object that contains information about the amount of email that was delivered to recipients.
+   */
+  @js.native
+  trait VolumeStatistics extends js.Object {
+    var InboxRawCount: js.UndefOr[Volume]
+    var ProjectedInbox: js.UndefOr[Volume]
+    var ProjectedSpam: js.UndefOr[Volume]
+    var SpamRawCount: js.UndefOr[Volume]
+  }
+
+  object VolumeStatistics {
+    def apply(
+      InboxRawCount: js.UndefOr[Volume] = js.undefined,
+      ProjectedInbox: js.UndefOr[Volume] = js.undefined,
+      ProjectedSpam: js.UndefOr[Volume] = js.undefined,
+      SpamRawCount: js.UndefOr[Volume] = js.undefined): VolumeStatistics = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "InboxRawCount" -> InboxRawCount.map { x => x.asInstanceOf[js.Any] },
+        "ProjectedInbox" -> ProjectedInbox.map { x => x.asInstanceOf[js.Any] },
+        "ProjectedSpam" -> ProjectedSpam.map { x => x.asInstanceOf[js.Any] },
+        "SpamRawCount" -> SpamRawCount.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[VolumeStatistics]
     }
   }
 

@@ -2993,7 +2993,7 @@ package servicecatalog {
   }
 
   /**
-   * <p/>
+   * Information about the organization node.
    */
   @js.native
   trait OrganizationNode extends js.Object {
