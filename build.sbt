@@ -1,14 +1,12 @@
 import ReleaseTransformations._
 enablePlugins(ScalaJSPlugin)
 
-val Version = "0.21.0-SNAPSHOT"
 val Organization = "net.exoego"
 
 lazy val root = (project in file(".")).
   settings(
     organization := Organization,
     name := "aws-sdk-scalajs-facade",
-    version := Version,
     scalaVersion := "2.12.8",
     scalacOptions ++= Seq("-P:scalajs:sjsDefinedByDefault"),
     licenses := Seq("APL2" -> url("http://www.apache.org/licenses/LICENSE-2.0.txt")),
