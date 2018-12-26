@@ -1,15 +1,13 @@
 import ReleaseTransformations._
 enablePlugins(ScalaJSPlugin)
 
-val Version = "0.20.0"
 val Organization = "net.exoego"
 
 lazy val root = (project in file(".")).
   settings(
     organization := Organization,
     name := "aws-sdk-scalajs-facade",
-    version := Version,
-    scalaVersion := "2.12.7",
+    scalaVersion := "2.12.8",
     scalacOptions ++= Seq("-P:scalajs:sjsDefinedByDefault"),
     licenses := Seq("APL2" -> url("http://www.apache.org/licenses/LICENSE-2.0.txt")),
     scmInfo := Some(
@@ -40,6 +38,8 @@ lazy val root = (project in file(".")).
     ),
     publishConfiguration := publishConfiguration.value.withOverwrite(true),
     publishLocalConfiguration := publishLocalConfiguration.value.withOverwrite(true),
+    publishArtifact in packageDoc := false,
+    sources in (Compile,doc) := Seq.empty,
     releaseProcess := Seq[ReleaseStep](
       checkSnapshotDependencies,
       inquireVersions,
