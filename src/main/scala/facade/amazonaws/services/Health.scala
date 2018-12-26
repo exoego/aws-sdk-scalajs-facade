@@ -27,6 +27,7 @@ package object health {
   type entityArnList = js.Array[entityArn]
   type entityStatusCode = String
   type entityStatusCodeList = js.Array[entityStatusCode]
+  type entityUrl = String
   type entityValue = String
   type entityValueList = js.Array[entityValue]
   type eventAggregateField = String
@@ -79,6 +80,7 @@ package health {
   trait AffectedEntity extends js.Object {
     var awsAccountId: js.UndefOr[accountId]
     var entityArn: js.UndefOr[entityArn]
+    var entityUrl: js.UndefOr[entityUrl]
     var entityValue: js.UndefOr[entityValue]
     var eventArn: js.UndefOr[eventArn]
     var lastUpdatedTime: js.UndefOr[timestamp]
@@ -90,6 +92,7 @@ package health {
     def apply(
       awsAccountId: js.UndefOr[accountId] = js.undefined,
       entityArn: js.UndefOr[entityArn] = js.undefined,
+      entityUrl: js.UndefOr[entityUrl] = js.undefined,
       entityValue: js.UndefOr[entityValue] = js.undefined,
       eventArn: js.UndefOr[eventArn] = js.undefined,
       lastUpdatedTime: js.UndefOr[timestamp] = js.undefined,
@@ -98,6 +101,7 @@ package health {
       val _fields = IndexedSeq[(String, js.Any)](
         "awsAccountId" -> awsAccountId.map { x => x.asInstanceOf[js.Any] },
         "entityArn" -> entityArn.map { x => x.asInstanceOf[js.Any] },
+        "entityUrl" -> entityUrl.map { x => x.asInstanceOf[js.Any] },
         "entityValue" -> entityValue.map { x => x.asInstanceOf[js.Any] },
         "eventArn" -> eventArn.map { x => x.asInstanceOf[js.Any] },
         "lastUpdatedTime" -> lastUpdatedTime.map { x => x.asInstanceOf[js.Any] },
@@ -649,22 +653,6 @@ package health {
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EventTypeFilter]
     }
-  }
-
-  /**
-   * The specified pagination token (<code>nextToken</code>) is not valid.
-   */
-  @js.native
-  trait InvalidPaginationTokenException extends js.Object {
-    val message: string
-  }
-
-  /**
-   * The specified locale is not supported.
-   */
-  @js.native
-  trait UnsupportedLocaleException extends js.Object {
-    val message: string
   }
 
   object entityStatusCodeEnum {

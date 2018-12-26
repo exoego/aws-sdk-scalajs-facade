@@ -18,9 +18,9 @@ package object mediastore {
   type ContainerStatus = String
   type CorsPolicy = js.Array[CorsRule]
   type Endpoint = String
-  type ErrorMessage = String
   type ExposeHeaders = js.Array[Header]
   type Header = String
+  type LifecyclePolicy = String
   type MaxAgeSeconds = Int
   type MethodName = String
   type Origin = String
@@ -38,12 +38,15 @@ package mediastore {
     def deleteContainer(params: DeleteContainerInput): Request[DeleteContainerOutput] = js.native
     def deleteContainerPolicy(params: DeleteContainerPolicyInput): Request[DeleteContainerPolicyOutput] = js.native
     def deleteCorsPolicy(params: DeleteCorsPolicyInput): Request[DeleteCorsPolicyOutput] = js.native
+    def deleteLifecyclePolicy(params: DeleteLifecyclePolicyInput): Request[DeleteLifecyclePolicyOutput] = js.native
     def describeContainer(params: DescribeContainerInput): Request[DescribeContainerOutput] = js.native
     def getContainerPolicy(params: GetContainerPolicyInput): Request[GetContainerPolicyOutput] = js.native
     def getCorsPolicy(params: GetCorsPolicyInput): Request[GetCorsPolicyOutput] = js.native
+    def getLifecyclePolicy(params: GetLifecyclePolicyInput): Request[GetLifecyclePolicyOutput] = js.native
     def listContainers(params: ListContainersInput): Request[ListContainersOutput] = js.native
     def putContainerPolicy(params: PutContainerPolicyInput): Request[PutContainerPolicyOutput] = js.native
     def putCorsPolicy(params: PutCorsPolicyInput): Request[PutCorsPolicyOutput] = js.native
+    def putLifecyclePolicy(params: PutLifecyclePolicyInput): Request[PutLifecyclePolicyOutput] = js.native
   }
 
   /**
@@ -76,22 +79,6 @@ package mediastore {
     }
   }
 
-  /**
-   * Resource already exists or is being updated.
-   */
-  @js.native
-  trait ContainerInUseExceptionException extends js.Object {
-    val Message: ErrorMessage
-  }
-
-  /**
-   * Could not perform an operation on a container that does not exist.
-   */
-  @js.native
-  trait ContainerNotFoundExceptionException extends js.Object {
-    val Message: ErrorMessage
-  }
-
   object ContainerStatusEnum {
     val ACTIVE = "ACTIVE"
     val CREATING = "CREATING"
@@ -101,36 +88,28 @@ package mediastore {
   }
 
   /**
-   * Could not perform an operation on a policy that does not exist.
-   */
-  @js.native
-  trait CorsPolicyNotFoundExceptionException extends js.Object {
-    val Message: ErrorMessage
-  }
-
-  /**
    * A rule for a CORS policy. You can add up to 100 rules to a CORS policy. If more than one rule applies, the service uses the first applicable rule listed.
    */
   @js.native
   trait CorsRule extends js.Object {
-    var AllowedHeaders: js.UndefOr[AllowedHeaders]
+    var AllowedHeaders: AllowedHeaders
+    var AllowedOrigins: AllowedOrigins
     var AllowedMethods: js.UndefOr[AllowedMethods]
-    var AllowedOrigins: js.UndefOr[AllowedOrigins]
     var ExposeHeaders: js.UndefOr[ExposeHeaders]
     var MaxAgeSeconds: js.UndefOr[MaxAgeSeconds]
   }
 
   object CorsRule {
     def apply(
-      AllowedHeaders: js.UndefOr[AllowedHeaders] = js.undefined,
+      AllowedHeaders: AllowedHeaders,
+      AllowedOrigins: AllowedOrigins,
       AllowedMethods: js.UndefOr[AllowedMethods] = js.undefined,
-      AllowedOrigins: js.UndefOr[AllowedOrigins] = js.undefined,
       ExposeHeaders: js.UndefOr[ExposeHeaders] = js.undefined,
       MaxAgeSeconds: js.UndefOr[MaxAgeSeconds] = js.undefined): CorsRule = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "AllowedHeaders" -> AllowedHeaders.map { x => x.asInstanceOf[js.Any] },
+        "AllowedHeaders" -> AllowedHeaders.asInstanceOf[js.Any],
+        "AllowedOrigins" -> AllowedOrigins.asInstanceOf[js.Any],
         "AllowedMethods" -> AllowedMethods.map { x => x.asInstanceOf[js.Any] },
-        "AllowedOrigins" -> AllowedOrigins.map { x => x.asInstanceOf[js.Any] },
         "ExposeHeaders" -> ExposeHeaders.map { x => x.asInstanceOf[js.Any] },
         "MaxAgeSeconds" -> MaxAgeSeconds.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
@@ -253,6 +232,34 @@ package mediastore {
   }
 
   @js.native
+  trait DeleteLifecyclePolicyInput extends js.Object {
+    var ContainerName: ContainerName
+  }
+
+  object DeleteLifecyclePolicyInput {
+    def apply(
+      ContainerName: ContainerName): DeleteLifecyclePolicyInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ContainerName" -> ContainerName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteLifecyclePolicyInput]
+    }
+  }
+
+  @js.native
+  trait DeleteLifecyclePolicyOutput extends js.Object {
+
+  }
+
+  object DeleteLifecyclePolicyOutput {
+    def apply(): DeleteLifecyclePolicyOutput = {
+      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteLifecyclePolicyOutput]
+    }
+  }
+
+  @js.native
   trait DescribeContainerInput extends js.Object {
     var ContainerName: js.UndefOr[ContainerName]
   }
@@ -342,20 +349,34 @@ package mediastore {
     }
   }
 
-  /**
-   * The service is temporarily unavailable.
-   */
   @js.native
-  trait InternalServerErrorException extends js.Object {
-    val Message: ErrorMessage
+  trait GetLifecyclePolicyInput extends js.Object {
+    var ContainerName: ContainerName
   }
 
-  /**
-   * A service limit has been exceeded.
-   */
+  object GetLifecyclePolicyInput {
+    def apply(
+      ContainerName: ContainerName): GetLifecyclePolicyInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ContainerName" -> ContainerName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetLifecyclePolicyInput]
+    }
+  }
+
   @js.native
-  trait LimitExceededExceptionException extends js.Object {
-    val Message: ErrorMessage
+  trait GetLifecyclePolicyOutput extends js.Object {
+    var LifecyclePolicy: LifecyclePolicy
+  }
+
+  object GetLifecyclePolicyOutput {
+    def apply(
+      LifecyclePolicy: LifecyclePolicy): GetLifecyclePolicyOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "LifecyclePolicy" -> LifecyclePolicy.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetLifecyclePolicyOutput]
+    }
   }
 
   @js.native
@@ -401,14 +422,6 @@ package mediastore {
     val HEAD = "HEAD"
 
     val values = IndexedSeq(PUT, GET, DELETE, HEAD)
-  }
-
-  /**
-   * Could not perform an operation on a policy that does not exist.
-   */
-  @js.native
-  trait PolicyNotFoundExceptionException extends js.Object {
-    val Message: ErrorMessage
   }
 
   @js.native
@@ -470,6 +483,37 @@ package mediastore {
       val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutCorsPolicyOutput]
+    }
+  }
+
+  @js.native
+  trait PutLifecyclePolicyInput extends js.Object {
+    var ContainerName: ContainerName
+    var LifecyclePolicy: LifecyclePolicy
+  }
+
+  object PutLifecyclePolicyInput {
+    def apply(
+      ContainerName: ContainerName,
+      LifecyclePolicy: LifecyclePolicy): PutLifecyclePolicyInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ContainerName" -> ContainerName.asInstanceOf[js.Any],
+        "LifecyclePolicy" -> LifecyclePolicy.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutLifecyclePolicyInput]
+    }
+  }
+
+  @js.native
+  trait PutLifecyclePolicyOutput extends js.Object {
+
+  }
+
+  object PutLifecyclePolicyOutput {
+    def apply(): PutLifecyclePolicyOutput = {
+      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutLifecyclePolicyOutput]
     }
   }
 }

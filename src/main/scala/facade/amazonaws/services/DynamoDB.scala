@@ -35,6 +35,7 @@ package object dynamodb {
   type BinarySetAttributeValue = js.Array[BinaryAttributeValue]
   type BooleanAttributeValue = Boolean
   type BooleanObject = Boolean
+  type ClientRequestToken = String
   type ComparisonOperator = String
   type ConditionExpression = String
   type ConditionalOperator = String
@@ -3448,7 +3449,7 @@ package dynamodb {
   @js.native
   trait TransactWriteItemsInput extends js.Object {
     var TransactItems: TransactWriteItemList
-    var ClientRequestToken: js.UndefOr[String]
+    var ClientRequestToken: js.UndefOr[ClientRequestToken]
     var ReturnConsumedCapacity: js.UndefOr[ReturnConsumedCapacity]
     var ReturnItemCollectionMetrics: js.UndefOr[ReturnItemCollectionMetrics]
   }
@@ -3456,7 +3457,7 @@ package dynamodb {
   object TransactWriteItemsInput {
     def apply(
       TransactItems: TransactWriteItemList,
-      ClientRequestToken: js.UndefOr[String] = js.undefined,
+      ClientRequestToken: js.UndefOr[ClientRequestToken] = js.undefined,
       ReturnConsumedCapacity: js.UndefOr[ReturnConsumedCapacity] = js.undefined,
       ReturnItemCollectionMetrics: js.UndefOr[ReturnItemCollectionMetrics] = js.undefined): TransactWriteItemsInput = {
       val _fields = IndexedSeq[(String, js.Any)](

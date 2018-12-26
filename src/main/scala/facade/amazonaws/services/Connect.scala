@@ -76,6 +76,7 @@ package connect {
     def describeUser(params: DescribeUserRequest): Request[DescribeUserResponse] = js.native
     def describeUserHierarchyGroup(params: DescribeUserHierarchyGroupRequest): Request[DescribeUserHierarchyGroupResponse] = js.native
     def describeUserHierarchyStructure(params: DescribeUserHierarchyStructureRequest): Request[DescribeUserHierarchyStructureResponse] = js.native
+    def getContactAttributes(params: GetContactAttributesRequest): Request[GetContactAttributesResponse] = js.native
     def getCurrentMetricData(params: GetCurrentMetricDataRequest): Request[GetCurrentMetricDataResponse] = js.native
     def getFederationToken(params: GetFederationTokenRequest): Request[GetFederationTokenResponse] = js.native
     def getMetricData(params: GetMetricDataRequest): Request[GetMetricDataResponse] = js.native
@@ -423,6 +424,39 @@ package connect {
         "Queues" -> Queues.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Filters]
+    }
+  }
+
+  @js.native
+  trait GetContactAttributesRequest extends js.Object {
+    var InitialContactId: ContactId
+    var InstanceId: InstanceId
+  }
+
+  object GetContactAttributesRequest {
+    def apply(
+      InitialContactId: ContactId,
+      InstanceId: InstanceId): GetContactAttributesRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "InitialContactId" -> InitialContactId.asInstanceOf[js.Any],
+        "InstanceId" -> InstanceId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetContactAttributesRequest]
+    }
+  }
+
+  @js.native
+  trait GetContactAttributesResponse extends js.Object {
+    var Attributes: js.UndefOr[Attributes]
+  }
+
+  object GetContactAttributesResponse {
+    def apply(
+      Attributes: js.UndefOr[Attributes] = js.undefined): GetContactAttributesResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Attributes" -> Attributes.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetContactAttributesResponse]
     }
   }
 

@@ -2780,7 +2780,7 @@ package cloudformation {
 
   /**
    * Contains the drift information for a resource that has been checked for drift. This includes actual and expected property values for resources in which AWS CloudFormation has detected drift. Only resource properties explicitly defined in the stack template are checked for drift. For more information, see [[http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html|Detecting Unregulated Configuration Changes to Stacks and Resources]].
-   *  Resources that do not currently support drift detection cannot be checked. For a list of resources that support drift detection, see [[http://docs.aws.amazon.com/http:/docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift-resource-list.html|Resources that Support Drift Detection]].
+   *  Resources that do not currently support drift detection cannot be checked. For a list of resources that support drift detection, see [[http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift-resource-list.html|Resources that Support Drift Detection]].
    *  Use <a>DetectStackResourceDrift</a> to detect drift on individual resources, or <a>DetectStackDrift</a> to detect drift on all resources in a given stack that support drift detection.
    */
   @js.native

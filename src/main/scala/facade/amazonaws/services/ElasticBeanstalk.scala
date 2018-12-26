@@ -83,6 +83,7 @@ package object elasticbeanstalk {
   type InstancesHealthAttribute = String
   type InstancesHealthAttributes = js.Array[InstancesHealthAttribute]
   type LaunchConfigurationList = js.Array[LaunchConfiguration]
+  type LaunchTemplateList = js.Array[LaunchTemplate]
   type LaunchedAt = js.Date
   type LoadAverage = js.Array[LoadAverageValue]
   type LoadAverageValue = Double
@@ -1986,6 +1987,7 @@ package elasticbeanstalk {
     var EnvironmentName: js.UndefOr[EnvironmentName]
     var Instances: js.UndefOr[InstanceList]
     var LaunchConfigurations: js.UndefOr[LaunchConfigurationList]
+    var LaunchTemplates: js.UndefOr[LaunchTemplateList]
     var LoadBalancers: js.UndefOr[LoadBalancerList]
     var Queues: js.UndefOr[QueueList]
     var Triggers: js.UndefOr[TriggerList]
@@ -1997,6 +1999,7 @@ package elasticbeanstalk {
       EnvironmentName: js.UndefOr[EnvironmentName] = js.undefined,
       Instances: js.UndefOr[InstanceList] = js.undefined,
       LaunchConfigurations: js.UndefOr[LaunchConfigurationList] = js.undefined,
+      LaunchTemplates: js.UndefOr[LaunchTemplateList] = js.undefined,
       LoadBalancers: js.UndefOr[LoadBalancerList] = js.undefined,
       Queues: js.UndefOr[QueueList] = js.undefined,
       Triggers: js.UndefOr[TriggerList] = js.undefined): EnvironmentResourceDescription = {
@@ -2005,6 +2008,7 @@ package elasticbeanstalk {
         "EnvironmentName" -> EnvironmentName.map { x => x.asInstanceOf[js.Any] },
         "Instances" -> Instances.map { x => x.asInstanceOf[js.Any] },
         "LaunchConfigurations" -> LaunchConfigurations.map { x => x.asInstanceOf[js.Any] },
+        "LaunchTemplates" -> LaunchTemplates.map { x => x.asInstanceOf[js.Any] },
         "LoadBalancers" -> LoadBalancers.map { x => x.asInstanceOf[js.Any] },
         "Queues" -> Queues.map { x => x.asInstanceOf[js.Any] },
         "Triggers" -> Triggers.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
@@ -2296,6 +2300,24 @@ package elasticbeanstalk {
         "Name" -> Name.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[LaunchConfiguration]
+    }
+  }
+
+  /**
+   * Describes an Amazon EC2 launch template.
+   */
+  @js.native
+  trait LaunchTemplate extends js.Object {
+    var Id: js.UndefOr[ResourceId]
+  }
+
+  object LaunchTemplate {
+    def apply(
+      Id: js.UndefOr[ResourceId] = js.undefined): LaunchTemplate = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Id" -> Id.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[LaunchTemplate]
     }
   }
 

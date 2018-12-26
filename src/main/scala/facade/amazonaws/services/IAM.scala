@@ -52,6 +52,7 @@ package object iam {
   type SAMLProviderNameType = String
   type SSHPublicKeyListType = js.Array[SSHPublicKeyMetadata]
   type ServiceSpecificCredentialsListType = js.Array[ServiceSpecificCredentialMetadata]
+  type ServicesLastAccessed = js.Array[ServiceLastAccessed]
   type SimulationPolicyListType = js.Array[policyDocumentType]
   type StatementListType = js.Array[Statement]
   type accessKeyIdType = String
@@ -75,7 +76,9 @@ package object iam {
   type customSuffixType = String
   type dateType = js.Date
   type encodingType = String
+  type entityDetailsListType = js.Array[EntityDetails]
   type entityListType = js.Array[EntityType]
+  type entityNameType = String
   type existingUserNameType = String
   type groupDetailListType = js.Array[GroupDetail]
   type groupListType = js.Array[Group]
@@ -84,6 +87,10 @@ package object iam {
   type idType = String
   type instanceProfileListType = js.Array[InstanceProfile]
   type instanceProfileNameType = String
+  type integerType = Int
+  type jobIDType = String
+  type jobStatusType = String
+  type listPolicyGrantingServiceAccessResponseListType = js.Array[ListPoliciesGrantingServiceAccessEntry]
   type markerType = String
   type maxItemsType = Int
   type maxPasswordAgeType = Int
@@ -97,11 +104,14 @@ package object iam {
   type policyDetailListType = js.Array[PolicyDetail]
   type policyDocumentType = String
   type policyDocumentVersionListType = js.Array[PolicyVersion]
+  type policyGrantingServiceAccessListType = js.Array[PolicyGrantingServiceAccess]
   type policyListType = js.Array[Policy]
   type policyNameListType = js.Array[policyNameType]
   type policyNameType = String
+  type policyOwnerEntityType = String
   type policyPathType = String
   type policyScopeType = String
+  type policyType = String
   type policyVersionIdType = String
   type privateKeyType = String
   type publicKeyFingerprintType = String
@@ -116,6 +126,9 @@ package object iam {
   type serverCertificateMetadataListType = js.Array[ServerCertificateMetadata]
   type serverCertificateNameType = String
   type serviceName = String
+  type serviceNameType = String
+  type serviceNamespaceListType = js.Array[serviceNamespaceType]
+  type serviceNamespaceType = String
   type servicePassword = String
   type serviceSpecificCredentialId = String
   type serviceUserName = String
@@ -193,6 +206,7 @@ package iam {
     def detachUserPolicy(params: DetachUserPolicyRequest): Request[js.Object] = js.native
     def enableMFADevice(params: EnableMFADeviceRequest): Request[js.Object] = js.native
     def generateCredentialReport(): Request[GenerateCredentialReportResponse] = js.native
+    def generateServiceLastAccessedDetails(params: GenerateServiceLastAccessedDetailsRequest): Request[GenerateServiceLastAccessedDetailsResponse] = js.native
     def getAccessKeyLastUsed(params: GetAccessKeyLastUsedRequest): Request[GetAccessKeyLastUsedResponse] = js.native
     def getAccountAuthorizationDetails(params: GetAccountAuthorizationDetailsRequest): Request[GetAccountAuthorizationDetailsResponse] = js.native
     def getAccountPasswordPolicy(): Request[GetAccountPasswordPolicyResponse] = js.native
@@ -212,6 +226,8 @@ package iam {
     def getSAMLProvider(params: GetSAMLProviderRequest): Request[GetSAMLProviderResponse] = js.native
     def getSSHPublicKey(params: GetSSHPublicKeyRequest): Request[GetSSHPublicKeyResponse] = js.native
     def getServerCertificate(params: GetServerCertificateRequest): Request[GetServerCertificateResponse] = js.native
+    def getServiceLastAccessedDetails(params: GetServiceLastAccessedDetailsRequest): Request[GetServiceLastAccessedDetailsResponse] = js.native
+    def getServiceLastAccessedDetailsWithEntities(params: GetServiceLastAccessedDetailsWithEntitiesRequest): Request[GetServiceLastAccessedDetailsWithEntitiesResponse] = js.native
     def getServiceLinkedRoleDeletionStatus(params: GetServiceLinkedRoleDeletionStatusRequest): Request[GetServiceLinkedRoleDeletionStatusResponse] = js.native
     def getUser(params: GetUserRequest): Request[GetUserResponse] = js.native
     def getUserPolicy(params: GetUserPolicyRequest): Request[GetUserPolicyResponse] = js.native
@@ -229,6 +245,7 @@ package iam {
     def listMFADevices(params: ListMFADevicesRequest): Request[ListMFADevicesResponse] = js.native
     def listOpenIDConnectProviders(params: ListOpenIDConnectProvidersRequest): Request[ListOpenIDConnectProvidersResponse] = js.native
     def listPolicies(params: ListPoliciesRequest): Request[ListPoliciesResponse] = js.native
+    def listPoliciesGrantingServiceAccess(params: ListPoliciesGrantingServiceAccessRequest): Request[ListPoliciesGrantingServiceAccessResponse] = js.native
     def listPolicyVersions(params: ListPolicyVersionsRequest): Request[ListPolicyVersionsResponse] = js.native
     def listRolePolicies(params: ListRolePoliciesRequest): Request[ListRolePoliciesResponse] = js.native
     def listRoleTags(params: ListRoleTagsRequest): Request[ListRoleTagsResponse] = js.native
@@ -312,7 +329,7 @@ package iam {
   }
 
   /**
-   * Contains information about the last time an AWS access key was used.
+   * Contains information about the last time an AWS access key was used since IAM began tracking this information on April 22, 2015.
    *  This data type is used as a response element in the <a>GetAccessKeyLastUsed</a> operation.
    */
   @js.native
@@ -475,7 +492,7 @@ package iam {
   /**
    * Contains information about an attached permissions boundary.
    *  An attached permissions boundary is a managed policy that has been attached to a user or role to set the permissions boundary.
-   *  For more information about permissions boundaries, see [[https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html|Permissions Boundaries for IAM Identities ]] in the <i>IAM User Guide</i>.
+   *  For more information about permissions boundaries, see [[http://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html|Permissions Boundaries for IAM Identities ]] in the <i>IAM User Guide</i>.
    */
   @js.native
   trait AttachedPermissionsBoundary extends js.Object {
@@ -1587,6 +1604,59 @@ package iam {
     }
   }
 
+  /**
+   * An object that contains details about when the IAM entities (users or roles) were last used in an attempt to access the specified AWS service.
+   *  This data type is a response element in the <a>GetServiceLastAccessedDetailsWithEntities</a> operation.
+   */
+  @js.native
+  trait EntityDetails extends js.Object {
+    var EntityInfo: EntityInfo
+    var LastAuthenticated: js.UndefOr[dateType]
+  }
+
+  object EntityDetails {
+    def apply(
+      EntityInfo: EntityInfo,
+      LastAuthenticated: js.UndefOr[dateType] = js.undefined): EntityDetails = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "EntityInfo" -> EntityInfo.asInstanceOf[js.Any],
+        "LastAuthenticated" -> LastAuthenticated.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EntityDetails]
+    }
+  }
+
+  /**
+   * Contains details about the specified entity (user or role).
+   *  This data type is an element of the <a>EntityDetails</a> object.
+   */
+  @js.native
+  trait EntityInfo extends js.Object {
+    var Arn: arnType
+    var Id: idType
+    var Name: userNameType
+    var Type: policyOwnerEntityType
+    var Path: js.UndefOr[pathType]
+  }
+
+  object EntityInfo {
+    def apply(
+      Arn: arnType,
+      Id: idType,
+      Name: userNameType,
+      Type: policyOwnerEntityType,
+      Path: js.UndefOr[pathType] = js.undefined): EntityInfo = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Arn" -> Arn.asInstanceOf[js.Any],
+        "Id" -> Id.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
+        "Type" -> Type.asInstanceOf[js.Any],
+        "Path" -> Path.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EntityInfo]
+    }
+  }
+
   object EntityTypeEnum {
     val User = "User"
     val Role = "Role"
@@ -1595,6 +1665,28 @@ package iam {
     val AWSManagedPolicy = "AWSManagedPolicy"
 
     val values = IndexedSeq(User, Role, Group, LocalManagedPolicy, AWSManagedPolicy)
+  }
+
+  /**
+   * Contains information about the reason that the operation failed.
+   *  This data type is used as a response element in the <a>GetServiceLastAccessedDetails</a> operation and the <a>GetServiceLastAccessedDetailsWithEntities</a> operation.
+   */
+  @js.native
+  trait ErrorDetails extends js.Object {
+    var Code: stringType
+    var Message: stringType
+  }
+
+  object ErrorDetails {
+    def apply(
+      Code: stringType,
+      Message: stringType): ErrorDetails = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Code" -> Code.asInstanceOf[js.Any],
+        "Message" -> Message.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ErrorDetails]
+    }
   }
 
   /**
@@ -1655,6 +1747,36 @@ package iam {
         "State" -> State.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GenerateCredentialReportResponse]
+    }
+  }
+
+  @js.native
+  trait GenerateServiceLastAccessedDetailsRequest extends js.Object {
+    var Arn: arnType
+  }
+
+  object GenerateServiceLastAccessedDetailsRequest {
+    def apply(
+      Arn: arnType): GenerateServiceLastAccessedDetailsRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Arn" -> Arn.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GenerateServiceLastAccessedDetailsRequest]
+    }
+  }
+
+  @js.native
+  trait GenerateServiceLastAccessedDetailsResponse extends js.Object {
+    var JobId: js.UndefOr[jobIDType]
+  }
+
+  object GenerateServiceLastAccessedDetailsResponse {
+    def apply(
+      JobId: js.UndefOr[jobIDType] = js.undefined): GenerateServiceLastAccessedDetailsResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "JobId" -> JobId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GenerateServiceLastAccessedDetailsResponse]
     }
   }
 
@@ -2309,6 +2431,117 @@ package iam {
         "ServerCertificate" -> ServerCertificate.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetServerCertificateResponse]
+    }
+  }
+
+  @js.native
+  trait GetServiceLastAccessedDetailsRequest extends js.Object {
+    var JobId: jobIDType
+    var Marker: js.UndefOr[markerType]
+    var MaxItems: js.UndefOr[maxItemsType]
+  }
+
+  object GetServiceLastAccessedDetailsRequest {
+    def apply(
+      JobId: jobIDType,
+      Marker: js.UndefOr[markerType] = js.undefined,
+      MaxItems: js.UndefOr[maxItemsType] = js.undefined): GetServiceLastAccessedDetailsRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "JobId" -> JobId.asInstanceOf[js.Any],
+        "Marker" -> Marker.map { x => x.asInstanceOf[js.Any] },
+        "MaxItems" -> MaxItems.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetServiceLastAccessedDetailsRequest]
+    }
+  }
+
+  @js.native
+  trait GetServiceLastAccessedDetailsResponse extends js.Object {
+    var JobCompletionDate: dateType
+    var JobCreationDate: dateType
+    var JobStatus: jobStatusType
+    var ServicesLastAccessed: ServicesLastAccessed
+    var Error: js.UndefOr[ErrorDetails]
+    var IsTruncated: js.UndefOr[booleanType]
+    var Marker: js.UndefOr[markerType]
+  }
+
+  object GetServiceLastAccessedDetailsResponse {
+    def apply(
+      JobCompletionDate: dateType,
+      JobCreationDate: dateType,
+      JobStatus: jobStatusType,
+      ServicesLastAccessed: ServicesLastAccessed,
+      Error: js.UndefOr[ErrorDetails] = js.undefined,
+      IsTruncated: js.UndefOr[booleanType] = js.undefined,
+      Marker: js.UndefOr[markerType] = js.undefined): GetServiceLastAccessedDetailsResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "JobCompletionDate" -> JobCompletionDate.asInstanceOf[js.Any],
+        "JobCreationDate" -> JobCreationDate.asInstanceOf[js.Any],
+        "JobStatus" -> JobStatus.asInstanceOf[js.Any],
+        "ServicesLastAccessed" -> ServicesLastAccessed.asInstanceOf[js.Any],
+        "Error" -> Error.map { x => x.asInstanceOf[js.Any] },
+        "IsTruncated" -> IsTruncated.map { x => x.asInstanceOf[js.Any] },
+        "Marker" -> Marker.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetServiceLastAccessedDetailsResponse]
+    }
+  }
+
+  @js.native
+  trait GetServiceLastAccessedDetailsWithEntitiesRequest extends js.Object {
+    var JobId: jobIDType
+    var ServiceNamespace: serviceNamespaceType
+    var Marker: js.UndefOr[markerType]
+    var MaxItems: js.UndefOr[maxItemsType]
+  }
+
+  object GetServiceLastAccessedDetailsWithEntitiesRequest {
+    def apply(
+      JobId: jobIDType,
+      ServiceNamespace: serviceNamespaceType,
+      Marker: js.UndefOr[markerType] = js.undefined,
+      MaxItems: js.UndefOr[maxItemsType] = js.undefined): GetServiceLastAccessedDetailsWithEntitiesRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "JobId" -> JobId.asInstanceOf[js.Any],
+        "ServiceNamespace" -> ServiceNamespace.asInstanceOf[js.Any],
+        "Marker" -> Marker.map { x => x.asInstanceOf[js.Any] },
+        "MaxItems" -> MaxItems.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetServiceLastAccessedDetailsWithEntitiesRequest]
+    }
+  }
+
+  @js.native
+  trait GetServiceLastAccessedDetailsWithEntitiesResponse extends js.Object {
+    var EntityDetailsList: entityDetailsListType
+    var JobCompletionDate: dateType
+    var JobCreationDate: dateType
+    var JobStatus: jobStatusType
+    var Error: js.UndefOr[ErrorDetails]
+    var IsTruncated: js.UndefOr[booleanType]
+    var Marker: js.UndefOr[markerType]
+  }
+
+  object GetServiceLastAccessedDetailsWithEntitiesResponse {
+    def apply(
+      EntityDetailsList: entityDetailsListType,
+      JobCompletionDate: dateType,
+      JobCreationDate: dateType,
+      JobStatus: jobStatusType,
+      Error: js.UndefOr[ErrorDetails] = js.undefined,
+      IsTruncated: js.UndefOr[booleanType] = js.undefined,
+      Marker: js.UndefOr[markerType] = js.undefined): GetServiceLastAccessedDetailsWithEntitiesResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "EntityDetailsList" -> EntityDetailsList.asInstanceOf[js.Any],
+        "JobCompletionDate" -> JobCompletionDate.asInstanceOf[js.Any],
+        "JobCreationDate" -> JobCreationDate.asInstanceOf[js.Any],
+        "JobStatus" -> JobStatus.asInstanceOf[js.Any],
+        "Error" -> Error.map { x => x.asInstanceOf[js.Any] },
+        "IsTruncated" -> IsTruncated.map { x => x.asInstanceOf[js.Any] },
+        "Marker" -> Marker.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetServiceLastAccessedDetailsWithEntitiesResponse]
     }
   }
 
@@ -3118,6 +3351,70 @@ package iam {
         "OpenIDConnectProviderList" -> OpenIDConnectProviderList.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListOpenIDConnectProvidersResponse]
+    }
+  }
+
+  /**
+   * Contains details about the permissions policies that are attached to the specified identity (user, group, or role).
+   *  This data type is used as a response element in the <a>ListPoliciesGrantingServiceAccess</a> operation.
+   */
+  @js.native
+  trait ListPoliciesGrantingServiceAccessEntry extends js.Object {
+    var Policies: js.UndefOr[policyGrantingServiceAccessListType]
+    var ServiceNamespace: js.UndefOr[serviceNamespaceType]
+  }
+
+  object ListPoliciesGrantingServiceAccessEntry {
+    def apply(
+      Policies: js.UndefOr[policyGrantingServiceAccessListType] = js.undefined,
+      ServiceNamespace: js.UndefOr[serviceNamespaceType] = js.undefined): ListPoliciesGrantingServiceAccessEntry = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Policies" -> Policies.map { x => x.asInstanceOf[js.Any] },
+        "ServiceNamespace" -> ServiceNamespace.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListPoliciesGrantingServiceAccessEntry]
+    }
+  }
+
+  @js.native
+  trait ListPoliciesGrantingServiceAccessRequest extends js.Object {
+    var Arn: arnType
+    var ServiceNamespaces: serviceNamespaceListType
+    var Marker: js.UndefOr[markerType]
+  }
+
+  object ListPoliciesGrantingServiceAccessRequest {
+    def apply(
+      Arn: arnType,
+      ServiceNamespaces: serviceNamespaceListType,
+      Marker: js.UndefOr[markerType] = js.undefined): ListPoliciesGrantingServiceAccessRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Arn" -> Arn.asInstanceOf[js.Any],
+        "ServiceNamespaces" -> ServiceNamespaces.asInstanceOf[js.Any],
+        "Marker" -> Marker.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListPoliciesGrantingServiceAccessRequest]
+    }
+  }
+
+  @js.native
+  trait ListPoliciesGrantingServiceAccessResponse extends js.Object {
+    var PoliciesGrantingServiceAccess: listPolicyGrantingServiceAccessResponseListType
+    var IsTruncated: js.UndefOr[booleanType]
+    var Marker: js.UndefOr[markerType]
+  }
+
+  object ListPoliciesGrantingServiceAccessResponse {
+    def apply(
+      PoliciesGrantingServiceAccess: listPolicyGrantingServiceAccessResponseListType,
+      IsTruncated: js.UndefOr[booleanType] = js.undefined,
+      Marker: js.UndefOr[markerType] = js.undefined): ListPoliciesGrantingServiceAccessResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "PoliciesGrantingServiceAccess" -> PoliciesGrantingServiceAccess.asInstanceOf[js.Any],
+        "IsTruncated" -> IsTruncated.map { x => x.asInstanceOf[js.Any] },
+        "Marker" -> Marker.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListPoliciesGrantingServiceAccessResponse]
     }
   }
 
@@ -4000,6 +4297,37 @@ package iam {
   }
 
   /**
+   * Contains details about the permissions policies that are attached to the specified identity (user, group, or role).
+   *  This data type is an element of the <a>ListPoliciesGrantingServiceAccessEntry</a> object.
+   */
+  @js.native
+  trait PolicyGrantingServiceAccess extends js.Object {
+    var PolicyName: policyNameType
+    var PolicyType: policyType
+    var EntityName: js.UndefOr[entityNameType]
+    var EntityType: js.UndefOr[policyOwnerEntityType]
+    var PolicyArn: js.UndefOr[arnType]
+  }
+
+  object PolicyGrantingServiceAccess {
+    def apply(
+      PolicyName: policyNameType,
+      PolicyType: policyType,
+      EntityName: js.UndefOr[entityNameType] = js.undefined,
+      EntityType: js.UndefOr[policyOwnerEntityType] = js.undefined,
+      PolicyArn: js.UndefOr[arnType] = js.undefined): PolicyGrantingServiceAccess = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "PolicyName" -> PolicyName.asInstanceOf[js.Any],
+        "PolicyType" -> PolicyType.asInstanceOf[js.Any],
+        "EntityName" -> EntityName.map { x => x.asInstanceOf[js.Any] },
+        "EntityType" -> EntityType.map { x => x.asInstanceOf[js.Any] },
+        "PolicyArn" -> PolicyArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PolicyGrantingServiceAccess]
+    }
+  }
+
+  /**
    * Contains information about a group that a managed policy is attached to.
    *  This data type is used as a response element in the <a>ListEntitiesForPolicy</a> operation.
    *  For more information about managed policies, refer to [[http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html|Managed Policies and Inline Policies]] in the <i>Using IAM</i> guide.
@@ -4059,7 +4387,7 @@ package iam {
 
   /**
    * The policy usage type that indicates whether the policy is used as a permissions policy or as the permissions boundary for an entity.
-   *  For more information about permissions boundaries, see [[https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html|Permissions Boundaries for IAM Identities ]] in the <i>IAM User Guide</i>.
+   *  For more information about permissions boundaries, see [[http://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html|Permissions Boundaries for IAM Identities ]] in the <i>IAM User Guide</i>.
    */
   object PolicyUsageTypeEnum {
     val PermissionsPolicy = "PermissionsPolicy"
@@ -4655,6 +4983,37 @@ package iam {
         "UploadDate" -> UploadDate.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ServerCertificateMetadata]
+    }
+  }
+
+  /**
+   * Contains details about the most recent attempt to access the service.
+   *  This data type is used as a response element in the <a>GetServiceLastAccessedDetails</a> operation.
+   */
+  @js.native
+  trait ServiceLastAccessed extends js.Object {
+    var ServiceName: serviceNameType
+    var ServiceNamespace: serviceNamespaceType
+    var LastAuthenticated: js.UndefOr[dateType]
+    var LastAuthenticatedEntity: js.UndefOr[arnType]
+    var TotalAuthenticatedEntities: js.UndefOr[integerType]
+  }
+
+  object ServiceLastAccessed {
+    def apply(
+      ServiceName: serviceNameType,
+      ServiceNamespace: serviceNamespaceType,
+      LastAuthenticated: js.UndefOr[dateType] = js.undefined,
+      LastAuthenticatedEntity: js.UndefOr[arnType] = js.undefined,
+      TotalAuthenticatedEntities: js.UndefOr[integerType] = js.undefined): ServiceLastAccessed = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ServiceName" -> ServiceName.asInstanceOf[js.Any],
+        "ServiceNamespace" -> ServiceNamespace.asInstanceOf[js.Any],
+        "LastAuthenticated" -> LastAuthenticated.map { x => x.asInstanceOf[js.Any] },
+        "LastAuthenticatedEntity" -> LastAuthenticatedEntity.map { x => x.asInstanceOf[js.Any] },
+        "TotalAuthenticatedEntities" -> TotalAuthenticatedEntities.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ServiceLastAccessed]
     }
   }
 
@@ -5605,12 +5964,35 @@ package iam {
     val values = IndexedSeq(SSH, PEM)
   }
 
+  object jobStatusTypeEnum {
+    val IN_PROGRESS = "IN_PROGRESS"
+    val COMPLETED = "COMPLETED"
+    val FAILED = "FAILED"
+
+    val values = IndexedSeq(IN_PROGRESS, COMPLETED, FAILED)
+  }
+
+  object policyOwnerEntityTypeEnum {
+    val USER = "USER"
+    val ROLE = "ROLE"
+    val GROUP = "GROUP"
+
+    val values = IndexedSeq(USER, ROLE, GROUP)
+  }
+
   object policyScopeTypeEnum {
     val All = "All"
     val AWS = "AWS"
     val Local = "Local"
 
     val values = IndexedSeq(All, AWS, Local)
+  }
+
+  object policyTypeEnum {
+    val INLINE = "INLINE"
+    val MANAGED = "MANAGED"
+
+    val values = IndexedSeq(INLINE, MANAGED)
   }
 
   object statusTypeEnum {

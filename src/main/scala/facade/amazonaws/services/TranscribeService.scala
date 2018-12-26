@@ -207,8 +207,9 @@ package transcribeservice {
     val `de-DE` = "de-DE"
     val `pt-BR` = "pt-BR"
     val `fr-FR` = "fr-FR"
+    val `it-IT` = "it-IT"
 
-    val values = IndexedSeq(`en-US`, `es-US`, `en-AU`, `fr-CA`, `en-GB`, `de-DE`, `pt-BR`, `fr-FR`)
+    val values = IndexedSeq(`en-US`, `es-US`, `en-AU`, `fr-CA`, `en-GB`, `de-DE`, `pt-BR`, `fr-FR`, `it-IT`)
   }
 
   @js.native
@@ -429,7 +430,7 @@ package transcribeservice {
   }
 
   /**
-   * Describes an asynchronous transcription job that was created with the <code>StartTranscriptionJob</code> operation. Note that en-AU, en-UK, and fr-CA languages are in preview and are only available to whitelisted customers.
+   * Describes an asynchronous transcription job that was created with the <code>StartTranscriptionJob</code> operation.
    */
   @js.native
   trait TranscriptionJob extends js.Object {
@@ -485,7 +486,7 @@ package transcribeservice {
   }
 
   /**
-   * Provides a summary of information about a transcription job. Note that en-AU, en-UK, and fr-CA languages are in preview and are only available to whitelisted customers.
+   * Provides a summary of information about a transcription job. .
    */
   @js.native
   trait TranscriptionJobSummary extends js.Object {
@@ -566,7 +567,7 @@ package transcribeservice {
   }
 
   /**
-   * Provides information about a custom vocabulary. Note that vocabularies for en-AU, en-UK, and fr-CA languages that are in preview are not available. In the console, the vocabulary section will be greyed-out and SDK will return error message.
+   * Provides information about a custom vocabulary.
    */
   @js.native
   trait VocabularyInfo extends js.Object {

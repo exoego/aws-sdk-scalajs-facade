@@ -3360,8 +3360,9 @@ package s3 {
   object InventoryFormatEnum {
     val CSV = "CSV"
     val ORC = "ORC"
+    val Parquet = "Parquet"
 
-    val values = IndexedSeq(CSV, ORC)
+    val values = IndexedSeq(CSV, ORC, Parquet)
   }
 
   object InventoryFrequencyEnum {

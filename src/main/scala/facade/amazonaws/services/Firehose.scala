@@ -39,6 +39,7 @@ package object firehose {
   type ElasticsearchTypeName = String
   type ErrorCode = String
   type ErrorMessage = String
+  type ErrorOutputPrefix = String
   type HECAcknowledgmentTimeoutInSeconds = Int
   type HECEndpoint = String
   type HECEndpointType = String
@@ -706,6 +707,7 @@ package firehose {
     var CompressionFormat: js.UndefOr[CompressionFormat]
     var DataFormatConversionConfiguration: js.UndefOr[DataFormatConversionConfiguration]
     var EncryptionConfiguration: js.UndefOr[EncryptionConfiguration]
+    var ErrorOutputPrefix: js.UndefOr[ErrorOutputPrefix]
     var Prefix: js.UndefOr[Prefix]
     var ProcessingConfiguration: js.UndefOr[ProcessingConfiguration]
     var S3BackupConfiguration: js.UndefOr[S3DestinationConfiguration]
@@ -721,6 +723,7 @@ package firehose {
       CompressionFormat: js.UndefOr[CompressionFormat] = js.undefined,
       DataFormatConversionConfiguration: js.UndefOr[DataFormatConversionConfiguration] = js.undefined,
       EncryptionConfiguration: js.UndefOr[EncryptionConfiguration] = js.undefined,
+      ErrorOutputPrefix: js.UndefOr[ErrorOutputPrefix] = js.undefined,
       Prefix: js.UndefOr[Prefix] = js.undefined,
       ProcessingConfiguration: js.UndefOr[ProcessingConfiguration] = js.undefined,
       S3BackupConfiguration: js.UndefOr[S3DestinationConfiguration] = js.undefined,
@@ -733,6 +736,7 @@ package firehose {
         "CompressionFormat" -> CompressionFormat.map { x => x.asInstanceOf[js.Any] },
         "DataFormatConversionConfiguration" -> DataFormatConversionConfiguration.map { x => x.asInstanceOf[js.Any] },
         "EncryptionConfiguration" -> EncryptionConfiguration.map { x => x.asInstanceOf[js.Any] },
+        "ErrorOutputPrefix" -> ErrorOutputPrefix.map { x => x.asInstanceOf[js.Any] },
         "Prefix" -> Prefix.map { x => x.asInstanceOf[js.Any] },
         "ProcessingConfiguration" -> ProcessingConfiguration.map { x => x.asInstanceOf[js.Any] },
         "S3BackupConfiguration" -> S3BackupConfiguration.map { x => x.asInstanceOf[js.Any] },
@@ -754,6 +758,7 @@ package firehose {
     var RoleARN: RoleARN
     var CloudWatchLoggingOptions: js.UndefOr[CloudWatchLoggingOptions]
     var DataFormatConversionConfiguration: js.UndefOr[DataFormatConversionConfiguration]
+    var ErrorOutputPrefix: js.UndefOr[ErrorOutputPrefix]
     var Prefix: js.UndefOr[Prefix]
     var ProcessingConfiguration: js.UndefOr[ProcessingConfiguration]
     var S3BackupDescription: js.UndefOr[S3DestinationDescription]
@@ -769,6 +774,7 @@ package firehose {
       RoleARN: RoleARN,
       CloudWatchLoggingOptions: js.UndefOr[CloudWatchLoggingOptions] = js.undefined,
       DataFormatConversionConfiguration: js.UndefOr[DataFormatConversionConfiguration] = js.undefined,
+      ErrorOutputPrefix: js.UndefOr[ErrorOutputPrefix] = js.undefined,
       Prefix: js.UndefOr[Prefix] = js.undefined,
       ProcessingConfiguration: js.UndefOr[ProcessingConfiguration] = js.undefined,
       S3BackupDescription: js.UndefOr[S3DestinationDescription] = js.undefined,
@@ -781,6 +787,7 @@ package firehose {
         "RoleARN" -> RoleARN.asInstanceOf[js.Any],
         "CloudWatchLoggingOptions" -> CloudWatchLoggingOptions.map { x => x.asInstanceOf[js.Any] },
         "DataFormatConversionConfiguration" -> DataFormatConversionConfiguration.map { x => x.asInstanceOf[js.Any] },
+        "ErrorOutputPrefix" -> ErrorOutputPrefix.map { x => x.asInstanceOf[js.Any] },
         "Prefix" -> Prefix.map { x => x.asInstanceOf[js.Any] },
         "ProcessingConfiguration" -> ProcessingConfiguration.map { x => x.asInstanceOf[js.Any] },
         "S3BackupDescription" -> S3BackupDescription.map { x => x.asInstanceOf[js.Any] },
@@ -801,6 +808,7 @@ package firehose {
     var CompressionFormat: js.UndefOr[CompressionFormat]
     var DataFormatConversionConfiguration: js.UndefOr[DataFormatConversionConfiguration]
     var EncryptionConfiguration: js.UndefOr[EncryptionConfiguration]
+    var ErrorOutputPrefix: js.UndefOr[ErrorOutputPrefix]
     var Prefix: js.UndefOr[Prefix]
     var ProcessingConfiguration: js.UndefOr[ProcessingConfiguration]
     var RoleARN: js.UndefOr[RoleARN]
@@ -816,6 +824,7 @@ package firehose {
       CompressionFormat: js.UndefOr[CompressionFormat] = js.undefined,
       DataFormatConversionConfiguration: js.UndefOr[DataFormatConversionConfiguration] = js.undefined,
       EncryptionConfiguration: js.UndefOr[EncryptionConfiguration] = js.undefined,
+      ErrorOutputPrefix: js.UndefOr[ErrorOutputPrefix] = js.undefined,
       Prefix: js.UndefOr[Prefix] = js.undefined,
       ProcessingConfiguration: js.UndefOr[ProcessingConfiguration] = js.undefined,
       RoleARN: js.UndefOr[RoleARN] = js.undefined,
@@ -828,6 +837,7 @@ package firehose {
         "CompressionFormat" -> CompressionFormat.map { x => x.asInstanceOf[js.Any] },
         "DataFormatConversionConfiguration" -> DataFormatConversionConfiguration.map { x => x.asInstanceOf[js.Any] },
         "EncryptionConfiguration" -> EncryptionConfiguration.map { x => x.asInstanceOf[js.Any] },
+        "ErrorOutputPrefix" -> ErrorOutputPrefix.map { x => x.asInstanceOf[js.Any] },
         "Prefix" -> Prefix.map { x => x.asInstanceOf[js.Any] },
         "ProcessingConfiguration" -> ProcessingConfiguration.map { x => x.asInstanceOf[js.Any] },
         "RoleARN" -> RoleARN.map { x => x.asInstanceOf[js.Any] },
@@ -1558,6 +1568,7 @@ package firehose {
     var CloudWatchLoggingOptions: js.UndefOr[CloudWatchLoggingOptions]
     var CompressionFormat: js.UndefOr[CompressionFormat]
     var EncryptionConfiguration: js.UndefOr[EncryptionConfiguration]
+    var ErrorOutputPrefix: js.UndefOr[ErrorOutputPrefix]
     var Prefix: js.UndefOr[Prefix]
   }
 
@@ -1569,6 +1580,7 @@ package firehose {
       CloudWatchLoggingOptions: js.UndefOr[CloudWatchLoggingOptions] = js.undefined,
       CompressionFormat: js.UndefOr[CompressionFormat] = js.undefined,
       EncryptionConfiguration: js.UndefOr[EncryptionConfiguration] = js.undefined,
+      ErrorOutputPrefix: js.UndefOr[ErrorOutputPrefix] = js.undefined,
       Prefix: js.UndefOr[Prefix] = js.undefined): S3DestinationConfiguration = {
       val _fields = IndexedSeq[(String, js.Any)](
         "BucketARN" -> BucketARN.asInstanceOf[js.Any],
@@ -1577,6 +1589,7 @@ package firehose {
         "CloudWatchLoggingOptions" -> CloudWatchLoggingOptions.map { x => x.asInstanceOf[js.Any] },
         "CompressionFormat" -> CompressionFormat.map { x => x.asInstanceOf[js.Any] },
         "EncryptionConfiguration" -> EncryptionConfiguration.map { x => x.asInstanceOf[js.Any] },
+        "ErrorOutputPrefix" -> ErrorOutputPrefix.map { x => x.asInstanceOf[js.Any] },
         "Prefix" -> Prefix.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[S3DestinationConfiguration]
@@ -1594,6 +1607,7 @@ package firehose {
     var EncryptionConfiguration: EncryptionConfiguration
     var RoleARN: RoleARN
     var CloudWatchLoggingOptions: js.UndefOr[CloudWatchLoggingOptions]
+    var ErrorOutputPrefix: js.UndefOr[ErrorOutputPrefix]
     var Prefix: js.UndefOr[Prefix]
   }
 
@@ -1605,6 +1619,7 @@ package firehose {
       EncryptionConfiguration: EncryptionConfiguration,
       RoleARN: RoleARN,
       CloudWatchLoggingOptions: js.UndefOr[CloudWatchLoggingOptions] = js.undefined,
+      ErrorOutputPrefix: js.UndefOr[ErrorOutputPrefix] = js.undefined,
       Prefix: js.UndefOr[Prefix] = js.undefined): S3DestinationDescription = {
       val _fields = IndexedSeq[(String, js.Any)](
         "BucketARN" -> BucketARN.asInstanceOf[js.Any],
@@ -1613,6 +1628,7 @@ package firehose {
         "EncryptionConfiguration" -> EncryptionConfiguration.asInstanceOf[js.Any],
         "RoleARN" -> RoleARN.asInstanceOf[js.Any],
         "CloudWatchLoggingOptions" -> CloudWatchLoggingOptions.map { x => x.asInstanceOf[js.Any] },
+        "ErrorOutputPrefix" -> ErrorOutputPrefix.map { x => x.asInstanceOf[js.Any] },
         "Prefix" -> Prefix.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[S3DestinationDescription]
@@ -1629,6 +1645,7 @@ package firehose {
     var CloudWatchLoggingOptions: js.UndefOr[CloudWatchLoggingOptions]
     var CompressionFormat: js.UndefOr[CompressionFormat]
     var EncryptionConfiguration: js.UndefOr[EncryptionConfiguration]
+    var ErrorOutputPrefix: js.UndefOr[ErrorOutputPrefix]
     var Prefix: js.UndefOr[Prefix]
     var RoleARN: js.UndefOr[RoleARN]
   }
@@ -1640,6 +1657,7 @@ package firehose {
       CloudWatchLoggingOptions: js.UndefOr[CloudWatchLoggingOptions] = js.undefined,
       CompressionFormat: js.UndefOr[CompressionFormat] = js.undefined,
       EncryptionConfiguration: js.UndefOr[EncryptionConfiguration] = js.undefined,
+      ErrorOutputPrefix: js.UndefOr[ErrorOutputPrefix] = js.undefined,
       Prefix: js.UndefOr[Prefix] = js.undefined,
       RoleARN: js.UndefOr[RoleARN] = js.undefined): S3DestinationUpdate = {
       val _fields = IndexedSeq[(String, js.Any)](
@@ -1648,6 +1666,7 @@ package firehose {
         "CloudWatchLoggingOptions" -> CloudWatchLoggingOptions.map { x => x.asInstanceOf[js.Any] },
         "CompressionFormat" -> CompressionFormat.map { x => x.asInstanceOf[js.Any] },
         "EncryptionConfiguration" -> EncryptionConfiguration.map { x => x.asInstanceOf[js.Any] },
+        "ErrorOutputPrefix" -> ErrorOutputPrefix.map { x => x.asInstanceOf[js.Any] },
         "Prefix" -> Prefix.map { x => x.asInstanceOf[js.Any] },
         "RoleARN" -> RoleARN.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 

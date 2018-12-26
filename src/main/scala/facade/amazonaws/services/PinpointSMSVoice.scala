@@ -49,7 +49,7 @@ package pinpointsmsvoice {
   }
 
   /**
-   * An object that contains information about a event destination that sends data to Amazon CloudWatch Logs.
+   * An object that contains information about an event destination that sends data to Amazon CloudWatch Logs.
    */
   @js.native
   trait CloudWatchLogsDestination extends js.Object {
@@ -70,7 +70,7 @@ package pinpointsmsvoice {
   }
 
   /**
-   * CreateConfigurationSetEventDestinationRequest
+   * Create a new event destination in a configuration set.
    */
   @js.native
   trait CreateConfigurationSetEventDestinationRequest extends js.Object {
@@ -110,7 +110,7 @@ package pinpointsmsvoice {
   }
 
   /**
-   * CreateConfigurationSetRequest
+   * A request to create a new configuration set.
    */
   @js.native
   trait CreateConfigurationSetRequest extends js.Object {
@@ -218,6 +218,7 @@ package pinpointsmsvoice {
     var KinesisFirehoseDestination: js.UndefOr[KinesisFirehoseDestination]
     var MatchingEventTypes: js.UndefOr[EventTypes]
     var Name: js.UndefOr[String]
+    var SnsDestination: js.UndefOr[SnsDestination]
   }
 
   object EventDestination {
@@ -226,13 +227,15 @@ package pinpointsmsvoice {
       Enabled: js.UndefOr[Boolean] = js.undefined,
       KinesisFirehoseDestination: js.UndefOr[KinesisFirehoseDestination] = js.undefined,
       MatchingEventTypes: js.UndefOr[EventTypes] = js.undefined,
-      Name: js.UndefOr[String] = js.undefined): EventDestination = {
+      Name: js.UndefOr[String] = js.undefined,
+      SnsDestination: js.UndefOr[SnsDestination] = js.undefined): EventDestination = {
       val _fields = IndexedSeq[(String, js.Any)](
         "CloudWatchLogsDestination" -> CloudWatchLogsDestination.map { x => x.asInstanceOf[js.Any] },
         "Enabled" -> Enabled.map { x => x.asInstanceOf[js.Any] },
         "KinesisFirehoseDestination" -> KinesisFirehoseDestination.map { x => x.asInstanceOf[js.Any] },
         "MatchingEventTypes" -> MatchingEventTypes.map { x => x.asInstanceOf[js.Any] },
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
+        "SnsDestination" -> SnsDestination.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EventDestination]
     }
@@ -247,6 +250,7 @@ package pinpointsmsvoice {
     var Enabled: js.UndefOr[Boolean]
     var KinesisFirehoseDestination: js.UndefOr[KinesisFirehoseDestination]
     var MatchingEventTypes: js.UndefOr[EventTypes]
+    var SnsDestination: js.UndefOr[SnsDestination]
   }
 
   object EventDestinationDefinition {
@@ -254,12 +258,14 @@ package pinpointsmsvoice {
       CloudWatchLogsDestination: js.UndefOr[CloudWatchLogsDestination] = js.undefined,
       Enabled: js.UndefOr[Boolean] = js.undefined,
       KinesisFirehoseDestination: js.UndefOr[KinesisFirehoseDestination] = js.undefined,
-      MatchingEventTypes: js.UndefOr[EventTypes] = js.undefined): EventDestinationDefinition = {
+      MatchingEventTypes: js.UndefOr[EventTypes] = js.undefined,
+      SnsDestination: js.UndefOr[SnsDestination] = js.undefined): EventDestinationDefinition = {
       val _fields = IndexedSeq[(String, js.Any)](
         "CloudWatchLogsDestination" -> CloudWatchLogsDestination.map { x => x.asInstanceOf[js.Any] },
         "Enabled" -> Enabled.map { x => x.asInstanceOf[js.Any] },
         "KinesisFirehoseDestination" -> KinesisFirehoseDestination.map { x => x.asInstanceOf[js.Any] },
-        "MatchingEventTypes" -> MatchingEventTypes.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "MatchingEventTypes" -> MatchingEventTypes.map { x => x.asInstanceOf[js.Any] },
+        "SnsDestination" -> SnsDestination.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EventDestinationDefinition]
     }
@@ -314,7 +320,7 @@ package pinpointsmsvoice {
   }
 
   /**
-   * An object that contains information about a event destination that sends data to Amazon Kinesis Data Firehose.
+   * An object that contains information about an event destination that sends data to Amazon Kinesis Data Firehose.
    */
   @js.native
   trait KinesisFirehoseDestination extends js.Object {
@@ -427,6 +433,24 @@ package pinpointsmsvoice {
         "MessageId" -> MessageId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SendVoiceMessageResponse]
+    }
+  }
+
+  /**
+   * An object that contains information about an event destination that sends data to Amazon SNS.
+   */
+  @js.native
+  trait SnsDestination extends js.Object {
+    var TopicArn: js.UndefOr[String]
+  }
+
+  object SnsDestination {
+    def apply(
+      TopicArn: js.UndefOr[String] = js.undefined): SnsDestination = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "TopicArn" -> TopicArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SnsDestination]
     }
   }
 

@@ -22,6 +22,11 @@ package object devicefarm {
   type CurrencyCode = String
   type DateTime = js.Date
   type DeviceAttribute = String
+  type DeviceAvailability = String
+  type DeviceFilterAttribute = String
+  type DeviceFilterOperator = String
+  type DeviceFilterValues = js.Array[String]
+  type DeviceFilters = js.Array[DeviceFilter]
   type DeviceFormFactor = String
   type DeviceHostPaths = js.Array[String]
   type DeviceInstances = js.Array[DeviceInstance]
@@ -998,6 +1003,7 @@ package devicefarm {
   @js.native
   trait Device extends js.Object {
     var arn: js.UndefOr[AmazonResourceName]
+    var availability: js.UndefOr[DeviceAvailability]
     var carrier: js.UndefOr[String]
     var cpu: js.UndefOr[CPU]
     var fleetName: js.UndefOr[String]
@@ -1022,6 +1028,7 @@ package devicefarm {
   object Device {
     def apply(
       arn: js.UndefOr[AmazonResourceName] = js.undefined,
+      availability: js.UndefOr[DeviceAvailability] = js.undefined,
       carrier: js.UndefOr[String] = js.undefined,
       cpu: js.UndefOr[CPU] = js.undefined,
       fleetName: js.UndefOr[String] = js.undefined,
@@ -1043,6 +1050,7 @@ package devicefarm {
       resolution: js.UndefOr[Resolution] = js.undefined): Device = {
       val _fields = IndexedSeq[(String, js.Any)](
         "arn" -> arn.map { x => x.asInstanceOf[js.Any] },
+        "availability" -> availability.map { x => x.asInstanceOf[js.Any] },
         "carrier" -> carrier.map { x => x.asInstanceOf[js.Any] },
         "cpu" -> cpu.map { x => x.asInstanceOf[js.Any] },
         "fleetName" -> fleetName.map { x => x.asInstanceOf[js.Any] },
@@ -1080,6 +1088,70 @@ package devicefarm {
     val FLEET_TYPE = "FLEET_TYPE"
 
     val values = IndexedSeq(ARN, PLATFORM, FORM_FACTOR, MANUFACTURER, REMOTE_ACCESS_ENABLED, REMOTE_DEBUG_ENABLED, APPIUM_VERSION, INSTANCE_ARN, INSTANCE_LABELS, FLEET_TYPE)
+  }
+
+  object DeviceAvailabilityEnum {
+    val TEMPORARY_NOT_AVAILABLE = "TEMPORARY_NOT_AVAILABLE"
+    val BUSY = "BUSY"
+    val AVAILABLE = "AVAILABLE"
+    val HIGHLY_AVAILABLE = "HIGHLY_AVAILABLE"
+
+    val values = IndexedSeq(TEMPORARY_NOT_AVAILABLE, BUSY, AVAILABLE, HIGHLY_AVAILABLE)
+  }
+
+  /**
+   * Represents a device filter used to select a set of devices to be included in a test run. This data structure is passed in as the "deviceSelectionConfiguration" parameter to ScheduleRun. For an example of the JSON request syntax, see <a>ScheduleRun</a>.
+   *  It is also passed in as the "filters" parameter to ListDevices. For an example of the JSON request syntax, see <a>ListDevices</a>.
+   */
+  @js.native
+  trait DeviceFilter extends js.Object {
+    var attribute: js.UndefOr[DeviceFilterAttribute]
+    var operator: js.UndefOr[DeviceFilterOperator]
+    var values: js.UndefOr[DeviceFilterValues]
+  }
+
+  object DeviceFilter {
+    def apply(
+      attribute: js.UndefOr[DeviceFilterAttribute] = js.undefined,
+      operator: js.UndefOr[DeviceFilterOperator] = js.undefined,
+      values: js.UndefOr[DeviceFilterValues] = js.undefined): DeviceFilter = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "attribute" -> attribute.map { x => x.asInstanceOf[js.Any] },
+        "operator" -> operator.map { x => x.asInstanceOf[js.Any] },
+        "values" -> values.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeviceFilter]
+    }
+  }
+
+  object DeviceFilterAttributeEnum {
+    val ARN = "ARN"
+    val PLATFORM = "PLATFORM"
+    val OS_VERSION = "OS_VERSION"
+    val MODEL = "MODEL"
+    val AVAILABILITY = "AVAILABILITY"
+    val FORM_FACTOR = "FORM_FACTOR"
+    val MANUFACTURER = "MANUFACTURER"
+    val REMOTE_ACCESS_ENABLED = "REMOTE_ACCESS_ENABLED"
+    val REMOTE_DEBUG_ENABLED = "REMOTE_DEBUG_ENABLED"
+    val INSTANCE_ARN = "INSTANCE_ARN"
+    val INSTANCE_LABELS = "INSTANCE_LABELS"
+    val FLEET_TYPE = "FLEET_TYPE"
+
+    val values = IndexedSeq(ARN, PLATFORM, OS_VERSION, MODEL, AVAILABILITY, FORM_FACTOR, MANUFACTURER, REMOTE_ACCESS_ENABLED, REMOTE_DEBUG_ENABLED, INSTANCE_ARN, INSTANCE_LABELS, FLEET_TYPE)
+  }
+
+  object DeviceFilterOperatorEnum {
+    val EQUALS = "EQUALS"
+    val LESS_THAN = "LESS_THAN"
+    val LESS_THAN_OR_EQUALS = "LESS_THAN_OR_EQUALS"
+    val GREATER_THAN = "GREATER_THAN"
+    val GREATER_THAN_OR_EQUALS = "GREATER_THAN_OR_EQUALS"
+    val IN = "IN"
+    val NOT_IN = "NOT_IN"
+    val CONTAINS = "CONTAINS"
+
+    val values = IndexedSeq(EQUALS, LESS_THAN, LESS_THAN_OR_EQUALS, GREATER_THAN, GREATER_THAN_OR_EQUALS, IN, NOT_IN, CONTAINS)
   }
 
   object DeviceFormFactorEnum {
@@ -1212,6 +1284,51 @@ package devicefarm {
     val PRIVATE = "PRIVATE"
 
     val values = IndexedSeq(CURATED, PRIVATE)
+  }
+
+  /**
+   * Represents the device filters used in a test run as well as the maximum number of devices to be included in the run. It is passed in as the deviceSelectionConfiguration request parameter in <a>ScheduleRun</a>.
+   */
+  @js.native
+  trait DeviceSelectionConfiguration extends js.Object {
+    var filters: DeviceFilters
+    var maxDevices: Int
+  }
+
+  object DeviceSelectionConfiguration {
+    def apply(
+      filters: DeviceFilters,
+      maxDevices: Int): DeviceSelectionConfiguration = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "filters" -> filters.asInstanceOf[js.Any],
+        "maxDevices" -> maxDevices.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeviceSelectionConfiguration]
+    }
+  }
+
+  /**
+   * Contains the run results requested by the device selection configuration as well as how many devices were returned. For an example of the JSON response syntax, see <a>ScheduleRun</a>.
+   */
+  @js.native
+  trait DeviceSelectionResult extends js.Object {
+    var filters: js.UndefOr[DeviceFilters]
+    var matchedDevicesCount: js.UndefOr[Int]
+    var maxDevices: js.UndefOr[Int]
+  }
+
+  object DeviceSelectionResult {
+    def apply(
+      filters: js.UndefOr[DeviceFilters] = js.undefined,
+      matchedDevicesCount: js.UndefOr[Int] = js.undefined,
+      maxDevices: js.UndefOr[Int] = js.undefined): DeviceSelectionResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "filters" -> filters.map { x => x.asInstanceOf[js.Any] },
+        "matchedDevicesCount" -> matchedDevicesCount.map { x => x.asInstanceOf[js.Any] },
+        "maxDevices" -> maxDevices.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeviceSelectionResult]
+    }
   }
 
   /**
@@ -2150,15 +2267,18 @@ package devicefarm {
   @js.native
   trait ListDevicesRequest extends js.Object {
     var arn: js.UndefOr[AmazonResourceName]
+    var filters: js.UndefOr[DeviceFilters]
     var nextToken: js.UndefOr[PaginationToken]
   }
 
   object ListDevicesRequest {
     def apply(
       arn: js.UndefOr[AmazonResourceName] = js.undefined,
+      filters: js.UndefOr[DeviceFilters] = js.undefined,
       nextToken: js.UndefOr[PaginationToken] = js.undefined): ListDevicesRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "arn" -> arn.map { x => x.asInstanceOf[js.Any] },
+        "filters" -> filters.map { x => x.asInstanceOf[js.Any] },
         "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListDevicesRequest]
@@ -3331,7 +3451,7 @@ package devicefarm {
   }
 
   /**
-   * Represents a condition for a device pool.
+   * Represents a condition for a device pool. It is passed in as the <code>rules</code> parameter to <a>CreateDevicePool</a> and <a>UpdateDevicePool</a>.
    */
   @js.native
   trait Rule extends js.Object {
@@ -3379,6 +3499,7 @@ package devicefarm {
     var customerArtifactPaths: js.UndefOr[CustomerArtifactPaths]
     var deviceMinutes: js.UndefOr[DeviceMinutes]
     var devicePoolArn: js.UndefOr[AmazonResourceName]
+    var deviceSelectionResult: js.UndefOr[DeviceSelectionResult]
     var eventCount: js.UndefOr[Int]
     var jobTimeoutMinutes: js.UndefOr[JobTimeoutMinutes]
     var locale: js.UndefOr[String]
@@ -3413,6 +3534,7 @@ package devicefarm {
       customerArtifactPaths: js.UndefOr[CustomerArtifactPaths] = js.undefined,
       deviceMinutes: js.UndefOr[DeviceMinutes] = js.undefined,
       devicePoolArn: js.UndefOr[AmazonResourceName] = js.undefined,
+      deviceSelectionResult: js.UndefOr[DeviceSelectionResult] = js.undefined,
       eventCount: js.UndefOr[Int] = js.undefined,
       jobTimeoutMinutes: js.UndefOr[JobTimeoutMinutes] = js.undefined,
       locale: js.UndefOr[String] = js.undefined,
@@ -3444,6 +3566,7 @@ package devicefarm {
         "customerArtifactPaths" -> customerArtifactPaths.map { x => x.asInstanceOf[js.Any] },
         "deviceMinutes" -> deviceMinutes.map { x => x.asInstanceOf[js.Any] },
         "devicePoolArn" -> devicePoolArn.map { x => x.asInstanceOf[js.Any] },
+        "deviceSelectionResult" -> deviceSelectionResult.map { x => x.asInstanceOf[js.Any] },
         "eventCount" -> eventCount.map { x => x.asInstanceOf[js.Any] },
         "jobTimeoutMinutes" -> jobTimeoutMinutes.map { x => x.asInstanceOf[js.Any] },
         "locale" -> locale.map { x => x.asInstanceOf[js.Any] },
@@ -3563,30 +3686,33 @@ package devicefarm {
    */
   @js.native
   trait ScheduleRunRequest extends js.Object {
-    var devicePoolArn: AmazonResourceName
     var projectArn: AmazonResourceName
     var test: ScheduleRunTest
     var appArn: js.UndefOr[AmazonResourceName]
     var configuration: js.UndefOr[ScheduleRunConfiguration]
+    var devicePoolArn: js.UndefOr[AmazonResourceName]
+    var deviceSelectionConfiguration: js.UndefOr[DeviceSelectionConfiguration]
     var executionConfiguration: js.UndefOr[ExecutionConfiguration]
     var name: js.UndefOr[Name]
   }
 
   object ScheduleRunRequest {
     def apply(
-      devicePoolArn: AmazonResourceName,
       projectArn: AmazonResourceName,
       test: ScheduleRunTest,
       appArn: js.UndefOr[AmazonResourceName] = js.undefined,
       configuration: js.UndefOr[ScheduleRunConfiguration] = js.undefined,
+      devicePoolArn: js.UndefOr[AmazonResourceName] = js.undefined,
+      deviceSelectionConfiguration: js.UndefOr[DeviceSelectionConfiguration] = js.undefined,
       executionConfiguration: js.UndefOr[ExecutionConfiguration] = js.undefined,
       name: js.UndefOr[Name] = js.undefined): ScheduleRunRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "devicePoolArn" -> devicePoolArn.asInstanceOf[js.Any],
         "projectArn" -> projectArn.asInstanceOf[js.Any],
         "test" -> test.asInstanceOf[js.Any],
         "appArn" -> appArn.map { x => x.asInstanceOf[js.Any] },
         "configuration" -> configuration.map { x => x.asInstanceOf[js.Any] },
+        "devicePoolArn" -> devicePoolArn.map { x => x.asInstanceOf[js.Any] },
+        "deviceSelectionConfiguration" -> deviceSelectionConfiguration.map { x => x.asInstanceOf[js.Any] },
         "executionConfiguration" -> executionConfiguration.map { x => x.asInstanceOf[js.Any] },
         "name" -> name.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 

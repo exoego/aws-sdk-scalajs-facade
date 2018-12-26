@@ -18,6 +18,7 @@ package object waf {
   type ChangeTokenStatus = String
   type ComparisonOperator = String
   type Country = String
+  type ExcludedRules = js.Array[ExcludedRule]
   type GeoMatchConstraintType = String
   type GeoMatchConstraintValue = String
   type GeoMatchConstraints = js.Array[GeoMatchConstraint]
@@ -181,6 +182,7 @@ package waf {
     var Priority: RulePriority
     var RuleId: ResourceId
     var Action: js.UndefOr[WafAction]
+    var ExcludedRules: js.UndefOr[ExcludedRules]
     var OverrideAction: js.UndefOr[WafOverrideAction]
     var Type: js.UndefOr[WafRuleType]
   }
@@ -190,12 +192,14 @@ package waf {
       Priority: RulePriority,
       RuleId: ResourceId,
       Action: js.UndefOr[WafAction] = js.undefined,
+      ExcludedRules: js.UndefOr[ExcludedRules] = js.undefined,
       OverrideAction: js.UndefOr[WafOverrideAction] = js.undefined,
       Type: js.UndefOr[WafRuleType] = js.undefined): ActivatedRule = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Priority" -> Priority.asInstanceOf[js.Any],
         "RuleId" -> RuleId.asInstanceOf[js.Any],
         "Action" -> Action.map { x => x.asInstanceOf[js.Any] },
+        "ExcludedRules" -> ExcludedRules.map { x => x.asInstanceOf[js.Any] },
         "OverrideAction" -> OverrideAction.map { x => x.asInstanceOf[js.Any] },
         "Type" -> Type.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
@@ -1249,6 +1253,24 @@ package waf {
         "ChangeToken" -> ChangeToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteXssMatchSetResponse]
+    }
+  }
+
+  /**
+   * The rule to exclude from a rule group. This is applicable only when the <code>ActivatedRule</code> refers to a <code>RuleGroup</code>. The rule must belong to the <code>RuleGroup</code> that is specified by the <code>ActivatedRule</code>.
+   */
+  @js.native
+  trait ExcludedRule extends js.Object {
+    var RuleId: ResourceId
+  }
+
+  object ExcludedRule {
+    def apply(
+      RuleId: ResourceId): ExcludedRule = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "RuleId" -> RuleId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ExcludedRule]
     }
   }
 
@@ -2896,7 +2918,7 @@ package waf {
   }
 
   /**
-   * The Amazon Kinesis Data Firehose delivery streams, <code>RedactedFields</code> information, and the web ACL Amazon Resource Name (ARN).
+   * The Amazon Kinesis Data Firehose, <code>RedactedFields</code> information, and the web ACL Amazon Resource Name (ARN).
    */
   @js.native
   trait LoggingConfiguration extends js.Object {
@@ -4169,6 +4191,7 @@ package waf {
     var WebACLId: ResourceId
     var MetricName: js.UndefOr[MetricName]
     var Name: js.UndefOr[ResourceName]
+    var WebACLArn: js.UndefOr[ResourceArn]
   }
 
   object WebACL {
@@ -4177,13 +4200,15 @@ package waf {
       Rules: ActivatedRules,
       WebACLId: ResourceId,
       MetricName: js.UndefOr[MetricName] = js.undefined,
-      Name: js.UndefOr[ResourceName] = js.undefined): WebACL = {
+      Name: js.UndefOr[ResourceName] = js.undefined,
+      WebACLArn: js.UndefOr[ResourceArn] = js.undefined): WebACL = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DefaultAction" -> DefaultAction.asInstanceOf[js.Any],
         "Rules" -> Rules.asInstanceOf[js.Any],
         "WebACLId" -> WebACLId.asInstanceOf[js.Any],
         "MetricName" -> MetricName.map { x => x.asInstanceOf[js.Any] },
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
+        "WebACLArn" -> WebACLArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[WebACL]
     }

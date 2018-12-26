@@ -84,6 +84,7 @@ package object sagemaker {
   type FilterValue = String
   type FinalMetricDataList = js.Array[MetricData]
   type Framework = String
+  type GitConfigUrl = String
   type HyperParameterSpecifications = js.Array[HyperParameterSpecification]
   type HyperParameterTrainingJobSummaries = js.Array[HyperParameterTrainingJobSummary]
   type HyperParameterTuningJobArn = String
@@ -115,6 +116,7 @@ package object sagemaker {
   type LabelingJobSummaryList = js.Array[LabelingJobSummary]
   type LambdaFunctionArn = String
   type LastModifiedTime = js.Date
+  type ListCompilationJobsSortBy = String
   type ListLabelingJobsForWorkteamSortByOptions = String
   type ListTagsMaxResults = Int
   type ListWorkteamsSortByOptions = String
@@ -240,6 +242,7 @@ package object sagemaker {
   type TrainingInstanceType = String
   type TrainingInstanceTypes = js.Array[TrainingInstanceType]
   type TrainingJobArn = String
+  type TrainingJobEarlyStoppingType = String
   type TrainingJobName = String
   type TrainingJobSortByOptions = String
   type TrainingJobStatus = String
@@ -785,6 +788,7 @@ package sagemaker {
     var CompilationTargetDevice: TargetDevice
     var CreationTime: CreationTime
     var CompilationEndTime: js.UndefOr[Timestamp]
+    var CompilationStartTime: js.UndefOr[Timestamp]
     var LastModifiedTime: js.UndefOr[LastModifiedTime]
   }
 
@@ -796,6 +800,7 @@ package sagemaker {
       CompilationTargetDevice: TargetDevice,
       CreationTime: CreationTime,
       CompilationEndTime: js.UndefOr[Timestamp] = js.undefined,
+      CompilationStartTime: js.UndefOr[Timestamp] = js.undefined,
       LastModifiedTime: js.UndefOr[LastModifiedTime] = js.undefined): CompilationJobSummary = {
       val _fields = IndexedSeq[(String, js.Any)](
         "CompilationJobArn" -> CompilationJobArn.asInstanceOf[js.Any],
@@ -804,6 +809,7 @@ package sagemaker {
         "CompilationTargetDevice" -> CompilationTargetDevice.asInstanceOf[js.Any],
         "CreationTime" -> CreationTime.asInstanceOf[js.Any],
         "CompilationEndTime" -> CompilationEndTime.map { x => x.asInstanceOf[js.Any] },
+        "CompilationStartTime" -> CompilationStartTime.map { x => x.asInstanceOf[js.Any] },
         "LastModifiedTime" -> LastModifiedTime.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CompilationJobSummary]
@@ -2814,7 +2820,7 @@ package sagemaker {
   /**
    * A conditional statement for a search expression that includes a Boolean operator, a resource property, and a value.
    *  If you don't specify an <code>Operator</code> and a <code>Value</code>, the filter searches for only the specified property. For example, defining a <code>Filter</code> for the <code>FailureReason</code> for the <code>TrainingJob</code> <code>Resource</code> searches for training job objects that have a value in the <code>FailureReason</code> field.
-   *  If you specify a <code>Value</code>, but not an <code>Operator</code>, Amazon SageMaker uses the equals operator as a default.
+   *  If you specify a <code>Value</code>, but not an <code>Operator</code>, Amazon SageMaker uses the equals operator as the default.
    *  In search, there are several property types:
    *  <dl> <dt>Metrics</dt> <dd> To define a metric filter, enter a value using the form <code>"Metrics.&lt;name&gt;"</code>, where <code>&lt;name&gt;</code> is a metric name. For example, the following filter searches for training jobs with an <code>"accuracy"</code> metric greater than <code>"0.9"</code>:
    *  <code>{</code>
@@ -2822,7 +2828,7 @@ package sagemaker {
    *  <code>"Operator": "GREATER_THAN",</code>
    *  <code>"Value": "0.9"</code>
    *  <code>}</code>
-   *  </dd> <dt>HyperParameters</dt> <dd> To define a hyperparameter filter, enter a value with the form <code>"HyperParamters.&lt;name&gt;"</code>. Decimal hyperparameter values are treated as a decimal in a comparison if the specified <code>Value</code> is also a decimal value. If the specified <code>Value</code> is an integer, the decimal hyperparameter values are treated as integers. For example, the following filter is satisfied by training jobs with a <code>"learning_rate"</code> hyperparameter that is less than <code>"0.5"</code>:
+   *  </dd> <dt>HyperParameters</dt> <dd> To define a hyperparameter filter, enter a value with the form <code>"HyperParameters.&lt;name&gt;"</code>. Decimal hyperparameter values are treated as a decimal in a comparison if the specified <code>Value</code> is also a decimal value. If the specified <code>Value</code> is an integer, the decimal hyperparameter values are treated as integers. For example, the following filter is satisfied by training jobs with a <code>"learning_rate"</code> hyperparameter that is less than <code>"0.5"</code>:
    *  <code> {</code>
    *  <code> "Name": "HyperParameters.learning_rate",</code>
    *  <code> "Operator": "LESS_THAN",</code>
@@ -2924,14 +2930,14 @@ package sagemaker {
    */
   @js.native
   trait GitConfig extends js.Object {
-    var RepositoryUrl: Url
+    var RepositoryUrl: GitConfigUrl
     var Branch: js.UndefOr[Branch]
     var SecretArn: js.UndefOr[SecretArn]
   }
 
   object GitConfig {
     def apply(
-      RepositoryUrl: Url,
+      RepositoryUrl: GitConfigUrl,
       Branch: js.UndefOr[Branch] = js.undefined,
       SecretArn: js.UndefOr[SecretArn] = js.undefined): GitConfig = {
       val _fields = IndexedSeq[(String, js.Any)](
@@ -3174,6 +3180,7 @@ package sagemaker {
     var ParameterRanges: ParameterRanges
     var ResourceLimits: ResourceLimits
     var Strategy: HyperParameterTuningJobStrategyType
+    var TrainingJobEarlyStoppingType: js.UndefOr[TrainingJobEarlyStoppingType]
   }
 
   object HyperParameterTuningJobConfig {
@@ -3181,12 +3188,14 @@ package sagemaker {
       HyperParameterTuningJobObjective: HyperParameterTuningJobObjective,
       ParameterRanges: ParameterRanges,
       ResourceLimits: ResourceLimits,
-      Strategy: HyperParameterTuningJobStrategyType): HyperParameterTuningJobConfig = {
+      Strategy: HyperParameterTuningJobStrategyType,
+      TrainingJobEarlyStoppingType: js.UndefOr[TrainingJobEarlyStoppingType] = js.undefined): HyperParameterTuningJobConfig = {
       val _fields = IndexedSeq[(String, js.Any)](
         "HyperParameterTuningJobObjective" -> HyperParameterTuningJobObjective.asInstanceOf[js.Any],
         "ParameterRanges" -> ParameterRanges.asInstanceOf[js.Any],
         "ResourceLimits" -> ResourceLimits.asInstanceOf[js.Any],
-        "Strategy" -> Strategy.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+        "Strategy" -> Strategy.asInstanceOf[js.Any],
+        "TrainingJobEarlyStoppingType" -> TrainingJobEarlyStoppingType.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[HyperParameterTuningJobConfig]
     }
@@ -3907,6 +3916,8 @@ package sagemaker {
     var MaxResults: js.UndefOr[MaxResults]
     var NameContains: js.UndefOr[NameContains]
     var NextToken: js.UndefOr[NextToken]
+    var SortBy: js.UndefOr[ListCompilationJobsSortBy]
+    var SortOrder: js.UndefOr[SortOrder]
     var StatusEquals: js.UndefOr[CompilationJobStatus]
   }
 
@@ -3919,6 +3930,8 @@ package sagemaker {
       MaxResults: js.UndefOr[MaxResults] = js.undefined,
       NameContains: js.UndefOr[NameContains] = js.undefined,
       NextToken: js.UndefOr[NextToken] = js.undefined,
+      SortBy: js.UndefOr[ListCompilationJobsSortBy] = js.undefined,
+      SortOrder: js.UndefOr[SortOrder] = js.undefined,
       StatusEquals: js.UndefOr[CompilationJobStatus] = js.undefined): ListCompilationJobsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "CreationTimeAfter" -> CreationTimeAfter.map { x => x.asInstanceOf[js.Any] },
@@ -3928,6 +3941,8 @@ package sagemaker {
         "MaxResults" -> MaxResults.map { x => x.asInstanceOf[js.Any] },
         "NameContains" -> NameContains.map { x => x.asInstanceOf[js.Any] },
         "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
+        "SortBy" -> SortBy.map { x => x.asInstanceOf[js.Any] },
+        "SortOrder" -> SortOrder.map { x => x.asInstanceOf[js.Any] },
         "StatusEquals" -> StatusEquals.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListCompilationJobsRequest]
@@ -3950,6 +3965,14 @@ package sagemaker {
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListCompilationJobsResponse]
     }
+  }
+
+  object ListCompilationJobsSortByEnum {
+    val Name = "Name"
+    val CreationTime = "CreationTime"
+    val Status = "Status"
+
+    val values = IndexedSeq(Name, CreationTime, Status)
   }
 
   @js.native
@@ -4973,7 +4996,7 @@ package sagemaker {
   }
 
   /**
-   * Contains data such as the inputs and targeted instance types that are used in the process of validating the model package.
+   * Contains data, such as the inputs and targeted instance types that are used in the process of validating the model package.
    *  The data provided in the validation profile is made available to your buyers on AWS Marketplace.
    */
   @js.native
@@ -5047,9 +5070,9 @@ package sagemaker {
   }
 
   /**
-   * A <code>NestedFilter</code> is defined by using a resource name under <code>NestedPropertyName</code>, which entries in a list that properties must match to be included in the results. To satisfy the conditions specified in the <code>NestedFilters</code> call, each object in the list must satisfy the conditions of all of the filters.
+   * Defines a list of <code>NestedFilter</code> objects. To satisfy the conditions specified in the <code>NestedFilters</code> call, a resource must satisfy the conditions of all of the filters.
    *  For example, a <code>NestedFilters</code> could be defined using the training job's <code>InputDataConfig</code> property, this would be defined as a list of <code>Channel</code> objects.
-   *  A <code>NestedFilters</code> object contains multiple filters. For example, to find all training jobs that have <code>train</code> in their name, and have <code>cat/data</code> in their<code/> <code>S3Uri</code> (under <code>InputDataConfig</code>), you need to create a <code>NestedFilters</code> object that specfies the <code>InputDataConfig</code> property with the following <code>Filter</code> objects:
+   *  A <code>NestedFilters</code> object contains multiple filters. For example, to find all training jobs whose name contains <code>train</code> and that have <code>cat/data</code> in their <code>S3Uri</code> (specified in <code>InputDataConfig</code>), you need to create a <code>NestedFilters</code> object that specifies the <code>InputDataConfig</code> property with the following <code>Filter</code> objects:
    * * <code>'{Name:"InputDataConfig.ChannelName", "Operator":"EQUALS", "Value":"train"}',</code>
    *  * <code>'{Name:"InputDataConfig.DataSource.S3DataSource.S3Uri", "Operator":"CONTAINS", "Value":"cat/data"}'</code>
    */
@@ -5310,7 +5333,7 @@ package sagemaker {
   }
 
   /**
-   * Defines the possible values for categorical, continous, and integer hyperparameters to be used by an algorithm.
+   * Defines the possible values for categorical, continuous, and integer hyperparameters to be used by an algorithm.
    */
   @js.native
   trait ParameterRange extends js.Object {
@@ -5498,7 +5521,7 @@ package sagemaker {
   }
 
   /**
-   * A suggestion query for retrieving property names.
+   * A type of <code>SuggestionQuery</code>. A suggestion query for retrieving property names that match the specified hint.
    */
   @js.native
   trait PropertyNameQuery extends js.Object {
@@ -5534,7 +5557,44 @@ package sagemaker {
   }
 
   /**
-   * Defines the amount of money paid to an Amazon Mechanical Turk worker for each task performed. For more information, see [[http://docs.aws.amazon.com/sagemaker/latest/dg/sms-public-payment.html| Public Workforce Task Price]].
+   * Defines the amount of money paid to an Amazon Mechanical Turk worker for each task performed.
+   *  Use one of the following prices for bounding box tasks. Prices are in US dollars.
+   * * 0.036
+   *  * 0.048
+   *  * 0.060
+   *  * 0.072
+   *  * 0.120
+   *  * 0.240
+   *  * 0.360
+   *  * 0.480
+   *  * 0.600
+   *  * 0.720
+   *  * 0.840
+   *  * 0.960
+   *  * 1.080
+   *  * 1.200
+   * Use one of the following prices for image classification, text classification, and custom tasks. Prices are in US dollars.
+   * * 0.012
+   *  * 0.024
+   *  * 0.036
+   *  * 0.048
+   *  * 0.060
+   *  * 0.072
+   *  * 0.120
+   *  * 0.240
+   *  * 0.360
+   *  * 0.480
+   *  * 0.600
+   *  * 0.720
+   *  * 0.840
+   *  * 0.960
+   *  * 1.080
+   *  * 1.200
+   * Use one of the following prices for semantic segmentation tasks. Prices are in US dollars.
+   * * 0.840
+   *  * 0.960
+   *  * 1.080
+   *  * 1.200
    */
   @js.native
   trait PublicWorkforceTaskPrice extends js.Object {
@@ -5733,11 +5793,11 @@ package sagemaker {
   }
 
   /**
-   * A multi-expression that searches for the specified resource or resources. All resource objects that satisfy the expression's condition are included in the search results.
+   * A multi-expression that searches for the specified resource or resources in a search. All resource objects that satisfy the expression's condition are included in the search results. You must specify at least one subexpression, filter, or nested filter. A <code>SearchExpression</code> can contain up to twenty elements.
    *  A <code>SearchExpression</code> contains the following components:
    * * A list of <code>Filter</code> objects. Each filter defines a simple Boolean expression comprised of a resource property name, Boolean operator, and value.
    *  * A list of <code>NestedFilter</code> objects. Each nested filter defines a list of Boolean expressions using a list of resource properties. A nested filter is satisfied if a single object in the list satisfies all Boolean expressions.
-   *  * A list of <code>SearchExpression</code> objects.
+   *  * A list of <code>SearchExpression</code> objects. A search expression object can be nested in a list of search expression objects.
    *  * A Boolean operator: <code>And</code> or <code>Or</code>.
    */
   @js.native
@@ -5959,8 +6019,9 @@ package sagemaker {
     val None = "None"
     val Line = "Line"
     val RecordIO = "RecordIO"
+    val TFRecord = "TFRecord"
 
-    val values = IndexedSeq(None, Line, RecordIO)
+    val values = IndexedSeq(None, Line, RecordIO, TFRecord)
   }
 
   @js.native
@@ -6069,8 +6130,8 @@ package sagemaker {
   }
 
   /**
-   * Specifies how long a model training or compilation job can run. When the job reaches the limit, Amazon SageMaker ends the training job. Use this API to cap model processing cost.
-   *  To stop a job, Amazon SageMaker sends the algorithm the <code>SIGTERM</code> signal, which delays job termination for 120 seconds. Algorithms might use this 120-second window to save the model artifacts, so the results of training is not lost.
+   * Specifies how long model training can run. When model training reaches the limit, Amazon SageMaker ends the training job. Use this API to cap model training cost.
+   *  To stop a job, Amazon SageMaker sends the algorithm the <code>SIGTERM</code> signal, which delays job termination for120 seconds. Algorithms might use this 120-second window to save the model artifacts, so the results of training is not lost.
    *  Training algorithms provided by Amazon SageMaker automatically saves the intermediate results of a model training job (it is best effort case, as model might not be ready to save as some stages, for example training just started). This intermediate data is a valid model artifact. You can use it to create a model (<code>CreateModel</code>).
    */
   @js.native
@@ -6328,6 +6389,13 @@ package sagemaker {
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TrainingJobDefinition]
     }
+  }
+
+  object TrainingJobEarlyStoppingTypeEnum {
+    val Off = "Off"
+    val Auto = "Auto"
+
+    val values = IndexedSeq(Off, Auto)
   }
 
   object TrainingJobSortByOptionsEnum {

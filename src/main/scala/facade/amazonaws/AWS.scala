@@ -13,6 +13,8 @@ object AWS extends js.Object {
   type AlexaForBusiness = services.alexaforbusiness.AlexaForBusiness
   type Amplify = services.amplify.Amplify
   type APIGateway = services.apigateway.APIGateway
+  type ApiGatewayV2 = services.apigatewayv2.ApiGatewayV2
+  type ApiGatewayManagementApi = services.apigatewaymanagementapi.ApiGatewayManagementApi
   type ApplicationAutoScaling = services.applicationautoscaling.ApplicationAutoScaling
   type AppMesh = services.appmesh.AppMesh
   type AppStream = services.appstream.AppStream
